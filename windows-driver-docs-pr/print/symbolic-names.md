@@ -1,6 +1,6 @@
 ---
-title: シンボル名
-description: シンボル名
+title: シンボリック名
+description: シンボリック名
 ms.assetid: 4bd07f73-9fe1-4a81-adab-0e382f808a88
 keywords:
 - GPD ファイル エントリ WDK Unidrv、シンボル名
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0feffbdfdab70fe5f9341e78fdb28e25d2faf229
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387820"
 ---
-# <a name="symbolic-names"></a>シンボル名
+# <a name="symbolic-names"></a>シンボリック名
 
 
 

@@ -17,11 +17,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 38a0f1072efb3d4a664c053e6e1ddd61af5fce71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390000"
 ---
 # <a name="cpixelcomputesurfacesize-method"></a>CPixel::ComputeSurfaceSize メソッド
 
@@ -53,12 +53,12 @@ static UINT ComputeSurfaceSize(
 
 (バイト単位)、画面のサイズを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 D3DFORMAT の詳細については、Microsoft DirectX SDK ドキュメントを参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

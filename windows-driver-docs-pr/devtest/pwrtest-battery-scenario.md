@@ -1,17 +1,17 @@
 ---
-title: PwrTest バッテリ シナリオ
+title: PwrTest のバッテリ シナリオ
 description: PwrTest バッテリのシナリオは、バッテリと電源のソース情報の自動の検査を容易に設計されています。
 ms.assetid: e0bad871-a826-4951-9a84-93c9b1aa0653
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37c7323d6b3ff4a5cb1b299ebc0acade9cd1707f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327346"
 ---
-# <a name="pwrtest-battery-scenario"></a>PwrTest バッテリ シナリオ
+# <a name="pwrtest-battery-scenario"></a>PwrTest のバッテリ シナリオ
 
 
 PwrTest バッテリのシナリオは、バッテリと電源のソース情報の自動の検査を容易に設計されています。
@@ -30,7 +30,7 @@ pwrtest /battery [/c:n] [/i:n] [/?]
 <span id="_i_n"></span><span id="_I_N"></span>**/i:**<em>n</em>  
 (既定値は 5000) をミリ秒単位でのポーリング間隔を指定します。
 
-**例**
+**使用例**
 
 ```
 pwrtest /battery 

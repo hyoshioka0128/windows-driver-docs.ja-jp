@@ -1,17 +1,17 @@
 ---
-title: NVMe デバイスのファームウェアのアップグレード
+title: NVMe デバイス用ファームウェアのアップグレード
 description: NVMe の記憶域デバイスのファームウェアの更新は、そのデバイスのミニポート ドライバーに発行されます。
 ms.assetid: A912715A-F82A-41E5-BE14-5B17930C29B7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0448455477b959ab6c097c77a2adfcb8ad0fa5dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390202"
 ---
-# <a name="upgrading-firmware-for-an-nvme-device"></a>NVMe デバイスのファームウェアのアップグレード
+# <a name="upgrading-firmware-for-an-nvme-device"></a>NVMe デバイス用ファームウェアのアップグレード
 
 
 NVMe の記憶域デバイスのファームウェアの更新は、そのデバイスのミニポート ドライバーに発行されます。 ファームウェアの情報を取得するためのコマンドを関数、ダウンロード、およびファームウェア イメージをアクティブ化は、ミニポートに発行されます。

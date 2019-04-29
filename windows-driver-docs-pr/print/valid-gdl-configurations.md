@@ -10,16 +10,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 001d71ea7dd73e6303894488457410d8a66259ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387819"
 ---
 # <a name="valid-gdl-configurations"></a>有効な GDL 構成
 
 
-GDL パーサー インターフェイス関数では、パーサーでクライアントの設定を間違えたと無効な構成を備えた可能性がある場合がありますので、受信の構成は常に検証します。 無効な構成の詳細については、[GDL の無効な設定を使用して](using-invalid-gdl-configurations.md)を参照してください。
+GDL パーサー インターフェイス関数では、パーサーでクライアントの設定を間違えたと無効な構成を備えた可能性がある場合がありますので、受信の構成は常に検証します。 無効な構成の詳細については、次を参照してください。 [GDL の無効な設定を使用して](using-invalid-gdl-configurations.md)します。
 
 有効な構成では、次の条件を満たします。
 

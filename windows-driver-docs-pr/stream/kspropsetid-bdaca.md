@@ -5,11 +5,11 @@ ms.assetid: 2ceb54ff-f111-4cf7-8c8e-f9a4dce42d4e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 790b4723cbffc05290e133012bc211f4bd822e74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389234"
 ---
 # <a name="kspropsetidbdaca"></a>KSPROPSETID\_BdaCA
 
@@ -43,7 +43,7 @@ CA プラグインを表示できる UI を返します。
 
 このプロパティ セット内のプロパティは、KSEVENTSETID 内のイベントに対応\_BdaCAEvent イベントのセット。 BDA ミニドライバーは、このイベントは、CA プラグインに通知するセット内のイベントを通知します。 これらの CA プラグイン KSPROPSETID で対応するプロパティをクエリし、\_BdaCA します。 BDA ミニドライバー信号これらのイベントか、重大な状態の変更が発生するたびにユーザーを操作します。 ユーザーにメッセージを表示するかをユーザーのトランザクションをネゴシエートする、BDA ミニドライバーはたとえば、ユーザーと対話します。 たとえば、ユーザーがスマート カード リーダーからスマート カードを削除時に重大な状態の変更です。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [KSEVENTSETID\_BdaCAEvent](kseventsetid-bdacaevent.md)
 

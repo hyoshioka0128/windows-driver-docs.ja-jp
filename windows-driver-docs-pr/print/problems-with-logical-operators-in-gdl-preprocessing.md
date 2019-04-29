@@ -1,6 +1,6 @@
 ---
-title: GDL プリプロセスでの論理演算子での問題
-description: GDL プリプロセスでの論理演算子での問題
+title: GDL 前処理の論理演算子の問題
+description: GDL 前処理の論理演算子の問題
 ms.assetid: 8ba1758c-8b8e-4eb2-8625-ffee213025aa
 keywords:
 - プリプロセッサ ディレクティブ WDK GDL、前処理に関する問題
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79ce6bb7e1f9fa21eefb1e2461a53c087ce43450
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390254"
 ---
-# <a name="problems-with-logical-operators-in-gdl-preprocessing"></a>GDL プリプロセスでの論理演算子での問題
+# <a name="problems-with-logical-operators-in-gdl-preprocessing"></a>GDL 前処理の論理演算子の問題
 
 
 GDL プリプロセッサ条件の論理演算子は現在サポートされていませんが、シミュレーションを行うことができます。

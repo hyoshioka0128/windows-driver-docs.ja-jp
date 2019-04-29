@@ -1,6 +1,6 @@
 ---
-title: デバイスの機能をテストします。
-description: デバイスの機能をテストします。
+title: デバイス機能のテスト
+description: デバイス機能のテスト
 ms.assetid: 51b3e55d-b071-4dbe-b687-5e3ed25aed20
 keywords:
 - デバイスの機能の WDK プリンターのテスト
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3971a95e30d4298daf7245310211c5af57d14c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388052"
 ---
-# <a name="testing-device-functionality"></a>デバイスの機能をテストします。
+# <a name="testing-device-functionality"></a>デバイス機能のテスト
 
 
 デバイスのインストールとプラグ アンド プレイの機能のすべてのテストを完了すると後、は、デバイスが想定どおりに機能を実行することを確認します。 できるだけ多くのアプリケーションおよびドキュメントの種類のテスト ページを印刷します。

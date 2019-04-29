@@ -1,6 +1,6 @@
 ---
-title: グラフィックスの INF ファイルを作成します。
-description: グラフィックスの INF ファイルを作成します。
+title: グラフィックス INF ファイルの作成
+description: グラフィックス INF ファイルの作成
 ms.assetid: e56d4881-5ad2-41fc-a6fb-bc72c5106361
 keywords:
 - ドライバー モデル WDK Windows 2000 では、グラフィックスを表示します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d580775db413c77472243ec7684a9d7e1538742
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387241"
 ---
-# <a name="creating-graphics-inf-files"></a>グラフィックスの INF ファイルを作成します。
+# <a name="creating-graphics-inf-files"></a>グラフィックス INF ファイルの作成
 
 
 ## <span id="ddk_creating_graphics_inf_files_gg"></span><span id="DDK_CREATING_GRAPHICS_INF_FILES_GG"></span>

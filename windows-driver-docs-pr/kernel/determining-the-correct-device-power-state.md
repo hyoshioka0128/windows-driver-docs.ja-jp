@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c52ea5503cc1adbc8d9f3610a9d4cfac0885166
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388177"
 ---
 # <a name="determining-the-correct-device-power-state"></a>正しいデバイス電源状態の判断
 
@@ -27,11 +27,11 @@ ms.locfileid: "56579541"
 
 -   ほとんどのデバイスは、システム S0 状態になったときに、D0 状態を入力します。
 
--   ほとんどのデバイスは、システムがスリープ状態に入ったときに、D3 の状態を入力します。 ただし、このような状態をサポートしている場合、ウェイク アップを有効になっているデバイスは D1 または D2 を代わりに、入力する必要あります。 詳細については、[デバイスの電源機能の報告](reporting-device-power-capabilities.md)を参照してください。
+-   ほとんどのデバイスは、システムがスリープ状態に入ったときに、D3 の状態を入力します。 ただし、このような状態をサポートしている場合、ウェイク アップを有効になっているデバイスは D1 または D2 を代わりに、入力する必要あります。 詳細については、次を参照してください。[デバイスの電源機能の報告](reporting-device-power-capabilities.md)します。
 
 -   休止状態ファイルを保持するデバイスの特別な規則が適用されます。 システム IRP を要求した場合**PowerSystemHibernate**、休止状態ファイルを保持するデバイスの電源を切らないでする必要があります。 このようなデバイスの電源ポリシー所有者必要があります D3 デバイスの電源状態を要求し、コンテキストを保存が、デバイスのドライバーのデバイスの電源を電源する必要があります。
 
-システム IRP を要求する場合**PowerSystemShutdown**、ドライバーは、電源を確認する必要があります\_のアクション値**Irp -&gt;Parameters.Power.ShutdownType**原因を特定するには状態の変更。 詳細については、[システム電源操作](system-power-actions.md)を参照してください。
+システム IRP を要求する場合**PowerSystemShutdown**、ドライバーは、電源を確認する必要があります\_のアクション値**Irp -&gt;Parameters.Power.ShutdownType**原因を特定するには状態の変更。 詳細については、次を参照してください。[システム電源操作](system-power-actions.md)します。
 
 デバイスの電源ポリシー所有者は、デバイスを送信する必要がありますの各システム セット power IRP セット power IRP、デバイスは既に正しいデバイスの電源状態の場合でも。 以前に、ドライバーは、デバイスの操作を中断クエリ power IRP への応答で、セット power IRP によって Irp のキューを停止して、現在の電源状態の通常の操作に戻ることが通知されます。 唯一の例外は、デバイスが、D3 状態ときに発生します。この場合、ドライバー必要がある送信しない追加[ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744) D3 を要求します。
 

@@ -1,17 +1,17 @@
 ---
-title: SerCx2 PIO 送信トランザクション
+title: SerCx2 PIO-送信トランザクション
 description: SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを送信します。
 ms.assetid: 3BEF9A3D-1FEF-4626-B07F-1670359062AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7e66efce687e92da9345a9f81245912304a7e62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387965"
 ---
-# <a name="sercx2-pio-transmit-transactions"></a>SerCx2 PIO 送信トランザクション
+# <a name="sercx2-pio-transmit-transactions"></a>SerCx2 PIO-送信トランザクション
 
 
 SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを送信します。 SerCx2 PIO 送信トランザクションを開始するには、ドライバーが呼び出す[ *EvtSerCx2PioTransmitWriteBuffer* ](https://msdn.microsoft.com/library/windows/hardware/dn265223)イベント コールバック関数と書き込みをバッファーをパラメーターとして提供します。

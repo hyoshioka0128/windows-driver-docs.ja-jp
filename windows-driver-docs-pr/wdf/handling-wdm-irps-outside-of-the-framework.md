@@ -1,6 +1,6 @@
 ---
-title: フレームワークの外部で WDM Irp の処理
-description: フレームワークの外部で WDM Irp の処理
+title: フレームワークの外部での WDM IRP の処理
+description: フレームワークの外部での WDM IRP の処理
 ms.assetid: 43e1df0c-c0d1-4d41-87de-9f8f5831fb19
 keywords:
 - WDM Irp WDK KMDF
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dc11d49c35f418e56a9fb14287339b2150ce51f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391878"
 ---
-# <a name="handling-wdm-irps-outside-of-the-framework"></a>フレームワークの外部で WDM Irp の処理
+# <a name="handling-wdm-irps-outside-of-the-framework"></a>フレームワークの外部での WDM IRP の処理
 
 
 \[KMDF にのみ適用されます。\]

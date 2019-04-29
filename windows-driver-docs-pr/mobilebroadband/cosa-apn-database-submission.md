@@ -5,11 +5,11 @@ ms.assetid: a6a11b36-2848-45d0-93e5-1a5fedc0cfc9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7f79f1768e01cd2815989beccfcfddedfff434d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387867"
 ---
 # <a name="cosaapn-database-submission"></a>COSA/APN データベースの提出
 
@@ -21,5 +21,5 @@ ms.locfileid: "56573535"
 
 -   [デスクトップの COSA/APN データベースの更新を送信します。](submitting-the-desktop-cosa-apn-database-update.md)
 
-COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 APN データベースの詳細については、[APN データベースの概要](apn-database-overview.md)を参照してください。 
+COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 APN データベースの詳細については、次を参照してください。 [APN データベースの概要](apn-database-overview.md)します。 
 

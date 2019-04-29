@@ -1,5 +1,5 @@
 ---
-title: AgeStore コマンド ライン オプション
+title: AgeStore のコマンドライン オプション
 description: AgeStore コマンドラインは、次の構文を使用します。 パラメーターは、任意の順序で含めることができます。
 ms.assetid: ae6ad504-a582-45ac-89a1-7e90952948b4
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e28de127720c66f1c0fbd32ce3822069818eb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327361"
 ---
-# <a name="agestore-command-line-options"></a>AgeStore コマンド ライン オプション
+# <a name="agestore-command-line-options"></a>AgeStore のコマンドライン オプション
 
 
 AgeStore コマンドラインは、次の構文を使用します。 パラメーターは、任意の順序で含めることができます。
@@ -77,7 +77,7 @@ AgeStore コマンドラインのヘルプを表示します。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-AgeStore ツールの詳細については、[を使用して AgeStore](using-agestore.md)を参照してください。
+AgeStore ツールの詳細については、次を参照してください。[を使用して AgeStore](using-agestore.md)します。
 
  
 

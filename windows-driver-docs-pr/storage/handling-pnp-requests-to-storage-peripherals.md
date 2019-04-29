@@ -1,6 +1,6 @@
 ---
-title: 記憶域周辺機器に PnP 要求の処理
-description: 記憶域周辺機器に PnP 要求の処理
+title: 記憶域周辺機器への PnP 要求の処理
+description: 記憶域周辺機器への PnP 要求の処理
 ms.assetid: 9c7ea576-11e6-46d7-b04c-ce412a0fc569
 keywords:
 - 記憶域 WDK 周辺機器、PnP 要求
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f111fc01d7d9c7d0fc0e28caf05f1c3512bcaacc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390900"
 ---
-# <a name="handling-pnp-requests-to-storage-peripherals"></a>記憶域周辺機器に PnP 要求の処理
+# <a name="handling-pnp-requests-to-storage-peripherals"></a>記憶域周辺機器への PnP 要求の処理
 
 
 ## <span id="ddk_handling_pnp_requests_to_storage_peripherals_kg"></span><span id="DDK_HANDLING_PNP_REQUESTS_TO_STORAGE_PERIPHERALS_KG"></span>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9083f17616887669a6583a98f9d0d6d878d899
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326028"
 ---
 # <a name="tvotchkbox"></a>TVOT\_CHKBOX
 
@@ -32,18 +32,18 @@ TVOT\_CHKBOX オプションの種類は、グループ ボックス内のチェ
 <span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://msdn.microsoft.com/library/windows/hardware/ff559656)構造体  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
-使用されません。
+使用されていません。
 
 <span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM$** ](https://msdn.microsoft.com/library/windows/hardware/ff559660)構造体の配列 (**pOptParam**のメンバー [ **OPTTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff559670))  
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
-使用されません。
+使用されていません。
 
 <span id="IconID"></span><span id="iconid"></span><span id="ICONID"></span>**IconID**  
 チェック ボックスに関連付けるアイコンを識別します。
 
 <span id="lParam"></span><span id="lparam"></span><span id="LPARAM"></span>**lParam**  
-使用されません。
+使用されていません。
 
 <span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)構造体  
 
@@ -54,7 +54,7 @@ TVOT\_CHKBOX
 1
 
 <span id="Style__________"></span><span id="style__________"></span><span id="STYLE__________"></span>**スタイル**   
-使用されません。
+使用されていません。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
 場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://msdn.microsoft.com/library/windows/hardware/ff547607) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
@@ -102,7 +102,7 @@ TVOT\_CHKBOX
 
  
 
-詳細については、[Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)を参照してください。
+詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)します。
 
 <a name="requirements"></a>要件
 ------------

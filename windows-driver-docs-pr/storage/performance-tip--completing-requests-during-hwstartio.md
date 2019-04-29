@@ -5,13 +5,13 @@ ms.assetid: b1a3feff-ca18-4757-a336-c70ada998ba9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10e01b53f3c8d6d58326823989d63721e7bdf579
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389394"
 ---
-# <a name="performance-tip-completing-requests-during-hwstartio"></a>パフォーマンスのヒント:HwStartIo 期間中の要求の完了
+# <a name="performance-tip-completing-requests-during-hwstartio"></a>パフォーマンスのヒント: HwStartIo 中の要求の完了
 
 
 完了の準備ができている未処理の I/O 要求を完了してその[ **HwStorStartIo** ](https://msdn.microsoft.com/library/windows/hardware/ff557423)ルーチン、ミニポートは IRQL (DIRQL)、システムの応答性を向上するには、デバイスで時間を費やすことができ、システムの応答性と I/O スループットをさらに向上させる新しい Storport 最適化も活用します。 ポイントは、割り込みハンドラーで可能なほとんどの時間をかけずにしようとします。 活用するために、次のように新しい Storport 最適化ミニポート。

@@ -1,16 +1,16 @@
 ---
-Description: Installing the WpdHelloWorldDriver Sample
-title: WpdHelloWorldDriver サンプルをインストールします。
+Description: WpdHelloWorldDriver サンプルのインストール
+title: WpdHelloWorldDriver サンプルのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f92b35ecd1881a67f9bd03bfd51bdfca6fd55a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387279"
 ---
-# <a name="installing-the-wpdhelloworlddriver-sample"></a>WpdHelloWorldDriver サンプルをインストールします。
+# <a name="installing-the-wpdhelloworlddriver-sample"></a>WpdHelloWorldDriver サンプルのインストール
 
 
 このサンプル ドライバー インストール ルート列挙デバイスとして WPD 他のサンプルと同様に、します。 下に表示されます、**ポータブル デバイス**または**WPD**ノード**デバイス マネージャー**、デバイス ID のルートと\\WPD\\NNNN します。

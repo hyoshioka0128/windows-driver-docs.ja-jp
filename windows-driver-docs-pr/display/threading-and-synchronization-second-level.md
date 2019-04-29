@@ -1,6 +1,6 @@
 ---
-title: スレッド処理と第 2 レベルの同期
-description: スレッド処理と第 2 レベルの同期
+title: スレッドおよび同期の第 2 レベル
+description: スレッドおよび同期の第 2 レベル
 ms.assetid: 2b7c1eae-6527-469e-a2fa-74d2a1246bd3
 keywords:
 - WDK の表示をスレッドには、2 番目のレベル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bb006bc58e52674f1ad2d4f92ec0adbcddb153b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389845"
 ---
-# <a name="threading-and-synchronization-second-level"></a>スレッド処理と第 2 レベルの同期
+# <a name="threading-and-synchronization-second-level"></a>スレッドおよび同期の第 2 レベル
 
 
 スレッドと同期の 2 番目のレベルが同じ[第 3 レベル](threading-and-synchronization-third-level.md), ビデオ メモリが CPU メモリをホストする削除されない点が異なります。 つまり、ディスプレイのミニポート ドライバー内で 1 つのスレッド (つまり、呼び出し元のスレッド) のみである Windows 表示 Driver Model (WDDM) の保証、グラフィックス ハードウェアがアイドル状態と、ダイレクト メモリ アクセス (DMA) バッファー現在によって処理されているなしドライバーまたは GPU スケジューラをパススルーします。 2 番目のレベルでは、ディスプレイのミニポート ドライバーには、次の呼び出しが行われます。

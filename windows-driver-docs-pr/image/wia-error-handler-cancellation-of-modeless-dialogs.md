@@ -1,17 +1,17 @@
 ---
-title: WIA エラー ハンドラーのキャンセル モードレスのダイアログ ボックスします。
-description: WIA エラー ハンドラーのキャンセル モードレスのダイアログ ボックスします。
+title: モードレス ダイアログの WIA エラー ハンドラーのキャンセル
+description: モードレス ダイアログの WIA エラー ハンドラーのキャンセル
 ms.assetid: eca6c3a3-c196-4d28-925a-c8f5d5d8601b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e303e750fa61e0a48e72e05f56b8c71a57b5d7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392544"
 ---
-# <a name="wia-error-handler-cancellation-of-modeless-dialogs"></a>WIA エラー ハンドラーのキャンセル モードレスのダイアログ ボックスします。
+# <a name="wia-error-handler-cancellation-of-modeless-dialogs"></a>モードレス ダイアログの WIA エラー ハンドラーのキャンセル
 
 
 キャンセルとモードレス ダイアログ ボックスのジョンソンの処理方法中心とエラー ハンドラーの複雑さの多くとします。

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_GUIDS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5019d616ab3821d511e391d8d2e5e510d8419084
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387883"
 ---
 # <a name="oidgensupportedguids"></a>OID\_GEN\_サポートされている\_GUID
 
@@ -23,16 +23,16 @@ ms.locfileid: "56537204"
 サポートされています。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-(省略可能)。
+任意。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-(省略可能)。
+任意。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-(省略可能)。
+任意。
 
 <a name="remarks"></a>注釈
 -------
@@ -114,7 +114,7 @@ NDIS は、NIC の状態の変化を WMI で認識される Guid も変換しま
 
 OID をサポートする必要があります、ミニポート ドライバーでは、関税 Guid をサポートする場合\_GEN\_サポートされている\_GUID。 この OID の NDIS にカスタム Oid または NDIS するカスタムの Guid のマッピングを返します\_状態を示す文字列。 OID を使用して、ミニポート ドライバーを照会した\_GEN\_サポートされている\_wmi の GUID、NDIS 登録、ミニポート ドライバーのカスタムの Guid。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

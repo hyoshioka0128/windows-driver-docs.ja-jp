@@ -1,5 +1,5 @@
 ---
-title: KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理
+title: バス マスター DMA デバイス用 KMDF ドライバーでの I/O 要求の処理
 description: このセクションでは、このトピックでは、KMDF ドライバー、バス マスター DMA デバイスが I/O 要求を処理する方法について説明します。 システム モードの DMA を実装する KMDF ドライバーを作成する場合は、システム モード DMA のサポートを参照してください。
 ms.assetid: c94819c5-212d-404f-a7c7-b736e0832282
 keywords:
@@ -10,18 +10,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5cdc8b599b3d6bcb97779509040043f4603f03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391901"
 ---
-# <a name="handling-io-requests-in-a-kmdf-driver-for-a-bus-master-dma-device"></a>KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理
+# <a name="handling-io-requests-in-a-kmdf-driver-for-a-bus-master-dma-device"></a>バス マスター DMA デバイス用 KMDF ドライバーでの I/O 要求の処理
 
 
 \[KMDF にのみ適用されます。\]
 
-このセクションでは、このトピックでは、KMDF ドライバー、バス マスター DMA デバイスが I/O 要求を処理する方法について説明します。 システム モードの DMA を実装する KMDF ドライバーを作成する場合は、[をサポートしているシステム モード DMA](supporting-system-mode-dma.md)を参照してください。
+このセクションでは、このトピックでは、KMDF ドライバー、バス マスター DMA デバイスが I/O 要求を処理する方法について説明します。 システム モードの DMA を実装する KMDF ドライバーを作成する場合は、次を参照してください。[をサポートしているシステム モード DMA](supporting-system-mode-dma.md)します。
 
 
 

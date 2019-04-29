@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 533e945e07f8fcdc22eb6d8a5dbed996b69d61a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388058"
 ---
 # <a name="terminal-server-printing"></a>ターミナル サーバーの印刷
 
@@ -28,7 +28,7 @@ Microsoft Windows 2000 以降では、ターミナル サービスを 1 台の�
 
     [Microsoft XPS プリンター ドライバー](xpsdrv-printer-driver.md)
 
-    [Microsoft Universal プリンター ドライバー](microsoft-universal-printer-driver.md)
+    [Microsoft ユニバーサル プリンター ドライバー](microsoft-universal-printer-driver.md)
 
     [Microsoft PostScript プリンター ドライバー](microsoft-postscript-printer-driver.md)
 
@@ -59,7 +59,7 @@ Microsoft Windows 2000 以降では、ターミナル サービスを 1 台の�
     2.  ファイルを置き換える必要がある場合、セットアップ コードは、古いバージョンをアンロードし、(たとえば、サービスを再起動し、ファイルを置き換える、ドライバー サービスを停止する) を新しいバージョンを読み込む手順を実行する必要があります。
     3.  再記録オフ ログオンするユーザーを要求するには、はシステムの再起動を必要とすることをお勧めします。
 
-共同インストーラーとクラスのインストーラーの詳細については、[クラスのインストーラーを執筆および共同インストーラー](https://msdn.microsoft.com/library/windows/hardware/ff819060)を参照してください。
+共同インストーラーとクラスのインストーラーの詳細については、次を参照してください。[クラスのインストーラーを執筆および共同インストーラー](https://msdn.microsoft.com/library/windows/hardware/ff819060)します。
 
 **注**  カスタム セットアップ コードを記述する前に、Windows SDK のドキュメントで説明するガイドラインをプログラミングするターミナル サービスを読み取る必要があります。
 

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2162e94a4afc94eaee7c39717750c0b0fe37d654
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387143"
 ---
 # <a name="winsock-kernel-architecture"></a>Winsock カーネルのアーキテクチャ
 
@@ -30,7 +30,7 @@ WSK にアタッチされているサブシステムは、WSK アプリケーシ
 
 WSK アプリケーションを検出してのセットを使用して、WSK サブシステムにアタッチ[WSK 登録関数](https://msdn.microsoft.com/library/windows/hardware/ff571179)します。 アプリケーションは、WSK サブシステムが使用可能な場合に動的に検出するために、プロバイダーと WSK NPI のクライアント側の実装を構成するディスパッチ テーブルを交換して、これらの関数を使用できます。
 
-使用して、WSK アプリケーションを WSK サブシステムをアタッチできますまたは、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md)します。 詳細については、[WSK の登録と登録解除を使用して NMR](using-nmr-for-wsk-registration-and-unregistration.md)を参照してください。
+使用して、WSK アプリケーションを WSK サブシステムをアタッチできますまたは、[ネットワーク モジュール レジストラー (NMR)](network-module-registrar2.md)します。 詳細については、次を参照してください。 [WSK の登録と登録解除を使用して NMR](using-nmr-for-wsk-registration-and-unregistration.md)します。
 
  
 

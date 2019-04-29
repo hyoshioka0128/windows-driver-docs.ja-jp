@@ -1,17 +1,17 @@
 ---
-title: ウェイク アップ-から-休止状態からの特徴的な高速スタートアップ
+title: 休止状態からのウェイクと高速スタートアップの区別
 description: Windows 8 以降、高速スタートアップ モードは、従来のコールド起動時が通常よりも短時間でコンピューターを起動します。
 ms.assetid: 1768F739-619A-441F-B270-029DD1F72953
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 47af091e3faa9284145a06dfc802b9d1d7dbcb0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387182"
 ---
-# <a name="distinguishing-fast-startup-from-wake-from-hibernation"></a>ウェイク アップ-から-休止状態からの特徴的な高速スタートアップ
+# <a name="distinguishing-fast-startup-from-wake-from-hibernation"></a>休止状態からのウェイクと高速スタートアップの区別
 
 
 Windows 8 以降、高速スタートアップ モードは、従来のコールド起動時が通常よりも短時間でコンピューターを起動します。 高速スタートアップは、コールド起動と休止状態-のウェイク アップのスタートアップのハイブリッド組み合わせです。 多くの場合、カーネル モード デバイス ドライバーは、自分のデバイスがユーザーの期待どおりに動作できるように、休止状態-のスリープ解除からから高速スタートアップを区別するために必要があります。 ドライバーがで提供される情報の使用時に区別する、[システム電源 Irp](power-irps-for-the-system.md)します。
@@ -34,7 +34,7 @@ Windows 8 以降、高速スタートアップ モードは、従来のコール
 
 **TargetSystemState**ビット フィールドは、ドライバーがコンピューターをシャット ダウンまたは休止状態を入力する前にシステムの電源 IRP を受け取ったの最後のシステム電源状態遷移を指定します。 **EffectiveSystemState**ユーザーによって認識されたビット フィールドをデバイスの以前システム電源の有効な状態を示します。 **TargetSystemState**と**EffectiveSystemState**場合、ドライバーが休止状態が、ハイブリッドへの切り替えを保留中のシステムの通知を受信するなど、値が一致しないがありますその後、シャット ダウンが発生しました。
 
-詳細については、[**システム\_POWER\_状態\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/jj835780)を参照してください。
+詳細については、次を参照してください。 [**システム\_POWER\_状態\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/jj835780)します。
 
  
 

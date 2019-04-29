@@ -1,6 +1,6 @@
 ---
-title: ScsiPortInitialize を呼び出す
-description: ScsiPortInitialize を呼び出す
+title: ScsiPortInitialize の呼び出し
+description: ScsiPortInitialize の呼び出し
 ms.assetid: a736f279-9ade-4043-90f7-209fca260a39
 keywords:
 - ScsiPortInitialize
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb7ed5fab85ce8ebef70855dc2fa43f1282e131b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390555"
 ---
-# <a name="calling-scsiportinitialize"></a>ScsiPortInitialize を呼び出す
+# <a name="calling-scsiportinitialize"></a>ScsiPortInitialize の呼び出し
 
 
 ## <span id="ddk_calling_scsiportinitialize_kg"></span><span id="DDK_CALLING_SCSIPORTINITIALIZE_KG"></span>
@@ -67,7 +67,7 @@ ms.locfileid: "56535994"
 
 各 SCSI ミニポート ドライバーでは、内部構造とそのデバイスの拡張機能、論理ユニットの拡張機能 (ある場合)、および SRB の拡張機能 (ある場合) の内容を定義します。 HBA に固有のデバイスの拡張機能へのポインターを除くすべてのシステム定義のミニポート ドライバー ルーチンへの入力引数は、 **DriverEntry**します。 多く **ScsiPort * * * Xxx*ルーチンは、引数としてこのポインターを必要とします。
 
-**ScsiPortInitialize**ミニポート ドライバーからのみ呼び出すことができます**DriverEntry**ルーチン。 詳細については、[ **HW\_初期化\_データ (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456)と[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)を参照してください。
+**ScsiPortInitialize**ミニポート ドライバーからのみ呼び出すことができます**DriverEntry**ルーチン。 詳細については、次を参照してください。 [ **HW\_初期化\_データ (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456)と[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)します。
 
  
 

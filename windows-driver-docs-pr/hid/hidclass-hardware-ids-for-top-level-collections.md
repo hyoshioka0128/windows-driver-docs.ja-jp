@@ -19,11 +19,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 697277bf4f3e3de70e04242c87fb22c7d545d718
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388786"
 ---
 # <a name="hidclass-hardware-ids-for-top-level-collections"></a>最上位のコレクションの HIDClass ハードウェア ID
 

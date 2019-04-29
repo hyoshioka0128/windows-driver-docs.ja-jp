@@ -1,6 +1,6 @@
 ---
-title: ProcAmp コントロールのためのサンプル関数
-description: ProcAmp コントロールのためのサンプル関数
+title: ProcAmp コントロール用のサンプル関数
+description: ProcAmp コントロール用のサンプル関数
 ms.assetid: d158216e-9a34-48a4-adca-e3c20b5e4487
 keywords:
 - ProcAmp の WDK DirectX va なので、サンプル関数
@@ -9,23 +9,23 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ff345419e8acf59320e7cc4466083c967297b86
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390494"
 ---
-# <a name="sample-functions-for-procamp-control"></a>ProcAmp コントロールのためのサンプル関数
+# <a name="sample-functions-for-procamp-control"></a>ProcAmp コントロール用のサンプル関数
 
 
 ## <span id="ddk_sample_functions_for_procamp_control_gg"></span><span id="DDK_SAMPLE_FUNCTIONS_FOR_PROCAMP_CONTROL_GG"></span>
 
 
-このセクションのサンプル ProcAmp 関数は、ProcAmp コントロール機能を実装する方法を示します。 これらのサンプル関数にマップ、[補正コールバック関数のモーション](motion-compensation-callbacks.md)で定義されている、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 各サンプル関数を実装し、実装の完成に動き補正コード テンプレートを使用できます。 詳細については、[DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)を参照してください。
+このセクションのサンプル ProcAmp 関数は、ProcAmp コントロール機能を実装する方法を示します。 これらのサンプル関数にマップ、[補正コールバック関数のモーション](motion-compensation-callbacks.md)で定義されている、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 各サンプル関数を実装し、実装の完成に動き補正コード テンプレートを使用できます。 詳細については、次を参照してください。 [DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)します。
 
 ### <a name="span-iddeinterlacecontainerdeviceclasssamplefunctionsspanspan-iddeinterlacecontainerdeviceclasssamplefunctionsspanspan-iddeinterlacecontainerdeviceclasssamplefunctionsspandeinterlace-container-device-class-sample-functions"></a><span id="Deinterlace_Container_Device_Class_Sample_Functions"></span><span id="deinterlace_container_device_class_sample_functions"></span><span id="DEINTERLACE_CONTAINER_DEVICE_CLASS_SAMPLE_FUNCTIONS"></span>コンテナーのデバイス クラスのサンプル関数のインター レースを解除します。
 
-次の表にサンプル ProcAmp 制御関数には、メンバー関数の*DXVA\_DeinterlaceContainerDeviceClass* (つまり、呼び出されるインター コンテナーのデバイスを使用して)。 詳細については、[インター レースを解除するコンテナー デバイス クラスを定義する](defining-the-deinterlace-container-device-class.md)と[ProcAmp コントロールを実行すると操作のデインター レース](performing-procamp-control-and-deinterlacing-operations.md)を参照してください。
+次の表にサンプル ProcAmp 制御関数には、メンバー関数の*DXVA\_DeinterlaceContainerDeviceClass* (つまり、呼び出されるインター コンテナーのデバイスを使用して)。 詳細については、次を参照してください。[インター レースを解除するコンテナー デバイス クラスを定義する](defining-the-deinterlace-container-device-class.md)と[ProcAmp コントロールを実行すると操作のデインター レース](performing-procamp-control-and-deinterlacing-operations.md)します。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ ms.locfileid: "56559602"
 
 ### <a name="span-idprocampcontroldeviceclasssamplefunctionsspanspan-idprocampcontroldeviceclasssamplefunctionsspanspan-idprocampcontroldeviceclasssamplefunctionsspanprocamp-control-device-class-sample-functions"></a><span id="ProcAmp_Control_Device_Class_Sample_Functions"></span><span id="procamp_control_device_class_sample_functions"></span><span id="PROCAMP_CONTROL_DEVICE_CLASS_SAMPLE_FUNCTIONS"></span>ProcAmp コントロール デバイス クラスのサンプル関数
 
-次の表にサンプル ProcAmp 制御関数には、メンバー関数の*DXVA\_ProcAmpControlDeviceClass* (つまり、呼び出される ProcAmp コントロール デバイスを使用して)。 詳細については、[ProcAmp コントロール デバイス クラスを定義する](defining-the-procamp-control-device-class.md)を参照してください。
+次の表にサンプル ProcAmp 制御関数には、メンバー関数の*DXVA\_ProcAmpControlDeviceClass* (つまり、呼び出される ProcAmp コントロール デバイスを使用して)。 詳細については、次を参照してください。 [ProcAmp コントロール デバイス クラスを定義する](defining-the-procamp-control-device-class.md)します。
 
 <table>
 <colgroup>

@@ -1,6 +1,6 @@
 ---
-title: WSD ポート モニターの双方向の拡張機能の例
-description: WSD ポート モニターの双方向の拡張機能の例
+title: WSD ポート モニターの双方向拡張例
+description: WSD ポート モニターの双方向拡張例
 ms.assetid: a04f16d5-ae99-4df5-bb55-aef95bd03588
 keywords:
 - 双方向の拡張機能は、WDK プリンター autoconfig をファイルします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0738fc4f183ee29829f3b650e41347c04951d757
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387273"
 ---
-# <a name="bidi-extension-example-for-wsd-port-monitor"></a>WSD ポート モニターの双方向の拡張機能の例
+# <a name="bidi-extension-example-for-wsd-port-monitor"></a>WSD ポート モニターの双方向拡張例
 
 次のコード例では、Devices (WSD) ポート モニターの Web サービスの双方向通信のスキーマを拡張する XML ファイルのサンプルを示します。
 

@@ -1,6 +1,6 @@
 ---
-title: テレビ コネクタとコピー防止のハードウェアのクエリを実行します。
-description: テレビ コネクタとコピー防止のハードウェアのクエリを実行します。
+title: テレビ コネクタおよびコピー防止ハードウェアのクエリ
+description: テレビ コネクタおよびコピー防止ハードウェアのクエリ
 ms.assetid: 7812a3ba-42f1-4872-bfe8-08933802f0c1
 keywords:
 - テレビ コネクタ WDK ビデオのミニポート
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cf18cf5d08535313b9d5bd990595ffb6ae6bb78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392646"
 ---
-# <a name="querying-tv-connector-and-copy-protection-hardware"></a>テレビ コネクタとコピー防止のハードウェアのクエリを実行します。
+# <a name="querying-tv-connector-and-copy-protection-hardware"></a>テレビ コネクタおよびコピー防止ハードウェアのクエリ
 
 
 ## <span id="ddk_querying_tv_connector_and_copy_protection_hardware_gg"></span><span id="DDK_QUERYING_TV_CONNECTOR_AND_COPY_PROTECTION_HARDWARE_GG"></span>

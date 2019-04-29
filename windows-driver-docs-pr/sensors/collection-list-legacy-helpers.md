@@ -1,17 +1,17 @@
 ---
-title: コレクションの一覧のレガシ ヘルパー
+title: コレクション リスト レガシ ヘルパー
 description: コレクションの一覧の従来のヘルパー関数は、センサーを操作する v2 センサー ドライバーによって使用されて\_コレクション\_リストの構造体。
 ms.assetid: AD5AB3EE-5AD7-4576-8E8E-3FEA08930DD7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d1acced6e3386fea3b3d8691becbe88f5f6b8c31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325272"
 ---
-# <a name="collection-list-legacy-helpers"></a>コレクションの一覧のレガシ ヘルパー
+# <a name="collection-list-legacy-helpers"></a>コレクション リスト レガシ ヘルパー
 
 
 コレクションの一覧の従来のヘルパー関数は、のやり取りの v2 センサー ドライバーによって使用されて[**センサー\_コレクション\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)構造体。
@@ -86,7 +86,7 @@ ms.locfileid: "56527463"
 
 -   参照してください[**センサー\_コレクション\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)詳細についてはします。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 |                          |                        |
 |--------------------------|------------------------|

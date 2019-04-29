@@ -1,6 +1,6 @@
 ---
-title: 以下のようと Serenum.sys を使用してください。
-description: 以下のようと Serenum.sys を使用してください。
+title: Serial.sys および Serenum.sys の使用
+description: Serial.sys および Serenum.sys の使用
 ms.assetid: 2dcf22c8-0666-4b58-8fd3-97a4d17eaa2a
 keywords:
 - WDK のシリアル ポート
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35ad74e71e0ee020988d41399fde05674d2e8cfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390916"
 ---
-# <a name="using-serialsys-and-serenumsys"></a>以下のようと Serenum.sys を使用してください。
+# <a name="using-serialsys-and-serenumsys"></a>Serial.sys および Serenum.sys の使用
 
 
 
@@ -39,7 +39,7 @@ Windows 2000 以降では、次のシステム コンポーネントが、16550 
 
     シリアルおよび Serenum の操作に関する詳細については、次のトピックを参照してください。
 
-    -   [コント ローラーのシリアル ドライバーの概要](serial-drivers-overview.md)
+    -   [シリアル コントローラー ドライバーの概要](serial-drivers-overview.md)
     -   [シリアルおよび Serenum の機能](features-of-serial-and-serenum.md)
     -   [シリアル デバイスとドライバーの構成](configuration-of-serial-devices-and-drivers.md)
     -   [Serenum およびシリアルの操作](operation-of-serenum-and-serial.md)
@@ -53,7 +53,7 @@ Windows 2000 以降では、次のシステム コンポーネントが、16550 
 
 -   ポート[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)
 
-    ポート クラスが含まれています*シリアル ポート*と*COM ポート*します。 シリアル ポートは、16550 UART または互換性のあるデバイスのシリアル通信ハードウェア インターフェイスです。 コンピューターで、rs-232 ポートは、DB ~ 9 または電気 UART のシリアル ポートに接続されている DB 25 コネクタでは通常。 COM ポートは、追加の Windows に固有の要件に準拠するシリアル ポートです。 詳細については、[COM ポートの構成](configuration-of-com-ports.md)を参照してください。
+    ポート クラスが含まれています*シリアル ポート*と*COM ポート*します。 シリアル ポートは、16550 UART または互換性のあるデバイスのシリアル通信ハードウェア インターフェイスです。 コンピューターで、rs-232 ポートは、DB ~ 9 または電気 UART のシリアル ポートに接続されている DB 25 コネクタでは通常。 COM ポートは、追加の Windows に固有の要件に準拠するシリアル ポートです。 詳細については、次を参照してください。 [COM ポートの構成](configuration-of-com-ports.md)します。
 
 -   COM ポート[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)
 
@@ -63,7 +63,7 @@ Windows 2000 以降では、次のシステム コンポーネントが、16550 
 
     COM ポートのデータベースを介し COM ポートでの COM ポート番号を使用します。
 
-シリアル デバイスをインストールする方法の詳細については、[シリアル デバイスのインストール](installing-serial-devices.md)を参照してください。
+シリアル デバイスをインストールする方法の詳細については、次を参照してください。[シリアル デバイスのインストール](installing-serial-devices.md)します。
 
 シリアル デバイスの高度な操作については、Microsoft Windows SDK の Windows ベースのサービスでサポートされている通信リソースに関する情報を参照してください。
 

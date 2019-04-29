@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WAN_CO_GET_LINK_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 9700321d6e839163462b7b06d9dacc00be4f23df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390663"
 ---
 # <a name="oidwancogetlinkinfo"></a>OID\_WAN\_CO\_取得\_リンク\_情報
 
@@ -66,7 +66,7 @@ OID\_WAN\_CO\_取得\_リンク\_OID の情報は、PPP フレーム (VC) の仮
 
 指定できる値**SendFramingBits**と**RecvFramingBits** OID への応答で返されるドライバーが含まれて\_WAN\_CO\_取得\_リンク\_INFO であるクエリ。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

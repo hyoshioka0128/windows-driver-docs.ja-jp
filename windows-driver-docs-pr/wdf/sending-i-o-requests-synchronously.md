@@ -1,6 +1,6 @@
 ---
-title: I/O 要求を同期的に送信します。
-description: I/O 要求を同期的に送信します。
+title: I/O 要求の同期送信
+description: I/O 要求の同期送信
 ms.assetid: e7e9f2d2-afc5-439b-8a04-72d117114fae
 keywords:
 - 一般的な I/O ターゲット WDK KMDF への I/O 要求を送信します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c2df1beb7b971cea9ca326e29c1d9afb2f632df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325144"
 ---
-# <a name="sending-io-requests-synchronously"></a>I/O 要求を同期的に送信します。
+# <a name="sending-io-requests-synchronously"></a>I/O 要求の同期送信
 
 
 

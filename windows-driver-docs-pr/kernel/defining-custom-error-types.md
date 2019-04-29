@@ -1,6 +1,6 @@
 ---
-title: カスタム エラーの種類を定義します。
-description: カスタム エラーの種類を定義します。
+title: カスタム エラーの種類の定義
+description: カスタム エラーの種類の定義
 ms.assetid: 1106b520-8737-421b-bee5-841220862b78
 keywords:
 - カスタム エラー メッセージの WDK カーネル
@@ -17,13 +17,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1841930f086c7081e0422de724fce11150b08d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388221"
 ---
-# <a name="defining-custom-error-types"></a>カスタム エラーの種類を定義します。
+# <a name="defining-custom-error-types"></a>カスタム エラーの種類の定義
 
 
 
@@ -33,11 +33,11 @@ ms.locfileid: "56538003"
 
 カスタム エラー メッセージは、ドライバーをサポートするには、次の手順に従います。
 
-1.  カスタムの IO を指定するメッセージのテキスト ファイルを作成\_ERR\_*XXX*値と対応するエラー メッセージ。 詳細については、[エラー メッセージのテキスト ファイルを作成する](#ddk-creating-the-error-message-text-file-kg)を参照してください。
+1.  カスタムの IO を指定するメッセージのテキスト ファイルを作成\_ERR\_*XXX*値と対応するエラー メッセージ。 詳細については、次を参照してください。[エラー メッセージのテキスト ファイルを作成する](#ddk-creating-the-error-message-text-file-kg)します。
 
-2.  リソースが、エラー メッセージのテキスト ファイルをコンパイルし、ドライバーのイメージにリソースをアタッチします。 詳細については、[エラー メッセージのテキスト ファイルをコンパイルする](#ddk-compiling-the-error-message-text-file-kg)を参照してください。
+2.  リソースが、エラー メッセージのテキスト ファイルをコンパイルし、ドライバーのイメージにリソースをアタッチします。 詳細については、次を参照してください。[エラー メッセージのテキスト ファイルをコンパイルする](#ddk-compiling-the-error-message-text-file-kg)します。
 
-3.  エラー メッセージが含まれていると、ドライバーのイメージを登録します。 詳細については、[エラー メッセージのソースとして登録する](registering-as-a-source-of-error-messages.md)を参照してください。
+3.  エラー メッセージが含まれていると、ドライバーのイメージを登録します。 詳細については、次を参照してください。[エラー メッセージのソースとして登録する](registering-as-a-source-of-error-messages.md)します。
 
 ### <a href="" id="ddk-creating-the-error-message-text-file-kg"></a>エラー メッセージのテキスト ファイルの作成
 
@@ -144,7 +144,7 @@ mc filename.mc
 
 メッセージ コンパイラの詳細については、Microsoft Windows SDK に記載されています。
 
-リソース コンパイラでは、リソース スクリプトをドライバーのイメージをアタッチできるリソース ファイルに変換します。 ドライバーをビルドするビルド ユーティリティを使用する場合は、リソース スクリプトをリソース ファイルに変換して、ドライバーのソースの変数で、リソース スクリプトの名前を含むだけで、ドライバーのイメージに接続されていることを確認の操作を行うことができます。 リソース コンパイラの詳細については、Windows SDK のドキュメントを参照してください。 ビルド ユーティリティを使用して、ドライバーをビルドする方法については、[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)を参照してください。
+リソース コンパイラでは、リソース スクリプトをドライバーのイメージをアタッチできるリソース ファイルに変換します。 ドライバーをビルドするビルド ユーティリティを使用する場合は、リソース スクリプトをリソース ファイルに変換して、ドライバーのソースの変数で、リソース スクリプトの名前を含むだけで、ドライバーのイメージに接続されていることを確認の操作を行うことができます。 リソース コンパイラの詳細については、Windows SDK のドキュメントを参照してください。 ビルド ユーティリティを使用して、ドライバーをビルドする方法については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
 
  

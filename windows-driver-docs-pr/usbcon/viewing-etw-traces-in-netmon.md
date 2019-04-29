@@ -1,16 +1,16 @@
 ---
-Description: You can view USB ETW event traces using Microsoft Network Monitor, also referred to as Netmon.
-title: Netmon で USB の ETW トレース
+Description: Netmon とも呼ばれます、Microsoft ネットワーク モニターを使用して USB ETW イベントのトレースを表示することができます。
+title: Netmon での USB ETW トレース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb3a346ae91e7fdc2013564592a12546024e58d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389197"
 ---
-# <a name="usb-etw-traces-in-netmon"></a>Netmon で USB の ETW トレース
+# <a name="usb-etw-traces-in-netmon"></a>Netmon での USB ETW トレース
 
 
 Netmon とも呼ばれます、Microsoft ネットワーク モニターを使用して USB ETW イベントのトレースを表示することができます。 ネットワーク モニターでは、トレースを自動的に解析しません。 USB ETW パーサーが必要です。 USB ETW パーサーはテキスト ファイル、ネットワーク モニター パーサーの言語 (NPL) で記述された USB ETW イベントのトレースの構造を記述します。 また、パーサーは、USB に固有の列とフィルターを定義します。 これらのパーサーは、Netmon USB ETW トレースを分析するための最適なツールを作成します。

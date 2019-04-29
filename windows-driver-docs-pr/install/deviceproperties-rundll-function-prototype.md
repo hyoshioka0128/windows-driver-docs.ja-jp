@@ -1,6 +1,6 @@
 ---
-title: DeviceProperties_RunDLL 関数プロトタイプ
-description: DeviceProperties_RunDLL 関数プロトタイプ
+title: DeviceProperties_RunDLL 関数のプロトタイプ
+description: DeviceProperties_RunDLL 関数のプロトタイプ
 ms.assetid: 15c93f6d-56e7-4872-a94b-0c948e2cd76f
 keywords:
 - デバイスのプロパティ ダイアログ ボックスの WDK デバイスのインストール
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c761d8a554267920e29c8f53647ff0637d85dee1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389559"
 ---
-# <a name="devicepropertiesrundll-function-prototype"></a>DeviceProperties_RunDLL 関数プロトタイプ
+# <a name="devicepropertiesrundll-function-prototype"></a>DeviceProperties_RunDLL 関数のプロトタイプ
 
 
 DeviceProperties_RunDLL 関数では、ローカルまたはリモート コンピューターにインストールされている指定されたデバイスのデバイスのプロパティ ダイアログ ボックスが開きます。

@@ -1,6 +1,6 @@
 ---
-title: ドライバー管理のテクスチャ
-description: ドライバー管理のテクスチャ
+title: ドライバー管理対象テクスチャ
+description: ドライバー管理対象テクスチャ
 ms.assetid: 7ec56b86-dc29-41c3-91f4-2a30e9116b61
 keywords:
 - テクスチャ管理 WDK Direct3D、ドライバー管理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 964d58b0ef90b9287513ddd21712cbee552e0d3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391505"
 ---
-# <a name="driver-managed-textures"></a>ドライバー管理のテクスチャ
+# <a name="driver-managed-textures"></a>ドライバー管理対象テクスチャ
 
 
 ## <span id="ddk_driver_managed_textures_gg"></span><span id="DDK_DRIVER_MANAGED_TEXTURES_GG"></span>

@@ -1,17 +1,17 @@
 ---
-title: ホット スポット認証のプロビジョニング
-description: ホット スポット認証のプロビジョニング
+title: ホットスポット認証のプロビジョニング
+description: ホットスポット認証のプロビジョニング
 ms.assetid: bfb4e1ec-9887-4b25-bfcc-be642b1a0101
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7c4492aa45e671f3ab9edc36c43169f2463bb01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391038"
 ---
-# <a name="provisioning-for-hotspot-authentication"></a>ホット スポット認証のプロビジョニング
+# <a name="provisioning-for-hotspot-authentication"></a>ホットスポット認証のプロビジョニング
 
 
 ホット スポット認証プロセスに参加するアプリでは、最初に Wi-fi ホット スポットの 1 つまたは複数のプロファイルを作成があります。 ここで説明されているエージェントのプロビジョニングのインターフェイスを使用してでは[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)します。 ホット スポットがオープン認証を使う必要があるあり、含める必要があります、 **HotspotProfile**要素。 プロビジョニング ファイルの次のサンプルは、SSID をアプリに関連付ける方法を示しています。

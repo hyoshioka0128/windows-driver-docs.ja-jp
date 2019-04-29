@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b584d66e13dcffd8ac966aaaee287f0351ac630
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391776"
 ---
 # <a name="fsctlquerypersistentvolumestate-control-code"></a>FSCTL\_クエリ\_持続\_ボリューム\_状態制御コード
 
@@ -28,7 +28,7 @@ ms.locfileid: "56557468"
 
 この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ファイル システム ボリュームのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。

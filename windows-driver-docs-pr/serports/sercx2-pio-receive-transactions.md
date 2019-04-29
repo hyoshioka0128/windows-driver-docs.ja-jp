@@ -1,17 +1,17 @@
 ---
-title: SerCx2 PIO 受信トランザクション
+title: SerCx2 PIO-受信トランザクション
 description: SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを受信します。
 ms.assetid: 00C43A55-ACAF-4AB6-BDFB-F3D9350C4536
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f56e30cdb94ac38c1f2ac7e293c31ea405a9e9e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387974"
 ---
-# <a name="sercx2-pio-receive-transactions"></a>SerCx2 PIO 受信トランザクション
+# <a name="sercx2-pio-receive-transactions"></a>SerCx2 PIO-受信トランザクション
 
 
 SerCx2 すべてシリアル コント ローラーを必要とドライバーのサポートを実装するトランザクションの使用が I/O (PIO) をプログラムを受信します。 SerCx2 PIO 受信トランザクションを開始するには、ドライバーが呼び出す[ *EvtSerCx2PioReceiveReadBuffer* ](https://msdn.microsoft.com/library/windows/hardware/dn265214)イベント コールバック関数と、読み取りバッファーのパラメーターとして提供します。
@@ -54,7 +54,7 @@ SerCx2 がコント ローラーのシリアル ドライバーを呼び出す�
 
 ときに、 *EvtSerCx2PioReceiveReadBuffer*以上データはすぐに読み取りが可能な受信 FIFO から SerCx2 後、シリアル コント ローラーで、まで PIO 受信トランザクションを完了できませんので終了を呼び出す多くのデータを受信します。 この場合、SerCx2 を呼び出す、 [ *EvtSerCx2PioReceiveEnableReadyNotification* ](https://msdn.microsoft.com/library/windows/hardware/dn265212)準備完了の通知を有効にするイベントのコールバック関数。 通常、この関数には、1 つまたは複数のバイトのデータは FIFO の受信から読み取り可能なときにトリガーされるように、割り込みが有効にします。 この通知が有効になっている場合にのみシリアル コント ローラー ドライバーが呼び出す、 [ **SerCx2PioReceiveReady** ](https://msdn.microsoft.com/library/windows/hardware/dn265266)受信 FIFO は空でないことに、ドライバーが検出されたときに、SerCx2 を通知するメソッド。 SerCx2 の呼び出しでこの通知に応答して、 *EvtSerCx2PioReceiveReadBuffer*新しく受信したデータを読み取る関数。
 
-さらに SerCx2 では、準備完了の通知を使用して、PIO 受信トランザクションとして処理されます。 読み取り要求の処理中にタイムアウトを効率的に管理します。 これらのタイムアウトの詳細については、[**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614)を参照してください。
+さらに SerCx2 では、準備完了の通知を使用して、PIO 受信トランザクションとして処理されます。 読み取り要求の処理中にタイムアウトを効率的に管理します。 これらのタイムアウトの詳細については、次を参照してください。 [**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614)します。
 
 SerCx2 を呼び出して、読み取り要求がタイムアウトになるかが取り消されたときに、準備完了の通知が有効である場合、 [ *EvtSerCx2PioReceiveCancelReadyNotification* ](https://msdn.microsoft.com/library/windows/hardware/dn265210)をキャンセルするイベントのコールバック関数、保留中通知します。 返すかどうかはこの関数は、保留中の通知を正常にキャンセル、 **TRUE**します。 戻り値**TRUE**シリアル コント ローラー ドライバーが呼び出すことが保証されます[ **SerCx2PioReceiveReady**](https://msdn.microsoft.com/library/windows/hardware/dn265266)します。 戻り値**FALSE**コント ローラー ドライバーが既に呼び出されてかがすぐに呼び出すことを示します**SerCx2PioReceiveReady**します。
 

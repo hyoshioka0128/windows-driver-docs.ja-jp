@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3e5319a69de6c4e20459377ac5d8f527daeab5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389267"
 ---
 # <a name="kspropertybdasampletime"></a>KSPROPERTY\_BDA\_サンプル\_時間
 
@@ -54,7 +54,7 @@ ms.locfileid: "56530257"
 <td><p>〇</p></td>
 <td><p>Pin またはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -72,7 +72,7 @@ ms.locfileid: "56530257"
 
 ドライバーは、最近完了したサンプル期間の時刻の値を報告できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

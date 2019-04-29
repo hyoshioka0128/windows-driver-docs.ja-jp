@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0899597957116b4051d05560aac01aa6104b19ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390194"
 ---
 # <a name="avcfunctionrelease"></a>AVC\_関数\_リリース
 
@@ -99,7 +99,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 これは、IRQL で呼び出す必要がある = パッシブ\_レベル。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177), [**AVC\_PIN\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff554187), [**AVC\_FUNCTION**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
 

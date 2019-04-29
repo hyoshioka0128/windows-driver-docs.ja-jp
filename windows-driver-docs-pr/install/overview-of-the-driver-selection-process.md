@@ -5,11 +5,11 @@ ms.assetid: 120ab9f9-6ac5-4b76-bee1-2e975d0c38f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d154e17f867200696eb190a175b257daa70058
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388302"
 ---
 # <a name="overview-of-the-driver-selection-process"></a>ドライバーの選択プロセスの概要
 
@@ -28,13 +28,13 @@ Windows デバイスと一致するドライバーの特定の場所を検索し
 
     詳細については、 *TargetOSVersion*の装飾を参照してください[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)します。
 
-Windows のドライバーの一致を検索する場所の詳細については、[ドライバーが Windows 検索](where-setup-searches-for-drivers.md)を参照してください。
+Windows のドライバーの一致を検索する場所の詳細については、次を参照してください。[ドライバーが Windows 検索](where-setup-searches-for-drivers.md)します。
 
 ### <a href="" id="how-setup-ranks-drivers"></a> Windows ドライバーをランク付けする方法
 
 Windows では、一致するすべてのドライバーの一覧を作成し、各ドライバーのランクを割り当てます。 Windows より大きいまたは 0 以下である整数値を持つ各ドライバーのランクを表します。
 
-順位付けのプロセスの詳細については、[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)を参照してください。
+順位付けのプロセスの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)します。
 
 Windows Vista 以降、Windows をランク付けしてドライバーをドライバーがデジタル署名されているかどうかに基づいています。 Windows には、次のようにデジタル署名に基づいたドライバーが順位付けされます。
 

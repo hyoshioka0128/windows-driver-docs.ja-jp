@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4d8a855c0cfc79cfd2ce46480ce8ff6c2fcaf01
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389488"
 ---
 # <a name="preprocessor-directives"></a>プリプロセッサ ディレクティブ
 
@@ -94,7 +94,7 @@ GPD ファイルは、GPD ファイル内のセクションの条件付きの解
 
 使用して定義されているすべてのシンボル\***定義**を使用して明示的に未定義まで定義\***定義を解除**します。
 
-\* **Include**ディレクティブでは、追加の GPD ファイルの名前を指定できます。 詳細については、[複数 GPD ファイルで、ミニドライバーを使用して](using-multiple-gpd-files-in-a-minidriver.md)を参照してください。
+\* **Include**ディレクティブでは、追加の GPD ファイルの名前を指定できます。 詳細については、次を参照してください。[複数 GPD ファイルで、ミニドライバーを使用して](using-multiple-gpd-files-in-a-minidriver.md)します。
 
 なお、 \*IgnoreBlock GPD エントリには影響しません、プリプロセッサ ディレクティブ GPD パーサーの前に、プリプロセッサが実行されるためです。
 

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CIPHER_KEY_TKIP_KEY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b55f119ab3565dfec8b1b2a6373fba2069a549
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391005"
 ---
 # <a name="wditlvcipherkeytkipkey"></a>WDI\_TLV\_暗号\_キー\_TKIP\_キー
 
@@ -31,7 +31,7 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 ## <a name="values"></a>値
 
 
-| 種類      | 説明                                                      |
+| 型      | 説明                                                      |
 |-----------|------------------------------------------------------------------|
 | UINT8\[\] | [Tkip] キー マテリアルを指定する UINT8 要素の配列。 |
 

@@ -1,6 +1,6 @@
 ---
-title: WMI インスタンス名を定義します。
-description: WMI インスタンス名を定義します。
+title: WMI インスタンス名の定義
+description: WMI インスタンス名の定義
 ms.assetid: 0f91710a-7bd2-462a-b677-6dd32160a861
 keywords:
 - WMI の WDK カーネルでは、イベント ブロック
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2078674b8482d7e1b07032eb57faf3f2a6c43747
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388219"
 ---
-# <a name="defining-wmi-instance-names"></a>WMI インスタンス名を定義します。
+# <a name="defining-wmi-instance-names"></a>WMI インスタンス名の定義
 
 
 
@@ -53,7 +53,7 @@ ms.locfileid: "56550090"
 
     ドライバーは、動的なインスタンスの名前を使用するデータ ブロックの Irp を処理するために WMI ライブラリ ルーチンを使用できません。
 
-ドライバーは、ブロックが静的または動的なインスタンス名を使用し、静的インスタンスの型、名前、設定や WMIREG をクリアするかどうかを示します\_フラグ\_*XXX*で、 [ **WMIREGGUID** ](https://msdn.microsoft.com/library/windows/hardware/ff565827)または[ **WMIGUIDREGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff565811)構成ブロックを登録するときを WMI に渡されます。 詳細については、[WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)を参照してください。
+ドライバーは、ブロックが静的または動的なインスタンス名を使用し、静的インスタンスの型、名前、設定や WMIREG をクリアするかどうかを示します\_フラグ\_*XXX*で、 [ **WMIREGGUID** ](https://msdn.microsoft.com/library/windows/hardware/ff565827)または[ **WMIGUIDREGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff565811)構成ブロックを登録するときを WMI に渡されます。 詳細については、次を参照してください。 [WMI データ プロバイダーとして登録する](registering-as-a-wmi-data-provider.md)します。
 
  
 

@@ -1,17 +1,17 @@
 ---
-title: SerCx2 カスタム受信トランザクション
+title: SerCx2 カスタム-受信トランザクション
 description: シリアル コント ローラーの一部のハードウェア シリアル コント ローラーからデータを読み取る PIO またはシステム DMA 以外のデータ転送メカニズムを実装できます。
 ms.assetid: 29849A8C-6656-444C-BE91-405A4BA2D5B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1f59361bf58c86feda6017300b8a0aed023ce5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388017"
 ---
-# <a name="sercx2-custom-receive-transactions"></a>SerCx2 カスタム受信トランザクション
+# <a name="sercx2-custom-receive-transactions"></a>SerCx2 カスタム-受信トランザクション
 
 
 シリアル コント ローラーの一部のハードウェア シリアル コント ローラーからデータを読み取る PIO またはシステム DMA 以外のデータ転送メカニズムを実装できます。 シリアル コント ローラー ドライバーがサポートできるカスタム受信トランザクションがこのデータ転送メカニズム SerCx2 で使用できるようにします。
@@ -55,7 +55,7 @@ SerCx2 がコント ローラーのシリアル ドライバーを呼び出す�
 
 オプションとして、シリアル コント ローラー ドライバーを実装できる、 [ *EvtSerCx2CustomReceiveTransactionEnableNewDataNotification* ](https://msdn.microsoft.com/library/windows/hardware/dn265201)イベント コールバック関数。 実装されている場合、SerCx2 はこの関数を使用して、カスタムの受信トランザクションとして処理される読み取り要求の処理中に発生する間隔のタイムアウトを効率的に管理します。
 
-間隔、タイムアウトは、シリアル コント ローラーで受信した 2 つの連続するバイトまでの間隔は、クライアントが指定した最大時間を超えた場合に発生します。 SerCx2 に周辺機器のドライバーが読み取り要求を送信すると後に、少なくとも 1 バイトのデータを逐次的に接続されている周辺機器のデバイスから受信した後までの間隔、タイムアウトは発生しません。 到着までの時間は、読み取り要求と周辺機器のデバイスからのデータの最初のバイトの受信、最初のバイトを受信した後、残りの読み取り要求のデータを受信するために必要な時間よりも大幅に長くする場合可能性があります。 詳細については、[**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614)を参照してください。
+間隔、タイムアウトは、シリアル コント ローラーで受信した 2 つの連続するバイトまでの間隔は、クライアントが指定した最大時間を超えた場合に発生します。 SerCx2 に周辺機器のドライバーが読み取り要求を送信すると後に、少なくとも 1 バイトのデータを逐次的に接続されている周辺機器のデバイスから受信した後までの間隔、タイムアウトは発生しません。 到着までの時間は、読み取り要求と周辺機器のデバイスからのデータの最初のバイトの受信、最初のバイトを受信した後、残りの読み取り要求のデータを受信するために必要な時間よりも大幅に長くする場合可能性があります。 詳細については、次を参照してください。 [**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614)します。
 
 SerCx2 呼び出し、 *EvtSerCx2CustomReceiveTransactionEnableNewDataNotification*関数を実装すると、新しいデータ通知を有効にする場合。 この通知が有効になりシリアル コント ローラーは、周辺機器のデバイスから新しいデータの 1 つまたは複数のバイトを受信したり、既にデータがある場合、FIFO の受信、シリアル コント ローラーのドライバーを呼び出す必要があります、 [ **SerCx2CustomReceiveTransactionNewDataNotification** ](https://msdn.microsoft.com/library/windows/hardware/dn265253) SerCx2 に通知するメソッド。
 
@@ -75,7 +75,7 @@ SerCx2 は、保留中の新しいデータに関する通知を明示的に取�
 
 シリアル コント ローラー ドライバーがなど、メソッドを使用しない必要があります[ **WdfRequestRetrieveOutputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550018)読み取り要求のデータ バッファーにアクセスします。 代わりに、ドライバーを使用する必要があります、 *Mdl*、*オフセット*、および*長さ*に渡されるパラメーター値、 *EvtSerCx2CustomReceiveTransactionStart*このバッファーにアクセスする関数。
 
-中に、カスタムのトランザクションの受信、ドライバーは、要求オブジェクトに関連付けられているコンテキストに、トランザクションに関する情報を格納する必要があります。 そうである場合、ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベント コールバック関数を呼び出すことができます、 [ **WdfDeviceInitSetRequestAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff546786)メソッド要求オブジェクトに使用する属性を設定します。 これらの属性には、要求コンテキストを使用する名前と割り当てのサイズが含まれます。 この呼び出しで指定された要求属性は、ドライバーをへの呼び出しで指定する要求属性に一致する必要があります、 [ **SerCx2InitializeDevice** ](https://msdn.microsoft.com/library/windows/hardware/dn265261)メソッド。 これらの属性がで指定された、 **RequestAttributes**のメンバー、 **SERCX2\_CONFIG**ドライバーに渡します構造**SerCx2InitializeDevice**. 詳細については、[ **SERCX2\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn265310)を参照してください。
+中に、カスタムのトランザクションの受信、ドライバーは、要求オブジェクトに関連付けられているコンテキストに、トランザクションに関する情報を格納する必要があります。 そうである場合、ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベント コールバック関数を呼び出すことができます、 [ **WdfDeviceInitSetRequestAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff546786)メソッド要求オブジェクトに使用する属性を設定します。 これらの属性には、要求コンテキストを使用する名前と割り当てのサイズが含まれます。 この呼び出しで指定された要求属性は、ドライバーをへの呼び出しで指定する要求属性に一致する必要があります、 [ **SerCx2InitializeDevice** ](https://msdn.microsoft.com/library/windows/hardware/dn265261)メソッド。 これらの属性がで指定された、 **RequestAttributes**のメンバー、 **SERCX2\_CONFIG**ドライバーに渡します構造**SerCx2InitializeDevice**. 詳細については、次を参照してください。 [ **SERCX2\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn265310)します。
 
 開始時シリアル コント ローラー ドライバーが受信した読み取り要求をカスタムのトランザクションの受信、ドライバー、フレームワークによって割り当てられている要求コンテキストが初期化されていません。 ドライバー呼び出す必要があります、ベスト プラクティスとして、 [ **RtlZeroMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff563610)ルーチンをすべてゼロには、この要求コンテキストを初期化します。
 

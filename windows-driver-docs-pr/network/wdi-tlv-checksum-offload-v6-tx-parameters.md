@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CHECKSUM_OFFLOAD_V6_TX_PARAMETERS (0xDC) ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a9d6155ad7cc287e43288a5d79b66ceef8272945
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391021"
 ---
 # <a name="wditlvchecksumoffloadv6txparameters-0xdc"></a>WDI\_TLV\_チェックサム\_オフロード\_V6\_TX\_パラメーター (0xDC)
 
@@ -40,7 +40,7 @@ WDI\_TLV\_チェックサム\_オフロード\_V6\_TX\_パラメーターは、I
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>

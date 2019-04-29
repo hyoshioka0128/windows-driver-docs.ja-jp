@@ -1,5 +1,5 @@
 ---
-title: ビデオのミニポート ドライバーでのコールバック関数の登録
+title: ビデオ ミニポート ドライバーへのコールバック関数の登録
 description: ビデオのミニポート ドライバーでコールバック関数を個別に登録
 ms.assetid: 18469b9b-aca4-4225-97d0-8cafe64b8e1f
 keywords:
@@ -12,13 +12,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: e3c58de521eb796107d9e6fa714bb124d6008435
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325052"
 ---
-# <a name="registering-callback-functions-in-video-miniport-drivers"></a>ビデオのミニポート ドライバーでのコールバック関数の登録
+# <a name="registering-callback-functions-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーへのコールバック関数の登録
 
 特定のインスタンスでベンダーから提供されたビデオのミニポート ドライバーとシステム提供のビデオ ポート ドライバー間の通信は、次のように処理されます。
 

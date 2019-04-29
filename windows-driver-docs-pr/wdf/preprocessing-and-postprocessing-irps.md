@@ -1,6 +1,6 @@
 ---
-title: 前処理と後処理 Irp
-description: 前処理と後処理 Irp
+title: IRP の前処理と後処理
+description: IRP の前処理と後処理
 ms.assetid: a0e14ae6-a06e-4c24-8b64-b56f485cf9ff
 keywords:
 - Irp WDK KMDF の前処理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d01f64a404e9698a37009c69ef2506674cb8542
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390053"
 ---
-# <a name="preprocessing-and-postprocessing-irps"></a>前処理と後処理 Irp
+# <a name="preprocessing-and-postprocessing-irps"></a>IRP の前処理と後処理
 
 
 \[KMDF にのみ適用されます。\]

@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f74f3b03f0573d6d42199606d4abb49887d96881
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392653"
 ---
 # <a name="d3dkmttdrdbgctrlescape-structure"></a>D3DKMT\_TDRDBGCTRL\_エスケープ構造体
 
@@ -38,7 +38,7 @@ typedef struct _D3DKMT_TDRDBGCTRL_ESCAPE {
 } D3DKMT_TDRDBGCTRL_ESCAPE;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **TdrControl**

@@ -1,5 +1,5 @@
 ---
-title: カーネル モード デバッグの設定
+title: カーネルモード デバッグの設定
 description: このセクションでは、カーネル モードのデバッグを設定する方法について説明します。
 ms.assetid: 268DF246-46AA-4F4E-BCBB-FCA37A3C0353
 keywords:
@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ece571f71a33e77daefc03a0ae04e4aaaeb7d140
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325920"
 ---
 # <a name="span-iddebuggersettingupkernel-modedebugginginwindbgcdborntsdspansetting-up-kernel-mode-debugging"></a><span id="debugger.setting_up_kernel-mode_debugging_in_windbg__cdb__or_ntsd"></span>カーネル モード デバッグの設定
 
@@ -20,10 +20,10 @@ ms.locfileid: "56550026"
 このセクションでは、カーネル モードのデバッグを設定する方法について説明します。
 
 >[!TIP]
->ネットワーク (KDNET) デバッグを使用して kdnet ユーティリティを使用して自動的に構成することをお勧めします。 詳細については、[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)を参照してください。
+>ネットワーク (KDNET) デバッグを使用して kdnet ユーティリティを使用して自動的に構成することをお勧めします。 詳細については、次を参照してください。[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
    
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 -   [デバッグが自動的に KDNET ネットワーク カーネルの設定](setting-up-a-network-debugging-connection-automatically.md)
 -   [KDNET のネットワーク カーネル デバッグを手動での設定](setting-up-a-network-debugging-connection.md)

@@ -1,6 +1,6 @@
 ---
-title: Edge のフィルター処理のコマンド (バイト)
-description: Edge のフィルター処理のコマンド (バイト)
+title: エッジ フィルター処理コマンドのバイト
+description: エッジ フィルター処理コマンドのバイト
 ms.assetid: eefb580a-133d-4c9e-a8d2-2d114107e2ea
 keywords:
 - マクロ ブロック WDK DirectX va なので、フィルター コントロールを非ブロック化
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 933880b385a3bf0098e0d90ea6d64a025b926ea4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391503"
 ---
-# <a name="edge-filtering-command-bytes"></a>Edge のフィルター処理のコマンド (バイト)
+# <a name="edge-filtering-command-bytes"></a>エッジ フィルター処理コマンドのバイト
 
 
 ## <span id="ddk_edge_filtering_command_bytes_gg"></span><span id="DDK_EDGE_FILTERING_COMMAND_BYTES_GG"></span>

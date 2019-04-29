@@ -1,17 +1,17 @@
 ---
-title: SINCOS 命令の形式
-description: SINCOS 命令の形式
+title: SINCOS 命令形式
+description: SINCOS 命令形式
 ms.assetid: df9b51ef-5a9f-4222-a0be-a40d5b577f9a
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e21722699b161c6a5f365747e980fc5df4f0726
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391232"
 ---
-# <a name="sincos-instruction-format"></a>SINCOS 命令の形式
+# <a name="sincos-instruction-format"></a>SINCOS 命令形式
 
 
 ## <span id="ddk_sincos_instruction_gg"></span><span id="DDK_SINCOS_INSTRUCTION_GG"></span>

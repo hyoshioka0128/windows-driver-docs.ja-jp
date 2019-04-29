@@ -1,6 +1,6 @@
 ---
-title: Framework のレジストリ キー オブジェクトを使用します。
-description: Framework のレジストリ キー オブジェクトを使用します。
+title: フレームワーク レジストリ キー オブジェクトの使用
+description: フレームワーク レジストリ キー オブジェクトの使用
 ms.assetid: 2236b4e1-2e17-4e59-b12e-70fff5fd7513
 keywords:
 - レジストリ WDK KMDF
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c21a9983f14ab9992d7001e1698b50ab677a8bfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327210"
 ---
-# <a name="using-framework-registry-key-objects"></a>Framework のレジストリ キー オブジェクトを使用します。
+# <a name="using-framework-registry-key-objects"></a>フレームワーク レジストリ キー オブジェクトの使用
 
 
 フレームワーク ベースのドライバーを使用して、レジストリにアクセス*framework レジストリ キー オブジェクト*します。 レジストリ キー オブジェクトを作成し、開き、レジストリ キーを閉じるには、ドライバーを有効にするメソッドを定義します。追加し、削除レジストリ値です。読み取りまたはレジストリ値に割り当てられているデータの書き込み。

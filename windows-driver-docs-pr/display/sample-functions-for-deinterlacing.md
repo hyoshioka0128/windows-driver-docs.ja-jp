@@ -1,29 +1,29 @@
 ---
-title: デインター レースのサンプル関数
-description: デインター レースのサンプル関数
+title: デインターレースのサンプル関数
+description: デインターレースのサンプル関数
 ms.assetid: a91c0267-7a3e-4206-8680-6e87778a329d
 keywords:
 - デインター レースの WDK DirectX va なので、サンプル関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68b58482bb0dbaa30635568a46e4dc58cfb17205
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390531"
 ---
-# <a name="sample-functions-for-deinterlacing"></a>デインター レースのサンプル関数
+# <a name="sample-functions-for-deinterlacing"></a>デインターレースのサンプル関数
 
 
 ## <span id="ddk_sample_functions_for_deinterlacing_gg"></span><span id="DDK_SAMPLE_FUNCTIONS_FOR_DEINTERLACING_GG"></span>
 
 
-このセクションのサンプル デインター レース関数は、デインター レース、フレーム レートの変換機能を実装する方法を示します。 サンプル関数にマップ、[補正コールバック関数のモーション](motion-compensation-callbacks.md)で定義されている、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 各サンプル関数を実装し、実装の完成に動き補正コード テンプレートを使用できます。 詳細については、[DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)を参照してください。
+このセクションのサンプル デインター レース関数は、デインター レース、フレーム レートの変換機能を実装する方法を示します。 サンプル関数にマップ、[補正コールバック関数のモーション](motion-compensation-callbacks.md)で定義されている、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 各サンプル関数を実装し、実装の完成に動き補正コード テンプレートを使用できます。 詳細については、次を参照してください。 [DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)します。
 
 ### <a name="span-iddeinterlacecontainerdeviceclasssamplefunctionsspanspan-iddeinterlacecontainerdeviceclasssamplefunctionsspanspan-iddeinterlacecontainerdeviceclasssamplefunctionsspandeinterlace-container-device-class-sample-functions"></a><span id="Deinterlace_Container_Device_Class_Sample_Functions"></span><span id="deinterlace_container_device_class_sample_functions"></span><span id="DEINTERLACE_CONTAINER_DEVICE_CLASS_SAMPLE_FUNCTIONS"></span>コンテナーのデバイス クラスのサンプル関数のインター レースを解除します。
 
-次の表にサンプルのインター レース解除関数は、メンバー関数の*DXVA\_DeinterlaceContainerDeviceClass* (つまり、それらと呼ばれるインター コンテナーのデバイスを使用して)。 詳細については、[インター レースを解除するコンテナー デバイス クラスを定義する](defining-the-deinterlace-container-device-class.md)と[ProcAmp コントロールを実行すると操作のデインター レース](performing-procamp-control-and-deinterlacing-operations.md)を参照してください。
+次の表にサンプルのインター レース解除関数は、メンバー関数の*DXVA\_DeinterlaceContainerDeviceClass* (つまり、それらと呼ばれるインター コンテナーのデバイスを使用して)。 詳細については、次を参照してください。[インター レースを解除するコンテナー デバイス クラスを定義する](defining-the-deinterlace-container-device-class.md)と[ProcAmp コントロールを実行すると操作のデインター レース](performing-procamp-control-and-deinterlacing-operations.md)します。
 
 <table>
 <colgroup>
@@ -52,7 +52,7 @@ ms.locfileid: "56558900"
 
 ### <a name="span-iddeinterlacebobdeviceclasssamplefunctionsspanspan-iddeinterlacebobdeviceclasssamplefunctionsspanspan-iddeinterlacebobdeviceclasssamplefunctionsspandeinterlace-bob-device-class-sample-functions"></a><span id="Deinterlace_Bob_Device_Class_Sample_Functions"></span><span id="deinterlace_bob_device_class_sample_functions"></span><span id="DEINTERLACE_BOB_DEVICE_CLASS_SAMPLE_FUNCTIONS"></span>Bob のデバイス クラスのサンプル関数のインター レースを解除します。
 
-次の表にサンプルのインター レース解除関数は、メンバー関数の*DXVA\_DeinterlaceBobDeviceClass* (つまり、それらと呼ばれるインター bob のデバイスを使用して)。 詳細については、[インター レースを解除する Bob デバイス クラスを定義する](defining-the-deinterlace-bob-device-class.md)を参照してください。
+次の表にサンプルのインター レース解除関数は、メンバー関数の*DXVA\_DeinterlaceBobDeviceClass* (つまり、それらと呼ばれるインター bob のデバイスを使用して)。 詳細については、次を参照してください。[インター レースを解除する Bob デバイス クラスを定義する](defining-the-deinterlace-bob-device-class.md)します。
 
 <table>
 <colgroup>

@@ -1,5 +1,5 @@
 ---
-title: タイマーのシステムによって割り当てられたオブジェクトの削除
+title: システムによって割り当てられたタイマー オブジェクトの削除
 description: Windows 8.1 以降、ExDeleteTimer ルーチンは ExAllocateTimer ルーチンによって作成されたタイマー オブジェクトを削除します。
 ms.assetid: 7D119448-3890-4E8F-BC79-7FEB3213B693
 keywords:
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62e5af582c1926f1222f53050f749438548dea06
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388217"
 ---
-# <a name="deleting-a-system-allocated-timer-object"></a>タイマーのシステムによって割り当てられたオブジェクトの削除
+# <a name="deleting-a-system-allocated-timer-object"></a>システムによって割り当てられたタイマー オブジェクトの削除
 
 
 Windows 8.1 では、以降、 [ **ExDeleteTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265181)ルーチンによって作成されたタイマー オブジェクトの削除、 [ **ExAllocateTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265179)ルーチンです。 このタイマー オブジェクトは、システムによって割り当てられた[ **EX\_タイマー** ](https://msdn.microsoft.com/library/windows/hardware/dn265199)のメンバーは、ドライバーを非透過構造体。 タイマー オブジェクトを削除すると、前に**ExDeleteTimer**さらに、オブジェクトに対する操作をタイマーを無効にし、キャンセルまたは保留中の進行中の可能性のあるオブジェクトの操作が完了するとします。
@@ -54,7 +54,7 @@ Windows 8.1 では、以降、 [ **ExDeleteTimer** ](https://msdn.microsoft.com/
 
 **ExDeleteTimer**ドライバー実装をスケジュール*ExTimerDeleteCallback*タイマー オブジェクトが削除された後に実行する日常的などの時点でこのオブジェクトへのポインターが無効になっています。 場合、*待機*パラメーターが**TRUE**で、 **ExDeleteTimer**へのコールバックを呼び出す、 *ExTimerDeleteCallback*ルーチンが完了します。前に**ExDeleteTimer**を返します。 場合*待機*は**FALSE**、 *ExTimerDeleteCallback*ルーチンが前に、または後に実行が**ExDeleteTimer**を返します。
 
-詳細については、[Ex*Xxx*タイマー ルーチンと EX\_タイマー オブジェクト](exxxxtimer-routines-and-ex-timer-objects.md)を参照してください。
+詳細については、次を参照してください。 [Ex*Xxx*タイマー ルーチンと EX\_タイマー オブジェクト](exxxxtimer-routines-and-ex-timer-objects.md)します。
 
  
 

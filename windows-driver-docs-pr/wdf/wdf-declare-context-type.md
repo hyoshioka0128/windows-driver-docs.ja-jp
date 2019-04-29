@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f2193b23abfdd8a60a670fc14b627fbf1faf919
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390859"
 ---
 # <a name="wdfdeclarecontexttype-macro"></a>WDF_DECLARE_CONTEXT_TYPE マクロ
 
@@ -43,7 +43,7 @@ void WDF_DECLARE_CONTEXT_TYPE(
 <a name="remarks"></a>コメント
 -------
 
-詳細については、このマクロを使用して、[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)を参照してください。
+詳細については、このマクロを使用して、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)します。
 
 <a name="examples"></a>使用例
 --------

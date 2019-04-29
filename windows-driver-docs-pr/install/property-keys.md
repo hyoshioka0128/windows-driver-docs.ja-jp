@@ -1,19 +1,19 @@
 ---
-title: プロパティのキー
-description: プロパティのキー
+title: プロパティ キー
+description: プロパティ キー
 ms.assetid: 767dbe79-72c6-4445-8d4a-8be53a080825
 keywords:
 - デバイスのプロパティのキーの WDK デバイス インストールのプロパティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef08289fb67aa8312a2b29b85fda7615f049ec79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325744"
 ---
-# <a name="property-keys"></a>プロパティのキー
+# <a name="property-keys"></a>プロパティ キー
 
 
 プログラムでは、すべてのデバイス プロパティ、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)プロパティのキーによって表されます。 プロパティのキーとしてコード化された[ **DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff543544)構造体。 プロパティのキーが定義されている*Devpkey.h*します。

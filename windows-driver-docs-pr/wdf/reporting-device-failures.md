@@ -1,6 +1,6 @@
 ---
-title: デバイスの失敗の報告
-description: デバイスの失敗の報告
+title: デバイスの障害の報告
+description: デバイスの障害の報告
 ms.assetid: ca536547-d51a-4450-8a83-19aac67aab92
 keywords:
 - PnP WDK KMDF、デバイスの障害
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a52d23061350a2e5009300467bffa17666c06068
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390033"
 ---
-# <a name="reporting-device-failures"></a>デバイスの失敗の報告
+# <a name="reporting-device-failures"></a>デバイスの障害の報告
 
 
 デバイスの失敗を報告する 2 つの方法はあります。
@@ -36,7 +36,7 @@ ms.locfileid: "56539114"
 
 **UMDF** A UMDF ドライバーはこの値を設定する必要があります**WdfDeviceFailedNoRestart**します。
 
-これらの引数値の詳細については、[ **WDF\_デバイス\_FAILED\_アクション**](https://msdn.microsoft.com/library/windows/hardware/ff551253)を参照してください。
+これらの引数値の詳細については、次を参照してください。 [ **WDF\_デバイス\_FAILED\_アクション**](https://msdn.microsoft.com/library/windows/hardware/ff551253)します。
 ドライバーのデバイスの前にオブジェクト コールバック関数が返す値を持つどの nt\_成功 (*状態*) と等しい**FALSE**、コールバック関数がを呼び出して再起動を防ぐことができます[ **WdfDeviceSetFailed** ](https://msdn.microsoft.com/library/windows/hardware/ff546890)の入力引数を持つ**WdfDeviceFailedNoRestart**します。 それ以外の場合、これらのコールバック関数を呼び出す必要はありません**WdfDeviceSetFailed**します。
 
 短時間で数回連続して再起動の試行が失敗するは、(再起動、ドライバーは、もう一度、エラーを報告) ため、フレームワークは、デバイスを再起動しようとしています。 停止します。

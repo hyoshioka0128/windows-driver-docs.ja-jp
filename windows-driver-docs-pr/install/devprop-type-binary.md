@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: aca3498dc91865e6bf8a8d2a5c0114879b494eb0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327475"
 ---
 # <a name="devproptypebinary"></a>DEVPROP_TYPE_BINARY
 

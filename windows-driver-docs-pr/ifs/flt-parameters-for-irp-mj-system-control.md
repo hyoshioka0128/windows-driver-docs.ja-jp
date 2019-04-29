@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a00b21b822ad710cf165e6c08fbf3adbc6e2fdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327894"
 ---
 # <a name="fltparameters-for-irpmjsystemcontrol-union"></a>FLT\_IRP のパラメーター\_MJ\_システム\_コントロール共用体
 
@@ -62,7 +62,7 @@ typedef union _FLT_PARAMETERS {
 **Buffer**  
 このパラメーターの意味は、操作のマイナー関数コードによって異なります。 (詳しくは、次の「解説」を参照してください)。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673) IRP の構造\_MJ\_システム\_管理操作には、システム コントロールの操作のパラメーターが含まれています。コールバック データによって表される ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
@@ -93,7 +93,7 @@ IRP の意味\_MJ\_システム\_制御パラメーターは、マイナー関�
 
 IRP\_MJ\_システム\_コントロールが IRP ベースの操作。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

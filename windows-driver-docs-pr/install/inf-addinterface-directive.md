@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdc7b165318f7bbbef02dbc148ecb2e9071ef55d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390751"
 ---
 # <a name="inf-addinterface-directive"></a>INF AddInterface ディレクティブ
 
@@ -38,7 +38,7 @@ AddInterface={InterfaceClassGUID} [,[reference-string] [,[add-interface-section]
 <a href="" id="interfaceclassguid"></a>*InterfaceClassGUID*  
 デバイスのインターフェイス クラスを識別する GUID 値を指定します。 これは、フォームの明示的な GUID 値として表現できます **{**<em>nnnnnnnn</em>**-***nnnn***-***nnnn*-* nnnn***-**<em>nnnnnnnnnnnn</em>**}** または % として*strkey*% トークン定義されている **"{**<em>nnnnnnnn</em>**-***nnnn***-***nnnn*-* nnnn***-**<em>nnnnnnnnnnnn</em>**}"** で、 [**文字列**](inf-strings-section.md) INF ファイルのセクション。
 
-GUID を作成する方法の詳細については、[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)を参照してください。 システム定義のインターフェイス クラスの GUID など、適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイスの Guid。
+GUID を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)します。 システム定義のインターフェイス クラスの GUID など、適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイスの Guid。
 
 <a href="" id="reference-string"></a>*参照文字列*  
 この省略可能な値は、指定されたインターフェイス クラスのデバイスに固有のインスタンスに関連付けられたを表現できるいずれかを **"**<em>文字列を引用符で囲まれた</em>**"** または %として*strkey*% のトークンで定義されている、 [ **INF 文字列セクション**](inf-strings-section.md)します。
@@ -58,7 +58,7 @@ INF ファイルの別の場所のセクションの名前を参照します。 
 
 高いレベルのコンポーネントによって実行時の使用のデバイスのインターフェイス クラスのインスタンスを有効にするデバイス ドライバーは呼び出す必要がありますまず[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)のシンボリック リンクの名前を取得します有効にするデバイス インターフェイスのインスタンス。  PnP 関数またはフィルター ドライバーからのこの呼び出しは、通常は、その[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。  デバイス ドライバーを提供する必要があります、INF でプロビジョニングされたデバイスのインターフェイスのインスタンスを有効にする、 **{**<em>InterfaceClassGUID</em>**}** と*参照文字列*を呼び出すときに、INF で指定された[ **IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506)します。  ドライバーを呼び出して[ **IoSetDeviceInterfaceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549700)によって返されるシンボリック リンクの名前を使用してインターフェイスを有効にする[ **IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506). 
 
-各**AddInterface**ディレクティブで、 [ **INF DDInstall.Interfaces セクション**](inf-ddinstall-interfaces-section.md) 、INF ライターの定義を参照できる*追加-インターフェイスのセクション* INF ファイルで別の場所。 各 INF ライター定義セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+各**AddInterface**ディレクティブで、 [ **INF DDInstall.Interfaces セクション**](inf-ddinstall-interfaces-section.md) 、INF ライターの定義を参照できる*追加-インターフェイスのセクション* INF ファイルで別の場所。 各 INF ライター定義セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 *追加インターフェイス セクション*によって参照される、 **AddInterface**ディレクティブは、次の形式。
 

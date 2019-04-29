@@ -1,16 +1,16 @@
 ---
-Description: Here are the new features and improvements for Universal Serial Bus (USB) in Windows 8.1.
+Description: 新機能とのユニバーサル シリアル バス (USB) Windows 8.1 での機能強化を次に示します。
 title: Windows 8.1 の新機能については、usb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e7c846902fe660db70227bde70c3a06577e803d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389189"
 ---
-# <a name="windows-81-whats-new-for-usb"></a>Windows 8.1:USB の新機能については
+# <a name="windows-81-whats-new-for-usb"></a>Windows 8.1:USB の新機能
 
 
 新機能とのユニバーサル シリアル バス (USB) Windows 8.1 での機能強化を次に示します。
@@ -79,7 +79,7 @@ MS OS 2.0 記述子の仕様では、これらの機能強化を提供します�
 -   により、デバイスを複数の記述子のセットを返す各セットが特定の範囲の Windows バージョンに適用されます。 これにより、デバイスが接続されているシステム上の Windows のバージョンに応じて異なる方法で列挙できます。
 -   再開時間を短縮:デバイスは、時間が短縮される再開時間を識別できますから状態を中断します。
 
-仕様の詳細については、[USB デバイスの Microsoft OS ディスクリプター](microsoft-defined-usb-descriptors.md)を参照してください。
+仕様の詳細については、次を参照してください。 [USB デバイスの Microsoft OS ディスクリプター](microsoft-defined-usb-descriptors.md)します。
 
 ## <a name="isochronous-support-for-winusb"></a>WinUSB アイソクロナスのサポート
 
@@ -115,10 +115,10 @@ Windows 8.1 のでは、USB 3.0 と 2.0 ドライバー スタックの両方の
     -   [USB ポートが公開されているコント ローラーのテスト](https://msdn.microsoft.com/library/windows/hardware/hh998021.aspx)
     -   [USB ハブに USB ポートのテストが公開されています。](https://msdn.microsoft.com/library/windows/hardware/jj123960.aspx)
     -   [ハブの選択的テストを中断します。](https://msdn.microsoft.com/library/windows/hardware/jj124844.aspx)
-    -   [USB ポートが公開されているシステム テスト](https://msdn.microsoft.com/library/windows/hardware/jj123655.aspx)
+    -   [USB 公開ポート システム テスト](https://msdn.microsoft.com/library/windows/hardware/jj123655.aspx)
     -   [USB セレクティブ サスペンド テスト (xHCI)](https://msdn.microsoft.com/library/windows/hardware/jj124491.aspx)
     -   [USB 3.0 テストを中断します。](https://msdn.microsoft.com/library/windows/hardware/jj125210.aspx)
--   MUTT および SuperMUTT デバイスが USB-準拠デバイスの場合。 デバイスと付属のソフトウェア パッケージに USB テストの HCK スイートに統合します。 USB コント ローラー、デバイス、システムの開発サイクル中に使用できる、特にストレス テストを自動テストを提供します。
+-   MUTT および SuperMUTT デバイスが USB-準拠デバイスの場合。 デバイスと付属のソフトウェア パッケージに USB テストの HCK スイートに統合します。 USB のコントローラー、デバイス、システムの開発周期において、特にストレス テストにおいて使用できる自動化されたテストを提供します。
 
     MUTT ハードウェアを購入できる[JJG テクノロジ](http://jjgtechnologies.com/mutt.md)します。 デバイスのファームウェアがインストールされているインストールではありません。 ファームウェアをインストールするから MUTT ソフトウェア パッケージをダウンロード[この Web サイト](https://msdn.microsoft.com/windows/hardware/jj590752)MUTTUtil.exe を実行します。 詳細については、パッケージに付属のマニュアルを参照してください。
 

@@ -1,17 +1,17 @@
 ---
-title: WDF のサポート オブジェクト
+title: WDF サポート オブジェクト
 description: このセクションのトピックでは、Windows Driver Frameworks (WDF) ドライバーでのメモリ バッファー、タイマー、文字列オブジェクト、作業項目、およびフレームワークを提供するその他のサポート機能の使用方法について説明します。
 ms.assetid: 2F2FBC8C-31EA-472E-B402-4C9F24A034EA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32572e758274a95cb27fed1e6f51c8b6d014d9aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390830"
 ---
-# <a name="wdf-support-objects"></a>WDF のサポート オブジェクト
+# <a name="wdf-support-objects"></a>WDF サポート オブジェクト
 
 
 このセクションのトピックでは、Windows Driver Frameworks (WDF) ドライバーでのメモリ バッファー、タイマー、文字列オブジェクト、作業項目、およびフレームワークを提供するその他のサポート機能の使用方法について説明します。

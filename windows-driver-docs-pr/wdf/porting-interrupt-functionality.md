@@ -5,11 +5,11 @@ ms.assetid: E91B971D-044C-45A4-AD76-44AFB1213F8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1642864a7816681ceecc8d4ab044dfd06b78dc09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390092"
 ---
 # <a name="porting-interrupts"></a>割り込みの移植
 
@@ -21,7 +21,7 @@ ms.locfileid: "56553980"
 
 [ *EvtInterruptIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff541735) WDF ドライバーでのコールバック WDM ドライバーのと同じタスクを実行する[ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチン。 *EvtInterruptIsr*コールバック呼び出し[ **WdfInterruptQueueDpcForIsr** ](https://msdn.microsoft.com/library/windows/hardware/ff547371)キューに、 [ *EvtInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff541721)ディスパッチに後で処理するためのコールバック\_レベル。 応答では、フレームワークは、このコールバックを実行しているシステム キューに DPC オブジェクトを追加します。
 
-フレームワークの割り込みのオブジェクトの詳細については、[ハードウェアの割り込み処理](handling-hardware-interrupts.md)を参照してください。
+フレームワークの割り込みのオブジェクトの詳細については、次を参照してください。[ハードウェアの割り込み処理](handling-hardware-interrupts.md)します。
 
  
 

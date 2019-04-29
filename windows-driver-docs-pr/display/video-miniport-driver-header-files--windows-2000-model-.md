@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67c8035c69d2cd8b42e5332b68ec7ab783685c81
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389684"
 ---
 # <a name="video-miniport-driver-header-files-windows-2000-model"></a>ビデオ ミニポート ドライバーのヘッダー ファイル (Windows 2000 モデル)
 

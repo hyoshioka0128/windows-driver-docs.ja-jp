@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 162ef532419035b1434bce610760afd25745122f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391993"
 ---
 # <a name="inf-file-entry-values-that-modify-device-properties-before-windows-vista"></a>Windows Vista より前に、のデバイス プロパティを変更する INF ファイル エントリの値
 
@@ -80,7 +80,7 @@ AddReg = Xxx_AddReg
 ] 
 ```
 
-対応するカスタム レジストリ エントリの値を持つカスタムのデバイスのプロパティにアクセスする方法の詳細については、[へのアクセスのカスタム デバイス プロパティ](accessing-custom-device-properties.md)を参照してください。
+対応するカスタム レジストリ エントリの値を持つカスタムのデバイスのプロパティにアクセスする方法の詳細については、次を参照してください。[へのアクセスのカスタム デバイス プロパティ](accessing-custom-device-properties.md)します。
 
 
 

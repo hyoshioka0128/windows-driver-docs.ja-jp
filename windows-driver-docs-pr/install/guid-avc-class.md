@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d73ce771cb4dbfe2eefbd0dcab57e3790c55a5b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392473"
 ---
 # <a name="guidavcclass"></a>GUID_AVC_CLASS
 
@@ -56,7 +56,7 @@ GUID_AVC_CLASS[デバイス インターフェイス クラス](https://msdn.mic
 
 システム提供[AV/C クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556367) [Avc.sys](https://msdn.microsoft.com/library/windows/hardware/ff568667) 1394 バス上の外部の AV/C 単位を表す GUID_AVC_CLASS のインスタンスを登録します。
 
-AV/C の仮想デバイスのデバイスのインターフェイス クラスについては、[ **GUID_VIRTUAL_AVC_CLASS**](guid-virtual-avc-class.md)を参照してください。
+AV/C の仮想デバイスのデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_VIRTUAL_AVC_CLASS**](guid-virtual-avc-class.md)します。
 
 <a name="requirements"></a>要件
 ------------

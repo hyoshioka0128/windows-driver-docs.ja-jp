@@ -1,6 +1,6 @@
 ---
-title: アイドル状態検出の電源マネージャー ルーチンを使用します。
-description: アイドル状態検出の電源マネージャー ルーチンを使用します。
+title: アイドル状態検出のための電源マネージャー ルーチンの使用
+description: アイドル状態検出のための電源マネージャー ルーチンの使用
 ms.assetid: 6a89b2eb-d987-4722-b521-9df93153d957
 keywords:
 - アイドル状態検出 WDK 電源管理
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c25ae08b4ef5f4b6d5d83b6812816a00bb3830da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391062"
 ---
-# <a name="using-power-manager-routines-for-idle-detection"></a>アイドル状態検出の電源マネージャー ルーチンを使用します。
+# <a name="using-power-manager-routines-for-idle-detection"></a>アイドル状態検出のための電源マネージャー ルーチンの使用
 
 
 

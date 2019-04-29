@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b0eb09c81628c1e9072f1e062dc1dfb30f882af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388685"
 ---
 # <a name="introduction-to-registry-keys-for-drivers"></a>ドライバーのレジストリ キーの概要
 
@@ -42,7 +42,7 @@ ms.locfileid: "56552121"
 
     ドライバーを呼び出すことができます[ **WdfFdoInitOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547249)と[ **WdfDeviceOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff546804)そのソフトウェア キーを開けません。
 
-    ソフトウェア キーの詳細については、[、HKLM\\システム\\CurrentControlSet\\コントロール ツリー](https://msdn.microsoft.com/library/windows/hardware/ff546165)を参照してください。
+    ソフトウェア キーの詳細については、次を参照してください。 [、HKLM\\システム\\CurrentControlSet\\コントロール ツリー](https://msdn.microsoft.com/library/windows/hardware/ff546165)します。
 
 -   ハードウェア キー
 
@@ -50,7 +50,7 @@ ms.locfileid: "56552121"
 
     ドライバーを呼び出すことができます[ **WdfFdoInitOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547249)と[ **WdfDeviceOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff546804)デバイスのハードウェア キーを開けません。
 
-    ハードウェア キーの詳細については、[、HKLM\\システム\\CurrentControlSet\\列挙ツリー](https://msdn.microsoft.com/library/windows/hardware/ff546173)を参照してください。
+    ハードウェア キーの詳細については、次を参照してください。 [、HKLM\\システム\\CurrentControlSet\\列挙ツリー](https://msdn.microsoft.com/library/windows/hardware/ff546173)します。
 
 ドライバーの INF ファイルに含めることができます[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)レジストリ値を設定します。 INF ファイルを使用して、通常[ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)デバイスのハードウェア キーの下の情報を設定します。
 

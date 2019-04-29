@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5287d0e0f4808813792f9688946a5256a9ed5c60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327219"
 ---
 # <a name="kspropertyvideoprocampwhitebalancecomponent"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_コンポーネント
 
@@ -52,7 +52,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ホワイト バランス\_�
 <tr class="odd">
 <td><p>〇</p></td>
 <td><p>〇</p></td>
-<td><p>ノード</p></td>
+<td><p>node</p></td>
 <td><a href="https://msdn.microsoft.com/library/windows/hardware/ff566082" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566082)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
 <td><p>長整数のペア</p></td>
 </tr>

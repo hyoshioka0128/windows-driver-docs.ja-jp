@@ -1,17 +1,17 @@
 ---
-title: NDIS のバージョン情報の要件
-description: NDIS のバージョン情報の要件
+title: NDIS のバージョン情報要件
+description: NDIS のバージョン情報要件
 ms.assetid: b2850077-271f-4bb6-8710-ae9415ad5eda
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18ed9eff0905c027d684da02ecd5c5da23d7f878
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387330"
 ---
-# <a name="version-information-requirements-for-ndis"></a>NDIS のバージョン情報の要件
+# <a name="version-information-requirements-for-ndis"></a>NDIS のバージョン情報要件
 
 
 

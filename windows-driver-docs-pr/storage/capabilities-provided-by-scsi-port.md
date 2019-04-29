@@ -5,11 +5,11 @@ ms.assetid: 549dc3f1-b62f-4047-bdc0-7e24d5bc6ad5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47801d82b5d3959b9b27751b602ae5da18163c8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390563"
 ---
 # <a name="capabilities-provided-by-scsi-port"></a>SCSI ポートによって提供される機能
 
@@ -68,7 +68,7 @@ SCSI ポート ドライバーは、次の機能を提供します。
 
 SCSI ポートは、SCSI ポート ライブラリのルーチンを使用して、ミニポート ドライバーにサービスを提供します。 ミニポート ドライバーの作成者には、1 つのモノリシック ポート ドライバーに提供する機能をコーディングするのではなく、これらのルーチンを呼び出すことができます。 によって、これらのルーチンを使用して最も重要なサービスの一部としては、
 
--   SCSI ポート ミニポート ドライバーは、SCSI ポートの多くの OS に依存する初期化操作を委任できます[ **ScsiPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff564645)ライブラリ ルーチン。 これにより、オペレーティング システムのバージョンが異なって SCSI ポート ミニポート ドライバーが移植性にします。 SCSI ポート ミニポート ドライバーの初期化作業の詳細については、[SCSI ミニポート ドライバー DriverEntry ルーチン](scsi-miniport-driver-s-driverentry-routine.md)を参照してください。
+-   SCSI ポート ミニポート ドライバーは、SCSI ポートの多くの OS に依存する初期化操作を委任できます[ **ScsiPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff564645)ライブラリ ルーチン。 これにより、オペレーティング システムのバージョンが異なって SCSI ポート ミニポート ドライバーが移植性にします。 SCSI ポート ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [SCSI ミニポート ドライバー DriverEntry ルーチン](scsi-miniport-driver-s-driverentry-routine.md)します。
 
 -   非 PnP デバイスの SCSI ポート ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)します。
 

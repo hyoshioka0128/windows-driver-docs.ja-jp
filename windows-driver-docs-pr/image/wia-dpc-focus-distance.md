@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15231fb8ba53ff9a6c947ac2e9e1f5ef79e838a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392016"
 ---
 # <a name="wiadpcfocusdistance"></a>WIA\_DPC\_フォーカス\_距離
 
@@ -35,12 +35,12 @@ WIA\_DPC\_フォーカス\_距離のプロパティには、デジタル カメ�
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 値が 0 xffff は、WIA の\_DPC\_フォーカス\_距離のプロパティは、655 メーターよりも大きい設定に対応します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

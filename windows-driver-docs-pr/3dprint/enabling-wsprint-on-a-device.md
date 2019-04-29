@@ -1,16 +1,16 @@
 ---
-title: デバイスで WSPrint 2.0 を有効にします。
+title: デバイスで WSPrint 2.0 を有効にする
 description: これらの設定を使用して、デバイスで WSPrint 2.0 を有効にするには
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5942989ce749569d87966d3ea403aab5cca803c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325459"
 ---
-# <a name="enable-wsprint-20-on-a-device"></a>デバイスで WSPrint 2.0 を有効にします。
+# <a name="enable-wsprint-20-on-a-device"></a>デバイスで WSPrint 2.0 を有効にする
 
 
 このトピックでは、デバイスで WSPrint 2.0 を有効にするために必要な設定について説明します。
@@ -87,7 +87,7 @@ WSPrint 2.0 の相互作用の詳細な説明を次の手順には。
 
 WSPrint 2.0 の詳細については、次のリソースを参照してください。
 
-[印刷用のデバイスで Web サービスを実装します。](https://go.microsoft.com/fwlink/p/?linkid=867155)
+[印刷用デバイスでの Web サービスの実装](https://go.microsoft.com/fwlink/p/?linkid=867155)
 
 [WSPrint 2.0 仕様](https://go.microsoft.com/fwlink/p/?LinkId=534008) 
 

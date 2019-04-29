@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1782a7545ace74a23948ebd19b7bad579b04542
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390831"
 ---
 # <a name="wdfptrgetoffset-macro"></a>WDF_PTR_GET_OFFSET macro
 

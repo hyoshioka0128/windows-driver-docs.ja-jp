@@ -1,6 +1,6 @@
 ---
-title: インク レベルにピクセルあたり 8 ビット ハーフトーン インデックスの変換
-description: インク レベルにピクセルあたり 8 ビット ハーフトーン インデックスの変換
+title: 8 ビット/ピクセル ハーフトーン インデックスからインク レベルへの変換
+description: 8 ビット/ピクセル ハーフトーン インデックスからインク レベルへの変換
 ms.assetid: 5859b379-4e03-4cd8-836d-9a0b068b47c0
 keywords:
 - GDI WDK Windows 2000 の表示、ハーフトーン
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d664d9cc1e4662081bafa86777b8592f347a60b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389796"
 ---
-# <a name="translating-8-bit-per-pixel-halftone-indexes-to-ink-levels"></a>インク レベルにピクセルあたり 8 ビット ハーフトーン インデックスの変換
+# <a name="translating-8-bit-per-pixel-halftone-indexes-to-ink-levels"></a>8 ビット/ピクセル ハーフトーン インデックスからインク レベルへの変換
 
 
 ## <span id="ddk_translating_8_bit_per_pixel_halftone_indexes_to_ink_levels_gg"></span><span id="DDK_TRANSLATING_8_BIT_PER_PIXEL_HALFTONE_INDEXES_TO_INK_LEVELS_GG"></span>

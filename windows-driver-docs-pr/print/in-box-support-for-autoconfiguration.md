@@ -1,6 +1,6 @@
 ---
-title: ボックスの自動構成のサポート
-description: ボックスの自動構成のサポート
+title: 自動構成のインボックス サポート
+description: 自動構成のインボックス サポート
 ms.assetid: cd2faef4-96ba-4d11-99f6-90e41ae2e283
 keywords:
 - 自動構成の WDK プリンター、インボックス サポート
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3731dbb9b5a6ff6505bcaf7b5050ca2f65705cb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390562"
 ---
-# <a name="in-box-support-for-autoconfiguration"></a>ボックスの自動構成のサポート
+# <a name="in-box-support-for-autoconfiguration"></a>自動構成のインボックス サポート
 
 
 Windows Vista では、標準の TCP/IP ポート モニタまたは、Web Services for Devices (WSD) ポート モニターを使用して Unidrv および Pscript5 ベースのドライバーは、自動構成のサポートを提供します。 両面印刷ユニットまたはフォントのカートリッジで懸念などのインストール可能な機能についてのクエリに対してのみ、Windows Vista での自動構成のサポートが提供されることに注意してください。 特定の機能のクエリへの応答に、機能のオプションを 1 つだけできますに関するものです。 両面印刷ユニットがインストールされているかどうかに関するクエリの 2 つの応答のいずれかが明確化: 両面印刷ユニットがインストールされているまたはされなかったことです。 そのフォント カートリッジのいずれかを示す応答を生成するフォントについてカートリッジがインストールされているクエリ*A*がインストールされているか、そのフォント カートリッジ*B*がインストールされています。

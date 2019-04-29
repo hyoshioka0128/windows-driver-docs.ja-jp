@@ -1,22 +1,22 @@
 ---
-title: ウィザードを作成、モバイル ブロード バンド メタデータを使用します。
-description: ウィザードを作成、モバイル ブロード バンド メタデータを使用します。
+title: モバイル ブロードバンド メタデータ作成ウィザードの使用
+description: モバイル ブロードバンド メタデータ作成ウィザードの使用
 ms.assetid: CBEF0B73-9C1D-4ACF-9EB2-52020FBC2625
 keywords:
-- ウィザードを作成、モバイル ブロード バンド メタデータを使用します。
+- モバイル ブロードバンド メタデータ作成ウィザードの使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa6250320e330d312a187b0dea5c46ec9ce47672
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327158"
 ---
-# <a name="using-the-mobile-broadband-metadata-authoring-wizard"></a>ウィザードを作成、モバイル ブロード バンド メタデータを使用します。
+# <a name="using-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロードバンド メタデータ作成ウィザードの使用
 
 
-\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、[Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)を参照してください。 \]
+\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、次を参照してください。 [Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)します。 \]
 
 起動したら、**モバイル ブロード バンド**、ツール、**メタデータの作成ウィザードへようこそ**画面が表示されます。 次のいずれかのオプションを選びます。
 

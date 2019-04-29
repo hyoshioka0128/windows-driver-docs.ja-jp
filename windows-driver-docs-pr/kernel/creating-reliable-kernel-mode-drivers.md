@@ -1,6 +1,6 @@
 ---
-title: 信頼性の高いカーネル モード ドライバーを作成します。
-description: 信頼性の高いカーネル モード ドライバーを作成します。
+title: 信頼性の高いカーネルモード ドライバーの作成
+description: 信頼性の高いカーネルモード ドライバーの作成
 ms.assetid: 31bbf1fe-dc90-43e0-a53e-eca902ec343e
 keywords:
 - カーネル モード ドライバー WDK、信頼性
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec3d064e5f1bd63d0876519025edeaac9a2683d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388249"
 ---
-# <a name="creating-reliable-kernel-mode-drivers"></a>信頼性の高いカーネル モード ドライバーを作成します。
+# <a name="creating-reliable-kernel-mode-drivers"></a>信頼性の高いカーネルモード ドライバーの作成
 
 
 
@@ -26,15 +26,15 @@ ms.locfileid: "56527491"
 
 -   デバイス オブジェクトを正しくセキュリティで保護します。
 
-    システムのドライバーとデバイスへのユーザー アクセスは、システムは、デバイス オブジェクトに割り当てるセキュリティ記述子によって制御されます。 最も多くの場合、システムは、デバイスがインストールされている場合、デバイスのセキュリティ パラメーターを設定します。 詳細については、[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)を参照してください。 そのデバイスへのアクセス制御に関与するためのドライバーの適切な場合があります。 詳細については、[デバイス オブジェクトのセキュリティで保護する](securing-device-objects.md)を参照してください。
+    システムのドライバーとデバイスへのユーザー アクセスは、システムは、デバイス オブジェクトに割り当てるセキュリティ記述子によって制御されます。 最も多くの場合、システムは、デバイスがインストールされている場合、デバイスのセキュリティ パラメーターを設定します。 詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)します。 そのデバイスへのアクセス制御に関与するためのドライバーの適切な場合があります。 詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](securing-device-objects.md)します。
 
 -   デバイス オブジェクトを正しく検証されます。
 
-    ドライバーは、複数の種類のデバイス オブジェクトを作成する場合に各 IRP を受信する種類を確認するあります。 詳細については、[デバイス オブジェクトの検証に失敗した](failure-to-validate-device-objects.md)を参照してください。
+    ドライバーは、複数の種類のデバイス オブジェクトを作成する場合に各 IRP を受信する種類を確認するあります。 詳細については、次を参照してください。[デバイス オブジェクトの検証に失敗した](failure-to-validate-device-objects.md)します。
 
 -   「安全な文字列」関数を使用します。
 
-    文字列を操作する場合、ドライバーは、C と C++ 言語のランタイム ライブラリで提供されている文字列関数ではなく、安全な文字列関数を使用してください。 詳細については、[安全な文字列関数を使用して](using-safe-string-functions.md)を参照してください。
+    文字列を操作する場合、ドライバーは、C と C++ 言語のランタイム ライブラリで提供されている文字列関数ではなく、安全な文字列関数を使用してください。 詳細については、次を参照してください。[安全な文字列関数を使用して](using-safe-string-functions.md)します。
 
 -   オブジェクト ハンドルを検証します。
 
@@ -54,7 +54,7 @@ ms.locfileid: "56527491"
 
 -   ドライバーの状態を適切に処理します。
 
-    常に、ドライバーがであると仮定する状態であることを確認するのには重要です。 たとえば、ドライバーは IRP を受信する場合、既にサービス中です、同じ種類の IRP でしょうか。 ドライバーは、このような状況をチェックしません、最初の IRP が失われる可能性があります。 詳細については、[ドライバーの状態を確認するエラー](failure-to-check-a-driver-s-state.md)を参照してください。
+    常に、ドライバーがであると仮定する状態であることを確認するのには重要です。 たとえば、ドライバーは IRP を受信する場合、既にサービス中です、同じ種類の IRP でしょうか。 ドライバーは、このような状況をチェックしません、最初の IRP が失われる可能性があります。 詳細については、次を参照してください。[ドライバーの状態を確認するエラー](failure-to-check-a-driver-s-state.md)します。
 
 -   IRP の入力値を検証します。
 
@@ -78,7 +78,7 @@ ms.locfileid: "56527491"
 
 -   IRP の完了操作を適切に処理します。
 
-    ドライバーは IRP の状態のステータス値を持つ決して完了する必要があります\_成功しない限り、実際にサポートし、IRP を処理します。 IRP の完了操作を処理する正しい方法については、[Irp の完了](completing-irps.md)を参照してください。
+    ドライバーは IRP の状態のステータス値を持つ決して完了する必要があります\_成功しない限り、実際にサポートし、IRP を処理します。 IRP の完了操作を処理する正しい方法については、次を参照してください。 [Irp の完了](completing-irps.md)します。
 
 -   IRP の取り消し操作を適切に処理します。
 
@@ -98,9 +98,9 @@ ms.locfileid: "56527491"
 
     [操作のクリーンアップと閉じる処理のエラー](errors-in-handling-cleanup-and-close-operations.md)
 
-Irp を正しく処理の詳細については、[Irp の処理で関連するエラー](additional-errors-in-handling-irps.md)を参照してください。
+Irp を正しく処理の詳細については、次を参照してください。 [Irp の処理で関連するエラー](additional-errors-in-handling-irps.md)します。
 
-### <a name="using-driver-verifier"></a>Driver Verifier を使用します。
+### <a name="using-driver-verifier"></a>ドライバーの検証ツールの使用
 
 [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)ドライバーの信頼性を確保する最も重要なことができるツールです。 Driver Verifier は、さまざまなこのセクションで説明したものの一部など、一般的なドライバーの問題を確認できます。 ただし、Driver Verifier の使用は、気を付けて、親切なソフトウェアの設計は置き換えられません。
 

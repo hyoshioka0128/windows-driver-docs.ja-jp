@@ -1,6 +1,6 @@
 ---
-title: プログラミングに関する考慮事項
-description: プログラミングに関する考慮事項
+title: プログラミングの考慮事項
+description: プログラミングの考慮事項
 ms.assetid: 5f51352a-cfbb-4fa0-98af-953b151a4563
 keywords:
 - ネットワーク モジュールのレジストラー WDK、プログラミングの考慮事項
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32430060bb81ec3526dbd0f3568abd828a1005da
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390285"
 ---
-# <a name="programming-considerations"></a>プログラミングに関する考慮事項
+# <a name="programming-considerations"></a>プログラミングの考慮事項
 
 
 ネットワーク モジュールは、何らかの形式の参照カウントに接続されているネットワーク モジュールの実行中の呼び出しの数を追跡するを使用する必要があります[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)関数。 これには、NMR で 2 つのネットワーク モジュールのいずれかの登録を解除するとき、接続されているネットワーク モジュールからのデタッチが容易になります。 ネットワーク モジュールは、接続されているネットワーク モジュールの NPI 関数の実行中の呼び出しがなくなるまで、デタッチを完了できません。 ネットワーク モジュールは、ネットワーク モジュールをデタッチ後に、以前に接続されているネットワーク モジュールに電話を開始することを確認する必要がありますもします。

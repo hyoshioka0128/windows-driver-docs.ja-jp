@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_POWER_SEQUENCE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 827976878f8f947d00a9b96c78654108f662ecb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391969"
 ---
 # <a name="irpmnpowersequence"></a>IRP\_MN\_POWER\_シーケンス
 
@@ -69,7 +69,7 @@ ms.locfileid: "56559052"
 
 などの場合は、デバイス D2 状態に達すると、電源を復旧する時間がかかる、ドライバー格納できる、 **SequenceD2** D2 状態または低のデバイスを設定する前に、の値します。 後で、デバイスに電源が復旧されるときに、ドライバーを比較できる新しい**SequenceD2**デバイスの状態が実際に D2 下にドロップするかどうかを判断する格納されている値を持つ値。 値が一致した場合は、デバイス実際に入力しなかった D2 の電源状態または低の状態と、ドライバーがデバイスを再初期化を回避することができます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

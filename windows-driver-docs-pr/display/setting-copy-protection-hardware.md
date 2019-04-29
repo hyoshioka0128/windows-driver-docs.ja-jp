@@ -1,19 +1,19 @@
 ---
-title: コピー防止のハードウェアの設定
-description: コピー防止のハードウェアの設定
+title: コピー防止ハードウェアの設定
+description: コピー防止ハードウェアの設定
 ms.assetid: c9733d74-faa8-44af-8de7-9530ebcfe949
 keywords:
 - 保護設定の WDK ビデオ ミニポートをコピーします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fa8d0ba8a7b2efca6eb9e48514a447a4e8e0ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390466"
 ---
-# <a name="setting-copy-protection-hardware"></a>コピー防止のハードウェアの設定
+# <a name="setting-copy-protection-hardware"></a>コピー防止ハードウェアの設定
 
 
 ## <span id="ddk_setting_copy_protection_hardware_gg"></span><span id="DDK_SETTING_COPY_PROTECTION_HARDWARE_GG"></span>

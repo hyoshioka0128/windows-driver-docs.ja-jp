@@ -1,6 +1,6 @@
 ---
-title: 画像の 2 つ目のデコードの構成
-description: 画像の 2 つ目のデコードの構成
+title: 2 番目の画像デコード構成
+description: 2 番目の画像デコード構成
 ms.assetid: 01208797-2cf9-439b-b250-25f8ca3565d6
 keywords:
 - 圧縮の画像セット WDK DirectX VA のデコード
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d334828d59ba2d044732053f23de79054e3d6d97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390487"
 ---
-# <a name="second-picture-decoding-configuration"></a>画像の 2 つ目のデコードの構成
+# <a name="second-picture-decoding-configuration"></a>2 番目の画像デコード構成
 
 
 ## <span id="ddk_second_picture_decoding_configuration_gg"></span><span id="DDK_SECOND_PICTURE_DECODING_CONFIGURATION_GG"></span>
@@ -29,8 +29,8 @@ ms.locfileid: "56531165"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>

@@ -1,5 +1,5 @@
 ---
-title: ValidatePrintTicket の概要
+title: ValidatePrintTicket 概要
 description: 各プラグインは、検証、PrintTicket IPrintOemPrintTicketProvider::ValidatePrintTicket メソッドを呼び出します。
 ms.assetid: 3a4cf946-c931-4f71-9f1a-4efec4dfe866
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5359a1c015f0b25397bff0d2a0911e7989163d54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387812"
 ---
-# <a name="validateprintticket-overview"></a>ValidatePrintTicket の概要
+# <a name="validateprintticket-overview"></a>ValidatePrintTicket 概要
 
 
 Unidrv と PScript5 の印刷ドライバーでは、次の図と一覧を表示するシーケンスを使用して印刷チケットを検証します。

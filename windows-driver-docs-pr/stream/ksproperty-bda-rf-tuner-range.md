@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e409cbd8b3785350a83e8422f59725adb88e30f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389297"
 ---
 # <a name="kspropertybdarftunerrange"></a>KSPROPERTY\_BDA\_RF\_チューナー\_範囲
 
@@ -61,7 +61,7 @@ ms.locfileid: "56549513"
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 **NodeId** KSP のメンバー\_ノードは、チューナーのノードの識別子を指定します。

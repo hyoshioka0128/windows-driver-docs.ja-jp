@@ -1,6 +1,6 @@
 ---
-title: 個々 のカウンターの監視
-description: 個々 のカウンターの監視
+title: 個別カウンターの監視
+description: 個別カウンターの監視
 ms.assetid: 95d4492b-20b9-401a-97aa-eaf700b64420
 keywords:
 - 個々 のカウンター WDK Driver Verifier
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38eca341c7ad8773b27f16f5886e018e3b9c8b19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391322"
 ---
-# <a name="monitoring-individual-counters"></a>個々 のカウンターの監視
+# <a name="monitoring-individual-counters"></a>個別カウンターの監視
 
 
 ## <span id="ddk_monitoring_individual_counters_tools"></span><span id="DDK_MONITORING_INDIVIDUAL_COUNTERS_TOOLS"></span>

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 359ad690544d057eebc7874646ca932ca50ed8ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392990"
 ---
 # <a name="ndis-driver-stack"></a>NDIS ドライバー スタック
 
@@ -41,9 +41,9 @@ NDIS 中間ドライバーをドライバー スタックに含める場合は�
 
 仮想ミニポートのドライバーの中間は、中間ドライバーのプロトコルのエッジは、下位のスタックのプロトコル バインドを提供します。 一方、上位のスタックのミニポート アダプターを提供します。
 
-仮想ミニポートでは、その他のミニポート アダプターと同じ状態があります。 ミニポート アダプタの状態の詳細については、[ミニポート ドライバーのアダプター状態](adapter-states-of-a-miniport-driver.md)を参照してください。
+仮想ミニポートでは、その他のミニポート アダプターと同じ状態があります。 ミニポート アダプタの状態の詳細については、次を参照してください。[ミニポート ドライバーのアダプター状態](adapter-states-of-a-miniport-driver.md)します。
 
-中間ドライバーのプロトコルの端には、プロトコル ドライバーとして同じバインドの状態を実装する必要があります。 バインドの状態の詳細については、[プロトコル ドライバーのバインド状態](binding-states-of-a-protocol-driver.md)を参照してください。
+中間ドライバーのプロトコルの端には、プロトコル ドライバーとして同じバインドの状態を実装する必要があります。 バインドの状態の詳細については、次を参照してください。[プロトコル ドライバーのバインド状態](binding-states-of-a-protocol-driver.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 

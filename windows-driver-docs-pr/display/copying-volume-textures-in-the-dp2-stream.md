@@ -1,6 +1,6 @@
 ---
-title: DP2 Stream でのボリュームのテクスチャのコピー
-description: DP2 Stream でのボリュームのテクスチャのコピー
+title: DP2 ストリームでのボリューム テクスチャのコピー
+description: DP2 ストリームでのボリューム テクスチャのコピー
 ms.assetid: c7f982d8-d35b-4462-a0cf-49dfb82860f8
 keywords:
 - WDK DirectX 8.0 のテクスチャ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b225f03106e802d10706dbeb3ab7e813c4d2d2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390019"
 ---
-# <a name="copying-volume-textures-in-the-dp2-stream"></a>DP2 Stream でのボリュームのテクスチャのコピー
+# <a name="copying-volume-textures-in-the-dp2-stream"></a>DP2 ストリームでのボリューム テクスチャのコピー
 
 
 ## <span id="ddk_copying_volume_textures_in_the_dp2_stream_gg"></span><span id="DDK_COPYING_VOLUME_TEXTURES_IN_THE_DP2_STREAM_GG"></span>

@@ -1,17 +1,17 @@
 ---
-title: SerCx2 カスタム送信トランザクション
+title: SerCx2 カスタム-送信トランザクション
 description: シリアル コント ローラーの一部のハードウェアでは、PIO またはシステム DMA 以外シリアル コント ローラーにデータを書き込むためのデータ転送メカニズムを実装できます。
 ms.assetid: E72E68BC-A60A-41BE-8606-92A608648042
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 097f850487cb4c26cb5b0b1d162facc9eb840acf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388015"
 ---
-# <a name="sercx2-custom-transmit-transactions"></a>SerCx2 カスタム送信トランザクション
+# <a name="sercx2-custom-transmit-transactions"></a>SerCx2 カスタム-送信トランザクション
 
 
 シリアル コント ローラーの一部のハードウェアでは、PIO またはシステム DMA 以外シリアル コント ローラーにデータを書き込むためのデータ転送メカニズムを実装できます。 シリアル コント ローラー ドライバーがサポートできるトランザクションが SerCx2 で使用できるようにこのデータ転送メカニズムをカスタム送信します。
@@ -53,7 +53,7 @@ SerCx2 がコント ローラーのシリアル ドライバーを呼び出す�
 
 シリアル コント ローラー ドライバーがなど、メソッドを使用しない必要があります[ **WdfRequestRetrieveInputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550014)書き込み要求のデータ バッファーにアクセスします。 代わりに、ドライバーを使用する必要があります、 *Mdl*、*オフセット*、および*長さ*に渡されるパラメーター値、 *EvtSerCx2CustomTransmitTransactionStart*このバッファーにアクセスする関数。
 
-中に、トランザクションのカスタムの送信、ドライバーは、要求オブジェクトに関連付けられているコンテキストに、トランザクションに関する情報を格納する必要があります。 そうである場合、ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベント コールバック関数を呼び出すことができます、 [ **WdfDeviceInitSetRequestAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff546786)メソッド要求オブジェクトに使用する属性を設定します。 これらの属性には、要求コンテキストを使用する名前と割り当てのサイズが含まれます。 この呼び出しで指定された要求属性は、ドライバーをへの呼び出しで指定する要求属性に一致する必要があります、 [ **SerCx2InitializeDevice** ](https://msdn.microsoft.com/library/windows/hardware/dn265261)メソッド。 これらの属性がで指定された、 **RequestAttributes**のメンバー、 **SERCX2\_CONFIG**ドライバーに渡します構造**SerCx2InitializeDevice**. 詳細については、[ **SERCX2\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn265310)を参照してください。
+中に、トランザクションのカスタムの送信、ドライバーは、要求オブジェクトに関連付けられているコンテキストに、トランザクションに関する情報を格納する必要があります。 そうである場合、ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベント コールバック関数を呼び出すことができます、 [ **WdfDeviceInitSetRequestAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff546786)メソッド要求オブジェクトに使用する属性を設定します。 これらの属性には、要求コンテキストを使用する名前と割り当てのサイズが含まれます。 この呼び出しで指定された要求属性は、ドライバーをへの呼び出しで指定する要求属性に一致する必要があります、 [ **SerCx2InitializeDevice** ](https://msdn.microsoft.com/library/windows/hardware/dn265261)メソッド。 これらの属性がで指定された、 **RequestAttributes**のメンバー、 **SERCX2\_CONFIG**ドライバーに渡します構造**SerCx2InitializeDevice**. 詳細については、次を参照してください。 [ **SERCX2\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn265310)します。
 
 書き込み要求の開始時シリアル コント ローラーのドライバーを受信するため、トランザクションのカスタムの送信、ドライバー、フレームワークによって割り当てられている要求コンテキストが初期化されていません。 ドライバー呼び出す必要があります、ベスト プラクティスとして、 [ **RtlZeroMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff563610)ルーチンをすべてゼロには、この要求コンテキストを初期化します。
 

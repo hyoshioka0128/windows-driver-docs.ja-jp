@@ -1,6 +1,6 @@
 ---
-title: 反転するタイミング
-description: 反転するタイミング
+title: 反転の適時選択
+description: 反転の適時選択
 ms.assetid: abd3188e-0f75-401a-88e3-e2a9c5788ad5
 keywords:
 - ページ フリップ WDK DirectDraw を描画、タイミング
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7b99ce62e87932f52a700c4dd903e3cd5d95194
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389786"
 ---
-# <a name="timing-a-flip"></a>反転するタイミング
+# <a name="timing-a-flip"></a>反転の適時選択
 
 
 ## <span id="ddk_timing_a_flip_gg"></span><span id="DDK_TIMING_A_FLIP_GG"></span>

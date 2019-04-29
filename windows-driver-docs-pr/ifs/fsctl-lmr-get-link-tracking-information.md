@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33dadb44f191b769dfb127b42425cb70faced1d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391784"
 ---
 # <a name="fsctllmrgetlinktrackinginformation-control-code"></a>FSCTL\_LMR\_取得\_リンク\_追跡\_情報制御コード
 
@@ -43,7 +43,7 @@ ms.locfileid: "56580688"
 なし。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-使用されません。
+使用されていません。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
 A**リンク\_追跡\_情報**ファイルの情報を追跡するリンクを含む構造体。
@@ -69,7 +69,7 @@ A**リンク\_追跡\_情報\_型**列挙値の情報に、ファイルが置か
 
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数は、適切な NTSTATUS エラー コードを返します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

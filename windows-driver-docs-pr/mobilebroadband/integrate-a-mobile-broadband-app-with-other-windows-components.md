@@ -1,17 +1,17 @@
 ---
-title: その他の Windows コンポーネントと統合して、モバイル ブロード バンド アプリ
-description: その他の Windows コンポーネントと統合して、モバイル ブロード バンド アプリ
+title: モバイル ブロードバンド アプリと他の Windows コンポーネントを統合する
+description: モバイル ブロードバンド アプリと他の Windows コンポーネントを統合する
 ms.assetid: 70469f6b-70a8-4ebc-b315-08ddeffbdc0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c08f251204697d34a24ac41650c92fc168af22a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387202"
 ---
-# <a name="integrate-a-mobile-broadband-app-with-other-windows-components"></a>その他の Windows コンポーネントと統合して、モバイル ブロード バンド アプリ
+# <a name="integrate-a-mobile-broadband-app-with-other-windows-components"></a>モバイル ブロードバンド アプリと他の Windows コンポーネントを統合する
 
 
 Windows 10 のユーザー インターフェイス (UI) のサーフェスを使用すると、モバイル ブロード バンド アプリの全体的なエクスペリエンスを向上します。
@@ -24,7 +24,7 @@ Windows 10 のユーザー インターフェイス (UI) のサーフェスを�
 
 -   [エラーのユーザー エクスペリエンス](#errorux)
 
--   [アプリのビュー](#appviews)
+-   [アプリ ビュー](#appviews)
 
 -   [起動ポイント](#launchpts)
 
@@ -68,7 +68,7 @@ Windows 10 のユーザー インターフェイス (UI) のサーフェスを�
 
 -   **フォーム フィールドの検証エラー**をフォームに誤った情報が入力されたときに表示されます。 検証エラーはインライン表示するか、ユーザーが、エラーが関連付けられているフィールドを認識できるようにします。
 
-エラーが存在する方法のガイダンスについては、[、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)を参照してください。 次の例では、ページの上部にある通知バーが表示されます。
+エラーが存在する方法のガイダンスについては、次を参照してください。 [、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)します。 次の例では、ページの上部にある通知バーが表示されます。
 
 ![通知バーは、エラーを示しています。](images/mb-fig1-notificationbarerrors.png)
 
@@ -109,7 +109,7 @@ Windows 10 のユーザー インターフェイス (UI) のサーフェスを�
 
 ![別のアプリとサービス ページ](images/mb-fig3-snappedview-servicespage.png)
 
-アプリがアプリ ビュー、ハイ コントラスト モードとスクリーン リーダーの準備などからアクセスできることを確認します。 アプリにアクセスできるようにする方法の詳細については、[JavaScript を使用して UWP アプリのユーザー補助機能](https://msdn.microsoft.com/library/windows/apps/hh452681)を参照してください。
+アプリがアプリ ビュー、ハイ コントラスト モードとスクリーン リーダーの準備などからアクセスできることを確認します。 アプリにアクセスできるようにする方法の詳細については、次を参照してください。 [JavaScript を使用して UWP アプリのユーザー補助機能](https://msdn.microsoft.com/library/windows/apps/hh452681)します。
 
 ## <a name="span-idlaunchptsspanspan-idlaunchptsspanlaunch-points"></a><span id="launchpts"></span><span id="LAUNCHPTS"></span>起動ポイント
 
@@ -150,7 +150,7 @@ Windows 接続マネージャーを使用して、モバイル ブロード バ�
 
 ### <a name="span-idsplashspanspan-idsplashspansplash-screen"></a><span id="splash"></span><span id="SPLASH"></span>スプラッシュ スクリーン
 
-スプラッシュ スクリーンを使用すると、ブランド化を促進します。 スプラッシュ スクリーンの詳細については、[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/hh465332)を参照してください。
+スプラッシュ スクリーンを使用すると、ブランド化を促進します。 スプラッシュ スクリーンの詳細については、次を参照してください。[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/hh465332)します。
 
 ![スプラッシュ スクリーン](images/mb-fig4-splash-screen.png)
 

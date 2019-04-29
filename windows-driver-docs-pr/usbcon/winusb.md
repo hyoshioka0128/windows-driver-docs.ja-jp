@@ -1,14 +1,14 @@
 ---
-Description: This section describes the generic WinUSB driver (Winusb.sys) and its user-mode component (Winusb.dll) provided by Microsoft for all USB devices.
+Description: このセクションでは、汎用 WinUSB ドライバー (Winusb.sys) とすべての USB デバイスに Microsoft によって提供される、ユーザー モード コンポーネント (Winusb.dll) について説明します。
 title: WinUSB (Winusb.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c5d624fc901e7b8a587b123590fc58aa75b89c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389114"
 ---
 # <a name="winusb-winusbsys"></a>WinUSB (Winusb.sys)
 
@@ -68,11 +68,11 @@ WinUSB で異なるバージョンの Windows でサポートされている高�
 
 | 機能                                | Windows 8.1 以降 | Windows 7/Vista/XP |
 |----------------------------------------|-----------------------|--------------------|
-| デバイス I/O 制御要求            | サポート対象             | サポート対象          |
-| アイソクロナス転送                  | サポート対象             | サポートされない      |
-| 一括、制御、および割り込みの転送 | サポート対象             | サポート対象          |
-| セレクティブ サスペンドします。                      | サポート対象             | サポート対象          |
-| リモート ウェイク                            | サポート対象             | サポート対象          |
+| デバイス I/O 制御要求            | サポートされている             | サポートされている          |
+| アイソクロナス転送                  | サポートされている             | サポートされない      |
+| 一括、制御、および割り込みの転送 | サポートされている             | サポートされている          |
+| セレクティブ サスペンドします。                      | サポートされている             | サポートされている          |
+| リモート ウェイク                            | サポートされている             | サポートされている          |
 
  
 

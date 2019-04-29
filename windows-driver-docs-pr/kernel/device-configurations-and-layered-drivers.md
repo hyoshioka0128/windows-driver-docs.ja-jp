@@ -1,5 +1,5 @@
 ---
-title: デバイスの構成と複数層のドライバー
+title: デバイス構成と複数層ドライバー
 description: 最も一般的な種類のデバイスでは、Windows Driver Kit (WDK) は完全に機能するシステムのドライバーのサンプル セットを提供します。
 ms.assetid: 1baaac5a-8eea-42df-bad6-fe620ac32a6c
 keywords:
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d0ce221816c0507c1143737287e478bfd11078e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388143"
 ---
-# <a name="device-configurations-and-layered-drivers"></a>デバイスの構成と複数層のドライバー
+# <a name="device-configurations-and-layered-drivers"></a>デバイス構成と複数層ドライバー
 
 
 最も一般的な種類のデバイスでは、Windows Driver Kit (WDK) は完全に機能するシステムのドライバーのサンプル セットを提供します。 ような種類のデバイス用の新しいドライバーを開発するときに、個々 のサンプルのドライバーをモデルとして使用できます。 ただし、システムのドライバーが、追加のデザイン要件必要がある。 新しいデバイス ドライバーを開発しやすくします。 その結果、多くのシステムのドライバーがある階層型アーキテクチャ類似するデバイスの新しいドライバーをサポートするために特定のドライバーを再利用できるようにします。

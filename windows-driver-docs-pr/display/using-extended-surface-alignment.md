@@ -1,6 +1,6 @@
 ---
-title: 拡張の表面の配置を使用します。
-description: 拡張の表面の配置を使用します。
+title: 拡張サーフェス配置の使用
+description: 拡張サーフェス配置の使用
 ms.assetid: ae4a6820-b9be-4dd2-95d8-6030b3b63826
 keywords:
 - 描画サーフェスの整列 WDK DirectDraw を拡張します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e68b780388d33aab5afb35918332b81ef8b7b160
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389083"
 ---
-# <a name="using-extended-surface-alignment"></a>拡張の表面の配置を使用します。
+# <a name="using-extended-surface-alignment"></a>拡張サーフェス配置の使用
 
 
 ## <span id="ddk_using_extended_surface_alignment_gg"></span><span id="DDK_USING_EXTENDED_SURFACE_ALIGNMENT_GG"></span>

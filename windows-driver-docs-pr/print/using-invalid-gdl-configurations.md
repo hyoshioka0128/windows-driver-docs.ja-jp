@@ -1,6 +1,6 @@
 ---
-title: 無効な GDL 構成を使用します。
-description: 無効な GDL 構成を使用します。
+title: 無効な GDL 構成の使用
+description: 無効な GDL 構成の使用
 ms.assetid: a61232dd-ab64-4ca4-9eb9-68fe5c7249e4
 keywords:
 - GDL WDK の構成
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1226ffd071ea12c837db07467e22700111368188
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387130"
 ---
-# <a name="using-invalid-gdl-configurations"></a>無効な GDL 構成を使用します。
+# <a name="using-invalid-gdl-configurations"></a>無効な GDL 構成の使用
 
 
 すべての可能な構成が有効で許可されています。 たとえば、印刷デバイスには、一杯やるメディア、メディアが詰まり可能性がありますので、どの入力トレイに配置する場合がありますできません。 GDL 言語では、無効なパラメーター設定の組み合わせを定義することでも無効な構成を定義することができます。

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_SMS_DELETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d2d971f74bc8996fe7f02e41204eae9f94f26ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387364"
 ---
 # <a name="oidwwansmsdelete"></a>OID\_WWAN\_SMS\_削除
 
@@ -26,7 +26,7 @@ OID\_WWAN\_SMS\_MB デバイス、または Subscriber Identity Module (SIM カ�
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、[WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)します。
 
 この OID を処理するときに、ミニポート ドライバーは Subscriber Identity Module (SIM カード) にアクセスできますが、プロバイダーのネットワークにアクセスしないでください。
 

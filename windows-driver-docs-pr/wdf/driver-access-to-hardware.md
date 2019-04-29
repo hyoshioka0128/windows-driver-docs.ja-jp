@@ -1,6 +1,6 @@
 ---
-title: ハードウェアへのドライバー
-description: ハードウェアへのドライバー
+title: ハードウェアへのドライバー アクセス
+description: ハードウェアへのドライバー アクセス
 ms.assetid: 66743284-6cdd-467e-b3b4-3d588cd296a5
 keywords:
 - PnP WDK KMDF、ハードウェアへのアクセス
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcef70cb291c05c242dda3bc4721dc558047b931
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391355"
 ---
-# <a name="driver-access-to-hardware"></a>ハードウェアへのドライバー
+# <a name="driver-access-to-hardware"></a>ハードウェアへのドライバー アクセス
 
 
 次の表には、すべてのアルファベット順に、フレームワークのデバイス オブジェクトを定義するイベントのコールバック関数が一覧表示します。 テーブルでは、コールバック関数の WDFDEVICE ハンドルを表すハードウェアをドライバーがアクセスできるコールバック関数を示します。 デバイスが作業 (D0) の状態であるため、ハードウェアにアクセスできます。

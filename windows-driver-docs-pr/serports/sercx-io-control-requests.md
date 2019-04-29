@@ -1,5 +1,5 @@
 ---
-title: SerCx I/O 制御の要求
+title: SerCx I/O の制御要求
 description: SerCx をサポートするシリアル I/O 制御要求の一覧。
 ms.assetid: 2697096f-73a2-4474-9040-e1cadbb10b1e
 keywords:
@@ -7,17 +7,17 @@ keywords:
 ms.date: 11/30/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df64636c9cba08c5927cdd131bb1f096f2716f6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388019"
 ---
-# <a name="sercx-io-control-requests"></a>SerCx I/O 制御の要求
+# <a name="sercx-io-control-requests"></a>SerCx I/O の制御要求
 
 いくつかの例外は、シリアル フレームワークの拡張機能 (SerCx) のバージョン 1 は、Ntddser.h ヘッダー ファイルで定義されている IOCTL_SERIAL_XXX I/O 制御コード (Ioctl) を使用する I/O 制御要求をサポートします。 SerCx がこれらの要求の一部を処理しますが、SerCx はハードウェアに固有の処理が必要なその他の多くの要求を処理するコント ローラーのシリアル ドライバーに依存する必要があります。 SerCx によって処理される要求の一部には、ハードウェア固有の処理も必要です。 SerCx はこれらの要求の完了に必要ですが、SerCx はこれらの要求をコント ローラーのシリアル ドライバーの処理の大部分をオフロードします。
 
-これらの Ioctl のほとんどは、システムが指定した際にドライバー Pc の名前付きのシリアル ポートの管理によってもサポートされます。 際に、Windows のサポートされているすべてのバージョンで使用できます。 シリアル Ioctl の詳細な説明については、[シリアル デバイスに対する制御要求](serial-device-control-requests2.md)を参照してください。
+これらの Ioctl のほとんどは、システムが指定した際にドライバー Pc の名前付きのシリアル ポートの管理によってもサポートされます。 際に、Windows のサポートされているすべてのバージョンで使用できます。 シリアル Ioctl の詳細な説明については、次を参照してください。[シリアル デバイスに対する制御要求](serial-device-control-requests2.md)します。
 
 SerCx は、すべての Ioctl Ntddser.h ヘッダー ファイルで定義されていることをサポートしません。 SerCx は古い形式の IOCTL_SERIAL_CONFIG_SIZE の IOCTL は周辺のクライアント ドライバーでは使用できませんをサポートしていません。 IOCTL_SERIAL_RESET_DEVICE IOCTL、STATUS_NOT_IMPLEMENTED エラー ステータス コードで常に SerCx を完了するにはもサポートされていません。 さらに、SerCx Ntddser.h で定義されている IOCTL_SERIAL_INTERNAL_XXX Ioctl のいずれもサポートしていません。
 

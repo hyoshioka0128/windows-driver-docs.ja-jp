@@ -1,6 +1,6 @@
 ---
-title: 検索して HID コレクションを開く
-description: 検索して HID コレクションを開く
+title: HID コレクションを検索して開く
+description: HID コレクションを検索して開く
 ms.assetid: b46fdb06-e6ae-4376-994f-69bf6539f2ce
 keywords:
 - コレクション WDK の HID、検索
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aaba2c5dfbfac7b488103a5e1388cf424b2ecb23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388967"
 ---
-# <a name="finding-and-opening-a-hid-collection"></a>検索して HID コレクションを開く
+# <a name="finding-and-opening-a-hid-collection"></a>HID コレクションを検索して開く
 
 
 

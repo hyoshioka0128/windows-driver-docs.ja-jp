@@ -1,17 +1,17 @@
 ---
-title: I/O 要求を発行するコードを修正します。
-description: I/O 要求を発行するコードを修正します。
+title: I/O 要求を発行するコードを修正する
+description: I/O 要求を発行するコードを修正する
 ms.assetid: 39E4B6B2-45C8-42B7-811A-EEDCCCB056EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bcfaa8cc3ecf1303223c3f80df81fd2d94f7e0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325173"
 ---
-# <a name="revise-code-that-issues-io-requests"></a>I/O 要求を発行するコードを修正します。
+# <a name="revise-code-that-issues-io-requests"></a>I/O 要求を発行するコードを修正する
 
 
 WDF では、ドライバーは、I/O 要求の書式設定を作成して使用できるいくつかのメソッドを定義します。 次の表は、これらのメソッドをまとめたものです。
@@ -71,9 +71,9 @@ WDF では、ドライバーは、I/O 要求の書式設定を作成して使用
 
  
 
-を別のデバイス スタックを、要求を送信するには、は、WDF ドライバーは、リモートの I/O ターゲットを使用します。 リモートの I/O ターゲットを初期化する方法については、[一般的な I/O のターゲットの初期化](initializing-a-general-i-o-target.md)を参照してください。
+を別のデバイス スタックを、要求を送信するには、は、WDF ドライバーは、リモートの I/O ターゲットを使用します。 リモートの I/O ターゲットを初期化する方法については、次を参照してください。[一般的な I/O のターゲットの初期化](initializing-a-general-i-o-target.md)します。
 
-非同期要求のまたは呼び出すことによって送信されるすべての要求の完了ステータスを取得する[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)、ドライバー呼び出し[ **WdfRequestGetStatus**](https://msdn.microsoft.com/library/windows/hardware/ff549974). 同期の要求の状態をすぐに取得できます。 非同期の要求、ドライバーの I/O 完了コールバックは通常の状態を取得します。 同期または非同期要求を送信する方法の詳細については、[一般的な I/O ターゲットへの I/O 要求の送信](sending-i-o-requests-to-general-i-o-targets.md)を参照してください。
+非同期要求のまたは呼び出すことによって送信されるすべての要求の完了ステータスを取得する[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)、ドライバー呼び出し[ **WdfRequestGetStatus**](https://msdn.microsoft.com/library/windows/hardware/ff549974). 同期の要求の状態をすぐに取得できます。 非同期の要求、ドライバーの I/O 完了コールバックは通常の状態を取得します。 同期または非同期要求を送信する方法の詳細については、次を参照してください。[一般的な I/O ターゲットへの I/O 要求の送信](sending-i-o-requests-to-general-i-o-targets.md)します。
 
  
 

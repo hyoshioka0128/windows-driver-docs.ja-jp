@@ -1,6 +1,6 @@
 ---
-title: UMDF ドライバーでのデバイスのインターフェイスを使用します。
-description: UMDF ドライバーでのデバイスのインターフェイスを使用します。
+title: UMDF ドライバーでのデバイス インターフェイスの使用
+description: UMDF ドライバーでのデバイス インターフェイスの使用
 ms.assetid: acb6da80-bd04-48f0-b42a-96463f091b0a
 keywords:
 - ユーザー モード ドライバー WDK UMDF、デバイス インターフェイス
@@ -10,20 +10,20 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 039fff15e83c421416746e4c93f791ec9e37149a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327169"
 ---
-# <a name="using-device-interfaces-in-umdf-drivers"></a>UMDF ドライバーでのデバイスのインターフェイスを使用します。
+# <a name="using-device-interfaces-in-umdf-drivers"></a>UMDF ドライバーでのデバイス インターフェイスの使用
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
 A*デバイス インターフェイス*プラグ アンド プレイ (PnP) へのシンボリック リンクは、デバイス、デバイスにアクセスするアプリケーションで使用できます。 ユーザー モード アプリケーションは、Microsoft Win32 などの API 要素に、インターフェイスのシンボリック リンクの名前を渡すことができます[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)関数。 ユーザー モード アプリケーションを呼び出して、デバイス インターフェイスのシンボリック リンクの名前を取得する**SetupDi**関数。 SetupDi 関数の詳細については、SetupDi デバイス インターフェイスの関数を参照してください。
 
-各デバイスのインターフェイスが属する、*デバイス インターフェイス クラス*します。 たとえば、CD-ROM デバイスのドライバー スタックは、GUID が属しているインターフェイスを提供可能性があります\_DEVINTERFACE\_CDROM クラス。 CD-ROM デバイスのドライバーの 1 つは、GUID のインスタンスを登録\_DEVINTERFACE\_CD-ROM デバイスが使用可能なシステムおよびアプリケーションに通知する CDROM クラス。 デバイスのインターフェイス クラスの詳細については、[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)を参照してください。
+各デバイスのインターフェイスが属する、*デバイス インターフェイス クラス*します。 たとえば、CD-ROM デバイスのドライバー スタックは、GUID が属しているインターフェイスを提供可能性があります\_DEVINTERFACE\_CDROM クラス。 CD-ROM デバイスのドライバーの 1 つは、GUID のインスタンスを登録\_DEVINTERFACE\_CD-ROM デバイスが使用可能なシステムおよびアプリケーションに通知する CDROM クラス。 デバイスのインターフェイス クラスの詳細については、次を参照してください。[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)します。
 
 ### <a name="registering-a-device-interface"></a>デバイスのインターフェイスを登録します。
 

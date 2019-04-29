@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84554f990cb71f834ef8f390b844e149af581e31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389648"
 ---
 # <a name="video-miniport-driver-requirements-windows-2000-model"></a>ビデオ ミニポート ドライバーの要件 (Windows 2000 モデル)
 

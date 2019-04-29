@@ -1,17 +1,17 @@
 ---
-title: 選択的 NDIS 中断します。
-description: 選択的 NDIS 中断します。
+title: NDIS セレクティブ サスペンド
+description: NDIS セレクティブ サスペンド
 ms.assetid: B0D44AE3-5197-4264-9838-83FB5EFEB0B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e487e400ccb97482ca7fa3adae88d03f20fc38f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387148"
 ---
-# <a name="ndis-selective-suspend"></a>選択的 NDIS 中断します。
+# <a name="ndis-selective-suspend"></a>NDIS セレクティブ サスペンド
 
 
 NDIS 6.30 以降では、選択的 NDIS 中断インターフェイスでは、アダプターを低電力状態に遷移することによって、アイドル状態のネットワーク アダプターを中断する NDIS できます。 これにより、CPU とネットワーク アダプターのオーバーヘッドが電力を減らすため、システムができます。

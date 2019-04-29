@@ -1,6 +1,6 @@
 ---
-title: ドライバーの定義の WMI データ項目
-description: ドライバーの定義の WMI データ項目
+title: ドライバーによって定義される WMI データ項目
+description: ドライバーによって定義される WMI データ項目
 ms.assetid: 97b64571-95ff-4d61-9fa0-5690e9f29345
 keywords:
 - データ型の WDK WMI
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4f60b9b54329682edccfbc81fea01b995d3fa48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387173"
 ---
-# <a name="driver-defined-wmi-data-items"></a>ドライバーの定義の WMI データ項目
+# <a name="driver-defined-wmi-data-items"></a>ドライバーによって定義される WMI データ項目
 
 
 
@@ -107,7 +107,7 @@ Wmi データ ブロックを送信するときに、ドライバーは 8 バイ
 <td><p><strong>datetime</strong></p></td>
 <td><p>絶対日付または時間間隔を指定する固定長 25 文字 Unicode 文字列。 A <strong>datetime</strong>値には、次の形式。</p>
 <p><em>yyyymmddhhmmss.mmmmmmsutc</em></p>
-<p>この場合</p>
+<p>それぞれの文字の説明は次のとおりです。</p>
 <p><em>yyyy</em>は 4 桁の年</p>
 <p><em>mm</em>は 2 桁の月</p>
 <p><em>dd</em>は月の 2 桁の日</p>

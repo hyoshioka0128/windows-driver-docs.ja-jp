@@ -1,6 +1,6 @@
 ---
-title: バージョンの検出のサポート
-description: バージョンの検出のサポート
+title: バージョン検出のサポート
+description: バージョン検出のサポート
 ms.assetid: 9e37eaad-02b2-43a9-bd1a-4c5b2b02d1b6
 keywords:
 - Direct3D バージョン 10.1 WDK Windows 7 の表示、探索のバージョンのサポート
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 682d5fbf0dc3c5ef0d90561459d52b0ee73eb01b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390796"
 ---
-# <a name="version-discovery-support"></a>バージョンの検出のサポート
+# <a name="version-discovery-support"></a>バージョン検出のサポート
 
 
 このセクションでは、Windows 7 およびそれ以降のオペレーティング システムにのみ適用されます。

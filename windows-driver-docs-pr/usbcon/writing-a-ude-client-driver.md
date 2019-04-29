@@ -1,16 +1,16 @@
 ---
-Description: Describes the behavior of USB Device Emulation(UDE) class extension and tasks that a client driver must perform for an emulated host controller and devices attached to it.
-title: UDE クライアント ドライバーを作成します。
+Description: USB デバイス Emulation(UDE) クラスの拡張機能と、クライアント ドライバーが、エミュレートされたホストのコント ローラーとそれに接続されたデバイスに対して実行する必要がありますタスクの動作について説明します。
+title: UDE クライアント ドライバーを記述する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 33419b91aa06d9e88c4faee51350b657b176914d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389109"
 ---
-# <a name="write-a-ude-client-driver"></a>UDE クライアント ドライバーを作成します。
+# <a name="write-a-ude-client-driver"></a>UDE クライアント ドライバーを記述する
 
 **要約**
 
@@ -18,7 +18,7 @@ ms.locfileid: "56539715"
 - コント ローラーの機能のクエリを実行して、コント ローラーをリセットする機能をエミュレートされたホスト コント ローラーを作成します。
 - 電源管理とデータのために設定すると仮想の USB デバイスの作成は、エンドポイントを介して転送します。
 
-**適用対象します。**
+**適用対象:**
 
 - Windows 10
 
@@ -28,7 +28,7 @@ ms.locfileid: "56539715"
 
 **重要な API**
 
-- [エミュレートされた USB ホスト コント ローラー ドライバー プログラミング リファレンス](https://msdn.microsoft.com/library/windows/hardware/mt628025)
+- [エミュレートされた USB ホスト コントローラー ドライバーのプログラミング参照](https://msdn.microsoft.com/library/windows/hardware/mt628025)
 
 USB デバイス Emulation(UDE) クラスの拡張機能と、クライアント ドライバーが、エミュレートされたホストのコント ローラーとそれに接続されたデバイスに対して実行する必要がありますタスクの動作について説明します。 ルーチンとコールバック関数のセットを通じてそれぞれのクラス ドライバーとクラスの拡張機能の通信方法に関する情報を提供します。 機能についても説明を実装するために、クライアント ドライバーが必要です。
 
@@ -580,7 +580,7 @@ exit:
 
 UDE クラスの拡張機能は、低電力状態または動作状態に戻して、デバイスの送信要求を受信したときに、クライアント ドライバーのコールバック関数を呼び出します。 これらのコールバック関数は、USB デバイスのスリープ解除をサポートする必要があります。 クライアント ドライバーでは、以前の呼び出しにによってその実装が登録されている[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://msdn.microsoft.com/library/windows/hardware/mt627972)します。
 
-詳細については、[USB デバイスの電源状態](comparing-usb-device-states-to-wdm-device-states.md)を参照してください。
+詳細については、次を参照してください。 [USB デバイスの電源状態](comparing-usb-device-states-to-wdm-device-states.md)します。
 
 [*EVT\_UDECX\_USB\_デバイス\_D0\_エントリ*](https://msdn.microsoft.com/library/windows/hardware/mt595910)  
 クライアント ドライバーでは、Dx 状態から d0 へのデバイスを移行します。

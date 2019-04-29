@@ -1,17 +1,17 @@
 ---
-title: リモートの NDIS QoS パラメーターへの変更を示す
-description: リモートの NDIS QoS パラメーターへの変更を示す
+title: リモート NDIS QoS パラメーターへの変更の表示
+description: リモート NDIS QoS パラメーターへの変更の表示
 ms.assetid: E09EBF25-96B6-417F-9538-D0BEBE5B9E19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e0875d66834c76750e75b0025cf5c1a35f462b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327751"
 ---
-# <a name="indicating-changes-to-the-remote-ndis-qos-parameters"></a>リモートの NDIS QoS パラメーターへの変更を示す
+# <a name="indicating-changes-to-the-remote-ndis-qos-parameters"></a>リモート NDIS QoS パラメーターへの変更の表示
 
 
 NDIS サービスの品質 (QoS) の問題をサポートしているミニポート ドライバー、 [ **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439812)そのリモートの NDIS QoS パラメーターは、最初に、ピアから受信したか、または後で変更するときの状態を示す値。 ミニポート ドライバーでは、これらの QoS パラメーターを受け取る IEEE 802.1 qaz を通じてリモート ピアから Data Center Bridging Exchange (DCBX) プロトコル。
@@ -22,7 +22,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
 -   ミニポート ドライバーを発行する必要があります、 [ **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439812)後の状態の表示リモート ピアから、QoS の設定が最初に受信します。
 
-    **注**ネットワーク アダプターは、ドライバーのローカルの QoS パラメーターを設定する前に、ピアからリモートの QoS パラメーター設定を受信する場合、ミニポート ドライバーはこの状態を示す値を発行する必要があります。 詳細については、[NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)を参照してください。
+    **注**ネットワーク アダプターは、ドライバーのローカルの QoS パラメーターを設定する前に、ピアからリモートの QoS パラメーター設定を受信する場合、ミニポート ドライバーはこの状態を示す値を発行する必要があります。 詳細については、次を参照してください。 [NDIS QoS パラメーターをローカル設定](setting-local-ndis-qos-parameters.md)します。
 
 -   この最初の状態を示す値を後に、ミニポート ドライバーを発行するのみ、 [ **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439812)リモート ピアの QoS の設定の変更を決定する場合の状態を示す値。
 

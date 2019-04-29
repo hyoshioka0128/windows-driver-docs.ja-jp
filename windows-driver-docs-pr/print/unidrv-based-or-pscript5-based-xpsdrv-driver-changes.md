@@ -1,19 +1,19 @@
 ---
-title: Unidrv ベースまたは PScript5 ベース XPSDrv ドライバーの変更
-description: Unidrv ベースまたは PScript5 ベース XPSDrv ドライバーの変更
+title: Unidrv ベースまたは PScript5 ベースの XPSDrv ドライバー変更
+description: Unidrv ベースまたは PScript5 ベースの XPSDrv ドライバー変更
 ms.assetid: 47398d3a-5e50-40ee-b3d7-7fc559368981
 keywords:
 - バージョン 3 XPS ドライバー WDK XPSDrv、変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e38b56fe011ba5cb17094db14fc7499a870e2d49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325279"
 ---
-# <a name="unidrv-based-or-pscript5-based-xpsdrv-driver-changes"></a>Unidrv ベースまたは PScript5 ベース XPSDrv ドライバーの変更
+# <a name="unidrv-based-or-pscript5-based-xpsdrv-driver-changes"></a>Unidrv ベースまたは PScript5 ベースの XPSDrv ドライバー変更
 
 
 次の変更は、XPSDrv モードで実行されている場合に、コア Unidrv または PScript5 動作に適用されます。

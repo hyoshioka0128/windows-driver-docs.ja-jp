@@ -1,6 +1,6 @@
 ---
-title: 頂点バッファーの名前を変更
-description: 頂点バッファーの名前を変更
+title: 頂点バッファーの名前変更
+description: 頂点バッファーの名前変更
 ms.assetid: b76552b4-77a9-43f4-984b-10de92dffa83
 keywords:
 - DirectX 8.0 WDK Windows 2000 のリリース ノートを表示する頂点バッファー、名前を変更します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91f6fb5d31b605cc10978b245934858df9e61ed3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387425"
 ---
-# <a name="vertex-buffer-renaming"></a>頂点バッファーの名前を変更
+# <a name="vertex-buffer-renaming"></a>頂点バッファーの名前変更
 
 
 ## <span id="ddk_vertex_buffer_renaming_gg"></span><span id="DDK_VERTEX_BUFFER_RENAMING_GG"></span>

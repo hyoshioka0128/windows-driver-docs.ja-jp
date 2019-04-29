@@ -4,11 +4,11 @@ description: '! 時間で前方と後方を移動することができます tt 
 ms.date: 09/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26817ac6f106064afdec8f80a74359c23d476768
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389118"
 ---
 ![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png)
 
@@ -58,7 +58,7 @@ ttdext.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、[時出張デバッグ - 概要](time-travel-debugging-overview.md)を参照してください。
+この拡張機能のみの動作時間は、トレースを移動します。 タイム トラベルの詳細については、次を参照してください。[時出張デバッグ - 概要](time-travel-debugging-overview.md)します。
 
 ## <a name="see-also"></a>参照
 

@@ -1,6 +1,6 @@
 ---
-title: スレッド処理と 3 番目のレベルの同期
-description: スレッド処理と 3 番目のレベルの同期
+title: スレッドおよび同期の第 3 レベル
+description: スレッドおよび同期の第 3 レベル
 ms.assetid: 780d37d9-40c6-4737-9042-473810868227
 keywords:
 - WDK 表示スレッド処理、第 3 レベルします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 647c5fd9bae10c25aa7f6dedcef25d2e3a0214ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389841"
 ---
-# <a name="threading-and-synchronization-third-level"></a>スレッド処理と 3 番目のレベルの同期
+# <a name="threading-and-synchronization-third-level"></a>スレッドおよび同期の第 3 レベル
 
 
 Windows 表示 Driver Model (WDDM) は、スレッドと同期の第 3 レベルの下で、ディスプレイのミニポート ドライバーを次の呼び出しが行われることを保証します。 これにより、1 つのスレッド (つまり、呼び出し元のスレッド) のみが、ドライバー内にあります。 さらに、グラフィックス ハードウェアがアイドル状態、いいえダイレクト メモリ アクセス (DMA) バッファーを現在されているドライバーで処理する場合や、GPU のスケジューラを通過し、ビデオ メモリが CPU メモリをホストする完全に削除されます。

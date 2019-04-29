@@ -5,16 +5,16 @@ ms.assetid: 759DE159-F2A8-4BB1-AAF5-B2B91C4F91B0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1827ec250381d96a06f72955f679ecf7ec4fd25a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325341"
 ---
 # <a name="failure-analysis-entries"></a>エラー分析エントリ
 
 
-A [ **DebugFailureAnalysis** ](https://msdn.microsoft.com/library/windows/hardware/jj983405)オブジェクトがエラーの分析のエントリのコレクション。 詳細については、[エラー分析のエントリ、タグ、およびデータ型](writing-an-analysis-extension-to-extend--analyze.md#failure-analysis-entries-tags-and-data-types)を参照してください。
+A [ **DebugFailureAnalysis** ](https://msdn.microsoft.com/library/windows/hardware/jj983405)オブジェクトがエラーの分析のエントリのコレクション。 詳細については、次を参照してください。[エラー分析のエントリ、タグ、およびデータ型](writing-an-analysis-extension-to-extend--analyze.md#failure-analysis-entries-tags-and-data-types)します。
 
 A*エラー分析のエントリ*(とも呼ばれる、 *FA エントリ*) は、次のいずれか。
 

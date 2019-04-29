@@ -5,11 +5,11 @@ ms.assetid: 22ca9ac2-fe67-427d-a6e4-f1d9cbbede52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc53d29a376517562885c2fb8a13611c812895f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327772"
 ---
 # <a name="retrieving-the-status-and-problem-code-for-a-device-instance"></a>デバイス インスタンスの状態と問題コードの取得
 
@@ -20,7 +20,7 @@ Windows Server 2003、Windows XP、および Windows 2000、統一されたプ�
 
 デバイス ドライバーのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。
 
-プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンでデバイス ドライバーのプロパティにアクセスする方法については、[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)を参照してください。
+プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンでデバイス ドライバーのプロパティにアクセスする方法については、次を参照してください。[プロパティへのアクセス デバイス インスタンス (Windows Vista 以降)](accessing-device-instance-properties--windows-vista-and-later-.md)します。
 
 Windows Server 2003、Windows XP、および Windows 2000 でのデバイス インスタンスの状態および問題のコードにアクセスするには、呼び出す**CM_Get_DevNode_Status**し、次のパラメーターを指定します。
 

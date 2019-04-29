@@ -1,6 +1,6 @@
 ---
-title: I/O キューを管理します。
-description: I/O キューを管理します。
+title: I/O キューの管理
+description: I/O キューの管理
 ms.assetid: 83cc87c8-7e2d-4f79-a580-0519d327e7ba
 keywords:
 - WDK KMDF、以降の I/O キュー
@@ -26,13 +26,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 970a95d37f56adf13c1f013570535ffe24fea279
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390168"
 ---
-# <a name="managing-io-queues"></a>I/O キューを管理します。
+# <a name="managing-io-queues"></a>I/O キューの管理
 
 
 ## <a href="" id="starting-an-i-o-queue"></a> I/O キューを開始
@@ -96,7 +96,7 @@ ms.locfileid: "56527760"
 ## <a href="" id="moving-requests-from-one-i-o-queue-to-another"></a> 1 つの I/O キューからの要求の移動
 
 
-ドライバーが、I/O 要求を受け取った後は、別の I/O キューに要求をもう一度キューにドライバーをする可能性があります。 これには、ドライバーの呼び出しを行う[ **WdfRequestForwardToIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff549958)または[ **WdfRequestForwardToParentDeviceIoQueue**](https://msdn.microsoft.com/library/windows/hardware/ff549959)、追加、指定したキューの末尾を要求します。 最終的には、フレームワークは配信要求のドライバーにもう一度指定したキューのディスパッチ メソッドを使用しています。 1 つの I/O キューから別の I/O 要求の移動の詳細については、[I/O 要求の Requeuing](requeuing-i-o-requests.md)を参照してください。
+ドライバーが、I/O 要求を受け取った後は、別の I/O キューに要求をもう一度キューにドライバーをする可能性があります。 これには、ドライバーの呼び出しを行う[ **WdfRequestForwardToIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff549958)または[ **WdfRequestForwardToParentDeviceIoQueue**](https://msdn.microsoft.com/library/windows/hardware/ff549959)、追加、指定したキューの末尾を要求します。 最終的には、フレームワークは配信要求のドライバーにもう一度指定したキューのディスパッチ メソッドを使用しています。 1 つの I/O キューから別の I/O 要求の移動の詳細については、次を参照してください。 [I/O 要求の Requeuing](requeuing-i-o-requests.md)します。
 
 ## <a href="" id="intercepting-an-i-o-request-before-it-is-queued"></a> キューに配置する前に、I/O 要求をインターセプト
 
@@ -107,7 +107,7 @@ ms.locfileid: "56527760"
 
 通常、ときに、 [ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)コールバック関数は要求を受け取る、要求のいくつかの事前処理を実行します。 次に、コールバック関数を呼び出す[ **WdfDeviceEnqueueRequest**](https://msdn.microsoft.com/library/windows/hardware/ff545945)フレームワークに、要求は戻る、します。 フレームワークはが呼び出さない場合と同様、適切な I/O キューの要求を配置できます、 *EvtIoInCallerContext*コールバック関数。
 
-ドライバーが提供する主な理由、 [ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)と呼ばれる I/O メソッドをサポートする I/O 操作を処理するために、ドライバーがあるコールバック関数は、[もないです。バッファー内や直接 I/O](https://msdn.microsoft.com/library/windows/hardware/ff540701#neither)します。 この I/O メソッドでは、ドライバーは、I/O 要求の発信元のプロセスのコンテキストで受信したバッファーにアクセスする必要があります。 詳細については、[Framework ベースのドライバーでのデータ バッファーへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff540701)を参照してください。
+ドライバーが提供する主な理由、 [ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)と呼ばれる I/O メソッドをサポートする I/O 操作を処理するために、ドライバーがあるコールバック関数は、[もないです。バッファー内や直接 I/O](https://msdn.microsoft.com/library/windows/hardware/ff540701#neither)します。 この I/O メソッドでは、ドライバーは、I/O 要求の発信元のプロセスのコンテキストで受信したバッファーにアクセスする必要があります。 詳細については、次を参照してください。 [Framework ベースのドライバーでのデータ バッファーへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff540701)します。
 
 ## <a href="" id="obtaining-i-o-queue-properties"></a> I/O キューのプロパティを取得します。
 

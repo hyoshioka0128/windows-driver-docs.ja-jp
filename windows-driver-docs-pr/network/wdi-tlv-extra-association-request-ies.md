@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_EXTRA_ASSOCIATION_REQUEST_IES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e79a43bf6c1f1c8c5e3b93b9039252e90e581f4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387137"
 ---
 # <a name="wditlvextraassociationrequesties"></a>WDI\_TLV\_余分な\_アソシエーション\_要求\_IES
 
@@ -37,7 +37,7 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

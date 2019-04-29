@@ -1,6 +1,6 @@
 ---
-title: デバイス依存ビットマップを作成します。
-description: デバイス依存ビットマップを作成します。
+title: デバイス依存ビットマップの作成
+description: デバイス依存ビットマップの作成
 ms.assetid: da53a8bf-5991-4abb-81f1-2d3a7cb0ff90
 keywords:
 - ビットマップ、GDI WDK Windows 2000 の表示
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42e2f6dec985d51533ef7e0bfe37698bcb4de7a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387249"
 ---
-# <a name="creating-device-dependent-bitmaps"></a>デバイス依存ビットマップを作成します。
+# <a name="creating-device-dependent-bitmaps"></a>デバイス依存ビットマップの作成
 
 
 ## <span id="ddk_creating_device_dependent_bitmaps_gg"></span><span id="DDK_CREATING_DEVICE_DEPENDENT_BITMAPS_GG"></span>
@@ -26,7 +26,7 @@ ms.locfileid: "56558923"
 ドライバーの作成し、管理、アプリケーションがビットマップの作成を要求すると、 [ *DDB* ](https://docs.microsoft.com/windows/desktop/gdi/device-dependent-bitmaps)サポートすることによって、 [ **DrvCreateDeviceBitmap** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)関数。 このようなドライバーは、ビットマップを作成するときは、任意の形式で、ビットマップを格納できます。 ドライバーは、渡されたパラメーターを調べ、少なくとも数だけビット ピクセルあたりの要求にビットマップを提供します。
 
 > [!NOTE]
-> グラフィック ドライバーは、のビットマップをサポートすることでパフォーマンスを向上させることができます[*オフスクリーン メモリ*](video-present-network-terminology.md#off_screen_memory)してハードウェアを使用してビットマップを描画します。 これの例は、、 **Permedia**ドライバーのサンプルを表示を参照してください。
+> グラフィック ドライバーは、のビットマップをサポートすることでパフォーマンスを向上させることができます[*オフスクリーン メモリ*](video-present-network-terminology.md#off_screen_memory)してハードウェアを使用してビットマップを描画します。 これの例は、次を参照してください。、 **Permedia**ドライバーのサンプルを表示します。
 
 
 > [!NOTE]

@@ -1,17 +1,17 @@
 ---
-title: HID クラスへのミニドライバーのバインド
+title: ミニドライバーを HID クラスにバインドする
 description: このセクションでは、システムによって提供される HID クラス ドライバーと HIDClass デバイス セットアップ クラスのデバイスをサポートする HID ミニドライバーの操作について説明します。
 ms.assetid: 2B51E205-8EBB-413A-A317-0923FAB77F0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96c68a610802110ff174bbed2b2588e976afd72a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390359"
 ---
-# <a name="binding-minidrivers-to-the-hid-class"></a>HID クラスへのミニドライバーのバインド
+# <a name="binding-minidrivers-to-the-hid-class"></a>ミニドライバーを HID クラスにバインドする
 
 
 このセクションには、システムによって提供される HID クラス ドライバーと、HIDClass でデバイスをサポートする HID ミニドライバーの操作がについて説明します[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。

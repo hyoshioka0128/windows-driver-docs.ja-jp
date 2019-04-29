@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_RECEIVE_HASH ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b43c1e6e16220ce2b3fcfd1693ff79e73281188
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391028"
 ---
 # <a name="oidgenreceivehash"></a>OID\_GEN\_受信\_ハッシュ
 
@@ -19,7 +19,7 @@ ms.locfileid: "56572282"
 
 セットとして NDIS と関連付けたドライバー使用 OID\_GEN\_受信\_ハッシュ OID ミニポート アダプターで受信ハッシュ計算を構成します。 ミニポート ドライバーが受信、NDIS\_受信\_ハッシュ\_パラメーター構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS ミニポート ドライバーでは、クエリは要求されません。

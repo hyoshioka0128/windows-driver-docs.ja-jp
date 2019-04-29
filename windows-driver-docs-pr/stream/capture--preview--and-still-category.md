@@ -1,6 +1,6 @@
 ---
-title: キャプチャ、プレビュー、およびカテゴリを引き続き
-description: キャプチャ、プレビュー、およびカテゴリを引き続き
+title: キャプチャ、プレビュー、静止画カテゴリ
+description: キャプチャ、プレビュー、静止画カテゴリ
 ms.assetid: b82cc3b6-1cea-4864-9501-95919f05455f
 keywords:
 - ストリーム カテゴリ WDK ビデオのキャプチャ、ビデオ ストリームをキャプチャします。
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca096532db207df77cfa9f430bab9ca81bb14def
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387929"
 ---
-# <a name="capture-preview-and-still-category"></a>キャプチャ、プレビュー、およびカテゴリを引き続き
+# <a name="capture-preview-and-still-category"></a>キャプチャ、プレビュー、静止画カテゴリ
 
 
 次の Guid は、ビデオ ストリームをキャプチャし、ビデオのストリームをプレビューし、(ハードウェアでサポートされている) 場合、イメージ キャプチャもカテゴリに対応しています。

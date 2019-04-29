@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 264d49d80852a5635ed6fd8bac37e55034f28e32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391828"
 ---
 # <a name="using-the-umdf-co-installer"></a>UMDF 共同インストーラーの使用
 
@@ -89,7 +89,7 @@ HKR,,CoInstallers32,0x00010000,WudfCoinstaller.dll
 
 ドライバーの INF ファイルは常に含める必要があります、 **DDInstall.Wdf**共同インストーラーがインストールされていた後を読み取っていることをセクションします。 ドライバーを指定できますディレクティブについては**DDInstall.Wdf**を参照してください[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
 
-INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツール。 INX ファイルの詳細については、[INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)を参照してください。
+INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツール。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)します。
 
  
 

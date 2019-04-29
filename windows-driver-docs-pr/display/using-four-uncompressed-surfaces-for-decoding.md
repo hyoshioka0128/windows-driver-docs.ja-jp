@@ -1,6 +1,6 @@
 ---
-title: デコードの 4 つの非圧縮サーフェスを使用します。
-description: デコードの 4 つの非圧縮サーフェスを使用します。
+title: デコードに 4 つの非圧縮サーフェスを使用する
+description: デコードに 4 つの非圧縮サーフェスを使用する
 ms.assetid: ceeea614-6793-4a75-8334-7dd062ac0b46
 keywords:
 - ビデオのデコード WDK DirectX va なので、シーケンスの要件
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c02155fd59e9ef392f04a00564abd84bb8400708
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389033"
 ---
-# <a name="using-four-uncompressed-surfaces-for-decoding"></a>デコードの 4 つの非圧縮サーフェスを使用します。
+# <a name="using-four-uncompressed-surfaces-for-decoding"></a>デコードに 4 つの非圧縮サーフェスを使用する
 
 
 ## <span id="ddk_using_four_uncompressed_surfaces_for_decoding_gg"></span><span id="DDK_USING_FOUR_UNCOMPRESSED_SURFACES_FOR_DECODING_GG"></span>

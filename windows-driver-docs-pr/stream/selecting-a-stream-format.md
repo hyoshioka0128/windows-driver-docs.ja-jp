@@ -1,6 +1,6 @@
 ---
-title: Stream の形式を選択します。
-description: Stream の形式を選択します。
+title: ストリーム形式の選択
+description: ストリーム形式の選択
 ms.assetid: 876eca52-4d5e-45bd-90df-ff4b6405078d
 keywords:
 - ビデオ キャプチャ WDK AVStream、stream の形式
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5979f18fb5525c322a6681238f5be874da97d92d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389201"
 ---
-# <a name="selecting-a-stream-format"></a>Stream の形式を選択します。
+# <a name="selecting-a-stream-format"></a>ストリーム形式の選択
 
 
 ビデオ キャプチャ デバイスには、さまざまな異なる形式でビデオをキャプチャできます。 [ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)構造を使用して、幅、高さ、粒度、トリミング、に関する情報を伝達し、フレーム レート、特定のカラー スペースをします。 構造体[ **KS\_DATARANGE\_ビデオ**](https://msdn.microsoft.com/library/windows/hardware/ff567628)と[ **KS\_DATARANGE\_VIDEO2**](https://msdn.microsoft.com/library/windows/hardware/ff567629) KSDATARANGE 構造の拡張機能は、ビデオのキャプチャの形式を記述するために使用する必要があります。 使用 KS\_DATARANGE\_ビデオ フレームのみを説明するビデオです。 使用 KS\_DATARANGE\_VIDEO2 ビデオ フィールドとビデオのフレーム、bob の有無について説明します、設定を一元管理したりします。

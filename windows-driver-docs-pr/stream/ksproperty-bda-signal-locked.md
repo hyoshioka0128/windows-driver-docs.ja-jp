@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02f06127f7d66bc7fd98adc8b726c2e4e0435d92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389250"
 ---
 # <a name="kspropertybdasignallocked"></a>KSPROPERTY\_BDA\_信号\_ロック
 
@@ -42,16 +42,16 @@ ms.locfileid: "56570629"
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>Pin またはフィルター</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>BOOL</p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "56570629"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **NodeId** KSP のメンバー\_ノードの管理ノードの識別子を指定しますまたは、暗証番号 (pin) を指定する − 1 に設定されています。

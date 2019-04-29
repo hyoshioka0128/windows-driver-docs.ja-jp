@@ -1,6 +1,6 @@
 ---
-title: デバイスのインターフェイスを使用します。
-description: デバイスのインターフェイスを使用します。
+title: デバイス インターフェイスの使用
+description: デバイス インターフェイスの使用
 ms.assetid: 98199220-947e-462e-a50c-85d81ca50108
 keywords:
 - デバイスは、WDK KMDF をインターフェイスします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ee21f36a94ac6671e5f6530377bc62c06a610bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326995"
 ---
-# <a name="using-device-interfaces"></a>デバイスのインターフェイスを使用します。
+# <a name="using-device-interfaces"></a>デバイス インターフェイスの使用
 
 
 
@@ -24,7 +24,7 @@ ms.locfileid: "56560411"
 
 A*デバイス インターフェイス*プラグ アンド プレイ (PnP) へのシンボリック リンクは、デバイス、デバイスにアクセスするアプリケーションで使用できます。 ユーザー モード アプリケーションは、Microsoft Win32 などの API 要素に、インターフェイスのシンボリック リンクの名前を渡すことができます**CreateFile**関数。 ユーザー モード アプリケーションを呼び出して、デバイス インターフェイスのシンボリック リンクの名前を取得する**SetupDi**関数。 詳細については**SetupDi**関数を参照してください[デバイス インターフェイスの関数を使用して](https://msdn.microsoft.com/library/windows/hardware/ff553567)します。
 
-各デバイスのインターフェイスが属する、*デバイス インターフェイス クラス*します。 たとえば、CD-ROM デバイスのドライバー スタックは、GUID が属しているインターフェイスを提供可能性があります\_DEVINTERFACE\_CDROM クラス。 CD-ROM デバイスのドライバーの 1 つは、GUID のインスタンスを登録\_DEVINTERFACE\_CD-ROM デバイスが使用可能なシステムおよびアプリケーションに通知する CDROM クラス。 デバイスのインターフェイス クラスの詳細については、[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)を参照してください。
+各デバイスのインターフェイスが属する、*デバイス インターフェイス クラス*します。 たとえば、CD-ROM デバイスのドライバー スタックは、GUID が属しているインターフェイスを提供可能性があります\_DEVINTERFACE\_CDROM クラス。 CD-ROM デバイスのドライバーの 1 つは、GUID のインスタンスを登録\_DEVINTERFACE\_CD-ROM デバイスが使用可能なシステムおよびアプリケーションに通知する CDROM クラス。 デバイスのインターフェイス クラスの詳細については、次を参照してください。[デバイス インターフェイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff549460)します。
 
 ### <a name="registering-a-device-interface"></a>デバイスのインターフェイスを登録します。
 
@@ -32,7 +32,7 @@ A*デバイス インターフェイス*プラグ アンド プレイ (PnP) へ�
 
 ドライバーを呼び出すことができます、ドライバーがデバイスのインターフェイスを登録すると、 [ **WdfDeviceRetrieveDeviceInterfaceString** ](https://msdn.microsoft.com/library/windows/hardware/ff546842)システムが、デバイス インターフェイスに割り当てられているシンボリック リンクの名前を取得するには.
 
-ドライバーがデバイスのインターフェイスを登録できるその他の方法については、[デバイス インターフェイス クラスを登録する](https://msdn.microsoft.com/library/windows/hardware/ff549810)を参照してください。
+ドライバーがデバイスのインターフェイスを登録できるその他の方法については、次を参照してください。[デバイス インターフェイス クラスを登録する](https://msdn.microsoft.com/library/windows/hardware/ff549810)します。
 
 ### <a name="enabling-and-disabling-a-device-interface"></a>有効にして、デバイスのインターフェイスを無効化
 
@@ -48,7 +48,7 @@ A*デバイス インターフェイス*プラグ アンド プレイ (PnP) へ�
 
 ここでの追加の通知または別のドライバーによって提供されるデバイス インターフェイスの削除用のカーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 のドライバーを登録する方法を示していて、作成、[リモートしました/O ターゲット](general-i-o-targets-in-umdf.md)デバイス インターフェイスによって表されるデバイスと通信します。
 
-バージョン 1 の UMDF ドライバーでこれを行う方法については、[UMDF ドライバーでデバイスのインターフェイスを使用して](using-device-interfaces-in-umdf-drivers.md#accessing-another-drivers-device-interface)を参照してください。
+バージョン 1 の UMDF ドライバーでこれを行う方法については、次を参照してください。 [UMDF ドライバーでデバイスのインターフェイスを使用して](using-device-interfaces-in-umdf-drivers.md#accessing-another-drivers-device-interface)します。
 
 KMDF ドライバーを呼び出してデバイス インターフェイスのイベントの通知に登録する[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)2 の UMDF ドライバーを呼び出す、 [ **CM\_登録\_通知**](https://msdn.microsoft.com/library/windows/hardware/hh780224)します。 どちらの場合から適切なルーチンを呼び出すと、ドライバー、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。
 

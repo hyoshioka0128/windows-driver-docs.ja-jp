@@ -1,14 +1,14 @@
 ---
-Description: The Windows Hardware Lab Kit (HLK) tests can be used for additional testing of Systems, USB host controllers, hubs, and devices.
+Description: Windows ハードウェア ラボ キット (HLK) テストは、システム、USB ホスト コント ローラー、ハブ、およびデバイスの追加テストに使用できます。
 title: USB の Windows のハードウェア ラボ キット (HLK) のテスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4ece82c5267b85db8cd658dddbe6191fb43a479
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389179"
 ---
 # <a name="windows-hardware-lab-kit-hlk-tests-for-usb"></a>USB の Windows のハードウェア ラボ キット (HLK) のテスト
 
@@ -25,7 +25,7 @@ Windows ハードウェア ラボ キット (HLK) テストは、システム、
 -   テスト クライアントでは、EHCI と xHCI コント ローラー、統合や、アドインのカードをいる必要があります。 コント ローラーには、ユーザーがアクセスできるルート ポート (統合されたハブ) を公開する必要があります。
 -   テスト サーバーに Windows HLK をダウンロード[Windows ハードウェア ラボ キット ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=285647)します。
 
-    インストールして Windows HLK の使用方法の詳細については、[Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)を参照してください。
+    インストールして Windows HLK の使用方法の詳細については、次を参照してください。 [Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)します。
 
 ## <a name="hardware-requirements-for-running-usb-tests-in-the-hlk"></a>HLK で USB テストを実行するためのハードウェア要件
 
@@ -46,8 +46,8 @@ HLK テストを実行するには、次の必要があります。
 
 ここでの要件の完全なセットが与えられます。
 
--   [USB バス コント ローラー テスト前提条件](https://go.microsoft.com/fwlink/p/?linkid=617477)
--   [USB Hub.Connectivity Testing の前提条件](https://go.microsoft.com/fwlink/p/?linkid=617499)
+-   [USB バス コントローラーのテストの前提条件](https://go.microsoft.com/fwlink/p/?linkid=617477)
+-   [USB Hub.Connectivity のテストの前提条件](https://go.microsoft.com/fwlink/p/?linkid=617499)
 
 ## <a name="hlk-test-selection-for-usb"></a>USB の HLK テストの選択
 

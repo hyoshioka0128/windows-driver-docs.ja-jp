@@ -1,6 +1,6 @@
 ---
-title: デバイスの電源の状態
-description: デバイスの電源の状態
+title: デバイスの電源状態
+description: デバイスの電源状態
 ms.assetid: 2229f34c-9b88-4e3e-802e-f7be2c7ef168
 keywords:
 - デバイスの電源状態の WDK カーネル
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15e0e40294b306f873788c21fa18856eb075d201
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388150"
 ---
-# <a name="device-power-states"></a>デバイスの電源の状態
+# <a name="device-power-states"></a>デバイスの電源状態
 
 
 ## <a href="" id="ddk-device-power-states-kg"></a>
@@ -65,7 +65,7 @@ ms.locfileid: "56559094"
 
 このグラフは、D3hot と D3cold に D3 の一部分を示しています。 D3hot および D3cold は、Windows 8 以降で定義されます。 すべてのデバイスが、d0 と D3hot 下位状態をサポートするために必要です。 図に示すように、他の状態は省略可能です。
 
-前のグラフでは、D3hot から D3cold への移行は、低電力状態のデバイス間のダイレクトのみの遷移です。 低電力状態の間の他のすべての遷移では、D0 で、次のような低電力状態を入力するか、D0 内にとどまるか、必要に応じて、デバイスのハードウェアを構成するデバイス ドライバーを使用する中間の移行が必要です。 ただし、デバイスは D3hot を終了し、デバイスの電源がオフ、デバイス ドライバーの介入を必要としないシャット ダウン時に D3cold を入力します。 デバイス D3hot; に入る前に、このドライバーは、デバイスのハードウェアの必要な構成D3cold に D3hot からの移行については、デバイスを準備するのには、追加の構成は必要ありません。 詳細については、[ドライバーではサポートしている D3cold](supporting-d3cold-in-a-driver.md)を参照してください。
+前のグラフでは、D3hot から D3cold への移行は、低電力状態のデバイス間のダイレクトのみの遷移です。 低電力状態の間の他のすべての遷移では、D0 で、次のような低電力状態を入力するか、D0 内にとどまるか、必要に応じて、デバイスのハードウェアを構成するデバイス ドライバーを使用する中間の移行が必要です。 ただし、デバイスは D3hot を終了し、デバイスの電源がオフ、デバイス ドライバーの介入を必要としないシャット ダウン時に D3cold を入力します。 デバイス D3hot; に入る前に、このドライバーは、デバイスのハードウェアの必要な構成D3cold に D3hot からの移行については、デバイスを準備するのには、追加の構成は必要ありません。 詳細については、次を参照してください。[ドライバーではサポートしている D3cold](supporting-d3cold-in-a-driver.md)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 5CA33B4F-E43A-4EB6-BCAB-365CA1FD3EF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30ded98185cdf605cd64a1b93c7717508d9994c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390660"
 ---
 # <a name="standardized-inf-keywords-for-sr-iov"></a>SR-IOV 用の標準化された INF キーワード
 
@@ -30,7 +30,7 @@ SR-IOV INF キーワードは、次のセクションで説明します。
 <a href="" id="-sriov"></a>**\*SRIOV**  
 デバイスが有効になっているまたは SR-IOV 機能を無効になっているかどうかを示す値。
 
-管理者を更新できます、ドライバーがインストールされた後、  **\*SRIOV**でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
+管理者を更新できます、ドライバーがインストールされた後、  **\*SRIOV**でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
 
 **注**  ミニポート ドライバーが自動的に再起動で、変更を行った後、 **[詳細設定]** アダプターのプロパティ ページ。
 
@@ -41,7 +41,7 @@ SR-IOV 機能が仮想マシン キュー (VMQ) の代わりに有効にする�
 
 これは、INF ファイルで指定する必要がありますいないに表示されていない非表示のキーワード値**詳細**ネットワーク アダプターのプロパティ ページ。
 
-SR-IOV、VMQ、および RSS キーワードの解釈方法の詳細については、[処理、SR-IOV、VMQ、および RSS の標準化された INF キーワード](handling-sr-iov--vmq--and-rss-standardized-inf-keywords.md)を参照してください。
+SR-IOV、VMQ、および RSS キーワードの解釈方法の詳細については、次を参照してください。[処理、SR-IOV、VMQ、および RSS の標準化された INF キーワード](handling-sr-iov--vmq--and-rss-standardized-inf-keywords.md)します。
 
 SR-IOV 標準化された INF キーワード列挙型のキーワードし、は、次の表で説明します。 このテーブルの列には、列挙型のキーワードは次の属性について説明します。
 
@@ -107,7 +107,7 @@ INF ファイルで指定する必要があります、キーワードの名前�
 
  
 
-標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
+標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
 
 ## <a name="standardized-inf-keywords-for-configuration-of-the-default-nic-switch"></a>既定の NIC のスイッチの構成の標準化された INF キーワード
 
@@ -175,7 +175,7 @@ INF ファイルで指定する必要があります、キーワードの名前�
 <td align="left"><p>REG_DWORD</p></td>
 <td align="left"><p><em>n</em>の PCIe 仮想機能 (Vf)、SR-IOV ネットワーク アダプターでサポートされている最大数です。</p>
 <div class="alert">
-<strong>注</strong>このレジストリ キーは、ネットワーク アダプターをサポートするための VFs の最大数を定義します。 ミニポート ドライバーを呼び出すと<a href="https://msdn.microsoft.com/library/windows/hardware/ff563672" data-raw-source="[&lt;strong&gt;NdisMSetMiniportAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563672)"> <strong>NdisMSetMiniportAttributes</strong></a>、ネットワーク アダプターで使用可能なハードウェア リソースによっては、この値より小さい、アドバタイズできます。 詳細については、<a href="determining-nic-switch-capabilities.md" data-raw-source="[Determining NIC Switch Capabilities](determining-nic-switch-capabilities.md)">NIC スイッチの機能を決定する</a>を参照してください。
+<strong>注</strong>このレジストリ キーは、ネットワーク アダプターをサポートするための VFs の最大数を定義します。 ミニポート ドライバーを呼び出すと<a href="https://msdn.microsoft.com/library/windows/hardware/ff563672" data-raw-source="[&lt;strong&gt;NdisMSetMiniportAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563672)"> <strong>NdisMSetMiniportAttributes</strong></a>、ネットワーク アダプターで使用可能なハードウェア リソースによっては、この値より小さい、アドバタイズできます。 詳細については、次を参照してください。 <a href="determining-nic-switch-capabilities.md" data-raw-source="[Determining NIC Switch Capabilities](determining-nic-switch-capabilities.md)">NIC スイッチの機能を決定する</a>します。
 </div>
 <div>
  
@@ -195,7 +195,7 @@ HKR, NicSwitches\0, *SwitchName, 0x00000000, “Default Switch”
 
 構文の詳細については、 **AddReg**ディレクティブを参照してください[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
 
-既定の NIC のスイッチの詳細については、[NIC スイッチ](nic-switches.md)を参照してください。
+既定の NIC のスイッチの詳細については、次を参照してください。 [NIC スイッチ](nic-switches.md)します。
 
  
 

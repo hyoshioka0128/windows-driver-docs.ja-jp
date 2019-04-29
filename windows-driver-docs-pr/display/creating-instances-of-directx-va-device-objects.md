@@ -1,19 +1,19 @@
 ---
-title: DirectX VA デバイス オブジェクトのインスタンスを作成します。
-description: DirectX VA デバイス オブジェクトのインスタンスを作成します。
+title: DirectX VA デバイス オブジェクトのインスタンスの作成
+description: DirectX VA デバイス オブジェクトのインスタンスの作成
 ms.assetid: af98ab63-33bb-4294-a902-695ea278654e
 keywords:
 - DirectX ビデオ アクセラレータ WDK Windows 2000 の表示、インスタンスを作成します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fe6f9513dd977437d60a5b370a755da4cbe0683
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387235"
 ---
-# <a name="creating-instances-of-directx-va-device-objects"></a>DirectX VA デバイス オブジェクトのインスタンスを作成します。
+# <a name="creating-instances-of-directx-va-device-objects"></a>DirectX VA デバイス オブジェクトのインスタンスの作成
 
 
 ## <span id="ddk_creating_instances_of_directx_va_device_objects_gg"></span><span id="DDK_CREATING_INSTANCES_OF_DIRECTX_VA_DEVICE_OBJECTS_GG"></span>

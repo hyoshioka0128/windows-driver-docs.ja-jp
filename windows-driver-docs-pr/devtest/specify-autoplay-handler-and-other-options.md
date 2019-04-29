@@ -1,19 +1,19 @@
 ---
-title: デバイス メタデータの作成ウィザードで自動再生ハンドラーとオプションを指定します。
-description: デバイス メタデータの作成ウィザードで自動再生ハンドラーとオプションを指定します。
+title: デバイス メタデータ作成ウィザードでの自動再生ハンドラーとオプションの指定
+description: デバイス メタデータ作成ウィザードでの自動再生ハンドラーとオプションの指定
 ms.assetid: 7604E8D4-BCBB-45C4-9510-3860304CE7C8
 keywords:
-- デバイス メタデータの作成ウィザードで自動再生ハンドラーとオプションを指定します。
+- デバイス メタデータ作成ウィザードでの自動再生ハンドラーとオプションの指定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19c90774cdf08c1d27a3cc3691634893e8fe18d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387915"
 ---
-# <a name="specify-autoplay-handler-and-options-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータの作成ウィザードで自動再生ハンドラーとオプションを指定します。
+# <a name="specify-autoplay-handler-and-options-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでの自動再生ハンドラーとオプションの指定
 
 
 切断された状態と自動再生ハンドラーなど、デバイスのオプションを指定する をクリックして、**オプション**タブ。
@@ -33,7 +33,7 @@ ms.locfileid: "56532004"
 -   自動再生ハンドラーを定義しない場合は、選択**None**します。
 -   次のフィールドに入力して、自動再生ハンドラーを定義する**自動再生ハンドラー**:
     -   **パッケージ名**
-    -   **発行元**
+    -   **パブリッシャー**
     -   **アプリ ID**
     -   **動詞**
     -   **自動再生の種類**

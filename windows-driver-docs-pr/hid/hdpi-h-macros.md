@@ -1,16 +1,16 @@
 ---
-title: Hdpi.h Macros
+title: Hdpi.h マクロ
 description: マクロは Hdpi.h ヘッダーに含まれます。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3dbbc0c8d237e3b1cc9d5b6e787bcd79db03bd3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388902"
 ---
-# <a name="hdpih-macros"></a>Hdpi.h Macros
+# <a name="hdpih-macros"></a>Hdpi.h マクロ
 
 Hdpi.h ヘッダー ファイルには、いくつかのマクロが含まれています。 このトピックでは、次のマクロをドキュメントします。
 

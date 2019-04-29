@@ -1,17 +1,17 @@
 ---
-title: GPUView を使用します。
-description: GPUView を使用します。
+title: GPUView の使用
+description: GPUView の使用
 ms.assetid: 55f589fd-e3ea-4fd2-9e8d-c225c2c3dbb5
 ms.date: 01/23/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c4bc466f25c34b2066af7e4f7166469888f385c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389016"
 ---
-# <a name="using-gpuview"></a>GPUView を使用します。
+# <a name="using-gpuview"></a>GPUView の使用
 
 
 GPUView (*GPUView.exe*) は、グラフィックス処理装置 (GPU) のパフォーマンスを決定するための開発ツールと CPU。 ダイレクト メモリ アクセス (DMA) バッファーの処理およびビデオ ハードウェアに対して他のすべてのビデオ処理に関して、パフォーマンスに見えます。 GPUView では、Windows Vista のディスプレイ ドライバー モデルに従っているディスプレイ ドライバーの開発に便利です。 GPUView は、Windows 7 オペレーティング システムのリリースで導入されました。

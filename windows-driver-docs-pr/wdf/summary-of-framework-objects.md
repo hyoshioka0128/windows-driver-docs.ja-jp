@@ -1,6 +1,6 @@
 ---
-title: Framework のオブジェクトの概要
-description: Framework のオブジェクトの概要
+title: フレームワーク オブジェクトの要約
+description: フレームワーク オブジェクトの要約
 ms.assetid: 799284a5-91c0-47b0-8f20-75a5f8e2284d
 keywords:
 - 一覧表示されたフレームワーク オブジェクト WDK KMDF、
@@ -8,18 +8,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ffe55ce414c9455d0af212a6dead96b9950060
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325117"
 ---
-# <a name="summary-of-framework-objects"></a>Framework のオブジェクトの概要
+# <a name="summary-of-framework-objects"></a>フレームワーク オブジェクトの要約
 
 
 次の表では、framework のオブジェクトのすべてを一覧表示し、各オブジェクトに関する基本的な情報を提供します。 モードの列は、オブジェクトを使用できるかどうかを示す KMDF と UMDF ドライバーまたは KMDF のみです。
 
-一連のコールバックとメソッド、およびどのフレームワークに適用されます、[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)を参照してください。
+一連のコールバックとメソッド、およびどのフレームワークに適用されます、次を参照してください。 [WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。
 
 |名前|ハンドル|目的|既定の親|ドライバーは既定の親をオーバーライドできますか。|Mode|リファレンス|
 |--- |--- |--- |--- |--- |--- |--- |

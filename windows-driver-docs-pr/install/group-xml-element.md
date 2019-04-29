@@ -1,6 +1,6 @@
 ---
-title: XML 要素をグループ化します。
-description: XML 要素をグループ化します。
+title: group XML 要素
+description: group XML 要素
 ms.assetid: 8035fd60-065c-4282-a18c-34e6a5201e56
 keywords:
 - グループの XML 要素のデバイスとドライバーのインストール
@@ -13,13 +13,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a9e6b6e2e44ca75a145f027ec77b1d2da2cab0b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392479"
 ---
-# <a name="group-xml-element"></a>XML 要素をグループ化します。
+# <a name="group-xml-element"></a>group XML 要素
 
 
 \[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]

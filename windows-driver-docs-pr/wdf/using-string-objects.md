@@ -1,5 +1,5 @@
 ---
-title: 文字列オブジェクトを使用します。
+title: 文字列オブジェクトの使用
 description: このトピックでは、Windows Driver Frameworks (WDF) が文字列オブジェクトを提供するサポートについて説明します。 両方のカーネル モード ドライバー フレームワーク (KMDF) に適用されます。
 ms.assetid: b1d52a18-ebd5-4ba7-b5c7-3ef3d298c82e
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fb8a6cf1d5664e421e47d491e09af7b26bb4eca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391835"
 ---
-# <a name="using-string-objects"></a>文字列オブジェクトを使用します。
+# <a name="using-string-objects"></a>文字列オブジェクトの使用
 
 
 このトピックでは、Windows Driver Frameworks (WDF) が文字列オブジェクトを提供するサポートについて説明します。 カーネル モード ドライバー フレームワーク (KMDF) ドライバーとバージョン 2 でユーザー モード ドライバー フレームワーク (UMDF) ドライバーの両方に適用されます。

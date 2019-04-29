@@ -1,6 +1,6 @@
 ---
-title: ユーザー モード メモリにアクセスするときに、例外処理
-description: ユーザー モード メモリにアクセスするときに、例外処理
+title: ユーザー モード メモリにアクセスする際の例外処理
+description: ユーザー モード メモリにアクセスする際の例外処理
 ms.assetid: 44ed69a0-da0e-4335-9128-a78a83ea80dd
 keywords:
 - ユーザー モード メモリ WDK Windows 2000 の表示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a55b57c829e91642c3abcdb3b93ff5369d2a935
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391250"
 ---
-# <a name="exception-handling-when-accessing-user-mode-memory"></a>ユーザー モード メモリにアクセスするときに、例外処理
+# <a name="exception-handling-when-accessing-user-mode-memory"></a>ユーザー モード メモリにアクセスする際の例外処理
 
 
 ## <span id="ddk_exception_handling_when_accessing_user_mode_memory_gg"></span><span id="DDK_EXCEPTION_HANDLING_WHEN_ACCESSING_USER_MODE_MEMORY_GG"></span>

@@ -1,6 +1,6 @@
 ---
-title: トランザクションのクライアントを作成します。
-description: トランザクションのクライアントを作成します。
+title: トランザクション クライアントの作成
+description: トランザクション クライアントの作成
 ms.assetid: 75d4758b-dfba-431b-9bfa-9dcb98c2a7cc
 keywords:
 - WDK KTM トランザクションのクライアント
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63675a9d2815d7e5404be597e00bb840034c631b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388298"
 ---
-# <a name="creating-a-transactional-client"></a>トランザクションのクライアントを作成します。
+# <a name="creating-a-transactional-client"></a>トランザクション クライアントの作成
 
 
 A [*トランザクション クライアント*](transaction-processing-terms.md#ktm-term-transactional-client)はトランザクション データベースなどのリソースにアクセスするリソース マネージャーのエクスポートされたインターフェイスを使用するシステム (TP) コンポーネントを処理するリソース マネージャーサポートされています。
@@ -45,7 +45,7 @@ A [*トランザクション クライアント*](transaction-processing-terms.m
 
     クライアントが呼び出すことができます**ZwCommitTransaction**と**ZwRollbackTransaction**同期または非同期にします。 クライアントは、これらのルーチンを同期的に呼び出す、コミットまたはロールバック操作が完了するまで、ルーチンは返されません。
 
-    コミットし、トランザクションをロールバックする方法の詳細については、[トランザクション操作の処理](handling-transaction-operations.md)を参照してください。
+    コミットし、トランザクションをロールバックする方法の詳細については、次を参照してください。[トランザクション操作の処理](handling-transaction-operations.md)します。
 
 6.  トランザクション オブジェクトのハンドルを閉じます。
 
@@ -61,7 +61,7 @@ TP では、1 つ以上のリソース マネージャーを含めることが�
 
 4.  すべての操作が完了したこと、またはエラーが検出された場合は、トランザクションをロールバックする場合は、トランザクションをコミットします。
 
-TP が含まれている場合、*優先的なトランザクション マネージャー*、トランザクションのクライアントが通常 KTM では呼び出しません。 優先的なトランザクション マネージャーとそのクライアントの詳細については、[上位のトランザクション マネージャーを作成する](creating-a-superior-transaction-manager.md)を参照してください。
+TP が含まれている場合、*優先的なトランザクション マネージャー*、トランザクションのクライアントが通常 KTM では呼び出しません。 優先的なトランザクション マネージャーとそのクライアントの詳細については、次を参照してください。[上位のトランザクション マネージャーを作成する](creating-a-superior-transaction-manager.md)します。
 
 トランザクションのクライアントが呼び出すことができます[ **ZwSetInformationTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567104)トランザクション固有の情報を設定します。 たとえば、クライアントは、トランザクションのタイムアウト値を設定またはわかりやすい文字列を指定します。 クライアントが呼び出すことができます[ **ZwQueryInformationTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567057)トランザクションに関する情報を取得します。 たとえば、クライアントは、トランザクションがコミットまたはロールバックするかどうかを判断するには、このルーチンを呼び出すことができます。
 

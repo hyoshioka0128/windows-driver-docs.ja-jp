@@ -1,6 +1,6 @@
 ---
-title: 割り込みを処理します。
-description: 割り込みを処理します。
+title: 割り込みの処理
+description: 割り込みの処理
 ms.assetid: b6306d2c-a7be-4fc3-8123-4d2b5c60c988
 keywords:
 - ハードウェアの割り込み処理の WDK KMDF
@@ -12,16 +12,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea2f58ab9d26aaab66cc6b95d7e88243bddf9346
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325142"
 ---
-# <a name="servicing-an-interrupt"></a>割り込みを処理します。
+# <a name="servicing-an-interrupt"></a>割り込みの処理
 
 
-このトピックでは、DIRQL 割り込みを処理する方法を説明します。 パッシブ レベル割り込みを処理する方法の詳細については、[パッシブ レベルをサポートしている中断](supporting-passive-level-interrupts.md#servicing)を参照してください。
+このトピックでは、DIRQL 割り込みを処理する方法を説明します。 パッシブ レベル割り込みを処理する方法の詳細については、次を参照してください。[パッシブ レベルをサポートしている中断](supporting-passive-level-interrupts.md#servicing)します。
 
 割り込みをサービスは、2 つ、および場合によって 3 つの手順で構成されます。
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d69c976faa7309f56d2b16344fd3d41c46ccb619
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325798"
 ---
 # <a name="inf-strings-section"></a>INF Strings セクション
 
@@ -97,7 +97,7 @@ Windows は、1 つを選択します。**文字列**すべて % を変換する
 3.  それ以外の場合、Windows は [次へ] と一致する、LANG_*XXX*値と任意の有効な SUBLANG_*XXX*同じ LANG_ の*XXX*ファミリ。 このような部分的に一致が見つかった場合は、その Strings.LanguageID INF セクションを使用して、すべて % を変換する*strkey*INF 内で定義されている % トークンです。
 4.  それ以外の場合、装飾されていない文字列のセクションのすべてに Windows の使用が % を翻訳*strkey*INF 内で定義されている % トークンです。
 
-慣例により、および、国際市場向けの INF ファイルのセットを作成しやすくするため**文字列**セクションは、すべてのシステム INF ファイル内の最後です。 % を使用して*strkey*、INF、およびロケールごとに配置する内のすべてのユーザーに表示される文字列値の % トークン**文字列**セクションで、このような文字列の変換を簡略化します。 ロケールに固有の INF ファイルの詳細については、[International INF ファイルの作成](creating-international-inf-files.md)を参照してください。
+慣例により、および、国際市場向けの INF ファイルのセットを作成しやすくするため**文字列**セクションは、すべてのシステム INF ファイル内の最後です。 % を使用して*strkey*、INF、およびロケールごとに配置する内のすべてのユーザーに表示される文字列値の % トークン**文字列**セクションで、このような文字列の変換を簡略化します。 ロケールに固有の INF ファイルの詳細については、次を参照してください。 [International INF ファイルの作成](creating-international-inf-files.md)です。
 
 **文字列**セクションは、すべての INF ファイルの最後のセクションで、% を指定した*strkey*% のトークンで定義されている、**文字列**でセクションを繰り返し、他の場所で使用できる、INF、具体的には、場所にそのトークンの変換された値が必要です。 [SetupAPI](setupapi.md)関数展開の各 %*strkey*% トークン、指定した文字列とさらに処理する INF の値を展開し使用します。
 

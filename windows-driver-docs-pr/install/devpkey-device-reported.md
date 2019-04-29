@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f81e4930f1c24138e635295ea67563b9c0273012
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327133"
 ---
 # <a name="devpkeydevicereported"></a>DEVPKEY_Device_Reported
 
@@ -46,14 +46,14 @@ DEVPKEY_Device_Reported デバイスのプロパティは、デバイスのイ�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 PnP マネージャーでは、デバイスがデバイスのドライバーが呼び出し元 IoReportDetectedDevice によって PnP マネージャーに報告するルートで列挙されるデバイスの場合に、DEVPROP_TRUE に DEVPKEY_Device_Reported の値を設定します。 それ以外の場合、PnP マネージャーでは、DEVPROP_FALSE にプロパティの値を設定します。
@@ -62,7 +62,7 @@ PnP マネージャーでは、デバイスがデバイスのドライバーが�
 
 Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

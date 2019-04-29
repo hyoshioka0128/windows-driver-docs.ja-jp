@@ -1,6 +1,6 @@
 ---
-title: 設定して、インタロックされたキューを使用します。
-description: 設定して、インタロックされたキューを使用します。
+title: インタロック キューのセットアップと使用
+description: インタロック キューのセットアップと使用
 ms.assetid: af44a4c0-5aa7-40aa-b511-df95c9bfe9bb
 keywords:
 - インタロックされた IRP キュー WDK カーネル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bea2e7ebbf5870f7c5e65bedea3fa7b2a867430
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391092"
 ---
-# <a name="setting-up-and-using-interlocked-queues"></a>設定して、インタロックされたキューを使用します。
+# <a name="setting-up-and-using-interlocked-queues"></a>インタロック キューのセットアップと使用
 
 
 
@@ -55,7 +55,7 @@ ms.locfileid: "56531637"
 
 I/O 操作を再試行しないドライバーを使用できます[ **ExInterlockedPushEntrySList** ](https://msdn.microsoft.com/library/windows/hardware/ff545422)と[ **ExInterlockedPopEntrySList** ](https://msdn.microsoft.com/library/windows/hardware/ff545414)にそのキュー Irp の内部シーケンスをシングル リンク インタロックされたキューでを管理します。 インタロックされたキューのこの型を使用する任意のドライバーには型の ListHead の常駐記憶域を提供する必要がありますもできます。 **SLIST\_ヘッダー** 、のように、ExecutiveSpinLock、[前図](#ddk-using-an-interlocked-queue-kg)します。 スピン ロックを初期化し、呼び出す前にそのキューを設定する必要があります、 **ExInterlockedPushEntrySList**そのキューに初期のエントリを挿入します。
 
-詳細については、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)と[スピン ロック](spin-locks.md)を参照してください。 特定のサポート ルーチンの IRQL 要件、ルーチンのリファレンス ページを参照してください。
+詳細については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)と[スピン ロック](spin-locks.md)します。 特定のサポート ルーチンの IRQL 要件、ルーチンのリファレンス ページを参照してください。
 
  
 

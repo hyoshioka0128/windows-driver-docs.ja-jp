@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 96a6572278b9d63ff88dd81fdc43cbf350127962
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392543"
 ---
 # <a name="devpkeydeviceclassdhprebalanceoptout"></a>DEVPKEY_DeviceClass_DHPRebalanceOptOut
 
@@ -46,7 +46,7 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut デバイスのプロパティは、デ�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>

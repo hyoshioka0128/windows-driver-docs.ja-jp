@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d6527d30c3e51ef78f209bb4a3455f5874a18bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392191"
 ---
 # <a name="wditlvp2pincludelistenchannel"></a>WDI\_TLV\_P2P\_INCLUDE\_リッスン\_チャネル
 
@@ -35,7 +35,7 @@ UINT8 のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類  | 説明                                                                                                                                                           |
+| 型  | 説明                                                                                                                                                           |
 |-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8 | このパラメーターは、プローブ要求が探索時にリッスンのチャネルの属性を含めるかどうかを指定します。 有効な値は 0 (含まれません) または 1 (が含まれます)。 |
 

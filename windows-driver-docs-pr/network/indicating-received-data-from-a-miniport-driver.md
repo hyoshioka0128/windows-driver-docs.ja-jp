@@ -1,6 +1,6 @@
 ---
-title: ミニポート ドライバーからデータを受信したことを示します
-description: ミニポート ドライバーからデータを受信したことを示します
+title: ミニポート ドライバーからの受信データの表示
+description: ミニポート ドライバーからの受信データの表示
 ms.assetid: da5d31e9-5212-4c6c-bac2-81432a46c303
 keywords:
 - 受信側のデータの WDK ネットワーク
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 275fe244009dada90a2848ad8faee1ac5e680bc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327794"
 ---
-# <a name="indicating-received-data-from-a-miniport-driver"></a>ミニポート ドライバーからデータを受信したことを示します
+# <a name="indicating-received-data-from-a-miniport-driver"></a>ミニポート ドライバーからの受信データの表示
 
 
 

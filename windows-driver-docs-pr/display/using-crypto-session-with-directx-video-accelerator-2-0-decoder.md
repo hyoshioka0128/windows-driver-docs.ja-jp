@@ -1,6 +1,6 @@
 ---
 title: DXVA 2.0 での暗号化セッションを使用してデコーダー
-description: DirectX ビデオ アクセラレータ 2.0 デコーダーと暗号化セッションを使用します。
+description: DirectX ビデオ アクセラレータ 2.0 デコーダーでの暗号化セッションの使用
 ms.assetid: 2a3577f5-bc44-4e0d-a5fa-217dc6c6f5f3
 keywords:
 - DXVA 2.0 デコーダー WDK Windows 7 の表示
@@ -19,13 +19,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: b48df8ff7b8fb12ce20c23b6ac929c0e2837c8bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389084"
 ---
-# <a name="using-crypto-session-with-directx-video-accelerator-20-decoder"></a>DirectX ビデオ アクセラレータ 2.0 デコーダーと暗号化セッションを使用します。
+# <a name="using-crypto-session-with-directx-video-accelerator-20-decoder"></a>DirectX ビデオ アクセラレータ 2.0 デコーダーでの暗号化セッションの使用
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

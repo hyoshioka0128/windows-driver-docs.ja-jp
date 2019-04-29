@@ -1,19 +1,19 @@
 ---
-title: マクロ ブロック コントロール コマンドの構造体の第 2 部
-description: マクロ ブロック コントロール コマンドの構造体の第 2 部
+title: マクロブロック制御コマンド構造の 2 番目の部分
+description: マクロブロック制御コマンド構造の 2 番目の部分
 ms.assetid: 94ef61d1-cd7d-4e73-8be8-01f7d23bb91d
 keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d47b5d40cff5527e79e1ab2812c3a10998688d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390489"
 ---
-# <a name="second-part-of-macroblock-control-command-structure"></a>マクロ ブロック コントロール コマンドの構造体の第 2 部
+# <a name="second-part-of-macroblock-control-command-structure"></a>マクロブロック制御コマンド構造の 2 番目の部分
 
 
 ## <span id="ddk_second_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_SECOND_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>

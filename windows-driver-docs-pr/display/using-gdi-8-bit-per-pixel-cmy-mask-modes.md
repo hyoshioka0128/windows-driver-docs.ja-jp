@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32dad429bf1ce8b92fa66ffeeb4eca5bb1e95c0f
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389032"
 ---
 # <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>GDI 8 ビット/ピクセル CMY マスク モードの使用
 
@@ -94,7 +94,7 @@ GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポ�
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>0:白</p>
+<td align="left"><p>0:White</p>
 <div>
  
 </div>
@@ -111,11 +111,11 @@ GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポ�
 <div>
  
 </div>
-255:白</td>
+255:White</td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>0:白</p>
+<td align="left"><p>0:White</p>
 <div>
  
 </div>
@@ -132,7 +132,7 @@ GDI ROP 動作を修正するには、Windows XP 以降の GDI 形式をサポ�
 <div>
  
 </div>
-190 ~ 255:白
+190 ~ 255:White
 <div>
  
 </div>
@@ -143,7 +143,7 @@ XOR ROP が正しく動作するためには、インデックス 127 と 128 �
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>0:白</p>
+<td align="left"><p>0:White</p>
 <div>
  
 </div>
@@ -160,11 +160,11 @@ XOR ROP が正しく動作するためには、インデックス 127 と 128 �
 <div>
  
 </div>
-235 ~ 255:白</td>
+235 ~ 255:White</td>
 </tr>
 <tr class="even">
 <td align="left"><p>3 ~ 255</p></td>
-<td align="left"><p>0:白</p>
+<td align="left"><p>0:White</p>
 <div>
  
 </div>
@@ -199,7 +199,7 @@ CxMxY が奇数の場合は、128 のインデックス位置にあるエント�
 <div>
  
 </div>
-255:白
+255:White
 <div>
  
 </div>
@@ -213,7 +213,7 @@ CxMxY が奇数の場合は、128 のインデックス位置にあるエント�
 <div>
  
 </div>
-<strong>注:</strong>(C x M x Y) のインデックスは、256 エントリ パレットで中央揃えされます。 つまりと同じ数のパレットおよび padding、ハイ エンド白のエントリの下限を padding 黒のエントリがあります。
+<strong>注: </strong>(C x M x Y) のインデックスは、256 エントリ パレットで中央揃えされます。 つまりと同じ数のパレットおよび padding、ハイ エンド白のエントリの下限を padding 黒のエントリがあります。
 <div>
  
 </div>
@@ -431,14 +431,14 @@ CxMxY が奇数の場合は、128 のインデックス位置にあるエント�
     </tr>
     <tr class="odd">
     <td align="left"><p>141 (27)</p>
-    <p>白</p></td>
+    <p>White</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="even">
     <td align="left"><p>142 ~ 255</p>
-    <p>白</p></td>
+    <p>White</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>

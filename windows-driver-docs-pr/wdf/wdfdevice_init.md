@@ -7,11 +7,11 @@ keywords:
 ms.date: 02/23/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 26d6a182eb9223512eeaf190ea7ef9f23dfdff5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390838"
 ---
 # <a name="wdfdeviceinit-structure"></a>WDFDEVICE_INIT 構造体
 
@@ -29,7 +29,7 @@ struct WDFDEVICE_INIT {
 };
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 ----------
 
 関数とフィルター ドライバーへの入力としてこの構造体へのポインターを受け取る、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数、またはからの戻り値として[ **WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)します。

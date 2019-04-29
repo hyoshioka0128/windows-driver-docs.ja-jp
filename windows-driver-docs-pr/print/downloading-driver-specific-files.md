@@ -1,6 +1,6 @@
 ---
-title: ドライバー固有のファイルのダウンロード
-description: ドライバー固有のファイルのダウンロード
+title: ドライバー固有ファイルのダウンロード
+description: ドライバー固有ファイルのダウンロード
 ms.assetid: 7ac5057a-32fb-4c3a-a5c3-3fc1217dbdc6
 keywords:
 - ポイント アンド プリントの WDK、ドライバー固有のファイル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7f3d7547808e0af7b06a1b297561f796f0fcc92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387270"
 ---
-# <a name="downloading-driver-specific-files"></a>ドライバー固有のファイルのダウンロード
+# <a name="downloading-driver-specific-files"></a>ドライバー固有ファイルのダウンロード
 
 
 

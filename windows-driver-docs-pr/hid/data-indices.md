@@ -1,6 +1,6 @@
 ---
-title: データのインデックス
-description: データのインデックス
+title: データ インデックス
+description: データ インデックス
 ms.assetid: 84577544-515a-4fdc-86e5-518182c6c461
 keywords:
 - WDK を非表示にデータをインデックスします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d1fdb684c05c16f07998c25814f401bdd09d8ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390334"
 ---
-# <a name="data-indices"></a>データのインデックス
+# <a name="data-indices"></a>データ インデックス
 
 
 
@@ -28,7 +28,7 @@ HID パーサーを割り当てます、*データ インデックス*を最上�
 
 -   使用状況の範囲を説明する各機能の構造がその**Range.UsageMin**と**Range.UsageMax**使用状況の範囲を識別するためにメンバーを設定し、その**Range.DataIndexMin**と**Range.DataIndexMax**使用状況の範囲を識別するためにメンバー セットのデータ インデックスの範囲に対応します。 (*データ範囲のインデックス*データのインデックスの連続するシーケンスと、データのインデックスの範囲内のデータのインデックスの数が対応する使用状況の範囲の使用法の値に等しいを指定します)。
 
-データのインデックスを使用する方法の詳細については、[設定コントロールのデータをデータのインデックスと抽出](extracting-and-setting-control-data-by-data-indices.md)を参照してください。
+データのインデックスを使用する方法の詳細については、次を参照してください。[設定コントロールのデータをデータのインデックスと抽出](extracting-and-setting-control-data-by-data-indices.md)します。
 
  
 

@@ -7,11 +7,11 @@ keywords: -OID_WWAN_UICC_ACCESS_BINARY ネットワーク ドライバーが Win
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 0c233c6cfb9cfded3cec6f813ec665da8b8daf73
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387354"
 ---
 # <a name="oidwwanuiccaccessbinary"></a>OID_WWAN_UICC_ACCESS_BINARY
 
@@ -25,11 +25,11 @@ OID_WWAN_UICC_ACCESS_BINARY、構造型が、UICC バイナリ ファイルに�
 
 この OID の使用状況に関する詳細については、次を参照してください。 [MB UICC アプリケーションとファイル システム アクセス](mb-uicc-application-and-file-system-access.md)します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 |   |   |
 | --- | --- |
-| バージョン | Windows 10、バージョンが 1903 |
+| バージョン | Windows 10 バージョン 1903 |
 | Header | Ntddndis.h (include Ndis.h) |
 
 ## <a name="see-also"></a>関連項目

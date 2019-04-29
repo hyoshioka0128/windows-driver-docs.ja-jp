@@ -1,6 +1,6 @@
 ---
-title: ネットワーク クライアント コンポーネントのプロバイダーのパスと名前を指定します。
-description: ネットワーク クライアント コンポーネントのプロバイダーのパスと名前を指定します。
+title: NetClient コンポーネントの名前とプロバイダー パスの指定
+description: NetClient コンポーネントの名前とプロバイダー パスの指定
 ms.assetid: 4c9c2162-8e7e-44dc-a97c-81074071664b
 keywords:
 - 追加レジストリ セクション WDK ネットワーク、ネットワーク クライアント コンポーネントの名前とパス
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78a1100794641c826466c159a58c44d15014b8a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388126"
 ---
-# <a name="specifying-the-name-and-provider-path-for-a-netclient-component"></a>ネットワーク クライアント コンポーネントのプロバイダーのパスと名前を指定します。
+# <a name="specifying-the-name-and-provider-path-for-a-netclient-component"></a>NetClient コンポーネントの名前とプロバイダー パスの指定
 
 
 

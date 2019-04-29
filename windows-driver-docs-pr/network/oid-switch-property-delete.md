@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_PROPERTY_DELETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a4226e27db36186919dbd6afd7c4e14c1b5e55e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327698"
 ---
 # <a name="oidswitchpropertydelete"></a>OID\_スイッチ\_プロパティ\_削除
 
@@ -19,7 +19,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造には、を格納しているバッファーへのポインターが含まれる[ **NDIS\_スイッチ\_プロパティ\_削除\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598249)構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 転送拡張機能は、OID の OID のセット要求を処理できる\_スイッチ\_プロパティ\_を削除します。 その他のすべての種類の拡張機能を呼び出す必要があります[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)拡張可能スイッチのドライバー スタックで、[次へ] の拡張機能に OID 要求を転送します。
@@ -82,7 +82,7 @@ OID を処理する方法に関するガイドラインの OID 要求のセッ�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

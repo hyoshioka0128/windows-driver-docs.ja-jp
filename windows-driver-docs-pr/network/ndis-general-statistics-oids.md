@@ -1,21 +1,21 @@
 ---
-title: NDIS 全般的な統計の Oid
+title: NDIS 一般統計情報 OID
 description: このセクションには、すべての NDIS ドライバーの全般的な統計の Oid がについて説明します
 keywords:
-- NDIS 全般的な統計の Oid
+- NDIS 一般統計情報 OID
 - WDK NDIS 全般的な統計の Oid
 - WDK の全般的な統計の Oid
 ms.assetid: 364BEF6E-489C-427A-9ACC-D18F29F22B0F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a6b69fb0666debcc5a2b7700e3483970e7b3309
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392917"
 ---
-# <a name="ndis-general-statistics-oids"></a>NDIS 全般的な統計の Oid
+# <a name="ndis-general-statistics-oids"></a>NDIS 一般統計情報 OID
 
 ドライバーは、セキュリティの問題への対応が、ドライバーは、オペレーティング システムとアプリケーション ネットワークの状態を監視するために必要な情報を提供できるように完全な情報と OID 統計情報のクエリに応答して、問題を診断する必要があります。 統計カウンターがハードウェアである場合は、ドライバー統計情報の適切な値から読み取らハードウェア OID の統計情報のクエリを実行するたびにします。
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9dd26be505b4bf2f7e4c0fb425cadff7ecfba251
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392128"
 ---
 # <a name="gdl-directives"></a>GDL ディレクティブ
 
@@ -28,7 +28,7 @@ GDL では、次の種類のディレクティブを使用します。
 
 [マクロ](gdl-directives-for-macros.md)
 
-[テンプレート](gdl-directives-for-templates.md)
+[[テンプレート]](gdl-directives-for-templates.md)
 
 [名前空間](gdl-directives-for-namespaces.md)
 

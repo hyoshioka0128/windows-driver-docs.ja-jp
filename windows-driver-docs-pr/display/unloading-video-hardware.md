@@ -1,6 +1,6 @@
 ---
-title: アンロードのビデオ ハードウェア
-description: アンロードのビデオ ハードウェア
+title: ビデオ ハードウェアのアンロード
+description: ビデオ ハードウェアのアンロード
 ms.assetid: 31bea975-1c4b-4157-aec9-49bb7ad69cd0
 keywords:
 - ディスプレイ ドライバー WDK Windows 2000 では、ビデオ ハードウェアのアンロード
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99244720d00bb66b91cddacf8ea7e738d1c32aae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389802"
 ---
-# <a name="unloading-video-hardware"></a>アンロードのビデオ ハードウェア
+# <a name="unloading-video-hardware"></a>ビデオ ハードウェアのアンロード
 
 
 ## <span id="ddk_unloading_video_hardware_gg"></span><span id="DDK_UNLOADING_VIDEO_HARDWARE_GG"></span>

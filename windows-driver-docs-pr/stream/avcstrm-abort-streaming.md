@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d5bd3091accebe678cf577eb54761bdb78790ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390197"
 ---
 # <a name="avcstrmabortstreaming"></a>AVCSTRM\_中止\_ストリーミング
 
@@ -91,7 +91,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 } AVC_STREAM_REQUEST_BLOCK, *PAVC_STREAM_REQUEST_BLOCK;
 ```
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 **ヘッダー:** 宣言されている*avcstrm.h*します。 含める*avcstrm.h*します。
 

@@ -5,11 +5,11 @@ ms.assetid: 5A6CB076-7D97-48EC-B2BF-3204CD093B3E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7ef2bd833e64f36a418ce1053bb6025f8d980cb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388247"
 ---
 # <a name="d3cold-capabilities-of-a-device"></a>デバイスの D3cold 機能
 
@@ -18,7 +18,7 @@ D3cold (コンピューターの S0 内に存続するとき) を入力するデ
 
 プラグ アンド プレイ (PnP) デバイスのオペレーティング システムは通常親バス ドライバーから、デバイスの D3cold 機能に関する情報を取得します。
 
-たとえば、デバイスが、PCI や PCI Express バスに接続されている場合、デバイスの PCI 構成領域には電源管理の登録とするブロック デバイスの機能を示すが含まれます。 このブロックで機能フラグは、電源管理イベント、または PME (ウェイク イベントの PCI 語句) をシグナル状態、デバイスをデバイスの電源状態を指定します。 これらの状態は、D3hot と D3cold などがあります。 PCI の電源管理の詳細については、、 [PCI バス Power Management Interface Specification](http://www.pcisig.com/specifications/conventional/pci_bus_power_management_interface/)を参照してください。
+たとえば、デバイスが、PCI や PCI Express バスに接続されている場合、デバイスの PCI 構成領域には電源管理の登録とするブロック デバイスの機能を示すが含まれます。 このブロックで機能フラグは、電源管理イベント、または PME (ウェイク イベントの PCI 語句) をシグナル状態、デバイスをデバイスの電源状態を指定します。 これらの状態は、D3hot と D3cold などがあります。 PCI の電源管理の詳細については、次を参照してください。、 [PCI バス Power Management Interface Specification](http://www.pcisig.com/specifications/conventional/pci_bus_power_management_interface/)します。
 
 デバイスが D3cold を入力しない場合は、デバイスは、それが入力する低電力 Dx 状態からウェイク イベントを通知できる必要があります、デバイス、親のバス コント ローラー、およびハードウェア プラットフォーム D3cold からウェイク イベントをシグナル通知をサポートしない限り、します。
 
@@ -28,7 +28,7 @@ D3cold (コンピューターの S0 内に存続するとき) を入力するデ
 
 デバイスでは、D3cold からウェイク イベントを通知する機能は必要はありません。 代わりに、デバイスはソフトウェアによって開始された操作に対する応答としてのみ D3cold から D0 への移行を行うに必要な場合があります。 たとえば、ドライバーは、ドライバー、デバイスの I/O 要求を受信する場合、デバイスのスリープを解除する必要があります。 いくつかの例外を除き、このようなデバイスのドライバーが D3cold を入力するデバイスを有効にできます。 可能性のある例外は、大量の D0 に D3cold から移行する時間を必要とするデバイスです。 たとえば、ディスプレイ デバイスには、大量デバイス D3cold に入る前に保存して、デバイスが D3cold が終了した後に復元する必要があるメモリにはが含まれます。
 
-D3cold の ACPI サポートの詳細については、[D3cold のファームウェア要件](https://msdn.microsoft.com/library/windows/hardware/dn605829)を参照してください。
+D3cold の ACPI サポートの詳細については、次を参照してください。 [D3cold のファームウェア要件](https://msdn.microsoft.com/library/windows/hardware/dn605829)します。
 
  
 

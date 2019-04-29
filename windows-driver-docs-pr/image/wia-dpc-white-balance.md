@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c425bdf3aa283ebe95db37928ce9d4dff807c0ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391706"
 ---
 # <a name="wiadpcwhitebalance"></a>WIA\_DPC\_白い\_のバランスを取る
 
@@ -47,7 +47,7 @@ WIA\_DPC\_白い\_残高プロパティは、デジタル カメラでのカラ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

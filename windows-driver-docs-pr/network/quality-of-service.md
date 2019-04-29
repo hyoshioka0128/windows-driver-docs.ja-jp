@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba250c892ae3cdecc4f5918adf294fc3ae116720
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327640"
 ---
 # <a name="quality-of-service"></a>サービスの品質 (QoS)
 
@@ -32,7 +32,7 @@ SVC に対する呼び出しの発信元を指定できます*サービスの品
 
 両方の共同\_呼び出す\_MANAGER\_パラメーターと CO\_メディア\_パラメーター、パラメーターを使用するすべてのドライバーに適用されるジェネリック パラメーター (フラグ) に含まれます。 各構造体も指す、 [ **CO\_特定\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff545396)コール マネージャー固有のパラメーターを指定する構造体 (COを指すとき\_呼び出す\_MANAGER\_パラメーター構造体) またはメディア固有のパラメーター (CO によって示されるときに\_メディア\_パラメーター構造体)。
 
-QoS の操作の詳細については、[Client-Initiated を呼び出すパラメーターの変更を要求](client-initiated-request-to-change-call-parameters.md)と[呼び出しパラメーターの変更を受信した要求](incoming-request-to-change-call-parameters.md)を参照してください。
+QoS の操作の詳細については、次を参照してください。 [Client-Initiated を呼び出すパラメーターの変更を要求](client-initiated-request-to-change-call-parameters.md)と[呼び出しパラメーターの変更を受信した要求](incoming-request-to-change-call-parameters.md)します。
 
  
 

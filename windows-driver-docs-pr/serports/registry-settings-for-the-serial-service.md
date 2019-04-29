@@ -1,19 +1,19 @@
 ---
-title: シリアル サービス用レジストリ設定
-description: シリアル サービス用レジストリ設定
+title: シリアル サービス用のレジストリ設定
+description: シリアル サービス用のレジストリ設定
 ms.assetid: 5c4a28ab-e2e5-45b4-8179-6f5d40e9c98c
 keywords:
 - シリアル サービス WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf34c958de7cdd09e6fabfbb5b913fbfb472381a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388042"
 ---
-# <a name="registry-settings-for-the-serial-service"></a>シリアル サービス用レジストリ設定
+# <a name="registry-settings-for-the-serial-service"></a>シリアル サービス用のレジストリ設定
 
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "56549751"
 シリアルが下にある次のサービスのエントリの値を使用して、 **.\\サービス\\シリアル**レジストリ キー。
 
 <a href="" id="forcefifoenable--reg-dword-"></a>**ForceFifoEnable** (REG\_DWORD)  
-Fifo を使用するシリアルを強制するかどうかを示すブール フラグを指定します。 場合**ForceFifofEnable**が 0 以外の場合、Fifo を使用するシリアルが Fifo の存在を検出するかどうかに関係なく。 それ以外の場合、Fifo は、シリアルが検出できる場合にのみ使用されます。 既定値は、0 以外の値です。 シリアルの設定、エントリの値が存在しない場合、 **ForceFifoEnable**エントリの値を既定値。 検出の詳細については、メソッドは、、[シリアル ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub でを参照してください。
+Fifo を使用するシリアルを強制するかどうかを示すブール フラグを指定します。 場合**ForceFifofEnable**が 0 以外の場合、Fifo を使用するシリアルが Fifo の存在を検出するかどうかに関係なく。 それ以外の場合、Fifo は、シリアルが検出できる場合にのみ使用されます。 既定値は、0 以外の値です。 シリアルの設定、エントリの値が存在しない場合、 **ForceFifoEnable**エントリの値を既定値。 検出の詳細については、メソッドは、次を参照してください。、[シリアル ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub でします。
 
 <a href="" id="rxfifo--reg-dword-"></a>**RxFIFO** (REG\_DWORD)  
 受信ポートの割り込みをトリガーする FIFO のバイト数を指定します。 有効な値は、Serial.h ヘッダー ファイルで定義されている定数を参照してください、[シリアル ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub でします。 既定値**RxFIFO**は 8 バイトです。 シリアルの設定、エントリの値が存在しない場合、 **RxFIFO**エントリの値を既定値。

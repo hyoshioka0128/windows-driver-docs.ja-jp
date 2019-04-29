@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc90c6a997221f1f254d1ddd8718582dfe5d627a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387312"
 ---
 # <a name="versioned-interfaces"></a>バージョン管理されたインターフェイス
 
@@ -27,7 +27,7 @@ NDIS 6.0 では、構造のキーのバージョン管理をサポートして�
 
 このバージョン管理は、旧バージョンとの互換性を簡略化し、NDIS 6.0 とそれ以降のドライバーの有効期限を延長します。 また、NDIS ドライバーでは、NDIS の 1 つ以上のバージョンをサポートできます。
 
-詳細については、[ **NDIS\_オブジェクト\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff566588)を参照してください。
+詳細については、次を参照してください。 [ **NDIS\_オブジェクト\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff566588)します。
 
  
 

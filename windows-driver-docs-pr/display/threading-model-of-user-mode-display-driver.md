@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f003c0fbcf0b516873157b75cf6afd1fa3fd773b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389806"
 ---
 # <a name="threading-model-of-user-mode-display-driver"></a>ユーザー モード ディスプレイ ドライバーのスレッド モデル
 
@@ -22,7 +22,7 @@ ms.locfileid: "56572513"
 ## <span id="ddk_thread_model_of_user_mode_display_driver_gg"></span><span id="DDK_THREAD_MODEL_OF_USER_MODE_DISPLAY_DRIVER_GG"></span>
 
 
-ユーザー モードのディスプレイ ドライバーが読み込まれていない複数のプロセスに同時に--とは別に DLL が各プロセスのアドレス空間に読み込まれたユーザー モードのディスプレイ ドライバー。 それでも、複数のスレッドがユーザー モードのディスプレイ ドライバーで同時に実行できます。 ただし、ユーザー モードのディスプレイ ドライバーで実行されている各スレッドは、ユーザー モードのディスプレイ ドライバーへの呼び出しによって作成される別のディスプレイ デバイスをアクセスする必要があります[ **CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540634)関数。 以下に例を示します。
+ユーザー モードのディスプレイ ドライバーが読み込まれていない複数のプロセスに同時に--とは別に DLL が各プロセスのアドレス空間に読み込まれたユーザー モードのディスプレイ ドライバー。 それでも、複数のスレッドがユーザー モードのディスプレイ ドライバーで同時に実行できます。 ただし、ユーザー モードのディスプレイ ドライバーで実行されている各スレッドは、ユーザー モードのディスプレイ ドライバーへの呼び出しによって作成される別のディスプレイ デバイスをアクセスする必要があります[ **CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540634)関数。 例:
 
 -   2 つのマイクロソフトの Direct3D デバイスを作成するアプリケーションでは、これらのデバイスのアクセスを個別に 2 つのスレッドを持つことができます。
 

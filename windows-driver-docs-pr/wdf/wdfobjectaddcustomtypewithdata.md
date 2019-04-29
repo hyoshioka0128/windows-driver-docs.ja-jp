@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f81bf3e366d91547740e035434cac54a9699389b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390828"
 ---
 # <a name="wdfobjectaddcustomtypewithdata-macro"></a>WdfObjectAddCustomTypeWithData マクロ
 
@@ -94,9 +94,9 @@ Framework のオブジェクトへのハンドル。
 
 ドライバーを呼び出す場合**WdfObjectAddCustomTypeWithData**データ バッファーへのポインター、ドライバーを提供できます、 [ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)または[ *EvtDestroyCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540841)オブジェクトが削除されたときに、メモリ バッファーの割り当てを解除するコールバック関数。
 
-オブジェクトのカスタム種類の詳細については、[Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)を参照してください。
+オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
 
-コード例では、[ **WdfObjectAddCustomType**](wdfobjectaddcustomtype.md)を参照してください。
+コード例では、次を参照してください。 [ **WdfObjectAddCustomType**](wdfobjectaddcustomtype.md)します。
 
 <a name="requirements"></a>要件
 ------------

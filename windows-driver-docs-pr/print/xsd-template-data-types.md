@@ -1,6 +1,6 @@
 ---
-title: XSD のテンプレートのデータ型
-description: XSD のテンプレートのデータ型
+title: XSD テンプレート データ型
+description: XSD テンプレート データ型
 ms.assetid: 96d3a75a-fa15-47bb-8331-e3994d25c42d
 keywords:
 - WDK GDL、データ型のテンプレート
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be818179c0e27790b0b453a256355400933ae891
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390218"
 ---
-# <a name="xsd-template-data-types"></a>XSD のテンプレートのデータ型
+# <a name="xsd-template-data-types"></a>XSD テンプレート データ型
 
 
 XSD\_定義データ型は、データ型の定義のスキーマを使用します。 任意の複合型または単純型を定義できます。

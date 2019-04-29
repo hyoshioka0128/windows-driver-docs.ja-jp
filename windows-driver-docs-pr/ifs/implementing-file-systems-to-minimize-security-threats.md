@@ -1,19 +1,19 @@
 ---
-title: セキュリティの脅威を最小限に抑える、ファイル システムを実装します。
-description: セキュリティの脅威を最小限に抑える、ファイル システムを実装します。
+title: ファイル システムを実装してセキュリティの脅威を最小限にする
+description: ファイル システムを実装してセキュリティの脅威を最小限にする
 ms.assetid: a7c974ee-9f0b-4a51-aa56-5c67ee2d1180
 keywords:
 - 脅威を最小限に抑え、セキュリティ WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a21f793875cebe4e8c393186550760bc36702a92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392019"
 ---
-# <a name="implementing-file-systems-to-minimize-security-threats"></a>セキュリティの脅威を最小限に抑える、ファイル システムを実装します。
+# <a name="implementing-file-systems-to-minimize-security-threats"></a>ファイル システムを実装してセキュリティの脅威を最小限にする
 
 
 ## <span id="ddk_implementing_to_minimize_security_threats_if"></span><span id="DDK_IMPLEMENTING_TO_MINIMIZE_SECURITY_THREATS_IF"></span>

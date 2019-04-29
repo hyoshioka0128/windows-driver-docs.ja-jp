@@ -1,6 +1,6 @@
 ---
-title: コールバックの同期モードを指定します。
-description: コールバックの同期モードを指定します。
+title: コールバック同期モードの指定
+description: コールバック同期モードの指定
 ms.assetid: 3e041493-1095-47cb-b9a7-879a4cf1bd2e
 keywords:
 - コールバック同期 WDK UMDF
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2fae225abd151ec6b0c6956b720e375c26e3cd1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325137"
 ---
-# <a name="specifying-a-callback-synchronization-mode"></a>コールバックの同期モードを指定します。
+# <a name="specifying-a-callback-synchronization-mode"></a>コールバック同期モードの指定
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
@@ -58,7 +58,7 @@ ms.locfileid: "56527872"
 
 制約は、キューのコールバック関数にのみ、プラグ アンド プレイ (PnP) と電源管理のコールバック関数が適用されます。 キューのコールバック関数を以下に示します。
 
--   自動のディスパッチのコールバック関数を次のように、 [ **IQueueCallbackRead::OnRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556875)と[ **IQueueCallbackWrite::OnWrite**](https://msdn.microsoft.com/library/windows/hardware/ff556885)します。 詳細については、[I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)を参照してください。
+-   自動のディスパッチのコールバック関数を次のように、 [ **IQueueCallbackRead::OnRead** ](https://msdn.microsoft.com/library/windows/hardware/ff556875)と[ **IQueueCallbackWrite::OnWrite**](https://msdn.microsoft.com/library/windows/hardware/ff556885)します。 詳細については、次を参照してください。 [I/O キュー イベントのコールバック関数](i-o-queue-event-callback-functions.md)します。
 
 -   キューの状態を変更するなど、コールバック関数、 [ **IQueueCallbackStateChange::OnStateChange**](https://msdn.microsoft.com/library/windows/hardware/ff556880)します。
 

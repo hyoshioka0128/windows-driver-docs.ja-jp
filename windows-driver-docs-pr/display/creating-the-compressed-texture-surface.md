@@ -1,6 +1,6 @@
 ---
-title: 圧縮されたテクスチャ サーフェスを作成します。
-description: 圧縮されたテクスチャ サーフェスを作成します。
+title: 圧縮テクスチャ サーフェスの作成
+description: 圧縮テクスチャ サーフェスの作成
 ms.assetid: 6d1cc079-642c-4662-ae72-c0362d8a5b2a
 keywords:
 - 圧縮されたテクスチャ WDK DirectDraw を描画、作成します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d81b763acf3677e1062855602c7ff9d9584ff60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387231"
 ---
-# <a name="creating-the-compressed-texture-surface"></a>圧縮されたテクスチャ サーフェスを作成します。
+# <a name="creating-the-compressed-texture-surface"></a>圧縮テクスチャ サーフェスの作成
 
 
 ## <span id="ddk_creating_the_compressed_texture_surface_gg"></span><span id="DDK_CREATING_THE_COMPRESSED_TEXTURE_SURFACE_GG"></span>

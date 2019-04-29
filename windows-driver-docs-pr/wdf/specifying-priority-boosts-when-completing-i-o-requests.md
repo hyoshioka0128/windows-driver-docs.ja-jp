@@ -1,6 +1,6 @@
 ---
-title: I/O 要求を完了するときは、によって優先順位を指定します。
-description: I/O 要求を完了するときは、によって優先順位を指定します。
+title: I/O 要求完了時の優先度引き上げの指定
+description: I/O 要求完了時の優先度引き上げの指定
 ms.assetid: 9a501ca1-58c9-4458-b202-9581f8ce5e5f
 keywords:
 - 要求処理の WDK KMDF、優先度の実行
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c04f7acf369affb090a23d011a9c27611e88ae12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325124"
 ---
-# <a name="specifying-priority-boosts-when-completing-io-requests"></a>I/O 要求を完了するときは、によって優先順位を指定します。
+# <a name="specifying-priority-boosts-when-completing-io-requests"></a>I/O 要求完了時の優先度引き上げの指定
 
 
 呼び出すことができます、ドライバーでは、I/O 要求が完了したら、 [ **WdfRequestCompleteWithPriorityBoost** ](https://msdn.microsoft.com/library/windows/hardware/ff549949)システムは、I/O を要求したスレッドの実行時の優先度を上げるを使用して値を指定するには操作です。

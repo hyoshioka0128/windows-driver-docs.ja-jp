@@ -17,11 +17,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfae2587cb8e93195053bb50c727caca34a74bc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327233"
 ---
 # <a name="wmi-registration-flags"></a>WMI 登録フラグ
 
@@ -55,7 +55,7 @@ ms.locfileid: "56551163"
 
 ドライバーが WMIREG を設定して、イベント ブロックを示す\_フラグ\_イベント\_のみ\_GUID。 これは、ブロックができることを示します。 有効になっているまたはのみ、イベントとして無効になっているとできません照会または設定します。
 
-ドライバーに指示 WMIREG を設定して、以前に登録されたブロックを削除する WMI\_フラグ\_削除\_GUID。 このフラグは、登録情報を更新する要求に対する応答でのみ有効です ([**IRP\_MN\_REGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551731)または[ **IRP\_MN\_REGINFO\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff551734) WMIUPDATE で)。 詳細については、[WMI 登録情報を更新する](updating-wmi-registration-information.md)を参照してください。
+ドライバーに指示 WMIREG を設定して、以前に登録されたブロックを削除する WMI\_フラグ\_削除\_GUID。 このフラグは、登録情報を更新する要求に対する応答でのみ有効です ([**IRP\_MN\_REGINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551731)または[ **IRP\_MN\_REGINFO\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff551734) WMIUPDATE で)。 詳細については、次を参照してください。 [WMI 登録情報を更新する](updating-wmi-registration-information.md)します。
 
  
 

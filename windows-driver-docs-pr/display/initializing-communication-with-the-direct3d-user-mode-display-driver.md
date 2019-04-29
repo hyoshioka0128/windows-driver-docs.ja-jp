@@ -1,6 +1,6 @@
 ---
 title: D3D ユーザー モードのディスプレイ ドライバーの通信を初期化しています
-description: Direct3D のユーザー モードのディスプレイ ドライバーとの通信を初期化しています
+description: Direct3D のユーザー モード ディスプレイ ドライバーの通信の初期化
 ms.assetid: 96e85df4-e340-4017-b348-7c24349ffe69
 keywords:
 - ユーザー モードのディスプレイ ドライバー WDK Windows Vista では、初期化しています
@@ -10,13 +10,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 0165c251a2c888339a7d3238d185c54a8ba2e542
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325048"
 ---
-# <a name="initializing-communication-with-the-direct3d-user-mode-display-driver"></a>Direct3D のユーザー モードのディスプレイ ドライバーとの通信を初期化しています
+# <a name="initializing-communication-with-the-direct3d-user-mode-display-driver"></a>Direct3D のユーザー モード ディスプレイ ドライバーの通信の初期化
 
 ダイナミック リンク ライブラリ (DLL) には、マイクロソフトの Direct3D ユーザー モード ディスプレイ ドライバーとの通信を初期化するために、Direct3D ランタイムは、まず、DLL を読み込みます。 Direct3D ランタイムが次に、ユーザー モードのディスプレイ ドライバーを呼び出す[ **OpenAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff568601)グラフィックス アダプターのインスタンスを開く、DLL のエクスポート テーブルを使用して関数。 *OpenAdapter*関数は DLL の関数をエクスポートします。
 

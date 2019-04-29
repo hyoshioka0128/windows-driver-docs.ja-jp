@@ -5,18 +5,18 @@ ms.assetid: AC327938-A813-4665-8E2E-43BEE11D4AA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 469a4ebd97b0f47897e15d16a8dd8a6bf75be3e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390314"
 ---
 # <a name="retrieving-the-contents-of-a-ieee-1394-nodes-configuration-rom"></a>IEEE 1394 ノードの構成 ROM の内容を取得します。
 
 
-Windows 7 には、1394ohci.sys、カーネル モード ドライバー フレームワーク (KMDF) を使用して実装されている、新しい IEEE 1394 バス ドライバーが含まれています。 1394ohci.sys バス ドライバーでは、従来の IEEE バス ドライバー ポート/ミニポート構成--1394bus.sys と ochi1394.sys に置き換えられます。 従来の 1394 バス ドライバーとの互換性になります。 いくつか新しいと従来の 1394 バス ドライバーの動作で既知の違いについては、[Windows 7 での IEEE 1394 バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/gg266402)を参照してください。
+Windows 7 には、1394ohci.sys、カーネル モード ドライバー フレームワーク (KMDF) を使用して実装されている、新しい IEEE 1394 バス ドライバーが含まれています。 1394ohci.sys バス ドライバーでは、従来の IEEE バス ドライバー ポート/ミニポート構成--1394bus.sys と ochi1394.sys に置き換えられます。 従来の 1394 バス ドライバーとの互換性になります。 いくつか新しいと従来の 1394 バス ドライバーの動作で既知の違いについては、次を参照してください。 [Windows 7 での IEEE 1394 バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/gg266402)します。
 
-このトピックでは、1394ohci.sys バス ドライバーを後でデバイスの列挙に使用するノードの構成、ROM の内容を取得する方法の詳細を提供します。 Windows 7 は、デバイスの検出のノードの構成を ROM の内容の処理は変更されていません。 ノードの構成 ROM の内容を処理する方法の詳細については、[1394 構成 ROM を変更する](https://msdn.microsoft.com/library/windows/hardware/ff537433)を参照してください。
+このトピックでは、1394ohci.sys バス ドライバーを後でデバイスの列挙に使用するノードの構成、ROM の内容を取得する方法の詳細を提供します。 Windows 7 は、デバイスの検出のノードの構成を ROM の内容の処理は変更されていません。 ノードの構成 ROM の内容を処理する方法の詳細については、次を参照してください。 [1394 構成 ROM を変更する](https://msdn.microsoft.com/library/windows/hardware/ff537433)します。
 
 1394ohci.sys バス ドライバーは、1394 バスの非同期送信することによってリセットには、ノードへのトランザクションが読み取られた後に、ノードの構成 ROM の内容を取得します。 ノードの構成 ROM. の内容を取得するノードに送信される非同期の読み取りトランザクションの数を削減しよう
 
@@ -59,7 +59,7 @@ IEEE 1394 仕様では、前の手順では、ROM の値で構成の説明を見
 
 ## <a name="related-topics"></a>関連トピック
 [IEEE 1394 ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/ff538867)  
-[ROM 1394 の構成の変更](https://msdn.microsoft.com/library/windows/hardware/ff537433)  
+[1394 構成 ROM の修正](https://msdn.microsoft.com/library/windows/hardware/ff537433)  
 [**要求\_取得\_CONFIG\_ROM**](https://msdn.microsoft.com/library/windows/hardware/gg266404)  
 
 

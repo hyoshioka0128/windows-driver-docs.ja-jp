@@ -1,6 +1,6 @@
 ---
-title: スレッドの同期と TDR
-description: スレッドの同期と TDR
+title: スレッドの同期および TDR
+description: スレッドの同期および TDR
 ms.assetid: 3690ad06-002a-4939-9b04-b87245678464
 keywords:
 - WDK の表示、TDR スレッド処理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eb751975e830909465d5a22086ba31f21d1d878
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389866"
 ---
-# <a name="thread-synchronization-and-tdr"></a>スレッドの同期と TDR
+# <a name="thread-synchronization-and-tdr"></a>スレッドの同期および TDR
 
 
 次の図は、ディスプレイのミニポート ドライバー Windows 表示 Driver Model (WDDM) でのスレッドの同期のしくみを示しています。

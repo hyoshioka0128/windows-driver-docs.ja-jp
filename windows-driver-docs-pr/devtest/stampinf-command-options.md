@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6e0df9663746f1d1555ba23e5b59d35fb188907
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387911"
 ---
 # <a name="stampinf-command-options"></a>Stampinf コマンドのオプション
 
@@ -58,7 +58,7 @@ Stampinf -f filename
 -   場合、STAMPINF\_環境変数の日付が指定されていない、Stampinf が現在の日付を使用します。
 
 <span id="_______-a_________architecture______________"></span><span id="_______-A_________ARCHITECTURE______________"></span> **-a \[** *architecture* **\]**   
-INX ファイルで使われている $ARCH$ 変数を置き換える "*アーキテクチャ*" 文字列を指定します。 $ARCH$ 変数の使用をカスタマイズする、 **TargetOSVersion**で装飾、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)と、特定のプラットフォームをそれぞれのセクション名。 $ARCH$ 変数の詳細については、[INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)を参照してください。
+INX ファイルで使われている $ARCH$ 変数を置き換える "*アーキテクチャ*" 文字列を指定します。 $ARCH$ 変数の使用をカスタマイズする、 **TargetOSVersion**で装飾、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)と、特定のプラットフォームをそれぞれのセクション名。 $ARCH$ 変数の詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](https://msdn.microsoft.com/library/windows/hardware/ff545473)します。
 
 値、*アーキテクチャ*文字列は**x86**、 **64** (Itanium ベースのプラットフォーム用)、および**x64** (amd64 プラットフォーム) のです。
 

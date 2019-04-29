@@ -1,5 +1,5 @@
 ---
-title: PoolMon スタートアップ コマンド
+title: PoolMon のスタートアップ コマンド
 description: PoolMon を起動するには、次の構文とパラメーターを使用してコマンドラインでコマンドを入力します。
 ms.assetid: 2aa0cf09-f016-46b9-af4e-0f3fbc6fbe5b
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c54fc24ff48c57464085a048da380b8a2afdb7f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327114"
 ---
-# <a name="poolmon-startup-command"></a>PoolMon スタートアップ コマンド
+# <a name="poolmon-startup-command"></a>PoolMon のスタートアップ コマンド
 
 
 PoolMon を起動するには、次の構文とパラメーターを使用してコマンドラインでコマンドを入力します。

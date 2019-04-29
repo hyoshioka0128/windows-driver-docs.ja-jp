@@ -1,6 +1,6 @@
 ---
-title: Windows プラットフォームのコールアウト ドライバーをフィルタ リングの概要
-description: Windows プラットフォームのコールアウト ドライバーをフィルタ リングの概要
+title: Windows フィルタリング プラットフォーム コールアウトの概要
+description: Windows フィルタリング プラットフォーム コールアウトの概要
 ms.assetid: d075da82-8dbc-41a5-a081-dd0e2b292371
 keywords:
 - コールアウト ドライバーについてコールアウト ドライバー WDK、Windows フィルタ リング プラットフォーム
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa2eeb7b6039ef79ec6a95dfde477a70020ca6ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327734"
 ---
-# <a name="introduction-to-windows-filtering-platform-callout-drivers"></a>Windows プラットフォームのコールアウト ドライバーをフィルタ リングの概要
+# <a name="introduction-to-windows-filtering-platform-callout-drivers"></a>Windows フィルタリング プラットフォーム コールアウトの概要
 
 
 ここでは Windows フィルタ リング プラットフォーム[コールアウト ドライバー](callout-driver.md)します。 Windows フィルタ リング プラットフォームの詳細については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。
@@ -36,7 +36,7 @@ ms.locfileid: "56528101"
 <a href="" id="data-logging-------"></a>**データのログ記録**   
 ネットワーク トラフィック データのログです。 などのネットワーク監視製品は、特定の理由で破棄されたデータ パケットの数をカウントしてでした。
 
-ネットワーク データを処理するには、だけでなく、コールアウト ドライバーは、ベース エンジンをフィルター処理にフィルターを追加するなど、他の Windows フィルタ リング プラットフォーム管理タスクを実行できます。 コールアウト ドライバーを実行できるその他のタスクの詳細については、[その他の Windows フィルタ リング プラットフォーム関数の呼び出し](calling-other-windows-filtering-platform-functions.md)を参照してください。
+ネットワーク データを処理するには、だけでなく、コールアウト ドライバーは、ベース エンジンをフィルター処理にフィルターを追加するなど、他の Windows フィルタ リング プラットフォーム管理タスクを実行できます。 コールアウト ドライバーを実行できるその他のタスクの詳細については、次を参照してください。[その他の Windows フィルタ リング プラットフォーム関数の呼び出し](calling-other-windows-filtering-platform-functions.md)します。
 
  
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c97ae0ddd275c3988108ab32d72be4cd2b64ec7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387907"
 ---
 # <a name="starting-and-exiting-traceview"></a>TraceView の開始と終了
 
@@ -41,7 +41,7 @@ Traceview で終了するなど、他の方法で開始されたトレース セ
 
 コマンドラインで traceview でを起動するには、コマンド プロンプト ウィンドウを開きに移動します、\\ツール\\トレース\\の WDK、およびなど、traceview でコマンドを入力し、i386 ディレクトリ**traceview で/でしょうか。** します。 (入力した場合**traceview で**パラメーターなしで traceview でウィンドウが表示されます)。
 
-Traceview でコマンドについては、[traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)を参照してください。
+Traceview でコマンドについては、次を参照してください。 [traceview でコマンド ライン インターフェイス](traceview-command-line-interface.md)します。
 
  
 

@@ -1,17 +1,17 @@
 ---
-title: Windows 8 の機能が更新されたスコア ディレクティブ
+title: Windows 8 での更新済み機能のスコア ディレクティブ
 description: 更新された機能スコアのディレクティブは、Windows Display Driver Model (WDDM) に続くすべての Windows 8 ドライバーに必要なインストールに関する一般的な設定です。
 ms.assetid: E50E132A-DEC8-42F4-AAF8-05F658990CF5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f23be96576ac2d2328f7a8e6cf45a7d83e56607e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389805"
 ---
-# <a name="updated-feature-score-directive-in-windows-8"></a>Windows 8 の機能が更新されたスコア ディレクティブ
+# <a name="updated-feature-score-directive-in-windows-8"></a>Windows 8 での更新済み機能のスコア ディレクティブ
 
 
 更新された機能スコアのディレクティブは、Windows Display Driver Model (WDDM) に続くすべての Windows 8 ドライバーに必要なインストールに関する一般的な設定です。

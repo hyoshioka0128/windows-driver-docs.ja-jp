@@ -1,6 +1,6 @@
 ---
-title: 定義と新しい Guid をエクスポートします。
-description: 定義と新しい Guid をエクスポートします。
+title: 新しい GUID の定義とエクスポート
+description: 新しい GUID の定義とエクスポート
 ms.assetid: a7deb283-7cab-4f3c-ad96-f8085222456e
 keywords:
 - WDK のカーネルをグローバルに一意の識別子
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec5a2e76726008bdee18a36bf5a7496e3fbbe5e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388215"
 ---
-# <a name="defining-and-exporting-new-guids"></a>定義と新しい Guid をエクスポートします。
+# <a name="defining-and-exporting-new-guids"></a>新しい GUID の定義とエクスポート
 
 
 

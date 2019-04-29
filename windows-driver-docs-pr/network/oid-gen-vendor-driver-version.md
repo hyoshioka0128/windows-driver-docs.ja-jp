@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e69adabe84a2320f4e9e28209b7d7e64817d0cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387866"
 ---
 # <a name="oidgenvendordriverversion"></a>OID_GEN_VENDOR_DRIVER_VERSION
 
@@ -19,13 +19,13 @@ ms.locfileid: "56574427"
 
 要求のセットがサポートされていません。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 戻り値の下位半分; マイナー バージョンを指定します上位の半分には、メジャー バージョンを指定します。
 
 この OID は、NDIS 6.0 およびそれ以降のミニポート ドライバーでは必須です。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

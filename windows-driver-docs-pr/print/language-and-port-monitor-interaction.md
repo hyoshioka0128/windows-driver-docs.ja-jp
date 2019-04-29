@@ -1,6 +1,6 @@
 ---
-title: 言語およびポート モニターの相互作用
-description: 言語およびポート モニターの相互作用
+title: 言語とポート モニターの相互作用
+description: 言語とポート モニターの相互作用
 ms.assetid: 6c3c55fc-40f3-43d7-b8a2-20fed8d28813
 keywords:
 - 印刷モニター WDK、言語モニター
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a37d379ac0f27b470248f56ba3130cec8109f322
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388106"
 ---
-# <a name="language-and-port-monitor-interaction"></a>言語およびポート モニターの相互作用
+# <a name="language-and-port-monitor-interaction"></a>言語とポート モニターの相互作用
 
 
 

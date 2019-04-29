@@ -1,16 +1,16 @@
 ---
-Description: Supporting Device Events
-title: デバイスのイベントをサポートしています。
+Description: デバイス イベントのサポート
+title: デバイス イベントのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 635a977b619c5783b9f60d3f0787e8ad114bf465
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387314"
 ---
-# <a name="supporting-device-events"></a>デバイスのイベントをサポートしています。
+# <a name="supporting-device-events"></a>デバイス イベントのサポート
 
 
 ドライバーのサンプルを定義し、WPD センサー機能のオブジェクトに関連付けられているカスタム WPD イベントをサポートする\_イベント\_センサー\_読み取り\_更新されました。

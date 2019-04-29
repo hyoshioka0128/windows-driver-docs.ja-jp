@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53bb5d6bbc1713329753106b2063ebe526ca9157
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327251"
 ---
 # <a name="wmi-wnodexxx-structures"></a>WMI れた WNODE\_XXX 構造体
 
@@ -63,7 +63,7 @@ WMI と呼ばれる標準的なデータ構造体のセットを使用して**�
 
  
 
-2 つ追加**れた WNODE\_* XXX*** 構造体、 [**れた WNODE\_イベント\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff566373)と[ **れた WNODE\_イベント\_参照**](https://msdn.microsoft.com/library/windows/hardware/ff566374)、有効なイベントの通知を送信するために使用します。 イベント ブロックを登録するドライバー、イベントが有効になっているし、イベントが発生した場合に通知を送信、イベントの WMI 呼び出しによって[ **IoWMIWriteEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff550520)を渡して、**れた WNODE\_イベント\_* XXX*** 構造体。 WMI イベントを送信する方法については、[WMI イベントの送信](sending-wmi-events.md)を参照してください。
+2 つ追加**れた WNODE\_* XXX*** 構造体、 [**れた WNODE\_イベント\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff566373)と[ **れた WNODE\_イベント\_参照**](https://msdn.microsoft.com/library/windows/hardware/ff566374)、有効なイベントの通知を送信するために使用します。 イベント ブロックを登録するドライバー、イベントが有効になっているし、イベントが発生した場合に通知を送信、イベントの WMI 呼び出しによって[ **IoWMIWriteEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff550520)を渡して、**れた WNODE\_イベント\_* XXX*** 構造体。 WMI イベントを送信する方法については、次を参照してください。 [WMI イベントの送信](sending-wmi-events.md)します。
 
 各**れた WNODE\_* XXX***、次の構造で構成されます。
 

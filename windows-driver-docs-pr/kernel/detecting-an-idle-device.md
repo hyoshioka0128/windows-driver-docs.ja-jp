@@ -1,6 +1,6 @@
 ---
-title: アイドル状態のデバイスを検出します。
-description: アイドル状態のデバイスを検出します。
+title: アイドル状態デバイスの検出
+description: アイドル状態デバイスの検出
 ms.assetid: 69de45de-6c27-4ada-bd5e-369da0bd612a
 keywords:
 - アイドル状態検出 WDK 電源管理
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a83f7835f1345742a5d543a52be3d63ac2ee47b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388181"
 ---
-# <a name="detecting-an-idle-device"></a>アイドル状態のデバイスを検出します。
+# <a name="detecting-an-idle-device"></a>アイドル状態デバイスの検出
 
 
 

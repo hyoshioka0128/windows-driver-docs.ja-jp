@@ -5,16 +5,16 @@ ms.assetid: 4BD937D3-97C7-408D-9372-F01CBB7B0B62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10c3bd71fcf98d267647c0c42f8012f94bdc949d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387909"
 ---
 # <a name="stampinf-task"></a>Stampinf タスク
 
 
-Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、stampinf.exe ツールを実行できるようにの StampInf タスクが用意されています。 Stampinf.exe ツールについては、[Stampinf](stampinf.md)を参照してください。
+Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、stampinf.exe ツールを実行できるようにの StampInf タスクが用意されています。 Stampinf.exe ツールについては、次を参照してください。 [Stampinf](stampinf.md)します。
 
 Inf 項目は、StampInf タスクのパラメーターを送信します。 Stampinf の項目メタデータは、プロジェクト ファイルの Inf を使用してアクセスされます。
 

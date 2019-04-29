@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36ec2aa2eef0f29371e670ef7f06c7a40dd49478
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390251"
 ---
 # <a name="tvotpushbutton"></a>TVOT\_プッシュ ボタン
 
@@ -48,7 +48,7 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 <tbody>
 <tr class="odd">
 <td><p>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>使用されません。</p></td>
+<td><p>使用されていません。</p></td>
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_DLGPROC</p></td>
@@ -125,7 +125,7 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 <tbody>
 <tr class="odd">
 <td><p>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>使用されません。</p></td>
+<td><p>使用されていません。</p></td>
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_DLGPROC</p></td>
@@ -133,11 +133,11 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 </tr>
 <tr class="odd">
 <td><p>PUSHBUTTON_TYPE_HTCLRADJ</p></td>
-<td><p>使用されません。</p></td>
+<td><p>使用されていません。</p></td>
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_HTSETUP</p></td>
-<td><p>使用されません。</p></td>
+<td><p>使用されていません。</p></td>
 </tr>
 </tbody>
 </table>
@@ -252,9 +252,9 @@ TVOT\_プッシュ ボタン
 
  
 
-詳細については、[Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)を参照してください。
+詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

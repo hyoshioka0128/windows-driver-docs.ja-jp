@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c8941d02cbc311a0a801df7f972143d610e954e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390491"
 ---
 # <a name="second-encouraged-picture-decoding-configuration"></a>2 番目の推奨される画像デコード構成
 
@@ -32,17 +32,17 @@ ms.locfileid: "56582261"
 <thead>
 <tr class="header">
 <th align="left">Member</th>
-<th align="left">[値]</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>bConfigMBcontrolRasterOrder</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigResidDiffHost</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bConfigResidDiffAccelerator</strong></p></td>

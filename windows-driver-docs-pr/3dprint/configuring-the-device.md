@@ -1,17 +1,17 @@
 ---
-title: デバイスを構成します。
+title: デバイスの構成
 description: デバイスを構成するには、デバイスとプリンターのコントロール パネルでの 3D プリンター デバイスが必要し、G-Microsoft スライサーを使用して、コードを印刷できます。
 ms.assetid: 897081C3-47A4-46A0-9A45-A49E4569216D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39f4fc78da8cb0a8d4e282f2bf1b261d35e84d8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325114"
 ---
-# <a name="configuring-the-device"></a>デバイスを構成します。
+# <a name="configuring-the-device"></a>デバイスの構成
 
 
 デバイスを構成するを 3D プリンター デバイスを含めるか、**デバイスとプリンター**コントロール パネルと G-Microsoft スライサーを使用して、コードを印刷できます。

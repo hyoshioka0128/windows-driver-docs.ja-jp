@@ -10,19 +10,19 @@ keywords:
 ms.date: 08/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52811ed7c1c2b481f4b9ef43a588a3079f0aaa3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387950"
 ---
-# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>ハードウェア サポートのアプリ (HSA):ドライバー開発者向けの手順
+# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>ハードウェア サポート アプリ (HSA):ドライバー開発者向けの手順
 
 ハードウェア サポート アプリ (HSA) は、特定のドライバーとペアになっているデバイスに固有のアプリまたは[RPC (リモート プロシージャ コール)](https://msdn.microsoft.com/library/windows/desktop/aa378651)エンドポイント。
 
 ドライバーを使用して、ストア アプリを関連付けるには、カスタム機能と呼ばれる特殊な値を最初に予約します。 機能を提供し、機能を提供して、アプリ開発者にアプリへのアクセスを許可します。  このページは、ドライバー開発者向けの次の手順を説明します。
 
-アプリ開発者向けの手順が記載されて[ハードウェア サポート アプリ (HSA)。アプリ開発者のための手順](hardware-support-app--hsa--steps-for-app-developers.md)します。
+アプリ開発者向けの手順が記載されて[ハードウェア サポート アプリ (HSA)。Steps for App Developers (ハードウェア サポート アプリ (HSA): アプリ開発者向け手順)](hardware-support-app--hsa--steps-for-app-developers.md)」をご覧ください。
 
 HSA の 4 つ ("DCHU") の設計原則の 1 つ[ユニバーサル Windows ドライバー](../develop/getting-started-with-universal-drivers.md)します。
 
@@ -38,7 +38,7 @@ HSA の 4 つ ("DCHU") の設計原則の 1 つ[ユニバーサル Windows ド�
     * どのようなリソースにアクセスする機能が必要ですか。
     * セキュリティやプライバシー上の問題
     * データ機能をでへのアクセスを提供しますか。
-    * Microsoft Store アプリの発行元 ID が含まれます  いずれかを取得するには、Microsoft Store のページで、アプリのスケルトン エントリを作成します。 アプリの PFN の予約の詳細については、[の名前を予約することで、アプリを作成する](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)を参照してください。
+    * Microsoft Store アプリの発行元 ID が含まれます  いずれかを取得するには、Microsoft Store のページで、アプリのスケルトン エントリを作成します。 アプリの PFN の予約の詳細については、次を参照してください。[の名前を予約することで、アプリを作成する](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)します。
 
 2.  Microsoft の電子メール要求を承認すると場合、は、バックアップの形式でカスタム機能の一意の文字列名**CompanyName.capabilityName\_PublisherID**します。
 
@@ -94,7 +94,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 置換`zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz`を公開するインターフェイスの guid。  置換*CompanyName*を自分の会社名、 *myCustomCapabilityNameTBD* 、会社内で一意の名前を持つと*MyStorePubId*パブリッシャーとストア id。 
 
-上述のドライバー コードの例は、、[ユニバーサル ドライバーのドライバー パッケージのインストール ツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)を参照してください。
+上述のドライバー コードの例は、次を参照してください。、[ユニバーサル ドライバーのドライバー パッケージのインストール ツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)します。
 
 ## <a name="preparing-the-signed-custom-capability-descriptor-sccd-file"></a>署名済みのカスタム機能記述子 (SCCD) ファイルの準備
 
@@ -121,7 +121,7 @@ SCCD ファイルを準備するには、カスタム機能の文字列をまず
 
 SCCD を完了すると、機能の所有者にメールで送信 Microsoft の署名します。  Microsoft では、機能の所有者に符号付き SCCD を返します。
 
-次に、機能の所有者は、アプリ開発者に、SCCD を送信します。  アプリ開発者には、アプリケーション マニフェストの署名 SCCD が含まれています。  行う必要があるアプリの開発者については、次を参照してください。[ハードウェア サポート アプリ (HSA)。アプリ開発者のための手順](hardware-support-app--hsa--steps-for-app-developers.md)します。
+次に、機能の所有者は、アプリ開発者に、SCCD を送信します。  アプリ開発者には、アプリケーション マニフェストの署名 SCCD が含まれています。  行う必要があるアプリの開発者については、次を参照してください。[ハードウェア サポート アプリ (HSA)。Steps for App Developers (ハードウェア サポート アプリ (HSA): アプリ開発者向け手順)](hardware-support-app--hsa--steps-for-app-developers.md)」をご覧ください。
 
 ## <a name="limiting-the-scope-of-an-sccd"></a>SCCD のスコープを制限します。
 
@@ -180,7 +180,7 @@ Microsoft によって署名された SCCD を取得する前に、これには�
 * [アプリの機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)
 * [Visual Studio を使用して UWP アプリを開発します。](https://developer.microsoft.com/windows/apps/develop)
 * [ユニバーサル Windows プラットフォーム (UWP) アプリとドライバーのペアリング](../install/pairing-app-and-driver-versions.md)
-* [UWP アプリを開発します。](https://developer.microsoft.com/windows/apps/develop)
+* [UWP アプリの開発](https://developer.microsoft.com/windows/apps/develop)
 * [Desktop App Converter (デスクトップ ブリッジ) を使用してアプリをパッケージ化](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 * [カスタムの機能のサンプル アプリ](https://go.microsoft.com/fwlink/p/?LinkId=846904)
 * [カスタムの機能のドライバーのサンプル](https://aka.ms/customcapabilitydriversample )

@@ -1,17 +1,17 @@
 ---
-title: ディスプレイの明るさコントロール
+title: ディスプレイの明るさの制御
 description: キーボード (外部またはラップトップで埋め込み)、hid のラップトップやタブレットの画面の明るさを制御するために使用できます。
 ms.assetid: B22BA244-C5C6-4A50-AFE6-4E773194F18C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f4277b52857efe36a1c17c484521cc95be19d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388958"
 ---
-# <a name="display-brightness-control"></a>ディスプレイの明るさコントロール
+# <a name="display-brightness-control"></a>ディスプレイの明るさの制御
 
 
 Windows 8 以降、標準化されたソリューションが追加されましたキーボード (外部またはラップトップで埋め込み)、hid のラップトップやタブレットの画面の明るさの制御を許可します。

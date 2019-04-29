@@ -1,6 +1,6 @@
 ---
-title: テクスチャ形式の一覧
-description: テクスチャ形式の一覧
+title: テクスチャ形式リスト
+description: テクスチャ形式リスト
 ms.assetid: 5e60d6e3-d0a2-4b52-86cb-06de839f970a
 keywords:
 - テクスチャ形式の一覧が DirectX 8.0 リリース ノート WDK Windows 2000 の表示
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea327bef458a156b3b663da7041de9890c896ce9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389884"
 ---
-# <a name="the-texture-format-list"></a>テクスチャ形式の一覧
+# <a name="the-texture-format-list"></a>テクスチャ形式リスト
 
 
 ## <span id="ddk_the_texture_format_list_gg"></span><span id="DDK_THE_TEXTURE_FORMAT_LIST_GG"></span>

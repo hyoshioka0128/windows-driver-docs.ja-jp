@@ -1,6 +1,6 @@
 ---
-title: Requeuing の I/O 要求
-description: Requeuing の I/O 要求
+title: I/O 要求をキューに戻す
+description: I/O 要求をキューに戻す
 ms.assetid: b509959c-b2ab-4f04-9c08-5c5e90726b73
 keywords:
 - I/O 要求の WDK KMDF、requeuing
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7971188e2320f3c9c830be575e14b404e6a5a25a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325209"
 ---
-# <a name="requeuing-io-requests"></a>Requeuing の I/O 要求
+# <a name="requeuing-io-requests"></a>I/O 要求をキューに戻す
 
 
 

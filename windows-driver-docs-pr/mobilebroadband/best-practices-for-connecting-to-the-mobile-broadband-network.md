@@ -1,17 +1,17 @@
 ---
-title: モバイル ブロード バンド ネットワークに接続するためのベスト プラクティス
-description: モバイル ブロード バンド ネットワークに接続するためのベスト プラクティス
+title: モバイル ブロードバンド ネットワークに接続するためのベスト プラクティス
+description: モバイル ブロードバンド ネットワークに接続するためのベスト プラクティス
 ms.assetid: 6106d026-1c5f-4990-8ef2-467c1a77a38e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bed901b901260f9b9fb1927fe1ebac785b150a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392984"
 ---
-# <a name="best-practices-for-connecting-to-the-mobile-broadband-network"></a>モバイル ブロード バンド ネットワークに接続するためのベスト プラクティス
+# <a name="best-practices-for-connecting-to-the-mobile-broadband-network"></a>モバイル ブロードバンド ネットワークに接続するためのベスト プラクティス
 
 
 モバイル ブロード バンド ネットワークにアクティブな接続は、バッテリの寿命とアカウントのデータ クォータに不要なドレインを指定できます。 慎重に判断を使用して、接続が必要かどうかを判断することをお勧めします。

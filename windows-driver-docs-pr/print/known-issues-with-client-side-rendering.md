@@ -1,19 +1,19 @@
 ---
-title: クライアント側のレンダリングに関する既知の問題
-description: クライアント側のレンダリングに関する既知の問題
+title: クライアント側レンダリングの既知の問題
+description: クライアント側レンダリングの既知の問題
 ms.assetid: ad17639d-6671-466b-8f72-e635e79fd1cc
 keywords:
 - クライアント側のレンダリング WDK の印刷、既知の問題
 ms.date: 01/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 5341cd48c106547511308f8abb532bb59540ad15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388128"
 ---
-# <a name="known-issues-with-client-side-rendering"></a>クライアント側のレンダリングに関する既知の問題
+# <a name="known-issues-with-client-side-rendering"></a>クライアント側レンダリングの既知の問題
 
 クライアント側のレンダリング既定では、すべてのドライバーの有効なため、ほとんどのプリンター ドライバーに透過的であり、ユーザーに明確な特典を提供します。 ほとんどのプリンター ドライバーでは、この機能を有効になっている問題は発生しません。
 

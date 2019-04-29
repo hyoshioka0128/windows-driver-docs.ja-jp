@@ -1,6 +1,6 @@
 ---
-title: デバイスの拡張機能
-description: デバイスの拡張機能
+title: デバイス拡張
+description: デバイス拡張
 ms.assetid: 9ea59994-1112-4ae5-96a8-fa0670694b53
 keywords:
 - デバイス オブジェクトの WDK カーネル、デバイスの拡張機能
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8730b711b3a831ac7bcc947f591653a71e47ffa5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388152"
 ---
-# <a name="device-extensions"></a>デバイスの拡張機能
+# <a name="device-extensions"></a>デバイス拡張
 
 
 
@@ -44,7 +44,7 @@ IRP を受信するすべての標準のドライバー ルーチンでは、要
 
 ![最下位レベルのドライバーの拡張機能をデバイスの使用例を示す図](images/3devext.png)
 
-割り込みオブジェクト ポインターのストレージを提供するだけでなく、最下位レベルのデバイス ドライバーが必要割り込みスピン ロックの記憶域その ISR がさまざまなベクトルまたは 1 つ以上の ISR. があるかどうかに 2 つまたは複数のデバイスの割り込みを処理する場合 ISR の登録の詳細については、[登録 ISR](registering-an-isr.md)を参照してください。
+割り込みオブジェクト ポインターのストレージを提供するだけでなく、最下位レベルのデバイス ドライバーが必要割り込みスピン ロックの記憶域その ISR がさまざまなベクトルまたは 1 つ以上の ISR. があるかどうかに 2 つまたは複数のデバイスの割り込みを処理する場合 ISR の登録の詳細については、次を参照してください。[登録 ISR](registering-an-isr.md)します。
 
 通常、ドライバーは、図に示すように、そのデバイスの拡張機能で、デバイス オブジェクトへのポインターを格納します。 ドライバーは、拡張機能にデバイスのリソースの一覧のコピーを保持も可能性があります。
 

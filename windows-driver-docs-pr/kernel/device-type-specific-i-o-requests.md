@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee2079f4a31f913d7bd688920b1a28c8875edf3f
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388120"
 ---
 # <a name="device-type-specific-io-requests"></a>デバイスの種類に固有の I/O 要求
 

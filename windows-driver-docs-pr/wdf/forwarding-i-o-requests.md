@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a29f2a7cb3e2e3072bb642cf4be5e4492d126ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570630"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391352"
 ---
 # <a name="forwarding-io-requests"></a>I/O 要求の転送
 
@@ -39,7 +39,7 @@ ms.locfileid: "56570630"
 
 -   通常、関数のドライバーは、各 I/O 要求の内容を調べます。 関数のドライバーが要求を処理できない場合は、要求を修正し、I/O をターゲットに転送するがあります。 または、1 つまたは複数の新しい要求を作成し、I/O のターゲットに送信があります。
 
-    フレームワークの I/O のターゲット オブジェクトは、他のドライバーに I/O 要求を送信するためのいくつかのメソッドを定義します。 たとえば、ドライバーを呼び出すことができます[ **WdfIoTargetFormatRequestForRead**](https://msdn.microsoft.com/library/windows/hardware/ff548612)、その後に[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)、読み取り要求を送信する、I/O のターゲット。 I/O のターゲットの詳細については、[を使用して I/O ターゲット](using-i-o-targets.md)を参照してください。
+    フレームワークの I/O のターゲット オブジェクトは、他のドライバーに I/O 要求を送信するためのいくつかのメソッドを定義します。 たとえば、ドライバーを呼び出すことができます[ **WdfIoTargetFormatRequestForRead**](https://msdn.microsoft.com/library/windows/hardware/ff548612)、その後に[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)、読み取り要求を送信する、I/O のターゲット。 I/O のターゲットの詳細については、次を参照してください。[を使用して I/O ターゲット](using-i-o-targets.md)します。
 
     まれには、ドライバー開発者が、要求の基になる WDM の内容を指定する場合。 [I/O スタックの場所](https://msdn.microsoft.com/library/windows/hardware/ff551821)I/O のターゲットに要求を送信する前にします。 ドライバーを呼び出せるような場合、 [ **WdfRequestWdmFormatUsingStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550036)を呼び出す前に[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)します。
 

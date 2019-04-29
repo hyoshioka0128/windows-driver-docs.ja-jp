@@ -5,11 +5,11 @@ ms.assetid: 10843A15-3F6F-4DB5-A43B-4D9964DD3312
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dac2952f884cf89be0ac9a1a4074c9827cf06a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390080"
 ---
 # <a name="porting-wmi"></a>WMI の移植
 
@@ -20,7 +20,7 @@ ms.locfileid: "56557952"
 
 KMDF ドライバーでは、フレームワークには、既定の処理が用意されて[ **IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)します。 WMI データを提供しないドライバーは、WMI に関連するコードを含める必要はありません。 代わりに、フレームワークは、ドライバーの代わり、[次へ] の下のドライバーに要求を渡します。
 
-実装の詳細については、[KMDF ドライバーでサポートしている WMI](supporting-wmi-in-kmdf-drivers.md)を参照してください。
+実装の詳細については、次を参照してください。 [KMDF ドライバーでサポートしている WMI](supporting-wmi-in-kmdf-drivers.md)します。
 
  
 

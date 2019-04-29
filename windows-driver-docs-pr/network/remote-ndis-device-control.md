@@ -1,19 +1,19 @@
 ---
-title: リモートの NDIS デバイスの制御
-description: リモートの NDIS デバイスの制御
+title: リモート NDIS デバイス制御
+description: リモート NDIS デバイス制御
 ms.assetid: 52096845-57ee-4da5-95c7-ceae00e8159d
 keywords:
 - リモートの NDIS WDK のネットワーク、デバイスの制御
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be646203a1e9ad77327101d5959c3ef6d1295dbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388753"
 ---
-# <a name="remote-ndis-device-control"></a>リモートの NDIS デバイスの制御
+# <a name="remote-ndis-device-control"></a>リモート NDIS デバイス制御
 
 
 

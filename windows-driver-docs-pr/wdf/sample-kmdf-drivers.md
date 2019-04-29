@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f6b97d06d14caccce7ecab1425d1a95ffcd2313d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325154"
 ---
 # <a name="sample-kmdf-drivers"></a>KMDF ドライバーのサンプル
 
@@ -25,62 +25,62 @@ ms.locfileid: "56537560"
 
 
 
-サンプルのビルド方法の詳細については、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)を参照してください。
+サンプルのビルド方法の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
 
 <a href="" id="echo"></a>ECHO では、フレームワークのキューおよび要求オブジェクトと自動同期を使用する方法を示します。
 
-このサンプルの詳細については、、 [KMDF Echo サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf)を参照してください。
+このサンプルの詳細については、次を参照してください。、 [KMDF Echo サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf)します。
 
 <a href="" id="fakemodem"></a>モデム AT コマンド送受信するドライバーの単純なコント ローラーなし FakeModem を示します。
 
-このサンプルの詳細については、、 [Fakemodem ドライバー](https://github.com/Microsoft/Windows-driver-samples/tree/master/network/modem/fakemodem)を参照してください。
+このサンプルの詳細については、次を参照してください。、 [Fakemodem ドライバー](https://github.com/Microsoft/Windows-driver-samples/tree/master/network/modem/fakemodem)します。
 
 <a href="" id="firefly"></a>FIREFLY デモの人間をプログラミングでは、I/O 制御コード (Ioctl) を使用してデバイス (HID) デバイスを入力し、Windows Management Instrumentation (WMI) インターフェイスを提供します。
 
-このサンプルの詳細については、、 [FIREFLY - HID デバイスのフィルター ドライバーを WDF](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/firefly)を参照してください。
+このサンプルの詳細については、次を参照してください。、 [FIREFLY - HID デバイスのフィルター ドライバーを WDF](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/firefly)します。
 
 <a href="" id="hidusbfx2"></a>HIDUSBFX2 は HID デバイス用のミニドライバーを作成する方法と、HID デバイスを非-HID USB デバイスをマップする方法について説明します。 デバイスは、OSR usb-fx2 Learning Kit に含まれます。
 
-このサンプルの詳細については、[HIDUSBFX2](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/hidusbfx2)を参照してください。
+このサンプルの詳細については、次を参照してください。 [HIDUSBFX2](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/hidusbfx2)します。
 
 <a href="" id="kbfiltr"></a>KbFiltr では、ps/2 キーボードの上のデバイス フィルター ドライバーを示します。
 
-このサンプルの詳細については、、[キーボード入力 WDF フィルター ドライバー (Kbfiltr)](https://github.com/Microsoft/Windows-driver-samples/tree/master/input/kbfiltr)を参照してください。
+このサンプルの詳細については、次を参照してください。、[キーボード入力 WDF フィルター ドライバー (Kbfiltr)](https://github.com/Microsoft/Windows-driver-samples/tree/master/input/kbfiltr)します。
 
 <a href="" id="ndisprot"></a>NDISProt は、NDIS 5.0 または 5.1 および NDIS 6.0 のコネクションレス プロトコル ドライバーを示します。
 
-このサンプルの詳細については、[NDISProt コネクションレス WDF プロトコル](https://github.com/Microsoft/Windows-driver-samples/tree/master/network/ndis/ndisprot_kmdf)を参照してください。
+このサンプルの詳細については、次を参照してください。 [NDISProt コネクションレス WDF プロトコル](https://github.com/Microsoft/Windows-driver-samples/tree/master/network/ndis/ndisprot_kmdf)します。
 
 <a href="" id="nonpnp"></a>非 PNP は、フレームワークを使用する非プラグ アンド プレイ (PnP) ドライバーを示します。
 
-このサンプルの詳細については、[非 PNP](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/ioctl/kmdf)を参照してください。
+このサンプルの詳細については、次を参照してください。[非 PNP](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/ioctl/kmdf)します。
 
 <a href="" id="kmdf-fx2"></a>KMDF\_FX2 が一括で行って、OSR usb-fx2 Learning Kit に含まれている USB デバイスへのデータ転送を中断する方法を示します。
 
-このサンプルの詳細については、[kmdf\_fx2](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/kmdf_fx2)を参照してください。
+このサンプルの詳細については、次を参照してください。 [kmdf\_fx2](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/kmdf_fx2)します。
 
 <a href="" id="pcidrv"></a>PCIDRV 完全に機能フレームワーク ベースのドライバー Intel 82557/82558 PCI Ethernet アダプター (10/100) と Intel 互換の。
 
-このサンプルの詳細については、、 [PCIDRV - PCI デバイスのドライバーを WDF](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/pcidrv)を参照してください。
+このサンプルの詳細については、次を参照してください。、 [PCIDRV - PCI デバイスのドライバーを WDF](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/pcidrv)します。
 
 <a href="" id="plx9x5x"></a>PLX9x5x では、DMA をサポートし、PLX9656/9653RDK LITE のボードを使用する汎用 PCI デバイス用のドライバーを記述する方法を示します。
 
-このサンプルの詳細については、、 [PLX9x5x PCI ドライバ](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/PLX9x5x)を参照してください。
+このサンプルの詳細については、次を参照してください。、 [PLX9x5x PCI ドライバ](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/PLX9x5x)します。
 
 <a href="" id="serial"></a>シリアル WDM シリアル サンプル ドライバーに基づいているフレームワークに基づくシリアル ドライバー。
 
-このサンプルの詳細については、、[シリアル サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serial)を参照してください。
+このサンプルの詳細については、次を参照してください。、[シリアル サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serial)します。
 
 <a href="" id="toaster"></a>WDM トースター サンプル ドライバーのトースター Framework ベースのバージョン。 トースター サンプルには、フィルター ドライバー、関数ドライバー、および 1 つのドライバー スタックを作成するバス ドライバーが含まれています。 このサンプルでは、通信にはドライバー スタックとリモートの I/O ターゲットを使用する追加のカーネル モード ドライバーも含まれます。
 
-このサンプルの詳細については、[トースター](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv)を参照してください。
+このサンプルの詳細については、次を参照してください。[トースター](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv)します。
 
 <a href="" id="usbsamp"></a>UsbSamp では、フレームワークを使用して、USB デバイスへの一括と isochronous データ転送を実行する方法を示します。
 
-このサンプルの詳細については、、 [Usbsamp サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/usbsamp)を参照してください。
+このサンプルの詳細については、次を参照してください。、 [Usbsamp サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/usbsamp)します。
 
 <a href="" id="wmisamp"></a>WmiSamp は、WMI プロバイダーを登録し、フレームワークのプロバイダーのインスタンスにデバイス オブジェクトを作成する方法と、デバイスにアプリケーションを送信する WMI クエリを処理する方法について説明します。
 
-このサンプルの詳細については、、 [WmiSamp WMI プロバイダー](https://github.com/Microsoft/Windows-driver-samples/tree/master/wmi/wmisamp)を参照してください。
+このサンプルの詳細については、次を参照してください。、 [WmiSamp WMI プロバイダー](https://github.com/Microsoft/Windows-driver-samples/tree/master/wmi/wmisamp)します。
 
 

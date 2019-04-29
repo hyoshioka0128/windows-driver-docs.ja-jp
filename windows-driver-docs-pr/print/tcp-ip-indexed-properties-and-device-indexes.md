@@ -1,6 +1,6 @@
 ---
-title: TCP/IP のプロパティとデバイスのインデックスをインデックス作成
-description: TCP/IP のプロパティとデバイスのインデックスをインデックス作成
+title: TCP/IP のインデックス付きプロパティとデバイス インデックス
+description: TCP/IP のインデックス付きプロパティとデバイス インデックス
 ms.assetid: b26b0c18-1787-43e0-8461-acfbd9fb38f9
 keywords:
 - インデックス付きプロパティの WDK プリンターの TCP/IP
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: debaae0b9b7525edd897c6cb364263f98ea209e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388067"
 ---
-# <a name="tcpip-indexed-properties-and-device-indexes"></a>TCP/IP のプロパティとデバイスのインデックスをインデックス作成
+# <a name="tcpip-indexed-properties-and-device-indexes"></a>TCP/IP のインデックス付きプロパティとデバイス インデックス
 
 
 インデックス付きのプロパティは、により、同じ名前を共有する複数の関連するプロパティ スキーマのプロパティ名がそれぞれが個別のプロパティを識別する数値インデックスに追加される数値インデックスを使用できます。 インデックスの値は正の整数である必要がありますが、そのサイズの上限はありません。 スキーマ クエリでは、特定の要素に関連付けられている必要のあるインデックス値を決定します。 このメカニズムでは、MIB テーブル内のデータにアクセスできます。

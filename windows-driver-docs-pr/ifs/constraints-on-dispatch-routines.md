@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9de130d7491ec0957f196c9e63e0076649e918d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391112"
 ---
 # <a name="constraints-on-dispatch-routines"></a>ディスパッチ ルーチンに関する制約
 
@@ -23,7 +23,7 @@ ms.locfileid: "56570073"
 
 ### <a name="span-idirql-relatedconstraintsspanspan-idirql-relatedconstraintsspanspan-idirql-relatedconstraintsspanirql-related-constraints"></a><span id="IRQL-Related_Constraints"></span><span id="irql-related_constraints"></span><span id="IRQL-RELATED_CONSTRAINTS"></span>IRQL 関連の制約
 
-注:ページングの入出力の Irp の型の使用については、[ディスパッチ日常的な IRQL とスレッド コンテキスト](dispatch-routine-irql-and-thread-context.md)を参照してください。
+注:ページングの入出力の Irp の型の使用については、次を参照してください。[ディスパッチ日常的な IRQL とスレッド コンテキスト](dispatch-routine-irql-and-thread-context.md)します。
 
 -   ページング I/O パスのディスパッチ ルーチンは呼び出さないで[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) APC 上の任意の IRQL で\_レベル。 ディスパッチ ルーチンでは、IRQL が発生した場合は、呼び出す前に下げることが必要があります**保留**します。
 
@@ -35,9 +35,9 @@ ms.locfileid: "56570073"
 
 ### <a name="span-idconstraintsonprocessingirpsspanspan-idconstraintsonprocessingirpsspanspan-idconstraintsonprocessingirpsspanconstraints-on-processing-irps"></a><span id="Constraints_on_Processing_IRPs"></span><span id="constraints_on_processing_irps"></span><span id="CONSTRAINTS_ON_PROCESSING_IRPS"></span>Irp の処理に関する制約
 
--   IRP パラメーターは、すべてのユーザー領域のアドレスを含める場合は、使用されるようにこれら検証する必要があります。 詳細については、[バッファー i/o エラー](https://msdn.microsoft.com/library/windows/hardware/ff544293)を参照してください。
+-   IRP パラメーターは、すべてのユーザー領域のアドレスを含める場合は、使用されるようにこれら検証する必要があります。 詳細については、次を参照してください。[バッファー i/o エラー](https://msdn.microsoft.com/library/windows/hardware/ff544293)します。
 
--   さらに、IRP に 64 ビット プラットフォームを 32 ビットのプラットフォームから送信された IOCTL または FSCTL バッファーが含まれている場合、バッファーの内容は thunked する必要があります。 詳細については、[、64 ビット ドライバーをサポートしている 32 ビットの I/O](https://msdn.microsoft.com/library/windows/hardware/ff563897)を参照してください。
+-   さらに、IRP に 64 ビット プラットフォームを 32 ビットのプラットフォームから送信された IOCTL または FSCTL バッファーが含まれている場合、バッファーの内容は thunked する必要があります。 詳細については、次を参照してください。 [、64 ビット ドライバーをサポートしている 32 ビットの I/O](https://msdn.microsoft.com/library/windows/hardware/ff563897)します。
 
 -   ファイル システムとは異なりファイル システム フィルター ドライバーは呼び出す必要がありますしない[ **FsRtlEnterFileSystem** ](https://msdn.microsoft.com/library/windows/hardware/ff545900)または[ **FsRtlExitFileSystem** ](https://msdn.microsoft.com/library/windows/hardware/ff545908)以外呼び出しの前に[ **ExAcquireFastMutexUnsafe** ](https://msdn.microsoft.com/library/windows/hardware/ff544340)または[ **ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)します。 **FsRtlEnterFileSystem**と**FsRtlExitFileSystem**ほとんどのファイル システムで必要な通常のカーネル Apc を無効にします。
 
@@ -51,7 +51,7 @@ ms.locfileid: "56570073"
 
 ### <a name="span-idconstraintsonsettingacompletionroutinespanspan-idconstraintsonsettingacompletionroutinespanspan-idconstraintsonsettingacompletionroutinespanconstraints-on-setting-a-completion-routine"></a><span id="Constraints_on_Setting_a_Completion_Routine"></span><span id="constraints_on_setting_a_completion_routine"></span><span id="CONSTRAINTS_ON_SETTING_A_COMPLETION_ROUTINE"></span>設定完了ルーチンの制約
 
-注:設定完了ルーチンの詳細については、[完了ルーチンを使用して](using-irp-completion-routines.md)を参照してください。
+注:設定完了ルーチンの詳細については、次を参照してください。[完了ルーチンを使用して](using-irp-completion-routines.md)します。
 
 -   ディスパッチ ルーチンを呼び出すと[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)、オプションで渡すことができる、*コンテキスト*完了ルーチン処理に使用する構造体へのポインター特定の IRP では。 この構造体は、IRQL ディスパッチ完了ルーチンを呼び出すことができますので、非ページ プールから割り当てる必要がある\_レベル。
 

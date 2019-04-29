@@ -9,16 +9,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9f0ab4e1cbc32b693237557a749cec70a10ff92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388913"
 ---
 # <a name="hid-architecture"></a>HID のアーキテクチャ
 
 
-Windows の HID ドライバー スタックのアーキテクチャがという名前のクラス ドライバー上に構築された*hidclass.sys*します。 クライアントとトランスポート ミニドライバー ユーザー モードまたはカーネル モードからクラス ドライバーにアクセスします。
+Windows における HID ドライバー スタックのアーキテクチャは、*hidclass.sys* という名前のクラス ドライバー上に構築されています。 クライアントとトランスポート ミニドライバー ユーザー モードまたはカーネル モードからクラス ドライバーにアクセスします。
 
 ## <a name="the-hid-class-driver"></a>HID クラス ドライバー
 
@@ -63,16 +63,16 @@ USB 経由で HID キーボードとマウスのコレクションを示す別�
 
  
 
-詳細については、[コレクションの開始の HID](opening-hid-collections.md)を参照してください。
+詳細については、次を参照してください。[コレクションの開始の HID](opening-hid-collections.md)します。
 
-サポートされているすべての非表示にクライアントの一覧は、[を非表示に、Windows でサポートされるクライアント](hid-clients-supported-in-windows.md)を参照してください。
+サポートされているすべての非表示にクライアントの一覧は、次を参照してください。[を非表示に、Windows でサポートされるクライアント](hid-clients-supported-in-windows.md)します。
 
 ## <a name="the-hid-transport-driver"></a>HID トランスポート ドライバー
 
 
 HID クラス ドライバーは、ハードウェアの入力デバイスにアクセスする HID ミニドライバーを使用して設計されています。 HID ミニドライバーは、サポートされている入力デバイスのデバイス固有の操作を抽象化します。 HID ミニドライバーは、HID クラス ドライバーに登録すると、HID クラス ドライバーにその操作をバインドします。 HID クラス ドライバーは、ミニドライバーのサポート ルーチンを呼び出すことによって、HID ミニドライバーと通信します。 さらに、HID ミニドライバーは、基になるバスまたはポート ドライバーにダウン ドライバー スタックの通信を送信します。
 
-Windows で提供される HID トランスポートの一覧は、[を非表示に、Windows でサポートされるトランスポート](hid-transports-supported-in-windows.md)を参照してください。
+Windows で提供される HID トランスポートの一覧は、次を参照してください。[を非表示に、Windows でサポートされるトランスポート](hid-transports-supported-in-windows.md)します。
 
  
 

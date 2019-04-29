@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de3312ca1a6cd97a3fa07855235a1f4f91130c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391290"
 ---
 # <a name="tools-for-inf-files"></a>INF ファイル用のツール
 
@@ -21,7 +21,7 @@ ms.locfileid: "56560018"
 ## <span id="ddk_tools_for_inf_files_tools"></span><span id="DDK_TOOLS_FOR_INF_FILES_TOOLS"></span>
 
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 <table>

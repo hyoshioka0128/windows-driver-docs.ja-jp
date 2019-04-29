@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_SUBSCRIBE_DEVICE_SERVICE_EVENTS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c0d4c8c0fbea93f73ceedfac0bc723518be398b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387357"
 ---
 # <a name="oidwwansubscribedeviceserviceevents"></a>OID\_WWAN\_購読\_デバイス\_サービス\_イベント
 
@@ -21,7 +21,7 @@ OID\_WWAN\_購読\_デバイス\_サービス\_MB デバイスが送信する必
 
 MB デバイス サービス イベント サブスクリプションの一覧の設定を要求する呼び出し元に提供する[ **NDIS\_WWAN\_購読\_デバイス\_サービス\_イベント**](https://msdn.microsoft.com/library/windows/hardware/hh439843)適切な情報、ミニポート ドライバー構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

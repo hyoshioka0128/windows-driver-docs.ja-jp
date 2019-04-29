@@ -5,11 +5,11 @@ ms.assetid: 26AE24C4-3C0D-4712-B66A-0B93FAD8043C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71c829989273bec11a093693ab75ad8d70fc7ea8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389761"
 ---
 # <a name="updated-friendly-name-for-wddm-12"></a>WDDM 1.2 の更新済みのフレンドリ名
 
@@ -31,7 +31,7 @@ IHV_DeviceName.XXX = "My Device Name (Microsoft Corporation - WDDM v1.2)"
 
  
 
-以下に例を示します。WDDM 1.2 特定の作業
+例:WDDM 1.2 特定の作業
 
 ``` syntax
 IHV_DeviceName.XXX = "My Device Name (Engineering Sample - WDDM v1.2)"

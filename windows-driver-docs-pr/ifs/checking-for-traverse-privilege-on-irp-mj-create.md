@@ -1,6 +1,6 @@
 ---
-title: Irp_mj_create 用の走査の権限のチェック
-description: Irp_mj_create 用の走査の権限のチェック
+title: IRP_MJ_CREATE での走査特権の確認
+description: IRP_MJ_CREATE での走査特権の確認
 ms.assetid: 9ba743d6-8e78-4f9a-9cb8-cb98f734c290
 keywords:
 - IRP_MJ_CREATE
@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06de785fdbbed8272e54d7c7df2047cd0b159266
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327905"
 ---
 # <a name="checking-for-traverse-privilege-on-irpmjcreate"></a>IRP の走査の権限のチェック\_MJ\_を作成します。
 

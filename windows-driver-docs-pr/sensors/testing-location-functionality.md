@@ -1,17 +1,17 @@
 ---
-title: 場所の機能をテストします。
+title: 位置情報機能のテスト
 description: センサー診断ツールには、ログの場所に固有のプロパティ、別の場所 タブが含まれています。
 ms.assetid: A96AF9C7-69FA-492C-941E-4E296488875C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8684ac12c530cebc1c25e08f58b5a1e5d9abd5c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391525"
 ---
-# <a name="testing-location-functionality"></a>場所の機能をテストします。
+# <a name="testing-location-functionality"></a>位置情報機能のテスト
 
 
 センサー診断ツールには、ログの場所に固有のプロパティ、別の場所 タブが含まれています。 これらのプロパティには、緯度、経度、および都市の住所が含まれます。

@@ -5,11 +5,11 @@ ms.assetid: F904B8DD-7790-44FA-8C20-BCC3720B3528
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 075b940e4adef181f2abf875bb4501d39116ea10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389552"
 ---
 # <a name="postscript-printer-standard-features"></a>PostScript プリンターの標準機能
 
@@ -35,7 +35,7 @@ PostScript プリンターの標準的な機能は、ほとんどの PostScript 
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>部単位印刷します。</p>
+<td><p>[部単位で印刷]</p>
 <ul>
 <li><p>true</p></li>
 <li><p>false</p></li>

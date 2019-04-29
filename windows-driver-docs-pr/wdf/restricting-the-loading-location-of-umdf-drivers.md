@@ -1,6 +1,6 @@
 ---
-title: UMDF ドライバーの読み込み場所を制限します。
-description: UMDF ドライバーの読み込み場所を制限します。
+title: UMDF ドライバーの読み込み場所の制限
+description: UMDF ドライバーの読み込み場所の制限
 ms.assetid: eac19fa8-2889-4cc3-9f4b-d11d7d3ed684
 keywords:
 - WDK UMDF の場所
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4232d013b5cd416928241301aa7d1d4386f06aaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325177"
 ---
-# <a name="restricting-the-loading-location-of-umdf-drivers"></a>UMDF ドライバーの読み込み場所を制限します。
+# <a name="restricting-the-loading-location-of-umdf-drivers"></a>UMDF ドライバーの読み込み場所の制限
 
 
 UMDF プラットフォームの %systemroot% 以外の任意の場所からのメインの UMDF ドライバー バイナリの読み込みに失敗\\System32\\ドライバー\\Umdf ディレクトリ。 そのため、UMDF INF ファイルは、そのディレクトリに UMDF ドライバーをインストールする場所を制限する必要があります。 UMDF ドライバーは、特権のないユーザーが改ざんされないことによりもこのディレクトリにインストールします。

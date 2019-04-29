@@ -1,6 +1,6 @@
 ---
-title: ロックおよびロック解除の Stream ポインター
-description: ロックおよびロック解除の Stream ポインター
+title: ストリーム ポインターのロックとロック解除
+description: ストリーム ポインターのロックとロック解除
 ms.assetid: 3826a5bc-4ba5-4ada-a8aa-e7bbd949187e
 keywords:
 - WDK AVStream、ロックおよびロック解除のポインターをストリーム配信します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a978ee693c0b381155fae20bedbb61303dd9dc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325218"
 ---
-# <a name="locking-and-unlocking-stream-pointers"></a>ロックおよびロック解除の Stream ポインター
+# <a name="locking-and-unlocking-stream-pointers"></a>ストリーム ポインターのロックとロック解除
 
 
 

@@ -1,19 +1,19 @@
 ---
-title: XpsAnalyzer ルール
-description: XpsAnalyzer ルール
+title: XpsAnalyzer のルール
+description: XpsAnalyzer のルール
 ms.assetid: 4f617665-4cc4-475d-ae66-abc2f00309fd
 keywords:
 - XpsAnalyzer WDK、規則
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e77be3f40a0009e029c281a22c0be556928b848f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387252"
 ---
-# <a name="xpsanalyzer-rules"></a>XpsAnalyzer ルール
+# <a name="xpsanalyzer-rules"></a>XpsAnalyzer のルール
 
 次の表では、XpsAnalysis ツールが XPS ファイルを分析に使用する規則について説明します。 これらの規則は、XML Paper Specification (XPS) 1.0 仕様に基づいています。 この仕様の詳細については doiwnload、 [XML Paper Specification](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)します。
 

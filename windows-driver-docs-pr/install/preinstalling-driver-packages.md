@@ -1,6 +1,6 @@
 ---
-title: ドライバー パッケージをプレインストールします。
-description: ドライバー パッケージをプレインストールします。
+title: ドライバー パッケージの事前インストール
+description: ドライバー パッケージの事前インストール
 ms.assetid: aba794ac-ab24-486a-9f5a-7e8435056bb7
 keywords:
 - インストール アプリケーション WDK、プレインストールのドライバー パッケージ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bab22ad61f4e685d8ed73d7fe3fc6ef6380add9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325752"
 ---
-# <a name="preinstalling-driver-packages"></a>ドライバー パッケージをプレインストールします。
+# <a name="preinstalling-driver-packages"></a>ドライバー パッケージの事前インストール
 
 
 

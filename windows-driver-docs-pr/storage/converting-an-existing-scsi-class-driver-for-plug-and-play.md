@@ -1,6 +1,6 @@
 ---
-title: 既存の SCSI クラス ドライバーのプラグ アンド プレイを変換します。
-description: 既存の SCSI クラス ドライバーのプラグ アンド プレイを変換します。
+title: 既存の SCSI クラス ドライバーをプラグ アンド プレイ対応に変換
+description: 既存の SCSI クラス ドライバーをプラグ アンド プレイ対応に変換
 ms.assetid: b6570eef-f425-4b73-aa8a-7084f53bb10a
 keywords:
 - 記憶域クラス ドライバー WDK、SCSI を変換するクラスのドライバー
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5699ca81b8297f3fbb0eb484eb909a37de804f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392752"
 ---
-# <a name="converting-an-existing-scsi-class-driver-for-plug-and-play"></a>既存の SCSI クラス ドライバーのプラグ アンド プレイを変換します。
+# <a name="converting-an-existing-scsi-class-driver-for-plug-and-play"></a>既存の SCSI クラス ドライバーをプラグ アンド プレイ対応に変換
 
 
 ## <span id="ddk_converting_an_existing_scsi_class_driver_for_plug_and_play_kg"></span><span id="DDK_CONVERTING_AN_EXISTING_SCSI_CLASS_DRIVER_FOR_PLUG_AND_PLAY_KG"></span>

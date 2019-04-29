@@ -1,16 +1,16 @@
 ---
-Description: This section describes tools that you can use to test your USB hardware or software, capture traces of operations and other system events, and observe how the USB driver stack responds to a request sent by a client driver or an application.
-title: Windows での USB ハードウェア、ドライバー、およびアプリのテスト
+Description: このセクションでは、USB ハードウェアまたはソフトウェアのテスト、操作とその他のシステム イベントのトレースをキャプチャして、USB ドライバー スタックをクライアント ドライバーまたはアプリケーションによって送信された要求に応答する方法を確認に使用できるツールについて説明します。
+title: Windows での USB ハードウェア、ドライバー、アプリのテスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ddb54a520aed50db51b5c7dc72ba51e5f0d2f641
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325736"
 ---
-# <a name="testing-usb-hardware-drivers-and-apps-in-windows"></a>Windows での USB ハードウェア、ドライバー、およびアプリのテスト
+# <a name="testing-usb-hardware-drivers-and-apps-in-windows"></a>Windows での USB ハードウェア、ドライバー、アプリのテスト
 
 
 このセクションでは、USB ハードウェアまたはソフトウェアのテスト、操作とその他のシステム イベントのトレースをキャプチャして、USB ドライバー スタックをクライアント ドライバーまたはアプリケーションによって送信された要求に応答する方法を確認に使用できるツールについて説明します。

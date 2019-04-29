@@ -1,6 +1,6 @@
 ---
-title: PnP、電源管理のシナリオ
-description: PnP、電源管理のシナリオ
+title: PnP と電源管理のシナリオ
+description: PnP と電源管理のシナリオ
 ms.assetid: 9175ce95-196d-44bd-b31c-88386fa0d3d3
 keywords:
 - PnP WDK KMDF、シナリオ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e53d251c84b91929823dcb120c69ac59daa6902
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390108"
 ---
-# <a name="pnp-and-power-management-scenarios"></a>PnP、電源管理のシナリオ
+# <a name="pnp-and-power-management-scenarios"></a>PnP と電源管理のシナリオ
 
 
 次のトピックでは、PnP、電源管理の一般的なシナリオを特定し、これで、フレームワーク ドライバーのイベントのコールバック関数これらのシナリオの中に、シーケンスを表示します。

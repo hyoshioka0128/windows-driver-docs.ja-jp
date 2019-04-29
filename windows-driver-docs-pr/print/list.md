@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9504c0a185eec59f7eab3593153eec0d00b67a26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388084"
 ---
 # <a name="list"></a>一覧
 
@@ -35,7 +35,7 @@ Web Services for Devices (WSD)`List`コンストラクトが XPath フィルタ�
 <td><p>(省略可能)ポート モニターが、ドライバーに通知を送信するかどうかを示すブール値。 A <strong>TRUE</strong>値では、ドライバーをポート モニターが通知を送信することを示します<strong>FALSE</strong>ポート モニター ドライバーに、通知が送信しないことを示します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>フィルター</strong></p></td>
+<td><p><strong>フィルター (filter)</strong></p></td>
 <td><p>WSD モニターは、クエリで指定された XML ドキュメントに適用される XPath クエリ。 このトピックで後述を参照してください。</p></td>
 </tr>
 <tr class="odd">
@@ -43,7 +43,7 @@ Web Services for Devices (WSD)`List`コンストラクトが XPath フィルタ�
 <td><p>スキーマの値の名前。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>クエリ</strong></p></td>
+<td><p><strong>query</strong></p></td>
 <td><p>WSD モニターを実行するクエリの型。</p></td>
 </tr>
 </tbody>

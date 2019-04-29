@@ -1,17 +1,17 @@
 ---
-title: ピンの銀行に GPIO コント ローラーをパーティション分割
+title: GPIO コントローラーのピンのバンクへのパーティション分割
 description: ドライバー開発者向けオプション、GPIO ピンの 2 つ以上の銀行に汎用入出力 (GPIO) コント ローラーのデバイス パーティションとしてことができます。
 ms.assetid: D9425459-E052-48D8-A4F3-91387AE7059A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96149c3ce4182ea4a30ee71fa074adec2dcd5bbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326128"
 ---
-# <a name="partitioning-a-gpio-controller-into-banks-of-pins"></a>ピンの銀行に GPIO コント ローラーをパーティション分割
+# <a name="partitioning-a-gpio-controller-into-banks-of-pins"></a>GPIO コントローラーのピンのバンクへのパーティション分割
 
 
 ドライバー開発者向けオプション、GPIO ピンの 2 つ以上の銀行に汎用入出力 (GPIO) コント ローラーのデバイス パーティションとしてことができます。 たとえば、32 の GPIO ピンを持つ 2 つの銀行としてするには、GPIO コント ローラー ドライバーが 64 の GPIO ピン GPIO コント ローラー デバイスを説明します。 開発者は、GPIO コント ローラー デバイスでは、銀行のすべてを管理する 1 つのドライバーを提供でき、通常、このドライバーはデバイス全体を表す 1 つのデバイス オブジェクトを使用します。 ただし、一部またはすべてのデバイスで銀行は、デバイスで、その他の銀行とは無関係に管理できます。

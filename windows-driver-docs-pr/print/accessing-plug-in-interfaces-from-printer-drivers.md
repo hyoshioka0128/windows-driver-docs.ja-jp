@@ -1,6 +1,6 @@
 ---
-title: プリンター ドライバーからプラグインのインターフェイスへのアクセス
-description: プリンター ドライバーからプラグインのインターフェイスへのアクセス
+title: プリンター ドライバーからプラグイン インターフェイスにアクセスする
+description: プリンター ドライバーからプラグイン インターフェイスにアクセスする
 ms.assetid: 639734c9-1aac-428c-bd5b-803607f1cf66
 keywords:
 - WDK の COM インターフェイスを印刷するプラグインのインターフェイスへのアクセス
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bdf595693082d49ad6be56c2d3ca80562b295b9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388725"
 ---
-# <a name="accessing-plug-in-interfaces-from-printer-drivers"></a>プリンター ドライバーからプラグインのインターフェイスへのアクセス
+# <a name="accessing-plug-in-interfaces-from-printer-drivers"></a>プリンター ドライバーからプラグイン インターフェイスにアクセスする
 
 
 

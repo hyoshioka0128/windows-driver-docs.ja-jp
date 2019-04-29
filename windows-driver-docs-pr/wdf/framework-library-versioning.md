@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2544f6c59809aecaaa8fb54870ff80b6aa55ea74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391343"
 ---
 # <a name="framework-library-versioning"></a>フレームワーク ライブラリのバージョン
 
@@ -33,7 +33,7 @@ KMDF ライブラリの各バージョンには、メジャー バージョン�
 
 メジャー バージョン番号は、2 つの文字を使用します。 たとえば、ライブラリのバージョン 1.0 のファイル名は*Wdf01000.sys*します。 バージョン 1.9 や 1.11 がという名前でも*Wdf01000.sys*、ライブラリ ファイルの新しいマイナー バージョンは、ファイルの以前のバージョンを上書きします。
 
-システム上にある framework のバージョンよりも新しい KMDF ライブラリのバージョンを使用して、ドライバーをビルドした場合は、後者更新しなければなりません。 フレームワーク ライブラリの更新方法の詳細については、[再頒布可能フレームワーク コンポーネント](installation-components-for-kmdf-drivers.md)を参照してください。
+システム上にある framework のバージョンよりも新しい KMDF ライブラリのバージョンを使用して、ドライバーをビルドした場合は、後者更新しなければなりません。 フレームワーク ライブラリの更新方法の詳細については、次を参照してください。[再頒布可能フレームワーク コンポーネント](installation-components-for-kmdf-drivers.md)します。
 
 (フレームワーク co-インストーラーのファイル名が、両方のメジャーおよびマイナー バージョン番号が含まれることに注意してください。 共同インストーラーのファイル名の詳細については、次を参照してください[KMDF 共同インストーラーを使用して](installing-the-framework-s-co-installer.md)。)。
 
@@ -41,7 +41,7 @@ KMDF ライブラリの各バージョンには、メジャー バージョン�
 
 ドライバーを呼び出すことができます、ドライバーを実行しているライブラリのバージョンを調べるに[ **WdfDriverIsVersionAvailable** ](https://msdn.microsoft.com/library/windows/hardware/ff547190)または[ **WdfDriverRetrieveVersionString**](https://msdn.microsoft.com/library/windows/hardware/ff547211).
 
-KMDF ライブラリのリリース履歴については、[KMDF バージョン履歴](kmdf-version-history.md)を参照してください。
+KMDF ライブラリのリリース履歴については、次を参照してください。 [KMDF バージョン履歴](kmdf-version-history.md)します。
 
 ## <a name="umdf"></a>UMDF
 
@@ -52,7 +52,7 @@ UMDF バージョン 2.0 では、UMDF ライブラリのファイル名は*Wudf
 
 UMDF バージョン 1。*x*、UMDF ライブラリのファイル名は*Wudfx.dll*します。
 
-KMDF ライブラリのリリース履歴については、[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
+KMDF ライブラリのリリース履歴については、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
 
 
  

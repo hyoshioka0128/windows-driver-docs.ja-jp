@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f21a986acf19db93128331636aeb364ef4a66280
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392556"
 ---
 # <a name="wiadpcsharpness"></a>WIA\_DPC\_鮮明度
 
@@ -40,7 +40,7 @@ WIA\_DPC\_鮮明度プロパティは、キャプチャしたイメージの見�
 
 WIA\_DPC\_鮮明度プロパティは、いずれかの値のリストまたは値の範囲を使用できます。 最小値は、最小限の鮮明度を表し、最大値は、最大の鮮明度を表します。 通常、値、範囲は normal、または既定の鮮明度の途中で。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

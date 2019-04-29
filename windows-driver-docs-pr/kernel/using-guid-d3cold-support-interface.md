@@ -1,15 +1,15 @@
 ---
-title: GUID_D3COLD_SUPPORT_INTERFACE ドライバー インターフェイスを使用します。
+title: GUID_D3COLD_SUPPORT_INTERFACE ドライバー インターフェイスの使用
 description: Windows 8 以降、ドライバーは D3cold を使用して、これらのデバイスを有効にしてデバイスの D3cold 機能を決定する GUID_D3COLD_SUPPORT_INTERFACE インターフェイスで、ルーチンを呼び出すことができます。
 ms.assetid: 525637E8-B16F-4038-A78D-A47064E36449
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: fe495fb84c75ba0d70ab695e73bb3cb617aa7839
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387399"
 ---
 # <a name="using-the-guidd3coldsupportinterface-driver-interface"></a>GUID を使用して\_D3COLD\_サポート\_ドライバー インターフェイス
 
@@ -27,7 +27,7 @@ GUID_D3COLD_SUPPORT_INTERFACE ドライバー インターフェイスは、D3 �
 
 このインターフェイスを照会するには、デバイス ドライバーはドライバー スタック ダウン IRP_MN_QUERY_INTERFACE IRP を送信します。 この IRP では、ドライバーは GUID_D3COLD_SUPPORT_INTERFACE に InterfaceType 入力パラメーターを設定します。 IRP の正常終了時に、インターフェイスの出力パラメーターは、D3COLD_SUPPORT_INTERFACE 構造体へのポインターです。 この構造体には、インターフェイスのルーチンへのポインターが含まれています。
 
-D3cold デバイスの電源状態の詳細については、[ドライバーではサポートしている D3cold](supporting-d3cold-in-a-driver.md)を参照してください。
+D3cold デバイスの電源状態の詳細については、次を参照してください。[ドライバーではサポートしている D3cold](supporting-d3cold-in-a-driver.md)します。
 
 
 ドライバーを呼び出し、 *SetD3ColdSupport*ルーチンを動的に有効にして、S0 がコンピューターの場合に発生する可能性が D3cold にデバイスの移行を無効にします。 デバイスは、デバイスが入力する低電力 Dx 状態からスリープ解除イベントを通知できる必要があります、ドライバーは、デバイスが D3cold からウェイク イベントを通知できます D3cold のみを入力するのには、デバイスを有効にする必要があります。 それ以外の場合、D3cold を入力すると、デバイスが利用できないコンピューター S0 状態のままになるまで。

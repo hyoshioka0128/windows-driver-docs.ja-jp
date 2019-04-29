@@ -1,24 +1,24 @@
 ---
-title: 実行中のテスト成功
+title: テスト パスの実行
 description: ミット プラットフォームでは、テストの自動化と調査の対象となる送信される GPIO パターンをカスタマイズするオプションの両方を提供することにより、GPIO ボタンをテストできます。
 ms.assetid: E24AD015-1E14-4EF9-8443-D0F38FA3321E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 03235cd635ea5c5db9da6b9926867c05fe38ac6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390429"
 ---
-# <a name="running-test-passes"></a>実行中のテスト成功
+# <a name="running-test-passes"></a>テスト パスの実行
 
 
 ミット プラットフォームでは、テストの自動化と調査の対象となる送信される GPIO パターンをカスタマイズするオプションの両方を提供することにより、GPIO ボタンをテストできます。
 
 ミット テスト ツールの詳細については、次にお問い合わせください。MittSupport@microsoft.comします。
 
-最初に、[ミットで GPIO テスト](https://msdn.microsoft.com/library/windows/hardware/dn919780)を参照してください。 インストーラーをダウンロード、コンテンツを展開し、読み取り、 **ReadMe**ファイル ツールの概要。
+最初に、次を参照してください。[ミットで GPIO テスト](https://msdn.microsoft.com/library/windows/hardware/dn919780)します。 インストーラーをダウンロード、コンテンツを展開し、読み取り、 **ReadMe**ファイル ツールの概要。
 
 ## <a name="span-idend-to-endindicatortestingforconvertiblesspanspan-idend-to-endindicatortestingforconvertiblesspanspan-idend-to-endindicatortestingforconvertiblesspanend-to-end-indicator-testing-for-convertibles"></a><span id="End-to-end_indicator_testing_for_convertibles"></span><span id="end-to-end_indicator_testing_for_convertibles"></span><span id="END-TO-END_INDICATOR_TESTING_FOR_CONVERTIBLES"></span>エンド ツー エンドのインジケーター コンバーチブルのテスト
 

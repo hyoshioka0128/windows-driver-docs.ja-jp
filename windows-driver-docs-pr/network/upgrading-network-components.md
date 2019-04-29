@@ -1,6 +1,6 @@
 ---
-title: ネットワーク コンポーネントをアップグレードするプロセスについて
-description: ネットワーク コンポーネントをアップグレードするプロセスについて
+title: ネットワーク コンポーネントのアップグレードのプロセス
+description: ネットワーク コンポーネントのアップグレードのプロセス
 ms.assetid: ddd1eda0-7bed-44e7-8636-8db3508825f5
 keywords:
 - ネットワーク コンポーネントをアップグレード WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc22be488ce1facd2e0fa35afdc31da0b01fe45f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387146"
 ---
-# <a name="process-for-upgrading-network-components"></a>ネットワーク コンポーネントをアップグレードするプロセスについて
+# <a name="process-for-upgrading-network-components"></a>ネットワーク コンポーネントのアップグレードのプロセス
 
 
 

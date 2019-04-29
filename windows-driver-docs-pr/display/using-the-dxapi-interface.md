@@ -1,6 +1,6 @@
 ---
-title: DxApi インターフェイスを使用します。
-description: DxApi インターフェイスを使用します。
+title: DxApi インターフェイスの使用
+description: DxApi インターフェイスの使用
 ms.assetid: 9de96d20-6cfc-42e7-821b-8256e0dd9b38
 keywords:
 - カーネル モードのビデオ トランスポート WDK DirectDraw、DxApi インターフェイスの描画
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c09ce1ea8d6fe9d780be335ed143b6e41030718
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388993"
 ---
-# <a name="using-the-dxapi-interface"></a>DxApi インターフェイスを使用します。
+# <a name="using-the-dxapi-interface"></a>DxApi インターフェイスの使用
 
 
 ## <span id="ddk_using_the_dxapi_interface_gg"></span><span id="DDK_USING_THE_DXAPI_INTERFACE_GG"></span>

@@ -1,17 +1,17 @@
 ---
-title: モバイル ブロード バンドの Windows ランタイム API を使用するためのベスト プラクティス
-description: モバイル ブロード バンドの Windows ランタイム API を使用するためのベスト プラクティス
+title: モバイル ブロードバンド Windows ランタイム API を使用するためのベスト プラクティス
+description: モバイル ブロードバンド Windows ランタイム API を使用するためのベスト プラクティス
 ms.assetid: c9d60bb3-34ea-44a0-ae9e-1415b93e2fd8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37f479ad1a34239e6e83f8f6236d61b3a4ff51ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392980"
 ---
-# <a name="best-practices-for-using-mobile-broadband-windows-runtime-api"></a>モバイル ブロード バンドの Windows ランタイム API を使用するためのベスト プラクティス
+# <a name="best-practices-for-using-mobile-broadband-windows-runtime-api"></a>モバイル ブロードバンド Windows ランタイム API を使用するためのベスト プラクティス
 
 
 モバイル ブロード バンドの Windows ランタイム API を使用するためのベスト プラクティスの詳細については、次のトピックを使用します。

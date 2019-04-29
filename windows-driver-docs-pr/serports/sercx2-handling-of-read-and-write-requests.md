@@ -1,17 +1,17 @@
 ---
-title: 読み取りおよび書き込み要求の処理を SerCx2
+title: 読み取り/書き込み要求の SerCx2 処理
 description: 周辺機器のドライバーは、シリアル ポートに接続されている周辺機器とデータの転送をコント ローラー上のポートに書き込み (IRP_MJ_WRITE) と読み取り (IRP_MJ_READ) 要求を送信します。
 ms.assetid: 98100680-7D27-42B7-A445-C539B2DF95AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e71adc20a8da60c2a600f5aa4fcc43810ab84b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388000"
 ---
-# <a name="sercx2-handling-of-read-and-write-requests"></a>読み取りおよび書き込み要求の処理を SerCx2
+# <a name="sercx2-handling-of-read-and-write-requests"></a>読み取り/書き込み要求の SerCx2 処理
 
 
 周辺機器のドライバーが書き込みを送信します ([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)) と読み取り ([**IRP\_MJ\_読み取り** ](https://msdn.microsoft.com/library/windows/hardware/ff546883)) とポートに接続されている周辺機器のデバイスからデータを転送するシリアル コント ローラー上のポートに要求します。 SerCx2 がこれらの要求を処理する方法は、要求がタイムアウトまたはが取り消された場合でも、適切に定義されました。
@@ -26,7 +26,7 @@ ms.locfileid: "56551445"
 ## <a name="requests-that-time-out"></a>要求がタイムアウト
 
 
-場合は、要求が処理に時間がかかる場合、読み取りまたは書き込み要求はタイムアウトすること。 ができます また、読み取り要求では、シリアル コント ローラーで受信した 2 つの連続するバイトまでの時間が最大許容時間を超えた場合にタイムアウトができます。 いずれの場合も、タイムアウト条件が検出されると、SerCx2 すぐに要求を完了状態で\_タイムアウト状態コード。 完了した要求は、読み取りまたは要求の処理中に SerCx2 によって書き込まれたバイト数を報告します。 必要に応じて、要求を送信した周辺のドライバーは、完了、部分的に完了した読み取りまたは書き込み操作を 2 番目の要求を送信するのにこの情報を使用できます。 タイムアウトの詳細については、[**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614)を参照してください。
+場合は、要求が処理に時間がかかる場合、読み取りまたは書き込み要求はタイムアウトすること。 ができます また、読み取り要求では、シリアル コント ローラーで受信した 2 つの連続するバイトまでの時間が最大許容時間を超えた場合にタイムアウトができます。 いずれの場合も、タイムアウト条件が検出されると、SerCx2 すぐに要求を完了状態で\_タイムアウト状態コード。 完了した要求は、読み取りまたは要求の処理中に SerCx2 によって書き込まれたバイト数を報告します。 必要に応じて、要求を送信した周辺のドライバーは、完了、部分的に完了した読み取りまたは書き込み操作を 2 番目の要求を送信するのにこの情報を使用できます。 タイムアウトの詳細については、次を参照してください。 [**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614)します。
 
 ## <a name="impact-of-hardware-limitations"></a>ハードウェアの制限の影響
 

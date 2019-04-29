@@ -1,6 +1,6 @@
 ---
-title: WdbgExts スレッドとプロセス
-description: WdbgExts スレッドとプロセス
+title: WdbgExts のスレッドとプロセス
+description: WdbgExts のスレッドとプロセス
 ms.assetid: fa513435-ea91-4dc5-9488-85087d585f96
 keywords:
 - スレッド、WdbgExts 拡張機能
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c597935241f37f8de494f0e59d392e22a63a4058
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325830"
 ---
-# <a name="wdbgexts-threads-and-processes"></a>WdbgExts スレッドとプロセス
+# <a name="wdbgexts-threads-and-processes"></a>WdbgExts のスレッドとプロセス
 
 
 このトピックではスレッドとプロセスをする方法の概要、WdbgExts API を使用して操作します。 スレッドおよびプロセスの概要については、[デバッガー エンジン](introduction.md#debugger-engine)を参照してください[スレッドとプロセス](threads-and-processes.md)で、[デバッガー エンジンの概要](debugger-engine-overview.md)このドキュメントの「します。
@@ -37,7 +37,7 @@ ms.locfileid: "56532886"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-強力なスレッドの操作とプロセス操作 API では、[を制御するスレッドとプロセス](controlling-threads-and-processes.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「を参照してください。
+強力なスレッドの操作とプロセス操作 API では、次を参照してください。[を制御するスレッドとプロセス](controlling-threads-and-processes.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「します。
 
  
 

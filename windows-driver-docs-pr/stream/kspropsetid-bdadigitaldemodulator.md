@@ -5,11 +5,11 @@ ms.assetid: 536c247d-049b-4d48-96b7-f2aa01f1fa91
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab3c5945c68444e0134f383640a330368b52276f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389227"
 ---
 # <a name="kspropsetidbdadigitaldemodulator"></a>KSPROPSETID\_BdaDigitalDemodulator
 
@@ -52,7 +52,7 @@ KSPROPSETID\_BdaDigitalDemodulator は BDA デジタル復調器プロパティ�
 
 KSPROPSETID\_BdaDigitalDemodulator プロパティ セットが DVB 復調器ノードのプロパティについて説明します。 KSPROPSETID ではなく、このプロパティを使用して\_BdaAutodemodulate、復調器が特定の値を設定する必要がある場合。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [KSPROPSETID\_BdaAutodemodulate](kspropsetid-bdaautodemodulate.md)
 

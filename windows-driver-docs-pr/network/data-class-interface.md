@@ -5,11 +5,11 @@ ms.assetid: d7bf9ec3-8bf3-45a9-84a2-c507953d1ad4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b16b280d233c3e4142db334d16e853ba3e3361e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387389"
 ---
 # <a name="data-class-interface"></a>データ クラス インターフェイス
 
@@ -32,7 +32,7 @@ ms.locfileid: "56532848"
 <th align="left">オフセット (バイト)</th>
 <th align="left">フィールド</th>
 <th align="left">サイズ (バイト)</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

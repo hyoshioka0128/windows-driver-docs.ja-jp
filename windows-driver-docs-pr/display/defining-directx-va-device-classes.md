@@ -1,6 +1,6 @@
 ---
-title: DirectX VA デバイス クラスを定義します。
-description: DirectX VA デバイス クラスを定義します。
+title: DirectX VA デバイス クラスの定義
+description: DirectX VA デバイス クラスの定義
 ms.assetid: a4b2ee88-747a-48c3-ba1d-2d605c46db58
 keywords:
 - デバイス クラスを定義する、DirectX ビデオ アクセラレータ WDK Windows 2000 の表示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1a95ad517c67d0ec418cfafc4d99749eca8e0ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327130"
 ---
-# <a name="defining-directx-va-device-classes"></a>DirectX VA デバイス クラスを定義します。
+# <a name="defining-directx-va-device-classes"></a>DirectX VA デバイス クラスの定義
 
 
 ## <span id="ddk_defining_directx_va_device_classes_gg"></span><span id="DDK_DEFINING_DIRECTX_VA_DEVICE_CLASSES_GG"></span>

@@ -1,6 +1,6 @@
 ---
-title: I/O 要求のフィルタ リング Serenum
-description: I/O 要求のフィルタ リング Serenum
+title: I/O 要求の Serenum によるフィルター処理
+description: I/O 要求の Serenum によるフィルター処理
 ms.assetid: 773688b8-3d5a-48ed-8f20-368cf35fa6e2
 keywords:
 - Serenum ドライバー WDK、I/O 要求のフィルタ リング
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54cb265b18808dd93928bd0d253b785a9eef4562
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387964"
 ---
-# <a name="serenum-filtering-of-io-requests"></a>I/O 要求のフィルタ リング Serenum
+# <a name="serenum-filtering-of-io-requests"></a>I/O 要求の Serenum によるフィルター処理
 
 
 

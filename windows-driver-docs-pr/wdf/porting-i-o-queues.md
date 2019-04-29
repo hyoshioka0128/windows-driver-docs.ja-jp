@@ -1,17 +1,17 @@
 ---
-title: 移植の I/O キュー
-description: 移植の I/O キュー
+title: I/O キューの移植
+description: I/O キューの移植
 ms.assetid: 90319342-5FAB-451B-BCA1-B273B81418DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fe656759e9492fbe1a2875048e7ccf5ddeb40e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390095"
 ---
-# <a name="porting-io-queues"></a>移植の I/O キュー
+# <a name="porting-io-queues"></a>I/O キューの移植
 
 
 WDF のドライバーは、キューを作成し、I/O イベント コールバックを登録、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック。 既定では、各 I/O キュー オブジェクトは、デバイス オブジェクトの子が。 WDF ドライバーでは、キューごとに、次のタスクを構成できます。

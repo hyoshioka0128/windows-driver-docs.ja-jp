@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 950f183fcbeb5e4d28c69068c856dd6748372649
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392148"
 ---
 # <a name="gdl-directives-for-configurations"></a>構成の GDL ディレクティブ
 
@@ -41,7 +41,7 @@ GDL には、次の構成ディレクティブが含まれています。
 
 -   **\*制約**と **\*InvalidCombinations**無効な構成を指定します。 これらのディレクティブが発生した場合、GDL パーサーは有効な (または制約のない) 構成を作成するように変更しようとします。
 
-構成ディレクティブの詳細については、[GDL 構成](gdl-configurations.md)を参照してください。
+構成ディレクティブの詳細については、次を参照してください。 [GDL 構成](gdl-configurations.md)します。
 
  
 

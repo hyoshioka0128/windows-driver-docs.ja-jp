@@ -1,14 +1,14 @@
 ---
-Description: Install WinUSB (Winusb.sys) in the device's kernel-mode stack as the USB device's function driver instead of implementing a driver.
+Description: デバイスのカーネル モード スタックでドライバーを実装する代わりに、USB デバイスの機能のドライバーとして WinUSB (Winusb.sys) をインストールします。
 title: WinUSB (Winusb.sys) のインストール
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0898e03722bfa73103966b5855cc016d9ce05ef1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389175"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) のインストール
 
@@ -29,7 +29,7 @@ OEM または独立系ハードウェア ベンダー (IHV) は、Windows 8 お�
 
 WinUSB デバイスを接続するときに、システムはデバイスの情報を読み取り、Winusb.sys を自動的に読み込みます。
 
-詳細については、[WinUSB デバイス](automatic-installation-of-winusb.md)を参照してください。
+詳細については、次を参照してください。 [WinUSB デバイス](automatic-installation-of-winusb.md)します。
 
 ## <a href="" id="installing-winusb-by-specifying--the-system-provided-device-class"></a>システム指定のデバイス クラスを指定することによって WinUSB をインストールします。
 
@@ -72,7 +72,7 @@ WinUSB デバイスを接続するときに、システムはデバイスの情�
 
 次の INF には、x64 ベース システムで OSR USB FX2 ボードの機能のドライバーとして WinUSB がインストールされます。
 
-> Windows 10 バージョン 1709 以降、Windows Driver Kit は、 [InfVerif.exe](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)構文の問題がないと、INF ファイルはユニバーサルかどうかを確認するドライバーの INF ファイルをテストに使用することできます。 私たちユニバーサル INF を提供することです。 詳細については、[ユニバーサル INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)を参照してください。
+> Windows 10 バージョン 1709 以降、Windows Driver Kit は、 [InfVerif.exe](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)構文の問題がないと、INF ファイルはユニバーサルかどうかを確認するドライバーの INF ファイルをテストに使用することできます。 私たちユニバーサル INF を提供することです。 詳細については、次を参照してください。[ユニバーサル INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)します。
 
 ``` syntax
 ;
@@ -156,7 +156,7 @@ REG_MULTI_SZ = 0x00010000
 
 -   **USB\_Install.HW**:このセクションでは、.inf ファイルのキーです。 これには、デバイスのデバイス インターフェイス グローバル一意識別子 (GUID) を指定します。 **AddReg**ディレクティブは、標準のレジストリ値で指定されたインターフェイスの GUID を設定します。 デバイスの機能のドライバーとして Winusb.sys が読み込まれると、レジストリ キーを読み取って値 DeviceInterfaceGUIDs と、指定された GUID を使用して、デバイス インターフェイスを表します。 この例では GUID は、具体的にはお使いのデバイスを作成するものに置き換える必要があります。 デバイスのプロトコルを変更する場合は、新しいデバイス インターフェイスの GUID を作成します。
 
-    **注**  ユーザー モードのソフトウェアを呼び出す必要があります[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)デバイス インターフェイスのいずれかに関連付けられている登録済みデバイスのインターフェイスを列挙するにはDeviceInterfaceGUIDs キーで指定されているクラス。 **SetupDiGetClassDevs**ユーザー モード ソフトウェアに渡す必要がありますし、デバイスのデバイス ハンドルを返します、 [ **WinUsb\_初期化**](https://msdn.microsoft.com/library/windows/hardware/ff540277) WinUSB ハンドルを取得するルーチンデバイスのインターフェイス。 これらのルーチンの詳細については、[WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)を参照してください。
+    **注**  ユーザー モードのソフトウェアを呼び出す必要があります[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)デバイス インターフェイスのいずれかに関連付けられている登録済みデバイスのインターフェイスを列挙するにはDeviceInterfaceGUIDs キーで指定されているクラス。 **SetupDiGetClassDevs**ユーザー モード ソフトウェアに渡す必要がありますし、デバイスのデバイス ハンドルを返します、 [ **WinUsb\_初期化**](https://msdn.microsoft.com/library/windows/hardware/ff540277) WinUSB ハンドルを取得するルーチンデバイスのインターフェイス。 これらのルーチンの詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
 
 次の INF には、x64 ベース システムで OSR USB FX2 ボードの機能のドライバーとして WinUSB がインストールされます。 この例では、WDF 共同インストーラーを INF を示します。
 
@@ -265,7 +265,7 @@ WinUSB 関数ドライバーとしてを使用するには、ドライバー パ
 
 -   WinUSB 共同インストーラー (Winusbcoinstaller.dll)
 -   KMDF 共同インストーラー (WdfcoinstallerXXX.dll)
--   デバイスの機能のドライバーとして Winusb.sys をインストールする .inf ファイル。 詳細については、[書き込み、を参照してください。WinUSB インストール用の Inf ファイル](#inf)します。
+-   デバイスの機能のドライバーとして Winusb.sys をインストールする .inf ファイル。 詳細については、次を参照してください。[書き込み、します。WinUSB インストール用の Inf ファイル](#inf)します。
 -   パッケージの署名済みカタログ ファイル。 このファイルは、x64 WinUSB をインストールする必要は Windows Vista 以降のバージョン。
 
 ![winusb インストール パッケージ](images/winusb-package.jpg)

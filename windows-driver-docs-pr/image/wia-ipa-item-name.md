@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a726e74ca35d381bceeac0fa9eb74a6748cdedda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388783"
 ---
 # <a name="wiaipaitemname"></a>WIA\_IPA\_項目\_名
 
@@ -42,7 +42,7 @@ WIA\_IPA\_項目\_NAME プロパティには、WIA 項目の名前が含まれ�
 
 アプリケーションの読み取り、WIA\_IPA\_項目\_する項目のことを確認する名前プロパティは現在使用されています。 各項目には、一意の名前が必要です。 WIA サービスを作成して維持 WIA\_IPA\_項目\_名。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

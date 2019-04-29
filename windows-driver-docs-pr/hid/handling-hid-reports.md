@@ -1,5 +1,5 @@
 ---
-title: HID レポートの処理
+title: HID レポートを処理する
 description: このセクションでは、HID レポートを処理するためのユーザー モード アプリケーションとカーネル モード ドライバーを使用するメカニズムについて説明します。
 ms.assetid: 5bd43bd3-3c7a-40a3-97cd-2c43c168e721
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3ae5d377d6e348a2f3ed561cf67115bdf362605
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388951"
 ---
-# <a name="handling-hid-reports"></a>HID レポートの処理
+# <a name="handling-hid-reports"></a>HID レポートを処理する
 
 
 このセクションでは、ユーザー モード アプリケーションとカーネル モード ドライバーが処理に使用される機構をについて説明します[HID レポート](introduction-to-hid-concepts.md)します。

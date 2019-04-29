@@ -1,19 +1,19 @@
 ---
-title: GDI ハードウェア アクセラレータによるレンダリング操作を指定します。
-description: GDI ハードウェア アクセラレータによるレンダリング操作を指定します。
+title: GDI ハードウェア高速化レンダリング操作の指定
+description: GDI ハードウェア高速化レンダリング操作の指定
 ms.assetid: 71eb9cdf-0448-48d1-835a-84bbbba13670
 keywords:
 - GDI ハードウェア アクセラレータを WDK を表示して操作を表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35e67aa705c8eca6d9243cccd72fc4ed8f7661a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389925"
 ---
-# <a name="specifying-gdi-hardware-accelerated-rendering-operations"></a>GDI ハードウェア アクセラレータによるレンダリング操作を指定します。
+# <a name="specifying-gdi-hardware-accelerated-rendering-operations"></a>GDI ハードウェア高速化レンダリング操作の指定
 
 
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>

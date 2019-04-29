@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97aefe3397738391d7c510d92aa7028917a2c1b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327241"
 ---
 # <a name="using-the-global-flags-utility"></a>グローバル フラグ ユーティリティの使用
 
@@ -22,7 +22,7 @@ ms.locfileid: "56579460"
 
 グローバル フラグ (gflags.exe) ユーティリティでは、システム レジストリ内の特定のキーの設定、実行中のシステムのカーネル設定を調整すること、およびイメージ ファイルの設定を変更することの簡単な方法を提供します。 これらのキーは、グラフィカルまたはコマンド ライン インターフェイスを使用して設定できます。
 
-Windows サポート ツール パッケージとツールを Windows のデバッグ パッケージは、グローバル フラグ ユーティリティを確認できます。 後者については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
+Windows サポート ツール パッケージとツールを Windows のデバッグ パッケージは、グローバル フラグ ユーティリティを確認できます。 後者については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
 
 グローバル フラグ ユーティリティは、ドライバーの検証ツールの特別なプールのオプションを構成するか、個々 のメモリ割り当てに使用するための特別なプールを指定するにも使用できます。
 

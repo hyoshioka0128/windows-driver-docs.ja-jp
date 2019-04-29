@@ -1,6 +1,6 @@
 ---
-title: VGA と互換性のあるミニポート ドライバーの HwVidFindAdapter
-description: VGA と互換性のあるミニポート ドライバーの HwVidFindAdapter
+title: VGA 互換ミニポート ドライバーの HwVidFindAdapter
+description: VGA 互換ミニポート ドライバーの HwVidFindAdapter
 ms.assetid: 4538e95f-e84d-434c-a674-e1d1d4e9e5a0
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、VGA、HwVidFindAdapter
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e335dba6a14096500e6502bf5c4f26d29f88e799
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387419"
 ---
-# <a name="vga-compatible-miniport-drivers-hwvidfindadapter"></a>VGA と互換性のあるミニポート ドライバーの HwVidFindAdapter
+# <a name="vga-compatible-miniport-drivers-hwvidfindadapter"></a>VGA 互換ミニポート ドライバーの HwVidFindAdapter
 
 
 ## <span id="ddk_vga_compatible_miniport_driver_s_hwvidfindadapter_gg"></span><span id="DDK_VGA_COMPATIBLE_MINIPORT_DRIVER_S_HWVIDFINDADAPTER_GG"></span>

@@ -5,13 +5,13 @@ ms.assetid: 9529cce9-9c46-4906-854d-d0aef9118a90
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e2e5aa0bdff701eb7eda6713a6fce120902b0697
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391433"
 ---
-# <a name="what-does-the-zw-prefix-mean"></a>Zw プレフィックスは何を意味しますか。
+# <a name="what-does-the-zw-prefix-mean"></a>Zw プレフィックスの意味
 
 
 Windows のネイティブ システム サービス ルーチンは、プレフィックスで始まる名前を持つ**Nt**と**Zw**します。 **Nt**プレフィックスは、Windows NT の省略形が、 **Zw**プレフィックスに意味がありません。 **Zw**他の Api を使用した潜在的な名前付けの競合を回避して、将来必要可能性がある、役立つ可能性のある 2 文字プレフィックスを使用しないように部分的に部分的に選択しました。

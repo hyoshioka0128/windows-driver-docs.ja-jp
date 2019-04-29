@@ -1,6 +1,6 @@
 ---
-title: Preanalysis インフラストラクチャ
-description: Preanalysis インフラストラクチャ
+title: 事前分析インフラストラクチャ
+description: 事前分析インフラストラクチャ
 ms.assetid: 4c07145a-9a08-4507-8bab-769617e73d77
 keywords:
 - バンドの WDK Unidrv
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bc64d2921a72837475655b58c26bb5815e736fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389545"
 ---
-# <a name="preanalysis-infrastructure"></a>Preanalysis インフラストラクチャ
+# <a name="preanalysis-infrastructure"></a>事前分析インフラストラクチャ
 
 
 

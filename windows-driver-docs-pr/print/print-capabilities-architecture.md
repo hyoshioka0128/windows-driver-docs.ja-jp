@@ -1,19 +1,19 @@
 ---
-title: 印刷機能のアーキテクチャ
-description: 印刷機能のアーキテクチャ
+title: 印刷機能アーキテクチャ
+description: 印刷機能アーキテクチャ
 ms.assetid: d19438ca-8c88-4835-8445-2799387e0912
 keywords:
 - 印刷機能の WDK、アーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9102e16108f775a56d438b3be2aea97396d2be7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389505"
 ---
-# <a name="print-capabilities-architecture"></a>印刷機能のアーキテクチャ
+# <a name="print-capabilities-architecture"></a>印刷機能アーキテクチャ
 
 
 PrintCapabilities オブジェクトは、によって返される、 [ **IPrintTicketProvider::GetPrintCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff554365)の印刷ドライバーの実装のメソッド、 [IPrintTicketProvider インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff554375). XPSDrv プリンター ドライバーは、ほかに IPrintTicketProvider インターフェイスを実装する必要があります、 [ **DrvDeviceCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff548539)関数。

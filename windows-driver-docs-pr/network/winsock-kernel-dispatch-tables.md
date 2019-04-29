@@ -1,6 +1,6 @@
 ---
-title: Winsock Kernel ディスパッチ テーブル
-description: Winsock Kernel ディスパッチ テーブル
+title: Winsock カーネル ディスパッチ テーブル
+description: Winsock カーネル ディスパッチ テーブル
 ms.assetid: 391c6868-fb85-41ea-ada5-6ba90750300c
 keywords:
 - Winsock カーネル WDK がネットワーク接続、ディスパッチ テーブル
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c62de8e85bfd1ca9251bf5ae7a6c19e0d9eb8d41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387134"
 ---
-# <a name="winsock-kernel-dispatch-tables"></a>Winsock Kernel ディスパッチ テーブル
+# <a name="winsock-kernel-dispatch-tables"></a>Winsock カーネル ディスパッチ テーブル
 
 
 [ソケット オブジェクト](winsock-kernel-objects.md)Winsock カーネル (WSK) のソケットがソケットでサポートされているソケット関数への関数ポインターを含むプロバイダー ディスパッチ テーブルの構造体へのポインターを格納します。 WSK アプリケーションでは、ソケットでのネットワーク I/O 操作を実行するには、プロバイダー ディスパッチ テーブル構造で、関数を呼び出します。 ため、各 WSK[ソケット カテゴリ](winsock-kernel-socket-categories.md)、WSK、ソケット関数のさまざまなセットがサポートする[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)のカテゴリごとに別のプロバイダーのディスパッチ テーブル構造を定義します。WSK ソケット。

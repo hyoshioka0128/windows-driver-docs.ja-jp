@@ -1,6 +1,6 @@
 ---
-title: プレゼンテーションのスワップの間隔の設定
-description: プレゼンテーションのスワップの間隔の設定
+title: プレゼンテーション スワップの間隔の設定
+description: プレゼンテーション スワップの間隔の設定
 ms.assetid: 01626dbc-d7ac-482a-a07e-0f5ee3ffb05f
 keywords:
 - DirectX 8.0 WDK Windows 2000 のリリース ノートを表示するレポートの機能
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 805203a2b95eef4894411d6ac44becd1b5522dfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390446"
 ---
-# <a name="setting-presentation-swap-intervals"></a>プレゼンテーションのスワップの間隔の設定
+# <a name="setting-presentation-swap-intervals"></a>プレゼンテーション スワップの間隔の設定
 
 
 ## <span id="ddk_setting_presentation_swap_intervals_gg"></span><span id="DDK_SETTING_PRESENTATION_SWAP_INTERVALS_GG"></span>

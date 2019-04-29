@@ -1,6 +1,6 @@
 ---
-title: 両面印刷ユニット GPD の自動検出しています
-description: 両面印刷ユニット GPD の自動検出しています
+title: GPD の Duplex ユニットを自動検出する
+description: GPD の Duplex ユニットを自動検出する
 ms.assetid: a5c91b00-ca7c-4c22-a16c-a976011d8b89
 keywords:
 - 自動検出の両面印刷ユニット WDK のプリンターの自動構成
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13822ae9ded4430943a937ad182cfd383a3bb8e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387281"
 ---
-# <a name="autodetecting-the-duplex-unit-for-gpd"></a>両面印刷ユニット GPD の自動検出しています
+# <a name="autodetecting-the-duplex-unit-for-gpd"></a>GPD の Duplex ユニットを自動検出する
 
 
 両面印刷ユニットにインストールできるようにする、GPD ファイルは次の例のように定義されている双方向機能にあるとします。

@@ -1,5 +1,5 @@
 ---
-title: UMDF がエラーを報告する方法
+title: UMDF によるエラーの報告方法
 description: このトピックでは、ユーザー モード ドライバー フレームワーク (UMDF) がエラーを報告する方法について説明します。 両方の UMDF バージョン 1 と 2 に適用されます。
 ms.assetid: 44e4e5df-d968-4973-8a36-e93c75320ff6
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ca2c3fd39ea7ebe57309f5bfc3721b7acb02b77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390187"
 ---
-# <a name="how-umdf-reports-errors"></a>UMDF がエラーを報告する方法
+# <a name="how-umdf-reports-errors"></a>UMDF によるエラーの報告方法
 
 
 このトピックでは、ユーザー モード ドライバー フレームワーク (UMDF) がエラーを報告する方法について説明します。 両方の UMDF バージョン 1 と 2 に適用されます。
@@ -34,7 +34,7 @@ UMDF には、次の種類のエラーが報告されます。
 
 -   ホスト プロセスが予期せず終了します。
 
--   エラーまたは重要な操作のタイムアウト。 タイムアウトの詳細については、[UMDF でホスト プロセスのタイムアウト](how-umdf-enforces-time-outs.md)を参照してください。
+-   エラーまたは重要な操作のタイムアウト。 タイムアウトの詳細については、次を参照してください。 [UMDF でホスト プロセスのタイムアウト](how-umdf-enforces-time-outs.md)します。
 
 UMDF エラー レポートには、次の情報を含めることができます。 レポートの内容は、検出された問題に依存します。
 

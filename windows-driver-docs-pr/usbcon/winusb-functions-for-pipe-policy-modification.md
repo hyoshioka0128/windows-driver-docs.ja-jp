@@ -4,11 +4,11 @@ title: パイプ ポリシー修正のための WinUSB 関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be882716dba12fa59631c16209c695a0d6a5f078
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389145"
 ---
 # <a name="winusb-functions-for-pipe-policy-modification"></a>パイプ ポリシー修正のための WinUSB 関数
 

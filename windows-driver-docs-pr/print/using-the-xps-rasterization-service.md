@@ -5,11 +5,11 @@ ms.assetid: a6a3746a-3638-464b-bca0-60003f37af76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5b2d72552e16ad793a19b5fa5ab02336a29369c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387114"
 ---
 # <a name="using-the-xps-rasterization-service"></a>XPS ラスタライズ サービスの使用
 
@@ -119,11 +119,11 @@ XPS ラスタライズ サービスを使用するには、キャンバスと固
 
 高さ = (11 インチ) x(600 DPI) 6600 ドットを =
 
-固定ページの四角形領域のビットマップ イメージを作成するには XPSDrv フィルターを呼び出し XPS ラスタライザー オブジェクトの呼び出し[ **IXpsRasterizer::RasterizeRect** ](https://msdn.microsoft.com/library/windows/hardware/ff556365)メソッド。 このメソッドは、常に 32 ビットのピクセル サイズのビットマップを生成します。 ピクセル形式が GUID 値で指定された**GUID\_WICPixelFormat32bppPBGRA**、ヘッダー ファイル Wincodec.h で定義されています。 形式には、8 ビットの赤、緑、および青のコンポーネントが含まれています。 とは、標準 (sRGB) の色領域。 さらに、形式には、8 ビットのアルファ コンポーネントが含まれています。 アルファ コンポーネントによってピクセルの各値の色要素が事前乗算されます。 この形式の詳細については、[ピクセルのネイティブ形式の概要](https://msdn.microsoft.com/library/windows/desktop/ee719797.aspx)を参照してください。
+固定ページの四角形領域のビットマップ イメージを作成するには XPSDrv フィルターを呼び出し XPS ラスタライザー オブジェクトの呼び出し[ **IXpsRasterizer::RasterizeRect** ](https://msdn.microsoft.com/library/windows/hardware/ff556365)メソッド。 このメソッドは、常に 32 ビットのピクセル サイズのビットマップを生成します。 ピクセル形式が GUID 値で指定された**GUID\_WICPixelFormat32bppPBGRA**、ヘッダー ファイル Wincodec.h で定義されています。 形式には、8 ビットの赤、緑、および青のコンポーネントが含まれています。 とは、標準 (sRGB) の色領域。 さらに、形式には、8 ビットのアルファ コンポーネントが含まれています。 アルファ コンポーネントによってピクセルの各値の色要素が事前乗算されます。 この形式の詳細については、次を参照してください。[ピクセルのネイティブ形式の概要](https://msdn.microsoft.com/library/windows/desktop/ee719797.aspx)します。
 
 XPSDrv フィルターによっては、XPS ラスタライザー オブジェクトによって生成されるビットマップの追加の処理を実行します。 たとえば、カラー プリンター用のフィルターは、ビットマップをプリンターのページ記述言語で、ビットマップをラップし、プリンターに送信する前に CMYK ピクセル形式に変換可能性があります。
 
-XPS ラスタライズ サービスを XPSDrv フィルターとの通信に使用するインターフェイスの詳細については、[XPS ラスタライズ サービス参照](https://msdn.microsoft.com/library/windows/hardware/ff564306)を参照してください。
+XPS ラスタライズ サービスを XPSDrv フィルターとの通信に使用するインターフェイスの詳細については、次を参照してください。 [XPS ラスタライズ サービス参照](https://msdn.microsoft.com/library/windows/hardware/ff564306)します。
 
 ### <a name="xpsras-and-high-precision-pixel-formats"></a>XPSRas と高精度のピクセル形式
 

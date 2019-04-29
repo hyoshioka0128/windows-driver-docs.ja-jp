@@ -1,6 +1,6 @@
 ---
-title: プロトコル ドライバーについての学習
-description: プロトコル ドライバーについての学習
+title: プロトコル ドライバーについて
+description: プロトコル ドライバーについて
 ms.assetid: a908f91e-7529-42b5-9a3d-82d2a519d969
 keywords:
 - プロトコル ドライバー WDK、コネクションレス ネットワーク下端
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 855c11ba5759ced11eb1f37bde856286f35a19db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388757"
 ---
-# <a name="learning-about-protocol-drivers"></a>プロトコル ドライバーについての学習
+# <a name="learning-about-protocol-drivers"></a>プロトコル ドライバーについて
 
 
 

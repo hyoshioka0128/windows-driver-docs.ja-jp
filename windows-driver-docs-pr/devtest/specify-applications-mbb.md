@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2b5f8d3483f58e4b3ac3171373eb0d14472e654
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387921"
 ---
 # <a name="specify-applications-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロードバンド メタデータ作成ウィザードでのアプリケーションの指定
 
@@ -20,7 +20,7 @@ ms.locfileid: "56571456"
 
 UWP デバイスのアプリがダウンロードされ、ユーザーが初めてデバイスを接続時にインストールします。 特権を持つアプリケーションでは、デバイスへのアクセスがあります。 それぞれ 1 つだけ指定できます。
 
-詳細については、UWP デバイス アプリと特権を持つアプリケーションは、[Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)を参照してください。
+詳細については、UWP デバイス アプリと特権を持つアプリケーションは、次を参照してください。 [Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)します。
 
 ## <a name="span-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>Microsoft Store デバイス アプリを指定するには
 
@@ -74,7 +74,7 @@ UWP デバイスのアプリがダウンロードされ、ユーザーが初め�
 
 次のフィールドに入力して特権を持つアプリケーションを指定する**特権アプリケーション**:
 
-**注**  、次のフィールドの詳細については、[Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=242009)を参照してください。 特権のあるデバイスのインターフェイス プロパティのキーについては、[DEVPKEY\_DeviceInterface\_Restricted](https://go.microsoft.com/fwlink/p/?linkid=256362)を参照してください。
+**注**  、次のフィールドの詳細については、次を参照してください。 [Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=242009)します。 特権のあるデバイスのインターフェイス プロパティのキーについては、次を参照してください。 [DEVPKEY\_DeviceInterface\_Restricted](https://go.microsoft.com/fwlink/p/?linkid=256362)します。
 
  
 
@@ -104,7 +104,7 @@ UWP デバイスのアプリがダウンロードされ、ユーザーが初め�
 
 モバイル ブロード バンドのプラットフォームでは、受信して、通知を表示する MNO 管理 SMS または USSD、データ使用量が上限、海外ローミング、および残り少ないに近づいてなどの拡張機能を提供します。 データ使用量に対応するための機能を提供し、接続、切断、またはモバイル ネットワーク プロバイダーの UWP アプリでバック グラウンド イベントをローミングできます。
 
-Windows では、Microsoft Store アプリが実行されていない場合でも、イベントへの応答でいくつかのコードを実行する UWP アプリ用のブローカー機能を提供します。 通知ハンドラーを実装する方法の詳細については、[mobile operator notifications とシステム イベントを有効にする](https://go.microsoft.com/fwlink/p/?linkid=242062)を参照してください。
+Windows では、Microsoft Store アプリが実行されていない場合でも、イベントへの応答でいくつかのコードを実行する UWP アプリ用のブローカー機能を提供します。 通知ハンドラーを実装する方法の詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](https://go.microsoft.com/fwlink/p/?linkid=242062)します。
 
  
 

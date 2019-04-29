@@ -1,17 +1,17 @@
 ---
-title: サンプル トースター ドライバーのプログラミングのツアー
+title: トースター ドライバーのサンプルのプログラミング ツアー
 description: このトピックでは、学習目的用に設計されたカーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) ドライバーを含むトースター サンプルのコード チュートリアルを提供します。
 ms.assetid: 5977AC09-AB53-4CA4-A35A-0E5A1FEE936F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23706c4a4736d6911f3369ba062cbb1ceae8fe92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325160"
 ---
-# <a name="sample-toaster-driver-programming-tour"></a>サンプル トースター ドライバーのプログラミングのツアー
+# <a name="sample-toaster-driver-programming-tour"></a>トースター ドライバーのサンプルのプログラミング ツアー
 
 
 このトピックでは、コードのチュートリアルの[トースター](https://go.microsoft.com/fwlink/p/?LinkId=618939)サンプルは、学習目的に設計されたカーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) のドライバーが含まれています。
@@ -63,7 +63,7 @@ KMDF バス ドライバーは、トースター バス コント ローラー�
 
   **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\Enum\\ルート\\システム\\&lt;インスタンス番号&gt;\\デバイス パラメーター**
 
-  **NumberOfToasters:REG\_DWORD:2**
+  **NumberOfToasters:REG\_DWORD:2 で失敗する**
 
   このレジストリ設定を使用して列挙子のデバイスの最大数には 10 です。 トースター Bus Inf ファイルでこの値を構成することもできます。
 

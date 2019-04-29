@@ -10,11 +10,11 @@ keywords:
 ms.date: 02/01/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 595dda1f86ca1a69a9cd40f9dab06b2f1e7b25a6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390658"
 ---
 # <a name="standardized-inf-keywords-for-rss"></a>RSS 用の標準化された INF キーワード
 
@@ -278,7 +278,7 @@ SubkeyName に関連付けられているテキスト。
 場合、  **\*NumaNodeId**キーワードが存在し、NDIS ACPI からヒントに基づいて、最も近いノードを自動的に選択します。
 
 
-標準化された INF キーワードの詳細については、[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)を参照してください。
+標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
 
  
 

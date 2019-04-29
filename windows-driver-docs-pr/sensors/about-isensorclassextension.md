@@ -5,11 +5,11 @@ ms.assetid: 1f55f28a-796a-40e5-9995-e6a28761b9a4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af3c76e885cb050b4751f598fbe02ed7673105b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325954"
 ---
 # <a name="about-isensorclassextension"></a>ISensorClassExtension について
 
@@ -22,7 +22,7 @@ PnP ベースのハードウェア センサー ドライバーを呼び出し�
 
 ## <a name="methods-to-raise-events"></a>イベントを発生させるメソッド
 
-ドライバーはさまざまな種類のセンサー イベントを発生させることができます (センサー データを含んでいる通常) を呼び出して[ **ISensorClassExtension::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)と呼び出すことによって状態情報イベント[ **ISensorClassExtension::PostStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)します。 センサー ドライバーでイベントを使用する方法についての詳細については、[センサー ドライバー イベントについて](about-sensor-driver-events.md)を参照してください。
+ドライバーはさまざまな種類のセンサー イベントを発生させることができます (センサー データを含んでいる通常) を呼び出して[ **ISensorClassExtension::PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)と呼び出すことによって状態情報イベント[ **ISensorClassExtension::PostStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)します。 センサー ドライバーでイベントを使用する方法についての詳細については、次を参照してください。[センサー ドライバー イベントについて](about-sensor-driver-events.md)します。
 
 ## <a name="methods-to-manage-ioctls-and-handles"></a>Ioctl とハンドルを管理する方法
 

@@ -1,18 +1,18 @@
 ---
-title: システムの明るさの応答をテストします。
+title: システムの明るさへの応答のテスト
 author: windows-driver-content
 description: このトピックでは、ソリューションをテスト信号として MALT (Microsoft アンビエント光ツール) を使用する方法の手順を提供します。
 ms.assetid: f0ba2628-8752-467d-abf6-6447668ac244
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9980569f59ce92741a5cfab9db3bf5bb5b84e3ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391582"
 ---
-# <a name="testing-system-brightness-response"></a>システムの明るさの応答をテストします。
+# <a name="testing-system-brightness-response"></a>システムの明るさへの応答のテスト
 
 このトピックでは、MALT (Microsoft アンビエント光ツール) ツールを使用してシステムの明るさの応答をテストする方法の手順を提供します。
 

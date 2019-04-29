@@ -1,18 +1,18 @@
 ---
-title: 手動テストの明るさ
+title: 明るさの手動調整のテスト
 author: windows-driver-content
 description: このトピックでは、手動の明るさを MALT (Microsoft アンビエント光ツール) ツールを使用してテストする方法について説明します。
 ms.assetid: 1a7dd439-2634-49ae-8b0c-1dec843b34d7
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d81068012a347632138e0b23c93f2008136d4b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391588"
 ---
-# <a name="testing-manual-brightness"></a>手動テストの明るさ
+# <a name="testing-manual-brightness"></a>明るさの手動調整のテスト
 
 このトピックでは、手動の明るさを MALT (Microsoft アンビエント光ツール) ツールを使用してテストする方法について説明します。 手動の明るさが画面の明るさのセットを指す*手動で*ユーザー。
 

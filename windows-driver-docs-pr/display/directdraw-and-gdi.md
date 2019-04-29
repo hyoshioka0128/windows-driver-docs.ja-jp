@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c358d551fc7f383bb7e0d3676a1ff956c913364f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390496"
 ---
 # <a name="directdraw-and-gdi"></a>DirectDraw と GDI
 

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 075b9140c82d314dd60f18ed99e0b56809b304f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388975"
 ---
 # <a name="using-the-opm-ddi"></a>OPM DDI の使用
 
@@ -39,11 +39,11 @@ Microsoft DirectX グラフィックスのカーネル サブシステム (*Dxgk
 5.  DirectX グラフィックスのカーネルのサブシステムを呼び出すようになりましたことができます、 [ **DxgkDdiOPMGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559725)または[ **DxgkDdiOPMGetCOPPCompatibleInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559720)保護されている出力から情報を取得する関数。 DirectX グラフィックスのカーネルのサブシステムを呼び出すことも[ **DxgkDdiOPMConfigureProtectedOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff559701)保護された出力を構成します。 *DxgkDdiOPMGetInformation*出力に OPM セマンティクスがある場合にのみ呼び出すことができますと*DxgkDdiOPMGetCOPPCompatibleInformation*出力に COPP セマンティクスがある場合にのみ呼び出すことができます。 DirectX グラフィックス カーネル サブシステム呼び出し通常、 *DxgkDdiOPMGetInformation*または*DxgkDdiOPMGetCOPPCompatibleInformation*出力とし、呼び出し情報を取得する*DxgkDdiOPMConfigureProtectedOutput*出力を構成する 1 つ以上の時間。 次に、DirectX グラフィックスのカーネルのサブシステムを呼び出す*DxgkDdiOPMGetInformation*または*DxgkDdiOPMGetCOPPCompatibleInformation*もう一度です。 DirectX グラフィックスのカーネル サブシステムは呼び出すことで、次の種類の情報を取得することができます*DxgkDdiOPMGetInformation*または*DxgkDdiOPMGetCOPPCompatibleInformation*:
 
     -   出力のコネクタの種類。
-    -   出力をサポートするコンテンツの保護の種類。 出力は、アナログ コピー防止 (ACP) をサポートできる現在[コンテンツ生成管理システム アナログ (CGMS A)](cgms-a-standards.md)、高帯域幅デジタル コンテンツの保護 (HDCP)、およびディスプレイ ポート等コンテンツ保護 (DPCP)。 ACP の詳細については、次を参照してください。、 [Rovi (旧称 Macrovision)](https://go.microsoft.com/fwlink/p/?linkid=71273) web サイト。 HDCP の詳細については、、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)を参照してください。 ディスプレイ ポート等の詳細については、次を参照してください。、[ディスプレイ ポート等](https://go.microsoft.com/fwlink/p/?linkid=71382)Web 記事。
+    -   出力をサポートするコンテンツの保護の種類。 出力は、アナログ コピー防止 (ACP) をサポートできる現在[コンテンツ生成管理システム アナログ (CGMS A)](cgms-a-standards.md)、高帯域幅デジタル コンテンツの保護 (HDCP)、およびディスプレイ ポート等コンテンツ保護 (DPCP)。 ACP の詳細については、次を参照してください。、 [Rovi (旧称 Macrovision)](https://go.microsoft.com/fwlink/p/?linkid=71273) web サイト。 HDCP の詳細については、次を参照してください。、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)します。 ディスプレイ ポート等の詳細については、次を参照してください。、[ディスプレイ ポート等](https://go.microsoft.com/fwlink/p/?linkid=71382)Web 記事。
     -   特定の保護の種類の現在仮想保護レベルを出力の。
     -   特定の保護の種類の物理的な出力の実際の保護レベル。
-    -   バージョンの HDCP システム Renewability メッセージ (SRM)、出力は現在使用されています。 HDCP SRM の詳細については、、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)を参照してください。 のみ[ **DxgkDdiOPMGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559725)この情報を取得できます。
-    -   接続されている HDCP デバイスのキーの選択のベクトル (KSV) と HDCP デバイスは、repeater、かどうか。 のみ[ **DxgkDdiOPMGetCOPPCompatibleInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559720)この情報を取得できます。 HDCP リピータと KSVs の詳細については、、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)を参照してください。
+    -   バージョンの HDCP システム Renewability メッセージ (SRM)、出力は現在使用されています。 HDCP SRM の詳細については、次を参照してください。、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)します。 のみ[ **DxgkDdiOPMGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559725)この情報を取得できます。
+    -   接続されている HDCP デバイスのキーの選択のベクトル (KSV) と HDCP デバイスは、repeater、かどうか。 のみ[ **DxgkDdiOPMGetCOPPCompatibleInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559720)この情報を取得できます。 HDCP リピータと KSVs の詳細については、次を参照してください。、 [HDCP 仕様のリビジョン 1.1](https://go.microsoft.com/fwlink/p/?linkid=38728)します。
     -   グラフィックス アダプターを使用して拡張バスの種類。 PCI、AGP 拡張バスの例に示します。
     -   モニターに保護された出力に関連付けられている物理コネクタから送信されるイメージの形式です。
     -   CGMS A ACP シグナリング標準であり、保護された出力をサポートしているとします。 のみ[ **DxgkDdiOPMGetCOPPCompatibleInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559720)この情報を取得できます。

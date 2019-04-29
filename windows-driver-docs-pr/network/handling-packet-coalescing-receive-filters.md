@@ -1,17 +1,17 @@
 ---
-title: 処理のパケットの結合フィルターが表示されます。
-description: 処理のパケットの結合フィルターが表示されます。
+title: パケット結合受信フィルターの処理
+description: パケット結合受信フィルターの処理
 ms.assetid: 83FF780F-6B8F-4222-90F0-42037FFF7653
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b48ea9fca3fdab6780950e61726f3feab2b9c6b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325732"
 ---
-# <a name="handling-packet-coalescing-receive-filters"></a>処理のパケットの結合フィルターが表示されます。
+# <a name="handling-packet-coalescing-receive-filters"></a>パケット結合受信フィルターの処理
 
 
 複数の受信のフィルターの OID メソッド要求を通じたミニポート ドライバーにダウンロードされます[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)します。 各フィルターは、1 つまたは複数のテストを指定できます (*ヘッダー フィールド テスト*) アダプターのハードウェア合体バッファーで受信したパケットを結合する必要があるかどうかを判断するネットワーク アダプターを使用します。

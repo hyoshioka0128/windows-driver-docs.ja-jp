@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9b7875c0bb11694c33a626b97f0990854065ac1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391098"
 ---
 # <a name="kscategoryinterfacetransform"></a>KSCATEGORY_INTERFACETRANSFORM
 
@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 KSCATEGORY_INTERFACETRANSFORM 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799)機能別に分類します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

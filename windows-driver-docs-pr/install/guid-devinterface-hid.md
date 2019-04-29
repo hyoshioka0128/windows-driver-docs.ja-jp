@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d5e00285233b5e15aaef46d2d75f92cd974a4257
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392000"
 ---
 # <a name="guiddevinterfacehid"></a>GUID_DEVINTERFACE_HID
 
@@ -58,11 +58,11 @@ HID コレクション用のドライバーでは、オペレーティング シ
 
 システム提供[HID クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/jj126193) HID コレクションにこのデバイスのインターフェイス クラスのインスタンスを登録します。 たとえば、HID クラス ドライバーは、USB キーボードまたはマウス デバイスのインターフェイスを登録します。 HID クラス ドライバーでサポートされている I/O インターフェイスを使用して、HID コレクションへのアクセスします。
 
-HID デバイスとドライバーについては、[HIDClass デバイス](../hid/binding-minidrivers-to-the-hid-class.md)を参照してください。
+HID デバイスとドライバーについては、次を参照してください。 [HIDClass デバイス](../hid/binding-minidrivers-to-the-hid-class.md)します。
 
-キーボード デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_KEYBOARD**](guid-devinterface-keyboard.md)を参照してください。
+キーボード デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_KEYBOARD**](guid-devinterface-keyboard.md)します。
 
-マウス デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)を参照してください。
+マウス デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)します。
 
 [ **GUID_CLASS_INPUT** ](guid-class-input.md)このデバイスの古い形式の識別子は、インターフェイス クラス。 GUID_DEVINTERFACE_HID を代わりに使用します。
 

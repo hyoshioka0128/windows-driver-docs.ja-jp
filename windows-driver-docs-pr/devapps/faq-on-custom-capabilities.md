@@ -4,11 +4,11 @@ description: ハードウェア サポート アプリ (HSA) とその他の機�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 432e205c52bb9cd5617ab2cb3f024ae7b8adab7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387928"
 ---
 # <a name="faq-on-custom-capabilities"></a>カスタムの機能に関する FAQ
 
@@ -27,5 +27,5 @@ ms.locfileid: "56538619"
 |アプリの自動取得  |周辺機器の使用                                  |すべてのハードウェアの利用可能          |
 |展開の依存関係    |WU:ドライバー パッケージ<br>ストア:App|WU:ドライバー パッケージ<br>ストア:App                  |
                                                                                                                                                                                                     
-Dca の詳細については、[デバイス アプリを Microsoft Store の概要](https://msdn.microsoft.com/windows/hardware/drivers/devapps/getting-started)を参照してください。
+Dca の詳細については、次を参照してください。[デバイス アプリを Microsoft Store の概要](https://msdn.microsoft.com/windows/hardware/drivers/devapps/getting-started)します。
 

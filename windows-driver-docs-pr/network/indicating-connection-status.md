@@ -1,6 +1,6 @@
 ---
-title: 接続の状態を示す
-description: 接続の状態を示す
+title: 接続状態の表示
+description: 接続状態の表示
 ms.assetid: 8a511c14-6b09-47fe-90de-6a90dab93171
 keywords:
 - WMI の WDK にネットワーク接続、メディア接続の状態
@@ -20,13 +20,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e20ba3d0a83831cf1482f79da792e21b10a3b921
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327765"
 ---
-# <a name="indicating-connection-status"></a>接続の状態を示す
+# <a name="indicating-connection-status"></a>接続状態の表示
 
 
 

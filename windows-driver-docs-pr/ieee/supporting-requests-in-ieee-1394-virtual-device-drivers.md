@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30ddcd8bcf65daec9dcd058ec871f899d69ab8f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390309"
 ---
 # <a name="supporting-requests-in-ieee-1394-virtual-device-drivers"></a>IEEE 1394 仮想デバイス ドライバーでサポートされる要求
 
@@ -31,7 +31,7 @@ ms.locfileid: "56574110"
 
 -   [**要求\_ASYNC\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff537634)、 [**要求\_ASYNC\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff537636)、および[ **要求\_ASYNC\_ロック**](https://msdn.microsoft.com/library/windows/hardware/ff537633)
 
-    通常、ターゲット デバイスへの非同期 I/O 要求が、アプリケーションやドライバーのアドレスに移動するとき、1394 バス ドライバーは、デバイスの物理デバイス オブジェクト (PDO) のデバイスの拡張機能から、デバイスのノード ID を抽出します。 この情報は、デバイスが列挙されたときに、デバイスの PDO 拡張機能に記録されます。 仮想デバイスは、ただしは、ドライバー、要求を生成するため、通常の方法で列挙*する必要があります*raw モードでの非同期 I/O を実行していた場合と同様に仮想デバイスの場合は、要求を送信するときに、ノード ID を提供します。 Raw モードのアドレス指定の詳細については、[を送信する非同期 I/O 要求パケットの IEEE 1394 バス](https://msdn.microsoft.com/library/windows/hardware/ff538087)を参照してください。
+    通常、ターゲット デバイスへの非同期 I/O 要求が、アプリケーションやドライバーのアドレスに移動するとき、1394 バス ドライバーは、デバイスの物理デバイス オブジェクト (PDO) のデバイスの拡張機能から、デバイスのノード ID を抽出します。 この情報は、デバイスが列挙されたときに、デバイスの PDO 拡張機能に記録されます。 仮想デバイスは、ただしは、ドライバー、要求を生成するため、通常の方法で列挙*する必要があります*raw モードでの非同期 I/O を実行していた場合と同様に仮想デバイスの場合は、要求を送信するときに、ノード ID を提供します。 Raw モードのアドレス指定の詳細については、次を参照してください。[を送信する非同期 I/O 要求パケットの IEEE 1394 バス](https://msdn.microsoft.com/library/windows/hardware/ff538087)します。
 
     バス ドライバーでは、仮想デバイスの PDO の要求を受信したときに、デバイスの拡張機能からのノード ID を抽出しようとするとするのではなく、要求を生成したドライバーによって提供されるノード ID を使用します。 厳密に言えば、仮想デバイスがないノード Id、ので、仮想デバイスに要求を送信するドライバーは、代わりのノード ID を指定する必要があります。 慣例により、仮想デバイスは、PC のホスト コント ローラーのノード ID を使用します。
 

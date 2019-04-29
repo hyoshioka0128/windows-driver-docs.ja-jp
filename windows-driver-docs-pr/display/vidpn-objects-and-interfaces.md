@@ -13,11 +13,11 @@ keywords:
 ms.date: 10/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 83a153440ba05804fcbf0ebc159e083183b93aab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391218"
 ---
 # <a name="vidpn-objects-and-interfaces"></a>VidPN オブジェクトおよびインターフェイス
 
@@ -42,9 +42,9 @@ VidPN オブジェクトには、次のサブ オブジェクトが含まれて�
 
 -   パス
 
--   ソース
+-   Source
 
--   移行先
+-   対象
 
 -   ソース モード
 
@@ -108,12 +108,12 @@ VidPN オブジェクトには、次のサブ オブジェクトが含まれて�
 <p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546647" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_PRESENT_PATH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546647)"><strong>D3DKMDT_VIDPN_PRESENT_PATH</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ソース</p></td>
+<td align="left"><p>Source</p></td>
 <td align="left"><p>構造体ポインターを通じてアクセスします。</p>
 <p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546614" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDEO_PRESENT_SOURCE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546614)"><strong>D3DKMDT_VIDEO_PRESENT_SOURCE</strong></a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>移行先</p></td>
+<td align="left"><p>対象</p></td>
 <td align="left"><p>構造体ポインターを通じてアクセスします。</p>
 <p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546617" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDEO_PRESENT_TARGET&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546617)"><strong>D3DKMDT_VIDEO_PRESENT_TARGET</strong></a></p></td>
 </tr>

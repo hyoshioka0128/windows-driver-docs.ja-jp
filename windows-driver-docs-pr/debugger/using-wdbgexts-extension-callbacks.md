@@ -1,19 +1,19 @@
 ---
-title: WdbgExts 拡張機能コールバックを使用します。
-description: WdbgExts 拡張機能コールバックを使用します。
+title: WdbgExts 拡張機能コールバックの使用
+description: WdbgExts 拡張機能コールバックの使用
 ms.assetid: b9a2f30a-b09c-43eb-b105-a6b0ffdb1342
 keywords:
 - コールバック関数を使用して、WdbgExts 拡張機能
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d58272bc50854d1b0e9f2fa11012cfbdbd68027
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390535"
 ---
-# <a name="using-wdbgexts-extension-callbacks"></a>WdbgExts 拡張機能コールバックを使用します。
+# <a name="using-wdbgexts-extension-callbacks"></a>WdbgExts 拡張機能コールバックの使用
 
 
 ## <span id="ddk_using_wdbgexts_extension_callbacks_dbwx"></span><span id="DDK_USING_WDBGEXTS_EXTENSION_CALLBACKS_DBWX"></span>

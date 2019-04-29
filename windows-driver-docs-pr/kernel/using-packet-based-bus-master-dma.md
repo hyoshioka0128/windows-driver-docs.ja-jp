@@ -1,6 +1,6 @@
 ---
-title: パケットに基づくバス マスター DMA を使用してください。
-description: パケットに基づくバス マスター DMA を使用してください。
+title: パケットベース バス マスター DMA の使用
+description: パケットベース バス マスター DMA の使用
 ms.assetid: 57b37103-8ae0-4c54-b613-55b1a629d9ae
 keywords:
 - バス マスター DMA WDK カーネル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d20d035bc5982c60f3abdc9b9bc5f900efdedb0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391072"
 ---
-# <a name="using-packet-based-bus-master-dma"></a>パケットに基づくバス マスター DMA を使用してください。
+# <a name="using-packet-based-bus-master-dma"></a>パケットベース バス マスター DMA の使用
 
 
 

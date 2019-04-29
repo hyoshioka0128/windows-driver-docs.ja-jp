@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35f74e692a08aa71c20bc6977a874b392a9b5c9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387115"
 ---
 # <a name="using-resource-dlls-in-a-minidriver"></a>ミニドライバーでリソース DLL を使用する
 

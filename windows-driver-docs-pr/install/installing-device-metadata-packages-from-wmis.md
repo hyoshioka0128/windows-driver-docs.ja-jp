@@ -5,11 +5,11 @@ ms.assetid: e2466b8a-c9c7-4d0d-9ce7-4648c83fc272
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bb0f72b149433dfa980fa4d0135dae4e09b28d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387220"
 ---
 # <a name="installing-device-metadata-packages-from-wmis"></a>WMIS からのデバイス メタデータ パッケージのインストール
 
@@ -22,7 +22,7 @@ ms.locfileid: "56570721"
 
 デバイス メタデータ パッケージを提出する場合は[Windows Quality Online Services (Winqual)](https://go.microsoft.com/fwlink/p/?linkid=62651)送信するとき、[ドライバー パッケージ](driver-packages.md)を[ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)では、デジタル署名、パッケージは Windows 7 および Windows の以降のバージョンを実行しているコンピューターで DMRC によって行われるダウンロード要求の使用可能 WMIS になります。
 
-**重要な**  Oem が WMIS を介してのみ、デバイス メタデータ パッケージを配布することを強くお勧めします。 デバイス メタデータの配布パッケージの WMIS サポートを通じて、*ハードウェア最初*インストール シナリオです。 このシナリオで、ドライバーの前に、新しいデバイスがインストールされているし、デバイスのデバイスに固有のソフトウェアがインストールされています。 このシナリオの詳細については、[ハードウェア最初インストール](hardware-first-installation.md)を参照してください。
+**重要な**  Oem が WMIS を介してのみ、デバイス メタデータ パッケージを配布することを強くお勧めします。 デバイス メタデータの配布パッケージの WMIS サポートを通じて、*ハードウェア最初*インストール シナリオです。 このシナリオで、ドライバーの前に、新しいデバイスがインストールされているし、デバイスのデバイスに固有のソフトウェアがインストールされています。 このシナリオの詳細については、次を参照してください。[ハードウェア最初インストール](hardware-first-installation.md)します。
 
  
 

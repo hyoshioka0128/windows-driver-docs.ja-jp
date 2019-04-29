@@ -1,6 +1,6 @@
 ---
-title: ControllerControl ルーチンの設定
-description: ControllerControl ルーチンの設定
+title: ControllerControl ルーチンのセットアップ
+description: ControllerControl ルーチンのセットアップ
 ms.assetid: 007247c1-b51e-4677-9a46-78ff9f1c8996
 keywords:
 - コント ローラー オブジェクトの WDK カーネル、ControllerControl ルーチンを記述
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 583933d5c005b78b87c3fd81364f95df11ef7379
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391086"
 ---
-# <a name="setting-up-controllercontrol-routines"></a>ControllerControl ルーチンの設定
+# <a name="setting-up-controllercontrol-routines"></a>ControllerControl ルーチンのセットアップ
 
 
 

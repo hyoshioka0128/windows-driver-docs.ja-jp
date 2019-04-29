@@ -13,18 +13,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f89c9240993851680fa20d755447edbc3b0a00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388787"
 ---
 # <a name="hid-transports"></a>HID トランスポート
 
 
 HID トランスポートが Windows の現在と以前のバージョンでサポートされています。
 
-| [トランスポート]    | インボックス ミニドライバー | バージョン               |  説明 |
+| [トランスポート]    | インボックス ミニドライバー | バージョン               |  メモ |
 | ------------ | ----------------- | --------------------- | ---------- | 
 | USB          | Hidusb.sys        | Windows 7 以降。  | USB HID 1.11 + のサポートは、Windows 2000 年代の Windows オペレーティング システムで提供されます。       |
 | Bluetooth    | Hidbth.sys        | Windows 7 以降。  | Bluetooth HID 1.1 + のサポートは、Windows Vista までさかのぼる Windows オペレーティング システムで提供されます。 |

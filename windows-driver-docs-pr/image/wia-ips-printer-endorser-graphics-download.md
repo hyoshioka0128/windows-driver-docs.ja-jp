@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bedbdc2d186a4352c7aaa19bbc29861fbf38220
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388773"
 ---
 # <a name="wiaipsprinterendorsergraphicsdownload"></a>WIA\_IP\_プリンター\_裏書き\_グラフィックス\_ダウンロード
 
@@ -33,9 +33,9 @@ ms.locfileid: "56574914"
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このプロパティの現在の値が 0 以外の値 (True) に設定されている場合に WIA アプリケーションのクライアントによってダウンロードされたイメージ データを転送する WIA ミニドライバーをサポートしていることを意味します。 転送ファイルの形式は、 [ **WIA\_IPA\_形式**](wia-ipa-format.md)と[ **WIA\_IPA\_TYMED**](wia-ipa-tymed.md)同じ・ インプリント ・/裏書き項目で実装されるプロパティ。

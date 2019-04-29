@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_TRANSPORT_HEADER_OFFSET ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 56c52694a757b3eb5dbf37d4725e3151143603c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387889"
 ---
 # <a name="oidgentransportheaderoffset"></a>OID\_GEN\_トランスポート\_ヘッダー\_オフセット
 
@@ -26,13 +26,13 @@ OID、セットとして\_GEN\_トランスポート\_ヘッダー\_OID のオ�
 (省略可能)。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-(省略可能)。
+任意。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-(省略可能)。
+任意。
 
 <a name="remarks"></a>注釈
 -------

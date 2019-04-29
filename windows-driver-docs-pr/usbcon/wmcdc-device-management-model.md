@@ -1,14 +1,14 @@
 ---
-Description: WMCDC Device Management Model
+Description: WMCDC デバイスの管理モデル
 title: WMCDC デバイスの管理モデル
 ms.localizationpriority: medium
 ms.date: 01/07/2019
 ms.openlocfilehash: f5a884549c6e16184c8752637743a6ac8e6acddb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389116"
 ---
 # <a name="wmcdc-device-management-model"></a>WMCDC デバイスの管理モデル
 
@@ -28,7 +28,7 @@ USB WMCDC デバイスの管理モデル (DMM) インターフェイスのコレ
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>参照</p></td>
+<td><p>リファレンス</p></td>
 <td><p><em>ユニバーサル シリアル バス CDC サブクラス仕様のワイヤレス モバイル通信デバイス</em>、バージョン 1.0 では、セクション 6.6 します。</p></td>
 </tr>
 <tr class="even">

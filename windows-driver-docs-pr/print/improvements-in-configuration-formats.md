@@ -1,17 +1,17 @@
 ---
-title: 構成の形式での機能強化
+title: 構成形式の改善
 description: カウントおよび句読点の代替コピーを制御することに、v4 プリンター ドライバーで書式の設定が改善されました。
 ms.assetid: 66FC6BAF-26DD-4E18-B8C9-0BF494346917
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c02b747e7f86229cea1fb608cf23178d474553
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390578"
 ---
-# <a name="improvements-in-configuration-formats"></a>構成の形式での機能強化
+# <a name="improvements-in-configuration-formats"></a>構成形式の改善
 
 
 カウントおよび句読点の代替コピーを制御することに、v4 プリンター ドライバーで書式の設定が改善されました。

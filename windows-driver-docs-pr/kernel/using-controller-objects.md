@@ -1,6 +1,6 @@
 ---
-title: コント ローラーのオブジェクトを使用します。
-description: コント ローラーのオブジェクトを使用します。
+title: コントローラー オブジェクトの使用
+description: コントローラー オブジェクトの使用
 ms.assetid: 74b6685a-018f-4cb1-9332-424631aad85c
 keywords:
 - I/O WDK カーネルでは、コント ローラー オブジェクト
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f677c7577d2aeccca06f341a7215143dca818229
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387409"
 ---
-# <a name="using-controller-objects"></a>コント ローラーのオブジェクトを使用します。
+# <a name="using-controller-objects"></a>コントローラー オブジェクトの使用
 
 
 

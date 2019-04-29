@@ -1,17 +1,17 @@
 ---
-title: 関数またはフィルター ドライバーの電源投入シーケンス
-description: 関数またはフィルター ドライバーの電源投入シーケンス
+title: 機能ドライバーまたはフィルター ドライバーの電源投入シーケンス
+description: 機能ドライバーまたはフィルター ドライバーの電源投入シーケンス
 ms.assetid: 3E904641-A1E2-400C-A201-2D1D2D359657
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4d6093a9a544bf21eb829425f70374886985f41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390057"
 ---
-# <a name="power-up-sequence-for-a-function-or-filter-driver"></a>関数またはフィルター ドライバーの電源投入シーケンス
+# <a name="power-up-sequence-for-a-function-or-filter-driver"></a>機能ドライバーまたはフィルター ドライバーの電源投入シーケンス
 
 
 次の図は、図の下部にあるデバイスが挿入された状態から開始、完全に operational 状態へのデバイスの追加時に、フレームワーク、KMDF 関数またはフィルター ドライバーのイベントのコールバック関数を呼び出す順序を示します。

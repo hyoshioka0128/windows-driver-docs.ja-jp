@@ -17,11 +17,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a160240c166a36f15ef9dd7a19206d1e784f2cce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389999"
 ---
 # <a name="cpixelcomputesurfaceoffset-method"></a>CPixel::ComputeSurfaceOffset メソッド
 
@@ -63,7 +63,7 @@ static void ComputeSurfaceOffset(
 
 D3DLOCKED の詳細については\_RECT、D3DSURFACE\_DESC、および四角形, は、Microsoft DirectX SDK ドキュメントを参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

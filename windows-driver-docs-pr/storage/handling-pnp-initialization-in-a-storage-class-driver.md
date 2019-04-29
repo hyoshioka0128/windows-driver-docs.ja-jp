@@ -1,6 +1,6 @@
 ---
-title: ストレージ クラス ドライバーの PnP の初期化を処理します。
-description: ストレージ クラス ドライバーの PnP の初期化を処理します。
+title: 記憶域クラス ドライバーでの PnP 初期化の処理
+description: 記憶域クラス ドライバーでの PnP 初期化の処理
 ms.assetid: 472e52c8-a214-418b-a82f-fd4a9bcc894e
 keywords:
 - 記憶域クラス ドライバー WDK、PnP
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3325e8fe680e9a34fd46bd1b343212f180c920b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390904"
 ---
-# <a name="handling-pnp-initialization-in-a-storage-class-driver"></a>ストレージ クラス ドライバーの PnP の初期化を処理します。
+# <a name="handling-pnp-initialization-in-a-storage-class-driver"></a>記憶域クラス ドライバーでの PnP 初期化の処理
 
 
 ## <span id="ddk_handling_pnp_initialization_in_a_storage_class_driver_kg"></span><span id="DDK_HANDLING_PNP_INITIALIZATION_IN_A_STORAGE_CLASS_DRIVER_KG"></span>

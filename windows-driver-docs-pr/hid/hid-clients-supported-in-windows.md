@@ -5,18 +5,18 @@ description: ''
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22da4c313bc8301660dc9d0ee10f7a8250685347
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388853"
 ---
 # <a name="hid-clients-supported-in-windows"></a>Windows でサポートされる HID クライアント
 
 
-Windows では、次の最上位のコレクションをサポートします。
+Windows では、次に示す最上位のコレクションがサポートされます。
 
-| **使用状況 ページ** | **使用状況** | **Windows 7** | **Windows 8** | **Windows 10** | **メモ** | **アクセス モード** |
+| **使用状況 ページ** | **使用方法** | **Windows 7** | **Windows 8** | **Windows 10** | **メモ** | **アクセス モード** |
 | --- | --- | --- | --- | --- | --- | --- |
 | 0x0001 | 0x0001、0x0002 | 〇 | 〇 | 〇 | マウスのクラス ドライバーとドライバー | ［排他］ |
 | 0x0001 | 0x0004 - 0x0005 | 〇 | 〇 | 〇 | ゲーム コント ローラー | 共有 |
@@ -37,7 +37,7 @@ Windows では、次の最上位のコレクションをサポートします。
 
 共有モードと、複数のアプリケーションをデバイスにアクセスできます。 たとえば、デバイスの機能の照会および統計情報を取得するバーコード スキャナーを複数のアプリケーションにアクセスできます。 ただし、バーコード スキャナーからデコードされたデータの取得は、排他モードで実行されます。 使用法がによって定義されている、 [USB HID POS スキャナーの標準仕様](https://go.microsoft.com/fwlink/?linkid=830661)します。 
 
-* 複数。センサーの使用から 0x00 – 0 xff は、さまざまな目的で分割されます。 たとえば 0x10 には、生体認証センサー; ことを示します。0x40 では、光センサーを示します。 それらの割り当ては連続していません。 センサーの使用法の一覧で、[レビュー要求 39: 使用状況テーブルの HID センサー ページ](https://go.microsoft.com/fwlink/?linkid=830659)を参照してください。 Windows でサポートされているセンサーの使用について[HID センサーの使用](https://go.microsoft.com/fwlink/?linkid=830658)します。
+* 複数。センサーの使用から 0x00 – 0 xff は、さまざまな目的で分割されます。 たとえば 0x10 には、生体認証センサー; ことを示します。0x40 では、光センサーを示します。 それらの割り当ては連続していません。 センサーの使用法の一覧で、次を参照してください。[レビュー要求 39: 使用状況テーブルの HID センサー ページ](https://go.microsoft.com/fwlink/?linkid=830659)します。 Windows でサポートされているセンサーの使用について[HID センサーの使用](https://go.microsoft.com/fwlink/?linkid=830658)します。
 
  
 

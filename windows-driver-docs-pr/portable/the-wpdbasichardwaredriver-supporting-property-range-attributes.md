@@ -1,16 +1,16 @@
 ---
-Description: Supporting the Property Range Attributes
-title: 範囲のプロパティ属性をサポートしています。
+Description: プロパティ範囲属性のサポート
+title: プロパティ範囲属性のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 692759b656b8e2cfd10c8a29910492772413b39c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387303"
 ---
-# <a name="supporting-the-property-range-attributes"></a>範囲のプロパティ属性をサポートしています。
+# <a name="supporting-the-property-range-attributes"></a>プロパティ範囲属性のサポート
 
 
 サンプル ドライバーは、2 つのプロパティをサポートしています。 更新間隔 (センサー\_更新\_間隔) と現在のセンサーの読み取り (センサー\_読み取り)。 これらの各プロパティには、一般的な属性 (探し、削除、読み取り可能な書き込み可能なおよびなど) のセットをサポートしています。 さらに、これらのプロパティは、特定の範囲の属性 (最小、最大、およびステップ値) をサポートします。

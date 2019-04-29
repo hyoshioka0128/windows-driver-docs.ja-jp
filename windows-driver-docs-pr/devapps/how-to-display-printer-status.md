@@ -5,18 +5,18 @@ ms.assetid: 91AD1B3B-0D0B-4FB6-8A0F-4943143D8FCE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8770e6e44f9433c009bcac80e5b26c2e13d1b76
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387926"
 ---
 # <a name="how-to-display-printer-status-in-a-uwp-device-app"></a>UWP アプリのデバイスのプリンターのステータスを表示する方法
 
 
-Windows 8.1 では、ユーザーは、UWP デバイス アプリの最新の UI から、プリンターの状態を確認できます。 このトピックでは、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)プリンターの状態を照会し、表示する方法を示すサンプル。 一般に UWP デバイス アプリの詳細について、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+Windows 8.1 では、ユーザーは、UWP デバイス アプリの最新の UI から、プリンターの状態を確認できます。 このトピックでは、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)プリンターの状態を照会し、表示する方法を示すサンプル。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
-C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)使用して、 **InkLevel.xaml**ページ (この例では、インク レベル) ではプリンターの状態を取得し、それを表示する方法を示します。 印刷のヘルパー クラスは、デバイス コンテキスト (IPrinterExtensionContext) を作成し、デバイス クエリの実行に使用されます。 **PrinterHelperClass.cs**ファイルは、 **DeviceAppForPrintersLibrary**プロジェクトで定義されている Api を使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)を参照してください。
+C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)使用して、 **InkLevel.xaml**ページ (この例では、インク レベル) ではプリンターの状態を取得し、それを表示する方法を示します。 印刷のヘルパー クラスは、デバイス コンテキスト (IPrinterExtensionContext) を作成し、デバイス クエリの実行に使用されます。 **PrinterHelperClass.cs**ファイルは、 **DeviceAppForPrintersLibrary**プロジェクトで定義されている Api を使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、次を参照してください。、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)します。
 
 **注**  このトピックで示すコード例に基づいています、C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)サンプル。 このサンプルも JavaScript および C++ で使用できます。 C++ は COM を直接アクセスできるため、C++ のバージョン サンプルにはが含まれていないことコード ライブラリ プロジェクトに注意してください。 コードの最新バージョンを参照するサンプルをダウンロードします。
 
@@ -27,7 +27,7 @@ C#のバージョン、[設定と印刷通知](https://go.microsoft.com/fwlink/p
 
 開始する前に。
 
-1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)を参照してください。
+1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、次を参照してください。[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)します。
 2.  開発用 PC の設定を取得します。 参照してください[Getting started](getting-started.md)については、ツールをダウンロードして開発者アカウントを作成します。
 3.  アプリをストアに関連付けます。 このトピックの「[手順 1:UWP デバイスのアプリ作成](step-1--create-a-uwp-device-app.md)についてです。
 4.  アプリに関連付けているプリンター用のデバイス メタデータを作成します。 参照してください[手順 2。デバイス メタデータを作成する](step-2--create-device-metadata.md)の詳細についてはします。

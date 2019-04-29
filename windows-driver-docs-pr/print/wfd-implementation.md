@@ -5,11 +5,11 @@ ms.assetid: 03266F8F-4C91-49E7-9CAF-2D08AF5E3E18
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9acae4bdd2577d02567bd9feb027ae9a18def63c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326037"
 ---
 # <a name="wi-fi-direct-printing-implementation"></a>Wi-Fi Direct 印刷の実装
 
@@ -21,7 +21,7 @@ ms.locfileid: "57464034"
 
 -   デバイスが垂直方向のペアをサポートし、WPS メッセージ ("を実装する垂直ペアリング データ Blob"以下で説明されている形式) で関連する DPWS (WSD) データを送信する必要があります。
 -   すべての論理デバイスを物理デバイスでは、PNP-X 対応の拡張機能内 PNP-X 対応のコンテナーと同じ ID を使用する必要があります。
-    -   PNP-X 対応のコンテナーの Id のネットワーク接続されているデバイスの実装の詳細については、[コンテナー Id の概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)を参照してください。
+    -   PNP-X 対応のコンテナーの Id のネットワーク接続されているデバイスの実装の詳細については、次を参照してください。[コンテナー Id の概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)します。
     -   PNP-X 対応の拡張機能の概要については、次を参照してください、 [PnP-x:。プラグ アンド プレイ Extensions for Windows 仕様](https://msdn.microsoft.com/windows/hardware/gg463082)します。
 
 WFD コンテナー ID は、プリンターの UUID を照合するため、PNP-X 対応のコンテナーの ID は、デバイスのメタデータでは必要ありません。 ただし、デバイスがデバイス メタデータを PNP-X 対応のメタデータをサポートし、PNP-X 対応のコンテナー ID をデバイスのメタデータで PNP-X 対応のメタデータの一部として提供することをまだお勧めします。 このコンテナーの ID が、WFD コンテナーの ID と一致する必要があります。

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14ee22245d287a47508005fdfed2353e8e078b7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390549"
 ---
 # <a name="kspropertybdapinid"></a>KSPROPERTY\_BDA\_PIN\_ID
 
@@ -51,7 +51,7 @@ ms.locfileid: "56552255"
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>ULONG</p></td>

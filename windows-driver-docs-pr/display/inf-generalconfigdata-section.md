@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d374a91642d4eef7e36bd05e1b3472ef16735762
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325046"
 ---
 # <a name="inf-generalconfigdata-section"></a>INF GeneralConfigData セクション
 
@@ -37,7 +37,7 @@ ms.locfileid: "56557287"
 <span id="MaximumNumberOfDevices_n"></span><span id="maximumnumberofdevices_n"></span><span id="MAXIMUMNUMBEROFDEVICES_N"></span>**MaximumNumberOfDevices**=*n*  
 (PCI で列挙され、ミニポート ドライバーで駆動型) としてビデオ デバイスの数が、システムに存在する必要がありますを指定します。 かどうかにこのエントリを指定する必要がありますも指定する、 **MaximumDeviceMemoryConfiguration**エントリ。 このエントリを有効にするには、再起動が必要な場合があります。 デバイス マネージャーで、デバイスの状態をチェックして再起動する必要があるかどうかを指定できます。
 
-1 つ以上のモニターをサポートする方法の詳細については、[デュアル ビュー (Windows 2000 モデル) をサポートしている](supporting-dualview--windows-2000-model-.md)と[、ディスプレイ ドライバーでのマルチ モニター サポート](multiple-monitor-support-in-the-display-driver.md)を参照してください。
+1 つ以上のモニターをサポートする方法の詳細については、次を参照してください。[デュアル ビュー (Windows 2000 モデル) をサポートしている](supporting-dualview--windows-2000-model-.md)と[、ディスプレイ ドライバーでのマルチ モニター サポート](multiple-monitor-support-in-the-display-driver.md)します。
 
 
 

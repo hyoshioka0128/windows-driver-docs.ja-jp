@@ -1,17 +1,17 @@
 ---
-title: UMDF ドライバーでデバイスのプールを使用します。
-description: UMDF ドライバーでデバイスのプールを使用します。
+title: UMDF ドライバーでデバイス プールの使用
+description: UMDF ドライバーでデバイス プールの使用
 ms.assetid: EC36CB33-3877-445B-8AC6-1D41E6397FF9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 310ead906064f940538a9135fd6842dd03457d01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327006"
 ---
-# <a name="using-device-pooling-in-umdf-drivers"></a>UMDF ドライバーでデバイスのプールを使用します。
+# <a name="using-device-pooling-in-umdf-drivers"></a>UMDF ドライバーでデバイス プールの使用
 
 
 ## <a name="user-mode-driver-framework-umdf-versions-111-and-20"></a>ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1.11 および 2.0
@@ -29,7 +29,7 @@ ms.locfileid: "56551995"
 
 ドライバーで使用する場合[ダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff554413)を設定する必要があります**UmdfHostProcessSharing**に**ProcessSharingDisabled**します。 それ以外の場合、ドライバーは、開始ができません。 場合**WdfDeviceIoBufferedOrDirect**が選択されているデバイスがプールされている、フレームワークは、バッファーにアクセスする方法を変更し、 [I/O バッファー](https://msdn.microsoft.com/library/windows/hardware/ff554413)します。 場合**WdfDeviceIoBufferedOrDirect**が選択されていると、デバイスがプールされていない、フレームワークがダイレクト I/O をバッファーへのアクセス方法を変更します。
 
-バッファーへのアクセス方法を選択するには、ドライバーを呼び出す必要があります、 [ **IWDFDeviceInitialize2::SetIoTypePreference** ](https://msdn.microsoft.com/library/windows/hardware/ff556969)メソッドからその[ **IDriverEntry::OnDeviceAdd**](https://msdn.microsoft.com/library/windows/hardware/ff554896)コールバック関数。 アクセス方法については、[UMDF-Based ドライバーでのデータ バッファーへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff554413)を参照してください。
+バッファーへのアクセス方法を選択するには、ドライバーを呼び出す必要があります、 [ **IWDFDeviceInitialize2::SetIoTypePreference** ](https://msdn.microsoft.com/library/windows/hardware/ff556969)メソッドからその[ **IDriverEntry::OnDeviceAdd**](https://msdn.microsoft.com/library/windows/hardware/ff554896)コールバック関数。 アクセス方法については、次を参照してください。 [UMDF-Based ドライバーでのデータ バッファーへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff554413)します。
 
 ## <a name="umdf-versions-19-and-earlier"></a>UMDF バージョン 1.9 以降
 

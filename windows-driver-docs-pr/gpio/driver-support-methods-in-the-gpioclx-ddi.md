@@ -5,11 +5,11 @@ ms.assetid: 179EFB06-6122-4EB0-B9F8-D5A3089D75EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c88faf42739c97e2019abcdc620a688c7f8e5d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326162"
 ---
 # <a name="driver-support-methods-in-the-gpioclx-ddi"></a>GpioClx DDI のドライバー サポート メソッド
 
@@ -45,7 +45,7 @@ GpioClx を初期化するためには、GPIO コント ローラーのドライ
 
 これらの関数は、GpioClx DIRQL またはパッシブのいずれかの実行に割り込みサービス ルーチン (ISR) から呼び出される\_GPIO コント ローラーのハードウェア レジスタは、メモリ マップできるかどうかに応じて、レベル。
 
-*クライアント\_QueryControllerBasicInformation*関数の形式でデバイス情報を提供する[**クライアント\_コント ローラー\_BASIC\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh439358)構造体。 場合、 **MemoryMappedController**でフラグ ビットが設定されて、**フラグ**DIRQL で上記のリストをこの構造体のメンバーは、GpioClx ISR 呼び出すコールバック関数。 それ以外の場合、パッシブでが ISR 呼び出すすべてのドライバーによって実装されるコールバック関数\_レベル。 このフラグのビットの詳細については、[Interrupt-Related コールバック](https://msdn.microsoft.com/library/windows/hardware/hh698260)を参照してください。
+*クライアント\_QueryControllerBasicInformation*関数の形式でデバイス情報を提供する[**クライアント\_コント ローラー\_BASIC\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh439358)構造体。 場合、 **MemoryMappedController**でフラグ ビットが設定されて、**フラグ**DIRQL で上記のリストをこの構造体のメンバーは、GpioClx ISR 呼び出すコールバック関数。 それ以外の場合、パッシブでが ISR 呼び出すすべてのドライバーによって実装されるコールバック関数\_レベル。 このフラグのビットの詳細については、次を参照してください。 [Interrupt-Related コールバック](https://msdn.microsoft.com/library/windows/hardware/hh698260)します。
 
 GpioClx はパッシブで実行されるドライバーによって実装されるコールバック関数への呼び出しを自動的に同期\_GpioClx ISR から呼び出されていないレベルとは したがって、これらの関数の 1 つだけを一度に実行できます。 ただし、GpioClx でこれらパッシブが自動的に同期されていない\_GpioClx によりその ISR. からのコールバックを使用したレベルのコールバック GPIO コント ローラーのドライバーは、必要な場合、このような同期を明示的に指定する必要があります。
 

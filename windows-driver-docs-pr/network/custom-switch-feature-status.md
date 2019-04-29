@@ -1,17 +1,17 @@
 ---
-title: カスタムのスイッチ機能の状態
-description: カスタムのスイッチ機能の状態
+title: カスタム スイッチ機能の状態
+description: カスタム スイッチ機能の状態
 ms.assetid: 2362EE05-9CC9-451D-80D1-C18CC9274BAB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5efba9e9f5e2dbb0c7731998a1164bdc74feaa34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387396"
 ---
-# <a name="custom-switch-feature-status"></a>カスタムのスイッチ機能の状態
+# <a name="custom-switch-feature-status"></a>カスタム スイッチ機能の状態
 
 
 HYPER-V プラットフォームおよび HYPER-V 拡張可能スイッチのインターフェイスは、拡張可能スイッチには、カスタム状態情報を取得するためのインフラストラクチャを提供します。 この情報と呼ばれる*機能の状態を切り替える*情報。
@@ -61,7 +61,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_CustomSwitchData.mof
 net start vmms
 ```
 
-MOF コンパイラを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)を参照してください。
+MOF コンパイラを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)します。
 
 次の例では、スイッチのデータを取得するカスタム スイッチ機能の状態の定義を使用する方法を示します。 この例では、Fabrikam\_CustomSwitchData MOF クラスを使用して"TestSwitch"という名前のスイッチからスイッチの状態を取得します。 Fabrikam, Inc. の拡張機能では、vSwitch"TestSwitch"が有効になり、123 の状態を返すことができます。
 

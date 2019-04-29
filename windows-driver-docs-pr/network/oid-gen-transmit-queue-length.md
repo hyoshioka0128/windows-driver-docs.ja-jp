@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_TRANSMIT_QUEUE_LENGTH ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: dd17076dfd7b0743409e37e6ad6ad2479a30e5cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387870"
 ---
 # <a name="oidgentransmitqueuelength"></a>OID\_GEN\_送信\_キュー\_長さ
 
@@ -39,7 +39,7 @@ ms.locfileid: "56548913"
 
 クエリでは、常にパケットの合計数現在キューに置かれます数が返されます。 この数は、NDIS ライブラリで要求がキューに未送信の送信を含めることができます。
 
-Oid の統計に関する概要については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。
+Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
 
 <a name="requirements"></a>要件
 ------------

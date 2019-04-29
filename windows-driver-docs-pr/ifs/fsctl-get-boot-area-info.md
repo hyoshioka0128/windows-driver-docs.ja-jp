@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66271f6de4718c69b921fcb2a09a38f1e6fa3469
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393017"
 ---
 # <a name="fsctlgetbootareainfo-control-code"></a>FSCTL\_取得\_ブート\_領域\_情報制御コード
 
@@ -36,7 +36,7 @@ ms.locfileid: "56572957"
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 対象のボリュームのファイル ハンドル**FSCTL\_取得\_ブート\_領域\_情報**ブート情報が取得されます。 このパラメーターが必要とすることはできません**NULL**します。
 
-Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、[ファイルのセキュリティとアクセス権](https://msdn.microsoft.com/library/windows/desktop/aa364399)を参照してください。
+Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、次を参照してください。[ファイルのセキュリティとアクセス権](https://msdn.microsoft.com/library/windows/desktop/aa364399)します。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
 操作の制御コード。 使用**FSCTL\_取得\_ブート\_領域\_情報**この操作にします。

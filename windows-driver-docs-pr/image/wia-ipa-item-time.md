@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c7ccc26e7194a9ecae08e7cb40172f5a53ac6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388779"
 ---
 # <a name="wiaipaitemtime"></a>WIA\_IPA\_項目\_時間
 
@@ -35,7 +35,7 @@ WIA\_IPA\_項目\_時のプロパティには、イメージが最初にキャ�
 
 アクセス権:読み取り/書き込みまたは読み取り専用
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA ミニドライバーを作成し、維持、WIA\_IPA\_項目\_時のプロパティ。 このプロパティは、(これは、Microsoft Windows SDK ドキュメントで説明されている) SYSTEMTIME 構造体の形式で 8 つの WORD 値のベクターとして報告する必要があります。

@@ -1,19 +1,19 @@
 ---
-title: マクロ ブロック コントロール コマンドの構造体の第 3 部
-description: マクロ ブロック コントロール コマンドの構造体の第 3 部
+title: マクロブロック制御コマンド構造の 3 番目の部分
+description: マクロブロック制御コマンド構造の 3 番目の部分
 ms.assetid: 4e378d2f-dbb2-42b6-984e-b231bb806a7c
 keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eeea56bd2286af9295c33655a3d4bb54ed1cb82b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389887"
 ---
-# <a name="third-part-of-macroblock-control-command-structure"></a>マクロ ブロック コントロール コマンドの構造体の第 3 部
+# <a name="third-part-of-macroblock-control-command-structure"></a>マクロブロック制御コマンド構造の 3 番目の部分
 
 
 ## <span id="ddk_third_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_THIRD_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>

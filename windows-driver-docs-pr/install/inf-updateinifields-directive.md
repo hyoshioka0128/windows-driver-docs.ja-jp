@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a9b390b501f20d0d00c59c0c184da33b1e36cae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325992"
 ---
 # <a name="inf-updateinifields-directive"></a>INF UpdateIniFields ディレクティブ
 
@@ -92,7 +92,7 @@ ini-file,ini-section,profile-name[,old-field][,new-field][,flags]
 
 **UpdateIniFields**配布メディアに INI ファイルが存在するために必要ないため、Windows 上のインストール用の INF ファイルにディレクティブが指定されてほとんどありません。 ただし、 **UpdateIniFields**および INF ライター定義のセクションで参照されている正式な構文のステートメントで次のセクションのいずれかのディレクティブが正しく、 [ **AddInterface**](inf-addinterface-directive.md)ディレクティブまたはで参照されている、 [ **InterfaceInstall32** ](inf-interfaceinstall32-section.md)セクション。
 
-各*update-section inifields*名は、INF ファイルに一意である必要があります。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+各*update-section inifields*名は、INF ファイルに一意である必要があります。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 によって参照されるセクションとは異なり、 [ **UpdateInis** ](inf-updateinis-directive.md)ディレクティブによって参照されるセクション、 **UpdateIniFields**置換、追加、または既存の INI ファイル内の行の部分を削除します。特定の行の値全体に影響を与えるのではなく行です。 少なくとも 1 つの*old-field*や*新しいフィールド*値は、各セクションのエントリで指定する必要があります。
 

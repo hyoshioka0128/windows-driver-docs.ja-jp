@@ -1,6 +1,6 @@
 ---
-title: ドライバー スタックの開始
-description: ドライバー スタックの開始
+title: ドライバー スタックの起動
+description: ドライバー スタックの起動
 ms.assetid: 316de69e-38e8-4ac6-83c5-5d13090ee6d5
 keywords:
 - ドライバー スタックの WDK ネットワーク、開始
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e087559610200cb3b95cc807df2ee0f57a0d9b03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390652"
 ---
-# <a name="starting-a-driver-stack"></a>ドライバー スタックの開始
+# <a name="starting-a-driver-stack"></a>ドライバー スタックの起動
 
 
 
@@ -52,7 +52,7 @@ ms.locfileid: "56537023"
 
 7.  プロトコル ドライバーの呼び出し、バインド操作を完了する、 [ **NdisCompleteBindAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff561702)関数。
 
-8.  NDIS は、ドライバー スタックを再起動します。 ドライバー スタックの再起動に関する詳細については、[ドライバー スタックの再起動](restarting-a-driver-stack.md)を参照してください。
+8.  NDIS は、ドライバー スタックを再起動します。 ドライバー スタックの再起動に関する詳細については、次を参照してください。[ドライバー スタックの再起動](restarting-a-driver-stack.md)します。
 
  
 

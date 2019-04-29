@@ -1,6 +1,6 @@
 ---
 title: ビデオのミニポート ドライバーのデバイスの拡張機能 (XDDM)
-description: ビデオのミニポート ドライバーのデバイスの拡張機能 (Windows 2000 モデル)
+description: ビデオのミニポート ドライバーのデバイス拡張機能 (Windows 2000 モデル)
 ms.assetid: 4d7841d1-39e2-4bdf-b79b-3feb363a0fe5
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、デバイスの拡張機能
@@ -11,13 +11,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 017bc45c541a37a5794df40a5c2c761e5e3c4336
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389646"
 ---
-# <a name="video-miniport-drivers-device-extension-windows-2000-model"></a>ビデオのミニポート ドライバーのデバイスの拡張機能 (Windows 2000 モデル)
+# <a name="video-miniport-drivers-device-extension-windows-2000-model"></a>ビデオのミニポート ドライバーのデバイス拡張機能 (Windows 2000 モデル)
 
 
 ## <span id="ddk_video_miniport_driver_s_device_extension_windows_2000_model__gg"></span><span id="DDK_VIDEO_MINIPORT_DRIVER_S_DEVICE_EXTENSION_WINDOWS_2000_MODEL__GG"></span>

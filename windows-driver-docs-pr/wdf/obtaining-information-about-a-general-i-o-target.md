@@ -1,6 +1,6 @@
 ---
-title: 一般的な I/O のターゲットに関する情報を取得します。
-description: 一般的な I/O のターゲットに関する情報を取得します。
+title: 一般 I/O ターゲットに関する情報の取得
+description: 一般 I/O ターゲットに関する情報の取得
 ms.assetid: 70ae920e-de2d-4014-bae4-74058b26e7c0
 keywords:
 - 一般的な I/O に関する WDK KMDF、情報をターゲットします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf5d87c4e59010fd69377ca112233415028d816f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390129"
 ---
-# <a name="obtaining-information-about-a-general-io-target"></a>一般的な I/O のターゲットに関する情報を取得します。
+# <a name="obtaining-information-about-a-general-io-target"></a>一般 I/O ターゲットに関する情報の取得
 
 
 I/O ターゲットに関する情報を取得するには、ドライバーは、I/O のターゲット オブジェクトを定義する次のメソッドを呼び出すことができます。

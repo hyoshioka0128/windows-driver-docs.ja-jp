@@ -1,6 +1,6 @@
 ---
-title: バッファー内の I/O を使用して DispatchReadWrite
-description: バッファー内の I/O を使用して DispatchReadWrite
+title: バッファー付き I/O を使用した DispatchReadWrite
+description: バッファー付き I/O を使用した DispatchReadWrite
 ms.assetid: bb8ce47d-5722-4050-9492-bec154744597
 keywords:
 - DispatchReadWrite ルーチン
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4d031a1d9a4b8dcaa405de4fde95a3e933ed550
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387193"
 ---
-# <a name="dispatchreadwrite-using-buffered-io"></a>バッファー内の I/O を使用して DispatchReadWrite
+# <a name="dispatchreadwrite-using-buffered-io"></a>バッファー付き I/O を使用した DispatchReadWrite
 
 
 

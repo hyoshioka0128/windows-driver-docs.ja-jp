@@ -1,5 +1,5 @@
 ---
-title: Windows 8 のディスプレイ ドライバー (WDDM 1.2) の新機能については
+title: Windows 8 ディスプレイ ドライバー (WDDM 1.2) の新機能
 ms.assetid: E2EE9B0A-B9EA-4073-ACF0-2B8CC00760FC
 description: Windows 8 の新機能では、ドライバーを表示します。
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15c66765571f261dbbee3015d241574b4b736127
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391145"
 ---
-# <a name="whats-new-for-windows-8-display-drivers-wddm-12"></a>Windows 8 のディスプレイ ドライバー (WDDM 1.2) の新機能については
+# <a name="whats-new-for-windows-8-display-drivers-wddm-12"></a>Windows 8 ディスプレイ ドライバー (WDDM 1.2) の新機能
 
 
 Windows 8 では、Windows Display Driver Model (WDDM) のバージョン 1.2 で導入されました。 WDDM 1.2 には、マイクロソフトの Direct3D バージョン 11.1 もサポートしています。 機能には、独立系ハードウェア ベンダー (Ihv) およびハードウェア要件のガイダンスについては、これらのトピックを参照してください。

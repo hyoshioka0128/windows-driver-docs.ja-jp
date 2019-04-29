@@ -1,17 +1,17 @@
 ---
-title: WIA ドライバーのプロセス外の COM オブジェクト
-description: WIA ドライバーのプロセス外の COM オブジェクト
+title: WIA ドライバーのアウト プロセス COM オブジェクト
+description: WIA ドライバーのアウト プロセス COM オブジェクト
 ms.assetid: 0b08652e-36ae-46f8-8915-7f2bb45df05c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f0ff71301ac85c706fee138727ddb17aa526a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392625"
 ---
-# <a name="out-of-process-com-objects-for-wia-drivers"></a>WIA ドライバーのプロセス外の COM オブジェクト
+# <a name="out-of-process-com-objects-for-wia-drivers"></a>WIA ドライバーのアウト プロセス COM オブジェクト
 
 
 

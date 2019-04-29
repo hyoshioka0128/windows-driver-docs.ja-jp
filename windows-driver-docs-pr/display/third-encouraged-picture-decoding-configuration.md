@@ -1,6 +1,6 @@
 ---
-title: 3 番目のことをお勧めの画像をデコード構成
-description: 3 番目のことをお勧めの画像をデコード構成
+title: 3 番目の推奨される画像デコード構成
+description: 3 番目の推奨される画像デコード構成
 ms.assetid: 9f905030-9fc9-4a5f-8cf5-a36c7861be52
 keywords:
 - 圧縮の画像セット WDK DirectX VA のデコード
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5e5c5ed5e55cc7efd9f3e86c4cf1fbce0bce12a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389886"
 ---
-# <a name="third-encouraged-picture-decoding-configuration"></a>3 番目のことをお勧めの画像をデコード構成
+# <a name="third-encouraged-picture-decoding-configuration"></a>3 番目の推奨される画像デコード構成
 
 
 ## <span id="ddk_third_encouraged_picture_decoding_configuration_gg"></span><span id="DDK_THIRD_ENCOURAGED_PICTURE_DECODING_CONFIGURATION_GG"></span>
@@ -31,18 +31,18 @@ ms.locfileid: "56529877"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>bConfigMBcontrolRasterOrder</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigResidDiffHost</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bConfigResidDiffAccelerator</strong></p></td>

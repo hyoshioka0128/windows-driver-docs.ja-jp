@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a7b838bb9a7a21ea1ec413ab073f4a42f2323d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392003"
 ---
 # <a name="wiadpcpictheight"></a>WIA\_DPC\_PICT\_高さ
 
@@ -40,7 +40,7 @@ WIA\_DPC\_PICT\_高さのプロパティには、新しくキャプチャした�
 
 WIA の有効な値の一覧\_DPC\_PICT\_HEIGHT プロパティには、一対一で対応の有効な値の一覧で、 [ **WIA\_DPC\_PICT\_幅**](wia-dpc-pict-width.md)プロパティ。 個々 の幅と高さは直線的に設定可能で相互に直交場合は、範囲として表現できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fb648da3f8c65306a287587fb73c1e57fdde264
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324997"
 ---
 # <a name="initializing-a-san-service-provider"></a>SAN サービス プロバイダーの初期化
 
@@ -39,7 +39,7 @@ Windows 読み込み Windows Sockets では、アプリケーションのプロ�
 
 4.  Windows Sockets スイッチが使用するための Windows Sockets サービス プロバイダー インターフェイス (SPI) を拡張する SAN サービス プロバイダーのエントリ ポイント関数へのポインターを取得する必要がありますと San です。 Windows Sockets スイッチ、SAN サービス プロバイダーの呼び出しのこれらの関数の拡張を取得する[ **WSPIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff566296)関数を渡す、SIO\_取得\_拡張機能\_関数\_ポインター コマンド コード値を持つが次のいずれかを識別する GUID とは、関数を拡張します。
 
-    これらの関数の詳細については、[Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)を参照してください。
+    これらの関数の詳細については、次を参照してください。 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)します。
 
 5.  スイッチを作成できます」の説明に従って、スレッドも非ブロッキング リスニング ソケットをサポートする接続要求、 [SAN 接続の設定](setting-up-a-san-connection.md)します。
 

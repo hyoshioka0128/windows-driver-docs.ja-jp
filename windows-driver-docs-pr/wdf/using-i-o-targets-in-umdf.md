@@ -1,6 +1,6 @@
 ---
-title: UMDF で I/O ターゲットを使用します。
-description: UMDF で I/O ターゲットを使用します。
+title: UMDF での I/O ターゲットの使用
+description: UMDF での I/O ターゲットの使用
 ms.assetid: 5633242c-ffab-4af5-9650-7449395deb6b
 keywords:
 - ユーザー モード ドライバー WDK UMDF、I/O のターゲット
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8ac3b30b27d7c568dcc8cb5395bcfbab6aa028
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327160"
 ---
-# <a name="using-io-targets-in-umdf"></a>UMDF で I/O ターゲットを使用します。
+# <a name="using-io-targets-in-umdf"></a>UMDF での I/O ターゲットの使用
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

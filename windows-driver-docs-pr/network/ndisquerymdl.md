@@ -7,11 +7,11 @@ keywords:
 - Windows Vista 以降のドライバーをネットワーク NdisQueryMdl マクロ
 ms.localizationpriority: medium
 ms.openlocfilehash: 5003880b56cfb2e96bf18d41b7b2e55c2209ae00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392378"
 ---
 # <a name="ndisquerymdl-macro"></a>NdisQueryMdl macro
 

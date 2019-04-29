@@ -1,22 +1,22 @@
 ---
-title: Windows でサポートされている HID トランスポート
-description: Windows では、次のトランスポートをサポートします。
+title: Windows でサポートされる HID トランスポート
+description: Windows では、次のトランスポートがサポートされます。
 ms.assetid: 03B66788-A930-4C18-A019-CA906634DC4C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e70740e3f611510101de9e629397fda1cd2ba28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388789"
 ---
-# <a name="hid-transports-supported-in-windows"></a>Windows でサポートされている HID トランスポート
+# <a name="hid-transports-supported-in-windows"></a>Windows でサポートされる HID トランスポート
 
 
-Windows では、次のトランスポートをサポートします。
+Windows では、次のトランスポートがサポートされます。
 
-| [トランスポート]    | Windows 7 | Windows 8 | 説明                                                                                                 |
+| [トランスポート]    | Windows 7 | Windows 8 | メモ                                                                                                 |
 |--------------|-----------|-----------|-------------------------------------------------------------------------------------------------------|
 | USB          | 〇       | 〇       | USB HID 1.11 + のサポートは、Windows 2000 年代の Windows オペレーティング システムで提供されます。       |
 | Bluetooth    | 〇       | 〇       | Bluetooth HID 1.1 + のサポートは、Windows Vista までさかのぼる Windows オペレーティング システムで提供されます。 |

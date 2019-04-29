@@ -1,6 +1,6 @@
 ---
-title: カーネル モードのビデオ トランスポートを使用してください。
-description: カーネル モードのビデオ トランスポートを使用してください。
+title: カーネル モード ビデオ トランスポートの使用
+description: カーネル モード ビデオ トランスポートの使用
 ms.assetid: 0be84371-f7d5-42bb-b164-80fcf1b58d95
 keywords:
 - 描画カーネル モードのビデオ トランスポート WDK DirectDraw、カーネル モードのビデオ トランスポートについて
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4489f46b0d9ae1db85dfe0abb542f5dfb5870f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388991"
 ---
-# <a name="using-kernel-mode-video-transport"></a>カーネル モードのビデオ トランスポートを使用してください。
+# <a name="using-kernel-mode-video-transport"></a>カーネル モード ビデオ トランスポートの使用
 
 
 ## <span id="ddk_using_kernel_mode_video_transport_gg"></span><span id="DDK_USING_KERNEL_MODE_VIDEO_TRANSPORT_GG"></span>

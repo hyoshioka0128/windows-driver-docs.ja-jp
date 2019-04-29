@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d73cdc5d353ad04f4930ec3b70660ec6f9b4e42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391576"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-pcmciainterfacestandard-interface"></a>PCMCIA 属性のメモリを PCMCIA を使用してアクセス\_インターフェイス\_標準インターフェイス
 
@@ -26,7 +26,7 @@ ms.locfileid: "56531434"
 
 ドライバーを使用できる、 [ **PCMCIA\_変更\_メモリ\_ウィンドウ**](https://msdn.microsoft.com/library/windows/hardware/ff537610) PCMCIA でサポートされているルーチンをインターフェイス\_インターフェイス\_標準的なインターフェイスです。 PCMCIA\_変更\_メモリ\_ウィンドウ PCMCIA のメモリ カードのメモリ ウィンドウの属性を設定します。 [メモリ] ウィンドウは、PCMCIA バス ドライバーによってマップされます。 このルーチンは永続的なウィンドウを提供していないのみ既存のウィンドウの現在の設定を変更しことに注意してください。 さらに、設定が永続的なシステム電源の状態では、変化です。
 
-詳細については、[PCMCIA\_インターフェイス\_メモリ カードの標準的なインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537606)を参照してください。
+詳細については、次を参照してください。 [PCMCIA\_インターフェイス\_メモリ カードの標準的なインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537606)します。
 
  
 

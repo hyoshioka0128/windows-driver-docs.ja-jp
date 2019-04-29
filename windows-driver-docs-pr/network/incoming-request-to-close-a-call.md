@@ -1,19 +1,19 @@
 ---
-title: 受信要求の呼び出しを閉じます
-description: 受信要求の呼び出しを閉じます
+title: 呼び出しを閉じるための着信要求
+description: 呼び出しを閉じるための着信要求
 ms.assetid: ecdcb74d-6151-4e2b-8fe7-95f455f4deb4
 keywords:
 - close の呼び出しを受信した要求の WDK いる CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5093c65717a634b159e8812c4324dc4df6d61c37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327803"
 ---
-# <a name="incoming-request-to-close-a-call"></a>受信要求の呼び出しを閉じます
+# <a name="incoming-request-to-close-a-call"></a>呼び出しを閉じるための着信要求
 
 
 

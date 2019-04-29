@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97833e2dae3f018a93f95e17e1d6684273034f2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393020"
 ---
 # <a name="fsctlfindfilesbysid-control-code"></a>FSCTL\_検索\_ファイル\_BY\_SID 制御コード
 
@@ -26,7 +26,7 @@ FSCTL\_検索\_ファイル\_BY\_SID 制御コード検索ディレクトリに�
 
 ミニフィルター ドライバーの呼び出しは、この操作を実行する[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)の次のパラメーターとファイル システム リダイレクター、および従来のファイル システム フィルター ドライバー呼び出し[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 検索するディレクトリのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。

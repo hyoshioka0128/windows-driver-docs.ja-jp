@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fab398b359d46a8c2147c2d3d67994a236ee4f52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387935"
 ---
 # <a name="plmdebug"></a>PLMDebug
 
 
 PLMDebug.exe は、Windows デバッガーを使用して、プロセスのライフ サイクル管理 (PLM) を実行している Windows アプリをデバッグすることができるツールです。 PLMDebug、中断、再開、および Windows アプリを終了して手動で制御するができます。
 
-**ヒント:**  Windows 10 バージョン 1607 以降では、UWP アプリをデバッグする .createpackageapp など、UWP のコマンドを使用することができます。 詳細については、[WinDbg を使用して UWP アプリのデバッグ](debugging-a-uwp-app-using-windbg.md)を参照してください。
+**ヒント:**  Windows 10 バージョン 1607 以降では、UWP アプリをデバッグする .createpackageapp など、UWP のコマンドを使用することができます。 詳細については、次を参照してください。 [WinDbg を使用して UWP アプリのデバッグ](debugging-a-uwp-app-using-windbg.md)します。
 
  
 

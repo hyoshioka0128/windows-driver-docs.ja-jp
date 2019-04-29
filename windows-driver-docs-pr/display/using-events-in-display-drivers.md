@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c594be9785148f55719ee6e58e2acadff55cd487
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389061"
 ---
 # <a name="using-events-in-display-drivers"></a>ディスプレイ ドライバーでのイベントの使用
 
@@ -79,7 +79,7 @@ GDI は、イベントの種類のサポートを提供します[カーネルの
 
 ビデオ ポート ドライバーには、ビデオのミニポート ドライバーへのイベントのサポートも提供します。 参照してください[ビデオのミニポート ドライバー (Windows 2000 モデル) 内のイベント](events-in-video-miniport-drivers--windows-2000-model-.md)詳細についてはします。
 
-イベントに関するより広範なパースペクティブは、[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)を参照してください。
+イベントに関するより広範なパースペクティブは、次を参照してください。[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)します。
 
  
 

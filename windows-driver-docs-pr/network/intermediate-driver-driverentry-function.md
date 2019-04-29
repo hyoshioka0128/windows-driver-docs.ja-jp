@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4073c7d612756bdbd4535979deb59795089dfced
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391659"
 ---
 # <a name="intermediate-driver-driverentry-function"></a>中間ドライバー DriverEntry 関数
 
@@ -32,11 +32,11 @@ ms.locfileid: "56550209"
 
 3.  呼び出す[ **NdisIMAssociateMiniport** ](https://msdn.microsoft.com/library/windows/hardware/ff562717) NDIS ドライバーのミニポートの上端と下端のプロトコル間の関連付けに通知します。
 
-中間のドライバーを登録する必要があります、 [ *MiniportDriverUnload* ](https://msdn.microsoft.com/library/windows/hardware/ff559378)ハンドラーをアンロードします。 システムが中間のドライバーをアンロードこのアンロード ハンドラーが呼び出されます。 場合[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)失敗した場合、このアンロード ハンドラーは呼び出されません。 代わりに、ドライバーが読み込まれます。 アンロード ハンドラーの詳細については、[中間のドライバーをアンロード](unloading-an-intermediate-driver.md)を参照してください。
+中間のドライバーを登録する必要があります、 [ *MiniportDriverUnload* ](https://msdn.microsoft.com/library/windows/hardware/ff559378)ハンドラーをアンロードします。 システムが中間のドライバーをアンロードこのアンロード ハンドラーが呼び出されます。 場合[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)失敗した場合、このアンロード ハンドラーは呼び出されません。 代わりに、ドライバーが読み込まれます。 アンロード ハンドラーの詳細については、次を参照してください。[中間のドライバーをアンロード](unloading-an-intermediate-driver.md)します。
 
 アンロード ハンドラーを呼び出す必要があります[ **NdisDeregisterProtocolDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff561743)中間ドライバーのプロトコルの一部の登録を解除します。 アンロード ハンドラーでは、ドライバーのプロトコルの部分で使用されるリソースを再割り当てなど、必要なクリーンアップ操作も実行する必要があります。
 
-アンロード、ハンドラーが異なることに注意してください、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数: アンロード ハンドラーが、多くのグローバル スコープとのスコープ、 *MiniportHaltEx*関数特定のミニポート アダプターに制限されています。 中間ドライバーは、状態情報をクリーンアップし、それにバインドされている基になる各ミニポート ドライバーが停止したときにリソースを再割り当てする必要があります。 仮想ミニポートの停止操作を処理する方法の詳細については、[仮想ミニポートを停止する](halting-a-virtual-miniport.md)を参照してください。
+アンロード、ハンドラーが異なることに注意してください、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数: アンロード ハンドラーが、多くのグローバル スコープとのスコープ、 *MiniportHaltEx*関数特定のミニポート アダプターに制限されています。 中間ドライバーは、状態情報をクリーンアップし、それにバインドされている基になる各ミニポート ドライバーが停止したときにリソースを再割り当てする必要があります。 仮想ミニポートの停止操作を処理する方法の詳細については、次を参照してください。[仮想ミニポートを停止する](halting-a-virtual-miniport.md)します。
 
 [*ProtocolUninstall* ](https://msdn.microsoft.com/library/windows/hardware/ff570279)省略可能なアンロード ハンドラーします。 この関数のエントリ ポイントを登録、 *ProtocolCharacteristics*構造に渡す[ **NdisRegisterProtocolDriver**](https://msdn.microsoft.com/library/windows/hardware/ff564520)します。 NDIS 呼び出し*ProtocolUninstall*中間のドライバーをアンインストールするユーザーの要求に応答します。 NDIS 呼び出し[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278) 、バインドされたアダプターごとに 1 回呼び出して NDIS および*ProtocolUninstall*します。 システムが実際にドライバーをアンロードする前に、このハンドラーが呼び出されます。 このタイミングは、すべてのデバイス オブジェクト、またはアンロード ハンドラーに登録されている呼び出し元からそれ以外の場合、システムを妨げる可能性のあるその他のリソースを解放する機会を提供します。 **NdisMRegisterMiniportDriver**とドライバーをアンロードします。
 

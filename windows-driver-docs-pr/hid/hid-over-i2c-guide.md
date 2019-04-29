@@ -1,5 +1,5 @@
 ---
-title: HID I2C 経由で
+title: HID over I2C
 description: Windows 8 では、Microsoft は、Inter-Integrated 回線 (I²C) バス経由で通信するためにデバイスを許可する新しい HID ミニポート ドライバーを作成します。
 ms.assetid: E8A056C0-B10F-48E2-B8E3-67B00AAC87D8
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06a6a6e5869eb5c95eff5bb6f5449e31d07ac975
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388808"
 ---
-# <a name="hid-over-i2c"></a>HID I2C 経由で
+# <a name="hid-over-i2c"></a>HID over I2C
 
 
 Windows 8 では、Microsoft は、Inter-Integrated 回線 (I²C) バス経由で通信するためにデバイスを許可する新しい HID ミニポート ドライバーを作成します。

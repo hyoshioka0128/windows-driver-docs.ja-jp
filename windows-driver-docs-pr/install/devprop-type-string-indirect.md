@@ -15,18 +15,18 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7ab34cc95fffd5793b7cb93e5ea1584a9827dccf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391704"
 ---
 # <a name="devproptypestringindirect"></a>DEVPROP_TYPE_STRING_INDIRECT
 
 
 DEVPROP_TYPE_STRING_INDIRECT 識別子は、間接的な文字列の参照を含む NULL で終わる Unicode 文字列の基本データ型識別子を表します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 間接的な文字列、参照では、実際の文字列を含む文字列リソースについて説明します。 間接的な文字列参照は、次の形式のいずれかで表示できます。
@@ -81,7 +81,7 @@ Windows は、後続の引数を書式設定文字列 (またはフォールバ�
 
 注:PE イメージには、リソース テーブル型 (STRINGTABLE リソース、またはメッセージ テーブル リソース) を使用できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

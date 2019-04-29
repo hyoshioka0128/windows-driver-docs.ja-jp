@@ -1,17 +1,17 @@
 ---
-title: HID のクライアント ドライバー
+title: HID クライアント ドライバー
 description: デバイスのポートまたはバス システム提供の HID ミニドライバーはサポートしていない場合は、ベンダー提供のミニドライバーが必要です。
 ms.assetid: E7C57273-B661-4B82-816E-E1466DAF67EA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76170465bc521d8ed3da1b44467847d01b0586fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388868"
 ---
-# <a name="hid-client-drivers"></a>HID のクライアント ドライバー
+# <a name="hid-client-drivers"></a>HID クライアント ドライバー
 
 
 デバイスのポートまたはバス システム提供の HID ミニドライバーはサポートしていない場合は、ベンダー提供のミニドライバーが必要です。

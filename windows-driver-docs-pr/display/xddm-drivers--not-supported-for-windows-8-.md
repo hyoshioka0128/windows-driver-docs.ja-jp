@@ -5,11 +5,11 @@ ms.assetid: 2D527787-55AF-4D44-BBA2-8052FB594902
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8439c0f8c8b47824e386bb263c4e0f7fb3c5ccaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388974"
 ---
 # <a name="xddm-drivers-not-supported-for-windows-8"></a>XDDM ドライバーが Windows 8 のサポートされていません
 

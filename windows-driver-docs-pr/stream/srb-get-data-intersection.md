@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a8c6f9f55150a5ed2a06efe9f89499d3c907c4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390874"
 ---
 # <a name="srbgetdataintersection"></a>SRB\_取得\_データ\_積集合
 
@@ -40,7 +40,7 @@ ms.locfileid: "56570997"
 
 クラスのドライバーを満たすためにこの要求を使用して[ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](ksproperty-pin-dataintersection.md)プロパティ要求。 フィードのいずれかのクラス ドライバー [ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)ようにミニドライバーに要求が戻るまでミニドライバーに一度に、 *pSrb* - &gt;**状態**STATUS の値\_成功します。 ミニドライバーは、DataRange.Specifier 値内の一致を確認します。
 
-一般に、その形式でストリームを開く、結果として得られるデータ形式をすぐに使用します。 データ形式とデータの範囲の詳細については、[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)を参照してください。
+一般に、その形式でストリームを開く、結果として得られるデータ形式をすぐに使用します。 データ形式とデータの範囲の詳細については、次を参照してください。 [AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
 
  
 

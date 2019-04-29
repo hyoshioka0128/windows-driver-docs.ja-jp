@@ -1,6 +1,6 @@
 ---
-title: 待機/ウェイク IRP を送信するタイミングを決定します。
-description: 待機/ウェイク IRP を送信するタイミングを決定します。
+title: 待機/ウェイク IRP を送信するタイミングの決定
+description: 待機/ウェイク IRP を送信するタイミングの決定
 ms.assetid: a56cfccc-b44b-4ec5-836b-3a9711ef5f1f
 keywords:
 - タイミング待機/ウェイク Irp WDK 電源管理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5a8a9ffd7a78d2f5d436a1a0eba3f478208e8de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388171"
 ---
-# <a name="determining-when-to-send-a-waitwake-irp"></a>待機/ウェイク IRP を送信するタイミングを決定します。
+# <a name="determining-when-to-send-a-waitwake-irp"></a>待機/ウェイク IRP を送信するタイミングの決定
 
 
 

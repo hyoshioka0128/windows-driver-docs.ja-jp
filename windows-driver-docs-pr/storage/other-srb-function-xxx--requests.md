@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecd4fbbcf8eb0b72057ca48c53f1550450723d23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389426"
 ---
 # <a name="other-srbfunctionxxx-requests"></a>その他の SRB\_関数\_XXX 要求
 
@@ -45,7 +45,7 @@ NT ベースのオペレーティング システムの SCSI ポート ドライ
 
 -   SRB\_関数\_UNLOCK\_キュー
 
-詳細については、これらの関数は、[ストレージ クラス ドライバー](storage-class-drivers.md)を参照してください。
+詳細については、これらの関数は、次を参照してください。[ストレージ クラス ドライバー](storage-class-drivers.md)します。
 
 ミニポート ドライバーのデザイナーは、ミニポート ドライバーが、想定できます*決して*、SRB、すぐに上記のいずれかで送信**関数**値。 NT ベースのオペレーティング システムのポート ドライバー HBA 固有 (またはミニポート ドライバー固有) にアクセスすることから高度なドライバーを保護する記憶域クラスおよびフィルター ドライバーからこれらの要求を処理する状態情報がデバイスを検索するかを取り消すキューに置かれた要求。 これにより、NT ベースのオペレーティング システムの記憶域クラスおよびフィルター ドライバーは、HBA の特殊なモデルでは依存関係がないこと。
 

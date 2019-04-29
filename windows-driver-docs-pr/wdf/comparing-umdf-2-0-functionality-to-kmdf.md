@@ -5,11 +5,11 @@ ms.assetid: 9D4DD1A9-DA49-4132-B98F-AFEC8B427272
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 354219205dd2d52df290fe01d1d5fe7e2143cb34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389100"
 ---
 # <a name="comparing-umdf-2-functionality-to-kmdf"></a>UMDF 2 を比較する KMDF の機能
 
@@ -80,9 +80,9 @@ UMDF バージョン 2 では、KMDF ドライバーにのみ使用可能だっ�
 
  
 
-ドライバーが、上記のいずれにも不要な場合は、KMDF を使用する代わりに 2 の UMDF ドライバーを記述できます。 2 つのフレームワークでは、多くのインターフェイスを共有するために変換できます、ドライバー KMDF 後で必要になった場合。 UMDF を選択する理由については、[書き込み UMDF ドライバーの利点](advantages-of-writing-umdf-drivers.md)を参照してください。
+ドライバーが、上記のいずれにも不要な場合は、KMDF を使用する代わりに 2 の UMDF ドライバーを記述できます。 2 つのフレームワークでは、多くのインターフェイスを共有するために変換できます、ドライバー KMDF 後で必要になった場合。 UMDF を選択する理由については、次を参照してください。[書き込み UMDF ドライバーの利点](advantages-of-writing-umdf-drivers.md)します。
 
-Framework のオブジェクトおよび KMDF して UMDF サポートの詳細については、[Framework オブジェクトの概要](summary-of-framework-objects.md)を参照してください。
+Framework のオブジェクトおよび KMDF して UMDF サポートの詳細については、次を参照してください。 [Framework オブジェクトの概要](summary-of-framework-objects.md)します。
 
 Windows Driver Frameworks (WDF) のすべてのコールバック メソッドと、フレームワークの適用性を示す表を参照してください[WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。
 

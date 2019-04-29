@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_PACKET_FILTERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 157b47e3be2f47858c051f0600a4c77161696f0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387886"
 ---
 # <a name="oidgensupportedpacketfilters"></a>OID\_GEN\_サポートされている\_パケット\_フィルター
 
@@ -29,7 +29,7 @@ NDIS と関連付けたドライバー ミニポート アダプターが初期�
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
 実装されていません。 (「解説」の「」を参照).
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ミニポート ドライバーでは、初期化中に、サポートされているパケット フィルターを指定します。

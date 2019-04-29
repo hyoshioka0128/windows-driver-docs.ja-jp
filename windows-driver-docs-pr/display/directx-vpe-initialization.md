@@ -1,6 +1,6 @@
 ---
-title: DirectX VPE 初期化
-description: DirectX VPE 初期化
+title: DirectX VPE の初期化
+description: DirectX VPE の初期化
 ms.assetid: 1309a302-f9fc-49cf-a6b8-691d0956beab
 keywords:
 - DirectX VPE サポート WDK DirectDraw, 初期化
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e48e0fb05bf84a41470e900d02ea8af473fc45ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392039"
 ---
-# <a name="directx-vpe-initialization"></a>DirectX VPE 初期化
+# <a name="directx-vpe-initialization"></a>DirectX VPE の初期化
 
 
 ## <span id="ddk_directx_vpe_initialization_gg"></span><span id="DDK_DIRECTX_VPE_INITIALIZATION_GG"></span>

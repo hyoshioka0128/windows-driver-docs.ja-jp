@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 699f24b92ecd495cad4eab79d780d4436b8d9849
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388259"
 ---
 # <a name="defining-new-ntstatus-values"></a>新しい NTSTATUS 値の定義
 
@@ -47,13 +47,13 @@ ms.locfileid: "56574984"
 
 **C**ビットのかどうか、値は顧客によって定義された、または Microsoft 定義を指定します。 ビットは、顧客によって定義された値、および Microsoft 定義の値のチェック ボックスをオフに設定されています。
 
-ドライバーは、新しい IO を定義できます\_ERR\_*XXX*システム イベント ログ内のカスタム エラー メッセージを識別する値。 NTSTATUS 値とそのユーザーを識別するエラー メッセージを定義する方法については、[カスタム エラーの種類を定義する](defining-custom-error-types.md)を参照してください。
+ドライバーは、新しい IO を定義できます\_ERR\_*XXX*システム イベント ログ内のカスタム エラー メッセージを識別する値。 NTSTATUS 値とそのユーザーを識別するエラー メッセージを定義する方法については、次を参照してください。[カスタム エラーの種類を定義する](defining-custom-error-types.md)します。
 
 ドライバーのペアは、ドライバー固有の状態を定義できます\_*XXX*に関する情報を非公開で通信するために値が定義されている[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)ペアの以上のドライバーを下から要求します。
 
 クラス ドライバーは、すべてのプライベート状態をマップする必要があります\_*XXX*値を既存のより高度なドライバーの場合、IRP を完了したときにシステム定義 NTSTATUS 値[ *IoCompletion*](https://msdn.microsoft.com/library/windows/hardware/ff548354)その IRP のルーチンを呼び出すことがあります。
 
-ペアの表示とビデオのミニポート ドライバー、ビデオ ポート ドライバーにはパブリック状態の間のマッピング\_*XXX*値およびビデオのミニポート ドライバーによって返される Win32 定義されている定数。 詳細については、[Windows 2000 Display Driver Model でのビデオのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff570509)を参照してください。
+ペアの表示とビデオのミニポート ドライバー、ビデオ ポート ドライバーにはパブリック状態の間のマッピング\_*XXX*値およびビデオのミニポート ドライバーによって返される Win32 定義されている定数。 詳細については、次を参照してください。 [Windows 2000 Display Driver Model でのビデオのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff570509)します。
 
 ドライバーは、システム定義の値のみを Win32 エラー コードに変換できるため、ユーザー モードで受信可能な Irp の NTSTATUS のカスタム値を使用できません。
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c015891175f687d8035116efa48e5a30e2e170a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325804"
 ---
 # <a name="inf-unregisterdlls-directive"></a>INF UnregisterDlls ディレクティブ
 
@@ -48,7 +48,7 @@ dirid,[subdir],filename,registration-flags[,[timeout][,argument]]
 
 
 <a href="" id="dirid"></a>*Dirid*  
-登録解除するファイルの変換先のディレクトリ ID を指定します。 詳細については、[を使用して Dirids](using-dirids.md)を参照してください。
+登録解除するファイルの変換先のディレクトリ ID を指定します。 詳細については、次を参照してください。[を使用して Dirids](using-dirids.md)します。
 
 <a href="" id="subdir"></a>*subdir*  
 登録解除するファイルを現在のディレクトリに対する相対パスを指定します。 指定されていない場合、ファイルは、現在のディレクトリです。
@@ -76,7 +76,7 @@ OLE コントロールで実行する登録操作を示します。 次のフラ
 <a name="remarks"></a>コメント
 -------
 
-各*の登録を解除 dll セクション*名は、INF ファイルに一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+各*の登録を解除 dll セクション*名は、INF ファイルに一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 OLE コントロールと自己登録を解除する方法の詳細については、Windows SDK のドキュメントを参照してください。
 

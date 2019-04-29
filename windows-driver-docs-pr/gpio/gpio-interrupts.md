@@ -1,20 +1,20 @@
 ---
 title: GPIO 割り込み
-description: 汎用入出力 (GPIO) コント ローラー デバイスによっては、割り込み要求の入力として機能するには、その GPIO ピンを構成できます。
+description: 一部の汎用 I/O (GPIO) コントローラー デバイスでは、割り込み要求の入力として機能するよう GPIO ピンを構成できます。
 ms.assetid: 0F56AD4C-E0BF-49F1-AB67-0107D08DEF9F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5caf6df9af8a5e6991ccf9154b79f27cffb407be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326144"
 ---
 # <a name="gpio-interrupts"></a>GPIO 割り込み
 
 
-汎用入出力 (GPIO) コント ローラー デバイスによっては、割り込み要求の入力として機能するには、その GPIO ピンを構成できます。 これらの割り込み要求入力については、GPIO ピンに物理的に接続されている周辺機器によって決まります。 これらの GPIO コント ローラー用ドライバーできますを有効にするを無効にする、マスク、マスク解除、および個々 の GPIO ピンの割り込み要求をオフにします。
+一部の汎用 I/O (GPIO) コントローラー デバイスでは、割り込み要求の入力として機能するよう GPIO ピンを構成できます。 これらの割り込み要求の入力は、GPIO ピンに物理的に接続されている周辺機器によって駆動されます。 これらの GPIO コントローラー用のドライバーにより、個々の GPIO ピンで割り込み要求の有効化、無効化、マスク、マスク解除、およびクリアを実行できます。
 
 GPIO 割り込みのサポートは、省略可能です。 GPIO フレームワーク拡張機能 (GpioClx) では、GPIO 割り込みをサポートするために GPIO コント ローラーは必要ありません。
 

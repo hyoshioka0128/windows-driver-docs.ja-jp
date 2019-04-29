@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ee250977198e420ec2a818d18e9953f4efcf9193
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390025"
 ---
 # <a name="using-kdbgctrl"></a>KDbgCtrl の使用
 
@@ -35,7 +35,7 @@ KDbgCtrl を使用するには、必要がありますが既に有効にする�
 
 完全なカーネル デバッグは、既定で有効です。 現在の設定値を確認するには、使用**kdbgctrl-c**します。 この設定を無効にするには、 **kdbgctrl-d**します。 この設定を有効にするには、 **kdbgctrl-e**します。
 
-使用することができます、現在の設定を確認し、バッチ ファイル内での実行を制御する場合、 **kdbgctrl cx**コマンド。 詳細については、このコマンドは、[ **KDbgCtrl コマンド ライン オプション**](kdbgctrl-command-line-options.md)を参照してください。
+使用することができます、現在の設定を確認し、バッチ ファイル内での実行を制御する場合、 **kdbgctrl cx**コマンド。 詳細については、このコマンドは、次を参照してください。 [ **KDbgCtrl コマンド ライン オプション**](kdbgctrl-command-line-options.md)します。
 
 ### <a name="span-idautomatickerneldebuggingspanspan-idautomatickerneldebuggingspanautomatic-kernel-debugging"></a><span id="automatic_kernel_debugging"></span><span id="AUTOMATIC_KERNEL_DEBUGGING"></span>自動のカーネル デバッグ
 
@@ -55,7 +55,7 @@ KDbgCtrl を使用するには、必要がありますが既に有効にする�
 
 具体的には、すべて**int 3** - デバッガーでコードに挿入されたブレークポイントなどを中断または呼び出し**DbgBreakPoint** --カーネル デバッガーにブレークが発生します。 ただし、アクセス違反--0 除算などの標準的な例外--は通常は送信されませんカーネル デバッガーにします。
 
-ユーザー モード デバッガーがプロセスに既に結び付けられている、このデバッガーは、すべてのユーザー モードのエラーをキャプチャし、カーネル デバッガーには、alterted はできません。 さまざまなユーザー モードのエラー ハンドラーの優先順位を付け、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。
+ユーザー モード デバッガーがプロセスに既に結び付けられている、このデバッガーは、すべてのユーザー モードのエラーをキャプチャし、カーネル デバッガーには、alterted はできません。 さまざまなユーザー モードのエラー ハンドラーの優先順位を付け、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。
 
 ユーザー モード エラーの処理関数を完全なカーネル デバッグまたは自動でカーネル デバッグする必要があります有効にするも。
 
@@ -100,7 +100,7 @@ kdbgctrl -eb
 
 完全なカーネル デバッグを有効にすると、これらのメッセージは、カーネル デバッガーで自動的に表示されます。 ただし、これらのメッセージをバッファーに格納する場合、このオプションが無効になっています。 時間の後で、カーネル デバッグを有効にする、カーネル デバッガーに接続して使用して、、 [ **! による dbgprint** ](-dbgprint.md)拡張機能をこのバッファーの内容を参照してください。 このバッファーの詳細については、「による DbgPrint バッファーを参照してください。
 
-による DbgPrint バッファーの既定のサイズは、Windows、および 32 KB の空きビルドを Windows のチェック ビルド時に 4 KB です。 現在のバッファー サイズを決定するには使用**kdbgctrl cdb**します。 バッファー サイズを変更する **kdbgctrl sdb * * * サイズ*ここで、*サイズ*新しいバッファーのサイズを指定します。 構文の詳細については、[ **KDbgCtrl コマンド ライン オプション**](kdbgctrl-command-line-options.md)を参照してください。
+による DbgPrint バッファーの既定のサイズは、Windows、および 32 KB の空きビルドを Windows のチェック ビルド時に 4 KB です。 現在のバッファー サイズを決定するには使用**kdbgctrl cdb**します。 バッファー サイズを変更する **kdbgctrl sdb * * * サイズ*ここで、*サイズ*新しいバッファーのサイズを指定します。 構文の詳細については、次を参照してください。 [ **KDbgCtrl コマンド ライン オプション**](kdbgctrl-command-line-options.md)します。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 

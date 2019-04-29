@@ -1,17 +1,17 @@
 ---
-title: ログ記録と調査
+title: ログインと調査
 description: このトピックでは、ログ記録と調査の GPIO 実装について説明します。
 ms.assetid: 27D6349D-5F92-450B-B9AA-90BA9C5D7E65
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 60b92bcd702c6d59c12a8473c23372540e1c8dce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392626"
 ---
-# <a name="logging-and-investigations"></a>ログ記録と調査
+# <a name="logging-and-investigations"></a>ログインと調査
 
 
 このトピックでは、ログ記録と調査の GPIO 実装について説明します。

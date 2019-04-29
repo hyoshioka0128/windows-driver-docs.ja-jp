@@ -5,11 +5,11 @@ ms.assetid: 5F9F7987-E898-404A-96F9-F5CF88F01393
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 956333d250f31653da9f9c263fc5abfe5dec5a49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325267"
 ---
 # <a name="common-data-fields"></a>共通データ フィールド
 
@@ -20,9 +20,9 @@ ms.locfileid: "56575060"
 
 次の表では、共通のデータ フィールドを示します。
 
-型の列に示すように種類の詳細については、[PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+型の列に示すように種類の詳細については、次を参照してください。 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
-|プロパティのキー|型|必須/オプション|説明|
+|プロパティのキー|種類|必須/オプション|説明|
 | --- | --- | --- | --- |
 |PKEY_SensorData_Timestamp|VT_FILETIME|必須|ファイルの時刻が UTC 形式で、ドライバーによって計算されます。 クラスの拡張機能 (CX) は、リモート システムは、システム クロックに同期する必要があるないようにの FILETIME をブートからのティックを変換するヘルパー関数を提供します。|
 

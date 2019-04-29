@@ -7,11 +7,11 @@ keywords: -OID_WWAN_UICC_FILE_STATUS ネットワーク ドライバーが Windo
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 62c39aa0f07d354ea2bfec8e350dfb4568889ad8
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387343"
 ---
 # <a name="oidwwanuiccfilestatus"></a>OID_WWAN_UICC_FILE_STATUS
 
@@ -29,7 +29,7 @@ OID_WWAN_UICC_FILE_STATUS では、指定した UICC ファイルに関する情
 
 |   |   |
 | --- | --- |
-| バージョン | Windows 10、バージョンが 1903 |
+| バージョン | Windows 10 バージョン 1903 |
 | Header | Ntddndis.h (include Ndis.h) |
 
 ## <a name="see-also"></a>関連項目

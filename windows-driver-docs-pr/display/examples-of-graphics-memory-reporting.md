@@ -1,17 +1,17 @@
 ---
-title: 例のグラフィックス メモリ レポート
-description: 例のグラフィックス メモリ レポート
+title: グラフィックス メモリ レポートの例
+description: グラフィックス メモリ レポートの例
 ms.assetid: 3dc0e7ae-db6f-4440-8c9c-7227f409f81f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7eadc4a6ffe397cd7b06a63c7568c8271795371
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391849"
 ---
-# <a name="examples-of-graphics-memory-reporting"></a>例のグラフィックス メモリ レポート
+# <a name="examples-of-graphics-memory-reporting"></a>グラフィックス メモリ レポートの例
 
 
 次の例では、Windows XP と Windows Vista で異なるアダプターおよびメモリ構成を報告する数値を比較します。 例に示す、**表示**アプリケーションおよび使用可能なメモリの WinSAT アプレット レポートします。

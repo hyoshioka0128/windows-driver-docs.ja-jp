@@ -1,6 +1,6 @@
 ---
-title: オペレーティング システムがセーフ モードで実行されているかどうかを決定します。
-description: オペレーティング システムがセーフ モードで実行されているかどうかを決定します。
+title: オペレーティング システムがセーフ モードで実行されているかどうかの判断
+description: オペレーティング システムがセーフ モードで実行されているかどうかの判断
 ms.assetid: 5724a731-81a2-4c4e-a9e2-146859977e44
 keywords:
 - セーフ モードの WDK カーネル
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73420029be5b6649c4fd413888240137efbd167e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388169"
 ---
-# <a name="determining-whether-the-operating-system-is-running-in-safe-mode"></a>オペレーティング システムがセーフ モードで実行されているかどうかを決定します。
+# <a name="determining-whether-the-operating-system-is-running-in-safe-mode"></a>オペレーティング システムがセーフ モードで実行されているかどうかの判断
 
 
 このトピックでは、デバイス ドライバーを特定する方法で実行されているオペレーティング システムがセーフ モードで起動されたかどうかについて説明します。 このトピックでは、ドライバーがセーフ モードで動作しないようにする方法も説明します。
@@ -35,7 +35,7 @@ Microsoft Windows オペレーティング システムのカーネルがとい�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>Mode</th>
 </tr>
 </thead>

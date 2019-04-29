@@ -1,6 +1,6 @@
 ---
-title: 画像の 4 番目のデコードの構成
-description: 画像の 4 番目のデコードの構成
+title: 4 番目の画像デコード構成
+description: 4 番目の画像デコード構成
 ms.assetid: 839e00aa-0095-4318-91c8-a34cff1305e5
 keywords:
 - 圧縮の画像セット WDK DirectX VA のデコード
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 612af66a774273502729bfb63bb5753059716d67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387234"
 ---
-# <a name="fourth-picture-decoding-configuration"></a>画像の 4 番目のデコードの構成
+# <a name="fourth-picture-decoding-configuration"></a>4 番目の画像デコード構成
 
 
 ## <span id="ddk_fourth_picture_decoding_configuration_gg"></span><span id="DDK_FOURTH_PICTURE_DECODING_CONFIGURATION_GG"></span>
@@ -29,8 +29,8 @@ ms.locfileid: "56560338"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メンバー</th>
-<th align="left">Value</th>
+<th align="left">Member</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>

@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: be2ec4413767a24b09ee9e7b880731a956e5b5d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389986"
 ---
 # <a name="dxgkcreateallocationflags2-structure"></a>\_DXGK\_CREATEALLOCATIONFLAGS2 構造体
 
@@ -42,7 +42,7 @@ typedef struct _DXGK_CREATEALLOCATIONFLAGS2 {
 } DXGK_CREATEALLOCATIONFLAGS2;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **リソース**システム用に予約されています。

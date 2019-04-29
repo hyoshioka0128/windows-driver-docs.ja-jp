@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b22da2904aa30f44c33762c7b4db1562deb623b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392182"
 ---
 # <a name="customizing-the-printer-details-web-page"></a>プリンター詳細 Web ページをカスタマイズする
 
@@ -27,7 +27,7 @@ Microsoft の標準場合、TCP/IP[ポート モニター](https://docs.microsof
 
 カスタマイズされた ASP ファイルが他のポート モニター、プリンターごとの種類を使用してプリンターの既定のプリンターの詳細ページを置換することもでき、製造元ごと置換は許可されていません。
 
-カスタマイズされた ASP ファイルをインストールするために使用されるメソッドは、カスタマイズしたファイルがプリンターの種類、製造元、またはポート モニターの既定のファイルを置き換えるかどうかを判断します。 詳細については、[印刷 Web ページをカスタマイズしたインストール](installing-customized-print-web-pages.md)を参照してください。
+カスタマイズされた ASP ファイルをインストールするために使用されるメソッドは、カスタマイズしたファイルがプリンターの種類、製造元、またはポート モニターの既定のファイルを置き換えるかどうかを判断します。 詳細については、次を参照してください。[印刷 Web ページをカスタマイズしたインストール](installing-customized-print-web-pages.md)します。
 
 印刷の Web ページの作成の詳細については、以下のトピックです。
 

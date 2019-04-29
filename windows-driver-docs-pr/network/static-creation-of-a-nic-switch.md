@@ -1,17 +1,17 @@
 ---
-title: NIC のスイッチの静的な作成
-description: NIC のスイッチの静的な作成
+title: NIC スイッチの静的作成
+description: NIC スイッチの静的作成
 ms.assetid: F325B1F8-7655-4044-AF04-32B434574082
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cb2d551e4b89a5bfc90a687bbdb8872b0114e26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390625"
 ---
-# <a name="static-creation-of-a-nic-switch"></a>NIC のスイッチの静的な作成
+# <a name="static-creation-of-a-nic-switch"></a>NIC スイッチの静的作成
 
 
 シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターは、NIC のスイッチを作成できる必要があります。 一部のアダプターでは、NIC のスイッチを作成できます静的にへの呼び出しのコンテキスト内で[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。
@@ -22,7 +22,7 @@ ms.locfileid: "56535507"
 
  
 
-既定の NIC のスイッチ パラメーターは、レジストリに標準化されたキーワードの設定を使用して定義されます。 これらのキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
+既定の NIC のスイッチ パラメーターは、レジストリに標準化されたキーワードの設定を使用して定義されます。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
 
 PF のミニポート ドライバーは、NDIS ドライバーを呼び出すときに静的に NIC スイッチを作成[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。 通常、ドライバーは、作成し、ネットワーク アダプターで SR-IOV を有効にする前に初期化シーケンスの一部として、NIC のスイッチを構成します。
 
@@ -44,7 +44,7 @@ PF のミニポート ドライバーは、NDIS ドライバーを呼び出す�
 
 詳細を処理する方法について、 [OID\_NIC\_スイッチ\_作成\_スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh451815)要求を参照してください[OID 処理\_NIC\_スイッチ\_作成\_スイッチ要求](handling-the-oid-nic-switch-create-switch-request.md)します。
 
-PF のミニポート ドライバーの要件と初期化の順序の詳細については、[PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)を参照してください。
+PF のミニポート ドライバーの要件と初期化の順序の詳細については、次を参照してください。 [PF ミニポート ドライバーの初期化](initializing-a-pf-miniport-driver.md)します。
 
  
 

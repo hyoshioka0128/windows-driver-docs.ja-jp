@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 997bef388a292c8e587f54a23eb74c4649f372f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391509"
 ---
 # <a name="driver-initialization-and-cleanup"></a>ドライバーの初期化とクリーンアップ
 
@@ -57,7 +57,7 @@ ms.locfileid: "56528553"
 
      
 
-これらの定数の使用方法の詳細については、[ **DRVENABLEDATA**](https://msdn.microsoft.com/library/windows/hardware/ff556206)を参照してください。
+これらの定数の使用方法の詳細については、次を参照してください。 [ **DRVENABLEDATA**](https://msdn.microsoft.com/library/windows/hardware/ff556206)します。
 
 -   **C**メンバーには、配列内の DRVFN 構造体の数が含まれています。
 

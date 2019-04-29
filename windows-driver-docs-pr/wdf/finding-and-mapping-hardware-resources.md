@@ -1,22 +1,22 @@
 ---
-title: 検索して、ハードウェア リソースのマッピング
+title: ハードウェア リソースの検索とマッピング
 description: このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはバージョン 2 でユーザー モード ドライバー フレームワーク (UMDF) ドライバーがその EvtDevicePrepareHardware コールバックで受信した翻訳済みのメモリ リソース (CmResourceTypeMemory) をマップする方法について説明します関数。
 ms.assetid: 9D65D70C-FFF1-4663-8701-221C5443C425
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fb22e5d332435ae6159fdfb3d6cca96fb2d97eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391354"
 ---
-# <a name="finding-and-mapping-hardware-resources"></a>検索して、ハードウェア リソースのマッピング
+# <a name="finding-and-mapping-hardware-resources"></a>ハードウェア リソースの検索とマッピング
 
 
 このトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) ドライバーのバージョン 2 での翻訳済みのメモリ リソースをマップする方法について説明します (**CmResourceTypeMemory**) そので受信した[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数。
 
-1.x UMDF ドライバーでは、この種類のリソースを受け取ることもその[ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)メソッド。 詳細については、[UMDF 1.x ドライバー内のハードウェア リソースのマッピングの検索と](finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md)を参照してください。
+1.x UMDF ドライバーでは、この種類のリソースを受け取ることもその[ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)メソッド。 詳細については、次を参照してください。 [UMDF 1.x ドライバー内のハードウェア リソースのマッピングの検索と](finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md)します。
 
 ドライバーを受け取る[生、翻訳した](raw-and-translated-resources.md)のバージョンで、デバイスのリソースのリスト内のハードウェア リソースの[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数。 ドライバーがドライバーのフレームワークになるまでの有効なリソースの一覧を保存できます[ *EvtDeviceReleaseHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540890)コールバック関数。
 
@@ -34,7 +34,7 @@ I/O 領域内のリソースをマップする必要はありません (**CmReso
 
 UMDF ドライバーを呼び出す場合[ **WdfDeviceMapIoSpace**](https://msdn.microsoft.com/library/windows/hardware/dn265605)を設定する必要があります、 **UmdfDirectHardwareAccess** INF ディレクティブを**AllowDirectHardwareAccess**.
 
-例については、ドライバーを検索し、メモリ マップト マップ リソースを登録する方法を示しますが、[読み取りと書き込みをデバイスの登録](reading-and-writing-to-device-registers.md)を参照してください。
+例については、ドライバーを検索し、メモリ マップト マップ リソースを登録する方法を示しますが、次を参照してください。[読み取りと書き込みをデバイスの登録](reading-and-writing-to-device-registers.md)します。
 
  
 

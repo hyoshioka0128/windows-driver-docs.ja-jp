@@ -1,6 +1,6 @@
 ---
 title: 永続的なメモリ ウィンドウからアクセス メモリ
-description: 永続的なメモリ ウィンドウからアクセス PCMCIA 属性メモリ
+description: 永続メモリ ウィンドウを使用して PCMCIA 属性メモリにアクセスする
 ms.assetid: 866851b9-8e39-4480-9f22-dc2a2eb80ce0
 keywords:
 - 属性のメモリ バスの WDK PCMCIA、永続的に割り当てられたメモリ ウィンドウ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49e8abfe5a1cffe684580cc30607f967abf28ebd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391574"
 ---
-# <a name="access-pcmcia-attribute-memory-through-a-permanent-memory-window"></a>永続的なメモリ ウィンドウからアクセス PCMCIA 属性メモリ
+# <a name="access-pcmcia-attribute-memory-through-a-permanent-memory-window"></a>永続メモリ ウィンドウを使用して PCMCIA 属性メモリにアクセスする
 
 
 

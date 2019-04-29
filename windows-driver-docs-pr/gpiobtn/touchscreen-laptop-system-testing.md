@@ -5,11 +5,11 @@ ms.assetid: 0DD7865F-C31C-48AD-8775-4AC1E469176F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cf95ec0a0826da32f61aac4cfce28a67a25cc5b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390410"
 ---
 # <a name="touchscreen-laptop-system-testing"></a>タッチスクリーン ノート PC システム テスト
 
@@ -32,7 +32,7 @@ ms.locfileid: "56571340"
 
 **システムをスレート モード (コンバーチブル ドッキング システムのみ) でのドッキング**
 
-1.  使用可能なシステムのドッキング (スレート デバイスには、キーボードがあるない場合に接続された USB キーボード) が GPIO があります。 ドッキングとラップトップ/スレートの変換を区別する、[変換のスレートのラップトップとドッキング](docking-versus-laptop-slate-conversion.md)を参照してください。 コンバーチブル、スレート モードでシステムを構成する。 (を参照してください[スレート/ラップトップ モード変換手順](indicator-testing.md#conv))。
+1.  使用可能なシステムのドッキング (スレート デバイスには、キーボードがあるない場合に接続された USB キーボード) が GPIO があります。 ドッキングとラップトップ/スレートの変換を区別する、次を参照してください。[変換のスレートのラップトップとドッキング](docking-versus-laptop-slate-conversion.md)します。 コンバーチブル、スレート モードでシステムを構成する。 (を参照してください[スレート/ラップトップ モード変換手順](indicator-testing.md#conv))。
 2.  スレート モードでシステムを起動し、ドッキング システムにアタッチします。
 3.  実行[タッチ キーボードの配置手順](indicator-testing.md#touchkbd)します。
 

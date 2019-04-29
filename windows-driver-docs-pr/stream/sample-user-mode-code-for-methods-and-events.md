@@ -13,18 +13,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95f77a448fe853cff2a5ad91638378da915b5afa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389206"
 ---
 # <a name="sample-user-mode-code-for-methods-and-events"></a>メソッドとイベントのサンプル ユーザーモード コード
 
 
 このセクションのコードでは、メソッドおよびユーザー モードの KsProxy プラグインからイベントを使用する方法を示します。
 
-カーネル モード、ミニドライバーでプロパティ、メソッド、およびイベントをサポートする方法については、[Automation テーブルを定義する](defining-automation-tables.md)を参照してください。
+カーネル モード、ミニドライバーでプロパティ、メソッド、およびイベントをサポートする方法については、次を参照してください。 [Automation テーブルを定義する](defining-automation-tables.md)します。
 
 指定されたメソッドをサポートするミニドライバーを指定したら、呼び出すことによってそのメソッドを呼び出すことができます[ **IKsControl::KsMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff559785)からユーザー モードの次のコード例に示すようにプラグインします。
 
@@ -80,7 +80,7 @@ pIKsControl -> KsEvent (
 
 上記の例では、通知は、ミニドライバーは、イベントを無効にします。 までを続行します。 イベントを無効にします。 呼び出す[ **IKsControl::KsEvent**](https://msdn.microsoft.com/library/windows/hardware/ff559772)します。 最初にこのイベントが発生したときにのみ通知する場合は、設定 KSEVENT\_型\_で ONESHOT **Event.Flags**します。
 
-USB ビデオ クラスの拡張機能のユニット数を持つイベントをサポートしている場合は、[単位の拡張機能で自動更新のイベントをサポートしている](supporting-autoupdate-events-with-extension-units.md)を参照してください。
+USB ビデオ クラスの拡張機能のユニット数を持つイベントをサポートしている場合は、次を参照してください。[単位の拡張機能で自動更新のイベントをサポートしている](supporting-autoupdate-events-with-extension-units.md)します。
 
  
 

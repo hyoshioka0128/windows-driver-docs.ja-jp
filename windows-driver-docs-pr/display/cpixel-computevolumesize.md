@@ -17,11 +17,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e217c5fa904d17115a7fcc52181b9dfccacf66c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389994"
 ---
 # <a name="cpixelcomputevolumesize-method"></a>CPixel::ComputeVolumeSize メソッド
 
@@ -56,12 +56,12 @@ static UINT ComputeVolumeSize(
 
 ボリュームのバイト単位のサイズを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 D3DFORMAT の詳細については、Microsoft DirectX SDK ドキュメントを参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ac311ac10eb3a2188309d0382392bd3a7401ef6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391995"
 ---
 # <a name="inf-file-platform-extensions-and-x64-based-systems"></a>INF ファイル プラットフォーム拡張機能および x64 ベースのシステム
 
@@ -75,9 +75,9 @@ DisableDecoratedModelsRequirement:REG_DWORD
    ...
    ```
 
-5. 例では、デバイスのインストールに必要なその他のデバイス固有セクションが含まれて、 **.ntamd64**プラットフォーム拡張機能は、これらのセクションの名前。 INF ファイルのセクションとディレクティブの詳細については、[INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)を参照してください。
+5. 例では、デバイスのインストールに必要なその他のデバイス固有セクションが含まれて、 **.ntamd64**プラットフォーム拡張機能は、これらのセクションの名前。 INF ファイルのセクションとディレクティブの詳細については、次を参照してください。 [INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)します。
 
-すべてのプラットフォームの種類の 1 つのオペレーティング システム INF を作成する方法については、[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)を参照してください。
+すべてのプラットフォームの種類の 1 つのオペレーティング システム INF を作成する方法については、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
 
  
 

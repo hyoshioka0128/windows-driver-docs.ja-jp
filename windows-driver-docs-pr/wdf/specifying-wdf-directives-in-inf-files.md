@@ -1,6 +1,6 @@
 ---
-title: INF ファイルで WDF ディレクティブの指定
-description: INF ファイルで WDF ディレクティブの指定
+title: INF ファイルでの WDF ディレクティブの指定
+description: INF ファイルでの WDF ディレクティブの指定
 ms.assetid: aefc678e-dc81-47dc-a84b-f1a79c16cad9
 keywords:
 - WDF ディレクティブ WDK UMDF
@@ -21,13 +21,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 265a68ae5e2139051e497fbd32321215bac2a70c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325126"
 ---
-# <a name="specifying-wdf-directives-in-inf-files"></a>INF ファイルで WDF ディレクティブの指定
+# <a name="specifying-wdf-directives-in-inf-files"></a>INF ファイルでの WDF ディレクティブの指定
 
 
 このトピックでは、両方のユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 と 2 に適用されます。
@@ -56,7 +56,7 @@ UMDF ドライバーを関連付けます、 *UMDF サービス-インストー�
 <a href="" id="umdfhostprocesssharing-------------processsharingdisabled---processsharingenabled-"></a>**UmdfHostProcessSharing** = &lt;**ProcessSharingDisabled** | **ProcessSharingEnabled**&gt;  
 デバイス スタックを共有プロセス プールに配置するかどうかを決定します (**ProcessSharingEnabled**) または独自の個別のプロセス (**ProcessSharingDisabled**)。 既定値は**ProcessSharingEnabled**します。 このディレクティブは、ドライバー固有ではなく、デバイスに固有です。
 
-デバイスのプールに関する詳細については、[デバイスの UMDF ドライバーでプールを使用して](using-device-pooling-in-umdf-drivers.md)を参照してください。
+デバイスのプールに関する詳細については、次を参照してください。[デバイスの UMDF ドライバーでプールを使用して](using-device-pooling-in-umdf-drivers.md)します。
 
 UMDF バージョン 1.11 以降をサポート、 **UmdfHostProcessSharing**ディレクティブ。
 
@@ -82,12 +82,12 @@ UMDF ドライバーを特定の種類のリソースに接続する方法につ
 
 場合**UmdfDirectHardwareAccess**に設定されている**RejectDirectHardwareAccess**フレームワークでは、ドライバーを直接ハードウェア アクセス機能を使用することはできません。 既定値は**RejectDirectHardwareAccess**します。
 
-UMDF ドライバーがハードウェア リソースにアクセスする方法については、[マッピング ハードウェア リソースの検索と](finding-and-mapping-hardware-resources.md)を参照してください。
+UMDF ドライバーがハードウェア リソースにアクセスする方法については、次を参照してください。[マッピング ハードウェア リソースの検索と](finding-and-mapping-hardware-resources.md)します。
 
 UMDF バージョン 1.11 以降をサポート、 **UmdfDirectHardwareAccess**ディレクティブ。
 
 <a href="" id="umdfhostpriority----priorityhigh-"></a>**UmdfHostPriority** = &lt;**PriorityHigh**&gt;  
-クライアント ドライバーを設定できる UMDF UMDF HID 2.15 バージョン以降**UmdfHostPriority**に**PriorityHigh**そのスレッドの優先順位を上げる。 このディレクティブは、ユーザーの応答時間を区別できるタッチまたは入力のドライバのみに使用する必要があります。 ドライバーを指定すると**PriorityHigh**システムのような優先順位の他のドライバーとは別のデバイスのプール内に配置します。 追加のデバイスのプールより多くのメモリを使用するため、慎重にこの設定を使用する必要があります。 デバイスのプールに関する詳細については、[デバイスの UMDF ドライバーでプールを使用して](using-device-pooling-in-umdf-drivers.md)を参照してください。
+クライアント ドライバーを設定できる UMDF UMDF HID 2.15 バージョン以降**UmdfHostPriority**に**PriorityHigh**そのスレッドの優先順位を上げる。 このディレクティブは、ユーザーの応答時間を区別できるタッチまたは入力のドライバのみに使用する必要があります。 ドライバーを指定すると**PriorityHigh**システムのような優先順位の他のドライバーとは別のデバイスのプール内に配置します。 追加のデバイスのプールより多くのメモリを使用するため、慎重にこの設定を使用する必要があります。 デバイスのプールに関する詳細については、次を参照してください。[デバイスの UMDF ドライバーでプールを使用して](using-device-pooling-in-umdf-drivers.md)します。
 
 <a href="" id="umdfregisteraccessmode----registeraccessusingsystemcall---registeraccessusingusermodemapping--"></a>**UmdfRegisterAccessMode** = &lt;**RegisterAccessUsingSystemCall** | **RegisterAccessUsingUserModeMapping**&gt;   
 フレームワークがユーザー モードのアドレスにレジスタにマップする必要があるかどうかを示します (レジスタへのアクセスでは、システムの呼び出しが含まれていない) するための領域、またはレジスタにアクセスするシステム コールを使用します。
@@ -108,7 +108,7 @@ UMDF 共同インストーラーが、デバイスは、1 つだけがインス�
 
 -   **匿名**
 
--   **識別**
+-   **Identification**
 
 -   **権限借用**
 
@@ -142,7 +142,7 @@ UmdfDispatcher=NativeUSB
 
 場合**UmdfKernelModeClientPolicy**に設定されている**AllowKernelModeClients**フレームワークにより、ユーザー モード ドライバーでは、上記の読み込みにカーネル モード ドライバーやカーネル モード ドライバーからの I/O 要求を配信ユーザー モード ドライバー。
 
-場合**UmdfKernelModeClientPolicy**に設定されている**RejectKernelModeClients**フレームワークでは、カーネル モード ドライバー ユーザー モード ドライバーでは、上記の読み込みにすることはできません、いずれかからの I/O 要求が含まれていませんユーザー モード ドライバーにカーネル モード ドライバーです。 ドライバーの INF ファイルにこのディレクティブが含まれていない場合、既定値は、 **RejectKernelModeClients**します。 詳細については、[サポート カーネル モードのクライアント](https://msdn.microsoft.com/library/windows/hardware/ff561214)を参照してください。
+場合**UmdfKernelModeClientPolicy**に設定されている**RejectKernelModeClients**フレームワークでは、カーネル モード ドライバー ユーザー モード ドライバーでは、上記の読み込みにすることはできません、いずれかからの I/O 要求が含まれていませんユーザー モード ドライバーにカーネル モード ドライバーです。 ドライバーの INF ファイルにこのディレクティブが含まれていない場合、既定値は、 **RejectKernelModeClients**します。 詳細については、次を参照してください。[サポート カーネル モードのクライアント](https://msdn.microsoft.com/library/windows/hardware/ff561214)します。
 
 UMDF バージョン 1.9 以降のサポート、 **UmdfKernelModeClientPolicy**ディレクティブ。 カーネル モード ドライバーを読み込む UMDF の以前のバージョンでのユーザー モード ドライバーの上位を許可するのを参照してください。 [UMDF の以前のバージョンのカーネル モードのクライアント サポート](https://msdn.microsoft.com/library/windows/hardware/ff561214#kernel-mode-client-support-in-earlier-umdf-versions)します。
 
@@ -185,7 +185,7 @@ DriverCLSID={d4112073-d09b-458f-a5aa-35ef21eef5de}
 各ディレクティブに、 *UMDF サービス-インストール*セクションは、次の一覧で説明。
 
 <a href="" id="umdflibraryversion------------version-"></a>**UmdfLibraryVersion** = &lt;*バージョン*&gt;  
-UMDF ドライバーを使用するフレームワークのバージョン番号については、共同インストーラーを通知します。 形式、*バージョン*文字列が&lt;*メジャー*&gt;.&lt;*マイナー*&gt;.&lt;*サービス*&gt;します。 デバイス スタック上のドライバーは、1 つ以上のバージョンの framework を使用して、INF ファイルは、複数の共同インストーラー----各フレームワークのバージョンのいずれかをハード ディスク ドライブ上の同じ場所にコピーします。 ただし、INF ファイルが追加、最高バージョン共同インストーラーのみを**CoInstallers32**レジストリ値。 共同インストーラーをコピーする方法の詳細については、[UMDF 共同インストーラーを使用して](using-the-umdf-co-installer.md)を参照してください。
+UMDF ドライバーを使用するフレームワークのバージョン番号については、共同インストーラーを通知します。 形式、*バージョン*文字列が&lt;*メジャー*&gt;.&lt;*マイナー*&gt;.&lt;*サービス*&gt;します。 デバイス スタック上のドライバーは、1 つ以上のバージョンの framework を使用して、INF ファイルは、複数の共同インストーラー----各フレームワークのバージョンのいずれかをハード ディスク ドライブ上の同じ場所にコピーします。 ただし、INF ファイルが追加、最高バージョン共同インストーラーのみを**CoInstallers32**レジストリ値。 共同インストーラーをコピーする方法の詳細については、次を参照してください。 [UMDF 共同インストーラーを使用して](using-the-umdf-co-installer.md)します。
 
 共同インストーラーは、バージョン文字列を確認し、UMDF ドライバーのバージョンに固有の共同インストーラーの検索に使用します。 次に、共同インストーラーは、バージョン固有の共同インストーラーからフレームワークを抽出します。
 

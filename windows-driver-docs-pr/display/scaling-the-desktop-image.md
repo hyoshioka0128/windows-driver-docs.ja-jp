@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 545000757901bb9a6b6002447fa62bbc684a7d78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390546"
 ---
 # <a name="scaling-the-desktop-image"></a>デスクトップ イメージのスケーリング
 
@@ -56,7 +56,7 @@ ms.locfileid: "56549284"
 <thead>
 <tr class="header">
 <th align="left">テーブルをシンボルします。</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

@@ -1,6 +1,6 @@
 ---
-title: WMI データをサポートしているブロックと、ドライバー内のイベント
-description: WMI データをサポートしているブロックと、ドライバー内のイベント
+title: ドライバーでの WMI のデータ ブロックとイベントのサポート
+description: ドライバーでの WMI のデータ ブロックとイベントのサポート
 ms.assetid: a5138413-3ec4-4c61-9f00-6604759532e9
 keywords:
 - WMI の WDK KMDF、データのブロック
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c7d7afa07cdf99c914920618fc117043e56af8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327036"
 ---
-# <a name="supporting-wmi-data-blocks-and-events-in-your-driver"></a>WMI データをサポートしているブロックと、ドライバー内のイベント
+# <a name="supporting-wmi-data-blocks-and-events-in-your-driver"></a>ドライバーでの WMI のデータ ブロックとイベントのサポート
 
 
 \[KMDF にのみ適用されます。\]

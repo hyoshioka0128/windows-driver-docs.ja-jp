@@ -1,15 +1,15 @@
 ---
-title: OID_NIC_SWITCH_CREATE_SWITCH の要求を処理
-description: OID_NIC_SWITCH_CREATE_SWITCH の要求を処理
+title: OID_NIC_SWITCH_CREATE_SWITCH 要求の処理
+description: OID_NIC_SWITCH_CREATE_SWITCH 要求の処理
 ms.assetid: 5C0BC300-8904-483A-A66B-8F5CFE0829B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26b58f98abeabce480002a6e1b10d6739a506407
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325739"
 ---
 # <a name="handling-the-oidnicswitchcreateswitch-request"></a>OID の処理\_NIC\_スイッチ\_作成\_切り替え要求
 
@@ -30,7 +30,7 @@ NDIS ドライバーを呼び出すときに、PF ミニポート ドライバ�
 
     Windows Server 2012 以降、Windows のみをサポートするスイッチの種類の**NdisNicSwitchTypeExternal**します。 外部スイッチでは、この種類のスイッチに接続されている仮想ポート (拡張) が物理ネットワーク アダプターのポートを介して外部ネットワークをアクセスできることを指定します。
 
-    NIC のスイッチの詳細については、[SR-IOV アーキテクチャ](sr-iov-architecture.md)を参照してください。
+    NIC のスイッチの詳細については、次を参照してください。 [SR-IOV アーキテクチャ](sr-iov-architecture.md)します。
 
 -   NDIS セット、 **SwitchId**メンバー NIC スイッチの id の値にします。 スイッチの識別子は、0 と、ネットワーク アダプターがサポートされているスイッチの数の整数です。 NDIS\_既定\_切り替える\_ID 値を既定の NIC スイッチを示します。
 
@@ -44,11 +44,11 @@ OID メソッド要求を受け取ったとき[OID\_NIC\_スイッチ\_作成\_�
 
 1.  NDIS を呼び出すときは、NIC スイッチを作成しますが、PF ミニポート ドライバーでは、静的スイッチの作成と構成をサポートする場合[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 構成パラメーターを確認する必要があります、ドライバーは、この OID 要求を処理する場合、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451587)構造体。 パラメーターが呼び出し中に、スイッチを作成する、ドライバーによって使用されるものと同じにする必要があります*MiniportInitializeEx*します。 True でない場合、ドライバーは、OID 要求を失敗する必要があります。
 
-    詳細については、[NIC スイッチの作成を静的](static-creation-of-a-nic-switch.md)を参照してください。
+    詳細については、次を参照してください。 [NIC スイッチの作成を静的](static-creation-of-a-nic-switch.md)します。
 
 2.  ドライバーの構成値を検証する必要があります、PF ミニポート ドライバーでは、動的なスイッチの作成と構成をサポートする場合、 [ **NDIS\_NIC\_切り替える\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451587)構造体し、これらの値に基づいて、NIC のスイッチを作成します。
 
-    詳細については、[NIC スイッチの動的な作成](dynamic-creation-of-a-nic-switch.md)を参照してください。
+    詳細については、次を参照してください。 [NIC スイッチの動的な作成](dynamic-creation-of-a-nic-switch.md)です。
 
 3.  PF ミニポート ドライバーでは、NIC のスイッチの既定 VPort のために必要なハードウェアおよびソフトウェア リソースを割り当てる必要があります。
 

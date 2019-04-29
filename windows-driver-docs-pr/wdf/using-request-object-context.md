@@ -1,6 +1,6 @@
 ---
-title: 要求オブジェクトのコンテキストを使用
-description: 要求オブジェクトのコンテキストを使用
+title: 要求オブジェクトのコンテキストの使用
+description: 要求オブジェクトのコンテキストの使用
 ms.assetid: befb4a22-0640-45e3-890e-6ff17969b017
 keywords:
 - 要求オブジェクト WDK KMDF、コンテキストの領域
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fdd1d11b7277e6d194063b7800b5afeb75ba343
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391841"
 ---
-# <a name="using-request-object-context"></a>要求オブジェクトのコンテキストを使用
+# <a name="using-request-object-context"></a>要求オブジェクトのコンテキストの使用
 
 
 
@@ -28,7 +28,7 @@ ms.locfileid: "56560397"
 
 -   ドライバーは、呼び出すことによって追加の要求オブジェクトを作成する場合[ **WdfRequestCreate**](https://msdn.microsoft.com/library/windows/hardware/ff549951)、コンテキストのサイズを指定するには、WDF を提供することで\_オブジェクト\_属性の構造体。
 
-詳細については、framework のオブジェクトのコンテキストの領域へのアクセスの割り当てとは、[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)を参照してください。
+詳細については、framework のオブジェクトのコンテキストの領域へのアクセスの割り当てとは、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
 
  
 

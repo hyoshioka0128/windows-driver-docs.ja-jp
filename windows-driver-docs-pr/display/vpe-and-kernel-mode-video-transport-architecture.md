@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cd23ec90f61319e2cf5a6df301f6d9ccf610685
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391222"
 ---
 # <a name="vpe-and-kernel-mode-video-transport-architecture"></a>VPE とカーネル モード ビデオ トランスポートのアーキテクチャ
 
@@ -31,7 +31,7 @@ Windows 2000 以降では、次の図に示すように、DxApi コールバッ�
 
 ![windows 2000 カーネル モードのビデオ トランスポート アーキテクチャを示す図します。](images/ddfg011.png)
 
-DxApi コールバックの詳細については、[DxApi ミニポート ドライバーの機能の Windows 2000 以降](dxapi-miniport-driver-functions-for-windows-2000-and-later.md)を参照してください。
+DxApi コールバックの詳細については、次を参照してください。 [DxApi ミニポート ドライバーの機能の Windows 2000 以降](dxapi-miniport-driver-functions-for-windows-2000-and-later.md)します。
 
 上記の図は、その他のカーネル モードとユーザー モード コンポーネント (点線は、カーネル遷移を表します) との関連カーネル モードのビデオ トランスポート アーキテクチャを示します。 DirectShow (または別のユーザー モードのクライアント) を呼び出す、このアーキテクチャでは、 [IDirectDrawKernel](https://msdn.microsoft.com/library/windows/hardware/ff567398)と[IDirectDrawSurfaceKernel](https://msdn.microsoft.com/library/windows/hardware/ff567409) DirectDraw COM インターフェイスの DirectDraw オブジェクトへのハンドルを取得し、画面のオブジェクト。
 

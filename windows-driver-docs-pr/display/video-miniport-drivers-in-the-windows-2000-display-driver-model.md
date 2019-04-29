@@ -10,17 +10,17 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: cff2555e06d6593de3ecd491104ec3d2dcadfe53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389644"
 ---
 # <a name="video-miniport-drivers-in-the-windows-2000-display-driver-model"></a>Windows 2000 Display Driver Model のビデオ ミニポート ドライバー
 
 このセクションでは、Microsoft Windows 2000 のディスプレイ ドライバー モデルの一部であるビデオのミニポート ドライバーの役割について説明します。 Windows Vista のディスプレイ ドライバー モデルの一部でないビデオのミニポート ドライバー。
 
-2 つのディスプレイ ドライバー モデルの違いの詳細については、[Windows 2000 Display Driver Model](windows-2000-display-driver-model-design-guide.md)を参照してください。
+2 つのディスプレイ ドライバー モデルの違いの詳細については、次を参照してください。 [Windows 2000 Display Driver Model](windows-2000-display-driver-model-design-guide.md)します。
 
  
 

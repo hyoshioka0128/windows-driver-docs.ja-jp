@@ -1,19 +1,19 @@
 ---
-title: TCP/IP のスキーマの拡張機能
-description: TCP/IP のスキーマの拡張機能
+title: TCP/IP スキーマ拡張
+description: TCP/IP スキーマ拡張
 ms.assetid: fe0f12ee-3e91-40a2-b4fa-f0d4a62460a3
 keywords:
 - ボックスの自動構成サポートの WDK プリンター、TCP/IP スキーマの拡張機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d6dca35d092deca4416c3a1cd24236da5cef7c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388064"
 ---
-# <a name="tcpip-schema-extensions"></a>TCP/IP のスキーマの拡張機能
+# <a name="tcpip-schema-extensions"></a>TCP/IP スキーマ拡張
 
 
 次のトピックでは、WDK で提供される Tcpbidi.xsd ファイルで使用可能な bidi スキーマの拡張を使用する方法について説明します。

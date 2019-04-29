@@ -1,17 +1,17 @@
 ---
-title: 文字およびドラフト SMS のセグメントを計算します。
-description: 文字およびドラフト SMS のセグメントを計算します。
+title: 下書き SMS の文字とセグメントを計算する
+description: 下書き SMS の文字とセグメントを計算する
 ms.assetid: abbec0b0-dfa8-43e9-8b48-e99680d56b42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d1966765bfc301892594d3f87ea859f8ba894d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392981"
 ---
-# <a name="calculate-characters-and-segments-of-a-draft-sms"></a>文字およびドラフト SMS のセグメントを計算します。
+# <a name="calculate-characters-and-segments-of-a-draft-sms"></a>下書き SMS の文字とセグメントを計算する
 
 
 モバイル ブロード バンド SMS プラットフォームでは、SMS メッセージの構成時に、残りの文字の数と (マルチパート メッセージの場合) で使用されるセグメントの数を推定する関数を提供します。

@@ -5,11 +5,11 @@ ms.assetid: eff3f381-85fe-4bb3-a57f-3889ca8929f5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86b318e8d4ab86ed177faa6299a0bae263429c4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328133"
 ---
 # <a name="boot-and-uefi"></a>ブートおよび UEFI
 
@@ -61,7 +61,7 @@ SoC のファームウェア ブート ローダーには、ブート環境が�
 ## <a name="uefi"></a>UEFI
 
 
-Windows 10、Unified Extensible Firmware インターフェイス (UEFI) システムの制御、SoC ファームウェア ブート ローダーから OS のハンドオフをサポートするために使用します。 UEFI 環境は、ブートの最小限の OS となるデバイスを起動し、Windows 10 の OS で実行されます。 詳細については、[Windows での UEFI](uefi-in-windows.md)を参照してください。
+Windows 10、Unified Extensible Firmware インターフェイス (UEFI) システムの制御、SoC ファームウェア ブート ローダーから OS のハンドオフをサポートするために使用します。 UEFI 環境は、ブートの最小限の OS となるデバイスを起動し、Windows 10 の OS で実行されます。 詳細については、次を参照してください。 [Windows での UEFI](uefi-in-windows.md)します。
 
 ## <a name="understanding-the-windows-boot-manager"></a>Windows ブート マネージャー
 
@@ -102,7 +102,7 @@ Windows ブート マネージャー、Microsoft 提供の UEFI アプリケー�
 
 4.  すべての OS イメージでブート マネージャーでは、mobilestartup.efi が次に実行されます。 このアプリケーションには、(たとえば、プロビジョニング、セキュリティで保護された boot ポリシー) に最初の起動時またはの製品版でないイメージのみが、(たとえば、USB 大容量記憶装置のモードに切り替わる) でのみ実行うちいくつかは、いくつかのブート ライブラリが実行されます。 次のライブラリは常に実行されます。
 
-    1.  まず、mobilestartup.efi は UEFI バッテリの充電を実装するライブラリを実行します。 このライブラリは、ブート環境では、(または無効にすることとして認識される場合は)、デバイスには、自分のデバイスを充電することができます。 このライブラリは、デバイスが完全に起動するには、十分な能力を持つようにするため最初に実行します。 バッテリの充電アプリケーションに関連するシナリオの詳細については、[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)を参照してください。
+    1.  まず、mobilestartup.efi は UEFI バッテリの充電を実装するライブラリを実行します。 このライブラリは、ブート環境では、(または無効にすることとして認識される場合は)、デバイスには、自分のデバイスを充電することができます。 このライブラリは、デバイスが完全に起動するには、十分な能力を持つようにするため最初に実行します。 バッテリの充電アプリケーションに関連するシナリオの詳細については、次を参照してください。[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)します。
 
     2.  次に、mobilestartup.efi 点滅、デバイスのリセットおよび更新プログラムを実装するライブラリを実行します。 これらのライブラリが、デバイスが OS の更新プログラムまたはメイン OS を続行する場合や、デバイスは、点滅を起動する必要がありますまたはモードで、デバイスをリセットするかどうかを決定します。
 

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 419782188d85fb046e836d9120c5fa8a1725e792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388118"
 ---
 # <a name="specifying-the-upgrade-dll-in-a-netmapinf-file"></a>Netmap.inf ファイル内のアップグレード DLL の指定
 
@@ -34,7 +34,7 @@ Netmap.inf ファイルのファイルが必要、 **OemUpgradeSupport**セク�
 
 *postupgrade-ID* = *network-migration-DLL*\[ , *Inf-file-name*\]
 
-この場合
+それぞれの文字の説明は次のとおりです。
 
 *postupgrade ID*は、ネットワーク コンポーネントの Windows 2000 または」の説明に従って、NetSetup によって取得された以降のデバイス ID、[ネットワークのアップグレード プロセスのフェーズを Winnt32](winnt32-phase-of-the-network-upgrade-process.md)します。
 

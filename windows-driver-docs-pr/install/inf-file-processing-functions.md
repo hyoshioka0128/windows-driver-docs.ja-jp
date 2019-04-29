@@ -1,6 +1,6 @@
 ---
-title: INF ファイルの処理関数します。
-description: INF ファイルの処理関数します。
+title: INF ファイルの処理関数
+description: INF ファイルの処理関数
 ms.assetid: df769d05-9843-44d2-971d-13f1a81755c2
 keywords:
 - SetupAPI 関数 WDK、INF ファイル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b0f569074bd759cc377fdfe43528b098a674882
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391990"
 ---
-# <a name="inf-file-processing-functions"></a>INF ファイルの処理関数します。
+# <a name="inf-file-processing-functions"></a>INF ファイルの処理関数
 
 
 

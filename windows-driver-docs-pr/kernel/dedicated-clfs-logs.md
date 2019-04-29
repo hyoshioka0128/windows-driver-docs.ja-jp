@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 860735d2ae97d08a090a888b324079754b771257
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388225"
 ---
 # <a name="dedicated-clfs-logs"></a>専用 CLFS ログ
 
@@ -23,7 +23,7 @@ ms.locfileid: "56557610"
 
 
 
-Common Log File System (CLFS) ログは、いずれか専用または多重化します。 A*専用ログ*は 1 つのストリームの安定したストレージとして機能します。 A*ログを多重化*は複数のストリームの安定したストレージとして機能します。 このトピックでは、専用のログについて説明します。 多重化されたログについては、[CLFS ログの多重化](multiplexed-clfs-logs.md)を参照してください。
+Common Log File System (CLFS) ログは、いずれか専用または多重化します。 A*専用ログ*は 1 つのストリームの安定したストレージとして機能します。 A*ログを多重化*は複数のストリームの安定したストレージとして機能します。 このトピックでは、専用のログについて説明します。 多重化されたログについては、次を参照してください。 [CLFS ログの多重化](multiplexed-clfs-logs.md)します。
 
 専用のログを作成するには、次の手順を実行します。
 

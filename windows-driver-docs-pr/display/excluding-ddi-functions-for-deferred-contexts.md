@@ -1,6 +1,6 @@
 ---
-title: 遅延コンテキスト DDI 関数を除外
-description: 遅延コンテキスト DDI 関数を除外
+title: 遅延コンテキストに対する DDI 関数の除外
+description: 遅延コンテキストに対する DDI 関数の除外
 ms.assetid: f6e7898a-7fb8-4a70-ab2e-3372a28db6f4
 keywords:
 - Direct3D のバージョン 11 WDK Windows 7 を表示する DDI 関数を除く、コンテキストの遅延
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c8a7532626cab62b764fff86c4b813f36a74de0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387891"
 ---
-# <a name="excluding-ddi-functions-for-deferred-contexts"></a>遅延コンテキスト DDI 関数を除外
+# <a name="excluding-ddi-functions-for-deferred-contexts"></a>遅延コンテキストに対する DDI 関数の除外
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

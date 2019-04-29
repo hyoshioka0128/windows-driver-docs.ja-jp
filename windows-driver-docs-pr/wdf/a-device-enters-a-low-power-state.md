@@ -1,6 +1,6 @@
 ---
-title: デバイスが省電力状態に入る
-description: デバイスが省電力状態に入る
+title: デバイスが低電力状態になる
+description: デバイスが低電力状態になる
 ms.assetid: 07d7c460-4316-40a9-b502-f7c1bd1182c2
 keywords:
 - 電源管理 WDK KMDF、低電力状態
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2047a746c6366da0ad7527b73bb9a7f14b76cccf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389103"
 ---
-# <a name="a-device-enters-a-low-power-state"></a>デバイスが省電力状態に入る
+# <a name="a-device-enters-a-low-power-state"></a>デバイスが低電力状態になる
 
 
 デバイスは、その動作 (D0) 状態のままし、次のいずれかが発生した場合は低電力状態になります。

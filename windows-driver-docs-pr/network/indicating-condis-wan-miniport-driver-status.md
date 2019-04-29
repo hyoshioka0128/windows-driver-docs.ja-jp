@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02b25983a82137ac9b73b3853a478bb4c47539bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327747"
 ---
 # <a name="indicating-condis-wan-miniport-driver-status"></a>CoNDIS WAN ミニポート ドライバー状態の表示
 
@@ -23,7 +23,7 @@ ms.locfileid: "56578536"
 
 
 
-いる CoNDIS WAN ミニポート ドライバーは呼び出し[ **NdisMCoIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563562)を最大に状態の変更を示すためにプロトコル ドライバーをバインドします。 いる CoNDIS ミニポート ドライバーまたは MCM から状態を示す詳細については、[ミニポート ドライバーの状態を示す](indicating-miniport-driver-status.md)を参照してください。
+いる CoNDIS WAN ミニポート ドライバーは呼び出し[ **NdisMCoIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563562)を最大に状態の変更を示すためにプロトコル ドライバーをバインドします。 いる CoNDIS ミニポート ドライバーまたは MCM から状態を示す詳細については、次を参照してください。[ミニポート ドライバーの状態を示す](indicating-miniport-driver-status.md)します。
 
 バインドされているプロトコル ドライバーには、これらの状態インジケーターを無視できます。 ただし、通常これらの指示の処理は、プロトコル ドライバーおよびミニポート ドライバー パフォーマンスの向上に発生します。
 

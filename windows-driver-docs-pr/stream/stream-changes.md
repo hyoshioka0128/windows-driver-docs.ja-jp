@@ -1,6 +1,6 @@
 ---
-title: Stream の変更
-description: Stream の変更
+title: ストリームの変更
+description: ストリームの変更
 ms.assetid: 3bd6a511-c602-4159-87b4-7e1e55c03b2e
 keywords:
 - ストリームの WDK DVD デコーダーを変更します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35e0355d9292b543a2f51570b30d96a5b6ad50e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391377"
 ---
-# <a name="stream-changes"></a>Stream の変更
+# <a name="stream-changes"></a>ストリームの変更
 
 
 

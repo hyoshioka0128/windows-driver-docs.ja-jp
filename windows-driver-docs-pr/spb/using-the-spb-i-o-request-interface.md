@@ -5,11 +5,11 @@ ms.assetid: 0A752413-FA0B-4C26-BF6D-19033E07095E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91ebce26adba414e14a4685b2f664248c99bfe23
-ms.sourcegitcommit: a5cbd86f3019a54ba6425999b651d6ef8bd29937
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57693051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325300"
 ---
 # <a name="using-the-spb-io-request-interface"></a>SPB I/O 要求インターフェイスの使用
 
@@ -28,7 +28,7 @@ SPBs に接続されている周辺機器がメモリ マップトでなく、�
 
 ドライバーだけでは、SPB のコント ローラーの I/O 要求インターフェイスに、I/O 要求を送信できます。 アプリケーションでは、SPB コント ローラーに I/O 要求を直接送信することはできません。 代わりに、アプリケーションは、SPB 接続の周辺機器デバイスのドライバーに I/O 要求を送信し、SPB コント ローラーに、またはデバイスからデータを転送する必要がありますすべての I/O 要求を送信するドライバーに依存します。
 
-ドライバー、ドライバーは、sp B に接続されている周辺機器に I/O 要求を送信できるようにを開きますが、デバイスへの接続を論理的に開く必要があります。 この接続を開くには、ドライバーは、プラグ アンド プレイ マネージャからのハードウェア リソースとして受信した接続 ID を使用します。 詳細については、[SPB の周辺機器の接続 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)を参照してください。
+ドライバー、ドライバーは、sp B に接続されている周辺機器に I/O 要求を送信できるようにを開きますが、デバイスへの接続を論理的に開く必要があります。 この接続を開くには、ドライバーは、プラグ アンド プレイ マネージャからのハードウェア リソースとして受信した接続 ID を使用します。 詳細については、次を参照してください。 [SPB の周辺機器の接続 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)します。
 
 SpbCx と SPB コント ローラーのドライバーは共同で読み取りを処理し、周辺機器の SPB 接続要求を記述します。 応答、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/previous-versions//ff546883(v=vs.85)) SPB コント ローラーは、指定したバイト数を周辺機器からドライバーによって提供されるバッファーに転送を要求します。 応答、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/en-us/previous-versions//ff546904(v=vs.85)) SPB コント ローラーは、ドライバーによって提供されるバッファーから指定したバイト数を周辺機器のデバイスに転送を要求します。
 
@@ -40,7 +40,7 @@ SpbCx と SPB コント ローラー ドライバーもこれらの SPB 固有 I
 - [**IOCTL\_SPB\_ロック\_コント ローラー**](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-ioctls#ioctl-spb-lock-controller)
 - [**IOCTL\_SPB\_UNLOCK\_コント ローラー**](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-ioctls#ioctl_spb_unlock_controller-control-code)
 
-SPB 周辺のドライバーでは、これらの Ioctl を使用して、実行する*I/O 転送シーケンス*します。 I/O の転送シーケンスは、バスの転送 (読み取りし、書き込み操作) の順序付けされたセットがバスの単一のアトミック操作として実行します。 これらの Ioctl の詳細については、[I/O 転送シーケンス](https://docs.microsoft.com/windows-hardware/drivers/spb/i-o-transfer-sequences)を参照してください。
+SPB 周辺のドライバーでは、これらの Ioctl を使用して、実行する*I/O 転送シーケンス*します。 I/O の転送シーケンスは、バスの転送 (読み取りし、書き込み操作) の順序付けされたセットがバスの単一のアトミック操作として実行します。 これらの Ioctl の詳細については、次を参照してください。 [I/O 転送シーケンス](https://docs.microsoft.com/windows-hardware/drivers/spb/i-o-transfer-sequences)します。
 
 SPB コント ローラーの特定の SPB コント ローラーのドライバーには、ハードウェア固有機能を実行するカスタムの Ioctl をサポート可能性があります。 これらは、Ioctl SpbCx が処理しないこと、およびハードウェアに固有の操作を実行する必要がある SPB 周辺機器のデバイス ドライバーのため SPB コント ローラーのハードウェア ベンダーがサポートしています。 操作は実行されません SPB の周辺機器のデバイス ドライバーは、IOCTL SpbCx も SPB のコント ローラー ドライバーが認識するを送信する場合と、I/O 要求が完了状態のエラー状態の値を持つ\_いない\_サポートされています。
 

@@ -1,6 +1,6 @@
 ---
-title: オーバー ラップ I/O 操作の処理
-description: オーバー ラップ I/O 操作の処理
+title: 重複した I/O 操作の処理
+description: 重複した I/O 操作の処理
 ms.assetid: d13a9fa2-9f68-4c35-af79-dd3f8cec2805
 keywords:
 - 遅延プロシージャ呼び出しの WDK カーネル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03845bea026b74a8ace7c98b56fc407a32f34e3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392436"
 ---
-# <a name="handling-overlapped-io-operations"></a>オーバー ラップ I/O 操作の処理
+# <a name="handling-overlapped-io-operations"></a>重複した I/O 操作の処理
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: KMDF ドライバーの WMI の概要
-description: KMDF ドライバーの WMI の概要
+title: KMDF ドライバー用の WMI の概要
+description: KMDF ドライバー用の WMI の概要
 ms.assetid: e919f6c9-a4c5-4972-91e7-f4fa609455fe
 keywords:
 - WMI の WDK KMDF
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ab7d04fdef5c59b7682f3780f03f5ba339c28b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388612"
 ---
-# <a name="introduction-to-wmi-for-kmdf-drivers"></a>KMDF ドライバーの WMI の概要
+# <a name="introduction-to-wmi-for-kmdf-drivers"></a>KMDF ドライバー用の WMI の概要
 
 
 \[KMDF にのみ適用されます。\]

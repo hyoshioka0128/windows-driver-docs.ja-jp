@@ -1,6 +1,6 @@
 ---
-title: クエリの種類のサポートを確認しています
-description: クエリの種類のサポートを確認しています
+title: クエリの種類のサポートの確認
+description: クエリの種類のサポートの確認
 ms.assetid: 0f925796-d827-42ba-9232-8f221919e6d4
 keywords:
 - 非同期クエリ操作 WDK DirectX 9.0、クエリの種類のサポートを確認しています
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ae69298ebf203a16f2edbb9f431947309b6dbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390794"
 ---
-# <a name="verifying-support-of-query-types"></a>クエリの種類のサポートを確認しています
+# <a name="verifying-support-of-query-types"></a>クエリの種類のサポートの確認
 
 
 ## <span id="ddk_verifying_support_of_query_types_gg"></span><span id="DDK_VERIFYING_SUPPORT_OF_QUERY_TYPES_GG"></span>

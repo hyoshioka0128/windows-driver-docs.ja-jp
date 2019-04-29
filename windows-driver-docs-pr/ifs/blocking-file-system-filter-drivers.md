@@ -1,22 +1,22 @@
 ---
-title: 従来のファイル システム フィルター ドライバーをブロック
+title: レガシ ファイル システム フィルター ドライバーのブロック
 description: 以降で Windows 10 version 1607 では、管理者およびドライバー開発者が使用できますレジストリ設定従来のファイル システム フィルター ドライバーをブロックします。
 ms.assetid: 90A562FB-D616-4D38-8D4F-7EFCDF9E617F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9069f8556b9bb888400ec47d4e048c0e3d1e2ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387243"
 ---
-# <a name="blocking-legacy-file-system-filter-drivers"></a>従来のファイル システム フィルター ドライバーをブロック
+# <a name="blocking-legacy-file-system-filter-drivers"></a>レガシ ファイル システム フィルター ドライバーのブロック
 
 以降で Windows 10 version 1607 では、管理者およびドライバー開発者が使用できますレジストリ設定従来のファイル システム フィルター ドライバーをブロックします。 *従来のファイル システム フィルター ドライバー*はファイル システムに接続されているドライバー スタックを直接とフィルター マネージャーを使用しないでください。 このトピックでは、ブロックとブロック解除のレガシ ファイル システム フィルター ドライバーのレジストリ設定について説明します。 従来のファイル システム フィルターがブロックされたときに、システム イベント ログに入力されたイベントと従来のファイル システム ドライバーが実行されている OS を確認する方法についても説明します。
 
 <div class="alert">
-<strong>注</strong>最適な信頼性とパフォーマンスは、使用はお勧め<a href="filter-manager-and-minifilter-driver-architecture.md" data-raw-source="[file system minifilter drivers](filter-manager-and-minifilter-driver-architecture.md)">ファイル システム ミニフィルター ドライバー</a>従来のファイル システム フィルター ドライバーの代わりにします。 また、従来のファイル システム フィルター ドライバーは、directaccess (DAX) ボリュームにアタッチできません。 詳細については、ファイル システム ミニフィルター ドライバーは、<a href="advantages-of-the-filter-manager-model.md" data-raw-source="[Advantages of the Filter Manager Model](advantages-of-the-filter-manager-model.md)">フィルター マネージャー モデルの利点</a>を参照してください。 ミニフィルター ドライバーは従来、ドライバーを移植するには、<a href="guidelines-for-porting-legacy-filter-drivers.md" data-raw-source="[Guidelines for Porting Legacy Filter Drivers](guidelines-for-porting-legacy-filter-drivers.md)">レガシ フィルター ドライバーを移植するためのガイドライン</a>を参照してください。
+<strong>注</strong>最適な信頼性とパフォーマンスは、使用はお勧め<a href="filter-manager-and-minifilter-driver-architecture.md" data-raw-source="[file system minifilter drivers](filter-manager-and-minifilter-driver-architecture.md)">ファイル システム ミニフィルター ドライバー</a>従来のファイル システム フィルター ドライバーの代わりにします。 また、従来のファイル システム フィルター ドライバーは、directaccess (DAX) ボリュームにアタッチできません。 詳細については、ファイル システム ミニフィルター ドライバーは、次を参照してください。<a href="advantages-of-the-filter-manager-model.md" data-raw-source="[Advantages of the Filter Manager Model](advantages-of-the-filter-manager-model.md)">フィルター マネージャー モデルの利点</a>します。 ミニフィルター ドライバーは従来、ドライバーを移植するには、次を参照してください。<a href="guidelines-for-porting-legacy-filter-drivers.md" data-raw-source="[Guidelines for Porting Legacy Filter Drivers](guidelines-for-porting-legacy-filter-drivers.md)">レガシ フィルター ドライバーを移植するためのガイドライン</a>します。
 </div>
  
 
@@ -131,7 +131,7 @@ AVMiniFilter                           3        328000         0
 
 従来のファイル システム フィルター ドライバーをブロックした後に引き続きレガシ ドライバーが実行されている場合は、設定した後、システムを再起動するように、 **IoBlockLegacyFsFilters**レジストリ キー。 設定には、再起動後はなりません。
 
-システムのレガシ ファイル システム フィルター ドライバーの場合、ファイル システム ドライバーのミニフィルターのバージョンを取得するそれぞれの Isv を使用します。 フィルター マネージャー モデルを使用するミニフィルター ドライバーへのレガシ ファイル システム フィルター ドライバーの移植方法の詳細については、[レガシ フィルター ドライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)を参照してください。
+システムのレガシ ファイル システム フィルター ドライバーの場合、ファイル システム ドライバーのミニフィルターのバージョンを取得するそれぞれの Isv を使用します。 フィルター マネージャー モデルを使用するミニフィルター ドライバーへのレガシ ファイル システム フィルター ドライバーの移植方法の詳細については、次を参照してください。[レガシ フィルター ドライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)します。
 
  
 

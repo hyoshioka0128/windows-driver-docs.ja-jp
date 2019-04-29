@@ -1,6 +1,6 @@
 ---
-title: UMDF で一般的な I/O ターゲットへの I/O 要求を送信します。
-description: UMDF で一般的な I/O ターゲットへの I/O 要求を送信します。
+title: UMDF での一般 I/O ターゲットへの I/O 要求の送信
+description: UMDF での一般 I/O ターゲットへの I/O 要求の送信
 ms.assetid: f373afa8-292a-47bb-af6f-5035287d1e8c
 keywords:
 - 一般的な I/O ターゲット WDK UMDF への I/O 要求を送信します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96b59f816e17a9de00da4d77fc083b2ba16bc4a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325174"
 ---
-# <a name="sending-io-requests-to-a-general-io-target-in-umdf"></a>UMDF で一般的な I/O ターゲットへの I/O 要求を送信します。
+# <a name="sending-io-requests-to-a-general-io-target-in-umdf"></a>UMDF での一般 I/O ターゲットへの I/O 要求の送信
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
@@ -72,7 +72,7 @@ UMDF ドライバーは、I/O のターゲットに、I/O 要求を送信する�
 
  
 
-ドライバーの呼び出しに I/O ターゲットを I/O 要求を送信する、 [ **IWDFIoRequest::Send** ](https://msdn.microsoft.com/library/windows/hardware/ff559149)メソッド。 I/O 要求を同期的に送信する、ドライバーは、WDF を渡します\_要求\_送信\_オプション\_同期フラグを*フラグ*パラメーター。 それ以外の場合、ドライバーは、I/O 要求を非同期的に送信します。 ドライバーは、非同期 I/O 要求を送信する場合、ドライバーで別のドライバーが要求を完了すると、通知が通常必要です。 ドライバーを定義する必要があります、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)コールバック関数を呼び出すことによって、登録、 [ **IWDFIoRequest:。SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)メソッド。 詳細については、[I/O 要求の完了](completing-i-o-requests.md)を参照してください。
+ドライバーの呼び出しに I/O ターゲットを I/O 要求を送信する、 [ **IWDFIoRequest::Send** ](https://msdn.microsoft.com/library/windows/hardware/ff559149)メソッド。 I/O 要求を同期的に送信する、ドライバーは、WDF を渡します\_要求\_送信\_オプション\_同期フラグを*フラグ*パラメーター。 それ以外の場合、ドライバーは、I/O 要求を非同期的に送信します。 ドライバーは、非同期 I/O 要求を送信する場合、ドライバーで別のドライバーが要求を完了すると、通知が通常必要です。 ドライバーを定義する必要があります、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)コールバック関数を呼び出すことによって、登録、 [ **IWDFIoRequest:。SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)メソッド。 詳細については、次を参照してください。 [I/O 要求の完了](completing-i-o-requests.md)します。
 
 呼び出すドライバー **IWDFIoRequest::Send** 、I/O を送信する要求が呼び出すことによって、要求の後で取り消しを試みることができます、 [ **IWDFIoRequest::CancelSentRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559067)メソッド。 ドライバー、フレームワークから受信したドライバーをドライバー必要のある常に、I/O 要求をキャンセルした場合は、呼び出すことによって、要求を完了、 [ **IWDFIoRequest::Complete** ](https://msdn.microsoft.com/library/windows/hardware/ff559070)または[ **IWDFIoRequest::CompleteWithInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559074)メソッドを*CompletionStatus*パラメーターの状態に設定\_キャンセルします。 ドライバーを呼び出す場合は、ドライバーは、要求オブジェクトを作成、 [ **IWDFObject::DeleteWdfObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560210)要求を完了するのではなく。
 

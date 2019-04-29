@@ -5,11 +5,11 @@ ms.assetid: 6280E9CC-422B-4100-8B38-07BADD6A578A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4189c4b4978a106f21e8197889cb4107a7b3e75
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387960"
 ---
 # <a name="getting-started-with-uwp-device-apps"></a>UWP デバイス アプリの概要
 
@@ -20,7 +20,7 @@ UWP デバイス アプリのビルドを開始するには、ここから始め
 
 デバイス製造元は、デバイスのコンパニオンとして機能する UWP デバイス アプリを作成できます。 UWP デバイス アプリには、通常の UWP アプリより多くの機能を備え、ファームウェアの更新などの特権操作を実行できます。 また、UWP デバイス アプリことができます (他のアプリよりも多くのデバイス) で自動再生の開始、自動的にインストール、デバイスが接続されている場合、最初にして Windows に組み込まれているプリンター、カメラ エクスペリエンスを拡張します。
 
-**注**  デバイスの Windows ランタイム Api は、デバイスのメタデータを必要としません。 つまり、アプリは、それらを使用するデバイス アプリを UWP をする必要はありません。 UWP アプリでは、USB、ヒューマン インターフェイス デバイス (HID)、Bluetooth デバイス、およびアクセスをこれらの Api を使用できます。 詳細については、[デバイス統合](https://go.microsoft.com/fwlink/p/?LinkId=533279)を参照してください。
+**注**  デバイスの Windows ランタイム Api は、デバイスのメタデータを必要としません。 つまり、アプリは、それらを使用するデバイス アプリを UWP をする必要はありません。 UWP アプリでは、USB、ヒューマン インターフェイス デバイス (HID)、Bluetooth デバイス、およびアクセスをこれらの Api を使用できます。 詳細については、次を参照してください。[デバイス統合](https://go.microsoft.com/fwlink/p/?LinkId=533279)します。
 
  
 
@@ -74,7 +74,7 @@ UWP デバイスのアプリと 1 つのビルドに使用して実行できる�
 ## <a name="span-id4buildyourownwindowsstoredeviceappspanspan-id4buildyourownwindowsstoredeviceappspan4-build-your-own-uwp-device-app"></a><span id="4._build_your_own_windows_store_device_app"></span><span id="4._BUILD_YOUR_OWN_WINDOWS_STORE_DEVICE_APP"></span>4.UWP デバイス アプリをビルドします。
 
 
-まず、[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)を参照してください。
+まず、次を参照してください。[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)します。
 
  
 

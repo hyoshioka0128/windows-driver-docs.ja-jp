@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 85295c8fdabfaacb1e8a8ea6c450f077079e95fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387873"
 ---
 # <a name="oidgensupportedlist"></a>OID\_GEN\_サポートされている\_一覧
 
@@ -34,7 +34,7 @@ ms.locfileid: "56578867"
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
 必須。 参照してください[OID\_GEN\_サポートされている\_一覧 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff560258)します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS 6.0 とそれ以降のミニポート ドライバーでは、この OID 要求は表示されません。 NDIS は、ミニポート ドライバーが初期化中に指定するキャッシュされた値を持つこの OID を処理します。

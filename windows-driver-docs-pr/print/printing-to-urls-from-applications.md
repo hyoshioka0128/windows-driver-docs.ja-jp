@@ -1,6 +1,6 @@
 ---
-title: アプリケーションから Url への印刷
-description: アプリケーションから Url への印刷
+title: アプリケーションから URL に印刷する
+description: アプリケーションから URL に印刷する
 ms.assetid: bc9aedb4-1d64-4b70-b14b-1392f914a635
 keywords:
 - インターネット Url への印刷、WDK の印刷
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d099985ded26f5e03fa83da22de7946948b81878
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390275"
 ---
-# <a name="printing-to-urls-from-applications"></a>アプリケーションから Url への印刷
+# <a name="printing-to-urls-from-applications"></a>アプリケーションから URL に印刷する
 
 
 

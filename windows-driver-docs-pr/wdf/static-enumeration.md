@@ -1,6 +1,6 @@
 ---
-title: 静的な列挙型
-description: 静的な列挙型
+title: 静的な列挙
+description: 静的な列挙
 ms.assetid: 58377f17-a9dc-4096-af23-36f8d8dbb87e
 keywords:
 - 静的列挙 WDK KMDF
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 27e18f8f87f5afb75a0f338d1cd7f0f5c1442a6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325119"
 ---
-# <a name="static-enumeration"></a>静的な列挙型
+# <a name="static-enumeration"></a>静的な列挙
 
 
 *列挙体の静的*は検出し、システムの構成に後続の変更を報告する機能が制限を使用したシステムの初期化中にデバイスの存在をレポートするドライバーの機能です。
@@ -32,7 +32,7 @@ ms.locfileid: "56537446"
 
 ドライバーは、デバイスの機能のデバイス オブジェクト (FDO) を表す framework デバイス オブジェクトを作成するたびに、フレームワークに、デバイスの一覧を空の静的な子を作成します。
 
-ときに、フレームワークがバス ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数では、コールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)FDO 親デバイスを作成します。 FDO の作成の詳細については、[Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)を参照してください。
+ときに、フレームワークがバス ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数では、コールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)FDO 親デバイスを作成します。 FDO の作成の詳細については、次を参照してください。 [Function ドライバーのデバイス オブジェクトの作成](creating-device-objects-in-a-function-driver.md)です。
 
 ドライバーする必要があります親デバイスの子の列挙、子の Pdo を作成し、子リストに、子を追加します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "56537446"
 
 3.  呼び出す[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926) PDO を表す framework デバイス オブジェクトを作成します。
 
-PDO の作成の詳細については、[バス ドライバーのデバイス オブジェクトを作成する](creating-device-objects-in-a-bus-driver.md)を参照してください。
+PDO の作成の詳細については、次を参照してください。[バス ドライバーのデバイス オブジェクトを作成する](creating-device-objects-in-a-bus-driver.md)します。
 
 呼び出した後**WdfDeviceCreate**、ドライバーを呼び出す必要があります[ **WdfFdoAddStaticChild** ](https://msdn.microsoft.com/library/windows/hardware/ff547225)子デバイスを子リストに追加します。
 

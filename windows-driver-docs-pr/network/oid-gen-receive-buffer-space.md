@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_RECEIVE_BUFFER_SPACE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ea0f96e6949e58a17333e6cf0f6e742d6533acb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391030"
 ---
 # <a name="oidgenreceivebufferspace"></a>OID\_GEN\_受信\_バッファー\_領域
 
@@ -39,7 +39,7 @@ ms.locfileid: "56548567"
 
 プロトコル ドライバーは広告のためのガイドとしてこの OID を使用することができます、リモート ノードとのセッションを確立した後で、ウィンドウを表示します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

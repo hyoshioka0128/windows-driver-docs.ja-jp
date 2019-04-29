@@ -1,17 +1,17 @@
 ---
-title: WDDM 1.2 機能
+title: WDDM 1.2 の機能
 description: このトピックでは、パフォーマンス、信頼性、および全体的なエンド ユーザー エクスペリエンスを向上させるいくつかの新しい拡張機能を含む Windows Display Driver Model (WDDM) Version 1.2 の機能セットについて説明します。
 ms.assetid: 65072545-76F0-43A8-9E46-703CA99BFE90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fdbac4a14090306d9306f9a56cc7d837db23c194
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391185"
 ---
-# <a name="wddm-12-features"></a>WDDM 1.2 機能
+# <a name="wddm-12-features"></a>WDDM 1.2 の機能
 
 
 このトピックでは、パフォーマンス、信頼性、および全体的なエンド ユーザー エクスペリエンスを向上させるいくつかの新しい拡張機能を含む Windows Display Driver Model (WDDM) Version 1.2 の機能セットについて説明します。
@@ -48,7 +48,7 @@ WDDM 1.2 には、必須およびオプションの両方の機能がありま�
 
 \*\*新しいデバイス ドライバー インターフェイス (DDI) または動作の変更はありません。 ただし、WDDM 1.2 およびそれ以降のドライバーは XPS 印刷シナリオのハードウェア アクセラレータを使用した高品質な印刷エクスペリエンスを確実にラスタライズ準拠テストを XML Paper Specification (XPS) を渡すことがある必要があります。
 
-**注**  一連の Api は、コラボレーションのシナリオ用のデスクトップを複製するための Windows 8 以降から使用できます。 詳細については、[デスクトップ重複](desktop-duplication-api.md)を参照してください。
+**注**  一連の Api は、コラボレーションのシナリオ用のデスクトップを複製するための Windows 8 以降から使用できます。 詳細については、次を参照してください。[デスクトップ重複](desktop-duplication-api.md)します。
 
  
 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 740ca8744b1a88d4ef840df7d09b3b2485b3650b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392474"
 ---
 # <a name="kscategorytext"></a>KSCATEGORY_TEXT
 
@@ -51,12 +51,12 @@ KSCATEGORY_TEXT[デバイス インターフェイス クラス](https://msdn.mi
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 KS デバイス用のドライバーでは、デバイスが KSCATEGORY_TEXT 機能カテゴリをサポートすることを示す KSCATEGORY_TEXT のインスタンスを登録します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

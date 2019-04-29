@@ -1,6 +1,6 @@
 ---
-title: NDIS バージョン情報を指定します。
-description: NDIS バージョン情報を指定します。
+title: NDIS バージョン情報の指定
+description: NDIS バージョン情報の指定
 ms.assetid: 9d007046-01c5-4bf8-adda-b88b596945d6
 keywords:
 - WDK の NDIS バージョン情報
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d94e438ff72f56e4eecbeaa809bffb4b9c74867e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388112"
 ---
-# <a name="specifying-ndis-version-information"></a>NDIS バージョン情報を指定します。
+# <a name="specifying-ndis-version-information"></a>NDIS バージョン情報の指定
 
 
 

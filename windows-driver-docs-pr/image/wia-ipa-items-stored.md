@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ab816286808b068aa887e03f095ea5a21d8e6fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388778"
 ---
 # <a name="wiaipaitemsstored"></a>WIA\_IPA\_項目\_ストアド
 
@@ -32,7 +32,7 @@ WIA\_IPA\_項目\_ストアド プロパティは、記憶域に格納されま�
 
 アクセス権:読み取り専用かどうか
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

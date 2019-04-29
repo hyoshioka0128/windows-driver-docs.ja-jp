@@ -1,17 +1,17 @@
 ---
-title: セキュリティ グループのコマンド
+title: セキュリティ グループ コマンド
 description: 次のセクションでは、セキュリティの特定のコマンドを送信するための特別な要件について説明します。
 ms.assetid: 956C26D7-A434-4055-892B-E6E2D5B70CFA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09af94c3f30b6d3f4253d95494a55edd29ad2998
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387939"
 ---
-# <a name="security-group-commands"></a>セキュリティ グループのコマンド
+# <a name="security-group-commands"></a>セキュリティ グループ コマンド
 
 
 次のセクションでは、セキュリティの特定のコマンドを送信するための特別な要件について説明します。

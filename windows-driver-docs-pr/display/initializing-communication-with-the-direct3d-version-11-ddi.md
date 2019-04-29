@@ -1,6 +1,6 @@
 ---
-title: Direct3D のバージョン 11 DDI との通信を初期化しています
-description: Direct3D のバージョン 11 DDI との通信を初期化しています
+title: Direct3D バージョン 11 DDI との通信の初期化
+description: Direct3D バージョン 11 DDI との通信の初期化
 ms.assetid: 3b383f78-da88-4979-b55f-8e234f230df7
 keywords:
 - DDI 通信を初期化して、Direct3D バージョン 11 WDK Windows 7 表示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74d6c0c926b04793a2fc26f1fc28d0a914d72b06
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325043"
 ---
-# <a name="initializing-communication-with-the-direct3d-version-11-ddi"></a>Direct3D のバージョン 11 DDI との通信を初期化しています
+# <a name="initializing-communication-with-the-direct3d-version-11-ddi"></a>Direct3D バージョン 11 DDI との通信の初期化
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
@@ -25,7 +25,7 @@ ms.locfileid: "56528695"
 
  
 
-[**OpenAdapter10\_2** ](https://msdn.microsoft.com/library/windows/hardware/ff568603)ドライバーの初期化をより効率的に設計されました。 実装する必要があります**OpenAdapter10\_2** Direct3D のバージョン 11 ドライバー。 実装することも**OpenAdapter10\_2** (なくまたはに加えて[ **OpenAdapter10**](https://msdn.microsoft.com/library/windows/hardware/ff568602)) を増やす、Direct3D のバージョン 10.1 ドライバーで、これらのドライバーの効率を初期化します。 実装の詳細については**OpenAdapter10\_2** 、Direct3D バージョン 10.1 ドライバーには、[バージョンの検出サポート](version-discovery-support.md)を参照してください。 **OpenAdapter10\_2**バージョン管理と、ランタイムとドライバーの間には、その他の情報の交換を処理します。
+[**OpenAdapter10\_2** ](https://msdn.microsoft.com/library/windows/hardware/ff568603)ドライバーの初期化をより効率的に設計されました。 実装する必要があります**OpenAdapter10\_2** Direct3D のバージョン 11 ドライバー。 実装することも**OpenAdapter10\_2** (なくまたはに加えて[ **OpenAdapter10**](https://msdn.microsoft.com/library/windows/hardware/ff568602)) を増やす、Direct3D のバージョン 10.1 ドライバーで、これらのドライバーの効率を初期化します。 実装の詳細については**OpenAdapter10\_2** 、Direct3D バージョン 10.1 ドライバーには、次を参照してください。[バージョンの検出サポート](version-discovery-support.md)します。 **OpenAdapter10\_2**バージョン管理と、ランタイムとドライバーの間には、その他の情報の交換を処理します。
 
 ### <a name="span-idversioningspanspan-idversioningspanversioning"></a><span id="versioning"></span><span id="VERSIONING"></span>バージョン管理
 

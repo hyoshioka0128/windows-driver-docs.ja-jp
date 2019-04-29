@@ -1,17 +1,17 @@
 ---
-title: RunAs システム
+title: RunAs System
 description: TAEF は、ローカル システムとして、テストを実行します。
 ms.assetid: E1138F36-D043-458A-8424-C649854CB7EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c4e4828404dfe8cb55c8461cc89e567ed7cfa0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326007"
 ---
-# <a name="runas-system"></a>RunAs システム
+# <a name="runas-system"></a>RunAs System
 
 
 TAEF は、ローカル システムとして、テストを実行します。

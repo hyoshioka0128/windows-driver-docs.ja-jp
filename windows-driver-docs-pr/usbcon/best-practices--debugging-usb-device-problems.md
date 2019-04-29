@@ -1,16 +1,16 @@
 ---
-Description: This topic provides tips for debugging USB device problems by using ETW events.
-title: ETW イベントを使用して USB デバイスの問題のデバッグ
+Description: このトピックでは、ETW イベントを使用して USB デバイスに関する問題をデバッグするためのヒントを提供します。
+title: ETW イベントを使用した USB デバイスの問題のデバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f416387697ba48af38bcff2921ec3d2592dd8b28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389199"
 ---
-# <a name="debugging-usb-device-issues-by-using-etw-events"></a>ETW イベントを使用して USB デバイスの問題のデバッグ
+# <a name="debugging-usb-device-issues-by-using-etw-events"></a>ETW イベントを使用した USB デバイスの問題のデバッグ
 
 
 このトピックでは、ETW イベントを使用して USB デバイスに関する問題をデバッグするためのヒントを提供します。

@@ -5,11 +5,11 @@ ms.assetid: baa3c045-05ee-4012-97a3-c6e575c897be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59224a00be8a9686389c0b859e6b2da65ae1a811
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325818"
 ---
 # <a name="how-container-ids-are-generated"></a>コンテナー ID の生成方法
 
@@ -27,14 +27,14 @@ Windows 7 以降、プラグ アンド プレイ (PnP) マネージャーはデ�
 
 
 
-詳細については、[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md)を参照してください。
+詳細については、次を参照してください。[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md)します。
 
 
 -   PnP マネージャーでは、リムーバブル デバイスの機能を通じてコンテナー ID を生成します。
 
     バス ドライバーは、列挙 devnode のコンテナーの ID を提供することはできません、PnP マネージャーは、デバイスの列挙されたすべての devnode のコンテナー ID を生成するのにリムーバブル デバイスの機能を使用します。 バス ドライバーへの応答でこのデバイスの機能の報告、 [ **IRP_MN_QUERY_CAPABILITIES** ](https://msdn.microsoft.com/library/windows/hardware/ff551664)要求。
 
-    詳細については、[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)を参照してください。
+    詳細については、次を参照してください。[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)します。
 
 -   PnP マネージャーでは、リムーバブル デバイスの機能の上書きすることによって、コンテナー ID を生成します。
 
@@ -49,10 +49,10 @@ Windows 7 以降、プラグ アンド プレイ (PnP) マネージャーはデ�
 
 IHV は、デバイスによって報告されたリムーバブル デバイスの機能をオーバーライドするキーを持つレジストリを設定できます。 このオーバーライド メカニズムは、リムーバブル デバイスの機能をサポートまたはしない正しく報告して従来のデバイスに役立ちます。
 
-詳細については、[コンテナー Id は、リムーバブル デバイス機能オーバーライドから生成された](container-ids-generated-from-a-removable-device-capability-override.md)を参照してください。
+詳細については、次を参照してください。[コンテナー Id は、リムーバブル デバイス機能オーバーライドから生成された](container-ids-generated-from-a-removable-device-capability-override.md)します。
 
 
-これらのメソッドだけでなくデバイス コンテナー グループを指定するのにオブジェクトの ACPI BIOS 設定が使用されます。 詳細については、[デバイス コンテナーのグループ化を使用して ACPI](using-acpi-for-device-container-grouping.md)を参照してください。
+これらのメソッドだけでなくデバイス コンテナー グループを指定するのにオブジェクトの ACPI BIOS 設定が使用されます。 詳細については、次を参照してください。[デバイス コンテナーのグループ化を使用して ACPI](using-acpi-for-device-container-grouping.md)します。
 
 
 

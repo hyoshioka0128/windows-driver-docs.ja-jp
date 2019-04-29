@@ -5,11 +5,11 @@ ms.assetid: 30b4d2e4-2004-4d71-8c91-f066e52dd256
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a556b01864bdc5676e6fc47009510c3d102cee98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390559"
 ---
 # <a name="capabilities-provided-by-storport"></a>Storport によって提供される機能
 
@@ -36,7 +36,7 @@ Storport ドライバーは、次の機能を提供します。
 
     クラス ドライバーは、要求のタイムアウト値を設定して、Storport、実施する責任を負います。 ただし、Storport ドライバーを適用できますクラス ドライバーのタイムアウト値、柔軟に考慮バスの状態を取得します。 たとえば、Storport によって管理されるファイバー チャネルのリンクは、20 秒の削除する場合のリンクが再び起動した後、10 秒まで 10 秒のタイムアウト設定された要求は失敗しません、ように、ダウンタイム中にタイムアウト カウンターが Storport に中断可能性があります。 Storport では、負荷の I/O トラフィックと、デバイスの要求を完了する時間がかかるため、I/O トラフィックが増加する応答内の要求に割り当てられたタイムアウト値が増加します。
 
--   ターゲットとコント ローラー、負荷の高いエラー、さらにトランスポート エラー条件 (つまり、実際に、バス上のデータの転送に関連するエラー) を処理します。 次に、例を示します。
+-   ターゲットとコント ローラー、負荷の高いエラー、さらにトランスポート エラー条件 (つまり、実際に、バス上のデータの転送に関連するエラー) を処理します。 以下に例を示します。
 
     1.  バス パリティ エラー
     2.  選択範囲のタイムアウト
@@ -67,7 +67,7 @@ Storport ドライバーは、次の機能を提供します。
 
 Storport では、Storport のライブラリ ルーチンを使用して、ミニポート ドライバーにサービスを提供します。 ミニポート ドライバーの作成者には、1 つのモノリシック ポート ドライバーに提供する機能をコーディングするのではなく、これらのルーチンを呼び出すことができます。 によって、これらのルーチンを使用して最も重要なサービスの一部としては、
 
--   Storport ミニポート ドライバーが Storport に多くの OS に依存する初期化操作を委任できます[ **StorPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff567108)ライブラリ ルーチン。 たとえば、PnP に関連する詳細の処理、Storport ドライバーと DMA のマッピング。 これにより、オペレーティング システムのバージョンが異なって Storport ミニポート ドライバーが移植性にします。 Storport ミニポート ドライバーの初期化作業の詳細については、[Storport 使用した初期化をハードウェア](hardware-initialization-with-storport.md)を参照してください。
+-   Storport ミニポート ドライバーが Storport に多くの OS に依存する初期化操作を委任できます[ **StorPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff567108)ライブラリ ルーチン。 たとえば、PnP に関連する詳細の処理、Storport ドライバーと DMA のマッピング。 これにより、オペレーティング システムのバージョンが異なって Storport ミニポート ドライバーが移植性にします。 Storport ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [Storport 使用した初期化をハードウェア](hardware-initialization-with-storport.md)します。
 
 -   非 PnP デバイスの Storport ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **StorPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff567108)します。
 

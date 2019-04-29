@@ -1,6 +1,6 @@
 ---
-title: プラグインの作成
-description: プラグインの作成
+title: プラグインを作成する
+description: プラグインを作成する
 ms.assetid: 4e52c855-f2c6-49b5-ac79-96dcac785579
 keywords:
 - COM インターフェイスの WDK 印刷、プラグインを作成します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f18a79765275c06b11f48d052131c7bd1dda2beb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390928"
 ---
-# <a name="creating-the-plug-in"></a>プラグインの作成
+# <a name="creating-the-plug-in"></a>プラグインを作成する
 
 
 

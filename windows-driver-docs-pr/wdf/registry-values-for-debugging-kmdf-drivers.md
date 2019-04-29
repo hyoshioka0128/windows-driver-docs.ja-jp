@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 490cfdc7456c00562bbc3105e595e2c3b852c675
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390036"
 ---
 # <a name="registry-values-for-debugging-wdf-drivers-kmdf-and-umdf"></a>WDF ドライバー (KMDF および UMDF) をデバッグするためのレジストリ値
 
@@ -143,7 +143,7 @@ KMDF ドライバーでは、次のレジストリ値は下に存在できる、
 
 指定する**HostProcessDbgBreakOnStart**または**HostProcessDbgBreakOnDriverLoad**とその他の UMDF タイムアウト (たとえば、プラグ アンド プレイ操作) を無効にするフレームワークです。 つまりには、ドライバーでは、過剰にタイムアウトが発生する場合は、これらの値を使用して可能性があります、ターゲット上で致命的なクラッシュの原因は、ドライバー。
 
-WDK に含まれている WDF Verifier ツール (WdfVerifier.exe) を使用して、これらのレジストリ値を設定することもできます。 UMDF ドライバーでこのツールの使用方法の詳細については、[WDF Verifier による UMDF 検証設定の管理](https://msdn.microsoft.com/library/windows/hardware/ff548422)を参照してください。
+WDK に含まれている WDF Verifier ツール (WdfVerifier.exe) を使用して、これらのレジストリ値を設定することもできます。 UMDF ドライバーでこのツールの使用方法の詳細については、次を参照してください。 [WDF Verifier による UMDF 検証設定の管理](https://msdn.microsoft.com/library/windows/hardware/ff548422)します。
 
 次の値にある**HKLM\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\DebugMode**:
 
@@ -166,7 +166,7 @@ WDK に含まれている WDF Verifier ツール (WdfVerifier.exe) を使用し�
 </tr>
 <tr class="even">
 <td align="left"><p>0x02</p></td>
-<td align="left"><p>デバイスのプールを無効にします。 デバイスのプールに関する詳細については、<a href="using-device-pooling-in-umdf-drivers.md" data-raw-source="[Using Device Pooling in UMDF Drivers](using-device-pooling-in-umdf-drivers.md)">デバイスの UMDF ドライバーでプールを使用して</a>を参照してください。</p></td>
+<td align="left"><p>デバイスのプールを無効にします。 デバイスのプールに関する詳細については、次を参照してください。<a href="using-device-pooling-in-umdf-drivers.md" data-raw-source="[Using Device Pooling in UMDF Drivers](using-device-pooling-in-umdf-drivers.md)">デバイスの UMDF ドライバーでプールを使用して</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x04</p></td>

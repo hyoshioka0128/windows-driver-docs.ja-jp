@@ -1,5 +1,5 @@
 ---
-title: BCDEdit/emssettings
+title: BCDEdit /emssettings
 description: /Emssettings オプションは、コンピューターのグローバルの緊急管理サービス (EMS) の設定を設定します。 を有効にまたは EMS を無効にするには、/ems オプションを使用します。 /Emssettings オプションを有効または任意のブート エントリの EMS を無効にするにはありません。
 ms.assetid: 010e852d-ff97-4280-b35b-f1881e249e42
 ms.date: 07/03/2018
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 18757cc3041b8e5673218516f4368a083892f502
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389091"
 ---
-# <a name="bcdedit-emssettings"></a>BCDEdit/emssettings
+# <a name="bcdedit-emssettings"></a>BCDEdit /emssettings
 
 
 **/Emssettings**オプションは、コンピューターのグローバルの緊急管理サービス (EMS) の設定を設定します。 有効または EMS を無効にする、使用、 **/ems**オプション。 **/Emssettings**オプションも有効または任意のブート エントリの EMS を無効にします。
@@ -54,7 +54,7 @@ BIOS ファームウェア、SPCR テーブルにはありませんがいるコ�
 
 このセクションで説明されているブート パラメーターでは、Windows のインストール後に、EMS のコンソールのリダイレクトが有効にします。 新規インストールまたは Windows のアップグレード中に、EMS を有効にする方法についてで「を有効にする緊急管理サービス」の検索、 [Microsoft TechNet](https://go.microsoft.com/fwlink/p/?linkid=10111) web サイト。
 
-詳細の例では、[EMS のリダイレクトを有効にするのにブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542282)を参照してください。
+詳細の例では、次を参照してください。 [EMS のリダイレクトを有効にするのにブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542282)します。
 
  
 

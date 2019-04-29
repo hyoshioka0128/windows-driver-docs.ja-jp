@@ -1,17 +1,17 @@
 ---
-title: 体系的な低リソース シミュレーション
+title: 体系的な低リソースのシミュレーション
 description: 体系的な低リソース シミュレーション オプションは、カーネル モード ドライバーにリソース エラーを挿入します。
 ms.assetid: A8351715-8407-4FEF-9050-2F1F2E7FC2FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c11500c180357cff2c74e6aba614a6bbcc8d55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391302"
 ---
-# <a name="systematic-low-resources-simulation"></a>体系的な低リソース シミュレーション
+# <a name="systematic-low-resources-simulation"></a>体系的な低リソースのシミュレーション
 
 
 体系的な低リソース シミュレーション オプションは、カーネル モード ドライバーにリソース エラーを挿入します。 このオプションは侵入ドライバー エラーのパスを処理します。 これらのパスをテスト歴史的非常に困難です。 体系的な低リソース シミュレーション オプションは、検出した再現可能な問題により、予測可能な方法でリソースの障害を挿入します。 エラー パスは、簡単に再現できますであるためにも簡単にこれらの問題の修正を確認します。
@@ -31,7 +31,7 @@ ms.locfileid: "56550517"
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの体系的な低リソース シミュレーション機能をアクティブ化することができます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。 アクティブ化または体系的な低リソース シミュレーションのオプションを非アクティブ化するコンピューターを再起動する必要があります。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの体系的な低リソース シミュレーション機能をアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 アクティブ化または体系的な低リソース シミュレーションのオプションを非アクティブ化するコンピューターを再起動する必要があります。
 
 -   **コマンドラインで**
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_ALLOCATE_VF ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a0cf4c274579407ab4034141e93e7ea61d659720
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391642"
 ---
 # <a name="oidnicswitchallocatevf"></a>OID\_NIC\_スイッチ\_ALLOCATE\_VF
 
@@ -26,7 +26,7 @@ ms.locfileid: "56527296"
 
 PF のミニポート ドライバーでは、ドライバーの OID オブジェクト識別子 (OID) メソッド要求を処理する際に VF のソフトウェア リソースを割り当てます\_NIC\_スイッチ\_ALLOCATE\_VF します。 PF ミニポート ドライバーでは、OID が正常に完了するまでに操作不可状態にすると見なされる場合でも、ハードウェア リソースを VF に対して割り当てられている、\_NIC\_スイッチ\_ALLOCATE\_VF します。
 
-VF リソースを割り当てる方法の詳細については、[仮想関数のリソースを割り当てる](https://msdn.microsoft.com/library/windows/hardware/hh439285)を参照してください。
+VF リソースを割り当てる方法の詳細については、次を参照してください。[仮想関数のリソースを割り当てる](https://msdn.microsoft.com/library/windows/hardware/hh439285)します。
 
 **注**  上にある、ドライバーは VF のリソースの割り当てを要求、そのドライバーが同じ VF のリソースの解放が要求できる唯一のコンポーネント。 上にあるドライバーの OID セット要求を発行する必要があります[OID\_NIC\_スイッチ\_FREE\_VF](oid-nic-switch-free-vf.md) VF リソースを解放します。 ドライバーの OID で割り当てられた各 VF のリソースを解放する必要があります上にあるドライバーを停止できますが、前に\_NIC\_スイッチ\_ALLOCATE\_VF 要求。
 
