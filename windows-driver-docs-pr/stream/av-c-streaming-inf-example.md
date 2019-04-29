@@ -1,6 +1,6 @@
 ---
-title: AV/C# ストリーミング サンプルの INF
-description: AV/C# ストリーミング サンプルの INF
+title: AV/C ストリーミングの INF の例
+description: AV/C ストリーミングの INF の例
 ms.assetid: c8a2c9cd-c71b-4fd1-80f5-34d13837865e
 keywords:
 - AV/C WDK、Stream フィルター ドライバー
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be7d284b830590360670381c4eeffd7d307dec6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323545"
 ---
-# <a name="avc-streaming-inf-example"></a>AV/C# ストリーミング サンプルの INF
+# <a name="avc-streaming-inf-example"></a>AV/C ストリーミングの INF の例
 
 
 
@@ -45,7 +45,7 @@ ServiceBinary = %12%\subunit.sys
 Dependencies  = AVCSTRM   ; loaded before subunit.sys
 ```
 
-デバイスのインストール ファイルの詳細については、[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
+デバイスのインストール ファイルの詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
 
  
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bcfcfef1f2fd519a2123bb8654a616744729563
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322172"
 ---
 # <a name="hspluginqueryhiddennetwork-function"></a>HS\_プラグイン\_クエリ\_HIDDEN\_ネットワーク関数
 
@@ -44,7 +44,7 @@ ms.locfileid: "56571974"
 
 この関数は、プラグインを使用して通信するためにホストによって呼び出され、値は返されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ホストが場合にのみ、この関数を呼び出して、 **dwPluginCapabilities**フィールドの関連付けられているプラグインの[ **HS\_プラグイン\_プロファイル**](hs-plugin-profile.md)構造体が含まれています、 **HS\_フラグ\_機能\_ネットワーク\_型\_HIDDEN**機能します。
@@ -55,7 +55,7 @@ ms.locfileid: "56571974"
 
 ホット スポットのオフロード サービスで、サービスのライフ サイクルの 1 つの非表示のネットワークの制限が課せられます。 そのため、大文字と小文字の非表示のネットワークを指定する最初のプラグインの要求のみが受け入れられる、複数のプラグインがインストールされている場合は。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

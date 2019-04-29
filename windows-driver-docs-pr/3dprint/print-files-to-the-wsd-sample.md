@@ -1,17 +1,17 @@
 ---
-title: WSD サンプル ファイルを印刷します。
+title: WSD サンプルへのファイルの出力
 description: このセクションでは、WSD サンプルに印刷する方法について説明します。
 ms.assetid: E03A957E-C96A-4B35-BFDD-10C1D5A4CCD5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79fc8d71aeb7155664b92c3559052bd06bff836c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324741"
 ---
-# <a name="print-files-to-the-wsd-sample"></a>WSD サンプル ファイルを印刷します。
+# <a name="print-files-to-the-wsd-sample"></a>WSD サンプルへのファイルの出力
 
 
 このセクションでは、WSD サンプルに印刷する方法について説明します。

@@ -1,6 +1,6 @@
 ---
-title: 高速化された状態の管理
-description: 高速化された状態の管理
+title: 高速化状態管理
+description: 高速化状態管理
 ms.assetid: 276d3cdb-34bf-49e8-aae5-94315746c5ff
 keywords:
 - WDK Direct3D の高速化された状態管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60bbd56a4f0ba43041f95a4e0dc1508ba3ab2756
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323803"
 ---
-# <a name="accelerated-state-management"></a>高速化された状態の管理
+# <a name="accelerated-state-management"></a>高速化状態管理
 
 
 ## <span id="ddk_accelerated_state_management_gg"></span><span id="DDK_ACCELERATED_STATE_MANAGEMENT_GG"></span>

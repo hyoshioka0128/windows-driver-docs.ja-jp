@@ -1,19 +1,19 @@
 ---
-title: ヒープを無効にする無料の結合
-description: ヒープを無効にする無料の結合
+title: Disable heap coalesce on free
+description: Disable heap coalesce on free
 ms.assetid: 64a68fa2-9270-4b2d-9edc-d54370191dcb
 keywords:
 - ヒープを無効にする無料 (グローバル フラグ) を結合
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef5b8fd7ff3da4569029b3cbcbd46474ce3a6666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324605"
 ---
-# <a name="disable-heap-coalesce-on-free"></a>ヒープを無効にする無料の結合
+# <a name="disable-heap-coalesce-on-free"></a>Disable heap coalesce on free
 
 
 ## <span id="ddk_disable_heap_coalesce_on_free_dtools"></span><span id="DDK_DISABLE_HEAP_COALESCE_ON_FREE_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56528724"
 <td align="left"><p>FLG_HEAP_DISABLE_COALESCING</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ、カーネルのフラグ、イメージ ファイルのレジストリ エントリ</p></td>
 </tr>
 </tbody>

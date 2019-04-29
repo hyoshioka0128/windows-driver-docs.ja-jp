@@ -1,6 +1,6 @@
 ---
-title: Avc.sys を使用します。
-description: Avc.sys を使用します。
+title: Avc.sys の使用
+description: Avc.sys の使用
 ms.assetid: 3b4ec139-ff01-40bd-8e29-92f554180585
 keywords:
 - Avc.sys 関数ドライバーに関する Avc.sys 関数ドライバー WDK、
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22cc329213f0ce766e2feb1ea6d394ee1debe16a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323354"
 ---
-# <a name="using-avcsys"></a>Avc.sys を使用します。
+# <a name="using-avcsys"></a>Avc.sys の使用
 
 
 

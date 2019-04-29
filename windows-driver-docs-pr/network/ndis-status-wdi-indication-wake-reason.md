@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WDI_INDICATION_WAKE_REASON ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 48459164e04bdfdfe304b7da4b506acd624ec82a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323254"
 ---
 # <a name="ndisstatuswdiindicationwakereason"></a>NDIS\_状態\_WDI\_INDICATION\_WAKE\_理由
 
@@ -34,12 +34,12 @@ ms.locfileid: "56560888"
 | 種類                                                                                                      | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------|
 | [**WDI\_TLV\_INDICATION\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/dn897834)                         |                                |          | ウェイク アップの理由です。                                                                                            |
-| [**WDI\_TLV\_INDICATION\_WAKE\_パケット**](https://msdn.microsoft.com/library/windows/hardware/dn897833)                         |                                | X        | ウェイク アップ パケットです。                                                                                            |
-| [**WDI\_TLV\_INDICATION\_WAKE\_パケット\_パターン\_ID**](https://msdn.microsoft.com/library/windows/hardware/dn897832) |                                | X        | ウェイク アップ パケットに一致するパターンの ID。 ID は、パターンの追加 コマンドから取得されます。 |
+| [**WDI\_TLV\_INDICATION\_WAKE\_パケット**](https://msdn.microsoft.com/library/windows/hardware/dn897833)                         |                                | x        | ウェイク アップ パケットです。                                                                                            |
+| [**WDI\_TLV\_INDICATION\_WAKE\_パケット\_パターン\_ID**](https://msdn.microsoft.com/library/windows/hardware/dn897832) |                                | x        | ウェイク アップ パケットに一致するパターンの ID。 ID は、パターンの追加 コマンドから取得されます。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

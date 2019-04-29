@@ -1,6 +1,6 @@
 ---
-title: 読み取りとデバッグ メッセージをフィルター処理
-description: 読み取りとデバッグ メッセージをフィルター処理
+title: デバッグ メッセージの読み取りとフィルター処理
+description: デバッグ メッセージの読み取りとフィルター処理
 ms.assetid: 2ad320f6-596d-4b4c-bfad-d570c856bcc7
 keywords:
 - メッセージを読み取る WDK コードのデバッグ
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07e170eb85e507cd893ed3b86dbdc23b3722f216
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323138"
 ---
-# <a name="reading-and-filtering-debugging-messages"></a>読み取りとデバッグ メッセージをフィルター処理
+# <a name="reading-and-filtering-debugging-messages"></a>デバッグ メッセージの読み取りとフィルター処理
 
 
 ## <span id="ddk_reading_and_filtering_debugging_messages_tools"></span><span id="DDK_READING_AND_FILTERING_DEBUGGING_MESSAGES_TOOLS"></span>
@@ -205,7 +205,7 @@ DbgPrint( "Fourth message.\n");
 
 ときに、**による DbgPrint**、 **DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**、 **KdPrint**、または**KdPrintEx**ルーチンでは、デバッガーに、メッセージを送信、書式設定された文字列を送信する、**による DbgPrint**バッファー。 このバッファーの内容に直ちに反映されますデバッガー コマンド ウィンドウを使用してこの表示を無効にしない限り、**バッファーによる DbgPrint 出力**GFlags のオプション。
 
-使用してのみによる DbgPrint バッファーの内容を表示するにはこの表示を無効にした場合、 **! による dbgprint**拡張機能コマンド。 デバッガーの拡張機能については、[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)を参照してください。
+使用してのみによる DbgPrint バッファーの内容を表示するにはこの表示を無効にした場合、 **! による dbgprint**拡張機能コマンド。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
 
 任意の 1 への呼び出し**による DbgPrint**、 **DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**、 **KdPrint**、または**KdPrintEx** 512 バイトのみの情報を送信します。 すべての出力 512 バイトを超えるは失われます。 による DbgPrint バッファー自体は、Windows の無料のビルドで最大 4 KB のデータを保持しを 32 KB のデータをチェックするビルドの Windows できます。 Windows Server 2003 および以降のバージョンの Windows で KDbgCtrl ツールを使用してによる DbgPrint バッファーのサイズを変更することができます。 このツールは、Windows のツールのデバッグの一部です。
 

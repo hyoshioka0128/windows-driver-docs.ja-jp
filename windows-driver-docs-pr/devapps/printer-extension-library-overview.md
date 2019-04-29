@@ -5,11 +5,11 @@ ms.assetid: A47B17CE-BF5A-4C02-807C-890F315A13E0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de9fbe871c89b268ce541dd03816077cb55c8f3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323388"
 ---
 # <a name="printer-extension-library-overview-for-uwp-device-apps"></a>UWP アプリのデバイスのプリンター拡張機能ライブラリの概要
 

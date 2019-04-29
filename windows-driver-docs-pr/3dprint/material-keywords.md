@@ -5,11 +5,11 @@ ms.assetid: B2264CA8-64F9-4A20-AC55-46A0C48EDF3C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a105e855aecd5eecd238d2edafde8e9cb25ecb8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324704"
 ---
 # <a name="material-keywords"></a>素材のキーワード
 
@@ -99,7 +99,7 @@ Job3DMaterialCount キーワードの使用状況
 <td>目次</td>
 <td><p>次のように、1 つ以上の子プロパティ要素が含まれます。</p>
 <p><strong>子:</strong>プロパティの一覧</p>
-<p><strong>xsi:type:</strong>N/A</p>
+<p><strong>xsi:type:</strong>なし</p>
 <p><strong>値:</strong>MaterialsList</p>
 <p><strong>説明 :</strong>MaterialsList には、一連子プロパティにはが含まれています。</p></td>
 </tr>
@@ -611,7 +611,7 @@ Job3DRaftMaterial 初期化プロファイル
 <tr class="even">
 <td>目次</td>
 <td><p>1 つのみを含む&lt;値&gt;子要素として次のとおりです。</p>
-<p><strong>子:</strong>[値]</p>
+<p><strong>子:</strong>値</p>
 <p><strong>xsi:type:</strong>Psk3d:MaterialMapUnitType</p>
 <p><strong>値:</strong>素材のリスト</p>
 <p><strong>説明 :</strong>資料一覧する必要があります、素材 ID:index 値のセミコロンで区切られたリスト basematerials モデル ペイロード内の参照します。</p></td>

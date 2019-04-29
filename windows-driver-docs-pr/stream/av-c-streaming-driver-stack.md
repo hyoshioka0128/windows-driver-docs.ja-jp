@@ -1,6 +1,6 @@
 ---
-title: AV/C ドライバー スタックのストリーミング
-description: AV/C ドライバー スタックのストリーミング
+title: AV/C ストリーミングのドライバー スタック
+description: AV/C ストリーミングのドライバー スタック
 ms.assetid: 2584c74c-ddd6-43cc-9a8c-cd7f43802c4c
 keywords:
 - AV/C WDK、Stream フィルター ドライバー
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f1eadd02bc0876658d4b0d1aae2522a1e60c191
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323551"
 ---
-# <a name="avc-streaming-driver-stack"></a>AV/C ドライバー スタックのストリーミング
+# <a name="avc-streaming-driver-stack"></a>AV/C ストリーミングのドライバー スタック
 
 
 

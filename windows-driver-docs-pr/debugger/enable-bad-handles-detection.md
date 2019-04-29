@@ -1,19 +1,19 @@
 ---
-title: 無効なハンドルの検出を有効にします。
-description: 無効なハンドルの検出を有効にします。
+title: Enable bad handles detection
+description: Enable bad handles detection
 ms.assetid: beeecb82-a270-416e-8a2a-dd64af3d052e
 keywords:
 - 無効なハンドルの検出 (グローバル フラグ) を有効にします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8900ace3d7395e6fac8b4557a756a397bfeb2fb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323386"
 ---
-# <a name="enable-bad-handles-detection"></a>無効なハンドルの検出を有効にします。
+# <a name="enable-bad-handles-detection"></a>Enable bad handles detection
 
 
 ## <span id="ddk_enable_bad_handles_detection_dtools"></span><span id="DDK_ENABLE_BAD_HANDLES_DETECTION_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56529377"
 <td align="left"><p>FLG_ENABLE_HANDLE_EXCEPTIONS</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ、カーネル フラグ</p></td>
 </tr>
 </tbody>

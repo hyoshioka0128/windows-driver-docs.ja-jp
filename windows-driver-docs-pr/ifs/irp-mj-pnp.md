@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ecc03dacfa436a958c8eeda4e360a64cfef8d97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324459"
 ---
 # <a name="irpmjpnp"></a>IRP\_MJ\_PNP
 
@@ -27,7 +27,7 @@ ms.locfileid: "56553561"
 
 プラグ アンド プレイ Manager 送信 IRP\_MJ\_PNP 要求、システムでプラグ アンド プレイのアクティビティが発生するたびにします。 その他のオペレーティング システムのコンポーネントとその他のカーネル モード ドライバーでは、送信することも特定の IRP\_MJ\_マイナー関数コードによって、PNP 要求。
 
-ドライバーのプラグ アンド プレイ IRP の処理要件の詳細については、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)を参照してください。
+ドライバーのプラグ アンド プレイ IRP の処理要件の詳細については、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
 
 IRP の参照情報について\_MJ\_PNP マイナー関数のコードは、「[プラグ アンド プレイ マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff558807)します。
 

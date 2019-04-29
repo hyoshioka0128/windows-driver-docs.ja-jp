@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eeeecb7294e73222600df3762addb7b36ed55ce8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322167"
 ---
 # <a name="hspluginstartpostconnectauth-function"></a>HS\_プラグイン\_開始\_POST\_CONNECT\_AUTH 関数
 
@@ -56,14 +56,14 @@ ms.locfileid: "56574337"
 
 この関数は、プラグインを使用して通信するためにホストによって呼び出され、値は返されません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この関数を呼び出した後、プラグインを呼び出す必要があります、 [ **HS\_ホスト\_POST\_CONNECT\_AUTH\_完了**](hs-host-post-connect-auth-completion.md)ハンドラー要求の状態のホストに通知します。
 
 ネットワークでは、EAP-SIM/AKA 認証を使用する場合、プラグインでは、この状態で任意のアクティビティを実行する必要はありません。 ただし、ネットワークには、HTTP ベースの認証が必要とする場合、プラグインは、適切な認証を実行する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

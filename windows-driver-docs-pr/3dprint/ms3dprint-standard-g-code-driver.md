@@ -1,17 +1,17 @@
 ---
-title: MS3DPrint G コードの標準的なドライバー
+title: MS3DPrint 標準 G コード ドライバー
 description: MS3DPrint G コードの標準的なドライバーが融合型・ フィラメント ・製造 3D プリンター用に G コードを実行し、特に RepRap プロジェクトのものを含むソースのプリンターを開き、一般的な Windows 8.1 または Windows 10 ドライバーを実装します。
 ms.assetid: F5818F58-C705-458F-9806-3F840BF7EE01
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fa433689f8ccd56b7a494a019655a3995798a72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324760"
 ---
-# <a name="ms3dprint-standard-g-code-driver"></a>MS3DPrint G コードの標準的なドライバー
+# <a name="ms3dprint-standard-g-code-driver"></a>MS3DPrint 標準 G コード ドライバー
 
 
 MS3DPrint G コードの標準的なドライバーは、汎用の Windows 8.1 または融合型・ フィラメント ・製造 3D プリンター用に G コードを実行し、特に RepRap プロジェクトから派生したものも含め、ソースのプリンターを開き、以降のバージョンのドライバーを実装します。

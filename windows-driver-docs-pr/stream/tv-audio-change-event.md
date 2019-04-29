@@ -1,6 +1,6 @@
 ---
-title: テレビのオーディオ変更イベント
-description: テレビのオーディオ変更イベント
+title: TV オーディオの変更イベント
+description: TV オーディオの変更イベント
 ms.assetid: 85ba81f0-9443-42c7-9886-15b6b702f287
 keywords:
 - テレビのオーディオ変更イベント WDK ビデオのキャプチャします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85c796d58c8b53e7b789211ee8279cf29ef365fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324342"
 ---
-# <a name="tv-audio-change-event"></a>テレビのオーディオ変更イベント
+# <a name="tv-audio-change-event"></a>TV オーディオの変更イベント
 
 
 [KSEVENTSETID\_しました\_TVAUDIO](https://msdn.microsoft.com/library/windows/hardware/ff561776)テレビ オーディオ変更イベントがイベント セットに含まれています。 次の表は、KSEVENTSETID の一部となるイベント\_しました\_TVAUDIO イベントのセット。

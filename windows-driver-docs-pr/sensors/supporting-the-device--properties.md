@@ -5,11 +5,11 @@ ms.assetid: ED9A67C4-DFD6-4CF1-B911-29570B3409A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07792c72589abd9cc292b4c9d777a34ff4ce449b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324810"
 ---
 # <a name="support-for-device-properties"></a>デバイスのプロパティのサポート
 
@@ -77,7 +77,7 @@ const PROPERTYKEY g_SettableAccelerometerProperties[] =
 
 ## <a name="setting-the-general-and-per-data-field-properties"></a>[全般] の設定およびごとのデータ フィールドのプロパティ
 
-ドライバーのサンプルは、[全般] を設定およびごとの初期化フェーズ中にデータ フィールドのプロパティ。 この作業を処理するコードがある、 **CAccelerometerDevice::SetDefaultProperties**メソッド。 これらのプロパティを設定する呼び出しのシーケンスについては、[ドライバーの初期化](driver-initialization.md)を参照してください。
+ドライバーのサンプルは、[全般] を設定およびごとの初期化フェーズ中にデータ フィールドのプロパティ。 この作業を処理するコードがある、 **CAccelerometerDevice::SetDefaultProperties**メソッド。 これらのプロパティを設定する呼び出しのシーケンスについては、次を参照してください。[ドライバーの初期化](driver-initialization.md)します。
 
 ## <a name="setting-the-writeable-properties"></a>書き込み可能なプロパティの設定
 

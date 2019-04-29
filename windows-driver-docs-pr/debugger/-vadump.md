@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 827b41c8afbd9188f9c41edd072e50012abecb11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323481"
 ---
-# <a name="vadump"></a>! vadump
+# <a name="vadump"></a>!vadump
 
 
 **! Vadump**拡張機能は、すべての仮想メモリの範囲とその対応する保護情報が表示されます。
@@ -57,7 +57,7 @@ ms.locfileid: "56538803"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-1 つの仮想アドレスのメモリ保護情報を表示する使用[ **! vprot**](-vprot.md)します。 メモリ保護については、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。
+1 つの仮想アドレスのメモリ保護情報を表示する使用[ **! vprot**](-vprot.md)します。 メモリ保護については、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。
 
 <a name="remarks"></a>注釈
 -------

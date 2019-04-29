@@ -4,11 +4,11 @@ title: WinUSB テンプレートに基づいて Windows デスクトップ ア�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa5bbc2185d1e38b494f6e55315339480b7159af
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324522"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 
@@ -24,7 +24,7 @@ C と C++ WinUSB テンプレートを使用、USB デバイスと通信する W
 
 
 -   統合開発環境を設定するに最初に Microsoft Visual Studio Ultimate 2012 または Microsoft Visual Studio Professional 2012 をインストールし、WDK をインストールし。 Visual Studio と WDK の入手方法について詳しくは、[こちら](https://go.microsoft.com/fwlink/p/?linkid=239721)をご覧ください。
--   WDK をインストールするときに、デバッグ ツールの Windows が含まれます。 詳細については、[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=235427)を参照してください。
+-   WDK をインストールするときに、デバッグ ツールの Windows が含まれます。 詳細については、次を参照してください。[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=235427)します。
 
 ## <a name="creating-a-winusb-application"></a>WinUSB アプリケーションを作成します。
 

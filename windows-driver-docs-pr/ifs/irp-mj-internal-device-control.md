@@ -1,6 +1,6 @@
 ---
 title: IRP_MJ_INTERNAL_DEVICE_CONTROL
-description: IRP\_MJ\_内部\_デバイス\_コントロール
+description: IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 ms.assetid: a60325d5-993f-4505-bded-2c2be9782492
 keywords:
 - IRP_MJ_INTERNAL_DEVICE_CONTROL インストール可能なファイル システム ドライバー
@@ -13,13 +13,13 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a0ff9e8dbdc77ea427f6f180adf6e932fb7e5d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324320"
 ---
-# <a name="irpmjinternaldevicecontrol"></a>IRP\_MJ\_内部\_デバイス\_コントロール
+# <a name="irpmjinternaldevicecontrol"></a>IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 
 
 ## <a name="when-sent"></a>送信時

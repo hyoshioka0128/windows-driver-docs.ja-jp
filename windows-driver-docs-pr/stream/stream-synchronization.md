@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cbcbe2183865a56b20e51b71950953338ed36df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324780"
 ---
 # <a name="stream-synchronization"></a>ストリームの同期
 
@@ -20,7 +20,7 @@ ms.locfileid: "56570065"
 
 
 
-DVD のストリーム入力の 2 つまたは複数のストリームで構成されます。 ストリーム クラス ドライバーは、DVD デコーダーのミニドライバー代わり透過的に同期を処理できます。 詳細については、[ミニドライバー同期](minidriver-synchronization.md)を参照してください。 プログラマはなど、DVD のストリームに影響を与えるいくつかの要因を意識する必要があります。
+DVD のストリーム入力の 2 つまたは複数のストリームで構成されます。 ストリーム クラス ドライバーは、DVD デコーダーのミニドライバー代わり透過的に同期を処理できます。 詳細については、次を参照してください。[ミニドライバー同期](minidriver-synchronization.md)します。 プログラマはなど、DVD のストリームに影響を与えるいくつかの要因を意識する必要があります。
 
 -   オーディオ ストリームは、マスターのクロックを提供する必要があり、データがない場合、クロックを合成する必要があります。 オーディオ ストリームがによって返される速度に一致して、クロック周波数に基づいて、システム クロックを使用するオーディオ データが停止したら、 [ **KeQueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/hardware/ff553053)します。 他のすべてのストリームは、オーディオを下位として機能する必要があります。 つまり、オーディオ ストリームへのパフォーマンスを同期します。
 

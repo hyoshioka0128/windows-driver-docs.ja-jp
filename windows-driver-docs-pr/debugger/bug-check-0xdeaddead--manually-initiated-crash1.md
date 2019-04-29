@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c449e3bf5012837d678ba11df680190342d1dc76
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323371"
 ---
 # <a name="bug-check-0xdeaddead-manuallyinitiatedcrash1"></a>バグ チェック 0xDEADDEAD:手動で\_INITIATED\_CRASH1
 

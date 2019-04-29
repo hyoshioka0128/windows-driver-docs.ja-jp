@@ -1,22 +1,22 @@
 ---
-title: PF ミニポート ドライバー MiniportAddDevice ガイドライン
-description: PF ミニポート ドライバー MiniportAddDevice ガイドライン
+title: PF ミニポート ドライバーの MiniportAddDevice ガイドライン
+description: PF ミニポート ドライバーの MiniportAddDevice ガイドライン
 ms.assetid: D67FDBA0-C020-4557-9199-B9FF6F91DE6B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76d3f86315c42456580a13f8bc893b8fd0e03c12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323620"
 ---
-# <a name="miniportadddevice-guidelines-for-pf-miniport-drivers"></a>PF ミニポート ドライバー MiniportAddDevice ガイドライン
+# <a name="miniportadddevice-guidelines-for-pf-miniport-drivers"></a>PF ミニポート ドライバーの MiniportAddDevice ガイドライン
 
 
 このトピックでは、書き込みのためのガイドラインを説明します、 [ *MiniportAddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff559332)ミニポート ドライバーの PCI Express (PCIe) 物理機能 (PF) の関数。 PF は、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターのコンポーネントです。
 
-**注**  次のガイドラインは、PF ミニポート ドライバーにのみ適用されます。 PCIe 仮想機能 (VF) アダプターのミニポート ドライバーの初期化ガイドラインについては、[VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)を参照してください。
+**注**  次のガイドラインは、PF ミニポート ドライバーにのみ適用されます。 PCIe 仮想機能 (VF) アダプターのミニポート ドライバーの初期化ガイドラインについては、次を参照してください。 [VF のミニポート ドライバーの初期化](initializing-a-vf-miniport-driver.md)します。
 
  
 
@@ -26,7 +26,7 @@ ms.locfileid: "56538552"
 
 ドライバーがへの呼び出しのコンテキスト内で、次の操作を行います[ *MiniportAddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff559332):
 
--   PF のミニポート ドライバーを呼び出すことができます[**エミュレーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)を読み取る、SR-IOV と NIC は、レジストリから構成設定を切り替えます。 これらの構成設定は、標準化された SR-IOV キーワードによって定義されます。 これらのキーワードの詳細については、[SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)を参照してください。
+-   PF のミニポート ドライバーを呼び出すことができます[**エミュレーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)を読み取る、SR-IOV と NIC は、レジストリから構成設定を切り替えます。 これらの構成設定は、標準化された SR-IOV キーワードによって定義されます。 これらのキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
 
 -   これらの構成設定に基づき、PF ミニポート ドライバーは、SR-IOV ネットワーク アダプターの追加のソフトウェアのリソースを割り当てます。
 

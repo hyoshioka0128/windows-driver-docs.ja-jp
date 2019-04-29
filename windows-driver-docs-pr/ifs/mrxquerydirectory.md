@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e4d3d93833fc553b4a2e98f2fcc3e1129ba7214
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324345"
 ---
 # <a name="mrxquerydirectory-routine"></a>MRxQueryDirectory ルーチン
 
@@ -95,7 +95,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 呼び出しの前に*MRxQueryDirectory*、RDBSS、RX では、次のメンバーを変更します\_によって示される CONTEXT 構造体、 *RxContext*パラメーター。
@@ -120,7 +120,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 場合、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**TRUE**戻り時にから*MRxQueryDirectory*、RDBSS は呼び出す[ **RxFsdPostRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff554472) RX を渡す\_ワーカー キュー、ファイル システムのプロセス (FSP) による処理のための構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

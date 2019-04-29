@@ -4,11 +4,11 @@ description: このトピックでは、Windows Update にし、公開されて�
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a923651df76199d8ff6179c1475c271ebad2e33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323536"
 ---
 # <a name="3d-print-partner-onboarding-guide"></a>3D 印刷パートナー オンボーディング ガイド
 
@@ -59,7 +59,7 @@ Windows 10 でプラグ アンド プレイの 3D プリンターは、Windows U
 
 3. USB ドライバーを実装します。
 
-    - 製造元は、パートナーの DLL を作成して、自社の 3D プリンター用 Microsoft USB ドライバーを使用できます。 詳細については、[カスタム USB インターフェイスのサポートの 3D プリンター](3d-printer-custom-usb-interface.md)を参照してください。
+    - 製造元は、パートナーの DLL を作成して、自社の 3D プリンター用 Microsoft USB ドライバーを使用できます。 詳細については、次を参照してください。[カスタム USB インターフェイスのサポートの 3D プリンター](3d-printer-custom-usb-interface.md)します。
 
     - プリンターは、Microsoft のスライサーで使用されている場合、作成したハードウェア ID がある必要があります**Enum\\3DPrint\\MS3DPrint**
 

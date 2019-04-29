@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e4e0bc8c6e5795c8762a371b63732361aa5cf354
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324566"
 ---
 # <a name="dg-display-selector"></a>dg (セレクターの表示)
 
@@ -62,7 +62,7 @@ dg FirstSelector [LastSelector]
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このコマンドでは、256 個のセレクターを表示できます。
@@ -78,7 +78,7 @@ dg FirstSelector [LastSelector]
 <thead>
 <tr class="header">
 <th align="left">ID</th>
-<th align="left">decimal</th>
+<th align="left">Decimal</th>
 <th align="left">16 進数</th>
 </tr>
 </thead>

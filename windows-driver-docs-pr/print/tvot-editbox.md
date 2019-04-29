@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 455af478b7a346dd7316a54a62411562f9ff473d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324821"
 ---
 # <a name="tvoteditbox"></a>TVOT\_エディット ボックス
 
@@ -47,7 +47,7 @@ TVOT\_エディット ボックスのオプションの種類は、グループ 
 **pOptParam**\[1\]-&gt;**IconID**エディット ボックスとによって指し示されるバッファーの両方のバイト単位のサイズを指定するために使用**pSel** OPTITEM 構造体。
 
 <span id="lParam"></span><span id="lparam"></span><span id="LPARAM"></span>**lParam**  
-使用されません。
+使用されていません。
 
 <span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)構造体  
 
@@ -58,7 +58,7 @@ TVOT\_エディット ボックス
 2
 
 <span id="Style"></span><span id="style"></span><span id="STYLE"></span>**スタイル**  
-使用されません。
+使用されていません。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
 場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://msdn.microsoft.com/library/windows/hardware/ff547607) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
@@ -114,7 +114,7 @@ TVOT\_エディット ボックス
 
  
 
-詳細については、[Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)を参照してください。
+詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)します。
 
 <a name="requirements"></a>要件
 ------------

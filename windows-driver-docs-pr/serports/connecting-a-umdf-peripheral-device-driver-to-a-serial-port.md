@@ -5,11 +5,11 @@ ms.assetid: 75FC5E79-59E9-4C07-9119-A4FE81CC318E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e87dec0cb81cf16e100621063c2eb6ad4738d2c8
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324216"
 ---
 # <a name="connecting-a-umdf-peripheral-driver-to-a-serial-port"></a>UMDF 周辺機器ドライバーをシリアル ポートに接続する
 
@@ -22,7 +22,7 @@ SerCx2 で管理されたシリアル ポートに周辺機器のデバイスの
 
 そのリソースの一覧で接続 Id を受信する周辺 UMDF ドライバーを有効にするドライバーをインストールする INF ファイルは、WDF 固有で、次のディレクティブを含める必要があります**DDInstall**セクション。
 
-**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、[INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)を参照してください。 このディレクティブを使用する (対応する INF ファイルをビルドするために使用) INX ファイルの例は、、 [SpbAccelerometer ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)を参照してください。
+**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。 このディレクティブを使用する (対応する INF ファイルをビルドするために使用) INX ファイルの例は、次を参照してください。、 [SpbAccelerometer ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)します。
 
 次のコード例は、ドライバーの**OnPrepareHardware**メソッドからの接続 ID の取得、 *pWdfResourcesTranslated*パラメーター。
 
@@ -220,7 +220,7 @@ if (fSynchronous || FAILED(hres))
 
 上記のコード例は、次のこと。
 
-1.  `pWdfDevice`変数がへのポインター、 [ **IWDFDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff556917)逐次的に接続されている周辺機器を表す framework デバイス オブジェクトのインターフェイス。 [ **IWDFDevice::CreateRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff557021)メソッドは、I/O 要求を作成しでこの要求をカプセル化、 [ **IWDFIoRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff558985)インターフェイスのインスタンスを指している`pWdfIoRequest`パラメーター。 I/O 要求は後で削除されます (手順 6 を参照してください)。 作成し、送信される各 I/O 要求の要求オブジェクトを削除するため、この実装はやや効率的ではありません。 効率的な方法では、一連の I/O 要求の同じ要求オブジェクトを再利用します。 詳細については、[Framework 要求オブジェクトを再利用](https://msdn.microsoft.com/library/windows/hardware/ff544600)を参照してください。
+1.  `pWdfDevice`変数がへのポインター、 [ **IWDFDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff556917)逐次的に接続されている周辺機器を表す framework デバイス オブジェクトのインターフェイス。 [ **IWDFDevice::CreateRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff557021)メソッドは、I/O 要求を作成しでこの要求をカプセル化、 [ **IWDFIoRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff558985)インターフェイスのインスタンスを指している`pWdfIoRequest`パラメーター。 I/O 要求は後で削除されます (手順 6 を参照してください)。 作成し、送信される各 I/O 要求の要求オブジェクトを削除するため、この実装はやや効率的ではありません。 効率的な方法では、一連の I/O 要求の同じ要求オブジェクトを再利用します。 詳細については、次を参照してください。 [Framework 要求オブジェクトを再利用](https://msdn.microsoft.com/library/windows/hardware/ff544600)します。
 2.  `pWdfDriver`変数がへのポインター、 [ **IWDFDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff558893)周辺のドライバーを表すフレームワーク ドライバー オブジェクトのインターフェイス。 `pInBuffer`と`inBufferSize`変数は、アドレスと I/O 制御要求の入力バッファーのサイズを指定します。 [ **IWDFDriver::CreatePreallocatedWdfMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff558902)メソッドは、入力バッファーの framework メモリ オブジェクトを作成し、指定、 **IWDFIoRequest**ポイントされるオブジェクト`pWdfIoRequest`メモリ オブジェクトの親オブジェクトとして。
 3.  `pWdfRemoteTarget`変数は、リモート ターゲット ポインターから取得された、 **OpenFileByName**前のコード例で呼び出します。 [ **IWDFRemoteTarget::FormatRequestForIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff559230)メソッドは、I/O 制御操作の要求を書式設定します。 `ioctlCode`変数がテーブルに表示されている I/O 制御コードのいずれかに設定されている[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)します。
 4.  `fSynchronous`変数**TRUE** I/O 制御の要求が同期的に送信してはかどうか**FALSE**非同期的に送信する場合。 `pCallback`変数が以前に作成したへのポインター [ **IRequestCallbackRequestCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556904)インターフェイス。 かどうか、要求は、非同期的に呼び出しを送信する、 [ **IWDFIoRequest::SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)メソッドは、このインターフェイスを登録します。 後で、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)メソッドが呼び出され、要求が非同期的に完了したときに、ドライバーに通知します。

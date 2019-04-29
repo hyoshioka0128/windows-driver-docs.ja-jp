@@ -1,17 +1,17 @@
 ---
-title: パケットがタグ付けを使用してください。
-description: パケットがタグ付けを使用してください。
+title: パケット タグ付けの使用
+description: パケット タグ付けの使用
 ms.assetid: a151256b-d69f-4abb-bf68-644f157dfdd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec219e75870164c7a5810431868525d0b174302c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323326"
 ---
-# <a name="using-packet-tagging"></a>パケットがタグ付けを使用してください。
+# <a name="using-packet-tagging"></a>パケット タグ付けの使用
 
 
 コールアウト ドライバーは、関心のあるパケットをタグ付けし、タグ付きパケットに発生するイベントの通知を受信できます。 Windows 7 および Windows の以降のバージョンでは、パケットがタグ付けがサポートされています。
@@ -26,7 +26,7 @@ ms.locfileid: "56554009"
 
 タグ付きパケットを複製すると、コールアウト ドライバーが移動または複製パケットをコンテキストにコピーできます。 コールアウト ドライバーを呼び出す必要があります (複製) の場合、コンテキストに移動する[ **FwpsNetBufferListRetrieveContext0** ](https://msdn.microsoft.com/library/windows/hardware/ff551196)で、 *removeContext* にパラメーターが設定**TRUE**します。 コンテキストは、新しいパケットを関連付けることができます。 (重複) の場合、コンテキストをコピーするためのプロセスは、同じことを除いて、 *removeContext*パラメーターの**FwpsNetBufferListRetrieveContext0**に設定する必要があります**FALSE**.
 
-TCP/IP のレイヤーからタグ付きパケットから取得できる、 [NDIS フィルター ドライバー](ndis-filter-drivers2.md)します。 この逆は真もします。 パケットがタグ付けは、パケットが示されていないデータ セグメントを除くのストリーム レイヤーから使用できません。
+TCP/IP のレイヤーからタグ付きパケットから取得できる、 [NDIS フィルター ドライバー](ndis-filter-drivers2.md)します。 この逆も当てはまります。 パケットがタグ付けは、パケットが示されていないデータ セグメントを除くのストリーム レイヤーから使用できません。
 
 コールアウト ドライバーは、外側のパケットのコンテキストを取得できます、 [ *FWPS\_NET\_バッファー\_一覧\_通知\_FN0* ](https://msdn.microsoft.com/library/windows/hardware/ff552406)または[ *FWPS\_NET\_バッファー\_一覧\_通知\_FN1* ](https://msdn.microsoft.com/library/windows/hardware/hh451260)関数を呼び出して[ **FwpsNetBufferListRetrieveContext0**](https://msdn.microsoft.com/library/windows/hardware/ff551196)します。 コールアウト ドライバーがコンテキストを取得する通常、その[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールバック。
 

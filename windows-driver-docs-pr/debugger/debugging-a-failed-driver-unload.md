@@ -1,6 +1,6 @@
 ---
-title: 失敗したドライバーのアンロードのデバッグ
-description: 失敗したドライバーのアンロードのデバッグ
+title: エラーが発生したドライバー アンロードのデバッグ
+description: エラーが発生したドライバー アンロードのデバッグ
 ms.assetid: df4b6082-8236-4a7f-80f4-6c33dc8e887a
 keywords:
 - ドライバーのアンロードに失敗しました
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87184ea0f1a34ae27942ee82b30c9cd73ba9019f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324606"
 ---
-# <a name="debugging-a-failed-driver-unload"></a>失敗したドライバーのアンロードのデバッグ
+# <a name="debugging-a-failed-driver-unload"></a>エラーが発生したドライバー アンロードのデバッグ
 
 
 ## <span id="ddk_debugging_a_failed_driver_unload_dbg"></span><span id="DDK_DEBUGGING_A_FAILED_DRIVER_UNLOAD_DBG"></span>

@@ -1,17 +1,17 @@
 ---
-title: Windows の証明書ストアから証明書のインポート
-description: Windows の証明書ストアから証明書のインポート
+title: Windows 証明書ストアからの証明書のインポート
+description: Windows 証明書ストアからの証明書のインポート
 ms.assetid: abdf19c7-2cea-4af3-8a86-37fc4a9e7c3d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 125d944c7888b59b867d3a14f4767bfe09ddd852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323170"
 ---
-# <a name="importing-certificates-from-a-windows-certificate-store"></a>Windows の証明書ストアから証明書のインポート
+# <a name="importing-certificates-from-a-windows-certificate-store"></a>Windows 証明書ストアからの証明書のインポート
 
 
 記憶域証明書の管理の強化されたツールを使用すると、IEEE 1667 準拠 USB 記憶装置に、コンピューターで、プライベート証明書ストアから証明書をインポートします。

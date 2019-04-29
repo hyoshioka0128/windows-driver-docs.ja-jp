@@ -5,11 +5,11 @@ ms.assetid: 192C25B2-936B-40D3-A0EA-5D02A234506E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: edd2fcb19a17310534bbdd4759451fe45dfc479c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322117"
 ---
 # <a name="using-version-2-of-the-serial-framework-extension-sercx2"></a>シリアル フレームワーク拡張機能 (SerCx2) バージョン 2 の使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "56570802"
 
  
 
-シリアル コント ローラーは、互換性のあるデバイスまたは 16550 ユニバーサル非同期受信側/送信元 (UART) です。 詳細については、[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)を参照してください。
+シリアル コント ローラーは、互換性のあるデバイスまたは 16550 ユニバーサル非同期受信側/送信元 (UART) です。 詳細については、次を参照してください。[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

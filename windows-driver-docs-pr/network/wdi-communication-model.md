@@ -5,11 +5,11 @@ ms.assetid: 575D1314-8726-49C1-AE6C-C171FE1CD2AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61c1afebe5f124a97184814f870374981c7fde41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324418"
 ---
 # <a name="communication-model-synchronization-and-abort"></a>通信モデル、同期、および中止
 
@@ -19,7 +19,7 @@ ms.locfileid: "56558187"
 1.  Wi-fi デバイスを表すアダプター。
 2.  アダプターで別の MAC および PHY エンティティを表すポート。
 
-これらのオブジェクトの詳細については、[Wi-fi デバイス モデルとオブジェクト](wdi-objects.md)を参照してください。
+これらのオブジェクトの詳細については、次を参照してください。 [Wi-fi デバイス モデルとオブジェクト](wdi-objects.md)します。
 一連の許容される操作は、のコマンドは、これらの各オブジェクトに対して定義されます。 コマンドは、さらに、プロパティとタスクに分類されます。
 
 プロパティ コマンドは、単純なコマンド (信号の強度を取得する現在 BSS リストの取得し、パケット フィルターを設定です)。 時間の短時間で完了され、実装するために複雑ではありません。

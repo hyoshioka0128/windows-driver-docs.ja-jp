@@ -13,13 +13,13 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf7a790767107a310c53e531f18477aedd587a2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324493"
 ---
-# <a name="irpmjread"></a>IRP\_MJ\_読み取り
+# <a name="irpmjread"></a>IRP\_MJ\_READ
 
 
 ## <a name="when-sent"></a>送信時
@@ -127,7 +127,7 @@ IRP を指定します\_MJ\_を読み取る。
 <a name="remarks"></a>注釈
 -------
 
-ファイル システムでは、書き込みを丸めるし、読み取り、基になるファイル ストレージ デバイスのセクター サイズの倍数で最大ファイルの最後に操作します。 読み取り前または前の書き込み操作を処理するときにフィルターを割り当てるし、スワップに関連付けられているデバイスのセクター サイズの倍数でまでの割り当てられたバッファーのサイズを丸めるバッファーが必要です。 一致しない場合、基になるファイル システムから転送されたデータの長さが割り当てられたバッファーの長さを超えています。 バッファーのスワップの詳細については、[swapBuffers ミニフィルター サンプル](https://go.microsoft.com/fwlink/p/?linkid=256055)を参照してください。
+ファイル システムでは、書き込みを丸めるし、読み取り、基になるファイル ストレージ デバイスのセクター サイズの倍数で最大ファイルの最後に操作します。 読み取り前または前の書き込み操作を処理するときにフィルターを割り当てるし、スワップに関連付けられているデバイスのセクター サイズの倍数でまでの割り当てられたバッファーのサイズを丸めるバッファーが必要です。 一致しない場合、基になるファイル システムから転送されたデータの長さが割り当てられたバッファーの長さを超えています。 バッファーのスワップの詳細については、次を参照してください。 [swapBuffers ミニフィルター サンプル](https://go.microsoft.com/fwlink/p/?linkid=256055)します。
 
 ## <a name="see-also"></a>関連項目
 

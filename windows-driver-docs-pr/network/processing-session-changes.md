@@ -1,6 +1,6 @@
 ---
-title: セッションの変更の処理
-description: セッションの変更の処理
+title: セッション変更の処理
+description: セッション変更の処理
 ms.assetid: 6684b27e-d2ba-4305-bbd2-27543c9ec0cf
 keywords:
 - ユーザーの介入 WDK ネイティブ 802.11 IHV 拡張 DLL
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e36bb394335eb14927582fd982bb3daac556cc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324326"
 ---
-# <a name="processing-session-changes"></a>セッションの変更の処理
+# <a name="processing-session-changes"></a>セッション変更の処理
 
 
 

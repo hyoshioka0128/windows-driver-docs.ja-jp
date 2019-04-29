@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c51b3d69e2ac63f4eb9fe0d60d1f8041d8149c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324764"
 ---
 # <a name="streaming-minidrivers"></a>ストリーミングのミニドライバー
 
@@ -27,7 +27,7 @@ ms.locfileid: "56580709"
 
 
 
-**注**  このセクションでは、古いについて*Stream.sys*クラス ドライバー。 Microsoft Windows XP のリリースでは、Microsoft サポートしている*Stream.sys*既存のドライバーに対してだけです。 このリリースの時点では、ベンダーは、クラスの AVStream ドライバー モデルを使用するビデオまたはオーディオ/ビデオ、マルチ メディア ドライバーの新規の開発を検討をお勧めします。 詳細を確認、 [AVStream の概要](avstream-overview.md)します。 オーディオのみのドライバーを開発する場合は、Microsoft の下で、オーディオ ミニポート ドライバーを記述する必要があります*Portcls.sys*クラス ドライバー。 詳細については、[オーディオ ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536206)を参照してください。
+**注**  このセクションでは、古いについて*Stream.sys*クラス ドライバー。 Microsoft Windows XP のリリースでは、Microsoft サポートしている*Stream.sys*既存のドライバーに対してだけです。 このリリースの時点では、ベンダーは、クラスの AVStream ドライバー モデルを使用するビデオまたはオーディオ/ビデオ、マルチ メディア ドライバーの新規の開発を検討をお勧めします。 詳細を確認、 [AVStream の概要](avstream-overview.md)します。 オーディオのみのドライバーを開発する場合は、Microsoft の下で、オーディオ ミニポート ドライバーを記述する必要があります*Portcls.sys*クラス ドライバー。 詳細については、次を参照してください。[オーディオ ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536206)します。
 
  
 

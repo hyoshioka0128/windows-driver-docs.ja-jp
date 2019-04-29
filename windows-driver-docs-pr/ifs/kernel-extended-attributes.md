@@ -1,6 +1,6 @@
 ---
-title: 拡張属性のカーネル
-description: フィルター マネージャーとミニフィルター ドライバーのアーキテクチャ
+title: カーネル拡張属性
+description: フィルター マネージャーとミニフィルター ドライバー アーキテクチャ
 keywords:
 - ファイル属性を拡張します。
 - EA のカーネル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb4e1e5ad527df91273ad8b9ddaef84f0996ca1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324350"
 ---
-# <a name="kernel-extended-attributes"></a>拡張属性のカーネル
+# <a name="kernel-extended-attributes"></a>カーネル拡張属性
 拡張属性のカーネル (カーネル EA) 様は、イメージ ファイルの署名の検証のパフォーマンスを向上する手段として、Windows 8 で NTFS に追加機能です。  負荷の高い操作、イメージの署名を確認することをお勧めします。 そのため、バイナリは、まだ検証されていたが変更されている、またはいないイメージが、完全署名のチェックを行う必要があるインスタンスの数を減らすかどうかについて情報を保存します。
 
 
@@ -68,7 +68,7 @@ EA のユーザー モードのファイルにクエリを実行すると、両�
 - EA をカーネルは、標準の EA と同じファイルに存在できます。
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [FltQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff543435)  
 [FltSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff544500)  
 [FSCTL_QUERY_USN_JOURNAL](https://msdn.microsoft.com/library/windows/desktop/aa364583)  

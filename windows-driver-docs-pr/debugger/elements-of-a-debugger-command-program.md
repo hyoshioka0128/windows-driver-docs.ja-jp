@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 768d0ea10108f11fda5aa334d696ed9d501190be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323128"
 ---
 # <a name="elements-of-a-debugger-command-program"></a>デバッガー コマンド プログラムの要素
 
@@ -37,7 +37,7 @@ A*デバッガー コマンド プログラム*などのデバッガー コマ�
 
 通常、デバッガー コマンド プログラム内での MASM 構文を使用する必要があります。 使用することができます (構造体またはクラスのメンバーを指定する) などの C++ の要素を使用するときに、 **@@c+ ()** トークンをその句の C++ 構文に切り替えます。
 
-**$Scmp**、 **$sicmp**、および **$spat** MASM 構文で文字列演算子は特に便利です。 これらの演算子の詳細については、[MASM 数字と演算子](masm-numbers-and-operators.md)を参照してください。
+**$Scmp**、 **$sicmp**、および **$spat** MASM 構文で文字列演算子は特に便利です。 これらの演算子の詳細については、次を参照してください。 [MASM 数字と演算子](masm-numbers-and-operators.md)します。
 
  
 

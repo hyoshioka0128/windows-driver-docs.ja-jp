@@ -1,17 +1,17 @@
 ---
-title: Storport エラー管理
-description: Storport エラー管理
+title: Storport のエラー管理
+description: Storport のエラー管理
 ms.assetid: f482b362-789a-4cc0-92c9-9d0db5d8561a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3181577b861c3091214937233450e2c6ef067a05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322097"
 ---
-# <a name="storport-error-management"></a>Storport エラー管理
+# <a name="storport-error-management"></a>Storport のエラー管理
 
 
 ## <span id="ddk_storport_error_management_kg"></span><span id="DDK_STORPORT_ERROR_MANAGEMENT_KG"></span>

@@ -1,15 +1,15 @@
 ---
-title: デバイスの LSI_U3 サンプル Storport ミニポート ドライバー
-description: デバイスの LSI_U3 サンプル Storport ミニポート ドライバー
+title: LSI_U3 デバイスの Storport ミニポート ドライバーのサンプル
+description: LSI_U3 デバイスの Storport ミニポート ドライバーのサンプル
 ms.assetid: 1ac63d07-f85c-492b-9886-f40a19d7c0b2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7a76fd738869e78f5aad6e72a55b0fb000dcd68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323292"
 ---
 # <a name="sample-storport-miniport-driver-for-an-lsiu3-device"></a>サンプル Storport ミニポート ドライバー、LSI の\_U3 デバイス
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 39c9546381135db9ecd25c765062e5177896d71d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323151"
 ---
 # <a name="wdfkdwdfumirp"></a>!wdfkd.wdfumirp
 
@@ -47,7 +47,7 @@ UMDF 2
 ## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
+詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------
@@ -56,7 +56,7 @@ UMDF 2
 
 このコマンドは、ユーザー モードのコマンドと同じ情報を表示します[ **! wudfext.umirp**](-wudfext-umirp.md)します。
 
-使用することができます[ **! プロセス**](-process.md)すべて UMDF ホスト プロセスとしての一覧を取得することができますを使用[ **.process** ](-process--set-process-context-.md)のいずれかに、暗黙的なプロセスを設定するのにはホスト プロセスの UMDF です。 詳細の例では、[ **! wdfkd.wdfumdevstacks**](-wdfkd-wdfumdevstacks.md)を参照してください。
+使用することができます[ **! プロセス**](-process.md)すべて UMDF ホスト プロセスとしての一覧を取得することができますを使用[ **.process** ](-process--set-process-context-.md)のいずれかに、暗黙的なプロセスを設定するのにはホスト プロセスの UMDF です。 詳細の例では、次を参照してください。 [ **! wdfkd.wdfumdevstacks**](-wdfkd-wdfumdevstacks.md)します。
 
 使用する方法を次に示します[ **! wdfkd.wdfumirps** ](-wdfkd-wdfumirps.md)と **! wdfkd.wdfumirp**個々 の UM IRP に関する情報を表示します。
 

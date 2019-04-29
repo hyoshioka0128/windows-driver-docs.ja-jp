@@ -6,11 +6,11 @@ ms.assetid: 70B4C1B6-F076-4D58-A9A6-46DA9CBF5151
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0c9d4f7de1f4af1b3f5c3937fcba0e5858f892
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324709"
 ---
 # <a name="print-schema-glossary"></a>印刷スキーマの用語集
 
@@ -45,7 +45,7 @@ ms.locfileid: "56530597"
 ## <a name="m"></a>M
 
 
-**モデル**  
+**[モデル]**  
 1 つのジョブの一部として製造されるオブジェクトのセット。 アセンブリでこれを 1 つのオブジェクト、同じオブジェクト、複数の異なるオブジェクトまたは複数のオブジェクトの複数のインスタンスを含めることができます。
 
 ## <a name="n"></a>N
@@ -66,7 +66,7 @@ ms.locfileid: "56530597"
 ## <a name="s"></a>S
 
 
-**サポートしています**  
+**サポート**  
 融合型・ フィラメント ・契約はより発効プリンターでは、その・ フィラメント ・が押し出さ; と以下のモデルまたはプラットフォームにも該当しないため、モデル内の領域期間の延長のスキャフォールディングをサポートしている必要があります。このスキャフォールディングは、1 つの外部でサポートされている呼ばれます。
 
 ## <a name="t"></a>T

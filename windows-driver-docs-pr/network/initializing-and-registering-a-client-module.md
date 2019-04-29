@@ -1,6 +1,6 @@
 ---
-title: 初期化とクライアント モジュールを登録します。
-description: 初期化とクライアント モジュールを登録します。
+title: クライアント モジュールの初期化と登録
+description: クライアント モジュールの初期化と登録
 ms.assetid: 3d0941d0-5a6f-4c6d-b519-af850a8de341
 keywords:
 - クライアントのモジュールの初期化、WDK ネットワーク モジュール レジストラー
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e7d2f1eb0ea343c27eef4d0d897bc2155d9037
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324945"
 ---
-# <a name="initializing-and-registering-a-client-module"></a>初期化とクライアント モジュールを登録します。
+# <a name="initializing-and-registering-a-client-module"></a>クライアント モジュールの初期化と登録
 
 
 クライアント モジュールは、ネットワーク モジュール レジストラー (NMR) で登録にする前に、さまざまなデータ構造体を初期化する必要があります。 これらの構造が含まれます、 [ **NPI\_MODULEID** ](https://msdn.microsoft.com/library/windows/hardware/ff568813)構造、 [ **NPI\_クライアント\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff568812)構造、 [ **NPI\_登録\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff568815)構造 (、NPI 内に含まれる\_クライアント\_の特性構造)、およびクライアント モジュールの登録のコンテキストに使用されるクライアント モジュールで定義された構造です。

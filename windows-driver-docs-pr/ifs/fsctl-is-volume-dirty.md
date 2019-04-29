@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7f603645d6b5586ae0076e653fffb960f0f6238
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324578"
 ---
 # <a name="fsctlisvolumedirty-control-code"></a>FSCTL\_IS\_ボリューム\_ダーティ制御コード
 
@@ -30,7 +30,7 @@ NTFS が状態を返す場合は、ボリュームの情報ファイルが破損
 
 ミニフィルター ドライバーの呼び出しは、この操作を実行する[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)の次のパラメーターとファイル システム リダイレクター、および従来のファイル システム フィルター ドライバー呼び出し[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ボリュームのファイル オブジェクト ポインター。 このパラメーターは、マウントされたファイル システム ボリュームのユーザーのボリュームのオープンを表す必要があります。 このパラメーターが必要とすることはできません**NULL**します。
@@ -57,8 +57,8 @@ NTFS が状態を返す場合は、ボリュームの情報ファイルが破損
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">意味</th>
+<th align="left">値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -120,7 +120,7 @@ NTFS が状態を返す場合は、ボリュームの情報ファイルが破損
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

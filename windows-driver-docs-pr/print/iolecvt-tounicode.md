@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d65d923424f33bc48dc3201f46c4cda11266ab94
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324859"
 ---
 # <a name="iolecvttounicode-method"></a>IOleCvt::ToUnicode メソッド
 
@@ -49,7 +49,7 @@ ms.locfileid: "56536051"
 変換対象の呼び出し元が指定した文字列。
 
 *lCodePage* \[in\]  
-変換に使用する呼び出し元が指定のコード ページ。 詳細については、次の「解説」を参照してください。
+変換に使用する呼び出し元が指定のコード ページ。 詳細については、「解説」を参照してください。
 
 *pVal* \[out, retval\]  
 変換された Unicode 文字列を受け取る場所への呼び出し元が指定のポインター。
@@ -70,7 +70,7 @@ ms.locfileid: "56536051"
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>S_OK を返します</strong></td>
+<td><strong>S_OK</strong></td>
 <td><p>操作に成功しました。</p></td>
 </tr>
 <tr class="even">
@@ -99,7 +99,7 @@ Else
 End If
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

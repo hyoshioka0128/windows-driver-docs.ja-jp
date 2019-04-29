@@ -1,6 +1,6 @@
 ---
 title: 圧縮された SysMem で作成したテクスチャ サーフェスの処理
-description: 処理は、システム メモリ内で作成したテクスチャ サーフェスを圧縮します。
+description: システム メモリ内で作成された圧縮テクスチャ サーフェスの処理
 ms.assetid: 773962ce-f459-4dc5-8311-c43ae33cfb7c
 keywords:
 - 描画圧縮テクスチャ WDK DirectDraw、システム メモリに関する考慮事項
@@ -18,13 +18,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 31b84bfb1387bc43bb30f260a83a98e86aed126f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323793"
 ---
-# <a name="handling-compressed-texture-surfaces-created-in-system-memory"></a>処理は、システム メモリ内で作成したテクスチャ サーフェスを圧縮します。
+# <a name="handling-compressed-texture-surfaces-created-in-system-memory"></a>システム メモリ内で作成された圧縮テクスチャ サーフェスの処理
 
 **このトピックでは、Windows NT ベースのオペレーティング システムにのみ適用されます。**
 

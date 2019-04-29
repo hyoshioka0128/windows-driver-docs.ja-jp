@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0dd20105e784f942ed8d2b746b521f09b2febc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324327"
 ---
 # <a name="irpmjqueryea"></a>IRP\_MJ\_クエリ\_EA
 
@@ -73,7 +73,7 @@ IRP\_MJ\_クエリ\_EA 要求を送信 I/O マネージャーとその他のオ�
 <thead>
 <tr class="header">
 <th align="left">Flag</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

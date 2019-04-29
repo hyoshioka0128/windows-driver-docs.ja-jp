@@ -1,6 +1,6 @@
 ---
-title: デバイスを削除します。
-description: デバイスを削除します。
+title: デバイスの削除
+description: デバイスの削除
 ms.assetid: 8184987f-5c46-4dd6-aad2-3c32b14205fd
 keywords:
 - PnP WDK カーネルでは、デバイスの削除
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2033825edfa1e8b00f056f58fe6bd45c5227cfbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324471"
 ---
-# <a name="removing-a-device"></a>デバイスを削除します。
+# <a name="removing-a-device"></a>デバイスの削除
 
 
 

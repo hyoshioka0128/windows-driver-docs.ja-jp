@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ee3457c572ff8bff7aab72ed613da0a4416729aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323243"
 ---
 # <a name="contributing-to-windows-driver-documentation"></a>Windows ドライバーのドキュメントへの投稿
 
@@ -41,7 +41,7 @@ Microsoft の従業員、プライベート環境での共同作業する必要�
 
 既存の記事に大幅に変更、追加またはイメージを変更または新しい記事を投稿、あなたの GitHub アカウントに、公式のリポジトリをフォークとローカルの複製を作成し、お勧めします。
 
-詳細については、[リポジトリをフォークする](https://help.github.com/articles/fork-a-repo/)を参照してください。
+詳細については、次を参照してください。[リポジトリをフォークする](https://help.github.com/articles/fork-a-repo/)します。
 
 ## <a name="using-issues-to-provide-feedback-on-windows-driver-documentation"></a>問題を使用して Windows ドライバーのドキュメントに関するフィードバックを提供するには
 

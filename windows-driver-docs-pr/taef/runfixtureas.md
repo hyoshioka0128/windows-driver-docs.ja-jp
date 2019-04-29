@@ -5,11 +5,11 @@ ms.assetid: FAFF5265-5268-412E-86A5-149B187B1376
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 098241eb5ad4ed03950eff668265d9db41e9d57b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324737"
 ---
 # <a name="runfixtureas"></a>RunFixtureAs
 
@@ -71,7 +71,7 @@ TAEF '没入型ブローカー' プロセスで、フィクスチャを実行し
  
 
 <span id="UIAccess"></span><span id="uiaccess"></span><span id="UIACCESS"></span>**UIAccess**  
-TAEF は、UIAccess 実行レベル マーク アップのプロセスで、フィクスチャを実行します。 UI オートメーション アプリケーションの UIAccess については、、 [Windows 整合性メカニズム デザイン](https://msdn.microsoft.com/library/bb625963)を参照してください。
+TAEF は、UIAccess 実行レベル マーク アップのプロセスで、フィクスチャを実行します。 UI オートメーション アプリケーションの UIAccess については、次を参照してください。、 [Windows 整合性メカニズム デザイン](https://msdn.microsoft.com/library/bb625963)します。
 
 **注:**  
 -   UIAccess は、Vista 以降のオペレーティング システムでのみサポートされます。

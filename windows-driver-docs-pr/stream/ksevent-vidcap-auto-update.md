@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c748d84df8716cb1c37d29fc63953df482f57029
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324806"
 ---
 # <a name="kseventvidcapautoupdate"></a>KSEVENT\_しました\_自動\_UPDATE
 
@@ -64,7 +64,7 @@ KSEVENT\_しました\_自動\_プロパティ値が変更されたときに、�
 
 クライアントは、ユーザーからプロパティ値を変更するデバイスで、スイッチが反転する場合に通知するのには、このイベントの登録があります。 使用するには、このイベントのハードウェアの実装は、この機能のサポートを提供する必要があります。
 
-DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
+DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
 
  
 

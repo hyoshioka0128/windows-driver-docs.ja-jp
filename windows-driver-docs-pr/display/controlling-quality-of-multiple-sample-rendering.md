@@ -1,6 +1,6 @@
 ---
-title: 複数の標本のレンダリングの品質を制御します。
-description: 複数の標本のレンダリングの品質を制御します。
+title: 複数サンプル レンダリングの品質の管理
+description: 複数サンプル レンダリングの品質の管理
 ms.assetid: 5a2f2d36-ab0d-4267-a921-c42621fa5d47
 keywords:
 - 複数の標本 WDK DirectX 9.0 のレンダリング、品質を制御します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb0c5b0b32ed37d3747df78ed9ad16a61f491531
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323248"
 ---
-# <a name="controlling-quality-of-multiple-sample-rendering"></a>複数の標本のレンダリングの品質を制御します。
+# <a name="controlling-quality-of-multiple-sample-rendering"></a>複数サンプル レンダリングの品質の管理
 
 
 ## <span id="ddk_controlling_quality_of_multiple_sample_rendering_gg"></span><span id="DDK_CONTROLLING_QUALITY_OF_MULTIPLE_SAMPLE_RENDERING_GG"></span>

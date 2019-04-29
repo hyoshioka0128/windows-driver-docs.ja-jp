@@ -1,17 +1,17 @@
 ---
-title: V4 プリンター ドライバーのセキュリティに関する考慮事項
+title: V4 プリンター ドライバー セキュリティ考慮事項
 description: 特権の昇格、なりすましのデバイスや中間者攻撃など、一般的な脅威だけでなく v4 プリンター ドライバーは Internet Explorer 9 などの権限の低いアプリケーションと互換性があるも必要です。
 ms.assetid: 8A1508C1-4856-4E3C-8378-AC5FDD55D118
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cf2299bbcf43dd90a02a75ce4ab64059aa280b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324813"
 ---
-# <a name="v4-printer-driver-security-considerations"></a>V4 プリンター ドライバーのセキュリティに関する考慮事項
+# <a name="v4-printer-driver-security-considerations"></a>V4 プリンター ドライバー セキュリティ考慮事項
 
 
 特権の昇格、なりすましのデバイスや中間者攻撃など、一般的な脅威だけでなく v4 プリンター ドライバーは Internet Explorer 9 などの権限の低いアプリケーションと互換性があるも必要です。

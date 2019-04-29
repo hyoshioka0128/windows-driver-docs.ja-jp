@@ -1,6 +1,6 @@
 ---
-title: Irp_mj_create 用の監査を追加します。
-description: Irp_mj_create 用の監査を追加します。
+title: IRP_MJ_CREATE での監査の追加
+description: IRP_MJ_CREATE での監査の追加
 ms.assetid: cb71fe83-44f4-48dd-8fff-250f1d27c123
 keywords:
 - IRP_MJ_CREATE
@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a96484269cbd7d72e31972fbc45fa950128f1cae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323164"
 ---
 # <a name="adding-auditing-on-irpmjcreate"></a>IRP の監査を追加する\_MJ\_を作成します。
 

@@ -1,17 +1,17 @@
 ---
-title: V4 ドライバーのセットアップの概念
+title: V4 ドライバー セットアップ概念
 description: V4 印刷ドライバー モデルでは、新しい設定モデルを使用して、ユーザー エクスペリエンスの向上し、サポート コストを削減します。
 ms.assetid: C1DF5496-14CF-4BF4-B85C-AF1A691C7AF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29bd4610f1957bf8fe27ceb848a07a22f4a1f2c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324843"
 ---
-# <a name="v4-driver-setup-concepts"></a>V4 ドライバーのセットアップの概念
+# <a name="v4-driver-setup-concepts"></a>V4 ドライバー セットアップ概念
 
 
 V4 印刷ドライバー モデルでは、新しい設定モデルを使用して、ユーザー エクスペリエンスの向上し、サポート コストを削減します。
@@ -137,7 +137,7 @@ c. ソリューション\#2 – PnP devnode は余分な。セットアップ �
 
 **ドライバーのランク付け**します。 V4 印刷ドライバーの概要では、プラグ アンド プレイが順位付けの動作は変更されません。 デバイスが接続されている、最高スコアの使用可能なドライバーが選択されます。 選択したドライバーは、印刷クラス ドライバーより適切にランクがある場合は、照合し、ドライバー、Windows Update サイトで、選択したドライバーが自動的に置き換えられます、次回ユーザーが Windows の更新プログラムをダウンロードします。
 
-ドライバーのランク付けの詳細については、[ランク ドライバーをどのように Windows](https://msdn.microsoft.com/library/windows/hardware/ff546225.aspx)を参照してください。
+ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](https://msdn.microsoft.com/library/windows/hardware/ff546225.aspx)します。
 
 ## <a name="driver-setup-best-practices"></a>ドライバーの設定のベスト プラクティス
 

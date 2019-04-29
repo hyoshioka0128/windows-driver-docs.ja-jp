@@ -1,6 +1,6 @@
 ---
-title: ロード順序グループとミニフィルター ドライバーの高度
-description: ロード順序グループとミニフィルター ドライバーの高度
+title: ミニフィルター ドライバー用のロード順序グループと高度
+description: ミニフィルター ドライバー用のロード順序グループと高度
 ms.assetid: be8f18fe-c80b-44a3-b0c3-f2f630142180
 keywords:
 - ファイル システム ミニフィルターの高度 WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bc4e23f35d2a518c5bf1e2b3a251b0d18edb6c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324352"
 ---
-# <a name="load-order-groups-and-altitudes-for-minifilter-drivers"></a>ロード順序グループとミニフィルター ドライバーの高度
+# <a name="load-order-groups-and-altitudes-for-minifilter-drivers"></a>ミニフィルター ドライバー用のロード順序グループと高度
 
 
 Windows では、ファイル システム フィルター ドライバーとシステムの起動時に読み込まれるミニフィルター ドライバーの読み込み順序グループの専用のセットを使用します。

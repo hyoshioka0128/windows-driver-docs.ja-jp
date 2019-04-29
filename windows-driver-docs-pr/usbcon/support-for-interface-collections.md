@@ -4,11 +4,11 @@ title: USB 複合デバイス上のインターフェイス コレクション�
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 912d9a75ae21c48fc47ddf1a8c5d7a46527974b2
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324499"
 ---
 # <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>USB 複合デバイス上のインターフェイス コレクションの列挙
 

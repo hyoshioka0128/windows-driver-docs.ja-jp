@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad1c3ab12f6229eb16637e4e770484feae08f8d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322282"
 ---
 # <a name="handling-socket-options-and-control-codes-for-a-san"></a>SAN のソケット オプションと制御コードの処理
 
@@ -58,7 +58,7 @@ Windows Sockets スイッチ呼び出し SAN サービス プロバイダーの[
 Windows Sockets スイッチ呼び出し SAN サービス プロバイダーの[ **WSPIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff566296)関数およびパスの場合、その SAN サービス プロバイダーの情報を取得または設定するコード、次のコントロールのいずれか、SANサービス プロバイダーには、そのコントロールのコードがサポートされています。
 
 <a href="" id="sio-get-extension-function-pointer"></a>SIO\_取得\_拡張子\_関数\_ポインター  
-SAN サービス プロバイダーがサポートする拡張関数へのポインターを取得します。 拡張関数の詳細については、[Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)を参照してください。 入力バッファー、 **WSPIoctl**呼び出しには、値を持つ、指定された拡張子関数を識別する GUID が含まれています。 SAN サービス プロバイダーが要求された関数のポインターを返します**WSPIoctl**のバッファーを出力します。 次の表には、SAN サービス プロバイダーをサポートする拡張関数の Guid が含まれています。
+SAN サービス プロバイダーがサポートする拡張関数へのポインターを取得します。 拡張関数の詳細については、次を参照してください。 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)します。 入力バッファー、 **WSPIoctl**呼び出しには、値を持つ、指定された拡張子関数を識別する GUID が含まれています。 SAN サービス プロバイダーが要求された関数のポインターを返します**WSPIoctl**のバッファーを出力します。 次の表には、SAN サービス プロバイダーをサポートする拡張関数の Guid が含まれています。
 
 <table>
 <colgroup>

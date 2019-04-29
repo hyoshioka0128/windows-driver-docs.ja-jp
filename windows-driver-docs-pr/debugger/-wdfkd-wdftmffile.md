@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 700bbd5720637a79d596cbdd8c44e2bb364b27e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323160"
 ---
 # <a name="wdfkdwdftmffile"></a>!wdfkd.wdftmffile
 
@@ -44,7 +44,7 @@ KMDF 1、UMDF 2
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
+詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------
@@ -61,7 +61,7 @@ kd> !wdftmffile tools\tracing\<platform>\wdf1005.tmf
 
 別のバージョンで使用している Windows Driver Kit (WDK) のパスである可能性がありますに注意してください。 また、.tmf ファイルの名前が使用している KMDF のバージョンを表すことに注意してください。 たとえば、Wdf1005.tmf、kmdf バージョン 1.5 .tmf ファイルです。
 
-デバッグ セッション中に、KMDF ログを表示する方法については、[フレームワークのイベントのロガーを使用して](https://msdn.microsoft.com/library/windows/hardware/ff545531)を参照してください。
+デバッグ セッション中に、KMDF ログを表示する方法については、次を参照してください。[フレームワークのイベントのロガーを使用して](https://msdn.microsoft.com/library/windows/hardware/ff545531)します。
 
  
 

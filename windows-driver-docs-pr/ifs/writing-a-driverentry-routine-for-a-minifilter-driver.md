@@ -1,6 +1,6 @@
 ---
-title: ミニフィルター ドライバー用 DriverEntry ルーチンを記述します。
-description: ミニフィルター ドライバー用 DriverEntry ルーチンを記述します。
+title: ミニフィルター ドライバー用の DriverEntry ルーチンの記述
+description: ミニフィルター ドライバー用の DriverEntry ルーチンの記述
 ms.assetid: 949b4087-47de-4145-87dd-d618db44a15b
 keywords:
 - ファイル システム ミニフィルター ドライバー WDK、DriverEntry ルーチン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e378805c2adc786bb57ec3f05a90e1d17be8c5a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322275"
 ---
-# <a name="writing-a-driverentry-routine-for-a-minifilter-driver"></a>ミニフィルター ドライバー用 DriverEntry ルーチンを記述します。
+# <a name="writing-a-driverentry-routine-for-a-minifilter-driver"></a>ミニフィルター ドライバー用の DriverEntry ルーチンの記述
 
 
 ## <span id="ddk_writing_a_driverentry_routine_for_a_minifilter_driver_if"></span><span id="DDK_WRITING_A_DRIVERENTRY_ROUTINE_FOR_A_MINIFILTER_DRIVER_IF"></span>

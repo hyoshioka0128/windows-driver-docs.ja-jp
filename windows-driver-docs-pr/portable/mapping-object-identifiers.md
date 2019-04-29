@@ -1,16 +1,16 @@
 ---
-Description: Mapping Object Identifiers
-title: オブジェクト Id の割り当てください。
+Description: オブジェクトの識別子のマッピング
+title: オブジェクトの識別子のマッピング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86d2edebc8fbd0ff7704cdb47c2d68d942d0f543
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324481"
 ---
-# <a name="mapping-object-identifiers"></a>オブジェクト Id の割り当てください。
+# <a name="mapping-object-identifiers"></a>オブジェクトの識別子のマッピング
 
 
 マッピング関数**WpdBaseDriver::OnGetObjectIDsFromPersistentUniqueIDs**、永続的な識別子にオブジェクト識別子のマッピングを処理します。 WPD ドライバー モデルでは、オブジェクト識別子は、特定のデバイスのセッションの有効なのみ識別子です。 永続的な識別子は、すべてのデバイス セッション間で有効です。

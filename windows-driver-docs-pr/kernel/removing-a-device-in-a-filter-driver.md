@@ -1,19 +1,19 @@
 ---
-title: フィルター ドライバーでは、デバイスを削除します。
-description: フィルター ドライバーでは、デバイスを削除します。
+title: フィルター ドライバーでのデバイスの削除
+description: フィルター ドライバーでのデバイスの削除
 ms.assetid: f1166240-446d-4f37-871b-baf687e25735
 keywords:
 - フィルター ドライバー WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ca1202ddb5169a3da6ff48aa1b64d5f6585fe92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324414"
 ---
-# <a name="removing-a-device-in-a-filter-driver"></a>フィルター ドライバーでは、デバイスを削除します。
+# <a name="removing-a-device-in-a-filter-driver"></a>フィルター ドライバーでのデバイスの削除
 
 
 

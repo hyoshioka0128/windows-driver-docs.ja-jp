@@ -1,19 +1,19 @@
 ---
-title: デバイス オブジェクトのセキュリティ記述子を適用します。
-description: デバイス オブジェクトのセキュリティ記述子を適用します。
+title: デバイス オブジェクトに対するセキュリティ記述子の摘要
+description: デバイス オブジェクトに対するセキュリティ記述子の摘要
 ms.assetid: c0697021-cf78-4b85-b959-342179da5621
 keywords:
 - WDK のセキュリティ記述子のファイル システム、デバイス オブジェクトに適用します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9db2ced158caf82095c3c1cfbe506add1d69806
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322288"
 ---
-# <a name="applying-security-descriptors-on-the-device-object"></a>デバイス オブジェクトのセキュリティ記述子を適用します。
+# <a name="applying-security-descriptors-on-the-device-object"></a>デバイス オブジェクトに対するセキュリティ記述子の摘要
 
 
 ## <span id="ddk_applying_security_descriptors_on_the_device_object_if"></span><span id="DDK_APPLYING_SECURITY_DESCRIPTORS_ON_THE_DEVICE_OBJECT_IF"></span>

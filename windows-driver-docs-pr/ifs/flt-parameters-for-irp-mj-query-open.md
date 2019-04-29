@@ -17,11 +17,11 @@ api_type:
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a60d847786a5d3a90e4852dbb2b690a4b11a4ed0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324598"
 ---
 # <a name="fltparameters-for-irpmjqueryopen-union"></a>FLT\_IRP_MJ_QUERY_OPEN 共用体のパラメーター
 
@@ -61,8 +61,8 @@ typedef union _FLT_PARAMETERS {
 
 | FILE_INFORMATION_CLASS 値 | 返される情報の種類 |
 | --- | --- |
-| FileStatInformation | A [ **FILE_STAT_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)を参照してください。 
-| FileStatLxInformation | A [ **FILE_STAT_LX_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_lx_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)を参照してください。 
+| FileStatInformation | A [ **FILE_STAT_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、次を参照してください。 [ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)します。 
+| FileStatLxInformation | A [ **FILE_STAT_LX_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_lx_information)構造体。 この構造体には、アクセス マスクが含まれています。 アクセス マスクの詳細については、次を参照してください。 [ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)します。 
 | FileCaseSensitiveInformation | A [FILE_CASE_SENSITIVE_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stat_information)構造体。 |
 
 ## <a name="remarks"></a>コメント

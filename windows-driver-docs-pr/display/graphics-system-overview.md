@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b924e74279ec3a8fca7fe44b78245422100caa4d
-ms.sourcegitcommit: 4a371c2e8a2aa42f2e2744df1544ea69e42f4fc3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323778"
 ---
 # <a name="graphics-system-overview"></a>グラフィックス システムの概要
 

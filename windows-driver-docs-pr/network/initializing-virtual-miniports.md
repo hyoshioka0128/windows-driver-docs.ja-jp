@@ -1,6 +1,6 @@
 ---
-title: 初期化中の仮想ミニポート
-description: 初期化中の仮想ミニポート
+title: 仮想ミニポートの初期化
+description: 仮想ミニポートの初期化
 ms.assetid: b712fe29-fd56-4abd-bab6-e335350a20c2
 keywords:
 - 基になるアダプターの WDK ネットワークを開く
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1e964df868337f520cd460caf90b5648c55b440
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324933"
 ---
-# <a name="initializing-virtual-miniports"></a>初期化中の仮想ミニポート
+# <a name="initializing-virtual-miniports"></a>仮想ミニポートの初期化
 
 
 
@@ -34,9 +34,9 @@ ms.locfileid: "56529014"
 
 呼び出す**NdisIMInitializeDeviceInstanceEx**中間ドライバーの呼び出しで結果[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)の初期化を実行する関数、NDIS IRP を受信することは、仮想のミニポートを指定した\_MN\_開始\_デバイスのデバイスを起動します。 NDIS 中間ドライバは呼び出しません NDIS がこのような IRP を受信しない場合*MiniportInitializeEx*関数。 呼び出し*MiniportInitializeEx*は後で発生することができます、そのため必ずしもへの呼び出しのコンテキスト内で**NdisIMInitializeDeviceInstanceEx**します。 NDIS は呼び出すことはない場合*MiniportInitializeEx*への呼び出しで参照されている仮想ミニポートの**NdisIMInitializeDeviceInstanceEx**、中間のドライバーが仮想のミニポートを不要と中間のドライバーを呼び出す必要があります[ **NdisIMCancelInitializeDeviceInstance** ](https://msdn.microsoft.com/library/windows/hardware/ff562719)仮想ミニポートの初期化をキャンセルします。 たとえば、中間のドライバーが、基になるミニポートへのバインドを成功への応答で仮想ミニポートを作成します。 NDIS 呼び出される前にそのバインドが削除された場合*MiniportInitializeEx*、中間のドライバーを呼び出す必要があります**NdisIMCancelInitializeDeviceInstance**ミニポートの初期化をキャンセルします。
 
-*MiniportInitializeEx*割り当ておよび仮想ミニポートに固有のコンテキストの領域を初期化する必要があります。 コンテキストの領域を指定する方法については、[初期化仮想ミニポート](initializing-a-virtual-miniport.md)を参照してください。
+*MiniportInitializeEx*割り当ておよび仮想ミニポートに固有のコンテキストの領域を初期化する必要があります。 コンテキストの領域を指定する方法については、次を参照してください。[初期化仮想ミニポート](initializing-a-virtual-miniport.md)します。
 
-中間のドライバーは、逆シリアル化されたドライバーとして機能する必要があります。 逆シリアル化されたドライバーの詳細については、[NDIS ミニポート ドライバーの逆シリアル化](deserialized-ndis-miniport-drivers.md)を参照してください。
+中間のドライバーは、逆シリアル化されたドライバーとして機能する必要があります。 逆シリアル化されたドライバーの詳細については、次を参照してください。 [NDIS ミニポート ドライバーの逆シリアル化](deserialized-ndis-miniport-drivers.md)します。
 
 中間のドライバーでは、状態情報を保持が正しく初期化されているを確認してください。 たとえば、新しいドライバーに送信に関連するリソースが必要な場合[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)ネットワーク データの構造を[ *MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)は [次へ] の下位の層 - NET に送信する\_バッファー\_リスト構造プールこの時点で割り当てることができます。
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce60b4adcbb38b5090190385a7cc03b711bbf5cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323427"
 ---
 # <a name="netbufferlist-structure"></a>NET\_バッファー\_リスト構造
 
@@ -28,7 +28,7 @@ A [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows
 
 ![net のフィールドを示す図\-バッファー\-構造体を一覧表示](images/netbufferlist.png)
 
-NET\_バッファー\_リスト構造が含まれています、 [ **NET\_バッファー\_一覧\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff568400)構造体、 **NetBufferListHeader**メンバー。 NET\_バッファー\_一覧\_ヘッダー構造が含まれています、 [ **NET\_バッファー\_一覧\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568393)構造体**NetBufferListData**メンバー。 NET のアクセスに NDIS マクロを使用する必要があります\_バッファー\_構造体メンバーの一覧。 これらのマクロの詳細については、、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造のリファレンス ページを参照してください。
+NET\_バッファー\_リスト構造が含まれています、 [ **NET\_バッファー\_一覧\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff568400)構造体、 **NetBufferListHeader**メンバー。 NET\_バッファー\_一覧\_ヘッダー構造が含まれています、 [ **NET\_バッファー\_一覧\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568393)構造体**NetBufferListData**メンバー。 NET のアクセスに NDIS マクロを使用する必要があります\_バッファー\_構造体メンバーの一覧。 これらのマクロの詳細については、次を参照してください。、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造のリファレンス ページです。
 
 一部のメンバーは NDIS でのみ使用されます。 ドライバーが最もよく使用するメンバーは、次の一覧で定義されます。
 

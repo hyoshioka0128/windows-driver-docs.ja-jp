@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 820b1985308399f83af8cb2b23b594e5763aebe2
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324242"
 ---
 # <a name="parameter-element"></a>Parameter 要素
 
@@ -49,7 +49,7 @@ ms.locfileid: "57464262"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>型</th>
+<th>種類</th>
 <th>必須</th>
 <th>説明</th>
 </tr>
@@ -58,21 +58,21 @@ ms.locfileid: "57464262"
 <tr class="odd">
 <td><p><strong>ResourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
 <p>リソース イベントの通知メッセージを表示するテキストを含んでいる DLL を指定する省略可能な属性。 この DLL は、プリンター ドライバーの依存ファイルである必要があり、ドライバーのリソース フォルダー (たとえば、%systemroot%\system32\spool\drivers\w32x86\3) に存在する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>stringID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p></p>
 <p>割合 (%) の場所に表示するテキストを指定する必須の属性イベント通知メッセージのテキストの文字。 属性の値は、リソース DLL でのテキスト文字列の場所を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>type</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p></p>
 <p>プリンターやドキュメントの名前を指定する省略可能な属性。 この属性は、印刷中のドキュメントの次の値: DocumentThe 名前のいずれかを実行できます。PrinterNameThe 名、プリンタと Fax に記載されているプリンターのコントロール パネル、たとえば、"Fabrikam 5000 \printserver で"フォルダーまたは「2 階の寝室のプリンター」。</p></td>
 </tr>
@@ -112,12 +112,12 @@ ms.locfileid: "57464262"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 リソース DLL から読み込まれたテキストは割合 (%) を含めることができます。指定されたテキスト文字列で置き換えられる文字、**パラメーター**要素。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例に示す方法、**パラメーター**要素を使用して、完了イベントの通知メッセージを生成します。

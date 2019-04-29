@@ -1,17 +1,17 @@
 ---
-title: 印刷スキーマ参照
+title: 印刷スキーマ リファレンス
 description: 次の一覧は、参照と業界標準や仕様、技術記事へのリンクを提供します。
 ms.assetid: D25FB8AF-D227-4940-8740-D1AFF9BE3AC3
 ms.date: 06/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 10e9a05c0b952fbea6af7f61a20533ae1b01c7f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324758"
 ---
-# <a name="print-schema-references"></a>印刷スキーマ参照
+# <a name="print-schema-references"></a>印刷スキーマ リファレンス
 
 
 次の一覧は、参照と業界標準や仕様、技術記事へのリンクを提供します。

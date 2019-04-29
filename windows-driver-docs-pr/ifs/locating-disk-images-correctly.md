@@ -5,11 +5,11 @@ ms.assetid: 7AC7DDDB-CDA3-4D0D-8D23-7BBA03536195
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db687b22b17ba2c2702231fc0c299903b87c5d07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324325"
 ---
 # <a name="locating-disk-images-correctly"></a>ディスク イメージの正しい場所を見つける
 

@@ -5,11 +5,11 @@ ms.assetid: 7fb31e18-a2f0-48fe-b0a8-cf4aca7d27d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cda84d8ae0a3435906738a902a68cdfbb0c70616
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324910"
 ---
 # <a name="installation-requirements-for-network-filter-drivers"></a>ネットワーク フィルター ドライバーのインストール要件
 
@@ -17,7 +17,7 @@ ms.locfileid: "56553470"
 
 
 
-このトピックでは、ネットワーク フィルター ドライバーの INF ファイルの要件をまとめたものです。 NDIS 6.0 以降では、フィルター ドライバーがサポートされています。 フィルター ドライバーをインストールする方法の詳細については、[NDIS フィルター ドライバーのインストール](ndis-filter-driver-installation.md)を参照してください。
+このトピックでは、ネットワーク フィルター ドライバーの INF ファイルの要件をまとめたものです。 NDIS 6.0 以降では、フィルター ドライバーがサポートされています。 フィルター ドライバーをインストールする方法の詳細については、次を参照してください。 [NDIS フィルター ドライバーのインストール](ndis-filter-driver-installation.md)します。
 
 <table>
 <colgroup>
@@ -28,7 +28,7 @@ ms.locfileid: "56553470"
 <thead>
 <tr class="header">
 <th align="left">INF ファイルのセクション</th>
-<th align="left">状況</th>
+<th align="left">状態</th>
 <th align="left">コメント</th>
 </tr>
 </thead>

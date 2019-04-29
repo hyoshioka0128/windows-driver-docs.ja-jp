@@ -1,5 +1,5 @@
 ---
-title: デバッガーのマークアップ言語を使用してください。
+title: デバッガー マークアップ言語の使用
 description: デバッガーのコマンドは、プレーン テキストで、またはデバッガーのマークアップ言語 (DML) を使用する拡張の形式で出力を提供できます。 DML で強化は、出力には、リンクが含まれます。
 ms.assetid: 70DDC56F-614F-43B7-B325-91984B74AECF
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00a076a9d17b8eb5626096386b8c96e138091f69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324696"
 ---
-# <a name="using-debugger-markup-language"></a>デバッガーのマークアップ言語を使用してください。
+# <a name="using-debugger-markup-language"></a>デバッガー マークアップ言語の使用
 
 
 デバッガーのコマンドは、プレーン テキストで、またはデバッガーのマークアップ言語 (DML) を使用する拡張の形式で出力を提供できます。 拡張され、DML に出力には、関連するコマンドを実行することができます をクリックしたリンクが含まれます。
@@ -61,7 +61,7 @@ DML の解析をサポートしているコマンドの出力領域があるす�
 
 Windows 10 およびそれ以降の Windbg では、コマンドのブラウザー ウィンドウは、解析し、DML を表示します。 などのすべてのタグ&lt;リンク&gt;、 &lt;exec&gt;外観の変更が完全にサポートされているとします。
 
-WinDbg でメニューを使用してコマンドのブラウザー セッションを開始するには、次のように選択します。**ビュー**、**コマンド ブラウザー**します。 .Browse&lt;コマンド&gt;でコマンド ウィンドウは、新しいコマンドのブラウザー ウィンドウを開きし、特定のコマンドを実行します。 詳細については、[WinDbg でコマンドのブラウザー ウィンドウを使用して](command-browser-window.md)を参照してください。 Ctrl + n コマンドの新しいブラウザー ウィンドウを開くこともできます。
+WinDbg でメニューを使用してコマンドのブラウザー セッションを開始するには、次のように選択します。**ビュー**、**コマンド ブラウザー**します。 .Browse&lt;コマンド&gt;でコマンド ウィンドウは、新しいコマンドのブラウザー ウィンドウを開きし、特定のコマンドを実行します。 詳細については、次を参照してください。 [WinDbg でコマンドのブラウザー ウィンドウを使用して](command-browser-window.md)します。 Ctrl + n コマンドの新しいブラウザー ウィンドウを開くこともできます。
 
 コマンドのブラウザー ウィンドウには、web ブラウザーで、ドロップダウン リストの歴史と前/次のボタンの動作が意図的には模倣します。 履歴ドロップダウンには、最後の 20 のコマンドのみが表示されますが、コマンドに戻って古い履歴を表示するドロップダウン リストを取得できるように、完全な履歴が保持されます。
 
@@ -105,7 +105,7 @@ My DML Experiment
 
 ![モジュールの一覧のスクリーン ショット](images/dmlcommands04.png)
 
-DML のカスタマイズの徹底的に検討すると DML タグの完全な一覧は、[DML を使用してデバッガーの出力のカスタマイズ](customizing-debugger-output-using-dml.md)を参照してください。
+DML のカスタマイズの徹底的に検討すると DML タグの完全な一覧は、次を参照してください。 [DML を使用してデバッガーの出力のカスタマイズ](customizing-debugger-output-using-dml.md)します。
 
  
 

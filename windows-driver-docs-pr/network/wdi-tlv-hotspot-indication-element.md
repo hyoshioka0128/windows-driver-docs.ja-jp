@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_HOTSPOT_INDICATION_ELEMENT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 401838ba9bdc70c879b351199d946700047d29cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324280"
 ---
 # <a name="wditlvhotspotindicationelement"></a>WDI\_TLV\_ホット スポット\_INDICATION\_要素
 
@@ -31,13 +31,13 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 ## <a name="values"></a>値
 
 
-| 種類      | 説明                                                         |
+| 型      | 説明                                                         |
 |-----------|---------------------------------------------------------------------|
 | UINT8\[\] | アソシエーションの要求で使用されているホット スポットを示す値の要素。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

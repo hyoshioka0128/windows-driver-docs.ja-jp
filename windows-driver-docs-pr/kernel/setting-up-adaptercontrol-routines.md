@@ -1,6 +1,6 @@
 ---
-title: AdapterControl ルーチンの設定
-description: AdapterControl ルーチンの設定
+title: AdapterControl ルーチンのセットアップ
+description: AdapterControl ルーチンのセットアップ
 ms.assetid: 0d2add25-711a-4e5d-8409-b7ce60b08858
 keywords:
 - AdapterControl ルーチンを設定します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dab2afbd52e8b114798915c1ae64fa3d8803f128
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323692"
 ---
-# <a name="setting-up-adaptercontrol-routines"></a>AdapterControl ルーチンの設定
+# <a name="setting-up-adaptercontrol-routines"></a>AdapterControl ルーチンのセットアップ
 
 
 

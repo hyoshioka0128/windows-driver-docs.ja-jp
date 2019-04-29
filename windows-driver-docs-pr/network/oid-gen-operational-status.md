@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_OPERATIONAL_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 13905453dcb5f8bc420d44cb7cd8cdf004535161
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324454"
 ---
 # <a name="oidgenoperationalstatus"></a>OID\_GEN\_OPERATIONAL\_状態
 
@@ -32,7 +32,7 @@ NDIS ミニポート アダプターとフィルター モジュールでは、�
 
 クエリが成功すると、インターフェイス プロバイダーを返します NDIS\_状態\_成功して、クエリの結果は、値のいずれかで指定できます、 [ **NET\_場合\_工程\_ステータス**](https://msdn.microsoft.com/library/windows/hardware/ff568746)列挙体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

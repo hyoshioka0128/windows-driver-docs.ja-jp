@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_NETWORK_LAYER_ADDRESSES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ae9e9aafe53f18a79e7941cdbc39a17bc7332cd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324340"
 ---
 # <a name="oidgennetworklayeraddresses"></a>OID\_GEN\_ネットワーク\_レイヤー\_アドレス
 
@@ -23,7 +23,7 @@ OID、セットとして\_GEN\_ネットワーク\_レイヤー\_アドレス OI
 サポートされています。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-任意。
+(省略可能)。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
 任意。
@@ -34,7 +34,7 @@ OID、セットとして\_GEN\_ネットワーク\_レイヤー\_アドレス OI
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
 任意。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 バインドのインスタンスは、呼び出し元のトランスポートへの呼び出しで設定するドライバーの間のバインド[ **NdisOpenAdapterEx**](https://msdn.microsoft.com/library/windows/hardware/ff563715)します。 トランスポートは、トランスポートを使用して\_アドレスと TA\_アドレス構造を基になるミニポート ドライバーおよびその他の通知がネットワーク層のアドレスの一覧のドライバーを階層化します。 ミニポート ドライバーやその他の階層型のドライバーを使用して、互換性のあるネットワーク\_アドレス\_一覧とネットワーク\_アドレス構造体、バインドされたインターフェイスのネットワーク層のアドレスの一覧を設定する次のように定義します。
@@ -95,7 +95,7 @@ typedef struct _NETWORK_ADDRESS {
 
 プロトコルを設定できる、 **AddressCount**トランスポートのメンバー\_ミニポート ドライバーまたはバインドされたインターフェイス上のネットワーク層のアドレスの一覧を消去するその他の複数層のドライバーに通知する、0 のアドレス。 場合**AddressCount** 0 に設定されている、 **AddressType**ネットワーク内のメンバー\_アドレス\_リストが有効では、 **AddressType**内のメンバーネットワーク\_構造体のアドレスが無効です。 これに対して、プロトコルを設定できます**AddressCount**ミニポート ドライバーまたはバインドされたインターフェイス上のネットワーク層のアドレスのリストを変更するその他の複数層のドライバーに通知する 0 以外の値。 この場合、 **AddressType**ネットワーク内のメンバー\_アドレス\_リストが無効です、 **AddressType**ネットワーク内のメンバー\_アドレス構造体が無効です。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

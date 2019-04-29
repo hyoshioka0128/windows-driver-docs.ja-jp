@@ -1,6 +1,6 @@
 ---
-title: ログ記録ルーチンとマクロ
-description: ログ記録ルーチンとマクロ
+title: ログ記録用ルーチンとマクロ
+description: ログ記録用ルーチンとマクロ
 ms.assetid: 343605bc-7992-4e9c-a9af-f57bb958a38b
 keywords:
 - RDBSS WDK ファイル システムでは、ログ記録
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 686a8a93e2190d0a347746876f4862629ad4a7e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324349"
 ---
-# <a name="logging-routines-and-macros"></a>ログ記録ルーチンとマクロ
+# <a name="logging-routines-and-macros"></a>ログ記録用ルーチンとマクロ
 
 
 ## <span id="ddk_logging_functions_and_macros_if"></span><span id="DDK_LOGGING_FUNCTIONS_AND_MACROS_IF"></span>

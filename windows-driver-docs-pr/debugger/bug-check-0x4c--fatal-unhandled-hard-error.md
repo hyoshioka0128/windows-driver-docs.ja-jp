@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7326b84cca01fd24fcb7dccd2ef09a43f48eb8fa
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324757"
 ---
 # <a name="bug-check-0x4c-fatalunhandledharderror"></a>バグ チェック 0x4C:致命的な\_未処理\_ハード\_エラー
 

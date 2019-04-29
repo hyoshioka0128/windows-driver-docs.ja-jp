@@ -1,6 +1,6 @@
 ---
-title: デバイスの電源状態の必要なサポート
-description: デバイスの電源状態の必要なサポート
+title: デバイスの電源状態に関して必要なサポート
+description: デバイスの電源状態に関して必要なサポート
 ms.assetid: f7218f2a-d4ad-4b9a-af90-057801e714a2
 keywords:
 - 継続的な電源 WDK カーネル
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f49c132de9b1c4d382dea9c32fd2d29740655dbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324534"
 ---
-# <a name="required-support-for-device-power-states"></a>デバイスの電源状態の必要なサポート
+# <a name="required-support-for-device-power-states"></a>デバイスの電源状態に関して必要なサポート
 
 
 

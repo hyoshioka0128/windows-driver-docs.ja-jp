@@ -5,11 +5,11 @@ ms.assetid: c4437c38-b43a-433c-913a-d3de9bf74284
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 026bd09af83f5f147128dd7e68cce0def86571c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322276"
 ---
 # <a name="supported-scanner-paper-sizes"></a>サポートされているスキャナーの用紙サイズ
 

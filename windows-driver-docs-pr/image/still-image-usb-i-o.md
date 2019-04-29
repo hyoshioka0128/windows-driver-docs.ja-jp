@@ -1,17 +1,17 @@
 ---
-title: USB I/O を静止画像します。
-description: USB I/O を静止画像します。
+title: 静止画像 USB I/O
+description: 静止画像 USB I/O
 ms.assetid: 93b320b3-1a3f-4ed9-8692-d0d94a3b69bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc31cf4cb230c3451cd3962aa254aebb83c28f7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322303"
 ---
-# <a name="still-image-usb-io"></a>USB I/O を静止画像します。
+# <a name="still-image-usb-io"></a>静止画像 USB I/O
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: カードの暗証番号 (pin) の操作
-description: カードの暗証番号 (pin) の操作
+title: カード PIN 操作
+description: カード PIN 操作
 ms.assetid: 7993D284-8122-4831-9C00-E53DAEB7965F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9b74f5946c8f27e830f9230f0239ea27bad29fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324249"
 ---
-# <a name="card-pin-operations"></a>カードの暗証番号 (pin) の操作
+# <a name="card-pin-operations"></a>カード PIN 操作
 
 
 PIN が atm のテンキーの最初を使用するため、銀行業界から継承された用語。 一部の他の業界のドキュメントでは、用語のカード所有者検証 (CHV) を使用します。 データ形式は数値だけではありませんが、任意に指定できます、ユーザーが提供できる手段を自分の自由に指定されたを認識できることです。 暗証番号 (pin) のデータは、ANSI の 1 バイト文字セットに相互運用性に関する考慮事項によって制約されるように渡される値。
@@ -164,7 +164,7 @@ typedef enum
 
 
 
-**注**PIN がキャッシュされていない場合、Windows ログオンが正常に動作しない可能性があります。 この動作は仕様です。 暗証番号 (pin) のキャッシュ モードを以外の任意の値を設定するときの慎重に検討の指定、 **PinCacheNormal**します。
+**注**PIN がキャッシュされていない場合、Windows ログオンが正常に動作しない可能性があります。 この動作は仕様による結果です。 暗証番号 (pin) のキャッシュ モードを以外の任意の値を設定するときの慎重に検討の指定、 **PinCacheNormal**します。
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: デバイス インストールの共同インストーラーをデバッグします。
-description: デバイス インストールの共同インストーラーをデバッグします。
+title: デバイス インストールの共同インストーラーのデバッグ
+description: デバイス インストールの共同インストーラーのデバッグ
 ms.assetid: a5cf3cec-bd61-49a6-b836-6759cd8c7d82
 keywords:
 - デバイス インストールの共同インストーラーがデバッグ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce340d98e111ff1bf87b7877c402ae54b8afff22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324638"
 ---
-# <a name="debugging-a-device-installation-co-installer"></a>デバイス インストールの共同インストーラーをデバッグします。
+# <a name="debugging-a-device-installation-co-installer"></a>デバイス インストールの共同インストーラーのデバッグ
 
 
 ## <span id="ddk_debugging_dual_boot_machines_dbg"></span><span id="DDK_DEBUGGING_DUAL_BOOT_MACHINES_DBG"></span>

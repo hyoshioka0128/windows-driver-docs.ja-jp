@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e810770a0e9ffa085e1d823ddfa9b2f4e2685c24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324236"
 ---
 # <a name="irpmjsetsecurity"></a>IRP\_MJ\_設定\_セキュリティ
 
@@ -70,7 +70,7 @@ IRP を指定します\_MJ\_設定\_セキュリティ。
 <thead>
 <tr class="header">
 <th align="left">SecurityInformation 値</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

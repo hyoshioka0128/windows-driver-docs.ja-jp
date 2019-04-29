@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WW_INDICATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ccda98eb4325acc03c880a57cc1d0ec2070c312
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323448"
 ---
 # <a name="ndisstatuswwindication"></a>NDIS\_状態\_WW\_を示す値
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 679354e31aed3527137b22a623ceab7aa98357f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324912"
 ---
 # <a name="installation-requirements-for-network-clients"></a>ネットワーク クライアントのインストール要件
 
@@ -35,7 +35,7 @@ ms.locfileid: "56528966"
 <thead>
 <tr class="header">
 <th align="left">INF ファイルのセクション</th>
-<th align="left">状況</th>
+<th align="left">状態</th>
 <th align="left">コメント</th>
 </tr>
 </thead>

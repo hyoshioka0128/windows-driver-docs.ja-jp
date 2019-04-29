@@ -1,21 +1,21 @@
 ---
-title: デバイス ノードの状態フラグ
-description: デバイス ノードの状態フラグ
+title: デバイス ノード状態フラグ
+description: デバイス ノード状態フラグ
 ms.assetid: 64f4548f-ace3-440c-8a36-97bd46cfa986
 keywords:
 - プラグ アンド プレイ (PnP)、デバイス ノードの状態フラグします。
-- デバイス ノードの状態フラグ
+- デバイス ノード状態フラグ
 - DNF_XXX
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 256ad7a90f2bab282b98f16bb4f5e152e84aae98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324553"
 ---
-# <a name="device-node-status-flags"></a>デバイス ノードの状態フラグ
+# <a name="device-node-status-flags"></a>デバイス ノード状態フラグ
 
 
 ## <span id="ddk_device_node_status_flags_dbg"></span><span id="DDK_DEVICE_NODE_STATUS_FLAGS_DBG"></span>

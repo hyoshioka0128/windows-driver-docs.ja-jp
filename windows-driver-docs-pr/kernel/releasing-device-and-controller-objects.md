@@ -1,6 +1,6 @@
 ---
-title: デバイスとコント ローラーのオブジェクトを解放します。
-description: デバイスとコント ローラーのオブジェクトを解放します。
+title: デバイス オブジェクトとコントローラー オブジェクトの解放
+description: デバイス オブジェクトとコントローラー オブジェクトの解放
 ms.assetid: 35404401-d3a8-4257-b1a3-b16ebe42b181
 keywords:
 - ルーチン WDK カーネルでは、非 PnP ドライバーをアンロードします。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c12a6540d93822d262f4b687ffdd8de0214fa4e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324472"
 ---
-# <a name="releasing-device-and-controller-objects"></a>デバイスとコント ローラーのオブジェクトを解放します。
+# <a name="releasing-device-and-controller-objects"></a>デバイス オブジェクトとコントローラー オブジェクトの解放
 
 
 

@@ -6,18 +6,18 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_NDIS_RESERVED_5 ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: ae3b44c30c42f72dc73ab274105d2d404e9c76d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324570"
 ---
 # <a name="oidgenndisreserved5"></a>OID\_GEN\_NDIS\_占有\_5
 
 
 OID\_GEN\_NDIS\_占有\_NDIS の 5 つの OID は予約されています。 NDIS ドライバーでは、この OID を使用しないでください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cdda04345886efb2e8ab4c6e4d4445f1157cbf7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323542"
 ---
 # <a name="offloading-ipsec-tasks"></a>IPsec タスクをオフロード
 
@@ -23,7 +23,7 @@ ms.locfileid: "56535814"
 
 このセクションでは、インターネット プロトコル セキュリティ (IPsec) タスクのオフロードについて説明します。
 
-**注**  で IPsec オフロード アウト オブ バンド (OOB) データが格納されている、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)情報の配列。 OOB のデータの詳細については、[TCP/IP Offload NET のへのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)を参照してください。
+**注**  で IPsec オフロード アウト オブ バンド (OOB) データが格納されている、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)情報の配列。 OOB のデータの詳細については、次を参照してください。 [TCP/IP Offload NET のへのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。
 
  
 

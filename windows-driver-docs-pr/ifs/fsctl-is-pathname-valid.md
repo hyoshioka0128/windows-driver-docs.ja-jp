@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe0bd9f33aab2e45be2b17230cc9da9e03ebe1a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324602"
 ---
 # <a name="fsctlispathnamevalid-control-code"></a>FSCTL\_IS\_PATHNAME\_有効なコントロール コード
 
@@ -30,13 +30,13 @@ ms.locfileid: "56536002"
 
 この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 使用されません。
+[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 使用されていません。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 使用されません。
+[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 使用されていません。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
 操作の制御コード。 FSCTL を使用して、\_IS\_PATHNAME\_この操作に対して有効です。
@@ -48,17 +48,17 @@ ms.locfileid: "56536002"
 パス名の長さ、(バイト単位)。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-使用されません。
+使用されていません。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-使用されません。
+使用されていません。
 
 <a name="status-block"></a>ステータス ブロック
 ------------
 
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_パス名の形式が適切である場合は成功します。 それ以外の場合、使用されるルーチンは、適切な NTSTATUS エラー コードを返します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

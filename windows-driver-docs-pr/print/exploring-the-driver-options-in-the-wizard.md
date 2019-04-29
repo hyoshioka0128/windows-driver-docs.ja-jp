@@ -1,17 +1,17 @@
 ---
-title: ウィザードでドライバーのオプションの表示
+title: ウィザードのドライバー オプションの詳細
 description: このトピックでは、v4 印刷ドライバーのウィザードの作成の最初のセクションでドライバーのオプションについて説明します。
 ms.assetid: 48FF0A37-BBAF-49D1-9BDE-128AED00BEEF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ae6638618596c5fc88c1d222ec07f8593b41614
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324247"
 ---
-# <a name="exploring-the-driver-options-in-the-wizard"></a>ウィザードでドライバーのオプションの表示
+# <a name="exploring-the-driver-options-in-the-wizard"></a>ウィザードのドライバー オプションの詳細
 
 
 このトピックでは、v4 印刷ドライバーのウィザードの作成の最初のセクションでドライバーのオプションについて説明します。
@@ -62,43 +62,43 @@ PPD ドライバー
 
 保護された印刷を有効にします。
 
-プリンターに送信される印刷要求をロックする PIN を使用する機能が必要な場合は、このオプションを選択します。 エンドユーザーは、プリンターで印刷の場合は、ロックされている印刷要求を解放する同じ pin を入力する必要があります。 詳細については、[の保護された印刷ドライバーのサポート](driver-support-for-protected-printing.md)を参照してください。
+プリンターに送信される印刷要求をロックする PIN を使用する機能が必要な場合は、このオプションを選択します。 エンドユーザーは、プリンターで印刷の場合は、ロックされている印刷要求を解放する同じ pin を入力する必要があります。 詳細については、次を参照してください。[の保護された印刷ドライバーのサポート](driver-support-for-protected-printing.md)します。
 ## <a name="additional-functionality"></a>追加機能
 
 
 ドライバーのプロパティ バッグ
 
-これは、ドライバーのプロパティ バッグの内容を記述する XML ファイルです。 プロジェクトの ByteArray または IStream のフォルダーに追加されたデータ ファイルで提供される情報と同様に、このファイルで指定されたプロパティは、ドライバーのプロパティ バッグにコンパイルされます。 詳細については、[V4 プリンター ドライバーのプロパティ バッグ](v4-driver-property-bags.md)を参照してください。
+これは、ドライバーのプロパティ バッグの内容を記述する XML ファイルです。 プロジェクトの ByteArray または IStream のフォルダーに追加されたデータ ファイルで提供される情報と同様に、このファイルで指定されたプロパティは、ドライバーのプロパティ バッグにコンパイルされます。 詳細については、次を参照してください。 [V4 プリンター ドライバーのプロパティ バッグ](v4-driver-property-bags.md)します。
 
 このフォルダーに、Windows Driver Kit でドライバーのプロパティ バッグ テンプレートの XML スキーマを見つけることができます。*\\含める\\um\\printdriverproperties.xml*します。
 
 ドライバーのイベント ファイル
 
-このファイルを使用して、双方向のクエリとトリガーが発生します。 ドライバーのイベントが発生することを説明します。 ドライバーのイベントでは標準の文字列のみをサポートすることが重要です。 ドライバーのイベントと標準の文字列の詳細については、[UI のカスタマイズのドライバー サポート](driver-support-for-customized-ui.md)を参照してください。
+このファイルを使用して、双方向のクエリとトリガーが発生します。 ドライバーのイベントが発生することを説明します。 ドライバーのイベントでは標準の文字列のみをサポートすることが重要です。 ドライバーのイベントと標準の文字列の詳細については、次を参照してください。 [UI のカスタマイズのドライバー サポート](driver-support-for-customized-ui.md)します。
 DevMode マッピング ファイル
 
 これは、PrintTicket で使用される XML ファイル&lt; - &gt; JavaScript コードでの DEVMODE 変換します。 このファイルを提供する場合に指定する必要があります、 [V4 ドライバー マニフェスト](v4-driver-manifest.md)します。
 キューのプロパティ バッグ
 
-このテンプレートを使用すると、用紙トレイのマッピングとインストール可能なオプションと同様に、プリンターのプロパティの構成など、キューごとの構成設定を指定できます。 詳細については、[V4 プリンター ドライバーのプロパティ バッグ](v4-driver-property-bags.md)を参照してください。
+このテンプレートを使用すると、用紙トレイのマッピングとインストール可能なオプションと同様に、プリンターのプロパティの構成など、キューごとの構成設定を指定できます。 詳細については、次を参照してください。 [V4 プリンター ドライバーのプロパティ バッグ](v4-driver-property-bags.md)します。
 リソース DLL
 
-このテンプレートでは、外部に保存されたフォント、アイコン、およびその他のビットマップ、およびローカライズ可能なユーザー インターフェイスのテキスト文字列などのリソースの説明を提供できます。 詳細については、[、ミニドライバーのリソース Dll を使用して](using-resource-dlls-in-a-minidriver.md)、 [V4 ドライバー マニフェスト](v4-driver-manifest.md)と[V4 プリンター ドライバーのローカリゼーション](v4-driver-localization.md)を参照してください。
+このテンプレートでは、外部に保存されたフォント、アイコン、およびその他のビットマップ、およびローカライズ可能なユーザー インターフェイスのテキスト文字列などのリソースの説明を提供できます。 詳細については、次を参照してください。 [、ミニドライバーのリソース Dll を使用して](using-resource-dlls-in-a-minidriver.md)、 [V4 ドライバー マニフェスト](v4-driver-manifest.md)と[V4 プリンター ドライバーのローカリゼーション](v4-driver-localization.md)します。
 JS の制約
 
-このテンプレートは、エントリ ポイント、サポートされているすべての JavaScript 制約メソッド ヘッダーを提供します。 詳細については、[JavaScript 制約](javascript-constraints.md)を参照してください。
+このテンプレートは、エントリ ポイント、サポートされているすべての JavaScript 制約メソッド ヘッダーを提供します。 詳細については、次を参照してください。 [JavaScript 制約](javascript-constraints.md)します。
 自動構成 GDL
 
-これは、v4 印刷ドライバーの基本的な自動構成ファイルを提供します。 GDL 構文の自動構成、およびファイルの例については、、[印刷自動構成サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617938)を参照してください。
+これは、v4 印刷ドライバーの基本的な自動構成ファイルを提供します。 GDL 構文の自動構成、およびファイルの例については、次を参照してください。、[印刷自動構成サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617938)します。
 TCPMon 双方向の拡張 XML
 
-これは、単純な TCP/IP Bidi 拡張ファイルを提供します。 標準の TCP/IP ポート モニタの Bidi 構文の詳細については、[TCP/IP スキーマ拡張](tcp-ip-schema-extensions.md)を参照してください。
+これは、単純な TCP/IP Bidi 拡張ファイルを提供します。 標準の TCP/IP ポート モニタの Bidi 構文の詳細については、次を参照してください。 [TCP/IP スキーマ拡張](tcp-ip-schema-extensions.md)します。
 WSDMon 双方向の拡張 XML
 
-これは、単純な WSD Bidi 拡張ファイルを提供します。 WSDMon の Bidi 構文の詳細については、[WSD スキーマ拡張](wsd-schema-extensions.md)を参照してください。
+これは、単純な WSD Bidi 拡張ファイルを提供します。 WSDMon の Bidi 構文の詳細については、次を参照してください。 [WSD スキーマ拡張](wsd-schema-extensions.md)します。
 USBMon 双方向の拡張 XML + JS
 
-これは、単純な USB Bidi 拡張ファイルを提供します。 一致する USB Bidi エクステンダー JavaScript の存在に依存しています。 詳細については、[USB Bidi エクステンダー](usb-bidi-extender.md)を参照してください。
+これは、単純な USB Bidi 拡張ファイルを提供します。 一致する USB Bidi エクステンダー JavaScript の存在に依存しています。 詳細については、次を参照してください。 [USB Bidi エクステンダー](usb-bidi-extender.md)します。
  
 
  

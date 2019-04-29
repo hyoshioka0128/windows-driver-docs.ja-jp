@@ -1,6 +1,6 @@
 ---
-title: ドライバーによって割り当てられたリソースを解放します。
-description: ドライバーによって割り当てられたリソースを解放します。
+title: ドライバーによって割り当てられたリソースの解放
+description: ドライバーによって割り当てられたリソースの解放
 ms.assetid: b286b4b0-54f2-4798-a77b-c08743502552
 keywords:
 - ルーチン WDK カーネルでは、非 PnP ドライバーをアンロードします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15e1ab0e35537ef046d5b8d41c8d0001c8e1a2c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324260"
 ---
-# <a name="releasing-driver-allocated-resources"></a>ドライバーによって割り当てられたリソースを解放します。
+# <a name="releasing-driver-allocated-resources"></a>ドライバーによって割り当てられたリソースの解放
 
 
 

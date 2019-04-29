@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/18/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6deb8a53742bb47118eb823eefd43633a93e2b09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324892"
 ---
 # <a name="ndisstatuswwanuiccresetinfo"></a>NDIS_STATUS_WWAN_UICC_RESET_INFO
 
@@ -22,7 +22,7 @@ NDIS_STATUS_WWAN_UICC_RESET_INFO 状態の通知は、UICC スマート カー�
 
 この通知を使用して、 [NDIS_WWAN_UICC_RESET_INFO](https://msdn.microsoft.com/library/windows/hardware/9CBAFC44-187A-41ED-9405-1208167AC75D)構造体。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

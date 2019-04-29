@@ -1,17 +1,17 @@
 ---
-title: 証明書ストアに、SPC をインポートします。
-description: 証明書ストアに、SPC をインポートします。
+title: 証明書ストアへの SPC のインポート
+description: 証明書ストアへの SPC のインポート
 ms.assetid: 4640b48c-e56f-4c6b-8943-f8b6fc3e37d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f60a60c92312a6fb79e66c12e04d80dcc1b81bf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323348"
 ---
-# <a name="importing-an-spc-into-a-certificate-store"></a>証明書ストアに、SPC をインポートします。
+# <a name="importing-an-spc-into-a-certificate-store"></a>証明書ストアへの SPC のインポート
 
 
 1 回、Personal Information Exchange (.*pfx*) を格納するファイルを作成、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)と、プライベートおよびパブリック キー、 *.pfx*ファイルは、個人証明書ストアにインポートする必要があります、コンピューターを署名します。 詳細については *.pfx*ファイルを参照してください[Personal Information Exchange (.pfx) ファイル](personal-information-exchange---pfx--files.md)します。

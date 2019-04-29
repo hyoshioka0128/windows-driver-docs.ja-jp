@@ -1,18 +1,18 @@
 ---
-title: デバッガーの拡張機能の使用
+title: デバッガー拡張機能の使用
 description: このトピックでは、デバッガーの拡張機能の使用について説明します
 ms.assetid: 55de0cbd-c6ba-40af-a932-2f9e57f1e8ec
 keywords: 拡張機能コマンドでは、デバッガーの拡張機能
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61eec47cb84facca4ed21b23f43700d50af9326d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324674"
 ---
-# <a name="using-debugger-extensions"></a>デバッガーの拡張機能の使用
+# <a name="using-debugger-extensions"></a>デバッガー拡張機能の使用
 
 
 ## <span id="ddk_debugger_extensions_dbg"></span><span id="DDK_DEBUGGER_EXTENSIONS_DBG"></span>

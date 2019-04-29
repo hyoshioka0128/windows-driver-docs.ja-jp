@@ -5,11 +5,11 @@ ms.assetid: 3E7875E1-0810-4698-A5E1-7A4C6C366967
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acfe2ad3fbaf7a32d05485e33b6a05b0a419a8bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324822"
 ---
 # <a name="spbaccelerometer-driver-cookbook"></a>SpbAccelerometer ドライバー クックブック
 
@@ -20,13 +20,13 @@ ms.locfileid: "56527437"
 このガイドでは、Windows 8.1 およびそれ以前のオペレーティング システム (SpbAccelerometer サンプル ドライバー) 用に開発したサンプル ドライバーの使用を開始する方法を示します。
 
 >[!NOTE]
-> Windows 10 および以降のオペレーティング システム用センサー ドライバーのサンプルを評価するため、[センサー サンプル ドライバー](https://github.com/Microsoft/Windows-driver-samples/tree/master/sensors)を参照してください。 開発および Windows 10 および以降のオペレーティング システム用センサー ドライバーをビルドする方法については、[作成および配置には、ユニバーサル センサー ドライバー](write-and-deploy-your-universal-sensor-driver.md)を参照してください。
+> Windows 10 および以降のオペレーティング システム用センサー ドライバーのサンプルを評価するため、次を参照してください。[センサー サンプル ドライバー](https://github.com/Microsoft/Windows-driver-samples/tree/master/sensors)します。 開発および Windows 10 および以降のオペレーティング システム用センサー ドライバーをビルドする方法については、次を参照してください。[作成および配置には、ユニバーサル センサー ドライバー](write-and-deploy-your-universal-sensor-driver.md)します。
 
  
 
 によって、サメ Cove ボード上で Windows をインストールするようになります。 加速度計を構成し、サメ Cove 掲示板にアタッチします。 次に、Microsoft Visual Studio Express と Windows Driver Kit (WDK) にインストールします。 次に、サンプル ドライバーをインストールします。 これらのタスクが完了すると、ドライバーのサンプルを探索を開始できます。
 
-サメ Cove ボードの詳細については、[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)を参照してください。
+サメ Cove ボードの詳細については、次を参照してください。 [SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)します。
 
 ### <a name="required-hardware"></a>必要なハードウェア
 

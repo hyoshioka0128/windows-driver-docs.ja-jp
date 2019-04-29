@@ -1,6 +1,6 @@
 ---
-title: 関数ドライバーでは、デバイスを削除します。
-description: 関数ドライバーでは、デバイスを削除します。
+title: ファンクション ドライバーでのデバイスの削除
+description: ファンクション ドライバーでのデバイスの削除
 ms.assetid: 46a75647-e72a-4194-be9d-070e3ac95650
 keywords:
 - 機能ドライバー WDK PnP
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e2d98736378c5535bf57e968b9cc3285e8c1943
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324269"
 ---
-# <a name="removing-a-device-in-a-function-driver"></a>関数ドライバーでは、デバイスを削除します。
+# <a name="removing-a-device-in-a-function-driver"></a>ファンクション ドライバーでのデバイスの削除
 
 
 
@@ -48,7 +48,7 @@ ms.locfileid: "56560702"
 
 5. 電源オフ操作を実行します。
 
-   各デバイス ドライバーの受信したときに存在する場合、電源オフ操作を実行します、 **IRP\_MN\_削除\_デバイス**要求。 関数ドライバー、通常、デバイスの電源ポリシーの所有者が、個別に送信しません[ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)デバイスの電源を設定する要求D3 状態です。 親のバス ドライバーは、通常、スロットを補強しで電源マネージャーに通知[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)バス ドライバーが IRP の削除を取得します。 詳細については、[電源管理](implementing-power-management.md)を参照してください。
+   各デバイス ドライバーの受信したときに存在する場合、電源オフ操作を実行します、 **IRP\_MN\_削除\_デバイス**要求。 関数ドライバー、通常、デバイスの電源ポリシーの所有者が、個別に送信しません[ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)デバイスの電源を設定する要求D3 状態です。 親のバス ドライバーは、通常、スロットを補強しで電源マネージャーに通知[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)バス ドライバーが IRP の削除を取得します。 詳細については、次を参照してください。[電源管理](implementing-power-management.md)します。
 
 6. 呼び出すことによって、デバイス インターフェイスを無効にする[ **IoSetDeviceInterfaceState**](https://msdn.microsoft.com/library/windows/hardware/ff549700)します。
 

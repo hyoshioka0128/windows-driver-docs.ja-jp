@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b5e46347b4008af7c7e14926e9ffa32a9ae982
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322188"
 ---
 # <a name="hspluginprofile-structure"></a>HS\_プラグイン\_プロファイルの構造
 
@@ -43,7 +43,7 @@ typedef struct _HS_PLUGIN_PROFILE {
 **dwPluginCapabilities**  
 必須。
 
-使用可能なサブセット**HS\_フラグ\_機能\_ネットワーク\_\\*** 値。 ホット スポットのホスト機能の詳細については、[ **Wi-fi ホット スポットのオフロード定数**](wi-fi-hotspot-offloading-constants.md)を参照してください。
+使用可能なサブセット**HS\_フラグ\_機能\_ネットワーク\_\\*** 値。 ホット スポットのホスト機能の詳細については、次を参照してください。 [ **Wi-fi ホット スポットのオフロード定数**](wi-fi-hotspot-offloading-constants.md)します。
 
 **dwNumNetworksSupported**  
 必須。

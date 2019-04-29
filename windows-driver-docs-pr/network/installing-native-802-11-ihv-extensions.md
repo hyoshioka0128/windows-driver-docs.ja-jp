@@ -1,6 +1,6 @@
 ---
-title: ネイティブの 802.11 IHV 拡張機能のインストール
-description: ネイティブの 802.11 IHV 拡張機能のインストール
+title: ネイティブ 802.11 IHV 拡張機能のインストール
+description: ネイティブ 802.11 IHV 拡張機能のインストール
 ms.assetid: 73e45572-6f48-43da-9456-4de5e1f1901f
 keywords:
 - IHV 拡張機能をインストールする WDK ネイティブの 802.11
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59d53e61de2fb8dc03ec309256b7e3395e497464
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324872"
 ---
-# <a name="installing-native-80211-ihv-extensions"></a>ネイティブの 802.11 IHV 拡張機能のインストール
+# <a name="installing-native-80211-ihv-extensions"></a>ネイティブ 802.11 IHV 拡張機能のインストール
 
 
 
@@ -36,7 +36,7 @@ ms.locfileid: "56557358"
     IhvUIExt.dll,,,2
     ```
 
-    CopyFiles ディレクティブの詳細については、[ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)を参照してください。
+    CopyFiles ディレクティブの詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)します。
 
 -   DestinationDirs セクションがのコピー先を宣言することを確認、*ファイルのセクション一覧*CopyFiles ディレクティブで使用します。
 
@@ -48,9 +48,9 @@ ms.locfileid: "56557358"
     Sample-File-List-Section = 11
     ```
 
-    DestinationDirs セクションの詳細については、[ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)を参照してください。
+    DestinationDirs セクションの詳細については、次を参照してください。 [ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。
 
--   確認します AddReg ディレクティブを関連付けられている*追加レジストリ セクション*、WLAN アダプターごとに INF ファイルに追加されます。 AddReg ディレクティブの詳細については、[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。
+-   確認します AddReg ディレクティブを関連付けられている*追加レジストリ セクション*、WLAN アダプターごとに INF ファイルに追加されます。 AddReg ディレクティブの詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
 
     内で、*追加レジストリ セクション*、次のキーを宣言する必要があります。
 
@@ -73,7 +73,7 @@ ms.locfileid: "56557358"
 
     WLAN アダプターの OUI がの値と一致していることを確認する AdapterOUI キーが使用される、 **OUI**の属性、 **IHV** XML 要素。 詳細については、 **IHV**要素と、ネイティブの 802.11 XML スキーマが、Microsoft Windows SDK のマニュアルを参照してください。
 
-INF ファイルとそのセクションの詳細については、[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)を参照してください。
+INF ファイルとそのセクションの詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)します。
 
  
 

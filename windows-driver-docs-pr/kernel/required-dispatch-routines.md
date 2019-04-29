@@ -8,11 +8,11 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e3dc9f6943eeb0cc4369009413e289abdaa86ed3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324504"
 ---
 # <a name="required-dispatch-routines"></a>必須のディスパッチ ルーチン
 
@@ -54,7 +54,7 @@ ms.locfileid: "56580964"
 
 -   [*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-    [**IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)ドライバーへの WMI 要求を指定するために使用します。 WMI の詳細については、[Windows Management Instrumentation](implementing-wmi.md)を参照してください。
+    [**IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)ドライバーへの WMI 要求を指定するために使用します。 WMI の詳細については、次を参照してください。 [Windows Management Instrumentation](implementing-wmi.md)します。
 
 ドライバーを提供する必要があるディスパッチ ルーチンは、型および基になる物理デバイスの機能によって異なります。 デバイス固有の種類のドライバーを処理する必要があります IRP 主な機能のコードについては、デバイスの種類の特定のドキュメントで Windows Driver Kit (WDK) を参照してください。
 

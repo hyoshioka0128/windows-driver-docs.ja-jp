@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5472ef1830e08cbea36a9fa879b22adde3614bbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322137"
 ---
 # <a name="hssimdata-structure"></a>HS\_SIM\_データ構造体
 
@@ -33,7 +33,7 @@ typedef struct _HS_SIM_DATA {
 } HS_SIM_DATA, *PHS_SIM_DATA;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **wszICCID**  

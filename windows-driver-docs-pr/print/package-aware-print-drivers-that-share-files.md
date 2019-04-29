@@ -1,6 +1,6 @@
 ---
-title: ファイルを共有するプリンター ドライバーをパッケージに注意してください。
-description: ファイルを共有するプリンター ドライバーをパッケージに注意してください。
+title: ファイルを共有するパッケージ対応印刷ドライバー
+description: ファイルを共有するパッケージ対応印刷ドライバー
 ms.assetid: dcf4e7b4-f0f4-4644-9f5c-c01c1b6c4221
 keywords:
 - パッケージに対応した印刷ドライバー WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e63c3910ee2f3615d5bac7293b4faad227a8b47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324222"
 ---
-# <a name="package-aware-print-drivers-that-share-files"></a>ファイルを共有するプリンター ドライバーをパッケージに注意してください。
+# <a name="package-aware-print-drivers-that-share-files"></a>ファイルを共有するパッケージ対応印刷ドライバー
 
 
 1 つ以上の印刷ドライバー パッケージは、ドライバー ファイルを共有する場合は、コア ドライバーに共有ファイルを分離する必要があります。 たとえば、Unidrv は Unidrv はコア ドライバー、多くの印刷ドライバーを使用して、ファイルのコレクションです。

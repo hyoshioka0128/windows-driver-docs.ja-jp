@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CHANNEL_INFO_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bfd6f2954c03c795c2e64eb8ae1a62fccaa8cfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323418"
 ---
 # <a name="wditlvchannelinfolist"></a>WDI\_TLV\_チャネル\_情報\_一覧
 
@@ -31,7 +31,7 @@ WDI の配列のサイズをバイト単位で\_チャネル\_数 (UINT32) 構�
 ## <a name="values"></a>値
 
 
-| 種類       | 説明                 |
+| 型       | 説明                 |
 |------------|-----------------------------|
 | UINT32\[\] | Wi-fi のチャネルの配列。 |
 

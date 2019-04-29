@@ -1,17 +1,17 @@
 ---
-title: Static Driver Verifier のトラブルシューティングに関する推奨事項
-description: Static Driver Verifier のトラブルシューティングに関する推奨事項
+title: 静的ドライバー検証ツールのトラブルシューティングに関する推奨事項
+description: 静的ドライバー検証ツールのトラブルシューティングに関する推奨事項
 ms.assetid: 14c39437-12ca-4938-93bb-79bbcb192de2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67beefeaa8b9314da081fec011400c2d76402d23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323366"
 ---
-# <a name="recommendations-for-troubleshooting-static-driver-verifier"></a>Static Driver Verifier のトラブルシューティングに関する推奨事項
+# <a name="recommendations-for-troubleshooting-static-driver-verifier"></a>静的ドライバー検証ツールのトラブルシューティングに関する推奨事項
 
 
 Static Driver Verifier (SDV) で、ドライバーのソース コードとタイムアウト、停止、または Spaceout SDV レポートを実行すると、次の操作を試してください。

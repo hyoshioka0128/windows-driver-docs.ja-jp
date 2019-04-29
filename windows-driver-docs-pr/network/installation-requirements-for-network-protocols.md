@@ -5,11 +5,11 @@ ms.assetid: 6383fec5-29ce-4aa4-8fc3-c8d95f7bd02b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a4fa722cb138093cac03f394aa3928882326822
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324907"
 ---
 # <a name="installation-requirements-for-network-protocols"></a>ネットワーク プロトコルのインストール要件
 
@@ -28,7 +28,7 @@ ms.locfileid: "56557361"
 <thead>
 <tr class="header">
 <th align="left">INF ファイルのセクション</th>
-<th align="left">状況</th>
+<th align="left">状態</th>
 <th align="left">コメント</th>
 </tr>
 </thead>

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 822e5fd9577466b54d8e81fd4523d978748ee3c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324808"
 ---
 # <a name="kseventtvaudiochanged"></a>KSEVENT\_TVAUDIO\_CHANGED
 
@@ -59,7 +59,7 @@ KSEVENT\_TVAUDIO\_新しくチューニングするチャネルは、ユーザ�
 
  
 
-DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
+DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
 
  
 

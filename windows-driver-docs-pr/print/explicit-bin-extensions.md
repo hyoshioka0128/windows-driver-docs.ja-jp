@@ -1,19 +1,19 @@
 ---
-title: 明示的な箱の拡張機能
-description: 明示的な箱の拡張機能
+title: 明示的なビン拡張機能
+description: 明示的なビン拡張機能
 ms.assetid: a9f7f290-1af8-4312-b348-c1c98a3fc4a6
 keywords:
 - 明示的な箱拡張機能の WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fb04bc70c3d677467e1efea12f77b9e5baed246
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324218"
 ---
-# <a name="explicit-bin-extensions"></a>明示的な箱の拡張機能
+# <a name="explicit-bin-extensions"></a>明示的なビン拡張機能
 
 
 さらに、特別なコンストラクトを使用して暗黙的な箱の拡張機能を拡張できます**BinValue**します。 MIB オブジェクト prtInputTable または prtOutputTable テーブル内には、新しいデータが含まれています。 このオブジェクトを決定します。
@@ -35,7 +35,7 @@ ms.locfileid: "56528111"
 <td><p>ビンの名前。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>型</strong></p></td>
+<td><p><strong>type</strong></p></td>
 <td><p>列挙子、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
 </tr>
 <tr class="odd">

@@ -1,17 +1,17 @@
 ---
-title: WOL パターンの現在の設定を取得します。
-description: WOL パターンの現在の設定を取得します。
+title: WOL パターンの現在の設定の取得
+description: WOL パターンの現在の設定の取得
 ms.assetid: 113ea75a-83d8-41aa-b61c-711ef90bccca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea292475114e3a8d5e21eca322fb7f02c8e7bb96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324272"
 ---
-# <a name="obtaining-the-current-settings-of-wol-patterns"></a>WOL パターンの現在の設定を取得します。
+# <a name="obtaining-the-current-settings-of-wol-patterns"></a>WOL パターンの現在の設定の取得
 
 
 

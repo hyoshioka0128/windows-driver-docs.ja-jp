@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_HESSID_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 097f074b8be8f68614e6b760bb7e987d0f34fd5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324411"
 ---
 # <a name="wditlvhessidinfo"></a>WDI\_TLV\_HESSID\_情報
 
@@ -39,7 +39,7 @@ WDI\_TLV\_HESSID\_情報が HESSIDs、ネットワーク アクセスの種類�
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

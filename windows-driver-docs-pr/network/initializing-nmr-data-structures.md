@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 372d3fc86532b667967298b51da9ceee76710940
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324932"
 ---
 # <a name="initializing-nmr-data-structures"></a>NMR データ構造の初期化
 
@@ -81,7 +81,7 @@ const NPI_CLIENT_CHARACTERISTICS Characteristics =
 
 WSK アプリケーションが呼び出す、 [ **NmrRegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568782) NMR にアプリケーションを登録する関数。
 
-以下に例を示します。
+次に、例を示します。
 
 ```C++
 // Variable to contain the handle for the registration with the NMR

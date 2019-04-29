@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 008f31c858d04c81bdc2cc3e7f3508a293528cc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324938"
 ---
 # <a name="initializing-and-registering-a-provider-module"></a>プロバイダー モジュールの初期化と登録
 
@@ -125,7 +125,7 @@ PROVIDER_REGISTRATION_CONTEXT ProviderRegistrationContext =
 
 -   呼び出す、 [ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784) NMR をプロバイダー モジュールを登録する関数。
 
-以下に例を示します。
+例:
 
 ```C++
 // Prototype for the provider module's unload function

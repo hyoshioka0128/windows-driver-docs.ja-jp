@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 58da7d63373faad05c66ee3e3eec7c9a16083afd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323478"
 ---
-# <a name="vpb"></a>! vpb
+# <a name="vpb"></a>!vpb
 
 
 **! Vpb**拡張機能には、ボリューム パラメーター ブロック (VPB) が表示されます。

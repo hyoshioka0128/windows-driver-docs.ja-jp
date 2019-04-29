@@ -1,6 +1,6 @@
 ---
-title: Using Avcstrm.sys
-description: Using Avcstrm.sys
+title: Avcstrm.sys の使用
+description: Avcstrm.sys の使用
 ms.assetid: 53430526-ee24-4081-b220-4089d60aec94
 keywords:
 - フィルター ドライバー WDK AV/C のストリーミング
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d74ef3d5f708d514fa2e8c8e575c9c15fc91f52a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323258"
 ---
-# <a name="using-avcstrmsys"></a>Using Avcstrm.sys
+# <a name="using-avcstrmsys"></a>Avcstrm.sys の使用
 
 
 

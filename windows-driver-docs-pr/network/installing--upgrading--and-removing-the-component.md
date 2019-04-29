@@ -1,6 +1,6 @@
 ---
-title: インストール、アップグレード、および、コンポーネントの削除
-description: インストール、アップグレード、および、コンポーネントの削除
+title: コンポーネントのインストール、アップグレード、および削除
+description: コンポーネントのインストール、アップグレード、および削除
 ms.assetid: 7069e7a0-0c7e-4f7c-a764-a83e758df1bf
 keywords:
 - オブジェクトの WDK ネットワーク、ネットワーク コンポーネントの削除の通知します。
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48336b860b90f5fd9e925c638ffcaed7377e50fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324899"
 ---
-# <a name="installing-upgrading-and-removing-the-component"></a>インストール、アップグレード、および、コンポーネントの削除
+# <a name="installing-upgrading-and-removing-the-component"></a>コンポーネントのインストール、アップグレード、および削除
 
 
 
@@ -33,7 +33,7 @@ ms.locfileid: "56539231"
 
     仮想アダプターをインストールする通知オブジェクトがネットワークの構成を呼び出す[ **INetCfgClassSetup::Install** ](https://msdn.microsoft.com/library/windows/hardware/ff547711)メソッド。 この呼び出しでは、通知オブジェクトは、インストールする仮想アダプターの識別子を渡します。 通知オブジェクトが呼び出すことができます**INetCfgClassSetup::Install**、たとえばからその[ **INetCfgComponentNotifyBinding::NotifyBindingPath** ](https://msdn.microsoft.com/library/windows/hardware/ff547731)または[**INetCfgComponentPropertyUi::ApplyProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff547741)メソッド。
 
-    仮想アダプターのインストールを完了するには、オペレーティング システム、仮想アダプターの INF ファイルする必要があります。 この INF ファイルを配置できることを確認するにする必要がありますにコピー、オペレーティング システム、multipexer がインストールされている場合。 詳細については、[コピー Inf](https://msdn.microsoft.com/library/windows/hardware/ff540117)を参照してください。 このトピックでは、ことを示します、 **CopyINF**ディレクティブまたはへの呼び出し、 **SetupCopyOEMInf** INF ファイルをターゲット システムの INF ディレクトリにコピーする、共同インストーラーまたはセットアップ アプリケーションによって関数を使用できます。 ただし場合は、INF ファイルをマルチプレクサー (元の INF) は、コピーを使用して**SetupCopyOEMInf**、しを使用して仮想アダプターの INF ファイルをコピーする必要がありますも**SetupCopyOEMInf**のため、オペレーティング システムシステムのみを処理する**CopyINF**ディレクティブ元 INF がまだ INF ディレクトリ内でない場合。
+    仮想アダプターのインストールを完了するには、オペレーティング システム、仮想アダプターの INF ファイルする必要があります。 この INF ファイルを配置できることを確認するにする必要がありますにコピー、オペレーティング システム、multipexer がインストールされている場合。 詳細については、次を参照してください。[コピー Inf](https://msdn.microsoft.com/library/windows/hardware/ff540117)します。 このトピックでは、ことを示します、 **CopyINF**ディレクティブまたはへの呼び出し、 **SetupCopyOEMInf** INF ファイルをターゲット システムの INF ディレクトリにコピーする、共同インストーラーまたはセットアップ アプリケーションによって関数を使用できます。 ただし場合は、INF ファイルをマルチプレクサー (元の INF) は、コピーを使用して**SetupCopyOEMInf**、しを使用して仮想アダプターの INF ファイルをコピーする必要がありますも**SetupCopyOEMInf**のため、オペレーティング システムシステムのみを処理する**CopyINF**ディレクティブ元 INF がまだ INF ディレクトリ内でない場合。
 
 -   通知オブジェクトがすべての仮想アダプターを削除、サブシステム、マルチプレクサーを削除するときにできるように、マルチプレクサーの通知オブジェクトを実装できます。 仮想アダプターを削除するには、通知オブジェクトはネットワークの構成を呼び出します。 [ **INetCfgClassSetup::DeInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547710)メソッド。 この呼び出しでは、通知オブジェクトはへのポインターを渡します。、 **INetCfgComponent**仮想アダプターのインターフェイス。 通知オブジェクトが呼び出すことができます**INetCfgClassSetup::DeInstall**、たとえばからその**INetCfgComponentNotifyBinding::NotifyBindingPath**または**INetCfgComponentPropertyUi:。ApplyProperties**メソッド。
 

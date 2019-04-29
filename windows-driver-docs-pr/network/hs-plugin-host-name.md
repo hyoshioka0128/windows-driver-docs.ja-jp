@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4457f8f594fe1a2663c23929e045865ba92ed18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322190"
 ---
 # <a name="hspluginhostname-structure"></a>HS\_プラグイン\_ホスト\_名の構造
 
@@ -30,7 +30,7 @@ typedef struct _HS_PLUGIN_HOST_NAME {
 } HS_PLUGIN_HOST_NAME, *PHS_PLUGIN_HOST_NAME;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **pszHostName**  

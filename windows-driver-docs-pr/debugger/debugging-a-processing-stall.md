@@ -1,19 +1,19 @@
 ---
-title: デバッグ処理の停止
-description: デバッグ処理の停止
+title: 処理の停止のデバッグ
+description: 処理の停止のデバッグ
 ms.assetid: 9dff37ed-4843-4e85-8ab3-6a0a37a58c23
 keywords:
 - ストリーミングの停止を処理、デバッグ、ビデオ ストリーム失速カーネル
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0051d7ae2a9f4aa5eddc1a7efe3b47bfdcef71d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324561"
 ---
-# <a name="debugging-a-processing-stall"></a>デバッグ処理の停止
+# <a name="debugging-a-processing-stall"></a>処理の停止のデバッグ
 
 
 関連する暗証番号 (pin) を検索することから始めます。 関連するビデオのキャプチャの暗証番号 (pin) がアドレスを仮想的な場合は、 **8160DDE0**ので、使用して、 [ **! ks.dump** ](-ks-dump.md)このアドレスでの拡張機能コマンドの詳細を取得します。

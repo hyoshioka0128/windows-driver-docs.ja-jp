@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43c7d45a0ded04a285cedbd793534a7078fa2436
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322136"
 ---
 # <a name="hspluginsupportedsims-structure"></a>HS\_プラグイン\_サポートされている\_SIM 構造体
 
@@ -32,7 +32,7 @@ typedef struct _HS_PLUGIN_SUPPORTED_SIMS {
 } HS_PLUGIN_SUPPORTED_SIMS, *PHS_PLUGIN_SUPPORTED_SIMS;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **dwCount**  

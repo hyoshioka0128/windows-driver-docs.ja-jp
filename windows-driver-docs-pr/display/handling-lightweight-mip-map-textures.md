@@ -1,6 +1,6 @@
 ---
-title: 軽量の MIP マップ テクスチャを処理します。
-description: 軽量の MIP マップ テクスチャを処理します。
+title: 軽量の MIP マップ テクスチャの処理
+description: 軽量の MIP マップ テクスチャの処理
 ms.assetid: f541b046-2937-428c-ab98-eb1020728e04
 keywords:
 - MIP マップ テクスチャ WDK DirectX 9.0、軽量
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e4dad90cecaf1e112ce8ef0850cf54b07d4325d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323716"
 ---
-# <a name="handling-lightweight-mip-map-textures"></a>軽量の MIP マップ テクスチャを処理します。
+# <a name="handling-lightweight-mip-map-textures"></a>軽量の MIP マップ テクスチャの処理
 
 
 ## <span id="ddk_handling_lightweight_mip_map_textures_gg"></span><span id="DDK_HANDLING_LIGHTWEIGHT_MIP_MAP_TEXTURES_GG"></span>

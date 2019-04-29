@@ -1,6 +1,6 @@
 ---
-title: カーネルのネットワーク リダイレクターの書き込み
-description: カーネルのネットワーク リダイレクターの書き込み
+title: カーネル ネットワーク リダイレクターの記述
+description: カーネル ネットワーク リダイレクターの記述
 ms.assetid: c6502d4e-e431-4aa2-a75e-93fab34513e4
 keywords:
 - ネットワーク リダイレクター WDK、カーネル
@@ -10,16 +10,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 097de2d778e14d097a2ad748b6176bab282cebde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322218"
 ---
-# <a name="writing-a-kernel-network-redirector"></a>カーネルのネットワーク リダイレクターの書き込み
+# <a name="writing-a-kernel-network-redirector"></a>カーネル ネットワーク リダイレクターの記述
 
 
-このセクションでは、カーネルのネットワーク リダイレクターを記述するときに考慮すべき重要な問題について説明します。 次のトピックがについて説明します。
+このセクションでは、カーネルのネットワーク リダイレクターを記述するときに考慮すべき重要な問題について説明します。 次のトピックについて説明します。
 
 [UNC 名および MUP のサポート](support-for-unc-naming-and-mup.md)
 

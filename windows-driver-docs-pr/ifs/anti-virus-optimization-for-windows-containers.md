@@ -1,20 +1,20 @@
 ---
-title: Windows コンテナーのウイルス対策の最適化
+title: Windows コンテナー用のウイルス対策最適化
 description: このトピックでは、ウイルス対策製品は Windows コンテナー内で実行するときに利用できる最適化について説明します。
 ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9b5552ba5db2b5e4ad041ecf2d07e382238d0af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322286"
 ---
 # <a name="span-idifskanti-virusoptimizationforwindowscontainersspananti-virus-optimization-for-windows-containers"></a><span id="ifsk.anti-virus_optimization_for_windows_containers"></span>Windows コンテナーのウイルス対策の最適化
 
 
-**適用対象します。**
+**適用対象:**
 -   Windows 10 Version 1607
 -   Windows Server 2016
 -   ホストで実行されているウイルス対策製品
@@ -47,7 +47,7 @@ AV、フィルターでは、コンテナーのシステム ボリューム上�
 ## <a name="span-idrecommendedapproachspanspan-idrecommendedapproachspanspan-idrecommendedapproachspanrecommended-approach"></a><span id="Recommended_approach"></span><span id="recommended_approach"></span><span id="RECOMMENDED_APPROACH"></span>推奨されるアプローチ
 
 
-コンテナーの冗長なスキャンを回避するためには、ウイルス対策製品が以下に示すように、その動作を変更することをお勧めします。 このアプローチの顧客のリスク/reward メリットを判断するウイルス対策製品の責任です。 詳細については、[メリットとリスク](#benefits-risks)を参照してください。
+コンテナーの冗長なスキャンを回避するためには、ウイルス対策製品が以下に示すように、その動作を変更することをお勧めします。 このアプローチの顧客のリスク/reward メリットを判断するウイルス対策製品の責任です。 詳細については、次を参照してください。[メリットとリスク](#benefits-risks)します。
 
 ### <a name="span-id1packageinstallspanspan-id1packageinstallspanspan-id1packageinstallspan1-package-install"></a><span id="1._Package_install"></span><span id="1._package_install"></span><span id="1._PACKAGE_INSTALL"></span>1.パッケージのインストール
 

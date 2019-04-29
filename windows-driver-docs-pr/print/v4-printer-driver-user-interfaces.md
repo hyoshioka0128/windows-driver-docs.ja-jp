@@ -1,24 +1,24 @@
 ---
-title: V4 プリンター ドライバーのユーザー インターフェイス
+title: V4 プリンター ドライバー ユーザー インターフェイス
 description: V4 印刷ドライバーでは、Windows デスクトップ UI と Microsoft Store アプリの UI の両方でカスタマイズをサポートします。
 ms.assetid: DE45C0F3-3385-451D-AD29-94D28089E9C3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c774c757e963a48393d22a7b36421ea88d042a60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324837"
 ---
-# <a name="v4-printer-driver-user-interfaces"></a>V4 プリンター ドライバーのユーザー インターフェイス
+# <a name="v4-printer-driver-user-interfaces"></a>V4 プリンター ドライバー ユーザー インターフェイス
 
 
 V4 印刷ドライバーでは、Windows デスクトップ UI と Microsoft Store アプリの UI の両方でカスタマイズをサポートします。
 
 これらのエクスペリエンスの非常にさまざまな性質には、2 つのアプリケーションとしてこれらの Ui を実装する必要があります。 ただし、両方は、構成のモジュールによって提供される一般的な COM API に基づいて構築します。 プリンター拡張機能では、デスクトップで v4 プリンター ドライバーをサポートし、既存のすべてのアプリケーションを使用します。 プリンターの拡張機能は、プリンターの共有が強化されたポイント アンド プリント ドライバーを使用したシナリオでも動作します。 Windows 8 から Windows Vista からのすべてのオペレーティング システムのサポートが予定されています。
 
-UWP デバイス アプリでは、Microsoft Store アプリの UI で v4 印刷ドライバーをサポートします。 UWP デバイス アプリの開発に関する詳細については、[印刷デバイス アプリを UWP を開発](https://msdn.microsoft.com/library/windows/hardware/br259129.aspx)を参照してください。
+UWP デバイス アプリでは、Microsoft Store アプリの UI で v4 印刷ドライバーをサポートします。 UWP デバイス アプリの開発に関する詳細については、次を参照してください。[印刷デバイス アプリを UWP を開発](https://msdn.microsoft.com/library/windows/hardware/br259129.aspx)します。
 
 次の図は、カスタマイズした Ui と印刷システムの間の通信アーキテクチャの高レベルな概要を示します。
 

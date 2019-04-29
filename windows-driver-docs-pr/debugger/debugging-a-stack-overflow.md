@@ -1,6 +1,6 @@
 ---
-title: Stack Overflow のデバッグ
-description: Stack Overflow のデバッグ
+title: スタック オーバーフローのデバッグ
+description: スタック オーバーフローのデバッグ
 ms.assetid: fc67effa-88c9-4915-a5a8-8c094595c6c5
 keywords:
 - スタック オーバーフロー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f96477c41a79a1695d5123e404ceea89eebd92d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324595"
 ---
-# <a name="debugging-a-stack-overflow"></a>Stack Overflow のデバッグ
+# <a name="debugging-a-stack-overflow"></a>スタック オーバーフローのデバッグ
 
 
 ## <span id="ddk_debugging_a_stack_overflow_dbg"></span><span id="DDK_DEBUGGING_A_STACK_OVERFLOW_DBG"></span>

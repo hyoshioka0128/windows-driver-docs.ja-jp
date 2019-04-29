@@ -1,17 +1,17 @@
 ---
-title: イメージ SCSI I/O 制御コードはまだ
-description: イメージ SCSI I/O 制御コードはまだ
+title: 静止画像 SCSI I/O 制御コード
+description: 静止画像 SCSI I/O 制御コード
 ms.assetid: 8db15071-61ac-4bb3-9193-da854a15f376
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f22e6c97679b2dd4334e1f5733c1b06cc4d2b2a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322283"
 ---
-# <a name="still-image-scsi-io-control-codes"></a>イメージ SCSI I/O 制御コードはまだ
+# <a name="still-image-scsi-io-control-codes"></a>静止画像 SCSI I/O 制御コード
 
 
 

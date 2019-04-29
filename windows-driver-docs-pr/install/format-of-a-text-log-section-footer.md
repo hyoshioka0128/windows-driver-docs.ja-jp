@@ -1,6 +1,6 @@
 ---
-title: テキスト ログのセクションのフッターの形式
-description: テキスト ログのセクションのフッターの形式
+title: テキスト ログ セクション フッターの書式
+description: テキスト ログ セクション フッターの書式
 ms.assetid: 3b804934-a695-4091-a3ef-03f7598cbe63
 keywords:
 - WDK SetupAPI のフッターをセクションします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4268b3ca86fd006cdcf448837d5bacf43b8f7d9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322268"
 ---
-# <a name="format-of-a-text-log-section-footer"></a>テキスト ログのセクションのフッターの形式
+# <a name="format-of-a-text-log-section-footer"></a>テキスト ログ セクション フッターの書式
 
 
 A*テキスト ログのセクションのフッター*テキスト ログのセクションを閉じます。 セクション フッターは、2 つのエントリで構成されます。 フッター セクションの最初のエントリの形式が含まれています、"&lt; &lt; &lt; "、プレフィックスに続いて、 *time_stamp*フィールドと文字列「セクションの終わり」。

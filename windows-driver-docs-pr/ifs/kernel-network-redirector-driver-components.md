@@ -1,6 +1,6 @@
 ---
-title: カーネル ネットワーク リダイレクター ドライバー コンポーネント
-description: カーネル ネットワーク リダイレクター ドライバー コンポーネント
+title: カーネル ネットワーク リダイレクター ドライバーのコンポーネント
+description: カーネル ネットワーク リダイレクター ドライバーのコンポーネント
 ms.assetid: 0d699794-86a0-40bd-beff-b040a8d51b42
 keywords:
 - ネットワーク リダイレクター WDK、カーネル
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fcca0c8748ceebab5e15c1ee47a78e3c94f74e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324274"
 ---
-# <a name="kernel-network-redirector-driver-components"></a>カーネル ネットワーク リダイレクター ドライバー コンポーネント
+# <a name="kernel-network-redirector-driver-components"></a>カーネル ネットワーク リダイレクター ドライバーのコンポーネント
 
 
 ## <span id="ddk_kernel_network_redirector_driver_components_if"></span><span id="DDK_KERNEL_NETWORK_REDIRECTOR_DRIVER_COMPONENTS_IF"></span>

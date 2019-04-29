@@ -1,6 +1,6 @@
 ---
-title: ファイル システムからのチェック-確認要求に応答
-description: ファイル システムからのチェック-確認要求に応答
+title: ファイル システムからの検証チェック要求への応答
+description: ファイル システムからの検証チェック要求への応答
 ms.assetid: 227e65d6-d746-4b16-978d-4d42be9aeb2c
 keywords:
 - リムーバブル メディア、WDK のカーネルは、要求をチェック-検証します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc426505fbccbd5d3fb650e44c61b51f2f5692e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324544"
 ---
-# <a name="responding-to-check-verify-requests-from-the-file-system"></a>ファイル システムからのチェック-確認要求に応答
+# <a name="responding-to-check-verify-requests-from-the-file-system"></a>ファイル システムからの検証チェック要求への応答
 
 
 
@@ -39,7 +39,7 @@ ms.locfileid: "56551081"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>状態</strong></p></td>
+<td><p><strong>ステータス</strong></p></td>
 <td><p>STATUS_SUCCESS に設定します。</p></td>
 </tr>
 <tr class="even">

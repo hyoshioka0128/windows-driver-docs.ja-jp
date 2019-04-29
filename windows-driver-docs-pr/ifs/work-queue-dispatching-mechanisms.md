@@ -1,6 +1,6 @@
 ---
-title: 作業のキュー メカニズムをディスパッチ
-description: 作業のキュー メカニズムをディスパッチ
+title: ワーク キューのディスパッチ メカニズム
+description: ワーク キューのディスパッチ メカニズム
 ms.assetid: d4ce929f-2d84-4194-9afa-e00629594c36
 keywords:
 - RDBSS WDK ファイル システムでは、作業のキューのディスパッチ
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 048e3de725fe96da64cc97e96bf208aa49cc6d5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322182"
 ---
-# <a name="work-queue-dispatching-mechanisms"></a>作業のキュー メカニズムをディスパッチ
+# <a name="work-queue-dispatching-mechanisms"></a>ワーク キューのディスパッチ メカニズム
 
 
 ## <span id="ddk_work_queue_dispatching_mechanisms_if"></span><span id="DDK_WORK_QUEUE_DISPATCHING_MECHANISMS_IF"></span>
@@ -48,7 +48,7 @@ RDBSS は、デバイス オブジェクトごとに作業項目の追跡を保�
 
 RDBSS でディスパッチ メカニズムは、プロセッサごとの作業キューの複数のレベルを提供します。 現在サポートされている作業のキューの次のレベル:
 
--   Critical
+-   重大
 
 -   遅延
 

@@ -5,11 +5,11 @@ ms.assetid: 49782d7f-c2f9-408d-971c-1af4d93d4d8d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dfb2f603b0691beb2d80c7f0468832f432d78fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323658"
 ---
 # <a name="wispr-authentication"></a>WISPr 認証
 

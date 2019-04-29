@@ -1,6 +1,6 @@
 ---
-title: COM ベースのレンダリング プラグイン
-description: COM ベースのレンダリング プラグイン
+title: 非 COM ベースのレンダリング プラグイン
+description: 非 COM ベースのレンダリング プラグイン
 ms.assetid: 435f9754-50be-4a4b-a5b4-b2bc8d66f034
 keywords:
 - レンダリングの COM ベースのプラグインを WDK の印刷
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffd88eaaf16d9bd110a7792758a64c13bc6c32ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323633"
 ---
-# <a name="non-com-based-rendering-plug-ins"></a>COM ベースのレンダリング プラグイン
+# <a name="non-com-based-rendering-plug-ins"></a>非 COM ベースのレンダリング プラグイン
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 低い I/O ルーチン
-description: 低い I/O ルーチン
+title: 低速 I/O ルーチン
+description: 低速 I/O ルーチン
 ms.assetid: 5317917d-9abc-43f9-ab4a-f070e491c816
 keywords:
 - RDBSS WDK ファイル システム、低の入出力ルーチン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79cc867bfa40ec251c06282269b7cdd61394fae6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324370"
 ---
-# <a name="low-io-routines"></a>低い I/O ルーチン
+# <a name="low-io-routines"></a>低速 I/O ルーチン
 
 
 ## <span id="ddk_low_i_o_functions_if"></span><span id="DDK_LOW_I_O_FUNCTIONS_IF"></span>

@@ -1,6 +1,6 @@
 ---
-title: NET_BUFFER 構造体
-description: NET_BUFFER 構造体
+title: NET_BUFFER 構造
+description: NET_BUFFER 構造
 ms.assetid: 6ba44aef-d4e6-4f18-8ae3-aebd8045791f
 keywords:
 - NET_BUFFER
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2339a151b20ca6196d0b669b69ae63b37ddea0f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323311"
 ---
 # <a name="netbuffer-structure"></a>NET\_バッファーの構造体
 
@@ -63,7 +63,7 @@ MDL チェーン内のネットワーク データのバイト単位の長さを
 
 NDIS は、MDL チェーン内のデータ領域を管理する機能を提供します。 ドライバーでのデータ領域の使用方法は、現在のドライバーを使用した動的に変更します。 現在のドライバーで現在使用されているデータ領域がある場合があります。 ただし、*未使用データ領域*現在使用されていない有効なデータを含めることができます。 たとえば、受信パス上、*未使用データ領域*下位レベルのドライバーで使用されたヘッダー情報を含めることができます。
 
-ドライバーが撤退を実行し、進化を増減する操作、*使用データ領域*します。 撤退および高度な操作の詳細については、[撤退と高度な操作](retreat-and-advance-operations.md)を参照してください。
+ドライバーが撤退を実行し、進化を増減する操作、*使用データ領域*します。 撤退および高度な操作の詳細については、次を参照してください。[撤退と高度な操作](retreat-and-advance-operations.md)します。
 
 次の用語と定義の要素を記述、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)データ領域。
 

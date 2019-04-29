@@ -5,11 +5,11 @@ ms.assetid: 5DFE5B52-4D58-491c-9363-95E4A2FD680C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c427c3fac66724743d68d6096cf0423eed5566
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324782"
 ---
 # <a name="selection"></a>選択
 
@@ -22,7 +22,7 @@ ms.locfileid: "56579448"
 TE <test_binaries> [/select:<selection criteria>]
 ```
 
-このセクションの説明、TE.exe**選択/:**<em>選択基準</em>オプション。 TE.exe の詳細については、[TE.exe コマンド オプション](te-exe-command-line-parameters.md)を参照してください。
+このセクションの説明、TE.exe**選択/:**<em>選択基準</em>オプション。 TE.exe の詳細については、次を参照してください。 [TE.exe コマンド オプション](te-exe-command-line-parameters.md)します。
 
 選択基準は、コマンド プロンプトで説明したすべてのテスト バイナリをグローバルに適用されます。 2 つのテストについて考えてみましょう\_バイナリ。**例\\CPP します。SelectionCriteria1.Example.dll**と**例\\CPP します。SelectionCriteria2.Example.dll**します。 次の例は、プロパティ、またはこれらのテストでさまざまなレベルで指定されたメタデータ\_バイナリ。 指定することで取得することもできます、 **/listproperties**コマンド プロンプト ウィンドウでオプションです。
 

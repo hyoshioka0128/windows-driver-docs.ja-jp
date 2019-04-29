@@ -1,17 +1,17 @@
 ---
-title: スキーマ キーワード 3D 製造業のための印刷します。
+title: 3D 製造用の印刷スキーマのキーワード
 description: 3D の製造の印刷スキーマ キーワードは、印刷スキーマの仕様を補足的な仕様です。
 ms.assetid: DC54C326-31AE-43C9-AF0D-A3A64DAEF1F2
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b535c6ae5354e698d04fd245f748e2afbb3c8252
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324718"
 ---
-# <a name="print-schema-keywords-for-3d-manufacturing"></a>スキーマ キーワード 3D 製造業のための印刷します。
+# <a name="print-schema-keywords-for-3d-manufacturing"></a>3D 製造用の印刷スキーマのキーワード
 
 
 3D 製造業のため印刷スキーマ キーワードは、補足の仕様を[印刷スキーマ仕様](http://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)します。 この仕様には、特定のパート 1 およびその仕様の第 3 部で、印刷スキーマの仕様で定義されている規則のセットの理解が必要があります。 この仕様には、印刷スキーマの仕様の第 2 部のアナログの製造 3d 印刷スキーマ キーワードが含まれています。 印刷スキーマのコンテキストでは、デバイスの機能を定義する 3D 製造デバイスの開発者によって使用される XML キーワードがについて説明します。

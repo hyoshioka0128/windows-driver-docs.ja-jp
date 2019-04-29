@@ -1,5 +1,5 @@
 ---
-title: 16550 UART インターフェイスでの PnP 多機能シリアル デバイスを構成します。
+title: 16550 UART インターフェイスを使用する PnP 多機能シリアル デバイスを構成する
 description: 16550 UART と互換性のあるインターフェイスを必要とする多機能デバイスのプラグ アンド プレイ シリアル デバイスの構成
 ms.assetid: 63588ac9-4c87-421d-8da3-3e950cbd466c
 keywords:
@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dce95ec1d57f8d591543b321a28a04b89402e84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324257"
 ---
 # <a name="configuration-of-plug-and-play-serial-device-on-a-multifunction-device-that-requires-a-16550-uart-compatible-interface"></a>16550 UART と互換性のあるインターフェイスを必要とする多機能デバイスのプラグ アンド プレイ シリアル デバイスの構成
 

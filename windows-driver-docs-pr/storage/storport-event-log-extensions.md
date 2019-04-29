@@ -1,17 +1,17 @@
 ---
-title: Storport イベント ログの拡張機能
-description: Storport イベント ログの拡張機能
+title: Storport イベント ログ拡張
+description: Storport イベント ログ拡張
 ms.assetid: 03b0bdef-cefa-4ad8-b9bf-a5f6b5f64cc6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2c5f904720bbb722cdf057a3a75c9d735dd255b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322095"
 ---
-# <a name="storport-event-log-extensions"></a>Storport イベント ログの拡張機能
+# <a name="storport-event-log-extensions"></a>Storport イベント ログ拡張
 
 
 などの他の多くの種類のドライバーでは、Storport ミニポート ドライバーでは、管理者が接続された記憶域デバイスの状態の情報を保持するシステム イベント ログにエントリを作成する必要があります。 多くの場合、これらのイベント ログ エントリは、デバイス関連の障害への応答に作成されます。 Windows カーネル自体は、イベント ログ エントリを作成するための柔軟なインターフェイスを提供します、Storport ミニポート モデル ミニポート ドライバーにそのインターフェイスに直接アクセスを許可しません。 代わりに、Storport、カーネルのシステム イベント ログの機能、ラッパーを提供し、ミニポート ドライバーでは、ラッパーを使用して、イベント ログ エントリを作成します。

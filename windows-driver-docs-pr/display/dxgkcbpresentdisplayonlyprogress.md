@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 67306955be711f55f169aa36727f6293e779e39d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323154"
 ---
 # <a name="dxgkcbpresentdisplayonlyprogress-callback-function"></a>DXGKCB\_存在\_と\_進行状況のコールバック関数
 
@@ -52,7 +52,7 @@ void APIENTRY CALLBACK* pfnPresentDisplayOnlyProgress(
 
 このコールバック関数では、値は返されません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd70fe2fe83d5f8f34800b6fd7fa722616a9da33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324914"
 ---
 # <a name="installation-requirements-for-network-mux-intermediate-drivers"></a>ネットワーク MUX 中間ドライバーのインストール要件
 
@@ -21,7 +21,7 @@ ms.locfileid: "56578668"
 
 
 
-このトピックでは、ネットワーク MUX 中間ドライバーのインストール要件をまとめたものです。 MUX 中間ドライバーのインストール要件の詳細については、[中間ドライバーをインストールする](installing-an-intermediate-driver.md)を参照してください。
+このトピックでは、ネットワーク MUX 中間ドライバーのインストール要件をまとめたものです。 MUX 中間ドライバーのインストール要件の詳細については、次を参照してください。[中間ドライバーをインストールする](installing-an-intermediate-driver.md)します。
 
 ネットワーク MUX 中間ドライバーをインストールするには、2 つの INF ファイルが必要です。
 

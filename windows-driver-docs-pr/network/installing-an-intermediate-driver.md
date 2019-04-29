@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 025cc8d01e538359ca34ec1c04b8b2a02b2bd2d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324896"
 ---
 # <a name="installing-an-intermediate-driver"></a>中間ドライバーのインストール
 
@@ -25,7 +25,7 @@ ms.locfileid: "56577900"
 
 プロトコルの INF ファイルは、プライマリの INF ファイルです。 プロトコルの下端がインストールされた後、プロトコルの INF ファイルで定義されているミニポート ドライバーの INF ファイルへの参照に基づく仮想ミニポート上端がインストールされます。
 
-Windows vista では、システムの INF ディレクトリに、ミニポート ドライバーの INF ファイルをコピーするのにには、通知オブジェクトまたはカスタム セットアップ アプリケーションを使用できます。 Windows Vista およびそれ以降のオペレーティング システム バージョンでは、使用する必要があります、 [ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)ミニポート ドライバーの INF ファイルをコピーするプロトコル INF ファイル。 通知オブジェクトと INF ファイルのコピーの詳細については、[中間ドライバーに通知オブジェクト](intermediate-driver-notify-object.md)を参照してください。
+Windows vista では、システムの INF ディレクトリに、ミニポート ドライバーの INF ファイルをコピーするのにには、通知オブジェクトまたはカスタム セットアップ アプリケーションを使用できます。 Windows Vista およびそれ以降のオペレーティング システム バージョンでは、使用する必要があります、 [ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)ミニポート ドライバーの INF ファイルをコピーするプロトコル INF ファイル。 通知オブジェクトと INF ファイルのコピーの詳細については、次を参照してください。[中間ドライバーに通知オブジェクト](intermediate-driver-notify-object.md)します。
 
 下端は、プロトコルのシステム提供のデバイス セットアップ クラス**NetService**中級レベルのドライバーのフィルターと**NetTrans** MUX 中間ドライバー。 仮想ミニポートのドライバーのクラスは常に**Net**します。
 

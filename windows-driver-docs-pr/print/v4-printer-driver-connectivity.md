@@ -1,17 +1,17 @@
 ---
-title: V4 プリンター ドライバーの接続
+title: V4 プリンター ドライバー接続
 description: V4 プリンター ドライバーの接続モデルでは、たとえば、Bidi と Web Services for Devices (WSD) 印刷デバイスと通信するの使用できるようにします。
 ms.assetid: 427FFF34-80B9-4B9F-8FFD-FD0956BBE9DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a747e2c9e964e92ac526065c804de6fd79ed48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324854"
 ---
-# <a name="v4-printer-driver-connectivity"></a>V4 プリンター ドライバーの接続
+# <a name="v4-printer-driver-connectivity"></a>V4 プリンター ドライバー接続
 
 
 V4 プリンター ドライバーの接続モデルでは、たとえば、Bidi と Web Services for Devices (WSD) 印刷デバイスと通信するの使用できるようにします。

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01ff2489df4938c97ad3698b7a5dba1f29a82ef9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324532"
 ---
 # <a name="irpmjquerysecurity"></a>IRP\_MJ\_クエリ\_セキュリティ
 
@@ -54,7 +54,7 @@ IRP\_MJ\_クエリ\_セキュリティ要求が I/O マネージャーによっ�
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 関連付けられているファイル オブジェクトへのポインター*デバイス オブジェクト*します。
 
-Windows xp 以降、ファイル オブジェクトは名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、[**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)を参照してください。
+Windows xp 以降、ファイル オブジェクトは名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、次を参照してください。 [**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)します。
 
 *IrpSp -&gt;FileObject*パラメーターにはへのポインターが含まれています、 **RelatedFileObject**フィールドに、これは、ファイルも\_オブジェクトの構造体。 **RelatedFileObject**ファイルのフィールド\_IRP の処理中にオブジェクトの構造が有効なない\_MJ\_クエリ\_セキュリティ、使用する必要があります。
 

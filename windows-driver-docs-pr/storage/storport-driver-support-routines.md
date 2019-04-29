@@ -1,21 +1,21 @@
 ---
-title: Storport ドライバー サポート ルーチン
+title: Storport ドライバーのサポート ルーチン
 description: Storport ミニポート ドライバー ルーチンと SCSI ポート ドライバーの設計および Storport ドライバーの間の相違点について説明します。
 ms.assetid: ''
 keywords:
-- Storport ドライバー サポート ルーチン
+- Storport ドライバーのサポート ルーチン
 - WDK のストレージ
 - 記憶域サポート ルーチン
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fd96a9cbdc562474ea758901e1ec2391ebb9a1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322148"
 ---
-# <a name="storport-driver-support-routines"></a>Storport ドライバー サポート ルーチン
+# <a name="storport-driver-support-routines"></a>Storport ドライバーのサポート ルーチン
 
 Storport ドライバーで動作するミニポート ドライバーは、このセクションで、日常的な説明の実装を含める必要がありますありを通じてそれらを公開する必要があります、 [HW_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_hw_initialization_data)ミニポート中に構造体ドライバーの初期化フェーズ。 
 
@@ -27,7 +27,7 @@ Storport のバージョンのミニポート ドライバーは、一連のキ�
 
 Storport ドライバーによって提供されるサポート ルーチンの詳細については、[Storport ドライバー ルーチンをサポートする] を参照してください。
 
-Storport ドライバーの詳細については、[ストレージ ポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-port-drivers)を参照してください。 
+Storport ドライバーの詳細については、次を参照してください。[ストレージ ポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-port-drivers)します。 
 
 次に、Storport ドライバー サポート ルーチンを示します。
 

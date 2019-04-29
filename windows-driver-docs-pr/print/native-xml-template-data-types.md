@@ -1,6 +1,6 @@
 ---
-title: ネイティブ XML テンプレートのデータ型
-description: ネイティブ XML テンプレートのデータ型
+title: ネイティブ XML テンプレート データ型
+description: ネイティブ XML テンプレート データ型
 ms.assetid: a34dec46-de5d-4f12-8863-2fe6b6e5eed4
 keywords:
 - WDK GDL、データ型のテンプレート
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 719d28be12cb3adaf19fccf2a28d192689855523
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324220"
 ---
-# <a name="native-xml-template-data-types"></a>ネイティブ XML テンプレートのデータ型
+# <a name="native-xml-template-data-types"></a>ネイティブ XML テンプレート データ型
 
 
 ネイティブ XML データ型が XML として定義されている\_型。
