@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_OFFLOAD_SCOPE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 62fde916cdec2dd2a9041c67461e7a3f8f8531a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385257"
 ---
 # <a name="wditlvoffloadscope"></a>WDI_TLV_OFFLOAD_SCOPE
 
@@ -32,13 +32,13 @@ WDI_TLV_OFFLOAD_SCOPE は、ネットワークのスコープを含む TLV の�
 
 | 型 | 説明 |
 | --- | --- |
-| UINT8 | チェックサム オフロード パラメーターがすべてのポートに適用できるかどうかを指定します。 <p>設定可能な値:</p> <ul><li>0:適用なし</li><li>1:該当します。</li></ul> |
-| UINT8 | すべてのポートで LsoV1 オフロード パラメーターが該当するかどうかを指定します。 <p>設定可能な値:</p> <ul><li>0:適用なし</li><li>1:該当します。</li></ul> |
-| UINT8 | すべてのポートで LsoV2 オフロード パラメーターが該当するかどうかを指定します。 <p>設定可能な値:</p> <ul><li>0:適用なし</li><li>1:該当します。</li></ul> |
-| UINT8 | RSC オフロード パラメーターがすべてのポートに適用できるかどうかを指定します。 <p>設定可能な値:</p> <ul><li>0:適用なし</li><li>1:該当します。</li></ul> |
+| UINT8 | チェックサム オフロード パラメーターがすべてのポートに適用できるかどうかを指定します。 <p>設定可能な値:</p> <ul><li>0:該当なし</li><li>1:適用できます</li></ul> |
+| UINT8 | すべてのポートで LsoV1 オフロード パラメーターが該当するかどうかを指定します。 <p>設定可能な値:</p> <ul><li>0:該当なし</li><li>1:適用できます</li></ul> |
+| UINT8 | すべてのポートで LsoV2 オフロード パラメーターが該当するかどうかを指定します。 <p>設定可能な値:</p> <ul><li>0:該当なし</li><li>1:適用できます</li></ul> |
+| UINT8 | RSC オフロード パラメーターがすべてのポートに適用できるかどうかを指定します。 <p>設定可能な値:</p> <ul><li>0:該当なし</li><li>1:適用できます</li></ul> |
  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

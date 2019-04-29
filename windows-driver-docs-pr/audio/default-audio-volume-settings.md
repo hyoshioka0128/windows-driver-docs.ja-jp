@@ -1,6 +1,6 @@
 ---
-title: 既定のオーディオの音量の設定
-description: 既定のオーディオの音量の設定
+title: 既定のオーディオ音量の設定
+description: 既定のオーディオ音量の設定
 ms.assetid: 5d694aa2-5a47-44c5-92d5-ec8c4885820f
 keywords:
 - オーディオ アダプター WDK、ボリュームの設定
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2ca4779183d005f3a06082783b17b593c7b3225
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333815"
 ---
-# <a name="default-audio-volume-settings"></a>既定のオーディオの音量の設定
+# <a name="default-audio-volume-settings"></a>既定のオーディオ音量の設定
 
 
 ## <span id="default_audio_volume_settings"></span><span id="DEFAULT_AUDIO_VOLUME_SETTINGS"></span>
@@ -33,7 +33,7 @@ SndVol プログラム (を参照してください[システム トレイと Sn
 
 一般的な規則としてオーディオ アダプター ドライブの一連のアナログのスピーカーを独自の物理ボリューム コントロールを持つ場合、INF ファイル設定しないでください、既定のボリューム レベル小さすぎます。 それ以外の場合、ユーザーは、サウンド カードのマスターの量が増加するのではなくスピーカーのボリュームを増やすことで補正するためにお試しください可能性があります。 信号レベルが増えの結果は、オーディオ品質の低下です。
 
-オーディオのアダプターはハードウェア アンプを持たない場合は、[ソフトウェア ボリューム コントロールをサポート](software-volume-control-support.md)提供されるソフトウェアのサポートについてはを参照してください。
+オーディオのアダプターはハードウェア アンプを持たない場合は、次を参照してください。[ソフトウェア ボリューム コントロールをサポート](software-volume-control-support.md)提供されるソフトウェアのサポートについてはします。
 
 **注**  ハードウェア アンプがあるかどうかは、ドライバー レベルを設定、範囲と既定値を使用して、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)カーネル プロパティをストリーミングします。 ハードウェア アンプがない場合、Windows は、APO ソフトウェア ボリューム コントロールを作成します。
 物理的なボリュームつまみがスピーカーのアクティブなセットを使用する場合は、HID コントロールとして Windows に表示されます。 ボリュームに同様にこの関数は上向きと下向きの矢印ボタン キーボード上のボリューム。Windows がボリュームつまみが有効にしては、ボリュームをプログラム制御これに応じて拡大縮小 (は、ハードウェアまたはソフトウェアのボリューム) かどうかを参照してください。
@@ -89,7 +89,7 @@ SndVol プログラム (を参照してください[システム トレイと Sn
  
 
 \*マイク用語以外には、すべての再生デバイスと以外マイクの録音デバイスについて説明します。
-Windows アプリケーションでのソフトウェアのボリューム スライダーで表される物理ボリューム スライダーの運用特性については、[Audio-Tapered ボリューム コントロール](https://msdn.microsoft.com/library/windows/desktop/dd370798.aspx)を参照してください。
+Windows アプリケーションでのソフトウェアのボリューム スライダーで表される物理ボリューム スライダーの運用特性については、次を参照してください。 [Audio-Tapered ボリューム コントロール](https://msdn.microsoft.com/library/windows/desktop/dd370798.aspx)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 [既定のオーディオ音量設定のカスタマイズ](customizing-default-audio-volume-settings.md)  

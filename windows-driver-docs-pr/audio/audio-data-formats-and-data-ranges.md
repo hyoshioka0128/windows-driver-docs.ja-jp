@@ -1,17 +1,17 @@
 ---
-title: オーディオ データ形式とデータの範囲
-description: オーディオ データ形式とデータの範囲
+title: オーディオ データ形式とデータ範囲
+description: オーディオ データ形式とデータ範囲
 ms.assetid: 85aa74b4-8e33-49f4-82e7-561baa55c265
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 413b512db5aa7b82e3acee7d71c5198bdfc6ef0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331551"
 ---
-# <a name="audio-data-formats-and-data-ranges"></a>オーディオ データ形式とデータの範囲
+# <a name="audio-data-formats-and-data-ranges"></a>オーディオ データ形式とデータ範囲
 
 
 ## <span id="audio_data_formats_and_data_ranges"></span><span id="AUDIO_DATA_FORMATS_AND_DATA_RANGES"></span>
@@ -23,7 +23,7 @@ ms.locfileid: "56550093"
 
 -   KS 暗証番号 (pin) をサポートするストリーム形式の範囲が KS データ範囲の配列で指定されました。配列の各要素は、KSDATARANGE 構造で始まる範囲記述子です。
 
-これら 2 つの構造の詳細については、[KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)を参照してください。 KS データ範囲の詳細については、[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)を参照してください。
+これら 2 つの構造の詳細については、次を参照してください。 [KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)します。 KS データ範囲の詳細については、次を参照してください。 [AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
 
 このセクションの残りの部分では、次のトピックについて説明します。
 

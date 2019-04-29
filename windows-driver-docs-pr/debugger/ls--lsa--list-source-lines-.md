@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ff14372ab89b3458bacd43e782d87b23132d5cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383322"
 ---
 # <a name="ls-lsa-list-source-lines"></a>ls、lsa (ソース行の一覧表示)
 
@@ -38,7 +38,7 @@ lsa [.] address [, first [, count]]
 <span id="_______address______"></span><span id="_______ADDRESS______"></span> *address*   
 ソースの表示の開始アドレスを指定します。
 
-構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______first______"></span><span id="_______FIRST______"></span> *first*   
 表示する最初の行を指定します。 既定値は、現在の行です。

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b100a09c2f2c2794963404030e95260e9727d6da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391991"
 ---
 # <a name="inf-file-platform-extensions-and-x86-based-systems"></a>INF ファイル プラットフォーム拡張機能および x86 ベースのシステム
 
@@ -120,9 +120,9 @@ Windows 2000 および以降のバージョンの Windows を実行する x86 �
 
 5.  例では、デバイスのインストールに必要なその他のデバイス固有セクションが含まれて、 **.nt**または **.ntx86**プラットフォーム拡張機能は、これらのセクションの名前。 Windows では、Windows 2000 以降のバージョンの Windows を実行する x86 ベースのシステムで、Abc デバイスをインストールするこれらのセクションを処理します。
 
-INF ファイルのセクションとディレクティブの詳細については、[INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)を参照してください。
+INF ファイルのセクションとディレクティブの詳細については、次を参照してください。 [INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)します。
 
-すべてのプラットフォームの種類のプラットフォームをまたぐ単一 INF ファイルを作成する方法については、[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)を参照してください。
+すべてのプラットフォームの種類のプラットフォームをまたぐ単一 INF ファイルを作成する方法については、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
 
  
 

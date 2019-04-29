@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a1f410785a8ece4b4c8cdc8d799573d506513d7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334490"
 ---
-# <a name="fadt"></a>! fadt
+# <a name="fadt"></a>!fadt
 
 
 **! Fadt**拡張機能には、固定の ACPI 記述テーブル (FADT) が表示されます。
@@ -42,7 +42,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[ACPI デバッグ](acpi-debugging.md)を参照してください。
+詳細については、次を参照してください。 [ACPI デバッグ](acpi-debugging.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: ディスプレイ ドライバーでの特殊効果
-description: ディスプレイ ドライバーでの特殊効果
+title: ディスプレイ ドライバーの特殊効果
+description: ディスプレイ ドライバーの特殊効果
 ms.assetid: f44a89df-6412-442c-8491-3e2f2bbd826f
 keywords:
 - ディスプレイ ドライバー WDK Windows 2000 では、特殊効果
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3390248bdfc81aba6604f2abe79d7cd395d99bfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382331"
 ---
-# <a name="special-effects-in-display-drivers"></a>ディスプレイ ドライバーでの特殊効果
+# <a name="special-effects-in-display-drivers"></a>ディスプレイ ドライバーの特殊効果
 
 
 ## <span id="ddk_special_effects_in_display_drivers_gg"></span><span id="DDK_SPECIAL_EFFECTS_IN_DISPLAY_DRIVERS_GG"></span>

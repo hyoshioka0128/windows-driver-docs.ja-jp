@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ce6dc5e85b3babfa41e6018f61a02332bb399075
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334105"
 ---
 # <a name="usbkdusbdpc"></a>!usbkd.usbdpc
 
@@ -39,7 +39,7 @@ ms.locfileid: "56572647"
 
 Usbkd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 以下のアドレスを検索する 1 つの方法を示します、**し、usbport!\_XDPC\_コンテキスト**構造体。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。

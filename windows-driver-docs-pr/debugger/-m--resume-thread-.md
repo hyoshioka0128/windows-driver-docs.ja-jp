@@ -1,5 +1,5 @@
 ---
-title: ~ m (Resume スレッド)
+title: ~m (スレッドの再開)
 description: ~ M コマンドは、指定したスレッドの実行を再開します。M (メモリの移動) コマンドを使用してこのコマンドを混同しないでください。
 ms.assetid: fc4eec45-2a28-4571-abf5-3896b77a52c9
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f783fe1bc23252fbc40d936124711d8b2ccd0d3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336099"
 ---
-# <a name="m-resume-thread"></a>~ m (Resume スレッド)
+# <a name="m-resume-thread"></a>~m (スレッドの再開)
 
 
 **~ M**コマンドは、指定したスレッドの実行を再開します。
@@ -34,7 +34,7 @@ ms.locfileid: "56536428"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-スレッドまたは再開するスレッドを指定します。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+スレッドまたは再開するスレッドを指定します。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -63,7 +63,7 @@ ms.locfileid: "56536428"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-中断の詳細についてはカウントとどのように中断されたスレッドの動作し、中断とスレッドの固定を制御するその他のコマンドの一覧は、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+中断の詳細についてはカウントとどのように中断されたスレッドの動作し、中断とスレッドの固定を制御するその他のコマンドの一覧は、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
 <a name="remarks"></a>注釈
 -------

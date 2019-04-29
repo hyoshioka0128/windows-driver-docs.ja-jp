@@ -1,17 +1,17 @@
 ---
-title: 有効にして、NDK 機能を無効化
+title: NDK 機能の有効化と無効化
 description: 有効または NDK 機能を無効にする場合は、NDIS は、OID_NDK_SET_STATE OID 要求を発行します。 NDK 対応のミニポート ドライバーでは、その MiniportOidRequest 関数でこの OID のサポートを登録する必要があります。
 ms.assetid: A72AD98E-FF84-48FF-B627-5534231244B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fa59ae52b875619e834720e95194eab9ddbc424
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372494"
 ---
-# <a name="enabling-and-disabling-ndk-functionality"></a>有効にして、NDK 機能を無効化
+# <a name="enabling-and-disabling-ndk-functionality"></a>NDK 機能の有効化と無効化
 
 
 NDK 機能、NDIS 問題有効または無効にする[OID\_NDK\_設定\_状態](https://msdn.microsoft.com/library/windows/hardware/hh451812)OID 要求。 NDK 対応のミニポート ドライバーでは、この OID のサポートを登録する必要があります、 [ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。
@@ -25,9 +25,9 @@ NDK 機能、NDIS 問題有効または無効にする[OID\_NDK\_設定\_状態]
 
 0 ("Disabled") に設定されている場合、NDK 機能を有効にすることはできません。
 
-ミニポート ドライバーがインストールされているときに、INF ファイルは、既定では 1 ("Enabled") にこのキーワードの値を設定します。 詳細については、[NDKPI の INF 要件](inf-requirements-for-ndkpi.md)を参照してください。
+ミニポート ドライバーがインストールされているときに、INF ファイルは、既定では 1 ("Enabled") にこのキーワードの値を設定します。 詳細については、次を参照してください。 [NDKPI の INF 要件](inf-requirements-for-ndkpi.md)します。
 
-管理者を更新できますミニポート ドライバーをインストールした後、  **\*NetworkDirect**キーワードの値で新しい値を設定して、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)を参照してください。
+管理者を更新できますミニポート ドライバーをインストールした後、  **\*NetworkDirect**キーワードの値で新しい値を設定して、 **[詳細設定]** アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
 
 **注**  ミニポート ドライバーが自動的に再起動で、変更を行った後、 **[詳細設定]** アダプターのプロパティ ページ。
 

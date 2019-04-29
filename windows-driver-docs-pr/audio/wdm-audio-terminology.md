@@ -21,11 +21,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4da081c1b5fcbe3f4e74a17a818e41a13552dcb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328476"
 ---
 # <a name="wdm-audio-terminology"></a>WDM オーディオの用語
 
@@ -75,7 +75,7 @@ ms.locfileid: "56577757"
 
 ### <a name="span-idbusdrivergenericspanspan-idbusdrivergenericspanspan-idbusdrivergenericspanbus-driver-generic"></a><span id="Bus_Driver__Generic_"></span><span id="bus_driver__generic_"></span><span id="BUS_DRIVER__GENERIC_"></span>バス ドライバー (汎用)
 
-(ジェネリック)、バス ドライバーでは、物理バスにミニドライバー アクセスを提供します。 Microsoft Windows*ハードウェア アブストラクション レイヤー (HAL)* とも呼ば、*システム バス ドライバー*システム バスへのアクセスを提供するためです。 詳細については、[バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540704)を参照してください。
+(ジェネリック)、バス ドライバーでは、物理バスにミニドライバー アクセスを提供します。 Microsoft Windows*ハードウェア アブストラクション レイヤー (HAL)* とも呼ば、*システム バス ドライバー*システム バスへのアクセスを提供するためです。 詳細については、次を参照してください。[バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540704)します。
 
 ### <a name="span-idclassdrivergenericspanspan-idclassdrivergenericspanspan-idclassdrivergenericspanclass-driver-generic"></a><span id="Class_Driver__Generic_"></span><span id="class_driver__generic_"></span><span id="CLASS_DRIVER__GENERIC_"></span>クラスのドライバー (汎用)
 
@@ -127,7 +127,7 @@ PnP の単一のノードには、オーディオのアダプターの場合、�
 
 ポート クラス ドライバーの[ **PcRegisterSubdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff537731)関数は、システムの残りの部分によってデバイスとして認識されていると、サブデバイスを登録します。 ポート ドライバーでは、作成、デバイス オブジェクトが、サブデバイスが登録されている参照文字列で指定されている Irp のみを対象となる Irp を受信します。 ポート ドライバーは Irp をサブデバイスに関連付けられているファイル オブジェクトを対象としても受信します。 ポート ドライバーは、KS フィルターとサブデバイスのように動作し、ミニポート ドライバーを適切に通信するためです。
 
-多機能オーディオ カードのドライバーを設計の詳細については、[多機能オーディオ デバイス](multifunction-audio-devices.md)を参照してください。
+多機能オーディオ カードのドライバーを設計の詳細については、次を参照してください。[多機能オーディオ デバイス](multifunction-audio-devices.md)します。
 
  
 

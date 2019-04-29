@@ -18,11 +18,11 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec15f1f408f9b09e32e3b1bd14bb44a4404529e6
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333670"
 ---
 # <a name="extensible-wave-format-descriptors"></a>拡張可能な Wave 形式の記述子
 
@@ -85,7 +85,7 @@ WAVEFORMAT と PCMWAVEFORMAT については、Microsoft Windows SDK のドキ�
 
  
 
-実際には、KMixer は、これらのタグ値で記述できる PCM 形式のサブセットのみをサポートしています (と PCM 以外の形式をサポートしていません)。 USB オーディオ デバイス (を参照してください[USBAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)) すべての PCM 形式の USB オーディオ ストリームを通過 KMixer のために、このサブセットに制限されます。 (一部の PCM USB オーディオ ストリームが KMixer; をバイパスできる詳細については、次を参照してください[形式の非 PCM の USB オーディオ サポート](usb-audio-support-for-non-pcm-formats.md)。)。ただし、この Windows XP 以降では、DirectSound のアプリケーションは KMixer でサポートされていない形式をサポートする WaveCyclic および WavePci のデバイスのハードウェアのピンに直接接続して KMixer の制限を克服できます。 詳細については、[WDM オーディオでハードウェア アクセラレータを DirectSound](directsound-hardware-acceleration-in-wdm-audio.md)を参照してください。
+実際には、KMixer は、これらのタグ値で記述できる PCM 形式のサブセットのみをサポートしています (と PCM 以外の形式をサポートしていません)。 USB オーディオ デバイス (を参照してください[USBAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)) すべての PCM 形式の USB オーディオ ストリームを通過 KMixer のために、このサブセットに制限されます。 (一部の PCM USB オーディオ ストリームが KMixer; をバイパスできる詳細については、次を参照してください[形式の非 PCM の USB オーディオ サポート](usb-audio-support-for-non-pcm-formats.md)。)。ただし、この Windows XP 以降では、DirectSound のアプリケーションは KMixer でサポートされていない形式をサポートする WaveCyclic および WavePci のデバイスのハードウェアのピンに直接接続して KMixer の制限を克服できます。 詳細については、次を参照してください。 [WDM オーディオでハードウェア アクセラレータを DirectSound](directsound-hardware-acceleration-in-wdm-audio.md)します。
 
 波の意味ではあいまい\_形式\_PCM タグ値 WAVEFORMATEX または PCMWAVEFORMAT のいずれかの構造上の表で指定できます。 ただし、これら 2 つの構造はほぼ同じです。 唯一の違いは、WAVEFORMATEX が含まれている、 **cbSize**メンバーと PCMWAVEFORMAT しません。 WAVEFORMATEX の仕様に従って**cbSize**場合は無視されます**wFormatTag** = WAVE\_形式\_PCM (ため**cbSize**は暗黙的にゼロ)。**cbSize**はその他の形式を使用します。 したがって、PCM 形式の場合 PCMWAVEFORMAT WAVEFORMATEX 同じ情報が含まれます、同じように扱うことができます。
 
@@ -95,7 +95,7 @@ WAVEFORMATEX WAVEFORMATEXTENSIBLE が指定できる形式のサブセットの�
 
 2.  マルチ チャネル ストリームにオーディオ チャンネルには、特定の speaker の場所を割り当てます。 WAVEFORMATEX では、この機能がないし、ステレオのみ mono と (2 つのチャネル) のストリームを適切にサポートすることができます。
 
-WAVEFORMATEXTENSIBLE によって WAVEFORMATEX によって定義された任意の形式を記述できます。 WAVEFORMATEXTENSIBLE WAVEFORMATEX 構造体に変換する方法の詳細については、[形式のタグの間で変換およびサブフォーマット Guid](converting-between-format-tags-and-subformat-guids.md)を参照してください。
+WAVEFORMATEXTENSIBLE によって WAVEFORMATEX によって定義された任意の形式を記述できます。 WAVEFORMATEXTENSIBLE WAVEFORMATEX 構造体に変換する方法の詳細については、次を参照してください。[形式のタグの間で変換およびサブフォーマット Guid](converting-between-format-tags-and-subformat-guids.md)します。
 
 WAVEFORMATEX はサンプル サイズが 8 または 16 ビットの形式を記述するためだけで十分ですが、WAVEFORMATEXTENSIBLE サンプル有効桁数の 16 ビットを超える形式を適切に記述する必要があります。 2 つの例を次に示します。
 
@@ -171,7 +171,7 @@ WAVEFORMATEXTENSIBLE 構造が定義されている場合、前に、ベンダ�
 
 WAVEFORMATEXTENSIBLE の形式を登録する必要はなくなりました。 ベンダーできる個別に Guid に割り当て、新しい形式に応じて。 (に GUID が含まれている形式、**サブフォーマット**WAVEFORMATEXTENSIBLE のメンバーです)。Microsoft では、最も一般的な形式でパブリック ヘッダー ファイル Ksmedia.h Guid の一覧表示 (たとえば、KSDATAFORMAT\_サブタイプ\_MPEG)。 新しい形式の GUID を定義する前に、ベンダーが KSDATAFORMAT の一覧を確認する必要があります\_サブタイプ\_*XXX*で特定の適切な GUID は既に定義されているかどうかを判断する Ksmedia.h 定数形式です。
 
-WAVEFORMATEXTENSIBLE を使用する場合は、設定**wFormatTag** WAVE に\_形式\_拡張と**サブフォーマット**を適切な形式の GUID。 PCM の整数形式設定**サブフォーマット**KSDATAFORMAT に\_サブタイプ\_PCM。 浮動小数点数としてサンプルの値をエンコードする PCM 形式の場合、次のように設定します。**サブフォーマット**KSDATAFORMAT に\_サブタイプ\_IEEE\_FLOAT です。 これらの形式のいずれか、次のように設定します。 **cbSize**に**sizeof**(WAVEFORMATEXTENSIBLE)**- sizeof**(WAVEFORMATEX)。 PCM 以外のデータ形式を記述する WAVEFORMATEXTENSIBLE の使用方法の詳細については、[非 PCM Wave 形式のサポート](supporting-non-pcm-wave-formats.md)を参照してください。
+WAVEFORMATEXTENSIBLE を使用する場合は、設定**wFormatTag** WAVE に\_形式\_拡張と**サブフォーマット**を適切な形式の GUID。 PCM の整数形式設定**サブフォーマット**KSDATAFORMAT に\_サブタイプ\_PCM。 浮動小数点数としてサンプルの値をエンコードする PCM 形式の場合、次のように設定します。**サブフォーマット**KSDATAFORMAT に\_サブタイプ\_IEEE\_FLOAT です。 これらの形式のいずれか、次のように設定します。 **cbSize**に**sizeof**(WAVEFORMATEXTENSIBLE)**- sizeof**(WAVEFORMATEX)。 PCM 以外のデータ形式を記述する WAVEFORMATEXTENSIBLE の使用方法の詳細については、次を参照してください。[非 PCM Wave 形式のサポート](supporting-non-pcm-wave-formats.md)します。
 
  
 

@@ -5,13 +5,13 @@ ms.assetid: c430d15b-51e9-4419-9cdb-904a0f5ef09b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1abebae6edb22e25d618641d21735ef035ba8079
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383691"
 ---
-# <a name="using-iwiaitemcreatechilditem-to-create-selection-areas"></a>IWiaItem::CreateChildItem を使用して選択範囲を作成するには
+# <a name="using-iwiaitemcreatechilditem-to-create-selection-areas"></a>IWiaItem::CreateChildItem を使用した選択領域の作成
 
 
 
@@ -21,7 +21,7 @@ WIA アプリケーションをお読みください、 [ **WIA\_IP\_サポー�
 
 ### <a name="creating-dynamic-film-items"></a>動的なフィルムの項目の作成
 
-WIA アプリケーションを呼び出す**IWiaItem::CreateChildItem** (Microsoft Windows SDK のドキュメントで説明)、新しい項目の WIA アプリケーション (またはフレーム) を作成するフィルム スキャナーの項目の下にあります。 WIA ドライバーは、WIA に必要なプロパティを初期化する必要があります、WIA アプリケーションは、新しいフレームを構成するには、エクステントの設定とその他のプロパティを設定する必要があります。 必要な WIA プロパティの詳細については、[フィルム スキャナーの必須の WIA 項目プロパティ](required-wia-item-properties-for-film-scanners.md)を参照してください。
+WIA アプリケーションを呼び出す**IWiaItem::CreateChildItem** (Microsoft Windows SDK のドキュメントで説明)、新しい項目の WIA アプリケーション (またはフレーム) を作成するフィルム スキャナーの項目の下にあります。 WIA ドライバーは、WIA に必要なプロパティを初期化する必要があります、WIA アプリケーションは、新しいフレームを構成するには、エクステントの設定とその他のプロパティを設定する必要があります。 必要な WIA プロパティの詳細については、次を参照してください。[フィルム スキャナーの必須の WIA 項目プロパティ](required-wia-item-properties-for-film-scanners.md)します。
 
 **注**   WIA フィルムの項目は、WIA 子項目の 1 つだけのレベルをいる必要があります。 フィルム項目は、フォルダー、フォルダーのアイテムに設定できます*できません*フィルム スキャナーの項目の下に作成します。
 

@@ -1,6 +1,6 @@
 ---
-title: リモート デバイスに SCO クライアント接続を作成します。
-description: リモート デバイスに SCO クライアント接続を作成します。
+title: リモート デバイスへの SCO クライアント接続の作成
+description: リモート デバイスへの SCO クライアント接続の作成
 ms.assetid: e5a4ed14-1fb0-4a5f-b388-5e536d674c23
 keywords:
 - 同期接続指向の WDK Bluetooth
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19bcc017d23799c5c4af684d476dad10b91c4984
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328238"
 ---
-# <a name="creating-a-sco-client-connection-to-a-remote-device"></a>リモート デバイスに SCO クライアント接続を作成します。
+# <a name="creating-a-sco-client-connection-to-a-remote-device"></a>リモート デバイスへの SCO クライアント接続の作成
 
 
 SCO クライアント プロファイル ドライバーは、リモート デバイスへの接続を Synchronous Connection-Oriented (SCO) を要求するプロファイルのドライバーです。 デバイスが接続を受け入れる場合、SCO クライアント プロファイル ドライバー接続への変更が通知されます。 など SCO クライアント プロファイル ドライバーは、リモート ヘッドセットへの接続を要求でき、ヘッドセットには、接続要求が承諾、Bluetooth ドライバー スタックはヘッドセットはオフにすると、プロファイルのドライバーに通知できますまたは削除します。

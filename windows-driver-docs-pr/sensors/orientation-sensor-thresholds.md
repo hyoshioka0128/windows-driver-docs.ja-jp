@@ -5,20 +5,20 @@ ms.assetid: BC7B76C3-F6D3-48FC-AA22-A91519A0A0D8
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 197be6f9e5bf76ba634d3d58a14bf747badc9b1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330098"
 ---
 # <a name="orientation-sensor-thresholds"></a>方向センサーのしきい値
 
 
 このトピックでは、センサーのしきい値については、印刷の向きを示します。
 
-次の表では、方向センサーの使用可能なしきい値の値を示します。 型の列に示すように種類の詳細については、、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)を参照してください。
+次の表では、方向センサーの使用可能なしきい値の値を示します。 型の列に示すように種類の詳細については、次を参照してください。、 [PROPVARIANT 構造](https://go.microsoft.com/fwlink/p/?linkid=313395)します。
 
-|プロパティのキー|型|必須/オプション|既定値|説明|
+|プロパティのキー|種類|必須/オプション|既定値|説明|
 |---|---|---|---|---|
 |PKEY_SensorData_RotationAngle_Degrees|VT_R4|必須|10.0f|向きの角度が度数法で、しきい値に到達するために必要なすべての軸を中心変更の最小量。 この値は、2 つの四元数の間の角度として計算する必要があります。 数学的に、これで表されます。2*cos-1 (dot product(q1, q2))|
 |PKEY_SensorData_LinearAccelerationX_Gs|VT_R4|省略可能|なし|G's 単位の高速化を上げたり下げたり、しきい値に到達するために必要な軸の最小量|

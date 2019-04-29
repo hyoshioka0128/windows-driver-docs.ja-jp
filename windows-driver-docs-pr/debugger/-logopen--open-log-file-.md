@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 06cc9590f1b7304cf1ff5061681d534d5dc87c15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336417"
 ---
 # <a name="logopen-open-log-file"></a>.logopen (ログ ファイルを開く)
 
@@ -74,7 +74,7 @@ ms.locfileid: "56574139"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ファイルを開くログがあれば実行すると、 **.logopen**コマンド、デバッガーが終了します。 既に存在するファイル名を指定する場合、ファイルの内容は上書きされます。

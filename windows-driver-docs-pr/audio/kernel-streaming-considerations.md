@@ -5,18 +5,18 @@ ms.assetid: CFC4ACA0-050D-48E1-AA6A-7649040EBF7A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f867918bbfad43a430fc2b1eca2e6409d0d4899
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333395"
 ---
 # <a name="kernel-streaming-considerations"></a>カーネル ストリーミングに関する考慮事項
 
 
 カーネル ストリーミングに関する考慮事項のトピックでは、要件とすべてのオーディオ ドライバー以外の他の特別な考慮事項を明確です。 これらは、カーネルの Bluetooth バイパスのオーディオのストリーミングに関連する複数の考慮事項をストリーミングします。
 
-オーディオ ドライバーは、「プル モード」を含む、WaveRT ポート ドライバーに完全にサポートする必要があります。 詳細については、[WaveRT ポート ドライバー導入](introducing-the-wavert-port-driver.md)を参照してください。 および実装する必要はありませんが、同期接続指向 (SCO) のハードウェアのオーディオ エンジンが出力をバイパス、行っても問題はありません。
+オーディオ ドライバーは、「プル モード」を含む、WaveRT ポート ドライバーに完全にサポートする必要があります。 詳細については、次を参照してください。 [WaveRT ポート ドライバー導入](introducing-the-wavert-port-driver.md)します。 および実装する必要はありませんが、同期接続指向 (SCO) のハードウェアのオーディオ エンジンが出力をバイパス、行っても問題はありません。
 
 Windows ロゴの要件形式のサポートにはには、Bluetooth の例外が含まれます。
 

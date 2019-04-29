@@ -1,6 +1,6 @@
 ---
-title: 指定したプラグ アンド プレイの SCSI ミニポート内のリソースのみを使用
-description: 指定したプラグ アンド プレイの SCSI ミニポート内のリソースのみを使用
+title: プラグ アンド プレイの SCSI ミニポートで提供されたリソースのみの使用
+description: プラグ アンド プレイの SCSI ミニポートで提供されたリソースのみの使用
 ms.assetid: 26c688dc-b6af-4a0c-8401-d53e653d90b3
 keywords:
 - SCSI ミニポート ドライバー WDK 記憶域、PnP
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec21cad95e73fee1f7e0d2d47b354bbdd9cf135
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339841"
 ---
-# <a name="use-only-supplied-resources-in-a-plug-and-play-scsi-miniport"></a>指定したプラグ アンド プレイの SCSI ミニポート内のリソースのみを使用
+# <a name="use-only-supplied-resources-in-a-plug-and-play-scsi-miniport"></a>プラグ アンド プレイの SCSI ミニポートで提供されたリソースのみの使用
 
 
 ## <span id="ddk_use_only_supplied_resources_in_a_plug_and_play_scsi_miniport_kg"></span><span id="DDK_USE_ONLY_SUPPLIED_RESOURCES_IN_A_PLUG_AND_PLAY_SCSI_MINIPORT_KG"></span>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 982d0b18fe330785cadc60810c8c205c1dfb9642
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333093"
 ---
 # <a name="kspropertyaecstatus"></a>KSPROPERTY\_AEC\_状態
 
@@ -51,7 +51,7 @@ KSPROPERTY\_AEC\_AEC ノードの状態を監視する STATUS プロパティが
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
@@ -72,7 +72,7 @@ KSPROPERTY\_AEC\_AEC ノードの状態を監視する STATUS プロパティが
 <thead>
 <tr class="header">
 <th align="left">AEC の状態フラグ</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">DSCFX_AEC_STATUS フラグ</th>
 </tr>
 </thead>
@@ -121,7 +121,7 @@ AEC ノードを含むフィルターを作成またはノードがリセット�
 
 CH ステータス ビットを使用する代わりに、アプリケーションは、AEC をチェックしてリアルタイムの収束の状態を監視できます\_状態\_FD\_現在\_収束フラグ ビットです。 このビットが設定されている場合、アルゴリズムが現在集約します。 アルゴリズム音響パスが変更された場合に一時的に収束が失われることができます。 このような一時的な損失が不適切な CH ステータス ビットを DSCFX に切り替えることを防ぐために、リアルタイムの収束フラグがフィルター選択された\_AEC\_状態\_FD\_履歴\_以前\_困難になった状態です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

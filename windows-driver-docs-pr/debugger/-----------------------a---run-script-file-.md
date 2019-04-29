@@ -20,11 +20,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b6d169b34905526d7358f1dbe4c93883935a991
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334868"
 ---
 # <a name="-----a-run-script-file"></a>$<、$><、$$<、$$><、$$ >a< (スクリプト ファイルの実行)
 
@@ -80,7 +80,7 @@ ms.locfileid: "56572939"
 
 **$$ &gt; &lt;** と**$ &gt; &lt;** トークンは、文字どおり、スクリプト ファイルに含まれるコマンドを実行します。つまり、スクリプト ファイルを開き、セミコロンでは、すべての改行を置き換えますおよび 1 つのコマンド ブロックとして生成されるテキストを実行します。 同様**$ &lt;** 、先ほど説明した、 **$ &gt; &lt;** バリエーションにより、セミコロンを含むファイル名、つまり連結することはできません**$ &gt; &lt;** 他のデバッガー コマンドを使用します。
 
-**$$ &gt; &lt;** と**$ &gt; &lt;** トークンは、デバッガー コマンドが含まれているスクリプトを実行している場合に役立ちます。プログラム。 これらのプログラムの詳細については、[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)を参照してください。
+**$$ &gt; &lt;** と**$ &gt; &lt;** トークンは、デバッガー コマンドが含まれているスクリプトを実行している場合に役立ちます。プログラム。 これらのプログラムの詳細については、次を参照してください。[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)します。
 
 セミコロンを含むファイル名がない場合はいずれかを使用する必要はありません**$ &lt;** または **$ &gt; &lt;** します。
 
@@ -111,36 +111,36 @@ ms.locfileid: "56572939"
 <tr class="odd">
 <td align="left"><p><strong>$&lt;</strong></p></td>
 <td align="left"><p>はい</p></td>
+<td align="left"><p>X</p></td>
 <td align="left"><p>いいえ</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>$&gt;&lt;</strong></p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$$&lt;</strong></p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 <td align="left"><p>いいえ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>$$&gt;&lt;</strong></p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>[はい]</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$$&gt;A&lt;</strong></p></td>
 <td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>[はい]</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>はい</p></td>
 </tr>
 </tbody>

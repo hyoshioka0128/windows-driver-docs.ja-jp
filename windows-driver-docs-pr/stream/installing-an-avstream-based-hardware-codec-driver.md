@@ -1,19 +1,19 @@
 ---
-title: コーデック AVStream ベースのハードウェア ドライバーをインストールします。
-description: コーデック AVStream ベースのハードウェア ドライバーをインストールします。
+title: AVStream ベースのハードウェア コーデック ドライバーのインストール
+description: AVStream ベースのハードウェア コーデック ドライバーのインストール
 ms.assetid: 7b3bbff7-c8e7-47ea-a455-66f01a552e3b
 keywords:
 - ハードウェアのコーデック サポート WDK AVStream、ドライバーをインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dff4b47ff25c9ac37e7f1c15521ccbbf480d1102
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386498"
 ---
-# <a name="installing-an-avstream-based-hardware-codec-driver"></a>コーデック AVStream ベースのハードウェア ドライバーをインストールします。
+# <a name="installing-an-avstream-based-hardware-codec-driver"></a>AVStream ベースのハードウェア コーデック ドライバーのインストール
 
 
 AVStream ベースのドライバーをサポートするハードウェア コーデックを持つその他の AVStream ミニドライバーのような INF ファイルを指定します。 ただし、ハードウェア ベンダーは、特定のドライバーの動作を容易に含めることができる 2 つの特定のエントリがあります。

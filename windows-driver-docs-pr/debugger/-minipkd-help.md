@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 005fb48ab498aafad1f79b443d68bf37118ce51c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336077"
 ---
-# <a name="minipkdhelp"></a>! minipkd.help
+# <a name="minipkdhelp"></a>!minipkd.help
 
 
 **! Minipkd.help**拡張子 Minipkd.dll 拡張機能コマンドのヘルプ テキストを表示します。
@@ -51,7 +51,7 @@ ms.locfileid: "56538776"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[SCSI ミニポート デバッグ](scsi-miniport-debugging.md)を参照してください。
+詳細については、次を参照してください。 [SCSI ミニポート デバッグ](scsi-miniport-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------

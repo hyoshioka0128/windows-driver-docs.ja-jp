@@ -1,17 +1,17 @@
 ---
-title: デバイス情報のアカウントの変更の通知を受け取る
-description: デバイス情報のアカウントの変更の通知を受け取る
+title: 変更に関するデバイス情報アカウントの通知を受信する
+description: 変更に関するデバイス情報アカウントの通知を受信する
 ms.assetid: 67d96f61-57dc-4e4b-a6c1-5c3da28e8aaf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9732c1c3412adcfe49f419645e0d9220402c87d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335429"
 ---
-# <a name="receive-notification-for-device-information-account-changes"></a>デバイス情報のアカウントの変更の通知を受け取る
+# <a name="receive-notification-for-device-information-account-changes"></a>変更に関するデバイス情報アカウントの通知を受信する
 
 
 デバイス情報のアカウントの変更の通知を受信するには、使用、 [ **AccountUpdated** ](https://msdn.microsoft.com/library/windows/apps/hh770601)のイベント[ **MobileBroadbandAccountWatcher** ](https://msdn.microsoft.com/library/windows/apps/hh770597)ここで説明します。
@@ -26,7 +26,7 @@ ms.locfileid: "56560927"
 
 5.  デバイスの情報が変更された場合は、アカウントを照会[ **CurrentDeviceInformation.TelephoneNumbers** ](https://msdn.microsoft.com/library/windows/apps/br207373)電話番号のプロパティ。
 
-    次に、例を示します。
+    例:
 
     ``` syntax
     if (account.currentDeviceInformation.TelephoneNumbers.length > 0)

@@ -1,6 +1,6 @@
 ---
-title: 待機および Apc
-description: 待機および Apc
+title: 待機と APC
+description: 待機と APC
 ms.assetid: b967beec-922c-4acf-a578-c476ce024fdb
 keywords:
 - カーネルのディスパッチャー オブジェクト WDK、アラート
@@ -16,13 +16,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5536a081e269ab3905e3f080030f4ae77d20d2a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391445"
 ---
-# <a name="waits-and-apcs"></a>待機および Apc
+# <a name="waits-and-apcs"></a>待機と APC
 
 
 
@@ -79,7 +79,7 @@ ms.locfileid: "56560229"
 
  
 
-スレッドのカーネルの Apc を無効にすることができます。 スレッド カーネル Apc を無効にするには、ユーザー APC 配信とそのスレッドのスレッドの終了の両方も無効となります。 Apc を無効にする方法の詳細については、[Apc を無効にすると](disabling-apcs.md)を参照してください。
+スレッドのカーネルの Apc を無効にすることができます。 スレッド カーネル Apc を無効にするには、ユーザー APC 配信とそのスレッドのスレッドの終了の両方も無効となります。 Apc を無効にする方法の詳細については、次を参照してください。 [Apc を無効にすると](disabling-apcs.md)します。
 
 アラート、使用頻度の低いのメカニズムは、オペレーティング システムの内部では、アラートの待機状態は中断もできます。 アラートは、待機を中断できる場合に*Alertable* = **TRUE**の値に関係なく、 *WaitMode*パラメーター。 待機中のルーチンは、状態の値を返します\_ALERTED します。
 

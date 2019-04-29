@@ -7,11 +7,11 @@ keywords:
 - OID_WDI_IHV_REQUEST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f43c8346914f3d22437ef37412f32ce862ac9eec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331232"
 ---
 # <a name="oidwdiihvrequest"></a>OID\_WDI\_IHV\_要求
 
@@ -31,7 +31,7 @@ OID\_WDI\_IHV\_IHV の機能拡張モジュールが、ミニポートに送信�
 
 | TLV                                                  | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                        |
 |------------------------------------------------------|--------------------------------|----------|----------------------------------------------------|
-| [**WDI\_TLV\_IHV\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn926312) |                                | X        | IHV 機能拡張のモジュールからの情報。 |
+| [**WDI\_TLV\_IHV\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn926312) |                                | x        | IHV 機能拡張のモジュールからの情報。 |
 
  
 
@@ -40,7 +40,7 @@ OID\_WDI\_IHV\_IHV の機能拡張モジュールが、ミニポートに送信�
 
 | TLV                                                  | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                 |
 |------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn926312) |                                | X        | IHV 機能拡張のモジュールに送信される応答です。 データ値として転送-IHV 機能拡張のモジュールには。 |
+| [**WDI\_TLV\_IHV\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn926312) |                                | x        | IHV 機能拡張のモジュールに送信される応答です。 データ値として転送-IHV 機能拡張のモジュールには。 |
 
  
 

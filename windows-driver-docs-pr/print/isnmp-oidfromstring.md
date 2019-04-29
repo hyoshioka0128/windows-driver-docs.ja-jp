@@ -23,11 +23,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1458d9820f7bc2766c8f07f74b982d1b5d6a6fa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384182"
 ---
 # <a name="isnmpoidfromstring-method"></a>ISNMP::OIDFromString メソッド
 
@@ -70,7 +70,7 @@ Win32 エラー コードを返すこともできます。
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>S_OK を返します</strong></td>
+<td><strong>S_OK</strong></td>
 <td><p>操作に成功しました。</p></td>
 </tr>
 <tr class="even">
@@ -79,7 +79,7 @@ Win32 エラー コードを返すこともできます。
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
-<td><p>メモリ不足です。</p></td>
+<td><p>メモリ不足。</p></td>
 </tr>
 </tbody>
 </table>
@@ -97,7 +97,7 @@ objSNMP.Open strIP, strCommunity, 2, 1000
 OIDArray = objSNMP.OIDFromString (". 43.18.1.1.2")
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

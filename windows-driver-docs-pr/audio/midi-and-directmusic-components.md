@@ -1,6 +1,6 @@
 ---
-title: MIDI と DirectMusic コンポーネント
-description: MIDI と DirectMusic コンポーネント
+title: MIDI と DirectMusic のコンポーネント
+description: MIDI と DirectMusic のコンポーネント
 ms.assetid: 6334f332-31ba-4daf-aad1-94bb65d25153
 keywords:
 - WDM オーディオ コンポーネント WDK
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d12949b12e9eff3eb0478749773094e8749833b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332360"
 ---
-# <a name="midi-and-directmusic-components"></a>MIDI と DirectMusic コンポーネント
+# <a name="midi-and-directmusic-components"></a>MIDI と DirectMusic のコンポーネント
 
 
 ## <span id="midi_and_directmusic_components"></span><span id="MIDI_AND_DIRECTMUSIC_COMPONENTS"></span>

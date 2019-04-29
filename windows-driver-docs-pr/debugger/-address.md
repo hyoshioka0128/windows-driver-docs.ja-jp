@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7763b9c07c2d2a34e9a3c1f3838a3266a0743c6e
-ms.sourcegitcommit: bb4f9c8dab2f4cb7a57ebd30457f427d909c928f
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58624779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334793"
 ---
 # <a name="address"></a>!address
 
@@ -255,7 +255,7 @@ ms.locfileid: "58624779"
 <thead>
 <tr class="header">
 <th align="left">オプション</th>
-<th align="left">出力の形式</th>
+<th align="left">[出力形式]</th>
 </tr>
 </thead>
 <tbody>
@@ -356,7 +356,7 @@ ms.locfileid: "58624779"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-メモリの表示と検索する方法の詳細については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。 メモリのプロパティを表示する追加の拡張機能を参照してください。 [ **! vm** ](-vm.md) (カーネル モード) と[ **! vprot** ](-vprot.md) (ユーザー モード)。
+メモリの表示と検索する方法の詳細については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。 メモリのプロパティを表示する追加の拡張機能を参照してください。 [ **! vm** ](-vm.md) (カーネル モード) と[ **! vprot** ](-vprot.md) (ユーザー モード)。
 
 <a name="remarks"></a>コメント
 -------

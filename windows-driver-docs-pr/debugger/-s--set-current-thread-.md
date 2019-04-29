@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 114768f905bef5a601b4883fc72df1160e8ef34c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335763"
 ---
 # <a name="s-set-current-thread"></a>~s (現在のスレッドの設定)
 
@@ -35,7 +35,7 @@ ms.locfileid: "56570679"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-設定または表示するスレッドを指定します。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+設定または表示するスレッドを指定します。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -64,9 +64,9 @@ ms.locfileid: "56570679"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-表示するためのプロセスとスレッドを制御するには、他の方法と詳細については、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+表示するためのプロセスとスレッドを制御するには、他の方法と詳細については、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 スレッドは、ユーザー モードでのみ指定できます。 カーネル モードではチルダ (~) は、プロセッサを表します。

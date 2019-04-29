@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2178bf38d5d6e4a9d393f1b54612d646cb2805a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331382"
 ---
 # <a name="exttdopsetfromu64expr"></a>EXT\_TDOP\_設定\_FROM\_U64\_EXPR
 
@@ -42,7 +42,7 @@ EXT に設定\_TDOP\_設定\_FROM\_U64\_EXPR このサブ操作。
 <span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状態**  
 このサブ操作によって返されるステータス コードを受け取ります。 これは、によって返される値と同じ[**要求**](request.md)します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 EXT\_TDOP\_設定\_FROM\_U64\_EXPR の値、 [ **EXT\_TDOP** ](https://msdn.microsoft.com/library/windows/hardware/ff544529)列挙体。

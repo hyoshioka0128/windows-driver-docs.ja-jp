@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f71c3fdfd19db1bdb2f20d080c85b6856b2c7137
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335639"
 ---
 # <a name="usb3kdxhciresourceusage"></a>! usb3kd.xhci\_resourceusage
 
@@ -42,9 +42,9 @@ Usb3kd.dll
 <a name="remarks"></a>注釈
 -------
 
-出力、 **! xhci\_resourceusage**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)を参照してください。
+出力、 **! xhci\_resourceusage**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
 デバイス拡張機能のアドレスを取得する出力の確認、 [ **! xhci\_dumpall** ](-usb3kd-xhci-dumpall.md)コマンド。 次の例では、デバイスの拡張機能のアドレスは、0xfffffa800536e2d0 です。

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_CREATE_MAC ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d1a9d416aa8890ca81aa0dd9ae54d3183bd5aad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386726"
 ---
 # <a name="oidwwancreatemac"></a>OID\_WWAN\_作成\_MAC
 
@@ -21,7 +21,7 @@ OID\_WWAN\_作成\_MAC は、新しい NDIS ポートを作成するミニポー
 
 クエリ要求はサポートされていません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ミニポート ドライバーを作成する要求を処理する必要があります (アクティブ化) のデッドロックを防ぐために非同期的に新しい NDIS ポート。

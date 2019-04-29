@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c2db83ad4be87df7cdff1b7bb496971e659173b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333358"
 ---
 # <a name="kseventloopedstreamingposition"></a>KSEVENT\_LOOPEDSTREAMING\_位置
 
@@ -69,7 +69,7 @@ WavePci と WaveCyclic ポート ドライバーには、Windows Server 2003、W
 
 ループのバッファーが型のオーディオ ストリームのデータ バッファー [ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563381)します。 Play またはカーソルの記録がループのバッファーの末尾に達すると、カーソルは、バッファーの先頭にラップします。
 
-ループのバッファー、バッファーの位置と再生およびレコードのカーソルに関する詳細については、[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)を参照してください。
+ループのバッファー、バッファーの位置と再生およびレコードのカーソルに関する詳細については、次を参照してください。[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)します。
 
 <a name="requirements"></a>要件
 ------------

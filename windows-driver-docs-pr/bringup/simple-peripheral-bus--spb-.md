@@ -5,11 +5,11 @@ ms.assetid: E85BDD36-7ECE-47DB-A770-E28DA8383BA2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcdbec4748deb281f462f2416f865f1dfb89d30a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337399"
 ---
 # <a name="simple-peripheral-bus-spb"></a>SPB (Simple Peripheral Bus)
 

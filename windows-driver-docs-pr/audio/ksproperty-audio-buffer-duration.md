@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 749bbdc6239b9b986303523494aea91bc1568eec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333121"
 ---
 # <a name="kspropertyaudiobufferduration"></a>KSPROPERTY\_オーディオ\_バッファー\_期間
 
@@ -39,16 +39,16 @@ KSPROPERTY\_オーディオ\_バッファー\_期間プロパティは、期間�
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p>KSPROPERTY</p></td>
 <td align="left"><p>ULONG</p></td>
@@ -64,12 +64,12 @@ KSPROPERTY\_オーディオ\_バッファー\_期間プロパティは、期間�
 
 KSPROPERTY\_オーディオ\_バッファー\_期間プロパティ要求がステータスを返します\_プロパティ要求が正常に完了したことを示す成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 USB オーディオ デバイスのパフォーマンスを向上させるアイソクロナスのオーディオ データのキャプチャ要求の期間を調整することができます。 期間を短くは待機時間を削減しますが、USB オーディオ スタックがパフォーマンスの低下を引き起こす可能性がありますより頻繁に遅延プロシージャ呼び出し (DPC) を行う必要がありますも意味します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

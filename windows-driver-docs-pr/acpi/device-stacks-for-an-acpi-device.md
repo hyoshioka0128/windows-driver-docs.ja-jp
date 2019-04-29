@@ -1,6 +1,6 @@
 ---
-title: デバイスの ACPI デバイス スタック
-description: デバイスの ACPI デバイス スタック
+title: ACPI デバイスのデバイス スタック
+description: ACPI デバイスのデバイス スタック
 ms.assetid: f177d29f-eaf9-4126-8cb3-9355d977bfb0
 keywords:
 - ACPI デバイス WDK、デバイス スタック
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71b194c354abde00a56417143950921a2511715a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328853"
 ---
-# <a name="device-stacks-for-an-acpi-device"></a>デバイスの ACPI デバイス スタック
+# <a name="device-stacks-for-an-acpi-device"></a>ACPI デバイスのデバイス スタック
 
 
 

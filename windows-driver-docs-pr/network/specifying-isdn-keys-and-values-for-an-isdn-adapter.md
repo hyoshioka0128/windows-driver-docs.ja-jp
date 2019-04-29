@@ -1,6 +1,6 @@
 ---
-title: ISDN アダプターの ISDN キーと値を指定します。
-description: ISDN アダプターの ISDN キーと値を指定します。
+title: ISDN アダプターの ISDN キーと値の指定
+description: ISDN アダプターの ISDN キーと値の指定
 ms.assetid: ba2156c1-fb54-4e1e-b0ec-72aa2d950505
 keywords:
 - 追加レジストリ セクション WDK ネットワー キング、ISDN アダプター
@@ -8,19 +8,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84ccf565d14e9366e84bb020a0035f4cd426f2c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385423"
 ---
-# <a name="specifying-isdn-keys-and-values-for-an-isdn-adapter"></a>ISDN アダプターの ISDN キーと値を指定します。
+# <a name="specifying-isdn-keys-and-values-for-an-isdn-adapter"></a>ISDN アダプターの ISDN キーと値の指定
 
 
 
 
 
-加え、 **WanEndpoints**値の場合は、ISDN アダプターを追加する必要があります、INF ファイル (を通じて、*追加レジストリ セクション*) 次のキーと、アダプターのインスタンス キーの値。 詳細については、[WAN アダプター用の WAN のエンドポイントを指定する](specifying-wan-endpoints-for-a-wan-adapter.md)を参照してください。
+加え、 **WanEndpoints**値の場合は、ISDN アダプターを追加する必要があります、INF ファイル (を通じて、*追加レジストリ セクション*) 次のキーと、アダプターのインスタンス キーの値。 詳細については、次を参照してください。 [WAN アダプター用の WAN のエンドポイントを指定する](specifying-wan-endpoints-for-a-wan-adapter.md)します。
 
 **注**ISDN ドライバーが Windows 8.1、Windows Server 2012 R2 で非推奨とそれ以降。
 

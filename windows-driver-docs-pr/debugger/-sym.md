@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d83a66e563f5e3022f311c93d06593d51d929d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338774"
 ---
 # <a name="sym"></a>!sym
 
@@ -70,7 +70,7 @@ SymSrv 認証要求を受信したときに、すべての認証ダイアログ 
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 場合、 **! sym**引数なしで拡張機能が使用される、ノイズの多いシンボルの読み込みとシンボルのプロンプトの現在の状態が表示されます。

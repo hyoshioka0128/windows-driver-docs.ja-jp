@@ -5,11 +5,11 @@ ms.assetid: 6F167E5E-CA11-45F3-BF21-6B9A3F90DB9F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6165e1239ca91c60ef14e771b7007baf5adf07e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332542"
 ---
 # <a name="kspropsetidaudiomodule"></a>KSPROPSETID\_AudioModule
 
@@ -35,7 +35,7 @@ DEFINE_GUIDSTRUCT("C034FDB0-FF75-47C8-AA3C-EE46716B50C6", KSPROPSETID_AudioModul
 
 このプロパティ名が定義されている、 [ **KSPROPERTY\_AUDIOMODULE** ](ksproperty-audiomodule.md)列挙型。
 
-オーディオのモジュールの詳細については、[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)を参照してください。
+オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
 
  
 

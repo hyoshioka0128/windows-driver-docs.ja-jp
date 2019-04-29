@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bf1befcd5327060bf1e2c924ee4171ac7f3a4e56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334547"
 ---
 # <a name="echo-echo-comment"></a>.echo (コメントのエコー)
 
@@ -71,7 +71,7 @@ ms.locfileid: "56574857"
 0:000> bp `:143` "j (poi(MyVar)>5) '.echo MyVar Too Big'; '.echo MyVar Acceptable; gc' " 
 ```
 
-**.Echo**コマンド サーバーをデバッグ出力およびデバッグで互いと通信するクライアントのユーザーの簡単な方法も提供します。 このような状況の詳細については、[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)を参照してください。
+**.Echo**コマンド サーバーをデバッグ出力およびデバッグで互いと通信するクライアントのユーザーの簡単な方法も提供します。 このような状況の詳細については、次を参照してください。[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)します。
 
 **.Echo**コマンドとは異なります、 [ **$$ (コメント指定子)** ](-----comment-specifier-.md)トークンと[  **\* (コメント行指定子)**](----comment-line-specifier-.md)トークン、これらのトークンが、デバッガーを表示せずに、入力テキストを無視するためです。
 

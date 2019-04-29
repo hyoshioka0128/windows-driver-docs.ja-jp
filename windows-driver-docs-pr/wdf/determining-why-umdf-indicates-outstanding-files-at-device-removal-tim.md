@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 552b9ac5d04b0764ad1248649b828b02177340a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337859"
 ---
-# <a name="determining-why-umdf-indicates-outstanding-files-at-device-removal-time"></a>UMDF が未処理のファイルを示すデバイス削除時に理由を判断します。
+# <a name="determining-why-umdf-indicates-outstanding-files-at-device-removal-time"></a>デバイスの取り外し時に UMDF が未処理ファイルを示す理由の特定
 
 
 このトピックでは、ユーザー モード ドライバー フレームワーク (UMDF) のバージョン 1 または 2 ドライバーと組み合わせて Wudfext.dll デバッガー拡張機能を使用して UMDF がデバイスを削除したときに未処理のファイルが認識はことを示す理由を判断する方法について説明します。

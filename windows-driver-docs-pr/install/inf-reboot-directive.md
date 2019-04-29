@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4003c4f0f143187f339f0dc9a0092d2ed46faa20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335229"
 ---
 # <a name="inf-reboot-directive"></a>INF Reboot ディレクティブ
 
@@ -37,7 +37,7 @@ Reboot
 
 再起動のディレクティブを指定すると、システムの再起動がこの INF インストール セクションを使用して任意のデバイスのインストールを完了する必要があることが呼び出し元に通知されます。 ときに、インストールが開始された関数を通じてなど[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)、 [ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)、または[ **DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710)、その結果、 *NeedReboot* out パラメーターを TRUE に設定されているこれらのルーチンの。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 Windows 7 以降でのドライバーを使用してデバイスのインストールで、**再起動**ディレクティブは、システムの再起動がインストールの完了に必要なことを通知する、呼び出し元で常に得られます。

@@ -10,11 +10,11 @@ keywords:
 ms.date: 02/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 14d2690e1f9387e02b327202a3d3a8df239a78ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331302"
 ---
 # <a name="coppkeyexchange-function"></a>COPPKeyExchange 関数
 
@@ -60,7 +60,7 @@ RenderMoComp のコールバック関数が関数を使用せず、ディスプ�
 
 DD_RENDERMOCOMPDATA 構造は次のように入力されます。
 
-| メンバー | Value |
+| Member | 値 |
 |--|--|
 | dwNumBuffers | LpBufferInfo でバッファーの数。 値には 1 です。 |
 | lpBufferInfo | ハードウェアの証明書を保持するために必要な領域を含む 1 つの RGB32 システム メモリ サーフェスへのポインター。 COPPGetCertificateLength への呼び出しに必要なサーフェスの長さが返されました。 <br>システム メモリのサーフェスを使用する証明書のサイズが lpOutputData パラメーターを通じて渡されるバッファーの最大値のサイズを超えているため、証明書を返すことに注意してください。|
@@ -102,7 +102,7 @@ COPPKeyExchange(
 }
 ```
 
-**要件**
+**必要条件**
 
 | 対象プラットフォーム | バージョン |
 | -- | -- |

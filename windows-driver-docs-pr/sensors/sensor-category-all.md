@@ -14,11 +14,11 @@ api_type:
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c4150aa1e8e6be42ce8d0cc6ffd2de7101e21f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384895"
 ---
 # <a name="sensorcategoryall"></a>センサー\_カテゴリ\_すべて
 
@@ -29,7 +29,7 @@ ms.locfileid: "56539675"
 
 このカテゴリには、次のプラットフォームで定義されているデータ フィールドが含まれています。
 
-|データの種類|種類|意味|
+|データの種類|種類|説明|
 |--|--|--|
 |SENSOR_DATA_TYPE_TIMESTAMP|VT_FILETIME|すべてのデータのレポートに必要です。 データ レポートが作成された時間と各データ レポートをマークします。 世界協定時刻 (UTC) を使用します。|
  

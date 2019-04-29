@@ -1,17 +1,17 @@
 ---
-title: レポートのグラフィックス メモリ
-description: レポートのグラフィックス メモリ
+title: グラフィックス メモリのレポート
+description: グラフィックス メモリのレポート
 ms.assetid: a8a3dc08-1863-47ac-b41e-58ef38739c42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fdd097bd4d790fca517556d041a6bab2ac39d376
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383271"
 ---
-# <a name="reporting-graphics-memory"></a>レポートのグラフィックス メモリ
+# <a name="reporting-graphics-memory"></a>グラフィックス メモリのレポート
 
 
 ビデオ メモリ マネージャーは、ディスプレイのミニポート ドライバーを提供するメモリ情報の詳細をクライアントに報告します。

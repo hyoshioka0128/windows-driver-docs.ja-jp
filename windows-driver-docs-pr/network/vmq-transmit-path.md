@@ -5,11 +5,11 @@ ms.assetid: a34f0708-e477-4acc-b854-f00f752be423
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bdd173f2f25e2ef72373f1cc16fbbbf3e5237f2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327568"
 ---
 # <a name="vmq-transmit-path"></a>VMQ 送信パス
 
@@ -25,7 +25,7 @@ NDIS ドライバーを使用できます、 [ **NET\_バッファー\_一覧\_�
 
 ミニポート ドライバーの設定、NDIS\_送信\_完了\_フラグ\_単一\_ビットにキュー、 *SendCompleteFlags*のパラメーター、 [ **NdisMSendNetBufferListsComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563668)関数をすべて NET ことを示す\_バッファー\_呼び出しリストが同じ送信キューに送信されました。
 
-フィルターの条件の詳細については、[VMQ フィルター操作](vmq-filter-operations.md)を参照してください。
+フィルターの条件の詳細については、次を参照してください。 [VMQ フィルター操作](vmq-filter-operations.md)します。
 
 **注**  ときに、VMQ は (たとえば、VM のライブ マイグレーション) 中に削除すると、ミニポート ドライバーを含む無効な NBL を受信する可能性があります**QueueId**値。 この場合、ミニポートする必要があります無効なキューの ID を無視して、0 (既定のキュー) を使用して、代わりにします。 **QueueId**は、 **NetBufferListFilteringInfo** 、NBL の部分の OOB のデータとを使用して取得されて、 [ **NET\_バッファー\_一覧\_受信\_キュー\_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff568407)マクロ。
 

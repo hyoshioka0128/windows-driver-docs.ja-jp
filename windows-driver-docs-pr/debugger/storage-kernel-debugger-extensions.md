@@ -5,11 +5,11 @@ ms.assetid: 8EF83BC8-6ABB-496C-98A6-EF0298D78F76
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fe9018af0a2906d22c742a78b249d5a4ba8a0ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335517"
 ---
 # <a name="storage-kernel-debugger-extensions"></a>ストレージ カーネル デバッガー拡張機能
 
@@ -20,7 +20,7 @@ ms.locfileid: "56579392"
 
 参照してください[SCSI ミニポート拡張 (Scsikd.dll および Minipkd.dll)](scsi-miniport-extensions--scsikd-dll-and-minipkd-dll-.md) Windows 7 と以前のバージョンの OS のターゲットのニーズをデバッグします。
 
-**重要な**  特殊記号この拡張機能を使用する必要があります。 詳細については、[ツールを Windows のデバッグ](index.md)を参照してください。
+**重要な**  特殊記号この拡張機能を使用する必要があります。 詳細については、「 [Windows 用デバッグ ツールのダウンロードとインストール](index.md)」を参照してください。
 
  
 

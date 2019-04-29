@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a744b35346b16758aecb7754b375c4c2caa880f3
-ms.sourcegitcommit: e0953a7183f19937fefe1f62253c4b629926cd53
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59671435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383837"
 ---
 # <a name="filelock-structure"></a>ファイル\_ロック構造体
 
@@ -85,7 +85,7 @@ typedef struct _FILE_LOCK {
 
 ファイルの後に\_ロックがれました初期化、ルーチンなど[ **FsRtlCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545758)、 [ **FltCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541837)、および[ **FsRtlFastCheckLockForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff545918)ファイルを他のスレッドによってアクセスできるかどうかを判断するために使用できます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

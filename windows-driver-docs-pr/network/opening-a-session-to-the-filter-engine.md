@@ -10,16 +10,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 455f6b34ad5e1bc6551de23406673649cf5136bf
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384228"
 ---
 # <a name="opening-a-session-to-the-filter-engine"></a>フィルター エンジンへのセッションを開く
 
 
-コールアウト ドライバーでは、フィルター エンジンにフィルターを追加するなどの管理タスクを実行するフィルター エンジンへのセッションを開く必要があります。 コールアウト ドライバーを呼び出すことによって、フィルター エンジンにセッションを開くと、 [ **FwpmEngineOpen0** ](https://msdn.microsoft.com/library/windows/hardware/ff550075)関数。 以下に例を示します。
+コールアウト ドライバーでは、フィルター エンジンにフィルターを追加するなどの管理タスクを実行するフィルター エンジンへのセッションを開く必要があります。 コールアウト ドライバーを呼び出すことによって、フィルター エンジンにセッションを開くと、 [ **FwpmEngineOpen0** ](https://msdn.microsoft.com/library/windows/hardware/ff550075)関数。 次に、例を示します。
 
 ```cpp
 HANDLE engineHandle;

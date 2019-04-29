@@ -1,17 +1,17 @@
 ---
-title: Bluetooth に関する FAQ
+title: Bluetooth についてよく寄せられる質問
 description: この FAQ のセクションでは、Windows ファミリのオペレーティング システムの Bluetooth ワイヤレス技術のサポートについての情報を提供します。
 ms.assetid: 529DD4A2-4E4B-47F4-BD65-BE89EA21E217
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c18d2e9d8420c09dfb2bf3d8cc890dd77a59454c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328310"
 ---
-# <a name="bluetooth-faq"></a>Bluetooth に関する FAQ
+# <a name="bluetooth-faq"></a>Bluetooth についてよく寄せられる質問
 
 
 この FAQ のセクションでは、Windows ファミリのオペレーティング システムの Bluetooth ワイヤレス技術のサポートについての情報を提供します。 主に初心者、ハードウェアとソフトウェアの開発者向けの Windows とアドレスに関する Bluetooth エコシステムには、独立系ハードウェア ベンダー (Ihv) するためのものです。

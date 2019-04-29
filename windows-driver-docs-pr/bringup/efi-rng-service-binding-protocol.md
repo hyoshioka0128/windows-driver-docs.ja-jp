@@ -5,11 +5,11 @@ ms.assetid: 3CAD0FD8-DD26-4D26-A9E9-4B2750985E00
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ffb9e550304f102452a6ab2368548b04450310b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335043"
 ---
 # <a name="efirngservicebindingprotocol"></a>EFI\_RNG\_サービス\_バインド\_プロトコル
 
@@ -27,7 +27,7 @@ EFI\_RNG\_サービス\_バインド\_プロトコルを使用して、ドライ
   {0xe417a4a2, 0x0843, 0x4619, 0xbf, 0x11, 0x5c, 0xe8, 0x2a, 0xfc, 0xfc, 0x59};
 ```
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 
 アプリケーションまたは RNG サービスが必要なドライバーは EFI など、プロトコル ハンドラーのサービスのいずれかで使用できる\_ブート\_サービス -&gt;、EFI を公開するデバイスを検索、LocateHandleBuffer()\_RNG\_サービス\_バインド\_プロトコル。 パブリッシュされた efi を搭載した各デバイス\_RNG\_サービス\_バインド\_プロトコルのサポートは、EFI\_RNG\_プロトコルし使用するために使用できるようにします。
@@ -36,7 +36,7 @@ EFI に成功した呼び出しの後に\_RNG\_サービス\_バインド\_プ�
 
 アプリケーションはすべて、EFI の成功した呼び出しの実行を終了する前に\_RNG\_サービス\_バインド\_プロトコル。CreateChild() 関数は、EFI への呼び出しと一致する必要があります\_RNG\_サービス\_バインド\_プロトコル。DestroyChild() 関数。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
 **ヘッダー:** ユーザーが生成しました。

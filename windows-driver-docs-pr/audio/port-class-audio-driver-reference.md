@@ -5,11 +5,11 @@ ms.assetid: ce68e3fd-9d7e-4d9e-b30a-09c07a3bb805
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c811b3ba906f962f082011a98f5e7ebdfde7f4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328802"
 ---
 # <a name="port-class-audio-driver-reference"></a>ポート クラス オーディオ ドライバー リファレンス
 
@@ -23,7 +23,7 @@ ms.locfileid: "56571209"
 
 -   互いに通信するポートおよびミニポートのドライバーを使用するインターフェイスです。
 
-さまざまな PortCls 関数およびインターフェイスが、オペレーティング システムのバージョンがサポートについては、[オペレーティング システムによって PortCls サポート](https://msdn.microsoft.com/library/windows/hardware/ff537762)を参照してください。
+さまざまな PortCls 関数およびインターフェイスが、オペレーティング システムのバージョンがサポートについては、次を参照してください。[オペレーティング システムによって PortCls サポート](https://msdn.microsoft.com/library/windows/hardware/ff537762)します。
 
 このセクションでは、次のトピックが表示されます。
 

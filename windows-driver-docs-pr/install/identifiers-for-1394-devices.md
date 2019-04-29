@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c1ce1e6a3f9261b6619f483b47fdee6a80f43c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335351"
 ---
 # <a name="identifiers-for-1394-devices"></a>1394 デバイスの識別子
 

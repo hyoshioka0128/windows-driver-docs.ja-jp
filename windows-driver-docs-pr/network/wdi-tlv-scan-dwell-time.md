@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_SCAN_DWELL_TIME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bf470aba7780223e2d2d609b255198663a392ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330718"
 ---
 # <a name="wditlvscandwelltime"></a>WDI\_TLV\_スキャン\_熟考\_時間
 
@@ -31,7 +31,7 @@ WDI\_TLV\_スキャン\_熟考\_時間はスキャン ドウェル時刻の設�
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                                                                           |
+| 型   | 説明                                                                                                                                                                           |
 |--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT32 | アクティブなチャネルについて熟考するミリ秒単位の時間を指定します。 これは、ヒントであり、最大のスキャンの時間の要件を満たす必要があります、アダプター独自ドウェル時刻を使用する場合。  |
 | UINT32 | パッシブなチャネルについて熟考するミリ秒単位の時間を指定します。 これは、ヒントであり、最大のスキャンの時間の要件を満たす必要があります、アダプター独自ドウェル時刻を使用する場合。 |

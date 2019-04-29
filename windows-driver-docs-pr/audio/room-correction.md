@@ -5,11 +5,11 @@ ms.assetid: da7a8a88-d1d9-498f-896f-9d9c2b31b807
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e61bc55e81c59588ff5425dc377eb0b4f78e72c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328664"
 ---
 # <a name="room-correction"></a>室内音響補正
 

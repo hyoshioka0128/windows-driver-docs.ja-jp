@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f2faf789b94ec85bcc1503bf59329c3076b0cd2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336533"
 ---
 # <a name="gs"></a>!gs
 
@@ -49,7 +49,7 @@ ms.locfileid: "56582041"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **! Gs**拡張機能により、バッファー オーバーランをデバッグします。 実行 **! gs**状態が発生した\_スタック\_バッファー\_オーバーラン エラーは、次の例を示します。

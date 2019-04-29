@@ -5,11 +5,11 @@ ms.assetid: 17DEDF05-482C-44A8-91E8-50AF252F540D
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16cffac2f95c2c64260e62be11e55c972d13fcae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332180"
 ---
 # <a name="pkeymfxkeyworddetectorprocessingmodessupportedforstreaming"></a>鍵\_MFX\_KeywordDetector\_ProcessingModes\_サポート\_の\_ストリーミング
 

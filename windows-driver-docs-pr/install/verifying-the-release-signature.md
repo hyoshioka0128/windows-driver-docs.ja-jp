@@ -5,11 +5,11 @@ ms.assetid: 28ed3bb6-dc57-42f9-8bd5-7118619f3bf5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc0e13a995606f97c117aacb3a3cebb6a6486a8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339326"
 ---
 # <a name="verifying-the-release-signature"></a>リリース署名の検証
 
@@ -78,7 +78,7 @@ Windows エクスプ ローラーで、カタログ ファイル自体のデジ�
 
 -   デジタル署名されたファイルの場合、ファイルの**プロパティ** ダイアログ ボックスが追加**デジタル署名**を タブ、署名、タイムスタンプ、およびファイルの署名に使用された証明書の詳細表示されます。
 
-ドライバー パッケージをリリース署名する方法の詳細については、[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[カタログ ファイルの署名の SPC 検証](verifying-the-spc-signature-of-a-catalog-file.md)を参照してください。
+ドライバー パッケージをリリース署名する方法の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)と[カタログ ファイルの署名の SPC 検証](verifying-the-spc-signature-of-a-catalog-file.md)です。
 
  
 

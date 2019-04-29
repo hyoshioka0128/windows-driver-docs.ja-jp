@@ -5,11 +5,11 @@ ms.assetid: 7b055baa-1843-4e31-a98e-48b05de94e70
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 979c3247d087ce45384c98a91914595974f82383
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333851"
 ---
 # <a name="custom-audio-driver-type-decision-tree"></a>カスタム オーディオ ドライバーの種類のデシジョン ツリー
 
@@ -30,7 +30,7 @@ PortCls と AVStream のオーディオ ドライバーの概要を説明し、�
 <span id="AVStream_Overview"></span><span id="avstream_overview"></span><span id="AVSTREAM_OVERVIEW"></span>[AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)  
 AVStream ベースのドライバーのアーキテクチャの概要を提供し、この種類のドライバーが最適な選択肢をケースを強調表示します。
 
-について、オーディオ ドライバーを使用するデータ形式と、さまざまな形式をサポートする必要もあります。 データ形式と範囲の詳細については、[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)を参照してください。
+について、オーディオ ドライバーを使用するデータ形式と、さまざまな形式をサポートする必要もあります。 データ形式と範囲の詳細については、次を参照してください。[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)します。
 
 オーディオ ドライバーの開発のための手順を完了するを参照してください。 [WDM オーディオ ドライバーの開発のためのロードマップ](roadmap-for-developing-wdm-audio-drivers.md)します。
 

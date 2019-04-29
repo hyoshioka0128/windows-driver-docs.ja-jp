@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c41b63cde736165acf39cf9554be488c0bffbb6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336459"
 ---
 # <a name="hstring"></a>!hstring
 
@@ -34,7 +34,7 @@ ms.locfileid: "56578869"
 <span id="Address"></span><span id="address"></span><span id="ADDRESS"></span>*アドレス*  
 アドレス、 **HSTRING**します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **HSTRING**データ型は、NULL 文字が埋め込まれている文字列をサポートしています。 ただし、 **! hstring**拡張機能には、最初の NULL 文字までしか文字列が表示されます。 埋め込まれた NULL 文字を含む文字列全体を表示するには、使用、 [ **! hstring2** ](-hstring2.md)拡張機能。

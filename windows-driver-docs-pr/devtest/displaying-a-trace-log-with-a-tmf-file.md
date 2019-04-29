@@ -1,6 +1,6 @@
 ---
-title: TMF ファイルでトレース ログを表示します。
-description: TMF ファイルでトレース ログを表示します。
+title: TMF ファイルでのトレース ログの表示
+description: TMF ファイルでのトレース ログの表示
 ms.assetid: 1d592ed3-44d2-4d12-9d31-19b07e6962ea
 keywords:
 - トレース メッセージのフォーマット ファイル WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dbfc7f30e1627885971841f3d0aed0652d45c75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329687"
 ---
-# <a name="displaying-a-trace-log-with-a-tmf-file"></a>TMF ファイルでトレース ログを表示します。
+# <a name="displaying-a-trace-log-with-a-tmf-file"></a>TMF ファイルでのトレース ログの表示
 
 
 ## <span id="ddk_using_a_tmf_file_tools"></span><span id="DDK_USING_A_TMF_FILE_TOOLS"></span>
@@ -28,7 +28,7 @@ ms.locfileid: "56538470"
 
 3.  **ログ ファイル名**ボックスに、イベント トレース ログ ファイル (.etl) の名前とパスを入力します。 または、省略記号ボタンをクリックします (**.**)、ファイルに移動します。
 
-4.  **ログ ファイルの選択** ダイアログ ボックスで設定することも選択するその他の生成オプションは、ログ ファイルからファイルを出力します。 この手順は省略可能です。 詳細については、[トレース ログ オプションの設定](setting-trace-log-options.md)を参照してください。
+4.  **ログ ファイルの選択** ダイアログ ボックスで設定することも選択するその他の生成オプションは、ログ ファイルからファイルを出力します。 この手順は省略可能です。 詳細については、次を参照してください。[トレース ログ オプションの設定](setting-trace-log-options.md)します。
 
 5.  **[OK]** をクリックします。
 

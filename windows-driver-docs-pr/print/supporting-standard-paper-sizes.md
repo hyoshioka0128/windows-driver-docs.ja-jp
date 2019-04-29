@@ -1,19 +1,19 @@
 ---
-title: 標準の用紙サイズをサポートしています。
-description: 標準の用紙サイズをサポートしています。
+title: 標準の用紙サイズをサポートする
+description: 標準の用紙サイズをサポートする
 ms.assetid: 04f8fbdb-88f8-4595-b5d2-74315c02bb41
 keywords:
 - WDK Unidrv の標準の用紙サイズします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ee3143567a530f06e80f3613a1cf04e57401bd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331750"
 ---
-# <a name="supporting-standard-paper-sizes"></a>標準の用紙サイズをサポートしています。
+# <a name="supporting-standard-paper-sizes"></a>標準の用紙サイズをサポートする
 
 
 

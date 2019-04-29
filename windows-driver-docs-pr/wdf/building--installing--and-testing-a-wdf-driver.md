@@ -1,17 +1,17 @@
 ---
-title: ビルド、インストール、およびテスト
+title: ビルド、インストール、テスト
 description: このセクションでは、Microsoft Visual Studio での Windows Driver Frameworks (WDF) ドライバーをビルドする方法、共同インストーラーを提供する必要があるかどうかや、WDF Verifier と組み込みのイベント ログを使用してドライバーをテストする方法について説明します。
 ms.assetid: 178E51A0-A6FA-42A7-958C-6D2A5F195B58
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3df8b5cf3d8f54956428d44d33a61293b4007f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330884"
 ---
-# <a name="building-installing-and-testing"></a>ビルド、インストール、およびテスト
+# <a name="building-installing-and-testing"></a>ビルド、インストール、テスト
 
 
 このセクションでは、Microsoft Visual Studio での Windows Driver Frameworks (WDF) ドライバーをビルドする方法、共同インストーラーを提供する必要があるかどうかや、WDF Verifier と組み込みのイベント ログを使用してドライバーをテストする方法について説明します。
@@ -20,7 +20,7 @@ ms.locfileid: "56530199"
 
 
 -   [ビルドと WDF ドライバーの読み込み](building-and-loading-a-kmdf-driver.md)
--   [複数のバージョンの Windows 用のドライバーを WDF の構築](building-a-wdf-driver-for-multiple-versions-of-windows.md)
+-   [複数のバージョンの Windows の WDF ドライバーをビルドする](building-a-wdf-driver-for-multiple-versions-of-windows.md)
 -   [再頒布可能フレームワーク コンポーネント](installation-components-for-kmdf-drivers.md)
 -   [KMDF 共同インストーラーを INF ファイルで指定します。](installing-the-framework-s-co-installer.md)
 -   [UMDF 共同インストーラーを使用します。](using-the-umdf-co-installer.md)

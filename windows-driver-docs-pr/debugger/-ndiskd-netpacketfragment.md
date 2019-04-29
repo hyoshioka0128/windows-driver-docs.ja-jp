@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 64db59a3e391c12e9aceaeb6bb3b9f6496ff9f59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335927"
 ---
-# <a name="ndiskdnetpacketfragment"></a>! ndiskd.netpacketfragment
+# <a name="ndiskdnetpacketfragment"></a>!ndiskd.netpacketfragment
 
 
 **! Ndiskd.netpacketfragment**拡張機能に関する情報を表示する、 [NET\_パケット\_フラグメント](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-packet-fragment)構造体。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)を参照してください。
+ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
 
 ```console
 !ndiskd.netpacketfragment [-handle <x>] 

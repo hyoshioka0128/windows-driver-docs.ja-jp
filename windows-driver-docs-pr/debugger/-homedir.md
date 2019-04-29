@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 74e85ade59232c03a23146028e52eb060288e296
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336521"
 ---
-# <a name="homedir"></a>! homedir
+# <a name="homedir"></a>!homedir
 
 
 **! Homedir**拡張機能は、シンボル サーバーと移行元サーバーで使用される既定のディレクトリを設定します。

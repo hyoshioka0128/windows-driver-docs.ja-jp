@@ -1,6 +1,6 @@
 ---
-title: Wave 出力の待機時間を規定する要因
-description: Wave 出力の待機時間を規定する要因
+title: Wave 出力の待機時間に影響を及ぼす要因
+description: Wave 出力の待機時間に影響を及ぼす要因
 ms.assetid: 6342ffd4-b0e8-41a4-ab97-1f658052748b
 keywords:
 - WDM オーディオ ドライバー WDK、待機時間
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb597f123eaa0992204f0b7125f13fcc389d1598
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333637"
 ---
-# <a name="factors-governing-wave-output-latency"></a>Wave 出力の待機時間を規定する要因
+# <a name="factors-governing-wave-output-latency"></a>Wave 出力の待機時間に影響を及ぼす要因
 
 
 ## <span id="factors_governing_wave_output_latency"></span><span id="FACTORS_GOVERNING_WAVE_OUTPUT_LATENCY"></span>
@@ -37,7 +37,7 @@ ms.locfileid: "56558965"
 
 -   DirectSound でストリームを生成するかどうか、または**waveOut** API
 
-次のトピックがについて説明します。
+次のトピックについて説明します。
 
 [WaveCyclic 待機時間](wavecyclic-latency.md)
 

@@ -1,6 +1,6 @@
 ---
-title: 動的サブデバイス登録および登録解除
-description: 動的サブデバイス登録および登録解除
+title: 動的サブデバイスの登録と登録解除
+description: 動的サブデバイスの登録と登録解除
 ms.assetid: 7157b7b3-655b-49d9-be45-c4a86a3cc82d
 keywords:
 - 動的サブデバイス WDK オーディオ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09d625ee56111367272c94f0575f21bb75df7e8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333817"
 ---
-# <a name="dynamic-subdevice-registration-and-unregistration"></a>動的サブデバイス登録および登録解除
+# <a name="dynamic-subdevice-registration-and-unregistration"></a>動的サブデバイスの登録と登録解除
 
 
 いくつかの形式のジャック プレゼンスの検出をサポートするデバイスには、動的なデバイスと呼ばれ、ジャックをサポートする必要があります、 [ **KSPROPERTY\_ジャック\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)プロパティ。 次の手順では、作成、登録、またはこれらの動的なデバイスに関連付けられているサブデバイスの登録を解除する動的なデバイスのドライバーによって使用されるアルゴリズムを示します。 フィルターの形式で、サブデバイスが作成されます。
@@ -45,7 +45,7 @@ ms.locfileid: "56539583"
 
 3.  ドライバーのセット、 **IsConnected**のメンバー、 **KSJACK\_説明**構造体を**FALSE**ジャックに接続されているデバイスがないことを示します。
 
-オーディオのエンドポイントのさまざまな状態の詳細については、[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)を参照してください。
+オーディオのエンドポイントのさまざまな状態の詳細については、次を参照してください。[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)します。
 
 サブデバイス登録および登録解除プロセスの前の説明に準拠するには、ジャック プレゼンスの検出をサポートするデバイス ドライバーは、挿入と削除をプラグインする応答で、次のように対応する必要があります。
 

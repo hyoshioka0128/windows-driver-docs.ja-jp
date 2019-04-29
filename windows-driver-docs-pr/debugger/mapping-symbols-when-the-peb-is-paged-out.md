@@ -1,17 +1,17 @@
 ---
-title: ページ アウトは、シンボルと、PEB のマッピング
-description: ページ アウトは、シンボルと、PEB のマッピング
+title: PEB がページアウトされている場合のシンボルの照合
+description: PEB がページアウトされている場合のシンボルの照合
 ms.assetid: dba9e686-81fc-4efa-a5c7-293b9e47e0b1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 720e77a91266fb7589bbaaf383c1b6fd6c361607
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383304"
 ---
-# <a name="mapping-symbols-when-the-peb-is-paged-out"></a>ページ アウトは、シンボルと、PEB のマッピング
+# <a name="mapping-symbols-when-the-peb-is-paged-out"></a>PEB がページアウトされている場合のシンボルの照合
 
 
 ## <span id="ddk_invalid_or_missing_symbols_dbg"></span><span id="DDK_INVALID_OR_MISSING_SYMBOLS_DBG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 6E50CD69-D385-4724-B6B1-85D42EFFC6F0
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 03e4f77618193c0778250e3a623f34899e3cac1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330413"
 ---
 # <a name="building-a-basic-v4-printer-driver"></a>基本的な v4 プリンター ドライバーの構築
 
@@ -278,7 +278,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 7. **[OK]** をクリックします。
 
-### <a name="build-and-deploy-the-driver"></a>ビルドおよびドライバーの配置
+### <a name="build-and-deploy-the-driver"></a>ドライバーをビルドして展開する
 
 1. ソリューション エクスプ ローラーで右クリックして*ソリューション MyV4PrintDriver (2 プロジェクト)*、 をクリック**ソリューションのビルド**します。
 
@@ -288,7 +288,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 プラグ アンド プレイまたはプリンターの追加ウィザードを使用して印刷キューを作成します。
 
-V4 プリンター ドライバーの INF ファイルの詳細については、[V4 ドライバーの INF](v4-driver-inf.md)を参照してください。
+V4 プリンター ドライバーの INF ファイルの詳細については、次を参照してください。 [V4 ドライバーの INF](v4-driver-inf.md)します。
 
 > [!NOTE]
 > 上記の表に、ファイルだけでなくことに注意して、 *MyV4PrintDriver 表示フィルター*フォルダーが作成されました。 これは、レンダリングのフィルターのプロジェクト テンプレートと XPS の表示フィルターと XPS フィルター パイプライン構成ファイルを構築するための優れた基盤を提供します。 XPS 表示フィルターの詳細については、次を参照してください。 [XPSDrv レンダリング モジュール](xpsdrv-render-module.md)、XPS の表示フィルターの例を確認するには、参照してください、 [XPS ラスタライズ フィルター サービス](https://go.microsoft.com/fwlink/p/?LinkId=617951)サンプル。

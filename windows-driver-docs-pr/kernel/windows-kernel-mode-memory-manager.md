@@ -5,11 +5,11 @@ ms.assetid: ab464d5b-7bad-494e-80cd-e32ca9e9fa8d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8984b98fcc399c587d8c9c6c8511d9b9aaced9a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331926"
 ---
 # <a name="windows-kernel-mode-memory-manager"></a>Windows カーネルモード メモリ マネージャー
 
@@ -24,9 +24,9 @@ Windows カーネル モードのメモリ マネージャー コンポーネン
 
 ドライバーのメモリ管理についての詳細を参照してください。 [Windows ドライバーのメモリ管理](managing-memory-for-drivers.md)します。
 
-メモリ マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Mm**"。 たとえば、 **MmGetPhysicalAddress**します。 メモリ マネージャー ルーチンの一覧は、[Memory Manager ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff554435)を参照してください。
+メモリ マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Mm**"。 たとえば、 **MmGetPhysicalAddress**します。 メモリ マネージャー ルーチンの一覧は、次を参照してください。 [Memory Manager ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff554435)します。
 
-機能によって並べ替えられた、メモリ マネージャー ルーチンのリストは、[メモリの割り当てとバッファー管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#memory-allocation-and-buffer-management)を参照してください。
+機能によって並べ替えられた、メモリ マネージャー ルーチンのリストは、次を参照してください。[メモリの割り当てとバッファー管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/#memory-allocation-and-buffer-management)します。
 
  
 

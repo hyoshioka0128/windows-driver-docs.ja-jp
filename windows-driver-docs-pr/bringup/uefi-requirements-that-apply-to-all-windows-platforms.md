@@ -5,16 +5,16 @@ ms.assetid: 7A0B901E-1252-4F8F-B1CB-BA1AB7B01112
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c32694d75dcdd948d93f0fda50674f7fdf3abc55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337379"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC のプラットフォームでの Windows のエディションの UEFI 要件
 
 
-このトピックでは、デスクトップのエディション (Home、Pro、Enterprise、および Education) および Windows 10 Mobile、Windows 10 に適用される UEFI 要件について説明します。 Windows 10 Mobile のみに適用される追加の要件では、[Windows 10 Mobile の UEFI 要件](uefi-requirements-specific-to-windows-mobile.md)を参照してください。
+このトピックでは、デスクトップのエディション (Home、Pro、Enterprise、および Education) および Windows 10 Mobile、Windows 10 に適用される UEFI 要件について説明します。 Windows 10 Mobile のみに適用される追加の要件では、次を参照してください。 [Windows 10 Mobile の UEFI 要件](uefi-requirements-specific-to-windows-mobile.md)します。
 
 ## <a name="summary-of-requirements"></a>要件の概要
 
@@ -360,7 +360,7 @@ Windows では、セキュア ブート、メジャー ブート、暗号化、�
 <td>その他のセキュリティ要件</td>
 <td><p>Windows では、SoC プラットフォームで、次の追加要件が必要です。</p>
 <ul>
-<li><p>Microsoft では、UEFI のプラットフォームからエントロピを収集するためのプロトコルを定義します。 UEFI 要件ではありません、中にこのプロトコルは SoC プラットフォーム上で Windows に必要です。 このプロトコルの詳細については、<a href="uefi-entropy-gathering-protocol.md" data-raw-source="[UEFI entropy gathering protocol](uefi-entropy-gathering-protocol.md)">プロトコルを収集する UEFI エントロピ</a>を参照してください。</p></li>
+<li><p>Microsoft では、UEFI のプラットフォームからエントロピを収集するためのプロトコルを定義します。 UEFI 要件ではありません、中にこのプロトコルは SoC プラットフォーム上で Windows に必要です。 このプロトコルの詳細については、次を参照してください。<a href="uefi-entropy-gathering-protocol.md" data-raw-source="[UEFI entropy gathering protocol](uefi-entropy-gathering-protocol.md)">プロトコルを収集する UEFI エントロピ</a>します。</p></li>
 <li><p>UEFI 署名データベースの更新。 認証済みの変数を更新する新しいメカニズムは UEFI 2.3.1 のセクション 27 で採用されています。 このメカニズムは、Windows で必要です。</p></li>
 <li><p>信頼できる実行環境。 Microsoft は、信頼できる実行環境 (ツリー) Trusted Computing Group (TCG) トラステッド プラットフォーム モジュール (TPM) のサブセットと似た機能を操作する EFI プロトコルを開発しました。 EFI プロトコルは、大規模な程度、「TCG EFI プロトコル」、バージョン 1.2 改訂 1.00、2006 年 6 月 9 日、Trusted Computing Group 者を活用します。</p>
 <p>詳細については、 <a href="https://go.microsoft.com/fwlink/p/?LinkId=528536" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://go.microsoft.com/fwlink/p/?LinkId=528536)">UEFI 信頼できる実行環境の EFI プロトコル</a>します。</p></li>

@@ -1,6 +1,6 @@
 ---
-title: デバイス オブジェクトを作成します。
-description: デバイス オブジェクトを作成します。
+title: デバイス オブジェクトの作成
+description: デバイス オブジェクトの作成
 ms.assetid: 3eda8eb2-8a83-4753-a099-2531bfb9aeeb
 keywords:
 - デバイス オブジェクトの WDK カーネルを作成します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6df5bcdfd6ad60fdfd7c072c6743f7308055c6e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388300"
 ---
-# <a name="creating-a-device-object"></a>デバイス オブジェクトを作成します。
+# <a name="creating-a-device-object"></a>デバイス オブジェクトの作成
 
 
 
@@ -34,17 +34,17 @@ ms.locfileid: "56531082"
 
 ドライバーは、デバイス オブジェクトを作成するときに次の情報を提供**IoCreateDevice**または**IoCreateDeviceSecure**:
 
--   デバイスのサイズ*デバイス拡張機能*します。 デバイスの拡張機能は、デバイスに固有の記憶域のドライバーが使用できるシステムによって割り当てられたストレージ領域です。 詳細については、[デバイス拡張機能](device-extensions.md)を参照してください。
+-   デバイスのサイズ*デバイス拡張機能*します。 デバイスの拡張機能は、デバイスに固有の記憶域のドライバーが使用できるシステムによって割り当てられたストレージ領域です。 詳細については、次を参照してください。[デバイス拡張機能](device-extensions.md)します。
 
--   システム定義の定数を示す、 **DeviceType**デバイス オブジェクトによって表されます。 詳細については、[デバイスの種類の指定](specifying-device-types.md)を参照してください。
+-   システム定義の定数を示す、 **DeviceType**デバイス オブジェクトによって表されます。 詳細については、次を参照してください。[デバイスの種類の指定](specifying-device-types.md)します。
 
--   1 つ以上の論理和、デバイスのデバイスの特性を示すシステム定義の定数。 詳細については、[デバイスの特性を指定する](specifying-device-characteristics.md)を参照してください。
+-   1 つ以上の論理和、デバイスのデバイスの特性を示すシステム定義の定数。 詳細については、次を参照してください。[デバイスの特性を指定する](specifying-device-characteristics.md)します。
 
--   という名前のブール値*排他*を指定するか、デバイス オブジェクトのビットで**フラグ**で設定する必要があります\_排他、ドライバーなど、排他的なデバイスのサービスを示すビデオ、シリアル、パラレル、またはサウンド デバイスです。 WDM ドライバーを設定する必要があります*排他*に**FALSE**します。 詳細については、[デバイス オブジェクトに排他アクセスを指定する](specifying-exclusive-access-to-device-objects.md)を参照してください。
+-   という名前のブール値*排他*を指定するか、デバイス オブジェクトのビットで**フラグ**で設定する必要があります\_排他、ドライバーなど、排他的なデバイスのサービスを示すビデオ、シリアル、パラレル、またはサウンド デバイスです。 WDM ドライバーを設定する必要があります*排他*に**FALSE**します。 詳細については、次を参照してください。[デバイス オブジェクトに排他アクセスを指定する](specifying-exclusive-access-to-device-objects.md)します。
 
 -   ドライバーのドライバー オブジェクトへのポインター。 WDM 関数またはフィルター ドライバーでは、ドライバー、そのオブジェクトへのポインターを受け取るパラメーターとしてその[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。 すべてのドライバーがドライバー オブジェクトへのポインターを受け取る、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン。 システムでは、このポインターを使用して、ドライバーをそのデバイス オブジェクトに関連付けます。
 
--   Null で終わる Unicode 文字列に省略可能なポインター (*DeviceName*) デバイスの名前を付けします。 WDM ドライバー、バス ドライバー、以外は、デバイス名を指定しません。そのため、これには、PnP マネージャーのセキュリティ機能がバイパスされます。 詳細については、[という名前のデバイス オブジェクト](named-device-objects.md)を参照してください。
+-   Null で終わる Unicode 文字列に省略可能なポインター (*DeviceName*) デバイスの名前を付けします。 WDM ドライバー、バス ドライバー、以外は、デバイス名を指定しません。そのため、これには、PnP マネージャーのセキュリティ機能がバイパスされます。 詳細については、次を参照してください。[という名前のデバイス オブジェクト](named-device-objects.md)します。
 
 場合に呼び出し[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)または[ **IoCreateDeviceSecure** ](https://msdn.microsoft.com/library/windows/hardware/ff548407)成功すると、I/O マネージャーは、デバイス オブジェクトのストレージを提供します自体と、すべての他のデータ構造のデバイス オブジェクトに関連付けられている場合などのデバイスの拡張機能は、ゼロで初期化します。
 
@@ -52,7 +52,7 @@ ms.locfileid: "56531082"
 
 WDM ドライバー、バス ドライバー、以外を呼び出す**IoCreateDevice**それらのデバイス オブジェクトを作成します。 ほとんどの WDM ドライバー内からそれらのデバイス オブジェクトを作成する、 *AddDevice*ルーチン。 ドライブのレイアウト、Ioctl に対応する必要がありますディスク ドライバーなど、一部のドライバーを呼び出す**IoCreateDevice**ディスパッチ ルーチンから。
 
-Windows Driver Kit (WDK) ドキュメントの種類に固有のセクションではデバイスの状態それ以外の場合、しない場合、ドライバーがそのデバイス オブジェクトを作成する必要があります、 *AddDevice*ルーチン。 詳細については、[、AddDevice ルーチンを記述](writing-an-adddevice-routine.md)を参照してください。
+Windows Driver Kit (WDK) ドキュメントの種類に固有のセクションではデバイスの状態それ以外の場合、しない場合、ドライバーがそのデバイス オブジェクトを作成する必要があります、 *AddDevice*ルーチン。 詳細については、次を参照してください。 [、AddDevice ルーチンを記述](writing-an-adddevice-routine.md)します。
 
 ### <a name="creating-device-objects-for-wdm-bus-drivers"></a>WDM バス ドライバーのデバイス オブジェクトを作成します。
 
@@ -62,7 +62,7 @@ WDM バス ドライバーへの応答で新しいデバイスの列挙時に、
 
 -   デバイスで使用できる場合*raw モード*、呼び出すことが必要があります**IoCreateDeviceSecure**します。
 
--   デバイスが raw モードではない場合、対応、バス ドライバーを使用**IoCreateDevice**または**IoCreateDeviceSecure**します。 **IoCreateDevice**バス上のデバイスの既定のシステム セキュリティが適切ですときに使用できます。**IoCreateDeviceSecure**より厳格なセキュリティ記述子を指定するために使用できます。 詳細については、[デバイスへのアクセスを制御する](controlling-device-access.md)を参照してください。
+-   デバイスが raw モードではない場合、対応、バス ドライバーを使用**IoCreateDevice**または**IoCreateDeviceSecure**します。 **IoCreateDevice**バス上のデバイスの既定のシステム セキュリティが適切ですときに使用できます。**IoCreateDeviceSecure**より厳格なセキュリティ記述子を指定するために使用できます。 詳細については、次を参照してください。[デバイスへのアクセスを制御する](controlling-device-access.md)します。
 
 ### <a name="creating-device-objects-for-non-wdm-drivers"></a>非 WDM ドライバーのデバイス オブジェクトを作成します。
 

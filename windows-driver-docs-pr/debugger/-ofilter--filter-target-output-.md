@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a677e282689a761b13b40abbaea4427de4a5d19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334426"
 ---
 # <a name="ofilter-filter-target-output"></a>.ofilter (ターゲット出力のフィルター処理)
 
@@ -38,7 +38,7 @@ ms.locfileid: "56579804"
 デバッガーが含まれていない唯一の出力が表示されるようにフィルターを反転*文字列*します。 デバッガーを表示するこのパラメーターを使用しない場合のみ出力を含む*文字列*します。
 
 <span id="_______String______"></span><span id="_______string______"></span><span id="_______STRING______"></span> *文字列*   
-ターゲットの出力に一致する文字列を指定します。 *文字列*、スペースを含めることができますなどの C スタイルの制御文字を使用できません **\\"** と **\\n**します。 *文字列*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
+ターゲットの出力に一致する文字列を指定します。 *文字列*、スペースを含めることができますなどの C スタイルの制御文字を使用できません **\\"** と **\\n**します。 *文字列*さまざまなワイルドカード文字と指定子を含めることができます。 構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
 
 囲みます*文字列*引用符で囲んで指定します。 ただし場合、*文字列*セミコロン、スペースを先頭または末尾のスペースを含む引用符を使用する必要があります。 英数字で*文字列*を大文字に変換後の文字が大文字と小文字を区別しないが、実際のパターンに一致します。
 

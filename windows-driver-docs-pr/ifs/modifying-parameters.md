@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f4b3175b27ccc6a882bdd1a4548ec032cbaaa7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384276"
 ---
 # <a name="modifying-parameters"></a>パラメーターの修正
 
@@ -24,7 +24,7 @@ ms.locfileid: "56581748"
 
 ミニフィルター ドライバーがその preoperation コールバックまたはその postoperation コールバックでは、操作が失敗した操作を完了するときに操作の I/O 状態を変更 (状態を変更するなど\_はエラー状態に成功した場合)。 呼び出す必要はありません[ **FltSetCallbackDataDirty** ](https://msdn.microsoft.com/library/windows/hardware/ff544383)ここでします。
 
-パラメーターを変更する方法の詳細については、[I/O 操作のパラメーターを変更する](modifying-the-parameters-for-an-i-o-operation.md)を参照してください。
+パラメーターを変更する方法の詳細については、次を参照してください。 [I/O 操作のパラメーターを変更する](modifying-the-parameters-for-an-i-o-operation.md)します。
 
 「スワップ バッファー」の I/O 要求のバッファー フィールドを独自のバッファーに置き換えることによりミニフィルター ドライバー。 このようなミニフィルター ドライバーとは、I/O 要求のフィールドの MDL バッファーとの同期を保つ責任を負います。フィルター マネージャーの設定、FLTFL\_コールバック\_データ\_システム\_バッファー\_フラグ、 [ **FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)バッファーは、システムのバッファーであるかどうかであるかどうかはそのため、ミニフィルター ドライバーする必要があります非ページ プールから置換バッファーを割り当てる MDL のフィールドに設定を示す構造**NULL**します。 それ以外の場合、バッファー ページか、または非ページ プールから割り当てることができます、ミニフィルター ドライバーが作成常に、し、MDL を設定する必要があります。 (高速の I/O 操作の場合は、新しいバッファーをページか、または非ページ プールから割り当てられることができ、MDL 必要があります**NULL**)。バッファーまたは、置き換える MDL ミニフィルター ドライバーを解放する必要があり、MDL のコールバックのデータ構造 (フィルター マネージャーは、MDL をミニフィルター ドライバーの代わりに解放されます) に正しく挿入を解放する必要があります。 ミニフィルター ドライバーを呼び出す必要があります、MDL バッファーを変更を行った後[ **FltSetCallbackDataDirty**](https://msdn.microsoft.com/library/windows/hardware/ff544383)します。
 

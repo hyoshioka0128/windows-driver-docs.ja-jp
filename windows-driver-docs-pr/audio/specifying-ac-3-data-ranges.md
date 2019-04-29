@@ -1,6 +1,6 @@
 ---
-title: Ac-3 データ範囲を指定します。
-description: Ac-3 データ範囲を指定します。
+title: AC-3 データ範囲の指定
+description: AC-3 データ範囲の指定
 ms.assetid: 87d59554-43fa-4d61-9829-c38691d0a525
 keywords:
 - S/PDIF パススルー WDK オーディオ
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6b9480e9ad1d81af5d547f57bbe1f0f4ddfc70d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328620"
 ---
-# <a name="specifying-ac-3-data-ranges"></a>Ac-3 データ範囲を指定します。
+# <a name="specifying-ac-3-data-ranges"></a>AC-3 データ範囲の指定
 
 
 ## <span id="specifying_ac_3_data_ranges"></span><span id="SPECIFYING_AC_3_DATA_RANGES"></span>

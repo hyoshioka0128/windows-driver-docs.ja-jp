@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a19fabf60c052308b7e5b3d8254143339615c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334234"
 ---
-# <a name="sd"></a>! sd
+# <a name="sd"></a>!sd
 
 
 **! Sd**拡張機能は、指定したアドレスにセキュリティ記述子を表示します。
@@ -45,7 +45,7 @@ Exts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-アプリケーションとこのコマンドの例では、[オブジェクトの ACL の決定](determining-the-acl-of-an-object.md)を参照してください。 セキュリティ記述子の詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 参照してください[ **! sid** ](-sid.md)と[ **! acl**](-acl.md)します。
+アプリケーションとこのコマンドの例では、次を参照してください。[オブジェクトの ACL の決定](determining-the-acl-of-an-object.md)します。 セキュリティ記述子の詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 参照してください[ **! sid** ](-sid.md)と[ **! acl**](-acl.md)します。
 
 <a name="remarks"></a>注釈
 -------

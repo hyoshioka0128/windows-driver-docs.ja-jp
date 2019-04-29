@@ -1,6 +1,6 @@
 ---
-title: KMDF ドライバーからのデバッガーの中断
-description: KMDF ドライバーからのデバッガーの中断
+title: KMDF ドライバーからのデバッガーへの割り込み
+description: KMDF ドライバーからのデバッガーへの割り込み
 ms.assetid: b18e210c-cc9b-436c-b762-6346b946357c
 keywords:
 - ドライバー WDK KMDF、デバッガーの中断のデバッグ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7afbfcffa7b84d9464fbe292a193653e3597d9c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330869"
 ---
-# <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>KMDF ドライバーからのデバッガーの中断
+# <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>KMDF ドライバーからのデバッガーへの割り込み
 
 
 カーネル モードのデバッガーを中断する、framework ベースのドライバーを実行する場合に、次を使用できます。
@@ -33,7 +33,7 @@ ms.locfileid: "56536064"
 
 WDFVERIFY と検証用コード\_IS\_IRQL\_パッシブ\_リリースまたはデバッグ構成では、ドライバーをビルドするときに、ドライバー レベルのマクロが含まれている (無料のビルド環境と呼ばれる、またはチェック ビルド環境で Windows 7 以降)。 アサートと ASSERTMSG マクロのコードは、デバッグ構成で、ドライバーをビルドする場合にのみ、ドライバーに含まれます。
 
-プロジェクト構成の詳細については、[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)を参照してください。
+プロジェクト構成の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
 
  
 

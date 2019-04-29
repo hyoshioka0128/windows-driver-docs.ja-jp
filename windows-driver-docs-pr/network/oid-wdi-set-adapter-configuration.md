@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: e7fe2a1cb746e720cffdafbd51c09c5f766ec5d9
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335343"
 ---
 # <a name="oidwdisetadapterconfiguration"></a>OID\_WDI\_設定\_アダプター\_構成
 
@@ -97,7 +97,7 @@ OID\_WDI\_設定\_アダプター\_構成がアダプターを構成します。
 
 追加データがありません。 ヘッダー内のデータで十分です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

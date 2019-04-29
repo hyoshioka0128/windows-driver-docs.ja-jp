@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a47edbfe78880ed2ea784bf79c55e6ff9f1fb49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581744"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334127"
 ---
 # <a name="usbkdusb2tree"></a>!usbkd.usb2tree
 
@@ -58,7 +58,7 @@ Usb3kd.dll
 -   usbport.sys (2 の USB ホスト コント ローラーのポート ドライバー)
 -   usbhub.sys (USB 2 hub ドライバー)
 
-これらのドライバーの詳細については、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p/?LinkId=251983)を参照してください。
+これらのドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p/?LinkId=251983)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

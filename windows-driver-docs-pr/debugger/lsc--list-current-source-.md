@@ -1,5 +1,5 @@
 ---
-title: lsc (現在のソースの一覧)
+title: lsc (現在のソースの一覧表示)
 description: Lsc コマンドでは、現在のソース ファイル名と行番号が表示されます。
 ms.assetid: 5c500974-c405-4335-94bd-a36e7389667b
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a44a461e64cb25c9c681099a4461abf48b5fcbbe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383318"
 ---
-# <a name="lsc-list-current-source"></a>lsc (現在のソースの一覧)
+# <a name="lsc-list-current-source"></a>lsc (現在のソースの一覧表示)
 
 
 **Lsc**コマンドは、現在のソース ファイル名と行番号を表示します。

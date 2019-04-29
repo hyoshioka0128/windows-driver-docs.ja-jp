@@ -1,5 +1,5 @@
 ---
-title: .ocommand (ターゲットからのコマンドを想定)
+title: .ocommand (ターゲットからコマンドを受け取る)
 description: .Ocommand コマンドでは、デバッガーにコマンドを送信する対象のアプリケーションを使用します。
 ms.assetid: a4363395-111f-48eb-b1da-c17c0ad9f067
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fed3a43c22ade7994ff92ebd3df1bbf8a32b470
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334439"
 ---
-# <a name="ocommand-expect-commands-from-target"></a>.ocommand (ターゲットからのコマンドを想定)
+# <a name="ocommand-expect-commands-from-target"></a>.ocommand (ターゲットからコマンドを受け取る)
 
 
 **.Ocommand**コマンドにより、対象のアプリケーション、デバッガーにコマンドを送信します。

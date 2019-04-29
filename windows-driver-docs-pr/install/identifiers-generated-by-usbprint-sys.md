@@ -1,6 +1,6 @@
 ---
-title: USBPRINT によって生成された識別子。SYS
-description: USBPRINT によって生成された識別子。SYS
+title: USBPRINT.SYS によって生成された識別子
+description: USBPRINT.SYS によって生成された識別子
 ms.assetid: 23f71429-7318-4442-81b8-3818298cfd16
 keywords:
 - USBPRINT します。SYS WDK デバイスのインストール
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51e3c0a7530bdc6f60e4ca9f23c6e579d1efda09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327838"
 ---
-# <a name="identifiers-generated-by-usbprintsys"></a>USBPRINT によって生成された識別子。SYS
+# <a name="identifiers-generated-by-usbprintsys"></a>USBPRINT.SYS によって生成された識別子
 
 
 

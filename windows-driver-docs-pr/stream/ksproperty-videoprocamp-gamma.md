@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15d171f8af4bcba61165f00be498599c4da6ca7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327302"
 ---
 # <a name="kspropertyvideoprocampgamma"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_ガンマ
 
@@ -54,7 +54,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ガンマ プロパティは
 <td><p>〇</p></td>
 <td><p>フィルターまたはノード</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566089" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566089)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff566080" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566080)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_ガンマ プロパティは
 
 すべてのビデオ キャプチャ ミニドライバーには、このプロパティの値を範囲と既定値を定義する必要があります。 必要な範囲は 1 ~ 500 である必要があります。 既定値は 100 では通常 (ガンマ = 1) または 220 (ガンマ = 2.2) 表示中とビデオ ハードウェアに応じて、します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

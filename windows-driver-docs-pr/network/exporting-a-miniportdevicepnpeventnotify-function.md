@@ -1,6 +1,6 @@
 ---
-title: MiniportDevicePnPEventNotify 関数をエクスポートします。
-description: MiniportDevicePnPEventNotify 関数をエクスポートします。
+title: MiniportDevicePnPEventNotify 関数のエクスポート
+description: MiniportDevicePnPEventNotify 関数のエクスポート
 ms.assetid: 1c6dce4e-c452-48ce-b3c9-a3fb7842f060
 keywords:
 - プラグ アンド プレイ WDK の NDIS ミニポート、イベント通知
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8398ab93e6ab9208cc25954ba94a9575cccd5e73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385486"
 ---
-# <a name="exporting-a-miniportdevicepnpeventnotify-function"></a>MiniportDevicePnPEventNotify 関数をエクスポートします。
+# <a name="exporting-a-miniportdevicepnpeventnotify-function"></a>MiniportDevicePnPEventNotify 関数のエクスポート
 
 
 

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9b9dfaed609b57ed9070c597bab95108505b433
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332333"
 ---
 # <a name="midi-transport"></a>MIDI トランスポート
 
@@ -37,7 +37,7 @@ Dmu ポート ドライバーでは、DirectMusic ユーザー モード コン�
 
 Wave pin KSPIN のデータ方向の公開 Dmu のミニポート ドライバーでは、ホストにその出力を提供できる場合、\_データフロー\_OUT (を参照してください[ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483))、どの SysAudio認識して KMixer に接続します。
 
-Wave シンクの詳細については、[カーネル モードのソフトウェアのシンセサイザーの A Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)を参照してください。
+Wave シンクの詳細については、次を参照してください。[カーネル モードのソフトウェアのシンセサイザーの A Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)します。
 
 このセクションが含まれています。
 

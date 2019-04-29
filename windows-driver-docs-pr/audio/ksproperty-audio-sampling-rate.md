@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7e2412d10b8782d9eabc1c550e95b62b5e24f16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332909"
 ---
 # <a name="kspropertyaudiosamplingrate"></a>KSPROPERTY\_オーディオ\_サンプリング\_率
 
@@ -80,7 +80,7 @@ KSPROPERTY\_オーディオ\_サンプリング\_レート プロパティ要求
 
 -   SRC ノード ([**KSNODETYPE\_SRC**](ksnodetype-src.md))
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

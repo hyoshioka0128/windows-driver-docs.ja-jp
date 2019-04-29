@@ -1,6 +1,6 @@
 ---
-title: フィルターのトポロジを公開します。
-description: フィルターのトポロジを公開します。
+title: フィルター トポロジの公開
+description: フィルター トポロジの公開
 ms.assetid: bf791f40-b2fb-48fe-8350-3b926db4ead7
 keywords:
 - トポロジのフィルターの WDK オーディオ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95c1cbd6e7fc512a94605f64ab3b5d29f14e42df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333679"
 ---
-# <a name="exposing-filter-topology"></a>フィルターのトポロジを公開します。
+# <a name="exposing-filter-topology"></a>フィルター トポロジの公開
 
 
 ## <span id="exposing_filter_topology"></span><span id="EXPOSING_FILTER_TOPOLOGY"></span>
@@ -167,7 +167,7 @@ static PKSDATARANGE PinDataRangePointersBridge[] =
 
 PinDataRangePointersBridge 配列では、アナログのオーディオ信号を伝送するブリッジ pin のデータ範囲を定義します。 詳細については、ブリッジの pin での説明を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。
 
-複雑なトポロジの例は、[トポロジ フィルター](topology-filters.md)を参照してください。
+複雑なトポロジの例は、次を参照してください。[トポロジ フィルター](topology-filters.md)します。
 
  
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ed253e89d357651d2eb5dc6106ebb3adb2ab1c1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335593"
 ---
 # <a name="usbkdusbdstatus"></a>!usbkd.usbdstatus
 
@@ -39,7 +39,7 @@ USBD ステータス コードの 16 進値。 これらのコードは、usb.h 
 
 Usbkd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 出力の例を次に示します **! usbdstatus**します。

@@ -1,6 +1,6 @@
 ---
-title: トポロジのミニポート ドライバー
-description: トポロジのミニポート ドライバー
+title: トポロジ ミニポート ドライバー
+description: トポロジ ミニポート ドライバー
 ms.assetid: 3e0b797e-2fa5-499b-a465-0f51f5433177
 keywords:
 - オーディオのミニポート ドライバー WDK、トポロジ
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10510aa292dfd80cb5bfcd173f179ed3af7fe42c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335250"
 ---
-# <a name="topology-miniport-driver"></a>トポロジのミニポート ドライバー
+# <a name="topology-miniport-driver"></a>トポロジ ミニポート ドライバー
 
 
 ## <span id="topology_miniport_driver"></span><span id="TOPOLOGY_MINIPORT_DRIVER"></span>
@@ -29,7 +29,7 @@ ms.locfileid: "56556840"
 
 トポロジのミニポート ドライバーでは、アダプターのオーディオ ミキサー回路で、さまざまなハードウェア コントロール (たとえば、ボリュームおよびミュート) を管理します。 このドライバーとしてコントロールを列挙する*ノード*ミキサー トポロジでは、クライアントをできるように、ノード間の相互接続を検出してクエリを実行し、各ノードで制御するパラメーターを設定します。
 
-[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)を構築するときに、アダプターのトポロジでは、[オーディオ フィルター グラフ](audio-filter-graphs.md)します。 ミキサー API (Microsoft Windows sdk の Windows のマルチ メディア セクションで説明) は、ミキサー行の制御し、SndVol32 などのユーザー モード アプリケーションを許すことに、トポロジのノードを表します。 詳細については、[システム トレイと SndVol32](systray-and-sndvol32.md)を参照してください。
+[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)を構築するときに、アダプターのトポロジでは、[オーディオ フィルター グラフ](audio-filter-graphs.md)します。 ミキサー API (Microsoft Windows sdk の Windows のマルチ メディア セクションで説明) は、ミキサー行の制御し、SndVol32 などのユーザー モード アプリケーションを許すことに、トポロジのノードを表します。 詳細については、次を参照してください。[システム トレイと SndVol32](systray-and-sndvol32.md)します。
 
 トポロジのミニポート ドライバーには、ミニポート ドライバーを初期化するために、ポートのドライバーを使用する、トポロジのミニポート インターフェイスを実装する必要があります。 ミニポート インターフェイス[IMiniportTopology](https://msdn.microsoft.com/library/windows/hardware/ff536712)でメソッドを継承、 [IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)インターフェイスです。 追加のメソッドを備えていません。 オーディオのアダプターのドライバー フォーム、[トポロジ フィルター](topology-filters.md)ミニポート オブジェクトの IMiniportTopology をバインドすることによって、ポート オブジェクトのインターフェイス[IPortTopology](https://msdn.microsoft.com/library/windows/hardware/ff536896)インターフェイス。
 

@@ -1,6 +1,6 @@
 ---
-title: システム全体にわたる一意のデバイス Id
-description: システム全体にわたる一意のデバイス Id
+title: システム全体にわたる一意のデバイス ID
+description: システム全体にわたる一意のデバイス ID
 ms.assetid: 628577b6-05fe-4b63-929f-6d63e93c9266
 keywords:
 - オーディオ アダプター WDK、一意のデバイス Id
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 457fefef9c81a3b7a1bc7fa79f8b0b193f5f73ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335437"
 ---
-# <a name="system-wide-unique-device-ids"></a>システム全体にわたる一意のデバイス Id
+# <a name="system-wide-unique-device-ids"></a>システム全体にわたる一意のデバイス ID
 
 
 ## <span id="system_wide_unique_device_ids"></span><span id="SYSTEM_WIDE_UNIQUE_DEVICE_IDS"></span>

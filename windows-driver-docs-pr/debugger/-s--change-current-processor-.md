@@ -1,5 +1,5 @@
 ---
-title: ~ s (変更の現在のプロセッサ)
+title: ~s (現在のプロセッサの変更)
 description: ~ S コマンドは、マルチプロセッサ システムでプロセッサがデバッグを設定します。カーネル モードで ~ s が、現在のプロセッサを変更します。
 ms.assetid: bd036a25-1e3c-4b57-9c7c-5f1730008cd7
 keywords:
@@ -16,13 +16,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b4e8cc1a59cfb25f6485536b4d88b8bc146b75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335714"
 ---
-# <a name="s-change-current-processor"></a>~ s (変更の現在のプロセッサ)
+# <a name="s-change-current-processor"></a>~s (現在のプロセッサの変更)
 
 
 **~ S**コマンドは、マルチプロセッサ システムでプロセッサがデバッグを設定します。

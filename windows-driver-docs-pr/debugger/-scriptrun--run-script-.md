@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 97eeb3313a500ef90130631121f435701206973e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334274"
 ---
 # <a name="scriptrun-run-script"></a>.scriptrun (スクリプトの実行)
 
@@ -138,9 +138,9 @@ function invokeScript()
 }
 ```
 
-JavaScript での操作の詳細については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。 デバッガー オブジェクトに関する詳細については、[JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)を参照してください。
+JavaScript での操作の詳細については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。 デバッガー オブジェクトに関する詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)します。
 
-**要件**
+**必要条件**
 
 .Script コマンドのいずれかを使用するのには、スクリプトのプロバイダーが読み込まれる必要があります。 使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダー dll を読み込むコマンド。
 
@@ -153,7 +153,7 @@ JavaScript での操作の詳細については、[JavaScript デバッガー Sc
 
 [**.scriptload (スクリプトの読み込み)**](-scriptload--load-script-.md)
 
-[Scripting JavaScript デバッガー](javascript-debugger-scripting.md)
+[JavaScript デバッガー スクリプト](javascript-debugger-scripting.md)
 
 
 

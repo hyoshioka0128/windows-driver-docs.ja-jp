@@ -9,11 +9,11 @@ keywords:
 ms.date: 08/03/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 591123fdcd3d78285b9bc3aa615fc64c65eb8165
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335462"
 ---
 # <a name="symbols-for-windows-debugging-windbg-kd-cdb-ntsd"></a>Windows (WinDbg、KD、CDB、NTSD) デバッグのシンボル
 

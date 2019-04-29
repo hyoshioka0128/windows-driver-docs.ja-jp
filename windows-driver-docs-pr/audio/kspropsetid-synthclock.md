@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4fc138212d48982333cced8466b1794e6e3e800
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332470"
 ---
 # <a name="kspropsetidsynthclock"></a>KSPROPSETID\_SynthClock
 
@@ -21,7 +21,7 @@ ms.locfileid: "56551264"
 
 `KSPROPSETID_SynthClock`プロパティ セットを使用して、DirectMusic シンセサイザーをマスターのクロック時間を取得します。 このセットには、DirectMusic フィルター オブジェクトの 1 つのプロパティが含まれています。 Dmu ポート ドライバーでは、このプロパティのハンドラーを実装します。
 
-詳細については、[マスター クロック](https://msdn.microsoft.com/library/windows/hardware/ff567717)と[シンセサイザー タイミング](https://msdn.microsoft.com/library/windows/hardware/ff538449)を参照してください。
+詳細については、次を参照してください。[マスター クロック](https://msdn.microsoft.com/library/windows/hardware/ff567717)と[シンセサイザー タイミング](https://msdn.microsoft.com/library/windows/hardware/ff538449)します。
 
 このセット内のプロパティ項目が KSPROPERTY によって指定された\_SYNTHCLOCK 列挙値では、ヘッダーで定義されているファイル Dmusprop.h します。
 
@@ -68,7 +68,7 @@ KSPROPERTY\_シンセサイザー\_MASTERCLOCK プロパティを使用して、
 
 KSPROPERTY\_シンセサイザー\_MASTERCLOCK プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-詳細については、[マスター クロック](https://msdn.microsoft.com/library/windows/hardware/ff567717)を参照してください。
+詳細については、次を参照してください。[マスター クロック](https://msdn.microsoft.com/library/windows/hardware/ff567717)します。
 
  
 

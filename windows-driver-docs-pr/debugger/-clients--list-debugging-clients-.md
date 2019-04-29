@@ -1,5 +1,5 @@
 ---
-title: .clients (クライアントをデバッグ リスト)
+title: .clients (デバッグ クライアントの一覧表示)
 description: .Clients コマンドには、現在のデバッグ セッションに接続されているすべてのデバッグのクライアントが表示されます。
 ms.assetid: a5f760d7-f454-49c5-853d-bcb545c0b05e
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f13a31dee3236d848242efb350fd58fcc9feb7ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334629"
 ---
-# <a name="clients-list-debugging-clients"></a>.clients (クライアントをデバッグ リスト)
+# <a name="clients-list-debugging-clients"></a>.clients (デバッグ クライアントの一覧表示)
 
 
 **.Clients**コマンドのデバッグ セッションに接続しているすべてのデバッグのクライアントを一覧表示します。
@@ -58,7 +58,7 @@ ms.locfileid: "56549429"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細と、デバッガーのリモート デバッグの実行中に使用できるその他のコマンドは、[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)を参照してください。
+詳細と、デバッガーのリモート デバッグの実行中に使用できるその他のコマンドは、次を参照してください。[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)します。
 
  
 

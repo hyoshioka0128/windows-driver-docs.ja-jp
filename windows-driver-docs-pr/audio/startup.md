@@ -1,17 +1,17 @@
 ---
-title: HFP デバイスのスタートアップ
+title: HFP デバイスの起動
 description: HFP デバイスの起動トピックでは、Bluetooth ハンズフリー プロファイル (HFP) デバイスは、オーディオ システムに到着したときの動作について説明します。
 ms.assetid: C478BCBA-2A17-4604-AE2B-99B3445C741B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13434323205ff001db3eb1105ecfd2c5817ed878
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328606"
 ---
-# <a name="hfp-device-startup"></a>HFP デバイスのスタートアップ
+# <a name="hfp-device-startup"></a>HFP デバイスの起動
 
 
 HFP デバイスの起動トピックでは、Bluetooth ハンズフリー プロファイル (HFP) デバイスは、オーディオ システムに到着したときの動作について説明します。
@@ -48,7 +48,7 @@ Windows オーディオ ドライバーに IoRegisterPlugPlayNotification が呼
 
 オーディオ ドライバーでは、HFP ドライバーからの静的な情報を取得できます。 たとえば、HFP ドライバーでは、ksnodetype、コンテナー id とペアになる HFP デバイスのフレンドリ名を提供できます。 オーディオ ドライバーでは、作成し、初期化 KS フィルターまたはフィルターを表すペアになる HFP デバイスをこの情報を使用できます。 オーディオ ドライバーを使用して[ **IOCTL\_BTHHFP\_デバイス\_取得\_記述子**](https://msdn.microsoft.com/library/windows/hardware/dn265108)この情報を取得します。
 
-オーディオ ドライバーには、ペアになっている HFP デバイスの Bluetooth アドレスも取得できます。 各ペアになっている HFP デバイスが Bluetooth の一意のアドレスと、これは、一意の識別子の文字列として役立ちます。 詳細については、[HF デバイスの Bluetooth のアドレスを取得する](obtaining-bluetooth-address-of-hf-device.md)を参照してください。
+オーディオ ドライバーには、ペアになっている HFP デバイスの Bluetooth アドレスも取得できます。 各ペアになっている HFP デバイスが Bluetooth の一意のアドレスと、これは、一意の識別子の文字列として役立ちます。 詳細については、次を参照してください。 [HF デバイスの Bluetooth のアドレスを取得する](obtaining-bluetooth-address-of-hf-device.md)します。
 
 ## <a name="span-idcreatinginitializingaudio-specificfilterfactorycontextspanspan-idcreatinginitializingaudio-specificfilterfactorycontextspanspan-idcreatinginitializingaudio-specificfilterfactorycontextspancreating-initializing-audio-specific-filter-factory-context"></a><span id="Creating__initializing_audio-specific_filter_factory_context"></span><span id="creating__initializing_audio-specific_filter_factory_context"></span><span id="CREATING__INITIALIZING_AUDIO-SPECIFIC_FILTER_FACTORY_CONTEXT"></span>作成すると、オーディオ固有のフィルターの工場出荷時のコンテキストを初期化しています
 

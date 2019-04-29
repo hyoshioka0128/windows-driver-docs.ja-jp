@@ -1,6 +1,6 @@
 ---
-title: ディスクの整合性チェック
-description: ディスクの整合性チェック
+title: ディスク整合性チェック
+description: ディスク整合性チェック
 ms.assetid: bb838594-637c-4fc4-b2ec-964b69faabcf
 keywords:
 - ディスクの整合性チェック機能 WDK Driver Verifier
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f7a4deb4a694ff39be7d0d2b694e9a1aad8dea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329680"
 ---
-# <a name="disk-integrity-checking"></a>ディスクの整合性チェック
+# <a name="disk-integrity-checking"></a>ディスク整合性チェック
 
 
 ## <span id="ddk_disk_integrity_verification_tools"></span><span id="DDK_DISK_INTEGRITY_VERIFICATION_TOOLS"></span>
@@ -48,7 +48,7 @@ Driver Verifier は、監視を開始 Windows とそのドライバーが読み�
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、ディスクの整合性チェック オプションをアクティブ化することができます。 ドライバー検証マネージャーを使用して、どのディスクが検証を指定できます。 コマンドラインを使用する場合は、すべてのディスクが検証されます。 詳細については、[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)を参照してください。
+ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、ディスクの整合性チェック オプションをアクティブ化することができます。 ドライバー検証マネージャーを使用して、どのディスクが検証を指定できます。 コマンドラインを使用する場合は、すべてのディスクが検証されます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
 
 -   **コマンドラインで**
 

@@ -5,11 +5,11 @@ ms.assetid: a1587f46-1c21-4419-a1a4-81fe299c6871
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5630075da3329f76ac160e0fce24516755c31f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572860"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332210"
 ---
 # <a name="pkeyaudioengineoemformat"></a>鍵\_AudioEngine\_OEMFormat
 
@@ -40,7 +40,7 @@ PKEY_AudioEndpoint_Association          = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E
 PKEY_AudioEngine_OEMFormat              = "{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04},3"
 ```
 
-前の例では、OEMSettingsOverride.AddReg の追加レジストリ セクションの名前が定義されている、 [ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320) Sysfx.inf でインターフェイスのインストール セクション ディレクティブ。 前の例はエンドポイント数が 0 のいくつかのプロパティを追加します (文字列で識別される"EP\\\\0")、デバイス インターフェイスのレジストリ エントリにします。 (デバイスのインターフェイスを表している場合、 [wave フィルター](https://msdn.microsoft.com/library/windows/hardware/ff538862)追加のエンドポイントは番号付き 1、2、およびでは、複数のエンドポイントを使用します)。インターフェイスのセクションではインストールの詳細については、[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)を参照してください。
+前の例では、OEMSettingsOverride.AddReg の追加レジストリ セクションの名前が定義されている、 [ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320) Sysfx.inf でインターフェイスのインストール セクション ディレクティブ。 前の例はエンドポイント数が 0 のいくつかのプロパティを追加します (文字列で識別される"EP\\\\0")、デバイス インターフェイスのレジストリ エントリにします。 (デバイスのインターフェイスを表している場合、 [wave フィルター](https://msdn.microsoft.com/library/windows/hardware/ff538862)追加のエンドポイントは番号付き 1、2、およびでは、複数のエンドポイントを使用します)。インターフェイスのセクションではインストールの詳細については、次を参照してください。 [ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
 
 アプリケーションが取得することで、プロパティにアクセスできます INF ファイルは、3 つのプロパティのキーを作成し、関連する値をレジストリに読み込まれるが後、 [IPropertyStore](https://msdn.microsoft.com/library/windows/hardware/ff536954)エンドポイント デバイスのインターフェイス。 ヘッダー ファイル、Windows sdk Mmdeviceapi.h には、次の 3 つのプロパティのキーの C と C++ の定義が含まれています。 IPropertyStore インターフェイスを取得する方法の詳細については、の説明を参照して、 [ **IMMDevice::OpenPropertyStore** ](https://msdn.microsoft.com/library/windows/desktop/dd371412) Windows SDK のドキュメント内のメソッド。
 

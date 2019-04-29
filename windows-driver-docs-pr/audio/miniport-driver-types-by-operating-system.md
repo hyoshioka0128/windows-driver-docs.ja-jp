@@ -5,11 +5,11 @@ ms.assetid: 6ab0e4e4-5118-4df5-ba4e-7da66ce5880d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75c71078f5888a658afb70930453a65fae3a1b48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332314"
 ---
 # <a name="miniport-driver-types-by-operating-system"></a>オペレーティング システムによるミニポート ドライバーの種類
 
@@ -79,7 +79,7 @@ PortCls システム ドライバー (Portcls.sys) では、レンダリング�
 
  
 
-各ポート ドライバーでは、ミニポート ドライバーには、インターフェイスを実装します。 ポート ドライバーとの通信、ミニポート ドライバーもインターフェイスを実装する必要があります。 ミニポート ドライバーによって実装されるインターフェイスの詳細については、[ミニポート インターフェイス](miniport-interfaces.md)を参照してください。
+各ポート ドライバーでは、ミニポート ドライバーには、インターフェイスを実装します。 ポート ドライバーとの通信、ミニポート ドライバーもインターフェイスを実装する必要があります。 ミニポート ドライバーによって実装されるインターフェイスの詳細については、次を参照してください。[ミニポート インターフェイス](miniport-interfaces.md)します。
 
 **注**  オーディオ ドライバーを Windows Vista およびそれ以降のオペレーティング システムを開発する場合、次の把握してあります。
 -   WaveCyclic - または、WavePci のロゴ認定を取得できません-オーディオ ドライバーのベースします。

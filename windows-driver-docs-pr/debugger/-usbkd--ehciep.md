@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 963aa03f2012ee0fb4826d64b365b14385eaf571
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335641"
 ---
 # <a name="usbkdehciep"></a>!usbkd.\_ehciep
 
@@ -39,7 +39,7 @@ ms.locfileid: "56579684"
 
 Usbkd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 この例のアドレスを取得する 1 つの方法を示しています、 **usbehci!\_エンドポイント\_データ**構造体。 始まり、 [ **! usb2tree** ](-usbkd-usb2tree.md)コマンド。

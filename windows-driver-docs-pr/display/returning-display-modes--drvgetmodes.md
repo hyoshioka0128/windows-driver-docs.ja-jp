@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20ffe555a994a8b2dd479190f5475db89751da78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389984"
 ---
-# <a name="returning-display-modes-drvgetmodes"></a>表示モードを取得します。DrvGetModes
+# <a name="returning-display-modes-drvgetmodes"></a>表示モードを返す: DrvGetModes
 
 
 ## <span id="ddk_returning_display_modes_drvgetmodes_gg"></span><span id="DDK_RETURNING_DISPLAY_MODES_DRVGETMODES_GG"></span>
@@ -37,7 +37,7 @@ ms.locfileid: "56532022"
 
 **B とします。** 600x800x32bpp@60Hz DMDO\_90 DMDFO\_STRETCH
 
-**C。** 600x800x32bpp@60Hz DMDO\_90 DMDFO\_センター
+**C.** 600x800x32bpp@60Hz DMDO\_90 DMDFO\_センター
 
 **D。** 600x800x32bpp@60Hz DMDO\_270 DMDFO\_センター
 
@@ -69,7 +69,7 @@ ms.locfileid: "56532022"
 
 **B とします。** 800x600x32bpp@60Hz DMDO\_180 DMDFO\_STRETCH
 
-**C。** 800x600x32bpp@60Hz DMDO\_既定 DMDFO\_センター
+**C.** 800x600x32bpp@60Hz DMDO\_既定 DMDFO\_センター
 
 **D。** 800x600x32bpp@60Hz DMDO\_既定 DMDFO\_STRETCH
 

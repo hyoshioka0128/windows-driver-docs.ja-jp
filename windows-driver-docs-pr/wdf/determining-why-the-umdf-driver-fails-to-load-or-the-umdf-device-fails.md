@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b892e4c89d17b512ce41ad18040d30bd224b3da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337851"
 ---
-# <a name="determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails-to-start"></a>UMDF ドライバーの読み込みに失敗または UMDF デバイスの起動に失敗する理由を判断します。
+# <a name="determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails-to-start"></a>UMDF ドライバーの読み込み失敗または UMDF デバイスの起動失敗の理由の特定
 
 
 このトピックでは、UMDF ドライバーの読み込みに失敗または開始する、関連付けられているデバイスが失敗した場合に使用できるトラブルシューティングの手順について説明します。

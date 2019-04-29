@@ -6,16 +6,16 @@ keywords: 1394 ケーブルの接続、1394 接続を IEEE 1394 ケーブル、F
 ms.date: 05/03/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bd273e328d6fd6642f8ca6bf1b281b737383b10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381941"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-1394-cable-manually"></a>1394 ケーブル経由のカーネルモード デバッグの手動設定
 
 > [!IMPORTANT]
-> 1394 トランスポートは、Windows 10 バージョン 1607 およびそれ以前で使用できます。 以降のバージョンの Windows でご利用いただけません。 イーサネットを使用して KDNET などの他のトランスポートにプロジェクトを移行する必要があります。 トランスポートの詳細については、[カーネル モード デバッグのセットアップを手動でのネットワーク ケーブル](setting-up-a-network-debugging-connection.md)を参照してください。
+> 1394 トランスポートは、Windows 10 バージョン 1607 およびそれ以前で使用できます。 以降のバージョンの Windows でご利用いただけません。 イーサネットを使用して KDNET などの他のトランスポートにプロジェクトを移行する必要があります。 トランスポートの詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動でのネットワーク ケーブル](setting-up-a-network-debugging-connection.md)します。
 >
 
 デバッグ ツールの Windows カーネルは、1394 (Firewire) ケーブル経由でデバッグをサポートします。 このトピックでは、1394 デバッグを手動で設定する方法について説明します。
@@ -37,7 +37,7 @@ ms.locfileid: "56570278"
 
    **bcdedit/dbgsettings 1394 チャネル:**<em>n</em>
 
-3. 1 つ以上を使用する必要がある場合、ターゲット コンピューターに 1394 コント ローラーは、バス、デバイス、およびデバッグに使用する、1394 コント ローラーの関数の番号を指定する必要があります。 詳細については、[を 1394 デバッグ用のトラブルシューティングのヒント](#troubleshooting-tips-for-debugging-over-a-1394-cable)を参照してください。
+3. 1 つ以上を使用する必要がある場合、ターゲット コンピューターに 1394 コント ローラーは、バス、デバイス、およびデバッグに使用する、1394 コント ローラーの関数の番号を指定する必要があります。 詳細については、次を参照してください。[を 1394 デバッグ用のトラブルシューティングのヒント](#troubleshooting-tips-for-debugging-over-a-1394-cable)します。
 
 4. まだ対象のコンピュータを再起動されません。
 

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_SEND_ACTION_REQUEST_FRAME_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 77a4163e1ecd2c9bf08ae72a378bfa4badf4cd1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384507"
 ---
 # <a name="wditlvp2psendactionrequestframeparameters"></a>WDI\_TLV\_P2P\_送信\_アクション\_要求\_フレーム\_パラメーター
 
@@ -41,7 +41,7 @@ WDI\_TLV\_P2P\_送信\_アクション\_要求\_フレーム\_パラメーター
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f854f7e12aa487ee4fc6d6857afdf40f66e3ae3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339280"
 ---
 # <a name="whql-release-signature"></a>WHQL リリース署名
 
@@ -28,9 +28,9 @@ WHQL リリース署名の取得は、[Windows ハードウェア認定キット
 
 WHQL リリース署名の取得は、以下の構成します。
 
--   テスト、[ドライバー パッケージ](driver-packages.md)ドライバー パッケージが Microsoft Windows と互換性があることを確認する Windows HCK を使用します。 HCK をインストールすると、テストおよびドライバー パッケージを検証するドライバー テスト Manager (DTM) が実行されます。 詳細については、、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)を参照してください。
+-   テスト、[ドライバー パッケージ](driver-packages.md)ドライバー パッケージが Microsoft Windows と互換性があることを確認する Windows HCK を使用します。 HCK をインストールすると、テストおよびドライバー パッケージを検証するドライバー テスト Manager (DTM) が実行されます。 詳細については、次を参照してください。、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)します。
 
--   WHQL を取得するには、Windows Quality Online Services への送信の DTM テスト ログは、ドライバー パッケージの署名をリリースします。 詳細については、、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)を参照してください。
+-   WHQL を取得するには、Windows Quality Online Services への送信の DTM テスト ログは、ドライバー パッケージの署名をリリースします。 詳細については、次を参照してください。、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)します。
 
 WHQL の詳細については、次を参照してください。、 [Windows Hardware Quality Labs](https://go.microsoft.com/fwlink/p/?linkid=8705) web サイト。
 

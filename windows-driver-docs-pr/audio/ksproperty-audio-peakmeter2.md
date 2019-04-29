@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b99a87480a7e7190f238d773eaab880151fc974b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332984"
 ---
 # <a name="kspropertyaudiopeakmeter2"></a>KSPROPERTY\_オーディオ\_PEAKMETER2
 
@@ -54,7 +54,7 @@ Windows 8 の導入、KSPROPERTY\_オーディオ\_peakmeter ノードで発生�
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルターまたは暗証番号 (pin) のインスタンスを使用してノード</p></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537145" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537145)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
-<td align="left"><p>長い</p></td>
+<td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -75,7 +75,7 @@ KSPROPERTY\_オーディオ\_PEAKMETER2 プロパティ要求がステータス�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -103,7 +103,7 @@ KS オーディオ フィルターは、このプロパティの要求を同期�
 
 システムは、IOCTL、送信\_KS\_プロパティ要求、KSPROPERTY\_オーディオ\_IRQL パッシブ PEAKMETER プロパティ\_レベル。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

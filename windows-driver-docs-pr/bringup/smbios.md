@@ -4,11 +4,11 @@ description: SMBIOS 仕様には、データ構造体とは、システムに関
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 81046d457daa15e0cd9a7c694d42ecd19d621ad9
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337495"
 ---
 # <a name="smbios"></a>SMBIOS
 
@@ -27,7 +27,7 @@ SMBIOS 仕様には、データ構造体とは、システムに関連するデ�
             <td><b>構造体の名前と種類</b></td>
             <td><b>値</b></td>
             <td><b>オフセット</b></td>
-            <td><b>Length</b></td>
+            <td><b>長さ</b></td>
             <td><b>シナリオ例</b></td>
             <td><b>例</b></td>
         </tr>
@@ -93,7 +93,7 @@ SMBIOS 仕様には、データ構造体とは、システムに関連するデ�
             <td>システム筐体 (タイプ 3) </td>
             <td>バイト</td>
             <td>05h</td>
-            <td>N/A</td>
+            <td>なし</td>
             <td>「切り離し可能です」</td>
         </tr>
         <tr>
@@ -144,7 +144,7 @@ SMBIOS 仕様には、データ構造体とは、システムに関連するデ�
             <td><b>DTMF.org の説明</b></td>
             <td><b>Microsoft の説明</b></td>
             <td><b>フィールドの形式</b></td>
-            <td><b>階層</b></td>
+            <td><b>Hierarchy</b></td>
         </tr>
         <tr>
             <td>製造元</td>
@@ -196,10 +196,10 @@ SMBIOS 仕様には、データ構造体とは、システムに関連するデ�
         </tr>
         <tr>
             <td>エンクロージャの種類</td>
-            <td>N/A</td>
+            <td>なし</td>
             <td>定義されている、<b>エンクロージャの種類</b>次の表</td>
-            <td>N/A</td>
-            <td>N/A</td>
+            <td>なし</td>
+            <td>なし</td>
         </tr>
         <tr>
             <td>BIOS ベンダー</td>

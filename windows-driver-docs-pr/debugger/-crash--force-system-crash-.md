@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ef8a05ce1fc60eb642588604c148763d4d77f85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334595"
 ---
 # <a name="crash-force-system-crash"></a>.crash (システム クラッシュの強制実行)
 
@@ -58,7 +58,7 @@ ms.locfileid: "56574302"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-システム障害の後で使用できるオプションの説明と関連するコマンドの概要については、[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)を参照してください。
+システム障害の後で使用できるオプションの説明と関連するコマンドの概要については、次を参照してください。[クラッシュし、ターゲット コンピューターを再起動](crashing-and-rebooting-the-target-computer.md)します。
 
 <a name="remarks"></a>コメント
 -------

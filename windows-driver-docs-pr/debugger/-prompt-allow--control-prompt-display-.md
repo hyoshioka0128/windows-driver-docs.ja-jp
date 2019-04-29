@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ec4492e245bdefabab5643f182e06b72cc0371a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334337"
 ---
 # <a name="promptallow-control-prompt-display"></a>.prompt\_(プロンプトを表示するコントロール) を許可します。
 
@@ -85,7 +85,7 @@ L os コマンドを使用して登録表示無効にすることもできます
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-実行に影響するコマンドの詳細については、[ターゲットを制御する](controlling-the-target.md)を参照してください。
+実行に影響するコマンドの詳細については、次を参照してください。[ターゲットを制御する](controlling-the-target.md)します。
 
 <a name="remarks"></a>コメント
 -------

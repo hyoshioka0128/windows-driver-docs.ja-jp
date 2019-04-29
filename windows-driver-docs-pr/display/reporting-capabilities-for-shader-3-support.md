@@ -1,6 +1,6 @@
 ---
-title: Shader 3 のサポートに対するレポート機能
-description: Shader 3 のサポートに対するレポート機能
+title: シェーダー 3 サポートの機能のレポート
+description: シェーダー 3 サポートの機能のレポート
 ms.assetid: 89590647-646c-47ec-a46e-e781b1b9f33e
 keywords:
 - シェーダー WDK DirectX 9.0、シェーダー 3.0 のサポート
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51e57409a4ef41be2a6dc3b33fdfd3cf56e68dad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383283"
 ---
-# <a name="reporting-capabilities-for-shader-3-support"></a>Shader 3 のサポートに対するレポート機能
+# <a name="reporting-capabilities-for-shader-3-support"></a>シェーダー 3 サポートの機能のレポート
 
 
 ## <span id="ddk_reporting_capabilities_for_shader_3_support_gg"></span><span id="DDK_REPORTING_CAPABILITIES_FOR_SHADER_3_SUPPORT_GG"></span>
@@ -276,7 +276,7 @@ D3DSTENCILCAPS\_TWOSIDED
 設定、D3DFVFCAPS\_PSIZE 機能をデバイスで頂点ごとのポイント サイズをサポートすることを示します。
 
 <span id="TextureCaps"></span><span id="texturecaps"></span><span id="TEXTURECAPS"></span>**TextureCaps**  
-デバイスが完全にサポートまたは条件付き nonpow-2 のテクスチャのサポートをサポートしていることを示します。 詳細については、[シェーダー 2 のサポートの機能を Reporting](reporting-capabilities-for-shader-2-support.md)を参照してください。
+デバイスが完全にサポートまたは条件付き nonpow-2 のテクスチャのサポートをサポートしていることを示します。 詳細については、次を参照してください。[シェーダー 2 のサポートの機能を Reporting](reporting-capabilities-for-shader-2-support.md)します。
 
 必要があります**いない**設定、D3DPTEXTURECAPS\_SQUAREONLY ビット。 デバイスは、正方形のテクスチャのみに制限することはできません。
 

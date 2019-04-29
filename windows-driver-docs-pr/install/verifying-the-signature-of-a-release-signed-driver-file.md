@@ -1,17 +1,17 @@
 ---
-title: ドライバーのリリースで署名されたファイルの署名の検証
-description: ドライバーのリリースで署名されたファイルの署名の検証
+title: リリース署名されたドライバー ファイルの署名の検証
+description: リリース署名されたドライバー ファイルの署名の検証
 ms.assetid: 70876389-6493-4c16-8a82-ca72fc23325c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dadda4e302a79b3fba8699a06f0c82885286b2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339312"
 ---
-# <a name="verifying-the-signature-of-a-release-signed-driver-file"></a>ドライバーのリリースで署名されたファイルの署名の検証
+# <a name="verifying-the-signature-of-a-release-signed-driver-file"></a>リリース署名されたドライバー ファイルの署名の検証
 
 
 によって作成されるドライバー ファイルの埋め込みの署名を検証する、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)、次を使用して、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)コマンド。

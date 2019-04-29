@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d17027482c4a1ca471c7b8abeab57d8999bd6b5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336728"
 ---
-# <a name="filelock"></a>! filelock
+# <a name="filelock"></a>!filelock
 
 
 **! Filelock**拡張機能は、ファイルのロック構造を表示します。

@@ -1,19 +1,19 @@
 ---
-title: テスト証明書の表示
-description: テスト証明書の表示
+title: テスト証明書の参照
+description: テスト証明書の参照
 ms.assetid: bdfa8970-fdba-4d65-8a9c-960e5f6844d6
 keywords:
 - ドライバー WDK の署名、テスト証明書の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e6dbfefe8d6188f0714848fbfd41f304531ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339328"
 ---
-# <a name="viewing-test-certificates"></a>テスト証明書の表示
+# <a name="viewing-test-certificates"></a>テスト証明書の参照
 
 
 証明書が作成され、コピーは、証明書ストアに、Microsoft 管理コンソール (MMC) の証明書スナップインで使用できますそれを表示します。 MMC で証明書を表示するには、次の操作を行います**証明書**スナップイン。

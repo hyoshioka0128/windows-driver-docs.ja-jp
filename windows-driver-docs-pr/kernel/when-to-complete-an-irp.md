@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3e3bbebf8e060682703a66bf61b8d63163a80bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335365"
 ---
 # <a name="when-to-complete-an-irp"></a>IRP を完了するタイミング
 
@@ -29,7 +29,7 @@ ms.locfileid: "56537723"
 
 これらの条件が満たされない場合は、ドライバーのディスパッチ ルーチンは、次の下位ドライバーに IRP を渡す必要があります。 または I/O 要求の処理、処理する必要があります。 いずれかの条件が満たされる場合、ドライバーを呼び出す必要があります[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)します。
 
-ドライバーが処理を進行できない、または通常呼び出して実際には、デバイスにアクセスしなくても、要求された操作を処理することによって、要求が完了すると、ため、要求を完了すると**IoCompleteRequest**のいずれかから、ルーチンをディスパッチします。 詳細については、[ディスパッチ ルーチン内での Irp の完了](completing-irps-in-dispatch-routines.md)を参照してください。
+ドライバーが処理を進行できない、または通常呼び出して実際には、デバイスにアクセスしなくても、要求された操作を処理することによって、要求が完了すると、ため、要求を完了すると**IoCompleteRequest**のいずれかから、ルーチンをディスパッチします。 詳細については、次を参照してください。[ディスパッチ ルーチン内での Irp の完了](completing-irps-in-dispatch-routines.md)します。
 
 通常、呼び出す場合、ドライバーは、要求を満たすためにデバイスにアクセスする必要があります、 **IoCompleteRequest**から、 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン。 これらのルーチンが広範に説明した[割り込みサービス](servicing-interrupts.md)します。
 

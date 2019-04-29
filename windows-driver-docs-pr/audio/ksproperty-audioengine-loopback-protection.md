@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6de57599601cfbb434ab859330d2ab0c587b88a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332799"
 ---
 # <a name="kspropertyaudioengineloopbackprotection"></a>KSPROPERTY\_AUDIOENGINE\_ループバック\_保護
 
@@ -39,16 +39,16 @@ ms.locfileid: "56571765"
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>暗証番号 (pin) のインスタンスを使用してノード</p></td>
 <td align="left"><p>KSP_NODE</p></td>
 <td align="left"><p>ULONG</p></td>
@@ -62,14 +62,14 @@ ms.locfileid: "56571765"
 
 KSPROPERTY\_AUDIOENGINE\_ループバック\_保護プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このプロパティの呼び出しに関連付けられている入力バッファーには、型 CONSTRICTOR の列挙値が設定されます\_オプション。 入力バッファーが CONSTRICTOR を設定するか、\_オプション\_無効化または CONSTRICTOR\_オプション\_ミュートします。
 
 CONSTRICTOR で作業中のストリームがある場合\_オプション\_このオーディオ出力の KS ループバック タップはサイレント状態を出力し、実際には、ミュートします。 アクティブなすべてのストリームが CONSTRICTOR\_オプション\_だけを (つまり、既定の状態) 有効では、無効にし、ループバック タップは、意味のあるデータを含みます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

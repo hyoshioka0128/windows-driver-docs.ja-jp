@@ -1,6 +1,6 @@
 ---
-title: 設定して、バッテリの通知をキャンセル
-description: 設定して、バッテリの通知をキャンセル
+title: バッテリ通知の設定とキャンセル
+description: バッテリ通知の設定とキャンセル
 ms.assetid: bd0920f0-9f3f-47f7-b1a7-29ec233e93ff
 keywords:
 - バッテリ通知 WDK
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e00cadc51bb62c4a3456c4d5a51b5f0d2121494f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335049"
 ---
-# <a name="setting-and-canceling-battery-notification"></a>設定して、バッテリの通知をキャンセル
+# <a name="setting-and-canceling-battery-notification"></a>バッテリ通知の設定とキャンセル
 
 
 ## <span id="ddk_setting_and_canceling_battery_notification_dg"></span><span id="DDK_SETTING_AND_CANCELING_BATTERY_NOTIFICATION_DG"></span>

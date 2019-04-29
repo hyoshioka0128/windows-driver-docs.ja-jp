@@ -1,6 +1,6 @@
 ---
-title: WDM レガシ Windows マルチ メディア Api へのオーディオ拡張機能
-description: WDM レガシ Windows マルチ メディア Api へのオーディオ拡張機能
+title: レガシ Windows マルチ メディア API に対する WDM オーディオの拡張機能
+description: レガシ Windows マルチ メディア API に対する WDM オーディオの拡張機能
 ms.assetid: a1009b7f-3720-454f-a128-ae148f781edc
 keywords:
 - WDM オーディオ拡張 WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14860d7795db633e22ce113c4ad67738e86c7cb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328470"
 ---
-# <a name="wdm-audio-extensions-to-legacy-windows-multimedia-apis"></a>WDM レガシ Windows マルチ メディア Api へのオーディオ拡張機能
+# <a name="wdm-audio-extensions-to-legacy-windows-multimedia-apis"></a>レガシ Windows マルチ メディア API に対する WDM オーディオの拡張機能
 
 
 ## <span id="wdm_audio_extensions_to_legacy_windows_multimedia_apis"></span><span id="WDM_AUDIO_EXTENSIONS_TO_LEGACY_WINDOWS_MULTIMEDIA_APIS"></span>

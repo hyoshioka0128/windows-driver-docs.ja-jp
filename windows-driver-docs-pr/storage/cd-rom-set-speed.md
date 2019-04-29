@@ -1,6 +1,6 @@
 ---
-title: CD-ROM セット速度
-description: CD-ROM セット速度
+title: CD-ROM 設定速度
+description: CD-ROM 設定速度
 ms.assetid: 25a46b23-f823-4fc7-a370-cab1c9418a94
 keywords:
 - CD-ROM ドライバー WDK ストレージ
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c2fcd248faa5737cdeab70295bfb0df63570a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338326"
 ---
-# <a name="cd-rom-set-speed"></a>CD-ROM セット速度
+# <a name="cd-rom-set-speed"></a>CD-ROM 設定速度
 
 
 多くの場合、Cd を CD-ROM ドライブができる最適なスピンドル速度よりも小さい速度で回転すると便利です。 たとえば、ポータブル コンピューターで高速で回転 CD-ROM ドライブ、バッテリーの消耗非常に高速です。 CD-ROM ドライブは、バッテリ電源を節約するために低速に設定できます。

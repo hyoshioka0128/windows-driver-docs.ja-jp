@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bac89887b4586dcee99d1bec67589a58bec0c984
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334227"
 ---
 # <a name="tls"></a>!tls
 
@@ -60,7 +60,7 @@ TLS スロットを指定します。 0 ~ 1088 (10 進数) の間の任意の値
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 以下に例を示します。

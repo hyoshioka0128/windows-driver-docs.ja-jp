@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d0adf7bf6bef32e451d84b0c05fb13aa9f2c59f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391821"
 ---
 # <a name="tracefmt-commands"></a>Tracefmt のコマンド
 
@@ -116,7 +116,7 @@ CSV ファイルには、わかりやすい列の見出しの行を追加しま�
 <span id="_______-hires______"></span><span id="_______-HIRES______"></span> **-人材採用**   
 高解像度。 トレース メッセージのタイムスタンプでは、マイクロ秒およびナノ秒数を表示します。 既定ではミリ秒のみが表示されます。
 
-トレース メッセージ タイム スタンプ場合など、システム タイマーではなく、パフォーマンス カウンターのクロック値が使用される場合は、このオプションを使用、 **Tracelog UsePerfCounter**パラメーターを使用します。 Tracelog コマンドについては、[ **Tracelog コマンド構文**](tracelog-command-syntax.md)を参照してください。
+トレース メッセージ タイム スタンプ場合など、システム タイマーではなく、パフォーマンス カウンターのクロック値が使用される場合は、このオプションを使用、 **Tracelog UsePerfCounter**パラメーターを使用します。 Tracelog コマンドについては、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)します。
 
 <span id="_______-seq______"></span><span id="_______-SEQ______"></span> **-seq**   
 内のローカルまたはグローバルのシーケンス番号が表示されます、[トレース メッセージのプレフィックス](trace-message-prefix.md)します。 シーケンス番号がメッセージに記録されていない場合、フィールドが初期化されていない、または、ゼロまたは"f"の s で塗りつぶすこと。
@@ -170,7 +170,7 @@ Tracefmt はトレース メッセージのパラメーターに書式を設定�
 *****FormatMessage Header(Header) of EventTrace, parameter 23 raised an exception*****
 ```
 
-同様の例外を発生する場合は、任意のユーザーが指定した変数型に特に注意して、ソース コードのメッセージ定義を確認します。 詳細については、[ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)を参照してください。
+同様の例外を発生する場合は、任意のユーザーが指定した変数型に特に注意して、ソース コードのメッセージ定義を確認します。 詳細については、次を参照してください。 [ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)します。
 
 **非 GUID ファイル名を持つ TMF ファイル**
 

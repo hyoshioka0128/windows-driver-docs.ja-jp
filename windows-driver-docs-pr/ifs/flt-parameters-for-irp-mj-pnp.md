@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f41c12635a72139b79a0376bb01282a102ec709d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360348"
 ---
 # <a name="fltparameters-for-irpmjpnp-union"></a>FLT\_IRP のパラメーター\_MJ\_PNP 共用体
 
@@ -84,14 +84,14 @@ IRP に使用される共用体のコンポーネント\_MN\_クエリ\_デバ�
 **UsageNotification**  
 IRP に使用される共用体のコンポーネント\_MN\_デバイス\_使用状況\_通知操作。 この操作のパラメーターの詳細については、参照のエントリを参照してください[ **IRP\_MN\_デバイス\_使用状況\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff550841) .
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 [ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)の構造体[ **IRP\_MJ\_PNP** ](irp-mj-pnp.md)操作コールバック データによって表される IRP ベース プラグ アンド プレイ (PnP) 操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)構造体。
 
 IRP\_MJ\_PNP 操作は IRP ベース操作。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

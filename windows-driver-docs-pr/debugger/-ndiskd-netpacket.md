@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a7605566839d3962e73a36aaf5689cae1d77dc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335914"
 ---
 # <a name="ndiskdnetpacket"></a>!ndiskd.netpacket
 
 
 **! Ndiskd.netpacket**拡張機能に関する情報を表示する、 [NET\_パケット](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-packet)構造体。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)を参照してください。
+ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
 
 ```console
 !ndiskd.netpacket [-handle <x>] [-basic] [-layout] [-checksum] [-data] 

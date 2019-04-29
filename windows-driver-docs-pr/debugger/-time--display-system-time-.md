@@ -1,5 +1,5 @@
 ---
-title: .time (システム時刻を表示)
+title: .time (システム時刻の表示)
 description: .Time コマンドでは、システム時刻の変数に関する情報が表示されます。
 ms.assetid: d8024f84-98ff-4017-81c5-8a08973f9e4b
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c368099fceda7d57bc51d0509de68e391b30a40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334228"
 ---
-# <a name="time-display-system-time"></a>.time (システム時刻を表示)
+# <a name="time-display-system-time"></a>.time (システム時刻の表示)
 
 
 **.Time**コマンドがシステム時間環境変数に関する情報を表示します。

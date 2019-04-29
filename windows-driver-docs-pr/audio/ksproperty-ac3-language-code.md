@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c4dc9d2818f9d92eccb3527d760acc3b6e155fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333151"
 ---
 # <a name="kspropertyac3languagecode"></a>KSPROPERTY\_AC3\_言語\_コード
 
@@ -51,7 +51,7 @@ KSPROPERTY\_AC3\_言語\_コード プロパティ AC で 3 でエンコード�
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537081" data-raw-source="[&lt;strong&gt;KSAC3_LANGUAGE_CODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537081)"><strong>KSAC3_LANGUAGE_CODE</strong></a></p></td>
@@ -67,7 +67,7 @@ KSPROPERTY\_AC3\_言語\_コード プロパティ AC で 3 でエンコード�
 
 KSPROPERTY\_AC3\_言語\_コード プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

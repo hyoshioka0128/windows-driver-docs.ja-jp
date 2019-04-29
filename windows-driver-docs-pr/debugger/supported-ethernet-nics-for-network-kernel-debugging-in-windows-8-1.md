@@ -1,24 +1,24 @@
 ---
-title: Windows 8.1 でのデバッグ ネットワーク カーネルのイーサネット Nic をサポート
+title: Windows 8.1 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
 description: ターゲット コンピューターには、Windows 8.1 が実行されているときに、イーサネット ネットワーク ケーブル経由でカーネル デバッグを行うことができます。 対象のコンピュータは、サポートされているネットワーク インターフェイス カード (NIC) またはネットワーク アダプターが必要です。
 ms.assetid: C608A406-C008-4075-B6BE-C14CFFC3A820
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89b9ae9f1ca4bf7047251af014b19807671f5453
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335495"
 ---
-# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-81"></a>Windows 8.1 でのデバッグ ネットワーク カーネルのイーサネット Nic をサポート
+# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-81"></a>Windows 8.1 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
 
 
 ターゲット コンピューターには、Windows 8.1 が実行されているときに、イーサネット ネットワーク ケーブル経由でカーネル デバッグを行うことができます。 対象のコンピュータは、サポートされているネットワーク インターフェイス カード (NIC) またはネットワーク アダプターが必要です。
 
 カーネルのデバッグ中には、デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*ターゲット コンピューター*します。 行う[ネットワーク ケーブル経由でのカーネル デバッグ](setting-up-a-network-debugging-connection.md)、ターゲット コンピューターがサポートされているネットワーク アダプターをいる必要があります。 ターゲット コンピューターには、Windows 8.1 が実行されているが、ここで記載されているネットワーク アダプターは、カーネルのデバッグ サポートされます。
 
-**注**  サポート 10 ギガビット ネットワーク アダプターを選択したカーネル デバッグでは Windows 8.1 の新機能です。 10 ギガ ビット ・をデバッグする Windows 8 でネットワーク アダプターはサポートされません。 カーネル デバッグ for Windows 8 でサポートされるネットワーク アダプターの一覧は、[Windows 8 でネットワーク カーネル デバッグのサポートされているイーサネット Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md)を参照してください。
+**注**  サポート 10 ギガビット ネットワーク アダプターを選択したカーネル デバッグでは Windows 8.1 の新機能です。 10 ギガ ビット ・をデバッグする Windows 8 でネットワーク アダプターはサポートされません。 カーネル デバッグ for Windows 8 でサポートされるネットワーク アダプターの一覧は、次を参照してください。 [Windows 8 でネットワーク カーネル デバッグのサポートされているイーサネット Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md)します。
 
  
 

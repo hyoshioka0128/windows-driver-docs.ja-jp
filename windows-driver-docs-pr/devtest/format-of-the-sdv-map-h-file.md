@@ -1,6 +1,6 @@
 ---
-title: Sdv map.h ファイルの形式
-description: Sdv map.h ファイルの形式
+title: Sdv-map.h ファイルの形式
+description: Sdv-map.h ファイルの形式
 ms.assetid: 1b9e2b8d-04b8-4288-9d63-e7d84d75a9c6
 keywords:
 - Sdv map.h WDK Static Driver Verifier の形式
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f3bc99f130f1cddf240003f6b26234ba732fa39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329685"
 ---
-# <a name="format-of-the-sdv-maph-file"></a>Sdv map.h ファイルの形式
+# <a name="format-of-the-sdv-maph-file"></a>Sdv-map.h ファイルの形式
 
 
 Sdv map.h ファイルには、すべてのドライバーおよび関連付けられているコールバック関数とドライバーのエントリ ポイントで宣言されている関数の役割の種類が一覧表示します。

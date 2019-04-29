@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19855d6fcb8bbfd7f99248e87689f87639fce4dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333735"
 ---
 # <a name="driver-support-for-legacy-audio-interfaces"></a>レガシ オーディオ インターフェイス用のドライバー サポート
 
@@ -41,7 +41,7 @@ WDM のオーディオ システムでは、従来の Windows のマルチ メ�
 
 -   waveOut
 
-これらの Api については、Microsoft Windows SDK のドキュメントを参照してください。 従来のオーディオ機能のドライバーのサポートを提供するシステム コンポーネントの説明は、[WDM オーディオ コンポーネント](wdm-audio-components.md)を参照してください。
+これらの Api については、Microsoft Windows SDK のドキュメントを参照してください。 従来のオーディオ機能のドライバーのサポートを提供するシステム コンポーネントの説明は、次を参照してください。 [WDM オーディオ コンポーネント](wdm-audio-components.md)します。
 
 このセクションでは、オーディオ ミニポート ドライバー サポートを強化するアプリケーション プログラムを Windows のマルチ メディア機能を公開するオーディオ機能との実装のできる機能について説明します。 これらの機能には、wave stream キャプチャし、レンダリング、MIDI 記録、合成とミキサー コントロールが含まれます。 さらに、このセクションでは、ドライバー固有のオーディオ デバイス情報を取得するアプリケーションが使用できる、従来のオーディオ固有 Api をいくつかの拡張機能について説明します。
 

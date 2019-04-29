@@ -1,5 +1,5 @@
 ---
-title: lsp (設定数のソース行)
+title: lsp (ソース行数の設定)
 description: Lsp コマンドでは、ステップ実行またはコードを実行または %.*ls と lsa コマンドを使用中に、ソース行の数が表示されるを制御します。
 ms.assetid: 350933f1-5459-4ba2-9ca7-a42341cf95de
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3350405a16da2b9fb75e8f41f73ae1c48e902897
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383313"
 ---
-# <a name="lsp-set-number-of-source-lines"></a>lsp (設定数のソース行)
+# <a name="lsp-set-number-of-source-lines"></a>lsp (ソース行数の設定)
 
 
 **Lsp**コマンドは、ステップ実行中に表示されるソース行の数、またはコードを実行したりを使用して、制御、 [ **ls および lsa コマンド**](ls--lsa--list-source-lines-.md)します。
@@ -79,7 +79,7 @@ lsp [-a]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソースのデバッグと関連するコマンドの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。
+ソースのデバッグと関連するコマンドの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。
 
  
 

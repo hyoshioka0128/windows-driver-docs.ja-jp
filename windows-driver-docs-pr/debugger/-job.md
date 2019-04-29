@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf7d630b4f0d5367147d1f3d6a18c93a4b3a7ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336337"
 ---
 # <a name="job"></a>!job
 
@@ -66,7 +66,7 @@ ms.locfileid: "56575034"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ジョブのオブジェクトについては、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。
+ジョブのオブジェクトについては、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。
 
 <a name="remarks"></a>コメント
 -------

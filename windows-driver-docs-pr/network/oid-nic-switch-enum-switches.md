@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_ENUM_SWITCHES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 20213059153311ea49056c5b42b8b5f2855dd98e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335349"
 ---
 # <a name="oidnicswitchenumswitches"></a>OID\_NIC\_スイッチ\_ENUM\_スイッチ
 

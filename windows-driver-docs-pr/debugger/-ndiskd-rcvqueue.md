@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fb090428027fd74f4774978bbc58bff6bf76029
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335913"
 ---
 # <a name="ndiskdrcvqueue"></a>!ndiskd.rcvqueue
 
@@ -51,7 +51,7 @@ ms.locfileid: "56581293"
 
 Ndiskd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 受信キュー ハンドルを取得するには、まず入力、 [ **! ndiskd.netadapter** ](-ndiskd-netadapter.md)コマンドとパラメーターのないネットワーク アダプター、ドライバー、およびそのハンドルの一覧を参照してください。 次の例では、検索、Microsoft の ISATAP アダプター \#2 の ffff8083e02ce1a0 NetAdapter ハンドル。

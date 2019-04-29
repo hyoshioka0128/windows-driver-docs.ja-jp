@@ -1,17 +1,17 @@
 ---
-title: USB サポートが点滅の UEFI 要件
+title: USB フラッシング サポートのための UEFI 要件
 description: Microsoft は、エンジニア リングと、製造環境で使用するためのいくつかの USB ベースの点滅ソリューションを提供します。 これらのツールで使用するデバイスで、デバイスの UEFI 環境は、このトピックに記載の要件を満たす必要があります。
 ms.assetid: 8979173C-DCBC-4544-9978-BB069FF35914
 ms.date: 01/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 088b3b8c2ea0c30c1b3cf9bae9676bbb60614d7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337373"
 ---
-# <a name="uefi-requirements-for-usb-flashing-support"></a>USB サポートが点滅の UEFI 要件
+# <a name="uefi-requirements-for-usb-flashing-support"></a>USB フラッシング サポートのための UEFI 要件
 
 Microsoft は、エンジニア リングと、製造環境で使用するためのいくつかの USB ベースの点滅ソリューションを提供します。 これらのツールで使用するデバイスで、デバイスの UEFI 環境は、このトピックに記載の要件を満たす必要があります。
 
@@ -21,7 +21,7 @@ Microsoft は、エンジニア リングと、製造環境で使用するため
 
 | プロトコル | 要件の詳細 |
 | --- | --- |
-| USB 関数プロトコル | ファームウェアの USB 3.0 を経由して、usb、UEFI USB 関数プロトコル改訂 0x00010002 またはより高いサポート実装する必要があります、 [EFI\_USBFN\_IO\_プロトコル。ConfigureEnableEndpointsEx](efi-usbfn-io-protocol-configureenableendpointsex.md)関数。 詳細については、[UEFI USB 関数プロトコル](uefi-usb-function-protocol.md)を参照してください。 |
+| USB 関数プロトコル | ファームウェアの USB 3.0 を経由して、usb、UEFI USB 関数プロトコル改訂 0x00010002 またはより高いサポート実装する必要があります、 [EFI\_USBFN\_IO\_プロトコル。ConfigureEnableEndpointsEx](efi-usbfn-io-protocol-configureenableendpointsex.md)関数。 詳細については、次を参照してください。 [UEFI USB 関数プロトコル](uefi-usb-function-protocol.md)します。 |
 | Blockio の相対的 | Microsoft 提供の USB 点滅ソリューションでは、点滅の非ゼロ I/O サイズのブロック ストレージ デバイスに最初に返されたポインターを選択します。 デバイスは、固定またはリムーバブル記憶域を指定できます。                                                                                                                                                             |
 ## <a name="uefi-desync-event-optional"></a>UEFI desync イベント (省略可能)
 

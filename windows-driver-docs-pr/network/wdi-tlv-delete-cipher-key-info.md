@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DELETE_CIPHER_KEY_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 24c9074871730d95166e7975c755b4e95f4af6e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331812"
 ---
 # <a name="wditlvdeletecipherkeyinfo"></a>WDI\_TLV\_削除\_暗号\_キー\_情報
 
@@ -33,13 +33,13 @@ WDI\_TLV\_削除\_暗号\_キー\_情報を使用して、削除する 1 つの�
 
 | 種類                                                                      | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                |
 |---------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_ピア\_MAC\_アドレス**](wdi-tlv-peer-mac-address.md)          |                                | X        | ピアの MAC アドレスを指定します。 少なくとも 1 つの WDI\_TLV\_ピア\_MAC\_アドレスまたは WDI\_TLV\_暗号\_キー\_ID が存在する必要があります。 |
-| [**WDI\_TLV\_暗号\_キー\_ID**](wdi-tlv-cipher-key-id.md)                |                                | X        | 暗号を指定しますキー id。 少なくとも 1 つの WDI\_TLV\_ピア\_MAC\_アドレスまたは WDI\_TLV\_暗号\_キー\_ID が存在する必要があります。    |
+| [**WDI\_TLV\_ピア\_MAC\_アドレス**](wdi-tlv-peer-mac-address.md)          |                                | x        | ピアの MAC アドレスを指定します。 少なくとも 1 つの WDI\_TLV\_ピア\_MAC\_アドレスまたは WDI\_TLV\_暗号\_キー\_ID が存在する必要があります。 |
+| [**WDI\_TLV\_暗号\_キー\_ID**](wdi-tlv-cipher-key-id.md)                |                                | x        | 暗号を指定しますキー id。 少なくとも 1 つの WDI\_TLV\_ピア\_MAC\_アドレスまたは WDI\_TLV\_暗号\_キー\_ID が存在する必要があります。    |
 | [**WDI\_TLV\_暗号\_キー\_型\_情報**](wdi-tlv-cipher-key-type-info.md) |                                |          | 暗号キーの種類の情報を指定します。                                                                                 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

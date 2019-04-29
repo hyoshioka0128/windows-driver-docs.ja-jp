@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 378c8d57eca8631826af6edb56be9af0797c3105
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332792"
 ---
 # <a name="kspropertyaudiosignalprocessingmodes"></a>KSPROPERTY\_AUDIOSIGNALPROCESSING\_モード
 
@@ -39,16 +39,16 @@ ms.locfileid: "56574878"
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 <td align="left"><p>(フィルター インスタンス) を使用してファクトリをピン留めします。</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722.aspx" data-raw-source="[KSP_PIN](https://msdn.microsoft.com/library/windows/hardware/ff566722.aspx)">KSP_PIN</a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx" data-raw-source="[KSMULTIPLE_ITEM](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)">KSMULTIPLE_ITEM</a></p></td>
@@ -70,14 +70,14 @@ Windows 10 では、追加の 5 つのモードが定義されます。
 
 オーディオ\_SIGNALPROCESSINGMODE\_通信オーディオ\_SIGNALPROCESSINGMODE\_音声オーディオ\_SIGNALPROCESSINGMODE\_MEDIA オーディオ\_SIGNALPROCESSINGMODE\_ムービー オーディオ\_SIGNALPROCESSINGMODE\_詳細については、通知を参照してください[オーディオ信号の処理モード](https://msdn.microsoft.com/windows/hardware/drivers/audio/audio-signal-processing-modes)します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 基本的なサポート ハンドラー **KSPROPERTY\_AUDIOSIGNALPROCESSING\_モード**渡される必要があります、 **KSP\_PIN**構造体、およびサポートのみを提供する必要がありますループバック以外では、ピンをストリーミングします。 オーディオ ドライバーは、ホスト上のみシグナル処理モードをサポートし、ピンの負荷を軽減する必要があります。 ループバックまたはブリッジのピンのオーディオ ドライバーもプロパティをサポートしてを返す、 **KSMULTIPLE\_項目**構造体の*カウント*パラメーターがゼロ (0) に設定します。
 
 オーディオ ポート クラス ドライバー (Portcls) を実装できる Microsoft と協力する開発したオーディオ ミニポート ドライバー、 [ **IMiniportAudioSignalProcessing::GetModes** ](https://msdn.microsoft.com/library/windows/hardware/dn457660)メソッド。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

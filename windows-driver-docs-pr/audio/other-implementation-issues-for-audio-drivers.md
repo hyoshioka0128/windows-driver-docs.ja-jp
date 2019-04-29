@@ -1,17 +1,17 @@
 ---
-title: その他のオーディオ ドライバーの実装の問題
-description: その他のオーディオ ドライバーの実装の問題
+title: オーディオ ドライバーでの実装に関するその他の問題
+description: オーディオ ドライバーでの実装に関するその他の問題
 ms.assetid: 22c3dd79-30af-4ece-a343-2149c38c6caf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ee6184fce82bd333d7cde3f7a6525ed51790e97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332254"
 ---
-# <a name="other-implementation-issues-for-audio-drivers"></a>その他のオーディオ ドライバーの実装の問題
+# <a name="other-implementation-issues-for-audio-drivers"></a>オーディオ ドライバーでの実装に関するその他の問題
 
 
 ## <span id="other_implementation_issues_for_audio_drivers"></span><span id="OTHER_IMPLEMENTATION_ISSUES_FOR_AUDIO_DRIVERS"></span>

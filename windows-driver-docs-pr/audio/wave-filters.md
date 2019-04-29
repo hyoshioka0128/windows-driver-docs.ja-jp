@@ -1,6 +1,6 @@
 ---
-title: Wave フィルター
-description: Wave フィルター
+title: ウェーブ フィルター
+description: ウェーブ フィルター
 ms.assetid: 9e364c8f-55c3-4ec9-a9ce-9ee0f6a0746b
 keywords:
 - オーディオ フィルター WDK のオーディオ、wave
@@ -20,19 +20,19 @@ keywords:
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c32ab24051c34ffe8cf8f265baaabdc5fa44880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335239"
 ---
-# <a name="wave-filters"></a>Wave フィルター
+# <a name="wave-filters"></a>ウェーブ フィルター
 
 
 ## <span id="wave_filters"></span><span id="WAVE_FILTERS"></span>
 
 
-Wave フィルターは、表示や、wave 形式のデジタル オーディオ データをキャプチャするデバイスを表します。 アプリケーションが通常、DirectSound API または Microsoft Windows のマルチ メディア waveOut のいずれかにこれらのデバイスの機能がアクセス*Xxx*と waveIn*Xxx*関数。 WDM オーディオ ドライバーをサポートできる wave 形式については、[ **WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)と[ **WAVEFORMATEXTENSIBLE**](https://msdn.microsoft.com/library/windows/hardware/ff538802)を参照してください。
+Wave フィルターは、表示や、wave 形式のデジタル オーディオ データをキャプチャするデバイスを表します。 アプリケーションが通常、DirectSound API または Microsoft Windows のマルチ メディア waveOut のいずれかにこれらのデバイスの機能がアクセス*Xxx*と waveIn*Xxx*関数。 WDM オーディオ ドライバーをサポートできる wave 形式については、次を参照してください。 [ **WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)と[ **WAVEFORMATEXTENSIBLE**](https://msdn.microsoft.com/library/windows/hardware/ff538802)します。
 
 A *wave レンダリング*フィルター wave デジタル オーディオ ストリーム入力として受け取るし、(スピーカーまたは外付けミキサーのセット) をオーディオ信号をアナログまたはデジタル オーディオ ストリームを (たとえばの S/PDIF コネクタ) を出力します。
 
@@ -103,7 +103,7 @@ WavePci デバイスは、任意のメモリ アドレスに配置されてい�
 
 コード例で[サブデバイス作成](subdevice-creation.md)このプロセスを示しています。 ポートおよびミニポートのドライバーがを介して相互に通信、 [IPortWavePci](https://msdn.microsoft.com/library/windows/hardware/ff536905)と[IMiniportWavePci](https://msdn.microsoft.com/library/windows/hardware/ff536724)インターフェイス。
 
-詳細については、[WavePci デバイスの実装の問題](implementation-issues-for-wavepci-devices.md)を参照してください。
+詳細については、次を参照してください。 [WavePci デバイスの実装の問題](implementation-issues-for-wavepci-devices.md)します。
 
 ### <a name="span-idwavecyclicfilterspanspan-idwavecyclicfilterspanwavecyclic-filters"></a><span id="wavecyclic_filter"></span><span id="WAVECYCLIC_FILTER"></span>WaveCyclic フィルター
 
@@ -123,7 +123,7 @@ WaveCyclic フィルターの循環バッファーは常に、仮想メモリの
 
 大きなバッファー (たとえば、8 の物理的に連続したメモリ ページ) の入力を求める WaveCyclic ミニポート ドライバーは、オペレーティング システムが元の要求を拒否した場合、バッファー サイズを小さくの決済を準備する必要があります。 オーディオ デバイスが場合によってはアンロードされ、システム リソースを再調整を再読み込みして (を参照してください[再調整するリソースへのデバイスを停止する](https://msdn.microsoft.com/library/windows/hardware/ff563877))。
 
-WaveCyclic デバイス組み込み、バス マスターの DMA ハードウェアと呼ばれる、*マスター デバイス*します。 また、WaveCyclic デバイスもあります、*下位デバイス*組み込み DMA ハードウェア機能を持たない。 下位のデバイスは、必要なすべてのデータ転送を実行するシステムの DMA コント ローラーに依存するがします。 マスターおよび下位のデバイスの詳細については、[IDmaChannel](https://msdn.microsoft.com/library/windows/hardware/ff536547)と[IDmaChannelSlave](https://msdn.microsoft.com/library/windows/hardware/ff536548)を参照してください。
+WaveCyclic デバイス組み込み、バス マスターの DMA ハードウェアと呼ばれる、*マスター デバイス*します。 また、WaveCyclic デバイスもあります、*下位デバイス*組み込み DMA ハードウェア機能を持たない。 下位のデバイスは、必要なすべてのデータ転送を実行するシステムの DMA コント ローラーに依存するがします。 マスターおよび下位のデバイスの詳細については、次を参照してください。 [IDmaChannel](https://msdn.microsoft.com/library/windows/hardware/ff536547)と[IDmaChannelSlave](https://msdn.microsoft.com/library/windows/hardware/ff536548)します。
 
 ミニポート ドライバーは、ポート ドライバーのいずれかによって作成される既定の DMA チャネル オブジェクトを使用する代わりに独自の DMA チャネル オブジェクトを実装できます WaveCyclic の新規*Xxx*もできます。
 

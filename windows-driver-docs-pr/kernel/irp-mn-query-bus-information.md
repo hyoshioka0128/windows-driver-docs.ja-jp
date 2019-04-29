@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_BUS_INFORMATION カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: ecc14699760e5904e484a58d5f7f128f105d7ed9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330204"
 ---
 # <a name="irpmnquerybusinformation"></a>IRP\_MN\_クエリ\_BUS\_情報
 
@@ -87,7 +87,7 @@ PnP バス ドライバー設定**LegacyBusType**を[**インターフェイス\
 
 呼び出す[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)デバイスが接続されているバスに関する情報を取得します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

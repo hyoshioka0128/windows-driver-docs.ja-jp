@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b8d86f384112e86446b9223543b765e5431644d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325984"
 ---
 # <a name="kspropertyvideodecoderoutputenable"></a>KSPROPERTY\_VIDEODECODER\_出力\_を有効にします。
 
@@ -68,7 +68,7 @@ KSPROPERTY\_VIDEODECODER\_出力\_有効にするプロパティは、ビデオ 
 
 **値**、KSPROPERTY のメンバー\_VIDEODECODER\_の構造は、3 つの出力を有効にする 設定を指定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

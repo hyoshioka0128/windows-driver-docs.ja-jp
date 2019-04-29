@@ -1,5 +1,5 @@
 ---
-title: ドライバーが Framework オブジェクトをリークするかどうかを決定します。
+title: ドライバーでのフレームワーク オブジェクトのリークの判断
 description: このトピックでは、解放されていない参照によるドライバーのメモリ リークを検索する方法について説明します。 ユーザー モード ドライバー フレームワーク (UMDF) ドライバーのバージョン 1 と 2 に適用されます。
 ms.assetid: 617cc678-e0db-4d2f-9d19-34b6cedad234
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a302cc2cee7500b39622a2fb58a791eee969b0cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384581"
 ---
-# <a name="determining-if-a-driver-leaks-framework-objects"></a>ドライバーが Framework オブジェクトをリークするかどうかを決定します。
+# <a name="determining-if-a-driver-leaks-framework-objects"></a>ドライバーでのフレームワーク オブジェクトのリークの判断
 
 
 このトピックでは、解放されていない参照によるドライバーのメモリ リークを検索する方法について説明します。 ユーザー モード ドライバー フレームワーク (UMDF) ドライバーのバージョン 1 と 2 に適用されます。
@@ -35,9 +35,9 @@ UMDF ドライバー バージョン 1 フレームワーク オブジェクト�
 
     このオプションが設定されている場合、検証機能の追跡ドライバーの実行中にフレームワーク オブジェクトへの参照。 使用することができます、 [ **! wudfrefhist** ](using-umdf-debugger-extensions.md)デバッガー拡張がそれぞれ表示する呼び出しスタック (関数呼び出しのセット) をインクリメントまたはデクリメント オブジェクトの参照カウントします。 調べることで、 **AddRef**と**リリース**呼び出しでは、これらの呼び出し履歴、オブジェクトの参照カウントをデクリメントしないと、リークするスタックを検索できる必要があります。
 
-追加の検証のオプションについては、[UMDF Verifier を使用して](using-umdf-verifier.md)を参照してください。
+追加の検証のオプションについては、次を参照してください。 [UMDF Verifier を使用して](using-umdf-verifier.md)します。
 
-Framework のオブジェクトを削除する場合については、[オブジェクトの有効期間を管理する](managing-the-lifetime-of-objects.md)を参照してください。
+Framework のオブジェクトを削除する場合については、次を参照してください。[オブジェクトの有効期間を管理する](managing-the-lifetime-of-objects.md)します。
 
 ## <a name="umdf-2"></a>UMDF 2
 

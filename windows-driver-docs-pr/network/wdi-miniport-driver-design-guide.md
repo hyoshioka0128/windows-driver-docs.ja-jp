@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23aff4fa1d8ac998f021aa9d284deffbc36365f7
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385406"
 ---
 # <a name="wdi-miniport-driver-design-guide"></a>WDI ミニポート ドライバー設計ガイド
 
@@ -49,7 +49,7 @@ WLAN デバイス ドライバー インターフェイス (WDI) は、デスク
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>

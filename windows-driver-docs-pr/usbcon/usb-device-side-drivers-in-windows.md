@@ -1,16 +1,16 @@
 ---
-Description: Describes the architecture of the USB function stack.
-title: Windows での USB デバイス側のドライバー
+Description: USB 関数のスタックのアーキテクチャについて説明します。
+title: Windows の USB デバイス側ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55390287dc7d81316f9eabc306fe97d5e28b47c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384511"
 ---
-# <a name="usb-device-side-drivers-in-windows"></a>Windows での USB デバイス側のドライバー
+# <a name="usb-device-side-drivers-in-windows"></a>Windows の USB デバイス側ドライバー
 
 
 USB 関数のスタックのアーキテクチャについて説明します。

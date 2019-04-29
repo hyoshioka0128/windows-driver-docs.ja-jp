@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c36bec2f88a313cab41fcd8cbebfd25e3b619066
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332290"
 ---
 # <a name="nodes-and-connections"></a>ノードと接続
 
@@ -23,7 +23,7 @@ ms.locfileid: "56558828"
 ## <span id="nodes_and_connections"></span><span id="NODES_AND_CONNECTIONS"></span>
 
 
-フィルター ノードの記述子の配列の形式では、そのトポロジ ノードの説明を提供します ([**PCNODE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537720)構造)。 配列内の各記述子が 1 つのノードについて説明し、ノードの種類を指定する GUID が含まれています (たとえば、 [ **KSNODETYPE\_リバーブ**](https://msdn.microsoft.com/library/windows/hardware/ff537189))。 オーディオ デバイスに対して定義されている標準的なノードの種類の一覧は、[オーディオ トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff536219)を参照してください。
+フィルター ノードの記述子の配列の形式では、そのトポロジ ノードの説明を提供します ([**PCNODE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537720)構造)。 配列内の各記述子が 1 つのノードについて説明し、ノードの種類を指定する GUID が含まれています (たとえば、 [ **KSNODETYPE\_リバーブ**](https://msdn.microsoft.com/library/windows/hardware/ff537189))。 オーディオ デバイスに対して定義されている標準的なノードの種類の一覧は、次を参照してください。[オーディオ トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff536219)します。
 
 フィルターは、記述子の配列内のノードのインデックスを使用してそのノードのそれぞれを識別します。 たとえばをフィルターまたはフィルターで特定のピンには、特定のノード プロパティの要求を送信するとき、クライアントにはによって、ターゲット ノードを識別するために、要求でノードの ID (配列のインデックス) が含まれます。
 

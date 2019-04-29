@@ -1,6 +1,6 @@
 ---
-title: フィルター ドライバーから呼び出す PoStartNextPowerIrp
-description: フィルター ドライバーから呼び出す PoStartNextPowerIrp
+title: フィルター ドライバーからの PoStartNextPowerIrp の呼び出し
+description: フィルター ドライバーからの PoStartNextPowerIrp の呼び出し
 ms.assetid: 6005f107-8f90-4530-91c2-9f0947cacb0a
 keywords:
 - Irp WDK カーネル、PoStartNextPowerIrp を電源します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3db70e6b8800be6242c9b65ccb7a732ca290b594
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338603"
 ---
-# <a name="calling-postartnextpowerirp-from-a-filter-driver"></a>フィルター ドライバーから呼び出す PoStartNextPowerIrp
+# <a name="calling-postartnextpowerirp-from-a-filter-driver"></a>フィルター ドライバーからの PoStartNextPowerIrp の呼び出し
 
 
 Windows Vista 以降、通話[ **PoStartNextPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559776)は必要ありませんし、このルーチンの呼び出しには電源管理操作は実行されません。 ただしで Windows Server 2003、Windows XP、および Windows 2000 では、フィルター ドライバーを呼び出す必要があります**PoStartNextPowerIrp**に対して 1 回ごと[ **IRP\_MN\_クエリ\_電源** ](https://msdn.microsoft.com/library/windows/hardware/ff551699)または[ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)ドライバーが受信した要求。 呼び出しが発生したときは、要求とは、ドライバーの失敗または、要求が次の表は成功を収めるかどうかの種類によって異なります。

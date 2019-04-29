@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ae347aa0f24202db04c121fe40094255c85d6d8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336431"
 ---
-# <a name="isainfo"></a>! isainfo
+# <a name="isainfo"></a>!isainfo
 
 
 **! Isainfo** PNPISA カードについての情報を表示拡張機能またはデバイスでは、システムで提示.

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7455e72d9240e6158ec1adf80945fff7f67b1dde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333789"
 ---
 # <a name="directmusic-wdm-kernel-streaming-background"></a>DirectMusic WDM カーネル ストリーミングの背景
 
@@ -26,7 +26,7 @@ ms.locfileid: "56553191"
 ## <span id="directmusic_wdm_kernel_streaming_background"></span><span id="DIRECTMUSIC_WDM_KERNEL_STREAMING_BACKGROUND"></span>
 
 
-このセクションでは、DirectMusic および WDM カーネルのストリーミング、または、任意のユーザー カーネル モードのアーキテクチャの概要を簡単に新しいドライバー作成者に便利な可能性があります。 経験豊富な WDM オーディオ ドライバー作成者をスキップする[シンセサイザー ミニポート ドライバーの概要](synthesizer-miniport-driver-overview.md)します。 カーネルのストリーミングに全般的な概要については、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)を参照してください。
+このセクションでは、DirectMusic および WDM カーネルのストリーミング、または、任意のユーザー カーネル モードのアーキテクチャの概要を簡単に新しいドライバー作成者に便利な可能性があります。 経験豊富な WDM オーディオ ドライバー作成者をスキップする[シンセサイザー ミニポート ドライバーの概要](synthesizer-miniport-driver-overview.md)します。 カーネルのストリーミングに全般的な概要については、次を参照してください。[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)します。
 
 従来は、2 つの種類の Windows のドライバーがありました。
 
@@ -38,7 +38,7 @@ Windows 98 NT カーネルは、サービスのでき、Windows 98 で実行す�
 
 ストリーミング アーキテクチャ WDM カーネルが起源 (なった DirectShow) ActiveMovie、フィルターのチェーンの概念がメディアのストリーミングに使用されました。 チェーン内の各フィルターにはユーザー モードのフィルター、カーネル モードのフィルターでは、プロキシとして提供されるユーザー モード コードの一部、またはハードウェアをマーシャ リングされたユーザー モード コードの一部も可能性があります (を参照してください[カーネル ストリーミング プロキシを使用して AVStreamモジュール](https://msdn.microsoft.com/library/windows/hardware/ff568671))。 このアーキテクチャをカーネルのストリーミングを作成するには、Windows 2000 カーネルられました。
 
-ピン留めする の用語は Microsoft できるようになりますし、DirectShow 最初由来します。 Pin は 1 つのフィルターの別の接続に使用できるターゲットのカーネル ストリーミングの用語でですようになりました。 たとえば、場合-"out"pin の最初の 2 つのフィルターがある、2 番目は、"in"暗証番号 (pin)--ピン接続できますできるように、最初のフィルターは、2 番目のフィルターにデータのストリームを渡すことができます。 詳細については、[オーディオ フィルター グラフ](audio-filter-graphs.md)を参照してください。
+ピン留めする の用語は Microsoft できるようになりますし、DirectShow 最初由来します。 Pin は 1 つのフィルターの別の接続に使用できるターゲットのカーネル ストリーミングの用語でですようになりました。 たとえば、場合-"out"pin の最初の 2 つのフィルターがある、2 番目は、"in"暗証番号 (pin)--ピン接続できますできるように、最初のフィルターは、2 番目のフィルターにデータのストリームを渡すことができます。 詳細については、次を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。
 
 カーネルのストリーミング、WDM の一部になったし、WDM オーディオによって使用されます。 DirectMusic を使用して、 [WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)カーネル モード コンポーネントとしてその情報を渡して I/O 要求パケット (Irp) の形式でのカーネル モードにします。 すべての DirectMusic インターフェイスは厳密に WDM です。
 
@@ -52,7 +52,7 @@ WDM オーディオ PortCls と呼ばれるコンポーネントがあります 
 
 Sequencer が MIDI ポート ドライバー自体にあるためは、期限に達すると、その後、それを適切なミニポート ドライバーを使用するまで、タイムスタンプ付きデータを保持します。 たとえば、片方のミニポート ドライバーでは、外部のシンセサイザーのモジュールを使用してデバイスを wave データを送信します。 ミニポート ドライバーの出力は、ポート ドライバーのウェーブ シンクによって管理されます。
 
-MIDI メモのミニポート ドライバーを格納し、ミニポート ドライバーが指定されたメモリ位置に wave データの要求の量をレンダリング MIDI ポート ドライバーの一部では、wave シンクは、オーディオ データの次のブロックが表示されたら、します。 このプロセスの詳細については、[DirectMusic ミニポート ドライバー インターフェイス](directmusic-miniport-driver-interface.md)を参照してください。
+MIDI メモのミニポート ドライバーを格納し、ミニポート ドライバーが指定されたメモリ位置に wave データの要求の量をレンダリング MIDI ポート ドライバーの一部では、wave シンクは、オーディオ データの次のブロックが表示されたら、します。 このプロセスの詳細については、次を参照してください。 [DirectMusic ミニポート ドライバー インターフェイス](directmusic-miniport-driver-interface.md)します。
 
 Microsoft では、すべて Mpu の標準のミニポート ドライバーの機能を提供します。 MPU 仕様は、ハードウェアで行う必要があり、応答方法を正確に定義するため、Microsoft は PortCls の一部として Mpu を処理するために、ミニポート ドライバーを提供します。 Mpu があるすべてのサウンド カードには、この同じミニポート ドライバーを使用できます。
 

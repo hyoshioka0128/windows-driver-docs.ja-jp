@@ -1,6 +1,6 @@
 ---
-title: アダプターのドライバーの構築
-description: アダプターのドライバーの構築
+title: アダプター ドライバーの構築
+description: アダプター ドライバーの構築
 ms.assetid: e4a151b9-57aa-402f-8a0d-70547eb67917
 keywords:
 - オーディオのミニポート ドライバー WDK、アダプターのドライバー
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4490de29470544e1f15ddfca16af9849e6b2dae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325414"
 ---
-# <a name="adapter-driver-construction"></a>アダプターのドライバーの構築
+# <a name="adapter-driver-construction"></a>アダプター ドライバーの構築
 
 
 ## <span id="adapter_driver_construction"></span><span id="ADAPTER_DRIVER_CONSTRUCTION"></span>

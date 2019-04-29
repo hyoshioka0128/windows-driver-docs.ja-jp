@@ -1,6 +1,6 @@
 ---
-title: 軽量の MIP マップ テクスチャの下位レベルの取得
-description: 軽量の MIP マップ テクスチャの下位レベルの取得
+title: 軽量の MIP マップ テクスチャのサブレベルの取得
+description: 軽量の MIP マップ テクスチャのサブレベルの取得
 ms.assetid: a2781c9a-b4bb-42a9-8ed5-9f62c1d2ee64
 keywords:
 - MIP マップ テクスチャ WDK DirectX 9.0、サブレベルの取得
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 713bba8f72f76ea33ed60a45bfab16cd5e184b84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384001"
 ---
-# <a name="obtaining-sublevels-of-lightweight-mip-map-textures"></a>軽量の MIP マップ テクスチャの下位レベルの取得
+# <a name="obtaining-sublevels-of-lightweight-mip-map-textures"></a>軽量の MIP マップ テクスチャのサブレベルの取得
 
 
 ## <span id="ddk_obtaining_sublevels_of_lightweight_mip_map_textures_gg"></span><span id="DDK_OBTAINING_SUBLEVELS_OF_LIGHTWEIGHT_MIP_MAP_TEXTURES_GG"></span>

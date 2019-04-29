@@ -1,17 +1,17 @@
 ---
-title: イメージのアプリケーション ダイアログの拡張機能
-description: イメージのアプリケーション ダイアログの拡張機能
+title: イメージ アプリケーション ダイアログの拡張
+description: イメージ アプリケーション ダイアログの拡張
 ms.assetid: 4bb7d2f9-58c3-4cfa-aa6b-a4bd9335d2ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f163fcba553303c2f072be8b847074ab384d312
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384655"
 ---
-# <a name="image-application-dialog-extensions"></a>イメージのアプリケーション ダイアログの拡張機能
+# <a name="image-application-dialog-extensions"></a>イメージ アプリケーション ダイアログの拡張
 
 
 

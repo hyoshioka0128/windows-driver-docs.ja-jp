@@ -1,5 +1,5 @@
 ---
-title: .detach (プロセスからデタッチ)
+title: .detach (プロセスからのデタッチ)
 description: .Detach コマンドでは、デバッグ セッションを終了が、実行されているすべてのユーザー モード ターゲット アプリケーションのままです。
 ms.assetid: 4f0fbd8b-3037-4549-99da-be40a091a363
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b16176b96fe6cc3acda159c547c2120555b42fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336851"
 ---
-# <a name="detach-detach-from-process"></a>.detach (プロセスからデタッチ)
+# <a name="detach-detach-from-process"></a>.detach (プロセスからのデタッチ)
 
 
 **.Detach**コマンドは、デバッグ セッションは終わりますが、ユーザー モードのターゲット アプリケーションの実行中のままです。

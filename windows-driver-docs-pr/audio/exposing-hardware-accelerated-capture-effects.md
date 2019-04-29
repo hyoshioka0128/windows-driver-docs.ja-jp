@@ -1,6 +1,6 @@
 ---
-title: ハードウェア アクセラレータによるキャプチャの効果を公開します。
-description: ハードウェア アクセラレータによるキャプチャの効果を公開します。
+title: ハードウェア アクセラレータによるキャプチャ効果を公開
+description: ハードウェア アクセラレータによるキャプチャ効果を公開
 ms.assetid: 032139e8-e758-4d63-b8c1-ca61c958b20b
 keywords:
 - ノイズの抑制 WDK オーディオ
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8f0167052142b57fe0c940e3160c0ea5da92272
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333675"
 ---
-# <a name="exposing-hardware-accelerated-capture-effects"></a>ハードウェア アクセラレータによるキャプチャの効果を公開します。
+# <a name="exposing-hardware-accelerated-capture-effects"></a>ハードウェア アクセラレータによるキャプチャ効果を公開
 
 
 ## <span id="exposing_hardware_accelerated_capture_effects"></span><span id="EXPOSING_HARDWARE_ACCELERATED_CAPTURE_EFFECTS"></span>
@@ -78,7 +78,7 @@ PCM のミニポート ドライバーには、この追加の要件を満たし
 
 ### <a name="span-idaecnodepinassignmentsspanspan-idaecnodepinassignmentsspanspan-idaecnodepinassignmentsspanaec-node-pin-assignments"></a><span id="AEC_Node_Pin_Assignments"></span><span id="aec_node_pin_assignments"></span><span id="AEC_NODE_PIN_ASSIGNMENTS"></span>AEC ノード暗証番号 (pin) の割り当て
 
-アダプターのドライバーの配列を使用して[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)フィルター内の接続を指定する構造体。 配列の各要素には、1 つの接続は、ノード間、pin をノード、または暗証番号 (pin)-pin がについて説明します。 詳細については、[ノードと接続](nodes-and-connections.md)を参照してください。
+アダプターのドライバーの配列を使用して[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)フィルター内の接続を指定する構造体。 配列の各要素には、1 つの接続は、ノード間、pin をノード、または暗証番号 (pin)-pin がについて説明します。 詳細については、次を参照してください。[ノードと接続](nodes-and-connections.md)します。
 
 PCCONNECTION を使用する\_記述子構造体ドライバー ライターで、ノードに「論理」ピンが割り当てられます。 これらはノード自体が「ピン」であり、フィルター内の接続を指定するためだけに使用されます。 これは、他のフィルターへの接続に使用される外部 pin では、フィルターとは対照的です。
 

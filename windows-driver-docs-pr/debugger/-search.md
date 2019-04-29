@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 893752195106244a17279b41d2f25b6857581f52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338843"
 ---
-# <a name="search"></a>! 検索
+# <a name="search"></a>!search
 
 
 **! 検索**拡張機能は、指定した条件に一致するポインター-サイズのデータの物理メモリ内のページを検索します。
@@ -66,7 +66,7 @@ Kdexts.dll
 <a name="remarks"></a>注釈
 -------
 
-場合*StartPFN*と*EndPFN*は指定すると、これらが表示されます、先頭と範囲の最後のページ フレーム番号として物理メモリで検索します。 フレームのページ番号の詳細については、[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)を参照してください。 場合*StartPFN*と*EndPFN*は省略すると、すべての物理メモリが検索されます。
+場合*StartPFN*と*EndPFN*は指定すると、これらが表示されます、先頭と範囲の最後のページ フレーム番号として物理メモリで検索します。 フレームのページ番号の詳細については、次を参照してください。[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)します。 場合*StartPFN*と*EndPFN*は省略すると、すべての物理メモリが検索されます。
 
 すべてのヒットが表示されます。
 

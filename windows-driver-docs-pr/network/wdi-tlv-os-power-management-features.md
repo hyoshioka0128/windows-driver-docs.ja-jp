@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_OS_POWER_MANAGEMENT_FEATURES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fdf117dc5ee231a7bf17e2ef2f2e2dd179ceed2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385253"
 ---
 # <a name="wditlvospowermanagementfeatures"></a>WDI_TLV_OS_POWER_MANAGEMENT_FEATURES
 
@@ -28,12 +28,12 @@ WDI_TLV_OS_POWER_MANAGEMENT_FEATURES では、OS の電源管理機能のフラ�
 
 ## <a name="values"></a>値
 
-| 種類 | 説明 |
+| 型 | 説明 |
 | --- | --- |
 | [**WDI_OS_POWER_MANAGEMENT_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_os_power_management_flags) | ビットごとの OR **WDI_OS_POWER_MANAGEMENT_FLAGS**値を定義するには、NAP の有効化のシナリオがサポートされています。 |
  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

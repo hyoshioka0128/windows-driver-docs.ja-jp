@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4069c87228cf7fab8b0c29c374fcb6fe32c0b6ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334635"
 ---
 # <a name="chklowmem"></a>!chklowmem
 
@@ -50,7 +50,7 @@ ms.locfileid: "56578422"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能は、カーネル モード ドライバーが 4 GB の境界を超える物理メモリ適切に動作を確認する場合に便利です。 通常、ドライバーは、32 ビットにし、4 GB の境界の下で、物理アドレスを切り捨てることで失敗します。 **! Chklowmem**拡張機能は 4 GB の境界下のすべての書き込みを検出します。

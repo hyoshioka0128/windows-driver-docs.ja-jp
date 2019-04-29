@@ -5,11 +5,11 @@ ms.assetid: cf4e728f-7900-4849-ab1c-135f9fec9713
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bec7fc3e78b0981fbb0e903c102e897ed247de05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383700"
 ---
 # <a name="using-custom-properties"></a>カスタム プロパティの使用
 
@@ -19,7 +19,7 @@ ms.locfileid: "56569783"
 
 WIA ドライバーには、独自のカスタム プロパティを定義できます。 呼び出し元は、通常の WIA プロパティと同様、カスタム プロパティを操作できます。 ただし、アプリケーションまたはカスタム UI モジュールだけでは、これらのカスタム プロパティをアクセスできます。
 
-WIA ドライバーは、WIA のオフセット プロパティ識別子へのカスタム プロパティを定義する必要があります\_プライベート\_デバイス プロパティ、および使用 WIA DEVPROP\_プライベート\_ITEMPROP の通常のアイテムのプロパティこのような内[ **IWiaMiniDrv::drvInitItemProperties**](https://msdn.microsoft.com/library/windows/hardware/ff544989)します。 詳細については、[カスタム プロパティを定義する](defining-custom-properties.md)を参照してください。
+WIA ドライバーは、WIA のオフセット プロパティ識別子へのカスタム プロパティを定義する必要があります\_プライベート\_デバイス プロパティ、および使用 WIA DEVPROP\_プライベート\_ITEMPROP の通常のアイテムのプロパティこのような内[ **IWiaMiniDrv::drvInitItemProperties**](https://msdn.microsoft.com/library/windows/hardware/ff544989)します。 詳細については、次を参照してください。[カスタム プロパティを定義する](defining-custom-properties.md)します。
 
 WIA ドライバーにカスタム パラメーターを渡す 2 つの方法はあります。
 

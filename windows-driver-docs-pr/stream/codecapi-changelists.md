@@ -5,11 +5,11 @@ ms.assetid: c1b65350-32b9-4c94-a6d4-74cb9959d737
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbc0fd0642dbfd5b17e116d14cca7b4ca67a16e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384592"
 ---
 # <a name="codecapichangelists"></a>CODECAPI\_変更リスト
 
@@ -49,7 +49,7 @@ CODECAPI\_変更リスト イベントは、プロパティの結果として変
 
  
 
-DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
+DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
 
 ドライバーの使用、AVStream [ **KsGenerateEvents** ](https://msdn.microsoft.com/library/windows/hardware/ff562597)変更 Guid のリストを投稿します。
 

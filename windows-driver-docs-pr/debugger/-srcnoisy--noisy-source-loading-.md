@@ -1,5 +1,5 @@
 ---
-title: .srcnoisy (ノイズの多いソースの読み込み中)
+title: .srcnoisy (ノイズの多いソースの読み込み)
 description: .Srcnoisy コマンドでは、ソース ファイルの読み込みの詳細レベルを制御します。
 ms.assetid: c57e0d0a-7903-455a-9a92-fab75f10ca80
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: aac70c4217d3cfef3f58b2b52aeabe4435d8f385
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334249"
 ---
-# <a name="srcnoisy-noisy-source-loading"></a>.srcnoisy (ノイズの多いソースの読み込み中)
+# <a name="srcnoisy-noisy-source-loading"></a>.srcnoisy (ノイズの多いソースの読み込み)
 
 
 **.Srcnoisy**コマンドは、ソース ファイルの読み込みの詳細レベルを制御します。

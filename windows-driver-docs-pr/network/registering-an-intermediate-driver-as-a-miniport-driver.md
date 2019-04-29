@@ -1,6 +1,6 @@
 ---
-title: ミニポート ドライバーとして中間のドライバーを登録します。
-description: ミニポート ドライバーとして中間のドライバーを登録します。
+title: 中間ドライバーのミニポート ドライバーとしての登録
+description: 中間ドライバーのミニポート ドライバーとしての登録
 ms.assetid: a01bc0f4-4a03-4d44-88c0-7029042d6953
 keywords:
 - 中間ドライバーの登録
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36c74262f88f6b25b759053172339e1891f73b57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391966"
 ---
-# <a name="registering-an-intermediate-driver-as-a-miniport-driver"></a>ミニポート ドライバーとして中間のドライバーを登録します。
+# <a name="registering-an-intermediate-driver-as-a-miniport-driver"></a>中間ドライバーのミニポート ドライバーとしての登録
 
 
 
@@ -29,7 +29,7 @@ ms.locfileid: "56528692"
 
 2.  必須の住所は格納*MiniportXxx*関数、省略可能なあらゆるとして*MiniportXxx*ドライバーをエクスポートする関数。
 
-NDIS 6.0 の機能をサポートする中間のドライバーは、バージョン 6.0 のミニポート ドライバーとして登録する必要があります。 ミニポート ドライバーのバージョン番号を指定する方法については、[ **NDIS\_ミニポート\_ドライバー\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565958)を参照してください。
+NDIS 6.0 の機能をサポートする中間のドライバーは、バージョン 6.0 のミニポート ドライバーとして登録する必要があります。 ミニポート ドライバーのバージョン番号を指定する方法については、次を参照してください。 [ **NDIS\_ミニポート\_ドライバー\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565958)します。
 
 次のエントリを設定する必要があります*MiniportCharacteristics*を有効な*MiniportXxx*関数のアドレスでない場合、関数オプションはエクスポートされません。 ドライバーが、関数をエクスポートされない場合は、アドレスを設定**NULL**します。
 
@@ -55,7 +55,7 @@ NDIS 呼び出し[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/w
 [*MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416) OID を受け取る\_*XXX*と呼ばれる上位のドライバーから送信された要求[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)または NDIS から。 中間のドライバーは、要求を処理または、基になるミニポート ドライバーに渡す可能性があります。
 
 <a href="" id="sendnetbufferlistshandler"></a>**SendNetBufferListsHandler**  
-[*MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)を 1 つまたは複数のポインターの配列を受け取る[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)ネットワークを指定する構造体ネットワーク経由で伝送されるデータ。 すべての中間ドライバーを指定する必要があります、 *MiniportSendNetBufferLists*関数。 詳細については、[送信ネットワーク データを、中間ドライバー](transmitting-network-data-through-an-intermediate-driver.md)を参照してください。
+[*MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)を 1 つまたは複数のポインターの配列を受け取る[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)ネットワークを指定する構造体ネットワーク経由で伝送されるデータ。 すべての中間ドライバーを指定する必要があります、 *MiniportSendNetBufferLists*関数。 詳細については、次を参照してください。[送信ネットワーク データを、中間ドライバー](transmitting-network-data-through-an-intermediate-driver.md)します。
 
 <a href="" id="returnnetbufferlistshandler"></a>**ReturnNetBufferListsHandler**  
 [*MiniportReturnNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559437)返された受信[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体に示されていましたが、呼び出すことによってより高度なドライバー **NdisMIndicateReceiveNetBufferLists**します。 呼び出し**NdisMIndicateReceiveNetBufferLists**上位レベルのドライバーに示されるリソースの制御を解放します。 中間のドライバーが NET に割り当てられた後、各を示す値より高度なドライバーが消費する\_バッファー\_をリストの構造とについて説明しますが、リソースが返されます、 *MiniportReturnNetBufferLists*関数。
@@ -78,11 +78,11 @@ NDIS 呼び出し[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/w
 <a href="" id="canceloidrequesthandler"></a>**CancelOidRequestHandler**  
 [*MiniportCancelOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559339)は必要な関数です。 NDIS 呼び出し*MiniportCancelOidRequest* OID 要求を取り消します。
 
-中間のドライバーには、その他の必要があります*MiniportXxx*実装に固有である関数。 省略可能な登録方法の詳細については、[省略可能なミニポート ドライバー サービスを構成する](configuring-optional-miniport-driver-services.md)を参照してください。
+中間のドライバーには、その他の必要があります*MiniportXxx*実装に固有である関数。 省略可能な登録方法の詳細については、次を参照してください。[省略可能なミニポート ドライバー サービスを構成する](configuring-optional-miniport-driver-services.md)します。
 
 特定ミニポート ドライバー ハンドラー関数は、中間のドライバーによって提供されることはありません。 理由が考えられます。 このようなドライバーは、割り込みのデバイスを管理しないか、このようなドライバーが発生した IRQL でバッファーを割り当てられません。
 
-**注**  中間ドライバーが一時停止を含めるし、機能を再起動する必要があります。 一時停止のサポートが含まれてし、NDIS は、基になるドライバー スタックを置いたときに必要な場合は、仮想のミニポートの再起動します。 一時停止と再起動の詳細については、[ドライバー スタック管理](driver-stack-management.md)を参照してください。
+**注**  中間ドライバーが一時停止を含めるし、機能を再起動する必要があります。 一時停止のサポートが含まれてし、NDIS は、基になるドライバー スタックを置いたときに必要な場合は、仮想のミニポートの再起動します。 一時停止と再起動の詳細については、次を参照してください。[ドライバー スタック管理](driver-stack-management.md)します。
 
  
 

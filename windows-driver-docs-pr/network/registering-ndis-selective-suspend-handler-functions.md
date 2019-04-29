@@ -1,17 +1,17 @@
 ---
-title: 選択的登録 NDIS 中断ハンドラー関数
-description: 選択的登録 NDIS 中断ハンドラー関数
+title: NDIS セレクティブ サスペンド ハンドラー関数の登録
+description: NDIS セレクティブ サスペンド ハンドラー関数の登録
 ms.assetid: D4125F14-8356-4D9E-A287-D35D3BF69182
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0db84c30f6f1aec53c62529dde5040a10b46c7ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331333"
 ---
-# <a name="registering-ndis-selective-suspend-handler-functions"></a>選択的登録 NDIS 中断ハンドラー関数
+# <a name="registering-ndis-selective-suspend-handler-functions"></a>NDIS セレクティブ サスペンド ハンドラー関数の登録
 
 
 ミニポート ドライバーには、選択的 NDIS がサポートしている場合は、中断、NDIS は、基になるネットワーク アダプターがアイドル状態になることをドライバーに通知します。 ミニポート ドライバーでは、これらのアイドル状態の通知を処理するために、次の関数を提供する必要があります。

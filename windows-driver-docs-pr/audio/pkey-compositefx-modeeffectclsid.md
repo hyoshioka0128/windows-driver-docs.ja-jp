@@ -4,11 +4,11 @@ description: Windows 10 バージョン 1803 の後で、鍵\_Compositefx\_ModeE
 ms.date: 11/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b8f84e6d73c02b86aeb808b60a292a79b8179c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332190"
 ---
 # <a name="pkeycompositefxmodeeffectclsid"></a>鍵\_CompositeFX\_ModeEffectClsid
 

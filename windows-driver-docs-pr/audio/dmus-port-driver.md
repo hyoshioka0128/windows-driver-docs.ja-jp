@@ -1,6 +1,6 @@
 ---
-title: Dmu ポート ドライバー
-description: Dmu ポート ドライバー
+title: DMus ポート ドライバー
+description: DMus ポート ドライバー
 ms.assetid: 19828364-1b0d-4fc0-b142-9d776cbf1ada
 keywords:
 - DirectMusic WDK のオーディオ、ポートのドライバー
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf97f4a8156344aff6d0175c0613f3772b20a5e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333843"
 ---
-# <a name="dmus-port-driver"></a>Dmu ポート ドライバー
+# <a name="dmus-port-driver"></a>DMus ポート ドライバー
 
 
 ## <span id="dmus_port_driver"></span><span id="DMUS_PORT_DRIVER"></span>
@@ -52,10 +52,10 @@ DMU の種類の 1 つの構造の記憶域を含むメッセージ バッファ
 
 [**IAllocatorMXF::PutBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536495)
 
-使用されません。
+使用されていません。
 Dmu のポートおよびミニポート ドライバー オブジェクトが、それぞれを互い通信**IPortDMus**と[IMiniportMidi](https://msdn.microsoft.com/library/windows/hardware/ff536703)インターフェイス。 さらに、ポート ドライバーと通信を介して、ミニポート ドライバーのストリーム オブジェクト、 [IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)インターフェイス、およびストリーム オブジェクトのミニポート ドライバーの通信ポート ドライバーのアロケーターをその**IAllocatorMXF**インターフェイス。
 
-DirectMusic のドライバー サポートについての詳細については、[シンセサイザー ミニポート ドライバーの概要](synthesizer-miniport-driver-overview.md)を参照してください。
+DirectMusic のドライバー サポートについての詳細については、次を参照してください。[シンセサイザー ミニポート ドライバーの概要](synthesizer-miniport-driver-overview.md)します。
 
 Windows XP 以降では、 **IPortDMus**と[IPortMidi](https://msdn.microsoft.com/library/windows/hardware/ff536891)インターフェイスはいずれも 1 つの内部ドライバー モジュールに実装します。 この統合は、これら 2 つのインターフェイスの類似性によって促進されます。 たとえば、同じメソッドは、両方のインターフェイスに対して定義されます。 Windows の以前のバージョンが表示されないの動作の変更用に記述されたアプリケーション、 **IPortMidi**と**IPortDMus**インターフェイス MIDI と Dmu ポート ドライバーの統合に起因します。
 

@@ -1,6 +1,6 @@
 ---
-title: 非 PCM のピン留めするファクトリの要件
-description: 非 PCM のピン留めするファクトリの要件
+title: PCM 以外のピン ファクトリの要件
+description: PCM 以外のピン ファクトリの要件
 ms.assetid: 3ba5da2e-f96f-4645-8a37-dd985287a9f2
 keywords:
 - 非 PCM オーディオ形式 WDK、暗証番号 (pin) ファクトリ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9784bf5d3ce72c5cb3811a2c0e82446de748a86a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328686"
 ---
-# <a name="requirements-for-a-non-pcm-pin-factory"></a>非 PCM のピン留めするファクトリの要件
+# <a name="requirements-for-a-non-pcm-pin-factory"></a>PCM 以外のピン ファクトリの要件
 
 
 ## <span id="requirements_for_a_non_pcm_pin_factory"></span><span id="REQUIREMENTS_FOR_A_NON_PCM_PIN_FACTORY"></span>

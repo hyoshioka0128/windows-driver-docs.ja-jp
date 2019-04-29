@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 65bf2b32e2b783f49eb841f9068a1a58ff48236b
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334545"
 ---
 # <a name="effmach-effective-machine"></a>.effmach (効果的なコンピューター)
 
@@ -45,10 +45,10 @@ ms.locfileid: "57349829"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>コンピューターの種類</strong></p></td>
-<td align="left"><p><strong>[説明]</strong></p></td>
+<td align="left"><p><strong>説明</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>」を参照してください。</strong></p></td>
+<td align="left"><p><strong>.</strong></p></td>
 <td align="left"><p>対象のコンピュータのプロセッサのネイティブ モードのプロセッサ モードを使用します。</p></td>
 </tr>
 <tr class="odd">
@@ -107,7 +107,7 @@ ms.locfileid: "57349829"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 プロセッサ モード デバッガーの多くの機能に影響を与えます。

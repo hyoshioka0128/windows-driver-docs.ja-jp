@@ -1,6 +1,6 @@
 ---
-title: ミニポート ドライバーのプロパティ項目を要求
-description: ミニポート ドライバーのプロパティ項目を要求
+title: ミニポート ドライバー プロパティの項目要求
+description: ミニポート ドライバー プロパティの項目要求
 ms.assetid: 37baad27-539b-46ab-b300-175bc0c2b992
 keywords:
 - プロパティ項目 WDK DirectMusic を要求します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b08e4e2741f112ed684a2f9a69936ffaa29c378
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332310"
 ---
-# <a name="miniport-driver-property-item-requests"></a>ミニポート ドライバーのプロパティ項目を要求
+# <a name="miniport-driver-property-item-requests"></a>ミニポート ドライバー プロパティの項目要求
 
 
 ## <span id="miniport_driver_property_item_requests"></span><span id="MINIPORT_DRIVER_PROPERTY_ITEM_REQUESTS"></span>

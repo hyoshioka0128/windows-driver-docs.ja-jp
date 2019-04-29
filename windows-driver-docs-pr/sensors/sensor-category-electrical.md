@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 394ddd3c14c70698f338d49edb96b88bd6e34c39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383571"
 ---
 # <a name="sensorcategoryelectrical"></a>センサー\_カテゴリ\_電気
 
@@ -30,7 +30,7 @@ ms.locfileid: "56559532"
 
 このカテゴリには、次のプラットフォームで定義されているセンサーの種類が含まれています。
 
-|センサーの種類|意味|
+|センサーの種類|説明|
 |--|--|
 |SENSOR_TYPE_CAPACITANCE|キャパシタンスのセンサー|
 |SENSOR_TYPE_CURRENT|電流センサー|
@@ -46,7 +46,7 @@ ms.locfileid: "56559532"
 
 このカテゴリには、次のプラットフォームで定義されているデータ フィールドが含まれています。
 
-|データの種類|種類|意味|
+|データの種類|種類|説明|
 |--|--|--|
 |SENSOR_DATA_TYPE_CAPACITANCE_FARAD|VT_R8|Farads で静電容量です。|
 |SENSOR_DATA_TYPE_CURRENT_AMPS|VT_R8|アンペアの電流します。|

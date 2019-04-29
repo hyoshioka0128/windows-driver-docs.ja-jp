@@ -1,19 +1,19 @@
 ---
-title: COPP ビデオのミニポート ドライバーの状態のテンプレート コード
-description: COPP ビデオのミニポート ドライバーの状態のテンプレート コード
+title: COPP ビデオ ミニポート ドライバーの状態テンプレート コード
+description: COPP ビデオ ミニポート ドライバーの状態テンプレート コード
 ms.assetid: 4d0d0f95-8a21-4863-9930-ddee7d944c04
 keywords:
 - WDK COPP のステータス情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f59194f385daa93503174b640e6a7f71b56ad9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331314"
 ---
-# <a name="copp-video-miniport-driver-status-template-code"></a>COPP ビデオのミニポート ドライバーの状態のテンプレート コード
+# <a name="copp-video-miniport-driver-status-template-code"></a>COPP ビデオ ミニポート ドライバーの状態テンプレート コード
 
 
 ## <span id="ddk_copp_video_miniport_driver_status_template_code_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_STATUS_TEMPLATE_CODE_GG"></span>

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1319c5faecf838ded6ade6b0208b4d6cbd26fa0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333969"
 ---
 # <a name="state-transitions"></a>状態遷移
 
@@ -29,7 +29,7 @@ ms.locfileid: "56581457"
 </colgroup>
 <thead>
 <tr class="header">
-<th>移行</th>
+<th>Transition</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -65,7 +65,7 @@ KSSTATE\_停止 -&gt; **KSSTATE\_ACQUIRE**  - &gt; **KSSTATE\_一時停止** - &
 
 受け入れて処理の必要があります、すべての Stream クラス ミニドライバーでストリーミング中に、ユーザー モード アプリケーションが予期せず終了することができます、ため、 [ **SRB\_閉じる\_ストリーム**](https://msdn.microsoft.com/library/windows/hardware/ff568165)を要求しますいつでも Stream クラスのインターフェイスです。 クラス インターフェイスの SRB の送信、Stream の前に\_閉じる\_ストリーム、ミニドライバーにを通じてミニドライバーのすべての未解決のバッファーを取り消して**HwCancelPacket**ルーチン。 ストリームの状態を設定することはできません注**KSSTATE\_停止**アプリケーションが終了する前にします。
 
-更新すれば、 **PictureNumber**または**DropCount**のメンバー [ **KS\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567645)、 [ **KS\_VBI\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567694)、または[ **KSPROPERTY\_DROPPEDFRAMES\_現在\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565138)からの移行で**KSSTATE\_一時停止**に**KSSTATE\_実行**または**KSSTATE\_実行**KSSTATE に\_一時停止します。 詳細については、[ビデオのキャプチャ](capturing-video.md)を参照してください。
+更新すれば、 **PictureNumber**または**DropCount**のメンバー [ **KS\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567645)、 [ **KS\_VBI\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567694)、または[ **KSPROPERTY\_DROPPEDFRAMES\_現在\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff565138)からの移行で**KSSTATE\_一時停止**に**KSSTATE\_実行**または**KSSTATE\_実行**KSSTATE に\_一時停止します。 詳細については、次を参照してください。[ビデオのキャプチャ](capturing-video.md)します。
 
  
 

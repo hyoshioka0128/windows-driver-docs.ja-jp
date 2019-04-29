@@ -1,17 +1,17 @@
 ---
-title: どの USB デバイスが割り当てられたコンテナー Id です。
-description: どの USB デバイスが割り当てられたコンテナー Id です。
+title: USB デバイスへのコンテナー ID の割り当て方法
+description: USB デバイスへのコンテナー ID の割り当て方法
 ms.assetid: 769f9486-d179-44f0-9fd1-b3e737143ced
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a5298352c7941dba1511c0a5fe942b48cfde7992
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386971"
 ---
-# <a name="how-usb-devices-are-assigned-container-ids"></a>どの USB デバイスが割り当てられたコンテナー Id です。
+# <a name="how-usb-devices-are-assigned-container-ids"></a>USB デバイスへのコンテナー ID の割り当て方法
 
 
 ユニバーサル シリアル バス (USB) を通じてコンピューターに接続されているデバイスの場合、次のフローチャートは、USB デバイス ノードにコンテナー ID を割り当てるために使用するヒューリスティックを示しています (*devnode*)。
@@ -60,7 +60,7 @@ USB デバイス用のコンテナー ID は、いくつかの方法で生成さ
 
     -   ハブは、指定されたポートに接続されたデバイスがハブからリムーバブルいないことを示している場合は、このポートに接続されているデバイスは、多機能端末のサブ関数である PnP マネージャーが決定します。 この場合、devnode は親 devnode のコンテナーの ID を継承します。
 
-ACPI 3.0 インターフェイスの詳細については、[Advanced Configuration and Power インターフェイス仕様リビジョン 3.0b](https://go.microsoft.com/fwlink/p/?linkid=145427)を参照してください。
+ACPI 3.0 インターフェイスの詳細については、次を参照してください。 [Advanced Configuration and Power インターフェイス仕様リビジョン 3.0b](https://go.microsoft.com/fwlink/p/?linkid=145427)します。
 
  
 

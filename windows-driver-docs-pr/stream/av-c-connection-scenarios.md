@@ -1,6 +1,6 @@
 ---
-title: AV/C 接続のシナリオ
-description: AV/C 接続のシナリオ
+title: AV/C 接続シナリオ
+description: AV/C 接続シナリオ
 ms.assetid: 392f996c-47aa-4ceb-adf9-0c8fd114a511
 keywords:
 - WDK AV/C の接続
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c414a77ea2d7d330e62f9cbf383e8ce4adca0914
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384810"
 ---
-# <a name="avc-connection-scenarios"></a>AV/C 接続のシナリオ
+# <a name="avc-connection-scenarios"></a>AV/C 接続シナリオ
 
 
 

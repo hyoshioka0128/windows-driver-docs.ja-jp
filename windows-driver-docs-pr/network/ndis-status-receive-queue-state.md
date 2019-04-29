@@ -7,18 +7,18 @@ keywords:
 - NDIS_STATUS_RECEIVE_QUEUE_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6342877c9ca16d6380253701ff7a4044b90e038f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330198"
 ---
 # <a name="ndisstatusreceivequeuestate"></a>NDIS\_状態\_受信\_キュー\_状態
 
 
 NDIS\_状態\_受信\_キュー\_キューが変更された仮想マシン キュー (VMQ) のキューの状態が表示されるドライバーに関連する状態のステータスを示します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS 6.20 が動作し、仮想マシン キューのインターフェイスをサポートする以降のミニポート ドライバーは、この状態を示す値を生成します。
@@ -31,7 +31,7 @@ NDIS 6.20 が動作し、仮想マシン キューのインターフェイスを
 
 ミニポート ドライバーが何らかの理由により、DMA を停止するかどうか (たとえば、その解放キューの最後のフィルターの場合)、キューを入力する必要があります、 *DMA 停止*状態。 ただしで DMA を停止できます、*一時停止*または*を実行している*状態フィルターがない場合は、キューに設定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

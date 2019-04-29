@@ -1,5 +1,5 @@
 ---
-title: .chain (リスト デバッガー拡張)
+title: .chain (デバッガー拡張機能の一覧表示)
 description: .Chain コマンドでは、すべての読み込まれたデバッガー拡張機能の既定の検索順序で一覧表示します。
 ms.assetid: 73139b02-265a-424d-9de8-f4f3736e62db
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bd87e6c1863a3ad9e1883c40fefc7f8e137e30a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336909"
 ---
-# <a name="chain-list-debugger-extensions"></a>.chain (リスト デバッガー拡張)
+# <a name="chain-list-debugger-extensions"></a>.chain (デバッガー拡張機能の一覧表示)
 
 
 **.Chain**コマンドは、既定の検索順序ですべての読み込まれたデバッガー拡張機能を一覧表示します。
@@ -65,7 +65,7 @@ ms.locfileid: "56538054"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-読み込みの詳細については、アンロード、および拡張機能を制御するを参照してください[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。 拡張機能コマンド、および既定の検索順序の説明を実行する方法の詳細については、[デバッガー拡張機能コマンドの使用](using-debugger-extension-commands.md)を参照してください。
+読み込みの詳細については、アンロード、および拡張機能を制御するを参照してください[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。 拡張機能コマンド、および既定の検索順序の説明を実行する方法の詳細については、次を参照してください。[デバッガー拡張機能コマンドの使用](using-debugger-extension-commands.md)します。
 
  
 

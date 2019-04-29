@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WAN_CO_SET_LINK_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fada7f6db4ff5dc8e7ac56302de940f32a2fb1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384632"
 ---
 # <a name="oidwancosetlinkinfo"></a>OID\_WAN\_CO\_設定\_リンク\_情報
 
@@ -63,12 +63,12 @@ OID\_WAN\_CO\_設定\_リンク\_OID の情報は、特定の仮想接続 (VC) �
 <a href="" id="recvaccm"></a>**RecvACCM**  
 説明に従って**SendACCM**します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 指定できる値**SendFramingBits**と**RecvFramingBits**への応答で返される基になるドライバーが含まれて、 [OID\_WAN\_CO\_取得\_情報](oid-wan-co-get-info.md)クエリ。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

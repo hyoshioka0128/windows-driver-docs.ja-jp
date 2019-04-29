@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2d11bcb467ab7c7e113020f09f189d76a3e78405
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335283"
 ---
 # <a name="devpkeydrvpkgbrandingicon"></a>DEVPKEY_DrvPkg_BrandingIcon
 
@@ -46,14 +46,14 @@ DEVPKEY_DrvPkg_BrandingIcon デバイス プロパティは、ベンダーとデ
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 .Ico ファイル、または実行可能ファイル内のリソースとして、ブランド アイコンを指定できます。
@@ -62,7 +62,7 @@ DEVPKEY_DrvPkg_BrandingIcon デバイス プロパティは、ベンダーとデ
 
 DEVPKEY_DrvPkg_BrandingIcon によっての値を設定することができます、 [ **INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)に含まれている、 [ **INF *DDInstall*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)のデバイスをインストールする INF ファイル。 DEVPKEY_DrvPkg_BrandingIcon の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

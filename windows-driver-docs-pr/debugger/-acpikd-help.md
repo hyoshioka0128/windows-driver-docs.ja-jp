@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a2fd49489ef0d8dbfb49cb7cd0d2b3410e895a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337052"
 ---
-# <a name="acpikdhelp"></a>! acpikd.help
+# <a name="acpikdhelp"></a>!acpikd.help
 
 
 **! Acpikd.help**拡張機能がすべて Acpikd.dll 拡張機能のコマンドを表示のデバッガー コマンド ウィンドウでヘルプ テキストを表示します。
@@ -54,7 +54,7 @@ ms.locfileid: "56552403"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[ACPI デバッグ](acpi-debugging.md)を参照してください。
+詳細については、次を参照してください。 [ACPI デバッグ](acpi-debugging.md)します。
 
  
 

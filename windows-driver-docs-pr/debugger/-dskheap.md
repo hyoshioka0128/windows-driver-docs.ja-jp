@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 55c3f4b6f9bfc773e2ade5f939ab2cc414980191
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334533"
 ---
 # <a name="dskheap"></a>!dskheap
 
@@ -63,7 +63,7 @@ ms.locfileid: "56580189"
 
 デスクトップまたはデスクトップ ヒープの詳細については、Microsoft Windows SDK のマニュアルを参照し、 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 セッションのデスクトップ ヒープ情報がウィンドウ ステーションで配置されます。

@@ -5,11 +5,11 @@ ms.assetid: 4e56b62a-640d-4a9d-bf38-118b211d41f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fec70e24cd31ff198785e85a4c019a1bf1404ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331076"
 ---
 # <a name="umdf-1x-design-guide"></a>UMDF 1.x 設計ガイド
 
@@ -17,9 +17,9 @@ ms.locfileid: "56572889"
 
 このセクションには、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1.11 以降のみに適用される情報が含まれています。
 
-Windows 8.1 では、UMDF バージョン 2 を紹介します。 詳細については、[UMDF 入門](getting-started-with-umdf-version-2.md)を参照してください。
+Windows 8.1 では、UMDF バージョン 2 を紹介します。 詳細については、次を参照してください。 [UMDF 入門](getting-started-with-umdf-version-2.md)します。
 
-UMDF のバージョンの Windows の特定のバージョンで使用可能なについての詳細については、[UMDF バージョン履歴](umdf-version-history.md)を参照してください。
+UMDF のバージョンの Windows の特定のバージョンで使用可能なについての詳細については、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

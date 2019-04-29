@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d7ccf356ba74a48f0d1ea8df2146326b38b67075
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335977"
 ---
 # <a name="ndiskdnb"></a>!ndiskd.nb
 
@@ -50,7 +50,7 @@ NB. の実際のデータ ペイロードをダンプします。
 
 Ndiskd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 **NET\_バッファー**から取得された次の例では、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)の例」の「[ **! ndiskd.nbl** ](-ndiskd-nbl.md)トピック。 NB のハンドルは、ffffdf8014952610 です。

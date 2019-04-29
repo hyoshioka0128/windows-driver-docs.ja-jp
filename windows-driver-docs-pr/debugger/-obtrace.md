@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 28eb455d377c3ce9e0442528aa2291f9240b1d0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334473"
 ---
-# <a name="obtrace"></a>! obtrace
+# <a name="obtrace"></a>!obtrace
 
 
 **! Obtrace**拡張機能は、指定したオブジェクトのオブジェクト参照のトレース データを表示します。
@@ -127,7 +127,7 @@ References: 3, Dereferences 2
 <thead>
 <tr class="header">
 <th align="left">パラメーター</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

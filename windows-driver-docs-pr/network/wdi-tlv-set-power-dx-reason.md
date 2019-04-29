@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_SET_POWER_DX_REASON ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: fdc4a0e25ae474c0fa3be35debba07661b91ed09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330440"
 ---
 # <a name="wditlvsetpowerdxreason"></a>WDI\_TLV\_設定\_POWER\_DX\_理由
 
@@ -38,7 +38,7 @@ Uint32 型のサイズをバイト単位で。
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -57,7 +57,7 @@ Uint32 型のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

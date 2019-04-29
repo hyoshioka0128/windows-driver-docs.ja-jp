@@ -1,17 +1,17 @@
 ---
-title: Windows Vista のオーディオ エンジンの調査
-description: Windows Vista のオーディオ エンジンの調査
+title: Windows Vista オーディオ エンジンの探索
+description: Windows Vista オーディオ エンジンの探索
 ms.assetid: 6301f6d7-57f5-4b9f-9567-57efb9dc58f3
 ms.date: 11/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b7dd26437fba19251729fe31dc9a8b92a4564465
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558630"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333713"
 ---
-# <a name="exploring-the-windows-vista-audio-engine"></a>Windows Vista のオーディオ エンジンの調査
+# <a name="exploring-the-windows-vista-audio-engine"></a>Windows Vista オーディオ エンジンの探索
 
 
 このトピックでは、Windows Vista のオーディオ エンジンの概要を示します。 APOs と sAPOs 連携させる方法を理解するのに役立つ概念に焦点を当てます。
@@ -41,11 +41,11 @@ ms.locfileid: "56558630"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>低音ブーストします。</p></td>
+<td align="left"><p>低音ブースト</p></td>
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>低音の管理</p></td>
+<td align="left"><p>低音管理</p></td>
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="odd">
@@ -53,7 +53,7 @@ ms.locfileid: "56558630"
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>低頻度の保護</p></td>
+<td align="left"><p>低周波の保護</p></td>
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="odd">
@@ -77,7 +77,7 @@ ms.locfileid: "56558630"
 <td align="left"><p>GFX</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ルーム コレクション</p></td>
+<td align="left"><p>室内音響補正</p></td>
 <td align="left"><p>GFX</p></td>
 </tr>
 </tbody>
@@ -117,7 +117,7 @@ ms.locfileid: "56558630"
             &m_SubmixGuid);
 ```
 
-アプリケーションは、オーディオ処理を開始すた後、グラフ ビルダーは、オーディオのグラフに、sAPOs を構成し、sAPOs 初期化もします。 オーディオのサービスは、sAPO の入出力にオーディオ データ形式を確立するために LFX sAPO とネゴシエートします。 詳細については、[形式ネゴシエーション](format-negotiation.md)を参照してください。
+アプリケーションは、オーディオ処理を開始すた後、グラフ ビルダーは、オーディオのグラフに、sAPOs を構成し、sAPOs 初期化もします。 オーディオのサービスは、sAPO の入出力にオーディオ データ形式を確立するために LFX sAPO とネゴシエートします。 詳細については、次を参照してください。[形式ネゴシエーション](format-negotiation.md)します。
 
  
 

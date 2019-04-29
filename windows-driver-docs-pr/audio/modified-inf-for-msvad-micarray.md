@@ -5,11 +5,11 @@ ms.assetid: 0bb57f16-3b32-45c8-aca1-4dc96cb7a744
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 623dc4f149a917f657b58fc35008a670628858fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332298"
 ---
 # <a name="modified-inf-for-msvad-micarray"></a>MSVAD Micarray 用の INF の変更
 
@@ -157,7 +157,7 @@ Simple.NameGuid="{946A7B1A-EBBC-422a-A81F-F07C8D40D3B4}"
 Simple.Name="MSVAD (Simple)"
 ```
 
-前の例で示すように、ファイルを変更した後は、元の場所に保存します。 ドライバーのマイク配列サンプルをビルドする方法の詳細については、[マイク配列 Geometry プロパティ](microphone-array-geometry-property.md)を参照してください。
+前の例で示すように、ファイルを変更した後は、元の場所に保存します。 ドライバーのマイク配列サンプルをビルドする方法の詳細については、次を参照してください。[マイク配列 Geometry プロパティ](microphone-array-geometry-property.md)します。
 
  
 

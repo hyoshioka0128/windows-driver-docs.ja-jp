@@ -1,17 +1,17 @@
 ---
-title: PF のミニポート ドライバーの INF DDInstall.HW セクション
-description: PF のミニポート ドライバーの INF DDInstall.HW セクション
+title: PF ミニポート ドライバーの INF DDInstall.HW セクション
+description: PF ミニポート ドライバーの INF DDInstall.HW セクション
 ms.assetid: 65399462-4AF1-401C-87CB-BF387CA0B053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48849e69ccaf708fc9b31340cd023ec5018a9080
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327717"
 ---
-# <a name="inf-ddinstallhw-section-for-pf-miniport-drivers"></a>PF のミニポート ドライバーの INF DDInstall.HW セクション
+# <a name="inf-ddinstallhw-section-for-pf-miniport-drivers"></a>PF ミニポート ドライバーの INF DDInstall.HW セクション
 
 
 INF <em>DDInstall</em>**します。HW**のセクションでは通常、レジストリで、デバイスに固有の情報を設定するかどうかと共に使用明示的な**AddReg**ディレクティブまたは**Include**と**必要がある**エントリ。

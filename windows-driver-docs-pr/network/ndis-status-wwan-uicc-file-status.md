@@ -7,11 +7,11 @@ keywords: -NDIS_STATUS_WWAN_UICC_FILE_STATUS ネットワーク ドライバー�
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 3d5044299d100217d61e26fa8a96e8510a3100e9
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384639"
 ---
 # <a name="ndisstatuswwanuiccfilestatus"></a>NDIS_STATUS_WWAN_UICC_FILE_STATUS
 
@@ -25,7 +25,7 @@ ms.locfileid: "59905384"
 
 |   |   |
 | --- | --- |
-| バージョン | Windows 10、バージョンが 1903 |
+| バージョン | Windows 10 バージョン 1903 |
 | Header | Ntddndis.h (include Ndis.h) |
 
 ## <a name="see-also"></a>関連項目

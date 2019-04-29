@@ -15,11 +15,11 @@ api_type:
 ms.date: 05/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 969c7ecbf3b3aa50f5102ec371a4054cdf0ef728
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391106"
 ---
 # <a name="wiaipsprinterendorserxoffset"></a>WIA\_IP\_プリンター\_裏書き\_X オフセット
 
@@ -33,7 +33,7 @@ ms.locfileid: "56558912"
 
 有効な値 :WIA\_PROP\_範囲
 
-アクセス権:読み取り/書き込み
+アクセス権:[読み取り/書き込み]
 
 <a name="remarks"></a>注釈
 -------
@@ -42,7 +42,7 @@ WIA ミニドライバーを更新できます有効な値と現在の値の範�
 
 このプロパティは・ インプリント ・/裏書きデータ ソース アイテムをすべて省略可能です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,17 +1,17 @@
 ---
-title: WDI 拡張チャネル スイッチのアナウンス (ECSA)
+title: WDI 拡張チャネル スイッチ アナウンス (ECSA)
 description: このセクションでは、拡張チャネル スイッチのお知らせ (ECSA) を実装するために推奨されるドライバーとファームウェアの変更を提供します。
 ms.assetid: 9C59C8A2-335F-4BA4-8682-6DFFB82E1CAF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d652f12f862992d6d02c5de2f269a3cc4bfb069
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330518"
 ---
-# <a name="wdi-extended-channel-switch-announcement-ecsa"></a>WDI 拡張チャネル スイッチのアナウンス (ECSA)
+# <a name="wdi-extended-channel-switch-announcement-ecsa"></a>WDI 拡張チャネル スイッチ アナウンス (ECSA)
 
 
 モードでは、大文字と小文字が 1 つのチャネルとして望めませんマルチ チャネルの使用のユース ケースを最小限に抑える、Wi-Fi Direct ポートによって、マルチ チャネルで動作するシステム場合。 (ドライバーとファームウェア) デバイスが ECSA を実装することをお勧めします。 この機能は、IHV 側で完全に存在する必要があります。

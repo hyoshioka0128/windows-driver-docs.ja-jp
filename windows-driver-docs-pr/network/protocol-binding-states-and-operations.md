@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d4945295c04ddfa9caac6ce95990b92c3fc81e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390283"
 ---
 # <a name="protocol-binding-states-and-operations"></a>プロトコル バインドの状態と操作
 
@@ -205,7 +205,7 @@ Closing 状態にプロトコル ドライバー アダプターへのバイン�
 プライマリ バインド イベントの定義は次のとおりです。
 
 <a href="" id="protocolbindadapterex"></a>*ProtocolBindAdapterEx*  
-NDIS ドライバーを呼び出してから[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数の場合、バインディングが Opening 状態に遷移します。 詳細については、[をアダプターにバインド](binding-to-an-adapter.md)を参照してください。
+NDIS ドライバーを呼び出してから[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数の場合、バインディングが Opening 状態に遷移します。 詳細については、次を参照してください。[をアダプターにバインド](binding-to-an-adapter.md)します。
 
 <a href="" id="bind-failed"></a>バインドに失敗しました  
 プロトコル ドライバーはアダプターにバインドできない場合、バインディングは連結なし状態に戻ります。
@@ -214,13 +214,13 @@ NDIS ドライバーを呼び出してから[ *ProtocolBindAdapterEx* ](https://
 ドライバーでは、アダプターが正常に開き、バインドは一時停止状態になります。 ドライバーは、バインド操作を完了します。
 
 <a href="" id="protocolunbindadapterex"></a>*ProtocolUnbindAdapterEx*  
-NDIS ドライバーを呼び出してから[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278)ハンドラー、バインドの入力、*閉じる*状態。 詳細については、[アダプターからバインド解除](unbinding-from-an-adapter.md)を参照してください。
+NDIS ドライバーを呼び出してから[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278)ハンドラー、バインドの入力、*閉じる*状態。 詳細については、次を参照してください。[アダプターからバインド解除](unbinding-from-an-adapter.md)します。
 
 <a href="" id="unbind-is-complete"></a>バインド解除が完了しました  
 ドライバーには、バインドの解除操作が完了すると、バインディングは連結なし状態になります。
 
 <a href="" id="pnp-pause"></a>PnP の一時停止  
-NDIS プロトコル ドライバーに送信した後、ネットワーク プラグ アンド プレイ (PnP) イベント通知を一時停止、バインドは一時停止状態になります。 詳細については、[バインディングを一時停止](pausing-a-binding.md)を参照してください。
+NDIS プロトコル ドライバーに送信した後、ネットワーク プラグ アンド プレイ (PnP) イベント通知を一時停止、バインドは一時停止状態になります。 詳細については、次を参照してください。[バインディングを一時停止](pausing-a-binding.md)します。
 
 <a href="" id="pause-is-complete"></a>一時停止が完了  
 ドライバーのために必要なすべての操作が完了した後操作の送受信を停止、一時停止操作が完了およびバインドが一時停止状態。
@@ -230,7 +230,7 @@ NDIS プロトコル ドライバーに送信した後、ネットワーク プ�
  
 
 <a href="" id="pnp-restart"></a>PnP の再起動  
-NDIS は、プロトコル ドライバーにネットワーク PnP 再起動イベント通知を送信する後、バインドは再開中状態になります。 詳細については、[バインディングを再起動する](restarting-a-binding.md)を参照してください。
+NDIS は、プロトコル ドライバーにネットワーク PnP 再起動イベント通知を送信する後、バインドは再開中状態になります。 詳細については、次を参照してください。[バインディングを再起動する](restarting-a-binding.md)します。
 
 <a href="" id="restart-is-complete"></a>再起動が完了  
 準備ができたら、ドライバーを送信を処理し、受信操作では、再起動操作が完了と、バインディングが実行中の状態。

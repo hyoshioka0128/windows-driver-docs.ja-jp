@@ -1,6 +1,6 @@
 ---
-title: レイアウトのアジア言語のサポートを提供します。
-description: レイアウトのアジア言語のサポートを提供します。
+title: アジア向けレイアウトのサポートを提供する
+description: アジア向けレイアウトのサポートを提供する
 ms.assetid: 38c7dfca-ce30-4967-84a4-e2f40bba8c57
 keywords:
 - プリント プロセッサ WDK、アジアの言語
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c49b95b8c7a45bbde4b33e9b0b85387d3bb0e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376562"
 ---
-# <a name="providing-support-for-asian-layout"></a>レイアウトのアジア言語のサポートを提供します。
+# <a name="providing-support-for-asian-layout"></a>アジア向けレイアウトのサポートを提供する
 
 
 Microsoft Windows では、右から次の機能がアラビア語、日本語、およびウルドゥ語などの左に読むプロセッサ サポートのアジア言語を印刷します。

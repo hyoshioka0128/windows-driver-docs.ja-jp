@@ -5,11 +5,11 @@ ms.assetid: 312C0A80-120A-4A3B-B2AE-2620F749EA12
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 623f3d2e1d6aa9ef98dc260922cf8fa01d7f60c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330088"
 ---
 # <a name="universal-sensors-programming-guide"></a>ユニバーサル センサーのプログラミング ガイド
 

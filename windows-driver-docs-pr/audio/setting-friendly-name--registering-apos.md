@@ -1,17 +1,17 @@
 ---
-title: APOs の登録のフレンドリ名を設定します。
+title: フレンドリ名の設定、APO の登録
 description: このトピックでは、ポート クラス Bluetooth 側波帯のオーディオ ドライバーが、デバイス インターフェイスの表示名を設定し、Bluetooth デバイスで使用される任意の APO を登録方法について説明します。
 ms.assetid: A3C4E04C-8F3B-49B4-8E46-CF37E1A4F5AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f62f0caa5ce3b03d482d573bed9381898712a5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328642"
 ---
-# <a name="setting-friendly-names-registering-apos"></a>APOs の登録のフレンドリ名を設定します。
+# <a name="setting-friendly-names-registering-apos"></a>フレンドリ名の設定、APO の登録
 
 
 設定のフレンドリ名を登録する APOs のトピックでは、ポート クラス Bluetooth 側波帯のオーディオ ドライバーが、デバイス インターフェイスの表示名を設定し、Bluetooth デバイスで使用されるオーディオ処理オブジェクト (APO) の登録方法について説明します。

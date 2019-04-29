@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94cc647ea4756d1a8607a469b125847e24d6433e
-ms.sourcegitcommit: 239b10612b3ddb6702dc16490566069cc3aa1c6c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "56582717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332670"
 ---
 # <a name="kspropertyrtaudiohwlatency"></a>KSPROPERTY\_RTAUDIO\_HWLATENCY
 
@@ -41,15 +41,15 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティは、オーディオ ハードウ
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
@@ -64,12 +64,12 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティは、オーディオ ハードウ
 
 KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 後に、 [WaveRT ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538845)循環バッファーの割り当てが (を参照してください[ **KSPROPERTY\_RTAUDIO\_バッファー**](ksproperty-rtaudio-buffer.md))、クライアントが送信できる、KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティ ドライバー ハードウェア待機時間情報を要求します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

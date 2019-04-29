@@ -1,6 +1,6 @@
 ---
-title: アロケーター プロパティ
-description: アロケーター プロパティ
+title: アロケーターのプロパティ
+description: アロケーターのプロパティ
 ms.assetid: 851bc3d8-46f6-46d0-87a8-81de2536492a
 keywords:
 - アロケーター プロパティ WDK ビデオのキャプチャします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e476a82f0343f38668c4b51fe26e2badaf46c0a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384829"
 ---
-# <a name="allocator-properties"></a>アロケーター プロパティ
+# <a name="allocator-properties"></a>アロケーターのプロパティ
 
 
 [PROPSETID\_アロケーター\_コントロール](https://msdn.microsoft.com/library/windows/hardware/ff567792)割り当てとビデオのポート画面の操作の制御に関連するプロパティがプロパティ セットに含まれています。 オーバーレイ Mixer など、ユーザー モードのフィルターを使用して、PROPSETID\_アロケーター\_コントロール。 次の表に、プロパティ、PROPSETID の一部である\_アロケーター\_コントロール プロパティのセット。

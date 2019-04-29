@@ -7,11 +7,11 @@ keywords:
 - OID_WDI_GET_AUTO_POWER_SAVE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: dc34e729070cc62dccb6fc3069b4767f8fc56c13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384625"
 ---
 # <a name="oidwdigetautopowersave"></a>OID\_WDI\_取得\_自動\_POWER\_保存
 
@@ -20,7 +20,7 @@ OID\_WDI\_取得\_自動\_POWER\_保存、省電力、ポートの状態を取�
 
 | Scope | タスクでシリアル化された設定します。 | 通常の実行時間 (秒) |
 |-------|--------------------------|---------------------------------|
-| ポート  | 適用なし           | 1                               |
+| ポート  | 該当なし           | 1                               |
 
  
 

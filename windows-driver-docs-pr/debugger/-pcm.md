@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ede535bc8316dc8e5cb0e4c2ad37a5dcf3b9631
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334415"
 ---
-# <a name="pcm"></a>! pcm
+# <a name="pcm"></a>!pcm
 
 
 **! Pcm**拡張機能は、指定されたプライベート キャッシュのマップを表示します。 この拡張機能は、Windows 2000 ではできるだけです。

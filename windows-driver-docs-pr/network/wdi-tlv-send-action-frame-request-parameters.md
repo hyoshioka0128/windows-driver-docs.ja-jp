@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_SEND_ACTION_FRAME_REQUEST_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a738c99384c123d429986f2cb0f5e58f654c5516
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330528"
 ---
 # <a name="wditlvsendactionframerequestparameters"></a>WDI\_TLV\_送信\_アクション\_フレーム\_要求\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_送信\_アクション\_フレーム\_要求\_パラメーターは�
 ## <a name="values"></a>値
 
 
-| 種類                                              | 説明                                                                                                                                     |
+| 型                                              | 説明                                                                                                                                     |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | WDI\_チャネル\_数 (UINT32)                     | 操作のフレームを送信し、として待機するチャネルは、post ACK 時間で指定します。                                    |
 | WDI\_バンド\_ID (UINT32)                            | 操作のフレームを送信するためのバンドの ID。                                                                                           |

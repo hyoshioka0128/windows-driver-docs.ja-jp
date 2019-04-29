@@ -1,17 +1,17 @@
 ---
-title: テキスト モード インターフェイスを使用して SMS を送信します。
-description: テキスト モード インターフェイスを使用して SMS を送信します。
+title: テキスト モード インターフェイスを使用して SMS を送信する
+description: テキスト モード インターフェイスを使用して SMS を送信する
 ms.assetid: 418328ef-09ab-40f5-989a-c592377e4b57
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a2a67681b99e60b6cc66b3c849170a1de8b4b2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384645"
 ---
-# <a name="send-sms-by-using-the-text-mode-interface"></a>テキスト モード インターフェイスを使用して SMS を送信します。
+# <a name="send-sms-by-using-the-text-mode-interface"></a>テキスト モード インターフェイスを使用して SMS を送信する
 
 
 テキスト モードのインターフェイスで、SMS メッセージの単純なプレーン テキストに適していますが、送信または PDU モード、これは、SMS メッセージの形式の高度なコントロールの適切なインターフェイスの送信のどちらを使用する選択できます。

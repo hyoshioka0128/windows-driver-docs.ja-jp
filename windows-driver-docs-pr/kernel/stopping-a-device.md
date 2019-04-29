@@ -1,6 +1,6 @@
 ---
-title: デバイスを停止しています
-description: デバイスを停止しています
+title: デバイスの停止
+description: デバイスの停止
 ms.assetid: 65a47e7b-aabd-4b55-8fa6-c3482da1cc84
 keywords:
 - PnP WDK カーネルでは、デバイスを停止しています
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: adc901da47a50624808cac1faa16ef663a9e844b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331949"
 ---
-# <a name="stopping-a-device"></a>デバイスを停止しています
+# <a name="stopping-a-device"></a>デバイスの停止
 
 
 

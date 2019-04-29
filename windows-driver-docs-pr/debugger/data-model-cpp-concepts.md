@@ -1,15 +1,15 @@
 ---
-title: デバッガーのデータ モデルの C の概念
+title: Debugger Data Model C++ の概念
 description: このトピックでは、デバッガーの C++ のデータ モデルの概念について説明します。
 ms.date: 10/04/2018
 ms.openlocfilehash: f29334ea8b034f05000b97d2a232ec5c0a250503
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376119"
 ---
-# <a name="debugger-data-model-c-concepts"></a>デバッガーのデータ モデルの C の概念
+# <a name="debugger-data-model-c-concepts"></a>Debugger Data Model C++ の概念
 
 このトピックでは、デバッガーの C++ のデータ モデルの概念について説明します。
 

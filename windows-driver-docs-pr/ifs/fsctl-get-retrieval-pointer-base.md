@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e74d5378ac92f6698bcbd0e96be9b2305e33e39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327878"
 ---
 # <a name="fsctlgetretrievalpointerbase-control-code"></a>FSCTL\_取得\_取得\_ポインター\_基本コントロールのコード
 
@@ -28,7 +28,7 @@ ms.locfileid: "56553322"
 
 この操作を実行するには、呼び出し、 [ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)関数または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)を次の関数パラメーター。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject--in-"></a>*FileObject\[で\]*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 対象のボリュームのファイル オブジェクト ポインター **FSCTL\_取得\_取得\_ポインター\_基本**ベースを取得することです。 このパラメーターが必要とすることはできません**NULL**します。
@@ -36,7 +36,7 @@ ms.locfileid: "56553322"
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 対象のボリュームのファイル ハンドル**FSCTL\_取得\_取得\_ポインター\_基本**ベースを取得することです。 このパラメーターが必要とすることはできません**NULL**します。
 
-Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、[ファイルのセキュリティとアクセス権](https://msdn.microsoft.com/library/windows/desktop/aa364399)を参照してください。
+Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、次を参照してください。[ファイルのセキュリティとアクセス権](https://msdn.microsoft.com/library/windows/desktop/aa364399)します。
 
 <a href="" id="fscontrolcode--in-"></a>*FsControlCode\[で\]*  
 操作の制御コード。 使用**FSCTL\_取得\_取得\_ポインター\_ベース**この操作にします。
@@ -98,7 +98,7 @@ FSCTL によって取得された値を追加する\_取得\_取得\_ポイン�
 
 FSCTL\_取得\_取得\_ポインター\_FastFAT および exFAT のデバイスで、基本コントロールのコードを使用できます。 この機能は、フラッシュ ドライブなどのデバイス用の BitLocker の使用をサポートします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

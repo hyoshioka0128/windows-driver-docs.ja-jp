@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c87c077220de72741cb932713ddcffa4abf4ee6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333880"
 ---
 # <a name="content-ids-and-content-rights"></a>コンテンツ ID とコンテンツの権利
 
@@ -40,7 +40,7 @@ WaveCyclic または WavePci ミニポート ドライバー Drmk.sys で DRM �
 
 オーディオ ドライバーでは、ハードウェアの混合はサポートし、同時に複数の入力データ ストリームを処理することができます。 この種類のドライバーする必要がありますの追跡個別のストリームと複合コンテンツの権限をすべてのストリームの両方のコンテンツ Id。 ドライバー呼び出し[ **IDrmPort::CreateContentMixed** ](https://msdn.microsoft.com/library/windows/hardware/ff536581)混合ストリームの複合の権利をそのストリームを識別するためにコンテンツ ID を作成します。 呼び出す必要がありますが、ドライバーでは、コンテンツ ID の使用が完了したら、 [ **IDrmPort::DestroyContent** ](https://msdn.microsoft.com/library/windows/hardware/ff536583)コンテンツ ID を削除するには
 
-入力ストリームを追加または、ミキサー アプリケーションから削除するたびに、ドライバーする必要があります古いミックスのコンテンツ ID を削除して新しい組み合わせの場合は、新しいコンテンツ ID を作成します。 古いコンテンツ ID を削除する前に、ドライバーする必要があります最初を正常に転送が以前の転送先に古いコンテンツの id。 すべてのストリームに新しいコンテンツ ID 詳細については、[DRM コンテンツ Id の転送](forwarding-drm-content-ids.md)を参照してください。
+入力ストリームを追加または、ミキサー アプリケーションから削除するたびに、ドライバーする必要があります古いミックスのコンテンツ ID を削除して新しい組み合わせの場合は、新しいコンテンツ ID を作成します。 古いコンテンツ ID を削除する前に、ドライバーする必要があります最初を正常に転送が以前の転送先に古いコンテンツの id。 すべてのストリームに新しいコンテンツ ID 詳細については、次を参照してください。 [DRM コンテンツ Id の転送](forwarding-drm-content-ids.md)します。
 
  
 

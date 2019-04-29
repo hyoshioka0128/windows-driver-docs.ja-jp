@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ba9ca106317d4f116e36222d75909f51d5f94a4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339846"
 ---
 # <a name="scriptproviders-list-script-providers"></a>.scriptproviders (スクリプト プロバイダーの一覧表示)
 

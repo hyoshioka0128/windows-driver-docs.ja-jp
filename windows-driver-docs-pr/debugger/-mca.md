@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e18d22c735b87de98a731e3d6a9db9bfe0031022
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336097"
 ---
-# <a name="mca"></a>! mca
+# <a name="mca"></a>!mca
 
 ! Mca 拡張機能は、マシン チェック アーキテクチャ (MCA) レジスタを表示します。 
 
@@ -615,7 +615,7 @@ CP F/M/S Manufacturer   MHz Update Signature Features
  0 15,5,0 SomeBrandName 1394 0000000000000000 a0017fff
 ```
 
-この拡張機能がプライベートの HAL シンボルが必要なことに注意してください。 これらのシンボルのない、拡張機能は、メッセージ"HalpFeatureBits not found"基本的な CPU 情報と共に表示されます。 次に、例を示します。
+この拡張機能がプライベートの HAL シンボルが必要なことに注意してください。 これらのシンボルのない、拡張機能は、メッセージ"HalpFeatureBits not found"基本的な CPU 情報と共に表示されます。 例:
 
 ```dbgcmd
 kd> !mca

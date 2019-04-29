@@ -1,17 +1,17 @@
 ---
-title: 格納して、オーディオ データを転送します。
-description: 格納して、オーディオ データを転送します。
+title: オーディオ データの保存と転送
+description: オーディオ データの保存と転送
 ms.assetid: c8d0af2f-1c3d-49d5-96ca-de1703f85448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb77c1a22006a25e216c1a863c3ae3ad14eda680
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383717"
 ---
-# <a name="storing-and-transferring-audio-data"></a>格納して、オーディオ データを転送します。
+# <a name="storing-and-transferring-audio-data"></a>オーディオ データの保存と転送
 
 
 

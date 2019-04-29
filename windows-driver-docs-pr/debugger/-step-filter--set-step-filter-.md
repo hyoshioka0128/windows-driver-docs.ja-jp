@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a39a8bf4fe882844e31ee9f23d7756017f7e70ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334254"
 ---
 # <a name="stepfilter-set-step-filter"></a>.step\_フィルター (ステップ フィルターの設定)
 
@@ -64,7 +64,7 @@ ms.locfileid: "56578844"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 任意のパラメーターを指定せず **.step\_フィルター**現在フィルター一覧を表示します。

@@ -1,5 +1,5 @@
 ---
-title: .pcmd (プロンプトの set コマンド)
+title: .pcmd (プロンプト コマンドの設定)
 description: .Pcmd コマンドでは、登録またはターゲットの状態情報を含むデバッガー コマンド ウィンドウで、プロンプトを表示して、ターゲットの実行が停止されるたびに、コマンドを実行するデバッガーを実行します。
 ms.assetid: 8cda10c3-860c-453d-9fdd-0dfc74d71c53
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 25113801956a4519271aca0743b6dbfa9ffa6b2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334433"
 ---
-# <a name="pcmd-set-prompt-command"></a>.pcmd (プロンプトの set コマンド)
+# <a name="pcmd-set-prompt-command"></a>.pcmd (プロンプト コマンドの設定)
 
 
 **.Pcmd**コマンドにより、デバッガーでプロンプトを表示して、ターゲットの実行が停止されるたびに、コマンドを実行する、[デバッガー コマンド ウィンドウ](debugger-command-window.md)登録またはターゲットの状態情報を使用します。
@@ -66,7 +66,7 @@ ms.locfileid: "56552345"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッガー コマンド ウィンドウのプロンプトの詳細については、[デバッガー コマンドを使用して](using-debugger-commands.md)を参照してください。
+デバッガー コマンド ウィンドウのプロンプトの詳細については、次を参照してください。[デバッガー コマンドを使用して](using-debugger-commands.md)します。
 
 <a name="remarks"></a>注釈
 -------

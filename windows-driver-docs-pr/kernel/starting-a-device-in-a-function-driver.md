@@ -1,19 +1,19 @@
 ---
-title: Function ドライバーのデバイスの開始
-description: Function ドライバーのデバイスの開始
+title: ファンクション ドライバーでのデバイスの開始
+description: ファンクション ドライバーでのデバイスの開始
 ms.assetid: 148a3128-9cb1-4a2c-a62e-45199476d968
 keywords:
 - 機能ドライバー WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4df2793edb316b5433edd1e2a7f62107bd362c95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331960"
 ---
-# <a name="starting-a-device-in-a-function-driver"></a>Function ドライバーのデバイスの開始
+# <a name="starting-a-device-in-a-function-driver"></a>ファンクション ドライバーでのデバイスの開始
 
 
 
@@ -31,7 +31,7 @@ ms.locfileid: "56528354"
 
     すべてのドライバーがアクセスする前に、デバイスの電源を必要があります。 参照してください[、デバイスの電源を入れて](powering-up-a-device.md)詳細についてはします。
 
-    ウェイク アップには、デバイスを有効にする場合、その電源ポリシー所有者 (関数ドライバーでは、通常は) 送信待機/ウェイク IRP と完了前に、デバイスに電源がオンにした後、 **IRP\_MN\_開始\_デバイス**要求。 詳細については、[送信待機/ウェイク IRP](sending-a-wait-wake-irp.md)を参照してください。
+    ウェイク アップには、デバイスを有効にする場合、その電源ポリシー所有者 (関数ドライバーでは、通常は) 送信待機/ウェイク IRP と完了前に、デバイスに電源がオンにした後、 **IRP\_MN\_開始\_デバイス**要求。 詳細については、次を参照してください。[送信待機/ウェイク IRP](sending-a-wait-wake-irp.md)します。
 
 3.  IRP を保持するキューでは、Irp を起動します。
 

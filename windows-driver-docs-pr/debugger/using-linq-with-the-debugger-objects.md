@@ -6,11 +6,11 @@ keywords:
 ms.date: 04/12/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e3cbc22e4063fc75bd6358e6363d1f346243e78d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390537"
 ---
 # <a name="using-linq-with-the-debugger-objects"></a>デバッガー オブジェクトでの LINQ の使用
 

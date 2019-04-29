@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DELETE_PORT_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b9623fdc7dfaf098ccd6791f3aa6185973ab730d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331831"
 ---
 # <a name="wditlvdeleteportparameters"></a>WDI\_TLV\_削除\_ポート\_パラメーター
 
@@ -31,13 +31,13 @@ WDI\_TLV\_削除\_ポート\_パラメーターはパラメーターを含む TL
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                          |
+| 型   | 説明                          |
 |--------|--------------------------------------|
 | UINT16 | 削除するポート番号を指定します。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

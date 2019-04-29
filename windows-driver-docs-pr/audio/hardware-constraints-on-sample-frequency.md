@@ -1,6 +1,6 @@
 ---
-title: 頻度のサンプルでハードウェアの制約
-description: 頻度のサンプルでハードウェアの制約
+title: 同じ周波数に対するハードウェアの制約
+description: 同じ周波数に対するハードウェアの制約
 ms.assetid: e0041fd9-073c-4779-a3cf-6d0527ba847b
 keywords:
 - サンプル周波数制約 WDK オーディオ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45e6c7916fb3d4332454f252462cf68d2e713e3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333610"
 ---
-# <a name="hardware-constraints-on-sample-frequency"></a>頻度のサンプルでハードウェアの制約
+# <a name="hardware-constraints-on-sample-frequency"></a>同じ周波数に対するハードウェアの制約
 
 
 ## <span id="hardware_constraints_on_sample_frequency"></span><span id="HARDWARE_CONSTRAINTS_ON_SAMPLE_FREQUENCY"></span>

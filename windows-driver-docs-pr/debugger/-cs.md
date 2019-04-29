@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f50f65fd8f710b6457e259d458d8aca995f0b394
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336875"
 ---
 # <a name="cs"></a>!cs
 
@@ -40,7 +40,7 @@ ms.locfileid: "56578624"
 **-s**  | この情報は、使用可能な場合は、各クリティカル セクションの初期化のスタック トレースを表示します。
 **-l**  |ロックされたクリティカル セクションのみを表示します。
 **-o**   |表示されているすべてのロックされたクリティカル セクションの所有者のスタックを表示します。
-*アドレス* |表示するクリティカル セクションのアドレスを指定します。 このパラメーターを省略した場合、デバッガーには、現在のプロセスですべての重要なセクションが表示されます。
+*Address* |表示するクリティカル セクションのアドレスを指定します。 このパラメーターを省略した場合、デバッガーには、現在のプロセスですべての重要なセクションが表示されます。
 *StartAddress*   | クリティカル セクションを検索するアドレス範囲の先頭を指定します。
 *endAddress*   | クリティカル セクションを検索するアドレス範囲の末尾を指定します。
 **-d**    | DebugInfo に関連付けられている重要なセクションが表示されます。
@@ -56,7 +56,7 @@ Exts.dll
 
 ### <a name="additional-information"></a>追加情報
 
-その他のコマンドとクリティカル セクションの情報を表示できる拡張機能では、[クリティカル セクションを表示する](displaying-a-critical-section.md)を参照してください。 クリティカル セクションの詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
+その他のコマンドとクリティカル セクションの情報を表示できる拡張機能では、次を参照してください。[クリティカル セクションを表示する](displaying-a-critical-section.md)します。 クリティカル セクションの詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
 
 #### <a name="remarks"></a>コメント
 

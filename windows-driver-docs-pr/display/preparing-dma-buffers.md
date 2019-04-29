@@ -1,6 +1,6 @@
 ---
-title: DMA バッファーを準備します。
-description: DMA バッファーを準備します。
+title: DMA バッファーの準備
+description: DMA バッファーの準備
 ms.assetid: 9231badb-7b42-46d1-95f6-34c0ec7ab3cb
 keywords:
 - DMA バッファー WDK の表示の準備
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 051cec0f0fd66b39e8c3306f08934528c54574fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383924"
 ---
-# <a name="preparing-dma-buffers"></a>DMA バッファーを準備します。
+# <a name="preparing-dma-buffers"></a>DMA バッファーの準備
 
 
 ## <span id="ddk_preparing_dma_buffers_gg"></span><span id="DDK_PREPARING_DMA_BUFFERS_GG"></span>

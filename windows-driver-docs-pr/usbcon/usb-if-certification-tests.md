@@ -1,14 +1,14 @@
 ---
-Description: Guidelines for hardware vendors and device manufacturers to prepare USB devices and host controllers for Windows Hardware Certification Program submission.
+Description: Windows ハードウェア認定プログラムの提出の USB デバイスとホスト コント ローラーを準備するには、ハードウェア ベンダーとデバイスの製造元に関するガイドラインです。
 title: USB-IF 認定テスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51b5169c89d717d031dc5e43f0b7e548ba717cf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330369"
 ---
 # <a name="usb-if-certification-tests"></a>USB-IF 認定テスト
 

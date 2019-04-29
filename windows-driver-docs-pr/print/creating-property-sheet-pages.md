@@ -1,6 +1,6 @@
 ---
-title: プロパティ シートのページを作成します。
-description: プロパティ シートのページを作成します。
+title: プロパティ シート ページを作成する
+description: プロパティ シート ページを作成する
 ms.assetid: 90b1743c-b530-408a-aa30-9ab774166306
 keywords:
 - 共通のプロパティ シートのユーザー インターフェイスを WDK の印刷、プロパティ シートのページを作成します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f42f5ff37f80e68a03aa2debae38b5be43f0cae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390936"
 ---
-# <a name="creating-property-sheet-pages"></a>プロパティ シートのページを作成します。
+# <a name="creating-property-sheet-pages"></a>プロパティ シート ページを作成する
 
 
 

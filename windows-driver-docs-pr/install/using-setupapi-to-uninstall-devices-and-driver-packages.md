@@ -5,11 +5,11 @@ ms.assetid: e170961b-5d12-43d5-b502-3b37e6421f6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f460b6b4ff6229bfc8a55e127388669f6a84f16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339399"
 ---
 # <a name="using-setupapi-to-uninstall-devices-and-driver-packages"></a>SetupAPI を使用したデバイスとドライバー パッケージのアンインストール
 
@@ -24,19 +24,19 @@ ms.locfileid: "56580065"
 
 このトピックでは、SetupAPI 関数を使用してデバイスとドライバー パッケージをアンインストールする手順について説明します。
 
-ドライバーとドライバー パッケージのアンインストールの詳細については、[と、どのデバイスとドライバー パッケージがアンインストール](how-devices-and-driver-packages-are-uninstalled.md)を参照してください。
+ドライバーとドライバー パッケージのアンインストールの詳細については、次を参照してください。[と、どのデバイスとドライバー パッケージがアンインストール](how-devices-and-driver-packages-are-uninstalled.md)します。
 
 ### <a href="" id="uninstalling-the-device"></a> デバイスのアンインストール
 
 SetupAPI)、次のメソッドを使用して、システムから。
 
--   デバイスのインストール アプリケーションが呼び出すことによって、デバイスをアンインストールすることを要求することができます、 [ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)関数。 アプリケーションがデバイスをアンインストールするには、この関数を呼び出すときに設定する必要があります、 *InstallFunction*パラメーターを[ **DIF_REMOVE** ](https://msdn.microsoft.com/library/windows/hardware/ff543717)コード。  差分のすべてのコードの一覧は、[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541307)を参照してください。
+-   デバイスのインストール アプリケーションが呼び出すことによって、デバイスをアンインストールすることを要求することができます、 [ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)関数。 アプリケーションがデバイスをアンインストールするには、この関数を呼び出すときに設定する必要があります、 *InstallFunction*パラメーターを[ **DIF_REMOVE** ](https://msdn.microsoft.com/library/windows/hardware/ff543717)コード。  差分のすべてのコードの一覧は、次を参照してください。[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541307)します。
 
     場合[ **SetupDiRemoveDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552097)呼びます DIF_REMOVE 要求の処理中に、関数は、システムから、デバイスの devnode を削除します。 また、デバイスのハードウェアとソフトウェアのレジストリ キー、すべてのハードウェア プロファイル固有のレジストリ キー (構成固有のレジストリ キー) とも削除されます。
 
     **注**  **SetupDiRemoveDevice**クラスのインストーラーとデバイスのインストール アプリケーションではなくにのみ呼び出す必要があります。
 
-    差分のコードの詳細については、[DIF コードの処理](handling-dif-codes.md)を参照してください。
+    差分のコードの詳細については、次を参照してください。 [DIF コードの処理](handling-dif-codes.md)します。
 
 -   Windows 7 以降のデバイスのインストール アプリケーション デバイスをアンインストールできますを呼び出して、 [ **DiUninstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544754)関数。 この関数は呼び出しと同様、 [ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)で、 *InstallFunction*パラメーターに設定[ **DIF_REMOVE**](https://msdn.microsoft.com/library/windows/hardware/ff543717). ただし、だけでなく、指定されたデバイスの devnode を削除するには、この関数と呼び出し時に、システムに存在するデバイスのすべての子 devnode を削除します。
 

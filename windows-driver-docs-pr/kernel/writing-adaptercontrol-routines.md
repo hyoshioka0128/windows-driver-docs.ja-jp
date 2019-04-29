@@ -1,6 +1,6 @@
 ---
-title: 書き込み AdapterControl ルーチン
-description: 書き込み AdapterControl ルーチン
+title: AdapterControl ルーチンの記述
+description: AdapterControl ルーチンの記述
 ms.assetid: a5a7501f-ba4f-441e-be07-6a1b7fac9938
 keywords:
 - 書き込みの AdapterControl ルーチン
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95981bdbe032b437ea7da6976dd003a9abacca30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384538"
 ---
-# <a name="writing-adaptercontrol-routines"></a>書き込み AdapterControl ルーチン
+# <a name="writing-adaptercontrol-routines"></a>AdapterControl ルーチンの記述
 
 
 

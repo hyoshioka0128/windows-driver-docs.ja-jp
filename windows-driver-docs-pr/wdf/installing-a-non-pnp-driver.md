@@ -1,6 +1,6 @@
 ---
-title: 非 PnP ドライバーをインストールします。
-description: 非 PnP ドライバーをインストールします。
+title: 非 PnP ドライバーのインストール
+description: 非 PnP ドライバーのインストール
 ms.assetid: 99676d85-feb2-482c-a91b-cfc48be5904c
 keywords:
 - カーネル モード ドライバー フレームワーク WDK は、ドライバーをインストールします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 103fd39ae6400c661a3277acbd9da5ab0466965c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366240"
 ---
-# <a name="installing-a-non-pnp-driver"></a>非 PnP ドライバーをインストールします。
+# <a name="installing-a-non-pnp-driver"></a>非 PnP ドライバーのインストール
 
 
 ドライバーがプラグ アンド プレイ (PnP) デバイスをサポートしていない場合、ドライバー パッケージは、INF を含む INF ファイルを含める必要があります<em>DDInstall</em>**します。CoInstallers**セクションと INF <em>DDInstall</em>**します。WDF**セクションで説明されている[KMDF 共同インストーラーを使用して](installing-the-framework-s-co-installer.md)します。

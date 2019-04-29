@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6818e40c03778d47d5f5fa7e01fb594262ba7ba9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332778"
 ---
 # <a name="kspropertyaudiogfxrendertargetdeviceid"></a>KSPROPERTY\_AUDIOGFX\_RENDERTARGETDEVICEID
 
@@ -74,7 +74,7 @@ KSPROPERTY\_AUDIOGFX\_RENDERTARGETDEVICEID プロパティ要求がステータ�
 
 プロパティ値を保持するために必要なバッファーのサイズを確認するのを参照してください。[オーディオのプロパティの基本的なクエリがサポート](https://msdn.microsoft.com/library/windows/hardware/ff536225)します。
 
-デバイス Id の詳細については、[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)を参照してください。
+デバイス Id の詳細については、次を参照してください。[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
 
 <a name="requirements"></a>要件
 ------------

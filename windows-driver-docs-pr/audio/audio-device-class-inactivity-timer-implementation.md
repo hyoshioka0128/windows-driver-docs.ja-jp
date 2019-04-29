@@ -1,6 +1,6 @@
 ---
-title: オーディオ デバイス クラスの非アクティブ タイマーの実装
-description: オーディオ デバイス クラスの非アクティブ タイマーの実装
+title: オーディオ デバイス クラスの無通信タイマーの実装
+description: オーディオ デバイス クラスの無通信タイマーの実装
 ms.assetid: e7e431ec-626d-4fdb-8705-fc5420c43f17
 keywords:
 - 非アクティブ タイマーの WDK オーディオ
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26ba356afcf9e9f9c6f2d5cb5e92985c2a1c150a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331556"
 ---
-# <a name="audio-device-class-inactivity-timer-implementation"></a>オーディオ デバイス クラスの非アクティブ タイマーの実装
+# <a name="audio-device-class-inactivity-timer-implementation"></a>オーディオ デバイス クラスの無通信タイマーの実装
 
 
 ## <span id="audio_device_class_inactivity_timer_implementation"></span><span id="AUDIO_DEVICE_CLASS_INACTIVITY_TIMER_IMPLEMENTATION"></span>

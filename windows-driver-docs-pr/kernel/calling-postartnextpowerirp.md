@@ -1,6 +1,6 @@
 ---
-title: PoStartNextPowerIrp を呼び出す
-description: PoStartNextPowerIrp を呼び出す
+title: PoStartNextPowerIrp の呼び出し
+description: PoStartNextPowerIrp の呼び出し
 ms.assetid: 8b3fb578-2ac2-4a04-ac99-1cfd51b07b01
 keywords:
 - Irp WDK カーネル、PoStartNextPowerIrp を電源します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fa55bfc81e8c8ebf9182c8a527c1e4ecacb305c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338792"
 ---
-# <a name="calling-postartnextpowerirp"></a>PoStartNextPowerIrp を呼び出す
+# <a name="calling-postartnextpowerirp"></a>PoStartNextPowerIrp の呼び出し
 
 
 

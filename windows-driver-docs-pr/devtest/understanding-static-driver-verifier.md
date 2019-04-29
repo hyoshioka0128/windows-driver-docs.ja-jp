@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier をについてください。
-description: Static Driver Verifier をについてください。
+title: 静的ドライバー検証ツールの概要
+description: 静的ドライバー検証ツールの概要
 ms.assetid: 519e3314-2fea-4acd-8c0d-954a57e257ba
 keywords:
 - Static Driver Verifier WDK、Static Driver Verifier について
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c95e67345779c9b5e003319e50cd8b2b4e79cec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384715"
 ---
-# <a name="understanding-static-driver-verifier"></a>Static Driver Verifier をについてください。
+# <a name="understanding-static-driver-verifier"></a>静的ドライバー検証ツールの概要
 
 
 Windows Driver Model (WDM) またはカーネル モード ドライバー フレームワーク (KMDF)、NDIS、または Storport に準拠している堅牢なドライバーを作成するには、専門知識があるし、ドライバーが I/O マネージャーと対話する方法を理解する必要があります。 これらのドライバーをテストすることは、同じように注意が必要です。

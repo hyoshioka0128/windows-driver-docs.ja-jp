@@ -1,5 +1,5 @@
 ---
-title: .remote_exit (exit クライアントのデバッグ)
+title: .remote_exit (デバッグ クライアントの終了)
 description: .Remote_exit コマンドでは、デバッグ、クライアントが終了したが、デバッグ セッションは終了しません。
 ms.assetid: 9e15a842-6864-4ff9-97bc-f6cc8549a422
 keywords:
@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f19ade2702be6d8b1df22fbe6444458a77fbb3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339849"
 ---
 # <a name="remoteexit-exit-debugging-client"></a>.remote\_exit (終了デバッグ クライアント)
 
@@ -65,7 +65,7 @@ ms.locfileid: "56550148"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スクリプト ファイルの詳細については、[スクリプト ファイルを使用する](using-script-files.md)を参照してください。 クライアントをデバッグおよびサーバーのデバッグに関する詳細については、[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)を参照してください。
+スクリプト ファイルの詳細については、次を参照してください。[スクリプト ファイルを使用する](using-script-files.md)します。 クライアントをデバッグおよびサーバーのデバッグに関する詳細については、次を参照してください。[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)します。
 
 <a name="remarks"></a>注釈
 -------

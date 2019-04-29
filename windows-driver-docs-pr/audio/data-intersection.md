@@ -1,6 +1,6 @@
 ---
-title: データの積集合
-description: データの積集合
+title: データ交差
+description: データ交差
 ms.assetid: a1588ce0-a091-4bfd-98a9-4d78e2fc847f
 keywords:
 - に関するデータの積集合、交差部分のデータ ハンドラーの WDK オーディオ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5c60477b805bcbdbd258d71ac26b2d39274fccc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333821"
 ---
-# <a name="data-intersection"></a>データの積集合
+# <a name="data-intersection"></a>データ交差
 
 
 ## <span id="data_intersection"></span><span id="DATA_INTERSECTION"></span>

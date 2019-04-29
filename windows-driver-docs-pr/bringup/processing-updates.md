@@ -5,11 +5,11 @@ ms.assetid: 87BC1366-F69D-412A-883E-861853A4902A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5b554d462080271a0886272ccbeed1a09d57d33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337401"
 ---
 # <a name="processing-updates"></a>更新プログラムの処理
 
@@ -18,7 +18,7 @@ Windows OS ローダーは、ファームウェアの更新パッケージが適
 
 ESRT 例を参照する[ESRT テーブル定義](esrt-table-definition.md)とのファームウェア リソース更新のドライバー パッケージ INF 例[update のドライバー パッケージの作成](authoring-an-update-driver-package.md)、capsule ヘッダー Windows OS ローダー作成します UpdateCapsule にパスに次のようになります。
 
-| フィールド            | 値              | Comment                                                 |
+| フィールド            | Value              | Comment                                                 |
 |------------------|--------------------|---------------------------------------------------------|
 | CapsuleGuid      | {0} システム\_ファームウェア} | 対応する ESRT からリソース エントリの FirmwareClass します。 |
 | HeaderSize       | …                  | 固定 ページに埋め込まれる*firmware.bin*を開始します。              |
@@ -29,7 +29,7 @@ ESRT 例を参照する[ESRT テーブル定義](esrt-table-definition.md)との
 
 この例の ESRT で定義されている 2 つのデバイスの 1 つだけでテーブルがインストールされていること、新しいファームウェア リソース更新のドライバー パッケージに注意してください。 ファームウェア リソースの更新プログラムのドライバー パッケージは、表 2 の 2 つ目のデバイス用に作成され対応するファームウェア リソース デバイスにインストールし場合、2 番目の capsule ヘッダーはよう作成は。
 
-| フィールド            | [値]              | Comment                                                                                                                                 |
+| フィールド            | Value              | Comment                                                                                                                                 |
 |------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | CapsuleGuid      | {0} デバイス\_ファームウェア} | 対応する ESRT からリソース エントリの FirmwareClass します。                                                                                 |
 | HeaderSize       | …                  | デバイスのページ揃えにするには、埋め込まれます。箱を開始します。                                                                                                  |

@@ -1,5 +1,5 @@
 ---
-title: .restart (再起動カーネル接続)
+title: .restart (カーネル接続の再起動)
 description: .Restart コマンドでは、カーネルの接続を再起動します。このコマンドはユーザー モードでのみ動作 .restart (ターゲット アプリケーションの再起動) のコマンドを使用を混同しないでください。
 ms.assetid: 2c81625b-d75f-4c5f-9437-9619bf33b500
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b9a57ecd03ed93ca6dc2c2a4f4882737e33f1122
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335707"
 ---
-# <a name="restart-restart-kernel-connection"></a>.restart (再起動カーネル接続)
+# <a name="restart-restart-kernel-connection"></a>.restart (カーネル接続の再起動)
 
 
 **.Restart**コマンドは、カーネルの接続を再起動します。
@@ -62,7 +62,7 @@ ms.locfileid: "56539123"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ターゲットとの接続を再確立の詳細については、[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)を参照してください。
+ターゲットとの接続を再確立の詳細については、次を参照してください。[対象のコンピューターに同期](synchronizing-with-the-target-computer.md)します。
 
 <a name="remarks"></a>注釈
 -------

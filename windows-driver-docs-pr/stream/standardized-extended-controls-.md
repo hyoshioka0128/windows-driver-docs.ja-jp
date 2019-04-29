@@ -5,11 +5,11 @@ ms.assetid: B480C007-7DCA-4CFB-9169-BE2D0B2D2137
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 663c8ac91121e92633598cd5ce9c86380f72f7d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333979"
 ---
 # <a name="extended-camera-controls"></a>拡張カメラ コントロール
 
@@ -28,7 +28,7 @@ ms.locfileid: "56582685"
 -   [ISO の整数](#integer-iso)
 -   [高度なフォーカス](#advanced-focus)
 -   [フラッシュ](#flash)
--   [ズーム](#zoom)
+-   [[ズーム]](#zoom)
 -   [シーンのモード](#scene-mode)
 
 コントロールの一部は非同期のコントロールとしてのアプリケーションに公開して、同期コントロールとして他のユーザーに公開されます。
@@ -89,7 +89,7 @@ DEFINE_GUIDSTRUCT("1CB79112-C0D2-4213-9CA6-CD4FDB927972", KSPROPERTYSETID_Extend
 
 次の IMFAttributes がで定義されている**mfapi.h**します。 これらは、MF キャプチャ パイプラインや WinRT で必要とします。 MFT0 は設定されていないこと、IMFAttributes フォト確認 DevProxy を超えての写真確認フレームのフローがないので注意してください。
 
-| 属性 (GUID)                            | データ型 |
+| 属性 (GUID)                            | データの種類 |
 |---------------------------------------------|-----------|
 | **MF\_キャプチャ\_メタデータ\_FOCUSSTATE**       | UINT32    |
 | **MF\_キャプチャ\_メタデータ\_FACEROIS**         | Blob      |
@@ -147,7 +147,7 @@ DEFINE_GUIDSTRUCT("1CB79112-C0D2-4213-9CA6-CD4FDB927972", KSPROPERTYSETID_Extend
 
 MFT0 IMFAttributes にドライバーと接続の適用の必要なデバイスの設定によって提供されるメタデータ バッファーの解析、 **MFSampleExtension\_CaptureMetadata**各 IMFSample に関連付けられている属性のバッグ。 MF パイプラインによって次の IMFAttributes を実行する必要があり、任意のサードパーティの仕様を提供します。
 
-| 名前                                           | 型                          |
+| 名前                                           | 種類                          |
 |------------------------------------------------|-------------------------------|
 | **MFSampleExtension\_CaptureMetadata**         | **IUnknown** (IMFAttributes)  |
 | **MFSampleExtension\_EOS**                     | **UINT32** (ブール値)          |
@@ -169,7 +169,7 @@ MFT0 IMFAttributes にドライバーと接続の適用の必要なデバイス�
 <thead>
 <tr class="header">
 <th>名前</th>
-<th>型</th>
+<th>種類</th>
 <th>説明</th>
 </tr>
 </thead>

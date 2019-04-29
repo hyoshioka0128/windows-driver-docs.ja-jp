@@ -1,17 +1,17 @@
 ---
-title: 形式のネゴシエーション
-description: 形式のネゴシエーション
+title: 形式に関するネゴシエーション
+description: 形式に関するネゴシエーション
 ms.assetid: 5b6ee5ed-de5a-4832-a581-179966e79dbd
 ms.date: 11/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d02eedae2c98dcd7b2f46093ed87b2fd20c4c34c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333781"
 ---
-# <a name="format-negotiation"></a>形式のネゴシエーション
+# <a name="format-negotiation"></a>形式に関するネゴシエーション
 
 
 アプリケーションは、オーディオ処理を開始すた後、グラフ ビルダーは、オーディオのグラフに、sAPOs を構成し、sAPOs 初期化もします。 オーディオのサービスは、sAPO の入出力にオーディオ データ形式を確立するために LFX sAPO とネゴシエートします。 このネゴシエーション プロセスは、形式のネゴシエーションと呼ばれます。

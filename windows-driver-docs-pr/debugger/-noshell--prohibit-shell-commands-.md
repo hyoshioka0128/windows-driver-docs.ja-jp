@@ -1,5 +1,5 @@
 ---
-title: .noshell (シェルのコマンドを禁止)
+title: .noshell (シェル コマンドの禁止)
 description: .Noshell コマンドから .shell コマンドを使用できません。
 ms.assetid: 49a83e46-1390-4b60-bd61-a5da80c513e3
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f51d8dd0333b8630456aa45fc3cb2e2bf05cc75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335897"
 ---
-# <a name="noshell-prohibit-shell-commands"></a>.noshell (シェルのコマンドを禁止)
+# <a name="noshell-prohibit-shell-commands"></a>.noshell (シェル コマンドの禁止)
 
 
 **.Noshell**コマンドと使用できない[ **.shell** ](-shell--command-shell-.md)コマンド。

@@ -9,11 +9,11 @@ keywords:
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d28efb71879df2ae4700e770484753bb15b98bb5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332062"
 ---
 # <a name="adding-event-tracing-to-kernel-mode-drivers"></a>カーネル モード ドライバーへのイベント トレーシングの追加
 
@@ -46,7 +46,7 @@ ms.locfileid: "57350405"
 
 ## <a name="1-decide-the-type-of-events-to-raise-and-where-to-publish-them"></a>1.発生させるイベントとそれらを公開する場所の種類を決める
 
-コーディングを開始する前にログを Event Tracing for Windows (ETW) にドライバーをするイベントの種類を決定する必要があります。 たとえばに、ドライバーを配布すると後の問題を診断するのに役立つイベントまたは参考にして、ドライバーを開発中のイベントを記録する可能性があります。 イベントの種類は、チャネルで識別されます。 A*チャネル*が管理者の種類のイベントの名前付きストリーム、運用、分析、またはデバッグのテレビ チャンネルのような特定対象ユーザーにリダイレクトされます。 チャネルは、イベント ログとイベント コンシューマーにイベント プロバイダーからのイベントを配信します。 チャネルとイベントの種類については、[イベント ログと Windows イベント ログ チャネル](https://go.microsoft.com/fwlink/p/?linkid=62587)を参照してください。
+コーディングを開始する前にログを Event Tracing for Windows (ETW) にドライバーをするイベントの種類を決定する必要があります。 たとえばに、ドライバーを配布すると後の問題を診断するのに役立つイベントまたは参考にして、ドライバーを開発中のイベントを記録する可能性があります。 イベントの種類は、チャネルで識別されます。 A*チャネル*が管理者の種類のイベントの名前付きストリーム、運用、分析、またはデバッグのテレビ チャンネルのような特定対象ユーザーにリダイレクトされます。 チャネルは、イベント ログとイベント コンシューマーにイベント プロバイダーからのイベントを配信します。 チャネルとイベントの種類については、次を参照してください。[イベント ログと Windows イベント ログ チャネル](https://go.microsoft.com/fwlink/p/?linkid=62587)します。
 
 開発中は、ほとんどの場合に興味のあるコードをデバッグする際に役立つトレース イベント。 この同じチャネルは、ドライバーを展開した後に表示される問題のトラブルシューティングに役立つ実稼働コードで使用可能性があります。 パフォーマンスを測定するために使用するトレース イベントにすることもこれらのイベントは、IT プロフェッショナルの微調整サーバーのパフォーマンスを向上でき、ネットワークのボトルネックを特定するのに役立ちます。
 
@@ -54,7 +54,7 @@ ms.locfileid: "57350405"
 
 インストルメンテーション マニフェストは、プロバイダーが発生するイベントの正式な説明を提供する XML ファイルです。 インストルメンテーション マニフェストは、イベント プロバイダーを識別して、チャネルまたは (最大 8 つ)、チャネルを指定します、イベントについて説明し、イベントのテンプレートを使用しています。 インストルメンテーション マニフェストはさらに、トレース メッセージをローカライズするための文字列のローカライズできます。 システムのイベントとイベント コンシューマー利用できます。 構造化された XML のクエリと分析を実行するマニフェストに指定されたデータ。
 
-インストルメンテーション マニフェストの詳細については、[インストルメンテーション マニフェスト (Windows) を記述](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)と[(Windows) を使用して Windows イベント ログ](https://docs.microsoft.com/windows/desktop/WES/using-windows-event-log)を参照してください。
+インストルメンテーション マニフェストの詳細については、次を参照してください。[インストルメンテーション マニフェスト (Windows) を記述](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)と[(Windows) を使用して Windows イベント ログ](https://docs.microsoft.com/windows/desktop/WES/using-windows-event-log)します。
 
 > [!NOTE]
 > インストルメンテーション マニフェストを手動で作成することができますが %windowssdkdir に含まれている ECManGen.exe ツールを使用してを考慮する必要があります\\bin\\x64 %windowssdkdir\\bin\\x86\\フォルダー WDK と Visual Studio をインストールするときにします。 % WindowsSdkDir Windows キット ディレクトリに、WDK のこのバージョンがインストールされている例では、c: パスを表す\\Program Files (x86)\\Windows キット\\8.1。 ECManGen.exe は、XML タグを使用することがなく、最初からマニフェストを作成することを案内するアプリケーションです。 情報は、の知識がなくて、[インストルメンテーション マニフェスト (Windows) を記述](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)セクションと、 [EventManifest スキーマ (Windows)](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-schema)セクションは、このツールを使用する場合に役立ちます。
@@ -453,7 +453,7 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
 
 1. Visual Studio でのドライバー ソリューションを開きます。
 
-2. 選択して、[ビルド] メニューからサンプルをビルド**ソリューションのビルド**します。 ソリューションの構築の詳細については、[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)を参照してください。
+2. 選択して、[ビルド] メニューからサンプルをビルド**ソリューションのビルド**します。 ソリューションの構築の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
 ## <a name="6-install-the-manifest"></a>6.マニフェストをインストールします。
 

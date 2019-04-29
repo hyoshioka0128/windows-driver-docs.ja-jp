@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_AUTH_ALGO_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 12d031cd5c6b0e898ef7f1206103947f8dd8f4eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361801"
 ---
 # <a name="wditlvauthalgolist"></a>WDI\_TLV\_AUTH\_ALGO\_一覧
 
@@ -31,7 +31,7 @@ WDI\_TLV\_AUTH\_ALGO\_リストは、認証アルゴリズムの一覧を含む 
 ## <a name="values"></a>値
 
 
-| 種類                                                        | 説明                            |
+| 型                                                        | 説明                            |
 |-------------------------------------------------------------|----------------------------------------|
 | [**WDI\_AUTH\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897792)\[\] | 認証アルゴリズムの配列。 |
 

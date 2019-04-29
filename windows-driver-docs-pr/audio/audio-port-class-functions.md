@@ -1,17 +1,17 @@
 ---
-title: オーディオ ポート クラス関数
-description: オーディオ ポート クラス関数
+title: オーディオ ポート クラスの関数
+description: オーディオ ポート クラスの関数
 ms.assetid: dc8f32e8-b01c-4f06-a32f-c08f76001f79
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 899fe1a89ca73f578b184892219020c68f99fd9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331433"
 ---
-# <a name="audio-port-class-functions"></a>オーディオ ポート クラス関数
+# <a name="audio-port-class-functions"></a>オーディオ ポート クラスの関数
 
 
 ## <span id="ddk_audio_port_class_functions_ks"></span><span id="DDK_AUDIO_PORT_CLASS_FUNCTIONS_KS"></span>
@@ -19,7 +19,7 @@ ms.locfileid: "56532141"
 
 このセクションには、PortCls システム ドライバー (portcls.sys) を提供する一般的な機能がアルファベットの順に説明します。 これらの関数は、任意のインターフェイスには属していません。 一般的なユーティリティ、PortCls を登録し、サブデバイスをインストールするなどの操作を実行するオーディオ ミニポート ドライバーによって使用されます。
 
-さまざまな PortCls 関数をサポートしているバージョンのオペレーティング システムの一覧は、[オペレーティング システムによって PortCls サポート](https://msdn.microsoft.com/library/windows/hardware/ff537762)を参照してください。
+さまざまな PortCls 関数をサポートしているバージョンのオペレーティング システムの一覧は、次を参照してください。[オペレーティング システムによって PortCls サポート](https://msdn.microsoft.com/library/windows/hardware/ff537762)します。
 
 PortCls には、次の関数が実装されています。
 

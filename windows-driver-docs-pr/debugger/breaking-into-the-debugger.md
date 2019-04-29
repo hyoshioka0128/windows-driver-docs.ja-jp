@@ -1,6 +1,6 @@
 ---
-title: デバッガーの中断
-description: デバッガーの中断
+title: デバッガーへの割り込み
+description: デバッガーへの割り込み
 ms.assetid: 4fec7170-7480-4a8a-b060-1c8a8c3fb9dc
 keywords:
 - デバッガーの中断
@@ -14,13 +14,13 @@ keywords:
 ms.date: 08/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f10e442ea7c18f65d4ddd8330555777618dcbe0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327354"
 ---
-# <a name="breaking-into-the-debugger"></a>デバッガーの中断
+# <a name="breaking-into-the-debugger"></a>デバッガーへの割り込み
 
 
 ## <span id="ddk_breaking_into_the_debugger_dbg"></span><span id="DDK_BREAKING_INTO_THE_DEBUGGER_DBG"></span>
@@ -39,7 +39,7 @@ Break ルーチンでは、呼び出し元のスレッドが呼び出し元の�
 
 2.  ユーザー モード デバッガーがアタッチされていない、起動時にカーネル モードのデバッグが有効になっている場合は、コンピューター全体がカーネル デバッガーに中断されます。 カーネル デバッガーがアタッチされていない場合、コンピューターが固定し、カーネル デバッガーを待機します。
 
-3.  ユーザー モードのデバッガーがアタッチされていない、カーネル モードのデバッグが有効になっていない場合は、未処理の例外で、プログラムが終了し、事後 (だけの時間) のデバッガーをアクティブになります。 詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。
+3.  ユーザー モードのデバッガーがアタッチされていない、カーネル モードのデバッグが有効になっていない場合は、未処理の例外で、プログラムが終了し、事後 (だけの時間) のデバッガーをアクティブになります。 詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。
 
 ### <a name="span-idkernelmodebreakroutinesspanspan-idkernelmodebreakroutinesspankernel-mode-break-routines"></a><span id="kernel_mode_break_routines"></span><span id="KERNEL_MODE_BREAK_ROUTINES"></span>カーネル モード Break ルーチン
 

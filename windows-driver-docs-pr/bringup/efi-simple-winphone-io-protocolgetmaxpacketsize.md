@@ -1,15 +1,15 @@
 ---
-title: EFI_SIMPLE_WINPHONE_IO_PROTOCOL します。GetMaxPacketSize
-description: EFI_SIMPLE_WINPHONE_IO_PROTOCOL します。GetMaxPacketSize
+title: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
+description: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
 ms.assetid: 8808bb5d-e00d-4b19-87ad-4a071a896e22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 473395ba84360980f2a279e56a2a1b420fb3e21e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337792"
 ---
 # <a name="efisimplewinphoneioprotocolgetmaxpacketsize"></a>EFI\_単純\_WINPHONE\_IO\_プロトコル。GetMaxPacketSize
 
@@ -76,7 +76,7 @@ EFI へのポインター\_単純\_WINPHONE\_IO\_プロトコル インスタン
 ## <a name="remarks"></a>注釈
 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 
 **ヘッダー:** ユーザーが生成しました。

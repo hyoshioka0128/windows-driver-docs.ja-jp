@@ -1,6 +1,6 @@
 ---
-title: ユーザー モードとカーネル モード
-description: ユーザー モードとカーネル モード
+title: ユーザー モードとカーネル モードの比較
+description: ユーザー モードとカーネル モードの比較
 ms.assetid: ee506167-6b64-4e50-9988-102416bcb056
 keywords:
 - ソフトウェアのシンセサイザーの WDK オーディオ
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a94943d2ec07fe783963e6b1c4e3595da0e5419
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335337"
 ---
-# <a name="user-mode-versus-kernel-mode"></a>ユーザー モードとカーネル モード
+# <a name="user-mode-versus-kernel-mode"></a>ユーザー モードとカーネル モードの比較
 
 
 ## <span id="user_mode_versus_kernel_mode"></span><span id="USER_MODE_VERSUS_KERNEL_MODE"></span>
@@ -31,7 +31,7 @@ ms.locfileid: "56552934"
 
 ソフトウェアのシンセサイザー (および wave シンク) を構築することは、ユーザー モードで非常に簡単です。 ユーザー モード インターフェイスは簡単に使用し、デバッグが簡略化します。 別のメリットは、結果として得られるコンポーネントが、Microsoft Windows 実行可能ファイルでことです。 この実行可能ファイルは、COM オブジェクトであるためには、単に regsvr32.exe を使用してコマンドラインからの自己登録のインストールです。 (RegSvr32 システム アプリケーションの呼び出し、DLL の[ **DllRegisterServer** ](https://msdn.microsoft.com/library/windows/desktop/ms682162)関数。 詳細については、ドキュメントを参照して、Microsoft Windows SDK。)
 
-ユーザー モードの実装が必要な場合は、製品、ドライバーではなく、アプリケーション プログラムを配信できます。 ユーザーは、複雑なドライバーのインストール プロセスを回避し、インストールした後に再起動は必要ありません。 ユーザー モード コンポーネントは、他のアプリケーションで使用できるかどうかに応じて、使用可能なポートの 1 つとして列挙できます。 詳細については、[登録 Your シンセサイザー](registering-your-synthesizer.md)を参照してください。
+ユーザー モードの実装が必要な場合は、製品、ドライバーではなく、アプリケーション プログラムを配信できます。 ユーザーは、複雑なドライバーのインストール プロセスを回避し、インストールした後に再起動は必要ありません。 ユーザー モード コンポーネントは、他のアプリケーションで使用できるかどうかに応じて、使用可能なポートの 1 つとして列挙できます。 詳細については、次を参照してください。[登録 Your シンセサイザー](registering-your-synthesizer.md)します。
 
 カーネル モードのソフトウェアの導入の利点は、待機時間の短縮です。 メッセージのタイムスタンプ付きの登場によって、ただし、この利点はありませんがほどです。 しましたを再生するキューに入れられたときに正確にメモを再生するときに、レガシ MIDI Api では、タイムスタンプはありませんでした。 タイムスタンプ、再生は、キューのノートを将来の時刻を指定できます。 時刻のタイムスタンプを使用して、事前に警告がシステムに固有の待機時間よりも少ない限り、適切な時にメモが再生されるを意味します。
 

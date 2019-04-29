@@ -1,17 +1,17 @@
 ---
-title: コンバーチブルに関する考慮事項
+title: コンバーチブル PC に関する考慮事項
 description: このトピックでは、コンバーチブルのタイミングおよびパフォーマンスに関する考慮事項について説明します。
 ms.assetid: 2353023A-989A-4836-A39C-0B5F749E7FF2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8c5eedb732e502156623dce31328a5c6cc233e05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326111"
 ---
-# <a name="considerations-for-convertibles"></a>コンバーチブルに関する考慮事項
+# <a name="considerations-for-convertibles"></a>コンバーチブル PC に関する考慮事項
 
 
 このトピックでは、コンバーチブルのタイミングおよびパフォーマンスに関する考慮事項について説明します。

@@ -1,6 +1,6 @@
 ---
-title: 並列のデバイスの読み取りと書き込み
-description: 並列のデバイスの読み取りと書き込み
+title: パラレル デバイスの読み取りと書き込み
+description: パラレル デバイスの読み取りと書き込み
 ms.assetid: f28506b1-fa87-4119-a57a-2b49573197d8
 keywords:
 - デバイスの読み取り、WDK を並列します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ded95e2b136c630d9f69aba8303ca99ef7162800
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384976"
 ---
-# <a name="reading-and-writing-a-parallel-device"></a>並列のデバイスの読み取りと書き込み
+# <a name="reading-and-writing-a-parallel-device"></a>パラレル デバイスの読み取りと書き込み
 
 
 

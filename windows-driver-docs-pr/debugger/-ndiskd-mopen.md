@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bd991b6da9ab80ece3a88a81410effc9099a4bb6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336008"
 ---
-# <a name="ndiskdmopen"></a>! ndiskd.mopen
+# <a name="ndiskdmopen"></a>!ndiskd.mopen
 
 
 **! Ndiskd.mopen**拡張機能は、ミニポートおよびプロトコル間のバインドに関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd NDIS ミニポート ドライバーとプロトコル ドライバーのすべての開いているバインディングの一覧が表示されます。

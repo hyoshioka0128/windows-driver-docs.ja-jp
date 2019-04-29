@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b23f6eda8fb784bdd47231e454ae124c3e3039e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334864"
 ---
 # <a name="-command-separator"></a>;(コマンドの区切り記号)
 
@@ -34,7 +34,7 @@ ms.locfileid: "56581802"
 <span id="_______Command1__Command2__..."></span><span id="_______command1__command2__..."></span><span id="_______COMMAND1__COMMAND2__..."></span> *Command1*、 *Command2*、.  
 実行されるコマンド。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 コマンドが、右側に左から順番に実行されます。 1 行にすべてのコマンドは、特に明記しない限り、現在のスレッドを参照してください。 コマンドにより、スレッドの実行、デバッグ イベントをそのスレッドを停止するまでに、行の残りのコマンドが延期されます。

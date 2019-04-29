@@ -24,11 +24,11 @@ keywords:
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 239c968d82da525c03967408201b73f5a8e9cb37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333386"
 ---
 # <a name="kernel-mode-wdm-audio-components"></a>カーネル モード WDM オーディオ コンポーネント
 
@@ -104,7 +104,7 @@ KMixer システム ドライバー (Kmixer.sys) は、KS フィルターには�
 
 -   頭部伝達関数 (HRTF) 3-D 処理
 
-ボリュームの範囲と、さまざまなバージョンの Windows での既定のボリューム レベルについては、[既定のオーディオ音量設定](default-audio-volume-settings.md)を参照してください。
+ボリュームの範囲と、さまざまなバージョンの Windows での既定のボリューム レベルについては、次を参照してください。[既定のオーディオ音量設定](default-audio-volume-settings.md)します。
 
 ### <a name="span-idredbooksystemdriverspanspan-idredbooksystemdriverspanredbook-system-driver"></a><span id="redbook_system_driver"></span><span id="REDBOOK_SYSTEM_DRIVER"></span>Redbook システム ドライバー
 
@@ -126,17 +126,17 @@ DMusic システム ドライバー (Dmusic.sys) は、ソフトウェア、高�
 
 ### <a name="span-idaecsystemdriverspanspan-idaecsystemdriverspanaec-system-driver"></a><span id="aec_system_driver"></span><span id="AEC_SYSTEM_DRIVER"></span>AEC システム ドライバー
 
-AEC システム ドライバー (Aec.sys) では、ソフトウェアの AEC (アコースティック エコー キャンセル) とノイズ抑制アルゴリズムを実装することで、全二重 DirectSound アプリケーションをサポートします。 詳細については、[DirectSound キャプチャ効果](directsound-capture-effects.md)を参照してください。
+AEC システム ドライバー (Aec.sys) では、ソフトウェアの AEC (アコースティック エコー キャンセル) とノイズ抑制アルゴリズムを実装することで、全二重 DirectSound アプリケーションをサポートします。 詳細については、次を参照してください。 [DirectSound キャプチャ効果](directsound-capture-effects.md)します。
 
 ### <a name="span-iddrmksystemdriverspanspan-iddrmksystemdriverspandrmk-system-driver"></a><span id="drmk_system_driver"></span><span id="DRMK_SYSTEM_DRIVER"></span>DRMK システム ドライバー
 
-DRMK システム ドライバー (Drmk.sys) は、DRM で保護されたコンテンツを格納しているオーディオ ストリームの復号化する KS フィルターです。 詳細については、[デジタル著作権管理](digital-rights-management.md)を参照してください。
+DRMK システム ドライバー (Drmk.sys) は、DRM で保護されたコンテンツを格納しているオーディオ ストリームの復号化する KS フィルターです。 詳細については、次を参照してください。[デジタル著作権管理](digital-rights-management.md)します。
 
 ### <a name="span-idsplittersystemdriverspanspan-idsplittersystemdriverspansplitter-system-driver"></a><span id="splitter_system_driver"></span><span id="SPLITTER_SYSTEM_DRIVER"></span>スプリッター システム ドライバー
 
 スプリッター システム ドライバー (Splitter.sys) は 2 つ作成される KS フィルターまたは以上の出力を 1 つの入力キャプチャ ストリームからストリームします。 スプリッター ドライバーは、入力ストリームの形式とは無関係に 2 つの詳細出力ストリームに入力ストリームを透過的にコピーします。
 
-スプリッター ドライバーは、Microsoft Windows XP と Windows Me でサポートされている以降です。 詳細については、[AVStream スプリッター](https://msdn.microsoft.com/library/windows/hardware/ff554255)を参照してください。
+スプリッター ドライバーは、Microsoft Windows XP と Windows Me でサポートされている以降です。 詳細については、次を参照してください。 [AVStream スプリッター](https://msdn.microsoft.com/library/windows/hardware/ff554255)します。
 
 ### <a name="span-idportclassadapterdriverandportclssystemdriverspanspan-idportclassadapterdriverandportclssystemdriverspanport-class-adapter-driver-and-portcls-system-driver"></a><span id="port_class_adapter_driver_and_portcls_system_driver"></span><span id="PORT_CLASS_ADAPTER_DRIVER_AND_PORTCLS_SYSTEM_DRIVER"></span>ポート クラスのアダプターのドライバーと PortCls システム ドライバー
 
@@ -144,7 +144,7 @@ DRMK システム ドライバー (Drmk.sys) は、DRM で保護されたコン�
 
 ### <a name="span-idusbaudioclasssystemdriverspanspan-idusbaudioclasssystemdriverspanusb-audio-class-system-driver-usbaudiosys"></a><span id="usbaudio_class_system_driver"></span><span id="USBAUDIO_CLASS_SYSTEM_DRIVER"></span>USB オーディオ クラス システム ドライバー (Usbaudio.sys)
 
-USBAudio クラスのシステム ドライバー (Usbaudio.sys) では、オーディオ デバイスの場合、ユニバーサル シリアル バス デバイス クラス定義に準拠している USB オーディオ デバイス ドライバーのサポートを提供します。 このクラスのシステム ドライバーの詳細については、[USB オーディオ クラス システム ドライバー (Usbaudio.sys)](usb-audio-class-system-driver--usbaudio-sys-.md)を参照してください。
+USBAudio クラスのシステム ドライバー (Usbaudio.sys) では、オーディオ デバイスの場合、ユニバーサル シリアル バス デバイス クラス定義に準拠している USB オーディオ デバイス ドライバーのサポートを提供します。 このクラスのシステム ドライバーの詳細については、次を参照してください。 [USB オーディオ クラス システム ドライバー (Usbaudio.sys)](usb-audio-class-system-driver--usbaudio-sys-.md)します。
 
 ### <a name="span-idavcaudioclasssystemdriverspanspan-idavcaudioclasssystemdriverspanavcaudio-class-system-driver"></a><span id="avcaudio_class_system_driver"></span><span id="AVCAUDIO_CLASS_SYSTEM_DRIVER"></span>AVCAudio クラスのシステム ドライバー
 

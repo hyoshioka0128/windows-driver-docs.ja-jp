@@ -1,17 +1,17 @@
 ---
-title: Windows の Bluetooth ホスト コント ローラー インターフェイス (HCI) アーキテクチャの概要
+title: Windows の Bluetooth ホスト コントローラー インターフェイス (HCI) アーキテクチャの概要
 description: このトピックでは、コント ローラー インターフェイス (HCI) Bluetooth ホストをバイパスするオーディオ データを再ルーティングの Windows 8.1 のサポートのアーキテクチャの概要を示します。
 ms.assetid: FC9E5254-B543-4890-811C-1DA5F28E61B9
 ms.date: 10/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 60697fee2589d9b2d55f25b26f387e3b424cf404
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333909"
 ---
-# <a name="windows-bluetooth-host-controller-interface-hci-architectural-overview"></a>Windows の Bluetooth ホスト コント ローラー インターフェイス (HCI) アーキテクチャの概要
+# <a name="windows-bluetooth-host-controller-interface-hci-architectural-overview"></a>Windows の Bluetooth ホスト コントローラー インターフェイス (HCI) アーキテクチャの概要
 
 
 このトピックでは、コント ローラー インターフェイス (HCI) Bluetooth ホストをバイパスするオーディオ データを再ルーティングの Windows 8.1 のサポートのアーキテクチャの概要を示します。

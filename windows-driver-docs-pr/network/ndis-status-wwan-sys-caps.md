@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WWAN_SYS_CAPS_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b201eb94dd8f1bd4b45688069f959b1e681001b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384643"
 ---
 # <a name="ndisstatuswwansyscapsinfo"></a>NDIS\_状態\_WWAN\_SYS\_CAP\_情報
 
@@ -22,7 +22,7 @@ ms.locfileid: "56580466"
 
 この通知を使用して、 [ **NDIS\_WWAN\_SYS\_CAP\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt782410)構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

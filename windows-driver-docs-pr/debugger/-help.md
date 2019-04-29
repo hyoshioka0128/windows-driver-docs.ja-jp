@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b22a2d256a9ae0ee36489dd2704c1fde5788cbe6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336516"
 ---
-# <a name="help"></a>! ヘルプ
+# <a name="help"></a>!help
 
 
 **! ヘルプ**拡張機能が拡張 DLL からエクスポートされた拡張機能のコマンドについて説明するヘルプ テキストを表示します。

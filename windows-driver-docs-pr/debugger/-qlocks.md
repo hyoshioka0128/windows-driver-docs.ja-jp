@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 475431764925dd6e584f9099173963c23c505c53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334331"
 ---
-# <a name="qlocks"></a>! qlocks
+# <a name="qlocks"></a>!qlocks
 
 
 **! Qlocks**拡張機能には、すべてのキューに置かれたスピン ロックの状態が表示されます。

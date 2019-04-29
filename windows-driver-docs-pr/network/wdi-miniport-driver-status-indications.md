@@ -6,11 +6,11 @@ ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 98b98138951000335e1447f230688a4a772ab531
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385367"
 ---
 # <a name="wdi-miniport-driver-status-indications"></a>WDI ミニポート ドライバーの状態インジケーター
 

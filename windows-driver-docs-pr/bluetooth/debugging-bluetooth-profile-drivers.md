@@ -1,6 +1,6 @@
 ---
-title: Bluetooth のプロファイルのドライバーのデバッグ
-description: Bluetooth のプロファイルのドライバーのデバッグ
+title: Bluetooth プロファイル ドライバーのデバッグ
+description: Bluetooth プロファイル ドライバーのデバッグ
 ms.assetid: 3c04017e-7f5c-49d4-ad7e-36c7405133a1
 keywords:
 - プロファイル ドライバー WDK Bluetooth のデバッグ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecaf8b97b1ce29faf84cecef41e4e5d7f339d44e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328220"
 ---
-# <a name="debugging-bluetooth-profile-drivers"></a>Bluetooth のプロファイルのドライバーのデバッグ
+# <a name="debugging-bluetooth-profile-drivers"></a>Bluetooth プロファイル ドライバーのデバッグ
 
 
 使用することができます、Bluetooth プロファイル ドライバーを開発するときに[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)のデバッグが支援します。

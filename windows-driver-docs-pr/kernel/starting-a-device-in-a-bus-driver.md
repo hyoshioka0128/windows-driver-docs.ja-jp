@@ -1,19 +1,19 @@
 ---
-title: バス ドライバーでのデバイスの起動
-description: バス ドライバーでのデバイスの起動
+title: バス ドライバーでのデバイスの開始
+description: バス ドライバーでのデバイスの開始
 ms.assetid: 1babeabb-1866-4ca5-b5a3-380c246596e5
 keywords:
 - バス ドライバー WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18671be874293d10e008fc6870850bb360058103
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331954"
 ---
-# <a name="starting-a-device-in-a-bus-driver"></a>バス ドライバーでのデバイスの起動
+# <a name="starting-a-device-in-a-bus-driver"></a>バス ドライバーでのデバイスの開始
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: .apply_dbp (データ ブレークポイントをコンテキストに適用)
+title: .apply_dbp (データ ブレークポイントをコンテキストに適用する)
 description: .Apply_dbp コマンドでは、指定されたレジスタのコンテキストに現在のプロセスの既存のデータ ブレークポイントが適用されます。
 ms.assetid: c74fd4b3-3335-4e03-a57a-6a9aa883dd9f
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b86c00a0c785ae6f52172f918b076148eb1ef6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334743"
 ---
 # <a name="applydbp-apply-data-breakpoint-to-context"></a>.apply\_dbp (適用データ ブレークポイントのコンテキストに)
 
@@ -61,7 +61,7 @@ ms.locfileid: "56551262"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-プロセッサによって制御されるブレークポイントの詳細については、[プロセッサ ブレークポイント (ba ブレークポイント)](processor-breakpoints---ba-breakpoints-.md)を参照してください。 レジスタのコンテキスト (スレッド コンテキスト) に関する詳細については、[登録コンテキスト](changing-contexts.md#register-context)を参照してください。
+プロセッサによって制御されるブレークポイントの詳細については、次を参照してください。[プロセッサ ブレークポイント (ba ブレークポイント)](processor-breakpoints---ba-breakpoints-.md)します。 レジスタのコンテキスト (スレッド コンテキスト) に関する詳細については、次を参照してください。[登録コンテキスト](changing-contexts.md#register-context)します。
 
 <a name="remarks"></a>注釈
 -------

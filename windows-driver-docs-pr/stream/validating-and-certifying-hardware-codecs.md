@@ -1,6 +1,6 @@
 ---
-title: 検証をハードウェア コーデックの認定
-description: 検証をハードウェア コーデックの認定
+title: ハードウェア コーデックの検証と認定
+description: ハードウェア コーデックの検証と認定
 ms.assetid: 8cf96aac-78ba-41f0-b9d0-48948f704262
 keywords:
 - ハードウェア コーデック WDK AVStream、検証しています
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 679ba0e2cb5db52f0834cb430bcb1339f0c71c4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337813"
 ---
-# <a name="validating-and-certifying-hardware-codecs"></a>検証をハードウェア コーデックの認定
+# <a name="validating-and-certifying-hardware-codecs"></a>ハードウェア コーデックの検証と認定
 
 
 AVStream、ベンダーから提供されたようにミニドライバーには、コーデックのハードウェア ベースのサポートが含まれています。 または、ハードウェアをサポートするカスタム MFT を実装している、する必要があります、X.509 証明書チェーンを指定、ドライバーの INF ファイルで merit 値を指定および実装 KSPROPSETID\_OPMVideoOutput ドライバー。
@@ -64,6 +64,6 @@ typedef enum
 } KSMETHOD_OPMVIDEOOUTPUT;           
 ```
 
-ユーザー モード コンポーネント アクセス KSPROPSETID\_を通じて OPMVideoOutput、 **IKsControl** AVStream プロキシ MFT 上のインターフェイス。 ハンドラー ルーチン OPMVideoOutput メソッドの実装を示すコード例では、[コーデック Merit 検証](codec-merit-validation.md)を参照してください。
+ユーザー モード コンポーネント アクセス KSPROPSETID\_を通じて OPMVideoOutput、 **IKsControl** AVStream プロキシ MFT 上のインターフェイス。 ハンドラー ルーチン OPMVideoOutput メソッドの実装を示すコード例では、次を参照してください。[コーデック Merit 検証](codec-merit-validation.md)です。
 
-ドライバー固有 OPM については、[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)を参照してください。 OPM の特定のアプリケーションについては、[出力 Protection Manager を使用した](https://go.microsoft.com/fwlink/p/?linkid=155059)を参照してください。
+ドライバー固有 OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)します。 OPM の特定のアプリケーションについては、次を参照してください。[出力 Protection Manager を使用した](https://go.microsoft.com/fwlink/p/?linkid=155059)します。

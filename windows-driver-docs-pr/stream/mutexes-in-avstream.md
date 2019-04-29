@@ -1,6 +1,6 @@
 ---
-title: AVStream でミュー テックス
-description: AVStream でミュー テックス
+title: AVStream のミューテックス
+description: AVStream のミューテックス
 ms.assetid: 011edaaa-7449-41c3-8cfb-0d319901af8b
 keywords:
 - AVStream mutexes WDK
@@ -10,19 +10,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65dda3311d6ffbc40dedd06e6d1b396e1b79cde5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329934"
 ---
-# <a name="mutexes-in-avstream"></a>AVStream でミュー テックス
+# <a name="mutexes-in-avstream"></a>AVStream のミューテックス
 
 
 
 
 
-AVStream ミニドライバーは、ミュー テックスとプロセスの制御ゲートを使用して、オブジェクトへのアクセスを同期します。 プロセス制御ゲートの詳細については、[AVStream でのフロー制御ゲート](flow-control-gates-in-avstream.md)を参照してください。
+AVStream ミニドライバーは、ミュー テックスとプロセスの制御ゲートを使用して、オブジェクトへのアクセスを同期します。 プロセス制御ゲートの詳細については、次を参照してください。 [AVStream でのフロー制御ゲート](flow-control-gates-in-avstream.md)します。
 
 AVStream は、ミニドライバーに直接アクセスすることで、すべての 3 つミュー テックスの異なるがあります。
 

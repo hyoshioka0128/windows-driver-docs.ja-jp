@@ -1,6 +1,6 @@
 ---
-title: 一般的なバッファー AVStream で DMA
-description: 一般的なバッファー AVStream で DMA
+title: AVStream の共通バッファー DMA
+description: AVStream の共通バッファー DMA
 ms.assetid: 8cbadb5a-f879-4fe0-a698-cde3b9f6df83
 keywords:
 - 一般的なバッファー DMA WDK AVStream
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac16acaa0dc352119f56e77d397587d42fb92043
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384595"
 ---
-# <a name="common-buffer-dma-in-avstream"></a>一般的なバッファー AVStream で DMA
+# <a name="common-buffer-dma-in-avstream"></a>AVStream の共通バッファー DMA
 
 
 

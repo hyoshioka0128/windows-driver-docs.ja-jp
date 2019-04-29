@@ -1,6 +1,6 @@
 ---
-title: WaveOut クライアントの詳細
-description: WaveOut クライアントの詳細
+title: waveOut クライアントの詳細
+description: waveOut クライアントの詳細
 ms.assetid: e2cfc59a-0c36-4b57-99e2-b7bed503bc12
 keywords:
 - waveOut 非 PCM wave 形式の WDK オーディオ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4794a7f81cd145a3c3f12af06fe23c545fecbca7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335405"
 ---
-# <a name="specifics-for-waveout-clients"></a>WaveOut クライアントの詳細
+# <a name="specifics-for-waveout-clients"></a>waveOut クライアントの詳細
 
 
 ## <span id="specifics_for_waveout_clients"></span><span id="SPECIFICS_FOR_WAVEOUT_CLIENTS"></span>

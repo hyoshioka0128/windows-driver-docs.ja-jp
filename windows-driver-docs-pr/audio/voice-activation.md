@@ -1,17 +1,17 @@
 ---
-title: 音声をアクティブ化
+title: 音声のアクティブ化
 description: Cortana、音声のプラットフォームは、音声のすべての電源を使用する Windows は、Cortana、ディクテーションなどの Windows 10 で発生します。
 ms.assetid: 0684EF32-AA76-418B-9027-1C067A8140E3
 ms.date: 12/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d6f00a02ab2df66ffecd132cf5924c19e96d92bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335377"
 ---
-# <a name="voice-activation"></a>音声をアクティブ化
+# <a name="voice-activation"></a>音声のアクティブ化
 
 Cortana、パーソナル アシスタントのテクノロジが 2013年で、Microsoft BUILD Developer Conference で最初に説明します。 Windows の音声のプラットフォームには、Cortana、ディクテーションなどの Windows 10 でのエクスペリエンス、音声のすべての電源を使用します。 音声をアクティブ化は、コルタナさん」- 特定の語句を言うことにより、さまざまなデバイスの電源の状態からの音声認識エンジンを起動できる機能です。 音声のライセンス認証テクノロジをサポートするハードウェアを作成するには、このトピックの情報を確認します。
 
@@ -61,7 +61,7 @@ Microsoft は、OS 既定キーワード spotter (ソフトウェア キーワ�
 
 音声とアクティブ化は「自分の音声をについて説明します」と組み合わせて、2 つのアルゴリズムが協力して、ライセンス認証の場合は false を削減します。 これは、貴重なミーティングの部屋シナリオでは、1 人のユーザーが」「コルタナさんいっぱいの部屋でデバイスを表示します。
 
-音声をアクティブ化のキー フレーズが検出された場合に反応するキーワード spotter (KWS) で電源が。 低電源状態からデバイスをウェイクするための KWS の場合は、ソリューションは、Wake on 音声 (WoV) と呼ばれます。 詳細については、[Wake on 音声](#wake_on_voice)を参照してください。
+音声をアクティブ化のキー フレーズが検出された場合に反応するキーワード spotter (KWS) で電源が。 低電源状態からデバイスをウェイクするための KWS の場合は、ソリューションは、Wake on 音声 (WoV) と呼ばれます。 詳細については、次を参照してください。 [Wake on 音声](#wake_on_voice)します。
 
 
 ## <a name="span-idglossaryoftermsspanspan-idglossaryoftermsspanglossary-of-terms"></a><span id="glossary_of_terms"></span><span id="Glossary_Of_Terms"></span>用語集
@@ -72,7 +72,7 @@ Microsoft は、OS 既定キーワード spotter (ソフトウェア キーワ�
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ステージングされたコマンド        | 以下に例を示します。こんにちは Cortana < 一時停止、earcon 待つ > 天気とは何ですか? これとも呼ば「2 ショット コマンド」または「キーワードのみ」 |
 |チェーンされたコマンド        | 以下に例を示します。こんにちは Cortana、天気とは何ですか? これとも呼ば"ワンショット"コマンド |
-| 音声をアクティブ化      | 定義済みのライセンス認証キーフレーズのキーワードの検出を提供するシナリオです。 たとえば、コルタナさん」は、Microsoft の音声のライセンス認証シナリオです。 |
+| 音声のアクティブ化      | 定義済みのライセンス認証キーフレーズのキーワードの検出を提供するシナリオです。 たとえば、コルタナさん」は、Microsoft の音声のライセンス認証シナリオです。 |
 |WoV                    | ウェイク アップに-ボイス – 低電力状態では、オフの画面から、画面の完全な電源状態に音声をアクティブ化を実現するテクノロジ。 |
 |最新のスタンバイから WoV| ウェイク アップに-ボイス オフの状態の最新のスタンバイ (S0ix) 画面から (S0) の完全な電源状態で、画面にします。 |
 |モダン スタンバイ |Windows 低電力アイドル インフラストラクチャ - に接続されているスタンバイ (CS) で Windows 10 の後継です。 最新のスタンバイ状態の最初の状態は、画面がオフの場合です。 最下位のスリープ状態は、DRIPS/回復性の場合です。 詳細については、次を参照してください[最新スタンバイ。](https://msdn.microsoft.com/library/windows/hardware/mt282515(v=vs.85).aspx)   |
@@ -107,7 +107,7 @@ Microsoft は、OS 既定キーワード spotter (ソフトウェア キーワ�
 -   APO MFX として形式変換を実行できます。   
 -   APO には、次の形式を出力する必要があります。 
     -   16 kHz、mono、浮動小数点数。
--   必要に応じてオーディオ キャプチャ プロセスを強化するために、カスタム画像をデザインします。 詳細については、[Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)を参照してください。
+-   必要に応じてオーディオ キャプチャ プロセスを強化するために、カスタム画像をデザインします。 詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)します。
 
 キーワードのハードウェア オフロード spotter (HW KWS) WoV 要件
 - HW KWS WoV は、S0 の操作の状態と S0 スリープ状態とも呼ばれる最新スタンバイ中にサポートされます。  
@@ -131,7 +131,7 @@ HW KWS の AEC の要件
 
 <https://github.com/Microsoft/Windows-driver-samples/blob/master/audio/sysvad/>
 
-SYSVAD サンプル オーディオ ドライバーの詳細については、[サンプル オーディオ ドライバー](sample-audio-drivers.md)を参照してください。
+SYSVAD サンプル オーディオ ドライバーの詳細については、次を参照してください。[サンプル オーディオ ドライバー](sample-audio-drivers.md)します。
 
 ## <a name="span-idkeywordrecognitionsysteminformationspankeyword-recognition-system-information"></a><span id="keyword_recognition_system_information"></span>キーワード認識システム情報
 

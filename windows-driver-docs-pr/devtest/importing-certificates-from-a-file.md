@@ -1,17 +1,17 @@
 ---
-title: ファイルから証明書のインポート
-description: ファイルから証明書のインポート
+title: ファイルからの証明書のインポート
+description: ファイルからの証明書のインポート
 ms.assetid: 17596119-6b31-4a69-b83c-cec1dfd55572
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c565d3e753cc44abdc7af9879411a89295007aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330632"
 ---
-# <a name="importing-certificates-from-a-file"></a>ファイルから証明書のインポート
+# <a name="importing-certificates-from-a-file"></a>ファイルからの証明書のインポート
 
 
 記憶域証明書の管理の強化されたツールを使用して、ファイルから証明書をインポートすることができます。 ファイルは Distinguished Encoding Rules (DER) のバイナリ形式でエンコードされた X.509 証明書を含める必要があります。

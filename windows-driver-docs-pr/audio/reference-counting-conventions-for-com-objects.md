@@ -1,6 +1,6 @@
 ---
-title: COM オブジェクトの参照カウントの規則
-description: COM オブジェクトの参照カウントの規則
+title: COM オブジェクト用の参照カウントの規則
+description: COM オブジェクト用の参照カウントの規則
 ms.assetid: e6b19110-37e2-4d23-a528-6393c12ab650
 keywords:
 - COM オブジェクトの参照の WDK オーディオ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d67224669169850ce0047d5a7317364d59035520
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328902"
 ---
-# <a name="reference-counting-conventions-for-com-objects"></a>COM オブジェクトの参照カウントの規則
+# <a name="reference-counting-conventions-for-com-objects"></a>COM オブジェクト用の参照カウントの規則
 
 
 ## <span id="reference_counting_conventions_for_com_objects"></span><span id="REFERENCE_COUNTING_CONVENTIONS_FOR_COM_OBJECTS"></span>

@@ -1,6 +1,6 @@
 ---
-title: アナログ ビデオのカテゴリ
-description: アナログ ビデオのカテゴリ
+title: アナログ ビデオ カテゴリ
+description: アナログ ビデオ カテゴリ
 ms.assetid: 64564c81-b1e1-482b-ae70-59b229a5e86f
 keywords:
 - ストリームのカテゴリ WDK ビデオ キャプチャ、アナログ ビデオ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9ad6ab2064cfc78323eac00ea43d2533310b102
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384824"
 ---
-# <a name="analog-video-category"></a>アナログ ビデオのカテゴリ
+# <a name="analog-video-category"></a>アナログ ビデオ カテゴリ
 
 
 次の GUID は、カテゴリのアナログ ビデオに対応します。
@@ -84,7 +84,7 @@ ms.locfileid: "56558534"
 
  
 
-テレビなどのアナログのオーディオまたはオーディオのラジオに対して定義されている特殊なカテゴリはありません。 アナログのオーディオ ピンの値を持つデバイスのカテゴリを指定するときに、 **MajorFormat**メンバー KSDATAFORMAT をする必要があります\_型\_アナログします。 値、**指定子**メンバー KSDATAFORMAT をする必要があります\_指定子\_NONE、**サブタイプ**KSDATAFORMATメンバーとブロックの書式設定を設定する必要があります\_サブタイプ\_NONE。 無線の音声の詳細については、[ラジオ チューナーを持つビデオ キャプチャ デバイス](video-capture-devices-with-radio-tuners.md)を参照してください。
+テレビなどのアナログのオーディオまたはオーディオのラジオに対して定義されている特殊なカテゴリはありません。 アナログのオーディオ ピンの値を持つデバイスのカテゴリを指定するときに、 **MajorFormat**メンバー KSDATAFORMAT をする必要があります\_型\_アナログします。 値、**指定子**メンバー KSDATAFORMAT をする必要があります\_指定子\_NONE、**サブタイプ**KSDATAFORMATメンバーとブロックの書式設定を設定する必要があります\_サブタイプ\_NONE。 無線の音声の詳細については、次を参照してください。[ラジオ チューナーを持つビデオ キャプチャ デバイス](video-capture-devices-with-radio-tuners.md)します。
 
 アナログ ビデオ ストリームは、基本的に、アナログ ビデオ デコーダーへの入力を模倣が同時にチューニングの詳細についてデータ転送として機能します。 パケットをチューニングするは、テレビ チューナーのフィルターで生成された先頭と末尾のすべてのチューニング操作でのすべての介在するクロスバー フィルターを通じて渡されます。 データ パケットが、 [ **KS\_tv チューナー\_変更\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567691)国/地域コード、チャネル、頻度、および標準のアナログ ビデオを含む構造体使用します。
 

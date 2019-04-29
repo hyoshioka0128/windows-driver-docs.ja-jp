@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fb8fc53526cdfa404ae409321301ee2fde5b0bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332327"
 ---
 # <a name="midi-miniport-driver"></a>MIDI ミニポート ドライバー
 
@@ -63,7 +63,7 @@ MIDI シンセサイザーへのデータを出力します。
 
 MIDI ポート ドライバーは、双方向ですべてのタイミングの問題を処理し、オンとオフ、アダプターにポート ドライバーの呼び出しに応答を迅速にデータを移動するミニポート ドライバーに依存しています、 **IMiniportMidiStream**読み取りおよび書き込みメソッド。
 
-PortCls には、FM シンセサイザーと UART 関数を持つ MIDI デバイス用の組み込みの MIDI ミニポート ドライバーが含まれています。 詳細については、[ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)を参照してください。
+PortCls には、FM シンセサイザーと UART 関数を持つ MIDI デバイス用の組み込みの MIDI ミニポート ドライバーが含まれています。 詳細については、次を参照してください。 [ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)します。
 
  
 

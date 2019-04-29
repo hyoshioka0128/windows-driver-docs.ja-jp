@@ -1,6 +1,6 @@
 ---
-title: デバイスのインターフェイス クラスの概要
-description: デバイスのインターフェイス クラスの概要
+title: デバイス インターフェイス クラスの概要
+description: デバイス インターフェイス クラスの概要
 ms.assetid: e463e3f0-cbc8-490e-a7c4-4837d43c20e3
 keywords:
 - インターフェイス クラス WDK デバイスのインストール
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60546d349fdad13ba3b59a6bead085cb1fd2e086
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330249"
 ---
-# <a name="overview-of-device-interface-classes"></a>デバイスのインターフェイス クラスの概要
+# <a name="overview-of-device-interface-classes"></a>デバイス インターフェイス クラスの概要
 
 
 

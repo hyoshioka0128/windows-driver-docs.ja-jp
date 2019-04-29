@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e79bbd774f183c68c44f0993b941e77b104e46c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334363"
 ---
-# <a name="ppmperf"></a>! ppmperf
+# <a name="ppmperf"></a>!ppmperf
 
 **! Ppmperf**コマンドには、能力とパフォーマンスの制約情報が表示されます。 
 

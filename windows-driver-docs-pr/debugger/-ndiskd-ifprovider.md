@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ccf94056b2905e3daab3a435ecccf1552c7c80d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335998"
 ---
-# <a name="ndiskdifprovider"></a>! ndiskd.ifprovider
+# <a name="ndiskdifprovider"></a>!ndiskd.ifprovider
 
 
 **! Ndiskd.ifprovider**拡張機能に関する情報を表示する、 [NDIS インターフェイス プロバイダー](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider) (IfProvider)。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd 登録されているすべての NDIS インターフェイス プロバイダーの一覧が表示されます。
@@ -54,7 +54,7 @@ Ndiskd.dll
 
 前の例をデバッグ対象のコンピューターに登録されている 4 つのインターフェイス プロバイダーから確認できます。 これらの 2 つは、NDIS インターフェイス プロバイダーです。
 
-**注**  インターフェイス プロバイダーは汎用的な概念、ミニポート ドライバーにする必要はありません。 必要な場合に、インターフェイス プロバイダーとして登録するミニポート ドライバーを選択することがあります、ほとんどのミニポート ドライバーしないで NDIS インターフェイスの組み込みのプロバイダーが存在するためです。 NDIS インターフェイスの組み込みプロバイダーは、自動的にすべてミニポート ドライバーや軽量な Filter (LWF) のすべてのモジュールでは、ループバック インターフェイスのインターフェイスを提供します。 詳細については、[NDIS インターフェイス プロバイダー](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider)を参照してください。
+**注**  インターフェイス プロバイダーは汎用的な概念、ミニポート ドライバーにする必要はありません。 必要な場合に、インターフェイス プロバイダーとして登録するミニポート ドライバーを選択することがあります、ほとんどのミニポート ドライバーしないで NDIS インターフェイスの組み込みのプロバイダーが存在するためです。 NDIS インターフェイスの組み込みプロバイダーは、自動的にすべてミニポート ドライバーや軽量な Filter (LWF) のすべてのモジュールでは、ループバック インターフェイスのインターフェイスを提供します。 詳細については、次を参照してください。 [NDIS インターフェイス プロバイダー](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider)します。
 
  
 

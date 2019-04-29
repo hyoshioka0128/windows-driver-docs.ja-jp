@@ -1,17 +1,17 @@
 ---
 title: NIC (Windows 7 以降) の突然の削除の処理
-description: (Windows 7 およびそれ以降のバージョン) の NIC の突然の削除の処理
+description: NIC の突然の取り外しの処理 (Windows 7 以降のバージョン)
 ms.assetid: D1C1C862-8AFF-490F-8A1D-362280196548
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 994db45f6a54a4cfbfd7fa77bc7637d13aeb99e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327647"
 ---
-# <a name="processing-the-surprise-removal-of-a-nic-windows-7-and-later-versions"></a>(Windows 7 およびそれ以降のバージョン) の NIC の突然の削除の処理
+# <a name="processing-the-surprise-removal-of-a-nic-windows-7-and-later-versions"></a>NIC の突然の取り外しの処理 (Windows 7 以降のバージョン)
 
 
 
@@ -23,7 +23,7 @@ Windows 7 および Windows Server 2008 R2 で後で、NDIS 参加してはな�
 -   オペレーティング システムが Windows 7、および KB2471472 の修正プログラムがインストールされています。
 -   オペレーティング システムが Windows 7、およびネットワーク アダプターはモバイル ブロード バンド (MBB) デバイス。
 
-いずれの条件が満たされた場合、NDIS は、Windows の以前のバージョンと同様、突然の削除プロセスに参加します。 この手順の詳細については、[処理 (Windows Vista) の NIC の突然の取り外し](processing-the-surprise-removal-of-a-nic--windows-vista-.md)を参照してください。
+いずれの条件が満たされた場合、NDIS は、Windows の以前のバージョンと同様、突然の削除プロセスに参加します。 この手順の詳細については、次を参照してください。[処理 (Windows Vista) の NIC の突然の取り外し](processing-the-surprise-removal-of-a-nic--windows-vista-.md)します。
 
 次の手順は、NIC が突然削除 NDIS が参加する改訂された方法を説明します。
 

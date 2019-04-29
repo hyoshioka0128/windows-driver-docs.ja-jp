@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7289f5dcebb1d4b1fa0db26bbe8470f4bd9aa35f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333369"
 ---
 # <a name="kseventpincapsjackinfochange"></a>KSEVENT\_PINCAPS\_JACKINFOCHANGE
 
@@ -36,7 +36,7 @@ ms.locfileid: "56574800"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">移行先</th>
+<th align="left">対象</th>
 <th align="left">イベント記述子の種類</th>
 <th align="left">イベント値の型</th>
 </tr>
@@ -54,12 +54,12 @@ ms.locfileid: "56574800"
 
 イベント値の型 (データの操作) は、 **KSEVENTDATA**をこのイベントに使用する通知方法を指定します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 サポートを実装する方法については、`KSEVENT_PINCAPS_JACKINFOCHANGE`イベントの「解説」を参照してください、 [ **KSEVENT\_PINCAPS\_段落**](ksevent-pincaps-formatchange.md)トピック。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

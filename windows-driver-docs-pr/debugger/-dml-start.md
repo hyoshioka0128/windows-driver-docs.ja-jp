@@ -1,5 +1,5 @@
 ---
-title: .dml_start (表示 DML の開始ポイント)
+title: .dml_start (DML 開始ポイントの表示)
 description: .Dml_start コマンドでは、デバッガーのマークアップ言語 (DML) をサポートするコマンドを使用した探索の開始点として機能する出力が表示されます。
 ms.assetid: 1CFCACDC-B253-4E9B-9877-EE9F1E91395F
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a7fae322482beeb1624a1facc33185954cdc5df8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336813"
 ---
 # <a name="dmlstart-display-dml-starting-point"></a>.dml\_開始 (DML の開始点の表示)
 

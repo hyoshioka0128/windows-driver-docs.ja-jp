@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e55a3d327c338fb24340518a700c7697aa1376
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336068"
 ---
 # <a name="ndiskdndisref"></a>!ndiskd.ndisref
 
@@ -50,7 +50,7 @@ ms.locfileid: "56574014"
 
 Ndiskd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次の例では、通過する NDIS ミニポート ドライバーのハンドル、 **! ndiskd.ndisref**拡張機能のドライバーの参照カウントのブロックを表示します。 最初に、実行[ **! ndiskd.minidriver** ](-ndiskd-minidriver.md)でパラメーターのないシステム上のすべてのミニポート ドライバーの一覧を参照してください。 次の例の出力で ffffdf801418d650 kdnic ドライバーのハンドルを探します。

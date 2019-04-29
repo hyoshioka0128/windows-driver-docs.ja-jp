@@ -8,11 +8,11 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d0f62d71aaf7519a9266c260184e027fd3f99fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333846"
 ---
 # <a name="directsound-hardware-acceleration-and-src-sliders"></a>DirectSound ハードウェア アクセラレータと SRC スライダー
 
@@ -71,7 +71,7 @@ Windows の検索は、DirectSound ハードウェア高速化して SRC スラ�
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
-<td align="left"><p>[完全]</p></td>
+<td align="left"><p>完全</p></td>
 <td align="left"><p>DirectSound セカンダリ バッファーのハードウェア アクセラレータをでき、ベンダー固有のプロパティ セットの拡張機能を有効します。</p></td>
 </tr>
 </tbody>

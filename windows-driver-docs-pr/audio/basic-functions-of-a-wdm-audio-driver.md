@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 729bcad4081e9c24341b7a6511117c1d8a4e15f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333915"
 ---
 # <a name="basic-functions-of-a-wdm-audio-driver"></a>WDM オーディオ ドライバーの基本機能
 
@@ -26,7 +26,7 @@ Microsoft Windows Driver Model (WDM) ドライバーは、次の機能を提供�
 
 -   ドライバーは、1 つまたは複数のプロパティ セットをサポートします。 たとえば、すべてのオーディオ ドライバーがサポートする必要があります[KSPROPSETID\_オーディオ](https://msdn.microsoft.com/library/windows/hardware/ff537440)が、オーディオ ドライバーも追加のプロパティのセットをサポート可能性があります。 ドライバーのクライアントは、フィルターの機能を検出して、フィルターの構成可能な設定を変更するプロパティの要求を使用します。
 
--   必要に応じて、ドライバーには、ハードウェア クロックがサポートしています。 このクロックでは、ストリームは、同じまたは別のハードウェア上の他のストリームと同期できるように読み取りと書き込みをする必要があります。 詳細については、[KSPROPSETID\_クロック](https://msdn.microsoft.com/library/windows/hardware/ff566564)を参照してください。
+-   必要に応じて、ドライバーには、ハードウェア クロックがサポートしています。 このクロックでは、ストリームは、同じまたは別のハードウェア上の他のストリームと同期できるように読み取りと書き込みをする必要があります。 詳細については、次を参照してください。 [KSPROPSETID\_クロック](https://msdn.microsoft.com/library/windows/hardware/ff566564)します。
 
 -   ドライバーでメディアの他のインターフェイスをようサポート必要に応じて[ **KSINTERFACE\_標準\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563384)、 [ **KSINTERFACE\_メディア\_WAVE\_QUEUED**](https://msdn.microsoft.com/library/windows/hardware/ff563377)、または[ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563381).
 

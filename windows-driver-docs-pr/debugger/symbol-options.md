@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9832b751affe05bd31977c0a82280a3e2f692e7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335514"
 ---
 # <a name="symbol-options"></a>シンボルのオプション
 
@@ -193,7 +193,7 @@ ms.locfileid: "56556738"
 
 ### <a name="span-idsymopt-undnamespanspan-idsymoptundnamespansymoptundname"></a><span id="symopt-undname"></span><span id="SYMOPT_UNDNAME"></span>SYMOPT\_UNDNAME
 
-このシンボル オプションを指定する、表示されていると原因は、シンボルの装飾を無視するシンボル名の検索、装飾するパブリック シンボル名とします。 このオプションがアクティブかどうかに関係なく、このプライベート シンボルの名前が修飾されていることはありません。 シンボルの名前の装飾については、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
+このシンボル オプションを指定する、表示されていると原因は、シンボルの装飾を無視するシンボル名の検索、装飾するパブリック シンボル名とします。 このオプションがアクティブかどうかに関係なく、このプライベート シンボルの名前が修飾されていることはありません。 シンボルの名前の装飾については、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
 
 このオプションは、すべてのデバッガーで既定でオンです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x2**または .symopt 0x2、それぞれします。
 
@@ -305,7 +305,7 @@ KD、CDB でこのオプションは既定で無効です。このオプショ�
 
 ### <a name="span-idsymopt-no-publicsspanspan-idsymoptnopublicsspansymoptnopublics"></a><span id="symopt-no-publics"></span><span id="SYMOPT_NO_PUBLICS"></span>SYMOPT\_いいえ\_PUBLICS
 
-このシンボルのオプションでは、DbgHelp がパブリック シンボル テーブルを検索できなくなります。 これにより、symbol 列挙型、シンボルの検索がはるかに高速です。 検索の速度、SYMOPT のみに関係するかどうかは\_自動\_PUBLICS オプションはこのことをお勧めします。 パブリック シンボル テーブルについては、[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)を参照してください。
+このシンボルのオプションでは、DbgHelp がパブリック シンボル テーブルを検索できなくなります。 これにより、symbol 列挙型、シンボルの検索がはるかに高速です。 検索の速度、SYMOPT のみに関係するかどうかは\_自動\_PUBLICS オプションはこのことをお勧めします。 パブリック シンボル テーブルについては、次を参照してください。[パブリックおよびプライベート シンボルの](public-and-private-symbols.md)します。
 
 このオプションは既定ではすべてのデバッガーではオフです。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x8000**または .symopt 0x8000、それぞれします。
 
@@ -341,7 +341,7 @@ KD、CDB でこのオプションは既定で無効です。このオプショ�
 
 このシンボルのオプションは、プロキシ サーバーからの認証ダイアログ ボックスを表示しません。 これにより、SymSrv がインターネット上のシンボル ストアにアクセスできない可能性があります。
 
-詳細については、[ファイアウォールとプロキシ サーバー](firewalls-and-proxy-servers.md)を参照してください。
+詳細については、次を参照してください。[ファイアウォールとプロキシ サーバー](firewalls-and-proxy-servers.md)します。
 
 KD、CDB でこのオプションが既定でオンです。WinDbg では、このオプションは、既定でオフは。 デバッガーが実行されていることができますにすることオンまたはオフを使用して **.symopt + 0x80000**または .symopt 0x80000 はそれぞれ、後ろ、 [ **.reload (モジュールの再読み込み)** ](-reload--reload-module-.md)コマンド。 これは、ことができますにすることもオンとオフを使用して、 [ **! オフ sym が求められます**](-sym.md)と **! sym メッセージが表示されます**拡張機能のコマンドを続けて、 **.reload (モジュール)** コマンド。
 

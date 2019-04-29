@@ -1,17 +1,17 @@
 ---
-title: グラフィックス メモリの数値を取得します。
-description: グラフィックス メモリの数値を取得します。
+title: グラフィックス メモリの数の取得
+description: グラフィックス メモリの数の取得
 ms.assetid: ec704093-ad9a-4717-8e9e-537a2848b1c7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2af0b2d0d88f7f1b1761d47ea97b927afcc1b1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383210"
 ---
-# <a name="retrieving-graphics-memory-numbers"></a>グラフィックス メモリの数値を取得します。
+# <a name="retrieving-graphics-memory-numbers"></a>グラフィックス メモリの数の取得
 
 
 グラフィックスのアプリケーションを作成するソフトウェア開発者は、以降 Windows Vista では Microsoft DirectX のバージョン 10 Api を使用して実行するコンピューターでのグラフィックス メモリの数値の正確なセットを取得できます[Windows Display Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)ドライバーを表示します。 次の手順では、グラフィックス メモリの番号を取得する方法を示します。

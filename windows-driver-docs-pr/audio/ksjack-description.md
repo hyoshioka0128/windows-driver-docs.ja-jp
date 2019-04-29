@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1657777c2466aa50bbbda559ea3f3bb6dd4d09e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333381"
 ---
 # <a name="ksjackdescription-structure"></a>KSJACK\_構造の説明
 
@@ -42,7 +42,7 @@ typedef struct {
 } KSJACK_DESCRIPTION, *PKSJACK_DESCRIPTION;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **ChannelMapping**  
@@ -65,7 +65,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">コネクタの種類</th>
 </tr>
 </thead>
@@ -133,7 +133,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">ジオメトリの場所</th>
 </tr>
 </thead>
@@ -209,7 +209,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">一般的な場所</th>
 </tr>
 </thead>
@@ -245,7 +245,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">ポートの接続の種類</th>
 </tr>
 </thead>
@@ -281,7 +281,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 
 オーディオ デバイスを使用してオーディオ デバイスが物理的にアクセスできるジャックを公開しない場合、 **eGeoLocNotApplicable**を Windows と Windows ベースのアプリに物理回線のモジュラー ジャックがないことを示す値。 そのため、ありません幾何学的場所か。 たとえば、オーディオ デバイスは、アクセス可能な任意のジャックせず、マザーボードに統合できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

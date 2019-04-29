@@ -1,6 +1,6 @@
 ---
-title: 結合フィルター内のノード
-description: 結合フィルター内のノード
+title: フィルター内のノードの結合
+description: フィルター内のノードの結合
 ms.assetid: ebceb42a-966d-4c03-b4f5-8666284fc871
 keywords:
 - WDK BDA のノードを制御します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0853494988f4e05c653b504c6b7e179a820e58c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329927"
 ---
-# <a name="combining-nodes-in-a-filter"></a>結合フィルター内のノード
+# <a name="combining-nodes-in-a-filter"></a>フィルター内のノードの結合
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: .exptr (表示例外ポインター)
+title: .exptr (例外ポインターの表示)
 description: .Exptr コマンドでは、EXCEPTION_POINTERS 構造体が表示されます。
 ms.assetid: ef98bf22-10a1-4fd2-80f1-fd7eb75015c1
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a59e282fb32eb5b14a2da5fb7ab4c3095ac5c7df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334497"
 ---
-# <a name="exptr-display-exception-pointers"></a>.exptr (表示例外ポインター)
+# <a name="exptr-display-exception-pointers"></a>.exptr (例外ポインターの表示)
 
 
 **.Exptr**コマンドでは、例外を表示します。\_ポインター構造体。

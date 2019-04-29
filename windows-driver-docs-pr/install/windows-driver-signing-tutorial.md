@@ -1,17 +1,17 @@
 ---
-title: Windows ドライバー署名のチュートリアル
+title: Windows ドライバーの署名のチュートリアル
 ms.assetid: B6F907DC-74DC-4BF3-A2F9-481AE706733C
 description: ''
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c13a66fb8a69e2c464c12f3d59112d1462a2e40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339263"
 ---
-# <a name="windows-driver-signing-tutorial"></a>Windows ドライバー署名のチュートリアル
+# <a name="windows-driver-signing-tutorial"></a>Windows ドライバーの署名のチュートリアル
 
 
 このチュートリアルでは、概要し、統合された 1 つの場所で Windows のドライバー バイナリに署名する手順について詳しく説明します。 次のサブトピックでは、プロセスについて説明します。

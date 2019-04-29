@@ -4,11 +4,11 @@ description: シームレスなアップグレードを有効にして、Windows
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 98df70836d05e6f36c8dd8bac56d1e8e44b5c1f2
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337431"
 ---
 # <a name="switch-from-legacy-mbr-disk-to-gpt-disk-with-windows-10"></a>レガシ MBR ディスクから Windows 10 では GPT ディスクに切り替える
 

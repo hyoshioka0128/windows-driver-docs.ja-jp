@@ -1,6 +1,6 @@
 ---
-title: タイマー オブジェクトを使用します。
-description: タイマー オブジェクトを使用します。
+title: タイマー オブジェクトの使用
+description: タイマー オブジェクトの使用
 ms.assetid: b3ee9d92-87b9-47b7-ab13-11e42bec7997
 keywords:
 - タイマー オブジェクトの WDK カーネル、待機しています。
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f90310aa08bd9780a70f619c998a93f72ee2c57f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372197"
 ---
-# <a name="using-timer-objects"></a>タイマー オブジェクトを使用します。
+# <a name="using-timer-objects"></a>タイマー オブジェクトの使用
 
 
 
@@ -48,7 +48,7 @@ ms.locfileid: "56537120"
 
 IRQL で実行されるドライバー ルーチン&gt;= ディスパッチ\_レベルは、ドライバーによって提供されるキューに関連付けられている DPC オブジェクトをタイマー オブジェクトを使用して要求のタイムアウトをできます[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチン。 前の図に示すように、nonarbitrary スレッドのコンテキスト内で実行されるドライバー ルーチンのみが、タイマー オブジェクトの 0 以外の値の間隔を待機できます。
 
-その他のすべてのスレッドのようなドライバーが作成したスレッドはディスパッチャー オブジェクトでも、カーネル スレッド オブジェクトによって表されます。 その結果、ドライバーでは、そのドライバーが作成したスレッドが自主的に配置する自体、待機状態に一定期間タイマー オブジェクトを使用してある必要はありません。 代わりに、スレッドを呼び出すことができます[ **KeDelayExecutionThread** ](https://msdn.microsoft.com/library/windows/hardware/ff551986)呼び出し元が指定の間隔を使用します。 この手法の詳細については、[デバイスのポーリング](avoid-polling-devices.md)を参照してください。
+その他のすべてのスレッドのようなドライバーが作成したスレッドはディスパッチャー オブジェクトでも、カーネル スレッド オブジェクトによって表されます。 その結果、ドライバーでは、そのドライバーが作成したスレッドが自主的に配置する自体、待機状態に一定期間タイマー オブジェクトを使用してある必要はありません。 代わりに、スレッドを呼び出すことができます[ **KeDelayExecutionThread** ](https://msdn.microsoft.com/library/windows/hardware/ff551986)呼び出し元が指定の間隔を使用します。 この手法の詳細については、次を参照してください。[デバイスのポーリング](avoid-polling-devices.md)します。
 
 [**DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff544113)、 [*を再初期化*](https://msdn.microsoft.com/library/windows/hardware/ff561022)、および[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチンは、システムのスレッドでも実行コンテキスト、ドライバーを呼び出せるように**kewaitforsingleobject の 1**ドライバー初期化タイマー オブジェクトを使用または**KeDelayExecutionThread**の初期化中またはアンロードされるときにします。 デバイス ドライバーを呼び出すことができます[ **KeStallExecutionProcessor** ](https://msdn.microsoft.com/library/windows/hardware/ff553295)非常に短い間隔 (可能であればものより小さい 50 マイクロ秒) の場合は、デバイスの初期化中に状態を更新するを待機します.
 

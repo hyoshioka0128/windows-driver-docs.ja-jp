@@ -1,6 +1,6 @@
 ---
-title: 接続して表示の構成
-description: 接続して表示の構成
+title: ディスプレイの接続と構成
+description: ディスプレイの接続と構成
 ms.assetid: 8c16f99e-c7fd-46e2-b102-f5f0a297fbec
 keywords:
 - Windows 7 の WDK の表示を表示します。
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 009254a44c1b873eea26023ec2ba5cc6c0dff709
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327526"
 ---
-# <a name="connecting-and-configuring-displays"></a>接続して表示の構成
+# <a name="connecting-and-configuring-displays"></a>ディスプレイの接続と構成
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Microsoft Windows オペレーティング システムにのみ適用されます。
@@ -69,7 +69,7 @@ CCD Api は、次のタスクを処理できません。 さらに、CCD Api で
 
 [CCD Api](ccd-apis.md)
 
-**注**  に加えて CCD Api を使用して、デスクトップでの表示を設定する、ハードウェア ベンダーが、Windows 7 を変更する必要があります [Windows 表示 Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)サポート CCD ミニポート ドライバーを表示します。 ディスプレイのミニポート ドライバーで CCD のサポートに関する詳細については、[CCD Ddi](ccd-ddis.md)を参照してください。
+**注**  に加えて CCD Api を使用して、デスクトップでの表示を設定する、ハードウェア ベンダーが、Windows 7 を変更する必要があります [Windows 表示 Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)サポート CCD ミニポート ドライバーを表示します。 ディスプレイのミニポート ドライバーで CCD のサポートに関する詳細については、次を参照してください。 [CCD Ddi](ccd-ddis.md)します。
 
  
 

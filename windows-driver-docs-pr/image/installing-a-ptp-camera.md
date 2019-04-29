@@ -1,17 +1,17 @@
 ---
-title: PTP カメラをインストールします。
-description: PTP カメラをインストールします。
+title: PTP カメラのインストール
+description: PTP カメラのインストール
 ms.assetid: bf18a245-1344-47f1-83bc-3c369627bcdf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c0aaf85660f250c1afb8fac6479e691318c1266
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326072"
 ---
-# <a name="installing-a-ptp-camera"></a>PTP カメラをインストールします。
+# <a name="installing-a-ptp-camera"></a>PTP カメラのインストール
 
 
 

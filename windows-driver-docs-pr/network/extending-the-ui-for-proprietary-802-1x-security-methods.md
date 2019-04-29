@@ -1,28 +1,28 @@
 ---
-title: 独自の 802.1 X のセキュリティ メソッドの UI の拡張
-description: 独自の 802.1 X のセキュリティ メソッドの UI の拡張
+title: 独自の 802.1X セキュリティ メソッドの UI の拡張
+description: 独自の 802.1X セキュリティ メソッドの UI の拡張
 ms.assetid: 3307179f-f30b-4234-a64d-4e771ac8673e
 keywords:
 - 独自の 802.1 X セキュリティ WDK IHV UI 拡張機能の DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a0bffd10830fa26ec8e4cd31437a3d3b91143f48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386240"
 ---
-# <a name="extending-the-ui-for-proprietary-8021x-security-methods"></a>独自の 802.1 X のセキュリティ メソッドの UI の拡張
+# <a name="extending-the-ui-for-proprietary-8021x-security-methods"></a>独自の 802.1X セキュリティ メソッドの UI の拡張
 
 
 
 
  
 
-802.11 IHV 拡張 DLL をネイティブ サポートする独自の 802.1 X ベースのセキュリティの拡張、802.11 IHV UI 拡張機能のネイティブ DLL は、ネットワーク構成ユーザー インターフェイス (UI) を拡張できる場合**セキュリティ** タブのユーザーを許可するにはこれらの構成の拡張機能。 802.11 802.1 X のネイティブ モジュールを拡張する方法の詳細については、[インターフェイス ネイティブ 802.11 802.1 X モジュール](interface-to-the-native-802-11-802-1x-module.md)を参照してください。
+802.11 IHV 拡張 DLL をネイティブ サポートする独自の 802.1 X ベースのセキュリティの拡張、802.11 IHV UI 拡張機能のネイティブ DLL は、ネットワーク構成ユーザー インターフェイス (UI) を拡張できる場合**セキュリティ** タブのユーザーを許可するにはこれらの構成の拡張機能。 802.11 802.1 X のネイティブ モジュールを拡張する方法の詳細については、次を参照してください。[インターフェイス ネイティブ 802.11 802.1 X モジュール](interface-to-the-native-802-11-802-1x-module.md)します。
 
-ネットワークの構成 UI やその他のネイティブの 802.11 コンポーネントに関する詳細については、[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)を参照してください。
+ネットワークの構成 UI やその他のネイティブの 802.11 コンポーネントに関する詳細については、次を参照してください。[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)します。
 
 表示にする前に、**セキュリティ** タブで、オペレーティング システムは次の処理します。
 

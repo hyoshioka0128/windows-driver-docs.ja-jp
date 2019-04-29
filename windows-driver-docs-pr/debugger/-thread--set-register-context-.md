@@ -17,11 +17,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b5b875b72ad47b4b9c46ff79797518ee3e9b2702
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334201"
 ---
 # <a name="thread-set-register-context"></a>.thread (レジスタ コンテキストの設定)
 
@@ -79,7 +79,7 @@ ms.locfileid: "56582164"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-レジスタのコンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+レジスタのコンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
 <a name="remarks"></a>コメント
 -------

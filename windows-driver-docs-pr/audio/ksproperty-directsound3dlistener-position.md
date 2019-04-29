@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 985af64a72b131af4440eb8b552eefe6c88c7d5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332739"
 ---
 # <a name="kspropertydirectsound3dlistenerposition"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置
 
@@ -61,7 +61,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_位置プロパティは、3 D リスナー�
 
  
 
-プロパティの値 (データの操作) は、リスナーの位置を示す DS3DVECTOR 型の構造です。 位置座標は、現在の距離単位で表現されます。 距離単位については、[ **KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)を参照してください。
+プロパティの値 (データの操作) は、リスナーの位置を示す DS3DVECTOR 型の構造です。 位置座標は、現在の距離単位で表現されます。 距離単位については、次を参照してください。 [ **KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)します。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 

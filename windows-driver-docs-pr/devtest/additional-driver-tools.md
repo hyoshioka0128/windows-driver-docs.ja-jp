@@ -1,6 +1,6 @@
 ---
-title: 追加のドライバー ツール
-description: 追加のドライバー ツール
+title: その他のドライバー ツール
+description: その他のドライバー ツール
 keywords:
 - WDK、ドライバーのテスト ツール
 - ドライバーの開発ツールを WDK、ドライバーのテスト
@@ -11,23 +11,23 @@ keywords:
 ms.date: 06/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 28def66fd2909abf231bd152c4249f8623394332
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332042"
 ---
-# <a name="tools-for-testing-drivers"></a>ドライバーのテスト用ツール
+# <a name="tools-for-testing-drivers"></a>ドライバー テスト用ツール
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションでは
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 - [ドライバーを構築するためのツール](tools-for-building-drivers.md)
  
-- [ドライバーに署名するためのツール](tools-for-signing-drivers.md)
+- [ドライバーの署名用ツール](tools-for-signing-drivers.md)
 
-- [INF ファイル用のツール](tools-for-inf-files.md)
+- [INF ファイル用ツール](tools-for-inf-files.md)
 
-- [ドライバーのテストとデバッグのブート オプションを変更するためのツール](boot-options-for-driver-testing-and-debugging.md)
+- [ドライバーのテストとデバッグ用のブート オプション変更ツール](boot-options-for-driver-testing-and-debugging.md)
 
 - [ドライバーをデバッグするためのツール](tools-for-debugging-drivers.md)
  

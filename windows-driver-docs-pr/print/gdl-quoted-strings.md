@@ -1,6 +1,6 @@
 ---
-title: 文字列を引用符で囲まれた GDL
-description: 文字列を引用符で囲まれた GDL
+title: GDL 引用符付き文字列
+description: GDL 引用符付き文字列
 ms.assetid: 52d6f1bf-0b8c-4aa7-8cc8-1a18def224be
 keywords:
 - WDK GDL、文字列を構築します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0911ff78717c40e1bdc78f39c7fd1a4c2e5306e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366342"
 ---
-# <a name="gdl-quoted-strings"></a>文字列を引用符で囲まれた GDL
+# <a name="gdl-quoted-strings"></a>GDL 引用符付き文字列
 
 
 A*文字列を引用符で囲まれた*始まりの二重引用符文字 (") で終了します。 間に表示される任意の文字は、次の例外を引用符で囲まれた文字列の一部として文字どおり扱われます。

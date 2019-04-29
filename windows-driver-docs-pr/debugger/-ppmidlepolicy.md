@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: dd9ea5832b3464a214c03eaa9fba8bd88913ec75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330822"
 ---
-# <a name="ppmidlepolicy"></a>! ppmidlepolicy
+# <a name="ppmidlepolicy"></a>!ppmidlepolicy
 
 **! Ppmidlepolicy**コマンドには、C 状態ポリシーが表示されます。
 

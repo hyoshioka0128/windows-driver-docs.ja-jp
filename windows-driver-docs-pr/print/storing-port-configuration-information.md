@@ -1,6 +1,6 @@
 ---
-title: ポートの構成情報を格納します。
-description: ポートの構成情報を格納します。
+title: ポート構成情報の格納
+description: ポート構成情報の格納
 ms.assetid: b1c83729-d7d2-4920-9402-4e00baa12633
 keywords:
 - ポート管理の構成情報を格納する、WDK の印刷
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdbfa62af0285daa9499bbc89d95945afb6020cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331778"
 ---
-# <a name="storing-port-configuration-information"></a>ポートの構成情報を格納します。
+# <a name="storing-port-configuration-information"></a>ポート構成情報の格納
 
 
 

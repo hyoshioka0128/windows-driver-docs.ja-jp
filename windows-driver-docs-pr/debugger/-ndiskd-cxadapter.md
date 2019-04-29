@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c84337a548d858c21f9fcf3938bb2d02441c654b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336033"
 ---
 # <a name="ndiskdcxadapter"></a>!ndiskd.cxadapter
 
 
 **! Ndiskd.cxadapter**拡張機能は、NETADAPTER オブジェクトに関する情報を表示します。
 
-ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)を参照してください。
+ネットワーク アダプター WDF クラス拡張 (NetAdapterCx) の詳細については、次を参照してください。[ネットワーク アダプター WDF クラスの拡張機能 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)します。
 
 ```console
 !ndiskd.cxadapter [-handle <x>] [-basic] [-power] [-datapath] 

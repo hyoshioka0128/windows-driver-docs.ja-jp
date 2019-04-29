@@ -1,6 +1,6 @@
 ---
 title: Windows Vista の既定の画像
-description: Windows の既定の画像
+description: Windows の既定の APO
 ms.assetid: 713d848c-4b74-4682-a625-eba5f9f24bb7
 keywords:
 - APO WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4570fb34d544c1c034f857d29b5dc204386602
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335244"
 ---
-# <a name="windows-default-apos"></a>Windows の既定の画像
+# <a name="windows-default-apos"></a>Windows の既定の APO
 
 
 Windows vista では、オーディオ ドライバーにデジタル オーディオ システム エフェクトは提供されません。 すべてのデジタル信号システム効果を作成する処理は、システム エフェクト オーディオ処理オブジェクト (APOs) と呼ばれるプロセスで COM オブジェクトをリアルタイムで提供されます。

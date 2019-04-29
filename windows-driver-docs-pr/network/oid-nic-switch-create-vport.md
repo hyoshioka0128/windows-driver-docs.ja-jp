@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_CREATE_VPORT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 742bee63784913086d9e777607e401369c4c5ff1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383596"
 ---
 # <a name="oidnicswitchcreatevport"></a>OID\_NIC\_スイッチ\_作成\_VPORT
 
@@ -36,7 +36,7 @@ PF のミニポート ドライバーには、OID 要求が発行される、ド
 
 -   中に受信操作、PF ミニポート ドライバーを指定します、 **VPortId**パケットが転送される値。 この値は、OOB 内も指定[ **NDIS\_NET\_バッファー\_一覧\_フィルター\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff566567)データ、の[NET\_バッファー\_一覧](https://msdn.microsoft.com/library/windows/hardware/ff568412)構造体。
 
-詳細については、[仮想ポートを作成する](https://msdn.microsoft.com/library/windows/hardware/hh439412)を参照してください。
+詳細については、次を参照してください。[仮想ポートを作成する](https://msdn.microsoft.com/library/windows/hardware/hh439412)します。
 
 **注**  VPort は常に存在し、ない既定値は OID の OID 要求を作成した\_NIC\_スイッチ\_作成\_VPORT します。 既定 VPort NDIS の識別子を持つ\_既定\_VPORT\_id。 PF のミニポート ドライバーでは、NIC のスイッチを作成するとき、ドライバーは自動的に既定 VPort をネットワーク アダプターの PF アタッチします。
 

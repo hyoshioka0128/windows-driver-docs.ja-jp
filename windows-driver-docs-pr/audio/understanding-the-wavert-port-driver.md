@@ -1,17 +1,17 @@
 ---
-title: WaveRT ポート ドライバーを理解します。
-description: WaveRT ポート ドライバーを理解します。
+title: WaveRT ポート ドライバーについて
+description: WaveRT ポート ドライバーについて
 ms.assetid: 2627615a-3fde-4ed6-9f7f-f6d7e5d82b3b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c495206b0b47b05d8c099e3e76093a26e624c51a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335357"
 ---
-# <a name="understanding-the-wavert-port-driver"></a>WaveRT ポート ドライバーを理解します。
+# <a name="understanding-the-wavert-port-driver"></a>WaveRT ポート ドライバーについて
 
 
 WaveRT ポート ドライバーでは、WavePci ポート ドライバーのハードウェア アクセラレータを使用したパフォーマンスと、以前の WaveCyclic ポート ドライバの簡潔さを結合します。

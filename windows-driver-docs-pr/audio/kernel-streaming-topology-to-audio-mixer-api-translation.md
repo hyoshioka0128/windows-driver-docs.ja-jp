@@ -1,6 +1,6 @@
 ---
-title: カーネル ストリーム オーディオ Mixer API への変換からのトポロジ
-description: カーネル ストリーム オーディオ Mixer API への変換からのトポロジ
+title: カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
+description: カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
 ms.assetid: ee89dc67-c9f3-41cd-8a09-0c46d636fe64
 keywords:
 - API の WDK オーディオ ミキサー
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c8cec89573b194e34114757b5bc49cd80ac5602
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333361"
 ---
-# <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>カーネル ストリーム オーディオ Mixer API への変換からのトポロジ
+# <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
 
 
 ## <span id="kernel_streaming_topology_to_audio_mixer_api_translation"></span><span id="KERNEL_STREAMING_TOPOLOGY_TO_AUDIO_MIXER_API_TRANSLATION"></span>
@@ -66,7 +66,7 @@ KS のマップ上の最初の 2 つの項目をミキサー行の送信先と�
 
 用語「シンク」と"source"では、接続を中心とした"in"、"out"方向は明確にフィルターを中心とした、です。
 
-WDMAud で使用されるアルゴリズムの解析中のトポロジの詳細については、[WDMAud トポロジ解析](wdmaud-topology-parsing.md)を参照してください。
+WDMAud で使用されるアルゴリズムの解析中のトポロジの詳細については、次を参照してください。 [WDMAud トポロジ解析](wdmaud-topology-parsing.md)します。
 
 このセクションが含まれています。
 

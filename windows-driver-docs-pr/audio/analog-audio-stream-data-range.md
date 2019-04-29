@@ -1,19 +1,19 @@
 ---
-title: アナログ オーディオ Stream データ範囲
-description: アナログ オーディオ Stream データ範囲
+title: アナログ オーディオ ストリームのデータ範囲
+description: アナログ オーディオ ストリームのデータ範囲
 ms.assetid: e4503ace-1e96-401e-b410-18ee6b07a37b
 keywords:
 - アナログのオーディオ WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c15f3ceab899ca3c3d4c965df5aa85a08da507c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331560"
 ---
-# <a name="analog-audio-stream-data-range"></a>アナログ オーディオ Stream データ範囲
+# <a name="analog-audio-stream-data-range"></a>アナログ オーディオ ストリームのデータ範囲
 
 
 ## <span id="analog_audio_stream_data_range"></span><span id="ANALOG_AUDIO_STREAM_DATA_RANGE"></span>
@@ -31,7 +31,7 @@ ms.locfileid: "56532208"
   DataRange.Specifier   = STATICGUIDOF(KSDATAFORMAT_SPECIFIER_NONE);
 ```
 
-通常、ミニポート ドライバーが通過アナログ信号を記述するこの種類のデータ範囲を使用、*ブリッジ pin*、オーディオのアダプター カードに有線接続を表します。 ブリッジの pin の詳細については、[オーディオ フィルター グラフ](audio-filter-graphs.md)を参照してください。 またでのコード例を参照してください[フィルター トポロジを公開する](exposing-filter-topology.md)します。
+通常、ミニポート ドライバーが通過アナログ信号を記述するこの種類のデータ範囲を使用、*ブリッジ pin*、オーディオのアダプター カードに有線接続を表します。 ブリッジの pin の詳細については、次を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。 またでのコード例を参照してください[フィルター トポロジを公開する](exposing-filter-topology.md)します。
 
  
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 954f8fd5abde30ba371549da7189e0a62e7b18d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392011"
 ---
 # <a name="wiadpcfocusmeteringmode"></a>WIA\_DPC\_フォーカス\_メータリング\_モード
 
@@ -47,7 +47,7 @@ WIA\_DPC\_フォーカス\_メータリング\_モード プロパティは、�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

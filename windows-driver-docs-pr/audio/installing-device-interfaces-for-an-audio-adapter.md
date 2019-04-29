@@ -1,6 +1,6 @@
 ---
-title: オーディオのアダプターのデバイスのインターフェイスのインストール
-description: オーディオのアダプターのデバイスのインターフェイスのインストール
+title: オーディオ アダプター用のデバイス インターフェイスのインストール
+description: オーディオ アダプター用のデバイス インターフェイスのインストール
 ms.assetid: 824cc6a2-702a-4e51-91b1-ab776b1babf1
 keywords:
 - オーディオ アダプター WDK、デバイス インターフェイス
@@ -12,13 +12,13 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eaa23ba599e5afdd4e7b36817619ba67112f09d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333462"
 ---
-# <a name="installing-device-interfaces-for-an-audio-adapter"></a>オーディオのアダプターのデバイスのインターフェイスのインストール
+# <a name="installing-device-interfaces-for-an-audio-adapter"></a>オーディオ アダプター用のデバイス インターフェイスのインストール
 
 
 ## <span id="installing_device_interfaces_for_an_audio_adapter"></span><span id="INSTALLING_DEVICE_INTERFACES_FOR_AN_AUDIO_ADAPTER"></span>
@@ -59,7 +59,7 @@ ms.locfileid: "56557114"
 
 次の例では、アダプターは通常、オーディオ デバイスをサポートする 4 つの一般的なデバイスのシステム定義インターフェイスをインストールします。
 
-### <a name="span-idexampleinstallingaudiodeviceinterfacesspanspan-idexampleinstallingaudiodeviceinterfacesspanexample-installing-audio-device-interfaces"></a><span id="example__installing_audio_device_interfaces"></span><span id="EXAMPLE__INSTALLING_AUDIO_DEVICE_INTERFACES"></span>例:オーディオ デバイス インターフェイスのインストール
+### <a name="span-idexampleinstallingaudiodeviceinterfacesspanspan-idexampleinstallingaudiodeviceinterfacesspanexample-installing-audio-device-interfaces"></a><span id="example__installing_audio_device_interfaces"></span><span id="EXAMPLE__INSTALLING_AUDIO_DEVICE_INTERFACES"></span>例: オーディオ デバイス インターフェイスのインストール
 
 XYZ オーディオ デバイスのデバイス インストールのセクションを使用して、この例では、 [ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310) 4 つのオーディオのアダプター インターフェイスをインストールします。 以下では、アダプターのドライバーは各インターフェイス クラスのインスタンス間で区別するために使用できるインターフェイスに一意の参照文字列を割り当てますそれぞれ 4 つのディレクティブの。
 
@@ -93,7 +93,7 @@ XYZ オーディオ デバイスのデバイス インストールのセクシ�
   HKR,,CLSID,,%Proxy.CLSID%
 ```
 
-この例では、キーワード HKR では、デバイスのシステム提供のレジストリ パスを表します。 詳細については、[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。
+この例では、キーワード HKR では、デバイスのシステム提供のレジストリ パスを表します。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
 
 この例は、文字列のセクションを次に示します。
 

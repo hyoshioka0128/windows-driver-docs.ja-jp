@@ -1,19 +1,19 @@
 ---
-title: 電力使用状況測定と予算のインフラストラクチャの概要
-description: 電力使用状況測定と予算のインフラストラクチャの概要
+title: 電力計測および予算作成インフラストラクチャの概要
+description: 電力計測および予算作成インフラストラクチャの概要
 ms.assetid: eda1c829-eb5e-404b-bf6b-1b0807ee02c7
 keywords:
 - 使用状況の測定と予算の WDK の電源の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aaeef30d377b47a548a5bb159c00173e995bc017
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331841"
 ---
-# <a name="overview-of-the-power-metering-and-budgeting-infrastructure"></a>電力使用状況測定と予算のインフラストラクチャの概要
+# <a name="overview-of-the-power-metering-and-budgeting-infrastructure"></a>電力計測および予算作成インフラストラクチャの概要
 
 
 Windows 7 および Windows Server 2008 R2 以降、Windows は、電力使用状況測定と予算 (PMB) インフラストラクチャをサポートします。 このインフラストラクチャは、電力消費量と管理機能を提供することで、コンピューター システム上のエネルギー効率を昇格させます。 さらに、追加のオプションを構成する使用状況測定と予算の電源を PMB を提供します。 システムの製造元、IT プロフェッショナル、およびエンドユーザーは、ニーズに応えるには、能力とパフォーマンスのバランスを取るために、システムを調整するのに、PMB インフラストラクチャを使用することができます。
@@ -45,14 +45,14 @@ WMI クラスのセットを使用することによって、UMPS がシステ�
 
 PMB WMI クラスは、UMPS の電源の WMI プロバイダーのコンポーネントによって提供されます。 これらの WMI クラスは、バージョンに準拠*Distributed Management Task Force (DMTF) の電源プロファイルの 1.1.0*します。 詳細についてを参照してください、 [DMTF の電源を提供するプロファイル](https://go.microsoft.com/fwlink/p/?linkid=145048)します。
 
-UMPS の詳細については、[ユーザー モードの Power サービス](user-mode-power-service.md)を参照してください。
+UMPS の詳細については、次を参照してください。[ユーザー モードの Power サービス](user-mode-power-service.md)します。
 
 <span id="Power_Meter_Interface__PMI__"></span><span id="power_meter_interface__pmi__"></span><span id="POWER_METER_INTERFACE__PMI__"></span>電力メーター インターフェイス (PMI)   
 PMI は、ドライバーによって提供される WDM インターフェイスです。 このインターフェイスを使用すると、ドライバー サービスの PMI I/O 要求パケット (Irp) から、[電源マネージャー](https://msdn.microsoft.com/library/windows/hardware/ff559829)と、UMPS の電源の WMI プロバイダーのコンポーネント。 これらの Irp は、クエリを実行し、現在の電力使用状況測定と電力メーターから予算情報の設定に使用されます。
 
 Windows 7 および Windows Server 2008 R2 以降のオペレーティング システムでドライバーを提供 (*ACPIPMI します。SYS*) PMI ACPI 4.0 Power メータリング オブジェクトをサポートするシステムを実装します。 このドライバーにより、相手先ブランド供給 (Oem) PMB インフラストラクチャ内でサードパーティ製のドライバーをインストールすることがなく参加できるシステムを構築します。
 
-PMI の詳細については、[電力メーター インターフェイス](power-meter-interface.md)を参照してください。
+PMI の詳細については、次を参照してください。[電力メーター インターフェイス](power-meter-interface.md)します。
 
 <span id="ACPI_PMI"></span><span id="acpi_pmi"></span>ACPI PMI  
 ACPI PMI では、使用状況測定、予算 WDM PMI インターフェイスを提供するドライバーへのハードウェア プラットフォームの機能と能力を公開します。
@@ -61,7 +61,7 @@ ACPI PMI は ACPI 4.0 Power メータリング オブジェクトを使用して
 
 ACPI 4.0 Power メータリング オブジェクトは、ACPI コントロール メソッド バッテリ パラダイムの後にモデル化されます。 システム ファームウェアには、ACPI 4.0 Power メータリング オブジェクトを実装する必要があります。 システム ファームウェアには、ACPI 4.0 Power メータリング オブジェクトも実装する必要があります。 実装の詳細は、独自の各システムに固有です。
 
-詳細については、[ACPI 電力メーター インターフェイス](acpi-power-meter-interface.md)を参照してください。
+詳細については、次を参照してください。 [ACPI 電力メーター インターフェイス](acpi-power-meter-interface.md)します。
 
  
 

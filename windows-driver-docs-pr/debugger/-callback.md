@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d8eb5975d8075b68bfbd67bd42965fef24ceae9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336897"
 ---
 # <a name="callback"></a>!callback
 
@@ -65,7 +65,7 @@ ms.locfileid: "56571304"
 
 システムのトラップについては、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 システムがシステムのトラップが発生しない場合、この拡張機能には、有用なデータは生成されません。

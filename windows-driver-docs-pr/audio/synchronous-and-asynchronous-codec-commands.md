@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4ffc6bd8794693f6aced59ce86dbb3566ca56ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335067"
 ---
 # <a name="synchronous-and-asynchronous-codec-commands"></a>同期および非同期のコーデック コマンド
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/17/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 133267fea9d3a6f0280132d134f014729c97a6ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383182"
 ---
 # <a name="oidwwanuiccreset"></a>OID_WWAN_UICC_RESET
 
@@ -23,7 +23,7 @@ OID_WWAN_UICC_RESET を使用して、一連の要求について、 [NDIS_WWAN_
 
 要請されていないイベントは適用されません。
 
-パススルー操作とパススルー状態に関する詳細については、[MB 低レベル UICC アクセス](mb-low-level-uicc-access.md)を参照してください。
+パススルー操作とパススルー状態に関する詳細については、次を参照してください。 [MB 低レベル UICC アクセス](mb-low-level-uicc-access.md)します。
 
 ## <a name="requirements"></a>要件
 

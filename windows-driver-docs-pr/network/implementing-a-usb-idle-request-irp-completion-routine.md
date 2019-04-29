@@ -1,17 +1,17 @@
 ---
-title: USB アイドル状態の要求の IRP の完了ルーチンを実装します。
-description: USB アイドル状態の要求の IRP の完了ルーチンを実装します。
+title: USB アイドル要求 IRP 完了ルーチンの実装
+description: USB アイドル要求 IRP 完了ルーチンの実装
 ms.assetid: C9435A1D-031B-4F67-B968-66534C48A9BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7786be1cc3108e0135e1c026e1cc4742eb0ab5c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383628"
 ---
-# <a name="implementing-a-usb-idle-request-irp-completion-routine"></a>USB アイドル状態の要求の IRP の完了ルーチンを実装します。
+# <a name="implementing-a-usb-idle-request-irp-completion-routine"></a>USB アイドル要求 IRP 完了ルーチンの実装
 
 
 ときに[ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)を呼び出すと、USB のミニポート ドライバー呼び出し[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) I/O 要求パケット (IRP) を発行するにはUSB のアイドル状態の要求 ([**IOCTL\_内部\_USB\_送信\_IDLE\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537270)) に、基になる USB バス ドライバー。 ミニポート ドライバーでは、ネットワーク アダプターがアイドル状態し、中断する必要があります、USB バス ドライバーに通知するには、この IRP を発行します。

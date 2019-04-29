@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bbd9c5d99a45299554a2b4684d354f6bb27c14f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331694"
 ---
 # <a name="kspropertycameracontrolexposurerelative"></a>KSPROPERTY\_CAMERACONTROL\_露出\_相対
 
@@ -54,7 +54,7 @@ KSPROPERTY\_CAMERACONTROL\_露出\_相対プロパティは、電子シャッタ
 <td><p>〇</p></td>
 <td><p>フィルターまたはノード</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564439" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564439)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff564420" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564420)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ KSPROPERTY\_CAMERACONTROL\_露出\_相対プロパティは、電子シャッタ
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>

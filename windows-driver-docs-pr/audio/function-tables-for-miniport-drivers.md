@@ -1,6 +1,6 @@
 ---
-title: 関数のテーブルなミニポート ドライバー
-description: 関数のテーブルなミニポート ドライバー
+title: ミニポート ドライバーの関数テーブル
+description: ミニポート ドライバーの関数テーブル
 ms.assetid: 86b8bfa7-0c57-480b-b6f6-7c0214f53773
 keywords:
 - 関数のテーブルの WDK オーディオ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1f4e402221fc9285ca3db9d0f664554d38a83d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333625"
 ---
-# <a name="function-tables-for-miniport-drivers"></a>関数のテーブルなミニポート ドライバー
+# <a name="function-tables-for-miniport-drivers"></a>ミニポート ドライバーの関数テーブル
 
 
 ## <span id="function_tables_for_miniport_drivers"></span><span id="FUNCTION_TABLES_FOR_MINIPORT_DRIVERS"></span>

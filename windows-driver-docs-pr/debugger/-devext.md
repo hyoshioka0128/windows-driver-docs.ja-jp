@@ -18,11 +18,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 81d31c09168df2ea28d43674313cfc2644cfcb52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334591"
 ---
 # <a name="devext"></a>!devext
 
@@ -35,7 +35,7 @@ ms.locfileid: "56581792"
 
 ## <a name="span-idddkdevextdbgspanspan-idddkdevextdbgspanparameters"></a><span id="ddk__devext_dbg"></span><span id="DDK__DEVEXT_DBG"></span>パラメーター
 
-###  <a name="address"></a>*アドレス*   
+###  <a name="address"></a>*Address*   
 表示するデバイスの拡張機能の 16 進数のアドレスを指定します。
 
 #### <a name="typecode"></a>*TypeCode*   
@@ -57,7 +57,7 @@ Kdexts.dll
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)この拡張機能コマンドのアプリケーション。 デバイスの拡張機能の詳細については、Windows Driver Kit (WDK) ドキュメントを参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **! Usbhub**、 **! hidfdo**、および **! hidpdo**拡張機能が廃止されています。 以外にそれらの機能が統合されました **! devext**します。

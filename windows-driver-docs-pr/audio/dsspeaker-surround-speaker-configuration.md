@@ -1,17 +1,17 @@
 ---
-title: DSSPEAKER_SURROUND スピーカーの構成
-description: DSSPEAKER_SURROUND スピーカーの構成
+title: DSSPEAKER_SURROUND スピーカー構成
+description: DSSPEAKER_SURROUND スピーカー構成
 ms.assetid: de8f861b-f190-4915-b3f0-95d39965b612
 keywords:
 - DSSPEAKER_SURROUND スピーカー構成 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0859387180b6abd258c5a61b4fad154c84c584ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333721"
 ---
 # <a name="dsspeakersurround-speaker-configuration"></a>DSSPEAKER\_サラウンド スピーカーの構成
 

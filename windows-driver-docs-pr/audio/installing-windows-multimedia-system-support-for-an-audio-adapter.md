@@ -1,6 +1,6 @@
 ---
-title: オーディオのアダプターの Windows のマルチ メディア システム サポートのインストール
-description: オーディオのアダプターの Windows のマルチ メディア システム サポートのインストール
+title: オーディオ アダプター用の Windows マルチ メディア システム サポートのインストール
+description: オーディオ アダプター用の Windows マルチ メディア システム サポートのインストール
 ms.assetid: 5846404f-3a6a-4e55-ba83-18404ea7cace
 keywords:
 - WDK のマルチ メディア オーディオのアダプターをサポートします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a01293d8d5ab3e25fc2f25abb68fdc28eda9729
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333433"
 ---
-# <a name="installing-windows-multimedia-system-support-for-an-audio-adapter"></a>オーディオのアダプターの Windows のマルチ メディア システム サポートのインストール
+# <a name="installing-windows-multimedia-system-support-for-an-audio-adapter"></a>オーディオ アダプター用の Windows マルチ メディア システム サポートのインストール
 
 
 ## <span id="ddk_installing_windows_multimedia_system_support_for_an_audio_adapter_"></span><span id="DDK_INSTALLING_WINDOWS_MULTIMEDIA_SYSTEM_SUPPORT_FOR_AN_AUDIO_ADAPTER_"></span>

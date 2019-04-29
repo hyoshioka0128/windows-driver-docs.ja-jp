@@ -15,11 +15,11 @@ api_type:
 ms.date: 12/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0894f0b083b69895457cdf4ee36b384c8d880202
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332677"
 ---
 # <a name="kspropertyrtaudiogetreadpacket"></a>KSPROPERTY\_RTAUDIO\_GETREADPACKET
 
@@ -29,9 +29,9 @@ KSPROPERTY\_RTAUDIO\_GETREADPACKET がキャプチャされたオーディオ �
 ### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
  
-|取得|Set|移行先|プロパティ記述子の型|プロパティ値の型|
+|取得|設定|対象|プロパティ記述子の型|プロパティ値の型|
 |--- |--- |--- |--- |--- |
-|はい|いいえ|Pin|[KSPROPERTY](https://msdn.microsoft.com/library/windows/hardware/ff564262)|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
+|〇|いいえ|Pin|[KSPROPERTY](https://msdn.microsoft.com/library/windows/hardware/ff564262)|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
 
 
 プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 要求を送信する前に、クライアントは、パケットの数、パケットの長さ、およびその他の情報を示す値を含む構造体を読み込みます。
@@ -44,7 +44,7 @@ KSPROPERTY\_RTAUDIO\_GETREADPACKET プロパティ要求がステータスを返
 
 ステータス\_デバイス\_いない\_準備 - ドライバーは、新しいデータが使用できない場合にこのエラーを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 読み取りが WaveRT バッファーからのオーディオ データをキャプチャする前に、OS は、使用できるデータに関する情報を取得するには、このルーチンを呼び出します。

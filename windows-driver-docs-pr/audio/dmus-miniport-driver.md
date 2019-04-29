@@ -1,6 +1,6 @@
 ---
-title: Dmu ミニポート ドライバー
-description: Dmu ミニポート ドライバー
+title: DMus ミニポート ドライバー
+description: DMus ミニポート ドライバー
 ms.assetid: a0ce6545-2050-49fb-88b5-a75dcd4c7ebc
 keywords:
 - オーディオのミニポート ドライバー WDK、Dmu
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c703e8dba133d2b12eb5a54daf5a3d17ec11e25d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333756"
 ---
-# <a name="dmus-miniport-driver"></a>Dmu ミニポート ドライバー
+# <a name="dmus-miniport-driver"></a>DMus ミニポート ドライバー
 
 
 ## <span id="dmus_miniport_driver"></span><span id="DMUS_MINIPORT_DRIVER"></span>
@@ -80,7 +80,7 @@ Wave シンクのバッファーには、wave データを表示します。
 
 マスターの時計をサンプルのクロックを同期します。
 
-ポート ドライバーのウェーブ シンクを呼び出す**ISynthSinkDMus::Render** wave PCM を読み取り、MIDI からシンセサイザーを生成するデータの入力ストリーム。 Wave シンクの詳細については、[カーネル モードのソフトウェアのシンセサイザーの A Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)を参照してください。
+ポート ドライバーのウェーブ シンクを呼び出す**ISynthSinkDMus::Render** wave PCM を読み取り、MIDI からシンセサイザーを生成するデータの入力ストリーム。 Wave シンクの詳細については、次を参照してください。[カーネル モードのソフトウェアのシンセサイザーの A Wave シンク](a-wave-sink-for-kernel-mode-software-synthesizers.md)します。
 
 ミニポート ドライバーでは、Dmu ポート ドライバーで、次のインターフェイスを呼び出します。
 
@@ -90,7 +90,7 @@ Wave シンクのバッファーには、wave データを表示します。
 
 [IMasterClock](https://msdn.microsoft.com/library/windows/hardware/ff536696)
 
-PortCls には UART 関数を使用した、MIDI デバイス用の組み込み Dmu ミニポート ドライバーが含まれています。 詳細については、[ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)を参照してください。
+PortCls には UART 関数を使用した、MIDI デバイス用の組み込み Dmu ミニポート ドライバーが含まれています。 詳細については、次を参照してください。 [ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)します。
 
  
 

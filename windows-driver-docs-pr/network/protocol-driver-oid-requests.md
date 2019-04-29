@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4e43b2816eec28b6d76b9ad9cbb3feca4fcd1d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384221"
 ---
 # <a name="protocol-driver-oid-requests"></a>プロトコル ドライバー OID 要求
 
@@ -20,7 +20,7 @@ ms.locfileid: "56550103"
 
 
 
-NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含むアダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)を参照してください。
+NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含むアダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、次を参照してください。 [NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)します。
 
 プロトコル ドライバーでは、クエリを実行したり、基になるドライバーの動作のパラメーターを設定することができます。
 

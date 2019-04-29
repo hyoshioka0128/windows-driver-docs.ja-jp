@@ -1,16 +1,16 @@
 ---
-title: Wi-fi ホット スポットのガイドをオフロードします。
-description: Wi-fi ホット スポットのガイドをオフロードします。
+title: Wi-Fi ホット スポット オフロード ガイド
+description: Wi-Fi ホット スポット オフロード ガイド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5462e35d31281d449db27b5e279d49bc2ee4de57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385806"
 ---
-# <a name="wi-fi-hotspot-offloading-guide"></a>Wi-fi ホット スポットのガイドをオフロードします。
+# <a name="wi-fi-hotspot-offloading-guide"></a>Wi-Fi ホット スポット オフロード ガイド
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 

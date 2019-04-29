@@ -16,11 +16,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b1e03b9936675fb38758ddc4a1d26fe622c762
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336403"
 ---
 # <a name="irp"></a>!irp
 
@@ -69,7 +69,7 @@ IRP の 16 進数のアドレスを指定します。
 - Windows Driver Foundation Guy Smith、小額 Orwick とドライバーの開発
 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 出力も IRP が完了し、スタックの場所が処理された後どのような条件下で各スタックの場所の完了ルーチンが呼び出されることを示します。 次の 3 つの可能性があります。

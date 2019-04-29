@@ -1,6 +1,6 @@
 ---
-title: スリープ解除を有効にします。
-description: スリープ解除を有効にします。
+title: スリープ状態の解除
+description: スリープ状態の解除
 ms.assetid: f4a2d4b1-d3a0-449a-ac65-a448d2bcab5c
 keywords:
 - HD オーディオ、ウェイク アップの有効化
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 961e4c925c3375d7339d537b6ea83196766bc4e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335332"
 ---
-# <a name="wake-enable"></a>スリープ解除を有効にします。
+# <a name="wake-enable"></a>スリープ状態の解除
 
 
 コーデックの機能のドライバーには、コーデックを切る前に、コーデックがシャット ダウン状態、状態変更イベントが発生した場合、システムをスリープ解除するコーデック通常ことができます。 オーディオ コーデックでは、ユーザー入力のジャックにプラグを挿入またはジャックからプラグを削除します。 ときに、このようなイベントをトリガーできます。 モデム コーデックの着信呼び出しを示すために電話を切ったと状態変更イベントがあります。 状態変更イベントの詳細については、次を参照してください。、 *Intel 高度な定義オーディオ仕様*で、 [Intel HD オーディオ](https://go.microsoft.com/fwlink/p/?linkid=42508)web サイト。

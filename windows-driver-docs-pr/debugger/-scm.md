@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 58a985eb874522ff9289b0b038211fec30b7d3b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330787"
 ---
 # <a name="scm"></a>!scm
 
@@ -63,7 +63,7 @@ ms.locfileid: "56574669"
 
 その他のキャッシュ管理拡張機能については、次を参照してください。、 [ **! cchelp** ](-cchelp.md)拡張機能。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 Windows XP および以降のバージョンの Windows では、使用、 [ **dt nt!\_共有\_キャッシュ\_マップ アドレス**](dt--display-type-.md)コマンドの代わりに **! scm**します。

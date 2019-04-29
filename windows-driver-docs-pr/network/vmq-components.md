@@ -5,11 +5,11 @@ ms.assetid: 74BFE4C1-89C2-400D-A915-88552C215251
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20641a8518a111dc8202b5bf61b3e281bdfaf54a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338381"
 ---
 # <a name="vmq-components"></a>VMQ コンポーネント
 
@@ -26,7 +26,7 @@ ms.locfileid: "56549888"
 <a href="" id="--------network-virtual-service-provider--netvsp-"></a> **ネットワークの仮想サービス プロバイダー (NetVSP)**  
 HYPER-V 親パーティションの管理オペレーティング システムで実行されている NDIS ドライバー。 このドライバーは、HYPER-V 子パーティションでネットワーク アクセスをサポートするためにサービスを提供します。
 
-**注**  以降 Windows Server 2008 では、HYPER-V 拡張可能スイッチのコンポーネントは、ゲスト オペレーティング システムで実行される NetVSC コンポーネント NetVSP サポートを提供します。 このコンポーネントの詳細については、[Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)を参照してください。
+**注**  以降 Windows Server 2008 では、HYPER-V 拡張可能スイッチのコンポーネントは、ゲスト オペレーティング システムで実行される NetVSC コンポーネント NetVSP サポートを提供します。 このコンポーネントの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)します。
 
  
 

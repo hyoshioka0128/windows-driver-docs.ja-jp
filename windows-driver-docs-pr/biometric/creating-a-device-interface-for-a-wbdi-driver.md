@@ -1,6 +1,6 @@
 ---
-title: WBDI ドライバーのデバイスのインターフェイスを作成します。
-description: WBDI ドライバーのデバイスのインターフェイスを作成します。
+title: WBDI ドライバー用のデバイス インターフェイスの作成
+description: WBDI ドライバー用のデバイス インターフェイスの作成
 ms.assetid: 8595092c-9105-4638-814a-74cdfa372638
 keywords:
 - 生体認証ドライバー WDK、デバイス インターフェイス
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f67ae29b232a0d3f688a3e347badfd6bb40aec01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328408"
 ---
-# <a name="creating-a-device-interface-for-a-wbdi-driver"></a>WBDI ドライバーのデバイスのインターフェイスを作成します。
+# <a name="creating-a-device-interface-for-a-wbdi-driver"></a>WBDI ドライバー用のデバイス インターフェイスの作成
 
 
 デバイス コールバック オブジェクトを初期化し、キューのセットアップ時に、ドライバーに返されるドライバーは、生体認証デバイスのデバイス インターフェイスのインスタンスを作成する必要があります。

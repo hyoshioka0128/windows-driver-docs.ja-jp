@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee48e901314796fb817a03ef93fd88b4155bbeae
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338321"
 ---
 # <a name="option-attributes-for-the-halftone-feature"></a>Halftone 機能のオプション属性
 
@@ -19,7 +19,7 @@ ms.locfileid: "57348663"
 
 
 
-次の表は、ハーフトーン機能に関連付けられている属性を一覧表示します。 ハーフトーン機能の詳細については、[標準機能](standard-features.md)を参照してください。
+次の表は、ハーフトーン機能に関連付けられている属性を一覧表示します。 ハーフトーン機能の詳細については、次を参照してください。[標準機能](standard-features.md)します。
 
 <table>
 <colgroup>
@@ -61,9 +61,9 @@ ms.locfileid: "57348663"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
-これらの属性の使用に関する詳細については、[Unidrv のハーフトーン](halftoning-with-unidrv.md)を参照してください。 これらの属性を使用しない[ミニドライバーが指定したハーフトーン](minidriver-supplied-halftoning.md)します。
+これらの属性の使用に関する詳細については、次を参照してください。 [Unidrv のハーフトーン](halftoning-with-unidrv.md)します。 これらの属性を使用しない[ミニドライバーが指定したハーフトーン](minidriver-supplied-halftoning.md)します。
 
  
 

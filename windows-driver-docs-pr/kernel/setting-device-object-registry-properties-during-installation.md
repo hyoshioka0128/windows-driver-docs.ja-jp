@@ -1,6 +1,6 @@
 ---
-title: インストール中にデバイス オブジェクトのレジストリのプロパティを設定します。
-description: インストール中にデバイス オブジェクトのレジストリのプロパティを設定します。
+title: インストール時のデバイス オブジェクト レジストリ プロパティの設定
+description: インストール時のデバイス オブジェクト レジストリ プロパティの設定
 ms.assetid: 29d40398-09b9-4e64-aa47-da229066bffd
 keywords:
 - デバイス オブジェクトの WDK カーネル、レジストリ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf560b528f01f4c22d04d8933a7e9342446da804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385530"
 ---
-# <a name="setting-device-object-registry-properties-during-installation"></a>インストール中にデバイス オブジェクトのレジストリのプロパティを設定します。
+# <a name="setting-device-object-registry-properties-during-installation"></a>インストール時のデバイス オブジェクト レジストリ プロパティの設定
 
 
 
@@ -51,7 +51,7 @@ ms.locfileid: "56550482"
 <td><p>デバイスの特性</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>排他的</strong></p></td>
+<td><p><strong>[Exclusive]</strong></p></td>
 <td><p>［排他］</p></td>
 </tr>
 <tr class="even">
@@ -63,9 +63,9 @@ ms.locfileid: "56550482"
 
  
 
-これらのキーワードの使用に関する詳細については、[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)を参照してください。
+これらのキーワードの使用に関する詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
 
-デバイス インストールの機能を使用して、ユーザー モード コンポーネントによって、設定を設定することができます。 詳細については、[設定デバイス オブジェクト レジストリ インストール後にプロパティ](setting-device-object-registry-properties-after-installation.md)を参照してください。
+デバイス インストールの機能を使用して、ユーザー モード コンポーネントによって、設定を設定することができます。 詳細については、次を参照してください。[設定デバイス オブジェクト レジストリ インストール後にプロパティ](setting-device-object-registry-properties-after-installation.md)します。
 
  
 

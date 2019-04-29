@@ -1,6 +1,6 @@
 ---
-title: PPD 向け Windows Vista で Autoconfig フロー
-description: PPD 向け Windows Vista で Autoconfig フロー
+title: PPD の Windows Vista の自動構成フロー
+description: PPD の Windows Vista の自動構成フロー
 ms.assetid: 60675cd3-fe98-4772-aa1b-a73529480d8a
 keywords:
 - PPD ファイル WDK 自動構成、一連の手順
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1cf59884967bd56de4f0af8c3040a26a55eeda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331182"
 ---
-# <a name="autoconfig-flow-in-windows-vista-for-ppd"></a>PPD 向け Windows Vista で Autoconfig フロー
+# <a name="autoconfig-flow-in-windows-vista-for-ppd"></a>PPD の Windows Vista の自動構成フロー
 
 
 自動構成は、次のシーケンスを次に示します。

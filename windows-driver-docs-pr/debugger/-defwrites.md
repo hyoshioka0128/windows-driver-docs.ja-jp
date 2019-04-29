@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e54cc4f1f01e091870c9979cc77fcaaa2bec9e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334593"
 ---
 # <a name="defwrites"></a>!defwrites
 
@@ -39,7 +39,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-書き込みの制限については、*Microsoft Windows internals 』* Mark Russinovich と David Solomon を参照してください。 
+書き込みの制限については、次を参照してください。 *Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 
 
 その他のキャッシュ管理拡張機能については、使用、 [ **! cchelp** ](-cchelp.md)拡張機能。
 

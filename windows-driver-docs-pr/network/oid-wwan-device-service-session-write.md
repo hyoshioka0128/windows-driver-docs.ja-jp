@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_SERVICE_SESSION_WRITE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a29090183bda9af12d9808898d9b1219375f28c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386672"
 ---
 # <a name="oidwwandeviceservicesessionwrite"></a>OID\_WWAN\_デバイス\_サービス\_セッション\_書き込み
 

@@ -1,6 +1,6 @@
 ---
-title: 基本的なトレース セッションのオプション
-description: 基本的なトレース セッションのオプション
+title: トレース セッションの基本オプション
+description: トレース セッションの基本オプション
 ms.assetid: c997310f-79dc-4c94-945e-13a0a7786928
 keywords:
 - WDK、基本的なオプションのセッションをトレースします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 042d6252918efb7dc3755333855eefe354ab138a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330962"
 ---
-# <a name="basic-trace-session-options"></a>基本的なトレース セッションのオプション
+# <a name="basic-trace-session-options"></a>トレース セッションの基本オプション
 
 次に示します、基本的なトレース セッション オプションに変更できる、**ログ セッション オプション**ページ。
 

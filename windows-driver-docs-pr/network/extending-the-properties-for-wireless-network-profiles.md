@@ -1,6 +1,6 @@
 ---
-title: ワイヤレス ネットワーク プロファイルのプロパティを拡張します。
-description: ワイヤレス ネットワーク プロファイルのプロパティを拡張します。
+title: ワイヤレス ネットワーク プロファイルのプロパティの拡張
+description: ワイヤレス ネットワーク プロファイルのプロパティの拡張
 ms.assetid: c98266b5-3841-4dfa-b274-5c1ef16bfef6
 keywords:
 - IHV UI 拡張 DLL WDK ネイティブ 802.11、ネットワーク プロファイルの拡張機能
@@ -8,20 +8,20 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e053ab00c146956b6e66f347ae4b8228c3ebc0ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386247"
 ---
-# <a name="extending-the-properties-for-wireless-network-profiles"></a>ワイヤレス ネットワーク プロファイルのプロパティを拡張します。
+# <a name="extending-the-properties-for-wireless-network-profiles"></a>ワイヤレス ネットワーク プロファイルのプロパティの拡張
 
 
 
 
  
 
-エンド ユーザーを作成または 802.11 ネットワークの構成をネイティブ ユーザー インターフェイス (UI) を介してワイヤレス ネットワーク接続プロファイルを編集します。 この UI の詳細については、[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)を参照してください。
+エンド ユーザーを作成または 802.11 ネットワークの構成をネイティブ ユーザー インターフェイス (UI) を介してワイヤレス ネットワーク接続プロファイルを編集します。 この UI の詳細については、次を参照してください。[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)します。
 
 独立系ハードウェア ベンダー (IHV) は、ネイティブの 802.11 UI 拡張機能の DLL を独自の接続とセキュリティ プロファイルの設定をサポートするためにネットワークの構成 UI を拡張できます。 DLL は、ネットワークの構成 UI に表示される次のタブに拡張できます。
 
@@ -37,9 +37,9 @@ ms.locfileid: "56557521"
 <a href="" id="security-tab-------"></a>**[セキュリティ] タブ**   
 このタブには、ワイヤレス LAN (WLAN) のネットワークのセキュリティ設定の UI が表示されます。
 
-802.11 IHV UI 拡張機能のネイティブ DLL では、独自のセキュリティ設定の表示要素を追加することで、この UI を拡張できます。 このプロセスの詳細については、[ワイヤレス セキュリティのプロパティ ページの拡張](extending-wireless-security-properties.md)を参照してください。
+802.11 IHV UI 拡張機能のネイティブ DLL では、独自のセキュリティ設定の表示要素を追加することで、この UI を拡張できます。 このプロセスの詳細については、次を参照してください。[ワイヤレス セキュリティのプロパティ ページの拡張](extending-wireless-security-properties.md)します。
 
-802.11 IHV UI 拡張機能のネイティブ DLL で、Microsoft 802.1 X 設定を拡張できますも、**セキュリティ**タブ。このプロセスの詳細については、[を拡張する Microsoft 802.1 X のセキュリティ設定](extending-microsoft-802-1x-security-settings.md)を参照してください。
+802.11 IHV UI 拡張機能のネイティブ DLL で、Microsoft 802.1 X 設定を拡張できますも、**セキュリティ**タブ。このプロセスの詳細については、次を参照してください。[を拡張する Microsoft 802.1 X のセキュリティ設定](extending-microsoft-802-1x-security-settings.md)します。
 
 **注**  For Windows Vista 802.11 IHV UI 拡張機能のネイティブ DLL はインフラストラクチャ ワイヤレス ネットワーク用の接続およびセキュリティ プロファイルのプロパティを拡張してできるだけです。
 

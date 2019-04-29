@@ -1,5 +1,5 @@
 ---
-title: モバイル ブロード バンド (MBB) WDF クラスの拡張機能 (MBBCx)
+title: モバイル ブロードバンド (MBB) WDF クラス拡張機能 (MBBCx)
 description: モバイル ブロード バンド (MBB) WDF クラス拡張 (MBBCx) の概要。
 ms.assetid: FA4D1C2D-270B-40C4-A922-8ABDDE4D8444
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 03/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 851489e28a5a2928260c6d73958583c71be2cfde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384543"
 ---
-# <a name="mobile-broadband-mbb-wdf-class-extension-mbbcx"></a>モバイル ブロード バンド (MBB) WDF クラスの拡張機能 (MBBCx)
+# <a name="mobile-broadband-mbb-wdf-class-extension-mbbcx"></a>モバイル ブロードバンド (MBB) WDF クラス拡張機能 (MBBCx)
 
 [!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 
@@ -34,6 +34,6 @@ MBB NetAdapter のクライアント ドライバーは、3 つのカテゴリ�
 
 このセクションのトピックでは、集中 MBBCx 固有のコードでのみ、基本の NIC の NetAdapterCx クライアント ドライバーを記述する方法を既にご存知と仮定します。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
-- [MBBCx のクライアント ドライバーの作成](writing-an-mbbcx-client-driver.md)
+- [Writing an MBBCx client driver (MBBCx クライアント ドライバーの作成)](writing-an-mbbcx-client-driver.md)

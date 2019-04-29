@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d622518f5cc3b080db2efdfc2428f08f2adf0a2
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390902"
 ---
 # <a name="handling-pnp-paging-requests"></a>PnP ページング要求の処理
 
@@ -53,19 +53,19 @@ C. 最後のページングのデバイスを削除する場合 ((! **Parameters
 
 D. 同期的に下位のドライバーに IRP を転送します。
 
-E を押します。 IRP が正常に完了し、場合
+E. IRP が正常に完了し、場合
 
 1.  IoAdjustPagingPathCount を呼び出す (& PagingCount、 **Parameters.UsageNotification.InPath**) をインクリメントまたはデクリメント、PagingCount にします。 IoAdjustPagingPathCount では、InterlockedIncrement またはの値によって PagingCount InterlockedDecrement **Parameters.UsageNotification.InPath**します。 値**TRUE**ページング ファイルが追加されること、そのインクリメントを示します、PagingCount; の値**FALSE**ページング ファイルがされていることを示します、PagingCount をデクリメントので削除します。
 
 2.  場合**Parameters.UsageNotification.InPath**は**TRUE**、ページング ファイルが追加されたチェック ボックスをオフようにされている、**は\_POWER\_PAGABLE**ビット。
 
-F です。 それ以外の場合、IRP が失敗します。
+F. それ以外の場合、IRP が失敗します。
 
 1.  ローカルのブール値かどうかを確認してください**は\_POWER\_PAGABLE**の方法では、フィルターの実行で設定されました。
 
 2.  場合**は\_POWER\_PAGABLE**された方法でセットをスケール ダウン、オフにします。
 
-G です。 最後の同期 (KeSetEvent (PagingCountEvent、...))。
+G. 最後の同期 (KeSetEvent (PagingCountEvent、...))。
 
 ### <a name="span-idpseudocodeexamplespanspan-idpseudocodeexamplespanpseudocode-example"></a><span id="pseudocode_example"></span><span id="PSEUDOCODE_EXAMPLE"></span>擬似コードの例
 

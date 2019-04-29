@@ -5,11 +5,11 @@ ms.assetid: FDDD2320-E853-45a8-9820-12FB16365B9C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c65d90e3dc148cef086aadbe67a89bff47e7a234
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385071"
 ---
 # <a name="cross-machine-execution"></a>クロス マシンの実行
 
@@ -46,7 +46,7 @@ TAEF は、Te.exe 1 つのマシンで実行されますが、別のコンピュ
 
 テストをリモートで実行するために指定する必要があります、 **/runOn:&lt;マシン名&gt;** Te.exe とコマンドの残りのパラメーター。 前提条件を満たしている場合、ユーザー エクスペリエンスの残りの部分をローカルでテストを実行するときに同じになります。 すべてのログ出力を保存/書き込む、ローカル コンピューターにします。
 
-以下に例を示します。
+次に、例を示します。
 
 ``` syntax
 te unittests\wex.common.tests.dll /runon:TAEFTest1
@@ -64,9 +64,9 @@ Te.exe は自動的にすべてのテストのネイティブおよびマネー�
 
 使用して追加のテストの依存関係を手動で指定することができます、 **/TestDependencies**をコピーするファイルまたはディレクトリのセミコロン区切りのリストの形式でコマンド ライン パラメーターです。
 
-- **[ファイル]**
+- **ファイル**
 
-  各ファイルの仕様は、ワイルドカード文字を含めることができます (test.txt; テスト\*.dll; など。)。 例:
+  各ファイルの仕様は、ワイルドカード文字を含めることができます (test.txt; テスト\*.dll; など。)。 次に、例を示します。
 
   ``` syntax
   te unittests\wex.common.tests.dll /runon:TAEFTest1 /TestDependencies:*verification*.jpg;mysample.txt
@@ -74,7 +74,7 @@ Te.exe は自動的にすべてのテストのネイティブおよびマネー�
   -   テストに TAEFTest1 だけでなく、任意のファイルで指定されたファイルに一致するすべての必要なバイナリを送信、 **/TestDependencies**パラメーター。
 - **ディレクトリ**
 
-  TAEF が存在するディレクトリの再帰的なディレクトリ検索をサポートしている*以下で*テスト バイナリを格納するディレクトリ。 以下に例を示します。
+  TAEF が存在するディレクトリの再帰的なディレクトリ検索をサポートしている*以下で*テスト バイナリを格納するディレクトリ。 次に、例を示します。
 
   ``` syntax
   te unittests\wex.common.tests.dll /runon:TAEFTest1 /TestDependencies:unittests\...

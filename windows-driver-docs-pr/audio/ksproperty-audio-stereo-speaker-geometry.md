@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 012135a9e435662b4a1de6b10abbf461f046942c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332911"
 ---
 # <a name="kspropertyaudiostereospeakergeometry"></a>KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY
 
@@ -54,7 +54,7 @@ KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY プロパ�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin/フィルター</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>長い</p></td>
+<td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -94,7 +94,7 @@ KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY プロパ�
 
 DirectSound 扱います KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY で DAC のノードでは、filter プロパティと 3D のノードに暗証番号 (pin) のプロパティとして。
 
-詳細については、[DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)を参照してください。
+詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)します。
 
 <a name="requirements"></a>要件
 ------------

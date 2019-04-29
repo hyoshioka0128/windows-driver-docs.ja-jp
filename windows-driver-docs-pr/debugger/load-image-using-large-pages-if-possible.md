@@ -1,19 +1,19 @@
 ---
-title: 可能であれば大きなページを使用してイメージを読み込む
-description: 可能であれば大きなページを使用してイメージを読み込む
+title: Load image using large pages if possible
+description: Load image using large pages if possible
 ms.assetid: 7f75b5bd-cc25-4f09-9d60-55b86969d16b
 keywords:
 - 可能であれば大きなページを使用して (グローバル フラグ) のイメージを読み込み
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bccbe3e8f6ac111c0e2a0309391fe604f0391fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383335"
 ---
-# <a name="load-image-using-large-pages-if-possible"></a>可能であれば大きなページを使用してイメージを読み込む
+# <a name="load-image-using-large-pages-if-possible"></a>Load image using large pages if possible
 
 
 ## <span id="ddk_load_image_using_large_pages_if_possible_dtools"></span><span id="DDK_LOAD_IMAGE_USING_LARGE_PAGES_IF_POSSIBLE_DTOOLS"></span>
@@ -42,7 +42,7 @@ ms.locfileid: "56537027"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>イメージ ファイルのレジストリ エントリ</p></td>
 </tr>
 </tbody>

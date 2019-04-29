@@ -17,11 +17,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50967db82177f76da45908b461d4701f2b646eb6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331933"
 ---
 # <a name="summary-of-readwrite-dispatch-routines"></a>読み取り/書き込みディスパッチ ルーチンの概要
 
@@ -41,7 +41,7 @@ ms.locfileid: "56580210"
 
 -   確認する必要がありますが、ドライバーは、ダイレクト I/O を使用している場合かどうかに MDL **Irp -&gt;MdlAddress**転送が 1 回で処理するために、基になるデバイスのデータが多すぎる (または多数の改ページ) を格納するバッファーをについて説明します。操作です。 そうである場合、ドライバーが小さな転送操作のシーケンスには、元の転送要求を分割する必要があります。
 
-    密接に結合されたクラス ドライバーを分割で要求する可能性があります、 *DispatchReadWrite*その基になるポート ドライバーの日常的な。 SCSI クラス ドライバーでは、特に、大容量記憶装置の場合は、これを行う必要があります。 SCSI ドライバーの要件の詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
+    密接に結合されたクラス ドライバーを分割で要求する可能性があります、 *DispatchReadWrite*その基になるポート ドライバーの日常的な。 SCSI クラス ドライバーでは、特に、大容量記憶装置の場合は、これを行う必要があります。 SCSI ドライバーの要件の詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
 
 -   低レベル デバイス ドライバーの*DispatchReadWrite*ルーチンが他のドライバー ルーチン デキュー IRP が転送用にデバイスを設定するまで、部分的な転送に大きな転送要求を分割を延期する必要があります。
 

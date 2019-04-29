@@ -1,6 +1,6 @@
 ---
-title: NTSC または PAL の変換
-description: NTSC または PAL の変換
+title: NTSC/PAL 変換
+description: NTSC/PAL 変換
 ms.assetid: 2ae22ebd-e75a-4f9c-b50e-d0ddfe05d987
 keywords:
 - ビデオ WDK ビデオ ポートのインター レース拡張機能
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 284121130ec98830394f073cbcf4acdff898a88b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384086"
 ---
-# <a name="ntscpal-conversion"></a>NTSC または PAL の変換
+# <a name="ntscpal-conversion"></a>NTSC/PAL 変換
 
 
 ## <span id="ddk_ntsc_pal_conversion_gg"></span><span id="DDK_NTSC_PAL_CONVERSION_GG"></span>

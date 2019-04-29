@@ -11,11 +11,11 @@ keywords:
 ms.date: 02/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 32d0be8fe821eb2beec0a0cb9064c635cfa2459d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331310"
 ---
 # <a name="coppcommand-function"></a>COPPCommand 関数
 
@@ -64,7 +64,7 @@ RenderMoComp のコールバック関数が関数を使用せず、ディスプ�
 
 DD_RENDERMOCOMPDATA 構造は次のように入力されます。
 
-| メンバー | Value |
+| Member | 値 |
 | -- | -- |
 | dwNumBuffers | 0 を返します。 |
 | lpBufferInfo | NULL:  |
@@ -147,7 +147,7 @@ COPPCommand(
 }
 ```
 
-**要件**
+**必要条件**
 
 |対象プラットフォーム | バージョン |
 | -- | -- |

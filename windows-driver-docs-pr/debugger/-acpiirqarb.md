@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bfb321860cba101e77e6aa362002333bb56b08b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334810"
 ---
-# <a name="acpiirqarb"></a>! acpiirqarb
+# <a name="acpiirqarb"></a>!acpiirqarb
 
 
 **! Acpiirqarb**拡張機能は、Advanced Configuration and Power Interface (ACPI) IRQ アービター構造体のシステムの割り込みコント ローラーの入力とプロセッサへの I/O デバイスの構成を含む内容を表示します。ディスパッチ テーブル (IDT) エントリを中断します。

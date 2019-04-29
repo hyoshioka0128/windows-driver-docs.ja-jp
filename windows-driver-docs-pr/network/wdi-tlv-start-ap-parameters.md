@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_START_AP_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b71a39ca9811b03a234e3afe89598b18bf9e1eae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330430"
 ---
 # <a name="wditlvstartapparameters"></a>WDI\_TLV\_開始\_AP\_パラメーター
 
@@ -38,7 +38,7 @@ WDI\_TLV\_開始\_AP\_パラメーターがのパラメーターを含む TLV [O
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>

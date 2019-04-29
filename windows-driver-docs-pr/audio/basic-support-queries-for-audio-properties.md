@@ -1,6 +1,6 @@
 ---
-title: オーディオのプロパティに対する基本的なサポート クエリ
-description: オーディオのプロパティに対する基本的なサポート クエリ
+title: オーディオのプロパティに対してサポートされる基本的なクエリ
+description: オーディオのプロパティに対してサポートされる基本的なクエリ
 ms.assetid: d08b6f86-e4fd-4b2c-bfaa-191bcbac3ff8
 keywords:
 - WDK、クエリが basic サポートのオーディオのプロパティ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be69fde2d31986b3459dc859b123674dc3f215bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333939"
 ---
-# <a name="basic-support-queries-for-audio-properties"></a>オーディオのプロパティに対する基本的なサポート クエリ
+# <a name="basic-support-queries-for-audio-properties"></a>オーディオのプロパティに対してサポートされる基本的なクエリ
 
 
 ## <span id="basic_support_queries_for_audio_properties"></span><span id="BASIC_SUPPORT_QUERIES_FOR_AUDIO_PROPERTIES"></span>
@@ -60,7 +60,7 @@ ms.locfileid: "56553315"
 
 上記の一覧で示されている順序で、バッファー内の隣接する場所には、次の 3 つの構造がまとめられます。 ミニポート ドライバー書き込みますに最小値と最大のボリューム レベルで要求を処理する際、**境界**、KSPROPERTY のメンバー\_ステッピング\_時間構造体します。
 
-範囲の記述子の配列で basic サポート要求の例で図を参照してください。[マルチ チャネルのノードを公開する](exposing-multichannel-nodes.md)します。 Basic サポート プロパティ要求の詳細については、[KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)を参照してください。 コード例については、プロパティ ハンドラーの実装を参照してください、[オーディオ ドライバーのサンプル](sample-audio-drivers.md)Microsoft Windows Driver Kit (WDK)。
+範囲の記述子の配列で basic サポート要求の例で図を参照してください。[マルチ チャネルのノードを公開する](exposing-multichannel-nodes.md)します。 Basic サポート プロパティ要求の詳細については、次を参照してください。 [KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。 コード例については、プロパティ ハンドラーの実装を参照してください、[オーディオ ドライバーのサンプル](sample-audio-drivers.md)Microsoft Windows Driver Kit (WDK)。
 
  
 

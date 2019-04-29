@@ -1,17 +1,17 @@
 ---
-title: ユーザー モードの静止画像ミニドライバーを作成します。
-description: ユーザー モードの静止画像ミニドライバーを作成します。
+title: ユーザー モードの静止画像ミニドライバーの作成
+description: ユーザー モードの静止画像ミニドライバーの作成
 ms.assetid: 94fdbeba-5b4a-4b66-b381-ec362b6d38c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 068de4dc8ed2378faa264b569d8f39e5714a5455
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386319"
 ---
-# <a name="creating-a-user-mode-still-image-minidriver"></a>ユーザー モードの静止画像ミニドライバーを作成します。
+# <a name="creating-a-user-mode-still-image-minidriver"></a>ユーザー モードの静止画像ミニドライバーの作成
 
 
 

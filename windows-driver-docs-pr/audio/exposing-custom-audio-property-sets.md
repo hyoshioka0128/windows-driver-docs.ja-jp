@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c25ae491a210d1a49b3806670e95e971f58a506f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333683"
 ---
 # <a name="exposing-custom-audio-property-sets"></a>カスタム オーディオ プロパティ セットの公開
 
@@ -22,7 +22,7 @@ ms.locfileid: "56573142"
 
 DirectSound がサウンド カードのカスタム プロパティの使用をサポートし、提供、 **IKsPropertySet**この目的のためのインターフェイス。
 
-**注**   Dsound.h と Ksproxy.h ヘッダー ファイルは似ていますが、互換性のないバージョンを定義、 **IKsPropertySet**インターフェイス。 DirectSound アプリケーションでは、Dsound.h で定義されているバージョンを使用する必要があります。 DirectSound 版**IKsPropertySet** DirectSound リファレンスのページで、Microsoft Windows SDK ドキュメントで定義されます。 KSProxy バージョンでは、[IKsPropertySet](https://msdn.microsoft.com/library/windows/hardware/ff560718)を参照してください。
+**注**   Dsound.h と Ksproxy.h ヘッダー ファイルは似ていますが、互換性のないバージョンを定義、 **IKsPropertySet**インターフェイス。 DirectSound アプリケーションでは、Dsound.h で定義されているバージョンを使用する必要があります。 DirectSound 版**IKsPropertySet** DirectSound リファレンスのページで、Microsoft Windows SDK ドキュメントで定義されます。 KSProxy バージョンでは、次を参照してください。 [IKsPropertySet](https://msdn.microsoft.com/library/windows/hardware/ff560718)します。
 
  
 
@@ -46,13 +46,13 @@ DirectSound は、ドライバーにカスタム プロパティのセットを�
 
 -   **None**
 
--   **基本的な**
+-   **基本**
 
 -   **標準**
 
--   **完全です**
+-   **Full**
 
-カスタム プロパティのセットが、スライダーに設定されている場合にのみ有効になって**完全**します。 詳細については、[DirectSound ハードウェア高速化と SRC スライダー](directsound-hardware-acceleration-and-src-sliders.md)を参照してください。
+カスタム プロパティのセットが、スライダーに設定されている場合にのみ有効になって**完全**します。 詳細については、次を参照してください。 [DirectSound ハードウェア高速化と SRC スライダー](directsound-hardware-acceleration-and-src-sliders.md)します。
 
  
 

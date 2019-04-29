@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eba6bc9207bf43f33005023369b40023633693e
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335603"
 ---
 # <a name="bug-check-0x14a-kernelwmiinternal"></a>バグ チェック 0x14A:カーネル\_WMI\_内部
 

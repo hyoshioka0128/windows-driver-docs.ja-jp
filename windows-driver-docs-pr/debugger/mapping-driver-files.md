@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc8b2024711501fc64f02a9b967dd9c24fd74f23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383296"
 ---
 # <a name="mapping-driver-files"></a>ドライバー ファイルのマッピング
 
@@ -128,7 +128,7 @@ map
 bcdedit -bootdebug on
 ```
 
-詳細については、[オプションの参照を BCDEdit](https://msdn.microsoft.com/library/windows/hardware/ff542205)を参照してください。
+詳細については、次を参照してください。[オプションの参照を BCDEdit](https://msdn.microsoft.com/library/windows/hardware/ff542205)します。
 
 カーネル デバッガーが終了した場合は複数のドライバーの置き換えなしに発生します。 ただし、既に置き換えられているすべてのドライバーに戻りません、古いバイナリでは、ドライバー ファイルが実際に上書きされるためです。
 

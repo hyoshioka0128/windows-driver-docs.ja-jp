@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 56ebf64bd0fbe009f043be7f9d7f0aeb5386330e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336027"
 ---
-# <a name="mps"></a>! mp
+# <a name="mps"></a>!mps
 
 
 **! Mp**拡張機能には、ターゲット コンピューターの BIOS 情報 Intel マルチプロセッサ仕様 (MP) が表示されます。
@@ -59,7 +59,7 @@ BIOS では、MP テーブルの 16 進数のアドレスを指定します。 �
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-BIOS のデバッグの詳細については、[BIOS コードのデバッグ](debugging-bios-code.md)を参照してください。 MP の詳細については、適切なバージョンの Intel マルチプロセッサ仕様を参照してください。
+BIOS のデバッグの詳細については、次を参照してください。 [BIOS コードのデバッグ](debugging-bios-code.md)します。 MP の詳細については、適切なバージョンの Intel マルチプロセッサ仕様を参照してください。
 
  
 

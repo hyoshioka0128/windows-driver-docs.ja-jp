@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cd8e01ffc3d97669b132daa691931970e8f7b43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335907"
 ---
-# <a name="ndiskdndisstack"></a>! ndiskd.ndisstack
+# <a name="ndiskdndisstack"></a>!ndiskd.ndisstack
 
 
 **注**  サード パーティ製ネットワーク ドライバー開発者が手動でこの拡張機能のコマンドを使用する必要はありません。 表示される情報を表示することを行うことができますが、ドライバー、詳細を再利用できません。

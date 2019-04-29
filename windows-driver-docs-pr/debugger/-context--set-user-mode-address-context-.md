@@ -16,11 +16,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b6d270f3a75516c1732da48f16b30728c60701
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334621"
 ---
 # <a name="context-set-user-mode-address-context"></a>.context (ユーザーモード アドレス コンテキストの設定)
 
@@ -64,7 +64,7 @@ ms.locfileid: "56582201"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ユーザー モード アドレス コンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+ユーザー モード アドレス コンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
 <a name="remarks"></a>コメント
 -------

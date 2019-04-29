@@ -1,6 +1,6 @@
 ---
-title: 2D と 3D のピンの混在をサポート
-description: 2D と 3D のピンの混在をサポート
+title: 2D ピンと 3D ピンの混在をサポート
+description: 2D ピンと 3D ピンの混在をサポート
 ms.assetid: 26d98eca-b70a-4244-a7c3-d3a19930a96a
 keywords:
 - ハードウェア アクセラレータ WDK DirectSound、2 D および 3D 混在をピン留め
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 048f7e3c4a3a3fa6a68f512d8e0f801d3f1745c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328576"
 ---
-# <a name="supporting-a-mixture-of-2d-and-3d-pins"></a>2D と 3D のピンの混在をサポート
+# <a name="supporting-a-mixture-of-2d-and-3d-pins"></a>2D ピンと 3D ピンの混在をサポート
 
 
 ## <span id="supporting_a_mixture_of_2d_and_3d_pins"></span><span id="SUPPORTING_A_MIXTURE_OF_2D_AND_3D_PINS"></span>

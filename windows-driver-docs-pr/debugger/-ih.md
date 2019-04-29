@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e2c6da77278c0c1b39062dba06c4983d31ed5a09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336440"
 ---
 # <a name="ih"></a>!ih
 
@@ -62,7 +62,7 @@ ms.locfileid: "56571430"
 
 この拡張機能のコマンドは、対象の Itanium ベース コンピューターにのみ使用できます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能は、プログラム カウンターのシンボルを参照することがなく、割り込みの履歴レコードを表示します。 プログラム カウンターのシンボルを使用して、割り込みの履歴レコードを表示するには、使用、 [ **! his** ](-ihs.md)拡張機能。 割り込みの履歴レコードを有効にするには追加 **/configflag = 32**ブート エントリのオプションにします。

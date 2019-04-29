@@ -5,11 +5,11 @@ ms.assetid: 314fd479-7dcf-4559-a195-26e4c020446c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3704008076dd6468d5f95adf4194ddca58f1a26e
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383772"
 ---
 # <a name="design-messages-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリでメッセージを設計する
 
@@ -75,9 +75,9 @@ ms.locfileid: "57350233"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
--   使用[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br211837)メッセージを表示します。 詳細については、[リスト ビューの追加、セマンティック ズーム、およびその他のデータ コントロール](https://msdn.microsoft.com/library/windows/apps/hh465409)を参照してください。
+-   使用[ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br211837)メッセージを表示します。 詳細については、次を参照してください。[リスト ビューの追加、セマンティック ズーム、およびその他のデータ コントロール](https://msdn.microsoft.com/library/windows/apps/hh465409)します。
 
--   表示し、メッセージを削除するには、アプリ バーのコントロールを使用します。 詳細については、[アプリ バーのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465302)を参照してください。
+-   表示し、メッセージを削除するには、アプリ バーのコントロールを使用します。 詳細については、次を参照してください。[アプリ バーのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465302)します。
 
 -   [その他の Windows コンポーネントと統合して、モバイル ブロード バンド アプリ](integrate-a-mobile-broadband-app-with-other-windows-components.md#tileandtoast)
 

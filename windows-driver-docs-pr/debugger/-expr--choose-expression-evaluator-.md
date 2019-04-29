@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 54e745cb7c255e0503ce62f83f90c5b01e2c8693
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336771"
 ---
 # <a name="expr-choose-expression-evaluator"></a>.expr (式エバリュエーターの選択)
 
@@ -75,7 +75,7 @@ C++ の式エバリュエーターを既定の式の種類を変更します。
 
 [**いますか。(C++ の式の評価)** ](----evaluate-c---expression-.md)のコマンドは、[ウォッチ] ウィンドウで、および[[ローカル] ウィンドウ](locals-window.md)常に C++ 式の構文を使用します。 その他のすべてのコマンドとデバッグ情報のウィンドウは、既定の式エバリュエーターを使用します。
 
-どの構文を使用するかを制御する方法の詳細については、[を評価する式](evaluating-expressions.md)を参照してください。 構文の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
+どの構文を使用するかを制御する方法の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
 
  
 

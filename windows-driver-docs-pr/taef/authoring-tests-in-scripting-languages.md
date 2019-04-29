@@ -5,11 +5,11 @@ ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 989f1f25825050e7115933e57bd2bd82f5ab90ac
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385155"
 ---
 # <a name="authoring-tests-in-scripting-languages"></a>スクリプト言語でテストを作成する
 

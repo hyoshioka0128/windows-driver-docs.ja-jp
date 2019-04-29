@@ -1,17 +1,17 @@
 ---
-title: .netsyms (無効にするネットワークのシンボルの読み込み中)
-description: .netsyms (無効にするネットワークのシンボルの読み込み中)
+title: .netsyms (ネットワーク シンボルの読み込みを無効にする)
+description: .netsyms (ネットワーク シンボルの読み込みを無効にする)
 ms.assetid: 09347909-47C8-4a4d-8246-C32A1791F46B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a6eea7941550e08ef5d10a8f1c942b73266440
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335885"
 ---
-# <a name="netsyms-disable-network-symbol-loading"></a>.netsyms (無効にするネットワークのシンボルの読み込み中)
+# <a name="netsyms-disable-network-symbol-loading"></a>.netsyms (ネットワーク シンボルの読み込みを無効にする)
 
 
 ## <span id="ddk_apc_meta_netsyms_dbg"></span><span id="DDK_APC_META_NETSYMS_DBG"></span>

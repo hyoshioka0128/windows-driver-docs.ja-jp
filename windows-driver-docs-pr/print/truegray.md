@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bb50f3a47009a33b06cfb6388926557d8154ffe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384952"
 ---
 # <a name="truegray"></a>TrueGray
 
@@ -37,7 +37,7 @@ TrueGray 機能はプライベート*PPD*キーワード、 \* **ADTrueGray**PSc
 <thead>
 <tr class="header">
 <th>キーワードと値</th>
-<th>意味</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>

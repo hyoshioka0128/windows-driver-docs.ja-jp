@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 147d4e6ad75831fb3d3b3ffb42b6b357adcc20b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370701"
 ---
 # <a name="wiaipsdeskewx"></a>WIA\_IP\_DESKEW\_X
 
@@ -32,7 +32,7 @@ WIA\_IP\_DESKEW\_と共に、プロパティの X、 [ **WIA\_IP\_DESKEW\_Y** ](
 
 アクセス権:読み取り/書き込み
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA\_IP\_DESKEW\_X と WIA\_IP\_DESKEW\_Y プロパティでは、傾斜したイメージの 2 つ上の角が外接する四角形内にあるかを記述しますその[。 **WIA\_IP\_XPOS**](wia-ips-xpos.md)、 [ **WIA\_IP\_YPOS**](wia-ips-ypos.md)、 [**WIA\_IP\_XEXTENT**](wia-ips-xextent.md)、および[ **WIA\_IP\_YEXTENT** ](wia-ips-yextent.md)プロパティを定義します。
@@ -41,7 +41,7 @@ WIA の有効な値\_IP\_DESKEW\_X が 0 の間である必要があり、(WIA\_
 
 WIA\_IP\_DESKEW\_X には、WIA から x 方向のピクセルの数が含まれています。\_IP\_を修正する画像の上隅の x 座標を XPOS します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

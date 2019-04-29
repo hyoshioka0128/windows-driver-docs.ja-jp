@@ -1,6 +1,6 @@
 ---
-title: ユーザー モード コンポーネントから DDI ProcAmp コントロールを呼び出す
-description: ユーザー モード コンポーネントから DDI ProcAmp コントロールを呼び出す
+title: ユーザー モード コンポーネントからの ProcAmp コントロール DDI の呼び出し
+description: ユーザー モード コンポーネントからの ProcAmp コントロール DDI の呼び出し
 ms.assetid: 1e4e19bb-eb4b-4db6-8947-429a1a414e4a
 keywords:
 - ProcAmp コントロール DDI WDK DirectX VA を呼び出す
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a6fd20cf863b0e7bac842b1ec421b149891ee44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385705"
 ---
-# <a name="calling-the-procamp-control-ddi-from-a-user-mode-component"></a>ユーザー モード コンポーネントから DDI ProcAmp コントロールを呼び出す
+# <a name="calling-the-procamp-control-ddi-from-a-user-mode-component"></a>ユーザー モード コンポーネントからの ProcAmp コントロール DDI の呼び出し
 
 
 ## <span id="ddk_calling_the_procamp_control_ddi_from_a_user_mode_component_gg"></span><span id="DDK_CALLING_THE_PROCAMP_CONTROL_DDI_FROM_A_USER_MODE_COMPONENT_GG"></span>
@@ -25,11 +25,11 @@ VMR などのユーザー モード コンポーネントへの呼び出しを�
 
 VMR が ProcAmp コントロールの機能にアクセスできるように、ディスプレイ ドライバーが実装する必要があります、[補正コールバック関数のモーション](motion-compensation-callbacks.md)のメンバーが定義されている、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。
 
-ドライバーの開発を簡素化するドライバー開発者は動き補正コード テンプレートを使用し、実装、 [ProcAmp コントロール サンプル関数](sample-functions-for-procamp-control.md)します。 動き補正テンプレートは、その ProcAmp コントロール ProcAmp コントロールの操作を実行するサンプル関数を呼び出します。 詳細については動き補正テンプレートを使用して、[DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)を参照してください。
+ドライバーの開発を簡素化するドライバー開発者は動き補正コード テンプレートを使用し、実装、 [ProcAmp コントロール サンプル関数](sample-functions-for-procamp-control.md)します。 動き補正テンプレートは、その ProcAmp コントロール ProcAmp コントロールの操作を実行するサンプル関数を呼び出します。 詳細については動き補正テンプレートを使用して、次を参照してください。 [DirectX VA デバイス用のコード例](example-code-for-directx-va-devices.md)します。
 
 次の手順では、VMR ProcAmp コントロール DDI への呼び出しを開始する方法について説明します。
 
-1.  VMR はフィルターのグラフに追加するときに、ドライバーによって提供されるへの呼び出しを開始します。 [ *DdMoCompGetGuids* ](https://msdn.microsoft.com/library/windows/hardware/ff550236)ドライバーでサポートされているデバイスの一覧を取得するコールバック関数。 **GetMoCompGuids** DD のメンバー\_MOTIONCOMPCALLBACKS がこのコールバック関数をポイントします。 フィルターのグラフの詳細については、[KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)を参照してください。
+1.  VMR はフィルターのグラフに追加するときに、ドライバーによって提供されるへの呼び出しを開始します。 [ *DdMoCompGetGuids* ](https://msdn.microsoft.com/library/windows/hardware/ff550236)ドライバーでサポートされているデバイスの一覧を取得するコールバック関数。 **GetMoCompGuids** DD のメンバー\_MOTIONCOMPCALLBACKS がこのコールバック関数をポイントします。 フィルターのグラフの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)します。
 
 2.  VMR への呼び出しを開始するインター コンテナー デバイス GUID が存在する場合、 [ *DdMoCompCreate* ](https://msdn.microsoft.com/library/windows/hardware/ff549656)デバイスのインスタンスを作成するコールバック関数。 **CreateMoComp** DD のメンバー\_MOTIONCOMPCALLBACKS がコールバック関数を指します。 **DdMoCompCreate**呼び出すには、GUID がで指定されたコンテナーのデバイスへのポインター、 **lpGuid**のメンバー、 [ **DD\_CREATEMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff550529)構造体。 コンテナー デバイス GUID の定義は次のとおりです。
 

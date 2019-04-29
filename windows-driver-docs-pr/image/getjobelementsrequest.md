@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17c3eb4f27339aeca645f764327371b11d9875b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384557"
 ---
 # <a name="getjobelementsrequest-element"></a>GetJobElementsRequest 要素
 
@@ -72,7 +72,7 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 
 クライアントが呼び出すことができます**GetJobElementsRequest**ジョブのジョブに関連する要素の値を決定する[ **JobId** ](jobid.md)を識別します。 WSD スキャン サービスの応答でなければなりません、 **GetJobElementsResponse**します。 スキャン サービスが返す情報は、スキーマのスキャン ジョブに関連する部分に完全に準拠する必要があります。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
 
 **GetJobElementsRequest**次のエラーを返すも可能性があります。
 
@@ -84,7 +84,7 @@ WSD スキャン サービスをサポートする必要があります、 **Get
     |----------------|------------------------------------|
     | \[コード\]       | soap 送信者:                        |
     | \[サブコード\]    | wscn:ClientErrorJobIdNotFound      |
-    | \[理由\]     | 指定したジョブ Id が見つかりませんでした。 |
+    | \[Reason\]     | 指定したジョブ Id が見つかりませんでした。 |
     | \[詳細\]     | JobId:JobId が正しくありません。             |
 
      

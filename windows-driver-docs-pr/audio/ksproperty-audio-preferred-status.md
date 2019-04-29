@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2bcbcf8f0facc1830f7d3309fcc2c482237086a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332949"
 ---
 # <a name="kspropertyaudiopreferredstatus"></a>KSPROPERTY\_オーディオ\_優先\_状態
 
@@ -72,7 +72,7 @@ KSPROPERTY\_オーディオ\_優先\_プロパティの状態要求のステー�
 
 [SysAudio システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#sysaudio-system-driver) wave レコード、MIDI、またはミキサーのデバイスを優先する新しいデバイスを選択したとき、または以前に選択したときに優先するデバイスの選択を解除ウェーブの再生を通知するためにこのプロパティを使用します。
 
-任意のデバイスについては、[ **SetupPreferredAudioDevices**](setuppreferredaudiodevices.md)を参照してください。
+任意のデバイスについては、次を参照してください。 [ **SetupPreferredAudioDevices**](setuppreferredaudiodevices.md)します。
 
 <a name="requirements"></a>要件
 ------------

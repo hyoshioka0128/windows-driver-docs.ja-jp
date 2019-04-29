@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1174b5ca33f16f2137e6529c78b9d4b78096c856
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334208"
 ---
-# <a name="timer"></a>! タイマー
+# <a name="timer"></a>!timer
 
 
 **! タイマー**拡張機能は、すべてのシステムの詳細な一覧を表示します。 タイマーを使用します。

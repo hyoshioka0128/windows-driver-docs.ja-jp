@@ -1,17 +1,17 @@
 ---
-title: Irp の I/O キューへのディスパッチ
-description: Irp の I/O キューへのディスパッチ
+title: I/O キューへの IRP のディスパッチ
+description: I/O キューへの IRP のディスパッチ
 ms.assetid: 71872114-2A38-47FE-9D18-EF8923273811
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3cbd7dfb6cfb9238d6f1bc37c04dbe5f3f2b783
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337810"
 ---
-# <a name="dispatching-irps-to-io-queues"></a>Irp の I/O キューへのディスパッチ
+# <a name="dispatching-irps-to-io-queues"></a>I/O キューへの IRP のディスパッチ
 
 
 \[KMDF および UMDF に適用されます。\]

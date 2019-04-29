@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66af0e802bfa3ec9248506bd8676692aec3e883a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327919"
 ---
 # <a name="first-picture-decoding-configuration"></a>最初の画像デコード構成
 
@@ -30,7 +30,7 @@ ms.locfileid: "56573958"
 <thead>
 <tr class="header">
 <th align="left">Member</th>
-<th align="left">[値]</th>
+<th align="left">値</th>
 </tr>
 </thead>
 <tbody>
@@ -48,7 +48,7 @@ ms.locfileid: "56573958"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigBitstreamRaw</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bConfigMBcontrolRasterOrder</strong></p></td>
@@ -60,39 +60,39 @@ ms.locfileid: "56573958"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bConfigSpatialResid8</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigResid8Subtraction</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bConfigSpatialHost8or9Clipping</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigSpatialResidInterleaved</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bConfigIntraResidUnsigned</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigResidDiffAccelerator</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bConfigHostInverseScan</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigSpecificIDCT</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bConfig4GroupedCoefs</strong></p></td>
-<td align="left"><p>0</p></td>
+<td align="left"><p>Zero</p></td>
 </tr>
 </tbody>
 </table>

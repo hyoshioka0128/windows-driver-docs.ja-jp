@@ -1,6 +1,6 @@
 ---
-title: スマート カード リーダーのドライバーの IOCTL 要求の管理
-description: スマート カード リーダーのドライバーの IOCTL 要求の管理
+title: スマート カード リーダー ドライバーでの IOCTL 要求の管理
+description: スマート カード リーダー ドライバーでの IOCTL 要求の管理
 ms.assetid: 610476fc-59e7-4981-9afa-20ed7cc697c1
 keywords:
 - スマート カードのドライバー WDK、IOCTL 要求の管理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c6a1f254bda1ac3754f278461600b929592a69a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331106"
 ---
-# <a name="management-of-ioctl-requests-in-a-smart-card-reader-driver"></a>スマート カード リーダーのドライバーの IOCTL 要求の管理
+# <a name="management-of-ioctl-requests-in-a-smart-card-reader-driver"></a>スマート カード リーダー ドライバーでの IOCTL 要求の管理
 
 
 ## <span id="_ntovr_management_of_ioctl_requests_in_a_smart_card_reader_driver"></span><span id="_NTOVR_MANAGEMENT_OF_IOCTL_REQUESTS_IN_A_SMART_CARD_READER_DRIVER"></span>

@@ -1,6 +1,6 @@
 ---
-title: ビデオ コンテンツを保護します。
-description: ビデオ コンテンツを保護します。
+title: ビデオ コンテンツの保護
+description: ビデオ コンテンツの保護
 ms.assetid: eacb1c8f-6c29-4797-9476-4dcf582a3633
 keywords:
 - Windows 7 の WDK の表示のビデオ コンテンツを保護します。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46ebfaa0da34781bec049e833899112fbe3be479
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383864"
 ---
-# <a name="protecting-video-content"></a>ビデオ コンテンツを保護します。
+# <a name="protecting-video-content"></a>ビデオ コンテンツの保護
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c00390ea06a189b8f6541cfac89cfcd65ec34b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334301"
 ---
-# <a name="rebase"></a>! リベース
+# <a name="rebase"></a>!rebase
 
 
 **! リベース**rebase.log ファイルで指定したアドレスまたはシンボルの拡張機能の検索。

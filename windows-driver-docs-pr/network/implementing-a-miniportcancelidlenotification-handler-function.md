@@ -1,17 +1,17 @@
 ---
-title: MiniportCancelIdleNotification ハンドラー関数を実装します。
-description: MiniportCancelIdleNotification ハンドラー関数を実装します。
+title: MiniportCancelIdleNotification ハンドラー関数の実装
+description: MiniportCancelIdleNotification ハンドラー関数の実装
 ms.assetid: 51C25573-5723-44F9-B498-EBEF6756F3B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7f94031ba27898a11dd9fcf2ba3fca0d3a65541
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383648"
 ---
-# <a name="implementing-a-miniportcancelidlenotification-handler-function"></a>MiniportCancelIdleNotification ハンドラー関数を実装します。
+# <a name="implementing-a-miniportcancelidlenotification-handler-function"></a>MiniportCancelIdleNotification ハンドラー関数の実装
 
 
 NDIS ミニポート ドライバーの呼び出す[ *MiniportCancelIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464088)アイドル状態の通知プロセスをキャンセルし、ネットワーク アダプターに電力状態に移行するためにハンドラー関数。 この関数が呼び出されたときに、ミニポート ドライバーは次の手順に従います。
@@ -43,7 +43,7 @@ VOID MiniportCancelIdleNotification(
 }
 ```
 
-USB アイドル要求 IRP の完了ルーチンの実装のガイドラインについては、[USB のアイドル状態要求 IRP の完了ルーチンを実装する](implementing-a-usb-idle-request-irp-completion-routine.md)を参照してください。
+USB アイドル要求 IRP の完了ルーチンの実装のガイドラインについては、次を参照してください。 [USB のアイドル状態要求 IRP の完了ルーチンを実装する](implementing-a-usb-idle-request-irp-completion-routine.md)します。
 
  
 

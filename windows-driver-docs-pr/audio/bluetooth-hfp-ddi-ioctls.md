@@ -1,17 +1,17 @@
 ---
-title: Bluetooth HFP DDI Ioctl
+title: Bluetooth HFP DDI IOCTLs
 description: Windows 8 では、Bluetooth バイパス オーディオ接続の動作に、ハンズフリー プロファイル (HFP) クラス ドライバーを使用するオーディオ ドライバーを許可する DDI の一部として一連の I/O 制御コード (Ioctl) について説明します。
 ms.assetid: 94B6F113-5130-4772-B8A0-5C9992501824
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae729e5e7f8ef4ab4372f66b342eb85ad065957f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333891"
 ---
-# <a name="bluetooth-hfp-ddi-ioctls"></a>Bluetooth HFP DDI Ioctl
+# <a name="bluetooth-hfp-ddi-ioctls"></a>Bluetooth HFP DDI IOCTLs
 
 
 Windows 8 では、Bluetooth バイパス オーディオ接続の動作に、ハンズフリー プロファイル (HFP) クラス ドライバーを使用するオーディオ ドライバーを許可する DDI の一部として一連の I/O 制御コード (Ioctl) について説明します。
@@ -68,7 +68,7 @@ Windows 10 では、次の新しいサブスクリプションを追加して Io
 
 [**IOCTL\_BTHHFP\_DEVICE\_GET\_CODEC\_ID**](https://msdn.microsoft.com/library/windows/hardware/dn798965)
 
-これらの Ioctl で動作する構造については、[Bluetooth HFP DDI 構造](bluetooth-hfp-ddi-structures.md)を参照してください。
+これらの Ioctl で動作する構造については、次を参照してください。 [Bluetooth HFP DDI 構造](bluetooth-hfp-ddi-structures.md)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

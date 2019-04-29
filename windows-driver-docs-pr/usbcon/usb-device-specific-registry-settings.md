@@ -1,16 +1,16 @@
 ---
-Description: This topic describes the device-specific registry entries.
-title: USB デバイスのレジストリ エントリ
+Description: このトピックでは、デバイス固有のレジストリ エントリを説明します。
+title: USB デバイス レジストリ エントリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b8308e45f36a8261a2787ebbfed7160745f2e3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384526"
 ---
-# <a name="usb-device-registry-entries"></a>USB デバイスのレジストリ エントリ
+# <a name="usb-device-registry-entries"></a>USB デバイス レジストリ エントリ
 
 
 このトピックでは、デバイス固有のレジストリ エントリを説明します。

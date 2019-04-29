@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fb374611ea34d06b6ddb1ebc1f411b4e8e424aaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335935"
 ---
 # <a name="ndiskdnbpool"></a>!ndiskd.nbpool
 
@@ -50,7 +50,7 @@ NB プールのハンドル。
 
 Ndiskd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 入力、 **! ndiskd.nbpool**コマンドとパラメーターのないすべての割り当てられた NB プールの一覧を参照してください。 この例では、Nnbf タグを持つ Netio サービスによって割り当てられた NB プールを探します。 そのハンドルは、ffffdf801308ca40 です。

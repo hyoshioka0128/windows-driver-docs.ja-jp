@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b9385a6ad354e28afccb0efded51abb748129cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335989"
 ---
 # <a name="ndiskddbglevel"></a>!ndiskd.dbglevel
 
@@ -53,11 +53,11 @@ ms.locfileid: "56550727"
 
  
 
-詳細については、WPP は、[WPP ソフトウェア トレース](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)を参照してください。
+詳細については、WPP は、次を参照してください。 [WPP ソフトウェア トレース](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)します。
 
-Driver Verifier についての詳細については、[Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)を参照してください。
+Driver Verifier についての詳細については、次を参照してください。 [Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)します。
 
-WMI のトレースの詳細については、[WMI トレース拡張機能 (Wmitrace.dll)](https://msdn.microsoft.com/library/windows/hardware/ff561362)を参照してください。
+WMI のトレースの詳細については、次を参照してください。 [WMI トレース拡張機能 (Wmitrace.dll)](https://msdn.microsoft.com/library/windows/hardware/ff561362)します。
 
 ```console
 !ndiskd.dbglevel [-level <str>] 
@@ -102,7 +102,7 @@ Ndiskd.dll
 
 [WPP ソフトウェア トレース](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)
 
-[Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)
+[ドライバーの検証ツール](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)
 
 [WMI 拡張機能 (Wmitrace.dll) のトレース](https://msdn.microsoft.com/library/windows/hardware/ff561362)
 

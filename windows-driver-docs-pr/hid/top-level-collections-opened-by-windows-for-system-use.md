@@ -1,19 +1,19 @@
 ---
-title: システムの使用、Windows によって開かれた最上位のコレクション
-description: システムの使用、Windows によって開かれた最上位のコレクション
+title: Windows によって開かれる最上位のコレクション (システムで使用)
+description: Windows によって開かれる最上位のコレクション (システムで使用)
 ms.assetid: e489ce46-379e-4ba9-a0e3-5848b1f4a17b
 keywords:
 - WDK を非表示に最上位のコレクション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80f4c7794f4dada8b79d887a7b334539e40771f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384355"
 ---
-# <a name="top-level-collections-opened-by-windows-for-system-use"></a>システムの使用、Windows によって開かれた最上位のコレクション
+# <a name="top-level-collections-opened-by-windows-for-system-use"></a>Windows によって開かれる最上位のコレクション (システムで使用)
 
 
 

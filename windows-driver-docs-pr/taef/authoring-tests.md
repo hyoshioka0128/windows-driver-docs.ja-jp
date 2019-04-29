@@ -1,17 +1,17 @@
 ---
-title: テストの作成
-description: テストの作成
+title: テストを作成する
+description: テストを作成する
 ms.assetid: 728821AC-9C90-4dae-8A42-2C8E712174DF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76b560e66f5b6c16eb8c89dd9bd5479f620b47fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385127"
 ---
-# <a name="authoring-tests"></a>テストの作成
+# <a name="authoring-tests"></a>テストを作成する
 
 
 TAEF には、さまざまな開発言語で書き込まれたテストの実行がサポートしています。 現時点では、ネイティブ C++、マネージ コードおよびスクリプト言語で記述されたテストをサポートします。 各シナリオでテストがマークされているアップ言語固有の構造を使用します。 TAEF 内のコードでは、最終的なテスト ファイルを解釈し、それらを中間表記で TAEF エンジンについて説明します。 TAEF は、テストが書き込まれた方法の具体的な詳細情報をしなくても、この中間表記を操作します。

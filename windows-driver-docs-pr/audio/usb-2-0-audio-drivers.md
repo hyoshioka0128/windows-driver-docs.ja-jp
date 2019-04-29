@@ -1,18 +1,18 @@
 ---
-title: USB 2.0 のオーディオ ドライバー
+title: USB Audio 2.0 のドライバー
 description: 1703 のリリース以降、Windows 10 では、USB オーディオ 2.0 ドライバーが Windows に含まれます。 このドライバーは、基本的な機能を提供します。
 ms.date: 10/23/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fcdf5f1a141a94257ded52be6616ba068164912f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335384"
 ---
-# <a name="usb-audio-20-drivers"></a>USB 2.0 のオーディオ ドライバー
+# <a name="usb-audio-20-drivers"></a>USB Audio 2.0 のドライバー
 
-1703 のリリース以降、Windows 10 では、USB オーディオ 2.0 ドライバーが Windows に含まれます。 USB オーディオ 2.0 デバイス クラスをサポートするために設計されています。 ドライバーは、WaveRT オーディオ ポート クラス ミニポートです。 USB オーディオ 2.0 デバイス クラスの詳細については、[ https://www.usb.org/developers/docs/devclass_docs/](https://www.usb.org/developers/docs/devclass_docs/)を参照してください。 
+1703 のリリース以降、Windows 10 では、USB オーディオ 2.0 ドライバーが Windows に含まれます。 USB オーディオ 2.0 デバイス クラスをサポートするために設計されています。 ドライバーは、WaveRT オーディオ ポート クラス ミニポートです。 USB オーディオ 2.0 デバイス クラスの詳細については、次を参照してください。 [ https://www.usb.org/developers/docs/devclass_docs/](https://www.usb.org/developers/docs/devclass_docs/)します。 
 
 ドライバーの名前は: _usbaudio2.sys_と関連付けられている inf ファイルは_usbaudio2.inf_します。
 
@@ -269,13 +269,13 @@ REG_DWORD  T<tid>_J<n>_Color              The color needs to be represent by RGB
 
 T1_NrJacks、T1_J2_ChannelMapping、T1_J2_ConnectorType
 
-その他のオーディオ ジャックについては、[KSJACK_DESCRIPTION 構造](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)を参照してください。
+その他のオーディオ ジャックについては、次を参照してください。 [KSJACK_DESCRIPTION 構造](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)します。
 
 さまざまな方法では、これらのレジストリ値を設定できます。 
 
 - これらの値を設定する目的のためのインボックス INF をラップするカスタムの Inf を使用します。
 
-- H または w は、Microsoft OS ディスクリプターを使用して (次の例を参照してください)、USB デバイスのデバイスによって直接。 これらの記述子を作成する方法の詳細については、[USB デバイスの Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)を参照してください。
+- H または w は、Microsoft OS ディスクリプターを使用して (次の例を参照してください)、USB デバイスのデバイスによって直接。 これらの記述子を作成する方法の詳細については、次を参照してください。 [USB デバイスの Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)します。
 
 ### <a name="microsoft-os-descriptors-for-usb-example"></a>USB の例については、Microsoft OS ディスクリプター
 
@@ -338,7 +338,7 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
 ## <a name="troubleshooting"></a>トラブルシューティング
 ドライバーが起動しない場合、システム イベント ログをチェックする必要があります。 ドライバーは、失敗の理由を示すイベントを記録します。 同様に、オーディオ ログ手動で収集できるで説明されている手順に従って[このブログ エントリ](https://blogs.msdn.microsoft.com/matthew_van_eerde/2017/01/09/collecting-audio-logs-the-old-fashioned-way/)します。 場合は、エラーは、ドライバーの問題を示している可能性がありますは、以下に示すフィードバック Hub を使用して報告して、ログが含まれます。
 
-補足 TMF ファイルを使用して USB オーディオ 2.0 クラス ドライバーのログを読み取る方法については、[このブログ エントリ](https://blogs.msdn.microsoft.com/matthew_van_eerde/2017/10/23/how-to-gather-and-read-logs-for-microsofts-usb-audio-2-0-class-driver/)を参照してください。 TMF ファイルの使用の概要については、[TMF ファイルでトレース ログを表示する](https://docs.microsoft.com/windows-hardware/drivers/devtest/displaying-a-trace-log-with-a-tmf-file)を参照してください。
+補足 TMF ファイルを使用して USB オーディオ 2.0 クラス ドライバーのログを読み取る方法については、次を参照してください。[このブログ エントリ](https://blogs.msdn.microsoft.com/matthew_van_eerde/2017/10/23/how-to-gather-and-read-logs-for-microsofts-usb-audio-2-0-class-driver/)します。 TMF ファイルの使用の概要については、次を参照してください。 [TMF ファイルでトレース ログを表示する](https://docs.microsoft.com/windows-hardware/drivers/devtest/displaying-a-trace-log-with-a-tmf-file)します。
 
 ## <a name="feedback-hub"></a>フィードバック Hub
 このドライバーに問題が発生した場合は、オーディオのログを収集してくださいに記載されている手順を実行して[このブログ エントリ](https://blogs.msdn.microsoft.com/matthew_van_eerde/2016/09/26/report-problems-with-logs-and-suggest-features-with-the-feedback-hub/)フィードバック Hub 経由で注目にします。

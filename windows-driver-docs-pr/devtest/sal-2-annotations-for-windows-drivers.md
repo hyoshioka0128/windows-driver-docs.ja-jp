@@ -5,18 +5,18 @@ ms.assetid: 2CD181B8-4E1D-457A-9FF9-DAB3AB932730
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1311f596f4d96b1db3c3cdb8d27b428043c10070
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340238"
 ---
 # <a name="sal-20-annotations-for-windows-drivers"></a>Windows ドライバーの SAL 2.0 注釈
 
 
 Microsoft ソース コード注釈言語 (SAL) には、Windows ドライバーの分析と関連のカーネル コードに固有の注釈が含まれています。 注釈の言語は、関数、パラメーター、戻り値、構造、および構造体のフィールドのプロパティを記述する方法を提供します。 注釈は、コメントする、コードを追加、コンパイラによって無視されますが、静的分析ツールを使ってに似ています。 注釈を使用は、開発者の有効性を向上させるのに役立ちます、静的分析の結果の精度を向上させるのに役立ちより適切に特定のバグが存在するかどうかを判断するためのツールを使用します。 ドライバーの注釈は非ドライバーやカーネルに関係のないコードで使用するためのものではありません。 ドライバーの注釈は、Driverspecs.h で定義されます。
 
-**注**  Windows 8 に SAL 1.0 に代わる SAL 2.0 が導入されています。 SAL 2.0 については、[C と C++ コードの欠陥を削減する SAL 注釈を使って](https://go.microsoft.com/fwlink/p/?linkid=247283)を参照してください。 SAL 2.0 には、SAL 1.0 が置き換えられます。 SAL 2.0 が Windows 8 向けに、Windows Driver Kit (WDK) 8 を使用してください。 ドライバーの SAL 1.0 についての情報を必要がある場合は、Windows 7 の WDK に付属するマニュアルを参照してください。
+**注**  Windows 8 に SAL 1.0 に代わる SAL 2.0 が導入されています。 SAL 2.0 については、次を参照してください。 [C と C++ コードの欠陥を削減する SAL 注釈を使って](https://go.microsoft.com/fwlink/p/?linkid=247283)します。 SAL 2.0 には、SAL 1.0 が置き換えられます。 SAL 2.0 が Windows 8 向けに、Windows Driver Kit (WDK) 8 を使用してください。 ドライバーの SAL 1.0 についての情報を必要がある場合は、Windows 7 の WDK に付属するマニュアルを参照してください。
 
  
 
@@ -95,7 +95,7 @@ Microsoft ソース コード注釈言語 (SAL) には、Windows ドライバー
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[SAL 注釈を使用して C/C++ のコード障害を減らす](https://go.microsoft.com/fwlink/p/?linkid=247283)
+[C/C++ コードの欠陥を減らすための SAL 注釈の使用](https://go.microsoft.com/fwlink/p/?linkid=247283)
 
  
 

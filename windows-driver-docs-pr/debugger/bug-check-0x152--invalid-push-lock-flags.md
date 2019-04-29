@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b58f917c72a4aa9debefbbb31e553964f2ba31
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335541"
 ---
 # <a name="bug-check-0x152-invalidpushlockflags"></a>バグ チェック 0x152:無効な\_プッシュ\_ロック\_フラグ
 

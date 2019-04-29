@@ -1,15 +1,15 @@
 ---
-title: IOCTL_ACPI_ENUM_CHILDREN 要求を送信します。
-description: IOCTL_ACPI_ENUM_CHILDREN 要求を送信します。
+title: IOCTL_ACPI_ENUM_CHILDREN 要求を送信する
+description: IOCTL_ACPI_ENUM_CHILDREN 要求を送信する
 ms.assetid: cbad53dd-4320-4920-9d16-231d0aaae839
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 620b75352436551925c185984b6c5ed24fcf1ef0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330272"
 ---
 # <a name="sending-an-ioctlacpienumchildren-request"></a>送信 IOCTL\_ACPI\_ENUM\_子要求
 

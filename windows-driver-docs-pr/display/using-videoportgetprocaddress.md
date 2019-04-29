@@ -1,6 +1,6 @@
 ---
-title: VideoPortGetProcAddress を使用します。
-description: VideoPortGetProcAddress を使用します。
+title: VideoPortGetProcAddress の使用
+description: VideoPortGetProcAddress の使用
 ms.assetid: 48dace7e-7ba3-48bf-9788-469ff42f6fe3
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、複数の Windows バージョン VideoPortGetProcAddress
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7af1231545192fb7da76bb162990ce264aa4c35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388981"
 ---
-# <a name="using-videoportgetprocaddress"></a>VideoPortGetProcAddress を使用します。
+# <a name="using-videoportgetprocaddress"></a>VideoPortGetProcAddress の使用
 
 
 ## <span id="ddk_using_videoportgetprocaddress_gg"></span><span id="DDK_USING_VIDEOPORTGETPROCADDRESS_GG"></span>

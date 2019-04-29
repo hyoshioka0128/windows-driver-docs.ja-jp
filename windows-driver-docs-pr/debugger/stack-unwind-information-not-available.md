@@ -1,6 +1,6 @@
 ---
-title: スタック アンワインド情報を利用できません。
-description: スタック アンワインド情報を利用できません。
+title: Stack Unwind Information Not Available
+description: Stack Unwind Information Not Available
 ms.assetid: 82260f85-780b-4f30-bebd-62faed6efeeb
 keywords:
 - スタック アンワインド情報を利用できません (警告)
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16a3eafedf8830351550145b6724a2fbf509647f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335529"
 ---
-# <a name="stack-unwind-information-not-available"></a>スタック アンワインド情報を利用できません。
+# <a name="stack-unwind-information-not-available"></a>Stack Unwind Information Not Available
 
 
 ## <span id="ddk_stack_unwind_information_not_available_dbg"></span><span id="DDK_STACK_UNWIND_INFORMATION_NOT_AVAILABLE_DBG"></span>

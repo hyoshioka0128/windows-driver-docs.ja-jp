@@ -1,5 +1,5 @@
 ---
-title: .kdfiles (セット ドライバー置換 Map)
+title: .kdfiles (ドライバー置換マップの設定)
 description: .Kdfiles コマンドは、ファイルを読み取り、ドライバーの置換マップとしてその内容が使用されます。
 ms.assetid: 3b0ac8c1-f0bd-4878-9303-23d6999650ee
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 95e85cd4e0d5bc300ec195d55d0e25d33891891c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336347"
 ---
-# <a name="kdfiles-set-driver-replacement-map"></a>.kdfiles (セット ドライバー置換 Map)
+# <a name="kdfiles-set-driver-replacement-map"></a>.kdfiles (ドライバー置換マップの設定)
 
 
 **.Kdfiles**コマンド ファイルを読み取り、ドライバーの置換マップとしてその内容が使用されます。
@@ -44,10 +44,10 @@ ms.locfileid: "56556625"
 現在関連付けリストにドライバー交換の関連付けを追加します。
 
 <span id="_______OldDriver______"></span><span id="_______olddriver______"></span><span id="_______OLDDRIVER______"></span> *OldDriver*   
-ターゲット コンピューターで、以前のドライバのパスとファイル名を指定します。 構文は、 *OldDriver*は後の最初の行の場合と同じ**マップ**ドライバー置換ファイル。 この構文の詳細については、[ドライバー ファイルのマッピング](mapping-driver-files.md)を参照してください。
+ターゲット コンピューターで、以前のドライバのパスとファイル名を指定します。 構文は、 *OldDriver*は後の最初の行の場合と同じ**マップ**ドライバー置換ファイル。 この構文の詳細については、次を参照してください。[ドライバー ファイルのマッピング](mapping-driver-files.md)します。
 
 <span id="_______NewDriver______"></span><span id="_______newdriver______"></span><span id="_______NEWDRIVER______"></span> *NewDriver*   
-新しいドライバーのパスとファイル名を指定します。 このドライバーは、ホスト コンピューターで、またはその他のネットワークの場所にできます。 構文は、 *NewDriver*が 2 番目の行のと同じ**マップ**ドライバー置換ファイル。 この構文の詳細については、[ドライバー ファイルのマッピング](mapping-driver-files.md)を参照してください。
+新しいドライバーのパスとファイル名を指定します。 このドライバーは、ホスト コンピューターで、またはその他のネットワークの場所にできます。 構文は、 *NewDriver*が 2 番目の行のと同じ**マップ**ドライバー置換ファイル。 この構文の詳細については、次を参照してください。[ドライバー ファイルのマッピング](mapping-driver-files.md)します。
 
 <span id="_______-s______"></span><span id="_______-S______"></span> **-s**   
 ファイルを作成し、現在のドライバーの交換の関連付けをそのファイルに書き込みます。

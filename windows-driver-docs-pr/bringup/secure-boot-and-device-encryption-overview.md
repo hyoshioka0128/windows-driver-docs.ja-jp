@@ -5,11 +5,11 @@ ms.assetid: 4e206bd2-7bb4-48c2-9e01-8da041e798ef
 ms.date: 05/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e067a47fb535af8e217ed202ece51e48f3f15f80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337421"
 ---
 # <a name="secure-boot-and-device-encryption-overview"></a>セキュリティで保護されたブートとデバイス暗号化の概要
 
@@ -25,7 +25,7 @@ ms.locfileid: "56581959"
 
 セキュア ブートは、実行を許可する前に、デバイスのファームウェア イメージを検証するプロセスです。 以降の (製造中にファームウェアでプロビジョニングされているキーのハッシュで構成される) の信頼のルートでは、セキュリティで保護された boot 暗号によって検証、UEFI 環境に、プレ UEFI ブート ローダーからのすべてのブート コンポーネントのデジタル署名し、最後に、メインの OS とすべてのコンポーネントをで実行されること (ドライバーやアプリの場合)。 セキュア ブートは、承認済みのコードは、オペレーティング システムの読み込み前に実行できることを確認するのに役立ちます。
 
-SoC ベンダーによって提供されるコア UEFI 環境では、UEFI 仕様のセクション 27 で説明した UEFI セキュア ブートの標準を実装します。 この標準では、すべてが UEFI では、それらが実行される前に UEFI ランタイム変数にプロビジョニングされたキーに対してドライバーとアプリケーションを検証します。 プロセスについて説明します。 SoC ベンダーによって実装されるコア UEFI 環境に関する詳細については、[ブートおよび UEFI](boot-and-uefi.md)と[Windows での UEFI](uefi-in-windows.md)を参照してください。
+SoC ベンダーによって提供されるコア UEFI 環境では、UEFI 仕様のセクション 27 で説明した UEFI セキュア ブートの標準を実装します。 この標準では、すべてが UEFI では、それらが実行される前に UEFI ランタイム変数にプロビジョニングされたキーに対してドライバーとアプリケーションを検証します。 プロセスについて説明します。 SoC ベンダーによって実装されるコア UEFI 環境に関する詳細については、次を参照してください。[ブートおよび UEFI](boot-and-uefi.md)と[Windows での UEFI](uefi-in-windows.md)します。
 
 ### <a name="secure-boot-process"></a>セキュリティで保護された起動プロセス
 
@@ -57,7 +57,7 @@ Oem は、次の要件とセキュア ブートに関連する考慮事項の注
 
 -   製造時に、セキュア ブートの有効化プロセスの一環として、リプレイ保護されたメモリ ブロック (RPMB) eMMC 部分をプロビジョニングする必要があります。 このプロビジョニングの発生後特定 eMMC 部分と、デバイスで SoC コンポーネントをまとめて; バインドします。eMMC 部分は削除され、OS、RPMB の利用を持つ別のデバイスで再利用されることはできません。
 
--   セキュア ブートを有効にすると、すべてのドライバーとデバイス上のアプリは、ために、オペレーティング システムによって読み込まれる署名する必要があります。 詳細については、[コード署名](https://msdn.microsoft.com/library/windows/hardware/dn756634)を参照してください。
+-   セキュア ブートを有効にすると、すべてのドライバーとデバイス上のアプリは、ために、オペレーティング システムによって読み込まれる署名する必要があります。 詳細については、次を参照してください。[コード署名](https://msdn.microsoft.com/library/windows/hardware/dn756634)します。
 
 ## <a name="device-encryption"></a>デバイスの暗号化
 

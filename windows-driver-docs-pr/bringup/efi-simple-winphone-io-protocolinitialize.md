@@ -1,15 +1,15 @@
 ---
-title: EFI_SIMPLE_WINPHONE_IO_PROTOCOL します。初期化します。
-description: EFI_SIMPLE_WINPHONE_IO_PROTOCOL します。初期化します。
+title: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Initialize
+description: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Initialize
 ms.assetid: e27ed767-7854-4b2f-8043-35c39357eee4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d97671cbdffee53a43ac7fce5e85d4d6a36ad1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337800"
 ---
 # <a name="efisimplewinphoneioprotocolinitialize"></a>EFI\_単純\_WINPHONE\_IO\_プロトコル。初期化します。
 

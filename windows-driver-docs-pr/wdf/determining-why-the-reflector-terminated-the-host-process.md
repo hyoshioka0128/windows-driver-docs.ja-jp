@@ -1,5 +1,5 @@
 ---
-title: リフレクターが、ホスト プロセスを終了した理由を判断します。
+title: リフレクターがホスト プロセスを終了した理由の特定
 description: このトピックでは、reflector は、ドライバーのホスト プロセス (WUDFHost.exe) を終了する理由を分析する方法について説明します。
 ms.assetid: c80b117b-597a-494a-bc28-5a918d2a9279
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af7e4207a514cc7d45b4f24db1a627d301e03c45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383755"
 ---
-# <a name="determining-why-the-reflector-terminated-the-host-process"></a>リフレクターが、ホスト プロセスを終了した理由を判断します。
+# <a name="determining-why-the-reflector-terminated-the-host-process"></a>リフレクターがホスト プロセスを終了した理由の特定
 
 
 このトピックでは、reflector は、ドライバーのホスト プロセス (WUDFHost.exe) を終了する理由を分析する方法について説明します。

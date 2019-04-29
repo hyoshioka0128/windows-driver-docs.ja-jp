@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d15ec687ae4cbec93025efc99e9df5862a0fb7b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328757"
 ---
 # <a name="prefetch-offsets"></a>プリフェッチ オフセット
 
@@ -43,7 +43,7 @@ WavePci ミニポート ドライバーが呼び出すだけで、障害モー�
 
 特定の古い DirectSound アプリケーションと互換性を保つ、DirectSound は現在 10 ミリ秒でハードウェア アクセラレータを使用した pin の書き込みカーソルを埋めます。 埋め込みの量が、後で変わる可能性がありますに注意してください。
 
-書き込みカーソルとドライバー レベルでプレイ カーソルの管理に関する詳細については、[オーディオ位置プロパティ](audio-position-property.md)を参照してください。
+書き込みカーソルとドライバー レベルでプレイ カーソルの管理に関する詳細については、次を参照してください。[オーディオ位置プロパティ](audio-position-property.md)します。
 
  
 

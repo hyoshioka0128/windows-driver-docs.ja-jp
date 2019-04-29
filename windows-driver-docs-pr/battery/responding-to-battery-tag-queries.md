@@ -1,19 +1,19 @@
 ---
-title: バッテリのタグのクエリに応答してください。
-description: バッテリのタグのクエリに応答してください。
+title: バッテリ タグ クエリへの応答
+description: バッテリ タグ クエリへの応答
 ms.assetid: ac22a1d3-413c-4991-ac9c-fbfb2c6f16c6
 keywords:
 - バッテリ タグ WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 676e5b55603f5749d5ee3422a9e44f3dceca276a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335050"
 ---
-# <a name="responding-to-battery-tag-queries"></a>バッテリのタグのクエリに応答してください。
+# <a name="responding-to-battery-tag-queries"></a>バッテリ タグ クエリへの応答
 
 
 ## <span id="ddk_responding_to_battery_tag_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_TAG_QUERIES_DG"></span>

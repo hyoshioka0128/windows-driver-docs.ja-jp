@@ -1,17 +1,17 @@
 ---
-title: 入力引数を受け取るコントロール メソッドを評価します。
-description: 入力引数を受け取るコントロール メソッドを評価します。
+title: 入力引数を受け取る制御メソッドを評価する
+description: 入力引数を受け取る制御メソッドを評価する
 ms.assetid: 3a4be8a8-0906-4d38-bf6d-f245e6ae236a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cad6bc7b279af08b276a0e90c1fd8e2fecf0248
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328834"
 ---
-# <a name="evaluating-a-control-method-that-takes-input-arguments"></a>入力引数を受け取るコントロール メソッドを評価します。
+# <a name="evaluating-a-control-method-that-takes-input-arguments"></a>入力引数を受け取る制御メソッドを評価する
 
 
 入力引数を受け取るコントロール メソッドを同期的に評価するデバイスのドライバーの送信、 [ **IOCTL\_ACPI\_EVAL\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/ff536148)要求または、 [**IOCTL\_ACPI\_EVAL\_メソッド\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff536149)デバイスに要求します。 これら両方の要求を使用するための一般的な手順については、「 [ACPI コントロールのメソッドを同期的評価](evaluating-acpi-control-methods-synchronously.md)します。 これら 2 つの要求を使用しての特定の違いは次のとおりです。

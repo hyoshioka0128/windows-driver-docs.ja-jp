@@ -1,6 +1,6 @@
 ---
-title: 削除ロックを使用します。
-description: 削除ロックを使用します。
+title: 削除ロックの使用
+description: 削除ロックの使用
 ms.assetid: 78ca7fe5-ceed-4752-bf1b-d13309097cd8
 keywords:
 - PnP WDK のロックを解除します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40042bbc08ce05417dc1b8bf11c9434baf8d06d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391063"
 ---
-# <a name="using-remove-locks"></a>削除ロックを使用します。
+# <a name="using-remove-locks"></a>削除ロックの使用
 
 
 

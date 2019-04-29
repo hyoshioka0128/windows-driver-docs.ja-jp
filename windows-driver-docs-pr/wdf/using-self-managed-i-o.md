@@ -1,6 +1,6 @@
 ---
-title: 自己管理型の I/O を使用してください。
-description: 自己管理型の I/O を使用してください。
+title: 自己管理型 I/O の使用
+description: 自己管理型 I/O の使用
 ms.assetid: 539b3618-44bb-41fd-a9f2-ed6a377c94e2
 keywords:
 - WDK KMDF、自己管理型の I/O を PnP します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bed2027391c02350452736ef6d5466a4fa3f6c61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391838"
 ---
-# <a name="using-self-managed-io"></a>自己管理型の I/O を使用してください。
+# <a name="using-self-managed-io"></a>自己管理型 I/O の使用
 
 
 ほとんどのフレームワークに基づいたドライバーでは、サポートされるデバイスのフレームワークの PnP や電源管理機能を活用します。 つまり、framework ベースのほとんどのドライバーでは、次の手順を実行して、デバイスの PnP、電源の状態を管理するために、フレームワークができます。
@@ -72,7 +72,7 @@ ms.locfileid: "56529261"
 
     (ドライバーにも登録できます、 [ *EvtDeviceSurpriseRemoval* ](https://msdn.microsoft.com/library/windows/hardware/ff540913)コールバック関数。 削除されたときの作業 (D0) 状態で、デバイスであった場合、フレームワーク*EvtDeviceSurpriseRemoval*自己管理型の I/O のコールバック関数を呼び出す前にします。 デバイスが削除されると、低電力状態だった場合*EvtDeviceSurpriseRemoval*が呼び出された後[ *EvtDeviceSelfManagedIoSuspend*](https://msdn.microsoft.com/library/windows/hardware/ff540907))
 
-これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、[PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)を参照してください。
+これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、次を参照してください。 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)します。
 
 ゚は必要ありません、ただし、フレームワークにより、ドライバーにアクセスして、デバイスの PnP、電源の状態をより詳細に制御を有効にして、[フレームワーク内のマシンの状態](state-machines-in-the-framework.md)します。
 

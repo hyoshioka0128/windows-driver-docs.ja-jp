@@ -1,5 +1,5 @@
 ---
-title: .rrestart (登録の再起動)
+title: .rrestart (再起動のレジスタ)
 description: .Rrestart コマンドは、コンピューターの再起動またはアプリケーション エラーが発生した場合の再起動のデバッグ セッションを登録します。
 ms.assetid: 8984DBD8-380D-4EB2-95B1-16764153FCF7
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bdca96bf035f16c21792a29506a918c03ca38c48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335689"
 ---
-# <a name="rrestart-register-for-restart"></a>.rrestart (登録の再起動)
+# <a name="rrestart-register-for-restart"></a>.rrestart (再起動のレジスタ)
 
 
 **.Rrestart**コマンドは、コンピューターの再起動またはアプリケーション エラーが発生した場合の再起動のデバッグ セッションを登録します。

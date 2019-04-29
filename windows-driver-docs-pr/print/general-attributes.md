@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e2afe6c70846e5b0fc39cf551e277832391d7a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329830"
 ---
 # <a name="general-attributes"></a>一般的な属性
 
@@ -50,7 +50,7 @@ ms.locfileid: "56570327"
 
  
 
-構成の依存関係を指定する方法については、[条件付きステートメント](conditional-statements.md)を参照してください。
+構成の依存関係を指定する方法については、次を参照してください。[条件付きステートメント](conditional-statements.md)します。
 
  
 

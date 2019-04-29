@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bfa8a179571bd4f61ad6b11618eb4def71ecbab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334677"
 ---
-# <a name="bpid"></a>! bpid
+# <a name="bpid"></a>!bpid
 
 
 **! Bpid**拡張機能は、ターゲット コンピューター上のプロセスは、デバッガーまたはユーザー モード デバッガーがターゲット コンピューター上のプロセスに接続されている要求によって分割を要求します。

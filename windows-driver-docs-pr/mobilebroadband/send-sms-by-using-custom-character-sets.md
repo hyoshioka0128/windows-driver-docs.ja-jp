@@ -1,17 +1,17 @@
 ---
-title: カスタム文字セットを使用して SMS を送信します。
-description: カスタム文字セットを使用して SMS を送信します。
+title: カスタム文字セットを使用して SMS を送信する
+description: カスタム文字セットを使用して SMS を送信する
 ms.assetid: c1f19c16-66f5-4bcd-ba28-950eaa6472d2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76d978497c3245c4168e9c20263f7c43fed6e6bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384648"
 ---
-# <a name="send-sms-by-using-custom-character-sets"></a>カスタム文字セットを使用して SMS を送信します。
+# <a name="send-sms-by-using-custom-character-sets"></a>カスタム文字セットを使用して SMS を送信する
 
 
 テキスト モードのインターフェイスで生のメッセージ プロトコル データ ユニット (PDU) がサポートされていないシナリオを実現するためにへのアクセスを必要がある場合、Windows 8、Windows 8.1、および Windows 10 を有効にする PDU モード送信と受信 SMS メッセージを読み取るします。

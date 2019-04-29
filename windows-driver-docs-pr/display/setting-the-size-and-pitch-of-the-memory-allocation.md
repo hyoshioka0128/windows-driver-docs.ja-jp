@@ -1,6 +1,6 @@
 ---
-title: メモリ割り当てのピッチとサイズの設定
-description: メモリ割り当てのピッチとサイズの設定
+title: メモリ割り当てのサイズおよびピッチの設定
+description: メモリ割り当てのサイズおよびピッチの設定
 ms.assetid: babd331f-7aec-4aee-aef9-7c10b98f9181
 keywords:
 - メモリ割り当て WDK の表示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eb189d800a37b48433c19afd339334ec72d12d98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383857"
 ---
-# <a name="setting-the-size-and-pitch-of-the-memory-allocation"></a>メモリ割り当てのピッチとサイズの設定
+# <a name="setting-the-size-and-pitch-of-the-memory-allocation"></a>メモリ割り当てのサイズおよびピッチの設定
 
 
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>

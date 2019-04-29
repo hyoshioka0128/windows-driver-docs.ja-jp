@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b31e61cb711fdde9c55c8181d1ba852228ab68a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334148"
 ---
 # <a name="uniqstack"></a>!uniqstack
 
@@ -64,12 +64,12 @@ ms.locfileid: "56574662"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能はのような[ **k、kb、kc、kd、kp、kP、kv (Stack Backtrace の表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンド、重複するスタックが表示されない点が異なります。
 
-例:
+次に、例を示します。
 
 ```dbgcmd
 0:000> !uniqstack

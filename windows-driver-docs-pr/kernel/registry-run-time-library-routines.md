@@ -1,6 +1,6 @@
 ---
-title: レジストリのランタイム ライブラリ ルーチン
-description: レジストリのランタイム ライブラリ ルーチン
+title: レジストリ ランタイム ライブラリ ルーチン
+description: レジストリ ランタイム ライブラリ ルーチン
 ms.assetid: 53e55969-3c8e-44ab-8ba7-6abb0ddbfc24
 keywords:
 - レジストリの WDK カーネル、ランタイム ライブラリ ルーチン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 759770a949541de488c13fcc39d021568ab3e0bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338443"
 ---
-# <a name="registry-run-time-library-routines"></a>レジストリのランタイム ライブラリ ルーチン
+# <a name="registry-run-time-library-routines"></a>レジストリ ランタイム ライブラリ ルーチン
 
 
 

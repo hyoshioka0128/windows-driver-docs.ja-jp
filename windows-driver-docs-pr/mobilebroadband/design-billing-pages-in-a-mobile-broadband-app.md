@@ -1,17 +1,17 @@
 ---
-title: モバイル ブロード バンド アプリ内課金のページをデザインします。
-description: モバイル ブロード バンド アプリ内課金のページをデザインします。
+title: モバイル ブロードバンド アプリで請求ページを設計する
+description: モバイル ブロードバンド アプリで請求ページを設計する
 ms.assetid: 44c5a273-1dd4-4ff5-90aa-9d1f4f855439
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2abd40354ef9dd74f550d750593324007ca59070
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383788"
 ---
-# <a name="design-billing-pages-in-a-mobile-broadband-app"></a>モバイル ブロード バンド アプリ内課金のページをデザインします。
+# <a name="design-billing-pages-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリで請求ページを設計する
 
 
 ユーザーは、請求履歴、請求の概要を表示、料金を支払う、またはプランを再チャージする機能に提供する必要があります。
@@ -52,11 +52,11 @@ ms.locfileid: "56551972"
 
 -   Listview の詳細については、次を参照してください。[クイック スタート。ListView を追加する](https://msdn.microsoft.com/library/windows/apps/hh465496)します。
 
--   エラー処理の設計ガイダンスについては、[、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)を参照してください。
+-   エラー処理の設計ガイダンスについては、次を参照してください。 [、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)します。
 
--   ユーザー補助のガイダンスについては、[、C++ を使用して UWP アプリのユーザー補助機能C#、または Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)を参照してください。
+-   ユーザー補助のガイダンスについては、次を参照してください。 [、C++ を使用して UWP アプリのユーザー補助機能C#、または Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)します。
 
--   組み込みのコントロールを使用する方法の詳細については、[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)を参照してください。
+-   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)します。
 
 -   タッチ入力のガイドラインについては、次を参照してください。[クイック スタート。タッチ入力](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)します。
 

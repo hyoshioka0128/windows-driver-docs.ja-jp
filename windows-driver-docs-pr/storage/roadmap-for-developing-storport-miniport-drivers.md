@@ -5,11 +5,11 @@ ms.assetid: 43a8f1ee-b2d3-4f97-b7e5-d59790ca6754
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d84cab27320605a441ad26690264ba75178e3959
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384174"
 ---
 # <a name="roadmap-for-developing-storport-miniport-drivers"></a>Storport ミニポート ドライバーの開発のロードマップ
 
@@ -46,11 +46,11 @@ ms.locfileid: "56570142"
 
 8.  **Storport ミニポート ドライバーのドライバー パッケージを作成します。**
 
-    詳細については、[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)を参照してください。
+    詳細については、次を参照してください。[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。
 
 9.  **署名し、配布、storport ミニポート****ドライバー。**
 
-    最後の手順では、(必要に応じて) にサインインし、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)を参照してください。
+    最後の手順では、(必要に応じて) にサインインし、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。
 
 これらは、基本的な手順です。 追加の手順は、個々 のドライバーのニーズに基づいて、必要でにあります。
 

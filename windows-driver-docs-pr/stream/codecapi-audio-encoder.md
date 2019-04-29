@@ -5,11 +5,11 @@ ms.assetid: c66cbbe1-36dc-4088-8ecd-7663d4503d6e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71774812c89a4f093f6cf4498a3c55de501b8a36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329598"
 ---
 # <a name="codecapiaudioencoder"></a>CODECAPI\_オーディオ\_エンコーダー
 
@@ -51,11 +51,11 @@ ms.locfileid: "56551722"
 
 プロパティ値 (データの操作) は BOOL 型の、ミニドライバーがオーディオのエンコードをサポートしているかどうかを指定します。 値**TRUE**ミニドライバーは、オーディオのエンコードがサポートしていることを示します。 フィルターは、オーディオ エンコーダーではない場合、この GUID をサポートする必要があります。
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
 **ヘッダー:** 宣言されている*ksmedia.h*します。 含める*ksmedia.h*します。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

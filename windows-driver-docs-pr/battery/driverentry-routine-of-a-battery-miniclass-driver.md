@@ -1,6 +1,6 @@
 ---
-title: バッテリ Miniclass ドライバーの DriverEntry ルーチン
-description: バッテリ Miniclass ドライバーの DriverEntry ルーチン
+title: バッテリ ミニクラス ドライバーの DriverEntry ルーチン
+description: バッテリ ミニクラス ドライバーの DriverEntry ルーチン
 ms.assetid: dc7c9f75-835b-4646-b30b-24c9dcb6ed2d
 keywords:
 - バッテリ miniclass ドライバー WDK、ルーチン
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45c69b4003285662ab64f95ab3566e3f4dbeb5ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335268"
 ---
-# <a name="driverentry-routine-of-a-battery-miniclass-driver"></a>バッテリ Miniclass ドライバーの DriverEntry ルーチン
+# <a name="driverentry-routine-of-a-battery-miniclass-driver"></a>バッテリ ミニクラス ドライバーの DriverEntry ルーチン
 
 
 ## <span id="ddk_driverentry_routine_of_battery_miniclass_driver_dg"></span><span id="DDK_DRIVERENTRY_ROUTINE_OF_BATTERY_MINICLASS_DRIVER_DG"></span>

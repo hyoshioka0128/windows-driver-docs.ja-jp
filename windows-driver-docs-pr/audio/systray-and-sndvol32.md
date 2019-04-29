@@ -1,6 +1,6 @@
 ---
-title: システム トレイと SndVol32
-description: システム トレイと SndVol32
+title: SysTray と SndVol32
+description: SysTray と SndVol32
 ms.assetid: 53f8c5be-d0a5-4364-8fac-813cf9f8318c
 keywords:
 - システム トレイの WDK オーディオ
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c133bebc25bc2209b8b77dfacbadac7cee0f8b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328559"
 ---
-# <a name="systray-and-sndvol32"></a>システム トレイと SndVol32
+# <a name="systray-and-sndvol32"></a>SysTray と SndVol32
 
 
 ## <span id="systray_and_sndvol32"></span><span id="SYSTRAY_AND_SNDVOL32"></span>
@@ -56,7 +56,7 @@ SndVol32 を実行すると、認識しているコントロールのセット�
 
 ミキサー ライン コントロールに適切にマップされていない WDM オーディオ トポロジのノードは、SndVol32 によっては表示されません。 参照してください[トポロジ ノード](topology-nodes.md)詳細についてをノードがミキサー行コントロールに変換されます。 WDM ミキサー行ドライバーによってコントロールにいくつかのノードを変換しますが、SndVol32 が把握しているコントロールのセットのみを表示します。
 
-ボリュームの範囲と、さまざまなバージョンの Windows での既定のボリューム レベルについては、[既定のオーディオ音量設定](default-audio-volume-settings.md)を参照してください。
+ボリュームの範囲と、さまざまなバージョンの Windows での既定のボリューム レベルについては、次を参照してください。[既定のオーディオ音量設定](default-audio-volume-settings.md)します。
 
  
 

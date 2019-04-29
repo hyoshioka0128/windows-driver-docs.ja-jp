@@ -1,17 +1,17 @@
 ---
-title: 単純なデータ ドリブン テストの例
-description: 単純なデータ ドリブン テストの例
+title: シンプルなデータ ドリブン テストの例
+description: シンプルなデータ ドリブン テストの例
 ms.assetid: 59A897C3-C9CD-4e1c-B4BA-F81B3B3E4532
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 507620097df485986b2281923014ee0c22dbdd14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386490"
 ---
-# <a name="simple-data-driven-test-example"></a>単純なデータ ドリブン テストの例
+# <a name="simple-data-driven-test-example"></a>シンプルなデータ ドリブン テストの例
 
 
 このセクションでは、データ ドリブン テストのいくつかの例を説明し、各例では、特定の機能について説明します。

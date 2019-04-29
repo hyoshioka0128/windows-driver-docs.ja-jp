@@ -1,6 +1,6 @@
 ---
-title: チェンジャーのデバイスの拡張機能にデバイスに固有の情報を格納します。
-description: チェンジャーのデバイスの拡張機能にデバイスに固有の情報を格納します。
+title: チェンジャーのデバイス拡張へのデバイス固有情報の格納
+description: チェンジャーのデバイス拡張へのデバイス固有情報の格納
 ms.assetid: 72048d84-1c2d-4f3c-b5e8-f55a812ad567
 keywords:
 - チェンジャー ドライバー WDK のストレージ、デバイスに固有のデータ ストレージ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38ed70319bd7c22cc20044f0a63296e6538674b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389393"
 ---
-# <a name="storing-device-specific-information-in-the-changers-device-extension"></a>チェンジャーのデバイスの拡張機能にデバイスに固有の情報を格納します。
+# <a name="storing-device-specific-information-in-the-changers-device-extension"></a>チェンジャーのデバイス拡張へのデバイス固有情報の格納
 
 
 ## <span id="ddk_storing_device_specific_information_in_the_changers_device_extensi"></span><span id="DDK_STORING_DEVICE_SPECIFIC_INFORMATION_IN_THE_CHANGERS_DEVICE_EXTENSI"></span>
