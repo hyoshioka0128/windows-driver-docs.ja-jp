@@ -1,6 +1,6 @@
 ---
-title: 手動でスタックのウォーク
-description: 手動でスタックのウォーク
+title: スタックの手動ウォーク
+description: スタックの手動ウォーク
 ms.assetid: 9235fe4d-3e94-4143-867f-18b696e489d0
 keywords:
 - スタック トレースを手動でスタックのウォーク
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcb994d4b0641161ecf7c3bd7bdf7a6af253609e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383294"
 ---
-# <a name="manually-walking-a-stack"></a>手動でスタックのウォーク
+# <a name="manually-walking-a-stack"></a>スタックの手動ウォーク
 
 
 ## <span id="ddk_manually_walking_a_stack_dbg"></span><span id="DDK_MANUALLY_WALKING_A_STACK_DBG"></span>

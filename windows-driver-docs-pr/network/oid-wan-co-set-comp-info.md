@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WAN_CO_SET_COMP_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 574d3fcc2015278bd6fb41a9e9086fde02af3d30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384236"
 ---
 # <a name="oidwancosetcompinfo"></a>OID\_WAN\_CO\_設定\_COMP\_情報
 
@@ -37,12 +37,12 @@ OID\_WAN\_CO\_設定\_COMP\_情報 OID に通知するミニポート ドライ�
 <a href="" id="recvcapabilities"></a>**RecvCapabilities**  
 受信側のデータの圧縮機能に関する情報を含む構造体を指定します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 詳しくは、NDIS の\_WAN\_圧縮\_情報構造体を参照してください[OID\_WAN\_取得\_COMP\_情報](https://msdn.microsoft.com/library/windows/hardware/ff561202)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

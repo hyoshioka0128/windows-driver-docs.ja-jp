@@ -1,6 +1,6 @@
 ---
-title: オーバーレイのサポートを確認しています
-description: オーバーレイのサポートを確認しています
+title: オーバーレイのサポートの確認
+description: オーバーレイのサポートの確認
 ms.assetid: cbc3f2c4-a22a-48dd-9a3e-9611aa8dd3c6
 keywords:
 - オーバーレイのサポート Windows 7 の WDK の表示を確認しています
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98f8c50c4495560154deb1a048dd5a2bdfbf6c91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390798"
 ---
-# <a name="verifying-overlay-support"></a>オーバーレイのサポートを確認しています
+# <a name="verifying-overlay-support"></a>オーバーレイのサポートの確認
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

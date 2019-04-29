@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f0bbd499bd7af241e178e0c6ef055aecc6a854ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384267"
 ---
 # <a name="guidclassmouse"></a>GUID_CLASS_MOUSE
 
@@ -31,7 +31,7 @@ GUID_CLASS_MOUSE は古い形式の識別子、[デバイス インターフェ�
 
 WDK に用意されている HID サンプルには、マウス クラス ドライバーが含まれます。 マウスのクラス ドライバーは GUID_CLASS_MOUSE を使用して、このデバイスのインターフェイス クラスのインスタンスを登録します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

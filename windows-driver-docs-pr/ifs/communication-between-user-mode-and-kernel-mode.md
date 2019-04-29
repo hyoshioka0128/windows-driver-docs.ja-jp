@@ -1,6 +1,6 @@
 ---
-title: ユーザー モードとカーネル モードの間の通信
-description: ユーザー モードとカーネル モードの間の通信
+title: ユーザー モードとカーネル モード間のコミュニケーション
+description: ユーザー モードとカーネル モード間のコミュニケーション
 ms.assetid: ddfec0d0-ec7d-4f76-91b8-2cc34cfacf4e
 keywords:
 - フィルター マネージャー WDK ファイル システム ミニフィルター、通信サーバー ポート
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a39f91c6f69747f6169b0daa13ea4b72ab4363a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330576"
 ---
-# <a name="communication-between-user-mode-and-kernel-mode"></a>ユーザー モードとカーネル モードの間の通信
+# <a name="communication-between-user-mode-and-kernel-mode"></a>ユーザー モードとカーネル モード間のコミュニケーション
 
 
 フィルター マネージャーは、ユーザー モードとの通信のポート経由のカーネル モード間の通信をサポートします。 ミニフィルター ドライバーでは、通信ポートのオブジェクトに適用されるセキュリティ記述子を指定することで、ポートのセキュリティを制御します。 通信ポートを介した通信はバッファーされていないので、高速かつ効率的です。 ユーザー モード アプリケーションまたはサービスはメッセージに返信ミニフィルター ドライバーから双方向通信用。

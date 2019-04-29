@@ -1,5 +1,5 @@
 ---
-title: lm (読み込まれたモジュールを一覧表示)
+title: lm (読み込まれたモジュールの一覧表示)
 description: Lm コマンドは、指定された読み込み済みモジュールを表示します。 出力には、状態と、モジュールのパスが含まれています。
 ms.assetid: ee2283bd-4d3f-4e30-8b32-e286a415bb3a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 803d08868069781f43eec4c951818d80fafaec2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383392"
 ---
-# <a name="lm-list-loaded-modules"></a>lm (読み込まれたモジュールを一覧表示)
+# <a name="lm-list-loaded-modules"></a>lm (読み込まれたモジュールの一覧表示)
 
 
 **Lm**コマンドは、指定された読み込み済みモジュールを表示します。 出力には、状態と、モジュールのパスが含まれています。
@@ -53,7 +53,7 @@ lm Options [a Address] [m Pattern | M Pattern]
 (カーネル モードのみ)カーネル モードのシンボル情報のみが表示されます。
 
 <span id="e"></span><span id="E"></span>e  
-シンボルの問題があるモジュールのみを表示します。 これらのシンボルは、モジュールがないシンボルがシンボルの状態は、C、T、モジュール\#M、またはエクスポートします。 これらの表記の詳細については、[シンボルの状態の省略形](symbol-status-abbreviations.md)を参照してください。
+シンボルの問題があるモジュールのみを表示します。 これらのシンボルは、モジュールがないシンボルがシンボルの状態は、C、T、モジュール\#M、またはエクスポートします。 これらの表記の詳細については、次を参照してください。[シンボルの状態の省略形](symbol-status-abbreviations.md)します。
 
 <span id="c"></span><span id="C"></span>c  
 チェックサム データを表示します。
@@ -85,14 +85,14 @@ lm Options [a Address] [m Pattern | M Pattern]
 このモジュールでは、格納されているアドレスを指定します。 このアドレスを格納しているモジュールのみが表示されます。 アドレスに式が含まれている場合は、かっこで囲む必要があります。
 
 <span id="_______m_______Pattern______"></span><span id="_______m_______pattern______"></span><span id="_______M_______PATTERN______"></span> m*パターン*   
-モジュール名に一致する必要があるパターンを指定します。 パターンは、さまざまなワイルドカード文字と指定子を含めることができます。 この情報の詳細、構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
+モジュール名に一致する必要があるパターンを指定します。 パターンは、さまざまなワイルドカード文字と指定子を含めることができます。 この情報の詳細、構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
 
 **注**  ほとんどの場合、モジュール名はファイル名拡張子を除いたファイル名。 たとえば、Flpydisk.sys ドライバーに関する情報を表示する場合は、lm mflpydisk コマンド、lm mflpydisk.sys いないを使用します。 場合によっては、モジュール名はファイル名から大幅に異なります。
 
  
 
-<span id="_______M_______Pattern______"></span><span id="_______m_______pattern______"></span><span id="_______M_______PATTERN______"></span> M*パターン*   
-イメージのパスに一致する必要があるパターンを指定します。 パターンは、さまざまなワイルドカード文字と指定子を含めることができます。 この情報の詳細、構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
+<span id="_______M_______Pattern______"></span><span id="_______m_______pattern______"></span><span id="_______M_______PATTERN______"></span> m*パターン*   
+イメージのパスに一致する必要があるパターンを指定します。 パターンは、さまざまなワイルドカード文字と指定子を含めることができます。 この情報の詳細、構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -130,7 +130,7 @@ Microsoft Windows Server 2003 と以降のバージョンの Windows は、ユ�
 
 -   *モジュール名*は通常のファイル名拡張子を除いたファイル名。 場合によっては、モジュール名はファイル名から大幅に異なります。
 
--   記号の型、モジュール名の直後にします。 この列はラベルが表示されません。 詳細については、さまざまな状態の値は、[シンボルの状態の省略形](symbol-status-abbreviations.md)を参照してください。 シンボルを読み込んだ場合、シンボル ファイル名はこの列に従います。
+-   記号の型、モジュール名の直後にします。 この列はラベルが表示されません。 詳細については、さまざまな状態の値は、次を参照してください。[シンボルの状態の省略形](symbol-status-abbreviations.md)します。 シンボルを読み込んだ場合、シンボル ファイル名はこの列に従います。
 
 -   モジュールの最初のアドレスは、スタートとして表示されます。 モジュールの最後は、終了と表示した後の最初のアドレス。 たとえば、開始が"faab4000"で末尾が"faab8000"の場合、モジュール拡張 0xFAAB4000 から 0xFAAB7FFF、包括的にします。
 

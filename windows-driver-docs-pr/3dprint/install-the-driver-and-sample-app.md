@@ -1,17 +1,17 @@
 ---
-title: ドライバーとサンプル アプリをインストールします。
+title: ドライバーとサンプル アプリのインストール
 description: このセクションでは、ドライバーと WSD のサンプル アプリのインストールについてを説明します。
 ms.assetid: BF89F0D0-2ED3-4900-996F-BB7B9C8C9B80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f36f5f9d432dc584864a1a6efb29c924fcf24382
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330011"
 ---
-# <a name="install-the-driver-and-sample-app"></a>ドライバーとサンプル アプリをインストールします。
+# <a name="install-the-driver-and-sample-app"></a>ドライバーとサンプル アプリのインストール
 
 
 このセクションでは、ドライバーと WSD のサンプル アプリのインストールについてを説明します。
@@ -126,7 +126,7 @@ IPv6 をサポートする必要がある場合は、IPv6 のため、ASP.NET �
 
 ポート 3702 で検出イベントをリッスンする UDP サーバーを実装することによって、アドホック探索を実行できます。
 
-Exchange のシーケンスの詳細については、[検出し、メタデータ交換のメッセージ パターン](https://msdn.microsoft.com/library/windows/desktop/bb513677.aspx)を参照してください。
+Exchange のシーケンスの詳細については、次を参照してください。[検出し、メタデータ交換のメッセージ パターン](https://msdn.microsoft.com/library/windows/desktop/bb513677.aspx)します。
 
  
 

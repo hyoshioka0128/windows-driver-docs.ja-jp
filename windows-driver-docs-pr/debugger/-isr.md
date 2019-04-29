@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bc29562a30e3b857ee4415a483c13d37a47d62f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336375"
 ---
 # <a name="isr"></a>!isr
 
@@ -44,7 +44,7 @@ ms.locfileid: "56573268"
 次のオプションのいずれかを指定できます。
 
 <span id="0"></span>**0**  
-各 ISR フィールドの値のみが表示されます。 既定値です。
+各 ISR フィールドの値のみが表示されます。 これが既定値です。
 
 <span id="1"></span>**1**  
 詳細については予約済みまたは無視されていない ISR フィールドを表示します。
@@ -75,7 +75,7 @@ ms.locfileid: "56573268"
 
 この拡張機能のコマンドは、Itanium のターゲット コンピューターでのみ使用できます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能からの出力の例をいくつか次に示します。

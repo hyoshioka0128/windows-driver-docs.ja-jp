@@ -9,18 +9,18 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9a5d24abbcafb770b7cee6f97ff9117c21592f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385040"
 ---
 # <a name="object-reference-tracing"></a>Object Reference Tracing
 
 
 **オブジェクト参照トレース**機能は、各オブジェクトの参照カウンターをインクリメントする時間またはデクリメントのシーケンシャルなスタック トレースを記録します。 トレースは、二重逆参照、エラーを参照するオブジェクトを逆参照の失敗など、オブジェクト参照エラーを検出するのに役立ちます。 この機能は、Windows Vista および Windows の以降のバージョンでのみサポートされます。
 
-機能のオブジェクト参照のトレースを構成する方法については、**グローバル フラグ**ダイアログ ボックスを参照してください[オブジェクト参照トレースの構成](configuring-object-reference-tracing.md)します。 コマンド プロンプトで、オブジェクト参照のトレース機能を構成する方法の詳細については、[ **GFlags コマンド**](gflags-commands.md)を参照してください。 例については、次を参照してください。[例 15。オブジェクト参照のトレースを使用して](example-15--using-object-reference-tracing.md)します。
+機能のオブジェクト参照のトレースを構成する方法については、**グローバル フラグ**ダイアログ ボックスを参照してください[オブジェクト参照トレースの構成](configuring-object-reference-tracing.md)します。 コマンド プロンプトで、オブジェクト参照のトレース機能を構成する方法の詳細については、次を参照してください。 [ **GFlags コマンド**](gflags-commands.md)します。 例については、次を参照してください。[例 15。オブジェクト参照のトレースを使用して](example-15--using-object-reference-tracing.md)します。
 
 オブジェクト参照のトレースは、特定のオブジェクトが参照されていないことが疑われる場合に最も役に立つまたはも逆参照正しく、通常オブジェクトがリークしていること、またはプロセスまたはセッションを終了することはできません、増加のプールの使用率が示されているため、そのハンドル数には 0 です。 後で確認できるログに記録されたトレースとは異なりオブジェクト参照のトレースは、オブジェクトの中のプロセスが実行中、リアルタイムで使用するに設計されています参照され、逆参照します。 使用して、デバッガーで、オブジェクト参照のトレースを表示する、 [ **! デバッガー拡張が obtrace**](-obtrace.md)します。 この拡張機能には、指定したオブジェクトのアドレスが必要であるために必要がありますがあらかじめわかっているオブジェクトは、エラーの原因。
 

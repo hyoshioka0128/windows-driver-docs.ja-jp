@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bd543510a68f1455ef54fa71376a5eeedaf7ee24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336511"
 ---
-# <a name="hidkdhidfdo"></a>! hidkd.hidfdo
+# <a name="hidkdhidfdo"></a>!hidkd.hidfdo
 
 
 **! Hidkd.hidfdo**コマンドには、機能のデバイス オブジェクト (FDO) に関連付けられた HID 情報が表示されます。

@@ -1,5 +1,5 @@
 ---
-title: UMDF は、ドライバーの障害を処理する方法
+title: UMDF によるドライバー エラーの処理方法
 description: このトピックでは、UMDF ドライバーが失敗した場合、ユーザー モード ドライバー フレームワーク (UMDF) とオペレーティング システムが実行できるアクションについて説明します。 両方の UMDF バージョン 1 と 2 に適用されます。
 ms.assetid: 1811f131-6a51-4e53-bc8d-da511619f6fd
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89084e7b74639d56629afc521a6ed1a4c8b2a0eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325932"
 ---
-# <a name="how-umdf-handles-driver-failures"></a>UMDF は、ドライバーの障害を処理する方法
+# <a name="how-umdf-handles-driver-failures"></a>UMDF によるドライバー エラーの処理方法
 
 
 このトピックでは、UMDF ドライバーが失敗した場合、ユーザー モード ドライバー フレームワーク (UMDF) とオペレーティング システムが実行できるアクションについて説明します。 両方の UMDF バージョン 1 と 2 に適用されます。

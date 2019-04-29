@@ -1,17 +1,17 @@
 ---
-title: メディア切断の省電力
-description: メディア切断の省電力
+title: メディア切断時の省電力
+description: メディア切断時の省電力
 ms.assetid: 592f3835-47ec-443a-9ab5-e700fed2f7f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ef84631c6abb275ddf4fe325c3d00324fffa533
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365902"
 ---
-# <a name="low-power-on-media-disconnect"></a>メディア切断の省電力
+# <a name="low-power-on-media-disconnect"></a>メディア切断時の省電力
 
 
 
@@ -39,7 +39,7 @@ D3 に切断注記を使用できるは、動作状態 (S0) でコンピュー�
 
 ミニポート ドライバー レポート D3 には、初期化中に機能を切断します。 詳細については D3 のレポートの機能を切断時を参照してください[電源管理機能の報告](reporting-power-management-capabilities.md)します。
 
- **\*DeviceSleepOnDisconnect** INF ファイルの標準のキーワードは、切断のデバイスが有効になっているまたはで D3 のサポートを無効になっているかどうかを指定します。 この INF キーワードの詳細については、[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)を参照してください。
+ **\*DeviceSleepOnDisconnect** INF ファイルの標準のキーワードは、切断のデバイスが有効になっているまたはで D3 のサポートを無効になっているかどうかを指定します。 この INF キーワードの詳細については、次を参照してください。[電源管理のための標準化された INF キーワード](standardized-inf-keywords-for-power-management.md)します。
 
 初期化中には、D3 の切断をサポートしていますがメディアのオペレーティング システムに通知する機能をサポートできる最下位の電源レベルを報告する必要がありますミニポート ドライバーは、イベントを接続します。 ミニポート ドライバーでの電源のレベルを報告する、 **MinLinkChangeWakeUp**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。 たとえば、ミニポート ドライバーをレポートできます**NdisDeviceStateD3**します。
 
@@ -79,7 +79,7 @@ D3 に切断注記を使用できるは、動作状態 (S0) でコンピュー�
 
 ミニポート ドライバーがサポートしている場合は、NDIS 6.30、以降[ **NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808)状態のインジケーターにする必要があります発行これ場合は、ネットワーク アダプターがシステムをスリープ状態の通知。 OID は、それが処理中にこの状態の通知を設定するドライバーの問題の要求の[OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780) (D0) の電力状態に遷移します。
 
-詳細については、[NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)を参照してください。
+詳細については、次を参照してください。 [NDIS Wake 理由状態インジケーター](ndis-wake-reason-status-indications.md)します。
 
 **注**  ミニポート ドライバーが発行された場合、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808)状態の表示発行前に行うする必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391)状態を示す値。
 

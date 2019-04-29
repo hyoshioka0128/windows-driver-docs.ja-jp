@@ -7,11 +7,11 @@ keywords: -NDIS_STATUS_WWAN_UICC_RECORD_RESPONSE ネットワーク ドライバ
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 3154bb247695748503a912aea42cc8d66ace21ac
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384636"
 ---
 # <a name="ndisstatuswwanuiccrecordresponse"></a>NDIS_STATUS_WWAN_UICC_RECORD_RESPONSE
 
@@ -21,11 +21,11 @@ ms.locfileid: "59905373"
 
 この通知を使用して、 [ **NDIS_WWAN_UICC_RESPONSE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_response)構造体。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 |   |   |
 | --- | --- |
-| バージョン | Windows 10、バージョンが 1903 |
+| バージョン | Windows 10 バージョン 1903 |
 | Header | Ntddndis.h (include Ndis.h) |
 
 ## <a name="see-also"></a>関連項目

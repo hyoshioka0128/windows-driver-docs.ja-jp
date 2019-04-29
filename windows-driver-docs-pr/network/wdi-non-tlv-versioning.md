@@ -1,17 +1,17 @@
 ---
-title: WDI TLV 以外のバージョン管理
+title: WDI の TLV 以外のバージョン管理
 description: このセクションでは、WDI TLV 以外のバージョン管理を説明します。
 ms.assetid: 19B5BEE1-BE17-40E3-99FA-D9BF4492D020
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f20fcb50c29d382567b79765e70bb631a90f483
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385306"
 ---
-# <a name="wdi-non-tlv-versioning"></a>WDI TLV 以外のバージョン管理
+# <a name="wdi-non-tlv-versioning"></a>WDI の TLV 以外のバージョン管理
 
 
 WDI および IHV ミニポート間で渡され、含まれているデータ構造を[ **NDIS\_オブジェクト\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff566588) (など[ **NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://msdn.microsoft.com/library/windows/hardware/mt297617)) 標準の NDIS バージョン管理モデルに従います。 ミニポートを確認する必要があります、**リビジョン**と**サイズ**フィールドを関連するフィールドが存在することを確認し、余分なフィールドやエラーのないデータを無視します。 新しいバージョンまたはより大きなこのような構造のサイズが除外されていないことを確認します。

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f017efb6e15d450f79c169d21ecffde4be19fee2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386299"
 ---
 # <a name="scannerstatusconditionevent-element"></a>ScannerStatusConditionEvent element
 
@@ -62,14 +62,14 @@ ms.locfileid: "56581882"
 
 親要素はありません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスに送信、 **ScannerStatusConditionEvent**クライアントに要素と、 [ **DeviceCondition** ](devicecondition.md)要素が追加または変更、 [ **ActiveConditions** ](activeconditions.md)要素テーブル。 本文**ScannerStatusConditionEvent**新規または変更が含まれています**DeviceCondition**要素。
 
 WSD スキャン サービスに送信する必要があります、 [ **ScannerStatusConditionClearedEvent** ](scannerstatusconditionclearedevent.md)クライアントに要素と、報告された**DeviceCondition**がクリアされました。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例では、デバイスのスキャンでスキャン lamp エラーについて、クライアントがユーザーに通知方法を示します。

@@ -1,17 +1,17 @@
 ---
-title: プッシュ モデル対応のアプリケーションを作成します。
-description: プッシュ モデル対応のアプリケーションを作成します。
+title: プッシュ モデル対応のアプリケーションの作成
+description: プッシュ モデル対応のアプリケーションの作成
 ms.assetid: 0f554b2c-0217-4109-8ef6-99c5400dfed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f80031cc9d7a1f132dbdcd854dedfe30e142a43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386307"
 ---
-# <a name="creating-push-model-aware-applications"></a>プッシュ モデル対応のアプリケーションを作成します。
+# <a name="creating-push-model-aware-applications"></a>プッシュ モデル対応のアプリケーションの作成
 
 
 
@@ -28,7 +28,7 @@ ms.locfileid: "56549232"
     HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\StillImage\Registered Applications",Imaging,,"%25%\KodakImg.Exe /StiDevice:%%1 /StiEvent:%%2"
     ```
 
-    2 つの INF ファイルのエントリは、プッシュ モデル対応のアプリケーションをサポートするデバイスの必要があります。**DeviceData**と**イベント**します。 詳細については、[静止画像デバイスの INF ファイル](inf-files-for-still-image-devices.md)を参照してください。
+    2 つの INF ファイルのエントリは、プッシュ モデル対応のアプリケーションをサポートするデバイスの必要があります。**DeviceData**と**イベント**します。 詳細については、次を参照してください。[静止画像デバイスの INF ファイル](inf-files-for-still-image-devices.md)します。
 
 これらのメソッドのいずれかの原因に登録するアプリケーション、[イメージ イベント モニターではまだ](overview-of-sti-components.md#ddk-still-image-event-monitor-si)します。
 

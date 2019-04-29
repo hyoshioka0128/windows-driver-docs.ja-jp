@@ -1,6 +1,6 @@
 ---
-title: プリンターのミニドライバーの変更
-description: プリンターのミニドライバーの変更
+title: プリンター ミニドライバー変更
+description: プリンター ミニドライバー変更
 ms.assetid: 8f427642-a758-48bf-96e1-95a27adbaf23
 keywords:
 - ボックスの自動構成サポートの WDK プリンター、ミニドライバーの変更
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29dcdfe0ac9a9b7c8e613af3c4892d78a28e5444
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384603"
 ---
-# <a name="printer-minidriver-changes"></a>プリンターのミニドライバーの変更
+# <a name="printer-minidriver-changes"></a>プリンター ミニドライバー変更
 
 
 プリンター ミニドライバーは、プリンターの記述ファイルで構成されています (*GPD*、 *PPD*、または GDL ファイル)、および省略可能なユーザー インターフェイス (UI) プラグイン、レンダリング プラグインと表示フィルター。 ボックスに含めることで、プラグインの 1 つだけの UI が許可されますと 1 つだけ Unidrv または Pscript レンダリング プラグインが許可されています。 IHV のポート モニターは、インボックスでプリンター ミニドライバーとして含まれるは許可されていません。

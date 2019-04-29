@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bee70559ed044dd9fd3a566e9d74c222f5daf3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386303"
 ---
 # <a name="scannerstatusconditionclearedevent-element"></a>ScannerStatusConditionClearedEvent 要素
 
@@ -62,12 +62,12 @@ ms.locfileid: "56579049"
 
 親要素はありません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスに送信、 **ScannerStatusConditionClearedEvent**でデバイスが条件をときに要素が識別される[ **ScannerStatusConditionEvent** ](scannerstatusconditionevent.md)されましたオフにします。 **ScannerStatusConditionClearedEvent**が含まれています、 [ **DeviceConditionCleared** ](deviceconditioncleared.md)クリアされた条件とクリアされて時刻を含む要素。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例では、デバイスが ConditionId 1543 が識別される前の状態がクリアするクライアントをユーザーに通知方法を示します。

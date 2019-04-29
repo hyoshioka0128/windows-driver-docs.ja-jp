@@ -5,11 +5,11 @@ ms.assetid: d8b2807b-e72f-4f72-8a83-5700bc0239dc
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a229b443bbe79263e6d2f65fe87f27f87484662e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332424"
 ---
 # <a name="legacy-audio-device-messages"></a>レガシ オーディオ デバイス メッセージ
 
@@ -33,7 +33,7 @@ ms.locfileid: "56580227"
 
 一部のデバイス メッセージは、デバイス ドライバーによって直接処理され、いくつかは、デバイスに代わって、システムによって処理されます。
 
-このセクションでは、システムによってインターセプトされ、これまで、デバイス ドライバーに渡されることがなく処理するメッセージのみについて説明します。 詳細については、[System-Intercepted デバイス メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff538507)を参照してください。
+このセクションでは、システムによってインターセプトされ、これまで、デバイス ドライバーに渡されることがなく処理するメッセージのみについて説明します。 詳細については、次を参照してください。 [System-Intercepted デバイス メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff538507)します。
 
 このセクションで説明されている各メッセージは、6 つの 1 つ以上で使用するために有効な*xxx*メッセージは上記の関数。
 

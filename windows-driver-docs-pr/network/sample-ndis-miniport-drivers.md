@@ -1,6 +1,6 @@
 ---
-title: サンプルの NDIS ミニポート ドライバー
-description: サンプルの NDIS ミニポート ドライバー
+title: サンプル NDIS ミニポート ドライバー
+description: サンプル NDIS ミニポート ドライバー
 ms.assetid: bb9e29d0-4812-4b3d-a2e1-cfa2ab51408e
 keywords:
 - ミニポート ドライバー WDK ネットワー キング、サンプル
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a82f91c5c50e14ce538dd67bb83aea851039520
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386143"
 ---
-# <a name="sample-ndis-miniport-drivers"></a>サンプルの NDIS ミニポート ドライバー
+# <a name="sample-ndis-miniport-drivers"></a>サンプル NDIS ミニポート ドライバー
 
 
 

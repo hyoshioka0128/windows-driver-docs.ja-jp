@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_FIRMWARE_VERSION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: a9d6bfbf23252c6c73afa8a9f93c4dfef7d068ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329630"
 ---
 # <a name="wditlvfirmwareversion"></a>WDI\_TLV\_ファームウェア\_バージョン
 
@@ -31,7 +31,7 @@ Char 型の要素の配列のサイズをバイト単位で。 配列には、1 
 ## <a name="values"></a>値
 
 
-| 種類     | 説明                                                     |
+| 型     | 説明                                                     |
 |----------|-----------------------------------------------------------------|
 | char\[\] | ファームウェア バージョンは、null で終わる ASCII 文字列として格納します。 |
 

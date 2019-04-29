@@ -1,5 +1,5 @@
 ---
-title: テストを実行します。
+title: テストを実行する
 description: Windows ドライバーのテストをデータに基づく SysFund のテストと構成ファイルの説明
 keywords:
 - Sysfund テスト
@@ -8,13 +8,13 @@ keywords:
 ms.date: 11/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e9381560e45cac35f9dc4005368d3590edf38be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340235"
 ---
-# <a name="run-the-tests"></a>テストを実行します。
+# <a name="run-the-tests"></a>テストを実行する
 ## <a name="description-of-the-tests-and-configuration-file"></a>テストと構成ファイルの説明
 データ ドリブン SysFund テストを検索する\<解凍 EWDK ルート > \Program Files\Windows Kits\10\Testing\Tests\Additional Tests\x64\DevFund\DataDriven します。  データ ドリブン テスト スイートは、次のファイルで構成されます。
 
@@ -43,7 +43,7 @@ ms.locfileid: "56531964"
 -   バイナリ。Sysfund_PNP_RemoveAndRestartDevice_DataDriven.dll
 -   [ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ead2222e-4485-4bfc-84cd-43ac0d2e8181)
 
-**システムの再起動の再起動 (信頼性) 中に IO を**
+**システム - 途中の IO を伴う再起動 (信頼性)**
 -   バイナリ。Sysfund_RebootRestart_With_IO_During_DataDriven.dll
 -   [ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6d6ed5ec-1765-4569-a7ac-20ed7869d89a)
 
@@ -146,7 +146,7 @@ SysFund のデータ ドリブン テストには、0 (正常に動作) の問�
 ```
     te.exe Utility_DeviceStatusCheck_DataDriven.dll
 ```
-このユーティリティでは、WDTFTest.xml で定義されている SDEL クエリを使用して、一連のテスト対象のデバイスを検索し、すべてがあることを確認**問題コード 0**します。  「成功」の結果は、一連のクエリを実行するデバイスは、すべての操作が正しくを意味します。 レビュー **TestTextLog.log**エラーを調査します。  デバイス マネージャーの問題のコードの詳細については、[デバイス マネージャーのエラー メッセージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)を参照してください。
+このユーティリティでは、WDTFTest.xml で定義されている SDEL クエリを使用して、一連のテスト対象のデバイスを検索し、すべてがあることを確認**問題コード 0**します。  「成功」の結果は、一連のクエリを実行するデバイスは、すべての操作が正しくを意味します。 レビュー **TestTextLog.log**エラーを調査します。  デバイス マネージャーの問題のコードの詳細については、次を参照してください。[デバイス マネージャーのエラー メッセージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)します。
 
 ### <a name="launch-a-test"></a>テストを起動します。
 SysFund のデータ ドリブン テストのいずれかを起動するには、次のコマンドを使用します。
@@ -216,4 +216,4 @@ HRESULT '0x80070057' 意味"E_INVALIDARG:1 つまたは複数の引数が無効�
 ```
 
 ### <a name="other-issues"></a>その他の問題
-この一覧にないその他の問題のトラブルシューティングについては、[Device.DevFund その他のドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-additional-documentation)を参照してください。
+この一覧にないその他の問題のトラブルシューティングについては、次を参照してください。 [Device.DevFund その他のドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-additional-documentation)します。

@@ -1,5 +1,5 @@
 ---
-title: .formats (数値の形式を表示する)
+title: .formats (数値形式の表示)
 description: .Formats コマンドは、現在のスレッドとプロセスのコンテキスト内のシンボルまたは式を評価し、複数の数値形式で表示されます。
 ms.assetid: 9eac92b3-5137-4adb-a074-31510dc9bff7
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 11a836c5c1dca791b17d16c5bee08f0e1e0dc5dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336616"
 ---
-# <a name="formats-show-number-formats"></a>.formats (数値の形式を表示する)
+# <a name="formats-show-number-formats"></a>.formats (数値形式の表示)
 
 
 **.Formats**コマンドは、現在のスレッドとプロセスのコンテキスト内のシンボルまたは式を評価し、複数の数値形式で表示されます。
@@ -32,7 +32,7 @@ ms.locfileid: "56558221"
 
 
 <span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *expression*   
-評価する式を指定します。 構文の詳細については、[数値式の構文](numerical-expression-syntax.md)を参照してください。
+評価する式を指定します。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

@@ -1,15 +1,15 @@
 ---
-title: クロス アダプターのリソースを使用して、独立した GPU でのレンダリング
+title: クロス アダプター リソースを使用した個別の GPU でのレンダリング
 description: Windows 8.1 以降、独立した GPU リソースを使用クロス アダプターを送信先としてビット ブロック転送 (bitblt) または現在の操作が拡大または色変換せずします。オペレーティング システムがユーザー モードを要求するリソースは、bitblt 関数に存在する操作を実行するドライバーを表示し、from.integrated GPU は、デスクトップ ウィンドウ マネージャー (DWM) での構成時にテクスチャとしてアダプター間のリソースを使用します。GDI ハードウェア アクセラレータのレンダー ターゲット。プライマリ ディスプレイ。3-D の操作のレンダー ターゲットとしてではなく。
 ms.assetid: 88CE2D2F-BBD8-4CE4-9183-BBFB0659990E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91990d20e5d0f1b8781285a50ca026416f0da7b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386368"
 ---
 # <a name="span-iddisplayrenderingonadiscretegpuusingcross-adapterresourcesspanrendering-on-a-discrete-gpu-using-cross-adapter-resources"></a><span id="display.rendering_on_a_discrete_gpu_using_cross-adapter_resources"></span>クロス アダプターのリソースを使用して、独立した GPU でのレンダリング
 

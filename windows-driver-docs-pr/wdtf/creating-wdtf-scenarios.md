@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da6f6331d52f5f49e220739ab9c53bfcea569bb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338979"
 ---
 # <a name="creating-wdtf-scenarios"></a>WDTF シナリオの作成
 
@@ -34,7 +34,7 @@ WDTF シナリオの開発を開始する前に、WDTF をインストールす�
 
 ### <a name="simple-wdtf-scenario"></a>単純な WDTF シナリオ
 
-次の VBScript コード サンプル (WDTF\_Sample1.vbs) WDTF を使用して有効にして、ファントム以外のすべてのデバイスを無効にする簡単なシナリオを示しています。 A*ファントム以外のデバイス*は任意のデバイスを物理的に存在します。 完全なサンプルは、[サンプル WDTF シナリオ](sample-wdtf-scenarios.md)を参照してください。
+次の VBScript コード サンプル (WDTF\_Sample1.vbs) WDTF を使用して有効にして、ファントム以外のすべてのデバイスを無効にする簡単なシナリオを示しています。 A*ファントム以外のデバイス*は任意のデバイスを物理的に存在します。 完全なサンプルは、次を参照してください。[サンプル WDTF シナリオ](sample-wdtf-scenarios.md)します。
 
 ```cpp
 Set WDTF = WScript.CreateObject("WDTF.WDTF")

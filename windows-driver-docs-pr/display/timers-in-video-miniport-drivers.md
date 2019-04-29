@@ -1,6 +1,6 @@
 ---
-title: ビデオのミニポート ドライバーのタイマー
-description: ビデオのミニポート ドライバーのタイマー
+title: ビデオ ミニポート ドライバーのタイマー
+description: ビデオ ミニポート ドライバーのタイマー
 ms.assetid: 257ea76e-7be6-4895-8e83-0f50c96e5969
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000 では、タイマー
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87fe04e53916866dc27ef9cc36436ffc3f987a37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389790"
 ---
-# <a name="timers-in-video-miniport-drivers"></a>ビデオのミニポート ドライバーのタイマー
+# <a name="timers-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーのタイマー
 
 
 ## <span id="ddk_timers_in_video_miniport_drivers_gg"></span><span id="DDK_TIMERS_IN_VIDEO_MINIPORT_DRIVERS_GG"></span>

@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ebd4dcb2eacbf5d58fec19048bad1b912bd1267
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334667"
 ---
-# <a name="bth"></a>! 両方
+# <a name="bth"></a>!bth
 
 
 **! 両方**拡張機能は、指定されたプロセッサの分岐の Itanium ベース トレース履歴を表示します。

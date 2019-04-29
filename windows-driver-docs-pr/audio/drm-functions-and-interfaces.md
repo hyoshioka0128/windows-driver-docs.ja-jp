@@ -1,6 +1,6 @@
 ---
-title: DRM 関数とインターフェイス
-description: DRM 関数とインターフェイス
+title: DRM の関数とインターフェイス
+description: DRM の関数とインターフェイス
 ms.assetid: 62c739da-91e8-428e-b76c-ec9621b12597
 keywords:
 - Rights Management の WDK のデジタル オーディオ、関数
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: beed3da592e0be6428c8bdf60efe4fb4c04297e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333731"
 ---
-# <a name="drm-functions-and-interfaces"></a>DRM 関数とインターフェイス
+# <a name="drm-functions-and-interfaces"></a>DRM の関数とインターフェイス
 
 
 ## <span id="drm_functions_and_interfaces"></span><span id="DRM_FUNCTIONS_AND_INTERFACES"></span>

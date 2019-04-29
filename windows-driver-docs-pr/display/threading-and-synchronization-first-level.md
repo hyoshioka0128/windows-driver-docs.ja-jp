@@ -1,6 +1,6 @@
 ---
-title: スレッド処理との同期の最初のレベル
-description: スレッド処理との同期の最初のレベル
+title: スレッドおよび同期の第 1 レベル
+description: スレッドおよび同期の第 1 レベル
 ms.assetid: 9fce6a18-2a66-4518-b05b-e85bdaa3951f
 keywords:
 - WDK の表示をスレッドには、最初のステージします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac8e9c989ca46fcfd84b15c3ec2e414bdd6f63eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389842"
 ---
-# <a name="threading-and-synchronization-first-level"></a>スレッド処理との同期の最初のレベル
+# <a name="threading-and-synchronization-first-level"></a>スレッドおよび同期の第 1 レベル
 
 
 Windows 表示 Driver Model (WDDM) は、スレッド処理の最初のレベルで行われたディスプレイのミニポート ドライバーへの呼び出しと nonreentrancy クラスを次に同期を分類します。 特定のクラス内で再入が許可されていません。 つまり、1 つのスレッドが、特定のクラス内のドライバーを入力できます。ただし、複数のクラスからの呼び出しと[0 レベル](threading-and-synchronization-zero-level.md)呼び出しを同時に入力することができます。

@@ -1,6 +1,6 @@
 ---
-title: スマート カードのドライバー ライブラリとの対話
-description: スマート カードのドライバー ライブラリとの対話
+title: スマート カード ドライバー ライブラリとの相互作用
+description: スマート カード ドライバー ライブラリとの相互作用
 ms.assetid: 44cf41f4-bbff-4193-afad-6d4106ce50c3
 keywords:
 - Ioctl WDK のスマート カード
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f95c29dc67c6215d43effa346b96ec29dbe6f36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391911"
 ---
-# <a name="interaction-with-the-smart-card-driver-library"></a>スマート カードのドライバー ライブラリとの対話
+# <a name="interaction-with-the-smart-card-driver-library"></a>スマート カード ドライバー ライブラリとの相互作用
 
 
 ## <span id="_ntovr_interaction_with_the_smart_card_driver_library"></span><span id="_NTOVR_INTERACTION_WITH_THE_SMART_CARD_DRIVER_LIBRARY"></span>

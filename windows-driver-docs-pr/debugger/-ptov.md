@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 586f99d53184a7a0110ee06855beed897f1db97a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334329"
 ---
-# <a name="ptov"></a>! ptov
+# <a name="ptov"></a>!ptov
 
 
 **! Ptov**拡張機能は、特定のプロセスの物理-バーチャル マップ全体を表示します。
@@ -120,7 +120,7 @@ ceefb000 fffff680`00008000
 
 64 ビットの Windows ディレクトリ ベースは、ページ マップ レベル 4 (PML4) テーブルの物理アドレスです。 32 ビットの Windows では、PAE を有効に、ディレクトリ ベースは、ページ ディレクトリ ポインター (PDP) テーブルの物理アドレスです。 32 ビットの Windows で無効になっている PAE、ディレクトリの bas はページ ディレクトリ (PD) テーブルの物理アドレス。
 
-関連トピックについては、[ **! vtop** ](-vtop.md)と[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)を参照してください。 仮想アドレス変換の詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+関連トピックについては、次を参照してください。 [ **! vtop** ](-vtop.md)と[仮想のアドレスを物理アドレスを変換する](converting-virtual-addresses-to-physical-addresses.md)します。 仮想アドレス変換の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
  
 

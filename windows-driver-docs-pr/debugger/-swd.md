@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b00f32e34ef8729dbd2f5a690d965c9113e49c68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334217"
 ---
 # <a name="swd"></a>!swd
 
@@ -56,7 +56,7 @@ ms.locfileid: "56578887"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ウォッチドッグのタイマーがシャット ダウンまたは Windows では、応答が停止した場合は、Windows を再起動します。 時間は秒単位で表示されます。

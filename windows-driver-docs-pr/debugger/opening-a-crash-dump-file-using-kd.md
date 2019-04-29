@@ -5,11 +5,11 @@ ms.assetid: 458E9BA6-6FA0-4FEF-93A0-062C9E11D21F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcca62c84df3552034f3240a783ca4e7a10e977d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385038"
 ---
 # <a name="opening-a-dump-file-using-kd"></a>KD を使用してダンプ ファイルを開く
 
@@ -21,7 +21,7 @@ ms.locfileid: "56572044"
 
 **kd -y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**オプション (詳細モード) も便利です。 コマンドライン構文の詳細については、[ **KD コマンド ライン オプション**](kd-command-line-options.md)を参照してください。
+**-V**オプション (詳細モード) も便利です。 コマンドライン構文の詳細については、次を参照してください。 [ **KD コマンド ライン オプション**](kd-command-line-options.md)します。
 
 ## <a name="span-idkdcommandlinespanspan-idkdcommandlinespanspan-idkdcommandlinespankd-command-line"></a><span id="KD_Command_Line"></span><span id="kd_command_line"></span><span id="KD_COMMAND_LINE"></span>KD コマンドライン
 

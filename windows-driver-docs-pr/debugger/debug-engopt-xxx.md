@@ -12,11 +12,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 857b755c3a6291067096e381d16e093bbbff2b66
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330712"
 ---
 # <a name="debugengoptxxx"></a>デバッグ\_ENGOPT\_XXX
 
@@ -164,7 +164,7 @@ ms.locfileid: "57350072"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>Quiet モードを有効にします。 詳細については、<a href="sq--set-quiet-mode-.md"> <b>sq (非表示モードの設定)</b></a>を参照してください。 </p>
+<p>Quiet モードを有効にします。 詳細については、次を参照してください。 <a href="sq--set-quiet-mode-.md"> <b>sq (非表示モードの設定)</b></a>します。 </p>
 </td>
 </tr>
 <tr VALIGN="top">

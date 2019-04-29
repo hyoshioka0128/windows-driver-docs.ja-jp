@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da9c7e1d7cfa1d9a855ef6c96bcacbf44dec20df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383752"
 ---
 # <a name="wdtf-object-logging"></a>WDTF オブジェクトのログ記録
 
@@ -57,7 +57,7 @@ WDTF_TARGETS    : INFO  :          Target: Generic volume
 
 呼び出すことによって、ログ ファイルにカスタム メッセージを書き込むオプションがある、 [ **IWDTFLog2::OutputInfo** ](https://msdn.microsoft.com/library/windows/hardware/hh451016)または[ **IWDTFLog2::OutputError** ](https://msdn.microsoft.com/library/windows/hardware/hh451014)メソッド。
 
-使用可能なオブジェクトの一覧は、[WDTF オブジェクト名のタグ](wdtf-object-name-tags.md)を参照してください。
+使用可能なオブジェクトの一覧は、次を参照してください。 [WDTF オブジェクト名のタグ](wdtf-object-name-tags.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 [WDTF オブジェクト名のタグ](wdtf-object-name-tags.md)  

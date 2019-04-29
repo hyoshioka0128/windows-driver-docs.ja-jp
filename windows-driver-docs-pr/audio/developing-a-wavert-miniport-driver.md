@@ -5,11 +5,11 @@ ms.assetid: d2d37c9e-fbfb-4bf3-bd7d-c8e19070a3f1
 ms.date: 07/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 881105e63faa200ebcc09461a9ff8136f69f0402
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333806"
 ---
 # <a name="developing-a-wavert-miniport-driver"></a>WaveRT ミニポート ドライバーの開発
 
@@ -24,7 +24,7 @@ WaveRT ミニポート ドライバーを開発するために、最初、サン
 
 ### <a name="span-idthesampleadapterdriverspanspan-idthesampleadapterdriverspanthe-sample-adapter-driver"></a><span id="the_sample_adapter_driver"></span><span id="THE_SAMPLE_ADAPTER_DRIVER"></span>サンプル アダプターのドライバー
 
-ドライバーのサンプルについては、[サンプル オーディオ ドライバー](sample-audio-drivers.md)を参照してください。
+ドライバーのサンプルについては、次を参照してください。[サンプル オーディオ ドライバー](sample-audio-drivers.md)します。
 
 ### <a name="span-idthewavertfriendlyfeaturesspanspan-idthewavertfriendlyfeaturesspanthe-wavert-friendly-features"></a><span id="the_wavert_friendly_features"></span><span id="THE_WAVERT_FRIENDLY_FEATURES"></span>WaveRT フレンドリな機能
 

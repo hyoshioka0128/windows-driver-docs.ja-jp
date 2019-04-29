@@ -5,11 +5,11 @@ ms.assetid: 1ab7f87e-7dbc-49a1-b3a2-24e4d525dc8b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15ed0afac0f86b5de4aee95003c3008175522e2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329866"
 ---
 # <a name="how-do-i-include-a-trace-statement-in-a-cc-macro"></a>C/C++ マクロにトレース ステートメントを含める方法
 
@@ -66,7 +66,7 @@ FUNC:_EXIT_IF_EXP_FAILED{LEVEL=WSM_ERROR}(_EXIT_IF_EXP_FAILED_EXP,MSG,...)
 
 この例で、**開始\_wpp config**と**エンド\_wpp**ステートメントは、WPP のヘッダー ファイルで構成データを識別します。
 
-また、ヘッダー ファイルで構成データがある WPP に通知を追加、 **-スキャン**、実行するようにパラメーター\_WPP マクロは、WPP プリプロセッサを呼び出します。 以下に例を示します。
+また、ヘッダー ファイルで構成データがある WPP に通知を追加、 **-スキャン**、実行するようにパラメーター\_WPP マクロは、WPP プリプロセッサを呼び出します。 次に、例を示します。
 
 ```
 RUN_WPP -scan:trace.h

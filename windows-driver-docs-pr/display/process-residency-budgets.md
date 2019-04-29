@@ -1,17 +1,17 @@
 ---
-title: プロセスの保存場所の予算
+title: プロセス常駐の予算
 description: Windows Display Driver Model (WDDM) v2 では、メモリの量を維持できる常駐の予算のプロセスが割り当てられます。
 ms.assetid: 9A93E110-4D3F-4D08-8379-222A2D7DEFBB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 516c83ed0e4548be9307f67617a39b178da897d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383914"
 ---
-# <a name="process-residency-budgets"></a>プロセスの保存場所の予算
+# <a name="process-residency-budgets"></a>プロセス常駐の予算
 
 
 Windows Display Driver Model (WDDM) v2 では、メモリの量を維持できる常駐の予算のプロセスが割り当てられます。 この予算では、時間の経過と共に変更できますが、通常はのみが適用されるとき、システムがメモリ不足。 Microsoft direct3d12 では、前に、予算がの形式では、ユーザー モード ドライバーによって処理される*トリミング*通知と*MakeResident*によるエラー**状態\_ありません\_メモリ**します。 *TrimToBudget*通知、 [*削除*](https://msdn.microsoft.com/library/windows/hardware/dn906355)、および失敗した[ *MakeResident* ](https://msdn.microsoft.com/library/windows/hardware/dn906357)で最新の予算を返すすべての呼び出し、整数のフォーム**NumBytesToTrim**新しい予算に適合するためにトリミングする必要がある量を示す値です。

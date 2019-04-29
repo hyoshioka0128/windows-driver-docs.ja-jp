@@ -1,17 +1,17 @@
 ---
-title: ユーザーによって開始されたフィードバック - 標準モード
+title: ユーザーが開始したフィードバック - 標準モード
 description: このトピックでは、WDI ドライバーでのログ記録 IHV トレースでユーザーが開始したフィードバックを通常モードをについて説明します。
 ms.assetid: 723732A3-4B24-4FE5-B338-B8443F287FDE
 ms.date: 06/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d27dd6793cc76611243ba7a6745e3f05d49be3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384993"
 ---
-# <a name="user-initiated-feedback---normal-mode"></a>ユーザーによって開始されたフィードバック - 標準モード
+# <a name="user-initiated-feedback---normal-mode"></a>ユーザーが開始したフィードバック - 標準モード
 
 通常のユーザーが開始したフィードバック (し) のシナリオでは、ユーザーは Wi-fi に問題が発生し、フィードバック レポートを送信します。 このレポートは、Wi-fi の WMI の自動ロガー、ネットワークの統計情報などを含む Wi-fi サブシステムのスナップショットを収集します。IHV 固有のログを収集するには、Microsoft はない初期の ETW プロバイダーを使用した WMI 自動ロガー セッションを提供します。 各 IHV は、Microsoft から提供された WMI 自動ロガーのセッションのレジストリ エントリの ETW プロバイダーのセットを追加します。 レポートが送信されたときに、IHV 自動-ロガー ETL が収集され、分析のため Microsoft に送信されます。 このログ ファイルは循環バッファー サイズを使用して、多少の制限を実装 (\<= 1 MB)。 このログ ファイルに保存されているイベントは、ことを確認するには少なくとも 30 分間のログ イベントが常に保存する過去のフラグ、レベルとキーワードを使用して、適切に調整する必要があります。
 

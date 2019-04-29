@@ -1,6 +1,6 @@
 ---
-title: Postoperation コールバック ルーチン内の I/O 操作の失敗
-description: Postoperation コールバック ルーチン内の I/O 操作の失敗
+title: 操作後コールバック ルーチン内で I/O 操作を失敗とする
+description: 操作後コールバック ルーチン内で I/O 操作を失敗とする
 ms.assetid: 45897bca-1573-42c5-ad00-3198b7362d9e
 keywords:
 - postoperation コールバック ルーチン WDK ファイル システム ミニフィルター、失敗した操作
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f83823796137d940872f2759d5d6e40f3559eadd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383842"
 ---
-# <a name="failing-an-io-operation-in-a-postoperation-callback-routine"></a>Postoperation コールバック ルーチン内の I/O 操作の失敗
+# <a name="failing-an-io-operation-in-a-postoperation-callback-routine"></a>操作後コールバック ルーチン内で I/O 操作を失敗とする
 
 
 ## <span id="ddk_failing_an_io_operation_in_a_postoperation_callback_routine_if"></span><span id="DDK_FAILING_AN_IO_OPERATION_IN_A_POSTOPERATION_CALLBACK_ROUTINE_IF"></span>

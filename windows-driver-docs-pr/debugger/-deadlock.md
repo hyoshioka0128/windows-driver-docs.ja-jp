@@ -1,5 +1,5 @@
 ---
-title: デッドロック
+title: デッドロック (deadlock)
 description: デッドロックの拡張機能は、Driver Verifier のデッドロック検出オプションによって収集されたデッドロック情報を表示します。
 ms.assetid: c0e6074f-8afe-4526-a30f-427aac67ab99
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df3c218a781e2d42d3e1b7bb1477059bad8e97c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336843"
 ---
-# <a name="deadlock"></a>! デッドロック
+# <a name="deadlock"></a>!deadlock
 
 
 **! デッドロック**拡張機能によって収集されたデッドロックに関する情報を表示する、**デッドロック検出**Driver Verifier のオプション。

@@ -1,6 +1,6 @@
 ---
-title: ライブのカーネル モードのターゲット
-description: ライブのカーネル モードのターゲット
+title: ライブ カーネルモード ターゲット
+description: ライブ カーネルモード ターゲット
 ms.assetid: 88820097-4a47-428d-88dd-d0a08e5debdc
 keywords:
 - ターゲット、ライブのカーネル モード
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2839190f77adedd030950da670d422b44421ddd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383486"
 ---
-# <a name="live-kernel-mode-targets"></a>ライブのカーネル モードのターゲット
+# <a name="live-kernel-mode-targets"></a>ライブ カーネルモード ターゲット
 
 
 ## <span id="ddk_live_kernel_mode_targets_dbx"></span><span id="DDK_LIVE_KERNEL_MODE_TARGETS_DBX"></span>

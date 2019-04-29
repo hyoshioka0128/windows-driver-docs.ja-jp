@@ -1,5 +1,5 @@
 ---
-title: プログラミング DMA ハードウェア
+title: DMA ハードウェアのプログラミング
 description: このトピックでは、バス マスター DMA デバイス用の KMDF ドライバーは、その EvtProgramDma イベントのコールバック関数では、通常は、機能について説明します。
 ms.assetid: 5e74fe74-d38f-4cca-b0cf-8a6f170c4dc5
 keywords:
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40be0328725c34849f5ec14b9923f4df5d87b626
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390051"
 ---
-# <a name="programming-dma-hardware"></a>プログラミング DMA ハードウェア
+# <a name="programming-dma-hardware"></a>DMA ハードウェアのプログラミング
 
 
 \[KMDF にのみ適用されます。\]

@@ -1,6 +1,6 @@
 ---
-title: CMYK カラー領域をサポートしています。
-description: CMYK カラー領域をサポートしています。
+title: CMYK 色領域をサポートする
+description: CMYK 色領域をサポートする
 ms.assetid: b8ac5f1a-c903-4313-b7de-0335f4c44367
 keywords:
 - CMYK カラー領域 WDK の印刷
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 519d8de97a7d8c70cf553b5b6eaa1db9d5ee707d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331756"
 ---
-# <a name="supporting-cmyk-color-space"></a>CMYK カラー領域をサポートしています。
+# <a name="supporting-cmyk-color-space"></a>CMYK 色領域をサポートする
 
 
 

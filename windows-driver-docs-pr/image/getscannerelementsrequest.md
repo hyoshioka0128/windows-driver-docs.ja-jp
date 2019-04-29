@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c6865d6dde3f9981cced1e2e3b9a466010636d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330276"
 ---
 # <a name="getscannerelementsrequest-element"></a>GetScannerElementsRequest 要素
 
@@ -71,7 +71,7 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 
 スキャン サービスが正常に処理する場合、 **GetScannerElementsRequest**が返されます、 [ **GetScannerElementsResponse** ](getscannerelementsresponse.md)操作に必要な情報。 それ以外の場合、スキャン サービスでは、適切なエラー コードを返す必要があります。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、[WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)を参照してください。
+この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
 
 <a name="examples"></a>例
 --------

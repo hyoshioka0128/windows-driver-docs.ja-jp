@@ -1,17 +1,17 @@
 ---
-title: ドライバーを移植することができますが、
+title: 移植できるドライバーと場所
 description: このトピックでは、どの WDM ドライバーは、Windows Driver Frameworks (WDF) に移植でき、カーネル モード ドライバー フレームワーク (KMDF) またはユーザー モード ドライバー フレームワーク (UMDF) に移植するかどうかを決定する方法について説明します。
 ms.assetid: 53E34B9C-8C0A-4F15-951B-7AB133DE0C5A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3ac883eb29b1aac4d7069bba0db51c7c3a719c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385706"
 ---
-# <a name="which-drivers-can-be-ported-and-where"></a>ドライバーを移植することができますが、
+# <a name="which-drivers-can-be-ported-and-where"></a>移植できるドライバーと場所
 
 
 このトピックでは、どの WDM ドライバーは、Windows Driver Frameworks (WDF) に移植でき、カーネル モード ドライバー フレームワーク (KMDF) またはユーザー モード ドライバー フレームワーク (UMDF) に移植するかどうかを決定する方法について説明します。
@@ -31,7 +31,7 @@ ms.locfileid: "56535332"
 
 KMDF を使用して、Windows 2000 以降を実行しているドライバーを作成することができます。 ターゲットの Windows 8.1 以降には、UMDF バージョン 1 と後で、Windows XP で実行されるドライバーを作成および UMDF バージョン 2 を使用できます。
 
-UMDF および KMDF をサポートするデバイスとドライバーの種類については、[ドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff554652)を参照してください。
+UMDF および KMDF をサポートするデバイスとドライバーの種類については、次を参照してください。[ドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff554652)します。
 
 ## <a name="which-framework-should-i-port-my-wdm-driver-to-kmdf-or-umdf-2"></a>どのフレームワーク、KMDF または UMDF 2 には、WDM ドライバーを移植する必要がありますか。
 

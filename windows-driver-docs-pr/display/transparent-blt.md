@@ -1,6 +1,6 @@
 ---
-title: 透過的な Blt
-description: 透過的な Blt
+title: 透過 Blt
+description: 透過 Blt
 ms.assetid: bc2f4159-cd5d-43db-8bc3-e6fbf1e594fb
 keywords:
 - サーフェス WDK DirectDraw、中
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1cfd50222efaecf78a8ff4fb0dac8f2b7442e1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389780"
 ---
-# <a name="transparent-blt"></a>透過的な Blt
+# <a name="transparent-blt"></a>透過 Blt
 
 
 ## <span id="ddk_transparent_blt_gg"></span><span id="DDK_TRANSPARENT_BLT_GG"></span>

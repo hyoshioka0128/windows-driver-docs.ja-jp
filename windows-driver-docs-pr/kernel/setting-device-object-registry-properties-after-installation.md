@@ -1,6 +1,6 @@
 ---
-title: インストール後にデバイス オブジェクトのレジストリのプロパティを設定します。
-description: インストール後にデバイス オブジェクトのレジストリのプロパティを設定します。
+title: インストール後のデバイス オブジェクト レジストリ プロパティの設定
+description: インストール後のデバイス オブジェクト レジストリ プロパティの設定
 ms.assetid: e9415497-f61e-49ba-9376-9255e51e72a8
 keywords:
 - デバイス オブジェクトの WDK カーネル、レジストリ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9aba33e1b9f642067b7fe3ce64ad19320406377
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385524"
 ---
-# <a name="setting-device-object-registry-properties-after-installation"></a>インストール後にデバイス オブジェクトのレジストリのプロパティを設定します。
+# <a name="setting-device-object-registry-properties-after-installation"></a>インストール後のデバイス オブジェクト レジストリ プロパティの設定
 
 
 
@@ -63,7 +63,7 @@ ms.locfileid: "56560682"
 
  
 
-取得またはセキュリティ記述子を設定する 2 つの方法は提供されることに注意してください。 SPDRP を指定する\_セキュリティの値として、セキュリティ記述子を扱う、**セキュリティ\_記述子**構造体、または SPDRP\_セキュリティ\_SDS、セキュリティを処理するにはSDDL 文字列としての記述子。 SDDL 文字列の詳細については、[デバイス オブジェクトの SDDL](sddl-for-device-objects.md)を参照してください。
+取得またはセキュリティ記述子を設定する 2 つの方法は提供されることに注意してください。 SPDRP を指定する\_セキュリティの値として、セキュリティ記述子を扱う、**セキュリティ\_記述子**構造体、または SPDRP\_セキュリティ\_SDS、セキュリティを処理するにはSDDL 文字列としての記述子。 SDDL 文字列の詳細については、次を参照してください。[デバイス オブジェクトの SDDL](sddl-for-device-objects.md)します。
 
 Windows XP と以降のオペレーティング システムでは、プログラムも取得し、デバイス セットアップ クラスのプロパティ値を設定できます。 使用して、 [ **SetupDiGetClassRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551097)と[ **SetupDiSetClassRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552135)関数、プロパティを取得および設定デバイス セットアップ クラスの値。
 

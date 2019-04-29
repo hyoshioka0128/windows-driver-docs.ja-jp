@@ -1,16 +1,16 @@
 ---
-Description: A Universal Serial Bus (USB) device defines its capabilities and features through configurations, interfaces, alternate settings, and endpoints.
-title: すべての USB 開発者の概念
+Description: ユニバーサル シリアル バス (USB) デバイスでは、その機能と機能の構成、インターフェイス、代替の設定、およびエンドポイントを定義します。
+title: すべての USB 開発者のための概念
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8a91ceaf9fb8602e0c507f1541ebce1ef7e0624
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331764"
 ---
-#  <a name="concepts-for-all-usb-developers"></a>すべての USB 開発者の概念
+#  <a name="concepts-for-all-usb-developers"></a>すべての USB 開発者のための概念
 
 
 ユニバーサル シリアル バス (USB) デバイスでは、その機能と機能の構成、インターフェイス、代替の設定、およびエンドポイントを定義します。 このトピックでは、それらの概念の概要を説明します。 詳細についてでの USB 仕様を参照してください。[ユニバーサル シリアル バス ドキュメント]( https://go.microsoft.com/fwlink/p/?linkid=224892)します。

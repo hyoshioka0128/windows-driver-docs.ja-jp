@@ -1,5 +1,5 @@
 ---
-title: .nvlist (NatVis リスト)
+title: .nvlist (NatVis の一覧表示)
 description: .Nvllist コマンドは、デバッガーの環境に読み込まれる NatVis ファイルを一覧表示します。
 ms.assetid: 90974599-6F8E-4898-B8B6-F9502659AD77
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e119d24b81485b8e2ff6a0411c0977cd5338c4e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335918"
 ---
-# <a name="nvlist-natvis-list"></a>.nvlist (NatVis リスト)
+# <a name="nvlist-natvis-list"></a>.nvlist (NatVis の一覧表示)
 
 
 .Nvllist コマンドは、デバッガーの環境に読み込まれる NatVis ファイルを一覧表示します。
@@ -55,7 +55,7 @@ ms.locfileid: "56538873"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)を参照してください。
+詳細については、次を参照してください。 [.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ad1f624edd930da5da8edc86ae1ab4b61d90d45e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334423"
 ---
-# <a name="owner"></a>! 所有者
+# <a name="owner"></a>!owner
 
 
 **! 所有者**拡張機能は、モジュールまたは関数の所有者を表示します。

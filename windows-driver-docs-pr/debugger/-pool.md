@@ -17,11 +17,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cf251bdbfcc78380be579d49c36c0732164db8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334375"
 ---
 # <a name="pool"></a>!pool
 
@@ -77,7 +77,7 @@ ms.locfileid: "56573987"
 
 メモリ プールの詳細については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 Windows XP および Windows での以降のバージョンで、 **! プール**拡張機能には、各割り当てに関連付けられているプール タグが表示されます。 プール タグの所有者も表示されます。 この表示は、pooltag.txt ファイルの内容に基づきます。 このファイルは、Windows のツールをデバッグ インストールのトリアージ サブディレクトリにあります。 する場合は、プロジェクトに関連するその他のプール タグを追加するには、このファイルを編集できます。

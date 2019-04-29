@@ -1,6 +1,6 @@
 ---
-title: Stream クラスとミニドライバー インターフェイス
-description: Stream クラスとミニドライバー インターフェイス
+title: ストリーム クラスとミニドライバーのインターフェイス
+description: ストリーム クラスとミニドライバーのインターフェイス
 ms.assetid: d85510e6-1fd7-442a-bd88-f32b6c13ff75
 keywords:
 - Stream.sys クラス ドライバー WDK Windows 2000 のカーネル、ストリーム クラスのインターフェイス
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a5cf4d56758ad2a33e650ddcdec10822b9b017e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391383"
 ---
-# <a name="stream-class-and-minidriver-interface"></a>Stream クラスとミニドライバー インターフェイス
+# <a name="stream-class-and-minidriver-interface"></a>ストリーム クラスとミニドライバーのインターフェイス
 
 
 
@@ -34,7 +34,7 @@ ms.locfileid: "56551089"
 
 ![初期化中に、ストリーム クラスと、ミニドライバーの間の相互作用を示す図](images/stclassi.png)
 
-ストリーミング ミニドライバー関数をすべて必要に応じて、ミニドライバーを nonreentrant ようにミニドライバーの割り込みサービス ルーチン (ISR) と同期されます。 つまり、ミニドライバーでスレッドを実行しているときに呼び出しになりますありません ISR を含む、ミニドライバー内の他のすべての関数 この nonreentrant 条件は、ミニドライバーを記述しやすく、Windows NT または Windows 2000 のマルチプロセッサ システムであっても、true を保持します。 ストリーム クラス ドライバーを使用して、ストリーミングのミニドライバー (とすべて優先度の低い Irq) の IRQ オフ マスクにより、この nonreentrant 条件を実現**KeSynchronizeExecution**ミニドライバーのルーチンのいずれかでコードを実行するとします。 同期の詳細については、[ミニドライバー同期](minidriver-synchronization.md)を参照してください。
+ストリーミング ミニドライバー関数をすべて必要に応じて、ミニドライバーを nonreentrant ようにミニドライバーの割り込みサービス ルーチン (ISR) と同期されます。 つまり、ミニドライバーでスレッドを実行しているときに呼び出しになりますありません ISR を含む、ミニドライバー内の他のすべての関数 この nonreentrant 条件は、ミニドライバーを記述しやすく、Windows NT または Windows 2000 のマルチプロセッサ システムであっても、true を保持します。 ストリーム クラス ドライバーを使用して、ストリーミングのミニドライバー (とすべて優先度の低い Irq) の IRQ オフ マスクにより、この nonreentrant 条件を実現**KeSynchronizeExecution**ミニドライバーのルーチンのいずれかでコードを実行するとします。 同期の詳細については、次を参照してください。[ミニドライバー同期](minidriver-synchronization.md)します。
 
 ストリーミングのミニドライバーは、必要に応じて WDM システム サービスを呼び出すことができます。 ただし、ミニドライバーは、デバイス オブジェクトを割り当てられませんが、システムの呼び出しを行うクラス ドライバーのデバイス オブジェクトを使用します。 ほとんどのミニドライバーは、クラス ドライバーから使用可能なすべての必要な機能 WDM システムの呼び出しを実行する必要はありません。
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_CONNECT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f1982fce3fb60b3a19151a2a3ef50e5483ea0752
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386740"
 ---
 # <a name="oidwwanconnect"></a>OID\_WWAN\_接続
 
@@ -24,7 +24,7 @@ MB デバイスのパケット データ プロトコル (PDP) コンテキス�
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、[WWAN パケット コンテキスト管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN パケット コンテキスト管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)します。
 
 このオブジェクトをアクティブにまたは特定のパケットのコンテキストを非アクティブ化し、コンテキストのアクティブ化の状態を読み取ります。 ミニポート ドライバーは、アクティブ化の状態が変更されるたびに、適切なイベント通知を送信する必要があります。
 

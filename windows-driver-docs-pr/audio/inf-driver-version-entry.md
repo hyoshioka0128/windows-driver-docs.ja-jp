@@ -1,6 +1,6 @@
 ---
-title: INF ドライバーのバージョンのエントリ
-description: INF ドライバーのバージョンのエントリ
+title: INF ドライバー バージョンのエントリ
+description: INF ドライバー バージョンのエントリ
 ms.assetid: 092cd9ed-8988-4ffd-9958-1267f3c52819
 keywords:
 - バージョン番号の WDK オーディオ
@@ -9,17 +9,17 @@ keywords:
 - ミニポート ドライバー WDK オーディオ、バージョン番号
 - オーディオ ドライバー WDK、バージョン番号
 - ドライバー バージョン番号の WDK オーディオ
-- INF DriverVer Directive
+- INF DriverVer ディレクティブ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 545ce33436a4870432329a2c2394cc2197bab446
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333545"
 ---
-# <a name="inf-driver-version-entry"></a>INF ドライバーのバージョンのエントリ
+# <a name="inf-driver-version-entry"></a>INF ドライバー バージョンのエントリ
 
 
 ## <span id="inf_driver_version_entry"></span><span id="INF_DRIVER_VERSION_ENTRY"></span>

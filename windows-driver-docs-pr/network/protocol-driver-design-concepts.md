@@ -1,6 +1,6 @@
 ---
-title: プロトコル ドライバー設計の概念
-description: プロトコル ドライバー設計の概念
+title: プロトコル ドライバーの設計概念
+description: プロトコル ドライバーの設計概念
 ms.assetid: e37a1a7d-3bc4-4ce6-99e7-99e86fb4bba6
 keywords:
 - プロトコル ドライバー WDK ネットワーク, 設計
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9a865fd63ccca0c4da1918ca4c9e3c59ebca28c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386655"
 ---
-# <a name="protocol-driver-design-concepts"></a>プロトコル ドライバー設計の概念
+# <a name="protocol-driver-design-concepts"></a>プロトコル ドライバーの設計概念
 
 
 

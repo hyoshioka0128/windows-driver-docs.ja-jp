@@ -1,19 +1,19 @@
 ---
-title: 必要なディスプレイ ドライバー関数
-description: 必要なディスプレイ ドライバー関数
+title: ディスプレイ ドライバーの必須関数
+description: ディスプレイ ドライバーの必須関数
 ms.assetid: 483aa13b-a14d-49f3-8265-013f7bb64d40
 keywords:
 - グラフィックス DDI 関数 WDK Windows 2000 を表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1e78c22763f499f34720b102834224ff6539976
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383223"
 ---
-# <a name="required-display-driver-functions"></a>必要なディスプレイ ドライバー関数
+# <a name="required-display-driver-functions"></a>ディスプレイ ドライバーの必須関数
 
 
 ## <span id="ddk_required_display_driver_functions_gg"></span><span id="DDK_REQUIRED_DISPLAY_DRIVER_FUNCTIONS_GG"></span>

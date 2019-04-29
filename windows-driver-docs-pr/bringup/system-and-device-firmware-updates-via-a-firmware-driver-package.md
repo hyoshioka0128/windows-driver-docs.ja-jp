@@ -1,17 +1,17 @@
 ---
-title: ファームウェアのドライバー パッケージを使用してシステムとデバイスのファームウェア更新プログラム
+title: ファームウェア ドライバー パッケージを介したシステムとデバイスのファームウェアの更新
 description: 3 つのフェーズに分けることが比較的単純なプロセスに依存して、ファームウェア ドライバー パッケージを使用してファームウェア更新の展開
 ms.assetid: D649234A-B757-41A6-B2C1-6D43775FF999
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e614ca76be6790021f5b037d42625e2d5be8a09d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337407"
 ---
-# <a name="system-and-device-firmware-updates-via-a-firmware-driver-package"></a>ファームウェアのドライバー パッケージを使用してシステムとデバイスのファームウェア更新プログラム
+# <a name="system-and-device-firmware-updates-via-a-firmware-driver-package"></a>ファームウェア ドライバー パッケージを介したシステムとデバイスのファームウェアの更新
 
 
 ファームウェアのドライバー パッケージを使用してファームウェア更新を展開すると、3 つのフェーズに分けることが比較的単純なプロセスが次に示します。

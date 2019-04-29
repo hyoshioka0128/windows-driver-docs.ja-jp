@@ -23,11 +23,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0005ceda8efe8fa4fa8d47c2b2e80a0395c0ed7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384187"
 ---
 # <a name="isnmpgetlist-method"></a>ISNMP::GetList メソッド
 
@@ -70,7 +70,7 @@ Win32 エラー コードを返すこともできます。
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>S_OK を返します</strong></td>
+<td><strong>S_OK</strong></td>
 <td><p>操作に成功しました。</p></td>
 </tr>
 <tr class="even">
@@ -83,7 +83,7 @@ Win32 エラー コードを返すこともできます。
 </tr>
 <tr class="even">
 <td><strong>E_OUTOFMEMORY</strong></td>
-<td><p>メモリ不足です。</p></td>
+<td><p>メモリ不足。</p></td>
 </tr>
 </tbody>
 </table>
@@ -104,7 +104,7 @@ OIDArray = Array("25.3.2.1.5", "25.3.5.1.1")
 OIDValueArray = objSNMP.GetList (OIDArray)
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

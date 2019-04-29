@@ -8,16 +8,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 330c5183175f916d4fa2b356e92e48f48f158a33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330294"
 ---
 # <a name="storage-virtual-miniport-drivers"></a>記憶域仮想ミニポート ドライバー
 
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [記憶域仮想ミニポート ドライバーの概要](overview-of-storage-virtual-miniport-drivers.md)
 

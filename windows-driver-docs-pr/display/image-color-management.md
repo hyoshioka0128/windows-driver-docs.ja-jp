@@ -1,6 +1,6 @@
 ---
-title: イメージ カラーの管理
-description: イメージ カラーの管理
+title: イメージの色の管理
+description: イメージの色の管理
 ms.assetid: c5b575c1-3ee7-4ad4-85e8-e1a6dbe34a5b
 keywords:
 - GDI WDK Windows 2000 の表示、イメージの色の管理
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 855e50094520a1abf43ee9c5ffce8af66c541f39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386997"
 ---
-# <a name="image-color-management"></a>イメージ カラーの管理
+# <a name="image-color-management"></a>イメージの色の管理
 
 
 ## <span id="ddk_image_color_management_gg"></span><span id="DDK_IMAGE_COLOR_MANAGEMENT_GG"></span>

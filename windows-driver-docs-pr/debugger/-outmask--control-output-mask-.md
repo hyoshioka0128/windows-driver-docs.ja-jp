@@ -1,5 +1,5 @@
 ---
-title: .outmask (出力の制御マスク)
+title: .outmask (出力マスクの制御)
 description: .Outmask コマンドでは、現在の出力のマスクを制御します。
 ms.assetid: a925f948-a746-4fed-9ccd-95513f41e3bf
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 953176c909b580c2d04b0305c1d690755a6c453f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334429"
 ---
-# <a name="outmask-control-output-mask"></a>.outmask (出力の制御マスク)
+# <a name="outmask-control-output-mask"></a>.outmask (出力マスクの制御)
 
 
 **.Outmask**コマンドは、現在のマスクの出力を制御します。
@@ -91,7 +91,7 @@ ms.locfileid: "56550728"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">既定の設定</th>
 <th align="left">説明</th>
 </tr>

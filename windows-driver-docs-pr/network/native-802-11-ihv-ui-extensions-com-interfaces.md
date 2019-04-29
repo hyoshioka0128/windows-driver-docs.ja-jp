@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a44c0b76244ba7d05efbcbdcbe1912549096686b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383617"
 ---
 # <a name="native-80211-ihv-ui-extensions-com-interfaces"></a>ネイティブ 802.11 IHV UI 拡張 COM インターフェイス
 
@@ -28,7 +28,7 @@ ms.locfileid: "56580545"
 
 802.11 IHV UI 拡張機能のネイティブ DLL での実装を提供する必要があります、 **IDot11ExtUI** COM インターフェイスです。
 
-この COM インターフェイスの詳細については、[IDot11ExtUI COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553769)を参照してください。
+この COM インターフェイスの詳細については、次を参照してください。 [IDot11ExtUI COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553769)します。
 
 <a href="" id="idot11extuiproperty"></a>**IDot11ExtUIProperty**  
 を通じて、 **IDot11ExtUIProperty** COM インターフェイス、802.11 IHV UI 拡張機能のネイティブ DLL がネイティブの 802.11 ネットワークの構成 UI で表示される接続とセキュリティのプロパティを拡張できます。
@@ -37,20 +37,20 @@ ms.locfileid: "56580545"
 
 802.11 IHV UI 拡張機能のネイティブ DLL がの 1 つまたは複数の実装を提供できる、 **IDot11ExtUIProperty**ネイティブ 802.11 プロパティへの IHV で定義された拡張機能を表す各実装での COM インターフェイスです。 DLL は、セキュリティ設定の 1 つまたは複数のプロパティの拡張機能を提供できます。 Windows Vista では、DLL は、接続の設定は複数のプロパティの拡張機能を追加できます。
 
-この COM インターフェイスの詳細については、[IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)を参照してください。
+この COM インターフェイスの詳細については、次を参照してください。 [IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)します。
 
 <a href="" id="iwizardextension"></a>**IWizardExtension**  
 802.11 IHV UI 拡張機能のネイティブ DLL がの 1 つまたは複数の実装を提供できる、 **IWizardExtension** COM インターフェイスです。 各実装は、1 つまたは複数のカスタム UI ページの表示をサポートします。 次のいずれかでは、これらの UI ページが表示されます。
 
--   ネイティブの 802.11 IHV 拡張機能の DLL によって行われた外部要求。 このプロセスの詳細については、[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)を参照してください。
+-   ネイティブの 802.11 IHV 拡張機能の DLL によって行われた外部要求。 このプロセスの詳細については、次を参照してください。[カスタム UI の表示を要求する](requesting-the-display-of-a-custom-ui.md)します。
 
--   802.11 IHV 拡張機能のネイティブ DLL に表示するカスタム UI があるかどうかを決定する、オペレーティング システムによって行われたクエリです。 このプロセスの詳細については、[カスタム UI を表示するためのクエリ](querying-for-the-display-of-a-custom-ui.md)を参照してください。
+-   802.11 IHV 拡張機能のネイティブ DLL に表示するカスタム UI があるかどうかを決定する、オペレーティング システムによって行われたクエリです。 このプロセスの詳細については、次を参照してください。[カスタム UI を表示するためのクエリ](querying-for-the-display-of-a-custom-ui.md)します。
 
 -   802.11 IHV UI 拡張機能のネイティブ DLL のコンポーネントによる内部要求。
 
 詳細については、 **IWizardExtension** COM インターフェイスを参照してください[IWizardExtension COM インターフェイス](https://go.microsoft.com/fwlink/p/?linkid=56607)します。
 
-ネイティブの 802.11 ネットワークの構成 UI コンポーネントの詳細については、[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)を参照してください。
+ネイティブの 802.11 ネットワークの構成 UI コンポーネントの詳細については、次を参照してください。[ネイティブ 802.11 ソフトウェア アーキテクチャ](native-802-11-software-architecture.md)します。
 
  
 

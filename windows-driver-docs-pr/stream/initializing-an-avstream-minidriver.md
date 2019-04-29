@@ -1,6 +1,6 @@
 ---
-title: AVStream、ミニドライバーの初期化
-description: AVStream、ミニドライバーの初期化
+title: AVStream ミニドライバーの初期化
+description: AVStream ミニドライバーの初期化
 ms.assetid: 666d6efb-93ec-43f3-87c5-ea1a3983bfd0
 keywords:
 - AVStream WDK、ミニドライバーの初期化
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55f37482cee0942ee987d3972076aa0cc3435a39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386523"
 ---
-# <a name="initializing-an-avstream-minidriver"></a>AVStream、ミニドライバーの初期化
+# <a name="initializing-an-avstream-minidriver"></a>AVStream ミニドライバーの初期化
 
 
 
@@ -54,4 +54,4 @@ HKR,"ENUM\[DeviceName]",pnpid,,"[string]"
 
 すべての AVStream ミニドライバーの INF ファイルでフィルターに固有の参照文字列が一致する必要があります、 **ReferenceGuid**のメンバー、 [ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造体。
 
-記述子の詳細については、[AVStream 記述子](avstream-descriptors.md)を参照してください。
+記述子の詳細については、次を参照してください。 [AVStream 記述子](avstream-descriptors.md)します。

@@ -13,16 +13,16 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1219778bf3f8b8ec125f52400c30e0003a5e27
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336433"
 ---
-# <a name="ioctldecode"></a>! ioctldecode
+# <a name="ioctldecode"></a>!ioctldecode
 
 
-**! Ioctldecode**拡張機能が表示されます、*デバイスの種類*、*アクセスのために必要な*、*関数コード*と*転送型*IOCTL の特定のコードで指定します。 詳細については、IOCTL 制御コードは、[I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)を参照してください。
+**! Ioctldecode**拡張機能が表示されます、*デバイスの種類*、*アクセスのために必要な*、*関数コード*と*転送型*IOCTL の特定のコードで指定します。 詳細については、IOCTL 制御コードは、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)します。
 
 ```dbgcmd
 !ioctldecode IoctlCode 
@@ -116,7 +116,7 @@ IOCTL が識別されないが、IOCTL フィールドに関する情報が表�
 
 パブリックに定義された Ioctl のサブセットのみがで識別できることに注意してください、 **! ioctldecode**コマンド。
 
-Ioctl の詳細については、[I/O 制御コードの概要](https://msdn.microsoft.com/library/windows/hardware/ff548059)を参照してください。
+Ioctl の詳細については、次を参照してください。 [I/O 制御コードの概要](https://msdn.microsoft.com/library/windows/hardware/ff548059)します。
 
 Irp と Ioctl の概要についてを参照してください*Windows Internals* E. のある Mark Russinovich、David A. Solomon Alex Ionescu しています。
 

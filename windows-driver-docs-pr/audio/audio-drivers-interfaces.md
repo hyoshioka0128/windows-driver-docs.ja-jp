@@ -1,17 +1,17 @@
 ---
-title: オーディオ ドライバー インターフェイス
-description: オーディオ ドライバー インターフェイス
+title: オーディオ ドライバーのインターフェイス
+description: オーディオ ドライバーのインターフェイス
 ms.assetid: f0c3b2b6-e38b-4088-a70d-749cd772ac4c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f062b3dd554e189cab8429c2a6084e915cc76e18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331540"
 ---
-# <a name="audio-drivers-interfaces"></a>オーディオ ドライバー インターフェイス
+# <a name="audio-drivers-interfaces"></a>オーディオ ドライバーのインターフェイス
 
 
 Windows Vista およびそれ以降の Windows オペレーティング システムでは、デジタル信号処理をシステム オーディオ処理する効果と呼びます。 この処理は、システム エフェクト オーディオ処理オブジェクト (sAPOs) と呼ばれるユーザー モード プロセス内の COM コンポーネントによって実行されます。

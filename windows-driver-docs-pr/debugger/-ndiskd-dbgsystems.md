@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 56354f8347201c637191318919efa66508bec642
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336070"
 ---
 # <a name="ndiskddbgsystems"></a>!ndiskd.dbgsystems
 
@@ -53,11 +53,11 @@ ms.locfileid: "56530070"
 
  
 
-詳細については、WPP は、[WPP ソフトウェア トレース](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)を参照してください。
+詳細については、WPP は、次を参照してください。 [WPP ソフトウェア トレース](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)します。
 
-Driver Verifier についての詳細については、[Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)を参照してください。
+Driver Verifier についての詳細については、次を参照してください。 [Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)します。
 
-WMI のトレースの詳細については、[WMI トレース拡張機能 (Wmitrace.dll)](https://msdn.microsoft.com/library/windows/hardware/ff561362)を参照してください。
+WMI のトレースの詳細については、次を参照してください。 [WMI トレース拡張機能 (Wmitrace.dll)](https://msdn.microsoft.com/library/windows/hardware/ff561362)します。
 
 ```console
 !ndiskd.dbgsystems [-subsystem <any>] 
@@ -90,7 +90,7 @@ WMI のトレースの詳細については、[WMI トレース拡張機能 (Wmi
 <td align="left"><p>アダプターの構成をトレースします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>送信</p></td>
+<td align="left"><p>SEND</p></td>
 <td align="left"><p>トレースは、ネットワーク経由でデータを送信します。</p></td>
 </tr>
 <tr class="odd">
@@ -118,7 +118,7 @@ WMI のトレースの詳細については、[WMI トレース拡張機能 (Wmi
 <td align="left"><p>メモリ管理をトレースします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>フィルター</p></td>
+<td align="left"><p>FILTER</p></td>
 <td align="left"><p>トレースは、操作をフィルター処理します。</p></td>
 </tr>
 <tr class="even">
@@ -138,7 +138,7 @@ WMI のトレースの詳細については、[WMI トレース拡張機能 (Wmi
 <td align="left"><p>電源管理操作をトレースします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>開いています。</p></td>
+<td align="left"><p>OPEN</p></td>
 <td align="left"><p>参照オブジェクトを開く操作をトレースします。</p></td>
 </tr>
 <tr class="odd">
@@ -146,7 +146,7 @@ WMI のトレースの詳細については、[WMI トレース拡張機能 (Wmi
 <td align="left"><p>ロック操作をトレースします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>リセット</p></td>
+<td align="left"><p>RESET</p></td>
 <td align="left"><p>トレースの操作をリセットします。</p></td>
 </tr>
 <tr class="odd">
@@ -192,7 +192,7 @@ Ndiskd.dll
 
 [WPP ソフトウェア トレース](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)
 
-[Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)
+[ドライバーの検証ツール](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)
 
 [WMI 拡張機能 (Wmitrace.dll) のトレース](https://msdn.microsoft.com/library/windows/hardware/ff561362)
 

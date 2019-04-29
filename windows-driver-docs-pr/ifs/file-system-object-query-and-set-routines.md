@@ -1,6 +1,6 @@
 ---
-title: ファイル システム オブジェクトのクエリおよび Set ルーチン
-description: ファイル システム オブジェクトのクエリおよび Set ルーチン
+title: ファイル システム オブジェクトのクエリと設定ルーチン
+description: ファイル システム オブジェクトのクエリと設定ルーチン
 ms.assetid: 34b97a6e-a155-443c-94dd-4d8f1fc4b430
 keywords:
 - ミニ リダイレクター WDK、クエリ操作
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a85652432f7a6328ce169e8a0726bcfb4ce8d21d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383839"
 ---
-# <a name="file-system-object-query-and-set-routines"></a>ファイル システム オブジェクトのクエリおよび Set ルーチン
+# <a name="file-system-object-query-and-set-routines"></a>ファイル システム オブジェクトのクエリと設定ルーチン
 
 
 さまざまなネットワークのミニ リダイレクターで実装できるルーチンでは、クエリはし、ファイルに対する操作のシステム オブジェクトを設定します。 RDBSS では、ほとんどのクエリまたはファイル オブジェクトの情報を設定する IRP を受信したときにこれらの呼び出しを発行します。 IRP RDBSS を受信して、MRx の間の直接的な対応関係があるクエリまたは RDBSS 呼び出す操作を設定します。

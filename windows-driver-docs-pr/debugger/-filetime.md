@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d3bb5075a06875a4f18b04dd415fb25b5ea9bb4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336731"
 ---
-# <a name="filetime"></a>! filetime
+# <a name="filetime"></a>!filetime
 
 
 **! Filetime**拡張機能は、人間が判読できる時間に 64 ビットの FILETIME 構造体を変換します。

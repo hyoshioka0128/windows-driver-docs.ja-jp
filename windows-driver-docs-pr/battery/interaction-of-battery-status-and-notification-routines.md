@@ -1,6 +1,6 @@
 ---
-title: バッテリの状態と通知ルーチンの相互作用
-description: バッテリの状態と通知ルーチンの相互作用
+title: バッテリ状態と通知ルーチンの相互作用
+description: バッテリ状態と通知ルーチンの相互作用
 ms.assetid: 1f9a3785-4ea4-4b56-bc66-247dfe222377
 keywords:
 - バッテリ通知 WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 025342d0733b5cbfd5b76cc0b8bfaa476664c6d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335345"
 ---
-# <a name="interaction-of-battery-status-and-notification-routines"></a>バッテリの状態と通知ルーチンの相互作用
+# <a name="interaction-of-battery-status-and-notification-routines"></a>バッテリ状態と通知ルーチンの相互作用
 
 
 ## <span id="ddk_interaction_of_battery_status_and_notification_routines_dg"></span><span id="DDK_INTERACTION_OF_BATTERY_STATUS_AND_NOTIFICATION_ROUTINES_DG"></span>

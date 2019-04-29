@@ -1,6 +1,6 @@
 ---
-title: オーディオ ドライバー オブジェクトを作成します。
-description: オーディオ ドライバー オブジェクトを作成します。
+title: オーディオ ドライバー オブジェクトの作成
+description: オーディオ ドライバー オブジェクトの作成
 ms.assetid: c5d1b1b6-fc47-4227-bcca-1119488dce3b
 keywords:
 - オーディオ ドライバー オブジェクト WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f086bce6c2bdc411a8d968bb819892f45fcb0c34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333963"
 ---
-# <a name="creating-audio-driver-objects"></a>オーディオ ドライバー オブジェクトを作成します。
+# <a name="creating-audio-driver-objects"></a>オーディオ ドライバー オブジェクトの作成
 
 
 ## <span id="creating_audio_driver_objects"></span><span id="CREATING_AUDIO_DRIVER_OBJECTS"></span>
@@ -65,7 +65,7 @@ NTSTATUS NewMyObject(
 
 NewMyObject 関数は、作成しオブジェクトを初期化しにインターフェイス ポインターを渡します。 新規のプロトタイプは、初期化パラメーターは、クラスに固有であるため*Xxx*関数。 新しい*Xxx*関数オブジェクトのコンス トラクターに簡単にアクセスを提供します。
 
-新規の例については*Xxx*関数のこの種類は、[ **PcNewDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff537712)を参照してください。
+新規の例については*Xxx*関数のこの種類は、次を参照してください。 [ **PcNewDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff537712)します。
 
  
 

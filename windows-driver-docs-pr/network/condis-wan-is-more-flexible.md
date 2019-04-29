@@ -1,19 +1,19 @@
 ---
-title: いる CoNDIS WAN がより柔軟です
-description: いる CoNDIS WAN がより柔軟です
+title: CoNDIS WAN は柔軟性が高い
+description: CoNDIS WAN は柔軟性が高い
 ms.assetid: 01f4d5cc-3ecc-4d2f-bc19-67b8d0fda52f
 keywords:
 - いる CoNDIS WAN ドライバー WDK ネットワーク、利点があります。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f6747502d3fbbcb2df0042f3523addd5fad2d92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391035"
 ---
-# <a name="condis-wan-is-more-flexible"></a>いる CoNDIS WAN がより柔軟です
+# <a name="condis-wan-is-more-flexible"></a>CoNDIS WAN は柔軟性が高い
 
 
 
@@ -31,7 +31,7 @@ ms.locfileid: "56559962"
 
 -   統合ミニポート コール マネージャー (MCMs)
 
-いる CoNDIS ドライバーの詳細については、[Connection-Oriented NDIS](connection-oriented-ndis.md)を参照してください。
+いる CoNDIS ドライバーの詳細については、次を参照してください。 [Connection-Oriented NDIS](connection-oriented-ndis.md)します。
 
 コール マネージャーとミニポート ドライバー コンポーネントの分離では、コール マネージャーをそのままにしたまま、新しいハードウェアをサポートするために、ミニポート ドライバーを更新することができます。 多くの場合、コール マネージャーには欠陥を修正するだけのアップグレードが必要です。
 

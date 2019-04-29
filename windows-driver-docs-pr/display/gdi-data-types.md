@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c4fa605d9bbd5974a142e4175ff4454e1007a78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385028"
 ---
 # <a name="gdi-data-types"></a>GDI データ型
 
@@ -124,7 +124,7 @@ ms.locfileid: "56578025"
 <td align="left"><p>サーフェスを識別するには、GDI によって定義されている 32 ビット ハンドル。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>長い</p></td>
+<td align="left"><p>LONG</p></td>
 <td align="left"><p>l</p></td>
 <td align="left"><p>32 ビット符号付き整数。</p></td>
 </tr>
@@ -205,7 +205,7 @@ ms.locfileid: "56578025"
 </tr>
 <tr class="even">
 <td align="left"><p>USHORT</p></td>
-<td align="left"><p>jp</p></td>
+<td align="left"><p>us</p></td>
 <td align="left"><p>16 ビット符号なし整数。</p></td>
 </tr>
 <tr class="odd">

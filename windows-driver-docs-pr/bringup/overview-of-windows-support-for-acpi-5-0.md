@@ -5,11 +5,11 @@ ms.assetid: BAFBA051-FEDA-469B-9B67-C74D252C84F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3447610232f31d1a61eb6ef5bbc8a8ceae79c6
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337513"
 ---
 # <a name="overview-of-windows-support-for-acpi-50"></a>ACPI 5.0 に対する Windows のサポートの概要
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93c872d0fa9c58e75df5c763fc8a12075383b8e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340736"
 ---
 # <a name="pfa-performed-by-whea"></a>WHEA によって実行される PFA
 
@@ -47,7 +47,7 @@ ECC メモリ エラーが発生したときに、WHEA は、次の手順を実�
 
      
 
-8.  PFA が有効になっている場合、WHEA は ECC メモリ ページで PFA を実行します。 このプロセスの詳細については、[方法 WHEA 実行 PFA ECC メモリ](how-whea-performs-pfa-on-ecc-memory.md)を参照してください。
+8.  PFA が有効になっている場合、WHEA は ECC メモリ ページで PFA を実行します。 このプロセスの詳細については、次を参照してください。[方法 WHEA 実行 PFA ECC メモリ](how-whea-performs-pfa-on-ecc-memory.md)します。
 
 9.  Windows カーネルでは、ETW イベントを生成し、システム イベント ログにエラー情報を記録します。
 

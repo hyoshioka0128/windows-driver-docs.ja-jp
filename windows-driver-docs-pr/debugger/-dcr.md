@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 80e3f305d137335cb84401f75007acade430656e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336846"
 ---
 # <a name="dcr"></a>!dcr
 
@@ -74,7 +74,7 @@ ms.locfileid: "56573285"
 
 この拡張機能のコマンドは、対象の Itanium ベース コンピューターにのみ使用できます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 DCR では、プロセッサのステータスの既定のパラメーターはレジスタ中断することで値を指定します。 DCR も、いくつか追加のグローバル コントロールを投機的な読み込みエラーを遅延できるかどうかも指定します。

@@ -1,19 +1,19 @@
 ---
-title: 追加のモニター ターゲット モードを取得します。
-description: 追加のモニター ターゲット モードを取得します。
+title: 追加のモニター ターゲット モードの取得
+description: 追加のモニター ターゲット モードの取得
 ms.assetid: fc0e2d43-8fc2-4757-ba77-f72a01e04343
 keywords:
 - WDK の表示モードをターゲットを監視します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b674b83ada8a0f5ddb9101f9016ab9ae34c1bd9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384003"
 ---
-# <a name="obtaining-additional-monitor-target-modes"></a>追加のモニター ターゲット モードを取得します。
+# <a name="obtaining-additional-monitor-target-modes"></a>追加のモニター ターゲット モードの取得
 
 
 Windows 7 以降、新しい監視インターフェイスが使用可能な[ **DXGK\_モニター\_インターフェイス\_V2**](https://msdn.microsoft.com/library/windows/hardware/ff561968)します。 元にない 2 つの追加機能を備えています[ **DXGK\_モニター\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff561949)インターフェイス。

@@ -1,6 +1,6 @@
 ---
-title: GPD ファイルのエントリ
-description: GPD ファイルのエントリ
+title: GPD ファイル エントリ
+description: GPD ファイル エントリ
 ms.assetid: b563e7b5-8b04-4757-877e-c2b856817d39
 keywords:
 - GPD は、WDK Unidrv、エントリをファイルします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f86e48c849dedbdfb3de39651f3ecd823d032c36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385197"
 ---
-# <a name="gpd-file-entries"></a>GPD ファイルのエントリ
+# <a name="gpd-file-entries"></a>GPD ファイル エントリ
 
 
 

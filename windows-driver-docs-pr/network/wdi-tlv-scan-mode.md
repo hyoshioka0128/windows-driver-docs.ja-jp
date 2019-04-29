@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_SCAN_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d98b7e76e96207dc44c5c888721c86f5a555654
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330522"
 ---
 # <a name="wditlvscanmode"></a>WDI\_TLV\_スキャン\_モード
 
@@ -31,7 +31,7 @@ WDI\_TLV\_スキャン\_モードは、スキャン モード パラメーター
 ## <a name="values"></a>値
 
 
-| 種類                                                | 説明                                                                                                                                                                                                                       |
+| 型                                                | 説明                                                                                                                                                                                                                       |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                               | フル スキャンの手順を繰り返す回数。 この値が 0 に設定されている場合は、ホストにより、タスクが中止されるまでスキャンを繰り返す必要があります。                                                                     |
 | [**WDI\_スキャン\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926115)       | 実行されるスキャンの種類を指定します。 場合 WDI\_スキャン\_型\_アクティブに設定されている、デバイスはアクティブ チャネルのみをスキャンする必要があります。                                                                                                |

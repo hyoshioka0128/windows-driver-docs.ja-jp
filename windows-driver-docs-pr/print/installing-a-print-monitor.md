@@ -1,6 +1,6 @@
 ---
-title: 印刷のモニターをインストールします。
-description: 印刷のモニターをインストールします。
+title: 印刷モニターのインストール
+description: 印刷モニターのインストール
 ms.assetid: 2ab993fd-647b-40aa-981c-1bc270ec79a4
 keywords:
 - 印刷モニター、WDK をインストールします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a984a8e558b4c77cf82a905911a9b0bb07183e70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330124"
 ---
-# <a name="installing-a-print-monitor"></a>印刷のモニターをインストールします。
+# <a name="installing-a-print-monitor"></a>印刷モニターのインストール
 
 
 
@@ -27,7 +27,7 @@ ms.locfileid: "56527620"
 
 ### <a href="" id="ddk-installing-a-language-monitor-gg"></a>言語モニターをインストールします。
 
-言語モニターをインストールするには、LanguageMonitor エントリを追加、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)の INF ファイル。 LanguageMonitor エントリでは、言語モニターの表示名と INF の次の例のように、その DLL の名前の一覧を表示します。 LanguageMonitor エントリは、プリンター言語モニターを使用することを制御するすべてのプリンター ドライバーを含める必要があります。 詳細については、[プリンター INF ファイル](printer-inf-files.md)を参照してください。
+言語モニターをインストールするには、LanguageMonitor エントリを追加、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)の INF ファイル。 LanguageMonitor エントリでは、言語モニターの表示名と INF の次の例のように、その DLL の名前の一覧を表示します。 LanguageMonitor エントリは、プリンター言語モニターを使用することを制御するすべてのプリンター ドライバーを含める必要があります。 詳細については、次を参照してください。[プリンター INF ファイル](printer-inf-files.md)します。
 
 ```cpp
 [AcmeInst]

@@ -1,6 +1,6 @@
 ---
-title: Visual SourceSafe を使用します。
-description: Visual SourceSafe を使用します。
+title: Visual SourceSafe の使用
+description: Visual SourceSafe の使用
 ms.assetid: a315a1c5-1427-4432-aec0-314dbb6d7ae5
 keywords:
 - Visual SourceSafe
@@ -11,13 +11,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e01291cad2de04560bff449c193966648c1e82c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386431"
 ---
-# <a name="using-visual-sourcesafe"></a>Visual SourceSafe を使用します。
+# <a name="using-visual-sourcesafe"></a>Visual SourceSafe の使用
 
 
 Visual SourceSafe は x86 ベースのアプリケーションと、x86 でのみ、ソースのインデックス作成スクリプトと関連付けられているツールがインストールされているパッケージの Windows のツールをデバッグします。

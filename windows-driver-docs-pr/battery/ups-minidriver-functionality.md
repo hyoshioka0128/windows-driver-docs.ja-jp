@@ -1,19 +1,19 @@
 ---
-title: UPS ミニドライバー機能
-description: UPS ミニドライバー機能
+title: UPS ミニドライバーの機能
+description: UPS ミニドライバーの機能
 ms.assetid: a93dbada-bcf7-4963-ba57-c6db5922c66b
 keywords:
 - UPS のミニドライバー WDK、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 397696d91b29aeb41e00237f9279d408131489c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335057"
 ---
-# <a name="ups-minidriver-functionality"></a>UPS ミニドライバー機能
+# <a name="ups-minidriver-functionality"></a>UPS ミニドライバーの機能
 
 
 ## <span id="ddk_ups_minidriver_functionality_kg"></span><span id="DDK_UPS_MINIDRIVER_FUNCTIONALITY_KG"></span>

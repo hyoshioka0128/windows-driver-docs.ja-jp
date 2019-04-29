@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f35f1d51f0ce7a92e9663b45680157ef2cee2f8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386296"
 ---
 # <a name="devpkeydevicelegacy"></a>DEVPKEY_Device_Legacy
 
@@ -46,14 +46,14 @@ DEVPKEY_Device_Legacy デバイス プロパティは、デバイスがデバイ
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 PnP マネージャーでは、PnP マネージャーがデバイスの非 PnP ドライバーが読み込まれるときに、ルート列挙デバイスとして、デバイスが自動作成された場合に、DEVPROP_TRUE に DEVPKEY_Device_Reported の値を設定します。 それ以外の場合、PnP マネージャーでは、DEVPROP_FALSE にプロパティの値を設定します。

@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 094f310af56bfc9f1495a4433bb481ce5e126e5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383542"
 ---
 # <a name="working-with-usb-devices"></a>USB デバイスの使用
 
@@ -39,7 +39,7 @@ ms.locfileid: "56578601"
 -   [リセットして、電源を入れ直すデバイスのポート](#resetting-and-power-cycling-a-device-s-port)
 -   [デバイスに、URB を送信します。](#sending-a-urb-to-a-device)
 
-単純な KMDF ベースの USB クライアント ドライバーの記述に関する詳細な手順は、[、最初の USB クライアント ドライバー (KMDF) を書き込む方法](https://msdn.microsoft.com/library/windows/hardware/hh706187)を参照してください。
+単純な KMDF ベースの USB クライアント ドライバーの記述に関する詳細な手順は、次を参照してください。 [、最初の USB クライアント ドライバー (KMDF) を書き込む方法](https://msdn.microsoft.com/library/windows/hardware/hh706187)します。
 
 ## <a href="" id="creating-a-framework-usb-device-object"></a> USB デバイス オブジェクトを作成します。
 
@@ -119,7 +119,7 @@ Unicode 文字列の要求を書式設定します。 ドライバーが呼び�
 <a href="" id="---------wdfusbtargetdeviceformatrequestforcontroltransfer--------"></a>[**WdfUsbTargetDeviceFormatRequestForControlTransfer**](https://msdn.microsoft.com/library/windows/hardware/ff550082)  
 USB 制御転送要求を書式設定します。 ドライバーが呼び出せる[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)同期または非同期要求を送信します。
 
-関連情報については、[USB 制御転送を送信する方法](https://msdn.microsoft.com/library/windows/hardware/ff539261)を参照してください。
+関連情報については、次を参照してください。 [USB 制御転送を送信する方法](https://msdn.microsoft.com/library/windows/hardware/ff539261)します。
 
 ## <a href="" id="resetting-and-power-cycling-a-device-s-port"></a> リセットして、電源を入れ直すデバイスのポート
 
@@ -135,7 +135,7 @@ USB 制御転送要求を書式設定します。 ドライバーが呼び出せ
 <a href="" id="---------wdfusbtargetdeviceformatrequestforcycleport--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForCyclePort (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/ff550084)  
 電源サイクル デバイスの USB ポートに要求を書式設定します。 ドライバーを呼び出す必要があります[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)同期または非同期要求を送信します。
 
-関連情報については、[USB パイプ エラーから回復する方法](https://msdn.microsoft.com/library/windows/hardware/hh968307)を参照してください。
+関連情報については、次を参照してください。 [USB パイプ エラーから回復する方法](https://msdn.microsoft.com/library/windows/hardware/hh968307)します。
 
 ## <a href="" id="sending-a-urb-to-a-device"></a> デバイスに、URB を送信します。
 

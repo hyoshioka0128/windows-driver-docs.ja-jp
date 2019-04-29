@@ -1,6 +1,6 @@
 ---
-title: カーネル モードのソフトウェアのシンセサイザーのウェーブ シンク
-description: カーネル モードのソフトウェアのシンセサイザーのウェーブ シンク
+title: カーネル モードのソフトウェア シンセサイザーのウェーブ シンク
+description: カーネル モードのソフトウェア シンセサイザーのウェーブ シンク
 ms.assetid: 37ba9ad5-8b35-4252-a6fd-46dead924294
 keywords:
 - wave オーディオ、カーネル モード ソフトウェアのシンセサイザーの WDK をシンクします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89dcb17890d03ad20f851c3c3a7adc780fcb02c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330851"
 ---
-# <a name="a-wave-sink-for-kernel-mode-software-synthesizers"></a>カーネル モードのソフトウェアのシンセサイザーのウェーブ シンク
+# <a name="a-wave-sink-for-kernel-mode-software-synthesizers"></a>カーネル モードのソフトウェア シンセサイザーのウェーブ シンク
 
 
 ## <span id="a_wave_sink_for_kernel_mode_software_synthesizers"></span><span id="A_WAVE_SINK_FOR_KERNEL_MODE_SOFTWARE_SYNTHESIZERS"></span>
@@ -50,7 +50,7 @@ Dmu ポート ドライバーの波のシンクの Dmu のミニポート ドラ
 
 [**ISynthSinkDMus::SyncToMaster**](https://msdn.microsoft.com/library/windows/hardware/ff537019)
 
-**ISynthSinkDMus**継承、 **IMXF**インターフェイス。 詳細については、[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)を参照してください。
+**ISynthSinkDMus**継承、 **IMXF**インターフェイス。 詳細については、次を参照してください。 [ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)します。
 
 上記の図の Dmu ミニポート ドライバーでは、その DirectMusic 入力ピンと出力ピンを wave としては、次のように識別します。
 

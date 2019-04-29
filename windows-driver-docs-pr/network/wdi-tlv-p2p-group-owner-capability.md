@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_GROUP_OWNER_CAPABILITY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e2589209ff877e890b2b403206f6ac65b013c68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392187"
 ---
 # <a name="wditlvp2pgroupownercapability"></a>WDI\_TLV\_P2P\_グループ\_所有者\_機能
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_グループ\_所有者\_機能は、Wi-Fi Direct グループの
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                                                                                                                                     |
+| 型   | 説明                                                                                                                                                                     |
 |--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8  | Wi-Fi Direct グループ機能に対応するビットマスクを指定します。 ビットマスクは、Wi-fi P2P technical specification 表 13 グループ機能のビットマップ定義で定義されているものと一致します。 |
 | UINT8  | グループ機能ビットマップ上でオペレーティング システムによって設定するビットを指定します。                                                                                            |
@@ -39,7 +39,7 @@ WDI\_TLV\_P2P\_グループ\_所有者\_機能は、Wi-Fi Direct グループの
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

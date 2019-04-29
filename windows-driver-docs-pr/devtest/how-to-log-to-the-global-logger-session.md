@@ -1,6 +1,6 @@
 ---
-title: グローバルのロガーのセッションにログオンする方法
-description: グローバルのロガーのセッションにログオンする方法
+title: グローバル ロガー セッションにログ記録する方法
+description: グローバル ロガー セッションにログ記録する方法
 ms.assetid: b5efea00-39cd-4df3-aac4-ade9126f69ed
 keywords:
 - グローバルなロガー トレース セッション WDK、ログ記録
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3586e9ac23a2c38be1067a0a8520b2ac91b88bfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330687"
 ---
-# <a name="how-to-log-to-the-global-logger-session"></a>グローバルのロガーのセッションにログオンする方法
+# <a name="how-to-log-to-the-global-logger-session"></a>グローバル ロガー セッションにログ記録する方法
 
 
 グローバル ロガーのトレース セッションにログインするのにためのドライバーを構成するのにには、次の手順を使用します。
@@ -68,7 +68,7 @@ ms.locfileid: "56548745"
    <p>フラグの意味は、各トレース プロバイダーによって個別に定義されます。 通常、フラグは、しだいに詳細レポートのレベルを表します。</p></td>
    </tr>
    <tr class="even">
-   <td align="left"><p><strong>レベル</strong></p></td>
+   <td align="left"><p><strong>Level</strong></p></td>
    <td align="left"><p>REG_DWORD</p></td>
    <td align="left"><p>指定します、<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">トレース レベル</a>プロバイダー。</p>
    <p>意味、<strong>レベル</strong>各トレース プロバイダーによって値が個別に定義されます。 通常、トレース レベルは、(情報、警告、またはエラー)、イベントの重大度を表します。</p></td>

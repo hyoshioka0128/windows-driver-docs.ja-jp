@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_SLOT_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 19e0ebe37bbed5dee1d598060a7f5b029216b739
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392399"
 ---
 # <a name="oidwwanslotinfo"></a>OID\_WWAN\_スロット\_情報
 
@@ -29,7 +29,7 @@ OID\_WWAN\_スロット\_(あれば) 情報を指定 UICC スロットとその�
 
 [ **NDIS\_状態\_WWAN\_スロット\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt782398)通知と共に、 [ **NDIS\_WWAN\_スロット\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt782408)構造がスロット/カードの状態が変更されたときのホストに送信されます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ホストが OID を使用して\_WWAN\_スロット\_モデムの特定のスロットの状態を照会するには情報。 この OID は、executor 固有ではないと、1 つのモデムに属する任意の NDIS インスタンスに送信する場合があります。 スロットの状態は、スロットとカードの両方の状態の概要を表します。
@@ -38,7 +38,7 @@ OID\_WWAN\_スロット\_(あれば) 情報を指定 UICC スロットとその�
 
 [OID\_WWAN\_準備\_情報](oid-wwan-ready-info.md)と OID\_WWAN\_スロット\_情報 SIM カードのスロット以外のデバイスの準備完了状態を取得するのと同じコア関数の実行、OID\_WWAN\_準備\_情報は、executor あたりのコマンドを OID\_WWAN\_スロット\_情報は、物理インスタンス (エグゼキュータ) で使用可能でありを返します、現時点ですべての executor にマップされていない場合でも適切なスロットの状態。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

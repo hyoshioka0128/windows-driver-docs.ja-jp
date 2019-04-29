@@ -1,17 +1,17 @@
 ---
-title: チャンクと統計情報をエンコード Miracast を報告
+title: Miracast エンコードのチャンクおよび統計情報のレポート
 description: ディスプレイ ハードウェアでは、フレームを複数の部分に分割して Miracast ワイヤレス ディスプレイ リンク経由で送信される各ビデオのフレームを処理したり、チャンクをエンコードすることができます。
 ms.assetid: E1CE637F-42ED-4BEB-A2FF-04B4B88469DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b9770ebb7be1d5e2ff1a4af05051baafd522074
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383266"
 ---
-# <a name="reporting-miracast-encode-chunks-and-statistics"></a>チャンクと統計情報をエンコード Miracast を報告
+# <a name="reporting-miracast-encode-chunks-and-statistics"></a>Miracast エンコードのチャンクおよび統計情報のレポート
 
 
 ディスプレイ ハードウェアが、フレームを複数の部分に分割して Miracast ワイヤレス ディスプレイ リンク経由で送信される各ビデオのフレームを処理または*チャンク エンコード*します。 各チャンクは、フレーム数とフレームの一部 (またはスライス) の数から生成される一意のチャンク ID を持ちます。 同じデスクトップのフレームの更新に関連した各チャンクには、同じフレーム番号を割り当てる必要があります。

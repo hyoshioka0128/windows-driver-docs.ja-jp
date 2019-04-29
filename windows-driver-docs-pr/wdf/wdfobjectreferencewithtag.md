@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a4426aad88ad8466da6ce36a7bc84355db6af13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385730"
 ---
 # <a name="wdfobjectreferencewithtag-macro"></a>WdfObjectReferenceWithTag マクロ
 
@@ -53,9 +53,9 @@ Framework のオブジェクトへのハンドル。
 
 呼び出す[ **WdfObjectReferenceActual** ](https://msdn.microsoft.com/library/windows/hardware/ff548760)または**WdfObjectReferenceWithTag**の代わりに[ **WdfObjectReference**](wdfobjectreference.md) Microsoft デバッガーに追加の情報 (タグの値、行番号、およびファイル名) を提供します。 **WdfObjectReferenceActual**中に、行番号とファイル名を指定するには、ドライバーは、 **WdfObjectReferenceWithTag**ドライバーの現在の行番号とファイル名を使用します。
 
-使用して、タグ、行番号、およびファイル名の値を表示することができます、 **! wdftagtracker**デバッガー拡張機能。 デバッガー拡張機能では、ポインターと、一連の文字の両方として、タグの値が表示されます。 詳細については、デバッガーの拡張機能は、[KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。
+使用して、タグ、行番号、およびファイル名の値を表示することができます、 **! wdftagtracker**デバッガー拡張機能。 デバッガー拡張機能では、ポインターと、一連の文字の両方として、タグの値が表示されます。 詳細については、デバッガーの拡張機能は、次を参照してください。 [KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。
 
-オブジェクトの参照カウントの詳細については、[Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)を参照してください。
+オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)します。
 
 <a name="examples"></a>例
 --------

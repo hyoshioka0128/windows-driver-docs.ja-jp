@@ -1,5 +1,5 @@
 ---
-title: .typeopt (セットの種類のオプション)
+title: .typeopt (型のオプションの設定)
 description: .Typeopt コマンドを設定または型のオプションが表示されます。
 ms.assetid: 17842897-26e3-4b61-aa65-e5cfe8576324
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 85db79a1a1d3d29017c16c103463df926cb9bd5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334174"
 ---
-# <a name="typeopt-set-type-options"></a>.typeopt (セットの種類のオプション)
+# <a name="typeopt-set-type-options"></a>.typeopt (型のオプションの設定)
 
 
 **.Typeopt**コマンドを設定または型のオプションが表示されます。

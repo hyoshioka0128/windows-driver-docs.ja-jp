@@ -1,17 +1,17 @@
 ---
-title: ヘルプを設計し、モバイル ブロード バンド アプリでページをサポートします。
-description: ヘルプを設計し、モバイル ブロード バンド アプリでページをサポートします。
+title: モバイル ブロードバンド アプリでヘルプ ページとサポート ページを設計する
+description: モバイル ブロードバンド アプリでヘルプ ページとサポート ページを設計する
 ms.assetid: bac8987e-e801-4488-b204-5532fb3ced1b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c80b7832a49adc67ad91842e0cbcec59c938e45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383775"
 ---
-# <a name="design-help-and-support-pages-in-a-mobile-broadband-app"></a>ヘルプを設計し、モバイル ブロード バンド アプリでページをサポートします。
+# <a name="design-help-and-support-pages-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリでヘルプ ページとサポート ページを設計する
 
 
 モバイル ブロード バンド サービスを使用して問題が発生したお客様は、ヘルプとサポート ページに移動します。
@@ -46,7 +46,7 @@ ms.locfileid: "56551986"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
--   組み込みのコントロールを使用する方法の詳細については、[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)を参照してください。
+-   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)します。
 
 -   [モバイル ブロード バンド WinRT API の概要](mobile-broadband-winrt-api-overview.md)
 

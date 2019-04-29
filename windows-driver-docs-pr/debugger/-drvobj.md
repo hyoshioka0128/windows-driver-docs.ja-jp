@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: dfebfb5d30d2005303cc2f6def4a297e733574e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334541"
 ---
 # <a name="drvobj"></a>!drvobj
 
@@ -55,7 +55,7 @@ Kdexts.dll
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)例と、この拡張機能コマンドのアプリケーション。 ドライバーのオブジェクトについては、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 -------
 
 場合*DriverObject*デバイスの名前を指定しますが、プレフィックス、プレフィックスを提供しない"\\ドライバー\\"と見なされます。 このコマンドでかどうかをチェックする注*DriverObject*式エバリュエーターを使用する前に有効なアドレスまたはデバイス名は、します。

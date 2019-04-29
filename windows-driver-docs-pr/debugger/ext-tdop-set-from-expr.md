@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75e03a1b5780be073f242ccc0d20dbb367634e71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331387"
 ---
 # <a name="exttdopsetfromexpr"></a>EXT\_TDOP\_設定\_FROM\_EXPR
 
 
 EXT\_TDOP\_設定\_FROM\_の EXPR サブ操作、 [**デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)[**要求**](request.md)操作は、式の値を表す型指定されたデータの説明を返します。
 
-**パラメーター**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**操作**  
 EXT に設定\_TDOP\_設定\_FROM\_EXPR このサブ操作。

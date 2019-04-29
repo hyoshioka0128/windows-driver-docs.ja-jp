@@ -1,6 +1,6 @@
 ---
-title: バッファー I/O 制御コードの説明
-description: バッファー I/O 制御コードの説明
+title: I/O 制御コードのバッファー記述
+description: I/O 制御コードのバッファー記述
 ms.assetid: a458f3fb-a6c7-42ae-870e-1617a96b496f
 keywords:
 - I/O 制御コード WDK カーネル、バッファーの説明
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8af2d869f1f3760affb5afcc083e30cf48549d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326044"
 ---
-# <a name="buffer-descriptions-for-io-control-codes"></a>バッファー I/O 制御コードの説明
+# <a name="buffer-descriptions-for-io-control-codes"></a>I/O 制御コードのバッファー記述
 
 
 

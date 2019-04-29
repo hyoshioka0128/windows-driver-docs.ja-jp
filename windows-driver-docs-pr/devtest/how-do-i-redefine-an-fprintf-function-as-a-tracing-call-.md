@@ -5,13 +5,13 @@ ms.assetid: def82d48-454b-421b-a63d-695dae733fd0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98a9ca30dca368e7bf167f3eaf94a61324b0f74c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341680"
 ---
-# <a name="how-do-i-redefine-an-fprintf-function-as-a-tracing-call"></a>トレースの呼び出しと、fprintf 関数を再定義には
+# <a name="how-do-i-redefine-an-fprintf-function-as-a-tracing-call"></a>トレース呼び出しとして fprintf 関数を再定義する方法
 
 
 **Fprintf**関数の呼び出しに変換されて最終的に、 **sprintf**関数呼び出しを使用している場合に特に perceptibly、パフォーマンスを低下させるそのリソースを大量に消費の呼び出し何度も何度も。

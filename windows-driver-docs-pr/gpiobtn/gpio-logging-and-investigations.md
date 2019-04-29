@@ -1,17 +1,17 @@
 ---
-title: GPIO ログ記録と調査
+title: GPIO のログ記録と調査
 description: このトピックでは、ログ記録と GPIO をテストするための調査について説明します。
 ms.assetid: 998BF6BC-D931-4555-A8BC-F860DFA9A18F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b01e4045b0c8e7f2a2acaf32bbf6ad289968430a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326084"
 ---
-# <a name="gpio-logging-and-investigations"></a>GPIO ログ記録と調査
+# <a name="gpio-logging-and-investigations"></a>GPIO のログ記録と調査
 
 
 このトピックでは、ログ記録と GPIO をテストするための調査について説明します。
@@ -38,7 +38,7 @@ logman stop -ets buttonTrace
 12: Indicator_UpdateRegistryValue - Indicator state update : DockMode_Indicator : new state : Docked
 ```
 
-インジケーターの注入を実装する方法の詳細については、、 [Windows 8.1 の GPIO ボタンとインジケーター実装ガイド](gpio-buttons-and-indicators-implementation-guide-for-windows-8-1.md)を参照してください。
+インジケーターの注入を実装する方法の詳細については、次を参照してください。、 [Windows 8.1 の GPIO ボタンとインジケーター実装ガイド](gpio-buttons-and-indicators-implementation-guide-for-windows-8-1.md)します。
 
  
 

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a427bddfa9b2801853b341e020679670fb8cac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336136"
 ---
-# <a name="ndiskdfilterdriver"></a>! ndiskd.filterdriver
+# <a name="ndiskdfilterdriver"></a>!ndiskd.filterdriver
 
 
 **! Ndiskd.filterdriver**拡張機能は、NDIS フィルター ドライバーに関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd すべてのフィルター ドライバーの一覧が表示されます。

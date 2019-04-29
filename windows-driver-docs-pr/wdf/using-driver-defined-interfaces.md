@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fb863e246a5af73961f75c9a9127c5bc9975b65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326992"
 ---
 # <a name="using-driver-defined-interfaces"></a>ドライバー定義インターフェイスの使用
 
@@ -27,7 +27,7 @@ ms.locfileid: "56574495"
 
 たとえば、バス ドライバーは、その情報が、子デバイスのリソースの一覧で使用できない場合、子デバイスに関する情報を取得するより高度なドライバーが呼び出すことができる 1 つまたは複数のルーチンを提供する可能性があります。
 
-WDK で説明されているドライバーの定義済みのインターフェイスのセットの例は、[USB ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540046)を参照してください。 また、framework ベースのバージョンを参照してください、[トースター](sample-kmdf-drivers.md)サンプル。
+WDK で説明されているドライバーの定義済みのインターフェイスのセットの例は、次を参照してください。 [USB ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540046)します。 また、framework ベースのバージョンを参照してください、[トースター](sample-kmdf-drivers.md)サンプル。
 
 ### <a name="creating-an-interface"></a>インターフェイスの作成
 

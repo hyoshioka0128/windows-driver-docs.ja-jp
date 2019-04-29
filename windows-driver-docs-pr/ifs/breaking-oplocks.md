@@ -1,17 +1,17 @@
 ---
-title: 各 Oplock の解除
-description: 各 Oplock の解除
+title: Oplock の破損
+description: Oplock の破損
 ms.assetid: 1f3c4a99-5ad2-4597-a1c9-a21f80c40291
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79818cd997acc69e0b5ab5cc229faa9b59529ee9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391502"
 ---
-# <a name="breaking-oplocks"></a>各 Oplock の解除
+# <a name="breaking-oplocks"></a>Oplock の破損
 
 
 ## <span id="ddk_network_redirector_design_and_performance_if"></span><span id="DDK_NETWORK_REDIRECTOR_DESIGN_AND_PERFORMANCE_IF"></span>
@@ -25,7 +25,7 @@ Oplock が付与される要求元の IRP が保留にします。 状態で保�
 
 -   ファイル\_OPLOCK\_切断\_TO\_レベル\_2 - 現在の oplock (レベル 1 またはバッチ) は、レベル 2 oplock に変換されました。 レベル 2 へのフィルターの各 oplock を解除しないを None に常に中断することに注意してください。
 
-ハンドルの読み取りの読み取り/書き込みと読み取り-書き込みハンドル oplocks、oplock の重大なレベルが 0 個以上の OPLOCK のフラグの組み合わせとして説明されている\_レベル\_キャッシュ\_読み取り、OPLOCK\_レベル\_キャッシュ\_ハンドル、または OPLOCK\_レベル\_キャッシュ\_書き込み、 **NewOplockLevel**メンバー要求の\_OPLOCK\_出力\_として渡されたバッファーの構造、 *lpOutBuffer*パラメーターの[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)します。 同様の方法で[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)カーネル モードから Windows 7 の各 oplock を要求するために使用できます。 詳細については、[ **FSCTL\_要求\_OPLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff545530)を参照してください。
+ハンドルの読み取りの読み取り/書き込みと読み取り-書き込みハンドル oplocks、oplock の重大なレベルが 0 個以上の OPLOCK のフラグの組み合わせとして説明されている\_レベル\_キャッシュ\_読み取り、OPLOCK\_レベル\_キャッシュ\_ハンドル、または OPLOCK\_レベル\_キャッシュ\_書き込み、 **NewOplockLevel**メンバー要求の\_OPLOCK\_出力\_として渡されたバッファーの構造、 *lpOutBuffer*パラメーターの[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)します。 同様の方法で[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)カーネル モードから Windows 7 の各 oplock を要求するために使用できます。 詳細については、次を参照してください。 [ **FSCTL\_要求\_OPLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff545530)します。
 
 フィルター処理、読み取り/書き込み、読み取り、書き込みハンドル、または、特定の状況 (注を参照してください)、読み取りハンドル oplock、IRP の完了、oplock パッケージによって保留 oplock の要求および、oplock を原因となった操作自体では、レベル 1 に、バッチを中断するときに保留 (同期ハンドルでは、上で、操作が発行または IRP が場合\_MJ\_作成で、同期は常に、I/O マネージャーにより、操作の状態を返すのではなく、ブロック、\_PENDING) 待機している、保留操作を続行するには、安全では、その処理が終了したら、oplock のパッケージを指示する、oplock の所有者から受信確認。 この遅延の目的は、現在の操作を続行する前に一貫性のある状態に戻るストリームを格納する、oplock の所有者を許可します。 システムは、タイムアウトが存在しないため、受信確認の受信を永久に待機します。 適切なタイミングで、中断を受け入れますが、oplock の所有者の責任ためです。 保留操作の IRP がキャンセル可能な状態に設定されています。 Oploack パッケージのステータスの IRP がすぐに完了場合は、アプリケーションまたはドライバーが、待機を実行する終了する\_キャンセルします。
 
@@ -53,7 +53,7 @@ Oplock を切断する必要があるかどうかを判断する現在の oplock
 
 - [IRP_MJ_FILE_SYSTEM_CONTROL](irp-mj-file-system-control2.md)
 
-Windows 7 の oplock の中断が場合、受信確認を必要とする要求\_OPLOCK\_出力\_フラグ\_ACK\_必須フラグが設定されて、**フラグ**のメンバー、要求\_OPLOCK\_出力\_の出力パラメーターとして渡されたバッファーの構造体[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)(*lpOutBuffer*)、 [ **FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)(*OutBuffer*) または[ **ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)(*OutBuffer*)。 詳細については、[ **FSCTL\_要求\_OPLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff545530)を参照してください。
+Windows 7 の oplock の中断が場合、受信確認を必要とする要求\_OPLOCK\_出力\_フラグ\_ACK\_必須フラグが設定されて、**フラグ**のメンバー、要求\_OPLOCK\_出力\_の出力パラメーターとして渡されたバッファーの構造体[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)(*lpOutBuffer*)、 [ **FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)(*OutBuffer*) または[ **ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)(*OutBuffer*)。 詳細については、次を参照してください。 [ **FSCTL\_要求\_OPLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff545530)します。
 
 **注**  上記の操作を一覧表示と読み取りハンドル oplock の中断がの結果の詳細を説明します。、保留中、oplock を無効にした操作の。 たとえば、 [IRP\_MJ\_作成](irp-mj-create2.md)トピックに関連付けられているハンドルの読み取りの詳細が含まれています。
 

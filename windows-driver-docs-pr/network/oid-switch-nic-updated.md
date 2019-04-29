@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_NIC_UPDATED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 81f542659a11e3964dbd26e824abb1b54584ccd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386879"
 ---
 # <a name="oidswitchnicupdated"></a>OID\_スイッチ\_NIC\_更新日
 
@@ -24,7 +24,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
 **PortId**のメンバー、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598215)構造では、ポートを指定する、更新プログラム通知が行わします。 拡張可能スイッチ拡張機能の OID クエリ要求を発行して拡張可能スイッチには、これと他のポートのパラメーター情報を取得できます[OID\_切り替える\_ポート\_配列](oid-switch-port-array.md)します。
 
-**インデックス**のメンバー、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598215)構造体は、ネットワーク アダプターのインデックスを指定します。対象の更新の通知が行われました。 指定したネットワーク アダプター**インデックス**値がで指定された拡張可能スイッチ ポートに接続されている、 **PortId**メンバー。 これらのインデックス値の詳細については、[ネットワーク アダプターのインデックス値](https://msdn.microsoft.com/library/windows/hardware/hh598258)を参照してください。
+**インデックス**のメンバー、 [ **NDIS\_スイッチ\_NIC\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598215)構造体は、ネットワーク アダプターのインデックスを指定します。対象の更新の通知が行われました。 指定したネットワーク アダプター**インデックス**値がで指定された拡張可能スイッチ ポートに接続されている、 **PortId**メンバー。 これらのインデックス値の詳細については、次を参照してください。[ネットワーク アダプターのインデックス値](https://msdn.microsoft.com/library/windows/hardware/hh598258)します。
 
 拡張機能は、OID の要求を設定する OID の処理の次のガイドラインに従う必要があります\_スイッチ\_NIC\_更新日。
 

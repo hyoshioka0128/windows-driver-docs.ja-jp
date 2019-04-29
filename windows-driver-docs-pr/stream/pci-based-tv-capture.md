@@ -1,6 +1,6 @@
 ---
-title: PCI ベース テレビのキャプチャ
-description: PCI ベース テレビのキャプチャ
+title: PCI ベースの TV キャプチャ
+description: PCI ベースの TV キャプチャ
 ms.assetid: ae97d5f7-82de-4d6e-9835-ff4c7427f333
 keywords:
 - グラフ構成 WDK ビデオ キャプチャ、テレビの PCI ベースのキャプチャをフィルター処理します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7afab4fbfde1e8ecc4175c8614c575790048220
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334009"
 ---
-# <a name="pci-based-tv-capture"></a>PCI ベース テレビのキャプチャ
+# <a name="pci-based-tv-capture"></a>PCI ベースの TV キャプチャ
 
 
 テレビやラジオ チューナー、テレビのオーディオ、およびクロスバー PCI ベースのキャプチャ デバイスのフィルターの複雑なグラフでは、必要な対応している多くの場合、それぞれに異なる可能性がある色空間とフレームを別のプレビューとキャプチャ ストリーム、バスのハードウェアディメンション。 このようなデバイスでは、VBI またはタイムコードも個別のストリームを提供できます。
@@ -31,7 +31,7 @@ ms.locfileid: "56560334"
 
 ビデオ キャプチャ ミニドライバーは、所有権、バッファーの無期限に--ロック、入力、ロック解除、およびそれらがキャプチャされると、サーフェスを反転し、保持できます。 ミニドライバーは、全画面表示 MS-DOS アプリケーションや排他モードのゲームの実行中に画面の損失を示す通知を登録する必要があります。 このような場合、ミニドライバーは、キャプチャ フィルターにバッファーを完了します。
 
-ビデオ キャプチャ ハードウェアには、FM ラジオ チューナーが含まれている場合は、[ラジオ チューナーでのビデオ キャプチャ デバイス](video-capture-devices-with-radio-tuners.md)を参照してください。
+ビデオ キャプチャ ハードウェアには、FM ラジオ チューナーが含まれている場合は、次を参照してください。[ラジオ チューナーでのビデオ キャプチャ デバイス](video-capture-devices-with-radio-tuners.md)します。
 
  
 

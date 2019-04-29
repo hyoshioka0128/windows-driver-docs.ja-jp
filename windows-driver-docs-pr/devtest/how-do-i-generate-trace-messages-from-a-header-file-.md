@@ -5,13 +5,13 @@ ms.assetid: 00b97f26-90e2-4efe-8bba-e3ffe7ba90ea
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 564b4f70862ab858ac0fd698e91d816c3340472e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329869"
 ---
-# <a name="how-do-i-generate-trace-messages-from-a-header-file"></a>ヘッダー ファイルからのトレース メッセージを生成する方法
+# <a name="how-do-i-generate-trace-messages-from-a-header-file"></a>ヘッダー ファイルからトレース メッセージを生成する方法
 
 
 .C、.c ファイルでは、.cpp、.cxx 以外のファイル名拡張子を持つソース ファイルからのトレース メッセージを生成するには、追加、 **- ext** 、実行するようにパラメーター\_WPP マクロは、Windows ソフトウェア トレース プリプロセッサを呼び出します。
@@ -22,7 +22,7 @@ ms.locfileid: "56536952"
 RUN_WPP=$(SOURCES) -km -ext:.c.h
 ```
 .H ファイルでスキャンする tracewpp ニーズが含まれていることを必ず`$(SOURCES)`コマンドラインに追加することもできます。  
-次に、例を示します。
+例:
 
 ```
 RUN_WPP=$(SOURCES) tracedrv.h -km -ext:.c.h

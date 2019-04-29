@@ -1,5 +1,5 @@
 ---
-title: .scriptdebug (デバッグ JavaScript)
+title: .scriptdebug (JavaScript のデバッグ)
 description: JavaScript スクリプトをデバッグするのにには、.scriptdebug コマンドを使用します。
 keywords:
 - .scriptdebug デバッグの JavaScript Windows デバッグ
@@ -14,13 +14,13 @@ api_name:
 api_type:
 - NA
 ms.openlocfilehash: cd1dd7119b2eca9716e7b4779319c37b538e62cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334311"
 ---
-# <a name="scriptdebug-debug-javascript"></a>.scriptdebug (デバッグ JavaScript)
+# <a name="scriptdebug-debug-javascript"></a>.scriptdebug (JavaScript のデバッグ)
 
 使用して、 **.scriptdebug** JavaScript スクリプトをデバッグするコマンド。
 
@@ -61,7 +61,7 @@ ms.locfileid: "56535455"
 
 ## <a name="span-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span>追加情報
 
-JavaScript のデバッグの概要については、[JavaScript デバッガーのスクリプティング - JavaScript のデバッグ](javascript-debugger-scripting.md#DEBUGGING)を参照してください。
+JavaScript のデバッグの概要については、次を参照してください。 [JavaScript デバッガーのスクリプティング - JavaScript のデバッグ](javascript-debugger-scripting.md#DEBUGGING)します。
 
 >[!NOTE] 
 > WinDbg のプレビューでは、JavaScript のデバッグを使用するには、管理者として、デバッガーを実行します。

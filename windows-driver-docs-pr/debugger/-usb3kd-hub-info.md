@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 399a35aeaee39f782bc7e0b1fc19ac62c91d2d9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578131"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338762"
 ---
 # <a name="usb3kdhubinfo"></a>!usb3kd.hub\_info
 
@@ -39,7 +39,7 @@ ms.locfileid: "56578131"
 
 Usb3kd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 デバイス拡張機能のアドレスを取得する出力の確認、 [ **! usb\_ツリー** ](-usb3kd-usb-tree.md)コマンド。 次の例では、ルート ハブにデバイスの拡張機能のアドレスは、0xfffffa8005ad92d0 です。

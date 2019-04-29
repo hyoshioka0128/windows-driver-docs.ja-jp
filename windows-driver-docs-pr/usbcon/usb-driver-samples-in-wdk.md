@@ -4,11 +4,11 @@ title: USB ドライバーのサンプル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dc88f736682a8c2cdecf1e04cc7f5f69cf2a6fe
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385060"
 ---
 # <a name="usb-driver-samples"></a>USB ドライバーのサンプル
 
@@ -58,7 +58,7 @@ ms.locfileid: "57349025"
 ## <a name="building-a-sample"></a>サンプルの構築
 
 
-サンプルのドライバーを構築する方法の詳細については、[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)を参照してください。
+サンプルのドライバーを構築する方法の詳細については、次を参照してください。[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)します。
 
 ## <a name="related-topics"></a>関連トピック
 [USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  

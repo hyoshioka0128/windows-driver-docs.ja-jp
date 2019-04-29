@@ -1,6 +1,6 @@
 ---
-title: '#それ以外の場合の条件付きプリプロセッサ ディレクティブ'
-description: '#それ以外の場合の条件付きプリプロセッサ ディレクティブ'
+title: '#Else 条件付きプリプロセッサ ディレクティブ'
+description: '#Else 条件付きプリプロセッサ ディレクティブ'
 ms.assetid: 3a8ddc60-1db9-4db0-9e55-405c88b84849
 keywords:
 - プリプロセッサ ディレクティブ WDK GDL、条件付きディレクティブ
@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025aacc4ba5b9a4ffca3a0a20adb2d5ad0fef58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385793"
 ---
 # <a name="else-conditional-preprocessor-directive"></a>\#それ以外の場合の条件付きプリプロセッサ ディレクティブ
 

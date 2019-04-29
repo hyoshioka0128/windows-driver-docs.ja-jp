@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b430112cd814ab7801a285a0c2195dd7e9c8bc85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384275"
 ---
 # <a name="mrxcollapseopen-routine"></a>MRxCollapseOpen ルーチン
 
@@ -71,7 +71,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 *MRxCollapseOpen*折りたたむには、SRV RDBSS によって呼び出される\_構造をローカルで開く。 ネットワークのミニ リダイレクターはネットワーク ミニリダイレクターを 2 回呼び出す必要はありませんので、折りたたみが可能であるか判断に問い合わせます。 ネットワークのミニ リダイレクターを折りたたむには、SRV 決定かどうか\_ようにはして返すことができる状態に戻す構造体を開きます。 状態の戻り値\_成功した場合は、終端の戻り値。 状態など、さまざまな戻り値、\_詳細\_処理\_REQUIRED は、未終了の戻り値と見なされます。

@@ -1,6 +1,6 @@
 ---
-title: データをコピーし、キャッシュ ポリシー
-description: データをコピーし、キャッシュ ポリシー
+title: データのコピーおよびキャッシュのポリシー
+description: データのコピーおよびキャッシュのポリシー
 ms.assetid: 1867f2bd-240c-4525-9f02-98b8f1d54b17
 keywords:
 - キャッシュの HD オーディオ
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3b30cd4100680fe5c63baead176a92dff530771
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333825"
 ---
-# <a name="data-copying-and-caching-policy"></a>データをコピーし、キャッシュ ポリシー
+# <a name="data-copying-and-caching-policy"></a>データのコピーおよびキャッシュのポリシー
 
 
 WaveCyclic ミニポート ドライバーでは、HD オーディオ コント ローラーのハードウェアにアクセスする、DMA バッファーとユーザー モードのオーディオ アプリケーションにアクセスするクライアント バッファー間でのオーディオ データをコピーします。

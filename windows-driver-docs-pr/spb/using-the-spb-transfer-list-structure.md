@@ -5,11 +5,11 @@ ms.assetid: 577122CC-D1F8-41C5-BE77-A22FC8516B82
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e89f3796fd6a48a65315f18746cd1f2be24ba352
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325296"
 ---
 # <a name="using-the-spbtransferlist-structure-for-custom-ioctls"></a>SPB を使用して\_転送\_カスタム Ioctl のリストの構造
 

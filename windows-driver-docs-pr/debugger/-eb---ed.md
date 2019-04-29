@@ -16,13 +16,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ec85a19cf391ba5831c813b1749e6ffe0bbeb695
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334543"
 ---
-# <a name="eb-ed"></a>! eb、! ed
+# <a name="eb-ed"></a>!eb、!ed
 
 
 **! Eb**と **! ed**拡張機能は、指定された物理アドレスに値のシーケンスを記述します。
@@ -79,7 +79,7 @@ Kext.dll Kdextx86.dll</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-物理メモリを読み取り、使用、 [ **! d\\**  * ](-db---dc---dd---dp---dq---du---dw.md)拡張機能。 その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+物理メモリを読み取り、使用、 [ **! d\\**  * ](-db---dc---dd---dp---dq---du---dw.md)拡張機能。 その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
  
 

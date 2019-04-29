@@ -1,5 +1,5 @@
 ---
-title: qd (Quit およびデタッチ)
+title: qd (終了してデタッチ)
 description: Qd コマンドでは、デバッグ セッションを終了し、実行されているすべてのユーザー モード ターゲット アプリケーションのまま。
 ms.assetid: 3282c78b-6c4b-4c1b-a086-4890c3140ab9
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a1c615d108c8af8319764af5beb651255da28d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387069"
 ---
-# <a name="qd-quit-and-detach"></a>qd (Quit およびデタッチ)
+# <a name="qd-quit-and-detach"></a>qd (終了してデタッチ)
 
 
 **Qd**コマンドは、デバッグ セッションを終了し、ユーザー モードのターゲット アプリケーションの実行中のままです。 (CDB および KD では、このコマンドも、デバッガーを終了自体。 、WinDbg で次のコマンドを返します、デバッガー休止モードにします。)

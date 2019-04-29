@@ -3,11 +3,11 @@ title: Debugger Data Model C++ のインターフェイス
 description: このトピックでは、デバッガーのデータ モデルの C++ インターフェイスを使用して拡張およびデバッガーの機能をカスタマイズする方法について説明します。
 ms.date: 10/08/2018
 ms.openlocfilehash: 831e11ba8d5bcb28bd7842a9653dfff4205aafe7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374376"
 ---
 # <a name="debugger-data-model-c-interfaces"></a>Debugger Data Model C++ のインターフェイス 
 

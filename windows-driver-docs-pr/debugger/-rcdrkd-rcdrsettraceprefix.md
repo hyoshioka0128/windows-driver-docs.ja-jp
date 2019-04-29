@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a59aaf44176e80aa450a0f99efe799b1a9a1f932
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334325"
 ---
 # <a name="rcdrkdrcdrsettraceprefix"></a>!rcdrkd.rcdrsettraceprefix
 
@@ -42,7 +42,7 @@ Rcdrkd.dll
 <a name="remarks"></a>コメント
 -------
 
-レコーダー ログ内の各メッセージには、トレース メッセージのプレフィックス文字列を指定することで制御できる接頭辞が付きます。 詳細については、[トレース メッセージのプレフィックス](https://msdn.microsoft.com/library/windows/hardware/ff553941)を参照してください。
+レコーダー ログ内の各メッセージには、トレース メッセージのプレフィックス文字列を指定することで制御できる接頭辞が付きます。 詳細については、次を参照してください。[トレース メッセージのプレフィックス](https://msdn.microsoft.com/library/windows/hardware/ff553941)します。
 
 <a name="examples"></a>使用例
 --------

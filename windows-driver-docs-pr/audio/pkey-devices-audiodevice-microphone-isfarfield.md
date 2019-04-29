@@ -4,11 +4,11 @@ description: Windows 10 バージョン 19 H で 1 以降、**鍵\_デバイス\
 ms.date: 02/13/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 89a38c5cd59318c13d9c1e7ce248bad62eb1138f
-ms.sourcegitcommit: 5f4404a7010a6b26530f60144c5ea7cab846feec
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56582953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332156"
 ---
 # <a name="pkeydevicesaudiodevicemicrophoneisfarfield"></a>鍵\_デバイス\_AudioDevice\_マイク\_IsFarField
 
@@ -20,7 +20,7 @@ Windows 10 以降 19 H 1、鍵を使用して\_デバイス\_AudioDevice\_マイ
 
 値 0 またはプロパティ キーがないのでは、音声アシスタントを使用するため、エンドポイントが優先しないが、マイクが相手側のフィールドをサポートしていないか、サポートが、不明なことを示します。
 
-プロパティは、INF、および可能であればオーディオ デバイスの基本の INF ではなく、OEM によって提供される、拡張子 INF を使用して設定する必要があります。 拡張子 INF ファイルの詳細については、[コンポーネント化されたオーディオ ドライバーのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#-creating-a-componentized-audio-driver-installation)と[拡張子 INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)を参照してください。
+プロパティは、INF、および可能であればオーディオ デバイスの基本の INF ではなく、OEM によって提供される、拡張子 INF を使用して設定する必要があります。 拡張子 INF ファイルの詳細については、次を参照してください。[コンポーネント化されたオーディオ ドライバーのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#-creating-a-componentized-audio-driver-installation)と[拡張子 INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)します。
 
 
 

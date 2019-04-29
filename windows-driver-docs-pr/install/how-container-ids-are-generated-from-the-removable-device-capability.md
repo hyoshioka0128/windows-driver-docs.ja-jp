@@ -5,16 +5,16 @@ ms.assetid: 493a9473-4989-4557-b2b2-efa0e2a8b24e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9aaae8db2d5bbcbd1c7103d93f0aed3ee19d728e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325824"
 ---
 # <a name="how-container-ids-are-generated-from-the-removable-device-capability"></a>リムーバブル デバイス機能でコンテナー ID を生成する方法
 
 
-バス ドライバーがデバイス ノードのコンテナー ID を提供できないかどうか (*devnode*) の列挙、プラグ アンド プレイ (PnP) マネージャーでは、リムーバブル デバイスの機能を使用して、デバイスの列挙されたすべての devnode のコンテナー ID を生成することです。 リムーバブル デバイスの機能の詳細については、[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)を参照してください。
+バス ドライバーがデバイス ノードのコンテナー ID を提供できないかどうか (*devnode*) の列挙、プラグ アンド プレイ (PnP) マネージャーでは、リムーバブル デバイスの機能を使用して、デバイスの列挙されたすべての devnode のコンテナー ID を生成することです。 リムーバブル デバイスの機能の詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](overview-of-the-removable-device-capability.md)します。
 
 次のヒューリスティックでは、リムーバブル デバイスの機能からコンテナー Id を生成する方法について説明します。
 

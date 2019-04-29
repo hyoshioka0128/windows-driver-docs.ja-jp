@@ -5,11 +5,11 @@ ms.assetid: 03c6bbd1-bd4f-415f-b4ed-c6e812c50f8d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5aad0b79cf7eb6ca1d3d468b6908270a4b1d6b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329883"
 ---
 # <a name="introduction-to-ndis-virtual-machine-queue-vmq"></a>NDIS 仮想マシン キュー (VMQ) の概要
 
@@ -33,13 +33,13 @@ VMQ には、次の機能が用意されています。
 
 -   DMA を使用して VM のメモリに直接データを転送するには、ネットワーク データのコピーを防止します。
 
--   セキュリティで保護された環境を提供するネットワークのデータを分割します。 セキュリティの問題に関する詳細については、[NDIS 仮想マシン (VM) の共有メモリのセキュリティ問題に](security-issues-with-ndis-virtual-machine--vm--shared-memory.md)を参照してください。
+-   セキュリティで保護された環境を提供するネットワークのデータを分割します。 セキュリティの問題に関する詳細については、次を参照してください。 [NDIS 仮想マシン (VM) の共有メモリのセキュリティ問題に](security-issues-with-ndis-virtual-machine--vm--shared-memory.md)します。
 
     **注**  NDIS 6.30 および Windows Server 2012 以降、ネットワーク データを別の lookahead バッファーに分割することは現在サポートされていません。
 
      
 
--   ライブ マイグレーションできます。 ライブ マイグレーションの詳細については、[NDIS VMQ ライブ マイグレーションをサポート](ndis-vmq-live-migration-support.md)を参照してください。
+-   ライブ マイグレーションできます。 ライブ マイグレーションの詳細については、次を参照してください。 [NDIS VMQ ライブ マイグレーションをサポート](ndis-vmq-live-migration-support.md)します。
 
 VMQ の高度な概念を紹介するには、このセクションには、次の補足トピックが含まれます。
 

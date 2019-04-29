@@ -1,6 +1,6 @@
 ---
-title: USB インターフェイスの操作
-description: USB インターフェイスの操作
+title: USB インターフェイスの使用
+description: USB インターフェイスの使用
 ms.assetid: 6a1801e4-bd46-4a78-8c30-7dc62e41a37a
 keywords:
 - USB I/O ターゲット WDK KMDF、USB インターフェイス
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 738e982145d760505882610f00f605f45db24f4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383535"
 ---
-# <a name="working-with-usb-interfaces"></a>USB インターフェイスの操作
+# <a name="working-with-usb-interfaces"></a>USB インターフェイスの使用
 
 
 フレームワークとして各 USB インターフェイスを表す、 *framework USB インターフェイス オブジェクト*します。 ときに、ドライバー [framework USB デバイス オブジェクトを作成する](working-with-usb-devices.md#creating-a-framework-usb-device-object)フレームワークは、デバイスの最初の USB 構成を含む USB インターフェイスごとに framework USB インターフェイス オブジェクトを作成します。
@@ -67,7 +67,7 @@ USB インターフェイスの現在選択されている別の設定を識別�
 
 デバイスの代替設定は、0 から始まる連続して番号する必要があります。
 
-関連情報については、[USB インターフェイスで代替の設定を選択する方法](https://msdn.microsoft.com/library/windows/hardware/hh968309)を参照してください。
+関連情報については、次を参照してください。 [USB インターフェイスで代替の設定を選択する方法](https://msdn.microsoft.com/library/windows/hardware/hh968309)します。
 
  
 

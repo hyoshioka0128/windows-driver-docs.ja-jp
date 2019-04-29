@@ -1,17 +1,17 @@
 ---
-title: 省略可能で、必要な GPIO コールバック関数
+title: 省略可能および必須の GPIO コールバック関数
 description: 汎用入出力 (GPIO) コント ローラーのドライバーでは、GPIO フレームワーク拡張機能 (GpioClx) のクライアントとして登録する GPIO_CLX_RegisterClient メソッドを呼び出します。
 ms.assetid: 2F126431-13AB-4E3F-9E5E-56DC7D9AF024
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3478695dca8a1b3e9c13c2e5b0cb2f8eaebc9793
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326126"
 ---
-# <a name="optional-and-required-gpio-callback-functions"></a>省略可能で、必要な GPIO コールバック関数
+# <a name="optional-and-required-gpio-callback-functions"></a>省略可能および必須の GPIO コールバック関数
 
 
 汎用の I/O (GPIO) コント ローラー ドライバーは呼び出し、 [ **GPIO\_CLX\_RegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/hh439490) GPIO フレームワーク拡張機能 (GpioClx) のクライアントとして登録します。 この呼び出し中に、ドライバーはドライバーによって実装されているイベントのコールバック関数の一覧を示す GpioClx に登録パケットを渡します。 GpioClx は、GPIO コント ローラーのハードウェア構成、I/O 操作を実行および割り込みを管理するこれらのコールバック関数を呼び出します。 GpioClx では、GPIO コント ローラーのドライバーを特定のコールバック関数の実装が他のコールバック関数は省略可能なサポートが必要です。

@@ -27,11 +27,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6154059f7b282e3bef75a8c295868f67129fa26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333899"
 ---
 # <a name="channel-mask"></a>チャネル マスク
 
@@ -42,7 +42,7 @@ Windows、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windo
 
 チャネル マスク内の各ビットは、特定のスピーカー位置を表します。 その位置を表すマスクのビットが 1; に設定されている場合は、マスクは、特定のスピーカー位置にチャネルを割り当てます、未割り当てのスピーカー位置のすべてのマスク ビットが 0 に設定されます。 WAVEFORMATEXTENSIBLE 構造上の図に示されていないチャネル マスクのビット数を定義しますが、これらのビット ディスカッションのホーム シアターのスピーカー構成の影響はありません。 してわかりやすくするため省略しています。
 
-スピーカー位置を前の図に、チャネル マスク内のエンコーディングは、プロパティの値に使用するときと同様、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537250)プロパティ要求。 詳細については、[ **KSAUDIO\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537083)を参照してください。
+スピーカー位置を前の図に、チャネル マスク内のエンコーディングは、プロパティの値に使用するときと同様、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537250)プロパティ要求。 詳細については、次を参照してください。 [ **KSAUDIO\_チャネル\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff537083)します。
 
 次の表は、前の図に、マスクのビットごとの意味を示します。
 
@@ -102,7 +102,7 @@ Windows、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windo
 </tr>
 <tr class="odd">
 <td align="left"><p>8</p></td>
-<td align="left"><p>ビジネス継続性</p></td>
+<td align="left"><p>BC</p></td>
 <td align="left"><p>Center をバックアップします。</p></td>
 </tr>
 <tr class="even">

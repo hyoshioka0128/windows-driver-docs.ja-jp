@@ -1,17 +1,17 @@
 ---
-title: WDDM ドライバーが Windows 8 に移行
+title: WDDM グラフィックス ドライバーが Windows 8 に移行される
 description: Windows 8 アップグレード インストールでグラフィックス ハードウェアの Window 8 ボックスのカバレッジがない場合は、Windows の以前のバージョンで使用された、WDDM 1.1 または WDDM 1.0 のグラフィック ドライバーは Windows 8 に移行されます。
 ms.assetid: F3EAD1D3-7614-4827-93E0-6DDCD9347CC3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c6b16e9af5d5b17062912e8910bcb86c6f47d25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391195"
 ---
-# <a name="wddm-graphics-driver-migrated-to-windows-8"></a>WDDM ドライバーが Windows 8 に移行
+# <a name="wddm-graphics-driver-migrated-to-windows-8"></a>WDDM グラフィックス ドライバーが Windows 8 に移行される
 
 
 Windows 8 アップグレード インストールでグラフィックス ハードウェアの Window 8 ボックスのカバレッジがない場合は、Windows の以前のバージョンで使用された、WDDM 1.1 または WDDM 1.0 のグラフィック ドライバーは Windows 8 に移行されます。

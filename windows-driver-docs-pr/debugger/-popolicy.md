@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f54b19ac1001c3adab38195f033986d92b297f52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335781"
 ---
 # <a name="popolicy"></a>!popolicy
 
@@ -59,7 +59,7 @@ ms.locfileid: "56571221"
 
 表示するには、システムの電源機能を使用して、 [ **! pocaps** ](-pocaps.md)拡張機能コマンド。 電源機能、および電源ポリシーについては、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このコマンドの出力の例を次に示します。
