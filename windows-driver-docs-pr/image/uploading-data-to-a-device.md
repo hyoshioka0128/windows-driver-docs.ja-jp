@@ -1,17 +1,17 @@
 ---
-title: デバイスにデータをアップロードします。
-description: デバイスにデータをアップロードします。
+title: デバイスへのデータのアップロード
+description: デバイスへのデータのアップロード
 ms.assetid: 50fc5f56-3758-4151-9748-dd88544006f1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c4360ef2d67d65fb65d7cc23399b63cee95fb8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383705"
 ---
-# <a name="uploading-data-to-a-device"></a>デバイスにデータをアップロードします。
+# <a name="uploading-data-to-a-device"></a>デバイスへのデータのアップロード
 
 
 アプリケーションをデバイスからデータを転送するに使用する必要があります、 **IWiaTransfer::Upload**メソッド。 アプリケーションでは、コピー先ではなく、データ ソースとして使用されるデータ ストリームを提供します。 同様に、ドライバーの呼び出し **:read**の代わりに**IStream::Write**アップロードの状況でします。

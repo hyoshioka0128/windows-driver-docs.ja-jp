@@ -1,5 +1,5 @@
 ---
-title: .fnret (表示関数の戻り値)
+title: .fnret (関数の戻り値の表示)
 description: .Fnret コマンドでは、関数の戻り値に関する情報が表示されます。
 ms.assetid: b7ce3047-5b0a-43ba-877f-76235139d66c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 51eb7e56fb249b72ba9abf3034e54bad3e17230c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336669"
 ---
-# <a name="fnret-display-function-return-value"></a>.fnret (表示関数の戻り値)
+# <a name="fnret-display-function-return-value"></a>.fnret (関数の戻り値の表示)
 
 
 **.Fnret**コマンドは、関数の戻り値に関する情報を表示します。

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87ea987d8f75448fcd40c483e2a9b9e84be203b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383336"
 ---
 # <a name="loading-a-theme"></a>テーマの読み込み
 
@@ -26,7 +26,7 @@ WinDbg のユーザー インターフェイスを使用します。 下、**フ
 
 結局、ワークスペースのデータが消去されたテーマのいずれかを実行します。 これらは、Windows のツールのデバッグのテーマのディレクトリ内の .reg ファイルとして保存されます。 テーマを実行するには、基本のワークスペースを再定義する、レジストリにその設定をインポートします。
 
-テーマが読み込まれた後を変更するより密接に好みに合わせて可能性があります。 いくつかの一般的なオプションの詳細については、[テーマのカスタマイズ](customizing-a-theme.md)を参照してください。
+テーマが読み込まれた後を変更するより密接に好みに合わせて可能性があります。 いくつかの一般的なオプションの詳細については、次を参照してください。[テーマのカスタマイズ](customizing-a-theme.md)します。
 
  
 

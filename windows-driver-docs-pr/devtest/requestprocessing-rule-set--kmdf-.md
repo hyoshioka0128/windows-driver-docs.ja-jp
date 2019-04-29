@@ -5,11 +5,11 @@ ms.assetid: 25162982-6A98-4018-82B3-8DD3E0A0A002
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b30faff0f3176ba63a328c1b21d2b441e2973aa
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340272"
 ---
 # <a name="requestprocessing-rule-set-kmdf"></a>RequestProcessing の規則セット (KMDF)
 
@@ -172,7 +172,7 @@ ms.locfileid: "57350309"
     msbuild /t:sdv /p:Inputs="/check:RequestProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

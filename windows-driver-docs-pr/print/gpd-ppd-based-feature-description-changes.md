@@ -1,17 +1,17 @@
 ---
-title: GPD PPD ベースの機能の説明の変更
-description: GPD PPD ベースの機能の説明の変更
+title: GPD/PPD ベース機能説明変更
+description: GPD/PPD ベース機能説明変更
 ms.assetid: 22333d78-f78f-4031-a9f3-50b43ec746b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd016a303f82016e5c9ba9453223c15585675717
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385180"
 ---
-# <a name="gpdppd-based-feature-description-changes"></a>GPD PPD ベースの機能の説明の変更
+# <a name="gpdppd-based-feature-description-changes"></a>GPD/PPD ベース機能説明変更
 
 
 Microsoft XPSDrv Unidrv/PScript5 ドライバーでは、ハード コーディングされた Unidrv/PScript5 機能は含まれません。 Core のドライバーの構成モジュールは、機能、オプション、または制約を処理する必要がある場合 GPD または PPD ファイルにすべての機能、オプション、および制約を指定する必要があります。 非 GPD または PPD 以外の機能、オプション、または制約のサポートを提供する構成プラグインを実装することもできます。
@@ -63,7 +63,7 @@ Msxpsinc.gpd と Msxpsinc.ppd ファイル、フィルター パイプライン�
 
 Core ドライバーの DEVMODE 構造体では、これらのカスタム GPD または PPD 機能の設定はオプションの配列に格納されます。
 
-**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、[ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)を参照してください。
+**注**   For Windows 7、 **MxdcGetPDEVAdjustment**関数には、横置きに回転の新しいパラメーター。 詳細については、次を参照してください。 [ **MxdcXDCGetPDEVAdjustment**](https://msdn.microsoft.com/library/windows/hardware/ff557558)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: MofImagePath レジストリ値を設定
-description: MofImagePath レジストリ値を設定
+title: MofImagePath レジストリ値の設定
+description: MofImagePath レジストリ値の設定
 ms.assetid: b8c43cd3-d4f4-4f1e-b692-8005d845d64a
 keywords:
 - WMI の WDK カーネルでは、スキーマの公開
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a8f020e3d1cadaa02f5a7e4a2c3213482b0ac90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385496"
 ---
-# <a name="setting-the-mofimagepath-registry-value"></a>MofImagePath レジストリ値を設定
+# <a name="setting-the-mofimagepath-registry-value"></a>MofImagePath レジストリ値の設定
 
 
 

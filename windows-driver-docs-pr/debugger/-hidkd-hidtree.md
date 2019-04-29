@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c6d6304de090ad2ffc27721a49d599045e2a781b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336478"
 ---
-# <a name="hidkdhidtree"></a>! hidkd.hidtree
+# <a name="hidkdhidtree"></a>!hidkd.hidtree
 
 
 **! Hidkd.hidtree**コマンドは、その子ノードと共に HID 機能ドライバーを持つすべてのデバイス ノードの一覧を表示します。 子ノードでは、親ノードの HID 関数ドライバーによって作成された、物理デバイス オブジェクト (PDO) が存在します。

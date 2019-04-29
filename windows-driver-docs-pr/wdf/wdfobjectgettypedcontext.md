@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64b9a86fff6d15e77189030c09a31ba47758aff8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385752"
 ---
 # <a name="wdfobjectgettypedcontext-macro"></a>WdfObjectGetTypedContext マクロ
 
@@ -49,7 +49,7 @@ Framework のオブジェクトへのハンドル。
 
 使用することができます、 **WdfObjectGetTypedContext**マクロを任意のフレームワーク オブジェクト コンテキストの領域へのポインターを取得します。 このマクロを使用して、代わりに、オブジェクト固有のコンテキストのアクセサー メソッドを呼び出すことがによって作成された、 [ **WDF_DECLARE_CONTEXT_TYPE** ](wdf-declare-context-type.md)マクロまたは[ **WDF_DECLARE_CONTEXT_TYPE_WITH_NAME** ](wdf-declare-context-type-with-name.md)マクロ。 使用する場合**WdfObjectGetTypedContext**、使用することも必要があります WDF_DECLARE_CONTEXT_TYPE または WDF_DECLARE_CONTEXT_TYPE_WITH_NAME、オブジェクト コンテキストを宣言します。
 
-これらのマクロの詳細については、[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)を参照してください。
+これらのマクロの詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)します。
 
 <a name="examples"></a>例
 --------

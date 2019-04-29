@@ -1,15 +1,15 @@
 ---
-title: デバッガー データ モデルの C++ のスクリプト
+title: Debugger Data Model C++ のスクリプト
 description: このトピックでは、デバッガーのデータ モデルの C++ デバッガー エンジンとオートメーションをサポートするためにスクリプトを使用する方法について説明します。
 ms.date: 10/08/2018
 ms.openlocfilehash: 7860ee5a0f36c9f03eadc028f0c92cc10fc99e16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376088"
 ---
-# <a name="debugger-data-model-c-scripting"></a>デバッガー データ モデルの C++ のスクリプト
+# <a name="debugger-data-model-c-scripting"></a>Debugger Data Model C++ のスクリプト
 
 このトピックでは、デバッガーのデータ モデル C++ デバッガー データ モデル C++ スクリプトを使用するデバッガー エンジンとオートメーションをサポートするためにスクリプトを使用する方法について説明します。
 
@@ -245,7 +245,7 @@ DECLARE_INTERFACE_(IDataModelScript, IUnknown)
 
 GetName メソッドは、割り当てられた文字列として SysAllocString 関数を使用して、スクリプトの名前を返します。 スクリプトが名前をまだ持っていない場合、メソッドは null の BSTR を返す必要があります。 このような状況で成功する必要があります。 スクリプトの名前の変更メソッドの呼び出しを使用して明示的に名前を変更 GetName メソッドは、新しく割り当てられた名前を返す必要があります。 
 
-[名前の変更](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-rename)
+[Rename](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscript-rename)
 
 Rename メソッドでは、スクリプトに新しい名前を割り当てます。 この名前を保存し、GetName メソッドへの呼び出し時に返すことをスクリプトの実装の役目です。 スクリプトを新しい名前を付けて保存するユーザー インターフェイスを選択すると、これは多くの場合に呼び出されます。 スクリプトの名前を変更すると、ホスト アプリケーションが、スクリプトの内容をプロジェクトには選択に影響する可能性に注意してください。 
 
@@ -565,7 +565,7 @@ IDataModelScriptDebugStack インターフェイスは、呼び出し履歴 - 1 
 
 特定のスタック フレームは遷移ポイント IsTransition メソッドによって決定される場合 (移行ポイントの定義については文書を参照)、GetTransition メソッドは、移行に関する情報を返します。 具体的には、このメソッドでは前のスクリプトにこの IDataModelScriptDebugStackFrame を含むスタック セグメントによって表されるスクリプトへの呼び出しを行った 1 つが返されます。 
 
-[評価](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-evaluate)
+[[評価]](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugstackframe-evaluate)
 
 Evaluate メソッドは、このメソッドが呼び出された対象 IDataModelScriptDebugStackFrame インターフェイスによって表されるスタック フレームのコンテキストで (スクリプトのプロバイダーの言語) の式を評価します。 式の評価の結果は、IModelObject としてスクリプト プロバイダーからマーシャ リングする必要があります。 プロパティと、結果として得られる IModelObject の他のコンストラクトのすべてをデバッガーが中断状態を取得することにある必要があります。 
 
@@ -623,7 +623,7 @@ GetId メソッドは、ブレークポイントに、スクリプトのプロ�
 
 IsEnabled メソッドは、ブレークポイントが有効になっているかどうかを返します。 無効なブレークポイントが存在し、スクリプト用のブレークポイントの一覧でも単なる「電源オフ、」一時的にします。 有効な状態ですべてのブレークポイントを作成する必要があります。 
 
-[有効にします。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpoint-enable)
+[Enable](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelscriptdebugbreakpoint-enable)
 
 有効にするメソッドでは、ブレークポイントを使用します。 ブレークポイントが無効になっている場合は、「このメソッドを呼び出した後、ブレークポイントに達する」と、デバッガーに中断が発生します。 
 

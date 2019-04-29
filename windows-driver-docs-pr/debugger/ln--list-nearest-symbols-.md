@@ -1,5 +1,5 @@
 ---
-title: ln (一番近いシンボルを)
+title: ln (一番近いシンボルの一覧表示)
 description: Ln コマンドでは、指定されたアドレスに近い、シンボルが表示されます。
 ms.assetid: ff01ace7-398a-4e32-9d58-00873eca3201
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ded9b73fb0ab3adcddd7f754eb367fe2f8dc0ec2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383390"
 ---
-# <a name="ln-list-nearest-symbols"></a>ln (一番近いシンボルを)
+# <a name="ln-list-nearest-symbols"></a>ln (一番近いシンボルの一覧表示)
 
 
 **Ln**コマンド、指定されたアドレスに近いシンボルを表示します。
@@ -33,7 +33,7 @@ ln /D Address
 
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-デバッガーがシンボルの検索を開始する位置のアドレスを指定します。 前に、または後は、最も近いシンボル*アドレス*が表示されます。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+デバッガーがシンボルの検索を開始する位置のアドレスを指定します。 前に、または後は、最も近いシンボル*アドレス*が表示されます。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_D"></span><span id="_d"></span>**/D**  
 使用して、出力が表示されることを指定します。[デバッガー マークアップ言語 (DML)](debugger-markup-language-commands.md)します。 DML の出力には、最も近いシンボルを含むモジュールを探索に使用できるリンクが含まれています。 ブレークポイントを設定するために使用できるリンクも含まれています。

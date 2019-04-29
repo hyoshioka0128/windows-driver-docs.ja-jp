@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_P2P_DISCOVER_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 28f98a50800e27ccf65d7df12c9e7c70de50bf99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362491"
 ---
 # <a name="wditlvp2pdiscovermode"></a>WDI\_TLV\_P2P\_DISCOVER\_モード
 
@@ -31,7 +31,7 @@ WDI\_TLV\_P2P\_DISCOVER\_モードは、Wi-Fi Direct 検出モード情報を含
 ## <a name="values"></a>値
 
 
-| 種類                                                                                       | 説明                                                                                                                                                                                                                     |
+| 型                                                                                       | 説明                                                                                                                                                                                                                     |
 |--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WDI\_P2P\_DISCOVER\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926093) (UINT32)                    | ポートで実行する探索の種類。                                                                                                                                                                              |
 | UINT8                                                                                      | 完全なデバイスの検出が必要なかどうかを示すフラグです。 有効な値は 0 (不要) および 1 (必須です)。 このフラグが 0 に設定されている場合は、部分的な探索を実行できます。                                           |

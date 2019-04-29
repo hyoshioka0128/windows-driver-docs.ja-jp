@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acbf199ce49bb180b2640134d7e8f09c46be1fab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386621"
 ---
 # <a name="iasphelpgetpagerateunit-method"></a>Iasphelp::get\_PageRateUnit メソッド
 
@@ -53,8 +53,8 @@ HRESULT get_PageRateUnit(
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
-<th>意味</th>
+<th>値</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
@@ -97,7 +97,7 @@ HRESULT get_PageRateUnit(
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>S_OK を返します</strong></td>
+<td><strong>S_OK</strong></td>
 <td><p>操作に成功しました。</p></td>
 </tr>
 <tr class="even">
@@ -106,7 +106,7 @@ HRESULT get_PageRateUnit(
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
-<td><p>メモリ不足です。</p></td>
+<td><p>メモリ不足。</p></td>
 </tr>
 </tbody>
 </table>
@@ -125,7 +125,7 @@ objPrinter.Open strPrinter
 PtrPageRate = objPrinter.PageRateUnit
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

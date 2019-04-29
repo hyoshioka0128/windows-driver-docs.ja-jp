@@ -1,17 +1,17 @@
 ---
-title: デバイスのロック解除します。
-description: デバイスのロック解除します。
+title: デバイスのロック解除
+description: デバイスのロック解除
 ms.assetid: 4e6ed725-2384-429b-be1e-027b7784e95b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 452fe864df1f7dd7d2fa1f72e89025f1f39ac36a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383763"
 ---
-# <a name="unlock-a-device"></a>デバイスのロック解除します。
+# <a name="unlock-a-device"></a>デバイスのロック解除
 
 
 モバイル ブロード バンド API のサブセットには、PIN の管理 API が含まれています。 デバイスのロックを解除するには、次の操作を行います。

@@ -4,11 +4,11 @@ description: AddComponent、ディレクティブは、現在のデバイスの�
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 71e769c511b985f28a6a9494331e45edfaead520
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383202"
 ---
 # <a name="inf-addcomponent-directive"></a>INF AddComponent ディレクティブ
 
@@ -36,7 +36,7 @@ AddComponent=ComponentName,[flags],component-install-section
 
 ## <a name="remarks"></a>コメント
 
-各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。  これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。  これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 **AddComponent**ディレクティブは名前付き参照する必要があります*コンポーネントのインストール-セクション*INF ファイルで別の場所。  このような各セクションでは、次の形式があります。
 

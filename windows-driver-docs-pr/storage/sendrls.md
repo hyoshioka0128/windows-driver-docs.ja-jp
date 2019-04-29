@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 02121f426a757a068598e603dbf99101acaeb99d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383559"
 ---
 # <a name="sendrls-function"></a>SendRLS 関数
 
@@ -45,7 +45,7 @@ void SendRLS(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRLS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565452)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRLS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565452)構造体。
 
 *PortWWN*   
 RLS コマンドを送信するローカル ポートに世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendRLS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565446)構造体。

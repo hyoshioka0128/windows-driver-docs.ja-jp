@@ -5,17 +5,17 @@ ms.assetid: 5C3C2479-03F9-4D33-94DA-3371D84C514B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50c566181f27f386cc1a0912e3044587e46e70f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328326"
 ---
 # <a name="bluetooth-appendix"></a>Bluetooth の付録
 
 このセクションには、Bluetooth HCI のマイクロソフトによって定義された拡張機能の例と図が含まれています。
 
-## <a name="example-matching-patterns-for-hcivsmsftlemonitoradvertisement"></a>例:HCI_VS_MSFT_LE_Monitor_Advertisement のパターンに一致します。
+## <a name="example-matching-patterns-for-hcivsmsftlemonitoradvertisement"></a>以下に例を示します。HCI_VS_MSFT_LE_Monitor_Advertisement のパターンに一致します。
 この例では、受信した HCI_VS_MSFT_LE_Monitor_Advertisement コマンドとコマンドのパラメーターに対して 3 つの異なるアドバタイズ パケットの評価を示します。
 
 HCI_VS_MSFT_LE_Monitor_Advertisement An HCI_VS_MSFT_LE_Monitor_Advertisement コマンドのコマンドは、コント ローラーによって受信され、次のパラメーターが含まれていますを受信します。
@@ -23,7 +23,7 @@ HCI_VS_MSFT_LE_Monitor_Advertisement An HCI_VS_MSFT_LE_Monitor_Advertisement コ
 <table>
 <tr>
 <th>パラメーター</th>
-<th>[値]</th>
+<th>値</th>
 <th></th>
 </tr>
 <tr>
@@ -386,7 +386,7 @@ HCI_VS_MSFT_LE_Monitor_Advertisement An HCI_VS_MSFT_LE_Monitor_Advertisement コ
 </tr>
 </table>
 
-## <a name="example-advertisement-monitoring"></a>例:提供情報の監視
+## <a name="example-advertisement-monitoring"></a>以下に例を示します。提供情報の監視
 
 この例では、RSSI 提供情報を監視しています。 指定した条件に一致する受信の提供情報の RSSI 値は、以下に示します。
 
@@ -471,7 +471,7 @@ HCI_VS_MSFT_LE_Monitor_Advertisement An HCI_VS_MSFT_LE_Monitor_Advertisement コ
 <table>
 <tr>
 <th>パラメーター</th>
-<th>[値]</th>
+<th>値</th>
 </tr>
 <tr>
 <td><i>RSSI_threshold_high</i></td>

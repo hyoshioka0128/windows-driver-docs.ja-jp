@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 880f7590436f8d9ea448ee5488cf2e324b00c0bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384839"
 ---
 # <a name="driverentry-of-changer-miniclass-drivers-routine"></a>チェンジャー Miniclass ドライバーの DriverEntry ルーチン
 
@@ -57,7 +57,7 @@ Miniclass ドライバーの**DriverEntry**ルーチンによって返される�
 
 **ChangerClassInitialize** miniclass ドライバーで必要な初期化の大部分を実行します。 主なタスクのミニドライバーの**DriverEntry**ルーチンは、そのコマンドの処理ルーチンのエントリ ポイントを読み込むには、 [ **MCD\_INIT\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff562210)構造体し、この構造体のアドレスを渡す、 **ChangerClassInitialize**ルーチン。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

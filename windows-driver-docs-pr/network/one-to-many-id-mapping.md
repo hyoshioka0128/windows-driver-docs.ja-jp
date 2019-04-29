@@ -1,6 +1,6 @@
 ---
-title: ID の一対多のマッピング
-description: ID の一対多のマッピング
+title: 1 対多の ID のマッピング
+description: 1 対多の ID のマッピング
 ms.assetid: 395d3f20-7410-496b-9ec3-1052cd731ae3
 keywords:
 - マッピングのネットワーク コンポーネント Id
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f00afe01ebf2b07208652a2eda65b56505901805
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384229"
 ---
-# <a name="one-to-many-id-mapping"></a>ID の一対多のマッピング
+# <a name="one-to-many-id-mapping"></a>1 対多の ID のマッピング
 
 
 
@@ -32,7 +32,7 @@ ms.locfileid: "56537190"
 
 *preupgrade-ID* = *mapping-method-number*, *section-name*
 
-この場合
+それぞれの文字の説明は次のとおりです。
 
 *マッピング-メソッド-番号*0 にする必要があります
 

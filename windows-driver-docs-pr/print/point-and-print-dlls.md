@@ -1,6 +1,6 @@
 ---
-title: ポイントと印刷の Dll
-description: ポイントと印刷の Dll
+title: ポイント アンド プリント DLL
+description: ポイント アンド プリント DLL
 ms.assetid: 7ead940e-8426-4756-890f-f3607dc1f9ca
 keywords:
 - ポイント アンド プリントの WDK、Dll
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 461a517e769e7bff6adae3ef32fa017bda6273ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380136"
 ---
-# <a name="point-and-print-dlls"></a>ポイントと印刷の Dll
+# <a name="point-and-print-dlls"></a>ポイント アンド プリント DLL
 
 
 

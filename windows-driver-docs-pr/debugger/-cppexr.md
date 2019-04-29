@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 327c2e2ab4bfde70b0363f6d66e48fdf1d1e9820
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336883"
 ---
 # <a name="cppexr"></a>!cppexr
 
@@ -60,7 +60,7 @@ ms.locfileid: "56580031"
 
 例外の詳細については、次を参照してください[を制御する例外とイベント](controlling-exceptions-and-events.md)、Windows Driver Kit (WDK) ドキュメント、Windows SDK のドキュメントと*Microsoft Windows internals 』* マーク。Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)使用して、 [ **.exr** ](-exr--display-exception-record-.md)他の例外レコードを表示するコマンド。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **! Cppexr**拡張機能には、ターゲットが検出されると、例外コード、例外と例外フラグのアドレスを含む C++ 例外に関連する情報が表示されます。 この例外は、Msvcrt.dll で定義されている標準の C++ 例外のいずれかを指定する必要があります。

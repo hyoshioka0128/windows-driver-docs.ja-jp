@@ -1,19 +1,19 @@
 ---
-title: ヒープの無料のチェックを有効にします。
-description: ヒープの無料のチェックを有効にします。
+title: Enable heap free checking
+description: Enable heap free checking
 ms.assetid: d97d6aac-608c-4c0a-8702-c078ed4820db
 keywords:
 - ヒープの空き (グローバル フラグ) のチェックを有効にします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e269447c45690ec48c6c188136aa5d324dfe869e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330702"
 ---
-# <a name="enable-heap-free-checking"></a>ヒープの無料のチェックを有効にします。
+# <a name="enable-heap-free-checking"></a>Enable heap free checking
 
 
 ## <span id="ddk_enable_heap_free_checking_dtools"></span><span id="DDK_ENABLE_HEAP_FREE_CHECKING_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56553754"
 <td align="left"><p>FLG_HEAP_ENABLE_FREE_CHECK</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ、カーネルのフラグ、イメージ ファイルのレジストリ エントリ</p></td>
 </tr>
 </tbody>

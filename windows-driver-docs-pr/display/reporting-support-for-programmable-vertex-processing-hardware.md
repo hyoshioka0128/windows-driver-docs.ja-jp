@@ -1,5 +1,5 @@
 ---
-title: レポートのプログラミング可能な頂点シェーダーのハードウェアのサポート
+title: プログラミング可能な頂点シェーダー ハードウェアに対するサポートのレポート
 description: プログラミング可能な頂点シェーダーのハードウェアのレポートをサポートする DirectX 8.0 レベル ドライバーの場合は、0 以外の場合、有効な頂点シェーダーのバージョン番号に D3DCAPS8 構造の VertexShaderVersion フィールドを設定があります。
 ms.assetid: c77dae52-ed7c-4385-b085-df3e16e53c5e
 keywords:
@@ -9,13 +9,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: fb39770b2db051e885ff52ba41be1b5149f45fd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383243"
 ---
-# <a name="reporting-support-for-programmable-vertex-shader-hardware"></a>レポートのプログラミング可能な頂点シェーダーのハードウェアのサポート
+# <a name="reporting-support-for-programmable-vertex-shader-hardware"></a>プログラミング可能な頂点シェーダー ハードウェアに対するサポートのレポート
 
 プログラミング可能な頂点シェーダーのハードウェアのレポートをサポートする DirectX 8.0 レベルのドライバーの設定があります、 **VertexShaderVersion** 0 以外の場合、有効な頂点シェーダーのバージョン番号に D3DCAPS8 構造体のフィールド。 **VertexShaderVersion** dword を最上位の単語には、値 0 xfffe が必要し、最下位のワードは実際のバージョン番号を格納します。 この単語の最下位バイトはマイナー バージョン番号を保持し、最上位バイトはメジャー バージョン番号を保持します。 この dword 値の形式は複雑なため、ドライバーの値を設定する必要があります**VertexShaderVersion** D3DVS マクロを使用して\_で定義されているバージョン*d3d8types.h*します。 たとえば、次のコード フラグメントをセット、 **VertexShaderVersion** 1.0 の機能レベルのサポートを示すためです。
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00db8c010124f6a96f9a1b5d28f7c5458c483a0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361196"
 ---
 # <a name="code-example-finish-install-actions-in-a-class-installer"></a>コードの例:クラス インストーラーでのインストールの完了アクション
 

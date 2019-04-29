@@ -1,6 +1,6 @@
 ---
-title: Bluetooth の Ioctl
-description: Bluetooth の Ioctl
+title: Bluetooth IOCTL
+description: Bluetooth IOCTL
 ms.assetid: 384ea4bb-863c-4da7-bf81-85d2de734ef7
 keywords:
 - Bluetooth の WDK、Ioctl
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7eb288aecf802f99cffc26b0184eff1fe67d1fd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328288"
 ---
-# <a name="bluetooth-ioctls"></a>Bluetooth の Ioctl
+# <a name="bluetooth-ioctls"></a>Bluetooth IOCTL
 
 
 Bluetooth ドライバー スタックに関する情報を収集するいくつかの Ioctl でプロファイルのドライバーを提供します。
@@ -37,7 +37,7 @@ Bluetooth ドライバー スタックに関する情報を収集するいくつ
 
 プロファイルのドライバーを使用して[ **IOCTL\_内部\_BTHENUM\_取得\_ENUMINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff536750)基になるデバイスとサービスに関する情報を取得するにはPnP マネージャー プロファイルのドライバーの読み込みを原因となったとします。 IOCTL が返された後に、その**AssociatedIrp.SystemBuffer**メンバーにはへのポインターが含まれています、 [**両方\_列挙子\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff536643)構造体ポート番号、デバイスのフラグ、仕入先 ID、および製品 ID など、デバイスに関するベンダー提供の情報を格納します。
 
-Bluetooth の Ioctl および BRBs の使用に関する詳細については、[のビルドと送信を BRB](building-and-sending-a-brb.md)を参照してください。
+Bluetooth の Ioctl および BRBs の使用に関する詳細については、次を参照してください。[のビルドと送信を BRB](building-and-sending-a-brb.md)します。
 
  
 

@@ -1,17 +1,17 @@
 ---
-title: 受信の例では、結合セグメント化します。
+title: 受信セグメント結合の例
 description: このセクションでは、順番に受信され、1 つの遅延プロシージャ呼び出し (DPC) で処理されるセグメントの例を使用して結合アルゴリズムを示しています。
 ms.assetid: BC4C3216-683B-4E86-B2DF-F75FFCA7DACC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abf61775d1421eaf92e4d26954cc00786198881d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385494"
 ---
-# <a name="examples-of-receive-segment-coalescing"></a>受信の例では、結合セグメント化します。
+# <a name="examples-of-receive-segment-coalescing"></a>受信セグメント結合の例
 
 
 このセクションでは、順番に受信され、1 つの遅延プロシージャ呼び出し (DPC) で処理されるセグメントの例を使用して結合アルゴリズムを示しています。

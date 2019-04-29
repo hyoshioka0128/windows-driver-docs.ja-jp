@@ -1,17 +1,17 @@
 ---
-title: 作成して、WIA ドライバーによってプロセスを開く
-description: 作成して、WIA ドライバーによってプロセスを開く
+title: WIA ドライバーによってプロセスを作成して開く
+description: WIA ドライバーによってプロセスを作成して開く
 ms.assetid: c939eb25-b92b-41ef-ade0-98c2a707fee6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab761149b2a01f55254b8fbc35feed1006842ea1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386314"
 ---
-# <a name="creating-and-opening-processes-by-wia-drivers"></a>作成して、WIA ドライバーによってプロセスを開く
+# <a name="creating-and-opening-processes-by-wia-drivers"></a>WIA ドライバーによってプロセスを作成して開く
 
 
 

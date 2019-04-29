@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6968ad77c18353f619432b2c7fc85256c9c02995
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330842"
 ---
 # <a name="scriptunload-unload-script"></a>.scriptunload (スクリプトのアンロード)
 
@@ -70,7 +70,7 @@ JavaScript script unloaded from 'C:\WinDbg\Scripts\TestScript.js'
 
 スクリプト内のオブジェクトに未解決の参照がある場合は、スクリプトの内容がリンクされますが、スクリプトは、このようなすべての参照が解放されるまでメモリに残る可能性があります。
 
-JavaScript での操作の詳細については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。 デバッガー オブジェクトに関する詳細については、[JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)を参照してください。
+JavaScript での操作の詳細については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。 デバッガー オブジェクトに関する詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)します。
 
 **必要条件**
 

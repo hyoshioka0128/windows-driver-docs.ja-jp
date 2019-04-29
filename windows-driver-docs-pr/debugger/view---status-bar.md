@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 015a2d808199cee0748aeb4e7546b3e05c083f1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386423"
 ---
 # <a name="view--status-bar"></a>View | Status Bar (表示 | ステータス バー)
 
@@ -22,7 +22,7 @@ ms.locfileid: "56574532"
 
 オンまたはオフ**ステータス バー**上、**ビュー**メニューがステータス バーを表示または非表示になります。
 
-ステータス バーを使用する方法の詳細については、[ツールバーとステータス バーを使用して](using-the-toolbar-and-status-bar.md)を参照してください。
+ステータス バーを使用する方法の詳細については、次を参照してください。[ツールバーとステータス バーを使用して](using-the-toolbar-and-status-bar.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: オーバーレイ DDI プログラミングに関する考慮事項
-description: オーバーレイ DDI プログラミングに関する考慮事項
+title: オーバーレイ DDI のプログラミングに関する考慮事項
+description: オーバーレイ DDI のプログラミングに関する考慮事項
 ms.assetid: 887624a7-0293-4add-94a7-d490ebd93205
 keywords:
 - オーバーレイ DDI WDK Windows 7 の表示、プログラミングの考慮事項
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f49981c4fb3826ecac1f3627ececc12a23f4621f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383986"
 ---
-# <a name="overlay-ddi-programming-considerations"></a>オーバーレイ DDI プログラミングに関する考慮事項
+# <a name="overlay-ddi-programming-considerations"></a>オーバーレイ DDI のプログラミングに関する考慮事項
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。

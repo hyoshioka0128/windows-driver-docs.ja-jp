@@ -1,6 +1,6 @@
 ---
-title: 一般的なバッファー システム DMA 用アダプター、チャネルの割り当てください。
-description: 一般的なバッファー システム DMA 用アダプター、チャネルの割り当てください。
+title: 共通バッファー システム DMA 用のアダプター チャネルの割り当て
+description: 共通バッファー システム DMA 用のアダプター チャネルの割り当て
 ms.assetid: 3b426b5e-e555-458c-8e16-0d59a7cb9bd6
 keywords:
 - アダプタのチャネルの割り当てください。
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5efb04bf7a49f1c2b10e02069f860222b491bd43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386262"
 ---
-# <a name="allocating-an-adapter-channel-for-common-buffer-system-dma"></a>一般的なバッファー システム DMA 用アダプター、チャネルの割り当てください。
+# <a name="allocating-an-adapter-channel-for-common-buffer-system-dma"></a>共通バッファー システム DMA 用のアダプター チャネルの割り当て
 
 
 
@@ -38,7 +38,7 @@ ms.locfileid: "56532771"
 
 3.  値を返します**KeepObject**します。
 
-詳細については、[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)を参照してください。
+詳細については、次を参照してください。[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)します。
 
 システム DMA コント ローラーの自動初期化モードを使用するドライバーに対して、 *AdapterControl*ルーチンは、値を返す必要があります**KeepObject**します。 これにより、システムの DMA コント ローラーの「所有者」を保持するドライバーとマップ register(s) を割り当てられているすべてのデータを転送するまでです。
 

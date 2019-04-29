@@ -5,13 +5,13 @@ ms.assetid: 05fc8225-ba4e-4718-a5e1-c9e49ec931b7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b68ac23817724130314ed08d04950621e896f75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329825"
 ---
-# <a name="how-are-trace-if-expressions-used"></a>トレースの方法は、式が使用されている場合ですか?
+# <a name="how-are-trace-if-expressions-used"></a>Trace-If 式の使用方法
 
 
 理解に役立つトレースする方法-式を使用している場合、使用方法について説明するこのような式の例と構文の提供"開始\_wpp config"ステートメント。 この例では、関数のトレース\_返すには、FAILED(HR) 式が true の場合、イベント ログに記録します。

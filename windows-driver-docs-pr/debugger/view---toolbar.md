@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99f177045df2b1d93e781f48b3419a0fa86896e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386418"
 ---
-# <a name="view--toolbar"></a>ビュー |ツールバー
+# <a name="view--toolbar"></a>View | Toolbar (表示 | ツール バー)
 
 
 ## <span id="ddk_view_toolbar_dbg"></span><span id="DDK_VIEW_TOOLBAR_DBG"></span>
@@ -22,7 +22,7 @@ ms.locfileid: "56530102"
 
 オンまたはオフ**ツールバー**上、**ビュー**メニュー、ツールバーの表示し、非表示にします。
 
-ツールバーを使用する方法の詳細については、[ツールバーとステータス バーを使用して](using-the-toolbar-and-status-bar.md)を参照してください。 各ツール バー ボタンの詳細については、[ツール バー ボタン](toolbar-buttons.md)を参照してください。
+ツールバーを使用する方法の詳細については、次を参照してください。[ツールバーとステータス バーを使用して](using-the-toolbar-and-status-bar.md)します。 各ツール バー ボタンの詳細については、次を参照してください。[ツール バー ボタン](toolbar-buttons.md)します。
 
  
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 07fb432e992f16690b2bdc9ab70914bd32f9f355
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336867"
 ---
 # <a name="ecb-ecd-ecw"></a>!ecb、!ecd、!ecw
 
@@ -73,7 +73,7 @@ ms.locfileid: "56571315"
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)この拡張機能コマンドとその他の例のアプリケーション。 PCI バスについては、Windows Driver Kit (WDK) ドキュメントを参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 これらの拡張機能のコマンドを使用してのシーケンスを記述することはできません*データ*値。 これは、この拡張機能の繰り返しの使用によってのみ実行できます。

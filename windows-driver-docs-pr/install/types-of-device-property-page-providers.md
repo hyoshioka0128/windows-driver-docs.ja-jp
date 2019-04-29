@@ -5,11 +5,11 @@ ms.assetid: b467543e-6907-44e5-b407-637cad7f6d78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ebae27b634f97d95d094f7150283ca86f779b95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339516"
 ---
 # <a name="types-of-device-property-page-providers"></a>デバイスのプロパティ ページのプロバイダーの種類
 
@@ -22,7 +22,7 @@ ms.locfileid: "56531352"
 
     Windows Driver Kit (WDK) でトースター サンプルの一部である共同インストーラーには、この種類のデバイスのプロパティ ページのプロバイダーがサポートしています。 ある、 *src\\全般\\トースター\\classinstaller* WDK のサブディレクトリ。
 
-    この種類のプロバイダーの要件の詳細については、[デバイス プロパティ ページのプロバイダー (共同インストーラー) の特定の要件](specific-requirements-for-device-property-page-providers--class-instal.md)を参照してください。
+    この種類のプロバイダーの要件の詳細については、次を参照してください。[デバイス プロパティ ページのプロバイダー (共同インストーラー) の特定の要件](specific-requirements-for-device-property-page-providers--class-instal.md)します。
 
     **注**  一般に他の特定のデバイスまたはデバイス固有クラスとの共同インストーラーでこの機能を提供することをお勧めカスタム デバイスのプロパティ ページを提供するクラスのインストーラーを作成できますが機能です。
 
@@ -36,7 +36,7 @@ ms.locfileid: "56531352"
 
     AC97 サンプル オーディオ ドライバーには、この種類のデバイスのプロパティ ページのプロバイダーがサポートしています。 ある、 *src\\オーディオ\\ac97* WDK のサブディレクトリ。
 
-    この種類のプロバイダーの要件の詳細については、[デバイス プロパティ ページのプロバイダー (プロパティ ページの拡張 Dll) の特定の要件](specific-requirements-for-device-property-page-providers--property-pag.md)を参照してください。
+    この種類のプロバイダーの要件の詳細については、次を参照してください。[デバイス プロパティ ページのプロバイダー (プロパティ ページの拡張 Dll) の特定の要件](specific-requirements-for-device-property-page-providers--property-pag.md)します。
 
     **注**  しない限り、[ドライバー パッケージ](driver-packages.md)クラス インストーラーまたは共同インストーラーを必要とプロパティ ページの拡張 DLL を使用してカスタムのデバイスのプロパティ ページをサポートする方が効率的です。
 

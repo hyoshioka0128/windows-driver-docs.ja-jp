@@ -1,5 +1,5 @@
 ---
-title: に関する (プロセスの作成)
+title: .create (プロセスの作成)
 description: に関するコマンドは、新しいターゲット アプリケーションを作成します。
 ms.assetid: 9e34eadf-1f68-4eec-ad6b-d70163d5d876
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a0b03dd9795701910d8d001d6da7f0d9e458a8a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334599"
 ---
-# <a name="create-create-process"></a>に関する (プロセスの作成)
+# <a name="create-create-process"></a>.create (プロセスの作成)
 
 
 **に関する**コマンドが新しい対象アプリケーションを作成します。
@@ -76,7 +76,7 @@ ms.locfileid: "56538924"
 
 新しいプロセスを作成し、既存のすべてのターゲットを固定する場合は、-f オプションを使用します。
 
-場合、 **-premote**オプションを使用すると、新しいプロセスは、新しいシステムの一部になります。 詳細については、[複数のターゲットのデバッグ](debugging-multiple-targets.md)を参照してください。
+場合、 **-premote**オプションを使用すると、新しいプロセスは、新しいシステムの一部になります。 詳細については、次を参照してください。[複数のターゲットのデバッグ](debugging-multiple-targets.md)します。
 
  
 

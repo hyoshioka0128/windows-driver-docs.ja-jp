@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 10b925d99cd29487ed4d3d1ce72a43861bf97213
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336797"
 ---
 # <a name="drivers"></a>!drivers
 
@@ -67,7 +67,7 @@ Windows XP および Windows での以降のバージョンで、 **! ドライ�
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)この拡張機能コマンドのアプリケーション。 ドライバーと、メモリの使用については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このコマンドの表示の詳細については、次の表で示されます。
@@ -79,7 +79,7 @@ Windows XP および Windows での以降のバージョンで、 **! ドライ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[列]</th>
+<th align="left">列</th>
 <th align="left">説明</th>
 </tr>
 </thead>

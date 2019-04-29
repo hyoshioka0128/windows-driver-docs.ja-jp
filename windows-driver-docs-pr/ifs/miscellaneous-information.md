@@ -5,11 +5,11 @@ ms.assetid: 190db186-3624-4ee3-a656-927dfb575584
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef1f3130ee34619118ab671a934b2a8e43c69551
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384280"
 ---
 # <a name="miscellaneous-information"></a>その他の情報
 

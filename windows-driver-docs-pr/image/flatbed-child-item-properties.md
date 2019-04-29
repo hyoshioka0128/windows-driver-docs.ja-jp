@@ -1,17 +1,17 @@
 ---
-title: フラット ベッドの子項目のプロパティ
-description: フラット ベッドの子項目のプロパティ
+title: フラットベッド子項目のプロパティ
+description: フラットベッド子項目のプロパティ
 ms.assetid: ad13e4a2-0c5c-43a5-ab83-fc2ef65b4467
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8a836adc9605365629c9ca18331bbf8bee79ee2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384657"
 ---
-# <a name="flatbed-child-item-properties"></a>フラット ベッドの子項目のプロパティ
+# <a name="flatbed-child-item-properties"></a>フラットベッド子項目のプロパティ
 
 
 次の WIA プロパティをサポートするためには、WIA フラット ベッド スキャナーの項目の子項目が必要です。

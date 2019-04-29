@@ -1,17 +1,17 @@
 ---
-title: 磁気ストライプ リーダーのドライバーのサンプル
+title: 磁気ストライプ リーダー ドライバーのサンプル
 description: このサンプルでは、磁気ストライプ リーダーのユニバーサル ドライバーを作成する方法について説明し、新しいドライバーを作成するためのテンプレートとしてためのものです。
 ms.assetid: 92A8C116-F71F-4A74-A453-44C14297BCDD
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 529796f950e95f8f19ba8d11af8abd527f1e5c4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386653"
 ---
-# <a name="magnetic-stripe-reader-driver-sample"></a>磁気ストライプ リーダーのドライバーのサンプル
+# <a name="magnetic-stripe-reader-driver-sample"></a>磁気ストライプ リーダー ドライバーのサンプル
 
 磁気ストライプ リーダーのドライバーのサンプルでは、磁気ストライプ リーダーのユニバーサル ドライバーを作成する方法について説明し、新しいドライバーを作成するためのテンプレートとして使用するためのものがします。 このサンプルでは、ユーザー モード ドライバー フレームワーク (UMDF) 2.0 を使用しと主張して排他アクセスのデバイスなどの基本的な機能を示します。 ドライバーのサンプルをコンパイルし、x86、amd64、上に展開および ARM プラットフォームです。
 

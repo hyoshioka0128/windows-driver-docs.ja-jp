@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4b8d21a386c3af1bbca48b3f51cc2c33531a395
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384225"
 ---
 # <a name="one-to-one-id-mapping"></a>1 対 1 の ID のマッピング
 
@@ -30,7 +30,7 @@ ms.locfileid: "56571050"
 
 *preupgrade ID* = *postupgrade ID*
 
-例:
+次に、例を示します。
 
 ```cpp
 netservice=netservice_2000

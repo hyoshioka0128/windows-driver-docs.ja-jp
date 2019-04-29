@@ -1,6 +1,6 @@
 ---
-title: 安全な IRQL で完了処理が実行されることを確認
-description: 安全な IRQL で完了処理が実行されることを確認
+title: 完了処理が安全な IRQL で実行されるようにする
+description: 完了処理が安全な IRQL で実行されるようにする
 ms.assetid: 54487fba-2ced-4bcd-afa6-d56b351aa7d6
 keywords:
 - postoperation コールバック ルーチン WDK ファイル システム ミニフィルター、処理の完了
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf0c57b99da30b28ceb26a822e07cf87d6637606
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383852"
 ---
-# <a name="ensuring-that-completion-processing-is-performed-at-safe-irql"></a>安全な IRQL で完了処理が実行されることを確認
+# <a name="ensuring-that-completion-processing-is-performed-at-safe-irql"></a>完了処理が安全な IRQL で実行されるようにする
 
 
 ## <span id="ddk_ensuring_that_completion_processing_is_performed_at_safe_irql_if"></span><span id="DDK_ENSURING_THAT_COMPLETION_PROCESSING_IS_PERFORMED_AT_SAFE_IRQL_IF"></span>

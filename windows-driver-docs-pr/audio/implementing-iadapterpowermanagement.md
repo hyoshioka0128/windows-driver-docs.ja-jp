@@ -1,6 +1,6 @@
 ---
-title: IAdapterPowerManagement を実装します。
-description: IAdapterPowerManagement を実装します。
+title: IAdapterPowerManagement の実装
+description: IAdapterPowerManagement の実装
 ms.assetid: 654b86a7-845c-415b-99e4-c7be92cb9b9c
 keywords:
 - IAdapterPowerManagement
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0842559071363d3b53072d8b6326082b65d4a32f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333634"
 ---
-# <a name="implementing-iadapterpowermanagement"></a>IAdapterPowerManagement を実装します。
+# <a name="implementing-iadapterpowermanagement"></a>IAdapterPowerManagement の実装
 
 
 ## <span id="implementing_iadapterpowermanagement"></span><span id="IMPLEMENTING_IADAPTERPOWERMANAGEMENT"></span>

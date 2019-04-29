@@ -1,17 +1,17 @@
 ---
-title: 取得して、VM キュー パラメーターの更新
-description: 取得して、VM キュー パラメーターの更新
+title: VM キュー パラメーターの取得と更新
+description: VM キュー パラメーターの取得と更新
 ms.assetid: 42beceec-95ae-48e3-985f-b6ee8a84d68b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd2785e9edb50c240fc0ee6f9a3a8b920eda919f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384254"
 ---
-# <a name="obtaining-and-updating-vm-queue-parameters"></a>取得して、VM キュー パラメーターの更新
+# <a name="obtaining-and-updating-vm-queue-parameters"></a>VM キュー パラメーターの取得と更新
 
 
 
@@ -21,7 +21,7 @@ ms.locfileid: "56528780"
 
 キューの現在の構成パラメーターを変更するを使用してドライバーを重なってことができます、 [OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID 要求のセット。 上にあるドライバーへのポインターを提供する、 [ **NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211)構造体、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。
 
-NDIS\_受信\_キュー\_パラメーター構造体がで使用される、 [OID\_受信\_フィルター\_ALLOCATE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784) OID と[OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID。 キューの割り当てに関する詳細については、[VM キューを割り当てる](allocating-a-vm-queue.md)を参照してください。
+NDIS\_受信\_キュー\_パラメーター構造体がで使用される、 [OID\_受信\_フィルター\_ALLOCATE\_キュー](https://msdn.microsoft.com/library/windows/hardware/ff569784) OID と[OID\_受信\_フィルター\_キュー\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569794) OID。 キューの割り当てに関する詳細については、次を参照してください。 [VM キューを割り当てる](allocating-a-vm-queue.md)します。
 
 現在の構成を取得するキュー、ドライバーを後続のパラメーターが、OID を使用できます\_受信\_フィルター\_キュー\_パラメーター メソッド OID を要求します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体は、初期状態へのポインターを含む、 [**NDIS\_受信\_キュー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567211) NDIS の種類のキューの id を使用した構造\_受信\_キュー\_Id。 OID メソッドの要求から正常に戻った後、 **InformationBuffer**の NDIS メンバー\_OID\_要求の構造体にはへのポインターが含まれています、 **NDIS\_受信\_キュー\_パラメーター**構造体。
 

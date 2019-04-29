@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5e2e2810e2ff1f53a371cf1b90a838b6bf9ff3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385175"
 ---
 # <a name="kspropertyvideocompressionpframesperkeyframe"></a>KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレーム
 
@@ -54,7 +54,7 @@ KSPROPERTY\_VIDEOCOMPRESSION\_PFRAMES\_1 秒あたり\_キーフレームのプ�
 <td><p>〇</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566018" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566018)"><strong>KSPROPERTY_VIDEOCOMPRESSION_S</strong></a></p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>

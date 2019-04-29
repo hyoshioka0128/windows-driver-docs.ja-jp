@@ -1,17 +1,17 @@
 ---
-title: 最後のバックアップ情報 (関数インデックス 4) を取得します。
+title: 最終バックアップ情報の取得 (関数インデックス 4)
 description: この関数は、保存されたイメージに関する情報を返します。
 ms.assetid: F73A763B-4A4A-4CAB-AA62-AFA79849884B
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 76b0e061c53f230e4ba6905a81d69226236bcd30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386615"
 ---
-# <a name="get-last-backup-information-function-index-4"></a>最後のバックアップ情報 (関数インデックス 4) を取得します。
+# <a name="get-last-backup-information-function-index-4"></a>最終バックアップ情報の取得 (関数インデックス 4)
 
 
 この関数は、保存されたイメージに関する情報を返します。
@@ -47,7 +47,7 @@ ms.locfileid: "56558089"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>

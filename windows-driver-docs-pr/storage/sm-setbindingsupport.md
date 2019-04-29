@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c022ee410efb7d7e97fe9be62eeff5a6a535842d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384833"
 ---
 # <a name="smsetbindingsupport-function"></a>SM\_SetBindingSupport 関数
 
@@ -51,7 +51,7 @@ void SM_SetBindingSupport(
 永続的なバインディングに関連する機能の特定のセットを提供するには、HBA の機能とそのミニポート ドライバーを示すビットマップ。 このパラメーターには値の一覧は、HBA の説明を参照してください。\_バインド\_型 WMI クラスの修飾子。
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、SetBindingSupport の HBAStatus メンバー\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SetBindingSupport の HBAStatus メンバー\_構造体。
 
 <a name="return-value"></a>戻り値
 ------------

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_VENDOR_SPECIFIC ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a647fe74b14f5ca8c7ddaed8156046c0c7d4d31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384233"
 ---
 # <a name="oidwwanvendorspecific"></a>OID\_WWAN\_ベンダー\_特定
 
@@ -24,7 +24,7 @@ OID\_WWAN\_ベンダー\_により、特定のベンダー固有のオブジェ�
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、[WWAN 仕入先の特定の操作](https://msdn.microsoft.com/library/windows/hardware/ff559138)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN 仕入先の特定の操作](https://msdn.microsoft.com/library/windows/hardware/ff559138)します。
 
 ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_ベンダー固有の操作をサポートしていない場合にサポートされています。
 

@@ -1,5 +1,5 @@
 ---
-title: バージョン (デバッガーのバージョンの表示)
+title: version (デバッガー バージョンの表示)
 description: バージョンのコマンドでは、デバッガーと読み込まれたすべての拡張 Dll のバージョン情報が表示されます。
 ms.assetid: 51819d56-c24f-41f2-9090-5787e24ea773
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ab081d7851337dd356c45254b8db9e517d431d9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386429"
 ---
-# <a name="version-show-debugger-version"></a>バージョン (デバッガーのバージョンの表示)
+# <a name="version-show-debugger-version"></a>version (デバッガー バージョンの表示)
 
 
 **バージョン**コマンドは、デバッガーと読み込まれたすべての拡張 Dll のバージョン情報を表示します。 このコマンドでは、ターゲット コンピューターのオペレーティング システムの現在のバージョンも表示されます。

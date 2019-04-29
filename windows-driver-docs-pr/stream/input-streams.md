@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0740694167f9aea25a7bc31b7f08d8c9ae7024a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386525"
 ---
 # <a name="input-streams"></a>入力ストリーム
 
@@ -26,9 +26,9 @@ ms.locfileid: "56556858"
 
 
 
-DVD の入力ストリームは、暗号化された DVD パックの配列として、ミニドライバーに提供されます。 パックは、DVD 仕様で定義されています。 Microsoft の DVD のアーキテクチャでは、「マスター クロック」パラダイムを使用して、オーディオとビデオの同期するために、パックのシステム クロックの参照 (SCR) フィールドが 0 に設定されているに注意してください。 通常、DVD デコーダーのミニドライバーのオーディオ ストリームは、マスターのクロックを提供します。 詳細については、[マスター クロック](master-clock.md)を参照してください。
+DVD の入力ストリームは、暗号化された DVD パックの配列として、ミニドライバーに提供されます。 パックは、DVD 仕様で定義されています。 Microsoft の DVD のアーキテクチャでは、「マスター クロック」パラダイムを使用して、オーディオとビデオの同期するために、パックのシステム クロックの参照 (SCR) フィールドが 0 に設定されているに注意してください。 通常、DVD デコーダーのミニドライバーのオーディオ ストリームは、マスターのクロックを提供します。 詳細については、次を参照してください。[マスター クロック](master-clock.md)します。
 
-DVD のデータ ストリームがを通じてミニドライバーに送信される、 [ **SRB\_書き込み\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568220)要求。 SRB の要求の詳細については、[Stream 要求のブロックの処理](handling-stream-request-blocks.md)と[Stream クラス SRB 参照](https://msdn.microsoft.com/library/windows/hardware/ff568295)を参照してください。 ハードウェアがサポートするいくつかの DVD パックは、1 つの要求パケットに存在する可能性があるために、DMA をスキャッター/ギャザーします。
+DVD のデータ ストリームがを通じてミニドライバーに送信される、 [ **SRB\_書き込み\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568220)要求。 SRB の要求の詳細については、次を参照してください。 [Stream 要求のブロックの処理](handling-stream-request-blocks.md)と[Stream クラス SRB 参照](https://msdn.microsoft.com/library/windows/hardware/ff568295)します。 ハードウェアがサポートするいくつかの DVD パックは、1 つの要求パケットに存在する可能性があるために、DMA をスキャッター/ギャザーします。
 
 次の表では、DVD ムービーで使用される MPEG2 ビデオ入力ストリーム メディアの種類について説明します。
 

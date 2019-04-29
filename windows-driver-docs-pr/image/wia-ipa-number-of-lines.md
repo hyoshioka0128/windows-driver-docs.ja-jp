@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 211d0a7261a4778ee84dd271ad2a6b06cbc11526
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384653"
 ---
 # <a name="wiaipanumberoflines"></a>WIA\_IPA\_数\_の\_行
 
@@ -33,9 +33,9 @@ WIA\_IPA\_数\_の\_線のプロパティには (ピクセル単位で、イメ�
 
 有効な値 :WIA\_PROP\_NONE
 
-アクセス権:読み取り専用です。
+アクセス権:読み取り専用かどうか
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WIA\_IPA\_数\_の\_行プロパティは転送が有効なすべての項目の Windows Vista のドライバーのオプションです。 場合 WIA\_IPA\_数\_の\_線、 [ **WIA\_IPA\_バイト\_1 秒あたり\_行**](wia-ipa-bytes-per-line.md)、および[ **WIA\_IPA\_ピクセル\_1 秒あたり\_行**](wia-ipa-pixels-per-line.md)実装は、Windows Server 2003 用に記述されたアプリケーションWindows XP、および Windows の以前のバージョンは、行、各スキャン ラインに必要なバイト数、および画像のスキャン ラインの合計数ごとのピクセルの数を見積もることができます。 これらの値は、イメージ処理フィルターは、実際の値では、どの WIA を変更可能性がありますので、正確な\_IPA\_数\_の\_線、WIA\_IPA\_バイト\_あたり\_線、および WIA\_IPA\_ピクセル\_あたり\_行を表します。
@@ -44,7 +44,7 @@ Windows Vista ドライバーがこれらのプロパティを指定しない場
 
 Windows Vista アプリケーションでは、以上に示したプロパティから使用できる情報よりも正確であるイメージに関する情報を取得するイメージ ヘッダー データを常に解析する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

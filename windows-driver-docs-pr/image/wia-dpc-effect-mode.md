@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f1020b54e82117137b318ce86b9a3787aeaa448
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373109"
 ---
 # <a name="wiadpceffectmode"></a>WIA\_DPC\_効果\_モード
 
@@ -47,7 +47,7 @@ WIA\_DPC\_効果\_モード プロパティは、カメラの特別なイメー�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>値</th>
 <th>定義</th>
 </tr>
 </thead>

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7715ea4d9f0f9a2db7d8c1031b5974a735203b4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383314"
 ---
 # <a name="lsf-lsf--load-or-unload-source-file"></a>lsf、lsf- (ソース ファイルの読み込みまたはアンロード)
 
@@ -69,7 +69,7 @@ lsf- Filename
 
 CDB または KD、内のソース ファイルを表示することができます、[デバッガー コマンド ウィンドウ](debugger-command-window.md)します。 ソース ファイルが新規として読み込まれる、WinDbg で[ソース windows](source-window.md)します。
 
-ソース ファイル、ソース パス、およびその他のソース ファイルを読み込む方法の詳細については、[ソース パス](source-path.md)を参照してください。
+ソース ファイル、ソース パス、およびその他のソース ファイルを読み込む方法の詳細については、次を参照してください。[ソース パス](source-path.md)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

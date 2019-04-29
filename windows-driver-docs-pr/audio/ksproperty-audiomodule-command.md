@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52c6bf7350cd61659df8128986067d5d04029dfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332767"
 ---
 # <a name="kspropertyaudiomodulecommand"></a>KSPROPERTY\_AUDIOMODULE\_コマンド
 
@@ -69,7 +69,7 @@ ms.locfileid: "56551692"
 
 サポート、 **KSPROPERTY\_AUDIOMODULE\_コマンド**プロパティは、クエリを実行して、オーディオのモジュールのパラメーターを設定するカスタム コマンドを送信するオーディオ モジュールのクライアントを使用します。 プロパティは、フィルターまたは暗証番号 (pin) のハンドルを使用して送信できる、 [ **KSAUDIOMODULE\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/mt808139) DeviceIoControl の呼び出しの入力バッファーとして渡されます。 クライアントできます必要に応じて追加情報を送信する隣接、 **KSAUDIOMODULE\_プロパティ**カスタム コマンドを送信する入力バッファーにします。
 
-オーディオのモジュールの詳細については、[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)を参照してください。
+オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
 
 <a name="requirements"></a>要件
 ------------

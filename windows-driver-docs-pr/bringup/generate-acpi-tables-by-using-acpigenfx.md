@@ -5,16 +5,16 @@ ms.assetid: 46A725C3-609E-45B9-A4BD-033656208E92
 ms.date: 06/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7efa87cc6abe752b1692adcc88b62426aeca797e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337601"
 ---
 # <a name="generate-acpi-tables-by-using-acpigenfx"></a>AcpiGenFx を使用して ACPI テーブルを生成する
 
 
-**概要**
+**要約**
 
 -   ACPI テーブルを生成する AcpiGenFx を使用する .NET アプリを作成します。
 
@@ -129,7 +129,7 @@ WDK で提供される asl.exe コンパイラを使用して ASL コード フ�
 <tr class="header">
 <th>オブジェクトの種類</th>
 <th>作成方法</th>
-<th>コンポーネント</th>
+<th>Component</th>
 </tr>
 </thead>
 <tbody>

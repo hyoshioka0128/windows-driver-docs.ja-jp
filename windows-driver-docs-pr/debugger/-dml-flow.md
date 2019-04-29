@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 46dea3bdf71325eeb3a65621d66fa68aeb98abba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336819"
 ---
 # <a name="dmlflow-unasemmble-with-links"></a>.dml\_フロー (Unasemmble リンクを含む)
 
@@ -37,7 +37,7 @@ ms.locfileid: "56580275"
 <span id="Target"></span><span id="target"></span><span id="TARGET"></span>*ターゲット*  
 逆アセンブルするコード ブロックのアドレス。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 次の例に示すように、呼び出し履歴を検討してください。

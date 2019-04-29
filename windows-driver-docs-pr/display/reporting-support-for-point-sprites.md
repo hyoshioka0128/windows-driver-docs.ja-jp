@@ -1,6 +1,6 @@
 ---
-title: レポート ポイントのスプライトのサポート
-description: レポート ポイントのスプライトのサポート
+title: ポイント スプライトに対するサポートのレポート
+description: ポイント スプライトに対するサポートのレポート
 ms.assetid: 57241e2d-a636-454b-8497-17978b6ec285
 keywords:
 - Windows 2000 の WDK の表示、ポイントのスプライトの DirectX 8.0 リリース ノートします。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d53a5269e42e3dafebf50e83f91648f707caae11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383246"
 ---
-# <a name="reporting-support-for-point-sprites"></a>レポート ポイントのスプライトのサポート
+# <a name="reporting-support-for-point-sprites"></a>ポイント スプライトに対するサポートのレポート
 
 
 ## <span id="ddk_reporting_support_for_point_sprites_gg"></span><span id="DDK_REPORTING_SUPPORT_FOR_POINT_SPRITES_GG"></span>

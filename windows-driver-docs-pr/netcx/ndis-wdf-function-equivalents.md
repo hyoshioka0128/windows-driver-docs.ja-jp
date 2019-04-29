@@ -1,19 +1,19 @@
 ---
-title: 対応する NDIS WDF 関数
-description: 対応する NDIS WDF 関数
+title: NDIS-WDF 関数に対応する関数
+description: NDIS-WDF 関数に対応する関数
 ms.assetid: 28C8DFA3-5602-422D-89AA-6EA05F501E15
 keywords:
 - NetAdapterCx の NDIS WDF 関数、対応する NetCx の NDIS WDF 関数と同等
 ms.date: 06/05/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2647f9c0a06a7637189c4e431b726d9ba75b7633
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384539"
 ---
-# <a name="ndis-wdf-function-equivalents"></a>対応する NDIS WDF 関数
+# <a name="ndis-wdf-function-equivalents"></a>NDIS-WDF 関数に対応する関数
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

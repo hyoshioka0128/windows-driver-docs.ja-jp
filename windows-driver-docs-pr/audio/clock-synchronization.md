@@ -1,6 +1,6 @@
 ---
-title: クロックの同期
-description: クロックの同期
+title: 時計の同期化
+description: 時計の同期化
 ms.assetid: dc0071b0-a22c-4bb5-90ea-a69e5dcdba6f
 keywords:
 - シンセサイザー WDK オーディオ、時計の同期
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fdbc238053392478af94f198a3faa36d6162ea1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333871"
 ---
-# <a name="clock-synchronization"></a>クロックの同期
+# <a name="clock-synchronization"></a>時計の同期化
 
 
 ## <span id="clock_synchronization"></span><span id="CLOCK_SYNCHRONIZATION"></span>

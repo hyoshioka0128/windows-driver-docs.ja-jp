@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_SERVICE_COMMAND ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 593b6589e023d77367618f960d38a2a3eecd2151
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386674"
 ---
 # <a name="oidwwandeviceservicecommand"></a>OID\_WWAN\_デバイス\_サービス\_コマンド
 
@@ -23,7 +23,7 @@ OID\_WWAN\_デバイス\_サービス\_コマンドは、ベンダー固有の�
 
 ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_指定したデバイスのサービスまたは操作をサポートしていない場合にサポートされます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

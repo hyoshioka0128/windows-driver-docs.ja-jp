@@ -11,11 +11,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7da158a055960451e60d2275f2b26333db1fadc5
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381914"
 ---
 # <a name="x86-architecture"></a>x86 アーキテクチャ
 
@@ -173,7 +173,7 @@ Subregister のみと、subregister の外側の部分のいずれも、subregis
 </tr>
 <tr class="even">
 <td align="left"><p><strong>flags</strong></p></td>
-<td align="left"><p>フラグ</p></td>
+<td align="left"><p>flags</p></td>
 </tr>
 </tbody>
 </table>
@@ -454,7 +454,7 @@ B NAE</td>
 
  
 
-条件は、通常の結果を操作に使用する**cmp**または**テスト**命令。 例えば以下のようにします。
+条件は、通常の結果を操作に使用する**cmp**または**テスト**命令。 以下に例を示します。
 
 ```asm
 cmp eax, 5

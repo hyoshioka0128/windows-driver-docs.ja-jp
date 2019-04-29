@@ -1,6 +1,6 @@
 ---
-title: AddDevice、ルーチンを記述します。
-description: AddDevice、ルーチンを記述します。
+title: AddDevice ルーチンの記述
+description: AddDevice ルーチンの記述
 ms.assetid: 93a272f4-888c-4cc8-b013-c6313c10a8d8
 keywords:
 - 標準のドライバーのルーチンの WDK カーネル、AddDevice ルーチン
@@ -17,13 +17,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 609ba2b2556e24f09b8335dce6cf8efad2ba5f59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384535"
 ---
-# <a name="writing-an-adddevice-routine"></a>AddDevice、ルーチンを記述します。
+# <a name="writing-an-adddevice-routine"></a>AddDevice ルーチンの記述
 
 
 
@@ -33,7 +33,7 @@ PnP をサポートする任意のドライバーが必要、 [ *AddDevice* ](ht
 
 PnP マネージャーには、ドライバーの*AddDevice*ドライバーによって制御される各デバイスの日常的な。 *AddDevice*ルーチンは、システムの初期化 (デバイスが最初に列挙) の場合、中に呼び出され、いつでも、新しいデバイスは、システムの実行中に列挙されます。
 
-このセクションには、次のトピックが含まれています。
+このセクションでは、次のトピックについて説明します。
 
 [関数またはフィルター ドライバーで AddDevice ルーチン](adddevice-routines-in-function-or-filter-drivers.md)
 

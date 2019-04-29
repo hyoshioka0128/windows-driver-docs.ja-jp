@@ -1,17 +1,17 @@
 ---
-title: AV/C プロトコル ドライバー機能コード
-description: AV/C プロトコル ドライバー機能コード
+title: AV/C プロトコル ドライバー関数コード
+description: AV/C プロトコル ドライバー関数コード
 ms.assetid: 96f1900f-89cd-4f9e-bd73-463255cf4dcd
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 322f1df92be43be7410e9d8962ff2899194dcd0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384752"
 ---
-# <a name="avc-protocol-driver-function-codes"></a>AV/C プロトコル ドライバー機能コード
+# <a name="avc-protocol-driver-function-codes"></a>AV/C プロトコル ドライバー関数コード
 
 
 ## <span id="ddk_av_c_protocol_driver_function_codes_ks"></span><span id="DDK_AV_C_PROTOCOL_DRIVER_FUNCTION_CODES_KS"></span>

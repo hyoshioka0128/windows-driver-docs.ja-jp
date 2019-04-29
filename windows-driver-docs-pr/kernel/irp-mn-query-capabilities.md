@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_CAPABILITIES Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 3813da19b49203ccfa085b7ee8f12023e382e301
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386919"
 ---
 # <a name="irpmnquerycapabilities"></a>IRP\_MN\_クエリ\_機能
 
@@ -84,7 +84,7 @@ PnP マネージャーとドライバーは、この IRP を送信 IRQL パッ�
 
 -   IRP の割り当てを解除し、**デバイス\_機能**不要になったときに構造体します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_PACKET_FILTER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: f5d9922ba3eab75edcfab51dcc1ac9203987b45d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386221"
 ---
 # <a name="ndisstatuspacketfilter"></a>NDIS\_状態\_パケット\_フィルター
 
@@ -25,7 +25,7 @@ NDIS は NDIS は、NDIS を生成するときに、パケット フィルター
 
 NDIS フィルター ドライバーでは、NDIS を生成できますも\_状態\_パケット\_フィルター状態を示す値。
 
-NDIS フィルター型フラグのビットごとの OR を提供する、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。 フィルターの型のフラグの一覧は、次を参照してください。、 [OID\_GEN\_現在\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569575) OID。 パケット フィルターの詳細については、[OID\_GEN\_サポートされている\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569643)を参照してください。
+NDIS フィルター型フラグのビットごとの OR を提供する、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。 フィルターの型のフラグの一覧は、次を参照してください。、 [OID\_GEN\_現在\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569575) OID。 パケット フィルターの詳細については、次を参照してください。 [OID\_GEN\_サポートされている\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569643)します。
 
 **StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373) sizeof(ULONG) に構造体が設定されています。
 

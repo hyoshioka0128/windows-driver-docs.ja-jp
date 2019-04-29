@@ -1,6 +1,6 @@
 ---
-title: SetupAPI を使用して、ドライバーの Authenticode 署名を検証するには
-description: SetupAPI を使用して、ドライバーの Authenticode 署名を検証するには
+title: ドライバーの Authenticode 署名を検証するための SetupAPI の使用
+description: ドライバーの Authenticode 署名を検証するための SetupAPI の使用
 ms.assetid: 2019d77d-2d98-4bae-8d9d-aa41e47f3811
 keywords:
 - SetupAPI 関数 WDK、署名の検証
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6710e892a5dae0827394540786ae5bba00e6e19d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339378"
 ---
-# <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>SetupAPI を使用して、ドライバーの Authenticode 署名を検証するには
+# <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>ドライバーの Authenticode 署名を検証するための SetupAPI の使用
 
 
 

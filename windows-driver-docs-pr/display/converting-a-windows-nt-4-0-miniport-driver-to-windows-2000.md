@@ -1,6 +1,6 @@
 ---
-title: Windows NT 4.0 のミニポート ドライバーを Windows 2000 に変換します。
-description: Windows NT 4.0 のミニポート ドライバーを Windows 2000 に変換します。
+title: Windows NT 4.0 ミニポート ドライバーから Windows 2000 への変換
+description: Windows NT 4.0 ミニポート ドライバーから Windows 2000 への変換
 ms.assetid: a55192c6-3de4-4433-8825-3393f2bce04a
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000、Windows NT 4.0 のドライバーを変換する、複数の Windows バージョン
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76a5f6f5630961afe00a0c31195eb865cfb3abcb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384509"
 ---
-# <a name="converting-a-windows-nt-40-miniport-driver-to-windows-2000"></a>Windows NT 4.0 のミニポート ドライバーを Windows 2000 に変換します。
+# <a name="converting-a-windows-nt-40-miniport-driver-to-windows-2000"></a>Windows NT 4.0 ミニポート ドライバーから Windows 2000 への変換
 
 
 ## <span id="ddk_converting_a_windows_nt_4_0_miniport_driver_to_windows_2000_gg"></span><span id="DDK_CONVERTING_A_WINDOWS_NT_4_0_MINIPORT_DRIVER_TO_WINDOWS_2000_GG"></span>

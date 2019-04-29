@@ -1,5 +1,5 @@
 ---
-title: KTIMER オブジェクト、および Dpc を KeXxxTimer ルーチン
+title: KeXxxTimer ルーチン、KTIMER オブジェクト、DPC
 description: Windows 2000 以降、KeXxxTimer ルーチンのセットはタイマーの管理に使用できます。
 ms.assetid: b58487de-6e9e-45f4-acb8-9233c8718ee2
 keywords:
@@ -23,13 +23,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d53ae173b646788694372d70da1190a4bf6076b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383660"
 ---
-# <a name="kexxxtimer-routines-ktimer-objects-and-dpcs"></a>KTIMER オブジェクト、および Dpc を KeXxxTimer ルーチン
+# <a name="kexxxtimer-routines-ktimer-objects-and-dpcs"></a>KeXxxTimer ルーチン、KTIMER オブジェクト、DPC
 
 
 以降では、Windows 2000 では、一連の**Ke*Xxx*タイマー**ルーチンがタイマーの管理に使用します。 これらのルーチンを使用して、タイマー オブジェクトに基づく、 [ **KTIMER** ](https://msdn.microsoft.com/library/windows/hardware/ff554250)構造体。 タイマー オブジェクトを作成するドライバーを最初にストレージを割り当てるを**KTIMER**構造体。 ドライバーなどのルーチンの呼び出し、 [ **KeInitializeTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff552168)または[ **KeInitializeTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552173)この構造体を初期化します。
@@ -39,7 +39,7 @@ ms.locfileid: "56535779"
 
 1 回だけは、有効期限が切れるか、繰り返し一定期間切れになるよう、タイマーを設定できます。 [**KeSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff553286)常に 1 回だけの有効期限をタイマーを設定します。 [**KeSetTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff553292)受け取る省略可能な*期間*パラメーターで、定期的なタイマーの間隔を指定します。
 
-省略可能な[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチン (遅延プロシージャ呼び出しの種類) と関連付けができる通知タイマーまたは同期タイマーのいずれか。 このルーチンは、指定した期間、有効期限が切れるときに実行されます。 詳細については、[タイマー オブジェクトを使用する](using-timer-objects.md)を参照してください。
+省略可能な[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチン (遅延プロシージャ呼び出しの種類) と関連付けができる通知タイマーまたは同期タイマーのいずれか。 このルーチンは、指定した期間、有効期限が切れるときに実行されます。 詳細については、次を参照してください。[タイマー オブジェクトを使用する](using-timer-objects.md)します。
 
 タイマーを*通知タイマー*または*同期タイマー*します。
 

@@ -1,17 +1,17 @@
 ---
-title: MobileBroadbandAccount オブジェクトを作成します。
-description: MobileBroadbandAccount オブジェクトを作成します。
+title: MobileBroadbandAccount オブジェクトを作成する
+description: MobileBroadbandAccount オブジェクトを作成する
 ms.assetid: 631e885f-67bb-4c30-a82f-352c23cc973a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 584c976f068c81442206641b065a29c022d10526
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383782"
 ---
-# <a name="create-a-mobilebroadbandaccount-object"></a>MobileBroadbandAccount オブジェクトを作成します。
+# <a name="create-a-mobilebroadbandaccount-object"></a>MobileBroadbandAccount オブジェクトを作成する
 
 
 [ **MobileBroadbandAccount** ](https://msdn.microsoft.com/library/windows/apps/br207353)オブジェクトは、ネットワーク アカウントを表す、このようなオブジェクトを作成するネットワーク アカウントの ID が必要です。 モバイル ブロード バンド アプリがネットワークの一覧から開始されると、タイルの起動コントラクトへのパラメーターとして使用するネットワーク アカウント ID を受け取ります。

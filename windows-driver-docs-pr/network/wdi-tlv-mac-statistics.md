@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_MAC_STATISTICS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0513d4da6a4f8f1735b1768ab32d1124bf47d535
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385262"
 ---
 # <a name="wditlvmacstatistics"></a>WDI\_TLV\_MAC\_統計情報
 
@@ -58,7 +58,7 @@ WDI\_TLV\_MAC\_統計情報が、ピア用の MAC 統計情報を含む TLV [OID
 <tr class="even">
 <td>UINT64</td>
 <td>Mac の破棄、IEEE 802.11 dot11ExcludeUnencrypted 管理情報ベース (MIB) オブジェクトが有効にすると、暗号化されていない受信 MPDU フレームの数。
-<p>この MIB オブジェクトに関する詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff569365" data-raw-source="[OID_DOT11_EXCLUDE_UNENCRYPTED](https://msdn.microsoft.com/library/windows/hardware/ff569365)">OID_DOT11_EXCLUDE_UNENCRYPTED</a>を参照してください。 MPDU フレームでは、IEEE 802.11 MAC ヘッダー内のフレーム コントロール フィールドの保護されているフレームのサブフィールドが 0 に設定されているときに暗号化されていないと見なされます。</p></td>
+<p>この MIB オブジェクトに関する詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff569365" data-raw-source="[OID_DOT11_EXCLUDE_UNENCRYPTED](https://msdn.microsoft.com/library/windows/hardware/ff569365)">OID_DOT11_EXCLUDE_UNENCRYPTED</a>します。 MPDU フレームでは、IEEE 802.11 MAC ヘッダー内のフレーム コントロール フィールドの保護されているフレームのサブフィールドが 0 に設定されているときに暗号化されていないと見なされます。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT64</td>

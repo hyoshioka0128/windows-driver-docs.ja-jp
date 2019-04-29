@@ -23,11 +23,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19d980f4b1d98cc90c17f5e179e5ea42e625e804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384194"
 ---
 # <a name="isnmpclose-method"></a>ISNMP::Close メソッド
 
@@ -64,7 +64,7 @@ objSNMP.Open strIP, strCommunity, 2, 1000
 objSNMP.Close
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

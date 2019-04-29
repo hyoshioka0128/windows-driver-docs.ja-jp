@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 797b125b9aca5968b380e511c40fda3ee731a4d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328650"
 ---
 # <a name="sample-audio-drivers"></a>オーディオ ドライバーのサンプル
 
@@ -37,7 +37,7 @@ SYSVAD ドライバーには、WDM オーディオ アーキテクチャの多�
 
 -   **TabletAudioSample**
 
-    *TabletAudioSample*プロジェクトは、複数のオーディオ デバイスのサポートを公開している WDM オーディオ ドライバーを開発する方法を示します。 プラグ可能な他のユーザーは、システムの埋め込み (スピーカー、マイク配列) は一部のオーディオ デバイス (ヘッドホンによる立体音響スピーカー/mic、Bluetooth ヘッドセット スピーカー/mic)。 ドライバーは WaveRT および表示デバイスのオーディオのオフロードを使用します。 ドライバーは、実際のハードウェア ベースのアダプターではなく「仮想オーディオ デバイス」を使用し、WDM オーディオ ドライバーのアーキテクチャがオフロードされたオーディオのさまざまな側面が強調表示されます。 Windows オーディオ エンジンの詳細については、[Hardware-Offloaded オーディオ処理 (Windows ドライバー)](hardware-offloaded-audio-processing.md)を参照してください。
+    *TabletAudioSample*プロジェクトは、複数のオーディオ デバイスのサポートを公開している WDM オーディオ ドライバーを開発する方法を示します。 プラグ可能な他のユーザーは、システムの埋め込み (スピーカー、マイク配列) は一部のオーディオ デバイス (ヘッドホンによる立体音響スピーカー/mic、Bluetooth ヘッドセット スピーカー/mic)。 ドライバーは WaveRT および表示デバイスのオーディオのオフロードを使用します。 ドライバーは、実際のハードウェア ベースのアダプターではなく「仮想オーディオ デバイス」を使用し、WDM オーディオ ドライバーのアーキテクチャがオフロードされたオーディオのさまざまな側面が強調表示されます。 Windows オーディオ エンジンの詳細については、次を参照してください。 [Hardware-Offloaded オーディオ処理 (Windows ドライバー)](hardware-offloaded-audio-processing.md)します。
 
 -   **PhoneAudioSample**
 
@@ -45,15 +45,15 @@ SYSVAD ドライバーには、WDM オーディオ アーキテクチャの多�
 
 -   **EndpointsCommon**
 
-    *EndpointsCommon*プロジェクトには、電話とタブレットの両方に共通のコードが含まれています。 詳細については、[オーディオのユニバーサル Windows ドライバー](audio-universal-drivers.md)を参照してください。
+    *EndpointsCommon*プロジェクトには、電話とタブレットの両方に共通のコードが含まれています。 詳細については、次を参照してください。[オーディオのユニバーサル Windows ドライバー](audio-universal-drivers.md)します。
 
 -   **SwapAPO**
 
-    *SwapAPO*プロジェクトは、オーディオ処理オブジェクトを開発する方法を示します。 登録して、オーディオ処理オブジェクトの登録を解除する方法を示すサンプル コードが含まれていて、オブジェクトの処理で使用できる機能を反映するようにコントロール パネルの プロパティ ページをカスタマイズする方法についても説明します。 詳細については、[Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)を参照してください。
+    *SwapAPO*プロジェクトは、オーディオ処理オブジェクトを開発する方法を示します。 登録して、オーディオ処理オブジェクトの登録を解除する方法を示すサンプル コードが含まれていて、オブジェクトの処理で使用できる機能を反映するようにコントロール パネルの プロパティ ページをカスタマイズする方法についても説明します。 詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)します。
 
 -   **KeywordDetectorAdapter**
 
-    *KeywordDetectorAdapter*プロジェクトは、キーワード detector アダプターを開発する方法を示します。 詳細については、[音声をアクティブ化](voice-activation.md)を参照してください。
+    *KeywordDetectorAdapter*プロジェクトは、キーワード detector アダプターを開発する方法を示します。 詳細については、次を参照してください。[音声をアクティブ化](voice-activation.md)します。
 
 **ダウンロードして、GitHub から Sysvad オーディオ サンプルを抽出**
 

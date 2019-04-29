@@ -9,22 +9,22 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a8312da48be5f01f540c50ed1aa1c0d29825172
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392695"
 ---
 #  <a name="summary-of-debugger-extensions-in-wdfkddll"></a>Wdfkd.dll でのデバッガー拡張機能の概要
 
 
 Windows Driver Kit (WDK) には、という名前のデバッガー拡張機能ライブラリが含まれています。 *Wdfkd.dll*します。 このライブラリには、バージョン 2 以降、カーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) の両方のドライバーをデバッグに使用できるデバッガー拡張機能のコマンドが含まれています。
 
-各コマンドの詳細については、[ **Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)**](https://msdn.microsoft.com/library/windows/hardware/ff551876)を参照してください。 すべての利用可能なデバッガー拡張機能ライブラリの詳細についてで提供されるドキュメントを参照して、 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)パッケージ。
+各コマンドの詳細については、次を参照してください。 [ **Windows ドライバー フレームワークの拡張機能 (Wdfkd.dll)**](https://msdn.microsoft.com/library/windows/hardware/ff551876)します。 すべての利用可能なデバッガー拡張機能ライブラリの詳細についてで提供されるドキュメントを参照して、 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)パッケージ。
 
 KMDF ドライバーでデバッグする方法を示すビデオ シリーズを検索する[ビデオ。KMDF ドライバーのデバッグ](debugging-kernel-mode-driver-framework-drivers.md)します。
 
-UMDF 1.11 またはそれ以前のバージョンを使用するドライバーをデバッグする必要があります代わりに使用する、 *Wudfext.dll*デバッガー拡張機能ライブラリ。 詳細については、[ユーザー モード ドライバー フレームワークの拡張機能 (Wudfext.dll)](https://msdn.microsoft.com/library/windows/hardware/ff560030)を参照してください。
+UMDF 1.11 またはそれ以前のバージョンを使用するドライバーをデバッグする必要があります代わりに使用する、 *Wudfext.dll*デバッガー拡張機能ライブラリ。 詳細については、次を参照してください。[ユーザー モード ドライバー フレームワークの拡張機能 (Wudfext.dll)](https://msdn.microsoft.com/library/windows/hardware/ff560030)します。
 
 拡張機能のコマンドを*Wdfkd.dll*拡張機能ライブラリの提供が含まれます。
 

@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c65570198a00701ea15c301c1afeb15ed535525b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336467"
 ---
 # <a name="idt"></a>!idt
 
@@ -71,7 +71,7 @@ ms.locfileid: "56580403"
 
 Isr を特定および IDTs については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-Itanium のターゲット コンピューターでの割り込みのベクター テーブルを表示する方法の詳細については、[ **! ivt**](-ivt.md)を参照してください。
+Itanium のターゲット コンピューターでの割り込みのベクター テーブルを表示する方法の詳細については、次を参照してください。 [ **! ivt**](-ivt.md)します。
 
 <a name="remarks"></a>コメント
 -------

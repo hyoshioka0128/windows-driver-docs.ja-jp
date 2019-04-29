@@ -1,6 +1,6 @@
 ---
-title: 標準のドライバーの日常的な要件
-description: 標準のドライバーの日常的な要件
+title: 標準ドライバー ルーチンの要件
+description: 標準ドライバー ルーチンの要件
 ms.assetid: 49b382ad-c282-41d2-b8b3-68eca4e12b9c
 keywords:
 - 標準のドライバー ルーチン WDK カーネルの要件
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf8a7ddcc099410a4741f8ecb00040ef9721f68b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331962"
 ---
-# <a name="standard-driver-routine-requirements"></a>標準のドライバーの日常的な要件
+# <a name="standard-driver-routine-requirements"></a>標準ドライバー ルーチンの要件
 
 
 

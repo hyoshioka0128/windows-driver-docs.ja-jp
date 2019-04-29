@@ -1,17 +1,17 @@
 ---
-title: NVGRE サポートの RSS および VMQ 受信タスク オフロード
+title: RSS および VMQ 受信タスク オフロードでの NVGRE のサポート
 description: このセクションでは、NVGRE のサポートについて説明します RSS および VMQ 受信タスク オフロード
 ms.assetid: 42660D55-31C0-4101-9EA1-159EBB76B019
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f0bf5311665b7a7a362b314d28ebe698f2c0dc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384217"
 ---
-# <a name="supporting-nvgre-in-rss-and-vmq-receive-task-offloads"></a>NVGRE サポートの RSS および VMQ 受信タスク オフロード
+# <a name="supporting-nvgre-in-rss-and-vmq-receive-task-offloads"></a>RSS および VMQ 受信タスク オフロードでの NVGRE のサポート
 
 
 NDIS 6.30 (Windows Server 2012) が導入されています[Network Virtualization using Generic Routing Encapsulation (NVGRE)](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)します。 NDIS ミニポート ドライバーと Nic を実行する[Receive Side Scaling](receive-scaling.md) (RSS) と[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)受信タスクのオフロードが方法で NVGRE をサポートするために行う必要があります。

@@ -7,11 +7,11 @@ keywords:
 - OID_WDI_ABORT_TASK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: e72ddd10a06ce1e40583d7dd25fa9af9ef5e4760
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384627"
 ---
 # <a name="oidwdiaborttask"></a>OID\_WDI\_中止\_タスク
 

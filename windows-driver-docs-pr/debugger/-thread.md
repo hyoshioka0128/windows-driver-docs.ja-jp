@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9c5218b648e32736a70323cca9d32920b1d51a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338744"
 ---
 # <a name="thread"></a>!thread
 
@@ -65,7 +65,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-スレッドがカーネル モードについては、[変更コンテキスト](changing-contexts.md)を参照してください。 プロセスとスレッドの分析に関する詳細については、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。
+スレッドがカーネル モードについては、次を参照してください。[変更コンテキスト](changing-contexts.md)します。 プロセスとスレッドの分析に関する詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。
 
 <a name="remarks"></a>コメント
 -------

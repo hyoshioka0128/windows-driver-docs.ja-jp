@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a0905f792e32ed595c7053573525b5836b1ba277
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339802"
 ---
 # <a name="sendfile-send-file"></a>.send\_ファイル (ファイルの送信)
 
@@ -69,7 +69,7 @@ ms.locfileid: "56578164"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このコマンドは、プロセス サーバー、リモート デバッグ実行されましたが、代わりにローカルでデバッグを開始する場合に特に便利です。 この場合、.send を使用することができます\_ファイル、プロセス サーバーに、デバッガーが使用されているすべてのシンボル ファイルをコピーする -s コマンド。 これらのシンボル ファイルは、ローカル コンピューターで実行されているデバッガーで使用できます。

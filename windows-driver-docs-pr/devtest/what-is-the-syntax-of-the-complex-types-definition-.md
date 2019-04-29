@@ -5,13 +5,13 @@ ms.assetid: c378839a-3714-4b4e-94a6-d3e1dcf8a610
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68dc7cce9f5340b4f4a7a47c9c7a7cdea228b681
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386361"
 ---
-# <a name="what-is-the-syntax-of-the-complex-types-definition"></a>複合型定義の構文とは何ですか。
+# <a name="what-is-the-syntax-of-the-complex-types-definition"></a>複合型定義の構文
 
 
 Event Tracing for Windows (ETW) トレース関数で使用するためのいくつかの単純および複雑な型を定義します。 これらの型は、Defaultwpp.ini ファイルで宣言されます。 ただし、独自のカスタム構成ファイルを作成し、それを使用する WPP をダイレクトすることができます。

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b2afa93e9891c9e07c03c7af905a7f72064a19ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385708"
 ---
 # <a name="l-l--set-source-options"></a>l+、l- (ソース オプションの設定)
 
@@ -81,7 +81,7 @@ l{+|-}
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ソースのデバッグと関連するコマンドの詳細については、[元のモードでデバッグ](debugging-in-source-mode.md)を参照してください。 アセンブリの詳細については、デバッグ、および関連するコマンドを参照してください[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)します。
+ソースのデバッグと関連するコマンドの詳細については、次を参照してください。[元のモードでデバッグ](debugging-in-source-mode.md)します。 アセンブリの詳細については、デバッグ、および関連するコマンドを参照してください[モードのアセンブリでのデバッグ](debugging-in-assembly-mode.md)します。
 
 <a name="remarks"></a>コメント
 -------

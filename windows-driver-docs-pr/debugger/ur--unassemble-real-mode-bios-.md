@@ -1,5 +1,5 @@
 ---
-title: (リアル モードを逆アセンブル BIOS)
+title: ur (リアル モード BIOS の逆アセンブル)
 description: コマンドは、アセンブリの翻訳の指定した 16 ビットのリアル モードのコードを表示します。
 ms.assetid: 7ea3421a-3841-47ea-ab40-99d10516bb14
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5922e23340d416f45f37fa88917f8e20afe7322e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383749"
 ---
-# <a name="ur-unassemble-real-mode-bios"></a>(リアル モードを逆アセンブル BIOS)
+# <a name="ur-unassemble-real-mode-bios"></a>ur (リアル モード BIOS の逆アセンブル)
 
 
 **、** コマンドは、アセンブリの翻訳の指定した 16 ビットのリアル モードのコードを表示します。
@@ -34,10 +34,10 @@ ur
 
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-逆アセンブルする指示を含む、メモリ範囲を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+逆アセンブルする指示を含む、メモリ範囲を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-逆アセンブルするメモリの範囲の先頭を指定します。 (X86 ベースのプロセッサの場合) に 8 つの命令または (Itanium ベースのプロセッサの場合) の 9 つの手順については、アセンブリではありません。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+逆アセンブルするメモリの範囲の先頭を指定します。 (X86 ベースのプロセッサの場合) に 8 つの命令または (Itanium ベースのプロセッサの場合) の 9 つの手順については、アセンブリではありません。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -66,7 +66,7 @@ ur
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-BIOS のコードをデバッグする方法の詳細については、[BIOS コードのデバッグ](debugging-bios-code.md)を参照してください。
+BIOS のコードをデバッグする方法の詳細については、次を参照してください。 [BIOS コードのデバッグ](debugging-bios-code.md)します。
 
 <a name="remarks"></a>注釈
 -------

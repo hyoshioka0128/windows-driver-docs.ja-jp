@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2fa10ab3ecc8d0929617ca0648d89c0cd941c2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364378"
 ---
 # <a name="scanavailableevent-element"></a>ScanAvailableEvent 要素
 
@@ -65,7 +65,7 @@ ms.locfileid: "56570400"
 
 親要素はありません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスの送信、 **ScanAvailableEvent**要素をユーザーがスキャンの変換先を選択し、デバイスのスキャンでスキャンが開始したときに、登録されているクライアント。
@@ -78,7 +78,7 @@ WSD スキャン サービスがサブスクリプションを作成するクラ
 
  **&lt;Wse: サブスクライブ&gt;** と**&lt;wse:SubscribeResponse&gt;** 要素は、仕様で説明します。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例では、WSD スキャン サービスから ScanAvailableEvent イベントを受信するクライアントがサブスクライブする方法を示します。

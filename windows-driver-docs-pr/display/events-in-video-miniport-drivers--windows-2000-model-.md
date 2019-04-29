@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50f3c70d2f060e3c23cb8f625b8635798a63d209
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383729"
 ---
 # <a name="events-in-video-miniport-drivers-windows-2000-model"></a>ビデオ ミニポート ドライバー内のイベント (Windows 2000 モデル)
 
@@ -71,7 +71,7 @@ ms.locfileid: "57348921"
 
 GDI では、ドライバーを表示するイベントのサポートも提供します。 参照してください[イベントを使用したディスプレイ ドライバーで](using-events-in-display-drivers.md)詳細についてはします。
 
-イベントに関するより広範なパースペクティブは、[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)で、*カーネル モード ドライバーの設計ガイド*を参照してください。
+イベントに関するより広範なパースペクティブは、次を参照してください。[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)で、*カーネル モード ドライバーの設計ガイド*します。
 
  
 

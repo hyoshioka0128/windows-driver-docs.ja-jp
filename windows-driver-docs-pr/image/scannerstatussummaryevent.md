@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc4a96a329fa4ced7e8ab9c4b33b69742d802d43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386297"
 ---
 # <a name="scannerstatussummaryevent-element"></a>ScannerStatusSummaryEvent 要素
 
@@ -62,14 +62,14 @@ ms.locfileid: "56580064"
 
 親要素はありません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 WSD スキャン サービスに送信する必要があります、 **ScannerStatusSummaryEvent**スキャン デバイスの状態が変更されるたびに、クライアントに要素。
 
 本文**ScannerStatusSummaryEvent**含める必要があります、 [ **StatusSummary** ](statussummary.md)スキャナーの状態の変更について説明する要素。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次のコード例では、メディアのパスをフィードで紙詰まりのために、デバイスのスキャンが停止していることを示します。

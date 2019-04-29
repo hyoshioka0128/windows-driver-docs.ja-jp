@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d4e75e7f404371e31a008e388f02b465dbc1bd69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383823"
 ---
 # <a name="devpkeydevicepdoname"></a>DEVPKEY_Device_PDOName
 
@@ -64,7 +64,7 @@ Windows では、デバイスを表す物理名オブジェクト (PDO) の名�
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_PDOName の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_PDOName プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_PHYSICAL_DEVICE_OBJECT_NAME 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_PDOName プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_PHYSICAL_DEVICE_OBJECT_NAME 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
 
 <a name="requirements"></a>要件
 ------------

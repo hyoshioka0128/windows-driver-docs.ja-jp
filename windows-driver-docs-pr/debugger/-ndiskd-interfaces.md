@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cd9407a23995113b7fde4e7d613607621d334c01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336067"
 ---
-# <a name="ndiskdinterfaces"></a>! ndiskd.interfaces
+# <a name="ndiskdinterfaces"></a>!ndiskd.interfaces
 
 
 **! Ndiskd.interfaces**拡張機能は、ネットワーク インターフェイスに関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd すべてのネットワーク インターフェイスの一覧が表示されます。
 
-ネットワーク インターフェイスの詳細については、[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-network-interfaces2)を参照してください。
+ネットワーク インターフェイスの詳細については、次を参照してください。[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-network-interfaces2)します。
 
 ```console
 !ndiskd.interfaces [-handle <x>] [-luid <x>] 

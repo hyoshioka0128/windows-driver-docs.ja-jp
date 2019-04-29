@@ -1,6 +1,6 @@
 ---
-title: 待機/ウェイク IRP を受信
-description: 待機/ウェイク IRP を受信
+title: 待機/ウェイク IRP の受信
+description: 待機/ウェイク IRP の受信
 ms.assetid: 88fa7189-4897-484a-9cf4-b35e56e99d61
 keywords:
 - 電源管理の WDK カーネル、ウェイク アップ機能
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 335a7faa52469db06fee717ad1e67ea02c31b6f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338505"
 ---
-# <a name="receiving-a-waitwake-irp"></a>待機/ウェイク IRP を受信
+# <a name="receiving-a-waitwake-irp"></a>待機/ウェイク IRP の受信
 
 
 

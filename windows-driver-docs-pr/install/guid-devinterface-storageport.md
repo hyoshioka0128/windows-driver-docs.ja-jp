@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9754d9d9b8fb44fe31ff04119b4d7b91566c2b23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383205"
 ---
 # <a name="guiddevinterfacestorageport"></a>GUID_DEVINTERFACE_STORAGEPORT
 
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_STORAGEPORT[デバイス インターフェイス クラス](h
 
 ポートのデバイスの記憶域用のシステムが指定したドライバーは、オペレーティング システムと記憶域デバイス アダプターの存在をアプリケーションに通知する GUID_DEVINTERFACE_STORAGEPORT のインスタンスを登録します。
 
-記憶装置ドライバーの詳細については、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
+記憶装置ドライバーの詳細については、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
 
 [**StoragePortClassGuid** ](storageportclassguid.md) GUID_DEVINTERFACE_STORAGEPORT デバイス インターフェイスのクラスの古い識別子です。 このクラスの新しいインスタンスは、代わりに GUID_DEVINTERFACE_STORAGEPORT を使用します。
 

@@ -4,11 +4,11 @@ description: このトピックでは、すべてのストリームに共通の�
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c9af7c1432569a1cfd9c236741410df088294dc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384759"
 ---
 # <a name="device-mft-design-guide"></a>デバイス MFT 設計ガイド
 
@@ -51,7 +51,7 @@ Windows でのビデオ キャプチャのスタックでは、MFT0 の形式で
 
 このトピックでは、キャプチャのドライバーをフィルター全体のユーザー モード拡張機能のサポートについて説明します。 このコンポーネントには、MF Api、スレッド プール、GPU と ISP のリソースへのアクセスがあります。 フィルターのワイド拡張機能は、任意の数のストリームをそれ自体と Ks デバイス間で、柔軟性を提供します。 フィルター。 この柔軟性により、今のところ、ユーザー モードの拡張機能と専用のメタデータと 3A 処理ストリームのために使用できるドライバーの間での帯域外通信ができます。
 
-![キャプチャのスタックのアーキテクチャ](images/capture-stack-architecture.png)
+![スタックのアーキテクチャをキャプチャします。](images/capture-stack-architecture.png)
 
 <br>
 <br>

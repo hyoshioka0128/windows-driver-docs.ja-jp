@@ -1,6 +1,6 @@
 ---
-title: オフホスト VLD ビット ストリームのデコード操作
-description: オフホスト VLD ビット ストリームのデコード操作
+title: オフホスト VLD ビットストリームのデコード操作
+description: オフホスト VLD ビットストリームのデコード操作
 ms.assetid: fd339d5f-2d63-4b2f-a5dc-7ab7a6799a6d
 keywords:
 - オフホスト VLD ビット ストリームの WDK DirectX VA の処理
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41ff18f2480c2d3f2750973edc4c8b9ae077f567
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383996"
 ---
-# <a name="off-host-vld-bitstream-decoding-operation"></a>オフホスト VLD ビット ストリームのデコード操作
+# <a name="off-host-vld-bitstream-decoding-operation"></a>オフホスト VLD ビットストリームのデコード操作
 
 
 ## <span id="ddk_off_host_vld_bitstream_decoding_operation_gg"></span><span id="DDK_OFF_HOST_VLD_BITSTREAM_DECODING_OPERATION_GG"></span>

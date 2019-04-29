@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_QUERY_MSG
-Description: This message is sent to a Remote NDIS device from a host when it needs to query the device for its characteristics, statistics information, or status.
+Description: このメッセージは、その特性、統計情報、または状態のデバイスを照会する必要があるとき、ホストからリモート NDIS デバイスに送信されます。
 ms.assetid: 9cf79495-a115-49ce-a0cf-fa4fa2183a8a
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c8e89f517f7992b2c4ca9c28835678531ec018e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385484"
 ---
 # <a name="remotendisquerymsg"></a>リモート\_NDIS\_クエリ\_メッセージ
 
@@ -35,7 +35,7 @@ ms.locfileid: "56535480"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>メッセージの種類</p></td>
+<td><p>[MessageType]</p></td>
 <td><p>送信されるメッセージの種類を指定します。 0x00000004 に設定します。</p></td>
 </tr>
 <tr class="even">
@@ -79,7 +79,7 @@ ms.locfileid: "56535480"
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

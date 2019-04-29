@@ -1,6 +1,6 @@
 ---
-title: 読み取りとデバッグ メッセージをフィルター処理
-description: 読み取りとデバッグ メッセージをフィルター処理
+title: デバッグ メッセージの読み取りとフィルター処理
+description: デバッグ メッセージの読み取りとフィルター処理
 ms.assetid: 785469d2-30b8-4f73-b397-80bf89ed20ea
 keywords:
 - 読み取りとデバッグ メッセージをフィルター処理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 944f36f07f24e7bb13446a4a078e035ede976d50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387068"
 ---
-# <a name="reading-and-filtering-debugging-messages"></a>読み取りとデバッグ メッセージをフィルター処理
+# <a name="reading-and-filtering-debugging-messages"></a>デバッグ メッセージの読み取りとフィルター処理
 
 
 ## <span id="ddk_reading_and_filtering_debugging_messages_dbg"></span><span id="DDK_READING_AND_FILTERING_DEBUGGING_MESSAGES_DBG"></span>

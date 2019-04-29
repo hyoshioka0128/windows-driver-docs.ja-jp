@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba823aba603d630fca01bd84f61ac10c6e9bed7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385735"
 ---
 # <a name="wdfobjectiscustomtype-macro"></a>WdfObjectIsCustomType マクロ
 
@@ -47,7 +47,7 @@ Framework のオブジェクトへのハンドル。
 <a name="remarks"></a>コメント
 -------
 
-オブジェクトのカスタム種類の詳細については、[Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)を参照してください。
+オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
 
 <a name="requirements"></a>必要条件
 ------------

@@ -1,5 +1,5 @@
 ---
-title: データのオフセット位置
+title: データ オフセット位置
 description: このセクションでは、Windows Filtering Platform コールアウト ドライバーのデータ オフセット位置について説明します。
 ms.assetid: cf4656cf-b978-4539-9fff-8f0aa5de1b5e
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 568d5f786aef4c385d5637babf6ff9741284d73a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330190"
 ---
-# <a name="data-offset-positions"></a>データのオフセット位置
+# <a name="data-offset-positions"></a>データ オフセット位置
 
 フィルター エンジンがコールアウト ドライバーを呼び出すときに[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウトの関数に構造体へのポインターを渡しますが、*データ*パラメーター。 パケット データをフィルター処理のレイヤーのポインターの参照を[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 フィルター処理レイヤーによって、 *classifyFn*コールアウト関数が呼び出されると、フィルター エンジンのデータのパラメーターで、次の構造のいずれかにポインターを渡します。
 

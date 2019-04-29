@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 01fe8ed5d9eb4262c4969cafcb9de50d2e7cf423
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386285"
 ---
 # <a name="devpkeydeviceuinumber"></a>DEVPKEY_Device_UINumber
 
@@ -50,7 +50,7 @@ DEVPKEY_Device_UINumber デバイスのプロパティは、ユーザー イン�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,9 +64,9 @@ Windows の UINumber メンバーの値に DEVPKEY_Device_UINumber の値の設�
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_UINumber の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UINumber プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UI_NUMBER 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UINumber プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UI_NUMBER 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

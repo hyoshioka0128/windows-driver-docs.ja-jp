@@ -1,6 +1,6 @@
 ---
-title: チェーンの複雑な回転を復元するときに考慮すべき点
-description: チェーンの複雑な回転を復元するときに考慮すべき点
+title: 複合反転チェーンを復元する際の考慮点
+description: 複合反転チェーンを復元する際の考慮点
 ms.assetid: f368576f-a0a0-4def-888d-abf4fea8f6fb
 keywords:
 - コンテキスト WDK の Direct3D D3dCreateSurfaceEx
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f96d45245fe6cb0f83c1cc8b0cd7fb4d8b50c456
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383955"
 ---
-# <a name="points-to-consider-when-restoring-complex-flipping-chains"></a>チェーンの複雑な回転を復元するときに考慮すべき点
+# <a name="points-to-consider-when-restoring-complex-flipping-chains"></a>複合反転チェーンを復元する際の考慮点
 
 
 ## <span id="ddk_points_to_consider_when_restoring_complex_flipping_chains_gg"></span><span id="DDK_POINTS_TO_CONSIDER_WHEN_RESTORING_COMPLEX_FLIPPING_CHAINS_GG"></span>

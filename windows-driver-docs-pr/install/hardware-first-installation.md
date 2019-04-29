@@ -1,6 +1,6 @@
 ---
-title: ハードウェア-最初のインストール
-description: ハードウェア-最初のインストール
+title: ハードウェア ファースト インストール
+description: ハードウェア ファースト インストール
 ms.assetid: 42e47250-3600-4479-8e49-483c7470935d
 keywords:
 - インストール アプリケーション WDK、ハードウェア最初のインストール
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ccfdd1bb1bb1092567c56d4c7da2ea0cd1dba70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383664"
 ---
-# <a name="hardware-first-installation"></a>ハードウェア-最初のインストール
+# <a name="hardware-first-installation"></a>ハードウェア ファースト インストール
 
 
 ハードウェア-最初のインストールには、新しいハードウェア デバイス、システムをプラグインすることによってトリガーされるデバイス ドライバーのインストールが含まれます。 ここで、[ドライバー パッケージ](driver-packages.md)システムでデバイスがプレインストールされていないのです。

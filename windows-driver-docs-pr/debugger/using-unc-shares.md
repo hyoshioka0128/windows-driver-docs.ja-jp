@@ -1,17 +1,17 @@
 ---
-title: UNC 共有を使用
-description: UNC 共有を使用
+title: UNC 共有の使用
+description: UNC 共有の使用
 ms.assetid: 7baf157d-e8c3-4ad5-a56e-58f8983da4d9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1621fd19ba2a159becf52babce7c7b87bac5b617
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386439"
 ---
-# <a name="using-unc-shares"></a>UNC 共有を使用
+# <a name="using-unc-shares"></a>UNC 共有の使用
 
 
 Cv2http.cmd、Cv2http.pl、およびウォーク (Walk.cmd) 単純な UNC 共有からソース ファイルを提供するスクリプトを使用します。 Cv2http.cmd および Cv2http.pl ファイルは、SrcSrv ストリームを抽出し、Perl スクリプトを使用して変更して、.pdb ファイルに戻り、変更されたストリームを配置します。 構文は次のとおりです。
@@ -28,7 +28,7 @@ Cv2http.cmd、Cv2http.pl、およびウォーク (Walk.cmd) 単純な UNC 共有
 walk.cmd *.pdb cv2http.cmd SourceRoot \\server\share
 ```
 
-上記のコマンドはエイリアスのソース ルートを使用して、ツリー内のすべての .pdb ファイルで Cv2http.cmd を呼び出すと\\ \\server\\UNC 共有の共有します。 チュートリアルの詳細については、[ソース ファイルの抽出](extracting-source-files.md)を参照してください。
+上記のコマンドはエイリアスのソース ルートを使用して、ツリー内のすべての .pdb ファイルで Cv2http.cmd を呼び出すと\\ \\server\\UNC 共有の共有します。 チュートリアルの詳細については、次を参照してください。[ソース ファイルの抽出](extracting-source-files.md)します。
 
 .Pdb ファイルのツリーにこのコマンドを実行した後、Web サイトまたは配置したい任意の場所にインストールする準備が整いました。 付けて SrcTool と PDBStr を使用、.pdb ファイルへの変更を確認することに注意してください。
 

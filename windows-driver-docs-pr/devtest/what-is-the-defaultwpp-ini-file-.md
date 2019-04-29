@@ -5,11 +5,11 @@ ms.assetid: 7e2673a3-5a01-498a-a2af-e5d8ff3e088b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9fdefbd78b6e6c5c4593cc0633b9168e8a0edef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386389"
 ---
 # <a name="what-is-the-defaultwppini-file"></a>Defaultwpp.ini ファイルとは
 
@@ -34,4 +34,4 @@ Defaultwpp.ini ファイルには、次の項目が含まれます。
 
 -   Irql、pnpmn、sysctrl などのカスタム型。
 
-Defaultwpp.ini ファイルで、データ型を使用し、単純または複雑なデータ型を持つ独自のカスタム構成ファイルを作成できます。 詳細については、[カスタム データ型を定義する方法でしょうか。](how-do-you-define-custom-data-types-.md)と[定義の種類の複雑な構文とは何ですか?](what-is-the-syntax-of-the-complex-types-definition-.md)を参照してください。
+Defaultwpp.ini ファイルで、データ型を使用し、単純または複雑なデータ型を持つ独自のカスタム構成ファイルを作成できます。 詳細については、次を参照してください。[カスタム データ型を定義する方法でしょうか。](how-do-you-define-custom-data-types-.md)と[定義の種類の複雑な構文とは何ですか?](what-is-the-syntax-of-the-complex-types-definition-.md)します。

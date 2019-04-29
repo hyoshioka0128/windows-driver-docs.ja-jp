@@ -1,6 +1,6 @@
 ---
-title: IPsec のネットワーク インターフェイスの変更の影響を軽減します。
-description: IPsec のネットワーク インターフェイスの変更の影響を軽減します。
+title: IPsec オフロードでのネットワーク インターフェイスの変更の影響
+description: IPsec オフロードでのネットワーク インターフェイスの変更の影響
 ms.assetid: 7d1b2bf9-31a9-4fc4-92f3-dc7b5e0277e3
 keywords:
 - WDK IPsec オフロード、ESP により保護されたパケットをルーティング インターフェイスの変更
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36f1cf47899771da66129c4cc04ab47da01b242e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383650"
 ---
-# <a name="impact-of-network-interface-changes-on-ipsec-offloads"></a>IPsec のネットワーク インターフェイスの変更の影響を軽減します。
+# <a name="impact-of-network-interface-changes-on-ipsec-offloads"></a>IPsec オフロードでのネットワーク インターフェイスの変更の影響
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 

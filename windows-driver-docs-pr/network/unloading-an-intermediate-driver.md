@@ -1,6 +1,6 @@
 ---
-title: 中間のドライバーをアンロード
-description: 中間のドライバーをアンロード
+title: 中間ドライバーのアンロード
+description: 中間ドライバーのアンロード
 ms.assetid: e3c1dad4-4262-4449-8dcd-2e2f5d6c8e25
 keywords:
 - NDIS 中間ドライバー WDK、アンロード
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7e81ce362d82f746476f9db8fa277cf080bf8bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383581"
 ---
-# <a name="unloading-an-intermediate-driver"></a>中間のドライバーをアンロード
+# <a name="unloading-an-intermediate-driver"></a>中間ドライバーのアンロード
 
 
 

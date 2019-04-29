@@ -1,5 +1,5 @@
 ---
-title: .setdll (セット既定拡張 DLL)
+title: .setdll (既定の拡張機能 DLL の設定)
 description: .Setdll コマンドは、デバッガーの既定の拡張 DLL を変更します。
 ms.assetid: 9dc5cd9e-d4f2-4112-bf3d-f7061c786ddf
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 32db5bf0ee2da68d7d1f9d8e71c9c6850cf9c622
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339799"
 ---
-# <a name="setdll-set-default-extension-dll"></a>.setdll (セット既定拡張 DLL)
+# <a name="setdll-set-default-extension-dll"></a>.setdll (既定の拡張機能 DLL の設定)
 
 
 **.Setdll**のコマンドは、デバッガーの既定の拡張 DLL を変更します。
@@ -64,7 +64,7 @@ ms.locfileid: "56529808"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-読み込みの詳細については、アンロード、および拡張機能を制御するを参照してください[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。 拡張機能のコマンドを実行する方法の詳細については、[デバッガー拡張機能コマンドの使用](using-debugger-extension-commands.md)を参照してください。
+読み込みの詳細については、アンロード、および拡張機能を制御するを参照してください[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。 拡張機能のコマンドを実行する方法の詳細については、次を参照してください。[デバッガー拡張機能コマンドの使用](using-debugger-extension-commands.md)します。
 
 <a name="remarks"></a>注釈
 -------

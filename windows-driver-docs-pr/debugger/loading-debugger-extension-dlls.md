@@ -1,6 +1,6 @@
 ---
-title: デバッガーの拡張 Dll の読み込み
-description: デバッガーの拡張 Dll の読み込み
+title: デバッガー拡張機能 DLL の読み込み
+description: デバッガー拡張機能 DLL の読み込み
 ms.assetid: 6ca70732-cbf6-44fd-a020-c297b40d41f6
 keywords:
 - 拡張機能コマンド (コマンド) の読み込み
@@ -14,13 +14,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 923e30c897fb96983f7b78e9d265528c1d846690
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383333"
 ---
-# <a name="loading-debugger-extension-dlls"></a>デバッガーの拡張 Dll の読み込み
+# <a name="loading-debugger-extension-dlls"></a>デバッガー拡張機能 DLL の読み込み
 
 
 ## <span id="ddk_loading_debugger_extension_dlls_dbg"></span><span id="DDK_LOADING_DEBUGGER_EXTENSION_DLLS_DBG"></span>

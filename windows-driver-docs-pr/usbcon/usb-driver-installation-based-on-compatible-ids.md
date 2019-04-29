@@ -1,14 +1,14 @@
 ---
-Description: Microsoft-provided in-box driver (Usbser.sys) for your Communications and CDC Control device.
+Description: Microsoft から提供されたインボックス ドライバー (Usbser.sys) 通信および CDC 制御デバイスの。
 title: USB シリアル ドライバー (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fff60502b51bf4e670f5d3e92c6044a6e338611d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385063"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB シリアル ドライバー (Usbser.sys)
 
@@ -22,7 +22,7 @@ ms.locfileid: "56549163"
 -   Windows 10
 -   Windows 8.1
 
-**適用されます。**
+**適用対象**
 
 -   CDC 制御デバイスのデバイスの製造元
 
@@ -40,7 +40,7 @@ Windows 10 を使用して、ドライバーが書き換えられましたが、
 
 Microsoft から提供されたボックスでのドライバーを読み込む (Usbser.sys) 通信および CDC 制御デバイスです。
 
-**注**  を Windows に含まれる USB デバイス クラス ドライバーをインストールしようとする必要はありません、ドライバーをダウンロードする場合。 自動的にインストールされます。 これらは自動的にインストールされていない場合、は、デバイスの製造元に問い合わせてください。 Windows に含まれる USB デバイス クラス ドライバーの一覧で、[USB デバイス クラス ドライバーが Windows に含まれる](supported-usb-classes.md)を参照してください。
+**注**  を Windows に含まれる USB デバイス クラス ドライバーをインストールしようとする必要はありません、ドライバーをダウンロードする場合。 自動的にインストールされます。 これらは自動的にインストールされていない場合、は、デバイスの製造元に問い合わせてください。 Windows に含まれる USB デバイス クラス ドライバーの一覧で、次を参照してください。 [USB デバイス クラス ドライバーが Windows に含まれる](supported-usb-classes.md)します。
 
  
 
@@ -54,7 +54,7 @@ Microsoft から提供されたボックスでのドライバーを読み込む 
 
 -   Usbser.sys を自動的に読み込む場合は、02 に、クラスのコードに 02 とサブクラス コードを設定、[デバイス記述子](usb-device-descriptors.md)します。 詳細については、USB 通信デバイス クラス (または USB CDC) を参照してくださいで仕様が検出された、 [USB DWG web サイト](https://go.microsoft.com/fwlink/p/?linkid=617741)します。 このアプローチでは、システムは Usbser.inf を使用するために、デバイスの INF ファイルを配布する必要はありません。
 -   デバイス クラスのコード 02 02 以外のサブクラス コード値が指定されている場合、Usbser.sys が自動的に読み込まれません。 Pnp マネージャーは、ドライバーを検索しようとします。 適切なドライバーが見つからない場合、デバイスは読み込まれるドライバーがあります。 ここでは、独自のドライバーの読み込みまたは別のインボックス ドライバーを参照する、INF を記述する必要があります。
--   デバイスに 02、クラスとサブクラスのコードを指定します Usbser.sys ではなく別のドライバーをロードする場合は、デバイスとドライバーをインストールするハードウェア ID を指定する、INF を記述する必要があります。 含まれている INF ファイルを検索する例については、[サンプル ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=534087)とデバイスのようなデバイスを探します。 INF セクションについては、[INF ファイルの概要](https://msdn.microsoft.com/library/windows/hardware/ff549520)を参照してください。
+-   デバイスに 02、クラスとサブクラスのコードを指定します Usbser.sys ではなく別のドライバーをロードする場合は、デバイスとドライバーをインストールするハードウェア ID を指定する、INF を記述する必要があります。 含まれている INF ファイルを検索する例については、[サンプル ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=534087)とデバイスのようなデバイスを探します。 INF セクションについては、次を参照してください。 [INF ファイルの概要](https://msdn.microsoft.com/library/windows/hardware/ff549520)します。
 
 **注**  Microsoft が可能であれば、インボックス ドライバーを使用することをお勧めします。 Windows、Windows 10 Mobile などのモバイルのエディションでは、オペレーティング システムの一部であるドライバーのみが読み込まれます。 デスクトップのエディションとは異なり、外部のドライバー パッケージからドライバーを読み込むことはできません。 新しいインボックス INF で Usbser.sys はモバイル デバイスの USB-シリアル デバイスが検出された場合は自動的に読み込まれます。
 
@@ -64,7 +64,7 @@ Microsoft から提供されたボックスでのドライバーを読み込む 
 
 Windows 8.1 およびそれ以前のバージョンのオペレーティング システムで Usbser.sys が自動的に読み込まれていない USB-シリアル デバイスがコンピューターに関連付けられている場合。 ドライバーを読み込むを使用して、モデムの INF (mdmcpq.inf) を参照する、INF を書き込む必要があります、 **Include**ディレクティブ。 ディレクティブは、サービスをインスタンス化し、受信トレイのバイナリをコピーして、デバイス インターフェイス、デバイスを見つけてと対話するアプリケーションを必要とする GUID を登録する必要があります。 その INF では、デバイス スタックの下位のフィルター ドライバーとして"Usbser"を指定します。
 
-としてデバイス セットアップ クラスを指定することも必要があります、INF**モデム**mdmcpq.inf を使用します。 [バージョン] セクションで、INF の指定、**モデム**とデバイス クラス GUID です。 詳細については、[System-Supplied デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)を参照してください。
+としてデバイス セットアップ クラスを指定することも必要があります、INF**モデム**mdmcpq.inf を使用します。 [バージョン] セクションで、INF の指定、**モデム**とデバイス クラス GUID です。 詳細については、次を参照してください。 [System-Supplied デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)します。
 
 ``` syntax
 [DDInstall.NT]
@@ -80,7 +80,7 @@ include=mdmcpq.inf
 AddReg=LowerFilterAddReg
 ```
 
-詳細については、[このサポート技術情報記事](https://support.microsoft.com/kb/837637/)を参照してください。
+詳細については、次を参照してください。[このサポート技術情報記事](https://support.microsoft.com/kb/837637/)します。
 
 ## <a name="configure-selective-suspend-for-usbsersys"></a>選択的構成 Usbser.sys を中断
 
@@ -104,7 +104,7 @@ Windows 10 以降、Usbser.sys サポート[USB セレクティブ サスペン�
 -   インストール INF を参照する、INF を記述し、レジストリ エントリを追加、 **HW。AddReg**セクション。
 -   OS の拡張プロパティの機能記述子でレジストリ エントリをについて説明します。 設定するカスタム プロパティ セクションを追加、 **bPropertyName**に Unicode 文字列では、"IdleUsbSelectiveSuspendPolicy"フィールドと**wPropertyNameLength** 62 バイトにします。 設定、 **bPropertyData**フィールドを"0x00000001"または"0x00000000"。 プロパティの値は、リトル エンディアンの 32 ビット整数として格納されます。
 
-    詳細については、[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=224878)を参照してください。
+    詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=224878)します。
 
 ## <a name="develop-windows-applications-for-a-usb-cdc-device"></a>CDC の USB デバイス用の Windows アプリケーションを開発します。
 

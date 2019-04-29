@@ -1,6 +1,6 @@
 ---
-title: データ型が必要サンキング
-description: データ型が必要サンキング
+title: サンキングが必要なデータ型
+description: サンキングが必要なデータ型
 ms.assetid: af1d7986-7bf2-4587-b487-91658e7a3b19
 keywords:
 - サンクの WDK
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4f6ca86749a487a1d7bfd04abffa81793ffab29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383198"
 ---
-# <a name="which-data-types-need-thunking"></a>データ型が必要サンキング
+# <a name="which-data-types-need-thunking"></a>サンキングが必要なデータ型
 
 
 

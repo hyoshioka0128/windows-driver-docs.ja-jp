@@ -1,6 +1,6 @@
 ---
-title: レポートの DeinterlaceBltEx のサポート
-description: レポートの DeinterlaceBltEx のサポート
+title: DeinterlaceBltEx に対するサポートのレポート
+description: DeinterlaceBltEx に対するサポートのレポート
 ms.assetid: 9cf8d05c-ef59-44a4-a377-66282e7888d5
 keywords:
 - DeinterlaceBltEx、レポート作成
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6081399bb60914df9e97e41fe4405121f9d44bb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383251"
 ---
-# <a name="reporting-support-for-deinterlacebltex"></a>レポートの DeinterlaceBltEx のサポート
+# <a name="reporting-support-for-deinterlacebltex"></a>DeinterlaceBltEx に対するサポートのレポート
 
 
 **このセクションでは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**

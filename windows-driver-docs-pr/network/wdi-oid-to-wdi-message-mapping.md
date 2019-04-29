@@ -5,11 +5,11 @@ ms.assetid: 98F4D26F-72FC-4945-AF53-064A0F80673F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b250bfa6e04ae2691bda9421716e33bcac1a85d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385291"
 ---
 # <a name="native-wlan-to-wdi-oid-mapping"></a>ネイティブの WLAN WDI OID マッピングする
 

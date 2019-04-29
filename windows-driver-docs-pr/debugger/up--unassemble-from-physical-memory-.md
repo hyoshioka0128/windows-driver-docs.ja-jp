@@ -1,5 +1,5 @@
 ---
-title: (物理メモリから Unassemble) を
+title: up (物理メモリからの逆アセンブル)
 description: コマンドでは、物理メモリの中に、アセンブリの翻訳の指定したプログラム コードが表示されます。
 ms.assetid: 4db66566-b7b8-4f1e-9492-b4b78016b45a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bceebc2d2b5969f9d5631bbab5e5740882220b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383747"
 ---
-# <a name="up-unassemble-from-physical-memory"></a>(物理メモリから Unassemble) を
+# <a name="up-unassemble-from-physical-memory"></a>up (物理メモリからの逆アセンブル)
 
 
 **を**コマンドは、物理メモリに、アセンブリの翻訳の指定したプログラム コードを表示します。
@@ -34,10 +34,10 @@ up
 
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
-逆アセンブルする指示が含まれている物理メモリでは、メモリ範囲を指定します。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+逆アセンブルする指示が含まれている物理メモリでは、メモリ範囲を指定します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-逆アセンブルする物理メモリでは、メモリ範囲の先頭を指定します。 (X86 ベースのプロセッサの場合) に 8 つの命令または (Itanium ベースのプロセッサの場合) の 9 つの手順については、アセンブリではありません。 構文の詳細については、[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)を参照してください。
+逆アセンブルする物理メモリでは、メモリ範囲の先頭を指定します。 (X86 ベースのプロセッサの場合) に 8 つの命令または (Itanium ベースのプロセッサの場合) の 9 つの手順については、アセンブリではありません。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

@@ -1,17 +1,17 @@
 ---
-title: セキュリティで保護された複数の実装
+title: セキュリティで保護された MOR 実装
 description: 動作および MemoryOverwriteRequestControlLock UEFI 変数、リビジョン 2 の使用について説明します。
 ms.assetid: 94F42629-3B76-4EB1-A5FA-4FA13C932CED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2beead842d1b671b84de6eb0ea167d88534417e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328093"
 ---
-# <a name="secure-mor-implementation"></a>セキュリティで保護された複数の実装
+# <a name="secure-mor-implementation"></a>セキュリティで保護された MOR 実装
 
 
 **要約**
@@ -22,7 +22,7 @@ ms.locfileid: "56528351"
 
 -   2018 年 1 月
 
-**適用されます。**
+**適用対象**
 
 -   Windows 10
 -   Windows 10 の Credential Guard 機能をサポートする Oem と BIOS のベンダー。
@@ -36,7 +36,7 @@ ms.locfileid: "56528351"
 
 -   [ブログの投稿:コールド攻撃 (およびその他の脅威) から BitLocker の保護]( https://go.microsoft.com/fwlink/p/?LinkId=717871)
 -   [ホワイト ペーパー:EDKII で BIOS、UEFI TPM2 サポート外のツアー]( https://go.microsoft.com/fwlink/p/?LinkId=717872)
--   [Credential Guard で派生ドメイン資格情報を保護します。]( https://go.microsoft.com/fwlink/p/?LinkId=717899)
+-   [Credential Guard によるドメインの派生資格情報の保護]( https://go.microsoft.com/fwlink/p/?LinkId=717899)
 
 使用状況と動作について説明します、 `MemoryOverwriteRequestControlLock` UEFI 変数、リビジョン 2。
 
@@ -44,7 +44,7 @@ ms.locfileid: "56528351"
 
 **注**  と呼ばれるこの緩和策*MorLock*、すべての新しいシステムに実装されだけでなく、トラステッド プラットフォーム モジュールをシステムに制限する必要があります。 リビジョン 2 は、新しい機能を追加します*のロックを解除*、特に大容量メモリ システムで、ブート パフォーマンスの問題を軽減するためにします。
 
-**注 2**  に関する、ACPI \_DSM コントロールのメソッド、されますを設定するビットの状態 (セクション 6 の説明に従って[PC クライアント作業グループ プラットフォーム リセット攻撃軽減策の仕様、バージョン 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870)):    
+**注 2**  に関する、ACPI \_DSM コントロールのメソッド、されますを設定するビットの状態 (セクション 6 の説明に従って[PC クライアント作業グループ プラットフォーム リセット攻撃軽減策の仕様、バージョン 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870)):  
 Microsoft では、これを削除することをお勧め\_DSM メソッド最新の BIOS の実装から。  ただし、これを BIOS が実装されている場合\_DSM メソッド、MorLock の状態を考慮する必要があります。  MorLock がロックされている、またはキーがない場合この\_されますを変更し、「一般的なエラー」に対応する 1 つの値を返す DSM メソッドが失敗する必要があります。  MorLock リビジョン 2 のロックを解除する ACPI メカニズムが定義されていません。  Windows が呼び出されないこと直接この注\_Windows 7 以降の DSM メソッドと、非推奨と見なされます。  一部の BIOS*間接的*これを呼び出す\_DSM メソッドが呼び出す ACPI の Windows と\_されます自動検出のクリーン シャット ダウンの実装として PTS (」の「2.3 の説明に従って[PC クライアントの作業プラットフォームのリセット攻撃軽減策の仕様、バージョン 1.0 をグループ化](https://go.microsoft.com/fwlink/p/?LinkId=717870))。  この ACPI\_されますの自動検出の PTS 実装が不十分なセキュリティとは使用できません。
 
 ## <a name="memoryoverwriterequestcontrollock"></a>MemoryOverwriteRequestControlLock
@@ -160,7 +160,7 @@ SetVariable(MemoryOverwriteRequestControlLock, 8, keyPtr)
 [PC クライアント作業グループ プラットフォーム リセット攻撃軽減策仕様、バージョン 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870)  
 [コールド攻撃 (およびその他の脅威) から BitLocker の保護]( https://go.microsoft.com/fwlink/p/?LinkId=717871)  
 [EDKII で BIOS、UEFI TPM2 サポート外のツアー]( https://go.microsoft.com/fwlink/p/?LinkId=717872)  
-[Credential Guard で派生ドメイン資格情報を保護します。]( https://go.microsoft.com/fwlink/p/?LinkId=717899)  
+[Credential Guard によるドメインの派生資格情報の保護]( https://go.microsoft.com/fwlink/p/?LinkId=717899)  
 [UEFI 仕様に準拠](https://go.microsoft.com/fwlink/p/?LinkId=717873)  
 
 

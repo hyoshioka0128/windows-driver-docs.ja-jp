@@ -1,6 +1,6 @@
 ---
-title: ビデオ ポート分類
-description: ビデオ ポート分類
+title: ビデオポート カテゴリ
+description: ビデオポート カテゴリ
 ms.assetid: c11a407f-4ff0-4337-b989-e3ec42418ec3
 keywords:
 - ストリームのカテゴリ WDK ビデオ キャプチャ、ビデオ ポート
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 576172ab7732d2c7fa488fbd4b72d33e481ae546
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329951"
 ---
-# <a name="videoport-category"></a>ビデオ ポート分類
+# <a name="videoport-category"></a>ビデオポート カテゴリ
 
 
 次の GUID は、ビデオ ポート カテゴリに対応します。

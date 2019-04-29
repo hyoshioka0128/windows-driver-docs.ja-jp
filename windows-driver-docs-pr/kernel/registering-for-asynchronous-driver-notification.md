@@ -1,6 +1,6 @@
 ---
-title: ドライバーの非同期通知を登録します。
-description: ドライバーの非同期通知を登録します。
+title: 非同期ドライバー通知登録
+description: 非同期ドライバー通知登録
 ms.assetid: e1f97a65-7c82-4d7b-97ec-0293fc69fd8c
 keywords:
 - ドライバーの通知の WDK が動的なハードウェア パーティション分割、登録します。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d6c2de67b4a1094cc4779e72e6ec5d16270fb1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338536"
 ---
-# <a name="registering-for-asynchronous-driver-notification"></a>ドライバーの非同期通知を登録します。
+# <a name="registering-for-asynchronous-driver-notification"></a>非同期ドライバー通知登録
 
 
 ドライバーの非同期通知を使用してデバイス ドライバーでは、オペレーティング システムが動的に追加すると、プロセッサやメモリ モジュール ハードウェア パーティションに呼び出すコールバック関数が実装されています。 次のコード例では、このようなコールバック関数のプロトタイプを示しています。

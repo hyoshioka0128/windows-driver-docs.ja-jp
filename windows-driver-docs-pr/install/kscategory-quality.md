@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bbb1624f55dd3d421fb4e044ab3d929854901355
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384263"
 ---
 # <a name="kscategoryquality"></a>KSCATEGORY_QUALITY
 
@@ -56,7 +56,7 @@ KSCATEGORY_QUALITY[デバイス インターフェイス クラス](https://msdn
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_QUALITY 機能カテゴリをサポートすることを示す KSCATEGORY_QUALITY のインスタンスを登録します。
 
-詳細については、[品質管理](https://msdn.microsoft.com/library/windows/hardware/ff568124)を参照してください。
+詳細については、次を参照してください。[品質管理](https://msdn.microsoft.com/library/windows/hardware/ff568124)します。
 
 <a name="requirements"></a>要件
 ------------

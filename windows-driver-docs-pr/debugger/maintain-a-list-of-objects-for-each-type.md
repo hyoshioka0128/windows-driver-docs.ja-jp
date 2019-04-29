@@ -1,19 +1,19 @@
 ---
-title: 各型のオブジェクトの一覧を管理します。
-description: 各型のオブジェクトの一覧を管理します。
+title: Maintain a list of objects for each type
+description: Maintain a list of objects for each type
 ms.assetid: 845ba6cb-60b3-4053-9d54-f43ed344f82d
 keywords:
 - (グローバル フラグ) の種類ごとのオブジェクトの一覧を管理します。
 ms.date: 10/25/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b79010fbef678be9374226caa067e6258ddd223d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383311"
 ---
-# <a name="maintain-a-list-of-objects-for-each-type"></a>各型のオブジェクトの一覧を管理します。
+# <a name="maintain-a-list-of-objects-for-each-type"></a>Maintain a list of objects for each type
 
 
 ## <span id="ddk_maintain_a_list_of_objects_for_each_type_dtools"></span><span id="DDK_MAINTAIN_A_LIST_OF_OBJECTS_FOR_EACH_TYPE_DTOOLS"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56550456"
 <td align="left"><p>FLG_MAINTAIN_OBJECT_TYPELIST</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>変換先</strong></p></td>
+<td align="left"><p><strong>Destination (公開先)</strong></p></td>
 <td align="left"><p>システム全体のレジストリ エントリ</p></td>
 </tr>
 </tbody>

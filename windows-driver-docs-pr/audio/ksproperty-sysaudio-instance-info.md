@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b94a5e0b8fd18fc689a7a18b0de9f1920b7d48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332609"
 ---
 # <a name="kspropertysysaudioinstanceinfo"></a>KSPROPERTY\_SYSAUDIO\_インスタンス\_情報
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2495e287df3c511080586c07b6ede605d8affad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386441"
 ---
 # <a name="view--call-stack"></a>View | Call Stack (表示 | 呼び出し履歴)
 
@@ -23,7 +23,7 @@ ms.locfileid: "56579502"
 
 このコマンドは、ALT + 6 を押すことと同等かをクリックして、**呼び出し履歴 (Alt + 6)** ボタン (![呼び出しスタックのボタンのスクリーン ショット](images/tbcall.png))、ツールバーの。
 
-このウィンドウとその使用方法の詳細については、[コール スタック ウィンドウ](calls-window.md)を参照してください。
+このウィンドウとその使用方法の詳細については、次を参照してください。[コール スタック ウィンドウ](calls-window.md)します。
 
  
 

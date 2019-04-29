@@ -1,17 +1,17 @@
 ---
-title: バック グラウンド イベントを確認します。
-description: バック グラウンド イベントを確認します。
+title: バックグラウンド イベントを確認する
+description: バックグラウンド イベントを確認する
 ms.assetid: c840f555-2e09-409d-9d4f-4d9e8bd8d5a5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 032a0a6056235b9a55faceee0137ee00f0d071c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386248"
 ---
-# <a name="verify-background-events"></a>バック グラウンド イベントを確認します。
+# <a name="verify-background-events"></a>バックグラウンド イベントを確認する
 
 
 ホット スポット ネットワークに接続した後は、バック グラウンド イベントを起動することを確認します。 ない場合は、次を確認します。

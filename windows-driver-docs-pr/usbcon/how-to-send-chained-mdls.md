@@ -1,16 +1,16 @@
 ---
-Description: In this topic, you will learn about the chained MDLs capability in the USB driver stack, and how a client driver can send a transfer buffer as a chain of MDL structure.
-title: チェーンされた MDLs を送信する方法
+Description: このトピックでは、チェーンの MDLs 機能、USB ドライバー スタックと、クライアント ドライバーが MDL 構造体のチェーンとして転送バッファーを送信する方法の詳細について学びます。
+title: チェーン化された MDL の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e9ffe07dbb30ff43144ace3f621dd55ae766265
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384586"
 ---
-# <a name="how-to-send-chained-mdls"></a>チェーンされた MDLs を送信する方法
+# <a name="how-to-send-chained-mdls"></a>チェーン化された MDL の送信方法
 
 
 このトピックでは、USB ドライバー スタック、およびクライアント ドライバーがのチェーンとして転送バッファーを送信する方法では、チェーンの MDLs 機能について学習[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)構造体。
@@ -38,7 +38,7 @@ ms.locfileid: "56538511"
 
     手動で設定して、ドライバーが MDL のチェーンの構築、**次**ポインター。
 
-    前の例では、プロトコル ドライバーには、MDL として、パケットを送信します。 中間のドライバーを作成[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)ヘッダー データを使用してメモリのブロックを参照します。 チェーンを作成する中間のドライバーがヘッダー MDL をポイントできます**次**プロトコル ドライバーから受信した MDL へのポインター。 中間のドライバーは、ミニポート ドライバーで要求の URB 連鎖 MDL への参照を提供し、USB ドライバー スタックに要求を送信する 2 つの MDLs のチェーンを転送できます。 詳細については、[を使用して MDLs](https://msdn.microsoft.com/library/windows/hardware/ff565421)を参照してください。
+    前の例では、プロトコル ドライバーには、MDL として、パケットを送信します。 中間のドライバーを作成[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)ヘッダー データを使用してメモリのブロックを参照します。 チェーンを作成する中間のドライバーがヘッダー MDL をポイントできます**次**プロトコル ドライバーから受信した MDL へのポインター。 中間のドライバーは、ミニポート ドライバーで要求の URB 連鎖 MDL への参照を提供し、USB ドライバー スタックに要求を送信する 2 つの MDLs のチェーンを転送できます。 詳細については、次を参照してください。[を使用して MDLs](https://msdn.microsoft.com/library/windows/hardware/ff565421)します。
 
 4.  設定を使用する I/O 要求チェーン MDLs 向け、URB の作成に、中に、 **TransferBufferMDL** 、関連付けられているメンバー [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造 (など[ **\_URB\_一括\_OR\_INTERRUPT\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff540352)または[  **\_URB\_アイソクロナス\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff540414)) にチェーン、およびセットの最初の MDL、 **TransferBufferLength**に転送するバイトの合計数。 データは、MDL チェーン内の 1 つ以上の MDL エントリにまたがる可能性があります。
 
@@ -47,12 +47,12 @@ ms.locfileid: "56538511"
     -   URB\_関数\_一括\_または\_INTERRUPT\_転送\_USING\_連結された\_MDL
     -   URB\_関数\_アイソクロナス\_転送\_USING\_連結された\_MDL
 
-    これらの URB 関数については、[  **\_URB\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff540409)を参照してください。
+    これらの URB 関数については、次を参照してください。 [  **\_URB\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff540409)します。
 
 <a name="remarks"></a>注釈
 -------
 
-ドライバー スタックが連鎖 MDLs を受け入れるかどうかを判断する基礎となる USB ドライバー スタックのクエリを実行するコード例では、[ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)を参照してください。
+ドライバー スタックが連鎖 MDLs を受け入れるかどうかを判断する基礎となる USB ドライバー スタックのクエリを実行するコード例では、次を参照してください。 [ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)します。
 
 ## <a name="related-topics"></a>関連トピック
 [USB I/O 操作](usb-device-i-o.md)  

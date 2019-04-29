@@ -5,11 +5,11 @@ ms.assetid: F2F8C98F-D8B3-49A6-819D-BC0EC936F41E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d3fb7e273094f3f7c6d89834c52d30ebe58796d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383646"
 ---
 # <a name="implementing-a-miniportidlenotification-handler-function"></a>MiniportIdleNotification ハンドラー関数の実装
 
@@ -78,7 +78,7 @@ NDIS_STATUS MiniportIdleNotification(
 }
 ```
 
-USB アイドル要求 IRP のコールバック ルーチンの実装のガイドラインについては、[USB のアイドル状態要求 IRP のコールバック ルーチンを実装する](implementing-a-usb-idle-request-irp-callback-routine.md)を参照してください。
+USB アイドル要求 IRP のコールバック ルーチンの実装のガイドラインについては、次を参照してください。 [USB のアイドル状態要求 IRP のコールバック ルーチンを実装する](implementing-a-usb-idle-request-irp-callback-routine.md)します。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: 複数のレンダー ターゲットに対して必要な機能
-description: 複数のレンダー ターゲットに対して必要な機能
+title: 複数レンダー ターゲットの必須機能
+description: 複数レンダー ターゲットの必須機能
 ms.assetid: fa807bde-8c3b-4ba8-b899-cdcd0b8d2458
 keywords:
 - WDK DirectX 9.0 の複数のターゲットを表示するには、機能に必要です。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 141c176389218f3efc798aa7f464c356213efd20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383219"
 ---
-# <a name="required-features-for-multiple-render-targets"></a>複数のレンダー ターゲットに対して必要な機能
+# <a name="required-features-for-multiple-render-targets"></a>複数レンダー ターゲットの必須機能
 
 
 ## <span id="ddk_required_features_for_multiple_render_targets_gg"></span><span id="DDK_REQUIRED_FEATURES_FOR_MULTIPLE_RENDER_TARGETS_GG"></span>

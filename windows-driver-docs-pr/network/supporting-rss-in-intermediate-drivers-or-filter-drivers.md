@@ -1,6 +1,6 @@
 ---
-title: 中間ドライバーまたはフィルター ドライバーで RSS をサポートしています。
-description: 中間ドライバーまたはフィルター ドライバーで RSS をサポートしています。
+title: 中間ドライバーまたはフィルター ドライバーでの RSS のサポート
+description: 中間ドライバーまたはフィルター ドライバーでの RSS のサポート
 ms.assetid: 5e1bfbb0-0b7a-4a9d-a228-4089f7208880
 keywords:
 - 受信側スケーリング WDK、中間ネットワーク ドライバー
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43374f491a5540a6dfc23e609effca7fc8f8e621
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384215"
 ---
-# <a name="supporting-rss-in-intermediate-drivers-or-filter-drivers"></a>中間ドライバーまたはフィルター ドライバーで RSS をサポートしています。
+# <a name="supporting-rss-in-intermediate-drivers-or-filter-drivers"></a>中間ドライバーまたはフィルター ドライバーでの RSS のサポート
 
 
 
@@ -40,7 +40,7 @@ QoS のスケジューラは、RSS をサポートする必要がありますフ
 
 フィルター ドライバーまたは RSS をサポートする中間のドライバーは、接続をプロトコル ドライバーとミニポート ドライバーを使用している同じ Cpu に割り当てるため RSS Oid の情報を使用できます。
 
-RSS Oid の詳細については、[RSS 構成](rss-configuration.md)を参照してください。
+RSS Oid の詳細については、次を参照してください。 [RSS 構成](rss-configuration.md)します。
 
  
 

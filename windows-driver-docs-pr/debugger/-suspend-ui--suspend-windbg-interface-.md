@@ -1,5 +1,5 @@
 ---
-title: .suspend_ui (中断 WinDbg インターフェイス)
+title: .suspend_ui (WinDbg インターフェイスの中断)
 description: .Suspend_ui コマンドには、WinDbg デバッグ情報の windows の更新が中断します。
 ms.assetid: 7fa6ca5c-f960-49eb-b6f0-a6f2d454984f
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 27f259a66db96243b6bdb95910189d4747cb1ed1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338781"
 ---
 # <a name="suspendui-suspend-windbg-interface"></a>明解\_ui (中断 WinDbg インターフェイス)
 
@@ -68,7 +68,7 @@ WinDbg のデバッグ情報の windows の更新を有効にします。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッグ情報のウィンドウについては、[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)を参照してください。
+デバッグ情報のウィンドウについては、次を参照してください。[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)します。
 
 <a name="remarks"></a>注釈
 -------

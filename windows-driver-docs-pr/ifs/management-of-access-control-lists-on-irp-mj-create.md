@@ -1,6 +1,6 @@
 ---
-title: Irp_mj_create 用のアクセス制御リストの管理
-description: Irp_mj_create 用のアクセス制御リストの管理
+title: IRP_MJ_CREATE でのアクセス制御リストの確認
+description: IRP_MJ_CREATE でのアクセス制御リストの確認
 ms.assetid: 07b35931-8e20-4789-b2ef-14c6195b817f
 keywords:
 - IRP_MJ_CREATE
@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42bca29a7bf3d44c9f148dc747e1410e91591782
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384353"
 ---
 # <a name="management-of-access-control-lists-on-irpmjcreate"></a>IRP 上へのアクセス制御の管理を一覧表示\_MJ\_を作成します。
 

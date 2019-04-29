@@ -1,17 +1,17 @@
 ---
-title: 必要な Direct3D 9 機能
+title: Direct3D 9 の必須機能
 ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
 description: Direct3D 9 へのアクセスをユーザー モード ドライバーの機能に必要な機能です。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74dabea61ced318c1f29ddc90c9851ae954a5439
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383224"
 ---
-# <a name="required-direct3d-9-capabilities"></a>必要な Direct3D 9 機能
+# <a name="required-direct3d-9-capabilities"></a>Direct3D 9 の必須機能
 
 
 マイクロソフトの Direct3D のバージョン 9 の機能を完全にアクセスするアプリケーションの\_1, 9\_2、および 9\_3、ユーザー モード ドライバーは、特定のハードウェア機能を公開する必要があります。 これらの機能の観点で表される、 [ **D3DCAPS9** ](https://msdn.microsoft.com/library/windows/desktop/bb172513)ユーザー モード ドライバーのによって返される構造体[ *GetCaps* ](https://msdn.microsoft.com/library/windows/hardware/ff566762)関数。 機能のサポートを示すために、ドライバーがのこれらのメンバーを設定する必要があります**D3DCAPS9**の各フラグの値のすべてのビット演算 OR に。
@@ -61,7 +61,7 @@ ms.locfileid: "56531185"
 </tr>
 <tr class="even">
 <td align="left"><strong>TextureCaps</strong>
-<p>(注を参照してください)。</p></td>
+<p>(以下の「メモ」を参照)。</p></td>
 <td align="left"><p>D3DPTEXTURECAPS_ALPHA</p>
 <p>D3DPTEXTURECAPS_CUBEMAP</p>
 <p>D3DPTEXTURECAPS_MIPMAP</p>

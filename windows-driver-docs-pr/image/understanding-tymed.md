@@ -1,17 +1,17 @@
 ---
-title: TYMED を理解します。
-description: TYMED を理解します。
+title: TYMED とは
+description: TYMED とは
 ms.assetid: 36110923-c346-4367-8b7d-ef4d003ed88c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02afa4eaa3596bddcea5677c26acc942e8784412
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383708"
 ---
-# <a name="understanding-tymed"></a>TYMED を理解します。
+# <a name="understanding-tymed"></a>TYMED とは
 
 
 

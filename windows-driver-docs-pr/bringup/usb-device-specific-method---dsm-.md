@@ -1,15 +1,15 @@
 ---
-title: USB デバイスに固有のメソッド (_DSM)
+title: USB のデバイス固有のメソッド (_DSM)
 description: USB サブシステムのデバイス固有クラスの構成をサポートするためには、Windows は、特定のデバイス メソッド (_DSM) この記事で説明されている関数を持つを定義します。
 ms.assetid: 8F0EDE17-9895-4C24-B061-963DA0D7882B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6379d3b85d092e6867fc60436b1a7f5ebd6dc185
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337351"
 ---
 # <a name="usb-device-specific-method-dsm"></a>USB デバイスに固有のメソッド (\_DSM)
 
@@ -21,7 +21,7 @@ Windows を USB サブシステムのデバイス クラス固有の構成をサ
 
 \_DSM がデュアル ロール USB コント ローラーは、次のように、後のリセット処理関数のメソッド パラメーターを制御します。
 
-### <a name="arguments"></a>Arguments
+### <a name="arguments"></a>引数
 
 -   **Arg0:** UUID ce2ee385-00e6-48cb-9f05-2edb927c4899 を =
 -   **Arg1:** リビジョン ID = 0
@@ -39,7 +39,7 @@ None、Windows のインボックス ドライバーは、USB コント ロー�
 
 \_USB ポートの種類を識別するための DSM 制御メソッドのパラメーターは、次のようにします。
 
-### <a name="arguments"></a>Arguments
+### <a name="arguments"></a>引数
 
 -   **Arg0:** UUID ce2ee385-00e6-48cb-9f05-2edb927c4899 を =
 -   **Arg1:** リビジョン ID = 0
@@ -65,7 +65,7 @@ None、Windows のインボックス ドライバーは、USB コント ロー�
 </thead>
 <tbody>
 <tr class="odd">
-<td>ポートの種類</td>
+<td>[ポートの種類]</td>
 <td>整数 (バイト)</td>
 <td><p>USB ポートの種類を指定します。</p>
 <ul>

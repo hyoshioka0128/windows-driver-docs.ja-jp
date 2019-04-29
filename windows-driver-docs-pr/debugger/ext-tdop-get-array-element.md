@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7d15155b4130a5df52b953998858d0146c17881
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332091"
 ---
 # <a name="exttdopgetarrayelement"></a>EXT\_TDOP\_取得\_配列\_要素
 
 
 EXT\_TDOP\_取得\_配列\_の要素のサブ操作、 [**デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)[**要求**](request.md)操作では、配列の要素を返します。
 
-**パラメーター**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**操作**  
 EXT に設定\_TDOP\_取得\_配列\_この操作のサブ要素です。

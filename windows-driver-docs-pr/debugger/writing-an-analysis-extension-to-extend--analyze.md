@@ -5,11 +5,11 @@ ms.assetid: 7648F789-85D5-4247-90DD-2EAA43543483
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dd1b8c31c7a80c9f1efdc12cfc69d0b9cb84365
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383741"
 ---
 # <a name="writing-an-analysis-extension-plugin-to-extend-analyze"></a>分析の拡張機能プラグインを拡張する記述! 分析
 
@@ -21,7 +21,7 @@ ms.locfileid: "56572183"
 分析の拡張機能プラグインを記述し、使用できるようにする[ **! 分析**](-analyze.md)、これらの手順に従います。
 
 -   エクスポートする DLL を作成、 [  **\_EFN\_分析**](https://msdn.microsoft.com/library/windows/hardware/jj983432)関数。
--   DLL と .alz の拡張機能と同じ名前を持つメタデータ ファイルを作成します。 たとえば、MyAnalyzer.dll、DLL の名前が場合、メタデータする必要があるという名前のファイル MyAnalyzer.alz します。 メタデータ ファイルを作成する方法については、[分析拡張機能のメタデータ ファイル](metadata-files-for-analysis-extensions.md)を参照してください。 DLL と同じディレクトリにメタデータ ファイルを配置します。
+-   DLL と .alz の拡張機能と同じ名前を持つメタデータ ファイルを作成します。 たとえば、MyAnalyzer.dll、DLL の名前が場合、メタデータする必要があるという名前のファイル MyAnalyzer.alz します。 メタデータ ファイルを作成する方法については、次を参照してください。[分析拡張機能のメタデータ ファイル](metadata-files-for-analysis-extensions.md)します。 DLL と同じディレクトリにメタデータ ファイルを配置します。
 -   デバッガーで使用して、 [ **.extpath** ](-extpath--set-extension-path-.md)拡張ファイルのパスにディレクトリを追加するコマンド。 たとえば、DLL とメタデータ ファイルが c: という名前のフォルダーは\\MyAnalyzer、コマンドを入力して **.extpath + c:\\MyAnalyzer**。
 
 ときに、 [ **! 分析**](-analyze.md)コマンドは、デバッガーで実行、分析エンジンが .alz 拡張子を持つメタデータ ファイルの拡張機能のファイル パスで検索します。 分析エンジンはどの分析拡張機能プラグインを読み込む必要がありますかを決定するメタデータ ファイルを読み取ります。 たとえば、0 xa のバグ チェックへの応答で分析エンジンが実行されている IRQL\_いない\_少ない\_または\_等しく、また、次のエントリを含む MyAnalyzer.alz をという名前のメタデータ ファイルを読み取ります。

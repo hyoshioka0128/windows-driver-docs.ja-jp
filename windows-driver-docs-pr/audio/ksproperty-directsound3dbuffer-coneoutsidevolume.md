@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c6b2cd682e857fb3f902bbc7e5b3b03c5e87579
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332776"
 ---
 # <a name="kspropertydirectsound3dbufferconeoutsidevolume"></a>KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEOUTSIDEVOLUME プロパティが 3D サウ�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></td>
-<td align="left"><p>長い</p></td>
+<td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,5 +1,5 @@
 ---
-title: '%ld (シンボルの読み込み)'
+title: ld (シンボルの読み込み)
 description: '%Ld 個のコマンドは、指定したモジュールのシンボルを読み込み、すべてのモジュール情報を更新します。'
 ms.assetid: 1dae519f-8dd1-4f30-98f4-fe904454c84c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 606e10615b5c49e421f448d95991d0ad77956578
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383515"
 ---
-# <a name="ld-load-symbols"></a>%ld (シンボルの読み込み)
+# <a name="ld-load-symbols"></a>ld (シンボルの読み込み)
 
 
 **%Ld**コマンドを指定したモジュールのシンボルを読み込み、モジュールのすべての情報を更新します。
@@ -35,7 +35,7 @@ ld ModuleName [/f FileName]
 シンボルが読み込まれるモジュールの名前を指定します。 *ModuleName*さまざまなワイルドカード文字と指定子を含めることができます。
 
 <span id="________f_______FileName______"></span><span id="________f_______filename______"></span><span id="________F_______FILENAME______"></span> **/f** *FileName*   
-一致の選択された名前を変更します。 既定では、モジュール名が一致するしますが、 **/f**されるモジュール名の代わりに、ファイル名が一致します。 *ファイル名*さまざまなワイルドカード文字と指定子を含めることができます。 ワイルドカード文字と指定子の構文の詳細については、[文字列のワイルドカード構文](string-wildcard-syntax.md)を参照してください。
+一致の選択された名前を変更します。 既定では、モジュール名が一致するしますが、 **/f**されるモジュール名の代わりに、ファイル名が一致します。 *ファイル名*さまざまなワイルドカード文字と指定子を含めることができます。 ワイルドカード文字と指定子の構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -71,7 +71,7 @@ ld ModuleName [/f FileName]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-遅延 (遅延) シンボルの読み込みの詳細については、[シンボルの遅延読み込み](deferred-symbol-loading.md)を参照してください。 その他のシンボルのオプションの詳細については、[シンボル オプションを設定](symbol-options.md)を参照してください。
+遅延 (遅延) シンボルの読み込みの詳細については、次を参照してください。[シンボルの遅延読み込み](deferred-symbol-loading.md)します。 その他のシンボルのオプションの詳細については、次を参照してください。[シンボル オプションを設定](symbol-options.md)します。
 
  
 

@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 050059ea570a22973e415e8d4bfcfc6b398d47ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383849"
 ---
-# <a name="example-passing-the-irp-down-without-setting-a-completion-routine"></a>以下に例を示します。完了ルーチンを設定せず、IRP を渡す
+# <a name="example-passing-the-irp-down-without-setting-a-completion-routine"></a>以下に例を示します。完了ルーチンを設定せずに IRP を渡す
 
 
 ## <span id="ddk_example_passing_the_irp_down_without_setting_a_completion_routine_"></span><span id="DDK_EXAMPLE_PASSING_THE_IRP_DOWN_WITHOUT_SETTING_A_COMPLETION_ROUTINE_"></span>
@@ -50,7 +50,7 @@ return status;
 
 ### <a name="span-iddisadvantagesofthisapproachspanspan-iddisadvantagesofthisapproachspanspan-iddisadvantagesofthisapproachspandisadvantages-of-this-approach"></a><span id="Disadvantages_of_This_Approach"></span><span id="disadvantages_of_this_approach"></span><span id="DISADVANTAGES_OF_THIS_APPROACH"></span>このアプローチの欠点
 
-後[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)を呼び出すに渡された IRP ポインター**保留**が無効にして、安全に逆参照することはできません。 を、ドライバーが IRP がドライバーの下位レベルで処理された後に、さらに処理するか、クリーンアップを実行する必要がある場合は、ドライバー スタック ダウン IRP を送信する前に完了ルーチンを設定があります。 書き込みと設定完了ルーチンの詳細については、[完了ルーチンを使用して](using-irp-completion-routines.md)を参照してください。
+後[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)を呼び出すに渡された IRP ポインター**保留**が無効にして、安全に逆参照することはできません。 を、ドライバーが IRP がドライバーの下位レベルで処理された後に、さらに処理するか、クリーンアップを実行する必要がある場合は、ドライバー スタック ダウン IRP を送信する前に完了ルーチンを設定があります。 書き込みと設定完了ルーチンの詳細については、次を参照してください。[完了ルーチンを使用して](using-irp-completion-routines.md)します。
 
 呼び出す場合[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)の IRP では、その完了ルーチンを設定することはできません。
 

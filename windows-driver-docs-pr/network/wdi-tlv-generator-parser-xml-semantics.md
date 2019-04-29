@@ -5,11 +5,11 @@ ms.assetid: AD268E68-B969-45D8-A2F2-4025E827D496
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c5e5160eeec348b8e3c7392257cfe2d78e9e6d2
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385833"
 ---
 # <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV ジェネレーター/パーサーの XML のセマンティクス
 
@@ -27,12 +27,12 @@ TLV ジェネレーター/パーサーの XML ファイルは、メッセージ 
 -   [`<containers />`](#-containers---)
 -   [`<container />`](#-container---)
     -   [Attributes](#attributes)
-    -   [内容](#contents)
+    -   [目次](#contents)
     -   [例](#example)
 -   [`<groupRef />`](#-groupref---)
     -   [Attributes](#attributes)
     -   [コンテンツ](#content)
-    -   [例](#examples)
+    -   [使用例](#examples)
 -   [`    <namedType />`](#--namedtype---)
     -   [Attributes](#attributes)
     -   [コンテンツ](#content)
@@ -44,10 +44,10 @@ TLV ジェネレーター/パーサーの XML ファイルは、メッセージ 
 -   [`<propertyGroups />`](#-propertygroups---)
 -   [フィールドのプリミティブ型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)](#primitive-field-types---bool----uint8----uint16----uint32----int8----int16----int32---)
     -   [Attributes](#attributes)
-    -   [内容](#contents)
+    -   [目次](#contents)
 -   [`<propertyGroup />`](#-propertygroup---)
     -   [Attributes](#attributes)
-    -   [内容](#contents)
+    -   [目次](#contents)
     -   [例](#example)
 
 ## `<message />`
@@ -160,7 +160,7 @@ WDI メッセージで使用されるすべてのコンテナー/TLVs につい�
 
 なし。
 
-### <a name="examples"></a>使用例
+### <a name="examples"></a>例
 
 ```XML
 <container name="WFDChannelContainer"

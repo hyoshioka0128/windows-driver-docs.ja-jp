@@ -1,6 +1,6 @@
 ---
-title: 必要なグラフィック ドライバー関数
-description: 必要なグラフィック ドライバー関数
+title: 必須のグラフィックス ドライバー関数
+description: 必須のグラフィックス ドライバー関数
 ms.assetid: 3a7a7516-b758-4499-bd9d-216fef7b3c8c
 keywords:
 - GDI WDK Windows 2000 の表示、関数、必要な
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eb2a2fedb67a7d05f282857cd9af90ee514823f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383217"
 ---
-# <a name="required-graphics-driver-functions"></a>必要なグラフィック ドライバー関数
+# <a name="required-graphics-driver-functions"></a>必須のグラフィックス ドライバー関数
 
 
 ## <span id="ddk_required_graphics_driver_functions_gg"></span><span id="DDK_REQUIRED_GRAPHICS_DRIVER_FUNCTIONS_GG"></span>

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4b3106fd9a3a588341d4025db11f76cad97172c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329659"
 ---
 # <a name="introduction-to-receive-side-scaling"></a>Receive Side Scaling の概要
 
@@ -39,7 +39,7 @@ NIC は、定義済みの領域 (ハッシュ型) にハッシュ値を計算す
 
 最下位ビット (LSBs) のハッシュ値の数は、間接指定テーブルをインデックス化に使用します。 間接指定テーブル内の値は、CPU に受信したデータの割り当てに使用されます。 間接指定テーブルに関する情報の詳細を参照してください。 [RSS 構成](rss-configuration.md)します。
 
-シグナル メッセージを中断 (MSI) のサポート、NIC も関連付けられている CPU の割り込みです。 Msi の NDIS サポートの詳細については、[NDIS Msi-x](ndis-msi-x.md)を参照してください。
+シグナル メッセージを中断 (MSI) のサポート、NIC も関連付けられている CPU の割り込みです。 Msi の NDIS サポートの詳細については、次を参照してください。 [NDIS Msi-x](ndis-msi-x.md)します。
 
 RSS は、減らすことで、ネットワーク システムのパフォーマンスを改善できます。
 
@@ -88,13 +88,13 @@ RSS は、減らすことで、ネットワーク システムのパフォーマ
 ハードウェア サポートの RSS の考えられる 3 つのレベルがあります。
 
 <a href="" id="hash-calculation-with-a-single-queue"></a>1 つのキューにハッシュの計算  
-NIC は、ハッシュ値を計算し、ミニポート ドライバーは、Cpu に関連付けられているキューに受信したパケットを割り当てます。 詳細については、[RSS を 1 つのハードウェアが表示されるキュー](rss-with-a-single-hardware-receive-queue.md)を参照してください。
+NIC は、ハッシュ値を計算し、ミニポート ドライバーは、Cpu に関連付けられているキューに受信したパケットを割り当てます。 詳細については、次を参照してください。 [RSS を 1 つのハードウェアが表示されるキュー](rss-with-a-single-hardware-receive-queue.md)します。
 
 <a href="" id="hash-calculation-with-multiple-receive-queues"></a>複数のハッシュの計算には、キューが表示されます。  
-NIC は、Cpu に関連付けられているキューに受信したデータ バッファーを割り当てます。 詳細については、[ハードウェア キューで RSS](rss-with-hardware-queuing.md)を参照してください。
+NIC は、Cpu に関連付けられているキューに受信したデータ バッファーを割り当てます。 詳細については、次を参照してください。[ハードウェア キューで RSS](rss-with-hardware-queuing.md)します。
 
 <a href="" id="message-signaled-interrupts--msis-"></a>メッセージ シグナル割り込み (Msi)  
-NIC は、受信したパケットを処理する必要があります CPU を中断します。 詳細については、[RSS メッセージ シグナル割り込みを](rss-with-message-signaled-interrupts.md)を参照してください。
+NIC は、受信したパケットを処理する必要があります CPU を中断します。 詳細については、次を参照してください。 [RSS メッセージ シグナル割り込みを](rss-with-message-signaled-interrupts.md)します。
 
 NIC は、常に 32 ビットのハッシュ値を渡します。
 

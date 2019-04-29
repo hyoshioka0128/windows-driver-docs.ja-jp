@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_CREATE_SWITCH ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 939517cb5a6517e793cbe924ebb6fb7a246386e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383604"
 ---
 # <a name="oidnicswitchcreateswitch"></a>OID\_NIC\_スイッチ\_作成\_スイッチ
 
@@ -32,11 +32,11 @@ OID の OID メソッド要求を受け取ったとき\_NIC\_スイッチ\_作�
 
 1.  NDIS を呼び出すときは、NIC スイッチを作成しますが、PF ミニポート ドライバーでは、静的スイッチの作成と構成をサポートする場合[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。 構成パラメーターを確認する必要があります、ドライバーは、この OID 要求を処理する場合、 [ **NDIS\_NIC\_スイッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451587)構造体。 パラメーターが呼び出し中に、スイッチを作成する、ドライバーによって使用されるものと同じにする必要があります*MiniportInitializeEx*します。 True でない場合、ドライバーは、OID 要求を失敗する必要があります。
 
-    詳細については、[NIC スイッチの作成を静的](https://msdn.microsoft.com/library/windows/hardware/hh440256)を参照してください。
+    詳細については、次を参照してください。 [NIC スイッチの作成を静的](https://msdn.microsoft.com/library/windows/hardware/hh440256)します。
 
 2.  ドライバーの構成値を検証する必要があります、PF ミニポート ドライバーでは、動的なスイッチの作成と構成をサポートする場合、 [ **NDIS\_NIC\_切り替える\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451587)構造体し、これらの値に基づいて、NIC のスイッチを作成します。
 
-    詳細については、[NIC スイッチの動的な作成](https://msdn.microsoft.com/library/windows/hardware/hh406694)を参照してください。
+    詳細については、次を参照してください。 [NIC スイッチの動的な作成](https://msdn.microsoft.com/library/windows/hardware/hh406694)です。
 
 3.  PF ミニポート ドライバーでは、NIC のスイッチの既定 VPort のために必要なハードウェアおよびソフトウェア リソースを割り当てる必要があります。
 
@@ -58,7 +58,7 @@ PF のミニポート ドライバーが OID の OID メソッド要求が正常
 
 -   既定以外の拡張を作成することができますの OID メソッド要求を通じて NIC スイッチ[OID\_NIC\_切り替える\_作成\_VPORT](oid-nic-switch-create-vport.md)します。
 
-この OID 要求を処理する方法の詳細については、[処理 OID\_NIC\_スイッチ\_作成\_切り替え要求を](https://msdn.microsoft.com/library/windows/hardware/hh451370)を参照してください。
+この OID 要求を処理する方法の詳細については、次を参照してください。[処理 OID\_NIC\_スイッチ\_作成\_切り替え要求を](https://msdn.microsoft.com/library/windows/hardware/hh451370)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -101,7 +101,7 @@ PF のミニポート ドライバーでは、OID の OID メソッド要求の�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

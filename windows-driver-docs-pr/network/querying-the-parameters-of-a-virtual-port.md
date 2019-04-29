@@ -1,17 +1,17 @@
 ---
-title: 仮想ポートのパラメーターのクエリを実行します。
-description: 仮想ポートのパラメーターのクエリを実行します。
+title: 仮想ポートのパラメーターのクエリ
+description: 仮想ポートのパラメーターのクエリ
 ms.assetid: 482DA041-2C70-438A-8D29-0F338CDCF935
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: afb90e36f69cd108e752d3f30e2ff2a75dc0a54e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339965"
 ---
-# <a name="querying-the-parameters-of-a-virtual-port"></a>仮想ポートのパラメーターのクエリを実行します。
+# <a name="querying-the-parameters-of-a-virtual-port"></a>仮想ポートのパラメーターのクエリ
 
 
 上にある、ドライバーは、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの NIC スイッチの仮想ポート (VPort) のパラメーターを取得できます。 ドライバーの問題のオブジェクト識別子 (OID) メソッド要求[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451825)これらのパラメーターを取得します。

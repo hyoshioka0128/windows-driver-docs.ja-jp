@@ -1,6 +1,6 @@
 ---
 title: 詳細プロパティ ページの構成パラメーターを指定します。
-description: 高度なプロパティ ページの構成パラメーターの指定
+description: 詳細プロパティ ページの構成パラメーターの指定
 ms.assetid: 9c243edb-f667-4244-8de2-8335fac43220
 keywords:
 - ネットワークの追加レジストリ セクション WDK、高度なプロパティ ページの構成
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23871adec26ce24496924927c391ed62cdeebdce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385474"
 ---
-# <a name="specifying-configuration-parameters-for-the-advanced-properties-page"></a>高度なプロパティ ページの構成パラメーターの指定
+# <a name="specifying-configuration-parameters-for-the-advanced-properties-page"></a>詳細プロパティ ページの構成パラメーターの指定
 
 > [!NOTE]
 > Windows 10 バージョン 1703 では、前にドライバーをアップグレードし、Windows 更新プログラム、可能性があります変更で以前に定義、ドライバーの INF 値を**詳細**プロパティ ページ。
@@ -43,14 +43,14 @@ Net のコンポーネント (アダプター) をインストールする INF �
 <thead>
 <tr class="header">
 <th align="left">名前</th>
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>ParamDesc</p></td>
-<td align="left"><p><em>文字列</em></p></td>
+<td align="left"><p><em>String</em></p></td>
 <td align="left"><p>パラメーターに表示される名前、<strong>詳細</strong>ページ</p></td>
 </tr>
 <tr class="even">

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: baf882dd97c4cad00df3e3f6debb08b9d8cb2980
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383683"
 ---
 # <a name="wiaipspatchcodesearchtimeout"></a>WIA\_IP\_PATCH\_コード\_検索\_タイムアウト
 
@@ -33,7 +33,7 @@ ms.locfileid: "56530078"
 
 有効な値 :WIA\_PROP\_範囲
 
-アクセス権:読み取り/書き込み
+アクセス権:[読み取り/書き込み]
 
 <a name="remarks"></a>注釈
 -------

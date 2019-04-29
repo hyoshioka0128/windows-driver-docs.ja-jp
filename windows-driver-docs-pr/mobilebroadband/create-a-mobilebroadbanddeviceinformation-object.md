@@ -1,17 +1,17 @@
 ---
-title: MobileBroadbandDeviceInformation オブジェクトを作成します。
-description: MobileBroadbandDeviceInformation オブジェクトを作成します。
+title: MobileBroadbandDeviceInformation オブジェクトを作成する
+description: MobileBroadbandDeviceInformation オブジェクトを作成する
 ms.assetid: d7f89045-acb5-4b7c-9154-c05e4169490d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b38d9f040331eea5cb272589abbc4678fdc1c8c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383778"
 ---
-# <a name="create-a-mobilebroadbanddeviceinformation-object"></a>MobileBroadbandDeviceInformation オブジェクトを作成します。
+# <a name="create-a-mobilebroadbanddeviceinformation-object"></a>MobileBroadbandDeviceInformation オブジェクトを作成する
 
 
 A [ **MobileBroadbandDeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/br207361)オブジェクトには、モバイル ブロード バンドに関連付けられているネットワーク デバイスのモバイル ブロード バンド固有のデータの取得に使用できるプロパティのセットが含まれます。アカウント (たとえば、ファームウェアのバージョン)。 これらのオブジェクトから取得できます、 [ **MobileBroadbandAccount** ](https://msdn.microsoft.com/library/windows/apps/br207353)オブジェクトのみです。 なお、1 つ**MobileBroadbandAccount**オブジェクトに関連付けることができますを複数**MobileBroadbandDeviceInformation**オブジェクトではなく、一度に 1 つだけです。 (これは、MNO をユーザー アカウントを区別するために使用する情報を保持するには、1 つの SIM カードが 2 つの異なるモバイル ブロード バンド デバイスで使用する場合。)

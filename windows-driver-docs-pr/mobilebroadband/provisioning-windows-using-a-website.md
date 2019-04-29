@@ -1,22 +1,22 @@
 ---
-title: Web サイトを使用して Windows のプロビジョニング
-description: Web サイトを使用して Windows のプロビジョニング
+title: Web サイトを使用した Windows のプロビジョニング
+description: Web サイトを使用した Windows のプロビジョニング
 ms.assetid: ba60fddd-a248-4afb-9390-f9277ef1f094
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43e96b241107438e23351ae83d379711efd49f30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383652"
 ---
-# <a name="provisioning-windows-using-a-website"></a>Web サイトを使用して Windows のプロビジョニング
+# <a name="provisioning-windows-using-a-website"></a>Web サイトを使用した Windows のプロビジョニング
 
 
 このトピックでは、web サイトを使用して、顧客が購入し、Windows 8、Windows 8.1、または Windows 10 を実行しているコンピューター上のモバイル ブロード バンド プランを設定できるようにする方法について説明します。
 
-Windows 8、Windows 8.1、および Windows 10 におけるモバイル ブロード バンドの詳細については、[モバイル ブロード バンドの概要](overview-of-mobile-broadband.md)を参照してください。
+Windows 8、Windows 8.1、および Windows 10 におけるモバイル ブロード バンドの詳細については、次を参照してください。[モバイル ブロード バンドの概要](overview-of-mobile-broadband.md)します。
 
 開発し、モバイル ブロード バンドのアプリを使用して、最大限の柔軟性を提供し、最も統合エクスペリエンスを作成することをお勧めします。 ただし、いくつかのプランで購入し、セットアップ シナリオでは、モバイル ブロード バンド アプリが必ずしもインストールして使用するために使用できます。 これらのシナリオでは、Windows 8、Windows 8.1、および Windows 10 には、自分でホストされ、これらのシナリオを完了するために必要なエクスペリエンスを提供します。 モバイル ブロード バンド web サイトを自動的に開くサポートが含まれます。
 
@@ -62,7 +62,7 @@ Windows がインストールされていないアプリを開始できないた
 
 ### <a name="span-idenablesimpspanspan-idenablesimpspanenable-a-simple-connect-experience"></a><span id="enablesimp"></span><span id="ENABLESIMP"></span>単純な接続エクスペリエンスを有効にします。
 
-最小限の Windows 8、Windows 8.1、または Windows 10 の APN データベースに含めるデータを提供する必要があります。 Windows APN データベースに関する詳細については、[APN データベースの概要](apn-database-overview.md)を参照してください。
+最小限の Windows 8、Windows 8.1、または Windows 10 の APN データベースに含めるデータを提供する必要があります。 Windows APN データベースに関する詳細については、次を参照してください。 [APN データベースの概要](apn-database-overview.md)します。
 
 APN データベースに含めるには、次の情報を提供する必要があります。
 
@@ -151,7 +151,7 @@ URL の形式が **https://Operator URL\[でしょうか。 propN = valN\[& prop
 
 モバイル ブロード バンドのアプリを使用してコンピューターに適用できるメタデータをプロビジョニングするのと同じアカウントは、モバイル ブロード バンドの web サイトにも適用できます。 Web ページの JavaScript での可用性の確認、 [ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/dn529170)メソッド。 存在する場合、ブラウザーは、アカウントをプロビジョニングする Windows メタデータを転送できます。
 
-アカウント プロビジョニングのメタデータに関する詳細については、[アカウント プロビジョニング](account-provisioning.md)を参照してください。
+アカウント プロビジョニングのメタデータに関する詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
 
 **注**  アカウント プロビジョニングのメタデータは、web サイトによって提供されるときに、拡張された検証 (EV) 証明書で署名する必要があります。
 

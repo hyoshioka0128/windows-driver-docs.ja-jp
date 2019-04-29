@@ -1,6 +1,6 @@
 ---
-title: ビデオのデコード機能を提供します。
-description: ビデオのデコード機能を提供します。
+title: ビデオ デコードの機能の提供
+description: ビデオ デコードの機能の提供
 ms.assetid: bffcc0da-7b1a-4f70-98f5-4841c8df9f12
 keywords:
 - 要求の種類ごとにビデオのデコード WDK DirectX VA 機能提供
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ed25b655066e33c770f76b278498be1fe4da608
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383865"
 ---
-# <a name="providing-capabilities-for-video-decoding"></a>ビデオのデコード機能を提供します。
+# <a name="providing-capabilities-for-video-decoding"></a>ビデオ デコードの機能の提供
 
 
 ときにその[ **GetCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff566762)関数が呼び出されると、要求の種類に基づくビデオ デコーディングのユーザー モードのディスプレイ ドライバーは、次の機能を提供します (で指定される、**型**のメンバー、 [ **D3DDDIARG\_GETCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff543148)構造体、 *GetCaps*関数の*pData*パラメーターが指す)。

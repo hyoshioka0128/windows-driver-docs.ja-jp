@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e69ca81bdec134728d3dbd31b634ae3cbfb08ffa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339262"
 ---
 # <a name="windows-metadata-and-internet-services"></a>Windows メタデータとインターネット サービス
 
@@ -26,7 +26,7 @@ OEM は、デバイス メタデータ パッケージを送信するときに�
 
 2.  パッケージを利用 WMIS を配布し、リモート コンピューターにインストールできるようにします。
 
-Windows 7 および Windows の以降のバージョンでは、オペレーティング システムは、検出、インデックス、およびコンピューターに接続されている特定のデバイスのデバイス メタデータ パッケージと一致する WMIS を使用します。 このプロセスの詳細については、[WMIS からデバイス メタデータ パッケージをインストールする](installing-device-metadata-packages-from-wmis.md)を参照してください。
+Windows 7 および Windows の以降のバージョンでは、オペレーティング システムは、検出、インデックス、およびコンピューターに接続されている特定のデバイスのデバイス メタデータ パッケージと一致する WMIS を使用します。 このプロセスの詳細については、次を参照してください。 [WMIS からデバイス メタデータ パッケージをインストールする](installing-device-metadata-packages-from-wmis.md)します。
 
  
 

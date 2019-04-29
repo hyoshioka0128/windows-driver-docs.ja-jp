@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2417852f088c947bffb0f7d121327782ce428c3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385731"
 ---
 # <a name="wdfverify-macro"></a>WDFVERIFY マクロ
 
@@ -45,9 +45,9 @@ WDFVERIFY をテストする論理式。
 
 コードを**WDFVERIFY**リリース構成またはデバッグ構成で、ドライバーをビルドするときに、ドライバーのバイナリにマクロが含まれます。 場合は、ドライバーのバイナリが含まれています。 **WDFVERIFY**コード、コードはチェック ビルドまたは Microsoft Windows オペレーティング システムのビルドでは、ドライバーが実行される場合に実行されます。
 
-**WDFVERIFY**場合のみカーネル デバッガーにコードでは、 **VerifyOn**レジストリの値を設定します。 ドライバーをデバッグする際のレジストリ エントリの詳細については、[Debugging Framework-Based ドライバーのレジストリ エントリ](https://msdn.microsoft.com/library/windows/hardware/ff544573)を参照してください。
+**WDFVERIFY**場合のみカーネル デバッガーにコードでは、 **VerifyOn**レジストリの値を設定します。 ドライバーをデバッグする際のレジストリ エントリの詳細については、次を参照してください。 [Debugging Framework-Based ドライバーのレジストリ エントリ](https://msdn.microsoft.com/library/windows/hardware/ff544573)します。
 
-ドライバーのデバッグの詳細については、[KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。
+ドライバーのデバッグの詳細については、次を参照してください。 [KMDF ドライバーをデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。
 
 <a name="examples"></a>例
 --------

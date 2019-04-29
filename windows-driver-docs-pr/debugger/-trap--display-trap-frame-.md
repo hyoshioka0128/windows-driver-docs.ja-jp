@@ -1,5 +1,5 @@
 ---
-title: .trap (表示トラップ フレーム)
+title: .trap (トラップ フレームの表示)
 description: .Trap コマンドでは、トラップ フレームの登録状態を表示しもレジスタのコンテキストを設定します。
 ms.assetid: c53177ad-243c-4276-8602-2edc14b44251
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d8e6a82cdbcd316ec278da383ec8a5777645f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339784"
 ---
-# <a name="trap-display-trap-frame"></a>.trap (表示トラップ フレーム)
+# <a name="trap-display-trap-frame"></a>.trap (トラップ フレームの表示)
 
 
 **.Trap**コマンドは、トラップ フレームの登録状態を表示しもレジスタのコンテキストを設定します。
@@ -63,7 +63,7 @@ ms.locfileid: "56539244"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-レジスタのコンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+レジスタのコンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
 <a name="remarks"></a>注釈
 -------

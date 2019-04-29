@@ -1,17 +1,17 @@
 ---
-title: スタックが作成され、ログのダンプ
-description: スタックが作成され、ログのダンプ
+title: スタックとダンプのログ
+description: スタックとダンプのログ
 ms.assetid: 5FE6AA76-5299-4d5d-9154-6DB34D93EECB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58aeb88821a8ea4ba02dab7f41906a6fc84eeecb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386488"
 ---
-# <a name="stack-and-dump-logging"></a>スタックが作成され、ログのダンプ
+# <a name="stack-and-dump-logging"></a>スタックとダンプのログ
 
 
 ## <a name="span-idusingstacktraceonerrorandminidumponerrorswitchesspanspan-idusingstacktraceonerrorandminidumponerrorswitchesspanspan-idusingstacktraceonerrorandminidumponerrorswitchesspanusing-stacktraceonerror-and-minidumponerror-switches"></a><span id="Using__stacktraceonerror_and__minidumponerror_switches"></span><span id="using__stacktraceonerror_and__minidumponerror_switches"></span><span id="USING__STACKTRACEONERROR_AND__MINIDUMPONERROR_SWITCHES"></span>スイッチの/stacktraceonerror と/minidumponerror を使用します。

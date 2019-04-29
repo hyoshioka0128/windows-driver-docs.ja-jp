@@ -1,17 +1,17 @@
 ---
-title: IStiUSD エスケープ メソッドを使用してください。
-description: IStiUSD エスケープ メソッドを使用してください。
+title: IStiUSD エスケープ メソッドの使用
+description: IStiUSD エスケープ メソッドの使用
 ms.assetid: f9b1ede6-8311-4cc9-8bf7-20018cb35a3d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 963accfe0d2908aab78faabd35d778ac49f128ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383693"
 ---
-# <a name="using-the-istiusd-escape-method"></a>IStiUSD エスケープ メソッドを使用してください。
+# <a name="using-the-istiusd-escape-method"></a>IStiUSD エスケープ メソッドの使用
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 9F0D22FB-3C83-4F90-8E24-2205EEF9D5F7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82190d7efe9a28700310df7a188f391618ba6c20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338067"
 ---
 # <a name="windows-uefi-firmware-update-platform"></a>Windows UEFI ファームウェア更新プラットフォーム
 
@@ -32,7 +32,7 @@ Windows 10 Mobile を実行しているデバイスは、Windows 10 デスクト
 
 Windows 10 Mobile を実行しているデバイスが、バイナリの更新プロセスを使用して、UEFI ファームウェアを更新する必要がありますを強くお勧めします。 Windows 10 Mobile を実行するデバイス UpdateCapsule ベースのプロセスでのみ使用できますのシナリオ、バイナリの更新プロセスを使用することはできません。 たとえば、次のように、デバイスのパーティション レイアウトが原因で、UEFI ファームウェアがバイナリの更新プログラム パッケージを使用して更新される場合です。
 
-Windows 10 Mobile の .spkg パッケージの詳細については、[パッケージを作成する](https://msdn.microsoft.com/library/dn756642)と[Update](https://msdn.microsoft.com/library/dn757518)を参照してください。
+Windows 10 Mobile の .spkg パッケージの詳細については、次を参照してください。[パッケージを作成する](https://msdn.microsoft.com/library/dn756642)と[Update](https://msdn.microsoft.com/library/dn757518)します。
 
 ## <a name="overview-of-the-uefi-firmware-update-platform"></a>UEFI ファームウェアの更新プログラムのプラットフォームの概要
 
@@ -85,7 +85,7 @@ Windows のファームウェア更新メカニズムと互換性があるシス
 
     システム ファームウェアの更新プログラムの 1 つのエントリが存在します。 システム ファームウェアの更新プログラムの一部としてデバイスのファームウェアが更新されない限り、ファームウェアの更新可能なすべてのデバイスでは、ESRT で指定されたリソースが必要です。
 
-    詳細については、[ESRT テーブル定義](esrt-table-definition.md)を参照してください。
+    詳細については、次を参照してください。 [ESRT テーブル定義](esrt-table-definition.md)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

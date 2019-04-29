@@ -5,11 +5,11 @@ ms.assetid: E6EC168F-DB4B-461A-874A-F5278E8F9200
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 307ced356e9347b38cd320038465ba5ebff79e6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337539"
 ---
 # <a name="microsoft-asl-compiler"></a>Microsoft ASL コンパイラ
 
@@ -33,7 +33,7 @@ asl [/nologo] /tab=<TabSig> [/c] [/Fa=<ASMfile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>]
 asl [/nologo] [/Fo=<AMLFile>] [/Fa=<ASMFile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>] <ASLFile>
 ```
 
-| 構成方法             | 説明                                                                   |
+| オプション             | 説明                                                                   |
 |--------------------|-------------------------------------------------------------------------------|
 | ?                  | このヘルプ メッセージを印刷します。                                                      |
 | nologo             | ロゴ バナーを抑制します。                                                     |
@@ -41,7 +41,7 @@ asl [/nologo] [/Fo=<AMLFile>] [/Fa=<ASMFile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>] <A
 | Fa =&lt;ASMFile&gt; | 生成します。名前のファイルを ASM &lt;ASMFile&gt;します。                           |
 | Fn =&lt;NSDFile&gt; | 名前を持つ名前空間のダンプ ファイルを生成&lt;NSDFile&gt;します。                 |
 | d                  | テキスト形式でバイナリ ファイルをダンプします。                                            |
-| U                  | AML ファイルを逆アセンブルします。ASL ファイル (既定値) またはします。LST ファイルです。               |
+| u                  | AML ファイルを逆アセンブルします。ASL ファイル (既定値) またはします。LST ファイルです。               |
 | タブ =&lt;TabSig&gt; | ASL テーブルを逆アセンブルします。ASL ファイル (既定値) またはします。LST ファイルです。 非 ASL テーブルをダンプします。TXT ファイルです。 場合&lt;TabSig&gt;は '\*'、すべてのテーブルが ACPI にダンプされます。TXT です。 &lt;TabSig&gt;テーブルの物理アドレスにすることもできます。 |
 | c                  | テーブルからバイナリ ファイルを作成します。                                              |
 
@@ -71,7 +71,7 @@ asl.exe /loadtable [-v] [-d] <AMLFile>
 
 AMLFile は、レジストリにロードするテーブルを含むコンパイル済みの AML ファイルの名前です。
 
-| 構成方法  | 説明                                                                                              |
+| オプション  | 説明                                                                                              |
 |---------|----------------------------------------------------------------------------------------------------------|
 | -v      | 詳細モード。 ユーティリティから追加のデバッグ出力をオンにします。                                          |
 | -d      | [削除] を選びます。 レジストリから以前に読み込まれた AML ファイルを削除し、すべての関連するレジストリ キーを削除します。|

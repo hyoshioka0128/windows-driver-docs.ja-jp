@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 294b53f8dc106c61712fc123b4b535a988d5ffab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335991"
 ---
 # <a name="ndiskdfilter"></a>!ndiskd.filter
 
@@ -44,7 +44,7 @@ LWFs を名のプレフィックスでフィルター処理します。
 
 Ndiskd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 入力、 **! ndiskd.filter**コマンドとパラメーターのないすべてのフィルターの一覧を取得します。 この例では、ffff8083e14e8460 ハンドルを探します。 このハンドルは、フィルター自体とその関連付けられたフィルターの下に入れ子になっている*ドライバー*、QoS パケット スケジューラ。

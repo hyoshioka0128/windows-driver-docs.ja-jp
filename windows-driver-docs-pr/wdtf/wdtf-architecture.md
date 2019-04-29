@@ -1,6 +1,6 @@
 ---
-title: WDTF アーキテクチャ
-description: WDTF アーキテクチャ
+title: WDTF のアーキテクチャ
+description: WDTF のアーキテクチャ
 ms.assetid: 8c110e97-6870-41f1-a4f3-4d44b2974c1a
 keywords:
 - Windows デバイスのテスト フレームワーク WDK、アーキテクチャ
@@ -20,13 +20,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19a42d9fe8aac2fa34dd5628e6704223a321ed01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383547"
 ---
-# <a name="wdtf-architecture"></a>WDTF アーキテクチャ
+# <a name="wdtf-architecture"></a>WDTF のアーキテクチャ
 
 
 WDTF のアーキテクチャを理解するには、まずお読みください[Windows デバイスのテスト フレームワークの設計ガイド](wdtf-overview.md)します。 WDTF がそれぞれに抽象化することによって、デバイスと、システムを使用することは、最も重要な概念、*ターゲット*(、 [ **IWDTFTarget2** ](https://msdn.microsoft.com/library/windows/hardware/hh439367)インターフェイス)。 次の図は、WDTF を提供する主要なオブジェクト モデルを示します。
@@ -62,11 +62,11 @@ WDTF には一連インターフェイスと実装にはが含まれています
 
 ![target::getinterface メソッドを示す図](images/wdtf-getinterface.gif)
 
-これらのインターフェイスの詳細については、[を制御するターゲット](controlling-targets.md)を参照してください。
+これらのインターフェイスの詳細については、次を参照してください。[を制御するターゲット](controlling-targets.md)します。
 
 ### <a name="simple-data-evaluation-language-sdel"></a>単純なデータ評価言語 (SDEL)
 
-WDTF には、単純なクエリ言語では、単純なデータ評価言語 (SDEL)、XPath と同様、属性またはリレーションシップに基づくターゲットを収集する場合のタスクを簡素化が含まれています。 SDEL では、各ターゲットとそれらの間のリレーションシップの両方の属性に基づく選択範囲の制約を定義するフォームの簡単なクエリ ステートメントにできます。 SDEL の詳細については、[単純なデータ評価言語の概要](simple-data-evaluation-language-overview.md)を参照してください。
+WDTF には、単純なクエリ言語では、単純なデータ評価言語 (SDEL)、XPath と同様、属性またはリレーションシップに基づくターゲットを収集する場合のタスクを簡素化が含まれています。 SDEL では、各ターゲットとそれらの間のリレーションシップの両方の属性に基づく選択範囲の制約を定義するフォームの簡単なクエリ ステートメントにできます。 SDEL の詳細については、次を参照してください。[単純なデータ評価言語の概要](simple-data-evaluation-language-overview.md)します。
 
  
 

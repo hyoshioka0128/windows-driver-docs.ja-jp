@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ffa2ce45d64fbc8d50b6cbb4930f0b6b2f8401b
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370276"
 ---
 # <a name="building-and-sending-an-avc-command"></a>AV/C コマンドの構築と送信
 
@@ -179,4 +179,4 @@ A*通知*が応答を要求するエラー条件がある場合は、すぐに�
 
 いくつか*コントロール*すべて*通知*要求承認しますが、必ずしもが完了していない 100 ミリ秒以内で要求します。 このドキュメントで呼ばれる中間の応答は、受信確認*中間処理*します。 中間の応答には、その結果、**保留**ステータスを返します\_保留します。 この結果は、要求が AV/C のサブユニットで最後に完了したときに、上記の手順 4 で指定された I/O 完了ルーチンは通知のポイントに発生します。 場合、
 
-Irp と Ioctl の詳細については、[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)を参照してください。
+Irp と Ioctl の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。

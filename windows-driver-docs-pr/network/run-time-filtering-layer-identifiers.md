@@ -1,5 +1,5 @@
 ---
-title: 実行時のフィルタ リング層識別子
+title: 実行時フィルター レイヤー識別子
 description: このセクションでは、実行時のフィルタ リング層識別子について説明します。
 ms.assetid: 21c466a3-cdfc-4e94-83d3-1c2c7a58a2ca
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 091079e2f5f170fcc139fcac724d7a8990ecabc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386203"
 ---
-# <a name="run-time-filtering-layer-identifiers"></a>実行時のフィルタ リング層識別子
+# <a name="run-time-filtering-layer-identifiers"></a>実行時フィルター レイヤー識別子
 
 実行時のフィルタ リング層識別子がコールアウト ドライバーのカーネル モードとは、ローカルで一意の識別子によって表される各で使用されます ([LUID](https://msdn.microsoft.com/library/windows/hardware/ff557080))、64 ビットのサイズ。 これらの識別子は、Fwpsk.h で定義されている FWPS_BUILTIN_LAYERS 列挙で定数の値です。 これらの識別子の定義は次のとおりです。
 
@@ -75,5 +75,5 @@ ms.locfileid: "56530402"
 | FWPS_LAYER_RPC_PROXY_IF | このフィルター処理レイヤーは、RpcProxy 接続に使用されるインターフェイスを検査できます。 これは、ユーザー モードのフィルタ リング層です。 |
 | FWPS_LAYER_KM_AUTHORIZATION | このフィルター処理レイヤー承認セキュリティ アソシエーションを確立できます。 |
 
-各レイヤーのランタイム識別子には、定数値のセットを表す関連付けられている実行時のデータ フィールド識別子があります。 これらのデータ フィールドの識別子は、Fwpsk.h で FWPS_FIELDS_XXX 列挙型として宣言されます。 詳細については、[データ フィールドの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546312)を参照してください。
+各レイヤーのランタイム識別子には、定数値のセットを表す関連付けられている実行時のデータ フィールド識別子があります。 これらのデータ フィールドの識別子は、Fwpsk.h で FWPS_FIELDS_XXX 列挙型として宣言されます。 詳細については、次を参照してください。[データ フィールドの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546312)します。
 

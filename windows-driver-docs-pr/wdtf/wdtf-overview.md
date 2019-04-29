@@ -1,5 +1,5 @@
 ---
-title: WDTF アーキテクチャと概要
+title: WDTF のアーキテクチャと概要
 description: Microsoft Windows デバイスのテスト フレームワーク (WDTF) を使用して作成、管理、再利用、およびデバイスを中心とした、シナリオ ベースの自動テストを拡張する方法について説明します。
 ms.assetid: 7e7660ec-1f17-4987-82c0-f62cca3a99b9
 keywords:
@@ -12,16 +12,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50b80966ab530d1d58eff813e3087390638b7667
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392703"
 ---
-# <a name="wdtf-architecture-and-overview"></a>WDTF アーキテクチャと概要
+# <a name="wdtf-architecture-and-overview"></a>WDTF のアーキテクチャと概要
 
 
-Microsoft Windows デバイスのテスト フレームワーク (WDTF) を使用すると、作成、管理、再利用、およびデバイスを中心とした、シナリオ ベースの自動テストを拡張できます。
+Microsoft Windows Device Testing Framework (WDTF) を使用すると、デバイスを中心としたシナリオ ベースの自動テストを作成、管理、再利用、および拡張できます。
 
 次の図に非常に大まかなシナリオを作成するための一般的な WDTF モデルを示します。
 

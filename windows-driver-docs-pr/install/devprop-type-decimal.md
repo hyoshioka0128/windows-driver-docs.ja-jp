@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: fac40baf3506a84ed1c7a5ca212a67f86eb0e70a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383682"
 ---
 # <a name="devproptypedecimal"></a>DEVPROP_TYPE_DECIMAL
 
@@ -39,7 +39,7 @@ DEVPROP_TYPE_DECIMAL は、のみと組み合わせることができます、 [
 
 -   プロパティを設定する、必要に応じて、他の関数の入力パラメーターを設定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

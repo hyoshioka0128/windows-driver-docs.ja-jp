@@ -7,16 +7,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0121ffa85d2c0886a7195a95dc930cd6f32f223
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384730"
 ---
 # <a name="troubleshooting-the-metadata-authoring-wizards"></a>メタデータ作成ウィザードのトラブルシューティング
 
 
-\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、[Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)を参照してください。 \]
+\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、次を参照してください。 [Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)します。 \]
 
 次のエラー メッセージを受信する場合は、テーブル内の問題を解決する解像度の列を参照します。
 
@@ -83,13 +83,13 @@ ms.locfileid: "57464332"
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="left">関連付け</td>
+<td align="left">アソシエーション</td>
 <td align="left">形式が無効です。「値」-、{} が、先頭と末尾に追加しないでください。</td>
 <td align="left">削除、{}もう一度やり直してください。</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left">関連付け</td>
+<td align="left">アソシエーション</td>
 <td align="left">GUID の形式が無効です。"Value"</td>
 <td align="left">正しい GUID を入力し、もう一度やり直してください。</td>
 </tr>

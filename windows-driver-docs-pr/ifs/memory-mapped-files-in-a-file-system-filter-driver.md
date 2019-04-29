@@ -1,6 +1,6 @@
 ---
-title: メモリ マップト ファイル、ファイル システム フィルター ドライバー
-description: メモリ マップト ファイル、ファイル システム フィルター ドライバー
+title: ファイル システム フィルター ドライバーのメモリ マップ ファイル
+description: ファイル システム フィルター ドライバーのメモリ マップ ファイル
 ms.assetid: 0915167a-f8ac-4222-bece-76d7fc8a3823
 keywords:
 - セキュリティの WDK ファイル システム、メモリ マップト ファイル
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce168853bb0b10046a1e97bc5f65118582e41d8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384312"
 ---
-# <a name="memory-mapped-files-in-a-file-system-filter-driver"></a>メモリ マップト ファイル、ファイル システム フィルター ドライバー
+# <a name="memory-mapped-files-in-a-file-system-filter-driver"></a>ファイル システム フィルター ドライバーのメモリ マップ ファイル
 
 
 ## <span id="ddk_memory_mapped_files_in_a_file_system_filter_driver_if"></span><span id="DDK_MEMORY_MAPPED_FILES_IN_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>

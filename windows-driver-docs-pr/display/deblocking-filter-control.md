@@ -1,6 +1,6 @@
 ---
-title: フィルター コントロールを非ブロック化
-description: フィルター コントロールを非ブロック化
+title: フィルター コントロールの非ブロック化
+description: フィルター コントロールの非ブロック化
 ms.assetid: b332421e-da15-4c42-aedb-32f4ba24101e
 keywords:
 - マクロ ブロック WDK DirectX va なので、フィルター コントロールを非ブロック化
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83355c2bdaf029b2cc517b33cd3e932452eb3476
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383290"
 ---
-# <a name="deblocking-filter-control"></a>フィルター コントロールを非ブロック化
+# <a name="deblocking-filter-control"></a>フィルター コントロールの非ブロック化
 
 
 ## <span id="ddk_deblocking_filter_control_gg"></span><span id="DDK_DEBLOCKING_FILTER_CONTROL_GG"></span>

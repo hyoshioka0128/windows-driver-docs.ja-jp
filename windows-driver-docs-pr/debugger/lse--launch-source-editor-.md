@@ -1,5 +1,5 @@
 ---
-title: よく (ソース エディターの起動)
+title: lse (ソース エディターの起動)
 description: よくコマンドでは、現在のソース ファイルのエディターが開きます。
 ms.assetid: 2f66b5c3-1cd6-4641-8dea-5e3a11c87db0
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: de740909aff1b6575cbec845a74e75ff2a053f89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383316"
 ---
-# <a name="lse-launch-source-editor"></a>よく (ソース エディターの起動)
+# <a name="lse-launch-source-editor"></a>lse (ソース エディターの起動)
 
 
 **よく**コマンドは、現在のソース ファイルのエディターを開きます。

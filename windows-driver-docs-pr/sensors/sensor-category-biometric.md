@@ -15,11 +15,11 @@ api_type:
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b76336448a5b6ef1a27e297f8548b0e7627747c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383568"
 ---
 # <a name="sensorcategorybiometric"></a>センサー\_カテゴリ\_生体認証
 
@@ -42,7 +42,7 @@ ms.locfileid: "56574801"
 
 このカテゴリには、次のプラットフォームで定義されているデータ フィールドが含まれています。
 
-|データ型|型|説明|
+|データの種類|種類|説明|
 |--|--|--|
 |SENSOR_DATA_TYPE_HUMAN_PRESENCE|VT_BOOL|人間がコンピューターを使用する場合は VARIANT_TRUE です。|
 |SENSOR_DATA_TYPE_HUMAN_PROXIMITY_METERS|VT_R4|人間とメートル単位で、コンピューター間の距離。|

@@ -5,11 +5,11 @@ ms.assetid: 6E7F53A0-7C6A-4063-8300-31E1853EDD04
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58e3bfad7f506ff4882566553bf70a0b1171e542
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385073"
 ---
 # <a name="cross-architecture-execution"></a>クロス アーキテクチャの実行
 

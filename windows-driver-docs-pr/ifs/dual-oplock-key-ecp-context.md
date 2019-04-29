@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c0ba635e1df0999b9fd89a1736f4f03f4a395c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383856"
 ---
 # <a name="dualoplockkeyecpcontext-structure"></a>デュアル\_OPLOCK\_キー\_ECP\_CONTEXT 構造体
 
@@ -39,7 +39,7 @@ typedef struct _DUAL_OPLOCK_KEY_ECP_CONTEXT {
 } DUAL_OPLOCK_KEY_ECP_CONTEXT, *PDUAL_OPLOCK_KEY_ECP_CONTEXT;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **ParentOplockKey**  

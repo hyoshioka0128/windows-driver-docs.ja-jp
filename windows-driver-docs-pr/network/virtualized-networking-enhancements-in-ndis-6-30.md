@@ -5,18 +5,18 @@ ms.assetid: AA1EC2E2-2903-453A-B214-947CA3C4C931
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 425088b16b5406128b743dda55649e76a8990e6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338771"
 ---
 # <a name="virtualized-networking-enhancements-in-ndis-630"></a>NDIS 6.30 の仮想化ネットワークの機能強化
 
 
 NDIS は、仮想化されたネットワーク インターフェイスを使用する、基になる物理ネットワーク インターフェイスのインターフェイスを HYPER-V の親と子パーティションをサポートしています。
 
-NDIS 6.20 が動作には、Microsoft、HYPER-V ネットワーク パフォーマンスの向上をサポートするために仮想マシン キュー (VMQ) インターフェイスが含まれています。 VMQ の詳細については、[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)を参照してください。
+NDIS 6.20 が動作には、Microsoft、HYPER-V ネットワーク パフォーマンスの向上をサポートするために仮想マシン キュー (VMQ) インターフェイスが含まれています。 VMQ の詳細については、次を参照してください。[仮想マシン キュー (VMQ)](virtual-machine-queue--vmq-.md)します。
 
 NDIS 6.30」の説明に従って、次のテクノロジと仮想化のネットワーク インターフェイスのサポートを拡張し[概要の仮想化ネットワーク](overview-of-virtualized-networking.md):
 
@@ -24,7 +24,7 @@ NDIS 6.30」の説明に従って、次のテクノロジと仮想化のネッ�
 
 1 つまたは複数仮想インターフェイスと呼ばれる PCI Express (PCIe) のネットワーク アダプターのハードウェア リソースのパーティション分割により、SR-IOV インターフェイス*仮想機能 (Vf)* します。 これにより、アダプターのリソースを仮想環境で共有できます。 SR-IOV は、直接、VF HYPER-V 子パーティションに割り当てることで、仮想ソフトウェア スイッチ レイヤーをバイパスするネットワーク トラフィックを使用できます。 これにより、ソフトウェア エミュレーション レイヤー入出力のオーバーヘッドは減少し、ネットワーク スループットが非仮想化環境と同様にほぼ同等のパフォーマンスを実現します。
 
-SR-IOV インターフェイスの詳細については、[Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)を参照してください。
+SR-IOV インターフェイスの詳細については、次を参照してください。 [Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)します。
 
 ### <a name="hyper-v-extensible-switch"></a>Hyper-V 拡張可能スイッチ
 
@@ -36,7 +36,7 @@ HYPER-V 拡張可能スイッチは、HYPER-V 親パーティションの管理�
 
 NDIS 6.30 以降、HYPER-V 拡張可能スイッチは、機能拡張インターフェイスをサポートします。 このインターフェイスにより NDIS フィルター ドライバーのインスタンス (と呼ばれる*拡張*) HYPER-V 拡張可能スイッチのドライバー スタック内でバインドします。 バインドされていると、ドライバー スタック内で有効になっている拡張機能は拡張可能スイッチのデータ パス内のすべてのパケット トラフィックに公開されます。 これにより、拡張機能を監視、変更、および拡張可能スイッチ ポートにパケットを転送できます。 これは、検査し、さまざまな HYPER-V パーティションによって使用されている仮想ネットワーク インターフェイスにパケットを挿入する拡張機能もできます。
 
-HYPER-V 拡張可能スイッチのインターフェイスの詳細については、[Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)を参照してください。
+HYPER-V 拡張可能スイッチのインターフェイスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ](hyper-v-extensible-switch.md)します。
 
  
 

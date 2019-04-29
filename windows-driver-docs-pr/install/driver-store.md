@@ -5,11 +5,11 @@ ms.assetid: 17abe3a4-0663-4b8b-8072-2171b4cedbe4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25551a5fe8f949ec15fe7b70a34f9fb5a570ce72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383819"
 ---
 # <a name="driver-store"></a>ドライバー ストア
 
@@ -26,7 +26,7 @@ Windows Vista 以降、ドライバー ストアは、受信トレイとサー�
 
     ソフトウェアの整合性は、Ihv および Oem に最優先事項になりました。 にとっては、インターネット上の悪意のあるソフトウェアの増加によって、これらの顧客たいこと、ソフトウェアがないが改変されたり、破損していることを確認。
 
-    ドライバー パッケージがドライバー ストアにコピーする前にまず、オペレーティング システムがデジタル署名が正しいことを確認します。 デジタル署名の詳細については、[ドライバーの署名](driver-signing.md)を参照してください。
+    ドライバー パッケージがドライバー ストアにコピーする前にまず、オペレーティング システムがデジタル署名が正しいことを確認します。 デジタル署名の詳細については、次を参照してください。[ドライバーの署名](driver-signing.md)します。
 
 -   検証、[ドライバー パッケージ](driver-packages.md)します。
 

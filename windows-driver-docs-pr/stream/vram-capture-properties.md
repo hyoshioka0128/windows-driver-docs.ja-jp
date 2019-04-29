@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3f8a783d806952ad850034f2c6654643f4f2e73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329946"
 ---
 # <a name="vram-capture-properties"></a>VRAM キャプチャのプロパティ
 
@@ -31,7 +31,7 @@ ms.locfileid: "56573418"
 
 このモードでキャプチャ ドライバーがシステム メモリ バッファーを受信、 [ *AVStrMiniPinProcess* ](https://msdn.microsoft.com/library/windows/hardware/ff556351)出力ピンのコールバック関数。
 
-暗証番号 (pin) プロセス コールバックで DMA を実装する方法については、[AVStream で DMA をパケットに基づく](packet-based-dma-in-avstream.md)を参照してください。
+暗証番号 (pin) プロセス コールバックで DMA を実装する方法については、次を参照してください。 [AVStream で DMA をパケットに基づく](packet-based-dma-in-avstream.md)します。
 
 (たとえば、別のビデオ、オーディオ、および VBI ピン) の複数の出力ピンをキャプチャするには、各ピンする必要があります、VRAM プロパティや処理のサポート前述のようです。 プロキシは、各ピンに別のスレッドを生成します。
 

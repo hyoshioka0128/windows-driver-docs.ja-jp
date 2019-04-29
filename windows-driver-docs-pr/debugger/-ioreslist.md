@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 69a92e005ad4b3adcbbe4b347857ced1232e79cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336413"
 ---
 # <a name="ioreslist"></a>!ioreslist
 
@@ -59,7 +59,7 @@ IO の 16 進数のアドレスを指定します\_リソース\_要件\_リス�
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)この拡張機能コマンドのアプリケーション。 については、IO\_リソース\_要件\_構造の一覧で、Windows Driver Kit (WDK) ドキュメントを参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能からの出力の例を次に示します。
@@ -112,7 +112,7 @@ IO\_リソース\_要件\_リストに関する情報を格納します。
 
     0x1000 に 0x10FF、包括的の範囲が優先されますが、0x100 で固定された制限が、0 ~ 0 xffffffff、範囲の任意の 0x100 範囲を使用できます。 (たとえば、0x1100 に 0x11FF は許容される) です。
 
--   Memory
+-   メモリ
 
     0x40080000 に 0x40080FFF の範囲が優先されますが、任意の範囲サイズ 0x1000 にも 0x1000 に配置する、0 ~ 0 xffffffff の間にあるを使用できます。
 

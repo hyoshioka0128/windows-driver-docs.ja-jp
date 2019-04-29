@@ -8,11 +8,11 @@ ms.date: 04/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: d6e8f7efe2c671f559714562899953b9fc5d3d8b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386743"
 ---
 # <a name="oidwwandevicecapsex"></a>OID\_WWAN\_デバイス\_CAP\_例
 
@@ -42,7 +42,7 @@ OID\_WWAN\_デバイス\_CAP\_EX は各 executor の機能の取得にも使用�
 
 Windows 10 バージョン 1703 より前の Windows のバージョンがまだ既存を使用[OID\_WWAN\_デバイス\_CAP](oid-wwan-device-caps.md); マルチ executor 対応モデムでの動作がサポートされているシナリオではありません。 Ihv は、この動作を定義する必要があります。
 
-### <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+### <a name="windows-10-version-1903"></a>Windows 10 バージョン 1903
 
 Windows 10、バージョンが 1903 年以降 OID_WWAN_DEVICE_CAPS_EX は、リビジョン 2 にアップグレードされています。 ミニポート ドライバーでは、この OID とミニポート ドライバーは、5 G をサポートしている場合が含まれているデータ構造体のリビジョン 2 を使用する必要があります。
 

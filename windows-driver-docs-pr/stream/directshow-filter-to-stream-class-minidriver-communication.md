@@ -1,6 +1,6 @@
 ---
-title: Stream クラス ミニドライバーの通信に DirectShow フィルター
-description: Stream クラス ミニドライバーの通信に DirectShow フィルター
+title: ストリーム クラス ミニドライバー通信への DirectShow フィルター
+description: ストリーム クラス ミニドライバー通信への DirectShow フィルター
 ms.assetid: d2122827-758c-4557-b2fd-8774179b5da4
 keywords:
 - グラフ構成 WDK ビデオ キャプチャ、DirectShow をフィルター処理します。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c79b4b9634630f6a4972f8733373989808512576
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384744"
 ---
-# <a name="directshow-filter-to-stream-class-minidriver-communication"></a>Stream クラス ミニドライバーの通信に DirectShow フィルター
+# <a name="directshow-filter-to-stream-class-minidriver-communication"></a>ストリーム クラス ミニドライバー通信への DirectShow フィルター
 
 
 Win32 API を使用してビデオ キャプチャ ミニドライバー対話ユーザー モード DirectShow フィルター **DeviceIoControl**関数呼び出し。 これらの呼び出しでは、ストリーム要求のブロック (される Srb) に、Stream クラス インターフェイスでは翻訳され、処理のビデオ キャプチャ ミニドライバーに送信されます。 される Srb の 2 つのカテゴリがあります。される Srb 全般のデバイス レベルの制御に使用して、個々 のストリームに影響を与えるされる Srb します。 次の表は、各カテゴリの主要なされる Srb に表示されます。
@@ -70,7 +70,7 @@ Read</td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568200" data-raw-source="[&lt;strong&gt;SRB_READ_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568200)"><strong>SRB_READ_DATA</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p>Open</p>
+<td><p>[ファイル]</p>
 <div>
  
 </div>

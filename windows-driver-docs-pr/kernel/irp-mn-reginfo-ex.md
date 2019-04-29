@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_REGINFO_EX Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e049ae104440d3b6e4047bafc21c3ad0b986d75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381416"
 ---
 # <a name="irpmnreginfoex"></a>IRP\_MN\_REGINFO\_例
 

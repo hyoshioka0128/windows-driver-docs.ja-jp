@@ -1,6 +1,6 @@
 ---
-title: GDI の浮動小数点サービス
-description: GDI の浮動小数点サービス
+title: GDI 浮動小数点サービス
+description: GDI 浮動小数点サービス
 ms.assetid: 7e32c683-ffad-4a95-9c3a-6716f7ce20cb
 keywords:
 - GDI WDK Windows 2000 の表示、浮動小数点演算
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04f60fc29e5c710d31895016089e3b9a4887b736
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385647"
 ---
-# <a name="gdi-floating-point-services"></a>GDI の浮動小数点サービス
+# <a name="gdi-floating-point-services"></a>GDI 浮動小数点サービス
 
 
 ## <span id="ddk_gdi_floating_point_services_gg"></span><span id="DDK_GDI_FLOATING_POINT_SERVICES_GG"></span>

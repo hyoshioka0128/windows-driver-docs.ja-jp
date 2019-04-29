@@ -1,6 +1,6 @@
 ---
-title: ネットワーク アダプターのカスタム プロパティ ページを指定します。
-description: ネットワーク アダプターのカスタム プロパティ ページを指定します。
+title: ネットワーク アダプターのカスタム プロパティ ページの指定
+description: ネットワーク アダプターのカスタム プロパティ ページの指定
 ms.assetid: c9d54e9b-3d11-46d1-9c24-86a802c64a7a
 keywords:
 - 追加レジストリ セクション WDK、ネットワークのカスタム プロパティ ページ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5926451cfcc2528c669ce986f4d47640ebaa9e1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385446"
 ---
-# <a name="specifying-custom-property-pages-for-network-adapters"></a>ネットワーク アダプターのカスタム プロパティ ページを指定します。
+# <a name="specifying-custom-property-pages-for-network-adapters"></a>ネットワーク アダプターのカスタム プロパティ ページの指定
 
 
 
@@ -35,7 +35,7 @@ ms.locfileid: "56549596"
 
 3.  アダプターの INF ファイルに含める、 **CopyFiles**プロパティ シートの拡張 DLL を Windows にコピーするセクション\\System32 ディレクトリ。 詳細については、 **CopyFiles**セクションを参照してください[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
 
-4.  **DDInstall** NCF の指定、アダプターのセクション\_HAS\_UI の 1 つとして、**特性**アダプターがユーザー インターフェイスをサポートしていることを示す値。 詳細については、[DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)を参照してください。
+4.  **DDInstall** NCF の指定、アダプターのセクション\_HAS\_UI の 1 つとして、**特性**アダプターがユーザー インターフェイスをサポートしていることを示す値。 詳細については、次を参照してください。 [DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)します。
 
 5.  プロパティ ページに変更を適用すると後、プロパティ シートの拡張 DLL が必要です。
     -   呼び出す**SetupDiGetDeviceInstallParams**

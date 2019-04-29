@@ -1,6 +1,6 @@
 ---
-title: 複数ヘッドのハードウェアのサポート
-description: 複数ヘッドのハードウェアのサポート
+title: 複数ヘッド ハードウェアのサポート
+description: 複数ヘッド ハードウェアのサポート
 ms.assetid: ea618586-3649-405c-b1fd-78a11f14c742
 keywords:
 - 複数ヘッド ハードウェア WDK DirectX 9.0
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5df8008ccbb6c650498d92ef55e6fb54798a88b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330684"
 ---
-# <a name="supporting-multiple-head-hardware"></a>複数ヘッドのハードウェアのサポート
+# <a name="supporting-multiple-head-hardware"></a>複数ヘッド ハードウェアのサポート
 
 
 ## <span id="ddk_supporting_multiple_head_hardware_gg"></span><span id="DDK_SUPPORTING_MULTIPLE_HEAD_HARDWARE_GG"></span>

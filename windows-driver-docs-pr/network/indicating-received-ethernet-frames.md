@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15adc2eebb1980445ecdd39c90f6a6a880236749
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327740"
 ---
 # <a name="indicating-received-ethernet-frames"></a>受信済みイーサネット フレームの表示
 
@@ -35,7 +35,7 @@ Windows の TCP/IP プロトコル ドライバーには、一連のイーサネ
 
 -   特定の状況で NDIS 6.1 以降、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造は、受信したイーサネット フレームに対して複数のメモリ記述子リスト (MDLs) と関連付けることができます。 場合でも、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体は、1 つを含める必要があります**NET\_バッファー**複数 MDLs を使用して、構造体別のバッファーに受信したパケット データを分割するドライバーをできます。
 
-    たとえば、ヘッダー データの分割インターフェイスをサポートするイーサネットのドライバーは、1 つに関連付けられている複数の MDLs のリンク リストを使用して受信したイーサネット フレームを分割[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 詳細については、[ヘッダー データの分割](header-data-split.md)を参照してください。
+    たとえば、ヘッダー データの分割インターフェイスをサポートするイーサネットのドライバーは、1 つに関連付けられている複数の MDLs のリンク リストを使用して受信したイーサネット フレームを分割[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 詳細については、次を参照してください。[ヘッダー データの分割](header-data-split.md)します。
 
     単純さとパフォーマンスの理由から、強くお勧めヘッダー データの分割をサポートしていないドライバーがそれぞれに 1 つだけ MDL を使用[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。
 

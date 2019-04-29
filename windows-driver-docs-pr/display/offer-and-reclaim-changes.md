@@ -1,17 +1,17 @@
 ---
-title: 提供し、変更を再利用
+title: 変更の提供と再利用
 description: Windows Display Driver Model (WDDM) v2 でのプランと再利用に関する要件が緩和されています。
 ms.assetid: 1A987708-DE73-4998-B5F9-03A9D502205A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12a3a0e7f72c6fec26bc232e13ca9803df7c48ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383994"
 ---
-# <a name="offer-and-reclaim-changes"></a>提供し、変更を再利用
+# <a name="offer-and-reclaim-changes"></a>変更の提供と再利用
 
 
 Windows Display Driver Model (WDDM) v2、関連する要件の*提供*と*回収*緩和されています。 ユーザー モード ドライバーをプランを使用し、内部の割り当てを解放する必要なくなりました。 使用してアプリケーションのアイドル状態や中断されたドライバーの内部リソースの削除は、**トリミング**Microsoft DirectX 11.1 で導入された API です。

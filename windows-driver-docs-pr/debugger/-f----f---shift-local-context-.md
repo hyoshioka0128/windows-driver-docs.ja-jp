@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dff1469610c6659ceb2b7a1d9003cd93bfa07c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336736"
 ---
 # <a name="f-f--shift-local-context"></a>.f+、.f- (ローカル コンテキストのシフト)
 
@@ -56,7 +56,7 @@ ms.locfileid: "56582197"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ローカル コンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。 ローカル変数とその他のメモリに関連するコマンドを表示する方法の詳細については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+ローカル コンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。 ローカル変数とその他のメモリに関連するコマンドを表示する方法の詳細については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
 <a name="remarks"></a>コメント
 -------

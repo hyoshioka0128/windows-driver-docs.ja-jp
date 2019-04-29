@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c463251e8282189c9c9b6de92cb346dba81f4f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385733"
 ---
 # <a name="wdfobjectreference-macro"></a>WdfObjectReference マクロ
 
@@ -49,7 +49,7 @@ Framework のオブジェクトへのハンドル。
 
 呼び出す代わりに**WdfObjectReference**、ドライバーが呼び出せる[ **WdfObjectReferenceWithTag** ](wdfobjectreferencewithtag.md)または[ **WdfObjectReferenceActual**](https://msdn.microsoft.com/library/windows/hardware/ff548760).
 
-オブジェクトの参照カウントの詳細については、[Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)を参照してください。
+オブジェクトの参照カウントの詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://msdn.microsoft.com/library/windows/hardware/ff542889)します。
 
 <a name="examples"></a>例
 --------

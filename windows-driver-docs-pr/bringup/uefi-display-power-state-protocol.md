@@ -1,17 +1,17 @@
 ---
-title: UEFI の電源状態のプロトコルを表示します。
-description: UEFI の電源状態のプロトコルを表示します。
+title: UEFI の電力状態表示プロトコル
+description: UEFI の電力状態表示プロトコル
 ms.assetid: ab16c548-1402-4819-9fbb-a1d6f55d934a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db59ebd78497c04b6db27b85cce692e85835139c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337397"
 ---
-# <a name="uefi-display-power-state-protocol"></a>UEFI の電源状態のプロトコルを表示します。
+# <a name="uefi-display-power-state-protocol"></a>UEFI の電力状態表示プロトコル
 
 
 **注**  このセクションの一部の情報は、Windows 10 Mobile と特定のプロセッサ アーキテクチャにのみ適用可能性があります。
@@ -28,7 +28,7 @@ ms.locfileid: "56556648"
 
  
 
-Microsoft 提供の UEFI バッテリが充電アプリケーションの詳細については、[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)を参照してください。
+Microsoft 提供の UEFI バッテリが充電アプリケーションの詳細については、次を参照してください。[ブート環境でバッテリが充電中](battery-charging-in-the-boot-environment.md)します。
 
 ## <a name="protocol-interface"></a>プロトコル インターフェイス
 

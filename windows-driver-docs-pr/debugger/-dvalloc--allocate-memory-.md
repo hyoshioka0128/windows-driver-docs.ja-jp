@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: de3632868528e71ccb078994bef77aee64d83709
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336869"
 ---
 # <a name="dvalloc-allocate-memory"></a>.dvalloc (メモリの割り当て)
 
@@ -68,7 +68,7 @@ ms.locfileid: "56582049"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **.Dvalloc**コマンド呼び出し**VirtualAllocEx**ターゲット プロセスを新しいメモリを割り当てられません。 割り当てられたメモリは、読み取り、書き込み、および実行を許可します。

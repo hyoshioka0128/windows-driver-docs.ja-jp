@@ -1,15 +1,15 @@
 ---
-title: スクリプト言語でデータ ドリブン テスト
-description: スクリプト言語でデータ ドリブン テスト
+title: スクリプト言語でのデータ ドリブン テスト
+description: スクリプト言語でのデータ ドリブン テスト
 ms.assetid: CF60C594-8877-4f09-AF82-9F4CA27123C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 782808f9c7d86008e84b524312ddbfcd1024658a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385066"
 ---
 # <a name="span-idtaefdata-driventestinginscriptinglanguagesspandata-driven-testing-in-scripting-languages"></a><span id="taef.data-driven_testing_in_scripting_languages"></span>スクリプト言語でデータ ドリブン テスト
 

@@ -1,17 +1,17 @@
 ---
-title: WIA アプリケーションにデータを転送します。
-description: WIA アプリケーションにデータを転送します。
+title: WIA アプリケーションへのデータ転送
+description: WIA アプリケーションへのデータ転送
 ms.assetid: 3ad906c9-968f-43d7-ae17-fc570440883d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce9fa08a1a51afc1ae8d3ac9c8c4b0e207f5c368
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383713"
 ---
-# <a name="transferring-data-to-a-wia-application"></a>WIA アプリケーションにデータを転送します。
+# <a name="transferring-data-to-a-wia-application"></a>WIA アプリケーションへのデータ転送
 
 
 

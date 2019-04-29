@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fe946b014e9e28735868082b7318246d9aaa92b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336753"
 ---
 # <a name="excr-display-exception-context-record"></a>.excr (例外コンテキスト レコードの表示)
 
@@ -58,14 +58,14 @@ ms.locfileid: "56578309"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-レジスタのコンテキストとその他のコンテキストの設定の詳細については、[変更コンテキスト](changing-contexts.md)を参照してください。
+レジスタのコンテキストとその他のコンテキストの設定の詳細については、次を参照してください。[変更コンテキスト](changing-contexts.md)します。
 
 <a name="remarks"></a>コメント
 -------
 
 **.Excr**コマンドは、現在の例外のコンテキスト情報を検索し、指定したコンテキスト レコードの重要なレジスタを表示します。
 
-このコマンドでは、レジスタのコンテキストとして現在の例外に関連付けられているコンテキスト レコードを使用してデバッガーもように指示します。 実行した後 **.excr**、最も重要なレジスタとスタック トレースをこのスレッドをデバッガーにアクセスできます。 実行、現在のプロセスまたはスレッドを変更または別のレジスタ コンテキスト コマンドを使用してターゲットを有効にするまで、このレジスタのコンテキストが永続化 ([**.cxr** ](-cxr--display-context-record-.md)または **.excr**). レジスタのコンテキストの詳細については、[登録コンテキスト](changing-contexts.md#register-context)を参照してください。
+このコマンドでは、レジスタのコンテキストとして現在の例外に関連付けられているコンテキスト レコードを使用してデバッガーもように指示します。 実行した後 **.excr**、最も重要なレジスタとスタック トレースをこのスレッドをデバッガーにアクセスできます。 実行、現在のプロセスまたはスレッドを変更または別のレジスタ コンテキスト コマンドを使用してターゲットを有効にするまで、このレジスタのコンテキストが永続化 ([**.cxr** ](-cxr--display-context-record-.md)または **.excr**). レジスタのコンテキストの詳細については、次を参照してください。[登録コンテキスト](changing-contexts.md#register-context)します。
 
 [ **.Ecxr** ](-ecxr--display-exception-context-record-.md)コマンドは同一の機能が、シノニム コマンド。
 

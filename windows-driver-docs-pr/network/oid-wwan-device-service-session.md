@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_SERVICE_SESSION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 19624fffce6e9af02e24e648d8b2b60c7ed9954d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341374"
 ---
 # <a name="oidwwandeviceservicesession"></a>OID\_WWAN\_デバイス\_サービス\_セッション
 
@@ -23,7 +23,7 @@ OID\_WWAN\_デバイス\_サービス\_セッションを開くか、デバイ�
 
 ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_指定したデバイスのサービスまたは操作をサポートしていない場合にサポートされます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

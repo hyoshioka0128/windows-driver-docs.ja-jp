@@ -1,6 +1,6 @@
 ---
-title: Web ページの印刷の ASP 変数
-description: Web ページの印刷の ASP 変数
+title: 印刷 Web ページの ASP 変数
+description: 印刷 Web ページの ASP 変数
 ms.assetid: eab0d5e0-0e20-443c-b714-a2b2327894e4
 keywords:
 - カスタマイズされた印刷 Web ページ WDK、ASP の変数
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e30b947bf0649a536a38e024981d6d409ead016
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331213"
 ---
-# <a name="asp-variables-for-print-web-pages"></a>Web ページの印刷の ASP 変数
+# <a name="asp-variables-for-print-web-pages"></a>印刷 Web ページの ASP 変数
 
 
 

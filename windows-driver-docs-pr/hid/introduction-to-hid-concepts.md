@@ -1,6 +1,6 @@
 ---
-title: HID の概念の概要
-description: このセクションでは、ヒューマン インターフェイス デバイス (HID) が導入されています。 通常、これらは、人間が直接コンピューター システムの動作の制御に使用するデバイスです。
+title: HID の概念の紹介
+description: このセクションでは、ヒューマン インターフェイス デバイス (HID) について紹介します。 通常、これらは、人間がコンピューター システムの操作を直接制御するために使用するデバイスです。
 ms.assetid: 477FF911-5A17-4EA5-9403-1D7B4E8B3BA5
 keywords:
 - '[ヒューマン インターフェイス デバイス]'
@@ -13,16 +13,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8b30948cea3a3d07b29e1f1843ff683fe11194e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364634"
 ---
-# <a name="introduction-to-hid-concepts"></a>HID の概念の概要
+# <a name="introduction-to-hid-concepts"></a>HID の概念の紹介
 
 
-このセクションでは、ヒューマン インターフェイス デバイス (HID) が導入されています。 通常、これらは、人間が直接コンピューター システムの動作の制御に使用するデバイスです。
+このセクションでは、ヒューマン インターフェイス デバイス (HID) について紹介します。 通常、これらは、人間がコンピューター システムの操作を直接制御するために使用するデバイスです。
 
 ## <a name="history-of-hid"></a>HID の履歴
 

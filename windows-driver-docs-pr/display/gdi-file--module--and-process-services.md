@@ -1,6 +1,6 @@
 ---
-title: GDI ファイル、モジュール、およびプロセスのサービス
-description: GDI ファイル、モジュール、およびプロセスのサービス
+title: GDI ファイル、モジュール、およびプロセス サービス
+description: GDI ファイル、モジュール、およびプロセス サービス
 ms.assetid: abf37bed-cad9-4fbc-95fe-346b0c07c81b
 keywords:
 - GDI WDK Windows 2000 の表示、モジュール サービス
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4613424238848cb3955b73f7724cfb17c11d7abe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385649"
 ---
-# <a name="gdi-file-module-and-process-services"></a>GDI ファイル、モジュール、およびプロセスのサービス
+# <a name="gdi-file-module-and-process-services"></a>GDI ファイル、モジュール、およびプロセス サービス
 
 
 ## <span id="ddk_gdi_file_module_and_process_services_gg"></span><span id="DDK_GDI_FILE_MODULE_AND_PROCESS_SERVICES_GG"></span>

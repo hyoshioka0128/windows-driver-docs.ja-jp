@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c051f1df5631ebbca54ba0e63705c38d94de7723
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383590"
 ---
 # <a name="oidwditaskdot11reset"></a>OID\_WDI\_タスク\_DOT11\_リセット
 
@@ -53,7 +53,7 @@ Dot11 リセットは、802.11 MLME と PLME リセット プリミティブの�
 
 [NDIS\_STATUS\_WDI\_INDICATION\_DOT11\_RESET\_COMPLETE](ndis-status-wdi-indication-dot11-reset-complete.md)
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

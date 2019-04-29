@@ -1,5 +1,5 @@
 ---
-title: dx (表示デバッガー オブジェクト モデルの式)
+title: dx (デバッガー オブジェクト モデル式の表示)
 description: Dx コマンドでは、NatVis の拡張機能モデルを使用して、C++ の式が表示されます。 Dx コマンドは、デバッガー オブジェクトで動作します。
 ms.assetid: 93047911-5195-4FB9-A015-5349084EDC0A
 keywords:
@@ -13,16 +13,16 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 619990863697246463e2df375700ba15c15c1c5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339756"
 ---
-# <a name="dx-display-debugger-object-model-expression"></a>dx (表示デバッガー オブジェクト モデルの式)
+# <a name="dx-display-debugger-object-model-expression"></a>dx (デバッガー オブジェクト モデル式の表示)
 
 
-**Dx**コマンドは、NatVis の拡張機能モデルを使用して、C++ の式を表示します。 NatVis の詳細については、[ネイティブ オブジェクトのカスタム ビューを作成](https://msdn.microsoft.com/library/jj620914.aspx)を参照してください。
+**Dx**コマンドは、NatVis の拡張機能モデルを使用して、C++ の式を表示します。 NatVis の詳細については、次を参照してください。[ネイティブ オブジェクトのカスタム ビューを作成](https://msdn.microsoft.com/library/jj620914.aspx)です。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]
@@ -94,7 +94,7 @@ dx [{-?}|{-h}]
 
 ## <a name="command-line-usage-example"></a>コマンドラインの使用例
 
-デバッグの設定のオブジェクトに関する情報を表示する .dx 設定 コマンドを使用できます。 デバッグの設定オブジェクトの詳細については、[ **.settings** ](-settings--set-debug-settings-.md)を参照してください。
+デバッグの設定のオブジェクトに関する情報を表示する .dx 設定 コマンドを使用できます。 デバッグの設定オブジェクトの詳細については、次を参照してください。 [ **.settings** ](-settings--set-debug-settings-.md)します。
 ```dbgcmd
 kd> dx -r1 Debugger.Settings
 Debugger.Settings : 
@@ -334,17 +334,17 @@ dx (nt!_EPROCESS *)&nt!PsIdleProcess
     [+0x2f8 ( 0: 0)] JobNotReallyActive : 0x0 [Type: unsigned long]
 ```
 
-Dx コマンドは、@ MASM 構文を使用して、切り替えの式エバリュエーターをサポートしていません。 式エバリュエーターの詳細については、[を評価する式](evaluating-expressions.md)を参照してください。
+Dx コマンドは、@ MASM 構文を使用して、切り替えの式エバリュエーターをサポートしていません。 式エバリュエーターの詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
 
-## <a name="using-linq-with-the-debugger-objects"></a>デバッガー オブジェクトを LINQ で使用します。
+## <a name="using-linq-with-the-debugger-objects"></a>デバッガー オブジェクトでの LINQ の使用
 
 LINQ 構文は、データを検索および操作デバッガー オブジェクトを使用できます。 LINQ に、構造化照会言語 (SQL) データベースのクエリに使用される概念的に似ています。 さまざまな LINQ メソッドを使用して、検索、フィルター、デバッグ データを解析することができます。 については、デバッガーのオブジェクトと、LINQ を使用して参照してください[デバッガー オブジェクトで LINQ を使用して](using-linq-with-the-debugger-objects.md)します。
 
 ## <a name="using-debugger-objects-with-natvis-and-javascript"></a>NatVis および JavaScript でデバッガー オブジェクトの使用
 
-NatVis でデバッガー オブジェクトの使用方法の詳細については、[NatVis ネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)を参照してください。
+NatVis でデバッガー オブジェクトの使用方法の詳細については、次を参照してください。 [NatVis ネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)します。
 
-JavaScript でデバッガー オブジェクトの使用方法の詳細については、[JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)を参照してください。
+JavaScript でデバッガー オブジェクトの使用方法の詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)します。
 
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。

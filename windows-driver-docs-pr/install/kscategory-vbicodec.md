@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: de1cf995ad3c8b3ea99057ef398afaa6beab18b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386264"
 ---
 # <a name="kscategoryvbicodec"></a>KSCATEGORY_VBICODEC
 
@@ -56,9 +56,9 @@ KSCATEGORY_VBICODEC[デバイス インターフェイス クラス](https://msd
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_VBICODEC 機能カテゴリをサポートすることを示す KSCATEGORY_VBICODEC のインスタンスを登録します。
 
-概要ビデオ デバイスについては、[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)を参照してください。
+概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)します。
 
-ビデオの非表示の詳細については、[ビデオ キャプチャ デバイスからのデータのストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568268)と[VBI カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff568691)を参照してください。
+ビデオの非表示の詳細については、次を参照してください。[ビデオ キャプチャ デバイスからのデータのストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568268)と[VBI カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff568691)します。
 
 <a name="requirements"></a>要件
 ------------

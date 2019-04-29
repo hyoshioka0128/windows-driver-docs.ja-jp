@@ -1,6 +1,6 @@
 ---
-title: UMDH を使用する準備
-description: UMDH を使用する準備
+title: UMDH の使用の準備
+description: UMDH の使用の準備
 ms.assetid: 9adebe43-3167-4e1a-ac98-db19ace944be
 keywords:
 - UMDH、UMDH を使用する準備
@@ -11,13 +11,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6614f26f908dea52edbf0b1d8a71bf0ae618135
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362410"
 ---
-# <a name="preparing-to-use-umdh"></a>UMDH を使用する準備
+# <a name="preparing-to-use-umdh"></a>UMDH の使用の準備
 
 
 ## <span id="ddk_preparing_to_use_umdh_dtools"></span><span id="DDK_PREPARING_TO_USE_UMDH_DTOOLS"></span>
@@ -49,7 +49,7 @@ Windows を収集するスタック トレース データの量が x86 32 MB �
 
 UMDH を使用する前に、アプリケーションの適切なシンボルへのアクセスが必要です。 UMDH 環境変数で指定されたシンボル パスを使用して\_NT\_シンボル\_パス。 この変数に格納をアプリケーションのシンボルを含むパスに設定します。
 
-Windows シンボルへのパスを含めることも、分析がより詳細な可能性があります。 このシンボル パスの構文は、デバッガーによって使用されるのと同じ詳細については、[シンボル パス](symbol-path.md)を参照してください。
+Windows シンボルへのパスを含めることも、分析がより詳細な可能性があります。 このシンボル パスの構文は、デバッガーによって使用されるのと同じ詳細については、次を参照してください。[シンボル パス](symbol-path.md)します。
 
 たとえば、アプリケーションのシンボルは c:\\MyApp\\記号、およびをインストールする Windows シンボル ファイル\\ \\myshare\\winsymbols、以下を使用する場合シンボル パスを設定するコマンド:
 

@@ -1,6 +1,6 @@
 ---
-title: 通知のコールバック
-description: 通知のコールバック
+title: 通知コールバック
+description: 通知コールバック
 ms.assetid: cf884097-45a4-4ef3-8ebb-64c006838235
 keywords:
 - スプーラ通知 WDK の印刷、コールバック
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45e2a91ba3ad89ffd19c554853cf15ad49c68c46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382851"
 ---
-# <a name="notification-callback"></a>通知のコールバック
+# <a name="notification-callback"></a>通知コールバック
 
 
 

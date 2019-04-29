@@ -1,6 +1,6 @@
 ---
-title: KMDF ドライバーではページング可能なコードを作成します。
-description: KMDF ドライバーではページング可能なコードを作成します。
+title: KMDF ドライバーでのページング可能なコードの作成
+description: KMDF ドライバーでのページング可能なコードの作成
 ms.assetid: 5c694ae2-2a16-4c2f-84b0-62e26f4121bc
 keywords:
 - ページング可能なドライバー WDK KMDF
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0984215e80be19dca7079e6c595cbf25c04bbca9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392698"
 ---
-# <a name="creating-pageable-code-in-a-kmdf-driver"></a>KMDF ドライバーではページング可能なコードを作成します。
+# <a name="creating-pageable-code-in-a-kmdf-driver"></a>KMDF ドライバーでのページング可能なコードの作成
 
 
 *ページング可能なコード*コードが使用されていないときに、コンピューターのページング ファイルに書き込むことができるコードに示します。 ページングのイメージ読み込みに、初期読み込みの時間を削減し、コンピューターの限られた非ページ メモリ プールを使用するドライバーのコードの量を削減するには、ドライバーの一部を作成できます。
@@ -23,7 +23,7 @@ ms.locfileid: "56556757"
 
 1.  ページング可能なセクションでは、ドライバーを特定します。
 
-    ページング可能なセクションでは必要になるまでメモリに読み込まれません。 ドライバーではページング可能なセクションを作成する方法については、[ドライバー ページングを行う](https://msdn.microsoft.com/library/windows/hardware/ff554346)を参照してください。
+    ページング可能なセクションでは必要になるまでメモリに読み込まれません。 ドライバーではページング可能なセクションを作成する方法については、次を参照してください。[ドライバー ページングを行う](https://msdn.microsoft.com/library/windows/hardware/ff554346)します。
 
 2.  ページングされたドライバーのコードが低電力状態からすばやくがスリープ解除するコンピューターの機能を阻害していないことを確認します。
 
@@ -39,7 +39,7 @@ ms.locfileid: "56556757"
 
     有効にして、電源の遷移中にページング可能なデータにアクセスするドライバーの機能を無効にする方法については、次を参照してください[ **WdfDeviceInitSetPowerPageable** ](https://msdn.microsoft.com/library/windows/hardware/ff546766)と[  **。WdfDeviceInitSetPowerNotPageable**](https://msdn.microsoft.com/library/windows/hardware/ff546147)します。
 
-    ときに、ドライバーが非ページング状態を確認する方法については、[ **WdfDevStateIsNP**](https://msdn.microsoft.com/library/windows/hardware/ff546958)を参照してください。
+    ときに、ドライバーが非ページング状態を確認する方法については、次を参照してください。 [ **WdfDevStateIsNP**](https://msdn.microsoft.com/library/windows/hardware/ff546958)します。
 
  
 

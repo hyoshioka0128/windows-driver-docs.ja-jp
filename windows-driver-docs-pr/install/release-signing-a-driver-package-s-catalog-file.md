@@ -1,17 +1,17 @@
 ---
-title: ドライバー パッケージのカタログ ファイルをリリース署名
-description: ドライバー パッケージのカタログ ファイルをリリース署名
+title: ドライバー パッケージのカタログ ファイルのリリース署名
+description: ドライバー パッケージのカタログ ファイルのリリース署名
 ms.assetid: 8bfedf24-403a-406e-993d-5ab8cc790f60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a1790c394107945fd7778ec1ea377ce13453aaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338631"
 ---
-# <a name="release-signing-a-driver-packages-catalog-file"></a>ドライバー パッケージのカタログ ファイルをリリース署名
+# <a name="release-signing-a-driver-packages-catalog-file"></a>ドライバー パッケージのカタログ ファイルのリリース署名
 
 
 1 回、[カタログ ファイル](catalog-files.md)の[ドライバー パッケージ](driver-packages.md)が作成または更新されると、カタログでファイルを署名することも[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。 署名済み後、は、ドライバー パッケージのすべてのコンポーネントが変更された場合、カタログ ファイル内に格納されたデジタル署名が無効にします。
@@ -55,9 +55,9 @@ Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http
 
 -   *tstamd64.cat*デジタル署名されるカタログ ファイルの名前を指定します。
 
-SignTool とコマンドライン引数の詳細については、[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)を参照してください。
+SignTool とコマンドライン引数の詳細については、次を参照してください。 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)します。
 
-ドライバー パッケージのリリース署名の詳細については、[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)を参照してください。
+ドライバー パッケージのリリース署名の詳細については、次を参照してください。[ドライバー パッケージのリリース署名](release-signing-driver-packages.md)します。
 
  
 

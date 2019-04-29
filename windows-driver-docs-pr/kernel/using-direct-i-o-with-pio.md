@@ -1,6 +1,6 @@
 ---
-title: ダイレクト I/O PIO の併用
-description: ダイレクト I/O PIO の併用
+title: PIO でのダイレクト I/O の使用
+description: PIO でのダイレクト I/O の使用
 ms.assetid: 84d36567-c8c6-4576-91a0-829c8819de4d
 keywords:
 - ダイレクト I/O WDK カーネル
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3565137cd214292717595d8d32c5f932648b46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383207"
 ---
-# <a name="using-direct-io-with-pio"></a>ダイレクト I/O PIO の併用
+# <a name="using-direct-io-with-pio"></a>PIO でのダイレクト I/O の使用
 
 
 

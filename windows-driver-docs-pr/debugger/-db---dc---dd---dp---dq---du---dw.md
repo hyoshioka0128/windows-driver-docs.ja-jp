@@ -21,13 +21,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ef7aeeb0f6597c7be3ae0e18c007e5dc7dd14fe8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336877"
 ---
-# <a name="db-dc-dd-dp-dq-du-dw"></a>!db, !dc, !dd, !dp, !dq, !du, !dw
+# <a name="db-dc-dd-dp-dq-du-dw"></a>!db、!dc、!dd、!dp、!dq、!du、!dw
 
 
 **! Db**、 **! dc**、 **! dd**、 **! dp**、 **! dq**、 **! du**、および **! dw**拡張機能は、ターゲット コンピューター上の指定した物理アドレスにデータを表示します。
@@ -102,7 +102,7 @@ ms.locfileid: "56558772"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-物理メモリに書き込むを使用して、 [ **! e\\**  * ](-eb---ed.md)拡張機能。 その他のメモリに関連するコマンドの説明とメモリの操作の概要については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。
+物理メモリに書き込むを使用して、 [ **! e\\**  * ](-eb---ed.md)拡張機能。 その他のメモリに関連するコマンドの説明とメモリの操作の概要については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。
 
 <a name="remarks"></a>注釈
 -------

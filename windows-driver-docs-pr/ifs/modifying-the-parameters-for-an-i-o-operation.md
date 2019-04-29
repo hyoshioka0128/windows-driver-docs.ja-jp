@@ -1,6 +1,6 @@
 ---
-title: I/O 操作のパラメーターを変更します。
-description: I/O 操作のパラメーターを変更します。
+title: I/O 操作用のパラメーターの修正
+description: I/O 操作用のパラメーターの修正
 ms.assetid: 8e25842f-6f10-412f-8cb2-156bea7d7983
 keywords:
 - preoperation コールバック ルーチン WDK ファイル システム ミニフィルター、パラメーターの変更
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bba99331db7919c3b2c44ada8bbe286f8dfc0ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384270"
 ---
-# <a name="modifying-the-parameters-for-an-io-operation"></a>I/O 操作のパラメーターを変更します。
+# <a name="modifying-the-parameters-for-an-io-operation"></a>I/O 操作用のパラメーターの修正
 
 
 ## <span id="ddk_modifying_the_parameters_for_an_io_operation_if"></span><span id="DDK_MODIFYING_THE_PARAMETERS_FOR_AN_IO_OPERATION_IF"></span>

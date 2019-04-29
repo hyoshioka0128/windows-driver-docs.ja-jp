@@ -1,5 +1,5 @@
 ---
-title: .bugcheck (バグ チェック データを表示する)
+title: .bugcheck (バグ チェック データの表示)
 description: .Bugcheck コマンドでは、ターゲット コンピューター上のバグ チェックからデータを表示します。
 ms.assetid: 4b453b5a-4a3c-4056-92e7-b6a17f987fa4
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a24198184af88054b599c230d8e308bdd3d882fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336935"
 ---
-# <a name="bugcheck-display-bug-check-data"></a>.bugcheck (バグ チェック データを表示する)
+# <a name="bugcheck-display-bug-check-data"></a>.bugcheck (バグ チェック データの表示)
 
 
 **.Bugcheck**バグからデータを確認して、ターゲット コンピューターで、コマンドが表示されます。
@@ -58,7 +58,7 @@ ms.locfileid: "56551404"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-バグ チェックの詳細については、[バグ チェック (ブルー スクリーン)](bug-checks--blue-screens-.md)を参照してください。 個々 のバグ チェックの説明は、次を参照してください。、[バグ チェック コード参照](bug-check-code-reference2.md)セクション。
+バグ チェックの詳細については、次を参照してください。[バグ チェック (ブルー スクリーン)](bug-checks--blue-screens-.md)します。 個々 のバグ チェックの説明は、次を参照してください。、[バグ チェック コード参照](bug-check-code-reference2.md)セクション。
 
 <a name="remarks"></a>注釈
 -------

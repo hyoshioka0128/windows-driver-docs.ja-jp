@@ -1,6 +1,6 @@
 ---
-title: コードの整合性イベントを表示します。
-description: コードの整合性イベントを表示します。
+title: コードの整合性のイベントの参照
+description: コードの整合性のイベントの参照
 ms.assetid: b1c8ea3e-1a10-41fd-bdc8-c1e6e7344d39
 keywords:
 - イベント ビューアーの WDK ドライバーの署名
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d603f1f72a0b30a217fb9c277dc0e0c159f4cf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339338"
 ---
-# <a name="viewing-code-integrity-events"></a>コードの整合性イベントを表示します。
+# <a name="viewing-code-integrity-events"></a>コードの整合性のイベントの参照
 
 
 イベント ビューアーを使用して、コードの整合性イベントを表示することができます。 コンピューター管理 Microsoft 管理コンソール (MMC) でまたはを実行してイベント ビューアーにアクセスすることができます、 *Eventvwr.exe*コマンドラインからコマンド。
@@ -40,7 +40,7 @@ ms.locfileid: "56558063"
 
 このイベントは、ため、それが署名されていない (または toaster.sys イメージ読み込みを試行しているが、発行元によってデジタル署名されたものと同じではありません) は、トースター ドライバー (toaster.sys) を読み込まれませんでしたを示します。
 
-すべてのコードの整合性イベント ログ メッセージの一覧は、[コードの整合性イベント ログ メッセージ](code-integrity-event-log-messages.md)を参照してください。
+すべてのコードの整合性イベント ログ メッセージの一覧は、次を参照してください。[コードの整合性イベント ログ メッセージ](code-integrity-event-log-messages.md)します。
 
 システム ログのイベントは、イベント ビューアーの Windows ログ、システム ログ ビューに表示できます。
 

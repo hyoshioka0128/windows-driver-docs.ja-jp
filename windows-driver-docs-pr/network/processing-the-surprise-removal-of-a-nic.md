@@ -1,6 +1,6 @@
 ---
-title: NIC の突然の削除の処理
-description: NIC の突然の削除の処理
+title: NIC の突然の取り外しの処理
+description: NIC の突然の取り外しの処理
 ms.assetid: c7de3bbc-5c7a-4669-a28e-086435fa9782
 keywords:
 - 突然削除 WDK ネットワーク
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 130659d1e11473fdb81bc425ba6a8f8821df5b33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327632"
 ---
-# <a name="processing-the-surprise-removal-of-a-nic"></a>NIC の突然の削除の処理
+# <a name="processing-the-surprise-removal-of-a-nic"></a>NIC の突然の取り外しの処理
 
 
 

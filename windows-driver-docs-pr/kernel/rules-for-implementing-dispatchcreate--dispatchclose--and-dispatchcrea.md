@@ -1,6 +1,6 @@
 ---
-title: DispatchCreate、DispatchClose、および DispatchCreateClose ルーチンを実装するための規則
-description: DispatchCreate、DispatchClose、および DispatchCreateClose ルーチンを実装するための規則
+title: DispatchCreate、DispatchClose、DispatchCreateClose ルーチンの実装に関する規則
+description: DispatchCreate、DispatchClose、DispatchCreateClose ルーチンの実装に関する規則
 ms.assetid: 4ce37675-92a6-41c2-b386-6570c989e56c
 keywords:
 - ディスパッチ ルーチンの WDK カーネル、DispatchCreate ルーチン
@@ -16,13 +16,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5c955c734e5c0a1166f59367f44eaa952004712
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383201"
 ---
-# <a name="rules-for-implementing-dispatchcreate-dispatchclose-and-dispatchcreateclose-routines"></a>DispatchCreate、DispatchClose、および DispatchCreateClose ルーチンを実装するための規則
+# <a name="rules-for-implementing-dispatchcreate-dispatchclose-and-dispatchcreateclose-routines"></a>DispatchCreate、DispatchClose、DispatchCreateClose ルーチンの実装に関する規則
 
 
 

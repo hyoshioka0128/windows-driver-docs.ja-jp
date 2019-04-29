@@ -5,11 +5,11 @@ ms.assetid: c20bd393-98d0-498e-a3e8-bbd1958ed774
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c91bc1d7c28c3927ed2e0c683b340d4bda57d61a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383704"
 ---
 # <a name="usb-driver"></a>USB ドライバー
 
@@ -86,7 +86,7 @@ USB バス静止画像カーネル モード ドライバーには、複数の�
 
 1 つのコントロール エンドポイントがサポートされているためを指定したコントロールのパイプを使用する I/O 制御コードが原因 (ある場合)、エンドポイントに関係なく、適切なエンドポイントを使用するドライバーを指定する[ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858).
 
-すべての I/O 制御コードの説明については、[USB まだイメージ I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff548569)を参照してください。
+すべての I/O 制御コードの説明については、次を参照してください。 [USB まだイメージ I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff548569)します。
 
 カーネル モードの USB ドライバーは、パッケージまたはメッセージのプロトコルを実装していません。 読み取り操作では、特定のパケットの配置は必要ありませんが、読み取り要求は最大パケット サイズの境界に揃えて配置した場合、パフォーマンスの向上を実現できます。 使用してパケットの最大サイズを取得することができます、 [ **IOCTL\_取得\_チャネル\_ALIGN\_RQST** ](https://msdn.microsoft.com/library/windows/hardware/ff542849) I/O 制御コード。
 

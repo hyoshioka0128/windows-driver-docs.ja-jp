@@ -1,6 +1,6 @@
 ---
-title: AV/C デバイスの識別子
-description: AV/C デバイスの識別子
+title: AV/C デバイス識別子
+description: AV/C デバイス識別子
 ms.assetid: c2d108c7-5ea9-42c1-92d7-5ba90f2f4232
 keywords:
 - AV/C WDK、識別子
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d10ce9df44cef5b42d05f81ef48cc3667eeee9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384808"
 ---
-# <a name="avc-device-identifiers"></a>AV/C デバイスの識別子
+# <a name="avc-device-identifiers"></a>AV/C デバイス識別子
 
 
 
@@ -46,7 +46,7 @@ ms.locfileid: "56558541"
 
 *Avc.sys*同一の複数のサブユニットを区別できない***SubunitType***ロードを追加して、これらのサブユニットを削除、および最高のサブユニットに対応するドライバーをアンロードするため、 ***SubunitID***.
 
-各サブユニットのデバイス オブジェクトには、1 つまたは 2 つのハードウェア識別子と互換性のある複数の識別子があります。 これらのハードウェアや、サブユニット ドライバーの INF ファイルで以下の互換性のある識別子の 1 つ以上の製造元から提供する必要があります。 Windows では、これらのデバイス識別子を使用して、デバイスがコンピューターに接続されている最初のサブユニットたびにロードするのに適したドライバーを検索します。 Microsoft が提供するかを調べることができます*61883.inf*、 *Msdv.inf*と*Mstape.inf*ハードウェアと AV C/デバイスの互換性のあるデバイスの識別子の例のファイル。 INF ファイルの実装の詳細については、[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
+各サブユニットのデバイス オブジェクトには、1 つまたは 2 つのハードウェア識別子と互換性のある複数の識別子があります。 これらのハードウェアや、サブユニット ドライバーの INF ファイルで以下の互換性のある識別子の 1 つ以上の製造元から提供する必要があります。 Windows では、これらのデバイス識別子を使用して、デバイスがコンピューターに接続されている最初のサブユニットたびにロードするのに適したドライバーを検索します。 Microsoft が提供するかを調べることができます*61883.inf*、 *Msdv.inf*と*Mstape.inf*ハードウェアと AV C/デバイスの互換性のあるデバイスの識別子の例のファイル。 INF ファイルの実装の詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
 
 デバイス識別子の文字列の個々 の要素は次のとおりです。
 

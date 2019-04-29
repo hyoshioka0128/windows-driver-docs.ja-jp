@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_PORT_CREATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: b785498f3c487260514f9d82f025d203f9cae1cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386873"
 ---
 # <a name="oidswitchportcreate"></a>OID\_スイッチ\_ポート\_を作成します。
 
@@ -34,7 +34,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
     場合は、拡張機能が、OID 要求を拒否しては、要求が完了したときに、状態を監視する必要があります。 拡張機能は、拡張可能スイッチ コントロール パスの拡張機能を基になるか、拡張可能スイッチのインターフェイスに OID 要求が拒否されたかどうかを決定するこれを行う必要があります。
 
-    ポートのポリシーの詳細については、[管理の Hyper-v 拡張可能なスイッチのポリシー](https://msdn.microsoft.com/library/windows/hardware/hh598195)を参照してください。
+    ポートのポリシーの詳細については、次を参照してください。[管理の Hyper-v 拡張可能なスイッチのポリシー](https://msdn.microsoft.com/library/windows/hardware/hh598195)します。
 
 -   拡張機能を呼び出す場合[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)この OID セット要求を転送するように、拡張機能がこの OID 要求の完了状態を監視する必要があります。 拡張機能は、拡張可能スイッチ ドライバー スタック内の基になる拡張機能があるポートの作成の通知を拒否したかどうかを検出するためにします。
 
@@ -46,7 +46,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
  
 
-拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、[Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)を参照してください。
+拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -108,7 +108,7 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

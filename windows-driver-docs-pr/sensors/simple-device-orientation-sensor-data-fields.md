@@ -1,17 +1,17 @@
 ---
-title: シンプルなデバイスの向きのセンサー データ フィールド
+title: 簡易デバイス方向センサー データ フィールド
 description: このトピックでは、単純なデバイスの方向センサーに固有のデータ フィールドの詳細についての情報を提供します。
 ms.assetid: 62E0517B-10CC-4561-B7D4-5536CC3FFCE1
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b56301ddd3c73a449108f15d47b0cb9bc47060cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392116"
 ---
-# <a name="simple-device-orientation-sensor-data-fields"></a>シンプルなデバイスの向きのセンサー データ フィールド
+# <a name="simple-device-orientation-sensor-data-fields"></a>簡易デバイス方向センサー データ フィールド
 
 
 このトピックでは、単純なデバイスの方向センサーに固有のデータ フィールドの詳細についての情報を提供します。

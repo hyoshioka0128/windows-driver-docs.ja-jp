@@ -1,14 +1,14 @@
 ---
-Description: Common failures for USB tests in the Windows HLK.
+Description: Windows HLK で USB テストの一般的なエラー。
 title: Windows HLK で USB テストのための一般的なエラー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b8ff4b0debb546befba3ca04ff21268c346b213
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392098"
 ---
 # <a name="common-failures-for-usb-tests-in-the-windows-hlk"></a>Windows HLK で USB テストのための一般的なエラー
 
@@ -20,7 +20,7 @@ Windows HLK で USB テストの一般的なエラー。
 
 -   エラーの状態:状態を確認するデバイスは、MUTT デバイスが存在しないことを示すエラーで失敗します。
 
-    1.  SuperMUTT が Winusb.sys または Usbtcd.sys ドライバーとして実行されています。 取得できます、ドライバーとドライバーのインストール パッケージ ファイルをインストールして、 [MUTT ソフトウェア パッケージ](https://msdn.microsoft.com/windows/hardware/jj590752)します。 詳細については、[MUTT ソフトウェア パッケージ ツール](mutt-software-package.md)を参照してください。
+    1.  SuperMUTT が Winusb.sys または Usbtcd.sys ドライバーとして実行されています。 取得できます、ドライバーとドライバーのインストール パッケージ ファイルをインストールして、 [MUTT ソフトウェア パッケージ](https://msdn.microsoft.com/windows/hardware/jj590752)します。 詳細については、次を参照してください。 [MUTT ソフトウェア パッケージ ツール](mutt-software-package.md)します。
     2.  デバイス マネージャーとして SuperMUTT のハードウェア ID が表示されることを確認"USB\\VID\_045E & PID\_078F"。 **注**  PID\_078E が正しくありません。
     3.  デバイス マネージャーがいることを確認 (**ビュー&gt;接続によってデバイス**) 列挙 SuperMUTT を示しています。 xHCI コント ローラーのダウン ストリーム。
     4.  USBView で SuperMUTT デバイスが SuperSpeed で動作していることを確認します。 **注**  から USBView をインストールすることができます、**デバッグ ツールの Windows にインストール パッケージ**Microsoft Windows ソフトウェア開発キット (SDK) にします。 または、USBView は、Windows Driver Kit (WDK) でデバッガー フォルダーにインストールされます。

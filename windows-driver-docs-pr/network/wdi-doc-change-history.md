@@ -6,15 +6,15 @@ ms.date: 02/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 39293fe0e3930651b08c2296a530f11a4cd6a3f3
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330514"
 ---
 # <a name="wdi-doc-change-history"></a>WDI ドキュメントの変更履歴
 
-## <a name="windows-10-version-1903"></a>Windows 10、バージョンが 1903
+## <a name="windows-10-version-1903"></a>Windows 10 バージョン 1903
 
 ドキュメントをバージョン 1.1.8 WDI に更新します。
 

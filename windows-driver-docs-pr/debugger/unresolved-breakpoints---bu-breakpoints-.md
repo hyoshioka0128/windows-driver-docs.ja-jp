@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3785ebbfeca3ecad0c04105c2abb9699be11d645
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383751"
 ---
 # <a name="unresolved-breakpoints-bu-breakpoints"></a>未解決のブレークポイント (bu ブレークポイント)
 
@@ -33,7 +33,7 @@ ms.locfileid: "56537287"
 
 ### <a name="span-idcontrollingaddressbreakpointsandunresolvedbreakpointsspanspan-idcontrollingaddressbreakpointsandunresolvedbreakpointsspancontrolling-address-breakpoints-and-unresolved-breakpoints"></a><span id="controlling_address_breakpoints_and_unresolved_breakpoints"></span><span id="CONTROLLING_ADDRESS_BREAKPOINTS_AND_UNRESOLVED_BREAKPOINTS"></span>アドレス ブレークポイントと未解決のブレークポイントを制御します。
 
-アドレスのブレークポイントを作成することができます、 [ **bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンド、または**bm (シンボルのブレークポイントの設定)** コマンドの場合に、 **/d**スイッチが含まれています。 未解決のブレークポイントを作成することができます、 **bu (未解決のブレークポイントの設定)** コマンド、または**bm**を **/d**スイッチは含まれません。 すべてのブレークポイントを無効化、有効にする、およびブレークポイントを変更するコマンドが適用されます。 ブレークポイントの一覧を表示するコマンドは、すべてのブレークポイントを含めるし、それぞれの種類を示します。 これらのコマンドの一覧については、[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)を参照してください。
+アドレスのブレークポイントを作成することができます、 [ **bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンド、または**bm (シンボルのブレークポイントの設定)** コマンドの場合に、 **/d**スイッチが含まれています。 未解決のブレークポイントを作成することができます、 **bu (未解決のブレークポイントの設定)** コマンド、または**bm**を **/d**スイッチは含まれません。 すべてのブレークポイントを無効化、有効にする、およびブレークポイントを変更するコマンドが適用されます。 ブレークポイントの一覧を表示するコマンドは、すべてのブレークポイントを含めるし、それぞれの種類を示します。 これらのコマンドの一覧については、次を参照してください。[ブレークポイントの制御メソッド](methods-of-controlling-breakpoints.md)します。
 
 WinDbg**ブレークポイント** ダイアログ ボックスは、"u"表記法で未解決のブレークポイントを示す、すべてのブレークポイントを表示します。 このダイアログ ボックスを使用してをすべてのブレークポイントを変更できます。**コマンド**このダイアログ ボックスのテキスト ボックスは、任意の種類のブレークポイントを作成するために使用できます。 型を省略すると、未解決のブレークポイントが作成されます。 詳細については、次を参照してください[編集 |。ブレークポイント](edit---breakpoints.md)します。 WinDbg でマウスを使用してブレークポイントを設定すると[逆アセンブル ウィンドウ](disassembly-window.md)または[ソース ウィンドウ](source-window.md)デバッガーが未解決のブレークポイントを作成します。
 

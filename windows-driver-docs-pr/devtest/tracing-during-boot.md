@@ -1,6 +1,6 @@
 ---
-title: 起動中にトレース
-description: 起動中にトレース
+title: 起動中のトレース
+description: 起動中のトレース
 ms.assetid: 79594c33-5755-4484-aaf5-ac409b05ddcc
 keywords:
 - ソフトウェアの起動中に、WDK のトレース
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9997e3cf374f3f79b81525e550c7243f5bea42d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392687"
 ---
-# <a name="tracing-during-boot"></a>起動中にトレース
+# <a name="tracing-during-boot"></a>起動中のトレース
 
 
 Windows のブート プロセス中に、Windows カーネルのアクティビティおよびドライバーと他のトレース プロバイダーのアクティビティを追跡するのに、Microsoft Windows でのトレースのソフトウェア コンポーネントの機能を使用できます。
@@ -36,7 +36,7 @@ Windows のブート プロセス中に、Windows カーネルのアクティビ
 
 -   **AutoLogger**
 
-    これは、起動中にドライバーやその他のトレース プロバイダーのアクティビティをトレースするための推奨される方法です。 プロバイダーは、トレースのインストルメント化する必要があります。 自動ロガーは、ドライバーにコールバック通知を提供します。 複数 AutoLoggers を同時に実行できます。 この機能は、Windows Vista および Windows の以降のバージョンで使用できます。 使用してドライバーを自動ロガーのアクティビティ トレースについては、[構成し、自動ロガー セッションを開始する](https://go.microsoft.com/fwlink/p/?linkid=89723)を参照してください。
+    これは、起動中にドライバーやその他のトレース プロバイダーのアクティビティをトレースするための推奨される方法です。 プロバイダーは、トレースのインストルメント化する必要があります。 自動ロガーは、ドライバーにコールバック通知を提供します。 複数 AutoLoggers を同時に実行できます。 この機能は、Windows Vista および Windows の以降のバージョンで使用できます。 使用してドライバーを自動ロガーのアクティビティ トレースについては、次を参照してください。[構成し、自動ロガー セッションを開始する](https://go.microsoft.com/fwlink/p/?linkid=89723)します。
 
 グローバル ロガーのトレース セッションを使用する場合は、制限事項を認識していることを確認します。 については、グローバルのロガーのトレース セッションの制限事項を参照してください。
 

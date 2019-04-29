@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bac729e35a6f350485237b749f28d409f5fbe19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336017"
 ---
-# <a name="ndiskdifstacktable"></a>! ndiskd.ifstacktable
+# <a name="ndiskdifstacktable"></a>!ndiskd.ifstacktable
 
 
 **! Ndiskd.ifstacktable**拡張機能には、ネットワーク インターフェイスの履歴テーブル (ifStackTable) が表示されます。
 
-インターフェイスの履歴テーブルの詳細については、[ネットワーク インターフェイスのスタックを維持](https://msdn.microsoft.com/windows/hardware/drivers/network/maintaining-a-network-interface-stack)を参照してください。
+インターフェイスの履歴テーブルの詳細については、次を参照してください。[ネットワーク インターフェイスのスタックを維持](https://msdn.microsoft.com/windows/hardware/drivers/network/maintaining-a-network-interface-stack)します。
 
 ```console
 !ndiskd.ifstacktable 

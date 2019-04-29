@@ -1,6 +1,6 @@
 ---
-title: オーバーレイのサポート
-description: オーバーレイのサポート
+title: ディスプレイのサポート
+description: ディスプレイのサポート
 ms.assetid: 325a08b2-c357-49b7-a9c3-878c44bc2d26
 keywords:
 - 図面ページ WDK DirectDraw、オーバーレイのサーフェスを反転します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bfb67c70958b55682303b6bc4b7e723d9eb6e68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383982"
 ---
-# <a name="overlay-support"></a>オーバーレイのサポート
+# <a name="overlay-support"></a>ディスプレイのサポート
 
 
 ## <span id="ddk_overlay_support_gg"></span><span id="DDK_OVERLAY_SUPPORT_GG"></span>

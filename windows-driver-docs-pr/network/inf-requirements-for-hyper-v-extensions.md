@@ -1,28 +1,28 @@
 ---
-title: HYPER-V 拡張可能スイッチの拡張機能の INF 要件
-description: HYPER-V 拡張可能スイッチの拡張機能の INF 要件
+title: Hyper-V 拡張可能スイッチ拡張機能の INF 要件
+description: Hyper-V 拡張可能スイッチ拡張機能の INF 要件
 ms.assetid: 378F619A-C799-4330-A388-9955A67251F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e67236218d221904c02b654f65bf766faaa46ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327704"
 ---
-# <a name="inf-requirements-for-hyper-v-extensible-switch-extensions"></a>HYPER-V 拡張可能スイッチの拡張機能の INF 要件
+# <a name="inf-requirements-for-hyper-v-extensible-switch-extensions"></a>Hyper-V 拡張可能スイッチ拡張機能の INF 要件
 
 
-HYPER-V 拡張可能スイッチの拡張機能は、NDIS フィルター ドライバーとして開発されています。 その結果、拡張機能の INF 要件は、すべての NDIS フィルター ドライバーの INF 要件に基づいています。 拡張可能スイッチの拡張機能の INF ファイルを作成するときに、変更、または監視フィルター ドライバーの INF 設定を使用する必要があります。 これらの設定の詳細については、[フィルター ドライバーの INF ファイルの設定](inf-file-settings-for-filter-drivers.md)を参照してください。
+HYPER-V 拡張可能スイッチの拡張機能は、NDIS フィルター ドライバーとして開発されています。 その結果、拡張機能の INF 要件は、すべての NDIS フィルター ドライバーの INF 要件に基づいています。 拡張可能スイッチの拡張機能の INF ファイルを作成するときに、変更、または監視フィルター ドライバーの INF 設定を使用する必要があります。 これらの設定の詳細については、次を参照してください。[フィルター ドライバーの INF ファイルの設定](inf-file-settings-for-filter-drivers.md)します。
 
 さらに、拡張可能スイッチの拡張機能の INF ファイルの次のガイドラインを従う必要があります。
 
 - 拡張可能スイッチの拡張機能は、変更、フィルター ドライバーとしてインストールする必要があります。
 
-  変更フィルター ドライバーの INF 要件の詳細については、[変更フィルター ドライバーの INF ファイルを構成する](configuring-an-inf-file-for-a-modifying-filter-driver.md)を参照してください。
+  変更フィルター ドライバーの INF 要件の詳細については、次を参照してください。[変更フィルター ドライバーの INF ファイルを構成する](configuring-an-inf-file-for-a-modifying-filter-driver.md)します。
 
-  **注**のフィルター クラスを使用して拡張機能**ms\_切り替える\_キャプチャ**監視フィルター ドライバーと同じタスクを実行できます。 詳細については、[型のフィルター ドライバー](types-of-filter-drivers.md)を参照してください。
+  **注**のフィルター クラスを使用して拡張機能**ms\_切り替える\_キャプチャ**監視フィルター ドライバーと同じタスクを実行できます。 詳細については、次を参照してください。[型のフィルター ドライバー](types-of-filter-drivers.md)します。
 
      
 
@@ -59,18 +59,18 @@ HYPER-V 拡張可能スイッチの拡張機能は、NDIS フィルター ドラ
   <tr class="odd">
   <td align="left"><p><strong>ms_switch_capture</strong></p></td>
   <td align="left"><p>このクラスの拡張機能は、パケットのトラフィックを監視します。 ただし、このクラスの拡張機能は、ポート ポリシーを適用またはパケットの宛先ポートを変更することはできません。</p>
-  <p>このクラスの拡張機能の詳細については、<a href="capturing-extensions.md" data-raw-source="[Capturing Extensions](capturing-extensions.md)">キャプチャ拡張機能</a>を参照してください。</p></td>
+  <p>このクラスの拡張機能の詳細については、次を参照してください。<a href="capturing-extensions.md" data-raw-source="[Capturing Extensions](capturing-extensions.md)">キャプチャ拡張機能</a>します。</p></td>
   </tr>
   <tr class="even">
   <td align="left"><p><strong>ms_switch_filter</strong></p></td>
   <td align="left"><p>このクラスの拡張機能では、パケットのトラフィックをフィルター処理し、拡張可能スイッチ経由のパケット配送のポートやスイッチのポリシーを適用します。 このクラスのドライバーを検査し、ポリシー設定に基づき、各パケットの宛先ポートを削除することもできます。</p>
-  <p>このクラスの拡張機能の詳細については、<a href="filtering-extensions.md" data-raw-source="[Filtering Extensions](filtering-extensions.md)">拡張機能のフィルタ リング</a>を参照してください。</p></td>
+  <p>このクラスの拡張機能の詳細については、次を参照してください。<a href="filtering-extensions.md" data-raw-source="[Filtering Extensions](filtering-extensions.md)">拡張機能のフィルタ リング</a>します。</p></td>
   </tr>
   <tr class="odd">
   <td align="left"><p><strong>ms_switch_forward</strong></p></td>
   <td align="left"><p>このクラスの拡張機能と同じ機能を持つ、 <strong>ms_switch_filter</strong>クラス。 このクラスの拡張機能のことができますも他の拡張可能スイッチ ポートにパケットを転送するだけでなく任意の拡張可能スイッチ ポートにパケット トラフィックを挿入します。</p>
   <p>イングレス データ パスで、このクラスの拡張機能が後に呼び出され、 <strong>ms_switch_filter</strong>拡張機能のクラス。 エグレス データ パスで、このクラスの拡張機能は前に呼び出さ、 <strong>ms_switch_filter</strong>拡張機能のクラス。</p>
-  <p>このクラスの拡張機能の詳細については、<a href="forwarding-extensions.md" data-raw-source="[Forwarding Extensions](forwarding-extensions.md)">転送拡張機能</a>を参照してください。</p>
+  <p>このクラスの拡張機能の詳細については、次を参照してください。<a href="forwarding-extensions.md" data-raw-source="[Forwarding Extensions](forwarding-extensions.md)">転送拡張機能</a>します。</p>
   <div class="alert">
   <strong>注</strong>拡張可能スイッチのドライバー スタックでこのクラスの拡張機能を 1 つだけが許可されています。
   </div>
@@ -83,7 +83,7 @@ HYPER-V 拡張可能スイッチの拡張機能は、NDIS フィルター ドラ
 
      
 
-これらの INF 設定で、拡張機能のインストール時は、すべての拡張可能スイッチのインスタンスにバインドする構成されます。 ただし、バインディングを使用しては無効になります、PowerShell コマンドレットで明示的に有効にする必要があります。 この手順の詳細については、[の有効化の Hyper-v 拡張可能スイッチの拡張](enabling-hyper-v-extensibility-switch-extensions.md)を参照してください。
+これらの INF 設定で、拡張機能のインストール時は、すべての拡張可能スイッチのインスタンスにバインドする構成されます。 ただし、バインディングを使用しては無効になります、PowerShell コマンドレットで明示的に有効にする必要があります。 この手順の詳細については、次を参照してください。[の有効化の Hyper-v 拡張可能スイッチの拡張](enabling-hyper-v-extensibility-switch-extensions.md)します。
 
  
 

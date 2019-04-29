@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_FT_INITIAL_ASSOC_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 782444cc7ff6dd28f3e8e7aab46a4ca996e3294a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329652"
 ---
 # <a name="wditlvftinitialassocparameters"></a>WDI\_TLV\_FT\_初期\_ASSOC\_パラメーター
 
@@ -31,7 +31,7 @@ WDI\_TLV\_FT\_初期\_ASSOC\_パラメーターは、高速切り替えの最初
 ## <a name="values"></a>値
 
 
-| 種類                                        | 説明                |
+| 型                                        | 説明                |
 |---------------------------------------------|----------------------------|
 | [**WDI\_TLV\_FT\_MDE**](wdi-tlv-ft-mde.md) | BSS エントリの MDIE します。 |
 

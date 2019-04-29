@@ -1,17 +1,17 @@
 ---
-title: ユーザー インターフェイスの拡張機能のレジストリ エントリ
-description: ユーザー インターフェイスの拡張機能のレジストリ エントリ
+title: ユーザー インターフェイス拡張のレジストリ エントリ
+description: ユーザー インターフェイス拡張のレジストリ エントリ
 ms.assetid: 1ddf12a1-50e9-4f6e-9394-5bb1afb67798
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc4c4acea8ef9c38149f4c2e93c51135ae29442b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383702"
 ---
-# <a name="user-interface-extension-registry-entries"></a>ユーザー インターフェイスの拡張機能のレジストリ エントリ
+# <a name="user-interface-extension-registry-entries"></a>ユーザー インターフェイス拡張のレジストリ エントリ
 
 
 

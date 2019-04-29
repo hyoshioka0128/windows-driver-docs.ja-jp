@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfb13887725bd1288796c03d4fd258e13855fd38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327018"
 ---
 # <a name="using-general-framework-objects"></a>一般フレームワーク オブジェクトの使用
 
@@ -27,7 +27,7 @@ ms.locfileid: "56573583"
 
     オブジェクト コンテキストの領域を使用すると、一般的なオブジェクトに関連付けるシステム リソースに関する情報を格納します。
 
-    コンテキストの領域に関する詳細については、[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)を参照してください。
+    コンテキストの領域に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
 
 -   一般的なオブジェクトの親を割り当てます。
 

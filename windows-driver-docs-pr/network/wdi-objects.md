@@ -5,11 +5,11 @@ ms.assetid: 0F375ED7-CB20-4F32-8ECE-4822D7787327
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6464ee4e0c5a2f7820382b710cd230b1a1caa990
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385322"
 ---
 # <a name="wi-fi-device-model-and-objects"></a>Wi-fi デバイス モデルとオブジェクト
 
@@ -18,7 +18,7 @@ Wi-fi デバイスは、2 種類のオブジェクトのコンテキストでは
 
 ![wdi デバイス モデル](images/wdi-object-model.png)
 
-## <a name="adapter"></a>アダプタ
+## <a name="adapter"></a>[アダプター]
 
 
 アダプター オブジェクトでは、Wi-fi デバイスで Wi-fi 機能を表します。 コマンド、示しているのでは、このオブジェクトは、Wi-fi インターフェイスに関する状態を示すために使用されます。 Wi-fi の複数のデバイスでシステムの場合は、各アダプター オブジェクトは、別のインスタンスを表します。
@@ -35,7 +35,7 @@ Wi-fi デバイスは、2 種類のオブジェクトのコンテキストでは
 ## <a name="port-availability-requirements"></a>ポートの可用性の要件
 
 
-| ポートの種類                        | 必要な数        |
+| [ポートの種類]                        | 必要な数        |
 |----------------------------------|-----------------------|
 | ステーションのポート                     | 1                     |
 | Wi-Fi Direct デバイス              | (サポートされている) 場合は 1      |
