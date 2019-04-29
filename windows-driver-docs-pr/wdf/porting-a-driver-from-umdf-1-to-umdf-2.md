@@ -1,17 +1,17 @@
 ---
-title: UMDF 2 に UMDF 1 からドライバーの移植
+title: UMDF 1 から UMDF 2 へのドライバーの移植
 description: このトピックでは、UMDF 2 に、ユーザー モード ドライバー フレームワーク (UMDF) 1 ドライバーを移植する方法について説明します。
 ms.assetid: 99D20B4C-17C4-42AC-B4D9-F5FD64E10723
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c5a09e25a9d12c4bc7e452b560390d9937560f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390104"
 ---
-# <a name="porting-a-driver-from-umdf-1-to-umdf-2"></a>UMDF 2 に UMDF 1 からドライバーの移植
+# <a name="porting-a-driver-from-umdf-1-to-umdf-2"></a>UMDF 1 から UMDF 2 へのドライバーの移植
 
 
 このトピックでは、UMDF 2 に、ユーザー モード ドライバー フレームワーク (UMDF) 1 ドライバーを移植する方法について説明します。 ソース ディレクトリ/ファイル (Visual Studio プロジェクトされません) を使用する 1 の UMDF ドライバーで開始できます。 または、Visual Studio プロジェクトに含まれている 1 の UMDF ドライバーを変換することができます。 結果は、Visual Studio で 2 の UMDF ドライバーのプロジェクトになります。 2 の UMDF ドライバーは、デスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の場合は、どちらも Windows 10 および Windows 10 Mobile を実行します。
@@ -39,7 +39,7 @@ UMDF 2 で、ドライバーには構成構造でのドライバーが提供す�
 
 UMDF 1 を使用するドライバーは、参照オブジェクトを削除する安全なタイミングを決定するためにカウントを実装する必要があります。 フレームワークは、ドライバーの代わりに、オブジェクト参照を追跡しているために、2 の UMDF ドライバーでは、参照をカウントする必要はありません。
 
-UMDF 2 では、各フレームワーク オブジェクトは、既定の親オブジェクトを持ちます。 親オブジェクトが削除されたときに、フレームワークには、関連付けられている子オブジェクトが削除されます。 ときにオブジェクトの作成メソッドを呼び出すには、ドライバーなど[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)、既定の親を受け入れることができます、またはカスタムの親で指定できます、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。 Framework のオブジェクトとその既定の親オブジェクトの一覧は、[Framework オブジェクトの概要](summary-of-framework-objects.md)を参照してください。
+UMDF 2 では、各フレームワーク オブジェクトは、既定の親オブジェクトを持ちます。 親オブジェクトが削除されたときに、フレームワークには、関連付けられている子オブジェクトが削除されます。 ときにオブジェクトの作成メソッドを呼び出すには、ドライバーなど[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)、既定の親を受け入れることができます、またはカスタムの親で指定できます、 [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。 Framework のオブジェクトとその既定の親オブジェクトの一覧は、次を参照してください。 [Framework オブジェクトの概要](summary-of-framework-objects.md)します。
 
 ## <a name="driver-initialization"></a>ドライバーの初期化
 
@@ -56,7 +56,7 @@ UMDF 2 では、各フレームワーク オブジェクトは、既定の親オ
 その[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)関数の場合、ドライバーには、次のいくつか実行可能性があります。
 
 -   入力、 [WDFDEVICE\_INIT](https://msdn.microsoft.com/library/windows/hardware/ff546951)構造体は、デバイス オブジェクトを作成するために使用する情報を提供します。 WDFDEVICE の使用の詳細については\_INIT を参照してください[Framework デバイス オブジェクトを作成する](creating-a-framework-device-object.md)します。
--   デバイス オブジェクトの領域のコンテキストを設定します。 割り当てとフレームワーク オブジェクト コンテキストの領域にアクセスする方法については、[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)を参照してください。
+-   デバイス オブジェクトの領域のコンテキストを設定します。 割り当てとフレームワーク オブジェクト コンテキストの領域にアクセスする方法については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
 -   [デバイス オブジェクトを作成](creating-a-framework-device-object.md)です。
 -   指定[要求ハンドラー](request-handlers.md)デバイス オブジェクト。
 -   [I/O キューを作成する](creating-i-o-queues.md)します。
@@ -83,7 +83,7 @@ UMDF 2 では、フレームワークはに基づいて省略可能なコンテ�
 ## <a name="debugging-your-driver"></a>ドライバーのデバッグ
 
 
-2 の UMDF ドライバーをデバッグするには、Wudfext.dll ではなく Wdfkd.dll で拡張機能を使用します。 Wudfext.dll 拡張機能に関する詳細については、[Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)を参照してください。
+2 の UMDF ドライバーをデバッグするには、Wudfext.dll ではなく Wdfkd.dll で拡張機能を使用します。 Wudfext.dll 拡張機能に関する詳細については、次を参照してください。 [Wdfkd.dll でデバッガー拡張の概要](debugger-extensions-for-kmdf-drivers.md)します。
 
 UMDF 2 で取得することも追加のドライバーがデバッグ情報を転送トレース レコーダー (), 違います」の説明に従って[KMDF および UMDF 2 ドライバーで Inflight トレースの記録機能を使用して](using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)します。 フレームワークの独自の使用も、*インフライト レコーダー* (IFR)。 参照してください[フレームワークのイベントのロガーを使用して](using-the-framework-s-event-logger.md)します。
 

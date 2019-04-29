@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eae436b51d591876cd89d158adb7a10b1109757
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331474"
 ---
 # <a name="audio-filters"></a>オーディオ フィルター
 
@@ -41,7 +41,7 @@ KS フィルターは、カーネル オブジェクトであるため、カー�
 
 -   ストリームは、ミキサー DST ミキサーの行を使用してデバイスを終了します。
 
-つまり、SRC ミキサーの行がデータ シンク pin では、KS フィルターにマップされ、DST ミキサーの行がデータ ソースの暗証番号 (pin) にマップされます。 詳細については、[オーディオ Mixer API 翻訳にカーネル ストリーミング トポロジ](kernel-streaming-topology-to-audio-mixer-api-translation.md)を参照してください。
+つまり、SRC ミキサーの行がデータ シンク pin では、KS フィルターにマップされ、DST ミキサーの行がデータ ソースの暗証番号 (pin) にマップされます。 詳細については、次を参照してください。[オーディオ Mixer API 翻訳にカーネル ストリーミング トポロジ](kernel-streaming-topology-to-audio-mixer-api-translation.md)します。
 
 わかりやすくは、図は、暗証番号 (pin) のインスタンスを作成、フィルターのピン留めするファクトリを省略します。
 

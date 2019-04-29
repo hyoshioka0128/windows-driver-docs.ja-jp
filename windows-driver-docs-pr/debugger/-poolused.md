@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 52af1d34c077699dc9401fb163a0008f8c947be9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334377"
 ---
-# <a name="poolused"></a>! poolused
+# <a name="poolused"></a>!poolused
 
 
 **! Poolused**拡張機能には、各プールの割り当てに使用されるタグに基づいて、メモリ使用の概要が表示されます。

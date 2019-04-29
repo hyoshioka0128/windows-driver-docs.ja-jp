@@ -1,6 +1,6 @@
 ---
-title: デバイスのインターフェイスを使用します。
-description: デバイスのインターフェイスを使用します。
+title: デバイス インターフェイスの使用
+description: デバイス インターフェイスの使用
 ms.assetid: a41f9ae2-6128-43e2-a6b5-4d0bd45371bd
 keywords:
 - インターフェイス クラス WDK デバイスのインストール
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec0ae9ba565aad37e6c5312ce6353bfb29d6ced2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339453"
 ---
-# <a name="using-a-device-interface"></a>デバイスのインターフェイスを使用します。
+# <a name="using-a-device-interface"></a>デバイス インターフェイスの使用
 
 
 

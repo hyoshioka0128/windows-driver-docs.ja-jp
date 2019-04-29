@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25a942a673e282cabf88545c2b835270c08388c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332762"
 ---
 # <a name="kspropertydirectsound3dlistenerallocation"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_割り当て
 
@@ -42,16 +42,16 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_割り当てのプロパティを使用して
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>

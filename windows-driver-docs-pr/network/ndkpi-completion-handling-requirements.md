@@ -5,11 +5,11 @@ ms.assetid: 87150E2F-64F2-4EAB-A8B3-8E77622BE36C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dee818f02ecc86a1657aaa076875824fd9d84958
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331334"
 ---
 # <a name="ndkpi-completion-handling-requirements"></a>NDKPI 完了処理要件
 

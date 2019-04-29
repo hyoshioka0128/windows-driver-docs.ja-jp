@@ -1,6 +1,6 @@
 ---
-title: バッテリ Miniclass ドライバーの DispatchDeviceControl ルーチン
-description: バッテリ Miniclass ドライバーの DispatchDeviceControl ルーチン
+title: バッテリ ミニクラス ドライバーの DispatchDeviceControl ルーチン
+description: バッテリ ミニクラス ドライバーの DispatchDeviceControl ルーチン
 ms.assetid: 26313dcc-9f37-4c5e-a21e-c4d8a50ff564
 keywords:
 - バッテリ miniclass ドライバー WDK、ルーチン
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02975b04526f7de95580f62aa67895761ac52988
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335246"
 ---
-# <a name="dispatchdevicecontrol-routine-of-a-battery-miniclass-driver"></a>バッテリ Miniclass ドライバーの DispatchDeviceControl ルーチン
+# <a name="dispatchdevicecontrol-routine-of-a-battery-miniclass-driver"></a>バッテリ ミニクラス ドライバーの DispatchDeviceControl ルーチン
 
 
 ## <span id="ddk_dispatchdevicecontrol_routine_of_battery_miniclass_driver_dg"></span><span id="DDK_DISPATCHDEVICECONTROL_ROUTINE_OF_BATTERY_MINICLASS_DRIVER_DG"></span>

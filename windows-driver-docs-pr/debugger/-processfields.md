@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 18230025e28ce931b958583c0c2add0b70440b84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335745"
 ---
-# <a name="processfields"></a>! processfields
+# <a name="processfields"></a>!processfields
 
 
 **! Processfields**拡張機能は、名前と、executive プロセス」(プロセス) ブロック内のフィールドのオフセットが表示されます。
@@ -54,7 +54,7 @@ ms.locfileid: "56558054"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-」プロセス ブロックについては、*Microsoft Windows internals 』*、Mark Russinovich と David Solomon を参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+」プロセス ブロックについては、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>注釈
 -------

@@ -1,14 +1,14 @@
 ---
-Description: CDC ATM Networking Control Model
+Description: CDC ATM ネットワーク コントロール モデル
 title: CDC ATM ネットワーク コントロール モデル
 ms.localizationpriority: medium
 ms.date: 01/07/2019
 ms.openlocfilehash: 3a33ceb4f0c6aefd9710382e6be216b8e96cf829
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392102"
 ---
 # <a name="cdc-atm-networking-control-model"></a>CDC ATM ネットワーク コントロール モデル
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: daa0c1724167364690a7a64e51e8d3bab58c925c
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329736"
 ---
 # <a name="bug-check-0x57-xnsinternalerror"></a>バグ チェック 0x57:XNS\_内部\_エラー
 

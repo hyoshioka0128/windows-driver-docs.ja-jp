@@ -1,16 +1,16 @@
 ---
-Description: A USB device provides information about itself in data structures called USB descriptors. This section provides information about various descriptors that a client driver can obtain from a USB device.
-title: USB ディスクリプター
+Description: USB デバイスは、USB 記述子と呼ばれるデータ構造自体に関する情報を提供します。 このセクションでは、クライアント ドライバーは、USB デバイスから入手できるさまざまな記述子について情報を提供します。
+title: USB 記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6623b236ccdd5ac287d79272c85542f4d749e660
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331632"
 ---
-# <a name="usb-descriptors"></a>USB ディスクリプター
+# <a name="usb-descriptors"></a>USB 記述子
 
 
 USB デバイスと呼ばれるデータ構造自体に関する情報を提供する*の USB ディスクリプター*します。 このセクションでは、クライアント ドライバーは、USB デバイスから入手できるさまざまな記述子について情報を提供します。

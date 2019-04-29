@@ -1,6 +1,6 @@
 ---
-title: すべてのデバイス セットアップ クラスでのソフトウェア キーを開く
-description: すべてのデバイス セットアップ クラスでのソフトウェア キーを開く
+title: セットアップ クラス内のすべてのデバイス用のソフトウェア キーを開く
+description: セットアップ クラス内のすべてのデバイス用のソフトウェア キーを開く
 ms.assetid: B601982E-FCD6-4932-813C-A68B2F15FC5C
 keywords:
 - ソフトウェア キー WDK デバイスのインストール、セットアップ クラスのすべてのデバイス用に開けません
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 603a1cdc57e3645c02848c997af5deba9bf6bf58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330263"
 ---
-# <a name="opening-software-keys-for-all-devices-in-a-setup-class"></a>すべてのデバイス セットアップ クラスでのソフトウェア キーを開く
+# <a name="opening-software-keys-for-all-devices-in-a-setup-class"></a>セットアップ クラス内のすべてのデバイス用のソフトウェア キーを開く
 
 
 ユーザー モード アプリケーションを開くと、*ソフトウェア キー*デバイス セットアップ クラスで、すべてのデバイス用にする必要があります直接レジストリにアクセスできませんデバイス セットアップ クラスのサブキーの列挙。 レジストリ キーと同様にこのキーの名前と場所は、Windows の異なるバージョン間変更可能性があります。

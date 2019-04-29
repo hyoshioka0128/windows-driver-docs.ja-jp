@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2562d8aca6db24174633d011393e75f8009104c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330042"
 ---
 # <a name="virtual-subunit-driver-stack"></a>仮想サブユニット ドライバー スタック
 
@@ -28,7 +28,7 @@ IEEE 1394 のドライバー スタックは、IEEE 1394、IEC 61883、オーデ
 
 Windows を読み込みます*Avc.sys* I/O コントロール (Ioctl) を使用してアプリケーション制御など、INF ファイルに指定されているレジストリ設定に基づいて、仮想 AV/C サブユニットのサポートを提供します。 各インスタンス*Avc.sys*つまり仮想サブユニット登録 GUID の新しいインスタンスをサポートするために読み込まれた\_仮想\_AVC\_クラス デバイスのインターフェイス。 GUID の詳細については\_仮想\_AVC\_デバイス インターフェイスのクラスを参照してください[を使用して Avc.sys](using-avc-sys.md)と[ **IOCTL\_AVC\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560789)します。
 
-レジストリ AV/C (およびより一般的には IEEE 1394) を保存する永続的な方法は、仮想デバイスの構成が、仮想デバイスの構成する必要がありますいない手動で入力をレジストリにします。 代わりに、INF ファイルを使用してまたはこの Ioctl の組み合わせによっては、構成を設定する必要があります。 仮想デバイスの構成の詳細については、[AV/C デバイス Id](av-c-device-identifiers.md)と[仮想のサブユニット デバイス Id](virtual-subunit-device-identifiers.md)を参照してください。
+レジストリ AV/C (およびより一般的には IEEE 1394) を保存する永続的な方法は、仮想デバイスの構成が、仮想デバイスの構成する必要がありますいない手動で入力をレジストリにします。 代わりに、INF ファイルを使用してまたはこの Ioctl の組み合わせによっては、構成を設定する必要があります。 仮想デバイスの構成の詳細については、次を参照してください。 [AV/C デバイス Id](av-c-device-identifiers.md)と[仮想のサブユニット デバイス Id](virtual-subunit-device-identifiers.md)します。
 
 IEEE 1394 の仮想デバイスは、次のサポートを提供します。
 

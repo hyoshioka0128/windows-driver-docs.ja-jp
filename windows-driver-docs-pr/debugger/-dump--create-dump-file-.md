@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fa90f8f9e53325aada256104c3690cf30521250f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334538"
 ---
 # <a name="dump-create-dump-file"></a>.dump (ダンプ ファイルの作成)
 
@@ -43,7 +43,7 @@ ms.locfileid: "56530405"
 <span id="_f_FullOptions_"></span><span id="_f_fulloptions_"></span><span id="_F_FULLOPTIONS_"></span>**/f\[**<em>FullOptions</em>**\]**  
 (カーネル モード:)作成、[完全メモリ ダンプ](complete-memory-dump.md)します。
 
-(ユーザー モード:)作成、*フル ユーザー モード ダンプ*します。 詳細については、[さまざまなユーザー モード ダンプ ファイルの](user-mode-dump-files.md#varieties)を参照してください。 最大のミニダンプ ファイルには名前に関係なくフル ユーザー モード ダンプより多くの情報には実際が含まれています。 たとえば、 **.dump/mf**または **.dump/ma**よりも大きいとより完全なファイルを作成します。 **.dump/f**します。 ユーザー モードで **.dump** **/m\[**<em>MiniOptions</em> **\]** ことをお勧めは常に**します。/f をダンプ**します。
+(ユーザー モード:)作成、*フル ユーザー モード ダンプ*します。 詳細については、次を参照してください。[さまざまなユーザー モード ダンプ ファイルの](user-mode-dump-files.md#varieties)します。 最大のミニダンプ ファイルには名前に関係なくフル ユーザー モード ダンプより多くの情報には実際が含まれています。 たとえば、 **.dump/mf**または **.dump/ma**よりも大きいとより完全なファイルを作成します。 **.dump/f**します。 ユーザー モードで **.dump** **/m\[**<em>MiniOptions</em> **\]** ことをお勧めは常に**します。/f をダンプ**します。
 
 次を追加する*FullOptions*はダンプ ファイルの内容を変更するオプションは大文字小文字を区別します。
 
@@ -65,7 +65,7 @@ ms.locfileid: "56530405"
 |f|ミニダンプには、完全なメモリのデータを追加します。 ターゲット アプリケーションによって所有されているすべてのアクセス可能なコミットされたページにが含まれます。|
 |F|ミニダンプには、すべてのメモリの基本的な情報を追加します。 ミニダンプは、すべての基本的なメモリ情報、有効なメモリについてだけでなく情報を含むストリームに追加します。 これにより、デバッガーは、ミニダンプをデバッグするときに、プロセスの完全な仮想メモリ レイアウトを再構築できます。|
 |h|ミニダンプにターゲット アプリケーションに関連付けられたハンドルに関するデータを追加します。|
-|U|ミニダンプにアンロードされたモジュールの情報を追加します。 これは、Windows Server 2003 および Windows の以降のバージョンでのみ使用できます。|
+|u|ミニダンプにアンロードされたモジュールの情報を追加します。 これは、Windows Server 2003 および Windows の以降のバージョンでのみ使用できます。|
 |t|ミニダンプには、追加のスレッドの情報を追加します。 これを使用して表示できる、スレッド時間が含まれます、! ランナウェイ拡張機能または .ttime (スレッドの表示時間) コマンド、ミニダンプをデバッグするときにします。|
 |アイコン|ミニダンプには、2 次メモリを追加します。 セカンダリのメモリはスタックまたはバッキング ストア、およびこのアドレスを囲む小さな領域上のポインターによって参照される任意のメモリです。|
 |p|ミニダンプには、プロセスの環境ブロック (PEB) とスレッド環境ブロックの終了のデータを追加します。 これは、アプリケーションのプロセスとスレッドに関する Windows システム情報にアクセスする必要がある場合に役立ちます。 ことができます。|
@@ -80,7 +80,7 @@ ms.locfileid: "56530405"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-カーネル モードのダンプ ファイルの説明とその使用の詳細については、[カーネル モードのダンプ ファイル](kernel-mode-dump-files.md)を参照してください。 ユーザー モード ダンプ ファイルの説明とその使用の詳細については、[ユーザー モード ダンプ ファイル](user-mode-dump-files.md)を参照してください。
+カーネル モードのダンプ ファイルの説明とその使用の詳細については、次を参照してください。[カーネル モードのダンプ ファイル](kernel-mode-dump-files.md)します。 ユーザー モード ダンプ ファイルの説明とその使用の詳細については、次を参照してください。[ユーザー モード ダンプ ファイル](user-mode-dump-files.md)します。
 
 ## <a name="remarks"></a>注釈
 -------

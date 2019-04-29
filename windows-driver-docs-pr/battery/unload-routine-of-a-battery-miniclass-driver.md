@@ -1,6 +1,6 @@
 ---
-title: バッテリ Miniclass ドライバーをアンロード ルーチン
-description: バッテリ Miniclass ドライバーをアンロード ルーチン
+title: バッテリ ミニクラス ドライバーの Unload ルーチン
+description: バッテリ ミニクラス ドライバーの Unload ルーチン
 ms.assetid: f0acbf94-95d1-4a9d-aafd-1f868c5560cc
 keywords:
 - バッテリ miniclass ドライバー WDK、ルーチン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 540aeff00daf0ac359b19a2fc7be4e075620b4f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335071"
 ---
-# <a name="unload-routine-of-a-battery-miniclass-driver"></a>バッテリ Miniclass ドライバーをアンロード ルーチン
+# <a name="unload-routine-of-a-battery-miniclass-driver"></a>バッテリ ミニクラス ドライバーの Unload ルーチン
 
 
 ## <span id="ddk_unload_routine_of_battery_miniclass_driver_dg"></span><span id="DDK_UNLOAD_ROUTINE_OF_BATTERY_MINICLASS_DRIVER_DG"></span>

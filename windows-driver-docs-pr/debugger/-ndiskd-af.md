@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c6498cfbe425af1020415d90f2421b8f516db4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336013"
 ---
-# <a name="ndiskdaf"></a>! ndiskd.af
+# <a name="ndiskdaf"></a>!ndiskd.af
 
 
 **! Ndiskd.af**拡張子 Connection-Oriented NDIS (いる CoNDIS) アドレス ファミリ (AF) が表示されます。
@@ -41,9 +41,9 @@ Ndiskd.dll
 <a name="remarks"></a>注釈
 -------
 
-いる CoNDIS の詳細については、[Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)を参照してください。
+いる CoNDIS の詳細については、次を参照してください。 [Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)します。
 
-いる CoNDIS アドレス ファミリの詳細については、[アドレス ファミリ](https://msdn.microsoft.com/windows/hardware/drivers/network/address-families)を参照してください。
+いる CoNDIS アドレス ファミリの詳細については、次を参照してください。[アドレス ファミリ](https://msdn.microsoft.com/windows/hardware/drivers/network/address-families)します。
 
 <a name="examples"></a>例
 --------

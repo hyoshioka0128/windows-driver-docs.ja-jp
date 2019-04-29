@@ -13,18 +13,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c65b3495e988217221753546a2a76c26b683f99a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328236"
 ---
 # <a name="creating-a-l2cap-client-connection-to-a-remote-device"></a>リモート デバイスへの L2CAP クライアント接続の作成
 
 
 L2CAP クライアント プロファイル ドライバーは、リモート デバイスへの接続を非同期コネクションレス リンク (ACL) を要求するプロファイルのドライバーです。 デバイスが接続を受け入れる場合、L2CAP クライアント プロファイル ドライバー接続への変更が通知されます。 たとえば、L2CAP クライアント プロファイル ドライバーは、リモート プリンターへの接続を要求できますでき、Bluetooth ドライバー スタックが、プリンターがオフにすると、プロファイルのドライバーに通知できますまたは削除、プリンターが要求を受け入れた後。
 
-L2CAP クライアント プロファイル ドライバー、プロトコル/サービス マルチプレクサー (PSM)、デバイスへの接続を要求するには、デバイスを使用するなど、リモート デバイスに関する情報が必要です。 プロファイルのクライアント ドライバーでは、サービスの探索プロトコル (SDP) Ddi、またはサービスの固定 PSM を通じてこの情報を取得できます。 この情報を取得する方法の詳細については、[SDP サービスの情報へのアクセス](accessing-sdp-service-information.md)を参照してください。
+L2CAP クライアント プロファイル ドライバー、プロトコル/サービス マルチプレクサー (PSM)、デバイスへの接続を要求するには、デバイスを使用するなど、リモート デバイスに関する情報が必要です。 プロファイルのクライアント ドライバーでは、サービスの探索プロトコル (SDP) Ddi、またはサービスの固定 PSM を通じてこの情報を取得できます。 この情報を取得する方法の詳細については、次を参照してください。 [SDP サービスの情報へのアクセス](accessing-sdp-service-information.md)します。
 
 クライアント プロファイルのドライバーが必要な情報、デバイスの詳細については、リモート デバイスへの接続を L2CAP を開始するには[をビルドし、送信](building-and-sending-a-brb.md)、 [ **BRB\_L2CA\_開いている\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff536615)要求。
 

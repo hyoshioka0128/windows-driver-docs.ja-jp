@@ -1,6 +1,6 @@
 ---
-title: 列挙子のデバイスと管理方法
-description: 列挙子のデバイスと管理方法
+title: 子デバイスと制御メソッドを列挙する
+description: 子デバイスと制御メソッドを列挙する
 ms.assetid: fe0553df-a5b9-46c4-8e1d-8b89a7d4ad67
 keywords:
 - ACPI デバイス WDK、列挙子のデバイス
@@ -10,13 +10,13 @@ keywords:
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: be30adb9728de68c69567f18d1f781de404b6f32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328830"
 ---
-# <a name="enumerating-child-devices-and-control-methods"></a>列挙子のデバイスと管理方法
+# <a name="enumerating-child-devices-and-control-methods"></a>子デバイスと制御メソッドを列挙する
 
 
 たとえば、デバイスであるオブジェクト 'ABCD'--という名前のデバイス ACPI 名前空間では、子オブジェクトは、デバイスの子デバイスまたはデバイスでサポートされているコントロールのメソッドであることができます。 親デバイスの子デバイスは、任意の子オブジェクトはさらに、再帰的にある子デバイスである子オブジェクトやメソッドを制御します。 たとえば、次の簡略化の ACPI 名前空間で ACPI 名前空間のルートで指定された '\\' オブジェクト 'ABCD' がデバイスを ACPI 名前空間のルートの直下の子であるとします。 さらに、デバイス 'ABCD' が 'CHL1' という名前の 2 つの直接の子デバイスと 'CHL2' と、子オブジェクトという名前の制御メソッドは '\_FOO '。 さらに、子デバイス 'CHL2' が 'CHL3' という名前の子デバイスとデバイス"CHL3"という名前のコントロール メソッドである子オブジェクトがあります '\_FOO '。

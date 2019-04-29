@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a820fcfb620faa1773f7aed5eddaf49da1b1aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334499"
 ---
-# <a name="exchain"></a>! exchain
+# <a name="exchain"></a>!exchain
 
 
 **! Exchain**拡張機能には、現在の例外ハンドラーのチェーンが表示されます。

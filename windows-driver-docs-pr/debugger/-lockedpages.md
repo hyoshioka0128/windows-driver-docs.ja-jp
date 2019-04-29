@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3716e6cfe9eae4d17759c226a1c5147cb2affb4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336167"
 ---
 # <a name="lockedpages"></a>!lockedpages
 
@@ -41,7 +41,7 @@ ms.locfileid: "56579936"
 
 Kdexts.dll
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 任意の時点での実行を停止するには、CTRL + BREAK (WinDbg) で、または (KD) では、CTRL + C キーを押します。

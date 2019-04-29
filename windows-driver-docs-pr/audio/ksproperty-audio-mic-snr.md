@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e80a0f799b700ba800e97b4d16372e16c36d742f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332995"
 ---
 # <a name="kspropertyaudiomicsnr"></a>KSPROPERTY\_オーディオ\_MIC\_SNR
 
@@ -51,7 +51,7 @@ KSPROPERTY\_オーディオ\_MIC\_SNR プロパティは、マイクの信号雑
 <td align="left"><p>X</p></td>
 <td align="left"><p>暗証番号 (pin) のインスタンス</p></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></td>
-<td align="left">長い</td>
+<td align="left">LONG</td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +69,7 @@ KSPROPERTY\_オーディオ\_MIC\_SNR プロパティ要求がステータスを
 
 オーディオ ドライバーには、それぞれのマイクのマイク SNR を取得できます。 このプロパティは、ドライバーから取得するには、この情報を使用します。
 
-音声認識エクスペリエンスを Windows 10 を正確に検出し、さまざまなデバイスでユーザーの音声を別のマイクと分析、Cortana など、OS は、入力信号の特定の特性を把握する必要があります。 その情報に基づいて、OS は有効な秘密度を計算し、入力信号を強化するために適切な向上を適用します。 詳細については、[音声をアクティブ化](https://msdn.microsoft.com/library/windows/hardware/mt593238)を参照してください。
+音声認識エクスペリエンスを Windows 10 を正確に検出し、さまざまなデバイスでユーザーの音声を別のマイクと分析、Cortana など、OS は、入力信号の特定の特性を把握する必要があります。 その情報に基づいて、OS は有効な秘密度を計算し、入力信号を強化するために適切な向上を適用します。 詳細については、次を参照してください。[音声をアクティブ化](https://msdn.microsoft.com/library/windows/hardware/mt593238)します。
 
 KSPROPERTY\_オーディオ\_MIC\_SNR は Windows 10 バージョン 1607 以降を使用できます。
 

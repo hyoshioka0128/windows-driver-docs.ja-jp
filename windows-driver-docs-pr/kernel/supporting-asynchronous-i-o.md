@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0087723df0b61e2ee506d69325a44bbd530069f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330564"
 ---
 # <a name="supporting-asynchronous-io"></a>非同期 I/O のサポート
 
@@ -31,7 +31,7 @@ I/O マネージャーは、(通常ユーザー モード アプリケーショ�
 
 ドライバーと呼ばれる、そのデバイス オブジェクトの特殊な部分で、現在の I/O 操作に関する状態情報を維持できる、[デバイス拡張機能](device-extensions.md)します。
 
-詳細については、[Irp の処理](handling-irps.md)と[入力/出力手法](i-o-programming-techniques.md)を参照してください。
+詳細については、次を参照してください。 [Irp の処理](handling-irps.md)と[入力/出力手法](i-o-programming-techniques.md)します。
 
  
 

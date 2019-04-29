@@ -1,16 +1,16 @@
 ---
-Description: This topic summarizes the new features and improvements for Universal Serial Bus (USB) client drivers in Windows 8.
+Description: このトピックでは、新機能と Windows 8 でのユニバーサル シリアル バス (USB) クライアント ドライバーの機能強化をまとめたものです。
 title: Windows 8 の新機能については、usb
 ms.date: 05/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 904d32f55ec988f23007672197298820c3643ff1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389194"
 ---
-# <a name="windows8-whats-new-for-usb"></a>Windows 8 の場合:USB の新機能については
+# <a name="windows8-whats-new-for-usb"></a>Windows 8:USB の新機能
 
 
 このトピックでは、新機能と Windows 8 でのユニバーサル シリアル バス (USB) クライアント ドライバーの機能強化をまとめたものです。
@@ -27,7 +27,7 @@ ms.locfileid: "56552614"
 -   [強化されたデバッグと診断機能](#enhanced-debugging-and-diagnostic-capabilities-----)
 -   [新しい USB 固有のエラー メッセージでデバイス マネージャー](#new-usb-specific-failure-messages-in-device-manager)
 
-一般的な USB の新機能については、[New for USB ドライバー](https://msdn.microsoft.com/library/windows/hardware/hh451212)を参照してください。
+一般的な USB の新機能については、次を参照してください。 [New for USB ドライバー](https://msdn.microsoft.com/library/windows/hardware/hh451212)します。
 
 ## <a name="new-driver-stack-for-usb-30-devices"></a>USB 3.0 デバイスで新しいドライバー スタック
 
@@ -40,7 +40,7 @@ Windows 8 では、USB 3.0 デバイスをサポートする新しい USB ドラ
 
 新しいドライバー スタックは、以前のバージョンの Windows オペレーティング システムでテストされ、構築された既存のクライアント ドライバーとの互換性を維持します。
 
-USB ドライバー スタックのアーキテクチャ ブロック図と新しいドライバーの簡単な説明を表示するには、[USB 3.0 ドライバー スタック アーキテクチャ](usb-3-0-driver-stack-architecture.md)を参照してください。
+USB ドライバー スタックのアーキテクチャ ブロック図と新しいドライバーの簡単な説明を表示するには、次を参照してください。 [USB 3.0 ドライバー スタック アーキテクチャ](usb-3-0-driver-stack-architecture.md)します。
 
 ## <a name="features-supported-by-the-new-stack"></a>新しいスタックでサポートされる機能
 
@@ -49,15 +49,15 @@ USB 3.0 デバイスの USB ドライバー スタックは、多くの新機能
 
 -   一括エンドポイントの静的なストリーム。
 
-    ストリームは、1 つの一括エンドポイントへの複数のデータ転送を実行することができます、クライアント ドライバーを提供します。 Windows 8 用 Windows Driver Kit (WDK) では、最大 255 一括エンドポイント ストリームするためのクライアント ドライバーを開くことができますを許可する新しいデバイス ドライバー インターフェイス (Ddi) を提供します。 ストリームが開かれた後、クライアント ドライバーと特定のストリームからのデータ転送を実行できます。 詳細については、[USB 一括エンドポイントで静的ストリームを開くおよび閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)を参照してください。
+    ストリームは、1 つの一括エンドポイントへの複数のデータ転送を実行することができます、クライアント ドライバーを提供します。 Windows 8 用 Windows Driver Kit (WDK) では、最大 255 一括エンドポイント ストリームするためのクライアント ドライバーを開くことができますを許可する新しいデバイス ドライバー インターフェイス (Ddi) を提供します。 ストリームが開かれた後、クライアント ドライバーと特定のストリームからのデータ転送を実行できます。 詳細については、次を参照してください。 [USB 一括エンドポイントで静的ストリームを開くおよび閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)します。
 
 -   連鎖 MDLs
 
-    クライアント ドライバーでは、連続したバッファーではなく MDLs のチェーンでペイロードを指定できます。 これにより、転送バッファー数、サイズ、およびバッファーの配置に関する制約を削除するため、物理メモリのセグメント化できます。 連鎖 MDLs を使用すると、ダブル バッファリングを回避するのでにデータ転送中にパフォーマンスが向上することができます。 詳細については、[チェーン MDL の送信方法](how-to-send-chained-mdls.md)を参照してください。
+    クライアント ドライバーでは、連続したバッファーではなく MDLs のチェーンでペイロードを指定できます。 これにより、転送バッファー数、サイズ、およびバッファーの配置に関する制約を削除するため、物理メモリのセグメント化できます。 連鎖 MDLs を使用すると、ダブル バッファリングを回避するのでにデータ転送中にパフォーマンスが向上することができます。 詳細については、次を参照してください。[チェーン MDL の送信方法](how-to-send-chained-mdls.md)します。
 
 -   関数を中断し、複合デバイス用のリモート ウェイク アップします。
 
-    機能は、開始および終了するその他の関数とは無関係に、低電力状態に複合デバイスの機能を使用できます。 関数のドライバーは、デバイスによって開始されたリモート ウェイク アップを要求することもできます。 このような要求は、複合デバイスの親のドライバーによって処理する必要があります。 リモート ウェイク アップ機能および Microsoft から提供された親ドライバー (Usbccgp.sys) のサポート関数を中断します。 WDK for Windows 8 では、これらの機能を実装するためにドライバーを親に置換できる Ddi を提供します。 詳細については、[複合ドライバーでは実装関数を中断する方法](how-to--implement-remote-and-function-wake-support.md)を参照してください。
+    機能は、開始および終了するその他の関数とは無関係に、低電力状態に複合デバイスの機能を使用できます。 関数のドライバーは、デバイスによって開始されたリモート ウェイク アップを要求することもできます。 このような要求は、複合デバイスの親のドライバーによって処理する必要があります。 リモート ウェイク アップ機能および Microsoft から提供された親ドライバー (Usbccgp.sys) のサポート関数を中断します。 WDK for Windows 8 では、これらの機能を実装するためにドライバーを親に置換できる Ddi を提供します。 詳細については、次を参照してください。[複合ドライバーでは実装関数を中断する方法](how-to--implement-remote-and-function-wake-support.md)します。
 
 ## <a name="client-contract-version-for-usb-client-drivers"></a>USB クライアント ドライバーのクライアントのコントラクトのバージョン
 
@@ -76,7 +76,7 @@ USBD のクライアントのコントラクトのバージョンを識別する
 ## <a name="new-routines-for-allocating-and-building-urbs"></a>割り当ておよび翻訳を構築するための新しいルーチン
 
 
-Windows 8 は、割り当て、書式設定、および翻訳を解放するための新しいルーチンを提供します。 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体は、USB ドライバー スタックによって割り当てられています。 基になるスタックが新しい USB ドライバー スタックの場合は、URB 不透明 URB コンテキストにペアリングされています。 USB ドライバー スタックでは、URB を追跡および処理を向上させるために、URB コンテキストを使用します。 ルーチンの詳細については、[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)を参照してください。
+Windows 8 は、割り当て、書式設定、および翻訳を解放するための新しいルーチンを提供します。 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体は、USB ドライバー スタックによって割り当てられています。 基になるスタックが新しい USB ドライバー スタックの場合は、URB 不透明 URB コンテキストにペアリングされています。 USB ドライバー スタックでは、URB を追跡および処理を向上させるために、URB コンテキストを使用します。 ルーチンの詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)します。
 
 新しいルーチンは次のとおりです。
 
@@ -90,7 +90,7 @@ Windows 8 は、割り当て、書式設定、および翻訳を解放するた�
 上記のルーチン、URB 割り当て KMDF 固有の新しいメソッドがあります。 KMDF ベースのクライアント ドライバーでは、ことをお勧めする次の項目を呼び出し、
 
 -   [ **WdfUsbTargetDeviceCreateUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439423)メソッド (の代わりに[ **USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250))、URB を割り当てることです。
--   [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439420)メソッド (の代わりに[ **USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)) を URB を割り当てるアイソクロナスを転送します。 これらの呼び出しでは、可変サイズの URB isochronous パケットが転送に必要な数に基づいているを割り当てます。 アイソクロナス転送の詳細については、[USB アイソクロナス エンドポイントへのデータの転送方法](transfer-data-to-isochronous-endpoints.md)を参照してください。
+-   [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439420)メソッド (の代わりに[ **USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)) を URB を割り当てるアイソクロナスを転送します。 これらの呼び出しでは、可変サイズの URB isochronous パケットが転送に必要な数に基づいているを割り当てます。 アイソクロナス転送の詳細については、次を参照してください。 [USB アイソクロナス エンドポイントへのデータの転送方法](transfer-data-to-isochronous-endpoints.md)します。
 
 ## <a name="new-user-mode-io-control-requests-for-usb-30-hubs"></a>USB 3.0 ハブで新しいユーザー モードの I/O 制御要求します。
 
@@ -110,7 +110,7 @@ Windows 8 では、USB 3.0 ハブとそのポートに関する情報を取得�
 ## <a name="new-compatible-id-for-winusb"></a>WinUSB の新しい互換性のある ID
 
 
-デバイスの製造元は、その Windows WinUSB デバイスとして、デバイスを認識するため、(Microsoft OS 機能記述子) のファームウェアで"WINUSB"を追加できます。 USB に Windows 8 で Winusb.inf が変更された\\MS\_COMP\_WINUSB デバイス識別子の文字列として。 その変更をデバイスが検出されるとすぐに、デバイスの機能のドライバーとして Winusb.sys を自動的に読み込む Windows を使用できます。 詳細については、[WinUSB デバイス](automatic-installation-of-winusb.md)を参照してください。
+デバイスの製造元は、その Windows WinUSB デバイスとして、デバイスを認識するため、(Microsoft OS 機能記述子) のファームウェアで"WINUSB"を追加できます。 USB に Windows 8 で Winusb.inf が変更された\\MS\_COMP\_WINUSB デバイス識別子の文字列として。 その変更をデバイスが検出されるとすぐに、デバイスの機能のドライバーとして Winusb.sys を自動的に読み込む Windows を使用できます。 詳細については、次を参照してください。 [WinUSB デバイス](automatic-installation-of-winusb.md)します。
 
 ## <a name="new-visual-studio-templates-for-usb-client-drivers-new-for-beta"></a>USB クライアント ドライバー用の新しい Visual Studio テンプレート *(\*ベータ版の新規)*
 
@@ -120,7 +120,7 @@ Microsoft Visual Studio 2012 を含む**USB ユーザー モード ドライバ�
 -   [最初、USB クライアント ドライバー (UMDF) を記述する方法](implement-driver-entry-for-a-usb-driver--umdf-.md)
 -   [最初、USB クライアント ドライバー (KMDF) を記述する方法](tutorial--write-your-first-usb-client-driver--kmdf-.md)
 
-詳細については、[USB クライアント ドライバー開発入門](getting-started-with-usb-client-driver-development.md)を参照してください。 ドライバーを実行することによって拡張[USB クライアント ドライバーに関する一般的なタスク](wdk-resources-for-usb-driver-development.md)します。
+詳細については、次を参照してください。 [USB クライアント ドライバー開発入門](getting-started-with-usb-client-driver-development.md)します。 ドライバーを実行することによって拡張[USB クライアント ドライバーに関する一般的なタスク](wdk-resources-for-usb-driver-development.md)します。
 
 UMDF および KMDF ドライバーを実装する方法については、Microsoft Press の書籍を参照してください。 *、Windows Driver Foundation でのドライバーの開発*します。
 
@@ -137,7 +137,7 @@ Windows to Go 機能は、フラッシュ ドライブまたは外部ドライ�
 ## <a name="enhanced-debugging-and-diagnostic-capabilities"></a>強化されたデバッグと診断機能
 
 
-Windows 8 には、高速の USB 問題の診断を向上させるために、新しい USB 3.0 デバッグ ツールが用意されています。 USB 3.0 ホスト コント ローラーとデバイスの状態を調べる新しい USB 3.0 カーネル デバッガー拡張機能があります。 USB WPP と USB の相互作用を分析し、USB デバイスの問題のトラブルシューティングをより簡単にするトレース イベントを使用することができます。 Windows 8 では、USB 3.0 経由でのデバッグをサポートします。 詳細については、[設定を、USB 3.0 接続を手動で](https://msdn.microsoft.com/library/windows/hardware/hh439372)を参照してください。
+Windows 8 には、高速の USB 問題の診断を向上させるために、新しい USB 3.0 デバッグ ツールが用意されています。 USB 3.0 ホスト コント ローラーとデバイスの状態を調べる新しい USB 3.0 カーネル デバッガー拡張機能があります。 USB WPP と USB の相互作用を分析し、USB デバイスの問題のトラブルシューティングをより簡単にするトレース イベントを使用することができます。 Windows 8 では、USB 3.0 経由でのデバッグをサポートします。 詳細については、次を参照してください。[設定を、USB 3.0 接続を手動で](https://msdn.microsoft.com/library/windows/hardware/hh439372)します。
 
 ## <a name="new-usb-specific-failure-messages-in-device-manager"></a>新しい USB 固有のエラー メッセージでデバイス マネージャー
 

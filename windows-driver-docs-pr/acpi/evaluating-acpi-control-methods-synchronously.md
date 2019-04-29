@@ -1,6 +1,6 @@
 ---
-title: ACPI の制御メソッドを同期的に評価します。
-description: ACPI の制御メソッドを同期的に評価します。
+title: ACPI 制御メソッドを同期的に評価する
+description: ACPI 制御メソッドを同期的に評価する
 ms.assetid: 3fd8f7bd-bfae-4846-8051-3a0023d565e4
 keywords:
 - ACPI 制御メソッド WDK、同期的に評価します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 934819d87936d2ce2b705bc3090751284415d63c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328825"
 ---
-# <a name="evaluating-acpi-control-methods-synchronously"></a>ACPI の制御メソッドを同期的に評価します。
+# <a name="evaluating-acpi-control-methods-synchronously"></a>ACPI 制御メソッドを同期的に評価する
 
 
 デバイス ドライバーは、次のデバイス制御要求を使用して、デバイスを ACPI 名前空間で定義されている制御メソッドを同期的に評価できます。
@@ -52,7 +52,7 @@ ms.locfileid: "56532288"
 
 -   *デバイス オブジェクト*デバイスの物理デバイス オブジェクト (PDO) へのポインターに設定されます。
 
--   *InputBuffer*コントロール メソッドに渡される入力引数の型に依存する入力バッファーの構造体へのポインターに設定されます。 ACPI ドライバーには、引数を受け取らない入力、1 つの整数を取るを ASCII 文字列を受け取るまたはカスタムの入力引数の配列を受け取るメソッドがサポートしています。 入力バッファーがサポートされている構造体の詳細については、[制御メソッドの入力バッファーの構造](control-method-input-buffer-structures.md)を参照してください。
+-   *InputBuffer*コントロール メソッドに渡される入力引数の型に依存する入力バッファーの構造体へのポインターに設定されます。 ACPI ドライバーには、引数を受け取らない入力、1 つの整数を取るを ASCII 文字列を受け取るまたはカスタムの入力引数の配列を受け取るメソッドがサポートしています。 入力バッファーがサポートされている構造体の詳細については、次を参照してください。[制御メソッドの入力バッファーの構造](control-method-input-buffer-structures.md)します。
 
 -   *InputBufferLength*によって提供される入力バッファーのバイト単位のサイズに設定されている*InputBuffer*します。
 
@@ -66,6 +66,6 @@ ms.locfileid: "56532288"
 
 -   *IoStatusBlock*に設定されている、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)構造体。 下位レベルのドライバーによって設定された要求の状態が返されます。
 
-入力引数を受け取らないコントロールのメソッドを評価する方法のコード例では、[コントロール メソッドなし入力引数を評価する](evaluating-a-control-method-without-input-arguments.md)を参照してください。
+入力引数を受け取らないコントロールのメソッドを評価する方法のコード例では、次を参照してください。[コントロール メソッドなし入力引数を評価する](evaluating-a-control-method-without-input-arguments.md)します。
 
-入力引数を受け取るコントロール メソッドを評価する方法のコード例では、[コントロール メソッドは、その入力引数を評価する](evaluating-a-control-method-that-takes-input-arguments.md)を参照してください。
+入力引数を受け取るコントロール メソッドを評価する方法のコード例では、次を参照してください。[コントロール メソッドは、その入力引数を評価する](evaluating-a-control-method-that-takes-input-arguments.md)します。

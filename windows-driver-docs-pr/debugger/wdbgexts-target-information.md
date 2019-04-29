@@ -1,19 +1,19 @@
 ---
-title: WdbgExts ターゲットの情報
-description: WdbgExts ターゲットの情報
+title: WdbgExts のターゲット情報
+description: WdbgExts のターゲット情報
 ms.assetid: 70b26047-2f3a-4d35-861f-a9ca17d1d5f9
 keywords:
 - WdbgExts 拡張機能します。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35aea6028bf91426673da3743f34991742e928ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325844"
 ---
-# <a name="wdbgexts-target-information"></a>WdbgExts ターゲットの情報
+# <a name="wdbgexts-target-information"></a>WdbgExts のターゲット情報
 
 
 ターゲットがメモリ アドレスの 32 ビットまたは 64 ビットのポインターを使用するかどうかを判断する関数を使用して[ **IsPtr64**](https://msdn.microsoft.com/library/windows/hardware/ff551094)します。

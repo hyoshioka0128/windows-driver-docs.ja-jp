@@ -1,17 +1,17 @@
 ---
-title: 読み込みとアンロード WIA ミニドライバー
-description: 読み込みとアンロード WIA ミニドライバー
+title: WIA ミニドライバーのロードとアンロード
+description: WIA ミニドライバーのロードとアンロード
 ms.assetid: a5f930c3-f92c-498a-a334-b5eb60fbd61b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26978081c3a9afbb3d9e4a1fce13ca7a68033a5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384550"
 ---
-# <a name="loading-and-unloading-a-wia-minidriver"></a>読み込みとアンロード WIA ミニドライバー
+# <a name="loading-and-unloading-a-wia-minidriver"></a>WIA ミニドライバーのロードとアンロード
 
 
 

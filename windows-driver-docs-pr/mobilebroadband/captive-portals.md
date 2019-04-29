@@ -1,17 +1,17 @@
 ---
-title: Captive ポータル
-description: Captive ポータル
+title: キャプティブ ポータル
+description: キャプティブ ポータル
 ms.assetid: 6f710440-3012-4bf4-92cc-3743b0f4fd34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a014465c600787e2c878dd17a3c572607a338128
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392976"
 ---
-# <a name="captive-portals"></a>Captive ポータル
+# <a name="captive-portals"></a>キャプティブ ポータル
 
 
 ほとんどのホット スポットでは、制限されたネットワーク接続するすべてのクライアントの HTTP 要求がプロバイダーの web サイトにリダイレクトされます、captive portal を使用する顧客との対話を実装します。 Web サイトでは、オペレーターの条項および条件に同意するユーザー、お支払い情報を入力するかを以前の支払の並べ替え方法を確認します。 資格情報を入力し、ことができます。
@@ -55,7 +55,7 @@ False の正の値または false ネガティブ テスト結果を避けるた
 ## <a name="span-idtouchfrspanspan-idtouchfrspantouch-friendly-web-pages"></a><span id="touchfr"></span><span id="TOUCHFR"></span>タッチ操作に適した web ページ
 
 
-Windows 8、Windows 8.1、および Windows 10 エクスペリエンスはタッチ ファーストに設計されています。 これは、web ページに拡張されます。 タッチ ユーザーより大規模でターゲットへのコントロールと、web ページをレイアウトするために検討してください。 過剰なにスクロールすると、対話を必要としないようにし必要に応じて、複数のページにフローを中断するレイアウトを使用します。 タッチ操作に適した web デザインの詳細については、[タッチ入力のための設計](https://msdn.microsoft.com/library/windows/apps/hh465415.aspx)を参照してください。
+Windows 8、Windows 8.1、および Windows 10 エクスペリエンスはタッチ ファーストに設計されています。 これは、web ページに拡張されます。 タッチ ユーザーより大規模でターゲットへのコントロールと、web ページをレイアウトするために検討してください。 過剰なにスクロールすると、対話を必要としないようにし必要に応じて、複数のページにフローを中断するレイアウトを使用します。 タッチ操作に適した web デザインの詳細については、次を参照してください。[タッチ入力のための設計](https://msdn.microsoft.com/library/windows/apps/hh465415.aspx)します。
 
 ## <a name="span-idpapspanspan-idpapspanprovision-after-purchase"></a><span id="pap"></span><span id="PAP"></span>購入後にプロビジョニングします。
 

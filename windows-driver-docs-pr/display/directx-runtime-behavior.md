@@ -1,19 +1,19 @@
 ---
-title: DirectX のランタイム動作
-description: DirectX のランタイム動作
+title: DirectX ランタイムの動作
+description: DirectX ランタイムの動作
 ms.assetid: 98cfb09c-74ed-4329-b663-5f813a84debe
 keywords:
 - DirectX のランタイム回転 WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 372583ec4dba115e3a086f43a8d259ecc442cca0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327936"
 ---
-# <a name="directx-runtime-behavior"></a>DirectX のランタイム動作
+# <a name="directx-runtime-behavior"></a>DirectX ランタイムの動作
 
 
 Microsoft DirectX のランタイムのさまざまなバージョンでは、ドライバーの代わりに次の回転状況を処理します。

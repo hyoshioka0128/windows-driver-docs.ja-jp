@@ -1,6 +1,6 @@
 ---
-title: 基本的なトレース セッションのオプションを設定する方法
-description: 基本的なトレース セッションのオプションを設定する方法
+title: トレース セッションの基本オプションの設定方法
+description: トレース セッションの基本オプションの設定方法
 ms.assetid: e19207df-ff4d-4083-85cf-b5b5b3e62f2c
 keywords:
 - WDK、基本的なオプションのセッションをトレースします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a616d3476064271574e1e7f6bc06efe885b1e000
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330638"
 ---
-# <a name="how-to-set-basic-trace-session-options"></a>基本的なトレース セッションのオプションを設定する方法
+# <a name="how-to-set-basic-trace-session-options"></a>トレース セッションの基本オプションの設定方法
 
 
 この手順を使用すると、トレース セッションを作成するときに基本的なトレース セッションのオプションを設定できます。

@@ -5,11 +5,11 @@ ms.assetid: a9a11663-d5e5-4337-8be3-bdb6d3b0e436
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd5b84ee161ae558137b327c23376aeff7e7aa07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331209"
 ---
 # <a name="asynchronous-user-notification-schema"></a>非同期のユーザー通知のスキーマ
 

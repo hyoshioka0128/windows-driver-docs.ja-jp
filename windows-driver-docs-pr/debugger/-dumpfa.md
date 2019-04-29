@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d911ea3688c737d3ddcf6698eaeb3460e725954b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334559"
 ---
 # <a name="dumpfa"></a>!dumpfa
 
@@ -57,7 +57,7 @@ ms.locfileid: "56578161"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **.Dumpfa**拡張機能のデバッグにのみ便利ですが、 [ **! 分析**](-analyze.md)拡張機能で、次の例を示します。

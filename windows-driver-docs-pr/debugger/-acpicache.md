@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a5e2600a8a4d9b218e3c2153cf3d476c5861d46a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334827"
 ---
-# <a name="acpicache"></a>! acpicache
+# <a name="acpicache"></a>!acpicache
 
 
 **! Acpicache**拡張機能では、すべての HAL によってキャッシュされる Advanced Configuration and Power Interface (ACPI) のテーブルが表示されます。

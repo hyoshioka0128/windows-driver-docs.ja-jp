@@ -1,19 +1,19 @@
 ---
-title: DirectSound ハードウェア高速化の概要
-description: DirectSound ハードウェア高速化の概要
+title: DirectSound ハードウェア アクセラレータの概要
+description: DirectSound ハードウェア アクセラレータの概要
 ms.assetid: 1f18f88a-2dd6-4b7a-b083-f43ab58571b3
 keywords:
 - ハードウェア アクセラレータ WDK DirectSound、DirectSound ハードウェア アクセラレータについて
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 610712f39e8837e7ce687c0147b12b8ee450f1fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332237"
 ---
-# <a name="overview-of-directsound-hardware-acceleration"></a>DirectSound ハードウェア高速化の概要
+# <a name="overview-of-directsound-hardware-acceleration"></a>DirectSound ハードウェア アクセラレータの概要
 
 
 ## <span id="overview_of_directsound_hardware_acceleration"></span><span id="OVERVIEW_OF_DIRECTSOUND_HARDWARE_ACCELERATION"></span>
@@ -37,7 +37,7 @@ DirectSound ハードウェア アクセラレーションを使ったデバイ�
 
 詳細については、音声の管理、Microsoft Windows SDK ドキュメントの説明を参照してください。
 
-DirectSound は、ハードウェア ミキサー ピンの 2 つの種類を使用できます。2D および 3D です。 SRC、減衰の混在しますが、いない 3D 配置 2D 暗証番号 (pin) を実行します。 DirectSound は、ソフトウェアの減衰と頻度のために必要な計算を実行する、2D の暗証番号 (pin) の適切なノードに結果を適用して 3D 配置を行う 2D 暗証番号 (pin) を使用できます。 これに対し、3D の pin には、これを行うには DirectSound で使用する代わりに 3D バッファーと 3D リスナーのプロパティから直接、独自の 3D 効果を計算することである 3D ノードが含まれています。 3D のノードのプロパティの一覧では、[ **KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)を参照してください。 2D と 3D の pin の詳細については、[WDM オーディオでは 2D DirectSound アクセラレーションをサポートしている](supporting-2d-directsound-acceleration-in-wdm-audio.md)と[WDM オーディオでは 3D DirectSound アクセラレーションをサポートしている](supporting-3d-directsound-acceleration-in-wdm-audio.md)を参照してください。
+DirectSound は、ハードウェア ミキサー ピンの 2 つの種類を使用できます。2D および 3D です。 SRC、減衰の混在しますが、いない 3D 配置 2D 暗証番号 (pin) を実行します。 DirectSound は、ソフトウェアの減衰と頻度のために必要な計算を実行する、2D の暗証番号 (pin) の適切なノードに結果を適用して 3D 配置を行う 2D 暗証番号 (pin) を使用できます。 これに対し、3D の pin には、これを行うには DirectSound で使用する代わりに 3D バッファーと 3D リスナーのプロパティから直接、独自の 3D 効果を計算することである 3D ノードが含まれています。 3D のノードのプロパティの一覧では、次を参照してください。 [ **KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)します。 2D と 3D の pin の詳細については、次を参照してください。 [WDM オーディオでは 2D DirectSound アクセラレーションをサポートしている](supporting-2d-directsound-acceleration-in-wdm-audio.md)と[WDM オーディオでは 3D DirectSound アクセラレーションをサポートしている](supporting-3d-directsound-acceleration-in-wdm-audio.md)します。
 
  
 

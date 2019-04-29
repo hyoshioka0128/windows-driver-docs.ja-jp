@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 127a1465808b6a4add79ad70f3d323547270f393
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336442"
 ---
 # <a name="ihs"></a>!ihs
 
@@ -62,7 +62,7 @@ ms.locfileid: "56571464"
 
 この拡張機能のコマンドは、Itanium のターゲット コンピューターでのみ使用できます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 プログラム カウンターのシンボルを使用せず、割り込みの履歴レコードを表示するには、使用、 [ **! 組み込み**](-ih.md)拡張機能。 割り込みの履歴レコードを有効にするには追加 **/configflag = 32**ブート エントリのオプションにします。

@@ -1,6 +1,6 @@
 ---
-title: ネットワーク モジュールの添付ファイル
-description: ネットワーク モジュールの添付ファイル
+title: ネットワーク モジュールのアタッチ
+description: ネットワーク モジュールのアタッチ
 ms.assetid: 4b3602dd-a9cf-4cb6-bfeb-d2d74d2f391d
 keywords:
 - ネットワーク モジュール WDK ネットワーク モジュールの登録、添付ファイル
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06aff6e1dd570eb521bd60394cc5d236bdf6cbf1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331910"
 ---
-# <a name="network-module-attachment"></a>ネットワーク モジュールの添付ファイル
+# <a name="network-module-attachment"></a>ネットワーク モジュールのアタッチ
 
 
 前に、[クライアント モジュール](client-module.md)と[プロバイダー モジュール](provider-module.md)関連付けることができます、互いに各登録が必要な自体、NMR とします。 クライアント モジュールを呼び出すことによって、NMR で登録、 [ **NmrRegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568782)関数とプロバイダーを呼び出すことによって、NMR モジュールに登録、 [ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784)関数。 次の図は、ネットワーク モジュールの登録を示します。

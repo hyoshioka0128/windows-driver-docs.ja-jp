@@ -1,6 +1,6 @@
 ---
-title: シンボルの構文と一致するシンボル
-description: シンボルの構文と一致するシンボル
+title: シンボルの構文とシンボルの照合
+description: シンボルの構文とシンボルの照合
 ms.assetid: 7fda24bf-57be-4c7d-9eff-bd688de7cf1b
 keywords:
 - シンボル、シンボルの構文
@@ -13,13 +13,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07451ed31f6d92f26ebbadfbddadd9ca6bf6f932
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335498"
 ---
-# <a name="symbol-syntax-and-symbol-matching"></a>シンボルの構文と一致するシンボル
+# <a name="symbol-syntax-and-symbol-matching"></a>シンボルの構文とシンボルの照合
 
 
 ## <span id="ddk_symbol_syntax_and_symbol_matching_dbg"></span><span id="DDK_SYMBOL_SYNTAX_AND_SYMBOL_MATCHING_DBG"></span>
@@ -45,7 +45,7 @@ ms.locfileid: "56558347"
 
 -   C++ の式では、各シンボルはその型に従って解釈されます。 シンボルが参照する対象、によって、整数、データ構造体、関数ポインター、またはその他の任意のデータ型として解釈可能性があります。 シンボル (変更されていないモジュール名) などの C++ データ型に対応するいないと、構文エラーが発生します。
 
-各種類の構文を使用するタイミングと方法の詳細については、[を評価する式](evaluating-expressions.md)を参照してください。
+各種類の構文を使用するタイミングと方法の詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
 
 MASM 式の構文、レジスタ、または 16 進数として解釈できます任意のシンボルを使用している場合 (例: **BadFeed**、 **ebX**) 常に感嘆符を付ける必要があります。 これにより、デバッガーがシンボルとして認識します。
 

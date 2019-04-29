@@ -1,6 +1,6 @@
 ---
-title: ジェネリック識別子
-description: ジェネリック識別子
+title: 汎用識別子
+description: 汎用識別子
 ms.assetid: 75dab2fc-e897-4bce-b719-98ad89817fca
 keywords:
 - デバイスの識別文字列 WDK、ジェネリック
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd70bbbf262ee75cd713ff4651a07c6321cc8189
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392481"
 ---
-# <a name="generic-identifiers"></a>ジェネリック識別子
+# <a name="generic-identifiers"></a>汎用識別子
 
 
 

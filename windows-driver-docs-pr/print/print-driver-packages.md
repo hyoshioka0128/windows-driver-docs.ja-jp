@@ -1,6 +1,6 @@
 ---
-title: プリンター ドライバー パッケージ
-description: プリンター ドライバー パッケージ
+title: 印刷ドライバー パッケージ
+description: 印刷ドライバー パッケージ
 ms.assetid: 902e1634-e705-4902-baab-a93818288b08
 keywords:
 - ドライバー WDK プリンター、パッケージをインストールします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bea539224ece6f6c75b36b799e5478879a8b10c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389475"
 ---
-# <a name="print-driver-packages"></a>プリンター ドライバー パッケージ
+# <a name="print-driver-packages"></a>印刷ドライバー パッケージ
 
 
 Windows Vista では、セットアップと、印刷インフラストラクチャは、可能であれば完全なドライバー パッケージを使用します。 ドライバー パッケージは、Windows でサポートされるデバイスの順序で指定する必要がありますすべてのハードウェアおよびソフトウェア コンポーネントで構成されます。

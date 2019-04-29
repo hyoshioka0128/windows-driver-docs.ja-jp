@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8048abb14498e3a9bf0c4a8c15fe4bb68e73637d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332478"
 ---
 # <a name="kspropsetidsynthdls"></a>KSPROPSETID\_シンセサイザー\_Dls
 
@@ -60,7 +60,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_追加プロパティをシンセサイ�
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
@@ -84,7 +84,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_追加プロパティの要求がステ�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -150,7 +150,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_COMPACT プロパティ要求がステ�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -194,7 +194,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_DLS データ シンセサイザーを�
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong> </a> + <a href="https://msdn.microsoft.com/library/windows/hardware/ff538460" data-raw-source="[&lt;strong&gt;SYNTH_BUFFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538460)"> <strong>SYNTH_BUFFER</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538429" data-raw-source="[&lt;strong&gt;SYNTHDOWNLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538429)"><strong>SYNTHDOWNLOAD</strong></a></p></td>
@@ -224,7 +224,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_プロパティのダウンロード要�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -330,7 +330,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_アンロード プロパティ要求が
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -384,7 +384,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_WAVEFORMAT プロパティを使用し�
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538799" data-raw-source="[&lt;strong&gt;WAVEFORMATEX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538799)"><strong>WAVEFORMATEX</strong></a></p></td>
@@ -408,7 +408,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_WAVEFORMAT プロパティ要求がス�
 <thead>
 <tr class="header">
 <th align="left">状態コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

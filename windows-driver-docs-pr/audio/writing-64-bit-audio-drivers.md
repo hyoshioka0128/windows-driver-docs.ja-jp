@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e467697d1e495fef1fb2553c5d3af67dde6daf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328448"
 ---
 # <a name="writing-64-bit-audio-drivers"></a>64 ビット オーディオ ドライバーの作成
 
@@ -68,7 +68,7 @@ ms.locfileid: "56580334"
     ulSlotPhysAddr[0] = PtrToUlong(pulPhysDmaBuffer) + DMA_BUFFER_SIZE;  // correct
 ```
 
-これは、方法が望ましい場合でも`ulSlotPhysAddr`32 のみであるハードウェア レジスタの値を表すことができます 64 ビット長ではなく。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、[、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)を参照してください。
+これは、方法が望ましい場合でも`ulSlotPhysAddr`32 のみであるハードウェア レジスタの値を表すことができます 64 ビット長ではなく。 すべての新しい Win64 ヘルパー関数ポインターと整数型間の変換については、次を参照してください。 [、新しいデータ型](https://msdn.microsoft.com/library/windows/hardware/ff564619)します。
 
  
 

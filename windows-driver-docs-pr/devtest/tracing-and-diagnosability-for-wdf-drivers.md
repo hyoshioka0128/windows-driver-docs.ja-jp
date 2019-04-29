@@ -1,24 +1,24 @@
 ---
-title: トレースと診断の WDF ドライバー
+title: WDF ドライバーのトレースと診断能力
 description: このホワイト ペーパーでは、Windows Driver Foundation (WDF) ドライバーでは、Windows ソフトウェア トレース プリプロセッサ (WPP) を使用してイベントのトレースを実装する方法について説明します。
 ms.assetid: C89A218F-3E73-4D3E-8F53-5D52E97711EF
 ms.date: 07/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ccf50f665a9025c01bfbc5f9cb3657a578c0110
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392702"
 ---
-# <a name="tracing-and-diagnosability-for-wdf-drivers"></a>トレースと診断の WDF ドライバー
+# <a name="tracing-and-diagnosability-for-wdf-drivers"></a>WDF ドライバーのトレースと診断能力
 
 
 **最終更新日。**
 
 -   2008 年 10 月 19 日
 
-**適用対象します。**
+**適用対象:**
 
 -   Windows Server 2008
 -   Windows Vista

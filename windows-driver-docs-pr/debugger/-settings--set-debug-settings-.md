@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ed27d34f56ab44d8b9e2170a02cae120d218eb4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334247"
 ---
 # <a name="settings-set-debug-settings"></a>.settings (デバッグ設定の指定)
 
@@ -52,7 +52,7 @@ ms.locfileid: "56574676"
 <span id="_______NAMESPACE.SETTING__VALUE______"></span> **namespace.setting+=value**   
 新しい値が、指定に追加されます (なく置き換える) 以前の値。
 
-例:
+以下に例を示します。
 
 `.settings set Extensions.ExtensionSearchPath+=";C:\\MyExtension\\"`
 
@@ -118,7 +118,7 @@ XML 設定ファイルからすべての設定を読み込みます。 設定を
 
 自動保存が有効にすると Debugger.Settings 名前空間の設定が自動的に保存、デバッガーを終了するときにします。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 他のユーザーがそのデバッグ設定を複製すると、デバッグ xml 設定ファイルを交換することができます。

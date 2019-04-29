@@ -1,6 +1,6 @@
 ---
-title: ワイルドカード
-description: ワイルドカード
+title: ワイルド カード
+description: ワイルド カード
 ms.assetid: fc42fb2d-8df9-47d6-9034-c0588ee81c95
 keywords:
 - 交差部分のデータ ハンドラーの WDK オーディオ、ワイルド カード
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0634f49d3f60dec7ff690f6dd72cf29d149dfe73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328454"
 ---
-# <a name="wild-cards"></a>ワイルドカード
+# <a name="wild-cards"></a>ワイルド カード
 
 
 ## <span id="wild_cards"></span><span id="WILD_CARDS"></span>

@@ -5,11 +5,11 @@ ms.assetid: 3ffcd769-253f-4918-8095-a9206445a201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbf7dc1f67600a9deccc4773d733330654744c7a
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386916"
 ---
 # <a name="account-provisioning"></a>アカウントのプロビジョニング
 
@@ -19,7 +19,7 @@ ms.locfileid: "58349271"
 
 ![xml ファイルの階層のプロビジョニング](images/mb-provisioningmetadata.jpg)
 
-プロビジョニングのスキーマの詳細については、[CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)を参照してください。
+プロビジョニングのスキーマの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
 
 ## <a name="updating-the-provisioning-metadata"></a>プロビジョニングのメタデータを更新します。
 
@@ -75,13 +75,13 @@ Web サイトを使用してプロビジョニング データを指定できま
 
 - [許可されている組み合わせ](#permitted-combinations)
 
-これらのセクションの詳細については、[CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)を参照してください。
+これらのセクションの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
 
 ### <a name="global"></a>グローバル
 
 グローバル セクションは、プロビジョニングのすべてのファイルに必要です。 このセクションで必要な要素は次のとおりです。
 
-- [**CarrierId** ](https://msdn.microsoft.com/library/windows/apps/hh868288)ファイルを作成した組織を一意に識別する GUID。 モバイル ブロード バンドのアプリを構築する場合で指定した GUID を使用する必要があります、[サービス数](https://msdn.microsoft.com/library/windows/hardware/dn236413)フィールド**ServiceInfo.xml**サービス メタデータ パッケージにします。 サービス メタデータ パッケージのスキーマについては、[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)を参照してください。
+- [**CarrierId** ](https://msdn.microsoft.com/library/windows/apps/hh868288)ファイルを作成した組織を一意に識別する GUID。 モバイル ブロード バンドのアプリを構築する場合で指定した GUID を使用する必要があります、[サービス数](https://msdn.microsoft.com/library/windows/hardware/dn236413)フィールド**ServiceInfo.xml**サービス メタデータ パッケージにします。 サービス メタデータ パッケージのスキーマについては、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
 
   > [!NOTE]
   > これは、同じサービス数で指定した、**作成モバイル ブロード バンド エクスペリエンス ウィザード**Windows デベロッパー センターのダッシュ ボードでハードウェア。
@@ -153,7 +153,7 @@ Windows が、モバイル ブロード バンド ネットワークを表示す
 
 - 正規表現
 
-SMS 通知の詳細については、[mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)を参照してください。
+SMS 通知の詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)します。
 
 各ルールには、次の情報が含まれています。
 

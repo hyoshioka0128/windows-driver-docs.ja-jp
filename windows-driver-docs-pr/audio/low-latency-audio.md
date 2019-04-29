@@ -5,11 +5,11 @@ ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e732a2310e8461d0e120ce7b7dcbfe924abaaec0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332421"
 ---
 # <a name="low-latency-audio"></a>低待機時間オーディオ
 
@@ -98,7 +98,7 @@ Windows 10 には、オーディオの待機時間を短縮する変更が含ま
 レンダリング パスで待機時間の概要を次に示します。
 
 1. アプリケーションでは、バッファーにデータを書き込みます
-2. オーディオ エンジンは、バッファーからデータが読み取られ、処理します。 また、オーディオ処理オブジェクト (APOs) の形式のオーディオ エフェクトを読み込みます。 パスワードの詳細については、[Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)を参照してください。
+2. オーディオ エンジンは、バッファーからデータが読み取られ、処理します。 また、オーディオ処理オブジェクト (APOs) の形式のオーディオ エフェクトを読み込みます。 パスワードの詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)します。
 3. APOs の待機時間は、信号、APOs 内で処理によって異なります。
 4. Windows 10 では、前に、オーディオ エンジンの待機時間が ~ 浮動小数点データを使用するアプリケーション/、~ 六整数型のデータを使用するアプリケーションと一致しません
 5. Windows 10 では、すべてのアプリケーションに対して 1.3ms に、待機時間が短縮されました

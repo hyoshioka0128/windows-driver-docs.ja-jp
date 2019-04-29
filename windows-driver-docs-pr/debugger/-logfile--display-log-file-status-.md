@@ -1,5 +1,5 @@
 ---
-title: .logfile (ログ ファイルの表示状態)
+title: .logfile (ログ ファイル状態の表示)
 description: .Logfile コマンドは、ログ ファイルが存在し、ファイルの状態を表示するかどうかを判断します。
 ms.assetid: 30aaa2bc-2ae5-474f-871b-3e3a164b2dee
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 251c841f29888c60dcff90401c647442dffe289d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336130"
 ---
-# <a name="logfile-display-log-file-status"></a>.logfile (ログ ファイルの表示状態)
+# <a name="logfile-display-log-file-status"></a>.logfile (ログ ファイル状態の表示)
 
 
 **.Logfile**コマンドは、ログ ファイルが存在し、ファイルの状態を表示するかどうかを決定します。

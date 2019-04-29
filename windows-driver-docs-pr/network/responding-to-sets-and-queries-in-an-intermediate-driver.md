@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 072a9df35fced3723389e304ce4d0b59df5457dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391637"
 ---
 # <a name="responding-to-sets-and-queries-in-an-intermediate-driver"></a>中間ドライバーでの設定およびクエリへの応答
 
@@ -35,7 +35,7 @@ OID、要求をキャンセルする、 [ **NdisCancelOidRequest** ](https://msd
 
  
 
-セットと、中間ドライバーでのクエリに応答する方法の詳細については、[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)を参照してください。
+セットと、中間ドライバーでのクエリに応答する方法の詳細については、次を参照してください。[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
 
  
 

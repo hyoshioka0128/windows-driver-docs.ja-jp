@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 284a82ef6c11bc0faba44057de5c10735638fb03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332640"
 ---
 # <a name="kspropertysounddetectorpatterns"></a>KSPROPERTY\_SOUNDDETECTOR\_パターン
 
@@ -39,16 +39,16 @@ ms.locfileid: "56582233"
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441)"><strong>KSMULTIPLE_ITEM</strong></a></p></td>
@@ -68,7 +68,7 @@ OS をキーワード パターンを設定または空の値に設定可能性�
 
 プロパティの値は、 [ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)構造体の後にアラインされた検出の 64 ビット パターンのシーケンス。 各パターンで始まる、 [ **SOUNDDETECTOR\_PATTERNHEADER** ](https://msdn.microsoft.com/library/windows/hardware/dn957513)パターン ペイロードを続けています。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ドライバーはまで"set"要求を完了できません。
@@ -83,7 +83,7 @@ OS を回避するには、この動作が必要ですキーワードとキー�
 
 OS は、2 秒以上でこの要求を完了するを待機します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

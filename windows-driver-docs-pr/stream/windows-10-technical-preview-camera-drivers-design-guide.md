@@ -5,11 +5,11 @@ ms.assetid: CB5EEDF2-650D-4CD3-A5DE-DF0D6F10B394
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30be0220c48c29aff792afc99f7196dbba7ae793
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329942"
 ---
 # <a name="universal-camera-driver-design-guide-for-windows-10"></a>Windows 10 用のユニバーサル カメラ ドライバー設計のガイド
 
@@ -18,16 +18,16 @@ Windows 10 用のカメラのドライバー インターフェイスはすべ�
 
 ユニバーサル カメラ ドライバー モデルには、新しい Ddi などが含まれています。
 
-* [デジタル ビデオ安定化](ksproperty-cameracontrol-extended-videostabilization.md)
+* [デジタル ビデオ手ブレ補正](ksproperty-cameracontrol-extended-videostabilization.md)
 * [可変フレーム レート](ksproperty-cameracontrol-extended-vfr.md)
 * [顔検出](ksproperty-cameracontrol-extended-facedetection.md)
-* [ハイ ダイナミック レンジ (HDR) のビデオ](ksproperty-cameracontrol-extended-videohdr.md)
-* [光の安定化](ksproperty-cameracontrol-extended-ois.md)
-* [シーンの分析: HDR の写真、flash、超の低いライトを点滅なし](ksproperty-cameracontrol-extended-advancedphoto.md)
-* [統計情報をキャプチャしますメタデータ フレームワーク/属性のヒストグラム。](ksproperty-cameracontrol-extended-histogram.md)
-* [滑らかに拡大](ksproperty-cameracontrol-extended-zoom.md)
-* [ハードウェアの最適化ヒント](ksproperty-cameracontrol-extended-optimizationhint.md)
-* [カメラのプロファイル](ksproperty-cameracontrol-extended-profile.md)
+* [ハイ ダイナミック レンジ (HDR) ビデオ](ksproperty-cameracontrol-extended-videohdr.md)
+* [光学式手ブレ補正](ksproperty-cameracontrol-extended-ois.md)
+* [シーン分析: HDR 写真、フラッシュ/フラッシュなし、超ローライト](ksproperty-cameracontrol-extended-advancedphoto.md)
+* [統計情報のキャプチャ: メタデータ フレームワーク/属性、ヒストグラム](ksproperty-cameracontrol-extended-histogram.md)
+* [スムーズ ズーム](ksproperty-cameracontrol-extended-zoom.md)
+* [ハードウェア最適化のヒント](ksproperty-cameracontrol-extended-optimizationhint.md)
+* [カメラ プロファイル](ksproperty-cameracontrol-extended-profile.md)
 
 ## <a name="build-a-universal-camera-driver"></a>ユニバーサル カメラ ドライバーをビルドします。
 

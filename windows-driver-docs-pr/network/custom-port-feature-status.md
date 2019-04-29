@@ -5,11 +5,11 @@ ms.assetid: 87E88302-6FEA-4D71-A80D-E7AD6D42C0BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 34ba24ba8744b3b2814f6a58fd8c2291044207d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326030"
 ---
 # <a name="custom-port-feature-status"></a>カスタム ポート機能の状態
 
@@ -60,7 +60,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_CustomPortData.mof
 net start vmms
 ```
 
-MOF コンパイラを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)を参照してください。
+MOF コンパイラを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)します。
 
 次の例では、ポートのデータを取得するカスタム ポート機能の状態の定義を使用する方法を示します。 この例では、Fabrikam\_CustomPortData MOF クラスを使用して"TestVm"という名前の HYPER-V パーティションからポートの状態を取得します。 Fabrikam, Inc. の拡張機能では、vSwitch"TestSwitch"が有効になり、123 の状態を返すことができます。
 

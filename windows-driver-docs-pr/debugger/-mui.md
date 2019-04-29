@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ea2ef45f04ede7e83ae51252ca7cffb655da1f88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336037"
 ---
-# <a name="mui"></a>! mui
+# <a name="mui"></a>!mui
 
 
 **! Mui**拡張機能には、Multilingual User Interface (MUI) のキャッシュ情報が表示されます。 

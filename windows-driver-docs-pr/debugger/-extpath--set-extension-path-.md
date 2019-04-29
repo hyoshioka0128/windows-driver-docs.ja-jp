@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 10fe37d68e0240461f34f5ba75b3ce145b4a9ccc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334485"
 ---
 # <a name="extpath-set-extension-path"></a>.extpath (拡張機能のパスの設定)
 
@@ -64,7 +64,7 @@ ms.locfileid: "56573267"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-拡張 Dll の読み込みと拡張機能の検索パスの詳細については、[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)を参照してください。
+拡張 Dll の読み込みと拡張機能の検索パスの詳細については、次を参照してください。[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。
 
 <a name="remarks"></a>コメント
 -------

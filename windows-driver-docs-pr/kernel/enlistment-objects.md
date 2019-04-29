@@ -1,6 +1,6 @@
 ---
-title: 参加リストのオブジェクト
-description: 参加リストのオブジェクト
+title: 登録オブジェクト
+description: 登録オブジェクト
 ms.assetid: 80e61475-4bb7-4eaa-b9f1-ff95eac9bc77
 keywords:
 - WDK KTM 参加リスト
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a3bf610ad7d092481c462d9c453532543cb5231
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334053"
 ---
-# <a name="enlistment-objects"></a>参加リストのオブジェクト
+# <a name="enlistment-objects"></a>登録オブジェクト
 
 
 *参加オブジェクト*リソース マネージャーの表します[*参加*](transaction-processing-terms.md#ktm-term-enlistment)トランザクションにします。 リソース マネージャーは、トランザクションのイベントに関する通知を受け取ることができます、前に、resource manager を呼び出す必要があります[ **ZwCreateEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff566422)トランザクションに参加リストを作成します。

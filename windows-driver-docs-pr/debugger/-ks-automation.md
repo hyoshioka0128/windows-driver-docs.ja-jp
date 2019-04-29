@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f8a029c41e9f8c352ae6372d747580938837d96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336331"
 ---
 # <a name="ksautomation"></a>!ks.automation
 
@@ -57,7 +57,7 @@ ms.locfileid: "56529669"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)を参照してください。
+詳細については、次を参照してください。[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c00bc4286dfcecf80f497e8ec6c8fa7ef9f28da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334583"
 ---
-# <a name="devstack"></a>! devstack
+# <a name="devstack"></a>!devstack
 
 
 **! Devstack**拡張機能には、デバイス オブジェクトに関連付けられたデバイス スタックの書式設定されたビューが表示されます。

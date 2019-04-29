@@ -5,11 +5,11 @@ ms.assetid: DE2EABE7-2B7A-4DF9-82FD-EF19D69E31A7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45306cc5c78042d70bcf803ebe61abccdea0c8d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385057"
 ---
 # <a name="opening-a-dump-file-using-windbg"></a>WinDbg を使用してダンプ ファイルを開く
 
@@ -26,7 +26,7 @@ ms.locfileid: "56570272"
 
 **windbg -y** *SymbolPath* **-i** *ImagePath* **-z** *DumpFileName*
 
-**-V**オプション (詳細モード) も便利です。 コマンドライン構文の詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。
+**-V**オプション (詳細モード) も便利です。 コマンドライン構文の詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。
 
 ### <a name="span-iddebuggercommandwindowspanspan-iddebuggercommandwindowspanspan-iddebuggercommandwindowspandebugger-command-window"></a><span id="Debugger_Command_Window"></span><span id="debugger_command_window"></span><span id="DEBUGGER_COMMAND_WINDOW"></span>デバッガー コマンド ウィンドウ
 

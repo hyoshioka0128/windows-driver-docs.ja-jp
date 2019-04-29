@@ -1,17 +1,17 @@
 ---
-title: HF デバイスの Bluetooth のアドレスを取得します。
+title: HF デバイスの Bluetooth のアドレスの取得
 description: HF デバイス トピックの取得の Bluetooth アドレスは、オーディオ ドライバーがハンズフリー (HF) のペアになっているデバイスの Bluetooth のアドレスを取得する方法について説明します。
 ms.assetid: A3A33459-869A-4F75-B1B9-A3D59863E82C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87fd8e14ec3325145167ab48df43cde9e5c8953d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332260"
 ---
-# <a name="obtaining-bluetooth-address-of-hf-device"></a>HF デバイスの Bluetooth のアドレスを取得します。
+# <a name="obtaining-bluetooth-address-of-hf-device"></a>HF デバイスの Bluetooth のアドレスの取得
 
 
 HF デバイス トピックの取得の Bluetooth アドレスは、オーディオ ドライバーがハンズフリー (HF) のペアになっているデバイスの Bluetooth のアドレスを取得する方法について説明します。

@@ -1,6 +1,6 @@
 ---
-title: オブジェクトの同期を中断します。
-description: オブジェクトの同期を中断します。
+title: 割り込み同期のオブジェクト
+description: 割り込み同期のオブジェクト
 ms.assetid: c9e228e0-6178-442d-a82a-6b14ed67c9d2
 keywords:
 - ヘルパー オブジェクトの WDK オーディオ、割り込み同期オブジェクト
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f98ccb047e69d690fff296dd8500ebff5c4299
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333617"
 ---
-# <a name="interrupt-sync-objects"></a>オブジェクトの同期を中断します。
+# <a name="interrupt-sync-objects"></a>割り込み同期のオブジェクト
 
 
 ## <span id="interrupt_sync_objects"></span><span id="INTERRUPT_SYNC_OBJECTS"></span>
@@ -45,7 +45,7 @@ PortCls システム ドライバーの実装、 [IInterruptSync](https://msdn.m
 <thead>
 <tr class="header">
 <th align="left">定数</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

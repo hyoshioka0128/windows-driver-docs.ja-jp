@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 50baa10b6e34eacfd6c068ab5dbf5423b0e2697b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334424"
 ---
-# <a name="pars"></a>! の部分から構成
+# <a name="pars"></a>!pars
 
 
 **! の部分から構成**拡張機能は、指定されたプロセッサ アプリケーション レジスタ ファイルを表示します。

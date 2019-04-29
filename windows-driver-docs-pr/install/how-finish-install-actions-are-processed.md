@@ -1,6 +1,6 @@
 ---
-title: 完了-インストール アクションを処理する方法
-description: 完了-インストール アクションを処理する方法
+title: インストールの完了アクションの処理方法
+description: インストールの完了アクションの処理方法
 ms.assetid: 028cce46-018d-496e-bc99-c8bf6158c898
 keywords:
 - 完了-インストール アクション WDK デバイスのインストール
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e8368607b1af9f00f2a2044cfca3a6dd622ffc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325821"
 ---
-# <a name="how-finish-install-actions-are-processed"></a>完了-インストール アクションを処理する方法
+# <a name="how-finish-install-actions-are-processed"></a>インストールの完了アクションの処理方法
 
 
 によって同じ方法でデバイスのインストールが完了操作が実行される、*インストーラー* (クラスのインストーラー、クラスの共同インストーラーまたはデバイスの共同インストーラー)、インストールをしたかどうかに関係なく、 [ *ハードウェア最初インストール*](hardware-first-installation.md)か、または新しいハードウェアの検出ウィザード、ドライバー ソフトウェアの更新ウィザードまたはベンダーから提供されたインストール プログラム (、などのインストールプログラムを実行して、インストールを開始[*ソフトウェア最初インストール*](software-first-installation.md))。
@@ -39,7 +39,7 @@ Windows は、インストーラーの 完了-インストール アクション
 
 2.  インストーラーは、完了-インストール アクションを提供する場合に応答 DIF_FLAGSEX_FINISHINSTALL_ACTION フラグを設定、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702)要求。 DIF_FLAGSEX_FINISHINSTALL_ACTION フラグは設定されているすべてのインストーラーが DIF_NEWDEVICEWIZARD_FINISHINSTALL 要求を処理した後場合、デバイスが [完了] のインストール操作を実行するフラグが設定されます。
 
-    この操作の詳細については、[実行完了-インストール アクションを持つものとして、デバイスをマークする](setting-the-configflag-finishinstall-action-device-configuration-flag.md)を参照してください。
+    この操作の詳細については、次を参照してください。[実行完了-インストール アクションを持つものとして、デバイスをマークする](setting-the-configflag-finishinstall-action-device-configuration-flag.md)します。
 
 3.  Core デバイスのインストールが完了したら、デバイス、Windows は、完了-インストール アクションを実行するデバイスのフラグが設定されているかどうかを確認します。 場合は、Windows は、デバイスに固有の 完了-インストール アクションを実行する 完了-インストール プロセスをキューします。 ユーザーのコンテキストでプロセスを実行します。
 

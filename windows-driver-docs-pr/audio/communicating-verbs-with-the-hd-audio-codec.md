@@ -1,17 +1,17 @@
 ---
-title: 動詞 HD オーディオ コーデックとの通信
-description: 動詞 HD オーディオ コーデックとの通信
+title: 動詞を HD オーディオ コーデックとやり取りする
+description: 動詞を HD オーディオ コーデックとやり取りする
 ms.assetid: d93013fa-5b09-4616-bc71-5d3838337717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71f8ec7ff40cd04a6236fef85a75b933365a78b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333877"
 ---
-# <a name="communicating-verbs-with-the-hd-audio-codec"></a>動詞 HD オーディオ コーデックとの通信
+# <a name="communicating-verbs-with-the-hd-audio-codec"></a>動詞を HD オーディオ コーデックとやり取りする
 
 
 IOCTL\_AZALIABUS\_オーディオ アダプターのサウンドのトポロジを定義するときに、SENDVERBS IOCTL が Hdau.exe 暗証番号 (pin) の構成ツールによって使用されます。 他の目的は、この IOCTL を使用しないでください。 この IOCTL について\_AZALIABUS\_SENDVERBS がドキュメントの設計と実装だけに提供されます。 この IOCTL は、Windows 7 Hdaudio.sys オーディオ クラス ドライバーでサポートされます。

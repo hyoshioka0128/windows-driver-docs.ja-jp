@@ -1,19 +1,19 @@
 ---
-title: WdbgExts シンボル
-description: WdbgExts シンボル
+title: WdbgExts のシンボル
+description: WdbgExts のシンボル
 ms.assetid: 7e1a1799-b87c-42cb-94ce-fbdc9a5ec973
 keywords:
 - シンボル、WdbgExts 拡張機能
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e84d2f0573ab54d8a46e22484acc7ce742fd513d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325836"
 ---
-# <a name="wdbgexts-symbols"></a>WdbgExts シンボル
+# <a name="wdbgexts-symbols"></a>WdbgExts のシンボル
 
 
 このトピックではシンボルをする方法の概要、WdbgExts API を使用して操作します。 内のシンボルを使用しての概要については、[デバッガー エンジン](introduction.md#debugger-engine)を参照してください[シンボル](symbols.md)で、[デバッガー エンジンの概要](debugger-engine-overview.md)このドキュメントの「します。
@@ -36,7 +36,7 @@ MASM または C++ の式を評価する関数を使用して[ **GetExpression**
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-強力なシンボル API では、[を使用してシンボル](using-symbols.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「を参照してください。
+強力なシンボル API では、次を参照してください。[を使用してシンボル](using-symbols.md)で、[デバッガー エンジン API を使用して](using-the-debugger-engine-api.md)このドキュメントの「します。
 
  
 

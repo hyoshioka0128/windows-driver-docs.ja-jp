@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37404a1e47e980836fc981c080ec2b376f4f3bfc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327880"
 ---
 # <a name="fsctlenumoverlay-control-code"></a>FSCTL\_ENUM\_オーバーレイ コントロール コード
 
@@ -69,7 +69,7 @@ ms.locfileid: "56573942"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -95,14 +95,14 @@ ms.locfileid: "56573942"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 出力バッファーの配列には WIM プロバイダーのデータ ソースを列挙するときに[ **WIM\_プロバイダー\_オーバーレイ\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn632451)構造体。 出力バッファーのサイズは、オーバーレイのすべてのエントリを格納するのに十分な大きさである必要がありますまたは呼び出しの状態が返す\_バッファー\_すぎます\_小さい。
 
 追加のバックアップ プロバイダーでは、特定の列挙の構造を定義します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

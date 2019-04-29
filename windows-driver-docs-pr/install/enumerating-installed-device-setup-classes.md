@@ -1,6 +1,6 @@
 ---
-title: インストールされているデバイス セットアップ クラスを列挙します。
-description: インストールされているデバイス セットアップ クラスを列挙します。
+title: インストール済みのデバイス セットアップ クラスの列挙
+description: インストール済みのデバイス セットアップ クラスの列挙
 ms.assetid: 24F7600B-AA61-484a-83E9-E4C3FD2EAF17
 keywords:
 - WDK のデバイス セットアップ クラスがインストールされている列挙
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73cf7ac20435bb3cd91edc88e7b1b22c433620eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386985"
 ---
-# <a name="enumerating-installed-device-setup-classes"></a>インストールされているデバイス セットアップ クラスを列挙します。
+# <a name="enumerating-installed-device-setup-classes"></a>インストール済みのデバイス セットアップ クラスの列挙
 
 
 検出する、[デバイス セットアップ クラス](device-setup-classes.md)をシステムにインストールされている場合は、レジストリ キーに直接アクセスのデバイス セットアップ クラスを列挙できません。 レジストリ キーと同様にこれらのキーの形式と場所は、Windows の異なるバージョン間変更可能性があります。

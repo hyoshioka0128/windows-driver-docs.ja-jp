@@ -1,14 +1,14 @@
 ---
-Description: The topics in this section provides an USB pipes, URBs for I/O requests, and describes how a client driver can use the device driver interfaces (DDIs) to transfer data to and from a USB device.
+Description: このセクションのトピックでは、翻訳 I/O 要求の場合、USB パイプを示し、クライアント ドライバーがデバイス ドライバー インターフェイス (Ddi) を使用して、USB デバイスとの間のデータを転送する方法について説明します。
 title: USB クライアント ドライバーでの USB データ転送の送信
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: dd92cf4ac5eb08d2123c28fa604672ab74df39aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331608"
 ---
 # <a name="sending-usb-data-transfers-in-usb-client-drivers"></a>USB クライアント ドライバーでの USB データ転送の送信
 
@@ -22,7 +22,7 @@ ms.locfileid: "56557539"
 
 デバイスの I/O 要求を送信する前に、クライアント ドライバーは、USB デバイスから構成、インターフェイス、エンドポイント、仕入先、およびクラスに固有の記述子に関する情報を取得する必要があります。 さらに、ドライバーは、デバイスも構成する必要があります。 デバイスの構成には、構成、および各インターフェイス内の別の設定を選択するなどのタスクが含まれます。 各代替の設定は、データ転送の使用可能な 1 つまたは複数の USB エンドポイントを指定できます。
 
-デバイスの構成については、[USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)と[USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)を参照してください。
+デバイスの構成については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)と[USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)します。
 
 クライアント ドライバーがデバイスを構成した後、ドライバーは現在選択されている別の設定では、各エンドポイントの USB ドライバー スタックによって作成されたパイプ ハンドルへのアクセスを持ちます。 エンドポイントにデータを転送するには、クライアント ドライバーは、URB 要求の種類に固有の書式を設定して要求を作成します。
 

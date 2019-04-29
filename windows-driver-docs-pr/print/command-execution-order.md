@@ -1,6 +1,6 @@
 ---
-title: コマンドの実行順序
-description: コマンドの実行順序
+title: コマンド実行順序
+description: コマンド実行順序
 ms.assetid: 2bf7438c-bfb0-407f-9c80-be3b8a9322f9
 keywords:
 - プリンターの WDK Unidrv、実行順序コマンドします。
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 950bc0c7bc784778d077f5e298d3901ea8b5754f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392889"
 ---
-# <a name="command-execution-order"></a>コマンドの実行順序
+# <a name="command-execution-order"></a>コマンド実行順序
 
 
 

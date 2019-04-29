@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cf5f52954b2c6ab4238743ecda60728b98a5def3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390746"
 ---
 # <a name="kscategorypreferredmidioutdevice"></a>KSCATEGORY_PREFERRED_MIDIOUT_DEVICE
 
@@ -51,14 +51,14 @@ KSCATEGORY_PREFERRED_MIDIOUT_DEVICE[デバイス インターフェイス クラ
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ユーザーは、マルチ メディアのプロパティ ページ、コントロール パネルで、優先する MIDI 出力デバイスを選択します。
 
 この機能のカテゴリは、システムが提供して排他的に使用用に予約された[WDM オーディオ コンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff538905)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -1,16 +1,16 @@
 ---
-title: _OSI を使用して ACPI の Windows バージョンを識別する方法
-description: ACPI ソース言語 (ASL) オペレーティング システム インターフェイス レベルに関する情報を提供します (\_OSI)、ホスト オペレーティング システムを識別するために使用されるメソッド。
+title: _OSI を使用して ACPI で Windows バージョンを識別する方法
+description: ホスト オペレーティング システムの識別に使用される ACPI ソース言語 (ASL) のオペレーティング システム インターフェイス レベル (\_OSI) メソッドについて説明します。
 ms.date: 11/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bed2365560ab1fd5e75303901746c2fa66975f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330860"
 ---
-# <a name="how-to-identify-the-windows-version-in-acpi-by-using-osi"></a>_OSI を使用して ACPI の Windows バージョンを識別する方法
+# <a name="how-to-identify-the-windows-version-in-acpi-by-using-osi"></a>_OSI を使用して ACPI で Windows バージョンを識別する方法
 
 このトピックでは、使用する方法を説明します、 \_OSI メソッドで、ホスト オペレーティング システムを識別するために Advanced Configuration and Power Interface (ACPI) ソース言語 (ASL)。 このメソッドを使用すると、ASL ライターは、ファームウェアを将来のオペレーティング システムのバージョンをサポートし、により、要求されたインターフェイスのレベルに基づく動作を変更するオペレーティング システムを作成できます。
 
@@ -52,7 +52,7 @@ Windows オペレーティング システムのすべての最新バージョ�
 
 ### <a name="argument"></a>引数
 
-各オペレーティング システムで定義された文字列。 次に、例を示します。
+各オペレーティング システムで定義された文字列。 例:
 
 - 「Windows 2013」for Windows 8.1 および Windows Server 2012 R2
 - Windows 8 および Windows Server 2012 の「Windows 2012」

@@ -15,11 +15,11 @@ api_type:
 ms.date: 05/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a680fed0b15f3ff5397acb612e87b36128fdc07d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329933"
 ---
 # <a name="wiaipsprinterendorsercounter"></a>WIA\_IP\_プリンター\_裏書き\_カウンター
 
@@ -33,7 +33,7 @@ ms.locfileid: "56528164"
 
 有効な値 :WIA\_PROP\_範囲
 
-アクセス権:読み取り/書き込み
+アクセス権:[読み取り/書き込み]
 
 <a name="remarks"></a>注釈
 -------
@@ -44,7 +44,7 @@ ms.locfileid: "56528164"
 
 このプロパティは、・ インプリント ・/裏書きデータ ソースのすべてのアイテムでサポートする必要があります。 値 0 (最初のページ) が必要です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ebbe1965c85dee13af57a4e2817ae7930df8845
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393013"
 ---
 # <a name="wmi-class-qualifiers"></a>WMI クラス修飾子
 
@@ -27,7 +27,7 @@ ms.locfileid: "57464210"
 
 次の表は、必須および省略可能な MOF クラス修飾子がドライバーの WMI データのブロックとイベント ブロックを記述するために使用できます。
 
-*クラスの埋め込み*、これは、別のクラス内のデータ項目としてのみ使用し、WMI データ ブロックとして公開されているクラスだけが必要です、 **WMI**と**Guid**修飾子。 その他の修飾子は埋め込みクラスには関係ないため、無視されます。 埋め込まれたクラスの詳細については、[WMI データ項目のドライバー定義](driver-defined-wmi-data-items.md)を参照してください。
+*クラスの埋め込み*、これは、別のクラス内のデータ項目としてのみ使用し、WMI データ ブロックとして公開されているクラスだけが必要です、 **WMI**と**Guid**修飾子。 その他の修飾子は埋め込みクラスには関係ないため、無視されます。 埋め込まれたクラスの詳細については、次を参照してください。 [WMI データ項目のドライバー定義](driver-defined-wmi-data-items.md)します。
 
 **動的**と**静的**は標準の MOF 修飾子。 その他の標準的な MOF 修飾子については、Microsoft Windows SDK を参照してください。
 

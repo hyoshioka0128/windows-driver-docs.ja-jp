@@ -1,6 +1,6 @@
 ---
-title: SDP レコードをツリー構造に変換します。
-description: SDP レコードをツリー構造に変換します。
+title: SDP レコードのツリー構造への変換
+description: SDP レコードのツリー構造への変換
 ms.assetid: 762cf68b-0082-4b9e-8f24-ff19ecf6f8bd
 keywords:
 - Bluetooth の WDK、SDP サーバー間の通信
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eb42793abbcef08fe932bf48b9632cb886243e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328235"
 ---
-# <a name="converting-sdp-records-to-a-tree-structure"></a>SDP レコードをツリー構造に変換します。
+# <a name="converting-sdp-records-to-a-tree-structure"></a>SDP レコードのツリー構造への変換
 
 
 サービス探索プロトコル (SDP) レコードは、複雑なバイナリ ストリームにエンコードされます。 SDP レコードの詳細についてを解析するプロファイルのドライバーを有効にするには、Bluetooth ドライバー スタックの実現も簡単プロファイル ドライバーが、SDP のレコードのストリームを階層ツリー構造に変換し、再び使用できる関数の数。
@@ -32,7 +32,7 @@ ms.locfileid: "56551287"
 
 SDP レコードのストリームをツリー表現に変換すると、プロファイルのドライバーを呼び出すことが、 [ **SdpFindAttributeInTree** ](https://msdn.microsoft.com/library/windows/hardware/ff536838)ツリー内の指定したノードのアドレスを取得します。
 
-プロファイルのドライバーは、すべてのクエリを実行して、このトピックで説明した関数のポインターを取得できます、 [ **BTHDDI\_SDP\_解析\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536636)と[**BTHDDI\_SDP\_ノード\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536635)インターフェイス。 これらのインターフェイスを照会する方法の詳細については、[Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)を参照してください。
+プロファイルのドライバーは、すべてのクエリを実行して、このトピックで説明した関数のポインターを取得できます、 [ **BTHDDI\_SDP\_解析\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536636)と[**BTHDDI\_SDP\_ノード\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536635)インターフェイス。 これらのインターフェイスを照会する方法の詳細については、次を参照してください。 [Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)します。
 
  
 

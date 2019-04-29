@@ -1,17 +1,17 @@
 ---
-title: オーディオ ポート オブジェクト インターフェイス
-description: オーディオ ポート オブジェクト インターフェイス
+title: オーディオ ポート オブジェクトのインターフェイス
+description: オーディオ ポート オブジェクトのインターフェイス
 ms.assetid: 16026a03-4859-4fe8-a106-0d8a2b2a7f14
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40abbf4a9f00d2492da8106a2b40d0c5b9ee17f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331424"
 ---
-# <a name="audio-port-object-interfaces"></a>オーディオ ポート オブジェクト インターフェイス
+# <a name="audio-port-object-interfaces"></a>オーディオ ポート オブジェクトのインターフェイス
 
 
 ## <span id="ddk_audio_port_object_interfaces_ks"></span><span id="DDK_AUDIO_PORT_OBJECT_INTERFACES_KS"></span>

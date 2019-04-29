@@ -1,17 +1,17 @@
 ---
-title: Bluetooth HFP DDI 構造体
+title: Bluetooth HFP DDI の構造体
 description: このセクションでは、Windows の Bluetooth ハンズフリー プロファイル (HFP) ドライバーと連動する構造体について説明します。
 ms.assetid: FC4DD00B-7462-43CC-86C7-B76240DFDE87
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3324efaf6134307aaceffb58cec20ce830b9aeb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333888"
 ---
-# <a name="bluetooth-hfp-ddi-structures"></a>Bluetooth HFP DDI 構造体
+# <a name="bluetooth-hfp-ddi-structures"></a>Bluetooth HFP DDI の構造体
 
 
 このセクションでは、Windows の Bluetooth ハンズフリー プロファイル (HFP) ドライバーと連動する構造体について説明します。

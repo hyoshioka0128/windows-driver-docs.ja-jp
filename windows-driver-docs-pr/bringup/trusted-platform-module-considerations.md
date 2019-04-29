@@ -4,11 +4,11 @@ description: トラステッド プラットフォーム モジュール (TPM) �
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e8ba6645ef8d5feef02e363898ea030822847814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337385"
 ---
 # <a name="trusted-platform-module-tpm-considerations"></a>トラステッド プラットフォーム モジュール (TPM) に関する考慮事項
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a06caefd922bccec83190aee6a87b6cff3c722ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332724"
 ---
 # <a name="kspropertyfmrxvolume"></a>KSPROPERTY\_FMRX\_ボリューム
 
@@ -51,7 +51,7 @@ ms.locfileid: "56536192"
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p>長い</p></td>
+<td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +69,7 @@ A **KSPROPERTY\_FMRX\_ボリューム**プロパティ要求は、FM ラジオ�
 
 FM ボリュームとルーティング (エンドポイントの選択) によって制御されます、 **KSPROPERTY\_FMRX\_ボリューム**と[ **KSPROPERTY\_FMRX\_ENDPOINTID** ](ksproperty-fmrx-endpointid.md)トポロジ フィルターのプロパティ。 基本的なサポート、 **KSPROPERTY\_FMRX\_ボリューム**プロパティは、最小のボリューム、最大のボリュームとボリュームの範囲を返す必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

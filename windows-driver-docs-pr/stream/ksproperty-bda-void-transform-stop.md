@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b62cc8884a9941682c2cad2f92c88fd2d32012a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330305"
 ---
 # <a name="kspropertybdavoidtransformstop"></a>KSPROPERTY\_BDA\_VOID\_変換\_停止
 
@@ -61,7 +61,7 @@ ms.locfileid: "56539358"
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

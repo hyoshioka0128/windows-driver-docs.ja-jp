@@ -4,11 +4,11 @@ description: このセクションでは、タイム トラベルのデバッグ
 ms.date: 01/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: aaa9dc8d392fa4f14ef5df663bd1a657c2965502
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389111"
 ---
 # <a name="ttd-memory-objects"></a>TTD メモリ オブジェクト
 ## <a name="description"></a>説明
@@ -36,7 +36,7 @@ ms.locfileid: "56556542"
 | IP         |  メモリ アクセスが行われたコードの命令ポインター。 |
 | Address    |  読み取る/書き込む/実行アドレスの範囲内では、[beginAddress, endAddress) パラメーターから。Memory() します。  ハーフ オープンの間隔は、することに注意してください。  つまり、返されたイベントの中は endAddress に一致するアドレスが endAddress – 1 に一致するイベントが可能性があります。|
 | サイズ       |  読み取り/書き込み/実行 (バイト単位) のサイズ。 これは、通常 8 バイト未満です。 コードの実行が発生した場合、実行された命令のバイト数になります。 |
-| Value   | 読み取り、記述または実行された値。 実行の場合は、命令のコードのバイトが含まれます。 注命令のバイトは、逆アセンブラーによって、MSB の順序で並んでいるが、LSB 順序の値に格納されます。 |
+| 値   | 読み取り、記述または実行された値。 実行の場合は、命令のコードのバイトが含まれます。 注命令のバイトは、逆アセンブラーによって、MSB の順序で並んでいるが、LSB 順序の値に格納されます。 |
 
 
 ## <a name="remarks"></a>注釈
@@ -116,7 +116,7 @@ cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
 
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [タイム トラベル デバッグ - オブジェクトのタイム トラベルのデバッグの概要](time-travel-debugging-object-model.md)
 

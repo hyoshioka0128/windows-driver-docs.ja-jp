@@ -1,17 +1,17 @@
 ---
-title: オーディオ ミニポート オブジェクト インターフェイス
-description: オーディオ ミニポート オブジェクト インターフェイス
+title: オーディオ ミニポート オブジェクトのインターフェイス
+description: オーディオ ミニポート オブジェクトのインターフェイス
 ms.assetid: 2e79ad90-fecc-47a7-b487-809325a16239
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f9ddbbfe9e7b36676bf706c5d304d589c0668db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331452"
 ---
-# <a name="audio-miniport-object-interfaces"></a>オーディオ ミニポート オブジェクト インターフェイス
+# <a name="audio-miniport-object-interfaces"></a>オーディオ ミニポート オブジェクトのインターフェイス
 
 
 ## <span id="ddk_audio_miniport_object_interfaces_ks"></span><span id="DDK_AUDIO_MINIPORT_OBJECT_INTERFACES_KS"></span>

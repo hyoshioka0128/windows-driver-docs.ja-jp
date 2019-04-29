@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d74467c27f11af5657f5f3f6e4cdbb112f4197ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333114"
 ---
 # <a name="kspropertyaecnoisefillenable"></a>KSPROPERTY\_AEC\_ノイズ\_入力\_を有効にします。
 
@@ -42,16 +42,16 @@ KSPROPERTY\_AEC\_ノイズ\_入力\_を有効にして、バック グラウン�
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
@@ -67,14 +67,14 @@ KSPROPERTY\_AEC\_ノイズ\_入力\_を有効にして、バック グラウン�
 
 KSPROPERTY\_AEC\_ノイズ\_入力\_有効にするプロパティの要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 AEC のノードは、キャプチャされたデータ ストリームが完璧なエコー キャンセル後に 0 に設定されているときに発生する不自然無音状態を回避するために、キャプチャ ストリームに雑音快適性を挿入します。
 
 AEC ノードを含んでいるフィルターが作成されるか、ノードがリセットされた、バック グラウンド ノイズを埋めるは既定で無効になっています。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

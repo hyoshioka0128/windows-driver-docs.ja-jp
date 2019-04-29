@@ -1,19 +1,19 @@
 ---
-title: ACPI の他のデバッグ拡張機能
-description: ACPI の他のデバッグ拡張機能
+title: その他の ACPI デバッグ拡張機能
+description: その他の ACPI デバッグ拡張機能
 ms.assetid: ea5c9ca6-f872-40ff-8e0d-5d6d096ccc34
 keywords:
 - ACPI のデバッグ、便利な拡張機能
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fbb8e88bc450e8428ce5d6576174de3b8885cc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330960"
 ---
-# <a name="other-acpi-debugging-extensions"></a>ACPI の他のデバッグ拡張機能
+# <a name="other-acpi-debugging-extensions"></a>その他の ACPI デバッグ拡張機能
 
 
 ## <span id="ddk_other_acpi_debugging_extensions_dbg"></span><span id="DDK_OTHER_ACPI_DEBUGGING_EXTENSIONS_DBG"></span>

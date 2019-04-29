@@ -1,5 +1,5 @@
 ---
-title: .ignore_missing_pages (存在しないというページ エラーの非表示)
+title: .ignore_missing_pages ("ページが見つからない" エラーの非表示)
 description: .Ignore_missing_pages コマンドは、ページが不足しているがあるカーネル メモリ ダンプとエラー メッセージを抑制します。
 ms.assetid: 74f4944e-6f0b-4541-b32f-a2da58df7f03
 keywords:
@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ef9064462f24c7e48d6bf16bbdf9bbb9aad2488
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336468"
 ---
 # <a name="ignoremissingpages-suppress-missing-page-errors"></a>.ignore\_不足している\_ページ (不足しているページ エラーの抑制)
 

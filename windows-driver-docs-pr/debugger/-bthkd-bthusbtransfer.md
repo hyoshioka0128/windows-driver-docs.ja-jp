@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 149ea01dbed84299fd93fc5107737c8be31e07a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334661"
 ---
 # <a name="bthkdbthusbtransfer"></a>!bthkd.bthusbtransfer
 
@@ -34,7 +34,7 @@ ms.locfileid: "56559850"
 <span id="_______addr______"></span><span id="_______ADDR______"></span> *addr*   
 Bluetooth USB 転送コンテキストのアドレス。
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 使用することができます、! bthinfo コマンドは、USB 転送コンテキストのアドレスを表示します。 転送リスト セクションの下に表示されます。

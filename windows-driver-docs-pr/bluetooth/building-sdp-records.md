@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39b49ae2fa41719fd0195dce0f5f5320d5d52c4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328253"
 ---
 # <a name="building-sdp-records"></a>SDP レコードの構築
 
@@ -74,7 +74,7 @@ ms.locfileid: "56582554"
 
 さらに、不要になった、プロファイル ドライバーには、SDP のレコードのツリー ベースのバージョンが必要とするときに呼び出す必要があります[ **SdpFreeTree** ](https://msdn.microsoft.com/library/windows/hardware/ff536839)関連付けられている SDP で割り当てられたメモリを解放する\_ツリー\_ルート\_ノード構造体。
 
-プロファイルのドライバーは、すべてのクエリを実行して、このトピックで説明した関数のポインターを取得できます、 [ **BTHDDI\_SDP\_解析\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536636)と[**BTHDDI\_SDP\_ノード\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536635)インターフェイス。 これらのインターフェイスを照会する方法の詳細については、[Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)を参照してください。
+プロファイルのドライバーは、すべてのクエリを実行して、このトピックで説明した関数のポインターを取得できます、 [ **BTHDDI\_SDP\_解析\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536636)と[**BTHDDI\_SDP\_ノード\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536635)インターフェイス。 これらのインターフェイスを照会する方法の詳細については、次を参照してください。 [Bluetooth インターフェイスの照会](querying-for-bluetooth-interfaces.md)します。
 
  
 

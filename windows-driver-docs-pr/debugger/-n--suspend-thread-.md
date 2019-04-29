@@ -1,5 +1,5 @@
 ---
-title: ~ n (スレッドを中断する)
+title: ~n (スレッドの中断)
 description: ~ N 個のコマンドは、指定したスレッドの実行を中断します。N (設定数の基本) コマンドを使用してこのコマンドを混同しないでください。
 ms.assetid: 4b1063ad-edba-4cd3-9084-dc6c08c69f55
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 64c0026bbc37a027ca11865800c1e28e1381f701
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336047"
 ---
-# <a name="n-suspend-thread"></a>~ n (スレッドを中断する)
+# <a name="n-suspend-thread"></a>~n (スレッドの中断)
 
 
 **~ N**コマンドは、指定したスレッドの実行を中断します。
@@ -34,7 +34,7 @@ ms.locfileid: "56530468"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-スレッドまたはスレッドを中断するを指定します。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+スレッドまたはスレッドを中断するを指定します。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
@@ -63,7 +63,7 @@ ms.locfileid: "56530468"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-中断の詳細についてはカウントとどのように中断されたスレッドの動作し、中断とスレッドの固定を制御するその他のコマンドの一覧は、[を制御するプロセスとスレッド](controlling-processes-and-threads.md)を参照してください。
+中断の詳細についてはカウントとどのように中断されたスレッドの動作し、中断とスレッドの固定を制御するその他のコマンドの一覧は、次を参照してください。[を制御するプロセスとスレッド](controlling-processes-and-threads.md)します。
 
 <a name="remarks"></a>注釈
 -------

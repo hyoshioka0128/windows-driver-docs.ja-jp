@@ -1,6 +1,6 @@
 ---
-title: IPsec オフロード バージョン 1
-description: IPsec オフロード バージョン 1
+title: IPsec Offload Version 1
+description: IPsec Offload Version 1
 ms.assetid: 1cf6306c-bb1d-40f6-a0e3-59c14a60a8ff
 keywords:
 - IPsec オフロード WDK TCP/IP トランスポート、バージョン 1
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cfa0cfe29618cc091efc7928cb32742be8afb63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327686"
 ---
-# <a name="ipsec-offload-version-1"></a>IPsec オフロード バージョン 1
+# <a name="ipsec-offload-version-1"></a>IPsec Offload Version 1
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 

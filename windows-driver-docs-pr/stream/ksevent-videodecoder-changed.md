@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa71eb42d32a9b9470b89d5fe1b4875bd2701a0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329734"
 ---
 # <a name="kseventvideodecoderchanged"></a>KSEVENT\_VIDEODECODER\_CHANGED
 
@@ -59,7 +59,7 @@ KSEVENT\_VIDEODECODER\_CHANGED イベントは、新しい物理入力からコ�
 
  
 
-DirectShow フィルターと KsProxy の詳細については、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)を参照してください。
+DirectShow フィルターと KsProxy の詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
 
  
 

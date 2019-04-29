@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 645dd01cbe0ffd19fbce5d22d60a2f4bb2df89bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328722"
 ---
-# <a name="rendering-and-capturing-audio-content-by-using-a-port-class-audio-adapter"></a>レンダリングとポートのクラスのオーディオ アダプターを使用してオーディオ コンテンツをキャプチャするには
+# <a name="rendering-and-capturing-audio-content-by-using-a-port-class-audio-adapter"></a>ポート クラスのオーディオ アダプターを使用したオーディオ コンテンツのレンダリングとキャプチャ
 
 
 ## <span id="ddk_rendering_and_capturing_audio_content_by_using_a_port_class_audio_"></span><span id="DDK_RENDERING_AND_CAPTURING_AUDIO_CONTENT_BY_USING_A_PORT_CLASS_AUDIO_"></span>

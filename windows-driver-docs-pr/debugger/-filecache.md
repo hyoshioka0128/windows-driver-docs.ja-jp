@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 494d76d1cb348f9018dd75b693306d2e63b8e5ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336743"
 ---
-# <a name="filecache"></a>! filecache
+# <a name="filecache"></a>!filecache
 
 
 **! Filecache**拡張機能は、システム ファイル キャッシュ メモリに関する情報を表示および PTE を使用します。
@@ -33,7 +33,7 @@ ms.locfileid: "56527900"
 
 
 <span id="_______Flags"></span><span id="_______flags"></span><span id="_______FLAGS"></span> *フラグ*  
-(省略可能)。 既定値は、「0x0」です。 設定*フラグ*共有キャッシュのマップの出力を並べ替えるには 0x1 です。 この方法では、特定の制御領域のすべてのシステム キャッシュのビューを見つけることができます。
+任意。 既定値は、「0x0」です。 設定*フラグ*共有キャッシュのマップの出力を並べ替えるには 0x1 です。 この方法では、特定の制御領域のすべてのシステム キャッシュのビューを見つけることができます。
 
 ## <span id="ddk__filecache_dbg"></span><span id="DDK__FILECACHE_DBG"></span>
 

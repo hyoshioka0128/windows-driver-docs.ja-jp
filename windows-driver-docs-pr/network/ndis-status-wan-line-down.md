@@ -7,11 +7,11 @@ keywords:
 - NDIS_STATUS_WAN_LINE_DOWN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 1908977ca92a5bfcf00ee20f43ba45b2a2c80803
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392396"
 ---
 # <a name="ndisstatuswanlinedown"></a>NDIS\_状態\_WAN\_行\_ダウン
 
@@ -21,7 +21,7 @@ NDIS\_状態\_WAN\_行\_ダウン状態には、対応 WAN ミニポート ド�
 <a name="remarks"></a>注釈
 -------
 
-NDIS 4。*x*と以前の NDIS WAN ミニポート ドライバーは、この状態を示す値を使用します。 NDIS 5.0 およびそれ以降の WAN ミニポート ドライバーには、いる CoNDIS WAN インターフェイスを使用する必要があります。 いる CoNDIS WAN インターフェイスの詳細については、[実装いる CoNDIS WAN ミニポート ドライバー (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff546752)を参照してください。
+NDIS 4。*x*と以前の NDIS WAN ミニポート ドライバーは、この状態を示す値を使用します。 NDIS 5.0 およびそれ以降の WAN ミニポート ドライバーには、いる CoNDIS WAN インターフェイスを使用する必要があります。 いる CoNDIS WAN インターフェイスの詳細については、次を参照してください。[実装いる CoNDIS WAN ミニポート ドライバー (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff546752)します。
 
 *StatusBuffer*のパラメーター、 [ **NdisMIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff553538)関数にはへのポインターが含まれています、 [ **NDIS\_MAC\_行\_ダウン**](https://msdn.microsoft.com/library/windows/hardware/ff557057)構造体。 **NdisLinkContext**の NDIS メンバー\_MAC\_行\_ダウンが有効になっているリンクを識別します。
 

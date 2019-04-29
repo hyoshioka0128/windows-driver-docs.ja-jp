@@ -1,17 +1,17 @@
 ---
-title: ドライバーのアーキテクチャの定数をブロードキャストします。
-description: ドライバーのアーキテクチャの定数をブロードキャストします。
+title: ブロードキャスト ドライバー アーキテクチャの定数
+description: ブロードキャスト ドライバー アーキテクチャの定数
 ms.assetid: bc97d6f7-1fdc-462d-8d14-af8dc3976ee1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7b78fe0ce045c07c40303846de4255ba16f8fa7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392709"
 ---
-# <a name="broadcast-driver-architecture-constants"></a>ドライバーのアーキテクチャの定数をブロードキャストします。
+# <a name="broadcast-driver-architecture-constants"></a>ブロードキャスト ドライバー アーキテクチャの定数
 
 
 ## <span id="ddk_broadcast_driver_architecture_constants_ks"></span><span id="DDK_BROADCAST_DRIVER_ARCHITECTURE_CONSTANTS_KS"></span>

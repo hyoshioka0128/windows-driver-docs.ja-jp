@@ -1,17 +1,17 @@
 ---
-title: オーディオのユニバーサル Windows ドライバー
+title: オーディオ用のユニバーサル Windows ドライバー
 description: Windows 10 では、さまざまな種類のハードウェアで動作するユニバーサル オーディオ ドライバーを記述できます。
 ms.assetid: F4B56B3F-792F-4887-AF0F-FFC1F000CB8F
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 795050c4d65f5be9d98dfc14572bd782bcb5d751
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333945"
 ---
-# <a name="universal-windows-drivers-for-audio"></a>オーディオのユニバーサル Windows ドライバー
+# <a name="universal-windows-drivers-for-audio"></a>オーディオ用のユニバーサル Windows ドライバー
 
 Windows 10 では、さまざまな種類のハードウェアで動作するユニバーサル オーディオ ドライバーを記述できます。 このトピックでは、さまざまなプラットフォーム間の相違点と同様にこのアプローチの利点について説明します。 オーディオのユニバーサル Windows ドライバーだけでなくは WDM など、オーディオ ドライバーの以前のテクノロジをサポートするために Windows が続行されます。
 
@@ -21,15 +21,15 @@ Ihv は、すべてのデバイス (デスクトップ、ラップトップ、�
 
 これらのツールは、ユニバーサル Windows ドライバーのサポートを開発できます。
 
-- Visual Studio 2015 のサポート:「ターゲット プラットフォーム」を"Universal"と等しく設定するドライバーの設定があります。 ドライバーの開発環境のセットアップの詳細については、[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)を参照してください。
+- Visual Studio 2015 のサポート:「ターゲット プラットフォーム」を"Universal"と等しく設定するドライバーの設定があります。 ドライバーの開発環境のセットアップの詳細については、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)します。
 
-- APIValidator ツール:ApiValidator.exe ツールを使うと、ドライバーから呼び出される API が、ユニバーサル Windows ドライバーにとって有効であるかどうかを確認できます。 このツールは、Windows 10、Windows Driver Kit (WDK) の一部であるし、Visual Studio 2015 を使用している場合は、自動的に実行されます。 詳細については、[ユニバーサル Windows ドライバーの検証](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)を参照してください。
+- APIValidator ツール:ApiValidator.exe ツールを使うと、ドライバーから呼び出される API が、ユニバーサル Windows ドライバーにとって有効であるかどうかを確認できます。 このツールは、Windows 10、Windows Driver Kit (WDK) の一部であるし、Visual Studio 2015 を使用している場合は、自動的に実行されます。 詳細については、次を参照してください。[ユニバーサル Windows ドライバーの検証](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)です。
 
-- 更新された DDI リファレンス ドキュメント。ユニバーサル Windows ドライバーがサポートされるどの Ddi DDI のリファレンス ドキュメントを更新しています。 詳細については、[オーディオ デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536192)を参照してください。
+- 更新された DDI リファレンス ドキュメント。ユニバーサル Windows ドライバーがサポートされるどの Ddi DDI のリファレンス ドキュメントを更新しています。 詳細については、次を参照してください。[オーディオ デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536192)します。
 
 ## <a name="create-a-universal-audio-driver"></a>ユニバーサル オーディオ ドライバーを作成します。
 
-ステップ バイ ステップ ガイダンスについては、[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)を参照してください。 手順の概要を次に示します。
+ステップ バイ ステップ ガイダンスについては、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)します。 手順の概要を次に示します。
 
 1. ユニバーサル、オーディオ ドライバーの開始点として使用するオーディオ sysvad のユニバーサル サンプルを読み込みます。 または、空の WDM ドライバー テンプレートを使用して起動し、オーディオ ドライバーに必要なユニバーサル sysvad のサンプル コードに追加します。
 
@@ -41,7 +41,7 @@ Ihv は、すべてのデバイス (デスクトップ、ラップトップ、�
 
 ## <a name="sample-code"></a>サンプル コード
 
-ユニバーサル Windows ドライバーのサンプルを Sysvad と SwapAPO が変換されました。 詳細については、[サンプル オーディオ ドライバー](sample-audio-drivers.md)を参照してください。
+ユニバーサル Windows ドライバーのサンプルを Sysvad と SwapAPO が変換されました。 詳細については、次を参照してください。[サンプル オーディオ ドライバー](sample-audio-drivers.md)します。
 
 ## <a name="available-programming-interfaces-for-universal-windows-drivers-for-audio"></a>オーディオのユニバーサル Windows ドライバーの使用可能なプログラミング インターフェイス
 
@@ -67,11 +67,11 @@ Windows 10 以降、ドライバーのプログラミング インターフェ�
 
 ユニバーサル Windows ドライバーに既存のオーディオ ドライバーを変換するには、このプロセスに従います。
 
-1. 既存のドライバー呼び出しが OneCoreUAP Windows で実行するかどうかを決定します。 リファレンス ページの [要件] セクションを確認します。 詳細については、[オーディオ デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536192)を参照してください。
+1. 既存のドライバー呼び出しが OneCoreUAP Windows で実行するかどうかを決定します。 リファレンス ページの [要件] セクションを確認します。 詳細については、次を参照してください。[オーディオ デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff536192)します。
 
 2. ユニバーサル Windows ドライバーとしては、ドライバーを再コンパイルします。 プロジェクトのプロパティでは、"Universal"するターゲット プラットフォームを設定します。
 
-3. Ddi のドライバーの呼び出しが、ユニバーサル Windows ドライバーが有効であることを確認するのに ApiValidator.exe ツールを使用します。 このツールは、Windows 10、Windows Driver Kit (WDK) の一部であるし、Visual Studio 2015 を使用している場合は、自動的に実行されます。 詳細については、[ユニバーサル Windows ドライバーの検証](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)を参照してください。
+3. Ddi のドライバーの呼び出しが、ユニバーサル Windows ドライバーが有効であることを確認するのに ApiValidator.exe ツールを使用します。 このツールは、Windows 10、Windows Driver Kit (WDK) の一部であるし、Visual Studio 2015 を使用している場合は、自動的に実行されます。 詳細については、次を参照してください。[ユニバーサル Windows ドライバーの検証](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)です。
 
 4. ドライバーが OneCoreUAP の一部ではないインターフェイスを呼び出す場合、コンパイラはエラーを表示します。
 
@@ -93,15 +93,15 @@ Windows 10 以降、ドライバーのプログラミング インターフェ�
 
 ![DSP ドライバー コーデックと時刻を示すコンポーネント化された、オーディオ スタック](images/audio-componentized-stack-diagram.png)
 
-別個の拡張機能の INF ファイルは、特定のシステムの場合は、各基本ドライバー コンポーネントのカスタマイズに使用されます。 カスタマイズにはするには、チューニング パラメーターとその他のシステムに固有の設定が含まれます。 詳細については、[拡張子 INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)を参照してください。
+別個の拡張機能の INF ファイルは、特定のシステムの場合は、各基本ドライバー コンポーネントのカスタマイズに使用されます。 カスタマイズにはするには、チューニング パラメーターとその他のシステムに固有の設定が含まれます。 詳細については、次を参照してください。[拡張子 INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)します。
 
-拡張機能の INF ファイルは、ユニバーサル INF ファイルである必要があります。 詳細については、[ユニバーサル INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)を参照してください。
+拡張機能の INF ファイルは、ユニバーサル INF ファイルである必要があります。 詳細については、次を参照してください。[ユニバーサル INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)します。
 
-INF ファイルを使用してソフトウェアを追加する方法の詳細については、[コンポーネントの INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-component-inf-file)を参照してください。
+INF ファイルを使用してソフトウェアを追加する方法の詳細については、次を参照してください。[コンポーネントの INF ファイルを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-component-inf-file)します。
 
 ### <a name="submitting-componentized-inf-files"></a>コンポーネント化された INF ファイルを送信します。
 
-APO INF パッケージは、基本のドライバー パッケージからのとは別に、パートナー センターに送信する必要があります。 パッケージの作成についての詳細については、[Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)を参照してください。
+APO INF パッケージは、基本のドライバー パッケージからのとは別に、パートナー センターに送信する必要があります。 パッケージの作成についての詳細については、次を参照してください。 [Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)します。
 
 ### <a name="sysvad--componentized-inf-files"></a>SYSVAD は、INF ファイルをコンポーネント化
 
@@ -136,7 +136,7 @@ UWP ハードウェアのサポート、アプリをプログラムで起動す�
 
 現在、オーディオのモジュールは、UWP アプリと、オーディオ エンジンで実行されているソフトウェア APO 間の直接のコミュニケーションを促進するものではありません。
 
-オーディオのモジュールの詳細については、[オーディオ モジュールの通信を実装する](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)と[とクエリの構成のオーディオ デバイス モジュール](https://docs.microsoft.com/windows-hardware/drivers/audio/configure-and-query-audiodevicemodules)を参照してください。
+オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの通信を実装する](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)と[とクエリの構成のオーディオ デバイス モジュール](https://docs.microsoft.com/windows-hardware/drivers/audio/configure-and-query-audiodevicemodules)します。
 
 ### <a name="apo-hwid-strings-construction"></a>APO HWID 文字列の構築  
 
@@ -159,7 +159,7 @@ APO\VEN_v(4)&AID_a(4)
 
 ### <a name="plug-and-play-inf-version-and-date-evaluation-for-driver-update"></a>ドライバーの更新のプラグ アンド プレイ INF のバージョンと日付評価
 
-Windows のプラグ アンド プレイのシステムでは、複数のドライバーが存在する場合にインストールするドライブを確認するには、日付とドライバーのバージョンを評価します。  詳細については、[ランク ドライバーをどのように Windows](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)を参照してください。
+Windows のプラグ アンド プレイのシステムでは、複数のドライバーが存在する場合にインストールするドライブを確認するには、日付とドライバーのバージョンを評価します。  詳細については、次を参照してください。[ランク ドライバーをどのように Windows](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)します。
 
 を使用する最新のドライバーを許可するのには、必ずし、日付とドライバーの新しいバージョンのバージョンを更新します。
 

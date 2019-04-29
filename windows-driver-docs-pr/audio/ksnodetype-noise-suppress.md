@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8b1afb48f7169a382a30282d61c17f4dc6cc26c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333201"
 ---
 # <a name="ksnodetypenoisesuppress"></a>KSNODETYPE\_ノイズ\_を抑制します。
 
@@ -29,7 +29,7 @@ KSNODETYPE\_ノイズ\_を抑制するノードは、ノイズの抑制 (NS) コ
 
 NS ノードを格納しているフィルターが作成されるか、ノードがリセットされた、ときに、ノードがパススルー モードで動作する初期構成されます。
 
-NS ノードは、全二重 DirectSound アプリケーションをサポートするために、AEC (アコースティック エコー キャンセル) フィルターに組み込むことができます。 詳細については、[DirectSound キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536327)を参照してください。
+NS ノードは、全二重 DirectSound アプリケーションをサポートするために、AEC (アコースティック エコー キャンセル) フィルターに組み込むことができます。 詳細については、次を参照してください。 [DirectSound キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536327)します。
 
 KSNODETYPE\_ノイズ\_AEC フィルター ノードを抑制するハードウェア アクセラレータを有効にするには、次のプロパティをサポートする必要があります。
 

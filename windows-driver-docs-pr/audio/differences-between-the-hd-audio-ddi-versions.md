@@ -1,6 +1,6 @@
 ---
-title: HD オーディオ DDI バージョン間の違い
-description: HD オーディオ DDI バージョン間の違い
+title: HD オーディオ DDI バージョン間の相違点
+description: HD オーディオ DDI バージョン間の相違点
 ms.assetid: e24071d3-9021-40c0-907a-91ada8a1306b
 keywords:
 - HD オーディオ、DDI のバージョンの違い
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37b50727c187b3910c925917bc68107c1d2ad560
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333803"
 ---
-# <a name="differences-between-the-hd-audio-ddi-versions"></a>HD オーディオ DDI バージョン間の違い
+# <a name="differences-between-the-hd-audio-ddi-versions"></a>HD オーディオ DDI バージョン間の相違点
 
 
 HD オーディオ DDI には次のように定義されている 3 つの異なるバージョンがあります。
@@ -63,7 +63,7 @@ HDAUDIO\_BUS\_インターフェイスと HDAUDIO\_BUS\_インターフェイス
 
 BDL には、DMA エンジンのスキャッター/ギャザー キュー内の物理メモリ ブロックの一覧が含まれています。 呼び出して**SetupDmaEngineWithBdl** BDL を設定するクライアントは、割り込みが DMA エンジンによって生成されるデータ ストリームで、ポイントを指定できます。 クライアントは、選択 BDL エントリで、割り込みの完了時 (IOC) のビットを設定しています。 この機能により、クライアントは、オーディオ ストリームの処理中に発生する IOC 割り込みのタイミングを正確に制御することができます。 オーディオのモデム ドライバーでは、正確なシステム時計の情報を取得するのに 2 つ目の DDI バージョンを使用することもできます。
 
-詳細については、、 *Intel 高度な定義オーディオ仕様*を参照してください。
+詳細については、次を参照してください。、 *Intel 高度な定義オーディオ仕様*します。
 
 ただし、ほぼすべてのクライアントでは、HDAUDIO は使用\_BUS\_DDI のインターフェイスのバージョン。 割り込みのタイミングを正確に制御を必要とするいくつかのクライアントが、HDAUDIO を使用してのみ\_BUS\_インターフェイス\_BDL バージョン。
 

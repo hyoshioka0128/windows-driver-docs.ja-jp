@@ -1,6 +1,6 @@
 ---
-title: PnP イベントおよび中間のドライバーで電源管理イベントの処理
-description: PnP イベントおよび中間のドライバーで電源管理イベントの処理
+title: 中間ドライバーでの PnP イベントおよび電源管理イベントの処理
+description: 中間ドライバーでの PnP イベントおよび電源管理イベントの処理
 ms.assetid: 0b4cf76f-a31d-4cf6-8486-090393404af9
 keywords:
 - 中間ドライバー WDK ネットワー キング、イベント
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3818224c408160c34a8f3b2af0999276ebb4ffa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325750"
 ---
-# <a name="handling-pnp-events-and-power-management-events-in-an-intermediate-driver"></a>PnP イベントおよび中間のドライバーで電源管理イベントの処理
+# <a name="handling-pnp-events-and-power-management-events-in-an-intermediate-driver"></a>中間ドライバーでの PnP イベントおよび電源管理イベントの処理
 
 
 
@@ -24,7 +24,7 @@ ms.locfileid: "56557740"
 
 中間のドライバーは、プラグ アンド プレイ (PnP) イベントおよび電源管理イベントを処理できる必要があります。 具体的には、次のとおりです。
 
--   中間のドライバーは、NDIS を設定する必要があります\_ミニポート\_属性\_いいえ\_HALT\_ON\_で SUSPEND フラグ、 **AttributeFlags**のメンバー、[ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)に渡される構造[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。 詳細については、[ミニポートとして初期化](initializing-virtual-miniports.md)を参照してください。
+-   中間のドライバーは、NDIS を設定する必要があります\_ミニポート\_属性\_いいえ\_HALT\_ON\_で SUSPEND フラグ、 **AttributeFlags**のメンバー、[ **NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)に渡される構造[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。 詳細については、次を参照してください。[ミニポートとして初期化](initializing-virtual-miniports.md)します。
 
 -   中間のドライバーの仮想ミニポート OID を処理する必要があります\_PNP\_*Xxx*要求。
 

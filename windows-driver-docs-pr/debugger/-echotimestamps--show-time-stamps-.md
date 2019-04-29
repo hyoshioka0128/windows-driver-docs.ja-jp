@@ -16,11 +16,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a3351684dc4188c654286079f5bfddfab03a590
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336802"
 ---
 # <a name="echotimestamps-show-time-stamps"></a>.echotimestamps (タイム スタンプの表示)
 
@@ -71,7 +71,7 @@ ms.locfileid: "56571306"
 
 詳細については**による DbgPrint**、 **KdPrint**、 **DbgPrintEx**、および**KdPrintEx**を参照してください[による DbgPrint バッファー](reading-and-filtering-debugging-messages.md#the-dbgprint-buffer)または Microsoft Windows Driver Kit (WDK) ドキュメントを参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 使用すると、 **.echotimestamps**パラメーターを指定せずコマンド タイムスタンプの表示がオンまたはオフになっているし、新しい状態が表示されます。

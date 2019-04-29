@@ -1,5 +1,5 @@
 ---
-title: .unload (拡張 DLL のアンロード)
+title: .unload (拡張機能 DLL のアンロード)
 description: .Unload コマンドでは、デバッガーから拡張 DLL をアンロードします。
 ms.assetid: 8399e4a8-0265-4690-b35f-973b69fe2764
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b25de3865a9d6d04e066fba1eb64f50e15c20ab6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334146"
 ---
-# <a name="unload-unload-extension-dll"></a>.unload (拡張 DLL のアンロード)
+# <a name="unload-unload-extension-dll"></a>.unload (拡張機能 DLL のアンロード)
 
 
 **.Unload**コマンドは、デバッガーから拡張 DLL をアンロードします。

@@ -5,11 +5,11 @@ ms.assetid: 586FEDD7-6BA1-4E76-8E8D-E486F4711FAE
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: de8f12ff665197604096f632f043bacbc02e88f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325316"
 ---
 # <a name="collection-list-serialization-helpers"></a>コレクション リスト シリアル化ヘルパー
 
@@ -80,7 +80,7 @@ ms.locfileid: "56571989"
 
 -   読み取り操作が成功するとは、ステータスによって示されます\_[ok] の値。 それ以外の場合、適切な NTSTATUS エラー コードが返されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 |                          |                        |
 |--------------------------|------------------------|

@@ -5,11 +5,11 @@ ms.assetid: 57bf9988-6eed-42ca-a961-a6d16c5c19c1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 976eb2ffabef3f732d39c7ca3e1efabadaf8e95e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391836"
 ---
 # <a name="using-single-transfer-dma"></a>単一転送 DMA の使用
 
@@ -39,4 +39,4 @@ DMA トランザクションの 1 つの転送が必要である KMDF バージ�
 
 使用して、デバッグ時に、 [ **! wdfkd.wdfdmaenabler** ](https://msdn.microsoft.com/library/windows/hardware/ff565717)拡張機能を特定の DMA イネーブラー オブジェクトの 1 つの転送を設定するかどうかを判断します。
 
-WDF 関数を呼び出してドライバーの DMA イベント コールバックの順序の詳細については、[KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)を参照してください。
+WDF 関数を呼び出してドライバーの DMA イベント コールバックの順序の詳細については、次を参照してください。 [KMDF ドライバーでは、バス マスター DMA デバイスの I/O 要求の処理](handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md)します。

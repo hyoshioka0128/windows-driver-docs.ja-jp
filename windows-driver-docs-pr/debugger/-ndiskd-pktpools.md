@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 611436ac975351efd462e4915d187d9dd93ec5f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335883"
 ---
-# <a name="ndiskdpktpools"></a>! ndiskd.pktpools
+# <a name="ndiskdpktpools"></a>!ndiskd.pktpools
 
 
 **警告**  は従来の NDIS 5.x ドライバーのこの拡張子です。 [NDIS\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff557086)構造とその関連付けられているアーキテクチャが使用されなくなりました。

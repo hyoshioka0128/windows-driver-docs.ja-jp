@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 15e79abe6d2c8e58275939629b39227a3b97617d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335984"
 ---
-# <a name="ndiskdminidriver"></a>! ndiskd.minidriver
+# <a name="ndiskdminidriver"></a>!ndiskd.minidriver
 
 
 **! Ndiskd.minidriver**コマンドは、NDIS ミニポート ドライバーに関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd システムでアクティブな NDIS ミニポート ドライバーの一覧が表示されます。

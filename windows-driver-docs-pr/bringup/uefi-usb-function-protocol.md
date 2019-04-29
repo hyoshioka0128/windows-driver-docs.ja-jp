@@ -5,11 +5,11 @@ ms.assetid: eac35cf4-82b4-4d7e-ae69-8f506f12ae5d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06f53d5ab7c43b9b1f7212f7cbb3df233d23c300
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337364"
 ---
 # <a name="uefi-usb-function-protocol"></a>UEFI USB 関数プロトコル
 
@@ -69,7 +69,7 @@ typedef struct _EFI_USBFN_IO_PROTOCOL
 } EFI_USBFN_IO_PROTOCOL;
 ```
 
-### <a name="members"></a>Members
+### <a name="members"></a>メンバー
 
 <a href="" id="revision"></a>**リビジョン**  
 リビジョン、 **EFI\_USBFN\_IO\_プロトコル**準拠します。 すべての将来のリビジョンは、旧バージョンと互換性のあるである必要があります。 場合は、今後のバージョンは旧バージョンと互換性のある、別の GUID を使用する必要があります。

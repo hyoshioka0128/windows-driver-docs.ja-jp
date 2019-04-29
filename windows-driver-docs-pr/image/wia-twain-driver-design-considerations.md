@@ -1,17 +1,17 @@
 ---
-title: WIA TWAIN ドライバーの設計に関する考慮事項
-description: WIA TWAIN ドライバーの設計に関する考慮事項
+title: WIA-TWAIN ドライバーの設計に関する考慮事項
+description: WIA-TWAIN ドライバーの設計に関する考慮事項
 ms.assetid: dd813838-ca00-4233-8257-5d1b84d849a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7e470b138417b79488ee224c585b5584a4aa879
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391495"
 ---
-# <a name="wia-twain-driver-design-considerations"></a>WIA TWAIN ドライバーの設計に関する考慮事項
+# <a name="wia-twain-driver-design-considerations"></a>WIA-TWAIN ドライバーの設計に関する考慮事項
 
 
 

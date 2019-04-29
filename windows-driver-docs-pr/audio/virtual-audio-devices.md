@@ -1,5 +1,5 @@
 ---
-title: 仮想のオーディオ デバイス
+title: 仮想オーディオ デバイス
 description: 仮想のオーディオ デバイスは、レンダリング、オーディオ コンテンツをキャプチャするフィルター グラフを表しています。 システム オーディオ ドライバー (SysAudio) は、使用可能なハードウェアおよびソフトウェア コンポーネントを使用して、ビルドをフィルター グラフを決定します。
 ms.assetid: 0f8ddd2d-f852-4b35-8a18-16416081d3c0
 keywords:
@@ -12,18 +12,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 090b73c229940010c37955529ce65ff3eb1c0aac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328502"
 ---
-# <a name="virtual-audio-devices"></a>仮想のオーディオ デバイス
+# <a name="virtual-audio-devices"></a>仮想オーディオ デバイス
 
 
 仮想のオーディオ デバイスは、レンダリング、オーディオ コンテンツをキャプチャするフィルター グラフを表しています。 システム オーディオ ドライバー (SysAudio) は、使用可能なハードウェアおよびソフトウェア コンポーネントを使用して、ビルドをフィルター グラフを決定します。
 
-システム オーディオ ドライバーの詳細については、[SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)を参照してください。
+システム オーディオ ドライバーの詳細については、次を参照してください。 [SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)します。
 
 ## <span id="virtual_audio_devices"></span><span id="VIRTUAL_AUDIO_DEVICES"></span>
 

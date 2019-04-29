@@ -1,19 +1,19 @@
 ---
-title: バッテリ情報のクエリに応答してください。
-description: バッテリ情報のクエリに応答してください。
+title: バッテリ情報クエリへの応答
+description: バッテリ情報クエリへの応答
 ms.assetid: 5d215ff8-d41f-471e-bc54-570a94f3c23f
 keywords:
 - バッテリ情報 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b003b90dd145dae7c8f820c097925a8d9b77e795
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335076"
 ---
-# <a name="responding-to-battery-information-queries"></a>バッテリ情報のクエリに応答してください。
+# <a name="responding-to-battery-information-queries"></a>バッテリ情報クエリへの応答
 
 
 ## <span id="ddk_responding_to_battery_information_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_INFORMATION_QUERIES_DG"></span>

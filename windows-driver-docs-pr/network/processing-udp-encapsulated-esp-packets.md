@@ -1,26 +1,26 @@
 ---
-title: ESP の UDP カプセル化パケットを処理します。
-description: ESP の UDP カプセル化パケットを処理します。
+title: UDP カプセル化 ESP パケットの処理
+description: UDP カプセル化 ESP パケットの処理
 ms.assetid: b5b10a2c-1080-4c21-a187-1c0aff30b229
 keywords:
 - WDK の IPsec ESP パケットを UDP カプセル化オフロード、処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5801bcc4d86b78b162b55e51740eba605c073bc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327576"
 ---
-# <a name="processing-udp-encapsulated-esp-packets"></a>ESP の UDP カプセル化パケットを処理します。
+# <a name="processing-udp-encapsulated-esp-packets"></a>UDP カプセル化 ESP パケットの処理
 
 \[IPsec タスク オフロード機能は非推奨し、は使用できません。\]
 
 
 
 
-NIC は、ポート 4500 の UDP カプセル化パケットを受信するときに、パケットが IKE (コントロール) のパケットをまたはにパケットを ESP (データ) がかどうかを確認します。 IKE と ESP パケットの UDP カプセル化の種類の説明は、[UDP ESP カプセル化型](udp-esp-encapsulation-types.md)を参照してください。
+NIC は、ポート 4500 の UDP カプセル化パケットを受信するときに、パケットが IKE (コントロール) のパケットをまたはにパケットを ESP (データ) がかどうかを確認します。 IKE と ESP パケットの UDP カプセル化の種類の説明は、次を参照してください。 [UDP ESP カプセル化型](udp-esp-encapsulation-types.md)します。
 
 -   パケットが、IKE パケットの場合は、NIC は、パケットをさらに IPsec に関連する処理を行わなくても、ミニポート ドライバーに渡します。
 

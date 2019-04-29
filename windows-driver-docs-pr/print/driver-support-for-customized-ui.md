@@ -1,17 +1,17 @@
 ---
-title: カスタマイズした UI のドライバー サポート
+title: カスタマイズされた UI のドライバー サポート
 description: V4 印刷ドライバー モデルは、印刷用のプリンター拡張または UWP デバイス アプリを使用して UI カスタマイズの組み込みサポートを備えた開発されました。
 ms.assetid: 91B0E824-1EE3-40B0-A24E-5A66C158972E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ba91546c62a01b14cb74bbeabfda01343f0bc02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391956"
 ---
-# <a name="driver-support-for-customized-ui"></a>カスタマイズした UI のドライバー サポート
+# <a name="driver-support-for-customized-ui"></a>カスタマイズされた UI のドライバー サポート
 
 
 V4 印刷ドライバー モデルは、印刷用のプリンター拡張または UWP デバイス アプリを使用して UI カスタマイズの組み込みサポートを備えた開発されました。
@@ -38,7 +38,7 @@ V4 印刷ドライバー モデルは、印刷用のプリンター拡張また�
 
  
 
-**ドライバーのイベントを作成する**します。 V4 印刷ドライバーでは、DriverEvent XML ファイルを使用して、双方向のクエリとトリガーが発生します。 ドライバーのイベントが発生することを説明します。 ドライバーのイベントでは標準の文字列のみをサポートすることが重要です。 標準の文字列の詳細については、[AsyncUI 既定のリソース ファイルの文字列リソース](https://msdn.microsoft.com/library/cc746159.aspx)を参照してください。 これにより、現在の実装では、 [AsyncUIBalloon](https://msdn.microsoft.com/library/cc238009(PROT.10).aspx)メッセージを作成および発行を使用して、 [MS パン プロトコル](https://msdn.microsoft.com/library/cc237960(PROT.13).aspx)します。 この実装は、パフォーマンスを向上させるために、後で変わる可能性があります、基になるプロトコルに依存関係を受け取らないように、v4 プリンター ドライバーを開発することが重要であるためです。
+**ドライバーのイベントを作成する**します。 V4 印刷ドライバーでは、DriverEvent XML ファイルを使用して、双方向のクエリとトリガーが発生します。 ドライバーのイベントが発生することを説明します。 ドライバーのイベントでは標準の文字列のみをサポートすることが重要です。 標準の文字列の詳細については、次を参照してください。 [AsyncUI 既定のリソース ファイルの文字列リソース](https://msdn.microsoft.com/library/cc746159.aspx)します。 これにより、現在の実装では、 [AsyncUIBalloon](https://msdn.microsoft.com/library/cc238009(PROT.10).aspx)メッセージを作成および発行を使用して、 [MS パン プロトコル](https://msdn.microsoft.com/library/cc237960(PROT.13).aspx)します。 この実装は、パフォーマンスを向上させるために、後で変わる可能性があります、基になるプロトコルに依存関係を受け取らないように、v4 プリンター ドライバーを開発することが重要であるためです。
 
 次の図は、プロトコルの使用率を示します。
 

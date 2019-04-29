@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b12c310b3089961b40335a729b68e24f5d279b0b
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331194"
 ---
 # <a name="attributes-for-downloaded-fonts"></a>ダウンロードしたフォントの属性
 
@@ -45,7 +45,7 @@ ms.locfileid: "57350335"
 <td><p><strong></em>FontFormat</strong></p></td>
 <td><p></p>
 サポートされているダウンロードの種類を示す定数値。 次のいずれかを指定する必要があります。HPPCL HPPCL_RES HPPCL_OUTLINE OEM_CALLBACK</td>
-<td><p>ために必要なかどうかは、プリンターがフォントをダウンロードできます。 OEM_CALLBACK が指定されている場合は、フォントのコールバック関数を指定する必要があります。 これらのコールバックの詳細については、<a href="customizing-microsoft-s-printer-drivers.md" data-raw-source="[Customizing Microsoft's Printer Drivers](customizing-microsoft-s-printer-drivers.md)">をカスタマイズする Microsoft のプリンター ドライバー</a>を参照してください。</p></td>
+<td><p>ために必要なかどうかは、プリンターがフォントをダウンロードできます。 OEM_CALLBACK が指定されている場合は、フォントのコールバック関数を指定する必要があります。 これらのコールバックの詳細については、次を参照してください。<a href="customizing-microsoft-s-printer-drivers.md" data-raw-source="[Customizing Microsoft's Printer Drivers](customizing-microsoft-s-printer-drivers.md)">をカスタマイズする Microsoft のプリンター ドライバー</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>MaxFontID</strong></p></td>
@@ -82,7 +82,7 @@ ms.locfileid: "57350335"
 
  
 
-例については、、[サンプル GPD ファイル](sample-gpd-files.md)を参照してください。
+例については、次を参照してください。、[サンプル GPD ファイル](sample-gpd-files.md)します。
 
  
 

@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 496b6d67d67c59a8c398ec2a3e351042bbfa2175
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327150"
 ---
 # <a name="using-framework-locks"></a>フレームワーク ロックの使用
 
@@ -49,13 +49,13 @@ Framework スピン ロックを使用して、IRQL で実行されるコード�
 
 ドライバーが、framework スピン ロックを呼び出す必要がありますを使用する前に[ **WdfSpinLockCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff550042)スピン ロック オブジェクトを作成します。 ドライバーを呼び出すことが[ **WdfSpinLockAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff550040)ロックを取得および[ **WdfSpinLockRelease** ](https://msdn.microsoft.com/library/windows/hardware/ff550044)を解放します。
 
-スピン ロックの使用例については、[送信要求のキャンセルの同期](synchronizing-cancellation-of-sent-requests.md)を参照してください。
+スピン ロックの使用例については、次を参照してください。[送信要求のキャンセルの同期](synchronizing-cancellation-of-sent-requests.md)します。
 
 ### <a name="framework-interrupt-locks"></a>フレームワークの割り込みのロック
 
-DIRQL をサポートする割り込みオブジェクトの割り込み処理、framework 割り込みロックはスピン ロックです。 ドライバーは、割り込みスピン ロックを取得、後に、ロックを解放するまで、デバイスの DIRQL でドライバーを実行します。 詳細については、割り込みのロックを使用して、[同期割り込みコード](synchronizing-interrupt-code.md)を参照してください。
+DIRQL をサポートする割り込みオブジェクトの割り込み処理、framework 割り込みロックはスピン ロックです。 ドライバーは、割り込みスピン ロックを取得、後に、ロックを解放するまで、デバイスの DIRQL でドライバーを実行します。 詳細については、割り込みのロックを使用して、次を参照してください。[同期割り込みコード](synchronizing-interrupt-code.md)します。
 
-パッシブ レベルの処理をサポートする割り込みオブジェクト、framework 割り込みロックはロックを待機します。 ドライバーは IRQL で、実行後に、ドライバーは、割り込み待機ロックを取得、パッシブ =\_レベルのロックを解放するまでです。 パッシブ レベルの処理の詳細については、[パッシブ レベルをサポートしている中断](supporting-passive-level-interrupts.md)を参照してください。
+パッシブ レベルの処理をサポートする割り込みオブジェクト、framework 割り込みロックはロックを待機します。 ドライバーは IRQL で、実行後に、ドライバーは、割り込み待機ロックを取得、パッシブ =\_レベルのロックを解放するまでです。 パッシブ レベルの処理の詳細については、次を参照してください。[パッシブ レベルをサポートしている中断](supporting-passive-level-interrupts.md)します。
 
  
 

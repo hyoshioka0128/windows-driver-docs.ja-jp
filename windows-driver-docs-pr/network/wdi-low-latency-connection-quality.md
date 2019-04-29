@@ -1,17 +1,17 @@
 ---
-title: WDI 低待機時間の接続の品質
+title: WDI 低待機時間接続品質
 description: このセクションでは、WDI で低待機時間の接続の品質を維持する方法をについて説明します
 ms.assetid: 194A26DA-A138-4967-9A09-5843A38007E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5e0e06a362fbde672c908d387a61e9e69dbb694
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385404"
 ---
-# <a name="wdi-low-latency-connection-quality"></a>WDI 低待機時間の接続の品質
+# <a name="wdi-low-latency-connection-quality"></a>WDI 低待機時間接続品質
 
 
 低待機時間データのトラフィック (たとえば、VoIP アプリケーション) が必要なシステムで実行されているアプリケーションがある場合、低待機時間モード操作用のポートを構成できます。 この操作モードの場合、ドライバーは低待機時間モード用に構成されているポートのチャネルから移動することを (ローミング AP 以上のスキャン) などの任意の動作を変更する必要があります。 指定したガイダンスに従う必要がありますも、 [NDIS\_状態\_WDI\_INDICATION\_リンク\_状態\_変更](https://msdn.microsoft.com/library/windows/hardware/dn925638)を示す値。 ホスト提供[ **WDI\_TLV\_低\_待機時間\_接続\_品質\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/dn897843)するポートこのモードである場合に使用する必要があります。 ポートがチャネルとの接続が低待機時間のローミングを開始する前に下に分類する必要があります最小リンクの品質評価の値をオフにする必要がある最大時間を指定します (送信を含む[NDIS\_状態\_WDI\_INDICATION\_ローミング\_必要](https://msdn.microsoft.com/library/windows/hardware/dn925648))。

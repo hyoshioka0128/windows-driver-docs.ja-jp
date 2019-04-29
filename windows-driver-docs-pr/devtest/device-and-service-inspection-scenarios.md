@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee6870686ffc84ece4e16b5dc6b522defddff198
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329688"
 ---
 # <a name="device-and-service-inspection-scenarios"></a>デバイスとサービスの検査のシナリオ
 
@@ -82,7 +82,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 1.2.4
 
@@ -90,7 +90,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 1.2.5
 
@@ -98,7 +98,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 1.2.6
 
@@ -148,7 +148,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 1.3.5
 
@@ -156,7 +156,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 1.3.6
 
@@ -164,7 +164,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 1.3.7
 
@@ -260,7 +260,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 1.5.3
 
@@ -268,7 +268,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
 1.5.4
 
@@ -276,7 +276,7 @@ ThisDevice メタデータを表示します。
 
 なし
 
-送信された内容に対応します。 クライアントからの出力の例は、[メタデータ応答のサンプル出力](sample-metadata-response-output.md)を参照してください。
+送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
 
  
 

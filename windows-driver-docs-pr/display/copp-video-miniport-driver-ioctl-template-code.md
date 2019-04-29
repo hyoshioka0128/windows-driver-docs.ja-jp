@@ -1,19 +1,19 @@
 ---
-title: COPP ビデオのミニポート ドライバー IOCTL テンプレート コード
-description: COPP ビデオのミニポート ドライバー IOCTL テンプレート コード
+title: COPP ビデオ ミニポート ドライバーの IOCTL テンプレート コード
+description: COPP ビデオ ミニポート ドライバーの IOCTL テンプレート コード
 ms.assetid: 55a77261-016e-4ba6-8cb6-c45171759035
 keywords:
 - Ioctl WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71fbf14e5ffb345417be42fd1d0d375267f35718
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331339"
 ---
-# <a name="copp-video-miniport-driver-ioctl-template-code"></a>COPP ビデオのミニポート ドライバー IOCTL テンプレート コード
+# <a name="copp-video-miniport-driver-ioctl-template-code"></a>COPP ビデオ ミニポート ドライバーの IOCTL テンプレート コード
 
 
 ## <span id="ddk_copp_video_miniport_driver_ioctl_template_code_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_IOCTL_TEMPLATE_CODE_GG"></span>

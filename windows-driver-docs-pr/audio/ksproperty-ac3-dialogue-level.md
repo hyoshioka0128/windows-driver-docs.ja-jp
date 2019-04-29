@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35a4e592f2201cd2150e446a1e5a1506f3715472
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333139"
 ---
 # <a name="kspropertyac3dialoguelevel"></a>KSPROPERTY\_AC3\_ダイアログ\_レベル
 
@@ -51,7 +51,7 @@ KSPROPERTY\_AC3\_ダイアログ\_レベル プロパティは、AC で 3 でエ
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537078" data-raw-source="[&lt;strong&gt;KSAC3_DIALOGUE_LEVEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537078)"><strong>KSAC3_DIALOGUE_LEVEL</strong></a></p></td>
@@ -67,7 +67,7 @@ KSPROPERTY\_AC3\_ダイアログ\_レベル プロパティは、AC で 3 でエ
 
 KSPROPERTY\_AC3\_ダイアログ\_レベル プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -1,5 +1,5 @@
 ---
-title: .record_branches (ブランチの記録を有効にする)
+title: .record_branches (分岐の記録を有効にする)
 description: .Record_branches コマンドでは、ターゲットのコード実行の分岐の記録を使用します。
 ms.assetid: 522eeba5-b6c5-473c-9c8e-8ef4c941079f
 keywords:
@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f06ce24825ac7170f226347d2477d55af9aa6720
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334299"
 ---
 # <a name="recordbranches-enable-branch-recording"></a>.record\_ブランチ (分岐の記録を有効にする)
 

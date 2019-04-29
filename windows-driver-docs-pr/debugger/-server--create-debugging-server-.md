@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bbdc4d1fdf3d16e42e98cb61a0d036ff67d6a5b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338839"
 ---
 # <a name="server-create-debugging-server"></a>.server (デバッグ サーバーの作成)
 
@@ -106,7 +106,7 @@ SSL または SPIPE プロトコルを使用すると場合、 *Cert*証明書�
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッグ サーバーを起動する方法の完全な詳細については、[**デバッグ サーバー アクティブ化する**](activating-a-debugging-server.md)を参照してください。 例については、[クライアントとサーバーの例](client-and-server-examples.md)を参照してください。
+デバッグ サーバーを起動する方法の完全な詳細については、次を参照してください。 [**デバッグ サーバー アクティブ化する**](activating-a-debugging-server.md)します。 例については、次を参照してください。[クライアントとサーバーの例](client-and-server-examples.md)します。
 
 <a name="remarks"></a>コメント
 -------

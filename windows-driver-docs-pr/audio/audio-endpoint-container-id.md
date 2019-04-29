@@ -1,17 +1,17 @@
 ---
-title: コンテナーのオーディオのエンドポイント ID
+title: オーディオ エンドポイント コンテナー ID
 description: オーディオ エンドポイント コンテナー ID のトピックでは、Bluetooth のオーディオ デバイスに関連付けられたオーディオのエンドポイントのコンテナーの ID を取得するため使用できる信頼性の高い方法について説明します。
 ms.assetid: 82A852FF-688C-496A-AFF1-C68B0CC1756A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bfd7d30c0922b17748306f16b6eddabf9d1553f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331480"
 ---
-# <a name="audio-endpoint-container-id"></a>コンテナーのオーディオのエンドポイント ID
+# <a name="audio-endpoint-container-id"></a>オーディオ エンドポイント コンテナー ID
 
 
 オーディオ エンドポイント コンテナー ID のトピックでは、Bluetooth のオーディオ デバイスに関連付けられたオーディオのエンドポイントのコンテナーの ID を取得するため使用できる信頼性の高い方法について説明します。
@@ -24,7 +24,7 @@ ms.locfileid: "56560993"
 
 オーディオ ドライバーをサポートしている場合、 **KSPROPERTY\_ジャック\_CONTAINERID**プロパティ、オーディオ システムに、ドライバーからこのプロパティの値がによって読み取られ、ストアのコンテナーとしての値の ID、オーディオエンドポイント。
 
-コンテナー Id と、前のセクションで説明されているアルゴリズムについての詳細については、[コンテナー ID](https://msdn.microsoft.com/library/windows/hardware/ff540024.aspx)と[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)を参照してください。
+コンテナー Id と、前のセクションで説明されているアルゴリズムについての詳細については、次を参照してください。[コンテナー ID](https://msdn.microsoft.com/library/windows/hardware/ff540024.aspx)と[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 [操作の理論を概説します。](theory-of-operation.md)  

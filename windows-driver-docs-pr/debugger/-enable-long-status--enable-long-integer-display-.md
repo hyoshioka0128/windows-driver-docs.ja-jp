@@ -1,5 +1,5 @@
 ---
-title: .enable_long_status (Long 整数表示を有効にする)
+title: .enable_long_status (長整数型の表示を有効にする)
 description: .Enable_long_status コマンドでは、10 進形式または既定の基数でデバッガーが長整数を表示するかどうかを指定します。
 ms.assetid: e08f5a40-5246-4120-ae43-37e876269463
 keywords:
@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2faea3fce198d956ccf0d8652851b925c96b4dce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336776"
 ---
 # <a name="enablelongstatus-enable-long-integer-display"></a>リストア\_長い\_状態 (Long 整数の表示を有効にする)
 

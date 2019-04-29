@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cd9ad0ea5e8616deaea9a148edeff7009cfe768
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333095"
 ---
 # <a name="kspropertyaudiocopyprotection"></a>KSPROPERTY\_オーディオ\_コピー\_保護
 
@@ -42,16 +42,16 @@ KSPROPERTY\_オーディオ\_コピー\_保護プロパティをオーディオ 
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537084" data-raw-source="[&lt;strong&gt;KSAUDIO_COPY_PROTECTION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537084)"><strong>KSAUDIO_COPY_PROTECTION</strong></a></p></td>
@@ -67,7 +67,7 @@ KSPROPERTY\_オーディオ\_コピー\_保護プロパティをオーディオ 
 
 KSPROPERTY\_オーディオ\_コピー\_保護プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 KSPROPERTY\_オーディオ\_コピー\_保護プロパティは、シリアル コピー管理システム (SCMS) するような保護スキームをサポートするオーディオ デバイスのプロパティ。 プロパティは、デジタルのストリームが著作権によって保護されているかどうかと、元のストリームとコピーであるかを示します。
@@ -82,7 +82,7 @@ SCMS には、オーディオ コンテンツの保護の 3 つのレベルを�
 
 KSPROPERTY\_オーディオ\_コピー\_保護プロパティから独立した関連付けられていない機能の実装に[デジタル著作権管理 (DRM)](https://msdn.microsoft.com/library/windows/hardware/ff536260)と Windows のセキュリティで保護されたオーディオのパス (SAP)メディア。 SAP の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

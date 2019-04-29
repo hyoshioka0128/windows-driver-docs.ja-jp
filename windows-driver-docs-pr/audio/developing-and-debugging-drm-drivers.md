@@ -1,6 +1,6 @@
 ---
-title: 開発およびデバッグ DRM ドライバー
-description: 開発およびデバッグ DRM ドライバー
+title: DRM ドライバーの開発とデバッグ
+description: DRM ドライバーの開発とデバッグ
 ms.assetid: 3450717a-fd27-4bea-8740-9d47b420ed32
 keywords:
 - デジタル権利管理の WDK オーディオ、推奨事項
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d05032f85e6b2de8e81f145a41a92dd6c37d304
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333805"
 ---
-# <a name="developing-and-debugging-drm-drivers"></a>開発およびデバッグ DRM ドライバー
+# <a name="developing-and-debugging-drm-drivers"></a>DRM ドライバーの開発とデバッグ
 
 
 ## <span id="developing_and_debugging_drm_drivers"></span><span id="DEVELOPING_AND_DEBUGGING_DRM_DRIVERS"></span>

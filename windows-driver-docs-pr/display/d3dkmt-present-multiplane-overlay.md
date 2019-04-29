@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: bc406f672581819e08752986980c086187797e89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331300"
 ---
 # <a name="d3dkmtpresentmultiplaneoverlay-structure"></a>D3DKMT\_存在\_MULTIPLANE\_オーバーレイ構造体
 
@@ -47,7 +47,7 @@ typedef struct D3DKMT_PRESENT_MULTIPLANE_OVERLAY {
 } D3DKMT_PRESENT_MULTIPLANE_OVERLAY;
 ```
 
-<a name="members"></a>Members
+<a name="members"></a>メンバー
 -------
 
 **hDevice**
@@ -70,7 +70,7 @@ typedef struct D3DKMT_PRESENT_MULTIPLANE_OVERLAY {
 
 **pPresentPlanes**
 
-**期間**
+**Duration**
 
 <a name="requirements"></a>要件
 ------------

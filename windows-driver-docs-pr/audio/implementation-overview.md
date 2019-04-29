@@ -5,11 +5,11 @@ ms.assetid: B93B9A6D-7317-482B-A0B8-298CE8F21193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb5fcb1a691f139e962039c0d64889ed0c5381c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333519"
 ---
 # <a name="implementation-overview"></a>実装の概要
 
@@ -33,10 +33,10 @@ Windows 8 およびそれ以降のオペレーティング システムでは、
 
 -   Offloaded オーディオ ピンの数。 図には、この型の 1 つだけの pin が表示されます、IHV は pin の任意の数 (n) を実装するために無料に。
 
-この新しい種類の KS フィルター トポロジ内のピンの詳細については、[アーキテクチャの概要](architectural-overview.md)を参照してください。
+この新しい種類の KS フィルター トポロジ内のピンの詳細については、次を参照してください。[アーキテクチャの概要](architectural-overview.md)します。
 オーディオのアダプターとそのドライバーの検出には、「リード」、AudioEndpointBuilder がユーザー モード オーディオ システムで実際のサービスです。 AudioEndpointBuilder サービス モニター、 **KSCATEGORY\_オーディオ**デバイス インターフェイスの到着と削除のためのクラス。 オーディオ ドライバーでの新しいインスタンスを登録するときに、 **KSCATEGORY\_オーディオ**デバイス インターフェイス クラスでは、デバイス インターフェイスの到着の通知が発生します。 AudioEndpointBuilder サービスでは、デバイス インターフェイスの到着の通知を検出し、適切なアクションを実行できるように、システムのオーディオ デバイスのトポロジを検査するアルゴリズムを使用します。
 
-オフロードされたオーディオの処理に対応しているアダプターをサポートするために、オーディオ ドライバーを開発する際に、ドライバーが新たに定義されたを使用する必要がありますように[ **KSNODETYPE\_オーディオ\_エンジン**](https://msdn.microsoft.com/library/windows/hardware/hh450866)ハードウェア オーディオ エンジンの機能を公開するオーディオのエンドポイント。 オーディオのエンドポイントの検出プロセスの詳細については、[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)を参照してください。
+オフロードされたオーディオの処理に対応しているアダプターをサポートするために、オーディオ ドライバーを開発する際に、ドライバーが新たに定義されたを使用する必要がありますように[ **KSNODETYPE\_オーディオ\_エンジン**](https://msdn.microsoft.com/library/windows/hardware/hh450866)ハードウェア オーディオ エンジンの機能を公開するオーディオのエンドポイント。 オーディオのエンドポイントの検出プロセスの詳細については、次を参照してください。[オーディオ エンドポイント ビルダー アルゴリズム](audio-endpoint-builder-algorithm.md)します。
 
 ## <a name="span-iduserinterfaceconsiderationsspanspan-iduserinterfaceconsiderationsspanspan-iduserinterfaceconsiderationsspanuser-interface-considerations"></a><span id="User_Interface_Considerations"></span><span id="user_interface_considerations"></span><span id="USER_INTERFACE_CONSIDERATIONS"></span>ユーザー インターフェイスに関する考慮事項
 

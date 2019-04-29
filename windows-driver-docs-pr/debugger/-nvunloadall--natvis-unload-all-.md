@@ -1,5 +1,5 @@
 ---
-title: .nvunloadall (NatVis は、すべてをアンロード)
+title: .nvunloadall (NatVis のすべてアンロード)
 description: .Nvunloadall コマンドは、すべてのデバッガーの環境から NatVis ファイルをアンロードします。
 ms.assetid: E018D09A-1B52-4D9E-944E-7F61841EAE1A
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e634451a0149a9eeac8c7bf0a8d3f616456c4d32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335825"
 ---
-# <a name="nvunloadall-natvis-unload-all"></a>.nvunloadall (NatVis は、すべてをアンロード)
+# <a name="nvunloadall-natvis-unload-all"></a>.nvunloadall (NatVis のすべてアンロード)
 
 
 .Nvunloadall コマンドは、すべてのデバッガーの環境から NatVis ファイルをアンロードします。
@@ -55,7 +55,7 @@ ms.locfileid: "56552537"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)を参照してください。
+詳細については、次を参照してください。 [.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

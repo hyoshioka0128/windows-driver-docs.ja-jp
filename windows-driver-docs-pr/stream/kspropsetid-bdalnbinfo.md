@@ -5,11 +5,11 @@ ms.assetid: 2b385e93-2d0d-44ca-9cfc-58afea946db6
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f1049488fbdeeb88420332f7b8dfdf369b227e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389229"
 ---
 # <a name="kspropsetidbdalnbinfo"></a>KSPROPSETID\_BdaLNBInfo
 
@@ -36,7 +36,7 @@ LNB は、衛星アンテナの中心点のデバイスです。 LNB は、ア�
 
 KSPROPSETID\_BdaLNBInfo プロパティ セットは、RF チューナーに衛星通信の LNB デバイスに関する情報を通信します。 クライアントが送信すると、 [ **KSPROPERTY\_BDA\_RF\_チューナー\_頻度**](ksproperty-bda-rf-tuner-frequency.md)チューナーが送信できる特定の頻度を RF チューナーをチューニングする要求で、必要な場合は、LNB のプロパティに従って、内部パラメーターを調整する LNB デバイスに信号を制御します。
 
-### <a name="see-also"></a>参照
+### <a name="see-also"></a>関連項目
 
 [**KSPROPERTY\_BDA\_RF\_チューナー\_頻度**](ksproperty-bda-rf-tuner-frequency.md)
 

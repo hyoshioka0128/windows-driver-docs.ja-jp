@@ -1,6 +1,6 @@
 ---
-title: ライブ ユーザー モードのターゲット
-description: ライブ ユーザー モードのターゲット
+title: ライブ ユーザーモード ターゲット
+description: ライブ ユーザーモード ターゲット
 ms.assetid: 2709dd01-6486-471d-afa1-a8441665da8d
 keywords:
 - エンジン API、ターゲット、ユーザー モードをデバッガーします。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77e8334d317a916dd397891b8e77dbbee142c7ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383407"
 ---
-# <a name="live-user-mode-targets"></a>ライブ ユーザー モードのターゲット
+# <a name="live-user-mode-targets"></a>ライブ ユーザーモード ターゲット
 
 
 ## <span id="ddk_live_user_mode_targets_dbx"></span><span id="DDK_LIVE_USER_MODE_TARGETS_DBX"></span>

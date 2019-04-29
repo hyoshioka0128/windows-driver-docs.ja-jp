@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a5d70a547c742132e99baa553d4f6b26292349b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384153"
 ---
 # <a name="kspropertyallocatorcontrolsurfacesize"></a>KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ
 
@@ -42,15 +42,15 @@ KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパ�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
+<td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564280" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564280)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S</strong></a></p></td>
@@ -63,14 +63,14 @@ KSPROPERTY\_アロケーター\_コントロール\_画面\_サイズ プロパ�
 
 プロパティの値 (データの操作) は、1 組の幅を指定する ULONGs とオーバーレイ サーフェスの高さが。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このプロパティをサポートするミニドライバーは、KSPROPERTY を返す\_アロケーター\_コントロール\_画面\_サイズ\_幅と高さのオーバーレイが必要なサーフェスを記述する S 構造体。 オーバーレイ Mixer では、このサイズのオーバーレイのサーフェスを割り当てます。 暗証番号 (pin) の接続中に、メディアの種類で指定されたサイズでない場合、ビデオはビデオ ポートではこのサイズに拡大縮小します。 その他のビデオ ポートでのスケーリングは行われません、VGA チップのスケーリング能力に関係なく。
 
 ミキサーがその主な入力ピンのビデオ ポートを使用してこのプロパティのアップ ストリーム フィルターに接続されている場合、オーバーレイ Mixer は常にこの新しいプロパティを照会します。 そのフィルターがこのプロパティを実装していない場合、オーバーレイ Mixer でデータをキャプチャしていないととして正しく表示されるビデオを保持するために必要なビデオ ポートにビデオを拡大または縮小します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

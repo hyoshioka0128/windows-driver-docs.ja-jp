@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6a37d2f859bda580631e761570a1082c293c3c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332601"
 ---
 # <a name="kspropertytelephonycallhold"></a>KSPROPERTY\_テレフォニー\_CALLHOLD
 
@@ -69,7 +69,7 @@ A **KSPROPERTY\_テレフォニー\_CALLHOLD**プロパティ要求を返しま�
 
 設定した場合、 **KSPROPERTY\_テレフォニー\_CALLHOLD**プロパティの値を持つ**TRUE**、電話呼び出しは保留中に配置されます。 想定される動作は、送信と受信の両方をミュートすることです。 データはありませんは、送信または受信をここでは。 オーディオ ドライバーは、呼び出しの状態を更新 ([**テレフォニー\_CALLSTATE**](https://msdn.microsoft.com/library/windows/hardware/mt169896)) に**テレフォニー\_CALLSTATE\_保持**します。 設定した場合、 **KSPROPERTY\_テレフォニー\_CALLHOLD**プロパティの値を持つ**FALSE**、電話呼び出しが保留中の状態から取得され、呼び出しの状態が更新され**テレフォニー\_CALLSTATE\_有効**します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

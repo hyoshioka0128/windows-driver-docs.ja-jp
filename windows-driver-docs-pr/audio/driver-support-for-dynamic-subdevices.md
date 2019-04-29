@@ -1,6 +1,6 @@
 ---
-title: 動的サブデバイスのドライバー サポート
-description: 動的サブデバイスのドライバー サポート
+title: 動的なサブデバイス用のドライバーのサポート
+description: 動的なサブデバイス用のドライバーのサポート
 ms.assetid: ca355dfc-46ad-4df2-ac48-f3a0780dc3d3
 keywords:
 - 動的なオーディオ サブデバイス WDK オーディオ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94d3555827754fc0d3d44a753271b9b7228f13b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333747"
 ---
-# <a name="driver-support-for-dynamic-subdevices"></a>動的サブデバイスのドライバー サポート
+# <a name="driver-support-for-dynamic-subdevices"></a>動的なサブデバイス用のドライバーのサポート
 
 
 コード例で[サブデバイス作成](subdevice-creation.md)を使用する方法を示しています、 **PcRegisterSubdevice**ルーチンをサブデバイスを登録します。 SB16 サンプル オーディオ ドライバー、Windows Driver Kit (WDK) では、使用する方法を示します、 **PcRegisterPhysicalConnection**サブデバイス同じのオーディオのアダプターに含まれている間の物理接続を登録するルーチン。

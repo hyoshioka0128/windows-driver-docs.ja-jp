@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf513223e0952a9f0b43d0c18a341fb6deb968a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337489"
 ---
-# <a name="bthkdrfcomminfo"></a>! bthkd.rfcomminfo
+# <a name="bthkdrfcomminfo"></a>!bthkd.rfcomminfo
 
 
 **! Bthkd.rfcomminfo**コマンド RFCOMM FDO と TDI デバイス オブジェクトに関する情報を表示します。

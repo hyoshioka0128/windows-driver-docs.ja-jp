@@ -5,11 +5,11 @@ ms.assetid: 148D044E-B736-4526-BDC5-2C180A590C21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 434a1e10747edb83b8deb74a14d9b45bc2257f4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328764"
 ---
 # <a name="portcls-registry-power-settings"></a>PortCls レジストリの電源設定
 
@@ -34,7 +34,7 @@ Windows 8 の既定値は PortCls を使用して、電源マネージャーを�
 <thead>
 <tr class="header">
 <th align="left">レジストリ値</th>
-<th align="left">データ型</th>
+<th align="left">データの種類</th>
 <th align="left">既定値</th>
 <th align="left">説明</th>
 </tr>
@@ -50,7 +50,7 @@ Windows 8 の既定値は PortCls を使用して、電源マネージャーを�
 <td align="left">IdlePowerState</td>
 <td align="left">REG_BINARY</td>
 <td align="left">3 (D3)
-<p>有効な値 :</p>
+<p>有効な値:</p>
 1-D1 2 - D2 3 - D3</td>
 <td align="left">電源が不要になったときに、デバイスが入力されます電源の状態を指定します。</td>
 </tr>

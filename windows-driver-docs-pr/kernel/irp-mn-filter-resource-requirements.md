@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_FILTER_RESOURCE_REQUIREMENTS カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 253b31f8aa8033c0318f2104d6812e2619eb8396
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391973"
 ---
 # <a name="irpmnfilterresourcerequirements"></a>IRP\_MN\_フィルター\_リソース\_要件
 

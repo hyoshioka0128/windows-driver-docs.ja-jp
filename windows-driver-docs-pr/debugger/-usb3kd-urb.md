@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0774c2b36d348ff0c485bd08e9f1e2bb06169dc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335627"
 ---
 # <a name="usb3kdurb"></a>!usb3kd.urb
 
@@ -39,7 +39,7 @@ URB のアドレス。
 
 Usb3kd.dll
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次の例の出力に URB (0xfffffa8005a2cbe8) のアドレスを示しています、 [ **! xhci\_deviceslots** ](-usb3kd-xhci-deviceslots.md)コマンド。

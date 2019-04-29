@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 700d9fba987521ff11af671b948890385d104acc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333064"
 ---
 # <a name="kspropertyaudiodemuxdest"></a>KSPROPERTY\_オーディオ\_DEMUX\_DEST
 
@@ -70,7 +70,7 @@ KSPROPERTY\_オーディオ\_DEMUX\_DEST プロパティ要求がステータス
 <a name="remarks"></a>注釈
 -------
 
-暗証番号 (pin) の ID では、論理ピン DEMUX ノードで識別します。 フィルター内のノードの論理ピンの暗証番号 (pin) の Id の詳細については、[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)を参照してください。
+暗証番号 (pin) の ID では、論理ピン DEMUX ノードで識別します。 フィルター内のノードの論理ピンの暗証番号 (pin) の Id の詳細については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -1,7 +1,7 @@
 ---
-Description: This article shows how to send commands and receive change notifications from audio device modules. from a Universal Windows Platform (UWP) app.
+Description: この記事では、コマンドを送信し、オーディオ デバイス モジュールからの変更通知を受信する方法を示します。 ユニバーサル Windows プラットフォーム (UWP) アプリです。
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
-title: オーディオ デバイス モジュールのクエリを構成し、
+title: オーディオ デバイス モジュールの構成とクエリ
 label: Configure and query audio device modules
 template: ''
 ms.author: drewbat
@@ -9,13 +9,13 @@ ms.date: 06/28/2017
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 608926ac8c1eab801eecb31027c9261e4041134a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333923"
 ---
-# <a name="configure-and-query-audio-device-modules"></a>オーディオ デバイス モジュールのクエリを構成し、 
+# <a name="configure-and-query-audio-device-modules"></a>オーディオ デバイス モジュールの構成とクエリ 
 
 この記事では、コマンドを送信し、UWP アプリからのオーディオ デバイス モジュールからの変更通知を受信する方法を示します。 オーディオ デバイス モジュール処理単位または他のオーディオ設定モジュール、オーディオ ドライバーで定義されたハードウェア効果があります。 この機能は、モジュール プロバイダーのユーザーを制御できるようにして、DSP で実行されているオーディオ処理モジュールからステータス情報を取得する UWP アプリを作成できるようにするために設計されました。 オーディオ デバイス モジュールのこの記事に示すように Api を使用するには、制限する必要があります指定*audioDeviceConfiguration*アプリケーション パッケージ マニフェストで機能します。
 

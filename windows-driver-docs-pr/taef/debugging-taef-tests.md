@@ -1,17 +1,17 @@
 ---
-title: TAEF テストのデバッグ
-description: TAEF テストのデバッグ
+title: TAEF テストをデバッグする
+description: TAEF テストをデバッグする
 ms.assetid: 0239547F-EF29-45e0-BACF-ED0F6C07DB99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16a0ee06c32bdc2d28ccc8f4186e8b8181bff24c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391372"
 ---
-# <a name="debugging-taef-tests"></a>TAEF テストのデバッグ
+# <a name="debugging-taef-tests"></a>TAEF テストをデバッグする
 
 
 ## <a name="span-iddebuggerconfigurationspanspan-iddebuggerconfigurationspanspan-iddebuggerconfigurationspandebugger-configuration"></a><span id="Debugger_configuration"></span><span id="debugger_configuration"></span><span id="DEBUGGER_CONFIGURATION"></span>デバッガーの構成
@@ -24,7 +24,7 @@ ms.locfileid: "56558597"
 
 単に渡すことができます、cdb、windbg などのデバッガーを使用する場合、'-デバッガーにスイッチの o '。 これは、自動的に、子プロセスをデバッグするデバッガーすべて withinin 同じデバッガー インスタンスで構成されます。
 
-次に、例を示します。
+例:
 
 ``` syntax
 windbg -o te.exe MyTests.dll
@@ -43,7 +43,7 @@ windbg -o te.exe MyTests.dll
 
 Visual Studio を使用して、デバッグを実行する場合は、上記のメソッドが機能しません。 この場合、デバッガーを TE.exe を実行し、テスト_ケースの適切なブレークポイントを設定し、TE.exe に/inproc スイッチを渡すだけを構成します。 これにより、TE.exe 内ですべてのテストを実行する新しいプロセスを作成するのではなく処理します。
 
-次に、例を示します。
+例:
 
 ``` syntax
 start devenv /debugexe te.exe MyTests.dll /inproc

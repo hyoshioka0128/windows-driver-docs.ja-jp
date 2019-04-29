@@ -1,6 +1,6 @@
 ---
-title: 高解像度オーディオ DDI
-description: 高解像度オーディオ DDI
+title: High Definition Audio DDI
+description: High Definition Audio DDI
 ms.assetid: d471777c-0002-4caa-a06e-c58e449b7678
 keywords:
 - HD オーディオ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94a6efb692b2b3697196b953f3e8c0faa4fe32c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333530"
 ---
-# <a name="high-definition-audio-ddi"></a>高解像度オーディオ DDI
+# <a name="high-definition-audio-ddi"></a>High Definition Audio DDI
 
 
 Windows Vista では、Microsoft はオペレーティング システムの一部として次の 2 つのドライバーを提供します。

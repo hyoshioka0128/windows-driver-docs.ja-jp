@@ -1,6 +1,6 @@
 ---
-title: 呼び出しを行う
-description: 呼び出しを行う
+title: 呼び出しの実行
+description: 呼び出しの実行
 ms.assetid: b5273df1-b99f-415c-a099-16a51f3329ee
 keywords:
 - WDK いる CoNDIS 通話のセットアップ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00250ab411fc4859bd05f1f960739f23ef9356b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331912"
 ---
-# <a name="making-a-call"></a>呼び出しを行う
+# <a name="making-a-call"></a>呼び出しの実行
 
 
 

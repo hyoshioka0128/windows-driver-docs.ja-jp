@@ -5,11 +5,11 @@ ms.assetid: F28314C6-4B4D-479F-BB96-6850C8F98153
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ad6cddd87a98f608fa65eab78b4d5222c811fec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391345"
 ---
 # <a name="memory-usage-rule-set-ndis"></a>メモリ使用の規則セット (NDIS)
 
@@ -81,7 +81,7 @@ ms.locfileid: "56582648"
     msbuild /t:sdv /p:Inputs="/check:MemoryUsage.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)を参照してください。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 4FEDFE4B-F3B2-4B34-80DC-84BFFA4C612B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba6ee6144018d03814bd177d9981d7b758347b32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392716"
 ---
 # <a name="creating-wdf-hid-minidrivers"></a>WDF HID ミニドライバーの作成
 
@@ -36,7 +36,7 @@ KMDF または UMDF を使用して、HID ミニドライバーを作成する�
     -   **UmdfFileObjectPolicy**に**AllowNullAndUnknownFileObjects**
     -   **UmdfFsContextUsePolicy**に**CanUseFsContext2**
 
-    例:
+    次に、例を示します。
 
     ```cpp
     [hidumdf.NT.Wdf]

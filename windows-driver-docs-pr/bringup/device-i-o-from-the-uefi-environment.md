@@ -1,17 +1,17 @@
 ---
-title: UEFI 環境からデバイス I/O
+title: UEFI 環境からのデバイス I/O
 description: Windows OS ローダー UpdateCapsule 関数を呼び出すと、CapsuleHeaderArray に含まれる各 capsule が実行されます。
 ms.assetid: 843B177F-CD1F-47E6-8F35-0A0FFA8FA192
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04ee06201013d4f4874021c3a1211b8586026dc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328064"
 ---
-# <a name="device-io-from-the-uefi-environment"></a>UEFI 環境からデバイス I/O
+# <a name="device-io-from-the-uefi-environment"></a>UEFI 環境からのデバイス I/O
 
 
 Windows OS ローダー UpdateCapsule 関数を呼び出すと、CapsuleHeaderArray に含まれる各 capsule が実行されます。 Capsule の実行順序は、UEFI ファームウェアの実装に依存したり、カプセルことはできませんカプセル他の基準としたことを実行の順序に関して何らかの仮定カプセル他に、依存します。 各 capsule では、UEFI コード、更新プログラムと、ファームウェア イメージを管理する実行可能である両方を構成する、自己完結型ペイロードを示します。

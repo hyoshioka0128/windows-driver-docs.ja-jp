@@ -5,11 +5,11 @@ ms.assetid: 61ccf856-7e0b-4f1b-9be9-7b8a31339a6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 646406e0af3a813e986c3d804f64f279bff9f668
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328014"
 ---
 # <a name="efidisplaypowerprotocol"></a>EFI\_表示\_POWER\_プロトコル
 
@@ -39,10 +39,10 @@ typedef struct _EFI_DISPLAY_POWER_PROTOCOL {
 現在のリビジョンは 0x00010000 です。 リビジョンに設定してください 0x00010000、ファームウェアによってこの場合のリビジョン、 **EFI\_バッテリ\_充電中\_プロトコル**ファームウェアでサポートされています。
 
 <a href="" id="setdisplaypowerstate"></a>**SetDisplayPowerState**  
-ディスプレイおよびバックライト電源の状態を変更します。 詳細については、[EFI\_表示\_POWER\_プロトコル。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)を参照してください。
+ディスプレイおよびバックライト電源の状態を変更します。 詳細については、次を参照してください。 [EFI\_表示\_POWER\_プロトコル。SetDisplayPowerState](efi-display-power-protocolsetdisplaypowerstate.md)します。
 
 <a href="" id="getdisplaypowerstate"></a>**GetDisplayPowerState**  
-現在の電源状態の表示とバックライトを返します。 詳細については、[EFI\_表示\_POWER\_プロトコル。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)を参照してください。
+現在の電源状態の表示とバックライトを返します。 詳細については、次を参照してください。 [EFI\_表示\_POWER\_プロトコル。GetDisplayPowerState](efi-display-power-protocolgetdisplaypowerstate.md)します。
 
 ## <a name="requirements"></a>要件
 

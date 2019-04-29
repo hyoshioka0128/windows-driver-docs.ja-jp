@@ -5,11 +5,11 @@ ms.assetid: 927E2C40-973B-49AB-ACD5-2A3532827D74
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dfd1242d96af53444de42881f89b8410e1cb5a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335089"
 ---
 # <a name="efirngprotocol"></a>EFI\_RNG\_プロトコル
 
@@ -33,10 +33,10 @@ typedef struct _EFI_RNG_PROTOCOL {
 
 
 <a href="" id="getinfo"></a>**GetInfo**  
-ドライバー RNG アルゴリズムに関する情報を返しますをサポートしています。 詳細については、[EFI\_RNG\_プロトコル。GetInfo](efi-rng-protocol-getinfo.md)を参照してください。
+ドライバー RNG アルゴリズムに関する情報を返しますをサポートしています。 詳細については、次を参照してください。 [EFI\_RNG\_プロトコル。GetInfo](efi-rng-protocol-getinfo.md)します。
 
 <a href="" id="getrng"></a>**GetRNG**  
-省略可能な RNG アルゴリズムを使用して RNG 値を返します。 詳細については、[EFI\_RNG\_プロトコル。GetRNG](efi-rng-protocol-getrng.md)を参照してください。
+省略可能な RNG アルゴリズムを使用して RNG 値を返します。 詳細については、次を参照してください。 [EFI\_RNG\_プロトコル。GetRNG](efi-rng-protocol-getrng.md)します。
 
 ## <a name="requirements"></a>要件
 

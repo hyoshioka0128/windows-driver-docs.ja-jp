@@ -1,17 +1,17 @@
 ---
-title: カーネル ストリーミング イベントのセット
-description: カーネル ストリーミング イベントのセット
+title: カーネル ストリーミングのイベント セット
+description: カーネル ストリーミングのイベント セット
 ms.assetid: 424b3262-2e38-4748-8a6c-35dea25935a4
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f234e957622d711911f4d2e35cc7930ddd1bb397
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334057"
 ---
-# <a name="kernel-streaming-event-sets"></a>カーネル ストリーミング イベントのセット
+# <a name="kernel-streaming-event-sets"></a>カーネル ストリーミングのイベント セット
 
 
 ## <span id="ddk_kernel_streaming_event_sets_ks"></span><span id="DDK_KERNEL_STREAMING_EVENT_SETS_KS"></span>

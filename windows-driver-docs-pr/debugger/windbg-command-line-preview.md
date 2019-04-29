@@ -7,11 +7,11 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: 94cb1a22e065b0e9f23363e0844d1ffced537d2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325919"
 ---
 # <a name="windbg-preview---command-line-startup-options"></a>WinDbg プレビュー - コマンド ライン スタートアップ オプション
 
@@ -71,7 +71,7 @@ WinDbgX [options]
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    -remote *ClientTransport*     | 既に実行されているデバッグ サーバーに接続します。 については、使用可能な*ClientTransport*値を参照してください[デバッグ クライアントをアクティブ化する](activating-a-debugging-client.md)します。 このパラメーターを使用すると、コマンドラインで最初のパラメーターがあります。 |
 |    -サーバー*サーバトランスポート*     |                                    その他のデバッガーによってアクセスできるデバッグ サーバーを作成します。 については、使用可能な*サーバトランスポート*値を参照してください[デバッグ サーバー アクティブ化する](activating-a-debugging-server.md)します。                                    |
-| -premote *SmartClientTransport*  |                               スマート クライアントを作成しが既に実行されているプロセス サーバーに接続します。 使用可能な SmartClientTransport 値の詳細については、[スマート クライアントのアクティブ化](activating-a-smart-client.md)を参照してください。                                |
+| -premote *SmartClientTransport*  |                               スマート クライアントを作成しが既に実行されているプロセス サーバーに接続します。 使用可能な SmartClientTransport 値の詳細については、次を参照してください。[スマート クライアントのアクティブ化](activating-a-smart-client.md)します。                                |
 |             -p *PID*             |                                                                                                               デバッグする 10 進数のプロセス ID を指定します。                                                                                                                |
 |            tid- *TID*            |                                                                                           デバッグ セッションの開始時に再開するスレッドのスレッド ID を指定します。                                                                                            |
 |        -psn *ServiceName*        |                                                                      デバッグするプロセスに含まれているサービスの名前を指定します。 これは、既に実行されているプロセスのデバッグに使用されます。                                                                      |
@@ -96,7 +96,7 @@ WinDbgX [options]
 -sup | すべてのシンボルの検索中に、パブリック シンボル テーブルを検索するシンボル ハンドラーと、します。
 -sflags| 一度にすべてのシンボルのハンドラーのオプションを設定します。
 
-起動時のパラメーターの概要については、[WinDbg コマンド ライン オプション](windbg-command-line-options.md)を参照してください。
+起動時のパラメーターの概要については、次を参照してください。 [WinDbg コマンド ライン オプション](windbg-command-line-options.md)します。
 
 使用することができます/でしょうか。 サポートされているコマンド ライン オプションを一覧表示します。
 

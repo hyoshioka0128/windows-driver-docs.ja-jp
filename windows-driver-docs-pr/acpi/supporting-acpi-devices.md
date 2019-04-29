@@ -1,6 +1,6 @@
 ---
-title: ACPI のデバイスのサポート
-description: ACPI のデバイスのサポート
+title: ACPI デバイスをサポートする
+description: ACPI デバイスをサポートする
 ms.assetid: ebaf2e66-4f56-48ca-93ca-f34e694c0d73
 keywords:
 - Advanced Configuration and Power Interface Specification WDK
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d0d544118b6e030ed46b1008fc4116f6a4af724
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330888"
 ---
-# <a name="supporting-acpi-devices"></a>ACPI のデバイスのサポート
+# <a name="supporting-acpi-devices"></a>ACPI デバイスをサポートする
 
 
 このセクションでは、仕入先 WDM 関数ドライバー内での使い方 Windows Advanced Configuration and Power Interface (ACPI) デバイスの機能を強化するためにについて説明します。
@@ -53,4 +53,4 @@ ACPI 操作リージョン経由の通信、によって関数ドライバー直
 
 システム提供についてサポートを参照してください、ACPI デバイス関数のドライバーをサポートするルーチン[ACPI 操作リージョン ハンドラーの参照](https://msdn.microsoft.com/library/windows/hardware/ff536132)します。
 
-ACPI のデバイスと名前空間の詳細については、、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)を参照してください。
+ACPI のデバイスと名前空間の詳細については、次を参照してください。、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)します。

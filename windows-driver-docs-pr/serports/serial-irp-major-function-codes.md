@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b9ba0c34bb19e59fe41022be7e525f09b6a28bad
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58845548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327492"
 ---
 # <a name="serial-irp-major-function-codes"></a>シリアル IRP の主要な関数コード
 ここでは、次のシリアル IRP 主な機能コード。

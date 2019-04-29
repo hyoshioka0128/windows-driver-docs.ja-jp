@@ -1,6 +1,6 @@
 ---
-title: INX ファイルを使用して INF ファイルを作成するには
-description: INX ファイルを使用して INF ファイルを作成するには
+title: INX ファイルを使用した INF ファイルの作成
+description: INX ファイルを使用した INF ファイルの作成
 ms.assetid: b49f8fed-c2b5-46e2-aeaf-e09231fa1578
 keywords:
 - INX は、WDK KMDF をファイルします。
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 469dd5eb5d5d463b4296e2ba8c7d3ee4c2a46461
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327126"
 ---
-# <a name="using-inx-files-to-create-inf-files"></a>INX ファイルを使用して INF ファイルを作成するには
+# <a name="using-inx-files-to-create-inf-files"></a>INX ファイルを使用した INF ファイルの作成
 
 
 *INX ファイル*INF ファイル バージョン情報を表す文字列変数を含むです。 Microsoft Visual Studio を使用してドライバーをビルドすると、ビルド プロセスの実行、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786) INX で文字列変数を置換するためのツールが特定のハードウェア アーキテクチャまたはフレームワークのバージョンを表すテキスト文字列を持つファイルします。 ある Stampinf ツールも手動で実行することができます、 *bin* WDK のサブディレクトリ。

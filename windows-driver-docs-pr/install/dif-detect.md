@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 58c275e42705cc696ac0fded6a5e5be0e0e5241a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391700"
 ---
 # <a name="difdetect"></a>DIF_DETECT
 
@@ -109,7 +109,7 @@ DIF_DETECT 要求に応答インストーラーは、セットアップ クラ�
 
 フル インストール モードのセットアップ時に非 PnP デバイスを検出するために、インストーラーを処理する必要があります、 [ **DIF_FIRSTTIMESETUP** ](dif-firsttimesetup.md)要求。 フル インストール モードのセットアップでは、インストーラーに DIF_DETECT 要求を送信しません。
 
-差分のコードの詳細については、[DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)を参照してください。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce2c4b1bd84d16f3169c365e79c6389c30e6646
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335633"
 ---
 # <a name="usb3kdxhcideviceslots"></a>! usb3kd.xhci\_deviceslots
 
@@ -48,7 +48,7 @@ Usb3kd.dll
 <a name="remarks"></a>注釈
 -------
 
-出力、 **! xhci\_deviceslots**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、[USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)を参照してください。
+出力、 **! xhci\_deviceslots**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
 
 USB 3.0 ホスト コント ローラーのドライバーは、コント ローラーに接続されているデバイスを表すデータ構造体のリストを保持します。 各データ構造体は、スロット番号によって識別されます。
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_SLOT_MAPPING_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: aecf6883c3ec790778ff1c86e5c32e1d04cf73b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386681"
 ---
 # <a name="oidwwandeviceslotmappinginfo"></a>OID\_WWAN\_デバイス\_スロット\_マッピング\_情報
 
@@ -34,7 +34,7 @@ OID\_WWAN\_デバイス\_スロット\_マッピング\_情報が (つまり、e
 
 ホストは、最初の起動時に、モデム必要があるスロットと executor の既定のマッピングが必要です。 ホストは OID. 1.3 で設定操作を実行します\_WWAN\_デバイス\_スロット\_マッピング\_各 executor にバインドされているスロットを定義する情報。 ホストが再起動し、削除/挿入の間でマッピングを維持するために、モデムが必要です。 この OID は、executor 固有ではないと、デバイス上の任意の NDIS インスタンスに送信できます。 現在のマッピングは、上記のようにもクエリー可能性があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

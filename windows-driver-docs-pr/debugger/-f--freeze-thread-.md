@@ -1,5 +1,5 @@
 ---
-title: ~ f (スレッドを凍結)
+title: ~f (スレッドの凍結)
 description: ~ F コマンドが停止し、固定が解除されるまで待機する原因と、特定のスレッドがフリーズします。F (塗りつぶしメモリ) のコマンドでは、このコマンドを混同しないでください。
 ms.assetid: 86fbbcee-c752-4425-a330-4d95a4069b0d
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fe2de154ad16c54c4a465491a19bccbad4bddd22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334480"
 ---
-# <a name="f-freeze-thread"></a>~ f (スレッドを凍結)
+# <a name="f-freeze-thread"></a>~f (スレッドの凍結)
 
 
 **~ F**コマンドが停止し、固定が解除されるまで待機する原因と、特定のスレッドがフリーズします。
@@ -34,7 +34,7 @@ ms.locfileid: "56552582"
 
 
 <span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *スレッド*   
-スレッドの凍結を指定します。 構文の詳細については、[スレッド構文](thread-syntax.md)を参照してください。
+スレッドの凍結を指定します。 構文の詳細については、次を参照してください。[スレッド構文](thread-syntax.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 

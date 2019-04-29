@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f3cdd069ee946d32c692dbed305cd0ce3427b68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334865"
 ---
 # <a name="--block-delimiter"></a>{} (ブロックの区切り記号)
 
@@ -33,7 +33,7 @@ ms.locfileid: "56581222"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-デバッガー コマンド プログラムとコントロールのフロー トークンについては、[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)を参照してください。
+デバッガー コマンド プログラムとコントロールのフロー トークンについては、次を参照してください。[を使用してデバッガー コマンド プログラム](using-debugger-command-programs.md)します。
 
 <a name="remarks"></a>コメント
 -------

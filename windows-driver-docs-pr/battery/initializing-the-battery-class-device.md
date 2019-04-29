@@ -1,6 +1,6 @@
 ---
-title: バッテリ クラスのデバイスを初期化しています
-description: バッテリ クラスのデバイスを初期化しています
+title: バッテリ クラス デバイスの初期化
+description: バッテリ クラス デバイスの初期化
 ms.assetid: d385533e-790a-47b3-a3d2-d620cbd40a4d
 keywords:
 - バッテリ クラス ドライバー WDK、デバイスの初期化
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8de76e984768e09fef10b3ac892a6ac52cc1c3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335339"
 ---
-# <a name="initializing-the-battery-class-device"></a>バッテリ クラスのデバイスを初期化しています
+# <a name="initializing-the-battery-class-device"></a>バッテリ クラス デバイスの初期化
 
 
 ## <span id="ddk_initializing_the_battery_class_device_dg"></span><span id="DDK_INITIALIZING_THE_BATTERY_CLASS_DEVICE_DG"></span>

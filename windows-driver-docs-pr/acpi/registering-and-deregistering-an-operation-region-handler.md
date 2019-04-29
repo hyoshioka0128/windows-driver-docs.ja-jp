@@ -1,6 +1,6 @@
 ---
-title: 登録して、操作のリージョンのハンドラーの登録を解除
-description: 登録して、操作のリージョンのハンドラーの登録を解除
+title: 操作領域ハンドラーを登録/登録解除する
+description: 操作領域ハンドラーを登録/登録解除する
 ms.assetid: de40488d-7935-431c-b1f4-87f8aff1125b
 keywords:
 - ACPI デバイス WDK、領域の操作
@@ -12,13 +12,13 @@ keywords:
 ms.date: 01/24/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c5d3a1ff703d23b0256a43e81522fa1f3ac7513
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328836"
 ---
-# <a name="registering-and-deregistering-an-operation-region-handler"></a>登録して、操作のリージョンのハンドラーの登録を解除
+# <a name="registering-and-deregistering-an-operation-region-handler"></a>操作領域ハンドラーを登録/登録解除する
 
 
 ACPI 関数ドライバーは、呼び出すことによって操作リージョン ハンドラーを登録[ **RegisterOpRegionHandler** ](https://msdn.microsoft.com/library/windows/hardware/ff536158)し、次の情報を提供します。

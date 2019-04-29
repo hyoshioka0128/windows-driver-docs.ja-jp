@@ -1,6 +1,6 @@
 ---
-title: Stream のカテゴリ
-description: Stream のカテゴリ
+title: ストリームのカテゴリ
+description: ストリームのカテゴリ
 ms.assetid: dc2af282-4976-42d8-b07b-13b2a6dfb7d5
 keywords:
 - ビデオ キャプチャ WDK AVStream、ストリームのカテゴリ
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e688b53bf4e63683bb982ba584b2e0a9f8b722fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333966"
 ---
-# <a name="stream-categories"></a>Stream のカテゴリ
+# <a name="stream-categories"></a>ストリームのカテゴリ
 
 
 KsProxy フィルターは、ストリームのカテゴリのいくつかの種類をサポートします。 次のサブセクションでは、テーブルには、さまざまな種類のカテゴリのストリームとビデオ キャプチャ ミニドライバーがカテゴリごとに指定する必要があります拡張ヘッダー サイズの値と同様に、カテゴリの各種類に関連付けられたデータ形式について説明します。

@@ -1,17 +1,17 @@
 ---
-title: I/O 要求をシリアル インターフェイス
+title: シリアル I/O 要求インターフェイス
 description: シリアル コント ローラーで、クライアントのポートに接続されている周辺機器を制御するには、アプリケーションまたは周辺機器のデバイス ドライバーは、ポートに I/O 要求を送信します。
 ms.assetid: D536A0EC-2B8B-491B-8A14-656F4B5A3843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6e2ce72e1b26843a1714b6483aaf68b7417793d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327418"
 ---
-# <a name="serial-io-request-interface"></a>I/O 要求をシリアル インターフェイス
+# <a name="serial-io-request-interface"></a>シリアル I/O 要求インターフェイス
 
 
 シリアル コント ローラーで、クライアントのポートに接続されている周辺機器を制御するには、アプリケーションまたは周辺機器のデバイス ドライバーは、ポートに I/O 要求を送信します。 クライアントを使って[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)と[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)データを送信し、シリアル ポートから受信したデータを要求します。 さらに、Windows には、一連の定義されています。[シリアル I/O 制御](https://msdn.microsoft.com/library/windows/hardware/ff547466)シリアル ポートを構成するクライアントが使用できる要求 (Ioctl)。
@@ -275,7 +275,7 @@ SerCx2、SerCx、および際に、同じシリアル Ioctl の多くをサポ�
 
 2.  SerCx2 は特殊文字をサポートしていません。 SerCx2 が完了すると常に、 **IOCTL\_シリアル\_設定\_CHARS**状態が、要求\_成功の状態のコードはない特殊文字を設定またはその他の操作を実行この要求に応答します。 **IOCTL\_シリアル\_取得\_CHARS** SerCx2 のすべての文字値の設定を要求、 [**シリアル\_CHARS** ](https://msdn.microsoft.com/library/windows/hardware/jj673020)を null、構造体であり、状態が、要求が完了すると\_成功状態コード。
 
-3.  SerCx2 と SerCx に対して定義されているフラグのサブセットのみをサポート、 **FlowReplace**と**ControlHandShake**のメンバー、**シリアル\_HANDFLOW**構造体。 以下のようには、すべてのこれらのフラグがサポートしています。 詳細については、[**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)を参照してください。
+3.  SerCx2 と SerCx に対して定義されているフラグのサブセットのみをサポート、 **FlowReplace**と**ControlHandShake**のメンバー、**シリアル\_HANDFLOW**構造体。 以下のようには、すべてのこれらのフラグがサポートしています。 詳細については、次を参照してください。 [**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)します。
 
 4.  **IOCTL\_シリアル\_取得\_モデム\_コントロール**と**IOCTL\_シリアル\_設定\_モデム\_コントロール**要求は、主に、ハードウェアのテストに使用します。 モデムの管理操作を登録する標準的なレイアウトが定義されていません。 モデム コントロール シリアル コント ローラーの特定のハードウェア機能に依存させること自体の Ioctl リスクを使用して、周辺機器のドライバーです。
 

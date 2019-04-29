@@ -1,6 +1,6 @@
 ---
-title: WavePci ミニポート ドライバーの信頼性の問題
-description: WavePci ミニポート ドライバーの信頼性の問題
+title: WavePci ミニポート ドライバーにおける信頼性の問題
+description: WavePci ミニポート ドライバーにおける信頼性の問題
 ms.assetid: 329f28a8-5e99-4c25-8a88-1e634f7eeec8
 keywords:
 - WavePci 信頼性の問題の WDK オーディオ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1606cf3ba0e4c557fddb865e0f4e25bf52b0190b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328702"
 ---
-# <a name="reliability-issues-for-a-wavepci-miniport-driver"></a>WavePci ミニポート ドライバーの信頼性の問題
+# <a name="reliability-issues-for-a-wavepci-miniport-driver"></a>WavePci ミニポート ドライバーにおける信頼性の問題
 
 
 ## <span id="reliability_issues_for_a_wavepci_miniport_driver"></span><span id="RELIABILITY_ISSUES_FOR_A_WAVEPCI_MINIPORT_DRIVER"></span>

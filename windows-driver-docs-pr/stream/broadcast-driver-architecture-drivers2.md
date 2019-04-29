@@ -1,6 +1,6 @@
 ---
-title: ドライバーのアーキテクチャのドライバーをブロードキャストします。
-description: ドライバーのアーキテクチャのドライバーをブロードキャストします。
+title: ブロードキャスト ドライバー アーキテクチャ ドライバー
+description: ブロードキャスト ドライバー アーキテクチャ ドライバー
 ms.assetid: 23597c6d-791c-45d4-a1cd-8c26d9d888fb
 keywords:
 - AVStream WDK、ブロードキャスト ドライバーのアーキテクチャ
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce139392bcee71b791dda3991559e82cd35533c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390897"
 ---
-# <a name="broadcast-driver-architecture-drivers"></a>ドライバーのアーキテクチャのドライバーをブロードキャストします。
+# <a name="broadcast-driver-architecture-drivers"></a>ブロードキャスト ドライバー アーキテクチャ ドライバー
 
 
 

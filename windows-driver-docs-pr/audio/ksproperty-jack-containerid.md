@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 70f69ce0942f55f617ec6ee7b83f752e418fc86a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332706"
 ---
 # <a name="kspropertyjackcontainerid"></a>KSPROPERTY\_ジャック\_CONTAINERID
 
@@ -77,7 +77,7 @@ KSPROPERTY\_ジャック\_CONTAINERID プロパティ要求が物理ジャック
 
 KSPROPERTY\_ジャック\_CONTAINERID プロパティは、オーディオのエンドポイントがプラスチックのオーディオのアダプターからのさまざまな部分にある場合に設定されることにのみ必要があります。 既定では、オーディオのエンドポイントは、親のコンテナーの ID を継承します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

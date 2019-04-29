@@ -1,5 +1,5 @@
 ---
-title: I/O ターゲットを使用してください。
+title: I/O ターゲットの使用
 description: このセクションのトピックでは、Windows Driver Frameworks (WDF) ドライバーで、I/O 要求を転送または作成および I/O をターゲットと呼ばれる別のドライバーに新しい要求を送信する方法について説明します。
 ms.assetid: 77fd1b64-c3a9-4e12-ac69-0e3725695795
 keywords:
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0035c3dcba6456bfb4b5b9c6200fd6c3343ceb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327013"
 ---
-# <a name="using-io-targets"></a>I/O ターゲットを使用してください。
+# <a name="using-io-targets"></a>I/O ターゲットの使用
 
 
 このセクションのトピックでは、Windows Driver Frameworks (WDF) ドライバーで、I/O 要求を転送または作成および I/O をターゲットと呼ばれる別のドライバーに新しい要求を送信する方法について説明します。

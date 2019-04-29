@@ -1,6 +1,6 @@
 ---
-title: データのコピーを回避します。
-description: データのコピーを回避します。
+title: データ コピーの回避
+description: データ コピーの回避
 ms.assetid: bf4dab5e-5800-4888-af96-68a152ac5e39
 keywords:
 - データ コピーの WDK オーディオ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cf46bb249d2b66574910651a6c88f0cb491f197
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333912"
 ---
-# <a name="avoiding-data-copying"></a>データのコピーを回避します。
+# <a name="avoiding-data-copying"></a>データ コピーの回避
 
 
 ## <span id="avoiding_data_copying"></span><span id="AVOIDING_DATA_COPYING"></span>

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00f781a3ab77ca2e7fcd74e3b4a1cb2f4b5b697b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328685"
 ---
 # <a name="resource-list-objects"></a>リソース リストのオブジェクト
 
@@ -26,7 +26,7 @@ ms.locfileid: "56578515"
 ## <span id="resource_list_objects"></span><span id="RESOURCE_LIST_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)ミニポート ドライバーのためのインターフェイス。 IResourceList オブジェクトは、デバイスのスタートアップ時にデバイスに、プラグ アンド プレイ マネージャを代入するシステムのハードウェア リソースの一覧は、構成リソースの一覧を表します。 スタートアップ時にリソース割り当ての詳細については、[関数ドライバーでは、デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563856)を参照してください。
+PortCls システム ドライバーの実装、 [IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)ミニポート ドライバーのためのインターフェイス。 IResourceList オブジェクトは、デバイスのスタートアップ時にデバイスに、プラグ アンド プレイ マネージャを代入するシステムのハードウェア リソースの一覧は、構成リソースの一覧を表します。 スタートアップ時にリソース割り当ての詳細については、次を参照してください。[関数ドライバーでは、デバイスを起動](https://msdn.microsoft.com/library/windows/hardware/ff563856)します。
 
 リソースの一覧には、次の種類リソースにはが含まれています。
 
@@ -38,7 +38,7 @@ PortCls システム ドライバーの実装、 [IResourceList](https://msdn.mi
 
 -   バスの相対メモリ アドレスのブロック
 
-リソースの種類については、[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)を参照してください。
+リソースの種類については、次を参照してください。[ハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/ff547012)します。
 
 [IResourceList](https://msdn.microsoft.com/library/windows/hardware/ff536976)オブジェクトには、リソースの一覧の翻訳と無変換 (または「生」) のバージョンがカプセル化します。 変換し、リソースを翻訳しないについての詳細についてを参照してください。 [Bus 相対アドレスを仮想のアドレスにマッピング](https://msdn.microsoft.com/library/windows/hardware/ff554399)します。
 

@@ -1,6 +1,6 @@
 ---
-title: FCB とリソースの同期
-description: FCB とリソースの同期
+title: FCB リソース同期
+description: FCB リソース同期
 ms.assetid: 8355907e-e313-4e54-a63f-a82d9ce0d31b
 keywords:
 - FCB とリソースの同期、RDBSS WDK ファイル システム
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e964fc85743614da56816e66f9348819be860769
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327437"
 ---
-# <a name="fcb-resource-synchronization"></a>FCB とリソースの同期
+# <a name="fcb-resource-synchronization"></a>FCB リソース同期
 
 
 ## <span id="ddk_fcb_resource_synchronization_if"></span><span id="DDK_FCB_RESOURCE_SYNCHRONIZATION_IF"></span>

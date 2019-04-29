@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ec9b29f4cd5f7b29bbdc3f4463d71409ad550458
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327164"
 ---
 # <a name="kspropertycameracontrolextendedphotoframerate"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOFRAMERATE
 
@@ -47,7 +47,7 @@ ms.locfileid: "56532229"
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
@@ -74,8 +74,8 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 </colgroup>
 <thead>
 <tr class="header">
-<th>メンバー</th>
-<th>Value</th>
+<th>Member</th>
+<th>値</th>
 </tr>
 </thead>
 <tbody>
@@ -95,7 +95,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 <tr class="even">
 <td>結果</td>
 <td><p>結果のフレーム レートを読み取ろうとしてエラー値。</p>
-<p>それ以外の場合、0 を返します。</p></td>
+<p>それ以外の場合は、0 に設定されます。</p></td>
 </tr>
 <tr class="odd">
 <td>機能</td>
@@ -110,7 +110,7 @@ KSPROPERTY に応答するとき\_型\_GET 要求をドライバーのメンバ�
 
 フレーム レートの値の設定、**比率**のメンバー [ **KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)します。 **Ratio.HighPart**フレーム レートの分子が含まれていますと**Ratio.LowPart**フレーム レートの分母が含まれています。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 <table>
 <colgroup>

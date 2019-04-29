@@ -10,13 +10,13 @@ keywords:
 ms.date: 10/26/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f927a980c2079bfff843be04b7f28a1c1a7086c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333439"
 ---
-# <a name="installing-an-audio-adapter-service-in-windows"></a>Windows で、オーディオ アダプター サービスをインストールします。
+# <a name="installing-an-audio-adapter-service-in-windows"></a>Windows でのオーディオ アダプター サービスのインストール
 
 次[ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326) XYZ のオーディオ デバイスの Xyzaud.sys アダプター ドライバーがインストールされます。
 

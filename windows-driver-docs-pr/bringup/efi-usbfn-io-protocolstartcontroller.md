@@ -1,15 +1,15 @@
 ---
-title: EFI_USBFN_IO_PROTOCOL します。StartController
-description: EFI_USBFN_IO_PROTOCOL します。StartController
+title: EFI_USBFN_IO_PROTOCOL.StartController
+description: EFI_USBFN_IO_PROTOCOL.StartController
 ms.assetid: 431406c3-6b96-4815-a8a0-01100e8a5a5f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6053e93a7d9e47b20ec716513a4e50a7d596e991
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337685"
 ---
 # <a name="efiusbfnioprotocolstartcontroller"></a>EFI\_USBFN\_IO\_プロトコル。StartController
 
@@ -70,7 +70,7 @@ EFI へのポインター\_USBFN\_IO\_プロトコル インスタンス。
 
 この関数は、以降のリビジョン 0x00010001 で利用可能、 **EFI\_USBFN\_IO\_プロトコル**します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 
 **ヘッダー:** ユーザーが生成しました。

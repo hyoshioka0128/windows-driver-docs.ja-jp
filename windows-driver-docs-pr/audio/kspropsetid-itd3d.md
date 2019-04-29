@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3413d7716adb44f851773949acc07be6b6dfa2d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332482"
 ---
 # <a name="kspropsetiditd3d"></a>KSPROPSETID\_Itd3d
 
@@ -33,7 +33,7 @@ ITD アルゴリズムは、各耳に到達するサウンドのこもった感�
 
 これらのパラメーターに瞬間的な変更を加えるには をクリックし、その他の擬似ノイズ可能性があります。 このような音を除外するためにサンプルの数をこれらのパラメーターに ITD アルゴリズムを滑らかに遷移します。
 
-ITD アルゴリズムによって使用されるパラメーターの詳細については、[ **KSDS3D\_ITD\_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff537110)を参照してください。
+ITD アルゴリズムによって使用されるパラメーターの詳細については、次を参照してください。 [ **KSDS3D\_ITD\_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff537110)します。
 
 このプロパティ セットには、1 つのプロパティのみが含まれています。
 

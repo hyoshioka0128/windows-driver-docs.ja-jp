@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3665e8f6079a22e3d20a9d1108c533bab8dec623
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392660"
 ---
 # <a name="tracing-tool-concepts"></a>トレース ツールの概念
 
@@ -56,7 +56,7 @@ ms.locfileid: "56551634"
 
 [登録済みのプロバイダー](registered-provider.md)
 
-イベントのトレースの概要については、Microsoft Windows SDK のドキュメントを参照してください。 Windows ソフトウェア トレース プリプロセッサ (WPP) の詳細については、[WPP ソフトウェア トレース](wpp-software-tracing.md)を参照してください。
+イベントのトレースの概要については、Microsoft Windows SDK のドキュメントを参照してください。 Windows ソフトウェア トレース プリプロセッサ (WPP) の詳細については、次を参照してください。 [WPP ソフトウェア トレース](wpp-software-tracing.md)します。
 
  
 

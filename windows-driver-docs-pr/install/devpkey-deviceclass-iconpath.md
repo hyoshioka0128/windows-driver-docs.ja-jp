@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c9585273aee84f3c1a01b6aff9ddf3246acfd62d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392536"
 ---
 # <a name="devpkeydeviceclassiconpath"></a>DEVPKEY_DeviceClass_IconPath
 
@@ -64,7 +64,7 @@ DEVPKEY_DeviceClass_IconPath デバイス プロパティがのアイコンが�
 
 DEVPKEY_DeviceClass_IconPath 値は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)-Windows シェルによって使用される形式で、アイコン リソースの指定子の型指定されたリスト。 アイコン リソースの指定子の形式は"*ファイル パスの実行可能ファイル*、*リソース識別子*、"ここ*ファイル パスの実行可能ファイル*の完全修飾パスを含む、アイコン リソースを含むコンピューター上のファイルと*リソース識別子*リソースを識別する整数を指定します。 アイコン リソース指定子は、"%systemroot%\\system32\\DLL1.dll、-12"実行可能ファイルのパスが含まれています"%systemroot%\\system32\\DLL1.dll"と「-12」リソース識別子。
 
-Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。 これらのバージョンの Windows のデバイス セットアップ クラスのアイコンの情報にアクセスする方法については、[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537746)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。 これらのバージョンの Windows のデバイス セットアップ クラスのアイコンの情報にアクセスする方法については、次を参照してください。[デバイス セットアップ クラスのアイコンのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537746)します。
 
 <a name="requirements"></a>要件
 ------------

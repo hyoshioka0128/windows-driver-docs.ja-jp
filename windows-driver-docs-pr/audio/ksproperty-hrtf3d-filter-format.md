@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50b4383dd1a71145a4d0df6a1cd51efd887db3f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332722"
 ---
 # <a name="kspropertyhrtf3dfilterformat"></a>KSPROPERTY\_HRTF3D\_フィルター\_形式
 
@@ -51,7 +51,7 @@ KSPROPERTY\_HRTF3D\_フィルター\_FORMAT プロパティ HRTF アルゴリズ
 <tbody>
 <tr class="odd">
 <td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537104" data-raw-source="[&lt;strong&gt;KSDS3D_HRTF_FILTER_FORMAT_MSG&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537104)"><strong>KSDS3D_HRTF_FILTER_FORMAT_MSG</strong></a></p></td>

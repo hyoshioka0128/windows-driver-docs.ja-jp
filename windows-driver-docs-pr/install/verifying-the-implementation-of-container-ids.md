@@ -5,11 +5,11 @@ ms.assetid: 961f3c69-8010-4bf5-9bdf-cc01ff40546a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08d19affafef1fb3c9b1074b94af348d86aeaffb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339322"
 ---
 # <a name="verifying-the-implementation-of-container-ids"></a>コンテナー ID の実装の確認
 
@@ -28,7 +28,7 @@ Windows 7 以降のデバイスとプリンターのユーザー インターフ
 
 1 つの主な機能または「コンテナー」に、物理デバイスは、デバイスとプリンターの UI で 1 つのオブジェクトによって表されます。 この例で、マウスを含まない Microsoft **ContainerID**オペレーティング システムの記述子またはシリアル番号。 そのため、プラグ アンド プレイ (PnP) マネージャーでは、マウスのリムーバブル機能を使用して、コンテナーの ID 値を生成します。
 
-リムーバブル デバイスの機能の詳細については、[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)を参照してください。
+リムーバブル デバイスの機能の詳細については、次を参照してください。[コンテナー Id は、リムーバブル デバイスの機能から生成された](container-ids-generated-from-the-removable-device-capability.md)します。
 
  
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cc68047a87b0babae1d7cf1e80d6c751d527fa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332578"
 ---
 # <a name="kspropertytelephonyproviderchange"></a>KSPROPERTY\_テレフォニー\_PROVIDERCHANGE
 
@@ -39,16 +39,16 @@ ms.locfileid: "56573213"
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">Set</th>
-<th align="left">移行先</th>
+<th align="left">設定</th>
+<th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt169885" data-raw-source="[&lt;strong&gt;KSTELEPHONY_PROVIDERCHANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt169885)"><strong>KSTELEPHONY_PROVIDERCHANGE</strong></a></p></td>
@@ -64,14 +64,14 @@ ms.locfileid: "56573213"
 
 A **KSPROPERTY\_テレフォニー\_PROVIDERCHANGE**プロパティ要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 オーディオ スタックを使用して、 [ **KSTELEPHONY\_PROVIDERCHANGE** ](https://msdn.microsoft.com/library/windows/hardware/mt169885)を開始およびオーディオ ドライバーに SRVCC の末尾を示すプロパティです。 このプロパティは、呼び出しの種類 (LTE パケット交換 WLAN パケット交換または回線交換) を通信し、プロバイダーの変更操作 (開始、終了、またはキャンセル) ドライバーにします。 呼び出しの種類には、プロバイダーの操作が、SRVCC を終了するときは無視されます。
 
 プロバイダーの変更操作の場合は**テレフォニー\_PROVIDERCHANGEOP\_開始**、そのプロバイダーの呼び出しの状態が更新されますドライバー**テレフォニー\_CALLSTATE\_PROVIDERTRANSITION**します。 プロバイダーの変更操作の場合は**テレフォニー\_PROVIDERCHANGEOP\_エンド**、そのプロバイダーの呼び出しの状態が更新されますドライバー**テレフォニー\_CALLSTATE\_有効になっている**します。 SRVCC、中にドライバーが関連付けられているを使用する続ける必要があります[ **KSNODETYPE\_テレフォニー\_BIDI** ](ksnodetype-telephony-bidi.md)エンドポイント、およびそれがこのエンドポイントのジャックの状態を変更していません。 プロバイダーの変更操作の場合は**テレフォニー\_PROVIDERCHANGEOP\_キャンセル**SRVCC がキャンセルされるが、ドライバーは、事前 SRVCC 呼び出しに戻す必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

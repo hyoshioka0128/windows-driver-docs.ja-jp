@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_DEVICE_RELATIONS カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c2452df3c64fc1bdaf3f1aae2765353e28ccd2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386938"
 ---
 # <a name="irpmnquerydevicerelations"></a>IRP\_MN\_クエリ\_デバイス\_リレーション
 
@@ -207,7 +207,7 @@ PnP マネージャーの問題、 **PowerRelations** 、デバイスのドラ�
 
 ドライバーへの応答でのレポートに PDO を取得するには、この IRP を送信する場合、 **IRP\_MN\_クエリ\_デバイス\_リレーション**の**TargetDeviceRelation**受信されると、ドライバー、ドライバーは PDO を報告し、IRP の完了時に、返されたリレーション構造体を解放します。 ドライバーでは、別の理由でこの IRP が開始された場合、ドライバーは IRP が完了し、不要になったときに PDO を逆参照リレーション構造体を解放します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

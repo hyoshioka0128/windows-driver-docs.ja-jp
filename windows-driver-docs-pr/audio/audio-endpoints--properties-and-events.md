@@ -1,6 +1,6 @@
 ---
-title: オーディオのエンドポイント、プロパティおよびイベント
-description: オーディオのエンドポイント、プロパティおよびイベント
+title: オーディオのエンドポイント、プロパティ、およびイベント
+description: オーディオのエンドポイント、プロパティ、およびイベント
 ms.assetid: ffc5834f-30c8-40b5-b57b-fe784331690c
 keywords:
 - オーディオ イベント WDK
@@ -21,13 +21,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 27992b8952761b42a049e746ea329a2446297586
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331478"
 ---
-# <a name="audio-endpoints-properties-and-events"></a>オーディオのエンドポイント、プロパティおよびイベント
+# <a name="audio-endpoints-properties-and-events"></a>オーディオのエンドポイント、プロパティ、およびイベント
 
 
 ## <span id="audio_properties_and_events"></span><span id="AUDIO_PROPERTIES_AND_EVENTS"></span>
@@ -43,7 +43,7 @@ WaveCyclic、WavePci、MIDI、および Dmu ポート ドライバーの現在�
 
 -   Pin とノード上のイベントのイベントをフィルターではなくサポート
 
-クライアントは、プロパティまたはイベントの要求のターゲットとしてフィルターまたは暗証番号 (pin) のインスタンスへのハンドルを指定できます。 ノードのプロパティまたはイベントの要求では、フィルターまたは暗証番号 (pin) のハンドルだけでなく、ノード ID を指定します。 詳細については、[フィルター、Pin、およびノードのプロパティ](filter--pin--and-node-properties.md)を参照してください。
+クライアントは、プロパティまたはイベントの要求のターゲットとしてフィルターまたは暗証番号 (pin) のインスタンスへのハンドルを指定できます。 ノードのプロパティまたはイベントの要求では、フィルターまたは暗証番号 (pin) のハンドルだけでなく、ノード ID を指定します。 詳細については、次を参照してください。[フィルター、Pin、およびノードのプロパティ](filter--pin--and-node-properties.md)します。
 
 トポロジのポート ドライバーは次のよう
 

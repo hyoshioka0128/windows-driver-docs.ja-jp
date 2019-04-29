@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fede13a247b35ebc4ec556b41a461c1eac7354d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336391"
 ---
 # <a name="irpfind"></a>!irpfind
 
@@ -40,7 +40,7 @@ ms.locfileid: "56575036"
 検索対象のプールの種類を指定します。 次の値が許可されています。
 
 <span id="0"></span>0  
-非ページ メモリ プールを指定します。 既定値です。
+非ページ メモリ プールを指定します。 これが既定値です。
 
 <span id="1"></span>1  
 ページ メモリ プールを指定します。
@@ -109,7 +109,7 @@ Kdexts.dll
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)この拡張機能コマンドのアプリケーション。 Irp の詳細については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この例では、非ページ プールのユーザー イベント FF9E4F48 完了時に設定することで、IRP を検索します。

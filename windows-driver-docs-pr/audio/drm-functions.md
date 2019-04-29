@@ -5,11 +5,11 @@ ms.assetid: 7be96ab4-3c27-4e63-b0dd-71d814d804d7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 619ae36d96ca1f7e7ba16255731a754aaa72b6f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333733"
 ---
 # <a name="drm-functions"></a>DRM の関数
 
@@ -17,7 +17,7 @@ ms.locfileid: "56573130"
 ## <span id="ddk_drm_functions_ks"></span><span id="DDK_DRM_FUNCTIONS_KS"></span>
 
 
-このセクションでは、ドライバーが Windows でのカーネル ストリーミングのオーディオ コンテンツのデジタル著作権管理を使用して、DRM 関数について説明します。 システム ドライバー コンポーネント Drmk.sys には、これらの関数のエントリ ポイントが含まれています。 ヘッダー ファイル drmk.h でこれらの関数の定義が表示されます。 詳細については、[デジタル著作権管理](https://msdn.microsoft.com/library/windows/hardware/ff536260)を参照してください。
+このセクションでは、ドライバーが Windows でのカーネル ストリーミングのオーディオ コンテンツのデジタル著作権管理を使用して、DRM 関数について説明します。 システム ドライバー コンポーネント Drmk.sys には、これらの関数のエントリ ポイントが含まれています。 ヘッダー ファイル drmk.h でこれらの関数の定義が表示されます。 詳細については、次を参照してください。[デジタル著作権管理](https://msdn.microsoft.com/library/windows/hardware/ff536260)します。
 
 このセクションでは、次の DRM 関数について説明します。
 

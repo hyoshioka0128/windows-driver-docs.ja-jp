@@ -11,18 +11,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 776ea4eb7b2135b7599e0a657a8084c8447236f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330858"
 ---
 # <a name="bug-checks-from-kmdf-drivers"></a>KMDF ドライバーからのバグ チェック
 
 
 フレームワークはフレームワーク ベースのドライバーからのエラーのいくつかの型をチェックします。 これらのエラーが発生した場合、フレームワークを作成、WDF\_違反のバグ チェックします。
 
-フレームワークをチェックするドライバー エラーの種類については、[ **WDF\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff557235)を参照してください。
+フレームワークをチェックするドライバー エラーの種類については、次を参照してください。 [ **WDF\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff557235)します。
 
 ドライバーは、呼び出すことによってバグ チェックを作成できます[ **WdfVerifierKeBugCheck**](https://msdn.microsoft.com/library/windows/hardware/ff551166)します。
 

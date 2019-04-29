@@ -1,17 +1,17 @@
 ---
-title: ラジオ マネージャーのファイル一覧
+title: 無線マネージャー ファイル一覧
 description: 次の表では、無線マネージャー DLL 内にあるファイルについて説明します。
 ms.assetid: 70A8B11F-89FF-49E3-933E-2BB66D5E1BF6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42e3ca5785a317105ef72ccd189af999e9b1d15f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326174"
 ---
-# <a name="the-radio-manager-file-list"></a>ラジオ マネージャーのファイル一覧
+# <a name="the-radio-manager-file-list"></a>無線マネージャー ファイル一覧
 
 > [!IMPORTANT] 
 > このドキュメントと Windows 8.1 の地理的位置情報ドライバー サンプルが非推奨とされました。

@@ -5,11 +5,11 @@ ms.assetid: f800e962-2a0f-4039-a479-395a62428b06
 ms.date: 07/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 646c9b4592b3cc23fde1305a14398d761e46f026
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330692"
 ---
 > [!NOTE]
 > IoSpy と IoAttack は Windows 10 バージョン 1703 後は WDK に含まれて使用できなくします。
@@ -48,13 +48,13 @@ ms.locfileid: "56577978"
 
     このコマンドを削除、 [IoSpy](iospy.md)ファジー テストを有効にしていたすべてのデバイスからのフィルター ドライバー。 コマンドを実行すると、メモリから IoSpy フィルター ドライバーをアンロードするために、テスト システムを再起動します。
 
-    **注**  IoSpy をアンインストールすると、IoSpy データ ファイルは削除されません。 このファイルの場所が設定されて、 *DFD*パラメーターを**I/O スパイを有効にする**をテストします。 既定の場所は %systemdrive%\\DriverTest\\IoSpy します。 詳細については、[IoSpy データファイル](iospy.md)を参照してください。
+    **注**  IoSpy をアンインストールすると、IoSpy データ ファイルは削除されません。 このファイルの場所が設定されて、 *DFD*パラメーターを**I/O スパイを有効にする**をテストします。 既定の場所は %systemdrive%\\DriverTest\\IoSpy します。 詳細については、次を参照してください。 [IoSpy データファイル](iospy.md)します。
 
      
 
 4.  実行[IoAttack](ioattack.md):
 
-    テスト システムを実行して、ファジー テストを実行する準備ができました、 **I/O 攻撃の実行**をテストします。 IoAttack を実行する方法の詳細については、[IoAttack](ioattack.md)を参照してください。
+    テスト システムを実行して、ファジー テストを実行する準備ができました、 **I/O 攻撃の実行**をテストします。 IoAttack を実行する方法の詳細については、次を参照してください。 [IoAttack](ioattack.md)します。
 
     **注**  ドライバーの IOCTL および WMI インターフェイスのアクセス権限を確認するために実行する必要があります[IoAttack](ioattack.md) guest アカウントや管理者などのさまざまな権限を持つアカウントアカウント。
 

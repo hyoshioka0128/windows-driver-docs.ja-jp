@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f47a0059d6bee0a90afceaeb02e4b3ef93f6b927
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336509"
 ---
 # <a name="help-meta-command-help"></a>.help (メタコマンドのヘルプ)
 
@@ -63,7 +63,7 @@ ms.locfileid: "56580286"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 メタ コマンドの詳細については、使用、 **.help**コマンド。 標準コマンドの詳細については、使用、 [**でしょうか。**](---command-help-.md) コマンドなど) を指定します。 拡張機能コマンドの詳細については、使用、 [ **! ヘルプ**](-help.md)拡張機能。

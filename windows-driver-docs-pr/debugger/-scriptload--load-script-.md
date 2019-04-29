@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 77bd18d5268a62cb7ca21bd99b47c0b63a05a560
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334317"
 ---
 # <a name="scriptload-load-script"></a>.scriptload (スクリプトの読み込み)
 
@@ -83,11 +83,11 @@ Error: Unable to execute JavaScript script 'C:\WinDbg\Scripts\TestScript.js'
 
 実行 .scriptload コマンド intializeScript 関数やスクリプトのルート コードを使用して、スクリプトが読み込まれるときに、デバッガー (dx デバッガー) のルート名前空間には、スクリプト内に存在する名前がブリッジされるされ、スクリプトは常に常駐しています。メモリがアンロードされるまで、そのオブジェクトに対するすべての参照が解放されます。
 
-スクリプトは、新しい機能を提供できる、デバッガーの式エバリュエーターでは、デバッガーでのオブジェクト モデルを変更または同様の NatVis ビジュアライザーはほとんどのビジュアライザーとして動作できます。 NavVis とデバッガーの詳細については、[ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)を参照してください。
+スクリプトは、新しい機能を提供できる、デバッガーの式エバリュエーターでは、デバッガーでのオブジェクト モデルを変更または同様の NatVis ビジュアライザーはほとんどのビジュアライザーとして動作できます。 NavVis とデバッガーの詳細については、次を参照してください。 [ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)します。
 
-JavaScript での操作の詳細については、[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)を参照してください。 デバッガー オブジェクトに関する詳細については、[JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)を参照してください。
+JavaScript での操作の詳細については、次を参照してください。 [JavaScript デバッガー Scripting](javascript-debugger-scripting.md)します。 デバッガー オブジェクトに関する詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ オブジェクト](native-objects-in-javascript-extensions.md)します。
 
-**要件**
+**必要条件**
 
 .Script コマンドのいずれかを使用するのには、スクリプトのプロバイダーが読み込まれる必要があります。 使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
 
@@ -100,7 +100,7 @@ JavaScript での操作の詳細については、[JavaScript デバッガー Sc
 
 [**.scriptunload (アンロード スクリプト)**](-scriptunload--unload-script-.md)
 
-[Scripting JavaScript デバッガー](javascript-debugger-scripting.md)
+[JavaScript デバッガー スクリプト](javascript-debugger-scripting.md)
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: した PrintProvider セクションを含む
-description: した PrintProvider セクションを含む
+title: PrintProvider セクションを含める
+description: PrintProvider セクションを含める
 ms.assetid: 2cbf1b56-e603-4a21-a1d7-d51634c91456
 keywords:
 - INF ファイルの WDK ネットワーク、した PrintProvider セクション
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ecd949a2278e56790f3ad9b37f6531bf4362605
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327776"
 ---
-# <a name="including-a-printprovider-section"></a>した PrintProvider セクションを含む
+# <a name="including-a-printprovider-section"></a>PrintProvider セクションを含める
 
 
 

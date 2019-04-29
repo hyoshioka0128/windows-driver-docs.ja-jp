@@ -1,6 +1,6 @@
 ---
-title: Framework のファイル オブジェクト
-description: Framework のファイル オブジェクト
+title: フレームワーク ファイル オブジェクト
+description: フレームワーク ファイル オブジェクト
 ms.assetid: 93ec5dd7-8ef0-4cea-9253-ea5d7869d4b8
 keywords:
 - I/O 要求の WDK KMDF、ファイル オブジェクト
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2b08ac687648f3747082f6f6d47a89ab26f3637
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391347"
 ---
-# <a name="framework-file-objects"></a>Framework のファイル オブジェクト
+# <a name="framework-file-objects"></a>フレームワーク ファイル オブジェクト
 
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "56552014"
 
 通常、ドライバーが呼び出されていない限り[ **WdfDeviceInitSetExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff546097)ドライバーは、特定のファイルを実行する必要があります、またはその他のアクセスに特化した操作の受信時にファイルの作成、クリーンアップ、および閉じるファイルを複数開くことができる同時にまたは複数のアプリケーションでは、デバイスを同時にアクセスするために要求します。 ドライバーする必要がありますのでの追跡ファイルまたはアプリケーションに関連付けられている I/O 要求。
 
-フレームワーク定義*framework ファイル オブジェクト*、表しますアプリケーションまたはファイル、ディレクトリ、ボリュームなどのデバイスにアクセスするためのドライバーの手段メール スロットは、名前付きパイプ、またはデバイス全体。 ファイル名は、ファイル オブジェクトを関連付けることができますが、ファイル名の意味は、ドライバー固有です。 ファイル名の詳細については、[デバイス Namespace のアクセスを制御する](https://msdn.microsoft.com/library/windows/hardware/ff542068)を参照してください。
+フレームワーク定義*framework ファイル オブジェクト*、表しますアプリケーションまたはファイル、ディレクトリ、ボリュームなどのデバイスにアクセスするためのドライバーの手段メール スロットは、名前付きパイプ、またはデバイス全体。 ファイル名は、ファイル オブジェクトを関連付けることができますが、ファイル名の意味は、ドライバー固有です。 ファイル名の詳細については、次を参照してください。[デバイス Namespace のアクセスを制御する](https://msdn.microsoft.com/library/windows/hardware/ff542068)します。
 
 呼び出す必要がありますが、ドライバーは、ファイル操作を処理する必要がある場合、 [ **WdfDeviceInitSetFileObjectConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff546107)内からその[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。 **WdfDeviceInitSetFileObjectConfig**メソッドは受信、 [ **WDF\_FILEOBJECT\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551319)入力として構造体します。 ドライバーでは、この構造を使用して、登録、 [ *EvtDeviceFileCreate*](https://msdn.microsoft.com/library/windows/hardware/ff540868)、 [ *EvtFileCleanup*](https://msdn.microsoft.com/library/windows/hardware/ff541700)、および[ *EvtFileClose* ](https://msdn.microsoft.com/library/windows/hardware/ff541702)コールバック関数と、必要に応じて、フレームワークを作成する必要があるかどうかを示すフレームワーク ファイル オブジェクトごとにドライバー ファイルの作成要求を受信します。
 

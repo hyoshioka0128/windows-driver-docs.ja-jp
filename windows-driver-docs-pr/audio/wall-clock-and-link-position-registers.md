@@ -1,6 +1,6 @@
 ---
-title: 実時間とリンク位置レジスタ
-description: 実時間とリンク位置レジスタ
+title: ウォール クロックとリンク位置のレジスタ
+description: ウォール クロックとリンク位置のレジスタ
 ms.assetid: 6764affc-a4f0-4568-aa27-7f12e86b818b
 keywords:
 - ウォール クロックは、WDK のオーディオを登録します。
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af329930b41058ec8ca10abae347fdf5c27ba5e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335068"
 ---
-# <a name="wall-clock-and-link-position-registers"></a>実時間とリンク位置レジスタ
+# <a name="wall-clock-and-link-position-registers"></a>ウォール クロックとリンク位置のレジスタ
 
 
 HD オーディオ コント ローラーには、89 秒間に約 HD オーディオ リンクとロールのクロックのビット レートで値が増加する 32 ビットのウォール クロック カウンター レジスタが含まれています。 ソフトウェアでは、このカウンターを使用して、デバイスのハードウェア クロックの間の相対的な誤差を測定することで、2 つまたは複数のコント ローラー デバイス間で同期します。

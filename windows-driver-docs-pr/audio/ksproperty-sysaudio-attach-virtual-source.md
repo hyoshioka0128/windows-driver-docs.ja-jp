@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d97dcf00a5178e5dd1836e13a5f68be37c2d2a92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332626"
 ---
 # <a name="kspropertysysaudioattachvirtualsource"></a>KSPROPERTY\_SYSAUDIO\_アタッチ\_仮想\_ソース
 
@@ -70,7 +70,7 @@ KSPROPERTY\_SYSAUDIO\_アタッチ\_仮想\_ソース プロパティの要求�
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、仮想のソースを仮想のオーディオ デバイスの暗証番号 (pin) のインスタンスにアタッチします。 詳細については、[ **KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース**](ksproperty-sysaudio-create-virtual-source.md)を参照してください。
+このプロパティは、仮想のソースを仮想のオーディオ デバイスの暗証番号 (pin) のインスタンスにアタッチします。 詳細については、次を参照してください。 [ **KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース**](ksproperty-sysaudio-create-virtual-source.md)します。
 
 <a name="requirements"></a>要件
 ------------

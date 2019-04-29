@@ -17,11 +17,11 @@ keywords:
 ms.date: 02/15/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b60db2eb43445b213991664c6b1aa61bd1ab2a28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331570"
 ---
 # <a name="audio-data-formats"></a>オーディオ データ形式
 
@@ -41,11 +41,11 @@ Wave オーディオ ストリームのデータ形式を指定する、 [ **KSD
 
 [ **KSDATAFORMAT\_WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff537095)構造 KSDATAFORMAT 構造とそれに続く WAVEFORMATEX 構造の両方をカプセル化します。 同様に、 [ **KSDATAFORMAT\_DSOUND** ](https://msdn.microsoft.com/library/windows/hardware/ff537094)構造 KSDATAFORMAT 構造と、DSOUND の両方をカプセル化\_それに続く BUFFERDESC 構造体。
 
-いずれかの KSDATAFORMAT\_WAVEFORMATEX または KSDATAFORMAT\_DSOUND、構造体の最後の項目は、埋め込み WAVEFORMATEX 構造体; KSDATAFORMAT 場合\_DSOUND、WAVEFORMATEX 構造に含まれている、埋め込み DSOUND\_BUFFERDESC 構造体。 先頭にある可能性がありますいずれの場合も、WAVEFORMATEX 構造、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)構造体の場合、 **wFormatTag** WAVEFORMATEX のメンバーの設定WAVE 値に\_形式\_拡張可能です。 詳細については、[Wave 形式の拡張可能な記述子](extensible-wave-format-descriptors.md)を参照してください。
+いずれかの KSDATAFORMAT\_WAVEFORMATEX または KSDATAFORMAT\_DSOUND、構造体の最後の項目は、埋め込み WAVEFORMATEX 構造体; KSDATAFORMAT 場合\_DSOUND、WAVEFORMATEX 構造に含まれている、埋め込み DSOUND\_BUFFERDESC 構造体。 先頭にある可能性がありますいずれの場合も、WAVEFORMATEX 構造、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)構造体の場合、 **wFormatTag** WAVEFORMATEX のメンバーの設定WAVE 値に\_形式\_拡張可能です。 詳細については、次を参照してください。 [Wave 形式の拡張可能な記述子](extensible-wave-format-descriptors.md)します。
 
 MIDI ストリームまたは DirectMusic ストリームのデータ形式を指定するには KSDATAFORMAT 構造で十分です。その他の情報に続くされません。
 
-Wave と DirectSound データ形式の例については、[PCM Stream データ形式](pcm-stream-data-format.md)と[DirectSound Stream データ形式](directsound-stream-data-format.md)を参照してください。 MIDI と DirectMusic データ形式の例については、[MIDI Stream データ形式](midi-stream-data-format.md)と[DirectMusic Stream データ形式](directmusic-stream-data-format.md)を参照してください。
+Wave と DirectSound データ形式の例については、次を参照してください。 [PCM Stream データ形式](pcm-stream-data-format.md)と[DirectSound Stream データ形式](directsound-stream-data-format.md)します。 MIDI と DirectMusic データ形式の例については、次を参照してください。 [MIDI Stream データ形式](midi-stream-data-format.md)と[DirectMusic Stream データ形式](directmusic-stream-data-format.md)します。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: F75E9B21-9DA4-4DD9-BB44-59E19EDFC099
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f709d77d5888c86b77756f2870bea31a1bed9cf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326136"
 ---
 # <a name="gpioclx-io-and-interrupt-interfaces"></a>GpioClx I/O と割り込みインターフェイス
 
@@ -25,7 +25,7 @@ GPIO ピンは、ハードウェアのシステムで管理されるリソース
 
 [KMDF ドライバーを GPIO I/O ピンに接続します。](https://msdn.microsoft.com/library/windows/hardware/hh406474)
 
-割り込みリソースを使用すると、割り込みの受信、周辺機器のデバイス ドライバーは割り込みサービス ルーチン (ISR) を割り込みに論理的に接続する必要があります。 カーネル モード ドライバーが呼び出すことによってこの接続を確立するなど、 [ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)メソッドまたは[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)ルーチン。 接続した後は、ドライバーの ISR は周辺機器、GPIO ピンまたは割り込みコント ローラーの入力に割り込み要求を通知するときに実行されます。 割り込みの詳細については、[Interrupt オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540757)を参照してください。
+割り込みリソースを使用すると、割り込みの受信、周辺機器のデバイス ドライバーは割り込みサービス ルーチン (ISR) を割り込みに論理的に接続する必要があります。 カーネル モード ドライバーが呼び出すことによってこの接続を確立するなど、 [ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)メソッドまたは[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)ルーチン。 接続した後は、ドライバーの ISR は周辺機器、GPIO ピンまたは割り込みコント ローラーの入力に割り込み要求を通知するときに実行されます。 割り込みの詳細については、次を参照してください。 [Interrupt オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540757)します。
 
 GPIO フレームワーク拡張機能 (GpioClx) は、I/O の接続と周辺機器のデバイス ドライバーはそのクライアントの割り込みの接続の両方を管理します。 PnP マネージャーでは、さまざまなクライアント ドライバーに GPIO ピン GPIO コント ローラー デバイス上の別のグループを割り当てることができます。 これらのピンの一部はデータ入力または出力として構成され、割り込み要求の入力として構成されているいくつか。
 

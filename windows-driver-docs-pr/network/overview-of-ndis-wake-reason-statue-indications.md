@@ -5,11 +5,11 @@ ms.assetid: 94B54281-7A7E-4DBA-85AE-313EEF09E733
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f174738bab9d6bbffdab9a28d29606be4c4921b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335347"
 ---
 # <a name="overview-of-ndis-wake-reason-status-indications"></a>NDIS ウェイク理由状態表示の概要
 
@@ -51,13 +51,13 @@ WOL パターンを使用して指定、 **EnabledWoLPacketPatterns**のメン�
 
 NDIS wake 理由状態インジケーターのミニポート ドライバーは次のガイドラインに従います。
 
--   ミニポート ドライバーでは、ウェイク アップ パケットがないを発行する機能をサポートする場合は、NDIS ドライバーを呼び出すときにこの機能を報告する必要があります[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。 詳細については、[Reporting Wake 理由の状態を示す値機能](reporting-wake-reason-status-indication-capabilities.md)を参照してください。
+-   ミニポート ドライバーでは、ウェイク アップ パケットがないを発行する機能をサポートする場合は、NDIS ドライバーを呼び出すときにこの機能を報告する必要があります[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。 詳細については、次を参照してください。 [Reporting Wake 理由の状態を示す値機能](reporting-wake-reason-status-indication-capabilities.md)します。
 
     **注**  ミニポート ドライバーは WOL パケットの受信に関連していないイベントの状態インジケーターの NDIS ウェイク アップの理由を発行するには、その機能を報告する必要はありません。
 
      
 
--   ミニポート ドライバーが WOL パケット、ウェイク アップ パケットを示す値を発行すると、ウェイク アップ イベントの原因となったパケット含める必要があります。 詳細については、[発行 NDIS Wake 理由状態インジケーター](issuing-ndis-wake-reason-indications.md)を参照してください。
+-   ミニポート ドライバーが WOL パケット、ウェイク アップ パケットを示す値を発行すると、ウェイク アップ イベントの原因となったパケット含める必要があります。 詳細については、次を参照してください。[発行 NDIS Wake 理由状態インジケーター](issuing-ndis-wake-reason-indications.md)します。
 
 -   ネットワーク アダプターにウェイク アップの信号が生成された場合、ミニポート ドライバーを発行する必要があります、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://msdn.microsoft.com/library/windows/hardware/hh439808)状態示します。 それがの OID のセット要求を処理中にこのドライバーは[OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)の電力状態に遷移します。
 

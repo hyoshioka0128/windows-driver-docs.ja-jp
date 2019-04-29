@@ -1,6 +1,6 @@
 ---
-title: AVStream アロケーター
-description: AVStream アロケーター
+title: AVStream のアロケーター
+description: AVStream のアロケーター
 ms.assetid: cda90faa-d4e3-4f17-aa5a-87dcde314bfd
 keywords:
 - AVStream allocators WDK
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5b8935f81faa6f5a6669dc2f68964fa702e32f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392110"
 ---
-# <a name="avstream-allocators"></a>AVStream アロケーター
+# <a name="avstream-allocators"></a>AVStream のアロケーター
 
 
 

@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 839226d603c273f23fa76d29c73fea927ea23d57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336370"
 ---
 # <a name="irql"></a>!irql
 
@@ -67,7 +67,7 @@ ms.locfileid: "56578185"
 
 Irql の詳細については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ときに、ターゲット コンピューターは、デバッガー、IRQL の変更が、デバッガー中断が保存される直前に有効であったの IRQL に分割します。 **! Irql**拡張機能には、保存した IRQL が表示されます。

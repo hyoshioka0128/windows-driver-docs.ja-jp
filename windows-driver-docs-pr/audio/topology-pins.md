@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2ec2c37f3b4244c8d17f5050eda21c0197adc78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335276"
 ---
 # <a name="topology-pins"></a>トポロジのピン
 
@@ -46,7 +46,7 @@ ms.locfileid: "56532586"
 
     Pin をサポートする IRP の通信の種類を示します。 IRP の通信をサポートする、暗証番号 (pin) は、IRP シンクを指定できます (KSPIN\_通信\_シンク)、IRP のソース (KSPIN\_通信\_ソース)、またはその両方 (KSPIN\_通信\_両方). IRP の通信をサポートしていないピン留めできます KS フィルター グラフ内のいずれかの円周 (KSPIN\_通信\_NONE) でも、*ブリッジ pin*グラフのエンドポイントで (KSPIN\_の通信\_ブリッジ)。
 
-ブリッジの pin の詳細については、[オーディオ フィルター グラフ](audio-filter-graphs.md)を参照してください。
+ブリッジの pin の詳細については、次を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。
 
 WDMAud は、ミニポート ドライバーの暗証番号 (pin) の記述子から情報を次の情報を含む MIXERLINE 型の構造体である、ミキサー行記述子に変換します。
 
@@ -342,7 +342,7 @@ MIXERLINE\_TARGETTYPE\_WAVEIN
 
 前述の表に、KS のほとんどはカテゴリの Guid をピン留め KSNODETYPE がある\_*Xxx*名。 これらの名前は、Ksmedia.h と Dmusprop.h ヘッダー ファイルで定義されます。 (この名前付け規則からの 2 つの別れは Guid KSCATEGORY\_オーディオおよび PINNAME\_Ksmedia.h でも定義されているをキャプチャします)。」の説明に従って[トポロジ ノード](topology-nodes.md)、KSNODETYPE\_*Xxx* Guid を使用して KS ノードの種類を指定することもできます。 ほとんどの KSNODETYPE\_*Xxx* Guid 暗証番号 (pin) のカテゴリまたはノードの種類の両方ではなくいずれかを指定します。 例外は[ **KSNODETYPE\_シンセサイザー**](https://msdn.microsoft.com/library/windows/hardware/ff537203)を使用する pin カテゴリまたはされるコンテキストに応じて、ノードの種類のいずれかを指定することができます。 KSNODETYPE の一覧については\_*Xxx*暗証番号 (pin) のカテゴリを表す Guid を参照してください[Pin Category プロパティ](pin-category-property.md)します。 KSNODETYPE の一覧については\_*Xxx*ノードの型を表す Guid を参照してください[オーディオ トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff536219)します。
 
-KSCATEGORY\_オーディオが別の使用状況のデュアル GUID。 いずれかとして使用できます、 **KS pin カテゴリ GUID**または**KS フィルター カテゴリ GUID**コンテキストに応じて、します。 デバイスのインストール中に、オーディオ ドライバーに登録 KSCATEGORY フィルター カテゴリで、デバイス インターフェイス\_オーディオです。 詳細については、[オーディオ アダプターのデバイスのインターフェイスをインストールする](installing-device-interfaces-for-an-audio-adapter.md)を参照してください。
+KSCATEGORY\_オーディオが別の使用状況のデュアル GUID。 いずれかとして使用できます、 **KS pin カテゴリ GUID**または**KS フィルター カテゴリ GUID**コンテキストに応じて、します。 デバイスのインストール中に、オーディオ ドライバーに登録 KSCATEGORY フィルター カテゴリで、デバイス インターフェイス\_オーディオです。 詳細については、次を参照してください。[オーディオ アダプターのデバイスのインターフェイスをインストールする](installing-device-interfaces-for-an-audio-adapter.md)します。
 
 KSNODETYPE の暗証番号 (pin) カテゴリの\_アナログ\_コネクタまたは KSNODETYPE\_SPDIF\_インターフェイス、WDMAud を pin ではブリッジ pin ミキサー行と同等にピン留めを正しく変換するかどうかを知る必要があります。 S/PDIF pin ではたとえば、(pin カテゴリ KSNODETYPE\_SPDIF\_インターフェイス)、次の図に示す 4 つミキサー線の種類のいずれかに変換します。 ミキサーの行のどのまとめて yield 4 種類依存 (インまたはアウト) の暗証番号 (pin) のデータの方向とかどうか (はいまたは no) ブリッジ pin では、翻訳 (yes +、+ no、out + [はい]、および out + なし)。 4 つのミキサー線の種類では、上記のテーブルからエントリの下部にあるペアの図に表示されます。
 
@@ -350,7 +350,7 @@ KSNODETYPE の暗証番号 (pin) カテゴリの\_アナログ\_コネクタま�
 
 オーディオ デバイスの図の右側にある 2 つのストリームが S/PDIF 形式で、左側の 2 つのストリームが、wave 形式のことに注意してください。 オーディオ デバイスは、2 つのデジタル形式の間の変換を実行します。
 
-SndVol32 アプリケーションは、ミキサー API のクライアントです。 API の変換、トポロジでは、ソースまたは宛先ミキサーの行が行のいずれか見つかった各ピン ミキサーは可能性があります SndVol32、ミキサー API の Mmsystem.h を定義するヘッダー ファイル ミキサー行コンポーネントの型のサブセットのみを認識するには表示されません。 SndVol32 の詳細については、[システム トレイと SndVol32](systray-and-sndvol32.md)を参照してください。
+SndVol32 アプリケーションは、ミキサー API のクライアントです。 API の変換、トポロジでは、ソースまたは宛先ミキサーの行が行のいずれか見つかった各ピン ミキサーは可能性があります SndVol32、ミキサー API の Mmsystem.h を定義するヘッダー ファイル ミキサー行コンポーネントの型のサブセットのみを認識するには表示されません。 SndVol32 の詳細については、次を参照してください。[システム トレイと SndVol32](systray-and-sndvol32.md)します。
 
  
 

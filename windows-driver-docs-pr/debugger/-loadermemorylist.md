@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fd3db55d67c45bfe3b7874407f0a9706c3c44ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336171"
 ---
 # <a name="loadermemorylist"></a>!loadermemorylist
 
@@ -61,7 +61,7 @@ ms.locfileid: "56571702"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能は、Ntldr が実行中にシステムのブート プロセスの開始時に使用する設計されています。 開始、終了、および各ページ範囲の種類を含むメモリ割り当ての一覧が表示されます。

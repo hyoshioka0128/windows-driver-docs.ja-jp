@@ -5,13 +5,13 @@ ms.assetid: 386ed1ba-8a6e-469d-9a03-c8879efd2613
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14d05ffa0b00b0d9d729ba44873347aae7bece58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329931"
 ---
-# <a name="how-do-i-initialize-wpp-software-tracing-in-a-user-mode-dll"></a>ユーザー モード DLL で WPP ソフトウェア トレースの初期化方法
+# <a name="how-do-i-initialize-wpp-software-tracing-in-a-user-mode-dll"></a>ユーザー モード DLL で WPP ソフトウェア トレースを初期化する方法
 
 
 Windows XP 以降では、初期化できます WPP トレース ユーザー モード DLL で呼び出すことによって、 [WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)WPP ソフトウェア トレースを初期化するためにマクロ。

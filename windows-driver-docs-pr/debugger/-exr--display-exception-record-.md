@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3acae875f16df0a2d1c2517bc31d1c005c73119e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336755"
 ---
 # <a name="exr-display-exception-record"></a>.exr (例外レコードの表示)
 
@@ -62,7 +62,7 @@ ms.locfileid: "56574279"
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **.Exr**コマンドには、ターゲット コンピューターで、デバッガーが発生した例外に関連する情報が表示されます。 表示される情報には、例外のアドレス、例外コード、例外フラグ、および例外にパラメーターの変数の一覧が含まれています。

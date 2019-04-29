@@ -6,13 +6,13 @@ ms.assetid: 4415522d-6ea3-42f6-9acc-0e3ceaa36dc7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 257bf93483dc6bd31b7aa48361f688a5c724460c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331378"
 ---
-# <a name="i"></a>私
+# <a name="i"></a>I
 
 
 <span id="i_o_request_packet__irp_"></span><span id="I_O_REQUEST_PACKET__IRP_"></span>**I/O 要求パケット (IRP)**  
@@ -31,7 +31,7 @@ I/O 要求を表し、その処理を制御するために使用するデータ�
 
 暗黙的なスレッドを参照してください。
 
-詳細については、[スレッドとプロセス](threads-and-processes.md)を参照してください。
+詳細については、次を参照してください。[スレッドとプロセス](threads-and-processes.md)します。
 
 <span id="implicit_thread"></span><span id="IMPLICIT_THREAD"></span>**暗黙的なスレッド**  
 カーネル モードでデバッグするには、ターゲットのレジスタのいくつかの判断に使用されるスレッドなどのフレームのオフセットし、命令のオフセットします。 イベントの発生時に、暗黙的なスレッドは、イベントのスレッドに設定されます。
@@ -42,14 +42,14 @@ I/O 要求を表し、その処理を制御するために使用するデータ�
 <span id="initial_breakpoint"></span><span id="INITIAL_BREAKPOINT"></span>**最初のブレークポイント**  
 再起動後、または対象のアプリケーションが再起動した後、デバッグ セッションの先頭付近に自動的に発生するブレークポイントです。
 
-詳細については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
+詳細については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
 
 <span id="input_callback_objects"></span><span id="INPUT_CALLBACK_OBJECTS"></span>**入力のコールバック オブジェクト**  
 インスタンス、 [IDebugInputCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550785)クライアントに登録されているインターフェイス。 デバッガー エンジンが入力を必要とされるたびに、入力のコールバックを提供するよう要求されます。
 
 出力のコールバックを参照してください。
 
-詳細については、[AMLI デバッガー コマンドを使用して](using-amli-debugger-commands.md)を参照してください。
+詳細については、次を参照してください。 [AMLI デバッガー コマンドを使用して](using-amli-debugger-commands.md)します。
 
 <span id="input_callbacks"></span><span id="INPUT_CALLBACKS"></span>**入力のコールバック**  
 入力のコールバック オブジェクトを参照してください。

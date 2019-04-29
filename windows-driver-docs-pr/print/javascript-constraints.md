@@ -1,17 +1,17 @@
 ---
-title: JavaScript の制約
+title: JavaScript 制約
 description: V3 IPrintOemPrintTicketProvider インターフェイスから派生した PrintTicket の処理を v4 プリンター ドライバー モデルは、拡張の制約をサポートします。
 ms.assetid: CD2EF726-CF0F-4BB6-9F41-794699568F17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 178c92b13970c1636671e7b85273ea1ee48dc152
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330142"
 ---
-# <a name="javascript-constraints"></a>JavaScript の制約
+# <a name="javascript-constraints"></a>JavaScript 制約
 
 
 V4 プリンター ドライバー モデルは、拡張の制約の新しいモデルをサポートしているし、PrintTicket の処理は、v3 から派生した[IPrintOemPrintTicketProvider](https://msdn.microsoft.com/library/windows/hardware/ff553174)インターフェイス。
@@ -211,7 +211,7 @@ Windows 8 の印刷ダイアログ ボックスと印刷設定のエクスペリ
 
 ドライバーが JavaScript の制約を使用しない場合、ファイルが用意されている必要はありません。 場合は、ドライバーは、エントリ ポイント (たとえば、validatePrintTicket) のサブセットのみを JavaScript の制約を使用して、JavaScript ファイルから他のエントリ ポイントを完全省略必要があります。
 
-JavaScript の制約を使用する方法の詳細については、、[印刷ドライバー制約サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617946)を参照してください。
+JavaScript の制約を使用する方法の詳細については、次を参照してください。、[印刷ドライバー制約サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617946)します。
 
  
 

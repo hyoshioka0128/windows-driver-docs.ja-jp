@@ -1,6 +1,6 @@
 ---
-title: フィルターのコマンドを非ブロック化
-description: フィルターのコマンドを非ブロック化
+title: フィルター コマンドの非ブロック化
+description: フィルター コマンドの非ブロック化
 ms.assetid: 9f20c6fa-c515-43b8-a947-f6290d15bd35
 keywords:
 - マクロ ブロック WDK DirectX va なので、フィルター コマンドが非ブロック化
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90391018119db1e5c9854f5190354641850b00d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383292"
 ---
-# <a name="deblocking-filter-commands"></a>フィルターのコマンドを非ブロック化
+# <a name="deblocking-filter-commands"></a>フィルター コマンドの非ブロック化
 
 
 ## <span id="ddk_deblocking_filter_commands_gg"></span><span id="DDK_DEBLOCKING_FILTER_COMMANDS_GG"></span>

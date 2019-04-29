@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DEFAULT_TX_KEY_ID_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 78253d0e03cbebc534ac0bc64b455cc3b5b8e74d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331821"
 ---
 # <a name="wditlvdefaulttxkeyidparameters"></a>WDI\_TLV\_既定\_TX\_キー\_ID\_パラメーター
 
@@ -31,13 +31,13 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="values"></a>値
 
 
-| 種類   | 説明                                                     |
+| 型   | 説明                                                     |
 |--------|-----------------------------------------------------------------|
 | UINT32 | 既定値を指定します。 パケットの送信ポートでのキー ID。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

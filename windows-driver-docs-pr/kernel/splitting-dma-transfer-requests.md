@@ -1,6 +1,6 @@
 ---
-title: DMA 転送要求を分割
-description: DMA 転送要求を分割
+title: DMA 転送要求の分割
+description: DMA 転送要求の分割
 ms.assetid: 7d5b1649-1021-4876-a9c0-e6b156785ef2
 keywords:
 - I/O WDK カーネルでは、転送要求を分割
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a90e32d18165df873a993c0e905f73a301af0b31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331956"
 ---
-# <a name="splitting-dma-transfer-requests"></a>DMA 転送要求を分割
+# <a name="splitting-dma-transfer-requests"></a>DMA 転送要求の分割
 
 
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b7f7584aa9298c9e35165f3e32c0b453de42d69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340244"
 ---
 # <a name="review-and-save-package-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでのパッケージのレビューと保存
 
@@ -33,7 +33,7 @@ ms.locfileid: "56574726"
 2.  **付けて**、パッケージ名の横に確認**Windows 8 パッケージ**します。
 3.  横に**フォルダーの場所**、コンピューターにパッケージを保存する をクリックする場所を確認**変更**を別の場所を選択します。
 4.  インストールして、PC の選択にメタデータ パッケージをテストする場合**システムのローカル メタデータ ストアにパッケージをコピー**します。
-5.  **[完了]** をクリックします。
+5.  **[Finish]**(完了) をクリックします。
 
  
 

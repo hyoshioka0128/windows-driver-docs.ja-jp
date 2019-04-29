@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ebf7173cffb7a3fed01c4e06a97e3ed8529d1c8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334873"
 ---
 # <a name="--alias-interpreter"></a>$ {} (別名インタープリター)
 
@@ -53,7 +53,7 @@ ms.locfileid: "56579769"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-エイリアスを使用する方法の詳細については、[Using エイリアス](using-aliases.md)を参照してください。
+エイリアスを使用する方法の詳細については、次を参照してください。 [Using エイリアス](using-aliases.md)します。
 
 <a name="remarks"></a>コメント
 -------

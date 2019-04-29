@@ -1,6 +1,6 @@
 ---
-title: DVD のデータ ストリーム
-description: DVD のデータ ストリーム
+title: DVD データ ストリーム
+description: DVD データ ストリーム
 ms.assetid: 77e38075-5e28-4d9d-a2ca-caa274bde4db
 keywords:
 - DVD デコーダー ミニドライバー WDK、データ ストリーム
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65be048a27e019fb4b51b95f390e9128effdba19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384739"
 ---
-# <a name="dvd-data-streams"></a>DVD のデータ ストリーム
+# <a name="dvd-data-streams"></a>DVD データ ストリーム
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: Traceview でエラーを解決します。
-description: Traceview でエラーを解決します。
+title: TraceView でのエラーの解決
+description: TraceView でのエラーの解決
 ms.assetid: 4849e0b6-5dc9-4666-b1ca-ec89cb94bed0
 keywords:
 - Traceview で WDK、エラー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d82be9f0bf8de5bd34c786ff6a60c4809e9d9c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340263"
 ---
-# <a name="resolving-traceview-errors"></a>Traceview でエラーを解決します。
+# <a name="resolving-traceview-errors"></a>TraceView でのエラーの解決
 
 このトピックでは、エラー traceview でよくレポートし、解決策を提案について説明します。 トラブルシューティングの完全なガイドを使用するものではありません。
 
@@ -32,7 +32,7 @@ Traceview でが見つからない場合、 [PDB シンボル ファイル](pdb-
 
 コマンド プロンプト ウィンドウで、トレース セッションを停止する次のように入力します。 **traceview で-停止 * * * SessionName*します。
 
-これらのコマンドの詳細については、[ **traceview で管理コマンド**](traceview-control-commands.md)を参照してください。
+これらのコマンドの詳細については、次を参照してください。 [ **traceview で管理コマンド**](traceview-control-commands.md)します。
 
 ### <a name="span-idcannotopenlogfileforreadingspanspan-idcannotopenlogfileforreadingspancannot-open-logfile-for-reading"></a><span id="cannot_open_logfile_for_reading"></span><span id="CANNOT_OPEN_LOGFILE_FOR_READING"></span>読み取り用のログ ファイルを開くことができません。
 
@@ -46,4 +46,4 @@ Traceview でが見つからない場合、 [PDB シンボル ファイル](pdb-
 
 このエラーは、既に進行中である NT Kernel Logger トレース セッションに参加するときに発生します。 Traceview でを使用して、NT Kernel Logger のトレース セッションを作成することができますが、ツールまたは traceview で以外の方法によって開始される NT Kernel Logger トレース セッションに参加することはできません。
 
-詳細については、[トレース セッションに参加する](joining-a-trace-session.md)と[NT Kernel Logger のトレース セッションを作成する](creating-an-nt-kernel-logger-trace-session.md)を参照してください。
+詳細については、次を参照してください。[トレース セッションに参加する](joining-a-trace-session.md)と[NT Kernel Logger のトレース セッションを作成する](creating-an-nt-kernel-logger-trace-session.md)します。

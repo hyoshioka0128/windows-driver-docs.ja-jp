@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e8a12ed7cadcd80d0a588d96f14bc087a2d1bd85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339064"
 ---
 # <a name="smremovelink-function"></a>SM\_RemoveLink 関数
 
@@ -39,7 +39,7 @@ void SM_RemoveLink(
 ----------
 
 *HBAStatus*   
-操作の状態。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_RemoveLink\_構造体。
+操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_RemoveLink\_構造体。
 
 <a name="return-value"></a>戻り値
 ------------

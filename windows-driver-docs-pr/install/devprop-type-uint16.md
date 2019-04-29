@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 886ee0ff92461e4b7f70ea6c35a11c0db5541fe2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331280"
 ---
 # <a name="devproptypeuint16"></a>DEVPROP_TYPE_UINT16
 
@@ -39,7 +39,7 @@ DEVPROP_TYPE_UINT16 は、のみと組み合わせることができます、 [ 
 
 - プロパティを設定する、必要に応じて、他の関数の入力パラメーターを設定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

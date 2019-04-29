@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c0eadda61dcd7c94a235e9757678ec2c9ad5b54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327212"
 ---
 # <a name="kspropertyvideoprocampbrightness"></a>KSPROPERTY\_ビデオ プロシージャ アンプ\_明るさ
 
@@ -42,19 +42,19 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_BRIGHTNESS プロパティ�
 <thead>
 <tr class="header">
 <th>取得</th>
-<th>Set</th>
-<th>移行先</th>
+<th>設定</th>
+<th>対象</th>
 <th>プロパティ記述子の型</th>
 <th>プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>はい</p></td>
-<td><p>はい</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 <td><p>フィルターまたはノード</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566089" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566089)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff566080" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566080)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>長い</p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ KSPROPERTY\_ビデオ プロシージャ アンプ\_BRIGHTNESS プロパティ�
 
 プロパティの値 (データの操作) は、カメラの明るさの設定を指定する LONG が。 この値は、NTSC ソースの 100 倍して切る単位で表されます。 NTSC 以外のソースでは、ユニットと非表示を表す 0 から 10000 の純粋な空白を表す任意、です。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **値**、KSPROPERTY のメンバー\_ビデオ プロシージャ アンプ\_S 構造体を明るさを指定します。

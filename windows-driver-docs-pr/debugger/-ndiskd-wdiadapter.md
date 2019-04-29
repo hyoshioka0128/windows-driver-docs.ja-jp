@@ -13,20 +13,20 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d8b83793d4b8f09e7401084259ed498cb146c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335901"
 ---
 # <a name="ndiskdwdiadapter"></a>!ndiskd.wdiadapter
 
 
 **! Ndiskd.wdiadapter**拡張機能が、WDIWiFi に関する情報を表示します。CAdapter 構造体。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd すべて WDIWiFi の一覧が表示されます。CAdapter 構造体。
 
-WDI ミニポート ドライバーの詳細については、、 [WDI ミニポート ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)を参照してください。
+WDI ミニポート ドライバーの詳細については、次を参照してください。、 [WDI ミニポート ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)します。
 
-WDI ミニポート ドライバー リファレンスの詳細については、[WDI ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn926075)を参照してください。
+WDI ミニポート ドライバー リファレンスの詳細については、次を参照してください。 [WDI ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn926075)します。
 
 ```console
 !ndiskd.wdiadapter [-handle <x>] [-pm] [-rcvfilter] 

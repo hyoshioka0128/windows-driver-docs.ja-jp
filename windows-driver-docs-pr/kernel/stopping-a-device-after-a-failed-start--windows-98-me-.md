@@ -1,19 +1,19 @@
 ---
-title: 失敗した開始後にデバイスを停止する (Windows 98/Me)
-description: 失敗した開始後にデバイスを停止する (Windows 98/Me)
+title: 開始が失敗した後のデバイスの停止 (Windows 98/Me)
+description: 開始が失敗した後のデバイスの停止 (Windows 98/Me)
 ms.assetid: 373a1797-6479-4b99-b577-c74494f1774c
 keywords:
 - 失敗した開始 PnP WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 392b9b11e3e59f046a6095c106e76c6a619198ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331936"
 ---
-# <a name="stopping-a-device-after-a-failed-start-windows-98me"></a>失敗した開始後にデバイスを停止する (Windows 98/Me)
+# <a name="stopping-a-device-after-a-failed-start-windows-98me"></a>開始が失敗した後のデバイスの停止 (Windows 98/Me)
 
 
 

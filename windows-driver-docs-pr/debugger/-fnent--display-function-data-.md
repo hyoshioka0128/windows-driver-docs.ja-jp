@@ -1,5 +1,5 @@
 ---
-title: .fnent (関数のデータを表示)
+title: .fnent (関数データの表示)
 description: .Fnent コマンドには、指定された関数の関数のテーブルのエントリに関する情報が表示されます。
 ms.assetid: 914caf55-2fbf-4f30-af6e-e666dc47c7da
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 22385219eaa6914c6561e6ce3acf0d6186d8075b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336650"
 ---
-# <a name="fnent-display-function-data"></a>.fnent (関数のデータを表示)
+# <a name="fnent-display-function-data"></a>.fnent (関数データの表示)
 
 
 **.Fnent**コマンドが、指定された関数の関数のテーブルのエントリに関する情報を表示します。

@@ -1,19 +1,19 @@
 ---
-title: 高度なドライバーの StartIo ルーチン
-description: 高度なドライバーの StartIo ルーチン
+title: 上位レベル ドライバーの StartIo ルーチン
+description: 上位レベル ドライバーの StartIo ルーチン
 ms.assetid: 8b0e3bef-4a73-4cf8-b71a-6aedf451d648
 keywords:
 - StartIo ルーチンより高度なドライバー
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c99d78155f63908c02cda53caa444f887170b535
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331952"
 ---
-# <a name="startio-routines-in-higher-level-drivers"></a>高度なドライバーの StartIo ルーチン
+# <a name="startio-routines-in-higher-level-drivers"></a>上位レベル ドライバーの StartIo ルーチン
 
 
 
@@ -31,13 +31,13 @@ A *StartIo*ドライバーでは上位レベルのルーチンに次の効果が
 
 -   *StartIo*ルーチンがシステム全体のスループットを削減し、チェーン内のすべての下位のドライバーのディスパッチ ルーチンは IRQL で実行されるため、ディスパッチ =\_レベル。
 
-    標準のドライバーのルーチンを実行する Irql の詳細については、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)を参照してください。
+    標準のドライバーのルーチンを実行する Irql の詳細については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)します。
 
 どのシステム提供のより高度なドライバーがない、 *StartIo* IRP がドライバー自体に、上記のすべてのドライバーと、その下と、システム全体の処理が低下するため、ルーチン。
 
 単に最も高度なドライバーは Irp を下位レベルのドライバーに、ディスパッチ ルーチンから送信し、必要なクリーンアップ処理を行う、 *IoCompletion*ルーチン。
 
-ただしより高度なドライバーは、特定の種類、操作の要求または Irp の一連の SCSI ポート ドライバーなどの異種の基になるデバイスのバインドを保持するために内部キューを設定する Irp の内部キューを設定できます。 詳細については、[キューおよびデキュー Irp](queuing-and-dequeuing-irps.md)を参照してください。
+ただしより高度なドライバーは、特定の種類、操作の要求または Irp の一連の SCSI ポート ドライバーなどの異種の基になるデバイスのバインドを保持するために内部キューを設定する Irp の内部キューを設定できます。 詳細については、次を参照してください。[キューおよびデキュー Irp](queuing-and-dequeuing-irps.md)します。
 
  
 

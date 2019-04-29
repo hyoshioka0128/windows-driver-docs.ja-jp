@@ -1,22 +1,22 @@
 ---
-title: Bluetooth のイベント通知のサポート
-description: Bluetooth のイベント通知のサポート
+title: Bluetooth イベント通知のサポート
+description: Bluetooth イベント通知のサポート
 ms.assetid: ddb6f1d4-0f6e-4b11-93fc-b0886d262749
 keywords:
 - Bluetooth の WDK、イベント通知
 - イベント通知 WDK Bluetooth
 - WDK の Bluetooth の通知
-- ドライバー WDK Bluetooth をプロファイルします。
+- プロファイル ドライバー WDK Bluetooth
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d06d5b2c99fc62971f9dc99be5d44b6b7bd747cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328179"
 ---
-# <a name="supporting-bluetooth-event-notifications"></a>Bluetooth のイベント通知のサポート
+# <a name="supporting-bluetooth-event-notifications"></a>Bluetooth イベント通知のサポート
 
 
 プロファイル ドライバーでは、リモート デバイスへの接続が開いたら、接続が閉じられたときに、またはその他の接続に変更が発生したときに通知を受け取る自体に登録する必要があります。 さらをプロファイル ドライバーが着信接続を受け入れる自体を登録する場合にリモート デバイスが接続しようとしたときに通知を受け取ることがあります。
@@ -25,13 +25,13 @@ Synchronous Connection-Oriented (SCO) 接続を使用するプロファイルの
 
 SCO プロファイルのドライバーを発行したとき、 **BRB\_SCO\_オープン\_チャネル**BRB へのポインターを指定、 [ *SCO コールバック関数*](https://msdn.microsoft.com/library/windows/hardware/ff536772)で、**コールバック**、BRB のメンバーの対応する[  **\_BRB\_SCO\_オープン\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff536870)構造体。 リモート デバイスが SCO 接続要求を受け入れる場合、Bluetooth ドライバー スタックし、通知を送信できますコールバック関数を使ってプロファイル ドライバー SCO 接続に変更されたとき。
 
-SCO 接続の作成の詳細については、[SCO リモート デバイスにクライアント接続を作成する](creating-a-sco-client-connection-to-a-remote-device.md)を参照してください。
+SCO 接続の作成の詳細については、次を参照してください。 [SCO リモート デバイスにクライアント接続を作成する](creating-a-sco-client-connection-to-a-remote-device.md)します。
 
 論理リンク コント ローラーと適応プロトコル (L2CAP) 接続を使用するプロファイルのドライバーを実装および登録、 [ *L2CAP コールバック関数*](https://msdn.microsoft.com/library/windows/hardware/ff536755)します。
 
 L2CAP プロファイルのドライバーを発行したとき、 **BRB\_L2CA\_オープン\_チャネル**BRB へのポインターを指定、 [ *L2CAP コールバック関数*](https://msdn.microsoft.com/library/windows/hardware/ff536755)で、**コールバック**、BRB のメンバーの対応する[  **\_BRB\_L2CA\_オープン\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff536860)構造体。 リモート デバイスが L2CAP 接続要求を受け入れる場合、Bluetooth ドライバー スタックし、通知を送信できますコールバック関数を使ってプロファイル ドライバー L2CAP 接続に変更されたとき。
 
-L2CAP 接続の作成の詳細については、[L2CAP リモート デバイスにクライアント接続を作成する](creating-a-l2cap-client-connection-to-a-remote-device.md)を参照してください。
+L2CAP 接続の作成の詳細については、次を参照してください。 [L2CAP リモート デバイスにクライアント接続を作成する](creating-a-l2cap-client-connection-to-a-remote-device.md)します。
 
 同様に、ときにプロファイル ドライバー自身を登録 (L2CAP、SCO) の着信接続を受け入れることを要求するリモート デバイスが接続しようとしたときに通知を受け取るコールバック関数を登録する必要があります。
 
@@ -69,7 +69,7 @@ L2CAP 接続の場合、 [ *L2CAP コールバック関数*](https://msdn.micros
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>IndicationRemoteConnect</strong></p></td>
-<td align="left"><p><strong>接続</strong></p></td>
+<td align="left"><p><strong>Connect</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IndicationRemoteConfigRequest</strong></p></td>
@@ -120,7 +120,7 @@ SCO 接続の場合、 [ *SCO コールバック関数*](https://msdn.microsoft.
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>ScoIndicationRemoteConnect</strong></p></td>
-<td align="left"><p><strong>接続</strong></p></td>
+<td align="left"><p><strong>Connect</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ScoIndicationRemoteDisconnect</strong></p></td>

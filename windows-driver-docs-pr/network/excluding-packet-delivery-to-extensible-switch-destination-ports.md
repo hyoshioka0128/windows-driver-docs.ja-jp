@@ -1,25 +1,25 @@
 ---
-title: 拡張可能スイッチの宛先ポートへのパケット配送の除外
-description: 拡張可能スイッチの宛先ポートへのパケット配送の除外
+title: 拡張可能スイッチ宛先ポートへのパケット配信の除外
+description: 拡張可能スイッチ宛先ポートへのパケット配信の除外
 ms.assetid: 04BF02A6-360F-482E-A86B-31232AFCB778
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4251c44daa9e71f74721830a8cd0b82b4dfff70c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391663"
 ---
-# <a name="excluding-packet-delivery-to-extensible-switch-destination-ports"></a>拡張可能スイッチの宛先ポートへのパケット配送の除外
+# <a name="excluding-packet-delivery-to-extensible-switch-destination-ports"></a>拡張可能スイッチ宛先ポートへのパケット配信の除外
 
 
-このトピックでは、HYPER-V 拡張可能スイッチの拡張機能が拡張可能スイッチのポートへのパケットの配信を除外する方法について説明します。 パケットの宛先ポートの帯域外 (OOB) 転送パケットの内のコンテキスト内で指定された[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 このコンテキストの詳細については、[Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)を参照してください。
+このトピックでは、HYPER-V 拡張可能スイッチの拡張機能が拡張可能スイッチのポートへのパケットの配信を除外する方法について説明します。 パケットの宛先ポートの帯域外 (OOB) 転送パケットの内のコンテキスト内で指定された[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 このコンテキストの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
 
 **注**このページは、情報とでのダイアグラムに精通していることを前提としています。 [Hyper-v 拡張可能スイッチの概要](overview-of-the-hyper-v-extensible-switch.md)と[ハイブリッド転送](hybrid-forwarding.md)します。
 
 
-**注**、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*ドライバー スタックの拡張可能スイッチ*します。 拡張機能に関する詳細については、[Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)を参照してください。
+**注**、拡張可能スイッチのインターフェイスで NDIS フィルター ドライバーと呼ばれる*拡張可能スイッチの拡張機能*と呼ばれるドライバー スタック、*ドライバー スタックの拡張可能スイッチ*します。 拡張機能に関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ拡張機能](hyper-v-extensible-switch-extensions.md)します。
 
 フィルター処理および転送拡張機能は、拡張可能スイッチのイングレスまたはエグレス データ パスで取得したパケットの配信を除外できます。 パケット配信の除外は、次の方法で実行できます。
 
@@ -49,7 +49,7 @@ ms.locfileid: "56538148"
 
 -   拡張可能スイッチのイングレス データ パスは、転送拡張機能は、パケットの宛先ポートを特定し、パケットの OOB データにこの情報を追加します。 拡張機能によって適用されるポリシーの条件に基づき、OOB データにその先のポート情報を追加しないポートへのパケット配信を除外できます。
 
-    この手順の詳細については、[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)を参照してください。
+    この手順の詳細については、次を参照してください。[を追加する拡張可能なスイッチ宛先ポート データ パケットに](adding-extensible-switch-destination-port-data-to-a-packet.md)します。
 
 -   拡張可能スイッチのエグレス データ パス フィルター処理および転送拡張機能は、ポリシーの条件に基づいて、パケットの配信を除外できます。 たとえば、フィルター拡張機能は、パケットの発信元ポートまたは変換先のポートのポリシーの条件に基づいてパケット配信を除外できます。
 
@@ -73,4 +73,4 @@ ms.locfileid: "56538148"
 
     **注**、拡張機能のリンク リストを作成できます[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)拡張機能を除外するパケットの構造体。 拡張機能を呼び出すと[ *ReportFilteredNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/hh598297)、設定、 *NetBufferLists*リンク リストへのポインターへのパラメーター。
 
-拡張可能スイッチのイングレスおよびエグレス データ パスの詳細については、[Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)を参照してください。
+拡張可能スイッチのイングレスおよびエグレス データ パスの詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ データ パス](hyper-v-extensible-switch-data-path.md)します。

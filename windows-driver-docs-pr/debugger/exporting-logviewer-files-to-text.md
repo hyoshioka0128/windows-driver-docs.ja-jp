@@ -1,19 +1,19 @@
 ---
-title: テキストに LogViewer ファイルをエクスポートします。
-description: テキストに LogViewer ファイルをエクスポートします。
+title: LogViewer ファイルのテキストへのエクスポート
+description: LogViewer ファイルのテキストへのエクスポート
 ms.assetid: b014dc23-ca6e-4563-aa8d-f4dd19c89f80
 keywords:
 - LogViewer、テキスト ファイルをエクスポートします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fab8c7e2d24af8c73434d25cc3802995f6bbfa54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332118"
 ---
-# <a name="exporting-logviewer-files-to-text"></a>テキストに LogViewer ファイルをエクスポートします。
+# <a name="exporting-logviewer-files-to-text"></a>LogViewer ファイルのテキストへのエクスポート
 
 
 ## <span id="ddk_exporting_logviewer_files_to_text_dtoolq"></span><span id="DDK_EXPORTING_LOGVIEWER_FILES_TO_TEXT_DTOOLQ"></span>

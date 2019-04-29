@@ -1,6 +1,6 @@
 ---
-title: 仮想のサブユニット ドライバー ノート
-description: 仮想のサブユニット ドライバー ノート
+title: 仮想サブユニット ドライバーに関する注意事項
+description: 仮想サブユニット ドライバーに関する注意事項
 ms.assetid: e484f815-73a8-46f1-956e-ee16b1856bd0
 keywords:
 - Avc.sys 関数ドライバー WDK、仮想のサブユニット ドライバー
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdc3a6571c1b9e1dd97f32dd6b707ded0ec3bfad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329958"
 ---
-# <a name="virtual-subunit-driver-notes"></a>仮想のサブユニット ドライバー ノート
+# <a name="virtual-subunit-driver-notes"></a>仮想サブユニット ドライバーに関する注意事項
 
 
 仮想のサブユニット ドライバー要求に応答コントロール、状態、および通知 AV/C コマンド外部の AV/C デバイスからを使用して、 [ **IOCTL\_AVC\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560789)インターフェイスを*Avc.sys*します。

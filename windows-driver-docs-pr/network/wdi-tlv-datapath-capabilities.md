@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_DATAPATH_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a86ae49462f2f44206155d7985f2bc3f9ef7537
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331835"
 ---
 # <a name="wditlvdatapathcapabilities"></a>WDI\_TLV\_データパス\_機能
 
@@ -38,7 +38,7 @@ WDI\_TLV\_データパス\_機能はデータパス機能を含む TLV します
 </colgroup>
 <thead>
 <tr class="header">
-<th>種類</th>
+<th>型</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -91,7 +91,7 @@ WDI\_TLV\_データパス\_機能はデータパス機能を含む TLV します
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

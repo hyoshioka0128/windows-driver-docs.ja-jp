@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_CAPS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efc9997106ba5df31a4ce9cdb2011a73aff2c52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386679"
 ---
 # <a name="oidwwandevicecaps"></a>OID\_WWAN\_デバイス\_キャップ
 
@@ -26,7 +26,7 @@ OID\_WWAN\_デバイス\_CAP 返します方式のサポートを含む、MB デ
 
 Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更新されましたがします。 Windows 8 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567907)構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_2**の*クエリ*要求。 Windows 7 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 **NDIS\_WWAN\_デバイス\_CAP**構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_1**の*クエリ*要求。
 
-詳細については、この OID を使用して、[WWAN ドライバーの初期化プロシージャ](https://msdn.microsoft.com/library/windows/hardware/ff557186)を参照してください。
+詳細については、この OID を使用して、次を参照してください。 [WWAN ドライバーの初期化プロシージャ](https://msdn.microsoft.com/library/windows/hardware/ff557186)します。
 
 処理クエリ、操作が、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) にアクセスしないでください、ミニポート ドライバーはデバイスのメモリにアクセスできます。
 

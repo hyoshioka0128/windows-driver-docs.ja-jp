@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 595cc4ecfbfe279eb436d3e0732db3eaf70b5475
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331982"
 ---
 # <a name="state-transitions-for-pnp-devices"></a>PnP デバイスの状態遷移
 
@@ -30,7 +30,7 @@ PnP システムでは、PnP のさまざまな状態を使用して、デバイ
 
 開始位置として、上記の図の左上、PnP デバイスは、ユーザーがデバイスを挿入したか、またはデバイスがブート時に存在するため、システムに物理的に存在します。 デバイスはまだシステム ソフトウェアには認識されません。
 
-PnP マネージャーと親バス ドライバーは、デバイスのソフトウェア構成を開始するには、デバイスを列挙します。 PnP マネージャーでは、可能性がありますユーザー モード コンポーネントを活用するには、識別とオプションのフィルター ドライバーの機能のドライバーを含む、デバイスのドライバー。 PnP マネージャー呼び出し、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ドライバーがまだ読み込まれていない場合は、各ドライバーの日常的な。 Reporting と PnP デバイス列挙の詳細については、[PnP デバイスを追加するシステムを実行して](adding-a-pnp-device-to-a-running-system.md)を参照してください。
+PnP マネージャーと親バス ドライバーは、デバイスのソフトウェア構成を開始するには、デバイスを列挙します。 PnP マネージャーでは、可能性がありますユーザー モード コンポーネントを活用するには、識別とオプションのフィルター ドライバーの機能のドライバーを含む、デバイスのドライバー。 PnP マネージャー呼び出し、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ドライバーがまだ読み込まれていない場合は、各ドライバーの日常的な。 Reporting と PnP デバイス列挙の詳細については、次を参照してください。 [PnP デバイスを追加するシステムを実行して](adding-a-pnp-device-to-a-running-system.md)します。
 
 ドライバーが初期化されると、そのデバイスを初期化するために準備が必要があります。 PnP マネージャーには、ドライバーの[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)デバイスごとに日常的なドライバーを制御します。
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a9a87651019cf4524a81039f36b2a6b0921c10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337073"
 ---
 # <a name="-comment-line-specifier"></a>\* (コメント行の指定子)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56582255"
     * [any text]
 ```
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **\\*** トークンは、他のデバッガー コマンドのように解析します。 そのため、別のコマンドの後にコメントを作成する場合は、文字の前に、 **\\*** セミコロン トークンです。

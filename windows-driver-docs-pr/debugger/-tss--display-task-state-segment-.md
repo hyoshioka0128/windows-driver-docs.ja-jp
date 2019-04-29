@@ -16,11 +16,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 66f233b2fea635695b7403e3c2a1851b71ba9852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334173"
 ---
 # <a name="tss-display-task-state-segment"></a>.tss (タスク状態セグメントの表示)
 
@@ -62,7 +62,7 @@ TSS のアドレス。
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 出力を調べることで、TSS のアドレスが見つかりません、 [ **! pcr** ](-pcr.md)拡張機能。

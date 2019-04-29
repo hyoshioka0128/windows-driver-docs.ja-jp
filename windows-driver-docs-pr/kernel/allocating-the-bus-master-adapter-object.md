@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1eb662a552dbf05ed25f25207a49d5b0062c28fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326060"
 ---
 # <a name="allocating-the-bus-master-adapter-object"></a>バス マスター アダプター オブジェクトの割り当て
 
@@ -60,7 +60,7 @@ ms.locfileid: "56578913"
 
 4.  値を返します**DeallocateObjectKeepRegisters**します。
 
-詳細については、[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)を参照してください。
+詳細については、次を参照してください。[書き込み AdapterControl ルーチン](writing-adaptercontrol-routines.md)します。
 
 バス マスター DMA を実行するドライバーが使用することができます、 [ **GetScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff546531)と[ **PutScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff559967)ルーチン自分のデバイスをサポートするかどうかに関係なくスキャッター/ギャザー DMA します。 これらのルーチンを使用して、ドライバーの要件を変更*AdapterControl*ルーチン; を参照してください[を使用してスキャッター/ギャザー DMA](using-scatter-gather-dma.md)詳細についてはします。
 

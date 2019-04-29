@@ -1,6 +1,6 @@
 ---
-title: ターゲット デバイスのオブジェクトへのフィルターのデバイス オブジェクトのアタッチ
-description: ターゲット デバイスのオブジェクトへのフィルターのデバイス オブジェクトのアタッチ
+title: フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
+description: フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
 ms.assetid: 1df293db-417a-4fee-afb8-06ab527331fb
 keywords:
 - フィルターをアタッチ、フィルター ドライバー WDK ファイル システム
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14508938f7f8ad7a09123fe5d8c78631a7f664ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393037"
 ---
-# <a name="attaching-the-filter-device-object-to-the-target-device-object"></a>ターゲット デバイスのオブジェクトへのフィルターのデバイス オブジェクトのアタッチ
+# <a name="attaching-the-filter-device-object-to-the-target-device-object"></a>フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
 
 
 ## <span id="ddk_attaching_the_filter_device_object_to_the_target_device_object_if"></span><span id="DDK_ATTACHING_THE_FILTER_DEVICE_OBJECT_TO_THE_TARGET_DEVICE_OBJECT_IF"></span>

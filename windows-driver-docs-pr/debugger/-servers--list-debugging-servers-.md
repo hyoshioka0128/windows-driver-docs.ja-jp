@@ -1,5 +1,5 @@
 ---
-title: .servers (デバッグ サーバーの一覧)
+title: .servers (デバッグ サーバーの一覧表示)
 description: .Servers コマンドには、このデバッガーで確立されているすべてのデバッグ サーバーが一覧表示します。
 ms.assetid: bf65c6f7-9c59-4756-a667-8b896bd7ea2a
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ab582243523d36d9e842f1d910026b6ae3672533
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339776"
 ---
-# <a name="servers-list-debugging-servers"></a>.servers (デバッグ サーバーの一覧)
+# <a name="servers-list-debugging-servers"></a>.servers (デバッグ サーバーの一覧表示)
 
 
 **.Servers**コマンドには、このデバッガーで確立されているすべてのデバッグ サーバーが一覧表示します。
@@ -60,7 +60,7 @@ ms.locfileid: "56528037"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-サーバーのデバッグに関する詳細は、[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)を参照してください。
+サーバーのデバッグに関する詳細は、次を参照してください。[リモート デバッグで、デバッガー](remote-debugging-through-the-debugger.md)します。
 
 <a name="remarks"></a>注釈
 -------

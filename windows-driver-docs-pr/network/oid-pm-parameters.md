@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_PM_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 883738803bbaa39c9facddb0016022ce87902953
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383593"
 ---
 # <a name="oidpmparameters"></a>OID\_PM\_パラメーター
 
@@ -26,7 +26,7 @@ ms.locfileid: "56574597"
 
 上位のドライバーが、OID をクエリした場合\_PM\_パラメーター OID、NDIS ミニポート ドライバーに転送することがなく、要求を完了します。 NDIS は、要求された設定を格納し、このような他の要求の設定ではそれらを結合します。 NDIS 低電力状態にネットワーク アダプターへの移行前に、NDIS は NDIS が格納されている要求のすべての設定の組み合わせを含むミニポート ドライバーにセットの要求を送信します。
 
-現在有効になっている機能は、ハードウェアでサポートされる機能のサブセットであることができます。 ハードウェアでサポートされる機能の詳細については、[OID\_PM\_ハードウェア\_機能](oid-pm-hardware-capabilities.md)を参照してください。
+現在有効になっている機能は、ハードウェアでサポートされる機能のサブセットであることができます。 ハードウェアでサポートされる機能の詳細については、次を参照してください。 [OID\_PM\_ハードウェア\_機能](oid-pm-hardware-capabilities.md)します。
 
 **注**  場合 NDIS 設定、NDIS\_PM\_セレクティブ\_中断\_有効フラグ、 **WakeUpFlags**のメンバー [ **NDIS\_PM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566759) OID の OID のセット要求を発行構造、\_PM\_ミニポート ドライバーに直接パラメーター。 これにより、NDIS フィルター ドライバー、ネットワーク ドライバー スタック内で処理をバイパスします。
 

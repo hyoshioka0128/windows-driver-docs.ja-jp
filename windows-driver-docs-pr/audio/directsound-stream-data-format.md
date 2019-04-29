@@ -1,19 +1,19 @@
 ---
-title: DirectSound Stream データの形式
-description: DirectSound Stream データの形式
+title: DirectSound ストリームのデータ形式
+description: DirectSound ストリームのデータ形式
 ms.assetid: 41d3d5ad-7336-4ecf-b6e2-a24ee4ec731f
 keywords:
 - DirectSound WDK のオーディオ ストリームのデータを形式します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6fc290a9e065315764558f4982a724d91f8db4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333765"
 ---
-# <a name="directsound-stream-data-format"></a>DirectSound Stream データの形式
+# <a name="directsound-stream-data-format"></a>DirectSound ストリームのデータ形式
 
 
 ## <span id="directsound_stream_data_format"></span><span id="DIRECTSOUND_STREAM_DATA_FORMAT"></span>

@@ -1,6 +1,6 @@
 ---
-title: 許可されているドライバーのアクセラレータの動的な変更
-description: 許可されているドライバーのアクセラレータの動的な変更
+title: 許可されたドライバー アクセラレータの動的変更
+description: 許可されたドライバー アクセラレータの動的変更
 ms.assetid: a80bb755-f4ff-4d5d-aff1-28f8262061ae
 keywords:
 - 高速化レベル WDK Windows 2000 を表示します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dc372788775254e965fa3c38e8a80f5cda4ab37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327941"
 ---
-# <a name="dynamic-change-of-permitted-driver-accelerations"></a>許可されているドライバーのアクセラレータの動的な変更
+# <a name="dynamic-change-of-permitted-driver-accelerations"></a>許可されたドライバー アクセラレータの動的変更
 
 
 ## <span id="ddk_dynamic_change_of_permitted_driver_accelerations_gg"></span><span id="DDK_DYNAMIC_CHANGE_OF_PERMITTED_DRIVER_ACCELERATIONS_GG"></span>
@@ -31,7 +31,7 @@ ms.locfileid: "56553493"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">値</th>
 <th align="left">説明</th>
 </tr>
 </thead>

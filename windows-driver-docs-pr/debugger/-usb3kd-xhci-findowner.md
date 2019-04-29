@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ed0c94f1e05aa891a77ba29406af2d84c4adbef1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330778"
 ---
 # <a name="usb3kdxhcifindowner"></a>!usb3kd.xhci\_findowner
 
@@ -39,12 +39,12 @@ ms.locfileid: "56582462"
 
 Usb3kd.dll
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 共通のバッファーは、ハードウェアによってアドレス指定可能な物理的に連続するメモリのブロックです。 USB 3.0 ドライバー スタックは、USB 3.0 ホスト コント ローラーと通信する一般的なバッファーを使用します。 たとえば、システムのクラッシュとバッファー メモリの一般的な場合がありますが疑われるアドレスに遭遇します。 メモリが (場合は、複数の USB 3.0 コント ローラーがあること) に属する場合、アドレスは共通のバッファー メモリでは、このコマンドでは、USB 3.0 ホスト コント ローラーのメモリが使用されます。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 次の例では[ **! xhci\_resourceusage** ](-usb3kd-xhci-resourceusage.md)いくつかの一般的なバッファーのアドレスを一覧表示します。

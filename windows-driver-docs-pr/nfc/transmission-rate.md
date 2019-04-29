@@ -4,18 +4,18 @@ description: 各プロバイダーの実装では、おおよその転送間隔�
 ms.assetid: 85E85DBA-8A88-4738-8B4E-A04F4A82808F
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4edcb42515a059a35159438aa2734afcb92b5a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331325"
 ---
 # <a name="nfp-transmission-rate"></a>NFP 転送速度
 

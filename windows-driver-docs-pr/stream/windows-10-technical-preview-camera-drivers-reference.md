@@ -5,11 +5,11 @@ ms.assetid: 7A4C810F-33C1-4BEF-9BAC-3DD982884454
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6f0571d68ba1c34d15d2ea724c6b6453cc6ab6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329940"
 ---
 # <a name="new-camera-driver-interfaces-for-windows-10"></a>Windows 10 用の新しいカメラ ドライバー インターフェイス
 

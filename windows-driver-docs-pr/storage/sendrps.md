@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c52a673094b3821c1e80fe6b3b4f60cf44203916
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329985"
 ---
 # <a name="sendrps-function"></a>SendRPS 関数
 
@@ -48,7 +48,7 @@ void SendRPS(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、[HBA\_状態](hba-status.md)を参照してください。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565516)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565516)構造体。
 
 *PortWWN*   
 RPS コマンドを送信するローカル ポートに世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)構造体。

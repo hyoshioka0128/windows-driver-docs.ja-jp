@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 604a781f1f8cf400d73783ae1af5132bb6b88e5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335254"
 ---
 # <a name="inf-profileitems-directive"></a>INF ProfileItems ディレクティブ
 
@@ -143,7 +143,7 @@ DisplayResource="%11%\shell32.dll",22019
 <a name="remarks"></a>注釈
 -------
 
-指定された*プロファイル-section 項目*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+指定された*プロファイル-section 項目*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
 各*プロファイル-section 項目*作成または 1 つのスタート メニュー項目またはグループを削除する詳細な情報が含まれます。 1 つ以上のメニュー項目または、INF からグループを操作するには、1 つ以上を作成*プロファイル-section 項目*セクションでは、ボックスの一覧と、 **ProfileItems**ディレクティブ。
 

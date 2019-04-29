@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9203a4cfd30c71f844713cd7b3068f8bdc3e9c0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331070"
 ---
 # <a name="wmitracestart"></a>!wmitrace.start
 
@@ -70,7 +70,7 @@ KD フィルター モードを有効にします。 メッセージは、カー
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-この拡張機能のパラメーターの詳細については、[StartTrace 関数](https://go.microsoft.com/fwlink/p/?linkid=139652)と[イベント\_トレース\_プロパティ](https://go.microsoft.com/fwlink/p/?linkid=139653)を参照してください。 イベントのトレースの概念的な概要については、Microsoft Windows SDK を参照してください。 トレース ツールについては、Windows Driver Kit (WDK) を参照してください。
+この拡張機能のパラメーターの詳細については、次を参照してください。 [StartTrace 関数](https://go.microsoft.com/fwlink/p/?linkid=139652)と[イベント\_トレース\_プロパティ](https://go.microsoft.com/fwlink/p/?linkid=139653)します。 イベントのトレースの概念的な概要については、Microsoft Windows SDK を参照してください。 トレース ツールについては、Windows Driver Kit (WDK) を参照してください。
 
 <a name="remarks"></a>注釈
 -------

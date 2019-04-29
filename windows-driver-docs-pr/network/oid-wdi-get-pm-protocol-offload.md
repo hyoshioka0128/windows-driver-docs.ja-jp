@@ -7,11 +7,11 @@ keywords:
 - OID_WDI_GET_PM_PROTOCOL_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf76fc7b72c98e94625216dcdfb2a1f5a2b43d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391967"
 ---
 # <a name="oidwdigetpmprotocoloffload"></a>OID\_WDI\_取得\_PM\_プロトコル\_オフロード
 
@@ -38,13 +38,13 @@ OID\_WDI\_取得\_PM\_プロトコル\_オフロード要求プロトコルの�
 
 | TLV                                                                                                         | 許可されている複数の TLV インスタンス | 省略可能 | 説明                            |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------|
-| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv4ARP**](https://msdn.microsoft.com/library/windows/hardware/dn898035)                |                                | X        | IPv4 ARP プロトコルでは、パラメーターをオフロードします。  |
-| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv6NS**](https://msdn.microsoft.com/library/windows/hardware/dn898036)                  |                                | X        | IPv6 NS プロトコルでは、パラメーターをオフロードします。   |
-| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_80211RSN\_キー更新**](https://msdn.microsoft.com/library/windows/hardware/dn898033) |                                | X        | キーを再入力 RSN プロトコルでは、パラメーターをオフロードします。 |
+| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv4ARP**](https://msdn.microsoft.com/library/windows/hardware/dn898035)                |                                | x        | IPv4 ARP プロトコルでは、パラメーターをオフロードします。  |
+| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv6NS**](https://msdn.microsoft.com/library/windows/hardware/dn898036)                  |                                | x        | IPv6 NS プロトコルでは、パラメーターをオフロードします。   |
+| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_80211RSN\_キー更新**](https://msdn.microsoft.com/library/windows/hardware/dn898033) |                                | x        | キーを再入力 RSN プロトコルでは、パラメーターをオフロードします。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

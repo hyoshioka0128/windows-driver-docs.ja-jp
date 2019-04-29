@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad2939cdd1ea059f790c3615c2aebc1c546b7a4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332788"
 ---
 # <a name="kspropertydirectsound3dbuffermode"></a>KSPROPERTY\_DIRECTSOUND3DBUFFER\_モード
 
@@ -84,7 +84,7 @@ DirectSound 3D バッファーの処理モードの詳細については、Windo
 
 -   **IDirectSound3DBuffer::GetMode**と**IDirectSound3DBuffer::SetMode**メソッド。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

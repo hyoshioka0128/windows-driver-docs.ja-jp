@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8daa301886b3d7c0e67a3a8a4589e3f32e075ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335359"
 ---
 # <a name="ndis-supported-wmi-operations"></a>NDIS でサポートされている WMI の操作
 
@@ -39,7 +39,7 @@ NDIS は、次の WMI 操作をサポートしています。
 
     NDIS 適切なデータを取得し、WMI に GUID のインスタンスのすべての結合されたデータを返すことで特定の GUID のすべてのデータのクエリ要求に応じます。 たとえば、クエリのすべてのデータの要求に対して応答で[GUID\_NDIS\_ENUMERATE\_アダプター\_EX](https://msdn.microsoft.com/library/windows/hardware/ff552617)NDIS が WMI にすべての読み込まれたミニポート ドライバーの一覧を返します。 OID にマップされる GUID のクエリすべてのデータに対して\_GEN\_CO\_XMIT\_PDU\_NDIS が、各接続指向のミニポート ドライバーでは、各 VC の OID を照会し、WMI に組み合わされたデータを返します。 すべてのデータのクエリ要求のオーバーヘッドは非常に高くなる可能性があります、ために、WMI クライアントは、アダプターと VCs 列挙にのみクエリのすべてのデータ要求を使用する必要があります。 アダプターまたは VC 対象を決定した後、クライアントは、個々 のインスタンスの GUID を照会できます。
 
--   イベント通知
+-   EVENT NOTIFICATION
 
     WMI クライアントは、特定の状態を示す値を通知する NDIS を登録できます。 このような状態の表示が発生したときに NDIS は WMI にステータス情報を適切な GUID を WMI イベントとして、クライアントに配信するために渡します。
 

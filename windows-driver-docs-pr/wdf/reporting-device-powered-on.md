@@ -5,11 +5,11 @@ ms.assetid: 35A48B37-8000-45DC-8E39-4B58ABE7DE68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e458da3c929727fb0c15704e62cdb3bc13f11456
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325196"
 ---
 # <a name="reporting-device-powered-on-when-system-returns-to-s0"></a>システムが S0 に戻ったときのデバイス電源オンの報告
 

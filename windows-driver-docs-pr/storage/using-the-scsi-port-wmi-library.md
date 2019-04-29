@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e97a86daa24747a9ad08c4b641d8bf16157ca0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390198"
 ---
 # <a name="using-the-scsi-port-wmi-library"></a>SCSI ポート WMI ライブラリの使用
 
@@ -56,7 +56,7 @@ SCSIWMIGUIDREGINFO GuidList[] =
 };
 ```
 
-配列には、2 つの WMI クラスの Guid に関する情報が含まれています。 **HBAStatistics**と**HBAAttributes**します。 Guid のシンボリック定数は、WMI ツール スイートでは、2 つのクラスを定義する MOF ファイルのコンパイルによって生成されたヘッダー ファイルから取得されました (、 **mofcomp**と**wmimofck**ツール)。 これらのツールを使用する方法の詳細については、[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)と[wmimofck.exe を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565588)を参照してください。
+配列には、2 つの WMI クラスの Guid に関する情報が含まれています。 **HBAStatistics**と**HBAAttributes**します。 Guid のシンボリック定数は、WMI ツール スイートでは、2 つのクラスを定義する MOF ファイルのコンパイルによって生成されたヘッダー ファイルから取得されました (、 **mofcomp**と**wmimofck**ツール)。 これらのツールを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)と[wmimofck.exe を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565588)します。
 
 WMI ツールのスイートでは、WMI クラスの名前に"GUID"のサフィックスを連結して、GUID のシンボリック定数の名前を生成します。 クラスのインスタンス、 **HBAStatistics、** と呼ばれるシンボリック定数は、ツールで作成**HBAStatisticsGUID**そのクラスの GUID を表します。
 

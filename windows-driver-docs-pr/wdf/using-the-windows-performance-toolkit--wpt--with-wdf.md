@@ -1,18 +1,18 @@
 ---
-title: WDF の Windows パフォーマンス ツールキット (WPT) を使用します。
+title: WDF での Windows Performance Toolkit (WPT) の使用
 description: Windows 10 以降、Windows パフォーマンス ツールキット (WPT) を使用して、KMDF または 2 の UMDF ドライバーのパフォーマンス データを表示します。
 Search.SourceType: Video
 ms.assetid: 0442E4E2-DBC7-4EB0-BEB6-49EFF5132A1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e4cbfe2e61cbc474055f06e9e73f7a417a18b69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391869"
 ---
-# <a name="using-the-windows-performance-toolkit-wpt-with-wdf"></a>WDF の Windows パフォーマンス ツールキット (WPT) を使用します。
+# <a name="using-the-windows-performance-toolkit-wpt-with-wdf"></a>WDF での Windows Performance Toolkit (WPT) の使用
 
 
 Windows 10 以降、Windows パフォーマンス ツールキット (WPT) を使用して、指定されたカーネル モード ドライバー フレームワーク (KMDF) またはユーザー モード ドライバー フレームワーク (UMDF) 2 のドライバーのパフォーマンス データを表示します。
@@ -98,7 +98,7 @@ WPT は、2 つの方法で、WDF の I/O 要求の完了のスループット�
 
 ![umdf i/o 要求のパフォーマンスのグラフ](images/WpaUMDFIoCapture-Narrow.PNG)
 
-[概要テーブル](https://msdn.microsoft.com/library/windows/hardware/hh448109.aspx)、ほとんどの列は文字どおりがある点に注意してください。 WdfDevice 列には、I/O 要求に関連付けられた WDFDEVICE ハンドルが含まれています。 ActivityID には、I/O 要求の一意の識別子が含まれています。 フレームワークは、I/O 要求をドライバーに配信するときに、この識別子を作成します。 アクティビティの識別子が既に対応する IRP に関連付けられている場合、フレームワークは、その識別子を使用します。 詳細については、[アクティビティ識別子を使用して](using-activity-identifiers.md)を参照してください。
+[概要テーブル](https://msdn.microsoft.com/library/windows/hardware/hh448109.aspx)、ほとんどの列は文字どおりがある点に注意してください。 WdfDevice 列には、I/O 要求に関連付けられた WDFDEVICE ハンドルが含まれています。 ActivityID には、I/O 要求の一意の識別子が含まれています。 フレームワークは、I/O 要求をドライバーに配信するときに、この識別子を作成します。 アクティビティの識別子が既に対応する IRP に関連付けられている場合、フレームワークは、その識別子を使用します。 詳細については、次を参照してください。[アクティビティ識別子を使用して](using-activity-identifiers.md)します。
 
 フレームワークは、ドライバーに要求を配信し、ドライバーが呼び出されたときに、終了時刻は、タイムスタンプ、エントリの時刻がトレース タイムスタンプ[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)または完了に関連するメソッド、要求。
 
@@ -170,13 +170,13 @@ I/O 要求完了したときを確認するのには、フレームワークは�
     ----------------------------------
     ```
 
--   開発とテストのみを目的の場合は、ドライバーのコード署名ポリシーの適用を一時的に無効にできます。 詳細については、[開発およびテスト中に、符号なしのドライバー パッケージをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547565)を参照してください。
+-   開発とテストのみを目的の場合は、ドライバーのコード署名ポリシーの適用を一時的に無効にできます。 詳細については、次を参照してください。[開発およびテスト中に、符号なしのドライバー パッケージをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff547565)します。
 -   Windows 10 Mobile でトレースをキャプチャした場合は、ターゲット デバイスから MyPerfTrace.etl を Wpa.exe をされているコンピューターにコピーする必要があります。 使用することができます、 [TShell ツール](https://sysdev.microsoft.com/Hardware/oem/docs/Phone_Testing/TShell)これを行う。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[Windows パフォーマンス アナライザー](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx)
+[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx)
 
 
 

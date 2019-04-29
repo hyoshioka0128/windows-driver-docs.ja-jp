@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54820cce4e34f0419b7e0985b9cda5faa920bdb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333798"
 ---
 # <a name="directmusic-miniport-driver-interface"></a>DirectMusic ミニポート ドライバー インターフェイス
 
@@ -35,7 +35,7 @@ Dmu のミニポート ドライバー インターフェイス、MIDI ミニポ
 
 Dmu のミニポート ドライバー インターフェイスは、いくつかの方法では、MIDI ミニポート ドライバー インターフェイスによって異なります。 Dmu のミニポート ドライバー インターフェイスを実装する[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)ではなく[IMiniportMidi](https://msdn.microsoft.com/library/windows/hardware/ff536703)します。 このインターフェイスはのような**IMiniportMidi**が、 [ **IMiniportDMus::NewStream** ](https://msdn.microsoft.com/library/windows/hardware/ff536701)メソッドを作成、 [IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782) (MIDI 変換フィルター) インターフェイスに接続して、 [IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491) Dmu ポート ドライバーの実装ではなく、インターフェイス、 [IMiniportMidiStream](https://msdn.microsoft.com/library/windows/hardware/ff536704)インターフェイス。 **IAllocatorMXF**と**IMXF** 、標準のラップ**GetMessage**と**PutMessage**呼び出し (を参照してください[ **IAllocatorMXF:。GetMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff536494)と[ **IMXF::PutMessage**](https://msdn.microsoft.com/library/windows/hardware/ff536791))。 これらの呼び出しでは、MIDI の実際のバイト数ではなく、パッケージ化されたイベントを処理します。
 
-シンセサイザーの Dmu ミニポート ドライバーには、DirectMusic プロパティの一部またはすべてを実装できます。 これらのプロパティは、DL のダウンロードとデバイスのチャネルの割り当てを管理するシステムを許可します。 Dmusprop.h ヘッダー ファイルでは、DirectMusic 固有のプロパティ項目を定義します。 これらのプロパティの一覧は、[KSPROPSETID\_シンセサイザー](https://msdn.microsoft.com/library/windows/hardware/ff537486)と[KSPROPSETID\_シンセサイザー\_Dls](https://msdn.microsoft.com/library/windows/hardware/ff537488)を参照してください。
+シンセサイザーの Dmu ミニポート ドライバーには、DirectMusic プロパティの一部またはすべてを実装できます。 これらのプロパティは、DL のダウンロードとデバイスのチャネルの割り当てを管理するシステムを許可します。 Dmusprop.h ヘッダー ファイルでは、DirectMusic 固有のプロパティ項目を定義します。 これらのプロパティの一覧は、次を参照してください。 [KSPROPSETID\_シンセサイザー](https://msdn.microsoft.com/library/windows/hardware/ff537486)と[KSPROPSETID\_シンセサイザー\_Dls](https://msdn.microsoft.com/library/windows/hardware/ff537488)します。
 
 Dmu のミニポート ドライバーは、複数の暗証番号 (pin) インスタンスの作成を許可する必要があります。 各ピンのインスタンスが 1 つの仮想シンセサイザーとして機能し、チャネルのセットを格納し、DLS ダウンロードの暗証番号 (pin) のインスタンスの独立したします。
 
@@ -51,7 +51,7 @@ Dmu のミニポート ドライバーは、複数の暗証番号 (pin) イン�
 
 -   アロケーター オブジェクト
 
-クロックがレンダリングの非常に重要な操作をキャプチャするとします。 指定したノートを表示するために、ミニポート ドライバーが必要な時間です。ミニポート ドライバーは MIDI のデータを読み取り、タイムスタンプのカーネル イベントをできるように時間を把握し、必要があります。 詳細については、[待機時間のクロック](latency-clocks.md)を参照してください。
+クロックがレンダリングの非常に重要な操作をキャプチャするとします。 指定したノートを表示するために、ミニポート ドライバーが必要な時間です。ミニポート ドライバーは MIDI のデータを読み取り、タイムスタンプのカーネル イベントをできるように時間を把握し、必要があります。 詳細については、次を参照してください。[待機時間のクロック](latency-clocks.md)します。
 
 [アロケーター](allocator.md)を持つオブジェクトを**IAllocatorMXF**インターフェイス、メモリをリサイクルするメモリのプールとして使用されます。 システム内のすべての MIDI メッセージは、この共通のプールから割り当てられます。 作成または個々 のメッセージを破棄するには、アロケーター オブジェクトを使用してください。
 

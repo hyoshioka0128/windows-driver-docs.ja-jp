@@ -1,6 +1,6 @@
 ---
-title: ホーム シアター システム用のマルチ チャネルの形式
-description: ホーム シアター システム用のマルチ チャネルの形式
+title: ホーム シアター システム用のマルチチャネル形式
+description: ホーム シアター システム用のマルチチャネル形式
 ms.assetid: b8bd1dc7-c9a8-4f4f-8014-d31f1ae5361a
 keywords:
 - データ形式の WDK オーディオ
@@ -26,13 +26,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e668d94b8a288e2bf960ef4333033370e4c0a25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332319"
 ---
-# <a name="multichannel-formats-for-home-theater-systems"></a>ホーム シアター システム用のマルチ チャネルの形式
+# <a name="multichannel-formats-for-home-theater-systems"></a>ホーム シアター システム用のマルチチャネル形式
 
 
 ホーム シアター システムの比較的安価なソリューションでは、Windows オペレーティング システムを実行しているコンピューター上のオーディオのアダプタに一連のサラウンド サウンドのスピーカーを接続します。 ユーザーが外部オーディオ/ビデオを接続する代わりに、(A/V) アダプターの出力とスピーカーの受信者。 ホーム シアター システムの普及に応答して、これらのシステムが、作成されているオーディオ コンテンツを 5.1 と 7.1 チャネルはますます使用可能なが高まっています。

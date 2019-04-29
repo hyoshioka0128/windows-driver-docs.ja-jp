@@ -1,6 +1,6 @@
 ---
-title: 交差部分のデータ ハンドラー
-description: 交差部分のデータ ハンドラー
+title: データ交差ハンドラー
+description: データ交差ハンドラー
 ms.assetid: 7206afdb-8a34-4b5a-8cea-87119f426161
 keywords:
 - WDM オーディオ ドライバー WDK、積集合のデータ ハンドラー
@@ -21,13 +21,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c35d9e78a4049ab989b137ac5600005b0829528
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333823"
 ---
-# <a name="data-intersection-handlers"></a>交差部分のデータ ハンドラー
+# <a name="data-intersection-handlers"></a>データ交差ハンドラー
 
 
 ## <span id="data_intersection_handlers"></span><span id="DATA_INTERSECTION_HANDLERS"></span>
@@ -43,7 +43,7 @@ Windows XP などの Windows の旧バージョンで、 [SysAudio システム 
 
 ポート ドライバーの既定の交差部分のデータ ハンドラーは、最も一般的なハードウェア機能を扱う設計されています。 オーディオ デバイスの単純な場合は、既定のハンドラーは、アダプターのドライバーで独自のハンドラーを実装する代わりに使用するを提供します。 ただしより高度な機能を持つアダプターが、ハードウェアのすべての機能を公開するために、独自のハンドラーが必要があります。
 
-このセクションの残りの部分では、ポート ドライバーの既定の交差部分のデータ ハンドラーの制限事項について説明し、アダプター ドライバーが、独自のデータの積集合のハンドラーをデザインするために必要なテクニックが紹介します。 次のトピックがについて説明します。
+このセクションの残りの部分では、ポート ドライバーの既定の交差部分のデータ ハンドラーの制限事項について説明し、アダプター ドライバーが、独自のデータの積集合のハンドラーをデザインするために必要なテクニックが紹介します。 次のトピックについて説明します。
 
 [データの積集合](data-intersection.md)
 

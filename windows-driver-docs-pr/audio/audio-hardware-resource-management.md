@@ -5,11 +5,11 @@ ms.assetid: 6E94529E-F3F0-4DC5-AF8B-F896A4F991E3
 ms.date: 10/29/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1e3b7d4995110d9d998cbc02173a48693943b0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331466"
 ---
 # <a name="audio-hardware-resource-management"></a>オーディオ ハードウェア リソースの管理
 
@@ -111,7 +111,7 @@ XML ファイルの次のセクションでは、2 つまたは複数のエン�
 
     &lt;PinId&gt; -リソース コンシューマーの暗証番号 (pin) の ID。
 
-    &lt;モード&gt;-関連付けられているモードの GUID。 詳細については、[オーディオ信号の処理モード](audio-signal-processing-modes.md)を参照してください。
+    &lt;モード&gt;-関連付けられているモードの GUID。 詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)します。
 
     &lt;ConnectorType&gt; -リソース コンシューマーのコネクタの種類。 有効な値は次のとおりです。ホスト、Loopback、またはオフロードします。
 
@@ -174,7 +174,7 @@ XML ファイルの次のセクションでは、2 つまたは複数のエン�
 
  
 
-**例**
+**使用例**
 
 - 例 1:ユーザーが Skype、通信のレンダリングとキャプチャのストリームを使用して通信が。 ゲーム効果ストリームを作成しようとしています。 ゲームを開始するとします。 十分なリソースが使用できない場合は、ゲーム効果ストリームの作成は失敗します。
 

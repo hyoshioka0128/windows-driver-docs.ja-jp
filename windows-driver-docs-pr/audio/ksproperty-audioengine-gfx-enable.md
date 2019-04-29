@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0079e23a6a5c9ad702c99dc394fe4b8f6157ee1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332853"
 ---
 # <a name="kspropertyaudioenginegfxenable"></a>KSPROPERTY\_AUDIOENGINE\_GFXENABLE
 
@@ -64,7 +64,7 @@ ms.locfileid: "56528403"
 
 **KSPROPERTY\_AUDIOENGINE\_GFXENABLE**プロパティ要求を返します**状態\_成功**を正常に完了したことを示します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5265147b4d1bd47c16f0e46ba5dc4508d805fd4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384547"
 ---
 # <a name="inf-files-for-netadaptercx-client-drivers"></a>NetAdapterCx クライアント ドライバーの INF ファイル
 
@@ -19,7 +19,7 @@ ms.locfileid: "56553825"
 
 NetAdapterCx クライアント ドライバーの INF ファイルは、標準的なネットワーク INF ファイルでは、いくつかその他のキーワード NetAdapterCx に固有の上に構築します。 
 
-標準的なネットワーク INF ファイルの詳細については、[ネットワーク INF ファイルの作成](../network/creating-network-inf-files.md)を参照してください。 基本の INF ファイルの詳細については、[INF ファイルのセクションとディレクティブ](../install/inf-file-sections-and-directives.md)を参照してください。
+標準的なネットワーク INF ファイルの詳細については、次を参照してください。[ネットワーク INF ファイルの作成](../network/creating-network-inf-files.md)です。 基本の INF ファイルの詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](../install/inf-file-sections-and-directives.md)します。
 
 次の表では、新しい NetAdapterCx INF キーワードについて説明します。
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbe36a437adb9db84fcc7dff9656baef6aa2113c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391662"
 ---
 # <a name="intermediate-driver-network-data-management"></a>中間ドライバー ネットワーク データ管理
 
@@ -29,9 +29,9 @@ ms.locfileid: "56579478"
 
 -   中間のドライバーでは、長さまたは基になるドライバーに圧縮または各転送する前にデータを暗号化によってデータを送信するネットワークの内容を変更します。
 
-データ管理のネットワークを作成する方法の詳細については、[プロトコル ドライバー バッファー管理](protocol-driver-buffer-management.md)を参照してください。
+データ管理のネットワークを作成する方法の詳細については、次を参照してください。[プロトコル ドライバー バッファー管理](protocol-driver-buffer-management.md)します。
 
-NDIS 複製およびフラグメントにインターフェイスを提供する[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 複製と構造体をフラグメント化の詳細については、[派生 NET\_バッファー\_リスト構造](derived-net-buffer-list-structures.md)を参照してください。
+NDIS 複製およびフラグメントにインターフェイスを提供する[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 複製と構造体をフラグメント化の詳細については、次を参照してください。[派生 NET\_バッファー\_リスト構造](derived-net-buffer-list-structures.md)します。
 
 NET\_バッファー\_ドライバーの初期化時、または、必要に応じて、リストの構造体を割り当てることができる、 [ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数。 中間ドライバー開発者は、割り当てることができます、必要に応じて、パフォーマンス上の理由から、構造体の数の初期化時にように[ **ProtocolReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff570267)が事前に割り当てられます上位レベルのドライバーを示すための受信データをコピー先のリソース、および[ *MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)で使用できるように[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造 (と可能性があるバッファー) を渡す受信は、[次へ] の下位のドライバーにネットワーク データを送信します。
 

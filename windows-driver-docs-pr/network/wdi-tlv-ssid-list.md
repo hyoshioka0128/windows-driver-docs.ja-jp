@@ -7,18 +7,18 @@ keywords:
 - WDI_TLV_SSID_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: c160aa8cd517e67b6872652a067a7bea5d053b85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330423"
 ---
 # <a name="wditlvssidlist"></a>WDI\_TLV\_SSID\_一覧
 
 
 WDI\_TLV\_SSID\_リストは、未使用の TLV します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

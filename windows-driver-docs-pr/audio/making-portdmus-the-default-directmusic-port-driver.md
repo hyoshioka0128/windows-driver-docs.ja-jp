@@ -1,6 +1,6 @@
 ---
-title: PortDMus DirectMusic ポートの既定のドライバーの作成
-description: PortDMus DirectMusic ポートの既定のドライバーの作成
+title: PortDMus を既定の DirectMusic ポート ドライバーとする
+description: PortDMus を既定の DirectMusic ポート ドライバーとする
 ms.assetid: 1e498eb1-8a48-4240-8557-2fd2bba02abb
 keywords:
 - ポート ドライバー WDK オーディオ、既定の Dmu ポート ドライバー
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eb7d2a29a7589de2c217b9c8fe14cbeffdb018e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332388"
 ---
-# <a name="making-portdmus-the-default-directmusic-port-driver"></a>PortDMus DirectMusic ポートの既定のドライバーの作成
+# <a name="making-portdmus-the-default-directmusic-port-driver"></a>PortDMus を既定の DirectMusic ポート ドライバーとする
 
 
 ## <span id="making_portdmus_the_default_directmusic_port_driver"></span><span id="MAKING_PORTDMUS_THE_DEFAULT_DIRECTMUSIC_PORT_DRIVER"></span>

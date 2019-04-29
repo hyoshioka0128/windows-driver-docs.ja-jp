@@ -1,17 +1,17 @@
 ---
-title: ドライバーがクラッシュする UMDF 2.0 のトラブルシューティング
+title: UMDF 2.0 ドライバーのクラッシュのトラブルシューティング
 description: ユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 を開始するには、UMDF ドライバーをデバッグするのに Wdfkd.dll で実装されたデバッガー拡張機能コマンドのサブセットを使用できます。
 ms.assetid: df1bfc10-379b-457f-a9c8-40fa10048f81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba636c96e7cbf3e38afb96f62ac069d4ac50f29a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330864"
 ---
-# <a name="troubleshooting-umdf-20-driver-crashes"></a>ドライバーがクラッシュする UMDF 2.0 のトラブルシューティング
+# <a name="troubleshooting-umdf-20-driver-crashes"></a>UMDF 2.0 ドライバーのクラッシュのトラブルシューティング
 
 
 ユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 を開始するには、UMDF ドライバーをデバッグするのに Wdfkd.dll で実装されたデバッガー拡張機能コマンドのサブセットを使用できます。 このトピックでは、UMDF ドライバーに関する問題のトラブルシューティングを起動する可能性がありますコマンドについて説明します。
@@ -23,7 +23,7 @@ ms.locfileid: "56552727"
 
 調査のため、カーネル モードのデバッグ セッションの設定」の説明に従って[UMDF ドライバーのデバッグを有効にする方法](enabling-a-debugger.md)します。
 
-- 場合**HostFailKdDebugBreak**設定は、カーネル モード デバッガーのタイムアウトしきい値を超えたときに、リフレクタ中断します。 デバッガーの出力に表示されますいくつかの提案を開始する方法のなどのリンクをクリックすることができます。 次に、例を示します。
+- 場合**HostFailKdDebugBreak**設定は、カーネル モード デバッガーのタイムアウトしきい値を超えたときに、リフレクタ中断します。 デバッガーの出力に表示されますいくつかの提案を開始する方法のなどのリンクをクリックすることができます。 例:
 
   ```cpp
   **** Problem detected in UMDF driver "WUDFOsrUsbFx2". !process 0xFFFFE0000495B080 0x1f, !devstack 0xFFFFE000032BFA10, Problem code 3 ****

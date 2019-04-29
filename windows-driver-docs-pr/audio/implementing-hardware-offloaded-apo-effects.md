@@ -5,11 +5,11 @@ ms.assetid: 159DFFD2-2434-4EDC-A83C-455BA80F74C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 003ed70c695725b7a1713e910edc8de0835f2c04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333490"
 ---
 # <a name="implementing-hardware-offloaded-apo-effects"></a>APO 効果をオフロードするハードウェアの実装
 
@@ -28,7 +28,7 @@ Windows 10 でバージョン 1511 以降がオーディオ処理オブジェク
 
 **ハードウェア オフロードされたオーディオ処理およびハードウェア オフロード APOs**
 
-Windows 8 でオーディオ エンジンが再設計されましたとは別ですが、コンピューターのメインのオーディオ システムに接続されているハードウェア デバイスにオフロードされたオーディオのストリームを使用します。 これはハードウェアのオフロードと呼ばれます。 詳細については、[Hardware-Offloaded オーディオ処理](hardware-offloaded-audio-processing.md)を参照してください。
+Windows 8 でオーディオ エンジンが再設計されましたとは別ですが、コンピューターのメインのオーディオ システムに接続されているハードウェア デバイスにオフロードされたオーディオのストリームを使用します。 これはハードウェアのオフロードと呼ばれます。 詳細については、次を参照してください。 [Hardware-Offloaded オーディオ処理](hardware-offloaded-audio-processing.md)します。
 
 ハードウェアのオフロード機能は主に、バッファー サイズの大きな低電力のシナリオの対象とします。 たとえば、対応システムでは、低電力オーディオ (以下) の再生中に、オーディオのバッファー サイズまたは周期性は 1 秒に設定、CPU がウェイク アップ頻繁に (たとえば、10 ミリ秒ごと) で小さなバッファーを処理するように。
 

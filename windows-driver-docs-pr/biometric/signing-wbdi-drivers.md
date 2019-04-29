@@ -5,16 +5,16 @@ ms.assetid: 1BE83F60-4A04-457E-BD31-5E6F104A3505
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfd484b2aac839ec3227de9f0fde097b245cf6c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328364"
 ---
 # <a name="signing-wbdi-drivers"></a>WBDI ドライバーへの署名
 
 
-WBDI ドライバーの特定のコード署名要件は、ユーザー モード ドライバー フレームワーク (UMDF)、カーネル モード ドライバー フレームワーク (KMDF)、または Windows Driver Model (WDM) を使用して、WBDI ドライバーを実装するかどうかによって異なります。 カタログ ファイルに署名する必要があるだけでなく特定の dll を特定の属性で署名する必要があります。 詳細については、[フィンガー プリント ドライバーを提出するには手順](https://docs.microsoft.com/windows-hardware/design/device-experiences/windows-hello-driver-signing)を参照してください。
+WBDI ドライバーの特定のコード署名要件は、ユーザー モード ドライバー フレームワーク (UMDF)、カーネル モード ドライバー フレームワーク (KMDF)、または Windows Driver Model (WDM) を使用して、WBDI ドライバーを実装するかどうかによって異なります。 カタログ ファイルに署名する必要があるだけでなく特定の dll を特定の属性で署名する必要があります。 詳細については、次を参照してください。[フィンガー プリント ドライバーを提出するには手順](https://docs.microsoft.com/windows-hardware/design/device-experiences/windows-hello-driver-signing)します。
 
 改ざんされていないことを確認する、WHQL ポータル WBDI のすべてのドライバー パッケージを署名する必要があります。 ドライバーがユーザー モードまたはカーネル モードでを実行するか、このような署名が必要です。 パッケージのすべての個別のファイルに署名する必要はありません。 代わりに、パッケージ内のすべてのファイルのハッシュ値を含むカタログ ファイルを作成して、カタログ ファイルに署名します。 INF CatalogFile ディレクティブでは、このファイルの名前を示します。 ほとんどの WBDI ドライバーでは、カタログ ファイルの署名は必要があるシグネチャの唯一の種類です。
 
@@ -31,7 +31,7 @@ WBDI ドライバーによって、複数の署名が必要です。 ブート �
 -   カーネルのサービスを構成、 **ServiceType**カーネル ドライバーまたはファイル システム ドライバーのあり**StartMode** 「ブート」に設定します。
 
 
-このトピックでは、ドライバーの署名の要件や手順の詳細については説明しません。 概要のドライバー署名要件については、[ドライバーの署名](https://go.microsoft.com/fwlink/p/?linkid=201836)を参照してください。
+このトピックでは、ドライバーの署名の要件や手順の詳細については説明しません。 概要のドライバー署名要件については、次を参照してください。[ドライバーの署名](https://go.microsoft.com/fwlink/p/?linkid=201836)します。
 
  
 

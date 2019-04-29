@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a760ab85eb0a5ea9b484754eb987dbd2c2a7da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334370"
 ---
-# <a name="powertriage"></a>! powertriage
+# <a name="powertriage"></a>!powertriage
 
 
 ! Powertriage 拡張機能、システムに関する概要情報を表示してデバイスの電源関連のコンポーネント。 追加情報を収集するために使用できる関連するコマンドへのリンクも提供します。 ! Powertriage コマンドにパラメーターがありません。 このコマンドは、ライブのカーネル モードのデバッグの両方と、クラッシュ ダンプ ファイルの分析のために使用できます。
@@ -58,9 +58,9 @@ ms.locfileid: "56535448"
 ! Powertriage 拡張機能には、次の情報が表示されます。
 
 1. 電源の状態と共に、[デバイス] ノードの! podev デバイスのすべてのオブジェクト。
-2. リンク[ **! rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)ドライバーが、IFR を有効にした場合。 IFR の詳細については、[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)を参照してください。
+2. リンク[ **! rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)ドライバーが、IFR を有効にした場合。 IFR の詳細については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。
 3. リンク[ **! wdfkd.wdfdriverinfo** ](-wdfkd-wdfdriverinfo.md)と[ **! wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md) WDF ドライバー。
-4. リンクします。 fxdevice PoFx デバイス。 PoFX の詳細については、[、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)を参照してください。
+4. リンクします。 fxdevice PoFx デバイス。 PoFX の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
 出力例を次に示します、! powertriage コマンド。
 
 ```dbgcmd

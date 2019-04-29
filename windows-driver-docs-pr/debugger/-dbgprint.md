@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 00281b2d5f6a389d1dd15c02d9015e4fddabfc79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336860"
 ---
 # <a name="dbgprint"></a>!dbgprint
 
@@ -61,7 +61,7 @@ ms.locfileid: "56556714"
 
 カーネル モード ルーチン**による DbgPrint**、 **KdPrint**、 **DbgPrintEx**、および**KdPrintEx**ターゲット上のバッファーに書式設定された文字列を送信コンピューター。 文字列は、このような印刷が無効になっている場合を除きに自動的にホスト コンピューター上のデバッガー コマンド ウィンドウに表示されます。
 
-一般に、このバッファーに送信されるメッセージは、デバッガー コマンド ウィンドウで自動的に表示されます。 ただし、この表示は、グローバル フラグ (gflags.exe) ユーティリティを無効にできます。 さらに、この表示は自動的にないローカル カーネル デバッグ中に。 詳細については、[、による DbgPrint バッファー](reading-and-filtering-debugging-messages.md#the-dbgprint-buffer)を参照してください。
+一般に、このバッファーに送信されるメッセージは、デバッガー コマンド ウィンドウで自動的に表示されます。 ただし、この表示は、グローバル フラグ (gflags.exe) ユーティリティを無効にできます。 さらに、この表示は自動的にないローカル カーネル デバッグ中に。 詳細については、次を参照してください。 [、による DbgPrint バッファー](reading-and-filtering-debugging-messages.md#the-dbgprint-buffer)します。
 
 **! による dbgprint**拡張子 (かどうか自動印刷を無効になっています) に関係なく表示するには、このバッファーの内容が原因です。 フィルターで除外されたコンポーネントと重要度レベルに基づいてメッセージは表示されません。 (このフィルター処理の詳細については、「[読み取りとデバッグ メッセージのフィルタ リング](reading-and-filtering-debugging-messages.md)。)
 

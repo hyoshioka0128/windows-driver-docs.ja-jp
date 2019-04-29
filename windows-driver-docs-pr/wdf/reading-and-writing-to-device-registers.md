@@ -5,18 +5,18 @@ ms.assetid: 58A94C75-94C1-4517-A300-9F04AA7B771A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6584ea910624f07992ab6c3d40e1a86cfb973f6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390037"
 ---
 # <a name="reading-and-writing-to-device-registers"></a>デバイス レジスターの読み取りと書き込み
 
 
 」の説明に従って、ドライバーのレジスタがマップする後[マッピング ハードウェア リソースの検索と](finding-and-mapping-hardware-resources.md)、KMDF ドライバーを使用して、 [ **HAL ライブラリ ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff546644)読み取りし、書き込みをする登録すると、通常 UMDF ドライバー (バージョン 2.0 以降) を使用中に、 [WDF 登録/ポート アクセス関数](https://msdn.microsoft.com/library/windows/hardware/dn265662)します。
 
-INF ディレクティブを設定できる UMDF ドライバーでは、メモリ マップト レジスタに直接アクセスする必要があるを場合**UmdfRegisterAccessMode**に**RegisterAccessUsingUserModeMapping**を呼び出して[ **WdfDeviceGetHardwareRegisterMappedAddress** ](https://msdn.microsoft.com/library/windows/hardware/dn265603)ユーザー モードを取得するアドレスをマップします。 フレームワークは、読み取りを検証し、この方法で実行するアクセスの書き込みありません、ため、この手法はレジスタへのアクセスは推奨されません。 UMDF INF ディレクティブの一覧については、[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)を参照してください。
+INF ディレクティブを設定できる UMDF ドライバーでは、メモリ マップト レジスタに直接アクセスする必要があるを場合**UmdfRegisterAccessMode**に**RegisterAccessUsingUserModeMapping**を呼び出して[ **WdfDeviceGetHardwareRegisterMappedAddress** ](https://msdn.microsoft.com/library/windows/hardware/dn265603)ユーザー モードを取得するアドレスをマップします。 フレームワークは、読み取りを検証し、この方法で実行するアクセスの書き込みありません、ため、この手法はレジスタへのアクセスは推奨されません。 UMDF INF ディレクティブの一覧については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
 
 次の例には、KMDF (1.13 またはそれ以降) または UMDF (2.0 以降) を使用してコンパイルでしたコードが含まれています。 ドライバーの使用方法の例を示します、 [ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)そのメモリ マップト登録リソースを確認し、ユーザー モード アドレス空間にマップするコールバック関数。 例は、メモリの場所にアクセスする方法を示します。
 

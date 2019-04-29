@@ -1,6 +1,6 @@
 ---
-title: 既定の交差部分のデータ ハンドラー
-description: 既定の交差部分のデータ ハンドラー
+title: 既定のデータ交差ハンドラー
+description: 既定のデータ交差ハンドラー
 ms.assetid: 5c70a6e4-702f-4fd0-bb3e-2cde2955b2ad
 keywords:
 - 交差部分のデータ ハンドラー WDK のオーディオ、既定値
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aee3aeb9c615367bffd158854158373c757320e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333919"
 ---
-# <a name="default-data-intersection-handlers"></a>既定の交差部分のデータ ハンドラー
+# <a name="default-data-intersection-handlers"></a>既定のデータ交差ハンドラー
 
 
 ## <span id="default_data_intersection_handlers"></span><span id="DEFAULT_DATA_INTERSECTION_HANDLERS"></span>

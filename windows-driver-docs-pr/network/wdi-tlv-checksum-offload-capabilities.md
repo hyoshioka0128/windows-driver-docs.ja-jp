@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_CHECKSUM_OFFLOAD_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcfede0805a8f792eb7aabc6210e928be3e619d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329816"
 ---
 # <a name="wditlvchecksumoffloadcapabilities"></a>WDI\_TLV\_チェックサム\_オフロード\_機能
 

@@ -1,17 +1,17 @@
 ---
-title: PNP-X 対応デバイス用のコンテナー Id
-description: PNP-X 対応デバイス用のコンテナー Id
+title: PnP-X デバイス用のコンテナー ID
+description: PnP-X デバイス用のコンテナー ID
 ms.assetid: 6a1ea4e9-e672-4f37-ab26-932591fe4da4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1250b34309df64f25321c0e6154bdc0bb0032574
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329804"
 ---
-# <a name="container-ids-for-pnp-x-devices"></a>PNP-X 対応デバイス用のコンテナー Id
+# <a name="container-ids-for-pnp-x-devices"></a>PnP-X デバイス用のコンテナー ID
 
 
 PnP 拡張機能 (PNP-X) は、IP ベースのネットワークを介してコンピューターに接続されているデバイスをサポートするには、Windows のプラグ アンド プレイ (PnP) を拡張します。 PNP-X 対応の詳細についてを参照してください、 [PnP-x:Windows の仕様のプラグ アンド プレイ拡張機能。](https://go.microsoft.com/fwlink/p/?linkid=142398                  )
@@ -22,13 +22,13 @@ PNP-X 対応デバイスでは、そのデバイスのメタデータ内の XML 
 
     DPWS の詳細についてを参照してください、 [DPWS 仕様。](https://go.microsoft.com/fwlink/p/?linkid=142400)
 
-    DPWS を通じてコンテナー Id のサポートに関する詳細については、[DPWS デバイス用のコンテナー Id](container-ids-for-dpws-devices.md)を参照してください。
+    DPWS を通じてコンテナー Id のサポートに関する詳細については、次を参照してください。 [DPWS デバイス用のコンテナー Id](container-ids-for-dpws-devices.md)します。
 
 -   ユニバーサル PnP (UPnP)。
 
     詳細についてを参照してください、 [UPnP デバイスのアーキテクチャの仕様。](https://go.microsoft.com/fwlink/p/?linkid=142402)
 
-    UPnP を通じてコンテナー Id のサポートに関する詳細については、[UPnP デバイス用のコンテナー Id](container-ids-for-upnp-devices.md)を参照してください。
+    UPnP を通じてコンテナー Id のサポートに関する詳細については、次を参照してください。 [UPnP デバイス用のコンテナー Id](container-ids-for-upnp-devices.md)します。
 
 PNP-X 対応デバイスがデバイスの DPWS メタデータまたは UPnP デバイスの説明ドキュメントでコンテナー ID を指定しない場合、PnP マネージャーには、デバイスがサポートされるプロトコルに固有のアルゴリズムを使用して、デバイスのコンテナー ID が生成されます。
 

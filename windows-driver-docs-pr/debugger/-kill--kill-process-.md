@@ -1,5 +1,5 @@
 ---
-title: .kill (kill プロセス)
+title: .kill (プロセスの強制終了)
 description: ユーザー モードでは、.kill コマンドは、デバッグ対象プロセスを終了します。
 ms.assetid: e4bc13e4-2566-4438-9ae7-a5ba05b727de
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a3940664ca0131d87aa42b23ffd6e99fca9c6d36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336335"
 ---
-# <a name="kill-kill-process"></a>.kill (kill プロセス)
+# <a name="kill-kill-process"></a>.kill (プロセスの強制終了)
 
 
 ユーザー モードで、 **.kill**コマンドは、デバッグ中のプロセスを終了します。
@@ -130,7 +130,7 @@ Terminated.  Exit thread and process events will occur.
 
 **windbg -g -G -o Parent.exe**
 
-詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)と[ **CDB コマンド ライン オプション**](cdb-command-line-options.md)を参照してください。
+詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)と[ **CDB コマンド ライン オプション**](cdb-command-line-options.md)します。
 
 <a name="requirements"></a>要件
 ------------

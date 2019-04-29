@@ -5,11 +5,11 @@ ms.assetid: 14B5F787-65B1-4BC3-90CD-D4AD1C8044D1
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ef292aa814845a758fd29ead682b525250e1a4a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56539438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328120"
 ---
 # <a name="acpi-namespace-hierarchy"></a>ACPI 名前空間の階層
 
@@ -19,7 +19,7 @@ ACPI 名前空間の階層する必要があります正確にモデル化、プ
 SoC ベースのプラットフォームに具体的には、次の規則が適用されます。
 
 -   (プロセッサを含む) メモリ マップの機能ブロックの直下に表示、 \\ \_SB ノード。
--   いくつかの組み合わせの単純な周辺機器バス (SPB) コント ローラーや GPIO コント ローラーに接続している周辺機器では、接続リソースとしてこれらのコント ローラーへの接続について説明します。 詳細については、[一般的な目的 I/O (GPIO)](general-purpose-i-o--gpio-.md)と[単純な周辺機器バス (SPB)](simple-peripheral-bus--spb-.md)を参照してください。
+-   いくつかの組み合わせの単純な周辺機器バス (SPB) コント ローラーや GPIO コント ローラーに接続している周辺機器では、接続リソースとしてこれらのコント ローラーへの接続について説明します。 詳細については、次を参照してください。[一般的な目的 I/O (GPIO)](general-purpose-i-o--gpio-.md)と[単純な周辺機器バス (SPB)](simple-peripheral-bus--spb-.md)します。
 
     この方法で接続されている周辺機器がのすぐ下に表示される、 \\ \_SB ノード、または親 SPB または GPIO コント ローラーの下。 後者は、可能であれば、関係を検出するリソースのデコードを必要とするのではなく、名前空間で直接デバイスの関係を示すため。
 

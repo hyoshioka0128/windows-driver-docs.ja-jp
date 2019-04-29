@@ -1,16 +1,16 @@
 ---
-title: オーディオのモジュールの通信を実装します。
+title: オーディオ モジュール通信の実装
 description: オーディオのモジュールは、distinct、オーディオ処理ロジックの比較的アトミックな関数を実行するのです。
 ms.date: 07/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1c0705f6644d6413b77bd40e70cd10b9227f843
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333471"
 ---
-<a name="implementing-audio-module-communication"></a>オーディオのモジュールの通信を実装します。
+<a name="implementing-audio-module-communication"></a>オーディオ モジュール通信の実装
 ========================================================================================
 
 オーディオのモジュールは、distinct、オーディオ処理ロジックの比較的アトミックな関数を実行するのです。 オーディオのモジュールは、オーディオ ドライバーまたはオーディオ DSP に存在する可能性があります。 オーディオ モジュールの例は、オーディオ処理の DSP ベースになります。
@@ -19,7 +19,7 @@ ms.locfileid: "56552829"
 
 このトピックでは、カーネル デバイス ドライバーのオーディオ モジュール通信を実装する情報を提供します。 
 
-コマンドを送信し、UWP アプリを使用してオーディオ デバイス モジュールからの変更通知を受信する方法については、[とクエリの構成のオーディオ デバイス モジュール](https://docs.microsoft.com/windows-hardware/drivers/audio/configure-and-query-audiodevicemodules)を参照してください。
+コマンドを送信し、UWP アプリを使用してオーディオ デバイス モジュールからの変更通知を受信する方法については、次を参照してください。[とクエリの構成のオーディオ デバイス モジュール](https://docs.microsoft.com/windows-hardware/drivers/audio/configure-and-query-audiodevicemodules)します。
 
 ## <a name="why-use-audio-modules"></a>オーディオのモジュールを使用する理由
 
@@ -46,7 +46,7 @@ Oem は通常により、お客様はこのオーディオ システムの側面
 
 用語 | 定義
 ------------ | -------------
-OEM | Original Equipment Manufacturer
+OEM | Original Equipment Manufacturer (相手先ブランド供給)
 IHV | 独立系ハードウェア ベンダー
 ISV | 独立系ソフトウェア ベンダー
  |
@@ -66,7 +66,7 @@ DSP | デジタル信号処理
 
 HSAs や他のアプリケーションはのみにアクセスできる使用可能なモジュール フィルター ハンドルを使用します。 ストリームに読み込まれる個々 の画像は、ストリームにアクセスできるオブジェクトのみがオーディオのモジュールを対象とします。
 
-パスワードの詳細については、[Windows オーディオ処理オブジェクト](https://msdn.microsoft.com/windows/hardware/drivers/audio/windows-audio-processing-objects)を参照してください。
+パスワードの詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](https://msdn.microsoft.com/windows/hardware/drivers/audio/windows-audio-processing-objects)します。
 
 ### <a name="sending-commands"></a>コマンドを送信します。
 
@@ -124,7 +124,7 @@ typedef struct _KSAUDIOMODULE_DESCRIPTOR
     WCHAR   Name[AUDIOMODULE_MAX_NAME_SIZE];
 } KSAUDIOMODULE_DESCRIPTOR, *PKSAUDIOMODULE_DESCRIPTOR;
 ```
-詳細については、[KSAUDIOMODULE_DESCRIPTOR](https://msdn.microsoft.com/library/windows/hardware/mt808137(v=vs.85).aspx)を参照してください。
+詳細については、次を参照してください。 [KSAUDIOMODULE_DESCRIPTOR](https://msdn.microsoft.com/library/windows/hardware/mt808137(v=vs.85).aspx)します。
 
 ### <a name="audio-module-command"></a>オーディオのモジュールのコマンド
 
@@ -143,14 +143,14 @@ typedef struct _KSPAUDIOMODULE_PROPERTY
 } KSAUDIOMODULE_PROPERTY, *PKSPAUDIOMODULE_PROPERTY;
 
 ```
-詳細については、[KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)を参照してください。
+詳細については、次を参照してください。 [KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)します。
 
 
 ### <a name="audio-module-notification-device-id"></a>オーディオ モジュール通知デバイスの ID
 
 サポート、 [KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID](https://msdn.microsoft.com/library/windows/hardware/mt808143(v=vs.85).aspx)ミニポート シグナル通知を有効にして、オーディオのモジュールのクライアントに情報を渡すに必要です。 この ID の有効期間が公開されていると、Windows オーディオ スタックをアクティブにされているオーディオ デバイスの有効期間に関連付けられています。 フィルターまたは暗証番号 (pin) のハンドルを使用して、プロパティを送信することができます、KSPROPERTY が DeviceIoControl の呼び出しの入力バッファーとして渡されます。
 
-詳細については、[KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)を参照してください。
+詳細については、次を参照してください。 [KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)します。
 
 
 <a name="span-idportclshelperspanportcls-helper---audio-module-notifications"></a><span id="PortCls_Helper"></span>PortCls ヘルパー - オーディオ モジュールの通知

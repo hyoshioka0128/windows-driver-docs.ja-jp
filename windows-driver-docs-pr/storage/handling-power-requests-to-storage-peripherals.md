@@ -1,6 +1,6 @@
 ---
-title: 記憶域周辺機器に電力要求を処理
-description: 記憶域周辺機器に電力要求を処理
+title: 記憶域周辺機器への電源要求の処理
+description: 記憶域周辺機器への電源要求の処理
 ms.assetid: 3cc7b885-27ad-4384-aeec-4d76f9ad4f1c
 keywords:
 - 記憶域周辺機器の WDK、電源を要求します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 447676b22443a19eb4565e95a14355210eb66a82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325942"
 ---
-# <a name="handling-power-requests-to-storage-peripherals"></a>記憶域周辺機器に電力要求を処理
+# <a name="handling-power-requests-to-storage-peripherals"></a>記憶域周辺機器への電源要求の処理
 
 
 ## <span id="ddk_handling_power_requests_to_storage_peripherals_kg"></span><span id="DDK_HANDLING_POWER_REQUESTS_TO_STORAGE_PERIPHERALS_KG"></span>

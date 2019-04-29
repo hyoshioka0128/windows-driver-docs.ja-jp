@@ -1,6 +1,6 @@
 ---
-title: Traceview でワークスペースを使用してください。
-description: Traceview でワークスペースを使用してください。
+title: TraceView ワークスペースの使用
+description: TraceView ワークスペースの使用
 ms.assetid: 253eff74-efc0-4c17-a14a-0b7974462560
 keywords:
 - Traceview で WDK、ワークスペース
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84367148b7c0198d3ea434902a070c18f26836b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326233"
 ---
-# <a name="using-traceview-workspaces"></a>Traceview でワークスペースを使用してください。
+# <a name="using-traceview-workspaces"></a>TraceView ワークスペースの使用
 
 Traceview でワークスペースとは一連のトレース セッションのプロパティとトレース ログの表示プロパティを保存して再利用できることができます。 ワークスペースでは、頻繁に使用されるログを表示したり、1 つの簡単な手順で慎重に構成済みのトレース セッションを開始できます。
 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 778b30c2851a202ff79b538825f07b22f5a50c6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383680"
 ---
 # <a name="guiddevinterfacecdchanger"></a>GUID_DEVINTERFACE_CDCHANGER
 
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_CDCHANGER[デバイス インターフェイス クラス](htt
 
 システム提供の CD-ROM[チェンジャー ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff551455)オペレーティング システムとチェンジャーの CD-ROM デバイスの存在をアプリケーションに通知する GUID_DEVINTERFACE_CDCHANGER のインスタンスを登録します。
 
-CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、[ **GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md)を参照してください。
+CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md)します。
 
-記憶域デバイスについては、[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)を参照してください。
+記憶域デバイスについては、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
 
 [**CdChangerClassGuid** ](cdchangerclassguid.md) GUID_DEVINTERFACE_CDCHANGER デバイス インターフェイス クラスの古い形式の識別子は、このクラスの新しいインスタンスが GUID_DEVINTERFACE_CDCHANGER を代わりに使用します。
 

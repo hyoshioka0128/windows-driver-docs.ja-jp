@@ -1,5 +1,5 @@
 ---
-title: .inline (トグル インライン関数のデバッグ)
+title: .inline (インライン関数のデバッグの切り替え)
 description: .Inline コマンドを有効またはインライン関数のデバッグを無効にします。
 ms.assetid: 7B6CB75D-E318-4832-935F-239531B8DC66
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f61df3a754db9974b72031bc10fa9b2a70de429d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336437"
 ---
-# <a name="inline-toggle-inline-function-debugging"></a>.inline (トグル インライン関数のデバッグ)
+# <a name="inline-toggle-inline-function-debugging"></a>.inline (インライン関数のデバッグの切り替え)
 
 
 **.Inline**コマンドを有効またはインライン関数のデバッグを無効にします。

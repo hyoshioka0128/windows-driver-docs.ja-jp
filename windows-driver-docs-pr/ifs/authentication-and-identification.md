@@ -1,6 +1,6 @@
 ---
-title: 認証と Id
-description: 認証と Id
+title: 認証と ID
+description: 認証と ID
 ms.assetid: fe118cf3-05ce-43b1-b878-4bb99b97dc2e
 keywords:
 - 脅威を最小限に抑え、セキュリティ WDK ファイル システム
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c7226c90c48c91c8a80a9c28dd2bfb01115f3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393032"
 ---
-# <a name="authentication-and-identification"></a>認証と Id
+# <a name="authentication-and-identification"></a>認証と ID
 
 
 ## <span id="ddk_authentication_and_identification_if"></span><span id="DDK_AUTHENTICATION_AND_IDENTIFICATION_IF"></span>

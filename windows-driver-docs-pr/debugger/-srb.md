@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 82286326ad1717073b0e778dd4d891596f1e9598
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334239"
 ---
-# <a name="srb"></a>! srb
+# <a name="srb"></a>!srb
 
 
 **! Srb**拡張機能は、SCSI 要求ブロック (SRB) についての情報を表示します。

@@ -1,6 +1,6 @@
 ---
-title: エンドユーザー エクスペリエンスの向上
-description: エンドユーザー エクスペリエンスの向上
+title: 強化されたエンドユーザー体験
+description: 強化されたエンドユーザー体験
 ms.assetid: d87062f2-2832-4443-b9f0-97e34f79c47f
 keywords:
 - 印刷チケット WDK、XPSDrv
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b40d9aceb4d44ba1587f7a4d6f4eaefb69067aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392797"
 ---
-# <a name="improved-end-user-experience"></a>エンドユーザー エクスペリエンスの向上
+# <a name="improved-end-user-experience"></a>強化されたエンドユーザー体験
 
 
 Windows Vista には、デバイスの機能とユーザーの意図の通信を向上させるために 2 つの新しいテクノロジが導入されています。

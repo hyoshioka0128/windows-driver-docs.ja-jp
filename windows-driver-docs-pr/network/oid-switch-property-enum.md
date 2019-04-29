@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_PROPERTY_ENUM ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fbaa6e59eb4629788d1618762573ab6392a1bcb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327662"
 ---
 # <a name="oidswitchpropertyenum"></a>OID\_スイッチ\_プロパティ\_列挙型
 
@@ -27,7 +27,7 @@ HYPER-V 拡張可能スイッチの拡張機能の OID オブジェクト識別�
 
      
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 OID\_切り替える\_プロパティ\_列挙型の OID は、HYPER-V 拡張可能スイッチには、アクティブ化が完了したときにのみ発行する必要があります。 参照してください[HYPER-V 拡張可能スイッチの構成を照会](https://msdn.microsoft.com/library/windows/hardware/hh598293)の詳細。
@@ -71,7 +71,7 @@ OID とは異なりは、クエリの要求[OID\_スイッチ\_ポート\_プロ
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

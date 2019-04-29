@@ -1,6 +1,6 @@
 ---
-title: WDM オーディオでは DirectSound ハードウェア高速化
-description: WDM オーディオでは DirectSound ハードウェア高速化
+title: WDM オーディオでの DirectSound ハードウェア アクセラレータ
+description: WDM オーディオでの DirectSound ハードウェア アクセラレータ
 ms.assetid: 75c34a10-1956-4117-b5b9-73de6d615521
 keywords:
 - DirectSound WDK オーディオ、ハードウェア アクセラレーション
@@ -12,19 +12,19 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6abaac1b70d120c98f6cca4b7eb655ca330e81c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333775"
 ---
-# <a name="directsound-hardware-acceleration-in-wdm-audio"></a>WDM オーディオでは DirectSound ハードウェア高速化
+# <a name="directsound-hardware-acceleration-in-wdm-audio"></a>WDM オーディオでの DirectSound ハードウェア アクセラレータ
 
 
 ## <span id="directsound_hardware_acceleration_in_wdm_audio"></span><span id="DIRECTSOUND_HARDWARE_ACCELERATION_IN_WDM_AUDIO"></span>
 
 
-このセクションでは、DirectSound のハードウェア アクセラレータ WDM オーディオ ドライバー サポートについて説明します。 次のトピックがについて説明します。
+このセクションでは、DirectSound のハードウェア アクセラレータ WDM オーディオ ドライバー サポートについて説明します。 次のトピックについて説明します。
 
 [DirectSound ハードウェア高速化の概要](overview-of-directsound-hardware-acceleration.md)
 

@@ -7,11 +7,11 @@ keywords:
 - WDI_TLV_NEIGHBOR_REPORT_ENTRY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ee93407c51e05707e3828f91ab3f77f378bc650
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392276"
 ---
 # <a name="wditlvneighborreportentry"></a>WDI\_TLV\_近隣\_レポート\_エントリ
 
@@ -41,7 +41,7 @@ WDI\_TLV\_近隣\_レポート\_エントリが近隣ノードのレポートを
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

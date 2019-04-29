@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: da3053780adbfa1717a3adc30e3dda8fed390168
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334649"
 ---
-# <a name="bugdump"></a>! bugdump
+# <a name="bugdump"></a>!bugdump
 
 
 **! Bugdump**拡張機能のフォーマットし、バグ チェック コールバック バッファーに含まれている情報が表示されます。
@@ -57,7 +57,7 @@ ms.locfileid: "56537946"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[バグ チェック コールバックのデータの読み取り](reading-bug-check-callback-data.md)を参照してください。
+詳細については、次を参照してください。[バグ チェック コールバックのデータの読み取り](reading-bug-check-callback-data.md)します。
 
 <a name="remarks"></a>注釈
 -------

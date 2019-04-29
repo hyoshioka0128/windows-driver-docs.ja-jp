@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e575a83ccd374491fb3ab17c7724d81222b3c84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335868"
 ---
 # <a name="ndiskdvc"></a>!ndiskd.vc
 
@@ -38,12 +38,12 @@ ms.locfileid: "56580265"
 
 Ndiskd.dll
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-いる CoNDIS の詳細については、[Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)を参照してください。
+いる CoNDIS の詳細については、次を参照してください。 [Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)します。
 
-いる CoNDIS 仮想接続の詳細については、[仮想接続](https://msdn.microsoft.com/windows/hardware/drivers/network/virtual-connections)を参照してください。
+いる CoNDIS 仮想接続の詳細については、次を参照してください。[仮想接続](https://msdn.microsoft.com/windows/hardware/drivers/network/virtual-connections)します。
 
 <a name="examples"></a>使用例
 --------

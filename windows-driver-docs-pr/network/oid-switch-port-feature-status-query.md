@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_SWITCH_PORT_FEATURE_STATUS_QUERY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: debea7f9a14428c1fa1250a9430af41860abdc69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386869"
 ---
 # <a name="oidswitchportfeaturestatusquery"></a>OID\_スイッチ\_ポート\_機能\_状態\_クエリ
 

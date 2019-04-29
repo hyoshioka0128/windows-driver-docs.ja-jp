@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b2df61a97cf1b12eff226e84377116a7f514ad2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336349"
 ---
 # <a name="ksdevhdr"></a>!ks.devhdr
 
@@ -57,7 +57,7 @@ ms.locfileid: "56537229"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)を参照してください。
+詳細については、次を参照してください。[ストリーミングのカーネル デバッグ](kernel-streaming-debugging.md)します。
 
 <a name="remarks"></a>注釈
 -------

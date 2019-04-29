@@ -1,6 +1,6 @@
 ---
-title: ネットワークの Oid
-description: ネットワークの Oid
+title: ネットワーク OID
+description: ネットワーク OID
 ms.assetid: a897ba37-7984-455f-9428-a74850f7e3b6
 keywords:
 - Oid WDK ネットワーク
@@ -10,19 +10,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d522a11e461d65e3783798ef792160020ec30931
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331834"
 ---
-# <a name="network-oids"></a>ネットワークの Oid
+# <a name="network-oids"></a>ネットワーク OID
 
 
 
 
 
-ミニポート ドライバーでは、その機能と、現在の状態に関する情報と、管理している各ミニポート アダプターに関する情報を保持します。 各情報の種類は、オブジェクト識別子 (OID) によって識別されます。 Oid は、システム定義です。 NDIS ミニポート ドライバーの OID 要求の多くを処理し、NDIS ミニポート ドライバーには、このような要求を渡しません。 ミニポート ドライバーは、その機能は、初期化中にその属性での OID クエリへの応答で報告された以前の多くを報告します。 レポート属性の詳細については、[、アダプターの初期化](initializing-a-miniport-adapter.md)を参照してください。
+ミニポート ドライバーでは、その機能と、現在の状態に関する情報と、管理している各ミニポート アダプターに関する情報を保持します。 各情報の種類は、オブジェクト識別子 (OID) によって識別されます。 Oid は、システム定義です。 NDIS ミニポート ドライバーの OID 要求の多くを処理し、NDIS ミニポート ドライバーには、このような要求を渡しません。 ミニポート ドライバーは、その機能は、初期化中にその属性での OID クエリへの応答で報告された以前の多くを報告します。 レポート属性の詳細については、次を参照してください。 [、アダプターの初期化](initializing-a-miniport-adapter.md)します。
 
 NDIS とより高いレベルのドライバー クエリを実行でき、場合によっては、Oid を使用して情報を設定できます。
 

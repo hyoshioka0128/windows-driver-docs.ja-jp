@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ccbbd144dc9645f35c9a56da6188327eb6b66ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332216"
 ---
 # <a name="performance-issues-for-a-wavepci-miniport-driver"></a>WavePci ミニポート ドライバーにおけるパフォーマンスの問題
 
@@ -44,7 +44,7 @@ ms.locfileid: "56574558"
 
 パフォーマンスの最適化を説明する前にいくつかのバック グラウンドでは、ストリームを提供するための WavePci しくみを理解する必要があります。
 
-波を処理するか、レンダリング、ストリームをキャプチャ、オーディオ デバイスでは、ミニポート ドライバーで一定の間隔でサービスが必要です。 新しいマッピングがストリームの使用可能な場合は、ドライバーは、ストリームの DMA キューにそれらのマッピングを追加します。 ドライバーも、キューから削除するが、既に処理されたすべてのマッピング。 マッピングについては、[WavePci 待機時間](wavepci-latency.md)を参照してください。
+波を処理するか、レンダリング、ストリームをキャプチャ、オーディオ デバイスでは、ミニポート ドライバーで一定の間隔でサービスが必要です。 新しいマッピングがストリームの使用可能な場合は、ドライバーは、ストリームの DMA キューにそれらのマッピングを追加します。 ドライバーも、キューから削除するが、既に処理されたすべてのマッピング。 マッピングについては、次を参照してください。 [WavePci 待機時間](wavepci-latency.md)します。
 
 サービスを実行するミニポート ドライバーを提供するか、*遅延プロシージャ呼び出し (DPC)* または割り込みサービス ルーチン (ISR) システム タイマーまたは DMA ドリブン割り込みに間隔を設定するかどうかによって異なります。 後者の場合、DMA ハードウェアでは、ある程度の転送が完了するとデータをストリーミングする場合、割り込みを毎回が通常トリガーします。
 
@@ -96,7 +96,7 @@ DirectSound ユーザーがプレイ カーソルと書き込みカーソルの�
 
 DirectSound は、10 ミリ秒でハードウェア アクセラレータを使用した暗証番号 (pin) の書き込みカーソルを現在埋めますに注意してください。
 
-詳細については、[プリフェッチ オフセット](prefetch-offsets.md)を参照してください。
+詳細については、次を参照してください。[プリフェッチ オフセット](prefetch-offsets.md)します。
 
 ### <a name="span-idprocessingdatainmappingsspanspan-idprocessingdatainmappingsspanspan-idprocessingdatainmappingsspanprocessing-data-in-mappings"></a><span id="Processing_Data_in_Mappings"></span><span id="processing_data_in_mappings"></span><span id="PROCESSING_DATA_IN_MAPPINGS"></span>マッピングでのデータ処理
 

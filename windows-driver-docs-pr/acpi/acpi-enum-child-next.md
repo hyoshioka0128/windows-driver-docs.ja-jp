@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 933fded8f739ba47d4f00cd070f2415435d48967
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328856"
 ---
 # <a name="acpienumchildnext-macro"></a>ACPI\_ENUM\_子\_次のマクロ
 
@@ -38,12 +38,12 @@ ACPI の型の変数へのポインター\_列挙型\_を次の ACPI に固定�
 
 [次へ] の ACPI へのポインター\_ENUM\_ACPI の可変長の配列内の子構造\_列挙\_子構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 ドライバーを使用した後、 [ **IOCTL\_ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536147)で子デバイス名の配列を取得する要求、 [ **ACPI\_ENUM\_子\_出力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff536112)要求と、ドライバーは、このマクロを使用して、可変長 ACPIへのポインターのシーケンスを決定するには\_列挙型\_内の子構造体、**子**出力バッファーを含む配列。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

@@ -16,13 +16,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 52979ccbfc69d9f31a38f833e4552d15e3e9a2d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334517"
 ---
-# <a name="error"></a>! エラー
+# <a name="error"></a>!error
 
 
 **! エラー**拡張機能をデコードし、エラー値に関する情報が表示されます。
