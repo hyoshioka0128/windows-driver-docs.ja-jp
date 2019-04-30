@@ -1,5 +1,5 @@
 ---
-title: .srcfix、.lsrcfix (ソース サーバーを使用)
+title: .srcfix、.lsrcfix (ソース サーバーの使用)
 description: .Srcfix と .lsrcfix コマンドでは、ソース パスを移行元サーバーが使用されることを示すために自動的に設定します。
 ms.assetid: e4cc3031-7990-4339-9dc2-f2c5a219a771
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5710055ed6656452b2cb2278c11f8e7baaa12f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338815"
 ---
-# <a name="srcfix-lsrcfix-use-source-server"></a>.srcfix、.lsrcfix (ソース サーバーを使用)
+# <a name="srcfix-lsrcfix-use-source-server"></a>.srcfix、.lsrcfix (ソース サーバーの使用)
 
 
 **.Srcfix**と **.lsrcfix**コマンドは、移行元サーバーを使用することを示すソース パスを自動的に設定します。
@@ -67,7 +67,7 @@ ms.locfileid: "56548982"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-リモート クライアントのローカル ソース パスの設定の詳細については、[ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)を参照してください。 詳細については[SrcSrv](srcsrv.md)を参照してください[移行元サーバーを使用して](using-a-source-server.md)します。 詳細については、元のパスとローカルのソース パスは、[ソース パス](source-path.md)を参照してください。 デバッガーからのリモート デバッグの実行中に使用できるコマンドの詳細については、[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)を参照してください。
+リモート クライアントのローカル ソース パスの設定の詳細については、次を参照してください。 [ **WinDbg コマンド ライン オプション**](windbg-command-line-options.md)します。 詳細については[SrcSrv](srcsrv.md)を参照してください[移行元サーバーを使用して](using-a-source-server.md)します。 詳細については、元のパスとローカルのソース パスは、次を参照してください。[ソース パス](source-path.md)します。 デバッガーからのリモート デバッグの実行中に使用できるコマンドの詳細については、次を参照してください。[リモート デバッグ セッションを制御する](controlling-a-remote-debugging-session.md)します。
 
 <a name="remarks"></a>注釈
 -------

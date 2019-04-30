@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a6235167e1d91c94fa3d9c60f6f1dc50eb3d4a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387403"
 ---
 # <a name="using-floating-point-in-a-wdm-driver"></a>WDM ドライバーでの浮動小数点の使用
 
@@ -40,7 +40,7 @@ X86 システムは、浮動小数点計算への呼び出しの間での使用�
 ## <a name="x64-systems"></a>x64 システム
 
 
-64 ビット コンパイラでは、浮動小数点演算の/x87 MMX レジスタを使用しません。 代わりに、SSE レジスタを使用します。 x64/x87 MMX レジスタにアクセスするカーネル モード コードが許可されていません。 コンパイラも正しく保存の処理し、そのため、呼び出し、SSE 状態の復元[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)と[ **KeRestoreExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553182) isr を特定の操作を使用できる、不要なおよび浮動小数点のポイントします。 AVX などその他のプロセッサの拡張機能の使用、拡張状態の保存と復元が必要です。 詳細については、[Windows ドライバーでプロセッサ機能を拡張を使用して](floating-point-support-for-64-bit-drivers.md)を参照してください。
+64 ビット コンパイラでは、浮動小数点演算の/x87 MMX レジスタを使用しません。 代わりに、SSE レジスタを使用します。 x64/x87 MMX レジスタにアクセスするカーネル モード コードが許可されていません。 コンパイラも正しく保存の処理し、そのため、呼び出し、SSE 状態の復元[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)と[ **KeRestoreExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553182) isr を特定の操作を使用できる、不要なおよび浮動小数点のポイントします。 AVX などその他のプロセッサの拡張機能の使用、拡張状態の保存と復元が必要です。 詳細については、次を参照してください。 [Windows ドライバーでプロセッサ機能を拡張を使用して](floating-point-support-for-64-bit-drivers.md)します。
 
 ## <a name="example"></a>例
 
@@ -91,7 +91,7 @@ exit:
 }
 ```
 
-例では、浮動小数点変数への代入はへの呼び出し間で行われます[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)と[ **KeRestoreExtendedProcessorState**](https://msdn.microsoft.com/library/windows/hardware/ff553182)。 ドライバーを確認する必要があります浮動小数点変数に割り当てを使用して、FPU、ため**KeSaveExtendedProcessorState**がこのような変数を初期化する前にエラーが発生せず返されます。
+例では、浮動小数点変数への代入はへの呼び出し間で行われます[ **KeSaveExtendedProcessorState** ](https://msdn.microsoft.com/library/windows/hardware/ff553238)と[ **KeRestoreExtendedProcessorState。**](https://msdn.microsoft.com/library/windows/hardware/ff553182). ドライバーを確認する必要があります浮動小数点変数に割り当てを使用して、FPU、ため**KeSaveExtendedProcessorState**がこのような変数を初期化する前にエラーが発生せず返されます。
 
 前の呼び出しは、x64 不要システムと無害な場合に、XSTATE\_マスク\_レガシ フラグが指定されています。 そのため、x64 用のドライバーをコンパイルするときに、コードを変更する必要はありませんシステム。
 

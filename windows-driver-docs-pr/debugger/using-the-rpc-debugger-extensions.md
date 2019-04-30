@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a84f5da0e299935045e4b029f3441e743763dc71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340484"
 ---
 # <a name="using-the-rpc-debugger-extensions"></a>RPC デバッガー拡張機能の使用
 
@@ -25,7 +25,7 @@ ms.locfileid: "56572987"
 
 RPC 状態情報を表示するために使用する RPC 拡張機能は、ユーザー モードでのみ実行されます。 これらは、CDB (、NTSD) またはユーザー モード WinDbg から使用できます。
 
-ユーザー モード デバッガーは、ターゲット アプリケーションをいる必要がありますが、ターゲットが RPC 拡張機能に関連するではありません。 デバッガーが実行されていない場合は、始めることができますだけですが、不要なターゲット (たとえば、 **windbg メモ帳**または**cdb winmine**)。 使用して、 [ **CTRL + C** ](ctrl-c--break-.md) CDB でまたは[デバッグ |中断](debug---break.md)に WinDbg デバッガー コマンド ウィンドウにアクセスをターゲットを停止します。
+ユーザー モード デバッガーは、ターゲット アプリケーションをいる必要がありますが、ターゲットが RPC 拡張機能に関連するではありません。 デバッガーが実行されていない場合は、始めることができますだけですが、不要なターゲット (たとえば、 **windbg メモ帳**または**cdb winmine**)。 使用して、 [ **CTRL + C** ](ctrl-c--break-.md) CDB でまたは[デバッグ |中断](debug---break.md)に WinDbg デバッガー コマンド] ウィンドウにアクセスをターゲットを停止します。
 
 リモート コンピューターからの RPC 状態情報を分析する必要がある場合を分析し、使用する必要があるコンピューターのユーザー モード デバッガーを起動する必要があります[リモート デバッグ](remote-debugging.md)します。
 

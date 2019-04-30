@@ -5,11 +5,11 @@ ms.assetid: 933EE18B-917A-40BC-87AA-0F463615A082
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a50e45082a5e9fdb1035ed073ec8bf776d314b50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373775"
 ---
 # <a name="supporting-nvgre-in-checksum-offload"></a>チェックサム オフロードでの NVGRE のサポート
 
@@ -28,7 +28,7 @@ Nic とミニポート ドライバーを使用して、可能性があります
 
 場合[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957).**IsEncapsulatedPacket**が true の場合、既存のヘッダー フィールドのオフセット[ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882).**LsoV2Transmit**.**TcpHeaderOffset**と[ **NDIS\_TCP\_IP\_チェックサム\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567877).**送信**.**TcpHeaderOffset**、適切な値はありませんし、NIC またはドライバーでは使用しないでください。
 
-ミニポート ドライバーは、ケースを処理する必要があります、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_ボックスの一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957).**InnerFrameOffset**パケットの先頭よりも、別のスキャッター/ギャザー リストがあります。 すべてのカプセル化の先頭に追加されたヘッダー (ETH、IP、GRE) が物理的に連続できるようになり、パケットの最初の MDL になります、プロトコルのドライバーが保証されます。
+ミニポート ドライバーは、ケースを処理する必要があります、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_]ボックスの一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957).**InnerFrameOffset**パケットの先頭よりも、別のスキャッター/ギャザー リストがあります。 すべてのカプセル化の先頭に追加されたヘッダー (ETH、IP、GRE) が物理的に連続できるようになり、パケットの最初の MDL になります、プロトコルのドライバーが保証されます。
 
 ## <a name="checksum-validation"></a>チェックサムの検証
 

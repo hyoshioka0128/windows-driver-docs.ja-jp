@@ -5,11 +5,11 @@ ms.assetid: a1100a8d-752a-4109-b1dc-cf7c4bf5a100
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7d06ef7b2635bb80ec3aaed528052ebd94527f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373322"
 ---
 # <a name="basic-scanning-for-flatbed-scanners"></a>フラットベッド スキャナー用基本スキャン
 
@@ -27,11 +27,11 @@ Windows Vista でのフラット ベッド項目のプログラミングとス�
 
 -   有効な値を読み取り、 [ **WIA\_IPA\_TYMED** ](https://msdn.microsoft.com/library/windows/hardware/ff551656)と[ **WIA\_IPA\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff551553)プロパティ。
 
--   いずれか、メモリ転送またはファイル転送の種類を選択、WIA を設定して\_IPA\_TYMED プロパティ。 転送の使用可能な種類の詳細については、[Data Transfers](data-transfers.md)を参照してください。 **IStream**-ベースの転送では、WIA\_IPA\_TYMED に既定では、フラグを設定してください。\_ファイルと、変更しないでください。
+-   いずれか、メモリ転送またはファイル転送の種類を選択、WIA を設定して\_IPA\_TYMED プロパティ。 転送の使用可能な種類の詳細については、次を参照してください。 [Data Transfers](data-transfers.md)します。 **IStream**-ベースの転送では、WIA\_IPA\_TYMED に既定では、フラグを設定してください。\_ファイルと、変更しないでください。
 
 -   データの最終的な形式を選択して、WIA を設定して\_IPA\_FORMAT プロパティ。
 
--   イメージの設定を選択します[ **WIA\_IPA\_深さ**](https://msdn.microsoft.com/library/windows/hardware/ff551546)と[ **WIA\_IPA\_DATATYPE**](https://msdn.microsoft.com/library/windows/hardware/ff551543)。
+-   イメージの設定を選択します[ **WIA\_IPA\_深さ**](https://msdn.microsoft.com/library/windows/hardware/ff551546)と[ **WIA\_IPA\_DATATYPE**。](https://msdn.microsoft.com/library/windows/hardware/ff551543).
 
 -   この WIA 項目を使用してデータを転送します。
 

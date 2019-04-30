@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a37b46e0a511616ca216b690240d5187c479d4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378584"
 ---
 # <a name="using-input-and-output"></a>入力と出力の使用
 
@@ -21,7 +21,7 @@ ms.locfileid: "56578082"
 ## <span id="ddk_input_and_output_dbx"></span><span id="DDK_INPUT_AND_OUTPUT_DBX"></span>
 
 
-デバッガー エンジンの入力と出力ストリームの概要については、[入力と出力](input-and-output.md)を参照してください。
+デバッガー エンジンの入力と出力ストリームの概要については、次を参照してください。[入力と出力](input-and-output.md)します。
 
 ### <a name="span-idinputspanspan-idinputspaninput"></a><span id="input"></span><span id="INPUT"></span>入力
 
@@ -37,7 +37,7 @@ ms.locfileid: "56578082"
 
 エンジンを呼び出して[ **IDebugInputCallbacks::EndInput** ](https://msdn.microsoft.com/library/windows/hardware/ff550791)を待機中の入力が停止したことを示します。
 
-最後に、エンジンがこの入力に登録済みをエコーするは**IDebugOutputCallbacks** (1 つの入力を指定するために使用) を除くすべてのクライアントのオブジェクトを使用して[ **IDebugOutputCallbacks::Output**](https://msdn.microsoft.com/library/windows/hardware/ff550815)デバッグ に設定するビット マスクと\_出力\_ダイアログを表示します。
+最後に、エンジンがこの入力に登録済みをエコーするは**IDebugOutputCallbacks** (1 つの入力を指定するために使用) を除くすべてのクライアントのオブジェクトを使用して[ **IDebugOutputCallbacks::Output**](https://msdn.microsoft.com/library/windows/hardware/ff550815)デバッグ] に設定するビット マスクと\_出力\_ダイアログを表示します。
 
 ### <a name="span-idoutputspanspan-idoutputspanoutput"></a><span id="output"></span><span id="OUTPUT"></span>出力
 

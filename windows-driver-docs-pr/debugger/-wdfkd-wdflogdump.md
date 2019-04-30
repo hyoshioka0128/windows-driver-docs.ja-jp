@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b276df52c16c415bf26b0eb341d7e6b81149808
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323466"
 ---
 # <a name="wdfkdwdflogdump"></a>!wdfkd.wdflogdump
 
@@ -83,11 +83,11 @@ KMDF 1、UMDF 2
 
 フレームワークのエラー ログの記録を表示する、[小さいメモリ ダンプ](small-memory-dump.md)を使用して、 [ **! wdfkd.wdfcrashdump** ](-wdfkd-wdfcrashdump.md)拡張機能。
 
-デバッガーは、WPP トレース メッセージの書式を設定する必要がある情報を設定する方法の詳細については、次を参照してください[ **! wdfkd.wdftmffile** ](-wdfkd-wdftmffile.md)と[ **! wdfkd.wdfsettraceprefix**](-wdfkd-wdfsettraceprefix.md)。
+デバッガーは、WPP トレース メッセージの書式を設定する必要がある情報を設定する方法の詳細については、次を参照してください[ **! wdfkd.wdftmffile** ](-wdfkd-wdftmffile.md)と[ **! wdfkd.wdfsettraceprefix。**](-wdfkd-wdfsettraceprefix.md).
 
 **追加情報**
 
-実行中のトレース レコーダーには、ドライバーを有効にする方法については、[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)を参照してください。 ドライバーを WDF のデバッグの詳細については、[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)を参照してください。 KMDF のデバッグ方法の詳細については、[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)を参照してください。
+実行中のトレース レコーダーには、ドライバーを有効にする方法については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。 ドライバーを WDF のデバッグの詳細については、次を参照してください。[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。 KMDF のデバッグ方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

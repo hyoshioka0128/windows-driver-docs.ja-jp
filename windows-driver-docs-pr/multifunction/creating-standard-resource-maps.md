@@ -1,19 +1,19 @@
 ---
-title: 標準的なリソースのマップを作成します。
-description: 標準的なリソースのマップを作成します。
+title: 標準リソース マップの作成
+description: 標準リソース マップの作成
 ms.assetid: 97d95481-5290-41d3-a6e6-7cc142d4c2e8
 keywords:
 - 標準的なリソースは、WDK 多機能デバイスをマップします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0610e483cd324a8a16b76442e4213599489cc656
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323534"
 ---
-# <a name="creating-standard-resource-maps"></a>標準的なリソースのマップを作成します。
+# <a name="creating-standard-resource-maps"></a>標準リソース マップの作成
 
 
 

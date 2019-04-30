@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53281f8f0193a019e6158966b851be4b799fd7d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375050"
 ---
 # <a name="configuring-iis-for-symproxy"></a>SymProxy 用の IIS の構成
 
@@ -32,9 +32,9 @@ ms.locfileid: "56570819"
 
 6.  クリックして**OK**アプリケーション プールを作成します。
 
-7.  次に、新しいアプリケーション プールのエントリを右クリックし、**詳細設定**.
+7.  次に、新しいアプリケーション プールのエントリを右クリックし、**詳細設定.**.
 
-8.  **プロセス モデル**、わかります**Identity**します。 右側にあるボタンをクリックしますというラベルの付いた"**.。**".
+8.  **プロセス モデル**、わかります**Identity**します。 右側にあるボタンをクリックしますというラベルの付いた"**。**".
 
     1.  ネットワーク サービスとして認証を行う場合は、選択**定義済み**の**アプリケーション プール Id**選び**ネットワーク サービス**。
 

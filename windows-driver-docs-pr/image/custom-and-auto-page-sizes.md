@@ -1,17 +1,17 @@
 ---
-title: カスタム プロパティと自動ページ サイズ
-description: カスタム プロパティと自動ページ サイズ
+title: カスタムおよび自動のページ サイズ
+description: カスタムおよび自動のページ サイズ
 ms.assetid: a1f5f78d-fc05-4a7e-9d19-c7f40302b85f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fb0cd46e813e9ec615b51805ee36316a5cb7ef2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386305"
 ---
-# <a name="custom-and-auto-page-sizes"></a>カスタム プロパティと自動ページ サイズ
+# <a name="custom-and-auto-page-sizes"></a>カスタムおよび自動のページ サイズ
 
 
 アプリケーションで設定できページ サイズの自動検出を使用するか、スキャナーまたはカスタム値を。 アプリケーションで使用されるアプローチはによって決定されます、 [ **WIA\_IP\_ページ\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff552634)プロパティで、WIA の値を取ります\_]ページ\_自動または WIA\_ページ\_カスタム。

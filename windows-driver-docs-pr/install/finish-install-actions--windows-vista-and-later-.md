@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0e36609faad21bb34165f91c64eb58822506c4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377091"
 ---
 # <a name="finish-install-actions"></a>インストールの完了のアクション
 
@@ -28,7 +28,7 @@ ms.locfileid: "56582632"
 
 インストーラーでは、クラスのインストーラー、クラスの共同インストーラーまたは Windows Vista およびそれ以降のバージョン以降では、デバイスの共同インストーラーで発生する完了インストール アクションを指定できます。 完了-インストール操作が管理者のコンテキストで実行*後*完了インストール ウィザードのページを含む、他のすべてのインストール操作が完了します。
 
-Windows 7 で、既定の 完了-インストール アクションが、システムが提供によって提供される[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)関数。 管理者は、の対話型のコンテキストでは、この関数の処理、 [RunOnce レジストリ エントリ](runonce-registry-key.md)デバイス用に設定されています。 デバイスには、クラスのインストーラーはありませんまたは、クラスのインストーラーがへの応答で ERROR_DI_DO_DEFAULT を返す場合、 [ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)要求と、Windows の呼び出し **。SetupDiFinishInstallAction**デバイスのすべてのインストーラーが、完了-インストール操作を完了後します。
+Windows 7 で、既定の 完了-インストール アクションが、システムが提供によって提供される[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)関数。 管理者は、の対話型のコンテキストでは、この関数の処理、 [RunOnce レジストリ エントリ](runonce-registry-key.md)デバイス用に設定されています。 デバイスには、クラスのインストーラーはありませんまたは、クラスのインストーラーがへの応答で ERROR_DI_DO_DEFAULT を返す場合、 [ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)要求と、Windows の呼び出し **。SetupDiFinishInstallAction**デバイスのすべてのインストーラーが、[完了-インストール操作を完了後します。
 
 Windows 8 およびそれ以降のバージョンでは、完了-インストール アクションは自動的に実行されませんデバイスのインストールの一部として、 [ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)関数は削除されました。 代わりに、管理者 (または、UAC プロンプトを管理者の資格情報を提供できる制限付きユーザー) する必要がありますアクション センターに移動するアイテムに対処して「デバイスのソフトウェアのインストールを完了する」メンテナンス終了インストール動作をするためにします。 それまでは、完了-インストール アクションは実行されません。 たとえば、完了-インストール操作を含むドライバーをインストールするデバイスをユーザーが接続される場合完了インストール アクションは自動的に実行されませんその時点で。 代わりに、完了-インストール アクションは、ユーザーが手動で開始したときに、後で実行されます。 その後、Windows は、完了-インストール アクションを実行すると、操作は、1 つを実行する機会が。 アクションが失敗した場合をもう一度お試しし、後でユーザーを許可するための適切な手順を実行する必要があります。 同様に、ドライバーに付随する必要があるサポート対象のソフトウェアのインストールも実現できます - インストールが完了アクションが、これもインストールされません自動的にします。
 

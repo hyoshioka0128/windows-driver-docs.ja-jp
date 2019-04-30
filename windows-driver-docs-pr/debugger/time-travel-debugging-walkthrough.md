@@ -1,20 +1,20 @@
 ---
-title: 旅行のデバッグ時間 - サンプル アプリのチュートリアル
+title: Time Travel Debugging - サンプル アプリのチュートリアル
 description: このセクションには、小規模な C++ アプリの説明が含まれています。
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e6156cc4ca85c58dfc909d3494d1df61a934a22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364831"
 ---
 ![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png)
 
-#  <a name="time-travel-debugging---sample-app-walkthrough"></a>旅行のデバッグ時間 - サンプル アプリのチュートリアル
+#  <a name="time-travel-debugging---sample-app-walkthrough"></a>Time Travel Debugging - サンプル アプリのチュートリアル
 
-このラボでは、タイム トラベル デバッグ (TTD)、コードの不具合の小さなサンプル プログラムを使用してについて説明します。 デバッグを特定し、ルートを TTD が使用される、問題が発生します。 この小さなプログラムで問題が見つけやすいより複雑なコードでの一般的な手順を使用できます。 この一般的な手順は、ようにまとめることができます。
+このラボでは、タイム トラベル デバッグ (TTD)、コードの不具合の小さなサンプル プログラムを使用してについて説明します。 TTD を使って問題をデバッグし、その根本原因を特定します。 この小さなプログラムで問題が見つけやすいより複雑なコードでの一般的な手順を使用できます。 この一般的な手順は、ようにまとめることができます。
 
 1. 失敗したプログラムの時間旅行トレースをキャプチャします。
 2. 使用して、 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)記録に格納されている例外イベントを検索するコマンド。 
@@ -149,7 +149,7 @@ ms.locfileid: "56552015"
 
 2. WinDbg のプレビューで次のように選択します。**ファイル** > **デバッグを開始** > **起動の実行可能ファイル (詳細)** します。
 
-3. ユーザー モードの実行可能ファイルの記録、または選択するパスを入力**参照**実行可能ファイルに移動します。 WinDbg のプレビューで実行可能ファイル メニューの起動処理の詳細については、[WinDbg Preview - ユーザー モードのセッションを開始](windbg-user-mode-preview.md)を参照してください。
+3. ユーザー モードの実行可能ファイルの記録、または選択するパスを入力**参照**実行可能ファイルに移動します。 WinDbg のプレビューで実行可能ファイル メニューの起動処理の詳細については、次を参照してください。 [WinDbg Preview - ユーザー モードのセッションを開始](windbg-user-mode-preview.md)します。
 
     ![実行可能ファイル (高度な) 画面を起動する チェック ボックスを記録の開始を示す WinDbg プレビューのスクリーン ショット](images/ttd-time-travel-walkthrough-recording-app.png)
 
@@ -367,7 +367,7 @@ ba <access> <size> <address> {options}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>

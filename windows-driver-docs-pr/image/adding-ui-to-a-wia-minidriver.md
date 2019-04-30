@@ -1,17 +1,17 @@
 ---
-title: WIA ミニドライバーに UI を追加します。
-description: WIA ミニドライバーに UI を追加します。
+title: WIA ミニドライバーへの UI の追加
+description: WIA ミニドライバーへの UI の追加
 ms.assetid: 70440de2-0554-4f5b-9ce4-fe060d3077a4
 ms.date: 07/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a010fe08a18d18d9e98c3d7f3c0c7b1821b5b70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367094"
 ---
-# <a name="adding-ui-to-a-wia-minidriver"></a>WIA ミニドライバーに UI を追加します。
+# <a name="adding-ui-to-a-wia-minidriver"></a>WIA ミニドライバーへの UI の追加
 
 UI の拡張を追加したり、WIA ミニドライバーを別個の DLL をインストールすることで、WIA ミニドライバーの UI コンポーネントを交換することができます。 TWAIN ドライバーとは異なり、WIA ドライバーの UI コンポーネントは実際の WIA ミニドライバー別です。 UI コンポーネントは、WIA ミニドライバーは、WIA サービスのプロセスで実行されているアプリケーションのプロセスで実行します。 そのため、UI と WIA ドライバーが直接表示されないことがドライバーの WIA UI 拡張機能モジュールでは、UI を表示する場合があります。
 

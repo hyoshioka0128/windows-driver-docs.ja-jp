@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9b6dc47f9f3298612cc82c1ef2f6801d9109a558
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369482"
 ---
 # <a name="devpkeydeviceaddress"></a>DEVPKEY_Device_Address
 
@@ -50,7 +50,7 @@ DEVPKEY_Device_Address デバイス プロパティは、デバイスのイン�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,13 +60,13 @@ DEVPKEY_Device_Address デバイス プロパティは、デバイスのイン�
 <a name="remarks"></a>コメント
 -------
 
-Windows では、そのバス上のデバイスのアドレスに DEVPKEY_Device_Address の値を設定します。 デバイスのアドレスの解釈については、次を参照してください、 **DevicePropertyAddress**の値、 *DeviceProperty*パラメーターの[ **IoGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff549203)。
+Windows では、そのバス上のデバイスのアドレスに DEVPKEY_Device_Address の値を設定します。 デバイスのアドレスの解釈については、次を参照してください、 **DevicePropertyAddress**の値、 *DeviceProperty*パラメーターの[ **IoGetDeviceProperty。**](https://msdn.microsoft.com/library/windows/hardware/ff549203).
 
 呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_Address の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Address プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_ADDRESS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Address プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_ADDRESS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

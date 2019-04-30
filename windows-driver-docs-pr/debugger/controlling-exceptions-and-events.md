@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3006c8f18c409208c55e4dad83d33f5f437c88f0
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375532"
 ---
 # <a name="controlling-exceptions-and-events"></a>例外とイベントの制御
 
@@ -26,7 +26,7 @@ ms.locfileid: "57464354"
 
 キャッチして、さまざまな方法でユーザー モードとカーネル モードのアプリケーションで例外を処理することができます。 アクティブなデバッガー、事後分析のデバッガー、または内部のエラー処理ルーチンは、例外を処理するすべての一般的な方法です。
 
-これらのさまざまな例外ハンドラーの優先順位の詳細については、[事後のデバッグを有効にする](enabling-postmortem-debugging.md)を参照してください。
+これらのさまざまな例外ハンドラーの優先順位の詳細については、次を参照してください。[事後のデバッグを有効にする](enabling-postmortem-debugging.md)します。
 
 Microsoft Windows オペレーティング システムが例外を生成したアプリケーション例外を処理するために、デバッガーで許可する*分割*デバッガー。 これは、アプリケーションが停止し、デバッガーは、アクティブのようになります。 デバッガーは、何らかの方法で例外を処理し、または状況を分析します。 デバッガーのプロセスを終了または、そのことができますし、実行を再開します。
 
@@ -130,7 +130,7 @@ Microsoft Windows オペレーティング システムが例外を生成した�
 
 例外が期待しない場合、 **SX** \*を設定する対象のアプリケーションを 2 番目のチャンスにデバッガーを中断します。 イベントの既定の状態は、このトピックの次の「イベントの定義と既定値」セクションに表示されます。
 
-WinDbg のグラフィカル インターフェイスを使用して、中断状態を設定する[イベント フィルター](debug---event-filters.md)上、**デバッグ** メニューの [イベントの一覧から使用する] をクリックして、**イベント フィルター**ダイアログボックスを選び**有効**、**無効**、**出力**、または**無視**します。
+WinDbg のグラフィカル インターフェイスを使用して、中断状態を設定する[イベント フィルター](debug---event-filters.md)上、**デバッグ**] メニューの [イベントの一覧から使用する] をクリックして、**イベント フィルター**ダイアログボックスを選び**有効**、**無効**、**出力**、または**無視**します。
 
 ### <a name="span-idcontrollinghandlingstatusspanspan-idcontrollinghandlingstatusspancontrolling-handling-status"></a><span id="controlling_handling_status"></span><span id="CONTROLLING_HANDLING_STATUS"></span>状態の処理を制御します。
 
@@ -481,13 +481,13 @@ WinDbg のグラフィカル インターフェイスを使用して状態の処
 <td align="left"><p>最初のブレークポイント</p>
 <p>(このイベントは対象のコンピュータを再起動した後と、デバッグ セッションの開始時に発生します。)</p></td>
 <td align="left"><p><strong>ユーザー モード。</strong>中断します。 この状態を"Ignore"に変更するにを使用して、 <strong>-g</strong><a href="command-line-options.md" data-raw-source="[command-line option](command-line-options.md)">コマンド ライン オプション</a>します。</p>
-<p><strong>カーネル モード。</strong>無視してください。 この状態は、さまざまな方法で"Enabled"に変更できます。 この状態を変更する方法の詳細については、<a href="crashing-and-rebooting-the-target-computer.md" data-raw-source="[Crashing and Rebooting the Target Computer](crashing-and-rebooting-the-target-computer.md)">クラッシュし、ターゲット コンピューターを再起動</a>を参照してください。</p></td>
+<p><strong>カーネル モード。</strong>無視してください。 この状態は、さまざまな方法で"Enabled"に変更できます。 この状態を変更する方法の詳細については、次を参照してください。<a href="crashing-and-rebooting-the-target-computer.md" data-raw-source="[Crashing and Rebooting the Target Computer](crashing-and-rebooting-the-target-computer.md)">クラッシュし、ターゲット コンピューターを再起動</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>iml</strong></p></td>
 <td align="left"><p>初期のモジュールの読み込み</p>
 <p>(カーネル モードのみ)</p></td>
-<td align="left"><p>無視してください。 この状態は、さまざまな方法で"Break"に変更できます。 この状態を変更する方法の詳細については、<a href="crashing-and-rebooting-the-target-computer.md" data-raw-source="[Crashing and Rebooting the Target Computer](crashing-and-rebooting-the-target-computer.md)">クラッシュし、ターゲット コンピューターを再起動</a>を参照してください。</p></td>
+<td align="left"><p>無視してください。 この状態は、さまざまな方法で"Break"に変更できます。 この状態を変更する方法の詳細については、次を参照してください。<a href="crashing-and-rebooting-the-target-computer.md" data-raw-source="[Crashing and Rebooting the Target Computer](crashing-and-rebooting-the-target-computer.md)">クラッシュし、ターゲット コンピューターを再起動</a>します。</p></td>
 </tr>
 </tbody>
 </table>

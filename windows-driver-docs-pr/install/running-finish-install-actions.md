@@ -1,17 +1,17 @@
 ---
-title: 完了-インストール アクションを実行しています。
-description: 完了-インストール アクションを実行しています。
+title: インストールの完了アクションの実行
+description: インストールの完了アクションの実行
 ms.assetid: 9a5f8e7c-ba11-4a2a-82dd-32cd91c3cc39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a58a9d0632844ab29a684701175fce5845e3ac57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383662"
 ---
-# <a name="running-finish-install-actions"></a>完了-インストール アクションを実行しています。
+# <a name="running-finish-install-actions"></a>インストールの完了アクションの実行
 
 
 Windows 8、および以降のバージョンの Windows には、操作アクションを実行するデバイスのインストールの一部として自動的に実行を完了インストールします。 完了-インストール操作を含むドライバーを使用したデバイスのインストール時に自動的に終了インストール アクションは実行されません。 代わりに、Windows または Windows アクション センターの通知 領域で デバイスのソフトウェアのインストールの完了 をユーザーに要求します。 デバイス ソフトウェアをインストールするには、管理者のアクセス許可が必要です。 インストールに失敗した場合、ソフトウェアは、インストールを再試行するユーザーを求める必要があります。 ドライバーに付随する必要があるサポート対象のソフトウェアのインストールも実現できます - インストールが完了アクションが自動的にインストールされません。
@@ -43,7 +43,7 @@ Windows 8 では、以前に完了インストール アクションを実行す
 <thead>
 <tr class="header">
 <th align="left">エラー コード</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

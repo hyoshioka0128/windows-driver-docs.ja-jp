@@ -5,13 +5,13 @@ ms.assetid: f05117c0-cb4b-483a-a141-08423555170a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44b4ee86a2d9ac5c93c9df135032aa5f19b59856
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385030"
 ---
-# <a name="what-are-the-wpp-extended-format-specification-strings"></a>書式指定文字列を拡張、WPP は何ですか。
+# <a name="what-are-the-wpp-extended-format-specification-strings"></a>WPP 拡張書式指定文字列とは
 
 
 WPP にはトレース メッセージに対して定義されている標準書式指定文字列のほかに使用できる定義済みの書式指定文字列が含まれます**printf**します。

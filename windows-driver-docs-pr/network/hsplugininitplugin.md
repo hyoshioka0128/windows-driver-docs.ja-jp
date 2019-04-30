@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eed897d595c0fa549e51dd86e6a445bcdcb02294
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322129"
 ---
 # <a name="hsplugininitplugin-function"></a>HSPluginInitPlugin 関数
 
@@ -45,7 +45,7 @@ DWORD HSPluginInitPlugin(
 ホストの現在のバージョン番号。
 
 *dwHostCapabilities* \[in\]  
-ホストは、プラグインを提供できる機能の一覧を指定する値。 この値は、該当する機能フラグのビットごとの OR の組み合わせです。 機能フラグの詳細については、次を参照してください、 **HS\_フラグ\_機能\_\\*** で使用される定数[ **Wi-fi ホット スポットのオフロード定数**](wi-fi-hotspot-offloading-constants.md)。
+ホストは、プラグインを提供できる機能の一覧を指定する値。 この値は、該当する機能フラグのビットごとの OR の組み合わせです。 機能フラグの詳細については、次を参照してください、 **HS\_フラグ\_機能\_\\*** で使用される定数[ **Wi-fi ホット スポットのオフロード定数。**](wi-fi-hotspot-offloading-constants.md).
 
 **注**  ホストが、プラグインによって必要なすべての機能を提供していない場合、プラグインを初期化できません。
 
@@ -63,7 +63,7 @@ DWORD HSPluginInitPlugin(
 *\*pPluginProfile* \[out\]  
 ポインターを[ **HS\_プラグイン\_プロファイル**](hs-plugin-profile.md)プラグインについての情報を提供すると、プラグインによって返される構造体。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 初期化中に、ホストは次のよう

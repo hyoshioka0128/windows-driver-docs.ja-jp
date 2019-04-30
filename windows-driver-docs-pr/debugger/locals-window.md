@@ -1,5 +1,5 @@
 ---
-title: 表示と WinDbg のローカル変数の編集
+title: WinDbg でのローカル変数の表示と編集
 description: コマンドを入力して、[ローカル] ウィンドウを使用して、または [ウォッチ] ウィンドウを使用して、WinDbg でローカル変数を表示できます。
 ms.assetid: 9d816df7-2b20-4be3-90d7-7a11b0f30238
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4a637edb0b15d7246758585ac172feb6d221def
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383466"
 ---
-# <a name="viewing-and-editing-local-variables-in-windbg"></a>表示と WinDbg のローカル変数の編集
+# <a name="viewing-and-editing-local-variables-in-windbg"></a>WinDbg でのローカル変数の表示と編集
 
 
 コマンドを入力して、[ローカル] ウィンドウを使用して、または [ウォッチ] ウィンドウを使用して、WinDbg でローカル変数を表示できます。
@@ -94,7 +94,7 @@ ms.locfileid: "56527668"
 
 -   (メニューのみ)**常に浮動**によって、ウィンドウをドッキング場所にドラッグされる場合でも、ドッキングされていないままにします。
 
--   (メニューのみ)**フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
+-   (メニューのみ)**フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
 
 -   (メニューのみ)**ヘルプ**ツールを Windows のデバッグ ドキュメントのこのトピックを開きます。
 

@@ -1,6 +1,6 @@
 ---
-title: ビデオの要求の処理 (Windows 2000 モデル)
-description: ビデオの要求の処理 (Windows 2000 モデル)
+title: ビデオ要求の処理 (Windows 2000 モデル)
+description: ビデオ要求の処理 (Windows 2000 モデル)
 ms.assetid: 86b3037e-2d18-46b0-8b02-c66be65a4001
 keywords:
 - ビデオのミニポート ドライバー WDK Windows 2000、要求の処理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c377d2f24d2361c64604aa6b17b9d334f13242f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383867"
 ---
-# <a name="processing-video-requests-windows-2000-model"></a>ビデオの要求の処理 (Windows 2000 モデル)
+# <a name="processing-video-requests-windows-2000-model"></a>ビデオ要求の処理 (Windows 2000 モデル)
 
 
 ## <span id="ddk_processing_video_requests_windows_2000_model__gg"></span><span id="DDK_PROCESSING_VIDEO_REQUESTS_WINDOWS_2000_MODEL__GG"></span>

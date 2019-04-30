@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2c04ca8d5507c061effca550a582bbf909a14d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365574"
 ---
 # <a name="cpsui-supplied-functions"></a>CPSUI 指定の関数
 
@@ -38,9 +38,9 @@ CPSUI は、アプリケーションの次の 2 つの重要な機能を提供�
 
     [ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)関数は、アプリケーションが CPSUI が作成してそれらを表示できるようにする CPSUI、プロパティ シートのページを記述することを意味します。 CPSUI アプリケーション内からこの関数を呼び出す[ページ作成コールバック](page-creation-callbacks.md)します。 通常、ページの説明へのポインターが含まれます。、[ページ イベント コールバック](page-event-callbacks.md)、CPSUI がアプリケーションのユーザーがページの値を変更するときに呼び出されます。
 
-これらの関数が呼び出されるタイミングの詳細については、[プリンター ドライバーを使用して CPSUI](using-cpsui-with-printer-drivers.md)を参照してください。
+これらの関数が呼び出されるタイミングの詳細については、次を参照してください。[プリンター ドライバーを使用して CPSUI](using-cpsui-with-printer-drivers.md)します。
 
-2 つ追加 CPSUI が提供する機能[ **SetCPSUIUserData** ](https://msdn.microsoft.com/library/windows/hardware/ff562624)と[ **GetCPSUIUserData**](https://msdn.microsoft.com/library/windows/hardware/ff549922)、によって、アプリケーションによって提供されることができます格納し、アプリケーションによって提供される値を取得 ダイアログ ボックス プロシージャ。
+2 つ追加 CPSUI が提供する機能[ **SetCPSUIUserData** ](https://msdn.microsoft.com/library/windows/hardware/ff562624)と[ **GetCPSUIUserData**](https://msdn.microsoft.com/library/windows/hardware/ff549922)、によって、アプリケーションによって提供されることができます格納し、アプリケーションによって提供される値を取得] ダイアログ ボックス プロシージャ。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: ボタンの機能の配列
-description: ボタンの機能の配列
+title: ボタン機能配列
+description: ボタン機能配列
 ms.assetid: 139324e5-4d46-4d00-9f5a-fd0313fc109a
 keywords:
 - WDK の HID ボタンの機能を配列します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7f629555bf78105b0ad0f193b83eb88ee81b41b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390345"
 ---
-# <a name="button-capability-arrays"></a>ボタンの機能の配列
+# <a name="button-capability-arrays"></a>ボタン機能配列
 
 
 
@@ -110,7 +110,7 @@ A*ボタン機能配列*でサポートされているボタンの使用状況�
 
  
 
-使用法とデータのインデックスは相互参照する方法については、[データのインデックス](data-indices.md)を参照してください。
+使用法とデータのインデックスは相互参照する方法については、次を参照してください。[データのインデックス](data-indices.md)します。
 
 ### <a href="" id="button-usages-in-an-array-main-item"></a> 配列の主な項目でボタンの使用
 

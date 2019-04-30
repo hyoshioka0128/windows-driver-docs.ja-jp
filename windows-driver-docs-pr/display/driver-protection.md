@@ -5,11 +5,11 @@ ms.assetid: 3D636BD1-683D-49B4-A7E5-176853EA11EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16293ebf7c7e687d2f6e16ed00365553f865a154
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380101"
 ---
 # <a name="driver-protection"></a>ドライバー保護
 
@@ -20,7 +20,7 @@ ms.locfileid: "56571357"
 
  
 
-マッピングまたは GPU 仮想アドレスの範囲を予約するときに、ドライバーは 64 ビット ドライバー保護の値を指定できます。 指定されたドライバー保護は、その特定の仮想アドレスに対応するページ テーブル エントリを初期化するときに、ビデオ メモリ マネージャーによって使用されます。 具体的には、ドライバー保護は指定のドライバーにいずれかの[ *BuildPagingBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff559587)**DXGK\_操作\_UPDATE\_ページ\_テーブル**指定された仮想アドレスに対応します。
+マッピングまたは GPU 仮想アドレスの範囲を予約するときに、ドライバーは 64 ビット ドライバー保護の値を指定できます。 指定されたドライバー保護は、その特定の仮想アドレスに対応するページ テーブル エントリを初期化するときに、ビデオ メモリ マネージャーによって使用されます。 具体的には、ドライバー保護は指定のドライバーにいずれかの[ *BuildPagingBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff559587)**DXGK\_操作\_UPDATE\_]ページ\_テーブル**指定された仮想アドレスに対応します。
 
 別のドライバーの保護を使用して 1 つの割り当てには、複数の仮想アドレスをマップすることがあります。 適切なドライバーの保護を使用して、これらの仮想アドレスの各ページ テーブル エントリが更新されます。
 

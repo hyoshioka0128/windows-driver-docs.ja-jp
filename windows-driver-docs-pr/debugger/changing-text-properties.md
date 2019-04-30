@@ -1,6 +1,6 @@
 ---
-title: テキストのプロパティを変更します。
-description: テキストのプロパティを変更します。
+title: テキスト プロパティの変更
+description: テキスト プロパティの変更
 ms.assetid: 90f514da-064e-4d14-a4f3-856ccb534e76
 keywords:
 - デバッグ情報のウィンドウでテキストのプロパティ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a7df39cbe76e23f2b2da6ae26ab9b2bead84c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375200"
 ---
-# <a name="changing-text-properties"></a>テキストのプロパティを変更します。
+# <a name="changing-text-properties"></a>テキスト プロパティの変更
 
 
 ## <span id="ddk_changing_text_properties_dbg"></span><span id="DDK_CHANGING_TEXT_PROPERTIES_DBG"></span>

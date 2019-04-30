@@ -1,16 +1,16 @@
 ---
-Description: The MUTT Connection Exerciser Type-C (USB Type-C ConnEx) hardware board is a custom shield for the Arduino board.
-title: USB タイプ C ConnEx で USB 型-c システムをテストします。
+Description: MUTT 接続 Exerciser 型 C (USB 型 C ConnEx) ハードウェア ボードでは、Arduino ボード用カスタム シールドです。
+title: USB Type-C システムを USB Type-C ConnEx を使用してテストする
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1bd672f37af43f807d9b178112bef18671d4fc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380031"
 ---
-# <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>USB タイプ C ConnEx で USB 型-c システムをテストします。
+# <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>USB Type-C システムを USB Type-C ConnEx を使用してテストする
 
 
 **要約**
@@ -19,7 +19,7 @@ ms.locfileid: "56553050"
 -   Windows 10 で USB 型-C# の相互運用性のテスト手順: (FT) の機能テストとストレス テスト (ST)。
 -   診断手順とデバイスの追加と削除などのシナリオを確認するためのヒント。
 
-**適用されます。**
+**適用対象**
 
 -   Windows 10
 
@@ -129,9 +129,9 @@ USB タイプ C ConnEx を使用して USB 型-C# の相互運用性のテスト
 
 
 
-その他のすべてのツールについては、[MUTT ソフトウェア パッケージ ツール](mutt-software-package.md)を参照してください。
+その他のすべてのツールについては、次を参照してください。 [MUTT ソフトウェア パッケージ ツール](mutt-software-package.md)します。
 
-## <a name="get-started"></a>開始してください.
+## <a name="get-started"></a>はじめに.
 
 
 この手順では、テスト環境を設定します。
@@ -146,7 +146,7 @@ USB タイプ C ConnEx を使用して USB 型-C# の相互運用性のテスト
 
     USB タイプ C の ConnEx のアセンブリが作成されていない、1 の手順に進みます。 USB、型 C ConnEx をアセンブルすると、手順 2. に進みます。
 
-    **注意**![注意](images/caution.png)ピンが簡単に修正するために、この手順を慎重に実行する必要があります。  
+    **注意**![注意](images/caution.png)ピンが簡単に修正するために、この手順を慎重に実行する必要があります。
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: ポートを開いたり、閉じたりします。
-description: ポートを開いたり、閉じたりします。
+title: ポートの開始と終了
+description: ポートの開始と終了
 ms.assetid: 8bfdb3af-51d4-4252-ae1c-7910f973f5f6
 keywords:
 - 印刷モニター WDK、ポートの管理
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb3f7e5a8687bf04fb00bf84b69972cee670eade
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339892"
 ---
-# <a name="opening-and-closing-a-port"></a>ポートを開いたり、閉じたりします。
+# <a name="opening-and-closing-a-port"></a>ポートの開始と終了
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 実行されるまで、指定された状態に到達します。
-description: 実行されるまで、指定された状態に到達します。
+title: 指定した状態になるまで実行する
+description: 指定した状態になるまで実行する
 ms.assetid: 0657a7bf-4d72-4248-9e45-d79d51b91139
 keywords:
 - 達するまで、指定した状態を実行します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19b49c5dee6c4e08093349fc75ae19f3686104a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329744"
 ---
-# <a name="executing-until-a-specified-state-is-reached"></a>実行されるまで、指定された状態に到達します。
+# <a name="executing-until-a-specified-state-is-reached"></a>指定した状態になるまで実行する
 
 
 ## <span id="ddk_determining_the_acl_of_an_object_dbg"></span><span id="DDK_DETERMINING_THE_ACL_OF_AN_OBJECT_DBG"></span>
@@ -36,9 +36,9 @@ ms.locfileid: "56531318"
 
 -   そのメモリの読み取りまたは書き込みをするときにトリガーされる、非実行可能ファイルのメモリ内の指定されたアドレスをご覧ください。
 
-詳細設定をブレークポイントを制御する方法については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。
+詳細設定をブレークポイントを制御する方法については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
 
-指定した状態に達するまでを実行するより複雑な方法は、使用する、*条件付きブレークポイント*します。 この種のブレークポイントは、特定のアドレスに設定されていますが、指定した条件が保持している場合にのみトリガーされます。 詳細については、[、条件付きブレークポイント](setting-a-conditional-breakpoint.md)を参照してください。
+指定した状態に達するまでを実行するより複雑な方法は、使用する、*条件付きブレークポイント*します。 この種のブレークポイントは、特定のアドレスに設定されていますが、指定した条件が保持している場合にのみトリガーされます。 詳細については、次を参照してください。 [、条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
 
 ### <a name="span-idbreakpointsandpseudoregistersspanspan-idbreakpointsandpseudoregistersspanbreakpoints-and-pseudo-registers"></a><span id="breakpoints_and_pseudo_registers"></span><span id="BREAKPOINTS_AND_PSEUDO_REGISTERS"></span>ブレークポイントと擬似レジスタ
 
@@ -52,7 +52,7 @@ kd> bp /t @$thread nt!ntopenfile
 
 他のスレッドを呼び出すと、このブレークポイントはトリガーされません**NtOpenFile**します。
 
-自動の擬似レジスタの一覧は、[擬似レジスタ構文](pseudo-register-syntax.md)を参照してください。
+自動の擬似レジスタの一覧は、次を参照してください。[擬似レジスタ構文](pseudo-register-syntax.md)します。
 
 ### <a name="span-idusingascriptfiletocontrolexecutionspanspan-idusingascriptfiletocontrolexecutionspanusing-a-script-file-to-control-execution"></a><span id="using_a_script_file_to_control_execution"></span><span id="USING_A_SCRIPT_FILE_TO_CONTROL_EXECUTION"></span>スクリプト ファイルを使用して、実行を制御するには
 

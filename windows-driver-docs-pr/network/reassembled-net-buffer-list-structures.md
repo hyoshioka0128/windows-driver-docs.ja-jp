@@ -1,6 +1,6 @@
 ---
-title: 再構築された NET_BUFFER_LIST 構造体
-description: 再構築された NET_BUFFER_LIST 構造体
+title: 再構築された NET_BUFFER_LIST 構造
+description: 再構築された NET_BUFFER_LIST 構造
 ms.assetid: 0bfbfef3-c3ac-4add-b3b8-a4c3a96c8baa
 keywords:
 - NET_BUFFER_LIST
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 037763cf9e1de621b14a2a122692be441e3aa268
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323572"
 ---
 # <a name="reassembled-netbufferlist-structures"></a>NET の再構成\_バッファー\_リストの構造体
 

@@ -4,11 +4,11 @@ title: 導入事例 - 不明な USB デバイスのトラブルシューティ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a9909ed6a0ab9fbc506ad3bca3bf5a3fcfaa0e4
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392137"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>ケース スタディ:ETW と Netmon を使用した不明な USB デバイスのトラブルシューティング
 
@@ -124,7 +124,7 @@ USB ハブのドライバーを使用して、 **fid\_USBHUB\_ハブ**USB ハブ
 
 ![microsoft ネットワーク モニター - フレームの詳細](images/framedetails.png)
 
-ハブの構造は USB ETW イベントで頻繁に表示されるその他の 2 つの構造によく似ています**fid\_USBHUB\_デバイス**と**fid\_し、USBPORT\_デバイス**。 次の重要なフィールドは、次の 3 つのすべての構造に共通です。
+ハブの構造は USB ETW イベントで頻繁に表示されるその他の 2 つの構造によく似ています**fid\_USBHUB\_デバイス**と**fid\_し、USBPORT\_デバイス。**. 次の重要なフィールドは、次の 3 つのすべての構造に共通です。
 
 <a href="" id="fid-idvendor"></a>**fid\_idVendor**  
 USB 仕入先 ID (VID) のデバイス。
@@ -163,7 +163,7 @@ USB のエラー フィルターは、次の表に示すように条件を満た
 | (し、USBPort\_MicrosoftWindowsUSBUSBPORT と NetEvent.Header.Descriptor.Opcode 34 = =) | オペコード 34 の USB ポート イベントは、ポート エラーです。                                                                                                      |
 | (USBHub\_MicrosoftWindowsUSBUSBHUB と NetEvent.Header.Descriptor.Opcode 11 を = =)   | オペコード 11 USB ハブのイベントは、ハブ エラーです。                                                                                                        |
 | (NetEvent.Header.Descriptor.Level == 0x2)                                         | レベルが 0x2 イベントは、通常はエラーです。                                                                                                            |
-| (USBHub\_MicrosoftWindowsUSBUSBHUB と NetEvent.Header.Descriptor.Id 210 = =)      | USB ハブのイベント ID 210 では、イベントの「USB ハブの例外の記録」です。 詳細については、[エラー イベントの概要と状態コード](#status-codes)を参照してください。 |
+| (USBHub\_MicrosoftWindowsUSBUSBHUB と NetEvent.Header.Descriptor.Id 210 = =)      | USB ハブのイベント ID 210 では、イベントの「USB ハブの例外の記録」です。 詳細については、次を参照してください。[エラー イベントの概要と状態コード](#status-codes)します。 |
 
 
 
@@ -171,7 +171,7 @@ USB のエラー フィルターは、次の表に示すように条件を満た
 
 ![microsoft ネットワーク モニター](images/devicefailure-etl2.png)
 
-一連のエラーの概要を表示するには、各エラー イベントを簡単に表示できます。 観察する重要なフィールドを含める**fid\_NtStatus**、 **fid\_UsbdStatus**、および**fid\_DebugText**します。 詳細については、[エラー イベントの概要と状態コード](#status-codes)を参照してください。 フィルターを無効にするには、をクリックして、**削除**ボタン、**ディスプレイ フィルター**ウィンドウ。
+一連のエラーの概要を表示するには、各エラー イベントを簡単に表示できます。 観察する重要なフィールドを含める**fid\_NtStatus**、 **fid\_UsbdStatus**、および**fid\_DebugText**します。 詳細については、次を参照してください。[エラー イベントの概要と状態コード](#status-codes)します。 フィルターを無効にするには、をクリックして、**削除**ボタン、**ディスプレイ フィルター**ウィンドウ。
 
 **カスタム Netmon フィルター**
 

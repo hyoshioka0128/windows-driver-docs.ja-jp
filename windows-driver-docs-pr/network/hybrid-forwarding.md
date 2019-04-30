@@ -5,11 +5,11 @@ ms.assetid: 135CA734-1C92-4EEA-81DC-96A6A68ABBE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6739599d1f22dffadb2906c10a3353fc29a37c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322125"
 ---
 # <a name="hybrid-forwarding"></a>ハイブリッド転送
 
@@ -49,7 +49,7 @@ NVGRE と非 NVGRE パケットは、次のように扱われます。
 -   転送拡張機能は、NVGRE パケットを転送できませんが、フィルター拡張機能の追加または変換先のポートを除くやパケットを破棄してもなどのフィルター処理操作を実行できます。
 -   転送拡張機能がない場合は、HYPER-V 拡張可能スイッチは、すべてのパケットを転送します。
 
-詳細については、[パケットがスイッチの拡張のデータ パスを通過](packet-flow-through-the-extensible-switch-data-path.md)を参照してください。
+詳細については、次を参照してください。[パケットがスイッチの拡張のデータ パスを通過](packet-flow-through-the-extensible-switch-data-path.md)します。
 
 ## <a name="support-for-third-party-network-virtualization"></a>サードパーティ製のネットワーク仮想化のサポート
 

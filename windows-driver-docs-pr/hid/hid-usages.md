@@ -1,5 +1,5 @@
 ---
-title: HID の使用法
+title: HID の使用状況
 description: HID の使用法は、HID コントロールとコントロールが実際に測定の使用目的を特定します。
 ms.assetid: 84fed314-3554-4291-b51c-734d874a4bab
 keywords:
@@ -21,13 +21,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43f88332071171ce90e145e9abfacb36d4c26e61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388805"
 ---
-#  <a name="hid-usages"></a>HID の使用法
+#  <a name="hid-usages"></a>HID の使用状況
 
 
 *HID の使用法*HID コントロールとコントロールが実際に測定の使用目的を識別します。
@@ -47,7 +47,7 @@ ms.locfileid: "56559564"
 
 [エイリアスの使用法](#aliased-usages)
 
-Windows コンポーネントにアクセスする使用法の具体的な例については、[最上位のコレクションは、Windows システムの使用によって開かれた](top-level-collections-opened-by-windows-for-system-use.md)を参照してください。
+Windows コンポーネントにアクセスする使用法の具体的な例については、次を参照してください。[最上位のコレクションは、Windows システムの使用によって開かれた](top-level-collections-opened-by-windows-for-system-use.md)します。
 
 HIDClass デバイスをサポートする使用状況を確認する方法の詳細についてを参照してください。
 
@@ -81,7 +81,7 @@ A*使用状況の範囲*の包括的な連続する範囲[Id の使用状況](#u
 
 1 つ以上の使用量を指定できます、 [**リンク コレクション**](link-collections.md)または HID コントロール。 このような使用法のグループ、特定のコレクションやコントロールは、別のエイリアスですと呼ばれます*エイリアスの使用法*します。 項目の区切り記号を使用すると、別名の使用法を指定します。 [使用状況の範囲](#usage-range)エイリアスにすることはできません。
 
-最上位のコレクションの機能の配列でエイリアスの使用法を指定する方法については、[ボタン機能配列](button-capability-arrays.md)と[値機能配列](value-capability-arrays.md)を参照してください。
+最上位のコレクションの機能の配列でエイリアスの使用法を指定する方法については、次を参照してください。[ボタン機能配列](button-capability-arrays.md)と[値機能配列](value-capability-arrays.md)します。
 
  
 

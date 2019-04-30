@@ -1,6 +1,6 @@
 ---
-title: 読み込みとアンロード
-description: 読み込みとアンロード
+title: ロードとアンロード
+description: ロードとアンロード
 ms.assetid: e7a4e405-5361-4217-a279-2b54a10ebce2
 keywords:
 - フィルター マネージャー WDK ファイル システム ミニフィルター、ドライバーの読み込み/アンロード
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53ddf6fb60b1bd233fcab4bbbe482919bdec6b13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324405"
 ---
-# <a name="loading-and-unloading"></a>読み込みとアンロード
+# <a name="loading-and-unloading"></a>ロードとアンロード
 
 
 システムの実行中に、いつでもミニフィルター ドライバーを読み込むことができます。 ミニフィルター ドライバーの場合[INF ファイル](creating-an-inf-file-for-a-minifilter-driver.md)ドライバー開始サービスの種類を指定します\_ブート\_開始、サービス\_システム\_開始、またはサービス\_自動\_。[スタート]、[ミニフィルター ドライバーがレガシ フィルター ドライバーとの相互運用をサポートするために、ファイル システム フィルター ドライバーの既存のロード順序グループ定義に従って読み込まれます。 サービスの開始要求 (sc start、net の開始、またはサービス Api)、または、明示的な読み込み要求を通じて、システムが実行中にミニフィルター ドライバーを読み込むことができます (fltmc 負荷、 [ **FltLoadFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff543366)、または[ **FilterLoad**](https://msdn.microsoft.com/library/windows/hardware/ff541504))。
@@ -41,7 +41,7 @@ ms.locfileid: "56537578"
 
 ミニフィルター ドライバーがサービス停止の要求 (sc stop、net stop、またはサービス Api)、または明示的なアンロード要求を通じてアンロードできるシステムの実行中 (fltmc unload、 [ **FltUnloadFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff544602)、または[ **FilterUnload**](https://msdn.microsoft.com/library/windows/hardware/ff541516))。
 
-ミニフィルター ドライバーの[ *FilterUnloadCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff551085)ルーチンがミニフィルター ドライバーが読み込まれると呼び出されます。 このルーチンは、オープンなコミュニケーションのサーバー ポートの呼び出しを閉じます[ **FltUnregisterFilter**](https://msdn.microsoft.com/library/windows/hardware/ff544606)、し、必要なクリーンアップを実行します。 このルーチンの登録は、省略可能です。 ただし、ミニフィルター ドライバーが登録していない場合、 *FilterUnloadCallback* 、日常的なミニフィルター ドライバーをアンロードできません。 このルーチンの詳細については、[FilterUnloadCallback ルーチンを記述](writing-a-filterunloadcallback-routine.md)を参照してください。
+ミニフィルター ドライバーの[ *FilterUnloadCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff551085)ルーチンがミニフィルター ドライバーが読み込まれると呼び出されます。 このルーチンは、オープンなコミュニケーションのサーバー ポートの呼び出しを閉じます[ **FltUnregisterFilter**](https://msdn.microsoft.com/library/windows/hardware/ff544606)、し、必要なクリーンアップを実行します。 このルーチンの登録は、省略可能です。 ただし、ミニフィルター ドライバーが登録していない場合、 *FilterUnloadCallback* 、日常的なミニフィルター ドライバーをアンロードできません。 このルーチンの詳細については、次を参照してください。 [FilterUnloadCallback ルーチンを記述](writing-a-filterunloadcallback-routine.md)します。
 
 ### <a name="span-idfiltermanagerroutinesforloadingandunloadingminifilterdriversspanspan-idfiltermanagerroutinesforloadingandunloadingminifilterdriversspanspan-idfiltermanagerroutinesforloadingandunloadingminifilterdriversspanfilter-manager-routines-for-loading-and-unloading-minifilter-drivers"></a><span id="Filter_Manager_Routines_for_Loading_and_Unloading_Minifilter_Drivers"></span><span id="filter_manager_routines_for_loading_and_unloading_minifilter_drivers"></span><span id="FILTER_MANAGER_ROUTINES_FOR_LOADING_AND_UNLOADING_MINIFILTER_DRIVERS"></span>読み込みとアンロード ミニフィルター ドライバーのフィルター マネージャー ルーチン
 

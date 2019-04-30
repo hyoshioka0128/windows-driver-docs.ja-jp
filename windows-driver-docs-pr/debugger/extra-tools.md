@@ -1,17 +1,17 @@
 ---
-title: Windows 用デバッグ ツールに含まれるツール
+title: Debugging Tools for Windows に含まれるツール
 description: デバッグ ツールの Windows には、デバッグ エンジンとデバッグ環境だけでなく、いくつかのツールが含まれています。 このツールはツールを Windows のデバッグのインストール ディレクトリです。
 ms.assetid: f5d761b9-866e-4948-978e-e95f8aed8b21
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ac79b379f2c1ea9221070f250af9a1b8d44cd84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380160"
 ---
-# <a name="tools-included-in-debugging-tools-for-windows"></a>Windows 用デバッグ ツールに含まれるツール
+# <a name="tools-included-in-debugging-tools-for-windows"></a>Debugging Tools for Windows に含まれるツール
 
 
 デバッグ ツールの Windows デバッグ エンジンだけでなく、いくつかのツールが含まれていますと[デバッグ環境](debuggers-in-the-debugging-tools-for-windows-package.md)します。 このツールは、[インストール ディレクトリ](#installation-directories)の Windows のツールをデバッグします。

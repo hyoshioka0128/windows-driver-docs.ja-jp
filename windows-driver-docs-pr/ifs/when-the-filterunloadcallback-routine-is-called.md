@@ -1,6 +1,6 @@
 ---
-title: FilterUnloadCallback ルーチンが呼び出された場合
-description: FilterUnloadCallback ルーチンが呼び出された場合
+title: FilterUnloadCallback ルーチンの呼び出し時期
+description: FilterUnloadCallback ルーチンの呼び出し時期
 ms.assetid: 22a3a73e-28be-4483-a7a6-73525e74503d
 keywords:
 - FilterUnloadCallback
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e94ef7593eb5bb12c84ab52d31a6a269120b4e8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322226"
 ---
-# <a name="when-the-filterunloadcallback-routine-is-called"></a>FilterUnloadCallback ルーチンが呼び出された場合
+# <a name="when-the-filterunloadcallback-routine-is-called"></a>FilterUnloadCallback ルーチンの呼び出し時期
 
 
 ## <span id="ddk_when_the_filterunloadcallback_routine_is_called_if"></span><span id="DDK_WHEN_THE_FILTERUNLOADCALLBACK_ROUTINE_IS_CALLED_IF"></span>

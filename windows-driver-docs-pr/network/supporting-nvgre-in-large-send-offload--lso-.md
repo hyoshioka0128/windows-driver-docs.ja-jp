@@ -5,11 +5,11 @@ ms.assetid: 1EB1B8C2-85C1-4256-BE96-C8B9F1D222B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 833c4ca772178774ad31b040effd5e41183400fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384219"
 ---
 # <a name="supporting-nvgre-in-large-send-offload-lso"></a>Large Send Offload (LSO) での NVGRE のサポート
 
@@ -33,7 +33,7 @@ LSOV2 で NVGRE をサポートするには、プロトコルとフィルター 
 
 Nic とミニポート ドライバーを使用して、可能性があります、 **InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset** で提供される値[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957)構造体。 NIC またはミニポート ドライバーでは、トンネル (外部) の IP ヘッダーまたはこれらのオフセットを検証する後続のヘッダーで、必要なヘッダーのチェックを実行できます。
 
-ミニポート ドライバーは、ケースを処理する必要があります、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_ボックスの一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957).**InnerFrameOffset**パケットの先頭よりも、別のスキャッター/ギャザー リストがあります。 すべてのカプセル化の先頭に追加されたヘッダー (ETH、IP、GRE) が物理的に連続できるようになり、パケットの最初の MDL になります、プロトコルのドライバーが保証されます。
+ミニポート ドライバーは、ケースを処理する必要があります、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_]ボックスの一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957).**InnerFrameOffset**パケットの先頭よりも、別のスキャッター/ギャザー リストがあります。 すべてのカプセル化の先頭に追加されたヘッダー (ETH、IP、GRE) が物理的に連続できるようになり、パケットの最初の MDL になります、プロトコルのドライバーが保証されます。
 
 プロトコルとフィルター ドライバーは、TCP ペイロード長さの合計が、制限の倍数であることを確認しない**MSS**値。 このため、ミニポート ドライバーと Nic は、トンネル (外部) の IP ヘッダーを更新する必要があります。 Nic がに基づいて、削減できるだけ多くのフル サイズのセグメントを生成する必要が**MSS**値、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882).**LsoV2Transmit** OOB 情報。 1 つだけ sub -**MSS**セグメントを生成することが LSOv2 送信ごと。
 

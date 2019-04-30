@@ -1,6 +1,6 @@
 ---
-title: イベント オブジェクトの定義と
-description: イベント オブジェクトの定義と
+title: イベント オブジェクトの定義と使用
+description: イベント オブジェクトの定義と使用
 ms.assetid: 4b7807f0-bbea-4402-b028-9ac73724717f
 keywords:
 - イベント オブジェクトの WDK カーネル
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40431afc5dd1a2b8117c519cfbb916338c20bf46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388251"
 ---
-# <a name="defining-and-using-an-event-object"></a>イベント オブジェクトの定義と
+# <a name="defining-and-using-an-event-object"></a>イベント オブジェクトの定義と使用
 
 
 
@@ -62,7 +62,7 @@ ms.locfileid: "56552605"
 
 IRQL で実行されている任意の標準のドライバー ルーチン = ディスパッチ\_システム停止することがなくすべてのディスパッチャー オブジェクトに対するレベルを 0 以外の値の間隔を待機できません。 ただし、このようなルーチンを呼び出すことができます**KeSetEvent**ディスパッチに少ないの IRQL で実行中に\_レベル。
 
-実行する標準のドライバー ルーチンで Irql の概要については、[を管理するハードウェアの優先順位](managing-hardware-priorities.md)を参照してください。
+実行する標準のドライバー ルーチンで Irql の概要については、次を参照してください。[を管理するハードウェアの優先順位](managing-hardware-priorities.md)します。
 
 **KeResetEvent**の以前の状態を返します、指定された*イベント*: かどうかが設定されているシグナルされたかどうかと呼び出し**KeResetEvent**が発生しました。 **KeClearEvent**の状態を設定するだけ、指定された*イベント*Not シグナル状態にします。
 

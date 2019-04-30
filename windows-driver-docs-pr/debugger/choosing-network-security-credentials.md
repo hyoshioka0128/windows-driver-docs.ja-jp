@@ -1,19 +1,19 @@
 ---
-title: ネットワーク セキュリティ資格情報を選択します。
-description: ネットワーク セキュリティ資格情報を選択します。
+title: ネットワーク セキュリティ資格情報の選択
+description: ネットワーク セキュリティ資格情報の選択
 ms.assetid: f53bda2b-a5e7-4a8e-ac31-44c92f306b7a
 keywords:
 - SymProxy、ネットワーク セキュリティ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f754585f5b4b561d83cbb36d2bc2cc73b6f9730c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375102"
 ---
-# <a name="choosing-network-security-credentials"></a>ネットワーク セキュリティ資格情報を選択します。
+# <a name="choosing-network-security-credentials"></a>ネットワーク セキュリティ資格情報の選択
 
 
 シンボルのプロキシ サーバーは、シンボル ストアを使用して行うをアクセスの適切な特権を持つセキュリティ コンテキストから実行する必要があります。 など、外部の Web ストアからシンボルを取得する場合 https://msdl.microsoft.com/download/symbolsシンボルのプロキシ サーバーのファイアウォールの外部から Web にアクセスする必要があります。 ネットワーク上の他のコンピューターからファイルを取得する場合、シンボルのプロキシ サーバーは、これらの場所からファイルを読み取る適切な特権が必要です。 2 つの可能な選択肢はで、認証にシンボルのプロキシ サーバーを設定するのには、**ネットワーク サービス**アカウントまたはその他のユーザー アカウントと一緒に Directory Domain Services のアクティブな内で管理されているユーザー アカウントを作成します。

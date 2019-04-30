@@ -1,6 +1,6 @@
 ---
-title: '[ウォッチ] ウィンドウ'
-description: '[ウォッチ] ウィンドウ'
+title: ウォッチ ウィンドウの使用
+description: ウォッチ ウィンドウの使用
 ms.assetid: 233adbcd-c712-4cbb-abe6-5d4e18fa6c27
 keywords:
 - デバッグ情報のウィンドウ、[ウォッチ] ウィンドウ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8dde55d8f5a09c94b01f8076f0975ac81634fc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325884"
 ---
-# <a name="using-the-watch-window"></a>[ウォッチ] ウィンドウ
+# <a name="using-the-watch-window"></a>ウォッチ ウィンドウの使用
 
 
 ## <span id="ddk_watch_window_dbg"></span><span id="DDK_WATCH_WINDOW_DBG"></span>
@@ -105,7 +105,7 @@ ALT + SHIFT + 2 は、[ウォッチ] ウィンドウを閉じられます。
 
 -   (メニューのみ)**常に浮動**によって、ウィンドウをドッキング場所にドラッグされる場合でも、ドッキングされていないままにします。
 
--   (メニューのみ)**フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。
+-   (メニューのみ)**フレームを使用して移動**によって、ウィンドウに、ウィンドウがドッキングされていない場合でも、WinDbg フレームが移動したときに移動します。 Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。
 
 -   (メニューのみ)**ヘルプ**ツールを Windows のデバッグ ドキュメントのこのトピックを開きます。
 
@@ -113,7 +113,7 @@ ALT + SHIFT + 2 は、[ウォッチ] ウィンドウを閉じられます。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-変数とその他のメモリに関連するコマンドの説明を制御する方法の詳細については、[読み取りと書き込みメモリ](reading-and-writing-memory.md)を参照してください。 レジスタとその操作の詳細については、[表示と編集、WinDbg で登録](registers-window.md)を参照してください。 Windows のドッキング、タブ、および浮動小数点の詳細については、[、Windows の位置づけ](positioning-the-windows.md)を参照してください。 デバッグ情報のウィンドウのコントロールに使用できるすべての手法の詳細については、[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)を参照してください。
+変数とその他のメモリに関連するコマンドの説明を制御する方法の詳細については、次を参照してください。[読み取りと書き込みメモリ](reading-and-writing-memory.md)します。 レジスタとその操作の詳細については、次を参照してください。[表示と編集、WinDbg で登録](registers-window.md)します。 Windows のドッキング、タブ、および浮動小数点の詳細については、次を参照してください。 [、Windows の位置づけ](positioning-the-windows.md)します。 デバッグ情報のウィンドウのコントロールに使用できるすべての手法の詳細については、次を参照してください。[デバッグ情報の Windows を使用して](using-debugging-information-windows.md)します。
 
  
 

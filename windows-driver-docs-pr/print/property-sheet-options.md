@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9300f4410fe2e00dea4e7805d3cf8db7b815efd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376537"
 ---
 # <a name="property-sheet-options"></a>プロパティ シート オプション
 
@@ -29,7 +29,7 @@ ms.locfileid: "56578448"
 
 -   1 つ[ **OPTITEM** ](https://msdn.microsoft.com/library/windows/hardware/ff559656)構造体は、オプションの表示名とその他の特性を識別します。
 
--   1 つ[ **OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)オプションの表示 ダイアログの種類を識別する構造体 ([CPSUI オプションの種類](https://msdn.microsoft.com/library/windows/hardware/ff547142))。
+-   1 つ[ **OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)オプションの表示] ダイアログの種類を識別する構造体 ([CPSUI オプションの種類](https://msdn.microsoft.com/library/windows/hardware/ff547142))。
 
 -   1 つまたは複数[ **OPTPARAM$** ](https://msdn.microsoft.com/library/windows/hardware/ff559660)構造体は、オプションのユーザーが選択可能なパラメーターの値を識別します。
 

@@ -5,11 +5,11 @@ ms.assetid: 8A13CD6F-DF82-4353-ADE9-06989F83BC87
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d6617e65e995a45353bb0a8aa178dbfa2f95607
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325773"
 ---
 # <a name="driver-installation"></a>ドライバーのインストール
 
@@ -26,9 +26,9 @@ ms.locfileid: "56581934"
 
 - 3D プリンターは試験段階の場合、または開発で、次の手順では、*ドライバーを手動でインストール*既存の COM ポートに出力する、G コードをファイルに印刷するのには、次のセクション。
 
-MS_COMP_3DPRINT については、[入門ガイド - Microsoft 標準のドライバーの 3D プリンター](https://docs.microsoft.com/windows-hardware/drivers/3dprint/microsoft-standard-driver-for-3d-printers-)を参照してください。
+MS_COMP_3DPRINT については、次を参照してください。[入門ガイド - Microsoft 標準のドライバーの 3D プリンター](https://docs.microsoft.com/windows-hardware/drivers/3dprint/microsoft-standard-driver-for-3d-printers-)します。
 
-OS の記述子の詳細については、[USB デバイスの Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)を参照してください。
+OS の記述子の詳細については、次を参照してください。 [USB デバイスの Microsoft OS ディスクリプター](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)します。
 
 ### <a name="automatic-installation-of-the-driver-via-pnp"></a>PnP を使用して、ドライバーの自動インストール
 
@@ -49,7 +49,7 @@ OS の記述子の詳細については、[USB デバイスの Microsoft OS デ�
 
     ![印刷の管理](images/g-code-1.png)
 
-2.  展開**プリント サーバー**をマシンの名前を展開し、右クリックして**ドライバー**を選択し、**ドライバーを追加しています**.
+2.  展開**プリント サーバー**をマシンの名前を展開し、右クリックして**ドライバー**を選択し、**ドライバーを追加しています.**.
 
     ![印刷の管理 ダイアログ](images/g-code-2.png)
 
@@ -81,7 +81,7 @@ OS の記述子の詳細については、[USB デバイスの Microsoft OS デ�
 
     ![ポート名を入力します。](images/g-code-7.png)
 
-12. クリックして**ディスクがある**.
+12. クリックして**ディスクがある.**.
 
     ![ディスクを搭載してください.](images/g-code-8.png)
 

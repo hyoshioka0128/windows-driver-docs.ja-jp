@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9c469e72b9b44da2a0f9f6506cd9251670d21c15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331270"
 ---
 # <a name="devproptypemodarray"></a>DEVPROP_TYPEMOD_ARRAY
 
@@ -37,7 +37,7 @@ DEVPROP_TYPEMOD_ARRAY 識別子は、固定長の基本データ型識別子と�
 
 表すデータ型のプロパティの識別子を作成する方法については、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)リスト、NULL で終わる Unicode 文字列の次を参照してください[ **DEVPROP_TYPEMOD_LIST** 。](devprop-typemod-list.md).
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

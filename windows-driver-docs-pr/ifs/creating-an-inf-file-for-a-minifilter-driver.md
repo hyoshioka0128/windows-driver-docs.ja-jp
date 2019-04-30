@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90713fedfef6f76bb2c6eeaa2910bf9447fb9756
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370720"
 ---
 # <a name="creating-an-inf-file-for-a-minifilter-driver"></a>ミニフィルター ドライバー用の INF ファイルの作成
 
@@ -55,11 +55,11 @@ DefaultUninstall.Services (省略可能)
 
 -   管理者特権で未署名のドライバを Windows Vista 以降の x64 ベース システムでインストールもできます。 ドライバーを読み込む (およびため、実行する) に失敗するただし、署名されていないためです。
 
--   ドライバーの署名の詳細については、[ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)を参照してください。
+-   ドライバーの署名の詳細については、次を参照してください。[ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)します。
 
--   運転署名プロセスの詳細については、[カーネル モード コード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)を参照してください。
+-   運転署名プロセスの詳細については、次を参照してください。[カーネル モード コード署名のチュートリアル](https://go.microsoft.com/fwlink/p/?linkid=79445)します。
 
--   カスタム カーネル モード開発ツールを含むすべてのカーネル モード コンポーネントに署名する必要があります。 詳細については、[開発およびテスト (Windows Vista 以降) の中にドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff552275)を参照してください。
+-   カスタム カーネル モード開発ツールを含むすべてのカーネル モード コンポーネントに署名する必要があります。 詳細については、次を参照してください。[開発およびテスト (Windows Vista 以降) の中にドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff552275)します。
 
  
 
@@ -124,7 +124,7 @@ CatalogFile =
 
 [ **DestinationDirs** ](https://msdn.microsoft.com/library/windows/hardware/ff547383)セクション ミニフィルター ドライバーとアプリケーション ファイルのコピー先ディレクトリを指定します。
 
-このセクションで、 **ServiceInstall**  セクションで、システム定義の数値でよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧は、[ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)を参照してください。 次のコード例で、値 12 がドライバーのディレクトリを参照 (%windir%\\system32\\ドライバー)、値 10 が Windows ディレクトリ (%windir%) を指します。
+このセクションで、 **ServiceInstall**  セクションで、システム定義の数値でよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧は、次を参照してください。 [ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。 次のコード例で、値 12 がドライバーのディレクトリを参照 (%windir%\\system32\\ドライバー)、値 10 が Windows ディレクトリ (%windir%) を指します。
 
 ```cpp
 [DestinationDirs]
@@ -141,7 +141,7 @@ Minispy.UserFiles   = 10,FltMgr
 
  
 
-Windows オペレーティング システムの複数のバージョンでは、ドライバーをインストールする 1 つの INF ファイルを作成することができます。 この種類の INF ファイルを作成するには追加作成して[ **DefaultInstall**](https://msdn.microsoft.com/library/windows/hardware/ff547356)、 [ **DefaultInstall.Services**](https://msdn.microsoft.com/library/windows/hardware/ff547360)、 **DefaultUninstall**、および**DefaultUninstall.Services**セクションの各オペレーティング システムのバージョン。 各セクションのラベルでは、*装飾*(.ntx86、.ntia64、または .nt など) を適用するオペレーティング システムのバージョンを指定します。 この種類の INF ファイルを作成する方法の詳細については、[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540206)を参照してください。
+Windows オペレーティング システムの複数のバージョンでは、ドライバーをインストールする 1 つの INF ファイルを作成することができます。 この種類の INF ファイルを作成するには追加作成して[ **DefaultInstall**](https://msdn.microsoft.com/library/windows/hardware/ff547356)、 [ **DefaultInstall.Services**](https://msdn.microsoft.com/library/windows/hardware/ff547360)、 **DefaultUninstall**、および**DefaultUninstall.Services**セクションの各オペレーティング システムのバージョン。 各セクションのラベルでは、*装飾*(.ntx86、.ntia64、または .nt など) を適用するオペレーティング システムのバージョンを指定します。 この種類の INF ファイルを作成する方法の詳細については、次を参照してください。 [INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540206)します。
 
 次のコード例を示しています、典型的な[ **DefaultInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547356)セクション。
 
@@ -284,7 +284,7 @@ DelService = Minispy,0x200
 
 [**文字列**](https://msdn.microsoft.com/library/windows/hardware/ff547485)セクションは、INF ファイルで使用されている各 %strkey% トークンを定義します。
 
-1 つの国際 INF ファイルを作成するにはロケールに固有の追加を作成して**文字列**。<em>LanguageID</em> INF ファイルのセクション。 国際対応の INF ファイルの詳細については、[International INF ファイルの作成](https://msdn.microsoft.com/library/windows/hardware/ff540208)を参照してください。
+1 つの国際 INF ファイルを作成するにはロケールに固有の追加を作成して**文字列**。<em>LanguageID</em> INF ファイルのセクション。 国際対応の INF ファイルの詳細については、次を参照してください。 [International INF ファイルの作成](https://msdn.microsoft.com/library/windows/hardware/ff540208)です。
 
 次のコード例を示しています、典型的な[**文字列**](https://msdn.microsoft.com/library/windows/hardware/ff547485)セクション。
 

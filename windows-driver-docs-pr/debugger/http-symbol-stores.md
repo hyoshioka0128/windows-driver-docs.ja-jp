@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b439221eabe7addb4a0221a2ac010d219631bb89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379142"
 ---
 # <a name="http-symbol-stores"></a>HTTP シンボル ストア
 
@@ -37,7 +37,7 @@ HTTP のシンボル サーバーは、その読み取り専用の性質によ�
 
 シンボル ストアとして使用するディレクトリを選択して開始します。 この例でこのディレクトリの c: を呼び出して\\symstore、ネットワーク上のサーバーの名前が\\SymMachineName します。
 
-シンボル ストアを設定する方法の詳細については、[SymStore](symstore.md)と[シンボルを格納フォルダー ツリー](symbol-store-folder-tree.md)を参照してください。
+シンボル ストアを設定する方法の詳細については、次を参照してください。 [SymStore](symstore.md)と[シンボルを格納フォルダー ツリー](symbol-store-folder-tree.md)します。
 
 ### <a name="span-idconfiguringiisspanspan-idconfiguringiisspanconfiguring-iis"></a><span id="configuring_iis"></span><span id="CONFIGURING_IIS"></span>IIS の構成
 
@@ -49,7 +49,7 @@ HTTP のシンボル サーバーは、その読み取り専用の性質によ�
 
 2.  移動します**Websites**します。
 
-3.  右クリックして**既定の Web サイト**サイトの名前が使用されていると、選択または**仮想ディレクトリの追加**.
+3.  右クリックして**既定の Web サイト**サイトの名前が使用されていると、選択または**仮想ディレクトリの追加.**.
 
 4.  型**シンボル**の**エイリアス** をクリック**次**します。
 
@@ -194,7 +194,7 @@ SymSrv では、認証要求を受信するとデバッガーする認証 ダイ
 !sym prompts
 ```
 
-詳細については、[ **! sym** ](-sym.md)と[ファイアウォールとプロキシ サーバー](firewalls-and-proxy-servers.md)を参照してください。
+詳細については、次を参照してください。 [ **! sym** ](-sym.md)と[ファイアウォールとプロキシ サーバー](firewalls-and-proxy-servers.md)します。
 
  
 

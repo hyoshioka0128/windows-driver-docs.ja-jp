@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NDK_SET_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.openlocfilehash: d8fe2aad2183e158d6f04865357cee9abe3938a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391649"
 ---
 # <a name="oidndksetstate"></a>OID\_NDK\_設定\_状態
 
@@ -19,7 +19,7 @@ ms.locfileid: "56571643"
 
 NDIS 6.30 と以降のミニポート ドライバー NDK サービスを提供するには、この OID をサポートする必要があります。 それ以外の場合、この OID は省略可能です。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS 問題では、この OID、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体を指す、 **ブール**と**InformationBufferLength**メンバー sizeof と等しく (**ブール**)。
@@ -38,7 +38,7 @@ NDIS 問題では、この OID、 **InformationBuffer**のメンバー、 [ **ND
 
 -   場合、**ブール**値は**FALSE**、ミニポート アダプタの NDK 機能を無効にする必要があります。
 
-有効または無効では、NDK 機能、ミニポート ドライバーに[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)コールバック関数が」の手順に従う必要があります[の有効化とNDK機能を無効にします](https://msdn.microsoft.com/library/windows/hardware/dn163547)。
+有効または無効では、NDK 機能、ミニポート ドライバーに[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)コールバック関数が」の手順に従う必要があります[の有効化とNDK機能を無効にします。](https://msdn.microsoft.com/library/windows/hardware/dn163547).
 
 **注**  NDK 対応のミニポート ドライバーに呼び出す必要がありますしない[ **NdisMNetPnPEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff563616)のコンテキストからその[ *MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数は、ため、デッドロックが発生する可能性があります。 代わりに、呼び出す必要があります、 **NdisMNetPnPEvent**から他のコンテキストまたはキュー作業項目。
 
@@ -46,7 +46,7 @@ NDIS 問題では、この OID、 **InformationBuffer**のメンバー、 [ **ND
 
 NDK 対応のミニポート ドライバーの[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数が返す必要があります**状態\_成功**OID の\_NDK\_設定\_状態 OID 要求エラーが発生しない限り、します。 ドライバーに返す必要がありますいない**NDIS\_状態\_PENDING**します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

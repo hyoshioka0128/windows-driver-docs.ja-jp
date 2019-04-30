@@ -1,6 +1,6 @@
 ---
-title: 機能の値の配列
-description: 機能の値の配列
+title: 値機能配列
+description: 値機能配列
 ms.assetid: d447dda6-a1e5-4e57-b06f-f79f8662c236
 keywords:
 - WDK を非表示機能の配列を値します。
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cc87ae12413ba4545251117fba3db7a832061d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376734"
 ---
-# <a name="value-capability-arrays"></a>機能の値の配列
+# <a name="value-capability-arrays"></a>値機能配列
 
 
 
@@ -60,7 +60,7 @@ A*値機能配列*でサポートされている値の使用状況に関する�
 
 -   HID パーサー割り当てます一意[データ インデックス](data-indices.md)機能配列で説明されている各使用法をします。
 
-値にデータのインデックスを割り当てる方法については、[データのインデックス](data-indices.md)を参照してください。
+値にデータのインデックスを割り当てる方法については、次を参照してください。[データのインデックス](data-indices.md)します。
 
 ### <a href="" id="usage-value-array"></a> 使用状況の値の配列
 

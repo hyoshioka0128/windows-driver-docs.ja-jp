@@ -1,5 +1,5 @@
 ---
-title: Tracelog コマンドの構文
+title: Tracelog のコマンド構文
 description: トレース ログがコマンド (またはアクション) を開始、停止、およびトレース セッションを制御します。
 ms.assetid: 13c85a1e-77ea-47d7-bb97-ff9141a8a531
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3010002b73323b6f086d1e486ef633fa54481180
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391815"
 ---
-# <a name="tracelog-command-syntax"></a>Tracelog コマンドの構文
+# <a name="tracelog-command-syntax"></a>Tracelog のコマンド構文
 
 
 トレース ログがコマンド (またはアクション) を開始、停止、および制御を[トレース セッション](trace-session.md)します。
@@ -73,12 +73,12 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 同じ **-有効にする**します。 このオプションは、トレース ログの将来のバージョンで削除できます。
 
 <span id="_______-enumguid______"></span><span id="_______-ENUMGUID______"></span> **-enumguid**   
-システム上のプロバイダーを列挙します (または一覧表示します)[登録](registered-provider.md)を Event Tracing for Windows (ETW)。 Enumguid 表示については、[Tracelog Enumguid 表示](tracelog-enumguid-display.md)を参照してください。
+システム上のプロバイダーを列挙します (または一覧表示します)[登録](registered-provider.md)を Event Tracing for Windows (ETW)。 Enumguid 表示については、次を参照してください。 [Tracelog Enumguid 表示](tracelog-enumguid-display.md)します。
 
 トレース ログを使用して、 **EnumerateTraceGuids**を実装する関数を**tracelog enumguid**コマンド。 この関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
 <span id="_______-enumguidex___guid_"></span><span id="_______-ENUMGUIDEX___GUID_"></span> **-enumguidex** \[**\#**<em>guid</em>\]  
-システム上のプロバイダーを列挙します (または一覧表示します)[登録](registered-provider.md)を Event Tracing for Windows (ETW)。 EnumguidEx 表示については、[Tracelog Enumguid 表示](tracelog-enumguid-display.md)を参照してください。
+システム上のプロバイダーを列挙します (または一覧表示します)[登録](registered-provider.md)を Event Tracing for Windows (ETW)。 EnumguidEx 表示については、次を参照してください。 [Tracelog Enumguid 表示](tracelog-enumguid-display.md)します。
 
 トレース ログを使用して、 **EnumerateTraceGuidsEx**を実装する関数を**tracelog enumguidex**コマンド。 この関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
@@ -408,7 +408,7 @@ Pid のフィルターを指定します*n* Pid (許可されている最大 8)�
 <span id="_______-rt______"></span><span id="_______-RT______"></span> **-rt**   
 リアルタイムのトレース セッションを開始します。 (トレース ログ セッション (**-f**)、既定値です)。
 
-使用する場合 **-rt**と **-f**、およびイベント トレース ログ ファイルにトレース コンシューマーにトレース メッセージが送信されます。 使用することはできません **-rt**または **-f**で **-バッファリング**します。 詳細については、[トレース セッション](trace-session.md)を参照してください。
+使用する場合 **-rt**と **-f**、およびイベント トレース ログ ファイルにトレース コンシューマーにトレース メッセージが送信されます。 使用することはできません **-rt**または **-f**で **-バッファリング**します。 詳細については、次を参照してください。[トレース セッション](trace-session.md)します。
 
 <span id="_______-secure______"></span><span id="_______-SECURE______"></span> **-secure**   
 保護モードでトレースを有効にします。 このオプションは、イベントを選択します。\_トレース\_SECURE\_モードのログ モードです。 イベントをトレース ログでセッションにログオンできるユーザーを制限\_ログ\_イベントのアクセスを許可します。

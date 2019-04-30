@@ -15,25 +15,25 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 588f05f697edd108f607e4f80dd3385d6a55755d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327460"
 ---
 # <a name="devpropmasktype"></a>DEVPROP_MASK_TYPE
 
 
 Windows Vista および以降のバージョンの Windows では、DEVPROP_MASK_TYPE マスクでビットごとの AND で結合できます、[プロパティ データ型識別子](https://msdn.microsoft.com/library/windows/hardware/ff541476)を抽出する、 [**基本データ型識別子**](https://msdn.microsoft.com/library/windows/hardware/ff537793)データ型のプロパティの識別子から。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 このマスクは、基本データ型識別子、データ型のプロパティの修飾子、またはデータ型のプロパティの識別子として使用できません。
 
-DEVPROP_TYPEMOD_Xxx を抽出する方法については[**プロパティ データ型の修飾子**](https://msdn.microsoft.com/library/windows/hardware/ff549770)からデータ型のプロパティの識別子では、次を参照してください[ **DEVPROP_MASK_TYPEMOD**](devprop-mask-typemod.md)。
+DEVPROP_TYPEMOD_Xxx を抽出する方法については[**プロパティ データ型の修飾子**](https://msdn.microsoft.com/library/windows/hardware/ff549770)からデータ型のプロパティの識別子では、次を参照してください[ **DEVPROP_MASK_TYPEMOD。**](devprop-mask-typemod.md).
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

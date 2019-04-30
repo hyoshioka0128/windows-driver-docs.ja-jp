@@ -6,21 +6,21 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: f1ca0b1026dba18f52644d62385fb7ac09dacf81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332223"
 ---
 # <a name="pkeyaposwfallbackprocessingmodes"></a>鍵\_APO\_SWFallback\_ProcessingModes
 
 Windows 10 バージョンは 1809、以降、*鍵\_APO\_SWFallback\_ProcessingModes*プロパティのキーは、フォールバックしてソフトウェアの処理モードを識別します。 ドライバー開発者向けでは、サポート ソフトウェア フォールバック、ドライバーがサポートするモードの処理モードの効果のすべてリストします。 この一覧は、ハードウェアのドライバーがサポートするすべてのモードを網羅する必要があります。
 
-ストリームがこれらのモードのいずれかの要求しその処理モードでは、暗証番号 (pin) を開くには使用可能なハードウェア リソースが不足のため、pin は RAW モードで表示および要求の処理モードを使用して初期化 SW APO が使用されます。 このため、処理モードでは、ハードウェアのソフトウェア フォールバックをサポートするドライバーは、RAW モードをサポートする必要があります。 オーディオ モードの詳細については、[オーディオ信号の処理モード](audio-signal-processing-modes.md)を参照してください。 ソフトウェアのフォールバックは、ホストの暗証番号 (pin) にのみ適用されます。
+ストリームがこれらのモードのいずれかの要求しその処理モードでは、暗証番号 (pin) を開くには使用可能なハードウェア リソースが不足のため、pin は RAW モードで表示および要求の処理モードを使用して初期化 SW APO が使用されます。 このため、処理モードでは、ハードウェアのソフトウェア フォールバックをサポートするドライバーは、RAW モードをサポートする必要があります。 オーディオ モードの詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)します。 ソフトウェアのフォールバックは、ホストの暗証番号 (pin) にのみ適用されます。
 
 ストリームが作成され、ハードウェアで使用可能なリソースがない場合は、SW のフォールバックがトリガーされます。 OS では、ドライバー ソフトウェア フォールバックが必要なかどうかを判断する利用可能なリソースを直接クエリします。 OS では、暗証番号 (pin) インスタンスの数が、ドライバーによってサポートされているなど、ドライバーのナレッジを使用して、十分なハードウェア リソースがないか判断します。  ハードウェア リソースが利用できない場合は、ソフトウェア フォールバックが生の暗証番号 (pin) のストリームを作成に使用されます。 ソフトウェア フォールバック プロセスは、OS によって管理され、ソフトウェア フォールバックが発生した場合、ドライバーからの入力は不要です。 ドライバーは、SWFallback を使用する追加の特定のエラー コードを返す必要はありません。
 
-オーディオの制約が指定されている場合、OS はそれらを比較する追加のチェックを行います。 詳細については、[オーディオ ハードウェア リソースの管理](audio-hardware-resource-management.md)を参照してください。
+オーディオの制約が指定されている場合、OS はそれらを比較する追加のチェックを行います。 詳細については、次を参照してください。[オーディオ ハードウェア リソースの管理](audio-hardware-resource-management.md)します。
 
 ドライバーは、その FxPropertyStore でサポートされているフォールバック モードがある必要があります。 任意の AUDIO_SIGNALPROCESSINGMODEs SWFallback は、13 PKEY_APO_SWFallback_ProcessingModes {D3993A3F-99C2-4402-B5EC-A92A0367664B} には、ドライバーの FxPropertyStore に追加する必要があります。 これにより、SWFallback の認識にできます。 
 
