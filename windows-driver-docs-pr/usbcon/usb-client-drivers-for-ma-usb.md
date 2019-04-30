@@ -1,16 +1,16 @@
 ---
-Description: USB device driver that sends MA-USB packets.
-title: メディアに依存しない (USB MA) の USB クライアント ドライバー
+Description: MA USB パケットを送信する USB デバイス ドライバー。
+title: Media-Agnostic (MA-USB) 用 USB クライアント ドライバー
 ms.date: 09/26/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 572dcf688633987f3b14b9fae2da9cf889a8c82e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355053"
 ---
-# <a name="usb-client-drivers-for-media-agnostic-ma-usb"></a>メディアに依存しない (USB MA) の USB クライアント ドライバー
+# <a name="usb-client-drivers-for-media-agnostic-ma-usb"></a>Media-Agnostic (MA-USB) 用 USB クライアント ドライバー
 
 Windows 10 バージョン 1709 で USB ドライバー スタック パケットを送信できます USB USB 以外の物理メディアなど、Wi-fi 経由でメディアに依存しない USB (USB MA) プロトコルを使用しています。 新しい機能は、既存の USB クライアント ドライバーに必要な変更が最小限に抑えるように設計されています。 この一連の変更では、トランスポートに関する追加情報を含めます。
 
@@ -99,7 +99,7 @@ REG_MULTI_SZ:"EndpointPriorities" =
 "1,1,*,BULK_OUT,0,VOICE",  // First BULK OUT endpoint in interface 1, configuration 1, all alternate settings has VOICE priority. 
 "2,1,0,BULK_OUT,1,INTERACTIVE"” // BULK OUT endpoint in configuration 2, interface 1, alt setting 1 has INTERACTIVE priority.
 ```
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [WdfUsbTargetDeviceCreateUrb](https://msdn.microsoft.com/library/windows/hardware/hh439423)
 
 [USBD_UrbAllocate](https://msdn.microsoft.com/library/windows/hardware/hh406250)

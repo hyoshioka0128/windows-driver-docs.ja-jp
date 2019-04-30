@@ -1,6 +1,6 @@
 ---
-title: ファイル システム オブジェクト I/O ルーチン
-description: ファイル システム オブジェクト I/O ルーチン
+title: ファイル システム オブジェクトの I/O ルーチン
+description: ファイル システム オブジェクトの I/O ルーチン
 ms.assetid: 0514e396-76b9-458b-9a98-e539d7e90274
 keywords:
 - ミニ リダイレクター WDK、オブジェクトの入出力ルーチン
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 432abfc4b4636c2ad4f4cae1b26062e6218f03c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383830"
 ---
-# <a name="file-system-object-io-routines"></a>ファイル システム オブジェクト I/O ルーチン
+# <a name="file-system-object-io-routines"></a>ファイル システム オブジェクトの I/O ルーチン
 
 
 ファイル システム オブジェクト I/O ルーチンでは、従来のファイル I/O を読み取り、書き込み、およびその他のファイル操作の呼び出しを表します。 これらのルーチンは、ネットワークのミニ リダイレクターの「低い I/O ルーチン」を多くの場合、呼び出されます。 RDBSS が特定の IRP を受信したときにこれらのルーチンを呼び出す

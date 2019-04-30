@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5551b7ee85e5b7cd7f01635e76a7f87bad472c87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336531"
 ---
 # <a name="heap"></a>!heap
 
@@ -262,7 +262,7 @@ ms.locfileid: "56580497"
 <td align="left"><p>デバッガーがハンドルを持つページ ヒープに関する詳細情報を表示<em>処理</em>します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-a</strong> <strong></strong>  <em>アドレス</em></p></td>
+<td align="left"><p><strong>-</strong> <strong></strong>  <em>アドレス</em></p></td>
 <td align="left"><p>デバッガーが持つブロックが含まれるページ ヒープを見つける<em>アドレス</em>します。 このアドレスは、ページ ヒープの場合、そのオフセット、ブロック内の一部かどうかと、ブロックが割り当てられているまたは解放されたかどうか、このアドレスが完全ページ ヒープ ブロックに関連付ける方法の完全な詳細情報が含められます。 使用可能な場合、スタック トレースが含まれます。 このオプションを使用する場合は、ヒープ割り当ての粒度の倍数単位のサイズが表示されます。</p></td>
 </tr>
 <tr class="odd">
@@ -426,7 +426,7 @@ Ext.dll Exts.dll</td>
 
 ヒープの詳細については、Microsoft Windows SDK ドキュメントに、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 この拡張機能のコマンドは、さまざまなタスクの実行に使用できます。
