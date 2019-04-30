@@ -1,5 +1,5 @@
 ---
-title: .fpo (FPO コントロールより優先)
+title: .fpo (FPO オーバーライドの制御)
 description: .Fpo コマンドでは、フレーム ポインターの省略 (FPO) の上書きを制御します。
 ms.assetid: a1a20f5d-71c9-487b-bcba-a87b60d74588
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f5d395cc83473a7003830004e506d23e5f757ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336615"
 ---
-# <a name="fpo-control-fpo-overrides"></a>.fpo (FPO コントロールより優先)
+# <a name="fpo-control-fpo-overrides"></a>.fpo (FPO オーバーライドの制御)
 
 
 **.Fpo**コマンドは、フレーム ポインターの省略 (FPO) の上書きを制御します。
@@ -54,7 +54,7 @@ ms.locfileid: "56528053"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>B</strong></p></td>
+<td align="left"><p><strong>b</strong></p></td>
 <td align="left"><p>セット<strong>fUseBP</strong>等しく<strong>TRUE</strong>します。</p></td>
 </tr>
 <tr class="even">

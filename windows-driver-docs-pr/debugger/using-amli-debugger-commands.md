@@ -1,19 +1,19 @@
 ---
-title: AMLI デバッガー コマンドを使用します。
-description: AMLI デバッガー コマンドを使用します。
+title: AMLI Debugger コマンドの使用
+description: AMLI Debugger コマンドの使用
 ms.assetid: 8efa6f13-67db-417a-83ec-8219afc9874c
 keywords:
 - AMLI デバッガー、AMLI デバッガー コマンド
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e6507ad0e708e59444f229a9df8489272e9dce0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383746"
 ---
-# <a name="using-amli-debugger-commands"></a>AMLI デバッガー コマンドを使用します。
+# <a name="using-amli-debugger-commands"></a>AMLI Debugger コマンドの使用
 
 
 ## <span id="ddk_using_amli_debugger_commands_dbg"></span><span id="DDK_USING_AMLI_DEBUGGER_COMMANDS_DBG"></span>
@@ -217,7 +217,7 @@ DWORD (32 ビット) 単位でデータを表示することを指定します�
 
 これらのコマンドが、標準のカーネル デバッガー ポート コマンドと同じ効果があります。これらは、アクセスしやすいように AMLI デバッガー内で複製されます。
 
-**** *ポート*
+**i** *ポート*
 
 **iw** *ポート*
 
@@ -244,6 +244,6 @@ DWORD (32 ビット) 単位でデータを表示することを指定します�
 <span id="Command"></span><span id="command"></span><span id="COMMAND"></span>*コマンド*  
 ヘルプを表示するためのコマンドを指定します。 これを省略すると、すべての AMLI デバッガー コマンドと AMLI デバッガー拡張機能の一覧が表示されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [AMLI デバッガー](the-amli-debugger.md) 

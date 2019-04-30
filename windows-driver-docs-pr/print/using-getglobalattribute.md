@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72024925395119dc0d54843b09a0d09d88c93b5c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373460"
 ---
 # <a name="using-getglobalattribute"></a>GetGlobalAttribute の使用
 
@@ -112,7 +112,7 @@ ms.locfileid: "57463818"
 <p>注:場合<em>PrintPSErrors が存在しない場合は、あると見なされます<strong>TRUE</strong>します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>製品</strong></p></td>
+<td><p><strong>Product</strong></p></td>
 <td><p><em></em>pdwDataType</em>: kADT_BINARY</p>
 <p><em>pbData</em>:<em>製品値</p>
 <p><em></em>pcbNeeded</em>: 出力バイナリ データのバイト数</p>
