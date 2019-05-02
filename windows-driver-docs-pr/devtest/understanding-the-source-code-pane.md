@@ -1,6 +1,6 @@
 ---
-title: ソース コード ウィンドウを理解します。
-description: ソース コード ウィンドウを理解します。
+title: Source Code (ソース コード) ウィンドウの概要
+description: Source Code (ソース コード) ウィンドウの概要
 ms.assetid: 70be3322-fdbc-4d7e-880d-dcbc0fecc39f
 keywords:
 - Static Driver Verifier レポート WDK、ソース コード ウィンドウ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 520827e10bfaf2f7da109df83e0c1e9d09280194
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351798"
 ---
-# <a name="understanding-the-source-code-pane"></a>ソース コード ウィンドウを理解します。
+# <a name="understanding-the-source-code-pane"></a>[Source Code]\(ソース コード\) ウィンドウの概要
 
 
 **ソース コード**ウィンドウはすべて関連するソース コード ファイルの規則違反、SDV オペレーティング システム モデルのコードを含め (sdv harness.c ファイル)、SDV 規則コードの検出が表示されます (\*.slic ファイル)、およびドライバーのソース コードです。

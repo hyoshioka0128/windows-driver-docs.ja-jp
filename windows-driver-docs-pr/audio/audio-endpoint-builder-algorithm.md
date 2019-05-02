@@ -1,17 +1,17 @@
 ---
-title: オーディオ エンドポイント ビルダー アルゴリズム
-description: オーディオ エンドポイント ビルダー アルゴリズム
+title: Audio Endpoint Builder のアルゴリズム
+description: Audio Endpoint Builder のアルゴリズム
 ms.assetid: 2338bca7-5743-42c3-9baf-ac4a54cf0393
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aac4c8b70594f341c51b2109aa17e185c59d3ec7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331512"
 ---
-# <a name="audio-endpoint-builder-algorithm"></a>オーディオ エンドポイント ビルダー アルゴリズム
+# <a name="audio-endpoint-builder-algorithm"></a>Audio Endpoint Builder のアルゴリズム
 
 
 Windows Vista および Windows の以降のバージョンでは、AudioEndpointBuilder は、列挙、初期化、およびシステム オーディオのエンドポイントをアクティブにするシステム サービスです。 このトピックでは、AudioEndpointBuilder サービスによって使用されるアルゴリズムの概要を示します。
@@ -32,13 +32,13 @@ AudioEndpointBuilder によって使用されるアルゴリズムのしくみ�
 
 3.  エンドポイントの既定のプロパティを設定します。 たとえば、名前、アイコン、およびフォーム ファクター AudioEndpointBuilder を設定します。
 
-4.  エンドポイントからパルス符号変調 (PCM) をサポートするホスト pin へのパスがあるかどうかを決定するオーディオ コーデック 3 (AC3) または Windows media ビデオ (WMV)。 ホストの pin が KSPIN に設定、通信のメンバーを持つ KSPIN 構造体\_通信\_シンクまたは KSPIN\_通信\_両方。 KSPIN 構造の詳細については、[ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483)を参照してください。
+4.  エンドポイントからパルス符号変調 (PCM) をサポートするホスト pin へのパスがあるかどうかを決定するオーディオ コーデック 3 (AC3) または Windows media ビデオ (WMV)。 ホストの pin が KSPIN に設定、通信のメンバーを持つ KSPIN 構造体\_通信\_シンクまたは KSPIN\_通信\_両方。 KSPIN 構造の詳細については、次を参照してください。 [ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483)します。
 
 5.  エンドポイントのプロパティ ストアは、オーディオ デバイス インターフェイスのレジストリ キーのプロパティ情報を設定します。
 
 6.  エンドポイントの状態を設定します。 エンドポイントの状態には、次の 3 つの値のいずれかを指定できます。
 
-    -   [アクティブ]:  これは、手順 4. で説明したように、パスが存在することを示します。
+    -   アクティブ: これは、手順 4. で説明したように、パスが存在することを示します。
 
     -   電源が入っていません。 オーディオ デバイスは、回線のモジュラー ジャックの検出をサポートする場合、この状態は、エンドポイントのパスが存在して、ジャックがオーディオのアダプターの物理コネクタから外れていることを示します。
 

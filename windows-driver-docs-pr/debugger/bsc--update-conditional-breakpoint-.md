@@ -1,5 +1,5 @@
 ---
-title: bsc (更新プログラムの条件付きブレークポイント)
+title: bsc (条件付きブレークポイントの更新)
 description: Bsc コマンドでは、発生または指定した条件付きブレークポイントが発生した場合に実行されるコマンドを変更、ブレークポイント契約条件を変更します。
 ms.assetid: 4d491797-3ba2-4a63-a575-67df39484bcf
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a0fc70c55d4dbeb8e6e00e5836c80e1d98f6262
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347826"
 ---
-# <a name="bsc-update-conditional-breakpoint"></a>bsc (更新プログラムの条件付きブレークポイント)
+# <a name="bsc-update-conditional-breakpoint"></a>bsc (条件付きブレークポイントの更新)
 
 
 **Bsc**コマンドが発生したまたは指定した条件付きブレークポイントが発生した場合に実行されるコマンドの変更、ブレークポイント契約条件を変更します。
@@ -73,7 +73,7 @@ bsc ID Condition ["CommandString"]
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細とブレークポイント、他のブレークポイント コマンドや、ブレークポイントを制御する方法を使用する方法と、カーネル デバッガーからのユーザー領域でブレークポイントを設定する方法の例については、[を使用してブレークポイント](using-breakpoints.md)を参照してください。 条件付きブレークポイントの詳細については、[、条件付きブレークポイント](setting-a-conditional-breakpoint.md)を参照してください。
+詳細とブレークポイント、他のブレークポイント コマンドや、ブレークポイントを制御する方法を使用する方法と、カーネル デバッガーからのユーザー領域でブレークポイントを設定する方法の例については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。 条件付きブレークポイントの詳細については、次を参照してください。 [、条件付きブレークポイント](setting-a-conditional-breakpoint.md)します。
 
 <a name="remarks"></a>注釈
 -------

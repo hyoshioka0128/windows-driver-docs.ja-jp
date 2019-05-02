@@ -1,19 +1,19 @@
 ---
-title: スピーカーの構成設定を適用します。
-description: スピーカーの構成設定を適用します。
+title: スピーカー構成の設定を適用
+description: スピーカー構成の設定を適用
 ms.assetid: 98fe96cc-8436-4400-9b39-86d188e085c9
 keywords:
 - 失敗したスピーカー構成要求の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a07ff462e58a2ac314b43671368e73a309290ab0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331568"
 ---
-# <a name="applying-speaker-configuration-settings"></a>スピーカーの構成設定を適用します。
+# <a name="applying-speaker-configuration-settings"></a>スピーカー構成の設定を適用
 
 
 ## <span id="applying_speaker_configuration_settings"></span><span id="APPLYING_SPEAKER_CONFIGURATION_SETTINGS"></span>
@@ -25,7 +25,7 @@ ms.locfileid: "56538033"
 
 DirectSound は、レジストリの現在のスピーカーの構成設定を追跡し、その設定のオーディオ ハードウェアに毎回デバイスが作成される新しい DirectSound を適用します。
 
-アプリケーション プログラムは呼び出すことでシステム全体のスピーカーの構成を変更することができます、 **IDirectSound::SetSpeakerConfig**メソッドで、レジストリのスピーカーの構成設定を更新します。 メソッドは、またオーディオ デバイスは、一般に、DirectSound オブジェクトが存在する場合は、スピーカーの設定を変更することはありませんが、新しい設定は直ちに、ハードウェアを適用しようとします。 DirectSound は、このメソッドを定義するスピーカー構成の一覧は、[スピーカー構成要求の変換](translating-speaker-configuration-requests.md)を参照してください。
+アプリケーション プログラムは呼び出すことでシステム全体のスピーカーの構成を変更することができます、 **IDirectSound::SetSpeakerConfig**メソッドで、レジストリのスピーカーの構成設定を更新します。 メソッドは、またオーディオ デバイスは、一般に、DirectSound オブジェクトが存在する場合は、スピーカーの設定を変更することはありませんが、新しい設定は直ちに、ハードウェアを適用しようとします。 DirectSound は、このメソッドを定義するスピーカー構成の一覧は、次を参照してください。[スピーカー構成要求の変換](translating-speaker-configuration-requests.md)します。
 
 ユーザーは、スピーカーの構成 ダイアログを使用して、構成を変更できる、**マルチ メディアのプロパティ**コントロール パネルの ページ (mmsys.cpl)。 Windows XP で、DirectSound のスピーカー構成ダイアログ ボックスを見つけるには、これらの手順をなどに従います。
 
@@ -33,7 +33,7 @@ DirectSound は、レジストリの現在のスピーカーの構成設定を�
 
 2.  **オーディオ** タブからデバイスを選択、**音の再生**一覧。
 
-3.  [詳細設定****] ボタンをクリックします。
+3.  **[詳細設定]** ボタンをクリックします。
 
 4.  をクリックして、**スピーカー**タブ。
 

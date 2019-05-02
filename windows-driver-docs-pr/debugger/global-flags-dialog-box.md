@@ -1,19 +1,19 @@
 ---
-title: グローバル フラグ ダイアログ ボックス
-description: グローバル フラグ ダイアログ ボックス
+title: Global Flags (グローバル フラグ) ダイアログ ボックス
+description: Global Flags (グローバル フラグ) ダイアログ ボックス
 ms.assetid: c6987d72-4141-45f2-af06-f4c7040a7e6b
 keywords:
 - GFlags、ダイアログ ボックス
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d514d8ac487435b4202eb8753b0e6caa3a167c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342062"
 ---
-# <a name="global-flags-dialog-box"></a>グローバル フラグ ダイアログ ボックス
+# <a name="global-flags-dialog-box"></a>[Global Flags]\(グローバル フラグ\) ダイアログ ボックス
 
 
 ## <span id="ddk_global_flags_dialog_box_dtools"></span><span id="DDK_GLOBAL_FLAGS_DIALOG_BOX_DTOOLS"></span>

@@ -1,6 +1,6 @@
 ---
-title: ソース コード ウィンドウで色の設定
-description: ソース コード ウィンドウで色の設定
+title: Source Code (ソース コード) ウィンドウの色の設定
+description: Source Code (ソース コード) ウィンドウの色の設定
 ms.assetid: 1bc3635b-31ed-4453-aaef-cd5aac637df2
 keywords:
 - WDK Static Driver Verifier の色分け
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54cf997c4d9268f5a1619f41233faa93630bdbd6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343158"
 ---
-# <a name="color-coding-in-the-source-code-pane"></a>ソース コード ウィンドウで色の設定
+# <a name="color-coding-in-the-source-code-pane"></a>[Source Code]\(ソース コード\) ウィンドウの色の設定
 
 
 SDV は、コードのソースをすばやく把握に役立つコーディングの色を使用します。

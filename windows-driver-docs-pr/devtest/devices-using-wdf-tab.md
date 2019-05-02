@@ -1,5 +1,5 @@
 ---
-title: WDF タブを使用してデバイス
+title: Devices Using WDF (WDF 使用デバイス) タブ
 description: このトピックでは、WDF のページを使用して、WDF Verifier のデバイスについて説明します。
 ms.assetid: 06144cf4-bb6f-4b5b-ac0d-f4fae89a04a9
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4a1aad9820544f91c4c9be23197bf43db1aca2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329661"
 ---
-# <a name="devices-using-wdf-tab"></a>WDF タブを使用してデバイス
+# <a name="devices-using-wdf-tab"></a>[Devices Using WDF]\(WDF 使用デバイス\) タブ
 
 
 このトピックで説明 WDF Verifier の**WDF を使用してデバイス**ページ。 このページには、WDF のドライバーを使用しているすべてのデバイスが一覧表示されます。 デバイスを選択すると、強調表示されているデバイスの WDF ドライバー スタックを参照してください。 この画面からの検証の設定を変更することもできます。

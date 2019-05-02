@@ -1,6 +1,6 @@
 ---
-title: '[ヘルプ] メニュー'
-description: '[ヘルプ] メニュー'
+title: Help(ヘルプ) メニュー
+description: Help(ヘルプ) メニュー
 ms.assetid: 088a8ff1-1a86-4a8f-a5f9-8adf55e6119c
 keywords:
 - '[ヘルプ] メニュー (完全な一覧)'
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c4ab8f952404b4f4522ad05170583781e519a0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342041"
 ---
-# <a name="help-menu"></a>[ヘルプ] メニュー
+# <a name="help-menu"></a>[Help]\(ヘルプ\) メニュー
 
 
 ## <span id="ddk_help_menu_dbg"></span><span id="DDK_HELP_MENU_DBG"></span>

@@ -1,6 +1,6 @@
 ---
-title: '[デバッグ] メニュー'
-description: '[デバッグ] メニュー'
+title: Debug (デバッグ) メニュー
+description: Debug (デバッグ) メニュー
 ms.assetid: 52bad9c4-91e8-48e8-a6b6-41208ca0aa6b
 keywords:
 - '[デバッグ] メニュー (完全な一覧)'
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dff34d7d3e22f11f42fd8333375328ebbe54975
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56549843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352922"
 ---
-# <a name="debug-menu"></a>[デバッグ] メニュー
+# <a name="debug-menu"></a>[Debug]\(デバッグ\) メニュー
 
 
 ## <span id="ddk_debug_menu_dbg"></span><span id="DDK_DEBUG_MENU_DBG"></span>

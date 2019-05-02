@@ -1,6 +1,6 @@
 ---
-title: ソース コード ウィンドウを使用
-description: ソース コード ウィンドウを使用
+title: Source Code (ソース コード) ウィンドウの使用
+description: Source Code (ソース コード) ウィンドウの使用
 ms.assetid: da8d16cd-583f-42b0-857f-64e5103aa379
 keywords:
 - Static Driver Verifier レポート WDK、ソース コード ウィンドウ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47019afe6ed0997e368d570f9551106607d59e4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327340"
 ---
-# <a name="using-the-source-code-pane"></a>ソース コード ウィンドウを使用
+# <a name="using-the-source-code-pane"></a>[Source Code]\(ソース コード\) ウィンドウの使用
 
 
 使用して、**ソース コード**規則違反へのパス内のコードの各行の起点を特定するウィンドウ。
