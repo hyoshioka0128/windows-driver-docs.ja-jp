@@ -1,6 +1,6 @@
 ---
-title: '[Trace Tree](トレース ツリー) ウィンドウ'
-description: '[Trace Tree](トレース ツリー) ウィンドウ'
+title: Trace Tree (トレース ツリー) ウィンドウ
+description: Trace Tree (トレース ツリー) ウィンドウ
 ms.assetid: 0035e926-7332-45a6-84ea-8c36bc23c61a
 keywords:
 - WDK Static Driver Verifier のペイン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe7b768ed2dcd0294ade866b9e5dcf182bb78169
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373146"
 ---
-# <a name="trace-tree-pane"></a>[Trace Tree]\(トレース ツリー\) ウィンドウ
+# <a name="trace-tree-pane"></a>Trace Tree (トレース ツリー) ウィンドウ
 
 
 **トレース ツリー**ペインは、次のスクリーン ショットに示すように、ルール違反へのパスで実行されたソース コードの重要な要素のトレースが表示されます。

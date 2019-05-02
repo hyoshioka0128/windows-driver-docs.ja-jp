@@ -1,6 +1,6 @@
 ---
-title: '[Tracing Flags and Level Selection](トレース フラグとレベルの選択) ダイアログ ボックスの使用'
-description: '[Tracing Flags and Level Selection](トレース フラグとレベルの選択) ダイアログ ボックスの使用'
+title: Tracing Flags and Level Selection (トレース フラグとレベルの選択) ダイアログ ボックスの使用
+description: Tracing Flags and Level Selection (トレース フラグとレベルの選択) ダイアログ ボックスの使用
 ms.assetid: 175255bb-2cfe-442e-a97e-6d38369103c0
 keywords:
 - WDK のトレース フラグ
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 055dd781c9b55432662dd3d8f478ad148bf95549
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326209"
 ---
-# <a name="using-the-tracing-flags-and-level-selection-dialog-box"></a>[Tracing Flags and Level Selection]\(トレース フラグとレベルの選択\) ダイアログ ボックスの使用
+# <a name="using-the-tracing-flags-and-level-selection-dialog-box"></a>Tracing Flags and Level Selection (トレース フラグとレベルの選択) ダイアログ ボックスの使用
 
 
 **トレース フラグとレベル選択** ダイアログ ボックスで、 **G** (GUID) のアイコンは、トレース プロバイダーを表します。 ファイル名の横にあるこのアイコンが表示されます、[トレース メッセージのコントロール (.tmc) ファイル](trace-message-control-file.md)トレース プロバイダー。 プロバイダーのトレース レベルおよびトレース フラグを選択するには、適切な検索**G**アイコンと、次の操作を行います。

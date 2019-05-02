@@ -1,6 +1,6 @@
 ---
-title: '[State](状態) ウィンドウ'
-description: '[State](状態) ウィンドウ'
+title: State (状態) ウィンドウ
+description: State (状態) ウィンドウ
 ms.assetid: 20fb016e-249b-4d28-9fa8-5d2dd837109f
 keywords:
 - WDK Static Driver Verifier のペイン
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd6c43db50fb4a9a3c568fc4babcfaf9a021f260
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343956"
 ---
-# <a name="state-pane"></a>[State]\(状態\) ウィンドウ
+# <a name="state-pane"></a>State (状態) ウィンドウ
 
 
 **状態**ペインには、ドライバー、オペレーティング システムのモデル、およびルールで変数の値のブール式が表示されます。 SDV は、これらの式を使用して、ドライバー、オペレーティング システムのモデルと、ルールの抽象化を作成しの検証に使用します。
@@ -35,7 +35,7 @@ ms.locfileid: "56574687"
 
 ほとんどの式に表示される、**状態**ルール コードでは変数に関連するウィンドウ。 規則のソース コードを使用することができます (で、 *RuleName*.slic ファイルで、**ソース コード**ウィンドウ)、式を解釈するのに役立ちます。
 
-ただし、一部の式の表示、**状態**の内部表現に変換するために役立つ可能性がある詳細ウィンドウ。 例えば以下のようにします。
+ただし、一部の式の表示、**状態**の内部表現に変換するために役立つ可能性がある詳細ウィンドウ。 以下に例を示します。
 
 ```
 x!=x
