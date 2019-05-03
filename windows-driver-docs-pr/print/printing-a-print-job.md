@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ec12e7ee1f2bb119ed378e6dbaa029c412b0b6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56578447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390270"
 ---
 # <a name="printing-a-print-job"></a>印刷ジョブの印刷
 
@@ -37,7 +37,7 @@ ms.locfileid: "56578447"
 
 **して**関数を呼び出すことによって、言語モニターが、スプーラーに送信する双方向プリンターのハードウェアからステータス情報を取得するために使用**割り込みが**Windows に記述されています。SDK のドキュメントです。 スプーラは呼び出しません、**して**関数。
 
-印刷のハードウェアが双方向の場合は、言語モニターとそのポート モニターの両方をサポートする必要があります、 **GetPrinterDataFromPort**関数。 言語モニターの**GetPrinterDataFromPort**関数は、レジストリ値の名前を入力としてを受け入れるよう、その名前の値を取得する必要があります (ポート モニターの一般に呼び出すことによって関連付けられている**WritePort**と**関数**)、呼び出し元に値を返します。 ポート モニタを**GetPrinterDataFromPort**関数には、入力、呼び出しとしての I/O 制御コードがそのまま使用する必要があります[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) (Windows SDK のドキュメントで説明)ポートのドライバーにコントロールのコードを渡すし、結果が返されます。
+印刷のハードウェアが双方向の場合は、言語モニターとそのポート モニターの両方をサポートする必要があります、 **GetPrinterDataFromPort**関数。 言語モニターの**GetPrinterDataFromPort**関数は、レジストリ値の名前を入力としてを受け入れるよう、その名前の値を取得する必要があります (ポート モニターの一般に呼び出すことによって関連付けられている**WritePort**と関数)、呼び出し元に値を返します。**** ポート モニタを**GetPrinterDataFromPort**関数には、入力、呼び出しとしての I/O 制御コードがそのまま使用する必要があります[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) (Windows SDK のドキュメントで説明)ポートのドライバーにコントロールのコードを渡すし、結果が返されます。
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 57bc65fe-1c31-4ebb-a1bc-e1fe275f8d10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45ae9e413b8d0e42ed7040684606c2792470d1be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339297"
 ---
 # <a name="verifying-the-spc-signature-of-a-catalog-file"></a>カタログ ファイルの SPC 署名の検証
 
@@ -36,7 +36,7 @@ SignTool verify /v /kp /c CatalogFileName.cat DriverFileName
 
 -   *CatalogFileName.cat*ドライバー パッケージのカタログ ファイルの名前を指定します。
 
--   ***/C*** *CatalogFileName.cat*オプション ファイルのエントリを含むカタログ ファイルを指定*DriverFileName*します。
+-   ** ***/C*** *CatalogFileName.cat*オプション ファイルのエントリを含むカタログ ファイルを指定*DriverFileName*します。
 
 -   *DriverFileName*カタログ ファイルにエントリがあるファイルの名前は、 *CatalogFileName.cat*します。
 

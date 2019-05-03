@@ -1,17 +1,17 @@
 ---
-title: メモリ エラー カウンター (関数インデックス 31) の設定します。
+title: メモリ エラー カウンターの設定 (関数インデックス 31)
 description: この関数は、呼び出し元が指定した値を修正し、修正不可能なメモリ エラーのイベントを追跡するカウンターを設定します。 この関数では、ソフトウェアの検証を有効にします。
 ms.assetid: 0EC4B442-902B-4589-A831-9637F4D60F86
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 60d21eb2395e2ccdac11ec39b1f71c2044b74527
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329976"
 ---
-# <a name="set-memory-error-counters-function-index-31"></a>メモリ エラー カウンター (関数インデックス 31) の設定します。
+# <a name="set-memory-error-counters-function-index-31"></a>メモリ エラー カウンターの設定 (関数インデックス 31)
 
 
 この関数は、呼び出し元が指定した値を修正し、修正不可能なメモリ エラーのイベントを追跡するカウンターを設定します。 この関数では、ソフトウェアの検証を有効にします。
@@ -49,7 +49,7 @@ ms.locfileid: "56532428"
 <td align="left">1</td>
 <td align="left">1</td>
 <td align="left"><p>修正可能な ECC しきい値を超えましたイベント数、NVDIMM-N のモジュールから、プラットフォームによって検出されました。</p>
-<p>プラットフォームは、この値を書き込みは、 <em></em> DRAM_THRESHOLD_ECC_COUNT</em> (2, 0x81) を登録します。</p></td>
+<p>プラットフォームは、この値を書き込みは、 <em></em>DRAM_THRESHOLD_ECC_COUNT</em> (2, 0x81) を登録します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -76,7 +76,7 @@ ms.locfileid: "56532428"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>状態</strong></td>
+<td align="left"><strong>ステータス</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>詳細についてはします。</p></td>

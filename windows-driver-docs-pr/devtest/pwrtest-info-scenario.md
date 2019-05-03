@@ -5,11 +5,11 @@ ms.assetid: 1d13d1dd-eb8d-434a-b994-e747a86f3457
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ad34aa2d7ebb5e520be61fea1505fbe7a2fddfe
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382696"
 ---
 # <a name="pwrtest-info-scenario"></a>PwrTest の情報シナリオ
 
@@ -32,7 +32,7 @@ pwrtest /info:option [/p:{n|a|*}] [/w:n]  [/?]
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><em>option</em></th>
+<th align="left"><em>オプション</em></th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -78,13 +78,13 @@ pwrtest /info:option [/p:{n|a|*}] [/w:n]  [/?]
 
 論理プロセッサ数を指定します **/info:ppm/info: ppmidle**、または **/info:ppmperf**オプション。
 
-<span id="a_or__"></span><span id="A_OR__"></span>**** または **\\***  
+<span id="a_or__"></span><span id="A_OR__"></span>または \\*********  
 すべての論理プロセッサ (既定値) を指定します。
 
 <span id="_w_yn"></span><span id="_W_YN"></span>**/w:**{**y**|**n**}  
 PPM ランダウン イベントを待機する秒単位で時間を指定します (既定値は 10 秒)。
 
-**例**
+**使用例**
 
 ```
 pwrtest /info:all
