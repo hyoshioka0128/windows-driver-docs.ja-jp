@@ -1,6 +1,6 @@
 ---
-title: ツリー ウィンドウ操作をトレースします。
-description: ツリー ウィンドウ操作をトレースします。
+title: Trace Tree (トレース ツリー) ウィンドウの操作
+description: Trace Tree (トレース ツリー) ウィンドウの操作
 ms.assetid: 60ccca37-d264-43dc-a502-3a7c7fe0caef
 keywords:
 - 静的ドライバー検証レポートの WDK、トレースのツリー ウィンドウ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3d331239f74ee7ed6fea5fb26fc41d09308ccc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330640"
 ---
-# <a name="trace-tree-pane-actions"></a>ツリー ウィンドウ操作をトレースします。
+# <a name="trace-tree-pane-actions"></a>[Trace Tree]\(トレース ツリー\) ウィンドウの操作
 
 次の操作を行うことができます、**トレース ツリー**ウィンドウ。
 
@@ -28,8 +28,8 @@ ms.locfileid: "56550680"
 |Key|アクション|
 |----|----|
 |下方向キー|1 つの行をステップ実行します。 このアクションは、折りたたまれたノード内にあるコードをスキップします。|
-|上方向キー|1 つの行をステップ実行します。 このアクションは、折りたたまれたノード内にあるコードをスキップします。|
-|右方向キー|折りたたまれたノードを展開します。|
+|上矢印|1 つの行をステップ実行します。 このアクションは、折りたたまれたノード内にあるコードをスキップします。|
+|右矢印|折りたたまれたノードを展開します。|
 |左方向キー|展開されたノードを折りたたみます。|
 
 内のソース コード要素をステップ実行すると、**トレース ツリー**ウィンドウで、SDV 自動的にカーソルを移動、[ソース コード ウィンドウ](source-code-pane.md)内の要素を含むソース コードの行に、 **ツリーをトレース**ウィンドウに関連付けられているブール式を表示し、[状態ウィンドウ](state-pane.md)します。
