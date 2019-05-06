@@ -6,7 +6,7 @@ ms.date: 12/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fddf5a08df7845bf1eecfdd24596a608a9d5cd2f
 ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57464386"
@@ -636,7 +636,7 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 
 **ルート レベル**
 
-直接、ホスト オブジェクト内で次のプロパティ、メソッド、およびコンス トラクターはあります。
+直接、ホスト オブジェクト内で次のプロパティ、メソッド、およびコンストラクターはあります。
 
 <table>
 <colgroup>
@@ -712,7 +712,7 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 <td align="left">indexedValue</td>
 <td align="left"><p>new indexedValue(value, indicies)</p></td>
 <td align="left">2</td>
-<td align="left">インデックスの既定のセットを繰り返し行う一連の値に割り当てるには JavaScript 反復子から返されるオブジェクトのコンス トラクターです。 インデックスのセットは、JavaScript 配列として表現する必要があります。</td>
+<td align="left">インデックスの既定のセットを繰り返し行う一連の値に割り当てるには JavaScript 反復子から返されるオブジェクトのコンストラクターです。 インデックスのセットは、JavaScript 配列として表現する必要があります。</td>
 </tr>
 <tr class="odd">
 <td align="left">Int64</td>
@@ -724,13 +724,13 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 <td align="left">namedModelParent</td>
 <td align="left"><p>new namedModelParent(object, name)</p></td>
 <td align="left">1</td>
-<td align="left">返される配列に配置するためのもので、オブジェクトのコンス トラクター <strong>initializeScript</strong>、このデータとして、JavaScript プロトタイプまたは ES6 クラスを使用して表す、指定した名前のデータ モデルの親拡張機能をモデル化</td>
+<td align="left">返される配列に配置するためのもので、オブジェクトのコンストラクター <strong>initializeScript</strong>、このデータとして、JavaScript プロトタイプまたは ES6 クラスを使用して表す、指定した名前のデータ モデルの親拡張機能をモデル化</td>
 </tr>
 <tr class="odd">
 <td align="left">namedModelRegistration</td>
 <td align="left"><p>new namedModelRegistration(object, name)</p></td>
 <td align="left">1</td>
-<td align="left">返される配列に配置するためのもので、オブジェクトのコンス トラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプの登録を表しますまたは、データと ES6 クラスは、他の拡張機能を検索できるように既知の名前を使用してモデルと。拡張</td>
+<td align="left">返される配列に配置するためのもので、オブジェクトのコンストラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプの登録を表しますまたは、データと ES6 クラスは、他の拡張機能を検索できるように既知の名前を使用してモデルと。拡張</td>
 </tr>
 <tr class="even">
 <td align="left">名前空間</td>
@@ -766,13 +766,13 @@ JavaScript のプロバイダーを読み込むすべてのスクリプトのグ
 <td align="left">typeSignatureExtension</td>
 <td align="left"><p>新しい typeSignatureExtension (オブジェクト、typeSignature、[moduleName]、[minVersion]、[maxVersion])</p></td>
 <td align="left">1</td>
-<td align="left">返される配列に配置するためのもので、オブジェクトのコンス トラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプまたは ES6 クラスによって型署名を使用して説明されているネイティブ型の拡張機能を表します。 完全引き継ぐのではなく、シグネチャに一致する任意の型のような登録「フィールドを追加」デバッガーの視覚化。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンは「1.2.3.4」として指定されたスタイルの文字列。</td>
+<td align="left">返される配列に配置するためのもので、オブジェクトのコンストラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプまたは ES6 クラスによって型署名を使用して説明されているネイティブ型の拡張機能を表します。 完全引き継ぐのではなく、シグネチャに一致する任意の型のような登録「フィールドを追加」デバッガーの視覚化。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンは「1.2.3.4」として指定されたスタイルの文字列。</td>
 </tr>
 <tr class="even">
 <td align="left">typeSignatureRegistration</td>
 <td align="left"><p>新しい typeSignatureRegistration (オブジェクト、typeSignature、[moduleName]、[minVersion]、[maxVersion])</p></td>
 <td align="left">1</td>
-<td align="left">返される配列に配置するためのもので、オブジェクトのコンス トラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプまたはネイティブ型署名に対する ES6 クラスでの正規の登録を表します。 このような登録「は」シグネチャに一致する任意の型ではなく拡張することよりも単に、デバッガーの視覚化。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンは「1.2.3.4」として指定されたスタイルの文字列。</td>
+<td align="left">返される配列に配置するためのもので、オブジェクトのコンストラクター <strong>initializeScript</strong>、これは、JavaScript プロトタイプまたはネイティブ型署名に対する ES6 クラスでの正規の登録を表します。 このような登録「は」シグネチャに一致する任意の型ではなく拡張することよりも単に、デバッガーの視覚化。 省略可能なモジュールの名前およびバージョンを登録を制限できます。 バージョンは「1.2.3.4」として指定されたスタイルの文字列。</td>
 </tr>
 <tr class="odd">
 <td align="left">unregisterNamedModel</td>
@@ -910,7 +910,7 @@ class myObject
 
 **反復可能なインデックス可能**
 
-反復可能なインデックス可能であるオブジェクトには、反復子からの特別な戻り値が必要です。 値を生成するには、代わりには、反復子は、indexedValue のインスタンスを生成します。 インデックスは、2 番目の引数の配列として indexedValue コンス トラクターに渡されます。 これらは、多次元にすることができますが、インデクサーのプロトコルで返される次元に一致する必要があります。
+反復可能なインデックス可能であるオブジェクトには、反復子からの特別な戻り値が必要です。 値を生成するには、代わりには、反復子は、indexedValue のインスタンスを生成します。 インデックスは、2 番目の引数の配列として indexedValue コンストラクターに渡されます。 これらは、多次元にすることができますが、インデクサーのプロトコルで返される次元に一致する必要があります。
 
 このコードは、例、implementaion を示しています。
 

@@ -6,7 +6,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c50510ed28c00d9f32c5abe80e6aace29c2ddc
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56549050"
@@ -16,7 +16,7 @@ ms.locfileid: "56549050"
 
 WPP の条件付きチェックを削除する\_INIT\_WPP マクロを使用することを呼び出さないようにをトレースします。 この場合にのみを行うことができます WPP\_INIT\_のソース コード内でトレースするあらゆる試みが行われる前に、トレースが呼び出されます、[トレース プロバイダー](trace-provider.md)、カーネル モード ドライバーまたはユーザー モード アプリケーションなどです。
 
-**重要な**  トレースがオブジェクトのコンス トラクターまたはマクロで行われた場合に、このチェックを削除しないでください。 それ以外の場合、トレース プロバイダーでアクセス違反が発生する可能性があります。
+**重要な**  トレースがオブジェクトのコンストラクターまたはマクロで行われた場合に、このチェックを削除しないでください。 それ以外の場合、トレース プロバイダーでアクセス違反が発生する可能性があります。
 
  
 
