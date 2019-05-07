@@ -1,6 +1,6 @@
 ---
-title: ソース コード ウィンドウ内のファイル
-description: ソース コード ウィンドウ内のファイル
+title: '[Source Code] (ソース コード) ウィンドウでのファイル'
+description: '[Source Code] (ソース コード) ウィンドウでのファイル'
 ms.assetid: 1bc248be-cdc8-4e6c-9eca-da2943daaf58
 keywords:
 - Static Driver Verifier レポート WDK、ソース コード ウィンドウ
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81f18aed8e785ac522b5c42e8d2f1148f4e8fa55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378816"
 ---
-# <a name="files-in-the-source-code-pane"></a>ソース コード ウィンドウ内のファイル
+# <a name="files-in-the-source-code-pane"></a>[Source Code]\(ソース コード\) ウィンドウでのファイル
 
 
 ファイルに表示されます、**ソース コード**ペインの含まれているコードが原因か、規則違反の検出に関係する場合にのみです。 その結果、さまざまなルール違反は、ウィンドウには、同じドライバーによって別のファイルが表示されます。
