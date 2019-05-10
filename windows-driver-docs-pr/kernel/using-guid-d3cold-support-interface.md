@@ -4,12 +4,12 @@ description: Windows 8 以降、ドライバーは D3cold を使用して、こ�
 ms.assetid: 525637E8-B16F-4038-A78D-A47064E36449
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fe495fb84c75ba0d70ab695e73bb3cb617aa7839
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cfce822c019cb076c6b3ba7133286eee66a4677
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387399"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106363"
 ---
 # <a name="using-the-guidd3coldsupportinterface-driver-interface"></a>GUID を使用して\_D3COLD\_サポート\_ドライバー インターフェイス
 
@@ -45,7 +45,7 @@ Needs = PciD3ColdSupported
 
 ただし、ベスト プラクティスとして、ドライバーを想定しないでくださいを内の情報、 **DeviceWake**メソッドは、システム電源の状態で示される状態以外の有効な**SystemWake**します。 一部のデバイスでは、デバイスが、ウェイク イベントを信号最低 Dx 状態に従って、コンピューターは、作業状態 S0 または (S1、S2、S3 または S4) は、低電力状態にするかどうかは異なります。 それ以外のデバイス、デバイスが接続されているバスは、コンピューターは、S0 ができない、デバイスとウェイク信号を処理できます。 のみ、 *GetIdleWakeInfo*ルーチンは、これらのデバイスのデバイスのウェイク アップ機能を正確に記述できます。
 
-たとえば、 [PCI Express ベース 3.0 仕様](http://www.pcisig.com/specifications/pciexpress/specifications/)ウェイク イベントを通知する 2 つの異なるメカニズムを定義します-PCI Express リンク (バス) は有効になり、リンクが入っていないときに、その他の使用時に 1 つのメカニズムを使用します。 デバイスが PM のストリームを送信するリンクをオンにすると\_PME トランザクション レイヤー パケット (TLPs) デバイスは、D0 を低電力状態に Dx から移動することを通知します。 デバイスでは、デバイスは、PM を送信できるように、リンクが有効である要求のリンクが入っていないときに\_PME TLPs します。 リンクが入っていることを要求するデバイスか、アサートのウェイク アップ\#(より一般的なデバイス フォーム ファクター) のシグナルまたは (あまり一般的)、「ビーコン」メカニズムを使用します。
+たとえば、 [PCI Express ベース 3.0 仕様](https://www.pcisig.com/specifications/pciexpress/specifications/)ウェイク イベントを通知する 2 つの異なるメカニズムを定義します-PCI Express リンク (バス) は有効になり、リンクが入っていないときに、その他の使用時に 1 つのメカニズムを使用します。 デバイスが PM のストリームを送信するリンクをオンにすると\_PME トランザクション レイヤー パケット (TLPs) デバイスは、D0 を低電力状態に Dx から移動することを通知します。 デバイスでは、デバイスは、PM を送信できるように、リンクが有効である要求のリンクが入っていないときに\_PME TLPs します。 リンクが入っていることを要求するデバイスか、アサートのウェイク アップ\#(より一般的なデバイス フォーム ファクター) のシグナルまたは (あまり一般的)、「ビーコン」メカニズムを使用します。
 
 PCI Express 仕様は、ドライバー開発者は、デバイスが正しくない、有効にする必要がありますが D3cold からイベントを通知する電源管理 (PMEs) 機能を提供するすべてのデバイスでは、これらのデバイスにスリープを解除メカニズムの両方を実装が必要です。これらのメカニズムを実装します。
 

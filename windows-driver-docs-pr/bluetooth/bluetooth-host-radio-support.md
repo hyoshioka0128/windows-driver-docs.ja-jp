@@ -4,19 +4,19 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: Windows で Bluetooth ホスト オプションのサポートに関する質問と回答の一覧を示します
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e03f6b403d7dd73869326dc0d9fa2b69e3934c66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc48d59059ad5eb2aa090b1444e26585545c58fa
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328296"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106357"
 ---
 # <a name="bluetooth-host-radio-support"></a>Bluetooth ホストの無線のサポート
 
 次の一覧は、Bluetooth 無線サポート Q & a:
 
 - [Bluetooth のホスト コント ローラーの Windows でサポートされています](#bluetooth-host-controllers-supported-in-windows)
-- [Windows がデバイス ID (Windows Vista) に一致しない場合は読み込みに Bluetooth スタックの強制](#forcing-the-bluetooth-stack-to-load-if-windows-cannot-match-the-device-id-(windows-vista))
+- [Windows がデバイス ID (Windows Vista) に一致しない場合は読み込みに Bluetooth スタックの強制](#forcing-the-bluetooth-stack-to-load-if-windows-cannot-match-the-device-id-windows-vista)
 - [Windows Vista での Bluetooth ラジオのインボックス サポートを確認する方法](#how-to-ensure-in-box-support-for-bluetooth-radios-in-windows-vista)
 - [サード パーティ製の INF ファイルがマイクロソフトによって定義されたクラス GUID を使用するかどうか](#whether-third-party-inf-files-should-use-the-microsoft-defined-class-guid)
 - [コントロール パネルの Bluetooth アプリケーションが Windows 7 で不足している理由](#why-the-control-panel-bluetooth-application-is-missing-in-windows-7)
@@ -26,7 +26,7 @@ ms.locfileid: "63328296"
 - [Windows は、ベンダーから提供されたプロファイルをサポートします。](#windows-support-for-vendor-supplied-profiles)
 - [Bluetooth のプロファイルと既定で有効になっているプロトコル](#bluetooth-profiles-and-protocols-that-are-enabled-by-default)
 - [グループ ポリシーが Bluetooth ラジオのインストールをブロックする方法](#how-group-policy-can-block-bluetooth-radio-installation)
-- [Windows 8 および Windows 8.1 によって発行されたデバイス ID のプロファイル レコードを変更する方法](#how-to-change-the-device-id-profile-record-published-by-windows-8-and-windows-8.1)
+- [Windows 8 および Windows 8.1 によって発行されたデバイス ID のプロファイル レコードを変更する方法](#how-to-change-the-device-id-profile-record-published-by-windows-8-and-windows-81)
 
 ## <a name="bluetooth-host-controllers-supported-in-windows"></a>Bluetooth のホスト コント ローラーの Windows でサポートされています
 

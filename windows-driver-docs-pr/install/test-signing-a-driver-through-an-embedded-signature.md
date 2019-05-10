@@ -4,12 +4,12 @@ description: 埋め込みの署名を使用したドライバーのテスト署�
 ms.assetid: 862e89e0-f84a-4058-a32f-09ae3043b884
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 934e373a83a897d71b607c0996e4c482b0317223
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d516a8129fcd14ea0f2709506bdd1ba63f6edd2
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339569"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106366"
 ---
 # <a name="test-signing-a-driver-through-an-embedded-signature"></a>埋め込みの署名を使用したドライバーのテスト署名
 
@@ -33,7 +33,7 @@ ms.locfileid: "63339569"
 テスト署名、 *toaster.sys*ファイルを次のコマンドラインを実行します。
 
 ```cpp
-Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timestamp.dll amd64\toaster.sys
+Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timestamp.dll amd64\toaster.sys
 ```
 
 各項目の意味は次のとおりです。
@@ -41,6 +41,8 @@ Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.ve
 -   **サインオン**コマンドは、指定したカタログ ファイルの署名に SignTool を構成します。 tstamd64.cat します。
 
 -   **/V**で SignTool の表示が正常に実行し、警告メッセージの詳細な操作を有効にします。
+
+-   **/Fd**オプションは、ファイルの署名を作成するために使用するファイル ダイジェスト アルゴリズムを指定します。 既定値には SHA1 です。
 
 -   **/S**オプションは、証明書ストアの名前を指定します (*PrivateCertStore)* テスト証明書を格納しています。
 

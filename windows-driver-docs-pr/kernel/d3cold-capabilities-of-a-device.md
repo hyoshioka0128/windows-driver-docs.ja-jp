@@ -4,12 +4,12 @@ description: D3cold (コンピューターの S0 内に存続するとき) を�
 ms.assetid: 5A6CB076-7D97-48EC-B2BF-3204CD093B3E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7ef2bd833e64f36a418ce1053bb6025f8d980cb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1dbcd8e09bdf314140ab810ccd2eabdba6c2b33e
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388247"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106433"
 ---
 # <a name="d3cold-capabilities-of-a-device"></a>デバイスの D3cold 機能
 
@@ -18,7 +18,7 @@ D3cold (コンピューターの S0 内に存続するとき) を入力するデ
 
 プラグ アンド プレイ (PnP) デバイスのオペレーティング システムは通常親バス ドライバーから、デバイスの D3cold 機能に関する情報を取得します。
 
-たとえば、デバイスが、PCI や PCI Express バスに接続されている場合、デバイスの PCI 構成領域には電源管理の登録とするブロック デバイスの機能を示すが含まれます。 このブロックで機能フラグは、電源管理イベント、または PME (ウェイク イベントの PCI 語句) をシグナル状態、デバイスをデバイスの電源状態を指定します。 これらの状態は、D3hot と D3cold などがあります。 PCI の電源管理の詳細については、次を参照してください。、 [PCI バス Power Management Interface Specification](http://www.pcisig.com/specifications/conventional/pci_bus_power_management_interface/)します。
+たとえば、デバイスが、PCI や PCI Express バスに接続されている場合、デバイスの PCI 構成領域には電源管理の登録とするブロック デバイスの機能を示すが含まれます。 このブロックで機能フラグは、電源管理イベント、または PME (ウェイク イベントの PCI 語句) をシグナル状態、デバイスをデバイスの電源状態を指定します。 これらの状態は、D3hot と D3cold などがあります。 PCI の電源管理の詳細については、次を参照してください。、 [PCI バス Power Management Interface Specification](https://www.pcisig.com/specifications/conventional/pci_bus_power_management_interface/)します。
 
 デバイスが D3cold を入力しない場合は、デバイスは、それが入力する低電力 Dx 状態からウェイク イベントを通知できる必要があります、デバイス、親のバス コント ローラー、およびハードウェア プラットフォーム D3cold からウェイク イベントをシグナル通知をサポートしない限り、します。
 

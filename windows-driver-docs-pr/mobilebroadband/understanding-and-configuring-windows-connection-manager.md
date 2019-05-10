@@ -2,14 +2,14 @@
 title: Windows 接続マネージャーの理解と構成
 description: Windows 接続マネージャーの理解と構成
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
-ms.date: 01/07/2019
+ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7203fb01847ce67f6913b25b7209b3fb70a6c0ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edb62d851633340fe858b8fd5627654e5edea613
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383766"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106360"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>Windows 接続マネージャーの理解と構成
 
@@ -18,9 +18,8 @@ ms.locfileid: "63383766"
 
 自動接続管理、Windows 8 で導入されたは、イーサネット、Wi-fi、およびモバイル ブロード バンド インターフェイスを調べることで、接続の決定を行います。 これらの決定のリードを 自動接続し、Wi-fi とモバイル ブロード バンド インターフェイスにアクションを切断します。
 
-**注**   Windows は、イーサネット接続に応答しは、イーサネット接続を自動的に管理しません。
-
- 
+> [!NOTE]
+> Windows では、イーサネット接続に応答しは、イーサネット接続を自動的に管理しません。
 
 このトピックでは、方法 Windows 自動的に物理のワイヤレス接続を管理し、これらの接続を考慮しませんについて説明します。
 
@@ -30,12 +29,17 @@ ms.locfileid: "63383766"
 
 ## <a name="span-idconnectionmanagementpoliciesspanspan-idconnectionmanagementpoliciesspanspan-idconnectionmanagementpoliciesspanconnection-management-policies"></a><span id="Connection_management_policies"></span><span id="connection_management_policies"></span><span id="CONNECTION_MANAGEMENT_POLICIES"></span>接続の管理ポリシー
 
-
 Windows 8、Windows 8.1、および Windows 10 には、多く接続を管理するポリシーにはが含まれます。 これらのポリシーは、Windows ユーザー インターフェイスで公開されないを使用して構成することができます、 [WcmSetProperty](https://msdn.microsoft.com/library/windows/desktop/hh437602.aspx) API またはグループ ポリシー。
 
 ### <a name="span-idminimizesimultaneousconnectionsspanspan-idminimizesimultaneousconnectionsspanspan-idminimizesimultaneousconnectionsspanminimize-simultaneous-connections"></a><span id="Minimize_simultaneous_connections"></span><span id="minimize_simultaneous_connections"></span><span id="MINIMIZE_SIMULTANEOUS_CONNECTIONS"></span>同時接続を最小限に抑える
 
-このポリシーを構成を使用して、 **fMinimizeConnections**グループ ポリシー。 Windows 8、Windows 8.1、および Windows 10 の既定ではオンです。 このポリシーが無効になっている場合、動作は他のインターフェイスの接続状態に関係なく、範囲内で最も優先度のネットワークに接続する各インターフェイスを Windows 7 と同様にします。
+このポリシーを構成を使用して、 **fMinimizeConnections**グループ ポリシー。 Windows 8、Windows 8.1、および Windows 10 の既定ではオンです。
+
+#### <a name="versions-of-windows-before-windows-10-version-1809-build-17763404"></a>Windows 10、バージョンは 1809 より前に、の Windows のバージョンで 17763.404 をビルドします。
+
+Windows 8、Windows 8.1、および Windows 10、バージョンは 1809、17763.404、ビルドする前に Windows 10 のバージョンでこのポリシーは、いずれかのグループ ポリシーを使用して変更可能なブール値、または[WcmSetProperty](https://msdn.microsoft.com/library/windows/desktop/hh437602.aspx) API。
+
+このポリシーが無効になっている場合、動作は他のインターフェイスの接続状態に関係なく、範囲内で最も優先度のネットワークに接続する各インターフェイスを Windows 7 と同様にします。
 
 このポリシーを有効にすると、Windows は最適に利用可能なレベルの接続を提供する同時接続の最小数を維持しようとします。 Windows では、次のネットワークへの接続を保持します。
 
@@ -48,6 +52,26 @@ Windows 8、Windows 8.1、および Windows 10 には、多く接続を管理す
 -   PC がドメインに参加している場合、Active Directory ドメインへの接続を最も優先度
 
 残りのすべてのネットワークは論理的な-切断、ように、次のセクションで説明されています。 これは、接続されていない使用可能なネットワークの評価にも使用します。 Windows は、元となることがすぐに論理的な切断の新しいネットワークに接続できません。
+
+#### <a name="windows-10-version-1809-build-17763404-and-later"></a>Windows 10、バージョンは 1809、17763.404 およびそれ以降のビルド
+
+Windows 10、バージョンは 1809、17763.404 以降のビルドでは、この値はのみグループ ポリシーで使用可能な列挙体です。
+
+このポリシー設定は、コンピューターがインターネット、Windows ドメイン、または両方に複数の接続を持つことができるかどうかを決定します。 複数の接続が許可されている場合、ポリシーがネットワーク トラフィックをルーティングする方法を決定します。
+
+このポリシーに設定されている場合**0**コンピューターがインターネット、Windows ドメイン、または両方を同時接続を持つことができます。 携帯ネットワーク接続または任意の従量制課金接続を含む、任意の接続経由でインターネット トラフィックをルーティングできます。 これは以前、*無効*Windows 10、バージョンは 1809、17663.404 をビルドする前に、Windows のビルドでは、このポリシー設定の状態。 このオプションで初めて提供された Windows 8。
+
+このポリシーに設定されている場合**1**、任意の新しい自動インターネット接続がブロックされているコンピューターに推奨される種類のネットワークに少なくとも 1 つのアクティブなインターネット接続がある場合。 優先順位は次のとおりです。
+
+1. Ethernet
+2. WLAN
+3. Cellular
+
+イーサネットは接続されているときに常に優先します。 ユーザーは、どのネットワークに手動で接続できます。 これは以前、*有効*Windows 10、バージョンは 1809、17763.404 をビルドする前に、Windows のビルドでは、このポリシー設定の状態。 このオプションで初めて提供された Windows 8。
+
+このポリシー設定設定されている場合**2**、動作に似ていますがこれに設定すると**1**します。 ただし、携帯データ ネットワーク接続を使用できる場合、その接続は常に、携帯ネットワーク接続を必要とするサービスに接続されたままです。 ユーザーが、VLAN、またはイーサネット接続に接続されている場合は、携帯ネットワーク接続経由でにインターネット トラフィックはルーティングされません。 このオプションは、Windows 10 バージョン 1703 で使用可能な初めてされました。
+
+このポリシー設定設定されている場合**3**、動作設定されている場合に似ています**2**します。 ただし、イーサネット接続がある場合は、Windows は、WLAN に手動で接続するユーザーは許可されていません。 WLAN のみ接続できます (自動または手動で) とイーサネット接続ではありません。
 
 ### <a name="span-idsoftdisconnectspanspan-idsoftdisconnectspanspan-idsoftdisconnectspansoft-disconnect"></a><span id="Soft_disconnect"></span><span id="soft_disconnect"></span><span id="SOFT_DISCONNECT"></span>論理的な切断します。
 
