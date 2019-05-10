@@ -1,17 +1,21 @@
 - name: インストール可能ファイル システム ドライバー設計ガイド
-  href: index.md
   items:
+    - name: インストール可能ファイル システム ドライバー設計ガイド
+      href: index.md
     - name: ファイル システム ドライバー
-      href: file-system-drivers.md
       items:
+        - name: ファイル システム ドライバー
+          href: file-system-drivers.md
         - name: ファイル システム ドライバーのインストール
-          href: installing-a-file-system-driver.md
           items:
+            - name: ファイル システム ドライバーのインストール
+              href: installing-a-file-system-driver.md
             - name: ファイル システム ドライバー用の INF ファイルの作成
               href: creating-an-inf-file-for-a-file-system-driver.md
         - name: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
-          href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
           items:
+            - name: IRP_MJ_CREATE 操作での追加作成パラメーターの使用
+              href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
             - name: カーネルモード ドライバーが開始した IRP_MJ_CREATE 操作に ECP をアタッチする
               href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
             - name: ファイル システム フィルター ドライバーで ECP を使用して IRP_MJ_CREATE 操作を処理する
@@ -21,18 +25,21 @@
             - name: システム定義の ECP
               href: system-defined-ecps.md
     - name: ファイル システム フィルター ドライバー
-      href: file-system-filter-drivers.md
       items:
+        - name: ファイル システム フィルター ドライバー
+          href: file-system-filter-drivers.md
         - name: ファイル システムの基礎
-          href: file-system-fundamentals.md
           items:
+            - name: ファイル システムの基礎
+              href: file-system-fundamentals.md
             - name: ドライバーのロード時期の決定方法
               href: what-determines-when-a-driver-is-loaded.md
             - name: システム起動時のファイル システムの状態
               href: what-happens-to-file-systems-during-system-boot.md
             - name: ストレージ デバイス スタック、ストレージ ボリューム、ファイル システム スタック
-              href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
               items:
+                - name: ストレージ デバイス スタック、ストレージ ボリューム、ファイル システム スタック
+                  href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
                 - name: ストレージ デバイス スタック
                   href: storage-device-stacks.md
                 - name: ストレージ ボリューム
@@ -40,27 +47,31 @@
                 - name: ファイル システム スタック
                   href: file-system-stacks.md
             - name: ボリュームのマウント
-              href: mounting-a-volume.md
               items:
+                - name: ボリュームのマウント
+                  href: mounting-a-volume.md
                 - name: ボリュームのマウント方法
                   href: how-the-volume-is-mounted.md
                 - name: ボリュームのマウントの例
                   href: volume-mount-example.md
         - name: ファイル システム フィルター ドライバーの概要
-          href: introduction-to-file-system-filter-drivers.md
           items:
+            - name: ファイル システム フィルター ドライバーの概要
+              href: introduction-to-file-system-filter-drivers.md
             - name: ファイル システム フィルター ドライバーについて
               href: what-is-a-file-system-filter-driver-.md
             - name: ファイル システム フィルター ドライバーとデバイス ドライバーの違い
-              href: file-system-filter-drivers-are-not-device-drivers.md
               items:
+                - name: ファイル システム フィルター ドライバーとデバイス ドライバーの違い
+                  href: file-system-filter-drivers-are-not-device-drivers.md
                 - name: ファイル システム フィルター ドライバーとデバイス ドライバーの類似点
                   href: how-file-system-filter-drivers-are-similar-to-device-drivers.md
                 - name: ファイル システム フィルター ドライバーとデバイス ドライバーの相違点
                   href: how-file-system-filter-drivers-are-different-from-device-drivers.md
             - name: ファイル システム フィルター ドライバーのインストール
-              href: installing-a-file-system-filter-driver.md
               items:
+                - name: ファイル システム フィルター ドライバーのインストール
+                  href: installing-a-file-system-filter-driver.md
                 - name: ファイル システム フィルター ドライバー用の INF ファイルの作成
                   href: creating-an-inf-file-for-a-file-system-filter-driver.md
                 - name: 'ファイル システム フィルター ドライバー用のロード順序グループ '
@@ -72,8 +83,9 @@
                 - name: INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール
                   href: using-an-inf-file-to-uninstall-a-file-system-filter-driver.md
             - name: ファイル システム フィルター ドライバーの初期化
-              href: initializing-a-file-system-filter-driver.md
               items:
+                - name: ファイル システム フィルター ドライバーの初期化
+                  href: initializing-a-file-system-filter-driver.md
                 - name: コントロール デバイス オブジェクトの作成
                   href: creating-the-control-device-object.md
                 - name: IRP ディスパッチ ルーチンの登録
@@ -91,8 +103,9 @@
                 - name: 返される状態
                   href: returning-status.md
             - name: ファイル システムまたはボリュームへのフィルターのアタッチ
-              href: attaching-a-filter-to-a-file-system-or-volume.md
               items:
+                - name: ファイル システムまたはボリュームへのフィルターのアタッチ
+                  href: attaching-a-filter-to-a-file-system-or-volume.md
                 - name: フィルター デバイス オブジェクトの作成
                   href: creating-the-filter-device-object.md
                 - name: フィルター デバイス オブジェクトのターゲット デバイス オブジェクトへのアタッチ
@@ -104,13 +117,15 @@
                 - name: DO_DEVICE_INITIALIZING フラグのクリア
                   href: clearing-the-do-device-initializing-flag.md
         - name: IRP と高速 I/O のフィルタリング
-          href: filtering-irps-and-fast-i-o.md
           items:
+            - name: IRP と高速 I/O のフィルタリング
+              href: filtering-irps-and-fast-i-o.md
             - name: IRP と高速 I/O の違い
               href: irps-are-different-from-fast-i-o.md
             - name: ファイル システム フィルター ドライバーが使用するデバイス オブジェクトの種類
-              href: types-of-device-objects-used-by-file-system-filter-drivers.md
               items:
+                - name: ファイル システム フィルター ドライバーが使用するデバイス オブジェクトの種類
+                  href: types-of-device-objects-used-by-file-system-filter-drivers.md
                 - name: フィルター ドライバーのコントロール デバイス オブジェクト
                   href: the-filter-driver-s-control-device-object.md
                 - name: ファイル システムにアタッチされるフィルター デバイス オブジェクト
@@ -118,8 +133,9 @@
                 - name: ボリュームにアタッチされるフィルター デバイス オブジェクト
                   href: filter-device-object-attached-to-a-volume.md
         - name: IRP ディスパッチ ルーチンの記述
-          href: writing-irp-dispatch-routines.md
           items:
+            - name: IRP ディスパッチ ルーチンの記述
+              href: writing-irp-dispatch-routines.md
             - name: IRP の完了
               href: completing-the-irp.md
             - name: IRP を下位レベルのドライバーに渡す
@@ -133,8 +149,9 @@
             - name: ディスパッチ ルーチン IRQL とスレッド コンテキスト
               href: dispatch-routine-irql-and-thread-context.md
         - name: IRP 完了ルーチンの使用
-          href: using-irp-completion-routines.md
           items:
+            - name: IRP 完了ルーチンの使用
+              href: using-irp-completion-routines.md
             - name: 完了処理の実行方法
               href: how-completion-processing-is-performed.md
             - name: PendingReturned フラグの確認
@@ -146,13 +163,15 @@
             - name: 完了ルーチンに関する制約
               href: constraints-on-completion-routines.md
         - name: レガシ ファイル システム フィルター ドライバー内のストリーム別コンテキストの追跡
-          href: tracking-per-stream-context-in-a-legacy-file-system-filter-driver.md
           items:
+            - name: レガシ ファイル システム フィルター ドライバー内のストリーム別コンテキストの追跡
+              href: tracking-per-stream-context-in-a-legacy-file-system-filter-driver.md
             - name: ファイル ストリーム、ストリーム コンテキスト、ストリーム別コンテキスト
               href: file-streams--stream-contexts--and-per-stream-contexts.md
             - name: ストリーム別コンテキスト構造の作成と使用
-              href: creating-and-using-per-stream-context-structures.md
               items:
+                - name: ストリーム別コンテキスト構造の作成と使用
+                  href: creating-and-using-per-stream-context-structures.md
                 - name: ストリーム別コンテキストの作成
                   href: creating-a-per-stream-context.md
                 - name: ストリーム別コンテキストとファイル ストリームの関連付け
@@ -164,18 +183,21 @@
         - name: レガシ ファイル システム フィルター ドライバーのブロック
           href: blocking-file-system-filter-drivers.md
     - name: ファイル システム ミニフィルター ドライバー
-      href: file-system-minifilter-drivers.md
       items:
+        - name: ファイル システム ミニフィルター ドライバー
+          href: file-system-minifilter-drivers.md
         - name: フィルター マネージャーとミニフィルター ドライバー アーキテクチャ
-          href: filter-manager-and-minifilter-driver-architecture.md
           items:
+            - name: フィルター マネージャーとミニフィルター ドライバー アーキテクチャ
+              href: filter-manager-and-minifilter-driver-architecture.md
             - name: フィルター マネージャーの概念
               href: filter-manager-concepts.md
             - name: フィルター マネージャー モデルの利点
               href: advantages-of-the-filter-manager-model.md
             - name: ミニフィルター ドライバーに対するフィルター マネージャーのサポート
-              href: filter-manager-support-for-minifilter-drivers.md
               items:
+                - name: ミニフィルター ドライバーに対するフィルター マネージャーのサポート
+                  href: filter-manager-support-for-minifilter-drivers.md
                 - name: ロードとアンロード
                   href: loading-and-unloading.md
                 - name: I/O 操作の処理
@@ -201,8 +223,9 @@
             - name: レガシ フィルター ドライバーの移植ガイドライン
               href: guidelines-for-porting-legacy-filter-drivers.md
         - name: ミニフィルター ドライバーのインストール
-          href: installing-a-minifilter-driver.md
           items:
+            - name: ミニフィルター ドライバーのインストール
+              href: installing-a-minifilter-driver.md
             - name: ミニフィルター ドライバー用の INF ファイルの作成
               href: creating-an-inf-file-for-a-minifilter-driver.md
             - name: ミニフィルター ドライバー用のロード順序グループと高度
@@ -214,8 +237,9 @@
             - name: 再解析ポイント タグ要求
               href: reparse-point-tag-request.md
         - name: ミニフィルター ドライバー用の DriverEntry ルーチンの記述
-          href: writing-a-driverentry-routine-for-a-minifilter-driver.md
           items:
+            - name: ミニフィルター ドライバー用の DriverEntry ルーチンの記述
+              href: writing-a-driverentry-routine-for-a-minifilter-driver.md
             - name: ミニフィルター ドライバーの登録
               href: registering-the-minifilter-driver.md
             - name: フィルタリングの開始
@@ -223,13 +247,15 @@
             - name: ミニフィルター DriverEntry ルーチンから返される状態
               href: returning-status-from-a-minifilter-driverentry-routine.md
         - name: ミニフィルター ドライバー用の FilterUnloadCallback ルーチンの記述
-          href: writing-a-filterunloadcallback-routine-for-a-minifilter-driver.md
           items:
+            - name: ミニフィルター ドライバー用の FilterUnloadCallback ルーチンの記述
+              href: writing-a-filterunloadcallback-routine-for-a-minifilter-driver.md
             - name: FilterUnloadCallback ルーチンの呼び出し時期
               href: when-the-filterunloadcallback-routine-is-called.md
             - name: FilterUnloadCallback ルーチンの記述
-              href: writing-a-filterunloadcallback-routine.md
               items:
+                - name: FilterUnloadCallback ルーチンの記述
+                  href: writing-a-filterunloadcallback-routine.md
                 - name: 通信サーバー ポートを閉じる
                   href: closing-the-communication-server-port.md
                 - name: ミニフィルターの登録解除
@@ -239,18 +265,21 @@
                 - name: FilterUnloadCallback ルーチンから返される状態
                   href: returning-status-from-a-filterunloadcallback-routine.md
         - name: 操作前と操作後のコールバック ルーチンの記述
-          href: writing-preoperation-and-postoperation-callback-routines.md
           items:
+            - name: 操作前と操作後のコールバック ルーチンの記述
+              href: writing-preoperation-and-postoperation-callback-routines.md
             - name: 操作前と操作後のコールバック ルーチンの登録
               href: registering-preoperation-and-postoperation-callback-routines.md
             - name: ミニフィルター ドライバーでの I/O 操作のフィルタリング
               href: filtering-i-o-operations-in-a-minifilter-driver.md
             - name: 操作前コールバック ルーチンの記述
-              href: writing-preoperation-callback-routines.md
               items:
+                - name: 操作前コールバック ルーチンの記述
+                  href: writing-preoperation-callback-routines.md
                 - name: 下のミニフィルター ドライバー インスタンス スタックへ I/O 操作を渡す
-                  href: passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md
                   items:
+                    - name: 下のミニフィルター ドライバー インスタンス スタックへ I/O 操作を渡す
+                      href: passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md
                     - name: FLT_PREOP_SUCCESS_WITH_CALLBACK が返される場合
                       href: returning-flt-preop-success-with-callback.md
                     - name: FLT_PREOP_SUCCESS_NO_CALLBACK が返される場合
@@ -264,11 +293,13 @@
                 - name: 操作前コールバック ルーチン内で I/O 操作を保留にする
                   href: pending-an-i-o-operation-in-a-preoperation-callback-routine.md
             - name: 操作後コールバック ルーチンの記述
-              href: writing-postoperation-callback-routines.md
               items:
+                - name: 操作後コールバック ルーチンの記述
+                  href: writing-postoperation-callback-routines.md
                 - name: I/O 操作の完了処理を実行する
-                  href: performing-completion-processing-for-an-i-o-operation.md
                   items:
+                    - name: I/O 操作の完了処理を実行する
+                      href: performing-completion-processing-for-an-i-o-operation.md
                     - name: 完了処理が安全な IRQL で実行されるようにする
                       href: ensuring-that-completion-processing-is-performed-at-safe-irql.md
                 - name: 操作後コールバック ルーチン内で I/O 操作を保留にする
@@ -278,8 +309,9 @@
             - name: I/O 操作用のパラメーターの修正
               href: modifying-the-parameters-for-an-i-o-operation.md
             - name: I/O 操作用のバッファー処理メソッドの確認
-              href: determining-the-buffering-method-for-an-i-o-operation.md
               items:
+                - name: I/O 操作用のバッファー処理メソッドの確認
+                  href: determining-the-buffering-method-for-an-i-o-operation.md
                 - name: IRP ベースまたは高速 I/O とすることが可能な操作
                   href: operations-that-can-be-irp-based-or-fast-i-o.md
                 - name: デバイス オブジェクト フラグに従う IRP ベースの I/O 操作
@@ -293,15 +325,17 @@
                 - name: バッファーが存在しない IRP ベースの I/O 操作
                   href: irp-based-i-o-operations-that-have-no-buffers.md
             - name: I/O 操作用のユーザー バッファーへのアクセス
-              href: accessing-the-user-buffers-for-an-i-o-operation.md
               items:
+                - name: I/O 操作用のユーザー バッファーへのアクセス
+                  href: accessing-the-user-buffers-for-an-i-o-operation.md
                 - name: 操作前コールバック ルーチン内でユーザー バッファーへアクセスする
                   href: accessing-user-buffers-in-a-preoperation-callback-routine.md
                 - name: 操作後コールバック ルーチン内でユーザー バッファーへアクセスする
                   href: accessing-user-buffers-in-a-postoperation-callback-routine.md
         - name: ミニフィルター ドライバーでのコンテキストの管理
-          href: managing-contexts-in-a-minifilter-driver.md
           items:
+            - name: ミニフィルター ドライバーでのコンテキストの管理
+              href: managing-contexts-in-a-minifilter-driver.md
             - name: コンテキストの種類の登録
               href: registering-context-types.md
             - name: コンテキストの作成
@@ -323,24 +357,29 @@
             - name: ベスト プラクティス
               href: best-practices.md
     - name: ネットワーク リダイレクター ドライバー
-      href: network-redirector-drivers.md
       items:
+        - name: ネットワーク リダイレクター ドライバー
+          href: network-redirector-drivers.md
         - name: リモート ファイル システムの概要
-          href: introduction-to-remote-file-systems.md
           items:
+            - name: リモート ファイル システムの概要
+              href: introduction-to-remote-file-systems.md
             - name: リモート ファイル システムのコンポーネント
               href: components-of-a-remote-file-system.md
         - name: ネットワーク リダイレクターの概要
-          href: introduction-to-network-redirectors.md
           items:
+            - name: ネットワーク リダイレクターの概要
+              href: introduction-to-network-redirectors.md
             - name: ネットワーク リダイレクターについて
-              href: what-is-a-network-redirector-.md
               items:
+                - name: ネットワーク リダイレクターについて
+                  href: what-is-a-network-redirector-.md
                 - name: ネットワーク リダイレクターの基本的なアーキテクチャ
                   href: basic-architecture-of-a-network-redirector.md
             - name: カーネルモードのネットワーク リダイレクター ドライバー
-              href: the-kernel-mode-network-redirector-driver.md
               items:
+                - name: カーネルモードのネットワーク リダイレクター ドライバー
+                  href: the-kernel-mode-network-redirector-driver.md
                 - name: ネットワーク リダイレクターの設計とパフォーマンス
                   href: network-redirector-design-and-performance.md
                 - name: Windows NT におけるネットワーク リダイレクターの設計
@@ -350,15 +389,17 @@
                 - name: リダイレクトされたドライブのバッファー サブシステム
                   href: the-redirected-drive-buffering-subsystem.md
                 - name: Oplock セマンティクス
-                  href: oplock-semantics.md
                   items:
+                    - name: Oplock セマンティクス
+                      href: oplock-semantics.md
                     - name: 概要
                       href: overview.md
                     - name: Oplock の付与
                       href: granting-oplocks.md
                     - name: Oplock の破損
-                      href: breaking-oplocks.md
                       items:
+                        - name: Oplock の破損
+                          href: breaking-oplocks.md
                         - name: IRP_MJ_CREATE
                           href: irp-mj-create2.md
                         - name: IRP_MJ_READ
@@ -376,11 +417,13 @@
                     - name: Oplock の破損の確認
                       href: acknowledging-oplock-breaks.md
         - name: カーネル ネットワーク リダイレクター ドライバーのコンポーネント
-          href: kernel-network-redirector-driver-components.md
           items:
+            - name: カーネル ネットワーク リダイレクター ドライバーのコンポーネント
+              href: kernel-network-redirector-driver-components.md
             - name: RDBSS ドライバーとライブラリ
-              href: the-rdbss-driver-and-library.md
               items:
+                - name: RDBSS ドライバーとライブラリ
+                  href: the-rdbss-driver-and-library.md
                 - name: RDBSS が提供するルーチン
                   href: routines-provided-by-rdbss.md
                 - name: RDBSS が定義するマクロ
@@ -402,8 +445,9 @@
                 - name: RX_CONTEXT と IRP 管理
                   href: rx-context-and-irp-management.md
                 - name: 接続とファイル構造管理
-                  href: connection-and-file-structure-management.md
                   items:
+                    - name: 接続とファイル構造管理
+                      href: connection-and-file-structure-management.md
                     - name: SRV_CALL 構造
                       href: the-srv-call-structure.md
                     - name: NET_ROOT 構造
@@ -437,8 +481,9 @@
                 - name: 接続エンジン管理
                   href: connection-engine-management.md
             - name: カーネル ネットワーク ミニリダイレクター ドライバー
-              href: the-kernel-network-mini-redirector-driver.md
               items:
+                - name: カーネル ネットワーク ミニリダイレクター ドライバー
+                  href: the-kernel-network-mini-redirector-driver.md
                 - name: カーネル ネットワーク ミニリダイレクターによって実装されるルーチン
                   href: routines-implemented-by-the-kernel-network-mini-redirector.md
                 - name: RDBSS が使用しないルーチン
@@ -456,8 +501,9 @@
                 - name: その他のネットワーク ミニリダイレクター ルーチン
                   href: miscellaneous-network-mini-redirector-routines.md
         - name: カーネル ネットワーク リダイレクターの記述
-          href: writing-a-kernel-network-redirector.md
           items:
+            - name: カーネル ネットワーク リダイレクターの記述
+              href: writing-a-kernel-network-redirector.md
             - name: UNC 名前付けと MUP のサポート
               href: support-for-unc-naming-and-mup.md
             - name: MUP と DFS の対話
@@ -469,18 +515,21 @@
             - name: ネットワーク リダイレクターとファイル システムの処理
               href: network-redirectors-and-the-file-system-process.md
     - name: ファイル システムのセキュリティに関する考慮事項
-      href: security-considerations-for-file-systems.md
       items:
+        - name: ファイル システムのセキュリティに関する考慮事項
+          href: security-considerations-for-file-systems.md
         - name: ファイル システムのセキュリティの概要
           href: introduction-to-file-systems-security.md
         - name: ドライバーの一般的なセキュリティに関する問題
-          href: general-driver-security-issues.md
           items:
+            - name: ドライバーの一般的なセキュリティに関する問題
+              href: general-driver-security-issues.md
             - name: ドライバーのセキュリティについて
               href: what-is-driver-security.md
             - name: セキュリティ脅威モデルを使用した設計
-              href: designing-with-security-threat-models.md
               items:
+                - name: セキュリティ脅威モデルを使用した設計
+                  href: designing-with-security-threat-models.md
                 - name: なりすまし
                   href: spoofing-identity.md
                 - name: データの改ざん
@@ -494,8 +543,9 @@
                 - name: 特権の昇格
                   href: elevation-of-privilege.md
             - name: ファイル システムを実装してセキュリティの脅威を最小限にする
-              href: implementing-file-systems-to-minimize-security-threats.md
               items:
+                - name: ファイル システムを実装してセキュリティの脅威を最小限にする
+                  href: implementing-file-systems-to-minimize-security-threats.md
                 - name: バッファー処理
                   href: buffer-handling.md
                 - name: 認証と ID
@@ -507,11 +557,13 @@
             - name: セキュリティのテスト
               href: testing-for-security.md
         - name: ファイル システム向けのセキュリティ機能
-          href: security-features-for-file-systems.md
           items:
+            - name: ファイル システム向けのセキュリティ機能
+              href: security-features-for-file-systems.md
             - name: セキュリティ記述子
-              href: security-descriptors.md
               items:
+                - name: セキュリティ記述子
+                  href: security-descriptors.md
                 - name: セキュリティ識別子
                   href: security-identifier.md
                 - name: アクセス マスク
@@ -527,11 +579,13 @@
             - name: カーネル拡張属性
               href: kernel-extended-attributes.md
         - name: ファイル システムのセキュリティに関する問題
-          href: file-system-security-issues.md
           items:
+            - name: ファイル システムのセキュリティに関する問題
+              href: file-system-security-issues.md
             - name: セマンティック モデルの確認
-              href: semantic-model-checks.md
               items:
+                - name: セマンティック モデルの確認
+                  href: semantic-model-checks.md
                 - name: 作成処理
                   href: create-processing.md
                 - name: 閉じるときに削除
@@ -549,13 +603,15 @@
                 - name: メディアの検証
                   href: media-validation.md
             - name: セキュリティの検査
-              href: security-checks.md
               items:
+                - name: セキュリティの検査
+                  href: security-checks.md
                 - name: デバイス オブジェクトに対するセキュリティ記述子の摘要
                   href: applying-security-descriptors-on-the-device-object.md
                 - name: IRP_MJ_CREATE ディスパッチ ルーチン
-                  href: irp-mj-create-dispatch-routine.md
                   items:
+                    - name: IRP_MJ_CREATE ディスパッチ ルーチン
+                      href: irp-mj-create-dispatch-routine.md
                     - name: IRP_MJ_CREATE での走査特権の確認
                       href: checking-for-traverse-privilege-on-irp-mj-create.md
                     - name: IRP_MJ_CREATE でのその他の特殊ケースの確認
@@ -581,8 +637,9 @@
                 - name: 処理とスレッド終了に関する問題
                   href: process-and-thread-termination-issues.md
         - name: ファイル システム フィルター ドライバーのセキュリティに関する考慮事項
-          href: security-considerations-for-file-system-filter-drivers.md
           items:
+            - name: ファイル システム フィルター ドライバーのセキュリティに関する考慮事項
+              href: security-considerations-for-file-system-filter-drivers.md
             - name: ファイル システム フィルター ドライバーでのプロキシ操作
               href: proxy-operations-in-file-system-filter-drivers.md
             - name: ファイル システム フィルター ドライバーでの偽装
@@ -594,8 +651,9 @@
             - name: ファイル システム フィルター ドライバーの再解析ポイント
               href: reparse-points-in-a-file-system-filter-driver.md
     - name: その他の情報
-      href: miscellaneous-information.md
       items:
+        - name: その他の情報
+          href: miscellaneous-information.md
         - name: Windows コンテナー用のウイルス対策最適化
           href: anti-virus-optimization-for-windows-containers.md
         - name: オフロード データ転送
@@ -605,8 +663,9 @@
         - name: 重複するボリューム名がある場合のボリュームの列挙について
           href: understanding-volume-enumerations-with-duplicate-volume-names.md
     - name: リファレンス
-      href: ifs-reference.md
       items:
+        - name: リファレンス
+          href: ifs-reference.md
         - name: CcIsThereDirtyLoggedPages
           href: ccistheredirtyloggedpages.md
         - name: CcSetLogHandleForFileEx
@@ -614,8 +673,9 @@
         - name: CcSetLoggedDataThreshold
           href: ccsetloggeddatathreshold.md
         - name: CcSetReadAheadGranularityEx
-          href: ccsetreadaheadgranularityex.md
           items:
+            - name: CcSetReadAheadGranularityEx
+              href: ccsetreadaheadgranularityex.md
             - name: READ_AHEAD_PARAMETERS
               href: read-ahead-parameters.md
         - name: CcUnmapFileOffsetFromSystemCache

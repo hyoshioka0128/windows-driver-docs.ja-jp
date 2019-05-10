@@ -4,12 +4,12 @@ description: デバイスの基礎 PnP テスト PnP Irp; のほぼすべてを�
 ms.assetid: 4224F92B-5430-4F55-900D-0B08ADBE54F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6a7d773b8c5111dd7577db676e4f09aa8e0b688
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27b170a9b1e0db4666b7afe370e3b23f435e7384
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356304"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405111"
 ---
 # <a name="pnp-tests-device-fundamentals"></a>PnP テスト (Device Fundamental)
 
@@ -302,7 +302,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 
 [Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
-[テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[テストを選択し、デバイスの基本を構成する方法](https://docs.microsoft.com/windows-hardware/drivers/develop/how-to-select-and-configure-the-device-fundamental-tests)
 
 [Device Fundamental のテスト](device-fundamentals-tests.md)
 

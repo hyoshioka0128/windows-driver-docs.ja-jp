@@ -3,8 +3,9 @@
 - name: What's new in driver development
   href: what-s-new-in-driver-development.md
 - name: Windows Driver Kit (WDK) のダウンロード
-  href: download-the-wdk.md
   items:
+    - name: Windows Driver Kit (WDK) のダウンロード
+      href: download-the-wdk.md
     - name: 以前のバージョンの WDK のインストール
       href: installing-preview-versions-wdk.md
     - name: その他の WDK のダウンロード
@@ -28,8 +29,9 @@
 - name: Windows ストア デバイス アプリ
   href: devapps/index.md
 - name: デバイス テクノロジとドライバー テクノロジ
-  href: device-and-driver-technologies.md
   items:
+    - name: デバイス テクノロジとドライバー テクノロジ
+      href: device-and-driver-technologies.md
     - name: 3D 印刷デバイス
       href: 3dprint/index.md
     - name: ACPI

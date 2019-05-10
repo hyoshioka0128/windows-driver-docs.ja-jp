@@ -3,12 +3,12 @@ Description: USB デバイス Emulation(UDE) クラスの拡張機能と、ク�
 title: UDE クライアント ドライバーを記述する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 33419b91aa06d9e88c4faee51350b657b176914d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c532625e600f807b83d44844dd0ba55f8e094f28
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389109"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501758"
 ---
 # <a name="write-a-ude-client-driver"></a>UDE クライアント ドライバーを記述する
 
@@ -374,7 +374,7 @@ Controller_EvtControllerQueryUsbCapability(
    - [*EVT\_UDECX\_USB\_デバイス\_設定\_関数\_SUSPEND\_AND\_WAKE*](https://msdn.microsoft.com/library/windows/hardware/mt595915)
 
 3. 呼び出す[ **UdecxUsbDeviceInitSetSpeed** ](https://msdn.microsoft.com/library/windows/hardware/mt627971) USB デバイスの速度ともデバイス、USB 2.0 または SuperSpeed デバイスの種類を設定します。
-4. 呼び出す[ **UdecxUsbDeviceInitSetEndpointsType** ](https://msdn.microsoft.com/library/windows/hardware/mt627970)デバイスをサポートするエンドポイントの種類を指定する: 単純型または動的です。 クライアント ドライバーが単純なエンドポイントを作成することを選択する場合、ドライバーは、デバイスを接続する前にエンドポイントのすべてのオブジェクトを作成する必要があります。 デバイスは、インターフェイスあたり 1 つだけの構成とインターフェイスの 1 つだけ設定が必要です。 動的のエンドポイントの場合、ドライバーは、受信したときに、デバイスを接続した後、いつでもにエンドポイントを作成できます、 [ *EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://msdn.microsoft.com/library/windows/hardware/mt595913)イベント コールバック。 参照してください[動的エンドポイントを作成する](#dynamic)します。
+4. 呼び出す[ **UdecxUsbDeviceInitSetEndpointsType** ](https://msdn.microsoft.com/library/windows/hardware/mt627970)デバイスをサポートするエンドポイントの種類を指定する: 単純型または動的です。 クライアント ドライバーが単純なエンドポイントを作成することを選択する場合、ドライバーは、デバイスを接続する前にエンドポイントのすべてのオブジェクトを作成する必要があります。 デバイスは、インターフェイスあたり 1 つだけの構成とインターフェイスの 1 つだけ設定が必要です。 動的のエンドポイントの場合、ドライバーは、受信したときに、デバイスを接続した後、いつでもにエンドポイントを作成できます、 [ *EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://msdn.microsoft.com/library/windows/hardware/mt595913)イベント コールバック。 参照してください[動的エンドポイントを作成する](#create-dynamic-endpoints)します。
 5. これらのデバイスに必要な記述子を追加するメソッドを呼び出します。
 
    - [**UdecxUsbDeviceInitAddDescriptor**](https://msdn.microsoft.com/library/windows/hardware/mt627964)
@@ -399,7 +399,7 @@ Controller_EvtControllerQueryUsbCapability(
      ただし、インターフェイス、クラス固有またはベンダー定義の記述子の要求、UDE クラスの拡張機能に転送クライアント ドライバー。 ドライバーは、GET を処理する必要があります\_記述子要求。
 
 6. 呼び出す[ **UdecxUsbDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/mt595959) UDE デバイス オブジェクトを作成および UDECXUSBDEVICE ハンドルを取得します。
-7. 静的なエンドポイントを呼び出すことによって作成[ **UdecxUsbEndpointCreate**](https://msdn.microsoft.com/library/windows/hardware/mt627983)します。 参照してください[静的なエンドポイントを作成する](#static)します。
+7. 静的なエンドポイントを呼び出すことによって作成[ **UdecxUsbEndpointCreate**](https://msdn.microsoft.com/library/windows/hardware/mt627983)します。 参照してください[単純なエンドポイントを作成する](#create-simple-endpoints)します。
 8. 呼び出す[ **UdecxUsbDevicePlugIn** ](https://msdn.microsoft.com/library/windows/hardware/mt627975)をデバイスが接続されているし、エンドポイント上の I/O 要求を受信できる UDE クラスの拡張機能を示します。 この呼び出しの後、クラス拡張もエンドポイントおよび USB デバイスのコールバック関数を呼び出すことができます。
     **注**クライアント ドライバーを呼び出すことができる場合、USB デバイスは、実行時に削除する必要があります、 [ **UdecxUsbDevicePlugOutAndDelete**](https://msdn.microsoft.com/library/windows/hardware/mt627977)します。 ドライバーは、デバイスを使用する場合、その必要がありますを呼び出して作成[ **UdecxUsbDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/mt595959)します。
 
@@ -714,7 +714,7 @@ exit:
 [*EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://msdn.microsoft.com/library/windows/hardware/mt595913)  
 クライアント ドライバーでは、代替の設定を選択する、現在のエンドポイントを無効にする、または動的エンドポイントを追加で構成を変更します。
 
-クライアント ドライバーでは、呼び出し中に、上記のコールバックが登録されている[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://msdn.microsoft.com/library/windows/hardware/mt627972)します。 作成するを参照[仮想の USB デバイス](#device)します。
+クライアント ドライバーでは、呼び出し中に、上記のコールバックが登録されている[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://msdn.microsoft.com/library/windows/hardware/mt627972)します。 作成するを参照[仮想の USB デバイス](#create-a-virtual-usb-device)します。
 このメカニズムにより、クライアント ドライバーを USB 構成とデバイスのインターフェイスの設定を動的に変更します。 たとえば、エンドポイント オブジェクトが必要ですか、既存の endpoint オブジェクトを解放する必要があります、クラス拡張機能から呼び出さ、 [ *EVT\_UDECX\_USB\_デバイス\_エンドポイント\_構成*](https://msdn.microsoft.com/library/windows/hardware/mt595913)します。
 
 クライアント ドライバーがコールバック関数の実装内でエンドポイント オブジェクト UDECXUSBENDPOINT ハンドルを作成し、シーケンスの概要を次に示します。

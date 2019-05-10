@@ -1,18 +1,21 @@
 - name: 汎用 I/O (GPIO) ドライバーの設計ガイド
-  href: index.md
   items:
+    - name: 汎用 I/O (GPIO) ドライバーの設計ガイド
+      href: index.md
     - name: GPIO ドライバー サポートの概要
       href: gpio-driver-support-overview.md
     - name: GpioClx I/O と割り込みインターフェイス
       href: gpioclx-i-o-and-interrupt-interfaces.md
     - name: GPIO ベースのハードウェア リソース
-      href: gpio-based-hardware-resources.md
       items:
+        - name: GPIO ベースのハードウェア リソース
+          href: gpio-based-hardware-resources.md
         - name: KMDF ドライバーの GPIO I/O ピンへの接続
           href: connecting-a-kmdf-driver-to-gpio-i-o-pins.md
     - name: GPIO 割り込み
-      href: gpio-interrupts.md
       items:
+        - name: GPIO 割り込み
+          href: gpio-interrupts.md
         - name: プライマリ割り込みとセカンダリ割り込み
           href: primary-and-secondary-interrupts.md
         - name: GPIO ベースの割り込みリソース
@@ -28,8 +31,9 @@
         - name: GPIO 割り込みマスク
           href: gpio-interrupt-masks.md
     - name: GpioClx DDI
-      href: gpioclx-ddi.md
       items:
+        - name: GpioClx DDI
+          href: gpioclx-ddi.md
         - name: GpioClx DDI のドライバー サポート メソッド
           href: driver-support-methods-in-the-gpioclx-ddi.md
         - name: 省略可能および必須の GPIO コールバック関数

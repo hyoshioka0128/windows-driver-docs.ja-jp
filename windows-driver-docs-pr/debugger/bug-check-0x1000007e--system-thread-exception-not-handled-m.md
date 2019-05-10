@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 999354b922a7e0cffe60da453e506a5fd685e303
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d776f4cfe87895c1fed04cc1ff3138e34fb48ed
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347862"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501547"
 ---
 # <a name="bug-check-0x1000007e-systemthreadexceptionnothandledm"></a>バグ チェック 0x1000007E:システム\_スレッド\_例外\_いない\_HANDLED\_M
 
@@ -30,7 +30,8 @@ ms.locfileid: "63347862"
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
 
-
+## <a name="resolution"></a>解決方法
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
  
 
  

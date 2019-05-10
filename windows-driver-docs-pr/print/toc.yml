@@ -1,18 +1,21 @@
 - name: プリンター ドライバー設計ガイド
   href: index.md
 - name: V4 プリンター ドライバー
-  href: v4-printer-driver.md
   items:
+    - name: V4 プリンター ドライバー
+      href: v4-printer-driver.md
     - name: V4 プリンター ドライバー レンダリング
-      href: v4-driver-rendering.md
       items:
+        - name: V4 プリンター ドライバー レンダリング
+          href: v4-driver-rendering.md
         - name: V4 プリンター ドライバー レンダリング アーキテクチャ
           href: v4-driver-rendering-architecture.md
         - name: XPSDrv の改善
           href: improvements-in-xpsdrv.md
         - name: 標準 XPS フィルター
-          href: standard-xps-filters.md
           items:
+            - name: 標準 XPS フィルター
+              href: standard-xps-filters.md
             - name: サポートされている PrintTicket 機能
               href: supported-printticket-features.md
             - name: 既定の PageMediaSize マッピング
@@ -20,8 +23,9 @@
         - name: V4 印刷クラス ドライバー レンダリング
           href: print-class-driver-rendering.md
     - name: V4 プリンター ドライバー構成
-      href: v4-driver-configuration.md
       items:
+        - name: V4 プリンター ドライバー構成
+          href: v4-driver-configuration.md
         - name: V4 プリンター ドライバー構成アーキテクチャ
           href: v4-driver-configuration-architecture.md
         - name: 構成形式の改善
@@ -33,15 +37,17 @@
         - name: V4 プリンター ドライバー ローカライズ
           href: v4-driver-localization.md
         - name: 保護された印刷のドライバー サポート
-          href: driver-support-for-protected-printing.md
           items:
+            - name: 保護された印刷のドライバー サポート
+              href: driver-support-for-protected-printing.md
             - name: PIN 印刷のサンプル PrintTicket ファイル
               href: sample-printticket-file-for-pin-printing.md
             - name: PIN 印刷のサンプル PrintCapabilities ファイル
               href: sample-printcapabilities-file-for-pin-printing.md
     - name: V4 プリンター ドライバー セットアップ
-      href: v4-driver-setup.md
       items:
+        - name: V4 プリンター ドライバー セットアップ
+          href: v4-driver-setup.md
         - name: V4 ドライバー セットアップ概念
           href: v4-driver-setup-concepts.md
         - name: V4 ドライバー INF
@@ -49,8 +55,9 @@
         - name: V4 ドライバー マニフェスト
           href: v4-driver-manifest.md
     - name: V4 プリンター ドライバー ユーザー インターフェイス
-      href: v4-printer-driver-user-interfaces.md
       items:
+        - name: V4 プリンター ドライバー ユーザー インターフェイス
+          href: v4-printer-driver-user-interfaces.md
         - name: V4 ドライバー UI アーキテクチャ
           href: v4-driver-ui-architecture.md
         - name: カスタマイズされた UI のドライバー サポート
@@ -64,13 +71,15 @@
         - name: プリンターの UWP デバイス アプリ
           href: uwp-device-apps-for-printers.md
     - name: V4 プリンター ドライバー接続
-      href: v4-printer-driver-connectivity.md
       items:
+        - name: V4 プリンター ドライバー接続
+          href: v4-printer-driver-connectivity.md
         - name: V4 ドライバー接続アーキテクチャ
           href: v4-driver-connectivity-architecture.md
         - name: USB 双方向エクステンダー
-          href: usb-bidi-extender.md
           items:
+            - name: USB 双方向エクステンダー
+              href: usb-bidi-extender.md
             - name: JavaScript API リファレンス
               href: javascript-api-reference-.md
         - name: 拡張ドライバー構成
@@ -78,8 +87,9 @@
         - name: Web Services on Devices for Printing (WS-Print)
           href: ws-print-v1-1.md
     - name: V4 プリンター ドライバー開発ベスト プラクティス
-      href: v4-printer-driver-development-best-practices.md
       items:
+        - name: V4 プリンター ドライバー開発ベスト プラクティス
+          href: v4-printer-driver-development-best-practices.md
         - name: ドライバー ストアの操作
           href: working-with-the-driver-store.md
         - name: 強化されたポイント アンド プリントを使いこなす
@@ -87,31 +97,37 @@
         - name: V4 プリンター ドライバー セキュリティ考慮事項
           href: v4-printer-driver-security-considerations.md
     - name: Visual Studio で v4 プリンター ドライバーをビルドする
-      href: build-a-v4-print-driver-in-visual-studio.md
       items:
+        - name: Visual Studio で v4 プリンター ドライバーをビルドする
+          href: build-a-v4-print-driver-in-visual-studio.md
         - name: 基本的な v4 プリンター ドライバーの構築
           href: building-a-basic-v4-printer-driver.md
         - name: ウィザードのドライバー オプションの詳細
           href: exploring-the-driver-options-in-the-wizard.md
 - name: Microsoft プリンター ドライバー
-  href: microsoft-printer-drivers.md
   items:
+    - name: Microsoft プリンター ドライバー
+      href: microsoft-printer-drivers.md
     - name: 印刷の概要
       href: introduction-to-printing.md
 - name: プリンター ドライバーの概要
-  href: printer-driver-overview.md
   items:
+    - name: プリンター ドライバーの概要
+      href: printer-driver-overview.md
     - name: OpenXPS のドライバー サポート
       href: driver-support-for-openxps.md
     - name: XPS プリンター ドライバー (XPSDrv)
-      href: xpsdrv-printer-driver.md
       items:
+        - name: XPS プリンター ドライバー (XPSDrv)
+          href: xpsdrv-printer-driver.md
         - name: XPSDrv レンダー モジュール
-          href: xpsdrv-render-module.md
           items:
+            - name: XPSDrv レンダー モジュール
+              href: xpsdrv-render-module.md
             - name: XPS フィルター
-              href: xps-filters.md
               items:
+                - name: XPS フィルター
+                  href: xps-filters.md
                 - name: XPS フィルターの実装
                   href: implementing-xps-filters.md
                 - name: 印刷フィルターの非同期通知
@@ -125,18 +141,21 @@
                 - name: XPSRas GPU 利用デシジョン ツリー
                   href: xpsras-usage-decision-tree.md
             - name: XPSDrv レンダー モジュールの印刷チケット サポート
-              href: print-ticket-support-in-the-xpsdrv-render-module.md
               items:
+                - name: XPSDrv レンダー モジュールの印刷チケット サポート
+                  href: print-ticket-support-in-the-xpsdrv-render-module.md
                 - name: 印刷チケット結合
                   href: print-ticket-merging.md
                 - name: 印刷チケット解析
                   href: print-ticket-parsing.md
         - name: XPSDrv 構成モジュール
-          href: xpsdrv-configuration-module.md
           items:
+            - name: XPSDrv 構成モジュール
+              href: xpsdrv-configuration-module.md
             - name: バージョン 3 XPSDrv 印刷ドライバー コンポーネント
-              href: version-3-xpsdrv-print-driver-components.md
               items:
+                - name: バージョン 3 XPSDrv 印刷ドライバー コンポーネント
+                  href: version-3-xpsdrv-print-driver-components.md
                 - name: XPSDrv ドライバー オプション
                   href: xpsdrv-driver-options.md
                 - name: XPSDrv ドライバー要件
@@ -144,8 +163,9 @@
                 - name: XPSDrv ドライバー推奨事項
                   href: xpsdrv-driver-recommendations.md
                 - name: XPSDrv ドライバー実装
-                  href: xpsdrv-driver-implementation.md
                   items:
+                    - name: XPSDrv ドライバー実装
+                      href: xpsdrv-driver-implementation.md
                     - name: GPD または PPD ファイルを基盤とする構成モジュール
                       href: configuration-modules-based-on-gpd-or-ppd-files.md
                     - name: Unidrv/PScript5 プラグイン構成モジュール
@@ -153,8 +173,9 @@
                     - name: XPS ドライバー ドキュメント イベント
                       href: xps-driver-document-events.md
                 - name: Unidrv ベースまたは PScript5 ベースの XPSDrv ドライバー変更
-                  href: unidrv-based-or-pscript5-based-xpsdrv-driver-changes.md
                   items:
+                    - name: Unidrv ベースまたは PScript5 ベースの XPSDrv ドライバー変更
+                      href: unidrv-based-or-pscript5-based-xpsdrv-driver-changes.md
                     - name: XPSDrv 向けにハード コーディングされた UniDrv および PScript5 機能
                       href: hard-coded-unidrv-and-pscript5-features-for-xpsdrv.md
                     - name: Unidrv/PScript5 XPSDrv UI 動作変更
@@ -174,11 +195,13 @@
         - name: XPSDrv インストール
           href: xpsdrv-installation.md
 - name: Microsoft ユニバーサル プリンター ドライバー
-  href: microsoft-universal-printer-driver.md
   items:
+    - name: Microsoft ユニバーサル プリンター ドライバー
+      href: microsoft-universal-printer-driver.md
     - name: ユニバーサル プリンター ドライバーの概要
-      href: introduction-to-the-universal-printer-driver.md
       items:
+        - name: ユニバーサル プリンター ドライバーの概要
+          href: introduction-to-the-universal-printer-driver.md
         - name: Unidrv 機能
           href: unidrv-capabilities.md
         - name: Unidrv コンポーネント
@@ -192,16 +215,19 @@
         - name: サンプル GPD ファイル
           href: sample-gpd-files.md
     - name: GPD ファイルの概要
-      href: introduction-to-gpd-files.md
       items:
+        - name: GPD ファイルの概要
+          href: introduction-to-gpd-files.md
         - name: GPD ファイル エントリ
-          href: gpd-file-entries.md
           items:
+            - name: GPD ファイル エントリ
+              href: gpd-file-entries.md
             - name: GPD ファイル エントリ形式
               href: gpd-file-entry-format.md
             - name: GPD 値型
-              href: gpd-value-types.md
               items:
+                - name: GPD 値型
+                  href: gpd-value-types.md
                 - name: シンボリック名
                   href: symbolic-names.md
                 - name: テキスト文字列
@@ -223,8 +249,9 @@
             - name: コメントと無視されたブロック
               href: comments-and-ignored-blocks.md
             - name: マクロ
-              href: macros.md
               items:
+                - name: マクロ
+                  href: macros.md
                 - name: ブロック マクロ
                   href: block-macros.md
                 - name: 値マクロ
@@ -240,25 +267,29 @@
         - name: ミニドライバーでリソース DLL を使用する
           href: using-resource-dlls-in-a-minidriver.md
     - name: プリンター属性
-      href: printer-attributes.md
       items:
+        - name: プリンター属性
+          href: printer-attributes.md
         - name: プリンター属性形式
           href: printer-attribute-format.md
         - name: 属性の種類
           href: attribute-types.md
         - name: 一般的な属性
-          href: general-attributes.md
           items:
+            - name: 一般的な属性
+              href: general-attributes.md
             - name: ルート レベル専用属性
-              href: root-level-only-attributes.md
               items:
+                - name: ルート レベル専用属性
+                  href: root-level-only-attributes.md
                 - name: Windows Vista の新しいルート レベル専用 GPD 属性
                   href: new-root-level-only-gpd-attributes-for-windows-vista.md
                 - name: Windows Vista の新しいルート レベル専用 PPD 属性
                   href: new-root-level-only-ppd-attributes-for-windows-vista.md
             - name: 一般的な印刷属性
-              href: general-printing-attributes.md
               items:
+                - name: 一般的な印刷属性
+                  href: general-printing-attributes.md
                 - name: プリンター機能属性
                   href: printer-capability-attributes.md
                 - name: 色属性
@@ -266,8 +297,9 @@
                 - name: カーソル属性
                   href: cursor-attributes.md
             - name: テキスト印刷属性
-              href: text-printing-attributes.md
               items:
+                - name: テキスト印刷属性
+                  href: text-printing-attributes.md
                 - name: デバイス フォントの属性
                   href: attributes-for-device-fonts.md
                 - name: ダウンロードしたフォントの属性
@@ -275,8 +307,9 @@
                 - name: シミュレーションしたフォントの属性
                   href: attributes-for-simulated-fonts.md
             - name: ラスター印刷属性
-              href: raster-printing-attributes.md
               items:
+                - name: ラスター印刷属性
+                  href: raster-printing-attributes.md
                 - name: ラスター データ圧縮属性
                   href: raster-data-compression-attributes.md
                 - name: ラスター データ出力属性
@@ -284,21 +317,25 @@
                 - name: 事前分析インフラストラクチャ
                   href: preanalysis-infrastructure.md
             - name: ベクター印刷属性
-              href: vector-printing-attributes.md
               items:
+                - name: ベクター印刷属性
+                  href: vector-printing-attributes.md
                 - name: 長方形領域塗りつぶし属性
                   href: rectangle-area-fill-attributes.md
     - name: プリンター コマンド
-      href: printer-commands.md
       items:
+        - name: プリンター コマンド
+          href: printer-commands.md
         - name: コマンド エントリ形式
           href: command-entry-format.md
         - name: コマンド名
-          href: command-names.md
           items:
+            - name: コマンド名
+              href: command-names.md
             - name: 一般的な印刷コマンド
-              href: general-printing-commands.md
               items:
+                - name: 一般的な印刷コマンド
+                  href: general-printing-commands.md
                 - name: 色コマンド
                   href: color-commands.md
                 - name: カーソル コマンド
@@ -308,8 +345,9 @@
             - name: オプション選択コマンド
               href: option-selection-command.md
             - name: テキスト印刷コマンド
-              href: text-printing-commands.md
               items:
+                - name: テキスト印刷コマンド
+                  href: text-printing-commands.md
                 - name: デバイス フォントのコマンド
                   href: commands-for-device-fonts.md
                 - name: ダウンロードしたフォントのコマンド
@@ -317,22 +355,25 @@
                 - name: シミュレーションしたフォントのコマンド
                   href: commands-for-simulated-fonts.md
             - name: ラスター印刷コマンド
-              href: raster-printing-commands.md
               items:
+                - name: ラスター印刷コマンド
+                  href: raster-printing-commands.md
                 - name: ラスター データ圧縮コマンド
                   href: raster-data-compression-commands.md
                 - name: ラスター データ出力コマンド
                   href: raster-data-emission-commands.md
             - name: ベクター印刷コマンド
-              href: vector-printing-commands.md
               items:
+                - name: ベクター印刷コマンド
+                  href: vector-printing-commands.md
                 - name: 長方形領域塗りつぶしコマンド
                   href: rectangle-area-fill-commands.md
         - name: コマンド属性
           href: command-attributes.md
         - name: コマンド文字列形式
-          href: command-string-format.md
           items:
+            - name: コマンド文字列形式
+              href: command-string-format.md
             - name: コマンド文字列引数型
               href: command-string-argument-types.md
             - name: 標準変数式
@@ -340,8 +381,9 @@
         - name: コマンド実行順序
           href: command-execution-order.md
     - name: プリンター機能
-      href: printer-features.md
       items:
+        - name: プリンター機能
+          href: printer-features.md
         - name: 標準機能
           href: standard-features.md
         - name: カスタマイズされた機能
@@ -353,8 +395,9 @@
         - name: 機能競合優先度
           href: feature-conflict-priority.md
     - name: プリンター オプション
-      href: printer-options.md
       items:
+        - name: プリンター オプション
+          href: printer-options.md
         - name: 標準オプション
           href: standard-options.md
         - name: カスタマイズされたオプション
@@ -362,8 +405,9 @@
         - name: オプション エントリ形式
           href: option-entry-format.md
         - name: オプション属性
-          href: option-attributes.md
           items:
+            - name: オプション属性
+              href: option-attributes.md
             - name: すべての機能のオプション属性
               href: option-attributes-for-all-features.md
             - name: ColorMode 機能のオプション属性
@@ -381,8 +425,9 @@
             - name: Resolution 機能のオプション属性
               href: option-attributes-for-the-resolution-feature.md
         - name: オプション制約
-          href: option-constraints.md
           items:
+            - name: オプション制約
+              href: option-constraints.md
             - name: 選択制約
               href: selection-constraints.md
             - name: インストール制約
@@ -390,13 +435,15 @@
             - name: 選択とインストールの間の制約
               href: constraints-between-selections-and-installations.md
     - name: プリンター フォント説明
-      href: printer-font-descriptions.md
       items:
+        - name: プリンター フォント説明
+          href: printer-font-descriptions.md
         - name: ハードウェア常駐フォント
           href: hardware-resident-fonts.md
         - name: フォント カートリッジ
-          href: font-cartridges.md
           items:
+            - name: フォント カートリッジ
+              href: font-cartridges.md
             - name: フォント カートリッジ属性
               href: font-cartridge-attributes.md
         - name: フォント代替
@@ -404,8 +451,9 @@
     - name: 条件文
       href: conditional-statements.md
     - name: ラスター データの圧縮
-      href: compressing-raster-data.md
       items:
+        - name: ラスター データの圧縮
+          href: compressing-raster-data.md
         - name: Unidrv でサポートされている圧縮の使用
           href: using-unidrv-supported-compression.md
         - name: カスタマイズされた圧縮の使用
@@ -415,11 +463,13 @@
     - name: 色形式の処理
       href: handling-color-formats.md
     - name: Unidrv によるハーフトーン
-      href: halftoning-with-unidrv.md
       items:
+        - name: Unidrv によるハーフトーン
+          href: halftoning-with-unidrv.md
         - name: GDI で指定されるハーフトーン
-          href: gdi-supplied-halftoning.md
           items:
+            - name: GDI で指定されるハーフトーン
+              href: gdi-supplied-halftoning.md
             - name: ミニドライバーで指定されるハーフトーン パターン
               href: minidriver-supplied-halftone-patterns.md
         - name: ミニドライバーで指定されるハーフトーン
@@ -437,8 +487,9 @@
     - name: 用紙の向きを指定する
       href: specifying-paper-orientation.md
     - name: 用紙のサイズを指定する
-      href: specifying-paper-sizes.md
       items:
+        - name: 用紙のサイズを指定する
+          href: specifying-paper-sizes.md
         - name: 標準の用紙サイズをサポートする
           href: supporting-standard-paper-sizes.md
         - name: ベンダー定義の用紙サイズをサポートする
@@ -448,11 +499,13 @@
     - name: ロケールを参照する
       href: referencing-locales.md
     - name: Unidrv ベクトル グラフィックス機能の使用
-      href: using-unidrv-vector-graphics-capabilities.md
       items:
+        - name: Unidrv ベクトル グラフィックス機能の使用
+          href: using-unidrv-vector-graphics-capabilities.md
         - name: HP-GL/2 モノクロ (PCL 5e) ベクトル グラフィックス サポート
-          href: hp-gl-2-monochrome--pcl-5e--vector-graphics-support.md
           items:
+            - name: HP-GL/2 モノクロ (PCL 5e) ベクトル グラフィックス サポート
+              href: hp-gl-2-monochrome--pcl-5e--vector-graphics-support.md
             - name: GPD で HP-GL/2 ベクトル グラフィックス サポート (PCL-5e) を有効にする
               href: enabling-hp-gl-2-vector-graphics-support--pcl-5e--in-the-gpd.md
             - name: ハーフトーン アルゴリズム
@@ -462,8 +515,9 @@
             - name: HP-GL/2 注意事項
               href: hp-gl-2-caveats.md
         - name: PCL XL (PCL-6) ベクトル グラフィックス サポート
-          href: pcl-xl--pcl-6--vector-graphics-support.md
           items:
+            - name: PCL XL (PCL-6) ベクトル グラフィックス サポート
+              href: pcl-xl--pcl-6--vector-graphics-support.md
             - name: PCL XL GPD ファイルを記述する
               href: writing-a-pcl-xl-gpd-file.md
             - name: PCL XL ミニドライバーの色のサポートを有効にする
@@ -487,15 +541,17 @@
     - name: フォーム データベースにフォームを追加する
       href: adding-forms-to-the-forms-database.md
 - name: Microsoft PostScript プリンター ドライバー
-  href: microsoft-postscript-printer-driver.md
   items:
+    - name: Microsoft PostScript プリンター ドライバー
+      href: microsoft-postscript-printer-driver.md
     - name: Pscript 機能
       href: pscript-capabilities.md
     - name: Pscript コンポーネント
       href: pscript-components.md
     - name: Pscript ミニドライバー
-      href: pscript-minidrivers.md
       items:
+        - name: Pscript ミニドライバー
+          href: pscript-minidrivers.md
         - name: AddEuro
           href: addeuro.md
         - name: AFM ファイルを NTF ファイルに変換する
@@ -521,11 +577,13 @@
     - name: Pscript でサポートされているエスケープ
       href: pscript-supported-escapes.md
     - name: PPD 固有のインターフェイス
-      href: ppd-specific-interface.md
       items:
+        - name: PPD 固有のインターフェイス
+          href: ppd-specific-interface.md
         - name: GetOptions と SetOptions の使用
-          href: using-getoptions-and-setoptions.md
           items:
+            - name: GetOptions と SetOptions の使用
+              href: using-getoptions-and-setoptions.md
             - name: PPD 機能
               href: ppd-features.md
             - name: ドライバー機能
@@ -541,8 +599,9 @@
         - name: GetOptionAttribute の使用
           href: using-getoptionattribute.md
 - name: Microsoft プロッター ドライバー
-  href: microsoft-plotter-driver.md
   items:
+    - name: Microsoft プロッター ドライバー
+      href: microsoft-plotter-driver.md
     - name: プロッター ドライバーの機能
       href: plotter-driver-capabilities.md
     - name: プロッター ドライバーのコンポーネント
@@ -550,8 +609,9 @@
     - name: サンプル プロッター ドライバー ファイル
       href: sample-plotter-driver-files.md
     - name: プロッター ドライバー ミニドライバー
-      href: plotter-driver-minidrivers.md
       items:
+        - name: プロッター ドライバー ミニドライバー
+          href: plotter-driver-minidrivers.md
         - name: PCD ソース ファイル形式
           href: pcd-source-file-format.md
     - name: プロッター ドライバー ユーザー インターフェイス
@@ -559,14 +619,17 @@
     - name: プロッター ドライバー レンダラー
       href: plotter-driver-renderer.md
     - name: プリンター ドライバー アーキテクチャ
-      href: printer-driver-architecture.md
       items:
+        - name: プリンター ドライバー アーキテクチャ
+          href: printer-driver-architecture.md
         - name: XPSDrv プリンター ドライバー
-          href: xpsdrv-printer-drivers.md
           items:
+            - name: XPSDrv プリンター ドライバー
+              href: xpsdrv-printer-drivers.md
             - name: XPS 印刷機能
-              href: xps-printing-features.md
               items:
+                - name: XPS 印刷機能
+                  href: xps-printing-features.md
                 - name: '強化されたカラー印刷 '
                   href: improved-color-printing.md
                 - name: 忠実度の高い印刷出力
@@ -582,11 +645,13 @@
             - name: 以前のバージョンの Windows の XPS サポート
               href: xps-support-in-earlier-versions-of-windows.md
 - name: GDI プリンター ドライバー
-  href: gdi-printer-drivers.md
   items:
+    - name: GDI プリンター ドライバー
+      href: gdi-printer-drivers.md
     - name: プリンター グラフィックス DLL
-      href: printer-graphics-dll.md
       items:
+        - name: プリンター グラフィックス DLL
+          href: printer-graphics-dll.md
         - name: プリンター グラフィックス DLL の概要
           href: introduction-to-printer-graphics-dlls.md
         - name: プリンター グラフィックス DLL によって定義されている関数
@@ -604,8 +669,9 @@
         - name: プリンター グラフィックス DLL をビルドする
           href: building-a-printer-graphics-dll.md
     - name: プリンター インターフェイス DLL
-      href: printer-interface-dll.md
       items:
+        - name: プリンター インターフェイス DLL
+          href: printer-interface-dll.md
         - name: プリンター インターフェイス DLL の概要
           href: introduction-to-printer-interface-dlls.md
         - name: プリンター インターフェイス DLL によって定義されている関数
@@ -617,15 +683,17 @@
         - name: プリンターの色機能を特定する
           href: identifying-a-printer-s-color-capability.md
         - name: 印刷チケットと印刷機能のサポート
-          href: print-ticket-and-print-capabilities-support.md
           items:
+            - name: 印刷チケットと印刷機能のサポート
+              href: print-ticket-and-print-capabilities-support.md
             - name: プリンター ドライバーによって実装される印刷チケットと印刷機能のプロバイダー インターフェイス
               href: print-ticket-and-print-capabilities-provider-interface-implemented-by-2.md
             - name: Unidrv/Pscript5 プラグインによって実装される印刷チケットと印刷機能のプロバイダー インターフェイス
               href: print-ticket-and-print-capabilities-provider-interface-implemented-by-.md
             - name: 印刷チケット インターフェイスと印刷ドライバー プラグイン
-              href: print-ticket-interfaces-and-print-driver-plug-ins.md
               items:
+                - name: 印刷チケット インターフェイスと印刷ドライバー プラグイン
+                  href: print-ticket-interfaces-and-print-driver-plug-ins.md
                 - name: OpenPrinter
                   href: openprinter.md
                 - name: ConvertDevModeToPrintTicket 概要
@@ -635,8 +703,9 @@
                 - name: ValidatePrintTicket 概要
                   href: validateprintticket.md
         - name: モノリシック印刷ドライバーに印刷チケット サポートを追加する
-          href: adding-print-ticket-support-to-monolithic-print-drivers.md
           items:
+            - name: モノリシック印刷ドライバーに印刷チケット サポートを追加する
+              href: adding-print-ticket-support-to-monolithic-print-drivers.md
             - name: GetSupportedVersions
               href: getsupportedversions.md
             - name: BindPrinter
@@ -652,22 +721,25 @@
             - name: ValidatePrintTicket 印刷チケット サポート
               href: validateprintticket2.md
         - name: プリンター ドライバーとプラグイン ヘルパーのインターフェイス
-          href: printer-driver-and-plug-in-helper-interfaces.md
           items:
+            - name: プリンター ドライバーとプラグイン ヘルパーのインターフェイス
+              href: printer-driver-and-plug-in-helper-interfaces.md
             - name: プラグインの Unidrv と Pscript5 ヘルパーのインターフェイス
               href: unidrv-and-pscript5-helper-interfaces-for-plug-ins.md
             - name: インターフェイスを公開する
               href: publishing-the-interfaces.md
             - name: IPrintCoreHelper インターフェイスの詳細
-              href: details-of-the-iprintcorehelper-interface.md
               items:
+                - name: IPrintCoreHelper インターフェイスの詳細
+                  href: details-of-the-iprintcorehelper-interface.md
                 - name: IPrintCoreHelperUni インターフェイスの詳細
                   href: details-of-the-iprintcorehelperuni-interface.md
                 - name: IPrintCoreHelperPS インターフェイスの詳細
                   href: details-of-the-iprintcorehelperps-interface.md
         - name: キーワード マッピング
-          href: keyword-mapping.md
           items:
+            - name: キーワード マッピング
+              href: keyword-mapping.md
             - name: Pscript5 キーワード
               href: pscript5-keywords.md
             - name: Unidrv キーワード
@@ -675,13 +747,15 @@
     - name: プリンター データ ファイル
       href: printer-data-files.md
 - name: 印刷チケットと印刷機能のテクノロジ
-  href: print-ticket-and-print-capabilities-technologies.md
   items:
+    - name: 印刷チケットと印刷機能のテクノロジ
+      href: print-ticket-and-print-capabilities-technologies.md
     - name: 印刷スキーマ
       href: print-schema.md
     - name: 印刷機能
-      href: print-capabilities.md
       items:
+        - name: 印刷機能
+          href: print-capabilities.md
         - name: 印刷機能アーキテクチャ
           href: print-capabilities-architecture.md
         - name: 印刷機能の Win32 API サポート
@@ -693,8 +767,9 @@
         - name: GDI ベース、モノリシック印刷ドライバーの印刷機能サポート
           href: print-capabilities-support-in-gdi-based--monolithic-print-drivers.md
     - name: 印刷チケット
-      href: print-ticket.md
       items:
+        - name: 印刷チケット
+          href: print-ticket.md
         - name: 印刷チケットの構成
           href: print-ticket-organization.md
         - name: Win 32 アプリケーションと印刷チケットの互換性
@@ -706,21 +781,25 @@
 - name: 64 ビット プリンター ドライバーの記述
   href: writing-64-bit-printer-drivers.md
 - name: プリンター ドライバーのインストールと構成
-  href: installing-and-configuring-printer-drivers.md
   items:
+    - name: プリンター ドライバーのインストールと構成
+      href: installing-and-configuring-printer-drivers.md
     - name: プリンター インストールの基本
-      href: printer-installation-basics.md
       items:
+        - name: プリンター インストールの基本
+          href: printer-installation-basics.md
         - name: プリンター INF ファイル
-          href: printer-inf-files.md
           items:
+            - name: プリンター INF ファイル
+              href: printer-inf-files.md
             - name: プリンター INF ファイルのプラグ アンド プレイ ID
               href: plug-and-play-ids-for-printer-inf-files.md
             - name: プリンター Dirids
               href: printer-dirids.md
             - name: プリンター INF ファイル エントリ
-              href: printer-inf-file-entries.md
               items:
+                - name: プリンター INF ファイル エントリ
+                  href: printer-inf-file-entries.md
                 - name: カスタマイズされたプリンター セットアップの操作
                   href: customized-printer-setup-operations.md
                 - name: INF InboxVersionRequired ディレクティブ
@@ -732,8 +811,9 @@
             - name: プリンター INF ファイル CopyFiles セクション
               href: printer-inf-file-copyfiles-sections.md
             - name: プリンター INF ファイルの装飾
-              href: decorations-in-printer-inf-files.md
               items:
+                - name: プリンター INF ファイルの装飾
+                  href: decorations-in-printer-inf-files.md
                 - name: プリンター ドライバーの INF ファイルで装飾を使用する方法
                   href: how-to-use-decorations-in-inf-files-for-printer-drivers.md
             - name: プリンター INF ファイルの仮想プリンター
@@ -741,25 +821,29 @@
             - name: サンプル プリンター INF ファイル
               href: sample-printer-inf-files.md
         - name: 印刷ドライバー マニフェスト
-          href: print-driver-manifests.md
           items:
+            - name: 印刷ドライバー マニフェスト
+              href: print-driver-manifests.md
             - name: テーマ マニフェストの使用
               href: using-theme-manifests.md
         - name: 印刷ドライバーのバージョン管理
           href: print-driver-versioning.md
         - name: 印刷ドライバー パッケージ
-          href: print-driver-packages.md
           items:
+            - name: 印刷ドライバー パッケージ
+              href: print-driver-packages.md
             - name: ドライバー パッケージのポイント アンド プリント
               href: point-and-print-with-driver-packages.md
             - name: パッケージ対応印刷ドライバー
-              href: package-aware-print-drivers.md
               items:
+                - name: パッケージ対応印刷ドライバー
+                  href: package-aware-print-drivers.md
                 - name: ファイルを共有しないパッケージ対応印刷ドライバー
                   href: package-aware-print-drivers-that-do-not-share-files.md
                 - name: ファイルを共有するパッケージ対応印刷ドライバー
-                  href: package-aware-print-drivers-that-share-files.md
                   items:
+                    - name: ファイルを共有するパッケージ対応印刷ドライバー
+                      href: package-aware-print-drivers-that-share-files.md
                     - name: コア ドライバーの記述
                       href: writing-core-drivers.md
                     - name: コア ドライバーの使用
@@ -767,11 +851,13 @@
                     - name: コア ドライバー サンプル
                       href: core-driver-sample.md
             - name: 更新されたコア印刷ドライバーの使用
-              href: using-updated-core-print-drivers.md
               items:
+                - name: 更新されたコア印刷ドライバーの使用
+                  href: using-updated-core-print-drivers.md
                 - name: 更新されたコア ドライバーでパッケージ対応ドライバーを構築する
-                  href: constructing-a-package-aware-driver-with-updated-core-drivers.md
                   items:
+                    - name: 更新されたコア ドライバーでパッケージ対応ドライバーを構築する
+                      href: constructing-a-package-aware-driver-with-updated-core-drivers.md
                     - name: 更新されたコア ドライバー パッケージを取得する
                       href: getting-the-updated-core-driver-package.md
                     - name: パッケージ対応ドライバーでコア ドライバーをバンドルする
@@ -783,13 +869,15 @@
                 - name: Windows XP と Windows Vista 用にドライバー パッケージを 1 つ作成する
                   href: creating-a-single-driver-package-for-windows-xp-and-windows-vista.md
     - name: プリンターのプラグ アンド プレイ
-      href: plug-and-play-for-printers.md
       items:
+        - name: プリンターのプラグ アンド プレイ
+          href: plug-and-play-for-printers.md
         - name: プリンター インストールとプラグ アンド プレイ マネージャー
           href: printer-installation-and-the-plug-and-play-manager.md
         - name: プラグ アンド プレイのバス列挙子
-          href: plug-and-play-bus-enumerators.md
           items:
+            - name: プラグ アンド プレイのバス列挙子
+              href: plug-and-play-bus-enumerators.md
             - name: LPT ポートに接続されているプリンター
               href: printer-connected-to-an-lpt-port.md
             - name: USB ポートに接続されているプリンター
@@ -799,18 +887,21 @@
         - name: カスタムのプラグ アンド プレイ プリンター ドライバーをインストールする
           href: installing-a-custom-plug-and-play-printer-driver.md
     - name: ネットワーク経由でプリンターをインストールする
-      href: installing-printers-over-a-network.md
       items:
+        - name: ネットワーク経由でプリンターをインストールする
+          href: installing-printers-over-a-network.md
         - name: ポイント アンド プリントをサポートする
-          href: supporting-point-and-print.md
           items:
+            - name: ポイント アンド プリントをサポートする
+              href: supporting-point-and-print.md
             - name: ポイント アンド プリントの概要
               href: introduction-to-point-and-print.md
             - name: パッケージのポイント アンド プリント
               href: point-and-print-with-packages.md
             - name: プリンター インストール中にポイント アンド プリントをサポートする
-              href: supporting-point-and-print-during-printer-installations.md
               items:
+                - name: プリンター インストール中にポイント アンド プリントをサポートする
+                  href: supporting-point-and-print-during-printer-installations.md
                 - name: ドライバー固有ファイルのインストール
                   href: installing-driver-specific-files.md
                 - name: キュー固有ファイルのインストール
@@ -818,15 +909,17 @@
                 - name: ポイント アンド プリント DLL
                   href: point-and-print-dlls.md
             - name: プリンター接続中にポイント アンド プリントをサポートする
-              href: supporting-point-and-print-during-printer-connections.md
               items:
+                - name: プリンター接続中にポイント アンド プリントをサポートする
+                  href: supporting-point-and-print-during-printer-connections.md
                 - name: ドライバー固有ファイルのダウンロード
                   href: downloading-driver-specific-files.md
                 - name: キュー固有ファイルのダウンロード
                   href: downloading-queue-specific-files.md
         - name: プリンターのディレクトリ サービス
-          href: directory-services-for-printers.md
           items:
+            - name: プリンターのディレクトリ サービス
+              href: directory-services-for-printers.md
             - name: プリンター ディレクトリ サービスの印刷スプーラー サポート
               href: print-spooler-support-for-printer-directory-services.md
             - name: プリンター ディレクトリ サービスの印刷ドライバー サポート
@@ -838,35 +931,41 @@
 - name: プリンターの構成
   href: printer-configuration.md
 - name: Generic Description Language
-  href: generic-description-language.md
   items:
+    - name: Generic Description Language
+      href: generic-description-language.md
     - name: GDL アーキテクチャ
       href: gdl-architecture.md
     - name: GDL プログラミング ガイド
-      href: gdl-programming-guide.md
       items:
+        - name: GDL プログラミング ガイド
+          href: gdl-programming-guide.md
         - name: GDL 構文
-          href: gdl-syntax.md
           items:
+            - name: GDL 構文
+              href: gdl-syntax.md
             - name: GDL ソース ファイル
               href: gdl-source-files.md
             - name: GDL 属性
-              href: gdl-attributes.md
               items:
+                - name: GDL 属性
+                  href: gdl-attributes.md
                 - name: GDL キーワード
                   href: gdl-keywords.md
                 - name: GDL 値
                   href: gdl-values.md
             - name: GDL コンテキスト
-              href: gdl-contexts.md
               items:
+                - name: GDL コンテキスト
+                  href: gdl-contexts.md
                 - name: GDL 入れ子コンテキスト
                   href: gdl-nested-contexts.md
                 - name: GDL 任意の値のコンテキスト
                   href: gdl-arbitrary-value-contexts.md
             - name: GDL コンストラクト
-              href: gdl-constructs.md
               items:
+                - name: GDL コンストラクト
+                  href: gdl-constructs.md
                 - name: GDL コンストラクト区切り記号
                   href: gdl-construct-delimiters.md
                 - name: GDL の構文から見た論理的コンストラクト
@@ -878,15 +977,17 @@
                 - name: GDL コメント
                   href: gdl-comments.md
                 - name: GDL 文字列
-                  href: gdl-strings.md
                   items:
+                    - name: GDL 文字列
+                      href: gdl-strings.md
                     - name: GDL 引用符付き文字列
                       href: gdl-quoted-strings.md
                     - name: GDL HexSubStrings
                       href: gdl-hexsubstrings.md
         - name: GDL 要素
-          href: gdl-elements.md
           items:
+            - name: GDL 要素
+              href: gdl-elements.md
             - name: GDL テンプレート
               href: gdl-templates.md
             - name: GDL スキーマ
@@ -894,31 +995,37 @@
             - name: GDL 名前空間
               href: gdl-namespaces.md
         - name: GDL の使用
-          href: using-gdl.md
           items:
+            - name: GDL の使用
+              href: using-gdl.md
             - name: GDL 構成
-              href: gdl-configurations.md
               items:
+                - name: GDL 構成
+                  href: gdl-configurations.md
                 - name: GDL 構成依存データを作成する
-                  href: creating-gdl-configuration-dependent-data.md
                   items:
+                    - name: GDL 構成依存データを作成する
+                      href: creating-gdl-configuration-dependent-data.md
                     - name: 構成依存データのパラメーターを定義する
                       href: defining-the-configuration-dependent-data-parameters.md
                     - name: 構成依存データに依存関係を追加する
                       href: adding-dependencies-to-the-configuration-dependent-data.md
             - name: GDL スナップショット
-              href: gdl-snapshots.md
               items:
+                - name: GDL スナップショット
+                  href: gdl-snapshots.md
                 - name: GDL パーサー
-                  href: gdl-parser.md
                   items:
+                    - name: GDL パーサー
+                      href: gdl-parser.md
                     - name: 標準 GDL 解析
                       href: standard-gdl-parsing.md
                     - name: GDL 解析のトラブルシューティング
                       href: troubleshooting-gdl-parsing.md
                 - name: GDL スナップショットの作成
-                  href: creating-gdl-snapshots.md
                   items:
+                    - name: GDL スナップショットの作成
+                      href: creating-gdl-snapshots.md
                     - name: スナップショットを作成するための構成
                       href: configurations-for-creating-snapshots.md
                     - name: 有効な GDL 構成
@@ -932,8 +1039,9 @@
                     - name: GDL 構成の競合を解決する
                       href: resolving-gdl-configuration-conflicts.md
                 - name: GDL スナップショットの XML 構造
-                  href: xml-structure-of-gdl-snapshots.md
                   items:
+                    - name: GDL スナップショットの XML 構造
+                      href: xml-structure-of-gdl-snapshots.md
                     - name: GDL スキーマのルート要素
                       href: gdl-schema-root-element.md
                     - name: GDL スキーマのコンストラクト要素
@@ -953,21 +1061,25 @@
                     - name: スナップショットの許可されている文字の XML 制限
                       href: xml-restrictions-on-allowed-characters-in-snapshots.md
 - name: GDL 参照
-  href: gdl-reference.md
   items:
+    - name: GDL 参照
+      href: gdl-reference.md
     - name: GDL ソース ファイル構造
       href: gdl-source-file-structure.md
     - name: GDL ディレクティブ
-      href: gdl-directives.md
       items:
+        - name: GDL ディレクティブ
+          href: gdl-directives.md
         - name: GDL ソース ファイル プリプロセッサ ディレクティブ
-          href: gdl-source-file-preprocessor-directives.md
           items:
+            - name: GDL ソース ファイル プリプロセッサ ディレクティブ
+              href: gdl-source-file-preprocessor-directives.md
             - name: GDL プリプロセッサ構文
               href: gdl-preprocessor-syntax.md
             - name: GDL プリプロセッサ キーワード
-              href: gdl-preprocessor-keywords.md
               items:
+                - name: GDL プリプロセッサ キーワード
+                  href: gdl-preprocessor-keywords.md
                 - name: '#Define プリプロセッサ ディレクティブ'
                   href: '-define-preprocessor-directive.md'
                 - name: '#Undefine プリプロセッサ ディレクティブ'
@@ -985,8 +1097,9 @@
                 - name: '#DisablePPDirective プリプロセッサ ディレクティブ'
                   href: '-disableppdirective-preprocessor-directive.md'
                 - name: GDL プリプロセッサ条件付きディレクティブ
-                  href: gdl-preprocessor-conditional-directives.md
                   items:
+                    - name: GDL プリプロセッサ条件付きディレクティブ
+                      href: gdl-preprocessor-conditional-directives.md
                     - name: '#Ifdef 条件付きプリプロセッサ ディレクティブ'
                       href: '-ifdef-conditional-preprocessor-directive.md'
                     - name: '#Elseifdef 条件付きプリプロセッサ ディレクティブ'
@@ -998,8 +1111,9 @@
             - name: GDL 前処理と GPD 前処理の違い
               href: differences-between-gdl-and-gpd-preprocessing.md
             - name: GDL プリプロセッサ ガイドライン
-              href: gdl-preprocessor-guidelines.md
               items:
+                - name: GDL プリプロセッサ ガイドライン
+                  href: gdl-preprocessor-guidelines.md
                 - name: GDL 前処理の論理演算子の問題
                   href: problems-with-logical-operators-in-gdl-preprocessing.md
         - name: 構成の GDL ディレクティブ
@@ -1013,8 +1127,9 @@
         - name: その他の GDL ディレクティブ
           href: miscellaneous-gdl-directives.md
     - name: GDL マクロ
-      href: gdl-macros.md
       items:
+        - name: GDL マクロ
+          href: gdl-macros.md
         - name: GDL 値マクロ
           href: gdl-value-macros.md
         - name: GDL ブロック マクロ
@@ -1026,23 +1141,27 @@
         - name: GDL その他のマクロ
           href: gdl-miscellaneous-macros.md
     - name: GDL テンプレート構造
-      href: gdl-template-structure.md
       items:
+        - name: GDL テンプレート構造
+          href: gdl-template-structure.md
         - name: GDL テンプレート継承
           href: gdl-template-inheritance.md
         - name: GDL テンプレートとキーワードを関連付けるための条件
-          href: criteria-for-associating-gdl-templates-with-keywords.md
           items:
+            - name: GDL テンプレートとキーワードを関連付けるための条件
+              href: criteria-for-associating-gdl-templates-with-keywords.md
             - name: GDL 関連付けの検索条件
               href: gdl-association-search-criteria.md
             - name: GDL テンプレート資格
               href: gdl-template-qualification.md
         - name: GDL テンプレート データ型
-          href: gdl-template-data-types.md
           items:
+            - name: GDL テンプレート データ型
+              href: gdl-template-data-types.md
             - name: GDL プリミティブ データ型
-              href: gdl-primitive-data-types.md
               items:
+                - name: GDL プリミティブ データ型
+                  href: gdl-primitive-data-types.md
                 - name: パススルー テンプレート データ型
                   href: passthrough-template-data-types.md
                 - name: ネイティブ XML テンプレート データ型
@@ -1054,11 +1173,13 @@
                 - name: フィルター テンプレート データ型
                   href: filter-template-data-type.md
             - name: GDL 複合データ型
-              href: gdl-compound-data-types.md
               items:
+                - name: GDL 複合データ型
+                  href: gdl-compound-data-types.md
                 - name: GDL テンプレート データ型の問題
-                  href: gdl-template-data-type-issues.md
                   items:
+                    - name: GDL テンプレート データ型の問題
+                      href: gdl-template-data-type-issues.md
                     - name: 複合テンプレート データ型の問題
                       href: compound-template-data-type-issues.md
                     - name: リスト テンプレート データ型の問題
@@ -1078,8 +1199,9 @@
             - name: データ型テンプレート継承
               href: data-type-template-inheritance.md
         - name: GDL テンプレート ディレクティブ
-          href: gdl-template-directives.md
           items:
+            - name: GDL テンプレート ディレクティブ
+              href: gdl-template-directives.md
             - name: Template テンプレート ディレクティブ
               href: template-template-directive.md
             - name: Name テンプレート ディレクティブ
@@ -1109,11 +1231,13 @@
             - name: テンプレート ディレクティブの例
               href: template-directive-example.md
 - name: GDL 例
-  href: gdl-examples.md
   items:
+    - name: GDL 例
+      href: gdl-examples.md
     - name: GDL チュートリアル
-      href: gdl-tutorials.md
       items:
+        - name: GDL チュートリアル
+          href: gdl-tutorials.md
         - name: 'GDL 演習 1:GDL スキーマを実装する'
           href: gdl-exercise-1--implementing-a-gdl-schema.md
         - name: 'GDL 演習 2:仮想テンプレートから継承する'
@@ -1131,37 +1255,43 @@
 - name: プリンターの自動構成
   href: printer-autoconfiguration.md
 - name: 自動構成の詳細
-  href: autoconfiguration-details.md
   items:
+    - name: 自動構成の詳細
+      href: autoconfiguration-details.md
     - name: デバイスのインストール時の自動構成
       href: autoconfiguration-during-device-installation.md
     - name: 構成変更時の自動構成
       href: autoconfiguration-during-configuration-change.md
 - name: 自動構成の実装オプション
-  href: autoconfiguration-implementation-options.md
   items:
+    - name: 自動構成の実装オプション
+      href: autoconfiguration-implementation-options.md
     - name: IHV ドライバーの自動構成
       href: autoconfiguration-in-an-ihv-driver.md
     - name: IHV ポート モニターの自動構成
       href: autoconfiguration-in-an-ihv-port-monitor.md
     - name: 自動構成のインボックス サポート
-      href: in-box-support-for-autoconfiguration.md
       items:
+        - name: 自動構成のインボックス サポート
+          href: in-box-support-for-autoconfiguration.md
         - name: プリンター ミニドライバー変更
-          href: printer-minidriver-changes.md
           items:
+            - name: プリンター ミニドライバー変更
+              href: printer-minidriver-changes.md
             - name: UI プラグイン変更
               href: ui-plug-in-changes.md
             - name: 既存の GPD ファイルに GDL 拡張機能を追加する
-              href: adding-gdl-extensions-to-an-existing-gpd-file.md
               items:
+                - name: 既存の GPD ファイルに GDL 拡張機能を追加する
+                  href: adding-gdl-extensions-to-an-existing-gpd-file.md
                 - name: GPD スキーマの新しいキーワード
                   href: new-keyword-for-gpd-schema.md
                 - name: Windows Vista の GPD の自動構成フロー
                   href: autoconfiguration-flow-for-gpd-in-windows-vista.md
                 - name: GPD の GDL ファイルにコンストラクトを追加する
-                  href: adding-constructs-to-your-gdl-file-for-gpd.md
                   items:
+                    - name: GPD の GDL ファイルにコンストラクトを追加する
+                      href: adding-constructs-to-your-gdl-file-for-gpd.md
                     - name: GPD の Duplex ユニットを自動検出する
                       href: autodetecting-the-duplex-unit-for-gpd.md
                     - name: GPD のプリンターのメモリを自動構成する
@@ -1169,15 +1299,17 @@
                     - name: GPD のプリンターのハード ドライブを自動検出する
                       href: autodetecting-the-printer-s-hard-drive-for-gpd.md
             - name: 既存の PPD ファイルに GDL 拡張機能を追加する
-              href: adding-gdl-extensions-to-an-existing-ppd-file.md
               items:
+                - name: 既存の PPD ファイルに GDL 拡張機能を追加する
+                  href: adding-gdl-extensions-to-an-existing-ppd-file.md
                 - name: PPD スキーマの新しいキーワード
                   href: new-keyword-for-ppd-schema.md
                 - name: PPD の Windows Vista の自動構成フロー
                   href: autoconfig-flow-in-windows-vista-for-ppd.md
                 - name: PPD の GDL ファイルにコンストラクトを追加する
-                  href: adding-constructs-to-your-gdl-file-for-ppd.md
                   items:
+                    - name: PPD の GDL ファイルにコンストラクトを追加する
+                      href: adding-constructs-to-your-gdl-file-for-ppd.md
                     - name: PPD の Duplex ユニットを自動検出する
                       href: autodetect-the-duplex-unit-for-ppd.md
                     - name: PPD のプリンターのメモリを自動構成する
@@ -1189,14 +1321,17 @@
             - name: Pscript と Unidrv のミニドライバーの名前付け規則
               href: naming-conventions-in-pscript-and-unidrv-minidrivers.md
         - name: プリンター ポート モニターをカスタマイズする
-          href: customizing-the-printer-port-monitors.md
           items:
+            - name: プリンター ポート モニターをカスタマイズする
+              href: customizing-the-printer-port-monitors.md
             - name: TCP/IP スキーマ拡張
-              href: tcp-ip-schema-extensions.md
               items:
+                - name: TCP/IP スキーマ拡張
+                  href: tcp-ip-schema-extensions.md
                 - name: ドライバー固有クエリの TCP/IP スキーマ拡張
-                  href: tcp-ip-schema-extensions-for-driver-specific-queries.md
                   items:
+                    - name: ドライバー固有クエリの TCP/IP スキーマ拡張
+                      href: tcp-ip-schema-extensions-for-driver-specific-queries.md
                     - name: Const (TCP/IP)
                       href: const.md
                     - name: Converter
@@ -1206,8 +1341,9 @@
                     - name: Value (TCP/IP)
                       href: value4.md
                 - name: 入力ビンと出力ビンの TCP/IP スキーマ拡張
-                  href: tcp-ip-schema-extensions-for-input-and-output-bins.md
                   items:
+                    - name: 入力ビンと出力ビンの TCP/IP スキーマ拡張
+                      href: tcp-ip-schema-extensions-for-input-and-output-bins.md
                     - name: 暗示的なビン拡張機能
                       href: implicit-bin-extensions.md
                     - name: 明示的なビン拡張機能
@@ -1219,11 +1355,13 @@
                 - name: TCP/IP ポート モニターの双方向拡張機能サンプル
                   href: bidi-extension-sample-for-tcp-ip-port-monitor.md
             - name: WSD スキーマ拡張
-              href: wsd-schema-extensions.md
               items:
+                - name: WSD スキーマ拡張
+                  href: wsd-schema-extensions.md
                 - name: ドライバー固有クエリの WSD スキーマ拡張
-                  href: wsd-schema-extensions-for-driver-specific-queries.md
                   items:
+                    - name: ドライバー固有クエリの WSD スキーマ拡張
+                      href: wsd-schema-extensions-for-driver-specific-queries.md
                     - name: Const (WSD)
                       href: const5.md
                     - name: Installed (WSD)
@@ -1235,14 +1373,17 @@
                 - name: WSD ポート モニターの双方向拡張例
                   href: bidi-extension-example-for-wsd-port-monitor.md
 - name: 双方向通信
-  href: bidirectional-communication.md
   items:
+    - name: 双方向通信
+      href: bidirectional-communication.md
     - name: 双方向通信スキーマ
-      href: bidirectional-communication-schema.md
       items:
+        - name: 双方向通信スキーマ
+          href: bidirectional-communication-schema.md
         - name: 双方向の要求と応答のスキーマ
-          href: bidirectional-request-and-response-schemas.md
           items:
+            - name: 双方向の要求と応答のスキーマ
+              href: bidirectional-request-and-response-schemas.md
             - name: Get 要求と応答のスキーマ
               href: get-request-and-response-schemas.md
             - name: EnumSchema 要求と応答のスキーマ
@@ -1258,24 +1399,29 @@
         - name: 双方向通信スキーマ クエリを作成する
           href: constructing-a-bidi-communication-schema-query.md
 - name: 双方向通信のスキーマ参照
-  href: bidi-communications-schema-reference.md
   items:
+    - name: 双方向通信のスキーマ参照
+      href: bidi-communications-schema-reference.md
     - name: プリンターのプロパティ
       href: printer-property.md
     - name: DeviceInfo セクション
-      href: deviceinfo-section.md
       items:
+        - name: DeviceInfo セクション
+          href: deviceinfo-section.md
         - name: DeviceInfo
-          href: deviceinfo.md
           items:
+            - name: DeviceInfo
+              href: deviceinfo.md
             - name: NetworkingInfo
               href: networkinginfo.md
     - name: 構成セクション
-      href: configuration-section.md
       items:
+        - name: 構成セクション
+          href: configuration-section.md
         - name: 構成
-          href: configuration.md
           items:
+            - name: 構成
+              href: configuration.md
             - name: メモリ
               href: memory.md
             - name: ハード ディスク
@@ -1283,22 +1429,27 @@
             - name: Duplex ユニット
               href: duplexunit.md
     - name: コンシューマブル セクション
-      href: consumables-section.md
       items:
+        - name: コンシューマブル セクション
+          href: consumables-section.md
         - name: コンシューマブル
-          href: consumables3.md
           items:
+            - name: コンシューマブル
+              href: consumables3.md
             - name: 'Name]'
               href: '-name-.md'
     - name: レイアウト セクション
-      href: layout-section.md
       items:
+        - name: レイアウト セクション
+          href: layout-section.md
         - name: レイアウト
-          href: layout.md
           items:
+            - name: レイアウト
+              href: layout.md
             - name: NumberUp
-              href: numberup2.md
               items:
+                - name: NumberUp
+                  href: numberup2.md
                 - name: PagesPerSheet
                   href: pagespersheet2.md
                 - name: Direction
@@ -1308,67 +1459,81 @@
             - name: 解決策
               href: resolutions.md
             - name: InputBins
-              href: inputbins2.md
               items:
+                - name: InputBins
+                  href: inputbins2.md
                 - name: 'TrayName]'
                   href: '-trayname-.md'
     - name: セクションの完了
-      href: finishing-section.md
       items:
+        - name: セクションの完了
+          href: finishing-section.md
         - name: 完了
-          href: finishing.md
           items:
+            - name: 完了
+              href: finishing.md
             - name: Staple
-              href: staple3.md
               items:
+                - name: Staple
+                  href: staple3.md
                 - name: Location
                   href: location3.md
                 - name: Angle
                   href: angle2.md
             - name: HolePunch
-              href: holepunch3.md
               items:
+                - name: HolePunch
+                  href: holepunch3.md
                 - name: '[パターン]'
                   href: pattern2.md
                 - name: Location
                   href: location2.md
             - name: OutputBins
-              href: outputbins2.md
               items:
+                - name: OutputBins
+                  href: outputbins2.md
                 - name: 'TrayName]'
                   href: '-trayname-2.md'
     - name: メンテナンス セクション
-      href: maintenance-section.md
       items:
+        - name: メンテナンス セクション
+          href: maintenance-section.md
         - name: メンテナンス
           href: maintenance.md
     - name: ステータス セクション
-      href: status-section.md
       items:
+        - name: ステータス セクション
+          href: status-section.md
         - name: 状況
-          href: status.md
           items:
+            - name: 状況
+              href: status.md
             - name: 概要
               href: summary.md
             - name: '[詳細]'
-              href: detailed.md
               items:
+                - name: '[詳細]'
+                  href: detailed.md
                 - name: 'イベント ###'
-                  href: event---.md
                   items:
+                    - name: 'イベント ###'
+                      href: event---.md
                     - name: Component
                       href: component2.md
     - name: 双方向通信エラー コード
       href: bidi-error-codes.md
 - name: 双方向のインターフェイスと列挙
-  href: bidi-interfaces-and-structures.md
   items:
+    - name: 双方向のインターフェイスと列挙
+      href: bidi-interfaces-and-structures.md
     - name: プリンター双方向インターフェイス
-      href: printer-bidi-interfaces.md
       items:
+        - name: プリンター双方向インターフェイス
+          href: printer-bidi-interfaces.md
         - name: IPrinterBidiSchemaElement
-          href: iprinterbidischemaelement-interface.md
           items:
+            - name: IPrinterBidiSchemaElement
+              href: iprinterbidischemaelement-interface.md
             - name: BidiType
               href: iprinterbidischemaelement-biditype.md
             - name: 名前
@@ -1376,8 +1541,9 @@
             - name: Value
               href: iprinterbidischemaelement-value.md
         - name: IPrinterBidiSchemaResponses
-          href: iprinterbidischemaresponses.md
           items:
+            - name: IPrinterBidiSchemaResponses
+              href: iprinterbidischemaresponses.md
             - name: AddBlob メソッド
               href: iprinterbidischemaresponses-addblob.md
             - name: AddBool
@@ -1397,8 +1563,9 @@
             - name: AddText
               href: iprinterbidischemaresponses-addtext.md
         - name: IPrinterScriptUsbJobContext
-          href: iprinterscriptusbjobcontext.md
           items:
+            - name: IPrinterScriptUsbJobContext
+              href: iprinterscriptusbjobcontext.md
             - name: JobPropertyBag メソッド
               href: iprinterscriptusbjobcontext-jobpropertybag.md
             - name: PrintedPageCount メソッド
@@ -1410,8 +1577,9 @@
             - name: TemporaryStreams メソッド
               href: iprinterscriptusbjobcontext-temporarystreams.md
         - name: IPrinterScriptUsbJobContextReturnCodes
-          href: iprinterscriptusbjobcontextreturncodes.md
           items:
+            - name: IPrinterScriptUsbJobContextReturnCodes
+              href: iprinterscriptusbjobcontextreturncodes.md
             - name: Success メソッド
               href: iprinterscriptusbjobcontextreturncodes-success.md
             - name: Failure メソッド
@@ -1423,20 +1591,23 @@
             - name: AbortTheJob メソッド
               href: iprinterscriptusbjobcontextreturncodes-abortthejob.md
         - name: IPrinterScriptUsbWritePrintDataProgress
-          href: iprinterscriptusbwriteprintdataprogress.md
           items:
+            - name: IPrinterScriptUsbWritePrintDataProgress
+              href: iprinterscriptusbwriteprintdataprogress.md
             - name: ProcessedByteCount メソッド
               href: iprinterscriptusbwriteprintdataprogress-processedbytecount.md
             - name: ProcessedByteCount メソッド
               href: iprinterscriptusbwriteprintdataprogress-processedbytecount-in.md
     - name: プリンター双方向列挙
-      href: printer-bidi-structures.md
       items:
+        - name: プリンター双方向列挙
+          href: printer-bidi-structures.md
         - name: PRINTERBIDISCHEMAELEMENTTYPE
           href: printerbidischemaelementtype.md
 - name: 非同期のユーザー通知のスキーマ
-  href: asynchronous-user-notification-schema.md
   items:
+    - name: 非同期のユーザー通知のスキーマ
+      href: asynchronous-user-notification-schema.md
     - name: action
       href: action.md
     - name: asyncPrintUIRequest
@@ -1470,18 +1641,21 @@
 - name: プリンター ドライバーの分離
   href: printer-driver-isolation.md
 - name: Microsoft のプリンター ドライバーのカスタマイズ
-  href: customizing-microsoft-s-printer-drivers.md
   items:
+    - name: Microsoft のプリンター ドライバーのカスタマイズ
+      href: customizing-microsoft-s-printer-drivers.md
     - name: ユーザー インターフェイスのプラグイン
-      href: user-interface-plug-ins.md
       items:
+        - name: ユーザー インターフェイスのプラグイン
+          href: user-interface-plug-ins.md
         - name: ユーザー インターフェイス プラグインの概要
           href: introduction-to-user-interface-plug-ins.md
         - name: サンプル UI プラグイン
           href: sample-ui-plug-in.md
         - name: UI プラグインの COM インターフェイス
-          href: com-interfaces-for-ui-plug-ins.md
           items:
+            - name: UI プラグインの COM インターフェイス
+              href: com-interfaces-for-ui-plug-ins.md
             - name: IPrintOemCommon COM インターフェイス
               href: iprintoemcommon-com-interface.md
             - name: IPrintOemUI COM インターフェイス
@@ -1507,15 +1681,17 @@
         - name: その他のプリンター インターフェイスの操作をカスタマイズする
           href: customizing-other-printer-interface-operations.md
     - name: レンダリング プラグイン
-      href: rendering-plug-ins.md
       items:
+        - name: レンダリング プラグイン
+          href: rendering-plug-ins.md
         - name: レンダリング プラグインの概要
           href: introduction-to-rendering-plug-ins.md
         - name: サンプル レンダリング プラグイン
           href: sample-rendering-plug-ins.md
         - name: レンダリング プラグインの COM インターフェイス
-          href: com-interfaces-for-rendering-plug-ins.md
           items:
+            - name: レンダリング プラグインの COM インターフェイス
+              href: com-interfaces-for-rendering-plug-ins.md
             - name: IPrintOemUni COM インターフェイス
               href: iprintoemuni-com-interface.md
             - name: IPrintOemUni2 COM インターフェイス
@@ -1533,8 +1709,9 @@
             - name: IPrintCorePS2 COM インターフェイス
               href: iprintcoreps2-com-interface.md
         - name: カスタマイズされたグラフィックス DDI 関数
-          href: customized-graphics-ddi-functions.md
           items:
+            - name: カスタマイズされたグラフィックス DDI 関数
+              href: customized-graphics-ddi-functions.md
             - name: COM ベースのレンダリング プラグイン
               href: com-based-rendering-plug-ins.md
             - name: 非 COM ベースのレンダリング プラグイン
@@ -1546,8 +1723,9 @@
         - name: Pscript 固有のカスタマイズされたレンダリング
           href: pscript-specific-customized-rendering.md
         - name: Unidrv 固有のカスタマイズされたレンダリング
-          href: unidrv-specific-customized-rendering.md
           items:
+            - name: Unidrv 固有のカスタマイズされたレンダリング
+              href: unidrv-specific-customized-rendering.md
             - name: カスタマイズされた色フォーマット
               href: customized-color-formats.md
             - name: カスタマイズされたハーフトーン
@@ -1563,8 +1741,9 @@
             - name: デバイス管理サーフェスを処理する
               href: handling-device-managed-surfaces.md
     - name: プリンター ドライバー COM インターフェイスを実装する
-      href: implementing-printer-driver-com-interfaces.md
       items:
+        - name: プリンター ドライバー COM インターフェイスを実装する
+          href: implementing-printer-driver-com-interfaces.md
         - name: プリンター ドライバーのインターフェイス ID
           href: interface-identifiers-for-printer-drivers.md
         - name: プラグインを作成する
@@ -1574,13 +1753,15 @@
         - name: プラグインからプリンター ドライバー インターフェイスにアクセスする
           href: accessing-printer-driver-interfaces-from-plug-ins.md
     - name: カスタマイズされたドライバー コンポーネントをインストールする
-      href: installing-customized-driver-components.md
       items:
+        - name: カスタマイズされたドライバー コンポーネントをインストールする
+          href: installing-customized-driver-components.md
         - name: Unidrv のカスタマイズされたフォント インストーラー
           href: customized-font-installers-for-unidrv.md
     - name: 一般的なプロパティ シート ユーザー インターフェイス
-      href: common-property-sheet-user-interface.md
       items:
+        - name: 一般的なプロパティ シート ユーザー インターフェイス
+          href: common-property-sheet-user-interface.md
         - name: CPSUI の概要
           href: introduction-to-cpsui.md
         - name: サンプル CPSUI アプリケーション
@@ -1588,39 +1769,45 @@
         - name: CPSUI 指定の関数
           href: cpsui-supplied-functions.md
         - name: アプリケーション指定のコールバック関数
-          href: application-supplied-callback-functions.md
           items:
+            - name: アプリケーション指定のコールバック関数
+              href: application-supplied-callback-functions.md
             - name: ページ作成コールバック
               href: page-creation-callbacks.md
             - name: ページ イベント コールバック
-              href: page-event-callbacks.md
               items:
+                - name: ページ イベント コールバック
+                  href: page-event-callbacks.md
                 - name: CPSUI メッセージ ハンドラー
                   href: cpsui-message-handler.md
                 - name: ダイアログ ボックス プロシージャと CPSUI
                   href: dialog-box-procedures-and-cpsui.md
         - name: プロパティ シート ページを作成する
-          href: creating-property-sheet-pages.md
           items:
+            - name: プロパティ シート ページを作成する
+              href: creating-property-sheet-pages.md
             - name: プロパティ シート オプション
               href: property-sheet-options.md
             - name: CPSUI 指定のウィンドウ コントロール
-              href: cpsui-supported-window-controls.md
               items:
+                - name: CPSUI 指定のウィンドウ コントロール
+                  href: cpsui-supported-window-controls.md
                 - name: CPSUI 指定のウィンドウ コントロールをカスタマイズする
                   href: customizing-cpsui-supported-window-controls.md
             - name: CPSUI 指定のページとテンプレート
               href: cpsui-supplied-pages-and-templates.md
             - name: ページを指定するためのメソッド
-              href: methods-for-specifying-pages.md
               items:
+                - name: ページを指定するためのメソッド
+                  href: methods-for-specifying-pages.md
                 - name: グループ親
                   href: group-parent.md
             - name: プリンター ドライバーで CPSUI を使用する
               href: using-cpsui-with-printer-drivers.md
         - name: CPSUI オプションの種類
-          href: cpsui-option-types.md
           items:
+            - name: CPSUI オプションの種類
+              href: cpsui-option-types.md
             - name: TVOT_2STATES
               href: tvot-2states.md
             - name: TVOT_3STATES
@@ -1642,13 +1829,15 @@
             - name: TVOT_UDARROW
               href: tvot-udarrow.md
     - name: プリンターの色の管理
-      href: color-management-for-printers.md
       items:
+        - name: プリンターの色の管理
+          href: color-management-for-printers.md
         - name: 色の管理を有効にする
           href: enabling-color-management.md
         - name: 色の管理を制御する
-          href: controlling-color-management.md
           items:
+            - name: 色の管理を制御する
+              href: controlling-color-management.md
             - name: システム コントロール
               href: system-control.md
             - name: ドライバー コントロールとデバイス コントロール
@@ -1662,16 +1851,19 @@
     - name: 印刷ドライバーに印刷チケット サポートを追加する
       href: adding-print-ticket-support-to-print-drivers.md
     - name: ドキュメント デバイスのデバイス ステージ
-      href: device-stage-for-document-devices.md
       items:
+        - name: ドキュメント デバイスのデバイス ステージ
+          href: device-stage-for-document-devices.md
         - name: デバイス ステージの概要
-          href: introduction-to-device-stage.md
           items:
+            - name: デバイス ステージの概要
+              href: introduction-to-device-stage.md
             - name: デバイス ステージとは?
               href: what-is-device-stage-.md
             - name: 詳細情報
-              href: getting-more-information.md
               items:
+                - name: 詳細情報
+                  href: getting-more-information.md
                 - name: デバイス ステージの一般的な開発キット
                   href: device-stage-general-development-kit.md
                 - name: デバイス ステージのドキュメント デバイス開発キット
@@ -1683,14 +1875,17 @@
         - name: ICC プロファイルをインストールする
           href: installing-icc-profiles.md
 - name: プリンター Web ページ用の COM インターフェイス
-  href: com-interfaces-for-printer-web-pages.md
   items:
+    - name: プリンター Web ページ用の COM インターフェイス
+      href: com-interfaces-for-printer-web-pages.md
     - name: Iasphelp 自動化インターフェイス
-      href: iasphelp-automation-interface.md
       items:
+        - name: Iasphelp 自動化インターフェイス
+          href: iasphelp-automation-interface.md
         - name: Iasphelp メソッド
-          href: iasphelp-methods.md
           items:
+            - name: Iasphelp メソッド
+              href: iasphelp-methods.md
             - name: CalcJobETA
               href: iasphelp-calcjobeta.md
             - name: Close
@@ -1698,8 +1893,9 @@
             - name: Open
               href: iasphelp-open.md
         - name: Iasphelp プロパティ Get 操作
-          href: iasphelp-property-get-operations.md
           items:
+            - name: Iasphelp プロパティ Get 操作
+              href: iasphelp-property-get-operations.md
             - name: AspPage
               href: iasphelp-asppage.md
             - name: AvgJobSize
@@ -1755,11 +1951,13 @@
             - name: 状況
               href: iasphelp-status.md
     - name: IOleCvt 自動化インターフェイス
-      href: iolecvt-automation-interface.md
       items:
+        - name: IOleCvt 自動化インターフェイス
+          href: iolecvt-automation-interface.md
         - name: IOleCvt プロパティ Get 操作
-          href: iolecvt-property-get-operations.md
           items:
+            - name: IOleCvt プロパティ Get 操作
+              href: iolecvt-property-get-operations.md
             - name: DecodeUnicodeName
               href: iolecvt-decodeunicodename.md
             - name: EncodeUnicodeName
@@ -1769,11 +1967,13 @@
             - name: ToUnicode
               href: iolecvt-tounicode.md
     - name: ISNMP 自動化インターフェイス
-      href: isnmp-automation-interface.md
       items:
+        - name: ISNMP 自動化インターフェイス
+          href: isnmp-automation-interface.md
         - name: ISNMP メソッド
-          href: isnmp-methods.md
           items:
+            - name: ISNMP メソッド
+              href: isnmp-methods.md
             - name: Close
               href: isnmp-close.md
             - name: 取得
@@ -1795,26 +1995,31 @@
 - name: 印刷パイプライン プロパティ バッグ
   href: print-pipeline-property-bag.md
 - name: プリンターに関する追加のトピック
-  href: additional-printer-topics.md
   items:
+    - name: プリンターに関する追加のトピック
+      href: additional-printer-topics.md
     - name: インターネット印刷
-      href: internet-printing.md
       items:
+        - name: インターネット印刷
+          href: internet-printing.md
         - name: アプリケーションから URL に印刷する
           href: printing-to-urls-from-applications.md
         - name: 印刷 Web ページを表示する
           href: viewing-print-web-pages.md
         - name: 印刷 Web ページをカスタマイズする
-          href: customizing-print-web-pages.md
           items:
+            - name: 印刷 Web ページをカスタマイズする
+              href: customizing-print-web-pages.md
             - name: 印刷 Web ページの ASP ファイル
-              href: asp-files-for-print-web-pages.md
               items:
+                - name: 印刷 Web ページの ASP ファイル
+                  href: asp-files-for-print-web-pages.md
                 - name: サンプル ASP ファイル
                   href: sample-asp-files.md
             - name: プリンター詳細 Web ページをカスタマイズする
-              href: customizing-the-printer-details-web-page.md
               items:
+                - name: プリンター詳細 Web ページをカスタマイズする
+                  href: customizing-the-printer-details-web-page.md
                 - name: 既定のプリンター詳細ページを置換する
                   href: replacing-the-default-printer-details-page.md
                 - name: どのプリンター詳細ページが表示されていますか?
@@ -1826,8 +2031,9 @@
                 - name: Web ページ情報を更新する
                   href: updating-web-page-information.md
             - name: カスタマイズされた印刷 Web ページをインストールする
-              href: installing-customized-print-web-pages.md
               items:
+                - name: カスタマイズされた印刷 Web ページをインストールする
+                  href: installing-customized-print-web-pages.md
                 - name: プリンターの種類に合わせてページをインストールする
                   href: installing-pages-for-a-printer-type.md
                 - name: 製造元に合わせてページをインストールする
@@ -1839,35 +2045,41 @@
     - name: ターミナル サーバーの印刷
       href: terminal-server-printing.md
     - name: Microsoft USB プリンター ドライバー (Usbprint.sys)
-      href: usb-printing.md
       items:
+        - name: Microsoft USB プリンター ドライバー (Usbprint.sys)
+          href: usb-printing.md
         - name: USBPRINT のプログラミング考慮事項
           href: programming-considerations-for-usbprint.md
     - name: Bluetooth 印刷
       href: bluetooth-printing.md
     - name: Wi-Fi Direct 印刷
-      href: wi-fi-direct-printing.md
       items:
+        - name: Wi-Fi Direct 印刷
+          href: wi-fi-direct-printing.md
         - name: Wi-Fi Direct 印刷の概要
           href: wfd-overview.md
         - name: Wi-Fi Direct 印刷の実装
           href: wfd-implementation.md
     - name: モバイル印刷
-      href: mobile-printing.md
       items:
+        - name: モバイル印刷
+          href: mobile-printing.md
         - name: WS-Discovery モバイル印刷サポート
           href: ws-discovery-mobile-printing-support.md
     - name: 印刷スプーラー アーキテクチャ
-      href: print-spooler-architecture.md
       items:
+        - name: 印刷スプーラー アーキテクチャ
+          href: print-spooler-architecture.md
         - name: スプーラー コンポーネント
-          href: spooler-components.md
           items:
+            - name: スプーラー コンポーネント
+              href: spooler-components.md
             - name: スプーラー コンポーネントの概要
               href: introduction-to-spooler-components.md
             - name: 印刷プロバイダー
-              href: print-providers.md
               items:
+                - name: 印刷プロバイダー
+                  href: print-providers.md
                 - name: 印刷プロバイダーの概要
                   href: introduction-to-print-providers.md
                 - name: サンプル印刷プロバイダー
@@ -1879,15 +2091,17 @@
                 - name: ローカル印刷プロバイダー
                   href: local-print-provider.md
         - name: スプーラー通知
-          href: spooler-notification.md
           items:
+            - name: スプーラー通知
+              href: spooler-notification.md
             - name: スプーラー通知の概要
               href: overview-of-spooler-notification.md
             - name: スプーラー通知の用語集
               href: spooler-notification-terminology.md
             - name: パブリック インターフェイス
-              href: public-interfaces.md
               items:
+                - name: パブリック インターフェイス
+                  href: public-interfaces.md
                 - name: '通知のフィルター処理と通信スタイル '
                   href: notification-filtering-and-communication-styles.md
                 - name: 通知チャンネルの両端で実装されるインターフェイス
@@ -1903,8 +2117,9 @@
                 - name: 通知エラー
                   href: notification-errors.md
         - name: クライアント側レンダリング
-          href: client-side-rendering.md
           items:
+            - name: クライアント側レンダリング
+              href: client-side-rendering.md
             - name: クライアント側レンダリングの概要
               href: client-side-rendering-overview.md
             - name: クライアント側レンダリングの既知の問題
@@ -1912,11 +2127,13 @@
             - name: クライアント側レンダリングのベスト プラクティス
               href: best-practices-for-client-side-rendering.md
         - name: プリンター フォーム サポート
-          href: printer-forms-support.md
           items:
+            - name: プリンター フォーム サポート
+              href: printer-forms-support.md
             - name: Windows Vista のプリンター フォーム変更
-              href: changes-to-printer-forms-in-windows-vista.md
               items:
+                - name: Windows Vista のプリンター フォーム変更
+                  href: changes-to-printer-forms-in-windows-vista.md
                 - name: FORM_INFO_2 データ構造
                   href: form-info-2-data-structure.md
                 - name: 改善されたフォーム照合アルゴリズム
@@ -1924,14 +2141,17 @@
                 - name: 改善されたフォームとトレイの照合アルゴリズム
                   href: improved-form-to-tray-matching-algorithm.md
 - name: 印刷スプーラーのコンポーネント
-  href: print-spooler-components.md
   items:
+    - name: 印刷スプーラーのコンポーネント
+      href: print-spooler-components.md
     - name: 印刷プロセッサの記述
-      href: writing-a-print-processor.md
       items:
+        - name: 印刷プロセッサの記述
+          href: writing-a-print-processor.md
         - name: 印刷プロセッサの概要
-          href: introduction-to-print-processors.md
           items:
+            - name: 印刷プロセッサの概要
+              href: introduction-to-print-processors.md
             - name: EMF データ型
               href: emf-data-type.md
             - name: RAW データ型
@@ -1945,8 +2165,9 @@
         - name: 印刷プロセッサによって定義されている関数
           href: functions-defined-by-print-processors.md
         - name: 印刷ジョブの処理
-          href: processing-a-print-job.md
           items:
+            - name: 印刷ジョブの処理
+              href: processing-a-print-job.md
             - name: プリント プロセッサで GDI 関数を使用する
               href: using-gdi-functions-in-print-processors.md
         - name: アジア向けレイアウトのサポートを提供する
@@ -1954,26 +2175,31 @@
         - name: 印刷プロセッサをインストールする
           href: installing-a-print-processor.md
     - name: 印刷モニターの記述
-      href: writing-a-print-monitor.md
       items:
+        - name: 印刷モニターの記述
+          href: writing-a-print-monitor.md
         - name: 言語モニター
-          href: language-monitors.md
           items:
+            - name: 言語モニター
+              href: language-monitors.md
             - name: サンプル言語モニター
               href: sample-language-monitor.md
         - name: ポート モニター
-          href: port-monitors.md
           items:
+            - name: ポート モニター
+              href: port-monitors.md
             - name: サンプル ポート モニター
               href: sample-port-monitor.md
         - name: 言語とポート モニターの相互作用
-          href: language-and-port-monitor-interaction.md
           items:
+            - name: 言語とポート モニターの相互作用
+              href: language-and-port-monitor-interaction.md
             - name: 結合された言語とポート モニター
               href: combined-language-and-port-monitor.md
         - name: 印刷モニターによって定義されている関数
-          href: functions-defined-by-print-monitors.md
           items:
+            - name: 印刷モニターによって定義されている関数
+              href: functions-defined-by-print-monitors.md
             - name: 言語モニター関数
               href: language-monitor-functions.md
             - name: ポート モニター クライアント DLL 関数
@@ -1987,8 +2213,9 @@
         - name: 印刷ジョブの印刷
           href: printing-a-print-job.md
         - name: ポートの管理
-          href: managing-a-port.md
           items:
+            - name: ポートの管理
+              href: managing-a-port.md
             - name: ポートの追加
               href: adding-a-port.md
             - name: ポートの構成
@@ -2000,21 +2227,25 @@
             - name: ポート構成情報の格納
               href: storing-port-configuration-information.md
         - name: TCPMON Xcv インターフェイス
-          href: tcpmon-xcv-interface.md
           items:
+            - name: TCPMON Xcv インターフェイス
+              href: tcpmon-xcv-interface.md
             - name: TCPMON Xcv コマンド
-              href: tcpmon-xcv-commands.md
               items:
+                - name: TCPMON Xcv コマンド
+                  href: tcpmon-xcv-commands.md
                 - name: 追加 TCPMON コマンド
-                  href: additional-tcpmon-commands.md
                   items:
+                    - name: 追加 TCPMON コマンド
+                      href: additional-tcpmon-commands.md
                     - name: GetIdlePollingState
                       href: getidlepollingstate.md
                     - name: SetIdlePollingState
                       href: setidlepollingstate.md
         - name: WSDMON ポート モニター
-          href: wsdmon-port-monitor.md
           items:
+            - name: WSDMON ポート モニター
+              href: wsdmon-port-monitor.md
             - name: CleanupPort
               href: cleanupport.md
             - name: DeviceID
@@ -2030,8 +2261,9 @@
         - name: 印刷モニターのインストール
           href: installing-a-print-monitor.md
     - name: ネットワーク印刷プロバイダーの記述
-      href: writing-a-network-print-provider.md
       items:
+        - name: ネットワーク印刷プロバイダーの記述
+          href: writing-a-network-print-provider.md
         - name: 部分的印刷プロバイダーの概要
           href: overview-of-partial-print-providers.md
         - name: プリンター変更通知のサポート
@@ -2043,11 +2275,13 @@
     - name: Windows Vista より前のオペレーティング システムで UI を表示する
       href: displaying-a-ui-in-operating-systems-prior-to-windows-vista.md
 - name: プリンター ドライバーのテストとデバッグ
-  href: printer-driver-testing-and-debugging.md
   items:
+    - name: プリンター ドライバーのテストとデバッグ
+      href: printer-driver-testing-and-debugging.md
     - name: プリンター ドライバーとスプーラー コンポーネントのデバッグ
-      href: debugging-printer-drivers-and-spooler-components.md
       items:
+        - name: プリンター ドライバーとスプーラー コンポーネントのデバッグ
+          href: debugging-printer-drivers-and-spooler-components.md
         - name: プリンター ドライバー コンポーネントのデバッグ
           href: debugging-printer-driver-components.md
         - name: スプーラー コンポーネントのデバッグ
@@ -2055,8 +2289,9 @@
         - name: XPSDrv プリンター ドライバーのデバッグ
           href: debugging-xpsdrv-printer-drivers.md
     - name: ローカル プリンター接続のテスト
-      href: testing-local-printer-connectivity.md
       items:
+        - name: ローカル プリンター接続のテスト
+          href: testing-local-printer-connectivity.md
         - name: デバイスのインストール
           href: device-installation.md
         - name: デバイス機能のテスト

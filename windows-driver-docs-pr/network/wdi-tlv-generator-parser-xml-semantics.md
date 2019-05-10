@@ -4,48 +4,48 @@ description: TLV ジェネレーター/パーサーの XML ファイルは、メ
 ms.assetid: AD268E68-B969-45D8-A2F2-4025E827D496
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c5e5160eeec348b8e3c7392257cfe2d78e9e6d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7333a5f37d2b9c419daa513d0f2a19f6446fc824
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385833"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405276"
 ---
 # <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV ジェネレーター/パーサーの XML のセマンティクス
 
 
 TLV ジェネレーター/パーサーの XML ファイルは、メッセージ コンテナー (TLVs) の一覧、プロパティは、(構造体) をグループ化します。 このトピックでは、XML 構文について説明します。
 
--   [`<message />`](#-message---)
+-   [`<message />`](#message-)
     -   [Attributes](#attributes)
     -   [コンテンツ](#content)
     -   [例](#example)
--   [`<containerRef />`](#-containerref---)
+-   [`<containerRef />`](#containerref-)
     -   [Attributes](#attributes)
     -   [コンテンツ](#content)
     -   [例](#example)
--   [`<containers />`](#-containers---)
--   [`<container />`](#-container---)
+-   [`<containers />`](#containers-)
+-   [`<container />`](#container-)
     -   [Attributes](#attributes)
     -   [目次](#contents)
     -   [例](#example)
--   [`<groupRef />`](#-groupref---)
+-   [`<groupRef />`](#groupref-)
     -   [Attributes](#attributes)
     -   [コンテンツ](#content)
     -   [使用例](#examples)
--   [`    <namedType />`](#--namedtype---)
+-   [`    <namedType />`](#namedtype-)
     -   [Attributes](#attributes)
     -   [コンテンツ](#content)
     -   [例](#example)
--   [`<aggregateContainer />`](#-aggregatecontainer---)
+-   [`<aggregateContainer />`](#aggregatecontainer-)
     -   [Attributes](#attributes)
     -   [コンテンツ](#content)
     -   [例](#example)
--   [`<propertyGroups />`](#-propertygroups---)
--   [フィールドのプリミティブ型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)](#primitive-field-types---bool----uint8----uint16----uint32----int8----int16----int32---)
+-   [`<propertyGroups />`](#propertygroups-)
+-   [フィールドのプリミティブ型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)](#primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32)
     -   [Attributes](#attributes)
     -   [目次](#contents)
--   [`<propertyGroup />`](#-propertygroup---)
+-   [`<propertyGroup />`](#propertygroup-)
     -   [Attributes](#attributes)
     -   [目次](#contents)
     -   [例](#example)

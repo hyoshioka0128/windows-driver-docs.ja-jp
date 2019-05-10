@@ -4,12 +4,12 @@ description: デバイスのプロパティ ページのプロバイダーの一
 ms.assetid: bc48d848-a216-442e-97ca-f990f8d243ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ef7180f4854a12bfbe45fe6f7d8ee95501dc62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d09863264bb4d0ba64ef1b562efa31cea9eb094
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369430"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456422"
 ---
 # <a name="specific-requirements-for-device-property-page-providers-property-page-extension-dlls"></a>デバイスのプロパティ ページのプロバイダーの一般的な要件 (プロパティ ページの拡張 DLL)
 
@@ -26,7 +26,7 @@ ms.locfileid: "63369430"
 
 ### <a name="installing-a-device-property-page"></a>デバイスのプロパティ ページのインストール
 
-次のディレクティブを使用して DLL がインストールされているプロパティ ページの拡張機能、 [INF ファイル](inf-files.md)の[ドライバー パッケージ](driver-packages.md):
+次のディレクティブを使用して DLL がインストールされているプロパティ ページの拡張機能、 [INF ファイル](overview-of-inf-files.md)の[ドライバー パッケージ](driver-packages.md):
 
 1.  使用して、*追加レジストリ セクション*で指定される、 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)で、 [ **INF *DDInstall*セクション**](inf-ddinstall-section.md)、追加する、 **EnumPropPages32**デバイスのエントリ。 **EnumPropPages32**エントリは、次を指定[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)値。
 

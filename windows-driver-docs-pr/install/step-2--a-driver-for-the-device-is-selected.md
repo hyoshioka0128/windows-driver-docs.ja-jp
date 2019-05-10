@@ -4,12 +4,12 @@ description: 手順 2 のデバイスのドライバーが選択されていま�
 ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45dcb8b103765de7969092f6d8f802494c9a3234
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e00a50a7836c30a7b4a86359c8603664ad9162e
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369384"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456425"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>手順 2:デバイスのドライバーが選択されます
 
@@ -21,7 +21,7 @@ ms.locfileid: "63369384"
 
 ### <a href="" id="searching-for-the-driver"></a>ドライバー パッケージの検索
 
-使用して、[ハードウェア識別子 (ID)](hardware-ids.md)バスまたはハブのドライバー、Windows 検索によって報告された[ドライバー パッケージ](driver-packages.md)デバイスに一致します。 ハードウェア ID には、ハードウェア ID が一致する場合、ドライバー パッケージにデバイスと一致するか、[互換性 ID](compatible-ids.md)で、 [ **INF*モデル*セクション**](inf-models-section.md)のエントリドライバー パッケージの[INF ファイル](inf-files.md)します。
+使用して、[ハードウェア識別子 (ID)](hardware-ids.md)バスまたはハブのドライバー、Windows 検索によって報告された[ドライバー パッケージ](driver-packages.md)デバイスに一致します。 ハードウェア ID には、ハードウェア ID が一致する場合、ドライバー パッケージにデバイスと一致するか、[互換性 ID](compatible-ids.md)で、 [ **INF*モデル*セクション**](inf-models-section.md)のエントリドライバー パッケージの[INF ファイル](overview-of-inf-files.md)します。
 
 オペレーティング システムのバージョンによっては、Windows は、次の表に示すようにさまざまな場所にドライバー パッケージに一致するを検索します。
 
@@ -97,7 +97,7 @@ Windows の 1 つまたは複数の一致が見つかるとすぐに[ドライ�
 
     -   ドライバーはデジタル署名するかどうか。 Windows Vista 以降、Windows は常に、他の選択条件に関係なく未署名のドライバーではなく、署名されたドライバーを選択します。 ドライバーのデジタル署名の詳細については、次を参照してください。[ドライバーの署名](driver-signing.md)します。
 
-    -   ドライバーの日付と日付とバージョンがで指定されているバージョン、 [ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)に含まれるドライバー パッケージの[INF ファイル](inf-files.md)します。
+    -   ドライバーの日付と日付とバージョンがで指定されているバージョン、 [ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)に含まれるドライバー パッケージの[INF ファイル](overview-of-inf-files.md)します。
 
 」の説明に従って、Windows でドライバーをインストール後、Windows がデバイスのドライバーを選択すると、[手順 3。デバイスのドライバーがインストールされている](step-3--the-driver-for-the-device-is-installed.md)します。
 

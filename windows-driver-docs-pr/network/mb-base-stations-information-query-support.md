@@ -6,12 +6,12 @@ keywords:
 - MB のベースに情報の照会、モバイル ブロード バンド ベース ステーション情報の照会
 ms.date: 08/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c45183d230038702507d0e135bc7deec4352ee3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c11eb0217aadc3e82916e6d95600a37f57705dc
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343463"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405228"
 ---
 # <a name="mb-base-stations-information-query-support"></a>MB ベース ステーション情報クエリのサポート
 
@@ -52,11 +52,11 @@ MBIM_BASE_STATIONS_INFO_REQ 構造体は、クエリの InformationBuffer で使
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | MaxGSMCount | サイズ | GSM の隣接するセルのエントリの最大数は、の GSM ネットワーク測定レポートで返される[MBIM_GSM_NMR](#mbimgsmnmr)します。 既定の容量は、15 です。 |
-| 4 | 4 | MaxUMTSCount | サイズ | UMTS 測定結果リストで UMTS 隣接するセルのエントリの最大数が返される[MBIM_UMTS_MRL](#mbimumtsmrl)します。 既定の容量は、15 です。 |
-| 8 | 4 | MaxTDSCDMACount | サイズ | TDSCDMA 測定結果リストで TDSCDMA 隣接するセルのエントリの最大数が返される[MBIM_TDSCDMA_MRL](#mbimtdscdmamrl)します。 既定の容量は、15 です。 |
-| 12 | 4 | MaxLTECount | サイズ | 測定 LTE 結果一覧の隣接するセル LTE のエントリの最大数が返される[MBIM_LTE_MRL](#mbimltemrl)します。 既定の容量は、15 です。 |
-| 16 | 4 | MaxCDMACount | サイズ | CDMA 測定結果リストで CDMA セルのエントリの最大数が返される[MBIM_CDMA_MRL](#mbimcdmamrl)します。 この一覧には、サービスを提供して、隣接するセルが含まれています。 既定の容量には 12 です。 |
+| 0 | 4 | MaxGSMCount | サイズ | GSM の隣接するセルのエントリの最大数は、の GSM ネットワーク測定レポートで返される[MBIM_GSM_NMR](#mbim_gsm_nmr)します。 既定の容量は、15 です。 |
+| 4 | 4 | MaxUMTSCount | サイズ | UMTS 測定結果リストで UMTS 隣接するセルのエントリの最大数が返される[MBIM_UMTS_MRL](#mbim_umts_mrl)します。 既定の容量は、15 です。 |
+| 8 | 4 | MaxTDSCDMACount | サイズ | TDSCDMA 測定結果リストで TDSCDMA 隣接するセルのエントリの最大数が返される[MBIM_TDSCDMA_MRL](#mbim_tdscdma_mrl)します。 既定の容量は、15 です。 |
+| 12 | 4 | MaxLTECount | サイズ | 測定 LTE 結果一覧の隣接するセル LTE のエントリの最大数が返される[MBIM_LTE_MRL](#mbim_lte_mrl)します。 既定の容量は、15 です。 |
+| 16 | 4 | MaxCDMACount | サイズ | CDMA 測定結果リストで CDMA セルのエントリの最大数が返される[MBIM_CDMA_MRL](#mbim_cdma_mrl)します。 この一覧には、サービスを提供して、隣接するセルが含まれています。 既定の容量には 12 です。 |
 
 ### <a name="set"></a>Set
 
@@ -74,23 +74,23 @@ MBIM_BASE_STATIONS_INFO 構造体には、提供していると、隣接する�
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SystemType | MBIM_DATA_CLASS | セルの情報が有効にするサービスのシステムの種類 (または型) を示します。 このメンバーは、1 つまたは複数のシステム型、MBIM_DATA_CLASS で定義されているのビットマスクです。 |
 | 4 | 4 | GSMServingCellOffset | OFFSET | セルの情報を提供している、GSM を保持するバッファーをこの構造体の先頭からのオフセット (バイト単位) が計算されます。 このメンバーは、サービスのセルのテクノロジは GSM ではない場合、NULL にすることができます。 |
-| 8 | 4 | GSMServingCellSize | SIZE(0-44) | バイト単位の使用のサイズ、 [MBIM_GSM_SERVING_CELL_INFO](#mbimgsmservingcellinfo)します。 |
+| 8 | 4 | GSMServingCellSize | SIZE(0-44) | バイト単位の使用のサイズ、 [MBIM_GSM_SERVING_CELL_INFO](#mbim_gsm_serving_cell_info)します。 |
 | 12 | 4 | UMTSServingCellOffset | OFFSET | セルの情報を提供している UMTS を格納しているバッファーに、この構造体の先頭からのオフセット (バイト単位) が計算されます。 このメンバーは、セルのサービスを提供するテクノロジは UMTS ではない場合、NULL にすることができます。 |
-| 16 | 4 | UMTSServingCellSize | SIZE(0-60) | バイト単位の使用のサイズ、 [MBIM_UMTS_SERVING_CELL_INFO](#mbimumtsservingcellinfo)します。 |
+| 16 | 4 | UMTSServingCellSize | SIZE(0-60) | バイト単位の使用のサイズ、 [MBIM_UMTS_SERVING_CELL_INFO](#mbim_umts_serving_cell_info)します。 |
 | 20 | 4 | TDSCDMAServingCellOffset | OFFSET | セルの情報を提供している TDSCDMA を格納しているバッファーに、この構造体の先頭からのオフセット (バイト単位) が計算されます。 このメンバーは、セルのサービスを提供するテクノロジは TDSCDMA ではない場合、NULL にすることができます。 |
-| 24 | 4 | TDSCDMAServingCellSize | SIZE(0-48) | バイト単位の使用のサイズ、 [MBIM_TDSCDMA_SERVING_CELL_INFO](#mbimtdscdmaservingcellinfo)します。 |
+| 24 | 4 | TDSCDMAServingCellSize | SIZE(0-48) | バイト単位の使用のサイズ、 [MBIM_TDSCDMA_SERVING_CELL_INFO](#mbim_tdscdma_serving_cell_info)します。 |
 | 28 | 4 | LTEServingCellOffset | OFFSET | セルの情報を提供している LTE を格納しているバッファーに、この構造体の先頭からのオフセット (バイト単位) が計算されます。 このメンバーは、セルのサービスを提供するテクノロジは LTE ではない場合、NULL にすることができます。 |
-| 32 | 4 | LTEServingCellSize | SIZE(0-48) | バイト単位の使用のサイズ、 [MBIM_LTE_SERVING_CELL_INFO](#mbimlteservingcellinfo)します。 |
+| 32 | 4 | LTEServingCellSize | SIZE(0-48) | バイト単位の使用のサイズ、 [MBIM_LTE_SERVING_CELL_INFO](#mbim_lte_serving_cell_info)します。 |
 | 36 | 4 | GSMNmrOffset | OFFSET | GSM ネットワーク測定レポートを含んでいるバッファーに、この構造体の先頭からのオフセット (バイト単位) が計算されます。 このメンバーは、測定レポートに GSM の隣接するネットワークが返されない場合、NULL にすることができます。 |
-| 40 | 4 | GSMNmrSize | サイズ | GSM ネットワーク測定レポートの形式を含んでいるバッファーのバイト単位の合計サイズ[MBIM_GSM_NMR](#mbimgsmnmr)します。 |
+| 40 | 4 | GSMNmrSize | サイズ | GSM ネットワーク測定レポートの形式を含んでいるバッファーのバイト単位の合計サイズ[MBIM_GSM_NMR](#mbim_gsm_nmr)します。 |
 | 44 | 4 | UMTSMrlOffset | OFFSET | オフセット (バイト単位) が、この構造体の先頭から計算されたバッファーに UMTS を格納している測定結果の一覧。 このメンバーは、測定レポートに UMTS 隣接するネットワークが返されない場合、NULL にすることができます。 |
-| 48 | 4 | UMTSMrlSize | サイズ | UMTS を格納するバッファーのバイト単位の合計サイズの測定結果一覧の形式で[MBIM_UMTS_MRL](#mbimumtsmrl)します。 |
+| 48 | 4 | UMTSMrlSize | サイズ | UMTS を格納するバッファーのバイト単位の合計サイズの測定結果一覧の形式で[MBIM_UMTS_MRL](#mbim_umts_mrl)します。 |
 | 52 | 4 | TDSCDMAMrlOffset | OFFSET | オフセット (バイト単位) が、この構造体の先頭から計算されたバッファーに TDSCDMA を格納している測定結果の一覧。 このメンバーは、測定レポートに TDSCDMA 隣接するネットワークが返されない場合、NULL にすることができます。 |
-| 56 | 4 | TDSCDMAMrlSize | サイズ | TDSCDMA を格納するバッファーのバイト単位の合計サイズの測定結果一覧の形式で[MBIM_TDSCDMA_MRL](#mbimtdscdmamrl)します。 |
+| 56 | 4 | TDSCDMAMrlSize | サイズ | TDSCDMA を格納するバッファーのバイト単位の合計サイズの測定結果一覧の形式で[MBIM_TDSCDMA_MRL](#mbim_tdscdma_mrl)します。 |
 | 60 | 4 | LTEMrlOffset | OFFSET | オフセット (バイト単位) が、この構造体の先頭から計算されたバッファーに、LTE を格納している測定結果の一覧。 このメンバーは、測定レポートに LTE 隣接するネットワークが返されない場合、NULL にすることができます。 |
-| 64 | 4 | LTEMrlSize | サイズ | LTE を格納するバッファーのバイト単位の合計サイズの測定結果一覧の形式で[MBIM_LTE_MRL](#mbimltemrl)します。 |
+| 64 | 4 | LTEMrlSize | サイズ | LTE を格納するバッファーのバイト単位の合計サイズの測定結果一覧の形式で[MBIM_LTE_MRL](#mbim_lte_mrl)します。 |
 | 68 | 4 | CDMAMrlOffset | OFFSET | オフセット (バイト単位) が、この構造体の先頭から計算されたバッファーに CDMA を格納している測定結果の一覧。 このメンバーは、測定レポートに CDMA 隣接するネットワークが返されない場合、NULL にすることができます。 |
-| 72 | 4 | CDMAMrlSize | サイズ | CDMA を格納するバッファーのバイト単位の合計サイズの測定結果一覧の形式で[MBIM_CDMA_MRL](#mbimcdmamrl)します。 |
+| 72 | 4 | CDMAMrlSize | サイズ | CDMA を格納するバッファーのバイト単位の合計サイズの測定結果一覧の形式で[MBIM_CDMA_MRL](#mbim_cdma_mrl)します。 |
 | 76 |   | DataBuffer | DATABUFFER | データ バッファーを含む*GSMServingCell*、 *UMTSServingCell*、 *TDSCDMAServingCell*、 *LTEServingCell*、 *GSMNmr*、 *UMTSMrl*、 *TDSCDMAMrl*、 *LTEMrl*、および*CDMAMrl*します。 |
 
 #### <a name="gsm-cell-data-structures"></a>GSM セルのデータ構造体
@@ -118,7 +118,7 @@ MBIM_GSM_NMR 構造体には、GSM の隣接するセルのネットワーク測
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の後 NMR エントリの数。 |
-| 4 |   | DataBuffer | DATABUFFER | NMR の配列がレコードとして指定された各、 [MBIM_GSM_NMR_INFO](#mbimgsmnmrinfo)構造体。 |
+| 4 |   | DataBuffer | DATABUFFER | NMR の配列がレコードとして指定された各、 [MBIM_GSM_NMR_INFO](#mbim_gsm_nmr_info)構造体。 |
 
 ##### <a name="mbimgsmnmrinfo"></a>MBIM_GSM_NMR_INFO
 
@@ -164,7 +164,7 @@ MBIM_UMTS_MRL 構造体には、UMTS の隣接するセルの測定結果一覧 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の次 MRL エントリの数。 |
-| 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_UMTS_MRL_INFO](#mbimumtsmrlinfo)構造体。 |
+| 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_UMTS_MRL_INFO](#mbim_gsm_nmr_info)構造体。 |
 
 ##### <a name="mbimumtsmrlinfo"></a>MBIM_UMTS_MRL_INFO
 
@@ -209,7 +209,7 @@ MBIM_TDSCDMA_MRL 構造体には、隣接する TDSCDMA セルの測定結果一
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の次 MRL エントリの数。 |
-| 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_TDSCDMA_MRL_INFO](#mbimtdscdmamrlinfo)構造体。 |
+| 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_TDSCDMA_MRL_INFO](#mbim_tdscdma_mrl_info)構造体。 |
 
 ##### <a name="mbimtdscdmamrlinfo"></a>MBIM_TDSCDMA_MRL_INFO
 
@@ -254,7 +254,7 @@ MBIM_LTE_MRL 構造体には、隣接する LTE セルの測定結果一覧 (MRL
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の次 MRL エントリの数。 |
-| 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_LTE_MRL_INFO](#mbimltemrlinfo)構造体。 |
+| 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_LTE_MRL_INFO](#mbim_lte_mrl_info)構造体。 |
 
 ##### <a name="mbimltemrlinfo"></a>MBIM_LTE_MRL_INFO
 
@@ -281,7 +281,7 @@ MBIM_CDMA_MRL 構造体には、提供していると、隣接するセルの CD
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の次 MRL エントリの数。 |
-| 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_CDMA_MRL_INFO](#mbimcdmamrlinfo)構造体。 |
+| 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_CDMA_MRL_INFO](#mbim_cdma_mrl_info)構造体。 |
 
 ##### <a name="mbimcdmamrlinfo"></a>MBIM_CDMA_MRL_INFO
 
@@ -331,7 +331,7 @@ MBIM_CDMA_MRL_INFO データ構造体は、CDMA2000 ネットワークの種類�
 
 ### <a name="query"></a>クエリ
 
-MBIM_COMMAND_MSG InformationBuffer は使用されません。 含まれています、MBIM_COMMAND_DONE の InformationBuffer、 [MBIM_LOCATION_INFO](#mbimlocationinfo)構造体。
+MBIM_COMMAND_MSG InformationBuffer は使用されません。 含まれています、MBIM_COMMAND_DONE の InformationBuffer、 [MBIM_LOCATION_INFO](#mbim_location_info)構造体。
 
 ### <a name="set"></a>Set
 

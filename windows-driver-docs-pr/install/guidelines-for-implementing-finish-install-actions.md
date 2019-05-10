@@ -4,12 +4,12 @@ description: インストールの完了アクションの実装のガイドラ�
 ms.assetid: 455d520a-ccd7-470b-ab5f-5786ee90b91d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 968e752fa905d35eaf7c7479ff4cff59e8995807
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd317066a43e196ed7c1fd3d5d91fe0778109148
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342747"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456430"
 ---
 # <a name="guidelines-for-implementing-finish-install-actions"></a>インストールの完了アクションの実装のガイドライン
 
@@ -46,7 +46,7 @@ ms.locfileid: "63342747"
 
 -   インストーラーでは、完了インストール アクションが失敗し、もう一度は試行しない必要がある状況を処理する必要があります。
 
-    エラーでは、完了-インストール操作が正常にこれまで不可能な場合、インストーラーは、操作は、完了できないと、および、必要なクリーンアップを実行し、ユーザーに通知する必要があります。 このような状況で共同インストーラーは NO_ERROR とデバイスを返す必要があります。 またはクラスのインストーラーが ERROR_DI_DO_DEFAULT を返す必要があります。 Windows は devnode と呼び出しの完了インストール アクションを実行するフラグが設定されていることと、デバイスをクリアして、その後[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)既定の [完了-インストールを実行するには操作です。
+    エラーでは、完了-インストール操作が正常にこれまで不可能な場合、インストーラーは、操作は、完了できないと、および、必要なクリーンアップを実行し、ユーザーに通知する必要があります。 このような状況で共同インストーラーは NO_ERROR とデバイスを返す必要があります。 またはクラスのインストーラーが ERROR_DI_DO_DEFAULT を返す必要があります。 Windows は devnode と呼び出しの完了インストール アクションを実行するフラグが設定されていることと、デバイスをクリアして、その後[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)既定の 完了-インストールを実行するには操作です。
 
 -   インストーラーを処理すると、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702) DIF コード、ことを確認完了インストール アクションが必要なかどうかを参照してください。 完了-インストール操作を実行する必要がありますがある場合、インストーラーは DI_FLAGSEX_FINISHINSTALL_ACTION フラグを設定のみ必要があります。 このフラグが不必要に設定されている場合は、ドライバーの再インストール時にユーザーがプロンプトにある、追加のデバイスのインストールを取得、DIF_FINISHINSTALL_ACTION 要求には、完了-インストール アクションを実行するはありません。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63342747"
 
      
 
--   含めるし、で、完了-インストール アクションを実行するために必要なすべてのファイルをインストールする必要があります完了インストール アクションを実装するインストーラーを登録する前に、 [ **CopyFiles ディレクティブ**](inf-copyfiles-directive.md)の[INF ファイル](inf-files.md)デバイス。 ファイルがアクセスできる場所にインストール中に、インストーラーによって配置されるように必要です。
+-   含めるし、で、完了-インストール アクションを実行するために必要なすべてのファイルをインストールする必要があります完了インストール アクションを実装するインストーラーを登録する前に、 [ **CopyFiles ディレクティブ**](inf-copyfiles-directive.md)の[INF ファイル](overview-of-inf-files.md)デバイス。 ファイルがアクセスできる場所にインストール中に、インストーラーによって配置されるように必要です。
 
     デバイスまたはクラスの共同インストーラーの登録要件の詳細については、次を参照してください。[クラス共同インストーラーを登録する](registering-a-class-co-installer.md)します。
 

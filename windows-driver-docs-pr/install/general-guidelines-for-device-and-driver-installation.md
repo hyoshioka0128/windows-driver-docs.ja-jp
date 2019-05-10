@@ -7,12 +7,12 @@ keywords:
 - ドライバーのインストール WDK、一般的なガイドライン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0932ff8a78ebeac39edfc7bac798efe4807114c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eac1b34604f753d7f228c8b45d1ba70f03ebf7f7
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392513"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456359"
 ---
 # <a name="general-guidelines-for-device-and-driver-installation"></a>デバイスとドライバーのインストールの一般的なガイドライン
 
@@ -23,7 +23,7 @@ Windows オペレーティング システムでのデバイスとドライバ�
 
 -   自動的にシステムを再起動または絶対に必要である場合を除き、そのためには、ユーザーが必要です。
 
--   常に使用する[INF ファイル](inf-files.md)のデバイスのインストール。 すべての INF ファイルは整形式ではし、正しい構文を使用してください。
+-   常に使用する[INF ファイル](overview-of-inf-files.md)のデバイスのインストール。 すべての INF ファイルは整形式ではし、正しい構文を使用してください。
 
 -   インストール後、システム上の INF ファイルのままに削除しないでください。 INF ファイルは、だけでなく、デバイスまたはドライバーのインストール時にまずもドライバー、ユーザーの要求を通じてデバイス マネージャーを更新するときに使用されます。
 

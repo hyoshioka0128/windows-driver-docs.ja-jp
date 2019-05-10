@@ -3,12 +3,12 @@ Description: 新しいシステムを構築する場合、このトピックの�
 title: システム開発において推奨される USB テスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22770ad4938e8c30b30e4595fdd9b8d97504d93d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e4519642815ef34c141be5497c1373fe2f033ca4
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354726"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501773"
 ---
 # <a name="recommended-usb-tests-for-system-development"></a>システム開発において推奨される USB テスト
 
@@ -148,7 +148,7 @@ ms.locfileid: "63354726"
 
 システム (ドッキング ステーションがサポートされている) 場合 3
 
--   テストを実行、[システム インテグレーションのステージ](#stage2)ドッキングされているシステム。
+-   テストを実行、[システム インテグレーションのステージ](#stage-2system-integration)ドッキングされているシステム。
 
 <table>
 <colgroup>
@@ -164,7 +164,7 @@ ms.locfileid: "63354726"
 <tbody>
 <tr class="odd">
 <td><p>システム 1</p>
-<p>参照してください<a href="#stage1" data-raw-source="[system bring-up topology](#stage1)">システム bring アップ トポロジ</a>します。</p>
+<p>参照してください<a href="#stage-1system-bring-up" data-raw-source="[system bring-up topology](#stage-1system-bring-up)">システム bring アップ トポロジ</a>します。</p>
 <p><strong>デバイス ドライバー:  </strong>SuperMUTT をデバイスのデバイス ドライバーとして Usbtcd.sys 必要があります。 次のコマンドを実行します。</p>
 <p><code>muttutil -updatedriver usbtcd.inf</code></p>
 <p>システム 2</p>
@@ -179,7 +179,7 @@ ms.locfileid: "63354726"
 </ol>
 <img src="images/xhci-superspeedhub-hub-daisy.png" alt="System tuning topology" />
 <p>システム (ドッキング ステーションがサポートされている) 場合 3</p>
-<p>参照してください<a href="#stage2" data-raw-source="[system integration stage](#stage2)">システム インテグレーションのステージ</a>します。</p></td>
+<p>参照してください<a href="#stage-2system-integration" data-raw-source="[system integration stage](#stage-2system-integration)">システム インテグレーションのステージ</a>します。</p></td>
 <td><p>システム 1</p>
 <ol>
 <li><strong>選択</strong>] タブで [<strong>デバイス マネージャー</strong>します。</li>
@@ -209,7 +209,7 @@ ms.locfileid: "63354726"
 </ol>
 <p>システム 3</p>
 <ul>
-<li><p>同じ<a href="#stage2" data-raw-source="[system integration topology](#stage2)">システム統合トポロジ</a>します。</p></li>
+<li><p>同じ<a href="#stage-2system-integration" data-raw-source="[system integration topology](#stage-2system-integration)">システム統合トポロジ</a>します。</p></li>
 </ul></td>
 </tr>
 </tbody>

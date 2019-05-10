@@ -1,11 +1,13 @@
 - name: 立ち上げ
   href: index.md
 - name: ファームウェアに関する Windows エンジニアリング ガイド (WEG)
-  href: firmware-weg.md
   items:
+    - name: ファームウェアに関する Windows エンジニアリング ガイド (WEG)
+      href: firmware-weg.md
     - name: UEFI のセキュリティ
-      href: uefi-security.md
       items:
+        - name: UEFI のセキュリティ
+          href: uefi-security.md
         - name: 拡張ファームウェア インターフェイス (UEFI)
           href: unified-extensible-firmware-interface.md
         - name: Device Guard と Credential Guard
@@ -21,8 +23,9 @@
         - name: トラステッド プラットフォーム モジュール (TPM) に関する考慮事項
           href: trusted-platform-module-considerations.md
     - name: ファームウェアの更新
-      href: firmware-update.md
       items:
+        - name: ファームウェアの更新
+          href: firmware-update.md
         - name: ファームウェア パッケージを構築して Windows Update (WU) に送信する
           href: build-and-submit-a-firmware-package-to-windows-update.md
         - name: CHID を使用してシステムをターゲットにする
@@ -38,8 +41,9 @@
     - name: ファームウェアでの Wi-Fi のサポート
       href: wi-fi-support-in-firmware.md
     - name: レガシ MBR ディスクから Windows 10 を使用した GPT ディスクに切り替える
-      href: switch-from-legacy-mbr-disk-to-gpt-disk-with-windows-10.md
       items:
+        - name: レガシ MBR ディスクから Windows 10 を使用した GPT ディスクに切り替える
+          href: switch-from-legacy-mbr-disk-to-gpt-disk-with-windows-10.md
         - name: レガシ BIOS ブートと CSM を UEFI と GPT に切り替える
           href: switch-legacy-bios-boot-and-csm-to-uefi-and-gpt.md
         - name: '新しいメソッド: Windows 10 バージョン 1703 以降'
@@ -57,14 +61,17 @@
     - name: SMBIOS をローカルにクエリする PowerShell スクリプトのサンプル
       href: sample-powershell-script-to-query-smbios-locally.md
 - name: ブートおよび UEFI
-  href: boot-and-uefi.md
   items:
+    - name: ブートおよび UEFI
+      href: boot-and-uefi.md
     - name: Windows の UEFI
-      href: uefi-in-windows.md
       items:
+        - name: Windows の UEFI
+          href: uefi-in-windows.md
         - name: SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
-          href: minimum-uefi-requirements-for-windows-on-soc-platforms.md
           items:
+            - name: SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
+              href: minimum-uefi-requirements-for-windows-on-soc-platforms.md
             - name: SoC プラットフォーム上のすべての Windows エディションに適用される UEFI 要件
               href: uefi-requirements-that-apply-to-all-windows-platforms.md
             - name: Windows 10 Mobile に対する UEFI 要件
@@ -72,16 +79,19 @@
             - name: USB フラッシング サポートのための UEFI 要件
               href: uefi-requirements-for-usb-flashing-support.md
         - name: Windows 用の UEFI プロトコル
-          href: uefi-protocols-for-windows.md
           items:
+            - name: Windows 用の UEFI プロトコル
+              href: uefi-protocols-for-windows.md
             - name: UEFI エントロピー収集プロトコル
-              href: uefi-entropy-gathering-protocol.md
               items:
+                - name: UEFI エントロピー収集プロトコル
+                  href: uefi-entropy-gathering-protocol.md
                 - name: EFI_RNG_SERVICE_BINDING_PROTOCOL
                   href: efi-rng-service-binding-protocol.md
                 - name: EFI_RNG_PROTOCOL
-                  href: efi-rng-protocol.md
                   items:
+                    - name: EFI_RNG_PROTOCOL
+                      href: efi-rng-protocol.md
                     - name: EFI_RNG_PROTOCOL.GetInfo
                       href: efi-rng-protocol-getinfo.md
                     - name: EFI_RNG_PROTOCOL.GetRNG
@@ -89,8 +99,9 @@
                     - name: EFI_RNG_ALGORITHM_LIST
                       href: efi-rng-algorithm-list.md
             - name: UEFI USB 関数プロトコル
-              href: uefi-usb-function-protocol.md
               items:
+                - name: UEFI USB 関数プロトコル
+                  href: uefi-usb-function-protocol.md
                 - name: EFI_USBFN_IO_PROTOCOL.AbortTransfer
                   href: efi-usbfn-io-protocolaborttransfer.md
                 - name: EFI_USBFN_IO_PROTOCOL.AllocateTransferBuffer
@@ -168,8 +179,9 @@
                 - name: UEFI のシーケンス図
                   href: uefi-sequence-diagram.md
             - name: UEFI のシンプルな I/O プロトコル
-              href: uefi-simple-io-protocol.md
               items:
+                - name: UEFI のシンプルな I/O プロトコル
+                  href: uefi-simple-io-protocol.md
                 - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Initialize
                   href: efi-simple-winphone-io-protocolinitialize.md
                 - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Read
@@ -179,13 +191,15 @@
                 - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
                   href: efi-simple-winphone-io-protocolgetmaxpacketsize.md
             - name: UEFI 署名チェック プロトコル
-              href: uefi-check-signature-protocol.md
               items:
+                - name: UEFI 署名チェック プロトコル
+                  href: uefi-check-signature-protocol.md
                 - name: EFI_CHECKSIG_PROTOCOL.EfiCheckSignatureAndHash
                   href: efi-checksig-protocolefichecksignatureandhash.md
             - name: UEFI バッテリ充電プロトコル
-              href: uefi-battery-charging-protocol.md
               items:
+                - name: UEFI バッテリ充電プロトコル
+                  href: uefi-battery-charging-protocol.md
                 - name: EFI_BATTERY_CHARGING_PROTOCOL
                   href: efi-battery-charging-protocol.md
                 - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation
@@ -199,8 +213,9 @@
                 - name: EFI_BATTERY_CHARGING_COMPLETION_TOKEN
                   href: efi-battery-charging-completion-token.md
             - name: UEFI の電力状態表示プロトコル
-              href: uefi-display-power-state-protocol.md
               items:
+                - name: UEFI の電力状態表示プロトコル
+                  href: uefi-display-power-state-protocol.md
                 - name: EFI_DISPLAY_POWER_PROTOCOL
                   href: efi-display-power-protocol.md
                 - name: EFI_DISPLAY_POWER_PROTOCOL.GetDisplayPowerState
@@ -210,11 +225,13 @@
                 - name: EFI_DISPLAY_POWER_STATE
                   href: efi-display-power-state.md
         - name: Windows UEFI ファームウェア更新プラットフォーム
-          href: windows-uefi-firmware-update-platform.md
           items:
+            - name: Windows UEFI ファームウェア更新プラットフォーム
+              href: windows-uefi-firmware-update-platform.md
             - name: ファームウェア ドライバー パッケージを介したシステムとデバイスのファームウェアの更新
-              href: system-and-device-firmware-updates-via-a-firmware-driver-package.md
               items:
+                - name: ファームウェア ドライバー パッケージを介したシステムとデバイスのファームウェアの更新
+                  href: system-and-device-firmware-updates-via-a-firmware-driver-package.md
                 - name: ESRT テーブルへのデータの挿入
                   href: populating-the-esrt-table.md
                 - name: さまざまな地理的な地域向けにファームウェアをカスタマイズする
@@ -226,8 +243,9 @@
                 - name: 更新プログラムのインストール
                   href: installing-the-update.md
             - name: UEFI ファームウェア更新プログラムのサポートの実装
-              href: implementing-support-for-uefi-firmware-updates.md
               items:
+                - name: UEFI ファームウェア更新プログラムのサポートの実装
+                  href: implementing-support-for-uefi-firmware-updates.md
                 - name: ESRT テーブルの定義
                   href: esrt-table-definition.md
                 - name: プラグ アンド プレイ デバイス
@@ -243,21 +261,25 @@
                 - name: ファームウェア更新の状態
                   href: firmware-update-status.md
             - name: UEFI ファームウェア更新プログラム用のユーザー エクスペリエンス
-              href: user-experience-for-uefi-firmware-updates.md
               items:
+                - name: UEFI ファームウェア更新プログラム用のユーザー エクスペリエンス
+                  href: user-experience-for-uefi-firmware-updates.md
                 - name: ブート画面のコンポーネント
                   href: boot-screen-components.md
     - name: Windows 10 Mobile 用のブート環境でのバッテリー充電
-      href: battery-charging-in-the-boot-environment.md
       items:
+        - name: Windows 10 Mobile 用のブート環境でのバッテリー充電
+          href: battery-charging-in-the-boot-environment.md
         - name: Microsoft が提供する UEFI バッテリ充電アプリケーションのアーキテクチャ
           href: architecture-of-the-uefi-battery-charging-application.md
 - name: SoC プラットフォーム向け Windows ACPI 設計ガイド
-  href: windows-acpi-design-guide-for-soc-platforms.md
   items:
+    - name: SoC プラットフォーム向け Windows ACPI 設計ガイド
+      href: windows-acpi-design-guide-for-soc-platforms.md
     - name: ACPI 5.0 に対する Windows のサポートの概要
-      href: overview-of-windows-support-for-acpi-5-0.md
       items:
+        - name: ACPI 5.0 に対する Windows のサポートの概要
+          href: overview-of-windows-support-for-acpi-5-0.md
         - name: Windows での ACPI サポートの概要
           href: summary-of-acpi-support-in-windows.md
         - name: SoC ベースのプラットフォームのハードウェア要件
@@ -267,22 +289,25 @@
         - name: Microsoft ASL コンパイラ
           href: microsoft-asl-compiler.md
     - name: ACPI システム記述テーブル
-      href: acpi-system-description-tables.md
       items:
+        - name: ACPI システム記述テーブル
+          href: acpi-system-description-tables.md
         - name: AcpiGenFx を使用して ACPI テーブルを生成する
           href: generate-acpi-tables-by-using-acpigenfx.md
     - name: デバイス管理用の名前空間オブジェクト
       href: device-management-namespace-objects.md
     - name: 汎用入出力 (GPIO)
-      href: general-purpose-i-o--gpio-.md
       items:
+        - name: 汎用入出力 (GPIO)
+          href: general-purpose-i-o--gpio-.md
         - name: GPIO コントローラーの要件チェック リスト
           href: gpio-controller-requirements-checklist.md
     - name: SPB (Simple Peripheral Bus)
       href: simple-peripheral-bus--spb-.md
     - name: デバイス電源管理
-      href: device-power-management.md
       items:
+        - name: デバイス電源管理
+          href: device-power-management.md
         - name: D3cold のファームウェア要件
           href: firmware-requirements-for-d3cold.md
     - name: ACPI で定義されたデバイス
@@ -290,8 +315,9 @@
     - name: その他の ACPI 名前空間オブジェクト
       href: other-acpi-namespace-objects.md
     - name: ACPI デバイス固有のメソッド
-      href: acpi-device-specific-methods.md
       items:
+        - name: ACPI デバイス固有のメソッド
+          href: acpi-device-specific-methods.md
         - name: GPIO コント ローラーのデバイス固有のメソッド (_DSM)
           href: gpio-controller-device-specific-method---dsm-.md
         - name: バッテリーのデバイス固有のメソッド
@@ -305,8 +331,9 @@
         - name: Windows ボタン配列のデバイス固有のメソッド (_DSM)
           href: windows-button-array-device-specific-method---dsm-.md
 - name: セキュリティ
-  href: security-overview.md
   items:
+    - name: セキュリティ
+      href: security-overview.md
     - name: セキュリティで保護されたブートとデバイス暗号化の概要
       href: secure-boot-and-device-encryption-overview.md
     - name: セキュリティで保護された MOR 実装

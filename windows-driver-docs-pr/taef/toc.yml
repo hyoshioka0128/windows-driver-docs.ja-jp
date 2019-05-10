@@ -1,13 +1,15 @@
 - name: Test Authoring and Execution Framework (TAEF)
-  href: index.md
   items:
+    - name: Test Authoring and Execution Framework (TAEF)
+      href: index.md
     - name: 作業の開始
       href: getting-started.md
     - name: Te.Service
       href: te-service.md
     - name: テストを作成する
-      href: authoring-tests.md
       items:
+        - name: テストを作成する
+          href: authoring-tests.md
         - name: C++ でテストを作成する
           href: authoring-tests-in-c--.md
         - name: 'C# でテストを作成する'
@@ -41,8 +43,9 @@
         - name: DeploymentItem メタデータ
           href: deploymentitem-metadata.md
     - name: データ ドリブン テスト
-      href: data-driven-testing.md
       items:
+        - name: データ ドリブン テスト
+          href: data-driven-testing.md
         - name: スクリプト言語でのデータ ドリブン テスト
           href: data-driven-testing-in-scripting-languages.md
         - name: テーブルのデータ ソース
@@ -68,8 +71,9 @@
         - name: 複数のデータソース
           href: multiple-datasources.md
     - name: テストを実行する
-      href: executing-tests.md
       items:
+        - name: テストを実行する
+          href: executing-tests.md
         - name: テストの実行の概要
           href: overview-of-executing-tests.md
         - name: Te.exe のコマンド オプション
@@ -85,8 +89,9 @@
         - name: Parallel
           href: parallel.md
         - name: RunAs
-          href: runas.md
           items:
+            - name: RunAs
+              href: runas.md
             - name: RunAs Elevated
               href: runas-elevated.md
             - name: RunAs LowIL

@@ -4,17 +4,17 @@ description: ドライバー パッケージからのデバイス メタデー�
 ms.assetid: fd140583-d4f9-4817-8edc-5bc3c6a2a1d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98af154c1b33bbc1f14dcad87642c9f6b6ba30b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32a1fe740a5bcfdc9876a75cd49479b1910a72fa
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369480"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65455794"
 ---
 # <a name="installing-device-metadata-packages-through-a-driver-package"></a>ドライバー パッケージからのデバイス メタデータ パッケージのインストール
 
 
-A[ドライバー パッケージ](driver-packages.md)をコピーしてデバイス メタデータ パッケージをインストールすることができます、[デバイス メタデータ ストア](device-metadata-store.md)します。 これを使用して実現[ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)内、 [ **DestinationDirs** ](inf-destinationdirs-section.md)と[ **DDInstall** ](inf-ddinstall-section.md)のセクションでは、 [INF ファイル](inf-files.md)ドライバー パッケージ。
+A[ドライバー パッケージ](driver-packages.md)をコピーしてデバイス メタデータ パッケージをインストールすることができます、[デバイス メタデータ ストア](device-metadata-store.md)します。 これを使用して実現[ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)内、 [ **DestinationDirs** ](inf-destinationdirs-section.md)と[ **DDInstall** ](inf-ddinstall-section.md)のセクションでは、 [INF ファイル](overview-of-inf-files.md)ドライバー パッケージ。
 
 **注**WMIS サーバーからドライバー パッケージを通じての代わりに、デバイス メタデータ パッケージをインストールすることを強くお勧めします。 詳細については、次を参照してください。 [WMIS からデバイス メタデータ パッケージをインストールする](installing-device-metadata-packages-from-wmis.md)します。
 

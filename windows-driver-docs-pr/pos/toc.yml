@@ -1,9 +1,11 @@
 - name: POS デバイス ドライバー設計ガイド
-  href: index.md
   items:
+    - name: POS デバイス ドライバー設計ガイド
+      href: index.md
     - name: POS ドライバーのサンプル
-      href: driver-samples.md
       items:
+        - name: POS ドライバーのサンプル
+          href: driver-samples.md
         - name: バーコード スキャナー ドライバーのサンプル
           href: barcode-scanner-driver.md
         - name: 磁気ストライプ リーダー ドライバーのサンプル
@@ -11,8 +13,9 @@
     - name: バーコード スキャナー Bluetooth サービスの UUID
       href: barcode-scanner-bluetooth-service-uuids.md
     - name: バーコード スキャナーのイベント
-      href: barcode-scanner-events.md
       items:
+        - name: バーコード スキャナーのイベント
+          href: barcode-scanner-events.md
         - name: BarcodeScannerDataReceived
           href: barcodescannerdatareceived.md
         - name: BarcodeScannerErrorOccurred
@@ -24,15 +27,17 @@
         - name: BarcodeScannerTriggerReleased
           href: barcodescannertriggerreleased.md
     - name: 磁気ストライプ リーダーのイベント
-      href: magnetic-stripe-reader-events.md
       items:
+        - name: 磁気ストライプ リーダーのイベント
+          href: magnetic-stripe-reader-events.md
         - name: MagneticStripeReaderDataReceived
           href: magneticstripereaderdatareceived.md
         - name: MagneticStripeReaderErrorOccured
           href: magneticstripereadererroroccured.md
     - name: POS のイベント
-      href: pos-events.md
       items:
+        - name: POS のイベント
+          href: pos-events.md
         - name: ReleaseDeviceRequested
           href: releasedevicerequested.md
         - name: StatusUpdated

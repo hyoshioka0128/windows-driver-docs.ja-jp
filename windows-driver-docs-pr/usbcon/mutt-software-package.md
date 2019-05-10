@@ -3,12 +3,12 @@ Description: MUTT ソフトウェア パッケージには、MUTT デバイス�
 title: MUTT ソフトウェア パッケージに含まれるツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f3f3455ee8f9f9db1e66b9b04dc009b602d38d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd9488de20bff07db101f10c8e443a35f349537f
+ms.sourcegitcommit: 952c17357bd2dd91a4caad42313a063951317697
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379943"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65515036"
 ---
 # <a name="tools-in-the-mutt-software-package"></a>MUTT ソフトウェア パッケージに含まれるツール
 
@@ -30,13 +30,18 @@ MUTT ソフトウェア パッケージにはで使用するいくつかのツ�
 
 Microsoft USB Test Tool (MUTT) ソフトウェア パッケージには、ハードウェア テスト エンジニアが、USB コント ローラーまたはハブは Microsoft USB ドライバー スタックとの相互運用性をテストするためのテスト ツールが含まれています。 付属のマニュアルでは、MUTT ハードウェアのさまざまな種類の概要を簡単に説明し、コント ローラー、ハブ、デバイス、および BIOS および UEFI テストのトポロジを提案します。 ドキュメントには、USB ドライバー スタックのトレース イベント、テストを実行して、カーネル デバッガー内の情報をキャプチャする方法の手順に関する情報も含まれています。
 
-ファイル名: mutt2_9.msi
+ファイル名: mutt2_93.msi
 
-7.3 MB
+9.1 MB
 
 [![mutt ソフトウェア パッケージをダウンロードします。](images/download.png)](https://go.microsoft.com/fwlink/p/?LinkId=786621)
 
 ## <a name="version-updates"></a>バージョンの更新
+
+2.9.3 のバージョンの変更
+
+- ドライバーの署名の問題を修正します。
+- ARM64 テスト ツールが含まれます
 
 バージョン 2.9 の変更
 

@@ -4,12 +4,12 @@ description: SR-IOV 用の標準化された INF キーワード
 ms.assetid: 5CA33B4F-E43A-4EB6-BCAB-365CA1FD3EF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ded98185cdf605cd64a1b93c7717508d9994c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d672152a3d05be03d22b4bee5635aa24a6dfacb
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390660"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405275"
 ---
 # <a name="standardized-inf-keywords-for-sr-iov"></a>SR-IOV 用の標準化された INF キーワード
 
@@ -18,9 +18,9 @@ ms.locfileid: "63390660"
 
 SR-IOV INF キーワードは、次のセクションで説明します。
 
-[有効または無効の SR-IOV サポートするための標準化された INF キーワード](#sr-iov)
+[有効または無効の SR-IOV サポートするための標準化された INF キーワード](#standardized-inf-keywords-for-enabling-or-disabling-sr-iov-support)
 
-[既定の NIC のスイッチの構成の標準化された INF キーワード](#nic-switch)
+[既定の NIC のスイッチの構成の標準化された INF キーワード](#standardized-inf-keywords-for-configuration-of-the-default-nic-switch)
 
 ## <a name="standardized-inf-keywords-for-enabling-or-disabling-sr-iov-support"></a>有効にする、または SR-IOV サポートを無効にするための標準化された INF キーワード
 

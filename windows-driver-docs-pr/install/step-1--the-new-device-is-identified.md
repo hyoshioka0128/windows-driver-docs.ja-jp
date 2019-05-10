@@ -4,12 +4,12 @@ description: 手順 1 の新しいデバイスを識別します。
 ms.assetid: e0df70ca-cea3-44a1-b5ff-407f72a216f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abf5b6914755652ac95a0d10532eb12067c1d3f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc6e4eb71e34531b042c9c4307245618d595585c
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369394"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456371"
 ---
 # <a name="step-1-the-new-device-is-identified"></a>手順 1:新しいデバイスが識別されます
 
@@ -21,9 +21,9 @@ ms.locfileid: "63369394"
 -   PCI などのバス固有プレフィックス\\または USB\\します。
 -   仕入先、モデル、およびリビジョン識別子など、デバイスのベンダー固有の識別子です。 ハードウェア ID 内でこれらの識別子の形式は、バス ドライバーにもできます。
 
-独立系ハードウェア ベンダー (IHV) が 1 つまたは複数定義することも[互換性 Id](compatible-ids.md)デバイス。 互換性 Id があるハードウェア Id と同じ形式ただし、これらは通常、ハードウェア Id よりも汎用的な特定の製造元またはモデルの情報は必要ありません。 Windows では、これらの識別子を使用して、選択、[ドライバー パッケージ](driver-packages.md)オペレーティング システムでは、デバイスのハードウェア ID の一致するドライバー パッケージが見つからない場合、デバイスの Ihv は、ドライバー パッケージ内のデバイスの 1 つ以上の互換性のある Id を指定[INF ファイル](inf-files.md)します。
+独立系ハードウェア ベンダー (IHV) が 1 つまたは複数定義することも[互換性 Id](compatible-ids.md)デバイス。 互換性 Id があるハードウェア Id と同じ形式ただし、これらは通常、ハードウェア Id よりも汎用的な特定の製造元またはモデルの情報は必要ありません。 Windows では、これらの識別子を使用して、選択、[ドライバー パッケージ](driver-packages.md)オペレーティング システムでは、デバイスのハードウェア ID の一致するドライバー パッケージが見つからない場合、デバイスの Ihv は、ドライバー パッケージ内のデバイスの 1 つ以上の互換性のある Id を指定[INF ファイル](overview-of-inf-files.md)します。
 
-Windows ハードウェア Id および互換性 Id を使用して検索を[ドライバー パッケージ](driver-packages.md)デバイス。 デバイスのハードウェア Id および互換性 Id に対して、パッケージ内の指定されているこれらの Id を比較することによって、デバイスに一致するドライバー パッケージを見つけた[INF ファイル](inf-files.md)します。
+Windows ハードウェア Id および互換性 Id を使用して検索を[ドライバー パッケージ](driver-packages.md)デバイス。 デバイスのハードウェア Id および互換性 Id に対して、パッケージ内の指定されているこれらの Id を比較することによって、デバイスに一致するドライバー パッケージを見つけた[INF ファイル](overview-of-inf-files.md)します。
 
 たとえば、ユーザーには、コンピューターに接続されている USB ハブのポートにワイヤレス ローカル エリア ネットワーク (WLAN) アダプターが接続されるため、次の手順が発生します。
 

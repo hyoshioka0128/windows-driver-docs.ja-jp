@@ -1,11 +1,13 @@
 - name: IEEE 1394 バス ドライバー
-  href: index.md
   items:
+    - name: IEEE 1394 バス ドライバー
+      href: index.md
     - name: IEEE 1394 ドライバー スタック
       href: the-ieee-1394-driver-stack.md
     - name: Windows 7 の IEEE 1394 バス ドライバー
-      href: ieee-1394-bus-driver-in-windows-7.md
       items:
+        - name: Windows 7 の IEEE 1394 バス ドライバー
+          href: ieee-1394-bus-driver-in-windows-7.md
         - name: Windows 7 のデバイス ドライバー インターフェイス (DDI) の変更点
           href: device-driver-interface--ddi--changes-in-windows-7.md
         - name: IEEE 1394 バス ドライバーの既定の動作の変更
@@ -19,15 +21,17 @@
     - name: 1394 ブリッジ
       href: 1394-bridges.md
     - name: IEEE 1394 デバイスの非同期 I/O
-      href: asynchronous-i-o-for-ieee-1394-devices.md
       items:
+        - name: IEEE 1394 デバイスの非同期 I/O
+          href: asynchronous-i-o-for-ieee-1394-devices.md
         - name: IEEE 1394 バスでの非同期 I/O 要求パケットの送信
           href: sending-asynchronous-i-o-request-packets-on-the-ieee-1394-bus.md
         - name: IEEE 1394 バスでの非同期 I/O 要求パケットの受信
           href: receiving-asynchronous-i-o-request-packets-on-the-ieee-1394-bus.md
     - name: IEEE 1394 デバイスの等時性 I/O
-      href: isochronous-i-o-for-ieee-1394-devices.md
       items:
+        - name: IEEE 1394 デバイスの等時性 I/O
+          href: isochronous-i-o-for-ieee-1394-devices.md
         - name: IEEE 1394 デバイスの等時性転送の設定
           href: setting-up-isochronous-transfer-for-ieee-1394-devices.md
         - name: IEEE 1394 デバイスの等時性 DMA 転送のバッファー処理
@@ -41,8 +45,9 @@
         - name: 等時性データ転送の完了
           href: completing-an-isochronous-data-transfer.md
     - name: IEEE 1394 ハードウェア エミュレーション ドライバー
-      href: ieee-1394-hardware-emulation-drivers.md
       items:
+        - name: IEEE 1394 ハードウェア エミュレーション ドライバー
+          href: ieee-1394-hardware-emulation-drivers.md
         - name: IEEE 1394 仮想デバイスの作成
           href: creating-ieee-1394-virtual-devices.md
         - name: IEEE 1394 仮想デバイスの削除
@@ -52,8 +57,9 @@
     - name: 1394 のサンプルと診断ツール
       href: 1394-samples-and-diagnostic-tools.md
     - name: IEC-61883 クライアント ドライバー
-      href: iec-61883-client-drivers.md
       items:
+        - name: IEC-61883 クライアント ドライバー
+          href: iec-61883-client-drivers.md
         - name: IEC-61883 プロトコル ドライバー
           href: iec-61883-protocol-driver.md
         - name: クライアント ドライバー スタックの IEC-61883 プロトコル ドライバー

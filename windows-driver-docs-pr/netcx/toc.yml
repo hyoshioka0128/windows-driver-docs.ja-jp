@@ -1,6 +1,7 @@
 - name: ネットワーク アダプターの WDF クラス拡張機能 (NetAdapterCx)
-  href: index.md
   items:
+    - name: ネットワーク アダプターの WDF クラス拡張機能 (NetAdapterCx)
+      href: index.md
     - name: NDIS ミニポート ドライバーの NetAdapterCx への移植
       href: porting-ndis-miniport-drivers-to-netadaptercx.md
     - name: NetAdapterCx クライアント ドライバーの構築
@@ -8,8 +9,9 @@
     - name: NetAdapterCx クライアント ドライバーの INF ファイル
       href: inf-files-for-netadaptercx-client-drivers.md
     - name: NetAdapterCx でのオブジェクトの有効期間の管理
-      href: managing-the-lifetime-of-objects-in-netadaptercx.md
       items:
+        - name: NetAdapterCx でのオブジェクトの有効期間の管理
+          href: managing-the-lifetime-of-objects-in-netadaptercx.md
         - name: NetAdapterCx オブジェクトの概要
           href: summary-of-netadaptercx-objects.md
         - name: デバイスとアダプターの初期化
@@ -25,8 +27,9 @@
     - name: NetAdapterCx クライアント ドライバーのデバッグ
       href: debugging-a-netadaptercx-client-driver.md
     - name: ネットワーク データの転送
-      href: transferring-network-data.md
       items:
+        - name: ネットワーク データの転送
+          href: transferring-network-data.md
         - name: パケットの記述子と拡張機能
           href: packet-descriptors-and-extensions.md
         - name: NetAdapterCx ハードウェア オフロード
@@ -36,8 +39,9 @@
         - name: ネットワーク データ バッファーの管理
           href: network-data-buffer-management.md
         - name: ネット リングとネット リングの反復子
-          href: net-rings-and-net-ring-iterators.md
           items:
+            - name: ネット リングとネット リングの反復子
+              href: net-rings-and-net-ring-iterators.md
             - name: ネット リングを使用したネットワーク データの送信
               href: sending-network-data-with-net-rings.md
             - name: ネット リングを使用したネットワーク データの受信
@@ -53,7 +57,8 @@
     - name: NetAdapterCx の制限事項
       href: netadaptercx-limitations.md
     - name: モバイル ブロードバンド (MBB) WDF クラス拡張機能 (MBBCx)
-      href: mobile-broadband-mbb-wdf-class-extension-mbbcx.md
       items:
+        - name: モバイル ブロードバンド (MBB) WDF クラス拡張機能 (MBBCx)
+          href: mobile-broadband-mbb-wdf-class-extension-mbbcx.md
         - name: MBBCx クライアント ドライバーの作成
           href: writing-an-MBBcx-client-driver.md

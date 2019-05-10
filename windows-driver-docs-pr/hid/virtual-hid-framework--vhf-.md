@@ -4,12 +4,12 @@ description: オペレーティング システムに HID ソース ドライバ
 ms.assetid: 26964963-792F-4529-B4FC-110BF5C65B35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92286f38db7ec35cd94b6f64f2ab7ac8fdd4a539
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e04451937e840831fc224da9740e1dbd53bc15b0
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376732"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405098"
 ---
 # <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>仮想 HID フレームワーク (VHF) を使用して、HID ソース ドライバーを作成します。
 
@@ -119,7 +119,7 @@ VHF は、これらの Ioctl の HID ソース ドライバー実装イベント
 
 -   [**IOCTL\_HID\_読み取り\_レポート**](https://msdn.microsoft.com/library/windows/hardware/ff541172)
 
-    これを実装する必要があります、ドライバーは、入力の HID レポートを取得するバッファーを送信中に、バッファリング ポリシーを処理する必要がある場合、 [ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135) でポインターを指定して**EvtVhfAsyncOperationGetInputReport**メンバー。 詳細については、次を参照してください。[入力の HID レポートを提出](#submit)します。
+    これを実装する必要があります、ドライバーは、入力の HID レポートを取得するバッファーを送信中に、バッファリング ポリシーを処理する必要がある場合、 [ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135) でポインターを指定して**EvtVhfAsyncOperationGetInputReport**メンバー。 詳細については、次を参照してください。[入力の HID レポートを提出](#submit-the-hid-input-report)します。
 
 -   [**IOCTL\_HID\_取得\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff541103)または[ **IOCTL\_HID\_設定\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff541184)
 

@@ -1,6 +1,7 @@
 - name: SD バス ドライバー設計ガイド
-  href: index.md
   items:
+    - name: SD バス ドライバー設計ガイド
+      href: index.md
     - name: SD カードのドライバー スタック
       href: sd-card-driver-stack.md
     - name: SD カードのバス インターフェイスを開く、初期化する、および閉じる

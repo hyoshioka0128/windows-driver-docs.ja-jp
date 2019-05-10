@@ -1,6 +1,7 @@
 - name: PCI ドライバー プログラミング ガイド
-  href: index.md
   items:
+    - name: PCI ドライバー プログラミング ガイド
+      href: index.md
     - name: PCI 電源の管理とデバイス ドライバー
       href: pci-power-management-and-device-drivers.md
     - name: Windows での PCI Express ネイティブ コントロールの有効化

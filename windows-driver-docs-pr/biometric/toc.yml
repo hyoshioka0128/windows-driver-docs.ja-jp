@@ -1,6 +1,7 @@
 - name: 生体認証設計ガイド
-  href: index.md
   items:
+    - name: 生体認証設計ガイド
+      href: index.md
     - name: 生体認証ドライバーの概要
       href: getting-started-with-biometric-drivers.md
     - name: 生体認証ドライバーの開発のロードマップ

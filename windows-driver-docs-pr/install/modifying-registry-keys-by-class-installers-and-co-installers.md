@@ -10,12 +10,12 @@ keywords:
 - 共同インストーラー WDK デバイスのインストール、レジストリ キーの変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab7836c01266cc19a03b133642ba39dbd44545f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f50e266d0ed560a23fa4521bfe4ef8bc293e4740
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378401"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456437"
 ---
 # <a name="modifying-registry-keys-by-class-installers-and-co-installers"></a>クラス インストーラーと共同インストーラーでのレジストリ キーの変更
 
@@ -24,7 +24,7 @@ ms.locfileid: "63378401"
 
  
 
-特定の状況では、except*クラス インストーラー*と*co-installer*作成、変更、またはレジストリ キーを削除する、標準レジストリ関数を使用しないでください。 ほとんどの場合、レジストリ キー変更がのみに格納されるディレクティブを使用して[INF ファイル](inf-files.md)します。 これらのディレクティブの詳細については、次を参照してください。 [INF ディレクティブの概要](summary-of-inf-directives.md)します。
+特定の状況では、except*クラス インストーラー*と*co-installer*作成、変更、またはレジストリ キーを削除する、標準レジストリ関数を使用しないでください。 ほとんどの場合、レジストリ キー変更がのみに格納されるディレクティブを使用して[INF ファイル](overview-of-inf-files.md)します。 これらのディレクティブの詳細については、次を参照してください。 [INF ディレクティブの概要](summary-of-inf-directives.md)します。
 
 次に、この規則の例外を示します。
 

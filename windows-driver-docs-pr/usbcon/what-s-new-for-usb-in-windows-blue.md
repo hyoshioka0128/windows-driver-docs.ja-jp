@@ -3,24 +3,24 @@ Description: 新機能とのユニバーサル シリアル バス (USB) Windows
 title: Windows 8.1 の新機能については、usb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e7c846902fe660db70227bde70c3a06577e803d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca226ef7f1e1d9e50eb70faedd3b9046cef86a1c
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389189"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405292"
 ---
 # <a name="windows-81-whats-new-for-usb"></a>Windows 8.1:USB の新機能
 
 
 新機能とのユニバーサル シリアル バス (USB) Windows 8.1 での機能強化を次に示します。
 
--   [UWP アプリを開発するための Windows ランタイム USB API](#usb-sdk)
--   [強化されたデバイスの列挙の Microsoft OS 2.0 記述子](#microsoft-os-2-0-descriptors-for-improved-device-enumeration)
--   [WinUSB アイソクロナスのサポート](#usb-wdk)
+-   [UWP アプリを開発するための Windows ランタイム USB API](#windows-runtime-usb-api-for-developing-uwp-apps)
+-   [強化されたデバイスの列挙の Microsoft OS 2.0 記述子](#microsoft-os-20-descriptors-for-improved-device-enumerations)
+-   [WinUSB アイソクロナスのサポート](#isochronous-support-for-winusb)
 -   [USB ドライバー スタックの機能強化](#usb-driver-stack-improvements)
 -   [USB ハードウェア認定キット (HCK) でのテスト](#usb-tests-in-the-hardware-certification-kit-hck)
--   [USB の強化された診断ツールとデバッガー拡張機能](#improved-usb-diagnostic-tools-and-debugger-extensions-)
+-   [USB の強化された診断ツールとデバッガー拡張機能](#improved-usb-diagnostic-tools-and-debugger-extensions)
 -   [関連トピック](#related-topics)
 
 ## <a name="windows-runtime-usb-api-for-developing-uwp-apps"></a>UWP アプリを開発するための Windows ランタイム USB API
