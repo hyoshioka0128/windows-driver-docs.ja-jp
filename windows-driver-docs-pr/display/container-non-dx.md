@@ -4,12 +4,12 @@ description: 非 DX Api 対話する必要があるドライバーやカーネ�
 ms.assetid: 6c4a6974-c67b-4710-80c6-48a5b378e088
 ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eed3c747bb5ff1228d1841cfad59fad9b89b219c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a101d1891100403bf633882856ccb3b00a531d26
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327544"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106413"
 ---
 # <a name="container-support-for-non-dx-apis"></a>DX された Api 用のコンテナーのサポート
 
@@ -29,3 +29,12 @@ Windows 10 では、非-DX Api、および下位 WDDM アーキテクチャの�
 DXGI 返しますを通じてその LUID [IDXGIAdapter::GetDesc](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiadapter-getdesc)します。
 
 できる限り、異なる場合がありますサポートされている正確なデバイスに基づく多くユニバーサル ドライバーの設計方針を優先します。
+
+## <a name="wdk-dependency"></a>WDK の依存関係
+
+前述のメソッドと型の多くは、WDK は、ドライバーをビルドするために使用でのみ使用できます。
+これは、DX 以外の Api は、Windows SDK だけに依存が以前の Microsoft のヘッダーでは、組織の不幸不注意です。
+それほど面倒のない DX Api WDK またはランタイムまたはローダー コンポーネントを WDK の内訳をローカライズする場合は、マイクロソフトは、WDK の依存関係を効果的に切断 DX API プロジェクトのアクセス許可。
+Microsoft のパブリックのドキュメントを使用して、バイナリ互換性のある型とそれをプロジェクトに関数の宣言を作成して WDK の依存関係を解消することができます。
+これらの型名は、他のユーザーが意図的に DX API プロジェクトで、WDK をで活用する場合、名前の競合を回避するために、Microsoft で使用されるものと同じですがあります。
+

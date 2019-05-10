@@ -4,12 +4,12 @@ description: ドライバー パッケージのカタログ ファイルのリ�
 ms.assetid: 8bfedf24-403a-406e-993d-5ab8cc790f60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a1790c394107945fd7778ec1ea377ce13453aaf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45ec20288bdc953b544fc313f6f0655a1607dd56
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338631"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106373"
 ---
 # <a name="release-signing-a-driver-packages-catalog-file"></a>ドライバー パッケージのカタログ ファイルのリリース署名
 
@@ -33,7 +33,7 @@ SignTool は、デジタル署名にタイムスタンプを追加すること�
 リリースへの署名を*tstamd64.cat*カタログ ファイルを次のコマンドラインを実行します。
 
 ```cpp
-Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
+Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
 ```
 
 各項目の意味は次のとおりです。
@@ -41,6 +41,8 @@ Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http
 -   **サインオン**コマンドは、指定したカタログ ファイルの署名に SignTool を構成します。 *tstamd64.cat*します。
 
 -   **/V**で SignTool の表示が正常に実行し、警告メッセージの詳細な操作を有効にします。
+
+-   **/Fd**オプションは、ファイルの署名を作成するために使用するファイル ダイジェスト アルゴリズムを指定します。 既定値には SHA1 です。
 
 -   **/Ac**オプションは、クロス証明書を格納するファイルの名前を指定します (*MSCV VSClass3.cer*)、CA から取得します。 クロス証明書は、現在のディレクトリにない場合は、完全なパス名を使用します。
 

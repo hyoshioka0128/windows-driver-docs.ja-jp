@@ -4,12 +4,12 @@ description: ソフトウェア発行元証明書 (SPC) の取得
 ms.assetid: 50546234-e98d-40ed-b9c6-7d78cf0419ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da71fa4efd3bcebbf35c84f91ac7b38d02127fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ade47f521f61fa7f0d31afac83c52df7c9d3854
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325034"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106437"
 ---
 # <a name="obtaining-a-software-publisher-certificate-spc"></a>ソフトウェア発行元証明書 (SPC) の取得
 
@@ -26,7 +26,7 @@ SPC やキーを格納すると、 *.pfx*ファイル、する必要があるな
 
 Microsoft では、1 つクロス証明書キーのパブリック ルート証明書ごとに、カーネル モード コード署名のソフトウェア発行元の証明書の使用をサポートする ca が発行されました。 ドライバー パッケージのリリース-サインイン時に、正しいクロス証明書を使用する必要があります。 どのクロス証明書が必要なリリース署名を確認するのを参照してください。 [SPC をクロス証明書を決定する](determining-an-spc-s-cross-certificate.md)します。
 
-SPCs を提供する証明機関の一覧については、およびクロス証明書の詳細については、「 [Microsoft Windows Vista のカーネル モード コード署名用クロス証明書](https://go.microsoft.com/fwlink/p/?linkid=66583)します。 取得するための CA の web サイトの指示に従って、SPC をインストールして、対応するクロス証明書署名のコンピューターにします。
+SPCs を提供する証明機関の一覧については、およびクロス証明書の詳細については、「[カーネル モード コード署名用クロス証明書](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)します。 取得するための CA の web サイトの指示に従って、SPC をインストールして、対応するクロス証明書署名のコンピューターにします。
 
 SPCs とその管理の詳細については、次を参照してください。[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)します。
 

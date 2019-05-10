@@ -4,18 +4,18 @@ description: Driver Verifier は、Windows が Windows 2000 以降のすべて�
 ms.assetid: EAC30108-F8A2-4914-9218-2E0672982B7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25056d883a4f56b27d2198e4f9ba2964943c347
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: 975313589684c454e94be69c6004fae14e42bdd2
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902456"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106407"
 ---
 # <a name="driver-verifier-whats-new"></a>ドライバーの検証ツール: 新機能
 
 [Driver Verifier](driver-verifier.md)は Windows 2000 以降の Windows のすべてのバージョンで使用できます。 各バージョンでは、新機能と Windows のドライバーにバグを見つけるためのチェックが導入されています。 このセクションでは、変更内容をまとめたものですし、関連ドキュメントへのリンクを提供します。
 
-* [Windows 10 の driver Verifier](#driver-verifier-in-windows-10-updated-may-8-2018)
+* [Windows 10 の driver Verifier](#driver-verifier-in-windows10-updated-may-8-2018)
 * [Windows 8.1 の driver Verifier](#driver-verifier-in-windows-8-1-updated-june-17-2013)
 * [Windows 8 の driver Verifier](#driver-verifier-in-windows-8-updated-october-20-2012)
 * [Windows 7 の driver Verifier](#driver-verifier-in-windows-7-updated-october-22-2012)

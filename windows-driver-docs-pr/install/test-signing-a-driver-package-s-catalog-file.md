@@ -4,12 +4,12 @@ description: ドライバー パッケージのカタログ ファイルのテ�
 ms.assetid: 8cc54f57-bac3-45a1-b780-48626943b446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b571acb71206973608a8a9ecb051abc3f70fbfa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91b4fee78c3552591c2c88c0c3d7d54ebbafc6f8
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339575"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106435"
 ---
 # <a name="test-signing-a-driver-packages-catalog-file"></a>ドライバー パッケージのカタログ ファイルのテスト署名
 
@@ -31,7 +31,7 @@ SignTool は、デジタル署名にタイムスタンプを追加すること�
 テスト署名、 *tstamd64.cat*カタログ ファイルを次のコマンドラインを実行します。
 
 ```cpp
-Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
+Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
 ```
 
 各項目の意味は次のとおりです。
@@ -39,6 +39,8 @@ Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.ve
 -   **サインオン**コマンドは、指定したカタログ ファイルの署名に SignTool を構成します。 tstamd64.cat します。
 
 -   **/V**で SignTool の表示が正常に実行し、警告メッセージの詳細な操作を有効にします。
+
+-   **/Fd**オプションは、ファイルの署名を作成するために使用するファイル ダイジェスト アルゴリズムを指定します。 既定値には SHA1 です。
 
 -   **/S**オプションは、証明書ストアの名前を指定します (*PrivateCertStore)* テスト証明書を格納しています。
 

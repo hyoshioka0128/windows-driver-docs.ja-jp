@@ -1,6 +1,6 @@
 ---
-title: '[Trace Tree](トレース ツリー) ウィンドウの概要'
-description: '[Trace Tree](トレース ツリー) ウィンドウの概要'
+title: '[Trace Tree]\(トレース ツリー) ウィンドウの概要'
+description: '[Trace Tree]\(トレース ツリー) ウィンドウの概要'
 ms.assetid: 98640d7e-29fc-4397-ac6b-47f4e17f88a1
 keywords:
 - 静的ドライバー検証レポートの WDK、トレースのツリー ウィンドウ
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bad7e81607d18d05e2ee4c487062a3b8a5430eff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377770"
 ---
-# <a name="understanding-the-trace-tree-pane"></a>[Trace Tree]\(トレース ツリー\) ウィンドウの概要
+# <a name="understanding-the-trace-tree-pane"></a>[Trace Tree]\(トレース ツリー) ウィンドウの概要
 
 
 **トレース ツリー**ウィンドウ欠陥ビューアーの焦点であります。 コードでは、順を追って通常、**トレース ツリー**内のコードでは、その効果を見ているときに、ウィンドウ、**ソース コード**ウィンドウ内の値で、**状態**ウィンドウ。
