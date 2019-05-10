@@ -3,12 +3,12 @@ Description: このトピックでは、UMDF 関数のドライバー サポー�
 title: USB UMDF ドライバーでのセレクティブ サスペンドします。
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8103a70187fdac429671a5b6296edd8e314cfb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 228dd12f2e7a2b5fe70a3924ef07d9ed2cddf9e5
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331078"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405078"
 ---
 # <a name="selective-suspend-in-usb-umdf-drivers"></a>USB UMDF ドライバーでのセレクティブ サスペンドします。
 
@@ -131,7 +131,7 @@ hr = m_FxDevice->AssignS0IdleSettings( IdleUsbSelectiveSuspend,
                                 WdfUseDefault);                                                                                                   
 ```
 
-デバイスのハードウェアでは、ウェイク信号を生成できますが、UMDF ドライバーによりサポート システム S1、S2、S3 からスリープ状態の解除ができます。 詳細については、次を参照してください。 [UMDF ドライバーでは、システムがスリープ解除](#systemwake)します。
+デバイスのハードウェアでは、ウェイク信号を生成できますが、UMDF ドライバーによりサポート システム S1、S2、S3 からスリープ状態の解除ができます。 詳細については、次を参照してください。 [UMDF ドライバーでは、システムがスリープ解除](#system-wake-in-a-umdf-driver)します。
 
 ## <a name="supporting-usb-selective-suspend-in-a-non-ppo-umdf-driver"></a>USB のセレクティブをサポートしている PPO 以外の UMDF ドライバーで中断
 
@@ -142,7 +142,7 @@ UMDF 関数ドライバーにより、選択的な場合は、中断、デバイ
 
 デバイスがアイドル状態であると判断 WinUSB.sys、カーネル モード デバイス スタック、デバイスを中断する要求を送信します。 バス ドライバーでは、適切なハードウェアの状態を変更します。 すべてのデバイスがポートに使用する関数が中断されているポートを入力した場合、USB のセレクティブ サスペンド状態になります。
 
-WinUSB.sys に、I/O 要求は、デバイスが中断されている間に、WinUSB.sys に到着する、要求を処理するデバイスを利用した場合デバイスの操作を再開します。 UMDF ドライバーでは、システムの S0 のままに、デバイスを再開するためのコードは必要ありません。 デバイスのハードウェアでは、ウェイク信号を生成できますが、UMDF ドライバーによりサポート システム S1、S2、S3 からスリープ状態の解除ができます。 詳細については、次を参照してください。 [UMDF ドライバーでは、システムがスリープ解除](#systemwake)します。
+WinUSB.sys に、I/O 要求は、デバイスが中断されている間に、WinUSB.sys に到着する、要求を処理するデバイスを利用した場合デバイスの操作を再開します。 UMDF ドライバーでは、システムの S0 のままに、デバイスを再開するためのコードは必要ありません。 デバイスのハードウェアでは、ウェイク信号を生成できますが、UMDF ドライバーによりサポート システム S1、S2、S3 からスリープ状態の解除ができます。 詳細については、次を参照してください。 [UMDF ドライバーでは、システムがスリープ解除](#system-wake-in-a-umdf-driver)します。
 
 UMDF ドライバーが、PPO を選択的にサポートできるは、次の 2 つの手順を実行して中断します。
 

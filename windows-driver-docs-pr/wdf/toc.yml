@@ -1,8 +1,9 @@
 - name: WDF ドライバーの新機能
   href: index.md
-- name: UMDF の概要
-  href: getting-started-with-umdf-version-2.md
+- name: 概要
   items:
+    - name: UMDF の概要
+      href: getting-started-with-umdf-version-2.md
     - name: ユーザー モード ドライバー フレームワークについてよく寄せられる質問
       href: user-mode-driver-framework-frequently-asked-questions.md
     - name: UMDF ドライバーを作成する利点
@@ -19,9 +20,16 @@
       href: how-to-generate-a-umdf-driver-from-a-kmdf-driver.md
     - name: UMDF 1 から UMDF 2 へのドライバーの移植
       href: porting-a-driver-from-umdf-1-to-umdf-2.md
-- name: WDF を使用したドライバーの開発
-  href: using-the-framework-to-develop-a-driver.md
+    - name: フレームワーク ライブラリのバージョン
+      href: framework-library-versioning.md
+    - name: KMDF のバージョンの履歴
+      href: kmdf-version-history.md
+    - name: UMDF バージョン履歴
+      href: umdf-version-history.md
+- name: 概念
   items:
+    - name: WDF を使用したドライバーの開発
+      href: using-the-framework-to-develop-a-driver.md
     - name: WDF のアーキテクチャ
       href: kernel-mode-driver-framework-architecture.md
     - name: 簡単な WDF ドライバーの作成
@@ -38,391 +46,16 @@
       href: sample-toaster-driver-programming-tour.md
     - name: 'Windows Driver Foundation でのドライバーの開発: リファレンス ブック'
       href: developing-drivers-with-wdf.md
-- name: フレームワーク ライブラリのバージョン
-  href: framework-library-versioning.md
-  items:
-    - name: KMDF のバージョンの履歴
-      href: kmdf-version-history.md
-    - name: UMDF バージョン履歴
-      href: umdf-version-history.md
-- name: WDF のオブジェクト
-  href: wdf-objects.md
-  items:
-    - name: フレームワーク オブジェクトの概要
-      href: introduction-to-framework-objects.md
-    - name: フレームワーク オブジェクトのメソッド
-      href: framework-object-methods.md
-    - name: フレームワーク オブジェクトのイベント
-      href: framework-object-events.md
-    - name: フレームワーク オブジェクトのプロパティ
-      href: framework-object-properties.md
-    - name: フレームワーク オブジェクトのライフ サイクル
-      href: framework-object-life-cycle.md
-    - name: フレームワーク オブジェクトのコンテキスト領域
-      href: framework-object-context-space.md
-    - name: フレームワーク オブジェクトのカスタム型
-      href: framework-object-custom-types.md
-    - name: 一般フレームワーク オブジェクトの使用
-      href: using-general-framework-objects.md
-    - name: フレームワーク オブジェクトのコレクション
-      href: framework-object-collections.md
-    - name: フレームワーク オブジェクトの要約
-      href: summary-of-framework-objects.md
-    - name: WDF の一般オブジェクトのマクロ
-      href: wdf-general-object-macros.md
-      items:
-        - name: WDF_DECLARE_CONTEXT_TYPE
-          href: wdf-declare-context-type.md
-        - name: WDF_DECLARE_CONTEXT_TYPE_WITH_NAME
-          href: wdf-declare-context-type-with-name.md
-        - name: WDF_DECLARE_CUSTOM_TYPE
-          href: wdf-declare-custom-type.md
-        - name: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE
-          href: wdf-object-attributes-init-context-type.md
-        - name: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE
-          href: wdf-object-attributes-set-context-type.md
-        - name: WDF_PTR_ADD_OFFSET
-          href: wdf-ptr-add-offset.md
-        - name: WDF_PTR_ADD_OFFSET_TYPE
-          href: wdf-ptr-add-offset-type.md
-        - name: WDF_PTR_GET_OFFSET
-          href: wdf-ptr-get-offset.md
-        - name: WdfObjectAddCustomType
-          href: wdfobjectaddcustomtype.md
-        - name: WdfObjectAddCustomTypeWithData
-          href: wdfobjectaddcustomtypewithdata.md
-        - name: WdfObjectDereference
-          href: wdfobjectdereference.md
-        - name: WdfObjectDereferenceWithTag
-          href: wdfobjectdereferencewithtag.md
-        - name: WdfObjectGetCustomTypeData
-          href: wdfobjectgetcustomtypedata.md
-        - name: WdfObjectGetTypedContext
-          href: wdfobjectgettypedcontext.md
-        - name: WdfObjectIsCustomType
-          href: wdfobjectiscustomtype.md
-        - name: WdfObjectReference
-          href: wdfobjectreference.md
-        - name: WdfObjectReferenceWithTag
-          href: wdfobjectreferencewithtag.md
-    - name: フレームワーク オブジェクトの作成エラー
-      href: framework-object-creation-errors.md
-- name: ドライバーでの PnP と電源管理のサポート
-  href: supporting-pnp-and-power-management-in-your-driver.md
-  items:
-    - name: ソフトウェア専用ドライバーでの PnP と電源管理のサポート
-      href: supporting-pnp-and-power-management-in-software-only-drivers.md
-    - name: 機能ドライバーでの PnP と電源管理のサポート
-      href: supporting-pnp-and-power-management-in-function-drivers.md
-- name: フレームワーク デバイス オブジェクトの作成
-  href: creating-a-framework-device-object.md
-  items:
+    - name: フレームワーク デバイス オブジェクトの作成
+      href: creating-a-framework-device-object.md
     - name: 機能ドライバーでのデバイス オブジェクトの作成
       href: creating-device-objects-in-a-function-driver.md
     - name: フィルター ドライバーでのデバイス オブジェクトの作成
       href: creating-device-objects-in-a-filter-driver.md
     - name: バス ドライバーでのデバイス オブジェクトの作成
       href: creating-device-objects-in-a-bus-driver.md
-- name: 電源ポリシーの所有権
-  href: power-policy-ownership.md
-  items:
-    - name: アイドル電源切断のサポート
-      href: supporting-idle-power-down.md
-    - name: システム ウェイクアップのサポート
-      href: supporting-system-wake-up.md
-    - name: デバイスのアイドル動作とウェイク動作のユーザーによる制御
-      href: user-control-of-device-idle-and-wake-behavior.md
-    - name: 機能電源状態のサポート
-      href: supporting-functional-power-states.md
-      items:
-        - name: 1 つまたは複数の機能電源状態を持つ単一コンポーネント デバイスのサポート
-          href: supporting-multiple-functional-power-states-for-single-component-devices.md
-        - name: 1 つまたは複数の機能電源状態を持つ複数コンポーネント デバイスのサポート
-          href: supporting-multiple-functional-power-states-for-multiple-component-devices.md
-          items:
-            - name: コンポーネントの電源状態での I/O 要求の調整
-              href: coordinating-i-o-requests-with-component-power-state.md
-            - name: システムが S0 に戻ったときのデバイス電源オンの報告
-              href: reporting-device-powered-on.md
-            - name: 複数コンポーネント デバイスでのアイドル電源切断のサポート
-              href: supporting-idle-power-down-on-multiple-component-devices.md
-- name: I/O キューの電源管理
-  href: power-management-for-i-o-queues.md
-- name: 自己管理型 I/O の使用
-  href: using-self-managed-i-o.md
-- name: デバイス停止要求の処理
-  href: handling-requests-to-stop-a-device.md
-- name: PnP と電源管理のシナリオ
-  href: pnp-and-power-management-scenarios.md
-  items:
-    - name: ユーザーがデバイスを接続する
-      href: a-user-plugs-in-a-device.md
-    - name: ユーザーがデバイスを取り外す
-      href: a-user-unplugs-a-device.md
-    - name: デバイスが低電力状態になる
-      href: a-device-enters-a-low-power-state.md
-    - name: デバイスが動作状態に戻る
-      href: a-device-returns-to-its-working-state.md
-    - name: PnP マネージャーがシステム リソースを再配布する
-      href: the-pnp-manager-redistributes-system-resources.md
-- name: PnP と電源管理のコールバック シーケンス
-  href: pnp-and-power-management-callback-sequences.md
-  items:
-    - name: 機能ドライバーまたはフィルター ドライバーの電源投入シーケンス
-      href: power-up-sequence-for-a-function-or-filter-driver.md
-    - name: バス ドライバーの電源投入シーケンス
-      href: power-up-sequence-for-a-bus-driver.md
-    - name: 機能ドライバーまたはフィルター ドライバーの電源切断および取り外しシーケンス
-      href: power-down-and-removal-sequence-for-a-function-or-filter-driver.md
-    - name: バス ドライバーの電源切断および取り外しシーケンス
-      href: power-down-and-removal-sequence-for-a-bus-driver.md
-    - name: 突然の取り外しのシーケンス
-      href: surprise-removal-sequence.md
-- name: ハードウェアへのドライバー アクセス
-  href: driver-access-to-hardware.md
-- name: デバイスの障害の報告
-  href: reporting-device-failures.md
-- name: WDF HID ミニドライバーの作成
-  href: creating-umdf-hid-minidrivers.md
-- name: フレームワーク ファイル オブジェクト
-  href: framework-file-objects.md
-- name: フレームワーク キュー オブジェクト
-  href: framework-queue-objects.md
-  items:
-    - name: I/O キューの作成
-      href: creating-i-o-queues.md
-      items:
-        - name: I/O 要求のディスパッチ方法
-          href: dispatching-methods-for-i-o-requests.md
-        - name: 要求ハンドラー
-          href: request-handlers.md
-    - name: I/O キューの削除
-      href: deleting-i-o-queues.md
-    - name: I/O キューの管理
-      href: managing-i-o-queues.md
-    - name: 電力管理された I/O キューの使用
-      href: using-power-managed-i-o-queues.md
-    - name: I/O キューの状態
-      href: i-o-queue-states.md
-    - name: I/O キューの使用例
-      href: example-uses-of-i-o-queues.md
-- name: フレームワーク要求オブジェクト
-  href: framework-request-objects.md
-  items:
-    - name: フレームワーク要求オブジェクトの作成
-      href: creating-framework-request-objects.md
-    - name: 要求オブジェクトのコンテキストの使用
-      href: using-request-object-context.md
-    - name: 要求の所有権
-      href: request-ownership.md
-    - name: I/O 要求の処理
-      href: processing-i-o-requests.md
-      items:
-        - name: I/O 要求の受信
-          href: receiving-i-o-requests.md
-        - name: I/O 要求をキューに戻す
-          href: requeuing-i-o-requests.md
-        - name: I/O 要求の完了
-          href: completing-i-o-requests.md
-        - name: I/O 要求のキャンセル
-          href: canceling-i-o-requests.md
-          items:
-            - name: キャンセルと完了コードの同期
-              href: synchronizing-cancel-and-completion-code.md
-            - name: 送信済み要求のキャンセルの同期
-              href: synchronizing-cancellation-of-sent-requests.md
-        - name: I/O 要求の転送
-          href: forwarding-i-o-requests.md
-    - name: I/O 要求に関する情報の取得
-      href: obtaining-information-about-an-i-o-request.md
-    - name: WDF ドライバー (KMDF または UMDF) でのデータ バッファーへのアクセス
-      href: accessing-data-buffers-in-wdf-drivers.md
-    - name: UMDF ドライバーでのバッファー アクセス方法の管理
-      href: managing-buffer-access-methods-in-umdf-drivers.md
-    - name: フレームワーク要求オブジェクトの再利用
-      href: reusing-framework-request-objects.md
-- name: UMDF ドライバーでのクライアント偽装の処理
-  href: handling-client-impersonation-in-umdf-drivers.md
-- name: UMDF でのホスト プロセスのタイムアウト
-  href: how-umdf-enforces-time-outs.md
-- name: UMDF ドライバーでのカーネルモード クライアントのサポート
-  href: supporting-kernel-mode-clients-in-umdf-drivers.md
-- name: アクティビティ識別子の使用
-  href: using-activity-identifiers.md
-- name: I/O ターゲットの使用
-  href: using-i-o-targets.md
-  items:
-    - name: I/O ターゲットの概要
-      href: introduction-to-i-o-targets.md
-    - name: 一般 I/O ターゲット
-      href: general-i-o-targets.md
-      items:
-        - name: 一般 I/O ターゲットの初期化
-          href: initializing-a-general-i-o-target.md
-        - name: 一般 I/O ターゲットへの I/O 要求の送信
-          href: sending-i-o-requests-to-general-i-o-targets.md
-          items:
-            - name: I/O 要求の同期送信
-              href: sending-i-o-requests-synchronously.md
-            - name: I/O 要求の非同期送信
-              href: sending-i-o-requests-asynchronously.md
-        - name: 一般 I/O ターゲットの状態の制御
-          href: controlling-a-general-i-o-target-s-state.md
-        - name: 一般 I/O ターゲットに関する情報の取得
-          href: obtaining-information-about-a-general-i-o-target.md
-    - name: USB I/O ターゲット
-      href: usb-i-o-targets.md
-      items:
-        - name: USB デバイスの使用
-          href: working-with-usb-devices.md
-        - name: USB インターフェイスの使用
-          href: working-with-usb-interfaces.md
-        - name: USB パイプの使用
-          href: working-with-usb-pipes.md
-- name: 同期の手法
-  href: synchronization-techniques-for-wdf-drivers.md
-  items:
-    - name: 自動同期の使用
-      href: using-automatic-synchronization.md
-    - name: フレームワーク ロックの使用
-      href: using-framework-locks.md
-- name: WDF サポート オブジェクト
-  href: wdf-support-objects.md
-  items:
-    - name: メモリ バッファーの使用
-      href: using-memory-buffers.md
-    - name: メモリ バッファーのライフ サイクル
-      href: memory-buffer-life-cycle.md
-    - name: タイマーの使用
-      href: using-timers.md
-    - name: 文字列オブジェクトの使用
-      href: using-string-objects.md
-    - name: フレームワーク作業項目の使用
-      href: using-framework-work-items.md
-    - name: デバイス インターフェイスの使用
-      href: using-device-interfaces.md
-    - name: WDF ドライバーでのレジストリの使用
-      href: using-the-registry-in-wdf-drivers.md
-      items:
-        - name: ドライバーのレジストリ キーの概要
-          href: introduction-to-registry-keys-for-drivers.md
-        - name: フレームワーク レジストリ キー オブジェクトの使用
-          href: using-framework-registry-key-objects.md
-        - name: 統合デバイス プロパティ モデルへのアクセス
-          href: accessing-the-unified-device-property-model.md
-    - name: KMDF ドライバーのセキュリティの問題
-      href: security-issues-for-kmdf-drivers.md
-      items:
-        - name: KMDF ドライバーでのデバイス アクセスの制御
-          href: controlling-device-access-in-kmdf-drivers.md
-- name: ハードウェア割り込みの処理
-  href: handling-hardware-interrupts.md
-  items:
-    - name: 割り込みオブジェクトの作成
-      href: creating-an-interrupt-object.md
-    - name: 割り込みの有効化と無効化
-      href: enabling-and-disabling-interrupts.md
-    - name: 割り込みの処理
-      href: servicing-an-interrupt.md
-    - name: 割り込みコードの同期
-      href: synchronizing-interrupt-code.md
-    - name: パッシブ レベルの割り込みのサポート
-      href: supporting-passive-level-interrupts.md
-    - name: デバイスのウェイクに対する割り込みの使用
-      href: using-an-interrupt-to-wake-a-device.md
-    - name: Active-Both 割り込みの処理
-      href: handling-active-both-interrupts.md
-- name: KMDF ドライバーでの DMA 操作の処理
-  href: handling-dma-operations-in-kmdf-drivers.md
-  items:
-    - name: Windows Driver framework での DMA の概要
-      href: introduction-to-dma-in-windows-driver-framework.md
-    - name: フレームワーク DMA オブジェクト
-      href: framework-dma-objects.md
-    - name: DMA トランザクションと DMA 転送
-      href: dma-transactions-and-dma-transfers.md
-    - name: フレームワーク DMA を使用するサンプル ドライバー
-      href: sample-drivers-that-use-framework-dma.md
-    - name: バス マスター DMA デバイス用 KMDF ドライバーでの I/O 要求の処理
-      href: handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md
-      items:
-        - name: DMA トランザクションの有効化
-          href: enabling-dma-transactions.md
-        - name: DMA トランザクションの作成と初期化
-          href: creating-and-initializing-a-dma-transaction.md
-        - name: DMA トランザクションの開始
-          href: starting-a-dma-transaction.md
-        - name: DMA ハードウェアのプログラミング
-          href: programming-dma-hardware.md
-        - name: DMA 転送の完了
-          href: completing-a-dma-transfer.md
-        - name: DMA トランザクションの完了
-          href: completing-a-dma-transaction.md
-        - name: DMA トランザクション オブジェクトの再利用
-          href: reusing-dma-transaction-objects.md
-        - name: DMA デバイスの電源管理のサポート
-          href: supporting-power-management-for-dma-devices.md
-        - name: 共通バッファーの使用
-          href: using-common-buffers.md
-    - name: システム モード DMA のサポート
-      href: supporting-system-mode-dma.md
-    - name: DMA トランザクションのキャンセル
-      href: canceling-dma-transactions.md
-    - name: 単一転送 DMA の使用
-      href: using-single-transfer-dma.md
-    - name: DMA リソースの予約
-      href: reserving-dma-resources.md
-    - name: KMDF ドライバーでの DMA のテスト
-      href: testing-dma-in-kmdf-drivers.md
-- name: KMDF ドライバーでの WMI のサポート
-  href: supporting-wmi-in-kmdf-drivers.md
-  items:
-    - name: KMDF ドライバー用の WMI の概要
-      href: introduction-to-wmi-for-kmdf-drivers.md
-    - name: ドライバーでの WMI サポートの初期化
-      href: initializing-wmi-support-in-your-driver.md
-    - name: ドライバーでの WMI のデータ ブロックとイベントのサポート
-      href: supporting-wmi-data-blocks-and-events-in-your-driver.md
-- name: KMDF ドライバーでの WDM インターフェイスへのアクセス
-  href: accessing-wdm-interfaces-in-kmdf-drivers.md
-  items:
-    - name: WDM の情報の取得
-      href: obtaining-wdm-information.md
-    - name: フレームワークの外部での WDM IRP の処理
-      href: handling-wdm-irps-outside-of-the-framework.md
-      items:
-        - name: フレームワークでサポートされていない IRP の処理
-          href: handling-an-irp-that-the-framework-does-not-support.md
-        - name: IRP の前処理と後処理
-          href: preprocessing-and-postprocessing-irps.md
-        - name: I/O キューへの IRP のディスパッチ
-          href: dispatching-irps-to-i-o-queues.md
-    - name: WDM インターフェイスの制限
-      href: wdm-interface-restrictions.md
-- name: ハードウェア リソースの処理
-  href: hardware-resources-for-kmdf-drivers.md
-  items:
-    - name: ハードウェア リソースの概要
-      href: introduction-to-hardware-resources.md
-    - name: ハードウェア リソースのフレームワーク オブジェクト
-      href: framework-objects-for-hardware-resources.md
-    - name: リソース要件リストの作成
-      href: creating-a-resource-requirements-list.md
-    - name: リソース要件リストの変更
-      href: modifying-a-resource-requirements-list.md
-    - name: ブート構成用のリソース リストの作成
-      href: creating-a-resource-list-for-a-boot-configuration.md
-    - name: リソース リストの変更
-      href: modifying-a-resource-list.md
-    - name: 未処理リソースと変換済みリソース
-      href: raw-and-translated-resources.md
-    - name: ハードウェア リソースの検索とマッピング
-      href: finding-and-mapping-hardware-resources.md
-    - name: デバイス レジスターの読み取りと書き込み
-      href: reading-and-writing-to-device-registers.md
-- name: ビルド、インストール、テスト
-  href: building--installing--and-testing-a-wdf-driver.md
-  items:
+    - name: ビルド、インストール、テスト
+      href: building--installing--and-testing-a-wdf-driver.md
     - name: WDF ドライバーのビルドと読み込み
       href: building-and-loading-a-kmdf-driver.md
     - name: Windows の複数バージョン用 WDF ドライバーのビルド
@@ -465,8 +98,23 @@
       href: how-umdf-handles-application-failures.md
     - name: UMDF によるエラーの報告方法
       href: how-umdf-reports-errors.md
-- name: WDF ドライバーのデバッグ
-  href: debugging-a-wdf-driver.md
+    - name: デバイスの障害の報告
+      href: reporting-device-failures.md
+    - name: WDF HID ミニドライバーの作成
+      href: creating-umdf-hid-minidrivers.md
+    - name: フレームワーク ファイル オブジェクト
+      href: framework-file-objects.md
+    - name: UMDF ドライバーでのクライアント偽装の処理
+      href: handling-client-impersonation-in-umdf-drivers.md
+    - name: UMDF でのホスト プロセスのタイムアウト
+      href: how-umdf-enforces-time-outs.md
+    - name: UMDF ドライバーでのカーネルモード クライアントのサポート
+      href: supporting-kernel-mode-clients-in-umdf-drivers.md
+    - name: アクティビティ識別子の使用
+      href: using-activity-identifiers.md
+    - name: KMDF ドライバーでのデバイス アクセスの制御
+      href: controlling-device-access-in-kmdf-drivers.md
+- name: デバッグ
   items:
     - name: WER レポートでの UMDF メタデータへのアクセス
       href: accessing-umdf-metadata-in-wer-reports.md
@@ -476,11 +124,10 @@
       href: avoiding-reboot-when-updating-a-umdf-driver.md
     - name: KMDF ドライバーからのデバッガーへの割り込み
       href: breaking-into-a-debugger-from-kmdf-drivers.md
-      items:
-        - name: VERIFY_IS_IRQL_PASSIVE_LEVEL
-          href: verify-is-irql-passive-level.md
-        - name: WDFVERIFY
-          href: wdfverify.md
+    - name: VERIFY_IS_IRQL_PASSIVE_LEVEL
+      href: verify-is-irql-passive-level.md
+    - name: WDFVERIFY
+      href: wdfverify.md
     - name: KMDF ドライバーからのバグ チェック
       href: bug-checks-from-kmdf-drivers.md
     - name: WDF での電源参照リークのデバッグ
@@ -521,9 +168,250 @@
       href: debugging-kernel-mode-driver-framework-drivers.md
     - name: 'ビデオ: UMDF ドライバーのデバッグ'
       href: videos--debugging-umdf-drivers.md
-- name: WDM から WDF へのドライバーの移植
-  href: wdf-porting-guide.md
+- name: DMA
   items:
+    - name: Windows Driver framework での DMA の概要
+      href: introduction-to-dma-in-windows-driver-framework.md
+    - name: フレームワーク DMA オブジェクト
+      href: framework-dma-objects.md
+    - name: DMA トランザクションと DMA 転送
+      href: dma-transactions-and-dma-transfers.md
+    - name: フレームワーク DMA を使用するサンプル ドライバー
+      href: sample-drivers-that-use-framework-dma.md
+    - name: バス マスター DMA デバイス用 KMDF ドライバーでの I/O 要求の処理
+      href: handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md
+    - name: DMA トランザクションの有効化
+      href: enabling-dma-transactions.md
+    - name: DMA トランザクションの作成と初期化
+      href: creating-and-initializing-a-dma-transaction.md
+    - name: DMA トランザクションの開始
+      href: starting-a-dma-transaction.md
+    - name: DMA ハードウェアのプログラミング
+      href: programming-dma-hardware.md
+    - name: DMA 転送の完了
+      href: completing-a-dma-transfer.md
+    - name: DMA トランザクションの完了
+      href: completing-a-dma-transaction.md
+    - name: DMA トランザクション オブジェクトの再利用
+      href: reusing-dma-transaction-objects.md
+    - name: DMA デバイスの電源管理のサポート
+      href: supporting-power-management-for-dma-devices.md
+    - name: 共通バッファーの使用
+      href: using-common-buffers.md
+    - name: システム モード DMA のサポート
+      href: supporting-system-mode-dma.md
+    - name: DMA トランザクションのキャンセル
+      href: canceling-dma-transactions.md
+    - name: 単一転送 DMA の使用
+      href: using-single-transfer-dma.md
+    - name: DMA リソースの予約
+      href: reserving-dma-resources.md
+    - name: KMDF ドライバーでの DMA のテスト
+      href: testing-dma-in-kmdf-drivers.md
+- name: ハードウェアへのアクセス
+  items:
+    - name: ハードウェア リソースの処理
+      href: hardware-resources-for-kmdf-drivers.md
+    - name: ハードウェア リソースの概要
+      href: introduction-to-hardware-resources.md
+    - name: ハードウェア リソースのフレームワーク オブジェクト
+      href: framework-objects-for-hardware-resources.md
+    - name: リソース要件リストの作成
+      href: creating-a-resource-requirements-list.md
+    - name: リソース要件リストの変更
+      href: modifying-a-resource-requirements-list.md
+    - name: ブート構成用のリソース リストの作成
+      href: creating-a-resource-list-for-a-boot-configuration.md
+    - name: リソース リストの変更
+      href: modifying-a-resource-list.md
+    - name: 未処理リソースと変換済みリソース
+      href: raw-and-translated-resources.md
+    - name: ハードウェア リソースの検索とマッピング
+      href: finding-and-mapping-hardware-resources.md
+    - name: デバイス レジスターの読み取りと書き込み
+      href: reading-and-writing-to-device-registers.md
+    - name: ハードウェアへのドライバー アクセス
+      href: driver-access-to-hardware.md
+- name: 割り込み
+  items:
+    - name: 割り込みオブジェクトの作成
+      href: creating-an-interrupt-object.md
+    - name: 割り込みの有効化と無効化
+      href: enabling-and-disabling-interrupts.md
+    - name: 割り込みの処理
+      href: servicing-an-interrupt.md
+    - name: 割り込みコードの同期
+      href: synchronizing-interrupt-code.md
+    - name: パッシブ レベルの割り込みのサポート
+      href: supporting-passive-level-interrupts.md
+    - name: デバイスのウェイクに対する割り込みの使用
+      href: using-an-interrupt-to-wake-a-device.md
+    - name: Active-Both 割り込みの処理
+      href: handling-active-both-interrupts.md
+- name: I/O ターゲット
+  items:
+    - name: I/O ターゲットの使用
+      href: using-i-o-targets.md
+    - name: I/O ターゲットの概要
+      href: introduction-to-i-o-targets.md
+    - name: 一般 I/O ターゲット
+      href: general-i-o-targets.md
+    - name: 一般 I/O ターゲットの初期化
+      href: initializing-a-general-i-o-target.md
+    - name: 一般 I/O ターゲットへの I/O 要求の送信
+      href: sending-i-o-requests-to-general-i-o-targets.md
+    - name: I/O 要求の同期送信
+      href: sending-i-o-requests-synchronously.md
+    - name: I/O 要求の非同期送信
+      href: sending-i-o-requests-asynchronously.md
+    - name: 一般 I/O ターゲットの状態の制御
+      href: controlling-a-general-i-o-target-s-state.md
+    - name: 一般 I/O ターゲットに関する情報の取得
+      href: obtaining-information-about-a-general-i-o-target.md
+    - name: USB I/O ターゲット
+      href: usb-i-o-targets.md
+    - name: USB デバイスの使用
+      href: working-with-usb-devices.md
+    - name: USB インターフェイスの使用
+      href: working-with-usb-interfaces.md
+    - name: USB パイプの使用
+      href: working-with-usb-pipes.md
+- name: Objects
+  items:
+    - name: フレームワーク オブジェクトの概要
+      href: introduction-to-framework-objects.md
+    - name: フレームワーク オブジェクトのメソッド
+      href: framework-object-methods.md
+    - name: フレームワーク オブジェクトのイベント
+      href: framework-object-events.md
+    - name: フレームワーク オブジェクトのプロパティ
+      href: framework-object-properties.md
+    - name: フレームワーク オブジェクトのライフ サイクル
+      href: framework-object-life-cycle.md
+    - name: フレームワーク オブジェクトのコンテキスト領域
+      href: framework-object-context-space.md
+    - name: フレームワーク オブジェクトのカスタム型
+      href: framework-object-custom-types.md
+    - name: 一般フレームワーク オブジェクトの使用
+      href: using-general-framework-objects.md
+    - name: フレームワーク オブジェクトのコレクション
+      href: framework-object-collections.md
+    - name: フレームワーク オブジェクトの要約
+      href: summary-of-framework-objects.md
+    - name: メモリ バッファーの使用
+      href: using-memory-buffers.md
+    - name: メモリ バッファーのライフ サイクル
+      href: memory-buffer-life-cycle.md
+    - name: タイマーの使用
+      href: using-timers.md
+    - name: 文字列オブジェクトの使用
+      href: using-string-objects.md
+    - name: フレームワーク作業項目の使用
+      href: using-framework-work-items.md
+    - name: デバイス インターフェイスの使用
+      href: using-device-interfaces.md
+    - name: WDF の一般オブジェクトのマクロ
+      items:
+        - name: WDF_DECLARE_CONTEXT_TYPE
+          href: wdf-declare-context-type.md
+        - name: WDF_DECLARE_CONTEXT_TYPE_WITH_NAME
+          href: wdf-declare-context-type-with-name.md
+        - name: WDF_DECLARE_CUSTOM_TYPE
+          href: wdf-declare-custom-type.md
+        - name: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE
+          href: wdf-object-attributes-init-context-type.md
+        - name: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE
+          href: wdf-object-attributes-set-context-type.md
+        - name: WDF_PTR_ADD_OFFSET
+          href: wdf-ptr-add-offset.md
+        - name: WDF_PTR_ADD_OFFSET_TYPE
+          href: wdf-ptr-add-offset-type.md
+        - name: WDF_PTR_GET_OFFSET
+          href: wdf-ptr-get-offset.md
+        - name: WdfObjectAddCustomType
+          href: wdfobjectaddcustomtype.md
+        - name: WdfObjectAddCustomTypeWithData
+          href: wdfobjectaddcustomtypewithdata.md
+        - name: WdfObjectDereference
+          href: wdfobjectdereference.md
+        - name: WdfObjectDereferenceWithTag
+          href: wdfobjectdereferencewithtag.md
+        - name: WdfObjectGetCustomTypeData
+          href: wdfobjectgetcustomtypedata.md
+        - name: WdfObjectGetTypedContext
+          href: wdfobjectgettypedcontext.md
+        - name: WdfObjectIsCustomType
+          href: wdfobjectiscustomtype.md
+        - name: WdfObjectReference
+          href: wdfobjectreference.md
+        - name: WdfObjectReferenceWithTag
+          href: wdfobjectreferencewithtag.md
+    - name: フレームワーク オブジェクトの作成エラー
+      href: framework-object-creation-errors.md
+- name: PnP と電源管理
+  items:
+    - name: ドライバーでの PnP と電源管理のサポート
+      href: supporting-pnp-and-power-management-in-your-driver.md
+    - name: ソフトウェア専用ドライバーでの PnP と電源管理のサポート
+      href: supporting-pnp-and-power-management-in-software-only-drivers.md
+    - name: 機能ドライバーでの PnP と電源管理のサポート
+      href: supporting-pnp-and-power-management-in-function-drivers.md
+    - name: PnP と電源管理のシナリオ
+      href: pnp-and-power-management-scenarios.md
+    - name: ユーザーがデバイスを接続する
+      href: a-user-plugs-in-a-device.md
+    - name: ユーザーがデバイスを取り外す
+      href: a-user-unplugs-a-device.md
+    - name: デバイスが低電力状態になる
+      href: a-device-enters-a-low-power-state.md
+    - name: デバイスが動作状態に戻る
+      href: a-device-returns-to-its-working-state.md
+    - name: PnP マネージャーがシステム リソースを再配布する
+      href: the-pnp-manager-redistributes-system-resources.md
+    - name: PnP と電源管理のコールバック シーケンス
+      href: pnp-and-power-management-callback-sequences.md
+    - name: 機能ドライバーまたはフィルター ドライバーの電源投入シーケンス
+      href: power-up-sequence-for-a-function-or-filter-driver.md
+    - name: バス ドライバーの電源投入シーケンス
+      href: power-up-sequence-for-a-bus-driver.md
+    - name: 機能ドライバーまたはフィルター ドライバーの電源切断および取り外しシーケンス
+      href: power-down-and-removal-sequence-for-a-function-or-filter-driver.md
+    - name: バス ドライバーの電源切断および取り外しシーケンス
+      href: power-down-and-removal-sequence-for-a-bus-driver.md
+    - name: 突然の取り外しのシーケンス
+      href: surprise-removal-sequence.md
+    - name: I/O キューの電源管理
+      href: power-management-for-i-o-queues.md
+    - name: 自己管理型 I/O の使用
+      href: using-self-managed-i-o.md
+    - name: デバイス停止要求の処理
+      href: handling-requests-to-stop-a-device.md
+- name: 電源ポリシー
+  items:
+    - name: 電源ポリシーの所有権
+      href: power-policy-ownership.md
+    - name: アイドル電源切断のサポート
+      href: supporting-idle-power-down.md
+    - name: システム ウェイクアップのサポート
+      href: supporting-system-wake-up.md
+    - name: デバイスのアイドル動作とウェイク動作のユーザーによる制御
+      href: user-control-of-device-idle-and-wake-behavior.md
+    - name: 機能電源状態のサポート
+      href: supporting-functional-power-states.md
+    - name: 1 つまたは複数の機能電源状態を持つ単一コンポーネント デバイスのサポート
+      href: supporting-multiple-functional-power-states-for-single-component-devices.md
+    - name: 1 つまたは複数の機能電源状態を持つ複数コンポーネント デバイスのサポート
+      href: supporting-multiple-functional-power-states-for-multiple-component-devices.md
+    - name: コンポーネントの電源状態での I/O 要求の調整
+      href: coordinating-i-o-requests-with-component-power-state.md
+    - name: システムが S0 に戻ったときのデバイス電源オンの報告
+      href: reporting-device-powered-on.md
+    - name: 複数コンポーネント デバイスでのアイドル電源切断のサポート
+      href: supporting-idle-power-down-on-multiple-component-devices.md
+- name: 移植
+  items:
+    - name: WDM から WDF へのドライバーの移植
+      href: wdf-porting-guide.md
     - name: 移植できるドライバーと場所
       href: which-drivers-can-be-ported.md
     - name: WDF ドライバーでの WDM の概念
@@ -534,47 +422,109 @@
       href: general-guidelines-for-porting.md
     - name: 移植の手順
       href: how-to-port.md
-      items:
-        - name: DriverEntry の移植
-          href: porting-driver-entry.md
-        - name: AddDevice から EvtDriverDeviceAdd への移植
-          href: porting-adddevice-to-evtdriverdeviceadd.md
-        - name: 割り込みの移植
-          href: porting-interrupt-functionality.md
-        - name: PnP と電源管理の移植
-          href: porting-pnp-and-power-management-functionality.md
-        - name: I/O の移植
-          href: porting-i-o-handling.md
-          items:
-            - name: I/O キューの移植
-              href: porting-i-o-queues.md
-            - name: I/O ディスパッチ ルーチンの I/O イベント コールバック関数への移植
-              href: porting-i-o-dispatch-routines-to-i-o-event-callback-functions.md
-            - name: 完了した要求を処理するコードを修正する
-              href: revise-completed-request-logic.md
-            - name: キャンセルされた要求のロジックを修正する
-              href: revise-canceled-request-logic.md
-            - name: 転送要求のロジックを修正する
-              href: revise-forward-request-logic.md
-            - name: I/O 要求を発行するコードを修正する
-              href: revise-code-that-issues-i-o-requests.md
-        - name: DMA の移植
-          href: porting-dma.md
-        - name: WMI の移植
-          href: porting-wmi-code.md
-        - name: KMDF でサポートされていない要求
-          href: requests-that-kmdf-does-not-support.md
-        - name: インストール手順
-          href: installation-procedure.md
+    - name: DriverEntry の移植
+      href: porting-driver-entry.md
+    - name: AddDevice から EvtDriverDeviceAdd への移植
+      href: porting-adddevice-to-evtdriverdeviceadd.md
+    - name: 割り込みの移植
+      href: porting-interrupt-functionality.md
+    - name: PnP と電源管理の移植
+      href: porting-pnp-and-power-management-functionality.md
+    - name: I/O の移植
+      href: porting-i-o-handling.md
+    - name: I/O キューの移植
+      href: porting-i-o-queues.md
+    - name: I/O ディスパッチ ルーチンの I/O イベント コールバック関数への移植
+      href: porting-i-o-dispatch-routines-to-i-o-event-callback-functions.md
+    - name: 完了した要求を処理するコードを修正する
+      href: revise-completed-request-logic.md
+    - name: キャンセルされた要求のロジックを修正する
+      href: revise-canceled-request-logic.md
+    - name: 転送要求のロジックを修正する
+      href: revise-forward-request-logic.md
+    - name: I/O 要求を発行するコードを修正する
+      href: revise-code-that-issues-i-o-requests.md
+    - name: DMA の移植
+      href: porting-dma.md
+    - name: WMI の移植
+      href: porting-wmi-code.md
+    - name: KMDF でサポートされていない要求
+      href: requests-that-kmdf-does-not-support.md
     - name: KMDF と WDM の対応の概要
       href: summary-of-kmdf-and-wdm-equivalents.md
-      items:
-        - name: WDM で WDF のバッファー ポインターに相当するもの
-          href: wdm-equivalents-for-kmdf-buffer-pointers.md
-        - name: WDM の IRP と WDF のイベント コールバック関数
-          href: wdm-irps-and-kmdf-event-callback-functions.md
-- name: KMDF ドライバーに関するその他のトピック
-  href: kmdf-only-functionality.md
+    - name: WDM で WDF のバッファー ポインターに相当するもの
+      href: wdm-equivalents-for-kmdf-buffer-pointers.md
+    - name: WDM の IRP と WDF のイベント コールバック関数
+      href: wdm-irps-and-kmdf-event-callback-functions.md
+- name: キュー
+  items:
+    - name: フレームワーク キュー オブジェクト
+      href: framework-queue-objects.md
+    - name: I/O キューの作成
+      href: creating-i-o-queues.md
+    - name: I/O 要求のディスパッチ方法
+      href: dispatching-methods-for-i-o-requests.md
+    - name: 要求ハンドラー
+      href: request-handlers.md
+    - name: I/O キューの削除
+      href: deleting-i-o-queues.md
+    - name: I/O キューの管理
+      href: managing-i-o-queues.md
+    - name: 電力管理された I/O キューの使用
+      href: using-power-managed-i-o-queues.md
+    - name: I/O キューの状態
+      href: i-o-queue-states.md
+    - name: I/O キューの使用例
+      href: example-uses-of-i-o-queues.md
+- name: レジストリ
+  items:
+    - name: ドライバーのレジストリ キーの概要
+      href: introduction-to-registry-keys-for-drivers.md
+    - name: フレームワーク レジストリ キー オブジェクトの使用
+      href: using-framework-registry-key-objects.md
+    - name: 統合デバイス プロパティ モデルへのアクセス
+      href: accessing-the-unified-device-property-model.md
+- name: 要求
+  items:
+    - name: フレームワーク要求オブジェクト
+      href: framework-request-objects.md
+    - name: フレームワーク要求オブジェクトの作成
+      href: creating-framework-request-objects.md
+    - name: 要求オブジェクトのコンテキストの使用
+      href: using-request-object-context.md
+    - name: 要求の所有権
+      href: request-ownership.md
+    - name: I/O 要求の処理
+      href: processing-i-o-requests.md
+    - name: I/O 要求の受信
+      href: receiving-i-o-requests.md
+    - name: I/O 要求をキューに戻す
+      href: requeuing-i-o-requests.md
+    - name: I/O 要求の完了
+      href: completing-i-o-requests.md
+    - name: I/O 要求のキャンセル
+      href: canceling-i-o-requests.md
+    - name: キャンセルと完了コードの同期
+      href: synchronizing-cancel-and-completion-code.md
+    - name: 送信済み要求のキャンセルの同期
+      href: synchronizing-cancellation-of-sent-requests.md
+    - name: I/O 要求の転送
+      href: forwarding-i-o-requests.md
+    - name: I/O 要求に関する情報の取得
+      href: obtaining-information-about-an-i-o-request.md
+    - name: WDF ドライバー (KMDF または UMDF) でのデータ バッファーへのアクセス
+      href: accessing-data-buffers-in-wdf-drivers.md
+    - name: UMDF ドライバーでのバッファー アクセス方法の管理
+      href: managing-buffer-access-methods-in-umdf-drivers.md
+    - name: フレームワーク要求オブジェクトの再利用
+      href: reusing-framework-request-objects.md
+- name: 同期
+  items:
+    - name: 自動同期の使用
+      href: using-automatic-synchronization.md
+    - name: フレームワーク ロックの使用
+      href: using-framework-locks.md
+- name: KMDF 固有
   items:
     - name: 非 PnP ドライバーでのカーネルモード ドライバー フレームワークの使用
       href: using-kernel-mode-driver-framework-with-non-pnp-drivers.md
@@ -588,13 +538,12 @@
       href: supporting-pnp-and-power-management-in-bus-drivers.md
     - name: バス上のデバイスの列挙
       href: enumerating-the-devices-on-a-bus.md
-      items:
-        - name: 静的な列挙
-          href: static-enumeration.md
-        - name: 動的な列挙
-          href: dynamic-enumeration.md
-        - name: 列挙要求の処理
-          href: handling-enumeration-requests.md
+    - name: 静的な列挙
+      href: static-enumeration.md
+    - name: 動的な列挙
+      href: dynamic-enumeration.md
+    - name: 列挙要求の処理
+      href: handling-enumeration-requests.md
     - name: 取り出し可能デバイスのサポート
       href: supporting-ejectable-devices.md
     - name: フレームワークでのステート マシン
@@ -609,192 +558,197 @@
       href: creating-kmdf-miniport-drivers.md
     - name: KMDF ドライバーでのページング可能なコードの作成
       href: creating-pageable-code-in-a-kmdf-driver.md
-- name: UMDF 1.x 設計ガイド
-  href: user-mode-driver-framework-design-guide.md
+    - name: KMDF ドライバー用の WMI の概要
+      href: introduction-to-wmi-for-kmdf-drivers.md
+    - name: ドライバーでの WMI サポートの初期化
+      href: initializing-wmi-support-in-your-driver.md
+    - name: ドライバーでの WMI のデータ ブロックとイベントのサポート
+      href: supporting-wmi-data-blocks-and-events-in-your-driver.md
+    - name: KMDF ドライバーでの WDM インターフェイスへのアクセス
+      href: accessing-wdm-interfaces-in-kmdf-drivers.md
+    - name: WDM の情報の取得
+      href: obtaining-wdm-information.md
+    - name: フレームワークの外部での WDM IRP の処理
+      href: handling-wdm-irps-outside-of-the-framework.md
+    - name: フレームワークでサポートされていない IRP の処理
+      href: handling-an-irp-that-the-framework-does-not-support.md
+    - name: IRP の前処理と後処理
+      href: preprocessing-and-postprocessing-irps.md
+    - name: I/O キューへの IRP のディスパッチ
+      href: dispatching-irps-to-i-o-queues.md
+    - name: WDM インターフェイスの制限
+      href: wdm-interface-restrictions.md
+- name: UMDF 1
   items:
+    - name: UMDF 1.x 設計ガイド
+      href: user-mode-driver-framework-design-guide.md
     - name: UMDF のオブジェクトとインターフェイス
       href: umdf-objects-and-interfaces.md
-      items:
-        - name: フレームワーク オブジェクト
-          href: framework-objects.md
-          items:
-            - name: フレームワーク ベース オブジェクト
-              href: framework-base-object.md
-            - name: フレームワーク ドライバー オブジェクト
-              href: framework-driver-object.md
-            - name: フレームワーク デバイス オブジェクト
-              href: framework-device-object.md
-            - name: フレームワーク ファイル オブジェクト
-              href: framework-file-object.md
-            - name: フレームワーク I/O キュー オブジェクト
-              href: framework-i-o-queue-object.md
-            - name: フレームワーク I/O 要求オブジェクト
-              href: framework-i-o-request-object.md
-            - name: フレームワーク I/O ターゲット オブジェクト
-              href: framework-i-o-target-object.md
-            - name: フレームワーク割り込みオブジェクト
-              href: framework-interrupt-object.md
-            - name: フレームワーク メモリ オブジェクト
-              href: framework-memory-object.md
-        - name: フレームワーク オブジェクトの階層
-          href: framework-object-hierarchy.md
-        - name: COM サブセットに基づく UMDF
-          href: umdf-based-on-com-subset.md
-        - name: UMDF DDI プログラミング モデル
-          href: umdf-ddi-programming-model.md
-        - name: オブジェクトの有効期間の管理
-          href: managing-the-lifetime-of-objects.md
+    - name: フレームワーク オブジェクト
+      href: framework-objects.md
+    - name: フレームワーク ベース オブジェクト
+      href: framework-base-object.md
+    - name: フレームワーク ドライバー オブジェクト
+      href: framework-driver-object.md
+    - name: フレームワーク デバイス オブジェクト
+      href: framework-device-object.md
+    - name: フレームワーク ファイル オブジェクト
+      href: framework-file-object.md
+    - name: フレームワーク I/O キュー オブジェクト
+      href: framework-i-o-queue-object.md
+    - name: フレームワーク I/O 要求オブジェクト
+      href: framework-i-o-request-object.md
+    - name: フレームワーク I/O ターゲット オブジェクト
+      href: framework-i-o-target-object.md
+    - name: フレームワーク割り込みオブジェクト
+      href: framework-interrupt-object.md
+    - name: フレームワーク メモリ オブジェクト
+      href: framework-memory-object.md
+    - name: フレームワーク オブジェクトの階層
+      href: framework-object-hierarchy.md
+    - name: COM サブセットに基づく UMDF
+      href: umdf-based-on-com-subset.md
+    - name: UMDF DDI プログラミング モデル
+      href: umdf-ddi-programming-model.md
+    - name: オブジェクトの有効期間の管理
+      href: managing-the-lifetime-of-objects.md
     - name: UMDF ドライバーの初期化
       href: initializing-umdf-drivers.md
-      items:
-        - name: デバイスの追加の概要
-          href: adding-a-device-overview.md
-        - name: デバイスの追加
-          href: adding-a-device.md
+    - name: デバイスの追加の概要
+      href: adding-a-device-overview.md
+    - name: デバイスの追加
+      href: adding-a-device.md
     - name: UMDF ドライバーでの PnP と電源管理
       href: pnp-and-power-management-in-umdf-drivers.md
-      items:
-        - name: PnP と電源管理のインターフェイス
-          href: pnp-and-power-management-interfaces.md
-        - name: UMDF での電源ポリシーの所有権
-          href: power-policy-ownership-in-umdf.md
-          items:
-            - name: UMDF ドライバーでのアイドル電源切断のサポート
-              href: supporting-idle-power-down-in-umdf-drivers.md
-            - name: UMDF ドライバーでのシステム ウェイクアップのサポート
-              href: supporting-system-wake-up-in-umdf-drivers.md
-            - name: UMDF でのデバイスのアイドル動作とウェイク動作のユーザーによる制御
-              href: user-control-of-device-idle-and-wake-behavior-in-umdf.md
-        - name: UMDF での PnP と電源管理のシナリオ
-          href: pnp-and-power-management-scenarios-in-umdf.md
-          items:
-            - name: ユーザーがデバイスを接続する
-              href: a-user-plugs-in-a-device-umdf.md
-            - name: ユーザーがデバイスを取り外す
-              href: a-user-unplugs-a-device-umdf.md
-            - name: デバイスが低電力状態になる
-              href: a-device-enters-a-low-power-state-umdf.md
-            - name: デバイスが動作状態に戻る
-              href: a-device-returns-to-its-working-state-umdf.md
-            - name: PnP マネージャーがシステム リソースを再配布する
-              href: the-pnp-manager-redistributes-system-resources-umdf.md
+    - name: PnP と電源管理のインターフェイス
+      href: pnp-and-power-management-interfaces.md
+    - name: UMDF での電源ポリシーの所有権
+      href: power-policy-ownership-in-umdf.md
+    - name: UMDF ドライバーでのアイドル電源切断のサポート
+      href: supporting-idle-power-down-in-umdf-drivers.md
+    - name: UMDF ドライバーでのシステム ウェイクアップのサポート
+      href: supporting-system-wake-up-in-umdf-drivers.md
+    - name: UMDF でのデバイスのアイドル動作とウェイク動作のユーザーによる制御
+      href: user-control-of-device-idle-and-wake-behavior-in-umdf.md
+    - name: UMDF での PnP と電源管理のシナリオ
+      href: pnp-and-power-management-scenarios-in-umdf.md
+    - name: ユーザーがデバイスを接続する
+      href: a-user-plugs-in-a-device-umdf.md
+    - name: ユーザーがデバイスを取り外す
+      href: a-user-unplugs-a-device-umdf.md
+    - name: デバイスが低電力状態になる
+      href: a-device-enters-a-low-power-state-umdf.md
+    - name: デバイスが動作状態に戻る
+      href: a-device-returns-to-its-working-state-umdf.md
+    - name: PnP マネージャーがシステム リソースを再配布する
+      href: the-pnp-manager-redistributes-system-resources-umdf.md
     - name: I/O 要求の処理
       href: processing-i-o-requests-umdf.md
-      items:
-        - name: I/O 要求処理の操作フロー
-          href: i-o-request-processing-operation-flow.md
-          items:
-            - name: シングル デバイス スタックでの操作フロー
-              href: operation-flow-with-single-device-stack.md
-            - name: ダブル デバイス スタックでの操作フロー
-              href: operation-flow-with-double-device-stack.md
-        - name: 下位ドライバーへの I/O 要求の送信
-          href: sending-i-o-requests-to-lower-drivers.md
-        - name: I/O 要求のパラメーターの取得
-          href: obtaining-parameters-for-i-o-requests.md
-        - name: I/O 要求のキャンセル
-          href: canceling-i-o-requests-umdf.md
-        - name: I/O 要求の完了
-          href: completing-i-o-requests-umdf.md
-        - name: UMDF ドライバーでのデータ バッファーへのアクセス
-          href: accessing-data-buffers-in-umdf-1-x-drivers.md
-        - name: フレームワーク要求オブジェクトの再利用
-          href: reusing-framework-request-objects-umdf.md
-        - name: UMDF 1.x ドライバーでのクライアント偽装の処理
-          href: handling-client-impersonation-in-umdf-1-x-drivers.md
-        - name: ドライバーへの作成通知とクローズ通知の不均衡の防止
-          href: preventing-an-imbalance-of-create-and-close-notifications-to-a-driver.md
+    - name: I/O 要求処理の操作フロー
+      href: i-o-request-processing-operation-flow.md
+    - name: シングル デバイス スタックでの操作フロー
+      href: operation-flow-with-single-device-stack.md
+    - name: ダブル デバイス スタックでの操作フロー
+      href: operation-flow-with-double-device-stack.md
+    - name: 下位ドライバーへの I/O 要求の送信
+      href: sending-i-o-requests-to-lower-drivers.md
+    - name: I/O 要求のパラメーターの取得
+      href: obtaining-parameters-for-i-o-requests.md
+    - name: I/O 要求のキャンセル
+      href: canceling-i-o-requests-umdf.md
+    - name: I/O 要求の完了
+      href: completing-i-o-requests-umdf.md
+    - name: UMDF ドライバーでのデータ バッファーへのアクセス
+      href: accessing-data-buffers-in-umdf-1-x-drivers.md
+    - name: フレームワーク要求オブジェクトの再利用
+      href: reusing-framework-request-objects-umdf.md
+    - name: UMDF 1.x ドライバーでのクライアント偽装の処理
+      href: handling-client-impersonation-in-umdf-1-x-drivers.md
+    - name: ドライバーへの作成通知とクローズ通知の不均衡の防止
+      href: preventing-an-imbalance-of-create-and-close-notifications-to-a-driver.md
     - name: UMDF での I/O ターゲットの使用
       href: using-i-o-targets-in-umdf.md
-      items:
-        - name: UMDF での一般 I/O ターゲット
-          href: general-i-o-targets-in-umdf.md
-          items:
-            - name: UMDF での一般 I/O ターゲットの初期化
-              href: initializing-a-general-i-o-target-in-umdf.md
-            - name: UMDF での一般 I/O ターゲットへの I/O 要求の送信
-              href: sending-i-o-requests-to-a-general-i-o-target-in-umdf.md
-            - name: UMDF での一般 I/O ターゲットの状態の制御
-              href: controlling-a-general-i-o-target-s-state-in-umdf.md
-            - name: UMDF での一般 I/O ターゲットに関する情報の取得
-              href: obtaining-information-about-a-general-i-o-target-in-umdf.md
-        - name: UMDF での USB I/O ターゲット
-          href: usb-i-o-targets-in-umdf.md
-          items:
-            - name: USB デバイスのドライバー モデルの選択
-              href: choosing-a-driver-model-for-a-usb-device.md
-            - name: USB 固有の UMDF 1.x インターフェイス
-              href: usb-specific-umdf-1-x-interfaces.md
-            - name: UMDF 1.x ドライバーでの USB デバイスの操作
-              href: working-with-usb-devices-in-umdf-1-x-drivers.md
-            - name: UMDF 1.x ドライバーでの USB インターフェイスの操作
-              href: working-with-usb-interfaces-in-umdf-1-x-drivers.md
-            - name: UMDF 1.x ドライバーでの USB パイプの操作
-              href: working-with-usb-pipes-in-umdf-1-x-drivers.md
-            - name: USB I/O ターゲットによるファイルの作成
-              href: file-creation-by-a-usb-i-o-target.md
-            - name: UMDF からの WinUSB の呼び出し
-              href: escaping-to-winusb.md
+    - name: UMDF での一般 I/O ターゲット
+      href: general-i-o-targets-in-umdf.md
+    - name: UMDF での一般 I/O ターゲットの初期化
+      href: initializing-a-general-i-o-target-in-umdf.md
+    - name: UMDF での一般 I/O ターゲットへの I/O 要求の送信
+      href: sending-i-o-requests-to-a-general-i-o-target-in-umdf.md
+    - name: UMDF での一般 I/O ターゲットの状態の制御
+      href: controlling-a-general-i-o-target-s-state-in-umdf.md
+    - name: UMDF での一般 I/O ターゲットに関する情報の取得
+      href: obtaining-information-about-a-general-i-o-target-in-umdf.md
+    - name: UMDF での USB I/O ターゲット
+      href: usb-i-o-targets-in-umdf.md
+    - name: USB デバイスのドライバー モデルの選択
+      href: choosing-a-driver-model-for-a-usb-device.md
+    - name: USB 固有の UMDF 1.x インターフェイス
+      href: usb-specific-umdf-1-x-interfaces.md
+    - name: UMDF 1.x ドライバーでの USB デバイスの操作
+      href: working-with-usb-devices-in-umdf-1-x-drivers.md
+    - name: UMDF 1.x ドライバーでの USB インターフェイスの操作
+      href: working-with-usb-interfaces-in-umdf-1-x-drivers.md
+    - name: UMDF 1.x ドライバーでの USB パイプの操作
+      href: working-with-usb-pipes-in-umdf-1-x-drivers.md
+    - name: USB I/O ターゲットによるファイルの作成
+      href: file-creation-by-a-usb-i-o-target.md
+    - name: UMDF からの WinUSB の呼び出し
+      href: escaping-to-winusb.md
     - name: ハードウェアへのアクセスと割り込みの処理
       href: accessing-hardware-and-handling-interrupts.md
-      items:
-        - name: ハードウェアへのアクセスの有効化
-          href: enabling-hardware-access.md
-        - name: UMDF 1.x ドライバーでのハードウェア リソースの検索とマッピング
-          href: finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md
-        - name: UMDF 1.x ドライバーでのデバイス レジスターの読み取りと書き込み
-          href: reading-and-writing-to-device-registers-in-umdf-1-x-drivers.md
-        - name: 割り込みの処理
-          href: handling-interrupts.md
-          items:
-            - name: 割り込みオブジェクトの作成
-              href: creating-an-interrupt-object-umdf.md
-            - name: 割り込みの有効化と無効化
-              href: enabling-and-disabling-interrupts-umdf.md
-            - name: 割り込みの処理
-              href: servicing-an-interrupt-umdf.md
-            - name: 作業項目の使用
-              href: using-workitems.md
-            - name: 割り込みコードの同期
-              href: synchronizing-interrupt-code-umdf.md
-            - name: 割り込みオブジェクトの削除
-              href: deleting-an-interrupt-object.md
+    - name: ハードウェアへのアクセスの有効化
+      href: enabling-hardware-access.md
+    - name: UMDF 1.x ドライバーでのハードウェア リソースの検索とマッピング
+      href: finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md
+    - name: UMDF 1.x ドライバーでのデバイス レジスターの読み取りと書き込み
+      href: reading-and-writing-to-device-registers-in-umdf-1-x-drivers.md
+    - name: 割り込みの処理
+      href: handling-interrupts.md
+    - name: 割り込みオブジェクトの作成
+      href: creating-an-interrupt-object-umdf.md
+    - name: 割り込みの有効化と無効化
+      href: enabling-and-disabling-interrupts-umdf.md
+    - name: 割り込みの処理
+      href: servicing-an-interrupt-umdf.md
+    - name: 作業項目の使用
+      href: using-workitems.md
+    - name: 割り込みコードの同期
+      href: synchronizing-interrupt-code-umdf.md
+    - name: 割り込みオブジェクトの削除
+      href: deleting-an-interrupt-object.md
     - name: UMDF ドライバーのタスク
       href: umdf-driver-tasks.md
-      items:
-        - name: UMDF ドライバーでのデバイス インターフェイスの使用
-          href: using-device-interfaces-in-umdf-drivers.md
-        - name: コールバック オブジェクトの作成
-          href: creating-callback-objects.md
-          items:
-            - name: コールバック オブジェクトの作成の例
-              href: creating-callback-objects-example.md
-            - name: コールバック オブジェクトの定義の例
-              href: defining-callback-objects-example.md
-            - name: コールバック インターフェイスの関連付けの例
-              href: associating-callback-interfaces-example.md
-        - name: コールバック同期モードの指定
-          href: specifying-a-callback-synchronization-mode.md
-        - name: I/O キューのイベント コールバック関数
-          href: i-o-queue-event-callback-functions.md
-        - name: I/O キューのディスパッチ モードの構成
-          href: configuring-dispatch-mode-for-an-i-o-queue.md
-        - name: ディスパッチ モードと同期モードの組み合わせ
-          href: combining-dispatch-and-synchronization-modes.md
-        - name: I/O を処理するためのファイル オブジェクトの作成
-          href: creating-a-file-object-to-handle-i-o.md
-          items:
-            - name: ドライバー作成ファイル オブジェクトとアプリケーション作成ファイル オブジェクトの比較
-              href: driver-created-versus-application-created-file-objects.md
-            - name: ドライバー作成ファイル オブジェクトの作成と使用
-              href: creating-and-using-driver-created-file-objects.md
-        - name: UMDF 1.x ドライバーでのレジストリの使用
-          href: using-the-registry-in-umdf-1-x-drivers.md
-        - name: UMDF 1.x ドライバーでのカーネルモード クライアントのサポート
-          href: supporting-kernel-mode-clients-in-umdf-1-x-drivers.md
-        - name: UMDF オブジェクトの表示
-          href: viewing-umdf-objects.md
-        - name: UMDF ドライバーが大量にメモリを消費する理由の特定
-          href: determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory.md
-        - name: Wudfext.dll でのデバッガー拡張機能の概要
-          href: using-umdf-debugger-extensions.md
+    - name: UMDF ドライバーでのデバイス インターフェイスの使用
+      href: using-device-interfaces-in-umdf-drivers.md
+    - name: コールバック オブジェクトの作成
+      href: creating-callback-objects.md
+    - name: コールバック オブジェクトの作成の例
+      href: creating-callback-objects-example.md
+    - name: コールバック オブジェクトの定義の例
+      href: defining-callback-objects-example.md
+    - name: コールバック インターフェイスの関連付けの例
+      href: associating-callback-interfaces-example.md
+    - name: コールバック同期モードの指定
+      href: specifying-a-callback-synchronization-mode.md
+    - name: I/O キューのイベント コールバック関数
+      href: i-o-queue-event-callback-functions.md
+    - name: I/O キューのディスパッチ モードの構成
+      href: configuring-dispatch-mode-for-an-i-o-queue.md
+    - name: ディスパッチ モードと同期モードの組み合わせ
+      href: combining-dispatch-and-synchronization-modes.md
+    - name: I/O を処理するためのファイル オブジェクトの作成
+      href: creating-a-file-object-to-handle-i-o.md
+    - name: ドライバー作成ファイル オブジェクトとアプリケーション作成ファイル オブジェクトの比較
+      href: driver-created-versus-application-created-file-objects.md
+    - name: ドライバー作成ファイル オブジェクトの作成と使用
+      href: creating-and-using-driver-created-file-objects.md
+    - name: UMDF 1.x ドライバーでのレジストリの使用
+      href: using-the-registry-in-umdf-1-x-drivers.md
+    - name: UMDF 1.x ドライバーでのカーネルモード クライアントのサポート
+      href: supporting-kernel-mode-clients-in-umdf-1-x-drivers.md
+    - name: UMDF オブジェクトの表示
+      href: viewing-umdf-objects.md
+    - name: UMDF ドライバーが大量にメモリを消費する理由の特定
+      href: determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory.md
+    - name: Wudfext.dll でのデバッガー拡張機能の概要
+      href: using-umdf-debugger-extensions.md

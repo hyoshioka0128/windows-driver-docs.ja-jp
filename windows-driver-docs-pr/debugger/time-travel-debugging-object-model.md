@@ -3,12 +3,12 @@ title: Time Travel Debugging - Time Travel Debugging オブジェクトの概要
 description: クエリ時にデータ モデルを使用する方法を説明するトレースを移動します。
 ms.date: 04/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dda35dc8ce9f7da77c0abeb06446969feb97c98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be0e207ee0588cc4e4c13fbb173d8c37b44e6a75
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369776"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106400"
 ---
 ![クロックが表示された短い時間旅行ロゴ](images/ttd-time-travel-debugging-logo.png)
 
@@ -301,9 +301,9 @@ FFFFFFFFFFFFFFFE:0 のアドレストレースの最後を示します。
 
 
 
-### <a name="querying-for-all-of-the-errors-in-the-trace"></a>トレース内のエラーのすべてのクエリを実行します。
+### <a name="querying-for-all-of-the-error-checks-in-the-trace"></a>トレースに、エラーのすべてのクエリを実行するを確認します。
 
-このコマンドを使用して、エラーの数、すべてのエラー トレースで順に並べ替えます。
+このコマンドを使用して、エラーの数、すべてのトレースのエラー チェックの順に並べ替えます。
 
 ```dbgcmd
 0:000> dx -g @$cursession.TTD.Calls("kernelbase!GetLastError").Where( x=> x.ReturnValue != 0).GroupBy(x => x.ReturnValue).Select(x => new { ErrorNumber = x.First().ReturnValue, ErrorCount = x.Count()}).OrderByDescending(p => p.ErrorCount),d

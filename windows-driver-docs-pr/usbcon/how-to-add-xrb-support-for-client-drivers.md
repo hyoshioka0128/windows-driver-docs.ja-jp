@@ -3,35 +3,26 @@ Description: このトピックでは、Microsoft 提供の USB ドライバー 
 title: URB の割り当てと構築
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f928ac9a8d769e60d98867db4bb0dd6ccfd377e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d09e3df17b36199ecae09fd6ffcaaaf7a19d763e
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381072"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405048"
 ---
 # <a name="allocating-and-building-urbs"></a>URB の割り当てと構築
 
-
-このトピックでは、Microsoft 提供の USB ドライバー スタックに要求を送信する前に、URB を書式設定を割り当てたり、USB クライアント ドライバーが Windows Driver Model (WDM) ドライバーのルーチンを使用する方法について説明します。
+USB クライアント ドライバーでは、Microsoft 提供の USB ドライバー スタックに要求を送信する前に、URB を書式設定を割り当てたり、Windows Driver Model (WDM) ドライバーのルーチンを使用できます。
 
 クライアント ドライバーでは、USB ドライバー スタックの下位のドライバーで要求を処理するのにために必要なすべての情報をパッケージ化するのに、URB を使用します。 Windows オペレーティング システムで、URB が説明されている、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体。
 
 Microsoft 提供のライブラリ[USB クライアント ドライバーのルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#client)します。 これらのルーチンを使用すると、USB クライアント ドライバーは URB 要求の特定の指定された操作をビルドし、下位の USB スタックに転送できます。 場合は、ライブラリ ルーチンを呼び出す独自 URB 要求を作成するのではなく、サポートされている操作は、クライアント ドライバーを設計できます。
 
-このトピックには、次のセクションが含まれています。
-
--   [Windows 7 およびそれ以前で URB 割り当て](#urb-allocation-in-windows-7-and-earlier)
--   [Windows 8 で URB 割り当て](#urb-allocation-in-windows-8)
--   [URB 日常的な移行](#urb-routine-migration)
--   [関連トピック](#related-topics)
-
 ## <a name="urb-allocation-in-windows7-and-earlier"></a>Windows 7 およびそれ以前で URB 割り当て
-
 
 を Windows 7 および Windows の以前のバージョンの Windows Driver Kit (WDK) で含まれているルーチンを使用して USB 要求を送信するクライアント ドライバー通常割り当てし、設定、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造、関連付け、**URB**新しい IRP では、作成して送信し、USB ドライバー スタックに IRP の構造体。
 
-要求の特定の種類では、Microsoft が提供します (しくみによってエクスポート) を割り当てるヘルパー ルーチンと形式、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体。 たとえば、 [ **USBD\_CreateConfigurationRequestEx** ](https://msdn.microsoft.com/library/windows/hardware/ff539029)ルーチン用のメモリを割り当て、 **URB**構造体の URB を書式設定、[構成の要求のアドレスを返します、 **URB**クライアント ドライバーに構造体。 ただし、ヘルパー ルーチンは、すべての種類の要求は使用できません。
+要求の特定の種類では、Microsoft が提供します (しくみによってエクスポート) を割り当てるヘルパー ルーチンと形式、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体。 たとえば、 [ **USBD\_CreateConfigurationRequestEx** ](https://msdn.microsoft.com/library/windows/hardware/ff539029)ルーチン用のメモリを割り当て、 **URB**構造体の URB を書式設定、構成の要求のアドレスを返します、 **URB**クライアント ドライバーに構造体。 ただし、ヘルパー ルーチンは、すべての種類の要求は使用できません。
 
 Microsoft では、要求の種類によっては翻訳を書式設定されたマクロも提供します。 これらのマクロでは、クライアント ドライバーを割り当てる必要があります、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)呼び出して構造[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)を割り当てるか、スタックに構造体。 たとえば、クライアント ドライバーが割り当てた後、 **URB**、ドライバーを呼び出すことができます[ **UsbBuildSelectConfigurationRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538968)選択構成 URB を書式設定するには要求または構成をクリアします。
 
@@ -41,7 +32,6 @@ USB の要求が完了したら、クライアント ドライバーをリリー
 
 ## <a name="urb-allocation-in-windows8"></a>Windows 8 で URB 割り当て
 
-
 Windows 8 WDK 用では、新規のスタティック ライブラリ、割り当て、書式設定、および翻訳を解放するためのルーチンをエクスポートする Usbdex.lib を提供します。 さらに、IRP を URB に関連付ける新しい方法があります。 Windows Vista および Windows の以降のバージョンを対象とするクライアント ドライバーによって新しいルーチンを呼び出すことができます。
 
 Windows Vista 以降を実行しているクライアント ドライバーは、新しいルーチンを使用して、基になる USB ドライバー スタックは、特定のパフォーマンスと信頼性機能の強化を利用できるようにする必要があります。 これらの機能強化は、USB 3.0 デバイスおよびホスト コント ローラーをサポートするために Windows 8 で導入された新しい USB ドライバー スタックに適用されます。 USB 2.0 ホスト コント ローラーは、Windows は、機能強化がサポートされていないドライバー スタックの以前のバージョンを読み込みます。 基になるドライバー スタックのバージョンまたはホスト コント ローラーでサポートされているプロトコルのバージョンに関係なく、新しい URB ルーチンを常に呼び出す必要があります。
@@ -50,12 +40,12 @@ Windows Vista 以降を実行しているクライアント ドライバーは�
 
 次のルーチン for Windows 8 WDK で利用できます。 これらのルーチンは、Usbdlib.h で定義されます。
 
--   [**USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)
--   [**USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)
--   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406243)
--   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406245)
--   [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
--   [**USBD\_AssignUrbToIoStackLocation**](https://msdn.microsoft.com/library/windows/hardware/hh406228)
+* [**USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)
+* [**USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)
+* [**USBD\_SelectConfigUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406243)
+* [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406245)
+* [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
+* [**USBD\_AssignUrbToIoStackLocation**](https://msdn.microsoft.com/library/windows/hardware/hh406228)
 
 上記の割り当てルーチンが新しいへのポインターを返す[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体は、USB ドライバー スタックによって割り当てられています。 、Windows によって読み込まれた USB ドライバー スタックのバージョンに応じて、 **URB**構造体とする非透過的なペアリング*URB コンテキスト*します。 URB コンテキストは、URB に関する情報のブロックです。 URB ヘッダーの内容を表示することはできません情報は、USB ドライバー スタックが URB を追跡および処理を向上させるために内部的に使用する対象としています。 URB コンテキストが*のみ*for Windows 8 USB ドライバー スタックで使用します。
 URB コンテキストを使用できる場合、USB ドライバー スタックはこれを使用して安全性と効率 URB 処理を加えます。 たとえば、USB ドライバー スタックはクライアント ドライバーの URB を送信し、最初の要求が完了する前に、その同じ URB を再利用しようがいないことを確認してください。 その種のエラーを検出するためには、USB ドライバー スタックは、URB コンテキストでの状態情報を格納します。 状態情報がない場合は、USB ドライバー スタックは、現在進行中のすべての翻訳で着信 URB を比較する必要があります。 状態情報は、クライアント ドライバーが URB を解放しようとしたときにも、USB ドライバー スタックで使用されます。 URB をリリースする前に、USB ドライバー スタックは URB が保留中ではないことを確認する状態を確認します。
@@ -63,7 +53,6 @@ URB コンテキストを使用できる場合、USB ドライバー スタッ�
 URB コンテキストでは、余分な URB 情報を格納するための公式のメカニズムを提供します。 URB を使用してコンテキストがの予約済みのメンバーに必要なまたはファイルを格納する追加情報として余分なメモリを割り当てることをお勧め、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体。 USB ドライバー スタックは、翻訳をできるように、今後拡大 URB コンテキストが必要な場合のみ必要な調整プールの割り当てのサイズには非ページ プールは、関連付けられている URB コンテキストを割り当てます。
 
 ## <a name="urb-routine-migration"></a>URB 日常的な移行
-
 
 次の表では、URB ルーチンの変更をまとめたものです。
 
@@ -116,10 +105,6 @@ URB コンテキストでは、余分な URB 情報を格納するための公�
 </tbody>
 </table>
 
- 
-
 ## <a name="related-topics"></a>関連トピック
+
 [USB デバイスに要求を送信](communicating-with-a-usb-device.md)  
-
-
-
