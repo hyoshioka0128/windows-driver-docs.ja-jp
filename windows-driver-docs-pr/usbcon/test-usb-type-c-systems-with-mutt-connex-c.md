@@ -3,12 +3,12 @@ Description: MUTT 接続 Exerciser 型 C (USB 型 C ConnEx) ハードウェア �
 title: USB Type-C システムを USB Type-C ConnEx を使用してテストする
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1bd672f37af43f807d9b178112bef18671d4fc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b7f79121f9f6e8ff04c1dd632b6eb09670b6f0e
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380031"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405090"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>USB Type-C システムを USB Type-C ConnEx を使用してテストする
 
@@ -32,7 +32,7 @@ ms.locfileid: "63380031"
 
 -   2016 年 2 月
 
-\[いくつかの情報は、リリース版の発売までに著しく変更される可能性がありますが、リリース前の製品に関連します。 Microsoft では、一切の保証、明示または黙示にかかわらず、ここで提供される情報はありません。\]
+\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
 MUTT 接続 Exerciser 型 C (USB 型 C ConnEx) ハードウェア ボードでは、Arduino ボード用カスタム シールドです。 シールドは、USB 型-C# のシナリオの相互運用性のテストを自動化するための 4 対一スイッチを提供します。
 
@@ -122,7 +122,7 @@ USB タイプ C ConnEx を使用して USB 型-C# の相互運用性のテスト
 
 | ツール                          | 説明                                                                                          |
 |-------------------------------|------------------------------------------------------------------------------------------------------|
-| [ConnExUtil.exe](#connexutil) | USB タイプ C ConnEx 機能を実行するためのコマンド ライン ツールです。                                             |
+| [ConnExUtil.exe](#connexutilexe) | USB タイプ C ConnEx 機能を実行するためのコマンド ライン ツールです。                                             |
 | [CxLoop.cmd](#cxloop)         | 接続し、1 回の各ポートを切断します。                                                             |
 | [CxStress.cmd](#cxstress)     | ストレスのランダム化されたスクリプトです。                                                                            |
 | [CxPower.cmd](#cxpower)       | 時間の期間にわたって (電圧とアンペア) の電源データをキャプチャし、CSV ファイルに出力を送信します。 |
@@ -388,26 +388,26 @@ do (
 
 USB 型-C# の相互運用性のテスト手順は 2 つのセクションに分けられます。 (FT) の機能テストとストレス テスト (ST)。 各テスト セクションでは、テスト ケースを説明し、テストに適用されるカテゴリを識別します。 製品は、該当するカテゴリ全体に対してテストする必要があります。 特定のテスト_ケースには、関連するヒントと詳細のヒントへのリンクが含まれます。 このセクションでは、USB 型-C# の機能と経験に重点を置いています。 USB 型-C# ソリューションの可能性がありますには、USB ハブまたは USB コント ローラーなどの他の USB コンポーネントが含まれています。 USB の両方については USB ハブおよびコント ローラーの詳細なテストの場合の[xHCI の相互運用性のテスト手順](https://go.microsoft.com/fwlink/p/?LinkId=623257)と、Windows ハードウェア認定キット。
 
-これらのテスト_ケースが ConnExUtil コマンドとスクリプトの例に基づくは[USB 型 C ConnEx ボードを制御するためのスクリプト](#scripts)します。 テストの場合は、スクリプトを参照してください。 テスト シナリオでは、必要に応じてスクリプトをカスタマイズします。
+これらのテスト_ケースが ConnExUtil コマンドとスクリプトの例に基づくは[USB 型 C ConnEx ボードを制御するためのスクリプト](#scripts-for-controlling-the-usb-type-c-connex-board)します。 テストの場合は、スクリプトを参照してください。 テスト シナリオでは、必要に応じてスクリプトをカスタマイズします。
 
-<a href="" id="device-enumeration"></a>[デバイスの列挙](#ft1)  
+<a href="" id="device-enumeration"></a>[デバイスの列挙](#ft-case-1-device-enumeration)  
 デバイスの列挙の主要な要素が機能していることを確認します。
 
-<a href="" id="alternate-mode-negotiation"></a>[別のモードのネゴシエーション](#ft2)  
+<a href="" id="alternate-mode-negotiation"></a>[別のモードのネゴシエーション](#ft-case-2-alternate-mode-negotiation)  
 サポートされている別のモードを確認します。
 
-<a href="" id="charging-and-power-delivery--pd-"></a>[課金と電力の配信 (PD)](#ft3)  
+<a href="" id="charging-and-power-delivery--pd-"></a>[課金と電力の配信 (PD)](#ft-case-3-charging-and-power-delivery-pd)  
 USB タイプ C での課金を確認します。
 
-<a href="" id="role-swap"></a>[役割の交代](#ft4)  
+<a href="" id="role-swap"></a>[役割の交代](#ft-case-4-role-swap)  
 役割の交代を確認します。
 
 ストレスのテスト セクションでは、ストレスとエッジ ケースのシナリオ、期間のデバイスの安定性をテストする手順について説明します。 ストレス テストと、レガシ USB 検証 (C 型の非の USB) のカスタムのデバイス (SuperMUTT) は必要です。 今後型-C# の USB テスト デバイスでは、追加のテストと自動化を実現できます。
 
-<a href="" id="device-enumeration"></a>[デバイスの列挙](#st1)  
+<a href="" id="device-enumeration"></a>[デバイスの列挙](#st-case-1-device-enumeration)  
 デバイスの列挙の主要な要素が機能していることを確認します。
 
-<a href="" id="charging-and-power-delivery--pd-"></a>[課金と電力の配信 (PD)](#st2)  
+<a href="" id="charging-and-power-delivery--pd-"></a>[課金と電力の配信 (PD)](#st-case-2-charging-and-power-delivery-pd)  
 USB タイプ C での課金を確認します。
 
 ## <a name="ft-case-1-device-enumeration"></a>FT ケース 1:デバイスの列挙
@@ -433,7 +433,7 @@ USB タイプ C での課金を確認します。
 6.  管理者特権でコマンド プロンプトから、CXLOOP を実行します。CMD スクリプトです。 スクリプトが一時停止したときに、新しくアクティブ化の周辺機器が動作を確認します。
 7.  型から C の USB ケーブルの方向を反転し、手順 5 ~ 7 を繰り返します。
 
-手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#config).
+手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#get-started).
 
 ## <a name="ft-case-2-alternate-mode-negotiation"></a>FT ケース 2:別のモードのネゴシエーション
 
@@ -458,7 +458,7 @@ USB タイプ C での課金を確認します。
 6.  管理者特権でコマンド プロンプトから、CXLOOP を実行します。CMD スクリプトです。 スクリプトが一時停止したときに、新しくアクティブ化の周辺機器が動作を確認します。
 7.  型から C の USB ケーブルの方向を反転し、手順 5 ~ 7 を繰り返します。
 
-手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#config).
+手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#get-started).
 
 ## <a name="ft-case-3-charging-and-power-delivery-pd"></a>FT ケース 3:課金と電力の配信 (PD)
 
@@ -496,7 +496,7 @@ USB タイプ C での課金を確認します。
 
     デバイスが現在受信して確認します。
 
-手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#config).
+手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#get-started).
 
 ## <a name="ft-case-4-role-swap"></a>FT ケース 4:役割の交代
 
@@ -526,7 +526,7 @@ USB タイプ C での課金を確認します。
 
 9.  データ ロールを交換し、各システムの現在のロールが変更されたことを確認するために必要な手順を実行します。
 
-手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#config).
+手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#get-started).
 
 ## <a name="st-case-1-device-enumeration"></a>ST ケース 1:デバイスの列挙
 
@@ -552,9 +552,9 @@ USB タイプ C での課金を確認します。
 
     Ctrl + C を押して、スクリプトを終了します。
 
-7.  説明されている手順に従います[FT ケース 1。デバイスの列挙](#ft1)します。
+7.  説明されている手順に従います[FT ケース 1。デバイスの列挙](#ft-case-1-device-enumeration)します。
 
-手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#config).
+手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#get-started).
 
 ## <a name="st-case-2-charging-and-power-delivery-pd"></a>ST ケース 2:課金と電力の配信 (PD)
 
@@ -580,9 +580,9 @@ USB タイプ C での課金を確認します。
 
     Ctrl + C を押して、スクリプトを終了します。
 
-7.  説明されている手順に従います[FT ケース 3。課金と配信 (PD) の電源を](#ft3)します。
+7.  説明されている手順に従います[FT ケース 3。課金と配信 (PD) の電源を](#ft-case-3-charging-and-power-delivery-pd)します。
 
-手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#config).
+手順 2 -4 に関連する構成イメージでは、次を参照してください[を開始しています。](#get-started).
 
 ## <a name="additional-test-resources"></a>追加のテスト リソース
 

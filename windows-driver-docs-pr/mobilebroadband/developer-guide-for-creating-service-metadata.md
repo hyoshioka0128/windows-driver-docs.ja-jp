@@ -4,12 +4,12 @@ description: サービス メタデータの作成に関する開発者向けガ
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d85a2cb9294c11c91d0e8235e3c23f6c2670f166
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 09df5432075549f14093fbeda9005d5faab7f774
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582488"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405171"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>サービス メタデータの作成に関する開発者向けガイド
 
@@ -82,7 +82,7 @@ MNOs と MVNOs は、サービス メタデータ パッケージを作成する
 ## <a name="span-idcreatingservicemetadatapackagesspanspan-idcreatingservicemetadatapackagesspanspan-idcreatingservicemetadatapackagesspancreating-service-metadata-packages"></a><span id="Creating_service_metadata_packages"></span><span id="creating_service_metadata_packages"></span><span id="CREATING_SERVICE_METADATA_PACKAGES"></span>サービス メタデータ パッケージの作成
 
 
-サービス メタデータ パッケージの作成は、Windows デベロッパー センター ハードウェア ダッシュ ボードで利用可能なサービスのメタデータのウィザードを開始します。 サービス メタデータのウィザードの詳細については、[手順 2 - サービス メタデータ パッケージを作成する](#2-create-the-service-metadata-package)を参照してください。 新規作成または既存のサービス メタデータ パッケージを編集するサービス メタデータのウィザードを使用することができます。 ウィザードの値を入力すると、ウィザードが検証し、エラーまたは警告を通知します。 この検証には、フィールドが見つからないか正しくない、サービスの識別子の所有権、Microsoft Store でモバイル ブロード バンド アプリが存在することの確認が含まれています。
+サービス メタデータ パッケージの作成は、Windows デベロッパー センター ハードウェア ダッシュ ボードで利用可能なサービスのメタデータのウィザードを開始します。 サービス メタデータのウィザードの詳細については、次を参照してください。[手順 2 - サービス メタデータ パッケージを作成する](#2-create-the-service-metadata-package)します。 新規作成または既存のサービス メタデータ パッケージを編集するサービス メタデータのウィザードを使用することができます。 ウィザードの値を入力すると、ウィザードが検証し、エラーまたは警告を通知します。 この検証には、フィールドが見つからないか正しくない、サービスの識別子の所有権、Microsoft Store でモバイル ブロード バンド アプリが存在することの確認が含まれています。
 
 パッケージを送信するかのオプションがある最後の確認 ページと送信の準備完了したらで**開発者**モードまたは**プレビュー**モード。
 
@@ -109,7 +109,7 @@ Windows デベロッパー センター ハードウェア ダッシュ ボー�
 
 -   [2-サービス メタデータ パッケージの作成](#2-create-the-service-metadata-package)
 
--   [Microsoft Store のデバイスのアプリへの挿入の 3 ストア マニフェスト ファイル](#3-insert-the-store-manifest-file-into-the-uwp-device-app)
+-   [Microsoft Store のデバイスのアプリへの挿入の 3 ストア マニフェスト ファイル](#3-insert-the-store-manifest-file-into-the-microsoft-store-device-app)
 
 -   [サービス メタデータ パッケージのテスト-4](#4-test-the-service-metadata-package)
 
@@ -178,7 +178,7 @@ Windows デベロッパー センター ハードウェア ダッシュ ボー�
 
     -   **Windows ネットワークの選択 UI で使用されるネットワークの名前を入力**– ネットワークの名前をお客様には、Windows 接続マネージャーに表示されます。
 
-    -   **サービス番号を入力する**– GUID、プロビジョニングのメタデータ内の通信事業者の ID フィールドに一致する必要があります。 Visual Studio 2013 を使用して GUID を作成することができます。 GUID を作成する方法の詳細については、[GUID の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/p/?linkid=330070)を参照してください。
+    -   **サービス番号を入力する**– GUID、プロビジョニングのメタデータ内の通信事業者の ID フィールドに一致する必要があります。 Visual Studio 2013 を使用して GUID を作成することができます。 GUID を作成する方法の詳細については、次を参照してください。 [GUID の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/p/?linkid=330070)します。
 
     -   **Windows ネットワークの選択 UI に表示されるアイコンのアップロード**– クリックして**参照**、し Windows 接続マネージャーでのお客様に表示されるアイコンを選択します。
 
@@ -190,7 +190,7 @@ Windows デベロッパー センター ハードウェア ダッシュ ボー�
 
     ![ウィザードの サービス情報手順](images/mbae-sxs81-serviceinfostep.png)
 
-4.  **ハードウェア情報** ページで、お客様のエクスペリエンスを識別するために使用する情報を選択します。 チェック ボックスを選択すると、適切なネットワークの範囲を追加できます。 生成された ID は、適切なサブスクライバーが識別されるように、Windows APN データベースに存在する必要があります。 APN データベースの詳細については、[COSA/APN データベース送信](cosa-apn-database-submission.md)を参照してください。
+4.  **ハードウェア情報** ページで、お客様のエクスペリエンスを識別するために使用する情報を選択します。 チェック ボックスを選択すると、適切なネットワークの範囲を追加できます。 生成された ID は、適切なサブスクライバーが識別されるように、Windows APN データベースに存在する必要があります。 APN データベースの詳細については、次を参照してください。 [COSA/APN データベース送信](cosa-apn-database-submission.md)します。
 
     -   GSM プロバイダー、International Mobile IMSI (Subscriber Identity) を使用する場合は、選択、 **IMSI**下のチェック ボックス、 **GSM**見出し。 **プロバイダー ID**ボックスに、GSM サービス プロバイダーの ID を入力します。 下、 **IMSI/ICCID 範囲**、範囲を入力し、クリックして、見出し**追加**します。
 
@@ -258,7 +258,7 @@ Windows デベロッパー センター ハードウェア ダッシュ ボー�
 
 ### <a name="span-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespantest-a-service-metadata-package-in-preview-mode"></a><span id="Test_a_service_metadata_package_in_preview_mode"></span><span id="test_a_service_metadata_package_in_preview_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_PREVIEW_MODE"></span>プレビュー モードでのサービス メタデータ パッケージをテストします。
 
-サービス メタデータ パッケージは、プレビュー モードでは場合、は、テスト コンピューターに PreviewKey レジストリ エントリを作成する必要があります。 PreviewKey のレジストリ エントリを構成する方法の詳細については、[プレビュー パッケージを作成する](https://msdn.microsoft.com/library/windows/hardware/br230780)を参照してください。
+サービス メタデータ パッケージは、プレビュー モードでは場合、は、テスト コンピューターに PreviewKey レジストリ エントリを作成する必要があります。 PreviewKey のレジストリ エントリを構成する方法の詳細については、次を参照してください。[プレビュー パッケージを作成する](https://msdn.microsoft.com/library/windows/hardware/br230780)します。
 
 **注:**  
 テスト プレビュー モードでは、サービス メタデータ パッケージをテストする署名を有効にすることはありません。

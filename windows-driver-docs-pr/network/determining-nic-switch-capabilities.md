@@ -4,21 +4,21 @@ description: NIC スイッチ機能の判断
 ms.assetid: 5E627E52-2D47-4EA0-80D9-6979891CCE96
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 990104d4b1d07ef6bdb8e1f4b3933c4316457bee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1ae1af4bdf1c5e8dc112e024b1bf3b5cc5e4d8e
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364223"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405150"
 ---
 # <a name="determining-nic-switch-capabilities"></a>NIC スイッチ機能の判断
 
 
 このトピックでは、NDIS および上にあるドライバーを NIC はスイッチ シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの機能を特定する方法について説明します。 このトピックの内容は次のとおりです。
 
-[レポートの中に NIC のスイッチ機能*MiniportInitializeEx*](#report)
+[レポートの中に NIC のスイッチ機能*MiniportInitializeEx*](#reporting-nic-switch-capabilities-during-miniportinitializeex)
 
-[上にあるドライバーによって NIC スイッチ機能の照会](#query)
+[上にあるドライバーによって NIC スイッチ機能の照会](#querying-nic-switch-capabilities-by-overlying-drivers)
 
 **注**  専用の PCI Express (PCIe) 物理機能 (PF)、SR-IOV ネットワーク アダプターのミニポート ドライバーは、NIC のスイッチ機能を報告できます。 PCIe 仮想機能 (Vf) 用のミニポート ドライバーでは、NIC スイッチの SR-IOV 対応のアダプターの機能は報告する必要があります。
 

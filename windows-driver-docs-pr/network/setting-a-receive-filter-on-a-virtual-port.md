@@ -4,12 +4,12 @@ description: 仮想ポートでの受信フィルターの設定
 ms.assetid: F0137D59-1701-4DFC-BB30-27E477FC0706
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47be2c6633368f628e4b3dbfacbdcfd336785c9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50fd4d697706b1d4dfc80878dfa079de80d31d11
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346713"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405282"
 ---
 # <a name="setting-a-receive-filter-on-a-virtual-port"></a>仮想ポートでの受信フィルターの設定
 
@@ -18,13 +18,13 @@ ms.locfileid: "63346713"
 
 このトピックの内容は次のとおりです。
 
-[に対して、VPort 受信フィルターを設定](#set)
+[に対して、VPort 受信フィルターを設定](#setting-a-receive-filter-on-a-vport)
 
-[NDIS を使用して\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0 フラグ](#flag)
+[NDIS を使用して\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0 フラグ](#using-the-ndis_receive_filter_field_mac_header_vlan_untagged_or_zero-flag)
 
-[フィルターの識別子を使用してください。](#filter-id)
+[フィルターの識別子を使用してください。](#using-the-filter-identifier)
 
-[処理の受信、VPort のフィルター](#handle)
+[処理の受信、VPort のフィルター](#handling-receive-filters-on-a-vport)
 
 VPort を作成する方法の詳細については、次を参照してください。[仮想ポートを作成する](creating-a-virtual-port.md)します。
 
