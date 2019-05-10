@@ -18,12 +18,12 @@ keywords:
 - 状態遷移の遅延の WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6bb4590a1fa97a27dc4ea9bb834bc793e31f0b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2faaebfb81910add8e59229db8b83e5da9f52564
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388132"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106374"
 ---
 # <a name="device-low-power-states"></a>デバイスの低電力状態
 
@@ -89,7 +89,7 @@ D2 内のデバイスは、ウェイク アップを要求できる可能性が�
 
 D3 は、デバイスの電源が最も低い低電力状態です。 すべてのデバイスでは、この状態をサポートする必要があります。
 
-オペレーティング システム以降 Windows 8 では、2 つ異なる下位、D3hot と D3cold に D3 に細分化します。 Windows の以前のバージョンが D3 の状態が D3hot できませんを定義し、D3cold substates します。 ただし、すべてのバージョンの[PCI バス Power Management Interface Specification](http://www.pcisig.com/specifications/conventional/)個別 D3hot と D3cold の下位と 4 以降のバージョンを定義、 [Advanced Configuration and Power Interface Specification](https://go.microsoft.com/fwlink/p/?linkid=57185) D3hot を定義し、D3cold substates します。
+オペレーティング システム以降 Windows 8 では、2 つ異なる下位、D3hot と D3cold に D3 に細分化します。 Windows の以前のバージョンが D3 の状態が D3hot できませんを定義し、D3cold substates します。 ただし、すべてのバージョンの[PCI バス Power Management Interface Specification](https://www.pcisig.com/specifications/conventional/)個別 D3hot と D3cold の下位と 4 以降のバージョンを定義、 [Advanced Configuration and Power Interface Specification](https://go.microsoft.com/fwlink/p/?linkid=57185) D3hot を定義し、D3cold substates します。
 
 Windows 8 の前に Windows のバージョンは D3 の D3hot と D3cold 下位を明示的に定義しても、これらの下位は以前のバージョンの Windows で暗黙的に存在しません。 デバイスは暗黙的に D3hot 下位状態場合は、デバイスが明示的に D3 の状態であり、コンピューターが S0 システム電源の状態。 累乗に D3hot でデバイスが接続されている (ただし、現在の低を描画するためには、デバイスを構成する場合があります)、ソースおよびバス上のデバイスの存在を検出できます。 D3 の状態が明示的にあり、コンピューターが省電力 Sx 状態 (S0 以外の状態) の場合、デバイスは下位 D3cold 状態で暗黙的にです。 この暗黙的な D3cold 下位状態でそのデバイスは現在、トリクルを受け取る可能性があります、デバイスとコンピューターが効果的に無効になっていますウェイク イベントが発生するまで。
 

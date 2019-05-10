@@ -7,14 +7,14 @@ keywords:
 - NDIS WDK、ネットワーク ドライバーのバージョン
 - 旧バージョンと互換性の WDK ネットワーク
 - 互換性の WDK ネットワーク
-ms.date: 04/20/2017
+ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5703d774c508228078baa642befbb9a2b163dd4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c15cbac0343e4dd952e0d8fd9b56cbb947545927
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391026"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106453"
 ---
 # <a name="overview-of-ndis-versions"></a>NDIS バージョンの概要
 
@@ -74,3 +74,5 @@ Windows オペレーティング システム、Microsoft Windows Driver Kit (WD
 |   |   | NDIS 6.81 機能の詳細については、次を参照してください。 [NDIS 6.81 概要](introduction-to-ndis-6-81.md)します。 |
 | Windows 10 Version 1809 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.82 | X | X | X |
 |   |   | NDIS 6.82 機能の詳細については、次を参照してください。 [NDIS 6.82 概要](introduction-to-ndis-6-82.md)します。 |
+| Windows 10 バージョン 1903 | 参照してください[Windows ハードウェア開発キットをダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721)します。 | 6.83 | x | X | x |
+|   |   | NDIS 6.83 機能の詳細については、次を参照してください。 [NDIS 6.83 概要](introduction-to-ndis-6-83.md)します。 |
