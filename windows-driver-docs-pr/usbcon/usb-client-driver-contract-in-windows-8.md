@@ -3,12 +3,12 @@ Description: このトピックでは、割り当て、構築、および Window
 title: ベスト プラクティス - を使用して翻訳
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 496f0017819bfb9743948da82c41ae27eb91b235
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 283f411c2d4d79f1d0a823b18e87869ca169793a
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355058"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405088"
 ---
 # <a name="best-practices-using-urbs"></a>ベスト プラクティス:URB の使用
 
@@ -21,8 +21,8 @@ Windows 8 には、ユニバーサル シリアル バス (USB) 3.0 デバイス
 
 USBD の\_クライアント\_コントラクト\_バージョン\_クライアント ドライバーは、次の一連の規則に準拠するいると仮定 602 のバージョンのクライアント ドライバーを USB ドライバー スタック。
 
--   [古い場合または無効なパイプ ハンドルを使用して I/O 要求を送信できません。](#do-not-send-i-o-requests-by-using-stale-or-invalid-pipe-handles)
--   [Windows 8 の割り当てルーチンを呼び出すことで翻訳を割り当てる](#allocate-urbs-by-calling-allocation-routines-in-windows-8)
+-   [古い場合または無効なパイプ ハンドルを使用して I/O 要求を送信できません。](#do-not-send-io-requests-by-using-stale-or-invalid-pipe-handles)
+-   [Windows 8 の割り当てルーチンを呼び出すことで翻訳を割り当てる](#allocate-urbs-by-calling-allocation-routines-in-windows8)
 -   [保留中の要求に関連付けられているアクティブな翻訳を再利用しません。](#do-not-reuse-active-urbs-associated-with-pending-requests)
 -   [高速および SuperSpeed isochronous 転送のポーリング期間が 8 より大きい値を使用しないでください。](#do-not-use-polling-period-greater-than-8-for-high-speed-and-superspeed-isochronous-transfers)
 -   [必ずフレームあたりのパケットの数の倍数であるアイソクロナス パケットの数](#make-sure-that-the-number-of-isochronous-packets-that-is-a-multiple-of-number-of-packets-per-frame)

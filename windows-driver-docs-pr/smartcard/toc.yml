@@ -1,11 +1,13 @@
 - name: 設計ガイド
-  href: index.md
   items:
+    - name: 設計ガイド
+      href: index.md
     - name: スマート カード ドライバー環境
       href: smart-card-driver-environment.md
     - name: スマート カード リーダー ドライバーでの IOCTL 要求の管理
-      href: management-of-ioctl-requests-in-a-smart-card-reader-driver.md
       items:
+        - name: スマート カード リーダー ドライバーでの IOCTL 要求の管理
+          href: management-of-ioctl-requests-in-a-smart-card-reader-driver.md
         - name: スマート カード ドライバー ライブラリ
           href: smart-card-driver-library.md
         - name: スマート カード ドライバー ライブラリとの相互作用
@@ -17,13 +19,15 @@
     - name: WDM リーダー ドライバー
       href: wdm-reader-driver.md
     - name: スマート カード ミニドライバー
-      href: smart-card-minidrivers.md
       items:
+        - name: スマート カード ミニドライバー
+          href: smart-card-minidrivers.md
         - name: スマート カード ミニドライバーの概要
           href: smart-card-minidriver-overview.md
         - name: スマート カード ミニドライバーのバージョン
-          href: smart-card-minidriver-versions.md
           items:
+            - name: スマート カード ミニドライバーのバージョン
+              href: smart-card-minidriver-versions.md
             - name: ミニドライバー バージョン 7.07 の機能
               href: minidriver-version-7-07-features.md
             - name: ミニドライバー バージョン 7.06 の機能

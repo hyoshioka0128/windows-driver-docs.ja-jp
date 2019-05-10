@@ -4,12 +4,12 @@ description: パケット結合受信フィルターの指定
 ms.assetid: 0369A63D-4CDE-448A-8472-EEEB7B859B8D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 384e3acaeecaf2f7730dd854ee4e352f964bfe67
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c99bc33c991caa0b41f681991fb0870e729da4d
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355210"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405280"
 ---
 # <a name="specifying-a-packet-coalescing-receive-filter"></a>パケット結合受信フィルターの指定
 
@@ -24,11 +24,11 @@ ms.locfileid: "63355210"
 
 -   [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181) NDIS のパラメーターを指定する構造体は、フィルターを受信します。
 
-    この構造体を初期化する方法の詳細については、次を参照してください。[受信フィルターを指定する](#specifying-receive-filter)します。
+    この構造体を初期化する方法の詳細については、次を参照してください。[受信フィルターを指定する](#specifying-a-receive-filter)します。
 
 -   配列の[ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)フィルターを指定する構造体のフィールドの条件をテストします。ネットワーク パケットのヘッダー。
 
-    これらの構造体を初期化する方法の詳細については、次を参照してください。[ヘッダー フィールドのテストを指定する](#specifying-header-field-test)します。
+    これらの構造体を初期化する方法の詳細については、次を参照してください。[ヘッダー フィールドのテストを指定する](#specifying-header-field-tests)します。
 
 ## <a name="specifying-a-receive-filter"></a>受信フィルターを指定します。
 

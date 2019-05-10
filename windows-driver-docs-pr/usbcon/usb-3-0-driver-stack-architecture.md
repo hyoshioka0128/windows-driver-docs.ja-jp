@@ -3,12 +3,12 @@ Description: このトピックでは、ユニバーサル シリアル バス (
 title: Windows の USB ホスト側ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e021cffe443cab922140fab6d5c5c32af6460d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6f66484e9ae50d7bcead05619b729f403c0c046
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355103"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405085"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows の USB ホスト側ドライバー
 
@@ -21,13 +21,13 @@ Windows では、eHCI や oHCI、uHCI コント ローラーに接続されて�
 
 ![usb 2.0 および 3.0 ドライバー スタックのアーキテクチャ ブロック図](images/usb-driver-stack-3.png)
 
--   [USB 3.0 ドライバー スタック](#usb-3-0-driver-stack)
-    -   [USB 3.0 ホスト コント ローラー ドライバー (Usbxhci.sys)](#usb-3-0-host-controller-driver--usbxhci-sys)
-    -   [USB ホスト コント ローラーの拡張機能 (Ucx01000.sys)](#usb-host-controller-extension--ucx01000-sys)
-    -   [USB ハブのドライバー (Usbhub3.sys)](#usb-hub-driver-usbhub3-sys)
--   [USB 2.0 ドライバー スタック](#usb-2-0-driver-stack)
--   [USB 共通クラス ジェネリック親ドライバー (Usbccgp.sys)](#usb-common-class-generic-parent-driver--usbccgp-sys--)
--   [WinUSB (Winusb.sys)](#winusb-winusb-sys)
+-   [USB 3.0 ドライバー スタック](#usb-30-driver-stack)
+    -   [USB 3.0 ホスト コント ローラー ドライバー (Usbxhci.sys)](#usb-30-host-controller-driver-usbxhcisys)
+    -   [USB ホスト コント ローラーの拡張機能 (Ucx01000.sys)](#-usb-host-controller-extension-ucx01000sys)
+    -   [USB ハブのドライバー (Usbhub3.sys)](#usb-hub-driver-usbhub3sys)
+-   [USB 2.0 ドライバー スタック](#usb-20-driver-stack)
+-   [USB 共通クラス ジェネリック親ドライバー (Usbccgp.sys)](#usb-common-class-generic-parent-driver-usbccgpsys)
+-   [WinUSB (Winusb.sys)](#winusb-winusbsys)
 -   [USB クライアント ドライバー](#usb-client-driver)
 -   [クライアント ドライバー用のヘルパー ライブラリ](#helper-libraries-for-client-drivers)
 -   [関連トピック](#related-topics)
