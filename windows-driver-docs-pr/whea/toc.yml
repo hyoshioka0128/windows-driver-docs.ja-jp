@@ -1,23 +1,27 @@
 - name: WHEA 設計ガイド
-  href: index.md
   items:
+    - name: WHEA 設計ガイド
+      href: index.md
     - name: Windows Hardware Error Architecture の基本
       href: introduction-to-the-windows-hardware-error-architecture.md
     - name: Windows Hardware Error Architecture の新情報
-      href: new-information-for-windows-hardware-error-architecture.md
       items:
+        - name: Windows Hardware Error Architecture の新情報
+          href: new-information-for-windows-hardware-error-architecture.md
         - name: Windows Server 2008 および Windows Vista SP1 での WHEA の変更点
           href: whea-changes-for-windows-server-2008-and-windows-vista-sp1.md
         - name: Windows 7 での WHEA の変更点
-          href: whea-changes-for-windows-7.md
           items:
+            - name: Windows 7 での WHEA の変更点
+              href: whea-changes-for-windows-7.md
             - name: WHEA データ型の名前変更
               href: renamed-whea-data-types.md
     - name: Windows Hardware Error Architecture の定義
       href: windows-hardware-error-architecture-definitions.md
     - name: Windows Hardware Error Architecture の概要
-      href: windows-hardware-error-architecture-overview.md
       items:
+        - name: Windows Hardware Error Architecture の概要
+          href: windows-hardware-error-architecture-overview.md
         - name: ハードウェア エラーとエラーの原因
           href: hardware-errors-and-error-sources.md
         - name: Microsoft Windows とシステム ファームウェアの関係
@@ -31,34 +35,39 @@
         - name: エラー レコードの永続化メカニズム
           href: error-record-persistence-mechanism.md
         - name: Predictive Failure Analysis (PFA)
-          href: predictive-failure-analysis--pfa-.md
           items:
+            - name: Predictive Failure Analysis (PFA)
+              href: predictive-failure-analysis--pfa-.md
             - name: WHEA ポリシー設定
               href: whea-pfa-registry-settings.md
             - name: WHEA によって実行される PFA
-              href: pfa-performed-by-whea.md
               items:
+                - name: WHEA によって実行される PFA
+                  href: pfa-performed-by-whea.md
                 - name: WHEA が ECC メモリ上で PFA を実行する方法
                   href: how-whea-performs-pfa-on-ecc-memory.md
             - name: PSHED プラグインによって実行される PFA
               href: pfa-performed-by-a-pshed-plug-in.md
             - name: PFA 結果の永続化
-              href: persistence-of-pfa-results.md
               items:
+                - name: PFA 結果の永続化
+                  href: persistence-of-pfa-results.md
                 - name: PFA メモリ一覧を管理する方法
                   href: how-to-manage-the-pfa-memory-list.md
         - name: 以前のバージョンの Microsoft Windows との違い
           href: differences-from-previous-versions-of-microsoft-windows.md
     - name: プラットフォーム固有ハードウェア エラー ドライバー プラグイン
-      href: platform-specific-hardware-error-driver-plug-ins2.md
       items:
+        - name: プラットフォーム固有ハードウェア エラー ドライバー プラグイン
+          href: platform-specific-hardware-error-driver-plug-ins2.md
         - name: PSHED プラグイン開発のロード マップ
           href: roadmap-for-developing-pshed-plug-ins.md
         - name: PSHED プラグインの概要
           href: introduction-to-pshed-plug-ins.md
         - name: 機能の領域
-          href: functional-areas.md
           items:
+            - name: 機能の領域
+              href: functional-areas.md
             - name: エラー ソース検出
               href: error-source-discovery.md
             - name: エラー ソース管理
@@ -72,8 +81,9 @@
             - name: エラーの挿入
               href: error-injection.md
         - name: PSHED プラグインの操作
-          href: pshed-plug-in-operations.md
           items:
+            - name: PSHED プラグインの操作
+              href: pshed-plug-in-operations.md
             - name: PSHED プラグインの登録
               href: registering-a-pshed-plug-in.md
             - name: エラー ソース検出への参加
@@ -93,8 +103,9 @@
         - name: PSHED プラグインの構築
           href: building-a-pshed-plug-in.md
         - name: PSHED プラグインのインストール
-          href: pshed-plug-in-installation.md
           items:
+            - name: PSHED プラグインのインストール
+              href: pshed-plug-in-installation.md
             - name: PSHED プラグインの INF ファイル
               href: inf-files-for-pshed-plug-ins.md
             - name: PSHED プラグインのインストール
@@ -102,13 +113,15 @@
             - name: PSHED プラグインの認定と配布
               href: qualifying-and-distributing-pshed-plug-ins.md
     - name: Windows Hardware Error Architecture 対応のユーザーモード アプリケーション
-      href: windows-hardware-error-architecture-aware-user-mode-applications.md
       items:
+        - name: Windows Hardware Error Architecture 対応のユーザーモード アプリケーション
+          href: windows-hardware-error-architecture-aware-user-mode-applications.md
         - name: WHEA 対応のユーザーモード アプリケーションの概要
           href: introduction-to-whea-aware-user-mode-applications.md
         - name: WHEA ハードウェア エラー イベント処理アプリケーション
-          href: whea-hardware-error-event-processing-applications.md
           items:
+            - name: WHEA ハードウェア エラー イベント処理アプリケーション
+              href: whea-hardware-error-event-processing-applications.md
             - name: WHEA ハードウェア エラー イベント
               href: whea-hardware-error-events.md
             - name: ハードウェア エラー イベントに対するシステム イベント ログの照会
@@ -116,13 +129,15 @@
             - name: ハードウェア エラー イベントの通知登録
               href: registering-for-notification-of-hardware-error-events.md
         - name: WHEA 管理アプリケーション
-          href: whea-management-applications.md
           items:
+            - name: WHEA 管理アプリケーション
+              href: whea-management-applications.md
             - name: WHEA 管理アプリケーションの概要
               href: introduction-to-whea-management-applications.md
             - name: WHEA 管理の操作
-              href: whea-management-operations.md
               items:
+                - name: WHEA 管理の操作
+                  href: whea-management-operations.md
                 - name: すべてのエラー ソースのエラー ソース情報の取得
                   href: getting-error-source-information-for-all-error-sources.md
                 - name: 特定のエラー ソースのエラー ソース情報の取得

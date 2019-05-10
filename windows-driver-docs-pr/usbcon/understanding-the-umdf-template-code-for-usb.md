@@ -3,12 +3,12 @@ Description: UMDF ベースの USB クライアント ドライバーのソー�
 title: USB クライアント ドライバー コードの構造 (UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 159efb50d5b561a413cff0767fc1c72c2aeb828b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a40fc017f0d1c04e52e15a148375955bf9a6d03d
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355092"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405077"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>USB クライアント ドライバー コード構造 (UMDF) を理解します。
 
@@ -17,10 +17,10 @@ ms.locfileid: "63355092"
 
 UMDF のテンプレート コードを生成する方法については、次を参照してください。 [、最初の USB クライアント ドライバー (UMDF) を書き込む方法](implement-driver-entry-for-a-usb-driver--umdf-.md)します。 テンプレート コードは、これらのセクションについて説明します。
 
--   [ドライバーのコールバックのソース コード](#driver)
--   [デバイスのコールバックのソース コード](#device)
--   [キュー ソース コード](#queue)
--   [ドライバーのエントリのソース コード](#driver-entry)
+-   [ドライバーのコールバックのソース コード](#driver-callback-source-code)
+-   [デバイスのコールバックのソース コード](#device-callback-source-code)
+-   [キュー ソース コード](#queue-source-code)
+-   [ドライバーのエントリのソース コード](#driver-entry-source-code)
 
 テンプレート コードの詳細を説明する前に、UMDF ドライバーの開発に関連するヘッダー ファイル (Internal.h) 内のいくつかの宣言を見てみましょう。
 
@@ -177,7 +177,7 @@ OBJECT_ENTRY_AUTO(CLSID_Driver, CMyDriver)
 
 ドライバーのコールバックはつまり、実装する必要があります、COM クラスである必要があります[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)と関連するメソッド。 テンプレート コードで ATL クラス CComObjectRootEx と CComCoClass を含む、 **IUnknown**メソッド。
 
-Windows は、ホスト プロセスをインスタンス化した後、フレームワークには、ドライバー オブジェクトが作成されます。 フレームワークが、ドライバー コールバック クラスの呼び出しのドライバーの実装のインスタンスを作成するためには、 [ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760) (で説明した、[ドライバー エントリのソース コード](#driver-entry)セクション) と、クライアント ドライバーの入手[ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)インターフェイス ポインター。 その呼び出しは、フレームワーク ドライバー オブジェクトをドライバーのコールバック オブジェクトを登録します。 登録が成功は、フレームワークは、特定のドライバー固有のイベントが発生したときにクライアント ドライバーの実装を呼び出します。 フレームワークを呼び出す最初のメソッドは、 [ **IDriverEntry::OnInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_oninitialize)メソッド。 クライアント ドライバーの実装で**IDriverEntry::OnInitialize**、クライアント ドライバーがドライバーのグローバル リソースを割り当てることができます。 これらのリソースを解放する必要があります[ **IDriverEntry::OnDeinitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeinitialize)クライアント ドライバーをアンロードする準備中である直前に、フレームワークによって呼び出されます。 テンプレート コードの最小限の実装を提供する、 **OnInitialize**と**OnDeinitialize**メソッド。
+Windows は、ホスト プロセスをインスタンス化した後、フレームワークには、ドライバー オブジェクトが作成されます。 フレームワークが、ドライバー コールバック クラスの呼び出しのドライバーの実装のインスタンスを作成するためには、 [ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760) (で説明した、[ドライバー エントリのソース コード](#driver-entry-source-code)セクション) と、クライアント ドライバーの入手[ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)インターフェイス ポインター。 その呼び出しは、フレームワーク ドライバー オブジェクトをドライバーのコールバック オブジェクトを登録します。 登録が成功は、フレームワークは、特定のドライバー固有のイベントが発生したときにクライアント ドライバーの実装を呼び出します。 フレームワークを呼び出す最初のメソッドは、 [ **IDriverEntry::OnInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_oninitialize)メソッド。 クライアント ドライバーの実装で**IDriverEntry::OnInitialize**、クライアント ドライバーがドライバーのグローバル リソースを割り当てることができます。 これらのリソースを解放する必要があります[ **IDriverEntry::OnDeinitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeinitialize)クライアント ドライバーをアンロードする準備中である直前に、フレームワークによって呼び出されます。 テンプレート コードの最小限の実装を提供する、 **OnInitialize**と**OnDeinitialize**メソッド。
 
 最も重要なメソッド[ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)は[ **IDriverEntry::OnDeviceAdd**](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeviceadd)します。 ドライバーのフレームワークでは、(次のセクションで説明) framework デバイス オブジェクトを作成する前に呼び出す**IDriverEntry::OnDeviceAdd**実装します。 メソッドを呼び出すと、フレームワークに渡します、 [ **IWDFDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff558893)ドライバー オブジェクトへのポインターと[ **IWDFDeviceInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff556965)ポインター。 クライアント ドライバーを呼び出すことができます**IWDFDeviceInitialize**メソッドを特定の構成オプションを指定します。
 
@@ -928,7 +928,7 @@ EXPORTS
         DllGetClassObject   PRIVATE
 ```
 
-ドライバーのプロジェクトに含まれている Export.def から前のコード スニペットで、クライアントが、ライブラリとドライバーのモジュールの名前と[ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760)エクスポート [します。 詳細については、次を参照してください。 [DEF ファイルを使用する DLL からエクスポート](https://msdn.microsoft.com/library/d91k01sh(VS.80).aspx)します。
+ドライバーのプロジェクトに含まれている Export.def から前のコード スニペットで、クライアントが、ライブラリとドライバーのモジュールの名前と[ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760)エクスポート します。 詳細については、次を参照してください。 [DEF ファイルを使用する DLL からエクスポート](https://msdn.microsoft.com/library/d91k01sh(VS.80).aspx)します。
 
 
 

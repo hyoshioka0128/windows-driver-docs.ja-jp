@@ -15,12 +15,12 @@ keywords:
 - メモリ管理 WDK カーネルは、アドレスのマッピング
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a1495e62568731b0ea889775431531942ba1fc0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a347125d5db29dd5acbe881fd6a65a48f9830785
+ms.sourcegitcommit: e753fdd987a1bdbc4383704e18c2d81235fe9e05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380256"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65171960"
 ---
 # <a name="map-registers"></a>レジスターのマッピング
 
@@ -64,7 +64,7 @@ HAL は、DMA デバイスと異なるコンピューター上の I/O バスさ�
 
 -   各マップ レジスタと各仮想 MDL エントリ DMA の転送操作のデータの完全な物理ページがマップ多くて。
 
--   各マップ レジスタと MDL の各仮想エントリは、データの完全なページよりも小さいマップ可能性があります。 たとえば、MDL の初期仮想エントリにマップできます、オフセット、物理的なページ境界からで前述したように、[物理、論理、および仮想のアドレス マッピング](#physical-logical-and-virtual-address-mappings)図。
+-   各マップ レジスタと MDL の各仮想エントリは、データの完全なページよりも小さいマップ可能性があります。 たとえば、MDL の初期仮想エントリにマップできます、オフセット、物理的なページ境界からで前述したように、**物理、論理、および仮想のアドレス マッピング**図。
 
 -   各マップ レジスタと各仮想 MDL エントリは、最小値、1 バイトにマップします。
 

@@ -6,12 +6,12 @@ keywords:
 - Windows Mobile プラン コールバック通知、モバイルのプランの実装モバイル演算子
 ms.date: 03/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e59e43bb970484ef4d1a344ec941847e052346b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c9a39b36e1035aab6053c148c8a9cab6cae8e21
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357719"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405124"
 ---
 # <a name="mobile-plans-callback-notifications"></a>コールバック通知をモバイル プラン
 
@@ -60,7 +60,7 @@ function NotifyMobilePlans() { 
 }
 ```
 
-参照してください[メタデータ プロパティを購入](#Purchase-Metadata-Properties-details)puchaseMetadata オブジェクトに関する詳細。
+参照してください[メタデータ プロパティを購入](#purchase-metadata-properties-details)puchaseMetadata オブジェクトに関する詳細。
 
 ### <a name="listening-for-network-registration-changes"></a>ネットワーク登録の変更のリッスン
 
@@ -190,7 +190,7 @@ function finishPurchaseWithDownload() {
 }
 ```
 
-参照してください[メタデータ プロパティを購入](#Purchase-Metadata-Properties-details)puchaseMetadata オブジェクトに関する詳細。
+参照してください[メタデータ プロパティを購入](#purchase-metadata-properties-details)puchaseMetadata オブジェクトに関する詳細。
 
 ## <a name="adding-balance"></a>残高を追加します。
 
@@ -217,7 +217,7 @@ function finishPurchaseWithBalanceAddition() {
     }
 ```
 
-参照してください[メタデータ プロパティを購入](#Purchase-Metadata-Properties-details)詳細については、`puchaseMetadata`オブジェクト。
+参照してください[メタデータ プロパティを購入](#purchase-metadata-properties-details)詳細については、`puchaseMetadata`オブジェクト。
 
 ## <a name="canceling-purchase-flow"></a>フローの購入をキャンセル
 
@@ -243,7 +243,7 @@ function finishPurchaseWithCancellation() {
     }
 ```
 
-参照してください[メタデータ プロパティを購入](#Purchase-Metadata-Properties-details)詳細については、`puchaseMetadata`オブジェクト。
+参照してください[メタデータ プロパティを購入](#purchase-metadata-properties-details)詳細については、`puchaseMetadata`オブジェクト。
 
 ## <a name="purchase-metadata-properties-details"></a>購入のメタデータ プロパティの詳細
 

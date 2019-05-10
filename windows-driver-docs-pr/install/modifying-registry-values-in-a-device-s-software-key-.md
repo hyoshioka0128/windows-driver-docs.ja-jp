@@ -7,12 +7,12 @@ keywords:
 - WDK デバイスのインストール、デバイス ソフトウェアのキー値のレジストリを変更します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7750413002377ad67d9ff3206ba8041e997a1f87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5c2601ad75682f514b7514c2f3d211f64acc9be
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378353"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456363"
 ---
 # <a name="modifying-registry-values-in-a-devices-software-key"></a>デバイスのソフトウェア キーのレジストリ値の変更
 
@@ -39,7 +39,7 @@ ms.locfileid: "63378353"
 
 -   EnumPropPages32
 
-これらのデバイス プロパティは、デバイスのインストール状態を表します。 これらのプロパティの直接的な変更には、デバイスのインストール状態が無効になる可能性があります。 関連する情報を変更するなど、 [INF ファイル](inf-files.md)デバイスとドライバーの署名情報などのプロパティに関連付けられているドライバー ファイルに関する情報が無効になります。 ドライバーのバージョンまたはドライバーの日付を変更すると、Windows 更新プログラム機能が壊れる可能性があります。
+これらのデバイス プロパティは、デバイスのインストール状態を表します。 これらのプロパティの直接的な変更には、デバイスのインストール状態が無効になる可能性があります。 関連する情報を変更するなど、 [INF ファイル](overview-of-inf-files.md)デバイスとドライバーの署名情報などのプロパティに関連付けられているドライバー ファイルに関する情報が無効になります。 ドライバーのバージョンまたはドライバーの日付を変更すると、Windows 更新プログラム機能が壊れる可能性があります。
 
 **注**  以降 Windows Vista では、オペレーティング システムで「インストール時のみ」は、これらのプロパティに関するアクセス制限です。 互換性のため、値を複製することができ、デバイスのインストール中に値の直接的な変更では内部状態には影響しません。
 

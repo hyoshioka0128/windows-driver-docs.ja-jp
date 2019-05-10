@@ -6,12 +6,12 @@ keywords:
 - MB PCO オプション、モバイル ブロード バンド PCO オプションは、プロトコルの構成オプションの MB、モバイル ブロード バンドのプロトコルの構成オプション、WDK ネットワーク ドライバー、MBB ミニポート ドライバー
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f149f51566190780a910ce6e876cf7ee420b8b66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d29fffd17776b8ed5e278b3c52c24bec49e627c
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367824"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405175"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB プロトコルの構成オプション (PCO) 操作
 
@@ -109,7 +109,7 @@ PCO は、次の Cid が定義されています。
 | --- | --- | --- | --- | --- |
 | 0 | 4 | セッション Id | UINT32 | クエリで SessionId 示します IP PCO 値のデータ ストリームが、関数によって返されます。 |
 | 4 | 4 | PcoDataSize | UINT32 | 0 ~ 256 PcoData の長さ。 この値は、クエリで 0 になります。 |
-| 8 | 4 | PcoDataType | UINT32 | PCO データ型。 詳細については、次を参照してください。 [MBIM_PCO_TYPE](#mbimpcotype)します。 |
+| 8 | 4 | PcoDataType | UINT32 | PCO データ型。 詳細については、次を参照してください。 [MBIM_PCO_TYPE](#mbim_pco_type)します。 |
 | 12 | | PcoDataBuffer | DATABUFFER | 3 gpp TS24.008 仕様から PCO 構造体。 |
 
 #### <a name="status-codes"></a>状態コード

@@ -3,12 +3,12 @@ Description: デバイス記述子には、全体として、USB デバイスに
 title: USB デバイス記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc586d3575f648784d45b99544e029d0d3af7c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07b95f16db27690c9221eae598a5ca8b2e2519f4
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331630"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405058"
 ---
 # <a name="usb-device-descriptors"></a>USB デバイス記述子
 
@@ -21,7 +21,7 @@ ms.locfileid: "63331630"
 
 ホストは、コントロール転送を介してデバイス記述子を取得します。 転送の要求の種類は記述子を取得、宛先は、デバイスです。 クライアント ドライバーは、2 つの方法のいずれかでその転送を開始できます: framework USB ターゲット デバイス オブジェクトを使用して、または、URB 要求情報を送信することです。
 
--   [デバイス記述子を取得します。](#getting--the-device-descriptor)
+-   [デバイス記述子を取得します。](#getting-the-device-descriptor)
 -   [サンプル デバイス記述子](#sample-device-descriptor)
 
 ## <a name="getting-the-device-descriptor"></a>デバイス記述子を取得します。

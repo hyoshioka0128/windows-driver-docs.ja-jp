@@ -1,9 +1,11 @@
 - name: 多機能デバイス ドライバー設計ガイド
-  href: index.md
   items:
+    - name: 多機能デバイス ドライバー設計ガイド
+      href: index.md
     - name: 多機能 PC カード デバイスのサポート
-      href: supporting-multifunction-pc-card-devices.md
       items:
+        - name: 多機能 PC カード デバイスのサポート
+          href: supporting-multifunction-pc-card-devices.md
         - name: 多機能標準に準拠した PC カードのサポート
           href: supporting-pc-cards-that-conform-to-the-multifunction-standard.md
         - name: 不完全な構成レジスター アドレスを持つ PC カードのサポート
@@ -17,8 +19,9 @@
     - name: システム提供の多機能バス ドライバーの使用
       href: using-the-system-supplied-multifunction-bus-driver.md
     - name: 多機能デバイス用のリソース マップの作成
-      href: creating-resource-maps-for-a-multifunction-device.md
       items:
+        - name: 多機能デバイス用のリソース マップの作成
+          href: creating-resource-maps-for-a-multifunction-device.md
         - name: 標準リソース マップの作成
           href: creating-standard-resource-maps.md
         - name: さまざまなリソース マップの作成

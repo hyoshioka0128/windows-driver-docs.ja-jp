@@ -4,12 +4,12 @@ description: NDIS セレクティブ サスペンド アイドル通知のキャ
 ms.assetid: 14C19F15-9D0E-4F37-942C-7F7AFE1EBA0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 887127920a4a04574994d82744b50570db3c1a4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2e1af43772fb39748f1c720b7c2091aab8d12ff
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351976"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405119"
 ---
 # <a name="canceling-the-ndis-selective-suspend-idle-notification"></a>NDIS セレクティブ サスペンド アイドル通知のキャンセル
 
@@ -76,7 +76,7 @@ NDIS ミニポート ドライバーおよび NDIS は、ネットワーク ア�
 
 1.  バス ドライバーが完了すると、 [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)は、アダプターは、低電力状態に遷移する前に NDIS によって発行されました。 IRP を完了するでは、バス ドライバーは、NDIS に対し、ネットワーク アダプタがウェイク アップのシグナルを生成したことを通知します。
 
-2.  NDIS 呼び出し、 [ *MiniportCancelIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464088)ハンドラー関数をアイドル状態の通知をキャンセル操作を開始します。 この操作に関連する手順は、同じ」の説明に従って[ドライバーの関連アクティビティのため、アイドル状態の通知をキャンセル](#cancel-due-to-driver-activity)します。
+2.  NDIS 呼び出し、 [ *MiniportCancelIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464088)ハンドラー関数をアイドル状態の通知をキャンセル操作を開始します。 この操作に関連する手順は、同じ」の説明に従って[ドライバーの関連アクティビティのため、アイドル状態の通知をキャンセル](#canceling-the-idle-notification-because-of-overlying-driver-activity)します。
 
 たとえば、NDIS は、USB のネットワーク アダプターによって通知のウェイク アップ イベントのため、アイドル状態の通知をキャンセルしたときに関連する手順を次に示します。
 

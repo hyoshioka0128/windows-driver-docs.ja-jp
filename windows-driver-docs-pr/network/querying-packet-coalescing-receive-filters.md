@@ -4,12 +4,12 @@ description: パケット結合受信フィルターのクエリ
 ms.assetid: D0B41718-37B9-4FB4-BA10-20765F836214
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a91050334c16928f908ed9b1139bf03c95e7af8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0186e48cff7dce0a37729729a20d7aba9d8adbf
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339990"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405286"
 ---
 # <a name="querying-packet-coalescing-receive-filters"></a>パケット結合受信フィルターのクエリ
 
@@ -19,9 +19,9 @@ ms.locfileid: "63339990"
 
 上位のドライバーとアプリケーションのクエリは、次の手順に従って、ミニポート ドライバーにダウンロードされているフィルターが表示されるパケットを結合できます。
 
--   OID メソッド要求を発行して、ミニポート ドライバーでの受信フィルターの一覧の列挙を要求[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)します。 詳細については、次を参照してください。[ミニポート ドライバーでの受信フィルターを列挙する](#enumerating)します。
+-   OID メソッド要求を発行して、ミニポート ドライバーでの受信フィルターの一覧の列挙を要求[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)します。 詳細については、次を参照してください。[ミニポート ドライバーでの受信フィルターを列挙する](#enumerating-the-receive-filters-on-a-miniport-driver)します。
 
--   受信フィルター ミニポート ドライバーのテスト条件のパラメーターを要求の OID メソッド要求を発行して[OID\_受信\_フィルター\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569792)します。 詳細については、次を参照してください[ミニポート ドライバーでの受信フィルターのクエリを実行する。](#querying)
+-   受信フィルター ミニポート ドライバーのテスト条件のパラメーターを要求の OID メソッド要求を発行して[OID\_受信\_フィルター\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569792)します。 詳細については、次を参照してください[ミニポート ドライバーでの受信フィルターのクエリを実行する。](#querying-the-parameters-of-a-receive-filters-on-a-miniport-driver)
 
 NDIS ハンドル、 [OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)と[OID\_受信\_フィルター\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569792)メソッド OID は、ミニポート ドライバーを要求します。 NDIS から受信したデータの内部キャッシュからの情報の取得、 [OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795) OID 要求。
 

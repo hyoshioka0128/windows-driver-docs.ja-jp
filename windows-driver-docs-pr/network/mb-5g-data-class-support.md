@@ -7,12 +7,12 @@ keywords:
 ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c895a81e549bcd856ff796c1cdddd85bbbcf82d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f368387b043a16ee52a9735f7f3fb760ece86cb1
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343467"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405218"
 ---
 # <a name="mb-5g-data-class-support"></a>MB 5G データ クラスのサポート
 
@@ -27,8 +27,8 @@ ms.locfileid: "63343467"
 | EPC | 強化されたパケットのコア。 LTE コア ネットワークを参照するときに、3 gpp で使用される用語です。 |
 | NGC | 次世代コア。 5 G のコア ネットワークを参照するときに、3 gpp で使用される用語です。 EPC に NR 相当します。 |
 | DC | デュアル接続します。 ネットワークには、LTE と 5 G デュアルの接続を使用するデバイスがある LTE と NR への同時接続を含む NR の両方をサポートできます。 |
-| SA | スタンドアロン 5 G です。 オプション 2 のスタンドアロン NR を最も一般的なものには、すべての NGC ベース NR ネットワークを参照します。 |
-| NSA | 非スタンドアロン 5 G です。 最も一般的なものは、オプション 3、非スタンドアロン NR、EPC ベース NR ネットワークを参照します。 |
+| SA | スタンドアロン 5 G です。 すべての NGC ベース NR ネットワークを参照します。 |
+| NSA | 非スタンドアロン 5 G です。 EPC ベース NR の任意のネットワークを参照します。 |
 | gNB | NR ラジオ基地局 NR エア インターフェイスと NGC への接続をサポートします。 |
 | RAT | 無線アクセス テクノロジです。 |
 
@@ -36,27 +36,27 @@ ms.locfileid: "63343467"
 
 Windows 10、バージョンが 1903 は IHV パートナーの 5 G モバイル ブロード バンドのドライバーをサポートするために最初の Windows リリースです。 名前*5 G*フレンドリ名の新しいオプション (NR) で導入されたは、 [3 gpp リリース 15 仕様](http://www.3gpp.org/release-15)します。 NR は包括的な設定が想定する真の長期的な進化を提供する標準の既存の第 4 世代 LTE テクノロジ、超ブロード バンドをナローバンドおよびに公称からすべての携帯電話の通信ニーズをカバーする可能性があります。ミッション クリティカルな待機時間の要件。 、、のテクノロジとして 10 年間-時間の長い期間が経過する 5 G が必要です。 
 
-このトピックでは、Windows 10、バージョンが 1903 年 nonstandalone EPC ベースのネットワークを拡張 5 G モバイル ブロード バンド (eMBB) 以上 5 G で始まる 5 G の Windows のサポートのための最初の手順について説明します。
+このトピックでは、強化されたモバイル ブロード バンド (eMBB) 5 G を超える「以外のスタンドアロン」EPC ベース NR ネットワークでデータ クラスを使用して、MBB ドライバーの開発に有効にするハードウェア パートナー サポート Windows 10 のバージョンが 1903 年に初めてリリース MBIM 拡張を示します。 データ プレーンのサポートと 5 G のスループットと商用の要件の有効化は、この Windows リリースの一部ではないと、このトピックでは説明しません。 
 
 ## <a name="windows-5g-mbim-interface-extension"></a>Windows 5 G MBIM インターフェイスの拡張機能
 
 ### <a name="mbim-interface"></a>MBIM インターフェイス
 
-Windows 10、バージョンが 1903 年の時点で 5 G 全体にまだ開発中です。 次の表は、さまざまな段階を 5 G ネットワークがデプロイされる別のネットワーク アーキテクチャのオプション (1 ~ 7) での特徴をまとめたものです。 オプション 1 では、既存 LTE モバイル ブロード バンド、これは、Windows プラットフォームでサポートされてもを表します。
+Windows 10、バージョンが 1903 年の時点で 5 G 全体にまだ開発中です。 ネットワーク展開の観点からは 2 つの主要なフェーズでデプロイされる 5 G が必要です。 
 
-![モバイル ブロード バンド 5 G のデプロイ オプション](images/mb-5g-deployment-options.png "モバイル ブロード バンド 5 G のデプロイ オプション")
+* フェーズ 1 では、5 G radio 既存 LTE ラジオや一般的な既知の"nonstandalone 5 G"ネットワーク EPC core 展開を追加すると、5 G を展開するほとんどのモバイル ネットワーク オペレーターが必要です。  
 
-以降では、2019年世界、主要なモバイル演算子 (MOs) でデプロイする、オプション 3、または"nonstandalone"(NSA) 5 G ネットワークが必要です。 NGC に基づく「スタンドアロン」(SA) オプション 2/4/5/7 ネットワーク期待されるデプロイ以降より広く 2020年にできるだけ早くします。
+* フェーズ 2 では、モバイル ネットワーク オペレーターが Epc と NGCs を置き換え、densify true「スタンドアロン」、または 5 G の NR NGC ベースのネットワークを有効にする並列 5 G 無線展開が必要です。 フェーズ 2 のインターフェイスの拡張機能は、このトピックまたは Windows のリリースでのスコープではありません。 
 
-サポートのオプション 3 (NSA) 5 G の EPC ベースのネットワークが Windows 10、バージョンが 1903 に導入されました。 ただし、NGC ベース (SA) のネットワークは、まだ開発中です。 そのため、Windows での 5 G のサポートが容易に拡張できると、並列では、従来のモデムと完全に下位互換性です。 
+基本的なサポートするインターフェイスの拡張機能では、フェーズ 1 のネットワークの要件、または"nonstandalone"EPC based5G ネットワーク、Windows 10、バージョンが 1903 で導入されました。 拡張性と旧バージョンと完全にするためには、従来のモデムと互換性のある新しい Microsoft MBIM 拡張機能バージョン (2.0) が導入されました。 
 
-[MBIM 1.0 errata 仕様](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)を追加し、省略可能な Cid を提供するためのメカニズムが新しいペイロードまたは変更されたペイロードは、既存の Cid を変更またはでは対応できないすべての変更を導入するためのメカニズムが不足していますCid の省略可能です。 MBIM 1.0 errata 仕様では、各ペイロードの固定サイズのメンバーで構成されている可能性があります。 またはオフセット/サイズ ペア メンバーを動的にサイズ変更します。 動的に規模のメンバーが存在する場合は、可変サイズのバッファーが、最後のメンバー。 重大な変更は可能な限り回避 5 G ネットワークのすべての要件をサポートするは避けではありません。
+新しい Microsoft MBIM extesnion バージョンが必要な[MBIM 1.0 errata 仕様](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)を追加し、省略可能な Cid を提供するためのメカニズムが (新しいペイロードまたはペイロードが変更された) 既存の Cid を変更するためのメカニズムが不足していますまたは、省略可能な Cid では対応できないすべての側面での変更を加えます。 固定サイズのメンバーの各ペイロードで構成または動的 (オフセットとサイズのペア) のメンバーのサイズします。 動的なサイズのメンバーを 1 つ以上存在する場合は、可変サイズのバッファーが最後のメンバー。  
 
-Windows 10、バージョンが 1903 がサポートのオプション 3 (NSA) 5 G を追加して、MBIM 1.0 仕様を更新は、既存の Cid に対する重大な変更を含むネットワークします。 新しい MBIM 拡張機能のリリース 2.0 は Windows 10、MBIM リリース番号と MBIM 拡張機能のリリースを MBIM デバイス番号を提供するホストを有効にする新しい CID と共にバージョン 1903 年でも追加されました。
+この仕様、MBIM リリース バージョン、および MBIM デバイスに拡張機能のリリース バージョンを提供するホストの CID も追加新しくします。 フィールド内に既にある従来のドライバーでは、完全に下位互換性は維持は、この CID は省略できます。  詳細については、次を参照してください。 [MBIM 拡張機能のリリース 2.0](#mbim-extensions-release-20---5g-nonstandalone-epc-based-option-3-network-support)ネットワーク サポート)。 
 
 ### <a name="ndis-interface"></a>NDIS インターフェイス
 
-NDIS は、NDIS_HEADER のリビジョン番号をサポートします。 これにより、OID メッセージに新しいメンバーを追加することが、すべてのミニポート ドライバーがバージョン番号を尊重し、新しいリビジョンが許されない。 この場合、ミニポート ドライバーのバージョンは、ドライバーでは、かどうか、OID の新しいバージョンがサポートしているかどうかに使用できます。 ただし、IHV ドライバーへの依存関係を追加、ため、代わりに NDIS テーブルを使用して、省略可能なサービスの上限で[OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)します。
+NDIS は、NDIS_HEADER のリビジョン番号をサポートします。 これにより、OID メッセージ、NDIS は省略可能なサービスの大文字のテーブルを使用する新しいメンバーの追加[OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)します。
 
 5 G データ クラスのサポートを次の NDIS Oid と、データ構造が更新されました。
 
@@ -96,7 +96,7 @@ NDIS は、NDIS_HEADER のリビジョン番号をサポートします。 こ�
 
 次の表では、それぞれにそのネイティブ MBIMEx バージョンが記載されている 3 つの仮想ホストと 3 つの仮想デバイスの互換性マトリックスを示します。 デバイスは、MBIMEx USB 記述子の初期段階では、バージョン 1.0 を提供します。 マトリックスは、各デバイスで各ホストの動作方法を示しています。
 
-| モデム (下記)/OS (右) | Windows 10、バージョンは 1809 またはそれ以前 (ネイティブ MBIMEx バージョン 1.0) | Windows 10、バージョンが 1903 およびそれ以降 (MBIMEx バージョン 2.0) |
+| デバイス (下記)/(右) のホスト | Windows 10、バージョンは 1809 またはそれ以前 (ネイティブ MBIMEx バージョン 1.0) | Windows 10、バージョンが 1903 およびそれ以降 (MBIMEx バージョン 2.0) |
 | --- | --- | --- |
 | 4 G デバイス <p>ネイティブ MBIMEx バージョン 1.0</p> | デバイスは、最初に MBIMEx 1.0 をアドバタイズします。 MBIM_CID_VERSION exchange がありません。 互換性のあるデバイスとホスト。 MBIMEx version 1.0 で既定で動作します。 | デバイスは、最初に MBIMEx 1.0 をアドバタイズします。 MBIM_CID_VERSION exchange がありません。 ホストは、MBIMEx 1.0 を使用してデバイスで動作します。 |
 | 5 G NSA デバイス <p>ネイティブ MBIMEx version 2.0</p> | デバイスは、最初に MBIMEx 1.0 をアドバタイズします。 MBIM_CID_VERSION exchange がありません。 デバイスは、ホストが MBIMEx 1.0 ことを認識して MBIMEx 1.0 を実行します。 | デバイスは、最初に MBIMEx 1.0 をアドバタイズします。 ホストは、ホストが MBIMEx 2.0 をサポートしているデバイスに通知する MBIM_CID_VERSION を送信します。 MBIMEx 2.0 を使用したデバイスが応答します。 両方の側では、MBIMEx 2.0 を続行します。 |
@@ -117,7 +117,7 @@ NDIS は、NDIS_HEADER のリビジョン番号をサポートします。 こ�
 
 ## <a name="mbimcidversion"></a>MBIM_CID_VERSION
 
-MBIM_CID_VERSION は、ホストとデバイス間 MBIM バージョン情報を交換するため省略可能なコマンドです。 デバイスが古い MBIM バージョンとの下位互換性が必要な場合は、このコマンドをサポートしてする必要があります。
+MBIM Microsoft 拡張機能 2.0 をサポートする MBB ドライバーまたは MBIM_CID_VERSION 上は、ホストとデバイスの間の MBIM バージョン情報を交換するための必須コマンドです。 この CID を認識しているドライバーと市場投入までのデバイスの場合は、ホストは前提としています、旧バージョンとの互換性を提供します。
 
 ホストは、デバイスがサポートされている場合、クエリとしてこのコマンドを送信します。 クエリに MBIM リリース番号が含まれており、MBIM 拡張機能のリリース、ホストは現在サポートされている番号。
 
@@ -221,7 +221,7 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_REGISTRATION_STATE_
 | 0 | 4 | NwError | UINT32 | ネットワーク固有のエラー。 表 10 44 インチ、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip) NwError の原因のコードについて説明します。 |
 | 4 | 4 | RegisterState | MBIM_REGISTER_STATE | テーブルに 10 46 を参照してください、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)します。 |
 | 8 | 4 | RegisterMode | MBIM_REGISTER_MODE | テーブルに 10 ~ 47 を参照してください、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)します。 |
-| 12 | 4 | AvailableDataClass | UINT32 | 内の値のビットマップ[MBIM_DATA_CLASS](#mbimdataclass)デバイスが登録されているセルの登録されているネットワークでサポートされているデータ クラスを表します。 <p>場合、この値が MBIMDataClassNone に設定されます、 **RegisterState**ない**MBIMRegisterStateHome**、 **MBIMRegisterStateRoaming**、または**MBIMRegisterStatePartner**します。 </p> |
+| 12 | 4 | AvailableDataClass | UINT32 | 内の値のビットマップ[MBIM_DATA_CLASS](#mbim_data_class)デバイスが登録されているセルの登録されているネットワークでサポートされているデータ クラスを表します。 <p>場合、この値が MBIMDataClassNone に設定されます、 **RegisterState**ない**MBIMRegisterStateHome**、 **MBIMRegisterStateRoaming**、または**MBIMRegisterStatePartner**します。 </p> |
 | 16 | 4 | CurrentCellularClass | MBIM_CELLULAR_CLASS | 関数の複数のモードの使用中の現在の移動体通信クラスを示します。 テーブルに 10-8 を参照してください、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)詳細についてはします。 <p>シングル モード関数の場合、これは MBIM_CID_DEVICE_CAPS で報告された携帯電話のクラスと同じです。 マルチ モード関数では、CDMA から GSM またはその逆への移行が示される、更新された**CurrentCellularClass**します。 </p> |
 | 20 | 4 | ProviderIdOffset | OFFSET | 呼ばれる数値 (0 ~ 9) の文字列に、この構造体の先頭からのオフセット (バイト単位) が計算される**ProviderId**プロバイダーのネットワーク id を表します。 <p>GSM ベースのネットワークでは、この文字列は、3 桁 Mobile 国コード (MCC) と、2 桁または 3 桁のモバイル ネットワーク コード (mnc も) の連結です。 GSM ベースの通信事業者が 1 つ以上の mnc もあります。 そのため、複数の 1 つと**ProviderId**します。</p><p>CDMA ベースのネットワークでは、この文字列は、5 桁システム ID (SID) です。 通常、CDMA ベースのキャリアは、1 つ以上の SID を持っています。 通常、キャリアは、通常、地理的に、民族内で除算など大都市圏統計領域 (MSA) で、米国の規制する各市場の 1 つの SID を持ちます。 この情報が利用できない場合、CDMA ベースのデバイスは MBIM_CDMA_DEFAULT_PROVIDER_ID を指定する必要があります。</p><p>処理クエリの要求および登録状態が自動登録モード、このメンバーには、デバイスが現在関連付けられている (該当する) 場合、プロバイダー ID が含まれています。 登録状態は、手動登録モードでは、このメンバーには、デバイスが登録 (プロバイダーは使用できません) 場合でも要求プロバイダーの ID が含まれています。</p><p>セットの要求と、登録状態の処理は、手動モードでは、これと、デバイスを登録するため、ホストによって選択されたプロバイダー ID が含まれます。 登録状態は、自動登録モードでは、このパラメーターが無視されます。</p><p>CDMA 1 xrtt プロバイダーは、プロバイダー ID が使用できない場合、MBIM_CDMA_DEFAULT_PROVIDER_ID に設定する必要があります。</p> |
 | 24 | 4 | ProviderIdSize | SIZE(0..12) | サイズ (バイト単位) の**ProviderId**します。 |
@@ -230,7 +230,7 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_REGISTRATION_STATE_
 | 36 | 4 | RoamingTextOffset | OFFSET | 呼ばれる文字列に、この構造体の先頭からのオフセット (バイト単位) が計算される**RoamingText**デバイスがローミングをユーザーに通知します。 このメンバーは、最大で 63 文字に制限されています。 このテキストは、登録の状態が MBIMRegisterStatePartner または MBIMRegisterStateRoaming のいずれかをユーザーに追加情報を提供する必要があります。 このメンバーは省略可能です。 |
 | 40 | 4 | RoamingTextSize | SIZE(0..126) | サイズ (バイト単位) の**RoamingText**します。 |
 | 44 | 4 | RegistrationFlag | MBIM_REGISTRATION_FLAGS | フラグを設定ごとの表 10-48 で、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)します。 |
-| 48 | 4 | PreferredDataClass | UINT32 | 内の値のビットマップ[MBIM_DATA_CLASS](#mbimdataclass)デバイスで有効になっているデータ クラスを表します。 のみ、デバイスは、有効になっているデータ クラスを使用して動作します。 |
+| 48 | 4 | PreferredDataClass | UINT32 | 内の値のビットマップ[MBIM_DATA_CLASS](#mbim_data_class)デバイスで有効になっているデータ クラスを表します。 のみ、デバイスは、有効になっているデータ クラスを使用して動作します。 |
 | 動的 | 4 | DataBuffer | DATABUFFER | データ バッファーを含む**ProviderId**、 **ProviderName**、および**RoamingText**します。 |
 
 ### <a name="unsolicited-events"></a>要請されていないイベント
@@ -247,7 +247,7 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_REGISTRATION_STATE_
 
 この拡張機能と呼ばれる新しいメンバーを追加します**FrequencyRange**応答の構造の名前を変更し、 **HighestAvailableDataClass**メンバー **CurrentDataClass**にその目的を明確にします。
 
-**CurrentDataClass**無線アクセス テクノロジ (RAT) デバイスが現在登録されていることを示します。 単一の値が含まれている[MBIM_DATA_CLASS](#mbimdataclass)します。
+**CurrentDataClass**無線アクセス テクノロジ (RAT) デバイスが現在登録されていることを示します。 単一の値が含まれている[MBIM_DATA_CLASS](#mbim_data_class)します。
 
 **FrequencyRange**周波数の範囲、デバイスが現在使用していることを示します。 これは有効な場合にのみ、 **CurrentDataClass**フィールドは、MBIMDataClass5G_NSA または MBIMDataClass5G_SA ビットが設定されていることを示します。
 
@@ -276,10 +276,10 @@ MBIM_COMMAND_DONE で InformationBuffer には MBIM_PACKET_SERVICE_INFO_V2 構�
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NwError | UINT32 | ネットワーク固有のエラー。 表 10 44 インチ、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip) NwError の原因のコードについて説明します。 |
 | 4 | 4 | PacketServiceState | MBIM_PACKET_SERVICE_STATE | テーブルに 10-53 を参照してください、 [MBIM 仕様リビジョン 1.0](https://www.usb.org/sites/default/files/MBIM10Errata1_073013.zip)します。 | 
-| 8 | 4 | CurrentDataClass | MBIM_DATA_CLASS | に従って指定された現在のセルに現在データ クラス[MBIM_DATA_CLASS](#mbimdataclass)します。 関数は、関数は、パケットが接続されているサービスの状態にない場合は、このメンバーを MBIMDataClassNone に設定する必要があります。 HSPA (つまり、HSUPA および HSDPA) と 5 G DC を除く、関数は単一の MBIM_DATA_CLASS 値にこのメンバーを設定します。 HSPA データ サービスでは、関数は、ビットごとのまたはの MBIMDataClass HSDPA と MBIMDataClassHSUPA を指定します。 HSDPA がない HSUPA をサポートしているセルの場合は、(アップリンク データ UMTS データ クラスを暗に示して) HSDPA のみが示されます。 現在のデータ クラスの変更されるたびに、関数はの新しい値を示す通知を送信**CurrentDataClass**します。 |
+| 8 | 4 | CurrentDataClass | MBIM_DATA_CLASS | に従って指定された現在のセルに現在データ クラス[MBIM_DATA_CLASS](#mbim_data_class)します。 関数は、関数は、パケットが接続されているサービスの状態にない場合は、このメンバーを MBIMDataClassNone に設定する必要があります。 HSPA (つまり、HSUPA および HSDPA) と 5 G DC を除く、関数は単一の MBIM_DATA_CLASS 値にこのメンバーを設定します。 HSPA データ サービスでは、関数は、ビットごとのまたはの MBIMDataClass HSDPA と MBIMDataClassHSUPA を指定します。 HSDPA がない HSUPA をサポートしているセルの場合は、(アップリンク データ UMTS データ クラスを暗に示して) HSDPA のみが示されます。 現在のデータ クラスの変更されるたびに、関数はの新しい値を示す通知を送信**CurrentDataClass**します。 |
 | 12 | 8 | UplinkSpeed | UINT64 | アップリンク ビット レート 1 秒あたりのビットにはが含まれています。 |
 | 20 | 8 | DownlinkSpeed | UINT64 | ダウンリンク ビット レート 1 秒あたりのビットにはが含まれています。 |
-| 38 | 4 | FrequencyRange | MBIM_FREQUENCY_RANGE | 値のビットマスク[MBIM_FREQUENCY_RANGE](#mbimfrequencyrange)デバイスが現在使用している周波数の範囲を表します。 これはのみ有効だ場合、 **CurrentDataClass** MBIMDataClass5G_NSA か MBIMDataClass5G_SA します。 |
+| 38 | 4 | FrequencyRange | MBIM_FREQUENCY_RANGE | 値のビットマスク[MBIM_FREQUENCY_RANGE](#mbim_frequency_range)デバイスが現在使用している周波数の範囲を表します。 これはのみ有効だ場合、 **CurrentDataClass** MBIMDataClass5G_NSA か MBIMDataClass5G_SA します。 |
 
 #### <a name="mbimfrequencyrange"></a>MBIM_FREQUENCY_RANGE
 

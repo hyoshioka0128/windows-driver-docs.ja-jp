@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e37240bf8b0339b69aad892f395b007fa0a3ef58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d54794ef44e811c5bb6b696f6a6d5f3f00f6f88e
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361685"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501560"
 ---
 # <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>バグ チェック 0x1C6:高速\_÷ リソース\_PRECONDITION\_違反
 
@@ -128,6 +128,8 @@ ms.locfileid: "63361685"
 
 現在のスレッドでは、高速リソース ルーチンに無効な呼び出しを実行します。
 
+## <a name="resolution"></a>解決方法
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 ## <a name="see-also"></a>関連項目
 ----------

@@ -1,13 +1,15 @@
 - name: Debugging Tools for Windows (WinDbg、KD、CDB、NTSD)
   href: index.md
 - name: Debugging Tools for Windows のダウンロード - WinDbg
-  href: debugger-download-tools.md
   items:
+    - name: Debugging Tools for Windows のダウンロード - WinDbg
+      href: debugger-download-tools.md
     - name: デバッグ用 Windows シンボル パッケージのダウンロード
       href: debugger-download-symbols.md
 - name: Windows のデバッグの概要
-  href: getting-started-with-windows-debugging.md
   items:
+    - name: Windows のデバッグの概要
+      href: getting-started-with-windows-debugging.md
     - name: WinDbg ドライバーの概要 (ユーザー モード)
       href: getting-started-with-windbg.md
     - name: WinDbg ドライバーの概要 (カーネル モード)
@@ -17,11 +19,13 @@
     - name: デバッグ環境
       href: debuggers-in-the-debugging-tools-for-windows-package.md
     - name: デバッグの設定 (カーネルモードとユーザーモード)
-      href: getting-set-up-for-debugging.md
       items:
+        - name: デバッグの設定 (カーネルモードとユーザーモード)
+          href: getting-set-up-for-debugging.md
         - name: カーネルモード デバッグの設定
-          href: setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md
           items:
+            - name: カーネルモード デバッグの設定
+              href: setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md
             - name: KDNET ネットワーク カーネル デバッグの自動設定
               href: setting-up-a-network-debugging-connection-automatically.md
             - name: KDNET ネットワーク カーネル デバッグの手動設定
@@ -57,8 +61,9 @@
     - name: ドライバーのデバッグ - ステップ バイ ステップ ラボ (Sysvad カーネルモード)
       href: debug-universal-drivers--kernel-mode-.md
 - name: WinDbg プレビューを使用したデバッグ
-  href: debugging-using-windbg-preview.md
   items:
+    - name: WinDbg プレビューを使用したデバッグ
+      href: debugging-using-windbg-preview.md
     - name: WinDbg プレビュー - 新機能
       href: windbg-what-is-new-preview.md
     - name: WinDbg プレビュー - インストール
@@ -86,8 +91,9 @@
     - name: WinDbg プレビュー - スクリプト
       href: windbg-scripting-preview.md
     - name: Time Travel Debugging - 概要
-      href: time-travel-debugging-overview.md
       items:
+        - name: Time Travel Debugging - 概要
+          href: time-travel-debugging-overview.md
         - name: Time Travel Debugging - 記録
           href: time-travel-debugging-record.md
         - name: Time Travel Debugging - トレースの再生
@@ -99,8 +105,9 @@
         - name: Time Travel Debugging - ナビゲーション コマンド
           href: time-travel-debugging-navigation-commands.md
         - name: Time Travel Debugging - 拡張コマンド
-          href: time-travel-debugging-extension-commands.md
           items:
+            - name: Time Travel Debugging - 拡張コマンド
+              href: time-travel-debugging-extension-commands.md
             - name: Time Travel Debugging - !tt (タイム トラベル)
               href: time-travel-debugging-extension-tt.md
             - name: Time Travel Debugging - !index (タイム トラベル)
@@ -110,8 +117,9 @@
         - name: Time Travel Debugging - サンプル アプリのチュートリアル
           href: time-travel-debugging-walkthrough.md
         - name: Time Travel Debugging - Time Travel Debugging オブジェクトの概要
-          href: time-travel-debugging-object-model.md
           items:
+            - name: Time Travel Debugging - Time Travel Debugging オブジェクトの概要
+              href: time-travel-debugging-object-model.md
             - name: Time Travel Debugging - Calls オブジェクト
               href: time-travel-debugging-calls-objects.md
             - name: Time Travel Debugging - Heap オブジェクト
@@ -131,20 +139,23 @@
         - name: Time Travel Debugging - JavaScript オートメーション
           href: time-travel-debugging-javascript-automation.md
 - name: デバッグに関するリソース
-  href: debugging-resources.md
   items:
+    - name: デバッグに関するリソース
+      href: debugging-resources.md
     - name: 'Debugging Tools for Windows:Windows 10 の新機能'
       href: debugging-tools-for-windows--new-for-windows-10.md
     - name: Debugging Tools for Windows に含まれるツール
-      href: extra-tools.md
       items:
+        - name: Debugging Tools for Windows に含まれるツール
+          href: extra-tools.md
         - name: ADPlus
           href: adplus.md
         - name: DumpChk
           href: dumpchk.md
         - name: GFlags
-          href: gflags.md
           items:
+            - name: GFlags
+              href: gflags.md
             - name: GFlags の概要
               href: gflags-overview.md
             - name: GFlags の詳細
@@ -158,8 +169,9 @@
             - name: プロセスの暗黙の終了の監視
               href: registry-entries-for-silent-process-exit.md
             - name: '[Global Flags]\(グローバル フラグ\) ダイアログ ボックス'
-              href: global-flags-dialog-box.md
               items:
+                - name: '[Global Flags]\(グローバル フラグ\) ダイアログ ボックス'
+                  href: global-flags-dialog-box.md
                 - name: ダイアログ ボックスを開く
                   href: opening-the-dialog-box.md
                 - name: システム全体のフラグの設定とクリア
@@ -175,8 +187,9 @@
                 - name: デバッガーでのプログラムの実行
                   href: running-a-program-in-a-debugger.md
                 - name: 特別なプールの構成
-                  href: configuring-special-pool.md
                   items:
+                    - name: 特別なプールの構成
+                      href: configuring-special-pool.md
                     - name: プール タグによる特別なプールの要求
                       href: requesting-special-pool-by-pool-tag.md
                     - name: 割り当てサイズによる特別なプールの要求
@@ -188,8 +201,9 @@
                 - name: オブジェクト参照トレースの構成
                   href: configuring-object-reference-tracing.md
             - name: グローバル フラグ リファレンス
-              href: global-flag-reference.md
               items:
+                - name: グローバル フラグ リファレンス
+                  href: global-flag-reference.md
                 - name: Buffer DbgPrint Output
                   href: buffer-dbgprint-output.md
                 - name: Create kernel mode stack trace database
@@ -261,8 +275,9 @@
                 - name: Stop on unhandled user-mode exception
                   href: stop-on-unhandled-user-mode-exception.md
             - name: GFlags の例
-              href: gflags-examples.md
               items:
+                - name: GFlags の例
+                  href: gflags-examples.md
                 - name: '例 1:グローバル フラグを表示する'
                   href: example-1---displaying-global-flags.md
                 - name: '例 2:フラグの省略形を使用してフラグを設定する'
@@ -296,11 +311,13 @@
         - name: Kill ツール
           href: kill-tool.md
         - name: Logger と LogViewer
-          href: logger-and-logviewer.md
           items:
+            - name: Logger と LogViewer
+              href: logger-and-logviewer.md
             - name: Logger
-              href: logger.md
               items:
+                - name: Logger
+                  href: logger.md
                 - name: デバッガーと Logexts.dll の使用
                   href: using-the-debugger-and-logexts-dll.md
                 - name: Logger.exe の使用
@@ -308,8 +325,9 @@
                 - name: Logger の制限事項と制約事項
                   href: logger-restrictions-and-limitations.md
             - name: LogViewer
-              href: logviewer.md
               items:
+                - name: LogViewer
+                  href: logviewer.md
                 - name: LogViewer 表示の読み取り
                   href: reading-the-logviewer-display.md
                 - name: LogViewer 関数一覧のフィルター処理
@@ -317,8 +335,9 @@
                 - name: LogViewer ファイルのテキストへのエクスポート
                   href: exporting-logviewer-files-to-text.md
             - name: Logger のマニフェスト
-              href: the-logger-manifest.md
               items:
+                - name: Logger のマニフェスト
+                  href: the-logger-manifest.md
                 - name: ログのマニフェストの概要
                   href: overview-of-the-logging-manifest.md
                 - name: マニフェスト ファイルの配置
@@ -328,13 +347,15 @@
         - name: PLMDebug
           href: plmdebug.md
         - name: Remote ツール
-          href: remote-tool.md
           items:
+            - name: Remote ツール
+              href: remote-tool.md
             - name: Remote ツールの概念
               href: remote-tool-concepts.md
             - name: Remote ツール コマンド
-              href: remote-tool-commands.md
               items:
+                - name: Remote ツール コマンド
+                  href: remote-tool-commands.md
                 - name: Remote サーバーの構文
                   href: remote-server-syntax.md
                 - name: Remote クライアントの構文
@@ -346,20 +367,23 @@
             - name: Remote ツールの例
               href: remote-tool-examples.md
         - name: TList
-          href: tlist.md
           items:
+            - name: TList
+              href: tlist.md
             - name: TList コマンド
               href: tlist-commands.md
             - name: TList の例
               href: tlist-examples.md
         - name: UMDH
-          href: umdh.md
           items:
+            - name: UMDH
+              href: umdh.md
             - name: UMDH の使用の準備
               href: preparing-to-use-umdh.md
             - name: UMDH コマンド
-              href: umdh-commands.md
               items:
+                - name: UMDH コマンド
+                  href: umdh-commands.md
                 - name: 実行プロセスの分析
                   href: analyze-a-running-process.md
                 - name: UMDH ログの分析
@@ -371,27 +395,31 @@
         - name: USBView
           href: usbview.md
     - name: Debugging Tools for Windows に関連するツール
-      href: tools-related-to-debugging-tools-for-windows.md
       items:
+        - name: Debugging Tools for Windows に関連するツール
+          href: tools-related-to-debugging-tools-for-windows.md
         - name: アプリケーション検証ツール
           href: application-verifier.md
         - name: Windows エラー報告
           href: windows-error-reporting.md
     - name: ソース コード
-      href: source-code.md
       items:
+        - name: ソース コード
+          href: source-code.md
         - name: ソース パス
           href: source-path.md
         - name: ソース サーバーの使用
           href: using-a-source-server.md
         - name: SrcSrv
-          href: srcsrv.md
           items:
+            - name: SrcSrv
+              href: srcsrv.md
             - name: SrcSrv の使用
               href: using-srcsrv.md
             - name: ソースのインデックス作成
-              href: source-indexing.md
               items:
+                - name: ソースのインデックス作成
+                  href: source-indexing.md
                 - name: Srcsrv.ini ファイル
                   href: the-srcsrv-ini-file.md
                 - name: Ssindex.cmd スクリプト
@@ -403,8 +431,9 @@
                 - name: VSSDump ツール
                   href: the-vssdump-tool.md
             - name: ソース管理システム
-              href: source-control-systems.md
               items:
+                - name: ソース管理システム
+                  href: source-control-systems.md
                 - name: Visual SourceSafe の使用
                   href: using-visual-sourcesafe.md
                 - name: Visual SourceSafe によるデバッグ
@@ -412,8 +441,9 @@
                 - name: CVS の使用
                   href: using-cvs.md
                 - name: その他のソース管理システムの使用
-                  href: using-other-source-control-systems.md
                   items:
+                    - name: その他のソース管理システムの使用
+                      href: using-other-source-control-systems.md
                     - name: 独自のプロバイダー モジュールの作成
                       href: creating-your-own-provider-module.md
                     - name: 独自のソース管理システムの作成
@@ -423,8 +453,9 @@
                     - name: 言語の仕様 2
                       href: language-specification-2.md
             - name: HTTP サイトと UNC 共有
-              href: http-sites-and-unc-shares.md
               items:
+                - name: HTTP サイトと UNC 共有
+                  href: http-sites-and-unc-shares.md
                 - name: Web サイトの設定
                   href: setting-up-the-web-site.md
                 - name: ソース ファイルの抽出
@@ -436,13 +467,15 @@
                 - name: 通常のバージョン管理と組み合わせた HTTP サイトと UNC 共有の使用
                   href: using-http-sites-and-unc-shares-in-conjuction-with-regular-version-con.md
     - name: セキュリティに関する考慮事項
-      href: security-considerations.md
       items:
+        - name: セキュリティに関する考慮事項
+          href: security-considerations.md
         - name: デバッグ特権
           href: debug-privilege.md
         - name: セキュリティの脆弱性
-          href: security-vulnerabilities.md
           items:
+            - name: セキュリティの脆弱性
+              href: security-vulnerabilities.md
             - name: カーネルモード デバッグ中のセキュリティ
               href: security-during-kernel-mode-debugging.md
             - name: ユーザーモード デバッグ中のセキュリティ
@@ -452,18 +485,21 @@
             - name: リモート デバッグ中のセキュリティ
               href: security-during-remote-debugging.md
         - name: 保護モード
-          href: secure-mode.md
           items:
+            - name: 保護モード
+              href: secure-mode.md
             - name: 保護モードの機能
               href: features-of-secure-mode.md
             - name: 保護モードのアクティブ化
               href: activating-secure-mode.md
     - name: プロセッサーのアーキテクチャ
-      href: processor-architecture.md
       items:
+        - name: プロセッサーのアーキテクチャ
+          href: processor-architecture.md
         - name: x86 プロセッサ
-          href: the-x86-processor.md
           items:
+            - name: x86 プロセッサ
+              href: the-x86-processor.md
             - name: x86 アーキテクチャ
               href: x86-architecture.md
             - name: x86 の手順
@@ -471,8 +507,9 @@
             - name: 注釈付き x86 逆アセンブリ
               href: annotated-x86-disassembly.md
         - name: x64 プロセッサ
-          href: the-x64-processor.md
           items:
+            - name: x64 プロセッサ
+              href: the-x64-processor.md
             - name: x64 アーキテクチャ
               href: x64-architecture.md
             - name: x64 の手順
@@ -480,13 +517,15 @@
             - name: 注釈付き x64 逆アセンブリ
               href: annotated-x64-disassembly.md
     - name: デバッガー エンジンと拡張機能の API
-      href: debugger-engine-and-extension-apis.md
       items:
+        - name: デバッガー エンジンと拡張機能の API
+          href: debugger-engine-and-extension-apis.md
         - name: デバッガー エンジンの基本
           href: introduction.md
         - name: デバッガー エンジンの概要
-          href: debugger-engine-overview.md
           items:
+            - name: デバッガー エンジンの概要
+              href: debugger-engine-overview.md
             - name: デバッグ セッションと実行モデル
               href: debugging-session-and-execution-model.md
             - name: クライアント オブジェクト
@@ -508,14 +547,17 @@
             - name: スレッドとプロセス
               href: threads-and-processes.md
         - name: デバッガー エンジン API の使用
-          href: using-the-debugger-engine-api.md
           items:
+            - name: デバッガー エンジン API の使用
+              href: using-the-debugger-engine-api.md
             - name: デバッガー エンジン API の概要
-              href: debugger-engine-api-overview.md
               items:
+                - name: デバッガー エンジン API の概要
+                  href: debugger-engine-api-overview.md
                 - name: エンジンの操作
-                  href: interacting-with-the-engine.md
                   items:
+                    - name: エンジンの操作
+                      href: interacting-with-the-engine.md
                     - name: クライアント オブジェクトの使用
                       href: using-client-objects.md
                     - name: コールバック オブジェクトの使用
@@ -523,22 +565,25 @@
                 - name: 入力と出力の使用
                   href: using-input-and-output.md
                 - name: イベントの監視
-                  href: monitoring-events.md
                   items:
+                    - name: イベントの監視
+                      href: monitoring-events.md
                     - name: イベント フィルター
                       href: event-filters.md
                     - name: イベント情報
                       href: event-information.md
                 - name: ブレークポイントの使用
-                  href: using-breakpoints2.md
                   items:
+                    - name: ブレークポイントの使用
+                      href: using-breakpoints2.md
                     - name: ブレークポイントの設定
                       href: setting-breakpoints.md
                     - name: ブレークポイントのフラグとパラメーターの制御
                       href: controlling-breakpoint-flags-and-parameters.md
                 - name: メモリ アクセス
-                  href: memory-access.md
                   items:
+                    - name: メモリ アクセス
+                      href: memory-access.md
                     - name: 仮想メモリと物理メモリ
                       href: virtual-and-physical-memory.md
                     - name: レジスタ
@@ -550,8 +595,9 @@
                 - name: スレッドとプロセスの制御
                   href: controlling-threads-and-processes.md
                 - name: シンボルの使用
-                  href: using-symbols.md
                   items:
+                    - name: シンボルの使用
+                      href: using-symbols.md
                     - name: モジュール
                       href: modules.md
                     - name: 型
@@ -561,8 +607,9 @@
                 - name: ソース ファイルの使用
                   href: using-source-files.md
                 - name: ターゲットへの接続
-                  href: connecting-to-targets.md
                   items:
+                    - name: ターゲットへの接続
+                      href: connecting-to-targets.md
                     - name: ライブ ユーザーモード ターゲット
                       href: live-user-mode-targets.md
                     - name: ライブ カーネルモード ターゲット
@@ -580,11 +627,13 @@
                 - name: アセンブルと逆アセンブルの手順
                   href: assembling-and-disassembling-instructions.md
         - name: DbgEng 拡張機能の作成
-          href: writing-dbgeng-extensions.md
           items:
+            - name: DbgEng 拡張機能の作成
+              href: writing-dbgeng-extensions.md
             - name: DbgEng 拡張機能設計ガイド
-              href: dbgeng-extension-design-guide.md
               items:
+                - name: DbgEng 拡張機能設計ガイド
+                  href: dbgeng-extension-design-guide.md
                 - name: DbgEng 拡張機能 DLL の構造
                   href: anatomy-of-a-dbgeng-extension-dll.md
                 - name: クライアントとエンジンの使用
@@ -594,11 +643,13 @@
                 - name: DbgEng 拡張機能の構築
                   href: building-dbgeng-extensions.md
         - name: EngExtCpp 拡張機能
-          href: engextcpp-extensions.md
           items:
+            - name: EngExtCpp 拡張機能
+              href: engextcpp-extensions.md
             - name: EngExtCpp 拡張機能設計ガイド
-              href: engextcpp-extension-design-guide.md
               items:
+                - name: EngExtCpp 拡張機能設計ガイド
+                  href: engextcpp-extension-design-guide.md
                 - name: EngExtCpp 拡張機能ライブラリ
                   href: engextcpp-extension-libraries.md
                 - name: クライアント オブジェクトとエンジン
@@ -612,11 +663,13 @@
                 - name: 型指定されたデータ
                   href: typed-data.md
         - name: WdbgExts 拡張機能の作成
-          href: writing-wdbgexts-extensions.md
           items:
+            - name: WdbgExts 拡張機能の作成
+              href: writing-wdbgexts-extensions.md
             - name: WdbgExts 拡張機能設計ガイド
-              href: wdbgexts-extension-design-guide.md
               items:
+                - name: WdbgExts 拡張機能設計ガイド
+                  href: wdbgexts-extension-design-guide.md
                 - name: WdbgExts 拡張機能 API の概要
                   href: wdbgexts-extension-api-overview.md
                 - name: 32 ビット ポインターと 64 ビット ポインター
@@ -626,8 +679,9 @@
                 - name: DECLARE_API Macro の使用
                   href: using-the-declare-api-macro.md
                 - name: WdbgExts 拡張機能コードの作成
-                  href: writing-wdbgexts-extension-code.md
                   items:
+                    - name: WdbgExts 拡張機能コードの作成
+                      href: writing-wdbgexts-extension-code.md
                     - name: WdbgExts の入力と出力
                       href: wdbgexts-input-and-output.md
                     - name: WdbgExts のメモリ アクセス
@@ -641,8 +695,9 @@
                 - name: WdbgExts 拡張機能の構築
                   href: building-wdbgexts-extensions.md
         - name: カスタム分析デバッガー拡張機能の作成
-          href: writing-custom-analysis-debugger-extensions.md
           items:
+            - name: カスタム分析デバッガー拡張機能の作成
+              href: writing-custom-analysis-debugger-extensions.md
             - name: '!analyze を拡張する分析拡張機能プラグインの作成'
               href: writing-an-analysis-extension-to-extend--analyze.md
             - name: 分析拡張機能プラグインのメタデータ ファイル
@@ -654,15 +709,17 @@
     - name: デバッグ エンジン インターフェイス
       href: client-com-interfaces.md
     - name: デバッガー エンジン リファレンス
-      href: debugger-engine-reference.md
       items:
+        - name: デバッガー エンジン リファレンス
+          href: debugger-engine-reference.md
         - name: DebugBaseEventCallbacks
           href: debugbaseeventcallbacks.md
         - name: DebugBaseEventCallbacksWide
           href: debugbaseeventcallbackswide.md
         - name: デバッグ API の定数
-          href: debug-api-constants.md
           items:
+            - name: デバッグ API の定数
+              href: debug-api-constants.md
             - name: DBG_ASMOPT_XXX
               href: debug-asmopt-xxx.md
             - name: DBG_ATTACH_XXX
@@ -696,8 +753,9 @@
         - name: HRESULT の値
           href: hresult-values.md
         - name: 要求
-          href: request.md
           items:
+            - name: 要求
+              href: request.md
             - name: DEBUG_REQUEST_SOURCE_PATH_HAS_SOURCE_SERVER
               href: debug-request-source-path-has-source-server.md
             - name: DEBUG_REQUEST_TARGET_EXCEPTION_CONTEXT
@@ -721,8 +779,9 @@
             - name: DEBUG_REQUEST_READ_CAPTURED_EVENT_CODE_STREAM
               href: debug-request-read-captured-event-code-stream.md
             - name: DEBUG_REQUEST_EXT_TYPED_DATA_ANSI
-              href: debug-request-ext-typed-data-ansi.md
               items:
+                - name: DEBUG_REQUEST_EXT_TYPED_DATA_ANSI
+                  href: debug-request-ext-typed-data-ansi.md
                 - name: EXT_TDOP_COPY
                   href: ext-tdop-copy.md
                 - name: EXT_TDOP_RELEASE
@@ -770,8 +829,9 @@
     - name: DML を使用したデバッガー出力のカスタマイズ
       href: customizing-debugger-output-using-dml.md
     - name: JavaScript デバッガーのスクリプト
-      href: javascript-debugger-scripting.md
       items:
+        - name: JavaScript デバッガーのスクリプト
+          href: javascript-debugger-scripting.md
         - name: JavaScript デバッガーのスクリプト例
           href: javascript-debugger-example-scripts.md
         - name: JavaScript 拡張機能のネイティブ デバッガー オブジェクト
@@ -783,8 +843,9 @@
     - name: Debugger Data Model 関数のエイリアス
       href: debugger-data-model-function-aliases.md
     - name: Debugger Data Model C++ の概要
-      href: data-model-cpp-overview.md
       items:
+        - name: Debugger Data Model C++ の概要
+          href: data-model-cpp-overview.md
         - name: Debugger Data Model C++ のインターフェイス
           href: data-model-cpp-interfaces.md
         - name: Debugger Data Model C++ のオブジェクト
@@ -796,8 +857,9 @@
         - name: Debugger Data Model C++ のスクリプト
           href: data-model-cpp-scripting.md
     - name: Debugger Data Model - コード名前空間
-      href: dbgmodel-namespace-code.md
       items:
+        - name: Debugger Data Model - コード名前空間
+          href: dbgmodel-namespace-code.md
         - name: Debugger Data Model - 逆アセンブラー オブジェクト
           href: dbgmodel-object-disassembler.md
         - name: Debugger Data Model - 基本ブロック オブジェクト
@@ -821,8 +883,9 @@
     - name: Debugger Data Model - コレクション名前空間
       href: dbgmodel-namespace-collections.md
     - name: Debugger Data Model - ファイル システム名前空間
-      href: dbgmodel-namespace-file-system.md
       items:
+        - name: Debugger Data Model - ファイル システム名前空間
+          href: dbgmodel-namespace-file-system.md
         - name: Debugger Data Model - ディレクトリ オブジェクト
           href: dbgmodel-object-directory.md
         - name: Debugger Data Model - ファイル オブジェクト
@@ -832,8 +895,9 @@
         - name: Debugger Data Model - テキスト ライター オブジェクト
           href: dbgmodel-object-text-writer.md
     - name: 用語集
-      href: glossary.md
       items:
+        - name: 用語集
+          href: glossary.md
         - name: A
           href: a.md
         - name: B
@@ -875,11 +939,13 @@
         - name: W
           href: w.md
 - name: デバッガーの操作
-  href: debugger-operation-win8.md
   items:
+    - name: デバッガーの操作
+      href: debugger-operation-win8.md
     - name: WinDbg を使用したデバッグ
-      href: debugging-using-windbg.md
       items:
+        - name: WinDbg を使用したデバッグ
+          href: debugging-using-windbg.md
         - name: WinDbg を使用したユーザーモード プロセスのデバッグ
           href: debugging-a-user-mode-process-using-windbg.md
         - name: WinDbg を使用した UWP アプリのデバッグ
@@ -925,8 +991,9 @@
         - name: スクラッチ パッドの使用
           href: scratch-pad.md
     - name: KD と NTKD を使用したデバッグ
-      href: debugging-using-kd-and-ntkd.md
       items:
+        - name: KD と NTKD を使用したデバッグ
+          href: debugging-using-kd-and-ntkd.md
         - name: KD を使用してダンプ ファイルを開く
           href: opening-a-crash-dump-file-using-kd.md
         - name: KD を使用したライブ カーネルモード デバッグ
@@ -950,8 +1017,9 @@
         - name: KD でのログ ファイルの保持
           href: keeping-a-log-file-in-kd.md
     - name: CDB と NTSD を使用したデバッグ
-      href: debugging-using-cdb-and-ntsd.md
       items:
+        - name: CDB と NTSD を使用したデバッグ
+          href: debugging-using-cdb-and-ntsd.md
         - name: CDB を使用したユーザーモード プロセスのデバッグ
           href: debugging-a-user-mode-process-using-cdb.md
         - name: CDB を使用してダンプ ファイルを開く
@@ -979,8 +1047,9 @@
     - name: 事後デバッグを有効にする
       href: enabling-postmortem-debugging.md
     - name: デバッガー コマンド ウィンドウの使用
-      href: the-debugger-command-window.md
       items:
+        - name: デバッガー コマンド ウィンドウの使用
+          href: the-debugger-command-window.md
         - name: デバッガー コマンドの使用
           href: using-debugger-commands.md
         - name: 式の評価
@@ -992,8 +1061,9 @@
         - name: スクリプト ファイルの使用
           href: using-script-files.md
         - name: デバッガー コマンド プログラムの使用
-          href: using-debugger-command-programs.md
           items:
+            - name: デバッガー コマンド プログラムの使用
+              href: using-debugger-command-programs.md
             - name: デバッガー コマンド プログラムの要素
               href: elements-of-a-debugger-command-program.md
             - name: 制御フロー トークン
@@ -1003,11 +1073,13 @@
             - name: デバッガー コマンド プログラムの例
               href: debugger-command-program-examples.md
     - name: WinDbg グラフィカル インターフェイスの使用
-      href: windbg-graphical-interface.md
       items:
+        - name: WinDbg グラフィカル インターフェイスの使用
+          href: windbg-graphical-interface.md
         - name: デバッグ情報ウィンドウの使用
-          href: using-debugging-information-windows.md
           items:
+            - name: デバッグ情報ウィンドウの使用
+              href: using-debugging-information-windows.md
             - name: ウィンドウを開く
               href: opening-a-window.md
             - name: ウィンドウを閉じる
@@ -1021,8 +1093,9 @@
             - name: テキスト プロパティの変更
               href: changing-text-properties.md
             - name: ウィンドウの配置
-              href: positioning-the-windows.md
               items:
+                - name: ウィンドウの配置
+                  href: positioning-the-windows.md
                 - name: フローティング ウィンドウとドッキング ウィンドウを使用したデバッグ
                   href: debugging-with-floating-and-docked-windows.md
                 - name: ウィンドウのドッキング
@@ -1038,15 +1111,17 @@
                 - name: ウィンドウの配置変更
                   href: arranging-windows.md
         - name: ワークスペースの使用
-          href: using-workspaces.md
           items:
+            - name: ワークスペースの使用
+              href: using-workspaces.md
             - name: ワークスペースを作成して開く
               href: creating-and-opening-a-workspace.md
             - name: ワークスペースのコンテンツ
               href: workspace-contents.md
             - name: WinDbg テーマの使用とカスタマイズ
-              href: using-and-customizing-windbg-themes.md
               items:
+                - name: WinDbg テーマの使用とカスタマイズ
+                  href: using-and-customizing-windbg-themes.md
                 - name: テーマの読み込み
                   href: loading-a-theme.md
                 - name: テーマのカスタマイズ
@@ -1058,8 +1133,9 @@
         - name: ヘルプ ドキュメントの使用
           href: using-the-help-documentation.md
     - name: デバッガー拡張機能の使用
-      href: debugger-extensions.md
       items:
+        - name: デバッガー拡張機能の使用
+          href: debugger-extensions.md
         - name: デバッガー拡張機能 DLL の読み込み
           href: loading-debugger-extension-dlls.md
         - name: デバッガー拡張機能コマンドの使用
@@ -1067,13 +1143,15 @@
         - name: 新しいデバッガー拡張機能の作成
           href: writing-new-debugger-extensions.md
     - name: リモート デバッグ
-      href: remote-debugging.md
       items:
+        - name: リモート デバッグ
+          href: remote-debugging.md
         - name: 最適なリレーショナル モデルデバッグ メソッドの選択
           href: choosing-the-best-remote-debugging-method.md
         - name: デバッガーによるリモート デバッグ
-          href: remote-debugging-through-the-debugger.md
           items:
+            - name: デバッガーによるリモート デバッグ
+              href: remote-debugging-through-the-debugger.md
             - name: デバッグ サーバーのアクティブ化
               href: activating-a-debugging-server.md
             - name: デバッグ サーバーの検索
@@ -1085,8 +1163,9 @@
             - name: リモート デバッグ セッションの制御
               href: controlling-a-remote-debugging-session.md
         - name: カーネル デバッガーからのユーザーモード デバッガーの制御
-          href: controlling-the-user-mode-debugger-from-the-kernel-debugger.md
           items:
+            - name: カーネル デバッガーからのユーザーモード デバッガーの制御
+              href: controlling-the-user-mode-debugger-from-the-kernel-debugger.md
             - name: デバッグ セッションの開始
               href: starting-the-debugging-session.md
             - name: モードの切り替え
@@ -1096,8 +1175,9 @@
             - name: このメソッドとリモート デバッグの組み合わせ
               href: combining-this-method-with-remote-debugging.md
         - name: Remote.exe によるリモート デバッグ
-          href: remote-debugging-through-remote-exe.md
           items:
+            - name: Remote.exe によるリモート デバッグ
+              href: remote-debugging-through-remote-exe.md
             - name: Remote.exe ユーティリティ
               href: the-remote-exe-utility.md
             - name: Remote.exe セッションの開始
@@ -1105,8 +1185,9 @@
             - name: Remote.exe バッチ ファイル
               href: remote-exe-batch-files.md
         - name: プロセス サーバー (ユーザー モード)
-          href: process-servers--user-mode-.md
           items:
+            - name: プロセス サーバー (ユーザー モード)
+              href: process-servers--user-mode-.md
             - name: プロセス サーバーのアクティブ化
               href: activating-a-process-server.md
             - name: プロセス サーバーの検索
@@ -1118,8 +1199,9 @@
             - name: プロセス サーバー セッションの制御
               href: controlling-a-process-server-session.md
         - name: KD 接続サーバー (カーネル モード)
-          href: kd-connection-servers--kernel-mode-.md
           items:
+            - name: KD 接続サーバー (カーネル モード)
+              href: kd-connection-servers--kernel-mode-.md
             - name: KD 接続サーバーのアクティブ化
               href: activating-a-kd-connection-server.md
             - name: KD 接続サーバーの検索
@@ -1131,8 +1213,9 @@
             - name: KD 接続サーバー セッションの制御
               href: controlling-a-kd-connection-server-session.md
         - name: repeater
-          href: repeaters.md
           items:
+            - name: repeater
+              href: repeaters.md
             - name: repeater のアクティブ化
               href: activating-a-repeater.md
             - name: repeater の使用
@@ -1140,8 +1223,9 @@
             - name: repeater の例
               href: repeater-examples.md
         - name: 高度なリモート デバッグ シナリオ
-          href: advanced-remote-debugging-scenarios.md
           items:
+            - name: 高度なリモート デバッグ シナリオ
+              href: advanced-remote-debugging-scenarios.md
             - name: 複数のコンピューター上のターゲットのデバッグ
               href: debugging-targets-on-multiple-computers.md
             - name: 中間のシンボル
@@ -1151,11 +1235,13 @@
         - name: ワークグループ コンピューター上のリモート デバッグ
           href: remote-debugging-on-workgroup-computers.md
     - name: 以前のバージョンの Windows のデバッグ
-      href: debugging-previous-versions-of-windows.md
       items:
+        - name: 以前のバージョンの Windows のデバッグ
+          href: debugging-previous-versions-of-windows.md
         - name: 'Debugging Tools For Windows:新機能'
-          href: debugging-tools-for-windows--what-s-new.md
           items:
+            - name: 'Debugging Tools For Windows:新機能'
+              href: debugging-tools-for-windows--what-s-new.md
             - name: 'Debugging Tools for Windows:Windows 8.1 の新機能'
               href: debugging-tools-for-windows--new-for-windows-8-1.md
             - name: 'Debugging Tools for Windows:Windows 8 の新機能'
@@ -1167,8 +1253,9 @@
         - name: Visual Studio を使用したデバッグ
           href: debugging-using-visual-studio.md
         - name: Visual Studio でのユーザーモード デバッグの設定
-          href: setting-up-user-mode-debugging-in-visual-studio.md
           items:
+            - name: Visual Studio でのユーザーモード デバッグの設定
+              href: setting-up-user-mode-debugging-in-visual-studio.md
             - name: Visual Studio を使用したユーザーモード プロセスのデバッグ
               href: debugging-a-user-mode-process-using-visual-studio.md
             - name: Visual Studio を使用してダンプ ファイルを開く
@@ -1198,8 +1285,9 @@
             - name: Visual Studio でのログ ファイルの保持
               href: keeping-a-log-file-in-visual-studio.md
         - name: Visual Studio でのカーネル モード デバッグの設定
-          href: setting-up-kernel-mode-debugging-in-visual-studio.md
           items:
+            - name: Visual Studio でのカーネル モード デバッグの設定
+              href: setting-up-kernel-mode-debugging-in-visual-studio.md
             - name: Visual Studio でのネットワーク ケーブル経由でのカーネルモード デバッグの設定
               href: setting-up-a-network-debugging-connection-in-visual-studio.md
             - name: Visual Studio での 1394 ケーブル経由でのカーネルモード デバッグの設定
@@ -1215,14 +1303,17 @@
             - name: Visual Studio での仮想マシンのカーネルモード デバッグの設定
               href: setting-up-a-connection-to-a-virtual-machine-in-visual-studio.md
 - name: デバッグの手法
-  href: debugging-techniques.md
   items:
+    - name: デバッグの手法
+      href: debugging-techniques.md
     - name: 標準的なデバッグの手法
-      href: standard-debugging-techniques.md
       items:
+        - name: 標準的なデバッグの手法
+          href: standard-debugging-techniques.md
         - name: ブレークポイントの使用
-          href: using-breakpoints.md
           items:
+            - name: ブレークポイントの使用
+              href: using-breakpoints.md
             - name: ブレークポイントを制御するメソッド
               href: methods-of-controlling-breakpoints.md
             - name: ブレークポイントの構文
@@ -1242,8 +1333,9 @@
             - name: 指定した状態になるまで実行する
               href: executing-until-a-specified-state-is-reached.md
         - name: メモリの読み取りと書き込み
-          href: reading-and-writing-memory.md
           items:
+            - name: メモリの読み取りと書き込み
+              href: reading-and-writing-memory.md
             - name: 仮想アドレスによるメモリへのアクセス
               href: accessing-memory-by-virtual-address.md
             - name: 物理アドレスによるメモリへのアクセス
@@ -1297,13 +1389,15 @@
         - name: ターゲット コンピューターとの同期
           href: synchronizing-with-the-target-computer.md
         - name: メモリ リークの検出
-          href: finding-a-memory-leak.md
           items:
+            - name: メモリ リークの検出
+              href: finding-a-memory-leak.md
             - name: リークが存在するかどうかの判別
               href: determining-whether-a-leak-exists.md
             - name: カーネルモード メモリ リークの検出
-              href: finding-a-kernel-mode-memory-leak.md
               items:
+                - name: カーネルモード メモリ リークの検出
+                  href: finding-a-kernel-mode-memory-leak.md
                 - name: PoolMon を使用したカーネルモード メモリ リークの検出
                   href: using-poolmon-to-find-a-kernel-mode-memory-leak.md
                 - name: カーネル デバッガーを使用したカーネルモード メモリ リークの検出
@@ -1311,22 +1405,25 @@
                 - name: ドライバーの検証ツールを使用したカーネルモード メモリ リークの検出
                   href: using-driver-verifier-to-find-a-kernel-mode-memory-leak.md
             - name: ユーザーモード メモリ リークの検出
-              href: finding-a-user-mode-memory-leak.md
               items:
+                - name: ユーザーモード メモリ リークの検出
+                  href: finding-a-user-mode-memory-leak.md
                 - name: パフォーマンス モニターを使用したユーザーモード メモリ リークの検出
                   href: using-performance-monitor-to-find-a-user-mode-memory-leak.md
                 - name: UMDH を使用したユーザーモード メモリ リークの検出
                   href: using-umdh-to-find-a-user-mode-memory-leak.md
         - name: タイムアウトのデバッグ
-          href: debugging-a-time-out.md
           items:
+            - name: タイムアウトのデバッグ
+              href: debugging-a-time-out.md
             - name: リソースのタイムアウト
               href: resource-time-outs.md
             - name: クリティカル セクションのタイムアウト
               href: critical-section-time-outs.md
         - name: 停止したシステムのデバッグ
-          href: debugging-a-stalled-system.md
           items:
+            - name: 停止したシステムのデバッグ
+              href: debugging-a-stalled-system.md
             - name: エラーが発生したプロセスの検索
               href: finding-the-failed-process.md
             - name: 割り込みストームのデバッグ
@@ -1352,8 +1449,9 @@
         - name: ドライバー ファイルのマッピング
           href: mapping-driver-files.md
         - name: ターゲットからのメッセージ
-          href: messages-from-the-target.md
           items:
+            - name: ターゲットからのメッセージ
+              href: messages-from-the-target.md
             - name: デバッガーへの割り込み
               href: breaking-into-the-debugger.md
             - name: デバッガーへの出力の送信
@@ -1363,8 +1461,9 @@
             - name: デバッガーがアタッチされているかどうかの判別
               href: determining-if-a-debugger-is-attached.md
     - name: 特殊なデバッグの手法
-      href: specialized-debugging-techniques.md
       items:
+        - name: 特殊なデバッグの手法
+          href: specialized-debugging-techniques.md
         - name: ARM64 のデバッグ
           href: debugging-arm64.md
         - name: Windows ランタイムのデバッグ
@@ -1394,15 +1493,17 @@
         - name: モジュールおよび関数所有者の指定
           href: specifying-module-and-function-owners.md
         - name: RPC のデバッグ
-          href: rpc-debugging.md
           items:
+            - name: RPC のデバッグ
+              href: rpc-debugging.md
             - name: RPC のデバッグの概要
               href: overview-of-rpc-debugging.md
             - name: RPC 状態情報を有効にする
               href: enabling-rpc-state-information.md
             - name: RPC 状態情報の表示
-              href: displaying-rpc-state-information.md
               items:
+                - name: RPC 状態情報の表示
+                  href: displaying-rpc-state-information.md
                 - name: RPC デバッガー拡張機能の使用
                   href: using-the-rpc-debugger-extensions.md
                 - name: DbgRpc ツールの使用
@@ -1418,8 +1519,9 @@
                 - name: RPC クライアント呼び出し情報の取得
                   href: get-rpc-client-call-information.md
             - name: 一般的な RPC デバッグの手法
-              href: common-rpc-debugging-techniques.md
               items:
+                - name: 一般的な RPC デバッグの手法
+                  href: common-rpc-debugging-techniques.md
                 - name: スタックした呼び出しの問題の分析
                   href: analyzing-a-stuck-call-problem.md
                 - name: サーバー プロセス内の競合の追跡
@@ -1431,11 +1533,13 @@
             - name: RPC 状態情報の内部構造
               href: rpc-state-information-internals.md
         - name: ACPI のデバッグ
-          href: acpi-debugging.md
           items:
+            - name: ACPI のデバッグ
+              href: acpi-debugging.md
             - name: AMLI Debugger
-              href: the-amli-debugger.md
               items:
+                - name: AMLI Debugger
+                  href: the-amli-debugger.md
                 - name: AMLI Debugger の概要
                   href: introduction-to-the-amli-debugger.md
                 - name: AML デバッグ セッションの設定
@@ -1451,25 +1555,29 @@
             - name: その他の ACPI デバッグ拡張機能
               href: other-acpi-debugging-extensions.md
         - name: NDIS のデバッグ
-          href: ndis-debugging.md
           items:
+            - name: NDIS のデバッグ
+              href: ndis-debugging.md
             - name: NDIS のデバッグの概要
               href: overview-of-ndis-debugging.md
             - name: NDIS のデバッグの準備
               href: preparing-for-ndis-debugging.md
             - name: NDIS のデバッグのトレースを有効にする
-              href: enabling-ndis-debug-tracing.md
               items:
+                - name: NDIS のデバッグのトレースを有効にする
+                  href: enabling-ndis-debug-tracing.md
                 - name: レジストリ値を設定して NDIS のデバッグのトレースを有効にする
                   href: enabling-ndis-debug-tracing-by-setting-registry-values.md
         - name: カーネル ストリーミングのデバッグ
-          href: kernel-streaming-debugging.md
           items:
+            - name: カーネル ストリーミングのデバッグ
+              href: kernel-streaming-debugging.md
             - name: カーネル ストリーミングのデバッグの概要
               href: overview-of-kernel-streaming-debugging.md
             - name: ビデオ ストリームの停止の分析
-              href: analyzing-a-video-stream-stall.md
               items:
+                - name: ビデオ ストリームの停止の分析
+                  href: analyzing-a-video-stream-stall.md
                 - name: ビデオ ストリームの停止原因の判別
                   href: determining-the-cause-of-a-video-stream-stall.md
                 - name: 処理の停止のデバッグ
@@ -1487,8 +1595,9 @@
             - name: '!ks.graph の使用'
               href: using--ks-graph.md
         - name: SCSI ミニポートのデバッグ
-          href: scsi-miniport-debugging.md
           items:
+            - name: SCSI ミニポートのデバッグ
+              href: scsi-miniport-debugging.md
             - name: SCSI ミニポートのデバッグの概要
               href: overview-of-scsi-miniport-debugging.md
             - name: SCSI ミニポート ドライバーをデバッグするための拡張機能
@@ -1500,8 +1609,9 @@
             - name: 再現可能な問題を分析するための重要なブレークポイント
               href: important-breakpoints-for-analyzing-reproducible-problems.md
         - name: プラグ アンド プレイのデバッグ
-          href: plug-and-play-debugging.md
           items:
+            - name: プラグ アンド プレイのデバッグ
+              href: plug-and-play-debugging.md
             - name: プラグ アンド プレイ ドライバーをデバッグするための拡張機能
               href: extensions-for-debugging-plug-and-play-drivers.md
             - name: デバイスの状態の判別
@@ -1513,8 +1623,9 @@
             - name: リソース競合の確認
               href: checking-for-resource-conflicts.md
         - name: サービス アプリケーションのデバッグ
-          href: debugging-a-service-application.md
           items:
+            - name: サービス アプリケーションのデバッグ
+              href: debugging-a-service-application.md
             - name: 最適な方法の選択
               href: choosing-the-best-method.md
             - name: サービス アプリケーションのデバッグの準備
@@ -1524,11 +1635,13 @@
             - name: サービス アプリケーションの手動デバッグ
               href: debugging-the-service-application-manually.md
 - name: Windows デバッグのシンボル (WinDbg、KD、CDB、NTSD)
-  href: symbols.md
   items:
+    - name: Windows デバッグのシンボル (WinDbg、KD、CDB、NTSD)
+      href: symbols.md
     - name: シンボルの概要
-      href: introduction-to-symbols.md
       items:
+        - name: シンボルの概要
+          href: introduction-to-symbols.md
         - name: Windows デバッガーのシンボル パス
           href: symbol-path.md
         - name: シンボルとシンボル ファイル
@@ -1536,18 +1649,21 @@
         - name: パブリック シンボルとプライベート シンボル
           href: public-and-private-symbols.md
     - name: デバッグ用シンボルへのアクセス
-      href: accessing-symbols-for-debugging.md
       items:
+        - name: デバッグ用シンボルへのアクセス
+          href: accessing-symbols-for-debugging.md
         - name: Windows シンボル ファイルのインストール
           href: installing-windows-symbol-files.md
         - name: シンボル ストアとシンボル サーバー
-          href: symbol-stores-and-symbol-servers.md
           items:
+            - name: シンボル ストアとシンボル サーバー
+              href: symbol-stores-and-symbol-servers.md
             - name: シンボル サーバーの使用
               href: using-a-symbol-server.md
             - name: SymSrv
-              href: symsrv.md
               items:
+                - name: SymSrv
+                  href: symsrv.md
                 - name: Microsoft パブリック シンボル サーバー
                   href: microsoft-public-symbols.md
                 - name: SymSrv の高度な使用方法
@@ -1561,8 +1677,9 @@
             - name: シンボル ストアのフォルダー ツリー
               href: symbol-store-folder-tree.md
             - name: SymProxy
-              href: symproxy.md
               items:
+                - name: SymProxy
+                  href: symproxy.md
                 - name: SymProxy のインストール
                   href: installing-symproxy.md
                 - name: レジストリの構成
@@ -1590,8 +1707,9 @@
         - name: デバッガーによる不要なシンボルの検索の回避
           href: avoiding-debugger-searches-for-unneeded-symbols.md
     - name: SymStore
-      href: symstore.md
       items:
+        - name: SymStore
+          href: symstore.md
         - name: SymStore のトランザクション
           href: symstore-transactions.md
         - name: ファイル システムの参照とシンボル ファイル
@@ -1601,8 +1719,9 @@
         - name: シンボル ストレージの形式
           href: symbol-storage-format.md
     - name: デバッガーによるシンボルの認識方法
-      href: how-the-debugger-recognizes-symbols.md
       items:
+        - name: デバッガーによるシンボルの認識方法
+          href: how-the-debugger-recognizes-symbols.md
         - name: シンボルの構文とシンボルの照合
           href: symbol-syntax-and-symbol-matching.md
         - name: シンボルのオプション
@@ -1610,8 +1729,9 @@
         - name: シンボル状態の省略形
           href: symbol-status-abbreviations.md
     - name: デバッグ中のシンボルに関する問題
-      href: symbol-problems-while-debugging.md
       items:
+        - name: デバッグ中のシンボルに関する問題
+          href: symbol-problems-while-debugging.md
         - name: シンボルの検証
           href: verifying-symbols.md
         - name: シンボル名の照合
@@ -1627,15 +1747,17 @@
         - name: Windows Update のオフライン シンボル
           href: symbols-windows-update.md
     - name: AgeStore
-      href: agestore.md
       items:
+        - name: AgeStore
+          href: agestore.md
         - name: AgeStore の使用
           href: using-agestore.md
         - name: AgeStore のコマンドライン オプション
           href: agestore-command-line-options.md
     - name: DBH
-      href: dbh.md
       items:
+        - name: DBH
+          href: dbh.md
         - name: DBH の使用
           href: using-dbh.md
         - name: その他の DBH の例
@@ -1645,8 +1767,9 @@
         - name: DBH コマンド
           href: dbh-commands.md
     - name: PDBCopy
-      href: pdbcopy.md
       items:
+        - name: PDBCopy
+          href: pdbcopy.md
         - name: PDBCopy の使用
           href: using-pdbcopy.md
         - name: 削除するパブリック シンボルの選択
@@ -1654,8 +1777,9 @@
         - name: PDBCopy のコマンドライン オプション
           href: pdbcopy-command-line-options.md
     - name: SymChk
-      href: symchk.md
       items:
+        - name: SymChk
+          href: symchk.md
         - name: SymChk の使用
           href: using-symchk.md
         - name: SymChk でのマニフェスト ファイルの使用
@@ -1663,14 +1787,17 @@
         - name: SymChk のコマンドライン オプション
           href: symchk-command-line-options.md
 - name: Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析
-  href: crash-dump-files.md
   items:
+    - name: Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析
+      href: crash-dump-files.md
     - name: カーネルモード ダンプ ファイル
-      href: kernel-mode-dump-files.md
       items:
+        - name: カーネルモード ダンプ ファイル
+          href: kernel-mode-dump-files.md
         - name: さまざまなカーネルモード ダンプ ファイル
-          href: varieties-of-kernel-mode-dump-files.md
           items:
+            - name: さまざまなカーネルモード ダンプ ファイル
+              href: varieties-of-kernel-mode-dump-files.md
             - name: 詳細なメモリ ダンプ
               href: complete-memory-dump.md
             - name: カーネル メモリ ダンプ
@@ -1682,13 +1809,15 @@
             - name: アクティブ メモリ ダンプ
               href: active-memory-dump.md
         - name: カーネルモード ダンプ ファイルの作成
-          href: creating-a-kernel-mode-dump-file.md
           items:
+            - name: カーネルモード ダンプ ファイルの作成
+              href: creating-a-kernel-mode-dump-file.md
             - name: カーネルモード ダンプ ファイルを有効にする
               href: enabling-a-kernel-mode-dump-file.md
             - name: システム クラッシュの強制実行
-              href: forcing-a-system-crash.md
               items:
+                - name: システム クラッシュの強制実行
+                  href: forcing-a-system-crash.md
                 - name: デバッガーからのシステム クラッシュの強制実行
                   href: forcing-a-system-crash-from-the-debugger.md
                 - name: キーボードからのシステム クラッシュの強制実行
@@ -1698,8 +1827,9 @@
             - name: カーネルモード ダンプ ファイルの検証と作成
               href: verifying-the-creation-of-a-kernel-mode-dump-file.md
         - name: カーネルモード ダンプ ファイルの分析
-          href: analyzing-a-kernel-mode-dump-file.md
           items:
+            - name: カーネルモード ダンプ ファイルの分析
+              href: analyzing-a-kernel-mode-dump-file.md
             - name: KD によるカーネルモード ダンプ ファイルの分析
               href: analyzing-a-kernel-mode-dump-file-with-kd.md
             - name: WinDbg によるカーネルモード ダンプ ファイルの分析
@@ -1707,8 +1837,9 @@
             - name: KAnalyze によるカーネルモード ダンプ ファイルの分析
               href: analyzing-a-kernel-mode-dump-file-with-kanalyze.md
     - name: ユーザーモード ダンプ ファイル
-      href: user-mode-dump-files.md
       items:
+        - name: ユーザーモード ダンプ ファイル
+          href: user-mode-dump-files.md
         - name: ユーザーモード ダンプ ファイルの分析
           href: analyzing-a-user-mode-dump-file.md
     - name: ダンプ ファイルからの情報の抽出
@@ -1718,15 +1849,17 @@
     - name: OCA ミニダンプ ファイルをデバッグする
       href: debugging-oca-minidump-files.md
 - name: バグ チェック (ブルー スクリーン)
-  href: bug-checks--blue-screens-.md
   items:
+    - name: バグ チェック (ブルー スクリーン)
+      href: bug-checks--blue-screens-.md
     - name: ブルー スクリーンの一般的なヒント
       href: general-troubleshooting-tips.md
     - name: ブルー スクリーンのデータ
       href: blue-screen-data.md
     - name: バグ チェック コード リファレンス
-      href: bug-check-code-reference2.md
       items:
+        - name: バグ チェック コード リファレンス
+          href: bug-check-code-reference2.md
         - name: 'バグ チェック 0x1:APC_INDEX_MISMATCH'
           href: bug-check-0x1--apc-index-mismatch.md
         - name: 'バグ チェック 0x2:DEVICE_QUEUE_NOT_BUSY'
@@ -2538,11 +2671,13 @@
         - name: 'バグ チェック 0xDEADDEAD:MANUALLY_INITIATED_CRASH1'
           href: bug-check-0xdeaddead--manually-initiated-crash1.md
 - name: デバッガー リファレンス
-  href: debugger-reference.md
   items:
+    - name: デバッガー リファレンス
+      href: debugger-reference.md
     - name: コマンドライン オプション
-      href: command-line-options.md
       items:
+        - name: コマンドライン オプション
+          href: command-line-options.md
         - name: CDB のコマンドライン オプション
           href: cdb-command-line-options.md
         - name: KD のコマンドライン オプション
@@ -2562,21 +2697,25 @@
         - name: SymStore のコマンドライン オプション
           href: symstore-command-line-options.md
     - name: 環境変数
-      href: environment-variables.md
       items:
+        - name: 環境変数
+          href: environment-variables.md
         - name: 一般的な環境変数
           href: general-environment-variables.md
         - name: カーネルモードの環境変数
           href: kernel-mode-environment-variables.md
     - name: デバッガー コマンド
-      href: debugger-commands.md
       items:
+        - name: デバッガー コマンド
+          href: debugger-commands.md
         - name: 構文規則
-          href: syntax-rules.md
           items:
+            - name: 構文規則
+              href: syntax-rules.md
             - name: 数値式の構文
-              href: numerical-expression-syntax.md
               items:
+                - name: 数値式の構文
+                  href: numerical-expression-syntax.md
                 - name: MASM の数値と演算子
                   href: masm-numbers-and-operators.md
                 - name: C++ の数値と演算子
@@ -2606,8 +2745,9 @@
             - name: マルチプロセッサの構文
               href: multiprocessor-syntax.md
         - name: コマンド トークン
-          href: command-tokens.md
           items:
+            - name: コマンド トークン
+              href: command-tokens.md
             - name: ; (コマンドの区切り文字)
               href: '----command-separator-.md'
             - name: '{ } (ブロックの区切り文字)'
@@ -2645,8 +2785,9 @@
             - name: .while
               href: '-while.md'
         - name: コマンド
-          href: commands.md
           items:
+            - name: コマンド
+              href: commands.md
             - name: ENTER (最後のコマンドを繰り返す)
               href: enter--repeat-last-command-.md
             - name: $<、$><、$$<、$$><、$$ >a< (スクリプト ファイルの実行)
@@ -2848,8 +2989,9 @@
             - name: z (While の実行)
               href: z--execute-while-.md
         - name: メタコマンド
-          href: meta-commands.md
           items:
+            - name: メタコマンド
+              href: meta-commands.md
             - name: .abandon (プロセスの破棄)
               href: '-abandon--abandon-process-.md'
             - name: .allow_exec_cmds (実行コマンドの許可)
@@ -3163,8 +3305,9 @@
             - name: .wtitle (ウィンドウ タイトルの設定)
               href: '-wtitle--set-window-title-.md'
         - name: Ctrl キー
-          href: control-keys.md
           items:
+            - name: Ctrl キー
+              href: control-keys.md
             - name: Ctrl + \ (現在のデバッガーのデバッグ)
               href: ctrl--.md
             - name: Ctrl + Alt + \ (現在のデバッガーのデバッグ)
@@ -3190,8 +3333,9 @@
             - name: Ctrl + W (デバッガーのバージョンの表示)
               href: ctrl-w--show-debugger-version-.md
         - name: 一般的な拡張機能のコマンド
-          href: general-extensions.md
           items:
+            - name: 一般的な拡張機能のコマンド
+              href: general-extensions.md
             - name: '!acl'
               href: '-acl.md'
             - name: '!address'
@@ -3327,8 +3471,9 @@
             - name: '!winrterr'
               href: '-winrterr.md'
         - name: カーネルモード拡張機能のコマンド
-          href: kernel-mode-extensions.md
           items:
+            - name: カーネルモード拡張機能のコマンド
+              href: kernel-mode-extensions.md
             - name: '!ahcache'
               href: '-ahcache.md'
             - name: '!alignmentfaults'
@@ -3704,8 +3849,9 @@
             - name: '!zombies'
               href: '-zombies.md'
         - name: ユーザーモード拡張機能のコマンド
-          href: user-mode-extensions.md
           items:
+            - name: ユーザーモード拡張機能のコマンド
+              href: user-mode-extensions.md
             - name: '!avrf'
               href: '-avrf.md'
             - name: '!critsec'
@@ -3737,11 +3883,13 @@
             - name: '!vprot'
               href: '-vprot.md'
         - name: 特殊な拡張機能のコマンド
-          href: specialized-extensions.md
           items:
+            - name: 特殊な拡張機能のコマンド
+              href: specialized-extensions.md
             - name: ストレージ カーネル デバッガー拡張機能
-              href: storage-kernel-debugger-extensions.md
               items:
+                - name: ストレージ カーネル デバッガー拡張機能
+                  href: storage-kernel-debugger-extensions.md
                 - name: '!storagekd.storadapter'
                   href: '-storagekd-storadapter.md'
                 - name: '!storagekd.storclass'
@@ -3759,8 +3907,9 @@
                 - name: '!storagekd.storunit'
                   href: '-storagekd-storunit.md'
             - name: Bluetooth 拡張機能 (Bthkd.dll)
-              href: bluetooh-extensions--bthkd-dll-.md
               items:
+                - name: Bluetooth 拡張機能 (Bthkd.dll)
+                  href: bluetooh-extensions--bthkd-dll-.md
                 - name: '!bthkd.bthdevinfo'
                   href: '-bthkd-bthdevinfo.md'
                 - name: '!bthkd.bthenuminfo'
@@ -3796,8 +3945,9 @@
                 - name: '!bthkd.sdpstream'
                   href: '-bthkd-sdpstream.md'
             - name: GPIO 拡張機能
-              href: gpio-extensions.md
               items:
+                - name: GPIO 拡張機能
+                  href: gpio-extensions.md
                 - name: '!gpiokd.help'
                   href: '-gpiokd-help.md'
                 - name: '!gpiokd.bankinfo'
@@ -3813,8 +3963,9 @@
                 - name: '!gpiokd.pintable'
                   href: '-gpiokd-pintable.md'
             - name: USB 3.0 拡張機能
-              href: usb-3-extensions.md
               items:
+                - name: USB 3.0 拡張機能
+                  href: usb-3-extensions.md
                 - name: USB 3.0 データの構造
                   href: usb-3-0-data-structures.md
                 - name: '!usb3kd.help'
@@ -3870,8 +4021,9 @@
                 - name: '!usb3kd.xhci_transferring'
                   href: '-usb3kd-xhci-transferring.md'
             - name: USB 2.0 デバッガー拡張機能
-              href: usb-2-0-extensions.md
               items:
+                - name: USB 2.0 デバッガー拡張機能
+                  href: usb-2-0-extensions.md
                 - name: '!usbkd.usbhelp'
                   href: '-usbkd-usbhelp.md'
                 - name: '!usbkd._ehcidd'
@@ -3985,8 +4137,9 @@
                 - name: '!usbkd.usbver'
                   href: '-usbkd-usbver.md'
             - name: RCDRKD 拡張機能
-              href: rcdrkd-extensions.md
               items:
+                - name: RCDRKD 拡張機能
+                  href: rcdrkd-extensions.md
                 - name: '!rcdrkd.rcdrhelp'
                   href: '-rcdrkd-rcdrhelp.md'
                 - name: '!rcdrkd.rcdrcrashdump'
@@ -4006,8 +4159,9 @@
                 - name: '!rcdrkd.rcdrtraceprtdebug'
                   href: '-rcdrkd-rcdrtraceprtdebug.md'
             - name: HID 拡張機能
-              href: hid-extensions.md
               items:
+                - name: HID 拡張機能
+                  href: hid-extensions.md
                 - name: '!hidkd.help'
                   href: '-hidkd-help.md'
                 - name: '!hidkd.hidfdo'
@@ -4021,8 +4175,9 @@
                 - name: '!hidkd.hidrd'
                   href: '-hidkd-hidrd.md'
             - name: Logger 拡張機能 (Logexts.dll)
-              href: logger-extensions--logexts-dll-.md
               items:
+                - name: Logger 拡張機能 (Logexts.dll)
+                  href: logger-extensions--logexts-dll-.md
                 - name: '!logexts.help'
                   href: '-logexts-help.md'
                 - name: '!logexts.logb'
@@ -4040,8 +4195,9 @@
                 - name: '!logexts.logo'
                   href: '-logexts-logo.md'
             - name: NDIS 拡張機能 (Ndiskd.dll)
-              href: ndis-extensions--ndiskd-dll-.md
               items:
+                - name: NDIS 拡張機能 (Ndiskd.dll)
+                  href: ndis-extensions--ndiskd-dll-.md
                 - name: '!ndiskd.help'
                   href: '-ndiskd-help.md'
                 - name: '!ndiskd.netadapter'
@@ -4127,8 +4283,9 @@
                 - name: '!ndiskd.netreport'
                   href: '-ndiskd-netreport.md'
             - name: RPC 拡張機能 (Rpcexts.dll)
-              href: rpc-extensions--rpcexts-dll-.md
               items:
+                - name: RPC 拡張機能 (Rpcexts.dll)
+                  href: rpc-extensions--rpcexts-dll-.md
                 - name: '!rpcexts.checkrpcsym'
                   href: '-rpcexts-checkrpcsym.md'
                 - name: '!rpcexts.eeinfo'
@@ -4154,8 +4311,9 @@
                 - name: '!rpcexts.thread'
                   href: '-rpcexts-thread.md'
             - name: ACPI 拡張機能 (Acpikd.dll と Kdexts.dll)
-              href: acpi-extensions--acpikd-dll-and-kdexts-dll-.md
               items:
+                - name: ACPI 拡張機能 (Acpikd.dll と Kdexts.dll)
+                  href: acpi-extensions--acpikd-dll-and-kdexts-dll-.md
                 - name: '!acpicache'
                   href: '-acpicache.md'
                 - name: '!acpiinf'
@@ -4215,13 +4373,15 @@
                 - name: '!rsdt'
                   href: '-rsdt.md'
             - name: グラフィック ドライバー拡張機能 (Gdikdx.dll)
-              href: graphics-driver-extensions--gdikdx-dll-.md
               items:
+                - name: グラフィック ドライバー拡張機能 (Gdikdx.dll)
+                  href: graphics-driver-extensions--gdikdx-dll-.md
                 - name: '!gdikdx.verifier'
                   href: '-gdikdx-verifier.md'
             - name: カーネル ストリーミング拡張機能 (Ks.dll)
-              href: kernel-streaming-extensions--ks-dll-.md
               items:
+                - name: カーネル ストリーミング拡張機能 (Ks.dll)
+                  href: kernel-streaming-extensions--ks-dll-.md
                 - name: '!ks.help'
                   href: '-ks-help.md'
                 - name: '!ks.kshelp'
@@ -4273,8 +4433,9 @@
                 - name: '!ks.topology'
                   href: '-ks-topology.md'
             - name: SCSI ミニポート拡張機能 (Scsikd.dll と Minipkd.dll)
-              href: scsi-miniport-extensions--scsikd-dll-and-minipkd-dll-.md
               items:
+                - name: SCSI ミニポート拡張機能 (Scsikd.dll と Minipkd.dll)
+                  href: scsi-miniport-extensions--scsikd-dll-and-minipkd-dll-.md
                 - name: '!scsikd.help'
                   href: '-scsikd-help.md'
                 - name: '!scsikd.classext'
@@ -4300,8 +4461,9 @@
                 - name: '!minipkd.srb'
                   href: '-minipkd-srb.md'
             - name: Windows ドライバー フレームワーク拡張機能 (Wdfkd.dll)
-              href: kernel-mode-driver-framework-extensions--wdfkd-dll-.md
               items:
+                - name: Windows ドライバー フレームワーク拡張機能 (Wdfkd.dll)
+                  href: kernel-mode-driver-framework-extensions--wdfkd-dll-.md
                 - name: '!wdfkd.help'
                   href: '-wdfkd-help.md'
                 - name: '!wdfkd.wdfchildlist'
@@ -4403,8 +4565,9 @@
                 - name: '!wdfkd.wdfwmi'
                   href: '-wdfkd-wdfwmi.md'
             - name: ユーザーモード ドライバー フレームワーク拡張機能 (Wudfext.dll)
-              href: user-mode-driver-framework-extensions--wudfext-dll-.md
               items:
+                - name: ユーザーモード ドライバー フレームワーク拡張機能 (Wudfext.dll)
+                  href: user-mode-driver-framework-extensions--wudfext-dll-.md
                 - name: '!wudfext.help'
                   href: '-wudfext-help.md'
                 - name: '!wudfext.umdevstack'
@@ -4448,8 +4611,9 @@
                 - name: '!wudfext.wudfusbtarget'
                   href: '-wudfext-wudfusbtarget.md'
             - name: WMI トレース拡張機能 (Wmitrace.dll)
-              href: wmi-tracing-extensions--wmitrace-dll-.md
               items:
+                - name: WMI トレース拡張機能 (Wmitrace.dll)
+                  href: wmi-tracing-extensions--wmitrace-dll-.md
                 - name: '!wmitrace.disable'
                   href: '-wmitrace-disable.md'
                 - name: '!wmitrace.dumpmini'
@@ -4491,8 +4655,9 @@
             - name: SieExtPub.dll
               href: sieextpub-dll.md
     - name: デバッガー関連の API
-      href: debugger-related-apis.md
       items:
+        - name: デバッガー関連の API
+          href: debugger-related-apis.md
         - name: シンボル サーバー API
           href: symbol-server-api.md
         - name: dbgeng.h ヘッダー ファイル
@@ -4500,8 +4665,9 @@
         - name: wdbgexts.h ヘッダー ファイル
           href: the-wdbgexts-h-header-file.md
     - name: デバッガーのエラーと警告のメッセージ
-      href: debugger-error-and-warning-messages.md
       items:
+        - name: デバッガーのエラーと警告のメッセージ
+          href: debugger-error-and-warning-messages.md
         - name: 'dbgerr001:PEB is Paged Out'
           href: dbgerr001--peb-is-paged-out.md
         - name: 'dbgerr002:Bad Pointer'
@@ -4517,11 +4683,13 @@
         - name: No Header Information Available
           href: no-header-information-available.md
     - name: WinDbg グラフィカル インターフェイスの機能
-      href: windbg-graphical-interface-features.md
       items:
+        - name: WinDbg グラフィカル インターフェイスの機能
+          href: windbg-graphical-interface-features.md
         - name: '[File]\(ファイル\) メニュー'
-          href: file-menu.md
           items:
+            - name: '[File]\(ファイル\) メニュー'
+              href: file-menu.md
             - name: File | Open Source File (ファイル | ソース ファイルを開く)
               href: file---open-source-file.md
             - name: File | Close Current Window (ファイル | 現在のウィンドウを閉じる)
@@ -4567,8 +4735,9 @@
             - name: File | Exit (ファイル | 終了)
               href: file---exit.md
         - name: '[Edit]\(編集\) メニュー'
-          href: edit-menu.md
           items:
+            - name: '[Edit]\(編集\) メニュー'
+              href: edit-menu.md
             - name: Edit | Cut (編集 | 切り取り)
               href: edit---cut.md
             - name: Edit | Copy (編集 | コピー)
@@ -4604,8 +4773,9 @@
             - name: Edit | Open/Close Log File (編集 | ログ ファイルを開く/閉じる)
               href: edit---open-close-log-file.md
         - name: '[View]\(表示\) メニュー'
-          href: view-menu.md
           items:
+            - name: '[View]\(表示\) メニュー'
+              href: view-menu.md
             - name: View | Command (表示 | コマンド)
               href: view---command.md
             - name: View | Watch (表示 | ウォッチ)
@@ -4643,8 +4813,9 @@
             - name: View | WinDbg Command Line (表示 | WinDbg コマンド ライン)
               href: view---windbg-command-line.md
         - name: '[Debug]\(デバッグ\) メニュー'
-          href: debug-menu.md
           items:
+            - name: '[Debug]\(デバッグ\) メニュー'
+              href: debug-menu.md
             - name: Debug | Go (デバッグ | 移動)
               href: debug---go.md
             - name: Debug | Go Unhandled Exception (デバッグ | 処理されない例外に移動)
@@ -4682,8 +4853,9 @@
             - name: Debug | Kernel Connection | Resynchronize (デバッグ | カーネル接続 | 再同期)
               href: debug---kernel-connection---resynchronize.md
         - name: '[Window]\(ウィンドウ\) メニュー'
-          href: window-menu.md
           items:
+            - name: '[Window]\(ウィンドウ\) メニュー'
+              href: window-menu.md
             - name: Window | Close All Source Windows (ウィンドウ | すべてのソース ウィンドウを閉じる)
               href: window---close-all-source-windows.md
             - name: Window | Close All Error Windows (ウィンドウ | すべてのエラー ウィンドウを閉じる)
@@ -4701,8 +4873,9 @@
             - name: 開いているウィンドウの一覧
               href: list-of-open-windows.md
         - name: '[Help]\(ヘルプ\) メニュー'
-          href: help-menu.md
           items:
+            - name: '[Help]\(ヘルプ\) メニュー'
+              href: help-menu.md
             - name: Help | Contents (ヘルプ | 目次)
               href: help---contents.md
             - name: Help | Index (ヘルプ | インデックス)

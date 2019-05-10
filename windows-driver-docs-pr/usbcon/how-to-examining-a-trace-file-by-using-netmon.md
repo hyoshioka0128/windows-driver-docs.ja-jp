@@ -3,32 +3,26 @@ Description: このトピックでは、例にイベント トレースの方法
 title: Netmon での USB ETW トレースの表示方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a88369c90b3896d1a7aaa4f6bdf457c80f8c3a35
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26caa503bf8ed3601146c15c2f5e73db5ac6a888
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364863"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405045"
 ---
 # <a name="how-to-view-a-usb-etw-trace-in-netmon"></a>Netmon での USB ETW トレースの表示方法
-
 
 このトピックでは、例にイベント トレースの方法は Netmon を使用してファイル。 について説明します。
 
 Netmon をインストールして構成した後に使用するため、USB ETW ファイルで」の説明に従って[Netmon と USB ETW のパーサーをインストールする方法](how-to-install-netmon-and-the-netmon-usb-parser.md)、それを使用して、トレース ファイルを確認することができます。
 
--   [ETW のファイルを開く](#opening-an-etw-file)
--   [新しい列 USB ETW パーサーの USB 3.0 ドライバー スタックします。](#new-columns-the-usb-etw-parser-for-usb-3-0-driver-stack)
--   [表示フィルター ペインにフィルターを追加します。](#adding-filters-to-the-display-filter-pane)
-
 ## <a name="opening-an-etw-file"></a>ETW のファイルを開く
-
 
 [Start] 画面で、Netmon をトレース ファイルを表示するには、ネットワーク モニターを開く"netmon"を入力します。 次のメソッドのいずれかを使用して、トレース ファイルを開きます。
 
--   **ファイル** メニューのをクリックして**オープン**、 をクリックして**キャプチャ**、.etl ファイルを選択します。
--   をクリックして、**オープン キャプチャ**ボタンをクリックし、.etl ファイルを選択します。
--   CTRL + O キーを押すし、.etl ファイルを選択します。
+* **ファイル** メニューのをクリックして**オープン**、 をクリックして**キャプチャ**、.etl ファイルを選択します。
+* をクリックして、**オープン キャプチャ**ボタンをクリックし、.etl ファイルを選択します。
+* CTRL + O キーを押すし、.etl ファイルを選択します。
 
 イベント トレースはそれぞれのドライバー スタックで発生したことを示します、個々 のイベントで構成されます。 各イベントは、ドライバー スタックによって定義されているいくつかの型のいずれかに準拠しています。
 
@@ -36,15 +30,14 @@ Netmon をインストールして構成した後に使用するため、USB ETW
 
 イベントが表示されていることを確認、**フレーム概要**ウィンドウ。 上の図は、USB 2.0 ドライバー スタックから evens を示しています。 このウィンドウで、次の列に注意してください。
 
--   **時刻のオフセット**:ログの開始時刻からのオフセットとして指定された、イベントのタイムスタンプ。
--   **プロトコル名**:このドライバーは、イベント ログに記録します。 USB イベントの場合は、ドライバーは、USB ハブまたは USB ポートが。
--   **説明**:イベントのわかりやすい名前。
+* **時刻のオフセット**:ログの開始時刻からのオフセットとして指定された、イベントのタイムスタンプ。
+* **プロトコル名**:このドライバーは、イベント ログに記録します。 USB イベントの場合は、ドライバーは、USB ハブまたは USB ポートが。
+* **説明**:イベントのわかりやすい名前。
 
 イベントを選択して、**フレーム概要**ウィンドウ。 Netmon でのイベントの詳細を表示する、**フレーム詳細**と**16 進数の詳細**ペインがあります。 **フレーム詳細**ウィンドウで、イベントの詳細を確認する項目を展開します。
 Netmon を使用して、USB のトレース ファイルを調べるの例は、次を参照してください。[ケース スタディ。ETW と Netmon を使用して不明な USB デバイスのトラブルシューティングを](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)します。
 
 ## <a name="new-columns-the-usb-etw-parser-for-usb-30-driver-stack"></a>新しい列 USB ETW パーサーの USB 3.0 ドライバー スタックします。
-
 
 USB 2.0 ドライバー スタックからのイベントの重要な型は、USB 3.0 ドライバー スタックでも定義されます。 ただし、これらの型の微妙な違いがあります。 たとえば、USB 制御転送の完了イベントの種類 (**説明**:USBPort: 完了 URB\_関数\_コントロール\_転送\_データ例)。
 
@@ -56,11 +49,11 @@ USB 3.0 ドライバー スタック イベントの種類、**フレーム詳�
 
 これらの新しい列に注目してください。
 
--   **USB デバイスの説明**
--   **USB Vid**
--   **USB の Pid**
--   **USB の長さ**
--   **USB の要求の期間**
+* **USB デバイスの説明**
+* **USB Vid**
+* **USB の Pid**
+* **USB の長さ**
+* **USB の要求の期間**
 
 ![microsoft ネットワーク モニター](images/usb-3-netmon.png)
 
@@ -68,10 +61,9 @@ USB 3.0 ドライバー スタック イベントの種類、**フレーム詳�
 
 ## <a name="adding-filters-to-the-display-filter-pane"></a>表示フィルター ペインにフィルターを追加します。
 
-
 特定のシナリオのイベントのトレースを絞り込むためには、キャプチャ フィルターを使用できます。 USB 2.0、USB 3.0 ドライバー スタックから新しいイベント トレース フィルターを記述できます。
 
-``` syntax
+```syntax
 USBIsError == 1      // Any error events from the USB drivers
 USBIsDisconnect == 1 // Show when any device disconnected
 ```
@@ -79,9 +71,7 @@ USBIsDisconnect == 1 // Show when any device disconnected
 すべての列をフィルター処理できます。 フィルターを作成するには、セルを右クリックして**追加"&lt;列名&gt;"ディスプレイ フィルターを**します。 Netmon は、その値と列名に基づいてフィルターを作成し、下に追加されます、**ディスプレイ フィルター**ウィンドウ。
 
 ## <a name="related-topics"></a>関連トピック
+
 [USB の ETW を使用してください。](using-usb-etw.md)  
 [Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  
 [ケース スタディ:ETW と Netmon を使用して不明な USB デバイスのトラブルシューティング](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)  
-
-
-

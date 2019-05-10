@@ -4,12 +4,12 @@ description: SetupAPI を使用したデバイスとドライバー パッケー
 ms.assetid: e170961b-5d12-43d5-b502-3b37e6421f6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f460b6b4ff6229bfc8a55e127388669f6a84f16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87e155d3ce7fe2be80c8487ec8b6e9c1c58f5a7b
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339399"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65455123"
 ---
 # <a name="using-setupapi-to-uninstall-devices-and-driver-packages"></a>SetupAPI を使用したデバイスとドライバー パッケージのアンインストール
 
@@ -42,7 +42,7 @@ SetupAPI)、次のメソッドを使用して、システムから。
 
 ### <a href="" id="deleting-a-driver-package-from-the-driver-store"></a> ドライバー ストアからドライバー パッケージを削除します。
 
-Windows XP 以降では、デバイスのインストール アプリケーションが呼び出すことができます、 [SetupUninstallOEMInf](https://go.microsoft.com/fwlink/p/?linkid=169503)関数を指定された削除する[INF ファイル](inf-files.md)システム INF ファイルのディレクトリから。
+Windows XP 以降では、デバイスのインストール アプリケーションが呼び出すことができます、 [SetupUninstallOEMInf](https://go.microsoft.com/fwlink/p/?linkid=169503)関数を指定された削除する[INF ファイル](overview-of-inf-files.md)システム INF ファイルのディレクトリから。
 
 Windows Vista 以降、この関数はそのも削除、[ドライバー パッケージ](driver-packages.md)から、指定した INF ファイルを含む、[ドライバー ストア](driver-store.md)します。
 

@@ -4,12 +4,12 @@ description: メモリ バッファーのライフ サイクル
 ms.assetid: abf43bf5-a4a3-4aeb-9ec5-3458252933d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa982e9b3612562a0e22700df672e9ffaf6be436
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b33b3589b85adda19af69ec000e63499c7de84a6
+ms.sourcegitcommit: e753fdd987a1bdbc4383704e18c2d81235fe9e05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390165"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65171945"
 ---
 # <a name="memory-buffer-life-cycle"></a>メモリ バッファーのライフ サイクル
 
@@ -28,8 +28,8 @@ ms.locfileid: "63390165"
 
 次の使用シナリオを検討してください。
 
--   シナリオ 1:[ドライバーは、KMDF から I/O 要求を受け取るし、処理するには、完了したら、その](#scenario-1-driver-receives-an-i-o-request-from-kmdf-handles-it-and-completes-it)します。
--   例 2:[ドライバーは、KMDF から I/O 要求を受け取るし、I/O をターゲットに転送](#scenario-2-driver-receives-an-i-o-request-from-kmdf-and-forwards-it-to-an-i-o-target)します。
+-   シナリオ 1:[ドライバーは、KMDF から I/O 要求を受け取るし、処理するには、完了したら、その](#scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it)します。
+-   例 2:[ドライバーは、KMDF から I/O 要求を受け取るし、I/O をターゲットに転送](#scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target)します。
 -   例 3:[ドライバーは、既存のメモリ オブジェクトを使用する I/O 要求を発行](#scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object)します。
 -   シナリオ 4:[ドライバーは、新しいメモリ オブジェクトを使用する I/O 要求を発行します。](#scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object)
 -   シナリオ 5:[ドライバーは、作成した要求オブジェクトを再利用します。](#scenario-5-driver-reuses-a-request-object-that-it-created)

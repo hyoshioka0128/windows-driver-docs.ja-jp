@@ -3,12 +3,12 @@ Description: KMDF ベースの USB クライアント ドライバーのソー�
 title: USB クライアント ドライバー コードの構造 (KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 739708ddef79aca1fba280b640b61615cb5da598
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7e56f8d8a4aedaafeec4343419fd918a6879e67
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355153"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405087"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-kmdf"></a>USB クライアント ドライバー コード構造について (KMDF)
 
@@ -17,9 +17,9 @@ ms.locfileid: "63355153"
 
 これらのセクションでは、テンプレート コードに関する情報を提供します。
 
--   [ドライバーのソース コード](#driver)
--   [デバイスのソース コード](#device)
--   [キュー ソース コード](#queue)
+-   [ドライバーのソース コード](#driver-source-code)
+-   [デバイスのソース コード](#device-source-code)
+-   [キュー ソース コード](#queue-source-code)
 -   [関連トピック](#related-topics)
 
 KMDF のテンプレート コードを生成する方法の詳細については、次を参照してください。 [、最初の USB クライアント ドライバー (KMDF) を書き込む方法](tutorial--write-your-first-usb-client-driver--kmdf-.md)します。
@@ -291,7 +291,7 @@ MyUSBDriver_CreateDevice(
         後に、 [ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)呼び出しが完了すると、クライアント ドライバーがデバイスのフレームワークによって割り当てられたメモリ ブロックへのポインターを格納する新しいフレームワーク デバイス オブジェクトを識別するハンドルを受け取りますコンテキスト。 クライアント ドライバーられるようになりましたポインター デバイス コンテキストを呼び出すことによって、 **WdfObjectGet\_デバイス\_コンテキスト**マクロ。
 
 -   呼び出すことによって、クライアント ドライバーのデバイス インターフェイスの GUID を登録、 [ **WdfDeviceCreateDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff545935)メソッド。 アプリケーションは、この GUID を使用して、ドライバーと通信できます。 GUID 定数は、ヘッダーで宣言されて public.h します。
--   デバイスの I/O 転送キューを設定します。 テンプレート コード定義 MyUSBDriver\_QueueInitialize、については、キューを設定するためのヘルパー ルーチン、[ソース コードをキュー](#queue)セクション。
+-   デバイスの I/O 転送キューを設定します。 テンプレート コード定義 MyUSBDriver\_QueueInitialize、については、キューを設定するためのヘルパー ルーチン、[ソース コードをキュー](#queue-source-code)セクション。
 
 ## <a name="device-source-code"></a>デバイスのソース コード
 
