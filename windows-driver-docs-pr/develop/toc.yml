@@ -1,8 +1,9 @@
-- name: ドライバーの開発、テスト、および展開
+- name: ドライバーの開発
   href: index.md
-- name: ユニバーサル ドライバーの概要
-  href: getting-started-with-universal-drivers.md
+- name: ユニバーサル ドライバー
   items:
+    - name: ユニバーサル ドライバーの概要
+      href: getting-started-with-universal-drivers.md
     - name: ユニバーサル Windows ドライバーのビルド
       href: building-a-universal-driver.md
     - name: ユニバーサル ドライバーの検証
@@ -17,22 +18,22 @@
       href: windows-10-editions-for-universal-drivers.md
     - name: "Windows\_10 のドライバーの収束モデル"
       href: driver-model-convergence.md
-- name: 新しいデバイス ファンクション ドライバーの作成
-  href: creating-a-new-driver.md
-- name: 新しいフィルター ドライバーの作成
-  href: creating-a-new-filter-driver.md
+- name: ドライバーのビルド
   items:
+    - name: 新しいデバイス ファンクション ドライバーの作成
+      href: creating-a-new-driver.md
+    - name: 新しいフィルター ドライバーの作成
+      href: creating-a-new-filter-driver.md
     - name: デバイス フィルター ドライバーの順序
       href: device-filter-driver-ordering.md
-- name: 新しいソフトウェア ドライバーの作成
-  href: creating-a-new-software-driver.md
-- name: 新しいプリミティブ ドライバーの作成
-  href: creating-a-primitive-driver.md
-- name: 既にあるソース ファイルからのドライバーの作成
-  href: creating-a-driver-from-existing-source-files.md
-- name: WDK を使ったドライバーのビルド
-  href: building-a-driver.md
-  items:
+    - name: 新しいソフトウェア ドライバーの作成
+      href: creating-a-new-software-driver.md
+    - name: 新しいプリミティブ ドライバーの作成
+      href: creating-a-primitive-driver.md
+    - name: 既にあるソース ファイルからのドライバーの作成
+      href: creating-a-driver-from-existing-source-files.md
+    - name: WDK を使ったドライバーのビルド
+      href: building-a-driver.md
     - name: 異なるバージョンの Windows に対するドライバーのビルド
       href: building-drivers-for-different-versions-of-windows.md
     - name: WDK を使った ARM64 ドライバーのビルド
@@ -55,25 +56,26 @@
       href: mof-compiler-properties-for-driver-projects.md
     - name: ドライバー プロジェクトの Stampinf プロパティ
       href: stampinf-properties-for-driver-projects.md
-- name: WDK 8.1 プロジェクトから WDK 10 への変換
-  href: converting-wdk-8-1-projects-to-wdk-10.md
-- name: コード分析ツールと検証ツールを使ったドライバーの分析
-  href: analyzing-driver-quality-by-using-code-analysis-tools.md
-- name: コンピューターの手動ドライバー展開の準備
-  href: preparing-a-computer-for-manual-driver-deployment.md
-- name: コンピューターのプロビジョニングで実行される処理 (WDK 8.1)
-  href: what-happens-when-you-provision-a-computer--wdk-8-1-.md
-- name: コンピューターのプロビジョニングで実行される処理 (WDK 8.0)
-  href: what-happens-when-you-provision-a-computer--wdk-8-0-.md
-- name: ドライバーの展開、テスト、およびデバッグに関する構成のトラブルシューティング
-  href: troubleshooting-configuration-of-driver-deployment--testing-and-debugging.md
-- name: ドライバー パッケージの作成
-  href: creating-a-driver-package.md
-- name: デバイス メタデータ パッケージの作成
-  href: creating-a-device-metadata-package.md
+    - name: WDK 8.1 プロジェクトから WDK 10 への変換
+      href: converting-wdk-8-1-projects-to-wdk-10.md
+    - name: コード分析ツールと検証ツールを使ったドライバーの分析
+      href: analyzing-driver-quality-by-using-code-analysis-tools.md
+    - name: コンピューターの手動ドライバー展開の準備
+      href: preparing-a-computer-for-manual-driver-deployment.md
+    - name: コンピューターのプロビジョニングで実行される処理 (WDK 8.1)
+      href: what-happens-when-you-provision-a-computer--wdk-8-1-.md
+    - name: コンピューターのプロビジョニングで実行される処理 (WDK 8.0)
+      href: what-happens-when-you-provision-a-computer--wdk-8-0-.md
+    - name: ドライバーの展開、テスト、およびデバッグに関する構成のトラブルシューティング
+      href: troubleshooting-configuration-of-driver-deployment--testing-and-debugging.md
+    - name: ドライバー パッケージの作成
+      href: creating-a-driver-package.md
+    - name: デバイス メタデータ パッケージの作成
+      href: creating-a-device-metadata-package.md
 - name: ドライバーへの署名
-  href: signing-a-driver.md
   items:
+    - name: ドライバーへの署名
+      href: signing-a-driver.md
     - name: 一般リリースのためのカーネル ドライバーへの構成証明署名
       href: attestation-signing-a-kernel-driver-for-public-release.md
     - name: 開発中とテスト中のドライバーへの署名
@@ -82,9 +84,10 @@
       href: signing-a-driver-for-public-release.md
     - name: ドライバーの署名のプロパティ
       href: driver-signing-properties.md
-- name: テスト コンピューターへのドライバーの展開
-  href: deploying-a-driver-to-a-test-computer.md
+- name: ドライバーの展開
   items:
+    - name: テスト コンピューターへのドライバーの展開
+      href: deploying-a-driver-to-a-test-computer.md
     - name: ドライバー パッケージ プロジェクトの展開プロパティ
       href: deployment-properties-for-driver-projects.md
     - name: ドライバー パッケージ プロジェクトのドライバーの検証ツール プロパティ
@@ -102,38 +105,38 @@
 - name: ドライバーのデバッグ
   href: debugging-a-driver.md
 - name: ドライバーのテスト
-  href: testing-a-driver.md
   items:
+    - name: ドライバーのテスト
+      href: testing-a-driver.md
     - name: 開発中のドライバーのテストに関するヒント
       href: strategies-for-testing-drivers-during-development.md
     - name: Visual Studio を使って実行時にドライバーをテストする方法
       href: testing-a-driver-at-runtime.md
-      items:
-        - name: WDK 8.1 の HCK テスト スイートを実行する方法
-          href: run-the-hck-test-suites-in-the-wdk.md
-        - name: Device Fundamental テストを選んで構成する方法
-          href: how-to-select-and-configure-the-device-fundamental-tests.md
-        - name: ドライバー パッケージをテストする方法
-          href: test-a-driver-package.md
-        - name: ドライバーのテスト結果ログを読み取る方法
-          href: read-the-driver-test-results-log.md
-        - name: コマンド プロンプトから実行時にドライバーをテストする方法
-          href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
-        - name: WDK を使った Device Fundamental テストのトラブルシューティング
-          href: troubleshooting-the-device-fundamental-tests.md
+    - name: WDK 8.1 の HCK テスト スイートを実行する方法
+      href: run-the-hck-test-suites-in-the-wdk.md
+    - name: Device Fundamental テストを選んで構成する方法
+      href: how-to-select-and-configure-the-device-fundamental-tests.md
+    - name: ドライバー パッケージをテストする方法
+      href: test-a-driver-package.md
+    - name: ドライバーのテスト結果ログを読み取る方法
+      href: read-the-driver-test-results-log.md
+    - name: コマンド プロンプトから実行時にドライバーをテストする方法
+      href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
+    - name: WDK を使った Device Fundamental テストのトラブルシューティング
+      href: troubleshooting-the-device-fundamental-tests.md
     - name: ドライバー テスト テンプレートを使ってドライバー テストを作成する方法
       href: how-to-write-a-driver-test-.md
-      items:
-        - name: テスト メタデータを追加する方法
-          href: to-add-test-metadata.md
-- name: ドライバー検証ツール ログの作成
-  href: creating-a-driver-verification-log.md
+    - name: テスト メタデータを追加する方法
+      href: to-add-test-metadata.md
+    - name: 静的ドライバー検証ツールの既知の問題 - Windows 10 October 2018 Update (バージョン 1809)
+      href: static-driver-verifier-known-issues.md
+- name: ログ記録
   items:
+    - name: ドライバー検証ツール ログの作成
+      href: creating-a-driver-verification-log.md
     - name: コード分析ツールのログ ファイルの作成
       href: creating-a-log-file-for-the-code-analysis-tool.md
     - name: 静的ドライバー検証ツールのログ ファイルの作成
       href: creating-a-log-file-for-static-driver-verifier.md
-    - name: 静的ドライバー検証ツールの既知の問題 - Windows 10 October 2018 Update (バージョン 1809)
-      href: static-driver-verifier-known-issues.md
 - name: ドライバー パッケージの配布
   href: distributing-a-driver-package-win8.md

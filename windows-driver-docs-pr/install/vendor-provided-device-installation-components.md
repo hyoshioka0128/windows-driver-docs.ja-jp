@@ -4,12 +4,12 @@ description: ベンダー提供のデバイスのインストール コンポー
 ms.assetid: d86bdf75-9726-4b44-8753-7e9c19e88a61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fa6b7aa475aae900ec78004268c82625ff6ff5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd9ccabaafab72081086a69b9bcee7b834eaf6a4
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339325"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65455015"
 ---
 # <a name="vendor-provided-device-installation-components"></a>ベンダー提供のデバイスのインストール コンポーネント
 
@@ -19,7 +19,7 @@ ms.locfileid: "63339325"
 <a href="" id="driver-package"></a>ドライバー パッケージ  
 A[ドライバー パッケージ](driver-packages.md)の Windows でサポートされるデバイスを指定する必要がありますが、すべてのソフトウェア コンポーネントで構成されます。 これらのコンポーネントを以下に示します。
 
--   [INF ファイル](inf-files.md)デバイスとドライバーのインストールに関する情報を提供します。 詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff538378)します。
+-   [INF ファイル](overview-of-inf-files.md)デバイスとドライバーのインストールに関する情報を提供します。 詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff538378)します。
 
 -   A[カタログ ファイル](catalog-files.md)のデジタル署名を含む、[ドライバー パッケージ](driver-packages.md)します。 詳細については、次を参照してください。[デジタル署名](digital-signatures.md)します。
 
