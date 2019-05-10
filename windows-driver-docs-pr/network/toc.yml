@@ -148,6 +148,8 @@
     - name: NDIS 6.0 以降の概要
       href: introductions-to-ndis-6-0-and-later.md
       items:
+        - name: NDIS 6.83 の概要
+          href: introduction-to-ndis-6-83.md
         - name: NDIS 6.82 の概要
           href: introduction-to-ndis-6-82.md
         - name: NDIS 6.81 の概要
@@ -285,6 +287,8 @@
     - name: NDIS ドライバーの新しい NDIS バージョンへの移植
       href: porting-ndis-drivers-to-newer-ndis-versions.md
       items:
+        - name: NDIS 6.x ドライバーの NDIS 6.83 への移植
+          href: porting-ndis-6-x-drivers-to-ndis-6-83.md
         - name: NDIS 6.x ドライバーの NDIS 6.82 への移植
           href: porting-ndis-6-x-drivers-to-ndis-6-82.md
         - name: NDIS 6.x ドライバーの NDIS 6.81 への移植
