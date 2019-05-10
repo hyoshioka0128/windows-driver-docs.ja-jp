@@ -4,12 +4,12 @@ description: 埋め込みの署名を使用したドライバーのリリース�
 ms.assetid: ffea2479-83ee-4d94-a5e6-73ecea9fc17d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3a5211765376f79d059820454d2f7747b3256a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28d9032c9dbc09a1a3663c9d05046966c0f8df2a
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371069"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106370"
 ---
 # <a name="release-signing-a-driver-through-an-embedded-signature"></a>埋め込みの署名を使用したドライバーのリリース署名
 
@@ -35,7 +35,7 @@ ms.locfileid: "63371069"
 テスト署名、 *toaster.sys*ファイルを次のコマンドラインを実行します。
 
 ```cpp
-Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll amd64\toaster.sys
+Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll amd64\toaster.sys
 ```
 
 各項目の意味は次のとおりです。
@@ -43,6 +43,8 @@ Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http
 -   **サインオン**コマンドは、指定されたカーネル モード バイナリ ファイルに署名する署名ツールを構成します。 *amd64\\toaster.sys*します。
 
 -   **/V**で SignTool の表示が正常に実行し、警告メッセージの詳細な操作を有効にします。
+
+-   **/Fd**オプションは、ファイルの署名を作成するために使用するファイル ダイジェスト アルゴリズムを指定します。 既定値には SHA1 です。
 
 -   **/Ac**オプションは、クロス証明書を格納するファイルの名前を指定します (*MSCV VSClass3.cer*)、CA から取得します。 クロス証明書は、現在のディレクトリにない場合は、完全なパス名を使用します。
 

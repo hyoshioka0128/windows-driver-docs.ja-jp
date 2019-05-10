@@ -1,11 +1,13 @@
 - name: Bluetooth 設計ガイド
-  href: index.md
   items:
+    - name: Bluetooth 設計ガイド
+      href: index.md
     - name: Windows 10 向けの Bluetooth ユニバーサル Windows ドライバー モデル
       href: universal-bluetooth-driver-model-for-windows-10.md
     - name: Bluetooth プロファイル ドライバーの概要
-      href: bluetooth-profile-drivers-overview.md
       items:
+        - name: Bluetooth プロファイル ドライバーの概要
+          href: bluetooth-profile-drivers-overview.md
         - name: Bluetooth ドライバー スタック
           href: bluetooth-driver-stack.md
         - name: Bluetooth デバイスのインストール
@@ -15,8 +17,9 @@
     - name: Bluetooth 低エネルギーの概要
       href: bluetooth-low-energy-overview.md
     - name: Bluetooth ドライバー スタックの使用
-      href: using-the-bluetooth-driver-stack.md
       items:
+        - name: Bluetooth ドライバー スタックの使用
+          href: using-the-bluetooth-driver-stack.md
         - name: Bluetooth IOCTL
           href: bluetooth-ioctls2.md
         - name: Bluetooth インターフェイスの照会
@@ -32,8 +35,9 @@
         - name: Bluetooth プロファイル ドライバーでの L2CAP 接続の受け入れ
           href: accepting-l2cap-connections-in-a-bluetooth-profile-driver.md
         - name: SDP サーバーとの通信
-          href: communicating-with-sdp-servers.md
           items:
+            - name: SDP サーバーとの通信
+              href: communicating-with-sdp-servers.md
             - name: SDP サービス情報へのアクセス
               href: accessing-sdp-service-information.md
             - name: SDP レコードのツリー構造への変換
@@ -47,8 +51,9 @@
     - name: Microsoft 定義の Bluetooth HCI のコマンドとイベント
       href: microsoft-defined-bluetooth-hci-commands-and-events.md
     - name: Bluetooth についてよく寄せられる質問
-      href: bluetooth-faq.md
       items:
+        - name: Bluetooth についてよく寄せられる質問
+          href: bluetooth-faq.md
         - name: Windows 10 での Bluetooth バージョンとプロファイルのサポート
           href: general-bluetooth-support-in-windows.md
         - name: 以前の Windows バージョンでの Bluetooth バージョンとプロファイルのサポート
@@ -68,8 +73,9 @@
         - name: Bluetooth の付録
           href: bluetooth-faq--appendix-c.md
     - name: Bluetooth 電源管理処理用トランスポート バス ドライバーのガイドライン
-      href: transport-bus-driver-for-bluetooth-power-control-handling-guidelines.md
       items:
+        - name: Bluetooth 電源管理処理用トランスポート バス ドライバーのガイドライン
+          href: transport-bus-driver-for-bluetooth-power-control-handling-guidelines.md
         - name: Bluetooth 用トランスポート バス ドライバー
           href: transport-bus-driver-for-bluetooth.md
         - name: Bluetooth コア ドライバー レイヤーとサポートされている電源遷移
@@ -79,8 +85,9 @@
         - name: トランスポート バス ドライバーについてよく寄せられる質問
           href: transport-bus-driver-faq.md
     - name: Bluetooth LE 近接通信プロファイルのデバイスとアプリ
-      href: implementing-a-bluetooth-le-proximity-profile-device-and-application.md
       items:
+        - name: Bluetooth LE 近接通信プロファイルのデバイスとアプリ
+          href: implementing-a-bluetooth-le-proximity-profile-device-and-application.md
         - name: Bluetooth 近接通信プロファイル
           href: bluetooth-proximity-profile.md
         - name: 近接通信プロファイルの実装の詳細

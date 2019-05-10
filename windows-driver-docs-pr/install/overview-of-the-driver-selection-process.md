@@ -4,12 +4,12 @@ description: ドライバーの選択プロセスの概要
 ms.assetid: 120ab9f9-6ac5-4b76-bee1-2e975d0c38f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d154e17f867200696eb190a175b257daa70058
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8fef4436d078e4fccb7d62e9968867e8bc8c4011
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388302"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456369"
 ---
 # <a name="overview-of-the-driver-selection-process"></a>ドライバーの選択プロセスの概要
 
@@ -22,7 +22,7 @@ Windows ドライバーとしてを表す、*ドライバー ノード*、任意
 
 Windows デバイスと一致するドライバーの特定の場所を検索します。 ドライバーでは、次の場合、デバイスが一致します。
 
--   プラグ アンド プレイ (PnP) のいずれかの[識別文字列](device-identification-strings.md)デバイスとデバイスの識別文字列が一致するバス ドライバーによって報告された、 [ **INF*モデル*セクション**](inf-models-section.md)エントリのドライバーの[INF ファイル](inf-files.md)します。
+-   プラグ アンド プレイ (PnP) のいずれかの[識別文字列](device-identification-strings.md)デバイスとデバイスの識別文字列が一致するバス ドライバーによって報告された、 [ **INF*モデル*セクション**](inf-models-section.md)エントリのドライバーの[INF ファイル](overview-of-inf-files.md)します。
 
 -   一致するデバイス id の文字列の場合、 [ **INF*モデル*セクション**](inf-models-section.md)エントリを指定します、 *TargetOSVersion*装飾、装飾では、デバイスのインストールをオペレーティング システムのバージョンと一致します。
 
@@ -60,7 +60,7 @@ Windows Vista 以降、Windows をランク付けしてドライバーをドラ�
 
 Windows では、デバイスに最適なものとして、ドライバーを最低ランク値を選択します。
 
-ただしはデバイスの最適な一致する複数の均等にランク付けされたドライバーがある場合は、Windows を使用して、ドライバーの日付とバージョン ドライバーを選択します。 ドライバーの日付とバージョンがで指定された、 [ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)に含まれるドライバーの[INF ファイル](inf-files.md)します。
+ただしはデバイスの最適な一致する複数の均等にランク付けされたドライバーがある場合は、Windows を使用して、ドライバーの日付とバージョン ドライバーを選択します。 ドライバーの日付とバージョンがで指定された、 [ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)に含まれるドライバーの[INF ファイル](overview-of-inf-files.md)します。
 
 Windows は、次の条件を使用し、デバイスのドライバーを選択します。
 

@@ -4,12 +4,12 @@ description: このセクションでは、HYPER-V 拡張可能スイッチの�
 ms.assetid: 78181C72-FBFD-4860-A664-C297997D780F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33ef4da2acff5012ec9f058c1f29aaa7bc1eb4ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 580a23ec1d8cb1622c0e6c47bad2a9723a29e059
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373009"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405170"
 ---
 # <a name="overview-of-the-hyper-v-extensible-switch"></a>Hyper-V 拡張可能スイッチの概要
 
@@ -17,7 +17,7 @@ ms.locfileid: "63373009"
 Windows Server 2012 では、HYPER-V 拡張可能スイッチ (HYPER-V 仮想スイッチ)、これは、HYPER-V 親パーティションの管理オペレーティング システムで実行されている仮想イーサネット スイッチについて説明します。 このページでは、次の項目について説明します。
 
 -   [バック グラウンドの読み取り](#background-reading)
--   [HYPER-V 拡張可能スイッチおよびネットワーク アダプターの種類](#types-of-hyper-v--extensible-switches-and-network-adapters)
+-   [HYPER-V 拡張可能スイッチおよびネットワーク アダプターの種類](#types-of-hyper-v-extensible-switches-and-network-adapters)
 -   [種類の拡張可能スイッチの拡張機能](#types-of-extensible-switch-extensions)
 -   [HYPER-V 拡張可能スイッチのアーキテクチャ ダイアグラム](#hyper-v-extensible-switch-architectural-diagrams)
 

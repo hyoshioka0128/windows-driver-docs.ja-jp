@@ -6,22 +6,40 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d640af21f723a4ea58a2bf83bc2286cb83a31b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: ff41adbef91d70e3a9c6952cc381148512c8f210
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903704"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106412"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg プレビュー - 新機能
 
 このトピックでは、新 WinDbg プレビュー デバッガーについてを説明します。
 
+## <a name="10190418001"></a>1.0.1904.18001
+
+**SymSetDiaSession エラーの修正**-の間にエラーがいくつかの状況で起動されてから WinDbg プレビューのレポートされてきました。 読み込む前に、プロセスに DbgHelp のバージョンを挿入しようとするいくつかの外部アプリケーションがあります。 不足している機能は、このエラーは発生しようとすると、これらの機能を使用して、その一部 DbgHelp のバージョンを使用しています。 この修正プログラムを追加したおまだが発生するシナリオがある場合に追跡されます。
+
+**フォント コントロール**-フォントとフォント サイズを制御する設定が追加されました。 テキスト ウィンドウ (逆アセンブリ、ソース、コマンドなどのように windows モノスペース) 用とツール ウィンドウ ([ローカル]、スタックなど) の 2 つの異なる設定があります。 今後の更新をこれらのオプションの影響を受けませんいくつかの領域があります。
+
+**機能強化を強調表示**- テキストの強調表示、コマンド ウィンドウは内のテキストのようになりましたも強調表示、windows のソースとメモで永続的な。
+
+**機能強化を読み込むソース**-ファイル ソースの読み込みの動作が変更されました。 これまでソース ファイルを開くときにその他のコマンドを実行するなどのエンジン操作をでした。 考えられるまたは予測可能でした。 良い並列処理とソースを開く操作の信頼性を高めるのキャンセルを有効にする、読み込みが発生しますが変更されました。
+
+その他の変更とバグ修正:
+* ソース ウィンドウのコンテキスト メニューには、「逆アセンブルを表示」を追加します。
+* [逆アセンブル] ウィンドウで「現在の命令に従う」チェック ボックスを追加します。
+* 緩やかに変化を多数のテキストを出力するときに実行するコマンド ウィンドウを原因となったバグを修正しました。
+* 変更したページと pagedown キーを Visual Studio と同様に実行します。
+* ソース ウィンドウで、ASM ファイルが開かれたときに、今度は基本的なコメント、文字列、およびディレクティブの強調表示
+
+
 ## <a name="10181212001"></a>1.0.1812.12001
 
 このバージョンには、これらの更新プログラムが含まれています。
 
-**デバッガー データ モデルC++ヘッダー** -新しいがあるC++を使用してモデルのヘッダー、DbgModel.h、デバッガーのデータを拡張するための Windows SDK の一部として含めるC++します。 詳細を確認することができます[デバッガー データ モデルC++概要](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/data-model-cpp-overview)します。 このリリースには、'dx' コマンド、JavaScript、および新しい DbgModel.h ヘッダー経由でアクセスできるデバッガー データ モデルにいくつかより多くの「API スタイル」機能を追加する新しい拡張機能が含まれています。 このデータからのアセンブリとコードの実行に関するサポート技術情報を含めるモデルの拡張機能の拡張機能、 [Debugger.Utility.Code](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)名前空間、およびにより、ローカル ファイル システム、 [Debugger.Utility.FileSystem名前空間](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)します。
+**デバッガー データ モデルC++ヘッダー** -新しいがあるC++を使用してモデルのヘッダー、DbgModel.h、デバッガーのデータを拡張するための Windows SDK の一部として含めるC++します。 詳細を確認することができます[デバッガー データ モデルC++概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)します。 このリリースには、'dx' コマンド、JavaScript、および新しい DbgModel.h ヘッダー経由でアクセスできるデバッガー データ モデルにいくつかより多くの「API スタイル」機能を追加する新しい拡張機能が含まれています。 このデータからのアセンブリとコードの実行に関するサポート技術情報を含めるモデルの拡張機能の拡張機能、 [Debugger.Utility.Code](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)名前空間、およびにより、ローカル ファイル システム、 [Debugger.Utility.FileSystem名前空間](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)します。
 
 **統合型の拡張機能**でこの新しい API の拡張がある新しいサンプル GitHub リポジトリ、 https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypesします。 この JavaScript 拡張機能は、基本的な C ヘッダー ファイルを読み込んで、構造体や共用体のヘッダーで定義されている統合型情報を定義します。 Dx のコマンドでメモリ表示できる構造化された場合と、これらの型の型情報を pdb ファイルを作成する必要があります。
 

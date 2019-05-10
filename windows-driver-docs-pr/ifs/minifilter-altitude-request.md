@@ -4,12 +4,12 @@ description: ミニフィルター高度要求
 ms.assetid: 4861E5FC-9883-455F-A925-EBAFC890F568
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 310b6abb180422126f89f0cdb9a27d946f2fd047
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e04b07a95c8f7946baafe256f32261c713bbb4ae
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384284"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106367"
 ---
 # <a name="minifilter-altitude-request"></a>ミニフィルター高度要求
 
@@ -18,6 +18,8 @@ ms.locfileid: "63384284"
 ミニフィルターの高度の識別子を要求するには、ASCII テキスト電子メール メッセージに電子メールを送信[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)件名。「ミニフィルターの高度要求」します。 電子メールの本文を含める必要があります、下のフィールドと対応する情報。
 
 このフィルターの高度は、指定した連絡先の電子メール アドレスにメールで送信できます。
+
+電子メールを送信することもできます。 [ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)既存の高度に関連付けられている情報を更新します。
 
 <table>
 <colgroup>

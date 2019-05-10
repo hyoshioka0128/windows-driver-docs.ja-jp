@@ -1,6 +1,7 @@
 - name: Windows ドライバー サンプル
-  href: index.md
   items:
+    - name: Windows ドライバー サンプル
+      href: index.md
     - name: オーディオ ドライバーのサンプル
       href: audio-driver-samples.md
     - name: AVStream ドライバーのサンプル

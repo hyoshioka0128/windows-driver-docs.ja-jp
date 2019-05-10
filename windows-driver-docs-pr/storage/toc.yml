@@ -1,18 +1,21 @@
 - name: 記憶装置ドライバー設計ガイド
-  href: index.md
   items:
+    - name: 記憶装置ドライバー設計ガイド
+      href: index.md
     - name: Windows ストレージ ドライバーの開発のロードマップ
       href: roadmap-for-developing-storage-drivers.md
     - name: Storport ミニポート ドライバーの開発のロードマップ
       href: roadmap-for-developing-storport-miniport-drivers.md
     - name: ストレージ ドライバー
-      href: storage-drivers.md
       items:
+        - name: ストレージ ドライバー
+          href: storage-drivers.md
         - name: Windows 記憶装置ドライバーのアーキテクチャ
           href: storage-driver-architecture.md
         - name: ストレージ ドライバーとデバイス オブジェクト
-          href: storage-drivers-and-device-objects.md
           items:
+            - name: ストレージ ドライバーとデバイス オブジェクト
+              href: storage-drivers-and-device-objects.md
             - name: SCSI HBA のデバイス オブジェクトの例
               href: device-object-example-for-a-scsi-hba.md
             - name: IEEE 1394 コントローラーのデバイス オブジェクトの例
@@ -27,13 +30,14 @@
           href: restrictions-on-pageable-code-in-storage-drivers.md
         - name: 書き込みキャッシュのプロパティのクエリ
           href: querying-for-the-write-cache-property.md
-        - name: 記憶装置のデバイス一意識別子 (DUID)
+        - name: ストレージ デバイスのストレージ一意識別子 (DUID)
           href: device-unique-identifiers--duids--for-storage-devices.md
         - name: 一般的なストレージの I/O 制御コード
           href: general-storage-io-control-codes.md
         - name: LSI_U3 デバイスの Storport ミニポート ドライバーのサンプル
-          href: sample-storport-miniport-driver-for-an-lsi-u3-device.md
           items:
+            - name: LSI_U3 デバイスの Storport ミニポート ドライバーのサンプル
+              href: sample-storport-miniport-driver-for-an-lsi-u3-device.md
             - name: 初期化
               href: initialization.md
             - name: メインの I/O パス
@@ -43,8 +47,9 @@
             - name: ScsiPort から StorPort への移植
               href: porting-from-scsiport-to-storport.md
     - name: 記憶域クラス ドライバー
-      href: storage-class-drivers.md
       items:
+        - name: 記憶域クラス ドライバー
+          href: storage-class-drivers.md
         - name: 記憶域クラス ドライバーの概要
           href: introduction-to-storage-class-drivers.md
         - name: 記憶域クラス ドライバーの一般的な機能
@@ -58,8 +63,9 @@
         - name: 記憶域クラス ドライバーのデバイス拡張の設定
           href: setting-up-a-storage-class-driver-s-device-extension.md
         - name: 記憶域クラス ドライバーの標準ドライバー ルーチン
-          href: storage-class-driver-s-standard-driver-routines.md
           items:
+            - name: 記憶域クラス ドライバーの標準ドライバー ルーチン
+              href: storage-class-driver-s-standard-driver-routines.md
             - name: 記憶域クラス ドライバーの DriverEntry ルーチン
               href: storage-class-driver-s-driverentry-routine.md
             - name: 記憶域クラス ドライバーの AddDevice ルーチン
@@ -69,8 +75,9 @@
             - name: 記憶域クラス ドライバーの IoCompletion ルーチン
               href: storage-class-driver-s-iocompletion-routines.md
         - name: 記憶域周辺機器への要求の処理
-          href: handling-requests-to-storage-peripherals.md
           items:
+            - name: 記憶域周辺機器への要求の処理
+              href: handling-requests-to-storage-peripherals.md
             - name: SCSI パススルー要求の処理
               href: handling-scsi-pass-through-requests.md
             - name: 記憶域周辺機器への PnP 要求の処理
@@ -80,8 +87,9 @@
             - name: 記憶域要求のキュー
               href: queuing-storage-requests.md
         - name: 記憶域クラス ドライバーの内部ルーチン
-          href: storage-class-driver-s-internal-routines.md
           items:
+            - name: 記憶域クラス ドライバーの内部ルーチン
+              href: storage-class-driver-s-internal-routines.md
             - name: 記憶域クラス ドライバーの ClaimDevice ルーチン
               href: storage-class-driver-s-claimdevice-routine.md
             - name: 記憶域クラス ドライバーの GetDescriptor ルーチン
@@ -103,16 +111,19 @@
         - name: 記憶域クラス ドライバーでのマウント マネージャーのサポート
           href: supporting-mount-manager-requests-in-a-storage-class-driver.md
     - name: 記憶域ポート ドライバー
-      href: storage-port-drivers.md
       items:
+        - name: 記憶域ポート ドライバー
+          href: storage-port-drivers.md
         - name: SCSI ポート ドライバー
-          href: scsi-port-driver.md
           items:
+            - name: SCSI ポート ドライバー
+              href: scsi-port-driver.md
             - name: SCSI ポートによって提供される機能
               href: capabilities-provided-by-scsi-port.md
             - name: SCSI ポートの記憶域クラス ドライバーとのインターフェイス
-              href: scsi-port-s-interface-with-the-storage-class-driver.md
               items:
+                - name: SCSI ポートの記憶域クラス ドライバーとのインターフェイス
+                  href: scsi-port-s-interface-with-the-storage-class-driver.md
                 - name: SCSI ポートの SRB と記憶域クラス ドライバーとのインターフェイス
                   href: scsi-port-s-srb-interface-with-the-storage-class-driver.md
                 - name: SCSI ポートとの要求および解放デバイス要求のネゴシエート
@@ -128,8 +139,9 @@
             - name: SCSI ポート I/O モデル
               href: scsi-port-i-o-model.md
             - name: SCSI ポート ドライバーのキュー管理
-              href: scsi-port-driver-s-queue-management.md
               items:
+                - name: SCSI ポート ドライバーのキュー管理
+                  href: scsi-port-driver-s-queue-management.md
                 - name: SCSI ポート ドライバーの内部キューの凍結
                   href: freezing-scsi-port-driver-s-internal-queue.md
                 - name: SCSI ポート ドライバーの内部キューのロック
@@ -137,22 +149,25 @@
                 - name: ポート ドライバーの内部キューのフラッシュ
                   href: flushing-port-driver-s-internal-queue.md
         - name: Storport ドライバー
-          href: storport-driver.md
           items:
+            - name: Storport ドライバー
+              href: storport-driver.md
             - name: Storport ドライバーのライフ サイクル
               href: life-cycle-of-a-storport-driver.md
             - name: Storport の履歴
               href: history-of-storport.md
             - name: Storport によって提供される機能
-              href: capabilities-provided-by-storport.md
               items:
+                - name: Storport によって提供される機能
+                  href: capabilities-provided-by-storport.md
                 - name: Storport ドライバーのサポート ルーチン
                   href: storport-driver-support-routines.md
                 - name: Storport ドライバーのミニポート ルーチン
                   href: storport-driver-miniport-routines.md
             - name: Storport と記憶域クラス ドライバーとのインターフェイス
-              href: storport-s-interface-with-the-storage-class-driver.md
               items:
+                - name: Storport と記憶域クラス ドライバーとのインターフェイス
+                  href: storport-s-interface-with-the-storage-class-driver.md
                 - name: Storport の SRB と記憶域クラス ドライバーとのインターフェイス
                   href: storport-s-srb-interface-with-the-storage-class-driver.md
                 - name: Storport との要求および解放デバイス要求のネゴシエート
@@ -166,8 +181,9 @@
             - name: Storport と Storport ミニポート ドライバーとのインターフェイス
               href: storport-s-interface-with-storport-miniport-drivers.md
             - name: Storport I/O モデル
-              href: storport-i-o-model.md
               items:
+                - name: Storport I/O モデル
+                  href: storport-i-o-model.md
                 - name: 全二重モード
                   href: full-duplex-mode.md
                 - name: '半二重モード: 出荷済み製品には不適'
@@ -189,15 +205,17 @@
             - name: Storport イベント ログ拡張
               href: storport-event-log-extensions.md
             - name: Storport のエラー管理
-              href: storport-error-management.md
               items:
+                - name: Storport のエラー管理
+                  href: storport-error-management.md
                 - name: Storport の多階層リセット
                   href: multi-tier-reset-in-storport.md
                 - name: 高パフォーマンスのバスとアダプターに関するデバイスの状態
                   href: device-status-for-high-performance-buses-and-adapters.md
             - name: Storport のアイドル電源管理
-              href: storport-idle-power-management.md
               items:
+                - name: Storport のアイドル電源管理
+                  href: storport-idle-power-management.md
                 - name: IPM 適用範囲
                   href: ipm-scope.md
                 - name: IPM の前提条件
@@ -207,13 +225,15 @@
                 - name: IPM ハード ディスク ドライブのアイドル タイムアウト
                   href: ipm-hard-disk-drive-idle-timeout.md
             - name: ATA コマンドのサポート
-              href: ata-command-support.md
               items:
+                - name: ATA コマンドのサポート
+                  href: ata-command-support.md
                 - name: セキュリティ グループ コマンド
                   href: security-group-commands.md
             - name: SCSI ポート ミニポート ドライバーを Storport で動作させる
-              href: making-scsi-port-miniport-drivers-work-with-storport.md
               items:
+                - name: SCSI ポート ミニポート ドライバーを Storport で動作させる
+                  href: making-scsi-port-miniport-drivers-work-with-storport.md
                 - name: アダプターで Storport を使用するための要件
                   href: requirements-for-using-storport-with-an-adapter.md
                 - name: Storport でのハードウェアの初期化
@@ -223,15 +243,17 @@
             - name: DEVICE_DATA_MANAGEMENT_SET_ACTION
               href: device-data-management-set-action.md
         - name: ATA ポート ドライバー
-          href: ata-port-driver.md
           items:
+            - name: ATA ポート ドライバー
+              href: ata-port-driver.md
             - name: ATA ポートと記憶域クラス ドライバーとのインターフェイス
               href: ata-port-s-interface-with-the-storage-class-driver.md
             - name: ATA ポートと ATA ミニポート ドライバーとのインターフェイス
               href: ata-port-s-interface-with-ata-miniport-drivers.md
             - name: ATA ポート I/O モデル
-              href: ata-port-i-o-model.md
               items:
+                - name: ATA ポート I/O モデル
+                  href: ata-port-i-o-model.md
                 - name: ATA ポート I/O モデルでの同期
                   href: synchronization-in-the-ata-port-i-o-model.md
                 - name: 同期されていない IdeHwBuildIo ルーチン
@@ -249,21 +271,25 @@
             - name: IDE ポート ドライバー
               href: ide-port-driver.md
     - name: 記憶域ミニポート ドライバー
-      href: storage-miniport-drivers.md
       items:
+        - name: 記憶域ミニポート ドライバー
+          href: storage-miniport-drivers.md
         - name: SCSI ミニポート ドライバー
-          href: scsi-miniport-drivers.md
           items:
+            - name: SCSI ミニポート ドライバー
+              href: scsi-miniport-drivers.md
             - name: SCSI ミニポート ドライバーでのプラグ アンド プレイのサポート
-              href: supporting-plug-and-play-in-a-scsi-miniport-driver.md
               items:
+                - name: SCSI ミニポート ドライバーでのプラグ アンド プレイのサポート
+                  href: supporting-plug-and-play-in-a-scsi-miniport-driver.md
                 - name: プラグ アンド プレイ SCSI ミニポート ドライバーのレジストリ エントリ
                   href: registry-entries-for-plug-and-play-scsi-miniport-drivers.md
                 - name: プラグ アンド プレイでの SCSI ミニポートの初期化
                   href: scsi-miniport-initialization-under-plug-and-play.md
                 - name: Windows NT 4.0 SCSI ミニポートをプラグ アンド プレイ対応にするための変換
-                  href: converting-a-windows-nt-4-0-scsi-miniport-for-plug-and-play.md
                   items:
+                    - name: Windows NT 4.0 SCSI ミニポートをプラグ アンド プレイ対応にするための変換
+                      href: converting-a-windows-nt-4-0-scsi-miniport-for-plug-and-play.md
                     - name: HwScsiFindAdapter に対する HwContext ポインターの正しい使用
                       href: use-the-hwcontext-pointer-to-hwscsifindadapter-correctly.md
                     - name: SCSI ミニポート初期化の順序への依存禁止
@@ -279,8 +305,9 @@
             - name: SCSI ミニポート ドライバーでのエラー処理
               href: error-handling-in-scsi-miniport-drivers.md
             - name: 必須およびオプションの SCSI ミニポート ドライバー ルーチン
-              href: required-and-optional-scsi-miniport-driver-routines.md
               items:
+                - name: 必須およびオプションの SCSI ミニポート ドライバー ルーチン
+                  href: required-and-optional-scsi-miniport-driver-routines.md
                 - name: SCSI ミニポート ドライバーの DriverEntry ルーチン
                   href: scsi-miniport-driver-s-driverentry-routine.md
                 - name: SCSI ミニポート ドライバーの DriverEntry
@@ -290,8 +317,9 @@
                 - name: DriverEntry からの記憶装置ドライバーの戻り値
                   href: storage-driver-s-return-from-driverentry.md
                 - name: SCSI ミニポート ドライバーの HwScsiFindAdapter ルーチン
-                  href: scsi-miniport-driver-s-hwscsifindadapter-routine.md
                   items:
+                    - name: SCSI ミニポート ドライバーの HwScsiFindAdapter ルーチン
+                      href: scsi-miniport-driver-s-hwscsifindadapter-routine.md
                     - name: HwScsiFindAdapter からの ScsiPortXxx の呼び出し
                       href: calling-scsiportxxx--from-hwscsifindadapter.md
                     - name: HwScsiFindAdapter に関するポート ドライバー提供の ConfigInfo
@@ -305,8 +333,9 @@
                 - name: SCSI ミニポート ドライバーの HwScsiInitialize ルーチン
                   href: scsi-miniport-driver-s-hwscsiinitialize-routine.md
                 - name: SCSI ミニポート ドライバーの HwScsiStartIo ルーチン
-                  href: scsi-miniport-driver-s-hwscsistartio-routine.md
                   items:
+                    - name: SCSI ミニポート ドライバーの HwScsiStartIo ルーチン
+                      href: scsi-miniport-driver-s-hwscsistartio-routine.md
                     - name: SRB の変更
                       href: modifying-srbs.md
                     - name: SRB_FUNCTION_EXECUTE_SCSI の処理
@@ -336,8 +365,9 @@
                 - name: SCSI ミニポート ドライバーの HwScsiResetBus ルーチン
                   href: scsi-miniport-driver-s-hwscsiresetbus-routine.md
                 - name: SCSI ミニポート ドライバーの HwScsiInterrupt ルーチン
-                  href: scsi-miniport-driver-s-hwscsiinterrupt-routine.md
                   items:
+                    - name: SCSI ミニポート ドライバーの HwScsiInterrupt ルーチン
+                      href: scsi-miniport-driver-s-hwscsiinterrupt-routine.md
                     - name: HwScsiInterrupt からの割り込み駆動型 I/O の延期
                       href: deferring-interrupt-driven-i-o-from-hwscsiinterrupt.md
                 - name: SCSI ミニポート ドライバーの HwScsiEnableInterruptsCallback ルーチン
@@ -351,8 +381,9 @@
                 - name: SCSI ミニポート ドライバーの HwScsiAdapterControl ルーチン
                   href: scsi-miniport-driver-s-hwscsiadaptercontrol-routine.md
         - name: Storport ミニポート ドライバー
-          href: storport-miniport-drivers.md
           items:
+            - name: Storport ミニポート ドライバー
+              href: storport-miniport-drivers.md
             - name: Storport ミニポート ドライバーでのエラー処理
               href: error-handling-in-storport-miniport-drivers.md
             - name: Storport ミニポート ドライバーのインタロックされた操作
@@ -362,8 +393,9 @@
             - name: StorPort ミニポート ドライバーのレジストリ エントリ
               href: registry-entries-for-storport-miniport-drivers.md
         - name: IDE コントローラーのミニドライバー
-          href: ide-controller-minidrivers.md
           items:
+            - name: IDE コントローラーのミニドライバー
+              href: ide-controller-minidrivers.md
             - name: ベンダー提供の IDE コントローラー ミニドライバーの要件
               href: requirements-for-vendor-supplied-ide-controller-minidrivers.md
             - name: IDE ミニドライバー ルーチンの初期化と呼び出し
@@ -379,15 +411,17 @@
         - name: ブート ドライブを管理するミニポート ドライバーに関する制約
           href: restrictions-on-miniport-drivers-that-manage-the-boot-drive.md
         - name: 記憶域ミニポート ドライバーでの WMI SRB の処理
-          href: handling-wmi-srbs-in-storage-miniport-drivers.md
           items:
+            - name: 記憶域ミニポート ドライバーでの WMI SRB の処理
+              href: handling-wmi-srbs-in-storage-miniport-drivers.md
             - name: ポート ドライバーによる WMI 要求の処理方法
               href: how-the-port-driver-processes-wmi-requests.md
             - name: SCSI ポート WMI ライブラリの使用
               href: using-the-scsi-port-wmi-library.md
             - name: WMI ミニポート ドライバー コールバック ルーチンの設計
-              href: designing-wmi-miniport-driver-callback-routines.md
               items:
+                - name: WMI ミニポート ドライバー コールバック ルーチンの設計
+                  href: designing-wmi-miniport-driver-callback-routines.md
                 - name: メソッドを含む WMI クラスを処理するミニポート ドライバー コールバック ルーチンの設計
                   href: designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-2.md
                 - name: データ フィールドを含む WMI クラスを処理するミニポート ドライバー コールバック ルーチンの設計
@@ -395,8 +429,9 @@
             - name: WMI SRB をサポートするための記憶域ミニポート ドライバー ルーチンの変更
               href: modifying-storage-miniport-driver-routines-to-support-wmi-srbs.md
     - name: 記憶域仮想ミニポート ドライバー
-      href: storage-virtual-miniport-drivers.md
       items:
+        - name: 記憶域仮想ミニポート ドライバー
+          href: storage-virtual-miniport-drivers.md
         - name: 記憶域仮想ミニポート ドライバーの概要
           href: overview-of-storage-virtual-miniport-drivers.md
         - name: '記憶域仮想ミニポート ドライバー: 適切な場合'
@@ -406,8 +441,9 @@
         - name: クラッシュ ダンプと休止状態のサポート
           href: crash-dump-and-hibernation-support.md
     - name: 記憶域フィルター ドライバー
-      href: storage-filter-drivers.md
       items:
+        - name: 記憶域フィルター ドライバー
+          href: storage-filter-drivers.md
         - name: 記憶域フィルター ドライバーの I/O 要求サポート
           href: storage-filter-driver-s-support-of-i-o-requests.md
         - name: 記憶域フィルター ドライバーのデバイスの種類に固有な機能
@@ -425,8 +461,9 @@
         - name: PnP ページング要求の処理
           href: handling-pnp-paging-requests.md
     - name: クラッシュ ダンプ フィルター ドライバー
-      href: crash-dump-filter-drivers.md
       items:
+        - name: クラッシュ ダンプ フィルター ドライバー
+          href: crash-dump-filter-drivers.md
         - name: 問題の説明
           href: problem-description.md
         - name: 機能の説明
@@ -440,8 +477,9 @@
         - name: フィルターの初期化
           href: filter-initialization.md
     - name: 記憶域サイロ ドライバー
-      href: storage-silo-drivers.md
       items:
+        - name: 記憶域サイロ ドライバー
+          href: storage-silo-drivers.md
         - name: 概要
           href: overview.md
         - name: 定義
@@ -451,8 +489,9 @@
         - name: Architecture
           href: architecture.md
     - name: CD-ROM ドライバー
-      href: cd-rom-drivers.md
       items:
+        - name: CD-ROM ドライバー
+          href: cd-rom-drivers.md
         - name: CD-ROM 排他アクセス モード
           href: cd-rom-exclusive-access-mode.md
         - name: CD-ROM 設定速度
@@ -464,8 +503,9 @@
         - name: CD-ROM I/O 制御コード
           href: cd-rom-io-control-codes.md
     - name: テープ ドライバー
-      href: tape-drivers.md
       items:
+        - name: テープ ドライバー
+          href: tape-drivers.md
         - name: テープ クラス ドライバーの使用
           href: using-the-tape-class-driver.md
         - name: 必須およびオプションのテープ ミニクラス ルーチン
@@ -477,11 +517,13 @@
         - name: テープ デバイス制御要求の処理
           href: processing-tape-device-control-requests.md
     - name: チェンジャー ドライバー
-      href: changer-drivers.md
       items:
+        - name: チェンジャー ドライバー
+          href: changer-drivers.md
         - name: システム提供のチェンジャー ドライバー
-          href: system-supplied-changer-drivers.md
           items:
+            - name: システム提供のチェンジャー ドライバー
+              href: system-supplied-changer-drivers.md
             - name: チェンジャー ドライバー モデル
               href: the-changer-driver-model.md
             - name: チェンジャー クラス ドライバー
@@ -489,8 +531,9 @@
             - name: チェンジャー クラス ドライバーのバージョンの違い
               href: differences-in-changer-class-driver-versions.md
         - name: ベンダー提供のチェンジャー ドライバー
-          href: vendor-supplied-changer-drivers.md
           items:
+            - name: ベンダー提供のチェンジャー ドライバー
+              href: vendor-supplied-changer-drivers.md
             - name: チェンジャー ミニクラス ドライバーの概要
               href: introduction-to-changer-miniclass-drivers.md
             - name: 必須のチェンジャー ミニクラス ルーチン
@@ -504,21 +547,25 @@
         - name: チェンジャー デバイス制御要求の処理
           href: processing-changer-device-control-requests.md
     - name: 記憶域のシナリオ
-      href: storage-scenarios.md
       items:
+        - name: 記憶域のシナリオ
+          href: storage-scenarios.md
         - name: オフロード データ転送
           href: offloaded-data-transfer.md
         - name: 仮想プロビジョニング
           href: thin-provisioning.md
     - name: 記憶域管理と WMI クラス
-      href: storage-wmi-classes.md
       items:
+        - name: 記憶域管理と WMI クラス
+          href: storage-wmi-classes.md
         - name: HBA WMI クラス
-          href: hba-wmi-classes.md
           items:
+            - name: HBA WMI クラス
+              href: hba-wmi-classes.md
             - name: Hbaapi.mof 内の WMI クラス修飾子の定義
-              href: wmi-class-qualifier-definitions-in-hbaapi-mof.md
               items:
+                - name: Hbaapi.mof 内の WMI クラス修飾子の定義
+                  href: wmi-class-qualifier-definitions-in-hbaapi-mof.md
                 - name: EVENT_TYPES_QUALIFIERS
                   href: event-types-qualifiers.md
                 - name: HBA_BIND_TYPE
@@ -540,8 +587,9 @@
             - name: MS_SM_AdapterInformationQuery WMI クラス
               href: ms-sm-adapterinformationquery-wmi-class.md
             - name: MS_SM_EventControl WMI クラス
-              href: ms-sm-eventcontrol-wmi-class.md
               items:
+                - name: MS_SM_EventControl WMI クラス
+                  href: ms-sm-eventcontrol-wmi-class.md
                 - name: SM_AddTarget
                   href: sm-addtarget.md
                 - name: SM_RemoveTarget
@@ -555,8 +603,9 @@
                 - name: SM_RemoveLink
                   href: sm-removelink.md
             - name: MS_SM_FabricAndDomainManagementMethods WMI クラス
-              href: ms-sm-fabricanddomainmanagementmethods-wmi-class.md
               items:
+                - name: MS_SM_FabricAndDomainManagementMethods WMI クラス
+                  href: ms-sm-fabricanddomainmanagementmethods-wmi-class.md
                 - name: SM_SendCTPassThru
                   href: sm-sendctpassthru.md
                 - name: SM_GetRNIDMgmtInfo
@@ -580,8 +629,9 @@
             - name: MS_SM_PortInformationMethods WMI クラス
               href: ms-sm-portinformationmethods-wmi-class.md
             - name: MS_SM_ScsiInformationMethods WMI クラス
-              href: ms-sm-scsiinformationmethods-wmi-class.md
               items:
+                - name: MS_SM_ScsiInformationMethods WMI クラス
+                  href: ms-sm-scsiinformationmethods-wmi-class.md
                 - name: SM_ScsiInquiry
                   href: sm-scsiinquiry.md
                 - name: SM_ScsiReportLuns
@@ -589,8 +639,9 @@
                 - name: SM_ScsiReadCapacity
                   href: sm-scsireadcapacity.md
             - name: MS_SM_TargetInformationMethods WMI クラス
-              href: ms-sm-targetinformationmethods-wmi-class.md
               items:
+                - name: MS_SM_TargetInformationMethods WMI クラス
+                  href: ms-sm-targetinformationmethods-wmi-class.md
                 - name: SM_GetTargetMapping
                   href: sm-gettargetmapping.md
                 - name: SM_GetBindingCapability
@@ -632,8 +683,9 @@
             - name: MSFC_EventBuffer WMI クラス
               href: msfc-eventbuffer-wmi-class.md
             - name: MSFC_EventControl WMI クラス
-              href: msfc-eventcontrol-wmi-class.md
               items:
+                - name: MSFC_EventControl WMI クラス
+                  href: msfc-eventcontrol-wmi-class.md
                 - name: AddLink
                   href: addlink.md
                 - name: AddPort
@@ -659,8 +711,9 @@
             - name: MSFC_HbaApiVersion WMI クラス
               href: msfc-hbaapiversion-wmi-class.md
             - name: MSFC_HBAAdapterMethods WMI クラス
-              href: msfc-hbaadaptermethods-wmi-class.md
               items:
+                - name: MSFC_HBAAdapterMethods WMI クラス
+                  href: msfc-hbaadaptermethods-wmi-class.md
                 - name: GetDiscoveredPortAttributes
                   href: getdiscoveredportattributes.md
                 - name: GetEventBuffer
@@ -700,8 +753,9 @@
                 - name: SetFC3MgmtInfo
                   href: setfc3mgmtinfo.md
             - name: MSFC_HBAFCPInfo WMI クラス
-              href: msfc-hbafcpinfo-wmi-class.md
               items:
+                - name: MSFC_HBAFCPInfo WMI クラス
+                  href: msfc-hbafcpinfo-wmi-class.md
                 - name: GetBindingCapability
                   href: getbindingcapability.md
                 - name: GetBindingSupport
@@ -731,14 +785,17 @@
             - name: MSFC_TM WMI クラス
               href: msfc-tm-wmi-class.md
         - name: iSCSI WMI クラス
-          href: iscsi-wmi-classes.md
           items:
+            - name: iSCSI WMI クラス
+              href: iscsi-wmi-classes.md
             - name: iSCSI WMI 共通クラス
-              href: iscsi-wmi-common-classes.md
               items:
+                - name: iSCSI WMI 共通クラス
+                  href: iscsi-wmi-common-classes.md
                 - name: Common.mof 内の WMI プロパティ修飾子の定義
-                  href: wmi-property-qualifier-definitions-in-common-mof.md
                   items:
+                    - name: Common.mof 内の WMI プロパティ修飾子の定義
+                      href: wmi-property-qualifier-definitions-in-common-mof.md
                     - name: ISCSI_AUTH_TYPES_QUALIFIERS
                       href: iscsi-auth-types-qualifiers.md
                     - name: ISCSI_STATUS_QUALIFIERS
@@ -758,11 +815,13 @@
                 - name: ISCSI_TargetPortalGroup WMI クラス
                   href: iscsi-targetportalgroup-wmi-class.md
             - name: イニシエーター、ポート、セッション、接続を管理する iSCSI WMI クラス
-              href: iscsi-wmi-classes-that-manage-initiators--ports--sessions-and-connecti.md
               items:
+                - name: イニシエーター、ポート、セッション、接続を管理する iSCSI WMI クラス
+                  href: iscsi-wmi-classes-that-manage-initiators--ports--sessions-and-connecti.md
                 - name: Mgmt.mof 内の WMI プロパティ修飾子の定義
-                  href: wmi-property-qualifier-definitions-in-mgmt-mof.md
                   items:
+                    - name: Mgmt.mof 内の WMI プロパティ修飾子の定義
+                      href: wmi-property-qualifier-definitions-in-mgmt-mof.md
                     - name: ISCSI_CONNECTION_STATE_TYPE_QUALIFIERS
                       href: iscsi-connection-state-type-qualifiers.md
                     - name: ISCSI_CONNECTION_PROTOCOL_TYPE_QUALIFIERS
@@ -816,8 +875,9 @@
                 - name: MSiSCSI_RedirectPortalInfoClass WMI クラス
                   href: msiscsi-redirectportalinfoclass-wmi-class.md
             - name: パフォーマンスの統計情報を報告する iSCSI WMI クラス
-              href: iscsi-wmi-classes-that-report-performance-statistics.md
               items:
+                - name: パフォーマンスの統計情報を報告する iSCSI WMI クラス
+                  href: iscsi-wmi-classes-that-report-performance-statistics.md
                 - name: MSiSCSI_ConnectionStatistics WMI クラス
                   href: msiscsi-connectionstatistics-wmi-class.md
                 - name: MSiSCSI_InitiatorInstanceStatistics WMI クラス
@@ -835,8 +895,9 @@
                 - name: MSiSCSI_SessionStatistics WMI クラス
                   href: msiscsi-sessionstatistics-wmi-class.md
             - name: iSCSI WMI 操作クラス
-              href: iscsi-wmi-operations-classes.md
               items:
+                - name: iSCSI WMI 操作クラス
+                  href: iscsi-wmi-operations-classes.md
                 - name: ISCSI_Persistent_Login WMI クラス
                   href: iscsi-persistent-login-wmi-class.md
                 - name: MSiSCSI_AdapterEvent WMI クラス
@@ -846,8 +907,9 @@
                 - name: MSiSCSI_LUNMappingInformation WMI クラス
                   href: msiscsi-lunmappinginformation-wmi-class.md
                 - name: MSiSCSI_Operations WMI クラス
-                  href: msiscsi-operations-wmi-class.md
                   items:
+                    - name: MSiSCSI_Operations WMI クラス
+                      href: msiscsi-operations-wmi-class.md
                     - name: AddConnectionToSession
                       href: addconnectiontosession.md
                     - name: AddiSNSServer
@@ -885,8 +947,9 @@
                 - name: MSiSCSI_PersistentLogins WMI クラス
                   href: msiscsi-persistentlogins-wmi-class.md
                 - name: MSiSCSI_SecurityConfigOperations WMI クラス
-                  href: msiscsi-securityconfigoperations-wmi-class.md
                   items:
+                    - name: MSiSCSI_SecurityConfigOperations WMI クラス
+                      href: msiscsi-securityconfigoperations-wmi-class.md
                     - name: ClearCache
                       href: clearcache.md
                     - name: GetPresharedKeyForId
@@ -902,8 +965,9 @@
                 - name: MSiSCSI_TargetMappings WMI クラス
                   href: msiscsi-targetmappings-wmi-class.md
             - name: iSCSI WMI 検出クラス
-              href: iscsi-wmi-discovery-classes.md
               items:
+                - name: iSCSI WMI 検出クラス
+                  href: iscsi-wmi-discovery-classes.md
                 - name: ISCSI_DiscoveredTarget WMI クラス
                   href: iscsi-discoveredtarget-wmi-class.md
                 - name: ISCSI_DiscoveredTarget2 WMI クラス
@@ -917,18 +981,21 @@
                 - name: ISCSI_DiscoveredTargetPortalGroup2 WMI クラス
                   href: iscsi-discoveredtargetportalgroup2-wmi-class.md
                 - name: MSiSCSI_DiscoveryOperations WMI クラス
-                  href: msiscsi-discoveryoperations-wmi-class.md
                   items:
+                    - name: MSiSCSI_DiscoveryOperations WMI クラス
+                      href: msiscsi-discoveryoperations-wmi-class.md
                     - name: ReportDiscoveredTargets
                       href: reportdiscoveredtargets.md
                     - name: ReportDiscoveredTargets2
                       href: reportdiscoveredtargets2.md
             - name: iSCSI WMI ネットワーク クラス
-              href: iscsi-wmi-network-classes.md
               items:
+                - name: iSCSI WMI ネットワーク クラス
+                  href: iscsi-wmi-network-classes.md
                 - name: Config.mof 内の WMI プロパティ修飾子の定義
-                  href: wmi-property-qualifier-definitions-in-config-mof.md
                   items:
+                    - name: Config.mof 内の WMI プロパティ修飾子の定義
+                      href: wmi-property-qualifier-definitions-in-config-mof.md
                     - name: ENCRYPTION_TYPES_QUALIFIERS
                       href: encryption-types-qualifiers.md
                 - name: MSiSCSI_BootConfiguration WMI クラス
@@ -944,8 +1011,9 @@
                 - name: MSiSCSI_TCPIPConfig WMI クラス
                   href: msiscsi-tcpipconfig-wmi-class.md
         - name: MPIO WMI クラス
-          href: mpio-wmi-classes.md
           items:
+            - name: MPIO WMI クラス
+              href: mpio-wmi-classes.md
             - name: MPIO_PATH_HEALTH_CLASS WMI クラス
               href: mpio-path-health-class-wmi-class.md
             - name: MPIO_PATH_HEALTH_INFO WMI クラス
@@ -979,8 +1047,9 @@
             - name: MPIO_TIMERS_COUNTERS WMI クラス
               href: mpio-timers-counters-wmi-class.md
             - name: MPIO_WMI_METHODS WMI クラス
-              href: mpio-wmi-methods-wmi-class.md
               items:
+                - name: MPIO_WMI_METHODS WMI クラス
+                  href: mpio-wmi-methods-wmi-class.md
                 - name: MPIOMoveDevice
                   href: mpiomovedevice.md
                 - name: GetPathConfiguration
@@ -1024,8 +1093,9 @@
             - name: DSM_QuerySupportedLBPolicies WMI クラス
               href: dsm-querysupportedlbpolicies-wmi-class.md
             - name: DSM_LB_Operations WMI クラス
-              href: dsm-lb-operations-wmi-class.md
               items:
+                - name: DSM_LB_Operations WMI クラス
+                  href: dsm-lb-operations-wmi-class.md
                 - name: DsmSetLoadBalancePolicy
                   href: dsmsetloadbalancepolicy.md
                 - name: DsmSetLoadBalancePolicyALUA
@@ -1033,15 +1103,17 @@
             - name: DSM_QueryUniqueId WMI クラス
               href: dsm-queryuniqueid-wmi-class.md
         - name: NPIV WMI クラス
-          href: npiv-wmi-classes.md
           items:
+            - name: NPIV WMI クラス
+              href: npiv-wmi-classes.md
             - name: MSFC_DH_Chap_Parameters WMI クラス
               href: msfc-dh-chap-parameters-wmi-class.md
             - name: MSFC_FibrePortNPIVAttributes WMI クラス
               href: msfc-fibreportnpivattributes-wmi-class.md
             - name: MSFC_FibrePortNPIVMethods WMI クラス
-              href: msfc-fibreportnpivmethods-wmi-class.md
               items:
+                - name: MSFC_FibrePortNPIVMethods WMI クラス
+                  href: msfc-fibreportnpivmethods-wmi-class.md
                 - name: CreateVirtualPort
                   href: createvirtualport.md
                 - name: RemoveVirtualPort
@@ -1051,16 +1123,19 @@
             - name: MSFC_VirtualFibrePortAttributes WMI クラス
               href: msfc-virtualfibreportattributes-wmi-class.md
     - name: 記憶域クラス メモリ
-      href: storage-class-memory-portal.md
       items:
+        - name: 記憶域クラス メモリ
+          href: storage-class-memory-portal.md
         - name: JEDEC のバックアップ電源を備えたバイト アドレス指定可能なインターフェイスの NVDIMM デバイス固有メソッド (_DSM)
-          href: jedec-byte-addressable-energy-backed-interface-nvdimms-device-specific-method---dsm-.md
           items:
+            - name: JEDEC のバックアップ電源を備えたバイト アドレス指定可能なインターフェイスの NVDIMM デバイス固有メソッド (_DSM)
+              href: jedec-byte-addressable-energy-backed-interface-nvdimms-device-specific-method---dsm-.md
             - name: 記憶域クラス メモリ用語集
               href: glossary.md
             - name: バックアップ電源を備えたバイト アドレス指定可能な機能クラスの _DSM インターフェイス (機能インターフェイス 1)
-              href: '-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md'
               items:
+                - name: バックアップ電源を備えたバイト アドレス指定可能な機能クラスの _DSM インターフェイス (機能インターフェイス 1)
+                  href: '-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md'
                 - name: 実装されている関数のクエリ (関数インデックス 0)
                   href: query-implemented-functions--function-index-0-.md
                 - name: NVDIMM-N ID の取得 (関数インデックス 1)

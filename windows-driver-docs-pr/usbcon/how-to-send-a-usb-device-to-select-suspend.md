@@ -3,21 +3,21 @@ Description: このトピックでは、により、特定のエラー ケース
 title: USB クライアント ドライバー検証ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 116c3ff841ae540bf82faf01e6de4f0201090633
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.openlocfilehash: 9ad54348fd0c397e4a5fccca64cd86dea7fadefe
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554070"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405043"
 ---
 # <a name="usb-client-driver-verifier"></a>USB クライアント ドライバー検証ツール
 
 
 このトピックでは、により、特定のエラー ケースをテストするクライアント ドライバーを USB 3.0 ドライバー スタックの USB クライアント ドライバーの検証の機能について説明します。
 
--   [USB クライアント ドライバーの検証機能とは](#what-is--the-usb-client-driver-verifier)
+-   [USB クライアント ドライバーの検証機能とは](#what-is-the-usb-client-driver-verifier)
 -   [USB クライアント ドライバーの検証機能を有効にする方法](#how-to-enable-the-usb-client-driver-verifier)
--   [USB クライアント ドライバーの検証ツールの構成設定](#configuration--settings-for-the-usb-client-driver-verifier)
+-   [USB クライアント ドライバーの検証ツールの構成設定](#configuration-settings-for-the-usb-client-driver-verifier)
 
 ## <a name="what-is-the-usb-client-driver-verifier"></a>USB クライアント ドライバーの検証機能とは
 

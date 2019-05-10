@@ -6,12 +6,12 @@ keywords:
 ms.date: 12/17/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f57e13ce1653e1dadf3b7e8901db869adf47410c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25ca4de5d7adac39596f7f5cd5fef1df5b04ea56
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388134"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106378"
 ---
 # <a name="device-power-management-reference"></a>デバイスの電源管理リファレンス
 
@@ -69,7 +69,7 @@ ms.locfileid: "63388134"
 |[PO_FX_COMPONENT_IDLE_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_idle_state)|**PO_FX_COMPONENT_IDLE_STATE**構造体は、デバイス コンポーネントの [fx] 電源状態の属性を指定します。|
 |[PO_FX_COMPONENT_PERF_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_info)|**PO_FX_COMPONENT_PERF_INFO**構造体には、デバイス内の 1 つのコンポーネントのパフォーマンス状態のすべてのセットがについて説明します。|
 |[PO_FX_COMPONENT_PERF_SET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_set)|**PO_FX_COMPONENT_PERF_SET**構造体は、一連のデバイス内の 1 つのコンポーネントのパフォーマンス状態を表します。|
-|[PO_FX_DEVICE_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)   [PO_FX_DEVICE_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v2)   [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v3)|**PO_FX_DEVICE**構造体が、電源管理フレームワーク (PoFx) にデバイスの電源の属性について説明します。|
+|[PO_FX_DEVICE_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)   [PO_FX_DEVICE_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v2)   [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-po_fx_device_v3)|**PO_FX_DEVICE**構造体が、電源管理フレームワーク (PoFx) にデバイスの電源の属性について説明します。|
 |[PO_FX_PERF_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_perf_state)|**PO_FX_PERF_STATE**構造体は、デバイス内の 1 つのコンポーネントのパフォーマンス状態を表します。|
 |[PO_FX_PERF_STATE_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_perf_state_change)|**PO_FX_PERF_STATE_CHANGE**構造には、呼び出すことによって要求されているパフォーマンスの状態の変更に関する情報が含まれる、 [PoFxIssueComponentPerfStateChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechange)または[PoFxIssueComponentPerfStateChangeMultiple](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)ルーチン。
 

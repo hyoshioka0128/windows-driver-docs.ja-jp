@@ -1,11 +1,13 @@
 - name: WDTF 設計ガイド
-  href: index.md
   items:
+    - name: WDTF 設計ガイド
+      href: index.md
     - name: WDTF のクイック スタート
       href: wdtf-quick-start-.md
     - name: デバイス用の WDTF シンプル I/O プラグインの作成
-      href: writing-a-wdtf-simpleio-plug-in-for-your-device.md
       items:
+        - name: デバイス用の WDTF シンプル I/O プラグインの作成
+          href: writing-a-wdtf-simpleio-plug-in-for-your-device.md
         - name: お使いのデバイスにカスタム WDTF シンプル I/O アクション プラグインが必要かどうかを判断する方法
           href: test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md
         - name: WDTF シンプル I/O アクション プラグインを使ってデバイスの I/O をカスタマイズする方法
@@ -13,13 +15,15 @@
         - name: 提供されている WDTF シンプル I/O プラグイン
           href: provided-wdtf-simpleio-plug-ins.md
     - name: WDTF を使用したテストの記述
-      href: writing-tests-with-wdtf.md
       items:
+        - name: WDTF を使用したテストの記述
+          href: writing-tests-with-wdtf.md
         - name: Simple Data Evaluation Language の概要
           href: simple-data-evaluation-language-overview.md
         - name: WDTF シナリオの作成
-          href: creating-wdtf-scenarios.md
           items:
+            - name: WDTF シナリオの作成
+              href: creating-wdtf-scenarios.md
             - name: サンプル WDTF シナリオ
               href: sample-wdtf-scenarios.md
         - name: ターゲットの制御
@@ -27,11 +31,13 @@
         - name: アクション インターフェイス
           href: action-interfaces.md
     - name: WDTF ベース テストのトリアージ
-      href: triaging-wdtf-based-tests.md
       items:
+        - name: WDTF ベース テストのトリアージ
+          href: triaging-wdtf-based-tests.md
         - name: WDTF オブジェクトのログ記録
-          href: logging-and-tracing.md
           items:
+            - name: WDTF オブジェクトのログ記録
+              href: logging-and-tracing.md
             - name: WDTF オブジェクト名のタグ
               href: wdtf-object-name-tags.md
         - name: WDTF トレースの有効化と表示
@@ -39,14 +45,16 @@
         - name: WDTF ベース テストの実行時に発生する問題の診断
           href: diagnosing-problems-running-wdtf-based-tests.md
     - name: WDTF のアーキテクチャと概要
-      href: wdtf-overview.md
       items:
+        - name: WDTF のアーキテクチャと概要
+          href: wdtf-overview.md
         - name: WDTF のアーキテクチャ
           href: wdtf-architecture.md
         - name: WDTF ランタイム ライブラリ
           href: wdtf-runtime-library.md
         - name: フレームワークの拡張
-          href: extending-the-framework.md
           items:
+            - name: フレームワークの拡張
+              href: extending-the-framework.md
             - name: COM インターフェイス設計スキル
               href: com-interface-design-skills.md

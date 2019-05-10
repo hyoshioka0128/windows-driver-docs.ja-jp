@@ -7,12 +7,12 @@ keywords:
 ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f368387b043a16ee52a9735f7f3fb760ece86cb1
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
-ms.translationtype: HT
+ms.openlocfilehash: ba3d6259dd36ac31e7b2d930c11fe2581063966b
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405218"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501569"
 ---
 # <a name="mb-5g-data-class-support"></a>MB 5G データ クラスのサポート
 
@@ -167,7 +167,7 @@ MBIM_COMMAND_DONE で InformationBuffer には MBIM_VERSION_INFO 構造体が含
 
 デバイスは、両方の新しいデータ クラスをサポートする場合は、両方のビットを設定するものとします。
 
-### <a name="mbimdataclass"></a>MBIM_DATA_CLASS
+## <a name="mbimdataclass"></a>MBIM_DATA_CLASS
 
 | 型 | ［マスク］ |
 | --- | --- |
@@ -484,7 +484,7 @@ MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_SIGNAL_STATE_INFO_V
         <td>4</td>
         <td>SystemType</td>
         <td>MBIM_DATA_CLASS</td>
-        <td>シグナルの状態情報が有効なシステム タイプを示します。 定義されている、このメンバーは 1 つの型のビットマスク<a href="#mbimdataclass">MBIM_DATA_CLASS</a>します。</td>
+        <td>シグナルの状態情報が有効なシステム タイプを示します。 定義されている、このメンバーは 1 つの型のビットマスク<a href="#mbim_data_class">MBIM_DATA_CLASS</a>します。</td>
     </tr>
 </table>
 

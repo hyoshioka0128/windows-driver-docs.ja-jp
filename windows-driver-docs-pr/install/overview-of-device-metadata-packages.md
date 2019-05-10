@@ -6,15 +6,16 @@ keywords:
 - デバイス メタデータ、WDK をパッケージ化について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da21eb1f1c56ae933d181b5db01f1732a7d5f437
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28f3e9eb2dcf56fbb8bbce45941c82674e8b6b15
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330246"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456419"
 ---
 # <a name="overview-of-device-metadata-packages"></a>デバイス メタデータ パッケージの概要
 
+Windows 7 以降のデバイス メタデータ パッケージには、デバイスとそのハードウェア関数のプロパティを表す XML ドキュメントが含まれています。 デバイスとプリンターのユーザー インターフェイスでは、デバイスのメタデータ パッケージの XML ドキュメントに基づくユーザーをデバイスに固有の情報を表示します。
 
 デバイス メタデータ パッケージは複数の XML ドキュメントと各ドキュメントは、デバイスの属性のさまざまなコンポーネントを指定します。
 

@@ -4,12 +4,12 @@ description: ハードウェア ID は、Windows を使用して、INF ファイ
 ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee6ed3809fd262637b30b31b515bc9d06457b804
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5312df32adcc5a63e470491253cb1f5ec0c66c3
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360604"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106418"
 ---
 # <a name="hardware-id"></a>Hardware ID (ハードウェア ID)
 
@@ -21,20 +21,31 @@ ms.locfileid: "63360604"
 
 ハードウェア ID では、次の一般的な形式のいずれかがあります。
 
-<a href="" id="-enumerator---enumerator-specific-device-id-"></a>*&lt;列挙子&gt;\\&lt;列挙子特定のデバイス ID&gt;*  
+`<enumerator>\\<enumerator-specific-device-ID>`
+
 これは、プラグ アンド プレイ (PnP) manager を 1 つの列挙子によって報告された個々 の PnP デバイスの最も一般的な形式です。 新しい列挙子には、この形式または、次の形式を使用する必要があります。 列挙子に固有のデバイス Id の詳細については、次を参照してください。[デバイス識別子の書式設定](device-identifier-formats.md)します。
 
-<a href="" id="--generic-device-id-"></a>*\*&lt;generic-device-ID&gt;*  
+`\*<generic-device-ID>`
+
 アスタリスクでは、デバイスが ISAPNP と BIOS などの 1 つ以上の列挙子によってサポートされていることを示します。 この種類の ID の詳細については、次を参照してください。[ジェネリック識別子](generic-identifiers.md)します。
 
-<a href="" id="-device-class-specific-id-"></a>*&lt;デバイス クラス固有 ID&gt;*  
+`<device-class-specific-ID>`
+
+## <a name="selecting-a-hardware-id"></a>ハードウェア ID の選択
+
+ルートが汎用的な名前空間を共有するデバイスを列挙`ROOT\SYSTEM`可能性がありますの競合が発生して OS のアップグレード時にデバイス マネージャーで黄色の感嘆符します。
+
+これを回避するには、ルート列挙されたデバイスを含むドライバーごとに一意の名前空間を使用します。 使用する代わりに、USB またはシステム デバイスの`ROOT\USB`または`ROOT\SYSTEM”`使用`ROOT\[COMPANYNAME]\[DEVICENAME]`します。  さらに、ドライバーのインストーラーのコードは devnode が既に存在するかどうかを確認し、インストールする前に、必要な措置を実行する必要があります。
+
 確立されている独自の名前付け規則、既存のデバイス クラスには、カスタムの形式を使用します。 ハードウェア ID の形式については、このようなバスのハードウェア仕様を参照してください。 新しい列挙子では、この形式は使用しないでください。
 
 文字、終端の NULL を除く、ハードウェア ID の数は、MAX_DEVICE_ID_LEN 未満である必要があります。 この制約が適用されるすべてのフィールドと任意の長さの合計"\\"フィールドの区切りには、ハードウェア ID デバイス Id の制約の詳細については、の操作」セクションを参照してください。 [ **IRP_MN_QUERY_ID**](https://msdn.microsoft.com/library/windows/hardware/ff551679)します。
 
+## <a name="obtaining-the-list-of-hardware-ids-for-a-device"></a>デバイスのハードウェア Id の一覧を取得します。
+
 デバイスのハードウェア Id の一覧を取得するには、呼び出す[ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)で、 *DeviceProperty*パラメーターに設定**DevicePropertyHardwareID**. このルーチンを取得するハードウェア Id の一覧は、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)値。 各ハードウェア ID と最終的な NULL 終端文字の後に、NULL 終端文字を含む、ハードウェア一覧内の文字の最大数は、REGSTR_VAL_MAX_HCID_LEN です。 ハードウェア Id の一覧で、Id の考えられる最大数は、64 です。
 
-### <a name="examples-of-hardware-ids"></a>ハードウェア Id の例
+## <a name="examples-of-hardware-ids"></a>ハードウェア Id の例
 
 最初の例には、次に、[汎用識別子](generic-identifiers.md)PnP デバイス、および 2 つ目の例は、 [PCI デバイスの識別子](identifiers-for-pci-devices.md):
 
@@ -42,11 +53,12 @@ ms.locfileid: "63360604"
 
 PCI\\VEN_1000 &AMP; DEV_0001 &AMP; SUBSYS_00000000 REV_02
 
- 
-
- 
 
 
 
+
+## <a name="see-also"></a>関連項目
+
+[INF HardwareId ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-hardwareid-directive)
 
 

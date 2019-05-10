@@ -3,12 +3,12 @@ Description: このトピックでは、コントロールの転送とクライ�
 title: USB コントロール転送の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c5c7310e1e6ddac12e13049916d1dac618098a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af468cb6a9960169bedc56e37253691ac01f8b3b
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331670"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405080"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>USB コントロール転送の送信方法
 
@@ -24,7 +24,7 @@ ms.locfileid: "63331670"
 -   [前提条件](#prerequisites)
 -   [コントロールを送信するためのメソッドの Microsoft による要求を転送します。](#microsoft-defined-methods-for-sending-control-transfer-requests)
 -   [仕入先コマンド - KMDF の制御の移動を送信する方法](#how-to-send-a-control-transfer-for-vendor-commands---kmdf)
--   [GET の制御の移動を送信する方法\_状態 - UMDF](#how-to-send-a-control-transfer-for-get-status---umdf)
+-   [GET の制御の移動を送信する方法\_状態 - UMDF](#how-to-send-a-control-transfer-for-get_status---umdf)
 
 ## <a name="about-the-default-endpoint"></a>既定のエンドポイントについて
 

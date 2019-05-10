@@ -3,28 +3,28 @@ Description: このトピックでは、新機能と Windows 8 でのユニバ�
 title: Windows 8 の新機能については、usb
 ms.date: 05/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 904d32f55ec988f23007672197298820c3643ff1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 252462c9f33b45dc6155595776366a2454da52d0
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389194"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405054"
 ---
 # <a name="windows8-whats-new-for-usb"></a>Windows 8:USB の新機能
 
 
 このトピックでは、新機能と Windows 8 でのユニバーサル シリアル バス (USB) クライアント ドライバーの機能強化をまとめたものです。
 
--   [USB 3.0 デバイスで新しいドライバー スタック](#new-driver-stack-for-usb-3-0-devices)
+-   [USB 3.0 デバイスで新しいドライバー スタック](#new-driver-stack-for-usb-30-devices)
 -   [新しいスタックでサポートされる機能](#features-supported-by-the-new-stack)
 -   [USB クライアント ドライバーのクライアントのコントラクトのバージョン](#client-contract-version-for-usb-client-drivers)
 -   [割り当ておよび翻訳を構築するための新しいルーチン](#new-routines-for-allocating-and-building-urbs)
--   [USB 3.0 ハブで新しいユーザー モードの I/O 制御要求します。](#new-user-mode-i-o-control-requests-for-usb-3-0-hubs)
+-   [USB 3.0 ハブで新しいユーザー モードの I/O 制御要求します。](#new-user-mode-io-control-requests-for-usb-30-hubs)
 -   [WinUSB の新しい互換性のある ID](#new-compatible-id-for-winusb)
--   [USB クライアント ドライバー用の新しい Visual Studio テンプレート *(\*ベータ版の新規)*](#new-visual-studio-templates-for-usb-client-drivers---new-for-beta-)
+-   [USB クライアント ドライバー用の新しい Visual Studio テンプレート *(\*ベータ版の新規)*](#new-visual-studio-templates-for-usb-client-drivers-new-for-beta)
 -   [UASP ドライバー](#uasp-driver)
 -   [ブートのサポート](#boot-support)
--   [強化されたデバッグと診断機能](#enhanced-debugging-and-diagnostic-capabilities-----)
+-   [強化されたデバッグと診断機能](#enhanced-debugging-and-diagnostic-capabilities)
 -   [新しい USB 固有のエラー メッセージでデバイス マネージャー](#new-usb-specific-failure-messages-in-device-manager)
 
 一般的な USB の新機能については、次を参照してください。 [New for USB ドライバー](https://msdn.microsoft.com/library/windows/hardware/hh451212)します。

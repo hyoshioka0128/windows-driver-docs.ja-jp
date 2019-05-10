@@ -1,26 +1,31 @@
 - name: イメージング デバイス ドライバー設計ガイド
   href: index.md
 - name: イメージング デバイスのデバイス インターフェイス クラス
-  href: device-interface-classes-for-imaging-devices.md
   items:
+    - name: イメージング デバイスのデバイス インターフェイス クラス
+      href: device-interface-classes-for-imaging-devices.md
     - name: GUID_DEVINTERFACE_IMAGE デバイス インターフェイス クラス
       href: guid-devinterface-image-device-interface-class.md
 - name: Windows イメージ取得ドライバー
-  href: windows-image-acquisition-drivers.md
   items:
+    - name: Windows イメージ取得ドライバー
+      href: windows-image-acquisition-drivers.md
     - name: WIA の概要
-      href: introduction-to-wia.md
       items:
+        - name: WIA の概要
+          href: introduction-to-wia.md
         - name: WIA アーキテクチャの概要
           href: wia-architecture-overview.md
         - name: WIA Core コンポーネント
           href: wia-core-components.md
     - name: WIA ドライバーの基本事項
-      href: wia-driver-fundamentals.md
       items:
+        - name: WIA ドライバーの基本事項
+          href: wia-driver-fundamentals.md
         - name: WIA ドライバーのコンポーネント
-          href: wia-driver-components.md
           items:
+            - name: WIA ドライバーのコンポーネント
+              href: wia-driver-components.md
             - name: WIA ミニドライバー インターフェイス
               href: wia-minidriver-interfaces.md
             - name: バス ドライバーを使用したデバイス通信
@@ -30,37 +35,43 @@
         - name: ドライバーの機能
           href: driver-capabilities.md
         - name: プロパティとデータ管理
-          href: properties-and-data-management.md
           items:
+            - name: プロパティとデータ管理
+              href: properties-and-data-management.md
             - name: デバイス プロパティ
               href: device-properties.md
             - name: ドライバー項目
               href: driver-items.md
         - name: データ転送
-          href: data-transfers.md
           items:
+            - name: データ転送
+              href: data-transfers.md
             - name: メモリ内転送
               href: in-memory-transfers.md
             - name: ファイル転送
               href: file-transfers.md
             - name: IStream データ転送
-              href: istream-data-transfers.md
               items:
+                - name: IStream データ転送
+                  href: istream-data-transfers.md
                 - name: WIA 転送アーキテクチャ
-                  href: wia-transfer-architecture.md
                   items:
+                    - name: WIA 転送アーキテクチャ
+                      href: wia-transfer-architecture.md
                     - name: IStream データ転送のドライバー変更
                       href: istream-data-transfer-driver-changes.md
                     - name: IStream 転送ドライバーの例
                       href: istream-transfer-driver-example.md
                 - name: 複数ページ IStream 転送
-                  href: multipage-istream-transfers.md
                   items:
+                    - name: 複数ページ IStream 転送
+                      href: multipage-istream-transfers.md
                     - name: 複数ページ転送中のドライバーの動作
                       href: driver-behavior-during-multipage-transfers.md
                 - name: IStream データ転送のキャンセル
-                  href: cancellation-of-istream-data-transfers.md
                   items:
+                    - name: IStream データ転送のキャンセル
+                      href: cancellation-of-istream-data-transfers.md
                     - name: Windows XP でのデータ転送のキャンセル
                       href: cancellation-of-data-transfers-in-windows-xp.md
                     - name: Windows Vista でのデータ転送のキャンセル
@@ -68,13 +79,15 @@
                 - name: 画像処理フィルターとの統合
                   href: integration-with-the-image-processing-filter.md
                 - name: デバイスへのデータのアップロード
-                  href: uploading-data-to-a-device.md
                   items:
+                    - name: デバイスへのデータのアップロード
+                      href: uploading-data-to-a-device.md
                     - name: アップロード中のドライバーの動作
                       href: driver-behavior-on-upload.md
                 - name: IStream 転送による互換性の実現
-                  href: achieving-compatibility-with-istream-transfers.md
                   items:
+                    - name: IStream 転送による互換性の実現
+                      href: achieving-compatibility-with-istream-transfers.md
                     - name: 内部互換性レイヤー
                       href: internal-compatibility-layer.md
                     - name: Windows Vista と Windows XP 用の単一ドライバー
@@ -86,15 +99,17 @@
         - name: 画像処理
           href: image-processing.md
         - name: コマンド処理とイベントのレポート
-          href: command-processing-and-event-reporting.md
           items:
+            - name: コマンド処理とイベントのレポート
+              href: command-processing-and-event-reporting.md
             - name: コマンドの処理
               href: command-handling.md
             - name: イベントのレポート
               href: event-reporting.md
         - name: コンテキストについて
-          href: about-contexts.md
           items:
+            - name: コンテキストについて
+              href: about-contexts.md
             - name: アプリケーション項目のコンテキスト
               href: application-item-contexts.md
             - name: プロパティのコンテキスト
@@ -104,18 +119,21 @@
             - name: デバイス固有のコンテキスト
               href: device-specific-contexts.md
         - name: WIA DDI インターフェイス
-          href: wia-ddi-interfaces.md
           items:
+            - name: WIA DDI インターフェイス
+              href: wia-ddi-interfaces.md
             - name: IWiaMiniDrv COM インターフェイス
-              href: iwiaminidrv-com-interface.md
               items:
+                - name: IWiaMiniDrv COM インターフェイス
+                  href: iwiaminidrv-com-interface.md
                 - name: エラー報告
                   href: error-reporting.md
             - name: WIA ドライバー サービス ライブラリ
               href: wia-driver-services-library.md
             - name: WIA ユーティリティ ライブラリ
-              href: wia-utility-library.md
               items:
+                - name: WIA ユーティリティ ライブラリ
+                  href: wia-utility-library.md
                 - name: デバッグ用 WIA 関数
                   href: wia-functions-for-debugging.md
                 - name: 一般的な WIA ユーティリティの関数
@@ -131,8 +149,9 @@
             - name: WIA 診断ログのマクロ
               href: wia-diagnostic-log-macros.md
 - name: WIA のプロパティ
-  href: about-wia-properties.md
   items:
+    - name: WIA のプロパティ
+      href: about-wia-properties.md
     - name: すべての WIA ミニドライバーのプロパティ
       href: properties-for-all-wia-minidrivers.md
     - name: WIA スキャナー ミニドライバーのプロパティ
@@ -144,18 +163,21 @@
     - name: WIA ファイル システム ミニドライバーのプロパティ
       href: properties-for-wia-file-system-minidrivers.md
 - name: 64 ビットと WIA
-  href: 64-bit-and-wia.md
   items:
+    - name: 64 ビットと WIA
+      href: 64-bit-and-wia.md
     - name: 64 ビット WIA ドライバーのコンポーネント
       href: 64-bit-wia-driver-components.md
     - name: 32 ビットおよび 64 ビットの WIA 相互運用性
       href: 32-bit-and-64-bit-wia-interoperability.md
 - name: WIA 互換性レイヤー
-  href: wia-compatibility-layer.md
   items:
+    - name: WIA 互換性レイヤー
+      href: wia-compatibility-layer.md
     - name: WIA プロパティ マッピング
-      href: wia-property-mapping.md
       items:
+        - name: WIA プロパティ マッピング
+          href: wia-property-mapping.md
         - name: マッピングを必要としない WIA プロパティ
           href: wia-properties-that-do-not-require-mapping.md
         - name: 異なる ID と名前を持つ WIA プロパティのマッピング
@@ -169,30 +191,35 @@
         - name: 変更する必要のない WIA プロパティのマッピング - 特殊なケース
           href: mapping-wia-properties-that-need-no-changes---special-cases.md
     - name: WIA 互換性レイヤーのデータ転送
-      href: wia-compatibility-layer-data-transfers.md
       items:
+        - name: WIA 互換性レイヤーのデータ転送
+          href: wia-compatibility-layer-data-transfers.md
         - name: WIA 互換性レイヤーのデータ転送の概要
           href: wia-compatibility-layer-data-transfers-overview.md
         - name: WIA 互換性レイヤーのデータ転送の設計
-          href: wia-compatibility-layer-data-transfer-design.md
           items:
+            - name: WIA 互換性レイヤーのデータ転送の設計
+              href: wia-compatibility-layer-data-transfer-design.md
             - name: レガシ アプリケーションと Windows Vista ドライバー間のデータ転送
               href: data-transfer-between-legacy-application-and-windows-vista-driver.md
             - name: Windows Vista アプリケーションとレガシ ドライバー間のデータ転送
               href: data-transfer-between-windows-vista-application-and-legacy-driver.md
         - name: WIA 互換性レイヤーのメッセージ マッピング
-          href: wia-compatibility-layer-message-mapping.md
           items:
+            - name: WIA 互換性レイヤーのメッセージ マッピング
+              href: wia-compatibility-layer-message-mapping.md
             - name: レガシ アプリケーションと Windows Vista ドライバーのマッピング
               href: mapping-for-a-legacy-application-and-windows-vista-driver.md
             - name: Vista アプリケーションとレガシ ドライバーのマッピング
               href: mapping-for-a-vista-application-and-legacy-driver.md
 - name: WIA ドライバー フィルター
-  href: wia-driver-filters.md
   items:
+    - name: WIA ドライバー フィルター
+      href: wia-driver-filters.md
     - name: WIA 画像処理フィルター
-      href: wia-image-processing-filter.md
       items:
+        - name: WIA 画像処理フィルター
+          href: wia-image-processing-filter.md
         - name: 画像処理フィルターの概要
           href: introduction-to-image-processing-filters.md
         - name: 画像処理フィルターのインストール
@@ -200,8 +227,9 @@
         - name: 画像処理コードの例
           href: image-processing-code-example.md
     - name: WIA セグメンテーション フィルター
-      href: wia-segmentation-filter.md
       items:
+        - name: WIA セグメンテーション フィルター
+          href: wia-segmentation-filter.md
         - name: セグメンテーション フィルターの概要
           href: introduction-to-segmentation-filters.md
         - name: セグメンテーション フィルターのインターフェイス
@@ -211,13 +239,15 @@
         - name: セグメンテーション フィルターのインストール
           href: installing-a-segmentation-filter.md
         - name: セグメンテーション フィルターの WIA プロパティ
-          href: wia-properties-for-segmentation-filters.md
           items:
+            - name: セグメンテーション フィルターの WIA プロパティ
+              href: wia-properties-for-segmentation-filters.md
             - name: WIA_IPS_DESKEW_X と WIA_IPS_DESKEW_Y プロパティ
               href: wia-ips-deskew-x-and-wia-ips-deskew-y-properties.md
         - name: セグメンテーション フィルターの例
-          href: segmentation-filter-examples.md
           items:
+            - name: セグメンテーション フィルターの例
+              href: segmentation-filter-examples.md
             - name: 以下に例を示します。既定のセグメンテーション フィルター
               href: example--default-segmentation-filter.md
             - name: 以下に例を示します。シンプル セグメンテーション フィルター
@@ -229,14 +259,17 @@
             - name: 以下に例を示します。DownloadPreviewImage
               href: example--downloadpreviewimage.md
 - name: WIA 項目ツリー
-  href: wia-item-trees.md
   items:
+    - name: WIA 項目ツリー
+      href: wia-item-trees.md
     - name: WIA 項目ツリーのアーキテクチャ
-      href: wia-item-tree-architecture.md
       items:
+        - name: WIA 項目ツリーのアーキテクチャ
+          href: wia-item-tree-architecture.md
         - name: アプリケーション項目とドライバー項目
-          href: application-items-and-driver-items.md
           items:
+            - name: アプリケーション項目とドライバー項目
+              href: application-items-and-driver-items.md
             - name: 項目のプロパティについて
               href: about-item-properties.md
             - name: WIA ドライバーの項目ツリー
@@ -248,8 +281,9 @@
             - name: 一般的なカメラおよびスキャナーのプロパティ
               href: common--camera--and-scanner-properties.md
         - name: WIA 項目を使用する WIA デバイスの記述
-          href: describing-a-wia-device-using-wia-items.md
           items:
+            - name: WIA 項目を使用する WIA デバイスの記述
+              href: describing-a-wia-device-using-wia-items.md
             - name: WIA 項目のフラグ
               href: wia-item-flags.md
             - name: WIA 項目カテゴリ
@@ -263,28 +297,33 @@
     - name: WIA 項目ツリー構造の変更
       href: changing-the-wia-item-tree-structure.md
     - name: Windows Me および Windows XP の WIA スキャナー項目ツリー
-      href: wia-scanner-item-tree-for-windows-me-and-windows-xp.md
       items:
+        - name: Windows Me および Windows XP の WIA スキャナー項目ツリー
+          href: wia-scanner-item-tree-for-windows-me-and-windows-xp.md
         - name: Windows Me および Windows XP の WIA スキャナー項目ツリー レイアウト
           href: wia-scanner-item-tree-layout-for-windows-me-and-windows-xp.md
         - name: Windows Me および Windows XP のドキュメント フィーダー サポートの追加
           href: adding-document-feeder-support-for-windows-me-and-windows-xp.md
     - name: Windows Vista の WIA スキャナー項目ツリー
-      href: wia-scanner-item-tree-for-windows-vista.md
       items:
+        - name: Windows Vista の WIA スキャナー項目ツリー
+          href: wia-scanner-item-tree-for-windows-vista.md
         - name: WIA フラットベッド スキャナー
-          href: wia-flatbed-scanners.md
           items:
+            - name: WIA フラットベッド スキャナー
+              href: wia-flatbed-scanners.md
             - name: フラットベッド スキャナーのアーキテクチャ
               href: flatbed-scanner-architecture.md
             - name: フラットベッド スキャナー項目ツリーの実装
-              href: implementing-flatbed-scanner-item-trees.md
               items:
+                - name: フラットベッド スキャナー項目ツリーの実装
+                  href: implementing-flatbed-scanner-item-trees.md
                 - name: フラットベッド スキャナー用 WIA 項目のフラグ
                   href: wia-item-flags-for-flatbed-scanners.md
                 - name: フラットベッド スキャナー用 WIA 項目のプロパティ
-                  href: wia-item-properties-for-flatbed-scanners.md
                   items:
+                    - name: フラットベッド スキャナー用 WIA 項目のプロパティ
+                      href: wia-item-properties-for-flatbed-scanners.md
                     - name: WIA スキャナー用の必須ルート項目のプロパティ
                       href: required-root-item-properties-for-wia-scanners.md
                     - name: WIA スキャナー用の省略可能ルート項目のプロパティ
@@ -298,16 +337,19 @@
                 - name: フラットベッド スキャナー用基本スキャン
                   href: basic-scanning-for-flatbed-scanners.md
             - name: Windows XP および Windows Me の WIA フラットベッド スキャナー互換性
-              href: wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md
               items:
+                - name: Windows XP および Windows Me の WIA フラットベッド スキャナー互換性
+                  href: wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md
                 - name: WIA 項目のプロパティと場所の変更
                   href: wia-item-property-and-location-changes.md
         - name: WIA フィーダー スキャナー
-          href: wia-feeder-scanners.md
           items:
+            - name: WIA フィーダー スキャナー
+              href: wia-feeder-scanners.md
             - name: フィーダー スキャナーのアーキテクチャ
-              href: feeder-scanner-architecture.md
               items:
+                - name: フィーダー スキャナーのアーキテクチャ
+                  href: feeder-scanner-architecture.md
                 - name: 両面印刷非対応のドキュメント フィーダー
                   href: non-duplex-capable-document-feeder.md
                 - name: 簡易両面印刷対応のドキュメント フィーダー
@@ -315,13 +357,15 @@
                 - name: 詳細両面印刷対応のドキュメント フィーダー
                   href: advanced-duplex-capable-document-feeder.md
             - name: フィーダー スキャナーの項目ツリーの実装
-              href: implementing-feeder-scanner-item-trees.md
               items:
+                - name: フィーダー スキャナーの項目ツリーの実装
+                  href: implementing-feeder-scanner-item-trees.md
                 - name: フィーダー スキャナーの WIA 項目のフラグ
                   href: wia-item-flags-for-feeder-scanners.md
                 - name: フィーダー スキャナーの WIA 項目のプロパティ
-                  href: wia-item-properties-for-feeder-scanners.md
                   items:
+                    - name: フィーダー スキャナーの WIA 項目のプロパティ
+                      href: wia-item-properties-for-feeder-scanners.md
                     - name: フィーダー スキャナーの必須ルート項目のプロパティ
                       href: required-root-item-properties-for-feeder-scanners.md
                     - name: フィーダー スキャナーの必須 WIA 項目のプロパティ
@@ -335,23 +379,27 @@
             - name: Windows XP および Windows Me の WIA フィーダー スキャナー互換性
               href: wia-feeder-scanner-compatibility-for-windows-xp-and-windows-me.md
         - name: WIA フィルム スキャナー
-          href: wia-film-scanners.md
           items:
+            - name: WIA フィルム スキャナー
+              href: wia-film-scanners.md
             - name: フィルム スキャナー アーキテクチャ
-              href: film-scanner-architecture.md
               items:
+                - name: フィルム スキャナー アーキテクチャ
+                  href: film-scanner-architecture.md
                 - name: フィルムのスキャンをサポートするフラット ベッド スキャナー
                   href: flatbed-scanners-that-support-film-scanning.md
                 - name: 専用のフィルム スキャナー
                   href: dedicated-film-scanners.md
             - name: フィルム スキャナーの項目ツリーの実装
-              href: implementing-film-scanner-item-trees.md
               items:
+                - name: フィルム スキャナーの項目ツリーの実装
+                  href: implementing-film-scanner-item-trees.md
                 - name: フィルム スキャナーの WIA 項目のフラグ
                   href: wia-item-flags-for-film-scanners.md
                 - name: フィルム スキャナーの WIA 項目のプロパティ
-                  href: wia-item-properties-for-film-scanners.md
                   items:
+                    - name: フィルム スキャナーの WIA 項目のプロパティ
+                      href: wia-item-properties-for-film-scanners.md
                     - name: フィルム スキャナーの必須ルート項目のプロパティ
                       href: required-root-item-properties-for-film-scanners.md
                     - name: フィルム スキャナーの必須 WIA 項目のプロパティ
@@ -369,18 +417,21 @@
             - name: Windows XP および Windows Me の WIA フィルム スキャナー互換性
               href: wia-film-scanner-compatibility-for-windows-xp-and-windows-me.md
         - name: WIA スキャナー ストレージ
-          href: wia-scanner-storage.md
           items:
+            - name: WIA スキャナー ストレージ
+              href: wia-scanner-storage.md
             - name: スキャナー記憶域アーキテクチャ
               href: scanner-storage-architecture.md
             - name: スキャナー記憶域項目ツリーの実装
-              href: implementing-scanner-storage-item-trees.md
               items:
+                - name: スキャナー記憶域項目ツリーの実装
+                  href: implementing-scanner-storage-item-trees.md
                 - name: スキャナー記憶域の WIA 項目のフラグ
                   href: wia-item-flags-for-scanner-storage.md
                 - name: スキャナー記憶域の WIA 項目のプロパティ
-                  href: wia-item-properties-for-scanner-storage.md
                   items:
+                    - name: スキャナー記憶域の WIA 項目のプロパティ
+                      href: wia-item-properties-for-scanner-storage.md
                     - name: スキャナー記憶域の必須ルート項目のプロパティ
                       href: required-root-item-properties-for-scanner-storage.md
                     - name: スキャナー記憶域の必須 WIA 項目のプロパティ
@@ -396,11 +447,13 @@
             - name: Windows XP および Windows Me の WIA スキャナー記憶域互換性
               href: wia-scanner-storage-compatibility-for-windows-xp-and-windows-me.md
     - name: Windows 7 の WIA スキャナー項目ツリー
-      href: wia-scanner-item-tree-for-windows-7.md
       items:
+        - name: Windows 7 の WIA スキャナー項目ツリー
+          href: wia-scanner-item-tree-for-windows-7.md
         - name: 自動構成スキャン
-          href: auto-configured-scanning.md
           items:
+            - name: 自動構成スキャン
+              href: auto-configured-scanning.md
             - name: 自動項目
               href: auto-item.md
             - name: 自動項目でサポートされる WIA のプロパティ
@@ -408,24 +461,29 @@
         - name: スキャン イベントの入力ソースの識別
           href: identifying-the-input-source-for-a-scan-event.md
 - name: WIA と Web Services for Devices
-  href: wia-with-web-services-for-devices.md
   items:
+    - name: WIA と Web Services for Devices
+      href: wia-with-web-services-for-devices.md
     - name: WIA スキャナー ドライバーと WSD のインストール
-      href: installing-a-wia-scanner-driver-with-wsd.md
       items:
+        - name: WIA スキャナー ドライバーと WSD のインストール
+          href: installing-a-wia-scanner-driver-with-wsd.md
         - name: Web サービス スキャナーのサンプル INF ファイル
           href: sample-inf-file-for-a-web-services-scanner.md
     - name: WIA スキャナーの SOAP 通信
-      href: soap-communications-for-wia-scanners.md
       items:
+        - name: WIA スキャナーの SOAP 通信
+          href: soap-communications-for-wia-scanners.md
         - name: 関数のインスタンス オブジェクトの取得
-          href: obtaining-a-function-instance-object.md
           items:
+            - name: 関数のインスタンス オブジェクトの取得
+              href: obtaining-a-function-instance-object.md
             - name: 関数のインスタンス オブジェクトの取得のコード例
               href: code-example-for-obtaining-a-function-instance-object.md
         - name: デバイス メタデータの読み取り
-          href: reading-device-metadata.md
           items:
+            - name: デバイス メタデータの読み取り
+              href: reading-device-metadata.md
             - name: プロパティ ストアを開くためのコード例
               href: code-example-for-opening-a-property-store.md
             - name: デバイス プロパティを読み取るためのコード例
@@ -433,8 +491,9 @@
             - name: デバイス プロパティを初期化するためのコード例
               href: code-example-for-initializing-device-properties.md
     - name: WSD チャレンジャーを使用して切断されたスキャナーの通信の確立を試みる
-      href: challenging-a-disconnected-scanner-with-the-wsd-challenger.md
       items:
+        - name: WSD チャレンジャーを使用して切断されたスキャナーの通信の確立を試みる
+          href: challenging-a-disconnected-scanner-with-the-wsd-challenger.md
         - name: 例で使用される定義と変数
           href: definitions-and-variables-used-in-the-examples.md
         - name: エラー コードをフィルター処理するマクロ例
@@ -444,28 +503,33 @@
         - name: ヘルパー メソッドを実装するためのコード例
           href: code-example-for-implementing-helper-methods.md
 - name: WIA ドライバーの開発
-  href: developing-a-wia-driver.md
   items:
+    - name: WIA ドライバーの開発
+      href: developing-a-wia-driver.md
     - name: 'WIA ドライバーの開発:基本的な概念'
-      href: developing-a-wia-driver--basic-concepts.md
       items:
+        - name: 'WIA ドライバーの開発:基本的な概念'
+          href: developing-a-wia-driver--basic-concepts.md
         - name: WIA ミニドライバーの作成
-          href: creating-a-wia-minidriver.md
           items:
+            - name: WIA ミニドライバーの作成
+              href: creating-a-wia-minidriver.md
             - name: COM インターフェイスの提供
               href: providing-a-com-interface.md
             - name: IStiUSD インターフェイスの提供
               href: providing-an-istiusd-interface.md
             - name: WIA ミニドライバーの初期化
-              href: initializing-the-wia-minidriver.md
               items:
+                - name: WIA ミニドライバーの初期化
+                  href: initializing-the-wia-minidriver.md
                 - name: ミニドライバー関数の順序の呼び出し
                   href: calling-order-for-minidriver-functions.md
                 - name: WIA ミニドライバーのロードとアンロード
                   href: loading-and-unloading-a-wia-minidriver.md
                 - name: WIA アプリケーションの接続と切断
-                  href: connecting-and-disconnecting-a-wia-application.md
                   items:
+                    - name: WIA アプリケーションの接続と切断
+                      href: connecting-and-disconnecting-a-wia-application.md
                     - name: アプリケーションで WIA デバイスを作成する方法
                       href: how-the-application-creates-the-wia-device.md
                     - name: アプリケーションで WIA デバイスを解放する方法
@@ -473,8 +537,9 @@
                     - name: WIA ミニドライバーで切断されたイベントを WIA サービスから受信する方法
                       href: how-the-wia-minidriver-receives-a-disconnect-event-from-the-wia-servic.md
                 - name: WIA ミニドライバーの状態のレポート
-                  href: reporting-wia-minidriver-status.md
                   items:
+                    - name: WIA ミニドライバーの状態のレポート
+                      href: reporting-wia-minidriver-status.md
                     - name: デバイスのオンライン状態のレポート
                       href: reporting-device-online-status.md
                     - name: WIA デバイスでの診断の実行
@@ -484,15 +549,17 @@
             - name: 項目ツリーの変更をアプリケーションに通知
               href: informing-an-application-of-item-tree-changes.md
             - name: WIA プロパティの使用
-              href: using-wia-properties.md
               items:
+                - name: WIA プロパティの使用
+                  href: using-wia-properties.md
                 - name: WIA 項目への WIA プロパティの追加
                   href: adding-wia-properties-to-a-wia-item.md
                 - name: カスタム プロパティの定義
                   href: defining-custom-properties.md
                 - name: カスタム プロパティの使用
-                  href: using-custom-properties.md
                   items:
+                    - name: カスタム プロパティの使用
+                      href: using-custom-properties.md
                     - name: カスタム プロパティの作成のサンプル コード
                       href: sample-code-to-create-custom-properties.md
                     - name: カスタム プロパティの設定のサンプル コード
@@ -512,8 +579,9 @@
                 - name: ドライバー ツリーからの項目の削除
                   href: deleting-an-item-from-the-driver-tree.md
             - name: 静止画像デバイス用のカーネル モード ドライバーへのアクセス
-              href: accessing-kernel-mode-drivers-for-still-image-devices.md
               items:
+                - name: 静止画像デバイス用のカーネル モード ドライバーへのアクセス
+                  href: accessing-kernel-mode-drivers-for-still-image-devices.md
                 - name: SCSI ドライバー
                   href: scsi-driver.md
                 - name: USB ドライバー
@@ -521,8 +589,9 @@
             - name: イメージ カラーの管理の実装
               href: implementing-image-color-management.md
         - name: WIA マイクロドライバーの作成
-          href: creating-a-wia-microdriver.md
           items:
+            - name: WIA マイクロドライバーの作成
+              href: creating-a-wia-microdriver.md
             - name: マイクロドライバーの機能
               href: microdriver-functions.md
             - name: WIA フラットベッド ドライバー
@@ -530,8 +599,9 @@
             - name: INF ファイル エントリ
               href: inf-file-entries.md
         - name: Hello World の WIA ミニドライバーの作成
-          href: creating-a---hello-world---wia-minidriver.md
           items:
+            - name: Hello World の WIA ミニドライバーの作成
+              href: creating-a---hello-world---wia-minidriver.md
             - name: Hello World の定義ファイル
               href: '--hello-world---definition-file.md'
             - name: Hello World のインストール ファイル
@@ -539,8 +609,9 @@
             - name: Hello World の実装ファイル
               href: '--hello-world---implementation-file.md'
         - name: WIA アプリケーションへのデータ転送
-          href: transferring-data-to-a-wia-application.md
           items:
+            - name: WIA アプリケーションへのデータ転送
+              href: transferring-data-to-a-wia-application.md
             - name: TYMED とは
               href: understanding-tymed.md
             - name: データのメモリの割り当て
@@ -550,15 +621,17 @@
             - name: 保留中の I/O 操作のキャンセル
               href: canceling-pending-i-o-operations.md
             - name: 未処理形式のデータ転送
-              href: raw-format-data-transfer.md
               items:
+                - name: 未処理形式のデータ転送
+                  href: raw-format-data-transfer.md
                 - name: WIA 未処理形式のデータ ヘッダー
                   href: wia-raw-data-header.md
                 - name: 未処理形式転送のプロパティ検証
                   href: property-validation-for-raw-format-transfers.md
         - name: WIA ドライバー イベントのサポート
-          href: wia-driver-event-support.md
           items:
+            - name: WIA ドライバー イベントのサポート
+              href: wia-driver-event-support.md
             - name: 割り込みイベントのサポートの追加
               href: adding-interrupt-event-support.md
             - name: ポーリング イベントのサポートの追加
@@ -568,13 +641,15 @@
         - name: WIA ドライバー コマンドのサポート
           href: wia-driver-command-support.md
         - name: WIA ドライバーのエラー処理と回復
-          href: wia-driver-error-handling-and-recovery.md
           items:
+            - name: WIA ドライバーのエラー処理と回復
+              href: wia-driver-error-handling-and-recovery.md
             - name: Windows Me と Windows XP の WIA ドライバー エラー レポート
               href: wia-driver-error-reporting-for-windows-me-and-windows-xp.md
             - name: Windows Vista の WIA ドライバー エラー回復
-              href: wia-driver-error-recovery-for-windows-vista.md
               items:
+                - name: Windows Vista の WIA ドライバー エラー回復
+                  href: wia-driver-error-recovery-for-windows-vista.md
                 - name: WIA エラー処理アーキテクチャ
                   href: wia-error-handling-architecture.md
                 - name: モードレス ダイアログの WIA エラー ハンドラーのキャンセル
@@ -588,16 +663,19 @@
                 - name: WIA エラー処理の例
                   href: wia-error-handling-example.md
 - name: WIA カメラ ドライバーの開発
-  href: developing-a-wia-camera-driver.md
   items:
+    - name: WIA カメラ ドライバーの開発
+      href: developing-a-wia-camera-driver.md
     - name: PTP ドライバー
-      href: ptp-driver.md
       items:
+        - name: PTP ドライバー
+          href: ptp-driver.md
         - name: PTP カメラのインストール
           href: installing-a-ptp-camera.md
         - name: WIA 項目への PTP オブジェクトのマッピング
-          href: mapping-ptp-objects-to-wia-items.md
           items:
+            - name: WIA 項目への PTP オブジェクトのマッピング
+              href: mapping-ptp-objects-to-wia-items.md
             - name: WIA 形式 GUID への PTP 形式のコードのマッピング
               href: mapping-ptp-format-codes-to-wia-format-guids.md
             - name: WIA フォルダーへの PTP 関連付けのマッピング
@@ -613,20 +691,23 @@
         - name: デバイスでのデータ転送のキャンセル
           href: canceling-a-data-transfer-by-a-device.md
         - name: 正常に動作する PTP カメラの作成
-          href: creating-a-well-behaved-ptp-camera.md
           items:
+            - name: 正常に動作する PTP カメラの作成
+              href: creating-a-well-behaved-ptp-camera.md
             - name: オブジェクト ハンドルとイベントの順序
               href: object-handle-and-event-order.md
             - name: 自動的に生成されたオブジェクト名
-              href: automatically-generated-object-names.md
               items:
+                - name: 自動的に生成されたオブジェクト名
+                  href: automatically-generated-object-names.md
                 - name: PTP でのオブジェクト サイズ
                   href: object-size-in-ptp.md
                 - name: イメージの Geometry プロパティ
                   href: image-geometry-properties.md
             - name: ベンダー拡張機能
-              href: vendor-extended-features.md
               items:
+                - name: ベンダー拡張機能
+                  href: vendor-extended-features.md
                 - name: PTP カメラのベンダー拡張の公開
                   href: exposing-the-vendor-extensions-of-your-ptp-camera.md
                 - name: ベンダー拡張プロパティ
@@ -640,8 +721,9 @@
         - name: 大容量記憶装置ドライバー
           href: mass-storage-driver.md
         - name: WIA カメラ ミニドライバー
-          href: wia-camera-minidriver.md
           items:
+            - name: WIA カメラ ミニドライバー
+              href: wia-camera-minidriver.md
             - name: WIA カメラ項目のツリー レイアウトの作成
               href: creating--a-wia-camera-item-tree-layout.md
             - name: イメージへの添付ファイルの追加
@@ -651,15 +733,17 @@
             - name: オーディオ データの保存と転送
               href: storing-and-transferring-audio-data.md
     - name: WIA スキャナー ドライバーの開発
-      href: developing-a-wia-scanner-driver.md
       items:
+        - name: WIA スキャナー ドライバーの開発
+          href: developing-a-wia-scanner-driver.md
         - name: WIA スキャナー項目ツリー レイアウト
           href: wia-scanner-item-tree-layout.md
         - name: ドキュメント フィーダーのサポートの追加
           href: adding-document-feeder-support.md
         - name: ページ サイズと向き
-          href: page-size-and-orientation.md
           items:
+            - name: ページ サイズと向き
+              href: page-size-and-orientation.md
             - name: サポートされているスキャナーの用紙サイズ
               href: supported-scanner-paper-sizes.md
             - name: カスタムおよび自動のページ サイズ
@@ -669,11 +753,13 @@
             - name: ページ サイズと向きのコード例
               href: page-size-and-orientation-code-examples.md
         - name: TWAIN 互換性
-          href: twain-compatibility.md
           items:
+            - name: TWAIN 互換性
+              href: twain-compatibility.md
             - name: WIA-TWAIN ドライバーの設計に関する考慮事項
-              href: wia-twain-driver-design-considerations.md
               items:
+                - name: WIA-TWAIN ドライバーの設計に関する考慮事項
+                  href: wia-twain-driver-design-considerations.md
                 - name: WIA-TWAIN 互換性
                   href: wia-twain-compatibility.md
                 - name: WIA-TWAIN ロック
@@ -685,13 +771,15 @@
                 - name: WIA-TWAIN リスク
                   href: wia-twain-risks.md
             - name: TWAIN と互換性のあるアプリケーションのサポート
-              href: support-for-twain-compatible-applications.md
               items:
+                - name: TWAIN と互換性のあるアプリケーションのサポート
+                  href: support-for-twain-compatible-applications.md
                 - name: WIA ドライバーでの TWAIN 機能のパススルーの有効化
                   href: enabling-twain-capability-pass-through-in-a-wia-driver.md
                 - name: IStiUSD エスケープ メソッドの使用
-                  href: using-the-istiusd-escape-method.md
                   items:
+                    - name: IStiUSD エスケープ メソッドの使用
+                      href: using-the-istiusd-escape-method.md
                     - name: ESC_TWAIN_CAPABILITY エスケープ コード
                       href: esc-twain-capability-escape-code.md
                     - name: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS エスケープ コード
@@ -699,18 +787,21 @@
     - name: WIA ビデオ ドライバーの開発
       href: developing-a-wia-video-driver.md
     - name: WIA ドライバーのカスタマイズ
-      href: customizing-a-wia-driver.md
       items:
+        - name: WIA ドライバーのカスタマイズ
+          href: customizing-a-wia-driver.md
         - name: ユーザー インターフェイスの拡張
-          href: user-interface-extensions.md
           items:
+            - name: ユーザー インターフェイスの拡張
+              href: user-interface-extensions.md
             - name: コンテキスト メニューの拡張
               href: context-menu-extensions.md
             - name: コントロール パネル ウィザードの置換
               href: control-panel-wizard-replacement.md
             - name: イメージ アプリケーション ダイアログの拡張
-              href: image-application-dialog-extensions.md
               items:
+                - name: イメージ アプリケーション ダイアログの拡張
+                  href: image-application-dialog-extensions.md
                 - name: IWiaUIExtension COM インターフェイス
                   href: iwiauiextension-com-interface.md
             - name: プロパティ シートの拡張
@@ -718,33 +809,39 @@
             - name: ユーザー インターフェイス拡張のレジストリ エントリ
               href: user-interface-extension-registry-entries.md
         - name: WIA ミニドライバーへの UI の追加
-          href: adding-ui-to-a-wia-minidriver.md
           items:
+            - name: WIA ミニドライバーへの UI の追加
+              href: adding-ui-to-a-wia-minidriver.md
             - name: Hello World WIA ミニドライバー UI 拡張機能の作成
               href: creating-a--hello-world--wia-minidriver-ui-extension.md
 - name: WIA ミニドライバーのベスト プラクティス
-  href: wia-minidriver-best-practices.md
   items:
+    - name: WIA ミニドライバーのベスト プラクティス
+      href: wia-minidriver-best-practices.md
     - name: ロックおよびロック解除のベスト プラクティス
       href: locking-and-unlocking-best-practices.md
     - name: WIA ドライバーに関するセキュリティの問題
-      href: security-issues-for-wia-drivers.md
       items:
+        - name: WIA ドライバーに関するセキュリティの問題
+          href: security-issues-for-wia-drivers.md
         - name: WIA セキュリティ上の一般的な問題
-          href: common-wia-security-problems.md
           items:
+            - name: WIA セキュリティ上の一般的な問題
+              href: common-wia-security-problems.md
             - name: WIA セキュリティおよびセキュリティ記述子
               href: wia-security-and-security-descriptors.md
         - name: WIA セキュリティのベスト プラクティス
-          href: wia-security-best-practices.md
           items:
+            - name: WIA セキュリティのベスト プラクティス
+              href: wia-security-best-practices.md
             - name: WIA ドライバーのファイル システム アクセス
               href: file-system-access-for-wia-drivers.md
             - name: WIA ドライバーのレジストリ アクセス
               href: registry-access-for-wia-drivers.md
             - name: WIA ドライバーの名前付きカーネル オブジェクト
-              href: named-kernel-objects-for-wia-drivers.md
               items:
+                - name: WIA ドライバーの名前付きカーネル オブジェクト
+                  href: named-kernel-objects-for-wia-drivers.md
                 - name: WIA ドライバーの名前空間
                   href: namespaces-for-wia-drivers.md
                 - name: WIA ドライバーへのアクセス許可
@@ -754,8 +851,9 @@
             - name: WIA ドライバーによってプロセスを作成して開く
               href: creating-and-opening-processes-by-wia-drivers.md
 - name: WIA マイクロドライバーのコマンド
-  href: wia-microdriver-commands.md
   items:
+    - name: WIA マイクロドライバーのコマンド
+      href: wia-microdriver-commands.md
     - name: 自動ドキュメント フィーダー コマンド
       href: automatic-document-feeder-commands.md
     - name: イベント コマンド
@@ -765,11 +863,13 @@
     - name: 省略可能コマンド
       href: optional-commands.md
 - name: WIA ミニドライバーの構築、トラブルシューティング、デバッグ
-  href: building--troubleshooting-and-debugging-wia-minidrivers.md
   items:
+    - name: WIA ミニドライバーの構築、トラブルシューティング、デバッグ
+      href: building--troubleshooting-and-debugging-wia-minidrivers.md
     - name: WIA ビルド環境のセットアップ
-      href: setting-up-the-wia-build-environment.md
       items:
+        - name: WIA ビルド環境のセットアップ
+          href: setting-up-the-wia-build-environment.md
         - name: WIA ミニドライバーの作成
           href: building-a-wia-minidriver.md
         - name: WIA マイクロドライバーの作成
@@ -779,11 +879,13 @@
     - name: WIA ミニドライバーのデバッグ
       href: wia-minidriver-debugging.md
 - name: WIA のサンプルとツール
-  href: wia-samples-and-tools.md
   items:
+    - name: WIA のサンプルとツール
+      href: wia-samples-and-tools.md
     - name: サンプル WIA ドライバー
-      href: sample-wia-drivers.md
       items:
+        - name: サンプル WIA ドライバー
+          href: sample-wia-drivers.md
         - name: フラットベッド スキャナーのミニドライバーのサンプル
           href: flatbed-scanner-minidriver-sample.md
         - name: スキャナーのマイクロドライバーのサンプル
@@ -799,8 +901,9 @@
     - name: WIA ツール
       href: wia-tools.md
     - name: WIA ミニドライバーのインストール
-      href: installing-a-wia-minidriver.md
       items:
+        - name: WIA ミニドライバーのインストール
+          href: installing-a-wia-minidriver.md
         - name: WIA ドライバーのレジストリ エントリ
           href: registry-entries-for-wia-drivers.md
         - name: WIA デバイスの INF ファイル
@@ -808,8 +911,9 @@
         - name: 1 つの PDO を持つ 1 台の MFP へのスキャン機能のインストール
           href: installing-scanning-functionality-in-an-mfp-with-a-single-pdo.md
     - name: WIA のプロパティ
-      href: wia-properties.md
       items:
+        - name: WIA のプロパティ
+          href: wia-properties.md
         - name: WIA_DIP_BAUDRATE
           href: wia-dip-baudrate.md
         - name: WIA_DIP_DEV_DESC
@@ -1305,15 +1409,17 @@
         - name: WIA_IPS_YSCALING
           href: wia-ips-yscaling.md
 - name: 静止画像ドライバー
-  href: still-image-drivers.md
   items:
+    - name: 静止画像ドライバー
+      href: still-image-drivers.md
     - name: Microsoft STI と Microsoft WIA の概要
       href: overview-of-microsoft-sti-and-microsoft-wia.md
     - name: Microsoft STI の概要
       href: introduction-to-microsoft-sti.md
     - name: Microsoft STI コンポーネント
-      href: microsoft-sti-components.md
       items:
+        - name: Microsoft STI コンポーネント
+          href: microsoft-sti-components.md
         - name: STI コンポーネントの概要
           href: overview-of-sti-components.md
         - name: Windows 98 Core コンポーネント
@@ -1321,8 +1427,9 @@
         - name: Windows 2000 Core コンポーネント
           href: windows-2000-core-components.md
     - name: 静止画像 COM インターフェイス
-      href: still-image-com-interfaces.md
       items:
+        - name: 静止画像 COM インターフェイス
+          href: still-image-com-interfaces.md
         - name: IStillImage COM インターフェイス
           href: istillimage-com-interface.md
         - name: IStiDevice COM インターフェイス
@@ -1332,18 +1439,21 @@
         - name: IStiDeviceControl COM インターフェイス
           href: istidevicecontrol-com-interface.md
     - name: 静止画像 I/O
-      href: still-image-i-o.md
       items:
+        - name: 静止画像 I/O
+          href: still-image-i-o.md
         - name: 静止画像 SCSI I/O
-          href: still-image-scsi-i-o.md
           items:
+            - name: 静止画像 SCSI I/O
+              href: still-image-scsi-i-o.md
             - name: 静止画像 SCSI I/O 制御コード
               href: still-image-scsi-i-o-control-codes.md
             - name: 静止画像 SCSI I/O 構造体
               href: still-image-scsi-i-o-structures.md
         - name: 静止画像 USB I/O
-          href: still-image-usb-i-o.md
           items:
+            - name: 静止画像 USB I/O
+              href: still-image-usb-i-o.md
             - name: 静止画像 USB I/O 制御コード
               href: still-image-usb-i-o-control-codes.md
             - name: 静止画像 USB I/O 構造体
@@ -1353,8 +1463,9 @@
     - name: イメージ取得 API 用のデバイス固有のコンポーネントの作成
       href: creating-device-specific-components-for-image-acquisition-apis.md
     - name: ユーザー モードの静止画像ミニドライバーの作成
-      href: creating-a-user-mode-still-image-minidriver.md
       items:
+        - name: ユーザー モードの静止画像ミニドライバーの作成
+          href: creating-a-user-mode-still-image-minidriver.md
         - name: 静止画像デバイスのイベント
           href: still-image-device-events.md
         - name: 転送モード
@@ -1362,8 +1473,9 @@
         - name: 静止画像ドライバーのセキュリティの問題
           href: security-issues-for-still-image-drivers.md
     - name: 静止画像コンポーネントのインストールと構成
-      href: installing-and-configuring-still-image-components.md
       items:
+        - name: 静止画像コンポーネントのインストールと構成
+          href: installing-and-configuring-still-image-components.md
         - name: 静止画像デバイスのプロパティ シート
           href: property-sheet-pages-for-still-image-devices.md
         - name: 静止画像デバイスのレジストリ エントリ
@@ -1379,22 +1491,27 @@
     - name: 静止画像コンポーネントのデバッグ
       href: debugging-still-image-components.md
 - name: Web Services on Devices
-  href: web-services-on-devices.md
   items:
+    - name: Web Services on Devices
+      href: web-services-on-devices.md
     - name: スキャン サービス (WS-SCAN
       href: scan-service--ws-scan.md
 - name: Web Services on Devices リファレンス
-  href: web-services-on-devices-reference.md
   items:
+    - name: Web Services on Devices リファレンス
+      href: web-services-on-devices-reference.md
     - name: スキャン サービス (WS-Scan) スキーマ
-      href: scan-service--ws-scan--schema.md
       items:
+        - name: スキャン サービス (WS-Scan) スキーマ
+          href: scan-service--ws-scan--schema.md
         - name: WSD スキャン サービス スキャナー要素
-          href: wsd-scan-service-scanner-elements.md
           items:
+            - name: WSD スキャン サービス スキャナー要素
+              href: wsd-scan-service-scanner-elements.md
             - name: スキャナーの説明要素
-              href: scanner-description-elements.md
               items:
+                - name: スキャナーの説明要素
+                  href: scanner-description-elements.md
                 - name: ScannerDescription
                   href: scannerdescription.md
                 - name: ScannerInfo
@@ -1404,13 +1521,15 @@
                 - name: ScannerName
                   href: scannername.md
             - name: スキャナーの構成要素
-              href: scanner-configuration-elements.md
               items:
+                - name: スキャナーの構成要素
+                  href: scanner-configuration-elements.md
                 - name: ScannerConfiguration
                   href: scannerconfiguration.md
                 - name: デバイス設定の構成要素
-                  href: device-settings-configuration-elements.md
                   items:
+                    - name: デバイス設定の構成要素
+                      href: device-settings-configuration-elements.md
                     - name: AutoExposureSupported
                       href: autoexposuresupported.md
                     - name: BrightnessSupported
@@ -1446,8 +1565,9 @@
                     - name: ScalingWidth
                       href: scalingwidth2.md
         - name: プラテン構成要素
-          href: platen-configuration-elements.md
           items:
+            - name: プラテン構成要素
+              href: platen-configuration-elements.md
             - name: ColorEntry
               href: colorentry.md
             - name: 高さ
@@ -1471,8 +1591,9 @@
             - name: Widths
               href: widths.md
         - name: ADF 構成要素
-          href: adf-configuration-elements.md
           items:
+            - name: ADF 構成要素
+              href: adf-configuration-elements.md
             - name: ADF
               href: adf.md
             - name: ADFBack
@@ -1492,8 +1613,9 @@
             - name: ADFSupportsDuplex
               href: adfsupportsduplex.md
         - name: フィルム構成要素
-          href: film-configuration-elements.md
           items:
+            - name: フィルム構成要素
+              href: film-configuration-elements.md
             - name: Film
               href: film.md
             - name: FilmColor
@@ -1511,8 +1633,9 @@
             - name: FilmScanModeValue
               href: filmscanmodevalue.md
             - name: スキャナーの状態要素
-              href: scanner-status-elements.md
               items:
+                - name: スキャナーの状態要素
+                  href: scanner-status-elements.md
                 - name: ActiveConditions
                   href: activeconditions.md
                 - name: ClearTime
@@ -1542,18 +1665,21 @@
                 - name: 時間
                   href: time.md
             - name: スキャン チケット
-              href: scan-tickets.md
               items:
+                - name: スキャン チケット
+                  href: scan-tickets.md
                 - name: DefaultScanTicket
                   href: defaultscanticket.md
                 - name: ScanTicket
                   href: scanticket.md
         - name: WSD スキャン サービス ジョブとドキュメント要素
-          href: wsd-scan-service-job-and-document-elements.md
           items:
+            - name: WSD スキャン サービス ジョブとドキュメント要素
+              href: wsd-scan-service-job-and-document-elements.md
             - name: WSD スキャン サービス ジョブとジョブ テーブル要素
-              href: wsd-scan-service-job-and-job-table-elements.md
               items:
+                - name: WSD スキャン サービス ジョブとジョブ テーブル要素
+                  href: wsd-scan-service-job-and-job-table-elements.md
                 - name: ActiveJobs
                   href: activejobs.md
                 - name: Job
@@ -1587,8 +1713,9 @@
                 - name: ScansCompleted
                   href: scanscompleted.md
             - name: WSD スキャン サービス ドキュメント要素
-              href: wsd-scan-service-document-elements.md
               items:
+                - name: WSD スキャン サービス ドキュメント要素
+                  href: wsd-scan-service-document-elements.md
                 - name: AutoExposure
                   href: autoexposure.md
                 - name: Brightness
@@ -1660,8 +1787,9 @@
                 - name: Sharpness
                   href: sharpness.md
         - name: WSD スキャン サービス イベント要素
-          href: wsd-scan-service-event-elements.md
           items:
+            - name: WSD スキャン サービス イベント要素
+              href: wsd-scan-service-event-elements.md
             - name: ClientContext
               href: clientcontext.md
             - name: ClientDisplayName
@@ -1709,11 +1837,13 @@
             - name: StatusSummary
               href: statussummary.md
         - name: WSD スキャン サービス操作要素とエラー コード
-          href: wsd-scan-service-operation-elements-and-error-codes.md
           items:
+            - name: WSD スキャン サービス操作要素とエラー コード
+              href: wsd-scan-service-operation-elements-and-error-codes.md
             - name: WSD スキャン サービス操作要素
-              href: wsd-scan-service-operation-elements.md
               items:
+                - name: WSD スキャン サービス操作要素
+                  href: wsd-scan-service-operation-elements.md
                 - name: BytesPerLine
                   href: bytesperline.md
                 - name: CancelJobRequest
@@ -1785,7 +1915,8 @@
                 - name: ValidTicket
                   href: validticket.md
             - name: WSD スキャン サービス操作エラー報告
-              href: wsd-scan-service-operation-error-reporting.md
               items:
+                - name: WSD スキャン サービス操作エラー報告
+                  href: wsd-scan-service-operation-error-reporting.md
                 - name: 一般的な WSD スキャン サービス操作のエラー コード
                   href: common-wsd-scan-service-operation-error-codes.md
