@@ -1,5 +1,5 @@
 ---
-title: '[WDF Drivers](WDF ドライバー) タブ'
+title: WDF Drivers (WDF ドライバー) タブ
 description: このトピックでは、WDF Verifier のドライバーを WDF ページに関する詳細情報を提供します。
 ms.assetid: e1e1d92e-1173-48ef-b985-688ebfb08bdc
 keywords:
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42d5dc32f07ef053034be198bf87154ab0de632a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380464"
 ---
-# <a name="wdf-drivers-tab"></a>[WDF Drivers]\(WDF ドライバー\) タブ
+# <a name="wdf-drivers-tab"></a>WDF Drivers (WDF ドライバー) タブ
 
 
 このトピックでは、WDF Verifier のについて詳細な情報を提供します。 **WDF ドライバー**ページ。 このページには、コンピューター上のすべての WDF ドライバーが一覧表示し、検証の設定と、それらを使用するデバイスの設定を変更することができます。 特定のドライバーに関心がある場合は、ここからを開始します。
