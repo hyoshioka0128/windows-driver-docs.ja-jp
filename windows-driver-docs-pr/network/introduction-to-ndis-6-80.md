@@ -4,12 +4,12 @@ description: このセクションでは、NDIS 6.80 を紹介し、NDIS 6.70 �
 ms.assetid: 5E6E12BF-DE34-4CDD-84BB-7708A59134E9
 ms.date: 07/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85aa0c719bfcf42a74057d332a1c203ed8352e4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 210f5f2bc0a7f1de558b15bbb662d66bacd01c16
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349464"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405227"
 ---
 # <a name="introduction-to-ndis-680"></a>NDIS 6.80 の概要
 
@@ -43,7 +43,7 @@ NDIS 6.80、ドライバーがで定義されている要件に従う必要が�
 
 - NDIS 6.80 ドライバーは、NDIS に登録する際に、正しい NDIS バージョンを報告する必要があります。
 
-   必要があります、メジャーおよびマイナー NDIS バージョン番号を更新 NDIS_Xxx_DRIVER_CHARACTERISTICS 構造で NDIS 6.80 をサポートするためにします。 MajorNdisVersion メンバーは、6 を含める必要があり、MinorNdisVersion メンバーが 80 を含める必要があります。 この要件は、プロトコルとフィルター ドライバーをミニポートに適用されます。 コンパイラのバージョン情報を更新することも必要があります (を参照してください[コンパイル、NDIS 6.80 ドライバー](#compiling-an-ndis-670-driver))。
+   必要があります、メジャーおよびマイナー NDIS バージョン番号を更新 NDIS_Xxx_DRIVER_CHARACTERISTICS 構造で NDIS 6.80 をサポートするためにします。 MajorNdisVersion メンバーは、6 を含める必要があり、MinorNdisVersion メンバーが 80 を含める必要があります。 この要件は、プロトコルとフィルター ドライバーをミニポートに適用されます。 コンパイラのバージョン情報を更新することも必要があります (を参照してください[コンパイル、NDIS 6.80 ドライバー](#compiling-an-ndis-680-driver))。
 
 ## <a name="compiling-an-ndis-680-driver"></a>コンパイル、NDIS 6.80 ドライバー
 

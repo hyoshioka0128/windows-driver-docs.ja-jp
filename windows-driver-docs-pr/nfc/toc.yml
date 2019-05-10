@@ -1,6 +1,7 @@
 - name: NFC の設計ガイド
-  href: index.md
   items:
+    - name: NFC の設計ガイド
+      href: index.md
     - name: NFC デバイス ドライバーの新機能
       href: what-s-new-in-nfc-device-drivers.md
     - name: NFC のアーキテクチャ
@@ -8,18 +9,21 @@
     - name: Wi-Fi Direct ペアリングの実装
       href: wi-fi-direct-paring-implementation.md
     - name: 近距離近接通信設計ガイド
-      href: nfp-design-guide.md
       items:
+        - name: 近距離近接通信設計ガイド
+          href: nfp-design-guide.md
         - name: Tap and Do
-          href: tap-and-do.md
           items:
+            - name: Tap and Do
+              href: tap-and-do.md
             - name: Tap and Do のシナリオ
               href: tap-and-do-scenarios.md
             - name: Tap and Do の使用事例
               href: tap-and-do-use-cases.md
         - name: NFP プロバイダー モデル
-          href: nfp-provider-model.md
           items:
+            - name: NFP プロバイダー モデル
+              href: nfp-provider-model.md
             - name: 物理センサー モデル
               href: physical-sensor-model.md
             - name: ［メッセージの種類］
@@ -35,8 +39,9 @@
             - name: NFP によるワイヤレス周辺デバイスのペアリング
               href: nfp-facilitated-peripheral-wireless-device-pairing.md
         - name: NFP デバイス ドライバーの要件
-          href: nfp-device-driver-requirements.md
           items:
+            - name: NFP デバイス ドライバーの要件
+              href: nfp-device-driver-requirements.md
             - name: デバイス識別子
               href: device-identifiers.md
             - name: デバイス インターフェイス
@@ -62,8 +67,9 @@
             - name: 電源管理
               href: power-management.md
             - name: プロトコルのサポート
-              href: protocol-support.md
               items:
+                - name: プロトコルのサポート
+                  href: protocol-support.md
                 - name: NDEF プロトコル
                   href: ndef-protocol.md
                 - name: 'Pairing:Bluetooth プロトコル'
@@ -79,8 +85,9 @@
                 - name: ピアツーピア
                   href: peer-to-peer.md
     - name: スマート カード設計ガイド
-      href: design-guide-smart-card.md
       items:
+        - name: スマート カード設計ガイド
+          href: design-guide-smart-card.md
         - name: 機能のフロー
           href: functional-flow.md
         - name: シーケンスの例
@@ -92,13 +99,15 @@
         - name: PC/SC インターフェイス
           href: pc-sc-interface.md
     - name: 電源管理
-      href: nfc-power-management.md
       items:
+        - name: 電源管理
+          href: nfc-power-management.md
         - name: ポーリング
           href: polling.md
     - name: NFC クラスの拡張 (CX) 設計ガイド
-      href: nfc-class-extension-.md
       items:
+        - name: NFC クラスの拡張 (CX) 設計ガイド
+          href: nfc-class-extension-.md
         - name: 用語集
           href: glossary.md
         - name: NFC CX クイック スタート ガイド
@@ -114,11 +123,13 @@
         - name: クラスの拡張ステート マシン
           href: nfc-class-extension-state-machine.md
         - name: 拡張性モデル
-          href: extensibility-model.md
           items:
+            - name: 拡張性モデル
+              href: extensibility-model.md
             - name: シーケンス処理
-              href: sequence-handling.md
               items:
+                - name: シーケンス処理
+                  href: sequence-handling.md
                 - name: シーケンス
                   href: sequences.md
                 - name: シーケンスのフラグ

@@ -1,16 +1,19 @@
 - name: パラレル デバイス設計ガイド
-  href: index.md
   items:
+    - name: パラレル デバイス設計ガイド
+      href: index.md
     - name: パラレル ポートとデバイスの概要
-      href: introduction-to-parallel-ports-and-devices.md
       items:
+        - name: パラレル ポートとデバイスの概要
+          href: introduction-to-parallel-ports-and-devices.md
         - name: パラレル ポートの物理構成
           href: physical-configuration-of-parallel-ports.md
         - name: パラレル ポートに接続されているデバイスの物理構成
           href: physical-configuration-of-devices-attached-to-a-parallel-port.md
     - name: システム提供のパラレル ドライバー
-      href: system-supplied-parallel-drivers.md
       items:
+        - name: システム提供のパラレル ドライバー
+          href: system-supplied-parallel-drivers.md
         - name: システム提供のパラレル ドライバーの機能
           href: features-of-system-supplied-parallel-drivers.md
         - name: パラレル ポートとデバイスのデバイス スタック
@@ -20,13 +23,15 @@
         - name: パラレル ポートとデバイスの IOCTL とコールバックのサポート
           href: ioctl-and-callback-support-for-parallel-ports-and-devices.md
     - name: ベンダー提供のパラレル ドライバー
-      href: vendor-supplied-parallel-drivers.md
       items:
+        - name: ベンダー提供のパラレル ドライバー
+          href: vendor-supplied-parallel-drivers.md
         - name: ベンダー提供のパラレル ドライバーの要件
           href: requirements-for-vendor-supplied-parallel-drivers.md
         - name: パラレル ポートの操作
-          href: operating-a-parallel-port.md
           items:
+            - name: パラレル ポートの操作
+              href: operating-a-parallel-port.md
             - name: パラレル ポートの作成と開始
               href: creating-and-starting-a-parallel-port.md
             - name: パラレル ポートの開始と終了
@@ -44,8 +49,9 @@
             - name: 割り込みサービス ルーチンのパラレル ポートへの接続する
               href: connecting-an-interrupt-service-routine-to-a-parallel-port.md
         - name: パラレル ポートに接続されているパラレル デバイスの操作
-          href: operating-a-parallel-device-attached-to-a-parallel-port.md
           items:
+            - name: パラレル ポートに接続されているパラレル デバイスの操作
+              href: operating-a-parallel-device-attached-to-a-parallel-port.md
             - name: パラレル デバイスの開始と使用
               href: opening-and-using-a-parallel-device.md
             - name: パラレル デバイスへの接続

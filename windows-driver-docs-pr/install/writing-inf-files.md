@@ -7,17 +7,17 @@ keywords:
 - WDK デバイス インストールの INF ファイルの書き込み
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 983ff61588d3c7ed2f98254ba771042109e28d1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69af3e79706a60680d768479c113e2a19adc6988
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339159"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456434"
 ---
 # <a name="writing-inf-files"></a>INF ファイルの記述
 
 
-記述するとき、 [INF ファイル](inf-files.md)の[ドライバー パッケージ](driver-packages.md)、これらのガイドラインに従う必要があります。
+記述するとき、 [INF ファイル](overview-of-inf-files.md)の[ドライバー パッケージ](driver-packages.md)、これらのガイドラインに従う必要があります。
 
 -   INF ファイルを有効な構造を使用する必要があり、インストール プロセスの冒頭にドライバー パッケージの検証に合格するための構文を確認します。
 

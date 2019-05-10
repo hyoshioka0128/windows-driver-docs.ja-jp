@@ -3,19 +3,19 @@ Description: このトピックでは、USB 一括転送について、簡単な
 title: USB バルク転送要求の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab6e0a844f762270b63e644c8cf7805e1c3136dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d0a1be3bc36a3ed265f5f2fda0513f696a12d9b
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355109"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405083"
 ---
 # <a name="how-to-send-usb-bulk-transfer-requests"></a>USB バルク転送要求の送信方法
 
 
 このトピックでは、USB 一括転送について、簡単な概要を説明します。 クライアント ドライバーが送信して、デバイスから大量のデータを受信する方法についての詳細な手順についても提供します。
 
--   [一括エンドポイントについて](#ddk-usb-bulk-and-interrupt-transfer-kg)
+-   [一括エンドポイントについて](#about-bulk-endpoints)
 -   [一括トランザクション](#bulk-transactions)
 -   [一括転送する場合の USB クライアント ドライバーのタスク](#usb-client-driver-tasks-for-a-bulk-transfer)
 -   [一括転送要求の例](#bulk-transfer-request-example)

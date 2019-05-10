@@ -1,6 +1,7 @@
 - name: ドライバーのセキュリティ ガイダンス
-  href: index.md
   items:
+    - name: ドライバーのセキュリティ ガイダンス
+      href: index.md
     - name: ドライバーのセキュリティ チェックリスト
       href: driver-security-checklist.md
     - name: ドライバーの脅威モデリング

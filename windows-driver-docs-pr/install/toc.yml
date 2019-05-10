@@ -746,36 +746,210 @@
           href: initiating-system-restarts-during-device-installations.md
         - name: 64 ビット システムへのデバイスのインストール
           href: device-installations-on-64-bit-systems.md
-- name: レジストリ
+    - name: レジストリ
+      items:
+        - name: レジストリ ツリーとキー
+          href: registry-trees-and-keys.md
+        - name: デバイスとドライバーのレジストリ ツリー
+          href: overview-of-registry-trees-and-keys.md
+        - name: 'HKLM\SYSTEM\CurrentControlSet\Services レジストリ ツリー '
+          href: hklm-system-currentcontrolset-services-registry-tree.md
+        - name: HKLM\SYSTEM\CurrentControlSet\Control レジストリ ツリー
+          href: hklm-system-currentcontrolset-control-registry-tree.md
+        - name: HKLM\SYSTEM\CurrentControlSet\Enum レジストリ ツリー
+          href: hklm-system-currentcontrolset-enum-registry-tree.md
+        - name: HKLM\SYSTEM\CurrentControlSet\HardwareProfiles レジストリ ツリー
+          href: hklm-system-currentcontrolset-hardwareprofiles-registry-tree.md
+        - name: RunOnce Registry キー
+          href: runonce-registry-key.md
+        - name: DeviceOverrides レジストリ キー
+          href: deviceoverrides-registry-key.md
+        - name: HardwareID レジストリ サブキー
+          href: hardwareid-registry-subkey.md
+        - name: CompatibleID レジストリ サブキー
+          href: compatibleid-registry-subkey.md
+        - name: LocationPaths レジストリ サブキー
+          href: locationpaths-registry-subkey.md
+        - name: ChildLocationPaths レジストリ サブキー
+          href: childlocationpaths-registry-subkey.md
+        - name: LocationPath レジストリ サブキー
+          href: locationpath-registry-subkey.md
+        - name: '* レジストリ サブキー'
+          href: '--registry-subkey.md'
+- name: INF のセクション
   items:
-    - name: レジストリ ツリーとキー
-      href: registry-trees-and-keys.md
-    - name: デバイスとドライバーのレジストリ ツリー
-      href: overview-of-registry-trees-and-keys.md
-    - name: 'HKLM\SYSTEM\CurrentControlSet\Services レジストリ ツリー '
-      href: hklm-system-currentcontrolset-services-registry-tree.md
-    - name: HKLM\SYSTEM\CurrentControlSet\Control レジストリ ツリー
-      href: hklm-system-currentcontrolset-control-registry-tree.md
-    - name: HKLM\SYSTEM\CurrentControlSet\Enum レジストリ ツリー
-      href: hklm-system-currentcontrolset-enum-registry-tree.md
-    - name: HKLM\SYSTEM\CurrentControlSet\HardwareProfiles レジストリ ツリー
-      href: hklm-system-currentcontrolset-hardwareprofiles-registry-tree.md
-    - name: RunOnce Registry キー
-      href: runonce-registry-key.md
-    - name: DeviceOverrides レジストリ キー
-      href: deviceoverrides-registry-key.md
-    - name: HardwareID レジストリ サブキー
-      href: hardwareid-registry-subkey.md
-    - name: CompatibleID レジストリ サブキー
-      href: compatibleid-registry-subkey.md
-    - name: LocationPaths レジストリ サブキー
-      href: locationpaths-registry-subkey.md
-    - name: ChildLocationPaths レジストリ サブキー
-      href: childlocationpaths-registry-subkey.md
-    - name: LocationPath レジストリ サブキー
-      href: locationpath-registry-subkey.md
-    - name: '* レジストリ サブキー'
-      href: '--registry-subkey.md'
+    - name: INF ClassInstall32 セクション
+      href: inf-classinstall32-section.md
+    - name: INF ClassInstall32.Services セクション
+      href: inf-classinstall32-services-section.md
+    - name: INF ControlFlags セクション
+      href: inf-controlflags-section.md
+    - name: INF DDInstall セクション
+      href: inf-ddinstall-section.md
+    - name: INF DDInstall.CoInstallers セクション
+      href: inf-ddinstall-coinstallers-section.md
+    - name: INF DDInstall.Components セクション
+      href: inf-ddinstall-components-section.md
+    - name: INF DDInstall.Events セクション
+      href: inf-ddinstall-events-section.md
+    - name: INF DDInstall.FactDef セクション
+      href: inf-ddinstall-factdef-section.md
+    - name: INF DDInstall.HW セクション
+      href: inf-ddinstall-hw-section.md
+    - name: INF DDInstall.Interfaces セクション
+      href: inf-ddinstall-interfaces-section.md
+    - name: INF DDInstall.LogConfigOverride セクション
+      href: inf-ddinstall-logconfigoverride-section.md
+    - name: INF DDInstall.Services セクション
+      href: inf-ddinstall-services-section.md
+    - name: INF DDInstall.Software セクション
+      href: inf-ddinstall-software-section.md
+    - name: INF DDInstall.WMI セクション
+      href: inf-ddinstall-wmi-section.md
+    - name: INF DefaultInstall セクション
+      href: inf-defaultinstall-section.md
+    - name: INF DefaultInstall.Services セクション
+      href: inf-defaultinstall-services-section.md
+    - name: INF DestinationDirs セクション
+      href: inf-destinationdirs-section.md
+    - name: INF InterfaceInstall32 セクション
+      href: inf-interfaceinstall32-section.md
+    - name: INF Manufacturer セクション
+      href: inf-manufacturer-section.md
+    - name: INF Models セクション
+      href: inf-models-section.md
+    - name: INF SignatureAttributes セクション
+      href: inf-signatureattributes-section.md
+    - name: INF SourceDisksFiles セクション
+      href: inf-sourcedisksfiles-section.md
+    - name: INF SourceDisksNames セクション
+      href: inf-sourcedisksnames-section.md
+    - name: INF Strings セクション
+      href: inf-strings-section.md
+    - name: INF Version セクション
+      href: inf-version-section.md
+- name: INF のディレクティブ
+  items:
+    - name: INF AddComponent ディレクティブ
+      href: inf-addcomponent-directive.md
+    - name: INF AddEventProvider ディレクティブ
+      href: inf-addeventprovider-directive.md
+    - name: INF AddInterface ディレクティブ
+      href: inf-addinterface-directive.md
+    - name: INF AddPowerSetting ディレクティブ
+      href: inf-addpowersetting-directive.md
+    - name: INF AddProperty ディレクティブ
+      href: inf-addproperty-directive.md
+    - name: INF AddReg ディレクティブ
+      href: inf-addreg-directive.md
+    - name: INF AddService ディレクティブ
+      href: inf-addservice-directive.md
+    - name: INF AddSoftware ディレクティブ
+      href: inf-addsoftware-directive.md
+    - name: INF BitReg ディレクティブ
+      href: inf-bitreg-directive.md
+    - name: INF CopyFiles ディレクティブ
+      href: inf-copyfiles-directive.md
+    - name: INF CopyINF ディレクティブ
+      href: inf-copyinf-directive.md
+    - name: INF DelFiles ディレクティブ
+      href: inf-delfiles-directive.md
+    - name: INF DelProperty ディレクティブ
+      href: inf-delproperty-directive.md
+    - name: INF DelReg ディレクティブ
+      href: inf-delreg-directive.md
+    - name: INF DelService ディレクティブ
+      href: inf-delservice-directive.md
+    - name: INF DriverVer ディレクティブ
+      href: inf-driverver-directive.md
+    - name: INF FeatureScore ディレクティブ
+      href: inf-featurescore-directive.md
+    - name: INF HardwareId ディレクティブ
+      href: inf-hardwareid-directive.md
+    - name: INF Ini2Reg ディレクティブ
+      href: inf-ini2reg-directive.md
+    - name: INF LogConfig ディレクティブ
+      href: inf-logconfig-directive.md
+    - name: INF ProfileItems ディレクティブ
+      href: inf-profileitems-directive.md
+    - name: INF Reboot ディレクティブ
+      href: inf-reboot-directive.md
+    - name: INF RegisterDlls ディレクティブ
+      href: inf-registerdlls-directive.md
+    - name: INF RenFiles ディレクティブ
+      href: inf-renfiles-directive.md
+    - name: INF UnregisterDlls ディレクティブ
+      href: inf-unregisterdlls-directive.md
+    - name: INF UpdateIniFields ディレクティブ
+      href: inf-updateinifields-directive.md
+    - name: INF UpdateInis ディレクティブ
+      href: inf-updateinis-directive.md
+- name: ベスト プラクティス
+  items:
+    - name: デバイス プロパティへのアクセス
+      href: accessing-device-properties.md
+    - name: デバイス プロパティの変更の規則
+      href: modifying-device-properties.md
+    - name: ファイルへのアクセスおよび変更
+      href: accessing-and-modifying-files.md
+    - name: レジストリ キーへの安全なアクセス
+      href: accessing-registry-keys-safely.md
+    - name: デバイスのハードウェア キーを開く
+      href: opening-a-device-s-hardware-key.md
+    - name: デバイスのソフトウェア キーを開く
+      href: opening-a-device-s-software-key.md
+    - name: デバイスのソフトウェア キーのレジストリ値の変更
+      href: modifying-registry-values-in-a-device-s-software-key-.md
+    - name: インストール済みのデバイス セットアップ クラスの列挙
+      href: enumerating-installed-device-setup-classes.md
+    - name: デバイス セットアップ クラス用のレジストリ キーを開く
+      href: opening-registry-keys-for-a-device-setup-class.md
+    - name: セットアップ クラス内のすべてのデバイス用のソフトウェア キーを開く
+      href: opening-software-keys-for-all-devices-in-a-setup-class.md
+    - name: インストール済みのデバイス インターフェイスの列挙
+      href: enumerating-installed-device-interface-classes.md
+    - name: インストール済みのデバイス インターフェイスのプロパティへのアクセス
+      href: accessing-the-properties-of-installed-device-interface-classes.md
+    - name: クラス インストーラーと共同インストーラーでのレジストリ キーの変更
+      href: modifying-registry-keys-by-class-installers-and-co-installers.md
+    - name: クラス インストーラーと共同インストーラーでのレジストリ値の変更
+      href: modifying-registry-values-by-class-installers-and-co-installers.md
+    - name: デバイスのレジストリ キーの削除
+      href: deleting-the-registry-keys-of-a-device.md
+    - name: SetupAPI 関数の呼び出し
+      href: calling-setupapi-functions.md
+    - name: インストール済みのデバイスの列挙
+      href: enumerating-installed-devices.md
+    - name: デバイスとドライバーのインストールの一般的なガイドライン
+      href: general-guidelines-for-device-and-driver-installation.md
+    - name: SetupApi から CfgMgr32 へのコードの移植
+      href: porting-from-setupapi-to-cfgmgr32.md
+    - name: クラス インストーラーと共同インストーラーの記述
+      href: writing-class-installers-and-co-installers.md
+    - name: INF ファイルの記述
+      href: writing-inf-files.md
+    - name: ブート開始ドライバーのインストール
+      href: installing-a-boot-start-driver.md
+    - name: フィルター ドライバーのインストール
+      href: installing-a-filter-driver.md
+    - name: Null ドライバーのインストール
+      href: installing-a-null-driver.md
+    - name: 新しいバス ドライバーのインストール
+      href: installing-a-new-bus-driver.md
+    - name: カスタム ハードウェア ID および互換性 ID の使用
+      href: using-custom-hardware-ids-and-compatible-ids.md
+    - name: バス用の新しいデバイス セットアップ クラスのインストール
+      href: installing-a-new-device-setup-class-for-a-bus.md
+    - name: プライベート ビルドのインボックス ドライバーのインストール
+      href: installing-private-builds-of-in-box-drivers--windows-vista-and-later-.md
+    - name: プライベート ビルドのインボックス ドライバーのインストールの概要
+      href: overview-of-installing-private-builds-of-in-box-drivers.md
+    - name: プライベート ビルドのインボックス ドライバーの作成
+      href: creating-a-private-build-of-an-in-box-driver.md
+    - name: ドライバーの署名が同一にランク付けされる Windows の構成
+      href: configuring-windows-to-rank-driver-signatures-equally.md
+    - name: ドライバー パッケージの更新バージョンのインストール
+      href: installing-the-updated-version-of-the-driver-package.md
 - name: トラブルシューティング
   items:
     - name: デバイスとドライバーのインストールのトラブルシューティング
@@ -926,72 +1100,6 @@
           href: debugging-device-installations-with-a-user-mode-debugger.md
         - name: カーネル デバッガー (KD) でのデバイスのインストールのデバッグ
           href: debugging-device-installations-with-the-kernel-debugger--kd-.md
-- name: ベスト プラクティス
-  items:
-    - name: デバイス プロパティへのアクセス
-      href: accessing-device-properties.md
-    - name: デバイス プロパティの変更の規則
-      href: modifying-device-properties.md
-    - name: ファイルへのアクセスおよび変更
-      href: accessing-and-modifying-files.md
-    - name: レジストリ キーへの安全なアクセス
-      href: accessing-registry-keys-safely.md
-    - name: デバイスのハードウェア キーを開く
-      href: opening-a-device-s-hardware-key.md
-    - name: デバイスのソフトウェア キーを開く
-      href: opening-a-device-s-software-key.md
-    - name: デバイスのソフトウェア キーのレジストリ値の変更
-      href: modifying-registry-values-in-a-device-s-software-key-.md
-    - name: インストール済みのデバイス セットアップ クラスの列挙
-      href: enumerating-installed-device-setup-classes.md
-    - name: デバイス セットアップ クラス用のレジストリ キーを開く
-      href: opening-registry-keys-for-a-device-setup-class.md
-    - name: セットアップ クラス内のすべてのデバイス用のソフトウェア キーを開く
-      href: opening-software-keys-for-all-devices-in-a-setup-class.md
-    - name: インストール済みのデバイス インターフェイスの列挙
-      href: enumerating-installed-device-interface-classes.md
-    - name: インストール済みのデバイス インターフェイスのプロパティへのアクセス
-      href: accessing-the-properties-of-installed-device-interface-classes.md
-    - name: クラス インストーラーと共同インストーラーでのレジストリ キーの変更
-      href: modifying-registry-keys-by-class-installers-and-co-installers.md
-    - name: クラス インストーラーと共同インストーラーでのレジストリ値の変更
-      href: modifying-registry-values-by-class-installers-and-co-installers.md
-    - name: デバイスのレジストリ キーの削除
-      href: deleting-the-registry-keys-of-a-device.md
-    - name: SetupAPI 関数の呼び出し
-      href: calling-setupapi-functions.md
-    - name: インストール済みのデバイスの列挙
-      href: enumerating-installed-devices.md
-    - name: デバイスとドライバーのインストールの一般的なガイドライン
-      href: general-guidelines-for-device-and-driver-installation.md
-    - name: SetupApi から CfgMgr32 へのコードの移植
-      href: porting-from-setupapi-to-cfgmgr32.md
-    - name: クラス インストーラーと共同インストーラーの記述
-      href: writing-class-installers-and-co-installers.md
-    - name: INF ファイルの記述
-      href: writing-inf-files.md
-    - name: ブート開始ドライバーのインストール
-      href: installing-a-boot-start-driver.md
-    - name: フィルター ドライバーのインストール
-      href: installing-a-filter-driver.md
-    - name: Null ドライバーのインストール
-      href: installing-a-null-driver.md
-    - name: 新しいバス ドライバーのインストール
-      href: installing-a-new-bus-driver.md
-    - name: カスタム ハードウェア ID および互換性 ID の使用
-      href: using-custom-hardware-ids-and-compatible-ids.md
-    - name: バス用の新しいデバイス セットアップ クラスのインストール
-      href: installing-a-new-device-setup-class-for-a-bus.md
-    - name: プライベート ビルドのインボックス ドライバーのインストール
-      href: installing-private-builds-of-in-box-drivers--windows-vista-and-later-.md
-    - name: プライベート ビルドのインボックス ドライバーのインストールの概要
-      href: overview-of-installing-private-builds-of-in-box-drivers.md
-    - name: プライベート ビルドのインボックス ドライバーの作成
-      href: creating-a-private-build-of-an-in-box-driver.md
-    - name: ドライバーの署名が同一にランク付けされる Windows の構成
-      href: configuring-windows-to-rank-driver-signatures-equally.md
-    - name: ドライバー パッケージの更新バージョンのインストール
-      href: installing-the-updated-version-of-the-driver-package.md
 - name: 起動時マルウェア対策
   items:
     - name: 起動時マルウェア対策の概要
@@ -1002,114 +1110,6 @@
       href: elam-driver-requirements.md
     - name: ELAM ドライバーの送信
       href: elam-driver-submission.md
-- name: INF のセクション
-  items:
-    - name: INF ClassInstall32 セクション
-      href: inf-classinstall32-section.md
-    - name: INF ClassInstall32.Services セクション
-      href: inf-classinstall32-services-section.md
-    - name: INF ControlFlags セクション
-      href: inf-controlflags-section.md
-    - name: INF DDInstall セクション
-      href: inf-ddinstall-section.md
-    - name: INF DDInstall.CoInstallers セクション
-      href: inf-ddinstall-coinstallers-section.md
-    - name: INF DDInstall.Components セクション
-      href: inf-ddinstall-components-section.md
-    - name: INF DDInstall.Events セクション
-      href: inf-ddinstall-events-section.md
-    - name: INF DDInstall.FactDef セクション
-      href: inf-ddinstall-factdef-section.md
-    - name: INF DDInstall.HW セクション
-      href: inf-ddinstall-hw-section.md
-    - name: INF DDInstall.Interfaces セクション
-      href: inf-ddinstall-interfaces-section.md
-    - name: INF DDInstall.LogConfigOverride セクション
-      href: inf-ddinstall-logconfigoverride-section.md
-    - name: INF DDInstall.Services セクション
-      href: inf-ddinstall-services-section.md
-    - name: INF DDInstall.Software セクション
-      href: inf-ddinstall-software-section.md
-    - name: INF DDInstall.WMI セクション
-      href: inf-ddinstall-wmi-section.md
-    - name: INF DefaultInstall セクション
-      href: inf-defaultinstall-section.md
-    - name: INF DefaultInstall.Services セクション
-      href: inf-defaultinstall-services-section.md
-    - name: INF DestinationDirs セクション
-      href: inf-destinationdirs-section.md
-    - name: INF InterfaceInstall32 セクション
-      href: inf-interfaceinstall32-section.md
-    - name: INF Manufacturer セクション
-      href: inf-manufacturer-section.md
-    - name: INF Models セクション
-      href: inf-models-section.md
-    - name: INF SignatureAttributes セクション
-      href: inf-signatureattributes-section.md
-    - name: INF SourceDisksFiles セクション
-      href: inf-sourcedisksfiles-section.md
-    - name: INF SourceDisksNames セクション
-      href: inf-sourcedisksnames-section.md
-    - name: INF Strings セクション
-      href: inf-strings-section.md
-    - name: INF Version セクション
-      href: inf-version-section.md
-- name: INF のディレクティブ
-  items:
-    - name: INF AddComponent ディレクティブ
-      href: inf-addcomponent-directive.md
-    - name: INF AddEventProvider ディレクティブ
-      href: inf-addeventprovider-directive.md
-    - name: INF AddInterface ディレクティブ
-      href: inf-addinterface-directive.md
-    - name: INF AddPowerSetting ディレクティブ
-      href: inf-addpowersetting-directive.md
-    - name: INF AddProperty ディレクティブ
-      href: inf-addproperty-directive.md
-    - name: INF AddReg ディレクティブ
-      href: inf-addreg-directive.md
-    - name: INF AddService ディレクティブ
-      href: inf-addservice-directive.md
-    - name: INF AddSoftware ディレクティブ
-      href: inf-addsoftware-directive.md
-    - name: INF BitReg ディレクティブ
-      href: inf-bitreg-directive.md
-    - name: INF CopyFiles ディレクティブ
-      href: inf-copyfiles-directive.md
-    - name: INF CopyINF ディレクティブ
-      href: inf-copyinf-directive.md
-    - name: INF DelFiles ディレクティブ
-      href: inf-delfiles-directive.md
-    - name: INF DelProperty ディレクティブ
-      href: inf-delproperty-directive.md
-    - name: INF DelReg ディレクティブ
-      href: inf-delreg-directive.md
-    - name: INF DelService ディレクティブ
-      href: inf-delservice-directive.md
-    - name: INF DriverVer ディレクティブ
-      href: inf-driverver-directive.md
-    - name: INF FeatureScore ディレクティブ
-      href: inf-featurescore-directive.md
-    - name: INF HardwareId ディレクティブ
-      href: inf-hardwareid-directive.md
-    - name: INF Ini2Reg ディレクティブ
-      href: inf-ini2reg-directive.md
-    - name: INF LogConfig ディレクティブ
-      href: inf-logconfig-directive.md
-    - name: INF ProfileItems ディレクティブ
-      href: inf-profileitems-directive.md
-    - name: INF Reboot ディレクティブ
-      href: inf-reboot-directive.md
-    - name: INF RegisterDlls ディレクティブ
-      href: inf-registerdlls-directive.md
-    - name: INF RenFiles ディレクティブ
-      href: inf-renfiles-directive.md
-    - name: INF UnregisterDlls ディレクティブ
-      href: inf-unregisterdlls-directive.md
-    - name: INF UpdateIniFields ディレクティブ
-      href: inf-updateinifields-directive.md
-    - name: INF UpdateInis ディレクティブ
-      href: inf-updateinis-directive.md
 - name: リファレンス
   items:
     - name: BUS1394_CLASS_GUID

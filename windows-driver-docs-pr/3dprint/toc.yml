@@ -1,13 +1,15 @@
 - name: 3D プリンター ドライバー設計ガイド
-  href: index.md
   items:
+    - name: 3D プリンター ドライバー設計ガイド
+      href: index.md
     - name: 3D 印刷パートナー オンボーディング ガイド
       href: 3d-partner-onboarding-guide.md
     - name: 3D プリンター用の Microsoft 標準ドライバー
       href: microsoft-standard-driver-for-3d-printers-.md
     - name: MS3DPrint 標準 G コード ドライバー
-      href: ms3dprint-standard-g-code-driver.md
       items:
+        - name: MS3DPrint 標準 G コード ドライバー
+          href: ms3dprint-standard-g-code-driver.md
         - name: ドライバーのインストール
           href: driver-installation.md
         - name: デバイスの構成
@@ -19,8 +21,9 @@
     - name: 3D プリンターのカスタム USB インターフェイスのサポート
       href: 3d-printer-custom-usb-interface.md
     - name: 3D 印刷のサンプル WSD アプリ
-      href: 3d-printing-sample-wsd-app.md
       items:
+        - name: 3D 印刷のサンプル WSD アプリ
+          href: 3d-printing-sample-wsd-app.md
         - name: ドライバーとサンプル アプリのインストール
           href: install-the-driver-and-sample-app.md
         - name: WSD サンプルへのファイルの出力
@@ -30,8 +33,9 @@
     - name: デバイスで WSPrint 2.0 を有効にする
       href: enabling-wsprint-on-a-device.md
     - name: 3D 製造用の印刷スキーマのキーワード
-      href: print-schema-keywords-for-3d-manufacturing.md
       items:
+        - name: 3D 製造用の印刷スキーマのキーワード
+          href: print-schema-keywords-for-3d-manufacturing.md
         - name: 3D 製造のキーワードの概要
           href: 3d-manufacturing-keywords-overview.md
         - name: デバイス制御のキーワード

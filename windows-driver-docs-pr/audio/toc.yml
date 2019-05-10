@@ -1,6 +1,7 @@
 - name: オーディオ ドライバー設計ガイド
-  href: index.md
   items:
+    - name: オーディオ ドライバー設計ガイド
+      href: index.md
     - name: 'Windows 10:オーディオの新機能'
       href: windows-threshold--what-s-new-for-audio.md
     - name: Windows オーディオ アーキテクチャ
@@ -10,8 +11,9 @@
     - name: カスタム オーディオ ドライバーの種類のデシジョン ツリー
       href: custom-audio-driver-type-decision-tree.md
 - name: WDM オーディオ ドライバーの概要
-  href: getting-started-with-wdm-audio-drivers.md
   items:
+    - name: WDM オーディオ ドライバーの概要
+      href: getting-started-with-wdm-audio-drivers.md
     - name: オーディオ用のユニバーサル Windows ドライバー
       href: audio-universal-drivers.md
     - name: ユニバーサル オーディオ アーキテクチャ
@@ -25,11 +27,13 @@
     - name: ピン データ範囲の指定
       href: specifying-pin-data-ranges.md
 - name: 'WDM オーディオ アーキテクチャ: 基本的な概念'
-  href: wdm-audio-architecture--basic-concepts.md
   items:
+    - name: 'WDM オーディオ アーキテクチャ: 基本的な概念'
+      href: wdm-audio-architecture--basic-concepts.md
     - name: WDM オーディオ ドライバーの概要
-      href: introduction-to-wdm-audio-drivers.md
       items:
+        - name: WDM オーディオ ドライバーの概要
+          href: introduction-to-wdm-audio-drivers.md
         - name: WDM オーディオ ドライバーの基本機能
           href: basic-functions-of-a-wdm-audio-driver.md
         - name: ベンダーのオーディオ ドライバー オプション
@@ -41,8 +45,9 @@
         - name: KsStudio ユーティリティ
           href: ksstudio-utility.md
     - name: オーディオ フィルター、ピン、ノード
-      href: audio-filters--pins--and-nodes.md
       items:
+        - name: オーディオ フィルター、ピン、ノード
+          href: audio-filters--pins--and-nodes.md
         - name: オーディオ フィルター
           href: audio-filters.md
         - name: フィルター ファクトリ
@@ -60,8 +65,9 @@
         - name: トポロジ フィルター
           href: topology-filters.md
     - name: オーディオのエンドポイント、プロパティ、およびイベント
-      href: audio-endpoints--properties-and-events.md
       items:
+        - name: オーディオのエンドポイント、プロパティ、およびイベント
+          href: audio-endpoints--properties-and-events.md
         - name: オーディオのプロパティの要求
           href: audio-property-requests.md
         - name: フィルター、ピン、ノードのプロパティ
@@ -87,8 +93,9 @@
         - name: ジャック説明のプロパティ
           href: jack-description-property.md
         - name: マイク配列ジオメトリのプロパティ
-          href: microphone-array-geometry-property.md
           items:
+            - name: マイク配列ジオメトリのプロパティ
+              href: microphone-array-geometry-property.md
             - name: マイク配列ジオメトリ記述子の形式
               href: microphone-array-geometry-descriptor-format.md
             - name: MSVAD Micarray 用の INF の変更
@@ -96,8 +103,9 @@
         - name: ハードウェア イベント
           href: hardware-events.md
     - name: オーディオ データ形式とデータ範囲
-      href: audio-data-formats-and-data-ranges.md
       items:
+        - name: オーディオ データ形式とデータ範囲
+          href: audio-data-formats-and-data-ranges.md
         - name: オーディオ データ形式
           href: audio-data-formats.md
         - name: オーディオ データ範囲
@@ -105,8 +113,9 @@
         - name: 拡張可能な Wave 形式の記述子
           href: extensible-wave-format-descriptors.md
         - name: ホーム シアター システム用のマルチチャネル形式
-          href: multichannel-formats-for-home-theater-systems.md
           items:
+            - name: ホーム シアター システム用のマルチチャネル形式
+              href: multichannel-formats-for-home-theater-systems.md
             - name: チャネル マスク
               href: channel-mask.md
             - name: スピーカー構成にストリーム形式をマップする
@@ -114,8 +123,9 @@
             - name: ヘッダー ファイルの変更
               href: header-file-changes.md
         - name: オーディオ データ形式とデータ範囲の例
-          href: examples-of-audio-data-formats-and-data-ranges.md
           items:
+            - name: オーディオ データ形式とデータ範囲の例
+              href: examples-of-audio-data-formats-and-data-ranges.md
             - name: アナログ オーディオ ストリームのデータ範囲
               href: analog-audio-stream-data-range.md
             - name: DirectMusic ストリームのデータ形式
@@ -143,8 +153,9 @@
             - name: PCM 高ビットデプス ストリームのデータ範囲
               href: pcm-high-bitdepth-stream-data-range.md
     - name: デジタル著作権管理
-      href: digital-rights-management.md
       items:
+        - name: デジタル著作権管理
+          href: digital-rights-management.md
         - name: DRM の概要
           href: drm-overview.md
         - name: コンテンツ ID とコンテンツの権利
@@ -158,11 +169,13 @@
         - name: DRM の関数とインターフェイス
           href: drm-functions-and-interfaces.md
 - name: 'WDM オーディオ アーキテクチャ: 高度なトピック'
-  href: wdm-audio-architecture--advanced-topics.md
   items:
+    - name: 'WDM オーディオ アーキテクチャ: 高度なトピック'
+      href: wdm-audio-architecture--advanced-topics.md
     - name: データ交差ハンドラー
-      href: data-intersection-handlers.md
       items:
+        - name: データ交差ハンドラー
+          href: data-intersection-handlers.md
         - name: データ交差
           href: data-intersection.md
         - name: 既定のデータ交差ハンドラー
@@ -180,8 +193,9 @@
         - name: データ範囲のプロパティ
           href: data-range-properties.md
     - name: 動的なオーディオ サブデバイス
-      href: dynamic-audio-subdevices.md
       items:
+        - name: 動的なオーディオ サブデバイス
+          href: dynamic-audio-subdevices.md
         - name: 動的なトポロジの管理
           href: managing-dynamic-topologies.md
         - name: 動的なサブデバイス用のドライバーのサポート
@@ -189,15 +203,17 @@
         - name: 動的なオーディオ サブデバイスのジャックに関する説明
           href: jack-descriptions-for-dynamic-audio-subdevices.md
     - name: 多機能オーディオ デバイス
-      href: multifunction-audio-devices.md
       items:
+        - name: 多機能オーディオ デバイス
+          href: multifunction-audio-devices.md
         - name: 複数のオーディオ サブデバイス
           href: multiple-audio-subdevices.md
         - name: 多機能デバイスの制限
           href: multifunction-device-limits.md
     - name: PCM 以外の Wave 形式
-      href: supporting-non-pcm-wave-formats.md
       items:
+        - name: PCM 以外の Wave 形式
+          href: supporting-non-pcm-wave-formats.md
         - name: PCM 以外のサポートの背景
           href: background-of-non-pcm-support.md
         - name: PCM 以外のピン ファクトリの要件
@@ -221,11 +237,13 @@
         - name: PCM 以外の形式用の USB オーディオのサポート
           href: usb-audio-support-for-non-pcm-formats.md
     - name: High Definition Audio DDI
-      href: high-definition-audio-ddi.md
       items:
+        - name: High Definition Audio DDI
+          href: high-definition-audio-ddi.md
         - name: HD オーディオと UAA
-          href: hd-audio-and-uaa.md
           items:
+            - name: HD オーディオと UAA
+              href: hd-audio-and-uaa.md
             - name: Intel の HD オーディオのアーキテクチャ
               href: intel-s-hd-audio-architecture.md
             - name: HD オーディオ アーキテクチャに対する UAA 拡張機能
@@ -237,8 +255,9 @@
             - name: 動詞を HD オーディオ コーデックとやり取りする
               href: communicating-verbs-with-the-hd-audio-codec.md
         - name: プログラミング ガイド
-          href: programming-guidelines.md
           items:
+            - name: プログラミング ガイド
+              href: programming-guidelines.md
             - name: HD オーディオ DDI バージョン間の相違点
               href: differences-between-the-hd-audio-ddi-versions.md
             - name: 同期および非同期のコーデック コマンド
@@ -246,8 +265,9 @@
             - name: ウォール クロックとリンク位置のレジスタ
               href: wall-clock-and-link-position-registers.md
             - name: ハードウェア リソース管理
-              href: hardware-resource-management.md
               items:
+                - name: ハードウェア リソース管理
+                  href: hardware-resource-management.md
                 - name: DMA エンジンの割り当て
                   href: allocating-dma-engines.md
                 - name: リンク帯域幅の割り当て
@@ -261,8 +281,9 @@
             - name: データのコピーおよびキャッシュのポリシー
               href: data-copying-and-caching-policy.md
             - name: HD オーディオ DDI のクエリ
-              href: querying-for-an-hd-audio-ddi.md
               items:
+                - name: HD オーディオ DDI のクエリ
+                  href: querying-for-an-hd-audio-ddi.md
                 - name: HDAUDIO_BUS_INTERFACE DDI オブジェクトの取得
                   href: obtaining-an-hdaudio-bus-interface-ddi-object.md
                 - name: HDAUDIO_BUS_INTERFACE_V2 DDI オブジェクトの取得
@@ -270,11 +291,13 @@
                 - name: HDAUDIO_BUS_INTERFACE_BDL DDI オブジェクトの取得
                   href: obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md
 - name: 異なるバージョンの Windows における WDM オーディオのサポート
-  href: wdm-audio-support-in-different-versions-of-windows.md
   items:
+    - name: 異なるバージョンの Windows における WDM オーディオのサポート
+      href: wdm-audio-support-in-different-versions-of-windows.md
     - name: オーディオ モジュール通信の実装
-      href: implementing-audio-module-communication.md
       items:
+        - name: オーディオ モジュール通信の実装
+          href: implementing-audio-module-communication.md
         - name: オーディオ デバイス モジュールの構成とクエリ
           href: configure-and-query-audiodevicemodules.md
     - name: 低待機時間オーディオ
@@ -286,13 +309,15 @@
     - name: オーディオ ハードウェア リソースの管理
       href: audio-hardware-resource-management.md
     - name: オーディオ ドライバーの Bluetooth バイパス ガイドライン
-      href: bluetooth-bypass-guidelines-for-audio-drivers.md
       items:
+        - name: オーディオ ドライバーの Bluetooth バイパス ガイドライン
+          href: bluetooth-bypass-guidelines-for-audio-drivers.md
         - name: Windows の Bluetooth ホスト コントローラー インターフェイス (HCI) アーキテクチャの概要
           href: btth-architectural-overview.md
         - name: 操作の理論
-          href: theory-of-operation.md
           items:
+            - name: 操作の理論
+              href: theory-of-operation.md
             - name: HFP デバイスの起動
               href: startup.md
             - name: HFP デバイスの接続
@@ -308,8 +333,9 @@
         - name: Bluetooth バイパス DDI 参照
           href: bluetooth-bypass-ddi-reference.md
         - name: 関連する設計ガイドライン
-          href: related-design-guidelines.md
           items:
+            - name: 関連する設計ガイドライン
+              href: related-design-guidelines.md
             - name: プロパティとレジストリ値の設定
               href: setting-properties-and-registry-values.md
             - name: フレンドリ名の設定、APO の登録
@@ -317,25 +343,29 @@
             - name: HF デバイスの Bluetooth のアドレスの取得
               href: obtaining-bluetooth-address-of-hf-device.md
     - name: ハードウェア オフロードのオーディオ処理
-      href: hardware-offloaded-audio-processing.md
       items:
+        - name: ハードウェア オフロードのオーディオ処理
+          href: hardware-offloaded-audio-processing.md
         - name: アーキテクチャの概要
           href: architectural-overview.md
         - name: オフロードされたオーディオ用のドライバーの実装
-          href: driver-implementation-for-offloaded-audio.md
           items:
+            - name: オフロードされたオーディオ用のドライバーの実装
+              href: driver-implementation-for-offloaded-audio.md
             - name: 実装の概要
               href: implementation-overview.md
             - name: ドライバー実装の詳細
-              href: driver-implementation-details.md
               items:
+                - name: ドライバー実装の詳細
+                  href: driver-implementation-details.md
                 - name: オフロードされたオーディオ処理のためのヘルパー インターフェイス
                   href: helper-interfaces-for-offloaded-audio-processing.md
                 - name: オフロードされたオーディオに関するグリッチ レポート
                   href: glitch-reporting-for-offloaded-audio.md
         - name: SoC の PortCls 電源管理更新プログラム
-          href: portcls-power-management-updates-for-soc.md
           items:
+            - name: SoC の PortCls 電源管理更新プログラム
+              href: portcls-power-management-updates-for-soc.md
             - name: PortCls レジストリの電源設定
               href: portcls-registry-power-settings.md
             - name: 即時アイドル タイムアウトのオプトイン
@@ -345,18 +375,21 @@
             - name: PortCls D3 終了待機時間の要件
               href: portcls-d3-exit-latency-requirement.md
     - name: WDM オーディオ プラットフォームの相違点
-      href: wdm-audio-platform-differences.md
       items:
+        - name: WDM オーディオ プラットフォームの相違点
+          href: wdm-audio-platform-differences.md
         - name: Windows Vista による WDM オーディオのサポート
           href: windows-vista-support-for-wdm-audio.md
     - name: WDM オーディオ コンポーネント
-      href: wdm-audio-components.md
       items:
+        - name: WDM オーディオ コンポーネント
+          href: wdm-audio-components.md
         - name: ユーザー モード WDM オーディオ コンポーネント
           href: user-mode-wdm-audio-components.md
         - name: カーネル モード WDM オーディオ コンポーネント
-          href: kernel-mode-wdm-audio-components.md
           items:
+            - name: カーネル モード WDM オーディオ コンポーネント
+              href: kernel-mode-wdm-audio-components.md
             - name: USB オーディオ クラス システム ドライバー (Usbaudio.sys)
               href: usb-audio-class-system-driver--usbaudio-sys-.md
         - name: Wave と DirectSound コンポーネント
@@ -366,8 +399,9 @@
         - name: 仮想オーディオ デバイス
           href: virtual-audio-devices.md
     - name: 一般的なオーディオ構成
-      href: typical-audio-configurations.md
       items:
+        - name: 一般的なオーディオ構成
+          href: typical-audio-configurations.md
         - name: Wave コンテンツのレンダリングとキャプチャ
           href: rendering-and-capturing-wave-content.md
         - name: MIDI コンテンツのレンダリングとキャプチャ
@@ -379,8 +413,9 @@
         - name: DirectSound のソフトウェア バッファーとハードウェア バッファーを使用した Wave コンテンツのレンダリング
           href: rendering-wave-content-using-directsound-software-and-hardware-buffers.md
     - name: Wave 出力の待機時間に影響を及ぼす要因
-      href: factors-governing-wave-output-latency.md
       items:
+        - name: Wave 出力の待機時間に影響を及ぼす要因
+          href: factors-governing-wave-output-latency.md
         - name: WaveCyclic 待機時間
           href: wavecyclic-latency.md
         - name: WavePci 待機時間
@@ -394,8 +429,9 @@
     - name: 動的な形式の変更
       href: dynamic-format-change.md
 - name: Windows オーディオ処理オブジェクト
-  href: windows-audio-processing-objects.md
   items:
+    - name: Windows オーディオ処理オブジェクト
+      href: windows-audio-processing-objects.md
     - name: オーディオ処理オブジェクトのアーキテクチャ
       href: audio-processing-object-architecture.md
     - name: オーディオ処理オブジェクトの実装
@@ -405,8 +441,9 @@
     - name: APO 効果をオフロードするハードウェアの実装
       href: implementing-hardware-offloaded-apo-effects.md
     - name: Windows の既定の APO
-      href: windows-default-apos.md
       items:
+        - name: Windows の既定の APO
+          href: windows-default-apos.md
         - name: 低音ブースト
           href: bass-boost.md
         - name: 低音管理
@@ -428,26 +465,31 @@
         - name: ヘッドホンを介した仮想サラウンド サウンド
           href: virtualized-surround-sound-over-headphones.md
 - name: オーディオ ミニポート ドライバー
-  href: audio-miniport-drivers.md
   items:
+    - name: オーディオ ミニポート ドライバー
+      href: audio-miniport-drivers.md
     - name: ポート クラスの概要
-      href: introduction-to-port-class.md
       items:
+        - name: ポート クラスの概要
+          href: introduction-to-port-class.md
         - name: 関数固有のインターフェイスの実装
           href: implementation-of-function-specific-interfaces.md
         - name: オペレーティング システムによる PortCls のサポート
           href: portcls-support-by-operating-system.md
     - name: デバイスのサポート
-      href: supporting-a-device.md
       items:
+        - name: デバイスのサポート
+          href: supporting-a-device.md
         - name: WaveRT ポート ドライバー
-          href: wavert-port-driver.md
           items:
+            - name: WaveRT ポート ドライバー
+              href: wavert-port-driver.md
             - name: WaveRT ポート ドライバーの概要
               href: introducing-the-wavert-port-driver.md
             - name: WaveRT ポート ドライバーについて
-              href: understanding-the-wavert-port-driver.md
               items:
+                - name: WaveRT ポート ドライバーについて
+                  href: understanding-the-wavert-port-driver.md
                 - name: 再生時のストリームの待機時間
                   href: stream-latency-during-playback.md
                 - name: 記録時のストリームの待機時間
@@ -459,8 +501,9 @@
         - name: DMus ポート ドライバー
           href: dmus-port-driver.md
     - name: アダプター ドライバーの構築
-      href: adapter-driver-construction.md
       items:
+        - name: アダプター ドライバーの構築
+          href: adapter-driver-construction.md
         - name: 開始シーケンス
           href: startup-sequence.md
         - name: サブデバイスの作成
@@ -468,8 +511,9 @@
     - name: オペレーティング システムによるミニポート ドライバーの種類
       href: miniport-driver-types-by-operating-system.md
     - name: カーネルの COM
-      href: com-in-the-kernel.md
       items:
+        - name: カーネルの COM
+          href: com-in-the-kernel.md
         - name: ミニポート ドライバーの関数テーブル
           href: function-tables-for-miniport-drivers.md
         - name: オーディオ ドライバー オブジェクトの作成
@@ -477,11 +521,13 @@
         - name: COM オブジェクト用の参照カウントの規則
           href: reference-counting-conventions-for-com-objects.md
     - name: ミニポート インターフェイス
-      href: miniport-interfaces.md
       items:
+        - name: ミニポート インターフェイス
+          href: miniport-interfaces.md
         - name: WaveRT ミニポート ドライバー
-          href: wavert-miniport-driver.md
           items:
+            - name: WaveRT ミニポート ドライバー
+              href: wavert-miniport-driver.md
             - name: WaveRT ミニポート ドライバーの開発
               href: developing-a-wavert-miniport-driver.md
         - name: トポロジ ミニポート ドライバー
@@ -491,15 +537,17 @@
         - name: DMus ミニポート ドライバー
           href: dmus-miniport-driver.md
     - name: ポート クラス オーディオ アダプターのインストール
-      href: installing-a-port-class-audio-adapter.md
       items:
+        - name: ポート クラス オーディオ アダプターのインストール
+          href: installing-a-port-class-audio-adapter.md
         - name: オーディオ アダプターのバージョン情報の指定
           href: specifying-version-information-for-an-audio-adapter.md
         - name: オーディオ アダプター用のデバイス インターフェイスのインストール
           href: installing-device-interfaces-for-an-audio-adapter.md
         - name: オーディオ アダプター用のコア システム コンポーネントのインストール
-          href: installing-core-system-components-for-an-audio-adapter.md
           items:
+            - name: オーディオ アダプター用のコア システム コンポーネントのインストール
+              href: installing-core-system-components-for-an-audio-adapter.md
             - name: Windows でのインストール
               href: installing-in-windows.md
         - name: オーディオ アダプター用の Windows マルチ メディア システム サポートのインストール
@@ -513,8 +561,9 @@
         - name: コントロール パネルに新しいデジタル形式を追加する
           href: adding-new-digital-formats-to-control-panel.md
         - name: オーディオ アダプターためのインストールに関するその他の問題
-          href: miscellaneous-installation-issues-for-an-audio-adapter.md
           items:
+            - name: オーディオ アダプターためのインストールに関するその他の問題
+              href: miscellaneous-installation-issues-for-an-audio-adapter.md
             - name: 既定のオーディオ音量の設定
               href: default-audio-volume-settings.md
             - name: ソフトウェア音量制御のサポート
@@ -532,8 +581,9 @@
             - name: デバイス セットアップ情報の取得
               href: retrieving-device-setup-information.md
     - name: ポート ドライバーのヘルパー オブジェクト
-      href: port-driver-helper-objects.md
       items:
+        - name: ポート ドライバーのヘルパー オブジェクト
+          href: port-driver-helper-objects.md
         - name: DMA チャネルのオブジェクト
           href: dma-channel-objects.md
         - name: レジストリ キーのオブジェクト
@@ -545,8 +595,9 @@
         - name: 割り込み同期のオブジェクト
           href: interrupt-sync-objects.md
     - name: オーディオ デバイスの電源管理
-      href: power-management-for-audio-devices.md
       items:
+        - name: オーディオ デバイスの電源管理
+          href: power-management-for-audio-devices.md
         - name: IAdapterPowerManagement の実装
           href: implementing-iadapterpowermanagement.md
         - name: IPowerNotify の実装
@@ -554,8 +605,9 @@
         - name: オーディオ デバイス クラスの無通信タイマーの実装
           href: audio-device-class-inactivity-timer-implementation.md
     - name: オーディオ ドライバーのバージョン番号
-      href: version-numbers-for-audio-drivers.md
       items:
+        - name: オーディオ ドライバーのバージョン番号
+          href: version-numbers-for-audio-drivers.md
         - name: 内部および外部のバージョン番号
           href: internal-and-external-version-numbers.md
         - name: INF ドライバー バージョンのエントリ
@@ -563,8 +615,9 @@
         - name: DirectX ファイル バージョン番号
           href: directx-file-version-numbers.md
     - name: オーディオ ドライバーでの実装に関するその他の問題
-      href: other-implementation-issues-for-audio-drivers.md
       items:
+        - name: オーディオ ドライバーでの実装に関するその他の問題
+          href: other-implementation-issues-for-audio-drivers.md
         - name: 64 ビット オーディオ ドライバーの作成
           href: writing-64-bit-audio-drivers.md
         - name: PCI 構成領域へのアクセス
@@ -572,15 +625,17 @@
         - name: PortCls オーディオ ドライバー用に PnP 再調整を実装する
           href: implement-pnp-rebalance-for-portcls-audio-drivers.md
 - name: レガシ オーディオ インターフェイス
-  href: legacy-audio-interfaces.md
   items:
+    - name: レガシ オーディオ インターフェイス
+      href: legacy-audio-interfaces.md
     - name: WavePci ポート ドライバー
       href: wavepci-port-driver.md
     - name: WavePci ミニポート ドライバー
       href: wavepci-miniport-driver.md
     - name: WavePci デバイス用の実装に関する問題
-      href: implementation-issues-for-wavepci-devices.md
       items:
+        - name: WavePci デバイス用の実装に関する問題
+          href: implementation-issues-for-wavepci-devices.md
         - name: WavePci デバイスのハードウェア要件
           href: hardware-requirements-for-wavepci-devices.md
         - name: WavePci ミニポート ドライバーにおけるパフォーマンスの問題
@@ -592,11 +647,13 @@
     - name: WaveCyclic ミニポート ドライバー
       href: wavecyclic-miniport-driver.md
     - name: DirectSound のドライバー サポート
-      href: driver-support-for-directsound.md
       items:
+        - name: DirectSound のドライバー サポート
+          href: driver-support-for-directsound.md
         - name: WDM オーディオでの DirectSound ハードウェア アクセラレータ
-          href: directsound-hardware-acceleration-in-wdm-audio.md
           items:
+            - name: WDM オーディオでの DirectSound ハードウェア アクセラレータ
+              href: directsound-hardware-acceleration-in-wdm-audio.md
             - name: DirectSound ハードウェア アクセラレータの概要
               href: overview-of-directsound-hardware-acceleration.md
             - name: WDM オーディオでの 2D DirectSound アクセラレータのサポート
@@ -614,8 +671,9 @@
             - name: プリフェッチ オフセット
               href: prefetch-offsets.md
         - name: DirectSound スピーカー構成の設定
-          href: directsound-speaker-configuration-settings.md
           items:
+            - name: DirectSound スピーカー構成の設定
+              href: directsound-speaker-configuration-settings.md
             - name: スピーカー構成の要求を変換
               href: translating-speaker-configuration-requests.md
             - name: スピーカー構成の設定を適用
@@ -627,23 +685,27 @@
             - name: DSSPEAKER_DIRECTOUT スピーカー構成
               href: dsspeaker-directout-speaker-configuration.md
         - name: DirectSound キャプチャ効果
-          href: directsound-capture-effects.md
           items:
+            - name: DirectSound キャプチャ効果
+              href: directsound-capture-effects.md
             - name: ハードウェア アクセラレータによるキャプチャ効果を公開
               href: exposing-hardware-accelerated-capture-effects.md
             - name: AEC システム フィルター
               href: aec-system-filter.md
     - name: DirectMusic のドライバー サポート
-      href: driver-support-for-directmusic.md
       items:
+        - name: DirectMusic のドライバー サポート
+          href: driver-support-for-directmusic.md
         - name: DirectMusic DDI の概要
-          href: directmusic-ddi-overview.md
           items:
+            - name: DirectMusic DDI の概要
+              href: directmusic-ddi-overview.md
             - name: ユーザー モードとカーネル モードの比較
               href: user-mode-versus-kernel-mode.md
         - name: ユーザー モードでのカスタム レンダリング
-          href: custom-rendering-in-user-mode.md
           items:
+            - name: ユーザー モードでのカスタム レンダリング
+              href: custom-rendering-in-user-mode.md
             - name: シンセサイザーと Wave シンク
               href: synthesizers-and-wave-sinks.md
             - name: IDirectMusicSynth と IDirectMusicSynthSink
@@ -651,8 +713,9 @@
             - name: Wave と MIDI
               href: midi-to-wave.md
             - name: シンセサイザーのタイミング
-              href: synthesizer-timing.md
               items:
+                - name: シンセサイザーのタイミング
+                  href: synthesizer-timing.md
                 - name: シンセサイザーの待機時間
                   href: synthesizer-latency.md
                 - name: イベントのタイムスタンプ
@@ -664,18 +727,21 @@
             - name: ご利用のシンセサイザーの登録
               href: registering-your-synthesizer.md
         - name: カーネル モードのハードウェア アクセラレータの DDI
-          href: kernel-mode-hardware-acceleration-ddi.md
           items:
+            - name: カーネル モードのハードウェア アクセラレータの DDI
+              href: kernel-mode-hardware-acceleration-ddi.md
             - name: DirectMusic WDM カーネル ストリーミングの背景
               href: directmusic-wdm-kernel-streaming-background.md
             - name: シンセサイザー ミニポート ドライバーの概要
               href: synthesizer-miniport-driver-overview.md
             - name: DirectMusic ミニポート ドライバー インターフェイス
-              href: directmusic-miniport-driver-interface.md
               items:
+                - name: DirectMusic ミニポート ドライバー インターフェイス
+                  href: directmusic-miniport-driver-interface.md
                 - name: MIDI トランスポート
-                  href: midi-transport.md
                   items:
+                    - name: MIDI トランスポート
+                      href: midi-transport.md
                     - name: IMXF インターフェイス
                       href: imxf-interfaces.md
                     - name: アロケーター
@@ -697,11 +763,13 @@
             - name: DirectMusic プロパティのサポート
               href: support-for-directmusic-properties.md
     - name: レガシ オーディオ インターフェイス用のドライバー サポート
-      href: driver-support-for-legacy-audio-interfaces.md
       items:
+        - name: レガシ オーディオ インターフェイス用のドライバー サポート
+          href: driver-support-for-legacy-audio-interfaces.md
         - name: カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
-          href: kernel-streaming-topology-to-audio-mixer-api-translation.md
           items:
+            - name: カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
+              href: kernel-streaming-topology-to-audio-mixer-api-translation.md
             - name: トポロジのピン
               href: topology-pins.md
             - name: トポロジのノード
@@ -713,13 +781,15 @@
             - name: フィルター トポロジの公開
               href: exposing-filter-topology.md
         - name: レガシ Windows マルチ メディア API に対する WDM オーディオの拡張機能
-          href: wdm-audio-extensions-to-legacy-windows-multimedia-apis.md
           items:
+            - name: レガシ Windows マルチ メディア API に対する WDM オーディオの拡張機能
+              href: wdm-audio-extensions-to-legacy-windows-multimedia-apis.md
             - name: WDM オーディオ ドライバーからの強化された機能
               href: extended-capabilities-from-a-wdm-audio-driver.md
         - name: システムでインターセプトされるデバイス メッセージ
-          href: system-intercepted-device-messages.md
           items:
+            - name: システムでインターセプトされるデバイス メッセージ
+              href: system-intercepted-device-messages.md
             - name: 推奨されるデバイス ID へのアクセス
               href: accessing-the-preferred-device-id.md
             - name: 推奨される音声通信デバイス ID
@@ -729,13 +799,15 @@
             - name: 音楽テクノロジ GUID
               href: music-technology-guids.md
 - name: オーディオ デバイス DDI リファレンスの概要
-  href: portal-audio-ref.md
   items:
+    - name: オーディオ デバイス DDI リファレンスの概要
+      href: portal-audio-ref.md
     - name: オーディオ ドライバーの列挙
       href: audio-drivers-enumerations.md
     - name: オーディオ ドライバーのプロパティ セット
-      href: audio-drivers-property-sets.md
       items:
+        - name: オーディオ ドライバーのプロパティ セット
+          href: audio-drivers-property-sets.md
         - name: KSPROPSETID_AC3
           href: kspropsetid-ac3.md
         - name: KSPROPSETID_Acoustic_Echo_Cancel
@@ -749,8 +821,9 @@
         - name: KSPROPSETID_AudioGfx
           href: kspropsetid-audiogfx.md
         - name: KSPROPSETID_AudioModule
-          href: kspropsetid-audiomodule.md
           items:
+            - name: KSPROPSETID_AudioModule
+              href: kspropsetid-audiomodule.md
             - name: KSPROPERTY_AUDIOMODULE_COMMAND
               href: ksproperty-audiomodule-command.md
             - name: KSPROPERTY_AUDIOMODULE_DESCRIPTORS
@@ -768,8 +841,9 @@
         - name: KSPROPSETID_DrmAudioStream
           href: kspropsetid-drmaudiostream.md
         - name: KSPROPSETID_FMRXControl
-          href: kspropsetid-fmrxcontrol.md
           items:
+            - name: KSPROPSETID_FMRXControl
+              href: kspropsetid-fmrxcontrol.md
             - name: KSPROPERTY_FMRX_STATE
               href: ksproperty-fmrx-state.md
         - name: KSPROPSETID_FMRXTopology
@@ -803,8 +877,9 @@
         - name: KSPROPSETID_TopologyNode
           href: kspropsetid-topologynode.md
     - name: オーディオ ドライバーのイベント セット
-      href: audio-drivers-event-sets.md
       items:
+        - name: オーディオ ドライバーのイベント セット
+          href: audio-drivers-event-sets.md
         - name: KSEVENTSETID_AudioControlChange
           href: kseventsetid-audiocontrolchange.md
         - name: KSEVENTSETID_LoopedStreaming
@@ -814,13 +889,15 @@
         - name: KSEVENTSETID_SoundDetector
           href: kseventsetid-sounddetector.md
         - name: KSEVENTSETID_VolumeLimit
-          href: kseventsetid-volumelimit.md
           items:
+            - name: KSEVENTSETID_VolumeLimit
+              href: kseventsetid-volumelimit.md
             - name: KSEVENT_VOLUMELIMIT_CHANGED
               href: ksevent-volumelimit-changed.md
     - name: オーディオ トポロジ ノード
-      href: audio-topology-nodes.md
       items:
+        - name: オーディオ トポロジ ノード
+          href: audio-topology-nodes.md
         - name: KSNODETYPE_3D_EFFECTS
           href: ksnodetype-3d-effects.md
         - name: KSNODETYPE_ACOUSTIC_ECHO_CANCEL
@@ -896,8 +973,9 @@
     - name: オーディオ ドライバーの構造体
       href: audio-drivers-structures.md
     - name: オーディオ ドライバーのインターフェイス
-      href: audio-drivers-interfaces.md
       items:
+        - name: オーディオ ドライバーのインターフェイス
+          href: audio-drivers-interfaces.md
         - name: IAudioSystemEffects
           href: iaudiosystemeffects.md
         - name: IAudioSystemEffects2
@@ -905,15 +983,17 @@
         - name: IKeywordDetectorOemAdapter
           href: ikeyworddetectoroemadapter.md
     - name: Bluetooth HFP DDI 参照
-      href: bluetooth-hfp-ddi-reference.md
       items:
+        - name: Bluetooth HFP DDI 参照
+          href: bluetooth-hfp-ddi-reference.md
         - name: Bluetooth HFP DDI の構造体
           href: bluetooth-hfp-ddi-structures.md
         - name: Bluetooth HFP DDI IOCTLs
           href: bluetooth-hfp-ddi-ioctls.md
     - name: High Definition Audio DDI リファレンス
-      href: high-definition-audio-ddi-reference.md
       items:
+        - name: High Definition Audio DDI リファレンス
+          href: high-definition-audio-ddi-reference.md
         - name: HD Audio DDI のルーチン
           href: hd-audio-ddi-routines.md
         - name: HD Audio DDI の構造体
@@ -927,8 +1007,9 @@
     - name: レガシ オーディオ デバイス メッセージ
       href: legacy-audio-device-messages.md
     - name: オーディオ INF ファイルの設定
-      href: media-class-inf-extensions.md
       items:
+        - name: オーディオ INF ファイルの設定
+          href: media-class-inf-extensions.md
         - name: SetupPreferredAudioDevices
           href: setuppreferredaudiodevices.md
         - name: PKEY_APO_SWFallback_ProcessingModes
@@ -996,8 +1077,9 @@
         - name: UsePositionLock
           href: usepositionlock.md
     - name: ポート クラス オーディオ ドライバー リファレンス
-      href: port-class-audio-driver-reference.md
       items:
+        - name: ポート クラス オーディオ ドライバー リファレンス
+          href: port-class-audio-driver-reference.md
         - name: オーディオ ポート クラスの関数
           href: audio-port-class-functions.md
         - name: オーディオ ヘルパー オブジェクトのインターフェイス
@@ -1015,22 +1097,25 @@
         - name: オーディオ電源管理のインターフェイス
           href: audio-power-management-interfaces.md
         - name: 廃止された関数のマクロ定義
-          href: macro-definitions-for-obsolete-functions.md
           items:
+            - name: 廃止された関数のマクロ定義
+              href: macro-definitions-for-obsolete-functions.md
             - name: 廃止されたポート クラス関数
               href: obsolete-port-class-functions.md
             - name: 廃止されたカーネル モード ドライバー サポート関数
               href: obsolete-kernel-mode-driver-support-functions.md
     - name: Ks.h
-      href: ks-h.md
       items:
+        - name: Ks.h
+          href: ks-h.md
         - name: KSEVENT_PINCAPS_FORMATCHANGE
           href: ksevent-pincaps-formatchange.md
         - name: KSEVENT_PINCAPS_JACKINFOCHANGE
           href: ksevent-pincaps-jackinfochange.md
     - name: Ksmedia.h
-      href: ksmedia-h.md
       items:
+        - name: Ksmedia.h
+          href: ksmedia-h.md
         - name: KSEVENT_CONTROL_CHANGE
           href: ksevent-control-change.md
         - name: KSEVENT_LOOPEDSTREAMING_POSITION

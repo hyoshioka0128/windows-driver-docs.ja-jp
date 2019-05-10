@@ -4,12 +4,12 @@ description: デバイスとドライバーのインストールのロードマ�
 ms.assetid: d6cb6d8c-226f-4b6f-989a-36184236f826
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64dcc2012b2f19d98d683e7cf138c994dd5a1f5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ab39fa9f7044955ab36c9a84167b3977b8030d7
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361143"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456427"
 ---
 # <a name="roadmap-for-device-and-driver-installation"></a>デバイスとドライバーのインストールのロードマップ
 
@@ -34,7 +34,7 @@ Windows オペレーティング システムでは、デバイスとドライ�
 
     INF ファイルには、情報とデバイスの設定が含まれているシステム指定[デバイス インストールのコンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff541277)インストールを使用して、[ドライバー パッケージ](driver-packages.md)デバイスやドライバーなどデバイス固有のアプリケーション。
 
-    詳細については、次を参照してください。 [INF ファイル](inf-files.md)します。
+    詳細については、次を参照してください。 [INF ファイル](overview-of-inf-files.md)します。
 
 -   手順 4:デバイスとドライバーのドライバー パッケージを作成します。
 

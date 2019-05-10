@@ -1,18 +1,21 @@
 - name: UWP デバイス アプリ
-  href: index.md
   items:
+    - name: UWP デバイス アプリ
+      href: index.md
     - name: 新着情報
       href: what-s-new.md
     - name: 概要
-      href: getting-started.md
       items:
+        - name: 概要
+          href: getting-started.md
         - name: UWP デバイス アプリの概要
           href: meet-UWP-device-apps.md
         - name: UWP デバイス アプリを構築する
           href: the-workflow.md
     - name: UWP デバイス アプリを手順に従って構築する
-      href: build-a-UWP-device-app-step-by-step.md
       items:
+        - name: UWP デバイス アプリを手順に従って構築する
+          href: build-a-UWP-device-app-step-by-step.md
         - name: '手順 1:UWP デバイス アプリを作成する'
           href: step-1--create-a-UWP-device-app.md
         - name: '手順 2:デバイス メタデータを作成する'
@@ -28,13 +31,15 @@
     - name: UWP デバイス アプリの自動再生
       href: autoplay-for-UWP-device-apps.md
     - name: UWP デバイス アプリによるデバイスの同期と更新
-      href: device-sync-and-update-for-UWP-device-apps.md
       items:
+        - name: UWP デバイス アプリによるデバイスの同期と更新
+          href: device-sync-and-update-for-UWP-device-apps.md
         - name: デバイス バックグラウンド タスクを作成する
           href: how-to-create-a-device-background-task.md
     - name: プリンター用の UWP デバイス アプリ
-      href: UWP-device-apps-for-printers.md
       items:
+        - name: プリンター用の UWP デバイス アプリ
+          href: UWP-device-apps-for-printers.md
         - name: プリンターの状態を表示する方法
           href: how-to-display-printer-status.md
         - name: 印刷設定をカスタマイズする方法
@@ -48,8 +53,9 @@
         - name: プリンター拡張ライブラリの概要
           href: printer-extension-library-overview.md
     - name: カメラ用の UWP デバイス アプリ
-      href: UWP-device-apps-for-webcams.md
       items:
+        - name: カメラ用の UWP デバイス アプリ
+          href: UWP-device-apps-for-webcams.md
         - name: カメラのオプションをカスタマイズする方法
           href: how-to-customize-camera-options.md
         - name: カメラ ドライバー MFT を作成する

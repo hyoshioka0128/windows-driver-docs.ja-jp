@@ -1,9 +1,11 @@
-- name: Simple Peripheral Bus (SPB) ドライバー設計ガイド
-  href: index.md
+- name: SPB (Simple Peripheral Bus) ドライバー設計ガイド
   items:
+    - name: SPB (Simple Peripheral Bus) ドライバー設計ガイド
+      href: index.md
     - name: SPB コントローラー ドライバー
-      href: spb-controller-drivers.md
       items:
+        - name: SPB コントローラー ドライバー
+          href: spb-controller-drivers.md
         - name: SPB フレームワーク拡張機能 (SpbCx)
           href: spb-framework-extension.md
         - name: SpbCx インターフェイス
@@ -23,8 +25,9 @@
         - name: SpbCx オブジェクト ハンドル
           href: spbcx-object-handles.md
     - name: SPB 周辺機器ドライバー
-      href: spb-peripheral-device-drivers.md
       items:
+        - name: SPB 周辺機器ドライバー
+          href: spb-peripheral-device-drivers.md
         - name: SPB I/O 要求インターフェイスの使用
           href: using-the-spb-i-o-request-interface.md
         - name: SPB 接続周辺機器の接続 ID
@@ -44,8 +47,9 @@
         - name: SPB 接続のロック
           href: spb-connection-locks.md
     - name: Multi Interface Test Tool (MITT) によるテスト
-      href: testing-with-multi-interface-test-tool--mitt-.md
       items:
+        - name: Multi Interface Test Tool (MITT) によるテスト
+          href: testing-with-multi-interface-test-tool--mitt-.md
         - name: MITT を使用するためのハードウェアの購入
           href: multi-interface-test-tool--mitt--.md
         - name: MITT の概要

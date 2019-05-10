@@ -1,6 +1,7 @@
 - name: パートナー アプリ開発
-  href: index.md
   items:
+    - name: パートナー アプリ開発
+      href: index.md
     - name: バックグラウンド タスクとカスタム トリガー
       href: background-tasks-and-oem-triggers.md
     - name: '割り当てられたアクセスのキオスク アプリ:ベスト プラクティス'

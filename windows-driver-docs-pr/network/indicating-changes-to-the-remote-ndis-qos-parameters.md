@@ -4,12 +4,12 @@ description: リモート NDIS QoS パラメーターへの変更の表示
 ms.assetid: E09EBF25-96B6-417F-9538-D0BEBE5B9E19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e0875d66834c76750e75b0025cf5c1a35f462b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03f5b0d9184551e83da99acfae59de2b859cbfc4
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327751"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405221"
 ---
 # <a name="indicating-changes-to-the-remote-ndis-qos-parameters"></a>リモート NDIS QoS パラメーターへの変更の表示
 
@@ -55,7 +55,7 @@ NDIS サービスの品質 (QoS) の問題をサポートしているミニポ�
 
     たとえば、ミニポート ドライバーは、適切な設定**NDIS\_QOS\_パラメーター\_*Xxx*\_CHANGED**のフラグ、 **フラグ**ミニポート ドライバーを以前に発行された後に変更されたデータが含まれているこれらのメンバーのメンバー、 [ **NDIS\_状態\_QOS\_リモート\_パラメーター\_変更**](https://msdn.microsoft.com/library/windows/hardware/hh439812)状態を示す値。
 
-    詳細を設定する方法について、**フラグ**、メンバーを参照してください[設定するためのガイドライン、**フラグ**メンバー](#flags)します。
+    詳細を設定する方法について、**フラグ**、メンバーを参照してください[設定するためのガイドライン、**フラグ**メンバー](#guidelines-for-setting-the-flags-member)します。
 
 3.  ミニポート ドライバーを初期化します、 [ **NDIS\_QOS\_分類\_要素**](https://msdn.microsoft.com/library/windows/hardware/hh451631)からリモートの NDIS QoS には、各トラフィック種類の構造パラメーター。 ドライバーにより、これらの要素の末尾を越えた、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)バッファー内の構造体。
 

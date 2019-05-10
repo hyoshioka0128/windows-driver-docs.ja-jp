@@ -4,12 +4,12 @@ description: デバイスとドライバー パッケージのアンインスト
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d21ef6faa45c67ae5b653853317a8c770fe22e5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88a634c3d6d47ca5a66da123bc38b606c15f0ae8
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325806"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456428"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>デバイスとドライバー パッケージのアンインストール方法
 
@@ -52,7 +52,7 @@ ms.locfileid: "63325806"
 
 ### <a href="" id="deleting-a-driver-package-from-the-driver-store"></a> ドライバー ストアからドライバー パッケージを削除します。
 
-アクションの削除をファイルに関連付けられているこのアンインストール、[ドライバー パッケージ](driver-packages.md)から、[ドライバー ストア](driver-store.md)PnP マネージャーの内部データベースから、関連するメタデータを削除します。 この操作も削除されます、 [INF ファイル](inf-files.md)INF のシステム ディレクトリから、ドライバー パッケージに関連付けられています。
+アクションの削除をファイルに関連付けられているこのアンインストール、[ドライバー パッケージ](driver-packages.md)から、[ドライバー ストア](driver-store.md)PnP マネージャーの内部データベースから、関連するメタデータを削除します。 この操作も削除されます、 [INF ファイル](overview-of-inf-files.md)INF のシステム ディレクトリから、ドライバー パッケージに関連付けられています。
 
 ドライバー パッケージがドライバー ストアから削除された後、デバイスにインストールできますが不要になったです。 ドライバー パッケージを restaged し、にインストールする必要があります、[ドライバー ストア](driver-store.md)光学式メディア、ネットワーク共有では、Windows Update など、元のソースからです。
 

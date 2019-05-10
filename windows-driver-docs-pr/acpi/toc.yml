@@ -1,17 +1,21 @@
 - name: ACPI 設計ガイド
-  href: index.md
   items:
+    - name: ACPI 設計ガイド
+      href: index.md
     - name: ACPI デバイスをサポートする
-      href: supporting-acpi-devices.md
       items:
+        - name: ACPI デバイスをサポートする
+          href: supporting-acpi-devices.md
         - name: ACPI デバイスのデバイス スタック
           href: device-stacks-for-an-acpi-device.md
         - name: ACPI デバイス機能ドライバーの操作
-          href: operation-of-an-acpi-device-function-driver.md
           items:
+            - name: ACPI デバイス機能ドライバーの操作
+              href: operation-of-an-acpi-device-function-driver.md
             - name: 操作領域をサポートする
-              href: supporting-an-operation-region.md
               items:
+                - name: 操作領域をサポートする
+                  href: supporting-an-operation-region.md
                 - name: 操作領域のメモリ バッファーを維持する
                   href: maintaining-an-operation-region-memory-buffer.md
                 - name: 操作領域ハンドラーを登録/登録解除する
@@ -23,11 +27,13 @@
             - name: ベンダー定義の ACPI デバイス インターフェイスを提供する
               href: providing-a-vendor-defined-acpi-device-interface.md
     - name: ACPI 制御メソッドを評価する
-      href: evaluating-acpi-control-methods.md
       items:
+        - name: ACPI 制御メソッドを評価する
+          href: evaluating-acpi-control-methods.md
         - name: ACPI 制御メソッドを同期的に評価する
-          href: evaluating-acpi-control-methods-synchronously.md
           items:
+            - name: ACPI 制御メソッドを同期的に評価する
+              href: evaluating-acpi-control-methods-synchronously.md
             - name: 制御メソッドの入力バッファーの構造
               href: control-method-input-buffer-structures.md
             - name: 入力引数なしの制御メソッドを評価する
@@ -37,13 +43,15 @@
             - name: SendDownStreamIrp 関数
               href: senddownstreamirp-function.md
         - name: 子デバイスと制御メソッドを列挙する
-          href: enumerating-child-devices-and-control-methods.md
           items:
+            - name: 子デバイスと制御メソッドを列挙する
+              href: enumerating-child-devices-and-control-methods.md
             - name: IOCTL_ACPI_ENUM_CHILDREN 要求を送信する
               href: sending-an-ioctl-acpi-enum-children-request.md
         - name: 制御メソッドのマクロ
-          href: control-method-macros.md
           items:
+            - name: 制御メソッドのマクロ
+              href: control-method-macros.md
             - name: ACPI_METHOD_SET_ARGUMENT_INTEGER
               href: acpi-method-set-argument-integer.md
             - name: ACPI_METHOD_SET_ARGUMENT_STRING
