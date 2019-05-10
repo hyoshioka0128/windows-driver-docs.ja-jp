@@ -3,12 +3,12 @@ Description: デバイスの機能のドライバーとして機能する USB �
 title: USB ドライバーを開発するためのドライバー モデルを選択します。
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 86e7f84cfe9b766beb4a0cd7c59d8089f8dd19e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a548bff389696d1bb369e7d62c7851db6e1b23d3
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389174"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405294"
 ---
 # <a name="choosing-a-driver-model-for-developing-a-usb-client-driver"></a>USB クライアント ドライバー開発用のドライバー モデルの選択
 
@@ -28,7 +28,7 @@ USB デバイス製造元では、アプリケーション、デバイスの機�
 USB デバイスへのアクセスを提供する最も柔軟な方法は、デバイスの要件にカスタマイズされているドライバーを記述します。 ただし、ドライバーを実装するには、多くの作業が必要です。 ドライバーは、デバイスが削除されたときに新しいデバイスが検出された、電源管理、I/O 操作、突然の取り外し、状態管理、およびクリーンアップのドライバーの初期化などの複雑なタスクを実行する必要があります。 ドライバーを記述することを選択する前に、次の質問をください。
 
 -   [Microsoft 提供のドライバーを使用できますか。](#can-you-use-a-microsoft-provided-driver)
--   [USB クライアント ドライバーを作成する場合は、どのドライバー モデルをお勧めしますか。](#if-you--write-a-usb-client-driver--which-driver-model-is-best-)
+-   [USB クライアント ドライバーを作成する場合は、どのドライバー モデルをお勧めしますか。](#if-you-write-a-usb-client-driver-which-driver-model-is-best)
 
 ## <a name="can-you-use-a-microsoft-provided-driver"></a>Microsoft 提供のドライバーを使用できますか。
 

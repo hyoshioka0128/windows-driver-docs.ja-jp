@@ -1,6 +1,7 @@
 - name: Windows ドライバーの概要
-  href: index.md
   items:
+    - name: Windows ドライバーの概要
+      href: index.md
     - name: ドライバーとは
       href: what-is-a-driver-.md
     - name: ドライバーの作成の必要性
@@ -8,8 +9,9 @@
     - name: ドライバー モデルの選択
       href: choosing-a-driver-model.md
     - name: 初めてのドライバーの作成
-      href: writing-your-first-driver.md
       items:
+        - name: 初めてのドライバーの作成
+          href: writing-your-first-driver.md
         - name: テンプレートを使ったユニバーサル Windows ドライバー (UMDF 2) の作成
           href: writing-a-umdf-driver-based-on-a-template.md
         - name: ユニバーサル Hello World ドライバー (KMDF) の作成
@@ -23,8 +25,9 @@
     - name: ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)
       href: provision-a-target-computer-wdk-8-1.md
     - name: すべてのドライバー開発者のための概念
-      href: null
       items:
+        - name: すべてのドライバー開発者のための概念
+          href: null
         - name: ユーザー モードとカーネル モード
           href: user-mode-and-kernel-mode.md
         - name: 仮想アドレス領域

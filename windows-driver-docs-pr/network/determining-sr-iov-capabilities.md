@@ -4,21 +4,21 @@ description: SR-IOV 機能の判断
 ms.assetid: 61895987-2469-471E-BB29-FF1CDD2869DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc33088464d31588e6cde641f6758e7441413610
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd615551adebc690260c26396726d81d12fd9316
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364201"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405144"
 ---
 # <a name="determining-sr-iov-capabilities"></a>SR-IOV 機能の判断
 
 
 このトピックでは、NDIS とドライバーの後続のネットワーク アダプターのシングル ルート I/O 仮想化 (SR-IOV) 機能を特定する方法について説明します。 このトピックの内容は次のとおりです。
 
-[レポートの中に、SR-IOV 機能*MiniportInitializeEx*](#report)
+[レポートの中に、SR-IOV 機能*MiniportInitializeEx*](#reporting-sr-iov-capabilities-during-miniportinitializeex)
 
-[上にあるドライバーが SR-IOV 機能の照会](#query)
+[上にあるドライバーが SR-IOV 機能の照会](#querying-sr-iov-capabilities-by-overlying-drivers)
 
 ## <a name="reporting-sr-iov-capabilities-during-miniportinitializeex"></a>レポートの中に、SR-IOV 機能*MiniportInitializeEx*
 

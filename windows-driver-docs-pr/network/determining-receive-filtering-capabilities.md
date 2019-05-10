@@ -4,21 +4,21 @@ description: 受信フィルター機能の判断
 ms.assetid: 11EE5987-A2DE-4388-86D0-77285453E80A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6281a8616ad8579220460d4c22404cb5519d3fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cc3ec7bbea2f7695ac98ceacb5b795d45066b21
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364219"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405147"
 ---
 # <a name="determining-receive-filtering-capabilities"></a>受信フィルター機能の判断
 
 
 このトピックでは、NDIS と関連付けたドライバーがシングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの受信のフィルター処理機能を特定する方法について説明します。 このトピックの内容は次のとおりです。
 
-[中にフィルター処理機能を受け取る reporting *MiniportInitializeEx*](#report)
+[中にフィルター処理機能を受け取る reporting *MiniportInitializeEx*](#reporting-receive-filtering-capabilities-during-miniportinitializeex)
 
-[ドライバーに関連してフィルター処理機能を受信するクエリを実行します。](#query)
+[ドライバーに関連してフィルター処理機能を受信するクエリを実行します。](#querying-receive-filtering-capabilities-by-overlying-drivers)
 
 **注**  ミニポート ドライバー、PCI Express (PCIe) 物理機能 (PF) の SR-IOV ネットワーク アダプターを報告できるため受信フィルタ リング機能のみです。 PCIe 仮想機能 (Vf) 用のミニポート ドライバーでは、SR-IOV 対応のアダプターの機能をフィルター処理、受信を報告する必要があります。
 

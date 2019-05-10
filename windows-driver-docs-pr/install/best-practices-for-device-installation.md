@@ -7,19 +7,19 @@ keywords:
 - ドライバーのインストール WDK、ベスト プラクティス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fbd97abaca78189a1b02479772a1b8d2dde97dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 237bfd304b358f3d46f1cf0d7d456453e36fc85e
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387225"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456366"
 ---
 # <a name="best-practices-for-device-and-driver-installation"></a>デバイスとドライバーのインストールのベスト プラクティス
 
 
 このセクションの説明に関するガイドラインのコンポーネント[ドライバー パッケージ](driver-packages.md)デバイスとドライバーのインストールに従う必要があります。 これらのコンポーネントを以下に示します。
 
--   [INF ファイル](inf-files.md)
+-   [INF ファイル](overview-of-inf-files.md)
 
 ガイドラインは、次のトピックについて説明します。
 

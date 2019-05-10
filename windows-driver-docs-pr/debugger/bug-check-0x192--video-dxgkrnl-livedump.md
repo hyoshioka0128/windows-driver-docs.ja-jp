@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 35ee5957f2cdb600ad1e240b417cca473748069b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bad4540e7aec8dc9b147ba9992f3fe377bff1992
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352438"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501615"
 ---
 # <a name="bug-check-0x193-videodxgkrnllivedump"></a>バグ チェック 0x193:ビデオ\_DXGKRNL\_LIVEDUMP
 
@@ -64,6 +64,8 @@ ms.locfileid: "63352438"
 </tbody>
 </table>
 
+## <a name="resolution"></a>解決方法
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
  
 
  
