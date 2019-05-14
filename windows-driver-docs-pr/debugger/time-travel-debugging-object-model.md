@@ -443,7 +443,7 @@ ModLoad: 76cc0000 76cce000   C:\WINDOWS\System32\MSASN1.dll
 
 デバッグする方法に関するチュートリアルについてはC++クエリを使用した問題のあるコードの実行に関する情報を問題の検索は、「タイム トラベル デバッグ記録を使用してコード https://github.com/Microsoft/WinDbg-Samples/blob/master/TTDQueries/tutorial-instructions.mdします。
 
-ここで使用可能なすべてのラボで使用するコードが:https://github.com/Microsoft/WinDbg-Samples/tree/master/TTDQueries/app-sampleします。
+ここで使用可能なすべてのラボで使用するコードが: https://github.com/Microsoft/WinDbg-Samples/tree/master/TTDQueries/app-sample します。
 
 
 ## <a name="troubleshooting-ttd-queries"></a>TTD クエリのトラブルシューティング

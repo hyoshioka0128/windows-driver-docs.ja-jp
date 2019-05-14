@@ -23,7 +23,7 @@ Microsoft Windows の複数のバージョンの NDIS ドライバーを記述�
 Windows Vista と以降のオペレーティング システムおよび NDIS 6.0 以降のドライバーは、この設計ガイド ドキュメントのセットを対象します。 Windows および NDIS の以前のバージョンのドキュメントは、ドキュメントの以前のリリースに含まれます。 Windows XP および NDIS 5.1 ドキュメントについては、次を参照してください。 [Windows 2000 および Windows XP のネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff565849)します。
 
 > [!NOTE]
-> ドライバーは呼び出すことで NDIS バージョンをクエリすることができます、 [**エミュレーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)関数と、*キーワード*パラメーターに設定**NdisVersion**. 
+> ドライバーは呼び出すことで NDIS バージョンをクエリすることができます、 [**エミュレーター**](https://msdn.microsoft.com/library/windows/hardware/ff564511) 関数と、 *キーワード* パラメーターに設定 **NdisVersion**. 
 
 Windows オペレーティング システム、Microsoft Windows Driver Kit (WDK)、およびバージョンの NDIS ドライバー開発キット (DDK) バージョンでサポートおよび NDIS のバージョン間での主な NDIS 機能のサポートについては、次の表で説明します。
 

@@ -1,6 +1,6 @@
 ---
-title: トレース フラグとレベルの選択 ダイアログ ボックスを開く
-description: トレース フラグとレベルの選択 ダイアログ ボックスを開く
+title: Tracing Flags and Level Selection (トレース フラグとレベルの選択) ダイアログ ボックスを開く
+description: Tracing Flags and Level Selection (トレース フラグとレベルの選択) ダイアログ ボックスを開く
 ms.assetid: f6ee808e-ea29-492b-b161-0a3b57140214
 keywords:
 - WDK のトレース フラグ
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea90faac2f86afc3a68b03b0ab21f6f9feb634bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56553803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356348"
 ---
-# <a name="opening-the-tracing-flags-and-level-selection-dialog-box"></a>トレース フラグとレベルの選択 ダイアログ ボックスを開く
+# <a name="opening-the-tracing-flags-and-level-selection-dialog-box"></a>Tracing Flags and Level Selection (トレース フラグとレベルの選択\) ダイアログ ボックスを開く
 
 
 使用することができます、**トレース フラグとレベル選択**を選択し、セッションを作成し、セッション中に、フラグとプロバイダーのレベルを変更 ダイアログ ボックスが実行されています。
