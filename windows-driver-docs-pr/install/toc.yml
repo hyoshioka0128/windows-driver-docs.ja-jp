@@ -192,7 +192,7 @@
           href: test-signing-a-driver-through-an-embedded-signature.md
         - name: テスト署名をサポートするためのテスト コンピューターの構成
           href: configuring-the-test-computer-to-support-test-signing.md
-        - name: TESTSIGNING ブート構成オプション
+        - name: テスト署名されたドライバーの読み込みの有効化
           href: the-testsigning-boot-configuration-option.md
         - name: コードの整合性でのイベント ログとシステム監査の有効化
           href: enabling-code-integrity-event-logging-and-system-auditing.md
