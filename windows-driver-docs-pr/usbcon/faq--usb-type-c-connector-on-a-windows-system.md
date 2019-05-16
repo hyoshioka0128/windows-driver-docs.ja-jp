@@ -3,29 +3,27 @@ Description: よく寄せられる型-C# の USB コネクタでの Windows シ�
 title: よく寄せられる質問 - Windows システム上の C-USB 型コネクタ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 348dbf3f3cb81c05fea4ae6421de1b7d575d86b8
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 29dd5566fa7e28b5fc6669a5202e51d444aed2fe
+ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405050"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65711965"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>よくあるご質問:Windows システムにおける USB Type-C コネクタ
-
-**最後に更新された**- 2016 年 12 月
 
 **Windows バージョン**:
 
 * Windows 10 デスクトップ エディション (Home、Pro、Enterprise、Education)
 * Windows 10 Mobile
 
-よく寄せられる型-C# の USB コネクタでの Windows システムを構築したい Oem の質問です。
+一般的な USB 型-C# のコネクタでの Windows システムを構築したい Oem のディスカッション ポイント。
 
 * [USB タイプ-c connector の機能](#usb-type-c-connector-features)
 * [オペレーティング システム入力代替モードを DP 2 レーン vs など、ネゴシエートする必要があります。配布ポイントの 4 レーン](#operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane)
 * [型から C と PD 充電 os 起動前](#pre-os-charging-with-type-c-and-pd)
 * [Continuum のようなドッキングのシナリオを有効にする USB ホストがある場合に、電話の充電](#charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum)
-* [ビルボードの USB デバイスの Windows 10 Mobile のサポート](#windows-10-mobile-support-of-usb-billboard-devices)
+* [ビルボードの USB デバイスの Windows 10 Mobile のサポート](#windows10-mobile-support-of-usb-billboard-devices)
 * [Windows の以前のバージョンでサポートの USB 型-C#](#support-for-usb-type-c-on-earlier-versions-of-windows)
 * [UCSI が Windows の以前のバージョンでサポートします。](#ucsi-support-on-earlier-versions-of-windows)
 * [UCSI の実装をテストする方法](#how-to-test-an-implementation-of-ucsi)
@@ -33,9 +31,9 @@ ms.locfileid: "65405050"
 * [PD プロバイダーおよび PD プロバイダーではないシステムに PD コンシューマーに PD 以外のポートを接続します。](#connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider)
 * [これらの機能をサポートしていない PC に Thunderbolt や SuperMHL、PCI express を接続します。](#connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities)
 * [サポートと MTP 経由で USB 型-C# Windows での制限事項](#support-and-limitations-for-mtp-over-usb-type-c-in-windows)
-* [どのダウン ストリーム デバイスおよびハブ接続し、USB コネクタ マネージャー (UCM) との通信](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm-)
+* [どのダウン ストリーム デバイスおよびハブ接続し、USB コネクタ マネージャー (UCM) との通信](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm)
 * [USB 型 C MUTT HLK テスト要件](#usb-type-c-mutt-requirements-for-hlk-tests)
-* [Microsoft で同じ Windows 10 SKU 間のデータ転送の P2P のサポートします。](#microsoft-support-for-P2P-data-transfer-between-the-same-windows-10-sku)
+* [Microsoft で同じ Windows 10 SKU 間のデータ転送の P2P のサポートします。](#microsoft-support-for-p2p-data-transfer-between-the-same-windows-10-sku)
 * [PMIC またはバッテリの充電状態を取得または設定のドライバーと UCM クラスの拡張機能 (UcmCx) 通信](#ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status)
 * [HLK サポートの USB 型-C#](#hlk-support-for-usb-type-c)
 * [UCSI](#ucsi)
@@ -168,11 +166,11 @@ USB タイプ C コネクタ システム ソフトウェア インターフェ�
 
 Microsoft では、Windows、UcmUcsi.sys、仕様で定義されている機能を実装すると、インボックス ドライバーを提供します。 このドライバーは、埋め込みコント ローラーのシステムを対象としています。
 
-## <a name="test-a-ucsi-implementation-running-on-windows10"></a>Windows 10 で実行されている UCSI 実装をテストします。
+## <a name="test-a-ucsi-implementation-running-on-windows-10"></a>Windows 10 で実行されている UCSI 実装をテストします。
 
 Windows 10 用 Windows HLK で USB テストを実行することをお勧めします。 これらのテストが記載されて[USB の Windows ハードウェア認定キット テスト](windows-hardware-certification-kit-tests-for-usb.md)します。
 
-## <a name="test-a-ucmcx-client-driver-on-windows10"></a>Windows 10 で UCMCx クライアント ドライバーをテストします。
+## <a name="test-a-ucmcx-client-driver-on-windows-10"></a>Windows 10 で UCMCx クライアント ドライバーをテストします。
 
 Windows 10 用 Windows HLK で USB テストを実行することをお勧めします。 これらのテストが記載されて[USB の Windows ハードウェア認定キット テスト](windows-hardware-certification-kit-tests-for-usb.md)します。
 

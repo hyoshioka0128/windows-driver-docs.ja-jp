@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c935357f6ce270037409c71e57e3324945098f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 111e15e4314029c9457da58a3a7cddb1b894e91b
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327892"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701986"
 ---
 # <a name="fsctlgetreparsepoint-control-code"></a>FSCTL\_取得\_再解析\_ポイント制御コード
 
@@ -51,7 +51,7 @@ FSCTL\_取得\_再解析\_ポイント制御コードを指定したファイル
 呼び出し元が割り当てたへのポインター [**再解析\_GUID\_データ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552014)または[**再解析\_データ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552012)再解析ポイントのデータを受信する構造体。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-指し示されるバッファーのバイト単位のサイズ、 *OutputBuffer*パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値は、以上である必要があります**sizeof**(再解析\_GUID\_データ\_バッファー\_ヘッダー\_サイズ)、必要なユーザー定義データのサイズは最大値以下である必要がありますプラス\_再解析\_データ\_バッファー\_サイズ。 再解析の\_データ\_バッファーの構造体は、この値は、以上である必要があります**sizeof**(再解析\_データ\_バッファー\_ヘッダー\_サイズ)、さらのサイズ予想されるユーザー定義データは最大値以下である必要があります\_再解析\_データ\_バッファー\_サイズ。
+指し示されるバッファーのバイト単位のサイズ、 *OutputBuffer*パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値がある必要がありますには少なくとも再解析\_GUID\_データ\_バッファー\_ヘッダー\_のサイズの合計サイズ予想されるユーザー定義データは最大値以下である必要があります\_再解析\_データ\_バッファー\_サイズ。 再解析の\_データ\_バッファーの構造体は、この値がある必要がありますには少なくとも再解析\_データ\_バッファー\_ヘッダー\_サイズ、さらに、ユーザー定義の予期されるデータのサイズと小さいする必要があります最大値に等しいまたはそれよりも\_再解析\_データ\_バッファー\_サイズ。
 
 <a name="status-block"></a>ステータス ブロック
 ------------

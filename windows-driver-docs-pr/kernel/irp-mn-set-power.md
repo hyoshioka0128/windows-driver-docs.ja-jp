@@ -6,12 +6,12 @@ ms.assetid: 1294183a-bd0b-4ead-bd64-669d5b3725ce
 keywords:
 - IRP_MN_SET_POWER カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 220924dd1997ca425f5173b2b90d507560ecf496
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d7d96b1385ab7df2029a0b8a63d820ce119303b
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381405"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701988"
 ---
 # <a name="irpmnsetpower"></a>IRP\_MN\_設定\_電源
 
@@ -49,6 +49,22 @@ ms.locfileid: "63381405"
 
 以降、Windows Vista では、 **Parameters.Power.SystemPowerStateContext**メンバーは読み取り専用で、部分的に非透過的な[**システム\_POWER\_状態\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/jj835780)コンピューターの前のシステム電源の状態に関する情報を含む構造体。 場合**Parameters.Power.Type**は**SystemPowerState**と**Parameters.Power.State**は**PowerSystemWorking**、2 つのフラグでは、このビット構造体は、高速スタートアップまたは休止からのスリープ解除、S0 を入力するコンピューターの原因となったかどうかを示す (作業) システムの状態。 詳細については、次を参照してください。[区別高速スタートアップ ウェイク-から-休止状態から](https://msdn.microsoft.com/library/windows/hardware/jj835779)します。
 
+次の表の内容を示しています。 **IRP_MN_SET_POWER します。Parameters.Power します。{0} の状態 |ShutdownType}** と**CurrentSystemState**、 **TargetSystemState**、および**EffectiveSystemState**ビット フィールドで、 [ **SYSTEM_POWER_STATE_CONTEXT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_system_power_state_context)システム電源の遷移ごとに構造体。  各行は 1 つを表します**IRP_MN_SET_POWER**します。
+
+|Transition|状態|シャット ダウンの種類|現在のシステム状態|ターゲット システムの状態|有効な SystemState|コメント|
+|--- |--- |--- |--- |--- |--- |--- |
+|スリープ状態になる.|S3|スリープ|S0|S3|S3||
+|...ウェイク アップ|S0|スリープ|S3|S0|S0||
+|ハイブリッド スリープをしています.|S4|休止状態|S0|S3|S4|スリープと休止状態ファイル (S4 高速)|
+|...ウェイク アップ|S0|スリープ|S3|S0|S0||
+|...Wake/PwrLost|S0|スリープ|S4|S0|S0||
+|休止状態にする.|S4|休止状態|S0|S4|S4|||
+|...ウェイク アップ|S0|スリープ|S4|S0|S0||
+|ハイブリッドのシャット ダウン|S4|休止状態|S0|S5|S4|ユーザーがログオフする、アプリを閉じた場合は、シャット ダウン (休止ブート)|
+|...高速スタートアップ|S0|スリープ|S4|S0|S0||
+|シャット ダウンしています.|S5|シャット ダウン/リセット/オフ|S0|S5|S5||
+|...システムのブート||||||起動用のない S IRP|
+
 ## <a name="output-parameters"></a>出力パラメーター
 
 
@@ -71,6 +87,8 @@ ms.locfileid: "63381405"
 -   システム電源の状態が変更されたドライバーに通知するには
 
 -   電源マネージャーがアイドル状態の検出を実行するデバイスの電源状態を変更するには
+
+-   現在のシステム状態のことを再確認して、ドライバーが失敗した後に、 **IRP\_MN\_クエリ\_POWER**システム電源の状態の要求。  詳細については、次を参照してください。 [ **IRP_MN_QUERY_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power#operation)します。
 
 電源ポリシーがデバイスを所有しているドライバーの送信**IRP\_MN\_設定\_POWER**にそのデバイスの電源状態を変更します。
 

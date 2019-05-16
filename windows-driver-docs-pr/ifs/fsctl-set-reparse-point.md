@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccdcc4a149f0c0ecc7d32123242a89dc998b5fbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6182a2c5cced1b80dcaa4e22884105a352f58407
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580837"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701990"
 ---
 # <a name="fsctlsetreparsepoint-control-code"></a>FSCTL\_設定\_再解析\_ポイント制御コード
 
@@ -44,7 +44,7 @@ FSCTL\_設定\_再解析\_ポイント制御コードは、ファイルまたは
 呼び出し元が割り当てたへのポインター [**再解析\_GUID\_データ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552014)または[**再解析\_データ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552012)再解析ポイントのデータを含む構造体。 タグが指定された既存の再解析ポイントが変更されている場合、 **ReparseTag**この構造体のメンバーが変更される再解析ポイントのタグと一致する必要があります。 さらに、再解析ポイントがサードパーティ (Microsoft 以外の) 再解析ポイントの場合は、GUID はで指定された、 **ReparseGuid** 、構造体のメンバーは、再解析\_GUID\_データ\_バッファーの構造体変更する再解析ポイントの GUID が一致する必要があります。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-指し示されるバッファーのバイト単位のサイズ、 *InputBuffer*パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値は、以上である必要があります**sizeof**(再解析\_GUID\_データ\_バッファー\_ヘッダー\_サイズ)、ユーザー定義のデータのサイズは最大値以下である必要がありますプラス\_再解析\_データ\_バッファー\_サイズ。 再解析の\_データ\_バッファーの構造体は、この値は、以上である必要があります**sizeof**(再解析\_データ\_バッファー\_ヘッダー\_サイズ)、さらのサイズユーザー定義のデータとは最大値以下である必要があります\_再解析\_データ\_バッファー\_サイズ。
+指し示されるバッファーのバイト単位のサイズ、 *InputBuffer*パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値がある必要がありますには少なくとも再解析\_GUID\_データ\_バッファー\_ヘッダー\_のサイズの合計サイズユーザー定義のデータとは最大値以下である必要があります\_再解析\_データ\_バッファー\_サイズ。 再解析の\_データ\_バッファーの構造体は、この値がある必要があります少なくとも再解析\_データ\_バッファー\_ヘッダー\_サイズ、さらに、ユーザー定義データのサイズとする必要がありますより小さいか、最大値に等しい\_再解析\_データ\_バッファー\_サイズ。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
 この操作では使用されません。設定**NULL**します。
@@ -64,7 +64,7 @@ FSCTL\_設定\_再解析\_ポイント制御コードは、ファイルまたは
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">項目</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>

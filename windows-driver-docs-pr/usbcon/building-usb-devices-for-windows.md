@@ -3,24 +3,22 @@ Description: このセクションでは、USB 周辺機器の製造元からの
 title: Windows 用 USB デバイスの構築
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4513544d1bf003721e8f0a29668683b0454caec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcb4d087ade56cf04d742123ccd5227b33e82390
+ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377443"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65711968"
 ---
 # <a name="building-usb-devices-for-windows"></a>Windows 用 USB デバイスの構築
 
+**概要**:
 
-**要約**
-
--   USB デバイス ビルダー用のリソース
+* USB デバイス ビルダー用のリソース
 
 このセクションでは、USB 周辺機器の製造元からのリンクを示します。
 
 ## <a name="usb-device-enumeration-process"></a>USB デバイスの列挙プロセス
-
 
 [USB スタックがデバイスを列挙する方法](https://go.microsoft.com/fwlink/p/?linkid=617517)  
 スタックが、デバイスの存在を検出し、PnP マネージャーに新しいデバイスが到着したことを示します - Microsoft USB ドライバー スタックで使用される列挙プロセスの詳細な説明。
@@ -29,7 +27,6 @@ ms.locfileid: "63377443"
 Windows 8 でスタックが 2.1、2.0、および 1.1 の USB デバイスを列挙する方法の USB ドライバー スタックでの変更を行いましたしました。 これらの変更は、USB の新機能をサポートし、デバイス列挙のパフォーマンスを向上させます。 読み取り、投稿は、それらのわずかな変更を認識してもらうと、簡単に列挙体のエラーの根本原因を特定する/デバイスのファームウェア ビルダーを有効にするのには。
 
 ## <a name="microsoft-os-descriptors"></a>Microsoft OS ディスクリプター
-
 
 USB デバイスは、デバイス、インターフェイス、およびエンドポイントのファームウェアに標準の記述子を格納します。 さらに、デバイスでは、クラスとベンダー固有の記述子を格納できます。 ただし、これらの記述子を格納できる情報の種類が制限されています。 Ihv 通常必要がありますを使用して、Windows Update またはメディア Cd など、ユーザーにさまざまな画像、アイコン、およびカスタム ドライバーなどのデバイスに固有の情報を提供します。
 
@@ -44,11 +41,7 @@ IHV は、個別に提供することではなくファームウェアで情報�
 [Microsoft OS ディスクリプターを使用して、関数のドライバーとして Winusb.sys の読み込み](automatic-installation-of-winusb.md)  
 IHV は、"WINUSB"として特定の Microsoft オペレーティング システム (OS) 機能の記述子をレポートの互換性のある ID を定義できます。 これらの記述子は、カスタムの INF ファイルを使用せず、デバイスの機能のドライバーとして Winusb.sys を読み込む Windows を許可します。 互換性のある ID を定義する方法の例については、拡張互換性 ID OS 機能記述子仕様の例を参照してください。 ダウンロードに仕様が含まれている[Microsoft OS 1.0 記述子仕様](https://go.microsoft.com/fwlink/p/?linkid=617519)します。
 
-<a href="" id="setting-a-container-id-for-an-external-device-by-using-microsoft-os-descriptors"></a>Microsoft OS ディスクリプターを使用してデバイスの外部コンテナー ID を設定します。  
-参照してください[コンテナー ID を設定](#container)します。
-
 ## <a name="setting-a-container-id"></a>コンテナー ID を設定
-
 
 [USB デバイス用のコンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540084)  
 ユニバーサル シリアル バス (USB) デバイス用のコンテナーの Id を生成する方法について説明します。
@@ -61,7 +54,6 @@ Windows で正しく検出されるように、多機能の USB デバイスを�
 
 ## <a name="implementing-power-management"></a>電源管理の実装
 
-
 [USB 3.0 のハードウェアでの電源管理をリンクします。](link-power-management-in-usb-3-0-hardware.md)  
 このドキュメントでは、ハードウェア ベンダーと Oem セレクティブ サスペンドと組み合わせてリンク電源管理 (LPM) を使用して USB デバイスの電源管理を実装するためのガイドラインを提供します。 U2 に U1 からハードウェアの移行について説明し、USB コント ローラー、ハブ、およびデバイスで、LPM 実装でよくある落とし穴について説明します。
 
@@ -70,21 +62,18 @@ Windows で正しく検出されるように、多機能の USB デバイスを�
 
 ## <a name="debugging-and-diagnostic-tools"></a>デバッグおよび診断ツール
 
-
-<a href="" id="usb-event-tracing-for-windows"></a>[Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  
+[Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  
 Event Tracing for Windows (ETW) は、オペレーティング システムによって提供される高速な汎用トレース機能です。 ツールをインストールし、トレース ファイルを作成し、USB のトレース ファイル内のイベントを分析する方法に関する情報が含まれます。
 
-<a href="" id="wpp-software-tracing"></a>[WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)  
+[WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)  
 Windows ソフトウェア トレース プリプロセッサ (WPP) の既定の操作を使用して、ソフトウェア コンポーネント (トレース プロバイダー) の操作を追跡する方法。
 
-<a href="" id="usb-3-0-extensions--usb3kd-dll-"></a>[USB 3.0 の拡張機能](https://msdn.microsoft.com/library/windows/hardware/hh869258)(usb3kd.dll)  
+[USB 3.0 の拡張機能](https://msdn.microsoft.com/library/windows/hardware/hh869258)(usb3kd.dll)  
 これらのコマンドは、USB 3.0 スタック内の 3 つのドライバーによって維持されるデータ構造から情報を表示します。 USB 3.0 ハブのドライバー、USB ホスト コント ローラーの拡張機能ドライバーと、USB 3.0 ホスト コント ローラー ドライバー。
 
-<a href="" id="usb-2-0-extensions---usb2kd-dll-"></a>[USB 2.0 の拡張機能](https://msdn.microsoft.com/library/windows/hardware/dn367056)(usb2kd.dll)  
+[USB 2.0 の拡張機能](https://msdn.microsoft.com/library/windows/hardware/dn367056)(usb2kd.dll)  
 これらのコマンドは、USB 2.0 スタックのドライバーによって管理されるデータ構造から情報を表示します。 USB 2.0 ハブのドライバーと USB 2.0 ホスト コント ローラー ドライバー。
 
 ## <a name="related-topics"></a>関連トピック
+
 [ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
-
-
-

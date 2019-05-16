@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca180759bd88b7dbec296a60cdfcdb2c3504c93d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8cd7ecd75473633dbfd13fbae040fcd76e4c8288
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579069"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701994"
 ---
 # <a name="fsctldeletereparsepoint-control-code"></a>FSCTL\_削除\_再解析\_ポイント制御コード
 
@@ -44,7 +44,7 @@ FSCTL\_削除\_再解析\_ポイント制御コードは、指定したファイ
 ポインターを[**再解析\_GUID\_データ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552014)または[**再解析\_データ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552012)構造体。 指定されたタグ、 **ReparseTag**この構造体のメンバーは、削除する再解析ポイントのタグと一致する必要があります、 **ReparseDataLength**メンバーは 0 である必要があります。 さらに、再解析ポイントがサードパーティ (Microsoft 以外の) 再解析ポイントの場合は、GUID はで指定された、 **ReparseGuid** 、再解析のメンバー\_GUID\_データ\_バッファーの構造が一致する必要があります、再解析の GUID は、削除をポイントします。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-指し示されるバッファーのバイト単位のサイズ、 **InputBuffer**パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値は、正確にある必要があります**sizeof**(再解析\_GUID\_データ\_バッファー\_ヘッダー\_サイズ)。 再解析の\_データ\_バッファーの構造体は、この値は、正確にある必要があります**sizeof**(再解析\_データ\_バッファー\_ヘッダー\_サイズ)。
+指し示されるバッファーのバイト単位のサイズ、 **InputBuffer**パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値は正確に再解析する必要があります\_GUID\_データ\_バッファー\_ヘッダー\_サイズ。 再解析の\_データ\_バッファーの構造体は、この値は正確に再解析する必要があります\_データ\_バッファー\_ヘッダー\_サイズ。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
 この操作では使用されません。設定**NULL**します。
