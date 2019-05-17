@@ -3,12 +3,12 @@ Description: よく寄せられる型-C# の USB コネクタでの Windows シ�
 title: よく寄せられる質問 - Windows システム上の C-USB 型コネクタ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29dd5566fa7e28b5fc6669a5202e51d444aed2fe
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: 9fad2532569b47489fc502097aa4991f94a29368
+ms.sourcegitcommit: ead145093395141164ec18a4764b19472ea9ff4b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711965"
+ms.locfileid: "65760597"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>よくあるご質問:Windows システムにおける USB Type-C コネクタ
 
@@ -33,7 +33,7 @@ ms.locfileid: "65711965"
 * [サポートと MTP 経由で USB 型-C# Windows での制限事項](#support-and-limitations-for-mtp-over-usb-type-c-in-windows)
 * [どのダウン ストリーム デバイスおよびハブ接続し、USB コネクタ マネージャー (UCM) との通信](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm)
 * [USB 型 C MUTT HLK テスト要件](#usb-type-c-mutt-requirements-for-hlk-tests)
-* [Microsoft で同じ Windows 10 SKU 間のデータ転送の P2P のサポートします。](#microsoft-support-for-p2p-data-transfer-between-the-same-windows-10-sku)
+* [Microsoft で同じ Windows 10 SKU 間のデータ転送の P2P のサポートします。](#microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku)
 * [PMIC またはバッテリの充電状態を取得または設定のドライバーと UCM クラスの拡張機能 (UcmCx) 通信](#ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status)
 * [HLK サポートの USB 型-C#](#hlk-support-for-usb-type-c)
 * [UCSI](#ucsi)
