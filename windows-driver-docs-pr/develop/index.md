@@ -11,12 +11,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 26b7d994d9a027bf20cdc6f322899ae03d1cf381
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b89f67ab77281bd37d424dbb2bca5cfb7f8b2c03
+ms.sourcegitcommit: 276a3aef2d4463bbe653d30ed55d7bab20000aa6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344139"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65814906"
 ---
 # <a name="developing-testing-and-deploying-drivers"></a>ドライバーの開発、テスト、および展開
 
@@ -40,5 +40,16 @@ Visual Studio 環境では、ビルド プロセスが自動的にドライバ�
 
 このセクションのトピックでは、ドライバーの開発、展開、テストに含まれるさまざまなタスクを Visual Studio を使って実行する方法を示します。
 
+## <a name="additional-videos"></a>追加のビデオ
+
+上記のビデオに加えて、Windows ドライバー ドキュメントの次のページにビデオがあります。
+
+* [ドライバーのデバッグ](https://docs.microsoft.com/windows-hardware/drivers/develop/debugging-a-driver)
+* [HID の新機能](https://docs.microsoft.com/windows-hardware/drivers/hid/what-s-new-in-hid)
+* [Microsoft Message Analyzer を使用して USB トレースをキャプチャして表示する](https://docs.microsoft.com/windows-hardware/drivers/usbcon/capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-)
+* [WDF での Windows Performance Toolkit (WPT) の使用](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-windows-performance-toolkit--wpt--with-wdf)
+* [ビデオ:デバッガーなしでドライバー IFR ログにアクセスする](https://docs.microsoft.com/windows-hardware/drivers/wdf/video--accessing-driver-ifr-logs-without-a-debugger)
+* [ビデオ:WDF ソース コードでのドライバーのデバッグ](https://docs.microsoft.com/windows-hardware/drivers/wdf/video--debugging-your-driver-with-wdf-source-code)
+* [ビデオ:UMDF ドライバーのデバッグ](https://docs.microsoft.com/windows-hardware/drivers/wdf/videos--debugging-umdf-drivers)
 
 
