@@ -4,12 +4,12 @@ description: SerCx2 で管理されたシリアル ポート周辺機器の KMDF
 ms.assetid: EDE62C5E-3563-42EE-884E-DF473CD724A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f57862d4c09e57d3c92c30ce9640b2a7b1dcfddc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 970cc05ef233cbdee6ba25c1f13316ef3fe18345
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324231"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836317"
 ---
 # <a name="connecting-a-kmdf-peripheral-driver-to-a-serial-port"></a>KMDF 周辺機器ドライバーをシリアル ポートに接続する
 
@@ -111,7 +111,7 @@ if (!NT_SUCCESS(status))
 }
 ```
 
-上記のコード例で、 **DECLARE\_UNICODE\_文字列\_サイズ**マクロは、初期化の宣言を作成します[ **UNICODE\_ 。文字列**](https://msdn.microsoft.com/library/windows/hardware/ff564879)という名前の変数`szDeviceName`リソース ハブによって使用される形式でデバイスのパス名を格納するのに十分な大きさのバッファーを持ちます。 このマクロは、Ntdef.h ヘッダー ファイルで定義されます。 **リソース\_ハブ\_パス\_サイズ**定数は、デバイスのパス名でのバイト数を指定します。 **リソース\_ハブ\_作成\_パス\_FROM\_ID**マクロの接続 id からデバイスのパス名を生成します。 **リソース\_ハブ\_パス\_サイズ**と**リソース\_ハブ\_作成\_パス\_FROM\_ID**はReshub.h ヘッダー ファイルで定義します。
+上記のコード例で、 **DECLARE\_UNICODE\_文字列\_サイズ**マクロは、初期化の宣言を作成します**UNICODE\_文字列**。という名前の変数`szDeviceName`リソース ハブによって使用される形式でデバイスのパス名を格納するのに十分な大きさのバッファーを持ちます。 このマクロは、Ntdef.h ヘッダー ファイルで定義されます。 **リソース\_ハブ\_パス\_サイズ**定数は、デバイスのパス名でのバイト数を指定します。 **リソース\_ハブ\_作成\_パス\_FROM\_ID**マクロの接続 id からデバイスのパス名を生成します。 **リソース\_ハブ\_パス\_サイズ**と**リソース\_ハブ\_作成\_パス\_FROM\_ID**はReshub.h ヘッダー ファイルで定義します。
 
 次のコード例はデバイスのパス名を使用してファイル ハンドルを開く (という名前`SerialIoTarget`) 順番に接続されている周辺機器にします。
 

@@ -4,20 +4,18 @@ description: SerCx2 には、読み取り (IRP_MJ_READ) と、コント ロー�
 ms.assetid: C1B3F059-A445-4224-8316-DBF194CE6A80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c6d54870ac9a93ece45d465619404cc88add825
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 798636c4e9b921baba1c52bceafdc2852b1b930b
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387990"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836328"
 ---
 # <a name="sercx2-io-transactions"></a>SerCx2 の I/O トランザクション
-
 
 SerCx2 読み取りの処理を簡略化 ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)) と書き込み ([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)) には、コント ローラーのシリアル ドライバーの要求。 読み取りまたは書き込み要求に応答して、SerCx2 シリアル コント ローラーのドライバーを 1 つまたは複数の I/O トランザクションを発行します。 ドライバーの観点からは、各トランザクションは、単純、完全な I/O 操作です。
 
 ## <a name="in-this-section"></a>このセクションの内容
-
 
 <table>
 <colgroup>
@@ -61,13 +59,3 @@ SerCx2 読み取りの処理を簡略化 ([**IRP\_MJ\_読み取り**](https://ms
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

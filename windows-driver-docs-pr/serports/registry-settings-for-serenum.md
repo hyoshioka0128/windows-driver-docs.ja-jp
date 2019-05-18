@@ -9,18 +9,14 @@ keywords:
 - シリアル デバイス WDK、Serenum ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 128249a1ec0591190b4c2763a05edda3f8663484
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57b5b0f1f4182122b2196cf086662023816799d8
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379007"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836342"
 ---
 # <a name="registry-settings-for-serenum"></a>Serenum 用のレジストリ設定
-
-
-
-
 
 このトピックでは、Microsoft Windows 2000 以降の rs-232 ポート Serenum を使用するエントリの値を示します。
 
@@ -33,7 +29,7 @@ ms.locfileid: "63379007"
 ポートの名前を指定します。 Serenum では、この値を読み取ります。 サポート、**識別子**エントリの値は、一部のレガシ PCMCIA デバイスとの互換性にのみ提供されます。 使用、**識別子**エントリの値は廃止され、Windows 2000 以降のドライバーでは実装されない必要があります。 Serenum IOCTL への応答ポート名を返します\_SERENUM\_取得\_ポート\_名前要求。
 
 <a href="" id="skipenumerations--reg-dword-"></a>**SkipEnumerations** (REG\_DWORD)  
-Windows XP 以降では、このエントリの値は Serenum がへの応答のポートを列挙するときを制御する[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)要求**BusRelations**します。 このエントリの値は、Windows 2000 ではサポートされていません。
+Windows XP 以降では、このエントリの値は Serenum がへの応答のポートを列挙するときを制御する[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)要求**BusRelations**します。 
 
 たびに、システムは、シリアル ポートのデバイス スタックを構築、Serenum 設定、*列挙モード*ポートを列挙するために使用します。 ポートのデバイス スタックの Serenum の初期化中に[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンでは、ポートの読み取り**SkipEnumerations**エントリの値として列挙モードの設定次の表で説明します。
 
@@ -70,14 +66,4 @@ Windows XP 以降では、このエントリの値は Serenum がへの応答の
 </tbody>
 </table>
 
- 
-
 たとえば、シリアル ポートの**SkipEnumerations**システムは、ポートのデバイス スタックを作成するときに、エントリの値が 3 に設定されて、Serenum は最初の 3 つをスキップ**BusRelations**ポートの受信要求。 ポートが有効になっている限り Serenum は通常の方法で、その後、ポートを列挙します。
-
- 
-
- 
-
-
-
-

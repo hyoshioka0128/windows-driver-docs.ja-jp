@@ -4,15 +4,14 @@ description: シリアルのコント ローラー (または UART) 受信 FIFO 
 ms.assetid: 36522E60-3616-4431-8C8C-3EAC4A6E4422
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffa65fdddff4119e56a0c909444463c41f27b2fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2b04560779bc8d8007c32d7a39f3413ccaf608e
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331109"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836343"
 ---
 # <a name="reading-data-from-a-sercx2-managed-serial-port"></a>SerCx2 で管理されるシリアル ポートからデータを読み取る
-
 
 シリアルのコント ローラー (または UART) 受信 FIFO が通常含まれます。 この FIFO では、シリアル ポートに接続されている周辺機器のデバイスから受信したデータのバッファリング ハードウェア制御を提供します。 受信 FIFO からデータを読み取る、このデバイスの周辺機器のドライバーが読み取り送信 ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)) のシリアル ポートに要求します。
 
@@ -22,12 +21,11 @@ ms.locfileid: "63331109"
 
 **このページで**
 
--   [非同期の読み取り要求を使用します。](#using-asynchronous-read-requests)
--   [間隔タイムアウトの詳細](#interval-time-out-details)
--   [フロー制御の詳細](#flow-control-details)
+- [非同期の読み取り要求を使用します。](#using-asynchronous-read-requests)
+- [間隔タイムアウトの詳細](#interval-time-out-details)
+- [フロー制御の詳細](#flow-control-details)
 
 ## <a name="using-asynchronous-read-requests"></a>非同期の読み取り要求を使用します。
-
 
 正しくない操作とデータ損失の可能性を回避するには、シリアル コント ローラーからデータを読み取り、FIFO 迅速に受信の周辺のドライバーが担当します。 通常、データを受信すると、前に周辺機器のドライバー送信非同期読み取りの要求に応じるためのデータの将来の到着のシリアル ポートに周辺機器のデバイスからします。 これは読み取るデータが受信 FIFO から読み取り可能になるまでの SerCx2 I/O キューで保留中の要求のままです。
 
@@ -57,13 +55,5 @@ ms.locfileid: "63331109"
 
 周辺機器のドライバーを使用している場合、 **IOCTL\_シリアル\_設定\_HANDFLOW**ハードウェア フロー制御を有効にするには、ドライバーは、次のフラグを設定する必要があります、**シリアル\_HANDFLOW**この要求で構造体。
 
--   シリアル\_CTS\_ハンドシェイク フラグ、 **ControlHandShake**構造体のメンバー。 このフラグにより、シリアル ポートのフロー制御を使用する受信操作。
--   シリアル\_RTS\_コントロールおよびシリアル\_RTS\_ハンドシェイクでフラグを設定、 **FlowReplace**メンバー。 これらのフラグは、シリアル ポートへのフロー制御を使用して有効にする操作を送信します。
-
- 
-
- 
-
-
-
-
+- シリアル\_CTS\_ハンドシェイク フラグ、 **ControlHandShake**構造体のメンバー。 このフラグにより、シリアル ポートのフロー制御を使用する受信操作。
+- シリアル\_RTS\_コントロールおよびシリアル\_RTS\_ハンドシェイクでフラグを設定、 **FlowReplace**メンバー。 これらのフラグは、シリアル ポートへのフロー制御を使用して有効にする操作を送信します。

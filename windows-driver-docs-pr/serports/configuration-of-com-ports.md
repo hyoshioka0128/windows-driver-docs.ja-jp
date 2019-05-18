@@ -7,18 +7,14 @@ keywords:
 - COM ポート、シリアル デバイス WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d215b97c9397fb8f2d12fdf73ffc5b368acab9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77f94f917f6b9e3606675a560edae0318ceb1ad1
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345010"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836338"
 ---
 # <a name="configuration-of-com-ports"></a>COM ポートの構成
-
-
-
-
 
 Windows 2000 以降、COM ポートは、次の要件に準拠するシリアル ポートの種類を示します。
 
@@ -31,11 +27,3 @@ Windows 2000 以降、COM ポートは、次の要件に準拠するシリアル
 既定でポートのクラスのインストーラーの結合操作[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)シリアル関数ドライバーは、COM ポートとしてデバイスを構成するとします。
 
 ポート クラスのインストーラーとシリアルの COM ポートの COM ポート デバイス インターフェイスを作成する方法については、次を参照してください。[外部名前付けの COM ポート](external-naming-of-com-ports.md)します。
-
- 
-
- 
-
-
-
-

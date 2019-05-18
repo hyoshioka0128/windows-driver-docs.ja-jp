@@ -10,18 +10,14 @@ keywords:
 - タイムアウト WDK シリアル デバイスを書き込み
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7576f6bda821226044325bd87028643a413f907c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bcd54563491a8ea7d9cbb4593ee168f38adb54f
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324232"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836282"
 ---
 # <a name="setting-read-and-write-timeouts-for-a-serial-device"></a>シリアル デバイスの読み取り/書き込みのタイムアウトを設定する
-
-
-
-
 
 クライアントが使用できる、 [ **IOCTL\_シリアル\_設定\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/ff546772)読み取りと書き込みのため、システム提供の際にドライバーを使用するタイムアウト値を設定する要求要求します。 要求されたバイト数が転送されるか、タイムアウト イベントが発生するまでのバイトを転送する際に続行されます。
 
@@ -31,14 +27,6 @@ ms.locfileid: "63324232"
 
 読み取りと書き込みのタイムアウトの詳細については、次を参照してください。
 
--   [**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614) Ntddser.h ヘッダー ファイルで、Windows Driver Kit (WDK) で構造体。
+- [**シリアル\_タイムアウト**](https://msdn.microsoft.com/library/windows/hardware/hh439614) Ntddser.h ヘッダー ファイルで、Windows Driver Kit (WDK) で構造体。
 
--   [ **SetCommTimeouts** ](https://msdn.microsoft.com/library/windows/desktop/aa363437)関数と[ **COMMTIMEOUTS** ](https://msdn.microsoft.com/library/windows/desktop/aa363190)構造の Windows ベースのサービスでサポートされている、Windows SDK。
-
- 
-
- 
-
-
-
-
+- [ **SetCommTimeouts** ](https://msdn.microsoft.com/library/windows/desktop/aa363437)関数と[ **COMMTIMEOUTS** ](https://msdn.microsoft.com/library/windows/desktop/aa363190)構造の Windows ベースのサービスでサポートされている、Windows SDK。

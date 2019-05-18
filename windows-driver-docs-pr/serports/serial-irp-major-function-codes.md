@@ -7,12 +7,12 @@ keywords:
 - シリアル IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b9ba0c34bb19e59fe41022be7e525f09b6a28bad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cd3cf6246510d4f061e930c1725910c0ea08b64
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327492"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836295"
 ---
 # <a name="serial-irp-major-function-codes"></a>シリアル IRP の主要な関数コード
 ここでは、次のシリアル IRP 主な機能コード。
@@ -90,8 +90,8 @@ IRP_MJ_DEVICE_CONTROL 要求には、シリアル ポートが動作します。
 * 取得およびレジスタを設定します。
 * 取得および設定の動作モード
 
-シリアルでサポートされるデバイス制御要求の説明は、次を参照してください。[シリアル デバイスに対する制御要求](https://msdn.microsoft.com/library/windows/hardware/ff547466)します。
-
+シリアルでサポートされるデバイス制御要求の説明は、次を参照してください。、 [ntddser.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddser/)ヘッダー。
+ 
 ### <a name="input-parameters"></a>入力パラメーター
 特定の要求
 
@@ -151,7 +151,7 @@ STATUS_PENDING
 * 設定と基本設定のリセット
 * コントロールの待機またはスリープ解除の操作
 
-内部デバイスに対する制御要求の説明は、次を参照してください。[シリアル デバイス制御要求の内部](https://msdn.microsoft.com/library/windows/hardware/ff547480)します。
+内部デバイスに対する制御要求の説明は、次を参照してください。、 [ntddser.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/)ヘッダー。
 
 ### <a name="input-parameters"></a>入力パラメーター
 特定の要求

@@ -4,21 +4,20 @@ description: シリアル コント ローラーで、クライアントのポ�
 ms.assetid: D536A0EC-2B8B-491B-8A14-656F4B5A3843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6e2ce72e1b26843a1714b6483aaf68b7417793d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7159af211bb50696c52cb4efb71f9a3b3e636c2c
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327418"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836306"
 ---
 # <a name="serial-io-request-interface"></a>シリアル I/O 要求インターフェイス
 
-
-シリアル コント ローラーで、クライアントのポートに接続されている周辺機器を制御するには、アプリケーションまたは周辺機器のデバイス ドライバーは、ポートに I/O 要求を送信します。 クライアントを使って[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)と[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)データを送信し、シリアル ポートから受信したデータを要求します。 さらに、Windows には、一連の定義されています。[シリアル I/O 制御](https://msdn.microsoft.com/library/windows/hardware/ff547466)シリアル ポートを構成するクライアントが使用できる要求 (Ioctl)。
+シリアル コント ローラーで、クライアントのポートに接続されている周辺機器を制御するには、アプリケーションまたは周辺機器のデバイス ドライバーは、ポートに I/O 要求を送信します。 クライアントを使って[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)と[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)データを送信し、シリアル ポートから受信したデータを要求します。 さらに、Windows では、シリアル ポートを構成するクライアントが使用できるシリアルの I/O 制御要求 (Ioctl) のセットを定義します。
 
 シリアル**IRP\_MJ\_* XXX*** シリアル I/O 要求インターフェイスは、さまざまなデバイスのシリアル コント ローラーでサポートされている要求とシリアル Ioctl 形成します。 SerCx2 または SerCx とシリアル コント ローラーの拡張機能に基づいたドライバーの組み合わせと、以下のようドライバーによって、このインターフェイスはサポートされています。
 
-SerCx2、SerCx、および際に、同じシリアル Ioctl の多くをサポートします。 ただし、SerCx2、SerCx、および以下のように指定された Ioctl のさまざまなサブセットをサポート[シリアル デバイスに対する制御要求](https://msdn.microsoft.com/library/windows/hardware/ff547466)します。 次の表は、Ioctl SerCx2、SerCx、およびスタックでサポートされているのサブセットをまとめたものです。 A**はい**テーブル内のエントリは、シリアル フレームワークの拡張機能またはドライバーが、対応する、IOCTL をサポートしていることを示します、**いいえ**エントリはしないことを示します。
+SerCx2、SerCx、および際に、同じシリアル Ioctl の多くをサポートします。 ただし、SerCx2、SerCx、および以下のように指定された Ioctl のさまざまなサブセットをサポート*シリアル デバイスに対する制御要求*します。 次の表は、Ioctl SerCx2、SerCx、およびスタックでサポートされているのサブセットをまとめたものです。 A**はい**テーブル内のエントリは、シリアル フレームワークの拡張機能またはドライバーが、対応する、IOCTL をサポートしていることを示します、**いいえ**エントリはしないことを示します。
 
 <table>
 <colgroup>
@@ -267,26 +266,17 @@ SerCx2、SerCx、および際に、同じシリアル Ioctl の多くをサポ�
 </tbody>
 </table>
 
- 
 
 **メモ**
 
-1.  SerCx2 は可能性があります。 またはコント ローラーのシリアル ドライバーの実装とシリアル コント ローラーのハードウェアの機能によってこの IOCTL をサポートしていません。
+1. SerCx2 は可能性があります。 またはコント ローラーのシリアル ドライバーの実装とシリアル コント ローラーのハードウェアの機能によってこの IOCTL をサポートしていません。
 
-2.  SerCx2 は特殊文字をサポートしていません。 SerCx2 が完了すると常に、 **IOCTL\_シリアル\_設定\_CHARS**状態が、要求\_成功の状態のコードはない特殊文字を設定またはその他の操作を実行この要求に応答します。 **IOCTL\_シリアル\_取得\_CHARS** SerCx2 のすべての文字値の設定を要求、 [**シリアル\_CHARS** ](https://msdn.microsoft.com/library/windows/hardware/jj673020)を null、構造体であり、状態が、要求が完了すると\_成功状態コード。
+2. SerCx2 は特殊文字をサポートしていません。 SerCx2 が完了すると常に、 **IOCTL\_シリアル\_設定\_CHARS**状態が、要求\_成功の状態のコードはない特殊文字を設定またはその他の操作を実行この要求に応答します。 **IOCTL\_シリアル\_取得\_CHARS** SerCx2 のすべての文字値の設定を要求、 [**シリアル\_CHARS** ](https://msdn.microsoft.com/library/windows/hardware/jj673020)を null、構造体であり、状態が、要求が完了すると\_成功状態コード。
 
-3.  SerCx2 と SerCx に対して定義されているフラグのサブセットのみをサポート、 **FlowReplace**と**ControlHandShake**のメンバー、**シリアル\_HANDFLOW**構造体。 以下のようには、すべてのこれらのフラグがサポートしています。 詳細については、次を参照してください。 [**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)します。
+3. SerCx2 と SerCx に対して定義されているフラグのサブセットのみをサポート、 **FlowReplace**と**ControlHandShake**のメンバー、**シリアル\_HANDFLOW**構造体。 以下のようには、すべてのこれらのフラグがサポートしています。 詳細については、次を参照してください。 [**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)します。
 
-4.  **IOCTL\_シリアル\_取得\_モデム\_コントロール**と**IOCTL\_シリアル\_設定\_モデム\_コントロール**要求は、主に、ハードウェアのテストに使用します。 モデムの管理操作を登録する標準的なレイアウトが定義されていません。 モデム コントロール シリアル コント ローラーの特定のハードウェア機能に依存させること自体の Ioctl リスクを使用して、周辺機器のドライバーです。
+4. **IOCTL\_シリアル\_取得\_モデム\_コントロール**と**IOCTL\_シリアル\_設定\_モデム\_コントロール**要求は、主に、ハードウェアのテストに使用します。 モデムの管理操作を登録する標準的なレイアウトが定義されていません。 モデム コントロール シリアル コント ローラーの特定のハードウェア機能に依存させること自体の Ioctl リスクを使用して、周辺機器のドライバーです。
 
-5.  スタックのドライバーが完了すると常に、 **IOCTL\_シリアル\_リセット\_デバイス**状態要求\_成功した場合、演算を実行しないこの要求に応答します。 SerCx2 および SerCx はサポートされません**IOCTL\_シリアル\_リセット\_デバイス**要求し、これらの要求の状態を常に完了\_いない\_実装されていません。
+5. スタックのドライバーが完了すると常に、 **IOCTL\_シリアル\_リセット\_デバイス**状態要求\_成功した場合、演算を実行しないこの要求に応答します。 SerCx2 および SerCx はサポートされません**IOCTL\_シリアル\_リセット\_デバイス**要求し、これらの要求の状態を常に完了\_いない\_実装されていません。
 
-詳細については**IOCTL\_シリアル\_* XXX***、要求を参照してください[シリアル デバイスに対する制御要求](https://msdn.microsoft.com/library/windows/hardware/ff547466)します。 読み取りし、書き込みシリアル コント ローラーの要求についての詳細についてを参照してください。[シリアルの主要な I/O 要求](https://msdn.microsoft.com/library/windows/hardware/ff547484)します。
-
- 
-
- 
-
-
-
-
+詳細については**IOCTL\_シリアル\_* XXX*** を要求し、読み取りとシリアル コント ローラーの書き込み要求を参照してください、 [ntddser.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddser/)ヘッダー。

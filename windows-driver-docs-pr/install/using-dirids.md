@@ -9,12 +9,12 @@ keywords:
 - WDK の INF ファイルのディレクトリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e977273eaca5dc17251a24b73451bce303047e5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef026ea881e2e5a2f130c8b99832cd9a1df69bdb
+ms.sourcegitcommit: cab03f9f6b1143a29be74a894e917b26762a42ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339421"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852351"
 ---
 # <a name="using-dirids"></a>Dirids の使用
 
@@ -75,7 +75,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">宛先ディレクトリ</th>
 </tr>
 </thead>
@@ -187,7 +187,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">シェルの特別なフォルダー</th>
 </tr>
 </thead>
@@ -222,11 +222,11 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16425</strong></p></td>
-<td align="left"><p><em>%SystemRoot%\system32</em> (Windows (WOW64) 上の Windows で実行されている Microsoft Win32 ユーザー モード アプリケーションに対して無効)</p></td>
+<td align="left"><p><em>%SystemRoot%\SysWOW64</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16426</strong></p></td>
-<td align="left"><p><em>プログラム ファイル</em>(WOW64 の下で実行されている Win32 ユーザー モード アプリケーションに対して無効)</p></td>
+<td align="left"><p><em>%ProgramFiles(x86)%</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16427</strong></p></td>
@@ -234,7 +234,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16428</strong></p></td>
-<td align="left"><p><em>プログラムの files \common files</em> (WOW64 の下で実行されている Win32 ユーザー モード アプリケーションに対して無効)</p></td>
+<td align="left"><p><em>%ProgramFiles(x86)%\Common</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16429</strong></p></td>

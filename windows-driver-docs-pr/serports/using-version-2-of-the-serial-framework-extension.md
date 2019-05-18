@@ -4,26 +4,22 @@ description: シリアル コント ローラーを管理するシリアル フ�
 ms.assetid: 192C25B2-936B-40D3-A0EA-5D02A234506E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edd2fcb19a17310534bbdd4759451fe45dfc479c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abcb0d14bc56a4e617fb91eab30ce92f0c0d3502
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322117"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836237"
 ---
 # <a name="using-version-2-of-the-serial-framework-extension-sercx2"></a>シリアル フレームワーク拡張機能 (SerCx2) バージョン 2 の使用
 
-
 シリアル コント ローラーを管理するシリアル フレームワーク拡張機能 (SerCx2) のバージョン 2 と連動するシリアル コント ローラー ドライバーを作成することができます。 SerCx2 によって共同で管理されているシリアル コント ローラー上のポートに接続されている周辺機器の周辺機器のドライバーとシリアル コント ローラーのドライバーを記述することもできます。 この周辺のドライバーを使用して、[シリアルの I/O 要求インターフェイス](serial-i-o-request-interface.md)とデバイスの間のデータを転送します。 シリアル コント ローラーの拡張機能に基づく、ドライバーは、シリアルのコント ローラーのすべてのハードウェア固有のタスクの処理が、シリアル コント ローラーのすべてに共通する多くのシステム タスクを実行する SerCx2 を使用します。 SerCx2 は、Windows 8.1 以降、システム提供のコンポーネントです。
 
-**注**  SerCx2 が Windows 8 で導入されたシリアル フレームワーク拡張機能 (SerCx) のバージョン 1 を置き換えます。 Windows 8.1 と Windows の以降のバージョンでのみ実行することを意図した新しいシリアル コント ローラー ドライバーを使用するように記述する必要があります、 [SerCx2 DDI](https://msdn.microsoft.com/library/windows/hardware/dn265349)の代わりに、 [SerCx DDI](https://msdn.microsoft.com/library/windows/hardware/dn265348)します。 ただし、Windows 8.1 と Windows の以降のバージョンは、SerCx DDI を使用する既存のコント ローラーのシリアル ドライバーをサポートします。
-
- 
+**注**  SerCx2 が Windows 8 で導入されたシリアル フレームワーク拡張機能 (SerCx) のバージョン 1 を置き換えます。 Windows 8.1 と Windows の以降のバージョンでのみ実行することを意図した新しいシリアル コント ローラー ドライバーは、SerCx Ddi ではなく SerCx2 Ddi を使用するように記述する必要があります。 ただし、Windows 8.1 と Windows の以降のバージョンは、SerCx DDI を使用する既存のコント ローラーのシリアル ドライバーをサポートします。
 
 シリアル コント ローラーは、互換性のあるデバイスまたは 16550 ユニバーサル非同期受信側/送信元 (UART) です。 詳細については、次を参照してください。[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
-
 
 <table>
 <colgroup>
@@ -51,13 +47,3 @@ ms.locfileid: "63322117"
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

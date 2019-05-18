@@ -4,20 +4,18 @@ description: シリアル、コント ローラーを管理するには、ハー
 ms.assetid: 67045E19-4EE1-4C31-A842-858E9A90233E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f33404a8980827e4d79736ca4ea7e35045c358ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d779d10981a7e62ad6ccb47ddbabc9643567949a
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387962"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836333"
 ---
 # <a name="serial-controller-driver-design-for-sercx2"></a>SerCx2 用のシリアル コントローラー ドライバーの設計
-
 
 シリアル、コント ローラーを管理するには、ハードウェアに固有のタスクを実行し、SerCx2 と通信するシリアル コント ローラー ドライバーを作成します。 Windows 8.1 以降、SerCx2 は、シリアル コント ローラーに共通する処理タスクの多くを処理するシステム提供のコンポーネントです。 これらのタスクでは、タイムアウトを管理して、読み取りの処理を含めるし、シリアル コント ローラーのクライアントから送信された要求を記述します。
 
 ## <a name="in-this-section"></a>このセクションの内容
-
 
 <table>
 <colgroup>
@@ -41,13 +39,3 @@ ms.locfileid: "63387962"
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

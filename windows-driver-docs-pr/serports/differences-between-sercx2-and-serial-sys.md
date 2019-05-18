@@ -4,12 +4,12 @@ description: 受信トレイ Sercx2.sys とスタック ドライバー コン�
 ms.assetid: 62FA69BB-FE04-4B5E-96CC-13764ED83AE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f514210c357c408f30be541422e3f9fb8a8a3034
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b93bd0130c72035a10f339bf0411d18db436be60
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359696"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836332"
 ---
 # <a name="differences-between-sercx2sys-and-serialsys"></a>SerCx2.sys と Serial.sys の違い
 
@@ -42,7 +42,6 @@ Sercx2.sys は、DMA 向けのサポートに柔軟性があります。 シス�
 
 ## <a name="other-differences"></a>その他の違い
 
-
 スタックによって制御される COM ポートには、デバイス名が割り当てられます。 ユーザー モード アプリケーションは、名前でこのポートを開くし、ポートに直接 I/O 要求を送信します。
 
 これに対し、SerCx2.sys とシリアル コント ローラーのドライバーによって制御されるシリアル ポートに名前がありません。 ポートに完全に接続されている周辺機器のデバイスを所有しているドライバーが特殊な識別子を受け取ります (と呼ばれる、 [*接続 ID*](connection-ids-for-serially-connected-peripheral-devices.md)) ドライバーが、ポートを開くにを使用します。 通常、この周辺のドライバーだけでは、ポートに直接 I/O 要求を送信できます。 ポートを構成するか、ポートを使用してデータを転送する必要があるアプリケーションでは、周辺機器のドライバーを I/O 要求を送信します。 ポートへの送信、対応する I/O 要求をこのドライバーの仲介者としてし、機能します。
@@ -54,11 +53,3 @@ Sercx2.sys とその関連付けられたシリアル コント ローラー ド
 もう 1 つの違いは、以下のようには、ソフトウェアのフロー制御が実装されていますが、Sercx2.sys しないことです。 スタックと Sercx2.sys の両方をサポートしてハードウェア フロー制御を使用して、*要求の送信*(RTS) と*オフにすると、送信*(CTS) 信号。 フロー制御の詳細については、次を参照してください。 [**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)します。
 
 最終的な違いが Serenum.sys で連携して機能する際に Sercx2.sys ことはできません。 Serenum.sys は、シリアル ポートに接続されているデバイスを列挙するフィルター ドライバーです。 詳細については、次を参照してください。 [Serenum デバイスを列挙する](enumerating-serenum-devices.md)します。
-
- 
-
- 
-
-
-
-

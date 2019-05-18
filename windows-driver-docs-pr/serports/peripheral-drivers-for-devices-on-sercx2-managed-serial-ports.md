@@ -4,15 +4,14 @@ description: 通常、SerCx2 によって管理されているシリアル ポ�
 ms.assetid: 06412F66-3192-4D25-BDBA-FAB2211519DA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd98d57cfa6baff0050939562c9c5fd157aec0c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d346f2d1baba66ddd596dd0dba796ffb8b05ae1
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331129"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836347"
 ---
 # <a name="peripheral-drivers-for-devices-on-sercx2-managed-serial-ports"></a>SerCx2 で管理されるシリアル ポート上のデバイスの周辺機器ドライバー
-
 
 通常、SerCx2 によって管理されているシリアル ポートは周辺機器に接続されている永続的にします。 このデバイスは、シリアル ポートへの I/O 要求を送信する周辺ドライバーによって制御されます。 これらの要求は、デバイスとデータの転送し、シリアル ポートの状態を構成します。 周辺機器のドライバーによって送信された I/O 要求は、SerCx2 と関連付けられているシリアル コント ローラー ドライバーによって共同で処理されます。
 
@@ -22,12 +21,11 @@ ms.locfileid: "63331129"
 
 **このページで**
 
--   [シリアル ドライバーのアーキテクチャ](#serial-driver-architecture)
--   [I/O 要求のパス](#i-o-request-path)
--   [パスを中断します。](#interrupt-path)
+- [シリアル ドライバーのアーキテクチャ](#serial-driver-architecture)
+- [I/O 要求のパス](#i-o-request-path)
+- [パスを中断します。](#interrupt-path)
 
 ## <a name="serial-driver-architecture"></a>シリアル ドライバーのアーキテクチャ
-
 
 (図の下部) の周辺機器とこのデバイスの周辺機器のドライバー (図の上部) の間の通信パスを形成するソフトウェアとハードウェアのレイヤーを次のブロック図に示します。 この例では、シリアル コント ローラーのポートと、割り込みピン GPIO コント ローラー上に周辺機器が接続されています。
 
@@ -41,34 +39,24 @@ ms.locfileid: "63331129"
 
 ## <a name="i-o-request-path"></a>要求パスでは、O
 
-
 周辺機器のドライバーを周辺機器へデータを送信するには、書き込みを送信します ([**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff546904)) シリアル コント ローラーに要求します。 周辺機器のドライバーを周辺機器のデバイスからデータを受信するには、読み取りを送信します ([**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff546883)) シリアル コント ローラーに要求します。
 
 さらに、Windows では、一連の周辺機器のドライバーを使用してシリアル コント ローラーに固有のさまざまな I/O 制御操作を実行するデバイス I/O 制御要求 (Ioctl) を定義します。 周辺機器のドライバーが要求できる I/O 制御操作の例を次に示します。
 
--   シリアル ポートが送信され、データを受信、ボー レートを設定します。
--   読み取りのタイムアウト間隔を設定および書き込み要求。
--   シリアル ポート周辺機器のドライバーが通知を受信するハードウェア イベントのセットを指定します。
+- シリアル ポートが送信され、データを受信、ボー レートを設定します。
+- 読み取りのタイムアウト間隔を設定および書き込み要求。
+- シリアル ポート周辺機器のドライバーが通知を受信するハードウェア イベントのセットを指定します。
 
 SerCx2 シリアル ドライバーの受信トレイ、際に、およびシリアル フレームワークの拡張機能 (SerCx) のバージョン 1 と同じシリアル Ioctl の多くをサポートします。 詳しくは、次のトピックをご覧ください。
 
--   表を参照して[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)SerCx2 が特定のシリアル IOCTL をサポートするかどうかを確認します。
--   参照してください[シリアル デバイスに対する制御要求](https://msdn.microsoft.com/library/windows/hardware/ff547466)Windows シリアル I/O 要求インターフェイスによって定義されているすべてのシリアル Ioctl の詳細についてはします。
--   参照してください[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)の際に、SerCx、および SerCx2 を簡単に紹介します。
+- 表を参照して[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)SerCx2 が特定のシリアル IOCTL をサポートするかどうかを確認します。
+- 参照してください[シリアル デバイスに対する制御要求](https://msdn.microsoft.com/library/windows/hardware/ff547466)Windows シリアル I/O 要求インターフェイスによって定義されているすべてのシリアル Ioctl の詳細についてはします。
+- 参照してください[シリアル コント ローラーのドライバーの概要](serial-drivers-overview.md)の際に、SerCx、および SerCx2 を簡単に紹介します。
 
 ## <a name="interrupt-path"></a>パスを中断します。
 
-
 ように、[シリアル ドライバーのアーキテクチャ](#serial-driver-architecture)図では、周辺機器を使用して GPIO ピン留めデバイス割り込みを周辺のドライバーに送信します。 周辺機器のデバイスからの割り込みシグナルに対して、GPIO コント ローラーがハードウェア割り込みを通知 (と呼ばれる、*プライマリ*割り込み) プロセッサにします。 オペレーティング システムに指示する GpioClx の ISR. 割り込み 次に、GpioClx はどの GPIO ピン留めする、割り込みの原因を識別し、仮想の割り込みのグローバル システムの割り込み (GSI) 識別子を検索 (と呼ばれる、*セカンダリ*割り込み) 周辺機器から。 GpioClx 装置、HAL を HAL GSI 呼び出し、周辺機器のドライバーの ISR. 通常周辺のドライバーは、割り込みを処理するために、SerCx2 とシリアル コント ローラーのドライバーを使用して周辺機器に 1 つまたは複数の I/O 要求を送信します。 プライマリとセカンダリの割り込みの詳細については、次を参照してください。 [GPIO 割り込み](https://msdn.microsoft.com/library/windows/hardware/hh406467)します。
 
-GPIO 割り込みは、周辺機器のデバイスでハードウェア イベントの通知を受け取る周辺のドライバーの 1 つだけの方法です。 別の方法は、周辺機器のドライバーに通知を要求 SerCx2 とシリアル コント ローラー ドライバーからシリアル ポートで特定の種類のハードウェア イベントが発生した場合です。 たとえば、周辺機器のドライバーは、シリアル コント ローラーは、周辺機器からシリアル データを受け取るときに通知を要求できます。 これらの通知を要求するには、周辺機器のドライバーを送信、 [ **IOCTL\_シリアル\_設定\_待機\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff546780)周辺機器への要求イベントを監視して、送信のセットを指定する、 [ **IOCTL\_シリアル\_待機\_ON\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff546805)要求のリッスンを開始これらのイベントです。 これらの要求は、コント ローラーのシリアル ドライバーのサポートで SerCx2、によって処理されます。 周辺機器のドライバーを監視できるイベントの種類の詳細については、次を参照してください。 [**シリアル\_EV\_* XXX***](https://msdn.microsoft.com/library/windows/hardware/hh439605)します。
+GPIO 割り込みは、周辺機器のデバイスでハードウェア イベントの通知を受け取る周辺のドライバーの 1 つだけの方法です。 別の方法は、周辺機器のドライバーに通知を要求 SerCx2 とシリアル コント ローラー ドライバーからシリアル ポートで特定の種類のハードウェア イベントが発生した場合です。 たとえば、周辺機器のドライバーは、シリアル コント ローラーは、周辺機器からシリアル データを受け取るときに通知を要求できます。 これらの通知を要求するには、周辺機器のドライバーを送信、 [ **IOCTL\_シリアル\_設定\_待機\_マスク**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serial_set_wait_mask)周辺機器への要求イベントを監視して、送信のセットを指定する、 [ **IOCTL\_シリアル\_待機\_ON\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff546805)要求のリッスンを開始これらのイベントです。 これらの要求は、コント ローラーのシリアル ドライバーのサポートで SerCx2、によって処理されます。 周辺機器のドライバーを監視できるイベントの種類の詳細については、次を参照してください**シリアル\_EV\_* XXX*** で説明される[ **IOCTL\_シリアル。\_設定\_待機\_マスク**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serial_set_wait_mask)します。
 
 ただし、シリアル コント ローラーは、ハードウェア イベント D0 デバイスの電源状態にあるときにのみを検出できます。 シリアル コント ローラーが低電力状態にある場合、周辺機器のドライバーは、たとえば、周辺機器のデバイスには新しいデータを読み取るドライバーをする場合に知ってシリアル コント ローラーからの通知を使用できません。 この場合は、周辺機器する必要があります割り込みシグナルを (または送信、ウェイク信号おそらく、) GPIO ピンから。 GPIO コント ローラーがほとんど電力を消費し、通常はアクティブなまま他のほとんどのデバイスが省電力状態を入力した後にします。
-
- 
-
- 
-
-
-
-

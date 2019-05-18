@@ -12,18 +12,14 @@ keywords:
 - シリアル デバイス WDK、Serenum ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c8db2faeeada5f76c39429fad50a1cab12c5c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64ddc6f95f6950807b5d18eb0b05d07814da8adf
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331120"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836345"
 ---
 # <a name="operation-of-serenum-and-serial"></a>Serenum とシリアルの操作
-
-
-
-
 
 このセクションには、オペレーティング Serenum およびシリアルに関する以下のトピックが含まれています。
 
@@ -55,18 +51,10 @@ ms.locfileid: "63331120"
 
 Serenum およびシリアルの動作の詳細については、次のリソースを参照してください。
 
--   [Serenum ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff547040)
+- [ntddser header](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/0)
 
--   [シリアル ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff547476)
+- [シリアル ポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_serports/)
 
--   サンプル コード、 \\src\\カーネル\\シリアルと\\src\\カーネル\\serenum ディレクトリ Windows Driver Kit (WDK) で
+- サンプル コード、 \\src\\カーネル\\シリアルと\\src\\カーネル\\serenum ディレクトリ Windows Driver Kit (WDK) で https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serenum
 
--   Microsoft Windows SDK の Windows ベースのサービスでサポートされている通信リソース
-
- 
-
- 
-
-
-
-
+- Microsoft Windows SDK の Windows ベースのサービスでサポートされている通信リソース

@@ -15,12 +15,12 @@ keywords:
 - WDK の COM ポートのデータベースのデータベース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3a09f0d0b8450c87283006f0c79d0c9ea46d36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a8a6f7962b6204a1f26a427b68ae7323b14d44d
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345050"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836339"
 ---
 # <a name="com-port-database"></a>COM ポート データベース
 
@@ -29,16 +29,24 @@ COM ポートのシステムが指定したデータベースが別の COM ポ�
 COM ポートのデータベースをサポートするルーチンの詳細については、com ポートのデータベース サポート ルーチンを参照してください。
 
 [ComDBClaimNextFreePort](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclaimnextfreeport)
+
 [ComDBClaimPort](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclaimport)
+
 [ComDBClose](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclose)
+
 [ComDBGetCurrentPortUsage](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbgetcurrentportusage)
- [ComDBOpen](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbopen)
+
+[ComDBOpen](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbopen)
+
 [ComDBReleasePort](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbreleaseport)
+
 [ComDBResizeDatabase](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbresizedatabase)
 
 また、次のルーチンを参照してください。
 
-[SerialDisplayAdvancedSettings](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-serialdisplayadvancedsettings)、COM ポートを高度なプロパティ ページをインストールするためのシステム指定のルーチンは[PPORT_ADVANCED_DIALOG](https://msdn.microsoft.com/library/windows/hardware/ff546956(v=vs.85).aspx)-ベンダーから提供されたオプションを提供するルーチン、型指定されました。ダイアログ ボックスによって呼び出される**SerialDisplayAdvancedSettings**
+[SerialDisplayAdvancedSettings](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-serialdisplayadvancedsettings)、COM ポートを高度なプロパティ ページをインストールするためのシステム指定のルーチンであります。
+
+[PPORT_ADVANCED_DIALOG](https://msdn.microsoft.com/library/windows/hardware/ff546956(v=vs.85).aspx)-、ルーチンによって呼び出される省略可能なベンダーから提供されたダイアログ ボックスを提供する型指定された**SerialDisplayAdvancedSettings**
 
 インストーラーでこれらのルーチンを呼び出すリンクをインストーラー *msports.lib*、Windows Driver Kit (WDK) で指定されます。
 
@@ -70,7 +78,7 @@ COM ポート番号が既に使用して呼び出すことによって、COM ポ
 
 - [**ComDBClaimPort**](https://msdn.microsoft.com/library/windows/hardware/ff546472)、特定のポート番号を要求しようと試みます。
 
-C*laiming* COM ポートのデータベース内の COM ポート番号が「使用中」としてポート番号を記録します。
+*主張*COM ポートのデータベース内の COM ポート番号が「使用中」としてポート番号を記録します。
 
 クライアントが呼び出すことでポート番号を解放、 [ **ComDBReleasePort** ](https://msdn.microsoft.com/library/windows/hardware/ff546477)ルーチン。
 
