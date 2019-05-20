@@ -2,9 +2,9 @@
   items:
     - name: シリアル コントローラー ドライバー設計ガイド
       href: index.md
-    - name: シリアル コントローラー ドライバーの概要
+    - name: シリアル コントローラー ドライバー
       items:
-        - name: シリアル コントローラー ドライバーの概要
+        - name: シリアル コントローラー ドライバー
           href: serial-drivers-overview.md
         - name: シリアル I/O 要求インターフェイス
           items:
