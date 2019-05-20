@@ -10,12 +10,12 @@ keywords:
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: aaca04abe62b2fe578eebd4e307cbce31ecec1d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59443b939b3fcb1d12aa4f3c2bc78e1ea389f409
+ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378498"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875097"
 ---
 # <a name="umdf-version-history"></a>UMDF バージョン履歴
 
@@ -42,6 +42,8 @@ ms.locfileid: "63378498"
 
 
 Microsoft Visual Studio 2017 で、Windows Driver Kit (WDK) を使用すると、Windows 7 以降を実行しているドライバーをビルドします。
+
+WDF を使用するのには、どのようなバージョンの決定については、次を参照してください。[フレームワーク バージョンを使用する必要がありますか?](building-and-loading-a-kmdf-driver.md#which-framework-version-should-i-use)します。
 
 Windows 10 で UMDF ドライバーの新機能については、次を参照してください。 [WDF ドライバーの新](index.md)します。
 

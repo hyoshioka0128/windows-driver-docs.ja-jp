@@ -4,12 +4,12 @@ description: NIC スイッチ機能の判断
 ms.assetid: 5E627E52-2D47-4EA0-80D9-6979891CCE96
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1ae1af4bdf1c5e8dc112e024b1bf3b5cc5e4d8e
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 9073537e938987ceb1650586fa425ff5d97246ef
+ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405150"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875102"
 ---
 # <a name="determining-nic-switch-capabilities"></a>NIC スイッチ機能の判断
 
@@ -33,21 +33,19 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 -   NIC のハードウェア機能の完全なセットは、ネットワーク アダプターをサポートできることを切り替えます。
 
-    **注**  NDIS 6.30 以降、1 つだけの NIC のスイッチを作成、ネットワーク アダプター。 このスイッチと呼ばれる、*既定 NIC スイッチ*します。
-
-     
+    **注**  NDIS 6.30 以降、1 つだけの NIC のスイッチを作成、ネットワーク アダプター。 このスイッチと呼ばれる、*既定 NIC スイッチ*します。     
 
 -   NIC は、ネットワーク アダプターで現在有効になっている機能を切り替えます。
 
-ミニポート ドライバーを通じて基になるネットワーク アダプターの NIC スイッチ ハードウェア機能の報告、 [ **NDIS\_NIC\_切り替える\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583)次のように初期化されている構造体。
+ミニポート ドライバーを通じて基になるネットワーク アダプターの NIC スイッチ ハードウェア機能の報告、 [ **NDIS\_NIC\_切り替える\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)次のように初期化されている構造体。
 
 1.  ミニポート ドライバーを初期化します、**ヘッダー**メンバー。 ドライバーのセット、**型**のメンバー**ヘッダー** NDIS に\_オブジェクト\_型\_既定します。
 
     NDIS 6.30 以降、ミニポート ドライバーの設定、**リビジョン**のメンバー**ヘッダー** NDIS に\_NIC\_スイッチ\_機能\_リビジョン\_2 と**サイズ**NDIS メンバー\_SIZEOF\_NIC\_スイッチ\_機能\_リビジョン\_2。
 
-2.  ミニポート ドライバーでは、適切なフラグを設定、 **NicSwitchCapabilities**のメンバー、 [ **NDIS\_NIC\_スイッチ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583) 、SR-IOV ネットワーク アダプターの NIC のスイッチ機能の構造体。 たとえば、ミニポート ドライバーは、NDIS を設定します\_NIC\_スイッチ\_CAP\_1 秒あたり\_VPORT\_INTERRUPT\_モデレート\_サポートされているフラグ NIC。スイッチは、各仮想ポート (VPort) スイッチで作成される割り込み節度をサポートしています。
+2.  ミニポート ドライバーでは、適切なフラグを設定、 **NicSwitchCapabilities**のメンバー、 [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities) 、SR-IOV ネットワーク アダプターの NIC のスイッチ機能の構造体。 たとえば、ミニポート ドライバーは、NDIS を設定します\_NIC\_スイッチ\_CAP\_1 秒あたり\_VPORT\_INTERRUPT\_モデレート\_サポートされているフラグ NIC。スイッチは、各仮想ポート (VPort) スイッチで作成される割り込み節度をサポートしています。
 
-3.  ミニポート ドライバーの設定の他のメンバー、 [ **NDIS\_NIC\_切り替える\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583) NIC のスイッチ機能の値の範囲の構造体SR-IOV ネットワーク アダプター。 たとえば、ミニポート ドライバーの設定、 **MaxNumVFs**と**MaxNumVPorts** Vf とアダプターをサポートする拡張の最大数をメンバー。
+3.  ミニポート ドライバーの設定の他のメンバー、 [ **NDIS\_NIC\_切り替える\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities) NIC のスイッチ機能の値の範囲の構造体SR-IOV ネットワーク アダプター。 たとえば、ミニポート ドライバーの設定、 **MaxNumVFs**と**MaxNumVPorts** Vf とアダプターをサポートする拡張の最大数をメンバー。
 
     **注**  ネットワーク アダプターで使用可能なハードウェア リソースに応じて、ミニポート ドライバーを設定できます、 **MaxNumVFs**メンバーである値をより小さい、  **\*NumVFs**キーワード。 このキーワードの詳細については、次を参照してください。 [SR-IOV の標準化された INF キーワード](standardized-inf-keywords-for-sr-iov.md)します。
 
@@ -57,9 +55,9 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 1.  ミニポート ドライバーを初期化します、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
 
-    ミニポート ドライバーのセット、 **HardwareNicSwitchCapabilities**前に初期化されたへのポインターをメンバー [ **NDIS\_NIC\_スイッチ\_機能** ](https://msdn.microsoft.com/library/windows/hardware/ff566583)構造体。
+    ミニポート ドライバーのセット、 **HardwareNicSwitchCapabilities**前に初期化されたへのポインターをメンバー [ **NDIS\_NIC\_スイッチ\_機能** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。
 
-    場合のレジストリ設定、  **\*SRIOV** INF キーワードは、1 つの値を持つ、ネットワーク アダプターが NIC スイッチの作成と構成の現在有効になります。 ミニポート ドライバーのセット、 **CurrentNicSwitchCapabilities**同じへのポインターをメンバー [ **NDIS\_NIC\_スイッチ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583)構造体。
+    場合のレジストリ設定、  **\*SRIOV** INF キーワードは、1 つの値を持つ、ネットワーク アダプターが NIC スイッチの作成と構成の現在有効になります。 ミニポート ドライバーのセット、 **CurrentNicSwitchCapabilities**同じへのポインターをメンバー [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。
 
     場合のレジストリ設定、  **\*SRIOV** INF キーワードが 0 の値を持つ、NIC のスイッチの作成と構成のネットワーク アダプターが現在有効されません。 ミニポート ドライバーを設定する必要があります、 **CurrentNicSwitchCapabilities**メンバーを NULL にします。
 
@@ -69,16 +67,29 @@ NDIS のミニポート ドライバーの呼び出したときに[ *MiniportIni
 
 アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
 
+## <a name="creating-a-nic-switch-without-sr-iov"></a>なし、SR-IOV NIC スイッチの作成
+
+ミニポート ドライバー NDIS 6.60 以降は、SR-IOV が有効でない場合、NIC スイッチおよび VMQ 機能の共存の次の要件に従う必要があります。 SR-IOV が有効にすると、ミニポート ドライバーが前のセクションでは、既存の要件に従う必要があります。
+
+- ミニポート ドライバーでは、NIC のスイッチと VMQ 機能の両方をアドバタイズします。
+- NIC は、NIC のスイッチと、NIC を再起動しなくても VMQ モード間で切り替えることができます。
+    - NIC は、最初に起動するときに、どちらのモード (NIC スイッチの作成または VMQ キューの作成) する準備ができます。
+        - NIC のスイッチを作成すると、任意の後続の VMQ キュー割り当てコールバックをミニポートが失敗します。
+        - VMQ キューを最初に作成すると、ミニポート ドライバーは VMQ キューの割り当てが成功するし、NIC スイッチ割り当て呼び出しに失敗します。
+    - NIC のスイッチが削除されるか、VMQ のすべてのキューが削除された、ミニポート ドライバー初期状態に戻り、もう一度これらのモードのいずれかに移動する準備ができました。
+
+NIC のスイッチを作成できること、SR-IOV を使用せず、ミニポート ドライバーを提供する設定、 **NDIS_NIC_SWITCH_CAPS_NIC_SWITCH_WITHOUT_IOV_SUPPORTED**フラグ、 **NicSwitchCapabilities**メンバー、 [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。
+
 ## <a name="querying-nic-switch-capabilities-by-overlying-drivers"></a>上にあるドライバーによって NIC スイッチ機能の照会
 
 
 NDIS パス、ネットワーク アダプターの次のように、ネットワーク アダプターにバインドされるドライバーに関連する NIC のスイッチ機能が現在有効。
 
--   NDIS が上にあるフィルター ドライバーを呼び出すときに[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)関数、NDIS 渡しますネットワーク アダプターの NIC のスイッチ機能を通じて、 *AttachParameters*パラメーター。 このパラメーターにはへのポインターが含まれています、 [ **NDIS\_フィルター\_アタッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565481)構造体。 **NicSwitchCapabilities**この構造体のメンバーにはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583)構造体。
+-   NDIS が上にあるフィルター ドライバーを呼び出すときに[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)関数、NDIS 渡しますネットワーク アダプターの NIC のスイッチ機能を通じて、 *AttachParameters*パラメーター。 このパラメーターにはへのポインターが含まれています、 [ **NDIS\_フィルター\_アタッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565481)構造体。 **NicSwitchCapabilities**この構造体のメンバーにはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。
 
--   NDIS が上位のプロトコル ドライバーを呼び出すときに[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数、NDIS 渡しますネットワーク アダプターの NIC のスイッチ機能を通じて、 *BindParameters*パラメーター。 このパラメーターにはへのポインターが含まれています、 [ **NDIS\_フィルター\_アタッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565481)構造体。 **NicSwitchCapabilities**この構造体のメンバーにはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583)構造体。
+-   NDIS が上位のプロトコル ドライバーを呼び出すときに[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)関数、NDIS 渡しますネットワーク アダプターの NIC のスイッチ機能を通じて、 *BindParameters*パラメーター。 このパラメーターにはへのポインターが含まれています、 [ **NDIS\_フィルター\_アタッチ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565481)構造体。 **NicSwitchCapabilities**この構造体のメンバーにはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。
 
-NDIS も返されます、 [ **NDIS\_NIC\_スイッチ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583)のオブジェクト識別子 (OID) のクエリ要求を処理する場合に構造体[OID\_NIC\_スイッチ\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569761)と[OID\_NIC\_スイッチ\_現在\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569760)関連プロトコルまたはフィルター ドライバーによって発行されます。
+NDIS も返されます、 [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)のオブジェクト識別子 (OID) のクエリ要求を処理する場合に構造体[OID\_NIC\_スイッチ\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569761)と[OID\_NIC\_スイッチ\_現在\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569760)関連プロトコルまたはフィルター ドライバーによって発行されます。
 
  
 

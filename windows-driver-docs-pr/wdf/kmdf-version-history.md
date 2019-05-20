@@ -9,12 +9,12 @@ keywords:
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 358d5eb53fc4005f17577f79c2644b2074423ae4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b965b716facb8a1b4d2eaa19fe3bee29a8af4138
+ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390184"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875098"
 ---
 # <a name="kmdf-version-history"></a>KMDF のバージョンの履歴
 
@@ -42,6 +42,8 @@ ms.locfileid: "63390184"
 |1.0|ダウンロードのみ|なし|Windows XP 以降|
 
 Microsoft Visual Studio 2017 で、Windows Driver Kit (WDK) を使用すると、Windows 7 以降を実行しているドライバーをビルドします。
+
+WDF を使用するのには、どのようなバージョンの決定については、次を参照してください。[フレームワーク バージョンを使用する必要がありますか?](building-and-loading-a-kmdf-driver.md#which-framework-version-should-i-use)します。
 
 コールバックの完全な一覧とメソッド、およびどのフレームワークとバージョンに適用される、次を参照してください。 [WDF のコールバックの概要とメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265591)します。
 
