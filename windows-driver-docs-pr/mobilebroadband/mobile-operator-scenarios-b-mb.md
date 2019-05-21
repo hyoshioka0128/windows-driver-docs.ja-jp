@@ -4,22 +4,19 @@ description: 通信事業者のシナリオ
 ms.assetid: 68ebee74-9c34-489d-9a88-02493ac3b5fe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a10b9bab713e497d5f01e7a6b1faf6a2f92eda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 64726b5a3c57666465bc9b439b025c84e4c03f10
+ms.sourcegitcommit: e3cf7d69c13846f3e7ece2b6178ecec23b9854ae
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56530355"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940372"
 ---
 # <a name="mobile-operator-scenarios"></a>通信事業者のシナリオ
 
 
 このセクションではドキュメントの使用に役立つ、さまざまな通信事業者のシナリオについて説明します。
 
--   モバイルの計画
-
-    - [キャンペーンのコンテンツ](mobile-plans-promotional-content.md)
-    - [非同期の調達](mobile-plans-asynchronous-fulfillment.md)
+-   [モバイルの計画](mobile-plans.md)
 
 -   [作成とインターネットの共有エクスペリエンスの構成](creating-and-configuring-internet-sharing-experiences.md)
 

@@ -8,12 +8,12 @@ keywords:
 - エコー
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8900b9f6098ccf2c560d21b4cf941c484ff089c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abc15862af891762dc6c244b1f8f7767f2705386
+ms.sourcegitcommit: e3cf7d69c13846f3e7ece2b6178ecec23b9854ae
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357164"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940377"
 ---
 # <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>ユニバーサル ドライバー - ステップ バイ ステップのラボ (エコー カーネル モード) のデバッグします。
 
@@ -274,7 +274,7 @@ DML versions of commands on by default
 
 **ターゲット システム上の Windows のバージョンの表示**
 
-5. 」と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg] ウィンドウでコマンド。
+5. と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: kd> vertarget
@@ -289,7 +289,7 @@ System Uptime: 0 days 01:31:58.931
 
 **読み込まれたモジュールを一覧表示します。**
 
-6. 」と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg] ウィンドウでコマンド。
+6. と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: Kd> lm
@@ -460,7 +460,7 @@ f. ターゲット コンピューターを再起動します。
 
 WDK のインストールの Tools フォルダーに移動し、DevCon ツールを見つけます。 たとえば、次のフォルダーを探します。
 
-*C:\\Program Files (x86)\\Windows キット\\10.0\\ツール\\x64\\devcon.exe*に構築されたドライバー パッケージのターゲット フォルダーを作成 (たとえば、 *C:\\EchoDriver*)。 ホスト コンピューターで既に説明した組み込みのドライバーからのすべてのファイルをコピーし、ターゲット コンピューター上に作成したフォルダーに保存します。
+*C:\\Program Files (x86)\\Windows キット\\10\\ツール\\x64\\devcon.exe*に構築されたドライバー パッケージのターゲット フォルダーを作成 (たとえば、 *C:\\EchoDriver*)。 ホスト コンピューターで既に説明した組み込みのドライバーからのすべてのファイルをコピーし、ターゲット コンピューター上に作成したフォルダーに保存します。
 
 ホスト システムに .cer 証明書を探し、組み込みのドライバー ファイルを含むフォルダー内のホスト コンピューター上の同じフォルダー内にあります。 対象のコンピューターに証明書ファイルを右クリックし、をクリックして**インストール**、テスト証明書をインストールする指示に従います。
 
