@@ -39,7 +39,7 @@ Windows 10 では、以前は、Windows は、特定のデバイスをインス�
 
 ## <a name="specifying-extensionid"></a>ExtensionId を指定します。
 
-呼ばれる特殊な GUID を生成する拡張子 INF を記述するときに、 **ExtensionId**、INF の内のエントリは**\[バージョン\]** セクション。
+呼ばれる特殊な GUID を生成する拡張子 INF を記述するときに、 **ExtensionId**、INF の内のエントリは **\[バージョン\]** セクション。
 
 システム ハードウェア ID およびに拡張子 INF で指定されているデバイスの互換性 Id を照合して、特定のデバイスの可能な拡張子 Inf を識別する、 [**モデル**](inf-models-section.md)セクションに適用されます。そのシステム。
 
