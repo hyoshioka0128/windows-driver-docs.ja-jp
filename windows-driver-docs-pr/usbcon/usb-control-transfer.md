@@ -3,12 +3,12 @@ Description: このトピックでは、コントロールの転送とクライ�
 title: USB コントロール転送の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af468cb6a9960169bedc56e37253691ac01f8b3b
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: d7ae93ba4ef0000daf1cedfaa0f56bf09b108381
+ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405080"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969597"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>USB コントロール転送の送信方法
 
@@ -648,7 +648,7 @@ VOID  GetFirmwareVersion(
 }  
 ```
 
-## <a name="how-to-send-a-control-transfer-for-getstatus---umdf"></a>GET の制御の移動を送信する方法\_状態 - UMDF
+##<a name="how-to-send-a-control-transfer-for-get_status---umdf"></a>GET の制御の移動を送信する方法\_状態 - UMDF
 
 
 この手順は、クライアント ドライバーが、GET の制御の移動を送信する方法を示しています。\_STATUS コマンド。 要求の受信者は、デバイスと、要求は、D1 D0 のビット単位の情報を取得します。 詳細については、USB 仕様の図 9-4 を参照してください。

@@ -3,12 +3,12 @@ Description: このトピックでは、ユニバーサル シリアル バス (
 title: Windows の USB ホスト側ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f66484e9ae50d7bcead05619b729f403c0c046
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e6d918c195446084dd181b2fe5482ea380e50e9a
+ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405085"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969594"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows の USB ホスト側ドライバー
 
@@ -37,13 +37,13 @@ Windows では、eHCI や oHCI、uHCI コント ローラーに接続されて�
 
 USB 3.0 スタックは、Windows 8 の新機能です。 Microsoft では、カーネル モード ドライバー フレームワーク (KMDF) インターフェイスを使用して、新しいドライバーを作成します。 KMDF ドライバー モデルは、複雑さを軽減し、安定性が向上します。
 
-### <a href="" id="usb-3-0-host-controller-driver--usbxhci-sys"></a>USB 3.0 ホスト コント ローラー ドライバー (Usbxhci.sys)
+### <a href="" id="usb-3-0-host-controller-driver-usbxhcisys"></a>USB 3.0 ホスト コント ローラー ドライバー (Usbxhci.sys)
 
 XHCI ドライバーは、USB 3.0 ホスト コント ローラー ドライバーです。 XHCI ドライバーの役割は、転送要求のブロックを上位レイヤー ドライバーからのマッピングの転送を要求 MMIO レジスタと xHCI コント ローラーのハードウェアには、ホストのメモリ ベースのデータ構造体の初期化とに要求を送信しますハードウェア。 転送を完了するは、ドライバーは、ハードウェアから転送の完了イベントを処理し、ドライバー スタックの上位イベントを伝達します。 また、xHCI コント ローラー デバイスのスロットとエンドポイント コンテキストを制御します。
 
 XHCI ドライバーは、Windows 8 の新機能は以前のバージョンのオペレーティング システムで使用可能だった eHCI ミニポート ドライバーの拡張機能ではありません。 新しいドライバーは、カーネル モード ドライバー フレームワーク (KMDF) インターフェイスを使用して作成し、すべてのコント ローラーの電源管理と PnP イベント KMDF を使用します。 Windows では、ホスト コント ローラーに対するデバイス スタックの関数のデバイス オブジェクト (FDO) として xHCI ドライバーを読み込みます。
 
-### <a href="" id="-usb-host-controller-extension--ucx01000-sys--"></a> USB ホスト コント ローラーの拡張機能 (Ucx01000.sys)
+### <a href="" id="-usb-host-controller-extension-ucx01000sys"></a> USB ホスト コント ローラーの拡張機能 (Ucx01000.sys)
 
 USB ホスト コント ローラー拡張機能ドライバー (KMDF 拡張機能) とは、xHCI ドライバーなど、基になるクラスに固有のホスト コント ローラー ドライバーに新しい拡張機能です。 新しいドライバーは、拡張可能なホスト コント ローラーのドライバーを開発する今後の予想されるは、他の種類をサポートするためには設計されています。 USB ホスト コント ローラー拡張機能では、ハブのドライバーに共通の抽象化されたインターフェイスが汎用ホスト コント ローラーのドライバーに要求をキュー メカニズムを提供し、選択した特定の関数をオーバーライドとして機能します。 すべての I/O 要求は、xHCI ドライバーの前に、ホスト コント ローラーの拡張機能ドライバーをドライバーが上限に到達によって開始されます。 I/O 要求を受信するとは、ホスト コント ローラーの拡張機能は、要求を検証しますし、し、ターゲット エンドポイントに関連付けられた、適切な KMDF キューに要求を転送します。 XHCI ドライバーでは、処理のための準備ができたら、キューから要求を取得します。 USB ホスト コント ローラーの拡張機能ドライバーの役割は次のとおりです。
 
@@ -52,7 +52,7 @@ USB ホスト コント ローラー拡張機能ドライバー (KMDF 拡張機�
 -   管理し、ホスト コント ローラーに関連付けられているルート ハブの操作を制御します。
 -   チェーンの MDLs、ストリーム、およびなどのクライアント ドライバーで構成可能な機能を実装します。
 
-### <a href="" id="usb-hub-driver-usbhub3-sys"></a>USB ハブのドライバー (Usbhub3.sys)
+### <a href="" id="usb-hub-driver-usbhub3sys"></a>USB ハブのドライバー (Usbhub3.sys)
 
 新しいハブ ドライバー 3.0 のデバイスの USB ドライバー スタックで、KMDF ドライバー モデルは使用します。 ハブのドライバーは、主に、これらのタスクを実行します。
 

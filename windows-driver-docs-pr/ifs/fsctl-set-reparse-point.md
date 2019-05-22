@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6182a2c5cced1b80dcaa4e22884105a352f58407
-ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
+ms.openlocfilehash: 41632fed9b18d2a399753e975463219542dbca94
+ms.sourcegitcommit: 998c5840ce92a50ae42127101e4ecc19a5e362c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65701990"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "65996958"
 ---
 # <a name="fsctlsetreparsepoint-control-code"></a>FSCTL\_設定\_再解析\_ポイント制御コード
 
@@ -75,7 +75,7 @@ FSCTL\_設定\_再解析\_ポイント制御コードは、ファイルまたは
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_EAS_NOT_SUPPORTED</strong></p></td>
-<td align="left"><p>拡張属性を含むファイルに再解析ポイントを設定することはできません。 これは、エラー コードです。</p></td>
+<td align="left"><p>再解析ポイントは、この要求が、トランザクションの場合、ファイルを設定できません。 これは、エラー コードです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_IO_REPARSE_DATA_INVALID</strong></p></td>

@@ -6,12 +6,12 @@ keywords:
 - MB PCO オプション、モバイル ブロード バンド PCO オプションは、プロトコルの構成オプションの MB、モバイル ブロード バンドのプロトコルの構成オプション、WDK ネットワーク ドライバー、MBB ミニポート ドライバー
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d29fffd17776b8ed5e278b3c52c24bec49e627c
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: c83cb2dd99ed63b21b0f6b99d35506c87eba3814
+ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405175"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969596"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB プロトコルの構成オプション (PCO) 操作
 
@@ -103,7 +103,7 @@ PCO は、次の Cid が定義されています。
 | MBIMPcoTypeComplete | 0 | ネットワークから受信した渡される完全な PCO 構造ヘッダーが現実的 PCO 構造体の 8 ビット 3 に、3 gpp TS24.008 仕様で定義されているプロトコルを反映するよう指定します。 |
 | MBIMPcoTypePartial | 1 | モデムがネットワークから受信した PCO 構造のサブセットを渡すことだけを指定します。 ヘッダーには、3 gpp TS24.008 仕様で定義されている PCO 構造が一致するが、3 のオクテットの"Configuration protocol"は有効なできない可能性があります。 |
 
-##### <a name="mbimpcovalue"></a>MBIM_PCO_VALUE
+##### <a name="MBIM_PCO_TYPE"></a>MBIM、PCO の種類
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
