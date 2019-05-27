@@ -8,12 +8,12 @@ keywords:
 - WDK RSS ハッシュ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5365252ae6ad977928ff26e5fc3baf59fe3e1ec2
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: f778eb4ac07b861cff4f06026d4f42fa3438d4f4
+ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405285"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051644"
 ---
 # <a name="rss-hashing-types"></a>RSS ハッシュの種類
 
@@ -56,7 +56,7 @@ IPv4 設定で有効なハッシュの種類の組み合わせは次のとおり
 - [NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4](#ndis_hash_udp_ipv4--ndis_hash_ipv4)
 - [NDIS_HASH_TCP_IPV4 | NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4](#ndis_hash_tcp_ipv4--ndis_hash_udp_ipv4--ndis_hash_ipv4)
 
-### <a name="ndishashipv4"></a>NDIS_HASH_IPV4  
+### <a name="ndis_hash_ipv4"></a> NDIS_HASH_IPV4  
 
 だけでこのフラグが設定されている場合、NIC は、次の IPv4 ヘッダー フィールドに対してハッシュ値を計算する必要があります。
 
@@ -66,7 +66,7 @@ IPv4 設定で有効なハッシュの種類の組み合わせは次のとおり
 >[!NOTE]
 > NIC は、IP と TCP の両方のヘッダーを含むパケットを受信する場合 NDIS_HASH_TCP_IPV4 いない常に使用してください。 断片化されたパケットの場合は、NDIS_HASH_IPV4 を使用する必要があります。 これには、IP と TCP の両方のヘッダーを含む最初のフラグメントが含まれます。
 
-### <a name="ndishashtcpipv4"></a>NDIS_HASH_TCP_IPV4
+### <a name="ndis_hash_tcp_ipv4"></a> NDIS_HASH_TCP_IPV4
 
 だけでこのフラグが設定されている場合、NIC は、TCP セグメントを含む IPv4 パケットを識別するために、受信したデータを解析する必要があります。
 
@@ -79,7 +79,7 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 - ソース TCP ポート
 - 接続先 TCP ポート
 
-### <a name="ndishashudpipv4"></a>NDIS_HASH_UDP_IPV4
+### <a name= "ndis_hash_udp_ipv4"></a> NDIS_HASH_UDP_IPV4
 
 単独でこのフラグが設定されている場合、NIC は UDP データグラムを含む IPv4 パケットを識別するために、受信したデータを解析する必要があります。
 
@@ -92,15 +92,15 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 - 送信元 UDP ポート
 - 宛先の UDP ポート
 
-### <a name="ndishashtcpipv4--ndishashipv4"></a>NDIS_HASH_TCP_IPV4 | NDIS_HASH_IPV4
+### <a name="ndis_hash_tcp_ipv4--ndis_hash_ipv4"></a> NDIS_HASH_TCP_IPV4 | NDIS_HASH_IPV4
 
 このフラグの組み合わせが設定されている場合、NIC は、NDIS_HASH_TCP_IPV4 ケースの指定されたハッシュ計算を実行する必要があります。 ただし、パケットに TCP ヘッダーが含まれていない場合、NIC は NDIS_HASH_IPV4 大文字と小文字の指定されたハッシュ値を計算する必要があります。
 
-### <a name="ndishashudpipv4--ndishashipv4"></a>NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4
+### <a name="ndis_hash_udp_ipv4--ndis_hash_ipv4"></a> NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4
 
 このフラグの組み合わせが設定されている場合、NIC は、NDIS_HASH_UDP_IPV4 ケースの指定されたハッシュ計算を実行する必要があります。 ただし、パケットに UDP ヘッダーが含まれていない場合、NIC は NDIS_HASH_IPV4 大文字と小文字の指定されたハッシュ値を計算する必要があります。
 
-### <a name="ndishashtcpipv4--ndishashudpipv4--ndishashipv4"></a>NDIS_HASH_TCP_IPV4 | NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4
+### <a name="ndis_hash_tcp_ipv4--ndis_hash_udp_ipv4--ndis_hash_ipv4"></a> NDIS_HASH_TCP_IPV4 | NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4
 
 このフラグの組み合わせを設定すると、NIC はパケットのトランスポートによって指定されたハッシュの計算を実行する必要があります。 ただし、パケットに TCP または UDP ヘッダーが含まれていない場合、NIC は NDIS_HASH_IPV4 大文字と小文字の指定されたハッシュ値を計算する必要があります。
 
@@ -108,21 +108,21 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 
 IPv6 設定の有効なハッシュ タイプの組み合わせは次のとおりです。
 
-- [NDIS_HASH_IPV6](#ndis_hash_ipv6)
+- [NDIS_HASH_IPV6](#ndis-hash-ipv6)
 - [NDIS_HASH_TCP_IPV6](#ndis_hash_tcp_ipv6)
 - [NDIS_HASH_UDP_IPV6](#ndis_hash_udp_ipv6)
 - [NDIS_HASH_TCP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_tcp_ipv6--ndis_hash_ipv6)
 - [NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_udp_ipv6--ndis_hash_ipv6)
 - [NDIS_HASH_TCP_IPV6 | NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_tcp_ipv6--ndis_hash_udp_ipv6--ndis_hash_ipv6)
 
-### <a name="ndishashipv6"></a>NDIS_HASH_IPV6
+### <a name="ndis-hash-ipv6"></a> NDIS\_ハッシュ\_IPV6
 
 だけでこのフラグが設定されている場合、NIC は、次のフィールドに対してハッシュを計算する必要があります。
 
 - ソースから IPv6 アドレス
 - 変換先の IPv6 アドレス
 
-### <a name="ndishashtcpipv6"></a>NDIS_HASH_TCP_IPV6
+### <a name="ndis_hash_tcp_ipv6"></a> NDIS_HASH_TCP_IPV6
 
 だけでこのフラグが設定されている場合、NIC は、TCP セグメントを含む IPv6 パケットを識別するために、受信したデータを解析する必要があります。 NIC は、識別し、パケットに存在するすべての IPv6 拡張ヘッダーをスキップする必要があります。 NIC は、すべての IPv6 拡張ヘッダーをスキップできません、ハッシュ値には計算されません。
 
@@ -133,7 +133,7 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 - ソース TCP ポート
 - 接続先 TCP ポート
 
-### <a name="ndishashudpipv6"></a>NDIS_HASH_UDP_IPV6
+### <a name="ndis_hash_udp_ipv6"></a> NDIS_HASH_UDP_IPV6
 
 単独でこのフラグが設定されている場合、NIC は UDP データグラムを含む IPv6 パケットを識別するために、受信したデータを解析する必要があります。 NIC は、識別し、パケットに存在するすべての IPv6 拡張ヘッダーをスキップする必要があります。 NIC は、すべての IPv6 拡張ヘッダーをスキップできません、ハッシュ値には計算されません。
 
@@ -144,15 +144,15 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 - 送信元 UDP ポート
 - 宛先の UDP ポート
 
-### <a name="ndishashtcpipv6--ndishashipv6"></a>NDIS_HASH_TCP_IPV6 | NDIS_HASH_IPV6
+### <a name="ndis_hash_tcp_ipv6--ndis_hash_ipv6"></a>NDIS_HASH_TCP_IPV6 | NDIS_HASH_IPV6
 
 このフラグの組み合わせが設定されている場合、NIC は、NDIS_HASH_TCP_IPV6 ケースの指定されたハッシュ計算を実行する必要があります。 ただし、パケットに TCP ヘッダーが含まれていない場合に、NIC は NDIS_HASH_IPV6 大文字と小文字の指定されたハッシュを計算する必要があります。
 
-### <a name="ndishashudpipv6--ndishashipv6"></a>NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6
+### <a name="ndis_hash_udp_ipv6--ndis_hash_ipv6"></a> NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6
 
 このフラグの組み合わせが設定されている場合、NIC は、NDIS_HASH_UDP_IPV6 ケースの指定されたハッシュ計算を実行する必要があります。 ただし、パケットに UDP ヘッダーが含まれていない場合に、NIC は NDIS_HASH_IPV6 大文字と小文字の指定されたハッシュを計算する必要があります。
 
-### <a name="ndishashtcpipv6--ndishashudpipv6--ndishashipv6"></a>NDIS_HASH_TCP_IPV6 | NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6
+### <a name="ndis_hash_tcp_ipv6--ndis_hash_udp_ipv6--ndis_hash_ipv6"></a> NDIS_HASH_TCP_IPV6 | NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6
 
 このフラグの組み合わせを設定すると、NIC はパケットのトランスポートによって指定されたハッシュの計算を実行する必要があります。 ただし、パケットに TCP または UDP ヘッダーが含まれていない場合、NIC は NDIS_HASH_IPV6 場合は、指定されたハッシュ値を計算する必要があります。
 
@@ -167,14 +167,14 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 - [NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex)
 - [NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndis_hash_tcp_ipv6_ex--ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex)
 
-### <a name="ndishashipv6ex"></a>NDIS_HASH_IPV6_EX  
+### <a name="ndis_hash_ipv6_ex"></a> NDIS_HASH_IPV6_EX  
 
 だけでこのフラグが設定されている場合、NIC は、次のフィールドに対してハッシュを計算する必要があります。
 
 - IPv6 の宛先オプション ヘッダーのホーム アドレス オプションから自宅の住所。 拡張機能ヘッダーが存在しない場合は、送信元 IPv6 アドレスを使用します。
 - ルーティング-ヘッダー-型-2、関連付けられている拡張機能ヘッダーからに含まれている IPv6 アドレス。 拡張機能ヘッダーが存在しない場合は、宛先 IPv6 アドレスを使用します。
 
-### <a name="ndishashtcpipv6ex"></a>NDIS_HASH_TCP_IPV6_EX
+### <a name="ndis_hash_tcp_ipv6_ex"></a> NDIS_HASH_TCP_IPV6_EX
 
 だけでこのフラグが設定されている場合、NIC は、次のフィールドに対してハッシュを計算する必要があります。
 
@@ -183,7 +183,7 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 - ソース TCP ポート
 - 接続先 TCP ポート
 
-### <a name="ndishashudpipv6ex"></a>NDIS_HASH_UDP_IPV6_EX
+### <a name="ndis_hash_udp_ipv6_ex"></a> NDIS_HASH_UDP_IPV6_EX
 
 だけでこのフラグが設定されている場合、NIC は、次のフィールドに対してハッシュを計算する必要があります。
 
@@ -192,28 +192,19 @@ NIC は、次のフィールドに対してハッシュ値を計算する必要�
 - 送信元 UDP ポート
 - 宛先の UDP ポート
 
-### <a name="ndishashtcpipv6ex--ndishashipv6ex"></a>NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_IPV6_EX
+### <a name="ndis_hash_tcp_ipv6_ex--ndis_hash_ipv6_ex"></a> NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_IPV6_EX
 
 このフラグの組み合わせが設定されている場合、NIC は、NDIS_HASH_TCP_IPV6_EX ケースの指定されたハッシュ計算を実行する必要があります。 ただし、パケットに TCP ヘッダーが含まれていない場合に、NIC は NDIS_HASH_IPV6_EX 大文字と小文字の指定されたハッシュを計算する必要があります。
 
-### <a name="ndishashudpipv6ex--ndishashipv6ex"></a>NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX
+### <a name="ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex"></a> NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX
 
 このフラグの組み合わせが設定されている場合、NIC は、NDIS_HASH_UDP_IPV6_EX ケースの指定されたハッシュ計算を実行する必要があります。 ただし、パケットに UDP ヘッダーが含まれていない場合に、NIC は NDIS_HASH_IPV6_EX 大文字と小文字の指定されたハッシュを計算する必要があります。
 
-### <a name="ndishashtcpipv6ex--ndishashudpipv6ex--ndishashipv6ex"></a>NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX
+### <a name="ndis_hash_tcp_ipv6_ex--ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex"></a> NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX
 
 このフラグの組み合わせが設定されている場合、NIC は、パケットのトランスポートで指定されたハッシュ計算を実行する必要があります。 ただし、パケットに TCP または UDP ヘッダーが含まれていない場合に、NIC は NDIS_HASH_IPV6_EX 大文字と小文字の指定されたハッシュを計算する必要があります。
 
 > [!NOTE]
-> NIC が IPv6 拡張機能のハッシュの種類に従って、(IPv6 拡張ヘッダー フィールド) のハッシュ値を計算する必要がありますミニポート ドライバーでは、NIC の NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6_EX や NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV6_EX の機能を報告する場合プロトコル ドライバーに設定します。 NIC は、拡張機能のハッシュの種類または通常のハッシュの種類のいずれかをハッシュ値の計算対象の IPv6 パケットの NET_BUFFER_LIST 構造に格納できます。 
+> NIC が IPv6 拡張機能のハッシュの種類に従って、(IPv6 拡張ヘッダー フィールド) のハッシュ値を計算する必要がありますミニポート ドライバーでは、NIC の NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6_EX や NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV6_EX の機能を報告する場合プロトコル ドライバーに設定します。 NIC は、拡張機能のハッシュの種類または通常のハッシュの種類のいずれかをハッシュ値の計算対象の IPv6 パケットの NET_BUFFER_LIST 構造に格納できます。
 
 ミニポート ドライバーのハッシュの種類の設定、 [ **NET_BUFFER_LIST** ](https://msdn.microsoft.com/library/windows/hardware/ff568388)する前に、受信したデータ構造体。 詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
-
- 
-
- 
-
-
-
-
-

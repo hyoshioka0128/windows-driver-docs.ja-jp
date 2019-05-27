@@ -4,12 +4,12 @@ description: Microsoft ハードウェア API では、組織のパートナー 
 ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c1840caeb7848ce576d2ecb8a23647231ee0524
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 9a378280a820df31b1885a7655fad7d72ae4ba53
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518668"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701737"
 ---
 # <a name="hardware-dashboard-api"></a>ハードウェア ダッシュボード API
 
@@ -88,12 +88,18 @@ Azure AD アクセス トークンを取得したら、Microsoft ハードウェ
 
 ## <a name="code-examples"></a>コード例
 
-次のサンプルは、Microsoft ハードウェア API を使用する方法を示す詳しいコードを提供します。
+次の例では、Microsoft Surface デバイス チームによって作成された、完全なエンド ツー エンド事前構築済みソリューションと一緒に Microsoft ハードウェア API を使用する方法を示す詳細なコードを提供します。
 
 * [C# のサンプル](http://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
 
 [ハードウェア ダッシュボード API のサンプル (GitHub)](https://aka.ms/hpc_async_api_samples)
 
+[画面のデベロッパー センター マネージャー ツール (GitHub)](https://github.com/Microsoft/SDCM)
+
 ## <a name="additional-help"></a>追加のヘルプ
 
 Microsoft Store 申請 API について質問がある場合や、この API を使った申請の管理に関してサポートが必要な場合は、[サポート ページ](https://developer.microsoft.com/dashboard/account/help?returnUri=https://developer.microsoft.com/dashboard/hardware)にアクセスしてサポートを要求してください。
+
+## <a name="related-topics"></a>関連トピック
+
+[Azure Active Directory とは何ですか。](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)

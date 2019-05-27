@@ -3,12 +3,12 @@ Description: USB タイプ-c コネクタとコネクタのドライバーの想
 title: USB Type-C コネクタ ドライバーを記述する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3258c50cd531c78b2559688a6c1454441c489863
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: fcba2f204ae3c005ded4ce346fb3602b7fe55ccc
+ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711972"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051647"
 ---
 # <a name="write-a-usb-type-c-connector-driver"></a>USB Type-C コネクタ ドライバーを記述する
 
@@ -16,29 +16,29 @@ ms.locfileid: "65711972"
 
 * USB タイプ-c ハードウェアに電源 (PD) の配信のステート マシンを処理する機能がある場合。 それ以外の場合、型-C# の USB ポート コント ローラーのドライバーを書き込むことを検討します。 詳細については、次を参照してください。[型-C# の USB ポート コント ローラー ドライバー](write-a-usb-type-c-port-controller-driver.md)します。
 
-* 場合は、ハードウェアの埋め込みコント ローラーではありません。 それ以外の場合、Microsoft によって提供されるインボックス ドライバー、UcmUcsi.sys を読み込みます。 (を参照してください[UCSI ドライバー](ucsi.md)) ACPI トランスポートまたは[UCSI クライアント ドライバーを書く](write-a-ucsi-driver.md)非 ACPI トランスポート。 
+* 場合は、ハードウェアの埋め込みコント ローラーではありません。 それ以外の場合、Microsoft によって提供されるインボックス ドライバー、UcmUcsi.sys を読み込みます。 (を参照してください[UCSI ドライバー](ucsi.md)) ACPI トランスポートまたは[UCSI クライアント ドライバーを書く](write-a-ucsi-driver.md)非 ACPI トランスポート。
 
-**概要**:
+## <a name="summary"></a>概要
 
 * クラスの拡張機能とクライアント ドライバーによって使用される UCM オブジェクト
 * UCM クラスの拡張機能によって提供されるサービス
 * クライアント ドライバーの想定される動作
 
-**正式な仕様**:
+### <a name="official-specifications"></a>公式の仕様
 
 * [USB 3.1 と USB 型-C# の仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)
 * [USB 電源配信](https://go.microsoft.com/fwlink/p/?LinkID=623310)
 
-**適用対象:**:
+### <a name="applies-to"></a>対象
 
 * Windows 10
 
-**WDF バージョン**:
+### <a name="wdf-version"></a>WDF のバージョン
 
 * KMDF バージョン 1.15
 * UMDF 2.15 バージョン
 
-**重要な API**:
+## <a name="important-apis"></a>重要な API
 
 * [USB タイプ-c コネクタ ドライバーのプログラミング リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
 
@@ -57,7 +57,7 @@ UCM は WDF クラスの拡張機能クライアント ドライバー モデル
   * スタブ ライブラリは、(UcmCxstub.lib)。 ライブラリは、クライアント ドライバーによって行われた呼び出しを変換し、UcmCx まで渡したりします。
   * ヘッダー ファイルでは、UcmCx.h します。
 
-  ユーザー モードまたはカーネル モードで実行されている UCM クライアント ドライバーを作成することができます。 ユーザー モードの場合、UMDF 2.x ライブラリとバインドします。カーネル モード KMDF 1.15 です。 プログラミング インターフェイスは、どちらのモードと同じです。
+    ユーザー モードまたはカーネル モードで実行されている UCM クライアント ドライバーを作成することができます。 ユーザー モードの場合、UMDF 2.x ライブラリとバインドします。カーネル モード KMDF 1.15 です。 プログラミング インターフェイスは、どちらのモードと同じです。
 
     ![ucm の visual studio の構成](images/ucm-vs.png)
 
@@ -117,20 +117,20 @@ UCM コネクタ オブジェクト (UCMCONNECTOR) は、C-USB 型コネクタ�
 
 2. USB タイプ-c のコネクタの初期化パラメーターを指定、 [ **UCM\_コネクタ\_種類が「\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/mt187930)構造体。 これは、ダウン ストリームに接続するポート、アップ ストリームに接続するポート、またはデュアル ロールかどうかに、コネクタの動作モードが含まれます対応します。 また、コネクタは、電源と USB 型-C# の現在のレベルを指定します。 USB タイプ-c コネクタは、3.5 mm のオーディオ ジャックを操作できるように設計できます。 ハードウェアの機能をサポートする場合コネクタ オブジェクトをそれに応じて初期化する必要があります。
 
-    構造体で、ロールのデータを処理するためのクライアント ドライバーのコールバック関数を登録することも必要があります。
+   構造体で、ロールのデータを処理するためのクライアント ドライバーのコールバック関数を登録することも必要があります。
 
-    このコールバック関数は、UCM クラスの拡張機能によって呼び出されるコネクタ オブジェクトに関連付けられます。 クライアント ドライバーでは、この関数を実装する必要があります。
+   このコールバック関数は、UCM クラスの拡張機能によって呼び出されるコネクタ オブジェクトに関連付けられます。 クライアント ドライバーでは、この関数を実装する必要があります。
 
-    [*EVT\_UCM\_コネクタ\_設定\_データ\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187818)  
+   [*EVT\_UCM\_コネクタ\_設定\_データ\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187818)  
     データのパートナー コネクタに接続すると、指定したロールへのコネクタの役割を交換します。
 
 3. PD 対応している場合、クライアント ドライバーは、コネクタの Power 配信 2.0 ハードウェアの実装には、処理、初期化することも必要があります、 [ **UCM\_コネクタ\_PD\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/mt187924) PD 初期化パラメーターを指定する構造体。 コネクタは、電源シンクまたはソースかどうか、power のフローが含まれます。
 
-    構造体で、電源の役割を処理するためのクライアント ドライバーのコールバック関数を登録することも必要があります。
+   構造体で、電源の役割を処理するためのクライアント ドライバーのコールバック関数を登録することも必要があります。
 
-    このコールバック関数は、UCM クラスの拡張機能によって呼び出されるコネクタ オブジェクトに関連付けられます。 クライアント ドライバーでは、この関数を実装する必要があります。
+   このコールバック関数は、UCM クラスの拡張機能によって呼び出されるコネクタ オブジェクトに関連付けられます。 クライアント ドライバーでは、この関数を実装する必要があります。
 
-    [*EVT\_UCM\_コネクタ\_設定\_POWER\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187819)  
+   [*EVT\_UCM\_コネクタ\_設定\_POWER\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187819)  
     パートナー コネクタに接続されているときに指定されたロールには、コネクタの power ロールを設定します。
 
 4. 呼び出す[ **UcmConnectorCreate** ](https://msdn.microsoft.com/library/windows/hardware/mt187909)およびコネクタの UCMCONNECTOR ハンドルを取得します。 クライアント ドライバーが呼び出すことによって、framework デバイス オブジェクトを作成後に、このメソッドを呼び出すかどうかを確認[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)します。 この呼び出しの適切な場所は、ドライバーにできる[ **EVT_WDF_DEVICE_PREPARE_HARDWARE** ](https://msdn.microsoft.com/library/windows/hardware/ff540880)または[ **EVT_WDF_DEVICE_D0_ENTRY**](https://msdn.microsoft.com/library/windows/hardware/ff540848)します。
@@ -284,11 +284,11 @@ UCM クラスの拡張機能は、役割の交代の USB ドライバー (URS) �
 
 * [**UcmConnectorDataDirectionChanged**](https://msdn.microsoft.com/library/windows/hardware/mt187910)
 
-    PD DR 後にこのメソッドを呼び出す\_スワップ メッセージが処理されています。 この呼び出しの後は、オペレーティング システムは、URS、既存のロールのドライバーを廃棄し、新しいロールのドライバーをロードする、新しいロールを報告します。
+  PD DR 後にこのメソッドを呼び出す\_スワップ メッセージが処理されています。 この呼び出しの後は、オペレーティング システムは、URS、既存のロールのドライバーを廃棄し、新しいロールのドライバーをロードする、新しいロールを報告します。
 
 * [**UcmConnectorPowerDirectionChanged**](https://msdn.microsoft.com/library/windows/hardware/mt187914)
 
-    PD PR の後にこのメソッドを呼び出し\_スワップ メッセージが処理されています。 プル要求の後に\_スワップ、PD コントラクトが再ネゴシエートする必要があります。 クライアント ドライバーで説明されているメソッドを呼び出して、その PD 契約交渉を報告する必要があります[手順 4](#4-report-the-new-negotiated-pd-contract)します。
+  PD PR の後にこのメソッドを呼び出し\_スワップ メッセージが処理されています。 プル要求の後に\_スワップ、PD コントラクトが再ネゴシエートする必要があります。 クライアント ドライバーで説明されているメソッドを呼び出して、その PD 契約交渉を報告する必要があります[手順 4](#4-report-the-new-negotiated-pd-contract)します。
 
 ## <a name="7-implement-callback-functions-to-handle-power-and-data-role-swap-requests"></a>7.電源とデータ ロールの交替申請を処理するコールバック関数を実装
 
@@ -298,7 +298,7 @@ UCM クラスの拡張機能は、コネクタのデータまたは電源の方�
 
 * [*EVT\_UCM\_コネクタ\_設定\_データ\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187818)
 
-    コールバックの実装では、クライアント ドライバーに期待されます。
+  コールバックの実装では、クライアント ドライバーに期待されます。
 
   1. 送信 PD DR\_ポート パートナーにメッセージをスワップします。
   2. 呼び出す[ **UcmConnectorDataDirectionChanged** ](https://msdn.microsoft.com/library/windows/hardware/mt187910)に成功したか、メッセージ シーケンスが完了したクラスの拡張を通知します。
@@ -328,8 +328,8 @@ UCM クラスの拡張機能は、コネクタのデータまたは電源の方�
 
     コールバックの実装では、クライアント ドライバーに期待されます。
 
-    1. PD PR を送信\_ポート パートナーにメッセージをスワップします。
-    2. 呼び出す[ **UcmConnectorPowerDirectionChanged** ](https://msdn.microsoft.com/library/windows/hardware/mt187914)に成功したか、メッセージ シーケンスが完了したクラスの拡張を通知します。
+  1. PD PR を送信\_ポート パートナーにメッセージをスワップします。
+  2. 呼び出す[ **UcmConnectorPowerDirectionChanged** ](https://msdn.microsoft.com/library/windows/hardware/mt187914)に成功したか、メッセージ シーケンスが完了したクラスの拡張を通知します。
 
     ```cpp
     EVT_UCM_CONNECTOR_SET_POWER_ROLE     EvtSetPowerRole;  

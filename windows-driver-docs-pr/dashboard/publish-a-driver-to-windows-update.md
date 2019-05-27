@@ -5,12 +5,12 @@ ms.assetid: E62AADCF-E481-40CA-98F1-BE4629C3EE35
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd83434e6fcf2a73148e00b4b999a9db7815ed8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: f991824cba8ebda7fdd053c89776b6f2cd2458db
+ms.sourcegitcommit: 998c5840ce92a50ae42127101e4ecc19a5e362c6
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518748"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "65996959"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>Windows Update にドライバーを公開する
 
@@ -50,16 +50,10 @@ Windows Update にドライバーを公開するには、[ハードウェア提�
    </div></td>
    </tr>
    <tr class="even">
-   <td><p><strong>Release date (リリース日)</strong></p></td>
-   <td><p>Windows Update でドライバーをダウンロードできるようにする時期を指定します。</p>
-   <p>認定後すぐにドライバーを公開する場合は、<strong>[認定されたらすぐにドライバーを公開します]</strong> を選択します。</p>
-   <p>ドライバーを特定の日付まで公開しない場合は、<strong>[次の予定日に公開する]</strong> を選択します。</p></td>
-   </tr>
-   <tr class="odd">
    <td><p><strong>Specify the partner (if any) that is allowed visibility into this request (この要求を確認できるパートナーを指定する (パートナーがいる場合))</strong></p></td>
    <td><p>ドライバーや出荷ラベルに対する読み取り専用アクセス許可を持つパートナーを入力します。 このフィールドは、パートナーの代わりにドライバーを公開する場合など、この出荷ラベルの要求をパートナーに通知する必要がある場合に使用します。 詳しくは、<a href="https://msdn.microsoft.com/library/windows/hardware/mt786462" data-raw-source="[Publish a driver on behalf of a partner](https://msdn.microsoft.com/library/windows/hardware/mt786462)">パートナーの代わりにドライバーを公開する方法に関するページ</a>をご覧ください。</p></td>
    </tr>
-   <tr class="even">
+   <tr class="odd">
    <td><p><strong>Driver promotions (ドライバーのプロモーション)</strong></p></td>
    <td><p>既定では、Windows Update でのドライバーはオプションとしてマークされます。 これは、デバイスのドライバーが既にインストールされていない場合のみ、ドライバーが配信されることを意味します。 これらのオプションでは、既定の動作を上書きできますが、Microsoft による追加の評価が必要です。</p>
    <p>動的更新で利用できるようにドライバーをプロモートするには、<strong>[Windows のアップグレード中にこのドライバーを自動的に配信しインストールする]</strong> を選択します。</p>

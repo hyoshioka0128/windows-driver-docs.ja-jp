@@ -3,16 +3,16 @@ Description: このセクションでは、USB 周辺機器の製造元からの
 title: Windows 用 USB デバイスの構築
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcb4d087ade56cf04d742123ccd5227b33e82390
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: eb488088da80399a6d7d1e3d82fa1a978a70f5c2
+ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711968"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051642"
 ---
 # <a name="building-usb-devices-for-windows"></a>Windows 用 USB デバイスの構築
 
-**概要**:
+## <a name="summary"></a>概要
 
 * USB デバイス ビルダー用のリソース
 

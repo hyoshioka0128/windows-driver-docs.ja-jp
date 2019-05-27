@@ -22,7 +22,7 @@ ms.locfileid: "57909203"
 
 ## <a name="step-2-buy-a-new-code-signing-certificate"></a>手順 2:新しいコード署名証明書を購入する
 
-承認された EV コード署名証明書がない場合は、次のいずれかの証明機関から証明書を購入できます。
+承認された EV コード署名証明書がない場合は、次のいずれかの証明機関から購入できます。
 
 ### <a name="extended-validation-code-signing-certificates"></a>拡張検証コード署名証明書
 
@@ -40,7 +40,7 @@ ms.locfileid: "57909203"
 
   1. **[DigiCert Code Signing Certificates for Sysdevs]** (Sysdevs 用 DigiCert コード署名証明書) ページで **[開始]** をクリックします。
 
-  2. **[DigiCert Order Form]** (DigiCert 注文フォーム) ページ (手順 1.) の **[コード署名]** セクションで、**[EV Code Signing Certificate]** (EV コード署名証明書) をクリックします。フォームの残りの情報を入力して、**[続行]** をクリックします。
+  2. **[DigiCert Order Form]** (DigiCert 注文フォーム) ページ (手順 1.) の **[コード署名]** セクションで、 **[EV Code Signing Certificate]** (EV コード署名証明書) をクリックします。フォームの残りの情報を入力して、 **[続行]** をクリックします。
 
   3. DigiCert によって提示されている証明書の購入手順に従います。
 
@@ -55,7 +55,7 @@ ms.locfileid: "57909203"
 
 - 新しいパートナー センター アカウントを設定する場合は、「[ハードウェア プログラムの登録](register-for-the-hardware-program.md)」の手順を実行します。
 
-- パートナー センター アカウントを既に設定しており、証明書を更新する必要がある場合は、「[コード署名証明書の追加または更新](https://msdn.microsoft.com/library/windows/hardware/update-a-code-signing-certificate)」の手順を実行します。
+- パートナー センター アカウントを既に設定しており、証明書を更新する必要がある場合は、[コード署名証明書の追加または更新](https://msdn.microsoft.com/library/windows/hardware/update-a-code-signing-certificate)に関する記事の手順を実行します。
 
 ## <a name="code-signing-faq"></a>コード署名 FAQ
 
@@ -71,7 +71,7 @@ ms.locfileid: "57909203"
 ### <a name="windows-10-desktop-attestation-signing"></a>Windows 10 デスクトップの構成証明署名
 
 - 構成証明署名を使ってダッシュボードで署名されたドライバーは、Windows 10 デスクトップ以降のバージョンの Windows でのみ動作します。
-- 構成証明署名されたドライバーは、Windows 10 デスクトップのみで動作し、Windows 7、Windows 8.1、Windows Server 2016 などのその他のバージョンの Windows では動作しません。
+- 構成証明署名されたドライバーは、Windows 10 デスクトップのみで動作し、Windows 7、Windows 8.1、Windows Server 2016 以降などのその他のバージョンの Windows では動作しません。
 - 構成証明署名は、Windows 10 デスクトップのカーネル モード ドライバーとユーザー モード ドライバーをサポートしています。
 
 ### <a name="windows-10-earlier-certificate-transition-signing"></a>Windows 10 以前での証明書移行署名

@@ -7,12 +7,12 @@ keywords:
 - WDK の Driver Verifier のエラー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 829f01e45313f91d82fbf6dda7ff4c593f7e304e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c7c76a18706ffebe56c74d189e4c9a3297c1c42
+ms.sourcegitcommit: 179f9119b6c7888ea18281f6d5d11d62ac45b58d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344838"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66035120"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>Driver Verifier のオプションとルール クラス
 
@@ -64,7 +64,7 @@ Windows 10、17627 以降のバージョン以降、次の構文と規則クラ�
 | DDI 準拠のチェック (追加) | 20 |
 | カーネル同期遅延ファジー テスト | 24 |
 | VM スイッチ検証 | 25 |
-| コードの整合性チェック | 22 |
+| コードの整合性チェック | 26 |
 
 ## <a name="optional-feature-and-rule-class-descriptions"></a>省略可能な機能とルール クラスの説明 
 

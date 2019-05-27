@@ -4,12 +4,12 @@ description: 仮想ポートでの受信フィルターの設定
 ms.assetid: F0137D59-1701-4DFC-BB30-27E477FC0706
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50fd4d697706b1d4dfc80878dfa079de80d31d11
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e4a148d029ee513459de3a3cabf5f58d3625056f
+ms.sourcegitcommit: 2fcfb772bb7f5ee565c9512a79444f57d58de9e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405282"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213093"
 ---
 # <a name="setting-a-receive-filter-on-a-virtual-port"></a>仮想ポートでの受信フィルターの設定
 
@@ -69,7 +69,7 @@ VPort を作成する方法の詳細については、次を参照してくだ�
 
 OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)新しいフィルターの識別子を持つ構造体。
 
-## <a name="using-the-ndisreceivefilterfieldmacheadervlanuntaggedorzero-flag"></a>NDIS を使用して\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0 フラグ
+## <a name="using-the-ndis_receive_filter_field_mac_header_vlan_untagged_or_zero-flag"></a>NDIS を使用して\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0 フラグ
 
 
 **フラグ**のメンバー、 [ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)構造体の指定受信フィルターに対して実行するアクション。 次の点を適用する、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0**フラグ。

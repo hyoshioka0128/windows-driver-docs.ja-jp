@@ -415,7 +415,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <td align="left"><p>パラメーター 4 の値は、パラメーター 2 の値によって異なります。 この一覧の各番号は、パラメーター 2 で同じの 16 進数値に対応します。</p>
 <ul>
 <li>0x01 :0</li>
-<li>0x02 :スタックのイベントの NET_PNP_EVENT_CODE します。 これらのコードの詳細については、次を参照してください <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568751" data-raw-source="[NET_PNP_EVENT](https://msdn.microsoft.com/library/windows/hardware/ff568751)">NET_PNP_EVENT</a></strong>.。</li>
+<li>0x02 :スタックのイベントの NET_PNP_EVENT_CODE します。 これらのコードの詳細については、次を参照してください <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568751" data-raw-source="[NET_PNP_EVENT](https://msdn.microsoft.com/library/windows/hardware/ff568751)">NET_PNP_EVENT</a></strong>。</li>
 <li>0x03 :スタックの表示の NDIS_STATUS コードです。 使用<strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">! ndiskd.help</a></strong>にデコードします。</li>
 <li>0x04 :0</li>
 <li>パターン:0</li>

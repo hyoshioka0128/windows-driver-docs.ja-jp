@@ -4,12 +4,12 @@ description: Windows 10 以降できます機能を拡張するドライバー �
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ecc7c5e7ba5a54900598a6c82f88d3790839cc9
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 83b5d99db73c0f2ba82cbc8cbda66875f58d79ac
+ms.sourcegitcommit: 1de5a464a908f77a1f68fcd52ac33852e9419589
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106371"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66220060"
 ---
 # <a name="using-an-extension-inf-file"></a>拡張 INF ファイルの使用
 
@@ -81,6 +81,9 @@ INF の拡張機能として、INF を定義する必要があるエントリを
 組織でのみ使用できますが、 **ExtensionID**所有します。  拡張機能 ID を登録する方法の詳細については、次を参照してください。 [Windows ハードウェア デベロッパー センター ダッシュ ボードでのハードウェアの提出を管理する](../dashboard/manage-your-hardware-submissions.md)します。     
 
 3.  拡張子 INF を更新する場合は、保持、 **ExtensionId**同じで、バージョン、または日付 (またはその両方) を指定のインクリメント、 [ **DriverVer** ](inf-driverver-directive.md)ディレクティブ。 指定された**ExtensionId**値には、PnP 選択最高 INF **DriverVer**。
+
+>[!NOTE]
+> INF 拡張機能が Windows 10 S を対象とする場合は、次を参照してください。 [S モード ドライバーの要件での Windows 10](https://docs.microsoft.com/windows-hardware/drivers/install/windows10sdriverrequirements)そのバージョンの Windows でドライバーのインストールについて。
 
 4.  [ **INF モデル セクション**](inf-models-section.md)、1 つまたは複数のハードウェアとターゲット デバイスのものと一致する互換性 Id を指定します。  これらのハードウェアと互換性のある Id が行う基本 INF のものと一致する必要がないことに注意してください。  通常、INF の拡張機能では、特定のドライバーの構成をさらに専門の目的で、基本の INF よりもより特定のハードウェア ID が一覧表示します。  たとえば、基本 INF は 2 つの部分の PCI ハードウェア ID を使用可能性がありますに拡張子 INF を次のように、4 部構成の PCI ハードウェア ID を指定します。
     

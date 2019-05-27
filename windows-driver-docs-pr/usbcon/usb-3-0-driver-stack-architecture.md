@@ -3,12 +3,12 @@ Description: このトピックでは、ユニバーサル シリアル バス (
 title: Windows の USB ホスト側ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d918c195446084dd181b2fe5482ea380e50e9a
-ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
+ms.openlocfilehash: 1389627291b454441dcbd5deeffbe60f6eb0675f
+ms.sourcegitcommit: 2fcfb772bb7f5ee565c9512a79444f57d58de9e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969594"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213094"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows の USB ホスト側ドライバー
 
@@ -37,7 +37,7 @@ Windows では、eHCI や oHCI、uHCI コント ローラーに接続されて�
 
 USB 3.0 スタックは、Windows 8 の新機能です。 Microsoft では、カーネル モード ドライバー フレームワーク (KMDF) インターフェイスを使用して、新しいドライバーを作成します。 KMDF ドライバー モデルは、複雑さを軽減し、安定性が向上します。
 
-### <a href="" id="usb-3-0-host-controller-driver-usbxhcisys"></a>USB 3.0 ホスト コント ローラー ドライバー (Usbxhci.sys)
+### <a href="" id="usb-30-host-controller-driver-usbxhcisys"></a>USB 3.0 ホスト コント ローラー ドライバー (Usbxhci.sys)
 
 XHCI ドライバーは、USB 3.0 ホスト コント ローラー ドライバーです。 XHCI ドライバーの役割は、転送要求のブロックを上位レイヤー ドライバーからのマッピングの転送を要求 MMIO レジスタと xHCI コント ローラーのハードウェアには、ホストのメモリ ベースのデータ構造体の初期化とに要求を送信しますハードウェア。 転送を完了するは、ドライバーは、ハードウェアから転送の完了イベントを処理し、ドライバー スタックの上位イベントを伝達します。 また、xHCI コント ローラー デバイスのスロットとエンドポイント コンテキストを制御します。
 

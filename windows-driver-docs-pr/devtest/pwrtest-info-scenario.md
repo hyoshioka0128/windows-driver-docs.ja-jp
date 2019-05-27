@@ -4,12 +4,12 @@ description: PwrTest 情報シナリオは、キャプチャし、さまざま�
 ms.assetid: 1d13d1dd-eb8d-434a-b994-e747a86f3457
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad34aa2d7ebb5e520be61fea1505fbe7a2fddfe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70d3d0534fe905a83648c6101631bab55169f347
+ms.sourcegitcommit: 179f9119b6c7888ea18281f6d5d11d62ac45b58d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382696"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66035118"
 ---
 # <a name="pwrtest-info-scenario"></a>PwrTest の情報シナリオ
 
@@ -74,11 +74,11 @@ pwrtest /info:option [/p:{n|a|*}] [/w:n]  [/?]
 
  
 
-<span id="_p_na_"></span><span id="_P_NA_"></span>**/p:**{*n*|**a**|**\\***}  
+<span id="_p_na_"></span><span id="_P_NA_"></span>**/p:**{*n*\|**、**\|**\\**\*}  
 
 論理プロセッサ数を指定します **/info:ppm/info: ppmidle**、または **/info:ppmperf**オプション。
 
-<span id="a_or__"></span><span id="A_OR__"></span>または \\*********  
+<span id="a_or__"></span><span id="A_OR__"></span>**ま**たは **\\**\\*  
 すべての論理プロセッサ (既定値) を指定します。
 
 <span id="_w_yn"></span><span id="_W_YN"></span>**/w:**{**y**|**n**}  

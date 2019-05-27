@@ -2,12 +2,12 @@
 title: Windows 10 S モードでのドライバー要件
 ms.date: 05/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9a2f9fce6b3146f0ad3c49f9a71fe8b02b541d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae2b25df5609f6d7dade0de6f2bf4f8b0859d55b
+ms.sourcegitcommit: fc42f2042aad57cf19fac798ff838bb064b1a4e6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375752"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66223227"
 ---
 # <a name="windows-10-in-s-mode-driver-requirements"></a>Windows 10 S モードでのドライバー要件
 
@@ -32,6 +32,15 @@ Windows 10 S モードでインストールするには、ドライバー パッ
 
 -   [ユニバーサル ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)
 -   [ユニバーサル ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers/develop/validating-universal-drivers)
+
+## <a name="installation"></a>インストール
+
+* ダッシュ ボード内のドライバーを提出するときに、S のコンプライアンス チェック ボックスをチェックする場合、ドライバーは、S モードと同じハードウェア ID を持つ、Windows 10 のデスクトップ バージョンでは、どちらも Windows 10 に配信されます。 これらのダッシュ ボードのオプションの詳細については、次を参照してください。[ドライバーを Windows Update に公開](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)します。
+* 別のドライバー パッケージが Windows 10 用のモードと同じ HWID を対象とする Windows 10 のデスクトップ バージョンで必要な場合は、大きい設定**DriverVer**内のエントリ、 [INF バージョン セクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)パッケージWindows 10 のデスクトップ バージョンを対象とするとします。  たとえば、設定することがあります、 **DriverVer**の`05/24/2019,10.0.1.0`S モードで Windows 10 をターゲットとするパッケージのと`05/24/2019,10.1.1.0`のデスクトップ バージョンの Windows 10 をターゲットとするパッケージ。
+
+## <a name="troubleshooting-installation"></a>インストールのトラブルシューティング
+
+両方の基本 INF と、拡張子 INF は INF が Windows 10 のデスクトップ バージョンにインストールする拡張機能のみのモードで Windows 10 をターゲットに場合、インストールされているドライバーが大きいランクのか、基本のドライバーが、適切なターゲットでは発行されていません。ing します。  (CHID 異なる場合があります)。    確認し、基本のドライバーとドライバーの拡張機能の出荷ラベルを比較します。
 
 ## <a name="blocked-inbox-components"></a>ブロックされた受信トレイのコンポーネント
 

@@ -4,12 +4,12 @@ description: 通信事業者のシナリオ
 ms.assetid: 68ebee74-9c34-489d-9a88-02493ac3b5fe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64726b5a3c57666465bc9b439b025c84e4c03f10
-ms.sourcegitcommit: e3cf7d69c13846f3e7ece2b6178ecec23b9854ae
+ms.openlocfilehash: c87117b077dd00c533d163696bedfaa58a9ab0b1
+ms.sourcegitcommit: 6152f92c5d2bc7c8db08dd0fdbc0146f88e8413b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940372"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66224500"
 ---
 # <a name="mobile-operator-scenarios"></a>通信事業者のシナリオ
 
@@ -17,6 +17,8 @@ ms.locfileid: "65940372"
 このセクションではドキュメントの使用に役立つ、さまざまな通信事業者のシナリオについて説明します。
 
 -   [モバイルの計画](mobile-plans.md)
+
+-   [Windows でモバイル オペレーター用の eSIM の管理](esim-management-on-windows-for-mobile-operators-and-oems.md)
 
 -   [作成とインターネットの共有エクスペリエンスの構成](creating-and-configuring-internet-sharing-experiences.md)
 
