@@ -19,7 +19,7 @@ NDK 機能、NDIS 問題有効または無効にする[OID\_NDK\_設定\_状態]
 ## <a name="determining-whether-ndk-functionality-can-be-enabled"></a>NDK 機能を有効にするかどうかを決定します。
 
 
- **\*NetworkDirect**キーワードは、ミニポート ドライバーの NDK 機能を有効にするかどうかを判断します。
+**\*NetworkDirect** キーワードは、ミニポート ドライバーの NDK 機能を有効にするかどうかを判断します。
 
 このキーワードの値が 1 ("Enabled") に設定されている場合は、NDK 機能を有効にできます。
 
