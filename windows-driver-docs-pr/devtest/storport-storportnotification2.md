@@ -29,11 +29,11 @@ ms.locfileid: "63386395"
 **BufferOverrunDetected**
 **BusChangeDetected**
 **LinkDown**
-**います *** 
+**LinkUp**
 **QueryTickCount**
 **RequestComplete**
-**RequestTimerCall** 
- **ResetDetected**
+**RequestTimerCall**
+**ResetDetected**
 **WMIEvent**
 **WMIReregister**
 
