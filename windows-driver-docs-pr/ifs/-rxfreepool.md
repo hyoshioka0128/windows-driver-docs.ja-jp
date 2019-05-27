@@ -61,7 +61,7 @@ VOID _RxFreePool(
 
 割り当てられたメモリ[  **\_RxAllocatePoolWithTag** ](-rxallocatepoolwithtag.md)を呼び出して解放する必要が **\_RxFreePool**します。
 
- **\_RxFreePool**ルーチンの呼び出し**ExFreePool**します。
+**\_RxFreePool** ルーチンの呼び出し **ExFreePool**します。
 
 <a name="requirements"></a>要件
 ------------
@@ -90,9 +90,9 @@ VOID _RxFreePool(
 ## <a name="see-also"></a>関連項目
 
 
-[**\_RxAllocatePoolWithTag**](-rxallocatepoolwithtag.md)
+[ **\_RxAllocatePoolWithTag**](-rxallocatepoolwithtag.md)
 
-[**\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
+[ **\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
 
  
 

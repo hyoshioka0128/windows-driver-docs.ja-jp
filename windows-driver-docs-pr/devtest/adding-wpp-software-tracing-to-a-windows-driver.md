@@ -51,7 +51,7 @@ ms.locfileid: "63332054"
             WPP_DEFINE_BIT(NameOfTraceFlag31) 
     ```
 
-    たとえば、次のコードが myDriverTraceGuid としてを使用して、 *GUIDFriendlyName*します。 なお*ControlGUID* 32 桁の 16 進数の GUID の標準の形式よりもわずかに異なる形式にします。 *ControlGUID*は 5 つのフィールドがありますが、コンマで区切られた、通常ハイフンと中かっこの代わりに、かっこで囲まれています。 たとえば、指定 (**(84bdb2e9、829e、41b3、b891、02f454bc2bd7)** {84bdb2e9-829e-41b3-b891-02f454bc2bd7} の代わりにします。
+    たとえば、次のコードが myDriverTraceGuid としてを使用して、 *GUIDFriendlyName*します。 なお*ControlGUID* 32 桁の 16 進数の GUID の標準の形式よりもわずかに異なる形式にします。 *ControlGUID*は 5 つのフィールドがありますが、コンマで区切られた、通常ハイフンと中かっこの代わりに、かっこで囲まれています。 たとえば、指定 ( **(84bdb2e9、829e、41b3、b891、02f454bc2bd7)** {84bdb2e9-829e-41b3-b891-02f454bc2bd7} の代わりにします。
 
     **例、WPP の\_コントロール\_GUID ステートメント**
 
@@ -99,9 +99,9 @@ ms.locfileid: "63332054"
 
 2.  トレース機能を有効にする WPP マクロを定義します。
 
-    使用する各トレース メッセージの関数は、対応するマクロのペアが必要です。 これらのマクロでは、トレース プロバイダーを識別し、メッセージを生成する条件を指定します。 通常、マクロのペアを定義する**WPP\_*&lt;条件&gt;*\_ロガー**と**WPP\_ *&lt;条件&gt;*\_有効**既定 WPP の観点から\_レベル\_有効] と [WPP\_レベル\_ロガー マクロ。
+    使用する各トレース メッセージの関数は、対応するマクロのペアが必要です。 これらのマクロでは、トレース プロバイダーを識別し、メッセージを生成する条件を指定します。 通常、マクロのペアを定義する**WPP\_ *&lt;条件&gt;* \_ロガー**と**WPP\_ *&lt;条件&gt;* \_有効**既定 WPP の観点から\_レベル\_有効] と [WPP\_レベル\_ロガー マクロ。
 
-使用する各トレース メッセージの関数は、対応するマクロのペアが必要です。 これらのマクロでは、トレース プロバイダーを識別し、メッセージを生成する条件を指定します。 通常、マクロのペアを定義する**WPP\_*&lt;条件&gt;*\_ロガー**と**WPP\_ *&lt;条件&gt;*\_有効**既定 WPP の観点から\_レベル\_有効] と [WPP\_レベル\_ロガー マクロ。
+使用する各トレース メッセージの関数は、対応するマクロのペアが必要です。 これらのマクロでは、トレース プロバイダーを識別し、メッセージを生成する条件を指定します。 通常、マクロのペアを定義する**WPP\_ *&lt;条件&gt;* \_ロガー**と**WPP\_ *&lt;条件&gt;* \_有効**既定 WPP の観点から\_レベル\_有効] と [WPP\_レベル\_ロガー マクロ。
 
 <table>
 <colgroup>
@@ -173,7 +173,7 @@ WPP マクロを定義する、*条件*トレース メッセージの関数を�
 //
 ```
 
-**注**変換したい場合[ **KdPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548100)トレース メッセージの関数には、いくつかの余分な手順を実行する必要があります。 比較して[ **KdPrint**](https://msdn.microsoft.com/library/windows/hardware/ff548092)、 **KdPrintEx**関数は 2 つの引数を受け取ります。 変換する、 **KdPrintEx**関数を定義する必要があります、 **WPP\_定義\_ビット**の*ComponentID*、カスタム定義と**WPP\_*&lt;条件&gt;*\_ロガー**と**WPP\_  *&lt;条件&gt;*\_有効**マクロ。 2 番目のパラメーターを**KdPrintEx**指定のレベルに似ていますが、[トレース レベル](trace-level.md)これらを再定義は必ずしも必要であるため、値します。
+**注**変換したい場合[ **KdPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548100)トレース メッセージの関数には、いくつかの余分な手順を実行する必要があります。 比較して[ **KdPrint**](https://msdn.microsoft.com/library/windows/hardware/ff548092)、 **KdPrintEx**関数は 2 つの引数を受け取ります。 変換する、 **KdPrintEx**関数を定義する必要があります、 **WPP\_定義\_ビット**の*ComponentID*、カスタム定義と**WPP\_ *&lt;条件&gt;* \_ロガー**と**WPP\_  *&lt;条件&gt;* \_有効**マクロ。 2 番目のパラメーターを**KdPrintEx**指定のレベルに似ていますが、[トレース レベル](trace-level.md)これらを再定義は必ずしも必要であるため、値します。
 
 
 
@@ -401,13 +401,13 @@ DllMain(
 <span id="using_dotracemessage"></span><span id="USING_DOTRACEMESSAGE"></span>
 **DoTraceMessage ステートメントを使用します。**
 
-1.  追加、 [ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)マクロ コード デバッグ印刷ルーチンの場合と同様にします。 **DoTraceMessage**マクロは 3 つのパラメーター: フラグ レベル (*TraceFlagName*)、トレース メッセージが書き込まれるときに、条件を定義する、*メッセージ*文字列省略可能な変数一覧。
+1.  追加、 [**DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918) マクロ コード デバッグ印刷ルーチンの場合と同様にします。 **DoTraceMessage**マクロは 3 つのパラメーター: フラグ レベル (*TraceFlagName*)、トレース メッセージが書き込まれるときに、条件を定義する、*メッセージ*文字列省略可能な変数一覧。
 
     ```
     DoTraceMessage(TraceFlagName, Message, [VariableList... ]
     ```
 
-    たとえば、次[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)ステートメントを含む関数の名前を書き込み、 **DoTraceMessage**ステートメントとトレース\_ドライバー フラグ、WPP で定義されている\_コントロール\_トレース セッションの GUID が有効になっています。
+    たとえば、次 [**DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918) ステートメントを含む関数の名前を書き込み、 **DoTraceMessage** ステートメントとトレース\_ドライバー フラグ、WPP で定義されている\_コントロール\_トレース セッションの GUID が有効になっています。
 
     ```ManagedCPlusPlus
          DoTraceMessage( TRACE_DRIVER, "\nEntering %!FUNC!" );
@@ -490,7 +490,7 @@ WDK のサポートを提供する、 [WPP プリプロセッサ](wpp-preprocess
 
 1.  ソリューション エクスプ ローラーでドライバーのプロジェクトを右クリックし、をクリックして**プロパティ。**
 2.  プロジェクトのプロパティ ページで次のようにクリックします。**構成プロパティ**クリック**WPP トレース**。
-3.  **全般**設定、**実行 WPP**オプションを**はい**。
+3.  **全般**設定、**実行 WPP**オプションを **はい** 。
 4.  **コマンドライン**トレースの動作をカスタマイズするその他のオプションを追加します。 追加することについては、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
 5.  プロジェクトまたはターゲットの構成とプラットフォームのためのソリューションをビルドします。 参照してください[WDK でドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
 
