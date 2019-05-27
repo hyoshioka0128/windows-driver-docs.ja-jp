@@ -378,6 +378,8 @@
           href: mobile-plans-launch.md
         - name: 付録
           href: mobile-plans-appendix.md
+    - name: 通信事業者および OEM の Windows での eSIM 管理
+      href: esim-management-on-windows-for-mobile-operators-and-oems.md
     - name: インターネット共有エクスペリエンスの作成と構成
       href: creating-and-configuring-internet-sharing-experiences.md
     - name: 複数の PDP コンテキストを使用したアプリの開発
