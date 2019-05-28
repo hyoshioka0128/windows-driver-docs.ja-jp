@@ -36,7 +36,7 @@ SignTool verify /v /pa /c CatalogFileName.cat DriverFileName
 
 -   *CatalogFileName.cat*ドライバー パッケージのカタログ ファイルの名前を指定します。
 
--    ***/C*** *CatalogFileName.cat*オプション ファイルのエントリを含むカタログ ファイルを指定*DriverFileName*します。**
+-   ***/C*** *CatalogFileName.cat*オプション フ*ァイルのエントリを含むカタログ* ファイルを指定*DriverFileName*します。
 
 -   *DriverFileName*カタログ ファイルにエントリがあるファイルの名前を示す*CatalogFileName.cat*します。
 
