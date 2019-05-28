@@ -1,6 +1,6 @@
 ---
-title: Windows ソケットは、アーキテクチャを直接します。
-description: Windows ソケットは、アーキテクチャを直接します。
+title: Windows ソケット ダイレクト アーキテクチャ
+description: Windows ソケット ダイレクト アーキテクチャ
 ms.assetid: 2f6ac4a7-76fe-45b4-8b5b-3a5f1d5c0553
 keywords:
 - Windows ソケットは、WDK、アーキテクチャを直接します。
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be57f40aeb1111a0e4ccb8f7254128a38b383cde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335443"
 ---
-# <a name="windows-sockets-direct-architecture"></a>Windows ソケットは、アーキテクチャを直接します。
+# <a name="windows-sockets-direct-architecture"></a>Windows ソケット ダイレクト アーキテクチャ
 
 
 
