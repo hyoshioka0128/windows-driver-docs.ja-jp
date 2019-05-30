@@ -7,12 +7,12 @@ keywords:
 - WDK KMDF、フレームワークの作業項目キュー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab60d2b4898e02bea4557196b228fd660854245f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c73fcb2496a8a4843b502b49b6d38743c9a87fda
+ms.sourcegitcommit: 9580c6e32d820e1c6672b2b788c4fabdefa2910c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327256"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308459"
 ---
 # <a name="using-framework-work-items"></a>フレームワーク作業項目の使用
 
@@ -94,7 +94,13 @@ A*作業項目*でドライバーを実行するタスクは、 [ *EvtWorkItem* 
 
 いくつかのドライバーを呼び出す必要があります[ **WdfWorkItemFlush** ](https://msdn.microsoft.com/library/windows/hardware/ff551204)を作業項目キューから作業項目をフラッシュします。 使用例の**WdfWorkItemFlush**メソッドのリファレンス ページを参照してください。
 
- 
+ドライバーを呼び出す場合[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)未完了の作業アイテムでは、結果は、作業項目の状態に依存します。
+
+|作業項目の状態|結果|
+|-|-|
+|エンキューされませんが、作成|作業項目がすぐにクリーンアップされます。|
+|エンキュー|呼び出す[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)作業項目をクリーンアップし、作業項目の実行が完了するまでの待機|
+|実行します。|ドライバーを呼び出す場合[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)内から[ *EvtWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem) (同じスレッド) で[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)が直ちに返されます。 1 回[ *EvtWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem)が終了したら、作業項目は消去されます。  それ以外の場合、 [ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) EvtWorkItem を完了するまで待機します。|
 
  
 

@@ -90,9 +90,9 @@ VOID _RxFreePool(
 ## <a name="see-also"></a>関連項目
 
 
-[ **\_RxAllocatePoolWithTag**](-rxallocatepoolwithtag.md)
+**[\_RxAllocatePoolWithTag](-rxallocatepoolwithtag.md)**
 
-[ **\_RxCheckMemoryBlock**](-rxcheckmemoryblock.md)
+**[\_RxCheckMemoryBlock](-rxcheckmemoryblock.md)**
 
  
 

@@ -42,7 +42,7 @@ TEST_METHOD_PROPERTY(L"DataSource[@TestCaseLevel='High']", L"Pict:FullDataSet.mo
 ## <a name="span-iddefaultspanspan-iddefaultspandefault-values"></a><span id="default"></span><span id="DEFAULT"></span>既定値
 
 
-特定のメタデータ名の他の条件が true に評価されるない場合にのみ、メタデータを追加する場合とメタデータの名前を追加できます*\[既定\]* します。
+特定のメタデータ名の他の条件が true に評価されるない場合にのみ、メタデータを追加する場合とメタデータの名前を追加できます *\[既定\]* します。
 
 ```cpp
 TEST_METHOD_PROPERTY(L"DataSource", L"Pict:MyTest.model")

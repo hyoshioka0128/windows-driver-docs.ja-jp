@@ -25,7 +25,7 @@ ms.locfileid: "63378952"
 
 バスのリセット操作には、デバイスの拡張機能や、バス上のデバイスの論理ユニットの拡張機能内で管理状態をクリーンアップするミニポート ドライバーを必要があります。 *HwScsiResetBus*呼び出すことにより、未処理の要求を完了する必要があります[ **ScsiPortCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff564608)で、 **SrbStatus**値 SRB\_状態\_BUS\_リセットまたは個々 のされる Srb [ **ScsiPortNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff564657)この状態値。
 
-バスのリセット要求と、未処理の要求を完了すると、ミニポート ドライバーを呼び出す必要があります**ScsiPortNotification** (これがまだ行っていない) 場合に、* NotificationType \* **NextRequest**、または **NextLuRequest** HBA がタグ付けされたキューまたは論理ユニットごとの複数の要求をサポートしている場合。
+バスのリセット要求と、未処理の要求を完了すると、ミニポート ドライバーを呼び出す必要があります**ScsiPortNotification** (これがまだ行っていない) 場合に、*NotificationType* **NextRequest**、または **NextLuRequest** HBA がタグ付けされたキューまたは論理ユニットごとの複数の要求をサポートしている場合。
 
 オペレーティング システム - 特定のポートのドライバーがミニポート ドライバーに代わって SCSI バスのリセットの遅延を管理するに注意してください。
 
