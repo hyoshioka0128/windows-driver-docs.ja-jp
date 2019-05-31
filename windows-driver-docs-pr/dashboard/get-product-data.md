@@ -1,17 +1,15 @@
 ---
 title: 製品データの取得
 description: Microsoft ハードウェア API の以下のメソッドは、デベロッパー センター アカウントに登録されているハードウェア製品のデータを取得します。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b1c3c7b756f570bd1775d874988cf38b6827f092
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 1d0bec1665bc8cd7883502ceb7e5fa6f2916d308
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518960"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400877"
 ---
 # <a name="get-product-data"></a>製品データの取得
 
@@ -89,7 +87,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 |:--|:--|:--|
 | ID | Long | 製品のプライベート製品 ID |
 | sharedProductId | Long | 製品の共有製品 ID |
-| Links | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
+| リンク | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
 | isCommitted | ブール値 | 製品に少なくとも 1 つのコミットされた申請があるかどうかを示します  |
 | isExtensionInf | ブール値 | (非推奨) 製品が拡張ドライバーかどうかを示します。 このフィールドは非推奨です。今後は使用しないでください。 isExtensionInf は申請レベルのプロパティに移動されました。 |
 | deviceMetadataIds | GUID の配列 | デバイス メタデータの提出をドライバーにマップする GUID |
@@ -102,7 +100,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | requestedSignatures | 文字列の配列 | 製品の認定対象となるオペレーティング システムの署名の一覧です。 すべてのオペレーティング システムの一覧については、「[OS コードの一覧](#list-of-operating-system-codes)」を参照してください。  |
 | additionalAttributes | オブジェクト | 詳細については、「[その他の属性オブジェクト](#additional-attribute-object)」を参照してください。 |
 | testHarness | string | 提出されたパッケージの種類。 設定可能な値は、次のとおりです。 <ul><li>hlk<li>hck</li><li>attestation</li><li>notset</li></ul>|
-| announcementDate | datetime | Windows Server Catalog に製品が含められる日付 |
+| announcementDate | DATETIME | Windows Server Catalog に製品が含められる日付 |
 
 ### <a name="submission-resource"></a>申請のリソース
 
@@ -139,7 +137,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 |:--|:--|:--|
 | ID | long | 申請 ID |
 | Productid | long | この申請が関連付けられているプライベート製品 ID |
-| Links | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
+| リンク | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
 | 名前 | string | 申請名 |
 | 種類 | string | 申請が最初の申請であるかまたは派生申請であるかを示します。 設定可能な値は、次のとおりです。 <ul><li>initial</li><li>derived</li></ul> |
 | isExtensionInf | ブール値 | 申請が拡張ドライバーかどうかを示します |
@@ -200,7 +198,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Value | 種類 | 説明 |
 |:--|:--|:--|
-| Items | array | ダウンロードの種類と、それぞれの URL の配列です。 詳細については、以下を参照してください。 |
+| 項目 | array | ダウンロードの種類と、それぞれの URL の配列です。 詳細については、以下を参照してください。 |
 | 種類 | string | ダウンロード可能なパッケージの種類。 設定可能な値は、次のとおりです。<ul><li>“initialPackage” – ユーザーがアップロードしたパッケージ (新しい申請の場合、パッケージのアップロードに使用する SAS URI をポイントします)</li><li>“derivedPackage” – 派生申請のためのシェル</li><li>“signedPackage” – Microsoft によって署名されているパッケージ</li><li>“certificationReport” – 署名された製品の認定レポート</li></ul>|
 | Messages | array | ダウンロード可能なファイルについてのメッセージを提供する文字列の配列 |
 

@@ -1,17 +1,15 @@
 ---
 title: 新しい製品の作成
 description: Microsoft ハードウェア API の以下のメソッドを使用して、新しいハードウェア製品を作成します。
-author: balapv
-ms.author: balapv
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cadfdb9b109e0e651e6213a6fa668f1929a26eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: c2670f07b4b726167c21a4299553a54fae81184a
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518566"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400872"
 ---
 # <a name="create-a-new-product"></a>新しい製品の作成
 

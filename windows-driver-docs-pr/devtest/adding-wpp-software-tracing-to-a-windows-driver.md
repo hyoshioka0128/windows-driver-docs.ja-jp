@@ -4,12 +4,12 @@ description: カーネル モード ドライバーなど、ユーザー モー�
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0755dd805032549faaca00bfb4185fac858ffc5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d1b0455babda8c17dd18757aa68e6a771ccda64
+ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332054"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394274"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>Windows ドライバーへの WPP ソフトウェア トレースの追加
 
@@ -399,6 +399,7 @@ DllMain(
 
 
 <span id="using_dotracemessage"></span><span id="USING_DOTRACEMESSAGE"></span>
+
 **DoTraceMessage ステートメントを使用します。**
 
 1.  追加、 [**DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918) マクロ コード デバッグ印刷ルーチンの場合と同様にします。 **DoTraceMessage**マクロは 3 つのパラメーター: フラグ レベル (*TraceFlagName*)、トレース メッセージが書き込まれるときに、条件を定義する、*メッセージ*文字列省略可能な変数一覧。
@@ -490,7 +491,7 @@ WDK のサポートを提供する、 [WPP プリプロセッサ](wpp-preprocess
 
 1.  ソリューション エクスプ ローラーでドライバーのプロジェクトを右クリックし、をクリックして**プロパティ。**
 2.  プロジェクトのプロパティ ページで次のようにクリックします。**構成プロパティ**クリック**WPP トレース**。
-3.  **全般**設定、**実行 WPP**オプションを **はい** 。
+3.  **全般**設定、**実行 WPP**オプションを**はい**。
 4.  **コマンドライン**トレースの動作をカスタマイズするその他のオプションを追加します。 追加することについては、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
 5.  プロジェクトまたはターゲットの構成とプラットフォームのためのソリューションをビルドします。 参照してください[WDK でドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
 

@@ -1,17 +1,15 @@
 ---
 title: 製品申請の管理
 description: 製品のハードウェア ダッシュボード申請を管理し、Microsoft による署名を得ます
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: edc9890d75162c3f677ca4e7e5d87e14154c5f56
-ms.sourcegitcommit: 84db0d274b32d5f066735cf61f4a6f155cc3f024
+ms.openlocfilehash: d6438ed3d56dceea65e90d42753aa4954d90f3b2
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66185129"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400870"
 ---
 # <a name="manage-product-submissions"></a>製品申請の管理
 

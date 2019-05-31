@@ -4,7 +4,7 @@ description: Dx コマンドでは、NatVis の拡張機能モデルを使用し
 ms.assetid: 93047911-5195-4FB9-A015-5349084EDC0A
 keywords:
 - dx (表示デバッガー オブジェクト モデルの式) Windows のデバッグ
-ms.date: 01/18/2019
+ms.date: 05/28/2019
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 619990863697246463e2df375700ba15c15c1c5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65d63e3469b6e18f58eebcbbe245f81364156828
+ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339756"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394278"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx (デバッガー オブジェクト モデル式の表示)
 
@@ -47,10 +47,10 @@ dx [{-?}|{-h}]
 -   左クリックは、その列を受け取り、独自のテーブルに分解することです。 元の行と展開された列の子を参照してください。
 -   右クリックでは、"展開に Grid"列を取得し、適切なほとんどの列として、現在のテーブルに再度追加提供します。
 
-<span id="_______-gc________"></span><span id="_______-GC________"></span> **-gc \#**   
+<span id="_______-gc________"></span><span id="_______-GC________"></span> **-gc \#**    
 グリッドとして表示し、グリッド セルのサイズを指定した数に制限 (\#) 文字。
 
-<span id="_______-c________"></span><span id="_______-C________"></span> **-c \#**   
+<span id="_______-c________"></span><span id="_______-C________"></span> **-c \#**    
 コンテナーの継続が表示されます (スキップ\#コンテナーの要素)。このオプションは、出力のカスタム自動化のシナリオで通常使用され、提供を「...」一覧の下部にある要素を継続します。
 
 <span id="_______-n______"></span><span id="_______-N______"></span> **-n**   
@@ -60,9 +60,9 @@ dx [{-?}|{-h}]
 メソッドとその他の非標準のオブジェクトを含む詳細な情報を表示します。
 
 <span id="_______-r_______"></span><span id="_______-R_______"></span> **-r**<em>\#</em>   
-再帰的に表示 (フィールド) を最大サブタイプ*\#* レベル。 場合*\#* は既定値は、1 つの再帰レベルを指定しません。
+再帰的に表示 (フィールド) を最大サブタイプ *\#* レベル。 場合 *\#* は既定値は、1 つの再帰レベルを指定しません。
 
-<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span> **\[&lt;、FormatSpecifier&gt;\]**   
+<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span> **\[&lt;、FormatSpecifier&gt;\]**    
 既定のレンダリングを変更するのにには、次の書式指定子のいずれかを使用します。
 
 |                         |                                                                                          |
@@ -84,13 +84,14 @@ dx [{-?}|{-h}]
 | 、\[&lt;式&gt;\] | 式と、ポインター/配列/コンテナーの長さを指定&lt;式&gt;           |
 | 、nd                     | オブジェクトの派生 (runtype) 型が見つからない。 静的な値のみを表示します。          |
 
-
-
-<span id="_______dx_-_______"></span><span id="_______DX_-_______"></span> **dx** {**-?**}   
+<span id="_______dx_-_______"></span><span id="_______DX_-_______"></span> **dx** { **-?** }   
 コマンド ライン ヘルプを表示します。
 
-<span id="_______dx_-h______"></span><span id="_______DX_-H______"></span> **dx** {**-h**}   
+<span id="_______dx_-h______"></span><span id="_______DX_-H______"></span> **dx** { **-h**}   
 デバッガーで使用可能なオブジェクトのヘルプを表示します。
+
+<span id="_______dx_-id______"></span><span id="_______DX_-ID______"></span> **dx** { **-id**}   
+Microsoft 内部使用のみです。 コマンドの出力でデータ モデルのリンクをたどるために使用します。
 
 ## <a name="command-line-usage-example"></a>コマンドラインの使用例
 

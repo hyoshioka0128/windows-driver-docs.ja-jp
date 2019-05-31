@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 562064e1ce3ad47671f1e7956287a049818ee1ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 262eddf19ad6b6ee154ac84569f4e60858459b6f
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361525"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400869"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>バグ チェック 0x3B:システム\_サービス\_例外
 
@@ -81,7 +81,7 @@ ms.locfileid: "63361525"
 
 **この問題をデバッグします。** 
 
-使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。 また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。 使用して、 [u、ub、uu (Unassemble)]()コマンドをアセンブリのプログラム コードを参照してください。
+使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。 また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。 使用して、 [u、ub、uu (Unassemble)]()コマンドをアセンブリのプログラム コードを参照してください。
 
 
 [ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
@@ -103,7 +103,7 @@ Arg4: 0000000000000000, zero.
 
 [WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
-その名前がブルー スクリーンに印刷し、場所のメモリに格納されている場合は、エラーのドライバーを識別できます (PUNICODE\_文字列) **KiBugCheckDriver**します。 Dx のデバッガー コマンドを使用するには、これを表示する`dx KiBugCheckDriver`します。
+その名前がブルー スクリーンに印刷し、場所のメモリに格納されている場合は、エラーのドライバーを識別できます (PUNICODE\_文字列) **KiBugCheckDriver**します。 デバッガーを使用する[ **dx (表示デバッガー オブジェクト モデル表現)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-) - これを表示するコマンドを`dx KiBugCheckDriver`します。
 
 使用して、 [! エラー](-error.md)パラメーター 1 で、例外コードに関する情報を表示する拡張機能。
 

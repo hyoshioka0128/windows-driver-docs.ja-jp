@@ -4,7 +4,7 @@ description: Bp、bu、bm コマンドでは、1 つまたは複数のソフト�
 ms.assetid: 77d095fe-06d1-4842-ad49-8420ab4d5d72
 keywords:
 - bp、bu、bm (ブレークポイントの設定) の Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 05/28/2019
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 80efb09843561eb4b3d4bf360fc79980f1053346
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e65f7a39b444c6c0c1a73ad7acd5b4d889fc39ee
+ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357626"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394276"
 ---
 # <a name="bp-bu-bm-set-breakpoint"></a>bp、bu、bm (ブレークポイントの設定)
 
@@ -53,39 +53,60 @@ bm [Options] SymbolPattern [Passes] ["CommandString"]
 
 使用すると*ID*でコマンドを入力しないで、コマンドの間にスペース (**bp**または**bu**) と ID 番号。
 
-*ID*パラメーターは省略可能な常にします。 指定しない場合*ID*デバッガーは、最初のブレークポイントの使用可能な数値を使用します。 カーネル モードでは、32 個のブレークポイントを設定することができます。 ユーザー モードでは、任意の数のブレークポイントを設定できます。 どちらの場合の値に制限はありません、 *ID*数。 囲んだ場合*ID*角かっこで囲んで (**\[\]**)、 *ID*任意の式を含めることができます。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
+*ID*パラメーターは省略可能な常にします。 指定しない場合*ID*デバッガーは、最初のブレークポイントの使用可能な数値を使用します。 カーネル モードでは、32 個のブレークポイントを設定することができます。 ユーザー モードでは、任意の数のブレークポイントを設定できます。 どちらの場合の値に制限はありません、 *ID*数。 囲んだ場合*ID*角かっこで囲んで ( **\[\]** )、 *ID*任意の式を含めることができます。 構文の詳細については、次を参照してください。[数値式の構文](numerical-expression-syntax.md)します。
 
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
 ブレークポイントのオプションを指定します。 とおりを除く任意の数の次のオプションを指定できます。
 
-<span id="_1"></span>**/1**  
+<span id="_1"></span> **/1**  
 「ワンショット」のブレークポイントを作成します。 このブレークポイントがトリガーされた後、ブレークポイントの一覧から削除されます。
 
-<span id="_f_PredNum"></span><span id="_f_prednum"></span><span id="_F_PREDNUM"></span>**/f** *PredNum*  
+<span id="_f_PredNum"></span><span id="_f_prednum"></span><span id="_F_PREDNUM"></span> **/f** *PredNum*  
 (Itanium ベースのみ、ユーザー モードのみ)述語の数を指定します。 ブレークポイントは、対応する述語レジスタで実行されます。 (たとえば、 **bp/f 4** *アドレス*では、実行するブレークポイントを設定、 **p4**レジスタの述語)。
 
-<span id="_p_EProcess"></span><span id="_p_eprocess"></span><span id="_P_EPROCESS"></span>**/p** *」プロセス*  
+<span id="_p_EProcess"></span><span id="_p_eprocess"></span><span id="_P_EPROCESS"></span> **/p** *」プロセス*  
 (カーネル モードのみ)このブレークポイントに関連付けられているプロセスを指定します。 *」プロセス*」プロセスの構造、PID ではないの実際のアドレスにする必要があります。 このプロセスのコンテキストで検出された場合にのみ、ブレークポイントがトリガーされます。
 
-<span id="_t_EThread"></span><span id="_t_ethread"></span><span id="_T_ETHREAD"></span>**/t** *EThread*  
+<span id="_t_EThread"></span><span id="_t_ethread"></span><span id="_T_ETHREAD"></span> **/t** *EThread*  
 (カーネル モードのみ)このブレークポイントに関連付けられているスレッドを指定します。 *EThread* ETHREAD 構造体、スレッド ID ではないの実際のアドレスにする必要があります これがこのスレッドのコンテキストで発生した場合にのみ、ブレークポイントがトリガーされます。 使用する場合 **/p** *」プロセス*と **/t** *EThread*、任意の順序で入力することができます。
 
-<span id="_c_MaxCallStackDepth"></span><span id="_c_maxcallstackdepth"></span><span id="_C_MAXCALLSTACKDEPTH"></span>**/c** *MaxCallStackDepth*  
+<span id="_c_MaxCallStackDepth"></span><span id="_c_maxcallstackdepth"></span><span id="_C_MAXCALLSTACKDEPTH"></span> **/c** *MaxCallStackDepth*  
 呼び出しスタックの深さが場合にのみ、ブレークポイントがアクティブにより小さい*MaxCallStackDepth*します。 このオプションと共には使用できません **/C**します。
 
-<span id="_C_MinCallStackDepth"></span><span id="_c_mincallstackdepth"></span><span id="_C_MINCALLSTACKDEPTH"></span>**/C** *MinCallStackDepth*  
+<span id="_C_MinCallStackDepth"></span><span id="_c_mincallstackdepth"></span><span id="_C_MINCALLSTACKDEPTH"></span> **/C** *MinCallStackDepth*  
 呼び出しスタックの深さがより大きい場合にのみ、ブレークポイントがアクティブに*MinCallStackDepth*します。 このオプションと共には使用できません **/c**します。
 
-<span id="_a"></span><span id="_A"></span>**/a**  
+<span id="_a"></span><span id="_A"></span> **/a**  
 (の**bm**のみ) がデータ領域またはコードの領域であるかどうか、指定された場所のすべてのブレークポイントを設定します。 プログラムの障害はデータのブレークポイントが原因で発生するため、安全で認識されている場所でのみこのオプションを使用します。
 
-<span id="_d"></span><span id="_D"></span>**/d**  
+<span id="_d"></span><span id="_D"></span> **/d**  
 (の**bm**のみ)、ブレークポイントの位置をアドレスに変換します。 そのため、コードが移動された場合、ブレークポイントのままに従って設定されているのではなく、同じアドレス*SymbolPattern*します。 使用 **/d**モジュールがロードまたはアンロードされたときに、ブレークポイントに変更を再評価を回避するためにします。
 
-<span id="__"></span>**/(**  
+<span id="__"></span> **/(**  
 (の**bm**のみ) が含まれますパラメーター一覧については、記号の文字列を*SymbolString*を定義します。
 
 この機能では、名前が異なるパラメーター リストが異なるオーバー ロードされた関数にブレークポイントを設定することができます。 たとえば、bm/(myFunc 両方にブレークポイントを設定する**myFunc(int a)** と**myFunc(char a)** します。 なし"/("、ブレークポイントが設定されている**myFunc**が示されませんので失敗**myFunc**関数のブレークポイントが対象としています。
+
+<span id="_______dxObjectExpression______"></span><span id="_______dxObjectExpression______"></span><span id="_______DXOBJECTEXPRESSION______"></span> **/w dx オブジェクト式**dx オブジェクト式によって返されるブール値に基づく条件付きブレークポイントを設定します。 引数が true に評価されるデータ モデル (dx) 式 (– 条件に一致する中断) または false (– 条件と一致しませんは中断されません)。
+
+この例では、[localvariable] の値に基づく条件付きブレークポイントを設定します。
+
+```dbgcmd
+bp /w "localVariable == 4" mymodule!myfunction
+```
+
+この例では、JavaScript を使用してブレークポイントを設定する方法を示します。
+
+```dbgcmd
+bp /w "@$scriptContents.myFunc(localVariable)" @rip
+```
+
+デバッガー オブジェクトの詳細については、次を参照してください。 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)します。
+
+> [!NOTE] 
+> /W オプションは、実験的なデバッガーの最新バージョンが必要です。 
+
+
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
 ブレークポイントが設定されている命令の最初のバイトを指定します。 省略した場合*アドレス*、現在の命令ポインターを使用します。 構文の詳細については、次を参照してください。[アドレスとアドレス範囲の構文](address-and-address-range-syntax.md)します。
@@ -95,14 +116,14 @@ bm [Options] SymbolPattern [Passes] ["CommandString"]
 
 既定では、ブレークポイントがアクティブな初めてのアプリケーションがブレークポイントの位置を含むコードを実行します。 この既定のような状況の値に相当**1**の*パス*します。 アプリケーションのコードを少なくとも 1 回実行した後にのみ、ブレークポイントを有効にするには、値を入力します。 **2**以上。 たとえばの値**2** 2 回目のコードが実行される、ブレークポイントがアクティブになります。
 
-このパラメーターは、コードを各パスでデクリメントするカウンターを作成します。 初期と現在の値を表示する、*パス*カウンターを使用して[ **bl (ブレークポイントの一覧)**](bl--breakpoint-list-.md)します。
+このパラメーターは、コードを各パスでデクリメントするカウンターを作成します。 初期と現在の値を表示する、*パス*カウンターを使用して[ **bl (ブレークポイントの一覧)** ](bl--breakpoint-list-.md)します。
 
 *パス*カウンターは、デクリメントの場合にのみアプリケーション*実行*への応答で、ブレークポイント以降を[ **g (移動)** ](g--go-.md)コマンド。 コードのステップまたはそれより前にトレースする場合は、カウンターはデクリメントされません。 ときに、*パス*カウンターに達すると**1**をクリアし、ブレークポイントをリセットすることによってのみ変更できます。
 
 <span id="_______CommandString______"></span><span id="_______commandstring______"></span><span id="_______COMMANDSTRING______"></span> *CommandString*   
 ブレークポイントがあるたびに実行されるコマンドの一覧に発生した指定した回数を指定します。 囲む必要があります、*クラスヒント*パラメーターを引用符で囲んで指定します。 セミコロンを使用して、複数のコマンドを区切ります。
 
-デバッガーでのコマンド*クラスヒント*パラメーターを含めることができます。 標準 C コントロール文字を使用することができます (など **\\n**と **\\"**)。 引用符を 2 番目のレベルに格納されているセミコロン (**\\"**) 文字列を引用符で囲まれた、埋め込みの一部として解釈されます。
+デバッガーでのコマンド*クラスヒント*パラメーターを含めることができます。 標準 C コントロール文字を使用することができます (など **\\n**と **\\"** )。 引用符を 2 番目のレベルに格納されているセミコロン ( **\\"** ) 文字列を引用符で囲まれた、埋め込みの一部として解釈されます。
 
 *クラスヒント*アプリケーションは、ブレークポイントに達した場合にのみコマンドが実行される*実行*への応答を[ **g (移動)** ](g--go-.md)コマンド。 コードのステップまたはこのポイント以降をトレースする場合は、コマンドは実行されません。
 
@@ -110,6 +131,8 @@ bm [Options] SymbolPattern [Passes] ["CommandString"]
 
 <span id="_______SymbolPattern______"></span><span id="_______symbolpattern______"></span><span id="_______SYMBOLPATTERN______"></span> *SymbolPattern*   
 パターンを指定します。 デバッガーは、既存のシンボルには、このパターンに一致して、パターン一致をすべてにブレークポイントを設定しようとします。 *SymbolPattern*さまざまなワイルドカード文字と指定子を含めることができます。 この構文の詳細については、次を参照してください。[文字列のワイルドカード構文](string-wildcard-syntax.md)します。 照合が大文字小文字を区別し、1 つの先頭のアンダー スコアがないため、これらの文字は、シンボルに一致するが、(\_) 任意の分量の先頭にアンダー スコアを表します。
+
+
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
 
