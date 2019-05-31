@@ -1,6 +1,6 @@
 ---
-title: WavePci 待機時間
-description: WavePci 待機時間
+title: WavePci 遅延
+description: WavePci 遅延
 ms.assetid: 6d83c015-cf8f-40b4-bf28-de865a5bfe2d
 keywords:
 - WavePci 待機時間の WDK オーディオ
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63328495"
 ---
-# <a name="wavepci-latency"></a>WavePci 待機時間
+# <a name="wavepci-latency"></a>WavePci 遅延
 
 
 ## <span id="wavepci_latency"></span><span id="WAVEPCI_LATENCY"></span>

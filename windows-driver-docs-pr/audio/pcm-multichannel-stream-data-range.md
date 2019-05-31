@@ -1,6 +1,6 @@
 ---
-title: PCM マルチ チャネル ストリームのデータ範囲
-description: PCM マルチ チャネル ストリームのデータ範囲
+title: PCM マルチチャンネル ストリームのデータ範囲
+description: PCM マルチチャンネル ストリームのデータ範囲
 ms.assetid: b7e1a5d9-fb8a-46ed-932b-d667e470d4ab
 keywords:
 - PCM マルチ チャネル ストリームのデータ範囲 WDK
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63332232"
 ---
-# <a name="pcm-multichannel-stream-data-range"></a>PCM マルチ チャネル ストリームのデータ範囲
+# <a name="pcm-multichannel-stream-data-range"></a>PCM マルチチャンネル ストリームのデータ範囲
 
 
 ## <span id="pcm_multichannel_stream_data_range"></span><span id="PCM_MULTICHANNEL_STREAM_DATA_RANGE"></span>

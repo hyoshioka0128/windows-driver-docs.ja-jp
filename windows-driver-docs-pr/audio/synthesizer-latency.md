@@ -1,6 +1,6 @@
 ---
-title: シンセサイザーの待機時間
-description: シンセサイザーの待機時間
+title: シンセサイザーの遅延
+description: シンセサイザーの遅延
 ms.assetid: a3134024-77b9-463b-959b-3c910f83014d
 keywords:
 - シンセサイザー WDK のオーディオ、待機時間
@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63328566"
 ---
-# <a name="synthesizer-latency"></a>シンセサイザーの待機時間
+# <a name="synthesizer-latency"></a>シンセサイザーの遅延
 
 
 ## <span id="synthesizer_latency"></span><span id="SYNTHESIZER_LATENCY"></span>

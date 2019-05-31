@@ -93,7 +93,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | deviceMetadataIds | GUID の配列 | デバイス メタデータの提出をドライバーにマップする GUID |
 | deviceType | String | デバイスの種類を示します。 設定可能な値は、次のとおりです。<ul><li>“internal” - 内部コンポーネント、システムの一部として PC 内部に接続されるデバイス</li><li>“external” - 外部コンポーネント、PC に接続される外部デバイス (周辺機器)</li><li>“internalExternal” - その両方、内部的に (PC 内で) 接続できるほか、外部的にも (周辺機器として) 接続できるデバイス</li><li>“notSet” – データが存在しない</li></ul>|
 | isTestSign | ブール値 | 製品がテスト署名されたドライバーかどうかを示します。 ドライバー パッケージのテスト署名の詳細については、「[WHQL Test Signature Program](https://docs.microsoft.com/windows-hardware/drivers/install/whql-test-signature-program)」(WHQL テスト署名プログラム) を参照してください。  |
-| isFlightSign | ブール値 | 製品がフライト署名されたドライバーかどうかを示します。 フライト署名されたドライバーは、Windows Update を通じて公開できるテスト ドライバーです。 これらは、Windows Insider Program 用にサインアップしているコンピューターにのみ公開/インストールできます。 これらは、セキュア ブートを無効にすることなく、コンピューターにインストールできます。 これらは、Windows Insider Program の一部ではない、製品版のコンピューターにはインストールできません。|
+| isFlightSign | ブール値 | 製品がフライト署名されたドライバーかどうかを示します。 フライト署名されたドライバーは、Windows Update を通じて公開できるテスト ドライバーです。 これらは、Windows Insider Program 用にサインアップしているコンピューターにのみ公開/インストールできます。 これらは、セキュア ブートを無効にすることなく、コンピューターにインストールできます。 これらは、Windows Insider Program に含まれない小売向けコンピューターにはインストールできません。|
 | marketingNames | 文字列の配列 | 製品のマーケティング名またはエイリアス |
 | productName | String | 作成中に指定されたドライバーの名前 |
 | selectedProductTypes | ディクショナリ  | キーと値のペア (両方とも文字列)。 <ul><li>**Key** はオペレーティング システムのファミリー コードを表します。 オペレーティング システムのファミリのコードの一覧については、「[OS ファミリ コードの一覧](#list-of-operating-system-family-codes)」を参照してください。</li><li>**Value** は製品の種類を表します。 製品の種類の一覧については、「[製品の種類](#list-of-product-types)」を参照してください。</li></ul>|

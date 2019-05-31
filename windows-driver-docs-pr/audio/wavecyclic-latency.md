@@ -1,6 +1,6 @@
 ---
-title: WaveCyclic 待機時間
-description: WaveCyclic 待機時間
+title: WaveCyclic 遅延
+description: WaveCyclic 遅延
 ms.assetid: 6de639c6-ddd5-4013-8d67-00731c328f47
 keywords:
 - WaveCyclic 待機時間の WDK オーディオ
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63328498"
 ---
-# <a name="wavecyclic-latency"></a>WaveCyclic 待機時間
+# <a name="wavecyclic-latency"></a>WaveCyclic 遅延
 
 
 ## <span id="wavecyclic_latency"></span><span id="WAVECYCLIC_LATENCY"></span>

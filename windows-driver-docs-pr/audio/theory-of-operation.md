@@ -1,5 +1,5 @@
 ---
-title: 操作の理論
+title: 動作理論
 description: この理論上の操作トピックは、新しい Windows 8.1 の内部動作の背後にある理論を説明します。
 ms.assetid: 5897946A-5319-404B-BE9E-91FF8801652F
 ms.date: 04/20/2017
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63335234"
 ---
-# <a name="theory-of-operation"></a>操作の理論
+# <a name="theory-of-operation"></a>動作理論
 
 
 この理論上の操作トピックは、Bluetooth バイパス オーディオ ストリーミング用の新しい Windows 8.1 のサポートの内部動作の背後にある理論を説明します。

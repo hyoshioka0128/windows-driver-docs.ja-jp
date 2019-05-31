@@ -1,5 +1,5 @@
 ---
-title: Bluetooth バイパス DDI 参照
+title: Bluetooth バイパス DDI のリファレンス
 description: Bluetooth バイパス デバイス ドライバー インターフェイス (DDI) リファレンスには、構造体とハンズフリー プロファイル (HFP) ドライバーのサポートを提供する Windows 8.1 で導入された Ioctl を説明するトピックのセットです。
 ms.assetid: 70ED2FC9-A644-4C72-8208-3D4AB83B7AC0
 ms.date: 04/20/2017
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63333907"
 ---
-# <a name="bluetooth-bypass-ddi-reference"></a>Bluetooth バイパス DDI 参照
+# <a name="bluetooth-bypass-ddi-reference"></a>Bluetooth バイパス DDI のリファレンス
 
 
 Bluetooth バイパス デバイス ドライバー インターフェイス (DDI) リファレンスには、構造体とハンズフリー プロファイル (HFP) ドライバーのサポートを提供する Windows 8.1 で導入された Ioctl を説明するトピックのセットです。

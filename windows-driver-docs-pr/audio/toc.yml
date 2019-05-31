@@ -80,7 +80,7 @@
           href: audio-endpoint-builder-algorithm.md
         - name: 動的サブデバイスの登録と登録解除
           href: dynamic-subdeviceregistration-and-unregistration.md
-        - name: マルチ チャネル ノードの公開
+        - name: マルチチャンネル ノードの公開
           href: exposing-multichannel-nodes.md
         - name: ピン カテゴリのプロパティ
           href: pin-category-property.md
@@ -112,9 +112,9 @@
           href: audio-data-ranges.md
         - name: 拡張可能な Wave 形式の記述子
           href: extensible-wave-format-descriptors.md
-        - name: ホーム シアター システム用のマルチチャネル形式
+        - name: ホーム シアター システム用のマルチチャンネル形式
           items:
-            - name: ホーム シアター システム用のマルチチャネル形式
+            - name: ホーム シアター システム用のマルチチャンネル形式
               href: multichannel-formats-for-home-theater-systems.md
             - name: チャネル マスク
               href: channel-mask.md
@@ -144,9 +144,9 @@
               href: pcm-stream-data-format.md
             - name: PCM ストリームのデータ範囲
               href: pcm-stream-data-range.md
-            - name: PCM マルチ チャンネル ストリームのデータ形式
+            - name: PCM マルチチャンネル ストリームのデータ形式
               href: pcm-multichannel-stream-data-format.md
-            - name: PCM マルチ チャネル ストリームのデータ範囲
+            - name: PCM マルチチャンネル ストリームのデータ範囲
               href: pcm-multichannel-stream-data-range.md
             - name: PCM 高ビットデプス ストリームのデータの形式
               href: pcm-high-bitdepth-stream-data-format.md
@@ -182,7 +182,7 @@
           href: default-data-intersection-handlers.md
         - name: 独自のデータ交差ハンドラー
           href: proprietary-data-intersection-handlers.md
-        - name: 同じ周波数に対するハードウェアの制約
+        - name: サンプル周波数に対するハードウェアの制約
           href: hardware-constraints-on-sample-frequency.md
         - name: 出力バッファー サイズ
           href: output-buffer-size.md
@@ -210,9 +210,9 @@
           href: multiple-audio-subdevices.md
         - name: 多機能デバイスの制限
           href: multifunction-device-limits.md
-    - name: PCM 以外の Wave 形式
+    - name: PCM 以外の Wave 形式のサポート
       items:
-        - name: PCM 以外の Wave 形式
+        - name: PCM 以外の Wave 形式のサポート
           href: supporting-non-pcm-wave-formats.md
         - name: PCM 以外のサポートの背景
           href: background-of-non-pcm-support.md
@@ -300,7 +300,7 @@
           href: implementing-audio-module-communication.md
         - name: オーディオ デバイス モジュールの構成とクエリ
           href: configure-and-query-audiodevicemodules.md
-    - name: 低待機時間オーディオ
+    - name: 低遅延オーディオ
       href: low-latency-audio.md
     - name: 音声のアクティブ化
       href: voice-activation.md
@@ -314,9 +314,9 @@
           href: bluetooth-bypass-guidelines-for-audio-drivers.md
         - name: Windows の Bluetooth ホスト コントローラー インターフェイス (HCI) アーキテクチャの概要
           href: btth-architectural-overview.md
-        - name: 操作の理論
+        - name: 動作理論
           items:
-            - name: 操作の理論
+            - name: 動作理論
               href: theory-of-operation.md
             - name: HFP デバイスの起動
               href: startup.md
@@ -330,7 +330,7 @@
               href: audio-endpoint-container-id.md
             - name: I2S および SCO リソースの管理
               href: management-of-i2s-and-sco-resources.md
-        - name: Bluetooth バイパス DDI 参照
+        - name: Bluetooth バイパス DDI のリファレンス
           href: bluetooth-bypass-ddi-reference.md
         - name: 関連する設計ガイドライン
           items:
@@ -342,9 +342,9 @@
               href: setting-friendly-name--registering-apos.md
             - name: HF デバイスの Bluetooth のアドレスの取得
               href: obtaining-bluetooth-address-of-hf-device.md
-    - name: ハードウェア オフロードのオーディオ処理
+    - name: ハードウェアによるオーディオ処理のオフロード
       items:
-        - name: ハードウェア オフロードのオーディオ処理
+        - name: ハードウェアによるオーディオ処理のオフロード
           href: hardware-offloaded-audio-processing.md
         - name: アーキテクチャの概要
           href: architectural-overview.md
@@ -372,7 +372,7 @@
               href: immediate-idle-timeout-opt-in.md
             - name: PortCls プライベート PEP コンテキストの共有
               href: portcls-private-pep-context-sharing.md
-            - name: PortCls D3 終了待機時間の要件
+            - name: PortCls D3 終了遅延の要件
               href: portcls-d3-exit-latency-requirement.md
     - name: WDM オーディオ プラットフォームの相違点
       items:
@@ -412,13 +412,13 @@
           href: rendering-and-capturing-audio-content-by-using-the-usbaudio-driver.md
         - name: DirectSound のソフトウェア バッファーとハードウェア バッファーを使用した Wave コンテンツのレンダリング
           href: rendering-wave-content-using-directsound-software-and-hardware-buffers.md
-    - name: Wave 出力の待機時間に影響を及ぼす要因
+    - name: Wave 出力の遅延に影響を及ぼす要因
       items:
-        - name: Wave 出力の待機時間に影響を及ぼす要因
+        - name: Wave 出力の遅延に影響を及ぼす要因
           href: factors-governing-wave-output-latency.md
-        - name: WaveCyclic 待機時間
+        - name: WaveCyclic 遅延
           href: wavecyclic-latency.md
-        - name: WavePci 待機時間
+        - name: WavePci 遅延
           href: wavepci-latency.md
         - name: データ コピーの回避
           href: avoiding-data-copying.md
@@ -490,9 +490,9 @@
               items:
                 - name: WaveRT ポート ドライバーについて
                   href: understanding-the-wavert-port-driver.md
-                - name: 再生時のストリームの待機時間
+                - name: 再生時のストリームの遅延
                   href: stream-latency-during-playback.md
-                - name: 記録時のストリームの待機時間
+                - name: 記録時のストリームの遅延
                   href: stream-latency-during-recording.md
         - name: トポロジ ポート ドライバー
           href: topology-port-driver.md
@@ -716,7 +716,7 @@
               items:
                 - name: シンセサイザーのタイミング
                   href: synthesizer-timing.md
-                - name: シンセサイザーの待機時間
+                - name: シンセサイザーの遅延
                   href: synthesizer-latency.md
                 - name: イベントのタイムスタンプ
                   href: time-stamped-events.md
@@ -748,7 +748,7 @@
                       href: allocator.md
                     - name: カーネル モードのソフトウェア シンセサイザーのウェーブ シンク
                       href: a-wave-sink-for-kernel-mode-software-synthesizers.md
-                - name: 待機時間の時計
+                - name: 遅延の時計
                   href: latency-clocks.md
                 - name: ミニポート ドライバー プロパティの項目要求
                   href: miniport-driver-property-item-requests.md

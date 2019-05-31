@@ -1,6 +1,6 @@
 ---
-title: ホーム シアター システム用のマルチチャネル形式
-description: ホーム シアター システム用のマルチチャネル形式
+title: ホーム シアター システム用のマルチチャンネル形式
+description: ホーム シアター システム用のマルチチャンネル形式
 ms.assetid: b8bd1dc7-c9a8-4f4f-8014-d31f1ae5361a
 keywords:
 - データ形式の WDK オーディオ
@@ -32,7 +32,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63332319"
 ---
-# <a name="multichannel-formats-for-home-theater-systems"></a>ホーム シアター システム用のマルチチャネル形式
+# <a name="multichannel-formats-for-home-theater-systems"></a>ホーム シアター システム用のマルチチャンネル形式
 
 
 ホーム シアター システムの比較的安価なソリューションでは、Windows オペレーティング システムを実行しているコンピューター上のオーディオのアダプタに一連のサラウンド サウンドのスピーカーを接続します。 ユーザーが外部オーディオ/ビデオを接続する代わりに、(A/V) アダプターの出力とスピーカーの受信者。 ホーム シアター システムの普及に応答して、これらのシステムが、作成されているオーディオ コンテンツを 5.1 と 7.1 チャネルはますます使用可能なが高まっています。

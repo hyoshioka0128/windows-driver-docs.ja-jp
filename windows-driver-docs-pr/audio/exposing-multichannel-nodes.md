@@ -1,6 +1,6 @@
 ---
-title: マルチ チャネル ノードの公開
-description: マルチ チャネル ノードの公開
+title: マルチチャンネル ノードの公開
+description: マルチチャンネル ノードの公開
 ms.assetid: 48ee3b33-fb97-4e71-bf6f-5dbdb76aa7f8
 keywords:
 - WDK、マルチ チャネルのノードのオーディオのプロパティ
@@ -25,7 +25,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63333706"
 ---
-# <a name="exposing-multichannel-nodes"></a>マルチ チャネル ノードの公開
+# <a name="exposing-multichannel-nodes"></a>マルチチャンネル ノードの公開
 
 
 ## <span id="exposing_multichannel_nodes"></span><span id="EXPOSING_MULTICHANNEL_NODES"></span>

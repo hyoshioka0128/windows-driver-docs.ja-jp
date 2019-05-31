@@ -1,6 +1,6 @@
 ---
-title: PCM マルチ チャンネル ストリームのデータ形式
-description: PCM マルチ チャンネル ストリームのデータ形式
+title: PCM マルチチャンネル ストリームのデータ形式
+description: PCM マルチチャンネル ストリームのデータ形式
 ms.assetid: cab528a7-5db4-4e37-89c4-35dfc472f0ae
 keywords:
 - WDK の PCM マルチ チャネル ストリームのデータ形式します。
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63332230"
 ---
-# <a name="pcm-multichannel-stream-data-format"></a>PCM マルチ チャンネル ストリームのデータ形式
+# <a name="pcm-multichannel-stream-data-format"></a>PCM マルチチャンネル ストリームのデータ形式
 
 
 ## <span id="pcm_multichannel_stream_data_format"></span><span id="PCM_MULTICHANNEL_STREAM_DATA_FORMAT"></span>

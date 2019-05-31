@@ -1,6 +1,6 @@
 ---
-title: 待機時間の時計
-description: 待機時間の時計
+title: 遅延の時計
+description: 遅延の時計
 ms.assetid: 3cdd4c69-d99d-48bc-a1d9-9da2a2511e94
 keywords:
 - シンセサイザー WDK のオーディオ、待機時間の時計
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63332430"
 ---
-# <a name="latency-clocks"></a>待機時間の時計
+# <a name="latency-clocks"></a>遅延の時計
 
 
 ## <span id="latency_clocks"></span><span id="LATENCY_CLOCKS"></span>

@@ -1,6 +1,6 @@
 ---
-title: 同じ周波数に対するハードウェアの制約
-description: 同じ周波数に対するハードウェアの制約
+title: サンプル周波数に対するハードウェアの制約
+description: サンプル周波数に対するハードウェアの制約
 ms.assetid: e0041fd9-073c-4779-a3cf-6d0527ba847b
 keywords:
 - サンプル周波数制約 WDK オーディオ
@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63333610"
 ---
-# <a name="hardware-constraints-on-sample-frequency"></a>同じ周波数に対するハードウェアの制約
+# <a name="hardware-constraints-on-sample-frequency"></a>サンプル周波数に対するハードウェアの制約
 
 
 ## <span id="hardware_constraints_on_sample_frequency"></span><span id="HARDWARE_CONSTRAINTS_ON_SAMPLE_FREQUENCY"></span>

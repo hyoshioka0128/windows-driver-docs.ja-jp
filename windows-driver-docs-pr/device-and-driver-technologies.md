@@ -19,7 +19,7 @@ ms.locfileid: "56519010"
 
 ユニバーサル Windows ドライバー (Windows ドライバーで利用できるインターフェイスのサブセットを使用したドライバー) を作成すると、Windows 10 のすべてのエディションでそのドライバーを実行できます。 可能であれば、ユニバーサル Windows ドライバーを使用して、ドライバーを複数のデバイスで展開できるようにしてください。 Windows 10 のユニバーサル Windows ドライバーをビルド、インストール、展開、デバッグする方法については、「[Getting Started with Universal Windows drivers (ユニバーサル Windows ドライバーの概要)](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)」と「[テスト コンピューターへのドライバーの展開](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)」をご覧ください。
 
-## <a name="device-drivers-and-windows10-for-desktop-computers"></a>デバイス ドライバーとデスクトップ コンピューター向け Windows 10
+## <a name="device-drivers-and-windows10-for-desktop-computers"></a>デスクトップ コンピューター向けデバイス ドライバーと Windows 10
 
 デスクトップ ドライバーの開発に使用されるツールについては、[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/
 )と[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-verifying-drivers)に関する記事をご覧ください。 デスクトップの Windows 10 にドライバーを展開する方法について詳しくは、「[ドライバー パッケージの配布](https://docs.microsoft.com/windows-hardware/drivers/develop/distributing-a-driver-package-win8)」をご覧ください。 ドライバー構成のトラブルシューティングについて詳しくは、[ドライバー構成のトラブルシューティング](https://docs.microsoft.com/windows-hardware/drivers/develop/troubleshooting-configuration-of-driver-deployment--testing-and-debugging)に関する記事をご覧ください。

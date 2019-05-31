@@ -1,6 +1,6 @@
 ---
-title: PCM 以外の Wave 形式
-description: PCM 以外の Wave 形式
+title: PCM 以外の Wave 形式のサポート
+description: PCM 以外の Wave 形式のサポート
 ms.assetid: 76455e1f-4b00-49c4-a4e4-3cb4abe8f445
 keywords:
 - 非 PCM オーディオ形式 WDK
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63328557"
 ---
-# <a name="supporting-non-pcm-wave-formats"></a>PCM 以外の Wave 形式
+# <a name="supporting-non-pcm-wave-formats"></a>PCM 以外の Wave 形式のサポート
 
 
 ## <span id="supporting_non_pcm_wave_formats"></span><span id="SUPPORTING_NON_PCM_WAVE_FORMATS"></span>

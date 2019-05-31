@@ -1,6 +1,6 @@
 ---
-title: Wave 出力の待機時間に影響を及ぼす要因
-description: Wave 出力の待機時間に影響を及ぼす要因
+title: Wave 出力の遅延に影響を及ぼす要因
+description: Wave 出力の遅延に影響を及ぼす要因
 ms.assetid: 6342ffd4-b0e8-41a4-ab97-1f658052748b
 keywords:
 - WDM オーディオ ドライバー WDK、待機時間
@@ -25,7 +25,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63333637"
 ---
-# <a name="factors-governing-wave-output-latency"></a>Wave 出力の待機時間に影響を及ぼす要因
+# <a name="factors-governing-wave-output-latency"></a>Wave 出力の遅延に影響を及ぼす要因
 
 
 ## <span id="factors_governing_wave_output_latency"></span><span id="FACTORS_GOVERNING_WAVE_OUTPUT_LATENCY"></span>

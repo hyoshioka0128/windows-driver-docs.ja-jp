@@ -1,5 +1,5 @@
 ---
-title: PortCls D3 終了待機時間の要件
+title: PortCls D3 終了遅延の要件
 description: このトピックでは、Windows ポート クラス ドライバー (PortCls) が Windows 8 の新しいインターフェイスを使用して、D3 のスリープ状態の終了の待機時間の要件を操作する方法について説明します。
 ms.assetid: 3CEFF85B-5A2E-4F85-BCAC-00F1773A8F4D
 ms.date: 04/20/2017
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63328774"
 ---
-# <a name="portcls-d3-exit-latency-requirement"></a>PortCls D3 終了待機時間の要件
+# <a name="portcls-d3-exit-latency-requirement"></a>PortCls D3 終了遅延の要件
 
 
 このトピックでは、Windows ポート クラス ドライバー (PortCls) が Windows 8 の新しいインターフェイスを使用して、D3 のスリープ状態の終了の待機時間の要件を操作する方法について説明します。
@@ -20,7 +20,7 @@ ms.locfileid: "63328774"
 
 PortCls は今すぐ新しい電源管理インターフェイスを使用して、新しい D3 終了の待機時間の許容範囲を生成して、オーディオのミニポート ドライバーを動的に通信します。 これらの許容範囲を表したもの[ **PC\_終了\_待機時間**](https://msdn.microsoft.com/library/windows/hardware/dn265130)列挙値。
 
-新しい電源管理のインターフェイスの詳細については、次を参照してください[ **IAdapterPowerManagement3。**](https://msdn.microsoft.com/library/windows/hardware/jj200330)
+新しい電源管理のインターフェイスの詳細については、次を参照してください[ **IAdapterPowerManagement3。** ](https://msdn.microsoft.com/library/windows/hardware/jj200330)
 
  
 
