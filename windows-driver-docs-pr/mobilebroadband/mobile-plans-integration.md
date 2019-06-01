@@ -6,12 +6,12 @@ keywords:
 - Windows Mobile プランの統合、Mobile のプランの統合モバイル演算子
 ms.date: 03/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c7fb09cf1195713a35843206dd5557bab689797
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2bad4f681ac4ca4f8488f04a9317bc2d5dd6fbb
+ms.sourcegitcommit: 335096107bfc92718d9ba809527214113c993da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357686"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455212"
 ---
 # <a name="mobile-plans-integration"></a>モバイルのプランの統合
 
@@ -73,4 +73,4 @@ ms.locfileid: "63357686"
 | --- | --- | --- | --- |
 | GetBalance | 96% | 1 | 3 |
 
-テストの実行中に予期される成功率は次のとおりです。99.9%. この成功率を実現するためには、MO API が Mobile プランの運用環境サービスで有効にする準備ができます。
+テストの実行中に予期される成功率は次のとおりです。**99.9% 以上**と平均待機時間。**400**します。 この成功率を実現するためには、MO API が Mobile プランの運用環境サービスで有効にする準備ができます。

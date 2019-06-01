@@ -7,12 +7,12 @@ keywords:
 - WDK KMDF、フレームワークの作業項目キュー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c73fcb2496a8a4843b502b49b6d38743c9a87fda
-ms.sourcegitcommit: 9580c6e32d820e1c6672b2b788c4fabdefa2910c
+ms.openlocfilehash: ebb0d2d4f8baff859eb51d03c33af0d05fc0a444
+ms.sourcegitcommit: 422bef7571ddd78fad4633804db03bd8abd4a776
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308459"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431605"
 ---
 # <a name="using-framework-work-items"></a>フレームワーク作業項目の使用
 
@@ -48,7 +48,9 @@ A*作業項目*でドライバーを実行するタスクは、 [ *EvtWorkItem* 
 
     ドライバーの呼び出し[ **WdfWorkItemEnqueue**](https://msdn.microsoft.com/library/windows/hardware/ff551203)、作業項目のキューに、ドライバーの作業項目を追加します。
 
-ドライバーを呼び出すと[ **WdfWorkItemCreate**](https://msdn.microsoft.com/library/windows/hardware/ff551201)、framework デバイス オブジェクトまたはフレームワークのキュー オブジェクトのいずれかを識別するハンドルを指定する必要があります。 システムでは、そのオブジェクトを削除したときにも、オブジェクトに関連付けられている既存の作業項目を削除します。
+ドライバーを呼び出すと[ **WdfWorkItemCreate**](https://msdn.microsoft.com/library/windows/hardware/ff551201)、framework デバイス オブジェクトまたはフレームワークのキュー オブジェクトのいずれかを識別するハンドルを指定する必要があります。 システムでは、そのオブジェクトを削除したときにも、オブジェクトに関連付けられている既存の作業項目を削除します。 作業項目のオブジェクトが破棄され、関連付けられた作業項目コールバックは、親オブジェクトの前にクリーンアップされます[ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)コールバックが呼び出されます。
+
+Framework のオブジェクト階層のクリーンアップ ルールについての詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)します。
 
 ### <a href="" id="ddk-using-the-work-item-callback-function-df"></a>作業項目のコールバック関数の使用
 

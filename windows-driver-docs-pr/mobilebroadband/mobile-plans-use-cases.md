@@ -4,14 +4,14 @@ description: このトピックでは、モバイルの演算子を実装する�
 ms.assetid: 24050B13-4A1A-466F-974B-40B34EDB16DC
 keywords:
 - Windows Mobile のプランのユーザーの場合、モバイルのプランの実装モバイル演算子
-ms.date: 03/25/2019
+ms.date: 05/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8119bb90eb86a6849307020b60cfccab973f0983
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b0a674a3a6eff97546b1d3168c59dc1f06d1a86
+ms.sourcegitcommit: 335096107bfc92718d9ba809527214113c993da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357736"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455222"
 ---
 # <a name="mobile-plans-use-cases"></a>モバイル通信プランのユース ケース
 
@@ -27,9 +27,9 @@ ms.locfileid: "63357736"
 
 1. 実装、 [web ポータルのモバイル プラン](mobile-plans-web-portal.md#web-service-api-used-for-esim)します。
 2. プランのモバイル アプリに戻すコントロールを提供する手段を実装します。
-   1. [インライン プロファイル配信](mobile-plans-callback-notifications.md#inline-profile-delivery)します。 Esim 状プロファイルは、SM ですぐに利用可能な場合は、このコールバックを実装-DP + サーバーとデバイスに接続できる移動体通信ネットワークすぐにします。
+   1. [プロファイルのダウンロードを即時 eSIM](mobile-plans-callback-notifications.md#immediate-esim-profile-download-and-activation)します。 Esim 状プロファイルは、SM ですぐに利用可能な場合は、このコールバックを実装-DP + サーバーとデバイスに接続できる移動体通信ネットワークすぐにします。
    2. [非同期接続](mobile-plans-callback-notifications.md#asynchronous-connectivity)します。 Esim 状プロファイルは、SM ですぐに利用可能な場合は、このコールバックを実装-DP + サーバーが、デバイスが移動体通信ネットワークに接続する前に少し時間を待機する必要があります。
-   3. **非同期のプロファイルのダウンロード**します。 Esim 状プロファイルは、SM で使用可能な場合は、このコールバックを実装-DP + サーバーの一定の時間と、デバイスが移動体通信ネットワークにすぐにアタッチできません。
+   3. [プロファイルのダウンロードを遅延 eSIM](mobile-plans-callback-notifications.md#deferred-esim-profile-download-and-activation)します。 Esim 状プロファイルは、SM で使用可能な場合は、このコールバックを実装-DP + サーバーの一定の時間と、デバイスが移動体通信ネットワークにすぐにアタッチできません。
 3. [Esim 状のダウンロード エラーの処理](mobile-plans-eSIM-error-handling.md)します。 (省略可能)
 4. 定義、[基本的なデバイス エクスペリエンス](mobile-plans-device-experience.md#basic-device-experience)します。
 5. 提供[Mobile プラン サービスの構成](mobile-plans-service-configuration.md)情報。

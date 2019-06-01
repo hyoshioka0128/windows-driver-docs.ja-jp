@@ -4,14 +4,14 @@ description: このトピックでは、プランのモバイル アプリで通
 ms.assetid: A3CE0B7D-80C5-4A98-8615-250A3C760B85
 keywords:
 - Windows Mobile プラン コールバック通知、モバイルのプランの実装モバイル演算子
-ms.date: 03/25/2019
+ms.date: 05/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c9a39b36e1035aab6053c148c8a9cab6cae8e21
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 5d93561092bac4024e8c537b7af5f6e22cfe7f9c
+ms.sourcegitcommit: 335096107bfc92718d9ba809527214113c993da7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405124"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455233"
 ---
 # <a name="mobile-plans-callback-notifications"></a>コールバック通知をモバイル プラン
 
@@ -29,35 +29,39 @@ MO ポータルをサポートするトランザクションでは、含める�
 > [!NOTE]
 > このコールバックで定義されているホストから返される[サービス構成](mobile-plans-service-configuration.md)します。
 
-## <a name="inline-profile-delivery"></a>インラインのプロファイルの配信
+## <a name="immediate-esim-profile-download-and-activation"></a>イミディ エイト eSIM プロファイルのダウンロードとアクティブ化
 
 次の図は、コントロール、MODirect ポータルを離れることがなく、プロファイルをダウンロード、Mobile プラン プログラムをサポートする方法の大まかな流れを示します。
 
-![インラインのプロファイルのダウンロード シーケンス図を Mobile の計画](images/dynamo_inline_profile_flow.png)
+![インラインのプロファイルのダウンロード シーケンス図を Mobile の計画](images/mobile_plans_inline_profile_flow.png)
 
-月の直接のポータルのプロファイルのダウンロード、インストール、およびアクティブ化する準備ができたら、ポータルで呼び出す必要があります`MobilePlansInlineProfile.notifyInlineProfileDownload`します。
+これは、進化[インライン プロファイル配信](mobile-plans-legacy-callback-notifications.md#inline-profile-delivery)、ようになりましたが、以前のドキュメント ページに記載されています。
 
-### <a name="mobileplansinlineprofilenotifyinlineprofiledownload"></a>MobilePlansInlineProfile.notifyInlineProfileDownload
+### <a name="mobileplansinlineoperationsnotifyprofiledownloadpurchasemetadata-activationcode"></a>MobilePlansInlineOperations.notifyProfileDownload (purchaseMetaData、activationCode)
 
 | パラメーター名 | 種類 | 説明 |
 | --- | --- | -- |
 | purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これが含まれています、ユーザー アカウント、purchase メソッドまたはインストルメント化に関する情報を詳細、新しい行で、ユーザーが購入したプランの名前、ユーザーを追加する場合。 これらすべては、レポートに使用されます。 |
-| activationCode | String | Esim 状のプロファイルをダウンロードするためのアクティブ化コード。 プロファイルの ICCID は、プロファイルのメタデータから推論されます。 |
+| activationCode | String | Esim 状、プロファイルのダウンロードに使用されるアクティブ化コード
 
-インラインのプロファイルをダウンロードするアプリケーションを通知するために、API の例は、まず次の Javascript 関数を示しています。
+| 戻り値の型 | 説明 |
+| --- | --- |
+| MobilePlansOperationContext | この一意のダウンロード操作にどの一致する識別子を持つオブジェクト。
+
+Esim 状、プロファイルのダウンロードのプロセスを開始します。 コントロールは、呼び出しのすぐ後に、MO ポータルに返されます。 通知の形式で月のポータルの上部でプロファイルのダウンロードの進行状況を表示する UI が表示されます。 MO ポータルは、このプロセス中にナビゲートを継続できます。
+
+次の Javascript 関数は、プロファイルのダウンロードを開始するアプリケーションを通知するために、API の例を示しています。
 
 ```Javascript
-function NotifyMobilePlans() { 
-    var purchaseMetaData = MobilePlans.createPurchaseMetaData(); 
-    purchaseMetaData.userAccount = MobilePlansUserAccount.new; 
-    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new; 
-    purchaseMetaData.lineType = MobilePlansLineType.new; 
-    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete; 
-    purchaseMetaData.planName = "My Plan"; 
-    MobilePlansInlineProfileDownload.registrationChangedScript = "onRegistrationChanged";
-    MobilePlansInlineProfileDownload.profileActivationCompleteScript = "onActivationComplete";
-    MobilePlansInlineProfileDownload.notifyInlineProfileDownload(purchaseMetaData , "1$smdp.address$matchingID"); 
-}
+var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.registrationChangedScript = "onRegistrationChanged";
+    MobilePlansInlineOperations.profileActivationCompleteScript = "onActivationComplete";
+    MobilePlansInlineOperations.notifyProfileDownload(purchaseMetaData , "1$smdp.address$matchingID");
 ```
 
 参照してください[メタデータ プロパティを購入](#purchase-metadata-properties-details)puchaseMetadata オブジェクトに関する詳細。
@@ -160,13 +164,84 @@ function onActivationComplete(activationArgs) {
 }
 ```
 
+## <a name="deferred-esim-profile-download-and-activation"></a>遅延 eSIM プロファイルのダウンロードとアクティブ化
+
+次の図は、Mobile プラン プログラムでコントロール、MODirect ポータルを離れることがなく esim 状のプロファイルの遅延ダウンロードをサポートする方法の大まかな流れを示します。
+
+![遅延のプロファイルのダウンロード シーケンス図のモバイルの計画](images/mobile_plans_delay_profile_flow.png)
+
+### <a name="mobileplansinlineoperationsnotifyprofiledownloadpurchasemetadata-activationcode-downloaddelay"></a>MobilePlansInlineOperations.notifyProfileDownload (purchaseMetaData、activationCode、downloadDelay)
+
+| パラメーター名 | 種類 | 説明 |
+| --- | --- | -- |
+| purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これが含まれています、ユーザー アカウント、purchase メソッドまたはインストルメント化に関する情報を詳細、新しい行で、ユーザーが購入したプランの名前、ユーザーを追加する場合。 これらすべては、レポートに使用されます。 |
+| activationCode | String | アクティブ化コードまたは SM-DP + アドレス、プロファイルがある場所
+| downloadDelay | uint | Esim 状のプロファイルをダウンロードしようとする前に待機する分数
+
+| 戻り値の型 | 説明 |
+| --- | --- |
+| MobilePlansOperationContext | この一意のダウンロード操作にどの一致する識別子を持つオブジェクト。
+
+コントロールは、呼び出しのすぐ後に、MO ポータルに返されます。 プロファイルをインストールすることをユーザーに通知するために、UI が表示されます。 後に、`downloadDelay`分が発生しました、通知に表示される、ユーザーは、プロファイルのダウンロードのプロセスを開始するように招待します。
+
+次の Javascript 関数は、遅延時間でプロファイルのダウンロードを開始するアプリケーションを通知するために、API の例を示しています。
+
+```Javascript
+var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.registrationChangedScript = "onRegistrationChanged";
+    MobilePlansInlineOperations.profileActivationCompleteScript = "onActivationComplete";
+    MobilePlansInlineOperations.notifyProfileDownload(purchaseMetaData , "1$smdp.address$matchingID", 15);
+```
+
+参照してください[メタデータ プロパティを購入](#purchase-metadata-properties-details)puchaseMetadata オブジェクトに関する詳細。
+
+参照してください[ネットワーク登録の変更のリッスン](#listening-for-network-registration-changes)前のセクション。
+
+参照してください[プロファイルのアクティブ化のリッスン](#listening-for-profile-activation)前のセクション。
+
+## <a name="cancel-esim-profile-download"></a>Esim 状のプロファイルのダウンロードをキャンセルします。
+
+現時点では、これは適用されます、[プロファイルのダウンロードを遅延 esim 状](#deferred-eSIM-profile-download-and-activation)今後のユーザーの場合のシナリオを使用できます。
+
+次の図は、Mobile プラン プログラムでコントロール、MODirect ポータルを離れることがなく eSIM プロファイルのダウンロードのキャンセルをサポートする方法の大まかな流れを示します。
+
+![Esim 状プロファイルのダウンロード シーケンス図をキャンセルする Mobile の計画](images/mobile_plans_cancel_profile_download_flow.png)
+
+### <a name="mobileplansinlineoperationsnotifyoperationcancelmobileplansoperationcontext"></a>MobilePlansInlineOperations.notifyOperationCancel(MobilePlansOperationContext)
+
+| パラメーター名 | 種類 | 説明 |
+| --- | --- | -- |
+| operationContext | オブジェクト | このオブジェクトには、前の操作を一意に識別する情報が含まれています。 |
+
+ユーザーが開始する準備がそれらをダウンロードすることを通知、トースト通知を表示する前に、この操作を取り消すことができます。
+
+次の Javascript 関数は、非同期の操作をキャンセルする API の例を示します。
+
+```Javascript
+var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.registrationChangedScript = "onRegistrationChanged";
+    MobilePlansInlineOperations.profileActivationCompleteScript = "onActivationComplete";
+    var op = MobilePlansInlineOperations.notifyProfileDownload(purchaseMetaData , "1$smdp.address$matchingID", 15);
+    MobilePlansInlineOperations.notifyOperationCancel(op);
+```
+
 ## <a name="asynchronous-connectivity"></a>非同期接続
 
 次の図は、Mobile プラン プログラムで遅延の接続をサポートする方法の大まかな流れを示します。
 
 ![遅延の接続シーケンス図のモバイルの計画](images/dynamo_async_connectivity_flow.png)
 
-ユーザーには、通信事業者の MO 直接ポータルからプロファイルのダウンロードを必要とする購入が完了したら、後に、ポータル アプリケーションに通知 Mobile プラン、遅延の接続を使用してフローがトリガーすること、 `MobilePlans.notifyPurchaseWithProfileDownload` API。 
+ユーザーには、通信事業者の MO 直接ポータルからプロファイルのダウンロードを必要とする購入が完了したら、後に、ポータル アプリケーションに通知 Mobile プラン、遅延の接続を使用してフローがトリガーすること、 `MobilePlans.notifyPurchaseWithProfileDownload` API。
 
 ### <a name="mobileplansnotifypurchasewithprofiledownload"></a>MobilePlans.notifyPurchaseWithProfileDownload
 
@@ -194,27 +269,73 @@ function finishPurchaseWithDownload() {
 
 ## <a name="adding-balance"></a>残高を追加します。
 
-ユーザーには、自分のアカウント (ユーザー、esim 状で、現在のプロファイルを使用するために必要なプロファイル ダウンロード) により多くのデータを追加することで、MO 直接ポータルでの購入が完了すると、MO ポータルを呼び出す必要がある、 `MobilePlans.notifyBalanceAddition` API は、モバイルのプランにコントロールを返すアプリ。
+ユーザーより多くのデータを自分のアカウントに追加することで、MO 直接ポータルでの購入が完了すると、MO ポータルを呼び出す必要がある、 `MobilePlansInlineOperations.notifyBalanceAddition` API は、プランのモバイル アプリにコントロールを返します。 これを使用できます*物理 SIM*または*eSIM プロファイル*デバイスに既にインストールされています。
 
-### <a name="mobileplansnotifybalanceaddition"></a>MobilePlans.notifyBalanceAddition
+次の図は、Mobile プラン残高を追加するサポートをプログラミングする方法の大まかな流れを示します。
+
+![Balancesequence ダイアグラムを追加する Mobile の計画](images/mobile_plans_add_balance_flow.png)
+
+### <a name="mobileplansinlineoperationsnotifybalanceadditionpurchasemetadata"></a>MobilePlansInlineOperations.notifyBalanceAddition(purchaseMetaData)
 
 | パラメーター名 | 種類 | 説明 |
 | --- | --- | -- |
 | purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これが含まれています、ユーザー アカウント、purchase メソッドまたはインストルメント化に関する情報を詳細、新しい行で、ユーザーが購入したプランの名前、ユーザーを追加する場合。 これらすべては、レポートに使用されます。 |
-| Iccid | String | データが割り当てられている ICCID します。 この ICCID がアクティブでない場合、プランのモバイル アプリには、対応するプロファイルがアクティブにします。|
 
-次の Javascript 関数例を示しています、ユーザーのプロファイルを使用して購入が完了したことをアプリケーションに通知するために API を既に使用できますが、必ずしも非アクティブ、eSIM。
+| 戻り値の型 | 説明 |
+| --- | --- |
+| MobilePlansOperationContext | この一意のダウンロード操作にどの一致する識別子を持つオブジェクト。
 
- ```Javascript
-function finishPurchaseWithBalanceAddition() {
-        var metadata = MobilePlans.createPurchaseMetaData();
-        metadata.userAccount = MobilePlansUserAccount.new;
-        metadata.purchaseInstrument = MobilePlansPurchaseInstrument.none;
-        metadata.moDirectStatus = MobilePlansMoDirectStatus.complete;
-        metadata.line = MobilePlansLineType.new;
-        metadata.planName = "2GB Monthly";
-        MobilePlans.notifyBalanceAddition(metadata, "89000000000000000000");
-    }
+MO は、指定したアカウントに残高を追加するには、MO で呼び出す必要があります、 `MobilePlansInlineOperations.notifyBalanceAddition` API。
+
+次の Javascript 関数は、残高加算が行われたアプリケーションを通知するために、API の例を示します。
+
+```Javascript
+function NotifyMobilePlans() {
+    var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.notifyBalanceAddition(purchaseMetaData);
+}
+```
+
+参照してください[メタデータ プロパティを購入](#purchase-metadata-properties-details)詳細については、`puchaseMetadata`オブジェクト。
+
+## <a name="adding-balance-and-activate-esim-profile"></a>残高を追加して、esim 状のプロファイルをアクティブ化
+
+ユーザーより多くのデータを自分のアカウントに追加することで、MO 直接ポータルでの購入が完了すると、MO ポータルを呼び出す必要がある、 `MobilePlansInlineOperations.notifyBalanceAddition` API は、プランのモバイル アプリにコントロールを返します。 これを使用できます*eSIM プロファイル*デバイスに既にインストールされています。 ICCID パラメーターは、eSIM プロファイルをアクティブ化することを示します。
+
+次の図は、Mobile プラン iccid 情報とのバランスを追加するサポートをプログラミングする方法の大まかな流れを示します。
+
+![Balancesequence ダイアグラムを追加する Mobile の計画](images/mobile_plans_add_balance_iccid_flow.png)
+
+### <a name="mobileplansinlineoperationsnotifybalanceadditionpurchasemetadata-iccid"></a>MobilePlansInlineOperations.notifyBalanceAddition(purchaseMetaData, iccid)
+
+| パラメーター名 | 種類 | 説明 |
+| --- | --- | -- |
+| purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これが含まれています、ユーザー アカウント、purchase メソッドまたはインストルメント化に関する情報を詳細、新しい行で、ユーザーが購入したプランの名前、ユーザーを追加する場合。 これらすべては、レポートに使用されます。 |
+| Iccid | String | 必要がある active 残高加算後 ICCID
+
+| 戻り値の型 | 説明 |
+| --- | --- |
+| MobilePlansOperationContext | この一意のダウンロード操作にどの一致する識別子を持つオブジェクト。
+
+プロファイルの ICCID がわかっている場合、残高加算記録はでも非アクティブなプロファイルを作成できます。 使用して、`MobilePlansInlineOperations.notifyBalanceAddition`と ICCID は Mobile は、残高加算のプランに通知するだけでなく Mobile プランが提供されている ICCID に対応するプロファイルにアクティブなプロファイルを切り替えます。
+
+次の Javascript 関数は、残高加算が行われたアプリケーションを通知するために、API の例を示します。
+
+```Javascript
+function NotifyMobilePlans() {
+    var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.notifyBalanceAddition(purchaseMetaData, "8900000000000000001");
+}
 ```
 
 参照してください[メタデータ プロパティを購入](#purchase-metadata-properties-details)詳細については、`puchaseMetadata`オブジェクト。
@@ -259,69 +380,4 @@ function finishPurchaseWithCancellation() {
 
 ## <a name="legacy-callback-notifications"></a>従来のコールバック通知
 
-> [!NOTE]
-> このセクションでは、参照専用として機能します。 この通知はプランのモバイル アプリでサポートされていますが、新しい Mobile 計画の実装に実装がお勧めします。
-
-次の構文で JavaScript を使用して、プランのモバイル アプリに通知を送信します。
-
-```javascript
-DataMart.notifyPurchaseResult(notificationPayload);
-```
-
-Esim 状の通知ペイロードの例は次のとおりです。
-
-```javascript
-let notificationPayload = new Object();
-notificationPayload.ver = '1';
-notificationPayload.purchaseResult = "{\"userAccount\":\"New\",\"purchaseInstrument\":\"New\",\"line\":\"New\",\"moDirectStatus\":\"Complete\",\"planName\":\"MyPlan\"}";
-notificationPayload.success = true;
-notificationPayload.transactionId = 'MSFT_ecf5a4d6-024c-46c3-8fcd-2c1f0deed572';
-notificationPayload.activationCode = '1$trl.prod.ondemandconnectivity.com$JO46UQDI07IKQDGG';
-notificationPayload.iccid = '8988247000101997790';
-
-DataMart.notifyPurchaseResult(JSON.stringify(notificationPayload));
-```
-
-物理 SIM の通知ペイロードの例は次のとおりです。
-
-```javascript
-let notificationPayload = new Object();
-notificationPayload.ver = '1';
-notificationPayload.purchaseResult = "{\"userAccount\":\"New\",\"purchaseInstrument\":\"New\",\"line\":\"New\",\"moDirectStatus\":\"Complete\",\"planName\":\"MyPlan\"}";
-notificationPayload.success = true;
-notificationPayload.transactionId = 'MSFT_ecf5a4d6-024c-46c3-8fcd-2c1f0deed572';
-notificationPayload.iccid = '8988247000101997790';
-
-DataMart.notifyPurchaseResult(JSON.stringify(notificationPayload));
-```
-
-ユーザーが成功したトランザクションなし、MO ポータルを破棄する eSIM の通知ペイロードの例は次のとおりです。 特定の実装に適用されるすべてのケースを実装するには、例では、次の表を参照してください。
-
-```javascript
-let notificationPayload = new Object();
-notificationPayload.ver = '1';
-notificationPayload.purchaseResult = "{\"userAccount\":\"Bailed\",\"purchaseInstrument\":\"None\",\"line\":\"None\",\"moDirectStatus\":\"None\",\"planName\":\"\"}";
-notificationPayload.success = false;
-notificationPayload.transactionId = 'MSFT_ecf5a4d6-024c-46c3-8fcd-2c1f0deed572';
-notificationPayload.activationCode = '';
-notificationPayload.iccid = '';
-
-DataMart.notifyPurchaseResult(JSON.stringify(notificationPayload));
-```
-
-通知の送信元となる MO ポータル URI は、セキュリティで保護されたでなければなりません*https*プロトコル。 ホストが、必ずしも、今後のいくつかの柔軟性のまま、完全なパスを指定できます。 
-
-次の表では、通知の JSON ペイロード内の各フィールドについて説明します。
-
-| JSON フィールド         | 種類    | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | 例                                |
-| ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| 成功            | ブール値 | **True** MO ダイレクト プランを購入した場合。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `“success”:true`                     |
-| Iccid              | String  | ESIM は、購入月ダイレクト プランを使用するために、クライアントが使用する必要があります ICCID を示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `iccid:”8988247000100297655”`        |
-| activationCode     | String  | アクティブ化コード esim 状のプロファイルを取得します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `“ActivationCode”`                   |
-| transactionId      | String  | MO ポータルは、ポータルを起動したときにクエリ パラメーターとして受信したトランザクション ID。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `transctionId= rRi8OzhI3EiR02nm.2.0.1` |
-| purchaseResult     | String  | MO ポータルを使用したユーザーの操作の詳細が含まれています。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                        |
-| userAccount        | 列挙型    | このフィールドは必須です。 <p>設定可能な値:</p><ul><li>新規:新しいユーザー アカウントがユーザーによって作成されたことを示します。</li><li>既存の。既存のユーザー アカウントでユーザーをログオンすることを示します。</li><li>内緒。ユーザーがこの手順で購入のフローを終了したことを示します。</li><li>None:ユーザーがこのステップに到達していないことを示します。</li></ul>                                                                                                                                                                                                                                                                                                                 | `“userAccount”:”New”`              |
-| purchaseInstrument | 列挙型    | このフィールドは必須です。 <p>設定可能な値:</p><ul><li>新規:ユーザーが新しい支払方法を使用することを示します。</li><li>既存の。ユーザーがファイル内にある既存の支払い方法を使用することを示します。</li><li>内緒。ユーザーがこの手順で購入のフローを終了したことを示します。</li><li>None:ユーザーがこのステップに到達していないことを示します。</li></ul>                                                                                                                                                                                                                                                                                                             | `“purchaseInstrument”:”New”`       |
-| 行               | 列挙型    | このフィールドは必須です。 <p>設定可能な値:</p><ul><li>新規:ユーザー アカウントは、SIM カードが追加されたことを示します。</li><li>既存の。示すこと、転送された既存の行をデバイスにします。</li><li>内緒。ユーザーがこの手順で購入のフローを終了したことを示します。</li><li>None:ユーザーがこのステップに到達していないことを示します。</li></ul>                                                                                                                                                                                                                                                                                                                     | `“line”:”New”`                     |
-| moDirectStatus     | 列挙型    | このフィールドは必須です。 <p>設定可能な値:</p><ul><li>完了します。ユーザーが購入を正常に完了したことを示します。</li><li>サービス エラー:ユーザーが月のサービス エラーのための購入を完了できなかったことを示します。</li><li>InvalidSIM:ポータルに渡される ICCID が正しいことを示します。</li><li>LogOnFailed:ユーザーが、MO ポータルへのログインに失敗したことを示します。</li><li>PurchaseFailed:課金エラーのために、購入が失敗したことを示します。</li><li>ClientError。引数が無効ですが、ポータルに渡されたことを示します。</li><li>None:ユーザーが特定のエラーが発生せず、トランザクションを終了したことを示します。</li></ul> | `“moDirectStatus”:”Complete”`      |
-| プラン名           | String  | 成功したトランザクションでは、このフィールドは空にする必要がありますは、プランのわかりやすい名前を指定する必要があります。 失敗したトランザクションでは、このフィールドは空の文字列を指定する必要があります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `“planName”:”prepaid_3GperMonth”`  |
+従来のすべてのコールバックが記載されている特定のページを参照してください[ここ](mobile-plans-legacy-callback-notifications.md)
