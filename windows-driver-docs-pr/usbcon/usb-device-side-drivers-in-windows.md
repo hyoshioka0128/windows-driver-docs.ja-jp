@@ -3,12 +3,12 @@ Description: USB 関数のスタックのアーキテクチャについて説明
 title: Windows の USB デバイス側ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55390287dc7d81316f9eabc306fe97d5e28b47c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8be3e28b468e2ceeb434ca9d6a28e42d50667318
+ms.sourcegitcommit: f3825d59bb69429e892a088061bd014a65e0d161
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384511"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452394"
 ---
 # <a name="usb-device-side-drivers-in-windows"></a>Windows の USB デバイス側ドライバー
 
@@ -28,7 +28,7 @@ USB 関数のスタックは、このイメージで概念化します。
 
 **アプリケーションとサービス**
 
--   ユーザー モードのすべての要求は、Microsoft から提供されたカーネル モード クラス ドライバー GenericUSBFn.sys に送信されます。 GenericUSBFn.sys と通信するユーザー モード サービスを作成するには送信することによって[これらの I/O 制御コード (Ioctl)](https://msdn.microsoft.com/library/windows/hardware/mt188014)ドライバーが USB 機能ドライバーとカーネル モードの通信を処理します。
+- ユーザー モードのすべての要求は、Microsoft から提供されたカーネル モード クラス ドライバー GenericUSBFn.sys に送信されます。 定義されている I/O 制御コード (Ioctl) を送信することによって、GenericUSBFn.sys と通信するユーザー モード サービスを作成できます[genericusbfnioctl.h](https://docs.microsoft.com/windows/desktop/api/genericusbfnioctl/)します。 これらの Ioctl の詳細については、次を参照してください[GenericUSBFn.sys とユーザー モード サービスからの通信。](https://docs.microsoft.com/windows-hardware/drivers/usbcon/user-mode-services-ufx)
 
 **関数の USB クラス ドライバー**
 
