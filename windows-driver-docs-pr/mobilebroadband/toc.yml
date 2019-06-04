@@ -378,6 +378,9 @@
           href: mobile-plans-launch.md
         - name: 付録
           href: mobile-plans-appendix.md
+          items:
+            - name: レガシ コールバック通知
+              href: mobile-plans-legacy-callback-notifications.md
     - name: 通信事業者および OEM の Windows での eSIM 管理
       href: esim-management-on-windows-for-mobile-operators-and-oems.md
     - name: インターネット共有エクスペリエンスの作成と構成
