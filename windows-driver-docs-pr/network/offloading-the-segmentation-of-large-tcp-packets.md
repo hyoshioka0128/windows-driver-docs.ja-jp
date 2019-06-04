@@ -8,12 +8,12 @@ keywords:
 - 大きな TCP パケットの WDK ネットワー キングのセグメント化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7a386de570abd90929988ae3fdf142b339e844
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 414d19e080ea4eaa979697d9041109ec0745776b
+ms.sourcegitcommit: e6ce5358b12818e0bfad6f202e63bfc887d9d224
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359557"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482765"
 ---
 # <a name="offloading-the-segmentation-of-large-tcp-packets"></a>大きな TCP パケットのセグメント化のオフロード
 
@@ -47,13 +47,13 @@ TCP/IP トランスポートは、次の条件を満たす大きな TCP パケ�
 
 -   関連付けられている大きなパケットのセグメント化情報を更新、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 この情報は、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882)構造の一部である、 **NET\_バッファー\_一覧**に関連付けられている情報、 **NET\_バッファー\_リスト**構造体。 詳細については**NET\_バッファー\_一覧**についてを参照してください[TCP/IP Offload NET へのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。 TCP/IP トランスポートの設定、 **MSS**最大セグメント サイズ (MSS) する値。
 
--   大きな TCP パケットの合計の長さをパケットの IP ヘッダーの長さの合計フィールドに書き込みます。 長さ合計にはには、IP ヘッダーの長さ、IP のオプションが存在する場合の長さ、TCP ヘッダーの長さ、TCP オプションが、存在する場合の長さ、および TCP ペイロードの長さが含まれています。
+- LSOv1、大きな TCP パケットの合計の長さをパケットの IP ヘッダーの長さの合計フィールドに書き込みます。 長さ合計にはには、IP ヘッダーの長さ、IP のオプションが存在する場合の長さ、TCP ヘッダーの長さ、TCP オプションが、存在する場合の長さ、および TCP ペイロードの長さが含まれています。 LSOv2、パケットの IP ヘッダーの長さの合計フィールドを 0 に設定します。 ミニポート ドライバーでは、NET_BUFFER_LIST 構造内の最初の NET_BUFFER 構造体の長さからのパケットの長さを判断する必要があります。
 
 -   1 の補数の合計 TCP pseudoheader を計算し、TCP ヘッダーのチェックサム フィールドに、この合計を書き込みます。 TCP/IP トランスポートは、次のフィールド、pseudoheader に対して 1 の補数の合計を計算します。発信元 IP アドレス、宛先 IP アドレス、およびプロトコル。 1 の補数の合計 TCP/IP トランスポートによって提供される pseudoheader は、NIC IP ヘッダーを検査することがなく、NIC が大きな TCP パケットから派生した各パケットの実際の TCP チェックサムの計算に早期の開始を示します。 RFC 793 されて送信元 IP アドレス、宛先 IP アドレス、プロトコル、および長さの TCP 経由で擬似ヘッダーのチェックサムが計算されることに注意してください。 (TCP の長さは、TCP ヘッダーの長さと TCP ペイロードの長さです。 TCP の長さは含まれません擬似ヘッダーの長さ。)ただし、基になるミニポート ドライバーと NIC は、TCP/IP トランスポートによって渡された大規模なパケットから TCP セグメントを生成するため、トランスポート TCP セグメントごとに TCP ペイロードのサイズがわからないし、そのため、TCP の長さ (単位) を含めることはできません。擬似ヘッダー。 代わりに、以下のように、NIC は、生成された各 TCP セグメントの TCP の長さをカバーする TCP/IP トランスポートによって提供された擬似ヘッダーのチェックサムを拡張します。
 
 -   TCP ヘッダーのシーケンス番号のフィールドに適切なシーケンス番号を書き込みます。 シーケンス番号は、TCP ペイロードの最初のバイトを識別します。
 
-後、ミニポート ドライバーを取得、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体の[ *MiniportSendNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/ff559440)または[ **MiniportCoSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff559365)関数を呼び出すことが、 [ **NET\_バッファー\_]ボックスの一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff568401)マクロが、  *\_Id*の**TcpLargeSendNetBufferListInfo** TCP/IP トランスポートによって書き込まれた MSS 値を取得します。
+後、ミニポート ドライバーを取得、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体の[ *MiniportSendNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/ff559440)または[ **MiniportCoSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff559365)関数を呼び出すことが、 [ **NET\_バッファー\_ボックスの一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff568401)マクロが、  *\_Id*の**TcpLargeSendNetBufferListInfo** TCP/IP トランスポートによって書き込まれた MSS 値を取得します。
 
 ミニポート ドライバーでは、パケットの IP ヘッダーから大きなパケットの合計の長さを取得し、MSS 値を使用して、小さなパケットに大きな TCP パケットを分割します。 各小さいパケットには、MSS または少ないユーザー データのバイトが含まれます。 MSS ユーザー データのバイト数より小さいセグメント化された大きなパケットから作成された最後のパケットのみを含める必要がありますに注意してください。 セグメント化されたパケットから作成されたその他のすべてのパケットは、MSS ユーザー データのバイト数を含める必要があります。 このルールを実行しない場合は、作成し、不要な余分なパケットの送信とパフォーマンスが低下でしたします。
 
@@ -114,7 +114,7 @@ Ip アドレスと TCP ヘッダーの処理には、次の前提条件と制限
 
 -   内のバイト オフセットを使用して、 **TcpHeaderOffset**のメンバー [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882)パケットの最初のバイトから、TCP ヘッダーの場所を特定します。
 
--   数を制限[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造に関連付けられた各 LSOV2 [ **NET\_バッファー\_]ボックスの一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
+-   数を制限[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造に関連付けられた各 LSOV2 [ **NET\_バッファー\_ボックスの一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
 
 -   最初の NET の長さからのパケットの合計の長さを決定\_ネット バッファー構造\_バッファー\_リスト構造体。
 
