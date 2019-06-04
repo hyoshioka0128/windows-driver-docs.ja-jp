@@ -15,19 +15,22 @@ keywords:
 - 電源ポリシー WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 405bddd263bb3b8f1aa8d7ca94f3f29e285d5fb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce09ece00bf70351ab95a528bb236209cc96849d
+ms.sourcegitcommit: 39c0b7e84e5087447493507a478b870c7a834446
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325122"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66458844"
 ---
 # <a name="state-machines-in-the-framework"></a>フレームワークでのステート マシン
 
 
 各デバイスの状態を追跡するのには、フレームワークは、PnP ステート マシン、電源のステート マシン、および電源ポリシーのステート マシンを使用します。 フレームワークは、システムに接続されている各デバイスの場合は、各ステート マシンのインスタンスを作成します。
 
-ごく少数のドライバーは、デバイスのステート マシンの状態を意識する必要があります。 ただし、ドライバーはこの情報を理解する必要がありますフレームワークは 2 つのインターフェイスのセットを提供します。
+>[!NOTE]
+>この機能は、Microsoft 内部使用のみです。
+
+ドライバーはこの情報を理解する必要がある場合は、フレームワークは、2 つのインターフェイスのセットを提供します。
 
 -   ドライバーによって提供されるイベントのコールバック関数のセット。
 
