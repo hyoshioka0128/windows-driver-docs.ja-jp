@@ -4,12 +4,12 @@ description: Network Direct カーネル (NDK) をサポートしているミニ
 ms.assetid: 1399CEB8-82A5-4F91-833E-66FC5A5663C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c32d8905eeebde5745aa1d6af054a38d1751784c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39664bd7126518774e80a9e75ce8d71ad39d6557
+ms.sourcegitcommit: 288c03841f90e6b03c98924a8d7cc44b5975b6f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327714"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66686946"
 ---
 # <a name="inf-requirements-for-ndkpi"></a>NDKPI の INF 要件
 
@@ -35,8 +35,8 @@ Network Direct カーネル (NDK) をサポートしているミニポート ド
     ```
 
 -   INF ファイルを指定する必要があります、  **\*NetworkDirectTechnology**キーワード値を次のようにします。 ドライバーがインストールされると、管理者を更新できる、  **\*NetworkDirectTechnology**でキーワード値、 **[詳細設定]** アダプターのプロパティ ページ。 列挙体は相互に排他的な他のすべてのユーザーを除外 NetworkDirectTechnology 値の選択を意味します。  これにより、厳密なデバイスの動作を定義するプラットフォーム。  
--   デバイスが複数のトランスポートを同時にサポートすることができます、**デバイス既定**などの複数のトランスポートへの再試行/フォールバック デバイスの特定の動作では、します。
 -   デバイスは、サポートされているトランスポートのみを表現する必要があります。  トランスポートの値は WDK にマップされる識別子**NDK_RDMA_TECHNOLOGY**します。  識別子の再定義は禁止されています。
+-   同時実行の複数のトランスポートを使用したデバイスの動作は定義されません。  デバイス**する必要があります**トランスポートの種類を指定します。
 
     **注**ミニポート ドライバーが自動的に再起動で、変更を行った後、 **[詳細設定]** アダプターのプロパティ ページ。
 
@@ -44,7 +44,6 @@ Network Direct カーネル (NDK) をサポートしているミニポート ド
     HKR, Ndi\Params\*NetworkDirectTechnology,        ParamDesc,  0,  "NetworkDirect Technology"
     HKR, Ndi\Params\*NetworkDirectTechnology,        Default,    0,  "0"
     HKR, Ndi\Params\*NetworkDirectTechnology,        Type,       0,  "enum"
-    HKR, Ndi\Params\*NetworkDirectTechnology\enum,   0,          0,  "Device Default"
     HKR, Ndi\Params\*NetworkDirectTechnology\enum,   1,          0,  "iWARP"
     HKR, Ndi\Params\*NetworkDirectTechnology\enum,   2,          0,  "InfiniBand"
     HKR, Ndi\Params\*NetworkDirectTechnology\enum,   3,          0,  "RoCE"

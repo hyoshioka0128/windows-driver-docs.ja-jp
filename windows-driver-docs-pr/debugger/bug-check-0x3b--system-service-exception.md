@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 262eddf19ad6b6ee154ac84569f4e60858459b6f
-ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
+ms.openlocfilehash: ca0c17cfccd665eb7f2d9af5ebcf0c6749303361
+ms.sourcegitcommit: 5523bbb8b8bbeaabee8243ff8efc206aeebae5ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400869"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515933"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>バグ チェック 0x3B:システム\_サービス\_例外
 
@@ -72,9 +72,15 @@ ms.locfileid: "66400869"
 
 パラメーター 1 で返される例外情報が記載[NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)は、Windows Driver Kit の inc ディレクトリにある ntstatus.h ファイルでも。 
 
-可能性のある例外の 1 つの値は、0xC0000005 を示します。ステータス\_アクセス\_違反 
+一般的な例外コードは次のとおりです。
 
-これは、メモリ アクセス違反が発生したことを意味します。 
+-   0x80000003:ステータス\_ブレークポイント
+
+    システムにカーネル デバッガーが関連付けられていない場合、ブレークポイントまたはアサートが発生しました。
+
+-   0xC0000005:ステータス\_アクセス\_違反
+
+    メモリ アクセス違反が発生しました。 (パラメーター 4 のバグ チェックは、ドライバーにアクセスしようとするアドレスです)。
 
 <a name="resolution"></a>解決方法
 ----------
