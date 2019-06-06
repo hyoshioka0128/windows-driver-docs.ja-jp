@@ -12,12 +12,12 @@ keywords:
 - バスの相対メモリ領域の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1be4cccfe25e460b11fd231636bc49b52ca46c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0059597bf2b3c96bf58ffeb24605ca8d36959da0
+ms.sourcegitcommit: e542212bb5e7aba06b9e005e9b63c438404d5643
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380373"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719953"
 ---
 # <a name="mapping-bus-relative-addresses-to-virtual-addresses"></a>バス相対アドレスの仮想アドレスへのマッピング
 
@@ -47,10 +47,10 @@ HAL がリソースにアクセスするデバイス (デバイスの登録) な
 
 ドライバーが受信すると、 [ **IRP\_MN\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551755)または[ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)を呼び出して、マッピングをリリースにする必要があります、PnP マネージャーから要求[ **MmUnmapIoSpace** ](https://msdn.microsoft.com/library/windows/hardware/ff556387)のようなループ内で。 ドライバーは呼び出す必要がありますも**MmUnmapIoSpace**にする必要がありますが失敗した場合、 **IRP\_MN\_開始\_デバイス**要求。
 
-生のリソースの種類が、ドライバーを呼び出す必要がある HAL アクセス ルーチンを示します (<strong>読み取り\_登録\_* XXX</strong><em>、** 書き込み\_登録\_</em>XXX <strong><em>、 *</em>読み取り\_ポート\_* XXX</strong><em>、** 書き込み\_ポート\_</em>XXX***)。 ほとんどのドライバーは、ドライバー自体がリソースを要求またはドライバー開発者は、デバイスのハードウェアの性質、必要な型を知っているため、使用するこれらのルーチンの判断するために生のリソースの一覧を確認する必要はありません。
+生のリソースの種類が、ドライバーを呼び出す必要がある HAL アクセス ルーチンを示します (**READ_REGISTER_* XXX * * *、**WRITE_REGISTER_* XXX * * *、**READ_PORT_* XXX * * *、**WRITE_PORT_* XXX * * *)。 ほとんどのドライバーは、ドライバー自体がリソースを要求またはドライバー開発者は、デバイスのハードウェアの性質、必要な型を知っているため、使用するこれらのルーチンの判断するために生のリソースの一覧を確認する必要はありません。
 
-I/O 領域内のリソースの (**CmResourceTypePort**、 **CmResourceTypeInterrupt**、 **CmResourceTypeDma**)、ドライバーは、返されたの下位 32 ビットを使用する必要がありますリソースへのアクセス、デバイスなどを通じて、HAL の読み取りと書き込みの物理アドレス<strong>読み取り\_登録\_* XXX</strong><em>、**書き込み\_登録\_</em>XXX<strong><em>、 *</em>読み取り\_ポート\_* XXX</strong><em>、および**書き込み\_ポート\_</em>XXX*** ルーチン。
-
+ I/O 領域内のリソースの (**CmResourceTypePort**、 **CmResourceTypeInterrupt**、 **CmResourceTypeDma**)、ドライバーは、返されたの下位 32 ビットを使用する必要がありますリソースへのアクセス、デバイスなどを通じて、HAL の読み取りと書き込みの物理アドレス **READ_REGISTER_* XXX * * *、**WRITE_REGISTER_* XXX * * *、**READ_PORT_* * * XXX *、 **WRITE_PORT_ * XXX*** ルーチン。
+ 
  
 
  

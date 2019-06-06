@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 555d22fd0f02365c3cdb373912a2629b7d65b979
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42d2599dd3437b17f6d09acdbf7e6c14b3f6f305
+ms.sourcegitcommit: e542212bb5e7aba06b9e005e9b63c438404d5643
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347023"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719957"
 ---
 # <a name="devcon-restart"></a>DevCon Restart
 
@@ -34,11 +34,11 @@ ms.locfileid: "63347023"
 <span id="________r______"></span><span id="________R______"></span> **/r**   
 条件付き再起動します。 再起動が必要な変更を有効にする場合にのみ操作を完了した後、システムを再起動します。
 
-<span id="______________"></span> **\\***   
+<span id="______________"></span> **\\** *   
 コンピューター上のすべてのデバイスを表します。
 
 <span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id (**&**) 引用符で囲む必要があります。
+ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id ( **&** ) 引用符で囲む必要があります。
 
 次の特殊文字は、ID パラメーターを変更します。
 
@@ -72,7 +72,8 @@ ms.locfileid: "63347023"
 
 
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=**<em>クラス</em>デバイスのデバイス セットアップ クラスを指定します。 等号 (=) (**=**) クラスの名前として文字列を識別します。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** _クラス_   
+デバイスのデバイス セットアップ クラスを指定します。 等号 (=) ( **=** ) クラスの名前として文字列を識別します。
 
 ハードウェア Id、互換性 Id、デバイス インスタンス Id、または ID パターンを次のクラス名を指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定した Id に一致するクラス内のデバイスを検索します。
 
