@@ -56,6 +56,8 @@
           href: limit-driver-distribution.md
         - name: テスト配布用の公開
           href: publishing-for-test-distribution.md
+        - name: ドライバー配布の段階的なロールアウト
+          href: gradual-rollout.md
     - name: ハードウェア ダッシュボード API
       items:
         - name: ハードウェア ダッシュボード API
