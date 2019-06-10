@@ -1,19 +1,19 @@
 ---
 Description: UMDF ベースの USB クライアント ドライバーのソース コードについて説明します。
 title: USB クライアント ドライバー コードの構造 (UMDF)
-ms.date: 04/20/2017
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a40fc017f0d1c04e52e15a148375955bf9a6d03d
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e12fc7464e54cde537320794d4b5c2a5f5c31907
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405077"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815109"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>USB クライアント ドライバー コード構造 (UMDF) を理解します。
 
 
-このトピックでは、UMDF に基づく USB クライアント ドライバーのソース コードについて学習します。 コード例は、によって生成される、 **USB ユーザー モード ドライバー** Microsoft Visual Studio 2012 に含まれているテンプレートです。 テンプレート コードでは、Active Template Library (ATL) を使用して、COM インフラストラクチャを生成します。 ATL と、クライアント ドライバーで COM 実装の詳細については、ここで説明しません。
+このトピックでは、UMDF に基づく USB クライアント ドライバーのソース コードについて学習します。 コード例は、によって生成される、 **USB ユーザー モード ドライバー** Microsoft Visual Studio 2019 に含まれているテンプレートです。 テンプレート コードでは、Active Template Library (ATL) を使用して、COM インフラストラクチャを生成します。 ATL と、クライアント ドライバーで COM 実装の詳細については、ここで説明しません。
 
 UMDF のテンプレート コードを生成する方法については、次を参照してください。 [、最初の USB クライアント ドライバー (UMDF) を書き込む方法](implement-driver-entry-for-a-usb-driver--umdf-.md)します。 テンプレート コードは、これらのセクションについて説明します。
 

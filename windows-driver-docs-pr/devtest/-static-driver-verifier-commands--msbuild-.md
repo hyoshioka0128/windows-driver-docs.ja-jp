@@ -4,12 +4,12 @@ description: Static Driver Verifier で使用されるコマンド
 ms.assetid: F0663631-AD7B-4BFE-8E07-7BB2FFC72911
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8c956588adc855333659e8978ead5156ff09636
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4840a3f5138fd6b8212e89681a37717af4d8d0fe
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361450"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815094"
 ---
 #  <a name="static-driver-verifier-commands-msbuild"></a>静的ドライバー検証ツールのコマンド (MSBuild)
 
@@ -22,7 +22,7 @@ Static Driver Verifier (SDV) で実行することができます、 **Visual St
 msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration /p:Platform=platform     
 ```
 
-リリース構成を選択する必要があります (たとえば、 **/p:Configuration =「Windows 7 リリース」**)。 サポートされるリリース構成の一覧で、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。 プラットフォームは、 **Win32** x86 または**x64** (たとえば、 **/p:Platform = Win32**)。
+リリース構成を選択する必要があります (たとえば、 **/p:Configuration =「Windows 7 リリース」** )。 サポートされるリリース構成の一覧で、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。 プラットフォームは、 **Win32** x86 または**x64** (たとえば、 **/p:Platform = Win32**)。
 
 **注**をコンピュータに、コンピューターの電源管理プランは省きますスリープ状態の分析中に確認してください。
 
@@ -38,7 +38,7 @@ msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration
 
 詳細については、次を参照してください。 [、ソース コードを準備する](using-static-driver-verifier-to-find-defects-in-drivers.md#preparing_your_source_code)します。
 
-<span id="________check_Rule____Rule_..._"></span><span id="________check_rule____rule_..._"></span><span id="________CHECK_RULE____RULE_..._"></span> **/check:**<em>ルール</em> | *ルール*、.  
+<span id="________check_Rule____Rule_..._"></span><span id="________check_rule____rule_..._"></span><span id="________CHECK_RULE____RULE_..._"></span> **/check:** <em>ルール</em> | *ルール*、.  
 指定した規則と検証を開始します。 1 つ以上のルールを指定するには、各ルールをコンマで区切ります。 実行、 **/check:** コマンドし、ドライバーの Visual Studio プロジェクト ファイルを指定します (\*.vcxproj)。
 
 *ルール*いずれかの名前を指定[ルール](static-driver-verifier-rule.md)またはワイルドカード文字を含むルール名のパターン (\*) を 1 つまたは複数の文字を表します。 ワイルドカード文字を単独で、使用する場合 (\*) すべてのルールを表します。
@@ -46,7 +46,7 @@ msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration
 <span id="________check_rulelist.sdv______"></span><span id="________CHECK_RULELIST.SDV______"></span> **/check:*RuleList*.sdv**   
 指定した規則の一覧ファイルの規則に検証を開始します。 このパラメーターを持つ 1 つのファイルを一覧表示できます。 ルールの一覧ファイルの各行が 1 つの規則の名前を指定できますか、ワイルドカード文字であることができます (\*)、すべての SDV のルールを表します。  実行 **/check:*RuleList*.sdv**コマンドし、ドライバーの Visual Studio プロジェクト ファイルを指定します (\*.vcxproj)。
 
-<em>RuleList</em>**.sdv**の完全修飾パスとファイル名には、[規則の一覧ファイル](static-driver-verifier-rule-list-file.md)します。 ファイルが必要、 **.sdv**ファイル名拡張子。 ファイルがローカル ディレクトリにない限り、パスが必要です。 パスまたはファイル名にスペースが含まれる場合囲みます<em>RuleList</em> 。**sdv**引用符で囲んで指定します。
+<em>RuleList</em> **.sdv**の完全修飾パスとファイル名には、[規則の一覧ファイル](static-driver-verifier-rule-list-file.md)します。 ファイルが必要、 **.sdv**ファイル名拡張子。 ファイルがローカル ディレクトリにない限り、パスが必要です。 パスまたはファイル名にスペースが含まれる場合囲みます<em>RuleList</em> 。**sdv**引用符で囲んで指定します。
 
 指定した場合、 **/check:** SDV、ルールを指定することがなくオプション設定、ドライバー モデルの既定のルールでが実行されます。
 
@@ -73,7 +73,7 @@ SDV のファイルをディレクトリから削除します。 これらのフ
 
 A **/clean**ユーザー承認済みフラグが設定されている場合は、コマンドには、Sdv map.h ファイルは削除されません Sdv map.h ファイルで true (承認済み = true)。 SDV は、今後の認証、このファイルを使用できます。
 
-<span id="_______________"></span> **/?**   
+<span id="_______________"></span> **/?**    
 SDV コマンドの使用状況を表示します。 このパラメーターを使用するコマンドは、ビルド環境のウィンドウで実行する必要はありません。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント

@@ -9,15 +9,14 @@ keywords:
 - WDK ドライバーの検証
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25afa7c27fc60ff7ddb7ac9aba00461c71213cb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66c952e904309e7eb119d7a51e037ad1247107f8
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339744"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813584"
 ---
 # <a name="tools-for-verifying-drivers"></a>ドライバーを検証するためのツール
-
 
 Windows Driver Kit (WDK) には、検出し、開発プロセス中にドライバー コードのエラーを修正するのに役立つよう設計されているいくつかの非常に包括的なツールが含まれています。 これらのツールの多くは、開発プロセスのかなり初期に使用でき、非常に重要な役割を果たし、時間と労力を大幅に節約します。
 
@@ -52,12 +51,3 @@ Windows Driver Kit (WDK) には、検出し、開発プロセス中にドライ�
 ### <a name="span-idothertoolsspanspan-idothertoolsspanother-tools"></a><span id="other_tools"></span><span id="OTHER_TOOLS"></span>その他のツール
 
 アクセスを他のコードまたはドライバーの検証ツールにある場合に (他のソース) から、私たちと WDK に含まれるツールだけでなく、それらを使用することお勧めします。 使用してください[Code Analysis for Drivers](code-analysis-for-drivers.md)、 [Static Driver Verifier](static-driver-verifier.md)、および[Driver Verifier](driver-verifier.md)により、特定の知識、Windows のドライバーがすべてのツールの検索さまざまな方法でコードを検索し、さまざまな種類の問題を修正する抑えことができます。
-
- 
-
- 
-
-
-
-
-

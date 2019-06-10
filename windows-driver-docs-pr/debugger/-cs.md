@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f50f65fd8f710b6457e259d458d8aca995f0b394
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d93c1dcfd4111aa57a977b2befb99f1da4b197c8
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336875"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813551"
 ---
 # <a name="cs"></a>!cs
 
@@ -45,7 +45,7 @@ ms.locfileid: "63336875"
 *endAddress*   | クリティカル セクションを検索するアドレス範囲の末尾を指定します。
 **-d**    | DebugInfo に関連付けられている重要なセクションが表示されます。
 *InfoAddress*   | DebugInfo のアドレスを指定します。
-**-t**    | クリティカル セクションのツリーが表示されます。 使用する前に、 **-t**アクティブ化する必要がありますオプション、 [Application Verifier](application-verifier.md)を選択して対象プロセス、**ロックの使用状況をチェック**オプション。
+**-t**    | クリティカル セクションのツリーが表示されます。 使用する前に、 **-t**アクティブ化する必要がありますオプション、 [Application Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/application-verifier)を選択して対象プロセス、**ロックの使用状況をチェック**オプション。
 *TreeAddress*    | クリティカル セクションのツリーのルートのアドレスを指定します。 このパラメーターを省略して、0 を指定するか、デバッガーには、現在のプロセスのクリティカル セクションのツリーが表示されます。
 **-?**    | この拡張機能のいくつかのヘルプ テキストが表示されます、[デバッガー コマンド ウィンドウ](debugger-command-window.md)します。
 

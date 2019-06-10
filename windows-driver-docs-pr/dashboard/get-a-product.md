@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 300911a67291a97388d59eda07710de58210d22e
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
-ms.translationtype: HT
+ms.openlocfilehash: b173b2ed2c4d7e0a86e6e410ae99f95bccf32490
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106401"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813578"
 ---
 # <a name="get-a-product"></a>製品の取得
 
@@ -33,7 +33,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| authorization | string | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
+| 承認 (authorization) | string | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
 | accept | string | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 
@@ -64,12 +64,12 @@ Authorization: Bearer <your access token>
     "sharedProductId": 1152921504606971255,
     "links": [
         {
-            "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351834",
+            "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351834",
             "rel": "self",
             "method": "GET"
         },
         {
-            "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351834/submissions",
+            "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351834/submissions",
             "rel": "get_submissions",
             "method": "GET"
         }

@@ -4,12 +4,12 @@ description: 生体認証ドライバーの開発のロードマップ
 ms.assetid: 8ed13c75-86d1-4ac0-9f44-05162521b915
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b021560320ab68f7a1fc7399c150171c712a58a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89c406689c78f3c4b9d3d9a50941bb13510d0b42
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328374"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815088"
 ---
 # <a name="roadmap-for-developing-biometric-drivers"></a>生体認証ドライバーの開発のロードマップ
 
@@ -40,7 +40,7 @@ ms.locfileid: "63328374"
 
 -   手順 5:Windows ドライバーのビルド、テスト、およびデバッグ プロセスおよびツールについて説明します。
 
-    ドライバーの構築は、ユーザー モード アプリケーションの構築とは異なります。 については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。 フレームワーク ベースのドライバーを構築する方法については、次を参照してください。 [Framework ベースのドライバーの読み込みのビルドと](https://msdn.microsoft.com/library/windows/hardware/ff540730)します。
+    ドライバーの構築は、ユーザー モード アプリケーションの構築とは異なります。 については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。 フレームワーク ベースのドライバーを構築する方法については、次を参照してください。 [Framework ベースのドライバーの読み込みのビルドと](https://msdn.microsoft.com/library/windows/hardware/ff540730)します。
 
 -   手順 6:生体認証ドライバーに関する設計上の決定を行います。
 

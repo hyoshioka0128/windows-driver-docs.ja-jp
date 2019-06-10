@@ -7,12 +7,12 @@ keywords:
 - WDK の静的検証ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feeee25ed8dd8687a68f75c730e6e86a27a3542a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60636066498fc7ae0017544d044ab50e8920647f
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347604"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813585"
 ---
 # <a name="survey-of-verification-tools"></a>検証ツールの調査
 
@@ -47,7 +47,7 @@ ms.locfileid: "63347604"
     -   **メモリ リークが発生します。** Driver Verifier は、ドライバーによって行われるメモリ割り当てを追跡し、アンロードされたドライバーを取得する前に、メモリが解放されるようにします。
     -   **I/O 操作を完了するか取り消される時間がかかりすぎています。** Driver Verifier の状態に対応するため、ドライバーのロジックをテストできます\_PENDING から値を返す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
     -   **DDI 準拠の確認。** (Windows 8 以降で使用可能)Driver Verifier には、一連のドライバーとオペレーティング システムのカーネル インターフェイスの適切な相互作用をチェックするデバイス ドライバー インターフェイス (DDI) ルールが適用されます。 これらの規則は、Static Driver Verifier は、ドライバーのソース コードの分析に使用されるルールに対応します。 Driver Verifier には、DDI 準拠の検査が有効になっているときにエラーが検出されると、実行[Static Driver Verifier](static-driver-verifier.md)エラーの原因となった同じ規則を選択します。 Static Driver Verifier は、ドライバーのソース コードの不具合の原因を見つけるのに役立ちます。
--   [Application Verifier](application-verifier.md)はユーザー モード アプリケーションと C と C++ で記述されたドライバーの動的検証ツールです。 マネージ コードは検証されません。 Application Verifier は、WDK に含まれていませんが、ダウンロードしてインストールしてから、 [Microsoft ダウンロード センター web サイト](https://go.microsoft.com/fwlink/p/?linkid=11573)します。
+-   [Application Verifier](application-verifier.md)はユーザー モード アプリケーションと C と C++ で記述されたドライバーの動的検証ツールです。 マネージ コードは検証されません。 Application Verifier は、WDK に含まれていませんが、ダウンロードしてインストールしてから、 [Microsoft ダウンロード センター](https://go.microsoft.com/fwlink/p/?linkid=11573)します。
 
  
 

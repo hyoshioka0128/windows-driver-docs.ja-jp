@@ -4,12 +4,12 @@ description: Storport ミニポート ドライバーの開発のロードマッ
 ms.assetid: 43a8f1ee-b2d3-4f97-b7e5-d59790ca6754
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d84cab27320605a441ad26690264ba75178e3959
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31263393982446e8717c703a08c2d973c779c0ec
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384174"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815107"
 ---
 # <a name="roadmap-for-developing-storport-miniport-drivers"></a>Storport ミニポート ドライバーの開発のロードマップ
 
@@ -42,13 +42,13 @@ ms.locfileid: "63384174"
 
 7.  **開発、ビルド、テスト、および storport ミニポート ドライバーをデバッグします。**
 
-    参照してください[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)、[ドライバーのテスト](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)と[ドライバーをデバッグ](https://msdn.microsoft.com/windows-drivers/develop/debugging_a_driver)については反復的なビルド、テスト、およびデバッグします。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
+    参照してください[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)、[ドライバーのテスト](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)と[ドライバーをデバッグ](https://msdn.microsoft.com/windows-drivers/develop/debugging_a_driver)については反復的なビルド、テスト、およびデバッグします。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
 
 8.  **Storport ミニポート ドライバーのドライバー パッケージを作成します。**
 
     詳細については、次を参照してください。[ドライバー パッケージを作成する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。
 
-9.  **署名し、配布、storport ミニポート****ドライバー。**
+9.  **署名し、配布、storport ミニポート** **ドライバー。**
 
     最後の手順では、(必要に応じて) にサインインし、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。
 

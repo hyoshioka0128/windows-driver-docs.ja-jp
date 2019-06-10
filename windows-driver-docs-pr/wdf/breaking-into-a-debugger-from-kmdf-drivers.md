@@ -7,12 +7,12 @@ keywords:
 - WDK KMDF のデバッガーの中断
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7afbfcffa7b84d9464fbe292a193653e3597d9c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5afbf30ce121d9da9f2b6073cf5764dafd6ac3a
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330869"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815115"
 ---
 # <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>KMDF ドライバーからのデバッガーへの割り込み
 
@@ -33,7 +33,7 @@ ms.locfileid: "63330869"
 
 WDFVERIFY と検証用コード\_IS\_IRQL\_パッシブ\_リリースまたはデバッグ構成では、ドライバーをビルドするときに、ドライバー レベルのマクロが含まれている (無料のビルド環境と呼ばれる、またはチェック ビルド環境で Windows 7 以降)。 アサートと ASSERTMSG マクロのコードは、デバッグ構成で、ドライバーをビルドする場合にのみ、ドライバーに含まれます。
 
-プロジェクト構成の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+プロジェクト構成の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
  
 

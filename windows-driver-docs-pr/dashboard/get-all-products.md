@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b55e7b3cd77d39ec6d6ca39646b63068361a4af
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
-ms.translationtype: HT
+ms.openlocfilehash: c3eed99484bce4192f398221dd408e01c717ab85
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106386"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813573"
 ---
 # <a name="get-all-products"></a>すべての製品の取得
 
@@ -65,12 +65,12 @@ Authorization: Bearer <your access token>
             "sharedProductId": 1152921504606971255,
             "links": [
                 {
-                    "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351834",
+                    "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351834",
                     "rel": "self",
                     "method": "GET"
                 },
                 {
-                    "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351834/submissions",
+                    "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351834/submissions",
                     "rel": "get_submissions",
                     "method": "GET"
                 }
@@ -101,12 +101,12 @@ Authorization: Bearer <your access token>
             "sharedProductId": 1152921504606971256,
             "links": [
                 {
-                    "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351835",
+                    "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351835",
                     "rel": "self",
                     "method": "GET"
                 },
                 {
-                    "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351835/submissions",
+                    "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351835/submissions",
                     "rel": "get_submissions",
                     "method": "GET"
                 }

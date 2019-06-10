@@ -1,19 +1,19 @@
 ---
 Description: KMDF ベースの USB クライアント ドライバーのソース コードについて説明します。
 title: USB クライアント ドライバー コードの構造 (KMDF)
-ms.date: 04/20/2017
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e56f8d8a4aedaafeec4343419fd918a6879e67
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: bd70173383d613def89ed10567e892846485e5ce
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405087"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815117"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-kmdf"></a>USB クライアント ドライバー コード構造について (KMDF)
 
 
-このトピックでは、USB クライアント ドライバーの aKMDF ベースのソース コードについて学習します。 コード例は、によって生成される、 **USB ユーザー モード ドライバー**Microsoft Visual Studio 2012 に含まれているテンプレートです。
+このトピックでは、USB クライアント ドライバーの aKMDF ベースのソース コードについて学習します。 コード例は、によって生成される、 **USB ユーザー モード ドライバー**Microsoft Visual Studio 2019 に含まれているテンプレートです。
 
 これらのセクションでは、テンプレート コードに関する情報を提供します。
 

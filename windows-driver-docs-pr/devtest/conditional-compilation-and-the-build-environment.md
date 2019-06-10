@@ -9,12 +9,12 @@ keywords:
 - 条件付きコンパイル WDK のデバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01d7fddd58f0f6660af7e8ef44960367963ce962
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75a628fedf983e1a4f9fbb094cc99b28e9cf0a2d
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343096"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815103"
 ---
 # <a name="conditional-compilation-and-the-build-environment"></a>条件付きコンパイルとビルド環境
 
@@ -36,7 +36,7 @@ Windows Driver Kit (WDK) 8 を使用する場合は、リリース (無料) ま�
 
  
 
-Visual Studio および MSBuild を使用して、リリース バージョンとデバッグのドライバーのバージョンを作成する方法の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)します。
+Visual Studio および MSBuild を使用して、リリース バージョンとデバッグのドライバーのバージョンを作成する方法の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)します。
 
  
 

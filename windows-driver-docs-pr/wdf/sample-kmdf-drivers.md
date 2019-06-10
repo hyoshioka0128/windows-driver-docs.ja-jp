@@ -10,12 +10,12 @@ keywords:
 - WDK KMDF ドライバーをサンプルします。
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f6b97d06d14caccce7ecab1425d1a95ffcd2313d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae5b17e143aa3db86f410df40c130337065ff8bc
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325154"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815091"
 ---
 # <a name="sample-kmdf-drivers"></a>KMDF ドライバーのサンプル
 
@@ -25,7 +25,7 @@ ms.locfileid: "63325154"
 
 
 
-サンプルのビルド方法の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+サンプルのビルド方法の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
 <a href="" id="echo"></a>ECHO では、フレームワークのキューおよび要求オブジェクトと自動同期を使用する方法を示します。
 

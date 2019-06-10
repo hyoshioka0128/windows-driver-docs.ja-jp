@@ -6,12 +6,12 @@ keywords:
 - アプリケーション検証ツール (グローバル フラグ) を有効にします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aba4d70f1af3baef15733bd92db42ddb3d85d14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0e9aa47c3832d6a49f8501fb277568954faf932
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325102"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813590"
 ---
 # <a name="enable-application-verifier"></a>Enable application verifier
 
@@ -50,13 +50,4 @@ ms.locfileid: "63325102"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-このフラグには、最も基本的な検出機能のみができます。 ユーザー モード アプリケーションを確実にテストするには、Application Verifier (appverif.exe) を使用します。 詳細については、次を参照してください。 [Application Verifier](application-verifier.md)します。
-
- 
-
- 
-
-
-
-
-
+このフラグには、最も基本的な検出機能のみができます。 ユーザー モード アプリケーションを確実にテストするには、Application Verifier (appverif.exe) を使用します。 詳細については、次を参照してください。 [Application Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/application-verifier)します。

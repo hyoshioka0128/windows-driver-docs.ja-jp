@@ -4,12 +4,12 @@ description: テスト コンピューターへのテスト署名されたドラ
 ms.assetid: d825acb6-d1de-4fc5-bde2-ea27bd706f61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 470068734445ea3c7d9c1b7248da56f9966c3814
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 500a7f993c3b978e0d9b979ba079d803ecf831e9
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352046"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815092"
 ---
 # <a name="installing-a-test-signed-driver-package-on-the-test-computer"></a>テスト コンピューターへのテスト署名されたドライバー パッケージのインストール
 
@@ -28,7 +28,7 @@ ms.locfileid: "63352046"
 
 この手順をビルドおよびテスト署名、 *ToastPkg*サンプル ドライバー パッケージ。
 
-1.  署名のコンピューターでは、ビルド、 *ToastPkg*ドライバー パッケージのカーネル モード バイナリのサンプルです。 ドライバーを構築する方法の詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+1.  署名のコンピューターでは、ビルド、 *ToastPkg*ドライバー パッケージのカーネル モード バイナリのサンプルです。 ドライバーを構築する方法の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
 2.  署名のコンピューターでは、作成、 *Contoso.com(Test)* 」の説明に従って証明書[テスト証明書を作成する](creating-test-certificates.md)します。
 

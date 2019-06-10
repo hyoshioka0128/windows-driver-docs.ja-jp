@@ -1,23 +1,23 @@
 ---
 Description: UMDF のクライアント ドライバーを作成するのにには、Microsoft Visual Studio に付属する USB ユーザー モード ドライバー テンプレートを使用します。
 title: 初めての USB クライアント ドライバーの記述方法 (UMDF)
-ms.date: 04/20/2017
+ms.date: 06/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a636c0ff23adc0c4682a4d8f80475273a6250875
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6dc3fa4802deb3a028aef7545cae6ee5e7c9cad
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355478"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815097"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-umdf"></a>初めての USB クライアント ドライバーの記述方法 (UMDF)
 
 
-このトピックでは使用し、 **USB ユーザー モード ドライバー**ユーザー モード ドライバー フレームワーク (UMDF) を記述する、Microsoft Visual Studio 2012 に付属するテンプレートのベースのクライアント ドライバー。 を構築してクライアント ドライバーをインストールしたら、クライアント ドライバーを表示します**デバイス マネージャー**し、デバッガーでドライバーの出力を表示します。
+このトピックでは使用し、 **USB ユーザー モード ドライバー**ユーザー モード ドライバー フレームワーク (UMDF) を記述する、Microsoft Visual Studio 2019 に付属するテンプレートのベースのクライアント ドライバー。 を構築してクライアント ドライバーをインストールしたら、クライアント ドライバーを表示します**デバイス マネージャー**し、デバッガーでドライバーの出力を表示します。
 
 UMDF (このトピックの「フレームワークと呼ばれます) は、コンポーネント オブジェクト モデル (COM) に基づきます。 フレームワークのすべてのオブジェクトを実装する必要があります[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)とそのメソッドでは、 [ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)、 [ **AddRef**](https://msdn.microsoft.com/library/windows/desktop/ms691379)、および[**リリース**](https://msdn.microsoft.com/library/windows/desktop/ms682317)、既定では。 **AddRef**と**リリース**クライアント ドライバーは、参照カウントを維持する必要はありませんので、メソッドがオブジェクトの有効期間を管理します。 **QueryInterface**メソッドは、Windows Driver Frameworks (WDF) オブジェクト モデルの他のフレームワーク オブジェクト インターフェイス ポインターを取得するクライアント ドライバーを使用できます。 Framework オブジェクトでは、ドライバーの複雑なタスクを実行し、Windows との対話します。 Framework の特定のオブジェクトは、フレームワークと対話するためのクライアント ドライバーを有効にするインターフェイスを公開します。
 
-UMDF ベースのクライアント ドライバーは、インプロセス COM サーバー (DLL) として実装し、C++ は USB デバイスのクライアント ドライバーを記述するための優先言語。 通常、クライアント ドライバーは、フレームワークによって公開されているいくつかのインターフェイスを実装します。 このトピックでは、クライアント ドライバーで定義されているコールバック クラスとして framework インターフェイスを実装するクラスを参照します。 これらのクラスをインスタンス化した後、結果のコールバック オブジェクトは特定のフレームワーク オブジェクトと提携しました。 このパートナーシップには、クライアント ドライバーのデバイスや、フレームワークによって報告されるシステムに関連するイベントに応答する機会が与えられます。 Windows では、特定のイベントに関する、フレームワークに通知、たびに、フレームワークがある場合、クライアント ドライバーのコールバックを呼び出します。 それ以外の場合、フレームワークは、イベントの既定の処理を続行します。 テンプレート コードでは、ドライバー、デバイス、およびキュー コールバック lasses を定義します。
+UMDF ベースのクライアント ドライバーは、インプロセス COM サーバー (DLL) として実装し、C++ は USB デバイスのクライアント ドライバーを記述するための優先言語。 通常、クライアント ドライバーは、フレームワークによって公開されているいくつかのインターフェイスを実装します。 このトピックでは、クライアント ドライバーで定義されているコールバック クラスとして framework インターフェイスを実装するクラスを参照します。 これらのクラスをインスタンス化した後、結果のコールバック オブジェクトは特定のフレームワーク オブジェクトと提携しました。 このパートナーシップには、クライアント ドライバーのデバイスや、フレームワークによって報告されるシステムに関連するイベントに応答する機会が与えられます。 Windows では、特定のイベントに関する、フレームワークに通知、たびに、フレームワークがある場合、クライアント ドライバーのコールバックを呼び出します。 それ以外の場合、フレームワークは、イベントの既定の処理を続行します。 テンプレート コードでは、ドライバー、デバイス、およびキュー コールバック クラスを定義します。
 
 テンプレートによって生成されたソース コードに関する詳細については、次を参照してください。 [USB クライアント ドライバーの UMDF テンプレート コードを理解する](understanding-the-umdf-template-code-for-usb.md)します。
 
@@ -26,7 +26,7 @@ UMDF ベースのクライアント ドライバーは、インプロセス COM 
 開発、デバッグ、およびユーザー モード ドライバーをインストールする、2 台のコンピューターが必要です。
 
 -   Windows 7 または Windows オペレーティング システムの以降のバージョンを実行しているホスト コンピューター。 ホスト コンピューターは、開発環境の作成し、デバッグには、ドライバーです。
--   たとえば、Windows 8 でのドライバーをテストする対象のコンピュータがオペレーティング システムのバージョンを実行しています。 対象のコンピュータがユーザー モード ドライバーをデバッグして、デバッガーのいずれかです。
+-   Windows 10 などで、バージョンが 1903 でのドライバーをテストする対象のコンピュータがオペレーティング システムのバージョンを実行しています。 対象のコンピュータがユーザー モード ドライバーをデバッグして、デバッガーのいずれかです。
 
 場合によって、ホストとターゲット コンピューターが同じバージョンの Windows で実行されている 1 台のコンピューターが Windows 7、Windows のそれ以降のバージョンを実行していることができます。 このトピックでは、開発、デバッグ、および、ユーザー モード ドライバーのインストールの 2 台のコンピューターを使用していることを前提としています。
 
@@ -34,8 +34,8 @@ UMDF ベースのクライアント ドライバーは、インプロセス COM 
 
 **ソフトウェア要件**
 
--   ホスト コンピューターでは、Visual Studio 2012 にします。
--   ホスト コンピューターでは、Windows 8 の最新 Windows Driver Kit (WDK) を持ちます。
+-   ホスト コンピューターでは、Visual Studio 2019 が。
+-   ホスト コンピューターは、最新の Windows Driver Kit (WDK) を Windows 10、バージョンが 1903 にします。
 
     キットには、ヘッダー、ライブラリ、ツール、ドキュメント、およびデバッグ ツールを開発するために必要なビルド、および USB クライアント ドライバーをデバッグします。 WDK からの最新版を入手できます[、WDK を取得する方法](https://go.microsoft.com/fwlink/p/?linkid=617585)します。
 
@@ -59,18 +59,22 @@ USB ドライバーの開発に慣れていない場合は、OSR USB FX2 ラー�
 <a name="instructions"></a>手順
 ------------
 
-### <a href="" id="generate-the-umdf-driver-code-by-using-the-visual-studio-2012-usb-driver-template"></a>手順 1:Visual Studio 2012 の USB ドライバーのテンプレートを使用して UMDF ドライバーのコードを生成します。
+### <a href="" id="generate-the-umdf-driver-code-by-using-the-visual-studio-2019-usb-driver-template"></a>手順 1:Visual Studio 2019 USB ドライバーのテンプレートを使用して UMDF ドライバーのコードを生成します。
 
 <a href="" id="generate"></a> UMDF ドライバー コードの生成方法については、次を参照してください。 [UMDF ドライバーの作成、テンプレートに基づく](https://msdn.microsoft.com/library/windows/hardware/hh439659)します。
 
-**USB に固有のコードを Visual Studio 2012 で、次のオプションを選択します。**
+**USB に固有のコードを Visual Studio 2019 で、次のオプションを選択します。**
 
-1.  **新しいプロジェクト** ダイアログ ボックスで、左側のウィンドウで検索して選択**USB です。**
-2.  中央のペインで選択**USB ユーザー モード ドライバー**します。
+1.  **新しいプロジェクト**ダイアログ ボックスで、型、上部にある検索ボックスに**USB です。**
+2.  中央のペインで選択**ユーザー モード ドライバー (UMDF V2) の USB**します。
+3.  **[次へ]** をクリックします。
+4.  プロジェクト名を入力、保存を選択する場所、およびクリック**作成**です。
 
-次のスクリーン ショットは**新しいプロジェクト**の ダイアログ ボックス、 **USB ユーザー モード ドライバー**テンプレート。
+次のスクリーン ショット show、**新しいプロジェクト**の ダイアログ ボックス、 **USB ユーザー モード ドライバー**テンプレート。
 
-![visual studio の新しいプロジェクトのオプション](images/umdf-tmpl.png)
+![visual studio の新しいプロジェクトのオプション](images/umdf-template-visual-studio-2019.png)
+
+![visual studio の新しいプロジェクトのオプションの第 2 画面](images/umdf-template-visual-studio-2019-2.png)
 
 このトピックでは、プロジェクトの名前がある前提としています。"MyUSBDriver\_UMDF\_"。 次のファイルが含まれています。
 
@@ -81,7 +85,7 @@ USB ドライバーの開発に慣れていない場合は、OSR USB FX2 ラー�
 | IoQueue.h;IoQueue.c       | 宣言および実装するコールバック クラスを定義、 [ **IQueueCallbackDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff556852)インターフェイス。 クラスは、フレームワークのキュー オブジェクトによって呼び出されるメソッドを定義します。 このクラスでは、フレームワークでキューに置かれた I/O 要求を取得します。                                                                                                                               |
 | internal.h                 | USB デバイスと通信するクライアント ドライバーとユーザー アプリケーションによって共有される一般的な宣言を提供します。 トレース関数とマクロも宣言されています。                                                                                                                                                                                                                                                                          |
 | Dllsup.cpp                 | ドライバー モジュールのエントリ ポイントの実装が含まれています。                                                                                                                                                                                                                                                                                                                                                                              |
-| *&lt;プロジェクト名&gt;*.inf | INF ファイル、ターゲット コンピューターにクライアント ドライバーをインストールするために必要です。                                                                                                                                                                                                                                                                                                                                                               |
+| *&lt;プロジェクト名&gt;* .inf | INF ファイル、ターゲット コンピューターにクライアント ドライバーをインストールするために必要です。                                                                                                                                                                                                                                                                                                                                                               |
 | Exports.def                | エントリがエクスポートする DEF ファイルは、ドライバーのモジュールの関数名をポイントします。                                                                                                                                                                                                                                                                                                                                                                    |
 
  
@@ -118,12 +122,12 @@ USB ドライバーの開発に慣れていない場合は、OSR USB FX2 ラー�
 `HKR,,CoInstallers32,0x00010008,"WinUsbCoinstaller2.dll"`
 
 - WudfCoinstaller.dll (共同インストーラーの構成)
-- WUDFUpdate\_*&lt;バージョン&gt;*.dll (共同インストーラーを再頒布可能パッケージ)
+- WUDFUpdate\_ *&lt;バージョン&gt;* .dll (共同インストーラーを再頒布可能パッケージ)
 - Wdfcoinstaller<em>&lt;バージョン&gt;</em>.dll (kmdf 共同インストーラー)
 - Winusbcoinstaller2.dll ((共同インストーラー Winusb.sys の)
 - MyUSBDriver\_UMDF\_.dll (クライアント ドライバー モジュール)
 
-INF AddReg ディレクティブが UMDF を共同インストーラー再頒布可能パッケージを参照しているかどうか (WUDFUpdate\_*&lt;バージョン&gt;*.dll)、構成の共同インストーラー (への参照を行う必要がありますいません。WUDFCoInstaller.dll)。 INF で両方の co-installer を参照すると、インストール エラーが発生します。
+INF AddReg ディレクティブが UMDF を共同インストーラー再頒布可能パッケージを参照しているかどうか (WUDFUpdate\_ *&lt;バージョン&gt;* .dll)、構成の共同インストーラー (への参照を行う必要がありますいません。WUDFCoInstaller.dll)。 INF で両方の co-installer を参照すると、インストール エラーが発生します。
 
 すべて UMDF ベースの USB クライアント ドライバーには、2 つの Microsoft から提供されたドライバーが必要です。 reflector と WinUSB します。
 
@@ -142,12 +146,14 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 <a href="" id="build"></a>
 **ドライバーをビルドするには**
 
-1.  Visual Studio 2012 では、ドライバーのプロジェクトまたはソリューションを開きます。
+1.  Visual Studio 2019 でドライバーのプロジェクトまたはソリューションを開きます。
 2.  ソリューションを右クリックし、**ソリューション エクスプ ローラー**選択**Configuration Manager**します。
-3.  **Configuration Manager**を選択、**アクティブ ソリューション構成**(たとえば、 **Windows 8 のデバッグ**または**Windows 8 Release**)、および**アクティブ ソリューション プラットフォーム**(たとえば、Win32) 興味のあるビルドの種類に対応しています。
+3.  **Configuration Manager**を選択、**アクティブ ソリューション構成**(たとえば、**デバッグ**または**リリース**) と、 **アクティブ ソリューション プラットフォーム**(たとえば、 **Win32**) 興味のあるビルドの種類に対応しています。
+4.  デバイス インターフェイスの GUID が、プロジェクト全体にわたって正確であることを確認します。 
+    - GUID は Trace.h で定義されているしから参照されて、デバイス インターフェイス`MyUSBDriverUMDFCreateDevice`Device.c でします。 名前で、プロジェクトを作成すると"MyUSBDriver\_UMDF\_"、Visual Studio 2019 定義、デバイス インターフェイスの GUID with、名`GUID_DEVINTERFACE_MyUSBDriver_UMDF_`が呼び出し`WdfDeviceCreateDeviceInterface`with、正しくないパラメーター"GUID_DEVINTERFACE_MyUSBDriverUMDF"。 正しくないパラメーターをドライバーが正しくビルドされることを確認する Trace.h で定義された名前に置き換えます。 
 4.  **ビルド** メニューのをクリックして**ソリューションのビルド**します。
 
-詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
 ### <a href="" id="configure-a-computer-for-testing-and-debugging"></a>手順 4:テストとデバッグ用のコンピューターを構成します。
 
@@ -161,7 +167,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
 1. 手順については、PDB シンボル ファイルの書式設定のトレース メッセージを抽出することで、トレース メッセージの形式 (TMF) ファイルを作成します。
 
-   Tracepdb.exe を使用して、TMF ファイルを作成することができます。 ツールがである、 <em>&lt;インストール フォルダー&gt;</em>Windows キット\\8.0\\bin\\*&lt;アーキテクチャ&gt;* WDK のフォルダー。 次のコマンドは、ドライバーのプロジェクトの TMF ファイルを作成します。
+   Tracepdb.exe を使用して、TMF ファイルを作成することができます。 ツールがである、 <em>&lt;インストール フォルダー&gt;</em>Windows キット\\10\\bin\\ *&lt;アーキテクチャ&gt;* WDK のフォルダー。 次のコマンドは、ドライバーのプロジェクトの TMF ファイルを作成します。
 
    **tracepdb -f \[PDBFiles\] -p \[TMFDirectory\]**
 
@@ -178,17 +184,17 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
        デバッガー拡張が読み込まれていることを確認します。
 
-   3.  **!wmitrace.searchpath +***&lt;TMF file location&gt;*
+   3.  * *!wmitrace.searchpath +***&lt;TMF file location&gt;*
 
        デバッガーの拡張機能の検索パスに TMF ファイルの場所を追加します。
 
        次のように出力します。
 
-       `Trace Format search path is: 'C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE;c:\drivers\tmf'`
+       `Trace Format search path is: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE;c:\drivers\tmf'`
 
 **WPP トレースの対象のコンピューターを構成するには**
 
-1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\*&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)します。
+1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\10\\ツール\\ *&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)します。
 2. 開く、**コマンド ウィンドウ**管理者として実行します。
 3. 次のコマンドを入力します。
 
@@ -196,7 +202,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
    コマンドは、MyTrace をという名前のトレース セッションを開始します。
 
-   **Guid**引数は、クライアント ドライバーのトレース プロバイダーの GUID を指定します。 Microsoft Visual Studio Professional 2012 のプロジェクトで、Trace.h から GUID を取得できます。 別のオプションとしては、次のコマンドを入力し、.guid ファイルで、GUID を指定します。 ファイルには、ハイフンの形式で GUID が含まれています。
+   **Guid**引数は、クライアント ドライバーのトレース プロバイダーの GUID を指定します。 Visual Studio 2019 プロジェクトで、Trace.h から GUID を取得できます。 別のオプションとしては、次のコマンドを入力し、.guid ファイルで、GUID を指定します。 ファイルには、ハイフンの形式で GUID が含まれています。
 
    **トレース ログ-開始 MyTrace - guid の c:\\ドライバー\\Provider.guid-0 xffff をフラグ-7 rt kd をレベル**
 

@@ -1,19 +1,19 @@
 ---
-Description: このトピックでは、単純なカーネル モード ドライバー フレームワーク (KMDF) を記述する Microsoft Visual Studio Professional 2012 に付属する USB カーネル モード ドライバー テンプレートを使用します-ベースのクライアント ドライバー。
+Description: このトピックでは、単純なカーネル モード ドライバー フレームワーク (KMDF) を記述する Microsoft Visual Studio Professional 2019 に付属する USB カーネル モード ドライバー テンプレートを使用します-ベースのクライアント ドライバー。
 title: 初めての USB クライアント ドライバーの記述方法 (KMDF)
-ms.date: 04/20/2017
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f0dc7337526e0736a6b9adb850e86e386a0a8ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65fd69e5353ca9fd179d388c38768de7292dcd5d
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379904"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815067"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-kmdf"></a>初めての USB クライアント ドライバーの記述方法 (KMDF)
 
 
-このトピックでは使用し、 **USB カーネル モード ドライバー** Microsoft Visual Studio の Professional 2012 書き込む単純なカーネル モード ドライバー フレームワーク (KMDF) に付属するテンプレートのベースのクライアント ドライバー。 を構築してクライアント ドライバーをインストールしたら、クライアント ドライバーを表示します**デバイス マネージャー**し、デバッガーでドライバーの出力を表示します。
+このトピックでは使用し、 **USB カーネル モード ドライバー** Microsoft Visual Studio の Professional 2019 書き込む単純なカーネル モード ドライバー フレームワーク (KMDF) に付属するテンプレートのベースのクライアント ドライバー。 を構築してクライアント ドライバーをインストールしたら、クライアント ドライバーを表示します**デバイス マネージャー**し、デバッガーでドライバーの出力を表示します。
 
 テンプレートによって生成されたソース コードに関する詳細については、次を参照してください。 [USB クライアント ドライバーの KMDF テンプレート コードを理解する](understanding-the-kmdf-template-code-for-usb.md)します。
 
@@ -28,7 +28,7 @@ ms.locfileid: "63379904"
 
 **ソフトウェア要件**
 
--   ホスト コンピューターでは、開発環境をホストし、Visual Studio Professional 2012 を持ちます。
+-   ホスト コンピューターでは、開発環境をホストし、Visual Studio Professional 2019 を持ちます。
 -   ホスト コンピューターでは、Windows 8 の最新 Windows Driver Kit (WDK) を持ちます。 キットは、ヘッダー、ライブラリ、ツール、ドキュメントについては、デバッグ ツールを開発するために必要なビルド、デバッグと KMDF ドライバー。 WDK の最新バージョンを取得するには、次を参照してください。 [Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)します。
 -   ホスト コンピューターでは、Windows 用デバッグ ツールの最新バージョンがあります。 WDK から最新バージョンを取得することもできますを[ダウンロードとデバッグ ツールの Windows にインストール](https://msdn.microsoft.com/windows/hardware/gg463009.aspx)します。
 -   Windows Vista または Windows の以降のバージョン、ターゲット コンピューターが実行されています。
@@ -53,25 +53,29 @@ Microsoft USB Test Tool (MUTT) デバイスを取得することもできます�
 <a name="instructions"></a>手順
 ------------
 
-### <a href="" id="generate-the-kmdf-driver-code-by-using-the--visual-studio-professional-2012---usb-driver-template"></a>手順 1:Visual Studio Professional 2012 の USB ドライバーのテンプレートを使用して、KMDF ドライバー コードを生成します。
+### <a href="" id="generate-the-kmdf-driver-code-by-using-the--visual-studio-professional-2019---usb-driver-template"></a>手順 1:Visual Studio Professional 2019 USB ドライバーのテンプレートを使用して、KMDF ドライバー コードを生成します。
 
 KMDF ドライバー コードの生成方法については、手順を参照してください。 [KMDF ドライバーの作成、テンプレートに基づく](https://msdn.microsoft.com/library/windows/hardware/hh439654)します。
 
-**USB に固有のコードを Visual Studio Professional 2012 で、次のオプションを選択します。**
+**USB に固有のコードを Visual Studio Professional 2019 で、次のオプションを選択します。**
 
-1.  **新しいプロジェクト**ダイアログ ボックスで、左側のウィンドウで、 **USB です。**
-2.  中央のペインで選択**USB カーネル モード ドライバー**します。
+1.  **新しいプロジェクト**ダイアログ ボックスで、型、上部にある検索ボックスに**USB です。**
+2.  中央のペインで選択**カーネル モード ドライバーでは、USB (KMDF)** します。
+3.  **[次へ]** をクリックします。
+4.  プロジェクト名を入力、保存を選択する場所、およびクリック**作成**です。
 
-次のスクリーン ショットは**新しいプロジェクト**の ダイアログ ボックス、 **USB カーネル モード ドライバー**テンプレート。
+次のスクリーン ショット show、**新しいプロジェクト**の ダイアログ ボックス、 **USB カーネル モード ドライバー**テンプレート。
 
-![visual studio の新しいプロジェクトのオプション](images/kmdf-tmpl.png)
+![visual studio の新しいプロジェクトのオプション](images/kmdf-template-visual-studio-2019.png)
+
+![visual studio の新しいプロジェクトのオプションの第 2 画面](images/kmdf-template-visual-studio-2019-2.png)
 
 このトピックでは、Visual Studio プロジェクトの名前がある前提としています。"MyUSBDriver\_"。 次のファイルが含まれています。
 
 | ファイル                      | 説明                                                                                                          |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------|
 | Public.h                   | USB デバイスと通信するクライアント ドライバーとユーザー アプリケーションによって共有される一般的な宣言を提供します。 |
-| *&lt;プロジェクト名&gt;*.inf | ターゲット コンピューター上のクライアント ドライバーのインストールに必要な情報が含まれています。                                   |
+| *&lt;プロジェクト名&gt;* .inf | ターゲット コンピューター上のクライアント ドライバーのインストールに必要な情報が含まれています。                                   |
 | Trace.h                    | トレース関数とマクロを宣言します。                                                                               |
 | Driver.h;Driver.c         | 宣言し、ドライバーのエントリ ポイントとイベントのコールバック ルーチンを定義します。                                                |
 | Device.h;Device.c         | 宣言し、準備-ハードウェア イベントのイベント コールバック ルーチンを定義します。                                          |
@@ -83,7 +87,7 @@ KMDF ドライバー コードの生成方法については、手順を参照�
 
 ドライバーをビルドする前に、ハードウェア ID 文字列では具体的には、デバイスに関する情報を含むテンプレートの INF ファイルを変更する必要があります。
 
-**ソリューション エクスプ ローラー****ドライバー ファイル**、INF ファイルをダブルクリックします。
+**ソリューション エクスプ ローラー** **ドライバー ファイル**、INF ファイルをダブルクリックします。
 
 INF ファイルでは、製造元とプロバイダーの名前をデバイス セットアップ クラスなどの情報を提供し、具合です。 提供する必要がある情報の 1 つは、デバイスのハードウェア識別子です。
 
@@ -103,12 +107,12 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
 **ドライバーをビルドするには**
 
-1.  Visual Studio Professional 2012 で、ドライバーのプロジェクトまたはソリューションを開く
+1.  Visual Studio Professional 2019 でドライバーのプロジェクトまたはソリューションを開く
 2.  ソリューションを右クリックし、**ソリューション エクスプ ローラー**選択**Configuration Manager**します。
 3.  **Configuration Manager**を選択、**アクティブ ソリューション構成**(たとえば、 **Windows 8 のデバッグ**または**Windows 8 Release**) および**アクティブ ソリューション プラットフォーム**(たとえば、Win32) に関心があるビルドの種類に対応しています。
 4.  **ビルド** メニューのをクリックして**ソリューションのビルド**します。
 
-詳細については、次を参照してください。[ドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
 ### <a href="" id="configure-a-computer-for-testing-and-debugging"></a>手順 4:テストとデバッグ用のコンピューターを構成します。
 
@@ -122,7 +126,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
 1. 手順については、PDB シンボル ファイルの書式設定のトレース メッセージを抽出することで、トレース メッセージの形式 (TMF) ファイルを作成します。
 
-   Tracepdb.exe を使用して、TMF ファイルを作成することができます。 ツールがである、 <em>&lt;インストール フォルダー&gt;</em>Windows キット\\8.0\\bin\\*&lt;アーキテクチャ&gt;* WDK のフォルダー。 次のコマンドは、ドライバーのプロジェクトの TMF ファイルを作成します。
+   Tracepdb.exe を使用して、TMF ファイルを作成することができます。 ツールがである、 <em>&lt;インストール フォルダー&gt;</em>Windows キット\\8.0\\bin\\ *&lt;アーキテクチャ&gt;* WDK のフォルダー。 次のコマンドは、ドライバーのプロジェクトの TMF ファイルを作成します。
 
    **tracepdb -f \[PDBFiles\] -p \[TMFDirectory\]**
 
@@ -139,17 +143,17 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
        デバッガー拡張が読み込まれていることを確認します。
 
-   3.  **!wmitrace.searchpath +***&lt;TMF file location&gt;*
+   3.  * *!wmitrace.searchpath +***&lt;TMF file location&gt;*
 
        デバッガーの拡張機能の検索パスに TMF ファイルの場所を追加します。
 
        次のように出力します。
 
-       `Trace Format search path is: 'C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE;c:\drivers\tmf'`
+       `Trace Format search path is: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE;c:\drivers\tmf'`
 
 **WPP トレースの対象のコンピューターを構成するには**
 
-1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\*&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)します。
+1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\8.0\\ツール\\ *&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)します。
 2. 開く、**コマンド ウィンドウ**管理者として実行します。
 3. 次のコマンドを入力します。
 
@@ -157,7 +161,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
    コマンドは、MyTrace をという名前のトレース セッションを開始します。
 
-   **Guid**引数は、クライアント ドライバーのトレース プロバイダーの GUID を指定します。 Visual Studio Professional 2012 のプロジェクトで、Trace.h から GUID を取得できます。 別のオプションとしては、次のコマンドを入力し、.guid ファイルで、GUID を指定します。 ファイルには、ハイフンの形式で GUID が含まれています。
+   **Guid**引数は、クライアント ドライバーのトレース プロバイダーの GUID を指定します。 Visual Studio Professional 2019 プロジェクトで、Trace.h から GUID を取得できます。 別のオプションとしては、次のコマンドを入力し、.guid ファイルで、GUID を指定します。 ファイルには、ハイフンの形式で GUID が含まれています。
 
    **トレース ログ-開始 MyTrace - guid の c:\\ドライバー\\Provider.guid-0 xffff をフラグ-7 rt kd をレベル**
 
@@ -179,7 +183,7 @@ INF ファイルでは、製造元とプロバイダーの名前をデバイス 
 
  
 
-Visual Studio Professional 2012 で、ターゲット システムにドライバーを展開する方法の詳細については、次を参照してください。[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)します。
+Visual Studio Professional 2019 でターゲット システムにドライバーを展開する方法の詳細については、次を参照してください。[テスト コンピューターにドライバーを展開する](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)します。
 
 デバイス マネージャーを使用して、ターゲット コンピューターでドライバーを手動でインストールできます。 コマンド プロンプトからドライバーをインストールする場合は、これらのユーティリティを使用できます。
 
@@ -187,7 +191,7 @@ Visual Studio Professional 2012 で、ターゲット システムにドライ�
 
     このツールは、Windows 付属します。 Windows では\\System32 します。 このユーティリティを使用して、ドライバーをドライバー ストアに追加することができます。
 
-    ``` syntax
+    ```cmd
     C:\>pnputil /a m:\MyDriver_.inf
     Microsoft PnP Utility
 
@@ -202,7 +206,7 @@ Visual Studio Professional 2012 で、ターゲット システムにドライ�
 
     このツールには、WDK します。 インストールし、ドライバーの更新に使用できます。
 
-    ``` syntax
+    ```cmd
     devcon update c:\windows\inf\MyDriver_.inf USB\VID_0547&PID_1002\5&34B08D76&0&6
     ```
 
@@ -232,7 +236,4 @@ Visual Studio は、最初の進行状況を表示、**出力**ウィンドウ�
 
 ## <a name="related-topics"></a>関連トピック
 [USB クライアント ドライバーの KMDF テンプレート コードを理解します。](understanding-the-kmdf-template-code-for-usb.md)  
-[USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  
-
-
-
+[USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)

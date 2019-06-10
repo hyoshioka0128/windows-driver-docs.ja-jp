@@ -398,8 +398,6 @@
       items:
         - name: Debugging Tools for Windows に関連するツール
           href: tools-related-to-debugging-tools-for-windows.md
-        - name: アプリケーション検証ツール
-          href: application-verifier.md
         - name: Windows エラー報告
           href: windows-error-reporting.md
     - name: ソース コード

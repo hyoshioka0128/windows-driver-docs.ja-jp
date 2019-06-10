@@ -4,12 +4,12 @@ description: カーネル モード ドライバーなど、ユーザー モー�
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1b0455babda8c17dd18757aa68e6a771ccda64
-ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
+ms.openlocfilehash: b5fcdabb83c8e664de60bef7382c8b9a6ccba2de
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394274"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815087"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>Windows ドライバーへの WPP ソフトウェア トレースの追加
 
@@ -493,7 +493,7 @@ WDK のサポートを提供する、 [WPP プリプロセッサ](wpp-preprocess
 2.  プロジェクトのプロパティ ページで次のようにクリックします。**構成プロパティ**クリック**WPP トレース**。
 3.  **全般**設定、**実行 WPP**オプションを**はい**。
 4.  **コマンドライン**トレースの動作をカスタマイズするその他のオプションを追加します。 追加することについては、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
-5.  プロジェクトまたはターゲットの構成とプラットフォームのためのソリューションをビルドします。 参照してください[WDK でドライバーをビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)します。
+5.  プロジェクトまたはターゲットの構成とプラットフォームのためのソリューションをビルドします。 参照してください[WDK でドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
 
 ビルド プロセスの詳細については、次を参照してください。 [TraceWPP タスク](tracewpp-task.md)と[WDK と Visual Studio ビルド環境](wdk-and-visual-studio-build-environment.md)します。
 

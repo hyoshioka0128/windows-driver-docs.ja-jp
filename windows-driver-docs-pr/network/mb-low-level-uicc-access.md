@@ -7,12 +7,12 @@ keywords:
 ms.date: 12/05/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fbfa6884a96307a0cee5d809f14d98f13efbc8eb
-ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
+ms.openlocfilehash: e31353e294746506f6470973eb368d8d1336feaa
+ms.sourcegitcommit: 970845120208f29b874066f2b8b7e97078088013
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969592"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66806828"
 ---
 # <a name="mb-low-level-uicc-access"></a>MB 低レベル UICC アクセス
 
@@ -437,7 +437,7 @@ MBIM_SET_MS_UICC_RESET 構造体には、ホストによって指定されたパ
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 詳細については、次を参照してください。 [MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbim_ms_uicc_passthrough_action)します。 |
 
-#### < a name = >"MBIM_MS_UICC_PASSTHROUGH_ACTION"</a> MBIM_MS_UICC_PASSTHROUGH_ACTION
+#### <a name="mbim_ms_uicc_passthrough_action">MBIM_MS_UICC_PASSTHROUGH_ACTION</a>
 
 MBIM_MS_UICC_PASSTHROUGH_ACTION 列挙体は、MBIM 関数にホストを指定できますパススルー操作の種類を定義します。
 
@@ -456,7 +456,7 @@ MBIM_MS_UICC_RESET_INFO 構造体には、MBIM 関数のパススルー状態が
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 詳細については、次を参照してください。 [MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbim_ms_uicc_passthrough_status)します。 |
 
-#### < a name = >"MBIM_MS_UICC_PASSTHROUGH_STATUS"</a> MBIM_MS_UICC_PASSTHROUGH_STATUS
+#### <a name="mbim_ms_uicc_passthrough_status">MBIM_MS_UICC_PASSTHROUGH_STATUS</a> 
 
 MBIM_MS_UICC_PASSTHROUGH_STATUS 列挙体は、ホストに MBIM 関数を指定します、パススルーの状態の種類を定義します。
 

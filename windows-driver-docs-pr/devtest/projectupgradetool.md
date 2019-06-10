@@ -1,15 +1,15 @@
 ---
 title: ProjectUpgradeTool
-description: ProjectUpgradeTool は Microsoft Visual Studio 2012 プロジェクト (*.vcxproj) ファイルとソリューション ファイル (*.sln) for Windows 8 と Windows Driver Kit (WDK) に作成され、Windows 8.1 の WDK で動作するようにアップグレードしてMicrosoft Visual Studio 2013。
+description: ProjectUpgradeTool は Microsoft Visual Studio 2012 プロジェクト ( *.vcxproj) ファイルとソリューション ファイル (* .sln) for Windows 8 と Windows Driver Kit (WDK) に作成され、Windows 8.1 の WDK で動作するようにアップグレードしてMicrosoft Visual Studio 2013。
 ms.assetid: DEB7799C-D505-40E6-B2B0-CF774A99B1BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2c4d12bd3c55ba6ec0a1f531e781415e8eff06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f349aa2f788b5960d2b777d8be2d843f656584b
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327324"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815086"
 ---
 # <a name="projectupgradetool"></a>ProjectUpgradeTool
 
@@ -218,7 +218,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[ドライバーのビルド](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)
+[ドライバーのビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)
 
 [WDK と Visual Studio のビルド環境](wdk-and-visual-studio-build-environment.md)
 
