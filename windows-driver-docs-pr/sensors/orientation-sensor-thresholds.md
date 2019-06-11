@@ -4,12 +4,12 @@ description: このトピックでは、センサーのしきい値について�
 ms.assetid: BC7B76C3-F6D3-48FC-AA22-A91519A0A0D8
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 197be6f9e5bf76ba634d3d58a14bf747badc9b1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a6c2bdd28e3ad84ffd6cfe166b0b216786f79c93
+ms.sourcegitcommit: 85b989c149403210f2c7b892e045d037580432e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330098"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825048"
 ---
 # <a name="orientation-sensor-thresholds"></a>方向センサーのしきい値
 
@@ -34,8 +34,9 @@ PKEY_SensorData_RotationAngle_Degrees が 0.0f に設定されている場合、
 
 方向センサー ドライバーは、センサー クラスの拡張機能の呼び出し直後に、1 つの例に読み取り常に報告する必要があります、 [EvtSensorStart](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)しきい値の値に関係なくコールバック。 このサンプルと呼ばれると呼ばれる*サンプル読み取りの初期*します。
 
-方向センサー ドライバーでは、それぞれのしきい値が満たされたときに、センサー クラスの拡張機能への読み込み中のサンプルを報告する必要があります。
+方向センサー ドライバーには、それぞれのしきい値が満たされたときに、センサー クラスの拡張機能への読み込み中のサンプルをレポートする必要があります。
 
+ドライバーをサポートし、軸ごとの測定値を測定する、省略可能な次の追加のデータ フィールドのいずれかを対応する軸のしきい値が公開する必要があります。
 * PKEY_SensorData_LinearAccelerationX_Gs
 * PKEY_SensorData_LinearAccelerationY_Gs
 * PKEY_SensorData_LinearAccelerationZ_Gs
@@ -43,7 +44,7 @@ PKEY_SensorData_RotationAngle_Degrees が 0.0f に設定されている場合、
 * PKEY_SensorData_CorrectedAngularVelocityY_DegreesPerSecond
 * PKEY_SensorData_CorrectedAngularVelocityZ_DegreesPerSecond
 
-各閾値は軸ごとの測定である必要があります。 軸のいずれかでしきい値の条件が満たされるたびに、ドライバーは SensorsCxSensorDataReady を呼び出すため必要があります。
+軸のいずれかでしきい値の条件が満たされるたびに、ドライバーは SensorsCxSensorDataReady を呼び出すため必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 

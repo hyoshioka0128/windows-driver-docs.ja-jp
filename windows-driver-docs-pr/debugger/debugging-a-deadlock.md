@@ -5,38 +5,40 @@ ms.assetid: ee7990d9-2d4e-4e48-9214-539eebd1d8db
 keywords:
 - デッドロック
 - スレッド準備完了スレッドがありません。
-ms.date: 05/23/2017
+ms.date: 06/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fb6f4a43ca88b22df52362f4f56b11b489027f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1235f31ca6a62c6028ddd17fc239a9d4e2ecf06e
+ms.sourcegitcommit: 85b989c149403210f2c7b892e045d037580432e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324634"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825049"
 ---
 # <a name="debugging-a-deadlock"></a>デッドロックのデバッグ
 
-
 ## <span id="ddk_debugging_deadlocks_no_ready_threads__dbg"></span><span id="DDK_DEBUGGING_DEADLOCKS_NO_READY_THREADS__DBG"></span>
-
 
 要求スレッドにコードまたはその他のリソースへの排他アクセスが必要がある場合、*ロック*します。 可能な場合、Windows は、スレッドにこのロックを指定することにより応答します。 この時点では、システムの他に何もロックされているコードにアクセスできます。 これが常に発生し、適切に記述された、マルチ スレッド アプリケーションの正常な処理は、します。 特定のコード セグメントは 1 つのロックを同時がだけことができます、複数のコード セグメントの各ことができます独自のロック。
 
 A*デッドロック*2 つまたは複数のスレッドは、互換性のないシーケンスで、2 つ以上のリソースにロックを要求した場合に発生します。 たとえば、1 つのスレッドのことが A のリソースのロックを取得および B のリソースへのアクセスを要求し、その一方で、2 つのスレッドがリソース B でロックを取得し、リソース A へのアクセスを要求し、どちらのスレッドは、まで、その他のスレッドのロックを開放し、そのため、どちらのスレッドが進むことができますに進むことができます。
 
-1 つのアプリケーションの複数のスレッドが互いのと同じリソースへのアクセスをブロックされたときに、ユーザー モードのデッドロックが発生します。 (同じプロセスまたは個別のプロセスを使用して) 複数のスレッドが互いの同じカーネル リソースへのアクセスをブロックされたときに、カーネル モードのデッドロックが発生します。 デッドロックのデバッグに使用するプロシージャは、ユーザー モードまたはカーネル モードで、デッドロックが発生したかどうかによって異なります。
+1 つのアプリケーションの通常の複数のスレッドが互いのと同じリソースへのアクセスをブロックされたときに、ユーザー モードのデッドロックが発生します。 ただし、複数のアプリケーションの複数のスレッドでは、他のグローバル イベント、セマフォなどのグローバル/共有のリソースへのアクセスがブロックもできます。
+
+(同じプロセスまたは個別のプロセスを使用して) 複数のスレッドが互いの同じカーネル リソースへのアクセスをブロックされたときに、カーネル モードのデッドロックが発生します。
+
+デッドロックのデバッグに使用するプロシージャは、ユーザー モードまたはカーネル モードで、デッドロックが発生したかどうかによって異なります。
 
 ### <a name="span-iddebuggingausermodedeadlockspanspan-iddebuggingausermodedeadlockspandebugging-a-user-mode-deadlock"></a><span id="debugging_a_user_mode_deadlock"></span><span id="DEBUGGING_A_USER_MODE_DEADLOCK"></span>ユーザー モードのデッドロックのデバッグ
 
 ユーザー モードでデッドロックが発生したときに、デバッグを行う、次の手順を使用します。
 
-1.  問題、 [ **! ntsdexts.locks** ](-locks---ntsdexts-locks-.md)拡張機能。 ユーザー モードで入力するだけ済みます **! ロック**デバッガー プロンプト、 **ntsdexts**プレフィックスが使用されます。
+1. 問題、 [ **! ntsdexts.locks** ](-locks---ntsdexts-locks-.md)拡張機能。 ユーザー モードで入力するだけ済みます **! ロック**デバッガー プロンプト、 **ntsdexts**プレフィックスが使用されます。
 
-2.  この拡張機能では、所有しているスレッドの ID と各クリティカル セクションのロック数と共に、現在のプロセスに関連付けられているすべての重要なセクションが表示されます。 クリティカル セクションのロック カウントが 0 の場合は、そのような操作はロックされません。 使用して、 [ **~ (スレッド ステータス)** ](---thread-status-.md)コマンドをその他の重要なセクションを所有するスレッドに関する情報を参照してください。
+2. この拡張機能では、所有しているスレッドの ID と各クリティカル セクションのロック数と共に、現在のプロセスに関連付けられているすべての重要なセクションが表示されます。 クリティカル セクションのロック カウントが 0 の場合は、そのような操作はロックされません。 使用して、 [ **~ (スレッド ステータス)** ](---thread-status-.md)コマンドをその他の重要なセクションを所有するスレッドに関する情報を参照してください。
 
-3.  使用して、 [ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)の他の重要なセクションを待機しているかどうかを判断するこれらのスレッドの各コマンド。
+3. 使用して、 [ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)の他の重要なセクションを待機しているかどうかを判断するこれらのスレッドの各コマンド。
 
-4.  これらの出力を使用して**kb**コマンド、デッドロックを見つけることができます。 他のスレッドによって保持されている、ロックで待機している各は 2 つのスレッド。 まれなケースで循環パターンは、ロックを保持する 3 つ以上のスレッドでデッドロックが考えられますが、2 つだけのスレッドがほとんどデッドロックに関係します。
+4. これらの出力を使用して**kb**コマンド、デッドロックを見つけることができます。 他のスレッドによって保持されている、ロックで待機している各は 2 つのスレッド。 まれなケースで循環パターンは、ロックを保持する 3 つ以上のスレッドでデッドロックが考えられますが、2 つだけのスレッドがほとんどデッドロックに関係します。
 
 この手順の図を次に示します。 まず、 **! ntdexts.locks**拡張機能。
 
@@ -49,7 +51,7 @@ OwningThread       a7
 EntryCount         0
 ContentionCount    0
 *** Locked
- 
+
 CritSec isatq!AtqActiveContextList+a8 at 68629100
 LockCount          2
 RecursionCount     1
@@ -57,14 +59,14 @@ OwningThread       a3
 EntryCount         2
 ContentionCount    2
 *** Locked
- 
+
 CritSec +24e750 at 24e750
 LockCount          6
 RecursionCount     1
 OwningThread       a9
 EntryCount         6
 ContentionCount    6
-*** Locked 
+*** Locked
 ```
 
 表示される最初の重要なセクションでは、ロックがないと、そのため、無視できます。
@@ -74,7 +76,7 @@ ContentionCount    6
 すべてのスレッドをリストすることによってこのスレッドを見つけることができます、 [ **~ (スレッド ステータス)** ](---thread-status-.md)コマンド、および、この ID を持つスレッドを検索します。
 
 ```dbgcmd
-0:006>  ~ 
+0:006>  ~
    0  Id: 1364.1330 Suspend: 1 Teb: 7ffdf000 Unfrozen
    1  Id: 1364.17e0 Suspend: 1 Teb: 7ffde000 Unfrozen
    2  Id: 1364.135c Suspend: 1 Teb: 7ffdd000 Unfrozen
@@ -83,7 +85,7 @@ ContentionCount    6
    5  Id: 1364.1278 Suspend: 1 Teb: 7ffda000 Unfrozen
 .  6  Id: 1364.a9 Suspend: 1 Teb: 7ffd9000 Unfrozen
    7  Id: 1364.111c Suspend: 1 Teb: 7ffd8000 Unfrozen
-   8  Id: 1364.1588 Suspend: 1 Teb: 7ffd7000 Unfrozen 
+   8  Id: 1364.1588 Suspend: 1 Teb: 7ffd7000 Unfrozen
 ```
 
 この表示では、最初の項目は、デバッガーの内部スレッドの数です。 2 番目の項目 (、`Id`フィールド) を小数点で区切られた 2 つの 16 進数値が含まれています。 小数点の前に数値はプロセス ID です。数、小数点がスレッドの id。 この例では、スレッド ID 0xA3 がスレッド番号 4 に対応する表示されます。
@@ -91,7 +93,7 @@ ContentionCount    6
 使用して、 [ **kb (Stack Backtrace の表示)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)スレッド番号 4 に対応するスタックを表示するコマンド。
 
 ```dbgcmd
-0:006>  ~4 kb 
+0:006>  ~4 kb
   4  id: 97.a3   Suspend: 0 Teb 7ffd9000 Unfrozen
 ChildEBP RetAddr  Args to Child
 014cfe64 77f6cc7b 00000460 00000000 00000000 ntdll!NtWaitForSingleObject+0xb
@@ -140,25 +142,16 @@ ChildEBP RetAddr  Args to Child
 
 ### <a name="span-iddebuggingakernelmodedeadlockspanspan-iddebuggingakernelmodedeadlockspandebugging-a-kernel-mode-deadlock"></a><span id="debugging_a_kernel_mode_deadlock"></span><span id="DEBUGGING_A_KERNEL_MODE_DEADLOCK"></span>カーネル モードのデッドロックのデバッグ
 
-カーネル モードでデッドロックのデバッグに役立ついくつかのデバッガー拡張機能があります。
+カーネル モードでデッドロックがデバッグに役立ついくつかのデバッガー拡張機能があります。
 
--   [ **! Kdexts.locks** ](-locks---kdext--locks-.md)拡張機能は、カーネルのリソースとこれらのロックを保持しているスレッドで保持されているすべてのロックに関する情報を表示します。 (カーネル モードで入力するだけ済みます **! ロック**デバッガー プロンプト、 **kdexts**プレフィックスが使用されます)。
+- [ **! Kdexts.locks** ](-locks---kdext--locks-.md)拡張機能は、カーネルのリソースとこれらのロックを保持しているスレッドで保持されているすべてのロックに関する情報を表示します。 (カーネル モードで入力するだけ済みます **! ロック**デバッガー プロンプト、 **kdexts**プレフィックスが使用されます)。
 
--   [ **! Qlocks** ](-qlocks.md)拡張機能には、すべてのキューに置かれたスピン ロックの状態が表示されます。
+- [ **! Qlocks** ](-qlocks.md)拡張機能には、すべてのキューに置かれたスピン ロックの状態が表示されます。
 
--   [ **! Wdfkd.wdfspinlock** ](-deadlock.md)拡張機能には、カーネル モード ドライバー フレームワーク (KMDF) スピン ロック オブジェクトに関する情報が表示されます。
+- [ **! Wdfkd.wdfspinlock** ](-deadlock.md)拡張機能には、カーネル モード ドライバー フレームワーク (KMDF) スピン ロック オブジェクトに関する情報が表示されます。
 
--   [ **! デッドロック**](-deadlock.md)拡張機能は、デッドロックが発生する可能性のあるコードでロックの一貫性のない使用を検出するためにドライバーの検証ツールと組み合わせて使用します。
+- [ **! デッドロック**](-deadlock.md)拡張機能は、デッドロックが発生する可能性のあるコードでロックの一貫性のない使用を検出するためにドライバーの検証ツールと組み合わせて使用します。
 
 カーネル モードでデッドロックが発生した場合、使用、 **! kdexts.locks**拡張機能を現在のスレッドによって取得されたすべてのロックを一覧表示します。
 
 通常、実行中のスレッドで必要とされるリソースに排他ロックを保持する 1 つの実行中でないスレッドを検索して、デッドロックを特定できます。 ほとんどのロックが共有されます。
-
- 
-
- 
-
-
-
-
-

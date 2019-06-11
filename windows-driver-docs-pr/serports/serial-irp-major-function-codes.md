@@ -7,12 +7,12 @@ keywords:
 - シリアル IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2cd3cf6246510d4f061e930c1725910c0ea08b64
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 6b6a8c1009475f155469ee2e19d7bb0e4ce890b4
+ms.sourcegitcommit: 82892955346f3ee6f92150381f4151dd595d2e51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836295"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66822104"
 ---
 # <a name="serial-irp-major-function-codes"></a>シリアル IRP の主要な関数コード
 ここでは、次のシリアル IRP 主な機能コード。
@@ -31,7 +31,7 @@ ms.locfileid: "65836295"
 
 ヘッダー:Wdm.h (Wdm.h または Ntddk.h を含む)
 
-##  <a name="irpmjcreate"></a>IRP_MJ_CREATE
+##  <a name="IRP_MJ_CREATE"></a> IRP_MJ_CREATE
 [Irp_mj_create 用](https://msdn.microsoft.com/library/windows/hardware/ff550729)要求は、シリアル デバイスを開きます。
 
 ### <a name="when-sent"></a>送信時
@@ -80,7 +80,7 @@ STATUS_SHARED_IRQ_BUSY
 ### <a name="operation"></a>操作
 使用する、シリアル デバイスを開く必要があります。 シリアル デバイスは、排他的なデバイスです。ファイルの 1 つだけ開くことができるポートを特定の時点。
 
-##  <a name="irpmjdevicecontrol"></a>IRP_MJ_DEVICE_CONTROL
+##  <a name="IRP_MJ_DEVICE_CONTROL"></a> IRP_MJ_DEVICE_CONTROL
 IRP_MJ_DEVICE_CONTROL 要求には、シリアル ポートが動作します。
 
 ### <a name="when-sent"></a>送信時
@@ -104,7 +104,7 @@ IRP_MJ_DEVICE_CONTROL 要求には、シリアル ポートが動作します。
 ### <a name="operation"></a>操作
 特定の要求
 
-##  <a name="irpmjflushbuffers"></a>IRP_MJ_FLUSH_BUFFERS
+##  <a name="IRP_MJ_FLUSH_BUFFERS"></a> IRP_MJ_FLUSH_BUFFERS
 [IRP_MJ_FLUSH_BUFFER](https://msdn.microsoft.com/library/windows/hardware/ff550760)要求は、シリアル デバイスの内部書き込みバッファーをフラッシュします。
 
 ### <a name="when-sent"></a>送信時
@@ -142,7 +142,7 @@ STATUS_PENDING
 シリアル キューおよび処理を開始、要求が受信される順序で要求のフラッシュを読み書きします。 呼び出された後、シリアルがフラッシュの要求を完了する**IoCompleteRequest**のすべての書き込みをフラッシュの要求の前に受信した要求。 *ただし、フラッシュの要求の完了では、デバイス スタックの他のドライバーによって、すべての以前に開始した書き込み要求が完了したことは示しません。* などのフィルター ドライバーでは書き込み要求を処理するも可能性があります。 クライアントは、クライアントは解放するか、書き込み要求の IRP を再利用する前に、デバイス スタックのすべてのドライバーが書き込み要求が完了したことを確認する必要があります。
 
 
-##  <a name="irpmjinternaldevicecontrol"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
+##  <a name="IRP_MJ_INTERNAL_DEVICE_CONTROL"></a> IRP_MJ_INTERNAL_DEVICE_CONTROL
 [IRP_MJ_INTERNAL_DEVICE_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550766)シリアル デバイスで要求が内部の動作モードを設定します。
 
 ### <a name="when-sent"></a>送信時
@@ -166,7 +166,7 @@ STATUS_PENDING
 特定の要求
 
 
-##   <a name="irpmjpnp"></a>IRP_MJ_PNP
+##  <a name="IRP_MJ_PNP"></a> IRP_MJ_PNP
 [IRP_MJ_PNP](https://msdn.microsoft.com/library/windows/hardware/ff550772)要求は、プラグ アンド プレイをサポートしています。 
 
 ### <a name="when-sent"></a>送信時
@@ -214,7 +214,7 @@ IRP_MN_FILTER_RESOURCE_REQUIREMENTS
 
 プラグ アンド プレイの要求の一般的な操作の説明は、次を参照してください。[プラグ アンド プレイ マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff558807)します。
 
-##  <a name="irpmjpower"></a>IRP_MJ_POWER
+##  <a name="IRP_MJ_POWER"></a> IRP_MJ_POWER
 [対し、IRP_MJ_POWER](https://msdn.microsoft.com/library/windows/hardware/ff550784)要求の電源管理を制御します。
 
 ### <a name="when-sent"></a>送信時
@@ -242,7 +242,7 @@ IRP_MN_FILTER_RESOURCE_REQUIREMENTS
 これらの要求の一般的な操作に関する詳細については、次を参照してください。 [Power Irp の処理の規則](https://msdn.microsoft.com/library/windows/hardware/ff563629)します。
 
 
-##  <a name="irpmjqueryinformation"></a>IRP_MJ_QUERY_INFORMATION
+##  <a name="IRP_MJ_QUERY_INFORMATION"></a> IRP_MJ_QUERY_INFORMATION
 [IRP_MJ_QUERY_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff550788)要求は、シリアル デバイスのファイルの情報をクエリします。 
 
 ### <a name="when-sent"></a>送信時
@@ -289,7 +289,7 @@ STATUS_PENDING
 標準的なファイル情報は常に 0 に設定または**FALSE**必要に応じて、します。 位置情報は、0 を常に設定されます。
 
 
-##  <a name="irpmjread"></a>IRP_MJ_READ
+##  <a name="IRP_MJ_READ"></a> IRP_MJ_READ
 A [IRP_MJ_READ](https://msdn.microsoft.com/library/windows/hardware/ff550794)要求は、クライアントにシリアル デバイスからデータを転送します。
 
 ### <a name="when-sent"></a>送信時
@@ -333,7 +333,7 @@ STATUS_TIMEOUT
 読み取りし、書き込みのタイムアウトについての詳細についてを参照してください。[設定の読み取りおよびシリアル デバイスの書き込みタイムアウト](https://msdn.microsoft.com/library/windows/hardware/ff547486)します。
 
 
-##  <a name="irpmjsetinformation"></a>IRP_MJ_SET_INFORMATION
+##  <a name="IRP_MJ_SET_INFORMATION"></a> IRP_MJ_SET_INFORMATION
 [IRP_MJ_SET_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff550807)要求は、シリアル デバイスのファイルの情報を設定します。
 
 ### <a name="when-sent"></a>送信時
@@ -375,7 +375,7 @@ STATUS_PENDING
 シリアル型の要求をサポートする**FileEndOfFileInformation**と**FileAllocationInformation**します。 ただし、シリアルはファイルの情報を実際には設定されません。 ファイルの終端位置は、0 を常に設定されます。
 
 
-##  <a name="irpmjsystemcontrol"></a>IRP_MJ_SYSTEM_CONTROL
+##  <a name="IRP_MJ_SYSTEM_CONTROL"></a> IRP_MJ_SYSTEM_CONTROL
 [IRP_MJ_SYSTEM_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550813)要求は、WMI 要求をサポートしています。
 
 ### <a name="when-sent"></a>送信時
@@ -433,7 +433,7 @@ WMI の GUID を指定することはできません。
 
 シリアル デバイスの WMI 名前エントリの値の値である**PortName**デバイスのプラグ アンド プレイのレジストリ キーの下。
 
-##  <a name="irpmjwrite"></a>IRP_MJ_WRITE
+##  <a name="IRP_MJ_WRITE"></a> IRP_MJ_WRITE
 [IRP_MJ_WRITE](https://msdn.microsoft.com/library/windows/hardware/ff550819)要求がクライアントからシリアル デバイスにデータを転送します。
 
 ### <a name="when-sent"></a>送信時
