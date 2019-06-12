@@ -32,7 +32,7 @@ ms.locfileid: "63377034"
 
 5.  チェック、 [WMI WDM プロバイダー ログ](general-techniques-for-testing-wmi-driver-support.md#ddk-wmi-wdm-provider-log-kg)エラー。
 
-6.  使用[Mofcomp](compiling-a-driver-s-mof-file.md)を再コンパイルして MOF テキスト ファイルを再読み込みします。 たとえば、次のコマンド**mofcomp N: 気**は再コンパイルして driver.mof ファイル内のすべての MOF データを再読み込みを試みます。 Mofcomp.log Mofcomp、どのようなエラー メッセージを表示するチェックが生成されます。 (なお、MOF ファイルのプリプロセッサ ディレクティブはなどで使用する場合**\#定義**、既に前処理された MOF ファイルと元のソース ファイルではなくを使用する必要があります。
+6.  使用[Mofcomp](compiling-a-driver-s-mof-file.md)を再コンパイルして MOF テキスト ファイルを再読み込みします。 たとえば、次のコマンド**mofcomp N: 気**は再コンパイルして driver.mof ファイル内のすべての MOF データを再読み込みを試みます。 Mofcomp.log Mofcomp、どのようなエラー メッセージを表示するチェックが生成されます。 (なお、MOF ファイルのプリプロセッサ ディレクティブはなどで使用する場合 **\#定義**、既に前処理された MOF ファイルと元のソース ファイルではなくを使用する必要があります。
 
     **警告**  システムを新しい WMI クラスのデータに実際には登録が成功すると、この操作。 これらのクラスを (たとえば、Wbemtest を使用して) を削除する必要があります、ドライバーの MOF データが正しく読み取られている場合をテストします。
 

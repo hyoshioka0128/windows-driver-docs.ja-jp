@@ -19,7 +19,7 @@ ms.locfileid: "63341457"
 
 
 
-通常、非 WDM ドライバーによって作成される名前付きのデバイス オブジェクトには、MS-DOS のデバイス名があります。 MS-DOS のデバイス名は、フォームの名前を含むオブジェクト マネージャーにシンボリック リンク **\\\dosdevices\z\\**<em>DosDeviceName</em>します。
+通常、非 WDM ドライバーによって作成される名前付きのデバイス オブジェクトには、MS-DOS のデバイス名があります。 MS-DOS のデバイス名は、フォームの名前を含むオブジェクト マネージャーにシンボリック リンク **\\\dosdevices\z\\** <em>DosDeviceName</em>します。
 
 MS-DOS デバイス名でのデバイスの例では、COM1 シリアル ポートです。 MS-DOS デバイス名が **\\\dosdevices\z\\COM1**します。 C ドライブの名前が同様に、  **\\\dosdevices\z\\c:** します。
 
@@ -27,7 +27,7 @@ WDM ドライバーは、通常は自分のデバイスの MS-DOS デバイス�
 
 デバイスがユーザー モードのプログラムを使用する特定知ら MS-DOS デバイス名が必要な場合にのみ、MS-DOS デバイス名を指定するには、ドライバーが必要です。
 
-ドライバーを使用してデバイス オブジェクトの MS-DOS デバイス名を提供する、 [ **IoCreateSymbolicLink** ](https://msdn.microsoft.com/library/windows/hardware/ff549043)ルーチンをデバイスへのシンボリック リンクを作成します。 たとえば、次のコード例はからシンボリック リンクを作成します **\\\dosdevices\z\\**<em>DosDeviceName</em>に**\\デバイス\\。**  <em>DeviceName</em>します。
+ドライバーを使用してデバイス オブジェクトの MS-DOS デバイス名を提供する、 [ **IoCreateSymbolicLink** ](https://msdn.microsoft.com/library/windows/hardware/ff549043)ルーチンをデバイスへのシンボリック リンクを作成します。 たとえば、次のコード例はからシンボリック リンクを作成します **\\\dosdevices\z\\** <em>DosDeviceName</em>に **\\デバイス\\。**  <em>DeviceName</em>します。
 
 ```cpp
 UNICODE_STRING DeviceName;
@@ -44,7 +44,7 @@ if (!NT_SUCCESS(status)) {
 
 システムの複数のバージョンをサポートしています、  **\\\dosdevices\z**ディレクトリ。 ドライバーが意図されているバージョンでそのシンボリック リンクを作成することを確認します。 詳細については、次を参照してください。[ローカルおよびグローバル MS-DOS デバイス名](local-and-global-ms-dos-device-names.md)します。
 
-アクセスする、 **\dosdevices\z**からユーザー モードでは、名前空間を指定 **\\ \\.\\**ファイル名を開くとします。 呼び出すことによって、ユーザー モードで対応するデバイスを開くことができます**CreateFile()** します。
+アクセスする、 **\dosdevices\z**からユーザー モードでは、名前空間を指定 **\\ \\.\\** ファイル名を開くとします。 呼び出すことによって、ユーザー モードで対応するデバイスを開くことができます**CreateFile()** します。
 
 たとえば、次のコード例が開き、 \\ \\\dosdevices\z\\\\*DosDeviceName*ユーザー モードでのデバイス。
 

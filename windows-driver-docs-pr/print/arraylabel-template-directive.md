@@ -16,7 +16,7 @@ ms.locfileid: "63342264"
 # <a name="arraylabel-template-directive"></a>ArrayLabel テンプレート ディレクティブ
 
 
- **\*ArrayLabel**ディレクティブがテンプレートで配列のラベルを定義します。
+**\*ArrayLabel**ディレクティブがテンプレートで配列のラベルを定義します。
 
  
 

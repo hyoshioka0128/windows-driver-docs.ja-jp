@@ -27,7 +27,7 @@ Common Log File System (CLFS) ログは、いずれか専用または多重化�
 
 専用のログを作成するには、次の手順を実行します。
 
-1.  呼び出す[ **ClfsCreateLogFile** ](https://msdn.microsoft.com/library/windows/hardware/ff540792)へのポインターを取得する、 [**ログ\_ファイル\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff554316)構造体。 設定、 *puszLogFileName*パラメーター形式の文字列を"ログ:*&lt;ログ名&gt;*"場所*&lt;ログ名&gt;* は基になるファイル システムの有効なパスです。 例では、設定した場合の*puszLogFileName*に"ログ: c:\\ClfsLogs\\myLog"、c: で作成されるベースのログ ファイルの myLog.blf\\ClfsLogs ディレクトリ。 C:\\ClfsLogs ディレクトリは、後で、ログに追加するコンテナーの既定の場所としても機能します。
+1.  呼び出す[ **ClfsCreateLogFile** ](https://msdn.microsoft.com/library/windows/hardware/ff540792)へのポインターを取得する、 [**ログ\_ファイル\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff554316)構造体。 設定、 *puszLogFileName*パラメーター形式の文字列を"ログ: *&lt;ログ名&gt;* "場所 *&lt;ログ名&gt;* は基になるファイル システムの有効なパスです。 例では、設定した場合の*puszLogFileName*に"ログ: c:\\ClfsLogs\\myLog"、c: で作成されるベースのログ ファイルの myLog.blf\\ClfsLogs ディレクトリ。 C:\\ClfsLogs ディレクトリは、後で、ログに追加するコンテナーの既定の場所としても機能します。
 
     **注**で渡された文字列の形式は*puszLogFileName* CLFS が専用または多重化されたログを作成するかどうかを決定します。 文字列に 2 つのコロン (:) がある場合ログ名の後、CLFS ログを作成多重化されました。 ここでは、この例では"ログ: c\\ClfsLogs\\myLog"CLFS は、専用のログを作成します。 は、二重のコロンがありません。
 

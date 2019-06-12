@@ -73,7 +73,7 @@ mod*!functionC=Person7
 Followup:  Person3
 ```
 
-"Person3"を所有するファイルによる**module2! functionB**、"Person4"所有している**module2! 関数\\**<em>します。これらの文字列の両方の一致に渡される引数 **! 所有者</em>* のでより完全な一致を使用します。
+"Person3"を所有するファイルによる**module2! functionB**、"Person4"所有している**module2! 関数\\** <em>します。これらの文字列の両方の一致に渡される引数 * *! 所有者</em>* のでより完全な一致を使用します。
 
 ### <a name="span-idtriageiniandanalyzespanspan-idtriageiniandanalyzespan-triageini-and-analyze"></a><span id="triage_ini_and__analyze"></span><span id="TRIAGE_INI_AND__ANALYZE"></span> Triage.ini と! 分析
 
@@ -89,7 +89,7 @@ Followup:  Person3
 
 2 番目のフレームが**module3! anotherFunction**します。 エントリが表示されますが、デバッガー **module3**に一致するものはありませんが、 **anotherFunction**このモジュールにします。 次に、デバッガーは、3 つ目のフレームが続行されます。
 
-3 番目のフレームが**module2! 関数 c**します。 デバッガーは最初に、完全に一致するが、一致するものが存在しません。 デバッガーは関数名のトリムし、検出**module2! 関数\\*** Triage.ini でします。 この照合は、デバッガーは、所有者が"Person4"を指定するために、検索を終了します。
+3 番目のフレームが**module2! 関数 c**します。 デバッガーは最初に、完全に一致するが、一致するものが存在しません。 デバッガーは関数名のトリムし、検出**module2! 関数\\** * Triage.ini でします。 この照合は、デバッガーは、所有者が"Person4"を指定するために、検索を終了します。
 
 デバッガーでは、次の例では、次のような出力が表示されます。
 
@@ -109,13 +109,13 @@ Followup: Person4
 ---------
 ```
 
-完全な一致より短い一致よりも優先されます。 ただし、モジュールの名前の一致では、関数名と一致するをお勧めは常にします。 場合**module2! 関数\\*** していないのデバッガーは選択したこの Triage.ini ファイルで**module2!\\*** が一致しています。 どちらの場合と**module2! 関数\\*** と**module2!\\*** 削除された**mod\*! 関数 c**に選択します。
+完全な一致より短い一致よりも優先されます。 ただし、モジュールの名前の一致では、関数名と一致するをお勧めは常にします。 場合**module2! 関数\\** * していないのデバッガーは選択したこの Triage.ini ファイルで**module2!\\** * が一致しています。 どちらの場合と**module2! 関数\\** * と**module2!\\** * 削除された**mod\*! 関数 c**に選択します。
 
 ### <a name="span-idspecialtriageinisyntaxspanspan-idspecialtriageinisyntaxspanspecial-triageini-syntax"></a><span id="special_triage_ini_syntax"></span><span id="SPECIAL_TRIAGE_INI_SYNTAX"></span>特別な Triage.ini 構文
 
-感嘆符と関数名を省略するか、追加かどうか **!\\*** モジュール名の後に、そのモジュール内のすべての関数が示されます。 このモジュール内で関数が個別に指定されてより正確な仕様が優先されます。
+感嘆符と関数名を省略するか、追加かどうか **!\\** * モジュール名の後に、そのモジュール内のすべての関数が示されます。 このモジュール内で関数が個別に指定されてより正確な仕様が優先されます。
 
-モジュールまたは関数名として"default"を使用する場合は、ワイルドカード文字と同じです。 たとえば、 **nt!\\*** と同じ**nt! 既定**、および**既定**と同じでは、* *\*!\\***.
+モジュールまたは関数名として"default"を使用する場合は、ワイルドカード文字と同じです。 たとえば、 **nt!\\** * と同じ**nt! 既定**、および**既定**と同じでは、* *\*!\\***.
 
 単語が、一致が行われた場合**無視**デバッガーが、スタック内の次のフレームを引き続き等号 (=) の右側に表示されます。
 

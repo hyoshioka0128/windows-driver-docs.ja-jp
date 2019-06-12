@@ -21,27 +21,27 @@ ms.locfileid: "63330960"
 
 拡張機能の次のコマンドは、Advanced Configuration and Power Interface (ACPI) BIOS を使用して問題のデバッグに役立ちます。
 
--   [**! acpicache** ](-acpicache.md)ハードウェア アプリケーション レイヤー (HAL) によってキャッシュ ACPI テーブルのすべてを表示します
+-   [ **! acpicache** ](-acpicache.md)ハードウェア アプリケーション レイヤー (HAL) によってキャッシュ ACPI テーブルのすべてを表示します
 
--   [**! acpiinf** ](-acpiinf.md) ACPI の構成情報を表示します
+-   [ **! acpiinf** ](-acpiinf.md) ACPI の構成情報を表示します
 
--   [**! acpiirqarb** ](-acpiirqarb.md) ACPI IRQ アービター構造体の内容を表示します
+-   [ **! acpiirqarb** ](-acpiirqarb.md) ACPI IRQ アービター構造体の内容を表示します
 
--   [**! facs** ](-facs.md)ファームウェア ACPI の制御構造を表示します。
+-   [ **! facs** ](-facs.md)ファームウェア ACPI の制御構造を表示します。
 
--   [**! fadt** ](-fadt.md)固定の ACPI 記述テーブルを表示します。
+-   [ **! fadt** ](-fadt.md)固定の ACPI 記述テーブルを表示します。
 
--   [**! mapic** ](-mapic.md) ACPI 複数 APIC テーブルが表示されます
+-   [ **! mapic** ](-mapic.md) ACPI 複数 APIC テーブルが表示されます
 
--   [**! nsobj** ](-nsobj.md) ACPI 名前空間オブジェクトを表示します
+-   [ **! nsobj** ](-nsobj.md) ACPI 名前空間オブジェクトを表示します
 
--   [**! nstree** ](-nstree.md) ACPI 名前空間のツリーのセクションを表示します。
+-   [ **! nstree** ](-nstree.md) ACPI 名前空間のツリーのセクションを表示します。
 
--   [**! rsdt** ](-rsdt.md) ACPI ルート システム説明テーブルを表示します
+-   [ **! rsdt** ](-rsdt.md) ACPI ルート システム説明テーブルを表示します
 
 ACPI 関連の拡張機能の完全な一覧を参照してください。 [ **! acpikd.help**](-acpikd-help.md)します。
 
-詳細については、**! amli * * * xxx* 、拡張機能を参照してください[AMLI デバッガー](the-amli-debugger.md)します。
+詳細については、* *! amli * * * xxx* 、拡張機能を参照してください[AMLI デバッガー](the-amli-debugger.md)します。
 
  
 

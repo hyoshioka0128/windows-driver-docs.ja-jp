@@ -28,42 +28,54 @@ Irql\_[その他]\_関数の規則は、適切な IRQL レベルで NDIS 関数�
 
 **KeGetCurrentProcessorNumber**
 **NdisAllocateFromNPagedLookasideList**
-**NdisAllocateGenericObject** 
- **NdisAllocateIoWorkItem**
+**NdisAllocateGenericObject**
+**NdisAllocateIoWorkItem**
 **NdisAllocateMemoryWithTagPriority**
-**NdisAnsiStringToUnicodeString** 
- **NdisCloseConfiguration**
+**NdisAnsiStringToUnicodeString**
+**NdisCloseConfiguration**
 **NdisCloseFile**
-**NdisDeleteNPagedLookasideList** 
- **NdisDeregisterDeviceEx**
+**NdisDeleteNPagedLookasideList**
+**NdisDeregisterDeviceEx**
 **NdisEqualMemory**
-**NdisEqualUnicodeString** 
- **NdisFreeGenericObject**
+**NdisEqualUnicodeString**
+**NdisFreeGenericObject**
 **NdisFreeIoWorkItem**
 **NdisFreeMemory**
-**NdisFreeSpinLock** 
- **NdisFreeString**
-**NdisFreeToNPagedLookasideList** 
- **NdisGeneratePartialCancelId**
+**NdisFreeSpinLock**
+**NdisFreeString**
+**NdisFreeToNPagedLookasideList**
+**NdisGeneratePartialCancelId**
 **NdisGetCurrentProcessorCounts**
-**NdisGetDriverHandle** 
+**NdisGetDriverHandle**
 **NdisGetRoutineAddress**
 **NdisGetSharedDataAlignment**
 **NdisGetVersion**
- **NdisInitAnsiString**
-**NdisInitializeListHead** 
- **NdisInitializeNPagedLookasideList**
+**NdisInitAnsiString**
+**NdisInitializeListHead**
+**NdisInitializeNPagedLookasideList**
 **NdisInitializeSListHead**
-**NdisInitializeString** 
+**NdisInitializeString**
 **NdisInitUnicodeString**
 **NdisMapFile**
-**NdisOpenConfigurationEx** 
+**NdisOpenConfigurationEx**
 **NdisOpenConfigurationKeyByIndex**
 **NdisOpenConfigurationKeyByName**
 **NdisOpenFile**
- **NdisQueryAdapterInstanceName**
-**NdisQueryDepthSList** 
- **NdisQueueIoWorkItem****
+**NdisQueryAdapterInstanceName**
+**NdisQueryDepthSList**
+**NdisQueueIoWorkItem**
+**NdisReadConfiguration**
+**NdisReadNetworkAddress**
+**NdisReEnumerateProtocolBindings**
+**NdisSetOptionalHandlers**
+**NdisSystemProcessorCount**
+**NdisUnicodeStringToAnsiString**
+**NdisUnmapFile**
+**NdisUpcaseUnicodeString**
+**NdisWaitEvent**
+**NdisWriteConfiguration**
+**NdisWriteErrorLogEntry**
+**NdisWriteEventLogEntry**
 
 |              |      |
 |--------------|------|

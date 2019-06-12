@@ -24,7 +24,7 @@ Traceview でを使用する前に約およびイベント トレース情報を
 
 **注**   traceview で Windows オペレーティング システムを Windows Vista より前のバージョンを実行している場合は、TraceView.exe traceview で実行可能ファイルと同じサブディレクトリに Dbghelp.dll ファイルをコピーする必要があります。 
 
-既定では、TraceView.exe はツールである\\*&lt;プラットフォーム&gt;* サブディレクトリ Windows Driver Kit (WDK) の場所*&lt;プラットフォーム&gt;* i386、amd64、または ia64 のいずれかです。 Dbghelp.dll がインストールされている、既定で、 \\bin\\x86 サブディレクトリ。
+既定では、TraceView.exe はツールである\\ *&lt;プラットフォーム&gt;* サブディレクトリ Windows Driver Kit (WDK) の場所 *&lt;プラットフォーム&gt;* i386、amd64、または ia64 のいずれかです。 Dbghelp.dll がインストールされている、既定で、 \\bin\\x86 サブディレクトリ。
 
  
 

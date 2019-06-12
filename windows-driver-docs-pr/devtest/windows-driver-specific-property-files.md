@@ -22,8 +22,8 @@ ms.locfileid: "63379140"
 
  
 
-<span id="__WDKContentRoot_"></span><span id="__wdkcontentroot_"></span><span id="__WDKCONTENTROOT_"></span>**$(WDKContentRoot)**  
-レジストリに既定では、WDKContentRoot が定義されている: <strong>$(レジストリ: HKEY\_ローカル\_マシン\\ソフトウェア\\Microsoft\\Windows キット\\WDK@WDKContentRoot)</strong>を表しています **%programfiles%\\Windows キット\\*バージョン * * *。
+<span id="__WDKContentRoot_"></span><span id="__wdkcontentroot_"></span><span id="__WDKCONTENTROOT_"></span> **$(WDKContentRoot)**  
+レジストリに既定では、WDKContentRoot が定義されている: <strong>$(レジストリ: HKEY\_ローカル\_マシン\\ソフトウェア\\Microsoft\\Windows キット\\WDK@WDKContentRoot)</strong>を表しています * *%programfiles%\\Windows キット\\* バージョン * * *。
 
 $(WDKContentRoot)\\ビルドでビルド拡張機能ドライバーをビルドするために必要なすべてのコアが必要があります。
 
@@ -46,19 +46,19 @@ $(WDKContentRoot)\\ビルドでビルド拡張機能ドライバーをビルド�
 このプロパティのファイルは、特定のカーネル モード ドライバーの種類プロパティ ファイル (たとえば、WindowsDriver.8.1.KernelMode.KMDF.props) をインポートします。
 
 <span id="WindowsDriver.KernelMode.KMDF.props"></span><span id="windowsdriver.kernelmode.kmdf.props"></span><span id="WINDOWSDRIVER.KERNELMODE.KMDF.PROPS"></span>**WindowsDriver.KernelMode.KMDF.props**  
-これらのプロパティ設定は、KMDF ドライバーをビルドする場合にのみ適用する必要がある特別な設定を含めます。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**KMDF**、次の例。*&lt;DriverType&gt;KMDF&lt;/DriverType&gt;*
+これらのプロパティ設定は、KMDF ドライバーをビルドする場合にのみ適用する必要がある特別な設定を含めます。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**KMDF**、次の例。 *&lt;DriverType&gt;KMDF&lt;/DriverType&gt;*
 
 <span id="WindowsDriver.KernelMode.Wdm.props"></span><span id="windowsdriver.kernelmode.wdm.props"></span><span id="WINDOWSDRIVER.KERNELMODE.WDM.PROPS"></span>**WindowsDriver.KernelMode.Wdm.props**  
-これらのプロパティ設定は、WDM ドライバーをビルドする場合にのみ適用する必要がある特別な設定を含めます。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**WDM**、次の例。*&lt;DriverType&gt;wdm&lt;/DriverType&gt;* します。
+これらのプロパティ設定は、WDM ドライバーをビルドする場合にのみ適用する必要がある特別な設定を含めます。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**WDM**、次の例。 *&lt;DriverType&gt;wdm&lt;/DriverType&gt;* します。
 
 <span id="WindowsDriver.KernelMode.Gdidriver.props"></span><span id="windowsdriver.kernelmode.gdidriver.props"></span><span id="WINDOWSDRIVER.KERNELMODE.GDIDRIVER.PROPS"></span>**WindowsDriver.KernelMode.Gdidriver.props**  
-これらのプロパティ設定は、GDI ドライバーをビルドする場合にのみ適用する必要がある特別な設定を含めます。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**Gdidriver**、次の例。*&lt;DriverType&gt;Gdidriver&lt;/DriverType&gt;* します。
+これらのプロパティ設定は、GDI ドライバーをビルドする場合にのみ適用する必要がある特別な設定を含めます。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**Gdidriver**、次の例。 *&lt;DriverType&gt;Gdidriver&lt;/DriverType&gt;* します。
 
 <span id="WindowsDriver.KernelMode.ExportDriver.props"></span><span id="windowsdriver.kernelmode.exportdriver.props"></span><span id="WINDOWSDRIVER.KERNELMODE.EXPORTDRIVER.PROPS"></span>**WindowsDriver.KernelMode.ExportDriver.props**  
-これらのプロパティ設定には、エクスポートされたドライバーをビルドする場合にのみ適用する必要がある特別な設定が含まれて。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**ExportDriver**、次の例。*&lt;DriverType&gt;ExportDriver&lt;/DriverType&gt;* します。
+これらのプロパティ設定には、エクスポートされたドライバーをビルドする場合にのみ適用する必要がある特別な設定が含まれて。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**ExportDriver**、次の例。 *&lt;DriverType&gt;ExportDriver&lt;/DriverType&gt;* します。
 
 <span id="WindowsDriver.KernelMode.Miniport.props"></span><span id="windowsdriver.kernelmode.miniport.props"></span><span id="WINDOWSDRIVER.KERNELMODE.MINIPORT.PROPS"></span>**WindowsDriver.KernelMode.Miniport.props**  
-これらのプロパティ設定は、ミニポート ドライバーをビルドするときに適用する必要がある特別な設定です。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**ミニポート**、次の例。*&lt;DriverType&gt;ミニポート&lt;/DriverType&gt;* します。
+これらのプロパティ設定は、ミニポート ドライバーをビルドするときに適用する必要がある特別な設定です。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**ミニポート**、次の例。 *&lt;DriverType&gt;ミニポート&lt;/DriverType&gt;* します。
 
 <span id="WindowsDriver.LateEvaluation.props_"></span><span id="windowsdriver.lateevaluation.props_"></span><span id="WINDOWSDRIVER.LATEEVALUATION.PROPS_"></span>**WindowsDriver.LateEvaluation.props**   
 内部使用のみです。 編集したり、使用しないでください。
@@ -70,7 +70,7 @@ $(WDKContentRoot)\\ビルドでビルド拡張機能ドライバーをビルド�
 これらのプロパティ設定は、任意のユーザー モード ドライバーのみをビルドするために必要な一般的な設定です。 つまり、カーネル モード ドライバーとアプリケーションのこれらの設定は適用されません。
 
 <span id="WindowsDriver.UserMode.UMDF"></span><span id="windowsdriver.usermode.umdf"></span><span id="WINDOWSDRIVER.USERMODE.UMDF"></span>**WindowsDriver.UserMode.UMDF**  
-これらのプロパティ設定は、UMDF ドライバーをビルドするときに適用する必要がある特別な設定です。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**UMDF**、次の例。*&lt;DriverType&gt;UMDF&lt;/DriverType&gt;* します。
+これらのプロパティ設定は、UMDF ドライバーをビルドするときに適用する必要がある特別な設定です。 MSBuild を使用して、 **$(DriverType)** としてドライバーの種類を指定するプロパティ**UMDF**、次の例。 *&lt;DriverType&gt;UMDF&lt;/DriverType&gt;* します。
 
  
 

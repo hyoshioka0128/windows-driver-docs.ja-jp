@@ -30,18 +30,18 @@ ms.locfileid: "63380310"
 
 WMI データ ブロックの MOF クラス定義は、この構文を次に示します。
 
-**\[**<em>必須および省略可能なクラスの修飾子</em>**\]**
+**\[** <em>必須および省略可能なクラスの修飾子</em> **\]**
 
 **クラス * * * ClassName* :*OptionalBaseClass*
- **{**
-**\[キーに、読み取り\]**
-**文字列 InstanceName;**
- **\[読み取り\]**
-**ブール アクティブ;**
+ **{** 
+ **\[キーに、読み取り\]** 
+**文字列 InstanceName;** 
+ **\[読み取り\]** 
+**ブール アクティブ;** 
  ** \[ ** *必須および省略可能なプロパティ修飾子* ** \] ** 
- <em>datatype itemname1</em>* *;**
+ <em>datatype itemname1</em>* *;* *
  ** \[ ** *必須および省略可能なプロパティ修飾子* ** \] ** 
- <em>datatype itemnameN</em>**;**
+ <em>datatype itemnameN</em> **;** 
  **};** 次のトピックには、前に示した構文要素がについて説明します。
 
 [WMI クラスの修飾子](wmi-class-qualifiers.md)

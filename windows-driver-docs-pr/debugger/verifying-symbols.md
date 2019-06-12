@@ -221,33 +221,33 @@ be682d48 77e63660 00000000 00000000 00000000 ntkrnlmp!KiSystemService+0xc9
 
 次のコマンドと拡張機能は、シンボルに関する問題を追跡に役立ちます。
 
-<span id="lm__List_Loaded_Modules_"></span><span id="lm__list_loaded_modules_"></span><span id="LM__LIST_LOADED_MODULES_"></span>[**lm (読み込まれたモジュールを一覧表示)**](lm--list-loaded-modules-.md)  
+<span id="lm__List_Loaded_Modules_"></span><span id="lm__list_loaded_modules_"></span><span id="LM__LIST_LOADED_MODULES_"></span>[**lm (読み込まれたモジュールを一覧表示)** ](lm--list-loaded-modules-.md)  
 すべてのモジュールの一覧を示し、これらのモジュールですべてのシンボルの読み込み中です。
 
-<span id="_dh_image-header-base"></span><span id="_DH_IMAGE-HEADER-BASE"></span>[**!dh image-header-base**](-dh.md)  
+<span id="_dh_image-header-base"></span><span id="_DH_IMAGE-HEADER-BASE"></span>[ **!dh image-header-base**](-dh.md)  
 開始位置として、読み込まれたイメージのヘッダー情報を表示します。*イメージ ベース ヘッダー*します。
 
-<span id=".RELOAD__N"></span>[**.reload/n**](-reload--reload-module-.md)  
+<span id=".RELOAD__N"></span>[ **.reload/n**](-reload--reload-module-.md)  
 カーネルのすべてのシンボルを再読み込みします。
 
-<span id=".reload__image-name_"></span><span id=".RELOAD__IMAGE-NAME_"></span>[**.reload \[image-name\]**](-reload--reload-module-.md)  
+<span id=".reload__image-name_"></span><span id=".RELOAD__IMAGE-NAME_"></span>[ **.reload \[image-name\]** ](-reload--reload-module-.md)  
 (CDB または WinDbg のみ)イメージのシンボルを再読み込み*イメージ名*します。 ない場合は*イメージ名*指定すると、すべてのイメージのシンボルを再読み込みします。 (これはシンボルをシンボル パスが変更された後に再読み込みするために必要)
 
-<span id="_sym_noisy"></span><span id="_SYM_NOISY"></span>[**! ノイズの多い sym**](-sym.md)  
+<span id="_sym_noisy"></span><span id="_SYM_NOISY"></span>[ **! ノイズの多い sym**](-sym.md)  
 シンボルの読み込みの詳細モードをオンにします。 モジュールの読み込みに関する情報を取得するために使用できます。 参照してください[シンボル オプションを設定](symbol-options.md)詳細についてはします。
 
-<span id=".sympath__new-symbol-path_"></span><span id=".SYMPATH__NEW-SYMBOL-PATH_"></span>[**.sympath \[new-symbol-path\]**](-sympath--set-symbol-path-.md)  
+<span id=".sympath__new-symbol-path_"></span><span id=".SYMPATH__NEW-SYMBOL-PATH_"></span>[ **.sympath \[new-symbol-path\]** ](-sympath--set-symbol-path-.md)  
 現在のシンボル パスを表示します。 または、新しいシンボルのパスを設定します。 参照してください[シンボル パス](symbol-path.md)詳細についてはします。
 
 カーネルのシンボルが正しいこと、完全なスタックが届かない場合は、次のコマンドでも利用できます。
 
-<span id="X___"></span><span id="x___"></span>[**X \*!**](x--examine-symbols-.md)  
+<span id="X___"></span><span id="x___"></span>[**X \*!** ](x--examine-symbols-.md)  
 これには、シンボルが読み込まれている現在のモジュールが一覧表示します。 これは、カーネルのシンボルが正しい場合に便利です。
 
-<span id=".RELOAD__USER"></span>[**.reload/user**](-reload--reload-module-.md)  
+<span id=".RELOAD__USER"></span>[ **.reload/user**](-reload--reload-module-.md)  
 これについては、すべてのユーザー モード シンボルを再読み込みを試みます。 これは、別のプロセスで発生した後で、1 つのプロセスの実行中にシンボルが読み込まれた場合、カーネル デバッグを実行して、中断中に必要です。 この場合、このコマンドを実行しない限り、新しいプロセスからユーザー モードのシンボルは読み込まれません。
 
-<span id="X_wdmaud__start_"></span><span id="x_wdmaud__start_"></span><span id="X_WDMAUD__START_"></span>[**X wdmaud!\*開始\\***](x--examine-symbols-.md)  
+<span id="X_wdmaud__start_"></span><span id="x_wdmaud__start_"></span><span id="X_WDMAUD__START_"></span>[**X wdmaud!\*開始\\** *](x--examine-symbols-.md)  
 これでシンボルのみが一覧表示、 **wdmaud**名前に"start"文字列を含むモジュール。 これは、すべてのシンボルの再読み込みを強制的利点**wdmaud**、のみ"start"を持つでそれらに表示されます。 (つまり、短い一覧についてがいくつかの確認、読み込みが行われることがありますがいくつかの記号には、"start"では常にであるため)。
 
 シンボルを検証するための他の 1 つの便利な方法では、コードを unassembling です。 ほとんどの関数は、add、sub、またはプッシュ操作が、いずれかの基本ポインターを使用して、先頭 (**ebp**) またはスタック ポインター (**esp**または**sp**)。 Unassembling を再試行してください ([**U 関数**](u--unassemble-.md))、シンボルを確認する (オフセット 0) から、スタック上の関数の一部です。
@@ -264,7 +264,7 @@ be682d48 77e63660 00000000 00000000 00000000 ntkrnlmp!KiSystemService+0xc9
 
 -   シンボルのツリーの適切なディレクトリに、区切られていない場合、.dll .sys ファイルと同じ名前 (たとえば − mga64.sys および mga64.dll) は、デバッガーを混乱します。
 
--   カーネル デバッガーは常になどのビルドのシンボル ファイルにプライベート シンボル ファイルを置き換えます。 倍精度浮動小数点シンボル パスを確認し、操作を行います、**.reload * * * FileName*記号を不適切に動作します。 [ **! Dll** ](-dlls.md)コマンドは、便利です。
+-   カーネル デバッガーは常になどのビルドのシンボル ファイルにプライベート シンボル ファイルを置き換えます。 倍精度浮動小数点シンボル パスを確認し、操作を行います、* *.reload * * * FileName*記号を不適切に動作します。 [ **! Dll** ](-dlls.md)コマンドは、便利です。
 
 ### <a name="span-idquestionsandmisconceptionsspanspan-idquestionsandmisconceptionsspanquestions-and-misconceptions"></a><span id="questions_and_misconceptions"></span><span id="QUESTIONS_AND_MISCONCEPTIONS"></span>疑問と誤解
 

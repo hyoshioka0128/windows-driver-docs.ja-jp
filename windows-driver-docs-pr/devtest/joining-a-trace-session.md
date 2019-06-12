@@ -32,7 +32,7 @@ Traceview では、トレース セッションを停止し、同じプロバイ
 <span id="No_-_Join_the_Log_Session_Without_Stopping"></span><span id="no_-_join_the_log_session_without_stopping"></span><span id="NO_-_JOIN_THE_LOG_SESSION_WITHOUT_STOPPING"></span>**いいえ - 停止することがなくログ セッションに参加します。**  
 Traceview では、取得し、セッションのプロパティを保存し、トレース セッションに参加します。 Traceview でを使用して、トレース セッションのプロパティを変更することができますが、traceview では、トレース セッションを停止できません。 トレース セッションを停止する[traceview で終了](starting-and-exiting-traceview.md)します。
 
-<span id="Cancel_-_Abort_Start_Operation"></span><span id="cancel_-_abort_start_operation"></span><span id="CANCEL_-_ABORT_START_OPERATION"></span>**[キャンセル] - 中止操作の開始**  
+<span id="Cancel_-_Abort_Start_Operation"></span><span id="cancel_-_abort_start_operation"></span><span id="CANCEL_-_ABORT_START_OPERATION"></span> **[キャンセル] - 中止操作の開始**  
 Traceview では、トレース セッションを開始する試行を取り消します。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント

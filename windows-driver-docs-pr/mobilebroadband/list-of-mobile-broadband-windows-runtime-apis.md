@@ -74,7 +74,7 @@ ms.locfileid: "63380376"
 
 -   アプリがそれに関連付けられているデバイスのメタデータまたはサービス メタデータ パッケージを必要し、に指定する必要があります、 [PrivilegedApplications](privilegedapplications.md) SoftwareInfo.xml ファイル、パッケージ内の XML 要素。 パッケージをアプリケーションに限定する必要はありません。いくつかのパッケージの PrivilegedApplications 要素で一覧表示する、特定の UWP アプリのことができます。 インストールされているように、そのパッケージがアクティブになったを少なくとも 1 回、コンピューター、モバイル ブロード バンド デバイスのサービス プロバイダーを関連付ける必要があります。
 
--   アプリケーションの appxmanifest ファイルが必要な**&lt;DeviceCapability&gt;** モバイル ブロード バンド アカウント API のエントリ。 子として次の XML 要素を追加することでこれを行う、 **&lt;機能&gt;** アプリケーションの appxmanifest ファイル内の要素。
+-   アプリケーションの appxmanifest ファイルが必要な **&lt;DeviceCapability&gt;** モバイル ブロード バンド アカウント API のエントリ。 子として次の XML 要素を追加することでこれを行う、 **&lt;機能&gt;** アプリケーションの appxmanifest ファイル内の要素。
 
     ``` syntax
     <DeviceCapability Name="BFCD56F7-3943-457F-A312-2E19BB6DC648" />

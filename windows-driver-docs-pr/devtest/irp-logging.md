@@ -78,10 +78,10 @@ dc2wmiparser [/f File] [/t Time]
 
 パラメーターには、次の意味があります。
 
-<span id="_________fFile"></span><span id="_________ffile"></span><span id="_________FFILE"></span> **/f * * * ファイル*  
+<span id="_________fFile"></span><span id="_________ffile"></span><span id="_________FFILE"></span> * */f * * * ファイル*  
 書き込まれるログ ファイルのファイル名と完全なパスを指定します。 現在のディレクトリを基準とした相対パスが表示されます。 これを省略した場合は、現在のディレクトリにファイル名 dc2verifier.act が使用されます。
 
-<span id="_tTime"></span><span id="_ttime"></span><span id="_TTIME"></span>**/t * * * 時間*  
+<span id="_tTime"></span><span id="_ttime"></span><span id="_TTIME"></span>* */t * * * 時間*  
 DC2WMIParser は引き続き実行を分単位で時間の長さを指定します。 場合*時間*が 0 に等しい、DC2WMIParser はドライバーの検証ツールによって既に格納されているすべての WMI IRP 情報を記録し、終了します。 場合*時間*設定は正の値に DC2WMIParser は引き続き実行時間を指定された長さに対してが到着すると、新しい情報を格納します。 既定値は 0 です。
 
 ### <a name="span-idformatofdc2wmiparserlogfilesspanspan-idformatofdc2wmiparserlogfilesspanformat-of-dc2wmiparser-log-files"></a><span id="format_of_dc2wmiparser_log_files"></span><span id="FORMAT_OF_DC2WMIPARSER_LOG_FILES"></span>DC2WMIParser ログ ファイルの形式

@@ -54,8 +54,8 @@ COM ポートの制御レジスタの無変換の基本 I/O アドレスを指�
 <a href="" id="interrupt--reg-dword-"></a>**割り込み**(REG\_DWORD)  
 バスの種類に応じて、無変換割り込みベクトルを指定します。 シリアルでは、この値を読み取ります。 値 0 にすることはできません。 既定値**Interrupt** 0x00000000 します。
 
-<a href="" id="dosdevices--reg-sz-"></a>**\Dosdevices\z** (REG\_SZ)  
-COM ポートの名前を指定します。 通常、COM での COM ポートの名前は<em>&lt;n&gt;、</em>場所&lt; *n&gt;*  COM ポートの番号からインストーラーを取得するには、 [COM ポート データベース](com-port-database.md)します。 ただし、COM ポートの名前に設定できますいずれ以外**NULL**文字列。 シリアルでは、ポート名を使用して、ユーザー モードで表示されている COM ポートへのシンボリック リンクを作成します。 既定値**\dosdevices\z**は、 **NULL**文字列。
+<a href="" id="dosdevices--reg-sz-"></a> **\Dosdevices\z** (REG\_SZ)  
+COM ポートの名前を指定します。 通常、COM での COM ポートの名前は<em>&lt;n&gt;、</em>場所&lt; *n&gt;*  COM ポートの番号からインストーラーを取得するには、 [COM ポート データベース](com-port-database.md)します。 ただし、COM ポートの名前に設定できますいずれ以外**NULL**文字列。 シリアルでは、ポート名を使用して、ユーザー モードで表示されている COM ポートへのシンボリック リンクを作成します。 既定値 **\dosdevices\z**は、 **NULL**文字列。
 
 <a href="" id="interruptstatus--reg-dword-"></a>**InterruptStatus** (REG\_DWORD)  
 割り込み状態のレジスタの生の I/O のアドレスを指定します。 シリアルでは、この値を読み取ります。 ポートがスタンドアロンのポートの場合、値は省略されます。 マルチポートのデバイス上のポートがの場合、値は 0 にすることはできません。 既定値**InterruptStatus** 0x00000000 します。

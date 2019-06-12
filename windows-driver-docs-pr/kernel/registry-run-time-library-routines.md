@@ -65,7 +65,7 @@ ms.locfileid: "63338443"
 
  
 
-次のコード例は、設定する方法を示しています*ValueName*の**\\レジストリ\\マシン\\システム\\**<em>KeyName。</em> 0 xff の ULONG 値にします。 この例に対応する 1 つを比較、[レジストリ キー オブジェクト ルーチン](registry-key-object-routines.md)セクション。
+次のコード例は、設定する方法を示しています*ValueName*の **\\レジストリ\\マシン\\システム\\** <em>KeyName。</em> 0 xff の ULONG 値にします。 この例に対応する 1 つを比較、[レジストリ キー オブジェクト ルーチン](registry-key-object-routines.md)セクション。
 
 ```cpp
 NTSTATUS status;

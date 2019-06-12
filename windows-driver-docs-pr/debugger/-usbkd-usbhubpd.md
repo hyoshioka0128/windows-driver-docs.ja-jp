@@ -85,7 +85,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ....
 ```
 
-上記の出力で`ffffe000021bf000`のアドレスを**\_ハブ\_ポート\_データ**構造体。 このアドレスを渡す **! usbhubpd**します。
+上記の出力で`ffffe000021bf000`のアドレスを **\_ハブ\_ポート\_データ**構造体。 このアドレスを渡す **! usbhubpd**します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubpd ffffe000021bf000

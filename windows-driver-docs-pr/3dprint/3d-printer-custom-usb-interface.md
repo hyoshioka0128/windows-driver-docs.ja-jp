@@ -196,7 +196,7 @@ XML は、例として使用できるデバイスの機能は、次の印刷し�
 </PrintDeviceCapabilities>
 ```
 
-上記のように適切なユーザー入力メッセージのセットで PDC xml を返すアドボケイトを内蔵型の表示と印刷の先頭に、デバイスと対話するユーザーを許可するボタンがない 3 D プリンター、 **psdk3dx:userPrompt**. これは、既存の上に新しい印刷を起動できないようにします。 カスタム ステータス メッセージ*&lt;psk3dx:customStatus&gt;* スライス処理中にすべてのメッセージを表示するために使用します。
+上記のように適切なユーザー入力メッセージのセットで PDC xml を返すアドボケイトを内蔵型の表示と印刷の先頭に、デバイスと対話するユーザーを許可するボタンがない 3 D プリンター、 **psdk3dx:userPrompt**. これは、既存の上に新しい印刷を起動できないようにします。 カスタム ステータス メッセージ *&lt;psk3dx:customStatus&gt;* スライス処理中にすべてのメッセージを表示するために使用します。
 
 ### <a name="hresult-cleanuplpcwstr-pprintername-lpcwstr-pportname-dword-dwjobid-lpvoid-pppartnerdata"></a>HRESULT Cleanup(LPCWSTR pPrinterName, LPCWSTR pPortName, DWORD dwJobId, LPVOID\* ppPartnerData)
 

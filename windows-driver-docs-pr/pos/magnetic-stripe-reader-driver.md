@@ -31,7 +31,7 @@ Windows ソフトウェア開発キット (SDK) 10 も必要ですが、これ�
 Windows 10 以降、Windows ドライバーのサンプルは GitHub で入手できからダウンロードできます、 [Windows ドライバーのサンプル リポジトリのプロジェクト ページ](https://go.microsoft.com/fwlink/p/?LinkId=616507)します。
 
 1.  ダウンロード**Windows ドライバーのサンプル-master.zip**から[GitHub](https://go.microsoft.com/fwlink/p/?LinkID=623296)します。 このファイルには、すべての Windows ドライバーのサンプルが含まれています。
-2.  抽出**Windows ドライバーのサンプル-master.zip**開発用コンピューターに任意の場所にします。 この場所として参照される*&lt;サンプル\_ルート&gt;* この記事の残りの部分。
+2.  抽出**Windows ドライバーのサンプル-master.zip**開発用コンピューターに任意の場所にします。 この場所として参照される *&lt;サンプル\_ルート&gt;* この記事の残りの部分。
 
 ## <a name="open-the-driver-solution-in-visual-studio"></a>Visual Studio でのドライバー ソリューションを開く
 

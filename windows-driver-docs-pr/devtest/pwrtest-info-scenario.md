@@ -23,7 +23,7 @@ PwrTest 情報シナリオは、キャプチャし、さまざまなカテゴリ
 pwrtest /info:option [/p:{n|a|*}] [/w:n]  [/?] 
 ```
 
-<span id="_info_option"></span><span id="_INFO_OPTION"></span>**/info:**<em>option</em>  
+<span id="_info_option"></span><span id="_INFO_OPTION"></span> **/info:** <em>option</em>  
 
 <table>
 <colgroup>
@@ -74,14 +74,14 @@ pwrtest /info:option [/p:{n|a|*}] [/w:n]  [/?]
 
  
 
-<span id="_p_na_"></span><span id="_P_NA_"></span>**/p:**{*n*\|**、**\|**\\**\*}  
+<span id="_p_na_"></span><span id="_P_NA_"></span> **/p:** {*n*\| **、** \| **\\** \*}  
 
 論理プロセッサ数を指定します **/info:ppm/info: ppmidle**、または **/info:ppmperf**オプション。
 
-<span id="a_or__"></span><span id="A_OR__"></span>**ま**たは **\\**\\*  
+<span id="a_or__"></span><span id="A_OR__"></span>**ま**たは **\\** \\*  
 すべての論理プロセッサ (既定値) を指定します。
 
-<span id="_w_yn"></span><span id="_W_YN"></span>**/w:**{**y**|**n**}  
+<span id="_w_yn"></span><span id="_W_YN"></span> **/w:** {**y**|**n**}  
 PPM ランダウン イベントを待機する秒単位で時間を指定します (既定値は 10 秒)。
 
 **使用例**

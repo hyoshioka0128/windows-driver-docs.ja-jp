@@ -22,7 +22,7 @@ ms.locfileid: "63374936"
 # <a name="d-da-db-dc-dd-dd-df-dp-dq-du-dw-display-memory"></a>d、da、db、dc、dd、dD、df、dp、dq、du、dw (表示メモリ)
 
 
-**D\\*** のコマンドは、特定の範囲内でメモリの内容を表示します。
+**D\\** * のコマンドは、特定の範囲内でメモリの内容を表示します。
 
 ```dbgcmd
 d{a|b|c|d|D|f|p|q|u|w|W} [Options] [Range] 
@@ -36,19 +36,19 @@ d [Options] [Range]
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
 1 つまたは複数の表示オプションを指定します。 次のオプションを含めることができ個を超える 1 つを除く **/p** \*オプションを示すことができます。
 
-<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span>**/c***Width*  
+<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span>* */c***Width*  
 表示に使用する列の数を指定します。 これを省略すると、既定の列数は、表示の種類によって異なります。
 
-<span id="_p"></span><span id="_P"></span>**/p**  
+<span id="_p"></span><span id="_P"></span> **/p**  
 (カーネル モードのみ)表示の物理メモリ アドレスを使用します。 指定された範囲*範囲*は仮想メモリではなく、物理メモリから取得されます。
 
-<span id="_p_c_"></span><span id="_P_C_"></span>**/p\[c\]**  
+<span id="_p_c_"></span><span id="_P_C_"></span> **/p\[c\]**  
 (カーネル モードのみ)同じ **/p**, キャッシュ メモリが読み取られる点が異なります。 かっこ、 **c**含める必要があります。
 
-<span id="_p_uc_"></span><span id="_P_UC_"></span>**/p\[uc\]**  
+<span id="_p_uc_"></span><span id="_P_UC_"></span> **/p\[uc\]**  
 (カーネル モードのみ)同じ **/p**, キャッシュされていないメモリが読み取られる点が異なります。 かっこ、 **uc**含める必要があります。
 
-<span id="_p_wc_"></span><span id="_P_WC_"></span>**/p\[wc\]**  
+<span id="_p_wc_"></span><span id="_P_WC_"></span> **/p\[wc\]**  
 (カーネル モードのみ)同じ **/p**, 書き込み結合のメモリが読み取られる点が異なります。 かっこ、 **wc**含める必要があります。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *範囲*   
@@ -95,7 +95,7 @@ d [Options] [Range]
 
  
 
-疑問符 (?)、その内容が示すように、無効なアドレスを表示しようとした場合 (**?**)。
+疑問符 (?)、その内容が示すように、無効なアドレスを表示しようとした場合 ( **?** )。
 
  
 

@@ -33,7 +33,7 @@ ms.locfileid: "63391815"
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
 
-トレース ログのパラメーターについては、次を参照してください\[ [*アクション*](#actions) \] \[ [*オプション*](#options)。\].
+トレース ログのパラメーターについては、次を参照してください\[ [*アクション*](#actions) \] \[ [*オプション*](#options)\]。
 
 ### <a name="actions"></a>\[*アクション*\]
 
@@ -77,7 +77,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 
 トレース ログを使用して、 **EnumerateTraceGuids**を実装する関数を**tracelog enumguid**コマンド。 この関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-<span id="_______-enumguidex___guid_"></span><span id="_______-ENUMGUIDEX___GUID_"></span> **-enumguidex** \[**\#**<em>guid</em>\]  
+<span id="_______-enumguidex___guid_"></span><span id="_______-ENUMGUIDEX___GUID_"></span> **-enumguidex** \[ **\#** <em>guid</em>\]  
 システム上のプロバイダーを列挙します (または一覧表示します)[登録](registered-provider.md)を Event Tracing for Windows (ETW)。 EnumguidEx 表示については、次を参照してください。 [Tracelog Enumguid 表示](tracelog-enumguid-display.md)します。
 
 トレース ログを使用して、 **EnumerateTraceGuidsEx**を実装する関数を**tracelog enumguidex**コマンド。 この関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
@@ -85,7 +85,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 <span id="_______-flush___LoggerName__"></span><span id="_______-flush___loggername__"></span><span id="_______-FLUSH___LOGGERNAME__"></span> **-フラッシュ** \[*ロガー*\]   
 アクティブなバッファーのフラッシュ、*ロガー*セッションをトレースします。 場合*ロガー*が指定されていない、トレース ログのバッファーのフラッシュ、[トレース セッションの NT Kernel Logger](nt-kernel-logger-trace-session.md)します。
 
-強制的な書き込みこれは、フラッシュとトレース メッセージのバッファーがいっぱいのときに、トレース セッションが停止したら、自動的に行われるだけでなく、フラッシュ フラッシュ タイマーによってアクティブ化されるだけでなく、(**-ft**)。
+強制的な書き込みこれは、フラッシュとトレース メッセージのバッファーがいっぱいのときに、トレース セッションが停止したら、自動的に行われるだけでなく、フラッシュ フラッシュ タイマーによってアクティブ化されるだけでなく、( **-ft**)。
 
 トレース セッションのバッファーをフラッシュするときに、バッファー内のイベントはすぐにトレース ログまたはトレース コンシューマーに配信されます。
 
@@ -93,7 +93,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 
 トレース ログを使用して、 **FlushTrace**を実装する関数を**トレース ログのフラッシュ**コマンド。 この関数の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-使用することができます、 **tracelog-フラッシュ**コマンドを **-f** *Logfile*オプションを指定したバッファーにあるトレース メッセージをフラッシュする[トレース ログ](trace-log.md)(.etl) ファイル。 バッファー内のトレース セッションについてのみ、このパラメーターは有効です (**-バッファリング**) は他のトレース セッションの種類、 **-f**パラメーターは無視されます。
+使用することができます、 **tracelog-フラッシュ**コマンドを **-f** *Logfile*オプションを指定したバッファーにあるトレース メッセージをフラッシュする[トレース ログ](trace-log.md)(.etl) ファイル。 バッファー内のトレース セッションについてのみ、このパラメーターは有効です ( **-バッファリング**) は他のトレース セッションの種類、 **-f**パラメーターは無視されます。
 
 このフラッシュは、バッファーの現在の内容のみに影響します。 将来のトレース メッセージはトレース ログにはリダイレクトしません。
 
@@ -102,7 +102,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 
 渡す場合、 **-lp**オプション、トレース ログはセッションごとに有効なプロバイダーをすべて一覧表示もできます。
 
-<span id="_______-q___LoggerName_"></span><span id="_______-q___loggername_"></span><span id="_______-Q___LOGGERNAME_"></span> **-q** \[*LoggerName*\] \[*-lp*\]  
+<span id="_______-q___LoggerName_"></span><span id="_______-q___loggername_"></span><span id="_______-Q___LOGGERNAME_"></span> **-q** \[*LoggerName*\] \[ *-lp*\]  
 (クエリ)、指定されたトレース セッションのプロパティを一覧表示します。 指定しない場合*ロガー*、トレース ログのクエリ、[トレース セッションの NT Kernel Logger](nt-kernel-logger-trace-session.md)します。
 
 渡す場合、 **-lp**オプション、トレース ログは、セッションを有効になっているすべてのプロバイダー一覧表示もできます。
@@ -130,7 +130,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 
 起動する場合、[グローバル ロガーの起動時にセッション](boot-time-global-logger-session.md)コマンドを使用する必要がありますのカーネル イベントをトレースすると、**トレース ログの"NT Kernel Logger"を停止**または**tracelog-GlobalLoggerを停止**を停止します。 停止するコマンドのいずれかを使用すると、[グローバル ロガー トレース セッション](global-logger-trace-session.md)トレース セッションでは、トレース ログには、プロバイダーが停止しますが、レジストリ エントリの値はリセットされません。 グローバルのロガーのレジストリ エントリの値をリセットするには、使用**tracelog-削除**します。
 
-<span id="-systemrundown__LoggerName_"></span><span id="-systemrundown__loggername_"></span><span id="-SYSTEMRUNDOWN__LOGGERNAME_"></span>**-systemrundown** \[*LoggerName*\]  
+<span id="-systemrundown__LoggerName_"></span><span id="-systemrundown__loggername_"></span><span id="-SYSTEMRUNDOWN__LOGGERNAME_"></span> **-systemrundown** \[*LoggerName*\]  
 要求に向けられたランダウン イベントを記録する SystemTraceProvider*ロガー*セッション。 参照してください[構成し、SystemTraceProvider セッションを開始する](https://msdn.microsoft.com/library/windows/desktop/jj883720)については、トレース セッションを開始します。
 
 このコマンドは、Windows 8 と Windows の以降のバージョンで使用できるだけです。
@@ -147,15 +147,15 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 <span id="_______-update_____LoggerName__"></span><span id="_______-update_____loggername__"></span><span id="_______-UPDATE_____LOGGERNAME__"></span> **-update** \[*LoggerName*\]   
 **Tracelog-更新**コマンドは、実行中にトレース セッションのプロパティを変更します。
 
-**Tracelog-更新**コマンド、-、**guid**パラメーターは、プライベートのトレース セッションを更新する場合のみ有効です (**-um**)。を追加またはセッションの実行中に、標準のトレース セッションからプロバイダーを削除するには使用、 **tracelog-有効にする**と**tracelog-を無効にする**コマンド。
+**Tracelog-更新**コマンド、-、**guid**パラメーターは、プライベートのトレース セッションを更新する場合のみ有効です ( **-um**)。を追加またはセッションの実行中に、標準のトレース セッションからプロバイダーを削除するには使用、 **tracelog-有効にする**と**tracelog-を無効にする**コマンド。
 
-トレース ログ セッションを開始する場合 (**-f**)、セッションをリアルタイムに更新することができます (**-rt**)、引き続き、メッセージをトレース コンシューマーだけでなく、トレース ログに送信します。 更新することで、セッションからログを取り除くことはできません。 ただし、トレース ログ セッションをリアルタイムでのメッセージ配信を追加する前にする必要があります最初に使用する、**トレース ログのフラッシュ**コマンド バッファーをフラッシュします。
+トレース ログ セッションを開始する場合 ( **-f**)、セッションをリアルタイムに更新することができます ( **-rt**)、引き続き、メッセージをトレース コンシューマーだけでなく、トレース ログに送信します。 更新することで、セッションからログを取り除くことはできません。 ただし、トレース ログ セッションをリアルタイムでのメッセージ配信を追加する前にする必要があります最初に使用する、**トレース ログのフラッシュ**コマンド バッファーをフラッシュします。
 
-リアルタイムのセッションを開始する場合 (**-rt**) し、トレース ログ セッションを更新 (**-f**)、新しいトレース メッセージは、トレース コンシューマーに直接送信されなく; トレース ログにのみ送信されます。 トレース ログをリアルタイムのトレース セッションを追加するには、両方を使用 **-rt**と **-f**で、 **tracelog-更新**コマンド。 最初に使用する必要があるトレースのログ セッションをリアルタイムでのメッセージ配信を追加する前に、**トレース ログのフラッシュ**バッファーをフラッシュするコマンド。
+リアルタイムのセッションを開始する場合 ( **-rt**) し、トレース ログ セッションを更新 ( **-f**)、新しいトレース メッセージは、トレース コンシューマーに直接送信されなく; トレース ログにのみ送信されます。 トレース ログをリアルタイムのトレース セッションを追加するには、両方を使用 **-rt**と **-f**で、 **tracelog-更新**コマンド。 最初に使用する必要があるトレースのログ セッションをリアルタイムでのメッセージ配信を追加する前に、**トレース ログのフラッシュ**バッファーをフラッシュするコマンド。
 
 更新することはできません、[グローバル ロガー トレース セッション](global-logger-trace-session.md)します。
 
-プライベート (ユーザー モード) のセッションのトレース ログ ファイル名のみを更新することができます (**-f**) とフラッシュ タイマー値 (**-ft**)。
+プライベート (ユーザー モード) のセッションのトレース ログ ファイル名のみを更新することができます ( **-f**) とフラッシュ タイマー値 ( **-ft**)。
 
 フラグとレベルを更新するには、使用、 **tracelog-有効にする**新しいフラグまたはレベルを使用してプロバイダーを再度有効にするコマンド。
 
@@ -177,7 +177,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 <span id="_______-b_______BufferSize______"></span><span id="_______-b_______buffersize______"></span><span id="_______-B_______BUFFERSIZE______"></span> **-b** *BufferSize*   
 サポート技術情報、トレース セッションに割り当てられた各バッファーのサイズを指定します。 既定値は、プロセッサ、物理メモリの量と使用のオペレーティング システムの数によって決まります。
 
-<span id="-bt_n"></span><span id="-BT_N"></span>**-bt** *n*  
+<span id="-bt_n"></span><span id="-BT_N"></span> **-bt** *n*  
 数を指定します (*n*) のバッファーにそれらのフラッシュを開始する前に入力します。 このオプションは、以降の Windows 8.1 で利用可能です。
 
 <span id="_______-buffering______"></span><span id="_______-BUFFERING______"></span> **-buffering**   
@@ -199,7 +199,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 使用 **- pid**プロセスを指定します。 使用しない **- guid**で **- critsec**します。 システムでは、クリティカル セクションのトレースの場合は、カスタム GUID (CritSecGuid) を定義します。 使用することはできません **-ヒープ**と **- critsec**を同じコマンドでします。
 
 <span id="_______-dpcisr______"></span><span id="_______-DPCISR______"></span> **-dpcisr**   
-サービス要求 (Isr) イメージ読み込みイベントを中断する遅延プロシージャ呼び出し (Dpc) のトレースを有効 (**- img**)、およびカーネル コンテキスト スイッチ。 このパラメーターは、NT Kernel Logger のトレース セッションでのみ有効です。
+サービス要求 (Isr) イメージ読み込みイベントを中断する遅延プロシージャ呼び出し (Dpc) のトレースを有効 ( **- img**)、およびカーネル コンテキスト スイッチ。 このパラメーターは、NT Kernel Logger のトレース セッションでのみ有効です。
 
 このオプションは、Windows Vista の Windows ドライバー キットおよび以降のバージョンの WDK に含まれるトレース ログのバージョンでのみサポートします。 **– Dpcisr**オプションでは使用できません、 **- eflag**オプション。
 
@@ -211,10 +211,10 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 <span id="_______-enableproperty________n______"></span><span id="_______-ENABLEPROPERTY________N______"></span> **-enableproperty** *n*   
 説明を参照して*EnabledProperties*で、 *EnableParameters*へのパラメーターとして渡された構造体[EnableTraceEx2](https://go.microsoft.com/fwlink/p/?linkid=155061)の説明、およびサポートされている値。
 
-<span id="-EventIdFilter_____-in-out_n_id1_id2_..."></span><span id="-eventidfilter_____-in-out_n_id1_id2_..."></span><span id="-EVENTIDFILTER_____-IN-OUT_N_ID1_ID2_..."></span>**-EventIdFilter** {**-in**|**-out**} **** *n* **** *id1 id2 ...*  
+<span id="-EventIdFilter_____-in-out_n_id1_id2_..."></span><span id="-eventidfilter_____-in-out_n_id1_id2_..."></span><span id="-EVENTIDFILTER_____-IN-OUT_N_ID1_ID2_..."></span> **-EventIdFilter** { **-in**| **-out**} **** *n* **** *id1 id2 ...*  
 イベント id フィルターを指定する*n*イベント id (許可される最大の 64 イベント id)。 このオプションは、以降の Windows 8.1 で利用可能です。
 
-<span id="___-ExeFilter____Executable_file____Executable_file_...__"></span><span id="___-exefilter____executable_file____executable_file_...__"></span><span id="___-EXEFILTER____EXECUTABLE_FILE____EXECUTABLE_FILE_...__"></span> **-ExeFilter** *実行可能ファイル\_ファイル* \[ **;***実行可能ファイル\_ファイル*.\]   
+<span id="___-ExeFilter____Executable_file____Executable_file_...__"></span><span id="___-exefilter____executable_file____executable_file_...__"></span><span id="___-EXEFILTER____EXECUTABLE_FILE____EXECUTABLE_FILE_...__"></span> **-ExeFilter** *実行可能ファイル\_ファイル* \[ **;** *実行可能ファイル\_ファイル*.\]   
 フィルター処理する実行可能ファイルの名前を指定します。 ファイルの一覧を指定することができます。 セミコロンを使用してファイル名を区切ります。 一覧にないファイルが除外されます。 このオプションは、以降の Windows 8.1 で利用可能です。
 
 <span id="_______-f___LogFile_"></span><span id="_______-f___logfile_"></span><span id="_______-F___LOGFILE_"></span> **-f** \[*LogFile*\]  
@@ -244,7 +244,7 @@ NT Kernel Logger フラグのいずれかを有効にしたかどうか (など 
 
 参照してください、**トレース ログのフラッシュ コマンド**します。
 
-<span id="_______-guid___GUID___GUIDFile_"></span><span id="_______-guid___guid___guidfile_"></span><span id="_______-GUID___GUID___GUIDFILE_"></span> **-guid** {*\#GUID* | *ファイル* | *\*名前*}  
+<span id="_______-guid___GUID___GUIDFile_"></span><span id="_______-guid___guid___guidfile_"></span><span id="_______-GUID___GUID___GUIDFILE_"></span> **-guid** { *\#GUID* | *ファイル* |  *\*名前*}  
 指定されたトレース プロバイダーを有効にします。
 
 ファイルを指定すると場合、トレース ログは、ファイルに指定されたすべてのプロバイダーに、トレースを有効になります。 ファイルは、として書式設定する必要があります。
@@ -255,9 +255,9 @@ guid1;matchanykeyword;level
 guid2;matchanykeyword;level
 ```
 
-プロバイダーの GUID が指定されている場合、GUID が前に番号記号をする必要があります (*\#*)。
+プロバイダーの GUID が指定されている場合、GUID が前に番号記号をする必要があります ( *\#* )。
 
-プロバイダー名が指定されている場合、名前が前に、アスタリスクをする必要があります (*\**)。 名前と同じアルゴリズムを使用して GUID に変換されます。NET のイベント ソース。 この GUID は、プロバイダーを有効に使用されます。
+プロバイダー名が指定されている場合、名前が前に、アスタリスクをする必要があります ( *\** )。 名前と同じアルゴリズムを使用して GUID に変換されます。NET のイベント ソース。 この GUID は、プロバイダーを有効に使用されます。
 
 このパラメーターを省略すると、トレース プロバイダーがないメッセージを送信トレース セッション。 ただし、トレース セッションを開始した後は使用できます、 **tracelog-有効にする**セッションの 1 つまたは複数のトレース プロバイダーを有効にするコマンド。
 
@@ -276,7 +276,7 @@ guid2;matchanykeyword;level
 <span id="_______-hf______"></span><span id="_______-HF______"></span> **-hf**   
 ハード ページ フォールト (ディスク アクセスを解決する必要があるページ フォールト) の追跡を有効にします。 このパラメーターは、NT Kernel Logger のトレース セッションでのみ有効です。
 
-<span id="-hybridshutdown_stoppersist"></span><span id="-HYBRIDSHUTDOWN_STOPPERSIST"></span>**-hybridshutdown** {**stop**|**persist**}  
+<span id="-hybridshutdown_stoppersist"></span><span id="-HYBRIDSHUTDOWN_STOPPERSIST"></span> **-hybridshutdown** {**stop**|**persist**}  
 ハイブリッド シャット ダウンのロガーの動作を制御します。 このオプションは、以降 Windows 8 で使用できます。
 
 *停止*セッションは、システムは、ハイブリッドのシャット ダウンを実行するときに停止が発生します。
@@ -301,7 +301,7 @@ KD または Windbg、トレース メッセージをリダイレクトする方
 
 カーネル デバッガーにトレース メッセージを表示する方法の詳細については、コメントを参照してください。
 
-**-Lbr** *EventName\[**+** EventName+...\]:Filter\[**,** Filter,...\]*  
+**-Lbr** *EventName\[ **+** EventName+...\]:Filter\[ **,** Filter,...\]*  
 カーネル イベントでは、LBR のトレースを構成します。
 
 使用**eflag ヘルプ**カーネル イベントの一覧についてはします。
@@ -351,7 +351,7 @@ KD または Windbg、トレース メッセージをリダイレクトする方
 
 使用する場合 **- newfile**、使用することも必要があります、 **-f** *ログ ファイル*パラメーターと値の*LogFile*を含む名前にする必要があります、文字 **%d** decimal パターン - trace%d.etl などを指定します。 コマンドがエラーで失敗するそれ以外の場合、\_無効な\_名。 Windows では、新しいファイルを作成するたびにファイル名の 10 進値をインクリメントします。
 
-このパラメーターは、事前割り当てに無効な (**- prealloc**)、循環ログ記録 (**-cir**)、NT Kernel Logger セッション、またはプライベートのトレース セッションのです。
+このパラメーターは、事前割り当てに無効な ( **- prealloc**)、循環ログ記録 ( **-cir**)、NT Kernel Logger セッション、またはプライベートのトレース セッションのです。
 
 <span id="_______-nodisk______"></span><span id="_______-NODISK______"></span> **-nodisk**   
 物理ディスク I/O イベントの追跡を無効にします。 このパラメーターは、NT Kernel Logger のトレース セッションでのみ有効です。
@@ -386,10 +386,10 @@ Pid のフィルターを指定します*n* Pid (許可されている最大 8)�
 <span id="___________________-PkgIdFilter____Package_Full_Name____Package_Full_Name..._"></span><span id="___________________-pkgidfilter____package_full_name____package_full_name..._"></span><span id="___________________-PKGIDFILTER____PACKAGE_FULL_NAME____PACKAGE_FULL_NAME..._"></span> **-PkgIdFilter** *パッケージのフルネーム* \[  * *; * * * パッケージのフルネーム*.\]  
 パッケージ ID のフィルターを指定します。 パッケージ ファイルの一覧を指定することができます。 セミコロンを使用してファイル名を区切ります。
 
-<span id="___-PkgAppIdFilter_____PRAID____PRAID..._"></span><span id="___-pkgappidfilter_____praid____praid..._"></span><span id="___-PKGAPPIDFILTER_____PRAID____PRAID..._"></span> **-PkgAppIdFilter** *PRAID* \[**;***PRAID*...\]  
+<span id="___-PkgAppIdFilter_____PRAID____PRAID..._"></span><span id="___-pkgappidfilter_____praid____praid..._"></span><span id="___-PKGAPPIDFILTER_____PRAID____PRAID..._"></span> **-PkgAppIdFilter** *PRAID* \[* *;***PRAID*...\]  
 アプリのパッケージ相対識別子 (PRAID) フィルターを指定します。 PRAID は、パッケージ内のアプリケーションの一意の識別子です。 1 つ以上指定できます*PRAID*します。 セミコロンを使用して Id を区切ります。 このオプションは、Windows 8.1 以降、UWP アプリで利用できます。
 
-<span id="-Pmc_Ctrs_Events"></span><span id="-pmc_ctrs_events"></span><span id="-PMC_CTRS_EVENTS"></span>**-Pmc** *Ctr1、... Ctr2: 名 + 名前 +.*  
+<span id="-Pmc_Ctrs_Events"></span><span id="-pmc_ctrs_events"></span><span id="-PMC_CTRS_EVENTS"></span> **-Pmc** *Ctr1、... Ctr2: 名 + 名前 +.*  
 指定したカーネル イベントでは、パフォーマンス モニター カウンター (PMC) サンプリングを構成します。 このオプションは、以降 Windows 8 で使用できます。
 
 使用**ProfileSource ヘルプ**カウンターの一覧についてはします。
@@ -400,13 +400,13 @@ Pid のフィルターを指定します*n* Pid (許可されている最大 8)�
 
 このパラメーターが必要です **-seq**または **-cir**で*MaxFileSize*します。 無効な **- newfile**します。
 
-<span id="-ProfileSource_src"></span><span id="-profilesource_src"></span><span id="-PROFILESOURCE_SRC"></span>**-ProfileSource** *src*  
+<span id="-ProfileSource_src"></span><span id="-profilesource_src"></span><span id="-PROFILESOURCE_SRC"></span> **-ProfileSource** *src*  
 使用するプロファイルのソースを構成します。 ソースの一覧について、コマンドを使用して**tracelog - ProfileSource ヘルプ**します。 このオプションは、以降 Windows 8 で使用できます。
 
 このオプションは、Windows 8 と Windows の以降のバージョンで使用できるだけです。
 
 <span id="_______-rt______"></span><span id="_______-RT______"></span> **-rt**   
-リアルタイムのトレース セッションを開始します。 (トレース ログ セッション (**-f**)、既定値です)。
+リアルタイムのトレース セッションを開始します。 (トレース ログ セッション ( **-f**)、既定値です)。
 
 使用する場合 **-rt**と **-f**、およびイベント トレース ログ ファイルにトレース コンシューマーにトレース メッセージが送信されます。 使用することはできません **-rt**または **-f**で **-バッファリング**します。 詳細については、次を参照してください。[トレース セッション](trace-session.md)します。
 
@@ -416,7 +416,7 @@ Pid のフィルターを指定します*n* Pid (許可されている最大 8)�
 <span id="_______-sessionguid______"></span><span id="_______-SESSIONGUID______"></span> **-sessionguid**   
 自動ロガー セッション GUID レジストリ値を指定します。
 
-<span id="-SetProfInt_n_src"></span><span id="-setprofint_n_src"></span><span id="-SETPROFINT_N_SRC"></span>**-SetProfInt** *n* **** *src*  
+<span id="-SetProfInt_n_src"></span><span id="-setprofint_n_src"></span><span id="-SETPROFINT_N_SRC"></span> **-SetProfInt** *n* **** *src*  
 > [!IMPORTANT]
 > プロファイリングの間隔を変更することは推奨されません。
 
@@ -433,10 +433,10 @@ Pid のフィルターを指定します*n* Pid (許可されている最大 8)�
 **-stackwalk** \[*イベント*\]  
 上の履歴の収集へのカーネル イベントを指定します。 使用**eflag ヘルプ**カーネル イベントの一覧についてはします。 このパラメーターは、NT Kernel Logger またはシステム ログ トレース セッションに対してのみ有効です。
 
-<span id="________________-StackWalkFilter_-in-outnid1_id2_..."></span><span id="________________-stackwalkfilter_-in-outnid1_id2_..."></span><span id="________________-STACKWALKFILTER_-IN-OUTNID1_ID2_..."></span> **-StackWalkFilter** {**-in**|**-out**}*nid1 id2 ...*  
+<span id="________________-StackWalkFilter_-in-outnid1_id2_..."></span><span id="________________-stackwalkfilter_-in-outnid1_id2_..."></span><span id="________________-STACKWALKFILTER_-IN-OUTNID1_ID2_..."></span> **-StackWalkFilter** { **-in**| **-out**}*nid1 id2 ...*  
 イベント ID フィルターを指定する*n*イベント Id (最大 64 イベント Id は許可されている)。 このオプションは、以降の Windows 8.1 で利用可能です。
 
-<span id="-systemlogger"></span><span id="-SYSTEMLOGGER"></span>**-systemlogger**  
+<span id="-systemlogger"></span><span id="-SYSTEMLOGGER"></span> **-systemlogger**  
 ロガーは、SystemTraceProvider イベントを受け取ることができます。 参照してください[構成し、SystemTraceProvider セッションを開始する](https://msdn.microsoft.com/library/windows/desktop/jj883720)します。 このオプションは、以降 Windows 8 で使用できます。
 
 <span id="_______-um______"></span><span id="_______-UM______"></span> **-um**   
@@ -461,7 +461,7 @@ Pid のフィルターを指定します*n* Pid (許可されている最大 8)�
 
 **-UsePerfCounter**は既定のタイマーは、イベントのトレース。
 
-<span id="_______-_____help___-_______"></span><span id="_______-_____HELP___-_______"></span> **-? | help | -?**   
+<span id="_______-_____help___-_______"></span><span id="_______-_____HELP___-_______"></span> **-? | help | -?**    
 使用方法に関する情報を表示します。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
@@ -484,9 +484,9 @@ Windows は、その一部は正しく動作するための重要な多くの目
 
 トレース セッションには、リアルタイムのトレース セッションとトレースのログ セッションの両方を指定できます。 含める場合は、 **-rt** (リアルタイム) と **-f**システム送信バッファーの内容をログとトレース コンシューマーの両方を同じコマンドで (ログ セッション) パラメーター。 ただし、トレース ログ セッションをリアルタイムでのメッセージ配信を追加する前にバッファーする必要がありますフラッシュを使用して、**トレース ログのフラッシュ**コマンド。
 
-リアルタイムのセッションを開始する場合 (**-rt**) し、ログ セッションを更新 (**-f**)、新しいトレース メッセージがログ ファイルにのみ送信されます。 リアルタイムのセッションにログ ファイルを追加するには、両方を使用 **-rt**と **-f**で、 **tracelog-更新**コマンド。
+リアルタイムのセッションを開始する場合 ( **-rt**) し、ログ セッションを更新 ( **-f**)、新しいトレース メッセージがログ ファイルにのみ送信されます。 リアルタイムのセッションにログ ファイルを追加するには、両方を使用 **-rt**と **-f**で、 **tracelog-更新**コマンド。
 
-ログ セッションを開始する場合 (**-f**)、セッションをリアルタイムに更新することができます (**-rt**)、引き続き、メッセージをトレース コンシューマーだけでなく、ログに送信します。 更新することで、セッションからログを取り除くことはできません。
+ログ セッションを開始する場合 ( **-f**)、セッションをリアルタイムに更新することができます ( **-rt**)、引き続き、メッセージをトレース コンシューマーだけでなく、ログに送信します。 更新することで、セッションからログを取り除くことはできません。
 
 表示する、またはリアルタイム回限りのセッションからトレース メッセージを保存することができますもなど使用するトレース コンシューマー、 [Tracefmt](tracefmt.md)、または使用[traceview で](traceview.md)、(トレース ログ) のようなトレース コント ローラーとトレースの両方であります。コンシューマー。 Tracefmt を使用する場合を含めることを確認する、 **-rt** Tracefmt コマンドのパラメーター。
 
@@ -516,7 +516,7 @@ Windows は、その一部は正しく動作するための重要な多くの目
 
 NT Kernel Logger でトレース セッションを開始するからセッション名を省略、 **tracelog-開始**コマンドを使用しないでください、 **- guid**プロバイダー GUID ファイルを指定するパラメーター。 **"NT Kernel Logger"** は既定のセッションの名前です。
 
-セッション名を省略するかは場合 **"NT Kernel Logger"**、システムが使用する場合でも、NT Kernel Logger のトレース セッションを起動、 **- guid**以外の GUID を指定するパラメーター **SystemTraceControlGUID**、NT Kernel Logger トレース セッションのコントロールの GUID。 別の GUID を指定する場合、システム エラーが返されます、(「システムのロガーを受け入れませんアプリケーション guid」)、NT Kernel Logger のトレース セッションがまだ起動します。
+セッション名を省略するかは場合 **"NT Kernel Logger"** 、システムが使用する場合でも、NT Kernel Logger のトレース セッションを起動、 **- guid**以外の GUID を指定するパラメーター **SystemTraceControlGUID**、NT Kernel Logger トレース セッションのコントロールの GUID。 別の GUID を指定する場合、システム エラーが返されます、(「システムのロガーを受け入れませんアプリケーション guid」)、NT Kernel Logger のトレース セッションがまだ起動します。
 
 既定で Tracelog NT Kernel Logger トレース セッションを開始すると、プロセス、スレッド、物理ディスク I/O、トレースと TCP/IP のイベントが、パラメーターを使用するにはこれらのイベントのトレースを無効にして、その他のイベントのトレースを有効にします。
 

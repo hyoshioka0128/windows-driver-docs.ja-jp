@@ -22,7 +22,7 @@ UMDF 検証とは UMDF ドライバー コードにエラーが発生*バグ チ
 
 -   メモリ ダンプ ファイルを作成し、コンピューターのログ ファイルのディレクトリにファイルを保存します (%windir% など\\System32\\LogFiles\\WUDF\\*Xxx*.dmp)。
 
-    **注**  ログ ディレクトリは、UMDF 2.15 以降、 *%programdata%*\\Microsoft\\WDF します。
+    **注**  ログ ディレクトリは、UMDF 2.15 以降、 *%programdata%* \\Microsoft\\WDF します。
 
      
 
@@ -55,7 +55,7 @@ UMDF 1.11 以降では、フレームワークの検証は常にオンおよび�
 
 UMDF 検証機能が有効になっているかどうかを確認するには、ドライバーの呼び出しの後の場所にブレークポイントを設定します[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)を使用すると、 [ **! wdfdriverinfo**。](https://msdn.microsoft.com/library/windows/hardware/ff565724)デバッガー拡張機能コマンド。
 
-**!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;* **** **0x1**
+**!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;*  **** **0x1**
 
 デバッガーの拡張機能コマンドの詳細については、次を参照してください。 [Framework ベースのドライバーの拡張機能をデバッガー](debugger-extensions-for-kmdf-drivers.md)します。
 

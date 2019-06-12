@@ -53,9 +53,9 @@ WDM のデバイス セットアップ クラスに属しているすべての�
 
 WDM のデバイス セットアップ クラスに属している 1 つのデバイスのセキュリティ記述子を指定するには、使用、 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)内、 [ **INF DDInstall.HW セクション**](inf-ddinstall-hw-section.md)のデバイスの INF ファイル。 **AddReg**ディレクティブを指す必要があります、*追加レジストリ セクション*の値を設定する**DeviceType**と**セキュリティ**レジストリ エントリ. これらのレジストリ値と一致するすべてのデバイスのセキュリティ記述子の指定、[ハードウェア ID](hardware-ids.md)または[互換性 Id](compatible-ids.md)関連で指定された[**モデルの INF セクション**](inf-models-section.md).
 
-既定では、セキュリティ記述子がデバイスを表すデバイス オブジェクトを開くための要求へのデバイスの設定が適用されます (たとえば、NT デバイス名を持つデバイスを開く要求*\\デバイス\\DeviceName*)。
+既定では、セキュリティ記述子がデバイスを表すデバイス オブジェクトを開くための要求へのデバイスの設定が適用されます (たとえば、NT デバイス名を持つデバイスを開く要求 *\\デバイス\\DeviceName*)。
 
-ただし、システムは既定では適用されませんデバイスの設定、デバイスの名前空間でオブジェクトを開く要求にデバイスの名前空間に名前を持つフォームがあるすべてのオブジェクトが含まれているセキュリティ記述子*\\デバイス\\DeviceName\\ObjectName*します。 デバイスの名前空間でオブジェクトに対する要求を開くに同じセキュリティ設定が適用されることを確認するには、デバイスの FILE_DEVICE_SECURE_OPEN デバイス特性フラグを設定します。 セキュリティで保護されたデバイスへのアクセスの詳細については、次を参照してください。[デバイス Namespace アクセスの制御 (Windows ドライバー)](https://msdn.microsoft.com/library/windows/hardware/ff542068)します。 FILE_DEVICE_SECURE_OPEN デバイスの特性のフラグを設定する方法については、次を参照してください。[デバイスの特性を指定する (Windows ドライバー)](https://msdn.microsoft.com/library/windows/hardware/ff563818)します。
+ただし、システムは既定では適用されませんデバイスの設定、デバイスの名前空間でオブジェクトを開く要求にデバイスの名前空間に名前を持つフォームがあるすべてのオブジェクトが含まれているセキュリティ記述子 *\\デバイス\\DeviceName\\ObjectName*します。 デバイスの名前空間でオブジェクトに対する要求を開くに同じセキュリティ設定が適用されることを確認するには、デバイスの FILE_DEVICE_SECURE_OPEN デバイス特性フラグを設定します。 セキュリティで保護されたデバイスへのアクセスの詳細については、次を参照してください。[デバイス Namespace アクセスの制御 (Windows ドライバー)](https://msdn.microsoft.com/library/windows/hardware/ff542068)します。 FILE_DEVICE_SECURE_OPEN デバイスの特性のフラグを設定する方法については、次を参照してください。[デバイスの特性を指定する (Windows ドライバー)](https://msdn.microsoft.com/library/windows/hardware/ff563818)します。
 
 PnP マネージャーがドライバーを呼び出した後に、デバイス オブジェクトのセキュリティの値を設定[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。 WDM ドライバーによっては呼び出すことによって、物理デバイス オブジェクト (PDO) を作成するときに、デバイス固有のセキュリティ記述子を指定できます[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)します。 詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](https://msdn.microsoft.com/library/windows/hardware/ff563688)します。
 

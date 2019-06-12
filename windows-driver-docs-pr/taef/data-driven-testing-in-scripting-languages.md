@@ -209,7 +209,7 @@ ms.locfileid: "63385066"
 
 上記の例では 6 ~ 60 行宣言およびインスタンス化、 **TestData**データ ドリブン テストのデータへのアクセスを許可するオブジェクト。
 
-**&lt;TestMethodProperty&gt;** と**&lt;TestClassProperty&gt;** タグは、定義する線**DataSource**テストまたはクラス。 VBSampleTests **TestOne**が、 [WMI クエリ](wmi-data-source.md)としてその**DataSource**。 パラメーター**ラベル**と**キャプション**利用**TestOne の**セットアップ、クリーンアップ、およびテスト メソッド。 同じクラスで**TestTwo**が[複数のデータソース](multiple-datasources.md)定義します。 1 つは、[テーブル ベースのデータ ソース](table-data-source.md)、2 番目のベースと同じ WMI **DataSource**として**TestOne**します。
+**&lt;TestMethodProperty&gt;** と **&lt;TestClassProperty&gt;** タグは、定義する線**DataSource**テストまたはクラス。 VBSampleTests **TestOne**が、 [WMI クエリ](wmi-data-source.md)としてその**DataSource**。 パラメーター**ラベル**と**キャプション**利用**TestOne の**セットアップ、クリーンアップ、およびテスト メソッド。 同じクラスで**TestTwo**が[複数のデータソース](multiple-datasources.md)定義します。 1 つは、[テーブル ベースのデータ ソース](table-data-source.md)、2 番目のベースと同じ WMI **DataSource**として**TestOne**します。
 
 TAEF の各パラメーター セットの組み合わせの展開の生成、 **DataSource**プロパティ。 1 つのパラメーター セットは、各テスト メソッドの呼び出し使用できます。 WMI クエリが結果の 4 つのセットを返す場合 (Win32\_ボリューム) ベースのテーブルの 3 つの行があると**DataSource**、 **TestOne**各 Win32 で 1 回の 4 回の実行は\_WMI クエリによって返されるボリューム。 その一方で、 **TestTwo** 12 (4 X 3) を実行します。 Win32 の組み合わせごとの時間\_ボリューム データとテーブルを指定する行。 データも、関連付けられたセットアップとクリーンアップ メソッドを使用できます。
 
@@ -279,7 +279,7 @@ Test Authoring and Execution Framework v.R10 Build 6.1.6939.0 For x86
 
 **/Listproperties**オプションは、TAEF にテスト メソッドが呼び出されることを示しています。 **VBSampleTests::TestOne** 7 時間 - 各 Win32 に対して 1 回\_ボリューム。 呼び出しごとの TAEF 追加暗黙*インデックス*各呼び出しを区別するためにテスト メソッドにします。 データとメタデータは、テスト メソッドの呼び出しごとの利用もわかります。
 
-情報を使用して、 **/listproperties**オプション、データ値に基づく選択クエリを適用するまたはよりを取得するインデックス値がテストを実行する呼び出しを制御します。 次の例は、キャプションのある呼び出しのみを実行する方法を示しています**e:\\**:。
+情報を使用して、 **/listproperties**オプション、データ値に基づく選択クエリを適用するまたはよりを取得するインデックス値がテストを実行する呼び出しを制御します。 次の例は、キャプションのある呼び出しのみを実行する方法を示しています**e:\\** :。
 
 ``` syntax
 te Examples\DataDrivenTest.wsc /select:"@Name='VBSampleTests::TestOne*' and @Data:Caption='E:\'"

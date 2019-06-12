@@ -16,7 +16,7 @@ ms.locfileid: "63341300"
 # <a name="datatype-template-directive"></a>DataType テンプレート ディレクティブ
 
 
- **\*DataType**ディレクティブがテンプレート内の要素に使用されるデータの種類を定義します。
+**\*DataType**ディレクティブがテンプレート内の要素に使用されるデータの種類を定義します。
 
  
 

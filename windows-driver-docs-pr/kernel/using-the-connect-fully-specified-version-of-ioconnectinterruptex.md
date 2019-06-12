@@ -29,11 +29,11 @@ ms.locfileid: "63359204"
 
 -   *パラメーター*-&gt;**FullySpecified.ServiceRoutine**を指す、 *InterruptService*中に、日常的な*パラメーター* - &gt; **FullySpecified**.**ServiceContext**として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、次を参照してください。 [ISR コンテキスト情報の提供](providing-isr-context-information.md)します。
 
--   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター ***-&gt;FullySpecified.InterruptObject**します。 **IoConnectInterruptEx**ルーチンはできる割り込みの割り込みのオブジェクトをポイントするには、この変数を設定する際に使う[ISR を削除する](removing-an-isr.md)します。
+-   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター * **-&gt;FullySpecified.InterruptObject**します。 **IoConnectInterruptEx**ルーチンはできる割り込みの割り込みのオブジェクトをポイントするには、この変数を設定する際に使う[ISR を削除する](removing-an-isr.md)します。
 
 -   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;FullySpecified.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、次を参照してください。[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)します。
 
-ドライバーは、他のメンバーで、割り込みのキー プロパティを指定する必要があります * パラメーター ***-&gt;FullySpecified**します。 システムの配列に必要な情報を提供する[ **CM\_部分\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff541977)構造体に送信するとき、 [**IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749) IRP がドライバーにします。
+ドライバーは、他のメンバーで、割り込みのキー プロパティを指定する必要があります * パラメーター * **-&gt;FullySpecified**します。 システムの配列に必要な情報を提供する[ **CM\_部分\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff541977)構造体に送信するとき、 [**IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749) IRP がドライバーにします。
 
 システムでは、各割り込みを**CM\_部分\_リソース\_記述子**構造体**型**メンバーに等しい**CmResourceTypeInterrupt**します。 メッセージ シグナル割り込みなど、CM の\_リソース\_割り込み\_のビットのメッセージ、**フラグ**メンバーのセットは、オフ、それ以外の場合。
 

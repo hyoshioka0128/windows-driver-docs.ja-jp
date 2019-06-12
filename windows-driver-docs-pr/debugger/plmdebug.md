@@ -24,7 +24,7 @@ ms.locfileid: "63387935"
 
 PLMDebug.exe は、Windows デバッガーを使用して、プロセスのライフ サイクル管理 (PLM) を実行している Windows アプリをデバッグすることができるツールです。 PLMDebug、中断、再開、および Windows アプリを終了して手動で制御するができます。
 
-**ヒント:**  Windows 10 バージョン 1607 以降では、UWP アプリをデバッグする .createpackageapp など、UWP のコマンドを使用することができます。 詳細については、次を参照してください。 [WinDbg を使用して UWP アプリのデバッグ](debugging-a-uwp-app-using-windbg.md)します。
+**ヒント:**   Windows 10 バージョン 1607 以降では、UWP アプリをデバッグする .createpackageapp など、UWP のコマンドを使用することができます。 詳細については、次を参照してください。 [WinDbg を使用して UWP アプリのデバッグ](debugging-a-uwp-app-using-windbg.md)します。
 
  
 
@@ -82,10 +82,10 @@ plmdebug /activateBgTaskTaskId
 <span id="________disableDebug_Package"></span><span id="________disabledebug_package"></span><span id="________DISABLEDEBUG_PACKAGE"></span> **/disableDebug** *Package*  
 パッケージのデバッグの参照カウントをデクリメントします。
 
-<span id="________enumerateBgTasksPackage"></span><span id="________enumeratebgtaskspackage"></span><span id="________ENUMERATEBGTASKSPACKAGE"></span> **/enumerateBgTasks * * * パッケージ*  
+<span id="________enumerateBgTasksPackage"></span><span id="________enumeratebgtaskspackage"></span><span id="________ENUMERATEBGTASKSPACKAGE"></span> * */enumerateBgTasks * * * パッケージ*  
 パッケージのバック グラウンド タスクの id を列挙します。
 
-<span id="________activateBgTaskTaskId"></span><span id="________activatebgtasktaskid"></span><span id="________ACTIVATEBGTASKTASKID"></span> **/activateBgTask***TaskId*  
+<span id="________activateBgTaskTaskId"></span><span id="________activatebgtasktaskid"></span><span id="________ACTIVATEBGTASKTASKID"></span> * */activateBgTask***TaskId*  
 バック グラウンド タスクをアクティブにします。 PLMDebug を使用してすべてのバック グラウンド タスクをアクティブにできることに注意してください。
 
 <a name="remarks"></a>注釈

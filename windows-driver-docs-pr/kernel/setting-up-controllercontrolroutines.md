@@ -27,7 +27,7 @@ ms.locfileid: "63391086"
 
 2.  保存、 *ControllerObject*によって返されたポインター **IoCreateController**、ハードウェアによって制御される論理または物理デバイスを表す各デバイス オブジェクトのデバイスの拡張機能では、通常コント ローラーのオブジェクトによって表されます。
 
-3.  セットアップや初期化のドライバーにより決定された内容、* ControllerObject ***-&gt;ControllerExtension**します。
+3.  セットアップや初期化のドライバーにより決定された内容、* ControllerObject * **-&gt;ControllerExtension**します。
 
 返された*ControllerObject*ポインター、ドライバーのエントリ ポイント*ControllerControl* 、ルーチン、*デバイス オブジェクト*のターゲット デバイスを表すポインター現在の IRP では、および*コンテキスト*用に既に設定領域へのポインター、 *ControllerControl*ルーチンは、ドライバーの呼び出しで渡す必要がある[ **IoAllocateController**](https://msdn.microsoft.com/library/windows/hardware/ff548224)します。 通常、ドライバーの[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチンがある領域を設定*コンテキスト*を呼び出す前に**IoAllocateController**します。
 

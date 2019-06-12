@@ -37,10 +37,10 @@ sxr
 ## <a name="span-idddkcmdsetexceptionsdbgspanspan-idddkcmdsetexceptionsdbgspanparameters"></a><span id="ddk_cmd_set_exceptions_dbg"></span><span id="DDK_CMD_SET_EXCEPTIONS_DBG"></span>パラメーター
 
 
-<span id="-c__Cmd1_"></span><span id="-c__cmd1_"></span><span id="-C__CMD1_"></span>**-c"**<em>Cmd1</em>**"**  
+<span id="-c__Cmd1_"></span><span id="-c__cmd1_"></span><span id="-C__CMD1_"></span> **-c"** <em>Cmd1</em> **"**  
 イベント、例外が発生した場合に実行されるコマンドを指定します。 このコマンドは、この例外がデバッガーを中断するかどうかに関係なく、この例外を処理する最初の機会が発生したときに実行されます。 囲む必要があります、 *Cmd1*引用符で囲まれた文字列。 この文字列は、セミコロンで区切られた複数のコマンドを含めることができます。 -C と引用符で囲まれたコマンド文字列間のスペースは省略可能です。
 
-<span id="-c2_Cmd2_"></span><span id="-c2_cmd2_"></span><span id="-C2_CMD2_"></span>**-c2"**<em>Cmd2</em>**"**  
+<span id="-c2_Cmd2_"></span><span id="-c2_cmd2_"></span><span id="-C2_CMD2_"></span> **-c2"** <em>Cmd2</em> **"**  
 イベント、例外が発生し、ファースト チャンスで処理されない場合に実行されるコマンドを指定します。 このコマンドは、この例外がデバッガーを中断するかどうかに関係なく、この例外を処理する 2 番目のチャンスが発生したときに実行されます。 囲む必要があります、 *Cmd2*引用符で囲まれた文字列。 この文字列は、セミコロンで区切られた複数のコマンドを含めることができます。 領域間は、c2、引用符で囲まれたコマンド文字列は省略可能です。
 
 <span id="_______-h______"></span><span id="_______-H______"></span> **-h**   
@@ -52,7 +52,7 @@ sxr
 <span id="_______Event______"></span><span id="_______event______"></span><span id="_______EVENT______"></span> *イベント*   
 コマンドが機能するイベントを指定します。 これらのイベントは、短い省略名によって識別されます。 イベントの一覧は、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
-<span id="______________"></span> **\\***   
+<span id="______________"></span> **\\** *   
 それ以外の場合に明示的に名前のないのすべての例外の影響を与える**sx**します。 明示的に名前付きの例外の一覧は、次を参照してください。[を制御する例外とイベント](controlling-exceptions-and-events.md)します。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境

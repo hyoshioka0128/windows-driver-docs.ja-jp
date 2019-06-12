@@ -33,7 +33,7 @@ lsp [-a]
 ## <a name="span-idddkcmdsetnumberofsourcelinesdbgspanspan-idddkcmdsetnumberofsourcelinesdbgspanparameters"></a><span id="ddk_cmd_set_number_of_source_lines_dbg"></span><span id="DDK_CMD_SET_NUMBER_OF_SOURCE_LINES_DBG"></span>パラメーター
 
 
-<span id="_______-a______"></span><span id="_______-A______"></span> **-**   
+<span id="_______-a______"></span><span id="_______-A______"></span> **-**    
 設定または行の数を表示する **%.*ls**と**lsa**を表示します。 省略した場合 **-a**、 **lsp**をステップ実行し、コードを実行するときに示されている行の数を表示または設定します。
 
 <span id="_______LeadingLines______"></span><span id="_______leadinglines______"></span><span id="_______LEADINGLINES______"></span> *LeadingLines*   

@@ -24,7 +24,7 @@ ms.locfileid: "63340358"
 
 **DeferredRequestCompleted**規則を指定する場合、ドライバーの既定の I/O キューに表示される、I/O 要求は、コールバック関数では、完了していないが、後で処理の遅延が、要求する必要がありますを完了、遅延でコールバック関数の処理か、要求が転送され、フレームワークに配信される場合を除き、 [ **WdfRequestStopAcknowledge** ](https://msdn.microsoft.com/library/windows/hardware/ff550033)メソッドが呼び出されます。
 
-**DeferredRequestCompleted**ルールを使用して遅延の要求を識別することが必要です、  **\_ \_sdv\_保存\_要求**と**\_ \_sdv\_取得\_要求**マクロ。 これらのマクロを使用する方法については、次を参照してください[Using \_ \_sdv\_保存\_要求と\_ \_sdv\_取得\_の要求。遅延プロシージャ呼び出し](https://msdn.microsoft.com/library/windows/hardware/ff556071)します。 前提条件規則**AliasWithinTimerDpc**これらのマクロの存在を確認します。
+**DeferredRequestCompleted**ルールを使用して遅延の要求を識別することが必要です、  **\_ \_sdv\_保存\_要求**と **\_ \_sdv\_取得\_要求**マクロ。 これらのマクロを使用する方法については、次を参照してください[Using \_ \_sdv\_保存\_要求と\_ \_sdv\_取得\_の要求。遅延プロシージャ呼び出し](https://msdn.microsoft.com/library/windows/hardware/ff556071)します。 前提条件規則**AliasWithinTimerDpc**これらのマクロの存在を確認します。
 
 終了前に、I/O 要求のコールバック関数からを除き、次の場合、キューのコールバック関数のいずれかで、ドライバーの既定のキューに表示され、遅延の要求を完了する必要があります。
 

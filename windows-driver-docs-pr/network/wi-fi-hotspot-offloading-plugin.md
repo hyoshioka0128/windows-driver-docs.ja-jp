@@ -158,7 +158,7 @@ L2 接続が完了したら、ホット スポットのプラグインのホス�
 
 ### <a name="the-plugin-dll-file"></a>プラグインの DLL ファイル
 
-DLL ファイルの署名し、の下に配置する必要があります**Programs\HotspotHost\\**<*ProviderName*> ここで、<*ProviderName*> は、DLL のプロバイダーの名前。 
+DLL ファイルの署名し、の下に配置する必要があります**Programs\HotspotHost\\** <*ProviderName*> ここで、<*ProviderName*> は、DLL のプロバイダーの名前。 
 
 DLL の署名については、次を参照してください。[バイナリとパッケージの署名](https://msdn.microsoft.com/library/windows/hardware/dn789217)します。 
 

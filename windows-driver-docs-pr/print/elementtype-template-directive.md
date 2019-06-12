@@ -16,7 +16,7 @@ ms.locfileid: "63327578"
 # <a name="elementtype-template-directive"></a>ElementType テンプレート ディレクティブ
 
 
- **\*ElementType**ディレクティブがテンプレートで使用される要素のデータ型を定義します。
+**\*ElementType**ディレクティブがテンプレートで使用される要素のデータ型を定義します。
 
  
 

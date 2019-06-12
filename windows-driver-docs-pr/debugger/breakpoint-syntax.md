@@ -65,7 +65,7 @@ C++ のパブリック クラスのメンバーと同様に、スペースを含
 
 このエスケープ構文が C 関数の名前にあるスペース (または特殊文字) にはないため、有用な C ではなく C++ (たとえば、オーバー ロードされた演算子)。 ただし、この構文は、.NET Framework でオーバー ロードのかなり使用しているため、多くのマネージ コードの重要なもなりました。
 
-C++ 構文で任意のテキストにブレークポイントを設定するには使用<strong>@ bu@c+ (</strong><em>テキスト</em>**)** C++ と互換性のあるシンボル。
+C++ 構文で任意のテキストにブレークポイントを設定するには使用<strong>@ bu@c+ (</strong><em>テキスト</em> **)** C++ と互換性のあるシンボル。
 
 ### <a name="span-idbreakpointsinscriptsspanspan-idbreakpointsinscriptsspanbreakpoints-in-scripts"></a><span id="breakpoints_in_scripts"></span><span id="BREAKPOINTS_IN_SCRIPTS"></span>スクリプト内のブレークポイント
 
@@ -85,7 +85,7 @@ b?[@$t0]
 
 ### <a name="span-idbreakpointpseudoregistersspanspan-idbreakpointpseudoregistersspanbreakpoint-pseudo-registers"></a><span id="breakpoint_pseudo_registers"></span><span id="BREAKPOINT_PSEUDO_REGISTERS"></span>ブレークポイントの擬似レジスタ
 
-式の中でブレークポイントのアドレスを参照する場合は、使用、[擬似レジスタ](pseudo-register-syntax.md)で、**$bp * * * 数*構文、場所*数*はブレークポイントの ID です。 この構文の詳細については、擬似レジスタの構文を参照してください。
+式の中でブレークポイントのアドレスを参照する場合は、使用、[擬似レジスタ](pseudo-register-syntax.md)で、* *$bp * * * 数*構文、場所*数*はブレークポイントの ID です。 この構文の詳細については、擬似レジスタの構文を参照してください。
 
  
 

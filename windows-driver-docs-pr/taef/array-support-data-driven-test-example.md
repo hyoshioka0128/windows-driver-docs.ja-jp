@@ -6,7 +6,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 362c60743ed9db0252e7e42da1f871ba1e530af9
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56553692"
@@ -106,7 +106,7 @@ ms.locfileid: "56553692"
 16 } /* namespace TestExecution */ } /* namespace WEX */
 ```
 
-呼び出すことによって、配列の長さを取得する**GetSize**演算子を使用して、特定の要素を取得することができますと**\[ \]**。
+呼び出すことによって、配列の長さを取得する**GetSize**演算子を使用して、特定の要素を取得することができますと **\[ \]** 。
 
 次の例では、コードでこれらの関数を使用する方法を示します。 ネイティブの例では、cpp ファイルを考慮してください。
 

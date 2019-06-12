@@ -53,7 +53,7 @@ Usbkd.dll
 
 上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! ehci\_情報 ffffe00001ca11a0**します。
 
-DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)のアドレスを取得する`GlobalTtListHead`します。 そのアドレスを渡す[ **! usbkd.usblist**](-usbkd-usblist.md)のアドレスが表示されます**\_トランザクション\_TRANSLATOR**構造体。
+DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)のアドレスを取得する`GlobalTtListHead`します。 そのアドレスを渡す[ **! usbkd.usblist**](-usbkd-usblist.md)のアドレスが表示されます **\_トランザクション\_TRANSLATOR**構造体。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 

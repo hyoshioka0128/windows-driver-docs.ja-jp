@@ -31,11 +31,11 @@ HID のクライアントは、次のモードで動作できます。
 
 - HID コレクションでファイルを開くに CreateFile が呼び出されます。
 
-- 呼び出し**HidD\_**<em>Xxx</em> HID のコレクションを取得するルーチンをサポートする HID [preparsed データ](preparsed-data.md)と HID コレクションに関する情報。
+- 呼び出し**HidD\_** <em>Xxx</em> HID のコレクションを取得するルーチンをサポートする HID [preparsed データ](preparsed-data.md)と HID コレクションに関する情報。
 
 - 入力のレポートの読み取りを ReadFile や WriteFile 出力レポートを送信するを呼び出します。
 
-- 呼び出し**HidP\_**<em>Xxx</em> HID HID レポートを解釈するためのルーチンをサポートします。
+- 呼び出し**HidP\_** <em>Xxx</em> HID HID レポートを解釈するためのルーチンをサポートします。
 
 一般に、カーネル モード ドライバーは、次を行います。
 
@@ -49,7 +49,7 @@ HID のクライアントは、次のモードで動作できます。
 
 - 使用して[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)入力レポートの読み取り要求と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)出力レポートを送信する要求
 
-- 呼び出し**HidP\_**<em>Xxx</em> HID HID レポートを解釈するためのルーチンのサポート
+- 呼び出し**HidP\_** <em>Xxx</em> HID HID レポートを解釈するためのルーチンのサポート
 
 HID コレクションの動作の詳細についてを参照してください。
 

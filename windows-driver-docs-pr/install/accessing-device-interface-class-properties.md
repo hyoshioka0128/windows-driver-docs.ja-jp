@@ -34,7 +34,7 @@ Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバ�
 
 -   設定*ClassGuid*を既定のインターフェイスを取得する対象のデバイスのインターフェイス クラスを表す GUID。
 
--   設定 * 列挙子 ***NULL**します。
+-   設定 * 列挙子  **NULL** します。
 
 -   設定*hwndParent*に**NULL**します。
 

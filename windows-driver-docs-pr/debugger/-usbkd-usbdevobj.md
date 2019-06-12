@@ -32,7 +32,7 @@ ms.locfileid: "63334111"
 
 
 <span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span> *DeviceObject*   
-アドレスを**\_デバイス\_オブジェクト**構造体。
+アドレスを **\_デバイス\_オブジェクト**構造体。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 

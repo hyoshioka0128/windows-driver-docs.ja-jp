@@ -79,8 +79,8 @@ VidPN ステレオスコ ピック 3-D レンダリングをサポートする�
 
 -   [*BltDXGI*](https://msdn.microsoft.com/library/windows/hardware/ff538252)
 -   [*Blt1DXGI*](https://msdn.microsoft.com/library/windows/hardware/hh406235)
--   [*CreateResource(D3D10)*](https://msdn.microsoft.com/library/windows/hardware/ff540691)
--   [*CreateResource(D3D11)*](https://msdn.microsoft.com/library/windows/hardware/ff540694)
+-   [*CreateResource(D3D10)* ](https://msdn.microsoft.com/library/windows/hardware/ff540691)
+-   [*CreateResource(D3D11)* ](https://msdn.microsoft.com/library/windows/hardware/ff540694)
 -   [*RotateResourceIdentitiesDXGI*](https://msdn.microsoft.com/library/windows/hardware/ff569514)
 -   [**D3DDDI\_ALLOCATIONINFO**](https://msdn.microsoft.com/library/windows/hardware/ff544364)
 -   [**D3D10DDIARG\_CREATERESOURCE**](https://msdn.microsoft.com/library/windows/hardware/ff541697)
@@ -98,7 +98,7 @@ Microsoft DirectX 10 対応するハードウェアでのみ以降、ステレ�
 
 ステレオスコ ピック 3-D オプションおよび WDDM 1.2 機能は、すべての Windows 8 ハードウェアで direct3d11 API のサポートが必要です。 したがって、WDDM 1.2 ドライバー (完全なグラフィックスとレンダリング デバイス) では、テクスチャ配列のプロセス間を共有するためのサポートを追加して direct3d11 の Api をサポートする必要があります。 この要件は、ステレオのアプリが mono のモードでの障害を持っていないことを確認します。
 
-この機能を実装するときにハードウェア デバイスが満たす必要のある要件の詳細については、関連するを参照してください[WHCK ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)で**Device.Graphics... 処理ステレオスコ ピック ビデオ コンテンツ****Device.Display.Monitor.Stereoscopic 3D モード**します。
+この機能を実装するときにハードウェア デバイスが満たす必要のある要件の詳細については、関連するを参照してください[WHCK ドキュメント](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)で**Device.Graphics... 処理ステレオスコ ピック ビデオ コンテンツ** **Device.Display.Monitor.Stereoscopic 3D モード**します。
 
 参照してください[WDDM 1.2 機能](wddm-v1-2-features.md)に Windows 8 で追加された機能の説明。
 

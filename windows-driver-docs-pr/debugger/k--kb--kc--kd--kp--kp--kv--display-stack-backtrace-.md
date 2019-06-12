@@ -22,7 +22,7 @@ ms.locfileid: "63367230"
 # <a name="k-kb-kc-kd-kp-kp-kv-display-stack-backtrace"></a>k、kb、kc、kd、kp、kP、kv (スタック バックトレースの表示)
 
 
-<strong>K*\\</strong>** のコマンド関連の情報と共に、特定のスレッドのスタック フレームを表示する.
+<strong>K *\\</strong>* * のコマンド関連の情報と共に、特定のスレッドのスタック フレームを表示する.
 
 ユーザー モード、x86 プロセッサ
 

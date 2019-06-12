@@ -53,7 +53,7 @@ WPP は、複合型を識別するために、このフィールドを使用し�
 WPP プリプロセッサによって認識される管理オブジェクト フォーマット (MOF) の種類を指定します
 
 <span id="WppMofFormat"></span><span id="wppmofformat"></span><span id="WPPMOFFORMAT"></span>*WppMofFormat*  
-など、書式指定子を指定 **"s"**、つまり、WPP プリプロセッサによって認識されます。
+など、書式指定子を指定 **"s"** 、つまり、WPP プリプロセッサによって認識されます。
 
 <span id="TypeSignature"></span><span id="typesignature"></span><span id="TYPESIGNATURE"></span>*TypeSignature*  
 複合型との関連付けの関数名に追加された文字列。 1 つの文字またはアンダー スコアとの間の複数の文字の必要があります。 たとえば、  **\_xwcs\_t\_** します。
@@ -123,7 +123,7 @@ ETW が、WPP はどのように解釈するときに\_LOGXWCS 定義では、2 
 
 データ、WPP とは別の長さを指定したため、\_LOGXWCS の 2 つのスロットを消費する[TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)します。 そのため、数**2**は 8 番目の引数です。
 
-呼び出すときに、 [WPP プリプロセッサ](wpp-preprocessor.md)を使用して、**無視の感嘆符**オプション (**- noshrieks**)。 これにより、WPP「途切れ」とも呼ばれますの感嘆符 (!) で囲まれていない名前を持つ複合型を認識するには
+呼び出すときに、 [WPP プリプロセッサ](wpp-preprocessor.md)を使用して、**無視の感嘆符**オプション ( **- noshrieks**)。 これにより、WPP「途切れ」とも呼ばれますの感嘆符 (!) で囲まれていない名前を持つ複合型を認識するには
 
 プロジェクトのプロパティ ページで設定する方法については、WPP トレース オプションの完全な一覧を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
 
