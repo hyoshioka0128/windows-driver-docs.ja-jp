@@ -4,12 +4,12 @@ description: 非 DX Api 対話する必要があるドライバーやカーネ�
 ms.assetid: 6c4a6974-c67b-4710-80c6-48a5b378e088
 ms.date: 05/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ed5ff1d1438f20c225076c608d6c7a3e264d5b3b
-ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
+ms.openlocfilehash: a6e511aa4642bf524904fcd0688c5081cd03ee60
+ms.sourcegitcommit: 20d98fc309319a0363b32510c9081b0d1775de93
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65701993"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "66840858"
 ---
 # <a name="container-support-for-non-dx-apis"></a>DX された Api 用のコンテナーのサポート
 
@@ -55,7 +55,7 @@ HKR、"CopyToVmOverwrite"、SoftGpuFiles2、REG_SZ %、"softgpu2.dll"
 
 OS はコピー \<DriverStorePath > %windir%\system32\softgpu.dll に \softgpu1.dll と\<DriverStorePath > %windir%\system32\softgpu2.dll に \softgpu2.dll
 
-### <a name="example-3"></a>例 3: 
+### <a name="example-3"></a>例 3:
 INF [DDInstall] セクションの内容:  
 HKR、"CopyToVmOverwriteWow64"、SoftGpuFiles、%reg_multi_sz"Subdir1\Subdir2\softgpu2wow64.dll"%"softgpu.dll"  
 
@@ -82,7 +82,7 @@ DXGI 返しますを通じてその LUID [IDXGIAdapter::GetDesc](https://docs.mi
 
 前述のメソッドと型の多くは、WDK は、ドライバーをビルドするために使用でのみ使用できます。
 これは、DX 以外の Api は、Windows SDK だけに依存が以前の Microsoft のヘッダーでは、組織の不幸不注意です。
-それほど面倒のない DX Api WDK またはランタイムまたはローダー コンポーネントを WDK の内訳をローカライズする場合は、マイクロソフトは、WDK の依存関係を効果的に切断 DX API プロジェクトのアクセス許可。
+それほど面倒のない DX Api WDK またはランタイムまたはローダー コンポーネントを WDK の依存関係をローカライズする場合は、マイクロソフトは、WDK の依存関係を効果的に切断 DX API プロジェクトのアクセス許可。
 Microsoft のパブリックのドキュメントを使用して、バイナリ互換性のある型とそれをプロジェクトに関数の宣言を作成して WDK の依存関係を解消することができます。
 これらの型名は、他のユーザーが意図的に DX API プロジェクトで、WDK をで活用する場合、名前の競合を回避するために、Microsoft で使用されるものと同じですがあります。
 

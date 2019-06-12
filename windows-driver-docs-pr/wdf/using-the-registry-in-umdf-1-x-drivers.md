@@ -14,7 +14,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1692fe57bbe69e84c36f58c573537d1da93eb55a
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56529451"
@@ -43,9 +43,9 @@ UMDF ベースのドライバーは、4 種類のレジストリ キーにアク
   ポインターを取得、 [ **IWDFNamedPropertyStore** ](https://msdn.microsoft.com/library/windows/hardware/ff560164)インターフェイス。
 
   <a href="" id="iwdfpropertystorefactory--retrievedevicepropertystore"></a>[**IWDFPropertyStoreFactory::RetrieveDevicePropertyStore**](https://msdn.microsoft.com/library/windows/hardware/ff560228)  
-  ポインターを取得、 [ **IWDFNamedPropertyStore2** ](https://msdn.microsoft.com/library/windows/hardware/ff560168)インターフェイス。 使用することができます、 *SubkeyPath*など、ドライバーが作成したサブキーの下の値を指定するパラメーター **\\デバイス パラメーター\\**<em>DriverServiceName\\サブキー</em>します。
+  ポインターを取得、 [ **IWDFNamedPropertyStore2** ](https://msdn.microsoft.com/library/windows/hardware/ff560168)インターフェイス。 使用することができます、 *SubkeyPath*など、ドライバーが作成したサブキーの下の値を指定するパラメーター **\\デバイス パラメーター\\** <em>DriverServiceName\\サブキー</em>します。
 
-  ドライバーは、内の値を読み取り専用のアクセス権を持つ、 **\\デバイス パラメーター**サブキーとにアクセスできない**\\デバイス パラメーター\\WDF**または**\\デバイス パラメーター\\WUDF**します。
+  ドライバーは、内の値を読み取り専用のアクセス権を持つ、 **\\デバイス パラメーター**サブキーとにアクセスできない **\\デバイス パラメーター\\WDF**または **\\デバイス パラメーター\\WUDF**します。
 
   デバイス プロパティの統一モデルを使用して作成されたプロパティ値が格納されている、 **\\プロパティ**ハードウェア キーの下のサブキー。
 

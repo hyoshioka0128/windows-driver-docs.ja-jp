@@ -4,29 +4,16 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: Windows で Bluetooth ホスト オプションのサポートに関する質問と回答の一覧を示します
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2241d0c80f733b78272780dd114b48acb6d5549
-ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
+ms.openlocfilehash: 5ccf6d42cd0738171c8b53a7f2dcecb6888003be
+ms.sourcegitcommit: 20d98fc309319a0363b32510c9081b0d1775de93
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051641"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "66840860"
 ---
 # <a name="bluetooth-host-radio-support"></a>Bluetooth ホストの無線のサポート
 
-次の一覧は、Bluetooth 無線サポート Q & a:
-
-- [Bluetooth のホスト コント ローラーの Windows でサポートされています](#bluetooth-host-controllers-supported-in-windows)
-- [Windows がデバイス ID (Windows Vista) に一致しない場合は読み込みに Bluetooth スタックの強制](#forcing-the-bluetooth-stack-to-load-if-windows-cannot-match-the-device-id-windows-vista)
-- [Windows Vista での Bluetooth ラジオのインボックス サポートを確認する方法](#how-to-ensure-in-box-support-for-bluetooth-radios-in-windows-vista)
-- [サード パーティ製の INF ファイルがマイクロソフトによって定義されたクラス GUID を使用するかどうか](#whether-third-party-inf-files-should-use-the-microsoft-defined-class-guid)
-- [コントロール パネルの Bluetooth アプリケーションが Windows 7 で不足している理由](#why-the-control-panel-bluetooth-application-is-missing-in-windows-7)
-- [Bluetooth アイコンがタスク バーに表示されない理由](#why-the-bluetooth-icon-does-not-appear-in-the-taskbar)
-- [Windows は、Bluetooth 無線ファームウェアの更新プログラムをサポートします。](#windows-support-for-bluetooth-radio-firmware-updates)
-- [パススルー コマンドのベンダー固有の Windows のサポート](#windows-support-for-vendor-specific-pass-through-commands)
-- [Windows は、ベンダーから提供されたプロファイルをサポートします。](#windows-support-for-vendor-supplied-profiles)
-- [Bluetooth のプロファイルと既定で有効になっているプロトコル](#bluetooth-profiles-and-protocols-that-are-enabled-by-default)
-- [グループ ポリシーが Bluetooth ラジオのインストールをブロックする方法](#how-group-policy-can-block-bluetooth-radio-installation)
-- [Windows 8 および Windows 8.1 によって発行されたデバイス ID のプロファイル レコードを変更する方法](#how-to-change-the-device-id-profile-record-published-by-windows-8-and-windows-81)
+このトピックでは、Bluetooth 無線のサポートに関する一般的な質問に対する回答を提供します。
 
 ## <a name="bluetooth-host-controllers-supported-in-windows"></a>Bluetooth のホスト コント ローラーの Windows でサポートされています
 
@@ -36,11 +23,11 @@ ms.locfileid: "66051641"
 
 新しい Bluetooth 無線は、デバイスの Windows に含まれている Bluetooth INF (Bth.inf) 内の Id のいずれかとも一致しない可能性があります。 これは Windows がデバイスの Bluetooth スタックをロードすることを防ぎます。 Ihv は、次の方法のいずれかで、ラジオがネイティブの Bluetooth スタックで動作するを確認してください。
 
-- ラジオ Bth.inf を参照する、INF を作成します。 Bluetooth 無線のベンダー固有の INF ファイルの例は、次を参照してください[付録 b:。Windows Vista で使用するため、ベンダー提供の INF ファイルの例](bluetooth-faq--appendix-b.md)します。
-- 適切な互換性があり、subcompatible ID を指定するデバイスのファームウェアで拡張の互換性の OS の ID 記述子を格納します。 については、互換性 ID OS ディスクリプターを拡張を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=308932)します。
-- 強制的に読み込む Bluetooth スタック
+* ラジオ Bth.inf を参照する、INF を作成します。 Bluetooth 無線のベンダー固有の INF ファイルの例は、次を参照してください[付録 b:。Windows Vista で使用するため、ベンダー提供の INF ファイルの例](bluetooth-faq--appendix-b.md)します。
+* 適切な互換性があり、subcompatible ID を指定するデバイスのファームウェアで拡張の互換性の OS の ID 記述子を格納します。 については、互換性 ID OS ディスクリプターを拡張を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=308932)します。
+* 強制的に読み込む Bluetooth スタック
 
-次の手順は、デバイス マネージャーを使用して、新しいオプションを読み込む Bluetooth スタックを強制する方法をまとめたものです。
+次の手順では、デバイス マネージャーを使用して、強制的に新しいオプションを読み込む Bluetooth スタック。
 
 1. コントロール パネルのデバイス マネージャーのアプリケーションを実行し、デバイスの一覧で、Bluetooth 無線を識別します。
 2. ドライバー ソフトウェアの更新ウィザードを実行するには、Bluetooth 無線の項目を右クリックして**ドライバー ソフトウェアの更新**します。
@@ -48,31 +35,31 @@ ms.locfileid: "66051641"
 
 この手順の詳細については、次を参照してください[付録 a:。Windows Vista の新しいハードウェアに付属の Bluetooth ドライバーをインストールする方法](bluetooth-faq--appendix-a.md)します。
 
-## <a name="how-to-ensure-in-box-support-for-bluetooth-radios-in-windows-vista"></a>Windows Vista での Bluetooth ラジオのインボックス サポートを確認する方法
+## <a name="ensure-in-box-support-for-bluetooth-radios"></a>Bluetooth ラジオのインボックス サポートを確認します。
 
 Ihv は、Windows で box サポートに、Bluetooth 無線があることを確認するには、次の手順を実行する必要があります。
 
-- 無線拡張互換性 ID の OS の機能の記述子をサポートしていることを確認します。 詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)します。
-- Windows 認定プログラムの承認、Bluetooth 無線ハードウェアと関連付けられている INF ファイルを取得します。 Bluetooth 無線のベンダー固有の INF ファイルの例は、次を参照してください[付録 b:。Windows Vista で使用するため、ベンダー提供の INF ファイルの例](bluetooth-faq--appendix-b.md)します。
-- パートナー センターを使用して、INF ファイルを Windows Update を通じて使用できるようにするには
+* 無線拡張互換性 ID の OS の機能の記述子をサポートしていることを確認します。 詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?linkid=617154)します。
+* Windows 認定プログラムの承認、Bluetooth 無線ハードウェアと関連付けられている INF ファイルを取得します。 Bluetooth 無線のベンダー固有の INF ファイルの例は、次を参照してください[付録 b:。Windows Vista で使用するため、ベンダー提供の INF ファイルの例](bluetooth-faq--appendix-b.md)します。
+* パートナー センターを使用して、INF ファイルを Windows Update を通じて使用できるようにするには
 
-Windows Vista のインボックス Bth.inf ファイルへの無線を追加することはありません。
+インボックス Bth.inf ファイルへの無線を追加することはありません。
 
-## <a name="whether-third-party-inf-files-should-use-the-microsoft-defined-class-guid"></a>サード パーティ製の INF ファイルがマイクロソフトによって定義されたクラス GUID を使用するかどうか
+## <a name="should-third-party-inf-files-use-the-microsoft-defined-class-guid"></a>サード パーティ製の INF ファイルは、マイクロソフトによって定義されたクラス GUID を使用する必要があります。
 
 Ihv は、インボックス Bluetooth INF ファイル (Bth.inf) を参照する INF ファイルのみの Bluetooth デバイスに Microsoft によって定義されたクラスのグローバル一意識別子 (GUID) ({e0cbf06c cd8b 4647 bb8a 263b43f0f974}) を使用してください。 これは、デバイスが、ネイティブ Windows 共同インストーラー、サービス、および通知エリア アイコンを使用していることを意味します。 Bluetooth スタックを実装する Ihv は、ベンダー固有クラス GUID を作成し、WLK テスト ツールを使用して、スタックが未分類の Windows 認定プログラムに準拠していることを確認する必要があります。
 
-## <a name="why-the-control-panel-bluetooth-application-is-missing-in-windows-7"></a>コントロール パネルの Bluetooth アプリケーションが Windows 7 で不足している理由
+## <a name="why-the-control-panel-bluetooth-application-is-missing"></a>コントロール パネルの Bluetooth アプリケーションが存在しない理由
 
-Windows 7 では、コントロール パネルの Bluetooth アプリケーションがデバイスとプリンターに組み込まれます。 したがって、Bluetooth 無線の設定を調整して、Bluetooth のデバイスを管理する、新しい Bluetooth の追加デバイスのみ実行できますからデバイスとプリンター内。
+コントロール パネルの Bluetooth アプリケーションは、デバイスとプリンターに組み込まれています。 したがって、Bluetooth 無線の設定を調整して、Bluetooth のデバイスを管理する、新しい Bluetooth の追加デバイスのみ実行できますからデバイスとプリンター内。
 
-## <a name="why-the-bluetooth-icon-does-not-appear-in-the-taskbar"></a>Bluetooth アイコンがタスク バーに表示されない理由
+## <a name="why-the-bluetooth-icon-might-not-appear-in-the-taskbar"></a>Bluetooth のアイコンがタスク バーに表示されない原因
 
 Bluetooth のアイコンがタスク バーに表示されない場合、次の理由の 1 つ以上が考えられます。
 
-- Bluetooth 無線がになっています。
-- Bluetooth 無線がエミュレーション モードです。
-- **Bluetooth 設定**ダイアログ ボックスで、 **Bluetooth アイコン、通知領域に表示する** チェック ボックスが選択されていません。
+* Bluetooth 無線がになっています。
+* Bluetooth 無線がエミュレーション モードです。
+* **Bluetooth 設定**ダイアログ ボックスで、 **Bluetooth アイコン、通知領域に表示する** チェック ボックスが選択されていません。
 
 ## <a name="windows-support-for-bluetooth-radio-firmware-updates"></a>Windows は、Bluetooth 無線ファームウェアの更新プログラムをサポートします。
 
@@ -80,11 +67,11 @@ Bluetooth のアイコンがタスク バーに表示されない場合、次の
 
 ## <a name="windows-support-for-vendor-specific-pass-through-commands"></a>パススルー コマンドのベンダー固有の Windows のサポート
 
-Windows 8.1、Windows 8、Windows 7、および Windows Vista SP2 には、ベンダー固有のパススルー コマンドのサポートが含まれます。 これらのカーネル モード インターフェイスは、WDK に記載されています。
+Windows には、ベンダー固有のパススルー コマンドのサポートが含まれています。 これらのカーネル モード インターフェイスは、WDK に記載されています。
 
 ## <a name="windows-support-for-vendor-supplied-profiles"></a>Windows は、ベンダーから提供されたプロファイルをサポートします。
 
-Windows 8.1、Windows 8、Windows 7、および Windows Vista は、ベンダーから提供された Bluetooth のプロファイルをサポートします。 ただし、Windows XP されていません。 INF ファイル (Bth.inf) でのボックスには、Bluetooth SIG によって標準化されたそれらのプロファイル用の Guid が含まれます。
+Windows では、ベンダーから提供された Bluetooth のプロファイルをサポートします。 INF ファイル (Bth.inf) でのボックスには、Bluetooth SIG によって標準化されたそれらのプロファイル用の Guid が含まれます。
 
 ユーザーのコンピューターに Bluetooth デバイスとペアにデバイスのプロファイルが Bth.inf に記載されているプロファイルと比較されます。 デバイスのプロファイルには、それらのプロファイルのいずれかと一致しません、ユーザーは適切なベンダのソフトウェアを提供することを確認するダイアログ ボックスを表示します。
 
@@ -92,7 +79,7 @@ Windows 8.1、Windows 8、Windows 7、および Windows Vista は、ベンダー
 
 ## <a name="bluetooth-profiles-and-protocols-that-are-enabled-by-default"></a>Bluetooth のプロファイルと既定で有効になっているプロトコル
 
-彼は Windows に付属する Bluetooth スタックは、いくつかの Bluetooth プロファイルのみのインボックス サポートを提供します。 ベンダーは、USB および PCI の場合と同じ他の Bluetooth プロファイルをサポートするために必要なサービスを実装する必要があります。 Windows が既定で有効になっている Bluetooth のプロファイルを使用できます: サポートされているプロファイルと呼ばれる: 物理デバイス オブジェクト (Pdo) を生成します。 これにより、プロファイルを有効にするには、必要なドライバーの既定の読み込みができます。 SupportedServices と UnsupportedServices の値を調べることで、レジストリでサポートされているプロファイルを識別することができます、 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\Bthport\\パラメーター**キー。
+Windows に含まれている Bluetooth スタックでは、いくつかの Bluetooth プロファイルのみのインボックス サポートを提供します。 ベンダーは、USB および PCI の場合と同じ他の Bluetooth プロファイルをサポートするために必要なサービスを実装する必要があります。 Windows が既定で有効になっている Bluetooth のプロファイルを使用できます: サポートされているプロファイルと呼ばれる: 物理デバイス オブジェクト (Pdo) を生成します。 これにより、プロファイルを有効にするには、必要なドライバーの既定の読み込みができます。 SupportedServices と UnsupportedServices の値を調べることで、レジストリでサポートされているプロファイルを識別することができます、 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\Bthport\\パラメーター**キー。
 
 > [!NOTE]
 > Bthport キーは、Bluetooth デバイスをインストールした後にのみ、レジストリに追加されます。
@@ -123,11 +110,11 @@ USB\\クラス\_(USB ベースの無線) の E0 MS\_BTHX\_BTHMINI (USB 以外の
 > [!NOTE]
 > Bluetooth ドライバーのサポートは、既にインストールされている場合この削除されません。 また、このポリシーは、プレインストールのイメージに適用する必要があります。
 
-## <a name="how-to-change-the-device-id-profile-record-published-by-windows-8-and-windows-81"></a>Windows 8 および Windows 8.1 によって発行されたデバイス ID のプロファイル レコードを変更する方法
+## <a name="how-to-change-the-device-id-profile-record-published-by-windows"></a>Windows によって発行されたデバイス ID のプロファイル レコードを変更する方法
 
 デバイス ID のプロファイルでは、リモート デバイスに id 情報を提供するために使用できる SDP レコードを定義します。 以前と現在の Windows バージョンでは、ペアになっているデバイスで公開されているデバイス ID のレコードを使用するがで、汎用の Bluetooth サービスのデバイスに固有のハードウェア Id を提供します。
 
-Windows 8 以降、Windows はリモートの Bluetooth デバイスに Windows 8 デバイスを識別するためにローカルのデバイス ID レコードを発行もします。 Oem が特定の Windows 8 デバイスを特定するのには、既定値を調整できます。 これらの値が、HKLM 下で、次の表のように定義されている\\システム\\CCS\\サービス\\BTHPORT\\パラメーター レジストリ キー。
+Windows では、リモートの Bluetooth デバイスに Windows デバイスを識別するためにローカルのデバイス ID レコードも公開します。 既定値は、Oem が特定の Windows デバイスを区別しやすくして調整できます。 これらの値が、HKLM 下で、次の表のように定義されている\\システム\\CCS\\サービス\\BTHPORT\\パラメーター レジストリ キー。
 
 <table>
 <colgroup>

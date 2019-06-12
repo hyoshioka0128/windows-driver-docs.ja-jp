@@ -6,7 +6,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b42334d8726a9139214122d3b5d5fbed867171e2
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56558563"
@@ -108,7 +108,7 @@ ms.locfileid: "56558563"
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>「解説」
 
 
--   ロケールの要素にできる*&lt;言語&gt;*-*&lt;リージョン&gt;* (EN-US) など、または *&lt;言語&gt;* (EN) など。 場合、 *&lt;言語&gt;* が設定された場合、パッケージがすべてに適用されます*&lt;言語&gt;* ロケール。 たとえば、英語は EN-US と EN BR. に適用されます。
+-   ロケールの要素にできる *&lt;言語&gt;* - *&lt;リージョン&gt;* (EN-US) など、または *&lt;言語&gt;* (EN) など。 場合、 *&lt;言語&gt;* が設定された場合、パッケージがすべてに適用されます *&lt;言語&gt;* ロケール。 たとえば、英語は EN-US と EN BR. に適用されます。
 
 -   コンピューターの現在のロケールの既定値としてメタデータ パッケージを指定するには、設定、**既定**属性を**true** (1)。
 

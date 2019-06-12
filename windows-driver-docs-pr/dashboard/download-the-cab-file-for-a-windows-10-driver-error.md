@@ -6,12 +6,12 @@ ms.date: 08/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
-ms.openlocfilehash: afe2fb9091be6f1fd7bd1943ae97689898d8e716
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: a98d6fcf72cc8390aafe1a5afa5447e26284ece4
+ms.sourcegitcommit: 20d98fc309319a0363b32510c9081b0d1775de93
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518782"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "66840857"
 ---
 # <a name="download-the-cab-file-for-a-windows-10-driver-error"></a>Windows 10 のドライバー エラーに関する CAB ファイルをダウンロードする
 
@@ -21,10 +21,9 @@ ms.locfileid: "56518782"
 > 代わりに、次の新しいトピックを使用してください。
 >
 > - [ドライバー エラー詳細のカスタム レポートをスケジュールする](schedule-custom-reports-for-driver-failure-details.md)
-> - [新しいレポート テンプレートを作成する](create-a-new-report-template.md)
+> - [レポート テンプレートの新規作成](create-a-new-report-template.md)
 > - [新しいレポートをスケジュールする](schedule-a-new-report.md)
-> - [レポート データを取得する](get-report-data.md)
-> - [エラー CAB をダウンロードする](download-failure-cabs.md)
+> - [レポート データの取得](get-report-data.md)
 
 Windows 10 の特定のドライバー エラーに関連付けられている CAB ファイルをダウンロードするには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドを使うには、事前に [Windows 10 のドライバー エラーに関する詳細を取得する](get-details-for-a-windows-10-driver-error.md)メソッドを使用し、ダウンロードする CAB ファイルの ID を取得しておく必要があります。
 

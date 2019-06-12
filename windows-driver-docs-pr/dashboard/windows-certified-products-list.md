@@ -1,32 +1,32 @@
 ---
-title: Windows 認定製品リスト
-description: Windows 認定製品リスト
+title: Windows 互換性のある製品の一覧
+description: Windows 互換性のある製品の一覧
 ms.assetid: e03b18e3-5c5c-4636-89dc-ab15ae6b25a0
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e13aa51ab1c635d48780bad20b1c3f11aefe121d
-ms.sourcegitcommit: 85b989c149403210f2c7b892e045d037580432e5
+ms.openlocfilehash: 5e85d07b2d817dee54e7c42657d4c761cf3bc026
+ms.sourcegitcommit: aedbbf22c58e7264db0aa80608b30db713b3a247
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66825046"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830407"
 ---
-# <a name="windows-certified-products-list"></a>Windows 認定製品リスト
+# <a name="windows-compatible-products-list"></a>Windows 互換性のある製品の一覧
 
-[Windows 認定製品リスト](https://aka.ms/AA5bmch)は、認定されたデバイスおよびシステムの包括的なリストです。 Windows 認定製品リストには、次の機能と制限があります。
+[Windows 互換性のある製品一覧](https://aka.ms/AA5bmch)認定されたデバイスおよびシステムの包括的な一覧を示します。 Windows 互換性のある製品の一覧には、次の機能と制限があります。
 
 * 一覧をフィルター処理するか、特定の製品名の検索を実行して、デバイスおよびシステムを見つけることができます。
 * すべての認定されたデバイスおよびシステム カタログ全体を検索できます。
 * Rfp の OEM システムのレポートを必要がある場合は、製品/マーケティング名を検索し、検証レポートをダウンロードできます。 
-* 認定製品リストには、すべてのデバイス クラスのユニバーサル状態 (&)、宣言型が表示されます。
+* 互換性のある製品の一覧には、すべてのデバイス クラスのユニバーサル状態 (&)、宣言型が表示されます。
 
 > [!IMPORTANT]
 >システムの検索は、(& U) の状態 フィールドをサポートしていません。 そのため、設定する必要があります、 **U 状態 (&)、D**フィールドのドロップダウンを使用して検索**すべて**システムの結果を確認します。
 
 ## <a name="searching-for-marketing-and-product-names-for-systems-or-devices"></a>システムまたはデバイスのマーケティングおよび製品名の検索
 
-使用して検索する場合、**マーケティング/製品名**ボックスで、製品の認定製品リストを返しますと一致する名前、送信名、およびマーケティングのフィールドの名前。 これらを考慮してください。
+使用して検索する場合、**マーケティング/製品名**ボックスで、製品の互換性のある製品のリストを返しますと一致する名前、送信名、およびマーケティングのフィールドの名前。 これらを考慮してください。
 
 * 引用符またはワイルドカードなしのプレーン テキストに検索を制限します。
 * 単語間のスペースとして扱われます**AND**式。

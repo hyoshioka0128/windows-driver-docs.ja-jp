@@ -19,7 +19,7 @@ ms.locfileid: "63354943"
 
 デバッガーでアドレスを指定するいくつかの方法はあります。
 
-アドレスは、常に*仮想アドレス*とき、ドキュメント具体的には別の種類のアドレスを除き、します。 ユーザー モードでデバッガーがに従って、ディレクトリの仮想アドレスを解釈し、[現在のプロセス](controlling-processes-and-threads.md)します。 カーネル モードでデバッガーがプロセスのページ ディレクトリに従って仮想アドレスを解釈する、[プロセス コンテキスト](changing-contexts.md#process-context)を指定します。 直接設定することができます、*ユーザー モード アドレス コンテキスト*します。 ユーザー モード アドレス コンテキストに関する詳細については、次を参照してください。 [ **.context (ユーザー モード アドレス コンテキストの設定)**](-context--set-user-mode-address-context-.md)します。
+アドレスは、常に*仮想アドレス*とき、ドキュメント具体的には別の種類のアドレスを除き、します。 ユーザー モードでデバッガーがに従って、ディレクトリの仮想アドレスを解釈し、[現在のプロセス](controlling-processes-and-threads.md)します。 カーネル モードでデバッガーがプロセスのページ ディレクトリに従って仮想アドレスを解釈する、[プロセス コンテキスト](changing-contexts.md#process-context)を指定します。 直接設定することができます、*ユーザー モード アドレス コンテキスト*します。 ユーザー モード アドレス コンテキストに関する詳細については、次を参照してください。 [ **.context (ユーザー モード アドレス コンテキストの設定)** ](-context--set-user-mode-address-context-.md)します。
 
 ### <a name="span-idaddressmodesandsegmentsupportspanspan-idaddressmodesandsegmentsupportspanaddress-modes-and-segment-support"></a><span id="address_modes_and_segment_support"></span><span id="ADDRESS_MODES_AND_SEGMENT_SUPPORT"></span>アドレス モードとセグメントのサポート
 
