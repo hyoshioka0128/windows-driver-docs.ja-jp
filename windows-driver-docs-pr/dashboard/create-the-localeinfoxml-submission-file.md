@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7be40057ddc31cb48a2e027068737a620c177e8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518921"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337270"
 ---
 # <a name="create-the-localeinfoxml-submission-file"></a>LocaleInfo.xml サブミッション ファイルの作成
 

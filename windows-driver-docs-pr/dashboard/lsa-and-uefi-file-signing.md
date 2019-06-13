@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
 ms.openlocfilehash: 10235b66c1578e56c70f106b2d1bec592764d512
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560587"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337180"
 ---
 # <a name="file-signing-lsa-plugins-and-uefi-firmware"></a>LSA プラグインと UEFI ファームウェアのファイル署名
 
@@ -30,13 +30,13 @@ ms.locfileid: "57560587"
 
 ## <a name="creating-a-new-uefi-or-lsa-submission"></a>新しい UEFI 申請または LSA 申請の作成
 
-1. Microsoft アカウントでダッシュボードにサインインして、**[ハードウェア認定]** をクリックします。
+1. Microsoft アカウントでダッシュボードにサインインして、 **[ハードウェア認定]** をクリックします。
 
-2. **[ファイル署名サービス]** ページで、**[Submit New UEFI]** (新しい UEFI の申請) または **[Submit New LSA]** (新しい LSA の申請) をクリックします。
+2. **[ファイル署名サービス]** ページで、 **[Submit New UEFI]** (新しい UEFI の申請) または **[Submit New LSA]** (新しい LSA の申請) をクリックします。
     > [!NOTE]
     > 新しいファイル署名申請を作成する前に、法的契約への署名を求めるメッセージが表示される場合があります。 契約内容を確認し、同意して続行します。 組織はすべて、契約に 1 回だけ署名する必要があります。
 
-3. 申請ページで、提出する CAB ファイルをアップロードし、**[送信]** をクリックします。
+3. 申請ページで、提出する CAB ファイルをアップロードし、 **[送信]** をクリックします。
 
 4. 申請が処理されると、申請 ID が含まれた通知が送られて来ます。
 

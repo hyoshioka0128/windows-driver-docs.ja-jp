@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e05a022b1d77fd71bc5b3506c1cdcb3b1bb5ffc
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909197"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335058"
 ---
 # <a name="expire-a-driver-from-windows-update"></a>Windows Update からドライバーの期限を終了する
 
@@ -27,7 +27,7 @@ Windows Update からドライバーの期限を終了するには、次の手�
 
     特定のハードウェア ID の期限を終了するには、各ハードウェア ID の **[期限を終了する]** を選択します。
     
-    出荷ラベル全体の期限を終了するには、**[すべて期限を終了する]** をクリックします。
+    出荷ラベル全体の期限を終了するには、 **[すべて期限を終了する]** をクリックします。
     
 5.  変更を完了するには、ページの一番下にある **[公開]** をクリックする必要があります。
 

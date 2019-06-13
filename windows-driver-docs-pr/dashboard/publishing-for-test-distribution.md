@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 475b6ecc47d50f43cb7f9f47fb023c6c91a1881c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518888"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337152"
 ---
 # <a name="test-distribution-guidance-to-self-host-desktop-drivers"></a>セルフホスト デスクトップ ドライバーへのテスト配布のガイダンス
 
@@ -51,7 +51,7 @@ Windows 7、Windows 8.x、Windows 10 システム向けにテスト配布用の�
 1.  Windows レジストリ エディター (regedit.exe) を開きます
 2.  HKLM\\Software\\Microsoft\\ に移動します
 3.  サブキー \\DriverFlighting\\Partner\\ を作成します
-4.  \\Partner サブキーの下に、**[TargetRing]** という文字列を作成し、値として 「**Drivers**」と入力します
+4.  \\Partner サブキーの下に、 **[TargetRing]** という文字列を作成し、値として 「**Drivers**」と入力します
 5.  次に示すように設定されていることを確認します。
 
     ![Windows レジストリ エディターで、パートナーのサブキーの下に作成された文字列を示す画像](images/registry-editor-drivers.png)
@@ -59,7 +59,7 @@ Windows 7、Windows 8.x、Windows 10 システム向けにテスト配布用の�
 6.  Windows レジストリ エディターを終了します。 変更後、コンピューターを再起動する必要はありません。
 7.  次のいずれかの操作を行います。
     -   Windows Update を実行して、更新プログラムがないか確認します。
-    -   デバイス マネージャーで対象のデバイスを右クリックして、**[デバイス ソフトウェアの更新]** を選択します。
+    -   デバイス マネージャーで対象のデバイスを右クリックして、 **[デバイス ソフトウェアの更新]** を選択します。
 8.  テスト ドライバーが正常に提供されることを確認します。
 
     -   問題が生じた場合は、カスタマー サービス & サポートにお問い合わせください。
@@ -68,7 +68,7 @@ Windows 7、Windows 8.x、Windows 10 システム向けにテスト配布用の�
 
 ### <a name="span-idhowdoistopmypcfromreceivingtestdistributiondriversspanspan-idhowdoistopmypcfromreceivingtestdistributiondriversspanspan-idhowdoistopmypcfromreceivingtestdistributiondriversspanhow-do-i-stop-my-pc-from-receiving-test-distribution-drivers"></a><span id="How_do_I_stop_my_PC_from_receiving_test_distribution_drivers_"></span><span id="how_do_i_stop_my_pc_from_receiving_test_distribution_drivers_"></span><span id="HOW_DO_I_STOP_MY_PC_FROM_RECEIVING_TEST_DISTRIBUTION_DRIVERS_"></span>PC でテスト配布のドライバーの受け取りを停止する方法
 
-テスト配布のドライバーの受け取りを停止するには、前のセクションで作成した **[TargetRing]** レジストリ データの値を削除します。 **[Drivers]** データの値をダブルクリックして削除してから、**[OK]** をクリックします。 この操作を行うと、クライアント システムにプレリリース版のドライバーが提供されなくなります。
+テスト配布のドライバーの受け取りを停止するには、前のセクションで作成した **[TargetRing]** レジストリ データの値を削除します。 **[Drivers]** データの値をダブルクリックして削除してから、 **[OK]** をクリックします。 この操作を行うと、クライアント システムにプレリリース版のドライバーが提供されなくなります。
 
 **注**  システムは、Windows Update からすべての製品版のドライバーを引き続き受け取ります。
 
@@ -76,7 +76,7 @@ Windows 7、Windows 8.x、Windows 10 システム向けにテスト配布用の�
 
 1.  Windows レジストリ エディター (regedit.exe) を開きます
 2.  HKLM\\Software\\Microsoft\\DriverFlighting\\Partner に移動します。 これらのキーが存在しない場合、作業は完了しています。それ以外の場合は、次の手順に進みます。
-3.  \\Partner サブキーで、**[TargetRing]** のデータの値を削除します
+3.  \\Partner サブキーで、 **[TargetRing]** のデータの値を削除します
 4.  次に示すように設定されていることを確認します。
 
     ![Windows レジストリ エディターで、パートナーのサブキーの下で削除された文字列値を示す画像](images/registry-editor-no-drivers.png)
@@ -84,7 +84,7 @@ Windows 7、Windows 8.x、Windows 10 システム向けにテスト配布用の�
 5.  Windows レジストリ エディターを終了します。 変更後、コンピューターを再起動する必要はありません。
 6.  次のいずれかの操作を行います。
     -   Windows Update を実行して更新プログラムを確認します
-    -   デバイス マネージャーで対象のデバイスを右クリックして、**[デバイス ソフトウェアの更新]** を選択します。
+    -   デバイス マネージャーで対象のデバイスを右クリックして、 **[デバイス ソフトウェアの更新]** を選択します。
 
  
 

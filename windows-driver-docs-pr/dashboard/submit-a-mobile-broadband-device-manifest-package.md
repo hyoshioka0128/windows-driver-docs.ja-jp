@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f15cce4a6615bba8003a4f3c20bd3b7d64863f95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518667"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337171"
 ---
 # <a name="submit-a-mobile-broadband-device-manifest-package"></a>モバイル ブロードバンド デバイス マニフェスト パッケージの提出
 
@@ -28,7 +28,7 @@ ms.locfileid: "56518667"
 
 3.  **[Device metadata]** (デバイス メタデータ) で、新しいエクスペリエンスを申請する場合は **[Create experience]** (エクスペリエンスの作成)、既にあるエクスペリエンスを変更する場合は **[Manage experience]** (エクスペリエンスの管理) をクリックします。
 
-4.  新しい devicemanifest-ms パッケージを参照して選び、**[Submit]** (送信) をクリックします。
+4.  新しい devicemanifest-ms パッケージを参照して選び、 **[Submit]** (送信) をクリックします。
 
 モバイル ブロードバンド デバイス提出パッケージの作成について詳しくは、「[モバイル ブロードバンド デバイス提出パッケージ](https://msdn.microsoft.com/library/windows/hardware/dn247081.aspx)」をご覧ください。
 

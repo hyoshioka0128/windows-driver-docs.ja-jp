@@ -5,11 +5,11 @@ redirect_url: https://msdn.microsoft.com/library/windows/hardware/mt786448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce4cd26934d8e9a77cec307504b66f986b460794
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464317"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63353044"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>一般リリースのためのカーネル ドライバーへの構成証明署名
 
@@ -257,13 +257,13 @@ CAB ファイル内のすべてのドライバー フォルダーは、同じア
 
 4. ドライバーの EKU を確認するには、次の手順を実行します。
 
-   a.  エクスプローラーを開き、バイナリ ファイルを探します。 そのファイルを右クリックし、**[プロパティ]** を選びます。
+   a. エクスプローラーを開き、バイナリ ファイルを探します。 そのファイルを右クリックし、 **[プロパティ]** を選びます。
 
-   b.  **[デジタル署名]** タブの [署名の一覧] で、示されている項目を選びます。
+   b. **[デジタル署名]** タブの [署名の一覧] で、示されている項目を選びます。
 
-   c. **[詳細]** ボタンを選び、**[証明書の表示]** を選びます。
+   c. **[詳細]** ボタンを選び、 **[証明書の表示]** を選びます。
 
-   d. **[詳細]** タブで、**[拡張キー使用法]** フィールドを選びます。
+   d. **[詳細]** タブで、 **[拡張キー使用法]** フィールドを選びます。
 
 ダッシュ ボードでドライバーが再署名される場合は、次のプロセスが実行されます。
 

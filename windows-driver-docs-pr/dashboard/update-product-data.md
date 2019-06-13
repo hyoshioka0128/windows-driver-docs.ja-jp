@@ -7,11 +7,11 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1398e0480362f3be2ec85e9231e1a5d24a331c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518570"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337081"
 ---
 # <a name="update-product-data"></a>製品データの更新  
 Microsoft ハードウェア API の以下のメソッドを使用して、製品の詳細情報を更新します。 このメソッドを使用する前に、製品を作成済みであることを確認します。 詳細については、「[新しい製品の作成](create-a-new-product.md)」を参照してください。 

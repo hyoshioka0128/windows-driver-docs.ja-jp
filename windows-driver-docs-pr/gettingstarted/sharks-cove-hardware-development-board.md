@@ -5,11 +5,11 @@ ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84f4305c71debf567516b5d5e6680214371a9eb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518727"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371280"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove ハードウェア開発ボード
 
@@ -29,7 +29,7 @@ Sharks Cove ボードに関連するダウンロードについては、[Sharks 
 
 ここで説明する手順を実行するには、Windows 10、Windows 8.1、または Windows 7 を実行している必要があります。 これらの手順は、Windows 8 を実行している場合は使用できません。
 
-Windows 7 を実行している場合は、[PowerShell 4.0](https://go.microsoft.com/fwlink/p?linkid=507377) と [Windows 8.1 Update 用 Windows アセスメント & デプロイメント キット (ADK)](https://go.microsoft.com/fwlink/p/?linkid=239721) をインストールする必要があります。 その後で、**[スタート]** メニューから、**[すべてのプログラム] &gt; [Windows キット] &gt; [Windows ADK] &gt; [展開およびイメージング ツール環境]** の順にクリックします。 このコマンド プロンプト ウィンドウを管理者として開きます。 以下の各手順で説明するコマンドを入力するときは、このコマンド プロンプト ウィンドウを使います。
+Windows 7 を実行している場合は、[PowerShell 4.0](https://go.microsoft.com/fwlink/p?linkid=507377) と [Windows 8.1 Update 用 Windows アセスメント & デプロイメント キット (ADK)](https://go.microsoft.com/fwlink/p/?linkid=239721) をインストールする必要があります。 その後で、 **[スタート]** メニューから、 **[すべてのプログラム] &gt; [Windows キット] &gt; [Windows ADK] &gt; [展開およびイメージング ツール環境]** の順にクリックします。 このコマンド プロンプト ウィンドウを管理者として開きます。 以下の各手順で説明するコマンドを入力するときは、このコマンド プロンプト ウィンドウを使います。
 
 ## <a name="span-idstep1gettheboardandrelatedhardwarespanspan-idstep1gettheboardandrelatedhardwarespanspan-idstep1gettheboardandrelatedhardwarespanstep-1-get-the-board-and-related-hardware"></a><span id="Step_1__Get_the_board_and_related_hardware"></span><span id="step_1__get_the_board_and_related_hardware"></span><span id="STEP_1__GET_THE_BOARD_AND_RELATED_HARDWARE"></span>手順 1: ボードおよび関連するハードウェアを入手する
 
@@ -63,7 +63,7 @@ WDK のオンライン ドキュメントについては、[ここ](https://go.m
 
 Debugging Tools for Windows のオンライン ドキュメントについては、[ここ](https://go.microsoft.com/fwlink/p?linkid=223405)をご覧ください。
 
-Debugging Tools for Windows のドキュメントは、インストール ディレクトリに CHM ファイルとしても保存されています  以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\8.1\\Debuggers\\x64\\debugger.chm
+Debugging Tools for Windows のドキュメントは、インストール ディレクトリに CHM ファイルとしても保存されています 以下に例を示します。C:\\Program Files (x86)\\Windows Kits\\8.1\\Debuggers\\x64\\debugger.chm
 
 ## <a name="span-idstep3installwindowsonthesharkscoveboardspanspan-idstep3installwindowsonthesharkscoveboardspanspan-idstep3installwindowsonthesharkscoveboardspanstep-3-install-windows-on-the-sharks-cove-board"></a><span id="Step_3__Install_Windows_on_the_Sharks_Cove_board"></span><span id="step_3__install_windows_on_the_sharks_cove_board"></span><span id="STEP_3__INSTALL_WINDOWS_ON_THE_SHARKS_COVE_BOARD"></span>手順 3: Sharks Cove ボードに Windows をインストールする
 
@@ -102,7 +102,7 @@ Debugging Tools for Windows のドキュメントは、インストール ディ
 このソフトウェアの使用がハードウェア開発者プログラムをサポートする場合は、次の条項が適用されます。
 
 -   Windows Embedded 8.1 Industry Pro に関する Microsoft 評価版ソフトウェアのライセンス条項 (評価版ソフトウェア ライセンス条項) の、以下を除くすべての条項に同意するものとします。
-    -   評価版ソフトウェア ライセンス条項の 1.b 項  (デモンストレーションの権利) の一部が次のように修正されました。
+    -   評価版ソフトウェア ライセンス条項の 1.b 項 (デモンストレーションの権利) の一部が次のように修正されました。
         -   ソフトウェアを使って開発された Windows Embedded 8.1 Industry Pro デバイス ("デモンストレーション デバイス") を、デモンストレーションの目的で合理的に必要となる数だけ使い、潜在的なユーザーに対してデモンストレーションを行ったり、デモンストレーションで使うために潜在的なユーザーに提供したりすることができます。 守秘義務の対象ではないユーザーに対して、デモンストレーション デバイスのデモンストレーションを行ったり、提供したりすることができます。
     -   上記の修正条項に直接抵触しない、1.b 項の条項は すべて適用されます。
 -   **本ソフトウェアを使用することにより、お客様は本ライセンス条項に同意されたものとします。** これらの条項に同意せず従わない場合は、ソフトウェアおよびその機能を使うことができないものとします。
@@ -128,13 +128,13 @@ ISO ファイルをダブルクリックして、次のファイルを *Root*\\S
 -   Bootmgr.efi
 -   Setup.exe
 
-**注** Windows 7 を実行している場合は、ISO ファイルを右クリックして、**[ディスク イメージの書き込み]** をクリックします。 イメージを書き込み可能 DVD に書き込みます。 次に、ファイルを DVD から *Root*\\Setup にコピーします。
+**注** Windows 7 を実行している場合は、ISO ファイルを右クリックして、 **[ディスク イメージの書き込み]** をクリックします。 イメージを書き込み可能 DVD に書き込みます。 次に、ファイルを DVD から *Root*\\Setup にコピーします。
 
 
 
 Sharks Cove ボードのサポート パッケージ (BSP) を[ここ](https://go.microsoft.com/fwlink/p?linkid=506954)で入手します。 パッケージに含まれるすべてのファイルを *Root*\\SharksCoveBsp にコピーします。
 
-[ここ](https://go.microsoft.com/fwlink/p/?linkid=403174)で、WDK Development Boards Add-on Kit を入手します。 **[SourceCode (ソースコード)]** タブを開きます。[Downloads (ダウンロード)] タブではなく、**[Download (ダウンロード)]** をクリックして、キット スクリプトを入手します。 Scripts フォルダーを開き、次の 2 つの項目を *Root* にコピーします。
+[ここ](https://go.microsoft.com/fwlink/p/?linkid=403174)で、WDK Development Boards Add-on Kit を入手します。 **[SourceCode (ソースコード)]** タブを開きます。[Downloads (ダウンロード)] タブではなく、 **[Download (ダウンロード)]** をクリックして、キット スクリプトを入手します。 Scripts フォルダーを開き、次の 2 つの項目を *Root* にコピーします。
 
 -   Create-DevboardImage.ps1
 -   DevBoard フォルダー
@@ -180,9 +180,9 @@ BSP が Windows イメージに追加されたので、次のフォルダーと�
 
 ![ボードと接続の画像](images/sharkscoveconnections03.png)
 
-フラッシュ ドライブを、Sharks Cove ボードに接続されているハブに接続します。 Sharks Cove ボードの起動時または再起動時には、音量を上げるボタンを押したままにしておきます。 音量を上げるボタンは、ボードの左側にある 3 つのボタンのセットの一番上にあります。上の図をご覧ください  (ボードが既に起動されている場合は、電源ボタンを数秒間押し続けることで、ボードを停止できます)。ボードが起動すると、画面に EFI シェルが表示されます。
+フラッシュ ドライブを、Sharks Cove ボードに接続されているハブに接続します。 Sharks Cove ボードの起動時または再起動時には、音量を上げるボタンを押したままにしておきます。 音量を上げるボタンは、ボードの左側にある 3 つのボタンのセットの一番上にあります。上の図をご覧ください (ボードが既に起動されている場合は、電源ボタンを数秒間押し続けることで、ボードを停止できます)。ボードが起動すると、画面に EFI シェルが表示されます。
 
-**注**  場合によっては、EFI シェルに移動する必要があります。 その場合は、**[Boot Manager (ブート マネージャー)] &gt; [EFI Internal Shell (EFI 内部シェル)]** に移動します
+**注**  場合によっては、EFI シェルに移動する必要があります。 その場合は、 **[Boot Manager (ブート マネージャー)] &gt; [EFI Internal Shell (EFI 内部シェル)]** に移動します
 
 
 
@@ -190,7 +190,7 @@ USB フラッシュ ドライブの名前 (**fs1**: など) を覚えておき�
 
 (ここでは、USB フラッシュ ドライブの名前に **fs1**: を使います。)**Shell&gt;** プロンプトで、次のコマンドを入力します。
 
-**fs1:**
+**fs1:** 
 **cd efi\\boot**
 **dir** bootia32.efi がディレクトリにあることを確認します。 次のコマンドを入力します。
 
@@ -420,8 +420,8 @@ Sharks Cove ボードでのデバイス ドライバーの作成は、他のコ�
 
 Sharks Cove ボードでドライバーをテストする準備ができたら、次の手順を実行します。
 
-1.  ホスト コンピューターの Visual Studio で、パッケージ プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[Driver Install (ドライバーのインストール)] &gt; [配置]** の順に移動します。 **[配置を有効にする]** および **[Remove previous driver versions before deployment (配置前にドライバーの以前のバージョンを削除する)]** をオンにします。 **[ターゲット コンピューター名]** で、Sharks Cove ボードの名前を選びます。 **[Install and Verify (インストールと確認)]** を選びます。
-2.  プロパティ ページで、**[Driver Signing (ドライバーの署名)] &gt; [全般]** の順に移動します。 **[Sign Mode (署名モード)]** で、**[Test Sign (テスト署名)]** を選びます。 **[OK]** をクリックします。
+1.  ホスト コンピューターの Visual Studio で、パッケージ プロジェクトを右クリックし、 **[プロパティ]** をクリックします。 **[Driver Install (ドライバーのインストール)] &gt; [配置]** の順に移動します。 **[配置を有効にする]** および **[Remove previous driver versions before deployment (配置前にドライバーの以前のバージョンを削除する)]** をオンにします。 **[ターゲット コンピューター名]** で、Sharks Cove ボードの名前を選びます。 **[Install and Verify (インストールと確認)]** を選びます。
+2.  プロパティ ページで、 **[Driver Signing (ドライバーの署名)] &gt; [全般]** の順に移動します。 **[Sign Mode (署名モード)]** で、 **[Test Sign (テスト署名)]** を選びます。 **[OK]** をクリックします。
 3.  ドライバー プロジェクトで、INF ファイルを開きます。 SSDT で作成したハードウェア ID (\_HID) に一致するように、ハードウェア ID を編集します。 たとえば、次の Device エントリを SSDT に指定したとします。
 
     ``` syntax
@@ -438,12 +438,12 @@ Sharks Cove ボードでドライバーをテストする準備ができたら�
     %KMDFDriver1.DeviceDesc%=KMDFDriver1_Device, ACPI\SpbAccelerometer
     ```
 
-4.  Visual Studio で、**[デバッグ]** メニューの **[デバッグの開始]** を選びます。
-5.  Microsoft Visual Studio ではまず、**[出力]** ウィンドウに進行状況が表示されます。 次に、**デバッガーのイミディエイト ウィンドウ**が開き、引き続き進行状況が表示されます。
+4.  Visual Studio で、 **[デバッグ]** メニューの **[デバッグの開始]** を選びます。
+5.  Microsoft Visual Studio ではまず、 **[出力]** ウィンドウに進行状況が表示されます。 次に、**デバッガーのイミディエイト ウィンドウ**が開き、引き続き進行状況が表示されます。
 
     ドライバーが Sharks Cove ボードに展開、インストールされ、読み込まれるまで待機します。 この処理は、1 ～ 2 分かかる場合があります。
 
-6.  デバッガーが自動的に中断しない場合は、**[デバッグ]** メニューの **[すべて中断]** をクリックします。 ホスト コンピューター上のデバッガーが、ターゲット コンピューターへの割り込みを行うか (カーネル モード)、Wudfhost.exe の適切なインスタンスへの割り込みを行います (UMDF)。 **デバッガーのイミディエイト ウィンドウ**に、デバッガーのコマンド プロンプトが表示されます。
+6.  デバッガーが自動的に中断しない場合は、 **[デバッグ]** メニューの **[すべて中断]** をクリックします。 ホスト コンピューター上のデバッガーが、ターゲット コンピューターへの割り込みを行うか (カーネル モード)、Wudfhost.exe の適切なインスタンスへの割り込みを行います (UMDF)。 **デバッガーのイミディエイト ウィンドウ**に、デバッガーのコマンド プロンプトが表示されます。
 
 7.  読み込まれたモジュールを表示するには、「**lm**」と入力します。 ドライバーが、読み込まれたモジュールの一覧に表示されることを確認します。
 

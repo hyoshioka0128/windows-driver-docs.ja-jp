@@ -5,11 +5,11 @@ description: Stampinf ツール用のプロパティを設定します。 ドラ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6632940446faca6eca437376214f902fad7dbf2
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463901"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63378445"
 ---
 # <a name="stampinf-properties-for-driver-projects"></a>ドライバー プロジェクトの Stampinf プロパティ
 
@@ -18,8 +18,8 @@ ms.locfileid: "57463901"
 ## <a name="span-idsettingstampinfpropertiesfordriverprojectsspanspan-idsettingstampinfpropertiesfordriverprojectsspanspan-idsettingstampinfpropertiesfordriverprojectsspansetting-stampinf-properties-for-driver-projects"></a><span id="Setting_Stampinf_properties_for_driver_projects"></span><span id="setting_stampinf_properties_for_driver_projects"></span><span id="SETTING_STAMPINF_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクトの Stampinf プロパティの設定
 
 
-1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、**[プロパティ]** をクリックします。
-2.  ドライバー プロジェクトのプロパティ ページで、**[構成プロパティ]**、**[Stampinf]** (Stampinf) の順にクリックします。
+1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
+2.  ドライバー プロジェクトのプロパティ ページで、 **[構成プロパティ]** 、 **[Stampinf]** (Stampinf) の順にクリックします。
 3.  プロジェクトのプロパティを設定します。
 
 このプロパティ ページをプロジェクトに追加して、ビルド プロセス中に Stampinf を実行できるようにする方法については、「[WDK と Visual Studio のビルド環境](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454286)」と「[Stampinf タスク](https://msdn.microsoft.com/Library/Windows/Hardware/Ff552786)」をご覧ください。

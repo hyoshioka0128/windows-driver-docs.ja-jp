@@ -5,11 +5,11 @@ description: カウンター マニフェストの解析と検証を行う CTRPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e66c284106594c31d6499f929abb42f1129c5ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518760"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382539"
 ---
 # <a name="counters-manifest-preprocessor-properties-for-driver-projects"></a>ドライバー プロジェクトのカウンター マニフェスト プリプロセッサ プロパティ
 
@@ -18,8 +18,8 @@ ms.locfileid: "56518760"
 ## <a name="span-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspanspan-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspanspan-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspansetting-the-counters-manifest-preprocessor-properties-for-driver-projects"></a><span id="Setting_the_Counters_Manifest_Preprocessor_properties_for_driver_projects"></span><span id="setting_the_counters_manifest_preprocessor_properties_for_driver_projects"></span><span id="SETTING_THE_COUNTERS_MANIFEST_PREPROCESSOR_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクトのカウンター マニフェスト プリプロセッサ プロパティの設定
 
 
-1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、**[プロパティ]** をクリックします。
-2.  ドライバー プロジェクトのプロパティ ページで、**[構成プロパティ]** をクリックし、**[Counters Manifest Preprocessor Properties]** (カウンター マニフェスト プリプロセッサ プロパティ) をクリックします。
+1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
+2.  ドライバー プロジェクトのプロパティ ページで、 **[構成プロパティ]** をクリックし、 **[Counters Manifest Preprocessor Properties]** (カウンター マニフェスト プリプロセッサ プロパティ) をクリックします。
 3.  プロジェクトのプロパティを設定します。
 
 このプロパティ ページをプロジェクトに追加して、ビルド プロセス中に CTRPP ツールを実行できるようにする方法については、「[WDK と Visual Studio のビルド環境](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454286)」と「[Ctrpp タスク](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454206)」をご覧ください。

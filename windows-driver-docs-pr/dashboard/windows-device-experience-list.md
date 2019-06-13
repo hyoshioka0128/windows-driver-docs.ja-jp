@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b121e43059f5737188905125a807f9966c56441
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518700"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337083"
 ---
 # <a name="windows-device-experience-list"></a>Windows Device Experience List
 
@@ -24,9 +24,9 @@ Windows Device Experience List は、Internet Explorer 6 以降で利用でき�
 
 Windows Device Experience List でデバイス (この例ではノート PC) を検索するには、次の手順に従います。
 
-1.  左側の **[Device Class]** (デバイス クラス) メニューで、**[Personal Computer]** (パーソナル コンピューター) をクリックし、**[Computer.Laptop]** をクリックします。 Device Experience List のすべてのノート PC が一覧表示されます。
+1.  左側の **[Device Class]** (デバイス クラス) メニューで、 **[Personal Computer]** (パーソナル コンピューター) をクリックし、 **[Computer.Laptop]** をクリックします。 Device Experience List のすべてのノート PC が一覧表示されます。
 
-2.  この結果は、**[Company]** (会社)、**[Locale]** (ロケール)、**[Category]** (カテゴリ)、**[Device Stage]** でフィルタリングして絞り込むことができます。
+2.  この結果は、 **[Company]** (会社)、 **[Locale]** (ロケール)、 **[Category]** (カテゴリ)、 **[Device Stage]** でフィルタリングして絞り込むことができます。
 
 3.  リスト上部のヘッダーをクリックすると、列単位での並べ替えを実行できます。
 
@@ -36,7 +36,7 @@ Windows Device Experience List でデバイス (この例ではノート PC) を
 
 リスト上部のドロップダウン メニューを使って、検索結果をフィルタリングすることができます。
 
-1.  検索結果の上部に表示されるフィルター ドロップダウンで、**[Company]** (会社)、**[Locale]** (ロケール)、**[Category]** (カテゴリ)、**[Device Stage]** を自由に組み合わせることができます。
+1.  検索結果の上部に表示されるフィルター ドロップダウンで、 **[Company]** (会社)、 **[Locale]** (ロケール)、 **[Category]** (カテゴリ)、 **[Device Stage]** を自由に組み合わせることができます。
 
     **注**   **[Device Stage]** フィルターで **[はい]** を選択すると、Device Stage エクスペリエンスを備えているモデルのみが表示されます。
 
@@ -44,12 +44,12 @@ Windows Device Experience List でデバイス (この例ではノート PC) を
 
 2.  **[Go]** (Go) をクリックしてフィルターを適用します。
 
-フィルターを解除するには、フィルターから **[All]** (すべて) を選び、**[Go]** (Go) をクリックします。
+フィルターを解除するには、フィルターから **[All]** (すべて) を選び、 **[Go]** (Go) をクリックします。
 
 ## <a name="span-idtosortyourresultsspanspan-idtosortyourresultsspanspan-idtosortyourresultsspanto-sort-your-results"></a><span id="To_sort_your_results"></span><span id="to_sort_your_results"></span><span id="TO_SORT_YOUR_RESULTS"></span>検索結果を並べ替えるには
 
 
-検索結果は、**[Model Name]** (モデル名)、**[Company]** (会社)、**[Locale]** (ロケール)、**[Category]** (カテゴリ)、**[Device Stage]** で並べ替えることができます。
+検索結果は、 **[Model Name]** (モデル名)、 **[Company]** (会社)、 **[Locale]** (ロケール)、 **[Category]** (カテゴリ)、 **[Device Stage]** で並べ替えることができます。
 
 -   いずれかのヘッダーをクリックすると、対応する属性の昇順で結果が並べ替えられます。
 

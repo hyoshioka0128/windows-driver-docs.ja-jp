@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b173b2ed2c4d7e0a86e6e410ae99f95bccf32490
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66813578"
 ---
 # <a name="get-a-product"></a>製品の取得
@@ -33,7 +33,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| 承認 (authorization) | string | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
+| authorization | string | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
 | accept | string | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 

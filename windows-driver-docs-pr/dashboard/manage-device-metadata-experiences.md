@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c6e9dab46eef01a358b95133672e6cb10008eeb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518917"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334955"
 ---
 # <a name="manage-device-metadata-experiences"></a>デバイス メタデータ エクスペリエンスの管理
 
@@ -24,7 +24,7 @@ ms.locfileid: "56518917"
 
 1. ハードウェア デベロッパー センターまたは Windows デベロッパー センターから Microsoft アカウントで**ダッシュボード**にサインインします。
 
-2. ウィンドウの左側で **[Device metadata]** (デバイス メタデータ) をクリックし、**[Manage experiences]** (エクスペリエンスの管理) をクリックします。
+2. ウィンドウの左側で **[Device metadata]** (デバイス メタデータ) をクリックし、 **[Manage experiences]** (エクスペリエンスの管理) をクリックします。
 
 3. 自分または自分の会社が作成したすべてのエクスペリエンスが表示されます。 一覧を並べ替えるには、列見出しをクリックします。
 
@@ -136,21 +136,21 @@ ms.locfileid: "56518917"
 
 ## <a name="to-modify-your-device-metadata-experience"></a>デバイス メタデータ エクスペリエンスを変更するには
 
-1. プレビュー パッケージをリリースするには、パッケージを選んで、**[Release]** (リリース) をクリックします。
+1. プレビュー パッケージをリリースするには、パッケージを選んで、 **[Release]** (リリース) をクリックします。
 
     >[!NOTE]
     >リリースされたファイルをユーザーがダウンロードできるようになるまでに、最大で 48 時間かかる場合があります。
 
-2. エクスペリエンスからパッケージを削除するには、パッケージを選んで、**[Delete]** (削除) をクリックします。
+2. エクスペリエンスからパッケージを削除するには、パッケージを選んで、 **[Delete]** (削除) をクリックします。
 
    >[!NOTE]
-   >削除できるのは、**[Live]** (ライブ) または **[Error]** (エラー) 状態のパッケージだけです。
+   >削除できるのは、 **[Live]** (ライブ) または **[Error]** (エラー) 状態のパッケージだけです。
 
 3. 既存のパッケージを更新するには、パッケージを選んで **[Delete]** (削除) をクリックしてから、新しいパッケージを作成し、アップロードします。
 
     新しいパッケージの作成について詳しくは、[Windows Driver Kit (WDK) ](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-metadata-authoring-wizard-portal) の「[Device Metadata Authoring (デバイス メタデータの作成) ウィザード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)」をご覧ください。
 
-4. 新しいパッケージを追加するには、**[Add more metadata]** (メタデータの追加) で追加するファイルを参照し、必要に応じてフレンドリ名を作成して、**[Submit]** (送信) をクリックします。
+4. 新しいパッケージを追加するには、 **[Add more metadata]** (メタデータの追加) で追加するファイルを参照し、必要に応じてフレンドリ名を作成して、 **[Submit]** (送信) をクリックします。
 
     >[!NOTE]
     >エクスペリエンスには、合計で 50 のパッケージを追加できます。

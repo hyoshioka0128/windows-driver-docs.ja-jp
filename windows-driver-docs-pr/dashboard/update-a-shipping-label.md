@@ -6,11 +6,11 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: e7f4c90ad508e7c2270621da289133375c5e98e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518991"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334889"
 ---
 # <a name="update-a-shipping-label"></a>配送先住所ラベルの更新
 

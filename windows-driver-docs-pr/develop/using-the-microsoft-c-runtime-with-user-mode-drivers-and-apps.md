@@ -5,11 +5,11 @@ description: このトピックでは、Windows 8 および Windows 8.1 用の�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16fef7a8ac858884e1be68e5b0fc7f61ca014d2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518912"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344031"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>ユーザー モード ドライバーとデスクトップ アプリでの Microsoft C ランタイムの使用
 [このトピックはデスクトップ ドライバーのみに適用され、ユニバーサル ドライバーには適用されません。]

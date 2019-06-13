@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04083c0274c82db88d208e187ca08889e26b156d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518919"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335061"
 ---
 # <a name="creating-a-preview-package"></a>プレビュー パッケージの作成
 
@@ -52,6 +52,6 @@ ms.locfileid: "56518919"
 
 [デバイス メタデータ エクスペリエンスの作成](https://msdn.microsoft.com/library/windows/hardware/br230794.aspx)
 
-[デバイス メタデータ パッケージの提出 (ダッシュボード ヘルプ)](https://msdn.microsoft.com/library/windows/hardware/br230807.aspx)
+[デバイス メタデータ パッケージを申請する (ダッシュボード ヘルプ)](https://msdn.microsoft.com/library/windows/hardware/br230807.aspx)
 
 [デバイス メタデータのビジネス規則](https://msdn.microsoft.com/library/windows/hardware/br230767.aspx)

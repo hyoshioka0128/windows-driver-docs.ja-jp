@@ -5,11 +5,11 @@ description: 64 ビット版 Windows にインストールできるのは、署�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c7184c3474fc9ca42ba7206ca7e5e62fc9828f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518821"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63378487"
 ---
 # <a name="signing-a-driver-during-development-and-testing"></a>開発中とテスト中のドライバーへの署名
 
@@ -24,11 +24,11 @@ Microsoft Visual Studio では、テスト署名は既定で有効になって�
 
 テスト署名を手動で有効にするには、次の手順を実行します。
 
-1.  Visual Studio で、ドライバー パッケージ プロジェクトのあるソリューションを開きます。 ドライバー パッケージ プロジェクトを右クリックし、**[プロパティ]** をクリックします。
+1.  Visual Studio で、ドライバー パッケージ プロジェクトのあるソリューションを開きます。 ドライバー パッケージ プロジェクトを右クリックし、 **[プロパティ]** をクリックします。
 
-2.  パッケージのプロパティ ページで、**[Configuation Properties (構成プロパティ)] &gt; [Driver Signing (ドライバーの署名)] &gt; [全般]** の順に移動します。 **[Sign Mode (署名モード)]** ドロップダウン リストで、**[Test Sign (テスト署名)]** をクリックします。
+2.  パッケージのプロパティ ページで、 **[Configuation Properties (構成プロパティ)] &gt; [Driver Signing (ドライバーの署名)] &gt; [全般]** の順に移動します。 **[Sign Mode (署名モード)]** ドロップダウン リストで、 **[Test Sign (テスト署名)]** をクリックします。
 
-3.  パッケージのプロパティ ページで、**[Configuation Properties (構成プロパティ)] &gt; [Inf2Cat] &gt; [全般]** の順に移動します。 **[Run Inf2Cat (Inf2Cat の実行)]** ドロップダウン リストで、**[はい]** を選びます。
+3.  パッケージのプロパティ ページで、 **[Configuation Properties (構成プロパティ)] &gt; [Inf2Cat] &gt; [全般]** の順に移動します。 **[Run Inf2Cat (Inf2Cat の実行)]** ドロップダウン リストで、 **[はい]** を選びます。
 
 ## <a name="span-idviewingthesigneddriverpackagespanspan-idviewingthesigneddriverpackagespanspan-idviewingthesigneddriverpackagespanviewing-the-signed-driver-package"></a><span id="Viewing_the_signed_driver_package"></span><span id="viewing_the_signed_driver_package"></span><span id="VIEWING_THE_SIGNED_DRIVER_PACKAGE"></span>署名されたドライバー パッケージの表示
 
@@ -42,11 +42,11 @@ Microsoft Visual Studio では、テスト署名は既定で有効になって�
 
 署名証明書を共有するには、次の手順を実行します。
 
--   Visual Studio の [ソリューション エクスプローラー] ウィンドウで、ドライバー パッケージ プロジェクトを右クリックして、**[プロパティ]** をクリックします。
--   パッケージのプロパティ ページで、**[Configuation Properties (構成プロパティ)] &gt; [Driver Signing (ドライバーの署名)] &gt; [全般]** の順に移動します。 **[Test Certificate (テスト証明書)]** フィールドで、**[ストアから選択]** を選びます。
+-   Visual Studio の [ソリューション エクスプローラー] ウィンドウで、ドライバー パッケージ プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
+-   パッケージのプロパティ ページで、 **[Configuation Properties (構成プロパティ)] &gt; [Driver Signing (ドライバーの署名)] &gt; [全般]** の順に移動します。 **[Test Certificate (テスト証明書)]** フィールドで、 **[ストアから選択]** を選びます。
 
--   [証明書の選択] ダイアログ ボックスで、テスト署名証明書を探します。 証明書の名前は "WDKTestCert <*ユーザー名*>" のようになります。 テスト署名証明書を選択して、**[プロパティ]** をクリックします。 **[詳細]** タブで、**[ファイルへコピー]** をクリックします。
--   証明書のエクスポート ウィザードの指示に従って、PFX ファイルをエクスポートします。 秘密キーをエクスポートするかどうかを確認するメッセージが表示されたら、**[はい、秘密キーをエクスポートします]** をクリックします。
+-   [証明書の選択] ダイアログ ボックスで、テスト署名証明書を探します。 証明書の名前は "WDKTestCert <*ユーザー名*>" のようになります。 テスト署名証明書を選択して、 **[プロパティ]** をクリックします。 **[詳細]** タブで、 **[ファイルへコピー]** をクリックします。
+-   証明書のエクスポート ウィザードの指示に従って、PFX ファイルをエクスポートします。 秘密キーをエクスポートするかどうかを確認するメッセージが表示されたら、 **[はい、秘密キーをエクスポートします]** をクリックします。
 -   エクスポートされた PFX ファイルを他の開発者と共有します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック

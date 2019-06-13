@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a47bc7db736a65498ad0db8e1203634c97c8f1b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518745"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337236"
 ---
 # <a name="driver-failure-reporting"></a>ドライバー エラー レポート
 
@@ -30,7 +30,7 @@ ms.locfileid: "56518745"
 - デバイスの種類
 - ［ドライバ名］
 
-以下のグラフに示される情報は、**[フィルターの適用]** で選んだ期間を反映しています。 既定では、**[フィルターの適用]** を使ってパッケージ バージョンを 1 つに絞り込んでいない限り、その情報にはすべてのパッケージ バージョンのデータが含まれます。
+以下のグラフに示される情報は、 **[フィルターの適用]** で選んだ期間を反映しています。 既定では、 **[フィルターの適用]** を使ってパッケージ バージョンを 1 つに絞り込んでいない限り、その情報にはすべてのパッケージ バージョンのデータが含まれます。
 
 ## <a name="failure-hits"></a>Failure hits (エラーのヒット数)
 

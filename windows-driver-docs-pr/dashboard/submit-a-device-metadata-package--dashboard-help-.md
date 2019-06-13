@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5f220bc220e5d7b750868e776f68fec313f0855
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518648"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334913"
 ---
 # <a name="submit-a-device-metadata-package-dashboard-help"></a>デバイス メタデータ パッケージの提出 (ダッシュボード ヘルプ)
 
@@ -28,9 +28,9 @@ ms.locfileid: "56518648"
 
 2.  ハードウェア デベロッパー センターまたは Windows デベロッパー センターから Microsoft アカウントで**ダッシュボード**にサインインします。
 
-3.  **[Device metadata]** (デバイス メタデータ) で、**[Create experience]** (エクスペリエンスの作成) (新しいエクスペリエンスを提出する場合)、または **[Manage experience]** (エクスペリエンスの管理) (既にあるエクスペリエンスを変更する場合) をクリックします。
+3.  **[Device metadata]** (デバイス メタデータ) で、 **[Create experience]** (エクスペリエンスの作成) (新しいエクスペリエンスを提出する場合)、または **[Manage experience]** (エクスペリエンスの管理) (既にあるエクスペリエンスを変更する場合) をクリックします。
 
-4.  新しいエクスペリエンスを参照して選び、**[Submit]** (送信) をクリックします。
+4.  新しいエクスペリエンスを参照して選び、 **[Submit]** (送信) をクリックします。
 
 詳しくは、「[デバイス メタデータ エクスペリエンスの作成](https://msdn.microsoft.com/library/windows/hardware/br230794.aspx)」または「[デバイス メタデータ エクスペリエンスの管理](https://msdn.microsoft.com/library/windows/hardware/br230797.aspx)」をご覧ください。
 

@@ -5,11 +5,11 @@ ms.assetid: 8D55CB83-C50A-48B8-9379-ECF2CF30AEE5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41d50497c8343d8ae5f7a54b77d97a86f06f0d2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518786"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371328"
 ---
 # <a name="driver-stacks"></a>ドライバー スタック
 

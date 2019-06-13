@@ -5,11 +5,11 @@ description: 管理オブジェクト フォーマット (MOF) コンパイラ (
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0309c49ef2cadd6015957af10c9c98cb13b9ee66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518319"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344110"
 ---
 # <a name="mof-compiler-properties-for-driver-projects"></a>ドライバー プロジェクトの MOF コンパイラ プロパティ
 
@@ -18,8 +18,8 @@ ms.locfileid: "56518319"
 ## <a name="span-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspanspan-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspanspan-idsettingmanagedobjectformatmofcompilerpropertiesfordriverprojectsspansetting-managed-object-format-mof-compiler-properties-for-driver-projects"></a><span id="Setting_Managed_Object_Format__MOF__Compiler_properties_for_driver_projects"></span><span id="setting_managed_object_format__mof__compiler_properties_for_driver_projects"></span><span id="SETTING_MANAGED_OBJECT_FORMAT__MOF__COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用の管理オブジェクト フォーマット (MOF) コンパイラ プロパティの設定
 
 
-1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、**[プロパティ]** をクリックします。
-2.  ドライバー プロジェクトのプロパティ ページで、**[構成プロパティ]**、**[Mof Compiler]** (MOF コンパイラ) の順にクリックします。
+1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
+2.  ドライバー プロジェクトのプロパティ ページで、 **[構成プロパティ]** 、 **[Mof Compiler]** (MOF コンパイラ) の順にクリックします。
 3.  プロジェクトのプロパティを設定します。
 
 このプロパティ ページを使えるのは、ソリューションに管理オブジェクト フォーマット (MOF) ファイル (.mof) を追加した場合のみです。

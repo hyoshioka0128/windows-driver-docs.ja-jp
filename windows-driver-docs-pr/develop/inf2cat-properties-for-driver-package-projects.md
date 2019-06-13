@@ -5,11 +5,11 @@ description: Inf2Cat ツール用のプロパティを設定します。 Inf2Cat
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bd9988c392bf875e43bf5c87f094f2ef00befd9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518316"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344154"
 ---
 # <a name="inf2cat-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの Inf2Cat プロパティ
 
@@ -18,8 +18,8 @@ ms.locfileid: "56518316"
 ## <a name="span-idsettinginf2catpropertiesfordriverpackageprojectsspanspan-idsettinginf2catpropertiesfordriverpackageprojectsspanspan-idsettinginf2catpropertiesfordriverpackageprojectsspansetting-inf2cat-properties-for-driver-package-projects"></a><span id="Setting_Inf2Cat_properties_for_driver_package_projects"></span><span id="setting_inf2cat_properties_for_driver_package_projects"></span><span id="SETTING_INF2CAT_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>ドライバー パッケージ プロジェクトの Inf2Cat プロパティの設定
 
 
-1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、**[プロパティ]** をクリックします。
-2.  ドライバー パッケージのプロパティ ページで、**[構成プロパティ]**、**[Inf2Cat]** の順にクリックします。
+1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、 **[プロパティ]** をクリックします。
+2.  ドライバー パッケージのプロパティ ページで、 **[構成プロパティ]** 、 **[Inf2Cat]** の順にクリックします。
 3.  **[Run Inf2Cat (Inf2Cat の実行)]** オプションを選びます。 このオプションは、プロジェクト内のすべての INF ファイル (.inf、.inx、.inv ファイルなど) に対して [**Inf2Cat**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547089) ツールを実行します。
 
 INF ファイルを使ってドライバー パッケージがインストールされている場合は、Inf2Cat ツールを使ってカタログ ファイルを作ります。 Inf2Cat は、パッケージ内にある、INF ファイルで参照されているファイルを検証します。 パッケージにファイルを追加するには、パッケージ プロジェクトとドライバー プロジェクトのプロパティ ページを使います。 詳しくは、「[ドライバー パッケージの作成](creating-a-driver-package.md)」をご覧ください。

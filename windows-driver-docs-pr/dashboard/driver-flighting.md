@@ -5,11 +5,11 @@ ms.date: 07/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a6cf66d1d57bc66da2f732db121470f17240709b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518691"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335119"
 ---
 # <a name="driver-flighting"></a>ドライバーのフライティング
 
@@ -44,7 +44,7 @@ ms.locfileid: "56518691"
 
 パートナー センターに提出されたドライバーは、次の手順に従ってフライティング用にプロモーションできます。
 
-1. ドライバーが提出され、プロセスの**検証**段階に入ったら、新しい配送先住所ラベルを作成し、**[詳細]** と **[プロパティ]** のセクションに必要事項を記入します。 詳しくは、「[Windows Update にドライバーを公開する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)」をご覧ください。
+1. ドライバーが提出され、プロセスの**検証**段階に入ったら、新しい配送先住所ラベルを作成し、 **[詳細]** と **[プロパティ]** のセクションに必要事項を記入します。 詳しくは、「[Windows Update にドライバーを公開する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)」をご覧ください。
 
 2. 次の説明に従って、1 つまたは複数のドライバーのプロモーション オプションを選択して、ドライバーをフライティング用にプロモーションします。
 
@@ -65,7 +65,7 @@ ms.locfileid: "56518691"
     > 以下の点に注意してください。
     > * ドライバーのインストール後の再起動は、可能な限り避けてください。 
     > * インストール時に UI やソフトウェアを展開するドライバーは S モードの Windows 10 に準拠しないため、このオペレーティング システムに対するフライティングは実施できません。
-    > * 共同エンジニア リング ドライバーは、リリース前のバージョンの Windows 用に開発されているドライバーです。 共同エンジニア リング ドライバー:  
+    > * 共同エンジニア リング ドライバーは、リリース前のバージョンの Windows 用に開発されているドライバーです。 共同エンジニア リング ドライバー: 
     >    * フライティング プロセス中に、Microsoft Insider Program に参加しているデバイスにのみ配布されます。
     >    * フライトの成功後、Microsoft Insider Program に参加していないデバイスには配布されません。
     >    * 60 日後に、フライティングが終了となります。 フライティング プロセスの完了後、フライト バグ レポートが提供されます。 

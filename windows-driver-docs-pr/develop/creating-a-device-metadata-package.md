@@ -5,11 +5,11 @@ description: Device Metadata Authoring (デバイス メタデータの作成) �
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 115a53d32c3dd2ef1c9aed9406c5497cfd1d3832
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518878"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382480"
 ---
 # <a name="creating-a-device-metadata-package"></a>デバイス メタデータ パッケージの作成
 

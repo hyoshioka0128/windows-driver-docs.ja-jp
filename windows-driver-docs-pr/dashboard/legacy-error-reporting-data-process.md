@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 08/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d1e44beabcaac19d6fcc8e9d94f680b660430c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518758"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337169"
 ---
 # <a name="driver-error-reporting-data-for-earlier-versions-of-windows"></a>Windows の以前のバージョンのドライバー エラーレポート データ
 
@@ -20,7 +20,7 @@ ms.locfileid: "56518758"
 > 代わりに、次の新しいトピックを使用してください。
 >
 > - [ドライバー エラー詳細のカスタム レポートをスケジュールする](schedule-custom-reports-for-driver-failure-details.md)
-> - [新しいレポート テンプレートを作成する](create-a-new-report-template.md)
+> - [レポート テンプレートの新規作成](create-a-new-report-template.md)
 > - [新しいレポートをスケジュールする](schedule-a-new-report.md)
-> - [レポート データを取得する](get-report-data.md)
+> - [レポート データの取得](get-report-data.md)
 > - [エラー CAB をダウンロードする](download-failure-cabs.md)

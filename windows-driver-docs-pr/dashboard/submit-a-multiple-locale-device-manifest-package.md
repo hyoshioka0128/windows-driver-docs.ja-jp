@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37375718767a55e5c71061965f6bbb0092dc8b13
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560593"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334915"
 ---
 # <a name="submit-a-multiple-locale-device-manifest-package"></a>複数ロケールのデバイス マニフェスト パッケージの提出
 
@@ -26,7 +26,7 @@ ms.locfileid: "57560593"
 
 3. **[Device metadata]** (デバイス メタデータ) で、新しいエクスペリエンスを申請する場合は **[Create experience]** (エクスペリエンスの作成)、既にあるエクスペリエンスを変更する場合は **[Manage experience]** (エクスペリエンスの管理) をクリックします。
 
-4. 新しい devicemanifest-ms パッケージを参照して選び、**[Submit]** (送信) をクリックします。
+4. 新しい devicemanifest-ms パッケージを参照して選び、 **[Submit]** (送信) をクリックします。
 
 ## <a name="creating-a-device-manifest-submission-package"></a>デバイス マニフェスト サブミッション パッケージの作成
 

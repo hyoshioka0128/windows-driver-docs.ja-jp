@@ -5,11 +5,11 @@ description: この情報は、Windows 用のカーネル モード ドライバ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2f017367c211eb8020ea8ee3f29d29509467ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518613"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63359487"
 ---
 # <a name="avoiding-floating-point-errors-in-custom-build-environments"></a>カスタム ビルド環境での浮動小数点エラーの回避
 
@@ -40,7 +40,7 @@ msbuild myProject.vcxproj /p:PlatformToolset=WindowsKernelModeDriver8.0
 
 使用する開発環境の種類に基づいてお勧めするソリューションは、次のとおりです。
 
--   **Microsoft ツールセット (MSBuild)** - 対処は不要です。 **WindowsKernelModeDriver8.0** をプラットフォーム ツールセットとして使うと、**/kernel** が必要に応じて自動的に追加されます。
+-   **Microsoft ツールセット (MSBuild)** - 対処は不要です。 **WindowsKernelModeDriver8.0** をプラットフォーム ツールセットとして使うと、 **/kernel** が必要に応じて自動的に追加されます。
 -   **Microsoft VC++ コンパイラ** - **/kernel** フラグを追加し、コンパイラが SSE2 を作成しないようにします。
 -   **カスタム ツール/非 Microsoft コンパイラ** - 生成されたバイナリ内で使われているアセンブリ命令に手動で対処する必要があります。
 

@@ -5,11 +5,11 @@ description: ドライバー展開用の Visual Studio のプロビジョニン�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16a671c1b1143ad9247faa429daa85353857df4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518772"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344080"
 ---
 # <a name="troubleshooting-configuration-of-driver-deployment-testing-and-debugging"></a>ドライバーの展開、テスト、およびデバッグに関する構成のトラブルシューティング
 
@@ -38,7 +38,7 @@ ms.locfileid: "56518772"
 ## <a name="span-idconfigurecomputersmenucommandisinactivespanspan-idconfigurecomputersmenucommandisinactivespanconfigure-computers-menu-command-is-inactive"></a><span id="configure_computers_menu_command_is_inactive"></span><span id="CONFIGURE_COMPUTERS_MENU_COMMAND_IS_INACTIVE"></span>[Configure Computers]\(コンピューターの構成\) メニュー コマンドがアクティブでない
 
 
-Microsoft Visual Studio を初めて起動すると、**[ドライバー]** メニューの **[テスト] &gt; [Configure Computers (コンピューターの構成)]** コマンドがアクティブでない (灰色表示されている) 場合があります。 約 20 秒待ってから、もう一度 **[ドライバー]** メニューをクリックすると、**[テスト] &gt; [Configure Computers (コンピューターの構成)]** コマンドが利用できるようになります。
+Microsoft Visual Studio を初めて起動すると、 **[ドライバー]** メニューの **[テスト] &gt; [Configure Computers (コンピューターの構成)]** コマンドがアクティブでない (灰色表示されている) 場合があります。 約 20 秒待ってから、もう一度 **[ドライバー]** メニューをクリックすると、 **[テスト] &gt; [Configure Computers (コンピューターの構成)]** コマンドが利用できるようになります。
 
 ## <a name="span-idprovisioningfailsgeneraltipsspanspan-idprovisioningfailsgeneraltipsspanprovisioning-fails-general-tips"></a><span id="provisioning_fails_general_tips"></span><span id="PROVISIONING_FAILS_GENERAL_TIPS"></span>プロビジョニングが失敗する: 一般的なヒント
 
@@ -58,7 +58,7 @@ Driver Test Computer Configuration 20121115130459167.log
 
 ターゲット コンピューターのプロビジョニングを開始すると、"**ネットワーク パスが見つかりませんでした**" というメッセージが表示される場合があります。
 
-ターゲット コンピューターで、**[ネットワーク探索]** が有効になっていることと、適切なネットワーク プロファイルの **[ファイルとプリンターの共有]** が有効になっていることを確認します。 たとえば、ホスト コンピューターとターゲット コンピューターがネットワーク ドメインに参加している場合は、**[ドメイン]** ネットワーク プロファイルのネットワーク探索、ファイルとプリンターの共有を有効にする必要があります。 詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)」をご覧ください。
+ターゲット コンピューターで、 **[ネットワーク探索]** が有効になっていることと、適切なネットワーク プロファイルの **[ファイルとプリンターの共有]** が有効になっていることを確認します。 たとえば、ホスト コンピューターとターゲット コンピューターがネットワーク ドメインに参加している場合は、 **[ドメイン]** ネットワーク プロファイルのネットワーク探索、ファイルとプリンターの共有を有効にする必要があります。 詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)」をご覧ください。
 
 ホスト コンピューターからターゲット コンピューターに ping を実行できることを確認します。 ホスト コンピューターで、コマンド プロンプト ウィンドウを開き、「**ping** *targetComputerName*」と入力します。*targetComputerName* はターゲット コンピューターの名前です。
 
@@ -77,7 +77,7 @@ The network path was not found.
 ## <a name="span-iddomainthenetworknamecannotbefoundspanspan-iddomainthenetworknamecannotbefoundspanprovisioning-fails-the-network-name-cannot-be-found"></a><span id="domain_the_network_name_cannot_be_found"></span><span id="DOMAIN_THE_NETWORK_NAME_CANNOT_BE_FOUND"></span>プロビジョニングが失敗する: ネットワーク名が見つからない
 
 
-ターゲット コンピューターのプロビジョニングを開始すると、**"ネットワーク名が見つかりません"** というメッセージが表示される場合があります。 ターゲット コンピューターの名前をもう一度確認します。 最初に入力したコンピューター名が正しくなかった場合は、(**[ドライバー] &gt; [テスト] &gt; [Configure Computers (コンピューターの構成)]** の順にクリックして) もう一度プロビジョニング ウィザードを開始します。 間違ったコンピューター名を選び、**[次へ]** をクリックします。 **[コンピューター名]** に、ターゲット コンピューターの正しい名前を入力し、ウィザードを完了します。
+ターゲット コンピューターのプロビジョニングを開始すると、 **"ネットワーク名が見つかりません"** というメッセージが表示される場合があります。 ターゲット コンピューターの名前をもう一度確認します。 最初に入力したコンピューター名が正しくなかった場合は、( **[ドライバー] &gt; [テスト] &gt; [Configure Computers (コンピューターの構成)]** の順にクリックして) もう一度プロビジョニング ウィザードを開始します。 間違ったコンピューター名を選び、 **[次へ]** をクリックします。 **[コンピューター名]** に、ターゲット コンピューターの正しい名前を入力し、ウィザードを完了します。
 
 **注**  "**ネットワーク名が見つかりませんでした**" というメッセージが表示される前に、いくつかのメッセージが表示される場合があります。 これらのメッセージの一部を読むと、コンピューター名が見つかり、プロビジョニングの最初の手順が成功したと思うかもしれませんが、 実際には、コンピューター名は見つからず、プロビジョニングは成功していません。 たとえば、次のようなメッセージが表示される場合があります。
 

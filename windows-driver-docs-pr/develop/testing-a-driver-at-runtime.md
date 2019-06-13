@@ -5,11 +5,11 @@ description: Visual Studio の WDK 拡張機能を使うと、ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41a4715c6841e38d5e76cc163c51cb6ad5d516b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518802"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344114"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>Visual Studio を使って実行時にドライバーをテストする方法
 
@@ -49,18 +49,18 @@ WDK 8.1 以降では、テスト コンピューターで実行する HCK テス
 
 さまざまなテスト対象でのドライバーのテストを簡単にするため、テストは*テスト グループ*と呼ばれる単位でテスト システムに対して実行するようにスケジュールされます。 ドライバー テスト グループは、テスト コンピューターで実行するよう選択したテストのコレクションです。 ドライバー テスト グループを使うと、テストや各テスト成功の結果を整理しやすくなります。 テスト結果は個別のフォルダーに保存できます。 テスト グループの作成と管理、テスト グループ内でテストに渡すパラメーターの変更、テスト システムに対するテスト実行のスケジュールを行うことができます。
 
-1.  **[ドライバー]** メニューで、**[テスト]**、**[Test Group Explorer] (テスト グループ エクスプローラー)** の順にクリックします。
-2.  **[Driver Test Group Explorer (ドライバー テスト グループ エクスプローラー)]** ウィンドウで、**[Create a new test group (新しいテスト グループの作成)]** ボタンをクリックします。 または、**[Driver (ドライバー)]** メニューの **[New Test Group (新しいテスト グループ)]** をクリックします。
-3.  作成したグループの **[Driver Test Group (ドライバー テスト グループ)]** ウィンドウで、**[Test Group Name (テスト グループ名)]** ボックスにグループを識別する名前を入力します。 既定の名前は Driver Test Group\_*nnnnn* です。*nnnnn* は、このテスト グループの番号を表します
+1.  **[ドライバー]** メニューで、 **[テスト]** 、 **[Test Group Explorer] (テスト グループ エクスプローラー)** の順にクリックします。
+2.  **[Driver Test Group Explorer (ドライバー テスト グループ エクスプローラー)]** ウィンドウで、 **[Create a new test group (新しいテスト グループの作成)]** ボタンをクリックします。 または、 **[Driver (ドライバー)]** メニューの **[New Test Group (新しいテスト グループ)]** をクリックします。
+3.  作成したグループの **[Driver Test Group (ドライバー テスト グループ)]** ウィンドウで、 **[Test Group Name (テスト グループ名)]** ボックスにグループを識別する名前を入力します。 既定の名前は Driver Test Group\_*nnnnn* です。*nnnnn* は、このテスト グループの番号を表します
 4.  **[Add/Remove Tests (テストの追加と削除)]** をクリックします。
 5.  **[Add or Remove Driver Tests] (ドライバー テストの追加または削除)** ダイアログ ボックスで、ドライバー テストのカテゴリとアーキテクチャ (すべて、x86、x64、ARM) を指定できます。 既定ではすべてのテストが表示されます。 テストのカテゴリを表示するには、[Driver Test Categories] (ドライバー テスト カテゴリ) ドロップダウン リスト内のフォルダーをクリックします。
 
-    たとえば、WDK 8 において [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) で使われるすべての Device Fundamental テストを選ぶには、**[すべてのテスト]**、**[Certification]** (認定)、**[Device Fundamentals]** (Device Fundamental) の順にクリックします。 テストについて詳しくは、「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。
+    たとえば、WDK 8 において [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) で使われるすべての Device Fundamental テストを選ぶには、 **[すべてのテスト]** 、 **[Certification]** (認定)、 **[Device Fundamentals]** (Device Fundamental) の順にクリックします。 テストについて詳しくは、「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。
 
-    WDK 8.1 では、Device Fundamentals テストは **[All Tests (すべてのテスト)]**、**[HCK Tests (HCK テスト)]**、**[Certification (認定)]** の下の **[Device Fundamentals (Device Fundamentals)]** フォルダーにあります。 WDK 8.1 では、[Driver Test Categories] (ドライバー テスト カテゴリ) に HCK (基本) テストが含まれています。 詳しくは、「[WDK 8.1 の HCK テスト スイートを実行する方法](run-the-hck-test-suites-in-the-wdk.md)」をご覧ください。
+    WDK 8.1 では、Device Fundamentals テストは **[All Tests (すべてのテスト)]** 、 **[HCK Tests (HCK テスト)]** 、 **[Certification (認定)]** の下の **[Device Fundamentals (Device Fundamentals)]** フォルダーにあります。 WDK 8.1 では、[Driver Test Categories] (ドライバー テスト カテゴリ) に HCK (基本) テストが含まれています。 詳しくは、「[WDK 8.1 の HCK テスト スイートを実行する方法](run-the-hck-test-suites-in-the-wdk.md)」をご覧ください。
 
 6.  目的とするテスト コンピューターのアーキテクチャ (x86、x64、ARM) に対応したテストを必ず選択してください。 **[Architecture Filter (アーキテクチャ フィルター)]** を使って、テスト コンピューターで動作するテストだけを表示します。
-7.  [**&gt;&gt;**] をクリックして、選択したテストを追加します。
+7.  [ **&gt;&gt;** ] をクリックして、選択したテストを追加します。
 
 ### <a name="span-idconfiguretestparametersspanspan-idconfiguretestparametersspanspan-idconfiguretestparametersspanstep-4-configure-test-parameters"></a><span id="Configure_test_parameters"></span><span id="configure_test_parameters"></span><span id="CONFIGURE_TEST_PARAMETERS"></span>ステップ 4:テスト パラメーターを構成する
 
@@ -69,7 +69,7 @@ WDK 8.1 以降では、テスト コンピューターで実行する HCK テス
 たとえば、USB デバイスのみにテストを実行するには、デバイス クエリ class='usb' を使います。 テスト グループ内の各テスト パラメーターの値は変更できます。
 
 1.  **[Driver Test Group (ドライバー テスト グループ)]** ウィンドウでテスト名をクリックすることで、テストのすべての実行時テスト パラメーターを表示および編集できます。 **[Driver Test Group (ドライバー テスト グループ)]** ウィンドウには、選択したテストとテスト パラメーターの説明が表示されます。 テスト パラメーターの設定について詳しくは、「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。
-2.  テストを選択してパラメーターを設定し、グループに名前を付けたら、**[保存]** をクリックします。
+2.  テストを選択してパラメーターを設定し、グループに名前を付けたら、 **[保存]** をクリックします。
 
     テスト グループを保存すると、このテスト グループが現在選択されているテスト グループになり、テスト グループ名が [Driver Test] (ドライバー テスト) ツール バーに表示されます。 これで、現在選択されているリモート テスト コンピューター ([Driver Test (ドライバー テスト)] ツール バーに表示されています) に対してテストを実行できます。
 
@@ -81,7 +81,7 @@ WDK 8.1 以降では、テスト コンピューターで実行する HCK テス
 
 ### <a name="span-idrunthetestsonthetestcomputerspanspan-idrunthetestsonthetestcomputerspanspan-idrunthetestsonthetestcomputerspanstep-6-run-the-tests-on-the-test-computer"></a><span id="Run_the_tests_on_the_test_computer"></span><span id="run_the_tests_on_the_test_computer"></span><span id="RUN_THE_TESTS_ON_THE_TEST_COMPUTER"></span>ステップ 6:テスト コンピューターでテストを実行する
 
--   **[ドライバー]** メニューで、**[テスト] &gt; [テストの実行]** の順にクリックします。 [テストの実行] は既定で、現在選択されているテスト グループのすべてのテストを実行します。
+-   **[ドライバー]** メニューで、 **[テスト] &gt; [テストの実行]** の順にクリックします。 [テストの実行] は既定で、現在選択されているテスト グループのすべてのテストを実行します。
 
 <a name="remarks"></a>注釈
 -------

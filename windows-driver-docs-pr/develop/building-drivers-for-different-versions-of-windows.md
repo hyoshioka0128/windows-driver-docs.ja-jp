@@ -5,11 +5,11 @@ description: 以下のセクションでは、異なるバージョンの Window
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b485699ff9a7e602ebe2e8d59c49ac7362174b8b
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463939"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382486"
 ---
 # <a name="building-drivers-for-different-versions-of-windows"></a>異なるバージョンの Windows に対するドライバーのビルド
 

@@ -5,11 +5,11 @@ description: WDK には、ネットワーク上のテスト コンピュータ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f1b2c59d6a9da5abdd8e614650a6234aa03b4a3
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58898061"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63379882"
 ---
 # <a name="how-to-test-a-driver-at-runtime-from-a-command-prompt"></a>コマンド プロンプトから実行時にドライバーをテストする方法
 
@@ -41,7 +41,7 @@ Te.exe [/name:<Test Method>] [<Test Name>.dll | <Test Name.wsc> ]  [/rebootState
 <a name="remarks"></a>注釈
 -------
 
-テスト バイナリ (.dll) ファイルまたはスクリプト (.wsc) ファイルを指定する必要があります。 テスト メソッド (**/name:**_&lt;テスト メソッド&gt;_) は省略可能です。 テスト名とテスト メソッドについては、「[Device Fundamental のテスト](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)」をご覧ください。 テスト パラメーターの指定方法については、「[Device Fundamental テストのパラメーター](how-to-select-and-configure-the-device-fundamental-tests.md)」と「[Te.exe のコマンド オプション](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439743)」をご覧ください。
+テスト バイナリ (.dll) ファイルまたはスクリプト (.wsc) ファイルを指定する必要があります。 テスト メソッド ( **/name:** _&lt;テスト メソッド&gt;_ ) は省略可能です。 テスト名とテスト メソッドについては、「[Device Fundamental のテスト](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)」をご覧ください。 テスト パラメーターの指定方法については、「[Device Fundamental テストのパラメーター](how-to-select-and-configure-the-device-fundamental-tests.md)」と「[Te.exe のコマンド オプション](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439743)」をご覧ください。
 
 たとえば、次のように、特定のデバイス ID を持つデバイスで Devfund\_PnPDTest.dll にあるすべての PnP テストを実行します。
 

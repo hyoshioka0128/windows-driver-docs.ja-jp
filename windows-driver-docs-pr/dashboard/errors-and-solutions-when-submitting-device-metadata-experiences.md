@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83b8d0122497f7c429d922cd0f58b604e7799244
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348959"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337241"
 ---
 # <a name="errors-and-solutions-when-submitting-device-metadata-experiences"></a>デバイス メタデータ エクスペリエンスを申請する際のエラーと解決方法
 
@@ -37,7 +37,7 @@ ms.locfileid: "57348959"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>[CategoryName] Category id is incorrect in Behavior.xml. (Behavior.xml の [カテゴリ名] カテゴリ ID が正しくありません。)  Correct Category id is [CategoryId] (正しいカテゴリ ID は [カテゴリ ID] です)</p></td>
+<td><p>[CategoryName] Category id is incorrect in Behavior.xml. (Behavior.xml の [カテゴリ名] カテゴリ ID が正しくありません。) Correct Category id is [CategoryId] (正しいカテゴリ ID は [カテゴリ ID] です)</p></td>
 <td><p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
@@ -55,11 +55,11 @@ ms.locfileid: "57348959"
 <p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td><p>[ImageType] Image - [FileName] size for [SplitType] split is invalid. ([分割タイプ] 分割の対象となる [画像の種類] 画像 - [ファイル名] のサイズが無効です。)  Valid size(s) are: [ListOfAllowedSizes] (有効なサイズ: [許容サイズのリスト])</p></td>
+<td><p>[ImageType] Image - [FileName] size for [SplitType] split is invalid. ([分割タイプ] 分割の対象となる [画像の種類] 画像 - [ファイル名] のサイズが無効です。) Valid size(s) are: [ListOfAllowedSizes] (有効なサイズ: [許容サイズのリスト])</p></td>
 <td><p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>[ImageType] Image - [FileName] size is invalid. ([画像の種類] 画像 - [ファイル名] のサイズが無効です。)  Valid size(s) are: [ListOfAllowedSizes] (有効なサイズ: [許容サイズのリスト])</p></td>
+<td><p>[ImageType] Image - [FileName] size is invalid. ([画像の種類] 画像 - [ファイル名] のサイズが無効です。) Valid size(s) are: [ListOfAllowedSizes] (有効なサイズ: [許容サイズのリスト])</p></td>
 <td><p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="odd">
@@ -85,17 +85,17 @@ ms.locfileid: "57348959"
 <p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>A .cab submission needs to contain either Hardware and/or Model information. (.cab 提出には、ハードウェアかモデル、またはその両方の情報が含まれている必要があります。)  Please correct the .cab or modify the existing .cabs. (この .cab または既にある .cab を修正してください。)</p></td>
+<td><p>A .cab submission needs to contain either Hardware and/or Model information. (.cab 提出には、ハードウェアかモデル、またはその両方の情報が含まれている必要があります。) Please correct the .cab or modify the existing .cabs. (この .cab または既にある .cab を修正してください。)</p></td>
 <td><p>パッケージには、ハードウェア ID またはモデル ID が少なくとも 1 つ存在している必要があります。</p>
 <p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td><p>A Hardware ID in this .cab is in conflict and the .cab cannot be uploaded. (この .cab 内のハードウェア ID が競合しており、.cab をアップロードできません。)  Please ensure no other experience you have created uses this Hardware ID. (これまでに作成した他のエクスペリエンスにこのハードウェア ID が使われていないか確認してください。)</p></td>
+<td><p>A Hardware ID in this .cab is in conflict and the .cab cannot be uploaded. (この .cab 内のハードウェア ID が競合しており、.cab をアップロードできません。) Please ensure no other experience you have created uses this Hardware ID. (これまでに作成した他のエクスペリエンスにこのハードウェア ID が使われていないか確認してください。)</p></td>
 <td><p>ご使用のハードウェア ID は、別のエクスペリエンスで過去に使われたことがあります。 ダッシュボードの <strong>[Device metadata]</strong> (デバイス メタデータ) で、<strong>[Manage experiences]</strong> (エクスペリエンスの管理) ページを開いてください。 フィルターにハードウェア ID を入力して、他のエクスペリエンスを検索します。 競合があれば解決してください。</p>
 <p>詳しくは、「<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules" data-raw-source="[Device Metadata Business Rules](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)">デバイス メタデータのビジネス規則</a>」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>A Hardware ID in this. cab is in use by another company and the .cab cannot be uploaded. (この .cab 内のハードウェア ID は別の会社によって使われているため、.cab をアップロードできません。)  Please verify this Hardware ID. (このハードウェア ID を確認してください。)</p></td>
+<td><p>A Hardware ID in this. cab is in use by another company and the .cab cannot be uploaded. (この .cab 内のハードウェア ID は別の会社によって使われているため、.cab をアップロードできません。) Please verify this Hardware ID. (このハードウェア ID を確認してください。)</p></td>
 <td><p>パッケージに追加したハードウェア ID が、別の会社によって使われています。 別の会社のハードウェア ID を提出することはできません。 ハードウェア ID のスペルに誤りがないか確認してください。 それでもエラー メッセージが表示される場合は、ダッシュボード サポートにメール (sysdev@microsoft.com) で解決策をお問い合わせください。</p></td>
 </tr>
 <tr class="odd">
@@ -116,12 +116,12 @@ ms.locfileid: "57348959"
 </ul></td>
 </tr>
 <tr class="even">
-<td><p>A Model ID in this cab is in conflict and the .cab cannot be uploaded. (この cab 内のモデル ID が競合しており、cab をアップロードできません。)  Please ensure no other experience you have created uses this Model ID. (これまでに作成した他のエクスペリエンスにこのモデル ID が使われていないか確認してください。)</p></td>
+<td><p>A Model ID in this cab is in conflict and the .cab cannot be uploaded. (この cab 内のモデル ID が競合しており、cab をアップロードできません。) Please ensure no other experience you have created uses this Model ID. (これまでに作成した他のエクスペリエンスにこのモデル ID が使われていないか確認してください。)</p></td>
 <td><p>ご使用のモデル ID は、別のエクスペリエンスで過去に使われたことがあります。 ダッシュボードの <strong>[Device metadata]</strong> (デバイス メタデータ) で、<strong>[Manage experiences]</strong> (エクスペリエンスの管理) ページを開いてください。 フィルターにモデル ID を入力して、他のエクスペリエンスを検索します。 競合があれば解決してください。</p>
 <p>詳しくは、「<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules" data-raw-source="[Device Metadata Business Rules](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)">デバイス メタデータのビジネス規則</a>」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td><p>A Model ID in this cab is in use by another company and the cab cannot be uploaded. (この cab 内のモデル ID は別の会社によって使われているため、cab をアップロードできません。)  Please verify this Model ID. (このモデル ID を確認してください。)</p></td>
+<td><p>A Model ID in this cab is in use by another company and the cab cannot be uploaded. (この cab 内のモデル ID は別の会社によって使われているため、cab をアップロードできません。) Please verify this Model ID. (このモデル ID を確認してください。)</p></td>
 <td><p>パッケージに追加したモデル ID が、別の会社によって使われています。 別の会社のモデル ID を提出することはできません。 モデル ID のスペルに誤りがないか確認してください。 それでもエラー メッセージが表示される場合は、ダッシュボード サポートにメール (sysdev@microsoft.com) で解決策をお問い合わせください。</p></td>
 </tr>
 <tr class="even">
@@ -146,7 +146,7 @@ ms.locfileid: "57348959"
 <p>詳しくは、「<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules" data-raw-source="[Device Metadata Business Rules](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)">デバイス メタデータのビジネス規則</a>」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>All device metadata .cab files in an experience must support the same Hardware IDs. (1 つのエクスペリエンスに含まれるすべてのデバイス メタデータ .cab ファイルは、同じハードウェア ID をサポートする必要があります。)  Please correct the .cab. (.cab を修正してください。)</p></td>
+<td><p>All device metadata .cab files in an experience must support the same Hardware IDs. (1 つのエクスペリエンスに含まれるすべてのデバイス メタデータ .cab ファイルは、同じハードウェア ID をサポートする必要があります。) Please correct the .cab. (.cab を修正してください。)</p></td>
 <td><p>このパッケージのモデル ID のリストが、エクスペリエンス内の他のパッケージのモデル ID のリストと一致しません。 パッケージ内のモデル ID のリストを修正してから、もう一度パッケージをアップロードしてください。</p>
 <p>詳しくは、「<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules" data-raw-source="[Device Metadata Business Rules](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)">デバイス メタデータのビジネス規則</a>」をご覧ください。</p></td>
 </tr>
@@ -351,7 +351,7 @@ ms.locfileid: "57348959"
 <td><p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>The cab Friendly Name is not unique to the Experience. (cab のフレンドリ名がエクスペリエンスに対して一意ではありません。)  Please choose another name. (別の名前を選んでください。)</p></td>
+<td><p>The cab Friendly Name is not unique to the Experience. (cab のフレンドリ名がエクスペリエンスに対して一意ではありません。) Please choose another name. (別の名前を選んでください。)</p></td>
 <td><p>エクスペリエンスに新しいフレンドリ名を付けて、もう一度提出してください。</p></td>
 </tr>
 <tr class="odd">
@@ -463,7 +463,7 @@ ms.locfileid: "57348959"
 <p>携帯電話には、Windows 7 のロゴ提出が少なくとも 1 つ必要です。</p></td>
 </tr>
 <tr class="odd">
-<td><p>You already have a preview submission for this Operating System Version. (このオペレーティング システム バージョンには既にプレビュー提出が存在します。)  Remove the current Live submission. (現在のライブ提出を削除してください。)</p></td>
+<td><p>You already have a preview submission for this Operating System Version. (このオペレーティング システム バージョンには既にプレビュー提出が存在します。) Remove the current Live submission. (現在のライブ提出を削除してください。)</p></td>
 <td><p>昇格しようとしているロケールのプレビュー パッケージには、既にリリース パッケージが存在します。</p>
 <p>このプレビュー パッケージを昇格する場合は、まずリリース パッケージを削除してから再試行してください。</p></td>
 </tr>
@@ -476,7 +476,7 @@ ms.locfileid: "57348959"
 <td><p>詳しくは、<a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft Device Experience Development Kit</a> に関するページをご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td><p>Your submission is blocked due to a Dashboard error. (ダッシュボードのエラーが原因で提出がブロックされています。)  Please email Dashboard Support at sysdev@microsoft.com for a resolution. (ダッシュボード サポートにメール (sysdev@microsoft.com) で解決策をお問い合わせください。)</p></td>
+<td><p>Your submission is blocked due to a Dashboard error. (ダッシュボードのエラーが原因で提出がブロックされています。) Please email Dashboard Support at sysdev@microsoft.com for a resolution. (ダッシュボード サポートにメール (sysdev@microsoft.com) で解決策をお問い合わせください。)</p></td>
 <td><p>sysdev@microsoft.com のメール ダッシュボード サポート。</p></td>
 </tr>
 </tbody>

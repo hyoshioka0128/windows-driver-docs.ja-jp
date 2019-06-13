@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15707af8315979b394f9958d720adff480591651
-ms.sourcegitcommit: a58b4859254a651502e4329a6e521fe0fa11c7f2
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56519013"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337307"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>一般リリースのためのカーネル ドライバーへの構成証明署名
 
@@ -200,10 +200,10 @@ C:\Echo> SignTool verify /pa /ph /v /d Echo.Sys
 ```
 
 4. ドライバーの EKU を確認するには、次の手順を実行します。
-a.  エクスプローラーを開き、バイナリ ファイルを探します。 そのファイルを右クリックし、**[プロパティ]** を選びます。
-b.  **[デジタル署名]** タブの [署名の一覧] で、示されている項目を選びます。
-c. **[詳細]** ボタンを選び、**[証明書の表示]** を選びます。
-d. **[詳細]** タブで、**[拡張キー使用法]** フィールドを選びます。
+a. エクスプローラーを開き、バイナリ ファイルを探します。 そのファイルを右クリックし、 **[プロパティ]** を選びます。
+b. **[デジタル署名]** タブの [署名の一覧] で、示されている項目を選びます。
+c. **[詳細]** ボタンを選び、 **[証明書の表示]** を選びます。
+d. **[詳細]** タブで、 **[拡張キー使用法]** フィールドを選びます。
 ダッシュ ボードでドライバーが再署名される場合は、次のプロセスが実行されます。
 
 - Microsoft SHA2 埋め込み署名を追加します。

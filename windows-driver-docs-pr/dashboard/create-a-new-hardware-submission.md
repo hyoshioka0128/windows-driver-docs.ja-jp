@@ -6,15 +6,15 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 577e467d1248a0b8e734136e63c65b6645792e2c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463820"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337319"
 ---
 # <a name="create-a-new-hardware-submission"></a>新しいハードウェア申請の作成
 
-Windows 10 用の Windows ハードウェア互換性プログラム (または以前のオペレーティング システム用の個別の認定プログラム) に対してハードウェアを準備するには、**.hlkx** ファイル (Windows 10 用) または **.hckx** ファイル (以前のオペレーティング システム用) を作成して提出する必要があります。 このファイルは、Windows HLK Studio (または以前のオペレーティング システムの場合は、Windows HCK Studio) を使って作成され、該当する製品に関するすべてのテスト結果、ドライバー、シンボルが格納されます。 このファイルを提出することによって、ダッシュボードからテスト結果を確認し、テストされたドライバーを評価し、Microsoft のデジタル署名済みのカタログ ファイルを返すことができます。
+Windows 10 用の Windows ハードウェア互換性プログラム (または以前のオペレーティング システム用の個別の認定プログラム) に対してハードウェアを準備するには、 **.hlkx** ファイル (Windows 10 用) または **.hckx** ファイル (以前のオペレーティング システム用) を作成して提出する必要があります。 このファイルは、Windows HLK Studio (または以前のオペレーティング システムの場合は、Windows HCK Studio) を使って作成され、該当する製品に関するすべてのテスト結果、ドライバー、シンボルが格納されます。 このファイルを提出することによって、ダッシュボードからテスト結果を確認し、テストされたドライバーを評価し、Microsoft のデジタル署名済みのカタログ ファイルを返すことができます。
 
 ## <a name="to-create-a-submission-file"></a>提出ファイルを作成するには
 
@@ -24,7 +24,7 @@ Windows 10 用の Windows ハードウェア互換性プログラム (または�
 
 ## <a name="to-submit-a-file"></a>ファイルを提出するには
 
-1. パートナー センターにサインインし、**[Submit new hardware]\(新しいハードウェアの申請\)** を選択します。 これにより、提出を作成するためのウィザードが読み込まれます。
+1. パートナー センターにサインインし、 **[Submit new hardware]\(新しいハードウェアの申請\)** を選択します。 これにより、提出を作成するためのウィザードが読み込まれます。
 
 2. **[Packages and signing properties]** (パッケージと署名プロパティ) セクションで、ドライバー提出の名前を選びます。 この名前は、ドライバー提出の検索と整理に使うことができます。 注:別の会社とドライバーを共有する場合、この名前が表示されます。
 

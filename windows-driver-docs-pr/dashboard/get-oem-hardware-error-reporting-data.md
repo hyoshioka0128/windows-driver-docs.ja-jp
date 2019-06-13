@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dfc92087338ba6c94fb37d26bbda460e4568eed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518871"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334973"
 ---
 # <a name="get-oem-hardware-error-reporting-data"></a>OEM ハードウェア エラー報告データを取得する
 

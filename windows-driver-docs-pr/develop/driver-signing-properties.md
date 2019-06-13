@@ -5,23 +5,23 @@ description: ''
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa3d8b39490757d3ec01d31670cca8a322f4894d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518606"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63391515"
 ---
 # <a name="driver-signing-properties"></a>ドライバーの署名のプロパティ
 
-ソリューション エクスプローラーでプロジェクトを選択すると、**[Driver Signing (ドライバーの署名)]** ノードの **[プロパティ]** ダイアログに 2 つのプロパティ セクションが表示されます。
+ソリューション エクスプローラーでプロジェクトを選択すると、 **[Driver Signing (ドライバーの署名)]** ノードの **[プロパティ]** ダイアログに 2 つのプロパティ セクションが表示されます。
 
 ## <a name="span-idundergeneralspanspan-idundergeneralspanspan-idundergeneralspanunder-general"></a><span id="Under_General_"></span><span id="under_general_"></span><span id="UNDER_GENERAL_"></span>General (全般):
 
 
 **Sign Mode (署名モード)**
 
--   **[Test Sign]** (テスト署名): Microsoft Visual Studio で、**[Test Certificate]** (テスト証明書) で指定されたテスト証明書を使ってドライバーに署名する必要があります (既定)。 **[Test Certificate]** (テスト証明書) で証明書が指定されていない場合は、ドライバー用に証明書が作成されます。 **注意**:Windows では、すべての 64 ビット ドライバーに署名が必要です。
--   **[Production Sign (実稼働署名)]** - Visual Studio で、**[Production Certificate (実稼働証明書)]** で指定された実稼働証明書を使ってドライバーに署名する必要があります。
+-   **[Test Sign]** (テスト署名): Microsoft Visual Studio で、 **[Test Certificate]** (テスト証明書) で指定されたテスト証明書を使ってドライバーに署名する必要があります (既定)。 **[Test Certificate]** (テスト証明書) で証明書が指定されていない場合は、ドライバー用に証明書が作成されます。 **注意**:Windows では、すべての 64 ビット ドライバーに署名が必要です。
+-   **[Production Sign (実稼働署名)]** - Visual Studio で、 **[Production Certificate (実稼働証明書)]** で指定された実稼働証明書を使ってドライバーに署名する必要があります。
 -   **[オフ]** - Visual Studio で、証明書を使ってドライバーに署名できません。
 
 **Test Certificate (テスト証明書)**

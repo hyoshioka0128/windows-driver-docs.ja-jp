@@ -5,11 +5,11 @@ description: テストを開始するタイミング。 ドライバーの要件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 796024d610c2b67aa9dc3e97a28cf6e85fea6c91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518941"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63378626"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>開発中のドライバーのテストに関するヒント
 
@@ -34,7 +34,7 @@ ms.locfileid: "56518941"
 
 -   [ChkINF](https://msdn.microsoft.com/Library/Windows/Hardware/Ff543461) ツールを使って INF ファイルの構造と構文を確認し、INF ファイルとその他のインストール関連の問題の診断に役立てます。
 
--   [  **Inf2Cat**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547089) ツールを (**/nocat** オプションを指定して) 使用し、追加の INF ファイルの確認を行います。 **Inf2Cat** を使うと、INF で参照されているファイルが存在し、INF が想定するパッケージ ディレクトリに配置されていることを確認できます。
+-   [  **Inf2Cat**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547089) ツールを ( **/nocat** オプションを指定して) 使用し、追加の INF ファイルの確認を行います。 **Inf2Cat** を使うと、INF で参照されているファイルが存在し、INF が想定するパッケージ ディレクトリに配置されていることを確認できます。
 
 -   「[開発とテストにおけるドライバーの署名](https://msdn.microsoft.com/Library/Windows/Hardware/Ff552264)」の説明に従って、ドライバーのインストールとテストを容易にするためドライバーに署名します。
 
@@ -42,7 +42,7 @@ ms.locfileid: "56518941"
 
 -   デバイス マネージャーを使ってドライバーとデバイスに関するシステム情報を確認し、SetupAPI ログを参照して、[デバイス インストールの問題のトラブルシューティング](https://msdn.microsoft.com/Library/Windows/Hardware/Ff553489)を行います。 SetupAPI ログには、デバイスまたはドライバーのインストール中に実行された一連の操作に関する情報が含まれています。
 
-    Visual Studio と WDK を使って、ドライバーのテスト コンピューターへの展開時にドライバー パッケージのインストールのテストとトラブルシューティングを行うことができます。「[テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)」をご覧ください。 [ドライバー パッケージ プロジェクトの展開プロパティ](deployment-properties-for-driver-projects.md)から、**[Install and Verify] (インストールと確認)** オプションを選択します。 このオプションを選択して、**[Default Driver Package Installation Task (possible reboot) (既定のドライバー パッケージ インストール タスク (再起動の可能性あり))]** または **[Default Printer Driver Package Installation Task (possible reboot) (既定のプリンター ドライバー パッケージ インストール タスク (再起動の可能性あり))]** を指定すると、テストはドライバーの INF ファイルを読み取って、ドライバーをインストールします。 次に、ドライバーが起動して動作していることを確認します。 テストが完了すると、インストール タスクの成功/失敗に関する詳細情報が提供されます。 結果は、**[Driver Test Group Explorer (ドライバー テスト グループ エクスプローラー)]** の [Driver Test Groups (ドライバー テスト グループ)] &gt; [Driver Installation (ドライバーのインストール)] に表示されます。 タスク名は、**[Default Driver Package Installation Task (既定のドライバー パッケージ インストール タスク)]** です。
+    Visual Studio と WDK を使って、ドライバーのテスト コンピューターへの展開時にドライバー パッケージのインストールのテストとトラブルシューティングを行うことができます。「[テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)」をご覧ください。 [ドライバー パッケージ プロジェクトの展開プロパティ](deployment-properties-for-driver-projects.md)から、 **[Install and Verify] (インストールと確認)** オプションを選択します。 このオプションを選択して、 **[Default Driver Package Installation Task (possible reboot) (既定のドライバー パッケージ インストール タスク (再起動の可能性あり))]** または **[Default Printer Driver Package Installation Task (possible reboot) (既定のプリンター ドライバー パッケージ インストール タスク (再起動の可能性あり))]** を指定すると、テストはドライバーの INF ファイルを読み取って、ドライバーをインストールします。 次に、ドライバーが起動して動作していることを確認します。 テストが完了すると、インストール タスクの成功/失敗に関する詳細情報が提供されます。 結果は、 **[Driver Test Group Explorer (ドライバー テスト グループ エクスプローラー)]** の [Driver Test Groups (ドライバー テスト グループ)] &gt; [Driver Installation (ドライバーのインストール)] に表示されます。 タスク名は、 **[Default Driver Package Installation Task (既定のドライバー パッケージ インストール タスク)]** です。
 
 **実行時にドライバーをテストするには:**
 

@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fe5d3951ff1d8cc17020dab8ae9a52ad0558c98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518862"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334905"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>PC デバイス マニフェスト パッケージの提出
 
@@ -28,7 +28,7 @@ ms.locfileid: "56518862"
 
 3.  **[Device metadata]** (デバイス メタデータ) で、新しいエクスペリエンスを申請する場合は **[Create experience]** (エクスペリエンスの作成)、既にあるエクスペリエンスを変更する場合は **[Manage experience]** (エクスペリエンスの管理) をクリックします。
 
-4.  新しい devicemanifest-ms パッケージを参照して選び、**[Submit]** (送信) をクリックします。
+4.  新しい devicemanifest-ms パッケージを参照して選び、 **[Submit]** (送信) をクリックします。
 
 ## <a name="span-idcreatingadevicemanifestsubmissionpackagespanspan-idcreatingadevicemanifestsubmissionpackagespanspan-idcreatingadevicemanifestsubmissionpackagespancreating-a-device-manifest-submission-package"></a><span id="Creating_a_Device_Manifest_Submission_Package"></span><span id="creating_a_device_manifest_submission_package"></span><span id="CREATING_A_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>デバイス マニフェスト サブミッション パッケージの作成
 

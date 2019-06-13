@@ -5,10 +5,10 @@ description: Windows 8 用 WDK には、Device Fundamental テストと呼ば�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20842ec8fd3dd48672fe9ea1f7301739c36d00aa
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "57349145"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>Device Fundamental テストを選んで構成する方法
@@ -18,7 +18,7 @@ Windows 8 用 WDK には、Device Fundamental テストと呼ばれる一連の
 ## <a name="span-idgettingthemostfromthedevicefundamentalstestsspanspan-idgettingthemostfromthedevicefundamentalstestsspanspan-idgettingthemostfromthedevicefundamentalstestsspangetting-the-most-from-the-device-fundamentals-tests"></a><span id="Getting_the_most_from_the_Device_Fundamentals_tests"></span><span id="getting_the_most_from_the_device_fundamentals_tests"></span><span id="GETTING_THE_MOST_FROM_THE_DEVICE_FUNDAMENTALS_TESTS"></span>Device Fundamental テストの有効活用
 
 
-Device Fundamental テストを最大限に有効活用するには、デバイスが既定の I/O プラグインでサポートされている必要があります。デバイスの種類がサポートされているかどうかと、テストに固有の要件があるかどうかを確認するには、「[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/Library/Windows/Hardware/Hh781398)」をご覧ください。Device Fundamental テストには、デバイスがサポートされているかどうかの確認テストに使うことができるユーティリティも含まれています。 デバイスがサポートされていない場合は、WDTF シンプル I/O プラグインを  Visual Studio で作ることができます。 詳しくは、「[WDTF シンプル I/O アクション プラグインを使ってデバイスの I/O をカスタマイズする方法](https://msdn.microsoft.com/Library/Windows/Hardware/Hh706277)」をご覧ください。
+Device Fundamental テストを最大限に有効活用するには、デバイスが既定の I/O プラグインでサポートされている必要があります。デバイスの種類がサポートされているかどうかと、テストに固有の要件があるかどうかを確認するには、「[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/Library/Windows/Hardware/Hh781398)」をご覧ください。Device Fundamental テストには、デバイスがサポートされているかどうかの確認テストに使うことができるユーティリティも含まれています。 デバイスがサポートされていない場合は、WDTF シンプル I/O プラグインを Visual Studio で作ることができます。 詳しくは、「[WDTF シンプル I/O アクション プラグインを使ってデバイスの I/O をカスタマイズする方法](https://msdn.microsoft.com/Library/Windows/Hardware/Hh706277)」をご覧ください。
 
 ## <a name="span-idaboutthedevicefundamentalstestsspanspan-idaboutthedevicefundamentalstestsspanspan-idaboutthedevicefundamentalstestsspanabout-the-device-fundamentals-tests"></a><span id="About_the_Device_Fundamentals_Tests"></span><span id="about_the_device_fundamentals_tests"></span><span id="ABOUT_THE_DEVICE_FUNDAMENTALS_TESTS"></span>Device Fundamental テストについて
 

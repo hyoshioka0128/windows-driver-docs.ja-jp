@@ -7,11 +7,11 @@ ms.date: 03/17/2017
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f48fcef5294e075858c62288c287a451f95fff0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518857"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335044"
 ---
 # <a name="download-the-cab-file-for-an-oem-hardware-error"></a>OEM ハードウェア エラーの CAB ファイルをダウンロードする
 

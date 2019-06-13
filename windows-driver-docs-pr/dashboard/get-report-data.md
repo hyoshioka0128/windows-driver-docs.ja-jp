@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 09/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b3398095214950fe214ac72229330e1c575e980
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518996"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337184"
 ---
 # <a name="get-report-data"></a>レポート データの取得
 

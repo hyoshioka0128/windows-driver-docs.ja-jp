@@ -5,11 +5,11 @@ ms.assetid: B08994F9-9E60-4C49-BD5C-F5C128075D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6adf04958f07f0ed460c07a0c9c71091f23f54b4
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349905"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371364"
 ---
 # <a name="do-you-need-to-write-a-driver"></a>ドライバーの作成の必要性
 
@@ -144,7 +144,7 @@ Microsoft Windows には、さまざまなデバイスの種類に対応する�
 <td align="left"><p>WPD: メディア転送プロトコル クラス ドライバー</p></td>
 <td align="left"><p>WpdMtpDr.dll、WpdMtp.dll、WpdMtpUs.dll、WpdConns.dll、WpdUsb.sys</p></td>
 <td align="left"><p>Windows Vista 以降</p></td>
-<td align="left"><p>Microsoft は、メディア転送プロトコル クラス ドライバーを通じて、Windows との接続が必要となるポータブル デバイスをサポートしています。このようなデバイスには、音楽プレーヤー、デジタル カメラ、携帯電話、健康管理デバイスなどがあります。 このクラス ドライバーを使うベンダーは、デバイスに MTP クラス プロトコルを実装する必要があります  (デジタル スチル カメラの場合、MTP の実装は PTP との下位互換性を保つ必要があります)。詳しくは、「<a href="https://msdn.microsoft.com/library/windows/hardware/ff597573" data-raw-source="[Guidance for the Hardware Vendor](https://msdn.microsoft.com/library/windows/hardware/ff597573)">Guidance for the Hardware Vendor (ハードウェア ベンダー向けのガイダンス)</a>」をご覧ください。</p></td>
+<td align="left"><p>Microsoft は、メディア転送プロトコル クラス ドライバーを通じて、Windows との接続が必要となるポータブル デバイスをサポートしています。このようなデバイスには、音楽プレーヤー、デジタル カメラ、携帯電話、健康管理デバイスなどがあります。 このクラス ドライバーを使うベンダーは、デバイスに MTP クラス プロトコルを実装する必要があります (デジタル スチル カメラの場合、MTP の実装は PTP との下位互換性を保つ必要があります)。詳しくは、「<a href="https://msdn.microsoft.com/library/windows/hardware/ff597573" data-raw-source="[Guidance for the Hardware Vendor](https://msdn.microsoft.com/library/windows/hardware/ff597573)">Guidance for the Hardware Vendor (ハードウェア ベンダー向けのガイダンス)</a>」をご覧ください。</p></td>
 </tr>
 </tbody>
 </table>

@@ -5,11 +5,11 @@ description: コード分析ツールと検証ツールは、ソース コード
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b5de3389a80e5b9bd7c445164d519360fc7f424
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518590"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64368660"
 ---
 # <a name="analyzing-a-driver-using-code-analysis-and-verification-tools"></a>コード分析ツールと検証ツールを使ったドライバーの分析
 
@@ -37,7 +37,7 @@ Visual Studio のコード分析ツールについて詳しくは、以下のト
 ## <a name="span-idstaticdriververifierspanspan-idstaticdriververifierspanspan-idstaticdriververifierspanstatic-driver-verifier"></a><span id="Static_Driver_Verifier"></span><span id="static_driver_verifier"></span><span id="STATIC_DRIVER_VERIFIER"></span>静的ドライバー検証ツール
 
 
-静的ドライバー検証ツール (SDV) は、Windows カーネル モード ドライバーのソース コードを体系的に分析する、静的な検証ツールです。 SDV は、ドライバーが Windows オペレーティング システム カーネルと正しく情報をやり取りしているかどうかを調べます。 SDV の起動は、Visual Studio の **[ドライバー]** メニューから行うか、**[Visual Studio コマンド プロンプト]** ウィンドウから行います。
+静的ドライバー検証ツール (SDV) は、Windows カーネル モード ドライバーのソース コードを体系的に分析する、静的な検証ツールです。 SDV は、ドライバーが Windows オペレーティング システム カーネルと正しく情報をやり取りしているかどうかを調べます。 SDV の起動は、Visual Studio の **[ドライバー]** メニューから行うか、 **[Visual Studio コマンド プロンプト]** ウィンドウから行います。
 
 **用途:** 静的ドライバー検証ツールは、開発サイクルの初期に、正しくコンパイルされたドライバーに対して実行します。 また、テスト サイクルを始める前に実行します。
 

@@ -6,11 +6,11 @@ ms.author: shganesh
 ms.date: 09/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1a9e9acd4d39e4940872d8bbf425e848e54a59
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463946"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337143"
 ---
 # <a name="manage-report-templates-and-scheduled-reports"></a>レポート テンプレートとスケジュールされたレポートを管理する
 

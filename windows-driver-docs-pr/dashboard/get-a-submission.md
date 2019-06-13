@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d65e4bae3389d86051a2ee9f80c5043716ddac9
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66813570"
 ---
 # <a name="get-a-submission"></a>申請の取得

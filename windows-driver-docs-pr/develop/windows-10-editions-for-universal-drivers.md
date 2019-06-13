@@ -5,11 +5,11 @@ description: Microsoft ドライバー リファレンス ページの下部に�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf53562619c2fff7f444a36373553cc7f5b6b70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518906"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344037"
 ---
 # <a name="target-platform-on-driver-reference-pages"></a>ドライバー リファレンス ページでのターゲット プラットフォーム
 

@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 234f587de393dad428b14041e3d25a55e56979cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518861"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334921"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>バルク メタデータ パッケージの提出
 
@@ -26,7 +26,7 @@ ms.locfileid: "56518861"
 
 3.  **[Device metadata]** (デバイス メタデータ) で **[Create bulk submission]** (一括申請の作成) をクリックします。
 
-4.  新しいバルク メタデータ パッケージを参照して選び、**[Submit]** (送信) をクリックします。
+4.  新しいバルク メタデータ パッケージを参照して選び、 **[Submit]** (送信) をクリックします。
 
 ## <a name="span-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespancreating-a-bulk-submission-package"></a><span id="Creating_a_Bulk_Submission_Package"></span><span id="creating_a_bulk_submission_package"></span><span id="CREATING_A_BULK_SUBMISSION_PACKAGE"></span>バルク メタデータ サブミッション パッケージの作成
 

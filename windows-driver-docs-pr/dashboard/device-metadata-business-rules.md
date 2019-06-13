@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fd3cefa63d4bb457dec2c6330d9998eb38db0ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518702"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335039"
 ---
 # <a name="device-metadata-business-rules"></a>デバイス メタデータのビジネス規則
 
@@ -226,7 +226,7 @@ PC メタデータ パッケージを提出する方法については、「[PC 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-- [デバイス メタデータ エクスペリエンスを作成する](https://msdn.microsoft.com/library/windows/hardware/br230794.aspx)
+- [デバイス メタデータ エクスペリエンスの作成](https://msdn.microsoft.com/library/windows/hardware/br230794.aspx)
 
 - [デバイス メタデータ エクスペリエンスを管理する](https://msdn.microsoft.com/library/windows/hardware/br230797.aspx)
 

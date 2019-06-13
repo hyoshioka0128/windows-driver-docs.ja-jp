@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 09/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 37aadceb87ad2d3aaf183ce23efe848590df1894
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518688"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335110"
 ---
 # <a name="enable-secure-data-sharing"></a>セキュリティ保護されたデータ共有を有効にする
 

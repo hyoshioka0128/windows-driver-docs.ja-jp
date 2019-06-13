@@ -7,11 +7,11 @@ ms.date: 08/28/2018
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c252ef1f79a868a1ceb8e5668181e727b0cc6bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518993"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337230"
 ---
 # <a name="get-details-for-a-windows-10-driver-error"></a>Windows 10 のドライバー エラーに関する詳細を取得する
 

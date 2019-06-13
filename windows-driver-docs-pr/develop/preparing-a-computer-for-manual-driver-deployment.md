@@ -5,11 +5,11 @@ description: ドライバーを手動で展開する前に、ターゲット コ
 ms.date: 06/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 05e6555eac639bd53677f12d393404b156200a42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518834"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63378466"
 ---
 # <a name="preparing-a-computer-for-manual-driver-deployment"></a>コンピューターの手動ドライバー展開の準備
 
@@ -21,7 +21,7 @@ ms.locfileid: "56518834"
 2.  ターゲット コンピューター上のフォルダー (例: c:\\Tools) に、[DevCon](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon) ツールをコピーします。 DevCon ツールは、Windows Driver Kit (WDK) に含まれています。 Tools ディレクトリにあります (例: C:\\Program Files (x86)\\Windows Kits\\10\\Tools\\x64\\devcon.exe)。
 3.  ターゲット コンピューターにインストールできる証明書 (.cer) ファイルを作成または取得します。 たとえば、WDK サンプル ドライバーのいずれかをビルドすると、ビルド プロセスで証明書 (.cer) ファイルが作成されます。 証明書ファイルの場所は、指定した構成とプラットフォームによって異なります。 たとえば、構成が Win7 デバッグでプラットフォームが x64 の場合、証明書ファイルは C++\\x64\\Win7Debug 内のソリューション フォルダーにあります。
 4.  ターゲット コンピューター上のフォルダー (例: c:\\Certificates) に証明書ファイルをコピーします。
-5.  ターゲット コンピューターで、証明書ファイルを右クリックし、**[インストール]** をクリックします。 インストール ウィザードを完了します。
+5.  ターゲット コンピューターで、証明書ファイルを右クリックし、 **[インストール]** をクリックします。 インストール ウィザードを完了します。
 
 WDK ドライバー サンプルのいずれかをビルドすると、ビルド プロセスでテスト署名証明書が作られます。 テスト署名証明書をインストールする必要があるのは 1 回だけです。 WDK ドライバー サンプルから証明書をインストールすると、証明書をもう一度インストールしなくても他のドライバー サンプルをインストールできます。
 

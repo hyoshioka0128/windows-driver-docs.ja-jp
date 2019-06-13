@@ -5,11 +5,11 @@ description: ドライバー検証ツールは、ドライバーのテストの�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea9673f00161fd2b6f0e2711e4649afa8e45f036
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518654"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63391519"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトのドライバーの検証ツール プロパティ
 
@@ -20,8 +20,8 @@ ms.locfileid: "56518654"
 ## <a name="span-idsettingdriververifierpropertiesfordriverpackageprojectsspanspan-idsettingdriververifierpropertiesfordriverpackageprojectsspanspan-idsettingdriververifierpropertiesfordriverpackageprojectsspansetting-driver-verifier-properties-for-driver-package-projects"></a><span id="Setting_Driver_Verifier_properties_for_driver_package_projects"></span><span id="setting_driver_verifier_properties_for_driver_package_projects"></span><span id="SETTING_DRIVER_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>ドライバー パッケージ プロジェクトのドライバー検証ツール プロパティの設定
 
 
-1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、**[プロパティ]** をクリックします。
-2.  ドライバー パッケージのプロパティ ページで、**[構成プロパティ]**、**[Driver Install]** (ドライバーのインストール)、**[Driver Verification]** (ドライバーの検証) の順にクリックします。
+1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、 **[プロパティ]** をクリックします。
+2.  ドライバー パッケージのプロパティ ページで、 **[構成プロパティ]** 、 **[Driver Install]** (ドライバーのインストール)、 **[Driver Verification]** (ドライバーの検証) の順にクリックします。
 3.  **[Enable Driver Verification]** (ドライバーの検証を有効にする) をオンにします。 このオプションがオンになっている場合は、テスト コンピューターで検証するドライバーと使用する[ドライバー検証ツール](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)を選ぶことができます。
 
 ## <a name="span-idprojectconfigurationandplatformspanspan-idprojectconfigurationandplatformspanspan-idprojectconfigurationandplatformspanproject-configuration-and-platform"></a><span id="Project_Configuration_and_Platform"></span><span id="project_configuration_and_platform"></span><span id="PROJECT_CONFIGURATION_AND_PLATFORM"></span>プロジェクト構成とプラットフォーム

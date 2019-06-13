@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71e176d4a0e6238885e1659df95b75c7d54fca60
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560591"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334978"
 ---
 # <a name="dashboard-id-definitions"></a>ダッシュボード ID 定義
 

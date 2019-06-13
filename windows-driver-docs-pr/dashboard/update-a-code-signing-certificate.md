@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11d35f1f576671440568259c0f0c42a886dd4f20
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560599"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337092"
 ---
 # <a name="add-or-update-a-code-signing-certificate"></a>コード署名証明書の追加または更新
 
@@ -24,7 +24,7 @@ ms.locfileid: "57560599"
 > パートナー センターのすべての申請パッケージ用にアップロードおよび使用される証明書について、以下の変更が実施されました。
 >
 > * 拡張検証 (EV) コード署名証明書は、**すべて**の申請に必要です。  
-> * すべての証明書は SHA2 である必要があり、**/fd sha256** signtool コマンド ライン スイッチを使用して署名される必要があります
+> * すべての証明書は SHA2 である必要があり、 **/fd sha256** signtool コマンド ライン スイッチを使用して署名される必要があります
 > * (詳しくは、[HLK ブログの投稿](https://blogs.msdn.microsoft.com/windows_hardware_certification/2017/11/13/starting-in-february-2018-packages-signed-using-a-sha-1-digest-algorithm-and-certificate-chain-will-no-longer-be-accepted/)をご覧ください)。
 
 ## <a name="to-add-or-update-a-code-signing-certificate"></a>コード署名証明書を追加または更新するには
@@ -43,9 +43,9 @@ ms.locfileid: "57560599"
 
 2. **管理者**がサインインしたら、こちらのダイレクト リンクから[ファイルに署名してアップロード](https://partner.microsoft.com/dashboard/account/CertificateUpload)するか、これらの手順に従って手動でページに移動できます。
 
-3. 右上にある歯車アイコンをクリックし、**[開発者向け設定]** をクリックした後、左側のウィンドウで **[証明書の管理]** をクリックします。
+3. 右上にある歯車アイコンをクリックし、 **[開発者向け設定]** をクリックした後、左側のウィンドウで **[証明書の管理]** をクリックします。
 
-4. **[新しい証明書を追加します]** をクリックして、**[次へ]** ボタンをクリックします。  
+4. **[新しい証明書を追加します]** をクリックして、 **[次へ]** ボタンをクリックします。  
 
 5. Signablefile.bin をダウンロードし、SignTool で **/fd sha256** スイッチと適切な SHA-2 タイムスタンプを使用して、会社の新しいデジタル証明書でファイルに署名します。
 

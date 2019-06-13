@@ -5,11 +5,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: de83c5c7582af5633ace0273748e6663f93b4d55
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560611"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334931"
 ---
 # <a name="working-with-extension-infs-in-the-partner-center"></a>パートナー センターでの拡張 INF の使用
 
@@ -51,7 +51,7 @@ Windows Update に拡張 INF を公開するには、出荷ラベルで自動ド
 
 #### <a name="extension-inf-package"></a>拡張 INF パッケージ
 
-1. 前述の同じ HLK 結果を使用して、**[パッケージ]** > **[ドライバーの置換]** の順に選択します。
+1. 前述の同じ HLK 結果を使用して、 **[パッケージ]**  >  **[ドライバーの置換]** の順に選択します。
 
     ![HLK の [ドライバーの置換] オプションを示す画像](images/hlk-replace-driver.png)
 

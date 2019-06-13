@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9a195461504d55aad971d02e00283d7a0b7ff4ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518984"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337288"
 ---
 # <a name="create-a-new-wlk-device-certification-submission"></a>新しい WLK デバイス認定申請の作成
 
@@ -22,19 +22,19 @@ ms.locfileid: "56518984"
 
 1.  [Windows Logo Kit (WLK)](https://go.microsoft.com/fwlink/p/?LinkId=219237) をダウンロードします。 必ず、認定を受けるそれぞれのオペレーティング システム上で、適切な認定キットを使って対象の (1 つまたは複数の) ドライバーをテストしてください。
 
-2.  Winqual Submission Tool (WST) を開き、**[Add]** (追加) をクリックします。
+2.  Winqual Submission Tool (WST) を開き、 **[Add]** (追加) をクリックします。
 
-3.  **.cpk** ファイル (WLK テスト結果) を参照し、**[Load]** (読み込み) をクリックします。
+3.  **.cpk** ファイル (WLK テスト結果) を参照し、 **[Load]** (読み込み) をクリックします。
 
-4.  デバイスがインボックスではない場合は、**[Driver Package]** (ドライバー パッケージ)、**[Driver Locales]** (ドライバー ロケール)、**[Symbols (optional)]** (シンボル (省略可能)) に、必要な情報を入力します。
+4.  デバイスがインボックスではない場合は、 **[Driver Package]** (ドライバー パッケージ)、 **[Driver Locales]** (ドライバー ロケール)、 **[Symbols (optional)]** (シンボル (省略可能)) に、必要な情報を入力します。
 
 5.  **[Add DTM Results]** (DTM 結果の追加) ダイアログ ボックスを閉じます。
 
-6.  新しいエントリを編集するには、目的のエントリを選び、**[Edit]** (編集) をクリックします。
+6.  新しいエントリを編集するには、目的のエントリを選び、 **[Edit]** (編集) をクリックします。
 
-7.  すべてのエントリを追加したら、**[Create Package]** (パッケージの作成) をクリックして、**.cab** 提出パッケージを作成します。
+7.  すべてのエントリを追加したら、 **[Create Package]** (パッケージの作成) をクリックして、 **.cab** 提出パッケージを作成します。
 
-8.  ツールがエラーを検出すると、パッケージの作成が中止され、エラーが発生したエントリが赤色で強調表示されます。 エラーを表示するには、**[View Errors]** (エラーの表示) をクリックします。 **[Edit]** (編集) をクリックし、ドライバーまたはテスト結果を更新して、エラーを修正します。 パッケージを作成するには、すべてのエラーが修正されている必要があります。
+8.  ツールがエラーを検出すると、パッケージの作成が中止され、エラーが発生したエントリが赤色で強調表示されます。 エラーを表示するには、 **[View Errors]** (エラーの表示) をクリックします。 **[Edit]** (編集) をクリックし、ドライバーまたはテスト結果を更新して、エラーを修正します。 パッケージを作成するには、すべてのエラーが修正されている必要があります。
 
 9.  ツールによって、申請に使われる **WQReady.xml** ファイルが生成されます。
 
@@ -43,7 +43,7 @@ ms.locfileid: "56518984"
 
 ## <a name="submitting-your-file"></a>ファイルの提出
 
-1. パートナー センターにサインインし、**[Submit new hardware]\(新しいハードウェアの申請\)** を選択します。 これにより、提出を作成するためのウィザードが読み込まれます。
+1. パートナー センターにサインインし、 **[Submit new hardware]\(新しいハードウェアの申請\)** を選択します。 これにより、提出を作成するためのウィザードが読み込まれます。
 
 2. **[Packages and signing properties]** (パッケージと署名プロパティ) セクションで、ドライバー提出の名前を選びます。 この名前は、ドライバー提出の検索と整理に使うことができます。
 

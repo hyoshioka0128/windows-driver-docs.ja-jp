@@ -5,11 +5,11 @@ description: ここでは、Version 8.0 の Windows Driver Kit (WDK) を使っ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c4effdc9c3609072ea8f82aab32987889bd2b5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518825"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344096"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-80"></a>コンピューターのプロビジョニングで実行される処理 (WDK 8.0)
 
@@ -48,10 +48,10 @@ ms.locfileid: "56518825"
 
 ターゲット コンピューターをプロビジョニングすると、プロビジョニングを完全に削除することはできなくなります。 ただし、ホスト コンピューター上の Visual Studio を使って、ターゲット コンピューターからほとんどのプロビジョニングを削除できます。 手順は次のとおりです。
 
-1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、**[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
-2.  ターゲット コンピューターの名前を選び、**[Delete computer (コンピューターの削除)]** をクリックします。
+1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、 **[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
+2.  ターゲット コンピューターの名前を選び、 **[Delete computer (コンピューターの削除)]** をクリックします。
 3.  **[Remove provisioning and delete computer]** (プロビジョニングを削除してコンピューターを削除) を選びます。 **[次へ]** をクリックします。
-4.  削除処理が完了したら、**[Finish]** (完了) をクリックします。
+4.  削除処理が完了したら、 **[Finish]** (完了) をクリックします。
 
 ## <a name="span-idwhenyouremoveprovisioningwdk80spanspan-idwhenyouremoveprovisioningwdk80spanwhen-you-remove-provisioning-wdk-80"></a><span id="when_you_remove_provisioning__wdk_8.0_"></span><span id="WHEN_YOU_REMOVE_PROVISIONING__WDK_8.0_"></span>プロビジョニングを削除する場合 (WDK 8.0)
 

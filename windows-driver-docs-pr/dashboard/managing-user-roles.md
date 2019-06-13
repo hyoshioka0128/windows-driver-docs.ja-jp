@@ -6,11 +6,11 @@ description: パートナー センターでのユーザー ロールの管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f931c26adb52405fb6784d201e56e7b33c16438
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560583"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337190"
 ---
 # <a name="managing-user-roles"></a>ユーザー ロールの管理
 
@@ -27,7 +27,7 @@ ms.locfileid: "57560583"
 | 配送先住所ラベルのプロモーター        | ドライバーのプロモーション (自動インストール) が選択されている出荷ラベルを提出する機能を追加します。 このロールには、配送先住所ラベルの所有者ロールが必要です。 このロールを選択した場合、そのユーザーに配送先住所ラベルの所有者ロールも設定する必要があります。 |
 | System Submitter (システム提出者)               | MDA アップグレード テスト結果のアップロードのために、新しいシステムの認定を作成し、新しいデバイス定義を準備できます。 ドライバーの提出や出荷ラベルを変更することはできません。                                                                 |
 
-ユーザーのロールを変更するには、**[アカウント設定]** の [[ユーザーの管理]](https://go.microsoft.com/fwlink/?linkid=833569) セクションに移動します。 検索バーを使用して変更するユーザーを検索し、ユーザー名をクリックします。
+ユーザーのロールを変更するには、 **[アカウント設定]** の [[ユーザーの管理]](https://go.microsoft.com/fwlink/?linkid=833569) セクションに移動します。 検索バーを使用して変更するユーザーを検索し、ユーザー名をクリックします。
 
 ![パートナー センターの [ユーザーの管理] メニューを示す画像](images/manage-users.png)
 

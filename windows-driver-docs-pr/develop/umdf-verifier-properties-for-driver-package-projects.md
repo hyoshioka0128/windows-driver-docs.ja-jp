@@ -5,11 +5,11 @@ description: テスト コンピューター上の UMDF 検証ツールのプロ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9708097e195c7c8da785ae49e45008c20ed0d201
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518752"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344108"
 ---
 # <a name="umdf-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの UMDF 検証ツール プロパティ
 
@@ -22,9 +22,9 @@ UMDF ドライバーのデバッグについて詳しくは、「[UMDF ドライ
 ## <a name="span-idsettingumdfverifierpropertiesfordriverprojectsspanspan-idsettingumdfverifierpropertiesfordriverprojectsspanspan-idsettingumdfverifierpropertiesfordriverprojectsspansetting-umdf-verifier-properties-for-driver-projects"></a><span id="Setting_UMDF_Verifier_properties_for_driver_projects"></span><span id="setting_umdf_verifier_properties_for_driver_projects"></span><span id="SETTING_UMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用の UMDF 検証ツール プロパティの設定
 
 
-1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、**[プロパティ]** をクリックします。
-2.  ドライバー パッケージのプロパティ ページで、**[構成プロパティ]**、**[Driver Install]** (ドライバーのインストール)、**[UMDF Verifier]** (UMDF 検証ツール) の順にクリックします。
-3.  **[Deploy UMDF Verifier] (UMDF 検証ツールを展開する)** オプションを選択します。 このオプションが有効 (**[はい]**) になっていると、UMDF 検証ツールのオプションを選択し、テスト コンピューターで使って、UMDF ドライバーを検証できます。
+1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、 **[プロパティ]** をクリックします。
+2.  ドライバー パッケージのプロパティ ページで、 **[構成プロパティ]** 、 **[Driver Install]** (ドライバーのインストール)、 **[UMDF Verifier]** (UMDF 検証ツール) の順にクリックします。
+3.  **[Deploy UMDF Verifier] (UMDF 検証ツールを展開する)** オプションを選択します。 このオプションが有効 ( **[はい]** ) になっていると、UMDF 検証ツールのオプションを選択し、テスト コンピューターで使って、UMDF ドライバーを検証できます。
 
 <table>
 <colgroup>

@@ -5,11 +5,11 @@ ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8be95023093318da17e9f84a643d181696b879c8
-ms.sourcegitcommit: 132f0c2d827982b808053ecd3b4d137a2883cca1
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "56519010"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344022"
 ---
 # <a name="device-and-driver-technologies"></a>デバイス テクノロジとドライバー テクノロジ
 
@@ -19,7 +19,7 @@ ms.locfileid: "56519010"
 
 ユニバーサル Windows ドライバー (Windows ドライバーで利用できるインターフェイスのサブセットを使用したドライバー) を作成すると、Windows 10 のすべてのエディションでそのドライバーを実行できます。 可能であれば、ユニバーサル Windows ドライバーを使用して、ドライバーを複数のデバイスで展開できるようにしてください。 Windows 10 のユニバーサル Windows ドライバーをビルド、インストール、展開、デバッグする方法については、「[Getting Started with Universal Windows drivers (ユニバーサル Windows ドライバーの概要)](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)」と「[テスト コンピューターへのドライバーの展開](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)」をご覧ください。
 
-## <a name="device-drivers-and-windows10-for-desktop-computers"></a>デスクトップ コンピューター向けデバイス ドライバーと Windows 10
+## <a name="device-drivers-and-windows10-for-desktop-computers"></a>デバイス ドライバーとデスクトップ コンピューター向け Windows 10
 
 デスクトップ ドライバーの開発に使用されるツールについては、[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/
 )と[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-verifying-drivers)に関する記事をご覧ください。 デスクトップの Windows 10 にドライバーを展開する方法について詳しくは、「[ドライバー パッケージの配布](https://docs.microsoft.com/windows-hardware/drivers/develop/distributing-a-driver-package-win8)」をご覧ください。 ドライバー構成のトラブルシューティングについて詳しくは、[ドライバー構成のトラブルシューティング](https://docs.microsoft.com/windows-hardware/drivers/develop/troubleshooting-configuration-of-driver-deployment--testing-and-debugging)に関する記事をご覧ください。

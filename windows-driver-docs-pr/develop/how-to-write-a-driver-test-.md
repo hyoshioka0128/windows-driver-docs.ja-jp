@@ -5,11 +5,11 @@ description: Windows Driver Kit (WDK) for Windows 8 を使って、独自のド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0c0dab836b3efcc02eb65966ace87423c10d7f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518690"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63379878"
 ---
 # <a name="how-to-write-a-driver-test-using-a-driver-test-template"></a>ドライバー テスト テンプレートを使ってドライバー テストを作成する方法
 
@@ -21,7 +21,7 @@ WDK には、C++、C\#、スクリプト (JScript) で Windows ドライバー �
 
 
 1.  **[ファイル]** メニューの **[新規作成] &gt; [プロジェクト]** をクリックします。
-2.  **[新しいプロジェクト]** ダイアログ ボックスのインストール済みのテンプレートの一覧で、**[Visual C++] &gt; [Windows Driver (Windows ドライバー)] &gt; [テスト]** の順に選びます。
+2.  **[新しいプロジェクト]** ダイアログ ボックスのインストール済みのテンプレートの一覧で、 **[Visual C++] &gt; [Windows Driver (Windows ドライバー)] &gt; [テスト]** の順に選びます。
 3.  **[Windows Driver Test in C++ (C++ での Windows ドライバーのテスト)]** を選びます。
 4.  ドライバー テスト プロジェクトの名前と場所を指定します (または既定値を使います)。
 5.  **[Windows Driver Test] (Windows ドライバーのテスト)** ダイアログ ボックスで、含めるテスト ケースか、空のドライバー テストを選択します。 テスト ケースについて詳しくは、「[Windows ドライバーのテスト ケース](#windows_driver_test_cases)」をご覧ください。
@@ -32,7 +32,7 @@ WDK には、C++、C\#、スクリプト (JScript) で Windows ドライバー �
 
 
 1.  **[ファイル]** メニューの **[新規作成] &gt; [プロジェクト]** をクリックします。
-2.  **[新しいプロジェクト]** ダイアログ ボックスのインストール済みのテンプレートの一覧で、**[Visual C\#] &gt; [Windows Driver]\(Windows ドライバー\)** の順に選びます。
+2.  **[新しいプロジェクト]** ダイアログ ボックスのインストール済みのテンプレートの一覧で、 **[Visual C\#] &gt; [Windows Driver]\(Windows ドライバー\)** の順に選びます。
 3.  **[Windows Driver Test in C\#]\(C# での Windows ドライバーのテスト\)** を選びます。
 4.  ドライバー テスト プロジェクトの名前と場所を指定します (または既定値を使います)。
 5.  **[Windows Driver Test] (Windows ドライバーのテスト)** ダイアログ ボックスで、含めるテスト ケースか、空のドライバー テストを選択します。 テスト ケースについて詳しくは、「[Windows ドライバーのテスト ケース](#windows_driver_test_cases)」をご覧ください。
@@ -43,7 +43,7 @@ WDK には、C++、C\#、スクリプト (JScript) で Windows ドライバー �
 
 
 1.  **[ファイル]** メニューの **[新規作成] &gt; [プロジェクト]** をクリックします。
-2.  **[新しいプロジェクト]** ダイアログ ボックスのインストール済みのテンプレートの一覧で、**[スクリプト] &gt; [Windows Driver (Windows ドライバー)]** の順に選びます。
+2.  **[新しいプロジェクト]** ダイアログ ボックスのインストール済みのテンプレートの一覧で、 **[スクリプト] &gt; [Windows Driver (Windows ドライバー)]** の順に選びます。
 3.  **[Windows Driver Test Script (Windows ドライバー テスト スクリプト)]** をクリックします。
 4.  ドライバー テスト プロジェクトの名前と場所を指定します (または既定値を使います)。
 5.  **[Windows Driver Test] (Windows ドライバーのテスト)** ダイアログ ボックスで、含めるテスト ケースか、空のドライバー テストを選択します。 テスト ケースについて詳しくは、「[Windows ドライバーのテスト ケース](#windows_driver_test_cases)」をご覧ください。

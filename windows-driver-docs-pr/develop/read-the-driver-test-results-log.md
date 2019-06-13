@@ -5,11 +5,11 @@ description: '[Driver Test Group Explorer (ドライバー テスト グルー�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a6d55cae96aad66fade75d286f82505db45762b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518910"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63378539"
 ---
 # <a name="how-to-read-the-driver-test-results-log"></a>ドライバーのテスト結果ログを読み取る方法
 
@@ -20,7 +20,7 @@ ms.locfileid: "56518910"
 1. **[Driver Test Group Explorer] (ドライバー テスト グループ エクスプローラー)** ウィンドウで、対象のドライバー テスト グループをクリックします。
 2. 特定のテスト実行の結果をクリックします。
 
-   テスト グループの結果は、**Results (**<em>computer</em> **-** <em>date</em>**:**<em>time</em>**)** という名前のフォルダーとして示されます
+   テスト グループの結果は、**Results (** <em>computer</em> **-** <em>date</em> **:** <em>time</em> **)** という名前のフォルダーとして示されます
 
 3. そのテスト実行内のテストの結果が一覧表示されます。 結果ログを表示するテストの名前をクリックします。
 

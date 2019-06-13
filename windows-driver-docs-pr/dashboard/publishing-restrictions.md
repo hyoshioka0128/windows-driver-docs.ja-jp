@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ed716cdc15cfabf29d78a815ed220fa657ba4e
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560585"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334945"
 ---
 # <a name="publishing-restrictions"></a>公開の制限
 
@@ -42,7 +42,7 @@ ms.locfileid: "57560585"
 </tr>
 <tr class="odd">
 <td><p>バス列挙子のない HWID</p></td>
-<td><p>なし</p></td>
+<td><p>該当なし</p></td>
 </tr>
 <tr class="even">
 <td><p>無効なバス列挙子</p></td>
@@ -71,7 +71,7 @@ ms.locfileid: "57560585"
 </tr>
 <tr class="odd">
 <td><p>サービス UUID があり、ベンダー ID または製品 ID がない Bluetooth HWID</p></td>
-<td><p>なし</p></td>
+<td><p>該当なし</p></td>
 </tr>
 <tr class="even">
 <td><p>無効な PCI ベンダー コード</p></td>

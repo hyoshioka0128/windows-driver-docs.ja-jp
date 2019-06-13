@@ -8,10 +8,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: ab6e38dc576599d695e9efdacc267c73a35f909a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "63344137"
 ---
 # <a name="static-driver-verifier-known-issues"></a>静的ドライバー検証ツールの既知の問題
@@ -28,9 +28,9 @@ InterceptedBuild エラーでは、以下の手順を実行して問題を診断
 
 1. Visual Studio 2017 のネイティブ ツール コマンド ラインから、/debug フラグを指定して SDV を再実行します。  コマンドのオプションについて詳しくは、「[Static Driver Verifier commands (静的ドライバー検証ツールのコマンド)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)」をご覧ください。
 
-    a.  最初に、依存しているライブラリ プロジェクトで SDV のライブラリ関数を実行します。  たとえば、`msbuild /p:Configuration=Release /p:Platform=x64 /t:sdv /p:inputs="/lib /debug"` のようになります。
+    a. 最初に、依存しているライブラリ プロジェクトで SDV のライブラリ関数を実行します。  たとえば、`msbuild /p:Configuration=Release /p:Platform=x64 /t:sdv /p:inputs="/lib /debug"` のようになります。
 
-    b.  次に、ドライバー プロジェクト自体で SDV を実行します。  たとえば次のようになります。`msbuild /p:Configuration=Release /p:Platform=x64 /t:sdv /p:inputs="/check /debug"`
+    b. 次に、ドライバー プロジェクト自体で SDV を実行します。  たとえば次のようになります。`msbuild /p:Configuration=Release /p:Platform=x64 /t:sdv /p:inputs="/check /debug"`
 
 2. InterceptedBuild ステージでエラーが再度発生することを確認します。
 
@@ -38,17 +38,17 @@ InterceptedBuild エラーでは、以下の手順を実行して問題を診断
 
 4. `smvcl.log` を開き、"内部コンパイラ エラー" という語句を探します。
 
-    a.  "**内部コンパイラ エラー**" および "**致命的なエラー C1001: コンパイラで内部エラーが発生しました。 (コンパイラ ファイル 'msc1.cpp'、行 1511)**" のような語句が含まれるエラー メッセージが存在する場合、これは Errata (Errata ID 40705) が必要な既知の問題です。 さらにサポートが必要な場合は、<stlogohelp@microsoft.com> にメールでご連絡ください。
+    a. "**内部コンパイラ エラー**" および "**致命的なエラー C1001: コンパイラで内部エラーが発生しました。 (コンパイラ ファイル 'msc1.cpp'、行 1511)** " のような語句が含まれるエラー メッセージが存在する場合、これは Errata (Errata ID 40705) が必要な既知の問題です。 さらにサポートが必要な場合は、<stlogohelp@microsoft.com> にメールでご連絡ください。
 
-    b.  "**内部コンパイラ エラー**" が含まれるエラー メッセージは存在しても、上記のような内容ではない場合は、おそらく Errata は必要ですが、既存の既知の問題ではない可能性があります。  <stlogohelp@microsoft.com> にメールでご連絡ください。
+    b. "**内部コンパイラ エラー**" が含まれるエラー メッセージは存在しても、上記のような内容ではない場合は、おそらく Errata は必要ですが、既存の既知の問題ではない可能性があります。  <stlogohelp@microsoft.com> にメールでご連絡ください。
 
     c. "**内部コンパイラ エラー**" が含まれる行がない場合は、"**エラー**" で始まる任意の行を探します。  Errata が必要な問題が存在するかどうかはわかりません。  <stlogohelp@microsoft.com> にメールでご連絡ください。
 
 5. smvlink1.log を開き、"**内部コンパイラ エラー**" という語句を探します。
 
-    a.  "**内部コンパイラ エラー**" および "**slamcl: error: at phase 2: out of memory (slamcl: エラー: フェーズ 2: メモリ不足)**" が含まれるエラー メッセージが存在する場合、これは Errata が必要な既知の問題です。
+    a. "**内部コンパイラ エラー**" および "**slamcl: error: at phase 2: out of memory (slamcl: エラー: フェーズ 2: メモリ不足)** " が含まれるエラー メッセージが存在する場合、これは Errata が必要な既知の問題です。
 
-    b.  "**内部コンパイラ エラー**" が含まれる行がない場合は、"**エラー**" で始まる任意の行を探します。  Errata が必要な問題が存在するかどうかはわかりません。  <stlogohelp@microsoft.com> にメールでご連絡ください。
+    b. "**内部コンパイラ エラー**" が含まれる行がない場合は、"**エラー**" で始まる任意の行を探します。  Errata が必要な問題が存在するかどうかはわかりません。  <stlogohelp@microsoft.com> にメールでご連絡ください。
 
     c. 上記のいずれにも該当しない場合は、MSFT にサポートを依頼します。
 
@@ -68,9 +68,9 @@ MSFT にサポートを依頼するには、以下を実行してソース コ�
 
 3. 次のファイルを <stlogohelp@microsoft.com> に送信します。
 
-    a.  SDV を実行した出力が含まれるテキスト ファイル
+    a. SDV を実行した出力が含まれるテキスト ファイル
 
-    b.  **smexecute-NormalBuild.log** ファイル
+    b. **smexecute-NormalBuild.log** ファイル
 
     c. **smvexecute-InterceptedBuild.log** ファイル
 
@@ -84,11 +84,11 @@ MSFT にサポートを依頼するには、以下を実行してソース コ�
 
 ## <a name="best-practice-use-visual-studio-2017-version-158"></a>ベスト プラクティス: Visual Studio 2017 バージョン 15.8 を使用します 
 
-既定では、Visual Studio 15.7 でコード分析によってドライバーが自動的にビルドされることはありません。  生成されるバイナリにドライバーが依存している場合、**[出力]** ウィンドウにエラーが表示される可能性があります。  代わりに、バージョン 15.8 を使うことをお勧めします。
+既定では、Visual Studio 15.7 でコード分析によってドライバーが自動的にビルドされることはありません。  生成されるバイナリにドライバーが依存している場合、 **[出力]** ウィンドウにエラーが表示される可能性があります。  代わりに、バージョン 15.8 を使うことをお勧めします。
 
 ## <a name="dvl-generation-failure-after-removing-configuration-from-a-project"></a>プロジェクトから構成を削除した後の DVL 生成失敗
 
-主な現象:[構成マネージャー] ウィンドウでプロジェクトから構成を削除した後、**[Create Driver Verification Log]\(ドライバー検証ツール ログの作成\)** を選択すると、次のメッセージを表示されます。`Please select a driver project. Driver Verification Log cannot be created for the selected platform tool set: 'v100'"`
+主な現象:[構成マネージャー] ウィンドウでプロジェクトから構成を削除した後、 **[Create Driver Verification Log]\(ドライバー検証ツール ログの作成\)** を選択すると、次のメッセージを表示されます。`Please select a driver project. Driver Verification Log cannot be created for the selected platform tool set: 'v100'"`
 
 対応策 : 
 

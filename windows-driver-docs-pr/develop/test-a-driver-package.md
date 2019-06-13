@@ -5,11 +5,11 @@ description: Visual Studio を使ってドライバー パッケージをテス�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfa6656c71d46ada73349f3cf0f5c56d30a425b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518771"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344111"
 ---
 # <a name="how-to-test-a-driver-package"></a>ドライバー パッケージをテストする方法
 
@@ -28,11 +28,11 @@ Visual Studio を使ってドライバー パッケージをテスト コンピ�
 
 テスト コンピューターの構成とプロビジョニングが済んだら、ドライバー パッケージ プロジェクトがテスト コンピューターに自動的に展開およびインストールされるように構成することができます。
 
-1.  ドライバー プロジェクトのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー プロジェクトを右クリックして、**[プロパティ]** をクリックします。
-2.  ドライバーのプロパティ ページで、**[構成プロパティ]**、**[Driver Install] (ドライバーのインストール)**、**[Deployment] (配置)** の順にクリックします。
+1.  ドライバー プロジェクトのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
+2.  ドライバーのプロパティ ページで、 **[構成プロパティ]** 、 **[Driver Install] (ドライバーのインストール)** 、 **[Deployment] (配置)** の順にクリックします。
 3.  **[配置を有効にする]** をオンにします。 詳しくは、「[ドライバー パッケージ プロジェクトの展開プロパティ](deployment-properties-for-driver-projects.md)」をご覧ください。
 4.  **[リモート コンピューター]** として構成したテスト コンピューターを選択します。
-5.  **[Driver Installation Options (ドライバー インストール オプション)]** で、**[Install and Verify (インストールと確認)]** をクリックし、**[Default Driver Installation Task (既定のドライバー インストール タスク)]** をクリックします。
+5.  **[Driver Installation Options (ドライバー インストール オプション)]** で、 **[Install and Verify (インストールと確認)]** をクリックし、 **[Default Driver Installation Task (既定のドライバー インストール タスク)]** をクリックします。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

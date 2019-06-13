@@ -5,11 +5,11 @@ description: ApiValidator.exe ツールを使うと、ドライバーから呼�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78b5827d01525464f5660e863bf48c7a3e66ae21
-ms.sourcegitcommit: 282e17efc5ff5bc4541e277d67567d37aa2d957b
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58563985"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344036"
 ---
 # <a name="validating-universal-windows-drivers"></a>ユニバーサル Windows ドライバーの検証
 
@@ -20,7 +20,7 @@ ApiValidator.exe ツールを使うと、バイナリから呼び出される AP
 
 ドライバー プロジェクトの **[ターゲット プラットフォーム]** プロパティが **[ユニバーサル]** に設定されていれば、Visual Studio はビルド後の手順として自動的に ApiValidator を実行します。
 
-ApiValidator で表示されたメッセージをすべて確認するには、**[ツール] &gt; [オプション] &gt; [プロジェクトおよびソリューション] &gt; [ビルド/実行]** の順に移動して、**[MSBuild プロジェクト ビルドの出力の詳細]** を **[詳細]** に設定します。 コマンド ラインからビルドする場合は、ビルド コマンドに **/v:detailed** スイッチまたは **/v:diag** スイッチを追加すると、詳しい出力を得ることができます。
+ApiValidator で表示されたメッセージをすべて確認するには、 **[ツール] &gt; [オプション] &gt; [プロジェクトおよびソリューション] &gt; [ビルド/実行]** の順に移動して、 **[MSBuild プロジェクト ビルドの出力の詳細]** を **[詳細]** に設定します。 コマンド ラインからビルドする場合は、ビルド コマンドに **/v:detailed** スイッチまたは **/v:diag** スイッチを追加すると、詳しい出力を得ることができます。
 
 umdf2\_fx2 ドライバー サンプルに対して API の検証を実行すると、次のようなエラーが表示されます。
 
@@ -61,12 +61,12 @@ ApiValidation: NOT all binaries are Universal
 
 ## <a name="running-apivalidator-from-the-command-prompt"></a>コマンド プロンプトからの ApiValidator の実行
 
-Apivalidator.exe をコマンド プロンプトで実行することもできます。 WDK のインストールで、C:\\Program Files (x86)\\Windows Kits\\10\\bin\\*&lt;arch&gt;* に移動します。
+Apivalidator.exe をコマンド プロンプトで実行することもできます。 WDK のインストールで、C:\\Program Files (x86)\\Windows Kits\\10\\bin\\ *&lt;arch&gt;* に移動します。
 
 使用する構文は以下のとおりです。
 
-**Apivalidator.exe** **-DriverPackagePath:**_&lt;ドライバー フォルダーのバス&gt;_  
- **-SupportedApiXmlFiles:**_&lt;サポートされるユニバーサル ドライバー用の API を含む XML ファイルのパス&gt;_
+**Apivalidator.exe** **-DriverPackagePath:** _&lt;ドライバー フォルダーのバス&gt;_  
+ **-SupportedApiXmlFiles:** _&lt;サポートされるユニバーサル ドライバー用の API を含む XML ファイルのパス&gt;_
 
 たとえば、WDK のアクティビティ サンプルから呼び出される API を検証するには、まず Visual Studio でサンプルをビルドします。 次に、コマンド プロンプトを開き、ツールが存在するディレクトリ (例: C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x64) に移動します。 次のコマンドを入力します。
 
@@ -88,7 +88,7 @@ ApiValidator.exe: Warning: API QueryPerformanceCounter in kernel32.dll is not su
 ApiValidator.exe Driver located at C:\Program Files (x86)\Windows Kits\10\src\usb\umdf2_fx2\Debug is NOT a Universal Driver
 ```
 
-ユニバーサル Windows ドライバーの有効な API を列挙した XML ファイルは、C:\\Program Files (x86)\\Windows Kits\\10\\build\\universalDDIs\\*&lt;arch&gt;* にあります。
+ユニバーサル Windows ドライバーの有効な API を列挙した XML ファイルは、C:\\Program Files (x86)\\Windows Kits\\10\\build\\universalDDIs\\ *&lt;arch&gt;* にあります。
 
 ## <a name="span-idtroubleshootingspanspan-idtroubleshootingspanspan-idtroubleshootingspantroubleshooting"></a><span id="Troubleshooting"></span><span id="troubleshooting"></span><span id="TROUBLESHOOTING"></span>トラブルシューティング
 
@@ -101,7 +101,7 @@ Error      1              error : AitStatic output file has incorrect format or 
 
 次の回避策を実行します。
 
-1.  プロジェクトのプロパティを開き、**[全般]** に移動して、**[出力ディレクトリ]** の名前を次のように変更します。
+1.  プロジェクトのプロパティを開き、 **[全般]** に移動して、 **[出力ディレクトリ]** の名前を次のように変更します。
 
     ```cpp
     $(SolutionDir)$(Platform)\$(ConfigurationName)\

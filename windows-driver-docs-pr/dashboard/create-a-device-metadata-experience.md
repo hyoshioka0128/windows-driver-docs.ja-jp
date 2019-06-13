@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa44cd33141f2c57e83d430d87a73435d61a3ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518777"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337279"
 ---
 # <a name="create-a-device-metadata-experience"></a>デバイス メタデータ エクスペリエンスの作成
 
@@ -28,7 +28,7 @@ devicemanifest-ms ファイルは .cab ファイルであり、devicemetadata-ms
 
 1. このサービスに関連付けられている Microsoft アカウントを使用して、パートナー センターからダッシュボードにサインインします。
 
-2. ウィンドウの左側で **[Device metadata]** (デバイス メタデータ) をクリックし、**[Create experience]** (エクスペリエンスの作成) をクリックします。
+2. ウィンドウの左側で **[Device metadata]** (デバイス メタデータ) をクリックし、 **[Create experience]** (エクスペリエンスの作成) をクリックします。
 
 3. **[Create experience]** (エクスペリエンスの作成) ページで、次の情報を入力します。
 

@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8681d5544a66298e9e51bb35ffb57f6de68bae48
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66813565"
 ---
 # <a name="get-product-data"></a>製品データの取得
@@ -87,20 +87,20 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 |:--|:--|:--|
 | ID | Long | 製品のプライベート製品 ID |
 | sharedProductId | Long | 製品の共有製品 ID |
-| リンク | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
+| Links | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
 | isCommitted | ブール値 | 製品に少なくとも 1 つのコミットされた申請があるかどうかを示します  |
 | isExtensionInf | ブール値 | (非推奨) 製品が拡張ドライバーかどうかを示します。 このフィールドは非推奨です。今後は使用しないでください。 isExtensionInf は申請レベルのプロパティに移動されました。 |
 | deviceMetadataIds | GUID の配列 | デバイス メタデータの提出をドライバーにマップする GUID |
 | deviceType | String | デバイスの種類を示します。 設定可能な値は、次のとおりです。<ul><li>“internal” - 内部コンポーネント、システムの一部として PC 内部に接続されるデバイス</li><li>“external” - 外部コンポーネント、PC に接続される外部デバイス (周辺機器)</li><li>“internalExternal” - その両方、内部的に (PC 内で) 接続できるほか、外部的にも (周辺機器として) 接続できるデバイス</li><li>“notSet” – データが存在しない</li></ul>|
 | isTestSign | ブール値 | 製品がテスト署名されたドライバーかどうかを示します。 ドライバー パッケージのテスト署名の詳細については、「[WHQL Test Signature Program](https://docs.microsoft.com/windows-hardware/drivers/install/whql-test-signature-program)」(WHQL テスト署名プログラム) を参照してください。  |
-| isFlightSign | ブール値 | 製品がフライト署名されたドライバーかどうかを示します。 フライト署名されたドライバーは、Windows Update を通じて公開できるテスト ドライバーです。 これらは、Windows Insider Program 用にサインアップしているコンピューターにのみ公開/インストールできます。 これらは、セキュア ブートを無効にすることなく、コンピューターにインストールできます。 これらは、Windows Insider Program に含まれない小売向けコンピューターにはインストールできません。|
+| isFlightSign | ブール値 | 製品がフライト署名されたドライバーかどうかを示します。 フライト署名されたドライバーは、Windows Update を通じて公開できるテスト ドライバーです。 これらは、Windows Insider Program 用にサインアップしているコンピューターにのみ公開/インストールできます。 これらは、セキュア ブートを無効にすることなく、コンピューターにインストールできます。 これらは、Windows Insider Program の一部ではない、製品版のコンピューターにはインストールできません。|
 | marketingNames | 文字列の配列 | 製品のマーケティング名またはエイリアス |
 | productName | String | 作成中に指定されたドライバーの名前 |
 | selectedProductTypes | ディクショナリ  | キーと値のペア (両方とも文字列)。 <ul><li>**Key** はオペレーティング システムのファミリー コードを表します。 オペレーティング システムのファミリのコードの一覧については、「[OS ファミリ コードの一覧](#list-of-operating-system-family-codes)」を参照してください。</li><li>**Value** は製品の種類を表します。 製品の種類の一覧については、「[製品の種類](#list-of-product-types)」を参照してください。</li></ul>|
 | requestedSignatures | 文字列の配列 | 製品の認定対象となるオペレーティング システムの署名の一覧です。 すべてのオペレーティング システムの一覧については、「[OS コードの一覧](#list-of-operating-system-codes)」を参照してください。  |
 | additionalAttributes | オブジェクト | 詳細については、「[その他の属性オブジェクト](#additional-attribute-object)」を参照してください。 |
 | testHarness | string | 提出されたパッケージの種類。 設定可能な値は、次のとおりです。 <ul><li>hlk<li>hck</li><li>attestation</li><li>notset</li></ul>|
-| announcementDate | DATETIME | Windows Server Catalog に製品が含められる日付 |
+| announcementDate | datetime | Windows Server Catalog に製品が含められる日付 |
 
 ### <a name="submission-resource"></a>申請のリソース
 
@@ -137,7 +137,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 |:--|:--|:--|
 | ID | long | 申請 ID |
 | Productid | long | この申請が関連付けられているプライベート製品 ID |
-| リンク | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
+| Links | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
 | 名前 | string | 申請名 |
 | 種類 | string | 申請が最初の申請であるかまたは派生申請であるかを示します。 設定可能な値は、次のとおりです。 <ul><li>initial</li><li>derived</li></ul> |
 | isExtensionInf | ブール値 | 申請が拡張ドライバーかどうかを示します |
@@ -198,7 +198,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Value | 種類 | 説明 |
 |:--|:--|:--|
-| 項目 | array | ダウンロードの種類と、それぞれの URL の配列です。 詳細については、以下を参照してください。 |
+| Items | array | ダウンロードの種類と、それぞれの URL の配列です。 詳細については、以下を参照してください。 |
 | 種類 | string | ダウンロード可能なパッケージの種類。 設定可能な値は、次のとおりです。<ul><li>“initialPackage” – ユーザーがアップロードしたパッケージ (新しい申請の場合、パッケージのアップロードに使用する SAS URI をポイントします)</li><li>“derivedPackage” – 派生申請のためのシェル</li><li>“signedPackage” – Microsoft によって署名されているパッケージ</li><li>“certificationReport” – 署名された製品の認定レポート</li></ul>|
 | Messages | array | ダウンロード可能なファイルについてのメッセージを提供する文字列の配列 |
 
@@ -243,7 +243,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | microsoftName | string | マルチパス ソフトウェア名 |
 | microsoftVersion | string | マルチパス ソフトウェア バージョン |
 | usedBootSupport | boolean | ブート サポート |
-| usedBetterBoot | boolean | 2.2TB より大きいブートのサポート。  true の場合、サポートされる UEFI バージョンおよびサポートされる ACPI バージョンは必須です |
+| usedBetterBoot | boolean | 2\.2TB より大きいブートのサポート。  true の場合、サポートされる UEFI バージョンおよびサポートされる ACPI バージョンは必須です |
 | uefiVersion | string | サポートされる UEFI バージョン |
 | acpiVersion | string | サポートされる ACPI バージョン |
 | supportsSector4K512E | boolean | 4K/512e のセクター サイズをサポートします |

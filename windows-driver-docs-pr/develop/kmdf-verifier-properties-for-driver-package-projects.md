@@ -5,11 +5,11 @@ description: リモート コンピューター上の KMDF 検証ツールのプ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae1c204b9819dc9039de47a8af54396894b3159
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349771"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344134"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティ
 
@@ -20,9 +20,9 @@ ms.locfileid: "57349771"
 ## <a name="span-idsettingkmdfverifierpropertiesfordriverpackageprojectsspanspan-idsettingkmdfverifierpropertiesfordriverpackageprojectsspanspan-idsettingkmdfverifierpropertiesfordriverpackageprojectsspansetting-kmdf-verifier-properties-for-driver-package-projects"></a><span id="Setting_KMDF_Verifier_properties_for_driver_package_projects"></span><span id="setting_kmdf_verifier_properties_for_driver_package_projects"></span><span id="SETTING_KMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティの設定
 
 
-1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、**[プロパティ]** をクリックします。
-2.  ドライバー パッケージのプロパティ ページで、**[構成プロパティ]**、**[Driver Install]** (ドライバーのインストール)、**[KMDF Verifier]** (KMDF 検証ツール) の順にクリックします。
-3.  **[Enable KMDF Verifier]** (KMDF 検証ツールを有効にする) オプションをクリックし、**[KMDF verifier is always on]** (KMDF 検証ツールは常にオン) を選びます。 このオプションがオンになっている場合は、KMDF ドライバーのフレームワーク検証オプションを構成できます。
+1.  ドライバー パッケージのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー パッケージ プロジェクトを右クリックし、 **[プロパティ]** をクリックします。
+2.  ドライバー パッケージのプロパティ ページで、 **[構成プロパティ]** 、 **[Driver Install]** (ドライバーのインストール)、 **[KMDF Verifier]** (KMDF 検証ツール) の順にクリックします。
+3.  **[Enable KMDF Verifier]** (KMDF 検証ツールを有効にする) オプションをクリックし、 **[KMDF verifier is always on]** (KMDF 検証ツールは常にオン) を選びます。 このオプションがオンになっている場合は、KMDF ドライバーのフレームワーク検証オプションを構成できます。
 
 <table>
 <colgroup>

@@ -5,11 +5,11 @@ description: Windows Server 2012 ハードウェア認定プログラムでは�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4904b6c602593da7459a5393e0c97f61f9b553f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518686"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382420"
 ---
 # <a name="creating-a-log-file-for-static-driver-verifier"></a>静的ドライバー検証ツールのログ ファイルの作成
 
@@ -19,7 +19,7 @@ Windows Server 2012 [ハードウェア認定プログラム](https://go.microso
 
 **静的ドライバー検証ツールのログ ファイルを作成するには**
 
-1.  Microsoft Visual Studio Ultimate 2012 でドライバー プロジェクト ファイルを選び、右クリックしてプロジェクトのプロパティを開きます。 **[構成]** として **[Windows 8 Release]\(Windows 8 リリース\)** を選び、**[プラットフォーム]** として **[x64]** を選びます。
+1.  Microsoft Visual Studio Ultimate 2012 でドライバー プロジェクト ファイルを選び、右クリックしてプロジェクトのプロパティを開きます。 **[構成]** として **[Windows 8 Release]\(Windows 8 リリース\)** を選び、 **[プラットフォーム]** として **[x64]** を選びます。
 2.  既にコード分析ツールを実行してある場合は、「[静的ドライバー検証ツールの実行](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454281#running_static_driver_verifier)」での手順に従ってください。 SDV の使い方について詳しくは、「ドライバーの不具合を見つけるための静的ドライバー検証ツールの使用」をご覧ください。
 3.  SDV によってドライバーの欠陥が見つかった場合、ルール違反の原因になったコード パスのトレースを表示するには、結果ウィンドウで欠陥をクリックします。 ドライバーで見つかったすべての欠陥を修正し、もう一度 SDV を実行します。
 
@@ -30,7 +30,7 @@ Windows Server 2012 [ハードウェア認定プログラム](https://go.microso
 
 静的ドライバー検証ツールとドライバーの検証ツール ログに関する最新情報については、WDK リリース ノートをご覧ください。 リリース ノートは、[Windows Driver Kit (WDK) のダウンロード ページ](https://go.microsoft.com/fwlink/p/?linkid=254897)で入手できます。
 
-**重要**  DVL ファイルでタイムアウト、領域不足などの失敗した結果があっても、認定用に申請できます。 これにより、HCK の静的ツール テストに不合格になることはありません。 HCK 2.0 では、Static Tools (静的ツール) テストに必要なのは、コード分析と SDV が実行されたことを示す DVL ファイルだけです。必ずしもすべてのルールに合格する必要はありません。
+**重要**   DVL ファイルでタイムアウト、領域不足などの失敗した結果があっても、認定用に申請できます。 これにより、HCK の静的ツール テストに不合格になることはありません。 HCK 2.0 では、Static Tools (静的ツール) テストに必要なのは、コード分析と SDV が実行されたことを示す DVL ファイルだけです。必ずしもすべてのルールに合格する必要はありません。
 
  
 
@@ -40,7 +40,7 @@ Windows Server 2012 [ハードウェア認定プログラム](https://go.microso
 "C:\Program Files\Microsoft Visual Studio 11.0\VC\vcvarsall.bat" x64
 ```
 
-- または -
+\- または -
 
 ```cpp
 "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcvarsall.bat" x64

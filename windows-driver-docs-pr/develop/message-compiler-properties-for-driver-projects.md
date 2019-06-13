@@ -5,23 +5,23 @@ description: Message Compiler (MC.exe) ツール用のプロパティを設定�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a125df236bbb43ecf4a73bb2b4861ba290b505f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518644"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344132"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>ドライバー プロジェクトのメッセージ コンパイラ プロパティ
 
-[  **Message Compiler (MC.exe)**](https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638) ツール用のプロパティを設定します。 コンパイラは、プロジェクトに追加できるメッセージ リソース ファイルを生成します。
+[  **Message Compiler (MC.exe)** ](https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638) ツール用のプロパティを設定します。 コンパイラは、プロジェクトに追加できるメッセージ リソース ファイルを生成します。
 
 たとえば、[Windows イベント トレーシング (ETW)](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545699) カーネル モード API を使ってカーネル モード ドライバーにイベント トレーシングを追加している場合、メッセージ コンパイラを使って、イベント プロバイダー、イベント属性、チャネル、イベントの定義を含むヘッダー ファイルを作ることができます。 ソース コードには、このヘッダー ファイルをインクルードする必要があります。 メッセージ コンパイラでは、プロジェクト ファイルに追加するリソース コンパイラ スクリプト (\*.rc) が作成されます。
 
 ## <a name="span-idsettingmessagecompilerpropertiesfordriverprojectsspanspan-idsettingmessagecompilerpropertiesfordriverprojectsspanspan-idsettingmessagecompilerpropertiesfordriverprojectsspansetting-message-compiler-properties-for-driver-projects"></a><span id="Setting_Message_Compiler_properties_for_driver_projects"></span><span id="setting_message_compiler_properties_for_driver_projects"></span><span id="SETTING_MESSAGE_COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>ドライバー プロジェクト用のメッセージ コンパイラ プロパティの設定
 
 
-1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、**[プロパティ]** をクリックします。
-2.  ドライバー プロジェクトのプロパティ ページで、**[構成プロパティ]**、**[Message Compiler]** (メッセージ コンパイラ) の順にクリックします。
+1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
+2.  ドライバー プロジェクトのプロパティ ページで、 **[構成プロパティ]** 、 **[Message Compiler]** (メッセージ コンパイラ) の順にクリックします。
 3.  プロジェクトのプロパティを設定します。
 
 このプロパティ ページを使えるのは、ソリューションにメッセージ テキスト ファイル (.mc) かマニフェスト (.man) を追加した場合のみです。
