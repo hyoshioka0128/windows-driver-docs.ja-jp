@@ -12,12 +12,12 @@ keywords:
 - InterruptMessageService
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d595cdac33579fa225695380362379b4a6e66e32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9313c319a2811550fc67331c3381566b96da272a
+ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340976"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041369"
 ---
 # <a name="introduction-to-interrupt-service-routines"></a>割り込みサービス ルーチンの概要
 
@@ -34,6 +34,7 @@ PCI 2.2 以降では、PCI デバイスが生成できる*メッセージ シグ
 
 -   ドライバーが登録できる、 [ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)メッセージ シグナル割り込みを処理するルーチン。 システムでは、ドライバーによって提供されるコンテキストの値と、割り込みメッセージのメッセージ ID の両方を渡します。
 
+InterruptService または InterruptMessageService ルーチンで、デバイスの割り込みをサービスの登録の詳細については、次を参照してください。 [Message-Signaled 割り込み概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-message-signaled-interrupts)します。
  
 
  

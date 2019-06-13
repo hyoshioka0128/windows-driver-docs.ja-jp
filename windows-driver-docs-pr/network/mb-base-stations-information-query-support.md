@@ -6,12 +6,12 @@ keywords:
 - MB のベースに情報の照会、モバイル ブロード バンド ベース ステーション情報の照会
 ms.date: 08/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c11eb0217aadc3e82916e6d95600a37f57705dc
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 40fe784a7da6f45573c2ca3f7f0fcd0074b2e46e
+ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405228"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041366"
 ---
 # <a name="mb-base-stations-information-query-support"></a>MB ベース ステーション情報クエリのサポート
 
@@ -23,7 +23,7 @@ MBIM 1.0 の仕様は、既存の Cid を通じてこの情報を指定しない
 
 サービスを提供し、近隣のセルのパラメーターは、クエリ/応答操作を通じて取得されます。 通知は、移動体通信ネットワーク内のデバイスの場所が変更されたことを示すには、このトピックでも定義されています。
 
-## <a name="mbimcidbasestationsinfo"></a>MBIM_CID_BASE_STATIONS_INFO
+## <a name="mbim_cid_base_stations_info"></a>MBIM_CID_BASE_STATIONS_INFO
 
 このコマンドでは、モデムに既知のサービスを提供し、近隣のセルに関する情報を取得します。
 
@@ -46,7 +46,7 @@ MBIM 1.0 の仕様は、既存の Cid を通じてこの情報を指定しない
 
 MBIM_COMMAND_MSG InformationBuffer にはには、MBIM_BASE_STATIONS_INFO_REQ 構造が含まれています。 MBIM_COMMAND_DONE InformationBuffer には MBIM_BASE_STATIONS_INFO 構造体が含まれています。
 
-#### <a name="mbimbasestationsinforeq"></a>MBIM_BASE_STATIONS_INFO_REQ
+#### <a name="mbim_base_stations_info_req"></a>MBIM_BASE_STATIONS_INFO_REQ
 
 MBIM_BASE_STATIONS_INFO_REQ 構造体は、クエリの InformationBuffer で使用されます。 セルについては、応答で送信する近隣セル単位の最大数などの側面を構成に使用されます。 
 
@@ -66,7 +66,7 @@ MBIM_BASE_STATIONS_INFO_REQ 構造体は、クエリの InformationBuffer で使
 
 MBIM_BASE_STATIONS_INFO 構造体は、応答の MBIM_COMMAND_DONE InformationBuffer ので使用されます。
 
-#### <a name="mbimbasestationsinfo"></a>MBIM_BASE_STATIONS_INFO
+#### <a name="mbim_base_stations_info"></a>MBIM_BASE_STATIONS_INFO
 
 MBIM_BASE_STATIONS_INFO 構造体には、提供していると、隣接する基地局両方に関する情報が含まれています。
 
@@ -95,7 +95,7 @@ MBIM_BASE_STATIONS_INFO 構造体には、提供していると、隣接する�
 
 #### <a name="gsm-cell-data-structures"></a>GSM セルのデータ構造体
 
-##### <a name="mbimgsmservingcellinfo"></a>MBIM_GSM_SERVING_CELL_INFO
+##### <a name="mbim_gsm_serving_cell_info"></a>MBIM_GSM_SERVING_CELL_INFO
 
 MBIM_GSM_SERVING_CELL_INFO 構造体には、GSM サービス セルに関する情報が含まれています。
 
@@ -111,7 +111,7 @@ MBIM_GSM_SERVING_CELL_INFO 構造体には、GSM サービス セルに関する
 | 28 | 4 | RxLevel | UINT32 | セル (0 ~ 63) の場所、サービスの受信信号強度 <p>`X = 0, if RSS < -110 dBm`</p><p>`X = 63, if RSS > -47 dBm`</p><p>`X = integer [RSS + 110], if -110 <= RSS <= -47`</p> この情報が利用できない場合は、0 xffffffff を使用します。 |
 | 32 |   | DataBuffer | DATABUFFER | データ バッファーを含む*ProviderId*します。 |
 
-##### <a name="mbimgsmnmr"></a>MBIM_GSM_NMR
+##### <a name="mbim_gsm_nmr"></a>MBIM_GSM_NMR
 
 MBIM_GSM_NMR 構造体には、GSM の隣接するセルのネットワーク測定レポート (NMR) が含まれています。
 
@@ -120,7 +120,7 @@ MBIM_GSM_NMR 構造体には、GSM の隣接するセルのネットワーク測
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の後 NMR エントリの数。 |
 | 4 |   | DataBuffer | DATABUFFER | NMR の配列がレコードとして指定された各、 [MBIM_GSM_NMR_INFO](#mbim_gsm_nmr_info)構造体。 |
 
-##### <a name="mbimgsmnmrinfo"></a>MBIM_GSM_NMR_INFO
+##### <a name="mbim_gsm_nmr_info"></a>MBIM_GSM_NMR_INFO
 
 MBIM_GSM_NMR_INFO 構造体には、隣接する GSM セルについての情報が含まれています。
 
@@ -137,7 +137,7 @@ MBIM_GSM_NMR_INFO 構造体には、隣接する GSM セルについての情報
 
 #### <a name="umts-cell-data-structures"></a>UMTS セルのデータ構造体
 
-##### <a name="mbimumtsservingcellinfo"></a>MBIM_UMTS_SERVING_CELL_INFO
+##### <a name="mbim_umts_serving_cell_info"></a>MBIM_UMTS_SERVING_CELL_INFO
 
 MBIM_UMTS_SERVING_CELL_INFO 構造体には、UMTS サービング セルに関する情報が含まれています。
 
@@ -157,7 +157,7 @@ MBIM_UMTS_SERVING_CELL_INFO 構造体には、UMTS サービング セルに関�
 | 44 | 4 | PathLoss | UINT32 | サービスのセル (46 173) のパスの損失。 この情報が利用できない場合は、0 xffffffff を使用します。 |
 | 48 |   | DataBuffer | DATABUFFER | データ バッファーを含む*ProviderId*します。 |
 
-##### <a name="mbimumtsmrl"></a>MBIM_UMTS_MRL
+##### <a name="mbim_umts_mrl"></a>MBIM_UMTS_MRL
 
 MBIM_UMTS_MRL 構造体には、UMTS の隣接するセルの測定結果一覧 (MRL) が含まれています。
 
@@ -166,7 +166,7 @@ MBIM_UMTS_MRL 構造体には、UMTS の隣接するセルの測定結果一覧 
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の次 MRL エントリの数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_UMTS_MRL_INFO](#mbim_gsm_nmr_info)構造体。 |
 
-##### <a name="mbimumtsmrlinfo"></a>MBIM_UMTS_MRL_INFO
+##### <a name="mbim_umts_mrl_info"></a>MBIM_UMTS_MRL_INFO
 
 MBIM_UMTS_MRL_INFO 構造体には、隣接する UMTS セルについての情報が含まれています。
 
@@ -185,7 +185,7 @@ MBIM_UMTS_MRL_INFO 構造体には、隣接する UMTS セルについての情�
 
 #### <a name="tdscdma-cell-data-structures"></a>TDSCDMA セルのデータ構造体
 
-##### <a name="mbimtdscdmaservingcellinfo"></a>MBIM_TDSCDMA_SERVING_CELL_INFO
+##### <a name="mbim_tdscdma_serving_cell_info"></a>MBIM_TDSCDMA_SERVING_CELL_INFO
 
 MBIM_TDSCDMA_SERVING_CELL_INFO 構造体には、TDSCDMA サービング セルに関する情報が含まれています。
 
@@ -202,7 +202,7 @@ MBIM_TDSCDMA_SERVING_CELL_INFO 構造体には、TDSCDMA サービング セル�
 | 32 | 4 | PathLoss | UINT32 | サービスのセル (46 ~ 158) のパスの損失。 この情報が利用できない場合は、0 xffffffff を使用します。 |
 | 36 |   | DataBuffer | DATABUFFER | データ バッファーを含む*ProviderId*します。 |
 
-##### <a name="mbimtdscdmamrl"></a>MBIM_TDSCDMA_MRL
+##### <a name="mbim_tdscdma_mrl"></a>MBIM_TDSCDMA_MRL
 
 MBIM_TDSCDMA_MRL 構造体には、隣接する TDSCDMA セルの測定結果一覧 (MRL) が含まれています。
 
@@ -211,7 +211,7 @@ MBIM_TDSCDMA_MRL 構造体には、隣接する TDSCDMA セルの測定結果一
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の次 MRL エントリの数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_TDSCDMA_MRL_INFO](#mbim_tdscdma_mrl_info)構造体。 |
 
-##### <a name="mbimtdscdmamrlinfo"></a>MBIM_TDSCDMA_MRL_INFO
+##### <a name="mbim_tdscdma_mrl_info"></a>MBIM_TDSCDMA_MRL_INFO
 
 MBIM_TDSCDMA_MRL_INFO 構造体には、隣接する TDSCDMA セルについての情報が含まれています。
 
@@ -230,7 +230,7 @@ MBIM_TDSCDMA_MRL_INFO 構造体には、隣接する TDSCDMA セルについて�
 
 #### <a name="lte-cell-data-structures"></a>LTE セルのデータ構造体
 
-##### <a name="mbimlteservingcellinfo"></a>MBIM_LTE_SERVING_CELL_INFO
+##### <a name="mbim_lte_serving_cell_info"></a>MBIM_LTE_SERVING_CELL_INFO
 
 MBIM_LTE_SERVING_CELL_INFO 構造体には、LTE サービング セルに関する情報が含まれています。
 
@@ -247,7 +247,7 @@ MBIM_LTE_SERVING_CELL_INFO 構造体には、LTE サービング セルに関す
 | 32 | 4 | TimingAdvance | UINT32 | タイミングの詳細 (0 ~ 255)。 この情報が利用できない場合は、0 xffffffff を使用します。 |
 | 36 |   | DataBuffer | DATABUFFER | データ バッファーを含む*ProviderId*します。 |
 
-##### <a name="mbimltemrl"></a>MBIM_LTE_MRL
+##### <a name="mbim_lte_mrl"></a>MBIM_LTE_MRL
 
 MBIM_LTE_MRL 構造体には、隣接する LTE セルの測定結果一覧 (MRL) が含まれています。
 
@@ -256,7 +256,7 @@ MBIM_LTE_MRL 構造体には、隣接する LTE セルの測定結果一覧 (MRL
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の次 MRL エントリの数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_LTE_MRL_INFO](#mbim_lte_mrl_info)構造体。 |
 
-##### <a name="mbimltemrlinfo"></a>MBIM_LTE_MRL_INFO
+##### <a name="mbim_lte_mrl_info"></a>MBIM_LTE_MRL_INFO
 
 MBIM_LTE_MRL_INFO 構造体には、隣接する LTE セルについての情報が含まれています。
 
@@ -274,7 +274,7 @@ MBIM_LTE_MRL_INFO 構造体には、隣接する LTE セルについての情報
 
 #### <a name="cdma-cell-data-structures"></a>CDMA セルのデータ構造体
 
-##### <a name="mbimcdmamrl"></a>MBIM_CDMA_MRL
+##### <a name="mbim_cdma_mrl"></a>MBIM_CDMA_MRL
 
 MBIM_CDMA_MRL 構造体には、提供していると、隣接するセルの CDMA の測定結果一覧 (MRL) が含まれています。
 
@@ -283,7 +283,7 @@ MBIM_CDMA_MRL 構造体には、提供していると、隣接するセルの CD
 | 0 | 4 | ElementCount (EC) | UINT32 | この要素の次 MRL エントリの数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL の配列がレコードとして指定された各、 [MBIM_CDMA_MRL_INFO](#mbim_cdma_mrl_info)構造体。 |
 
-##### <a name="mbimcdmamrlinfo"></a>MBIM_CDMA_MRL_INFO
+##### <a name="mbim_cdma_mrl_info"></a>MBIM_CDMA_MRL_INFO
 
 MBIM_CDMA_MRL_INFO データ構造体は、CDMA2000 ネットワークの種類に適しています。 同時に 1 つ以上の CDMA2000 サービング セルがあります。 同じリスト内のセルを提供していると隣接するセルの両方が返されます。 **ServingCellFlag**フィールドは、セルがサービング セルかどうかを示します。
 
@@ -307,7 +307,7 @@ MBIM_CDMA_MRL_INFO データ構造体は、CDMA2000 ネットワークの種類�
 
 この CID は汎用のステータス コードを使用して (の 9.4. 5. のセクションでは状態コードの使用を参照してください。[パブリック USB MBIM 標準](https://go.microsoft.com/fwlink/p/?linkid=842064))。
 
-## <a name="mbimcidlocationinfostatus"></a>MBIM_CID_LOCATION_INFO_STATUS
+## <a name="mbim_cid_location_info_status"></a>MBIM_CID_LOCATION_INFO_STATUS
 
 この CID をデバイスの場所を示す移動体通信情報の状態を取得します。 場所情報が変更された際に、請求の通知を配信するも使用可能性があります。
 
@@ -339,7 +339,7 @@ MBIM_COMMAND_MSG InformationBuffer は使用されません。 含まれてい�
 
 ### <a name="response"></a>応答
 
-#### <a name="mbimlocationinfo"></a>MBIM_LOCATION_INFO
+#### <a name="mbim_location_info"></a>MBIM_LOCATION_INFO
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
@@ -357,7 +357,7 @@ InformationBuffer イベントには、MBIM_LOCATION_INFO 構造体が含まれ�
 
 この CID は汎用のステータス コードを使用して (の 9.4. 5. のセクションでは状態コードの使用を参照してください。[パブリック USB MBIM 標準](https://go.microsoft.com/fwlink/p/?linkid=842064))。
 
-## <a name="oidwwanbasestationsinfo"></a>OID_WWAN_BASE_STATIONS_INFO
+## <a name="oid_wwan_base_stations_info"></a>OID_WWAN_BASE_STATIONS_INFO
 
 MBIM_CID_BASE_STATIONS_INFO の NDIS 相当するものは[OID_WWAN_BASE_STATIONS_INFO](oid-wwan-base-stations-info.md)します。
 

@@ -4,14 +4,14 @@ description: 有効にする方法を説明しますテストの読み込み TES
 ms.assetid: 4898595e-20c9-4607-aad7-792f7d1074e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe7534761cda1bb838dded2a94f445cf373ada54
-ms.sourcegitcommit: 780c4086ed59331b96bb4f6b5939cf25b9608aed
+ms.openlocfilehash: dcab1f049a0ec4bf7e85b679aac723a593245338
+ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65561693"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041372"
 ---
-# <a name="enable-loading-of-test-signed-drivers"></a>署名されたドライバーのテストの読み込みを有効にします。
+# <a name="enable-loading-of-test-signed-drivers"></a>テスト署名されたドライバーの読み込みの有効化
 
 既定では、Windows では、テスト署名されたカーネル モード ドライバーは読み込まれません。 この動作を変更し、読み込むテスト署名されたドライバーを有効にするには、ブート構成データ エディター、BCDEdit.exe を使用して、有効または TESTSIGNING、ブート構成のオプションを無効にします。 このオプションを有効にするには、管理者権限が必要です。
 
@@ -54,6 +54,9 @@ Bcdedit.exe -set TESTSIGNING OFF
 ## <a name="behavior-of-windows-when-loading-test-signed-code-is-enabled"></a>テスト署名されたコードの読み込み時に Windows の動作が有効になっています。
 
 テスト署名されたコードの読み込みを有効にすると、Windows は、次を行います。
+
+-   「テスト モード」で 4 つすべての角のデスクトップのシステムがテスト署名を有効になっているユーザーに通知するテキストの透かしが表示されます。
+    **注**  Windows 7 以降、Windows この透かしでのみ表示されます、デスクトップの右下隅。
 
 -   ユーザーに通知する、システムのテスト署名を有効になっているデスクトップの左上隅にある「テスト モード」のテキストの透かしが表示されます。
 
