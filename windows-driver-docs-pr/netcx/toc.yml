@@ -48,6 +48,8 @@
               href: receiving-network-data-with-net-rings.md
             - name: ネット リングを使用したネットワーク データの取り消し
               href: canceling-network-data-with-net-rings.md
+            - name: Net リング要素の管理
+              href: net-ring-element-management.md
     - name: NetAdapterCx Receive Side Scaling (RSS)
       href: netadaptercx-receive-side-scaling-rss-.md
     - name: 電源管理の構成

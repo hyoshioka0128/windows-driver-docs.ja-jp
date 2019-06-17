@@ -350,6 +350,8 @@
                       href: handling-srb-function-flush-and-srb-function-shutdown.md
                     - name: SRB_FUNCTION_IO_CONTROL の処理
                       href: handling-srb-function-io-control.md
+                    - name: SRB_FUNCTION_PROTOCOL_COMMANDの処理
+                      href: handling-srb-function-protocol-command.md
                     - name: SRB_FUNCTION_PNP の処理
                       href: handling-srb-function-pnp.md
                     - name: SRB_FUNCTION_WMI の処理
