@@ -6,12 +6,12 @@ keywords:
 - ドライバー WDK の署名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 351e07fd5704f84ad3a85f0bb6cf1d9952c978da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb5ea4ea7f06f3fa31dd46dceaca0b28c9c33dbc
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372951"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148521"
 ---
 # <a name="driver-signing"></a>Driver Signing (ドライバーの署名)
 
@@ -20,9 +20,9 @@ ms.locfileid: "63372951"
 
 Windows デバイスのインストールを使用して[デジタル署名](digital-signatures.md)とベンダー (ソフトウェア発行元) の id を検証するドライバー パッケージの整合性を検証するドライバー パッケージを提供します。 さらに、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md) 64 ビット バージョンの Windows Vista と Windows の以降のバージョンのドライバーの読み込みをカーネル モード ドライバーを署名する必要がありますを指定します。
 
-**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は EV 証明書が必要です。 Windows ハードウェア デベロッパー センター ダッシュによって署名されている必要があります。 詳細については、次を参照してください。 [Windows 10 でドライバー署名の変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)します。
+**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は EV 証明書が必要です。 Windows ハードウェア デベロッパー センター ダッシュによって署名されている必要があります。 詳細については、次を参照してください。[ドライバー署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)します。
 
- 
+ハードウェア デベロッパー センターによって署名された (バージョン 1507、しきい値 1 から開始) Windows 10 のすべてのドライバーは、SHA2 署名です。  オペレーティング システムのバージョンに固有の詳細は、次を参照してください。[バージョンで署名の要件](kernel-mode-code-signing-policy--windows-vista-and-later-.md#signing-requirements-by-version)します。
 
 カーネル モード ドライバーのバイナリを埋め込むの Windows 10 が読み込まれず、または Windows 10 では、システムのクラッシュを引き起こす可能性がよりも前のオペレーティング システム、サード パーティ証明書のベンダーからデュアル (SHA1 および SHA2) 証明書で署名。 この問題を解決するにはインストール[KB 3081436](https://support.microsoft.com/kb/3081436)します。
 
@@ -35,6 +35,7 @@ Windows デバイスのインストールを使用して[デジタル署名](dig
 -   [開発およびテスト中にドライバーへの署名](signing-drivers-during-development-and-test.md)
 -   [ドライバーのパブリック リリースへの署名](signing-drivers-for-public-release.md)
 -   [インストールおよび署名されたドライバー パッケージを使用した負荷の問題のトラブルシューティング](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)
+-   [マイクロソフト セキュリティ アドバイザリ 2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823)
 
 ドライバーに関する一般的な情報を Windows Vista および以降のバージョンの Windows では、署名のホワイト ペーパーを参照[システムを実行している Windows Vista でのカーネル モジュールのデジタル署名](https://msdn.microsoft.com/library/bb530195)します。
 

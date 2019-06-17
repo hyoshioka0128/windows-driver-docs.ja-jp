@@ -7,12 +7,12 @@ keywords:
 ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: de9f3d4f766d77c2aa80b909794307592e40b925
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09a8b659455e676e46b1c8ca3d5f3daa36b534ca
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384553"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148532"
 ---
 # <a name="net-rings-and-net-ring-iterators"></a>ネット リングとネット リングの反復子
 
@@ -53,6 +53,8 @@ NetAdapterCx 増分することで、リング バッファーに要素を投稿
 要素のインデックス値を持つ**NextIndex**と**EndIndex - 1**包括的なクライアントによって所有されますが、ハードウェアに投稿されていません。 場合**NextIndex**と等しい**BeginIndex**、クライアント ドライバーには、OS への転送を完了したバッファーはありません。 場合**NextIndex**と等しい**EndIndex**、クライアント ドライバーには、ハードウェアに投稿するすべてのバッファーはありません。
 
 Net のリングが循環のため、最終的にインデックス値はバッファーの末尾をラップし、先頭に戻っています。 NetAdapterCx では、次のセクションで説明したクライアント ドライバーは、適切なメソッドを呼び出す場合リング内のインデックス値をラッピングが自動的に処理します。
+
+Net のリング内の要素を管理する詳細については、次を参照してください。[リング要素の管理を Net](net-ring-element-management.md)します。
 
 ## <a name="net-ring-iterator-interface-overview"></a>Net のリングの反復子インターフェイスの概要
 

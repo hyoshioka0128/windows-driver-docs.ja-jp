@@ -5,12 +5,12 @@ ms.assetid: 4e663204-eee0-4732-83c9-ec1dacd41034
 ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 85295c8fdabfaacb1e8a8ea6c450f077079e95fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 263789fe3249bfd98b83a51fe1627351ed2d26ae
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387873"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148528"
 ---
 # <a name="oidgensupportedlist"></a>OID\_GEN\_サポートされている\_一覧
 
@@ -38,6 +38,8 @@ ms.locfileid: "63387873"
 -------
 
 NDIS 6.0 とそれ以降のミニポート ドライバーでは、この OID 要求は表示されません。 NDIS は、ミニポート ドライバーが初期化中に指定するキャッシュされた値を持つこの OID を処理します。
+
+ミニポート ドライバーの設定の初期化中にサポートされている Oid のリストを指定する、 **SupportedOidList**のメンバー、 [ **NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体し、構造体を渡す、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。
 
 NDIS は、このクエリを行うプロトコル ドライバーに指定されたリストのサブセットを転送します。 つまり、プロトコル ドライバーの統計情報のクエリを行うことはありませんので、NDIS は、リストからサポートされている統計 Oid をフィルター処理します。
 

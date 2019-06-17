@@ -5,11 +5,11 @@ description: Windows Driver Kit (WDK) 8.1 では、Visual Studio と WDK のコ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5072737d94c1546f29953147edbdf8b44304929d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518836"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344855"
 ---
 # <a name="installing-the-wdk-81-build-environment-in-a-lab"></a>ラボに WDK 8.1 ビルド環境をインストールする
 
@@ -25,9 +25,9 @@ WDK をビルド プロセスに統合する必要がある場合や、ビルド
 
 この機能を有効にするセットアップ スクリプトを実行するには、Visual Studio と WDK のセットアップ ファイルのパスを指定する必要があります。 これらのファイルを (インストールするのではなく) 保存してください。
 
-1.  [Visual Studio Professional 2013](https://go.microsoft.com/fwlink/p/?linkid=316548) または [Visual Studio Ultimate 2013](https://go.microsoft.com/fwlink/p/?linkid=316520) をダウンロードします。 製品レイアウト (例: vs\_ultimate\_download.exe) をダウンロードします。 vs\_ultimate\_download.exe を実行するか保存するかを確認するメッセージが表示されたら、**[実行]** をクリックしてダウンロード オプションを選び、ダウンロード パスとして **C:\\VSSetup** を指定します (後の手順が簡単になります)。 **[ダウンロード]** をクリックし、DVD レイアウトのローカル コピーをコンピューターにダウンロードしてインストールします。
-2.  スタンドアロンの [SDK](https://go.microsoft.com/fwlink/p/?linkid=323507) をダウンロードします。 sdksetup.exe を実行するか保存するかを確認するメッセージが表示されたら、**[実行]** をクリックし、ダウンロードの場所として **C:\\Kits\\SDK** を指定します。 **[次へ]** をクリックし、指示に従ってスタンドアロンの SDK をダウンロードします。
-3.  [WDK 8.1](https://go.microsoft.com/fwlink/p/?linkid=317353) をダウンロードします。 wdksetup.exe を実行するか保存するかを確認するメッセージが表示されたら、**[実行]** をクリックし、ダウンロードの場所として **C:\\Kits\\WDK** を指定します。 **[次へ]** をクリックし、指示に従って WDK をダウンロードします。 コンピューターに既に WDK がインストールされている場合は、コンピューターにインストールされている機能は最新であるというメッセージが Web インストール プログラムから表示されます。 ビルド環境に配置できるように WDK セットアップ ファイルをダウンロードするには、**[次へ]** をクリックし、**C:\\Kits\\WDK** というパスを指定します。
+1.  [Visual Studio Professional 2013](https://go.microsoft.com/fwlink/p/?linkid=316548) または [Visual Studio Ultimate 2013](https://go.microsoft.com/fwlink/p/?linkid=316520) をダウンロードします。 製品レイアウト (例: vs\_ultimate\_download.exe) をダウンロードします。 vs\_ultimate\_download.exe を実行するか保存するかを確認するメッセージが表示されたら、 **[実行]** をクリックしてダウンロード オプションを選び、ダウンロード パスとして **C:\\VSSetup** を指定します (後の手順が簡単になります)。 **[ダウンロード]** をクリックし、DVD レイアウトのローカル コピーをコンピューターにダウンロードしてインストールします。
+2.  スタンドアロンの [SDK](https://go.microsoft.com/fwlink/p/?linkid=323507) をダウンロードします。 sdksetup.exe を実行するか保存するかを確認するメッセージが表示されたら、 **[実行]** をクリックし、ダウンロードの場所として **C:\\Kits\\SDK** を指定します。 **[次へ]** をクリックし、指示に従ってスタンドアロンの SDK をダウンロードします。
+3.  [WDK 8.1](https://go.microsoft.com/fwlink/p/?linkid=317353) をダウンロードします。 wdksetup.exe を実行するか保存するかを確認するメッセージが表示されたら、 **[実行]** をクリックし、ダウンロードの場所として **C:\\Kits\\WDK** を指定します。 **[次へ]** をクリックし、指示に従って WDK をダウンロードします。 コンピューターに既に WDK がインストールされている場合は、コンピューターにインストールされている機能は最新であるというメッセージが Web インストール プログラムから表示されます。 ビルド環境に配置できるように WDK セットアップ ファイルをダウンロードするには、 **[次へ]** をクリックし、**C:\\Kits\\WDK** というパスを指定します。
 
 ## <a name="span-iddownloadscriptspanspan-iddownloadscriptspan2-download-the-buildlabsupport-files"></a><span id="download_script"></span><span id="DOWNLOAD_SCRIPT"></span>2.BuildLabSupport ファイルのダウンロード
 
@@ -42,7 +42,7 @@ WDK をビルド プロセスに統合する必要がある場合や、ビルド
 
 ビルド ラボ サポート ファイルには、**setup.ps1** PowerShell コマンド ファイル含まれています。このコマンドは、必要な Visual Studio と WDK のコンポーネントを展開して、ターゲット ディレクトリ (フォルダー) にコピーします。 その後、このディレクトリを別の場所にコピーし、そこから、Visual Studio コマンド ライン インターフェイス (CLI) 開発環境でプロジェクトをビルドできます。
 
--   管理者特権のアクセス許可を使って (**[管理者として実行]**) コマンド プロンプト ウィンドウを開き、ビルド ラボ サポート ファイルを展開したディレクトリに移動します。 PowerShell コマンド スクリプト **setup.ps1** は、&lt;*root*&gt;\\BuildLabSupport ディレクトリにあります。
+-   管理者特権のアクセス許可を使って ( **[管理者として実行]** ) コマンド プロンプト ウィンドウを開き、ビルド ラボ サポート ファイルを展開したディレクトリに移動します。 PowerShell コマンド スクリプト **setup.ps1** は、&lt;*root*&gt;\\BuildLabSupport ディレクトリにあります。
 
     PowerShell コマンドの構文は次のとおりです。
 
@@ -64,9 +64,9 @@ WDK をビルド プロセスに統合する必要がある場合や、ビルド
     </table>
 
     -   *&lt;VSInstallerFilePath&gt;* には、製品レイアウトを格納しているディレクトリと Visual Studio インストール プログラム (Vs\_ultimate.exe など) のパスを指定します。
-    -    *&lt;KitInstallersPath&gt;* には、WDK と SDK のセットアップ ファイルのパスを指定します。
-    -    *&lt;Target Directory&gt;* には、コンテンツの展開先となるターゲット ディレクトリを指定します。
-    -    *&lt;LogFilePath&gt;* には、ログ ファイルの出力先を指定します。
+    -   *&lt;KitInstallersPath&gt;* には、WDK と SDK のセットアップ ファイルのパスを指定します。
+    -   *&lt;Target Directory&gt;* には、コンテンツの展開先となるターゲット ディレクトリを指定します。
+    -   *&lt;LogFilePath&gt;* には、ログ ファイルの出力先を指定します。
     -   *&lt;Filename.xml&gt;* には、インストール中に展開される Microsoft Windows インストール ファイル (MSI) の一覧を含む CatalogFile の名前を指定します。 ファイルの名前は files.xml です。
 
     たとえば、次のコマンドでは、BuildLabSupport ディレクトリからスクリプトを実行し、C:\\BuildLabInstall ディレクトリにビルド環境をインストールします。

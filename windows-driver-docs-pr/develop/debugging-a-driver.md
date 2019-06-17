@@ -5,11 +5,11 @@ description: 通常、カーネル モード ドライバーのデバッグに�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c126f5a8429d6cff5d6dc50a314fa3def99d48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518664"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382348"
 ---
 # <a name="debugging-a-driver"></a>ドライバーのデバッグ
 

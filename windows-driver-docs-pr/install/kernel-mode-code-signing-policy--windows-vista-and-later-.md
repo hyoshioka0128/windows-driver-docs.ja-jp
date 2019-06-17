@@ -13,12 +13,12 @@ keywords:
 - パッケージのデジタル署名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c63e24a9c9d3bd2aee437b5275ada89686708a8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f10b2686d411a2162b397f9392b47da67db5cbca
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346078"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148529"
 ---
 # <a name="driver-signing-policy"></a>ドライバーの署名ポリシー
 
@@ -35,7 +35,7 @@ ms.locfileid: "63346078"
 * セキュア ブートは、bios がオフです。
 * ドライバーは、サポートされているクロス署名 CA にチェーンされている年 7 月 29日 2015年より前に発行されたをエンド エンティティ証明書で署名されました。
 
-詳細については、次を参照してください。[ドライバー署名の変更では、Windows 10 バージョン 1607](https://blogs.msdn.microsoft.com/windows_hardware_certification/2016/07/26/driver-signing-changes-in-windows-10-version-1607/)します。
+システムが正常に起動に失敗することを防ぐためにブート ドライバーはブロックされませんが、プログラム互換性アシスタントによって削除されます。
 
 ## <a name="signing-a-driver-for-client-versions-of-windows"></a>Windows のクライアントのバージョンのドライバーの署名
 

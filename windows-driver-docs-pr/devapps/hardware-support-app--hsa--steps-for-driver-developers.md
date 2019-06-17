@@ -9,12 +9,12 @@ keywords:
 - ハードウェア
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52811ed7c1c2b481f4b9ef43a588a3079f0aaa3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fddb468087e7068dace633c9f3d7a5df5a84b861
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387950"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67047044"
 ---
 # <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>ハードウェア サポート アプリ (HSA):ドライバー開発者向けの手順
 
@@ -37,7 +37,11 @@ HSA の 4 つ ("DCHU") の設計原則の 1 つ[ユニバーサル Windows ド�
     * 機能の名前 (する必要がありますで一意であるし、所有者を参照)
     * どのようなリソースにアクセスする機能が必要ですか。
     * セキュリティやプライバシー上の問題
+    * パートナーにどのようなデータ イベントが処理されるでしょうか。
+      * ユーザーの正確な場所などの個人識別子が含まれます、イベントには、パスワード、IP アドレス、ユーザー名、PUID、デバイス ID、CID および連絡先データ) でしょうか。
+      * ユーザーのデバイスで長時間のデータ イベントまたはに送信パートナーですか?
     * データ機能をでへのアクセスを提供しますか。
+    * この機能のエンド ユーザーにとってのメリットは何ですか。
     * Microsoft Store アプリの発行元 ID が含まれます  いずれかを取得するには、Microsoft Store のページで、アプリのスケルトン エントリを作成します。 アプリの PFN の予約の詳細については、次を参照してください。[の名前を予約することで、アプリを作成する](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)します。
 
 2.  Microsoft の電子メール要求を承認すると場合、は、バックアップの形式でカスタム機能の一意の文字列名**CompanyName.capabilityName\_PublisherID**します。

@@ -8,12 +8,12 @@ keywords:
 - 信頼されたルート証明機関証明書ストア WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87c95dc9919eeae52a0ea904386afffeb6f3517e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdc4e2019f175e1e7c95748a3b5ab339651bbcd6
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339514"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148519"
 ---
 # <a name="trusted-root-certification-authorities-certificate-store"></a>信頼されたルート証明機関の証明書ストア
 
@@ -36,13 +36,15 @@ Windows Vista 以降、プラグ アンド プレイ (PnP) マネージャーは
 
 **注**  ドライバーの PnP マネージャーによって使用される検証ポリシーの署名は、プライベート CA のルート証明書がローカル コンピューターのバージョンのルート証明機関で以前にインストールされている必要があります証明書ストア。 詳細については、次を参照してください。[ローカル マシンと現在のユーザー証明書ストア](local-machine-and-current-user-certificate-stores.md)します。
 
- 
 
-証明書ストアの詳細については、次を参照してください。[ドライバー署名の変更では、Windows 10 バージョン 1607](https://blogs.msdn.microsoft.com/windows_hardware_certification/2016/07/26/driver-signing-changes-in-windows-10-version-1607/)と[ドライバー署名ポリシー](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)します。
 
- 
+ドライバーの署名の詳細については、次を参照してください。[ドライバー署名ポリシー](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)します。
 
  
+
+ 
+
+
 
 
 
