@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 00f9dbd93e7ee1bd11c1c6d20c9cba097f9ee903
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 093fd0c73cb5589acbf918a7f7db3badc686bf29
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386507"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161474"
 ---
 # <a name="universal-serial-bus-usb"></a>ユニバーサル シリアル バス (USB)
 
@@ -110,7 +110,7 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <a href="http://channel9.msdn.com/Events/Build/2013/3-924a" data-raw-source="[UWP apps for USB devices](http://channel9.msdn.com/Events/Build/2013/3-924a)">USB デバイスの UWP アプリ</a>
 <a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T" data-raw-source="[Understanding USB 3.0 in Windows 8](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T)">Windows 8 の USB 3.0 を理解する</a>
 <a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T" data-raw-source="[Building great USB 3.0 devices](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T)">優れた USB 3.0 デバイスを開発する</a>
-<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P" data-raw-source="[USB Debugging Innovations in Windows 8 (Part I, II, &amp; III)](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P)">Windows 8 の USB デバッグの革新技術 (パート I、II、&amp; III)</a>
+<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P" data-raw-source="[USB Debugging Innovations in Windows 8 (Part I, II, & III)](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P)">Windows 8 の USB デバッグの革新技術 (パート I、II、& III)</a>
 <p><strong>学習向け USB ハードウェア</strong></p>
 <a href="microsoft-usb-test-tool--mutt--devices.md" data-raw-source="[MUTT devices](microsoft-usb-test-tool--mutt--devices.md)">MUTT デバイス</a>
 <p>MUTT デバイス、SuperMUTT デバイス、付随するソフトウェア パッケージは USB テストの HCK スイートに統合されています。 USB のコントローラー、デバイス、システムの開発周期において、特にストレス テストにおいて使用できる自動化されたテストを提供します。</p>
