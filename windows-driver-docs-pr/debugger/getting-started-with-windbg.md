@@ -4,12 +4,12 @@ description: WinDbg では、Windows のツールのデバッグに含まれる�
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 10/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d11e51525659a53c16a4356b013dc782e4f97019
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aaf86b6636fdc336f50ec547c37e529e0d9b7691
+ms.sourcegitcommit: 61157d026b517a86c37def552a2ab28b6c32e7b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381081"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67196425"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg ドライバーの概要 (ユーザー モード)
 
@@ -227,20 +227,18 @@ void main ()
 }
 ```
 
-この演習では前提としています、ビルド済みアプリケーション (MyApp.exe) とシンボル ファイル (MyApp.pdb) の c: は\\MyApp\\x64\\をデバッグします。 アプリケーションのソース コードが c: であると仮定されますも\\MyApp\\MyApp します。
+この演習では前提としています、ビルド済みアプリケーション (MyApp.exe) とシンボル ファイル (MyApp.pdb) の c: は\\MyApp\\x64\\をデバッグします。 アプリケーションのソース コードが c: であると仮定されますも\\MyApp\\MyApp およびターゲット コンピューターが MyApp.exe をコンパイルします。
 
 1.  WinDbg を開きます。
 
 2.  **ファイル**] メニューの [選択**実行可能ファイルのオープン**します。 開いている実行可能ファイル ダイアログ ボックスで、c: に移動します。\\MyApp\\x64\\をデバッグします。 **ファイル名**MyApp.exe を入力します。 **[開く]** をクリックします。
 3.  これらのコマンドを入力します。
 
-    [.sympath srv\*](https://go.microsoft.com/fwlink/p?linkid=399238)
+    [.symfix](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-symfix--set-symbol-store-path-)
 
-    .sympath + c:\\MyApp\\x64\\デバッグ
+    [.sympath](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ c:\\MyApp\\x64\\デバッグ
 
-    [c: .srcpath\\MyApp\\MyApp](https://go.microsoft.com/fwlink/p?linkid=399395)
-
-    今すぐ WinDbg は、アプリケーション用のシンボルとソース コードの検索場所を認識します。
+    今すぐ WinDbg は、アプリケーション用のシンボルとソース コードの検索場所を認識します。 ソース コードの場所に設定する必要はここでは、 [.srcpath](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-srcpath---lsrcpath--set-source-path-)シンボルにソース ファイルへのパスを完全に修飾するためです。
 
 4.  これらのコマンドを入力します。
 

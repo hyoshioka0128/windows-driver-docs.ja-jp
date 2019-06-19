@@ -3,16 +3,19 @@ title: Net リング要素の管理
 description: 2 つのロールを USB コント ローラーは、Windows、Windows 10 以降ではサポートされています。
 ms.date: 06/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fbe601e67fed2d7f30c3afb3ac13d8dced57582
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 030ba41a3f62f31c24b7fe66808089eb6d3e0aed
+ms.sourcegitcommit: 280ab1c75f30404c63d2c011549f7af16ad56f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148818"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67235840"
 ---
 # <a name="net-ring-element-management"></a>Net リング要素の管理
 
-NetAdapterCx クライアント ドライバーをテストするときに[Driver Verifier](../devtest/driver-verifier.md)、管理するには、このトピックのガイダンスに従って、 [ **NET_RING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ring/ns-ring-_net_ring)構造とその要素。 ルールは、このトピックでは、net リング要素のクライアント ドライバーのメンバーを変更できるデータ パスのシナリオで、クライアント ドライバーの全般的な情報に応じて必要があることに注意してこれらの構造をについて説明します。 クライアント ドライバーは、次の手順に準拠していない、Driver Verifier は違反を報告し、テスト対象のデバイスでのバグ チェックを実行します。
+管理するには、このトピックのガイダンスに従って、 [ **NET_RING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ring/ns-ring-_net_ring)構造体とその要素中にネットワーク データ転送。 ルールは、このトピックでは、net リング要素のクライアント ドライバーのメンバーを変更できるデータ パスのシナリオで、クライアント ドライバーの全般的な情報に応じて必要があることに注意してこれらの構造をについて説明します。 
+
+> [!IMPORTANT]
+> クライアント ドライバーは、開発のすべてのフェーズ中に、次の手順に従う必要があります。 かどうか、クライアント ドライバーに準拠していない、次の手順でのテスト中に[Driver Verifier](../devtest/driver-verifier.md)、Driver Verifier は、違反を報告し、テスト対象のデバイスでのバグ チェックを実行します。
 
 ## <a name="netring"></a>NET_RING
 
@@ -20,26 +23,23 @@ NetAdapterCx クライアント ドライバーをテストするときに[Drive
 
 次の表では、net のどのメンバーがそのクライアント ドライバーを変更できますをリングについて説明します。
 
-| フィールド | クライアント ドライバーが変更を許可します。 | 必要なまたは変更する (省略可能) | 
-| --- | --- | --- |
-| OSReserved1 | X | なし  |
-| ElementStride | X | なし |
-| numberOfElements | X | なし |
-| ElementIndexMask | X | なし |
-| EndIndex | X | なし |
-| OSReserved0 | X | なし |
-| OSReserved2 | X | なし |
-| BeginIndex | 〇 | 必須 |
-| NextIndex | 〇 | 省略可能 |
-| スクラッチ | 〇 | 省略可能 |
-| バッファー | X | なし |
+| フィールド | クライアント ドライバーが変更を許可します。 |
+| --- | --- |
+| OSReserved1 | X |
+| ElementStride | X |
+| numberOfElements | X |
+| ElementIndexMask | X |
+| EndIndex | X |
+| OSReserved0 | X |
+| OSReserved2 | X |
+| BeginIndex | [はい] (必須) |
+| NextIndex | [はい] (省略可能)**注**:フレームワークが読み取られません**NextIndex**します。 |
+| スクラッチ | [はい] (省略可能)**注**:フレームワークが読み取られません**スクラッチ**します。 |
+| バッファー | X |
 
-Driver Verifier は、net のリングで、次のいずれかが発生した場合、違反を報告します。
+クライアント ドライバーは、読み取りのみ、この構造体のメンバーを変更する必要がありますもする必要があります、これまでインクリメント**BeginIndex**過去**EndIndex**への呼び出し中に[ *EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)します。
 
-- 場合**BeginIndex** \> **EndIndex**
-- 任意の読み取り専用フィールドが変更された場合
-
-フレームワークが読み取られません**NextIndex**または**スクラッチ**します。
+Net のリング内のインデックスの所有権の詳細については、次を参照してください。[リングと net リングを行う反復子を Net](net-rings-and-net-ring-iterators.md)します。
 
 ## <a name="netpacket"></a>NET_PACKET
 
@@ -47,16 +47,14 @@ Driver Verifier は、net のリングで、次のいずれかが発生した場
 
 次の表に、各シナリオでのドライバーの方法について説明します。
 
-| 送受信 | フィールド セットを無視します。 | メモ |
+| 送受信 | 無視フィールドを設定しています. | メモ |
 | --- | --- | --- |
-| Rx | 〇 | <ul><li>読み取るクライアント ドライバーの意味のある方法はありません、**無視**Rx の中にフィールド。</li><li>クライアント ドライバーに書き込む必要があります、**無視**Rx の操作をキャンセルする場合のフィールドします。</li><li>場合**無視**設定は、Rx では、中に、フレームワークは読み取らない場合その他のフィールド。 そのため、クライアント ドライバー関連付ける必要がありますいないリソース パケット解放されないためです。</li></ul> |
-| Rx | X | <ul><li>クライアント ドライバーを設定する必要があります**FragmentIndex**、 **FragmentCount**、およびすべてのフィールドに**レイアウト**します。</li><li>**FragmentIndex**間である必要があります**BeginIndex**包括と**EndIndex**フラグメント リングに排他的です。</li><li>**FragmentCount**間フラグメントの数を超えることはできません**BeginIndex**包括的と**EndIndex**フラグメント リングに排他的です。</li><li>Driver Verifier は、クライアント ドライバーは、フラグメントを移動する場合に違反を報告**BeginIndex**パケットではありませんが、 **BeginIndex**します。</li><li>呼び出し後[ *EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)クライアント ドライバーがパケットのリングをインクリメントする場合、 **BeginIndex**ドライバーでは、フラグメント リングを増やす必要がありますも、**BeginIndex**過去のパケットのフラグメント。 フラグメント リングつまり**BeginIndex**に移動する必要があります、 **EndIndex**の前のパケットのフラグメント。</li></ul> |
-| テキサス州 | どちらもオン | <ul><li>クライアント ドライバー以外のすべてのパケット内のフィールドは変更しないで**スクラッチ**します。</li></ul> |
-| テキサス州 | 〇 | <ul><li>クライアント ドライバーでの値を読み取ることができます**無視**書き込む必要があることはありません。</li><li>ドライバーする必要がありますの可能性があります以外の任意のフィールドを読み取れません Tx パケットが無視される場合は**スクラッチ**、必要な場合。</li></ul> |
+| Rx | クライアント ドライバー | <ul><li>Rx では、中にクライアント ドライバーが設定**無視**必要に応じて、およびフレームワークによって読み取られる場合。 クライアント ドライバーは、読み取る必要はありません**無視**Rx の任意の時点。</li><li>クライアント ドライバーが設定されている場合、**無視**Rx の中にフィールド。<ul><li>クライアント ドライバーに書き込む必要があります、**無視**ハードウェアを正常に割り当てられていないパケットの受信操作をキャンセルする場合のフィールドします。 詳細については、次を参照してください。 [net リングとネットワーク データをキャンセル](canceling-network-data-with-net-rings.md)します。</li><li>クライアント ドライバー関連付ける必要がありますいないリソース パケット解放されないためです。</li></ul></li><li>クライアント ドライバーが設定されていない場合、**無視**Rx の中にフィールド。<ul><li>クライアント ドライバーを設定する必要があります**FragmentIndex**、 **FragmentCount**、およびすべてのフィールドに**レイアウト**します。</li><li>**FragmentIndex**間である必要があります**BeginIndex**包括と**EndIndex**フラグメント リングに排他的です。</li><li>**FragmentCount**間フラグメントの数を超えることはできません**BeginIndex**包括的と**EndIndex**フラグメント リングに排他的です。</li><li>クライアント ドライバーは、パケットのリングを移動する必要があります**BeginIndex** 、対応するフラグメントのリングを移動した場合**BeginIndex**します。</li><li>呼び出し後[ *EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)クライアント ドライバーがパケットのリングをインクリメントする場合、 **BeginIndex**ドライバーでは、フラグメント リングを増やす必要がありますも、**BeginIndex**過去のパケットのフラグメント。 フラグメント リングつまり**BeginIndex**に移動する必要があります、 **EndIndex**の前のパケットのフラグメント。</li></ul></ul> |
+| テキサス州 | NetAdapterCx | <ul><li>クライアント ドライバー以外のすべてのパケット内のフィールドは変更しないで**スクラッチ**します。</li><li>クライアント ドライバーでの値を読み取ることができます**無視**書き込む必要があることはありません。</li><li>ドライバーする必要がありますの可能性があります以外の任意のフィールドを読み取れません Tx パケットが無視される場合は**スクラッチ**、必要な場合。</li></ul> |
 
 ### <a name="netpacketlayout"></a>NET_PACKET_LAYOUT
 
-**レイアウト**のフィールド、 [ **NET_PACKET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/packet/ns-packet-_net_packet)次のルールが適用されます。
+Rx の操作中に、**レイアウト**のフィールド、 [ **NET_PACKET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/packet/ns-packet-_net_packet)次のルールが適用されます。
 
 - フィールドを除くすべて**Reserved0**クライアント ドライバーで初期化する必要があります。
 - 場合**Layer2Type**に設定されている**NetPacketLayer2TypeEthernet**、し**Layer2HeaderLength**あります**14**以上。
@@ -67,11 +65,13 @@ Driver Verifier は、net のリングで、次のいずれかが発生した場
 - 場合**Layer4Type**に設定されている**Udp**、し**Layer4HeaderLength**あります**8**以上。
 - レイヤーの種類のフィールドは、適切な列挙型の範囲内にする必要があります。
 
+**レイアウト**Tx 中には使用されません。
+
 ## <a name="netfragment"></a>NET_FRAGMENT
 
 [**NET_FRAGMENT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fragment/ns-fragment-_net_fragment)フィールド規則は、ドライバーを受信または送信するかどうかとドライバーによって、またはフレームワークによって、パケットに関連付けられたフラグメント バッファーのかどうかによって異なります。
 
 | 送受信 | メモ |
 | --- | --- |
-| Rx | <ul><li>クライアント ドライバーが書き込むことはできません、 **OsReserved_Bounced**フィールド。</li><li>ドライバーの場合*いない*アタッチし、**容量**は変更できませんが、 **ValidLength**と**オフセット**変更する必要があります。</li><li>場合、ドライバー*は*アタッチし、**容量**、 **ValidLength**、および**オフセット**すべてを変更する必要があります。</li><li>**オフセット**必要がありますより小さい**ValidLength**します。</li><li>**ValidLength**必要がありますより小さい**容量。**
+| Rx | <ul><li>クライアント ドライバーが書き込むことはできません、 **OsReserved_Bounced**フィールド。</li><li>ドライバーがない接続し、場合**容量**は変更できませんが、 **ValidLength**と**オフセット**変更する必要があります。</li><li>ドライバーは、アタッチする場合**容量**、 **ValidLength**、および**オフセット**すべてを変更する必要があります。</li><li>**オフセット** + **ValidLength**必要がありますより小さい**容量**します。</li></ul> |
 | テキサス州 | <ul><li>クライアント ドライバーは、以外のすべてのフィールドを変更できません**スクラッチ**します。</li></ul> |
