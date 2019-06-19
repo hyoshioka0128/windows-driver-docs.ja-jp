@@ -4,12 +4,12 @@ description: 光センサーのプロパティのキー。
 ms.assetid: 87C58F14-E23D-4567-BBD5-AA42DF9371B0
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 57161a83aa5e8690f2861fffc3940622d93c44cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8986f013d292565106e2d60cbd6d6fce6334707d
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345174"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161572"
 ---
 # <a name="light-sensor-property"></a>光センサーのプロパティ
 
@@ -52,7 +52,7 @@ ms.locfileid: "63345174"
 <td><p>DEVPKEY_SensorData_LightLevel_ColorCapable</p></td>
 <td><p>VT_BOOL</p></td>
 <td><p>R/O</p></td>
-<td><p>任意。 一番と光の温度をサポートしている場合に必要です。</p></td>
+<td><p>(省略可能)。 一番と光の温度をサポートしている場合に必要です。</p></td>
 <td><p>ライトの温度やが一番の光センサーをサポートしています x と y です。</p></td>
 </tr>
 </tbody>
@@ -70,14 +70,14 @@ ms.locfileid: "63345174"
 // Sensor Properties
      if (NT_SUCCESS(Status))
      {
-         Status = InitSensorCollection(SENSOR_PROPERTIES_COUNT, &amp;m_pSensorProperties, SensorInstance);
+         Status = InitSensorCollection(SENSOR_PROPERTIES_COUNT, &m_pSensorProperties, SensorInstance);
          if (NT_SUCCESS(Status))
          {
                m_Interval = DEFAULT_ACCELEROMETER_REPORT_INTERVAL;
                ...
                ...
                m_pSensorProperties->List[SENSOR_PROPERTY_MIN_DATA_INTERVAL].Key = PKEY_Sensor_MinimumDataInterval_Ms;
-               InitPropVariantFromUInt32(ACCELEROMETER_MIN_REPORT_INTERVAL, &amp;(m_pSensorProperties->List[SENSOR_PROPERTY_MIN_DATA_INTERVAL].Value));
+               InitPropVariantFromUInt32(ACCELEROMETER_MIN_REPORT_INTERVAL, &(m_pSensorProperties->List[SENSOR_PROPERTY_MIN_DATA_INTERVAL].Value));
                ...
          }
     }

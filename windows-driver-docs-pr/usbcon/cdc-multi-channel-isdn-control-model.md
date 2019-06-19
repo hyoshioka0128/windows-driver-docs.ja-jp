@@ -3,12 +3,12 @@ Description: マルチ チャネルの CDC ISDN コントロール モデル
 title: マルチ チャネルの CDC ISDN コントロール モデル
 ms.localizationpriority: medium
 ms.date: 01/07/2019
-ms.openlocfilehash: 90c99ca91bbf616aa7150790ccd9edd15386ce6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31168fbb4acb51d27f69ecdac3dcc6a332ec20f9
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392100"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161344"
 ---
 # <a name="cdc-multi-channel-isdn-control-model"></a>マルチ チャネルの CDC ISDN コントロール モデル
 
@@ -53,15 +53,15 @@ USB CDC マルチ チャンネル ISDN コントロール モデル (MCCM) イ�
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_04&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_04
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_04&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_04</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_04&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_04
+USB\Vid_%04x&Pid_%04x&Cdc_04&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_04</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_04&amp;Prot_00
-USB\Class_02&amp;SubClass_04
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_04&Prot_00
+USB\Class_02&SubClass_04
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">

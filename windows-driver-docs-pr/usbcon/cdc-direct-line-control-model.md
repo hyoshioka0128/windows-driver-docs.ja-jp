@@ -1,14 +1,14 @@
 ---
-Description: CDC Direct Line Control Model
+Description: CDC ダイレクト行コントロール モデル
 title: CDC ダイレクト行コントロール モデル
 ms.localizationpriority: medium
 ms.date: 01/07/2019
-ms.openlocfilehash: 3c0e57ff803e6127135338358258f57714789886
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 94d5efdcc531c0e028d8c905f1023f20ad8a8bc4
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56579800"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161584"
 ---
 # <a name="cdc-direct-line-control-model"></a>CDC ダイレクト行コントロール モデル
 
@@ -28,7 +28,7 @@ USB CDC 直接行コントロール モデル (DLCM) インターフェイスの
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>参照</p></td>
+<td><p>リファレンス</p></td>
 <td><p><em>ユニバーサル シリアル バス クラスの定義の通信デバイス</em>、バージョン 1.1 では、セクション 3.6.1 します。</p></td>
 </tr>
 <tr class="even">
@@ -53,15 +53,15 @@ USB CDC 直接行コントロール モデル (DLCM) インターフェイスの
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_01&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_01
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_01&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_01</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_01&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_01
+USB\Vid_%04x&Pid_%04x&Cdc_01&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_01</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_01&amp;Prot_00
-USB\Class_02&amp;SubClass_01
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_01&Prot_00
+USB\Class_02&SubClass_01
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">

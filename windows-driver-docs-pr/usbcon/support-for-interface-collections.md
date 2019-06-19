@@ -3,12 +3,12 @@ Description: 複合 USB デバイス上のインターフェイスは、コレ�
 title: USB 複合デバイス上のインターフェイス コレクションの列挙
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 912d9a75ae21c48fc47ddf1a8c5d7a46527974b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af034c0f2c593207a7dc926eeb99c3519b02e322
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324499"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161370"
 ---
 # <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>USB 複合デバイス上のインターフェイス コレクションの列挙
 
@@ -286,14 +286,14 @@ CDC と WMCDC デバイスで発生する USB オーディオ デバイス ク�
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;MI_%02x</code></pre>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&MI_%02x
+USB\Vid_%04x&Pid_%04x&MI_%02x</code></pre>
 <p>オーディオのインターフェイスのコレクションのハードウェア Id では、インターフェイス クラスに固有の情報は含まれません。 ハードウェア オーディオ インターフェイスのコレクションに関連付けられている Id の書式設定の詳細については、次を参照してください。<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)">ワイヤレス モバイル通信デバイス クラスに対するサポート</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_01&amp;SubClass_01&amp;Prot_00
-USB\Class_01&amp;SubClass_01
+<td><pre space="preserve"><code class="language-syntax">USB\Class_01&SubClass_01&Prot_00
+USB\Class_01&SubClass_01
 USB\Class_01</code></pre>
 <p>互換性のあるオーディオ インターフェイスのコレクション Id の形式は、インターフェイス クラス、インターフェイス サブクラスをおよびプロトコルの埋め込みについてを説明します。 CDC または WMCDC デバイスでは、オーディオ インターフェイスのコレクションのインターフェイス クラスは 01 01 は、サブクラスは、プロトコルは 00。</p></td>
 </tr>
@@ -347,15 +347,15 @@ CDC 仕様に準拠しているインターフェイスのコレクションに�
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_02&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_02
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_02&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_02</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_02&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_02
+USB\Vid_%04x&Pid_%04x&Cdc_02&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_02</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_02&amp;Prot_%02X
-USB\Class_02&amp;SubClass_02
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_02&Prot_%02X
+USB\Class_02&SubClass_02
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -408,15 +408,15 @@ USB CDC ATM ネットワーク コントロール モデル (ANCM) インター�
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_07&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_07
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_07&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_07</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_07&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_07
+USB\Vid_%04x&Pid_%04x&Cdc_07&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_07</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_07&amp;Prot_00
-USB\Class_02&amp;SubClass_07
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_07&Prot_00
+USB\Class_02&SubClass_07
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -471,13 +471,13 @@ USB CDC 共通 ISDN API (CAPI) コントロール モデル インターフェ�
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_05&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_05</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_05&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_05</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_05&amp;Prot_00
-USB\Class_02&amp;SubClass_05</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_05&Prot_00
+USB\Class_02&SubClass_05</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>特別な処理</p></td>
@@ -529,15 +529,15 @@ USB CDC 直接行コントロール モデル (DLCM) インターフェイスの
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_01&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_01
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_01&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_01</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_01&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_01
+USB\Vid_%04x&Pid_%04x&Cdc_01&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_01</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_01&amp;Prot_00
-USB\Class_02&amp;SubClass_01
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_01&Prot_00
+USB\Class_02&SubClass_01
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -590,15 +590,15 @@ USB CDC イーサネット ネットワーク コントロール モデル (ENCM
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_06&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_06
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_06&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_06</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_06&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_06
+USB\Vid_%04x&Pid_%04x&Cdc_06&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_06</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_06&amp;Prot_00
-USB\Class_02&amp;SubClass_06
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_06&Prot_00
+USB\Class_02&SubClass_06
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -651,15 +651,15 @@ USB CDC マルチ チャンネル ISDN コントロール モデル (MCCM) イ�
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_04&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_04
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_04&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_04</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_04&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_04
+USB\Vid_%04x&Pid_%04x&Cdc_04&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_04</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_04&amp;Prot_00
-USB\Class_02&amp;SubClass_04
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_04&Prot_00
+USB\Class_02&SubClass_04
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -713,15 +713,15 @@ USB CDC 電話コントロール モデル (TCM) インターフェイスのコ�
 </tr>
 <tr class="odd">
 <td><p>Hardware ID (ハードウェア ID)</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_03&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_03
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_03&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_03</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_03&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_03
+USB\Vid_%04x&Pid_%04x&Cdc_03&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_03</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 ID</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_03&amp;Prot_%02X
-USB\Class_02&amp;SubClass_03
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_03&Prot_%02X
+USB\Class_02&SubClass_03
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -776,15 +776,15 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_88&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_88
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_88&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_88</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_88&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_88
+USB\Vid_%04x&Pid_%04x&Cdc_88&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_88</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_88&amp;Prot_00
-USB\Class_02&amp;SubClass_88
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_88&Prot_00
+USB\Class_02&SubClass_88
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -837,13 +837,13 @@ CDC と WMCDC デバイスで発生する USB ビデオ デバイスのクラス
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;MI_%02x</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&MI_%02x
+USB\Vid_%04x&Pid_%04x&MI_%02x</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_0E&amp;SubClass_01&amp;Prot_00
-USB\Class_0E&amp;SubClass_01
+<td><pre space="preserve"><code class="language-syntax">USB\Class_0E&SubClass_01&Prot_00
+USB\Class_0E&SubClass_01
 USB\Class_0E</code></pre></td>
 </tr>
 <tr class="odd">
@@ -900,15 +900,15 @@ WMCDC 仕様に準拠しているインターフェイスのコレクション�
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_Modem&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_Modem
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_Modem&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_Modem</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_Modem&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_Modem
+USB\Vid_%04x&Pid_%04x&Cdc_Modem&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_Modem</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_Modem&amp;Prot_%02X
-USB\Class_02&amp;SubClass_Modem
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_Modem&Prot_%02X
+USB\Class_02&SubClass_Modem
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -963,15 +963,15 @@ USB WMCDC デバイスの管理モデル (DMM) インターフェイスのコレ
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_09&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_09
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_09&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_09</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_09&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_09
+USB\Vid_%04x&Pid_%04x&Cdc_09&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_09</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_09&amp;Prot_%02X
-USB\Class_02&amp;SubClass_09
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_09&Prot_%02X
+USB\Class_02&SubClass_09
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -1024,15 +1024,15 @@ USB WMCDC Mobile 直接行モデル (MDLM) インターフェイスのコレク�
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_0A&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_0A
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_0A&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_0A</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_0A&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_0A
+USB\Vid_%04x&Pid_%04x&Cdc_0A&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_0A</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_0A&amp;Prot_%02X
-USB\Class_02&amp;SubClass_0A
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_0A&Prot_%02X
+USB\Class_02&SubClass_0A
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -1087,15 +1087,15 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_0B&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_0B
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_0B&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_0B</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_0B&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_0B
+USB\Vid_%04x&Pid_%04x&Cdc_0B&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_0B</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_0B&amp;Prot_00
-USB\Class_02&amp;SubClass_0B
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_0B&Prot_00
+USB\Class_02&SubClass_0B
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -1150,14 +1150,14 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;WPD_OBEX&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;WPD_OBEX
-USB\Vid_%04x&amp;Pid_%04x&amp;WPD_OBEX&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;WPD_OBEX</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&WPD_OBEX&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&WPD_OBEX
+USB\Vid_%04x&Pid_%04x&WPD_OBEX&MI_%02x
+USB\Vid_%04x&Pid_%04x&WPD_OBEX</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;WPD_OBEX
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&WPD_OBEX
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -1212,15 +1212,15 @@ WHCM インターフェイスの列挙のコレクションの次のプロパテ
 </tr>
 <tr class="odd">
 <td><p>ハードウェア Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_08&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_08
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_08&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_08</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_08&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_08
+USB\Vid_%04x&Pid_%04x&Cdc_08&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_08</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>互換性 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_08&amp;Prot_00
-USB\Class_02&amp;SubClass_08
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_08&Prot_00
+USB\Class_02&SubClass_08
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">

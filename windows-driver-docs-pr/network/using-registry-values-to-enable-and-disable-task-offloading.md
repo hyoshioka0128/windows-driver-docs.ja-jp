@@ -9,12 +9,12 @@ keywords:
 - タスクのオフロード WDK TCP/IP トランスポートは、サービスを無効にします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cceb9b5b163ebe8750402363c42a074edf202c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96d5c49b7248831820cf2944f15172c23056bf83
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373769"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161552"
 ---
 # <a name="using-registry-values-to-enable-and-disable-task-offloading"></a>タスク オフロードを有効および無効にするレジストリ値の使用
 
@@ -28,37 +28,37 @@ ms.locfileid: "63373769"
 
 詳細なキーワードの定義は次のとおりです。
 
-<a href="" id="-ipchecksumoffloadipv4"></a>**\*IPChecksumOffloadIPv4**  
+<a href="" id="-ipchecksumoffloadipv4"></a> **\*IPChecksumOffloadIPv4**  
 デバイスが有効になっていること、または IPv4 チェックサムの計算を無効になっているかどうかについて説明します。
 
-<a href="" id="-tcpchecksumoffloadipv4"></a>**\*TCPChecksumOffloadIPv4**  
+<a href="" id="-tcpchecksumoffloadipv4"></a> **\*TCPChecksumOffloadIPv4**  
 デバイスが有効になっていること、または IPv4 パケットを TCP チェックサムの計算を無効になっているかどうかについて説明します。
 
-<a href="" id="-tcpchecksumoffloadipv6"></a>**\*TCPChecksumOffloadIPv6**  
+<a href="" id="-tcpchecksumoffloadipv6"></a> **\*TCPChecksumOffloadIPv6**  
 デバイスが有効になっていること、または IPv6 パケットを TCP チェックサムの計算を無効になっているかどうかについて説明します。
 
-<a href="" id="-udpchecksumoffloadipv4"></a>**\*UDPChecksumOffloadIPv4**  
+<a href="" id="-udpchecksumoffloadipv4"></a> **\*UDPChecksumOffloadIPv4**  
 デバイスが有効になっていること、または IPv4 パケットに対する UDP チェックサムの計算を無効になっているかどうかについて説明します。
 
-<a href="" id="-udpchecksumoffloadipv6"></a>**\*UDPChecksumOffloadIPv6**  
+<a href="" id="-udpchecksumoffloadipv6"></a> **\*UDPChecksumOffloadIPv6**  
 デバイスが有効になっているまたは IPv6 パケットを UDP チェックサムの計算を無効になっているかどうかについて説明します。
 
-<a href="" id="-lsov1ipv4"></a>**\*LsoV1IPv4**  
+<a href="" id="-lsov1ipv4"></a> **\*LsoV1IPv4**  
 デバイスが有効になっているまたは大量送信オフロード バージョン 1 (LSOv1) に対して IPv4 による大きな TCP パケットのセグメント化を無効になっているかどうかについて説明します。
 
-<a href="" id="-lsov2ipv4"></a>**\*LsoV2IPv4**  
+<a href="" id="-lsov2ipv4"></a> **\*LsoV2IPv4**  
 デバイスが有効になっているまたは大量送信オフロード バージョン 2 (LSOv2) に対して IPv4 による大きな TCP パケットのセグメント化を無効になっているかどうかについて説明します。
 
-<a href="" id="-lsov2ipv6"></a>**\*LsoV2IPv6**  
+<a href="" id="-lsov2ipv6"></a> **\*LsoV2IPv6**  
 デバイスが有効になっているまたは IPv6 経由で大量送信オフロード バージョン 2 (LSOv2) 大きな TCP パケットのセグメント化を無効にするかどうかについて説明します。
 
-<a href="" id="-ipsecoffloadv1ipv4"></a>**\*IPsecOffloadV1IPv4**  
+<a href="" id="-ipsecoffloadv1ipv4"></a> **\*IPsecOffloadV1IPv4**  
 デバイスが有効になっているまたは ipv4 ヘッダーの IPsec の計算を無効になっているかどうかについて説明します。
 
-<a href="" id="-ipsecoffloadv2"></a>**\*IPsecOffloadV2**  
+<a href="" id="-ipsecoffloadv2"></a> **\*IPsecOffloadV2**  
 デバイスが有効になっていること、または IPsec オフロード バージョン 2 (IPsecOV2) を無効になっているかどうかについて説明します。 IPsecOV2 は、追加の暗号化アルゴリズム、IPv6、および大量送信オフロード バージョン 2 (LSOv2) との共存をサポートします。
 
-<a href="" id="-ipsecoffloadv2ipv4"></a>**\*IPsecOffloadV2IPv4**  
+<a href="" id="-ipsecoffloadv2ipv4"></a> **\*IPsecOffloadV2IPv4**  
 デバイスが有効になっていること、または IPsecOV2 で IPv4 のみ無効かどうかについて説明します。
 
 次の表では、オフロード サービスの構成に使用できる詳細なキーワードについて説明します。
@@ -101,7 +101,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPChecksumOffloadIPv4</strong></p></td>
@@ -125,7 +125,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPChecksumOffloadIPv6</strong></p></td>
@@ -149,7 +149,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>UDPChecksumOffloadIPv4</strong></p></td>
@@ -173,7 +173,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>UDPChecksumOffloadIPv6</strong></p></td>
@@ -197,7 +197,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV1IPv4</strong></p></td>
@@ -257,7 +257,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダー &amp; ESP を有効になっています。</p></td>
+<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>IPsecOffloadV2</strong></p></td>
@@ -281,7 +281,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダー &amp; ESP を有効になっています。</p></td>
+<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>* IPsecOffloadV2IPv4</strong></p></td>
@@ -305,7 +305,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダー &amp; ESP を有効になっています。</p></td>
+<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
 </tr>
 </tbody>
 </table>
@@ -318,10 +318,10 @@ ms.locfileid: "63373769"
 
 グループ化されたキーワードの定義は次のとおりです。
 
-<a href="" id="-tcpudpchecksumoffloadipv4"></a>**\*TCPUDPChecksumOffloadIPv4**  
+<a href="" id="-tcpudpchecksumoffloadipv4"></a> **\*TCPUDPChecksumOffloadIPv4**  
 デバイスが有効になっていること、または ipv4 IP、TCP、および UDP チェックサムの計算を無効になっているかどうかについて説明します。
 
-<a href="" id="-tcpudpchecksumoffloadipv6"></a>**\*TCPUDPChecksumOffloadIPv6**  
+<a href="" id="-tcpudpchecksumoffloadipv6"></a> **\*TCPUDPChecksumOffloadIPv6**  
 デバイスが有効になっていること、または IPv6 経由で TCP および UDP チェックサムの計算を無効になっているかどうかについて説明します。
 
 次の表では、オフロード サービスの構成に使用できるグループ化されたキーワードについて説明します。
@@ -364,7 +364,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Tx &amp; Rx が有効になっています。</p></td>
+<td align="left"><p>Rx が有効になっている (&)、テキサス州</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPUDPChecksumOffloadIPv6</strong></p></td>
@@ -388,7 +388,7 @@ ms.locfileid: "63373769"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Tx &amp; Rx が有効になっています。</p></td>
+<td align="left"><p>Rx が有効になっている (&)、テキサス州</p></td>
 </tr>
 </tbody>
 </table>

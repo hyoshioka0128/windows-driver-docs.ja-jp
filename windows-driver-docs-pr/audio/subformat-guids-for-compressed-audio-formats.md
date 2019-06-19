@@ -4,12 +4,12 @@ description: 圧縮されたオーディオ形式のサブ形式 GUID
 ms.assetid: f9595d6c-952c-4266-8eb5-5c8581051d28
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2693065517cf9a0a55db1c2b5a105d8d3afa7da3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44e8f98aa32f658ea9cc530859523330a2189477
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328600"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161386"
 ---
 # <a name="subformat-guids-for-compressed-audio-formats"></a>圧縮されたオーディオ形式のサブ形式 GUID
 
@@ -61,7 +61,7 @@ CEA-d 861 standard では、結果として、CEA デバイスでサポートさ
 <td align="left"><p>0x03</p></td>
 <td align="left"><p>00000003-0cea-0010-8000-00aa00389b71</p>
 <p>KSDATAFORMAT_SUBTYPE_IEC61937_MPEG1</p></td>
-<td align="left"><p>Mpeg-1 (レイヤー 1 &amp; 2)。</p></td>
+<td align="left"><p>Mpeg-1 (レイヤー 1 (& a) 2)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x04</p></td>

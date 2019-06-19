@@ -36,7 +36,7 @@ Microsoft Visual studio では、実行中のプロセスにアタッチまた�
 ## <a name="span-idspawninganewprocessonthesamecomputerspanspan-idspawninganewprocessonthesamecomputerspanspan-idspawninganewprocessonthesamecomputerspanspawning-a-new-process-on-the-same-computer"></a><span id="Spawning_a_new_process_on_the_same_computer"></span><span id="spawning_a_new_process_on_the_same_computer"></span><span id="SPAWNING_A_NEW_PROCESS_ON_THE_SAME_COMPUTER"></span>同じコンピューター上の新しいプロセスを作成
 
 
-1.  Visual Studio から、**ツール** メニューの 選択**デバッガーの起動 **します。
+1.  Visual Studio から、**ツール**] メニューの [選択 **デバッガーの起動**します。
 2.  **デバッガーの起動 [** ] ダイアログ ボックスに、実行可能ファイルへのパスを入力します。 引数と作業ディレクトリを入力することもできます。
 3.  クリックして**を起動します。**
 

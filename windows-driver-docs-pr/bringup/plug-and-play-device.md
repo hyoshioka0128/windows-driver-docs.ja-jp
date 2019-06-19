@@ -4,12 +4,12 @@ description: ESRT 構成テーブルの存在は、ファームウェア リソ�
 ms.assetid: 85EE32E7-1871-490D-9FF6-07E0891C78E3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48b1bb482bca8f6c2d1d8aa41947ed5804297529
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: beb3b3ebb01f4e364af2ec95be235fa9ce294de6
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337533"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161360"
 ---
 # <a name="plug-and-play-device"></a>プラグ アンド プレイ デバイス
 
@@ -30,12 +30,12 @@ ESRT 構成テーブルの存在は、ファームウェア リソースごと�
 <tbody>
 <tr class="odd">
 <td>UEFI\RES_ {SYSTEM_FIRMWARE} \0</td>
-<td><p>UEFI\RES_ {SYSTEM_FIRMWARE}&amp;REV_1</p>
+<td><p>UEFI\RES_ {SYSTEM_FIRMWARE} &AMP; REV_1</p>
 <p>UEFI\RES_ {SYSTEM_FIRMWARE}</p></td>
 </tr>
 <tr class="even">
 <td>UEFI\RES_{DEVICE_FIRMWARE}\0</td>
-<td><p>UEFI\RES_ {DEVICE_FIRMWARE}&amp;REV_1</p>
+<td><p>UEFI\RES_ {DEVICE_FIRMWARE} &AMP; REV_1</p>
 <p>UEFI\RES_ {DEVICE_FIRMWARE}</p></td>
 </tr>
 </tbody>

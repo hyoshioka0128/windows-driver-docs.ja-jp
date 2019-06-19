@@ -4,12 +4,12 @@ description: グラフィックス プロセッシング ユニット (GPU) へ�
 ms.assetid: E6CAD808-73C0-48AB-BF95-76911D5C104A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b678ad688a0587ed965fff1028d9218b4ee12b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ecf2d534acfc82044c7aec174a042297da8f7df
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373934"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161446"
 ---
 # <a name="gpu-segments"></a>GPU セグメント
 
@@ -63,7 +63,7 @@ GPU エンジンは、GPU の仮想アドレス指定をサポートしていな
 <td align="left"></td>
 <td align="left">AccessedPhysically 0 を = =</td>
 <td align="left">AccessedPhysically 1 = =</td>
-<td align="left">プライマリ&amp; &amp; AccessedPhysically 0 を = =</td>
+<td align="left">プライマリ (& a) (& a) AccessedPhysically 0 を = =</td>
 </tr>
 <tr class="even">
 <td align="left">メモリのセグメント</td>

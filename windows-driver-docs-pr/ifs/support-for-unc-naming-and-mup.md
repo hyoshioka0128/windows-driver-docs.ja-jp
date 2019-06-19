@@ -15,12 +15,12 @@ keywords:
 - 並列プレフィックス解決の WDK ネットワーク リダイレクター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d471ede1543438093cad0cb61592d8c9b502d8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b86dddd6c52d4b2fa9649604289c7cef540a1a4a
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344365"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161561"
 ---
 # <a name="support-for-unc-naming-and-mup"></a>UNC 名前付けと MUP のサポート
 
@@ -126,7 +126,7 @@ typedef struct _QUERY_PATH_REQUEST {
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FilePathName</strong></p></td>
-<td align="left"><p>NULL 以外で終わる、フォームの Unicode 文字列&amp;lt; server&gt;&amp;lt; 共有&gt;&amp;lt; パス&gt;します。 (バイト単位)、文字列の長さがで指定された、 <strong>PathNameLength</strong>メンバー。</p></td>
+<td align="left"><p>NULL 以外で終わる、フォームの Unicode 文字列&lt;server&gt;&lt;共有&gt;&lt;パス&gt;します。 (バイト単位)、文字列の長さがで指定された、 <strong>PathNameLength</strong>メンバー。</p></td>
 </tr>
 </tbody>
 </table>
@@ -194,7 +194,7 @@ IOCTL\_REDIR\_クエリ\_パスの要求が MUP から取得する必要があ�
 
 レガシ ネットワーク リダイレクター (RDBSS を使用するのには基づいていない) を呼び出して MUP の UNC プロバイダーとして登録する[ **FsRtlRegisterUncProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff547178) IOCTL 受け取ります\_REDIR\_クエリ\_パス要求。
 
-A ネットワーク UNC プロバイダーはこのプレフィックスの要求を受信は IRP の場合と同様のサポートを示すミニ リダイレクター\_MJ\_作成の呼び出し。 この要求の作成はユーザー モードに似ています**Createfile**ファイルを使用して呼び出す\_作成\_ツリー\_接続フラグを設定します。 ネットワークのミニ リダイレクターの呼び出しとプレフィックスの要求を受信しません[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]**](https://msdn.microsoft.com/library/windows/hardware/ff550715)します。 RDBSS プレフィックスのクレームの送信、 [ **MRxCreateSrvCall** ](https://msdn.microsoft.com/library/windows/hardware/ff549864)要求への呼び出し後にネットワーク ミニリダイレクター [ **MRxSrvCallWinnerNotify**](https://msdn.microsoft.com/library/windows/hardware/ff550824)と[ **MRxCreateVNetRoot**](https://msdn.microsoft.com/library/windows/hardware/ff549869)します。 ネットワークのミニ リダイレクター登録される RDBSS と、キー RDBSS 内部 RDBSS エントリ ポイントをポイントする場所を空けるのネットワークのミニ リダイレクター ドライバー ディスパッチ テーブルがコピーされます。 この IOCTL 受信 RDBSS\_REDIR\_クエリ\_ネットワーク ミニリダイレクターと呼び出しの内部パス**MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**、および**MRxCreateVNetRoot**します。 元の IOCTL\_REDIR\_クエリ\_RX に含まれるパス IRP\_に渡されるコンテキストの構造、 **MRxCreateSrvCall**ルーチン。 さらに、次のメンバー、RX で\_に渡されるコンテキスト**MRxCreateSrvCall**が変更されます。
+A ネットワーク UNC プロバイダーはこのプレフィックスの要求を受信は IRP の場合と同様のサポートを示すミニ リダイレクター\_MJ\_作成の呼び出し。 この要求の作成はユーザー モードに似ています**Createfile**ファイルを使用して呼び出す\_作成\_ツリー\_接続フラグを設定します。 ネットワークのミニ リダイレクターの呼び出しとプレフィックスの要求を受信しません[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)します。 RDBSS プレフィックスのクレームの送信、 [ **MRxCreateSrvCall** ](https://msdn.microsoft.com/library/windows/hardware/ff549864)要求への呼び出し後にネットワーク ミニリダイレクター [ **MRxSrvCallWinnerNotify**](https://msdn.microsoft.com/library/windows/hardware/ff550824)と[ **MRxCreateVNetRoot**](https://msdn.microsoft.com/library/windows/hardware/ff549869)します。 ネットワークのミニ リダイレクター登録される RDBSS と、キー RDBSS 内部 RDBSS エントリ ポイントをポイントする場所を空けるのネットワークのミニ リダイレクター ドライバー ディスパッチ テーブルがコピーされます。 この IOCTL 受信 RDBSS\_REDIR\_クエリ\_ネットワーク ミニリダイレクターと呼び出しの内部パス**MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**、および**MRxCreateVNetRoot**します。 元の IOCTL\_REDIR\_クエリ\_RX に含まれるパス IRP\_に渡されるコンテキストの構造、 **MRxCreateSrvCall**ルーチン。 さらに、次のメンバー、RX で\_に渡されるコンテキスト**MRxCreateSrvCall**が変更されます。
 
 **MajorFunction** IRP にメンバーが設定されている\_MJ\_作成元の IRP が IRP も\_MJ\_デバイス\_コントロール。
 

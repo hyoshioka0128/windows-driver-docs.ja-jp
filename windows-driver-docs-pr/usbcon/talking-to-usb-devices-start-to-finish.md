@@ -3,12 +3,12 @@ Description: Windows 8.1 で導入された、Windows ランタイム Api を使
 title: USB デバイスとの対話、開始から終了まで (UWP アプリ)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba4c150128653fc2a724408bc1b70c6fb531871
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 431d3a959db81680f062ea57a4e1ee04d6c5d935
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379921"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161516"
 ---
 # <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>USB デバイスとの対話、開始から終了まで (UWP アプリ)
 
@@ -33,7 +33,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [**手順 1.**-デバイスのドライバーを関数として Microsoft が提供 WinUSB ドライバーをインストールします。](#step1)
+-   [**手順 1.** -デバイスのドライバーを関数として Microsoft が提供 WinUSB ドライバーをインストールします。](#step1)
 -   [**手順 2**-Get デバイス インターフェイスの GUID、ハードウェア ID、およびデバイスのデバイス クラスの情報。](#step2)
 -   [**手順 3**— デバイス クラスやサブクラスでは、Windows ランタイムの USB API によって許可されているプロトコルを設定するかどうかを判断します。](#step3)
 -   [**手順 4**-このチュートリアルでは拡張可能な基本的 Microsoft Visual Studio 2013 プロジェクトを作成します。](#step4)
@@ -48,7 +48,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 -   [**手順 13**-デバイスを閉じます。](#step13)
 -   [**手順 14**-アプリのデバイス メタデータ パッケージを作成します。](#step14)
 -   [**手順 15**-デバイスがシステムに接続されている場合、アプリが起動するように、自動再生のアクティブ化を実装するためにアプリを拡張します。](#step15)
--   [**手順 16.**-アプリの中断を取得することがなく、ファームウェアの更新など、デバイスに時間のかかる USB 転送を実行できるバック グラウンド タスクを実装するためにアプリを拡張します。](#step16)
+-   [**手順 16.** -アプリの中断を取得することがなく、ファームウェアの更新など、デバイスに時間のかかる USB 転送を実行できるバック グラウンド タスクを実装するためにアプリを拡張します。](#step16)
 -   [**手順 17**— Windows アプリ認定キットを実行します。](#step17)
 
 ## <a name="walkthroughwriting-uwp-app-for-usb-devices"></a>チュートリアル-USB デバイスの書き込みの UWP アプリ
@@ -87,7 +87,7 @@ Windows 8.1 で導入された、Windows ランタイム Api を使用すると�
 <td><p>その情報は、デバイスの製造元から入手できます。</p>
 <ul>
 <li><p><strong>ベンダーと製品の id</strong></p>
-<p>デバイス マネージャーでは、デバイスのプロパティを表示します。 <strong>詳細</strong> タブで、表示、<strong>ハードウェア Id</strong>プロパティの値。 その値は、これら 2 つの識別子の組み合わせです。 SuperMUTT デバイスなどの<strong>ハードウェア Id</strong>は"USB\VID_045E&amp;PID_F001"ベンダー ID は"0x045E"と、製品 ID が"0xF001";。</p></li>
+<p>デバイス マネージャーでは、デバイスのプロパティを表示します。 <strong>詳細</strong> タブで、表示、<strong>ハードウェア Id</strong>プロパティの値。 その値は、これら 2 つの識別子の組み合わせです。 たとえば、SuperMUTT デバイス、<strong>ハードウェア Id</strong> "USB\VID_045E & PID_F001"には、製造元 ID は"0x045E"; と製品 ID が"0xF001"。</p></li>
 <li><strong>デバイス クラスやサブクラスでは、プロトコル コード</strong></li>
 <li><strong>デバイス インターフェイスの GUID</strong></li>
 </ul>

@@ -13,12 +13,12 @@ keywords:
 - パッケージのデジタル署名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f10b2686d411a2162b397f9392b47da67db5cbca
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 8bdb37e22072617e6190035ab52f921be5ebbcc3
+ms.sourcegitcommit: 6a8675c349e6aba2a89a40b5f1451005bd5e1297
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148529"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169133"
 ---
 # <a name="driver-signing-policy"></a>ドライバーの署名ポリシー
 
@@ -63,12 +63,12 @@ Windows 10 バージョン 1607 を所有する前に、次の種類のドライ
 
 セキュア ブートは、Windows Vista および Windows 7 に適用されないことに注意してください。
 
-|適用対象:|Windows Vista、Windows 7 です。Windows 8 + セキュア ブートをオフ|Windows 8、Windows 8.1、Windows 10 バージョン 1507 と 1511 セキュア ブートで|Windows 10 バージョン 1607 + セキュア ブートで|
-|--- |--- |--- |--- |
-|**アーキテクチャ:**|64 ビットのみの 32 ビットに必要な署名なし|64 ビット、32 ビット|64 ビット、32 ビット|
-|**必要な署名:**|埋め込みまたはカタログ ファイル|埋め込みまたはカタログ ファイル|埋め込みまたはカタログ ファイル|
-|**署名アルゴリズム:**|SHA1|SHA1|SHA2 または SHA1|
-|**証明書:**|コードの整合性によって信頼されている標準のルート|コードの整合性によって信頼されている標準のルート|Microsoft ルート機関 2010、Microsoft ルート証明機関では、Microsoft ルート機関|
+|適用対象:|Windows Vista、Windows 7 です。Windows 8 + セキュア ブートをオフ|Windows 8、Windows 8.1、Windows 10 バージョン 1507、1511 でセキュア ブート|Windows 10 バージョン 1607、1703、1709 でセキュア ブートと|Windows 10、バージョン 1803 以降セキュア ブートで|
+|--- |--- |--- |--- |--- |
+|**アーキテクチャ:**|64 ビットのみの 32 ビットに必要な署名なし|64 ビット、32 ビット|64 ビット、32 ビット|64 ビット、32 ビット|
+|**必要な署名:**|埋め込みまたはカタログ ファイル|埋め込みまたはカタログ ファイル|埋め込みまたはカタログ ファイル|埋め込みまたはカタログ ファイル|
+|**署名アルゴリズム:**|SHA1|SHA1|SHA2 または SHA1|SHA2|
+|**証明書:**|コードの整合性によって信頼されている標準のルート|コードの整合性によって信頼されている標準のルート|Microsoft ルート機関 2010、Microsoft ルート証明機関では、Microsoft ルート機関|Microsoft ルート機関 2010、Microsoft ルート証明機関では、Microsoft ルート機関|
 
 ドライバー コードの署名、だけでなく、PnP デバイス インストールの署名のドライバーをインストールするための要件を満たす必要があります。  詳細については、次を参照してください。[プラグ アンド プレイ (PnP) デバイスのインストール要件を署名](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)します。
 

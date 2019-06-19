@@ -1,20 +1,20 @@
 ---
-title: 列挙型のキーワード
-description: 列挙型のキーワード
+title: 列挙キーワード
+description: 列挙キーワード
 ms.assetid: ac1fb871-7720-4497-b9f7-8f592fe19bd0
 keywords:
 - インストールのキーワードの WDK ネットワー キング、列挙型のキーワード
 - 列挙型のキーワードの WDK NDIS ミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c76f4d1b82064fc51958ba96f0d62d4156eb416
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c9f9af3bddfb3d8786db8da8b0b953f5dc84b9ce
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536402"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161544"
 ---
-# <a name="enumeration-keywords"></a>列挙型のキーワード
+# <a name="enumeration-keywords"></a>列挙キーワード
 
 
 
@@ -37,7 +37,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
 一般的な列挙型のキーワードは次のとおりです。
 
-<a href="" id="-speedduplex"></a>**\*SpeedDuplex**  
+<a href="" id="-speedduplex"></a> **\*SpeedDuplex**  
 速度と、デバイスをサポートする双方向の設定。 デバイスの INF ファイルには、関連付けられているデバイスがサポートされる設定のみが一覧表示します。 つまり、全二重モードのみをサポートできる 10/100 イーサネット デバイスの場合、ギガビットまたはより高速または半二重モードの設定は、関連付けられている INF ファイルには表示されませんする必要があります。
 
 数値を直接 Mbps の値として 0 ~ 10 の列挙の値を既に持つ具体的には定義されていない速度値を設定できます。  直接の値は、少なくとも 1,000 Mbps である必要があります (1 Gbps) 以上です。  速度を直接指定するためのいくつかの例を次に示します。
@@ -50,7 +50,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 | 50,000 | 50 Gbps |
 | 100,000 | 100 Gbps |
 
-<a href="" id="-flowcontrol"></a>**\*FlowControl**  
+<a href="" id="-flowcontrol"></a> **\*FlowControl**  
 有効またはフローを無効にするデバイスの機能では、送信を制御またはパスを受信します。
 
 **注**  現時点イーサネット デバイスは、フローの制御をサポートし、LAN の Windows 8 のインボックス ドライバーがあるフロー制御が既定で有効にします。 これらの LAN アダプターのいずれかにカーネル デバッガーをアタッチします、ネットワークへのフロー制御の一時停止のフレームのプッシュ、NIC が開始されます。 ほとんどのネットワーク スイッチは、一時的に同じハブに接続されているその他のすべてのコンピューターのネットワーク停止させるして対応されます。 これは一般的な開発シナ リオであり、エンド ユーザー エクスペリエンスが望ましくないと、診断が難しい。
@@ -67,7 +67,7 @@ NDIS は、デバッグ中にフロー制御を有効にする必要がある場
 
  
 
-<a href="" id="-priorityvlantag"></a>**\*PriorityVLANTag**  
+<a href="" id="-priorityvlantag"></a> **\*PriorityVLANTag**  
 デバイスが有効になっているまたは 802.1 q を挿入する機能を無効になっているかどうかを示す値のタグをパケットの優先順位と仮想 Lan (Vlan)。 このキーワードは、デバイスが有効になっていること、またはパケットの優先順位または VLAN タグを無効になっているかどうかは示されません。 代わりに、次について説明します。
 
 -   デバイスが 802.1 q を挿入するかどうか、送信操作中にタグ
@@ -90,18 +90,18 @@ Tx フラグは、送信パスに有効になっている、ミニポート ド�
 -   ミニポート フィルターは、802.1 q を考慮する必要があります OOB 内の情報 (と任意のタグは挿入できません)。
 -   ミニポート フィルターが適切なにアドバタイズする必要がありますしない**MacOptions**で[ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923).
 
-**注**  読み取る必要がありますもミニポート ドライバーでは、NDIS サービスの品質 (QoS) をサポートする場合、  **\*QOS**キーワード値。 に基づいて、  **\*QOS**キーワードの値、  **\*PriorityVLANTag**キーワードの値が異なる方法で解釈されます。 詳細については、[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)を参照してください。
+**注**  読み取る必要がありますもミニポート ドライバーでは、NDIS サービスの品質 (QoS) をサポートする場合、  **\*QOS**キーワード値。 に基づいて、  **\*QOS**キーワードの値、  **\*PriorityVLANTag**キーワードの値が異なる方法で解釈されます。 詳細については、次を参照してください。[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)します。
 
  
 
-<a href="" id="-interruptmoderation"></a>**\*InterruptModeration**  
-デバイスが有効になっていること、または割り込み節度を無効になっているかどうかを示す値。 割り込み節度アルゴリズムは、デバイスに依存します。 デバイスの製造元は、アルゴリズムの設定をサポートするために、非標準化されたキーワードを使用できます。 割り込み調整の詳細については、[割り込み節度](interrupt-moderation.md)を参照してください。
+<a href="" id="-interruptmoderation"></a> **\*InterruptModeration**  
+デバイスが有効になっていること、または割り込み節度を無効になっているかどうかを示す値。 割り込み節度アルゴリズムは、デバイスに依存します。 デバイスの製造元は、アルゴリズムの設定をサポートするために、非標準化されたキーワードを使用できます。 割り込み調整の詳細については、次を参照してください。[割り込み節度](interrupt-moderation.md)します。
 
-<a href="" id="-rss"></a>**\*RSS**  
-デバイスが有効または無効になっているかどうかを示す値を受信側 scaling (RSS)。 RSS の詳細については、[Receive Side Scaling](ndis-receive-side-scaling2.md)を参照してください。
+<a href="" id="-rss"></a> **\*RSS**  
+デバイスが有効または無効になっているかどうかを示す値を受信側 scaling (RSS)。 RSS の詳細については、次を参照してください。 [Receive Side Scaling](ndis-receive-side-scaling2.md)します。
 
-<a href="" id="-headerdatasplit"></a>**\*HeaderDataSplit**  
-デバイスが有効になっていること、またはヘッダー データの分割を無効になっているかどうかを示す値。 ヘッダー データの分割の詳細については、[ヘッダー データの分割](header-data-split.md)を参照してください。
+<a href="" id="-headerdatasplit"></a> **\*HeaderDataSplit**  
+デバイスが有効になっていること、またはヘッダー データの分割を無効になっているかどうかを示す値。 ヘッダー データの分割の詳細については、次を参照してください。[ヘッダー データの分割](header-data-split.md)します。
 
 次のキーワードは、接続のオフロード サービスに関連付けられました。
 
@@ -109,7 +109,7 @@ Tx フラグは、送信パスに有効になっている、ミニポート ド�
 
 **\*TCPConnectionOffloadIPv6**
 
-接続のオフロード キーワードの詳細については、[接続オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-connection-offloading.md)を参照してください。
+接続のオフロード キーワードの詳細については、次を参照してください。[接続オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-connection-offloading.md)します。
 
 次のキーワードは、タスクのオフロード サービスに関連付けられました。
 
@@ -143,7 +143,7 @@ Tx フラグは、送信パスに有効になっている、ミニポート ド�
 
 **\*TCPUDPChecksumOffloadIPv6**
 
-TCP/IP のオフロード キーワードの詳細については、[タスク オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-task-offloading.md)を参照してください。
+TCP/IP のオフロード キーワードの詳細については、次を参照してください。[タスク オフロードを無効にするレジストリ値を使用して](using-registry-values-to-enable-and-disable-task-offloading.md)します。
 
 このトピックの最後にテーブルの列には、列挙型のキーワードは次の属性について説明します。
 
@@ -154,7 +154,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 表示テキストに関連付けられている**SubkeyName**します。
 
 <a href="" id="value"></a>値  
-リスト内の各オプションに関連付けられている列挙の整数値。 この値は**NDI\\params\\**<em>SubkeyName</em>**\\**<em>値</em>します。
+リスト内の各オプションに関連付けられている列挙の整数値。 この値は**NDI\\params\\** <em>SubkeyName</em> **\\** <em>値</em>します。
 
 <a href="" id="enumdesc"></a>EnumDesc  
 メニューに表示される各値に関連付けられている表示テキスト。
@@ -175,14 +175,14 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">[値]</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em>SpeedDuplex</strong></p></td>
-<td align="left"><p>速度&amp;双方向</p></td>
+<td align="left"><p>速度と二重</p></td>
 <td align="left"><p>0 (既定)</p></td>
 <td align="left"><p>自動ネゴシエーション</p></td>
 </tr>
@@ -250,7 +250,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong></em>FlowControl</strong></p></td>
 <td align="left"><p>フロー制御</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -268,7 +268,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -278,9 +278,9 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>PriorityVLANTag</strong></p></td>
-<td align="left"><p>パケットの優先順位&amp;VLAN</p></td>
+<td align="left"><p>パケットの優先順位と VLAN</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>パケットの優先順位&amp;VLAN 無効</p></td>
+<td align="left"><p>パケットの優先順位と VLAN を無効になっています</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -298,13 +298,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>パケットの優先順位&amp;VLAN 有効</p></td>
+<td align="left"><p>パケットの優先順位と VLAN を有効になっています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>InterruptModeration</strong></p></td>
 <td align="left"><p>割り込み節度</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -316,7 +316,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong><em>RSS</strong></p></td>
 <td align="left"><p>Receive Side Scaling</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -340,7 +340,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong><em>TCPConnectionOffloadIPv4</strong></p></td>
 <td align="left"><p>TCP 接続のオフロード (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -352,7 +352,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong></em>TCPConnectionOffloadIPv6</strong></p></td>
 <td align="left"><p>TCP 接続のオフロード (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -364,7 +364,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong><em>IPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>IPv4 チェックサム オフロード</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -382,13 +382,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>TCP チェックサム オフロード (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -406,13 +406,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPChecksumOffloadIPv6</strong></p></td>
 <td align="left"><p>TCP チェックサム オフロード (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -430,13 +430,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>UDPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>UDP チェックサム オフロード (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -454,13 +454,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>UDPChecksumOffloadIPv6</strong></p></td>
 <td align="left"><p>UDP チェックサム オフロード (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -478,13 +478,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Rx &amp; Tx を有効になっています。</p></td>
+<td align="left"><p>Rx、Tx を有効になっている、(&)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV1IPv4</strong></p></td>
 <td align="left"><p>大量送信オフロード バージョン 1 (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -496,7 +496,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong><em>LsoV2IPv4</strong></p></td>
 <td align="left"><p>大量送信オフロード バージョン 2 (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -508,7 +508,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong></em>LsoV2IPv6</strong></p></td>
 <td align="left"><p>大量送信オフロード バージョン 2 (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -520,7 +520,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong><em>IPsecOffloadV1IPv4</strong></p></td>
 <td align="left"><p>IPsec オフロード バージョン 1 (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -538,13 +538,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダー &amp; ESP を有効になっています。</p></td>
+<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>IPsecOffloadV2</strong></p></td>
 <td align="left"><p>IPsec オフロード</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -562,13 +562,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダー &amp; ESP を有効になっています。</p></td>
+<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPsecOffloadV2IPv4</strong></p></td>
 <td align="left"><p>IPsec オフロード (IPv4 のみ)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -586,13 +586,13 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 (既定値)</p></td>
-<td align="left"><p>Auth ヘッダー &amp; ESP を有効になっています。</p></td>
+<td align="left"><p>Auth ヘッダーと ESP を有効になっています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPUDPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>TCP または UDP チェックサム オフロード (IPv4)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -616,7 +616,7 @@ TCP/IP のオフロード キーワードの詳細については、[タスク �
 <td align="left"><p><strong>*TCPUDPChecksumOffloadIPv6</strong></p></td>
 <td align="left"><p>TCP または UDP チェックサム オフロード (IPv6)</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>無効</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>

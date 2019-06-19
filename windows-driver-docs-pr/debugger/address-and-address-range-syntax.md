@@ -4,12 +4,12 @@ description: アドレスとアドレス範囲の構文
 ms.assetid: 3d4f41f1-07ec-484d-a748-27fbbb9bd0b2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce680cc5b5fc66fe10dff5ca6b24844ed5653c04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c0854fe9a7abfdb574a2de3c04bbea3a70aaa69
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354943"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161412"
 ---
 # <a name="address-and-address-range-syntax"></a>アドレスとアドレス範囲の構文
 
@@ -45,7 +45,7 @@ KD、CDB は、x86 ベースのプラットフォームで、次のアドレス�
 <td align="left"><p>32 ビットのアドレス (32 ビットのセグメントを指す 16 ビット セレクターも) と 64 ビット システムで 64 ビットのアドレス。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&amp;</p></td>
+<td align="left"><p>&</p></td>
 <td align="left"><p>仮想 86</p></td>
 <td align="left"><p>リアル モードのアドレス。 x86 ベースのみです。</p></td>
 </tr>
@@ -84,7 +84,7 @@ KD、CDB は、x86 ベースのプラットフォームで、次のアドレス�
 <td align="left"><p>現在の実行モードに対応する型での仮想メモリ空間で絶対アドレスです。 たとえば、現在の実行モードが 16 ビットの場合は、オフセットは 16 ビットです。 セグメント化された 32 ビットの実行モードには、オフセットは 32 ビットのセグメント化です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>&amp;</strong>[セグメント:] のオフセット</p></td>
+<td align="left"><p><strong>&</strong>[セグメント:] のオフセット</p></td>
 <td align="left"><p>実際のアドレス。 x86 ベースおよび x64 ベースです。</p></td>
 </tr>
 <tr class="odd">

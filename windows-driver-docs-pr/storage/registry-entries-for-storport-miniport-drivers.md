@@ -4,12 +4,12 @@ description: StorPort では、StorPort およびミニポートの操作の動�
 ms.assetid: 543EC6A4-113C-4525-8063-28854B50760E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d449dd4d6051b90abe5e05425df851f3ebc016a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2e6769c2bf7bcb19a3c21553ba1b283bee22c3e
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358322"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161334"
 ---
 # <a name="registry-entries-for-storport-miniport-drivers"></a>StorPort ミニポート ドライバーのレジストリ エントリ
 
@@ -38,12 +38,12 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
 <p>アダプターのスコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>ミニポート特定データ。</p></td>
 </tr>
 <tr class="odd">
@@ -76,12 +76,12 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
 <p>アダプターのスコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:30</p>
 <p>最大:600</p>
 <p>単位: 秒</p></td>
@@ -116,12 +116,12 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
 <p>アダプターのスコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:255</p>
 <p>最大:設定すると、レジストリに 8</p></td>
 </tr>
@@ -155,12 +155,12 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
 <p>アダプターのスコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:0 xffffffff</p>
 <p>StorPort が既定値を使用して 0 の場合</p></td>
 </tr>
@@ -194,12 +194,12 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
 <p>アダプターのスコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:0x00000000</p>
 <p>ときに MinimumUCXAddress &gt;= MaximumUCXAddress - PAGE_SIZE、StorPort は既定値を使用します。</p></td>
 </tr>
@@ -233,12 +233,12 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
 <p>アダプターのスコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:0</p>
 <p>最小:3</p>
 <p>最大:16</p></td>
@@ -273,12 +273,12 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
 <p>アダプターのスコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters\Device&lt;アダプター #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:1000</p>
 <p>最小:16</p>
 <p>最大:255</p></td>
@@ -309,10 +309,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:6、 <strong>BusTypeFiber</strong></p>
 <p>最大:0x7f、値が大きい場合は、既定値として扱われます。</p></td>
 </tr>
@@ -346,10 +346,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>最小:0</p>
 <p>最大:65535</p>
 <p>単位: 秒</p></td>
@@ -384,10 +384,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>ミニポート スコープ:</p>
-<p>Hklm \system\currentcontrolset\services&amp;lt; ミニポート名&gt;\Parameters</p></td>
+<p>Hklm \system\currentcontrolset\services&lt;ミニポート名&gt;\Parameters</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:0</p>
 <p>単位: ミリ秒</p></td>
 </tr>
@@ -424,10 +424,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>アダプターのスコープ:</p>
-<p>HKLM\System\CurrentControlSet\Enum&amp;lt; インスタンス パス&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;インスタンス パス&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:255</p>
 <p>最小:18</p>
 <p>最大:255</p>
@@ -463,10 +463,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>論理ユニットのスコープ:</p>
-<p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:25</p>
 <p>最大:100</p>
 <p>単位:キューの深さの割合</p></td>
@@ -501,10 +501,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>論理ユニットのスコープ:</p>
-<p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:250</p>
 <p>単位: ミリ秒</p></td>
 </tr>
@@ -538,10 +538,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>論理ユニットのスコープ:</p>
-<p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:250</p>
 <p>単位: ミリ秒</p></td>
 </tr>
@@ -575,10 +575,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>論理ユニットのスコープ:</p>
-<p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:10</p></td>
 </tr>
 <tr class="odd">
@@ -611,10 +611,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>アダプターのスコープ:</p>
-<p>HKLM\System\CurrentControlSet\Enum&amp;lt; インスタンス パス&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;インスタンス パス&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:0、無効になっています</p></td>
 </tr>
 <tr class="odd">
@@ -647,10 +647,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>論理ユニットのスコープ:</p>
-<p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:0、有効になっています。</p></td>
 </tr>
 <tr class="odd">
@@ -683,10 +683,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>論理ユニットのスコープ:</p>
-<p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt; InstanceId&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:MAXULONG を示す設定を解除します。 ミニポートはタイムアウト値を提供しない場合、実際の既定値は 5 分間、または 5 * 60 * 1000 が。</p>
 <p>単位: ミリ秒</p></td>
 </tr>
@@ -720,10 +720,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>アダプターのスコープ:</p>
-<p>HKLM\System\CurrentControlSet\Enum&amp;lt; インスタンス パス&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;インスタンス パス&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定: 有効になっています。</p></td>
 </tr>
 <tr class="odd">
@@ -762,10 +762,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>アダプターのスコープ:</p>
-<p>HKLM\System\CurrentControlSet\Enum&amp;lt; インスタンス パス&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;インスタンス パス&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>既定:60</p>
 <p>単位: 秒</p></td>
 </tr>
@@ -799,10 +799,10 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 <tr class="odd">
 <td align="left">パス</td>
 <td align="left"><p>アダプターのスコープ:</p>
-<p>HKLM\System\CurrentControlSet\Enum&amp;lt; インスタンス パス&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;インスタンス パス&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">値</td>
+<td align="left">Value</td>
 <td align="left"><p>(D3Cold がサポートされている) 場合に有効な既定値。</p></td>
 </tr>
 <tr class="odd">

@@ -4,12 +4,12 @@ description: この関数は、管理されているホストまたはデバイ�
 ms.assetid: E1589FD0-5D03-42EF-8078-0AE53CFB1ACA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5c76bff652d9cad466c66907bc26828a0395c435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62d534a7a193caec649217c7ba247fc37dbede12
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348059"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161490"
 ---
 # <a name="get-energy-source-identification-function-index-3"></a>動力源 ID の取得 (関数インデックス 3)
 
@@ -48,7 +48,7 @@ ms.locfileid: "63348059"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>ステータス</strong></td>
+<td align="left"><strong>状態</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>
@@ -58,13 +58,13 @@ ms.locfileid: "63348059"
 <td align="left">1</td>
 <td align="left">4</td>
 <td align="left"><p>モジュールでサポートされているエネルギーの元のポリシーに関する情報です。</p>
-<p>* バイト 0 – <em>ENERGY_SOURCE_POLICY</em> (0, 0x14)</p></td>
+<p>\* バイト 0 – <em>ENERGY_SOURCE_POLICY</em> (0, 0x14)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>ES のデバイス管理の識別</strong></td>
 <td align="left">11</td>
 <td align="left">5</td>
-<td align="left">&amp;gt; [!Note]<br/><p>&amp;gt;ES の現在のポリシーがデバイス管理されている場合にのみこのフィールドに有効なデータが含まれます (つまりビット SET_ES_POLICY_STATUS (0, 0x70 です) の第 2 に設定されている)。 他のすべての ES ポリシーでは、このフィールドは 0 になります。</p>
+<td align="left">&gt; [!Note]<br/><p>&gt;ES の現在のポリシーがデバイス管理されている場合にのみこのフィールドに有効なデータが含まれます (つまりビット SET_ES_POLICY_STATUS (0, 0x70 です) の第 2 に設定されている)。 他のすべての ES ポリシーでは、このフィールドは 0 になります。</p>
 
 <p>については、Device-Managed ES の識別情報を参照してください。</p></td>
 </tr>
@@ -72,7 +72,7 @@ ms.locfileid: "63348059"
 <td align="left"><strong>ES の管理されているホストの識別</strong></td>
 <td align="left">3</td>
 <td align="left">16</td>
-<td align="left">&amp;gt; [!Note]<br/><p>&amp;gt;ES の現在のポリシーが管理されているホストの場合にのみこのフィールドに有効なデータが含まれます (つまりビット SET_ES_POLICY_STATUS (0, 0x70 です) の 3 が設定されます)。 他のすべての ES ポリシーでは、このフィールドは 0 になります。</p>
+<td align="left">&gt; [!Note]<br/><p>&gt;ES の現在のポリシーが管理されているホストの場合にのみこのフィールドに有効なデータが含まれます (つまりビット SET_ES_POLICY_STATUS (0, 0x70 です) の 3 が設定されます)。 他のすべての ES ポリシーでは、このフィールドは 0 になります。</p>
 
 <p>については、Host-Managed ES の識別情報を参照してください。</p></td>
 </tr>

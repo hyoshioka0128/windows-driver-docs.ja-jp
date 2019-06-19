@@ -4,12 +4,12 @@ description: V4 印刷ドライバー マニフェストは、特定のプリン
 ms.assetid: 187A10B7-2AAC-46D9-998C-C8724D8E3862
 ms.date: 07/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc09503d34bea29e78406eb34c5884e853f0ab25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78dce61c66569d7c25282704c4cf3323506007df
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358572"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161539"
 ---
 # <a name="v4-driver-manifest"></a>V4 ドライバー マニフェスト
 
@@ -148,7 +148,7 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 <p>プリンター拡張アプリのコピーを取得するには、ユーザーの URL を指定します。 プリンターの共有で使用されます。</p></td>
 <td><p>なし。</p></td>
 <td><p>PrinterExtensionUrl =</p>
-<p>"<a href="http://www.fabrikam.com/files/setup.exe&amp;quot" data-raw-source="http://www.fabrikam.com/files/setup.exe&amp;quot">http://www.fabrikam.com/files/setup.exe&quot</a>;</p></td>
+<p>"<a href="http://www.fabrikam.com/files/setup.exe&quot" data-raw-source="http://www.fabrikam.com/files/setup.exe&quot">http://www.fabrikam.com/files/setup.exe&quot</a>;</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DevModeMap</strong></p>
@@ -176,8 +176,8 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 <p>USB の双方向通信に使用する 1 つまたは複数のデバイスのインターフェイスと一致するハードウェア Id の一覧を指定します。</p></td>
 <td><p>None、状態が、印刷のインターフェイスではない USB インターフェイス経由で行われた場合にのみサポートする必要がありますが、します。</p></td>
 <td><p>BidiUSBStatusInterface =</p>
-<p>”USB\vid_1234&amp;pid_1234”,</p>
-<p>”USB\vid_1234&amp;pid_4567”</p></td>
+<p>”USB\vid_1234&pid_1234”,</p>
+<p>”USB\vid_1234&pid_4567”</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>UserPropertyBagScope</strong></p>

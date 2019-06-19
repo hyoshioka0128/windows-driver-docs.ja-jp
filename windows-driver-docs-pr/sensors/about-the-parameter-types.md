@@ -4,12 +4,12 @@ description: パラメーターの型について
 ms.assetid: 392ea7b9-df6f-4d47-9367-a167c0656dd4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0983a97bc6a230501a9593a3d2baf25e336d6f5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99848cefd1ad8e9f2de5ffcb46483ee200d2c577
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360924"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161432"
 ---
 # <a name="about-sensor-parameter-types"></a>センサー パラメーターの型について
 
@@ -33,7 +33,7 @@ ms.locfileid: "63360924"
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile" data-raw-source="[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)">IWDFFile</a></p></td>
 <td><p>pClientFile</p></td>
-<td><p>この UMDF COM インターフェイスでは、プラットフォームがクライアント アプリケーションに関連付けるファイル オブジェクトを表します。 センサー メソッドの呼び出しが常に有効なインターフェイス ポインターとは、この型を指定していますが、アプリケーションの ID として使用するものでは。 ポインターを含むアドレスは、クライアント アプリケーションを識別できる一意の番号です。 この値がポインター自体のアドレスと異なることに注意します。 Address-of 演算子を使用しないでください (&amp;) ID を取得するには ポインター自体を使用します。</p>
+<td><p>この UMDF COM インターフェイスでは、プラットフォームがクライアント アプリケーションに関連付けるファイル オブジェクトを表します。 センサー メソッドの呼び出しが常に有効なインターフェイス ポインターとは、この型を指定していますが、アプリケーションの ID として使用するものでは。 ポインターを含むアドレスは、クライアント アプリケーションを識別できる一意の番号です。 この値がポインター自体のアドレスと異なることに注意します。 Address-of 演算子を使用しない ID を取得する (&) ポインター自体を使用します。</p>
 <p>このポインターを使用して、基になるオブジェクトにアクセスする場合は、最初に、ポインターを通じて AddRef を呼び出すが完了したら、Release を呼び出すに注意してください。</p></td>
 </tr>
 <tr class="even">

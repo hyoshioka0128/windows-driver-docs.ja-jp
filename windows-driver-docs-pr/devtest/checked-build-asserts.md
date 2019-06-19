@@ -8,12 +8,12 @@ keywords:
 - WDK のエラー チェック ビルド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6834664e7ac21b81a19ccad8b7f6d3ded02b331
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b389a3ed5f0be1ebce5710c213d5e9464b873d98
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343999"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161494"
 ---
 # <a name="checked-build-asserts"></a>チェック ビルドの ASSERT
 
@@ -88,7 +88,7 @@ ms.locfileid: "63343999"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548397" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548397)"><strong>IoCreateDevice</strong></a></p></td>
-<td align="left"><p>アサート ((DriverObject-&gt;フラグ&amp;DRVO_UNLOAD_INVOKED) 0 を = =)</p></td>
+<td align="left"><p>アサート ((DriverObject-&gt;フラグ & DRVO_UNLOAD_INVOKED) 0 を = =)</p></td>
 <td align="left"><p>デバイス オブジェクトが作成されたらは、作成すると、ドライバーは、アンロード設定されています。</p></td>
 </tr>
 <tr class="odd">
@@ -98,7 +98,7 @@ ms.locfileid: "63343999"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IoFreeIrp</strong></p></td>
-<td align="left"><p>ASSERT(IsListEmpty(&amp;(Irp)-&gt;ThreadListEntry))</p></td>
+<td align="left"><p>アサート (IsListEmpty ((& a) (Irp)-&gt;ThreadListEntry))</p></td>
 <td align="left"><p>IRP が解放されるスレッドの IRP に表示されるボックスの一覧し、使用中でもそのためです。</p></td>
 </tr>
 <tr class="odd">
@@ -113,7 +113,7 @@ ms.locfileid: "63343999"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>IoReuseIrp</strong></p></td>
-<td align="left"><p>アサート (IsListEmpty (&amp;Irp-&gt;ThreadListEntry))</p></td>
+<td align="left"><p>アサート (IsListEmpty ((& a) Irp-&gt;ThreadListEntry))</p></td>
 <td align="left"><p>IRP が再利用されるスレッドの IRP に表示されるボックスの一覧し、使用中でもそのためです。</p></td>
 </tr>
 <tr class="even">
@@ -158,17 +158,17 @@ ms.locfileid: "63343999"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmProbeAndLockPages</strong></p></td>
-<td align="left"><p>アサート (((ULONG) MemoryDescriptorList -&gt;ByteOffset &amp; ~(PAGE_SIZE-1)) 0 を = =)</p></td>
+<td align="left"><p>アサート (((ULONG) MemoryDescriptorList-&gt;ByteOffset & ~(PAGE_SIZE-1)) 0 を = =)</p></td>
 <td align="left"><p>MDL の最初のページへのオフセットは&gt;= PAGE_SIZE; MDL の形式が正しくありません。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmProbeAndLockPages</strong></p></td>
-<td align="left"><p>ASSERT (((ULONG_PTR)MemoryDescriptorList-&gt;StartVa &amp; (PAGE_SIZE - 1)) == 0)</p></td>
+<td align="left"><p>ASSERT (((ULONG_PTR)MemoryDescriptorList-&gt;StartVa & (PAGE_SIZE - 1)) == 0)</p></td>
 <td align="left"><p>MDL で開始 VA は、調整されています。 ページではないです。MDL の形式が正しくありません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmProbeAndLockPages</strong></p></td>
-<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags &amp; ( MDL_PAGES_LOCKED | MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL | MDL_PARTIAL | MDL_IO_SPACE)) == 0)</p></td>
+<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & ( MDL_PAGES_LOCKED | MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL | MDL_PARTIAL | MDL_IO_SPACE)) == 0)</p></td>
 <td align="left"><p>MDL は、この関数の呼び出しに対して適切な状態ではありません。</p></td>
 </tr>
 <tr class="odd">
@@ -183,17 +183,17 @@ ms.locfileid: "63343999"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556381" data-raw-source="[&lt;strong&gt;MmUnlockPages&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556381)"><strong>MmUnlockPages</strong></a></p></td>
-<td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags &amp; MDL_PAGES_LOCKED)! = 0)</p></td>
+<td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags & MDL_PAGES_LOCKED)! = 0)</p></td>
 <td align="left"><p>この MDL で説明されているバッファーを構成するページがロックされていません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmUnlockPages</strong></p></td>
-<td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags &amp; MDL_SOURCE_IS_NONPAGED_POOL) 0 を = =)</p></td>
+<td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags & MDL_SOURCE_IS_NONPAGED_POOL) 0 を = =)</p></td>
 <td align="left"><p>MDL は、非ページ プールからバッファーを記述します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmUnlockPages</strong></p></td>
-<td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags &amp; MDL_PARTIAL) 0 を = =)</p></td>
+<td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags & MDL_PARTIAL) 0 を = =)</p></td>
 <td align="left"><p>呼び出すことによって構築された MDL <strong>IoBuildPartialMdl</strong>します。</p></td>
 </tr>
 <tr class="even">
@@ -223,7 +223,7 @@ ms.locfileid: "63343999"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmBuildMdlForNonPagedPool</strong></p></td>
-<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags &amp; (MDL_PAGES_LOCKED | MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL | MDL_PARTIAL)) == 0)</p></td>
+<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & (MDL_PAGES_LOCKED | MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL | MDL_PARTIAL)) == 0)</p></td>
 <td align="left"><p>この関数の呼び出しに対して適切な状態でない MDL</p></td>
 </tr>
 <tr class="even">
@@ -238,17 +238,17 @@ ms.locfileid: "63343999"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmMapLockedPagesSpecifyCache</strong></p></td>
-<td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags &amp; MDL_MAPPED_TO_SYSTEM_VA) 0 を = =)</p></td>
+<td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags & MDL_MAPPED_TO_SYSTEM_VA) 0 を = =)</p></td>
 <td align="left"><p>この MDL によって記述されたバッファーは、既にカーネル仮想アドレス空間にマップされています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmMapLockedPagesSpecifyCache</strong></p></td>
-<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags &amp; ( MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL | MDL_PARTIAL_HAS_BEEN_MAPPED)) == 0)</p></td>
+<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & ( MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL | MDL_PARTIAL_HAS_BEEN_MAPPED)) == 0)</p></td>
 <td align="left"><p>MDL は、この関数の呼び出しに対して適切な状態ではありません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmMapLockedPagesSpecifyCache</strong></p></td>
-<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags &amp; ( MDL_PAGES_LOCKED | MDL_PARTIAL)) != 0)</p></td>
+<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & ( MDL_PAGES_LOCKED | MDL_PARTIAL)) != 0)</p></td>
 <td align="left"><p>MDL は、この操作に対して適切な状態ではありません。</p></td>
 </tr>
 <tr class="odd">
@@ -268,7 +268,7 @@ ms.locfileid: "63343999"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmUnmapLockedPages</strong></p></td>
-<td align="left"><p>アサート (MemoryDescriptorList -&gt;MdlFlags &amp; MDL_MAPPED_TO_SYSTEM_VA)</p></td>
+<td align="left"><p>アサート (MemoryDescriptorList-&gt;MdlFlags & MDL_MAPPED_TO_SYSTEM_VA)</p></td>
 <td align="left"><p>パラメーターはベース アドレスには、カーネルの仮想アドレス空間内のアドレスが指定されましたが、これで、MDL バッファー説明と一致していませんを指定するには、この関数に渡されます。</p></td>
 </tr>
 <tr class="odd">

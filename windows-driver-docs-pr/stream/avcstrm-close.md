@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52004cbcd496b68237d120594e7ec038ca6f8004
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee595badd1f7b48bc94793464e88d59d30f294fe
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371842"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161497"
 ---
 # <a name="avcstrmclose"></a>AVCSTRM\_閉じる
 
@@ -102,7 +102,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 閉じるストリームを指定する方法の例を次に示します。
 
 ```cpp
-    pAVCStrmReq = &amp;pStrmExt->AVCStrmReq;
+    pAVCStrmReq = &pStrmExt->AVCStrmReq;
     RtlZeroMemory(pAVCStrmReq, sizeof(AVC_STREAM_REQUEST_BLOCK));
     INIT_AVCSTRM_HEADER(pAVCStrmReq, AVCSTRM_CLOSE);
 

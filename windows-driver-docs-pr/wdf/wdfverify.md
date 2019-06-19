@@ -6,12 +6,12 @@ keywords:
 - WDFVERIFY マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2417852f088c947bffb0f7d121327782ce428c3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 230397acb92ea67097f0d161a1a75ef0003a4521
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385731"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161402"
 ---
 # <a name="wdfverify-macro"></a>WDFVERIFY マクロ
 
@@ -55,7 +55,7 @@ WDFVERIFY をテストする論理式。
 次のコード例は、要求オブジェクトを再利用失敗した場合、デバッガーを中断します。
 
 ```cpp
-status = WdfRequestReuse(Request, &amp;params);
+status = WdfRequestReuse(Request, &params);
 WDFVERIFY(NT_SUCCESS(status));
 ```
 

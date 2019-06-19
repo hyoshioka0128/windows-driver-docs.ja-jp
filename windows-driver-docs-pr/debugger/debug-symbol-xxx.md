@@ -17,12 +17,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 504f796c6e0796315d4a5d5f87307f7b42fe9edb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b8b6f73487c4b654eb46f666a62b14dd7e87752
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374828"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161445"
 ---
 # <a name="debugsymbolxxx"></a>デバッグ\_シンボル\_XXX
 
@@ -32,7 +32,7 @@ ms.locfileid: "63374828"
 シンボルの最下位ビット フラグ--ビットがデバッグで見つかった\_シンボル\_拡張\_レベル\_マスク--数値、記号、シンボルのグループ内の展開の深さを表すフォーム。 子のシンボルの深さは、常に 1 つ以上の親のシンボルの深さ。 たとえば、変数のフラグが含まれているシンボルの深さを検索する*フラグ*、次のステートメントを使用します。
 
 ```dbgcmd
-depth = flags &amp; DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
+depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 ```
 
 シンボルのフラグのビット セットの残りの部分は、次のビット フラグを含めることができます。

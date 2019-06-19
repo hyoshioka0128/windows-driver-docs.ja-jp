@@ -4,12 +4,12 @@ description: 手順 1 の新しいデバイスを識別します。
 ms.assetid: e0df70ca-cea3-44a1-b5ff-407f72a216f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc6e4eb71e34531b042c9c4307245618d595585c
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 176fe9318ae5339fb42984174bf8f040458f9db6
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456371"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161522"
 ---
 # <a name="step-1-the-new-device-is-identified"></a>手順 1:新しいデバイスが識別されます
 
@@ -45,7 +45,19 @@ Windows ハードウェア Id および互換性 Id を使用して検索を[ド
 
     このプロセスの詳細については、次を参照してください。[手順 2。デバイスのドライバーが選択されている](step-2--a-driver-for-the-device-is-selected.md)します。
 
- 
+各バス ドライバーでは、バスに固有の方法は、独自のハードウェア Id を構築します。
+
+他のバスの標準化された識別子の例についてを参照してください。
+
+*  [PCI デバイスの識別子](identifiers-for-pci-devices.md)
+*  [SCSI デバイスの識別子](identifiers-for-scsi-devices.md)
+*  [IDE デバイスの識別子](identifiers-for-ide-devices.md)
+*  [PCMCIA デバイスの識別子](identifiers-for-pcmcia-devices.md)
+*  [ISAPNP デバイスの識別子](identifiers-for-isapnp-devices.md)
+*  [1394 デバイスの識別子](identifiers-for-1394-devices.md)
+*  [セキュア デジタル (SD) デバイスの識別子](identifiers-for-secure-digital--sd--devices.md)
+*  [USB デバイスの識別子](identifiers-for-usb-devices.md)
+
 
  
 

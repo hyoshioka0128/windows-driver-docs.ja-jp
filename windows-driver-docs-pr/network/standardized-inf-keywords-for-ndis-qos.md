@@ -4,12 +4,12 @@ description: NDIS QoS 用の標準化された INF キーワード
 ms.assetid: 7967D633-850F-4707-9577-9262AEB1A597
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 236ea7fa353a460c774fc4786b96903d84289291
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8136b851c06ef8a01dd6099f042bafbcf9a39abd
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345980"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161501"
 ---
 # <a name="standardized-inf-keywords-for-ndis-qos"></a>NDIS QoS 用の標準化された INF キーワード
 
@@ -22,7 +22,7 @@ NDIS QoS をサポートするアダプターのミニポート ドライバー�
 
  
 
- **\*QOS** INF キーワードは、キーワードを列挙します。 次の表に、考えられる INF エントリ、  **\*QOS** INF キーワード。 このテーブルの列には、列挙型のキーワードは次の属性について説明します。
+**\*QOS** INF キーワードは、キーワードを列挙します。 次の表に、考えられる INF エントリ、  **\*QOS** INF キーワード。 このテーブルの列には、列挙型のキーワードは次の属性について説明します。
 
 <a href="" id="subkeyname"></a>SubkeyName  
 INF ファイルで指定する必要があります、キーワードの名前。 この名前は、下のレジストリにも表示されます、 **NDI\\params\\** ネットワーク アダプターのキー。
@@ -119,14 +119,14 @@ NDIS QoS のハードウェア機能の現在の状態を登録するとき、�
 <tr class="header">
 <th align="left"><em>QOS キーワードの設定</th>
 <th align="left"></em>PriorityVLANTag キーワードの設定</th>
-<th align="left">* PriorityVLANTag 設定の説明</th>
+<th align="left">\* PriorityVLANTag 設定の説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">0 または存在しません。</td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>パケットの優先順位&amp;VLAN 無効</p></td>
+<td align="left"><p>パケットの優先順位と VLAN を無効になっています</p></td>
 </tr>
 <tr class="even">
 <td align="left">0 または存在しません。</td>

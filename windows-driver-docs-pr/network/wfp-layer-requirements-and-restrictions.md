@@ -8,12 +8,12 @@ keywords:
 - 処理の WDK Windows フィルタ リング プラットフォーム パケットのレイヤー
 ms.date: 01/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e4db65596a45510cc9722fb025367ccef437bce2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2572a94f9889fe11afbd9803038817c922431593
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365683"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161404"
 ---
 # <a name="wfp-layer-requirements-and-restrictions"></a>WFP レイヤーの要件と制限
 
@@ -88,8 +88,8 @@ IPsec の処理と共存できるようにするには、コールアウト受�
 </tr>
 <tr class="even">
 <td align="left"><p>フローが確立されています。</p></td>
-<td align="left"><p>最後の確認 (受信&amp;送信)</p></td>
-<td align="left"><p>最初の UDP パケット (受信&amp;送信)</p></td>
+<td align="left"><p>最後の確認 (受信および送信)</p></td>
+<td align="left"><p>最初の UDP パケット (受信および送信)</p></td>
 </tr>
 </tbody>
 </table>

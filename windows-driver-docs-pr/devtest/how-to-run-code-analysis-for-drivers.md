@@ -80,7 +80,7 @@ ms.locfileid: "63330659"
 ### <a name="to-customize-the-stacksize-limit-for-c6262"></a>C6262 stacksize の制限をカスタマイズするには
 
 1. メモ帳または別のテキスト エディターで、カーネル モード ドライバー (またはコンポーネント) の Visual Studio プロジェクト ファイル (.vcxproj) を開きます。
-2. 新しい追加**\<ItemDefinitionGroup\>** コンパイラ **\<ClCompile\>** します。
+2. 新しい追加 **\<ItemDefinitionGroup\>** コンパイラ **\<ClCompile\>** します。
 3. 追加、 **\<PREfastAdditionalOptions\>** 要素、 **stacksize\<バイト\>** します。 既定値は**stacksize1024**します。
 
 ```XML

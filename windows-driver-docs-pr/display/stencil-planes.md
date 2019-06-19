@@ -13,12 +13,12 @@ keywords:
 - デカール WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9bd7aa7c8eecb2bd3e102e5524694d62a8233c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 609da6c6156e023b9350bac80dae361dfea11679
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376009"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161581"
 ---
 # <a name="stencil-planes"></a>ステンシル平面
 
@@ -67,7 +67,7 @@ DirectX 6.0 以降のバージョンのドライバーでは、適切な DDBD �
 <td align="left"><p>D3DRENDERSTATE_STENCILFUNC</p></td>
 <td align="left"><p>D3DCMPFUNC</p></td>
 <td align="left"><p>比較関数。 テストは、次の式が true の場合に渡します。</p>
-<p>(ref&amp;マスク) 操作 (ステンシル&amp;マスク) を<em>ref</em>参照の値は、<em>ステンシル</em>、ステンシル バッファーの値と<em>マスク</em>はD3DRENDERSTATE_STENCILMASK の値。</p></td>
+<p>(ref & マスク)操作 (ステンシル & マスク) を<em>ref</em>参照の値は、<em>ステンシル</em>、ステンシル バッファーの値と<em>マスク</em>D3DRENDERSTATE_STENCILMASK の値です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DRENDERSTATE_STENCILREF</p></td>

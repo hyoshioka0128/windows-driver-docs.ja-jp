@@ -4,12 +4,12 @@ description: 以前の Windows バージョンでの Bluetooth バージョン�
 ms.assetid: 5209DE94-241D-4EFA-BA00-884EC74C8C1B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 718ebaac30af197e506a8fd8f58887cffbe3bee5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61688024b9680eaedadce06558b647e1c9065dde
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328255"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161369"
 ---
 # <a name="bluetooth-version-and-profile-support-in-previous-windows-versions"></a>以前の Windows バージョンでの Bluetooth バージョンとプロファイルのサポート
 
@@ -208,7 +208,7 @@ Windows Vista には、Bluetooth スタックと関連するソフトウェア�
 </tr>
 <tr class="odd">
 <td align="left"><p>03F0</p></td>
-<td align="left"><p>011 D&amp;Rev_0017</p></td>
+<td align="left"><p>011 D & Rev_0017</p></td>
 <td align="left"><p>Hewlett Packard nc4200</p></td>
 </tr>
 <tr class="even">
@@ -238,7 +238,7 @@ Windows Vista には、Bluetooth スタックと関連するソフトウェア�
 </tr>
 <tr class="odd">
 <td align="left"><p>049F</p></td>
-<td align="left"><p>0086&amp;Rev_1393</p></td>
+<td align="left"><p>0086 & Rev_1393</p></td>
 <td align="left"><p>Hewlett Packard nx7000</p></td>
 </tr>
 <tr class="even">
@@ -268,7 +268,7 @@ Windows Vista には、Bluetooth スタックと関連するソフトウェア�
 </tr>
 <tr class="odd">
 <td align="left"><p>0DB0</p></td>
-<td align="left"><p>6855&amp;Rev_2000</p></td>
+<td align="left"><p>6855 & Rev_2000</p></td>
 <td align="left"><p>メッセージ シグナル割り込み (MSI) の Bluetooth デバイス</p></td>
 </tr>
 <tr class="even">

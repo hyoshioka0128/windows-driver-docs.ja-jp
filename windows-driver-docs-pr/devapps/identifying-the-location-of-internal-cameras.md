@@ -4,12 +4,12 @@ description: このトピックでは、Windows 8.1 でのシステムで内蔵�
 ms.assetid: 7664F0F6-BD95-4919-82E4-F6F8080C2B5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af9bc003e24c90fa776d8161af8879e8ca9d1fc6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1ab94a3c53e3592623313386cd460e55bdfff49
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330698"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161430"
 ---
 # <a name="identifying-the-location-of-internal-cameras-uwp-device-apps"></a>内蔵カメラ (UWP デバイス アプリ) の場所を識別します。
 
@@ -165,12 +165,12 @@ InternalDeviceModification のレジストリ キーでは、その 1 つ以上�
 </tr>
 <tr class="even">
 <td align="left">形式の要件</td>
-<td align="left">ハードウェア ID のバスのプレフィックスを含める必要があります。 すべて"&amp;quot;文字は、「#」で置き換える必要があります。</td>
+<td align="left">ハードウェア ID のバスのプレフィックスを含める必要があります。 すべて"&quot;文字を「#」で置き換える必要があります。</td>
 </tr>
 <tr class="odd">
-<td align="left">使用例</td>
-<td align="left"><p><code>USB#VID_1234&amp;PID_ABCD&amp;REV_0001</code></p>
-<p><code>PCI#VEN_ABCD&amp;DEV_1234&amp;SUBSYS_000</code></p></td>
+<td align="left">例</td>
+<td align="left"><p><code>USB#VID_1234&PID_ABCD&REV_0001</code></p>
+<p><code>PCI#VEN_ABCD&DEV_1234&SUBSYS_000</code></p></td>
 </tr>
 <tr class="even">
 <td align="left">Comment</td>

@@ -11,12 +11,12 @@ keywords:
 - FullySpecified
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32aa0c467d8df280816e7a8fbeb08eec8f71c3de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e87ce7119c47166a0a70f02ec1f0f36f00e40b6b
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359204"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161462"
 ---
 # <a name="using-the-connectfullyspecified-version-of-ioconnectinterruptex"></a>接続を使用して\_完全\_IoConnectInterruptEx の指定されたバージョン
 
@@ -70,8 +70,8 @@ ms.locfileid: "63359204"
 </tr>
 <tr class="even">
 <td><p><strong>InterruptMode</strong></p></td>
-<td><p><strong>Flags</strong> &amp; CM_RESOURCE_INTERRUPT_LATCHED</p></td>
-<td><p><strong>Flags</strong> &amp; CM_RESOURCE_INTERRUPT_LATCHED</p></td>
+<td><p><strong>フラグ</strong>& CM_RESOURCE_INTERRUPT_LATCHED</p></td>
+<td><p><strong>フラグ</strong>& CM_RESOURCE_INTERRUPT_LATCHED</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ProcessorEnableMask</strong></p></td>

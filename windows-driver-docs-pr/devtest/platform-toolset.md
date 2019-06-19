@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) では、ツール、およびドライバ
 ms.assetid: 9F585CA3-B863-408A-B785-2456460D6626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db5d836e8cadfa735432e6073f08e90c0792a72d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2202043bb1e980b08e066ae7125d43e4d46f6d4
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356306"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161550"
 ---
 # <a name="platform-toolset"></a>プラットフォーム ツールセット
 
@@ -41,7 +41,7 @@ Windows Driver Kit (WDK) 8 では、ドライバーの開発の次のプラッ�
 **注**  から Visual Studio で、使用可能な Windows ドライバー テンプレートのいずれかのドライバーを作成する場合、 **PlatformToolset**プロパティは自動的に設定します。 選択することも、 **PlatformToolset**ドライバー プロジェクトのプロパティ ページを Visual studio を使用しています。
 **Visual Studio でのプラットフォーム ツールセットの設定**
 
-1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、**[プロパティ]** をクリックします。
+1.  ドライバー プロジェクトのプロパティ ページを開きます。 **ソリューション エクスプローラー**でドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。
 2.  ドライバー プロジェクトのプロパティ ページで次のようにクリックします。**構成プロパティ**順にクリックします**全般**します。
 3.  選択、**プラットフォーム ツールセット**ドロップダウン リストから、プロジェクトのプロパティ。
 
@@ -106,7 +106,7 @@ WDK と呼ばれるこのプロパティの新しい値を導入する**ドラ�
 <tbody>
 <tr class="odd">
 <td align="left"><p>$ (Vctargetspath)</p></td>
-<td align="left"><p>$(MSBuildExtensionsPath) としてレジストリに既定では、$ (vctargetspath) が定義されている&lt;em&gt;&lt;フォルダー&gt;</em>&amp;lt;MSBUILDSYNTAXVERSION&gt;)</p>
+<td align="left"><p>$(MSBuildExtensionsPath) としてレジストリに既定では、$ (vctargetspath) が定義されている&lt;em&gt;&lt;フォルダー&gt;</em>&lt;MSBUILDSYNTAXVERSION&gt;)</p>
 <p>新しい構文があり、後で MSBuild が必要ですが、同じプラットフォームの新しいビルド プロセスが使用される場合に、バージョン番号が含まれます。</p>
 <p><em>&lt;フォルダー&gt;</em> は、 <strong>Microsoft.Cpp</strong>フォルダー - $(MSBuildExtensionsPath)\Microsoft.Cpp\4.0\v120 します。</p>
 <p>これは呼び出されます<em>構文バージョン</em>なく<em>ツール バージョン</em>します。 1 つ目のアセンブリのバージョンは<strong>Microsoft.Build.Engine</strong>すべての必要な構文をサポートします。 <strong>Microsoft.Cpp</strong>プラットフォームを Visual Studio を検索する場所のみフォルダーを示します。</p></td>

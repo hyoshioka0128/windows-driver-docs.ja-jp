@@ -9,12 +9,12 @@ keywords:
 - 識別子の WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29d5f01490e2e88445e036c1849949588d9208ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc8b3372af61048604ac3c8556de4df3ffa3a0ef
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380252"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161466"
 ---
 # <a name="plug-and-play-ids-for-printer-inf-files"></a>プリンター INF ファイルのプラグ アンド プレイ ID
 
@@ -41,23 +41,23 @@ ms.locfileid: "63380252"
 </tr>
 <tr class="even">
 <td><p>Parallel</p></td>
-<td><p>ID が含まれています"LPTENUM&amp;quot;ID 文字列。</p></td>
+<td><p>ID が含まれています"LPTENUM&quot; ID 文字列。</p></td>
 </tr>
 <tr class="odd">
 <td><p>USB</p></td>
-<td><p>ID が含まれています"USBPRINT&amp;quot;ID 文字列。</p></td>
+<td><p>ID が含まれています"USBPRINT&quot; ID 文字列。</p></td>
 </tr>
 <tr class="even">
 <td><p>Dot4</p></td>
-<td><p>ID が含まれています"DOT4PRT&amp;quot;ID 文字列。 この ID は、Dot4USB と並列に適用されます。 .</p></td>
+<td><p>ID が含まれています"DOT4PRT&quot; ID 文字列。 この ID は、Dot4USB と並列に適用されます。 .</p></td>
 </tr>
 <tr class="odd">
 <td><p>Bluetooth</p></td>
-<td><p>ID が含まれています"BTHPRINT&amp;quot;ID 文字列。</p></td>
+<td><p>ID が含まれています"BTHPRINT&quot; ID 文字列。</p></td>
 </tr>
 <tr class="even">
 <td><p>WSD</p></td>
-<td><p>ID が含まれています"WSDPRINT&amp;quot;ID 文字列。</p></td>
+<td><p>ID が含まれています"WSDPRINT&quot; ID 文字列。</p></td>
 </tr>
 </tbody>
 </table>

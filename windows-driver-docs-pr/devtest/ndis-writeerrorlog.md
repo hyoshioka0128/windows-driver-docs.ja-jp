@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b725f0d31273af461ba51f4f49f2e8935a6c8b2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2824b5870658c69f5828b2b6313d18eca6e59fd7
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352908"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161558"
 ---
 # <a name="writeerrorlog-rule-ndis"></a>WriteErrorLog ルール (ndis)
 
@@ -35,7 +35,7 @@ WriteErrorLog ルールで指定された場合、 **NdisMAllocateSharedMemory**
 
 ```
 // an example of how to log an error if memory allocation fails PVOID p;
-NdisMAllocateSharedMemory(par1, par2, par3, &amp;p, ...);
+NdisMAllocateSharedMemory(par1, par2, par3, &p, ...);
 if (p == NULL)
 {
  NdisWriteErrorLogEntry("Memory allocation failed");

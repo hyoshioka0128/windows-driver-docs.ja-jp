@@ -14,12 +14,12 @@ keywords:
 - 単項演算子
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9890f3cae44d4c232876eb0cb4a498d400974e32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9cddbd0bba9cb6f60254aa16dd1648067d644be
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363421"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161454"
 ---
 # <a name="masm-numbers-and-operators"></a>MASM の数値と演算子
 
@@ -57,7 +57,7 @@ MASM の式では、任意のシンボルの数値は、そのメモリ アド�
 
 常に、かっこを使用して、優先順位の規則を上書きすることができます。
 
-式はに従って解釈されます MASM 式の一部をかっこで囲まれた式の前に 2 つのアット マーク (@ @) から表示される場合は、[式の C++ 規則](c---numbers-and-operators.md)します。 アット マークから 2 つと左かっこの間にスペースを追加することはできません。 指定することも、[式エバリュエーター](evaluating-expressions.md)を使用して **@@c+ ([...])** または **@@masm([...])**.
+式はに従って解釈されます MASM 式の一部をかっこで囲まれた式の前に 2 つのアット マーク (@ @) から表示される場合は、[式の C++ 規則](c---numbers-and-operators.md)します。 アット マークから 2 つと左かっこの間にスペースを追加することはできません。 指定することも、[式エバリュエーター](evaluating-expressions.md)を使用して **@@c+ ([...])** または **@@masm([...])** .
 
 算術計算を実行するときに MASM 式エバリュエーターはすべての数字および記号を ULONG64 型として扱います。
 
@@ -193,7 +193,7 @@ MASM の式では、任意のシンボルの数値は、そのメモリ アド�
 <p>次の値に等しくない</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>and</strong> (または&amp;)</p></td>
+<td align="left"><p><strong></strong> (または (& a))</p></td>
 <td align="left"><p>ビットごとの AND</p></td>
 </tr>
 <tr class="even">

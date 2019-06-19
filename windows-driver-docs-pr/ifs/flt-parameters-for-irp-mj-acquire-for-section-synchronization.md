@@ -14,22 +14,20 @@ api_location:
 - fltkernel.h
 api_type:
 - HeaderDef
-ms.date: 11/28/2017
+ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: af83db238aa83ab081c913ce0f81de390e631495
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6edcc43a6644c853cd43170ea4858a6a95ccee6b
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365076"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161574"
 ---
-# <a name="fltparameters-for-irpmjacquireforsectionsynchronization-union"></a>FLT\_IRP のパラメーター\_MJ\_ACQUIRE\_の\_セクション\_同期共用体
+# <a name="fltparameters-for-irpmjacquireforsectionsynchronization-union"></a>FLT_PARAMETERS IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 共用体
 
+次の共用体のコンポーネントが使用されるときに、 **MajorFunction**のフィールド、 [ **FLT_IO_PARAMETER_BLOCK** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block) IRP_MJ_ACQUIRE_FOR_SECTION_ の操作には構造体同期します。
 
-次の共用体のコンポーネントが使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)操作は IRP を構造体\_MJ\_ACQUIRE\_の\_セクション\_同期します。
-
-<a name="syntax"></a>構文
-------
+## <a name="syntax"></a>構文
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
@@ -43,82 +41,50 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>メンバー
--------
+## <a name="members"></a>Members
 
-**SyncType**  
-* 同期のセクションの要求の種類を指定します。 このパラメーターは、2 つの列挙値のいずれかを指定する必要があります。
-  * **SyncTypeCreateSection**
-  * **SyncTypeOther**
+### <a name="synctype"></a>SyncType  
 
-**PageProtection**  
-* セクションの要求されたページ保護の種類を指定します。 場合は 0 にする必要があります**SyncType** SyncTypeOther です。 それ以外の場合、次のいずれかのフラグ、可能性があるページと組み合わせて\_NOCACHE:
+セクションの必要な同期の種類。 このパラメーターに設定されている**SyncTypeCreateSection**セクションが作成されている場合、それ以外の場合に設定されて**SyncTypeOther**します。
 
-  * ページ\_読み取り専用
+### <a name="pageprotection"></a>PageProtection
 
-  * ページ\_READWRITE
+セクションの要求されたページ保護の種類。 場合は 0 にする必要があります**SyncType** SyncTypeOther です。 それ以外の場合、このパラメーターは、おそらく PAGE_NOCACHE と組み合わせて、次のフラグのいずれかに指定できます。
 
-  * ページ\_WRITECOPY
+| Value | 説明 |
+| ----- | ------- |
+| PAGE_READONLY | アクセスを読み取り専用または書き込み時コピーします。 |
+| PAGE_READWRITE | 書き込み時コピー、または読み取り/書き込みのアクセス、読み取り専用です。 |
+| PAGE_WRITECOPY | アクセスを読み取り専用または書き込み時コピーします。 PAGE_READONLY と等価です。 |
+| PAGE_EXECUTE | アクセスを実行します。 |
 
-  * ページ\_EXECUTE
+### <a name="outputinformation"></a>OutputInformation
 
-**OutputInformation**
-*  A [ **FS_FILTER_SECTION_SYNC_OUTPUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fs_filter_section_sync_output)構造が作成されているセクションの属性を説明する情報を指定します。
+A [ **FS_FILTER_SECTION_SYNC_OUTPUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fs_filter_section_sync_output)構造が作成されているセクションの属性を説明する情報を指定します。
 
 ## <a name="remarks"></a>注釈
 
+[ **FLT_PARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters) IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作のための構造体のパラメーターを格納する、 **AcquireForSectionSynchronization**コールバック データによって表される操作 ([**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 FLT_IO_PARAMETER_BLOCK 構造体が含まれています。
 
-[ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673) IRP の構造\_MJ\_ACQUIRE\_の\_セクション\_同期操作のパラメーターを格納する、 **AcquireForSectionSynchronization**コールバック データによって表される操作 ([**FLT\_コールバック\_データ** ](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
+IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION は、ファイル システム (FSFilter) コールバック操作です。
 
-IRP\_MJ\_ACQUIRE\_の\_セクション\_同期は、ファイル システム (FSFilter) のコールバック操作。
-
-場合の列挙値、 **SyncType**に設定されているメンバー **SyncTypeOther** (ゼロ)、ファイル システム ミニフィルターまたはレガシ フィルター ドライバーをこの操作に失敗することはできません。 場合**SyncType**に設定されている**SyncTypeCreateSection**、ファイル システム ミニフィルターまたはレガシ フィルター ドライバーの状態で失敗が許可される\_不十分\_リソース エラー場合セクションを作成するための十分なメモリがありません。
+場合の列挙値、 **SyncType**に設定されているメンバー **SyncTypeOther**、ファイル システム ミニフィルターまたはレガシ フィルター ドライバーをこの操作に失敗することはできません。 場合**SyncType**に設定されている**SyncTypeCreateSection**、作成するための十分なメモリがない場合は、STATUS_INSUFFICIENT_RESOURCES エラーで失敗するファイル システム ミニフィルターまたはレガシ フィルター ドライバーが許可されている、セクション。
 
 FSFilter コールバック操作の詳細については、参照のエントリを参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)します。
 
 ## <a name="requirements"></a>必要条件
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows XP および Windows オペレーティング システムの以降のバージョンで使用できます。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h (Fltkernel.h を含む)</td>
-</tr>
-</tbody>
-</table>
+| | |
+| ------- | ------- |
+| バージョン | Windows XP および Windows オペレーティング システムの以降のバージョンで使用できます。 |
+| Header    | Fltkernel.h (Fltkernel.h を含む) |
 
 ## <a name="see-also"></a>関連項目
 
+[**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544645)
-
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544648)
-
-[**FLT\_IS\_IRP\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544654)
-
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
-
-[**FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)
-
- 
-
- 
-
-
-
-
-
-
+[**FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)

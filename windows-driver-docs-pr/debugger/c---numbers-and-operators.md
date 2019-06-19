@@ -14,12 +14,12 @@ keywords:
 - クラスのメンバー
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b294b37ad5627b6d7b708552a6da79e89cd6b1c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 95ed27e35ac9226f05d5dd2cdc59b41026f73ab7
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373961"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161450"
 ---
 # <a name="c-numbers-and-operators"></a>C++ の数値と演算子
 
@@ -127,7 +127,7 @@ C++ では、ように、無効なデータ型で演算子を使用する場合�
 <p><strong>\!</strong> <em>値</em></p>
 <p><em>値</em></p>
 <p><strong>+</strong> <em>値</em></p>
-<p><strong>&amp;</strong> <em>LValue</em></p>
+<p><strong>&</strong> <em>LValue</em></p>
 <p><strong><em></strong> <em>値</em></p></td>
 <td align="left"><p>(常に実行されます) を型キャスト</p>
 <p>式のサイズ</p>
@@ -184,7 +184,7 @@ C++ では、ように、無効なデータ型で演算子を使用する場合�
 <p>等しくない (比較)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>Value</em> <strong>&amp;</strong> <em>Value</em></p></td>
+<td align="left"><p><em>Value</em> <strong>&</strong> <em>Value</em></p></td>
 <td align="left"><p>ビットごとの AND</p></td>
 </tr>
 <tr class="even">
@@ -196,7 +196,7 @@ C++ では、ように、無効なデータ型で演算子を使用する場合�
 <td align="left"><p>ビットごとの OR</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>値</em> <strong>&amp; &amp;</strong> <em>値</em></p></td>
+<td align="left"><p><em>Value</em> <strong>&&</strong> <em>Value</em></p></td>
 <td align="left"><p>論理 AND</p></td>
 </tr>
 <tr class="odd">
@@ -212,7 +212,7 @@ C++ では、ように、無効なデータ型で演算子を使用する場合�
 <p><em>LValue</em> <strong>-=</strong> <em>Value</em></p>
 <p><em>LValue</em> <strong>&lt;&lt;=</strong> <em>Value</em></p>
 <p><em>LValue</em> <strong>&gt;&gt;=</strong> <em>Value</em></p>
-<p><em>LValue</em> <strong>&amp;=</strong> <em>Value</em></p>
+<p><em>LValue</em> <strong>&=</strong> <em>Value</em></p>
 <p><em>LValue</em> <strong>|=</strong> <em>Value</em></p>
 <p><em>LValue</em> <strong>^=</strong> <em>Value</em></p></td>
 <td align="left"><p>割り当てる</p>
