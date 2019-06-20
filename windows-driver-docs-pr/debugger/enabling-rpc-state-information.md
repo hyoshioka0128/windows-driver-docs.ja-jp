@@ -6,12 +6,12 @@ keywords:
 - RPC デバッグ、RPC 状態情報を有効にします。
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c3a5a9b29664527dec139283d56ef2ba31020d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97aebae1f0da23982586c28aa6a24bae28c33eb3
+ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340594"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67266389"
 ---
 # <a name="enabling-rpc-state-information"></a>RPC 状態情報を有効にする
 
@@ -27,9 +27,9 @@ Windows XP と Windows の以降のバージョンのみ、RPC 状態情報の�
 
 収集**完全**状態情報は、複数の重量。 収集されたすべての情報が含まれています、 **Server**レベルと、さらに、クライアントの呼び出し (CCALL) オブジェクトが含まれています。 **完全な**状態情報は通常必要ありません。
 
-個々 のコンピューターで収集するには、状態情報を有効にするには、グループ ポリシー エディター (Gpedit.msc) を実行します。 ローカル コンピューター ポリシー の下に移動します。**コンピューター構成/管理用テンプレート/システム/リモート プロシージャ コール**します。 このノードが表示されます、 **RPC トラブルシューティング状態情報**項目。 そのプロパティを編集するときに、5 つの可能な状態が表示されます。
+個々 のコンピューターで収集するには、状態情報を有効にするには、グループ ポリシー エディター (Gpedit.msc) を実行します。 ローカル コンピューター ポリシー の下に移動します。**コンピューター構成/管理用テンプレート/システム/リモート プロシージャ コール**します。 このノードが表示されます、 **RPC トラブルシューティング状態情報の保持**項目。 そのプロパティを編集するときに、5 つの可能な状態が表示されます。
 
-<span id="None"></span><span id="none"></span><span id="NONE"></span>**[なし]**  
+<span id="None"></span><span id="none"></span><span id="NONE"></span> **[なし]**  
 状態情報は維持されません。 コンピューターでメモリ不足が発生している場合を除き、これは推奨されません。
 
 <span id="Server"></span><span id="server"></span><span id="SERVER"></span>**サーバー**  

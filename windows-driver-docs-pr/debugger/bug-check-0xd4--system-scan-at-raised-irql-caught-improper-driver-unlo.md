@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c96538916fe15fe76ebb5840f2cf9d950b6f7c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf8d3e9137ccef55a9aad81a237f2bfbc6aa1295
+ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371758"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67266387"
 ---
 # <a name="bug-check-0xd4-systemscanatraisedirqlcaughtimproperdriverunload"></a>バグ チェック 0xD4:システム\_スキャン\_で\_発生\_IRQL\_例外が発生しました\_不適切な\_ドライバー\_アンロード
 
@@ -76,9 +76,9 @@ ms.locfileid: "63371758"
 <a name="resolution"></a>解決方法
 ----------
 
-デバッグを開始するには、カーネル デバッガーを使用して、スタック トレースを取得します。 エラーが発生したドライバーが指定されている場合は、Driver Verifier をアクティブ化し、このバグをレプリケートしようとしてください。
+デバッグを開始するスタック トレースを取得するカーネル デバッガーを使用して、: [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッグ拡張機能を根本原因を突き止めるに便利ですし、使用、できますしてバグチェックに関する情報が表示されます[**kb (Display Stack Backtrace)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)スタック トレースを取得するコマンド。 エラーが発生したドライバーが指定されている場合は、Driver Verifier をアクティブ化し、このバグをレプリケートしようとしてください。
 
-詳細については、Driver Verifier は、Windows ドライバー キットを参照してください。
+詳細については[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)、Windows Driver Kit を参照してください。
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d10e36b99287a788b2e97c383201919b40a120cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 113612c470706a72ae3d53e15a51f0da6b4d86a4
+ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357021"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67266384"
 ---
 # <a name="bug-check-0xc5-drivercorruptedexpool"></a>バグ チェック 0xC5:ドライバー\_破損した\_EXPOOL
 
@@ -76,11 +76,11 @@ ms.locfileid: "63357021"
 <a name="resolution"></a>解決方法
 ----------
 
-最近、新しいソフトウェアをインストールした場合が正しくインストールされてかどうかを確認します。 製造元の web サイトで更新されたドライバーを確認します。
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 最近、新しいソフトウェアをインストールした場合が正しくインストールされてかどうかを確認します。 製造元の web サイトで更新されたドライバーを確認します。
 
 このエラーをデバッグするには、Driver Verifier の特別なプールのオプションを使用します。 エラーが発生したドライバーを明らかにこれが失敗した場合は、グローバル フラグ ユーティリティを使用して、特別なプールでプール タグを有効にします。
 
-特別なプールについては、Windows ドライバー キットの Driver Verifier のセクションを参照してください。
+特別なプールについてを参照してください、 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier) Windows Driver Kit の「します。
 
  
 
