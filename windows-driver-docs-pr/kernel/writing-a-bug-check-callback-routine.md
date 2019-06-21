@@ -10,12 +10,12 @@ keywords:
 - BugCheckCallback
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 42afe32e83bdb03b2fe35203552c0f378bed83c9
-ms.sourcegitcommit: e542212bb5e7aba06b9e005e9b63c438404d5643
+ms.openlocfilehash: cc5a9fafb7486a01c351df69c2cd083722cdc94e
+ms.sourcegitcommit: 06e09813b9921a98e95ee2379cb42ec4e0f316da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719955"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67278744"
 ---
 # <a name="writing-a-bug-check-reason-callback-routine"></a>バグ チェックのためのコールバック ルーチンを記述します。
 
@@ -56,7 +56,7 @@ IRQL でバグ チェック コールバック ルーチンが実行される高
 
 バグ チェック コールバック ルーチンのため同期は必要ありません、中断せずに実行することが保証されます。 (バグ チェック ルーチンが任意の同期機構を使用している場合、システム デッドロックが発生します。)
 
-ドライバーのバグ チェック コールバック ルーチンが安全に使用できます、**READ_PORT_* XXX * * *、**READ_REGISTER_* XXX * * *、**WRITE_PORT_* XXX * * *、および**WRITE_REGISTER_ * XXX*** ドライバーのデバイスと通信するルーチン。 (これらのルーチンの詳細については、次を参照してください[ハードウェア アブストラクション レイヤー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff546644)。)。
+ドライバーのバグ チェック コールバック ルーチンが安全に使用できます、**読み取り\_ポート\_<em>XXX</em>** 、**読み取り\_登録\_<em>XXX</em>** 、**書き込み\_ポート\_<em>XXX</em>** 、および**書き込み\_レジスタ\_ <em>XXX</em>** ドライバーのデバイスと通信するルーチン。 (これらのルーチンの詳細については、次を参照してください[ハードウェア アブストラクション レイヤー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff546644)。)。
 
 ## <a name="using-bugcheckcallback"></a>BugCheckCallback を使用します。
 

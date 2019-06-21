@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 552d80d27e769a7e1fcad9fe005a0a3824486586
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e146ccd395c9954959f8c39f512e5944028d2066
+ms.sourcegitcommit: ad225cc9745be3ff0f08f9307306fd56aa4afb40
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367297"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67287250"
 ---
 # <a name="bug-check-0x92-updriveronmpsystem"></a>バグ チェック 0x92:\_ドライバー\_ON\_MP\_システム
 
@@ -71,8 +71,8 @@ ms.locfileid: "63367297"
 ユニプロセッサ コンピューターでのみ動作するコンパイルされたドライバーが読み込まれたが、Microsoft Windows オペレーティング システムが 1 つ以上のアクティブなプロセッサを搭載したマルチプロセッサ システムで実行されています。
 
  
-
- 
+## <a name="resolution"></a>解決方法
+[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
 
 
 
