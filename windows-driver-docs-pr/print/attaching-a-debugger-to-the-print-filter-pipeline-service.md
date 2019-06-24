@@ -4,12 +4,12 @@ description: 印刷フィルター パイプライン サービスにデバッ�
 ms.assetid: d2e032f8-bdce-415a-8cf4-d9816b7c9de5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67e192843109645c22899f424b6b5273dbb8c425
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93f632312ddd5a85fa8f1c8620d2224b4333172c
+ms.sourcegitcommit: 5decd841b9fcd9f4245c96ee0c028894c1e19f94
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331188"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67325929"
 ---
 # <a name="attaching-a-debugger-to-the-print-filter-pipeline-service"></a>印刷フィルター パイプライン サービスにデバッガーを接続する
 
@@ -30,7 +30,7 @@ XPSDrv ドライバーのフィルターは、印刷フィルター パイプラ
 
 2.  追加、 **PipelineHostTimeout** REG\_DWORD 値が存在しない場合は、キーをします。
 
-3.  設定**PipelineHostTimeout**ミリ秒のタイムアウト値にします。 ブレークポイントを設定してプロセスをアタッチする十分な時間を持たせるための十分な大きさの値を設定します。 たとえば、.5 分のタイムアウト値にする場合は、設定**PipelineHostTimeout** 90000 にします。
+3.  設定**PipelineHostTimeout**ミリ秒のタイムアウト値にします。 ブレークポイントを設定してプロセスをアタッチする十分な時間を持たせるための十分な大きさの値を設定します。 たとえば、1.5 分のタイムアウト値にする場合は、設定**PipelineHostTimeout** 90000 にします。
 
 設定した後、 **PipelineHostTimeout**値には、次の手順を使用して、パイプラインのフィルター サービスに WinDbg をアタッチします。
 

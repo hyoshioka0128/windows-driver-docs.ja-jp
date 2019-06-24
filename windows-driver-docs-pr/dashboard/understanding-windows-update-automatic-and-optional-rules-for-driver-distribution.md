@@ -5,10 +5,10 @@ ms.date: 05/28/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 38052a3ea40526dd32913c7a395be865e3268ef6
-ms.sourcegitcommit: 8adfd1f93a21a50f920635c19cc9c8cd948211df
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66307867"
 ---
 # <a name="understanding-windows-update-automatic-and-optional-rules-for-driver-distribution"></a>ドライバーの配布に関する Windows Update の自動規則とオプション規則について
@@ -28,10 +28,10 @@ ms.locfileid: "66307867"
 
 ## <a name="automatic-updates"></a>自動更新
 
-スケジュールされた更新またはユーザーがクリックしたときの中に**更新プログラムの確認**で、**更新プログラムとセキュリティ**ランキング上位のみの設定] メニューの [Windows の更新を配布**自動ドライバー**システムのデバイスに適用されます。 **ドライバーの自動**はシステムまたはデバイスの基本機能を提供する受信トレイで提供されるドライバー。 Windows 更新プログラムは配布のみ **(省略可能)** これらのシナリオでのドライバー場合。
+スケジュールされた更新時や、ユーザーが [設定] の **[更新とセキュリティ]** メニューで **[更新プログラムの確認]** をクリックしたときには、システムのデバイスに適用される最上位ランクの**自動ドライバー**のみが Windows Update で配布されます。 **自動ドライバー**は、基本的なデバイス機能を提供するシステムまたは受信トレイから提供されるドライバーです。 これらのシナリオでは、 **[オプション]** のドライバーは Windows Update でのみ配布されます。
 
-* デバイスの ("ドライバー Not Found")、ドライバー ストアに適用できるドライバーが利用可能ながありません。
-* または*ローカルで使用可能なドライバーがジェネリックの場合*、つまり、ローカルで使用可能なドライバーはシステム指定のドライバーで、デバイスの基本機能のみを提供します。
+* デバイスには、該当するドライバーがドライバー ストアにない ("ドライバーが見つかりません")。
+* または、*ローカルで唯一使用できるドライバーが汎用の場合*、つまりローカルで唯一使用できるドライバーが、基本的なデバイス機能のみを備えるシステム提供のドライバーである場合です。
 
 ## <a name="device-plug-in-plug-and-play"></a>デバイス プラグイン (プラグ アンド プレイ)
 

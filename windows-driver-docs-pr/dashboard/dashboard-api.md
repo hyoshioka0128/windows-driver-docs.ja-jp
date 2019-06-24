@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a378280a820df31b1885a7655fad7d72ae4ba53
-ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65701737"
 ---
 # <a name="hardware-dashboard-api"></a>ハードウェア ダッシュボード API
@@ -36,22 +36,22 @@ Microsoft ハードウェア API を呼び出すコードの作成を開始す�
 
 Microsoft Hardware API を使うには、事前に Azure AD アプリケーションをパートナー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得して、キーを生成しておく必要があります。 Azure AD アプリケーションは、Microsoft ハードウェア API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
 
-1. パートナー センターで、**[アカウント]** 設定に移動して **[ユーザー]** 管理をクリックし、[組織のパートナー センター アカウントを組織の Azure AD ディレクトリに関連付け](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-dev-center)ます。
-2. **[ユーザーの管理]** ページで、**[Add Azure AD applications]\(Azure AD アプリケーションの追加\)** をクリックして、パートナー センター アカウントの申請へのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Add Azure AD applications]\(Azure AD アプリケーションの追加\)** ページで選んでパートナー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[Add Azure AD applications to your Partner Center account (Azure AD アプリケーションをパートナー センター アカウントに追加する)](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#azure-ad-applications)」をご覧ください。
+1. パートナー センターで、 **[アカウント]** 設定に移動して **[ユーザー]** 管理をクリックし、[組織のパートナー センター アカウントを組織の Azure AD ディレクトリに関連付け](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-dev-center)ます。
+2. **[ユーザーの管理]** ページで、 **[Add Azure AD applications]\(Azure AD アプリケーションの追加\)** をクリックして、パートナー センター アカウントの申請へのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、 **[Add Azure AD applications]\(Azure AD アプリケーションの追加\)** ページで選んでパートナー センター アカウントに追加できます。 それ以外の場合、 **[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[Add Azure AD applications to your Partner Center account (Azure AD アプリケーションをパートナー センター アカウントに追加する)](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#azure-ad-applications)」をご覧ください。
 
-3. **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
+3. **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、 **[テナント ID]** と **[クライアント ID]** の値を書き留めます。
 
-4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションのキーを管理する方法](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys)」をご覧ください。
+4. **[新しいキーの追加]** をクリックします。 次の画面で、 **[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションのキーを管理する方法](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys)」をご覧ください。
 
-5. 最後に、AD アプリケーションがドライバーの提出を管理し公開するのに必要な役割を持っていることを確認します。 最初に、パートナー センターの **[設定]** パネルで、**[ユーザー]** をクリックします。
+5. 最後に、AD アプリケーションがドライバーの提出を管理し公開するのに必要な役割を持っていることを確認します。 最初に、パートナー センターの **[設定]** パネルで、 **[ユーザー]** をクリックします。
 
     ![[設定] メニューの [ユーザー] オプションを示す画像](images/settings-menu-users-option.png)
 
-    [ユーザー] ページで、**[Azure AD applications]\(Azure AD アプリケーション\)** をクリックします。
+    [ユーザー] ページで、 **[Azure AD applications]\(Azure AD アプリケーション\)** をクリックします。
 
     ![[Azure AD アプリケーション] タブを示す画像](images/azure-ad-applications-tab.png)
 
-    関連付けた Azure AD アプリケーションの名前をクリックします。 これにより、Azure AD アプリケーションの詳細ページが読み込まれます。 このページで、**[Roles]\(役割\)** の下の **[ハードウェア]** をクリックします。
+    関連付けた Azure AD アプリケーションの名前をクリックします。 これにより、Azure AD アプリケーションの詳細ページが読み込まれます。 このページで、 **[Roles]\(役割\)** の下の **[ハードウェア]** をクリックします。
 
     ![[役割] セクションの [ハードウェア] タブを示す画像](images/hardware-tab-in-roles-section.png)
 
@@ -88,13 +88,13 @@ Azure AD アクセス トークンを取得したら、Microsoft ハードウェ
 
 ## <a name="code-examples"></a>コード例
 
-次の例では、Microsoft Surface デバイス チームによって作成された、完全なエンド ツー エンド事前構築済みソリューションと一緒に Microsoft ハードウェア API を使用する方法を示す詳細なコードを提供します。
+次のサンプルは、Microsoft Surface and Devices チームによって作成された完全なエンド ツー エンドの構築済みソリューションと共に Microsoft Hardware API を使用する方法を示す詳細なコードとして利用できます。
 
 * [C# のサンプル](http://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
 
 [ハードウェア ダッシュボード API のサンプル (GitHub)](https://aka.ms/hpc_async_api_samples)
 
-[画面のデベロッパー センター マネージャー ツール (GitHub)](https://github.com/Microsoft/SDCM)
+[Surface Dev Center Manager ツール (GitHub)](https://github.com/Microsoft/SDCM)
 
 ## <a name="additional-help"></a>追加のヘルプ
 
@@ -102,4 +102,4 @@ Microsoft Store 申請 API について質問がある場合や、この API を
 
 ## <a name="related-topics"></a>関連トピック
 
-[Azure Active Directory とは何ですか。](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
+[Azure Active Directory とは](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)

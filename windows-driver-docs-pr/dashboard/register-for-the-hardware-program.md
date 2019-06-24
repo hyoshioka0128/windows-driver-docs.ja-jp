@@ -5,16 +5,21 @@ ms.assetid: 8E947636-7F0E-4C31-9149-D6BF60D84226
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ae987ffe0419540acfd1db2df0cc91981ff6a7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8236e67db1829e08b493197ccce4c5fed0265463
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518571"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "65106396"
 ---
 # <a name="register-for-the-hardware-program"></a>ハードウェア プログラムの登録
 
 組織の管理者は、Windows ハードウェア デベロッパー センター プログラムに[登録](https://go.microsoft.com/fwlink/?LinkID=828002)する必要があります。
+
+> [!Note]
+> このプロセスでサポートが必要な場合は、 https://developer.microsoft.com/windows/support でサポート チケットを開いてください。  
+>- **[お問い合わせ先]** を選択し、ドロップダウン リストから **[ダッシュボードの問題]** と **[ハードウェアの申請と署名 (すべての OS バージョン)]** をそれぞれ選択してください。  
+>- ライブ チャットと電子メール サポートの受付時間は、月曜日から金曜日の午前 8 時から午後 8 時 (CST) です。  電子メール サポートの初回応答の SLA は、24 時間から 48 時間です。
 
 ## <a name="before-you-sign-up"></a>サインアップする前に
 

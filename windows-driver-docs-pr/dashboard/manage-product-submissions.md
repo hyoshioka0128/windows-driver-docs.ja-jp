@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d6438ed3d56dceea65e90d42753aa4954d90f3b2
-ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66400870"
 ---
 # <a name="manage-product-submissions"></a>製品申請の管理
@@ -76,7 +76,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
     申請の状態を確認するには、応答本文の *commitStatus* の値を確認します。 この値が *commitReceived* から *commitCompleted* (要求が成功した場合) または *commitFailed* (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*error* フィールドにエラーについての詳細情報が含まれています。
 
    >[!NOTE]
-   >メインの検索ページでは、約 10 分ごとに更新します。 表示するには、結果をすべて作成するには、次のようにクリックします。 **(すべて) ドライバーの一覧ページ**、上部にある、**ドライバー**パートナー センターのページ。 ページの処理し、送信の多くがある場合にロードするまでに時間がかかりますが読み込むことは成功と失敗の両方の送信が表示されます。 詳細については、次を参照してください。[ハードウェアの提出を見つける](https://docs.microsoft.com/windows-hardware/drivers/dashboard/find-hardware-submission)します。
+   >メインの検索ページは約 10 分ごとに更新されます。 作成時にすべての結果を表示するには、パートナー センターの **[ドライバー]** ページの上部にある **[Driver List Page (all)]\(ドライバー一覧ページ (すべて)\)** をクリックします。 大量の申請がある場合は、ページの処理と読み込みに時間がかかりますが、読み込み時に成功した申請と失敗した申請の両方が表示されます。 詳細については、「[ハードウェア申請を検索する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/find-hardware-submission)」を参照してください。
 
 ## <a name="code-examples"></a>コード例
 

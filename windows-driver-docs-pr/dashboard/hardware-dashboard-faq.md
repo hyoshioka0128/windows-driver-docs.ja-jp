@@ -5,12 +5,12 @@ ms.assetid: AA3D1147-7015-4D21-84A6-D127F57DDC97
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abb0645cb401156a3349ebda8e0fb51ff83a88f0
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.openlocfilehash: 911a3dc086bb07f691ca1fd9bc41548952d22bbb
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560603"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "65106397"
 ---
 # <a name="hardware-dashboard-faq"></a>ハードウェア ダッシュボードに関する FAQ
 
@@ -18,7 +18,7 @@ ms.locfileid: "57560603"
 
 ## <a name="how-do-i-contact-partner-center-support"></a>パートナー センターのサポートに問い合わせるにはどうすればよいですか。
 
-ダッシュボードにアクセスできない場合や、ダッシュボード サポートが必要な場合は、こちらからサポート チケットを開いてください: https://developer.microsoft.com/windows/support。  **[お問い合わせ先]** を選択し、ドロップダウン リストから **[ダッシュボードの問題]** と **[ハードウェアの申請と署名 (すべての OS バージョン)]** をそれぞれ選択してください。
+ダッシュボードにアクセスできない場合や、ダッシュボード サポートが必要な場合は、こちらからサポート チケットを開いてください: https://developer.microsoft.com/windows/support 。  **[お問い合わせ先]** を選択し、ドロップダウン リストから **[ダッシュボードの問題]** と **[ハードウェアの申請と署名 (すべての OS バージョン)]** をそれぞれ選択してください。  ライブ チャットと電子メール サポートの受付時間は、月曜日から金曜日の午前 8 時から午後 8 時 (CST) です。  電子メール サポートの初回応答の SLA は、24 時間から 48 時間です。
 
 ## <a name="can-i-associate-multiple-certificates-with-a-dashboard-account"></a>ダッシュボード アカウントに複数の証明書を関連付けることができますか。
 
@@ -95,7 +95,7 @@ Windows 10 では、パフォーマンスに影響を与えずに安全性を�
 1. ファイルの名前を現在の .hckx/hlkx から .zip に変更します。
 2. フォルダーを展開します。
 3. フォルダーを開きます。
-4. すべての項目を選択し、右クリックして、**[Send to Compressed zip folder]** (圧縮された zip フォルダーへ送信) を選択します。
+4. すべての項目を選択し、右クリックして、 **[Send to Compressed zip folder]** (圧縮された zip フォルダーへ送信) を選択します。
 5. 新しい .zip フォルダーの名前を .hckx/.hlkx に変更します。
 6. 新しい .hckx/.hlkx ファイルをアップロードします。
 

@@ -1,56 +1,56 @@
 ---
 ms.openlocfilehash: ee3457c572ff8bff7aab72ed613da0a4416729aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "63323243"
 ---
-# <a name="contributing-to-windows-driver-documentation"></a>Windows ドライバーのドキュメントへの投稿
+# <a name="contributing-to-windows-driver-documentation"></a>Windows ドライバー ドキュメントへの投稿
 
-このページでは、Windows ドライバーのドキュメントに貢献するための基本手順について説明します。
+このページでは、Windows ドライバー ドキュメントへの投稿の基本的な手順について説明します。
 
-[入門ビデオ](https://channel9.msdn.com/Blogs/WinHEC/Contributing-to-MSDN-and-TechNet-Documentation)による変更の提案の方法を示すことです。
+変更を提案する方法を紹介した[入門ビデオ](https://channel9.msdn.com/Blogs/WinHEC/Contributing-to-MSDN-and-TechNet-Documentation)もご覧ください。
 
-## <a name="sign-a-cla"></a>CLA に署名します。
+## <a name="sign-a-cla"></a>CLA に署名する
 
-複数のいくつかの行を投稿する Microsoft の従業員がない場合は、する必要があります[Microsoft コントリビューション ライセンス契約 (CLA) に署名する](https://cla.microsoft.com/)します。 
+Microsoft の従業員以外の方が複数行にわたる変更を投稿する場合は、[Microsoft Contribution Licensing Agreement (CLA) に署名する](https://cla.microsoft.com/)必要があります。 
 
-Microsoft 従業員の場合を必ず[、GitHub アカウントとエイリアス リンク](https://opensource.microsoft.com/link)します。
+Microsoft の従業員の場合は、必ず [GitHub アカウントとエイリアスをリンク](https://opensource.microsoft.com/link)してください。
 
-以前は、これは、Microsoft リポジトリに既に提供した場合! この手順を既に完了しました。
+以前に Microsoft リポジトリに投稿したことがある場合、 この手順は既に完了しています。
 
 
-## <a name="proposing-a-change"></a>に対する変更を提案
+## <a name="proposing-a-change"></a>変更を提案する
 
 ドキュメントへの変更を提案する場合は、次の手順に従います。
 
-1. Docs.microsoft.com のページを表示する場合にクリックして、**編集**ページの右上隅のボタンをクリックします。  内の対応するマークダウン ソース ファイルにリダイレクトする、 [GitHub リポジトリ](https://github.com/MicrosoftDocs/windows-driver-docs)します。  まだの場合、 [GitHub リポジトリ](https://github.com/MicrosoftDocs/windows-driver-docs)、だけを変更するには、ソース ファイルを移動することができます。
-2. GitHub アカウントがない場合はクリックして**サインアップ**上にあるし、新しいアカウントを作成します。
-3. GitHub ページで変更するには、鉛筆アイコンをクリックします。
-4. ファイルを変更し、[プレビュー] タブを使用して、変更が適切に表示することを確認します。
-5. 完了すると、変更をコミットし、プル要求を開きます。
+1. Docs.microsoft.com のページを表示している場合は、ページの右上にある **[編集]** ボタンをクリックします。  [GitHub リポジトリ](https://github.com/MicrosoftDocs/windows-driver-docs)内の対応するマークダウン ソース ファイルにリダイレクトされます。  既に [GitHub リポジトリ](https://github.com/MicrosoftDocs/windows-driver-docs)を表示している場合は、変更したいソース ファイルに移動するだけです。
+2. GitHub アカウントがまだない場合は、右上の **[サインアップ]** をクリックして新しいアカウントを作成します。
+3. 変更したい GitHub ページで、鉛筆アイコンをクリックします。
+4. ファイルを変更し、[プレビュー] タブを使って変更内容に問題がないことを確認します。
+5. 完了したら、変更をコミットし、プル要求を開きます。
 
-プル要求を作成した後、Windows Driver ドキュメント チームのメンバーは、変更内容を確認します。 
+プル要求が作成されると、Windows ドライバー ドキュメント チームのメンバーによって変更内容が確認されます。 
 
-更新をパブリッシュする場合は、要求が受け入れられる https://docs.microsoft.com/windows-hardware/driversします。
+要求が受理された場合、更新が https://docs.microsoft.com/windows-hardware/drivers に公開されます。
 
-Microsoft の従業員、プライベート環境での共同作業する必要がある場合は、windowsdriverdev エイリアスにお問い合わせください。
+Microsoft の従業員がプライベート環境で共同作業する必要がある場合は、windowsdriverdev エイリアスに問い合わせてください。
 
 ## <a name="making-more-substantial-changes"></a>さらに大幅な変更を加える
 
-既存の記事に大幅に変更、追加またはイメージを変更または新しい記事を投稿、あなたの GitHub アカウントに、公式のリポジトリをフォークとローカルの複製を作成し、お勧めします。
+既存の記事に大幅な変更を加える場合、画像を追加または変更する場合、または新しい記事を投稿する場合は、公式リポジトリを自分の GitHub アカウントに分岐し、ローカルの複製を作成することをお勧めします。
 
-詳細については、次を参照してください。[リポジトリをフォークする](https://help.github.com/articles/fork-a-repo/)します。
+詳しくは、[リポジトリの分岐](https://help.github.com/articles/fork-a-repo/)に関する記事をご覧ください。
 
-## <a name="using-issues-to-provide-feedback-on-windows-driver-documentation"></a>問題を使用して Windows ドライバーのドキュメントに関するフィードバックを提供するには
+## <a name="using-issues-to-provide-feedback-on-windows-driver-documentation"></a>問題を使用して Windows ドライバー ドキュメントへのフィードバックを提供する
 
-ドキュメントについては、変更を提案するのではなく、フィードバックを提供したい場合[問題を作成](https://github.com/MicrosoftDocs/windows-driver-docs/issues)です。
+ドキュメントについて変更を提案するのではなく、フィードバックを提供したい場合は、[問題を作成](https://github.com/MicrosoftDocs/windows-driver-docs/issues)します。
 
 必ずトピックのタイトルとページの URL を含めてください。
 
 ## <a name="resources"></a>参考資料
 
-Markdown の編集には、使い慣れたテキスト エディターを使用できます。  お勧め[Visual Studio Code](https://code.visualstudio.com/)、Microsoft から無料の軽量なオープン ソース エディター。
+Markdown の編集には、使い慣れたテキスト エディターを使用できます。  Microsoft の無料の軽量オープン ソース エディター、[Visual Studio Code](https://code.visualstudio.com/) をお勧めします。
 
 マークダウンの基本事項はほんの数分で学習できます。  最初に、[マークダウンの概要に関するページ](https://guides.github.com/features/mastering-markdown/)をご覧ください。

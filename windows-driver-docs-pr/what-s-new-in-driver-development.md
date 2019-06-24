@@ -6,10 +6,10 @@ ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: f60441488e80443a78e6114285601c6cfe1c096b
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66813592"
 ---
 # <a name="top"></a>ドライバー開発に関する最新情報
@@ -18,7 +18,7 @@ ms.locfileid: "66813592"
 
 以下は、Windows 10 でのドライバー開発に関する主な新機能の一覧です。
 
-* [Windows 10、バージョンが 1903 WDK には、Visual Studio 2019 がサポートしています](#wdk-supports-visual-studio-2019)
+* [Windows 10 Version 1903 WDK による Visual Studio 2019 のサポート](#wdk-supports-visual-studio-2019)
 * [Windows ハードウェア デベロッパー センター ダッシュボード](#windows-hardware-dev-center-dashboard)
 * [オープンな発行](#open-publishing)
 * [Windows 用デバッグ ツール](#debugging-tools-for-windows)
@@ -69,31 +69,31 @@ ms.locfileid: "66813592"
 
 このセクションでは、Windows 10 でのドライバー開発に関する主な新機能について説明します。
 
-### <a name="wdk-supports-visual-studio-2019"></a>WDK には、Visual Studio 2019 がサポートしています
+### <a name="wdk-supports-visual-studio-2019"></a>WDK による Visual Studio 2019 のサポート
 
-Windows 10、バージョンが 1903 年の Windows Driver Kit (WDK) が前と同じ Visual Studio 2019 のサポートに更新されました[発表](https://social.msdn.microsoft.com/Forums/en-US/b116571d-d5b2-4c1c-a43e-4b57171c8c41/windows-driver-kit-wdk-to-support-visual-studio-2019?forum=wdk)します。 WDK のこのリリースは Visual Studio 2017 と互換性のあるいませんただし、開発者は、WDK の以前のリリースを使用して、Visual Studio 2017 での作業を続けることができます (1709 は 1809 見つかったを通じて解放[ここ](https://docs.microsoft.com/en-us/windows-hardware/drivers/other-wdk-downloads))。 について何は新しい Visual Studio 2019 とくださいレビュー情報[ここ](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019)します。
+Windows 10 Version 1903 用の Windows Driver Kit (WDK) は、以前の[発表](https://social.msdn.microsoft.com/Forums/en-US/b116571d-d5b2-4c1c-a43e-4b57171c8c41/windows-driver-kit-wdk-to-support-visual-studio-2019?forum=wdk)のとおり、Visual Studio 2019 をサポートするように更新されました。 このリリースの WDK は Visual Studio 2017 とは互換性がありませんが、開発者は以前のリリースの WDK を使用して Visual Studio 2017 を引き続き使用できます (リリース 1709 から 1809 は[こちら](https://docs.microsoft.com/en-us/windows-hardware/drivers/other-wdk-downloads)にあります)。 Visual Studio 2019 の新機能については、[こちら](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019)の情報を参照してください。
 
-Windows ドライバー開発者に表示される Visual Studio 2019 主な変更のいくつかの項目を次に示します。
+Visual Studio 2019 の Windows ドライバー開発者向けの注目すべき変更点を次に示します。
 
-#### <a name="wdk-gui-driver-menu-moved"></a>WDK GUI ドライバー メニューに移動
+#### <a name="wdk-gui-driver-menu-moved"></a>WDK GUI ドライバー メニューの移動
 
-Visual Studio 2019 WDK ドライバー メニューはライブの拡張機能メニューで次に示すように移動されました。
+Visual Studio 2019 では、WDK ドライバー メニューは次のように [拡張機能] メニューに表示されるように移動されました。
 
-![Visual Studio 2019 メニューのスクリーン ショット](images/vs-2019-driver-menu.png)
+![Visual Studio 2019 メニューのスクリーンショット](images/vs-2019-driver-menu.png)
 
-WDK ドライバー] メニューの [Visual Studio 2017 では、次に示すように、上部のメニュー オプションに記載されています。
+Visual Studio 2017 の WDK ドライバー メニューは次のように上部のメニュー オプションにあります。
 
-![Visual Studio 2017 のメニューのスクリーン ショット](images/vs-2017-menu.png)
+![Visual Studio 2017 メニューのスクリーンショット](images/vs-2017-menu.png)
 
-#### <a name="driver-templates-discoverability"></a>ドライバーのテンプレートの検出
+#### <a name="driver-templates-discoverability"></a>ドライバー テンプレートの見つけやすさ
 
-Visual Studio 2019 WDK ドライバー テンプレートはプロジェクトの種類、ドライバーで検出可能になります。 ドライバー プロジェクトの種類は、Visual Studio 2019 の最初の公式更新プログラムのリリースに表示されます。 それまでは、[検索] メニューで検索するドライバー テンプレートを検出できます。
+Visual Studio 2019 では、WDK ドライバー テンプレートは [プロジェクトの種類] の [ドライバー] に表示されます。 [Driver Project Type]\(ドライバー プロジェクトの種類\) は、Visual Studio 2019 の最初の公式更新プログラム リリースに表示されます。 それまでは、ドライバー テンプレートを見つけるには、検索メニューで検索します。
 
-![Visual Studio 2019 ドライバー テンプレートのスクリーン ショット](images/vs-2019-driver-template.png)
+![Visual Studio 2019 ドライバー テンプレートのスクリーンショット](images/vs-2019-driver-template.png)
 
-新しいプロジェクトで Visual Studio 2017 では、WDK ドライバー テンプレートが見つかりました以前 > Visual C++> 次に示すように、Windows ドライバー。
+WDK ドライバー テンプレートは、以前は Visual Studio 2017 の [新規プロジェクト] > [Visual C++] > [Windows ドライバー] に表示されていました。
 
-![Visual Studio 2017 のドライバーのテンプレートのスクリーン ショット](images/vs-2017-driver-template.png)
+![Visual Studio 2017 ドライバー テンプレートのスクリーンショット](images/vs-2017-driver-template.png)
 
 ### <a name="windows-hardware-dev-center-dashboard"></a>Windows ハードウェア デベロッパー センター ダッシュボード
 
@@ -122,34 +122,34 @@ Microsoft では、コミュニティ主導によるドキュメント制作を�
 
 このセクションでは、Windows 用デバッグ ツールの変更点について説明します。
 
-#### <a name="debugging-in-windows-10-version-1903"></a>Windows 10、バージョンが 1903 でのデバッグ
+#### <a name="debugging-in-windows-10-version-1903"></a>Windows 10 Version 1903 でのデバッグ
 
-* 優れた Windows オペレーティング システムに固有のエラーの種類の追跡を許可する新しい停止コードが追加されました。 さらに、多くの既存のバグ チェック トピックは展開され、更新されました。 詳細については、次を参照してください。[バグ チェック コード参照](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)します。
+* Windows オペレーティング システム固有のエラーの種類を追跡しやすいように、新しい停止コードが追加されました。 さらに、いくつかの既存のバグ チェックに関するトピックが拡張および更新されました。 詳細については、「[バグ チェック コード リファレンス](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)」を参照してください。
 
-* 更新プログラムを向上させるために、使いやすさなどで新しい KDNET トピック[設定を KDNET ネットワーク カーネル デバッグを自動的に](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)
+* 使いやすさを向上させるために KDNET トピックを更新しました。たとえば、新しい「[KDNET ネットワーク カーネル デバッグの自動設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)」です
 
-* IP V6 KDNET への更新をサポートします。
+* IP V6 KDNET のサポートが更新されました。
 
-* 新しい[JavaScript のデバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/javascript-debugger-scripting)トピック
+* 新しい [JavaScript のデバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/javascript-debugger-scripting)のトピック
 
-#### <a name="debugging-in-windows-10-version-1809"></a>Windows 10、バージョンは 1809 でのデバッグ
+#### <a name="debugging-in-windows-10-version-1809"></a>Windows 10 Version 1809 でのデバッグ
 
 * **新しいデバッガー データ モデル API** – デバッガーの自動化をサポートするオブジェクト指向の新しいデバッガー データ モデル インターフェイスが、dbgmodel.h ヘッダーを通じて利用可能になりました。 このデバッガー データ モデルは、新しいデバッガー拡張機能 (JavaScript、NatVis、C++ で記述されたものを含む) でデバッガーからの情報を利用したり、デバッガーや他の拡張機能からアクセスできる情報を生成したりするしくみの中心となる、拡張可能なオブジェクト モデルです。 データ モデル API に書き込まれるコンストラクトは、デバッガーの dx 式エバリュエーターのほか、JavaScript 拡張機能や C++ 拡張機能から参照できます。 ドキュメントは、「[Overview of the Debugger Data Model C++ Interface (デバッガー データ モデル C++ インターフェイスの概要)](debugger/data-model-cpp-overview.md)」および [dbgmodel.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/) ヘッダーのリファレンス トピックでご覧いただけます。
 
-* **IPv6** - Microsoft では、KDNET に IPv6 のサポートを追加しています。 IPv6 で必要とされる大きいサイズのヘッダーに対応するため、パケットのペイロード サイズを縮小しました。 その結果、KDNET プロトコルの新しいバージョンを発表して、最新バージョンのデバッガーを実行するホスト PC から IPv4 のみをサポートするターゲット PC をデバッグできるようにしています。 使用可能な WinDbg Preview のバージョンが[ https://aka.ms/windbgpreview ](https://aka.ms/windbgpreview) IPv6 をサポートします。 KDNET での IPv6 のサポートに関する最新情報を入手するには、Debugging Tools for Windows ブログをフォローしてください。また、「[Setting Up KDNET Network Kernel Debugging Manually (KDNET ネットワーク カーネルのデバッグを手作業でセットアップする)](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)」で詳細をご確認ください。
+* **IPv6** - Microsoft では、KDNET に IPv6 のサポートを追加しています。 IPv6 で必要とされる大きいサイズのヘッダーに対応するため、パケットのペイロード サイズを縮小しました。 その結果、KDNET プロトコルの新しいバージョンを発表して、最新バージョンのデバッガーを実行するホスト PC から IPv4 のみをサポートするターゲット PC をデバッグできるようにしています。 IPv6 をサポートするバージョンの WinDbg プレビューは、[https://aka.ms/windbgpreview](https://aka.ms/windbgpreview) でダウンロードできます。 KDNET での IPv6 のサポートに関する最新情報を入手するには、Debugging Tools for Windows ブログをフォローしてください。また、「[Setting Up KDNET Network Kernel Debugging Manually (KDNET ネットワーク カーネルのデバッグを手作業でセットアップする)](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)」で詳細をご確認ください。
 
-#### <a name="debugging-in-windows-10-version-1803"></a>Windows 10、バージョン 1803 でのデバッグ
+#### <a name="debugging-in-windows-10-version-1803"></a>Windows 10 Version 1803 でのデバッグ
 
 [WinDbg プレビューのタイム トラベル デバッグ (TTD) ハンズオン ラボ](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-walkthrough) - このラボでは、コードにエラーのある短いサンプル プログラムを使ってタイム トラベル デバッグ (TTD) を紹介します。 TTD を使って問題をデバッグし、その根本原因を特定します。
 
-#### <a name="debugging-in-windows-10-version-1709"></a>Windows 10 バージョン 1709 でのデバッグ
+#### <a name="debugging-in-windows-10-version-1709"></a>Windows 10 Version 1709 でのデバッグ
 
 Windows 10 Version 1709 では、デバッガーに関する次のコンテンツ セットが新たに追加されています。
 
 * [Debugging Using WinDbg Preview (WinDbg プレビューを使用したデバッグ)](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-using-windbg-preview) - 次世代のデバッガーをプレビューします。
 * [Time Travel Debugging - Overview (タイム トラベル デバッグ - 概要)](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-overview) - プロセスの実行を記録して再生します。
 
-#### <a name="debugging-in-windows-10-version-1703"></a>Windows 10 バージョン 1703 でのデバッグ
+#### <a name="debugging-in-windows-10-version-1703"></a>Windows 10 Version 1703 でのデバッグ
 
 次の表は、Windows 10 Version 1703 でのデバッガーの変更点を示しています。
 
@@ -159,11 +159,11 @@ Windows 10 Version 1709 では、デバッガーに関する次のコンテン�
 | [バグ チェック コード リファレンス](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)に未掲載の 40 の停止コード | 「[Configuring tools.ini (tools.ini の構成)](https://docs.microsoft.com/windows-hardware/drivers/debugger/configuring-tools-ini)」トピックの更新 (コマンド ライン デバッガー用の tools.ini の追加オプション) |
 | [!ioctldecode コマンド](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ioctldecode) | [dx (Display Debugger Object Model Extension)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-) コマンドの新しいコマンド機能 |
 
-#### <a name="debugging-in-windows-10-version-1607"></a>Windows 10 version 1607 でのデバッグ
+#### <a name="debugging-in-windows-10-version-1607"></a>Windows 10 Version 1607 でのデバッグ
 
 Windows 10 Version 1607 では、デバッガーに関して、[WinDbg を使用した UWP アプリのデバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg)に関する新しいトピックの追加や、[バグ チェック コード リファレンス](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)で最も閲覧数の多い 30 件の開発者向けバグ チェック トピックの更新などが行われました。
 
-#### <a name="debugging-in-windows-10-version-1507"></a>Windows 10 バージョン 1507 でのデバッグ
+#### <a name="debugging-in-windows-10-version-1507"></a>Windows 10 Version 1507 でのデバッグ
 
 Windows 10 Version 1507 では、Windows デバッガーに次のコマンドが新たに追加されました。
 
@@ -194,9 +194,9 @@ Windows 10 Version 1809 では、次のコンテンツが追加されました�
 
 ### <a name="windows-driver-frameworks-wdf"></a>Windows Driver Framework (WDF)
 
-#### <a name="wdf-in-windows-10-version-1903"></a>Windows 10、バージョンが 1903 WDF
+#### <a name="wdf-in-windows-10-version-1903"></a>Windows 10 Version 1903 の WDF
 
-Windows 10、バージョンが 1903 年では、Windows Driver Framework (WDF) は、カーネル モード ドライバー フレームワーク (KMDF) バージョン 1.29 とユーザー モード ドライバー フレームワーク (UMDF) バージョン 2.29 が含まれます。
+Windows 10 Version 1903 の Windows Driver Framework (WDF) には、Kernel-Mode Driver Framework (KMDF) バージョン 1.29 と User-Mode Driver Framework (UMDF) バージョン 2.29 が含まれます。
 
 これらのフレームワーク バージョンに含まれる機能については、「[What's New for WDF Drivers in Windows 10 (Windows 10 の WDF ドライバーの新機能)](https://docs.microsoft.com/windows-hardware/drivers/wdf/)」をご覧ください。
 WDF の以前のバージョンで追加された機能については、「[KMDF Version History (KMDF のバージョン履歴)](https://docs.microsoft.com/windows-hardware/drivers/wdf/kmdf-version-history)」と「[UMDF Version History (UMDF のバージョン履歴)](https://docs.microsoft.com/windows-hardware/drivers/wdf/umdf-version-history)」をご覧ください。
@@ -205,9 +205,9 @@ WDF の以前のバージョンで追加された機能については、「[KMD
 
 このセクションでは、Windows 10 のユニバーサル Windows ドライバーの新機能と更新された機能について説明します。
 
-[トップに戻る](#top)
+[ページのトップへ](#top)
 
-#### <a name="universal-drivers-in-windows-10-version-1809"></a>Windows 10、バージョンは 1809 ユニバーサル ドライバー
+#### <a name="universal-drivers-in-windows-10-version-1809"></a>Windows 10 Version 1809 のユニバーサル ドライバー
 
 Windows 10 Version 1809 以降、Windows で柔軟なリンクがサポートされるようになりました。これにより、単一のバイナリを使って OneCore およびデスクトップの SKU をターゲットとすることができます。
 柔軟なリンクを有効にするには、次の新しい SDK API を使用します。
@@ -218,11 +218,11 @@ Windows 10 Version 1809 以降、Windows で柔軟なリンクがサポートさ
 
 * [OneCore をターゲットとしたビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-for-onecore)
 
-#### <a name="universal-drivers-in-windows-10-version-1803"></a>Windows 10、バージョン 1803 でユニバーサル ドライバー
+#### <a name="universal-drivers-in-windows-10-version-1803"></a>Windows 10 Version 1803 のユニバーサル ドライバー
 
 「[Getting started with universal drivers (ユニバーサル ドライバーの概要)](develop/getting-started-with-universal-drivers.md)」で、ユニバーサル ドライバーに関する最新の推奨事項をご確認ください。
 
-#### <a name="universal-drivers-in-windows-10-version-1709"></a>Windows 10 バージョン 1709 でユニバーサル ドライバー
+#### <a name="universal-drivers-in-windows-10-version-1709"></a>Windows 10 Version 1709 のユニバーサル ドライバー
 
 Windows 10 Version 1709 では、ユニバーサル ドライバーに次の新機能が追加されました。
 
@@ -262,14 +262,14 @@ Raspberry Pi 2 などの手頃な価格のボードで Windows がサポート�
 
 電源管理フレームワーク (PoFx) により、ドライバーは、デバイス内の個々のコンポーネントに対して個別に調整可能なパフォーマンス状態のセットをいくつでも定義することができます。 このドライバーは、パフォーマンスの状態を使ってコンポーネントのワークロードを調整し、現在のニーズに最適なパフォーマンスを提供します。 詳しくは、「[Component-Level Performance State Management (コンポーネント レベルのパフォーマンス状態の管理)](https://docs.microsoft.com/windows-hardware/drivers/kernel/component-level-performance-management)」をご覧ください。
 
-Windows 10、バージョンが 1903 にサポートが含まれています、 [Directed 電源管理フレームワーク (DFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework)します。  関連リファレンス ドキュメントについて、次のとおりです。
+Windows 10 Version 1903 には [Directed Power Management Framework (DFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework) のサポートが含まれています。  以下の関連する参照ドキュメントがあります。
 
 * [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-po_fx_device_v3)
 * [PO_FX_DIRECTED_POWER_DOWN_CALLBACK コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_directed_power_down_callback)
 * [PO_FX_DIRECTED_POWER_UP_CALLBACK コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_directed_power_up_callback)
-* [PoFxCompleteDirectedPowerDown](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxcompletedirectedpowerdown)関数
+* [PoFxCompleteDirectedPowerDown](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxcompletedirectedpowerdown) 関数
 
-DFx のテスト方法の詳細については、次のページを参照してください。
+DFx のテストについては、以下のページを参照してください。
 
 * [有向 FX 単一デバイス テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
 * [有向 FX システムの検証テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)
@@ -284,74 +284,74 @@ DFx のテスト方法の詳細については、次のページを参照して�
 * [WppRecorderLogCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate) (KMDF のみ)
 * [WppRecorderDumpLiveDriverData](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderdumplivedriverdata)
 
-## <a name="whats-new-in-windows-10-version-1903-latest"></a>新機能については、Windows 10 バージョンが 1903 (最新)
+## <a name="whats-new-in-windows-10-version-1903-latest"></a>Windows 10 Version 1903 (最新版) の最新情報
 
-このセクションでは、新機能と更新プログラムで Windows 10、バージョンが 1903 ドライバーの開発について説明します。 (Windows 10 April 2019 の更新プログラム)。
+このセクションでは、Windows 10 Version 1903 (Windows 10 April 2019 Update) でのドライバー開発に関する新機能と更新された機能について説明します。
 
-[トップに戻る](#top)
+[ページのトップへ](#top)
 
 ### <a name="audio-1903"></a>オーディオ
 
-Windows 10、バージョンが 1903 で新規および更新後のオーディオ機能の一覧を次には。
+Windows 10 Version 1903 の新機能と更新されたオーディオ機能の一覧を次に示します。
 
-* 新しい音声のアクティブ化するためのオーディオ OEM アダプターで新しいリファレンス トピック[eventdetectoroemadapter.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/eventdetectoroemadapter/)ヘッダー。
-* 新しいフィールドのオーディオまで情報: 
+* 新しい [eventdetectoroemadapter.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/eventdetectoroemadapter/) ヘッダーの音声ライセンス認証に使用されるオーディオ OEM アダプターに関する新しい参照トピック。
+* 新しい Far フィールド オーディオ情報: 
     * [PKEY_Devices_AudioDevice_Microphone_IsFarField](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-devices-audiodevice-microphone-isfarfield)
     * [KSPROPSETID_InterleavedAudio](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-interleavedaudio)
     * [KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://review.docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)
     
-* 新しい回線のモジュラー ジャック説明情報[オーディオの USB 2.0 ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/usb-2-0-audio-drivers)します。
+* [USB オーディオ 2.0 ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/usb-2-0-audio-drivers)の新しいジャックの説明情報。
 
 ### <a name="camera-1903"></a>カメラ
 
-新しいカメラ ドライバーのドキュメントと Windows 10、バージョンが 1903 で追加された機能は、次のとおりです。
+Windows 10 Version 1903 で追加された新しいカメラ ドライバーのドキュメントと機能を次に示します。
 
-* 新しい[IR Torch](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-irtorchmode) IR カメラの赤外線 torch 電力レベルとデューティ サイクルを設定するプロパティのコントロールを拡張します。
-* 新しい[KSCATEGORY_NETWORK_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-network-camera)デバイス。
-* 新規および更新された[USB ビデオ クラス (UVC) 1.5 拡張子](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)制御セレクターのドキュメント。
+* 新しい [IR Torch](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-irtorchmode) では、IR カメラの赤外線トーチの電力レベルとデューティ サイクルを設定するプロパティ コントロールを拡張しました。
+* 新しい [KSCATEGORY_NETWORK_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-network-camera) デバイス。
+* 次のコントロール セレクター用の新規および更新された [USB ビデオ クラス (UVC) 1.5 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)のドキュメント。
   * MSXU_CONTROL_FACE_AUTHENTICATION
   * MSXU_CONTROL_METADATA
   * MSUX_CONTROL_IR_TORCH
 
 ### <a name="display-1903"></a>ディスプレイ
 
-Windows 10 でのディスプレイ ドライバーの開発に更新プログラムは、バージョンが 1903 次に示します。
+Windows 10 Version 1903 では、ディスプレイ ドライバー開発に関する次の更新が行われました。
 
-* **スーパー ウェット インク**フロント バッファーのレンダリングを有効にする新しい Ddi が追加されました。 参照してください[D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags)と[PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)します。
+* **スーパーウェット インク** フロントバッファー レンダリングが可能になる新しい DDI が追加されました。 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) と [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation) を参照してください。
 
-* **網掛け変数レート**割り当てが表示されるイメージ間でさまざまな料金でのパフォーマンス/電源のレンダリングが有効です。 参照してください[PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062)と[D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)します。
+* **可変レート シェーディング** レンダリングされた画像全体にさまざまなレートのレンダリング パフォーマンス/電力の割り当てが可能になります。 [PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) と [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062) を参照してください。
 
-* **診断情報を収集**により、OS の両方のレンダリングで構成され、関数を表示するグラフィックス アダプターのドライバーからプライベート データを収集します。 参照してください[DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)します。
+* **診断情報の収集** OS で、レンダリング機能と表示機能の両方で構成されるグラフィックス アダプター用ドライバーからプライベート データを収集できるようになります。 [DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo) を参照してください。
 
-* **バック グラウンド処理**動作、およびランタイムのスレッドを必要なコントロールまたはそのモニターをモード ドライバーの express にユーザーを許可します。 ユーザー モード ドライバーはバック グラウンド スレッドをスピンアップし、可能な優先度を低くスレッドに割り当てるし、これらのスレッドがクリティカル パスのスレッド、成功した場合と通常を中断しないようにする NT スケジューラに依存します。 参照してください[PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)します。
+* **バックグラウンド処理** ユーザー モード ドライバーで、目的のスレッド動作と、それを制御または監視するランタイムを表現できるようになります。 ユーザー モード ドライバーでは、バックグラウンド スレッドをスピンアップし、可能な限り低い優先度を割り当てます。また、これらのスレッドによってクリティカル パス スレッドが中断せず、全般的には成功するように NT スケジューラを利用します。 [PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062) を参照してください。
 
-* **ドライバーのホット アップデート**OS コンポーネントを更新する必要がある場合は、可能な限りサーバーのダウンタイムを削減します。 参照してください[DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate)と[DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)します。
+* **ドライバーのホット更新** OS コンポーネントを更新する必要がある場合に、サーバーのダウンタイムを可能な限り短縮します。 [DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate) と [DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate) を参照してください。
 
 ### <a name="networking-1903"></a>ネットワーク
 
 #### <a name="netadaptercx"></a>NetAdapterCx
 
-NetAdapter WDF クラス拡張 (NetAdapterCx) で Net リング バッファーが置き換えられました Net リングは、ネットワークを net リングを行う反復子を使用してデータを送受信するための新しいインターフェイスを持っています。 新しいトピックの一覧を次には。
+NetAdapter WDF クラス拡張機能 (NetAdapterCx) では、ネット リング バッファーはネット リングに置き換えられました。これには、ネット リング反復子を使用してネットワーク データを送受信するための新しいインターフェイスがあります。 新しいトピックの一覧を次に示します。
 
-* [Net のリングと net リングを行う反復子](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-rings-and-net-ring-iterators)
-* [Net のリングとネットワーク データを送信する](https://docs.microsoft.com/windows-hardware/drivers/netcx/sending-network-data-with-net-rings)データを送信する方法を示す新しいアニメーションを
-* [Net のリングとネットワーク データを受信して](https://docs.microsoft.com/windows-hardware/drivers/netcx/receiving-network-data-with-net-rings)データを受信する方法を示す新しいアニメーションを
-* [Net のリングとネットワーク データのキャンセル](https://docs.microsoft.com/windows-hardware/drivers/netcx/canceling-network-data-with-net-rings)
+* [ネット リングとネット リングの反復子](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-rings-and-net-ring-iterators)
+* [ネット リングを使用したネットワーク データの送信](https://docs.microsoft.com/windows-hardware/drivers/netcx/sending-network-data-with-net-rings) (およびデータの送信方法を示す新しいアニメーション)
+* [ネット リングを使用したネットワーク データの受信](https://docs.microsoft.com/windows-hardware/drivers/netcx/receiving-network-data-with-net-rings) (およびデータの受信方法を示す新しいアニメーション)
+* [ネット リングを使用したネットワーク データの取り消し](https://docs.microsoft.com/windows-hardware/drivers/netcx/canceling-network-data-with-net-rings)
 
-この機能をサポートする新しいヘッダー、次のとおりです。
+この機能をサポートする新しいヘッダーを次に示します。
 
 * [Ring.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ring/index)
 * [Ringcollection.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ringcollection/index)
 * [Netringiterator.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/index)
 
-NetAdapterCx コンテンツの更新プログラムの一覧を次には。
+NetAdapterCx コンテンツの更新の一覧を次に示します。
 
-* 既定のアダプターのアダプターが 1 つのオブジェクトの種類を優先して削除されたオブジェクト。 次のトピックが適宜更新されました。
+* 既定のアダプター オブジェクトは、1 つのアダプター オブジェクトの種類のために削除されました。 次のトピックが適宜更新されました。
 
   * [Summary of NetAdapterCx objects (NetAdapterCx オブジェクトの概要)](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-netadaptercx-objects)
   * [Device and adapter initialization (デバイスとアダプターの初期化)](https://docs.microsoft.com/windows-hardware/drivers/netcx/device-and-adapter-initialization)
 
-* 新しいヘッダーには、ハードウェア オフロードとパケット拡張 Ddi が再編成されました。
+* ハードウェア オフロードとパケット拡張 DDI は新しいヘッダーに再編成されました。
 
   * [Checksum.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksum/index)
   * [Checksumtypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksumtypes/index)
@@ -361,57 +361,57 @@ NetAdapterCx コンテンツの更新プログラムの一覧を次には。
   * [Rsc.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsc/index)
   * [Rsctypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsctypes/index)
 
-* 基本的なネットワーク データ構造やパケット、フラグメントが更新され、新しいヘッダーに。
+* 基本的なネットワーク データ構造、パケット、およびフラグメントは更新され、新しいヘッダーに組み込まれました。
 
   * [Packet.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/packet/index)
   * [Fragment.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fragment/index)
 
-* 徹底的に見直さ[送信および受信キュー](https://docs.microsoft.com/windows-hardware/drivers/netcx/transmit-and-receive-queues)コールバック サンプルおよびパケット キューの主要な操作を含むトピック。
+* コールバックのサンプルとパケット キューの主な操作を含めるために、[キューの送信と受信](https://docs.microsoft.com/windows-hardware/drivers/netcx/transmit-and-receive-queues)に関するトピックを見直しました。
 
 #### <a name="mobile-operator-scenarios"></a>通信事業者のシナリオ
 
-プランのモバイル アプリでの Windows 10 デバイスで直接顧客にプランを販売するモバイル オペレーター用の新しい Mobile プラン コンテンツ:
+通信事業者がモバイル プラン アプリを介して Windows 10 デバイス上で顧客にプランを直接販売するための新しいモバイル プラン コンテンツ。
 
-* [モバイルの計画](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/mobile-plans)
+* [モバイル プラン](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/mobile-plans)
 
 ### <a name="mobilebroadband-1903"></a>モバイル ブロードバンド
 
-次の機能は、Windows 10、バージョンが 1903 ブロード バンド Mobile に追加されました。
+Windows 10 Version 1903 のモバイル ブロードバンドに次の機能が追加されました。
 
-* 新しい[SIM カード (UICC)/アプリケーションのファイル システムへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/network/mb-uicc-application-and-file-system-access)機能
-* 新しい[移動体通信時の情報 (NITZ)](https://docs.microsoft.com/windows-hardware/drivers/network/mb-nitz-support)機能します。
-* 新しい[DSS とモデムのログ記録](https://docs.microsoft.com/windows-hardware/drivers/network/mb-modem-logging-with-dss)機能します。
-* 新しい[5 G データ クラスのサポート](https://docs.microsoft.com/windows-hardware/drivers/network/mb-5g-data-class-support)機能します。
+* 新しい [SIM カード (UICC) ファイル/アプリケーション システム アクセス](https://docs.microsoft.com/windows-hardware/drivers/network/mb-uicc-application-and-file-system-access)機能
+* 新しい[移動体通信時間情報 (NITZ)](https://docs.microsoft.com/windows-hardware/drivers/network/mb-nitz-support) 機能。
+* 新しい [DSS によるモデムのログ記録](https://docs.microsoft.com/windows-hardware/drivers/network/mb-modem-logging-with-dss)機能。
+* 新しい [5G データ クラスのサポート](https://docs.microsoft.com/windows-hardware/drivers/network/mb-5g-data-class-support)機能。
 
 ### <a name="print-1903"></a>印刷
 
-新しい印刷ドライバーのドキュメントと Windows 10、バージョンが 1903 で追加された機能は、次のとおりです。
+Windows 10 Version 1903 で追加された新しい印刷ドライバーのドキュメントと機能を次に示します。
 
-* 新しい USB は、Ioctl を印刷します。
+* 新しい USB 印刷 IOCTL:
 
   * [IOCTL_USBPRINT_GET_INTERFACE_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_get_interface_type)
   * [IOCTL_USBPRINT_GET_PROTOCOL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_get_protocol)
   * [IOCTL_USBPRINT_SET_PROTOCOL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_set_protocol)
 
-* 新しい**fpRegeneratePrintDeviceCapabilities** [した PRINTPROVIDER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_printprovidor)構造体のメンバーおよび更新されたドキュメント。
+* 新しい **fpRegeneratePrintDeviceCapabilities** [PRINTPROVIDER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_printprovidor) 構造体メンバーと更新されたドキュメント。
 
 ### <a name="sensors-1903"></a>センサー
 
-Windows 10 でのセンサー ドライバーの開発の新機能は、バージョンが 1903 を含める、 [MALT (Microsoft アンビエント光ツール) ツール](https://docs.microsoft.com/windows-hardware/drivers/sensors/testing-malt-building-a-light-testing-tool)のテストと、画面の明るさを調整します。
+Windows 10 Version 1903 のセンサー ドライバー開発の新機能には、画面の明るさをテストして調整するための [MALT (Microsoft Ambient Light Tool) ツール](https://docs.microsoft.com/windows-hardware/drivers/sensors/testing-malt-building-a-light-testing-tool)が含まれています。
 
-また、アンビエント色 OEM ホワイト ペーパーへの更新が発生しました。
+Ambient Color OEM ホワイトペーパーも更新されました。
 
 ### <a name="storage-1903"></a>ストレージ
 
-Windows 10、バージョンが 1903 で、次のストレージ機能が追加されました。
+Windows 10 Version 1903 には次のストレージ機能が追加されました。
 
-* Storport Api を使用する ETW イベントではプラットフォーム D3 を照会するデバイスの障害とハードウェア プロトコルのエラーのログ記録に必要な動作
-* ストレージ デバイスまたはアダプターのプロパティを設定する新しい API
-* 追加された新しい Ddi ファイル システムでは、完了するより高いフィルターの表示を変更する ECP ペイロードを変更するには、ミニ - フィルタを作成する時に情報サポート (EA) の拡張属性を取得するには
+* ETW イベントでデバイスの障害とハードウェア プロトコル エラーをログに記録し、プラットフォーム D3 の望ましい動作を照会する新しい Storport API
+* ストレージ デバイスまたはアダプターのプロパティを設定するための新しい API
+* ファイル システムでは、作成の完了時に拡張属性 (EA) 情報の取得をサポートする新しい DDI が追加され、ミニフィルターで ECP ペイロードを変更して、より高いフィルターを変更できるようになりました
 
 ### <a name="windows-hardware-error-architecture-whea"></a>Windows Hardware Error Architecture (WHEA)
 
-Windows 10、バージョンが 1903 WHEA に使いやすいインターフェイスが含まれています。  詳細については、次のページを参照してください。
+Windows 10 Version 1903 では、WHEA へのインターフェイスが簡単になりました。  詳細については、次のページを参照してください。
 
 * [**WheaAddErrorSourceDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-wheaadderrorsourcedevicedriver)
 * [**WheaReportHwErrorDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-wheareporthwerrordevicedriver)
@@ -423,18 +423,18 @@ Windows 10、バージョンが 1903 WHEA に使いやすいインターフェ�
 
 ### <a name="wifi-1903"></a>Wi-Fi
 
-新しい wi-fi ドライバー開発のドキュメントと機能は、次のとおりです。
+新しい Wi-Fi ドライバーの開発ドキュメントと機能を次に示します。
 
-* 問題ありませんタイミング測定 (FTM) の新機能
-* 新しい[WPA3 SAE 認証](https://docs.microsoft.com/windows-hardware/drivers/network/wpa3-sae-authentication)機能
-* エンタープライズのシナリオでの移動のパフォーマンスを向上させるために新しい Multiband 操作 (MBO) のサポート
-* 新しいビーコン レポートのサポートのオフロード
-* OID コマンド、NDIS 状態インジケーター、およびこれらの新機能の TLVs を参照してください[WDI ドキュメントの変更履歴。](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-doc-change-history)
+* 新しい Fine Timing Measurement (FTM) 機能
+* 新しい [WPA3-SAE 認証](https://docs.microsoft.com/windows-hardware/drivers/network/wpa3-sae-authentication)機能
+* エンタープライズ シナリオでローミング パフォーマンスを向上させるための新しい Multiband Operation (MBO) のサポート
+* 新しいビーコン レポート オフロードのサポート
+* これらの新機能に関する OID コマンド、NDIS の状態表示、および TLV については、「[WDI ドキュメントの変更履歴](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-doc-change-history)」を参照してください。
 
-次のトピックは、Windows 10、バージョンが 1903 更新されました。
+次のトピックは、Windows 10 Version 1903 に合わせて更新されました。
 
-* [WDI_AUTH_ALGORITHM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm) -WPA3 SAE 認証のサポートが追加されました
-* [OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-request-action-frame)と[OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-response-action-frame) -発信 Point to Point (P2P) アクションのフレームの追加の検証の追加
+* [WDI_AUTH_ALGORITHM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm) - WPA3-SAE 認証のサポートが追加されました
+* [OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-request-action-frame) と [OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-response-action-frame) - 送信ポイント ツー ポイント (P2P) アクション フレームの新しい検証が追加されました
 
 ## <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 Version 1809 の最新情報
 
@@ -543,7 +543,7 @@ Windows 10 Version 1809 では、ディスプレイ ドライバー開発に関�
 * MBB デバイスのマルチ パケット データ プロトコル (MPDP) インターフェイスをサポートする新しい [OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-mpdp) と DDI。
 * MBB デバイスとドライバーのリセット回復の信頼性を高める新しい[デバイスベースのリセットと回復](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-based-reset-and-recovery)機能。
 
-#### <a name="mobile-broadband-wdf-class-extension-mbbcx"></a>モバイル ブロード バンド WDF クラスの拡張機能 (MBBCx)
+#### <a name="mobile-broadband-wdf-class-extension-mbbcx"></a>モバイル ブロードバンド WDF クラス拡張機能 (MBBCx)
 
 MBBCx 電源管理の方法が簡略化されました。
 
@@ -599,7 +599,7 @@ WLAN デバイス ドライバー インターフェイス (WDI) 仕様がバー
 
 このセクションでは、Windows 10 Version 1803 (Windows 10 April 2018 Update) でのドライバー開発に関する新機能と更新された機能について説明します。
 
-[トップに戻る](#top)
+[ページのトップへ](#top)
 
 ### <a name="acpi-1803"></a>ACPI
 
@@ -822,7 +822,7 @@ Windows 10 Version 1709 では、ドライバーの Windows カーネルに新�
 * ExGetFirmwareType および ExIsSoftBoot &ndash; エグゼクティブ ライブラリ サポート ルーチン。
 * [PsSetLoadImageNotifyRoutineEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetloadimagenotifyroutineex) &ndash; 実行可能なすべてのイメージ (オペレーティング システムのネイティブ アーキテクチャとは異なるアーキテクチャを持つイメージも含む) の拡張イメージ通知ルーチン。
 * [MmMapMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapmdl) &ndash; メモリ記述子の一覧 (MDL) に記述されている物理ページをシステムの仮想アドレス空間にマッピングするための[メモリ マネージャー](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager) ルーチン。
-* [PoFxSetTargetDripsDevicePowerState](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxsettargetdripsdevicepowerstate) &ndash; A PoFx ルーチン DRIPS のデバイスのターゲット デバイスの電源状態の電源マネージャーに通知します。
+* [PoFxSetTargetDripsDevicePowerState](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxsettargetdripsdevicepowerstate) &ndash; デバイスのターゲット デバイスが DRIPS の電源状態になったことを電源マネージャーに通知する PoFx ルーチン。
 * 以下は、処理ポリシーに関連する [ZwSetInformationThread](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwsetinformationthread) ルーチンの新しいオプションの一覧です。
 
   * [PROCESS_MITIGATION_CHILD_PROCESS_POLICY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_process_mitigation_child_process_policy)
@@ -1151,7 +1151,7 @@ Windows 10 には、複雑なドライバー操作を処理する新しいクラ
 
 ### <a name="storage-1507"></a>ストレージ
 
-Windows 10 で、デバイスのネイティブ プロトコルを使用して記憶域デバイスと対話するアプリを許可する新しいプロトコルに固有のインターフェイスが追加されました。 これらの更新には、次のものが含まれます。
+Windows 10 では、アプリがネイティブのデバイス プロトコルを使用してストレージ デバイスと通信できるように、新しいプロトコル固有のインターフェイスが追加されました。 これらの更新には、次のものが含まれます。
 
 * ストレージ プロトコルのパススルー &ndash; 更新されたストレージ パススルー IOCTL インターフェイスで、NVMe (non-volatile memory express) を含む新しいプロトコルがサポートされます。
 * 拡張ストレージ クエリ インターフェイス &ndash; 拡張されたストレージ クエリ インターフェイスにより、アプリケーションがプロトコル依存の情報を照会できるようになります。

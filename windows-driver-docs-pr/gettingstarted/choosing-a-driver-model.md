@@ -7,12 +7,12 @@ keywords:
 - ドライバー設計
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 509f523f2e7829d0b806eee122390db396b2988b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 76bab3e2e74f91d091f27b4d80a6668154b4348a
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518853"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371442"
 ---
 # <a name="choosing-a-driver-model"></a>ドライバー モデルの選択
 
@@ -64,9 +64,9 @@ Microsoft Windows には、ドライバーの作成に使うことができる�
 
 デバイスに関連付けられていないドライバーは、*ソフトウェア ドライバー*と呼ばれます。 ソフトウェア ドライバーついては、「[ドライバーとは](what-is-a-driver-.md)」をご覧ください。 ソフトウェア ドライバーは、カーネル モードで実行可能であり、そのため保護されたオペレーティング システム データにアクセスできるので便利です。 プロセッサ モードについては、「[ユーザー モードとカーネル モード](user-mode-and-kernel-mode.md)」をご覧ください。
 
-ソフトウェア ドライバーでは、2 つのオプションは KMDF と kernel-modeWindows NT ドライバー モデルです。 KMDF と kernel-modeWindows NT ドライバー モデルでは、プラグ アンド プレイ (PnP) や電源管理を心配せずにドライバーを作ることができます。 したがって、ドライバーの主要タスクに集中することができます。 KMDF では、フレームワークによって PnP と電源が処理されるため、PnP や電源について心配する必要はありません。 kernel-modeWindows NT モデルでは、kernel-mode サービスは PnP や電源管理とは完全に独立した環境で動作するため、PnP や電源について心配する必要はありません。
+ソフトウェア ドライバーでは、2 つのオプションは KMDF とレガシ Windows NT ドライバー モデルです。 KMDF とレガシ Windows NT モデルのどちらでも、プラグ アンド プレイ (PnP) や電源管理を心配せずにドライバーを作ることができます。 したがって、ドライバーの主要タスクに集中することができます。 KMDF では、フレームワークによって PnP と電源が処理されるため、PnP や電源について心配する必要はありません。 レガシ Windows NT モデルでは、kernel-mode サービスが PnP や電源管理とは完全に独立した環境で動作するため、PnP や電源について心配する必要はありません。
 
-KMDF を使い慣れている場合は特に、KMDF を使うことをお勧めします。 ドライバーを PnP と電源管理から完全に独立したものにするには、kernel-modeWindows NT モデルを使ってください。 電源切り替えまたは PnP イベントを認識するソフトウェア ドライバーを作る必要がある場合、kernel-modeWindows NT モデルは使うことができません。KMDF を使う必要があります。
+KMDF を使い慣れている場合は特に、KMDF を使うことをお勧めします。 ドライバーを PnP と電源管理から完全に独立したものにするには、レガシ Windows NT モデルを使ってください。 電源切り替えまたは PnP イベントを認識するソフトウェア ドライバーを作る必要がある場合、レガシ Windows NT モデルは使うことができません。KMDF を使う必要があります。
 
 **注**  非常にまれなケースですが、PnP または電源イベントを認識するソフトウェア ドライバーを作る必要があり、ドライバーが KMDF からは利用できないデータにアクセスする必要がある場合は、WDM を使う必要があります。
 

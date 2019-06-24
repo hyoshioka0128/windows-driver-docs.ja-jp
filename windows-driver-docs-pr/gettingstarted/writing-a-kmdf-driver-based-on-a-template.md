@@ -7,10 +7,10 @@ keywords:
 ms.date: 04/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4afffd32b35b77560354b56e88d2a997394cbe9d
-ms.sourcegitcommit: 20d98fc309319a0363b32510c9081b0d1775de93
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66840863"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>テンプレートを使ったユニバーサル Windows ドライバー (KMDF) の作成
@@ -21,7 +21,7 @@ ms.locfileid: "66840863"
 
 [Debugging Tools for Windows](https://go.microsoft.com/fwlink/p?linkid=223405) は、WDK のインストールに含まれています。
 
-## <a name="create-and-build-a-driver-package"></a>作成し、ドライバー パッケージのビルド
+## <a name="create-and-build-a-driver-package"></a>ドライバー パッケージの作成とビルド
 
 1. Microsoft Visual Studio を開きます。 **[ファイル]** メニューの **[新規] &gt; [プロジェクト]** をクリックします。 **[新しいプロジェクト]** ダイアログ ボックスが次のように表示されます。
 2. **[新しいプロジェクト]** ダイアログ ボックスで、 **[WDF]** を選びます。
@@ -51,7 +51,7 @@ ms.locfileid: "66840863"
     * KmdfDriver.sys -- カーネル モード ドライバー ファイル
     * KmdfDriver.inf -- ドライバーをインストールするときに Windows で使われる情報ファイル
 
-## <a name="deploy-the-driver"></a>ドライバーを展開します。
+## <a name="deploy-the-driver"></a>ドライバーを展開する
 
 通常、ドライバーのテストと展開には、デバッガーとドライバーがそれぞれ別のコンピューター上で実行されます。 デバッガーを実行するコンピューターを*ホスト コンピューター*、ドライバーを実行するコンピューターを*ターゲット コンピューター*と呼びます。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 ドライバーのデバッグについて詳しくは、[Debugging Tools for Windows に関するページ](https://go.microsoft.com/fwlink/p?linkid=223405)をご覧ください。
 
@@ -146,15 +146,15 @@ ms.locfileid: "66840863"
 
 リモート デバッグの詳細については、「[WinDbg を使用したリモート デバッグ](../debugger/remode-debugging-using-windbg.md)」を参照してください。
 
-## <a name="using-the-driver-module-framework-dmf"></a>ドライバー モジュール フレームワーク (DMF) を使用します。
+## <a name="using-the-driver-module-framework-dmf"></a>Driver Module Framework (DMF) の使用
 
-[ドライバー モジュール フレームワーク (DMF)](https://github.com/Microsoft/DMF) WDF WDF ドライバー開発者向けの特別な機能を有効にする拡張機能です。 これにより、開発者が適切かつ迅速に WDF ドライバーの作成が役立ちます。
+[Driver Module Framework (DMF)](https://github.com/Microsoft/DMF) は、WDF ドライバー開発者向けの追加機能が有効になる WDF の拡張機能です。 開発者は、どのような種類の WDF ドライバーでも適切にに短時間で作成できるようになります。
 
-DMF のフレームワーク WDF オブジェクトの作成を許可する DMF モジュールと呼ばれます。 DMF のこれらのモジュールのコードは、さまざまなドライバーの間で共有できます。 さらに、DMF のバンドル、ドライバーと外観を開発しました DMF モジュールのライブラリは値を指定を他のドライバー開発者。
+フレームワークとしての DMF によって、DMF モジュールという WDF オブジェクトを作成できます。 これらの DMF モジュールのコードは、異なるドライバー間で共有できます。 さらに、DMF は、ドライバー用に開発された DMF モジュールのライブラリをバンドルしており、他のドライバー開発者にも役立ちます。
 
-DMF には、WDF は置換されません。 DMF は、WDF で使用される 2 つ目のフレームワークです。 DMF を引き続き利用する開発者では、WDF とそのすべてのプリミティブを使用してデバイス ドライバーを書き込みます。
+DMF は WDF に置き換わるものではありません。 DMF は WDF と共に使用される 2 つ目のフレームワークです。 DMF を利用している開発者は引き続き WDF とそのすべてのプリミティブを使用してデバイス ドライバーを作成します。
 
-詳細については、次を参照してください。[ドライバー モジュール フレームワーク (DMF)](https://github.com/Microsoft/DMF)します。
+詳細については、[Driver Module Framework (DMF)](https://github.com/Microsoft/DMF)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

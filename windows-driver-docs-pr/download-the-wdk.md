@@ -11,10 +11,10 @@ ms.date: 08/06/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 2b8512d6eecdafe700d710356ca221acaa2b6815
-ms.sourcegitcommit: 288c03841f90e6b03c98924a8d7cc44b5975b6f3
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66686950"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>Windows Driver Kit (WDK) のダウンロード
@@ -26,49 +26,49 @@ Windows Insider Program に参加して [WDK Insider Preview ビルド](https://
 * [ドライバー開発の新着情報を見る](what-s-new-in-driver-development.md)
 * [既知の問題を確認する](https://go.microsoft.com/fwlink/?linkid=872986)
 
-## <a name="wdk-for-windows-10-version-1903"></a>WDK の Windows 10、バージョンが 1903
+## <a name="wdk-for-windows-10-version-1903"></a>WDK for Windows 10 Version 1903
 
-### <a name="download-iconimagesdownload-installpng-step-1-install-visual-studio-2019"></a>![ダウンロード アイコン](images/download-install.png) 手順 1:Visual Studio 2019 をインストールします。
+### <a name="download-iconimagesdownload-installpng-step-1-install-visual-studio-2019"></a>![ダウンロード アイコン](images/download-install.png) 手順 1:Visual Studio 2019 をインストールする
 
-Visual Studio 2019 の次のエディションでは、ドライバーの開発をサポートします。
+Visual Studio 2019 の次のエディションでドライバー開発がサポートされています。
 
-* [Visual Studio Community 2019 をダウンロードします。](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
-* [Visual Studio Professional 2019 をダウンロードします。](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Professional&rel=16)
-* [Visual Studio Enterprise 2019 をダウンロードします。](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=16)
+* [Visual Studio Community 2019 のダウンロード](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
+* [Visual Studio Professional 2019 のダウンロード](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Professional&rel=16)
+* [Visual Studio Enterprise 2019 のダウンロード](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=16)
 
-Visual Studio 2019 をインストールするときに選択、**によるデスクトップ開発C++** ワークロード。 Windows 10 ソフトウェア開発キット (SDK) が自動的に含められ、右側の **[概要]** ウィンドウに表示されます。 ただし、WDK の Windows 10、バージョンが 1903 と互換性がある SDK のバージョンが現在、既定の SDK 適切な SDK を選択します。
+Visual Studio 2019 のインストール時に、 **[C++ によるデスクトップ開発]** ワークロードを選択します。 Windows 10 ソフトウェア開発キット (SDK) が自動的に含められ、右側の **[概要]** ウィンドウに表示されます。 ただし、WDK for Windows 10 Version 1903 と互換性のある SDK のバージョンは、現在、既定の SDK ではありません。 正しい SDK を選択するには:
 
-* **Visual Studio インストーラー**の**ワークロード**] タブの [**インストールの詳細**、展開**ユニバーサル Windows プラットフォーム開発**.
-* **(省略可能)** 、 **Windows 10 のプレビュー SDK (10.0.18362.0)** します。
+* **Visual Studio インストーラー**の **[ワークロード]** タブの **[インストールの詳細]** で、 **[ユニバーサル Windows プラットフォーム開発]** を展開します。
+* **[オプション]** で **[Windows 10 Preview SDK (10.0.18362.0) ]** を選択します。
 * インストールを続行します。
 
-使用して Windows 10 のプレビュー SDK (10.0.18362.0) をインストールするには、既にある Visual Studio 2019 がインストールされている場合、**変更**Visual Studio のインストールでボタンをクリックします。
+既に Visual Studio 2019 がインストールされている場合は、Visual Studio のインストールで **[変更]** ボタンを使用して Windows 10 Preview SDK (10.0.18362.0) をインストールできます。
 
 ARM/ARM64 ドライバーを開発するには、 **[個別のコンポーネント]** を選び、 **[コンパイラ、ビルド ツール、およびランタイム]** の下で **[ARM 用 Visual Studio C++ コンパイラとライブラリ] または [ARM 64用 Visual Studio C++ コンパイラとライブラリ]** を選びます。
 
-用のドライバーをビルド、Spectre の軽減ライブラリを通じて個々 のコンポーネント]-> [をインストールする各アーキテクチャのコンパイラ、ビルド ツール、およびランタイム MSVC v142 - VS 2019 C+ x64 または x86 Spectre 軽減 libs (v14.21)]-> [です。
+ドライバーを構築するアーキテクチャごとに、[個別のコンポーネント] -> [コンパイラ、ビルド ツール、およびランタイム] -> MSVC v142 - VS 2019 C+ x64/x86 Spectre-mitigated のスペクター軽減ライブラリ (v14.21) を介して、スペクター軽減ライブラリをインストールします。
 
-### <a name="download-iconimagesdownload-installpng-step-2-install-wdk-for-windows-10-version-1903"></a>![ダウンロード アイコン](images/download-install.png) 手順 2:WDK の Windows 10、バージョンが 1903 をインストールします。
+### <a name="download-iconimagesdownload-installpng-step-2-install-wdk-for-windows-10-version-1903"></a>![ダウンロード アイコン](images/download-install.png) 手順 2:WDK for Windows 10 Version 1903 のインストール
 
-* [WDK の Windows 10、バージョンが 1903 をダウンロードします。](https://go.microsoft.com/fwlink/?linkid=2085767)
+* [WDK for Windows 10 Version 1903 のダウンロード](https://go.microsoft.com/fwlink/?linkid=2085767)
 
 1709 リリースの新機能:WDK をインストールすると、既定で、WDK Visual Studio 拡張機能がインストールされます。 WDK VS 統合が機能するためには、この拡張機能をインストールする必要があります。
 
-## <a name="enterprise-wdk-for-windows-10-version-1903-ewdk"></a>エンタープライズ WDK for Windows 10 バージョン 1903 (EWDK)
+## <a name="enterprise-wdk-for-windows-10-version-1903-ewdk"></a>Enterprise WDK for Windows 10 Version 1903 (EWDK)
 
-EWDK は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境です。 これには、Visual Studio Build Tools、SDK、WDK が含まれています。  EWDK の最新のパブリック バージョンには、Visual Studio 2019 ビルド ツール 16.0.0 が含まれています。  まず、ISO をマウントし、**LaunchBuildEnv** を実行してください。
+EWDK は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境です。 これには、Visual Studio Build Tools、SDK、WDK が含まれています。  EWDK の最新の公開バージョンには、Visual Studio 2019 Build Tools 16.0.0 が含まれています。  まず、ISO をマウントし、**LaunchBuildEnv** を実行してください。
 
 ### <a name="download-iconimagesdownload-installpng-ewdk-with-visual-studio-build-tools"></a>![ダウンロード アイコン](images/download-install.png) EWDK with Visual Studio Build Tools
 
-* [EWDK for Windows 10 バージョン 1903 をダウンロードします。](https://developer.microsoft.com/windows/hardware/license-terms-EWDK-2)
+* [EWDK for Windows 10 Version 1903 のダウンロード](https://developer.microsoft.com/windows/hardware/license-terms-EWDK-2)
 
 ## <a name="additional-information"></a>追加情報
 
 ### <a name="release-notes-and-run-time-requirements"></a>リリース ノートと実行時の要件
 
-WDK の詳細については、Visual Studio のシステム要件を確認してください詳細については、Visual Studio が必要です[Visual Studio 2019 のシステム要件](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)します。
+WDK には Visual Studio が必要です。Visual Studio に関するシステム要件の詳細については、[Visual Studio 2019 のシステム要件](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)に関する記事を参照してください。
 
-EWDK さらに必要な .NET 4.7.2、詳細については、どのような .NET 上で実行してくださいレビュー [.NET Framework システム要件](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)します。
+EWDK では、さらに .NET 4.7.2 も必要になります。.NET を実行するための要件の詳細については、[.NET Framework のシステム要件](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)に関する記事を参照してください。
 
 WDK を使うと、次のオペレーティング システムで動作するドライバーを開発できます。
 
