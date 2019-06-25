@@ -15,14 +15,14 @@ keywords:
 - WDK KMDF の Unicode 文字列します。
 - WDK KMDF、USB I/O ターゲットの状態情報
 - デバイス オブジェクト WDK KMDF
-ms.date: 04/20/2017
+ms.date: 06/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 094f310af56bfc9f1495a4433bb481ce5e126e5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1b40a726288e78e1d61d10f622f6dcd5eb374c5
+ms.sourcegitcommit: b13b4947916a2237af3a00792c0f4f2ef33877c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383542"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67346443"
 ---
 # <a name="working-with-usb-devices"></a>USB デバイスの使用
 
@@ -82,10 +82,10 @@ USB デバイスに関連付けられている I/O ターゲット オブジェ�
 <a href="" id="wdfusbtargetdeviceretrieveinformation"></a>[**WdfUsbTargetDeviceRetrieveInformation**](https://msdn.microsoft.com/library/windows/hardware/ff550100)  
 USB デバイスに関連付けられているバージョンと機能の情報を取得します。
 
-<a href="" id="wdfusbtargetdeviceisconnectedsynchronous--kmdf-only-"></a>[**WdfUsbTargetDeviceIsConnectedSynchronous (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/ff550095)  
+<a href="" id="wdfusbtargetdeviceisconnectedsynchronous--kmdf-only-"></a>[**WdfUsbTargetDeviceIsConnectedSynchronous (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/ff550095)  
 デバイスが接続されているかどうかを決定します。
 
-<a href="" id="wdfusbtargetdeviceretrievecurrentframenumber--kmdf-only-"></a>[**WdfUsbTargetDeviceRetrieveCurrentFrameNumber (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/ff550099)  
+<a href="" id="wdfusbtargetdeviceretrievecurrentframenumber--kmdf-only-"></a>[**WdfUsbTargetDeviceRetrieveCurrentFrameNumber (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/ff550099)  
 USB の現在のフレーム数を取得します。
 
 ## <a href="" id="obtaining-a-device-s-unicode-strings"></a>USB の記述子を取得します。
@@ -129,10 +129,10 @@ USB 制御転送要求を書式設定します。 ドライバーが呼び出せ
 <a href="" id="---------wdfusbtargetdeviceresetportsynchronously"></a>[**WdfUsbTargetDeviceResetPortSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff550097)  
 同期的にデバイスの USB ポートにリセットする要求を送信します。
 
-<a href="" id="---------wdfusbtargetdevicecycleportsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceCyclePortSynchronously (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/ff550080)  
+<a href="" id="---------wdfusbtargetdevicecycleportsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceCyclePortSynchronously (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/ff550080)  
 電源サイクル デバイスの USB ポートに要求を同期的に送信します。
 
-<a href="" id="---------wdfusbtargetdeviceformatrequestforcycleport--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForCyclePort (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/ff550084)  
+<a href="" id="---------wdfusbtargetdeviceformatrequestforcycleport--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForCyclePort (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/ff550084)  
 電源サイクル デバイスの USB ポートに要求を書式設定します。 ドライバーを呼び出す必要があります[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)同期または非同期要求を送信します。
 
 関連情報については、次を参照してください。 [USB パイプ エラーから回復する方法](https://msdn.microsoft.com/library/windows/hardware/hh968307)します。
@@ -142,22 +142,22 @@ USB 制御転送要求を書式設定します。 ドライバーが呼び出せ
 
 KMDF ドライバーは、翻訳が含まれている I/O 要求を送信することによって、USB デバイスと通信、ドライバーは、次のメソッドを呼び出すことができます。
 
-<a href="" id="wdfusbtargetdevicecreateurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateUrb (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/hh439423)  
+<a href="" id="wdfusbtargetdevicecreateurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateUrb (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/hh439423)  
 USB 要求ブロック (URB) を割り当てます。 呼び出しの前に[ **WdfUsbTargetDeviceCreateUrb**](https://msdn.microsoft.com/library/windows/hardware/hh439423)、ドライバーを呼び出す必要があります[ **WdfUsbTargetDeviceCreateWithParameters**](https://msdn.microsoft.com/library/windows/hardware/hh439428)します。
 
-<a href="" id="wdfusbtargetdevicecreateisochurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateIsochUrb (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/hh439420)  
+<a href="" id="wdfusbtargetdevicecreateisochurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateIsochUrb (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/hh439420)  
 アイソクロナス USB 要求ブロック (URB) を割り当てます。 呼び出しの前に[ **WdfUsbTargetDeviceCreateIsochUrb**](https://msdn.microsoft.com/library/windows/hardware/hh439420)、ドライバーを呼び出す必要があります[ **WdfUsbTargetDeviceCreateWithParameters**](https://msdn.microsoft.com/library/windows/hardware/hh439428)します。
 
-<a href="" id="---------wdfusbtargetdevicesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceSendUrbSynchronously (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/ff550105)  
+<a href="" id="---------wdfusbtargetdevicesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceSendUrbSynchronously (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/ff550105)  
 同期的に、URB を含む I/O 要求を送信します。
 
-<a href="" id="---------wdfusbtargetdeviceformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForUrb (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/ff550088)  
+<a href="" id="---------wdfusbtargetdeviceformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForUrb (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/ff550088)  
 含む、URB I/O 要求の書式を設定します。 ドライバーを呼び出す必要があります[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)同期または非同期要求を送信します。
 
-<a href="" id="---------wdfusbtargetdevicewdmgetconfigurationhandle--kmdf-only-"></a>[**WdfUsbTargetDeviceWdmGetConfigurationHandle (KMDF のみ)**](https://msdn.microsoft.com/library/windows/hardware/ff551127)  
+<a href="" id="---------wdfusbtargetdevicewdmgetconfigurationhandle--kmdf-only-"></a>[**WdfUsbTargetDeviceWdmGetConfigurationHandle (KMDF のみ)** ](https://msdn.microsoft.com/library/windows/hardware/ff551127)  
 デバイスの USBD 構成ハンドルを返します。 いくつかの翻訳では、このハンドルが必要です。
 
-翻訳の一般的な概念の背景を参照してください。[割り当てと構成の翻訳](https://msdn.microsoft.com/library/windows/hardware/hh450844)します。
+翻訳の一般的な概念の背景を参照してください。[割り当てと構成の翻訳](https://docs.microsoft.com/windows-hardware/drivers/usbcon/how-to-add-xrb-support-for-client-drivers)します。
 
  
 
