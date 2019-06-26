@@ -6,12 +6,12 @@ keywords:
 - DSSPEAKER_DIRECTOUT スピーカー構成 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 096dfcfbd3f8f0bf9f525c688802381daaab09eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32d327fafff9fe7794d3d9ac15025b10b2325305
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333719"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360083"
 ---
 # <a name="dsspeakerdirectout-speaker-configuration"></a>DSSPEAKER\_DIRECTOUT スピーカーの構成
 
@@ -55,11 +55,11 @@ ms.locfileid: "63333719"
 
 この種類の生のオーディオ データでは、スピーカー位置が、入力に意味のないや割り当てのスピーカー位置または出力ストリーム望ましくない副作用が発生する可能性があります。 たとえば、KMixer などのコンポーネントは、3D 仮想化またはドルビー サラウンド Pro ロジックはストリームにエンコードなどのスピーカーに固有の効果を適用することで不適切な介入可能性があります。 生データ チャネルの数がチャネル マスクのビットの数によって制限しないことに注意してください。
 
-でも、デバイスに設計されていないオーディオ編集専用が通常受け入れる必要があります、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)プロパティの設定KSAUDIO にスピーカー構成の変更要求\_スピーカー\_DIRECTOUT します。 一般に、デバイスでは、その出力がスピーカーに接続しているし、(たとえば、外部のミキサーへの入力) として、他の目的の外部で使用できません、何らかの方法で検証できる場合を除き、要求の失敗を避ける必要があります。
+でも、デバイスに設計されていないオーディオ編集専用が通常受け入れる必要があります、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)プロパティの設定KSAUDIO にスピーカー構成の変更要求\_スピーカー\_DIRECTOUT します。 一般に、デバイスでは、その出力がスピーカーに接続しているし、(たとえば、外部のミキサーへの入力) として、他の目的の外部で使用できません、何らかの方法で検証できる場合を除き、要求の失敗を避ける必要があります。
 
-直接アウト モードを使用するアプリケーションは特定のハードウェア デバイスに通常書き込まれます。 これにより、データを直接出力チャネルとこれらのチャネル内のデータの解釈方法の数など、デバイスがサポートを書式設定、アプリケーションをあらかじめ知っておくできます。 アプリケーションを呼び出すために、この知識は必要な**IDirectSound::GetSpeakerConfig**ダイレクト アウト モードで構成されているデバイスでデバイスだけを確認しますこのモードであるは、提供する追加はありません直接アウト モードでサポートされている stream の形式でのチャネルの数に関する情報です。 (この情報がありますを取得、ただし、送信することによって、 [ **KSPROPERTY\_オーディオ\_混在\_レベル\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff537291)プロパティの get 要求をデバイスのミキサー ピン; supermixer ノード参照してください[DirectSound ノード順序要件](directsound-node-ordering-requirements.md))。
+直接アウト モードを使用するアプリケーションは特定のハードウェア デバイスに通常書き込まれます。 これにより、データを直接出力チャネルとこれらのチャネル内のデータの解釈方法の数など、デバイスがサポートを書式設定、アプリケーションをあらかじめ知っておくできます。 アプリケーションを呼び出すために、この知識は必要な**IDirectSound::GetSpeakerConfig**ダイレクト アウト モードで構成されているデバイスでデバイスだけを確認しますこのモードであるは、提供する追加はありません直接アウト モードでサポートされている stream の形式でのチャネルの数に関する情報です。 (この情報がありますを取得、ただし、送信することによって、 [ **KSPROPERTY\_オーディオ\_混在\_レベル\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mix-level-caps)プロパティの get 要求をデバイスのミキサー ピン; supermixer ノード参照してください[DirectSound ノード順序要件](directsound-node-ordering-requirements.md))。
 
-ストリームのダイレクト アウト wave 形式を指定するときにアプリケーションを設定する必要があります、 **dwChannelMask**のメンバー、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)値構造体KSAUDIO\_スピーカー\_DIRECTOUT は 0 です。 0 のチャネル マスクは、スピーカー位置が定義されていないことを示します。 ストリーム内のチャネルの数が指定されている、常に、 **Format.nChannels**メンバー。
+ストリームのダイレクト アウト wave 形式を指定するときにアプリケーションを設定する必要があります、 **dwChannelMask**のメンバー、 [ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)値構造体KSAUDIO\_スピーカー\_DIRECTOUT は 0 です。 0 のチャネル マスクは、スピーカー位置が定義されていないことを示します。 ストリーム内のチャネルの数が指定されている、常に、 **Format.nChannels**メンバー。
 
 ハードウェア ベンダーでは、自分のデバイスがダイレクト アウト モードで構成されている場合は、DirectSound ハードウェア アクセラレーションをサポートのオプションがあります。 DirectSound アプリケーションを再生できます、デバイスのミキシングの pin のいずれかで直接出力ストリームがある場合。 使用可能なハードウェア暗証番号 (pin) のすべてのインスタンスが終了している後の新しいストリームは代わりに KMixer を通過します。
 
@@ -79,7 +79,7 @@ ms.locfileid: "63333719"
 
 -   ターゲットのオーディオ デバイスを構成します (これは必ずしもアプリケーションがストリームの編集に使用するデバイス) を呼び出してステレオ モードで**SetSpeakerConfig** DSSPEAKER で\_ステレオします。
 
--   変更**dwChannelMask**で再生ストリームの[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802) KSAUDIO 構造\_スピーカー\_ステレオですが離れる**Format.nChannels**ストリーム内のチャネルの合計数は 24 に設定します。
+-   変更**dwChannelMask**で再生ストリームの[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible) KSAUDIO 構造\_スピーカー\_ステレオですが離れる**Format.nChannels**ストリーム内のチャネルの合計数は 24 に設定します。
 
 KMixer は、ステレオのチャンネルだけ再生ストリーム チャネル マスクで説明するが混在し、生データを含めることが残りの 22 チャネルを破棄します。 DirectSound スピーカー構成設定に加えられた変更が DirectSound の現在のオブジェクトが破棄され、別が作成されるまで有効にする可能性が低いことに注意してください (を参照してください[スピーカー構成設定の適用](applying-speaker-configuration-settings.md))。
 

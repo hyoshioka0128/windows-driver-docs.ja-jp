@@ -12,12 +12,12 @@ keywords:
 - INF DriverVer ディレクティブ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 545ce33436a4870432329a2c2394cc2197bab446
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 120261d0e57c1ef5bafea0a641367081e8b43589
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359901"
 ---
 # <a name="inf-driver-version-entry"></a>INF ドライバー バージョンのエントリ
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333545"
 
 ドライバー パッケージ内の INF ファイルには、INF によってインストールされているドライバーのドライバー バージョン情報を指定します。 ファイルにバージョン情報とは異なり、全体としてドライバー パッケージを識別する、[内部および外部のバージョン番号](internal-and-external-version-numbers.md)パッケージ内の個々 のドライバー ファイル。
 
-ファイル内の各ドライバーの日付とバージョン番号を指定します、 [ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)次の形式。
+ファイル内の各ドライバーの日付とバージョン番号を指定します、 [ **INF DriverVer ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)次の形式。
 
 **DriverVer**= *mm* / *dd* / *yyyy*\[、*x*.*y*.*v*.*z*\]
 

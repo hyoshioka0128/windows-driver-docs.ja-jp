@@ -8,12 +8,12 @@ keywords:
 - 機能ドライバー WDK パラレル ポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 826f1999e1edfea550c8b96e1dec1a262b3870e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5513f6e0b0f362e76fb623b3311eecdc82a68fad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358493"
 ---
 # <a name="operating-a-parallel-port"></a>パラレル ポートの操作
 
@@ -47,7 +47,7 @@ ms.locfileid: "63339103"
 
 [システム提供のパラレル ドライバー](system-supplied-parallel-drivers.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

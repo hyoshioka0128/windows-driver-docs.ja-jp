@@ -6,12 +6,12 @@ keywords:
 - DirectSound WDK のオーディオ ストリームのデータを形式します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6fc290a9e065315764558f4982a724d91f8db4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a872d817e75e17fc46db8fe74984fe2ac6ba1ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333765"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360126"
 ---
 # <a name="directsound-stream-data-format"></a>DirectSound ストリームのデータ形式
 
@@ -19,7 +19,7 @@ ms.locfileid: "63333765"
 ## <span id="directsound_stream_data_format"></span><span id="DIRECTSOUND_STREAM_DATA_FORMAT"></span>
 
 
-この例では、 [ **KSDATAFORMAT\_DSOUND** ](https://msdn.microsoft.com/library/windows/hardware/ff537094) DirectSound ストリームのデータ形式を記述する構造体。
+この例では、 [ **KSDATAFORMAT\_DSOUND** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_dsound) DirectSound ストリームのデータ形式を記述する構造体。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT_DSOUND);

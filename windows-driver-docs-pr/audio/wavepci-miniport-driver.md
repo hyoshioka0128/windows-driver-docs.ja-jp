@@ -8,12 +8,12 @@ keywords:
 - WavePci ミニポート ドライバー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c3f964af84e1da63b41271cd89c905e1626eaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c029b906e58a8cb612e81161152f00ed1644a9d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364788"
 ---
 # <a name="wavepci-miniport-driver"></a>WavePci ミニポート ドライバー
 
@@ -33,51 +33,51 @@ WavePci ミニポート ドライバーでは、2 つのインターフェイス
 
 -   **ストリーム インターフェイス**wave ストリームを管理し、ミニポート ドライバーの機能のほとんどを公開します。
 
-ミニポート インターフェイス[IMiniportWavePci](https://msdn.microsoft.com/library/windows/hardware/ff536724)でメソッドを継承、 [IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)インターフェイス。 IMiniportWavePci では、次の追加のメソッドを提供します。
+ミニポート インターフェイス[IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepci)でメソッドを継承、 [IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)インターフェイス。 IMiniportWavePci では、次の追加のメソッドを提供します。
 
-[**IMiniportWavePci::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536734)
+[**IMiniportWavePci::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-init)
 
 ミニポート オブジェクトを初期化します。
 
-[**IMiniportWavePci::NewStream**](https://msdn.microsoft.com/library/windows/hardware/ff536735)
+[**IMiniportWavePci::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)
 
 新しいストリーム オブジェクトを作成します。
 
-[**IMiniportWavePci::Service**](https://msdn.microsoft.com/library/windows/hardware/ff536736)
+[**IMiniportWavePci::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-service)
 
 サービスに対する要求のミニポート ドライバーに通知します。
 
-ストリーム インターフェイス、 [IMiniportWavePciStream](https://msdn.microsoft.com/library/windows/hardware/ff536725)、メソッドを継承します、 [ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)インターフェイス。 IMiniportWavePciStream では、次の追加のメソッドを提供します。
+ストリーム インターフェイス、 [IMiniportWavePciStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepcistream)、メソッドを継承します、 [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)インターフェイス。 IMiniportWavePciStream では、次の追加のメソッドを提供します。
 
-[**IMiniportWavePciStream::GetAllocatorFraming**](https://msdn.microsoft.com/library/windows/hardware/ff536726)
+[**IMiniportWavePciStream::GetAllocatorFraming**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getallocatorframing)
 
 Wave ストリームのミニポート ドライバーの優先アロケーター フレーム パラメーターを取得します。
 
-[**IMiniportWavePciStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536727)
+[**IMiniportWavePciStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)
 
 Wave ストリーム内のデバイスの現在位置を取得します。
 
-[**IMiniportWavePciStream::MappingAvailable**](https://msdn.microsoft.com/library/windows/hardware/ff536728)
+[**IMiniportWavePciStream::MappingAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-mappingavailable)
 
 新しいマッピングがポート ドライバーから使用できることを示します。
 
-[**IMiniportWavePciStream::NormalizePhysicalPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536729)
+[**IMiniportWavePciStream::NormalizePhysicalPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-normalizephysicalposition)
 
 時間ベースの値には、物理バッファー位置の値を変換します。
 
-[**IMiniportWavePciStream::RevokeMappings**](https://msdn.microsoft.com/library/windows/hardware/ff536730)
+[**IMiniportWavePciStream::RevokeMappings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-revokemappings)
 
 以前に発行されたマッピングを取り消します。
 
-[**IMiniportWavePciStream::Service**](https://msdn.microsoft.com/library/windows/hardware/ff536731)
+[**IMiniportWavePciStream::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-service)
 
 サービスに対する要求のストリーム オブジェクトに通知します。
 
-[**IMiniportWavePciStream::SetFormat**](https://msdn.microsoft.com/library/windows/hardware/ff536732)
+[**IMiniportWavePciStream::SetFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setformat)
 
 Wave ストリームのデータ形式を設定します。
 
-[**IMiniportWavePciStream::SetState**](https://msdn.microsoft.com/library/windows/hardware/ff536733)
+[**IMiniportWavePciStream::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setstate)
 
 Wave ストリームの状態を設定します。
  

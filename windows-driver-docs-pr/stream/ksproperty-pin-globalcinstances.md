@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a005a5a85d09ac0fe396ddfc19ab2593af19c12e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f23ee0e85078b007897d5925dcf73829efd08be9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380818"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361096"
 ---
 # <a name="kspropertypinglobalcinstances"></a>KSPROPERTY\_PIN\_GLOBALCINSTANCES
 
@@ -53,7 +53,7 @@ ms.locfileid: "63380818"
 <td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>KSPIN_CINSTANCES</p></td>
 </tr>
 </tbody>
@@ -87,7 +87,7 @@ typedef struct {
 
 KSPROPERTY\_PIN\_GLOBALCINSTANCES フィルターのすべてのインスタンスに対するインスタンスの絶対と現在の最大数を指定します。 フィルターごとの値を調べるには[ **KSPROPERTY\_PIN\_CINSTANCES**](ksproperty-pin-cinstances.md)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -106,7 +106,7 @@ KSPROPERTY\_PIN\_GLOBALCINSTANCES フィルターのすべてのインスタン�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
 [**KSPROPERTY\_PIN\_CINSTANCES**](ksproperty-pin-cinstances.md)
 

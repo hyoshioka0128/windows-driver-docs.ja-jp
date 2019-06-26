@@ -4,12 +4,12 @@ description: GpuMmu モデルでは、グラフィックス処理装置 (GPU) �
 ms.assetid: FFDFD647-2F00-4AC3-A41A-4224562A51ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4561455bd19051763ae3b94447abc831d6a54b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56b48612b1d3b9f2bd48934ec681a3ca21843b6c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371547"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379960"
 ---
 # <a name="gpummu-model"></a>GpuMmu モデル
 
@@ -20,7 +20,7 @@ ms.locfileid: "63371547"
 
 ビデオ メモリ マネージャーは GPU の仮想アドレス空間とその基になるページ テーブルを管理する責任を負いますが、ビデオ メモリ マネージャーの割り当てに GPU 仮想アドレスを割り当てていないは自動的にします。 この役割は、ユーザー モード ドライバーに分類されます。
 
-ビデオ メモリ マネージャーは、ユーザー モード ドライバーにサービスの 2 つのセットを提供します。 最初に、ユーザー モード ドライバーは、既存のビデオ メモリを割り当てることができます[ *Allocate* ](https://msdn.microsoft.com/library/windows/hardware/ff568893)コールバックを通じて、既存のメモリを解放し、 [ *Deallocate*](https://msdn.microsoft.com/library/windows/hardware/ff568898)コールバック。 今日のようなだけこのハンドルを返しますユーザー モード ドライバー GPU エンジンによって処理できるビデオ メモリ マネージャーの割り当て。 このような割り当ては、割り当ての物理部分だけを表し、割り当ての一覧の参照を使用して物理的には、運用、エンジンによって参照される可能性があります。
+ビデオ メモリ マネージャーは、ユーザー モード ドライバーにサービスの 2 つのセットを提供します。 最初に、ユーザー モード ドライバーは、既存のビデオ メモリを割り当てることができます[ *Allocate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)コールバックを通じて、既存のメモリを解放し、 [ *Deallocate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocatecb)コールバック。 今日のようなだけこのハンドルを返しますユーザー モード ドライバー GPU エンジンによって処理できるビデオ メモリ マネージャーの割り当て。 このような割り当ては、割り当ての物理部分だけを表し、割り当ての一覧の参照を使用して物理的には、運用、エンジンによって参照される可能性があります。
 
 仮想モードで実行されているエンジンでは、GPU の仮想アドレスは仮想的にアクセスする前に、割り当てに明示的に割り当てられる必要があります。 この目的のビデオ メモリを予約または無料の GPU 仮想アドレス、ユーザー モード ドライバーがサービスし、プロセスの GPU 仮想アドレス空間に範囲を特定の割り当てをマップ マネージャーを提供します。 これらのサービスは非常に柔軟なプロセスの GPU 仮想アドレス空間経由でユーザー モード ドライバー細かく制御できます。 ユーザー モード ドライバーは、割り当てに非常に特定の GPU 仮想アドレスを割り当てるか、ビデオ メモリ マネージャーが自動的にいくつかの最小値を指定する可能性がある、使用可能な 1 つを選択できるようにすることし、max の GPU 仮想アドレスを制限します。 1 つの割り当ては、関連付けられている複数の GPU 仮想アドレスのマッピングを必要があり、サービスを実装するために、ユーザー モード ドライバーを提供、*タイル リソース コントラクト*します。
 

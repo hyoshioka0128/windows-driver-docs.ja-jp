@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_SET_ENCAPSULATION_OFFLOAD_V4_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b0cb169cddebc1f46cf1403b2bd5502af7b1695
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f985e6e96744a971406f9e8c3cadd820708dee5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362808"
 ---
 # <a name="wditlvsetencapsulationoffloadv4parameters"></a>WDI\_TLV\_設定\_カプセル化\_オフロード\_V4\_パラメーター
 
 
-WDI\_TLV\_設定\_カプセル化\_オフロード\_V4\_パラメーターで使用される TLV [OID\_WDI\_設定\_カプセル化\_オフロード](https://msdn.microsoft.com/library/windows/hardware/dn925930)を IPv4 オフロードを開始する必要があるかどうかを示します。
+WDI\_TLV\_設定\_カプセル化\_オフロード\_V4\_パラメーターで使用される TLV [OID\_WDI\_設定\_カプセル化\_オフロード](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-encapsulation-offload)を IPv4 オフロードを開始する必要があるかどうかを示します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -37,7 +37,7 @@ UINT8 のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -64,7 +64,7 @@ UINT8 のサイズをバイト単位で。
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_オフロード\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566706)
+[**NDIS\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 
  
 

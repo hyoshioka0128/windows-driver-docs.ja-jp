@@ -5,12 +5,12 @@ ms.assetid: CAA92CA5-5CD6-4705-AA4C-54C1AA83ACA3
 ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b99c3dbfda943f467f7b26b7e20b7b529323b08c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34d297cc1c68c2ed0b76285a492951aa66c20c4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359143"
 ---
 # <a name="wdi-task-oids"></a>WDI タスク OID
 
@@ -22,10 +22,10 @@ Wi-fi ドライバー インターフェイス (WDI) のオブジェクト識別
 次の表とを指定するかどうか WDI OID クエリ (Q)、セット (S) NDIS 6.0 メソッド (M) 要求必須またはオプションを実装します。
 
 <a href="" id="r"></a>**R**  
-オブジェクトが必要です。 サポートすることを示します。 ミニポート ドライバー NDIS 状態コードを返すことによって、オブジェクトのセットまたはクエリの要求を失敗する必要がありますしない\_状態\_いない\_からサポートされているその[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。
+オブジェクトが必要です。 サポートすることを示します。 ミニポート ドライバー NDIS 状態コードを返すことによって、オブジェクトのセットまたはクエリの要求を失敗する必要がありますしない\_状態\_いない\_からサポートされているその[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数。
 
 <a href="" id="o"></a>**O**  
-オブジェクトは省略可能なサポートすることを示します。 NDIS を返すことによって、要求は失敗は、ドライバーまたはミニポート ドライバーのクエリをサポートまたは、オブジェクトの要求を設定できます\_状態\_いない\_からサポートされているその[ *MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数。
+オブジェクトは省略可能なサポートすることを示します。 NDIS を返すことによって、要求は失敗は、ドライバーまたはミニポート ドライバーのクエリをサポートまたは、オブジェクトの要求を設定できます\_状態\_いない\_からサポートされているその[ *MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数。
 
 <table>
 <colgroup>

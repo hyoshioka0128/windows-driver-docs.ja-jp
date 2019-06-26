@@ -6,12 +6,12 @@ keywords:
 - ドライバー WDK の署名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb5ea4ea7f06f3fa31dd46dceaca0b28c9c33dbc
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 244b1e6db25fede3d7bf31b74d3d39ac4526dea8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148521"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358641"
 ---
 # <a name="driver-signing"></a>Driver Signing (ドライバーの署名)
 
@@ -24,7 +24,7 @@ Windows デバイスのインストールを使用して[デジタル署名](dig
 
 ハードウェア デベロッパー センターによって署名された (バージョン 1507、しきい値 1 から開始) Windows 10 のすべてのドライバーは、SHA2 署名です。  オペレーティング システムのバージョンに固有の詳細は、次を参照してください。[バージョンで署名の要件](kernel-mode-code-signing-policy--windows-vista-and-later-.md#signing-requirements-by-version)します。
 
-カーネル モード ドライバーのバイナリを埋め込むの Windows 10 が読み込まれず、または Windows 10 では、システムのクラッシュを引き起こす可能性がよりも前のオペレーティング システム、サード パーティ証明書のベンダーからデュアル (SHA1 および SHA2) 証明書で署名。 この問題を解決するにはインストール[KB 3081436](https://support.microsoft.com/kb/3081436)します。
+カーネル モード ドライバーのバイナリを埋め込むの Windows 10 が読み込まれず、または Windows 10 では、システムのクラッシュを引き起こす可能性がよりも前のオペレーティング システム、サード パーティ証明書のベンダーからデュアル (SHA1 および SHA2) 証明書で署名。 この問題を解決するにはインストール[KB 3081436](https://support.microsoft.com/help/3081436/cumulative-update-for-windows-10-august-11-2015)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -37,7 +37,7 @@ Windows デバイスのインストールを使用して[デジタル署名](dig
 -   [インストールおよび署名されたドライバー パッケージを使用した負荷の問題のトラブルシューティング](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)
 -   [マイクロソフト セキュリティ アドバイザリ 2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823)
 
-ドライバーに関する一般的な情報を Windows Vista および以降のバージョンの Windows では、署名のホワイト ペーパーを参照[システムを実行している Windows Vista でのカーネル モジュールのデジタル署名](https://msdn.microsoft.com/library/bb530195)します。
+ドライバーに関する一般的な情報を Windows Vista および以降のバージョンの Windows では、署名のホワイト ペーパーを参照[システムを実行している Windows Vista でのカーネル モジュールのデジタル署名](https://docs.microsoft.com/previous-versions/dotnet/articles/bb530195(v=msdn.10))します。
 
 
  

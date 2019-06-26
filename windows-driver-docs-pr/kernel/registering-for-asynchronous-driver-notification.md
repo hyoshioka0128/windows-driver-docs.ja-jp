@@ -10,12 +10,12 @@ keywords:
 - ドライバーの通知の WDK の動的なハードウェア パーティショニングの登録
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d6c2de67b4a1094cc4779e72e6ec5d16270fb1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3369dbee672557ff7572eda4281a4f56bc2820f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360285"
 ---
 # <a name="registering-for-asynchronous-driver-notification"></a>非同期ドライバー通知登録
 
@@ -38,7 +38,7 @@ NTSTATUS
     );
 ```
 
-デバイス ドライバーを呼び出して非同期通知の登録、 [ **IoRegisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff549526)関数は、1 回の各デバイス ドライバーのコールバック関数、ポインターを指定します。対応する Guid の次のいずれかに、 *EventCategoryData*パラメーター。
+デバイス ドライバーを呼び出して非同期通知の登録、 [ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)関数は、1 回の各デバイス ドライバーのコールバック関数、ポインターを指定します。対応する Guid の次のいずれかに、 *EventCategoryData*パラメーター。
 
 <a href="" id="guid-device-processor"></a>GUID\_デバイス\_プロセッサ  
 プロセッサがハードウェアのパーティションに動的に追加されたときに通知に登録します。
@@ -82,7 +82,7 @@ Status =
 
  
 
-ときにデバイス ドライバーする必要がありますの受信を停止、ドライバーが非同期通知など、呼び出すことによって各コールバック関数を解除する必要がありますアンロードされているときに、 [ **IoUnregisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff550398)関数。 次のコード例では、コールバック関数を登録解除する方法を示します。
+ときにデバイス ドライバーする必要がありますの受信を停止、ドライバーが非同期通知など、呼び出すことによって各コールバック関数を解除する必要がありますアンロードされているときに、 [ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)関数。 次のコード例では、コールバック関数を登録解除する方法を示します。
 
 ```cpp
 // Unregister for asynchronous notifications

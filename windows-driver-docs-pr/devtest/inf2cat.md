@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 718ae1c3a1d815ac4ad1d05cba01493b4df7ca3b
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 5f4ee273c8692c5fa71912079d2de8c71b8d5f5f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405112"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366818"
 ---
 # <a name="inf2cat"></a>Inf2Cat
 
@@ -31,13 +31,13 @@ Inf2Cat (Inf2Cat.exe) は、コマンド ライン ツールを決定するか�
 ```
 
 > [!TIP]
-> 表示された場合`DriverVer set to a date in the future`、ドライバーを作成するときに Inf2Cat を設定するため、ドライバー パッケージのプロジェクト設定を変更`/uselocaltime`します。 このためには、**[構成プロパティ] -> [Inf2Cat] -> [全般] -> [Use Local Time]\(現地時刻の使用\)** を使用します。 これで、[Stampinf](stampinf-command-options.md) と Inf2Cat の両方で現地時刻が使用されます。
+> 表示された場合`DriverVer set to a date in the future`、ドライバーを作成するときに Inf2Cat を設定するため、ドライバー パッケージのプロジェクト設定を変更`/uselocaltime`します。 このためには、 **[構成プロパティ] -> [Inf2Cat] -> [全般] -> [Use Local Time]\(現地時刻の使用\)** を使用します。 これで、[Stampinf](stampinf-command-options.md) と Inf2Cat の両方で現地時刻が使用されます。
 
 Inf2Cat ツールが、プログラム ファイルにある\\Windows キット\\8.0\\bin\\x86 または Program Files (x86)\\Windows キット\\8.0\\bin\\x86WDK のフォルダーです。
 
 ## <a name="switches-and-arguments"></a>スイッチと引数
 
-**/driver:**<em>PackagePath</em>  
+**/driver:** <em>PackagePath</em>  
 ドライバー パッケージの INF ファイルを含むディレクトリへのパスを指定します。 指定したディレクトリに複数のドライバー パッケージ用の INF ファイルが含まれている Inf2Cat は各ドライバ パッケージのカタログ ファイルを作成します。
 
 > [!NOTE]
@@ -46,7 +46,7 @@ Inf2Cat ツールが、プログラム ファイルにある\\Windows キット\
 **/nocat**  
 確認する Inf2Cat を構成、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)バージョンでは、指定した Windows の署名の要件に準拠しているが、ファイルのカタログを生成しないようにします。
 
-**/os:**<em>WindowsVersionList</em>  
+**/os:** <em>WindowsVersionList</em>  
 確認する Inf2Cat を構成、[ドライバー パッケージの](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)INF ファイルで指定されている Windows バージョンの署名の要件に準拠*WindowsVersionList*します。 *WindowsVersionList*はコンマ区切りの一覧で、次のバージョン識別子の 1 つ以上が含まれています。
 
 |Windows のバージョン|バージョン識別子|
@@ -133,9 +133,9 @@ Inf2Cat を使用するには、システムの Administrators グループの�
 
 確認が Inf2Cat ツール[ドライバー パッケージの](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)INF ファイルの構造化エラーとデジタル署名されたことができます、ドライバー パッケージであることを確認します。 すべての INF ファイルで参照されているファイルが存在して、ソース ファイルは、正しい位置にいる場合にのみ、ドライバー パッケージを署名できます。 場合は、INF ファイルを署名することはできません、または構造化エラーが含まれている場合は、ドライバー パッケージが正しくインストールされていない可能性があります。 またはドライバーのインストール中に警告 ダイアログ ボックスの署名が正しく表示します。
 
-Inf2Cat を生成、[カタログ ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)カタログ ファイルは、ドライバー パッケージの INF ファイルで指定し、カタログ ファイルが 1 つ以上の指定された Windows バージョンに適用している場合にのみです。 場合、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)の INF ファイルでのみは、 **CatalogFile =**<em>filename.cat</em>にディレクティブをそのカタログ ファイルを適用全体のドライバー パッケージです。 サポートするために[クロスプラット フォームのインストール](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)、INF ファイルを含める必要があります**CatalogFile** 。<em>PlatformExtension</em>**=**<em>一意 filename.cat</em>ディレクティブ。
+Inf2Cat を生成、[カタログ ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)カタログ ファイルは、ドライバー パッケージの INF ファイルで指定し、カタログ ファイルが 1 つ以上の指定された Windows バージョンに適用している場合にのみです。 場合、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)の INF ファイルでのみは、 **CatalogFile =** <em>filename.cat</em>にディレクティブをそのカタログ ファイルを適用全体のドライバー パッケージです。 サポートするために[クロスプラット フォームのインストール](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)、INF ファイルを含める必要があります**CatalogFile** 。<em>PlatformExtension</em> **=** <em>一意 filename.cat</em>ディレクティブ。
 
-ドライバー パッケージに署名に関する詳細については、次を参照してください。[ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)と[デバイスとドライバーのインストールの基本的なトピック](https://msdn.microsoft.com/library/windows/hardware/ff541165)します。
+ドライバー パッケージに署名に関する詳細については、次を参照してください。[ドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)と[デバイスとドライバーのインストールの基本的なトピック](https://docs.microsoft.com/windows-hardware/drivers/install/device-and-driver-installation-fundamental-topics)します。
 
 ## <a name="examples"></a>使用例
 

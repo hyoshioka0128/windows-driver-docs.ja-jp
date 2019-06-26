@@ -7,12 +7,12 @@ keywords:
 - 一般的なプリンター WDK Unidrv、色を属性します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a684f9b77abcac72a79a5c326f7cd6250abe15c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 746b8fd27306930e3095600ea3b5017c0778ba46
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351910"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359137"
 ---
 # <a name="color-attributes"></a>色属性
 
@@ -56,7 +56,7 @@ ms.locfileid: "63351910"
 <tr class="even">
 <td><p><strong></em>EnableGDIColorMapping</strong></p></td>
 <td><p><strong>TRUE</strong>または<strong>FALSE</strong>します。 GDI がプリンターのカラー スペースに、表示から色域マッピングを実行する必要があるかどうかを示します。</p></td>
-<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、Unidrv HT_FLAG_DO_DEVCLR_XFORM フラグを設定する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong> </a>構造体。</p></td>
+<td><p>任意。 指定されていない場合、既定値は<strong>FALSE</strong>します。 場合<strong>TRUE</strong>、Unidrv HT_FLAG_DO_DEVCLR_XFORM フラグを設定する、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)"> <strong>GDIINFO</strong> </a>構造体。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>MagentaInCyanDye</strong></p></td>
@@ -86,7 +86,7 @@ ms.locfileid: "63351910"
 **注**  ときに、  **\*ChangeColorModeOnDoc でしょうか。** 色属性に設定されて**TRUE**、色の最適化が有効になっています。 この属性を設定すると**FALSE**最適化は行われません。 色の最適化を有効にすると、スプール ファイルの色の存在と色で再生するスプール ファイルスプール ファイルの色の欠如により、モノクロで再生するスプール ファイル。
 透かしの色を生成するプラグインでレンダリング Unidrv を作成する場合は、その色の最適化とカラーの透かしドキュメントを白黒で印刷するとき、白黒で印刷するように求められます。 色および白黒ドキュメントをカラーの透かしが正しく印刷することを確認するには、色の最適化を無効にします。
 
-によって制御される色の最適化、  **\*ChangeColorModeOnDoc?** 色属性を設定して制御することも、 **dwColorOptimization**のメンバー、 [ **属性\_情報\_2** ](https://msdn.microsoft.com/library/windows/hardware/ff545091)または[**属性\_情報\_3** ](https://msdn.microsoft.com/library/windows/hardware/ff545093)構造体。 色の最適化も制御できますを使用して、 [ **GdiEndPageEMF** ](https://msdn.microsoft.com/library/windows/hardware/ff549468)関数。
+によって制御される色の最適化、  **\*ChangeColorModeOnDoc?** 色属性を設定して制御することも、 **dwColorOptimization**のメンバー、 [ **属性\_情報\_2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/ns-winddiui-_attribute_info_2)または[**属性\_情報\_3** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/ns-winddiui-_attribute_info_3)構造体。 色の最適化も制御できますを使用して、 [ **GdiEndPageEMF** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winppi/nf-winppi-gdiendpageemf)関数。
 
  
 

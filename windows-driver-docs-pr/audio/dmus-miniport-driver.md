@@ -9,12 +9,12 @@ keywords:
 - Dmu ミニポート ドライバー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c703e8dba133d2b12eb5a54daf5a3d17ec11e25d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cca1a14a339fa2fcb0eadceb587140a67218c64e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333756"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360112"
 ---
 # <a name="dmus-miniport-driver"></a>DMus ミニポート ドライバー
 
@@ -30,53 +30,53 @@ MIDI ハードウェア デバイス用の Dmu ミニポート ドライバー�
 
 -   ストリーム インターフェイスでは、MIDI ストリームを管理し、ミニポート ドライバーの機能のほとんどを公開します。
 
-ミニポート インターフェイス[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)でメソッドを継承、 [IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)インターフェイス。 **IMiniportDMus**次の追加のメソッドを提供します。
+ミニポート インターフェイス[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)でメソッドを継承、 [IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport)インターフェイス。 **IMiniportDMus**次の追加のメソッドを提供します。
 
-[**IMiniportDMus::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536700)
+[**IMiniportDMus::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-init)
 
 ミニポート オブジェクトを初期化します。
 
-[**IMiniportDMus::NewStream**](https://msdn.microsoft.com/library/windows/hardware/ff536701)
+[**IMiniportDMus::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-newstream)
 
 新しいストリーム オブジェクトを作成します。
 
-[**IMiniportDMus::Service**](https://msdn.microsoft.com/library/windows/hardware/ff536702)
+[**IMiniportDMus::Service**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-service)
 
 サービスに対する要求のミニポート ドライバーに通知します。
 
-ストリーム インターフェイス、 [IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)でメソッドを継承、 **IUnknown**インターフェイス。 **IMXF**次の追加のメソッドを提供します。
+ストリーム インターフェイス、 [IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)でメソッドを継承、 **IUnknown**インターフェイス。 **IMXF**次の追加のメソッドを提供します。
 
-[**IMXF::ConnectOutput**](https://msdn.microsoft.com/library/windows/hardware/ff536785)
+[**IMXF::ConnectOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-connectoutput)
 
 データ ソースが、このストリーム オブジェクトを接続、 **IMXF**データ シンクは、別のストリーム オブジェクトのインターフェイス。
 
-[**IMXF::DisconnectOutput**](https://msdn.microsoft.com/library/windows/hardware/ff536787)
+[**IMXF::DisconnectOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-disconnectoutput)
 
 このストリーム オブジェクトからの切断、 **IMXF**データ シンクは、別のストリーム オブジェクトのインターフェイス。
 
-[**IMXF::PutMessage**](https://msdn.microsoft.com/library/windows/hardware/ff536791)
+[**IMXF::PutMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-putmessage)
 
-パスを[ **DMU\_カーネル\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff536340)データ シンクへの構造体。
+パスを[ **DMU\_カーネル\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event)データ シンクへの構造体。
 
-[**IMXF::SetState**](https://msdn.microsoft.com/library/windows/hardware/ff536792)
+[**IMXF::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-setstate)
 
 ストリームの状態を設定します。
 
-さらに、Dmu のミニポート ドライバーの[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)インターフェイス ソフトウェア シンセサイザー DLS 機能を提供します。 **ISynthSinkDMus**基底インターフェイスでメソッドを継承**IMXF**します。 **ISynthSinkDMus**次の追加のメソッドを提供します。
+さらに、Dmu のミニポート ドライバーの[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-isynthsinkdmus)インターフェイス ソフトウェア シンセサイザー DLS 機能を提供します。 **ISynthSinkDMus**基底インターフェイスでメソッドを継承**IMXF**します。 **ISynthSinkDMus**次の追加のメソッドを提供します。
 
-[**ISynthSinkDMus::RefTimeToSample**](https://msdn.microsoft.com/library/windows/hardware/ff537013)
+[**ISynthSinkDMus::RefTimeToSample**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-isynthsinkdmus-reftimetosample)
 
 参照の時間をサンプル時間に変換します。
 
-[**ISynthSinkDMus::Render**](https://msdn.microsoft.com/library/windows/hardware/ff537015)
+[**ISynthSinkDMus::Render**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-isynthsinkdmus-render)
 
 Wave シンクのバッファーには、wave データを表示します。
 
-[**ISynthSinkDMus::SampleToRefTime**](https://msdn.microsoft.com/library/windows/hardware/ff537018)
+[**ISynthSinkDMus::SampleToRefTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-isynthsinkdmus-sampletoreftime)
 
 サンプルを参照の時刻に変換します。
 
-[**ISynthSinkDMus::SyncToMaster**](https://msdn.microsoft.com/library/windows/hardware/ff537019)
+[**ISynthSinkDMus::SyncToMaster**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-isynthsinkdmus-synctomaster)
 
 マスターの時計をサンプルのクロックを同期します。
 
@@ -84,13 +84,13 @@ Wave シンクのバッファーには、wave データを表示します。
 
 ミニポート ドライバーでは、Dmu ポート ドライバーで、次のインターフェイスを呼び出します。
 
-[IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)
+[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)
 
-[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491)
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)
 
-[IMasterClock](https://msdn.microsoft.com/library/windows/hardware/ff536696)
+[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imasterclock)
 
-PortCls には UART 関数を使用した、MIDI デバイス用の組み込み Dmu ミニポート ドライバーが含まれています。 詳細については、次を参照してください。 [ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)します。
+PortCls には UART 関数を使用した、MIDI デバイス用の組み込み Dmu ミニポート ドライバーが含まれています。 詳細については、次を参照してください。 [ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)します。
 
  
 

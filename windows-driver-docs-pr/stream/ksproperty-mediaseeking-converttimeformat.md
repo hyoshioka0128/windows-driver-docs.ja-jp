@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a90695e84ca8e903b85b15944a302fe151f0166
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4ecc636dd9618e3eefb3715d0808274b4255dc8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363914"
 ---
 # <a name="kspropertymediaseekingconverttimeformat"></a>KSPROPERTY\_MEDIASEEKING\_CONVERTTIMEFORMAT
 
@@ -53,7 +53,7 @@ KSPROPERTY\_MEDIASEEKING\_CONVERTTIMEFORMAT プロパティは、サポートさ
 <td><p>〇</p></td>
 <td><p>X</p></td>
 <td><p>なし</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566726" data-raw-source="[&lt;strong&gt;KSP_TIMEFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566726)"><strong>KSP_TIMEFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_timeformat" data-raw-source="[&lt;strong&gt;KSP_TIMEFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_timeformat)"><strong>KSP_TIMEFORMAT</strong></a></p></td>
 <td><p>LONGLONG</p></td>
 </tr>
 </tbody>
@@ -64,9 +64,9 @@ KSPROPERTY\_MEDIASEEKING\_CONVERTTIMEFORMAT プロパティは、サポートさ
 <a name="remarks"></a>注釈
 -------
 
-参照してください[KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。
+参照してください[KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -85,7 +85,7 @@ KSPROPERTY\_MEDIASEEKING\_CONVERTTIMEFORMAT プロパティは、サポートさ
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_TIMEFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff566726)
+[**KSP\_TIMEFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_timeformat)
 
 [KSPROPSETID\_MediaSeeking](kspropsetid-mediaseeking.md)
 

@@ -3,12 +3,12 @@ Description: USB デバイスは、その機能と機能の構成、インター
 title: USB デバイスのレイアウト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86d993ebce6f93018be7e0ed01a3af7e27f8ef9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f286c27f0ba8c0d4e92904f1808cdb3b56394d08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331620"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360167"
 ---
 # <a name="usb-device-layout"></a>USB デバイスのレイアウト
 
@@ -43,7 +43,7 @@ A *USB 構成*機能と、デバイス、主にその電源機能とインター
 
 エンドポイントは、構成内の 2 つのインターフェイス間で共有できません。 デバイスでは、エンドポイント アドレスを使って、パイプのリセットなど、データ転送またはエンドポイント操作の対象のエンドポイントを決定します。 これらすべての操作は、ホストによって開始されます。
 
-デバイスの使用を開始する前に、デバイスのレイアウトに関する情報を取得します。 [USBView](https://msdn.microsoft.com/library/windows/hardware/86CB0BEE-0C2E-426E-866A-CECF07837457.aspx)アプリケーションすべて USB コント ローラーとそれらに接続されている USB デバイスを参照することができます。 接続された各デバイスのデバイス、構成、インターフェイス、およびデバイスの機能について理解するためのエンドポイント記述子を表示できます。
+デバイスの使用を開始する前に、デバイスのレイアウトに関する情報を取得します。 [USBView](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)アプリケーションすべて USB コント ローラーとそれらに接続されている USB デバイスを参照することができます。 接続された各デバイスのデバイス、構成、インターフェイス、およびデバイスの機能について理解するためのエンドポイント記述子を表示できます。
 
 次を参照してください[標準の USB ディスクリプター](standard-usb-descriptors.md)します。
 

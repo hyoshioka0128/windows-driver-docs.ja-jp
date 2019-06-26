@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f7f36c2ffa5f8f49f5a63ac91dfb228efbfb30b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f17bc93758e1b576bb46c4c308979d1a200dc0cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362228"
 ---
 # <a name="bug-check-0x140-storagedeviceabnormalitydetected"></a>バグ チェック 0x140:記憶域\_デバイス\_異常\_検出
 
@@ -26,7 +26,7 @@ ms.locfileid: "63353706"
 記憶域\_デバイス\_異常\_検出されたバグ チェックが 0x00000140 の値を持ちます。 これは、記憶域ドライバー スタックが、しきい値やその他のエラー応答を超えると、応答性違反の料金が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="storagedeviceabnormalitydetected-parameters"></a>記憶域\_デバイス\_異常\_検出パラメーター

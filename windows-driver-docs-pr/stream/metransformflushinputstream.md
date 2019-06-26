@@ -4,12 +4,12 @@ description: METransformFlushInputStream イベントは、デバイス MFT の�
 ms.assetid: 400FB4BE-90F2-4FF2-A709-7E213D99DCC8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb03fc58935a0788ec818b85311c6e215f455ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d6df6d3d0a157887dd79a7e9c34df98f498a96d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353690"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363307"
 ---
 # <a name="metransformflushinputstream-event"></a>METransformFlushInputStream イベント
 
@@ -35,7 +35,7 @@ ms.locfileid: "63353690"
 ## <a name="remarks"></a>注釈
 
 
-デバイス MFT の入力ストリームの接続されているストリームをフラッシュする必要があるとき、に、このイベントを生成します。 このイベントに応答して、DTM を呼び出して、 [ **FlushOutputStream** ](https://msdn.microsoft.com/library/windows/hardware/mt797665) 、Devproxy との接続されているストリームに呼び出す[ **FlushInputStream** ](https://msdn.microsoft.com/library/windows/hardware/mt797664) MFT デバイス。 デバイス MFT は、入力ストリームをフラッシュし、フラッシュ操作は完了と見なされます。
+デバイス MFT の入力ストリームの接続されているストリームをフラッシュする必要があるとき、に、このイベントを生成します。 このイベントに応答して、DTM を呼び出して、 [ **FlushOutputStream** ](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-flushoutputstream) 、Devproxy との接続されているストリームに呼び出す[ **FlushInputStream** ](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-flushinputstream) MFT デバイス。 デバイス MFT は、入力ストリームをフラッシュし、フラッシュ操作は完了と見なされます。
 
 一般に、ストリーム自体が状態または停止するを実行している際にこのイベントは呼び出されます。
 

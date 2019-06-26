@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CONNECT_BSS_ENTRY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a1a86fe448f113dc8b59fffaddca2e586f0085da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21859042b922facaebc55c88ba017b3a1099c11b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360229"
 ---
 # <a name="wditlvconnectbssentry"></a>WDI\_TLV\_CONNECT\_BSS\_エントリ
 
@@ -43,11 +43,11 @@ WDI\_TLV\_CONNECT\_BSS\_エントリが候補の一覧を含む TLV BSS エン�
 | [**WDI\_TLV\_余分な\_アソシエーション\_要求\_IES**](wdi-tlv-extra-association-request-ies.md) |                                | x        | (再) に含まれる IE この BSSID の関連付け要求フレーム。 存在する場合、共通の IE に加えて含まれていますがあります。                  |
 | [**WDI\_TLV\_FT\_初期\_ASSOC\_パラメーター**](wdi-tlv-ft-initial-assoc-parameters.md)     |                                | x        | 初期のモビリティ ドメイン関連パラメーター。                                                                                                           |
 | [**WDI\_TLV\_FT\_REASSOC\_パラメーター**](wdi-tlv-ft-reassoc-parameters.md)                  |                                | x        | 迅速な移行のパラメーター (MDIE、R0KH ID、PMKR0Name、SNonce)。 これは、(初期モビリティ ドメインの関連付け) 中ではなくのみ高速切り替え存在します。 |
-| [**WDI\_TLV\_BSS\_選択\_パラメーター**](wdi-tlv-bss-selection-parameters.md)            |                                | x        | [**WDI\_BSS\_選択\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/mt297629) BSS 選択範囲のホストによって使用される情報を提供します。                               |
+| [**WDI\_TLV\_BSS\_選択\_パラメーター**](wdi-tlv-bss-selection-parameters.md)            |                                | x        | [**WDI\_BSS\_選択\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_bss_selection_flags) BSS 選択範囲のホストによって使用される情報を提供します。                               |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

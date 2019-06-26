@@ -10,12 +10,12 @@ keywords:
 - ブート オプション WDK、フレンドリ名
 ms.date: 01/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f5c5b21ba678ae6d82d6f9de835bd4b805412a14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 502564bdb3221b1ab00d45bfc02e419ca514b3ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343986"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360406"
 ---
 # <a name="changing-the-friendly-name-of-a-boot-entry"></a>ブート エントリのフレンドリ名の変更
 
@@ -40,7 +40,7 @@ ms.locfileid: "63343986"
 "Windows 10 NullModem"
 ```
 
-**注**  デバッグ用のブート エントリを構成するとき ([/debug/debugport](https://msdn.microsoft.com/library/windows/hardware/ff556253)) または緊急管理サービス (EMS) 用 ([リダイレクト/](https://msdn.microsoft.com/library/windows/hardware/ff557180)) x86-または x64 ベースのシステムでは、ブート ローダーがかっこで囲まれた語句を追加します (\[デバッガーを有効になっている\]または\[ems を有効になっている\]) ブート メニューに表示されるフレンドリ名にします。
+**注**  デバッグ用のブート エントリを構成するとき ([/debug/debugport](https://docs.microsoft.com/windows-hardware/drivers/devtest/-debug)) または緊急管理サービス (EMS) 用 ([リダイレクト/](https://docs.microsoft.com/windows-hardware/drivers/devtest/-redirect)) x86-または x64 ベースのシステムでは、ブート ローダーがかっこで囲まれた語句を追加します (\[デバッガーを有効になっている\]または\[ems を有効になっている\]) ブート メニューに表示されるフレンドリ名にします。
 ただし、ブート ローダーは、フレンドリ名と一緒のかっこで囲まれた語句は 70 文字を超えたときに、ブート メニューから、かっこで囲まれた語句を省略します。 かっこで囲まれた語句を復元するには、フレンドリ名を短きます。
 
 Boot.ini ファイルでのブート エントリのフレンドリ名を変更するには、Bootcfg を使用するか、メモ帳で Boot.ini ファイルを編集することができます。 EFI NVRAM にブート オプションを格納するシステムで、Bootcfg を使用します。
@@ -56,7 +56,7 @@ Windows のブート エントリのフレンドリ名を変更するには、BC
 ブート エントリの説明を変更するには、ブート メニューに表示するときに使用することができます、 **/set** *IDdescription*オプション。 コマンドは、次の構文を使用します。 ID は、ブート エントリ (またはのいずれかのよく知られている識別子 {0} 現在}) に関連付けられている GUID です。
 
 > [!NOTE]
-> 使用する場合[Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518)、たとえばブート エントリの識別子を囲む引用符を使用する必要があります: **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** または **"{current}"**.
+> 使用する場合[Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518)、たとえばブート エントリの識別子を囲む引用符を使用する必要があります: **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** または **"{current}"** .
 
 
 ```console

@@ -12,12 +12,12 @@ keywords:
 - ロゴ テスト WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae67b487b82c8f829e0f9a4425df691be4ec2b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43fd2c78006662f49e1b40abae894afbbf72dade
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333723"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360088"
 ---
 # <a name="drm-requirements"></a>DRM の要件
 
@@ -35,9 +35,9 @@ Windows XP 以降、DRM 準拠テストが WHQL テストに必要です。 ド�
 
 DRM 対応のテストには、以下を行う場合は、信頼されたオーディオ ドライバーが必要です。
 
--   オーディオのミニポート ドライバーを実装する必要があります、 [IDrmAudioStream](https://msdn.microsoft.com/library/windows/hardware/ff536568)インターフェイスの IID のクエリを実行している場合、IDrmAudioStream 型のオブジェクトを返す必要があります、そのストリーム オブジェクト\_IDrmAudioStream します。
+-   オーディオのミニポート ドライバーを実装する必要があります、 [IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nn-drmk-idrmaudiostream)インターフェイスの IID のクエリを実行している場合、IDrmAudioStream 型のオブジェクトを返す必要があります、そのストリーム オブジェクト\_IDrmAudioStream します。
 
--   コピー防止が要求された場合 ([**DRMRIGHTS**](https://msdn.microsoft.com/library/windows/hardware/ff536355).**CopyProtect** = **TRUE**)、オーディオ ドライバーには、現在の再生中のストリームをキャプチャする機能が無効にする必要があります。 これは、ドライバーがハード ディスク、EEPROM、メモリ カード、およびメモリ スティックが含まれていますが、不揮発性ストレージの形態に保護されていないデジタル コンテンツを保存する必要があることを意味します。 また、ドライバーは出力の D のコンバーターのマルチプレクサーのキャプチャを無効にし、できないデジタル コンテンツのループバックする必要があります。
+-   コピー防止が要求された場合 ([**DRMRIGHTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/ns-drmk-tagdrmrights).**CopyProtect** = **TRUE**)、オーディオ ドライバーには、現在の再生中のストリームをキャプチャする機能が無効にする必要があります。 これは、ドライバーがハード ディスク、EEPROM、メモリ カード、およびメモリ スティックが含まれていますが、不揮発性ストレージの形態に保護されていないデジタル コンテンツを保存する必要があることを意味します。 また、ドライバーは出力の D のコンバーターのマルチプレクサーのキャプチャを無効にし、できないデジタル コンテンツのループバックする必要があります。
 
 -   オーディオ ドライバーは、デバイスのデジタル オーディオ出力を無効にするように求められます (DRMRIGHTS **。DigitalOutputDisable** = **TRUE**)、標準の相互接続スキームを通じて標準的なインターフェイス経由でコンテンツを転送することができるすべてのデジタル オーディオ出力が無効にする必要があります。 デジタル出力は--を含めるし、--S/PDIF、IEEE 1394、パラレル、シリアル、モデムに厳密に限定されませんが、ネットワーク ポート。 (この要件は現在当てはまりません usb。)
 

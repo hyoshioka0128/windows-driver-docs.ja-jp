@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 839226d603c273f23fa76d29c73fea927ea23d57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26bc88907e058772072f87d6d23c73f359bb9d83
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336370"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364310"
 ---
 # <a name="irql"></a>!irql
 
@@ -72,7 +72,7 @@ Irql の詳細については、Windows Driver Kit (WDK) ドキュメントを�
 
 ときに、ターゲット コンピューターは、デバッガー、IRQL の変更が、デバッガー中断が保存される直前に有効であったの IRQL に分割します。 **! Irql**拡張機能には、保存した IRQL が表示されます。
 
-同様に、バグ チェックが発生し、クラッシュ ダンプ ファイルが作成されると、クラッシュ ダンプ ファイルに保存された IRQL は、位置 IRQL ではないのバグ チェックする直前に 1 つ、 [ **KeBugCheckEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551961)ルーチンが実行されます。
+同様に、バグ チェックが発生し、クラッシュ ダンプ ファイルが作成されると、クラッシュ ダンプ ファイルに保存された IRQL は、位置 IRQL ではないのバグ チェックする直前に 1 つ、 [ **KeBugCheckEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kebugcheckex)ルーチンが実行されます。
 
 どちらの場合も、現在の IRQL がディスパッチに対して発生\_レベル、以外である x86 アーキテクチャ。 したがって、このような 1 つ以上のイベントが発生する場合は、表示の IRQL もなりますディスパッチ\_レベル、デバッグ目的で役に立たなくなります。
 

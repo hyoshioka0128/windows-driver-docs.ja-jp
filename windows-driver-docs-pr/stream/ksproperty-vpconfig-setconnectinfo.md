@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21146c1a74f064b582037e6154c258c40923139d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d178326d19c55be663fde05c0333e143519fa7e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358419"
 ---
 # <a name="kspropertyvpconfigsetconnectinfo"></a>KSPROPERTY\_VPCONFIG\_SETCONNECTINFO
 
 
-KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の接続情報を持つビデオ ポートの構成を設定します。 配列へのポインターが[ **DDVIDEOPORTCONNECT** ](https://msdn.microsoft.com/library/windows/hardware/ff550388)構造体を KSPROPERTY によって返されると\_VPCONFIG\_GETCONNECTINFO プロパティ。
+KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の接続情報を持つビデオ ポートの構成を設定します。 配列へのポインターが[ **DDVIDEOPORTCONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect)構造体を KSPROPERTY によって返されると\_VPCONFIG\_GETCONNECTINFO プロパティ。
 
 ## <span id="ddk_ksproperty_vpconfig_setconnectinfo_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_SETCONNECTINFO_KS"></span>
 
@@ -54,7 +54,7 @@ KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の�
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff550388" data-raw-source="[&lt;strong&gt;DDVIDEOPORTCONNECT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550388)"><strong>DDVIDEOPORTCONNECT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect" data-raw-source="[&lt;strong&gt;DDVIDEOPORTCONNECT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect)"><strong>DDVIDEOPORTCONNECT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ KSPROPERTY\_VPCONFIG\_SETCONNECTINFO プロパティは、ユーザー定義の�
 ## <a name="see-also"></a>関連項目
 
 
-[**DDVIDEOPORTCONNECT**](https://msdn.microsoft.com/library/windows/hardware/ff550388)
+[**DDVIDEOPORTCONNECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddvideoportconnect)
 
 [**KSPROPERTY\_VPCONFIG\_GETCONNECTINFO**](ksproperty-vpconfig-getconnectinfo.md)
 

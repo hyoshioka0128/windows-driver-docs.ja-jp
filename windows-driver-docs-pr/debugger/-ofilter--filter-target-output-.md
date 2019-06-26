@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a677e282689a761b13b40abbaea4427de4a5d19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52ded1b0cdc592fb1a7a947fa9be81dabbf32f50
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363099"
 ---
 # <a name="ofilter-filter-target-output"></a>.ofilter (ターゲット出力のフィルター処理)
 
@@ -34,7 +34,7 @@ ms.locfileid: "63334426"
 ## <a name="span-idddkmetafiltertargetoutputdbgspanspan-idddkmetafiltertargetoutputdbgspanparameters"></a><span id="ddk_meta_filter_target_output_dbg"></span><span id="DDK_META_FILTER_TARGET_OUTPUT_DBG"></span>パラメーター
 
 
-<span id="_______________"></span> **/!**   
+<span id="_______________"></span> **/!**    
 デバッガーが含まれていない唯一の出力が表示されるようにフィルターを反転*文字列*します。 デバッガーを表示するこのパラメーターを使用しない場合のみ出力を含む*文字列*します。
 
 <span id="_______String______"></span><span id="_______string______"></span><span id="_______STRING______"></span> *文字列*   
@@ -69,14 +69,14 @@ ms.locfileid: "63334426"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については[ **OutputDebugString** ](https://msdn.microsoft.com/library/windows/desktop/aa363362)し、その他のユーザー モード ルーチンは、Microsoft Windows SDK ドキュメントを参照してください。 詳細については**による DbgPrint**、 **DbgPrintEx**、およびその他のカーネル モード ルーチンは、Windows Driver Kit (WDK) を参照してください。
+詳細については[ **OutputDebugString** ](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)し、その他のユーザー モード ルーチンは、Microsoft Windows SDK ドキュメントを参照してください。 詳細については**による DbgPrint**、 **DbgPrintEx**、およびその他のカーネル モード ルーチンは、Windows Driver Kit (WDK) を参照してください。
 
 <a name="remarks"></a>コメント
 -------
 
 使用する場合、 **.ofilter**デバッガーには、現在のパターン一致条件が表示されます。 パラメーターを指定せずコマンド。
 
-既存のフィルターをクリアする **.ofilter""** します。 このコマンドは、ユーザー モード ルーチンから送信されるすべてのデータをフィルター処理 (など[ **OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362)) とカーネル モード ルーチン (など**による DbgPrint**)。 ただし、デバッガーで常にプロンプトが表示される**DbgPrompt**送信します。
+既存のフィルターをクリアする **.ofilter""** します。 このコマンドは、ユーザー モード ルーチンから送信されるすべてのデータをフィルター処理 (など[ **OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)) とカーネル モード ルーチン (など**による DbgPrint**)。 ただし、デバッガーで常にプロンプトが表示される**DbgPrompt**送信します。
 
 **DbgPrintEx**と**KdPrintEx**ルーチンがしないデバッグ メッセージをフィルター処理のもう 1 つのメソッドを指定します。
 

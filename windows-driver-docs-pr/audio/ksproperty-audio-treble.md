@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eac4cadba2ac75da490d44b63fd1811bb36c68e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50ad80c0bfb3c8e889a9ea5199e1837ab54a9202
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360572"
 ---
 # <a name="kspropertyaudiotreble"></a>KSPROPERTY\_オーディオ\_高音
 
@@ -53,7 +53,7 @@ KSPROPERTY\_オーディオ\_高音プロパティは、トーン ノードで�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537145" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537145)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
@@ -67,7 +67,7 @@ KSPROPERTY\_オーディオ\_高音プロパティは、トーン ノードで�
 
 -2147483647 は-32767.99998474 デシベル (減衰) と
 
-+ 2147483647 までは、+32767.99998474 デシベル (向上です)。
+\+ 2147483647 までは、+32767.99998474 デシベル (向上です)。
 
 整数値、比較的によって表されるデシベル範囲場所
 
@@ -103,7 +103,7 @@ KSPROPERTY\_オーディオ\_高音プロパティ要求がステータスを返
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff537145)
+[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
 [**KSNODETYPE\_トーン**](ksnodetype-tone.md)
 

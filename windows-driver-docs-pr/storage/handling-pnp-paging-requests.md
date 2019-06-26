@@ -9,12 +9,12 @@ keywords:
 - PnP WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d622518f5cc3b080db2efdfc2428f08f2adf0a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fbd0f9ef3a46334b536fb95045b908f3e46108a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378504"
 ---
 # <a name="handling-pnp-paging-requests"></a>PnP ページング要求の処理
 
@@ -22,7 +22,7 @@ ms.locfileid: "63390902"
 ## <span id="ddk_handling_pnp_paging_requests_kg"></span><span id="DDK_HANDLING_PNP_PAGING_REQUESTS_KG"></span>
 
 
-ストレージのフィルター ドライバーは PnP ページング要求を処理する必要があります ([**IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)で[ **IRP\_MN\_デバイス\_使用状況\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff550841)と**Parameters.UsageNotification.Type**設定**DeviceUsageTypePaging**) 場合これがフィルター処理関数のドライバーでは、この IRP を処理します。
+ストレージのフィルター ドライバーは PnP ページング要求を処理する必要があります ([**IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)で[ **IRP\_MN\_デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)と**Parameters.UsageNotification.Type**設定**DeviceUsageTypePaging**) 場合これがフィルター処理関数のドライバーでは、この IRP を処理します。
 
 次の項目は、フィルターは DeviceExtension に追加する必要があります。
 
@@ -69,7 +69,7 @@ G. 最後の同期 (KeSetEvent (PagingCountEvent、...))。
 
 ### <a name="span-idpseudocodeexamplespanspan-idpseudocodeexamplespanpseudocode-example"></a><span id="pseudocode_example"></span><span id="PSEUDOCODE_EXAMPLE"></span>擬似コードの例
 
-文字でマークされているセクションでは、(*//A*、 *//B*など) では、上記のアウトラインの文字には、次のコード サンプル マップします。
+文字でマークされているセクションでは、( *//A*、 *//B*など) では、上記のアウトラインの文字には、次のコード サンプル マップします。
 
 ```cpp
 case DeviceUsageTypePaging: { 

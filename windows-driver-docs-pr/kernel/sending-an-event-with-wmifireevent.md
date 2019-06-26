@@ -13,12 +13,12 @@ keywords:
 - WDK の WMI の名前の動的インスタンス
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd6ae6b9dda93810b374e1160a852fde64ffd8d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3132ed67fb520db6b08f1ca1eb0fd711283f1146
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342665"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364075"
 ---
 # <a name="sending-an-event-with-wmifireevent"></a>WmiFireEvent でのイベントの送信
 
@@ -26,15 +26,15 @@ ms.locfileid: "63342665"
 
 
 
-ドライバーが呼び出せる[ **WmiFireEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff565807)動的インスタンスの名前を使用しないし、1 つのベース名の文字列または PDO のデバイス インスタンス ID を静的インスタンス名を基にイベントを送信します。
+ドライバーが呼び出せる[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)動的インスタンスの名前を使用しないし、1 つのベース名の文字列または PDO のデバイス インスタンス ID を静的インスタンス名を基にイベントを送信します。
 
-イベントは、ブロックの 1 つのインスタンスである必要があります: ドライバーを呼び出すことはできません、 **WmiFireEvent**の 1 つまたは複数のインスタンスで構成されるイベントを送信します。 このようなイベントを送信するドライバーを呼び出す必要があります[ **IoWMIWriteEvent**](https://msdn.microsoft.com/library/windows/hardware/ff550520)」の説明に従って、 [IoWMIWriteEvent でイベントを送信する](sending-an-event-with-iowmiwriteevent.md)します。
+イベントは、ブロックの 1 つのインスタンスである必要があります: ドライバーを呼び出すことはできません、 **WmiFireEvent**の 1 つまたは複数のインスタンスで構成されるイベントを送信します。 このようなイベントを送信するドライバーを呼び出す必要があります[ **IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)」の説明に従って、 [IoWMIWriteEvent でイベントを送信する](sending-an-event-with-iowmiwriteevent.md)します。
 
 ドライバーは、WMI がイベントを有効になるまでのイベントを送信しないでください。 イベントを有効になっている場合、イベントのトリガー条件が発生したドライバー。
 
 1.  非ページ プールからバッファーを割り当て、イベント データをバッファーに書き込みます。 イベントにデータがあるない場合、ドライバーは、この手順を省略できます。
 
-2.  呼び出し[ **WmiFireEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff565807)は次のパラメーター。
+2.  呼び出し[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)は次のパラメーター。
 
     -   ドライバーのデバイス オブジェクトへのポインター
 

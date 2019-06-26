@@ -19,12 +19,12 @@ keywords:
 - WDK GDI のサーフェスを画面に表示されます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c22a73ee8b98e8dd06513499e10c36f9142f864
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d494e0c3ae2ddea042b68b1bd70743173ad6e732
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354214"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361208"
 ---
 # <a name="surface-negotiation"></a>サーフェス ネゴシエーション
 
@@ -32,7 +32,7 @@ ms.locfileid: "63354214"
 ## <span id="ddk_surface_negotiation_gg"></span><span id="DDK_SURFACE_NEGOTIATION_GG"></span>
 
 
-描画とテキストの出力には、サーフェイスを描画する必要があります。 この画面がによって作成された、 **DrvEnableSurface**ドライバーは、いくつか PDEVs をサポートできます。 サポートするドライバー、 [ **DrvCreateDeviceBitmap** ](https://msdn.microsoft.com/library/windows/hardware/ff556185)関数は作成し、追加のサーフェスを使用します。 これらのビットマップ サーフェスと呼びます*セカンダリ サーフェス*または*オフスクリーン サーフェス*します。 画面のいずれかの種類のドライバーが、型を判断するの描画操作をサポートします。
+描画とテキストの出力には、サーフェイスを描画する必要があります。 この画面がによって作成された、 **DrvEnableSurface**ドライバーは、いくつか PDEVs をサポートできます。 サポートするドライバー、 [ **DrvCreateDeviceBitmap** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)関数は作成し、追加のサーフェスを使用します。 これらのビットマップ サーフェスと呼びます*セカンダリ サーフェス*または*オフスクリーン サーフェス*します。 画面のいずれかの種類のドライバーが、型を判断するの描画操作をサポートします。
 
  
 

@@ -12,12 +12,12 @@ keywords:
 - Dmu は、WDK のデータ形式をストリームします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8620aca8fe141af1adb0e9a02b73b167e2ca857b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 16d8c72c16106d7200a87094cff9fe25eda35030
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332292"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363209"
 ---
 # <a name="music-technology-guids"></a>音楽テクノロジ GUID
 
@@ -25,7 +25,7 @@ ms.locfileid: "63332292"
 ## <span id="music_technology_guids"></span><span id="MUSIC_TECHNOLOGY_GUIDS"></span>
 
 
-MIDI または Dmu のミニポート ドライバーでは、そのピンのそれぞれで処理できること、stream の形式の範囲を指定する必要があります。 」の説明に従って[Pin ファクトリ](pin-factories.md)、ドライバーは、型の構造体は、それぞれが 1 つまたは複数のデータ範囲の記述子の配列としてこの情報を指定します[ **KSDATARANGE\_音楽**](https://msdn.microsoft.com/library/windows/hardware/ff537097). この構造体の**テクノロジ**シンセサイザー テクノロジの種類、MIDI または DirectMusic デバイスを使用してメンバーを示します。 ミニポート ドライバーを設定できる、**テクノロジ**(左の列) の次の表に示すように GUID 値の 1 つのメンバー。
+MIDI または Dmu のミニポート ドライバーでは、そのピンのそれぞれで処理できること、stream の形式の範囲を指定する必要があります。 」の説明に従って[Pin ファクトリ](pin-factories.md)、ドライバーは、型の構造体は、それぞれが 1 つまたは複数のデータ範囲の記述子の配列としてこの情報を指定します[ **KSDATARANGE\_音楽**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music). この構造体の**テクノロジ**シンセサイザー テクノロジの種類、MIDI または DirectMusic デバイスを使用してメンバーを示します。 ミニポート ドライバーを設定できる、**テクノロジ**(左の列) の次の表に示すように GUID 値の 1 つのメンバー。
 
 <table>
 <colgroup>
@@ -85,7 +85,7 @@ MIDI または Dmu のミニポート ドライバーでは、そのピンのそ
 
 デバイスを列挙する場合、Windows マルチ メディア midiOut または midiIn API を使用して、MIDI アプリケーションは MIDI のピンが DirectMusic ピンいないを確認できます。 DirectMusic アプリケーションでは、MIDI と DirectMusic の両方の pin を確認できます。 MIDI または Dmu のミニポート ドライバーでは、MIDI 暗証番号 (pin) を識別 KSDATAFORMAT に暗証番号 (pin) のデータ範囲のサブタイプの GUID を設定して\_サブタイプ\_MIDI します。 Dmu のミニポート ドライバー KSDATAFORMAT サブタイプ GUID に設定して DirectMusic 暗証番号 (pin) を識別する\_サブタイプ\_DIRECTMUSIC します。 MIDI と DirectMusic ピンのデータ範囲の例については、次を参照してください。 [MIDI Stream データ範囲](midi-stream-data-range.md)と[DirectMusic Stream データ範囲](directmusic-stream-data-range.md)します。
 
-説明したよう[MIDI と DirectMusic フィルター](midi-and-directmusic-filters.md)、アダプタのドライバを呼び出す、 [ **PcNewMiniport** ](https://msdn.microsoft.com/library/windows/hardware/ff537714)システム提供のミニポートのいずれかのインスタンスを作成する関数Portcls.sys でドライバー。 呼び出し元のインスタンスを作成するミニポート ドライバーを指定するには、次の表で、ドライバーの Guid のいずれかを指定します。
+説明したよう[MIDI と DirectMusic フィルター](midi-and-directmusic-filters.md)、アダプタのドライバを呼び出す、 [ **PcNewMiniport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)システム提供のミニポートのいずれかのインスタンスを作成する関数Portcls.sys でドライバー。 呼び出し元のインスタンスを作成するミニポート ドライバーを指定するには、次の表で、ドライバーの Guid のいずれかを指定します。
 
 <table>
 <colgroup>
@@ -132,7 +132,7 @@ MidiOut API がウェーブ シンセサイザー デバイスを希望するた
 
 自体を既定のデバイスを対象にするをウェーブ デバイス生 MIDI を再生できる必要があります自体として公開ウェーブ デバイス、片方のデバイスではありません。 ただし、アダプターのドライバーは、システム提供片方ミニポート ドライバーを使用して、DMusUART、そのウェーブ シンセサイザー デバイスを管理する場合ミニポート ドライバー静的に割り当てる GUID KSMUSIC テクノロジ\_テクノロジ\_ポートへのpin。
 
-呼び出すことによって、 [ **IMusicTechnology::SetTechnology** ](https://msdn.microsoft.com/library/windows/hardware/ff536780)メソッドでは、アダプターのドライバーは、ミニポート ドライバーのデータの範囲で、テクノロジの Guid を上書きできます。 次のコード例でアダプターのドライバーは KSMUSIC、既定値から DMusUART ミニポート ドライバーのデータの範囲でテクノロジの GUID を変更\_テクノロジ\_KSMUSIC 値に、ポート\_テクノロジ\_ウェーブ テーブル。 この新しい設定では、MPU のようなウェーブ デバイスは midiOut API には、既定の MIDI デバイスによって選択される対象。
+呼び出すことによって、 [ **IMusicTechnology::SetTechnology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-imusictechnology-settechnology)メソッドでは、アダプターのドライバーは、ミニポート ドライバーのデータの範囲で、テクノロジの Guid を上書きできます。 次のコード例でアダプターのドライバーは KSMUSIC、既定値から DMusUART ミニポート ドライバーのデータの範囲でテクノロジの GUID を変更\_テクノロジ\_KSMUSIC 値に、ポート\_テクノロジ\_ウェーブ テーブル。 この新しい設定では、MPU のようなウェーブ デバイスは midiOut API には、既定の MIDI デバイスによって選択される対象。
 
 ```cpp
   // Create the miniport object.
@@ -157,7 +157,7 @@ MidiOut API がウェーブ シンセサイザー デバイスを希望するた
   }
 ```
 
-アダプタのドライバを呼び出す必要があります前のコード例ではコメントで示されるように、 [ **SetTechnology** ](https://msdn.microsoft.com/library/windows/hardware/ff536780)ポート ドライバーを呼び出す前に`Init`メソッド (これは、ミニポートを呼び出しますドライバーの`Init`メソッド)。 システム提供 DMusUART と UART ミニポート ドライバー両方のサポート、 [IMusicTechnology](https://msdn.microsoft.com/library/windows/hardware/ff536778)インターフェイス。 その他のミニポート ドライバー IMusicTechnology は省略可能なサポートします。 詳細については、の実装を参照してください、 **SetTechnology** DMusUART サンプル オーディオ ドライバー Microsoft Windows Driver Kit (WDK) でのメソッド。
+アダプタのドライバを呼び出す必要があります前のコード例ではコメントで示されるように、 [ **SetTechnology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-imusictechnology-settechnology)ポート ドライバーを呼び出す前に`Init`メソッド (これは、ミニポートを呼び出しますドライバーの`Init`メソッド)。 システム提供 DMusUART と UART ミニポート ドライバー両方のサポート、 [IMusicTechnology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-imusictechnology)インターフェイス。 その他のミニポート ドライバー IMusicTechnology は省略可能なサポートします。 詳細については、の実装を参照してください、 **SetTechnology** DMusUART サンプル オーディオ ドライバー Microsoft Windows Driver Kit (WDK) でのメソッド。
 
  
 

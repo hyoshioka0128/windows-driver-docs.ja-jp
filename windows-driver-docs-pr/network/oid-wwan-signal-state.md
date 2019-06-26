@@ -6,26 +6,26 @@ ms.date: 04/05/2019
 keywords: -OID_WWAN_SIGNAL_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8f766507dc6b298a831d80e4d9244c647c80290f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8b2de8da14904a5cd2a1c8a030f9eba1103826a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361156"
 ---
 # <a name="oidwwansignalstate"></a>OID\_WWAN\_信号\_状態
 
 
 OID\_WWAN\_信号\_状態を返すか、現在のシグナルの状態を設定します。
 
-ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_信号\_状態**](ndis-status-wwan-signal-state.md)状態通知を含む、 [ **NDIS\_WWAN\_信号\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567931)設定の完了に関係なく、エンドユーザーに示すように現在シグナル状態の表示に関する情報を提供または要求をクエリする構造体。
+ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_信号\_状態**](ndis-status-wwan-signal-state.md)状態通知を含む、 [ **NDIS\_WWAN\_信号\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)設定の完了に関係なく、エンドユーザーに示すように現在シグナル状態の表示に関する情報を提供または要求をクエリする構造体。
 
-呼び出し元をユーザーが現在シグナル状態の表示を設定する要求を提供、 [ **NDIS\_WWAN\_設定\_信号\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567928)適切な情報、ミニポート ドライバー構造体。
+呼び出し元をユーザーが現在シグナル状態の表示を設定する要求を提供、 [ **NDIS\_WWAN\_設定\_信号\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)適切な情報、ミニポート ドライバー構造体。
 
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN 信号強度操作](https://msdn.microsoft.com/library/windows/hardware/ff559125)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN 信号強度操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-signal-strength-operations)します。
 
 ミニポート ドライバー アクセスしないでください、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) とクエリの処理または操作を設定します。
 
@@ -103,9 +103,9 @@ Windows 10、バージョンが 1903 年以降 OID_WWAN_SIGNAL_STATE は、リ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_設定\_信号\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567928)
+[**NDIS\_WWAN\_設定\_信号\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)
 
-[WWAN 信号強度の操作](https://msdn.microsoft.com/library/windows/hardware/ff559125)
+[WWAN 信号強度の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-signal-strength-operations)
 
  
 

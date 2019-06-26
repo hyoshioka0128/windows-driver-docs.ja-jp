@@ -13,12 +13,12 @@ keywords:
 - supermixer ノード WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4c692927dd1f5a696b07986a453822f903a519d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e719fd4a0a8e033b43db3f29233b074ea5195056
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333777"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360135"
 ---
 # <a name="directsound-node-ordering-requirements"></a>DirectSound のノードの順序付け要件
 
@@ -28,17 +28,17 @@ ms.locfileid: "63333777"
 
 DirectSound 2D または 3D のミキサーの暗証番号 (pin) は、次の一連のノードを含むノードのチェーンが必要があります。
 
--   [ボリューム] ノード (を参照してください[ **KSNODETYPE\_ボリューム**](https://msdn.microsoft.com/library/windows/hardware/ff537208))。
+-   [ボリューム] ノード (を参照してください[ **KSNODETYPE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume))。
 
--   3D のノード (このノードは省略可能です。 参照してください[ **KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148))。
+-   3D のノード (このノードは省略可能です。 参照してください[ **KSNODETYPE\_3D\_効果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects))。
 
--   Supermixer ノード (を参照してください[ **KSNODETYPE\_SUPERMIX**](https://msdn.microsoft.com/library/windows/hardware/ff537198))。
+-   Supermixer ノード (を参照してください[ **KSNODETYPE\_SUPERMIX**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-supermix))。
 
 -   [ボリューム] ノード (の効果をパン)
 
--   SRC ノード (を参照してください[ **KSNODETYPE\_SRC**](https://msdn.microsoft.com/library/windows/hardware/ff537190))。
+-   SRC ノード (を参照してください[ **KSNODETYPE\_SRC**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-src))。
 
--   ノードの合計 (を参照してください[ **KSNODETYPE\_合計**](https://msdn.microsoft.com/library/windows/hardware/ff537196))。
+-   ノードの合計 (を参照してください[ **KSNODETYPE\_合計**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum))。
 
 この一覧内のノードは、暗証番号 (pin) へのストリーミング データによって発生した順序で表示されます。 上記の順序が維持されることに、問題を発生させることがなくこれらのノード間では、他のノードをインタリーブできます。
 

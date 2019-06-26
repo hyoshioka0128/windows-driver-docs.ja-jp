@@ -12,12 +12,12 @@ keywords:
 - UMDF センサー ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1186ad76fdaff67e21e848a074a67d7b4f5af31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 214bae0a5ffe6a2ae46afdb67c98d205ec80ecf2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382312"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363623"
 ---
 # <a name="geolocation-driver-sample-for-windows-81"></a>Windows 8.1 用位置情報ドライバー サンプル
 
@@ -29,9 +29,9 @@ Windows 8.1 用の地理的位置情報サンプル ドライバーでは、グ�
 このサンプルには、次の 3 つの目的があります。まず、UMDF センサー ドライバーに必要な最小限の機能を示します。 次に、作業用のドライバーを構築するためのスケルトンを提供します。 3 番目に、GPS などのデバイスに対して無線状態の変更通知を提供するオプションの管理 API のサポートが含まれています。
 
 ## <a name="related-topics"></a>関連トピック
-[センサー診断ツール](https://msdn.microsoft.com/library/windows/hardware/hh780319)  
+[センサー診断ツール](https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool)  
 [場所のセンサー ドライバーの作成](writing-a-location-sensor-driver.md)  
-[センサー デバイス ドライバーを作成](https://msdn.microsoft.com/library/windows/hardware/ff545927)  
+[センサー デバイス ドライバーを作成](https://docs.microsoft.com/windows-hardware/drivers/sensors/writing-a-sensor-device-driver)  
 
 
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de525a7ffeee84d06f2a0073f86030d6d67f1fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b0c90fb2d6ce9039db10cd18b9d202a823fc3e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341770"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362414"
 ---
 # <a name="wdfkdwdfcrashdump"></a>!wdfkd.wdfcrashdump
 
@@ -51,13 +51,13 @@ UMDF
 <span id="drivername.dll"></span><span id="DRIVERNAME.DLL"></span>*DriverName*.dll  
 UMDF ドライバーの名前を指定します。 .Dll ファイルのサフィックスを含める必要があります。 この省略可能なパラメーターを省略すると、メタデータ、読み込まれたモジュール一覧、および使用可能なログ出力が含まれます。
 
-<span id="-d"></span><span id="-D"></span>**-d**  
+<span id="-d"></span><span id="-D"></span> **-d**  
 ドライバーのログのみが表示されます。
 
-<span id="-f"></span><span id="-F"></span>**-f**  
+<span id="-f"></span><span id="-F"></span> **-f**  
 フレームワークのログのみが表示されます。
 
-<span id="-m"></span><span id="-M"></span>**-m**  
+<span id="-m"></span><span id="-M"></span> **-m**  
 フレームワークとドライバーのログ記録された順序でをマージします。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -121,20 +121,20 @@ Listing all drivers loaded in this host process at the time of the failure:
   WUDFOsrUsbFilter
 ```
 
-上記の例では、出力には、WER レポートのイベントの種類であるエラーの種類が含まれます。 ここでは、できる**WUDFVerifierFailure**または**WUDFUnhandledException**します。 詳細については、次を参照してください。 [WER レポートでの UMDF メタデータにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff542975)します。 UMDF の出力には、イベントの種類がある場合、エラー コードが含まれます**WUDFVerifierFailure**します。
+上記の例では、出力には、WER レポートのイベントの種類であるエラーの種類が含まれます。 ここでは、できる**WUDFVerifierFailure**または**WUDFUnhandledException**します。 詳細については、次を参照してください。 [WER レポートでの UMDF メタデータにアクセスする](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-umdf-metadata-in-wer-reports)します。 UMDF の出力には、イベントの種類がある場合、エラー コードが含まれます**WUDFVerifierFailure**します。
 
-フレームワークのエラー ログの記録を表示する、[完全メモリ ダンプ](complete-memory-dump.md)、[カーネル メモリ ダンプ](kernel-memory-dump.md)、または[ライブのカーネル モード ターゲット](live-kernel-mode-targets.md)、試すこともできます、 [**! wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md)拡張機能。
+フレームワークのエラー ログの記録を表示する、[完全メモリ ダンプ](complete-memory-dump.md)、[カーネル メモリ ダンプ](kernel-memory-dump.md)、または[ライブのカーネル モード ターゲット](live-kernel-mode-targets.md)、試すこともできます、 [ **! wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md)拡張機能。
 
 **追加情報**
 
-実行中のトレース レコーダーには、ドライバーを有効にする方法については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。 ドライバーを WDF のデバッグの詳細については、次を参照してください。[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。 KMDF のデバッグ方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+実行中のトレース レコーダーには、ドライバーを有効にする方法については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers)します。 ドライバーを WDF のデバッグの詳細については、次を参照してください。[デバッグ WDF ドライバー](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)します。 KMDF のデバッグ方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**!wdfkd.wdflogdump**](-wdfkd-wdflogdump.md)
+[ **!wdfkd.wdflogdump**](-wdfkd-wdflogdump.md)
 
-[**!wdfkd.wdfsettraceprefix**](-wdfkd-wdfsettraceprefix.md)
+[ **!wdfkd.wdfsettraceprefix**](-wdfkd-wdfsettraceprefix.md)
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c9e585705bf02c00b12a35ddba7f7ef15998b479
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.openlocfilehash: eed7367fc820295939ad750c2bb16c2024a9ddfd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239805"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361753"
 ---
 # <a name="bug-check-0x74-badsystemconfiginfo"></a>バグ チェック 0x74:不適切な\_システム\_CONFIG\_情報
 
@@ -26,7 +26,7 @@ ms.locfileid: "59239805"
 不適切な\_システム\_CONFIG\_情報のバグ チェックが 0x00000074 の値を持ちます。 このバグ チェックでは、レジストリにエラーがあることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="badsystemconfiginfo-parameters"></a>不適切な\_システム\_CONFIG\_情報パラメーター
@@ -158,7 +158,7 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 -   インストール メディアを使用して、復元またはお使いの PC をリセットします。
 -   インストール メディアを使用して、Windows を再インストールします。
 
-詳細については、次を参照してください。 [Windows 10 での回復オプション](https://windows.microsoft.com/windows-10/windows-10-recovery-options#)します。
+詳細については、次を参照してください。 [Windows 10 での回復オプション](https://support.microsoft.com/help/12415/windows-10-recovery-options#)します。
 
 このサポートの記事では、このバグ チェック コードについて説明します。[エラー 0x74:Bad_system_config_info](https://support.microsoft.com/en-us/help/4028653/windows-error-0x74-badsystemconfiginfo)
 

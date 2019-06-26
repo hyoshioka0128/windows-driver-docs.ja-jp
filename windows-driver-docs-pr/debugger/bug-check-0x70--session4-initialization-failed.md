@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c52890a81a44cb25c4562becb26d400cca099663
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91b7e53567d89bd589e1d7abc746c89cbef1dc8f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367421"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361764"
 ---
 # <a name="bug-check-0x70-session4initializationfailed"></a>バグ チェック 0x70:SESSION4\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367421"
 SESSION4\_初期化\_失敗のバグ チェックが 0x00000070 の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="session4initializationfailed-parameters"></a>SESSION4\_初期化\_FAILED パラメーター

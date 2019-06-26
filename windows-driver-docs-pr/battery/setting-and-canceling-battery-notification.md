@@ -11,12 +11,12 @@ keywords:
 - バッテリの通知を停止しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e00cadc51bb62c4a3456c4d5a51b5f0d2121494f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 981e34f9f4f919806cb4ce501be235697f0fc237
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335049"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364733"
 ---
 # <a name="setting-and-canceling-battery-notification"></a>バッテリ通知の設定とキャンセル
 
@@ -24,7 +24,7 @@ ms.locfileid: "63335049"
 ## <span id="ddk_setting_and_canceling_battery_notification_dg"></span><span id="DDK_SETTING_AND_CANCELING_BATTERY_NOTIFICATION_DG"></span>
 
 
-Miniclass ドライバーを提供、 [ *BatteryMiniSetStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536277)ルーチンのクラス ドライバーは、特定の状況の通知を要求できるようにします。 ルーチンは、次のように宣言されます。
+Miniclass ドライバーを提供、 [ *BatteryMiniSetStatusNotify* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback)ルーチンのクラス ドライバーは、特定の状況の通知を要求できるようにします。 ルーチンは、次のように宣言されます。
 
 ```cpp
 typedef
@@ -36,13 +36,13 @@ NTSTATUS
     );
 ```
 
-*コンテキスト*パラメーター miniclass ドライバーによって割り当てられ、バッテリのクラス ドライバーに渡されるコンテキスト領域へのポインターは、\_ミニポート\_でデバイスの初期化情報構造体。 *BatteryTag*パラメーターは、値によって以前返さ[ *BatteryMiniQueryTag*](https://msdn.microsoft.com/library/windows/hardware/ff536275)します。
+*コンテキスト*パラメーター miniclass ドライバーによって割り当てられ、バッテリのクラス ドライバーに渡されるコンテキスト領域へのポインターは、\_ミニポート\_でデバイスの初期化情報構造体。 *BatteryTag*パラメーターは、値によって以前返さ[ *BatteryMiniQueryTag*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)します。
 
-*BatteryNotify*パラメーターには、バッテリ電源の状態、およびバッテリの許容可能な容量の範囲を定義する ULONG 値のペアを示すフラグのセットが含まれています。 Miniclass ドライバーを呼び出す必要があります、バッテリ電源が指定した条件を満たしていませんまたは容量が指定された範囲より上または下、 [ **BatteryClassStatusNotify**](https://msdn.microsoft.com/library/windows/hardware/ff536269)します。
+*BatteryNotify*パラメーターには、バッテリ電源の状態、およびバッテリの許容可能な容量の範囲を定義する ULONG 値のペアを示すフラグのセットが含まれています。 Miniclass ドライバーを呼び出す必要があります、バッテリ電源が指定した条件を満たしていませんまたは容量が指定された範囲より上または下、 [ **BatteryClassStatusNotify**](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassstatusnotify)します。
 
 *BatteryMiniSetStatusNotify*状態を返す必要があります\_いない\_条件またはこのバッテリの正しいと判断できないトリガー値をすべてサポートします。
 
-クラスのドライバーの呼び出し、 [ *BatteryMiniDisableStatusNotify* ](https://msdn.microsoft.com/library/windows/hardware/ff536272) BatteryMiniSetStatusNotify によって以前に要求されたバッテリの状態変更の通知をキャンセルするルーチン。 このルーチンは、次のように宣言されます。
+クラスのドライバーの呼び出し、 [ *BatteryMiniDisableStatusNotify* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_disable_status_notify_callback) BatteryMiniSetStatusNotify によって以前に要求されたバッテリの状態変更の通知をキャンセルするルーチン。 このルーチンは、次のように宣言されます。
 
 ```cpp
 typedef

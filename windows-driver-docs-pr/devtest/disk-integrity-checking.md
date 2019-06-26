@@ -8,12 +8,12 @@ keywords:
 - 記憶域精度 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f7a4deb4a694ff39be7d0d2b694e9a1aad8dea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 228d00b26760a4215bf9dfa594ade4a8a33b4ea7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329680"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360358"
 ---
 # <a name="disk-integrity-checking"></a>ディスク整合性チェック
 
@@ -31,7 +31,7 @@ Driver Verifier のディスクの整合性チェック機能は、ディスク�
 
 Driver Verifier は、監視を開始 Windows とそのドライバーが読み込まれるとすぐにすべての読み取りし、書き込みアクションはこれらのドライブに加えられました。 Driver Verifier は、各セクターにアクセスし、この値を保存するには、CRC (巡回冗長検査) チェックサム値を計算します。 次回このセクターにアクセスすると、Driver Verifier は、このチェックサムが再計算され、以前の値を比較します。
 
-チェックサム値が変更された場合は、ディスクの整合性に問題が--欠陥のある情報は、またはディスクのメディアは、最後のアクセスが行われた後に、その内容に変更が読み取りのいずれかの操作を返します。 このような場合は、Driver Verifier の問題のバグは、パラメーター 1 と等しい 0xA0 0xC4 を確認します。 その他のパラメーターは、以下のデバイスと、エラーが発生したセクターのデバイス オブジェクトを使用して、要求を行う IRP を特定します。 詳細については、次を参照してください。 [**バグ チェック 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (ドライバー\_VERIFIER\_検出\_違反)。
+チェックサム値が変更された場合は、ディスクの整合性に問題が--欠陥のある情報は、またはディスクのメディアは、最後のアクセスが行われた後に、その内容に変更が読み取りのいずれかの操作を返します。 このような場合は、Driver Verifier の問題のバグは、パラメーター 1 と等しい 0xA0 0xC4 を確認します。 その他のパラメーターは、以下のデバイスと、エラーが発生したセクターのデバイス オブジェクトを使用して、要求を行う IRP を特定します。 詳細については、次を参照してください。 [**バグ チェック 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (ドライバー\_VERIFIER\_検出\_違反)。
 
 ### <a name="span-idperformanceissuesspanspan-idperformanceissuesspanperformance-issues"></a><span id="performance_issues"></span><span id="PERFORMANCE_ISSUES"></span>パフォーマンスの問題
 

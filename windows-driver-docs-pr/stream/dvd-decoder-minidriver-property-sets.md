@@ -4,12 +4,12 @@ description: DVD デコーダー ミニドライバーのプロパティ セッ�
 ms.assetid: c24685bd-ea20-4cc2-b419-feb1fa2ea03e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 195d09866ce1ee09d51bfbccd69e4d8f3fca2998
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0296cc1724e547ef9039ae925860a7663ae159c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363962"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358428"
 ---
 # <a name="dvd-decoder-minidriver-property-sets"></a>DVD デコーダー ミニドライバーのプロパティ セット
 
@@ -48,7 +48,7 @@ ms.locfileid: "63363962"
 
     プロパティの値を持つし、この値の型は、プロパティによって異なります。 たとえば、オンまたはオフ----だけ 2 つの状態のいずれかの可能性のあるプロパティには、ブール値を通常があります。 ULONG 値 0 の整数値を 0 xffffffff にことが前提としているプロパティがあります。 複雑なプロパティは、配列や構造体の値があります。
 
-プロパティ記述子と上記のプロパティ値は、記載されているインスタンス仕様および操作データのバッファーのプロパティに固有のバージョン[KS プロパティ、イベント、およびメソッド](https://msdn.microsoft.com/library/windows/hardware/ff567673)します。
+プロパティ記述子と上記のプロパティ値は、記載されているインスタンス仕様および操作データのバッファーのプロパティに固有のバージョン[KS プロパティ、イベント、およびメソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)します。
 
 プロパティ要求は、次のフラグのいずれかの関数を使用して、プロパティに対して実行される操作を指定します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "63363962"
 
 -   KSPROPERTY\_型\_設定
 
-フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 サポートされるかどうか、*取得*と*設定*操作は、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティは、取得操作が現在の設定を読み取るために役立つ可能性もが、設定操作のみを必要があります。 DVD デコーダーのプロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。 [KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。
+フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 サポートされるかどうか、*取得*と*設定*操作は、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティは、取得操作が現在の設定を読み取るために役立つ可能性もが、設定操作のみを必要があります。 DVD デコーダーのプロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。 [KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。
 
 プロパティは、クエリまたはストリームの側面を変更します。 DVD デコーダーでは、いくつかのプロパティ セットが使用されます。 このトピックで説明したプロパティ セットにさらに設定 DVD 著作権保護プロパティをサポートしてすべての DVD デコーダーの入力ストリーム
 

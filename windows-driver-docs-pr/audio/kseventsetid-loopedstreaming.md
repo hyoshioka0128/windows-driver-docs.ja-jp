@@ -6,19 +6,19 @@ keywords:
 - KSEVENTSETID_LoopedStreaming
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 587158e7bee784222efa0bb8d0ae1e3d8ba14a2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39ee5d32aea060207605cbaafd9c484e98007ebe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359790"
 ---
 # <a name="kseventsetidloopedstreaming"></a>KSEVENTSETID\_LoopedStreaming
 
 
 このイベントのセットは、システム内部使用のみのものです。
 
-`KSEVENTSETID_LoopedStreaming`イベント セットを使用するオーディオ ストリーム内のイベント バッファーをループする位置を定義します。 ループのバッファーが型のオーディオ ストリームのデータ バッファー [ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://msdn.microsoft.com/library/windows/hardware/ff563381)します。 位置イベントを介して、クライアントは、オーディオ ストリームがループのバッファー内の指定位置に達すると、ドライバーから通知を受信できます。
+`KSEVENTSETID_LoopedStreaming`イベント セットを使用するオーディオ ストリーム内のイベント バッファーをループする位置を定義します。 ループのバッファーが型のオーディオ ストリームのデータ バッファー [ **KSINTERFACE\_標準\_るーぷさいせいぼたん\_ストリーミング**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming)します。 位置イベントを介して、クライアントは、オーディオ ストリームがループのバッファー内の指定位置に達すると、ドライバーから通知を受信できます。
 
 Microsoft Windows Server 2003、Windows XP、Windows 2000、Windows Me、Windows 98 で、このイベント セット用のドライバー サポートを実装する唯一のシステム コンポーネントは、KMixer および PortCls (Kmixer.sys および Portcls.sys)。 DirectSound (Dsound.dll) は、このイベントをクライアントとして設定を使用する唯一のシステム コンポーネントです。 通常、カスタムのオーディオ ドライバーでは、このイベントのセットのサポートは実装されません。
 

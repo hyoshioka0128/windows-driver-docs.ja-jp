@@ -15,17 +15,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99b548b1e34fcdd0f28195eb97bbb38bb1bd35c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b26129dcbbdafe2b09690ae682e42975c3954d2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332433"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360474"
 ---
 # <a name="ksrtaudiobufferproperty-structure"></a>KSRTAUDIO\_バッファー\_プロパティ構造体
 
 
-KSRTAUDIO\_バッファー\_プロパティ構造は、バッファーの基本アドレスを要求したバッファーのサイズを追加します、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 この構造を使用してオーディオ バッファーの割り当てを要求するクライアントによって使用される[ **KSPROPERTY\_RTAUDIO\_バッファー**](ksproperty-rtaudio-buffer.md)します。
+KSRTAUDIO\_バッファー\_プロパティ構造は、バッファーの基本アドレスを要求したバッファーのサイズを追加します、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 この構造を使用してオーディオ バッファーの割り当てを要求するクライアントによって使用される[ **KSPROPERTY\_RTAUDIO\_バッファー**](ksproperty-rtaudio-buffer.md)します。
 
 <a name="syntax"></a>構文
 ------
@@ -38,7 +38,7 @@ typedef struct {
 } KSRTAUDIO_BUFFER_PROPERTY, *PKSRTAUDIO_BUFFER_PROPERTY;
 ```
 
-<a name="members"></a>メンバー
+<a name="members"></a>Members
 -------
 
 **プロパティ**  
@@ -48,7 +48,7 @@ typedef struct {
 必要なバッファーのベース アドレスを指定します。 このパラメーターに設定されているクライアントは、ベース アドレスを指定しない限り、 **NULL**します。
 
 **RequestedBufferSize**  
-(バイト単位) には、必要なバッファー サイズを指定します。 ドライバーが割り当てられるバッファーの実際のサイズを返します、 [ **KSRTAUDIO\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff537493)から返される構造体。
+(バイト単位) には、必要なバッファー サイズを指定します。 ドライバーが割り当てられるバッファーの実際のサイズを返します、 [ **KSRTAUDIO\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)から返される構造体。
 
 <a name="remarks"></a>注釈
 -------

@@ -11,12 +11,12 @@ keywords:
 - WDK MSPlot キーワード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c0bd65790530946f0874ef3a197175b81aad2c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a030e9d66d6bdbead4d6ed7e15cf34a12b3ca434
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380688"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360698"
 ---
 # <a name="pcd-source-file-format"></a>PCD ソース ファイル形式
 
@@ -64,7 +64,7 @@ ColorCap {1}
 </tr>
 <tr class="odd">
 <td><p><strong>COLORINFO</strong></p></td>
-<td><p>30 の内容を表す値の DWORD のサイズ、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff539441" data-raw-source="[&lt;strong&gt;COLORINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539441)"> <strong>COLORINFO</strong> </a>構造体。</p></td>
+<td><p>30 の内容を表す値の DWORD のサイズ、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_colorinfo" data-raw-source="[&lt;strong&gt;COLORINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_colorinfo)"> <strong>COLORINFO</strong> </a>構造体。</p></td>
 <td><p></p>
 { {6810,3050,0}、//xr、年、年{2260,6550,0}、//xg yg、Yg {1810,500,0}、//xb、yb、Yb {2000,2450,0}、//クロスカントリー yc、Yc {5210,2100,0}、//xm ym、Ym {4750,5100,0}、//xy、yy、Yy {3324,3474,10000}、//-xw オプション、yw、Yw 10000,10000,10000、//RGB ガンマ 1422,952、//M/CY/C 787,495、/C/分/324,248 の Y/分//M/Y/Y, C}</td>
 </tr>
@@ -81,7 +81,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>DevicePelsDPI</strong></p></td>
-<td><p>1 つの DWORD のサイズを表す値、デバイスの有効な DPI。 詳細については、次を参照してください。、 <strong>upDevicePelsDPI</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>します。</p></td>
+<td><p>1 つの DWORD のサイズを表す値、デバイスの有効な DPI。 詳細については、次を参照してください。、 <strong>upDevicePelsDPI</strong>のメンバー <a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)"> <strong>GDIINFO</strong></a>します。</p></td>
 <td><p>既定値は 0、値を計算する GDI の原因です。</p></td>
 </tr>
 <tr class="odd">
@@ -103,7 +103,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>InitString</strong></p></td>
-<td><p>ドライバーからプリンターに送信されたコマンドを表す C 言語文字列を引用符で囲まれた<a href="https://msdn.microsoft.com/library/windows/hardware/ff556298" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556298)"> <strong>DrvStartPage</strong> </a>関数。</p></td>
+<td><p>ドライバーからプリンターに送信されたコマンドを表す C 言語文字列を引用符で囲まれた<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartpage" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartpage)"> <strong>DrvStartPage</strong> </a>関数。</p></td>
 <td><p>NULL 文字列です。</p></td>
 </tr>
 <tr class="odd">
@@ -245,7 +245,7 @@ ColorCap {1}
 
 それぞれのペンの説明には、次の形式が必要です。
 
-**PlotPenData {**<em>数のペン</em>**、** <em>色</em>**}**
+**PlotPenData {** <em>数のペン</em> **、** <em>色</em> **}**
 
 場所*ペン番号*ペンのスロットの数を指定および*色*pc\_IDX\_-色の識別子のプレフィックスします。 以下に例のペンの説明。
 
@@ -259,7 +259,7 @@ PlotPenData {3, PC_IDX_RED}
 
 各フォームの説明には、次の形式が必要です。
 
-**FormInfo {"**<em>説明を形成</em>**"、** <em>幅</em>**、** <em>長さ</em>**、** <em>左余白</em>**、** <em>上余白</em>**、** <em>右余白</em> **、** <em>下余白</em>**}**
+**FormInfo {"** <em>説明を形成</em> **"、** <em>幅</em> **、** <em>長さ</em> **、** <em>左余白</em> **、** <em>上余白</em> **、** <em>右余白</em> **、** <em>下余白</em> **}**
 
 場所*フォーム説明*、フォームを説明する文字列は、*幅*と*長さ*1/1000 回 mm 単位で、フォームのサイズを指定し、1/1000 回 mm の余白が指定されても単位です。 次は、3 つの例に示します。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afe35e182fc0d7c3d31d0c7bd630a7d8c91026b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8c6064e8996cf86f6e0c9ec6c6ba139c1ada0ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366110"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360165"
 ---
 # <a name="kspropertymediaseekingavailable"></a>KSPROPERTY\_MEDIASEEKING\_利用可能
 
@@ -54,7 +54,7 @@ KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現
 <td><p>X</p></td>
 <td><p>フィルター</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565178" data-raw-source="[&lt;strong&gt;KSPROPERTY_MEDIAAVAILABLE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565178)"><strong>KSPROPERTY_MEDIAAVAILABLE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_mediaavailable" data-raw-source="[&lt;strong&gt;KSPROPERTY_MEDIAAVAILABLE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_mediaavailable)"><strong>KSPROPERTY_MEDIAAVAILABLE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ KSPROPERTY\_MEDIASEEKING\_利用可能なプロパティをフィルターで現
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_MEDIAAVAILABLE**](https://msdn.microsoft.com/library/windows/hardware/ff565178)
+[**KSPROPERTY\_MEDIAAVAILABLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_mediaavailable)
 
 [KSPROPSETID\_MediaSeeking](kspropsetid-mediaseeking.md)
 

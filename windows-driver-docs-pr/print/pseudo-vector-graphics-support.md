@@ -8,12 +8,12 @@ keywords:
 - nonvector グラフィックス デバイス WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d139ccde5437e1ea3d0f27d7ac9ca863ecb8ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90582e540cba9e034bc1f818131871859c66c5b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372444"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358461"
 ---
 # <a name="pseudo-vector-graphics-support"></a>擬似ベクトル グラフィックス サポート
 
@@ -25,7 +25,7 @@ True のベクター グラフィックスをサポートしていないデバ�
 
 この機能からメリットを得る、nonvector グラフィックス デバイスのミニドライバーは CmdRectBlackFill コマンドをサポートするためだけ必要があります。 この機能が無効になっているときに、**印刷の最適化**機能、 **[詳細設定]** プリンターのプロパティ ページのタブがになっています。
 
-Pseudovector のグラフィックス機能への呼び出しをインターセプトする[ **DrvBitBlt**](https://msdn.microsoft.com/library/windows/hardware/ff556180)、 [ **DrvStrokePath**](https://msdn.microsoft.com/library/windows/hardware/ff556316)、および[ **DrvLineTo**](https://msdn.microsoft.com/library/windows/hardware/ff556245)が solid 黒の四角形または垂直方向または水平方向の線を描画するかどうかを決定します。 Unidrv (黒一色は、複雑なクリッピングを持たないおよび現在の変換先の bits を使用して ROP を使用しないもの) 有効な四角形として描画する図認識されると、表面に描画されているのではなく四角形配列に格納されます。
+Pseudovector のグラフィックス機能への呼び出しをインターセプトする[ **DrvBitBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvbitblt)、 [ **DrvStrokePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)、および[ **DrvLineTo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto)が solid 黒の四角形または垂直方向または水平方向の線を描画するかどうかを決定します。 Unidrv (黒一色は、複雑なクリッピングを持たないおよび現在の変換先の bits を使用して ROP を使用しないもの) 有効な四角形として描画する図認識されると、表面に描画されているのではなく四角形配列に格納されます。
 
 Pseudovector グラフィック機能のにおける最も難しい部分は、以前描画オブジェクトの上に描画する必要がありますオブジェクトによって発生 z オーダーの問題を回避するは。 上のオブジェクトが消去または黒の四角形の一部を上書きする必要があります。 場合は黒の四角形は、デバイスに既にダウンロードされているが、後で描画オブジェクト システム画面可能性がありますは描画されません正しく。
 

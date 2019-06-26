@@ -4,12 +4,12 @@ description: Driver Verifier は、Windows が Windows 2000 以降のすべて�
 ms.assetid: EAC30108-F8A2-4914-9218-2E0672982B7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 975313589684c454e94be69c6004fae14e42bdd2
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 5bd2dd0a08ced9d18b32cab9ea665b61f956d37f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106407"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360344"
 ---
 # <a name="driver-verifier-whats-new"></a>ドライバーの検証ツール: 新機能
 
@@ -32,12 +32,12 @@ ms.locfileid: "65106407"
 
 Windows 10 以降、ドライバーの検証ツールには、次のテクノロジ用の新しいドライバー検証規則が含まれています。
 
-* 新しい[オーディオ ドライバーの規則](https://msdn.microsoft.com/library/windows/hardware/dn906757)
-* 新しい [AVStream ドライバーの規則](https://msdn.microsoft.com/library/windows/hardware/dn906758)
-* 4 つの新しい [KMDF ドライバーの規則](https://msdn.microsoft.com/library/windows/hardware/ff551709)
-* 3 つの新しい [NDIS ドライバーの規則](https://msdn.microsoft.com/library/windows/hardware/ff551713)
+* 新しい[オーディオ ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+* 新しい [AVStream ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+* 4 つの新しい [KMDF ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+* 3 つの新しい [NDIS ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-## <a name="driver-verifier-in-windows-8-1-updated-june-17-2013"></a>Windows 8-1 の driver Verifier (*更新します。2013 年 6 月 17 日、*)
+## <a name="driver-verifier-in-windows-8-1-updated-june-17-2013"></a>Windows 8-1 の driver Verifier (*更新します。2013 年 6 月 17 日、* )
 
 Windows 8.1 以降では、Driver Verifier には、エラーを検出するための 4 つの新しいオプションが導入されています。
 
@@ -47,8 +47,8 @@ Windows 8.1 以降では、Driver Verifier には、エラーを検出するた�
 
 * [カーネル同期遅延ファジー テスト](kernel-synchronization-delay-fuzzing.md)オプションは、ドライバーの同時実行のバグを検出するためにスレッド スケジュールをランダム化します。
 
-* [VM switch 検証](vm-switch-verification.md)オプション内で実行されるフィルター ドライバー (拡張可能スイッチの拡張機能) の監視、 [HYPER-V 拡張可能スイッチ](https://msdn.microsoft.com/library/windows/hardware/hh598161)します。
-* デバッガーの新しい拡張機能: [ **! ruleinfo**](https://msdn.microsoft.com/library/windows/hardware/dn265374)
+* [VM switch 検証](vm-switch-verification.md)オプション内で実行されるフィルター ドライバー (拡張可能スイッチの拡張機能) の監視、 [HYPER-V 拡張可能スイッチ](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch)します。
+* デバッガーの新しい拡張機能: [ **! ruleinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)
 
 ## <a name="driver-verifier-in-windows-8-updated-october-20-2012"></a>Windows 8 の driver Verifier (*更新します。2012 年 10 月 20 日*)
 
@@ -79,9 +79,9 @@ Windows 7 では、Driver Verifier を一般的なドライバーのバグのよ
 
 Windows 7 でドライバーの検証ツールでは、キューに置かれたスピン ロックのチェック、これらのチェックでは、Windows の以前のバージョンのスピンロックに提供されるようになります。 これらのチェックを以下に示します。
 
-* などの操作、割り込み要求レベル (IRQL) を発生させる必要があります値を確認する[ **KeAcquireInStackQueuedSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff551899)、実際には、IRQL の値の削減はできません。
+* などの操作、割り込み要求レベル (IRQL) を発生させる必要があります値を確認する[ **KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))、実際には、IRQL の値の削減はできません。
 
-* などの操作を IRQL を削減する必要があります値を確認する[ **KeReleaseInStackQueuedSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553130)は、IRQL の値は実際に発生していません。
+* などの操作を IRQL を削減する必要があります値を確認する[ **KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock)は、IRQL の値は実際に発生していません。
 
 * トリミングのシステム プロセスのワーキング セット場合、[強制 IRQL 検査](force-irql-checking.md)オプションが有効の IRQL をディスパッチする生成されている場合\_レベル以上に設定すると、中にページング可能なメモリへの参照を公開するために、ドライバーは、管理者特権での IRQL で行われています。
 
@@ -91,23 +91,23 @@ Windows 7 でドライバーの検証ツールでは、キューに置かれた�
 
 * スピン ロックのアドレスとして使用されるユーザー モード仮想アドレスなどの明らかに不適切なポインター値を確認しています。
 
-* Driver Verifier の IRQL ログには、IRQL の遷移を記録します。 使用する場合、この情報が表示されます、 **! verifier 8** Windows デバッガーの拡張機能。 参照してください[ **! verifier**](https://msdn.microsoft.com/library/windows/hardware/ff565591)します。
+* Driver Verifier の IRQL ログには、IRQL の遷移を記録します。 使用する場合、この情報が表示されます、 **! verifier 8** Windows デバッガーの拡張機能。 参照してください[ **! verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)します。
 
 ## <a name="additional-debugging-information"></a>追加のデバッグ情報
 
 Windows 7 では、Driver Verifier は、デバッグに役立つ次の追加情報を提供します。
 
-最近の呼び出しの順にスタック トレースとログがある[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)と[ **KeLeaveCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552964)からドライバーを確認します。 使用して、ログの内容が表示されます、 **! verifier 0x200**デバッガー Windows デバッガーの拡張機能。 この情報は、スレッドが予期せずクリティカル領域で実行されているまたはクリティカル領域が既にままをしようとしてが理解する場合に便利です。
+最近の呼び出しの順にスタック トレースとログがある[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)と[ **KeLeaveCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)からドライバーを確認します。 使用して、ログの内容が表示されます、 **! verifier 0x200**デバッガー Windows デバッガーの拡張機能。 この情報は、スレッドが予期せずクリティカル領域で実行されているまたはクリティカル領域が既にままをしようとしてが理解する場合に便利です。
 
-追加情報を表示することができます、 [Force 保留中の I/O 要求](force-pending-i-o-requests.md)ログを使用して、 **! verifier 0x40**デバッガー拡張機能。 Windows の以前のバージョンでは、ログには、Driver Verifier は、保留状態の場合に強制する各 IRP の 1 つのスタック トレースが含まれています。 これは、時間からスタック トレースと[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)強制 IRP の保留中の最初に呼び出されました。 Windows 7 では、強制的に保留中の IRP ごとに 2 より可能性がある詳細は、少なくとも 2 つのログ エントリがあります。
+追加情報を表示することができます、 [Force 保留中の I/O 要求](force-pending-i-o-requests.md)ログを使用して、 **! verifier 0x40**デバッガー拡張機能。 Windows の以前のバージョンでは、ログには、Driver Verifier は、保留状態の場合に強制する各 IRP の 1 つのスタック トレースが含まれています。 これは、時間からスタック トレースと[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)強制 IRP の保留中の最初に呼び出されました。 Windows 7 では、強制的に保留中の IRP ごとに 2 より可能性がある詳細は、少なくとも 2 つのログ エントリがあります。
 
-* Driver Verifier が保留中に強制する IRP を選択するときにスタック トレース。 Driver Verifier がいくつかの確認済みのドライバーのいずれかを呼び出すと、保留中の強制する Irp [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
-* それぞれのスタック トレース[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)が完成したら、検証済みのドライバーに達する前に、強制 IRP の保留中の呼び出し。 1 つ以上**IoCompleteRequest** 、ドライバーのいずれかその完了ルーチンからの完了を一時的に停止できして呼び出すことによって再開できるため、同じ IRP の呼び出しが存在できる**IoCompleteRequest**もう一度です。
+* Driver Verifier が保留中に強制する IRP を選択するときにスタック トレース。 Driver Verifier がいくつかの確認済みのドライバーのいずれかを呼び出すと、保留中の強制する Irp [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
+* それぞれのスタック トレース[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)が完成したら、検証済みのドライバーに達する前に、強制 IRP の保留中の呼び出し。 1 つ以上**IoCompleteRequest** 、ドライバーのいずれかその完了ルーチンからの完了を一時的に停止できして呼び出すことによって再開できるため、同じ IRP の呼び出しが存在できる**IoCompleteRequest**もう一度です。
 
 IRQL 移行ログには、以上の有効なスタック トレースがあります。 使用してこのログが表示される **! verifier 8**します。 Windows バージョンの Windows 7 より前では、Driver Verifier は管理者特権での IRQL でこれらのスタック トレースの一部を記録しようできます。 そしては大きい IRQL の値が、スタック トレースをキャプチャできませんでした。 Windows 7 では、Driver Verifier は、これらのスタック トレースをキャプチャしようとは
 
-* IRQL を発生させる前に、検証済みのドライバーを呼び出すと[ **KeAcquireSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff551917)します。
-* 呼び出す、IRQL の値を下げた後と確認済みのドライバー [ **KeReleaseSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553145)します。
+* IRQL を発生させる前に、検証済みのドライバーを呼び出すと[ **KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)します。
+* 呼び出す、IRQL の値を下げた後と確認済みのドライバー [ **KeReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)します。
 
 この方法では、Driver Verifier これら IRQL 遷移のスタック トレースのキャプチャできます。
 
@@ -139,14 +139,14 @@ Driver Verifier は、Windows カーネル モード ドライバーとグラフ
 * スタックの切り替えの監視用の新しい自動チェック
 * DMA の検証 (HAL の検証とも呼ばれます)、デッドロックの検出、および SCSI 検証用の新しいドライバーの検証オプション
 * 「レベル 1」と「レベル 2」のテストを結合する I/O の検証の変更、強化された I/O の省略可能な検証テストします。
-* デバッガーの新しい拡張機能[ **! デッドロック**](https://msdn.microsoft.com/library/windows/hardware/ff562326)と[ **! dma**](https://msdn.microsoft.com/library/windows/hardware/ff562369)
+* デバッガーの新しい拡張機能[ **! デッドロック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)と[ **! dma**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-dma)
 * 新しいバグを確認します。0xE6 (ドライバー\_VERIFIER\_DMA\_違反) と 0xF1 (SCSI\_VERIFIER\_検出\_違反)
 * 既存のバグの追加のサブ コード 0xC4 および 0xC9 コードを確認します。
 
 ドライバー検証ツールの機能があります。
 
 * **新しい検証機能のコマンド ライン オプション**verifier.exe ユーティリティが新しいパラメーター、 *VolatileDriverList*で使用できる、 **/adddriver**キーワードに追加するドライバーの一覧を指定するには揮発性の設定。 *VolatileDriverList*で使用できる、 **/removedriver**キーワードを削除するドライバーの一覧を指定します。
-* **新規! verifier の拡張機能**新規[ **! verifier** ](https://msdn.microsoft.com/library/windows/hardware/ff565591)拡張機能が監視リソース不足または IRQL が発生したときに、追加のログ情報を表示し、スピン ロックします。 オンライン ヘルプも使用できます。
+* **新規! verifier の拡張機能**新規[ **! verifier** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)拡張機能が監視リソース不足または IRQL が発生したときに、追加のログ情報を表示し、スピン ロックします。 オンライン ヘルプも使用できます。
   * *フラグ*0x4 で設定が低リソース シミュレーション中にドライバーの検証ツールによって挿入エラーのログを表示
   * *フラグ*0x8 のセットが検証されているドライバーによって行われた最新の IRQL 変更のログを表示
   * 場合*フラグ*0x4 正確または 0x8 と等しい、数量のパラメーターをレコードまたは表示に含めるには、ログ エントリの数を指定します
@@ -157,4 +157,4 @@ Driver Verifier は、Windows カーネル モード ドライバーとグラフ
 
 * ドライバー検証ツール マネージャーのドライバー検証マネージャー オンライン ヘルプのオンライン ヘルプは、次の方法のいずれかで表示できます。
   * ドライバー検証マネージャー ウィンドウ内の項目を右クリックし **これは何ですか?** ポップアップ メニューから。
-  * 疑問符 () をクリックします (**でしょうか。**) ウィンドウの右上隅でドライバー検証マネージャー ウィンドウ内の項目を順にクリックします。
+  * 疑問符 () をクリックします (**でしょうか。** ) ウィンドウの右上隅でドライバー検証マネージャー ウィンドウ内の項目を順にクリックします。

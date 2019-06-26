@@ -13,12 +13,12 @@ keywords:
 - トレース メッセージのフォーマット ファイル WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c333d40e72be15337bf41e1beaf434403fcf6bc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a9ecf7d820cc494d13b75f9dc2e233c0f11f9e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391816"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360334"
 ---
 # <a name="tracefmt"></a>Tracefmt
 
@@ -57,7 +57,7 @@ Tracefmt (Tracefmt.exe) は、書式設定し、イベント トレース ログ
 
 Tracefmt で書式設定命令を使用して、[トレース メッセージの形式 (TMF) ファイル](trace-message-format-file.md)バイナリ トレース メッセージを人間が判読できる形式に変換します。 TMF ファイルまたはトレース プロバイダーのイメージ ファイルを提供し、ある Tracefmt TMF ファイルを作成できます。
 
-によって生成されたトレース イベントの書式を設定できます Tracefmt、 **TraceEvent**関数、およびトレースのメッセージによって生成された、 [ **WmiTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff565836)、 **TraceMessage**関数、または[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)マクロ。 詳細については、 **TraceEvent**と**TraceMessage**関数は、Windows SDK のドキュメントを参照してください。
+によって生成されたトレース イベントの書式を設定できます Tracefmt、 **TraceEvent**関数、およびトレースのメッセージによって生成された、 [ **WmiTraceMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmitracemessage)、 **TraceMessage**関数、または[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロ。 詳細については、 **TraceEvent**と**TraceMessage**関数は、Windows SDK のドキュメントを参照してください。
 
 このセクションの内容:
 

@@ -17,12 +17,12 @@ keywords:
 - KS WDK のピンのオーディオ、翻訳します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8cec89573b194e34114757b5bc49cd80ac5602
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2fb11d4223749d342f0bb0b07cdbbb63016bad2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359830"
 ---
 # <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>カーネル ストリーミング トポロジからオーディオ ミキサー API への変換
 
@@ -58,7 +58,7 @@ KS のマップ上の最初の 2 つの項目をミキサー行の送信先と�
 
 -   移行先ミキサー線は、デバイスに存在するストリームの転送先です。
 
-また、KS 用語では、このストリーム フロー方向を KS フィルターで pin を割り当てることでやや一貫性がありません。 暗証番号 (pin) の記述子を使用して、 [ **KSPIN\_データフロー** ](https://msdn.microsoft.com/library/windows/hardware/ff563532)方向を指定する列挙値。
+また、KS 用語では、このストリーム フロー方向を KS フィルターで pin を割り当てることでやや一貫性がありません。 暗証番号 (pin) の記述子を使用して、 [ **KSPIN\_データフロー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-kspin_dataflow)方向を指定する列挙値。
 
 -   シンクの暗証番号 (pin) を使用して、フィルターを入力するストリームが KSPIN 方向を\_データフロー\_in です。
 

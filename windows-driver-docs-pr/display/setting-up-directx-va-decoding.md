@@ -13,12 +13,12 @@ keywords:
 - デコードの WDK DirectX VA を画像します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11eddc11d46148060cdb8c0c35afbcbc4e9cce02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9b00f5c86a682745c2a1c853b57710c668d233a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339699"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365521"
 ---
 # <a name="setting-up-directx-va-decoding"></a>DirectX VA デコードの設定
 
@@ -28,9 +28,9 @@ ms.locfileid: "63339699"
 
 デコーダー アクセラレータで正常に動作するためには、デコーダーとアクセラレータを操作の 2 つの側面に設定する必要があります。
 
--   デコードするビデオ データ形式。 [ **DXVA\_ConnectMode** ](https://msdn.microsoft.com/library/windows/hardware/ff563138)構造を使用して形式を指定します。
+-   デコードするビデオ データ形式。 [ **DXVA\_ConnectMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_connectmode)構造を使用して形式を指定します。
 
--   ホストとアクセラレータ間のデータ交換に使用され、アクセラレータ上で、ホストとするが存在するプロセスを確立する形式を決定する構成。 この構成は、接続の構成を使用するには、各 DirectX VA 関数のネゴシエーションで確立されます (によって決定される、 [bDXVA\_Func](bdxva-func-variable.md)変数)。 [ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)構造体は、構成を指定します。
+-   ホストとアクセラレータ間のデータ交換に使用され、アクセラレータ上で、ホストとするが存在するプロセスを確立する形式を決定する構成。 この構成は、接続の構成を使用するには、各 DirectX VA 関数のネゴシエーションで確立されます (によって決定される、 [bDXVA\_Func](bdxva-func-variable.md)変数)。 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体は、構成を指定します。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - KSEVENTSETID_AudioControlChange
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 053b5d71edb2d567c02249a302c2a62be6d23fa9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c71db9e668db4dff29a62b63101ec5845c148a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333532"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359795"
 ---
 # <a name="kseventsetidaudiocontrolchange"></a>KSEVENTSETID\_AudioControlChange
 
@@ -19,7 +19,7 @@ ms.locfileid: "63333532"
 ## <span id="ddk_kseventsetid_audiocontrolchange_ks"></span><span id="DDK_KSEVENTSETID_AUDIOCONTROLCHANGE_KS"></span>
 
 
-`KSEVENTSETID_AudioControlChange`ミニポート ドライバーを検出したときにクライアントに通知するイベントのセットが使用される、[ハードウェア イベント](https://msdn.microsoft.com/library/windows/hardware/ff536405)ハードウェアのボリューム コントロール ノブ、ミュート スイッチ、または他の種類を手動で制御の変更があります。
+`KSEVENTSETID_AudioControlChange`ミニポート ドライバーを検出したときにクライアントに通知するイベントのセットが使用される、[ハードウェア イベント](https://docs.microsoft.com/windows-hardware/drivers/audio/hardware-events)ハードウェアのボリューム コントロール ノブ、ミュート スイッチ、または他の種類を手動で制御の変更があります。
 
 このセット内のイベント項目が KSEVENT として指定された\_オーディオ\_コントロール\_列挙の値を変更します。
 

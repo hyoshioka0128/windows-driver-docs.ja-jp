@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_START_AP_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b71a39ca9811b03a234e3afe89598b18bf9e1eae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3864d206eae6af8a7a5b1ea1917f8c4881e0e079
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330430"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362791"
 ---
 # <a name="wditlvstartapparameters"></a>WDI\_TLV\_開始\_AP\_パラメーター
 
 
-WDI\_TLV\_開始\_AP\_パラメーターがのパラメーターを含む TLV [OID\_WDI\_タスク\_開始\_AP](https://msdn.microsoft.com/library/windows/hardware/dn925964).
+WDI\_TLV\_開始\_AP\_パラメーターがのパラメーターを含む TLV [OID\_WDI\_タスク\_開始\_AP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap).
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -67,7 +67,7 @@ WDI\_TLV\_開始\_AP\_パラメーターがのパラメーターを含む TLV [O
 <tr class="even">
 <td>UINT8</td>
 <td>Windows 10 バージョン 1511、WDI バージョン 1.0.10 に追加されます。
-<p>MustUseSpecifiedChannels します。 このパラメーターは、AP がで指定されたチャネルでのみ開始するかどうかを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/dn925964" data-raw-source="[OID_WDI_TASK_START_AP](https://msdn.microsoft.com/library/windows/hardware/dn925964)">OID_WDI_TASK_START_AP</a>を持つパラメーターをタスク<a href="wdi-tlv-ap-band-channel.md" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](wdi-tlv-ap-band-channel.md)"> <strong>WDI_TLV_AP_BAND_CHANNEL</strong></a>します。 有効な値とは、0 および 1 です。 1 に設定されている場合、アジア太平洋は指定されたリストからのみ開始できます。 設定されていない場合は、一覧は、ファームウェアを選択するチャネルの推奨設定をするものでし、場合は、指定したチャネルのいずれかの AP を開始することはできません、別のチャネルを選択こと可能性があります。</p></td>
+<p>MustUseSpecifiedChannels します。 このパラメーターは、AP がで指定されたチャネルでのみ開始するかどうかを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap" data-raw-source="[OID_WDI_TASK_START_AP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap)">OID_WDI_TASK_START_AP</a>を持つパラメーターをタスク<a href="wdi-tlv-ap-band-channel.md" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](wdi-tlv-ap-band-channel.md)"> <strong>WDI_TLV_AP_BAND_CHANNEL</strong></a>します。 有効な値とは、0 および 1 です。 1 に設定されている場合、アジア太平洋は指定されたリストからのみ開始できます。 設定されていない場合は、一覧は、ファームウェアを選択するチャネルの推奨設定をするものでし、場合は、指定したチャネルのいずれかの AP を開始することはできません、別のチャネルを選択こと可能性があります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,7 +101,7 @@ WDI\_TLV\_開始\_AP\_パラメーターがのパラメーターを含む TLV [O
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WDI\_タスク\_開始\_アジア太平洋](https://msdn.microsoft.com/library/windows/hardware/dn925964)
+[OID\_WDI\_タスク\_開始\_アジア太平洋](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap)
 
  
 

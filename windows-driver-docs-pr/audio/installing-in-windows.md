@@ -8,12 +8,12 @@ keywords:
 - ポート クラス オーディオ アダプター WDK、システム コンポーネント
 ms.date: 10/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f81e2b9a783d30193dc83b271bfaf74eec515f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d74d0b559c939a3a23ee3ce097c6841fdfbc59c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333455"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359871"
 ---
 # <a name="installing-in-windows"></a>Windows でのインストール
 
@@ -26,7 +26,7 @@ INF のデバイス ドライバーのインストール」セクションの次
   Needs=KS.Registration, WDMAUDIO.Registration
 ```
 
-については、 **Include**と**必要がある**ディレクティブを参照してください[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)します。
+については、 **Include**と**必要がある**ディレクティブを参照してください[ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。
 
  
 

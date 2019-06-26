@@ -7,12 +7,12 @@ keywords:
 - BDA ミニドライバー WDK AVStream の初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e754275b219ff69618bff98b713bec62b681d213
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf05ce402aabcf70bfe9597826ea38fee6297d90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360472"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360683"
 ---
 # <a name="initializing-a-bda-minidriver"></a>BDA ミニドライバーの初期化
 
@@ -20,11 +20,11 @@ ms.locfileid: "63360472"
 
 
 
-BDA ミニドライバーは、その他の AVStream ミニドライバーに同様に初期化されます。 BDA ミニドライバーの DriverEntry 関数呼び出し、AVStream [ **KsInitializeDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff562683) BDA ミニドライバーのドライバーのオブジェクトを初期化します。 この呼び出しでは、BDA ミニドライバーはへのポインターを渡します。 を[ **KSDEVICE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff561691)を含めることができますが、デバイスの特性を指定します。
+BDA ミニドライバーは、その他の AVStream ミニドライバーに同様に初期化されます。 BDA ミニドライバーの DriverEntry 関数呼び出し、AVStream [ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver) BDA ミニドライバーのドライバーのオブジェクトを初期化します。 この呼び出しでは、BDA ミニドライバーはへのポインターを渡します。 を[ **KSDEVICE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_descriptor)を含めることができますが、デバイスの特性を指定します。
 
--   ポインターを[ **KSDEVICE\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff561693) BDA デバイス用のディスパッチ テーブルを含む構造体。 少なくとも BDA ミニドライバーを作成し、デバイスを起動しでこれらのルーチンを指定するルーチンを指定する必要があります、**追加**と**開始**、KSDEVICE のそれぞれのメンバー\_ディスパッチ構造体。 BDA ミニドライバーのルーチンを作成するデバイス クラスのメモリを割り当てへのポインターを参照する必要があります、 [ **KSDEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff561681) BDA デバイスにこのデバイス クラスの構造体。 BDA ミニドライバーの開始のルーチンでは、レジストリからデバイスに関する情報を取得、デバイスに関する情報を設定、および BDA サポート ライブラリを使用した静的なテンプレートの構造のグループを登録する必要があります。 参照してください[開始 BDA ミニドライバー](starting-a-bda-minidriver.md)詳細についてはします。
+-   ポインターを[ **KSDEVICE\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_dispatch) BDA デバイス用のディスパッチ テーブルを含む構造体。 少なくとも BDA ミニドライバーを作成し、デバイスを起動しでこれらのルーチンを指定するルーチンを指定する必要があります、**追加**と**開始**、KSDEVICE のそれぞれのメンバー\_ディスパッチ構造体。 BDA ミニドライバーのルーチンを作成するデバイス クラスのメモリを割り当てへのポインターを参照する必要があります、 [ **KSDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice) BDA デバイスにこのデバイス クラスの構造体。 BDA ミニドライバーの開始のルーチンでは、レジストリからデバイスに関する情報を取得、デバイスに関する情報を設定、および BDA サポート ライブラリを使用した静的なテンプレートの構造のグループを登録する必要があります。 参照してください[開始 BDA ミニドライバー](starting-a-bda-minidriver.md)詳細についてはします。
 
--   配列の[ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)構造体がこのデバイスでサポートされている個々 のフィルターの種類。 この構造体の型では、指定したフィルター ファクトリによって作成されたフィルターの特性について説明します。 BDA サポート ライブラリを使用しないように、BDA ミニドライバーを作成する場合は、この配列にこの型の構造体のメンバーを指定する必要があります (*Bdasup.lib*) BDA ミニドライバーのプロパティとメソッドを処理するために設定します。 BDA サポート ライブラリを使用するように、BDA ミニドライバーを作成する場合、BDA ミニドライバーは、呼び出す必要があります代わりに、 [ **BdaCreateFilterFactory** ](https://msdn.microsoft.com/library/windows/hardware/ff556438)フィルター ファクトリ記述子 (を追加する関数のサポートKSFILTER\_記述子構造体) デバイス。 参照してください[開始 BDA ミニドライバー](starting-a-bda-minidriver.md)詳細についてはします。
+-   配列の[ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)構造体がこのデバイスでサポートされている個々 のフィルターの種類。 この構造体の型では、指定したフィルター ファクトリによって作成されたフィルターの特性について説明します。 BDA サポート ライブラリを使用しないように、BDA ミニドライバーを作成する場合は、この配列にこの型の構造体のメンバーを指定する必要があります (*Bdasup.lib*) BDA ミニドライバーのプロパティとメソッドを処理するために設定します。 BDA サポート ライブラリを使用するように、BDA ミニドライバーを作成する場合、BDA ミニドライバーは、呼び出す必要があります代わりに、 [ **BdaCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatefilterfactory)フィルター ファクトリ記述子 (を追加する関数のサポートKSFILTER\_記述子構造体) デバイス。 参照してください[開始 BDA ミニドライバー](starting-a-bda-minidriver.md)詳細についてはします。
 
 次のコード スニペットでは、フィルター記述子の配列、BDA デバイスでは、および BDA デバイスの記述子にディスパッチ テーブルの例を示します。
 

@@ -4,12 +4,12 @@ description: 自動構成スキャン
 ms.assetid: 6904e216-3eb7-419f-a6ca-198defaeebe0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 196e56d6b468014450c3d12279a88e05459d5c2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 825fb1e22a27a119f392b3d2d70d1428bdf7db7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366763"
 ---
 # <a name="auto-configured-scanning"></a>自動構成スキャン
 
@@ -22,7 +22,7 @@ WIA スキャナー デバイス WIA アプリケーションを実行するこ�
 
 WIA 2.0 ミニドライバーは、シリアル、パラレル ポート、USB、SCSI、および IEEE 1394 のバスに接続するスキャナー、およびネットワークに接続された Web サービス スキャナーに接続するスキャナーを含め、WIA スキャナーのデバイスのすべての種類のスキャンを自動構成をサポートできます。
 
-Windows Vista では、Microsoft Web Services for Devices (WSD) スキャン クラス ドライバーには、スキャンの自動構成をサポートするカスタム ドライバー拡張機能が含まれています。 このドライバーは、Windows デバイス プロトコル (WDP) 1.0 のスキャナーを実装する WIA スキャナーのネットワーク接続されたデバイスのみのスキャンを自動構成を提供します。 Windows 7 では、WSD スキャン クラス ドライバーは、カスタム ドライバー拡張機能としての代わりに、前の段落で説明するよう、標準の機能としてスキャンを自動構成を実装します。 WSD スキャン クラス ドライバーの詳細については、次を参照してください。[デバイス用の Web サービスと WIA](wia-with-web-services-for-devices.md)します。 スキャナーの WDP の詳細については、次を参照してください。[スキャン サービス スキーマのデバイス用の Web サービス](https://msdn.microsoft.com/library/windows/hardware/ff547963)します。
+Windows Vista では、Microsoft Web Services for Devices (WSD) スキャン クラス ドライバーには、スキャンの自動構成をサポートするカスタム ドライバー拡張機能が含まれています。 このドライバーは、Windows デバイス プロトコル (WDP) 1.0 のスキャナーを実装する WIA スキャナーのネットワーク接続されたデバイスのみのスキャンを自動構成を提供します。 Windows 7 では、WSD スキャン クラス ドライバーは、カスタム ドライバー拡張機能としての代わりに、前の段落で説明するよう、標準の機能としてスキャンを自動構成を実装します。 WSD スキャン クラス ドライバーの詳細については、次を参照してください。[デバイス用の Web サービスと WIA](wia-with-web-services-for-devices.md)します。 スキャナーの WDP の詳細については、次を参照してください。[スキャン サービス スキーマのデバイス用の Web サービス](https://docs.microsoft.com/windows-hardware/drivers/image/scan-service--ws-scan--schema)します。
 
 ### <a name="examples"></a>使用例
 

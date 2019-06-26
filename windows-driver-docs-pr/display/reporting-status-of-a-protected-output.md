@@ -6,20 +6,20 @@ keywords:
 - OPM WDK の表示、保護されている出力のステータス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19b0af73f0c7a7b7ac6c2461cfcaf13c7e6da352
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81b6c7e0c32192f2867b2377cc7da4c0e80f2b02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359313"
 ---
 # <a name="reporting-status-of-a-protected-output"></a>保護されている出力の状態のレポート
 
 
-外部イベントには、コネクタに適用されるか、さらに、コネクタの種類は変更される保護の種類を変更できます。 ディスプレイのミニポート ドライバーは、ドライバーへの呼び出しを受信するたびに、OPM アプリケーションへのこれらのイベントを報告する必要があります、 [ **DxgkDdiOPMGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559725)または[ **DxgkDdiOPMGetCOPPCompatibleInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559720)関数。 ディスプレイのミニポート ドライバーがから、指定された状態フラグを返すことにより、次の外部イベントを報告する必要があります、 [ **DXGKMDT\_OPM\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff560930)列挙型でのみ、次に呼び出す*DxgkDdiOPMGetInformation*または*DxgkDdiOPMGetCOPPCompatibleInformation*イベントが発生した後。
+外部イベントには、コネクタに適用されるか、さらに、コネクタの種類は変更される保護の種類を変更できます。 ディスプレイのミニポート ドライバーは、ドライバーへの呼び出しを受信するたびに、OPM アプリケーションへのこれらのイベントを報告する必要があります、 [ **DxgkDdiOPMGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_opm_get_information)または[ **DxgkDdiOPMGetCOPPCompatibleInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_opm_get_copp_compatible_information)関数。 ディスプレイのミニポート ドライバーがから、指定された状態フラグを返すことにより、次の外部イベントを報告する必要があります、 [ **DXGKMDT\_OPM\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_status)列挙型でのみ、次に呼び出す*DxgkDdiOPMGetInformation*または*DxgkDdiOPMGetCOPPCompatibleInformation*イベントが発生した後。
 
 <span id="Connection_working_properly"></span><span id="connection_working_properly"></span><span id="CONNECTION_WORKING_PROPERLY"></span>接続が正常に動作  
-コンピューターと、ディスプレイ デバイス間の接続が正常に動作している場合、ディスプレイのミニポート ドライバーが、DXGKMDT を設定する必要があります\_OPM\_状態\_で通常の状態フラグ、 **ulStatusFlags**のメンバー、 [ **DXGKMDT\_OPM\_標準\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff560925)、 [ **DXGKMDT\_OPM\_実際\_出力\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff560840)、 [ **DXGKMDT\_OPM\_ACP\_AND\_CGMSA\_シグナリング**](https://msdn.microsoft.com/library/windows/hardware/ff560830)、または[ **DXGKMDT\_OPM\_接続\_HDCP\_デバイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff560854)構造体。
+コンピューターと、ディスプレイ デバイス間の接続が正常に動作している場合、ディスプレイのミニポート ドライバーが、DXGKMDT を設定する必要があります\_OPM\_状態\_で通常の状態フラグ、 **ulStatusFlags**のメンバー、 [ **DXGKMDT\_OPM\_標準\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_standard_information)、 [ **DXGKMDT\_OPM\_実際\_出力\_形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_actual_output_format)、 [ **DXGKMDT\_OPM\_ACP\_AND\_CGMSA\_シグナリング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_acp_and_cgmsa_signaling)、または[ **DXGKMDT\_OPM\_接続\_HDCP\_デバイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_connected_hdcp_device_information)構造体。
 
 <span id="Connection_integrity"></span><span id="connection_integrity"></span><span id="CONNECTION_INTEGRITY"></span>接続の整合性  
 コンピューターと、ディスプレイ デバイスが切断された場合、ディスプレイのミニポート ドライバーが、DXGKMDT を設定する必要があります\_OPM\_状態\_リンク\_状態フラグの紛失、 **ulStatusFlags**、DXGKMDT のメンバー\_OPM\_標準\_情報、DXGKMDT\_OPM\_実際\_出力\_形式、DXGKMDT\_OPM\_ACP\_AND\_CGMSA\_シグナル通知、または DXGKMDT\_OPM\_接続\_HDCP\_デバイス\_情報構造体.
@@ -31,9 +31,9 @@ ms.locfileid: "63383257"
 グラフィックス アダプターまたはアダプターのディスプレイのミニポート ドライバーの改ざんが発生した場合、ディスプレイのミニポート ドライバーが、DXGKMDT を設定する必要があります\_OPM\_状態\_改ざん\_で検出された状態フラグ**ulStatusFlags** 、DXGKMDT のメンバー\_OPM\_標準\_情報、DXGKMDT\_OPM\_実際\_出力\_書式設定、DXGKMDT\_OPM\_ACP\_AND\_CGMSA\_シグナル通知、または DXGKMDT\_OPM\_接続\_HDCP\_デバイス\_情報構造体。
 
 <span id="Revoked_HDCP_device"></span><span id="revoked_hdcp_device"></span><span id="REVOKED_HDCP_DEVICE"></span>失効した HDCP デバイス  
-失効した高帯域幅デジタル コンテンツの保護 (HDCP) デバイスが直接または間接的にコネクタに接続をディスプレイのミニポート ドライバーが、DXGKMDT を設定する必要があります HDCP が有効になっている場合場合\_OPM\_状態\_が無効です\_HDCP\_デバイス\_で接続されている状態フラグ、 **ulStatusFlags** 、DXGKMDT のメンバー\_OPM\_標準\_情報または DXGKMDT\_OPM\_実際\_出力\_形式構造体。 HDCP が有効でない場合、ドライバーでは、この状態フラグを設定する必要はありません。 ドライバーでは、この状態値を設定への呼び出しからのみ、 [ **DxgkDdiOPMGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559725) HDCP が有効かどうかを判断する関数。
+失効した高帯域幅デジタル コンテンツの保護 (HDCP) デバイスが直接または間接的にコネクタに接続をディスプレイのミニポート ドライバーが、DXGKMDT を設定する必要があります HDCP が有効になっている場合場合\_OPM\_状態\_が無効です\_HDCP\_デバイス\_で接続されている状態フラグ、 **ulStatusFlags** 、DXGKMDT のメンバー\_OPM\_標準\_情報または DXGKMDT\_OPM\_実際\_出力\_形式構造体。 HDCP が有効でない場合、ドライバーでは、この状態フラグを設定する必要はありません。 ドライバーでは、この状態値を設定への呼び出しからのみ、 [ **DxgkDdiOPMGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_opm_get_information) HDCP が有効かどうかを判断する関数。
 
-ディスプレイのミニポート ドライバーが、DXGKMDT へのポインターを返します\_OPM\_標準\_情報、DXGKMDT\_OPM\_実際\_出力\_形式、DXGKMDT\_OPM\_ACP\_AND\_CGMSA\_シグナル通知、または DXGKMDT\_OPM\_接続\_HDCP\_デバイス\_情報構造体、 **abRequestedInformation**のメンバー、 [ **DXGKMDT\_OPM\_要求された\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff560910)構造体。 DXGKMDT へのポインター\_OPM\_要求された\_によって情報が返される、 *RequestedInformation*パラメーターの*DxgkDdiOPMGetInformation*または*DxgkDdiOPMGetCOPPCompatibleInformation*します。
+ディスプレイのミニポート ドライバーが、DXGKMDT へのポインターを返します\_OPM\_標準\_情報、DXGKMDT\_OPM\_実際\_出力\_形式、DXGKMDT\_OPM\_ACP\_AND\_CGMSA\_シグナル通知、または DXGKMDT\_OPM\_接続\_HDCP\_デバイス\_情報構造体、 **abRequestedInformation**のメンバー、 [ **DXGKMDT\_OPM\_要求された\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_requested_information)構造体。 DXGKMDT へのポインター\_OPM\_要求された\_によって情報が返される、 *RequestedInformation*パラメーターの*DxgkDdiOPMGetInformation*または*DxgkDdiOPMGetCOPPCompatibleInformation*します。
 
 たとえば、2 つのメディア A と B の再生アプリケーション各アプリケーションは、OPM、ディスプレイ モニターにコンピューターを接続しているコネクタの HDCP 保護レベルを使用して制御します。 各アプリケーションは、独自の一意の保護された出力を制御します。 次回のどちらのアプリケーションを開始する場合は、コネクタが接続されていない、 *DxgkDdiOPMGetInformation*または*DxgkDdiOPMGetCOPPCompatibleInformation*要求を保護された出力に、ディスプレイのミニポート ドライバーは、DXGKMDT を返す必要があります\_OPM\_状態\_リンク\_失われた状態フラグ。
 

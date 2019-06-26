@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f03d89fdc91e77388418b182ac7200817091ff3
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: bf0381bc2a4925b6e48c7d4f59bc2e34c1fce5c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106383"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361976"
 ---
 # <a name="bug-check-bug-check-0x1d3-wfpinvalidoperation"></a>チェックのバグ チェック 0x1D3 をバグします。WFP_INVALID_OPERATION 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 WFP_INVALID_OPERATION のバグ チェックでは、0x000001D3 の値を持ちます。 これは、Windows フィルタ リング プラットフォームのコールアウトが無効な操作を実行することを示します。

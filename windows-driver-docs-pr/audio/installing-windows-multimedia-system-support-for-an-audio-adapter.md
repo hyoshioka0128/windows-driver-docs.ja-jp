@@ -10,12 +10,12 @@ keywords:
 - Windows のマルチ メディア サポート WDK オーディオ
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a01293d8d5ab3e25fc2f25abb68fdc28eda9729
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a94a890ba4b6c6ee43787fd880e16caa3940b331
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333433"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359867"
 ---
 # <a name="installing-windows-multimedia-system-support-for-an-audio-adapter"></a>オーディオ アダプター用の Windows マルチ メディア システム サポートのインストール
 
@@ -25,7 +25,7 @@ ms.locfileid: "63333433"
 
 INF の追加レジストリ セクションを作成または、システム レジストリのドライバー固有の情報を変更します。 PortCls オーディオ アダプターの追加レジストリ セクションには、アダプターを Windows のマルチ メディアのシステム コンポーネントにアクセスできるようにする情報が含まれています。
 
-次の例は、追加のレジストリ セクションで、XYZ-オーディオ-Device.AddReg に示されている、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)前の例 (を参照してください[ポート クラスのオーディオをインストールします。アダプター](installing-a-port-class-audio-adapter.md))。
+次の例は、追加のレジストリ セクションで、XYZ-オーディオ-Device.AddReg に示されている、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)前の例 (を参照してください[ポート クラスのオーディオをインストールします。アダプター](installing-a-port-class-audio-adapter.md))。
 
 ```cpp
   [XYZ-Audio-Device.AddReg]

@@ -11,12 +11,12 @@ keywords:
 - ストリーム コンテキストを初期化しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44a1abd821df5a21c48c29b0f0577fd6fa65efa4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a56d96061f2eef94ebe54ba4116adc6f1a767bfd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370844"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363544"
 ---
 # <a name="creating-a-per-stream-context"></a>ストリーム別コンテキストの作成
 
@@ -28,7 +28,7 @@ ms.locfileid: "63370844"
 
 ### <a name="span-idallocatingtheper-streamcontextspanspan-idallocatingtheper-streamcontextspanspan-idallocatingtheper-streamcontextspanallocating-the-per-stream-context"></a><span id="Allocating_the_Per-Stream_Context"></span><span id="allocating_the_per-stream_context"></span><span id="ALLOCATING_THE_PER-STREAM_CONTEXT"></span>Stream あたりのコンテキストの割り当てください。
 
-ストリーム コンテキストの構造体は、ページまたは非ページ プールから割り当てられることができます。 ストリーム コンテキストを割り当てるには、呼び出す[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)次の例に示すようにします。
+ストリーム コンテキストの構造体は、ページまたは非ページ プールから割り当てられることができます。 ストリーム コンテキストを割り当てるには、呼び出す[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)次の例に示すようにします。
 
 ```cpp
 contextSize = sizeof(SPY_STREAM_CONTEXT) + fileName.Length;
@@ -37,15 +37,15 @@ ctx = ExAllocatePoolWithTag(NonPagedPool,
                             MYLEGACYFILTER_CONTEXT_TAG);
 ```
 
-**注**  呼び出すことができない場合は、フィルターは、ページ プールからのストリーム コンテキスト構造体を割り当て、 [ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)からその完了ルーチンを作成します。 これは、IRQL のディスパッチの完了ルーチンを呼び出すことができるため\_レベル。
+**注**  呼び出すことができない場合は、フィルターは、ページ プールからのストリーム コンテキスト構造体を割り当て、 [ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)からその完了ルーチンを作成します。 これは、IRQL のディスパッチの完了ルーチンを呼び出すことができるため\_レベル。
 
  
 
 ### <a name="span-idinitializingtheper-streamcontextspanspan-idinitializingtheper-streamcontextspanspan-idinitializingtheper-streamcontextspaninitializing-the-per-stream-context"></a><span id="Initializing_the_Per-Stream_Context"></span><span id="initializing_the_per-stream_context"></span><span id="INITIALIZING_THE_PER-STREAM_CONTEXT"></span>Stream あたりのコンテキストを初期化しています
 
-ファイル システム フィルター ドライバー呼び出し[ **FsRtlInitPerStreamContext** ](https://msdn.microsoft.com/library/windows/hardware/ff546178)構造体のストリーム コンテキストを初期化します。 このルーチンは初期化、FSRTL\_1 秒あたり\_ストリーム\_context 構造体のコンテキストの一部です。 (構造体の残りの部分は、フィルター ドライバー固有です)。
+ファイル システム フィルター ドライバー呼び出し[ **FsRtlInitPerStreamContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlinitperstreamcontext)構造体のストリーム コンテキストを初期化します。 このルーチンは初期化、FSRTL\_1 秒あたり\_ストリーム\_context 構造体のコンテキストの一部です。 (構造体の残りの部分は、フィルター ドライバー固有です)。
 
-**注**  渡すか、フィルター ドライバーは、ファイル ストリームごとの 1 つだけのストリーム コンテキスト構造を作成する場合**NULL**の*InstanceId*パラメーターを[**FsRtlInitPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546178)します。
+**注**  渡すか、フィルター ドライバーは、ファイル ストリームごとの 1 つだけのストリーム コンテキスト構造を作成する場合**NULL**の*InstanceId*パラメーターを[**FsRtlInitPerStreamContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlinitperstreamcontext)します。
 
  
 

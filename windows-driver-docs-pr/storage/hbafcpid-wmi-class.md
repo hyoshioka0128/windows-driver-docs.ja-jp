@@ -4,12 +4,12 @@ description: HBAFCPID WMI クラス
 ms.assetid: 6b0d0f79-a7a8-4341-955b-2c3068936a1d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a11b0843b31e1d804c6e9ab47a0d26da778ede40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f51d8ff3f8e3d8aaf0cf613ffa2418cd8395902f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360218"
 ---
 # <a name="hbafcpid-wmi-class"></a>HBAFCPID WMI クラス
 
@@ -19,7 +19,7 @@ ms.locfileid: "63383095"
 
 T11 委員会をサポートする HBA ミニポート ドライバー*ファイバー チャネル HBA API*仕様では、HBAFCPID クラスを使用して、論理ユニットのファイバー チャネル プロトコル (FCP) 識別子を定義します。 FCP 識別子には、マシン上にある論理ユニットとアクセスできる、HBA ポートの名前を指定します。
 
-ミニポート ドライバーでは、この識別子を使用して、論理ユニットのオペレーティング システムを使用して論理ユニットを識別する情報および FCP 識別子の間のバインドを構築します。 この種類のバインドの詳細については、次を参照してください。 [ **HBAFCPBindingEntry**](https://msdn.microsoft.com/library/windows/hardware/ff556034)します。 ファイバー チャネル プロトコルの詳細については、T11 委員会を参照してください。 *dpANS scsi、ファイバー チャネル プロトコル*仕様。
+ミニポート ドライバーでは、この識別子を使用して、論理ユニットのオペレーティング システムを使用して論理ユニットを識別する情報および FCP 識別子の間のバインドを構築します。 この種類のバインドの詳細については、次を参照してください。 [ **HBAFCPBindingEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry)します。 ファイバー チャネル プロトコルの詳細については、T11 委員会を参照してください。 *dpANS scsi、ファイバー チャネル プロトコル*仕様。
 
 HBAFCPID クラスは次のように定義されている*Hbaapi.mof*:
 
@@ -34,7 +34,7 @@ class HBAFCPID {
 
 WMI ツール スイートによってコンパイルされるときに、このクラスの定義には、次のデータ構造が生成されます。
 
-[**HBAFCPID**](https://msdn.microsoft.com/library/windows/hardware/ff556038)
+[**HBAFCPID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpid)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

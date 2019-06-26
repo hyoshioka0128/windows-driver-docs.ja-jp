@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b62903f4dd287dc66296682f8169e6e2508dc517
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bc98430a37d5d886f515e679d2d4fb8d8c19aa8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342570"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362052"
 ---
 # <a name="bug-check-0x199-kernelstorageslotinuse"></a>バグ チェック 0x199:カーネル\_ストレージ\_スロット\_IN\_使用
 
@@ -26,7 +26,7 @@ ms.locfileid: "63342570"
 カーネル\_ストレージ\_スロット\_IN\_使用のバグ チェックが 0x00000199 の値を持ちます。 これは、これを使用して、オブジェクトがあるため、ストレージ スロットを解放することはできませんを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="kernelstorageslotinuse-parameters"></a>カーネル\_ストレージ\_スロット\_IN\_パラメーターを使用

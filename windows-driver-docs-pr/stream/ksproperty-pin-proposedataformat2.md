@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 12/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9148b21b1d9c5c3c49dcbd9de9a2e353371e4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e699d824d34adbd9d2dbbaef335fb12d5e62993
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380804"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361072"
 ---
 # <a name="kspropertypinproposedataformat2"></a>KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2
 
@@ -52,7 +52,7 @@ OS の使用、 **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**ドライバーが指定�
 <td><p>X</p></td>
 <td><p>フィルター</p></td>
 <td><p>「解説」を参照してください。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -62,11 +62,11 @@ OS の使用、 **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**ドライバーが指定�
 <a name="remarks"></a>注釈
 -------
 
-プロパティ記述子には、 [ **KSP\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff566722)続けて、 [ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)を指定する、可変サイズの数が続くを属性、 **KSMULTIPLE\_項目**します。 各属性が始まり、 [ **KSATTRIBUTE** ](https://msdn.microsoft.com/library/windows/hardware/ff560987)ヘッダーが、固有のデータ属性に続けています。 属性は、提案されたデータ形式を指定する、プロパティの要求のパラメーターとして機能します。
+プロパティ記述子には、 [ **KSP\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)続けて、 [ **KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)を指定する、可変サイズの数が続くを属性、 **KSMULTIPLE\_項目**します。 各属性が始まり、 [ **KSATTRIBUTE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksattribute)ヘッダーが、固有のデータ属性に続けています。 属性は、提案されたデータ形式を指定する、プロパティの要求のパラメーターとして機能します。
 
-**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**型の構造体が含まれています[ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff561656)、
+**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**型の構造体が含まれています[ **KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)、
 
-プロパティはサポートされている唯一の属性*KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_モード*を使用して指定されていると、 [ **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**](https://msdn.microsoft.com/library/windows/hardware/mt727947)構造体。 なお、 **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**構造体の始まりを[ **KSATTRIBUTE** ](https://msdn.microsoft.com/library/windows/hardware/ff560987)メンバー。 詳細については、次を参照してください。[オーディオ信号の処理モード](https://msdn.microsoft.com/library/windows/hardware/mt186386)します。
+プロパティはサポートされている唯一の属性*KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_モード*を使用して指定されていると、 [ **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagksattribute_audiosignalprocessing_mode)構造体。 なお、 **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_モード**構造体の始まりを[ **KSATTRIBUTE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksattribute)メンバー。 詳細については、次を参照してください。[オーディオ信号の処理モード](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-signal-processing-modes)します。
 
 [**KSPROPERTY\_型\_取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)暗証番号 (pin) の形式が提示した場合にのみサポートします。 この関数は、指定した属性が指定された pin での既定のデータ形式に関する情報を提供するオーディオ ドライバーをできます。
 
@@ -126,7 +126,7 @@ KS フィルターは、暗証番号 (pin) に指定した属性の優先され�
 </tr>
 <tr class="odd">
 <td>SignalProcessingModeAttribute.AttributeHeader.Size</td>
-<td>サイズを示します、AttributeHeader.Size <a href="https://msdn.microsoft.com/library/windows/hardware/mt727947" data-raw-source="[&lt;strong&gt;KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt727947)"> <strong>KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE</strong></a>します。 これは、次のように計算できます。
+<td>サイズを示します、AttributeHeader.Size <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagksattribute_audiosignalprocessing_mode" data-raw-source="[&lt;strong&gt;KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagksattribute_audiosignalprocessing_mode)"> <strong>KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE</strong></a>します。 これは、次のように計算できます。
 <p>sizeof(KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE)</p></td>
 </tr>
 <tr class="even">
@@ -192,9 +192,9 @@ typedef struct
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-[**KSDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff561656)
+[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)
 
  
 

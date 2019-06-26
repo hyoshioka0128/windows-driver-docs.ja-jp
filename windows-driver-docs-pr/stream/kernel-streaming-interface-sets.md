@@ -4,12 +4,12 @@ description: カーネル ストリーミングのインターフェイス セ�
 ms.assetid: 7fb6b137-0e28-4034-8e89-7301f3d2bbba
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02fbcfd4a759388e362cfb95bd863c42bd983fe0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7193eb0416d13c3e535280c1a2f2d226dd300ce8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334046"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360652"
 ---
 # <a name="kernel-streaming-interface-sets"></a>カーネル ストリーミングのインターフェイス セット
 
@@ -23,9 +23,9 @@ ms.locfileid: "63334046"
 
 [KSINTERFACESETID\_標準](ksinterfacesetid-standard.md)
 
-これらのセットで定義されている Guid に対応して*ks.h*と*ksmedia.h*で指定することができます、 [ **KSPIN\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff563537)構造体。
+これらのセットで定義されている Guid に対応して*ks.h*と*ksmedia.h*で指定することができます、 [ **KSPIN\_インターフェイス**](https://docs.microsoft.com/previous-versions/ff563537(v=vs.85))構造体。
 
-ミニドライバー インターフェイスを指定する方法については、次を参照してください。 [KS インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff567652)します。
+ミニドライバー インターフェイスを指定する方法については、次を参照してください。 [KS インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-interfaces)します。
 
  
 

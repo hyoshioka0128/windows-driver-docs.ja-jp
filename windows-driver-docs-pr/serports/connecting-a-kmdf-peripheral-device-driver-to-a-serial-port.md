@@ -4,21 +4,21 @@ description: SerCx2 で管理されたシリアル ポート周辺機器の KMDF
 ms.assetid: EDE62C5E-3563-42EE-884E-DF473CD724A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 970cc05ef233cbdee6ba25c1f13316ef3fe18345
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 0e3a3f96611254d417eb100d797aa0e2d0b475c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836317"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359124"
 ---
 # <a name="connecting-a-kmdf-peripheral-driver-to-a-serial-port"></a>KMDF 周辺機器ドライバーをシリアル ポートに接続する
 
 
 SerCx2 で管理されたシリアル ポート周辺機器の KMDF ドライバーでは、デバイスを操作する特定のハードウェア リソースが必要です。 これらのリソースに含まれるは、ドライバーは、シリアル ポートへの論理接続を開く必要がある情報です。 その他のリソースは、割り込みを含めることができ、1 つまたは複数の GPIO 入力または出力ピンです。
 
-このドライバーは、一連のプラグ アンド プレイと電源管理イベントのコールバック関数を実装します。 これらを登録する関数、KMDF ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベント コールバック関数の呼び出し、 [ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff546135)メソッド。 フレームワークは、周辺機器の電源状態の変更のドライバーに通知する電源管理イベントのコールバック関数を呼び出します。 これらの関数に含まれるが、 [ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)関数で、デバイスをドライバーにアクセスできるようにするために必要なすべての操作を実行します。
+このドライバーは、一連のプラグ アンド プレイと電源管理イベントのコールバック関数を実装します。 これらを登録する関数、KMDF ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)イベント コールバック関数の呼び出し、 [ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)メソッド。 フレームワークは、周辺機器の電源状態の変更のドライバーに通知する電源管理イベントのコールバック関数を呼び出します。 これらの関数に含まれるが、 [ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)関数で、デバイスをドライバーにアクセスできるようにするために必要なすべての操作を実行します。
 
-ドライバー フレームワークが呼び出す逐次的に接続されている周辺機器が初期化されていない D0 デバイスの電源状態を入力した後、 *EvtDevicePrepareHardware*関数を使用するためにデバイスを準備する周辺のドライバーに指示します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *ResourcesRaw*パラメーターの一覧に WDFCMRESLIST オブジェクト ハンドルは、 [*生リソース*](https://msdn.microsoft.com/library/windows/hardware/ff544561)、および*ResourcesTranslated*パラメーターの一覧に WDFCMRESLIST オブジェクト ハンドルは、 [*リソースを翻訳*](https://msdn.microsoft.com/library/windows/hardware/ff544561)します。 翻訳済みのリソースが含まれて、*接続 ID*周辺機器のデバイスへの論理接続を確立するために、ドライバーが必要です。
+ドライバー フレームワークが呼び出す逐次的に接続されている周辺機器が初期化されていない D0 デバイスの電源状態を入力した後、 *EvtDevicePrepareHardware*関数を使用するためにデバイスを準備する周辺のドライバーに指示します。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *ResourcesRaw*パラメーターの一覧に WDFCMRESLIST オブジェクト ハンドルは、 [*生リソース*](https://docs.microsoft.com/windows-hardware/drivers/wdf/raw-and-translated-resources)、および*ResourcesTranslated*パラメーターの一覧に WDFCMRESLIST オブジェクト ハンドルは、 [*リソースを翻訳*](https://docs.microsoft.com/windows-hardware/drivers/wdf/raw-and-translated-resources)します。 翻訳済みのリソースが含まれて、*接続 ID*周辺機器のデバイスへの論理接続を確立するために、ドライバーが必要です。
 
 次のコード例に示す方法、 *EvtDevicePrepareHardware*関数からの接続 ID の取得、 *ResourcesTranslated*パラメーター。
 
@@ -136,11 +136,11 @@ if (!NT_SUCCESS(status))
 }
 ```
 
-上記のコード例で、 [ **WDF\_IO\_ターゲット\_オープン\_PARAMS\_INIT\_オープン\_BY\_名**](https://msdn.microsoft.com/library/windows/hardware/ff552381)関数を初期化します、 [ **WDF\_IO\_ターゲット\_を開く\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552377)ドライバーを開けるように構成します。デバイスの名前を指定することによって順番に接続されている周辺機器への論理接続します。 `SerialIoTarget`変数は、I/O のフレームワーク ターゲット オブジェクトの WDFIOTARGET ハンドルです。 このハンドルは、以前の呼び出しから取得された、 [ **WdfIoTargetCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548591)メソッドで、この例では表示されません。 場合に呼び出し、 [ **WdfIoTargetOpen** ](https://msdn.microsoft.com/library/windows/hardware/ff548634)メソッドが成功すると、ドライバーを使用して、`SerialIoTarget`周辺機器への I/O 要求を送信するハンドル。
+上記のコード例で、 [ **WDF\_IO\_ターゲット\_オープン\_PARAMS\_INIT\_オープン\_BY\_名**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_name)関数を初期化します、 [ **WDF\_IO\_ターゲット\_を開く\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/ns-wdfiotarget-_wdf_io_target_open_params)ドライバーを開けるように構成します。デバイスの名前を指定することによって順番に接続されている周辺機器への論理接続します。 `SerialIoTarget`変数は、I/O のフレームワーク ターゲット オブジェクトの WDFIOTARGET ハンドルです。 このハンドルは、以前の呼び出しから取得された、 [ **WdfIoTargetCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetcreate)メソッドで、この例では表示されません。 場合に呼び出し、 [ **WdfIoTargetOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)メソッドが成功すると、ドライバーを使用して、`SerialIoTarget`周辺機器への I/O 要求を送信するハンドル。
 
-*EvtDriverDeviceAdd*イベント コールバック関数では、周辺機器のドライバーが呼び出すことができます、 [ **WdfRequestCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff549951)メソッドによって使用されるフレームワーク要求オブジェクトを割り当てるドライバー。 後で、オブジェクトが不要になったときに、ドライバーを呼び出す、 [ **WdfObjectDelete** ](https://msdn.microsoft.com/library/windows/hardware/ff548734)オブジェクトを削除するメソッド。 ドライバーがから取得したフレームワーク要求オブジェクトを再利用できる、 **WdfRequestCreate**周辺機器への送信 I/O 要求を複数回を呼び出します。 読み取り、書き込み、または IOCTL 要求を送信同期的に、ドライバーを呼び出す、 [ **WdfIoTargetSendReadSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff548669)、 [ **WdfIoTargetSendWriteSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff548672)、または[ **WdfIoTargetSendIoctlSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff548660)メソッド。
+*EvtDriverDeviceAdd*イベント コールバック関数では、周辺機器のドライバーが呼び出すことができます、 [ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate)メソッドによって使用されるフレームワーク要求オブジェクトを割り当てるドライバー。 後で、オブジェクトが不要になったときに、ドライバーを呼び出す、 [ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)オブジェクトを削除するメソッド。 ドライバーがから取得したフレームワーク要求オブジェクトを再利用できる、 **WdfRequestCreate**周辺機器への送信 I/O 要求を複数回を呼び出します。 読み取り、書き込み、または IOCTL 要求を送信同期的に、ドライバーを呼び出す、 [ **WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)、 [ **WdfIoTargetSendWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)、または[ **WdfIoTargetSendIoctlSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)メソッド。
 
-次のコード例で、ドライバーを呼び出す**WdfIoTargetSendWriteSynchronously**同期的に送信する、 [ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)周辺機器を要求します。 この例の開始時、`pBuffer`周辺機器のデバイスに書き込まれるデータを格納している非ページのバッファーを指す変数と`dataSize`変数は、このデータのバイト単位のサイズを指定します。
+次のコード例で、ドライバーを呼び出す**WdfIoTargetSendWriteSynchronously**同期的に送信する、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)周辺機器を要求します。 この例の開始時、`pBuffer`周辺機器のデバイスに書き込まれるデータを格納している非ページのバッファーを指す変数と`dataSize`変数は、このデータのバイト単位のサイズを指定します。
 
 ```cpp
 ULONG_PTR bytesWritten;
@@ -174,11 +174,11 @@ if (!NT_SUCCESS(status))
 
 上記のコード例は、次のこと。
 
-1.  [ **WDF\_メモリ\_記述子\_INIT\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552393)関数呼び出しを初期化します、 `memoryDescriptor` になっている変数[ **WDF\_メモリ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff552392)入力バッファーを記述する構造体。 以前は、ドライバーと呼ばれるルーチンなど[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)非ページ プールからバッファーを割り当て、このバッファーに書き込みデータをコピーします。
-2.  [ **WDF\_要求\_送信\_オプション\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552497)関数呼び出しを初期化します、 `requestOptions` になっている変数[ **WDF\_要求\_送信\_オプション**](https://msdn.microsoft.com/library/windows/hardware/ff552491)書き込み要求のオプションの設定を含む構造体。 この例では、構造体は、2 秒後に完了しない場合に、要求がタイムアウトするを構成します。
-3.  呼び出し、 **WdfIoTargetSendWriteSynchronously**メソッドは、周辺機器への書き込み要求を送信します。 書き込み操作が完了するか、タイムアウト後、このメソッドは同期的に返します。ドライバーの別のスレッドを呼び出すことができます必要に応じて、 [ **WdfRequestCancelSentRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff549941)要求をキャンセルします。
+1.  [ **WDF\_メモリ\_記述子\_INIT\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdf_memory_descriptor_init_buffer)関数呼び出しを初期化します、 `memoryDescriptor` になっている変数[ **WDF\_メモリ\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/ns-wdfmemory-_wdf_memory_descriptor)入力バッファーを記述する構造体。 以前は、ドライバーと呼ばれるルーチンなど[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)非ページ プールからバッファーを割り当て、このバッファーに書き込みデータをコピーします。
+2.  [ **WDF\_要求\_送信\_オプション\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdf_request_send_options_init)関数呼び出しを初期化します、 `requestOptions` になっている変数[ **WDF\_要求\_送信\_オプション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_send_options)書き込み要求のオプションの設定を含む構造体。 この例では、構造体は、2 秒後に完了しない場合に、要求がタイムアウトするを構成します。
+3.  呼び出し、 **WdfIoTargetSendWriteSynchronously**メソッドは、周辺機器への書き込み要求を送信します。 書き込み操作が完了するか、タイムアウト後、このメソッドは同期的に返します。ドライバーの別のスレッドを呼び出すことができます必要に応じて、 [ **WdfRequestCancelSentRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcancelsentrequest)要求をキャンセルします。
 
-**WdfIoTargetSendWriteSynchronously**呼び出し、という名前の変数に、ドライバーで指定されています`SerialRequest`、これは、ドライバーが以前に作成したフレームワーク要求オブジェクトを識別するハンドル。 後に、 **WdfIoTargetSendWriteSynchronously**呼び出し、ドライバーは呼び出す必要があります通常、 [ **WdfRequestReuse** ](https://msdn.microsoft.com/library/windows/hardware/ff550026)するフレームワークの要求オブジェクトを準備する方法もう一度使用します。
+**WdfIoTargetSendWriteSynchronously**呼び出し、という名前の変数に、ドライバーで指定されています`SerialRequest`、これは、ドライバーが以前に作成したフレームワーク要求オブジェクトを識別するハンドル。 後に、 **WdfIoTargetSendWriteSynchronously**呼び出し、ドライバーは呼び出す必要があります通常、 [ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)するフレームワークの要求オブジェクトを準備する方法もう一度使用します。
 
  
 

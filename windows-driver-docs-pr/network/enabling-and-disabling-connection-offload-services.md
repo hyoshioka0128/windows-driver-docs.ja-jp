@@ -7,12 +7,12 @@ keywords:
 - 接続の負荷を軽減 WDK TCP/IP トランスポートは、サービスを無効にします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ada8f521a5c299193aabaac540ba302a47168f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c031940bf2ea35467aebf7ec82684bd31fea0faa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372526"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378689"
 ---
 # <a name="enabling-and-disabling-connection-offload-services"></a>接続オフロード サービスの有効化と無効化
 
@@ -26,7 +26,7 @@ ms.locfileid: "63372526"
 
  
 
-TCP/IP トランスポートを有効またはネットワーク インターフェイス カード (NIC) の接続のオフロード機能を無効に設定して、 [OID\_TCP\_接続\_オフロード\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569804)OID。 この設定の操作、TCP/IP トランスポートは、NDIS を渡します\_TCP\_接続\_オフロード\_パラメーター構造体、 **InformationBuffer** のメンバー[ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 (NDIS について\_TCP\_接続\_オフロード\_パラメーターを参照して[NDIS 6.0 TCP chimney オフロード ドキュメント](full-tcp-offload.md))。
+TCP/IP トランスポートを有効またはネットワーク インターフェイス カード (NIC) の接続のオフロード機能を無効に設定して、 [OID\_TCP\_接続\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-parameters)OID。 この設定の操作、TCP/IP トランスポートは、NDIS を渡します\_TCP\_接続\_オフロード\_パラメーター構造体、 **InformationBuffer** のメンバー[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。 (NDIS について\_TCP\_接続\_オフロード\_パラメーターを参照して[NDIS 6.0 TCP chimney オフロード ドキュメント](full-tcp-offload.md))。
 
 オフロード サービス接続の構成の詳細についてでのオフロードのターゲットの初期化を参照してください、 [NDIS 6.0 TCP chimney オフロード ドキュメント](full-tcp-offload.md)します。
 

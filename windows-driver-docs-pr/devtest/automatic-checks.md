@@ -17,12 +17,12 @@ keywords:
 - ドライバー検証のオプション、使用状況の監視メモリ ディスパッチ一覧 (MDL)
 ms.date: 10/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1345b51c6ba30a65991ed51cd7ec85ffd31016bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62c1b2290be3a3ece44eb2792051d25b03460325
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353005"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360434"
 ---
 # <a name="automatic-checks"></a>自動チェック
 
@@ -58,7 +58,7 @@ Driver Verifier は、操作を許可されていない次の選択したドラ�
 
 -   割り当て要求する必要がありますをマークする\_成功します。 このような要求は、これまでの許容ではありません。
 
-ドライバーの検証ツールがアクティブでない場合は、これらの違反では、すべてのケースでは、即時のシステムのクラッシュ可能性がありますされません。 Driver Verifier は、ドライバーの動作を監視し、これらの違反が発生した場合、バグ チェック 0xC4 を発行します。 参照してください[**バグ チェック 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
+ドライバーの検証ツールがアクティブでない場合は、これらの違反では、すべてのケースでは、即時のシステムのクラッシュ可能性がありますされません。 Driver Verifier は、ドライバーの動作を監視し、これらの違反が発生した場合、バグ チェック 0xC4 を発行します。 参照してください[**バグ チェック 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
 
 ### <a name="span-idddkmonitoringstackswitchingtoolsspanspan-idddkmonitoringstackswitchingtoolsspanmonitoring-stack-switching"></a><span id="ddk_monitoring_stack_switching_tools"></span><span id="DDK_MONITORING_STACK_SWITCHING_TOOLS"></span>スタックの切り替えの監視
 
@@ -82,22 +82,22 @@ Driver Verifier は、検証されているドライバーによって、スタ�
 
 -   その他の同様のリソース
 
-ドライバーのアンロードとチェックを決定することができます、これらのバグの原因の後に発行するためのチェックのバグなど、このシステムを引き起こす可能性の問題。 ドライバーの検証ツールがアクティブのときのバグ チェック xc 7 ドライバーが読み込まれる後すぐに発行されるこのような違反が発生します。 参照してください[**バグ チェック xc 7** ](https://msdn.microsoft.com/library/windows/hardware/ff560198) (タイマー\_または\_DPC\_が無効です)、バグの一覧については、パラメーターを確認します。
+ドライバーのアンロードとチェックを決定することができます、これらのバグの原因の後に発行するためのチェックのバグなど、このシステムを引き起こす可能性の問題。 ドライバーの検証ツールがアクティブのときのバグ チェック xc 7 ドライバーが読み込まれる後すぐに発行されるこのような違反が発生します。 参照してください[**バグ チェック xc 7** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc7--timer-or-dpc-invalid) (タイマー\_または\_DPC\_が無効です)、バグの一覧については、パラメーターを確認します。
 
 
 ### <a name="span-idmonitoringmemorydescriptorlistmdlusagespanspan-idmonitoringmemorydescriptorlistmdlusagespanspan-idmonitoringmemorydescriptorlistmdlusagespanmonitoring-memory-descriptor-list-mdl-usage"></a><span id="Monitoring__Memory_Descriptor_List__MDL__Usage"></span><span id="monitoring__memory_descriptor_list__mdl__usage"></span><span id="MONITORING__MEMORY_DESCRIPTOR_LIST__MDL__USAGE"></span>メモリ記述子のリスト (MDL) の使用状況の監視
 
 Windows Vista で、Driver Verifier は、操作を許可されていない次の選択したドライバーを監視します。
 
--   呼び出す[ **MmProbeAndLockPages** ](https://msdn.microsoft.com/library/windows/hardware/ff554664)または適切なフラグがない、MDL で MmProbeAndLockProcessPages します。 たとえば、位置が正しくないを呼び出す**MmProbeAndLockPages**を使用して作成された、MDL の[ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)します。
+-   呼び出す[ **MmProbeAndLockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)または適切なフラグがない、MDL で MmProbeAndLockProcessPages します。 たとえば、位置が正しくないを呼び出す**MmProbeAndLockPages**を使用して作成された、MDL の[ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)します。
 
--   呼び出す[ **MmMapLockedPages** ](https://msdn.microsoft.com/library/windows/hardware/ff554622) MDL 適切なフラグがないのです。 たとえば、位置が正しくないを呼び出す**MmMapLockedPages**システム アドレスに既にマップされている、MDL のまたはと MDL ロックされていません。
+-   呼び出す[ **MmMapLockedPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpages) MDL 適切なフラグがないのです。 たとえば、位置が正しくないを呼び出す**MmMapLockedPages**システム アドレスに既にマップされている、MDL のまたはと MDL ロックされていません。
 
--   呼び出す[ **MmUnlockPages** ](https://msdn.microsoft.com/library/windows/hardware/ff556381)または[ **MmUnmapLockedPages** ](https://msdn.microsoft.com/library/windows/hardware/ff556391)部分的な MDL、つまりとを使用して作成された MDL [ **IoBuildPartialMdl**](https://msdn.microsoft.com/library/windows/hardware/ff548324)します。
+-   呼び出す[ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)または[ **MmUnmapLockedPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmaplockedpages)部分的な MDL、つまりとを使用して作成された MDL [ **IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)します。
 
 -   呼び出す**MmUnmapLockedPages** MDL システム アドレスにマップされていないのです。
 
-ドライバーの検証ツールがアクティブでない場合は、これらの違反がすべてのケースですぐに応答を停止するシステムをされないことがあります。 Driver Verifier は、ドライバーの動作を監視し、これらの違反が発生した場合、バグ チェック 0xC4 を発行します。 参照してください[**バグ チェック 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
+ドライバーの検証ツールがアクティブでない場合は、これらの違反がすべてのケースですぐに応答を停止するシステムをされないことがあります。 Driver Verifier は、ドライバーの動作を監視し、これらの違反が発生した場合、バグ チェック 0xC4 を発行します。 参照してください[**バグ チェック 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
 
 ### <a name="span-idsynchronizationobjectallocationfromnonpagedpoolsessionmemoryspanspan-idsynchronizationobjectallocationfromnonpagedpoolsessionmemoryspanspan-idsynchronizationobjectallocationfromnonpagedpoolsessionmemoryspansynchronization-object-allocation-from-nonpagedpoolsession-memory"></a><span id="Synchronization_Object_Allocation_from_NonPagedPoolSession_Memory"></span><span id="synchronization_object_allocation_from_nonpagedpoolsession_memory"></span><span id="SYNCHRONIZATION_OBJECT_ALLOCATION_FROM_NONPAGEDPOOLSESSION_MEMORY"></span>NonPagedPoolSession メモリから同期オブジェクトの割り当て
 
@@ -105,23 +105,23 @@ Windows 7 以降、Driver Verifier は、セッションのメモリからの同
 
 同期オブジェクトは、非ページングである必要があります。 また、グローバル システム全体の仮想アドレス空間内に存在する必要があります。
 
-グラフィックス ドライバーなどで Api を呼び出すことによって、セッション メモリを割り当てることができます[ **EngAllocMem**](https://msdn.microsoft.com/library/windows/hardware/ff564176)します。 、グローバル アドレス空間とは異なり、各ターミナル サーバー セッションのセッションのアドレス空間が仮想化します。 これは、2 つの異なるセッションのコンテキストで使用されている同じ仮想アドレスが 2 つの異なるオブジェクトを指すことを意味します。 Windows カーネルは、任意のターミナル サーバー セッションからの同期オブジェクトにアクセスできる必要があります。 システムがクラッシュまたは別のセッションのデータの破損をサイレントなどの予期しない結果には、別のセッションからセッションのメモリ アドレスを参照しようとしています。
+グラフィックス ドライバーなどで Api を呼び出すことによって、セッション メモリを割り当てることができます[ **EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)します。 、グローバル アドレス空間とは異なり、各ターミナル サーバー セッションのセッションのアドレス空間が仮想化します。 これは、2 つの異なるセッションのコンテキストで使用されている同じ仮想アドレスが 2 つの異なるオブジェクトを指すことを意味します。 Windows カーネルは、任意のターミナル サーバー セッションからの同期オブジェクトにアクセスできる必要があります。 システムがクラッシュまたは別のセッションのデータの破損をサイレントなどの予期しない結果には、別のセッションからセッションのメモリ アドレスを参照しようとしています。
 
-Windows 7 以降、ときに検証済みのドライバーを初期化します Api を呼び出すことによって、同期オブジェクトなど[ **KeInitializeEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff552137)または[ **KeInitializeMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff552147)、Driver Verifier は、セッションの仮想アドレス空間内でオブジェクトのアドレスがあるかどうかを確認します。 Driver Verifier は、この種の不適切なアドレスを検出する場合は、発行、 [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)、0 xdf のパラメーター 1 の値。
+Windows 7 以降、ときに検証済みのドライバーを初期化します Api を呼び出すことによって、同期オブジェクトなど[ **KeInitializeEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeevent)または[ **KeInitializeMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializemutex)、Driver Verifier は、セッションの仮想アドレス空間内でオブジェクトのアドレスがあるかどうかを確認します。 Driver Verifier は、この種の不適切なアドレスを検出する場合は、発行、 [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)、0 xdf のパラメーター 1 の値。
 
 ### <a name="span-idobjectreferencecounterchangesfrom0to1spanspan-idobjectreferencecounterchangesfrom0to1spanspan-idobjectreferencecounterchangesfrom0to1spanobject-reference-counter-changes-from-0-to-1"></a><span id="Object_Reference_Counter_Changes_from_0_to_1"></span><span id="object_reference_counter_changes_from_0_to_1"></span><span id="OBJECT_REFERENCE_COUNTER_CHANGES_FROM_0_TO_1"></span>オブジェクトの参照カウンターが 0 から 1 に変更します。
 
 Windows 7 以降、Driver Verifier は、不正なオブジェクト参照の追加のクラスをチェックします。
 
-Windows カーネル オブジェクト マネージャーは、ファイル オブジェクトまたはスレッド オブジェクトなどのオブジェクトを作成するときに、新しいオブジェクトの参照カウンターが 1 に設定されます。 などの参照カウンターが Api の呼び出しで増やされます[ **ObReferenceObjectByPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff558686)または[ **ObReferenceObjectByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff558679). 参照カウンターがだけデクリメントした各[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)同じオブジェクトに対して呼び出します。
+Windows カーネル オブジェクト マネージャーは、ファイル オブジェクトまたはスレッド オブジェクトなどのオブジェクトを作成するときに、新しいオブジェクトの参照カウンターが 1 に設定されます。 などの参照カウンターが Api の呼び出しで増やされます[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)または[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle). 参照カウンターがだけデクリメントした各[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)同じオブジェクトに対して呼び出します。
 
-参照カウンターには、値 0 に達すると、オブジェクトが解放する対象となります。 オブジェクト マネージャーが、すぐに解放可能性があるか、後では無料可能性があります。 呼び出す[ **ObReferenceObjectByPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff558686)または[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)および 0 から 1 をへの参照カウンターの変更既に解放されたオブジェクトの参照カウンターをインクリメントします。 これは、常に正しくない他のユーザーのメモリ割り当てが破損する可能性があるためです。
+参照カウンターには、値 0 に達すると、オブジェクトが解放する対象となります。 オブジェクト マネージャーが、すぐに解放可能性があるか、後では無料可能性があります。 呼び出す[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)または[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)および 0 から 1 をへの参照カウンターの変更既に解放されたオブジェクトの参照カウンターをインクリメントします。 これは、常に正しくない他のユーザーのメモリ割り当てが破損する可能性があるためです。
 
 ### <a name="span-idsystemshutdownblocksordelaysspanspan-idsystemshutdownblocksordelaysspanspan-idsystemshutdownblocksordelaysspansystem-shutdown-blocks-or-delays"></a><span id="System_Shutdown_Blocks_or_Delays"></span><span id="system_shutdown_blocks_or_delays"></span><span id="SYSTEM_SHUTDOWN_BLOCKS_OR_DELAYS"></span>システム シャット ダウンはブロックや遅延
 
 Windows 7 以降、Driver verifier 区切りをカーネル デバッガーにシステムのシャット ダウンが開始された後、20 分に完了しない場合。 Driver Verifier は、Windows カーネルが、レジストリ、プラグ アンド プレイでは、I/O マネージャー サブシステムなど、さまざまなサブシステムをシャット ダウンを開始する時刻としてシステムのシャット ダウンの開始を割り当てます。
 
-Driver Verifier の問題をシステムにカーネル デバッガーがアタッチされていない場合、 [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)パラメーター 1 値はこのブレークポイントではなく、0x115 です。
+Driver Verifier の問題をシステムにカーネル デバッガーがアタッチされていない場合、 [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)パラメーター 1 値はこのブレークポイントではなく、0x115 です。
 
 頻繁に 20 分もかからずに完了できないシステムのシャット ダウンでは、そのシステムで実行されているドライバーのいずれかが故障していることを示します。 実行している **! 分析-v**カーネル デバッガーがシャット ダウンを担当するシステム ワーカー スレッドのスタック トレースを表示します。 そのスタック トレースを調べるし、テスト中のドライバーのいずれかでシャット ダウンのスレッドがブロックされているかどうかを判断する必要があります。
 

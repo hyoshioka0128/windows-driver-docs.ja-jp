@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 02619be54eb7e7ea3b9c1fb0587c01155ba4f4a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72565cc92582d9bbd7329a7d16a014aae5729893
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343160"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361608"
 ---
 # <a name="bug-check-0xc8-irqlunexpectedvalue"></a>バグ チェック 0xC8:IRQL\_予期しない\_値
 
@@ -26,7 +26,7 @@ ms.locfileid: "63343160"
 IRQL\_予期しない\_値バグ チェックが 0x000000C8 の値を持ちます。 これは、プロセッサの IRQL では、いないどのようなことが現時点ではことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="irqlunexpectedvalue-parameters"></a>IRQL\_予期しない\_値パラメーター

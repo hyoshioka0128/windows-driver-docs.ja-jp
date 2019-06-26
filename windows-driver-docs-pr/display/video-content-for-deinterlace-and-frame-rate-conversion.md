@@ -10,12 +10,12 @@ keywords:
 - フレーム レート変換 WDK DirectX VA のビデオ コンテンツ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bd9bbf34e0176d2f8fc38e42b1f32fd7b7b3ba6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b78289f0d4a0b821b9436aa9005703df3939699
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365022"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365080"
 ---
 # <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>デインターレースおよびフレーム レート変換のビデオ コンテンツ
 
@@ -23,13 +23,13 @@ ms.locfileid: "63365022"
 ## <span id="ddk_video_content_for_deinterlace_and_frame_rate_conversion_gg"></span><span id="DDK_VIDEO_CONTENT_FOR_DEINTERLACE_AND_FRAME_RATE_CONVERSION_GG"></span>
 
 
-ドライバーは、それがどのようにノンインター レース化かを判断できますか、フレーム レートは、このようなコンテンツを変換できるように、ビデオ コンテンツの説明を受け取ります。 ドライバーでは、このビデオの内容を受け取るへのポインターとして、 [ **DXVA\_VideoDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff564070)次の関数呼び出しで構造体。
+ドライバーは、それがどのようにノンインター レース化かを判断できますか、フレーム レートは、このようなコンテンツを変換できるように、ビデオ コンテンツの説明を受け取ります。 ドライバーでは、このビデオの内容を受け取るへのポインターとして、 [ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)次の関数呼び出しで構造体。
 
--   [**DeinterlaceQueryAvailableModes**](https://msdn.microsoft.com/library/windows/hardware/ff563943)
+-   [**DeinterlaceQueryAvailableModes**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes)
 
--   [**DeinterlaceQueryModeCaps**](https://msdn.microsoft.com/library/windows/hardware/ff563946)
+-   [**DeinterlaceQueryModeCaps**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps)
 
--   [**DeinterlaceOpenStream**](https://msdn.microsoft.com/library/windows/hardware/ff563935)
+-   [**DeinterlaceOpenStream**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceopenstream)
 
 次の例では、ドライバーが受信したビデオ コンテンツのデインター レース、フレーム レートの変換を実行する方法を示しています。
 
@@ -45,7 +45,7 @@ DXVA\_29.97 Hz の頻度でサンプルごとの 2 つのフィールドとし�
 <thead>
 <tr class="header">
 <th align="left">Member</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -59,7 +59,7 @@ DXVA\_29.97 Hz の頻度でサンプルごとの 2 つのフィールドとし�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>SampleFormat</strong></p></td>
-<td align="left"><p><strong>DXVA_SampleFieldInterleavedOddFirst</strong>で列挙子<a href="https://msdn.microsoft.com/library/windows/hardware/ff564045" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564045)"> <strong>DXVA_SampleFormat</strong></a></p></td>
+<td align="left"><p><strong>DXVA_SampleFieldInterleavedOddFirst</strong>で列挙子<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)"> <strong>DXVA_SampleFormat</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>d3dFormat</strong></p></td>
@@ -98,7 +98,7 @@ DXVA\_29.97 Hz の頻度でサンプルごとの 2 つのフィールドとし�
 <thead>
 <tr class="header">
 <th align="left">Member</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -127,7 +127,7 @@ DXVA\_29.97 Hz の頻度でサンプルごとの 2 つのフィールドとし�
 <thead>
 <tr class="header">
 <th align="left">Member</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -156,7 +156,7 @@ DXVA\_480 p コンテンツのフレーム レートの変換を実行して、�
 <thead>
 <tr class="header">
 <th align="left">Member</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -170,7 +170,7 @@ DXVA\_480 p コンテンツのフレーム レートの変換を実行して、�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>SampleFormat</strong></p></td>
-<td align="left"><p><strong>DXVA_SampleProgressiveFrame</strong>で列挙子、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff564045" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564045)"> <strong>DXVA_SampleFormat</strong> </a>列挙型</p></td>
+<td align="left"><p><strong>DXVA_SampleProgressiveFrame</strong>で列挙子、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)"> <strong>DXVA_SampleFormat</strong> </a>列挙型</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>d3dFormat</strong></p></td>

@@ -10,12 +10,12 @@ keywords:
 - PortCls WDK のオーディオ、カスタムのオーディオ ドライバー
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 25539abfe183dc1090abebb04b5ce5ca16499d29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19bc9a0027326fb44a2b1aa56708849f58471e9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359107"
 ---
 # <a name="custom-audio-drivers"></a>カスタム オーディオ ドライバー
 
@@ -32,7 +32,7 @@ UAA と互換性がないオーディオ デバイスでは、ベンダーから
 
 AVStream クラスのシステム ドライバー (Ks.sys) には、ほとんどの PortCls 内に存在するオーディオ固有のサポート機能が不足しています。
 
-PortCls の詳細については、次を参照してください。[ポート クラスの概要](introduction-to-port-class.md)します。 AVStream の詳細については、次を参照してください。 [AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)します。
+PortCls の詳細については、次を参照してください。[ポート クラスの概要](introduction-to-port-class.md)します。 AVStream の詳細については、次を参照してください。 [AVStream の概要](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)します。
 
  
 

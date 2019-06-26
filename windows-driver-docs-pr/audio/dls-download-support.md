@@ -15,12 +15,12 @@ keywords:
 - シンセサイザー WDK オーディオ、ダウンロード可能なサウンド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 934edba559ecf21ffe2964314faeb2361b0cb686
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc16fdf73e9c72529a847cdd74d796b58e96fd3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333759"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360124"
 ---
 # <a name="dls-download-support"></a>DLS ダウンロードのサポート
 
@@ -28,7 +28,7 @@ ms.locfileid: "63333759"
 ## <span id="custom_dls"></span><span id="CUSTOM_DLS"></span>
 
 
-独自のシンセサイザーを記述する場合は、アプリケーションが特定の楽器音に MIDI 注メッセージを変換できるように、ダウンロード可能なサウンド (DL) のサポートを提供する必要があります。 具体的には、実装する必要があります、 [ **IDirectMusicSynth::Download** ](https://msdn.microsoft.com/library/windows/hardware/ff536532)メソッドをシンセサイザーにインストルメント化 wave とアーティキュレーション データをダウンロードできます。 このメソッドは、(通常は、コレクション ファイル) から生データをそのまま使用し、レンダリング エンジンで使用できる形式で格納する必要があります。
+独自のシンセサイザーを記述する場合は、アプリケーションが特定の楽器音に MIDI 注メッセージを変換できるように、ダウンロード可能なサウンド (DL) のサポートを提供する必要があります。 具体的には、実装する必要があります、 [ **IDirectMusicSynth::Download** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-download)メソッドをシンセサイザーにインストルメント化 wave とアーティキュレーション データをダウンロードできます。 このメソッドは、(通常は、コレクション ファイル) から生データをそのまま使用し、レンダリング エンジンで使用できる形式で格納する必要があります。
 
 DirectMusic が配布リストのデータをドライバーをダウンロードするときは、データ バッファーの形式がいくつかの DirectMusic 構造体の観点から定義されます。 ダウンロードされたデータは、2 つの構造で始まります。
 
@@ -50,7 +50,7 @@ PCM の形式で wave データのチャンクを含む構造体。
 
 DLS データ形式は、カーネル ユーザー モードと同じです。
 
-[KSPROPSETID\_シンセサイザー\_Dls](https://msdn.microsoft.com/library/windows/hardware/ff537488) DLS サンプルと instruments DirectMusic シンセサイザーをダウンロードに使用されるプロパティがプロパティ セットに含まれています。 DLS レベル 1 および DLS レベル 2 の両方のデータのダウンロードには、このプロパティを設定を使用できます。 DLS レベル 1 ~ 2 でダウンロードしたデータの変更の形式のみです。
+[KSPROPSETID\_シンセサイザー\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls) DLS サンプルと instruments DirectMusic シンセサイザーをダウンロードに使用されるプロパティがプロパティ セットに含まれています。 DLS レベル 1 および DLS レベル 2 の両方のデータのダウンロードには、このプロパティを設定を使用できます。 DLS レベル 1 ~ 2 でダウンロードしたデータの変更の形式のみです。
 
  
 

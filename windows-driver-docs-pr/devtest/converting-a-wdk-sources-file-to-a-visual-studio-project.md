@@ -4,12 +4,12 @@ description: Nmake2msBuild を使用して、WDK のソース ファイルを Vi
 ms.assetid: 6030317B-5068-40FD-8C9A-0B7A48C82B31
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a989a7f5b46dfec63e58e02c5429c6edbc08dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ada247897777a06a5a1d083a1fb8c4fcff768391
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343060"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360376"
 ---
 # <a name="converting-a-wdk-sources-file-to-a-visual-studio-project"></a>WDK ソース ファイルから Visual Studio プロジェクトへの変換
 
@@ -25,7 +25,7 @@ Build.exe を使用して作成されたほとんどの Windows 7 の WDK プロ
 
 [Nmake2MsBuild](nmake2msbuild.md)ツールの実行の内容のルール ベースのマッピングを*ソース*Visual Studio C のプロジェクト ファイルの内容をファイル (します。VcxProj)。 変換を各ビルド マクロ、MSBuild で使用され、ビルド時にインストルメント化されるプロパティ ファイル (.props) に対応する変換ルールがある場合します。 MSBuild の環境でのプロパティ、アイテム、およびこれらのアイテムのメタデータは、ビルド システムによって使用されます。 内の各マクロ、*ソース*ファイルは、MSBuild プロパティ、項目、または、規則によって指定された項目メタデータにマップします。 既定では、ルールが存在しない場合は、A を B 値を持つという名前のマクロに変換がプロパティ A B. 値(Nmake の) 構文でのマッピングでは、初期の変換の手順を*makefile.inc*または*ソース*ファイルに関連付けられているプロパティ ファイル (.props) MSBuild 構文にします。 各マクロ (nmake の) ファイルでは、プロパティ ファイル (.props) のプロパティに変換されます。 ビルド時に、これらのプロパティが評価され、特定のプロパティの評価値をさまざまな他のプロパティ、項目または変換規則によって指定されたメタデータにマップします。
 
-たとえば、ユーザー\_C\_フラグ マクロで、*ソース*ファイルは、ビルド時にコンパイラ (cl.exe) に渡されるコマンド ライン パラメーターを指定するために使用します。 MSBuild の環境では、ClCompile 項目のリストには、コンパイルされるソース コード ファイルが含まれています。 ClCompile 項目のリストがコンパイラによって使用される、 [CL タスク](https://msdn.microsoft.com/library/ee862477.aspx)します。 AdditionalOptions のメタデータを一覧内の各項目を決定、追加のコンパイラ (cl.exe) に渡されるフラグ。 ユーザーの値ではそのため、\_C\_フラグ マクロは、ClCompile の種類のアイテムの AdditionalOptions 項目メタデータにマップする必要があります。 初期の変換の手順では、ユーザー\_C\_フラグ マクロは、ソース ファイルでは、MSBuild プロパティの場合も名前付きユーザーに変換\_C\_フラグで生成されたファイルと呼ばれる*sources.props*. ユーザーの評価値のマッピング\_C\_次の例に示すように、ビルド時に AdditionalOptions メタデータへのフラグ プロパティに発生します。
+たとえば、ユーザー\_C\_フラグ マクロで、*ソース*ファイルは、ビルド時にコンパイラ (cl.exe) に渡されるコマンド ライン パラメーターを指定するために使用します。 MSBuild の環境では、ClCompile 項目のリストには、コンパイルされるソース コード ファイルが含まれています。 ClCompile 項目のリストがコンパイラによって使用される、 [CL タスク](https://docs.microsoft.com/visualstudio/msbuild/cl-task?view=vs-2015)します。 AdditionalOptions のメタデータを一覧内の各項目を決定、追加のコンパイラ (cl.exe) に渡されるフラグ。 ユーザーの値ではそのため、\_C\_フラグ マクロは、ClCompile の種類のアイテムの AdditionalOptions 項目メタデータにマップする必要があります。 初期の変換の手順では、ユーザー\_C\_フラグ マクロは、ソース ファイルでは、MSBuild プロパティの場合も名前付きユーザーに変換\_C\_フラグで生成されたファイルと呼ばれる*sources.props*. ユーザーの評価値のマッピング\_C\_次の例に示すように、ビルド時に AdditionalOptions メタデータへのフラグ プロパティに発生します。
 
 ```
   <!-- Contains rules to map compiler and linker switches -->
@@ -136,7 +136,7 @@ NMake2MsBuild ユーティリティは、カスタム ターゲットの変換�
 
 [Nmake2MsBuild](nmake2msbuild.md)
 
-[既にあるソース ファイルからのドライバーの作成](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)
+[既にあるソース ファイルからのドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

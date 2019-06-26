@@ -11,12 +11,12 @@ keywords:
 - CommonPropertySheetUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ac765e8dfc4963f45d7fcc434ea102ede65b08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7f0acb8e4d854044fc975e44653e8e9dabd3be4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353720"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360726"
 ---
 # <a name="page-creation-callbacks"></a>ページ作成コールバック
 
@@ -24,9 +24,9 @@ ms.locfileid: "63353720"
 
 
 
-アプリケーションが関数をポイント CPSUI のエントリに初期呼び出しを行うときに ([**CommonPropertySheetUI**](https://msdn.microsoft.com/library/windows/hardware/ff546148)) のアドレスを含める必要があります、 [ **PFNPROPSHEETUI**](https://msdn.microsoft.com/library/windows/hardware/ff559812)-コールバック関数を入力します。 このコールバック関数は、プロパティ シートのページを記述して作成の CPSUI にこれらの説明を送信します。
+アプリケーションが関数をポイント CPSUI のエントリに初期呼び出しを行うときに ([**CommonPropertySheetUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nf-compstui-commonpropertysheetuia)) のアドレスを含める必要があります、 [ **PFNPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfnpropsheetui)-コールバック関数を入力します。 このコールバック関数は、プロパティ シートのページを記述して作成の CPSUI にこれらの説明を送信します。
 
-CPSUI の**CommonPropertySheetUI**関数がすぐに PFNPROPSHEETUI に型指定された関数のアドレス指定するのにはコールバックを[ **PROPSHEETUI\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff561767)構造体。 アプリケーションには、CPSUI を呼び出して[ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207) CPSUI は、次の図に示すように、ページの作成に使用できるページの説明を指定して、関数。
+CPSUI の**CommonPropertySheetUI**関数がすぐに PFNPROPSHEETUI に型指定された関数のアドレス指定するのにはコールバックを[ **PROPSHEETUI\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_propsheetui_info)構造体。 アプリケーションには、CPSUI を呼び出して[ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet) CPSUI は、次の図に示すように、ページの作成に使用できるページの説明を指定して、関数。
 
 ![アプリケーション cpsui 通信を示す図](images/comprop.png)
 

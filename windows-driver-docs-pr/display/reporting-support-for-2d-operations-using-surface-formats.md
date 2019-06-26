@@ -9,12 +9,12 @@ keywords:
 - 画面形式 WDK DirectX 9.0、レポートの 2D 操作のサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e330d894a99852d7feead255a795c2a04596155c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db0a10a650dc04096325e111f47b9420ccf19887
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359308"
 ---
 # <a name="reporting-support-for-2d-operations-using-surface-formats"></a>サーフェスの形式を使用した 2D 操作に対するサポートのレポート
 
@@ -22,7 +22,7 @@ ms.locfileid: "63383254"
 ## <span id="ddk_reporting_support_for_2d_operations_using_surface_formats_gg"></span><span id="DDK_REPORTING_SUPPORT_FOR_2D_OPERATIONS_USING_SURFACE_FORMATS_GG"></span>
 
 
-ドライバーでフラグを指定する、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)サーフェスの形式を使用して 2D 操作を実行できることを示すための構造その形式。
+ドライバーでフラグを指定する、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)サーフェスの形式を使用して 2D 操作を実行できることを示すための構造その形式。
 
 ドライバーことまたはからにコピーし、D3DFORMAT を設定して、画面に塗りつぶしの色を指定するたとえば、\_OP\_OFFSCREENPLAIN フラグ。
 

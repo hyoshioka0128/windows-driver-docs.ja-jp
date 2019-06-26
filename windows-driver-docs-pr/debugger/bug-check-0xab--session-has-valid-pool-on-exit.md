@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7196d3521573b4b97792400e06901721d3fe9394
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 321fa8f9f8e039488661589025ca8ea1368fa621
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347208"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361661"
 ---
 # <a name="bug-check-0xab-sessionhasvalidpoolonexit"></a>バグ チェック 0xAB:セッション\_HAS\_有効\_プール\_ON\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347208"
 セッション\_HAS\_有効\_プール\_ON\_終了のバグ チェックが 0x000000AB の値を持ちます。 このバグ チェックでは、セッションのアンロードがセッションのドライバーはメモリに保持されているときに発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="sessionhasvalidpoolonexit-parameters"></a>セッション\_HAS\_有効\_プール\_ON\_終了パラメーター

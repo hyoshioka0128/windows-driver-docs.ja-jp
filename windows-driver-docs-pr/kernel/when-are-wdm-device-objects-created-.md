@@ -14,12 +14,12 @@ keywords:
 - デバイス オブジェクトのアタッチ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9102e9fe26db651681161c75911245924ce906e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ed3b8b263e8997a5175d4ef3f29c0a84fe25d84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358107"
 ---
 # <a name="when-are-wdm-device-objects-created"></a>WDM デバイス オブジェクトが作成される場合
 
@@ -37,7 +37,7 @@ ms.locfileid: "63382907"
 
 -   バス ドライバー、バスが列挙される各デバイスの PDO を作成します。
 
-    バス ドライバーは、デバイスを列挙したときに子デバイス用の PDO を作成します。 バス ドライバーへの応答内のデバイスの列挙、 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)要求**BusRelations** PnP マネージャーから。 クエリ リレーションシップの要求に応答した子デバイスが最後に、バス ドライバー、バスにデバイスが追加されている場合のバス ドライバーは、PDO を作成します**BusRelations** (または以降の最初のクエリ関係要求の場合、。マシンは起動でした)。
+    バス ドライバーは、デバイスを列挙したときに子デバイス用の PDO を作成します。 バス ドライバーへの応答内のデバイスの列挙、 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)要求**BusRelations** PnP マネージャーから。 クエリ リレーションシップの要求に応答した子デバイスが最後に、バス ドライバー、バスにデバイスが追加されている場合のバス ドライバーは、PDO を作成します**BusRelations** (または以降の最初のクエリ関係要求の場合、。マシンは起動でした)。
 
     PDO は、電源マネージャー、PnP マネージャーでは、I/O マネージャーなどの他のカーネル モードのシステム コンポーネントのほか、バス ドライバーにデバイスを表します。
 
@@ -45,7 +45,7 @@ ms.locfileid: "63382907"
 
 -   省略可能な bus フィルター ドライバーは、各デバイスのフィルター DOs を作成します。
 
-    PnP マネージャーがで新しいデバイスを検出した場合、 **BusRelations**一覧で、デバイスのバス フィルター ドライバーがあるかどうかが決定します。 場合、そのため、このような各ドライバーの PnP マネージャーによりが読み込まれる (呼び出し[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)必要な場合)、ドライバーの呼び出しと[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。 フィルター ドライバーがデバイス オブジェクトを作成しでデバイス スタックに接続される場合は、bus フィルター ドライバーは、このデバイスの操作をフィルター処理、その*AddDevice*ルーチン。 1 つ以上のバス フィルター ドライバーが存在し、このデバイスに関連する、各フィルター ドライバーは作成し、独自のデバイス オブジェクトをアタッチします。
+    PnP マネージャーがで新しいデバイスを検出した場合、 **BusRelations**一覧で、デバイスのバス フィルター ドライバーがあるかどうかが決定します。 場合、そのため、このような各ドライバーの PnP マネージャーによりが読み込まれる (呼び出し[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)必要な場合)、ドライバーの呼び出しと[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。 フィルター ドライバーがデバイス オブジェクトを作成しでデバイス スタックに接続される場合は、bus フィルター ドライバーは、このデバイスの操作をフィルター処理、その*AddDevice*ルーチン。 1 つ以上のバス フィルター ドライバーが存在し、このデバイスに関連する、各フィルター ドライバーは作成し、独自のデバイス オブジェクトをアタッチします。
 
 -   省略可能な低レベルのフィルター ドライバーは、各デバイスのフィルター DOs を作成します。
 

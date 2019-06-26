@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 86bf82897efe12755852ced5081aab0835ef4a27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52766b5f29eb0f917d62d05cc8772af508f2a193
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323266"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361544"
 ---
 # <a name="bug-check-0xe0-acpibiosfatalerror"></a>バグ チェック 0xE0:ACPI\_BIOS\_FATAL\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323266"
 ACPI\_BIOS\_FATAL\_エラーのバグ チェックが 0x000000E0 の値を持ちます。 これは、コンピューターのコンポーネントの 1 つが障害のあることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="acpibiosfatalerror-parameters"></a>ACPI\_BIOS\_FATAL\_エラー パラメーター

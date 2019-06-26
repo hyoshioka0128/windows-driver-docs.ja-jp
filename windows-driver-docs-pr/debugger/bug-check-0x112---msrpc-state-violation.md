@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9419d102cfafa89ffd3546b35e55d47c2d9829dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5eae9a3574a336c3950e98aff74e8d6065467a37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362330"
 ---
 # <a name="bug-check-0x112-msrpcstateviolation"></a>バグ チェック 0x112:MSRPC\_状態\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358187"
 MSRPC\_状態\_違反のバグ チェックが 0x00000112 の値を持ちます。 これは、Msrpc.sys ドライバーのバグ チェックが開始されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="msrpcstateviolation-parameters"></a>MSRPC\_状態\_違反パラメーター

@@ -4,12 +4,12 @@ description: カーネル ストリーミングに関する考慮事項のトピ
 ms.assetid: CFC4ACA0-050D-48E1-AA6A-7649040EBF7A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f867918bbfad43a430fc2b1eca2e6409d0d4899
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a990816d8d471e4edd2bf844993540b52658a5f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333395"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359831"
 ---
 # <a name="kernel-streaming-considerations"></a>カーネル ストリーミングに関する考慮事項
 
@@ -35,7 +35,7 @@ Windows ロゴの要件形式のサポートにはには、Bluetooth の例外�
 
 DAC と ADC ノードは、アナログ/デジタル変換を表しますが、KS プロパティをサポートしていません。
 
-ボリューム ノード サポート[ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)と[ **KSEVENT\_コントロール\_変更** ](https://msdn.microsoft.com/library/windows/hardware/ff537128) HFP ドライバーにとると GETVOLUMESTATUSUPDATE Ioctl を送信しています。
+ボリューム ノード サポート[ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)と[ **KSEVENT\_コントロール\_変更** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-control-change) HFP ドライバーにとると GETVOLUMESTATUSUPDATE Ioctl を送信しています。
 
 [ボリューム] ノードは、次のように実装する必要があります。
 
@@ -45,7 +45,7 @@ DAC と ADC ノードは、アナログ/デジタル変換を表しますが、K
 
 -   Bluetooth ヘッドセットとオーディオ デバイスはハードウェアのボリューム コントロールを持たない場合、[ボリューム] ノードを提示されませんし、Windows はソフトウェアのボリューム コントロール ノードを挿入します。
 
-ミュート ノードは省略可能です。 DSP またはオーディオ コーデックは、Bluetooth コント ローラーに渡す前にバイパス PCM の信号をミュートする機能を提供します。 場合にのみ、オーディオ ドライバーは、[ミュート] ノードを実装する必要があります。 ミュート ノード サポート[ **KSPROPERTY\_オーディオ\_ミュート**](https://msdn.microsoft.com/library/windows/hardware/ff537293)します。
+ミュート ノードは省略可能です。 DSP またはオーディオ コーデックは、Bluetooth コント ローラーに渡す前にバイパス PCM の信号をミュートする機能を提供します。 場合にのみ、オーディオ ドライバーは、[ミュート] ノードを実装する必要があります。 ミュート ノード サポート[ **KSPROPERTY\_オーディオ\_ミュート**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mute)します。
 
 ## <a name="span-idpropertyrequestsspanspan-idpropertyrequestsspanspan-idpropertyrequestsspanproperty-requests"></a><span id="Property_requests"></span><span id="property_requests"></span><span id="PROPERTY_REQUESTS"></span>プロパティの要求
 
@@ -54,16 +54,16 @@ DAC と ADC ノードは、アナログ/デジタル変換を表しますが、K
 
 **KSPROPERTY\_ジャック\_の説明**
 
-このプロパティを返します、 [ **KSJACK\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537136)構造体。 オーディオ ドライバーを設定する必要があります、 [ **KSPROPERTY\_ジャック\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)フィールドを次のようにします。
+このプロパティを返します、 [ **KSJACK\_説明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)構造体。 オーディオ ドライバーを設定する必要があります、 [ **KSPROPERTY\_ジャック\_説明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)フィールドを次のようにします。
 ChannelMapping KSAUDIO =\_スピーカー\_MONO 色 = 0 ConnectionType eConnTypeOtherDigital 地理的位置情報を = = eGeoLocNotApplicable GenLocation eGenLocOther PortConnection を = = ePortConnUnknown IsConnected = &lt; *現在の接続状態の BOOL* &gt; **KSPROPERTY\_ジャック\_DESCRIPTION2**
 
-このプロパティを返します、 [ **KSJACK\_DESCRIPTION2** ](https://msdn.microsoft.com/library/windows/hardware/ff537138)構造体。 オーディオ ドライバーを設定する必要があります、 [ **KSPROPERTY\_ジャック\_DESCRIPTION2** ](https://msdn.microsoft.com/library/windows/hardware/ff537365)フィールドを次のようにします。
+このプロパティを返します、 [ **KSJACK\_DESCRIPTION2** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description2)構造体。 オーディオ ドライバーを設定する必要があります、 [ **KSPROPERTY\_ジャック\_DESCRIPTION2** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description2)フィールドを次のようにします。
 DeviceStateInfo = 0 JackCapabilities = JACKDESC2\_プレゼンス\_検出\_機能**KSPROPERTY\_ONESHOT\_再接続**
 
-オーディオ ドライバーのフィルターをサポートする必要があります[ **KSPROPERTY\_ONESHOT\_再接続**](https://msdn.microsoft.com/library/windows/hardware/ff537369)します。 オーディオ ドライバーの送信を作成し、この構造体の初期化、 [ **IOCTL\_BTHHFP\_デバイス\_要求\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/dn265114) HFP ドライバーにします。 HFP ドライバーは、この要求を完了し、オーディオの Bluetooth デバイスに非同期的に接続を試みます。
+オーディオ ドライバーのフィルターをサポートする必要があります[ **KSPROPERTY\_ONESHOT\_再接続**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-reconnect)します。 オーディオ ドライバーの送信を作成し、この構造体の初期化、 [ **IOCTL\_BTHHFP\_デバイス\_要求\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_request_connect) HFP ドライバーにします。 HFP ドライバーは、この要求を完了し、オーディオの Bluetooth デバイスに非同期的に接続を試みます。
 **KSPROPERTY\_ONESHOT\_切断**
 
-オーディオ ドライバーのフィルターをサポートする必要があります[ **KSPROPERTY\_ONESHOT\_切断**](https://msdn.microsoft.com/library/windows/hardware/hh706181)します。 オーディオ ドライバーの送信を作成し、この構造体の初期化、 [ **IOCTL\_BTHHFP\_デバイス\_要求\_切断**](https://msdn.microsoft.com/library/windows/hardware/dn265115) HFP ドライバーにします。 HFP ドライバーでは、この要求が完了すると、Bluetooth のオーディオ デバイスから非同期的に切断しようとします。
+オーディオ ドライバーのフィルターをサポートする必要があります[ **KSPROPERTY\_ONESHOT\_切断**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-oneshot-disconnect)します。 オーディオ ドライバーの送信を作成し、この構造体の初期化、 [ **IOCTL\_BTHHFP\_デバイス\_要求\_切断**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_request_disconnect) HFP ドライバーにします。 HFP ドライバーでは、この要求が完了すると、Bluetooth のオーディオ デバイスから非同期的に切断しようとします。
 オーディオ ドライバーでは、これらのプロパティをサポートするときに、コントロール パネルの [サウンド] ダイアログ ボックスは HFP エンドポイントの接続と切断のコマンドを公開します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック

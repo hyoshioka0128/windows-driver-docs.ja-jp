@@ -4,12 +4,12 @@ description: カーネル モードのパフォーマンス カウンターの�
 ms.assetid: b740dd92-ad75-4dea-98d4-dce04b273d2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87822a0c19665898549cab5f3ed6b984aa19377c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7f302ce1ab595bedb5622be8cb4d7e9c7a438b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371573"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363783"
 ---
 # <a name="using-kernel-mode-performance-counters"></a>カーネル モードのパフォーマンス カウンターの使用
 
@@ -30,7 +30,7 @@ ms.locfileid: "63371573"
 
 3.  登録およびカウンター セットを登録解除するためのコードを追加します。
 
-    詳細については、次を参照してください。、 [ **PcwRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff550323)と[ **PcwUnregister** ](https://msdn.microsoft.com/library/windows/hardware/ff550326)関数。
+    詳細については、次を参照してください。、 [ **PcwRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pcwregister)と[ **PcwUnregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pcwunregister)関数。
 
 4.  インスタンスを公開するコードを追加します。
 

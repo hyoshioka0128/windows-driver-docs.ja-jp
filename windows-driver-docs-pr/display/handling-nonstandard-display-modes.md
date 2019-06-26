@@ -6,12 +6,12 @@ keywords:
 - WDK DirectX 9.0、処理の非表示モード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54bb8c5a64a372260bc8ebd24e5f04ef44ab75df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a3234460c124cabf0e47ef7d440cb8f39e56411
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323800"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359329"
 ---
 # <a name="handling-nonstandard-display-modes"></a>非標準の表示モードの処理
 
@@ -31,11 +31,11 @@ ms.locfileid: "63323800"
 
 -   DirectX プライマリ画面がアクティブな間は、"Ctl + Alt + Del"を入力します。
 
-    カーネル ドライバーの呼び出しでターゲットとして、標準のプライマリを指定する[ *DdFlip* ](https://msdn.microsoft.com/library/windows/hardware/ff549306) GDI 描画が行われる前に機能します。 そのため、ドライバーは、GDI 描画前に、標準の表示モードをディスプレイ デバイスをプログラミングする必要があります。 ドライバーの[ *DdDestroySurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549281)関数のプライマリ画面と呼ばれます。 ドライバーが、DirectX プライマリ画面の内容を破棄できますに注意してください。
+    カーネル ドライバーの呼び出しでターゲットとして、標準のプライマリを指定する[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) GDI 描画が行われる前に機能します。 そのため、ドライバーは、GDI 描画前に、標準の表示モードをディスプレイ デバイスをプログラミングする必要があります。 ドライバーの[ *DdDestroySurface* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)関数のプライマリ画面と呼ばれます。 ドライバーが、DirectX プライマリ画面の内容を破棄できますに注意してください。
 
 -   ウィンドウ表示モードと非標準の形式
 
-    [2D 操作を使用して画面の形式のレポート作成のサポート](reporting-support-for-2d-operations-using-surface-formats.md)トピックでは、ドライバーが、現在のデスクトップとは異なる形式にレンダリングおよび存在するイメージを実行できることを指定する方法について説明します。 このスキームは非標準形式をサポートするために自然な拡張します。ドライバーがで有効にするフラグを追加する必要がありますだけで、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)形式の構造体。
+    [2D 操作を使用して画面の形式のレポート作成のサポート](reporting-support-for-2d-operations-using-surface-formats.md)トピックでは、ドライバーが、現在のデスクトップとは異なる形式にレンダリングおよび存在するイメージを実行できることを指定する方法について説明します。 このスキームは非標準形式をサポートするために自然な拡張します。ドライバーがで有効にするフラグを追加する必要がありますだけで、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)形式の構造体。
 
 非標準のデスクトップの形式を公開する、プライベートな形式と古いコードを使用できません。
 

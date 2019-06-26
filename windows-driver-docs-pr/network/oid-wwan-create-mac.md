@@ -5,19 +5,19 @@ ms.assetid: 4EF98858-86CD-409B-BE41-E57B24158609
 ms.date: 08/08/2017
 keywords: -OID_WWAN_CREATE_MAC ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1a9d416aa8890ca81aa0dd9ae54d3183bd5aad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f47777cb33098ad3fc733c2158d8e2446bf6f553
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362855"
 ---
 # <a name="oidwwancreatemac"></a>OID\_WWAN\_作成\_MAC
 
 
 OID\_WWAN\_作成\_MAC は、新しい NDIS ポートを作成するミニポート ドライバーを要求します。 追加の PDP コンテキストのコンテキストのアクティブ化要求は、この新しい NDIS ポートで送信されます。
 
-ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求と後で使用して要求を完了するには、必要な作業、 [ **NDIS\_WWAN\_MAC\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn449747)ポートに関連付けられているポート番号の NDIS と MAC アドレスを示す構造体。
+ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求と後で使用して要求を完了するには、必要な作業、 [ **NDIS\_WWAN\_MAC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)ポートに関連付けられているポート番号の NDIS と MAC アドレスを示す構造体。
 
 クエリ要求はサポートされていません。
 
@@ -26,7 +26,7 @@ OID\_WWAN\_作成\_MAC は、新しい NDIS ポートを作成するミニポー
 
 ミニポート ドライバーを作成する要求を処理する必要があります (アクティブ化) のデッドロックを防ぐために非同期的に新しい NDIS ポート。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -49,7 +49,7 @@ OID\_WWAN\_作成\_MAC は、新しい NDIS ポートを作成するミニポー
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_MAC\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn449747)
+[**NDIS\_WWAN\_MAC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)
 
 [OID\_WWAN\_削除\_MAC](oid-wwan-delete-mac.md)
 

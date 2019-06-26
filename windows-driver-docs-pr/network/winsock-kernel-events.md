@@ -14,12 +14,12 @@ keywords:
 - WDK Winsock Kernel の通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 690ddad7de51960e6de7799b93d32c090c79ed04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8cfb17185f161dfeb061602eb7e4d848102a3f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330390"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360225"
 ---
 # <a name="winsock-kernel-events"></a>Winsock カーネル イベント
 
@@ -52,15 +52,15 @@ ms.locfileid: "63330390"
 <tbody>
 <tr class="odd">
 <td align="left"><p>着信接続が受け付けられました。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571120" data-raw-source="[&lt;em&gt;WskAcceptEvent&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571120)"><em>WskAcceptEvent</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event" data-raw-source="[&lt;em&gt;WskAcceptEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event)"><em>WskAcceptEvent</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>受信接続要求が到着しました。<em></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571137" data-raw-source="[&lt;em&gt;WskInspectEvent&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571137)"><em>WskInspectEvent</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_inspect_event" data-raw-source="[&lt;em&gt;WskInspectEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_inspect_event)"><em>WskInspectEvent</em></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>受信接続要求が削除されました。</em></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571108" data-raw-source="[&lt;em&gt;WskAbortEvent&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571108)"><em>WskAbortEvent</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_abort_event" data-raw-source="[&lt;em&gt;WskAbortEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_abort_event)"><em>WskAbortEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ ms.locfileid: "63330390"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1 つまたは複数の新しいデータグラムを受信するとします。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571142" data-raw-source="[&lt;em&gt;WskReceiveFromEvent&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571142)"><em>WskReceiveFromEvent</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event" data-raw-source="[&lt;em&gt;WskReceiveFromEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event)"><em>WskReceiveFromEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -108,15 +108,15 @@ ms.locfileid: "63330390"
 <tbody>
 <tr class="odd">
 <td align="left"><p>新しいデータを受信しました。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571140" data-raw-source="[&lt;em&gt;WskReceiveEvent&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571140)"><em>WskReceiveEvent</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event" data-raw-source="[&lt;em&gt;WskReceiveEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event)"><em>WskReceiveEvent</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ソケットが切断されました。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571130" data-raw-source="[&lt;em&gt;WskDisconnectEvent&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571130)"><em>WskDisconnectEvent</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_disconnect_event" data-raw-source="[&lt;em&gt;WskDisconnectEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_disconnect_event)"><em>WskDisconnectEvent</em></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>最適な送信バックログのサイズが変更されました。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff571147" data-raw-source="[&lt;em&gt;WskSendBacklogEvent&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571147)"><em>WskSendBacklogEvent</em></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_backlog_event" data-raw-source="[&lt;em&gt;WskSendBacklogEvent&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_backlog_event)"><em>WskSendBacklogEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -127,7 +127,7 @@ WSK アプリケーションでは、ソケットを作成するときは、ソ�
 
 WSK アプリケーションを登録する場合、[拡張機能インターフェイス](winsock-kernel-extension-interfaces.md)ソケットに関して、拡張機能インターフェイスが追加のイベントをサポート可能性があります。 ソケットの拡張インターフェイスを登録の詳細については、次を参照してください。[拡張機能インターフェイスを登録する](registering-an-extension-interface.md)します。
 
-WSK サブシステムは、特定のソケットに固有ではないイベントの WSK アプリケーションを通知することもできます。 これらのイベントの通知を受け取る WSK アプリケーションで、WSK アプリケーションを実装する必要があります、 [ *WskClientEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571123)イベント コールバック関数。 現在ないイベント定義を特定のソケットに固有ではありません。 WSK アプリケーションの*WskClientEvent*イベント コールバック関数は常に有効し、無効にすることはできません。
+WSK サブシステムは、特定のソケットに固有ではないイベントの WSK アプリケーションを通知することもできます。 これらのイベントの通知を受け取る WSK アプリケーションで、WSK アプリケーションを実装する必要があります、 [ *WskClientEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_client_event)イベント コールバック関数。 現在ないイベント定義を特定のソケットに固有ではありません。 WSK アプリケーションの*WskClientEvent*イベント コールバック関数は常に有効し、無効にすることはできません。
 
 WSK アプリケーションのイベントのコールバック関数は、WSK 完了またはイベントのコールバック関数のコンテキストでは、他の WSK 要求の完了を待つ必要がありますされません。 コールバックは、その他の WSK 要求を開始できる (ディスパッチで時間をかけることがあることを前提\_レベル)、IRQL でコールバックが呼び出されたときが完了する必要があります待機できませんが、パッシブ =\_レベル。
 

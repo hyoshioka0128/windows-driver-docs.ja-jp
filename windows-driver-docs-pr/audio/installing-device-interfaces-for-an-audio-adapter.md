@@ -11,12 +11,12 @@ keywords:
 - WDK のオーディオ デバイス インターフェイス
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eaa23ba599e5afdd4e7b36817619ba67112f09d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d4c605303bd01c42bf76ac9da26cbcdee1d4342
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333462"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359875"
 ---
 # <a name="installing-device-interfaces-for-an-audio-adapter"></a>オーディオ アダプター用のデバイス インターフェイスのインストール
 
@@ -26,7 +26,7 @@ ms.locfileid: "63333462"
 
 クライアントによる一連のオーディオ デバイスにアクセスする*デバイス インターフェイス*アダプターの INF ファイルの仕入先を指定します。 アダプターのドライバーを作成、デバイスの初期化時にサブデバイスで一対一に対応している INF ファイルで指定されたデバイス インターフェイス (を参照してください[サブデバイス作成](subdevice-creation.md))。 各デバイス インターフェイスに対して、INF ファイルを指定します、 **FriendlyName**インターフェイスのレジストリ キーの下のユーザー モードでアクセスできるエントリの値。
 
-カーネル ストリーミング アーキテクチャ、トポロジのカテゴリ (を参照してください[ **KSPROPERTY\_トポロジ\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff565799)) はデバイスのインターフェイス クラスを表します。
+カーネル ストリーミング アーキテクチャ、トポロジのカテゴリ (を参照してください[ **KSPROPERTY\_トポロジ\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)) はデバイスのインターフェイス クラスを表します。
 
 次の表に、トポロジ カテゴリ オーディオ アダプターを使用して、サブデバイスの機能を説明する最も可能性があります。
 
@@ -61,7 +61,7 @@ ms.locfileid: "63333462"
 
 ### <a name="span-idexampleinstallingaudiodeviceinterfacesspanspan-idexampleinstallingaudiodeviceinterfacesspanexample-installing-audio-device-interfaces"></a><span id="example__installing_audio_device_interfaces"></span><span id="EXAMPLE__INSTALLING_AUDIO_DEVICE_INTERFACES"></span>例: オーディオ デバイス インターフェイスのインストール
 
-XYZ オーディオ デバイスのデバイス インストールのセクションを使用して、この例では、 [ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310) 4 つのオーディオのアダプター インターフェイスをインストールします。 以下では、アダプターのドライバーは各インターフェイス クラスのインスタンス間で区別するために使用できるインターフェイスに一意の参照文字列を割り当てますそれぞれ 4 つのディレクティブの。
+XYZ オーディオ デバイスのデバイス インストールのセクションを使用して、この例では、 [ **INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive) 4 つのオーディオのアダプター インターフェイスをインストールします。 以下では、アダプターのドライバーは各インターフェイス クラスのインスタンス間で区別するために使用できるインターフェイスに一意の参照文字列を割り当てますそれぞれ 4 つのディレクティブの。
 
 ```inf
   [XYZ-Audio-Device.Interfaces]
@@ -93,7 +93,7 @@ XYZ オーディオ デバイスのデバイス インストールのセクシ�
   HKR,,CLSID,,%Proxy.CLSID%
 ```
 
-この例では、キーワード HKR では、デバイスのシステム提供のレジストリ パスを表します。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+この例では、キーワード HKR では、デバイスのシステム提供のレジストリ パスを表します。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
 
 この例は、文字列のセクションを次に示します。
 

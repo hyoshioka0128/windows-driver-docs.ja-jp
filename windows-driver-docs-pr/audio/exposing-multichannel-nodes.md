@@ -18,12 +18,12 @@ keywords:
 - WDK のオーディオをマルチ チャネルのサポート チャネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b6d4939617eb3deca96f9e40cd68fbf85005043
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e87efd30f8b1bc229e0ed2f9d9a790c1acfa6e1c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360067"
 ---
 # <a name="exposing-multichannel-nodes"></a>マルチチャンネル ノードの公開
 
@@ -33,13 +33,13 @@ ms.locfileid: "63333706"
 
 Windows XP より前の Microsoft Windows のバージョンでは、WDM オーディオ ドライバーには、次の種類のマルチ チャネルのノードを公開する簡単な手段がありません。
 
-[**KSNODETYPE\_ボリューム**](https://msdn.microsoft.com/library/windows/hardware/ff537208)
+[**KSNODETYPE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)
 
-[**KSNODETYPE\_ミュート**](https://msdn.microsoft.com/library/windows/hardware/ff537178)
+[**KSNODETYPE\_ミュート**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute)
 
-[**KSNODETYPE\_トーン**](https://msdn.microsoft.com/library/windows/hardware/ff537205)
+[**KSNODETYPE\_トーン**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-tone)
 
-具体的には、明示的にサポートしているチャネルの数のノードを照会するためのメカニズムは存在しません。 この問題の回避策がありますが、欠点があります。 たとえば、クライアントが使用できます、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)繰り返し、[ボリューム] ノードを照会するプロパティ ([**KSNODETYPE\_ボリューム**](https://msdn.microsoft.com/library/windows/hardware/ff537208)) - 各チャネルのボリューム レベル 0、1、およびようになって要求がチャネルもないことを示すエラーを返すまでは存在します。 ただし、この方法は複数のクエリを必要とされ、新しいマルチ チャンネル オーディオ デバイスを処理するために非常に効率ではありません。 Windows XP およびそれ以降のオペレーティング システムでは、この制限は 2 つの追加のフラグのビットを定義することで解決、**フラグ**のメンバー、 [ **KSPROPERTY\_MEMBERSHEADER**](https://msdn.microsoft.com/library/windows/hardware/ff565189)構造体は、プロパティ ハンドラーが basic サポート クエリに対する応答の出力します。
+具体的には、明示的にサポートしているチャネルの数のノードを照会するためのメカニズムは存在しません。 この問題の回避策がありますが、欠点があります。 たとえば、クライアントが使用できます、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)繰り返し、[ボリューム] ノードを照会するプロパティ ([**KSNODETYPE\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)) - 各チャネルのボリューム レベル 0、1、およびようになって要求がチャネルもないことを示すエラーを返すまでは存在します。 ただし、この方法は複数のクエリを必要とされ、新しいマルチ チャンネル オーディオ デバイスを処理するために非常に効率ではありません。 Windows XP およびそれ以降のオペレーティング システムでは、この制限は 2 つの追加のフラグのビットを定義することで解決、**フラグ**のメンバー、 [ **KSPROPERTY\_MEMBERSHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_membersheader)構造体は、プロパティ ハンドラーが basic サポート クエリに対する応答の出力します。
 
 -   KSPROPERTY\_メンバー\_フラグ\_BASICSUPPORT\_マルチ チャネル
 
@@ -53,9 +53,9 @@ Windows XP より前の Microsoft Windows のバージョンでは、WDM オー�
 
      
 
-Windows XP 以降のミニポート ドライバーでマルチ チャネルのボリュームのノードのプロパティのハンドラーが、KSPROPERTY を設定します\_メンバー\_フラグ\_BASICSUPPORT\_KSPROPERTYへの応答でマルチチャネルがビット。\_オーディオ\_VOLUMELEVEL basic サポート クエリ。 ハンドラーの配列を返します[ **KSPROPERTY\_ステッピング\_長い**](https://msdn.microsoft.com/library/windows/hardware/ff565631)構造--ノード セットによって公開される各チャネルに 1 つずつ**MembersSize**に**sizeof**(KSPROPERTY\_ステッピング\_長い)。 配列の各要素には、チャネルの最小値と最大のボリューム レベルと連続する値の範囲の間のデルタがについて説明します。 一様でない範囲を使用したチャネルを正しく公開できるように、各個々 のチャネルに対して異なる範囲を指定できます。 たとえば、サブウーファー チャネルには、他のチャネルとは異なる範囲があります。
+Windows XP 以降のミニポート ドライバーでマルチ チャネルのボリュームのノードのプロパティのハンドラーが、KSPROPERTY を設定します\_メンバー\_フラグ\_BASICSUPPORT\_KSPROPERTYへの応答でマルチチャネルがビット。\_オーディオ\_VOLUMELEVEL basic サポート クエリ。 ハンドラーの配列を返します[ **KSPROPERTY\_ステッピング\_長い**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_long)構造--ノード セットによって公開される各チャネルに 1 つずつ**MembersSize**に**sizeof**(KSPROPERTY\_ステッピング\_長い)。 配列の各要素には、チャネルの最小値と最大のボリューム レベルと連続する値の範囲の間のデルタがについて説明します。 一様でない範囲を使用したチャネルを正しく公開できるように、各個々 のチャネルに対して異なる範囲を指定できます。 たとえば、サブウーファー チャネルには、他のチャネルとは異なる範囲があります。
 
-次のコード例を処理する方法を示しています、[オーディオのプロパティのクエリを basic サポート](basic-support-queries-for-audio-properties.md)一様でないプロパティ値を使用します。 ポインターの下にコードの最初の行で変数 pDescription、 [ **KSPROPERTY\_説明**](https://msdn.microsoft.com/library/windows/hardware/ff565132)構造のハンドラーが書き込む先のデータ バッファーの先頭に、basic サポート情報:
+次のコード例を処理する方法を示しています、[オーディオのプロパティのクエリを basic サポート](basic-support-queries-for-audio-properties.md)一様でないプロパティ値を使用します。 ポインターの下にコードの最初の行で変数 pDescription、 [ **KSPROPERTY\_説明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_description)構造のハンドラーが書き込む先のデータ バッファーの先頭に、basic サポート情報:
 
 ```cpp
   //
@@ -96,9 +96,9 @@ Windows XP 以降のミニポート ドライバーでマルチ チャネルの�
 
 KSPROPERTY ことに注意してください\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM フラグは、この例では設定された、ハンドラーが設定はすべて、KSPROPERTY の\_ステッピング\_内の時間構造体同じ範囲の配列。
 
-トーン ノードの基本サポート ハンドラー [ **KSPROPERTY\_オーディオ\_低音**](https://msdn.microsoft.com/library/windows/hardware/ff537242)、 [ **KSPROPERTY\_オーディオ\_音**](https://msdn.microsoft.com/library/windows/hardware/ff537308)、または[ **KSPROPERTY\_オーディオ\_MID** ](https://msdn.microsoft.com/library/windows/hardware/ff537290)プロパティは、同様の方法で動作します。
+トーン ノードの基本サポート ハンドラー [ **KSPROPERTY\_オーディオ\_低音**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-bass)、 [ **KSPROPERTY\_オーディオ\_音**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-treble)、または[ **KSPROPERTY\_オーディオ\_MID** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mid)プロパティは、同様の方法で動作します。
 
-マルチ チャネルのノードに BOOL 型のチャネルごとのプロパティ値を持つプロパティがある場合は、basic サポート ハンドラー ステップ実行範囲の配列の値を入力する必要があります。 この場合、ハンドラーは、次のコード例に示す値をメンバーを設定します。 この種類のプロパティの 2 つの例は、 [ **KSPROPERTY\_オーディオ\_ミュート**](https://msdn.microsoft.com/library/windows/hardware/ff537293)ミュート ノードのプロパティと[ **KSPROPERTY\_オーディオ\_低音\_BOOST** ](https://msdn.microsoft.com/library/windows/hardware/ff537245)トーン ノードのプロパティ。
+マルチ チャネルのノードに BOOL 型のチャネルごとのプロパティ値を持つプロパティがある場合は、basic サポート ハンドラー ステップ実行範囲の配列の値を入力する必要があります。 この場合、ハンドラーは、次のコード例に示す値をメンバーを設定します。 この種類のプロパティの 2 つの例は、 [ **KSPROPERTY\_オーディオ\_ミュート**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mute)ミュート ノードのプロパティと[ **KSPROPERTY\_オーディオ\_低音\_BOOST** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-bass-boost)トーン ノードのプロパティ。
 
 次のコード例では、BOOL 型のチャネルごとのプロパティの値のプロパティの場合、マルチ チャネルのノードの基本サポート要求を処理する方法を示します。
 
@@ -135,7 +135,7 @@ KSPROPERTY ことに注意してください\_メンバー\_フラグ\_BASICSUPP
 
 KSPROPERTY 間でビットごとの OR 演算を実行できるチャネルのプロパティが統一された場合は、\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM フラグと、KSPROPERTY\_メンバー\_フラグ\_BASICSUPPORT\_マルチ チャネルのフラグと pMembers - に割り当てられている結果&gt;フラグ メンバー。 この値をハードウェア適用されるプロパティ値が同じ一様に、ノードのすべてのチャネルで示すために使用されます。
 
-KSPROPERTY を使用して\_メンバー\_フラグ\_一様と KSPROPERTY\_メンバー\_フラグ\_マルチ チャネルのフラグをペアにチャンネルをグループ化し、個別に公開する必要はありませんWindows Driver Kit (WDK) で Ac97 サンプル ドライバーで行われるよう、チャネルの各ペアのステレオ ボリューム ノードです。 Windows のバージョン以前 Windows XP よりはサポートされないためこれらのフラグ、basic サポートのハンドラーには、ドライバーを使用する必要があります、 [IPortClsVersion](https://msdn.microsoft.com/library/windows/hardware/ff536877) Portcls.sys バージョンを使用するかどうかを判断するためのクエリへのインターフェイスこれらのフラグ。
+KSPROPERTY を使用して\_メンバー\_フラグ\_一様と KSPROPERTY\_メンバー\_フラグ\_マルチ チャネルのフラグをペアにチャンネルをグループ化し、個別に公開する必要はありませんWindows Driver Kit (WDK) で Ac97 サンプル ドライバーで行われるよう、チャネルの各ペアのステレオ ボリューム ノードです。 Windows のバージョン以前 Windows XP よりはサポートされないためこれらのフラグ、basic サポートのハンドラーには、ドライバーを使用する必要があります、 [IPortClsVersion](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclsversion) Portcls.sys バージョンを使用するかどうかを判断するためのクエリへのインターフェイスこれらのフラグ。
 
 トポロジのパーサー (カーネル モードで[WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)Wdmaud.sys) WDM、オーディオ ドライバーから、オーディオ デバイスのトポロジを取得します。 パーサーが従来の Windows のマルチ メディアを使用して従来のミキサー デバイスとそのデバイスを公開する**ミキサー** API。 WDMAud が、KSPROPERTY を使用して Windows XP 以降では、\_メンバー\_フラグ\_BASICSUPPORT\_でレポートへのチャネルの数を決定するフラグをマルチ チャネル、 **cChannels**MIXERLINE 構造体のメンバーです。 さらに、ノードの基本サポート場合ハンドラーを指定、KSPROPERTY\_メンバー\_フラグ\_BASICSUPPORT\_UNIFORM フラグは、WDMAud 設定、MIXERCONTROL\_CONTROLF\_対応する MIXERCONTROL 構造で統一されたフラグです。 このフラグを使用アプリケーションは、各チャネルを個別に調整できるかどうか、またはマスター コントロールを一様にすべてのチャネルを確認できます。 MIXERCONTROL、MIXERLINE の詳細については、**ミキサー** API、Microsoft Windows SDK のドキュメントを参照してください。
 

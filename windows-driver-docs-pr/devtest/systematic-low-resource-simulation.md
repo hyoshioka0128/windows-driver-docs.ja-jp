@@ -4,12 +4,12 @@ description: 体系的な低リソース シミュレーション オプショ�
 ms.assetid: A8351715-8407-4FEF-9050-2F1F2E7FC2FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c11500c180357cff2c74e6aba614a6bbcc8d55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fee6981c3245a2db79d256c61b21330cd8274dda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391302"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360932"
 ---
 # <a name="systematic-low-resources-simulation"></a>体系的な低リソースのシミュレーション
 
@@ -121,7 +121,7 @@ ms.locfileid: "63391302"
 ## <a name="span-iddebuggingbugcheckscausedbysystematiclowresourcessimulationspanspan-iddebuggingbugcheckscausedbysystematiclowresourcessimulationspanspan-iddebuggingbugcheckscausedbysystematiclowresourcessimulationspandebugging-bug-checks-caused-by-systematic-low-resources-simulation"></a><span id="Debugging_bug_checks_caused_by_Systematic_low_resources_simulation"></span><span id="debugging_bug_checks_caused_by_systematic_low_resources_simulation"></span><span id="DEBUGGING_BUG_CHECKS_CAUSED_BY_SYSTEMATIC_LOW_RESOURCES_SIMULATION"></span>体系的な低リソース シミュレーションによるデバッグのバグ チェック
 
 
-ほとんどのバグで体系的な低リソース シミュレーションの結果で見つかった問題を確認します。 これらのコードのバグの原因を判断するため、 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)ツールの Windows 8.1 の拡張機能 (kdexts.dll) と必要なシンボルにデバッガーを提供します。
+ほとんどのバグで体系的な低リソース シミュレーションの結果で見つかった問題を確認します。 これらのコードのバグの原因を判断するため、 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)ツールの Windows 8.1 の拡張機能 (kdexts.dll) と必要なシンボルにデバッガーを提供します。
 
 **デバッガーの拡張機能を実行するには**
 

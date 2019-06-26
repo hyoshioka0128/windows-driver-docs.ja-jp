@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e409cbd8b3785350a83e8422f59725adb88e30f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7abc9ce5aa97de256624367630b22a3d53281ed2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389297"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361135"
 ---
 # <a name="kspropertybdarftunerrange"></a>KSPROPERTY\_BDA\_RF\_チューナー\_範囲
 
@@ -76,7 +76,7 @@ ms.locfileid: "63389297"
 
 いくつかのチューナーを複数のスイッチ、特定のキャリア周波数を検索するドメインを定義するなどの外部のデバイスを制御します。 このプロパティは、− 1、チューナーの範囲が特定のチューニングの領域を使用していないことを意味するか、チューニングの領域に固有の値にチューナーの範囲を設定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -95,7 +95,7 @@ ms.locfileid: "63389297"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

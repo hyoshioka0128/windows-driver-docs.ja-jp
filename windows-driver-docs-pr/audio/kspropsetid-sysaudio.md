@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_Sysaudio
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bcc6fdd80274d2f73349c292fd11a339d5c2a72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59fc9d2485b6c92c0fcb36a7c23ecc7d09ca8484
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332452"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360472"
 ---
 # <a name="kspropsetidsysaudio"></a>KSPROPSETID\_Sysaudio
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332452"
 ## <span id="ddk_kspropsetid_sysaudio_ks"></span><span id="DDK_KSPROPSETID_SYSAUDIO_KS"></span>
 
 
-`KSPROPSETID_Sysaudio`のプロパティにアクセスするプロパティ セットが使用される、 [SysAudio システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#sysaudio-system-driver)します。 Sysaudio はドライバーを管理する[仮想のオーディオ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff538734)DirectSound およびその他のクライアントに代わってします。
+`KSPROPSETID_Sysaudio`のプロパティにアクセスするプロパティ セットが使用される、 [SysAudio システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#sysaudio-system-driver)します。 Sysaudio はドライバーを管理する[仮想のオーディオ デバイス](https://docs.microsoft.com/windows-hardware/drivers/audio/virtual-audio-devices)DirectSound およびその他のクライアントに代わってします。
 
 SysAudio のクライアントは、このプロパティには、次の設定を使用します。
 
@@ -33,7 +33,7 @@ SysAudio のクライアントは、このプロパティには、次の設定�
 
 -   データの経路を含めるか、AEC のノードをバイパスする際に pin を構成します。
 
-使用可能な仮想オーディオ デバイスのプロパティを表示するには、後にクライアントが仮想のオーディオ デバイスのいずれかを選択し、そのデバイスで pin を作成する準備があります。 一部のクライアントは、仮想のオーディオ デバイスでは、複数の pin を作成するか、1 つ以上のデバイスで pin を作成することができます。 ピンを作成する方法の詳細については、次を参照してください。 [Pin ファクトリ](https://msdn.microsoft.com/library/windows/hardware/ff537747)します。
+使用可能な仮想オーディオ デバイスのプロパティを表示するには、後にクライアントが仮想のオーディオ デバイスのいずれかを選択し、そのデバイスで pin を作成する準備があります。 一部のクライアントは、仮想のオーディオ デバイスでは、複数の pin を作成するか、1 つ以上のデバイスで pin を作成することができます。 ピンを作成する方法の詳細については、次を参照してください。 [Pin ファクトリ](https://docs.microsoft.com/windows-hardware/drivers/audio/pin-factories)します。
 
 クライアントが使用できる、暗証番号 (pin) を作成した後、 [KSPROPSETID\_Sysaudio\_Pin](kspropsetid-sysaudio-pin.md)暗証番号 (pin) を管理するプロパティに設定します。
 

@@ -4,19 +4,19 @@ description: 鍵\_AudioEngine\_OEMPeriod
 ms.assetid: e0cefdbf-7016-4609-a898-592a40b5d430
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76934a2d8fec0ffb775ffef355a32619966d4ec5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61e88a2bd55e5249e995d2a261337c134dddc1d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362578"
 ---
 # <a name="pkeyaudioengineoemperiod"></a>鍵\_AudioEngine\_OEMPeriod
 
 
 Windows オーディオ エンジンの実行に事前に定義した間隔として参照される、*周期性*オーディオ エンジンの。 オーディオ エンジンは、Windows 7 および Windows の以降のバージョンで、既定で 10 ミリ秒の周期性を実行します。 INF ファイルと、新しいレジストリ キーを使用する Windows 7、**鍵\_AudioEngine\_OEMPeriod**、オーディオ デバイス ドライバーの周期性をカスタマイズします。 これは、エンドポイントの設定ごと。
 
-INF ファイルから次の抜粋は、使用する方法を示します、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)のオーディオ デバイス ドライバの周期性をカスタマイズします。
+INF ファイルから次の抜粋は、使用する方法を示します、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)のオーディオ デバイス ドライバの周期性をカスタマイズします。
 
 ```inf
 [Version]

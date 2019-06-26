@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 963aa03f2012ee0fb4826d64b365b14385eaf571
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f93a7583b2ace68d59d3ee632bf89a8efc843f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335641"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359776"
 ---
 # <a name="usbkdehciep"></a>!usbkd.\_ehciep
 
@@ -56,7 +56,7 @@ Usbkd.dll
         Port 4: !port2_info ffffe000026df1c0 
 ```
 
-上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! ehci\_情報 ffffe0000206e1a0**します。 DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext**](https://msdn.microsoft.com/library/windows/hardware/dn367072)します。
+上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! ehci\_情報 ffffe0000206e1a0**します。 DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe0000206e1a0

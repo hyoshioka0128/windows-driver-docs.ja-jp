@@ -5,12 +5,12 @@ ms.assetid: 1FE758C1-543A-45B4-A377-336A1307689F
 ms.date: 08/08/2017
 keywords: -OID_WWAN_NETWORK_IDLE_HINT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e44e2c0c399ee8ea9a1f7c65792ac167324a5892
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2765c66ef4da9ffa395171c5c38a0dabdce77d7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388767"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360773"
 ---
 # <a name="oidwwannetworkidlehint"></a>OID\_WWAN\_ネットワーク\_IDLE\_ヒント
 
@@ -19,9 +19,9 @@ OID\_WWAN\_ネットワーク\_IDLE\_ヒントは、データのインターフ�
 
 クエリ要求はサポートされていません。
 
-ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求と後で使用して要求を完了するには、必要な作業、 [ **NDIS\_WWAN\_ネットワーク\_IDLE\_ヒント**](https://msdn.microsoft.com/library/windows/hardware/dn931088)ネットワーク アイドル状態のヒントを示す構造体。
+ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求と後で使用して要求を完了するには、必要な作業、 [ **NDIS\_WWAN\_ネットワーク\_IDLE\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)ネットワーク アイドル状態のヒントを示す構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -44,7 +44,7 @@ OID\_WWAN\_ネットワーク\_IDLE\_ヒントは、データのインターフ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_ネットワーク\_IDLE\_ヒント**](https://msdn.microsoft.com/library/windows/hardware/dn931088)
+[**NDIS\_WWAN\_ネットワーク\_IDLE\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_idle_hint)
 
  
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4efeb9c99f2b921b2213b714501068e8c0269d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5eb1fa0a3759f9c822b33f0af56def5bb288a716
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361438"
 ---
 # <a name="debugrequestexttypeddataansi"></a>デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI
 
@@ -27,7 +27,7 @@ ms.locfileid: "63349099"
 **Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-指定します、 [ **EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)を実行するサブ操作を決定する構造体。 この EXT\_型指定された\_データ構造には (省略可能) その他のデータとそのサブ操作の入力パラメーターが含まれています。 追加のデータが含まれている*InBuffer* 、EXT 後\_型指定された\_データ構造体。 サイズ*InBuffer* 、EXT を格納しているバッファーの合計サイズは、\_型指定された\_データ構造とデータを追加します。 参照してください**EXT\_型指定された\_データ**この構造体と、追加のデータを含める方法の詳細について。
+指定します、 [ **EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)を実行するサブ操作を決定する構造体。 この EXT\_型指定された\_データ構造には (省略可能) その他のデータとそのサブ操作の入力パラメーターが含まれています。 追加のデータが含まれている*InBuffer* 、EXT 後\_型指定された\_データ構造体。 サイズ*InBuffer* 、EXT を格納しているバッファーの合計サイズは、\_型指定された\_データ構造とデータを追加します。 参照してください**EXT\_型指定された\_データ**この構造体と、追加のデータを含める方法の詳細について。
 
 次のサブ操作がサポートされています。
 
@@ -125,7 +125,7 @@ ms.locfileid: "63349099"
  
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-受信、 [ **EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)出力パラメーターと、サブ操作の他のデータを含む構造体。 同様*InBuffer*、サイズの*OutBuffer* 、EXT を格納しているバッファーの合計サイズは、\_型指定された\_データ構造とその他のデータ。
+受信、 [ **EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)出力パラメーターと、サブ操作の他のデータを含む構造体。 同様*InBuffer*、サイズの*OutBuffer* 、EXT を格納しているバッファーの合計サイズは、\_型指定された\_データ構造とその他のデータ。
 
 デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI 操作が最初にコピーする*InBuffer*に*OutBuffer*し内容を変更*OutBuffer*か所で。 つまり、 *OutBuffer* 、EXT の入力パラメーターが設定されます\_型指定された\_データとその他のデータで提供されていた*InBuffer*します。 またのサイズ*OutBuffer*のサイズ以上の容量である必要があります*InBuffer*します。
 
@@ -134,21 +134,21 @@ ms.locfileid: "63349099"
 <span id="S_OK"></span><span id="s_ok"></span>S\_OK  
 操作が正常に完了しました。
 
-このメソッドはエラー値を返すこともできます。 参照してください[**戻り値**](https://msdn.microsoft.com/library/windows/hardware/ff549771)の詳細。
+このメソッドはエラー値を返すこともできます。 参照してください[**戻り値**](https://docs.microsoft.com/windows-hardware/drivers/debugger/hresult-values)の詳細。
 
 この操作によって返される値にも格納されて、**状態**のメンバー *OutBuffer*します。
 
 <a name="remarks"></a>注釈
 -------
 
-デバッグによって実行されるサブ操作\_要求\_EXT\_型指定された\_データ\_ANSI [**要求**](request.md)操作が決定されますによって、**操作**のメンバー、 [ **EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)構造体は、値を受け取り、 [**EXT\_TDOP** ](https://msdn.microsoft.com/library/windows/hardware/ff544529)列挙体。
+デバッグによって実行されるサブ操作\_要求\_EXT\_型指定された\_データ\_ANSI [**要求**](request.md)操作が決定されますによって、**操作**のメンバー、 [ **EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)構造体は、値を受け取り、 [**EXT\_TDOP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)列挙体。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)
+[**EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)
 
-[**EXT\_TDOP**](https://msdn.microsoft.com/library/windows/hardware/ff544529)
+[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)
 
 [**要求**](request.md)
 

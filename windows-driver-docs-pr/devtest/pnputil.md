@@ -4,19 +4,19 @@ description: PnPUtil
 ms.assetid: 3678fd41-c3ee-4538-b783-6f099ac104a6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13428eadb2d861070adde21738780789a86a4744
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 183f37ceb8bc6c1e6ec8a0a1ab119e803dc96fec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363842"
 ---
 # <a name="pnputil"></a>PnPUtil
 
 
-PnPUtil (PnPUtil.exe) は、管理者に次の操作を実行できるコマンド ライン ツール[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840):
+PnPUtil (PnPUtil.exe) は、管理者に次の操作を実行できるコマンド ライン ツール[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages):
 
--   ドライバー パッケージを追加、[ドライバー ストア](https://msdn.microsoft.com/library/windows/hardware/ff544868)します。
+-   ドライバー パッケージを追加、[ドライバー ストア](https://docs.microsoft.com/windows-hardware/drivers/install/driver-store)します。
 
 -   コンピューターのドライバー パッケージをインストールします。
 
@@ -41,7 +41,7 @@ PnPUtil (PnPUtil.exe) は、管理者に次の操作を実行できるコマン�
 <li>型<strong>pnputil/でしょうか。</strong> コマンド オプションを表示します。 参照してください<a href="pnputil-command-syntax.md" data-raw-source="[&lt;strong&gt;PnPUtil Command Syntax&lt;/strong&gt;](pnputil-command-syntax.md)"> <strong>PnPUtil コマンド構文</strong></a>詳細についてはします。</li>
 </ul>
 <div class="alert">
-<strong>注</strong>pnputil ツールは、Windows Vista および以降のバージョンの Windows でサポートされます。 Pnputil ツールを使用して Windows XP には、ただし、使用することができます、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544838" data-raw-source="[Driver Install Frameworks (DIFx)](https://msdn.microsoft.com/library/windows/hardware/ff544838)">Driver Install Frameworks (DIFx)</a>ツールを作成し、ドライバー パッケージのインストールをカスタマイズします。
+<strong>注</strong>pnputil ツールは、Windows Vista および以降のバージョンの Windows でサポートされます。 Pnputil ツールを使用して Windows XP には、ただし、使用することができます、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines" data-raw-source="[Driver Install Frameworks (DIFx)](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)">Driver Install Frameworks (DIFx)</a>ツールを作成し、ドライバー パッケージのインストールをカスタマイズします。
 </div>
 <div>
  

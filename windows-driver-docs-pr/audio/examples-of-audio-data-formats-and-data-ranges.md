@@ -21,12 +21,12 @@ keywords:
 - データ形式の WDK オーディオ、例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd7ead841b1fa9e56fa36e0a2055d4566da6672
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c33bb30b30979edb67d1ed334906dde7fdf0edd3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333690"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360065"
 ---
 # <a name="examples-of-audio-data-formats-and-data-ranges"></a>オーディオ データ形式とデータ範囲の例
 
@@ -34,7 +34,7 @@ ms.locfileid: "63333690"
 ## <span id="examples_of_audio_data_formats_and_data_ranges"></span><span id="EXAMPLES_OF_AUDIO_DATA_FORMATS_AND_DATA_RANGES"></span>
 
 
-次の例を使用する方法を示して、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)と[ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)いくつかの一般的な構造体オーディオ ストリームの形式:
+次の例を使用する方法を示して、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)と[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))いくつかの一般的な構造体オーディオ ストリームの形式:
 
 [アナログ オーディオ Stream データ範囲](analog-audio-stream-data-range.md)
 

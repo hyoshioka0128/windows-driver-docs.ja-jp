@@ -6,19 +6,19 @@ keywords:
 - 引数の解析、EngExtCpp 拡張機能
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbb5f3c32c17eb7bb84485c9c44943ac6a02966f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5413c3ddcce566300e6f96f4ca0f0892dfbda85
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338729"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366452"
 ---
 # <a name="parsing-extension-arguments"></a>拡張機能の引数の解析
 
 
-EngExtCpp の拡張機能フレームワークでは、拡張機能に渡されるコマンドライン引数の解析で支援するメソッドを提供します。 これらのメソッドを利用する、拡張する必要があります最初の形式を宣言でコマンドライン引数、 [ **EXT\_コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff544514)マクロ。
+EngExtCpp の拡張機能フレームワークでは、拡張機能に渡されるコマンドライン引数の解析で支援するメソッドを提供します。 これらのメソッドを利用する、拡張する必要があります最初の形式を宣言でコマンドライン引数、 [ **EXT\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/engextcpp/nf-engextcpp-ext_command)マクロ。
 
-コマンドライン引数の解析、フレームワークによって実行をバイパスし、拡張機能自体、引数の解析、コマンドラインの説明に設定できるように`"{{custom}}"`メソッドを使用して[ **GetRawArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff548226)を解析するためのコマンドライン引数を取得します。
+コマンドライン引数の解析、フレームワークによって実行をバイパスし、拡張機能自体、引数の解析、コマンドラインの説明に設定できるように`"{{custom}}"`メソッドを使用して[ **GetRawArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff548226(v=vs.85))を解析するためのコマンドライン引数を取得します。
 
 表示の列の幅に合わせて、印刷時に、コマンドラインの説明文字列が自動的にラップされます。 ただし、改行文字を使用して、説明文字列に埋め込むことできます '`\n`' - 新しい行を開始します。
 
@@ -79,10 +79,10 @@ EngExtCpp の拡張機能フレームワークでは、拡張機能に渡され�
 引数の型。 これは、引数を解析する方法とを取得する方法に影響します。 *型*パラメーターには、次の値の 1 つには。
 
 <span id="b"></span><span id="B"></span>B  
-ブール型です。 引数では存在するか、存在しません。 使用してブール型の名前付き引数を取得できる[ **HasArg**](https://msdn.microsoft.com/library/windows/hardware/ff549721)します。
+ブール型。 引数では存在するか、存在しません。 使用してブール型の名前付き引数を取得できる[ **HasArg**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff549721(v=vs.85))します。
 
 <span id="e_d__s__bits_"></span><span id="E_D__S__BITS_"></span>e\[d\]\[s\]\[ビット\]  
-式の型。 引数には、数値の値があります。 使用して名前付きの式の引数を取得できる[ **GetArgU64** ](https://msdn.microsoft.com/library/windows/hardware/ff545596)と名前のない式の引数を使用して取得できる[ **GetUnnamedArgU64** ](https://msdn.microsoft.com/library/windows/hardware/ff549465).
+式の型。 引数には、数値の値があります。 使用して名前付きの式の引数を取得できる[ **GetArgU64** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff545596(v=vs.85))と名前のない式の引数を使用して取得できる[ **GetUnnamedArgU64** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff549465(v=vs.85)).
 
 <span id="d"></span><span id="D"></span>D  
 式では、引数文字列に次の空白文字に制限されています。 これが存在しない場合、式の末尾に達したことを決定するまで、式エバリュエーターは、コマンドラインからの文字を消費します。
@@ -94,7 +94,7 @@ EngExtCpp の拡張機能フレームワークでは、拡張機能に渡され�
 引数の値のビット数。 最大値*ビット*64 です。
 
 <span id="s"></span><span id="S"></span>s  
-型の文字列を指定します。 文字列は、次の空白文字に制限されます。 使用して名前付きの文字列引数を取得できる[ **GetArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff545586)と名前のない文字列引数を使用して取得できる[ **GetUnnamedArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff549464).
+型の文字列を指定します。 文字列は、次の空白文字に制限されます。 使用して名前付きの文字列引数を取得できる[ **GetArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff545586(v=vs.85))と名前のない文字列引数を使用して取得できる[ **GetUnnamedArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff549464(v=vs.85)).
 
 <span id="x"></span><span id="X"></span>X  
 型の文字列を指定します。 引数では、コマンドラインの残りの部分です。 使用して、引数を取得**GetArgStr**または**GetUnnamedArgStr**文字列型と同様に、します。
@@ -118,7 +118,7 @@ EngExtCpp の拡張機能フレームワークでは、拡張機能に渡され�
 引数の表示名。 これは、自動で使用される名前 **! ヘルプ**コマンドと、自動拡張 **/でしょうか。** または **-でしょうか。** コマンドライン引数。 コマンド ライン オプションの概要を印刷するときに使用されます。
 
 <span id="argdesc"></span><span id="ARGDESC"></span>*argdesc*  
-引数の説明です。 これは、自動で印刷される説明 **! ヘルプ**拡張機能と、自動で"**/でしょうか**"。 または"**-?**" コマンドライン引数。
+引数の説明です。 これは、自動で印刷される説明 **! ヘルプ**拡張機能と、自動で" **/でしょうか**"。 または" **-?** " コマンドライン引数。
 
 引数の説明のいくつかの例を示します。 次の式では、1 つの省略可能な式の引数を取るコマンドを定義します。 引数は、32 ビットに収まる必要があります。 コマンドラインで引数がない場合 0x100 の既定値が使用されます。
 
@@ -126,7 +126,7 @@ EngExtCpp の拡張機能フレームワークでは、拡張機能に渡され�
 {;e32,o,d=0x100;flags;Flags to control command}
 ```
 
-次の式は、省略可能なブール値を持つコマンドを定義します"**/v**"引数と名前のない文字列が必要な引数。
+次の式は、省略可能なブール値を持つコマンドを定義します" **/v**"引数と名前のない文字列が必要な引数。
 
 ```dbgcmd
 {v;b;;Verbose mode}{;s;name;Name of object}
@@ -154,9 +154,9 @@ EngExtCpp の拡張機能フレームワークでは、拡張機能に渡され�
 
 いくつかのメソッドは、引数を設定する引数のパーサーによって使用されます。
 
-メソッド[ **SetUnnamedArg** ](https://msdn.microsoft.com/library/windows/hardware/ff556876)名前なし引数の値が変更されます。 利便性のため、メソッド、 [ **SetUnnamedArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff556878)と[ **SetUnnamedArgU64** ](https://msdn.microsoft.com/library/windows/hardware/ff556879)名前のない文字列と式に設定されます引数それぞれします。
+メソッド[ **SetUnnamedArg** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556876(v=vs.85))名前なし引数の値が変更されます。 利便性のため、メソッド、 [ **SetUnnamedArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556878(v=vs.85))と[ **SetUnnamedArgU64** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556879(v=vs.85))名前のない文字列と式に設定されます引数それぞれします。
 
-名前付き引数の同様のメソッドが存在します。 [**SetArg** ](https://msdn.microsoft.com/library/windows/hardware/ff556614)名前付き引数の値を変更するために使用し、 [ **SetArgStr** ](https://msdn.microsoft.com/library/windows/hardware/ff556618)と[ **SetArgU64** ](https://msdn.microsoft.com/library/windows/hardware/ff556622)文字列と式の名前付き引数のそれぞれ使用します。
+名前付き引数の同様のメソッドが存在します。 [**SetArg** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556614(v=vs.85))名前付き引数の値を変更するために使用し、 [ **SetArgStr** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556618(v=vs.85))と[ **SetArgU64** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556622(v=vs.85))文字列と式の名前付き引数のそれぞれ使用します。
 
  
 

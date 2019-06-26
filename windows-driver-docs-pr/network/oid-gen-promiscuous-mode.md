@@ -5,12 +5,12 @@ ms.assetid: c3ba0908-724c-4149-a66f-5c3d41751165
 ms.date: 08/08/2017
 keywords: -OID_GEN_PROMISCUOUS_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4278589603de9763b31e1d2f5365cfd8936ddeaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f8ffe058c738adab8cf03b8505f1ae5882287d59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552947"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360808"
 ---
 # <a name="oidgenpromiscuousmode"></a>OID\_GEN\_PROMISCUOUS\_モード
 
@@ -28,11 +28,11 @@ ms.locfileid: "56552947"
 <a name="remarks"></a>注釈
 -------
 
-のみ[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
+のみ[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
 
 インターフェイスのプロバイダーは、NDIS を返した場合\_状態\_成功インターフェイスがそのインターフェイスに送られるパケットのみを受け入れる場合、結果の値を指定する必要があります**FALSE**します。 この値は**TRUE**インターフェイスがすべてのネットワーク パケットを受け入れる場合。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -51,7 +51,7 @@ ms.locfileid: "56552947"
 ## <a name="see-also"></a>関連項目
 
 
-[NDIS ネットワーク インターフェイスの Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

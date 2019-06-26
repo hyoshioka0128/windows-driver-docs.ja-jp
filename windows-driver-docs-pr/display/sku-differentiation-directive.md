@@ -4,12 +4,12 @@ description: Windows Server 2008 および Windows Vista SP1 でボックス表�
 ms.assetid: 9E31BD57-41B6-40DF-AF27-8EAC66BDFE09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed938bf022119b792b43c78f51e82fcf18668717
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81557e368bf9e6cca606d82250b7d7809dacc07b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360330"
 ---
 # <a name="sku-differentiation-directive"></a>SKU の差別化ディレクティブ
 
@@ -48,7 +48,7 @@ Windows 8、Windows Vista SP1 および Windows Server 2008 用に使用され�
 
 そのため、クライアント専用のドライバー パッケージがサーバー システムのドライバー ストアに存在する場合でもそのドライバーはインストールできません。
 
-[ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)を追加する方法について説明*TargetOSVersion*さまざまな条件に基づいてフィルター デバイスのインストールにします。 これらの条件の 1 つは*ProductType*、これは、パッケージのインストール先の Sku のカテゴリを指定に使用できます。 次の値が定義されている*ProductType*:
+[ **INF 製造元セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)を追加する方法について説明*TargetOSVersion*さまざまな条件に基づいてフィルター デバイスのインストールにします。 これらの条件の 1 つは*ProductType*、これは、パッケージのインストール先の Sku のカテゴリを指定に使用できます。 次の値が定義されている*ProductType*:
 
 ``` syntax
 0x0000001 (VER_NT_WORKSTATION)

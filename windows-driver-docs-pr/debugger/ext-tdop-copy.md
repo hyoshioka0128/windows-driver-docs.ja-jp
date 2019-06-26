@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d55cee518a69ad1ea1ef6e2cf9f2b405ceddf8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c94215a29e8414bd2b4e0a6c7364d531e8fe6b04
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379739"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361366"
 ---
 # <a name="exttdopcopy"></a>EXT\_TDOP\_コピー
 
@@ -30,10 +30,10 @@ EXT\_TDOP\_のサブ操作のコピー、 [**デバッグ\_要求\_EXT\_型指�
 EXT に設定\_TDOP\_このサブ操作のコピーします。
 
 <span id="InData"></span><span id="indata"></span><span id="INDATA"></span>**InData**  
-元のインスタンスを指定します、 [**デバッグ\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff541706)構造体。
+元のインスタンスを指定します、 [**デバッグ\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_debug_typed_data)構造体。
 
 <span id="OutData"></span><span id="outdata"></span><span id="OUTDATA"></span>**OutData**  
-インスタンスのコピーを受け取る、 [**デバッグ\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff541706)構造体で指定された**InData**します。
+インスタンスのコピーを受け取る、 [**デバッグ\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_debug_typed_data)構造体で指定された**InData**します。
 
 <span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状態**  
 このサブ操作によって返されるステータス コードを受け取ります。 これは、によって返される値と同じ[**要求**](request.md)します。
@@ -41,18 +41,18 @@ EXT に設定\_TDOP\_このサブ操作のコピーします。
 <a name="remarks"></a>注釈
 -------
 
-EXT\_TDOP\_コピーがの値、 [ **EXT\_TDOP** ](https://msdn.microsoft.com/library/windows/hardware/ff544529)列挙体。
+EXT\_TDOP\_コピーがの値、 [ **EXT\_TDOP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)列挙体。
 
-このサブ操作のパラメーターのメンバーである、 [ **EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)構造体。 EXT のメンバー\_型指定された\_データは、前のパラメーター セクションには示されていないこのサブ操作では使用されませんし、0 に設定する必要があります。 前のパラメーター セクション内のメンバーの説明では、使用は、メンバーを指定します。 メンバーの詳細については、次を参照してください。 **EXT\_型指定された\_データ**します。
+このサブ操作のパラメーターのメンバーである、 [ **EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)構造体。 EXT のメンバー\_型指定された\_データは、前のパラメーター セクションには示されていないこのサブ操作では使用されませんし、0 に設定する必要があります。 前のパラメーター セクション内のメンバーの説明では、使用は、メンバーを指定します。 メンバーの詳細については、次を参照してください。 **EXT\_型指定された\_データ**します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
 [**デバッグ\_要求\_EXT\_型指定された\_データ\_ANSI**](debug-request-ext-typed-data-ansi.md)
 
-[**EXT\_TDOP**](https://msdn.microsoft.com/library/windows/hardware/ff544529)
+[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)
 
-[**EXT\_型指定された\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff545306)
+[**EXT\_型指定された\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)
 
 [**要求**](request.md)
 

@@ -11,12 +11,12 @@ keywords:
 - Dpc の分析
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b15e8f76027bc25c168d4d993652bfc671223c6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed2f13e5ab001712cf45dd8cee14d4181b923691
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363786"
 ---
 # <a name="using-sdvsaverequest-and-sdvretrieverequest-for-deferred-procedure-calls"></a>使用して\_ \_sdv\_保存\_要求と\_ \_sdv\_取得\_遅延プロシージャ呼び出しの要求
 
@@ -37,9 +37,9 @@ __sdv_retrieve_request( request )
 
 これらの関数は、静的分析ツールでのみ使用されます。 関数は、コンパイラによって無視されます。
 
-次のコード例に示す方法、  **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_の取得\_要求**SDV は、遅延の要求をマップできるように関数を使用して、SDV をガイドします。 SDV は、このマッピングを使用して確認する、 [DeferredRequestCompleted](https://msdn.microsoft.com/library/windows/hardware/ff544670)ルール。 DeferredRequestCompleted ルールである必要があります **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_取得\_要求**コードに表示されます。 2 つのドライバーのプロパティ規則がある (**AliasWithinDispatch**、 **AliasWithinTimerDpc**) の存在を検索するように、  **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_取得\_要求**関数。
+次のコード例に示す方法、  **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_の取得\_要求**SDV は、遅延の要求をマップできるように関数を使用して、SDV をガイドします。 SDV は、このマッピングを使用して確認する、 [DeferredRequestCompleted](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-deferredrequestcompleted)ルール。 DeferredRequestCompleted ルールである必要があります **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_取得\_要求**コードに表示されます。 2 つのドライバーのプロパティ規則がある (**AliasWithinDispatch**、 **AliasWithinTimerDpc**) の存在を検索するように、  **\_ \_sdv\_保存\_要求**と\_  **\_sdv\_取得\_要求**関数。
 
-次のコード例は、関数で*EchoEvtIoRead*は、 [ *EvtIoRead* ](https://msdn.microsoft.com/library/windows/hardware/ff541776)で framework 要求オブジェクトへのハンドルを保存するイベントのコールバック関数、キューのコンテキストの領域。 関数は、 *EchoEvtTimerFunc*は、 [ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)イベント コールバック関数を取得します。
+次のコード例は、関数で*EchoEvtIoRead*は、 [ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)で framework 要求オブジェクトへのハンドルを保存するイベントのコールバック関数、キューのコンテキストの領域。 関数は、 *EchoEvtTimerFunc*は、 [ *EvtTimerFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/nc-wdftimer-evt_wdf_timer)イベント コールバック関数を取得します。
 
 ```
 VOID

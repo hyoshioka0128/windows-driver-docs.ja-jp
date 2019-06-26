@@ -8,12 +8,12 @@ keywords:
 - 'WDK: PREfast for Drivers のエラー'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d863b23ce42ef9854171537c4856001f7053a4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27242f8738d9171c3c9303d69aaf5539262e2ac3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358269"
 ---
 # <a name="code-analysis-for-drivers-warnings"></a>ドライバーのコード分析の警告
 
@@ -438,11 +438,11 @@ ms.locfileid: "63327328"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="30032-forcing-request-of-executable-memory.md" data-raw-source="[C30032](30032-forcing-request-of-executable-memory.md)">C30032</a></p></td>
-<td align="left"><p>C30032 を警告します。メモリ割り当て関数と、強制的に実行可能なメモリを使用しての要求を呼び出し、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh920401" data-raw-source="[POOL_NX_OPTOUT](https://msdn.microsoft.com/library/windows/hardware/hh920401)">POOL_NX_OPTOUT</a>ディレクティブ</p></td>
+<td align="left"><p>C30032 を警告します。メモリ割り当て関数と、強制的に実行可能なメモリを使用しての要求を呼び出し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/selective-opt-out-pool-nx-optout" data-raw-source="[POOL_NX_OPTOUT](https://docs.microsoft.com/windows-hardware/drivers/kernel/selective-opt-out-pool-nx-optout)">POOL_NX_OPTOUT</a>ディレクティブ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="30033-executable-allocation-detected-with-pool-nx-optin.md" data-raw-source="[C30033](30033-executable-allocation-detected-with-pool-nx-optin.md)">C30033</a></p></td>
-<td align="left"><p>C30033 を警告します。コンパイルされたドライバーの実行可能ファイルの割り当てが見つかりました<a href="https://msdn.microsoft.com/library/windows/hardware/hh920402" data-raw-source="[POOL_NX_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)">POOL_NX_OPTIN</a>します。 別のドライバーでの実行時に読み込まれるドライバーと判断されました。 読み込みのドライバーを呼び出すことを確認してください<strong>ExInitializeDriverRuntime (<em>DrvRtPoolNxOptIn</em>)</strong>その DriverEntry でします。</p></td>
+<td align="left"><p>C30033 を警告します。コンパイルされたドライバーの実行可能ファイルの割り当てが見つかりました<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin" data-raw-source="[POOL_NX_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)">POOL_NX_OPTIN</a>します。 別のドライバーでの実行時に読み込まれるドライバーと判断されました。 読み込みのドライバーを呼び出すことを確認してください<strong>ExInitializeDriverRuntime (<em>DrvRtPoolNxOptIn</em>)</strong>その DriverEntry でします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="30034-passing-flag-value-to-allocating-function.md" data-raw-source="[C30034](30034-passing-flag-value-to-allocating-function.md)">C30034</a></p></td>

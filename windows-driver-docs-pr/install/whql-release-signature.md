@@ -12,17 +12,17 @@ keywords:
 - WDK、WHQL 署名をリリースします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f854f7e12aa487ee4fc6d6857afdf40f66e3ae3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c3e11cec40da6182eb3e5e9e2c2799adfe30875
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339280"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363514"
 ---
 # <a name="whql-release-signature"></a>WHQL リリース署名
 
 
-[Windows ハードウェア認定キット (HCK)](driver-packages.md) のテストに合格した[ドライバー パッケージ](https://go.microsoft.com/fwlink/p/?linkid=254893)は、WHQL でデジタル署名することができます。 を介して配信できる場合は、ドライバー パッケージが WHQL によってデジタル署名が、 [Windows Update](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)プログラムまたはその他の Microsoft でサポートされている配布メカニズム。
+[Windows ハードウェア認定キット (HCK)](driver-packages.md) のテストに合格した[ドライバー パッケージ](https://go.microsoft.com/fwlink/p/?linkid=254893)は、WHQL でデジタル署名することができます。 を介して配信できる場合は、ドライバー パッケージが WHQL によってデジタル署名が、 [Windows Update](https://docs.microsoft.com/windows-hardware/drivers)プログラムまたはその他の Microsoft でサポートされている配布メカニズム。
 
 WHQL リリース署名の取得は、[Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) の一部です。 WHQL リリース署名は、デジタル署名された[カタログ ファイル](catalog-files.md)から成ります。 テスト向けに提出するドライバーのバイナリ ファイルや INF ファイルがデジタル署名によって変更されることはありません。
 

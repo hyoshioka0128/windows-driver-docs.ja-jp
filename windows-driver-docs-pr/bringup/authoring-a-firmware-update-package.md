@@ -4,17 +4,17 @@ description: 各ファームウェアの更新プログラム パッケージに
 ms.assetid: 672F5E45-C0AB-4C19-BB0A-C8B5A66D8EED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c60c67efed5d39be872796a725615dae02daa4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd76f1220c932406313166bc44e3ba1d14772614
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328114"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364590"
 ---
 # <a name="authoring-a-firmware-update-package"></a>ファームウェア更新プログラム パッケージの作成
 
 
-各ファームウェアの更新プログラム パッケージには、全体のファームウェア ペイロード (たとえば firmware.bin) を含む単一のバイナリ ファイルと Windows を使用して firmware.bin を検証するセキュリティのカタログが含まれています。 セキュリティ カタログとドライバーの詳細については、次を参照してください。[カタログ ファイルとデジタル署名](https://msdn.microsoft.com/library/windows/hardware/ff537872)と[PnP ドライバー パッケージのカタログ ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540161)します。
+各ファームウェアの更新プログラム パッケージには、全体のファームウェア ペイロード (たとえば firmware.bin) を含む単一のバイナリ ファイルと Windows を使用して firmware.bin を検証するセキュリティのカタログが含まれています。 セキュリティ カタログとドライバーの詳細については、次を参照してください。[カタログ ファイルとデジタル署名](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)と[PnP ドライバー パッケージのカタログ ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-a-catalog-file-for-a-pnp-driver-package)します。
 
 ファームウェアの更新プログラム パッケージは、1 つ以上の次の種類のファームウェアを更新できる必要があります。
 

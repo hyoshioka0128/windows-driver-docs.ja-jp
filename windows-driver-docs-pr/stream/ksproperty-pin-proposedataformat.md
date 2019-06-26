@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 12/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6976f513c795a58600894cf8a3cc483bcbdcc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb2303d96c56d882829e5cef47959b4aa04e16a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380806"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361069"
 ---
 # <a name="kspropertypinproposedataformat"></a>KSPROPERTY\_PIN\_PROPOSEDATAFORMAT
 
@@ -53,8 +53,8 @@ ms.locfileid: "63380806"
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ ms.locfileid: "63380806"
 
 KSPROPERTY_PIN_PROPOSEDATAFORMAT には KSDATAFORMAT、提案されたデータ形式を指定する型の構造が含まれます。 メンバーが、関連する pin ファクトリを指定します、KSP_PIN を使用してこのプロパティを指定します。
 
-KSPROPERTY\_PIN\_PROPOSEDATAFORMAT には型の構造体が含まれています[ **KSDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff561656)、提案されたデータ形式を指定します。
+KSPROPERTY\_PIN\_PROPOSEDATAFORMAT には型の構造体が含まれています[ **KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)、提案されたデータ形式を指定します。
 
 [**KSPROPERTY\_型\_取得**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier) Windows 7 および Windows の以降のバージョンでサポートされます。 Windows Vista で**KSPROPERTY\_型\_取得**は*はサポートされていません*します。 
 
@@ -79,7 +79,7 @@ KS フィルター ステータスを返します\_ピンに設定または提�
 KSPROPERTY_TYPE_SET にこのプロパティを使用しても、データ形式が実際に変更はされません。 クライアントを使用して、 [ **KSPROPERTY\_接続\_DATAFORMAT** ](ksproperty-connection-dataformat.md)データ形式を変更します。 **KSPROPERTY_TYPE_SET**はこのプロパティを実装するために省略可能です。
 
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -98,9 +98,9 @@ KSPROPERTY_TYPE_SET にこのプロパティを使用しても、データ形式
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-[**KSDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff561656)
+[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)
  
 [**KSEVENT_PINCAPS_FORMATCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-formatchange)
 

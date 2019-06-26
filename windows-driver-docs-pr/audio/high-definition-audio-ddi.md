@@ -10,12 +10,12 @@ keywords:
 - Intel の高解像度オーディオ仕様
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a6efb692b2b3697196b953f3e8c0faa4fe32c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3af5fb529b92c124066bf34bb246c64ce639a697
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333530"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359963"
 ---
 # <a name="high-definition-audio-ddi"></a>High Definition Audio DDI
 
@@ -32,11 +32,11 @@ HD オーディオ バス ドライバーでは、オーディオとモデムの
 
 Windows Server 2003 および Windows XP で実行されている HD オーディオ バス ドライバーのバージョンには、HD オーディオ DDI の 3 つのバリエーションがサポートされています。
 
--   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)構造体。 この DDI は、Windows Vista では、HD オーディオ DDI と同じです。
+-   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造体。 この DDI は、Windows Vista では、HD オーディオ DDI と同じです。
 
--   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418)構造体。 この DDI では、Windows Vista 以降のバージョンの Windows で使用できます。
+-   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)構造体。 この DDI では、Windows Vista 以降のバージョンの Windows で使用できます。
 
--   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)構造体。 この DDI では、Windows XP 以降のバージョンの Windows で使用できます。
+-   定義されている DDI、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)構造体。 この DDI では、Windows XP 以降のバージョンの Windows で使用できます。
 
 3 つの Ddi 間の相違点はマイナーとは、後ほど[の相違点の間、HD オーディオ DDI バージョン](differences-between-the-hd-audio-ddi-versions.md)します。
 

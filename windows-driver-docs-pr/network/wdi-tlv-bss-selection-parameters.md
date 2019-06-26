@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_BSS_SELECTION_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b8d548a7aae8947970042925aeaf748f0a707425
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bf210ac72ff01a1bb092565cfdb7f58a35bc8c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382616"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358591"
 ---
 # <a name="wditlvbssselectionparameters"></a>WDI\_TLV\_BSS\_選択\_パラメーター
 
 
-WDI\_TLV\_BSS\_選択\_パラメーターが含む TLV [ **WDI\_BSS\_選択\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/mt297629) BSS 選択のホストによって使用されます。
+WDI\_TLV\_BSS\_選択\_パラメーターが含む TLV [ **WDI\_BSS\_選択\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_bss_selection_flags) BSS 選択のホストによって使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -33,11 +33,11 @@ Uint32 型のサイズをバイト単位で。
 
 | 型   | 説明                                                                                                     |
 |--------|-----------------------------------------------------------------------------------------------------------------|
-| UINT32 | [**WDI\_BSS\_選択\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/mt297629) BSS 選択範囲のホストによって使用されます。 |
+| UINT32 | [**WDI\_BSS\_選択\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_bss_selection_flags) BSS 選択範囲のホストによって使用されます。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28147
-ms.openlocfilehash: c7f1ec8ad87abc76898da94ced4c9bc4ea1fe270
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f836334872c5157def7396b87055149c3db3f198
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361369"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364108"
 ---
 # <a name="c28147"></a>C28147
 
@@ -38,7 +38,7 @@ C28147 を警告します。既定のプール タグの使用 (' kdD' または
 
 ドライバーは、既定のプール タグを指定します。 システムでは、プール タグを使用してプールの使用を追跡しているため、プールの一意のタグを使用するドライバーだけは識別しのプールの使用を区別できます。
 
-**ExAllocatePool**と**ExAllocatePoolWithQuota**が廃止され、置き換えられる[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)と[ **ExAllocatePoolWithQuotaTag**](https://msdn.microsoft.com/library/windows/hardware/ff544513)プールの一意のタグを指定できます。
+**ExAllocatePool**と**ExAllocatePoolWithQuota**が廃止され、置き換えられる[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)と[ **ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)プールの一意のタグを指定できます。
 
  
 

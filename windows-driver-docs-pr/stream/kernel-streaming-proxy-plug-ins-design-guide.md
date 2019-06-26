@@ -6,12 +6,12 @@ keywords:
 - カーネル ストリーミング プロキシ WDK AVStream、プラグイン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e291b4ff1da8cbf70d69c1c29457e00b8fb3b23b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48f6ef7ea9e17ef2fd6462597454e5c97336552f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341208"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360646"
 ---
 # <a name="kernel-streaming-proxy-plug-ins-design-guide"></a>カーネル ストリーミング プロキシ プラグイン設計ガイド
 
@@ -32,7 +32,7 @@ ms.locfileid: "63341208"
 
 [プラグインのプロパティ ページ](property-page-plug-in.md)
 
-KS プロキシ COM インターフェイス、エクスポートされたヘルパー関数、およびアプリケーションとプラグインで使用される構造に関する詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。
+KS プロキシ COM インターフェイス、エクスポートされたヘルパー関数、およびアプリケーションとプラグインで使用される構造に関する詳細については、次を参照してください。[カーネル ストリーミング プロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)します。
 
  
 

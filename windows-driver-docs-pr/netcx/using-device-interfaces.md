@@ -2,18 +2,18 @@
 title: デバイス インターフェイスの使用
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: da0b80e0575791256169f7c5ddf7e5328dbc2cf3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1055fb2e72c8b008569f07d2aff7a193f8f62e5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353265"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382807"
 ---
 # <a name="using-device-interfaces"></a>デバイス インターフェイスの使用
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-クライアント ドライバーの呼び出しをユーザー モードから Ioctl を受信する[ **WdfDeviceCreateDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff545935)参照文字列を次に示すようにします。
+クライアント ドライバーの呼び出しをユーザー モードから Ioctl を受信する[ **WdfDeviceCreateDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)参照文字列を次に示すようにします。
 
 ```cpp
 DECLARE_CONST_UNICODE_STRING(c_RefString, L"MyRefString");

@@ -1,6 +1,6 @@
 ---
-title: 概要メッセージ ファイル
-description: 概要メッセージ ファイル
+title: サマリー メッセージ ファイル
+description: サマリー メッセージ ファイル
 ms.assetid: 90d82aee-5836-4f69-8e52-48400e1445cc
 keywords:
 - Tracefmt WDK、概要メッセージ ファイル
@@ -10,14 +10,14 @@ keywords:
 - 合計ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbe98e8b9ba20f710bc2a1b2dafd66fa8045c0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9dce1d04a7dc1035e0959339aa2e7ff86dde467f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56552157"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360938"
 ---
-# <a name="summary-message-file"></a>概要メッセージ ファイル
+# <a name="summary-message-file"></a>サマリー メッセージ ファイル
 
 
 ## <span id="ddk_summary_message_file_tools"></span><span id="DDK_SUMMARY_MESSAGE_FILE_TOOLS"></span>
@@ -65,7 +65,7 @@ Elapsed Time            122 sec
 +---------------------------------------------------------------------------------+
 ```
 
-Tracedrv がヘッダー メッセージおよび 2 つのトレース メッセージが生成される前の概要を示しています。 によって 1 つのトレース メッセージが生成された、 [ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918) 264 の行と、その他のステートメントは行 258 DoTraceMessage ステートメントによって生成されます。 このトレース ログには、最初のトレース メッセージの場合は 1700 インスタンスと 2 つ目のトレース メッセージのインスタンス数は 17 があります。
+Tracedrv がヘッダー メッセージおよび 2 つのトレース メッセージが生成される前の概要を示しています。 によって 1 つのトレース メッセージが生成された、 [ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) 264 の行と、その他のステートメントは行 258 DoTraceMessage ステートメントによって生成されます。 このトレース ログには、最初のトレース メッセージの場合は 1700 インスタンスと 2 つ目のトレース メッセージのインスタンス数は 17 があります。
 
 概要メッセージ ファイルはソフトウェアのトレースをデバッグするには、主に使用され、その形式が変更される可能性が。
 

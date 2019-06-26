@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 504dc2d81b4247a535c576c08bf7a3590ede1343
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f62046d30d581dd4d1668d01dce3fcf785051ecc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367333"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361750"
 ---
 # <a name="bug-check-0x76-processhaslockedpages"></a>バグ チェック 0x76:プロセス\_HAS\_ロック\_ページ
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367333"
 プロセス\_HAS\_ロック\_ページのバグ チェックが 0x00000076 の値を持ちます。 このバグ チェックでは、I/O 操作の後にロックされたページを解放するドライバーが失敗したこと、またはが既にロックされているページのロックを解除しようとしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="processhaslockedpages-parameters"></a>プロセス\_HAS\_ロック\_ページ パラメーター
@@ -85,7 +85,7 @@ ms.locfileid: "63367333"
 
 それ以外の場合、ドライバー、レジストリを編集してエラーの原因を検出できます。
 
-1.   **\\ \\HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\メモリ管理**のレジストリ キーを作成または編集、 **TrackLockedPages**値に設定して、DWORD 1 に設定します。
+1.  **\\ \\HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\メモリ管理**のレジストリ キーを作成または編集、 **TrackLockedPages**値に設定して、DWORD 1 に設定します。
 
 2.  コンピューターを再起動します。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 66b8fcf0a1c2a9e798075a30313112e17e75cde2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fc61645978154e84b3f72aeab805d90a9410ad4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371804"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361571"
 ---
 # <a name="bug-check-0xd1-driverirqlnotlessorequal"></a>バグ チェック 0xD1:ドライバー\_IRQL\_いない\_少ない\_または\_と等しい
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371804"
 ドライバー\_IRQL\_いない\_少ない\_または\_等しいバグ チェックが 0x000000D1 の値を持ちます。 これは、カーネル モード ドライバーが高すぎる IRQL プロセス中にページング可能なメモリへのアクセスを試行したことを示します。 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="driverirqlnotlessorequal-parameters"></a>ドライバー\_IRQL\_いない\_少ない\_または\_等しいパラメーター

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d975d8569d98eb5bd8a00a0603627a8903446a3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19327fe355cffcf7191c8b54ac0cc25995d7d821
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365223"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358390"
 ---
 # <a name="srbchangepowerstate"></a>SRB\_変更\_POWER\_状態
 
@@ -25,7 +25,7 @@ ms.locfileid: "63365223"
 ## <span id="ddk_srb_change_power_state_ks"></span><span id="DDK_SRB_CHANGE_POWER_STATE_KS"></span>
 
 
-クラス ドライバーでは、この要求の電源状態をリセットする必要がありますが、ミニドライバーに通知を送信します。 *pSrb*-&gt;**DeviceState**新しい電源の状態を指定します。 参照してください[ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)します。
+クラス ドライバーでは、この要求の電源状態をリセットする必要がありますが、ミニドライバーに通知を送信します。 *pSrb*-&gt;**DeviceState**新しい電源の状態を指定します。 参照してください[ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)します。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
@@ -44,7 +44,7 @@ ms.locfileid: "63365223"
 
 ミニドライバーは、保存またはデバイスに固有のデータを復元する必要がある場合に行ってください、SRB を処理するときに\_変更\_POWER\_状態要求。
 
-電源状態の詳細については、次を参照してください。[個々 のデバイスを管理する Power](https://msdn.microsoft.com/library/windows/hardware/ff554397)します。
+電源状態の詳細については、次を参照してください。[個々 のデバイスを管理する Power](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-power-for-individual-devices)します。
 
  
 

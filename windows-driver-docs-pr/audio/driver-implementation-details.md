@@ -4,12 +4,12 @@ description: このトピックでは、ハードウェア オフロードされ
 ms.assetid: FB17FADD-D683-4ECC-95F9-86DF7A289C63
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d7c2a0dbde495b6eeb27d30522445a84ba2c63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f79c1b0d48fe31bf96bd682e0d60de6b878e5870
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333748"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360115"
 ---
 # <a name="driver-implementation-details"></a>ドライバー実装の詳細
 
@@ -23,7 +23,7 @@ ms.locfileid: "63333748"
 
 オーディオのアダプターができる場合は、オフロードされたオーディオ ストリームの処理、オーディオ ドライバーのアダプターのアダプターの KS フィルターで新しく導入されたノードを使用して、この機能を公開します。
 
-オーディオ ストリームのパス内の各ノードがノード記述子を持つため、この新しいノードのドライバーを設定する必要があります、*型*GUID [ **KSNODETYPE\_オーディオ\_エンジン**](https://msdn.microsoft.com/library/windows/hardware/hh450866). ドライバーがこの新しいノードのノードの記述子を構成する方法の例を次に示します。
+オーディオ ストリームのパス内の各ノードがノード記述子を持つため、この新しいノードのドライバーを設定する必要があります、*型*GUID [ **KSNODETYPE\_オーディオ\_エンジン**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-engine). ドライバーがこの新しいノードのノードの記述子を構成する方法の例を次に示します。
 
 ```ManagedCPlusPlus
 typedef struct _KSNODE_DESCRIPTOR {
@@ -65,7 +65,7 @@ PCNODE_DESCRIPTOR MiniportNodes[] =
 ## <a name="span-idanewkspropertysetforaudioenginesspanspan-idanewkspropertysetforaudioenginesspanspan-idanewkspropertysetforaudioenginesspana-new-ks-property-set-for-audio-engines"></a><span id="A_new_KS_property_set_for_audio_engines"></span><span id="a_new_ks_property_set_for_audio_engines"></span><span id="A_NEW_KS_PROPERTY_SET_FOR_AUDIO_ENGINES"></span>オーディオ エンジンの設定の新しい KS プロパティ
 
 
-Windows 8 では、以降では、 [KSPROPSETID\_AudioEngine](https://msdn.microsoft.com/library/windows/hardware/hh450902)オーディオ エンジンのハードウェアおよびハードウェア オフロードされたオーディオ処理をサポートするプロパティ セットが導入されています。 処理できるアダプターのドライバーがオフロードできるようにオーディオ ストリームはこの新しいプロパティを設定でプロパティをサポートする必要があります。
+Windows 8 では、以降では、 [KSPROPSETID\_AudioEngine](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioengine)オーディオ エンジンのハードウェアおよびハードウェア オフロードされたオーディオ処理をサポートするプロパティ セットが導入されています。 処理できるアダプターのドライバーがオフロードできるようにオーディオ ストリームはこの新しいプロパティを設定でプロパティをサポートする必要があります。
 
 新しいプロパティを設定した**KSPROPSETID\_AudioEngine**、次のように定義されています。
 
@@ -76,48 +76,48 @@ DEFINE_GUIDSTRUCT("3A2F82DC-886F-4BAA-9EB4-082B9025C536", KSPROPSETID_AudioEngin
 #define KSPROPSETID_AudioEngine DEFINE_GUIDNAMED(KSPROPSETID_AudioEngine)
 ```
 
-この新しいプロパティ セット内のプロパティの名前が定義されている、 [ **KSPROPERTY\_AUDIOENGINE** ](https://msdn.microsoft.com/library/windows/hardware/hh450867)列挙型、およびドライバーは、これらの名前をサポートする必要があります。
+この新しいプロパティ セット内のプロパティの名前が定義されている、 [ **KSPROPERTY\_AUDIOENGINE** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine)列挙型、およびドライバーは、これらの名前をサポートする必要があります。
 
 内の新しいプロパティをここでは、 **KSPROPSETID\_AudioEngine**プロパティ セット。
 
-[**KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲**](https://msdn.microsoft.com/library/windows/hardware/hh450868)
+[**KSPROPERTY\_AUDIOENGINE\_バッファー\_サイズ\_範囲**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-buffer-size-limits)
 
-[**KSPROPERTY\_AUDIOENGINE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/hh450870)
+[**KSPROPERTY\_AUDIOENGINE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-descriptor)
 
-[**KSPROPERTY\_AUDIOENGINE\_DEVICEFORMAT**](https://msdn.microsoft.com/library/windows/hardware/hh450872)
+[**KSPROPERTY\_AUDIOENGINE\_DEVICEFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-deviceformat)
 
-[**KSPROPERTY\_AUDIOENGINE\_GFXENABLE**](https://msdn.microsoft.com/library/windows/hardware/hh450874)
+[**KSPROPERTY\_AUDIOENGINE\_GFXENABLE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-gfx-enable)
 
-[**KSPROPERTY\_AUDIOENGINE\_LFXENABLE**](https://msdn.microsoft.com/library/windows/hardware/hh450876)
+[**KSPROPERTY\_AUDIOENGINE\_LFXENABLE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-lfx-enable)
 
-[**KSPROPERTY\_AUDIOENGINE\_ループバック\_保護**](https://msdn.microsoft.com/library/windows/hardware/hh450878)
+[**KSPROPERTY\_AUDIOENGINE\_ループバック\_保護**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-loopback-protection)
 
-[**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**](https://msdn.microsoft.com/library/windows/hardware/hh450880)
+[**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-mixformat)
 
-[**KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS**](https://msdn.microsoft.com/library/windows/hardware/hh450884)
+[**KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-supporteddeviceformats)
 
-[**KSPROPERTY\_AUDIOENGINE\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/hh831855)
+[**KSPROPERTY\_AUDIOENGINE\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-volumelevel)
 
 ## <a name="span-idupdatestothekspropsetidaudiopropertysetspanspan-idupdatestothekspropsetidaudiopropertysetspanspan-idupdatestothekspropsetidaudiopropertysetspanupdates-to-the-kspropsetid-audio-property-set"></a><span id="Updates_to_the_KSPROPSETID__Audio_property_set"></span><span id="updates_to_the_kspropsetid__audio_property_set"></span><span id="UPDATES_TO_THE_KSPROPSETID__AUDIO_PROPERTY_SET"></span>更新プログラム、KSPROPSETID\_オーディオ プロパティ セット
 
 
-新しいプロパティをサポートしているだけでなく**KSPROPSETID\_AudioEngine**プロパティを設定するドライバーはで、次の既存のプロパティをサポートする必要がありますも、 [KSPROPSETID\_オーディオ](https://msdn.microsoft.com/library/windows/hardware/ff537440)プロパティ セット。
+新しいプロパティをサポートしているだけでなく**KSPROPSETID\_AudioEngine**プロパティを設定するドライバーはで、次の既存のプロパティをサポートする必要がありますも、 [KSPROPSETID\_オーディオ](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audio)プロパティ セット。
 
-[**KSPROPERTY\_オーディオ\_ミュート**](https://msdn.microsoft.com/library/windows/hardware/ff537293)
+[**KSPROPERTY\_オーディオ\_ミュート**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mute)
 
-[**KSPROPERTY\_AUDIO\_PEAKMETER**](https://msdn.microsoft.com/library/windows/hardware/ff537296)
+[**KSPROPERTY\_AUDIO\_PEAKMETER**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-peakmeter)
 
-[**KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)
+[**KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)
 
 新しいプロパティが追加されましたによるハードウェア オフロードされたオーディオ処理用のドライバー サポートの実装を完了して、 **KSPROPSETID\_オーディオ**プロパティ セット。
 
 ここでは、新しい**KSPROPSETID\_オーディオ**プロパティ。
 
-[**KSPROPERTY\_オーディオ\_線形\_バッファー\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450894)
+[**KSPROPERTY\_オーディオ\_線形\_バッファー\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-linear-buffer-position)
 
-[**KSPROPERTY\_オーディオ\_プレゼンテーション\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450895)
+[**KSPROPERTY\_オーディオ\_プレゼンテーション\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-presentation-position)
 
-[**KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450896)
+[**KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-wavert-current-write-position)
 
 ## <a name="span-idport-classdriverupdatesandglitchreportingspanspan-idport-classdriverupdatesandglitchreportingspanspan-idport-classdriverupdatesandglitchreportingspanport-class-driver-updates-and-glitch-reporting"></a><span id="Port-class_driver_updates_and_glitch_reporting"></span><span id="port-class_driver_updates_and_glitch_reporting"></span><span id="PORT-CLASS_DRIVER_UPDATES_AND_GLITCH_REPORTING"></span>ポート クラス ドライバーの更新プログラムとの不具合の報告
 

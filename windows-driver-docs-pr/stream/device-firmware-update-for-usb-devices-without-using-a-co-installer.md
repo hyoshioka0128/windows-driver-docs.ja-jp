@@ -3,18 +3,18 @@ title: デバイスのファームウェア共同インストーラーを使用�
 description: 共同インストーラーなしの USB デバイスのファームウェアを更新する推奨方法について説明します。
 ms.date: 11/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ad53b257200cd14db227111a6cf7ed0767b2acf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2b58da9895f456a4f8960b6cd5bfc0f89b28fa2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374104"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360189"
 ---
 # <a name="device-firmware-update-for-usb-devices-without-using-a-co-installer"></a>デバイスのファームウェア共同インストーラーを使用せずに USB デバイスを更新します。
 
 USB デバイスのベンダーでは、共同インストーラーを使用して、受信トレイの USB デバイス ドライバーを使用するデバイスのデバイスのファームウェアを更新します。 ただし、共同インストーラーはサポートされていませんで、新しい"ユニバーサル INF"standard、Windows 10 での要件であります。 これにより、既存の USB デバイスのファームウェア更新プロセスにという課題が伴います。 このトピックでは、共同インストーラーなしの USB デバイスのファームウェアを更新する推奨方法について説明します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 USB デバイスのファームウェア更新プロセスの主要な要件は次のとおりです。
 
@@ -28,7 +28,7 @@ USB デバイスのファームウェア更新プロセスの主要な要件は�
 
 UVC カメラなどの USB デバイスは、フィールドの更新可能なファームウェアでリリースします。 現在のファームウェアを更新する標準的な方法はありません。 既存のすべての更新メカニズムに共通する 1 つは、いくつかのカスタム ソフトウェア スイートは、クライアントで実行し、デバイスにファームウェアのダウンロードには。 通常、デバイスのインストール プロセスの一部としてソフトウェア スイートを更新するファームウェアがインストールされています。 共同インストーラー キック、ファームウェア更新プロセスを開始します。 Windows 10 での共同インストーラーがない場合では、デバイスのベンダーが、フィールドにこれらのデバイスのファームウェアを更新できなくなります。
 
-USB デバイスのファームウェア更新のシナリオは、USB デバイスが低いフィルター ドライバーを使用するは、共同インストーラーがないことを回避するために推奨される方法は、ファームウェア更新プロセスを開始します。 中に、 [ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)を呼び出すと、フィルター ドライバーはデバイス ファームウェアのバージョンを確認し、必要に応じてファームウェアを更新します。
+USB デバイスのファームウェア更新のシナリオは、USB デバイスが低いフィルター ドライバーを使用するは、共同インストーラーがないことを回避するために推奨される方法は、ファームウェア更新プロセスを開始します。 中に、 [ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)を呼び出すと、フィルター ドライバーはデバイス ファームウェアのバージョンを確認し、必要に応じてファームウェアを更新します。
 
 ## <a name="firmware-update-overview"></a>ファームウェアの更新の概要
 
@@ -62,13 +62,13 @@ Windows の更新サーバー上のドライバー更新プログラム パッ�
 
 ![ファームウェア更新 UMDF 低いフィルター ドライバー メソッド](images/fw-update-umdf-lower-filter-driver-method.png)
 
-ドライバーの更新プログラム パッケージをインストールするときに WDF のファームウェアの更新にフィルター ドライバーの[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンが呼び出されます。 このルーチンでは、WDF フィルター ドライバーはデバイス ハードウェアのレジストリ キーから、デバイスのファームウェア バージョン用に表示されます。 デバイスのファームウェアがデバイス ハードウェアのレジストリ キーに MSO 記述子を使用してファームウェアのバージョンを配置が必要があります。
+ドライバーの更新プログラム パッケージをインストールするときに WDF のファームウェアの更新にフィルター ドライバーの[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンが呼び出されます。 このルーチンでは、WDF フィルター ドライバーはデバイス ハードウェアのレジストリ キーから、デバイスのファームウェア バージョン用に表示されます。 デバイスのファームウェアがデバイス ハードウェアのレジストリ キーに MSO 記述子を使用してファームウェアのバージョンを配置が必要があります。
 
 1. デバイスのファームウェアのバージョンとフィルター ドライバーの予期されるファームウェア バージョンが異なる場合、または
 
 1. ファームウェアのバージョンがデバイス ハードウェアのレジストリ キーでご利用いただけません
 
-    1. 次に、フィルター ドライバーに自動的に挿入デバイス スタックを成功を返すことによって[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)コールバック。
+    1. 次に、フィルター ドライバーに自動的に挿入デバイス スタックを成功を返すことによって[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)コールバック。
 
 1. それ以外の場合、フィルター ドライバーに挿入されない自体、デバイス スタック
 

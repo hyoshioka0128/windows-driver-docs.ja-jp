@@ -14,12 +14,12 @@ keywords:
 - 保護レベルの WDK 表示、DPCP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f101195a3dfa4eb8549d9e704b49fd1c98cea70c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 999116f3b7bf50d79b122a7bab294f309ae2e00d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340114"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359327"
 ---
 # <a name="handling-protection-levels-with-opm"></a>OPM での保護レベルの処理
 
@@ -28,9 +28,9 @@ ms.locfileid: "63340114"
 
 グラフィックス アダプターは、任意の出力保護の種類をサポートする必要はありません。 ただし、グラフィックス アダプターをする必要があります、グラフィックス アダプターの出力は、現在設定されている各のサポートされる保護の種類正確にレポートの各出力の保護レベル。
 
-ACP および CGMS A 保護アナログ テレビ信号。 OPM が ACP を使用して現在のところ、および CGMS-A 複合出力、s-ビデオ出力、またはコンポーネントの出力からの信号を保護します。 さまざまな ACP および CGMS A 保護については、レベルを参照してください、 [ **DXGKMDT\_OPM\_ACP\_保護\_レベル**](https://msdn.microsoft.com/library/windows/hardware/ff560834)と[**DXGKMDT\_OPM\_CGMSA** ](https://msdn.microsoft.com/library/windows/hardware/ff560846)列挙体。
+ACP および CGMS A 保護アナログ テレビ信号。 OPM が ACP を使用して現在のところ、および CGMS-A 複合出力、s-ビデオ出力、またはコンポーネントの出力からの信号を保護します。 さまざまな ACP および CGMS A 保護については、レベルを参照してください、 [ **DXGKMDT\_OPM\_ACP\_保護\_レベル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_acp_protection_level)と[**DXGKMDT\_OPM\_CGMSA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_cgmsa)列挙体。
 
-HDCP がデジタル ビデオ信号を保護します。 現時点では、OPM で HDCP を使用して、デジタル ビデオ インターフェイス (DVI) および高品位のマルチ メディア インターフェイス (HDMI) コネクタの出力からデータを保護することができます。 HDCP 保護のレベルについては、次を参照してください。、 [ **DXGKMDT\_OPM\_HDCP\_保護\_レベル**](https://msdn.microsoft.com/library/windows/hardware/ff560878)列挙体。
+HDCP がデジタル ビデオ信号を保護します。 現時点では、OPM で HDCP を使用して、デジタル ビデオ インターフェイス (DVI) および高品位のマルチ メディア インターフェイス (HDMI) コネクタの出力からデータを保護することができます。 HDCP 保護のレベルについては、次を参照してください。、 [ **DXGKMDT\_OPM\_HDCP\_保護\_レベル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_hdcp_protection_level)列挙体。
 
 DPCP は、ディスプレイ ポート等出力コネクタからデジタル ビデオ信号を保護します。
 

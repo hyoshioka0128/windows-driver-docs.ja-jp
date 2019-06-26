@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ad38b67e5b2ed8e8c218c32a442be33013c6a89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 997ccbbef6b4d33397c40c45193290d1480e70d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361660"
 ---
 # <a name="bug-check-0xa5-acpibioserror"></a>バグ チェック 0xA5:ACPI\_BIOS\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347204"
 ACPI\_BIOS\_エラーのバグ チェックが 0x000000A5 の値を持ちます。 このバグ チェックでは、コンピューターの Advanced Configuration and Power Interface (ACPI) BIOS が ACPI の仕様に完全準拠ではないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="acpibioserror-parameters"></a>ACPI\_BIOS\_エラー パラメーター

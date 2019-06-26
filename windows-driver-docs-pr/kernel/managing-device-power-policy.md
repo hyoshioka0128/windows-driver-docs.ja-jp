@@ -11,12 +11,12 @@ keywords:
 - 最初にデバイスの電源状態の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9dc3a2ea21d91dd938d793c9e2779407874e1de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0060c021eca15cd072934e4f3a0236348b1f806
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360300"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365796"
 ---
 # <a name="managing-device-power-policy"></a>デバイス電源ポリシーの管理
 
@@ -36,15 +36,15 @@ ms.locfileid: "63360300"
 
 デバイスの電源ポリシー所有者は、次の場合です。
 
--   D0 を呼び出すことによって、デバイスの初期の電源状態を設定[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765)処理時に、プラグ アンド プレイ マネージャーの[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)要求。
+-   D0 を呼び出すことによって、デバイスの初期の電源状態を設定[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)処理時に、プラグ アンド プレイ マネージャーの[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。
 
     必要に応じて; デバイスの電源する必要があります。たとえば、ハンドルが I/O 要求にデバイスの電源する必要があります。 デバイスの電源ポリシー所有者は、そのデバイスが必要な場合を決定する、デバイスの電源がオンにすることを確認および適切なデバイスの電源状態を設定します。 開始-デバイスの PnP IRP の完了時での一般的なデバイスの電源する必要があります。
 
     一般的な規則としてほとんどのデバイスが電源がオフときに、使用中でないシステムが稼働状態のときにもします。
 
--   システム電源の要求に応答を呼び出してデバイス電源要求を送信する[ **PoRequestPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559734)します。
+-   システム電源の要求に応答を呼び出してデバイス電源要求を送信する[ **PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)します。
 
-    たとえば、ポリシーの所有者が、システムを受信するとセット power IRP では、デバイスを送信 IRP の出力を設定します。 ほとんどのデバイスは、システムがスリープ状態に入ったときに、D3 を入力します。 **DeviceState**配列、 [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体には、それぞれのシステム電源のデバイスを管理できます highest-powered 状態が表示されます。状態。 (を参照してください[デバイスの電源機能レポート](reporting-device-power-capabilities.md))。
+    たとえば、ポリシーの所有者が、システムを受信するとセット power IRP では、デバイスを送信 IRP の出力を設定します。 ほとんどのデバイスは、システムがスリープ状態に入ったときに、D3 を入力します。 **DeviceState**配列、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体には、それぞれのシステム電源のデバイスを管理できます highest-powered 状態が表示されます。状態。 (を参照してください[デバイスの電源機能レポート](reporting-device-power-capabilities.md))。
 
 -   デバイスがアイドル状態のときに検出し、エネルギーを節約するためにスリープ状態に移行します。
 

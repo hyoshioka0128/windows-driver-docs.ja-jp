@@ -3,12 +3,12 @@ title: ファームウェア WEG に関する FAQ
 description: ファームウェア WEG - よく寄せられる質問 (FAQ)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fead67ee21c49364b6effe1c03a141e1cd2f22d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8e25e3ac99ca5d43be7cd641770316859248a44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337612"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364544"
 ---
 # <a name="firmware-weg-frequently-asked-questions-faq"></a>ファームウェア WEG:よく寄せられる質問 (FAQ)
 
@@ -20,7 +20,7 @@ ms.locfileid: "63337612"
 
 > **A:** 具体的には、Windows 7 をお勧めする構成を使用して、 \#2。 必要があります、CSM を有効にし、UEFI ブートを既定値を設定するために必要な場合にのみ、従来のブートにフォールバックします。 セキュア ブートを無効にする必要があります。
 >
-> Windows 7 が構成をサポートできない\#1。 高解像度のグラフィック ドライバーが利用できない場合、Windows 7 で基本的な表示のサポートを Int10 依存関係がある (バグチェックなど、スリープ状態に遷移など)、CSM によって満たされる依存関係。 部分的な CSM が Int10 サポートの提供 (有効) の場所にある場合は、Win7 を UEFI モードで起動ことができます。 ファームウェアの既定値は、UEFI ブート モードを有効になっている Int10 CSM のまま場合、Win7 正常にインストールされる UEFI モードでします。 マイクロソフトは、UEFI モードでインストールする場合、Windows 7 のバックポート TPM 2.0 サポートも。 詳細については、このサポート技術情報の記事を参照してください。[KB2920188](https://support.microsoft.com/kb/2920188)します。
+> Windows 7 が構成をサポートできない\#1。 高解像度のグラフィック ドライバーが利用できない場合、Windows 7 で基本的な表示のサポートを Int10 依存関係がある (バグチェックなど、スリープ状態に遷移など)、CSM によって満たされる依存関係。 部分的な CSM が Int10 サポートの提供 (有効) の場所にある場合は、Win7 を UEFI モードで起動ことができます。 ファームウェアの既定値は、UEFI ブート モードを有効になっている Int10 CSM のまま場合、Win7 正常にインストールされる UEFI モードでします。 マイクロソフトは、UEFI モードでインストールする場合、Windows 7 のバックポート TPM 2.0 サポートも。 詳細については、このサポート技術情報の記事を参照してください。[KB2920188](https://support.microsoft.com/help/2920188/update-to-add-support-for-tpm-2-0-in-windows-7-and-windows-server-2008)します。
 >
 > Microsoft は、構成を使用する必要がありますをお勧めします\#2 です。従来の MBR ブート モードを使用しない必要があります。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63337612"
 
 **Q:** ユーザーは、Win 10 にアップグレードする前に、Windows 7 を実行している、または BIOS ファームウェアは、UEFI に切り替えられます。
 
-> **A:**\[ある場合、レガシ BIOS ブート モードでは、オペレーティング システムがインストールされていた。\]
+> **A:** \[ある場合、レガシ BIOS ブート モードでは、オペレーティング システムがインストールされていた。\]
 >
 > Windows 10 をインストールしている人は、インストール/セットアップについて説明します。 場合、 Windows セットアップでは、レガシ MBR BIOS ブート モードでディスクを検出し、それに応じてインストールしようとしています。 (カスタマイズ) 場合、システム、起動方法、インストール メディアに応じて結果が異なる場合があります。 ただし、ディスク フォーマットがこのブートでサポートされているというメッセージを取得する可能性があります。 このメッセージを発生する場合は、簡単にディスクをフォーマットし、新しいインストールがあります。 ディスクはフォーマットする場合、警告**が失われる**ディスク上にあったすべてのデータ。
 >
@@ -108,12 +108,12 @@ ms.locfileid: "63337612"
 
 **Q:** システムが起動、実行時にデータに影響を与えることがなく GPT ブートに従来の MBR ブートを使用して変換できますか。
 
-> **A:** いいえ。 Diskpart.exe などの Microsoft ツールを使用して、データの損失が発生します。 MBR ブートと GPT ブートは、2 つの異なるブート機構をこの変更を実装するために、ディスクからすべてのデータを削除するディスクに変更が必要なです。 この変更を試みる前にデータをバックアップします。
+> **A:** No. Diskpart.exe などの Microsoft ツールを使用して、データの損失が発生します。 MBR ブートと GPT ブートは、2 つの異なるブート機構をこの変更を実装するために、ディスクからすべてのデータを削除するディスクに変更が必要なです。 この変更を試みる前にデータをバックアップします。
 
 ## <a name="related-resources"></a>関連リソース
 
-[UEFI ファームウェア](https://technet.microsoft.com/library/hh824898)
+[UEFI ファームウェア](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10))
 
 [Windows 10 の仕様 - Microsoft](https://www.microsoft.com/windows/windows-10-specifications)
 
-[Windows 7 および Windows Server 2008 R2 での TPM 2.0 のサポートを追加する更新プログラム](https://support.microsoft.com/kb/2920188)
+[Windows 7 および Windows Server 2008 R2 での TPM 2.0 のサポートを追加する更新プログラム](https://support.microsoft.com/help/2920188/update-to-add-support-for-tpm-2-0-in-windows-7-and-windows-server-2008)

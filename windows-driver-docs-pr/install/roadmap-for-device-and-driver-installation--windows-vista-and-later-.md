@@ -4,12 +4,12 @@ description: デバイスとドライバーのインストールのロードマ�
 ms.assetid: d6cb6d8c-226f-4b6f-989a-36184236f826
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab39fa9f7044955ab36c9a84167b3977b8030d7
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 829b5049c9e3d314e6b38ea239c9b7040fe639e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382272"
 ---
 # <a name="roadmap-for-device-and-driver-installation"></a>デバイスとドライバーのインストールのロードマップ
 
@@ -32,7 +32,7 @@ Windows オペレーティング システムでは、デバイスとドライ�
 
 -   手順 3:情報 (INF) ファイルについて説明します。
 
-    INF ファイルには、情報とデバイスの設定が含まれているシステム指定[デバイス インストールのコンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff541277)インストールを使用して、[ドライバー パッケージ](driver-packages.md)デバイスやドライバーなどデバイス固有のアプリケーション。
+    INF ファイルには、情報とデバイスの設定が含まれているシステム指定[デバイス インストールのコンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))インストールを使用して、[ドライバー パッケージ](driver-packages.md)デバイスやドライバーなどデバイス固有のアプリケーション。
 
     詳細については、次を参照してください。 [INF ファイル](overview-of-inf-files.md)します。
 
@@ -46,7 +46,7 @@ Windows オペレーティング システムでは、デバイスとドライ�
 
 -   手順 5:テスト署名には、ドライバーは、開発およびテスト中にパッケージ化します。
 
-    参照のプレリリース版をサインインするとき、テスト証明書を使用するテスト署名、[ドライバー パッケージ](driver-packages.md)テスト コンピューターで使用します。 具体的には、これにより、開発者などの自己署名証明書を使用してドライバー パッケージの署名に、 [ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)ツールが生成されます。 この機能をインストールしてドライバー署名の検証が有効になっていると、Windows でドライバー パッケージをテストできます。
+    参照のプレリリース版をサインインするとき、テスト証明書を使用するテスト署名、[ドライバー パッケージ](driver-packages.md)テスト コンピューターで使用します。 具体的には、これにより、開発者などの自己署名証明書を使用してドライバー パッケージの署名に、 [ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)ツールが生成されます。 この機能をインストールしてドライバー署名の検証が有効になっていると、Windows でドライバー パッケージをテストできます。
 
     詳細については、次を参照してください。[開発およびテスト中にドライバーの署名](signing-drivers-during-development-and-test.md)します。
 

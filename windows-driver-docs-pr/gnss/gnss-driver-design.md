@@ -4,12 +4,12 @@ description: データ構造体、エラー報告、およびドライバーの�
 ms.assetid: E10B1149-CC8B-438D-B537-258F7FCFA0E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b473f66d65a4bb251272f149a5b7110f57de3b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df3df3437951bf3d661c3b33393957d024d60722
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371122"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363672"
 ---
 # <a name="gnss-driver-design"></a>GNSS ドライバーの設計
 
@@ -62,7 +62,7 @@ GNSS DDI が必要ですが、 **NTSTATUS**ドライバーからの戻り値と�
 
 GNSS DDI の指定されたすべての構造体には、ドライバーのバージョン フィールドが含まれています、多くの構造体は、埋め込みフィールドを含めることができます。 これらのコンポーネントの両方が次のポリシーを使用して、GNSS DDI の新しいバージョンを軽減するために使用されます。
 
--   フレームワークと、ドライバーは、機能の交換プロセスを使用してそれぞれのバージョンを通信します。 これらの Ioctl はバージョン フィールドを使用して、そのバージョンを通信することで、特別なと見なされます。 そのため、デバイスとプラットフォームの機能確認を周囲の実装をする必要がありますバージョンが最初に、返され、使用量の格納を後で明示的にチェックします。 バージョンのメンバー、 [ **GNSS\_デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn925104)構造体は、ドライバーのバージョン番号を通信します。 バージョンのメンバー、 [ **GNSS\_プラットフォーム\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn925205)構造通信 GNSS アダプターのバージョン番号。
+-   フレームワークと、ドライバーは、機能の交換プロセスを使用してそれぞれのバージョンを通信します。 これらの Ioctl はバージョン フィールドを使用して、そのバージョンを通信することで、特別なと見なされます。 そのため、デバイスとプラットフォームの機能確認を周囲の実装をする必要がありますバージョンが最初に、返され、使用量の格納を後で明示的にチェックします。 バージョンのメンバー、 [ **GNSS\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ns-gnssdriver-gnss_device_capability)構造体は、ドライバーのバージョン番号を通信します。 バージョンのメンバー、 [ **GNSS\_プラットフォーム\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ns-gnssdriver-gnss_platform_capability)構造通信 GNSS アダプターのバージョン番号。
 
 -   領域はバイナリの互換性を保持する構造体に追加する代わりに埋め込み取り出しは新しいフィールドを追加すると、埋め込みフィールドを構造がある場合は、されるたびに
 

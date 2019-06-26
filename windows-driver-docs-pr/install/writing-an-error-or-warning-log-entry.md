@@ -4,25 +4,25 @@ description: エラーや警告ログ エントリの書き込み
 ms.assetid: 80393368-7430-46ca-a53e-c94b7e8acfa0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35a60e9ec98226c5bfcea29ca6397d623c1aea2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b561f3e9d26b96fec0f7d5f70e136e1c1fe2437b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339229"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363498"
 ---
 # <a name="writing-an-error-or-warning-log-entry"></a>エラーや警告ログ エントリの書き込み
 
 
-次の例は、アプリケーションが呼び出す可能性があります通常方法[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)エラーまたは警告のエントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)します。 ただし、イベントが SetupAPI 固有のエラーまたは Win32 エラーに関連付けられている場合は、アプリケーションが呼び出して[ **SetupWriteTextLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff552232)代わりにします。 **SetupWriteTextLogError**ログ記録とこれらの種類のエラーについての情報の解釈が容易になります。
+次の例は、アプリケーションが呼び出す可能性があります通常方法[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)エラーまたは警告のエントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)します。 ただし、イベントが SetupAPI 固有のエラーまたは Win32 エラーに関連付けられている場合は、アプリケーションが呼び出して[ **SetupWriteTextLogError** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror)代わりにします。 **SetupWriteTextLogError**ログ記録とこれらの種類のエラーについての情報の解釈が容易になります。
 
 呼び出しについては**SetupWriteTextLog** 、エラー メッセージを記録するには、次を参照してください[エラー メッセージをログ記録](#logging-an-error-message)呼び出しについては、 **SetupWriteTextLog**ログ。警告メッセージを参照してください[警告メッセージをログ記録](#logging-a-warning-message)します。
 
 ### <a href="" id="logging-an-error-message"></a> エラー メッセージをログ記録
 
-この例で、アプリケーションを呼び出す[ **SetupWriteTextLog**](https://msdn.microsoft.com/library/windows/hardware/ff552218)、次のパラメーター値を指定します。
+この例で、アプリケーションを呼び出す[ **SetupWriteTextLog**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)、次のパラメーター値を指定します。
 
--   *LogToken*ログのトークン値を呼び出すことによって取得されたいずれかに設定されている[ **SetupGetThreadLogToken** ](https://msdn.microsoft.com/library/windows/hardware/ff552211) で説明されているトークンの値は、システム定義のログの1つまたは[ログイン トークン](log-tokens.md)します。
+-   *LogToken*ログのトークン値を呼び出すことによって取得されたいずれかに設定されている[ **SetupGetThreadLogToken** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken) で説明されているトークンの値は、システム定義のログの1つまたは[ログイン トークン](log-tokens.md)します。
 
 -   *カテゴリ*TXTLOG_VENDOR で、ログ エントリがベンダーから提供されたアプリケーションによって行われたことを示しますに設定されます。 イベント カテゴリについては、後述[テキスト ログのイベント カテゴリを有効にする](enabling-event-categories-for-a-text-log.md)します。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63339229"
 
 -   コンマ区切りのリストには、変数のエラー コードが用意されています。
 
-次のコード呼び出し[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)例ではこのログ エントリの書き込みに。
+次のコード呼び出し[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)例ではこのログ エントリの書き込みに。
 
 ```cpp
 //The LogToken value was previously returned by call to
@@ -54,7 +54,7 @@ TXTLOG_VENDOR イベントのカテゴリが有効になっており、TXTLOG_ER
 
 ### <a href="" id="logging-a-warning-message"></a> 警告メッセージをログ記録
 
-警告メッセージをログ記録は、エラー メッセージをログ記録とほぼ同じです。 違いは、イベント レベルの設定です。 設定*フラグ*TXTLOG_WARNING TXTLOG_ERROR の代わりにします。 場合**SetupWriteTextLog** 」の説明に従ってと呼びます[エラー メッセージをログ記録](#logging-an-error-message)ことを除いて、*フラグ*ビットごとの TXTLOG_WARNING またはと TXTLOG_TIMESTAMP に設定されている[**SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)は次のログ エントリを記述します。
+警告メッセージをログ記録は、エラー メッセージをログ記録とほぼ同じです。 違いは、イベント レベルの設定です。 設定*フラグ*TXTLOG_WARNING TXTLOG_ERROR の代わりにします。 場合**SetupWriteTextLog** 」の説明に従ってと呼びます[エラー メッセージをログ記録](#logging-an-error-message)ことを除いて、*フラグ*ビットごとの TXTLOG_WARNING またはと TXTLOG_TIMESTAMP に設定されている[**SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)は次のログ エントリを記述します。
 
 ```cpp
 !  2005/02/13 22:06:28.109:    :  Application error (1111) 

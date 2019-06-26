@@ -10,19 +10,19 @@ keywords:
 - GPS 無線管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6bc428469d1290065e4669cd86eec6d3073dbbf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cd840a2c99a3518d4ea32c58e133bb011515bfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326178"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363619"
 ---
 # <a name="supporting-radio-management"></a>無線管理のサポート
 
 > [!IMPORTANT] 
 > このドキュメントと Windows 8.1 の地理的位置情報ドライバー サンプルが非推奨とされました。
 
-ユーザーが、Windows 8 ラップトップ、ノートブック、または tablet PC 設定で [ワイヤレス] オプションをオンまたはオフ、接続しているワイヤレス デバイスを有効にできます。 これらのワイヤレス デバイスには、Wi-fi アンテナまたは GPS デバイスを含めることができます。 PC の設定と特定のワイヤレス デバイスの間、内部リンケージを持ちますが、[ラジオ管理 API](https://msdn.microsoft.com/library/windows/hardware/hh406615)と特定のデバイスの対応するラジオ管理 DLL。
+ユーザーが、Windows 8 ラップトップ、ノートブック、または tablet PC 設定で [ワイヤレス] オプションをオンまたはオフ、接続しているワイヤレス デバイスを有効にできます。 これらのワイヤレス デバイスには、Wi-fi アンテナまたは GPS デバイスを含めることができます。 PC の設定と特定のワイヤレス デバイスの間、内部リンケージを持ちますが、[ラジオ管理 API](https://docs.microsoft.com/previous-versions/windows/hardware/radio/hh406615(v=vs.85))と特定のデバイスの対応するラジオ管理 DLL。
 
 ラジオの管理 API は、Windows Driver Kit の一部として出荷されます/Win32 COM インターフェイスのセットです。 これらのインターフェイスにはメソッドが含まれています。
 

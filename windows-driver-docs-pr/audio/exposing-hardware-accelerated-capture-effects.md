@@ -15,12 +15,12 @@ keywords:
 - ノードの暗証番号 (pin) の割り当ての WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f0167052142b57fe0c940e3160c0ea5da92272
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e468778cb3f2c2fb52071bce94e683c190586cae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333675"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360059"
 ---
 # <a name="exposing-hardware-accelerated-capture-effects"></a>ハードウェア アクセラレータによるキャプチャ効果を公開
 
@@ -32,20 +32,20 @@ Windows XP 以降では、WDM オーディオ フレームワークは DirectSou
 
 ミニポート ドライバーでは、基になるデバイスの機能によって、これらの効果の一部のハードウェア アクセラレータを公開できます。 AEC および NS 効果のハードウェアの機能を公開するには、AEC で各ピンのフィルター ドライバーの実装はこれらの要件を満たす必要があります。
 
--   Pin をグラフに組み込めるハードウェア効果を表すノード チェーン内の個別のノードを含める必要があります。 AEC と NS 効果 KS ノード型は次の Guid を指定します。[**KSNODETYPE\_音響\_エコー\_キャンセル**](https://msdn.microsoft.com/library/windows/hardware/ff537150)
-    [**KSNODETYPE\_ノイズ\_を抑制します。**](https://msdn.microsoft.com/library/windows/hardware/ff537182)
--   ピン AEC および NS ノードをサポートする必要があります、 [KSPROPSETID\_全般](https://msdn.microsoft.com/library/windows/hardware/ff566576)プロパティが設定され、クエリされるときに、製造元に関する情報を提供する必要があります、 [ **KSPROPERTY\_全般\_COMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff565171)プロパティ。
+-   Pin をグラフに組み込めるハードウェア効果を表すノード チェーン内の個別のノードを含める必要があります。 AEC と NS 効果 KS ノード型は次の Guid を指定します。[**KSNODETYPE\_音響\_エコー\_キャンセル**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel)
+    [**KSNODETYPE\_ノイズ\_を抑制します。** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress)
+-   ピン AEC および NS ノードをサポートする必要があります、 [KSPROPSETID\_全般](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-general)プロパティが設定され、クエリされるときに、製造元に関する情報を提供する必要があります、 [ **KSPROPERTY\_全般\_COMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-general-componentid)プロパティ。
 
--   ピン AEC および NS ノードをサポートする必要があります、 [KSPROPSETID\_TopologyNode](https://msdn.microsoft.com/library/windows/hardware/ff537491)プロパティ セットとその 2 つのプロパティ。
+-   ピン AEC および NS ノードをサポートする必要があります、 [KSPROPSETID\_TopologyNode](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-topologynode)プロパティ セットとその 2 つのプロパティ。
 
-    [**KSPROPERTY\_TOPOLOGYNODE\_を有効にする**](https://msdn.microsoft.com/library/windows/hardware/ff537431)効果を使用します。
+    [**KSPROPERTY\_TOPOLOGYNODE\_を有効にする**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-topologynode-enable)効果を使用します。
 
-    [**KSPROPERTY\_TOPOLOGYNODE\_リセット**](https://msdn.microsoft.com/library/windows/hardware/ff537434)効果を既定の状態にリセットします。
+    [**KSPROPERTY\_TOPOLOGYNODE\_リセット**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-topologynode-reset)効果を既定の状態にリセットします。
 
--   ピン AEC および NS ノードの次のプロパティをサポートする必要があります、 [KSPROPSETID\_オーディオ](https://msdn.microsoft.com/library/windows/hardware/ff537440)プロパティ セット。[**KSPROPERTY\_オーディオ\_CPU\_リソース**](https://msdn.microsoft.com/library/windows/hardware/ff537255)
-    [**KSPROPERTY\_オーディオ\_アルゴリズム\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff537240)
--   Pin は、KSPROPSETID の次のプロパティをサポートする必要があります\_オーディオ プロパティ セット。[**KSPROPERTY\_オーディオ\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537297)
-    [**KSPROPERTY\_オーディオ\_待機時間**](https://msdn.microsoft.com/library/windows/hardware/ff537286)
+-   ピン AEC および NS ノードの次のプロパティをサポートする必要があります、 [KSPROPSETID\_オーディオ](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audio)プロパティ セット。[**KSPROPERTY\_オーディオ\_CPU\_リソース**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-cpu-resources)
+    [**KSPROPERTY\_オーディオ\_アルゴリズム\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-algorithm-instance)
+-   Pin は、KSPROPSETID の次のプロパティをサポートする必要があります\_オーディオ プロパティ セット。[**KSPROPERTY\_オーディオ\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)
+    [**KSPROPERTY\_オーディオ\_待機時間**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-latency)
 -   Pin がそのデータ範囲の機能を公開する必要があります (を参照してください[暗証番号 (pin) のデータ範囲は、プロパティの積集合](pin-data-range-and-intersection-properties.md))。
 
 ハードウェア アクセラレータによる AEC および NS ノードを公開するための特定の要件は次に示します。
@@ -54,13 +54,13 @@ Windows XP 以降では、WDM オーディオ フレームワークは DirectSou
 
 PCM のミニポート ドライバーでは、両方でキャプチャするためのトポロジの形式で AEC のハードウェア サポートを公開し、この追加の要件を満たしているストリームを表示します。
 
--   Pin は、AEC のノードを含める必要があります ([**KSNODETYPE\_音響\_エコー\_キャンセル**](https://msdn.microsoft.com/library/windows/hardware/ff537150))、順序付けられたノードのチェーン (参照内の適切な位置で指定する必要があります下記参照)。
+-   Pin は、AEC のノードを含める必要があります ([**KSNODETYPE\_音響\_エコー\_キャンセル**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel))、順序付けられたノードのチェーン (参照内の適切な位置で指定する必要があります下記参照)。
 
 ### <a name="span-idnoisesuppressionspanspan-idnoisesuppressionspanspan-idnoisesuppressionspannoise-suppression"></a><span id="Noise_Suppression"></span><span id="noise_suppression"></span><span id="NOISE_SUPPRESSION"></span>ノイズの抑制
 
 PCM のミニポート ドライバーには、この追加の要件を満たしているキャプチャ ストリームするためのトポロジの形式で NS 用ハードウェア サポートが公開しています。
 
--   Pin は、NS ノードを含める必要があります ([**KSNODETYPE\_ノイズ\_抑制**](https://msdn.microsoft.com/library/windows/hardware/ff537182))、順序付けられたノードのチェーン (下記参照) 内の適切な位置で指定する必要があります。
+-   Pin は、NS ノードを含める必要があります ([**KSNODETYPE\_ノイズ\_抑制**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress))、順序付けられたノードのチェーン (下記参照) 内の適切な位置で指定する必要があります。
 
 ### <a name="span-idnode-chainorderingspanspan-idnode-chainorderingspanspan-idnode-chainorderingspannode-chain-ordering"></a><span id="Node-Chain_Ordering"></span><span id="node-chain_ordering"></span><span id="NODE-CHAIN_ORDERING"></span>ノード チェーンの順序付け
 
@@ -68,17 +68,17 @@ PCM のミニポート ドライバーには、この追加の要件を満たし
 
 ハードウェア アクセラレータを有効にするには、ドライバーは、次の順序でハードウェアによって実装される効果を指定する必要があります。
 
-[**KSNODETYPE\_ADC**](https://msdn.microsoft.com/library/windows/hardware/ff537153)
+[**KSNODETYPE\_ADC**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-adc)
 
-[**KSNODETYPE\_音響\_エコー\_キャンセル**](https://msdn.microsoft.com/library/windows/hardware/ff537150)
+[**KSNODETYPE\_音響\_エコー\_キャンセル**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel)
 
-[**KSNODETYPE\_ノイズ\_を抑制します。**](https://msdn.microsoft.com/library/windows/hardware/ff537182)
+[**KSNODETYPE\_ノイズ\_を抑制します。** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress)
 
 相対的な順序が維持される限り、この一覧に実装されていないすべての効果を省略できますに注意してください。
 
 ### <a name="span-idaecnodepinassignmentsspanspan-idaecnodepinassignmentsspanspan-idaecnodepinassignmentsspanaec-node-pin-assignments"></a><span id="AEC_Node_Pin_Assignments"></span><span id="aec_node_pin_assignments"></span><span id="AEC_NODE_PIN_ASSIGNMENTS"></span>AEC ノード暗証番号 (pin) の割り当て
 
-アダプターのドライバーの配列を使用して[ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)フィルター内の接続を指定する構造体。 配列の各要素には、1 つの接続は、ノード間、pin をノード、または暗証番号 (pin)-pin がについて説明します。 詳細については、次を参照してください。[ノードと接続](nodes-and-connections.md)します。
+アダプターのドライバーの配列を使用して[ **PCCONNECTION\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))フィルター内の接続を指定する構造体。 配列の各要素には、1 つの接続は、ノード間、pin をノード、または暗証番号 (pin)-pin がについて説明します。 詳細については、次を参照してください。[ノードと接続](nodes-and-connections.md)します。
 
 PCCONNECTION を使用する\_記述子構造体ドライバー ライターで、ノードに「論理」ピンが割り当てられます。 これらはノード自体が「ピン」であり、フィルター内の接続を指定するためだけに使用されます。 これは、他のフィルターへの接続に使用される外部 pin では、フィルターとは対照的です。
 

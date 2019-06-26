@@ -6,26 +6,26 @@ ms.date: 04/04/2019
 keywords: -OID_WWAN_PACKET_SERVICE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8150c4c70c7669b19256212929081eb95eb90a7b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96229795d60683f4185809b5ba47ee8f73b0604e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354762"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360784"
 ---
 # <a name="oidwwanpacketservice"></a>OID\_WWAN\_パケット\_サービス
 
 
 OID\_WWAN\_パケット\_サービスを使用すると、GSM ベースし、CDMA ベースの両方の MB デバイスの場合、現在登録されているプロバイダーのネットワークでパケット サービスのアタッチ/デタッチ操作を実行するミニポート ドライバーに指示します。 パケット サービスのアタッチ/デタッチ状態だけでなくこの OID を使用して、データ クラスの可用性と現在使用されているデータ クラス情報を決定します。
 
-ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_パケット\_サービス**](ndis-status-wwan-packet-service.md)状態通知を含む、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567910)または要求のクエリ セットの完了に関係なく、現在のパケット サービス状態に関する情報を指定する構造体。
+ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_パケット\_サービス**](ndis-status-wwan-packet-service.md)状態通知を含む、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)または要求のクエリ セットの完了に関係なく、現在のパケット サービス状態に関する情報を指定する構造体。
 
-呼び出し元のパケット サービスの現在の状態を設定する要求を提供する[ **NDIS\_WWAN\_設定\_パケット\_サービス**](https://msdn.microsoft.com/library/windows/hardware/ff567921)構造体を適切な情報のミニポート ドライバー。
+呼び出し元のパケット サービスの現在の状態を設定する要求を提供する[ **NDIS\_WWAN\_設定\_パケット\_サービス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_packet_service)構造体を適切な情報のミニポート ドライバー。
 
 <a name="remarks"></a>注釈
 -------
 
-参照してください[WWAN パケット サービスのアタッチ操作](https://msdn.microsoft.com/library/windows/hardware/ff559092)詳細については、この OID を使用します。
+参照してください[WWAN パケット サービスのアタッチ操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-service-attach-operations)詳細については、この OID を使用します。
 
 ミニポート ドライバーは、処理するときに、プロバイダーのネットワークにアクセスできるクエリまたはの集合演算、Subscriber Identity Module (SIM カード) にアクセスしないでください。
 
@@ -70,11 +70,11 @@ SIM カードの中には、パケットのドメインと回線交換ドメイ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_設定\_パケット\_サービス**](https://msdn.microsoft.com/library/windows/hardware/ff567921)
+[**NDIS\_WWAN\_設定\_パケット\_サービス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_packet_service)
 
 [**NDIS\_状態\_WWAN\_パケット\_サービス**](ndis-status-wwan-packet-service.md)
 
-[WWAN パケット サービス アタッチの操作](https://msdn.microsoft.com/library/windows/hardware/ff559092)
+[WWAN パケット サービス アタッチの操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-service-attach-operations)
 
  
 

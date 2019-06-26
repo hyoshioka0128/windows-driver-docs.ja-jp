@@ -9,12 +9,12 @@ keywords:
 - 関数のプロトタイプ WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78811c4e2c1546efe7dc5f9feccfaec884c1102d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5cbe4cc93ec5b489d099e638cdee1efe36b19f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347657"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360935"
 ---
 # <a name="supported-drivers"></a>サポートされているドライバー
 
@@ -35,7 +35,7 @@ SDV は、次の特性を持つドライバーのみを確認できません。
 
 -   SDV は、WDM 関数のロールの種類を使用して、ドライバーのコールバック関数を宣言する WDM ドライバーを確認できます。 関数を宣言する方法については、次を参照してください。[を宣言する関数を使用して関数ロールの種類の WDM ドライバー](declaring-functions-using-function-role-types-for-wdm-drivers.md)します。
 
--   SDV はから生成されるドライバーを確認できます、[カーネル モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff544296)、SDV KMDF コールバック関数ロールの種類を使用して各コールバック関数を宣言します。 詳細については、次を参照してください。[を使用して関数の役割の種類 KMDF ドライバーで関数を宣言する](static-driver-verifier-kmdf-function-declarations.md)します。
+-   SDV はから生成されるドライバーを確認できます、[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)、SDV KMDF コールバック関数ロールの種類を使用して各コールバック関数を宣言します。 詳細については、次を参照してください。[を使用して関数の役割の種類 KMDF ドライバーで関数を宣言する](static-driver-verifier-kmdf-function-declarations.md)します。
 
 -   SDV は、SDV NDIS コールバック関数の型を使用して、関数宣言では、各コールバック関数に注釈を付ける提供される、NDIS ドライバーを確認できます。 詳細については、次を参照してください。[を宣言する関数を使用してロール関数の種類の NDIS ドライバー](static-driver-verifier-ndis-function-declarations.md)します。
 
@@ -47,17 +47,17 @@ WDM ドライバーを確認する SDV は、ドライバー必要がありま�
 
 - Wdm.h または Ntddk.h を含める (Wdm.h は Ntddk.h のサブセットです)。
 
-- 記載されているメソッドを使用してデバイス オブジェクトを作成する[WDM デバイス オブジェクトとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff565639)します。
+- 記載されているメソッドを使用してデバイス オブジェクトを作成する[WDM デバイス オブジェクトとデバイス スタック](https://docs.microsoft.com/windows-hardware/drivers/kernel/wdm-device-objects-and-device-stacks)します。
 
-- 推奨されているように記述されたアンロード ルーチンがある[、アンロード ルーチンを記述](https://msdn.microsoft.com/library/windows/hardware/ff566400)します。
+- 推奨されているように記述されたアンロード ルーチンがある[、アンロード ルーチンを記述](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-an-unload-routine)します。
 
-- 説明されている、関数の役割の型宣言を使用してディスパッチ関数は各宣言[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 WDM ロールの種類については、 **\_ディスパッチ\_型\_(**<em>型</em>**)** 注釈、を参照してください[WDM ドライバーのロールの種類の関数を使用して関数の宣言](declaring-functions-using-function-role-types-for-wdm-drivers.md)します。
+- 説明されている、関数の役割の型宣言を使用してディスパッチ関数は各宣言[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 WDM ロールの種類については、 **\_ディスパッチ\_型\_(** <em>型</em> **)** 注釈、を参照してください[WDM ドライバーのロールの種類の関数を使用して関数の宣言](declaring-functions-using-function-role-types-for-wdm-drivers.md)します。
 
 KMDF ドライバーを確認する SDV は、ドライバー必要があります。
 
 -   Wdf.h Ntddk.h などがあります。
 
--   説明されている KMDF オブジェクトを作成する[ドライバーを開発するフレームワークを使用して](https://msdn.microsoft.com/library/windows/hardware/ff545545)します。
+-   説明されている KMDF オブジェクトを作成する[ドライバーを開発するフレームワークを使用して](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)します。
 
 -   型を使用して、SDV KMDF コールバック関数の役割で説明されている各コールバック関数の注釈を付ける[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 サポートされているロールの種類の一覧は、次を参照してください。[静的ドライバー検証ツール KMDF 関数宣言](static-driver-verifier-kmdf-function-declarations.md)します。
 
@@ -65,17 +65,17 @@ SDV NDIS ドライバーを確認する、ドライバー必要があります�
 
 -   Ndis.h Ntddk.h などがあります。
 
--   ガイドラインに従う、[ネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568356)NDIS ドライバーを作成します。
+-   ガイドラインに従う、[ネットワーク設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network)NDIS ドライバーを作成します。
 
 -   」の説明に従って、SDV NDIS コールバック関数の役割の型を使用して各コールバック関数に注釈を付ける[を使用して関数の役割の型の宣言](using-function-role-type-declarations.md)します。 サポートされているロールの種類の一覧は、次を参照してください。[静的ドライバー検証ツールの NDIS 関数宣言](static-driver-verifier-ndis-function-declarations.md)します。
 
 さらに、SDV は、サポートするドライバーを確認できます。
 
--   [プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
+-   [プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)します。
 
--   [電源管理](https://msdn.microsoft.com/library/windows/hardware/ff547131)します。
+-   [電源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)します。
 
--   [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI)。
+-   [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI)。
 
 ### <a name="span-idreservedfunctionnamesspanspan-idreservedfunctionnamesspanreserved-function-names"></a><span id="reserved_function_names"></span><span id="RESERVED_FUNCTION_NAMES"></span>予約済みの関数名
 

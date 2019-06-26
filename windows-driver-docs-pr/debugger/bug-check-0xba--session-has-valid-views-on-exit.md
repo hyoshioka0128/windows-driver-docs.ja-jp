@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 140d688d7759e865e1c499167a662dab5eae3c76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d03978c160e718f788db79c5b8ad85d74b3004b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347138"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361640"
 ---
 # <a name="bug-check-0xba-sessionhasvalidviewsonexit"></a>バグ チェック 0xBA:セッション\_HAS\_有効\_ビュー\_ON\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347138"
 セッション\_HAS\_有効\_ビュー\_ON\_終了のバグ チェックが 0x000000BA の値を持ちます。 セッションのドライバーもがマップされているビュー、セッションのアンロード時にこれを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="sessionhasvalidviewsonexit-parameters"></a>セッション\_HAS\_有効\_ビュー\_ON\_終了パラメーター

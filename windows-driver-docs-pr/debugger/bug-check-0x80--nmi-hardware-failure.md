@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ec7d120a6d7dbf777554869e3cacf739368d388
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 121fe1dfd53060487ff617106413825b90d4af7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367387"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361732"
 ---
 # <a name="bug-check-0x80-nmihardwarefailure"></a>バグ チェック 0x80:NMI\_ハードウェア\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367387"
 NMI\_ハードウェア\_エラーのバグ チェックが 0x00000080 の値を持ちます。 このバグ チェックでは、ハードウェアの故障が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="nmihardwarefailure-parameters"></a>NMI\_ハードウェア\_エラー パラメーター

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3156d69db3a3ced33ad42cc32bf5c5432098ee26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7208316b75cf7454a872b54e53291db69c3cdaac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381496"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362958"
 ---
 # <a name="devpkeydeviceinterfaceclassguid"></a>DEVPKEY_DeviceInterface_ClassGuid
 
@@ -58,13 +58,13 @@ DEVPKEY_DeviceInterface_ClassGuid デバイス プロパティは、デバイス
 
 形式 {0}*デバイス インターフェイス-クラス*} キーの値は"{*nnnnnnnn*-*nnnn*-*nnnn* -*nnnn*-*nnnnnnnnnnnn*}"ここで、各*n*は 16 進数。
 
-呼び出すことができます[ **SetupDiGetDeviceInterfaceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551122) DEVPKEY_DeviceInterface_ClassGuid の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceInterfaceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) DEVPKEY_DeviceInterface_ClassGuid の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_ClassGuid プロパティのキーをサポートしていません。 以前のバージョンの Windows 上のデバイス インターフェイスのクラス GUID を取得する方法については、使用する方法に関する情報を参照してください[ **SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)で提供されている。[デバイス インターフェイスのプロパティにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537740)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceInterface_ClassGuid プロパティのキーをサポートしていません。 以前のバージョンの Windows 上のデバイス インターフェイスのクラス GUID を取得する方法については、使用する方法に関する情報を参照してください[ **SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)で提供されている。[デバイス インターフェイスのプロパティにアクセスする](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-interface-properties)します。
 
-インストールして表示デバイスのインターフェイスにアクセスする方法については[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)と[ **INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)します。
+インストールして表示デバイスのインターフェイスにアクセスする方法については[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)と[ **INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -87,11 +87,11 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddInterface ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546310)
+[**INF AddInterface ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)
 
-[**SetupDiEnumDeviceInterfaces**](https://msdn.microsoft.com/library/windows/hardware/ff551015)
+[**SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)
 
-[**SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)
+[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
  
 

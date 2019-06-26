@@ -26,19 +26,19 @@ keywords:
 - データ形式の WDK オーディオ、ヘッダー ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7e27ec98c27599f251f2c49062874110fd43b09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 918a25db793aff9ba6225a3e5c742a5c79a56a08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333549"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359988"
 ---
 # <a name="header-file-changes"></a>ヘッダー ファイルの変更
 
 
 Windows Driver Kit (WDK) には、Windows のマルチ メディアのコントロール パネルでサポートされているスピーカー構成を定義する 2 つのヘッダー ファイルが含まれています。
 
--   Ksmedia.h 定義のチャネル マスク、 [ **KSAUDIO\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537083)構造で使用される、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)プロパティ要求。
+-   Ksmedia.h 定義のチャネル マスク、 [ **KSAUDIO\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)構造で使用される、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)プロパティ要求。
 
 -   Dsound.h に送信できるスピーカー構成識別子のリストを定義する、 **IDirectSound::SetSpeakerConfig**メソッド。 この方法の詳細については、Windows SDK のドキュメントを参照してください。
 

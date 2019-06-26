@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af23b51c9564f0ca63bc4a2e3fb9701d683b9f72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af8692cb56f2183520638869f377bb65b0fe1597
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358880"
 ---
 # <a name="kspropertyaudiovolumelevel"></a>KSPROPERTY\_オーディオ\_VOLUMELEVEL
 
@@ -53,7 +53,7 @@ KSPROPERTY\_オーディオ\_VOLUMELEVEL プロパティは、[ボリューム] 
 <td align="left"><p>〇</p></td>
 <td align="left"><p>はい</p></td>
 <td align="left"><p>フィルターまたは暗証番号 (pin) のインスタンスを使用してノード</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537145" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537145)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
@@ -67,7 +67,7 @@ KSPROPERTY\_オーディオ\_VOLUMELEVEL プロパティは、[ボリューム] 
 
 -2147483647 は-32767.99998474 デシベル (減衰) と
 
-+ 2147483647 までは、+32767.99998474 デシベル (向上です)。
+\+ 2147483647 までは、+32767.99998474 デシベル (向上です)。
 
 &gt; \[!注\] &gt; + 2147483647 まで、このスケールが 1/65536 デシベルの解像度を-2147483648 から、デシベル範囲が整数値で表されます。
 
@@ -82,7 +82,7 @@ KSPROPERTY\_オーディオ\_VOLUMELEVEL プロパティ要求がステータス
 <a name="remarks"></a>コメント
 -------
 
-このプロパティのプロパティ記述子には、チャンネル番号を指定します。 [ボリューム] ノードを通過するストリームを含むかどうか*n*チャネル、チャネルは番号が 0 ~ *n*-1。 詳細については、次を参照してください。[マルチ チャネルのノードを公開する](https://msdn.microsoft.com/library/windows/hardware/ff536380)します。
+このプロパティのプロパティ記述子には、チャンネル番号を指定します。 [ボリューム] ノードを通過するストリームを含むかどうか*n*チャネル、チャネルは番号が 0 ~ *n*-1。 詳細については、次を参照してください。[マルチ チャネルのノードを公開する](https://docs.microsoft.com/windows-hardware/drivers/audio/exposing-multichannel-nodes)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -103,11 +103,11 @@ KSPROPERTY\_オーディオ\_VOLUMELEVEL プロパティ要求がステータス
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[既定のオーディオ音量設定のカスタマイズ](https://msdn.microsoft.com/library/windows/hardware/jj870738)
+[既定のオーディオ音量設定のカスタマイズ](https://docs.microsoft.com/windows-hardware/drivers/audio/customizing-default-audio-volume-settings)
 
-[既定のオーディオの音量の設定](https://msdn.microsoft.com/library/windows/hardware/ff536251)
+[既定のオーディオの音量の設定](https://docs.microsoft.com/windows-hardware/drivers/audio/default-audio-volume-settings)
 
-[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff537145)
+[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
 [**KSNODETYPE\_ボリューム**](ksnodetype-volume.md)
 

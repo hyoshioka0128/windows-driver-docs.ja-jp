@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f81d0527f891851e6ecb0530e09515c7d860809b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1b777e32fae002a092df19e3f8092dca31bd844
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358158"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367900"
 ---
 # <a name="bug-check-0x11c-attemptedwritetocmprotectedstorage"></a>バグ チェック 0x11C:試行\_書き込み\_TO\_CM\_PROTECTED\_ストレージ
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358158"
 試行\_書き込み\_TO\_CM\_PROTECTED\_記憶域のバグ チェックが 0x0000011C の値を持ちます。 このバグ チェックでは、configuration manager の読み取り専用の保護されたストレージに書き込むしようとすることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="attemptedwritetocmprotectedstorage-parameters"></a>試行\_書き込み\_TO\_CM\_PROTECTED\_ストレージ パラメーター

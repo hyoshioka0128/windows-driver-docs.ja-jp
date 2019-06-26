@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 043c2a2ab16f79247f451ecfe0340d2b8ac1bcc3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eaacc9f74307188317c2bb949d545b871676e805
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369790"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361682"
 ---
 # <a name="bug-check-0xa0-internalpowererror"></a>バグ チェック 0xA0:内部\_POWER\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63369790"
 内部\_POWER\_エラーのバグ チェックが 0x000000A0 の値を持ちます。 このバグ チェックでは、電源ポリシー マネージャーに致命的なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="internalpowererror-parameters"></a>内部\_POWER\_エラー パラメーター

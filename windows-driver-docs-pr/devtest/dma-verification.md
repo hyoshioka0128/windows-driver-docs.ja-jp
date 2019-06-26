@@ -13,12 +13,12 @@ keywords:
 - DMA エラー WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc19e70147d3a8ece2a99ea6da041a01185b75c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d60437e876b5791a40c54bcff1daa0e8a3eecc30
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360350"
 ---
 # <a name="dma-verification"></a>DMA の検証
 
@@ -102,9 +102,9 @@ DMA の検証がアクティブで、Driver Verifier は DMA ルーチンを含�
 
 -   転送するため、長さ 0 のバッファーをマップしようとしています。
 
--   古い形式の関数を呼び出す[ **HalGetAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff546596) (すべてのドライバーを使用する必要があります[ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)代わりに)。
+-   古い形式の関数を呼び出す[ **HalGetAdapter** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85)) (すべてのドライバーを使用する必要があります[ **IoGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)代わりに)。
 
-Driver Verifier は、ドライバーの動作を監視し、これらの違反が発生した場合、バグ チェック 0xE6 を発行します。 参照してください[**バグ チェック 0xE6** ](https://msdn.microsoft.com/library/windows/hardware/ff560341) (ドライバー\_VERIFIER\_DMA\_違反)、バグの一覧については、パラメーターを確認します。
+Driver Verifier は、ドライバーの動作を監視し、これらの違反が発生した場合、バグ チェック 0xE6 を発行します。 参照してください[**バグ チェック 0xE6** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xe6--driver-verifier-dma-violation) (ドライバー\_VERIFIER\_DMA\_違反)、バグの一覧については、パラメーターを確認します。
 
 ### <a name="span-idwhenisdmaverificationusefulspanspan-idwhenisdmaverificationusefulspanwhen-is-dma-verification-useful"></a><span id="when_is_dma_verification_useful_"></span><span id="WHEN_IS_DMA_VERIFICATION_USEFUL_"></span>DMA の検証の便利なはいつか
 
@@ -116,7 +116,7 @@ DMA の検証には、効果的な方法が見つけると、いずれかのド�
 
 ### <a name="span-idmonitoringdmaverificationspanspan-idmonitoringdmaverificationspanmonitoring-dma-verification"></a><span id="monitoring_dma_verification"></span><span id="MONITORING_DMA_VERIFICATION"></span>DMA の検証の監視
 
-カーネル デバッガー拡張機能 **! dma**豊富な DMA の情報を表示するために使用できます。 各 DMA アダプターの動作に関するさまざまな詳細を表示できます。 詳細な例は、 **! dma**拡張機能とツールを Windows のデバッグ パッケージ内のドキュメントで、デバッガーの拡張機能に関する一般的な情報。 参照してください[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)詳細についてはします。
+カーネル デバッガー拡張機能 **! dma**豊富な DMA の情報を表示するために使用できます。 各 DMA アダプターの動作に関するさまざまな詳細を表示できます。 詳細な例は、 **! dma**拡張機能とツールを Windows のデバッグ パッケージ内のドキュメントで、デバッガーの拡張機能に関する一般的な情報。 参照してください[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)詳細についてはします。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 

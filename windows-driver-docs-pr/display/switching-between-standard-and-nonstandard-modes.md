@@ -7,12 +7,12 @@ keywords:
 - WDK DirectX 9.0 の標準および非標準モードの切り替え
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd007ce8d8298fe85907c80bb7005e1147e26681
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e67f4986a584530d1e6eb7176e0cf69b6824d910
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354207"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361191"
 ---
 # <a name="switching-between-standard-and-nonstandard-modes"></a>標準モードと非標準モードの切り替え
 
@@ -28,11 +28,11 @@ DirectX 9.0 ドライバーは、標準の表示モードの標準のプライ�
 
 2.  ドライバーは、標準のプライマリ画面を作成します。
 
-    ランタイムが呼び出す、ドライバーの[ *DdCreateSurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549263)プライマリ画面の作成を要求する関数。 このプライマリ画面には、標準の表示形式が使用されます (D3DFMT など\_A8B8G8R8) をバック バッファーを持ちません。
+    ランタイムが呼び出す、ドライバーの[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))プライマリ画面の作成を要求する関数。 このプライマリ画面には、標準の表示形式が使用されます (D3DFMT など\_A8B8G8R8) をバック バッファーを持ちません。
 
 3.  ドライバーは、ダミーのプライマリ画面チェーンを作成します。
 
-    ランタイムが呼び出す、ドライバーの*DdCreateSurface*ダミーのプライマリ画面の作成を要求する関数。 ランタイムの指定、DDSCAPS2\_ビット EXTENDEDFORMATPRIMARY (0x40000000) 機能、 **dwCaps2**のメンバー、 [ **DDSCAPS2** ](https://msdn.microsoft.com/library/windows/hardware/ff550292)用の構造サーフェスが非表示モードを使用するように指定するには、この画面 (たとえば、D3DFMT\_A2R10G10B10)。 ランタイムも指定して、DDSCAPS\_OFFSCREENPLAIN 機能ビット、 **dwCaps**画面に、明示的なピクセル形式を示す DDSCAPS2 のメンバー。
+    ランタイムが呼び出す、ドライバーの*DdCreateSurface*ダミーのプライマリ画面の作成を要求する関数。 ランタイムの指定、DDSCAPS2\_ビット EXTENDEDFORMATPRIMARY (0x40000000) 機能、 **dwCaps2**のメンバー、 [ **DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))用の構造サーフェスが非表示モードを使用するように指定するには、この画面 (たとえば、D3DFMT\_A2R10G10B10)。 ランタイムも指定して、DDSCAPS\_OFFSCREENPLAIN 機能ビット、 **dwCaps**画面に、明示的なピクセル形式を示す DDSCAPS2 のメンバー。
 
     この画面は、既存のプライマリ画面のもう 1 つの名前にするとしているため、ドライバーがメモリを割り当てられませんさらにビデオを画面に。
 
@@ -40,11 +40,11 @@ DirectX 9.0 ドライバーは、標準の表示モードの標準のプライ�
 
 4.  ドライバーは、非標準形式に画面を反転します。
 
-    ディスプレイ デバイスは、標準の形式を出力、中に、アプリケーションは、これらのバック バッファーのいずれかで非標準のイメージを作成します。 このイメージは、すぐに表示できるが、ランタイムを指定します、非標準のサーフェスのいずれかのドライバーの呼び出しでターゲットとして[ *DdFlip* ](https://msdn.microsoft.com/library/windows/hardware/ff549306)関数。 ドライバーでは、ディスプレイ デバイスを非標準の形式を出力し、reprograms します。
+    ディスプレイ デバイスは、標準の形式を出力、中に、アプリケーションは、これらのバック バッファーのいずれかで非標準のイメージを作成します。 このイメージは、すぐに表示できるが、ランタイムを指定します、非標準のサーフェスのいずれかのドライバーの呼び出しでターゲットとして[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)関数。 ドライバーでは、ディスプレイ デバイスを非標準の形式を出力し、reprograms します。
 
 5.  アプリケーションを実行します。
 
-    アプリケーションがドライバーのそれ以降の呼び出しを生成*DdFlip*非標準のバッファーとドライバーの間の関数は、非標準の形式を表示します。 アプリケーションでは、ドライバーへの呼び出しを生成できますも[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) 、D3DDP2OP を使用して機能\_フロント バッファーが、これらの呼び出しにバック バッファーをコピーする BLT 操作コード常に、2 つの非標準のサーフェス オブジェクト間で行われます。 ドライバーは、ウィンドウ表示モードで非標準の形式をサポートする場合を除き、ドライバーでは非標準と標準のサーフェス形式の間の blt は処理されません。 詳細については、ウィンドウ表示モードの場合は、次を参照してください。 [Two-Dimensional 操作のサポート](supporting-two-dimensional-operations.md)します。
+    アプリケーションがドライバーのそれ以降の呼び出しを生成*DdFlip*非標準のバッファーとドライバーの間の関数は、非標準の形式を表示します。 アプリケーションでは、ドライバーへの呼び出しを生成できますも[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) 、D3DDP2OP を使用して機能\_フロント バッファーが、これらの呼び出しにバック バッファーをコピーする BLT 操作コード常に、2 つの非標準のサーフェス オブジェクト間で行われます。 ドライバーは、ウィンドウ表示モードで非標準の形式をサポートする場合を除き、ドライバーでは非標準と標準のサーフェス形式の間の blt は処理されません。 詳細については、ウィンドウ表示モードの場合は、次を参照してください。 [Two-Dimensional 操作のサポート](supporting-two-dimensional-operations.md)します。
 
 6.  ドライバーは、標準の形式に surface の背面を反転します。
 

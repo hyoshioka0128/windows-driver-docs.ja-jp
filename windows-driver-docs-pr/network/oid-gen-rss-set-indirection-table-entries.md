@@ -5,12 +5,12 @@ ms.assetid: F59D861C-B7DB-4C28-8842-4FDBAE1B95F1
 keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES、OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b90bc6a0728d5b257fb1b5fe638d62ecb748b21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84ba83740d068d846bc02820c6f72758524ab314
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381348"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360806"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
@@ -20,7 +20,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID に送信される[RSSv2](receive-
 
 この呼び出しで使用して、 *XxxSynchronousOidRequest*エントリ ポイントで、 *Xxx*か*ミニポート*または*フィルター*の種類に応じてドライバーが要求を受信します。 このエントリ ポイントは、状態を返す、NDIS_STATUS_PENDING を認識した場合に、システムのバグ チェックを実行します。
 
-OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES を使用して、 [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://msdn.microsoft.com/library/windows/hardware/9AB69EC6-FE78-4242-89C7-D36AA16676BF)ミニポート アダプタを各アクションが、RSS の 1 つのエントリを移動アクションのセットを同期的に実行するように指示する構造体ターゲットに指定された VPort の間接指定テーブルでは、CPU を指定します。
+OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES を使用して、 [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)ミニポート アダプタを各アクションが、RSS の 1 つのエントリを移動アクションのセットを同期的に実行するように指示する構造体ターゲットに指定された VPort の間接指定テーブルでは、CPU を指定します。
 
 ## <a name="remarks"></a>コメント
 
@@ -37,9 +37,9 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES をミニポート アダプターに�
 
 IRQL でのみこの OID が呼び出される DISPATCH_LEVEL の = =。
 
-ミニポート ドライバーは、テーブル エントリ ・移動の数以上の間接参照操作で情報を提供するように処理するために準備する必要があります、 [NDIS_NIC_SWITCH_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/ff566583)構造体。 これで定義されている、 **NumberOfIndirectionTableEntriesPerNonDefaultVPort**または**NumberOfIndirectionTableEntriesForDefaultVPort** 、その構造体のメンバーまたは**128**RSS のネイティブ モードでします。
+ミニポート ドライバーは、テーブル エントリ ・移動の数以上の間接参照操作で情報を提供するように処理するために準備する必要があります、 [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。 これで定義されている、 **NumberOfIndirectionTableEntriesPerNonDefaultVPort**または**NumberOfIndirectionTableEntriesForDefaultVPort** 、その構造体のメンバーまたは**128**RSS のネイティブ モードでします。
 
-でき、更新数のエントリを実行するミニポート ドライバーを試みる必要がある、 **EntryStatus**のそれぞれに所属[NDIS_RSS_SET_INDIRECTION_ENTRY](https://msdn.microsoft.com/library/windows/hardware/4430E19F-C603-4C52-8FC8-C36197FD2996)操作の結果とします。
+でき、更新数のエントリを実行するミニポート ドライバーを試みる必要がある、 **EntryStatus**のそれぞれに所属[NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)操作の結果とします。
 
 ### <a name="oid-handler-for-oidgenrsssetindirectiontableentries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラー
 
@@ -54,7 +54,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラーは次のよう
     - 各間接指定テーブル エントリのインデックスでは、構成済みの範囲です。 この範囲は、0 xffff されているか、[0... NumberOfIndirectionTableEntries - 1] の範囲の設定、 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) OID。 0 xffff および 0 xfffe エントリのインデックスは、特別な意味を持ちます。0 xffff は、0 xfffe、プライマリのプロセッサを定義するときに、既定のプロセッサを定義します。 エラーの場合、ハンドラーの設定、 **EntryStatus** NDIS_STATUS_INVALID_PARAMETER するエントリのフィールド。
     - 上位のレイヤーとミニポート ドライバー、項目を移動する前に、現在のプロセッサ (CPU のアクター) を指していることを期待しています。 つまり、リモートで、項目をリダイレクトできません。 これが true でない場合は、設定、 **EntryStatus** NDIS_STATUS_NOT_ACCEPTED するエントリのフィールド。
     - ターゲットのすべてのプロセッサは有効では、ミニポート アダプターの RSS のセットの一部です。 それ以外の場合、設定、 **EntryStatus** NDIS_STATUS_INVALID_DATA するエントリのフィールド。
-- その後、またはパラメーターの検証パスの一部として、リソースの状況を検証します。 完全なバッチ (退避) の移動後に使用するキューの数を超えないことを検証、 **NumberOfQueues**設定、 [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://msdn.microsoft.com/library/windows/hardware/96EAB6EE-BF9A-46AD-8DED-5D9BD2B6F219)中に構造体、 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)要求。 それ以外の場合、NDIS_STATUS_NO_QUEUES が返されます。 NDIS_STATUS_NO_QUEUES をキューの構成済みの数の違反を表すすべての条件に使用する必要があります。 NDIS_STATUS_RESOURCES は、一時的なメモリ不足の条件を指定する場合にのみ使用する必要があります。
+- その後、またはパラメーターの検証パスの一部として、リソースの状況を検証します。 完全なバッチ (退避) の移動後に使用するキューの数を超えないことを検証、 **NumberOfQueues**設定、 [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)中に構造体、 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)要求。 それ以外の場合、NDIS_STATUS_NO_QUEUES が返されます。 NDIS_STATUS_NO_QUEUES をキューの構成済みの数の違反を表すすべての条件に使用する必要があります。 NDIS_STATUS_RESOURCES は、一時的なメモリ不足の条件を指定する場合にのみ使用する必要があります。
 - スケーリングのエンティティ (たとえば、VPort) ごとのリソースのチェックの一部として現在の CPU は他の場所に移動するポイントをすべて ite 用とミニポート ドライバーが条件を処理する必要があります.
 
 ミニポート ドライバーが無条件に新しい構成を適用できる必要があり、設定する必要があります、上記のチェックのすべてを渡す場合、 **EntryStatus** NDIS_STATUS_SUCCESS を各エントリのフィールド。
@@ -105,9 +105,9 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラーは次のよう
 ## <a name="see-also"></a>関連項目
 
 - [Receive Side Scaling バージョン 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
-- [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://msdn.microsoft.com/library/windows/hardware/9AB69EC6-FE78-4242-89C7-D36AA16676BF)
-- [NDIS_RSS_SET_INDIRECTION_ENTRY](https://msdn.microsoft.com/library/windows/hardware/4430E19F-C603-4C52-8FC8-C36197FD2996)
-- [NDIS_NIC_SWITCH_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/ff566583)
+- [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)
+- [NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)
+- [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
 - [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)
-- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://msdn.microsoft.com/library/windows/hardware/96EAB6EE-BF9A-46AD-8DED-5D9BD2B6F219)
+- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)
 

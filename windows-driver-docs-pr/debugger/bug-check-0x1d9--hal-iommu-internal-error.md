@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 24eef8b8fec9836751aee69f6ea0b9b955837ead
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1454ad16de66717874c8fa3ca91dbe455bb720c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361600"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361966"
 ---
 # <a name="bug-check-0x1d9-haliommuinternalerror"></a>バグ チェック 0x1D9:HAL\_IOMMU\_内部\_エラー
 
 HAL\_IOMMU\_内部\_エラーのバグ チェックが 0x000001D9 の値を持ちます。 HAL IOMMU ライブラリで内部エラーが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
  
 ## <a name="haliommuinternalerror-parameters"></a>HAL\_IOMMU\_内部\_エラー パラメーター

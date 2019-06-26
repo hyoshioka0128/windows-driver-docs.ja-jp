@@ -14,27 +14,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a84d0b877af59b917b2a1bcbdf0b1d619ca64be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 642e9f9c7f7ca848fe1a93390db59efaee4871a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327882"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365033"
 ---
 # <a name="fsctlgetexternalbacking-control-code"></a>FSCTL\_取得\_外部\_バッキング制御コード
 
 
 **FSCTL\_取得\_外部\_バックアップ**制御コードは、バッキング外部プロバイダーからファイルのバックアップ情報を取得します。 バッキング プロバイダーには、Windows Image Format (WIM) プロバイダーまたは個々 の圧縮ファイルのプロバイダーが含まれます。 外部からバックアップされたファイルのコンテンツを以外のクエリ対象のファイルを含む、ボリューム上のボリューム上に存在します。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 **Parameters**
 
 <a href="" id="instance--in-"></a>*インスタンス\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
 
 <a href="" id="fileobject--in-"></a>*FileObject\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 バックアップ情報の照会対象のファイルのファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 バックアップ情報の照会対象のファイルのファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
 
 <a href="" id="filehandle--in-"></a>*FileHandle\[で\]*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 バックアップ情報の照会対象のファイルのハンドル。 このパラメーターは、必要なは、NULL にすることはできません。
@@ -49,7 +49,7 @@ ms.locfileid: "63327882"
 0 に設定します。
 
 <a href="" id="outputbuffer--out-"></a>*OutputBuffer\[アウト\]*  
-受信するのに十分な大きさのサイズを持つ必要がある出力バッファーへのポインターを[ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造体のプロバイダー データが続きます。 WIM のバックアップ ファイル、 **WOF\_外部\_情報**が続く、 [ **WIM\_プロバイダー\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632448)構造体。 個別に圧縮されたファイルの**WOF\_外部\_情報**が続く、 [**ファイル\_プロバイダー\_外部\_情報\_V1** ](https://msdn.microsoft.com/library/windows/hardware/mt426732)構造体。
+受信するのに十分な大きさのサイズを持つ必要がある出力バッファーへのポインターを[ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造体のプロバイダー データが続きます。 WIM のバックアップ ファイル、 **WOF\_外部\_情報**が続く、 [ **WIM\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_external_info)構造体。 個別に圧縮されたファイルの**WOF\_外部\_情報**が続く、 [**ファイル\_プロバイダー\_外部\_情報\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_provider_external_info_v1)構造体。
 
 <a href="" id="outputbufferlength--out-"></a>*OutputBufferLength\[アウト\]*  
 指し示されるバッファーのバイト単位のサイズ*OutputBuffer*します。
@@ -60,7 +60,7 @@ ms.locfileid: "63327882"
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
 
 <table>
 <colgroup>
@@ -69,7 +69,7 @@ ms.locfileid: "63327882"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -90,7 +90,7 @@ ms.locfileid: "63327882"
 <a name="remarks"></a>注釈
 -------
 
-更新するデータ ソースのバックアップ プロバイダーが、WIM ファイルの場合は、出力バッファーには、 [ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造が続く、 [**WIM\_プロバイダー\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632448)構造体。 *OutputBufferLength*以上である必要があります**sizeof**(WOF\_外部\_情報) + **sizeof**(WIM\_プロバイダー\_外部\_情報)。 バックアップ プロバイダーが、個別に圧縮されたファイルの場合は、出力バッファーに格納されます、 **WOF\_外部\_情報**構造が続く、 [**ファイル\_プロバイダー\_外部\_情報\_V1** ](https://msdn.microsoft.com/library/windows/hardware/mt426732)構造体。
+更新するデータ ソースのバックアップ プロバイダーが、WIM ファイルの場合は、出力バッファーには、 [ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造が続く、 [**WIM\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_external_info)構造体。 *OutputBufferLength*以上である必要があります**sizeof**(WOF\_外部\_情報) + **sizeof**(WIM\_プロバイダー\_外部\_情報)。 バックアップ プロバイダーが、個別に圧縮されたファイルの場合は、出力バッファーに格納されます、 **WOF\_外部\_情報**構造が続く、 [**ファイル\_プロバイダー\_外部\_情報\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_provider_external_info_v1)構造体。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -115,15 +115,15 @@ ms.locfileid: "63327882"
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 
 [**FSCTL\_設定\_外部\_バックアップ**](fsctl-set-external-backing.md)
 
-[**WIM\_プロバイダー\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632448)
+[**WIM\_プロバイダー\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_external_info)
 
-[**WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)
+[**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)
 
  
 

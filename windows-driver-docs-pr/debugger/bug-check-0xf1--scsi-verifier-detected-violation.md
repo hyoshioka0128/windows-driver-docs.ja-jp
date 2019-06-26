@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 753d8e9a91414b9df2ab136ed81b8d4487748941
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d61462de593da0eba969423d82c218a29164194f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361506"
 ---
 # <a name="bug-check-0xf1-scsiverifierdetectedviolation"></a>バグ チェック 0xF1:SCSI\_VERIFIER\_検出\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "63342084"
 SCSI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F1 の値を持ちます。 これは、すべての Driver Verifier のバグ チェック コード**SCSI 検証**違反。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="scsiverifierdetectedviolation-parameters"></a>SCSI\_VERIFIER\_検出\_違反パラメーター
@@ -115,21 +115,21 @@ SCSI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F1 の値を持�
 <td align="left"><p>マイクロ秒の遅延</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>Storport ミニポート ドライバーと呼ばれる<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567508" data-raw-source="[StorPortStallExecution](https://msdn.microsoft.com/library/windows/hardware/ff567508)">StorPortStallExecution</a></strong>失速プロセッサ時間の過度の長さを 0.1 秒より長い遅延を指定します。</p></td>
+<td align="left"><p>Storport ミニポート ドライバーと呼ばれる<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportstallexecution" data-raw-source="[StorPortStallExecution](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportstallexecution)">StorPortStallExecution</a></strong>失速プロセッサ時間の過度の長さを 0.1 秒より長い遅延を指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2002 の場合</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p><strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567103" data-raw-source="[StorPortGetUncachedExtension](https://msdn.microsoft.com/library/windows/hardware/ff567103)">StorPortGetUncachedExtension</a></strong> ミニポート ドライバーからは呼び出されませんでした<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[HwStorFindAdapter](https://msdn.microsoft.com/library/windows/hardware/ff557390)">HwStorFindAdapter</a></strong>ルーチン。 <strong>StorPortGetUncachedExtension</strong>ルーチンは、ミニポート ドライバーからのみ呼び出すこと<strong>HwStorFindAdapter</strong>ルーチンとバス マスター アダプターに対してのみです。 Storport ミニポート ドライバーを設定する必要があります、 <strong>SrbExtensionSize</strong>の<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557459" data-raw-source="[HW_INITIALIZATION_DATA](https://msdn.microsoft.com/library/windows/hardware/ff557459)">HW_INITIALIZATION_DATA</a></strong>呼び出す前に (Storport) 構造<strong>StorPortGetUncachedExtension</strong>します。</p></td>
+<td align="left"><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetuncachedextension" data-raw-source="[StorPortGetUncachedExtension](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetuncachedextension)">StorPortGetUncachedExtension</a></strong> ミニポート ドライバーからは呼び出されませんでした<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter" data-raw-source="[HwStorFindAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)">HwStorFindAdapter</a></strong>ルーチン。 <strong>StorPortGetUncachedExtension</strong>ルーチンは、ミニポート ドライバーからのみ呼び出すこと<strong>HwStorFindAdapter</strong>ルーチンとバス マスター アダプターに対してのみです。 Storport ミニポート ドライバーを設定する必要があります、 <strong>SrbExtensionSize</strong>の<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_hw_initialization_data" data-raw-source="[HW_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_hw_initialization_data)">HW_INITIALIZATION_DATA</a></strong>呼び出す前に (Storport) 構造<strong>StorPortGetUncachedExtension</strong>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2003</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>無効なアドレスが渡された、 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567080" data-raw-source="[StorPortGetDeviceBase](https://msdn.microsoft.com/library/windows/hardware/ff567080)">StorPortGetDeviceBase</a></strong>ルーチン。 <strong>StorPortGetDeviceBase</strong>ルーチンには、システムのプラグ アンド プレイ (PnP) マネージャーで、ドライバーに割り当てられているアドレスのみがサポートしています。</p></td>
+<td align="left"><p>無効なアドレスが渡された、 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase" data-raw-source="[StorPortGetDeviceBase](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)">StorPortGetDeviceBase</a></strong>ルーチン。 <strong>StorPortGetDeviceBase</strong>ルーチンには、システムのプラグ アンド プレイ (PnP) マネージャーで、ドライバーに割り当てられているアドレスのみがサポートしています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2004</p></td>
@@ -143,7 +143,7 @@ SCSI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F1 の値を持�
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>Storport ミニポート ドライバーでは、いずれかに無効な仮想アドレスが渡される、 <strong>StorPortRead</strong><em>xxx</em>または<strong>StorPortWrite</strong><em>xxx</em>ルーチン。 通常は、指定されたアドレスは、一般的なバッファー領域にマップされません。 指定した<em>登録</em>または<em>ポート</em>によって返されるメモリ領域の割り当てられた範囲内で指定する必要があります<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567080" data-raw-source="[StorPortGetDeviceBase](https://msdn.microsoft.com/library/windows/hardware/ff567080)">StorPortGetDeviceBase</a></strong>ルーチン。</p></td>
+<td align="left"><p>Storport ミニポート ドライバーでは、いずれかに無効な仮想アドレスが渡される、 <strong>StorPortRead</strong><em>xxx</em>または<strong>StorPortWrite</strong><em>xxx</em>ルーチン。 通常は、指定されたアドレスは、一般的なバッファー領域にマップされません。 指定した<em>登録</em>または<em>ポート</em>によって返されるメモリ領域の割り当てられた範囲内で指定する必要があります<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase" data-raw-source="[StorPortGetDeviceBase](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)">StorPortGetDeviceBase</a></strong>ルーチン。</p></td>
 </tr>
 </tbody>
 </table>

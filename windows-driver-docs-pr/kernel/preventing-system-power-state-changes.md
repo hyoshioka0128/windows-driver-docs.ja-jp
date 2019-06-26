@@ -11,12 +11,12 @@ keywords:
 - 作業の状態の WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e4397dae61f352ee8fb678356974d22d9f0dbfd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76fc89283d06eae980b2e7238b80c99246b078c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369129"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378827"
 ---
 # <a name="preventing-system-power-state-changes"></a>システム電源状態変更の防止
 
@@ -24,7 +24,7 @@ ms.locfileid: "63369129"
 
 
 
-ドライバーでは、システム電源ポリシーを直接設定できない、ですが、電源マネージャーは、ドライバーが稼働状態からシステム遷移を防ぐ次の 3 つのルーチンを提供します。[**PoSetSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559768)、 [ **PoRegisterSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559731)、および[ **PoUnregisterSystemState**](https://msdn.microsoft.com/library/windows/hardware/ff559794)します。
+ドライバーでは、システム電源ポリシーを直接設定できない、ですが、電源マネージャーは、ドライバーが稼働状態からシステム遷移を防ぐ次の 3 つのルーチンを提供します。[**PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)、 [ **PoRegisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregistersystemstate)、および[ **PoUnregisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pounregistersystemstate)します。
 
 呼び出して**PoRegisterSystemState**または**PoSetSystemState**ドライバーは、ユーザーが存在するか、ドライバーでは、システムまたは表示の使用が必要な電源マネージャーに通知できます。
 

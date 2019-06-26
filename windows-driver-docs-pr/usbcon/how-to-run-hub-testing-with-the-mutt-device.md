@@ -3,12 +3,12 @@ Description: ハブのテストの目的では、デバイスからのトラフ�
 title: USB ハブの MUTT デバイスでのテスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a153cc9039ce5787d07348e8d56a5c7f1ac9b0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82b49279ac5dc285c25870f0cae5c6c040d1cf99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342166"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363909"
 ---
 # <a name="usb-hub-testing-with-mutt-devices"></a>USB ハブの MUTT デバイスでのテスト
 
@@ -26,7 +26,7 @@ ms.locfileid: "63342166"
 ## <a name="recommended-hub-tests"></a>テストのハブをお勧めします。
 
 
--   USB 場合電気をテストします。 すべてのテストは、プロトコルと状態の重点を置いています。 参照してください[USB の場合はコンプライアンス プログラム](http://www.usb.org/developers/compliance/)電気的なテストの詳細についてはします。
+-   USB 場合電気をテストします。 すべてのテストは、プロトコルと状態の重点を置いています。 参照してください[USB の場合はコンプライアンス プログラム](https://www.usb.org/compliance)電気的なテストの詳細についてはします。
 -   MUTT デバイス MUTT ソフトウェア パッケージに含まれている MUTT ストレスおよび転送テストは、USB コント ローラーの推奨構成で接続されています。 **RunTest.bat**ストレスおよび転送の両方のテストを実行します。 参照してください[ストレスを実行し、MUTT デバイスのパフォーマンス テストを転送する方法](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md)します。
 -   デバイスの基本的なテストです。 詳細については、次を参照してください。 [MUTT デバイス用の Visual Studio で devfund テストを実行する方法](how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md)します。
 -   Windows ハードウェア認定キットをコント ローラーをテストします。 詳細については、次を参照してください。 [USB-IF 証明検証テスト (コント ローラー)](https://go.microsoft.com/fwlink/p/?linkid=316509)します。
@@ -42,7 +42,7 @@ ms.locfileid: "63342166"
     ![テストの接続と切断](images/fig14-topology-connect-disconnect.png)
 
 ## <a name="related-topics"></a>関連トピック
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB Test Tool (MUTT) デバイス](microsoft-usb-test-tool--mutt--devices.md)  
 
 

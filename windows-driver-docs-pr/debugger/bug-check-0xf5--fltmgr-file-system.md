@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c2036fd621ffd6500429a7ce8bfb70ba4a0fa8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b59b4469ee396aa6f81b60d6c2bfb68a7232512
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367298"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361496"
 ---
 # <a name="bug-check-0xf5-fltmgrfilesystem"></a>バグ チェック 0xF5:FLTMGR\_ファイル\_システム
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367298"
 FLTMGR\_ファイル\_システムのバグ チェックが 0x000000F5 の値を持ちます。 これは、フィルター マネージャーで、回復不可能なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="fltmgrfilesystem-parameters"></a>FLTMGR\_ファイル\_システム パラメーター

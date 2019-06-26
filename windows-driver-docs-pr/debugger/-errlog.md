@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dc0b78c88df258019db1abd0da15c6404dc7774
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bb12ea9c8b93cc2bf6e5d3dbb054a0b04dfb24d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362500"
 ---
 # <a name="errlog"></a>!errlog
 
@@ -54,14 +54,14 @@ ms.locfileid: "63337217"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-について[ **IoWriteErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff550527)、Windows Driver Kit (WDK) ドキュメントを参照してください。
+について[ **IoWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)、Windows Driver Kit (WDK) ドキュメントを参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-このコマンドは、I/O システムのエラー ログに保留中のイベントに関する情報を表示します。 これらは、イベントへの呼び出しによってキューに入れ、 [ **IoWriteErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff550527)が後続の表示のため、システムのイベント ログに書き込まれる、関数、**イベント ビューアー**します。
+このコマンドは、I/O システムのエラー ログに保留中のイベントに関する情報を表示します。 これらは、イベントへの呼び出しによってキューに入れ、 [ **IoWriteErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)が後続の表示のため、システムのイベント ログに書き込まれる、関数、**イベント ビューアー**します。
 
-キューに置かれたエントリのみ[ **IoWriteErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff550527)コミットされていないが、エラー ログが表示されます。
+キューに置かれたエントリのみ[ **IoWriteErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)コミットされていないが、エラー ログが表示されます。
 
 このコマンドは、システムが停止する前に、エラー ログにコミットできなかった保留中のエラー情報を表示するために、システム障害の後、診断を目的として使用できます。
 

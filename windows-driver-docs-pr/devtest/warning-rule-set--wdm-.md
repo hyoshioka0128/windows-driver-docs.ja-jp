@@ -4,12 +4,12 @@ description: これらの規則を使用すると、さまざまなコンテキ�
 ms.assetid: 29374BBE-D1DF-48C0-80A9-96CBAC6D8A22
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cafc618b0bc94497f96267a22e46636b088ae932
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 989a17b7030a24cdca3611bb25ed600d3ab8e441
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380466"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394014"
 ---
 # <a name="warning-rule-set-wdm"></a>警告の規則セット (WDM)
 
@@ -37,23 +37,23 @@ ms.locfileid: "63380466"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="wdm-completioneventchecking.md" data-raw-source="[&lt;strong&gt;CompletionEventChecking&lt;/strong&gt;](wdm-completioneventchecking.md)"><strong>CompletionEventChecking</strong></a></p></td>
-<td align="left"><p><a href="wdm-completioneventchecking.md" data-raw-source="[&lt;strong&gt;CompletionEventChecking&lt;/strong&gt;](wdm-completioneventchecking.md)"> <strong>CompletionEventChecking</strong> </a>ルールでは、ドライバーは呼び出さないことを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff549422" data-raw-source="[&lt;strong&gt;IoMarkIrpPending&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549422)"> <strong>IoMarkIrpPending</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff553253" data-raw-source="[&lt;strong&gt;KeSetEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553253)"> <strong>KeSetEvent</strong> </a>同じ IRP の完了のルーチンでします。</p></td>
+<td align="left"><p><a href="wdm-completioneventchecking.md" data-raw-source="[&lt;strong&gt;CompletionEventChecking&lt;/strong&gt;](wdm-completioneventchecking.md)"> <strong>CompletionEventChecking</strong> </a>ルールでは、ドライバーは呼び出さないことを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending" data-raw-source="[&lt;strong&gt;IoMarkIrpPending&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)"> <strong>IoMarkIrpPending</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesetevent" data-raw-source="[&lt;strong&gt;KeSetEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesetevent)"> <strong>KeSetEvent</strong> </a>同じ IRP の完了のルーチンでします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="wdm-deletedevice.md" data-raw-source="[&lt;strong&gt;DeleteDevice&lt;/strong&gt;](wdm-deletedevice.md)"><strong>DeleteDevice</strong></a></p></td>
-<td align="left"><p><a href="wdm-deletedevice.md" data-raw-source="[&lt;strong&gt;DeleteDevice&lt;/strong&gt;](wdm-deletedevice.md)"> <strong>DeleteDevice</strong> </a>ルールは、ドライバーが呼び出しの後に、デバイス オブジェクトを維持するには、I/O マネージャーまたは PnP マネージャーに依存する必要がありますを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff549083" data-raw-source="[&lt;strong&gt;IoDeleteDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549083)"> <strong>IoDeleteDevice</strong></a>.</p></td>
+<td align="left"><p><a href="wdm-deletedevice.md" data-raw-source="[&lt;strong&gt;DeleteDevice&lt;/strong&gt;](wdm-deletedevice.md)"> <strong>DeleteDevice</strong> </a>ルールは、ドライバーが呼び出しの後に、デバイス オブジェクトを維持するには、I/O マネージャーまたは PnP マネージャーに依存する必要がありますを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice" data-raw-source="[&lt;strong&gt;IoDeleteDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)"> <strong>IoDeleteDevice</strong></a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="wdm-multremovelock.md" data-raw-source="[&lt;strong&gt;MultRemoveLock&lt;/strong&gt;](wdm-multremovelock.md)"><strong>MultRemoveLock</strong></a></p></td>
-<td align="left"><p><a href="wdm-multremovelock.md" data-raw-source="[&lt;strong&gt;MultRemoveLock&lt;/strong&gt;](wdm-multremovelock.md)"> <strong>MultRemoveLock</strong> </a>ことを確認しますルール<a href="https://msdn.microsoft.com/library/windows/hardware/ff548204" data-raw-source="[&lt;strong&gt;IoAcquireRemoveLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548204)"> <strong>IoAcquireRemoveLock</strong> </a>は一意の削除ロックを 1 つだけで呼び出されます。 これは、警告ルールです。</p></td>
+<td align="left"><p><a href="wdm-multremovelock.md" data-raw-source="[&lt;strong&gt;MultRemoveLock&lt;/strong&gt;](wdm-multremovelock.md)"> <strong>MultRemoveLock</strong> </a>ことを確認しますルール<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock" data-raw-source="[&lt;strong&gt;IoAcquireRemoveLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)"> <strong>IoAcquireRemoveLock</strong> </a>は一意の削除ロックを 1 つだけで呼び出されます。 これは、警告ルールです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="wdm-pagedcode.md" data-raw-source="[&lt;strong&gt;PagedCode&lt;/strong&gt;](wdm-pagedcode.md)"><strong>PagedCode</strong></a></p></td>
-<td align="left"><p><a href="wdm-pagedcode.md" data-raw-source="[&lt;strong&gt;PagedCode&lt;/strong&gt;](wdm-pagedcode.md)"> <strong>PagedCode</strong> </a>ルールでは、ドライバーを呼び出すことを指定します、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff558773" data-raw-source="[&lt;strong&gt;PAGED_CODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff558773)"> <strong>PAGED_CODE</strong> </a>マクロで実行されている場合にのみ<strong>IRQL &lt;= APC_LEVEL</strong>します。</p></td>
+<td align="left"><p><a href="wdm-pagedcode.md" data-raw-source="[&lt;strong&gt;PagedCode&lt;/strong&gt;](wdm-pagedcode.md)"> <strong>PagedCode</strong> </a>ルールでは、ドライバーを呼び出すことを指定します、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PAGED_CODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PAGED_CODE</strong> </a>マクロで実行されている場合にのみ<strong>IRQL &lt;= APC_LEVEL</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="wdm-pagedcodeatpowertrans.md" data-raw-source="[&lt;strong&gt;PagedCodeAtPowerTrans&lt;/strong&gt;](wdm-pagedcodeatpowertrans.md)"><strong>PagedCodeAtPowerTrans</strong></a></p></td>
-<td align="left"><p><a href="wdm-pagedcodeatpowertrans.md" data-raw-source="[&lt;strong&gt;PagedCodeAtPowerTrans&lt;/strong&gt;](wdm-pagedcodeatpowertrans.md)"> <strong>PagedCodeAtPowerTrans</strong> </a>ルールでは、ドライバーを呼び出さないことを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff558773" data-raw-source="[&lt;strong&gt;PAGED_CODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff558773)"> <strong>PAGED_CODE</strong> </a> IRP_MJ_ システムへの応答中には電源 Irp (IRP_MN_SET_POWER) と、デバイスに対し、IRP_MJ_POWER Irp (IRP_MN_SET_POWER) にします。</p></td>
+<td align="left"><p><a href="wdm-pagedcodeatpowertrans.md" data-raw-source="[&lt;strong&gt;PagedCodeAtPowerTrans&lt;/strong&gt;](wdm-pagedcodeatpowertrans.md)"> <strong>PagedCodeAtPowerTrans</strong> </a>ルールでは、ドライバーを呼び出さないことを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PAGED_CODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PAGED_CODE</strong> </a> IRP_MJ_ システムへの応答中には電源 Irp (IRP_MN_SET_POWER) と、デバイスに対し、IRP_MJ_POWER Irp (IRP_MN_SET_POWER) にします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="wdm-reservedddis.md" data-raw-source="[&lt;strong&gt;ReservedDDIs&lt;/strong&gt;](wdm-reservedddis.md)"><strong>ReservedDDIs</strong></a></p></td>
@@ -76,7 +76,7 @@ ms.locfileid: "63380466"
     msbuild /t:sdv /p:Inputs="/check:Warning.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WDI_INDICATION_BSS_ENTRY_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 64b9baa9f923b3b4b8064f8ddc28342088736e1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f06036f2716971c29a146de10a0d128161f8d18
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366401"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360254"
 ---
 # <a name="ndisstatuswdiindicationbssentrylist"></a>NDIS\_状態\_WDI\_INDICATION\_BSS\_エントリ\_一覧
 
@@ -29,11 +29,11 @@ ms.locfileid: "63366401"
 
 | 種類                                                   | 許可されている複数の TLV インスタンス | 省略可能 | 説明                 |
 |--------------------------------------------------------|--------------------------------|----------|-----------------------------|
-| [**WDI\_TLV\_BSS\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn926162) | x                              | x        | 更新された Bssid の一覧。 |
+| [**WDI\_TLV\_BSS\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry) | x                              | x        | 更新された Bssid の一覧。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -4,12 +4,12 @@ description: WaveRT ポート ドライバーの概要
 ms.assetid: 48b2b59e-385e-4814-ac20-c4b1a08f32dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 624a4c0524fde1a19e701bf6ff9c4c54fad1b15f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe865d6635e690ce4bb348e5d9fe36b09ea7a388
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333421"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359865"
 ---
 # <a name="introducing-the-wavert-port-driver"></a>WaveRT ポート ドライバーの概要
 
@@ -22,11 +22,11 @@ WaveRT ポート ドライバーのパフォーマンス向上にはには、次
 
 -   障害回復力のあるオーディオ ストリーム
 
-WaveRT ポート ドライバーがの汎用機能を提供する Microsoft Windows の以前のバージョンで WaveCyclic と WavePci ポート ・ ドライバーのように、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)(KS) フィルター。 WaveRT ポート ドライバーは、次のオーディオ デバイスのサポートを提供します。
+WaveRT ポート ドライバーがの汎用機能を提供する Microsoft Windows の以前のバージョンで WaveCyclic と WavePci ポート ・ ドライバーのように、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming)(KS) フィルター。 WaveRT ポート ドライバーは、次のオーディオ デバイスのサポートを提供します。
 
 -   PCI Express バスなど、システム バスに接続することができます。
 
--   Wave データを再生または録音できます (で説明されているオーディオ データを[ **WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)または[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)構造)。
+-   Wave データを再生または録音できます (で説明されているオーディオ データを[ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)または[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)構造)。
 
 -   オーディオのストリームの待ち時間を減らすための Windows Vista で利用できるスケジュール サポートの強化を使用できます。
 

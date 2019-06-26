@@ -4,12 +4,12 @@ description: 受信トレイ Sercx2.sys とスタック ドライバー コン�
 ms.assetid: 62FA69BB-FE04-4B5E-96CC-13764ED83AE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b93bd0130c72035a10f339bf0411d18db436be60
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 0a4a06a920869cddca280b91a00781054d4bf3a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836332"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366508"
 ---
 # <a name="differences-between-sercx2sys-and-serialsys"></a>SerCx2.sys と Serial.sys の違い
 
@@ -46,10 +46,10 @@ Sercx2.sys は、DMA 向けのサポートに柔軟性があります。 シス�
 
 これに対し、SerCx2.sys とシリアル コント ローラーのドライバーによって制御されるシリアル ポートに名前がありません。 ポートに完全に接続されている周辺機器のデバイスを所有しているドライバーが特殊な識別子を受け取ります (と呼ばれる、 [*接続 ID*](connection-ids-for-serially-connected-peripheral-devices.md)) ドライバーが、ポートを開くにを使用します。 通常、この周辺のドライバーだけでは、ポートに直接 I/O 要求を送信できます。 ポートを構成するか、ポートを使用してデータを転送する必要があるアプリケーションでは、周辺機器のドライバーを I/O 要求を送信します。 ポートへの送信、対応する I/O 要求をこのドライバーの仲介者としてし、機能します。
 
-Sercx2.sys とその関連付けられたシリアル コント ローラー ドライバーが、ランタイムを有効にする[電源管理フレームワーク](https://msdn.microsoft.com/library/windows/hardware/hh406637)シリアル コント ローラーで、これらのコント ローラーに接続されている周辺機器の電源を管理するには、(PoFx)。 PoFx で、Windows 8 以降では、バッテリの充電で長時間にわたって実行するモバイル デバイスを有効にする調整の電源管理を提供します。
+Sercx2.sys とその関連付けられたシリアル コント ローラー ドライバーが、ランタイムを有効にする[電源管理フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)シリアル コント ローラーで、これらのコント ローラーに接続されている周辺機器の電源を管理するには、(PoFx)。 PoFx で、Windows 8 以降では、バッテリの充電で長時間にわたって実行するモバイル デバイスを有効にする調整の電源管理を提供します。
 
 これに対し、以下のようでは、PoFx で管理されていないと、代わりに Windows の以前のバージョンでサポートされているデバイスの電源管理機能に依存します。
 
-もう 1 つの違いは、以下のようには、ソフトウェアのフロー制御が実装されていますが、Sercx2.sys しないことです。 スタックと Sercx2.sys の両方をサポートしてハードウェア フロー制御を使用して、*要求の送信*(RTS) と*オフにすると、送信*(CTS) 信号。 フロー制御の詳細については、次を参照してください。 [**シリアル\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)します。
+もう 1 つの違いは、以下のようには、ソフトウェアのフロー制御が実装されていますが、Sercx2.sys しないことです。 スタックと Sercx2.sys の両方をサポートしてハードウェア フロー制御を使用して、*要求の送信*(RTS) と*オフにすると、送信*(CTS) 信号。 フロー制御の詳細については、次を参照してください。 [**シリアル\_HANDFLOW**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ns-ntddser-_serial_handflow)します。
 
 最終的な違いが Serenum.sys で連携して機能する際に Sercx2.sys ことはできません。 Serenum.sys は、シリアル ポートに接続されているデバイスを列挙するフィルター ドライバーです。 詳細については、次を参照してください。 [Serenum デバイスを列挙する](enumerating-serenum-devices.md)します。

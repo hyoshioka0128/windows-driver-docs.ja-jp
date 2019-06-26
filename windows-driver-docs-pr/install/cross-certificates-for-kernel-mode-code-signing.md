@@ -4,19 +4,19 @@ description: この情報は、取得してコード署名用クロス証明書�
 ms.assetid: 0A1364BF-04DA-4F1C-803A-18FE2A5EF390
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb5ac51943c3744b322a2c82ca6744d57bbc6f2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71c9b085148c7f2162052a63b3069eb8326eca30
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352079"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378842"
 ---
 # <a name="cross-certificates-for-kernel-mode-code-signing"></a>カーネル モードのコード署名のクロス証明書
 
 
 この情報は、取得してコード署名用クロス証明書を使用する方法を説明します。 Microsoft Windows のカーネル モード バイナリ ファイル。
 
-**注**  もご覧くださいマイクロソフト セキュリティ アドバイザリ ([2880823](https://technet.microsoft.com/library/security/2880823))"非推奨の sha-1 ハッシュ アルゴリズムの Microsoft Root Certificate Program"、Microsoft のポリシーの変更を記述します。ルートの SSL とコード署名の 2016 年 1 月 1 日の後の目的の sha-1 ハッシュ アルゴリズムを使用して X.509 証明書を発行する証明書機関を許可しなくなります。
+**注**  もご覧くださいマイクロソフト セキュリティ アドバイザリ ([2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823))"非推奨の sha-1 ハッシュ アルゴリズムの Microsoft Root Certificate Program"、Microsoft のポリシーの変更を記述します。ルートの SSL とコード署名の 2016 年 1 月 1 日の後の目的の sha-1 ハッシュ アルゴリズムを使用して X.509 証明書を発行する証明書機関を許可しなくなります。
 
  
 

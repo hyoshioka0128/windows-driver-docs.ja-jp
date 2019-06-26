@@ -16,12 +16,12 @@ keywords:
 - KMDF ドライバー WDK KMDF、読み込み
 ms.date: 05/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc04ad4692da02dd413c3189083b314c06f81de
-ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
+ms.openlocfilehash: 73b5cb4a3e48a09a617980e4c81f23b0ef20682e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875088"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359125"
 ---
 # <a name="building-and-loading-a-wdf-driver"></a>WDF ドライバーのビルドと読み込み
 
@@ -67,5 +67,5 @@ KMDF および UMDF バージョンに関する詳細については、次を参
 
 スタブ ファイルには、特殊なエントリ ポイントのルーチンが含まれています。**FxDriverEntry**します。 MSBuild の設定、スタブの**FxDriverEntry** framework ベースのドライバーの初期のエントリ ポイントとしてルーチン。
 
-オペレーティング システムでは、framework ベースのドライバーが読み込まれたら、スタブ ファイルとライブラリのローダーも読み込みます。 次に、システムが、スタブ ファイルを呼び出す**FxDriverEntry**ルーチン。 このルーチンは、ローダーを呼び出します。 ローダーは、ドライバーが必要ですし、適切なロード framework ライブラリのバージョンを決定します。[ライブラリのバージョン](framework-library-versioning.md)(これはまだ読み込まれていない) 場合は、カーネル モード サービスとして。 ライブラリのドライバーの呼び出す最後に、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)ルーチン。
+オペレーティング システムでは、framework ベースのドライバーが読み込まれたら、スタブ ファイルとライブラリのローダーも読み込みます。 次に、システムが、スタブ ファイルを呼び出す**FxDriverEntry**ルーチン。 このルーチンは、ローダーを呼び出します。 ローダーは、ドライバーが必要ですし、適切なロード framework ライブラリのバージョンを決定します。[ライブラリのバージョン](framework-library-versioning.md)(これはまだ読み込まれていない) 場合は、カーネル モード サービスとして。 ライブラリのドライバーの呼び出す最後に、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチン。
 

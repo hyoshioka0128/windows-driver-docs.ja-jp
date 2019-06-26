@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c13ea095d4d30e19b43dc91df331665a656130ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f8b16221433561d95e3d00a6c494cf57522bb9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334117"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359778"
 ---
 # <a name="usbkdehciinfofromfdo"></a>!usbkd.ehci\_info\_from\_fdo
 
 
-[ **! Usbkd.ehci\_情報\_から\_fdo** ](https://msdn.microsoft.com/library/windows/hardware/dn367058)コマンドは、USB ホスト コント ローラーに関する情報を表示します。
+[ **! Usbkd.ehci\_情報\_から\_fdo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-ehci-info-from-fdo)コマンドは、USB ホスト コント ローラーに関する情報を表示します。
 
 ```dbgcmd
 !usbkd.ehci_info_from_fdo fdo
@@ -53,7 +53,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-上記の出力で確認できます USB ホスト コント ローラーの FDO のアドレスが`ffffe00001ca1050`します。 FDO のアドレスを渡す[ **! ehci\_情報\_から\_fdo**](https://msdn.microsoft.com/library/windows/hardware/dn367058)します。
+上記の出力で確認できます USB ホスト コント ローラーの FDO のアドレスが`ffffe00001ca1050`します。 FDO のアドレスを渡す[ **! ehci\_情報\_から\_fdo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-ehci-info-from-fdo)します。
 
 ```dbgcmd
 0: kd> !usbkd.ehci_info_from_fdo ffffe00001ca1050

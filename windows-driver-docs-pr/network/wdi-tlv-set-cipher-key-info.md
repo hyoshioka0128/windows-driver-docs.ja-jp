@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_SET_CIPHER_KEY_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b589762b6c8f098e5e2ff2b5b264e97d4baa490c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ac92b441083f133307f09eafbbe81d14409a9d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330437"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362818"
 ---
 # <a name="wditlvsetcipherkeyinfo"></a>WDI\_TLV\_設定\_暗号\_キー\_情報
 
 
-WDI\_TLV\_設定\_暗号\_キー\_情報は、の暗号キー マッピングのキー情報を含む TLV [OID\_WDI\_設定\_追加\_暗号\_キー](https://msdn.microsoft.com/library/windows/hardware/dn925855)します。
+WDI\_TLV\_設定\_暗号\_キー\_情報は、の暗号キー マッピングのキー情報を含む TLV [OID\_WDI\_設定\_追加\_暗号\_キー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -45,7 +45,7 @@ WDI\_TLV\_設定\_暗号\_キー\_情報は、の暗号キー マッピングの
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

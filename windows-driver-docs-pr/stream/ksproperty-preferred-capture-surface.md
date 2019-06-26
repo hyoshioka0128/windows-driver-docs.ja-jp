@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fa40a2c8bdd34d6573c04bb4d38698ee7294e9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd8080045a16de2a2dd171a3c816b9a22d27b06b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361062"
 ---
 # <a name="kspropertypreferredcapturesurface"></a>KSPROPERTY\_優先\_キャプチャ\_画面
 
@@ -53,7 +53,7 @@ VRAM トランスポートを使用するには、キャプチャ ミニドラ�
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557647" data-raw-source="[&lt;strong&gt;CAPTURE_MEMORY_ALLOCATION_FLAGS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557647)"><strong>CAPTURE_MEMORY_ALLOCATION_FLAGS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags" data-raw-source="[&lt;strong&gt;CAPTURE_MEMORY_ALLOCATION_FLAGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)"><strong>CAPTURE_MEMORY_ALLOCATION_FLAGS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -67,7 +67,7 @@ KSPROPERTY\_優先\_キャプチャ\_サーフェスのステータスを返し�
 <a name="remarks"></a>注釈
 -------
 
-無効な値は 0 です[**キャプチャ\_メモリ\_割り当て\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff557647)します。
+無効な値は 0 です[**キャプチャ\_メモリ\_割り当て\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -88,7 +88,7 @@ KSPROPERTY\_優先\_キャプチャ\_サーフェスのステータスを返し�
 ## <a name="see-also"></a>関連項目
 
 
-[**キャプチャ\_メモリ\_割り当て\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff557647)
+[**キャプチャ\_メモリ\_割り当て\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

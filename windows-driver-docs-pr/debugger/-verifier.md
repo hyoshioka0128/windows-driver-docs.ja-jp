@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 141fc5f4c1d98fe3ed5ddb28f6ae26027d9bb67d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b6d34dc523b2e22ba854f1d4ade395862c60b29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323482"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362418"
 ---
 # <a name="verifier"></a>!verifier
 
@@ -96,7 +96,7 @@ Driver Verifier は、Windows に含まれます。 オンで、無料のビル�
 場合*アドレス*を指定すると、指定したアドレス IRP のみが表示されます。
 
 <span id="Bit_11__0x800_"></span><span id="bit_11__0x800_"></span><span id="BIT_11__0X800_"></span>Bit 11 (0x800)  
-(Windows 8.1 以降)選択したときに作成されるフォールト インジェクション ログからエントリを表示、[体系的な低リソース シミュレーション](https://msdn.microsoft.com/library/windows/hardware/dn312130)オプション。
+(Windows 8.1 以降)選択したときに作成されるフォールト インジェクション ログからエントリを表示、[体系的な低リソース シミュレーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/systematic-low-resource-simulation)オプション。
 
 <span id="_______Image______"></span><span id="_______image______"></span><span id="_______IMAGE______"></span> *イメージ*   
 場合*フラグ*は使用され、4、8、または 0x10、等しくない*イメージ*ドライバーの名前を指定します。 *イメージ*によって表示される情報をフィルター処理するために使用*フラグ*0x1 と 0x2 の値。 指定されたドライバーのみを考慮します。 このドライバーは、現在検証する必要があります。
@@ -104,10 +104,10 @@ Driver Verifier は、Windows に含まれます。 オンで、無料のビル�
 <span id="_______Quantity______"></span><span id="_______quantity______"></span><span id="_______QUANTITY______"></span> *数量*   
 場合*フラグ*0x4 に正確に一致*数量*表示するフォールト インジェクションのレコードの数を指定します。 場合*フラグ*0x8 に正確に一致*数量*IRQL のログ エントリを表示する数を指定します。 場合*フラグ*0x40 に正確に一致*数量*強制的に保留中のログから表示されるトレースの数を指定します。 Irp します。 フラグが 0x80 に等しい場合は、数量にカーネル プールの割り当て/空きログから表示されるトレースの数を指定します。 フラグが 0x100 に等しい場合は、数量に IoAllocateIrp、IoCompleteRequest および IoCancelIrp 呼び出しのログから表示されるトレースの数を指定します。
 
-<span id="_______-disable______"></span><span id="_______-DISABLE______"></span> **-を無効にします。**   
+<span id="_______-disable______"></span><span id="_______-DISABLE______"></span> **-を無効にします。**    
 デバッグ対象の現在のドライバーの検証設定をクリアします。 これらの設定の消去は、再起動後に保持されません。 正常にブートするドライバーの検証設定を無効にする必要がある場合は、nt にブレークポイントを設定します。VerifierInitSystem を使用して、 **! verifier-を無効にする**その時点でコマンドします。
 
-<span id="______________"></span> **?**   
+<span id="______________"></span> **?**    
 デバッガー コマンド ウィンドウで、この拡張機能の簡単なヘルプ テキストを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL

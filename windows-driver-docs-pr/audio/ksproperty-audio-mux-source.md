@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8454969ac993c5dbb9d41526bc920688aa37109c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31d2523024237613e69365e85ce43f0757ebfa60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358897"
 ---
 # <a name="kspropertyaudiomuxsource"></a>KSPROPERTY\_オーディオ\_MUX\_ソース
 
@@ -53,7 +53,7 @@ KSPROPERTY\_オーディオ\_MUX\_ソース プロパティは、マルチプレ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_オーディオ\_MUX\_ソース プロパティの要求がステー
 <a name="remarks"></a>注釈
 -------
 
-暗証番号 (pin) の ID は、MUX ノード上の論理ピンを識別します。 フィルター内のノードの論理ピンの暗証番号 (pin) の Id の詳細については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)します。
+暗証番号 (pin) の ID は、MUX ノード上の論理ピンを識別します。 フィルター内のノードの論理ピンの暗証番号 (pin) の Id の詳細については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))します。
 
 <a name="requirements"></a>要件
 ------------
@@ -93,9 +93,9 @@ KSPROPERTY\_オーディオ\_MUX\_ソース プロパティの要求がステー
 
 [**KSNODETYPE\_MUX**](ksnodetype-mux.md)
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)
+[**PCCONNECTION\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))
 
  
 

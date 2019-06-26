@@ -10,12 +10,12 @@ keywords:
 - Fourcc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25c9a13bcb7b2c48f75320b5b39f047f528b3fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f252a8b3d9dbfab3f225f6899e3cbe63df480ded
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350054"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361200"
 ---
 # <a name="surface-formats-as-fourccs"></a>FOURCC としてのサーフェスの形式
 
@@ -23,7 +23,7 @@ ms.locfileid: "63350054"
 ## <span id="ddk_surface_formats_as_fourccs_gg"></span><span id="DDK_SURFACE_FORMATS_AS_FOURCCS_GG"></span>
 
 
-DirectX 8.0、D3DFMT により定義された新しい surface 形式の 3 つ\_Q8W8V8U8、D3DFMT\_V16U16 と D3DFMT\_W11V11U10、としてドライバーに渡される*Fourcc*します。 つまり、さまざまなビットの深さとマスク フィールド、 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)データ構造が初期化されていないと、その値が定義されていません。 そのため、これら 3 つの形式を処理するドライバーがビット数に依存する必要がありますまたはマスク ピクセル形式にする必要がありますが、必要に応じて、これらを計算します。 たとえばの画面の声の高さを計算するときにこれらのいずれかの型、 **dwRGBBitCount**ピクセル形式のフィールドを使用しない必要があります。 他のすべての YUV、DXT および IHV の特定の拡張子形式がドライバーに渡されるときに、レガシ DDPIXELFORMAT 表現にマップされている以外の形式であり、そのため、有効ピクセル形式とマスク ピクセル形式のデータ構造で。
+DirectX 8.0、D3DFMT により定義された新しい surface 形式の 3 つ\_Q8W8V8U8、D3DFMT\_V16U16 と D3DFMT\_W11V11U10、としてドライバーに渡される*Fourcc*します。 つまり、さまざまなビットの深さとマスク フィールド、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)データ構造が初期化されていないと、その値が定義されていません。 そのため、これら 3 つの形式を処理するドライバーがビット数に依存する必要がありますまたはマスク ピクセル形式にする必要がありますが、必要に応じて、これらを計算します。 たとえばの画面の声の高さを計算するときにこれらのいずれかの型、 **dwRGBBitCount**ピクセル形式のフィールドを使用しない必要があります。 他のすべての YUV、DXT および IHV の特定の拡張子形式がドライバーに渡されるときに、レガシ DDPIXELFORMAT 表現にマップされている以外の形式であり、そのため、有効ピクセル形式とマスク ピクセル形式のデータ構造で。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - DSSPEAKER_SURROUND スピーカー構成 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0859387180b6abd258c5a61b4fad154c84c584ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f34989882814b2cf718cfedb39c57b13079cb884
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333721"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360082"
 ---
 # <a name="dsspeakersurround-speaker-configuration"></a>DSSPEAKER\_サラウンド スピーカーの構成
 
@@ -29,9 +29,9 @@ ms.locfileid: "63333721"
 
 DirectSound は、ブロックの挿入モードのオーディオ システムを構成するのに、次のアルゴリズムを使用します。
 
-1.  DirectSound は最初に、サラウンド スピーカー モードに移動して、送信することで、ドライバー、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)への要求のプロパティの設定、ドライバーの DAC のノード (または 3D ノード DAC のノードが存在しない場合)。 (を参照してください[ **KSNODETYPE\_DAC** ](https://msdn.microsoft.com/library/windows/hardware/ff537158)と[ **KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148))。[ **KSAUDIO\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537083)このプロパティの要求に付属している構造体の指定、KSAUDIO\_スピーカー\_ブロックの挿入スピーカーの構成。 要求が成功すると、オーディオ デバイスは、次の 4 つアナログ出力に直接接続されている左、右、センター、およびスピーカーをバックアップする 4 つのチャンネルをルーティングします。
+1.  DirectSound は最初に、サラウンド スピーカー モードに移動して、送信することで、ドライバー、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)への要求のプロパティの設定、ドライバーの DAC のノード (または 3D ノード DAC のノードが存在しない場合)。 (を参照してください[ **KSNODETYPE\_DAC** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac)と[ **KSNODETYPE\_3D\_効果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects))。[ **KSAUDIO\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)このプロパティの要求に付属している構造体の指定、KSAUDIO\_スピーカー\_ブロックの挿入スピーカーの構成。 要求が成功すると、オーディオ デバイスは、次の 4 つアナログ出力に直接接続されている左、右、センター、およびスピーカーをバックアップする 4 つのチャンネルをルーティングします。
 
-2.  失敗したかどうか、DirectSound は、ドライバーを求めるステレオのスピーカー モードでデバイスの構成を有効にするその[ **KSNODETYPE\_PROLOGIC\_エンコーダー** ](https://msdn.microsoft.com/library/windows/hardware/ff537187)ノードである場合。 これが成功すると、デバイスはサラウンドでエンコードされたステレオ信号がアナログまたはデジタルのいずれかの形式で出力がアプリケーションから 4 チャネル ストリームを変換します。 (ハードウェア行う必要があります、デバイスのさまざまなミキサー ピンに入れられるストリームを混在させる後エンコードします。)ユーザーは、外部のデコーダーを 4 つのチャネルに出力されるエンコードされたシグナル left、right に変換しますが、中央し、スピーカーのバックアップに、デバイスのステレオの出力を接続できます。
+2.  失敗したかどうか、DirectSound は、ドライバーを求めるステレオのスピーカー モードでデバイスの構成を有効にするその[ **KSNODETYPE\_PROLOGIC\_エンコーダー** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-prologic-encoder)ノードである場合。 これが成功すると、デバイスはサラウンドでエンコードされたステレオ信号がアナログまたはデジタルのいずれかの形式で出力がアプリケーションから 4 チャネル ストリームを変換します。 (ハードウェア行う必要があります、デバイスのさまざまなミキサー ピンに入れられるストリームを混在させる後エンコードします。)ユーザーは、外部のデコーダーを 4 つのチャネルに出力されるエンコードされたシグナル left、right に変換しますが、中央し、スピーカーのバックアップに、デバイスのステレオの出力を接続できます。
 
 3.  DirectSound により、KSNODETYPE、失敗した場合、\_PROLOGIC\_KMixer エンコーダー ノード。 (デバイスは既に、前の手順からステレオ モードで) です。ここでも、デバイスから出力されるステレオの信号は、外部のデコーダーを取り込むことができます。
 
@@ -39,7 +39,7 @@ DirectSound は、ブロックの挿入モードのオーディオ システム�
 
 上記の場合 (3) で、出力ストリームのいずれかのハードウェアのバッファーを使用して、アプリケーションを避ける必要があります。 KMixer がサラウンド ステレオ ストリームを生成するために、ミックスをエンコードする前に、すべての入力ストリームを混合することに注意してください。 ただし、ハードウェア ミキサー pin を入力するすべてのストリームはエンコードされたステレオのハードウェアで KMixer、デコード時にブロックの挿入のオーディオの品質の低下から混合します。 アプリケーションは、ソフトウェア バッファーのみを使用してこれを防ぐことができます。
 
-によって、KSNODETYPE サラウンド エンコードされたステレオ ストリーム\_PROLOGIC\_で (左、右、センター、およびバックアップ) の 4 つのチャンネルにエンコーダーのノードをデコードできます、 [ **KSNODETYPE\_PROLOGIC\_デコーダー** ](https://msdn.microsoft.com/library/windows/hardware/ff537185)ノード。
+によって、KSNODETYPE サラウンド エンコードされたステレオ ストリーム\_PROLOGIC\_で (左、右、センター、およびバックアップ) の 4 つのチャンネルにエンコーダーのノードをデコードできます、 [ **KSNODETYPE\_PROLOGIC\_デコーダー** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-prologic-decoder)ノード。
 
  
 

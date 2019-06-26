@@ -17,12 +17,12 @@ keywords:
 - PortCls WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50718cd3a4f084e94a267ac30d902af04388fcd8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4dddc0583fbc0034259c47918b63933084912036
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333390"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359855"
 ---
 # <a name="introduction-to-port-class"></a>ポート クラスの概要
 
@@ -42,13 +42,13 @@ PortCls は Portcls.sys システム ファイルのエクスポート ドライ
 
 -   コレクション*オーディオ ポート*ドライバー
 
-オーディオ デバイスのハードウェア ベンダーに連絡の役割です、*アダプター ドライバー*します。 アダプターのドライバーには、初期化およびミニポートのドライバー管理コードが含まれています (など、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)関数) のコレクションと*オーディオ ミニポート*ドライバーです。
+オーディオ デバイスのハードウェア ベンダーに連絡の役割です、*アダプター ドライバー*します。 アダプターのドライバーには、初期化およびミニポートのドライバー管理コードが含まれています (など、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数) のコレクションと*オーディオ ミニポート*ドライバーです。
 
-アダプター ドライバーが読み込まれると、オペレーティング システムとアダプター ドライバー一連のミニポート ドライバー オブジェクトを作成、PortCls システムのドライバーに対応するドライバー オブジェクトのポート セットを作成するように求められます。 (コード例で[サブデバイス作成](subdevice-creation.md)このプロセスを示しています)。これらのポート ドライバーは、通常の Portcls.sys ファイルで使用可能なサブセットです。 各ミニポート ドライバー自体に一致するポート ドライバーのバインドを形成する完全な Portcls.sys*サブデバイス*ドライバー。 組み合わせのポートおよびミニポート サブデバイス ドライバーは、KS フィルター (を参照してください[オーディオ フィルター](audio-filters.md))。 たとえば、通常のアダプターのドライバーには、次の 3 つのミニポート ドライバーが含まれます。WaveRT、DMusUART、およびトポロジ (で[IMiniportWaveRT](https://msdn.microsoft.com/library/windows/hardware/ff536737)、 [IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)、および[IMiniportTopology](https://msdn.microsoft.com/library/windows/hardware/ff536712)インターフェイス)。 WaveRT、Dmu、トポロジの各ポート ドライバーを初期化中に、これらのミニポート ドライバーがバインドされている (と[IPortWaveRT](https://msdn.microsoft.com/library/windows/hardware/ff536920)、 [IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)、および[IPortTopology](https://msdn.microsoft.com/library/windows/hardware/ff536896)インターフェイス) Portcls.sys ファイルに格納されています。 これらの 3 つのサブデバイス ドライバーのそれぞれは、KS フィルターの形式をとります。 3 つのフィルターは、オーディオのアダプターの完全な機能をまとめて公開します。
+アダプター ドライバーが読み込まれると、オペレーティング システムとアダプター ドライバー一連のミニポート ドライバー オブジェクトを作成、PortCls システムのドライバーに対応するドライバー オブジェクトのポート セットを作成するように求められます。 (コード例で[サブデバイス作成](subdevice-creation.md)このプロセスを示しています)。これらのポート ドライバーは、通常の Portcls.sys ファイルで使用可能なサブセットです。 各ミニポート ドライバー自体に一致するポート ドライバーのバインドを形成する完全な Portcls.sys*サブデバイス*ドライバー。 組み合わせのポートおよびミニポート サブデバイス ドライバーは、KS フィルター (を参照してください[オーディオ フィルター](audio-filters.md))。 たとえば、通常のアダプターのドライバーには、次の 3 つのミニポート ドライバーが含まれます。WaveRT、DMusUART、およびトポロジ (で[IMiniportWaveRT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavert)、 [IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)、および[IMiniportTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiporttopology)インターフェイス)。 WaveRT、Dmu、トポロジの各ポート ドライバーを初期化中に、これらのミニポート ドライバーがバインドされている (と[IPortWaveRT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportwavert)、 [IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)、および[IPortTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iporttopology)インターフェイス) Portcls.sys ファイルに格納されています。 これらの 3 つのサブデバイス ドライバーのそれぞれは、KS フィルターの形式をとります。 3 つのフィルターは、オーディオのアダプターの完全な機能をまとめて公開します。
 
 通常、ポート、ドライバーは、オーディオ サブデバイスの各クラスの機能の大半を提供します。 たとえば、WaveRT ポート ドライバーは、ミニポート ドライバーは、DMA のアドレスとデバイスの名前などのデバイスに固有の詳細を提供します。 一方、DMA ベースのオーディオ デバイスにオーディオ データをストリームに必要な作業のほとんどは。
 
-オーディオ アダプターおよびミニポートのドライバーは、通常は Microsoft C で記述し、COM インターフェイスの広範に利用します。 ポート ミニポート ドライバーのアーキテクチャでは、モジュール設計を推進します。 派生した C++ クラスとして、ミニポート ドライバーの作成者は、ドライバーを実装する必要があります、 [IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698) Portcls.h ヘッダー ファイルで定義されているインターフェイス。 ハードウェア初期化が行われ--ドライバーの読み込み時に通常**Init**のメソッド、 **IMiniport**-派生クラス (たとえば、 [ **IMiniportWaveRT::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536759)). オーディオのミニポート ドライバーの COM の実装の詳細については、次を参照してください。[カーネルで COM](com-in-the-kernel.md)します。
+オーディオ アダプターおよびミニポートのドライバーは、通常は Microsoft C で記述し、COM インターフェイスの広範に利用します。 ポート ミニポート ドライバーのアーキテクチャでは、モジュール設計を推進します。 派生した C++ クラスとして、ミニポート ドライバーの作成者は、ドライバーを実装する必要があります、 [IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiport) Portcls.h ヘッダー ファイルで定義されているインターフェイス。 ハードウェア初期化が行われ--ドライバーの読み込み時に通常**Init**のメソッド、 **IMiniport**-派生クラス (たとえば、 [ **IMiniportWaveRT::Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavert-init)). オーディオのミニポート ドライバーの COM の実装の詳細については、次を参照してください。[カーネルで COM](com-in-the-kernel.md)します。
 
 次の図は、ポートおよびミニポート ドライバーと、オーディオ スタック内の位置間のリレーションシップを示しています。
 

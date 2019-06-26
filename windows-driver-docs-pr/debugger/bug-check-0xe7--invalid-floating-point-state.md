@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd6786c9d4b66663d91758ebfa7bd8a46e60399
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13e1ac28c7f923d99cf6228d41f6e138aafaa806
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372347"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361521"
 ---
 # <a name="bug-check-0xe7-invalidfloatingpointstate"></a>バグ チェック 0xE7:無効な\_浮動\_ポイント\_状態
 
@@ -26,7 +26,7 @@ ms.locfileid: "63372347"
 無効な\_浮動\_ポイント\_状態のバグ チェックが 0x000000E7 の値を持ちます。 これは、スレッドの保存された浮動小数点状態が無効であることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="invalidfloatingpointstate-parameters"></a>無効な\_浮動\_ポイント\_状態パラメーター

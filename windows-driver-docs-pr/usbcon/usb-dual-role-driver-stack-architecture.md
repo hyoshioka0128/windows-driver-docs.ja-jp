@@ -3,12 +3,12 @@ Description: 2 つのロールを USB コント ローラーは、Windows、Wind
 title: USB デュアル ロール ドライバー スタック アーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 505f71a6bf3b1ad66aeb377cae63a9ab4ecd9adc
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 0e061da8d7a328379f38c21397ad030ff0a1384f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348941"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360150"
 ---
 # <a name="usb-dual-role-driver-stack-architecture"></a>USB デュアル ロール ドライバー スタック アーキテクチャ
 
@@ -27,7 +27,7 @@ ms.locfileid: "57348941"
 ## <a name="introduction"></a>概要
 
 
-USB デュアル ロール機能により、システムのいずれかの USB を*デバイス*または USB*ホスト*します。 USB デュアル ロールの詳細な仕様で確認できます、 [usb.org](http://www.usb.org/developers/wusb/docs/presentations/2006/Taipei06_SA_SBD_DRD_Design_Considerations.pdf) web サイト。
+USB デュアル ロール機能により、システムのいずれかの USB を*デバイス*または USB*ホスト*します。 USB デュアル ロールの詳細な仕様で確認できます、 [usb.org](https://www.usb.org/developers/wusb/docs/presentations/2006/Taipei06_SA_SBD_DRD_Design_Considerations.pdf) web サイト。
 
 ここでの重要なポイントは、2 つのロール機能は、電話、ファブレット、またはタブレットでは、デバイスまたはホストされている自体を指定するなどのモバイル デバイスです。
 
@@ -63,7 +63,7 @@ Windows 10 での USB デュアル ロール、サポートを提供し、次の
 
 デバイス クラスの遠隔測定に基づいており、Windows 10 用に選択された主なシナリオに基づいて、テーブル内のクラス ドライバーが選択されています。 Windows 10 Mobile のデバイスのキーをサポートするために、サード パーティ製ホスト ドライバーの受信トレイ、限られた数を含むで予定です。 Windows 10 デスクトップ エディションの場合、これらのドライバーは、OEM の web サイトや Windows Update (WU) 経由で提供されます。
 
-Windows 10 Mobile の含まれる受信トレイではないサード パーティ製のドライバーは WU に利用可能なできません。 USB ホスト スタック + HID のディスク フット プリントは、少数に抑えされています。 すべてのクラス ドライバーと非常にいくつかのサード パーティ製ドライバーは、なぜこれは、Windows 10 Mobile の受信トレイが含まれています。 サード パーティ製ドライバーを使用できるようにすることを希望する OEM は、ボード サポート パッケージ (BSP) を使用して、自分のモバイル デバイス用の OS イメージに追加できます。 このポリシーの詳細については、[Windows Phone 向けドライバー開発](https://go.microsoft.com/fwlink/p/?LinkId=761246)、というセクションまでスクロールして*Windows Phone 用ドライバーの開発と Windows 間の違い*を参照してください。
+Windows 10 Mobile の含まれる受信トレイではないサード パーティ製のドライバーは WU に利用可能なできません。 USB ホスト スタック + HID のディスク フット プリントは、少数に抑えされています。 すべてのクラス ドライバーと非常にいくつかのサード パーティ製ドライバーは、なぜこれは、Windows 10 Mobile の受信トレイが含まれています。 サード パーティ製ドライバーを使用できるようにすることを希望する OEM は、ボード サポート パッケージ (BSP) を使用して、自分のモバイル デバイス用の OS イメージに追加できます。 このポリシーの詳細については、次を参照してください。 [Windows Phone 向けドライバー開発](https://go.microsoft.com/fwlink/p/?LinkId=761246)、というセクションまでスクロールして*Windows Phone 用ドライバーの開発と Windows 間の違い*します。
 
 次の表は、*関数*クラス ドライバーを Windows のモバイル Sku では使用できます。
 
@@ -88,7 +88,7 @@ Microsoft USB ロール スイッチ (URS) ドライバーは、そのプラッ�
 
 URS ドライバーは、1 つのポート経由でホストと周辺のロールの両方で動作する単一の USB コント ローラーを使用するプラットフォームのデュアル ロール機能を提供するものです。 *周辺のロール*とも呼ばれますが、*関数ロール*します。 URS ドライバーでは、ポート、および読み込みの現在のロールと、プラットフォームからハードウェア イベントに基づいて、適切なソフトウェア スタックのアンロードを管理します。
 
-USB micro AB コネクタがあるシステムで、ドライバーは、ハードウェアの割り込みのコネクタ ID ピンの状態を示すに使用します。 この pin は、コント ローラーがホストの役割または接続が関数の役割を想定する必要があるかどうかを検出するために使用されます。 詳細については、、 [USB に外出先から仕様](https://go.microsoft.com/fwlink/p/?LinkId=698414)を参照してください。 使用して、コネクタのクライアント ドライバーを提供するシステム型-C# の USB コネクタでは、OEM 実行者が期待どおり、[型-C# の USB コネクタ ドライバーのプログラミング インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)します。 クライアント ドライバーは、CC の検出、PD がメッセージング、およびその他のユーザーなど、Manager クラスの拡張機能 (UcmCx)、USB 型-c コネクタのすべての側面を管理する Microsoft 提供の USB コネクタと通信します。 役割の交代、クライアント ドライバーは、URS ドライバーを USB 型-c コネクタの状態を通信します。
+USB micro AB コネクタがあるシステムで、ドライバーは、ハードウェアの割り込みのコネクタ ID ピンの状態を示すに使用します。 この pin は、コント ローラーがホストの役割または接続が関数の役割を想定する必要があるかどうかを検出するために使用されます。 詳細については、次を参照してください。、 [USB に外出先から仕様](https://go.microsoft.com/fwlink/p/?LinkId=698414)します。 使用して、コネクタのクライアント ドライバーを提供するシステム型-C# の USB コネクタでは、OEM 実行者が期待どおり、[型-C# の USB コネクタ ドライバーのプログラミング インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)します。 クライアント ドライバーは、CC の検出、PD がメッセージング、およびその他のユーザーなど、Manager クラスの拡張機能 (UcmCx)、USB 型-c コネクタのすべての側面を管理する Microsoft 提供の USB コネクタと通信します。 役割の交代、クライアント ドライバーは、URS ドライバーを USB 型-c コネクタの状態を通信します。
 
 次の図には、URS ドライバーを使用するデュアル ロール コント ローラーの USB ソフトウェア ドライバー スタックが表示されます。
 

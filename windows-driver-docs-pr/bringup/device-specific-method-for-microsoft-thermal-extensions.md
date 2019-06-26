@@ -4,19 +4,19 @@ description: 温度のゾーンと温度センサーのより柔軟なデザイ�
 ms.assetid: A8D90493-EE4A-40EC-BE8D-54B1C9EE94AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53c673d4aa026a61fb196f0b66d684a7d86893ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b031314b9342fcd19178af164269c4814263478
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328063"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364564"
 ---
 # <a name="device-specific-method-for-microsoft-thermal-extensions"></a>Microsoft 熱拡張機能に対するデバイス固有のメソッド
 
 
 温度のゾーンと温度センサーのより柔軟なデザインをサポートするためには、Windows は、ACPI 熱ゾーン モデルの拡張機能をサポートします。 具体的には、Windows では、温度ゾーンごとに温度の最小スロットルの制限 (MTL) をサポートしも熱ゾーン間での温度センサーの共有をサポートします。
 
-MTL の詳細については、"温度管理の Windows"をという名前のドキュメントを参照してください、 [Microsoft Connect web サイト](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48106)します。
+MTL の詳細については、"温度管理の Windows"をという名前のドキュメントを参照してください、 [Microsoft Connect web サイト](https://aka.ms/connect-redirect?DownloadID=48106)します。
 
 これらの機能を使用する Oem は次のデバイスに固有のメソッドを含めることができます (\_DSM)、温度のゾーンの名前空間。
 

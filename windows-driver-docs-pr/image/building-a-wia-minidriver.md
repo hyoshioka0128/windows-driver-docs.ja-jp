@@ -4,12 +4,12 @@ description: WIA ミニドライバーの作成
 ms.assetid: 7a13d355-f42e-406d-8cba-4739df1af9fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6d603118cbf835286e462799a257b2fc1f9d4b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f934b2613cf8a15ab1bb8c3f4a55caa42e0a06d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373311"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366746"
 ---
 # <a name="building-a-wia-minidriver"></a>WIA ミニドライバーの作成
 
@@ -41,11 +41,11 @@ ms.locfileid: "63373311"
 </tr>
 <tr class="even">
 <td><p><em>stiusd.h</em></p></td>
-<td><p>定義、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff543827" data-raw-source="[IStiUSD](https://msdn.microsoft.com/library/windows/hardware/ff543827)">IStiUSD</a>インターフェイスをすべて WIA ミニドライバーを実装する必要があります。</p></td>
+<td><p>定義、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index" data-raw-source="[IStiUSD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index)">IStiUSD</a>インターフェイスをすべて WIA ミニドライバーを実装する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>wiamindr.h</em></p></td>
-<td><p>定義、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545027" data-raw-source="[IWiaMiniDrv](https://msdn.microsoft.com/library/windows/hardware/ff545027)">IWiaMiniDrv</a>インターフェイスをすべて WIA ミニドライバーを実装する必要があります。 WIA ミニドライバーによって使用されるその他のインターフェイスはも定義されています。</p></td>
+<td><p>定義、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv" data-raw-source="[IWiaMiniDrv](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)">IWiaMiniDrv</a>インターフェイスをすべて WIA ミニドライバーを実装する必要があります。 WIA ミニドライバーによって使用されるその他のインターフェイスはも定義されています。</p></td>
 </tr>
 </tbody>
 </table>

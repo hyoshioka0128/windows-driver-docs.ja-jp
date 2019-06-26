@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8b1afb48f7169a382a30282d61c17f4dc6cc26c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e8ab8c7a3ab1eb4358c9f70d5d53fef6bef4e75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333201"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359019"
 ---
 # <a name="ksnodetypenoisesuppress"></a>KSNODETYPE\_ノイズ\_を抑制します。
 
@@ -29,7 +29,7 @@ KSNODETYPE\_ノイズ\_を抑制するノードは、ノイズの抑制 (NS) コ
 
 NS ノードを格納しているフィルターが作成されるか、ノードがリセットされた、ときに、ノードがパススルー モードで動作する初期構成されます。
 
-NS ノードは、全二重 DirectSound アプリケーションをサポートするために、AEC (アコースティック エコー キャンセル) フィルターに組み込むことができます。 詳細については、次を参照してください。 [DirectSound キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536327)します。
+NS ノードは、全二重 DirectSound アプリケーションをサポートするために、AEC (アコースティック エコー キャンセル) フィルターに組み込むことができます。 詳細については、次を参照してください。 [DirectSound キャプチャ効果](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-capture-effects)します。
 
 KSNODETYPE\_ノイズ\_AEC フィルター ノードを抑制するハードウェア アクセラレータを有効にするには、次のプロパティをサポートする必要があります。
 
@@ -37,7 +37,7 @@ KSNODETYPE\_ノイズ\_AEC フィルター ノードを抑制するハードウ�
 
 [**KSPROPERTY\_オーディオ\_アルゴリズム\_インスタンス**](ksproperty-audio-algorithm-instance.md)
 
-[**KSPROPERTY\_TOPOLOGYNODE\_を有効にします。**](ksproperty-topologynode-enable.md)
+[**KSPROPERTY\_TOPOLOGYNODE\_を有効にします。** ](ksproperty-topologynode-enable.md)
 
 [**KSPROPERTY\_TOPOLOGYNODE\_リセット**](ksproperty-topologynode-reset.md)
 

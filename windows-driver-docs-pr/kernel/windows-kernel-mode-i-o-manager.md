@@ -4,12 +4,12 @@ description: Windows カーネルモード I/O マネージャー
 ms.assetid: 8652f37d-0ece-4c08-9bce-499f0fedb0dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e2f1c9dcd8798ddf47dee17d0cce0859af59e506
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e96566d4fd0d59f5fe539321c0b195d1947defe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358026"
 ---
 # <a name="windows-kernel-mode-io-manager"></a>Windows カーネルモード I/O マネージャー
 
@@ -28,9 +28,9 @@ Irp の詳細については、次を参照してください。 [Irp の処理]
 
 I/O の管理に関連する techiques をプログラミングするには、次を参照してください。 [I/O マネージャー プログラミング手法](i-o-programming-techniques.md)します。
 
-I/O マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Io**"。 たとえば、 **IoCreateDevice**します。 I/O マネージャー ルーチンの一覧は、次を参照してください。 [I/O マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551797)します。
+I/O マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Io**"。 たとえば、 **IoCreateDevice**します。 I/O マネージャー ルーチンの一覧は、次を参照してください。 [I/O マネージャー ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551797(v=vs.85))します。
 
-IRP に関連するルーチンの一覧は、次を参照してください。 [Irp](https://msdn.microsoft.com/library/windows/hardware/ff550701)します。
+IRP に関連するルーチンの一覧は、次を参照してください。 [Irp](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 I/O マネージャーが 2 つのサブコンポーネント: プラグ アンド プレイのマネージャーと電源マネージャー。 プラグ アンド プレイし、電源管理のテクノロジの I/O 機能を管理します。 プラグ アンド プレイの管理の詳細については、次を参照してください。 [Windows カーネル モードのプラグ アンド プレイ Manager](windows-kernel-mode-plug-and-play-manager.md)と電源管理の詳細については、次を参照してください。 [Windows カーネル モードの電源マネージャー](windows-kernel-mode-power-manager.md)します。
 

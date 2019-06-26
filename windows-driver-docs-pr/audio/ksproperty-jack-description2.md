@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0102ac8139923676770f69a8ec01fc2ce44b4c03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 774bff3c399110ed435f7e75fa8d71b0625cb9f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332700"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358767"
 ---
 # <a name="kspropertyjackdescription2"></a>KSPROPERTY\_ジャック\_DESCRIPTION2
 
@@ -52,8 +52,8 @@ Windows 7 およびそれ以降の Windows オペレーティング システム
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>(フィルターのハンドル) を使用してファクトリをピン留めします。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)"><strong>KSMULTIPLE_ITEM</strong> </a>の配列を続けて<a href="ksjack-description2.md" data-raw-source="[&lt;strong&gt;KSJACK_DESCRIPTION2&lt;/strong&gt;](ksjack-description2.md)"> <strong>KSJACK_DESCRIPTION2</strong> </a>構造体</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong> </a>の配列を続けて<a href="ksjack-description2.md" data-raw-source="[&lt;strong&gt;KSJACK_DESCRIPTION2&lt;/strong&gt;](ksjack-description2.md)"> <strong>KSJACK_DESCRIPTION2</strong> </a>構造体</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +81,7 @@ KSJACK\_DESCRIPTION2\[N-1\]
 
 各 KSJACK\_DESCRIPTION2 構造は、1 つのジャックに関する情報を含める必要がありますのみです。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -110,7 +110,7 @@ KSJACK\_DESCRIPTION2\[N-1\]
 
 [**KSJACK\_DESCRIPTION2**](ksjack-description2.md)
 
-[KSMULTIPLE\_項目](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)
+[KSMULTIPLE\_項目](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
  
 

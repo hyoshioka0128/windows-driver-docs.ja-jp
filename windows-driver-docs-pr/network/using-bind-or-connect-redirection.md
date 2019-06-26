@@ -4,12 +4,12 @@ description: バインドまたは接続リダイレクトの使用
 ms.assetid: 6b27a9ad-53e9-4e80-bf03-79665f8a82a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97183ea47da2174722cac9b6316375dbb92261af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6047f3ef40f6f1ce6c9c3e283e869b1000efd38a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372139"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360738"
 ---
 # <a name="using-bind-or-connect-redirection"></a>バインドまたは接続リダイレクトの使用
 
@@ -42,7 +42,7 @@ WFP リダイレクト レコードとは、WFP に送信プロキシ接続を�
 
 レイヤーのリダイレクトを実行するには、変更の結果が決定します。 接続のレイヤーでの変更では、接続されているフローのみに影響します。 変更は、ソケットを使用しているすべての接続層に影響をバインドします。
 
-リダイレクトのレイヤーで、Windows 7 および Windows の以降のバージョンのみ利用します。 使用してこれらの層での分類をサポートするコールアウト ドライバーを登録する必要があります[ **FwpsCalloutRegister1** ](https://msdn.microsoft.com/library/windows/hardware/ff551143)またはそれ以降、いない古い[ **FwpsCalloutRegister0**](https://msdn.microsoft.com/library/windows/hardware/ff551140)関数。
+リダイレクトのレイヤーで、Windows 7 および Windows の以降のバージョンのみ利用します。 使用してこれらの層での分類をサポートするコールアウト ドライバーを登録する必要があります[ **FwpsCalloutRegister1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister1)またはそれ以降、いない古い[ **FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister0)関数。
 
 > [!IMPORTANT]
 > リダイレクトでは、すべての種類のネットワーク トラフィックで使用するため使用できません。 リダイレクトがサポートされているパケットの種類は、次のリストに表示されます。
@@ -53,21 +53,21 @@ WFP リダイレクト レコードとは、WFP に送信プロキシ接続を�
 
 ### <a name="performing-redirection"></a>リダイレクトを実行します。
 
-コールアウト ドライバーが TCP 4 組の情報の書き込み可能なコピーを取得する必要がありますの接続をリダイレクトするには、必要に応じて、変更を加えるし、変更を適用します。 書き込み可能な層のデータを取得して、エンジンを適用することを一連の新しい関数が提供されます。 コールアウト ドライバーのいずれかでインラインで変更を行うオプションがあります、 [classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)関数、または別の関数に非同期的にします。
+コールアウト ドライバーが TCP 4 組の情報の書き込み可能なコピーを取得する必要がありますの接続をリダイレクトするには、必要に応じて、変更を加えるし、変更を適用します。 書き込み可能な層のデータを取得して、エンジンを適用することを一連の新しい関数が提供されます。 コールアウト ドライバーのいずれかでインラインで変更を行うオプションがあります、 [classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)関数、または別の関数に非同期的にします。
 
-リダイレクトを実装してコールアウト ドライバーを使用する必要があります[ *classifyFn1* ](https://msdn.microsoft.com/library/windows/hardware/ff544893)以降の代わりに[ *classifyFn0* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)として分類吹き出し関数。 使用する*classifyFn1*後で、吹き出しを呼び出すことで登録する必要がありますまたは[ **FwpsCalloutRegister1** ](https://msdn.microsoft.com/library/windows/hardware/ff551143)または、後でない旧[ **FwpsCalloutRegister0**](https://msdn.microsoft.com/library/windows/hardware/ff551140)します。
+リダイレクトを実装してコールアウト ドライバーを使用する必要があります[ *classifyFn1* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn1)以降の代わりに[ *classifyFn0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)として分類吹き出し関数。 使用する*classifyFn1*後で、吹き出しを呼び出すことで登録する必要がありますまたは[ **FwpsCalloutRegister1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister1)または、後でない旧[ **FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutregister0)します。
 
-インラインのリダイレクトを実行するコールアウト ドライバーは、の実装で、次の手順を実行する必要があります[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887):
+インラインのリダイレクトを実行するコールアウト ドライバーは、の実装で、次の手順を実行する必要があります[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/):
 
-1.  呼び出す[ **FwpsRedirectHandleCreate0** ](https://msdn.microsoft.com/library/windows/hardware/hh439681) TCP 接続をリダイレクトするために使用できるハンドルを取得します。 このハンドルをキャッシュして、すべてのリダイレクトに使用する必要があります。 (この手順を省略すると Windows 7 以降。)
+1.  呼び出す[ **FwpsRedirectHandleCreate0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0) TCP 接続をリダイレクトするために使用できるハンドルを取得します。 このハンドルをキャッシュして、すべてのリダイレクトに使用する必要があります。 (この手順を省略すると Windows 7 以降。)
 
-2.  Windows 8 以降を使用して、接続のリダイレクトの状態を照会する必要があります、 [ **FwpsQueryConnectionRedirectState0** ](https://msdn.microsoft.com/library/windows/hardware/hh439677)コールアウト ドライバー関数。 これは、無限のリダイレクトを防ぐために実行する必要があります。
+2.  Windows 8 以降を使用して、接続のリダイレクトの状態を照会する必要があります、 [ **FwpsQueryConnectionRedirectState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0)コールアウト ドライバー関数。 これは、無限のリダイレクトを防ぐために実行する必要があります。
 
-3.  呼び出す[ **FwpsAcquireClassifyHandle0** ](https://msdn.microsoft.com/library/windows/hardware/ff550085)後続の関数呼び出しに使用されるハンドルを取得します。
+3.  呼び出す[ **FwpsAcquireClassifyHandle0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsacquireclassifyhandle0)後続の関数呼び出しに使用されるハンドルを取得します。
 
-4.  呼び出す[ **FwpsAcquireWritableLayerDataPointer0** ](https://msdn.microsoft.com/library/windows/hardware/ff550087)を層の書き込み可能なデータ構造体を取得する[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)が呼び出されました。 キャスト、 *writableLayerData* out パラメーターをレイヤーに対応するか、構造体に[ **FWPS\_バインド\_REQUEST0** ](https://msdn.microsoft.com/library/windows/hardware/ff551221)または[**FWPS\_CONNECT\_REQUEST0**](https://msdn.microsoft.com/library/windows/hardware/ff551231)します。
+4.  呼び出す[ **FwpsAcquireWritableLayerDataPointer0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsacquirewritablelayerdatapointer0)を層の書き込み可能なデータ構造体を取得する[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)が呼び出されました。 キャスト、 *writableLayerData* out パラメーターをレイヤーに対応するか、構造体に[ **FWPS\_バインド\_REQUEST0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_bind_request0)または[**FWPS\_CONNECT\_REQUEST0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)します。
 
-    以降、Windows 8 では、コールアウト ドライバーがローカル サービスにリダイレクトする場合、呼び出す必要がある[ **FwpsRedirectHandleCreate0** ](https://msdn.microsoft.com/library/windows/hardware/hh439681)を埋めるために、 **localRedirectHandle**メンバー、 [ **FWPS\_CONNECT\_REQUEST0** ](https://msdn.microsoft.com/library/windows/hardware/ff551231)ローカル プロキシ化が機能するために構造体。
+    以降、Windows 8 では、コールアウト ドライバーがローカル サービスにリダイレクトする場合、呼び出す必要がある[ **FwpsRedirectHandleCreate0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)を埋めるために、 **localRedirectHandle**メンバー、 [ **FWPS\_CONNECT\_REQUEST0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)ローカル プロキシ化が機能するために構造体。
 
 5.  必要に応じてレイヤーのデータに変更を加えます。
 
@@ -98,10 +98,10 @@ WFP リダイレクト レコードとは、WFP に送信プロキシ接続を�
                           RtlUshortByteSwap(params->proxyPort));
         ```
 
-    3.  ローカル プロキシ PID を設定する必要があります、コールアウト ドライバーがローカル サービスにリダイレクトする場合、 **localRedirectTargetPID**のメンバー、 [ **FWPS\_CONNECT\_REQUEST0**](https://msdn.microsoft.com/library/windows/hardware/ff551231)構造体。
+    3.  ローカル プロキシ PID を設定する必要があります、コールアウト ドライバーがローカル サービスにリダイレクトする場合、 **localRedirectTargetPID**のメンバー、 [ **FWPS\_CONNECT\_REQUEST0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)構造体。
     4.  FwpsRedirectHandleCreate0 によって返されるリダイレクト ハンドルを設定する必要があります、コールアウト ドライバーがローカル サービスにリダイレクトする、する場合、 **localRedirectHandle** 、FWPS のメンバー\_CONNECT\_REQUEST0構造体。
 
-6.  呼び出す[ **FwpsApplyModifiedLayerData0** ](https://msdn.microsoft.com/library/windows/hardware/ff551137)データに加えられた変更を適用します。
+6.  呼び出す[ **FwpsApplyModifiedLayerData0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsapplymodifiedlayerdata0)データに加えられた変更を適用します。
 
 7.  (これは、ユーザー モードまたはカーネル モードである可能性があります)、プロキシ サービス内の次の例に示すように、リダイレクト レコードとコンテキストをクエリする必要があります。
 
@@ -133,19 +133,19 @@ WFP リダイレクト レコードとは、WFP に送信プロキシ接続を�
                  redirectRecords, …);
     ```
 
-9.  呼び出す[ **FwpsReleaseClassifyHandle0** ](https://msdn.microsoft.com/library/windows/hardware/ff551208)手順 2. で取得した分類のハンドルを解放します。
+9.  呼び出す[ **FwpsReleaseClassifyHandle0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsreleaseclassifyhandle0)手順 2. で取得した分類のハンドルを解放します。
 
-10. 呼び出す[ **FwpsRedirectHandleDestroy0** ](https://msdn.microsoft.com/library/windows/hardware/hh439684)手順 1. で取得されたハンドルを破棄します。
+10. 呼び出す[ **FwpsRedirectHandleDestroy0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandledestroy0)手順 1. で取得されたハンドルを破棄します。
 
 リダイレクトを非同期的に実行するには、コールアウト ドライバーは、次の手順を実行する必要があります。
 
-1.  呼び出す[ **FwpsRedirectHandleCreate0** ](https://msdn.microsoft.com/library/windows/hardware/hh439681) TCP 接続をリダイレクトするために使用できるハンドルを取得します。 (この手順を省略すると Windows 7 以降。)
+1.  呼び出す[ **FwpsRedirectHandleCreate0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0) TCP 接続をリダイレクトするために使用できるハンドルを取得します。 (この手順を省略すると Windows 7 以降。)
 
-2.  Windows 8 以降を使用して、接続のリダイレクトの状態を照会する必要があります、 [ **FwpsQueryConnectionRedirectState0** ](https://msdn.microsoft.com/library/windows/hardware/hh439677)コールアウト ドライバー関数。
+2.  Windows 8 以降を使用して、接続のリダイレクトの状態を照会する必要があります、 [ **FwpsQueryConnectionRedirectState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0)コールアウト ドライバー関数。
 
-3.  呼び出す[ **FwpsAcquireClassifyHandle0** ](https://msdn.microsoft.com/library/windows/hardware/ff550085)後続の関数呼び出しに使用されるハンドルを取得します。 この手順と手順 2. および 3. はコールアウト ドライバーの実行[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数。
+3.  呼び出す[ **FwpsAcquireClassifyHandle0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsacquireclassifyhandle0)後続の関数呼び出しに使用されるハンドルを取得します。 この手順と手順 2. および 3. はコールアウト ドライバーの実行[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数。
 
-4.  呼び出す[ **FwpsPendClassify0** ](https://msdn.microsoft.com/library/windows/hardware/ff551197)次の例に示すように、保留中の状態で、分類を配置します。
+4.  呼び出す[ **FwpsPendClassify0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpspendclassify0)次の例に示すように、保留中の状態で、分類を配置します。
 
     ```C++
     FwpsPendClassify(
@@ -159,11 +159,11 @@ WFP リダイレクト レコードとは、WFP に送信プロキシ接続を�
 > [!NOTE]
 > Windows 7 を対象とする場合は、独立した worker 関数で次の手順を実行する必要があります。 Windows 8 を対象としているか内から非同期のリダイレクトのすべての手順を実行した後で、 *classifyFn*し、手順 5 を無視します。
 
-5.  非同期処理のための別の関数に、分類ハンドルと書き込み可能なレイヤーのデータを送信します。 コールアウト ドライバーの実装ではなく、その関数で残りの手順を実行[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)します。
+5.  非同期処理のための別の関数に、分類ハンドルと書き込み可能なレイヤーのデータを送信します。 コールアウト ドライバーの実装ではなく、その関数で残りの手順を実行[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
-6.  呼び出す[ **FwpsAcquireWritableLayerDataPointer0** ](https://msdn.microsoft.com/library/windows/hardware/ff550087)を層の書き込み可能なデータ構造体を取得する[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)が呼び出されました。 キャスト、 *writableLayerData* out パラメーターをレイヤーに対応するか、構造体に[ **FWPS\_バインド\_REQUEST0** ](https://msdn.microsoft.com/library/windows/hardware/ff551221)または[**FWPS\_CONNECT\_REQUEST0**](https://msdn.microsoft.com/library/windows/hardware/ff551231)します。
+6.  呼び出す[ **FwpsAcquireWritableLayerDataPointer0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsacquirewritablelayerdatapointer0)を層の書き込み可能なデータ構造体を取得する[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)が呼び出されました。 キャスト、 *writableLayerData* out パラメーターをレイヤーに対応するか、構造体に[ **FWPS\_バインド\_REQUEST0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_bind_request0)または[**FWPS\_CONNECT\_REQUEST0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)します。
 
-    以降、Windows 8 では、コールアウト ドライバーがローカルにリダイレクトする場合、呼び出す必要がある[ **FwpsRedirectHandleCreate0** ](https://msdn.microsoft.com/library/windows/hardware/hh439681)を埋めるために、 **localRedirectHandle**のメンバー、[ **FWPS\_CONNECT\_REQUEST0** ](https://msdn.microsoft.com/library/windows/hardware/ff551231)プロキシ化作業を行うために構造体。
+    以降、Windows 8 では、コールアウト ドライバーがローカルにリダイレクトする場合、呼び出す必要がある[ **FwpsRedirectHandleCreate0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)を埋めるために、 **localRedirectHandle**のメンバー、[ **FWPS\_CONNECT\_REQUEST0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)プロキシ化作業を行うために構造体。
 
 7.  次の例に示すように、プライベート コンテキスト構造内の吹き出しに固有のコンテキスト情報を格納します。
 
@@ -176,9 +176,9 @@ WFP リダイレクト レコードとは、WFP に送信プロキシ接続を�
 
 8.  必要に応じてレイヤーのデータを変更をします。
 
-9.  呼び出す[ **FwpsApplyModifiedLayerData0** ](https://msdn.microsoft.com/library/windows/hardware/ff551137)データに加えられた変更を適用します。 設定、 **FWPS_CLASSIFY_FLAG_REAUTHORIZE_IF_MODIFIED_BY_OTHERS**再する別の吹き出しさらにデータを変更することを承認する場合にフラグを設定します。
+9.  呼び出す[ **FwpsApplyModifiedLayerData0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsapplymodifiedlayerdata0)データに加えられた変更を適用します。 設定、 **FWPS_CLASSIFY_FLAG_REAUTHORIZE_IF_MODIFIED_BY_OTHERS**再する別の吹き出しさらにデータを変更することを承認する場合にフラグを設定します。
 
-10. 呼び出す[ **FwpsCompleteClassify0** ](https://msdn.microsoft.com/library/windows/hardware/ff551150)分類操作を次の例に示すように非同期的に実行します。
+10. 呼び出す[ **FwpsCompleteClassify0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscompleteclassify0)分類操作を次の例に示すように非同期的に実行します。
 
     ```C++
     FwpsCompleteClassify(
@@ -189,7 +189,7 @@ WFP リダイレクト レコードとは、WFP に送信プロキシ接続を�
     classifyOut->rights |= FWPS_RIGHT_ACTION_WRITE;
     ```
 
-11. 呼び出す[ **FwpsReleaseClassifyHandle0** ](https://msdn.microsoft.com/library/windows/hardware/ff551208)手順 1 で取得した分類のハンドルを解放します。
+11. 呼び出す[ **FwpsReleaseClassifyHandle0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsreleaseclassifyhandle0)手順 1 で取得した分類のハンドルを解放します。
 
 ### <a name="handling-connect-redirection-from-multiple-callouts"></a>処理複数のコールアウトからのリダイレクトを接続します。
 
@@ -197,7 +197,7 @@ WFP リダイレクト レコードとは、WFP に送信プロキシ接続を�
 
 **FWPS\_右\_アクション\_書き込み**コールアウトとれたを分類するたびに、フラグを設定する必要があります。 コールアウトをテストする必要があります、 **FWPS\_右\_アクション\_書き込み**吹き出しを返すアクションの権限をチェックするフラグ。 このフラグが設定されていないかどうか、引き出し返すことができますが、 **FWP\_アクション\_ブロック**アクションを拒否するために、 **FWP\_アクション\_許可**アクションを前の引き出しによって返されました。
 
-使用して、コールアウト ドライバーが (のかどうか、コールアウト ドライバーまたは別のコールアウト ドライバーは変更が参照してください) への接続のリダイレクトの状態を照会する必要があります Windows 8 以降では、 [ **FwpsQueryConnectionRedirectState0**](https://msdn.microsoft.com/library/windows/hardware/hh439677)関数。 コールアウト ドライバーで接続がリダイレクトされる場合、または、コールアウト ドライバーによってリダイレクトがいた場合は、コールアウト ドライバーは何を行う必要があります。 それ以外の場合、チェックするようにしても、ローカルのリダイレクトの次の例で示す。
+使用して、コールアウト ドライバーが (のかどうか、コールアウト ドライバーまたは別のコールアウト ドライバーは変更が参照してください) への接続のリダイレクトの状態を照会する必要があります Windows 8 以降では、 [ **FwpsQueryConnectionRedirectState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsqueryconnectionredirectstate0)関数。 コールアウト ドライバーで接続がリダイレクトされる場合、または、コールアウト ドライバーによってリダイレクトがいた場合は、コールアウト ドライバーは何を行う必要があります。 それ以外の場合、チェックするようにしても、ローカルのリダイレクトの次の例で示す。
 
 ```C++
 FwpsAcquireWritableLayerDataPointer(...,(PVOID*)&connectRequest), ...);
@@ -223,14 +223,14 @@ if(connectRequest->previousVersion->modifierFilterId != filterId)
 
 -   **FWPS\_メタデータ\_フィールド\_元\_先**フローの元の送信先のアドレスが含まれています。
 
-[ **FWPS\_CONNECT\_REQUEST0** ](https://msdn.microsoft.com/library/windows/hardware/ff551231)と呼ばれるメンバーが構造に含まれる**localRedirectTargetPID**します。 任意のループバック接続のリダイレクトを有効にする、このフィールドは、リダイレクトされたフローを担当するプロセスの PID を設定する必要があります。 これは、同じデータ エンジン パス ALE 承認レイヤーとしての接続を**FWPS\_メタデータ\_フィールド\_ローカル\_リダイレクト\_ターゲット\_ID**.
+[ **FWPS\_CONNECT\_REQUEST0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0)と呼ばれるメンバーが構造に含まれる**localRedirectTargetPID**します。 任意のループバック接続のリダイレクトを有効にする、このフィールドは、リダイレクトされたフローを担当するプロセスの PID を設定する必要があります。 これは、同じデータ エンジン パス ALE 承認レイヤーとしての接続を**FWPS\_メタデータ\_フィールド\_ローカル\_リダイレクト\_ターゲット\_ID**.
 
-プロキシ サービスは Windows 8 以降では、発行する必要があります、 [ **SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード**](https://msdn.microsoft.com/library/windows/hardware/hh802473)[ **SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/hh802472)を使用して、Ioctl [**WSAIoctl**](https://msdn.microsoft.com/library/windows/desktop/ms741621)、元のプロキシ サービスのエンドポイントに対して。 さらに、 [ **SIO\_設定\_WFP\_接続\_リダイレクト\_レコード**](https://msdn.microsoft.com/library/windows/hardware/hh802474) を使用して、IOCTLを発行する必要があります**WSAIoctl**、新しい (プロキシ) のソケットでします。
+プロキシ サービスは Windows 8 以降では、発行する必要があります、 [ **SIO\_クエリ\_WFP\_接続\_リダイレクト\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-query-wfp-connection-redirect-records)[ **SIO\_クエリ\_WFP\_接続\_リダイレクト\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-query-wfp-connection-redirect-context)を使用して、Ioctl [**WSAIoctl**](https://docs.microsoft.com/windows/desktop/api/winsock2/nf-winsock2-wsaioctl)、元のプロキシ サービスのエンドポイントに対して。 さらに、 [ **SIO\_設定\_WFP\_接続\_リダイレクト\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-set-wfp-connection-redirect-records) を使用して、IOCTLを発行する必要があります**WSAIoctl**、新しい (プロキシ) のソケットでします。
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[WFP バージョンに依存しない名前と Windows の特定のバージョンを対象とします。](https://msdn.microsoft.com/library/windows/desktop/gg176678)
+[WFP バージョンに依存しない名前と Windows の特定のバージョンを対象とします。](https://docs.microsoft.com/windows/desktop/FWP/wfp-version-independent-names-and-targeting-specific-versions-of-windows)
 
  
 

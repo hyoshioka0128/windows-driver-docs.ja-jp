@@ -10,12 +10,12 @@ keywords:
 - 拡張機能ユニット WDK USB ビデオ クラスについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1005fec76ae91e9ced9a876c2d8321f0821f553
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9035d8bf3dca7e0b912e52a58b36df65ea12002
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371129"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360665"
 ---
 # <a name="introduction-to-usb-video-class-extension-units"></a>USB ビデオ クラス拡張ユニットの概要
 
@@ -30,7 +30,7 @@ IKsTopologyInfo、ISelector および IKsNodeControl は、Vidcap.h で定義さ
 
 Windows Vista およびそれ以降のリリースでは、Vidcap.h は、Microsoft Windows SDK の一部として含まれています。
 
-Microsoft DirectShow のドキュメントには、対応するリファレンス ページが含まれています。 グローバル一意識別子 (GUID) の型とその他の USB ビデオに関連する定数は、Ksmedia.h で定義されます。 詳細については、次を参照してください。 [USB ビデオ クラス プロパティ](usb-video-class-properties.md)と[カーネル ストリーミング トポロジ ノード](https://msdn.microsoft.com/library/windows/hardware/ff560886)します。
+Microsoft DirectShow のドキュメントには、対応するリファレンス ページが含まれています。 グローバル一意識別子 (GUID) の型とその他の USB ビデオに関連する定数は、Ksmedia.h で定義されます。 詳細については、次を参照してください。 [USB ビデオ クラス プロパティ](usb-video-class-properties.md)と[カーネル ストリーミング トポロジ ノード](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming-topology-nodes)します。
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 記憶域テープ ドライバー WDK、必要なルーチン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f50eae3803f9297bf157153ed563e3f1cbad0cf3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfe0638dd765e3e892c51c620ecd7b6b8dffb2da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352632"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360196"
 ---
 # <a name="required-and-optional-tape-miniclass-routines"></a>必須およびオプションのテープ ミニクラス ルーチン
 
@@ -44,7 +44,7 @@ ms.locfileid: "63352632"
 
 テープ miniclass ドライバーの**DriverEntry**ルーチンは、オペレーティング システムによって自動的に読み込まれるために正確にその名前を使用する必要があります。 TapeMini*Xxx*ルーチン名前を指定できますようにドライバー開発者が、ルーチンのエントリ ポイントがテープに設定されている限り\_INIT\_データ\_EX 構造体。 Miniclass ドライバーが、TapeMini をプレフィックス デバッグに役立つ、*Xxx*一部のルーチンで文字自体を識別するために、ルーチンが何名の文字の残りの部分の反映を確認してください。
 
-テープ miniclass ルーチンの説明も参照してください。[テープ Miniclass ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff567970)します。
+テープ miniclass ルーチンの説明も参照してください。[テープ Miniclass ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 

@@ -6,18 +6,18 @@ keywords:
 - OID_WWAN_PCO、PCO OID
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5b6d0a71570cb0afa66b2c1181d1a3c6b24edfd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8eeec5c7afe4ae3762233bfc8f65a78a28175793
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360777"
 ---
 # <a name="oidwwanpco"></a>OID_WWAN_PCO
 
 OID_WWAN_PCO では、状態と、モデムが携帯電話会社ネットワークから受信したプロトコル構成 Optiont (PCO) 値のペイロードを報告します。 モデムから返される PCO 値は、OID 要求の構造でポート番号を示す PDN に対応します。
 
-クエリ要求を処理、モデムまず応答 NDIS_STATUS_INDICATION_REQUIRED でこの OID を受信するとします。 [NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)を含む通知が返されます、 [NDIS_WWAN_PCO_STATUS](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)クエリ要求が完了したときに構造体します。 **NDIS_WWAN_PCO_STATUS**、PCO 状態を格納し、 [WWAN_PCO_VALUE](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E) PCO 値を表す構造体です。
+クエリ要求を処理、モデムまず応答 NDIS_STATUS_INDICATION_REQUIRED でこの OID を受信するとします。 [NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)を含む通知が返されます、 [NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)クエリ要求が完了したときに構造体します。 **NDIS_WWAN_PCO_STATUS**、PCO 状態を格納し、 [WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value) PCO 値を表す構造体です。
 
 要求のセットには適用されません。
 
@@ -27,7 +27,7 @@ OID_WWAN_PCO では、状態と、モデムが携帯電話会社ネットワー�
 
 モデムのミニポート ドライバーがサポートしていることをアドバタイズする必要があります選択モデム WWANSVC からクエリ要求を受信する Microsoft の受信トレイ ミニポート クラス ドライバー、使用、 *WWAN_OPTIONAL_SERVICE_CAPS_PCO*応答するときのオプション[OID OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)要求のクエリを実行します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |
@@ -38,9 +38,9 @@ OID_WWAN_PCO では、状態と、モデムが携帯電話会社ネットワー�
 
 [**NDIS_STATUS_WWAN_PCO_STATUS**](ndis-status-wwan-pco-status.md)
 
-[**NDIS_WWAN_PCO_STATUS**](https://msdn.microsoft.com/library/windows/hardware/C71187C5-74B6-450A-8461-BB9FDF60DB8D)
+[**NDIS_WWAN_PCO_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)
 
-[**WWAN_PCO_VALUE**](https://msdn.microsoft.com/library/windows/hardware/45A499CE-2C9A-4070-BEF8-880E7673FA8E) 
+[**WWAN_PCO_VALUE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value) 
 
 [**OID OID_WWAN_DEVICE_CAPS_EX**](oid-wwan-device-caps-ex.md)
 

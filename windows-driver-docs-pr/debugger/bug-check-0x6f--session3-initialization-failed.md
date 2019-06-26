@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ec8f8ac45e38c10e6ec792f0ca9316cf03b5fe62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07194f97f5a216c33b99aa3a3774712e17156d9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367422"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361779"
 ---
 # <a name="bug-check-0x6f-session3initializationfailed"></a>バグ チェック 0x6F:SESSION3\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367422"
 SESSION3\_初期化\_失敗のバグ チェックが 0x0000006F の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="session3initializationfailed-parameters"></a>SESSION3\_初期化\_FAILED パラメーター

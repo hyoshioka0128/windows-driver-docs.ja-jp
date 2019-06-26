@@ -7,12 +7,12 @@ keywords:
 - ストリーム データを高深さの範囲は WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42628b45256d8b1ec85d9599fd3a7118815b8e6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4728fbfd303b19da49c9ebac842ad3ff98fd33dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332240"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364316"
 ---
 # <a name="pcm-high-bitdepth-stream-data-range"></a>PCM 高ビットデプス ストリームのデータ範囲
 
@@ -20,7 +20,7 @@ ms.locfileid: "63332240"
 ## <span id="pcm_high_bitdepth_stream_data_range"></span><span id="PCM_HIGH_BITDEPTH_STREAM_DATA_RANGE"></span>
 
 
-この例では、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096) PCM 高深さストリームのデータ範囲を記述する構造体。
+この例では、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio) PCM 高深さストリームのデータ範囲を記述する構造体。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_AUDIO);

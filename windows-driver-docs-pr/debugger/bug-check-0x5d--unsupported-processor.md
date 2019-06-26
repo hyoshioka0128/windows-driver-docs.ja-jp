@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fd7d26089aff202c63045ab9a09e069fa7bdbbe6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81e666a7897a4d8c0a3ff43bbe3599d018f42113
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367391"
 ---
 # <a name="bug-check-0x5d-unsupportedprocessor"></a>バグ チェック 0x5D:サポートされていない\_プロセッサ
 
@@ -26,7 +26,7 @@ ms.locfileid: "63329807"
 サポートされていない\_プロセッサのバグ チェックが 0x0000005D の値を持ちます。 これは、コンピューターがサポートされていないプロセッサ上の Windows を実行しようとしていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="unsupportedprocessor-parameters"></a>サポートされていない\_プロセッサのパラメーター

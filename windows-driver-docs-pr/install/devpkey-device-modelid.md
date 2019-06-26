@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f6fbf4b052a9d074e3e908725d155c1f5b265392
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9de4d826e790ddfe3ebbb4e5c596250fc0e8b5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351079"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378178"
 ---
 # <a name="devpkeydevicemodelid"></a>DEVPKEY_Device_ModelId
 
 
-DEVPKEY_Device_ModelId デバイスのプロパティに一致するデバイスを[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)します。
+DEVPKEY_Device_ModelId デバイスのプロパティに一致するデバイスを[デバイス メタデータ パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)します。
 
 <table>
 <colgroup>
@@ -58,9 +58,9 @@ DEVPKEY_Device_ModelId デバイスのプロパティに一致するデバイス
 
 DEVPKEY_Device_ModelId のデバイス プロパティでは、同じ製造元とモデルを共有するデバイスを一意に識別するには、Ihv および Oem のサポートを提供します。 モデル識別子 (ModelID) を使用すると、Oem および ihv 側は、独自のブランド化されたデバイス メタデータ パッケージを配布するデバイスのモデルを一致できます。
 
-DEVPKEY_Device_ModelId のデバイス プロパティの値を格納、 [ **ModelID** ](https://msdn.microsoft.com/library/windows/hardware/ff549295)デバイスのメタデータ パッケージの XML 要素。 デバイスがインストールされている場合、デバイスによって報告された ModelID GUID 値を持つこの鍵が設定されます。
+DEVPKEY_Device_ModelId のデバイス プロパティの値を格納、 [ **ModelID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))デバイスのメタデータ パッケージの XML 要素。 デバイスがインストールされている場合、デバイスによって報告された ModelID GUID 値を持つこの鍵が設定されます。
 
-詳細については、次を参照してください。[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)します。
+詳細については、次を参照してください。[デバイス メタデータ パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -85,11 +85,11 @@ DEVPKEY_Device_ModelId のデバイス プロパティの値を格納、 [ **Mod
 ## <a name="see-also"></a>関連項目
 
 
-[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)
+[デバイス メタデータ パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)
 
-[**ModelID**](https://msdn.microsoft.com/library/windows/hardware/ff549295)
+[**ModelID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

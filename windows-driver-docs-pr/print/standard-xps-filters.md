@@ -4,12 +4,12 @@ description: Windows では、レベル 3 の XPS から PCL6 と PostScript へ
 ms.assetid: 6404D215-8154-4604-A67B-19B20D1CF229
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a20e14a5ae9b49553276a46b64b1b27766fe16f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2f82f26ffdd457ef1580d20cae2cbf1ff788c33
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375208"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363980"
 ---
 # <a name="standard-xps-filters"></a>標準 XPS フィルター
 
@@ -90,7 +90,7 @@ Windows 8.1 では、ユーザーの既定 PrintTicket MSxps フィルターで�
 #define XPS_FP_JOB_LEVEL_PRINTTICKET    "JobPrintTicket"
 ```
 
-実装の追加は InitializeFilter、中に MTI フィルター [IPrintReadStreamFactory](https://msdn.microsoft.com/library/windows/hardware/ff554338)プロパティ バッグにします。 このインターフェイスの 1 つのメソッド、 **GetStream**、PrintTicket ストリームが利用可能になるまでブロックされます。 これは、プロパティへのアクセスを同期する手段を提供します。
+実装の追加は InitializeFilter、中に MTI フィルター [IPrintReadStreamFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory)プロパティ バッグにします。 このインターフェイスの 1 つのメソッド、 **GetStream**、PrintTicket ストリームが利用可能になるまでブロックされます。 これは、プロパティへのアクセスを同期する手段を提供します。
 
 **重要な**:場合**GetStream**呼びます InitializeFilter からデッドロックが発生します。
 
@@ -107,9 +107,9 @@ GPD 機能は、次の順序でマップされます。
 
 2. PrintSchemaPrivateNamespaceURI 属性を指定し、GPD 機能名 PrintTicket の機能名に一致します。 機能名を照合する、簡単ではありませんし、さまざまなルールに従います。
 
-a.  場合、 **\*順序**最初のオプションのセクションがページ\_セットアップまたはページ\_終了日、および GPD 機能が「ページ」で始まっていませんしを試みる前に、GPD 機能名に「ページ」が付加されます一致します。
+a. 場合、 **\*順序**最初のオプションのセクションがページ\_セットアップまたはページ\_終了日、および GPD 機能が「ページ」で始まっていませんしを試みる前に、GPD 機能名に「ページ」が付加されます一致します。
 
-b.  場合、 **\*順序**最初のオプションのセクションは、DOC\_セットアップまたはドキュメント\_終了日、および GPD 機能が"Document"で始まっていませんし、"Document"の先頭に付加する前に GPD 機能名一致するようにしようとしています。
+b. 場合、 **\*順序**最初のオプションのセクションは、DOC\_セットアップまたはドキュメント\_終了日、および GPD 機能が"Document"で始まっていませんし、"Document"の先頭に付加する前に GPD 機能名一致するようにしようとしています。
 
 c. 場合、 **\*順序**最初のオプションのセクションは、ジョブ\_セットアップまたはジョブ\_終了日、および GPD 機能が"Job"で始まっていませんし、一致するように試行する前に、GPD 機能名を「ジョブ」が付加されます.
 
@@ -120,15 +120,15 @@ PPD 機能は、次の順序でマップされます。
 
 2. PrintSchemaPrivateNamespaceURI 属性を指定し、PPD 機能名 PrintTicket 機能名が一致します。 機能名を照合する、簡単ではありませんし、さまざまなルールに従います。
 
-a.  場合、 **OrderDependency**セクションは ExitServer、プロローグまたは JCLSetup、し PPD 機能名が"Job"で始まらない、一致するように試行する前に、PPD 機能名を「ジョブ」が付加されます。
+a. 場合、 **OrderDependency**セクションは ExitServer、プロローグまたは JCLSetup、し PPD 機能名が"Job"で始まらない、一致するように試行する前に、PPD 機能名を「ジョブ」が付加されます。
 
-b.  場合、 **OrderDependency**セクションでは、DocumentSetup し PPD 機能名が"Document"で始まらないが"Document"一致を試みる前に PPD 機能名に付加されます。
+b. 場合、 **OrderDependency**セクションでは、DocumentSetup し PPD 機能名が"Document"で始まらないが"Document"一致を試みる前に PPD 機能名に付加されます。
 
 c. 場合、 **OrderDependency**セクションは AnySetup、フィルターは、2 つの一致チェックを実行します。
 
-i.  PPD 機能名が"Document"で始まっていない場合、"Document"前に付加されます PPD 機能名と一致する前にします。
+i. PPD 機能名が"Document"で始まっていない場合、"Document"前に付加されます PPD 機能名と一致する前にします。
 
-ii.  一致が検出されない場合、または PPD 機能名が"Job"で始まらない場合は、し、"Job"の先頭に付加 PPD 機能名一致を試みる前にします。
+ii. 一致が検出されない場合、または PPD 機能名が"Job"で始まらない場合は、し、"Job"の先頭に付加 PPD 機能名一致を試みる前にします。
 
 d. 場合、 **OrderDependency**セクションでは、PageSetup し PPD 機能名が「ページ」で始まらない、一致するように試行する前に、PPD 機能名を「ページ」が付加されます。
 
@@ -139,17 +139,17 @@ GPD と PPD オプションは、次の順序でマップされます。
 
 2. PrintSchemaPrivateNamespaceURI 属性を指定し、GPD/PPD オプション名 PrintTicket のオプション名に一致します。 オプション名に一致する、簡単ではありませんし、さまざまなルールに従います。
 
-a.  GPD/PPD のオプション名で始まる場合\[0 ~ 9\]または '\_' を '\_' 文字が一致するように試行する前に GPD/PPD オプション名に付加されます。 ただし、次の追加ルールが適用されます。
+a. GPD/PPD のオプション名で始まる場合\[0 ~ 9\]または '\_' を '\_' 文字が一致するように試行する前に GPD/PPD オプション名に付加されます。 ただし、次の追加ルールが適用されます。
 
-i.  GPD オプションでは、この場合、 \*NoPunctuationCharSubstitute でしょうか。 属性が TRUE に設定し、フィルターは付加されません '\_' で、'\_' 文字。
+i. GPD オプションでは、この場合、 \*NoPunctuationCharSubstitute でしょうか。 属性が TRUE に設定し、フィルターは付加されません '\_' で、'\_' 文字。
 
-ii.  PPD オプションでは、この場合、 \*MSNoPunctuationCharSubstitute でしょうか。 文字列が TRUE に設定し、フィルターは付加されません '\_' で、'\_' 文字。
+ii. PPD オプションでは、この場合、 \*MSNoPunctuationCharSubstitute でしょうか。 文字列が TRUE に設定し、フィルターは付加されません '\_' で、'\_' 文字。
 
-b.  任意の文字でない\[A ~ Z\]、 \[a ~ z\]、 \[0 ~ 9\]または '\_' が置き換えられます、'\_' 一致を試みる前に文字。 ただし、次の追加ルールが適用されます。
+b. 任意の文字でない\[A ~ Z\]、 \[a ~ z\]、 \[0 ~ 9\]または '\_' が置き換えられます、'\_' 一致を試みる前に文字。 ただし、次の追加ルールが適用されます。
 
-i.  GPD オプションでは、この場合、 \*NoPunctuationCharSubstitute でしょうか属性が TRUE に設定し、フィルターは置き換えられません '。 '。 または '-' で、'\_' 文字。
+i. GPD オプションでは、この場合、 \*NoPunctuationCharSubstitute でしょうか属性が TRUE に設定し、フィルターは置き換えられません '。 '。 または '-' で、'\_' 文字。
 
-ii.  PPD オプションでは、この場合、 \*MSNoPunctuationCharSubstitute でしょうか文字列が TRUE に設定し、フィルターは置き換えられません '。 '。 または '-' で、'\_' 文字。
+ii. PPD オプションでは、この場合、 \*MSNoPunctuationCharSubstitute でしょうか文字列が TRUE に設定し、フィルターは置き換えられません '。 '。 または '-' で、'\_' 文字。
 
 ## <a name="form-to-tray-mapping"></a>フォーム トレイへのマッピングから
 

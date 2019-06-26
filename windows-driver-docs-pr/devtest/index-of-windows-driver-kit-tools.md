@@ -20,12 +20,12 @@ keywords:
 - GUIDGen.exe WDK
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cac00eb60b57dee3eb425bfa6ec86f8c25abd7c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06477b84eee3be880a83440689b5319f2a1846cd
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394094"
 ---
 # <a name="index-of-windows-driver-kit-tools"></a>Windows Driver Kit のツールの索引
 
@@ -103,7 +103,7 @@ ms.locfileid: "63360776"
 <td align="left"><p>このツールは、フィルター グラフに表示されるフィルターとフィルターの内部ノード間の暗証番号 (pin)-pin 接続のグラフィカル表現を構築できます。</p>
 <p>%WindowsSdkDir%\tools\x86\KsStudio.chm</p>
 <p>%WindowsSdkDir%\tools\x64\KsStudio.chm</p>
-<p>参照してください<a href="https://msdn.microsoft.com/library/windows/hardware/ff554257" data-raw-source="[AVStream Testing and Debugging](https://msdn.microsoft.com/library/windows/hardware/ff554257)">AVStream テストおよびデバッグ</a>詳細についてはします。</p></td>
+<p>参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-testing-and-debugging" data-raw-source="[AVStream Testing and Debugging](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-testing-and-debugging)">AVStream テストおよびデバッグ</a>詳細についてはします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>USB デバイス ビューアー (Usbview.exe)</p>
@@ -263,7 +263,7 @@ ms.locfileid: "63360776"
 <td align="left"><p>WPD コンポーネントからの情報のトレースが表示されます。 このツールには、以前のバージョンの WDK で提供されていたいる WpdMon.exe が置き換えられます。</p>
 <p>WDK ドキュメント:</p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=106527" data-raw-source="[Windows Portable Devices](https://go.microsoft.com/fwlink/p/?linkid=106527)">Windows ポータブル デバイス</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD ドライバーの開発ツール</a>を参照してください<a href="https://msdn.microsoft.com/library/windows/hardware/hh451296" data-raw-source="[Using the Network Monitor Tool](https://msdn.microsoft.com/library/windows/hardware/hh451296)">ネットワーク監視ツールを使用して</a>します。</p></td>
+<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD ドライバーの開発ツール</a>を参照してください<a href="https://docs.microsoft.com/previous-versions/hh451296(v=vs.85)" data-raw-source="[Using the Network Monitor Tool](https://docs.microsoft.com/previous-versions/hh451296(v=vs.85))">ネットワーク監視ツールを使用して</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -330,8 +330,8 @@ ms.locfileid: "63360776"
 <p>%WindowsSdkDir%\tools\x86\makentf.exe</p></td>
 <td align="left"><p>Adobe フォント メトリック (して) および東アジア フォント AFM ファイルを Windows フォント ファイル (.ntf) に変換します。</p>
 <p>WDK ドキュメント:</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546364" data-raw-source="[Converting AFM Files to NTF Files](https://msdn.microsoft.com/library/windows/hardware/ff546364)">NTF ファイルに変換します。</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546366" data-raw-source="[Converting East Asian AFM Files to NTF Files](https://msdn.microsoft.com/library/windows/hardware/ff546366)">東アジアしてを NTF ファイルに変換します。</a></p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files" data-raw-source="[Converting AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files)">NTF ファイルに変換します。</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files" data-raw-source="[Converting East Asian AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files)">東アジアしてを NTF ファイルに変換します。</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PPDCheck (Ppdcheck.exe)</p>
@@ -388,7 +388,7 @@ ms.locfileid: "63360776"
 <p>%WindowsSdkDir%\tools\x86&lt;/p&gt;</td>
 <td align="left"><p>ドライバー、ファームウェア、およびハードウェア センサーと場所の機能をテストします。 ツールは、データの取得、イベント処理、レポートの間隔をテストするには、プロパティの取得の秘密度を変更するには、センサーと API の場所を呼び出します。</p>
 <p>WDK ドキュメント:</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/hh780319" data-raw-source="[Testing sensor functionality with the Sensor Diagnostic Tool](https://msdn.microsoft.com/library/windows/hardware/hh780319)">センサー診断ツールを使用したセンサー機能をテストします。</a></p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool" data-raw-source="[Testing sensor functionality with the Sensor Diagnostic Tool](https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool)">センサー診断ツールを使用したセンサー機能をテストします。</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -438,7 +438,7 @@ ms.locfileid: "63360776"
 <p><strong>WDK ツール:</strong>はい</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x64\CertMgr.exe</p>
 <p>%WindowsSdkDir%\bin\x86\CertMgr.exe</p></td>
-<td align="left"><p>管理証明書信頼リスト (Ctl) を証明書および証明書の失効リスト (Crl) ドライバーの署名に使用して<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver packages](https://msdn.microsoft.com/library/windows/hardware/ff544840)">ドライバー パッケージ</a>します。</p>
+<td align="left"><p>管理証明書信頼リスト (Ctl) を証明書および証明書の失効リスト (Crl) ドライバーの署名に使用して<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages" data-raw-source="[driver packages](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)">ドライバー パッケージ</a>します。</p>
 <p>WDK ドキュメント:</p>
 <p><a href="certmgr.md" data-raw-source="[&lt;strong&gt;CertMgr&lt;/strong&gt;](certmgr.md)"><strong>CertMgr</strong></a></p></td>
 </tr>
@@ -514,7 +514,7 @@ ms.locfileid: "63360776"
 <td align="left"><p>ドライバー検証ログ (DVL)</p>
 <p><strong>WDK ツール:</strong>はい</p></td>
 <td align="left"><p>Microsoft Visual Studio および WDK が必要です。 <strong>ドライバー</strong>  メニューのをクリックして<strong>ドライバー検証ログを作成しています.</strong></p></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=227016" data-raw-source="[Windows Server 2012 Hardware Certification Program](https://go.microsoft.com/fwlink/p/?linkid=227016)">Windows Server 2012 のハードウェア認定プログラム</a>ドライバー検証ログ (DVL) 該当するドライバーのすべての要求送信が必要です。 DVL には、コード分析と静的ドライバー検証ツールのログ ファイルからの結果の要約が含まれています。 参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_verification_log" data-raw-source="[Creating a Driver Verification Log](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_verification_log)">ドライバー検証ログを作成する</a>します。</p></td>
+<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=227016" data-raw-source="[Windows Server 2012 Hardware Certification Program](https://go.microsoft.com/fwlink/p/?linkid=227016)">Windows Server 2012 のハードウェア認定プログラム</a>ドライバー検証ログ (DVL) 該当するドライバーのすべての要求送信が必要です。 DVL には、コード分析と静的ドライバー検証ツールのログ ファイルからの結果の要約が含まれています。 参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Creating a Driver Verification Log](https://docs.microsoft.com/windows-hardware/drivers)">ドライバー検証ログを作成する</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>拡張記憶域証明書管理ツール (EhStorCertMgrCmd.exe)</p>
@@ -530,7 +530,7 @@ ms.locfileid: "63360776"
 <p><strong>WDK ツール:</strong>はい</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x64\ECManGen.exe</p>
 <p>%WindowsSdkDir%\bin\x86\ECManGen.exe</p></td>
-<td align="left"><p>イベントまたはパフォーマンスのカウンター マニフェストを作成するためのツール (* .man) XML を使用することがなく最初からタグを付けます。 マニフェスト ファイルを作成する方法の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/dd996930" data-raw-source="[Writing an Instrumentation Manifest (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd996930)">インストルメンテーション マニフェスト (Windows) を記述</a>セクションと<a href="adding-event-tracing-to-kernel-mode-drivers.md" data-raw-source="[Adding Event Tracing to Kernel-Mode Drivers](adding-event-tracing-to-kernel-mode-drivers.md)">カーネル モード ドライバーへのイベント トレースの追加</a>します。</p></td>
+<td align="left"><p>イベントまたはパフォーマンスのカウンター マニフェストを作成するためのツール (* .man) XML を使用することがなく最初からタグを付けます。 マニフェスト ファイルを作成する方法の詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest" data-raw-source="[Writing an Instrumentation Manifest (Windows)](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)">インストルメンテーション マニフェスト (Windows) を記述</a>セクションと<a href="adding-event-tracing-to-kernel-mode-drivers.md" data-raw-source="[Adding Event Tracing to Kernel-Mode Drivers](adding-event-tracing-to-kernel-mode-drivers.md)">カーネル モード ドライバーへのイベント トレースの追加</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUIDgen (Guidgen.exe)</p>
@@ -544,7 +544,7 @@ ms.locfileid: "63360776"
 <p><strong>WDK ツール:</strong>はい</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x64\inf2cat.exe</p>
 <p>%WindowsSdkDir%\bin\x86\inf2cat.exe</p></td>
-<td align="left"><p>決定かどうかを<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver package's](https://msdn.microsoft.com/library/windows/hardware/ff544840)">ドライバー パッケージの</a>INF ファイルは、の Windows バージョンでは、指定されたリストのデジタル署名することができ、そうである場合は、符号なし生成します<a href="https://msdn.microsoft.com/library/windows/hardware/ff537872" data-raw-source="[catalog files](https://msdn.microsoft.com/library/windows/hardware/ff537872)">カタログ ファイル</a>指定の Windows に適用します。バージョン。</p>
+<td align="left"><p>決定かどうかを<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages" data-raw-source="[driver package's](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)">ドライバー パッケージの</a>INF ファイルは、の Windows バージョンでは、指定されたリストのデジタル署名することができ、そうである場合は、符号なし生成します<a href="https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files" data-raw-source="[catalog files](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)">カタログ ファイル</a>指定の Windows に適用します。バージョン。</p>
 <p>WDK ドキュメント:</p>
 <p><a href="inf2cat.md" data-raw-source="[&lt;strong&gt;Inf2Cat&lt;/strong&gt;](inf2cat.md)"><strong>Inf2Cat</strong></a></p></td>
 </tr>
@@ -566,7 +566,7 @@ ms.locfileid: "63360776"
 <td align="left"><p>WDKPath\bin\amd64\MakeCat.exe</p>
 <p>WDKPath\bin\ia64\MakeCat.exe</p>
 <p>WDKPath\bin\x86\MakeCat.exe</p></td>
-<td align="left"><p>作成、<a href="https://msdn.microsoft.com/library/windows/hardware/ff537872" data-raw-source="[catalog file](https://msdn.microsoft.com/library/windows/hardware/ff537872)">カタログ ファイル</a>の<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver package](https://msdn.microsoft.com/library/windows/hardware/ff544840)">ドライバー パッケージ</a>します。</p>
+<td align="left"><p>作成、<a href="https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files" data-raw-source="[catalog file](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)">カタログ ファイル</a>の<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages" data-raw-source="[driver package](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)">ドライバー パッケージ</a>します。</p>
 <p>WDK ドキュメント:</p>
 <p><a href="makecat.md" data-raw-source="[MakeCat](makecat.md)">MakeCat</a></p></td>
 </tr>
@@ -599,7 +599,7 @@ ms.locfileid: "63360776"
 <td align="left"><p>PnPUtil (PnPUtil.exe)</p>
 <p><strong>WDK ツール:</strong>いいえ</p></td>
 <td align="left"><p>%Windir%\system32\pnputil.exe</p></td>
-<td align="left"><p>コマンド ライン ツールをインストールまたは削除する<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver packages](https://msdn.microsoft.com/library/windows/hardware/ff544840)">ドライバー パッケージ</a>Windows ドライバー ストアから。</p>
+<td align="left"><p>コマンド ライン ツールをインストールまたは削除する<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages" data-raw-source="[driver packages](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)">ドライバー パッケージ</a>Windows ドライバー ストアから。</p>
 <p>このツールは、Windows 7 および Windows の以降のバージョンで使用できます。</p>
 <p>WDK ドキュメント:</p>
 <p><a href="pnputil.md" data-raw-source="[PnPUtil](pnputil.md)">PnPUtil</a></p></td>
@@ -772,7 +772,7 @@ ms.locfileid: "63360776"
 <p><strong>WDK ツール:</strong>はい</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x86\wmimofck.exe</p></td>
 <td align="left"><p>WDK ドキュメント:</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565588" data-raw-source="[Using wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)">Wmimofck.exe を使用します。</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe" data-raw-source="[Using wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)">Wmimofck.exe を使用します。</a></p>
 <p>コマンド オプションについては、次のように入力します。</p>
 <p><strong>wmimofck -?</strong></p></td>
 </tr>
@@ -808,7 +808,7 @@ ms.locfileid: "63360776"
 
 次のツールが追加されましたまたは WDK 8.1 で変更されています。
 
--   HCK のテスト スイート (を参照してください[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)と[WDK 8.1 では、HCK のテスト スイートを実行する方法](https://msdn.microsoft.com/windows-drivers/develop/run_the_hck_test_suites_in_the_wdk))。
+-   HCK のテスト スイート (を参照してください[Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)と[WDK 8.1 では、HCK のテスト スイートを実行する方法](https://docs.microsoft.com/windows-hardware/drivers))。
 
 -   [Driver Verifier](driver-verifier.md)— Windows ドライバーでエラーを検出するための 4 つの新しいオプションになりました。
 -   [PwrTest](pwrtest.md): ドキュメントについては、スタンバイ電源状態の接続のサポートを含む、新しいテストのシナリオを更新します。
@@ -820,7 +820,7 @@ For Windows 8 WDK には、次のツールが追加されました。
 
 -   Bluetooth の照会レコードの検証ツール (Sdpverify.exe)
 
--   デバイスの基本テスト (を参照してください[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)と[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)します。
+-   デバイスの基本テスト (を参照してください[Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)と[を選択して、デバイスの基本テストを構成する方法](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 -   センサー診断ツール (sensordiagnostictool.exe)
 

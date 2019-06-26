@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 8210a068c972e38ba8d169a21a2a9d55e2dadcf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 810363c67df37c350560ed1b32b6fbf6253e7071
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351785"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361324"
 ---
 # <a name="hresult-values"></a>HRESULT の値
 
@@ -60,13 +60,13 @@ ms.locfileid: "63351785"
 実装されていません。
 
 <span id="HRESULT_FROM_WIN32_ERROR_ACCESS_DENIED_"></span><span id="hresult_from_win32_error_access_denied_"></span>HRESULT\_FROM\_WIN32 (エラー\_アクセス\_が拒否されました)  
-デバッガーがあるため、操作が拒否された[保護モード](https://msdn.microsoft.com/library/windows/hardware/ff554760)します。
+デバッガーがあるため、操作が拒否された[保護モード](https://docs.microsoft.com/windows-hardware/drivers/debugger/secure-mode)します。
 
 **NT エラーが発生します。** 状態など、他のエラー コード\_コントロール\_C\_終了と状態\_いいえ\_詳細\_エントリが発生する可能性があります。 これらの結果は、HRESULT に渡される\_FROM\_WinError.h で返される前に定義されている NT マクロ。
 
 **Win32 エラーが発生します。** エラーなど、他のエラー コード\_読み取り\_障害ドメインとエラー\_書き込み\_場合があります、障害が発生します。 これらの結果は、HRESULT に渡される\_FROM\_WinError.h で返される前に定義されている WIN32 マクロ。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

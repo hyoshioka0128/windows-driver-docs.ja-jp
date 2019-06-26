@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a39a0dd120a647f9c6329b1e30b31a7d329e5e34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3f4986473e7b3a335072957f839d36ec25c4614
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333289"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360643"
 ---
 # <a name="ksnodetypeacousticechocancel"></a>KSNODETYPE\_音響\_エコー\_キャンセル
 
@@ -62,9 +62,9 @@ AEC のノードをその論理ピンが次の表に示されているヘッダ�
 
  
 
-上記の表のピンが、フィルターでは、他のフィルターへの接続に使用される外部のピンではなく、ノードで、フィルターに内部の接続を指定するためだけに使用される、論理ピンことに注意してください。 詳細については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537688)します。
+上記の表のピンが、フィルターでは、他のフィルターへの接続に使用される外部のピンではなく、ノードで、フィルターに内部の接続を指定するためだけに使用される、論理ピンことに注意してください。 詳細については、次を参照してください。 [ **PCCONNECTION\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))します。
 
-AEC のノードを含むフィルターが全二重 DirectSound アプリケーションのサポートを提供する方法については、次を参照してください。 [DirectSound キャプチャ効果](https://msdn.microsoft.com/library/windows/hardware/ff536327)します。
+AEC のノードを含むフィルターが全二重 DirectSound アプリケーションのサポートを提供する方法については、次を参照してください。 [DirectSound キャプチャ効果](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-capture-effects)します。
 
 AEC のノードを格納しているフィルターが作成されるか、ノードがリセットされた、ときに、ノードがパススルー モードで動作する初期構成されます。
 
@@ -74,7 +74,7 @@ KSNODETYPE\_音響\_エコー\_キャンセル ノードは、ハードウェア
 
 [**KSPROPERTY\_オーディオ\_アルゴリズム\_インスタンス**](ksproperty-audio-algorithm-instance.md)
 
-[**KSPROPERTY\_TOPOLOGYNODE\_を有効にします。**](ksproperty-topologynode-enable.md)
+[**KSPROPERTY\_TOPOLOGYNODE\_を有効にします。** ](ksproperty-topologynode-enable.md)
 
 [**KSPROPERTY\_TOPOLOGYNODE\_リセット**](ksproperty-topologynode-reset.md)
 
@@ -84,7 +84,7 @@ KSNODETYPE\_音響\_エコー\_[キャンセル] ノードでは、次の省略�
 
 [**KSPROPERTY\_AEC\_モード**](ksproperty-aec-mode.md)
 
-[**KSPROPERTY\_AEC\_ノイズ\_入力\_を有効にします。**](ksproperty-aec-noise-fill-enable.md)
+[**KSPROPERTY\_AEC\_ノイズ\_入力\_を有効にします。** ](ksproperty-aec-noise-fill-enable.md)
 
 [**KSPROPERTY\_AEC\_状態**](ksproperty-aec-status.md)
 

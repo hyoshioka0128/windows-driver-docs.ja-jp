@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6567bbb3032dbcea06789b507221ad555f2b418
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc9569206a346f5b1025e77295cb7a3c0a10e073
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369786"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361430"
 ---
 # <a name="debugrequestgetcapturedeventcodeoffset"></a>デバッグ\_要求\_取得\_CAPTURED\_イベント\_コード\_オフセット
 
@@ -40,7 +40,7 @@ ms.locfileid: "63369786"
 <span id="E_NOINTERFACE"></span><span id="e_nointerface"></span>E\_NOINTERFACE  
 現在のイベントの命令ポインターのメモリが無効です。
 
-このメソッドは、エラー値を返すも可能性があります。 参照してください[**戻り値**](https://msdn.microsoft.com/library/windows/hardware/ff549771)の詳細。
+このメソッドは、エラー値を返すも可能性があります。 参照してください[**戻り値**](https://docs.microsoft.com/windows-hardware/drivers/debugger/hresult-values)の詳細。
 
 <a name="remarks"></a>注釈
 -------

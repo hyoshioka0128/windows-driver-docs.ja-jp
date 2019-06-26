@@ -13,12 +13,12 @@ keywords:
 - MPEG2 ビデオ入力ストリーミング WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0740694167f9aea25a7bc31b7f08d8c9ae7024a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56b90a5e86c945b5fc9f907fbd1baa3b24c5044e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386525"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360676"
 ---
 # <a name="input-streams"></a>入力ストリーム
 
@@ -28,7 +28,7 @@ ms.locfileid: "63386525"
 
 DVD の入力ストリームは、暗号化された DVD パックの配列として、ミニドライバーに提供されます。 パックは、DVD 仕様で定義されています。 Microsoft の DVD のアーキテクチャでは、「マスター クロック」パラダイムを使用して、オーディオとビデオの同期するために、パックのシステム クロックの参照 (SCR) フィールドが 0 に設定されているに注意してください。 通常、DVD デコーダーのミニドライバーのオーディオ ストリームは、マスターのクロックを提供します。 詳細については、次を参照してください。[マスター クロック](master-clock.md)します。
 
-DVD のデータ ストリームがを通じてミニドライバーに送信される、 [ **SRB\_書き込み\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568220)要求。 SRB の要求の詳細については、次を参照してください。 [Stream 要求のブロックの処理](handling-stream-request-blocks.md)と[Stream クラス SRB 参照](https://msdn.microsoft.com/library/windows/hardware/ff568295)します。 ハードウェアがサポートするいくつかの DVD パックは、1 つの要求パケットに存在する可能性があるために、DMA をスキャッター/ギャザーします。
+DVD のデータ ストリームがを通じてミニドライバーに送信される、 [ **SRB\_書き込み\_データ**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data)要求。 SRB の要求の詳細については、次を参照してください。 [Stream 要求のブロックの処理](handling-stream-request-blocks.md)と[Stream クラス SRB 参照](https://docs.microsoft.com/windows-hardware/drivers/stream/stream-class-srb-reference)します。 ハードウェアがサポートするいくつかの DVD パックは、1 つの要求パケットに存在する可能性があるために、DMA をスキャッター/ギャザーします。
 
 次の表では、DVD ムービーで使用される MPEG2 ビデオ入力ストリーム メディアの種類について説明します。
 
@@ -266,7 +266,7 @@ WaveFormatEx のスーパー セット
 
 Microsoft DVD ナビゲーター フィルター解析すべてボタンとキーボードの情報と指定のみパス 1 つの強調表示の四角形、サブピクチャ デコーダーまで特定の時点します。 その結果、強調表示情報に送信されますデコーダーが DVD のストリームに存在よりも頻繁です。 これは、DVD 仕様によって異なります。
 
-DVD/スプリッター ナビゲーター フィルターは、キーストロークのすべての情報を処理し、新しい送信ボタンの状態変更されるたびに情報を強調表示します。 情報は、一度に 1 つのボタンの 1 つのみのモードをについて説明します。 存在する場合にその画面のピクセル座標または、サブピクチャが、表示、表示する四角形を掲載しています。 [ **KSPROPERTY\_SPHLI** ](https://msdn.microsoft.com/library/windows/hardware/ff565627)構造体には、現在選択されているボタンの現在の状態については、色およびコントラストの情報も含まれています。 形式は、DVD 仕様で定義されます。
+DVD/スプリッター ナビゲーター フィルターは、キーストロークのすべての情報を処理し、新しい送信ボタンの状態変更されるたびに情報を強調表示します。 情報は、一度に 1 つのボタンの 1 つのみのモードをについて説明します。 存在する場合にその画面のピクセル座標または、サブピクチャが、表示、表示する四角形を掲載しています。 [ **KSPROPERTY\_SPHLI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sphli)構造体には、現在選択されているボタンの現在の状態については、色およびコントラストの情報も含まれています。 形式は、DVD 仕様で定義されます。
 
 強調表示については、データ ストリームに非同期的に到着します。 DVD デコーダーのミニドライバーが強調表示を使用する必要があります起動し、存在する場合は、サブピクチャが関連する情報を強調表示情報を関連付けるためにタイムスタンプを終了します。 DVD デコーダーのミニドライバーが要求されたタイムスタンプのサブピクチャ ストリーム情報を受信しない場合、デコーダーでは、強調表示については、スタンドアロンと、サブピクチャには適用されません前提としています。 この場合、色およびコントラストの情報に色がすべて同じと見なされますことができます。
 

@@ -4,18 +4,18 @@ description: TraceLogging API
 ms.assetid: AE93DD45-05D7-4E7A-B086-B40A6FA0904B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9895c52486ed41a48d92da60a0053c3761696db5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 108d75c9e93e4a012c42b475d08f9952264ed8ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369709"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363816"
 ---
 # <a name="tracelogging-api"></a>TraceLogging API
 
-新しい Windows 10、TraceLogging はユーザー モード アプリケーションとカーネル モード ドライバーのトレース フレームワークです。 TraceLogging API がに基づいて[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)とネイティブ C/C++ の ETW プロバイダーを作成するコードをインストルメント化の簡略化された方法を提供します。 TraceLogging インストルメンテーションは、必要なときに、構造化できますが、個別のインストルメンテーション マニフェスト (XML ファイル) のイベントとイベント データを定義するオーバーヘッドは必要ありません。 さらに、インストルメンテーションを追加すると、 [TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636) API は、パフォーマンスの測定と診断のテレメトリ データを提供する簡単に拡張できます。
+新しい Windows 10、TraceLogging はユーザー モード アプリケーションとカーネル モード ドライバーのトレース フレームワークです。 TraceLogging API がに基づいて[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)とネイティブ C/C++ の ETW プロバイダーを作成するコードをインストルメント化の簡略化された方法を提供します。 TraceLogging インストルメンテーションは、必要なときに、構造化できますが、個別のインストルメンテーション マニフェスト (XML ファイル) のイベントとイベント データを定義するオーバーヘッドは必要ありません。 さらに、インストルメンテーションを追加すると、 [TraceLogging](https://docs.microsoft.com/windows/desktop/tracelogging/trace-logging-portal) API は、パフォーマンスの測定と診断のテレメトリ データを提供する簡単に拡張できます。
 
-[TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636) API の利点の[WPP ソフトウェア トレース](wpp-software-tracing.md)またはデバッグであることが簡単で、簡単にコードをマニフェストに基づくの ETW の利点も提供します、ステートメントを印刷分析し、収集されるトレース データからイベントを関連付けます。
+[TraceLogging](https://docs.microsoft.com/windows/desktop/tracelogging/trace-logging-portal) API の利点の[WPP ソフトウェア トレース](wpp-software-tracing.md)またはデバッグであることが簡単で、簡単にコードをマニフェストに基づくの ETW の利点も提供します、ステートメントを印刷分析し、収集されるトレース データからイベントを関連付けます。
 
 TraceLogging は ETW 上に構築し、既存のツールとの互換性がします。 マニフェスト ベースの ETW を使用するプロバイダーでは、引き続きサポートされます。 テレメトリ データのイベントを必要があるような場合を除く TraceLogging プロバイダーが、ベースの ETW プロバイダーをマニフェストに変換する必要はありません。
 
@@ -37,7 +37,7 @@ TraceLogging は ETW 上に構築し、既存のツールとの互換性がし�
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="tracelogging-for-kernel-mode-drivers-and-components.md" data-raw-source="[TraceLogging for kernel-mode drivers and components](tracelogging-for-kernel-mode-drivers-and-components.md)">カーネル モード ドライバーとコンポーネントの TraceLogging</a></p></td>
-<td align="left"><p>このトピックでは、使用する方法を説明します、 <a href="https://msdn.microsoft.com/library/windows/desktop/dn904636" data-raw-source="[TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636)">TraceLogging</a>からカーネル モード ドライバーとコンポーネント内の API。</p></td>
+<td align="left"><p>このトピックでは、使用する方法を説明します、 <a href="https://docs.microsoft.com/windows/desktop/tracelogging/trace-logging-portal" data-raw-source="[TraceLogging](https://docs.microsoft.com/windows/desktop/tracelogging/trace-logging-portal)">TraceLogging</a>からカーネル モード ドライバーとコンポーネント内の API。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tracelogging-examples.md" data-raw-source="[TraceLogging Examples](tracelogging-examples.md)">TraceLogging 例</a></p></td>

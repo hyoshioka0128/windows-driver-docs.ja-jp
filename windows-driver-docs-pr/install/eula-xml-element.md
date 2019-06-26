@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a68d948e02e536b78e5f5df9225134d20c8a497b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef066a5513cfbeb3d781701fd75dced5916d0290
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380282"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364099"
 ---
 # <a name="eula-xml-element"></a>eula XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **Eula** XML 要素がカスタム テキスト DPInst EULA ページを含んでいる使用許諾契約書のテキスト ファイルを指定する 2 つの属性を含む空の XML 要素。
 

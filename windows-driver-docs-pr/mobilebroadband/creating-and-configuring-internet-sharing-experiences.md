@@ -4,12 +4,12 @@ description: インターネット共有エクスペリエンスの作成と構�
 ms.assetid: 11906ee4-68f5-4be6-a3ab-6af3253c8a11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a02012ea3e6f7b39908a02d6a35df8adc099c3c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7f77f55511a78c87334fa1e26cf1021e4306f1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383773"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359231"
 ---
 # <a name="creating-and-configuring-internet-sharing-experiences"></a>インターネット共有エクスペリエンスの作成と構成
 
@@ -91,18 +91,18 @@ Windows 8.1 および Windows 10 をオンにし、標準の Wi-fi ネットワ�
 
 Windows 10、バージョン 1803 以降で設定する必要があります、 [**ホット スポット**COSA データベースにおける設定](desktop-cosa-apn-database-settings.md#desktop-cosa-only-settings)適切な値。
 
-場合は、権利チェックが必要ないことを決定する追加情報や機能は必要ありません。 権利チェックが必要な場合は、モバイル ブロード バンド UWP アプリの一部であるバック グラウンド通知イベント ハンドラーを指定することもあります。 Windows 10、バージョン 1803 以降のメソッドを使用して、 [TetheringEntitlementCheckTriggerDetails](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.tetheringentitlementchecktriggerdetails)ケーブルの権利を確認するための Windows 通知イベントを処理するクラス。 以前のバージョンの Windows では、使用、 [ **NetworkOperatorNotificationEventDetails** ](https://msdn.microsoft.com/library/windows/apps/br207377)クラス。 バック グラウンド通知のイベント ハンドラーを作成する方法の詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)します。
+場合は、権利チェックが必要ないことを決定する追加情報や機能は必要ありません。 権利チェックが必要な場合は、モバイル ブロード バンド UWP アプリの一部であるバック グラウンド通知イベント ハンドラーを指定することもあります。 Windows 10、バージョン 1803 以降のメソッドを使用して、 [TetheringEntitlementCheckTriggerDetails](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.tetheringentitlementchecktriggerdetails)ケーブルの権利を確認するための Windows 通知イベントを処理するクラス。 以前のバージョンの Windows では、使用、 [ **NetworkOperatorNotificationEventDetails** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)クラス。 バック グラウンド通知のイベント ハンドラーを作成する方法の詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](enabling-mobile-operator-notifications-and-system-events.md)します。
 
-MOs と MVNOs があるさまざまな要件にどのような PDP コンテキストは、インターネットの共有のために使用する必要があります。 既存の Windows が更新[プロビジョニング XML スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868398)正しいインターネット共有 PDP コンテキスト情報を使用してシステムをプロビジョニングできます。 複数の PDP コンテキストの詳細については、次を参照してください。[複数の PDP コンテキストを使用してアプリの開発](developing-apps-using-multiple-pdp-contexts.md)します。
+MOs と MVNOs があるさまざまな要件にどのような PDP コンテキストは、インターネットの共有のために使用する必要があります。 既存の Windows が更新[プロビジョニング XML スキーマ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/schema-for-mobile-broadband-portal)正しいインターネット共有 PDP コンテキスト情報を使用してシステムをプロビジョニングできます。 複数の PDP コンテキストの詳細については、次を参照してください。[複数の PDP コンテキストを使用してアプリの開発](developing-apps-using-multiple-pdp-contexts.md)します。
 
 最大値を構成することもできます。 同時に接続されているクライアント デバイスの数は 10 です。 3 から 10 の間を使用してどこにもこの番号を変更できます[アカウント プロビジョニング](account-provisioning.md)します。
 
-ユーザーの実行がそのデータを誤ってしないことを確認するに表示できますデータ使用状況の統計と非共有のトラフィック、顧客にモバイル ブロード バンド アプリを使用して、 [ **GetNetworkUsageAsync**](https://msdn.microsoft.com/library/windows/apps/dn266073)のメソッド、 [ **ConnectionProfile** ](https://msdn.microsoft.com/library/windows/apps/br207249)クラス。
+ユーザーの実行がそのデータを誤ってしないことを確認するに表示できますデータ使用状況の統計と非共有のトラフィック、顧客にモバイル ブロード バンド アプリを使用して、 [ **GetNetworkUsageAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile#Windows_Networking_Connectivity_ConnectionProfile_GetNetworkUsageAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_DataUsageGranularity_Windows_Networking_Connectivity_NetworkUsageStates_)のメソッド、 [ **ConnectionProfile** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile)クラス。
 
 ## <a name="span-idcreateacustominternetsharingappspanspan-idcreateacustominternetsharingappspanspan-idcreateacustominternetsharingappspancreate-a-custom-internet-sharing-app"></a><span id="Create_a_custom_Internet_Sharing_app"></span><span id="create_a_custom_internet_sharing_app"></span><span id="CREATE_A_CUSTOM_INTERNET_SHARING_APP"></span>カスタム インターネット共有アプリを作成します。
 
 
-ほとんどの演算子には、Windows のユーザー インターフェイスはインターネットの共有の最適なエクスペリエンスが提供されます。 ただし、すべてのハードウェアとデバイス間で一貫したエクスペリエンスを作成するためにすることができます、モバイル ブロード バンド アプリまたはモバイル ブロード バンドへのアクセス権限が付与されている他のアプリに、独自のインターネットの共有ユーザー エクスペリエンスを含めるデバイスです。 Windows でのいくつかの新しい Api を提供する、 [ **Windows.Networking.NetworkOperators 名前空間**](https://msdn.microsoft.com/library/windows/apps/br241148)以下を実行するアプリを有効にします。
+ほとんどの演算子には、Windows のユーザー インターフェイスはインターネットの共有の最適なエクスペリエンスが提供されます。 ただし、すべてのハードウェアとデバイス間で一貫したエクスペリエンスを作成するためにすることができます、モバイル ブロード バンド アプリまたはモバイル ブロード バンドへのアクセス権限が付与されている他のアプリに、独自のインターネットの共有ユーザー エクスペリエンスを含めるデバイスです。 Windows でのいくつかの新しい Api を提供する、 [ **Windows.Networking.NetworkOperators 名前空間**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)以下を実行するアプリを有効にします。
 
 -   システムがインターネットの共有の対応を確認します
 

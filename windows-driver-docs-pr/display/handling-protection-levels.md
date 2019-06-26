@@ -9,12 +9,12 @@ keywords:
 - ビデオの WDK COPP、保護レベルの保護
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 565b13026d18917bc1347f390de230f5a23bc724
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 013d5be001e9f9b684cc66dc2803978b7a8f8a62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340146"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359319"
 ---
 # <a name="handling-protection-levels"></a>保護レベルの処理
 
@@ -30,9 +30,9 @@ ms.locfileid: "63340146"
 
 ビデオのセッションでは、特定の保護の種類の新しい保護レベルを設定、ドライバーは現在の保護レベルの参照カウントをデクリメントする必要があり、新しい保護レベルの参照カウントをインクリメントする必要があります。 対応する変更は、グローバル参照レベルのカウンターにも行ってください。
 
-任意のグローバル レベルのカウンターが変更されるたびに、ドライバーは特定の出力のコネクタのすべてのカウンターを検査し、保護レベルが、値が 0 より大きい最高レベルのカウンターに対応するレベルに設定されていることを確認する必要があります。 詳細については、コード例を参照してください、 [ *COPPCommand* ](https://msdn.microsoft.com/library/windows/hardware/ff539642)と[ *COPPQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff539652)ページを参照します。
+任意のグローバル レベルのカウンターが変更されるたびに、ドライバーは特定の出力のコネクタのすべてのカウンターを検査し、保護レベルが、値が 0 より大きい最高レベルのカウンターに対応するレベルに設定されていることを確認する必要があります。 詳細については、コード例を参照してください、 [ *COPPCommand* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppcommand)と[ *COPPQueryStatus* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppquerystatus)ページを参照します。
 
-グローバル参照カウンターが 0 より大きい、ビデオのミニポート ドライバーは出力コネクタにコンテンツ保護を適用する必要があります。 グローバル参照カウンターが 0 になるとすぐに、ビデオのミニポート ドライバーは、出力コネクタからコンテンツの保護を削除する必要があります。 ディスプレイ ドライバーがへの呼び出しを受信するたびにその[ *DdMoCompDestroy* ](https://msdn.microsoft.com/library/windows/hardware/ff549664)コールバック関数 (ビデオのミニポート ドライバーがさらへの呼び出しを受け取ると、その[ *COPPCloseVideoSession* ](https://msdn.microsoft.com/library/windows/hardware/ff539638)関数)、ビデオのミニポート ドライバーが COPP デバイスのローカル参照カウンターの現在のレベルでグローバル参照カウンターをデクリメントする必要があります。 ビデオのミニポート ドライバーがコネクタのグローバル参照カウンターが 0 になった場合、コンテンツ保護を認定出力コネクタから削除のみ必要があります。
+グローバル参照カウンターが 0 より大きい、ビデオのミニポート ドライバーは出力コネクタにコンテンツ保護を適用する必要があります。 グローバル参照カウンターが 0 になるとすぐに、ビデオのミニポート ドライバーは、出力コネクタからコンテンツの保護を削除する必要があります。 ディスプレイ ドライバーがへの呼び出しを受信するたびにその[ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)コールバック関数 (ビデオのミニポート ドライバーがさらへの呼び出しを受け取ると、その[ *COPPCloseVideoSession* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppclosevideosession)関数)、ビデオのミニポート ドライバーが COPP デバイスのローカル参照カウンターの現在のレベルでグローバル参照カウンターをデクリメントする必要があります。 ビデオのミニポート ドライバーがコネクタのグローバル参照カウンターが 0 になった場合、コンテンツ保護を認定出力コネクタから削除のみ必要があります。
 
 **注**   、 *DdMoCompDestroy* COPP デバイスのローカル参照カウンターに設定されている (たとえば、ユーザー モード プロセスが異常終了) 場合、0 より大きい関数を呼び出すことがあります。
 

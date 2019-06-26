@@ -17,12 +17,12 @@ keywords:
 - オーディオ データ形式の WDM WDK
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec15f1f408f9b09e32e3b1bd14bb44a4404529e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28966461133ce95dc909234154b9898ef5c647ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333670"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360043"
 ---
 # <a name="extensible-wave-format-descriptors"></a>拡張可能な Wave 形式の記述子
 
@@ -34,21 +34,21 @@ Wave オーディオ ストリームのデータ形式の記述子の図は、�
 
 ![wave 形式の記述子を示す図](images/wavefmt.png)
 
-その他の量が次の情報を書式設定の図に示されるように、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)構造体は、データ形式によって異なります。
+その他の量が次の情報を書式設定の図に示されるように、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)構造体は、データ形式によって異なります。
 
 オーディオのシステムでは、いくつかの方法でこの種類の形式の記述子を使用します。
 
--   上記の図に示すように 1 つは、ミニポート ドライバーに、呼び出しのパラメーターとして渡されるような形式の記述子**NewStream**メソッド (たとえばを参照してください[ **IMiniportWaveCyclic::NewStream**](https://msdn.microsoft.com/library/windows/hardware/ff536723)).
+-   上記の図に示すように 1 つは、ミニポート ドライバーに、呼び出しのパラメーターとして渡されるような形式の記述子**NewStream**メソッド (たとえばを参照してください[ **IMiniportWaveCyclic::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-newstream)).
 
--   *ResultantFormat*のパラメーター、 [ **IMiniport::DataRangeIntersection** ](https://msdn.microsoft.com/library/windows/hardware/ff536764)など、1 つのメソッドが書式記述子を書き込む先バッファーへのポインターをメソッド上記の図に示します。
+-   *ResultantFormat*のパラメーター、 [ **IMiniport::DataRangeIntersection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-datarangeintersection)など、1 つのメソッドが書式記述子を書き込む先バッファーへのポインターをメソッド上記の図に示します。
 
--   [ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://msdn.microsoft.com/library/windows/hardware/ff565198)プロパティの get 要求を上記の図に示すような形式の記述子を取得します。
+-   [ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)プロパティの get 要求を上記の図に示すような形式の記述子を取得します。
 
--   [ **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff565206)プロパティの設定要求は、上記の図に示すような形式の記述子を受け入れます。
+-   [ **KSPROPERTY\_PIN\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat)プロパティの設定要求は、上記の図に示すような形式の記述子を受け入れます。
 
--   ような形式を使用、 [ **KsCreatePin** ](https://msdn.microsoft.com/library/windows/hardware/ff561652)関数の*Connect*パラメーターを呼び出します。 このパラメーターが指す、 [ **KSPIN\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/ff563531)書式記述子が含まれているバッファーの先頭に構造体。 形式の記述子の直後に、KSPIN\_構造体を接続し、前の図に示すような KSDATAFORMAT 構造から始まります。
+-   ような形式を使用、 [ **KsCreatePin** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)関数の*Connect*パラメーターを呼び出します。 このパラメーターが指す、 [ **KSPIN\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_connect)書式記述子が含まれているバッファーの先頭に構造体。 形式の記述子の直後に、KSPIN\_構造体を接続し、前の図に示すような KSDATAFORMAT 構造から始まります。
 
-KSDATAFORMAT 構造を次の形式の情報はいずれかになります、 [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)構造または[ **WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)構造体。 WAVEFORMATEXTENSIBLE は、WAVEFORMATEX よりも広い範囲の形式を記述できます WAVEFORMATEX の拡張バージョンです。 WAVEFORMATEX は、事前 WDM WAVEFORMAT 構造体の拡張バージョンです。 WAVEFORMAT は廃止され、Microsoft Windows の任意のバージョンで WDM オーディオ サブシステムでサポートされていません。
+KSDATAFORMAT 構造を次の形式の情報はいずれかになります、 [ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)構造または[ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)構造体。 WAVEFORMATEXTENSIBLE は、WAVEFORMATEX よりも広い範囲の形式を記述できます WAVEFORMATEX の拡張バージョンです。 WAVEFORMATEX は、事前 WDM WAVEFORMAT 構造体の拡張バージョンです。 WAVEFORMAT は廃止され、Microsoft Windows の任意のバージョンで WDM オーディオ サブシステムでサポートされていません。
 
 同様に、PCMWAVEFORMAT 構造体は、廃止、ですが、制限付きサポートを提供する WDM オーディオ サブシステム WAVEFORMAT の拡張バージョンです。
 
@@ -171,7 +171,7 @@ WAVEFORMATEXTENSIBLE 構造が定義されている場合、前に、ベンダ�
 
 WAVEFORMATEXTENSIBLE の形式を登録する必要はなくなりました。 ベンダーできる個別に Guid に割り当て、新しい形式に応じて。 (に GUID が含まれている形式、**サブフォーマット**WAVEFORMATEXTENSIBLE のメンバーです)。Microsoft では、最も一般的な形式でパブリック ヘッダー ファイル Ksmedia.h Guid の一覧表示 (たとえば、KSDATAFORMAT\_サブタイプ\_MPEG)。 新しい形式の GUID を定義する前に、ベンダーが KSDATAFORMAT の一覧を確認する必要があります\_サブタイプ\_*XXX*で特定の適切な GUID は既に定義されているかどうかを判断する Ksmedia.h 定数形式です。
 
-WAVEFORMATEXTENSIBLE を使用する場合は、設定**wFormatTag** WAVE に\_形式\_拡張と**サブフォーマット**を適切な形式の GUID。 PCM の整数形式設定**サブフォーマット**KSDATAFORMAT に\_サブタイプ\_PCM。 浮動小数点数としてサンプルの値をエンコードする PCM 形式の場合、次のように設定します。**サブフォーマット**KSDATAFORMAT に\_サブタイプ\_IEEE\_FLOAT です。 これらの形式のいずれか、次のように設定します。 **cbSize**に**sizeof**(WAVEFORMATEXTENSIBLE)**- sizeof**(WAVEFORMATEX)。 PCM 以外のデータ形式を記述する WAVEFORMATEXTENSIBLE の使用方法の詳細については、次を参照してください。[非 PCM Wave 形式のサポート](supporting-non-pcm-wave-formats.md)します。
+WAVEFORMATEXTENSIBLE を使用する場合は、設定**wFormatTag** WAVE に\_形式\_拡張と**サブフォーマット**を適切な形式の GUID。 PCM の整数形式設定**サブフォーマット**KSDATAFORMAT に\_サブタイプ\_PCM。 浮動小数点数としてサンプルの値をエンコードする PCM 形式の場合、次のように設定します。**サブフォーマット**KSDATAFORMAT に\_サブタイプ\_IEEE\_FLOAT です。 これらの形式のいずれか、次のように設定します。 **cbSize**に**sizeof**(WAVEFORMATEXTENSIBLE) **- sizeof**(WAVEFORMATEX)。 PCM 以外のデータ形式を記述する WAVEFORMATEXTENSIBLE の使用方法の詳細については、次を参照してください。[非 PCM Wave 形式のサポート](supporting-non-pcm-wave-formats.md)します。
 
  
 

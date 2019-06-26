@@ -7,12 +7,12 @@ keywords:
 - 非ブロック化フィルター コマンド WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90391018119db1e5c9854f5190354641850b00d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1663b1c9814bc5c8b7b9193960c3d7c2a668f2c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383292"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358652"
 ---
 # <a name="deblocking-filter-commands"></a>フィルター コマンドの非ブロック化
 
@@ -24,7 +24,7 @@ ms.locfileid: "63383292"
 
 フィルター コマンド バッファーを非ブロック化の 2 つのさまざまな種類は次のとおりです。
 
--   アクセスとの値の変更が必要なバッファーの現在のフィルター deblocking コマンド バッファー外のマクロ ブロック用のサンプルを再構築 (ときに、 **bPicDeblockConfined**のメンバー、 [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造体は 0 です)。
+-   アクセスとの値の変更が必要なバッファーの現在のフィルター deblocking コマンド バッファー外のマクロ ブロック用のサンプルを再構築 (ときに、 **bPicDeblockConfined**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体は 0 です)。
 
 -   アクセスおよびの値の変更が不要なバッファーの現在のフィルター deblocking コマンド バッファー外のマクロ ブロック用のサンプルを再構築 (と**bPicDeblockConfined**は 1)。
 

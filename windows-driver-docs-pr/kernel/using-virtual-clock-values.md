@@ -9,21 +9,21 @@ keywords:
 - トランザクション WDK KTM、仮想のクロック値
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 451719c34ad3abd491a4f370cbce920284fa6910
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ffa11c5e97266a5224aada8f99b8ca1628d8614
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358159"
 ---
 # <a name="using-virtual-clock-values"></a>仮想クロック値の使用
 
 
-KTM では、トランザクション マネージャーの各オブジェクトに対して仮想クロックを提供します。 リソース マネージャーを呼び出すと[ **ZwCreateTransactionManager**](https://msdn.microsoft.com/library/windows/hardware/ff566430)KTM では、仮想のクロックにオブジェクトの値を 1 に設定します。 KTM では、コミット操作を開始するたびに仮想のクロックの値をインクリメントします。 KTM では、そのログ ストリームに書き込み、たびにログ レコードで仮想のクロックの現在の値が含まれます。
+KTM では、トランザクション マネージャーの各オブジェクトに対して仮想クロックを提供します。 リソース マネージャーを呼び出すと[ **ZwCreateTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)KTM では、仮想のクロックにオブジェクトの値を 1 に設定します。 KTM では、コミット操作を開始するたびに仮想のクロックの値をインクリメントします。 KTM では、そのログ ストリームに書き込み、たびにログ レコードで仮想のクロックの現在の値が含まれます。
 
-リソース マネージャーを呼び出すと[ **ZwRecoverTransactionManager**](https://msdn.microsoft.com/library/windows/hardware/ff567079)KTM にログ ストリームの記録、ストリームの末尾までが読み取られ、最後の値をトランザクション マネージャー オブジェクトの仮想のクロックの値を設定、オブジェクトのログ ストリームでその it を検索します。
+リソース マネージャーを呼び出すと[ **ZwRecoverTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager)KTM にログ ストリームの記録、ストリームの末尾までが読み取られ、最後の値をトランザクション マネージャー オブジェクトの仮想のクロックの値を設定、オブジェクトのログ ストリームでその it を検索します。
 
-リソース マネージャーを呼び出すと[ **ZwRollforwardTransactionManager**](https://msdn.microsoft.com/library/windows/hardware/ff567089)KTM は指定されたクロックの値、最大ストリーム レコード ログを読み取り、トランザクション マネージャー オブジェクトの仮想のクロックの値が設定クロックの値を指定します。
+リソース マネージャーを呼び出すと[ **ZwRollforwardTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollforwardtransactionmanager)KTM は指定されたクロックの値、最大ストリーム レコード ログを読み取り、トランザクション マネージャー オブジェクトの仮想のクロックの値が設定クロックの値を指定します。
 
 Ktm をトランザクション マネージャー オブジェクトの仮想のクロックの値を変更するには、リソース マネージャーおよび優先的なトランザクション マネージャーが、通常がない時刻の値を変更します。
 
@@ -43,15 +43,15 @@ Ktm をトランザクション マネージャー オブジェクトの仮想�
 
 ### <a name="how-to-modify-virtual-clock-values"></a>仮想の時刻値を変更する方法
 
-リソース マネージャーは、新しい値を渡すことによって仮想クロックの値を変更できます[ **ZwPrePrepareComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567040)、 [ **ZwPrepareComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567037)、[ **ZwCommitComplete**](https://msdn.microsoft.com/library/windows/hardware/ff566418)、 [ **ZwRollbackComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567081)、 [ **ZwReadOnlyEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567074)、または[ **ZwSinglePhaseReject**](https://msdn.microsoft.com/library/windows/hardware/ff567113)します。
+リソース マネージャーは、新しい値を渡すことによって仮想クロックの値を変更できます[ **ZwPrePrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepreparecomplete)、 [ **ZwPrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete)、[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)、 [ **ZwRollbackComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackcomplete)、 [ **ZwReadOnlyEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntreadonlyenlistment)、または[ **ZwSinglePhaseReject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject)します。
 
-[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md)に新しい値を渡すことによって仮想クロックの値を変更できます[ **ZwPrePrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567044)、 [ **ZwPrepareEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff567039)、 [ **ZwCommitEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff566419)、または[ **ZwReadOnlyEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567074)します。
+[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md)に新しい値を渡すことによって仮想クロックの値を変更できます[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)、 [ **ZwPrepareEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment)、 [ **ZwCommitEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)、または[ **ZwReadOnlyEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntreadonlyenlistment)します。
 
-さらに、resource manager または優先的なトランザクション マネージャーを使用する、 [ **ResourceManagerNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff561077)コールバック ルーチンは、コールバック ルーチンを受け取る仮想クロック値を変更できます。 KTM では、更新された値が保存されます。
+さらに、resource manager または優先的なトランザクション マネージャーを使用する、 [ **ResourceManagerNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ptm_rm_notification)コールバック ルーチンは、コールバック ルーチンを受け取る仮想クロック値を変更できます。 KTM では、更新された値が保存されます。
 
 Resource manager または優先的なトランザクション マネージャーは、新しいクロックの値を KTM に合格した場合、KTM は、クロックの現在の値より大きい場合にのみ、新しい値を保存します。 それ以外の場合、KTM は、クロックの現在の値を保持します。
 
-リソース マネージャーおよび優先的なトランザクション マネージャー値を取得できます、トランザクション マネージャー オブジェクトの仮想のクロックを呼び出して、 [ **ZwQueryInformationTransactionManager** ](https://msdn.microsoft.com/library/windows/hardware/ff567058)ルーチン。
+リソース マネージャーおよび優先的なトランザクション マネージャー値を取得できます、トランザクション マネージャー オブジェクトの仮想のクロックを呼び出して、 [ **ZwQueryInformationTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransactionmanager)ルーチン。
 
  
 

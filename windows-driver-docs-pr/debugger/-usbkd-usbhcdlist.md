@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a300a75432a4793426d0d7251511a0979988da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e0557c1a730c30e416d11f9b861a583bfce97b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335579"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362440"
 ---
 # <a name="usbkdusbhcdlist"></a>!usbkd.usbhcdlist
 
 
-[ **! Usbkd.usbhcdlist** ](https://msdn.microsoft.com/library/windows/hardware/dn367074)コマンドは、USB ポート ドライバー (Usbport.sys) で表される、すべての USB ホスト コント ローラーに関する情報を表示します。 USB ポート ドライバーと関連付けられているミニポート ドライバーについては、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkId=251983)します。
+[ **! Usbkd.usbhcdlist** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdlist)コマンドは、USB ポート ドライバー (Usbport.sys) で表される、すべての USB ホスト コント ローラーに関する情報を表示します。 USB ポート ドライバーと関連付けられているミニポート ドライバーについては、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkId=251983)します。
 
 ```dbgcmd
 !usbkd.usbhcdlist
@@ -36,7 +36,7 @@ Usbkd.dll
 <a name="examples"></a>例
 --------
 
-出力の一部の例を次に示します[ **! usbhcdlist**](https://msdn.microsoft.com/library/windows/hardware/dn367074)します。
+出力の一部の例を次に示します[ **! usbhcdlist**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdlist)します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlist

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 623f69c399af907dea23286c3c80248877f01b9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d10097dec8f24a17fc6ed6fa727b8f302ae0448a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361772"
 ---
 # <a name="bug-check-0x6d-session1initializationfailed"></a>バグ チェック 0x6D:SESSION1\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367445"
 SESSION1\_初期化\_失敗のバグ チェックが 0x0000006D の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="session1initializationfailed-parameters"></a>SESSION1\_初期化\_FAILED パラメーター

@@ -8,25 +8,25 @@ keywords:
 - デバッグ セッションのデバッガー エンジン
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09572ce201eafbd0992ae04b22ea4071006b4bd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 343e90f59fc50fbc5c78b4121761542634aa08d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350586"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361401"
 ---
 # <a name="debugging-session-and-execution-model"></a>デバッグ セッションと実行モデル
 
 
 デバッガー エンジンは、複数のターゲットを同時にデバッグできます。 A*デバッグ セッション*エンジンがターゲットを取得し、までのすべてのターゲットが破棄されたときに開始されます。 デバッグ セッションは*アクセスできない*ターゲットが実行中と*アクセス*現在のターゲットが中断されたとき。 エンジンを調べて、セッションにアクセス中にターゲットを操作する場合にのみ使用できます。
 
-デバッガーのメイン ループが通常のメソッドを呼び出して、実行状態の設定で構成されます[ **WaitForEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff561229)と、生成された処理[イベント](events.md#events)します。 ときに**WaitForEvent**が呼び出されると、セッションにアクセスできなくなります。
+デバッガーのメイン ループが通常のメソッドを呼び出して、実行状態の設定で構成されます[ **WaitForEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-waitforevent)と、生成された処理[イベント](events.md#events)します。 ときに**WaitForEvent**が呼び出されると、セッションにアクセスできなくなります。
 
 ターゲットのイベントが発生して、エンジンは、すべてのターゲットを中断します。 セッションがアクセス可能になります。 エンジンに、イベントのイベントのコールバックを通知し、イベント フィルターの規則に従います。 イベントのコールバックとイベントのフィルターは、ターゲットでの実行を続ける方法を決定します。 エンジンが、デバッガーを中断する必要がありますを判断する場合、 **WaitForEvent**メソッドの戻り値と、セッションがアクセスできる状態それ以外の場合、イベントによって特定の方法でターゲットの実行が再開されます。コールバックとイベントのフィルターと、セッションにアクセスできなくなったもう一度です。
 
 実行中、 **WaitForEvent**呼び出す--具体的には、イベントのコールバックを通知して、フィルターの処理中にルール--エンジンが"待機中"と呼ばれる状態。 この状態で**WaitForEvent**呼び出すことができません (再入可能はありません)。
 
-2 つの手順をターゲットの実行を開始するにがあります。 実行の状態を設定し、呼び出す**WaitForEvent**。 メソッドを使用して、実行状態を設定する[ **SetExecutionStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff556693)またはなど--実行状態を設定するデバッガー コマンドを実行して**g(Go)** と**p (ステップ)** します。
+2 つの手順をターゲットの実行を開始するにがあります。 実行の状態を設定し、呼び出す**WaitForEvent**。 メソッドを使用して、実行状態を設定する[ **SetExecutionStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-setexecutionstatus)またはなど--実行状態を設定するデバッガー コマンドを実行して**g(Go)** と**p (ステップ)** します。
 
 場合は、一連のデバッガー コマンドが同時に実行 - たとえば、"**g; でしょうか。@$ ip**"--、*暗黙的な待機*そのコマンドが、シーケンスの最後のコマンドではない場合は、ターゲットの実行を必要とする任意のコマンドの後に発生します。 暗黙の待機は、デバッガー エンジンが"待機"; 内部状態のときに発生することはできません。ここで、コマンドの実行が停止し、現在のコマンドが発生する暗黙的な待機--しようとしています。 1 つは、ターゲットの実行を続ける方法を示す値として解釈されます。 コマンドの残りの部分は破棄されます。
 

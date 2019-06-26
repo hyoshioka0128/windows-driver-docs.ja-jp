@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 102497f4aa46f83c3658e4d4c99fd530ea2a61c4
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.openlocfilehash: edca4b04ff3c6d1261907a3848cc4bb6ff79481b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238973"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367190"
 ---
 # <a name="bug-check-0xc0000221-statusimagechecksummismatch"></a>バグ チェック 0xC0000221:ステータス\_イメージ\_チェックサム\_が一致しません
 
@@ -26,7 +26,7 @@ ms.locfileid: "59238973"
 ステータス\_イメージ\_チェックサム\_の不一致のバグ チェックが 0xC0000221 の値を持ちます。 これは、ドライバーまたはシステム DLL が破損していることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="statusimagechecksummismatch-parameters"></a>ステータス\_イメージ\_チェックサム\_不一致パラメーター

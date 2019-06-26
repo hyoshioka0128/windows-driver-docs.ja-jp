@@ -9,19 +9,19 @@ keywords:
 - インストール可能なクライアント ドライバー WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 338c0d0896a789b659c17d4a5a4b5c0a5941e829
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab3877fbea6256eba7fde292fc43ec5147c450fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347562"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360908"
 ---
 # <a name="loading-an-opengl-installable-client-driver"></a>OpenGL のインストール可能なクライアント ドライバーの読み込み
 
 
 OpenGL ランタイムでは、OpenGL インストール可能なクライアント ドライバーを読み込むには、(ICD) を確認するレジストリにアクセスします。 OpenGL ICD、OpenGL のランタイムを読み込めません。
 
--   名前、バージョン、および呼び出すことによって、OpenGL ICD に関連付けられているフラグを指定、 [ **D3DKMTQueryAdapterInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff547100) 、KMTQAITYPE で関数を\_UMOPENGLINFO 値の設定、**型**のメンバー、 [ **D3DKMT\_QUERYADAPTERINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff548203)構造体、 *pData*パラメーターポインター。
+-   名前、バージョン、および呼び出すことによって、OpenGL ICD に関連付けられているフラグを指定、 [ **D3DKMTQueryAdapterInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo) 、KMTQAITYPE で関数を\_UMOPENGLINFO 値の設定、**型**のメンバー、 [ **D3DKMT\_QUERYADAPTERINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)構造体、 *pData*パラメーターポインター。
 
 -   OpenGL ICD のバージョン番号を確認するを**D3DKMTQueryAdapterInfo** OpenGL ICD のバージョンを検証するを返します。
 
@@ -32,7 +32,7 @@ OpenGL ランタイムでは、OpenGL インストール可能なクライアン
 
      
 
-OpenGL ICD の名前を検索する[ **D3DKMTQueryAdapterInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff547100)次のキーにレジストリを検索します。
+OpenGL ICD の名前を検索する[ **D3DKMTQueryAdapterInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)次のキーにレジストリを検索します。
 
 ```registry
 HKLM/System/CurrentControlSet/Control/Class/{Adapter GUID}/0000/

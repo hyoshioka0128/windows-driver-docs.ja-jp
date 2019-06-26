@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c02d4ae3c41da652001ed7906d1f0a90dd60805
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce6bc7ffb73659fc95d6af1f3ffe1da4b1695721
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362626"
 ---
 # <a name="ksmethodbdadeletepinfactory"></a>KSMETHOD\_BDA\_削除\_PIN\_ファクトリ
 
@@ -42,7 +42,7 @@ KSM\_をピン留め、**フラグ**のメンバー、**メソッド**メンバ�
 
 削除する、ピン留めするファクトリを指定します、 **PinId** 、KSM のメンバー\_暗証番号 (pin) の構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -61,9 +61,9 @@ KSM\_をピン留め、**フラグ**のメンバー、**メソッド**メンバ�
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaMethodDeletePin**](https://msdn.microsoft.com/library/windows/hardware/ff556474)
+[**BdaMethodDeletePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethoddeletepin)
 
-[**KSM\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff563453)
+[**KSM\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_ksm_pin)
 
  
 

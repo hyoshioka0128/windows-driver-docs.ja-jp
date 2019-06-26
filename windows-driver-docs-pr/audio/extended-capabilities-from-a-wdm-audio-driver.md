@@ -11,12 +11,12 @@ keywords:
 - WDK オーディオのハードウェアに固有の情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed4463d9772a3f738c25d51753057fc19458235
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b55ac80255b9d74e5ffbcd24105dbdf9266ba31c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333643"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360045"
 ---
 # <a name="extended-capabilities-from-a-wdm-audio-driver"></a>WDM オーディオ ドライバーからの強化された機能
 
@@ -24,9 +24,9 @@ ms.locfileid: "63333643"
 ## <span id="extended_capabilities_from_a_wdm_audio_driver"></span><span id="EXTENDED_CAPABILITIES_FROM_A_WDM_AUDIO_DRIVER"></span>
 
 
-処理することによって、 [ **KSPROPERTY\_全般\_COMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff565171)プロパティ、オーディオのフィルターはアプリケーションを使用して一意にするハードウェアに固有の情報を提供できます基になるデバイスを識別します。 Microsoft Windows XP は、この機能をサポートするために Windows の最初のバージョンこの機能は、以前のバージョンでご利用いただけません。
+処理することによって、 [ **KSPROPERTY\_全般\_COMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-general-componentid)プロパティ、オーディオのフィルターはアプリケーションを使用して一意にするハードウェアに固有の情報を提供できます基になるデバイスを識別します。 Microsoft Windows XP は、この機能をサポートするために Windows の最初のバージョンこの機能は、以前のバージョンでご利用いただけません。
 
-フィルターの形式でハードウェアに固有の情報を提供する、 [ **KSCOMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff561027)次を含む構造体。
+フィルターの形式でハードウェアに固有の情報を提供する、 [ **KSCOMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)次を含む構造体。
 
 -   GUID の製造元
 

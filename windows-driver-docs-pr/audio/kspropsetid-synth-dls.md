@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_Synth_Dls
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8048abb14498e3a9bf0c4a8c15fe4bb68e73637d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 469dd11d27cd70288d9dd8e0d6f4a632a0b6dc7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360476"
 ---
 # <a name="kspropsetidsynthdls"></a>KSPROPSETID\_シンセサイザー\_Dls
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332478"
 ## <span id="ddk_kspropsetid_synth_dls_ks"></span><span id="DDK_KSPROPSETID_SYNTH_DLS_KS"></span>
 
 
-`KSPROPSETID_Synth_Dls` DLS サンプルと instruments MIDI シンセサイザーをダウンロードに使用されるプロパティがプロパティ セットに含まれています。 これらはシンセサイザー ノードのプロパティ ([**KSNODETYPE\_シンセサイザー**](ksnodetype-synthesizer.md)) DirectMusic フィルターの DirectMusic ピン (を参照してください[MIDI と DirectMusic フィルター](https://msdn.microsoft.com/library/windows/hardware/ff537520)).
+`KSPROPSETID_Synth_Dls` DLS サンプルと instruments MIDI シンセサイザーをダウンロードに使用されるプロパティがプロパティ セットに含まれています。 これらはシンセサイザー ノードのプロパティ ([**KSNODETYPE\_シンセサイザー**](ksnodetype-synthesizer.md)) DirectMusic フィルターの DirectMusic ピン (を参照してください[MIDI と DirectMusic フィルター](https://docs.microsoft.com/windows-hardware/drivers/audio/midi-and-directmusic-filters)).
 
 このセクションでは、ダウンロードおよび配布リストのデータを格納しているメモリの"チャンク"単位をアンロードする方法に関してこれらのプロパティの動作について説明します。 ダウンロードしたツールと wave データ チャンクの実際の形式は、Microsoft Windows SDK ドキュメントでの低レベルの DL ディスカッションで指定されます。
 
@@ -62,7 +62,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_追加プロパティをシンセサイ�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -128,7 +128,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_COMPACT プロパティは無料のサ�
 <td align="left"><p>X</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>なし</p></td>
 </tr>
 </tbody>
@@ -196,8 +196,8 @@ KSPROPERTY\_シンセサイザー\_DLS\_DLS データ シンセサイザーを�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong> </a> + <a href="https://msdn.microsoft.com/library/windows/hardware/ff538460" data-raw-source="[&lt;strong&gt;SYNTH_BUFFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538460)"> <strong>SYNTH_BUFFER</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538429" data-raw-source="[&lt;strong&gt;SYNTHDOWNLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538429)"><strong>SYNTHDOWNLOAD</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong> </a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_buffer" data-raw-source="[&lt;strong&gt;SYNTH_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_buffer)"> <strong>SYNTH_BUFFER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthdownload" data-raw-source="[&lt;strong&gt;SYNTHDOWNLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthdownload)"><strong>SYNTHDOWNLOAD</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -208,7 +208,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_DLS データ シンセサイザーを�
 
 プロパティの値 (データの操作) は、SYNTHDOWNLOAD 構造です。 ミニポート ドライバーは、この構造体で、次の情報で渡します戻る。
 
--   ミニポート ドライバーを生成、ダウンロードした DLS データを一意に識別するハンドル。 このクライアントがこのハンドルを保存して、データのアンロード後で使用する必要があります (を参照してください[ **KSPROPERTY\_シンセサイザー\_DLS\_アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff537398))。
+-   ミニポート ドライバーを生成、ダウンロードした DLS データを一意に識別するハンドル。 このクライアントがこのハンドルを保存して、データのアンロード後で使用する必要があります (を参照してください[ **KSPROPERTY\_シンセサイザー\_DLS\_アンロード**](https://docs.microsoft.com/previous-versions/ff537398(v=vs.85)))。
 
 -   クライアントがプロパティ要求が完了した後、DLS データを含むバッファーを解放できるかどうかを示すブール値。 ミニポート ドライバーに DLS データのコピーが行われた場合、クライアントは、バッファーを解放できます。 それ以外の場合、クライアントの元の DL データ バッファーを使用するミニポート ドライバーが引き続き発生する場合は、クライアントが解放バッファーでする必要があります、ミニポート ドライバー DLS データがアンロードされるまで。
 
@@ -308,7 +308,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_アンロード プロパティは、以
 <td align="left"><p>X</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ハンドル</p></td>
 </tr>
 </tbody>
@@ -316,7 +316,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_アンロード プロパティは、以
 
  
 
-プロパティの値 (データの操作) はハンドル型のダウンロードした DLS データ リソースを解放するにはのハンドルを格納します。 これは、以前の DL データを識別するために、ミニポート ドライバーが生成されたハンドル[ **KSPROPERTY\_シンセサイザー\_DLS\_ダウンロード**](https://msdn.microsoft.com/library/windows/hardware/ff537396)プロパティの get 要求.
+プロパティの値 (データの操作) はハンドル型のダウンロードした DLS データ リソースを解放するにはのハンドルを格納します。 これは、以前の DL データを識別するために、ミニポート ドライバーが生成されたハンドル[ **KSPROPERTY\_シンセサイザー\_DLS\_ダウンロード**](https://docs.microsoft.com/previous-versions/ff537396(v=vs.85))プロパティの get 要求.
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
@@ -386,8 +386,8 @@ KSPROPERTY\_シンセサイザー\_DLS\_WAVEFORMAT プロパティを使用し�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538799" data-raw-source="[&lt;strong&gt;WAVEFORMATEX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538799)"><strong>WAVEFORMATEX</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex" data-raw-source="[&lt;strong&gt;WAVEFORMATEX&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)"><strong>WAVEFORMATEX</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -421,7 +421,7 @@ KSPROPERTY\_シンセサイザー\_DLS\_WAVEFORMAT プロパティ要求がス�
 
  
 
-プロパティ値のバッファー **sizeof**すべては wave 形式の (WAVEFORMATEX) バイトは十分な大きさできません。 たとえば、マルチ チャネルの形式には、バッファーが必要です。 **sizeof**([**WAVEFORMATEXTENSIBLE**](https://msdn.microsoft.com/library/windows/hardware/ff538802)) バイトです。 かどうかプロパティ要求が状態のステータス コードを返します\_バッファー\_すぎます\_小さな、クライアントは、ミニポート ドライバーを出力するプロパティ値のサイズを確認より大きなバッファーを割り当て、および 2 番目の要求を送信します。
+プロパティ値のバッファー **sizeof**すべては wave 形式の (WAVEFORMATEX) バイトは十分な大きさできません。 たとえば、マルチ チャネルの形式には、バッファーが必要です。 **sizeof**([**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)) バイトです。 かどうかプロパティ要求が状態のステータス コードを返します\_バッファー\_すぎます\_小さな、クライアントは、ミニポート ドライバーを出力するプロパティ値のサイズを確認より大きなバッファーを割り当て、および 2 番目の要求を送信します。
 
 詳細については、の説明を参照して、 **IDirectMusicPort::GetFormat** Microsoft Windows SDK のドキュメント内のメソッド。
 

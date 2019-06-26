@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c1f5826a4990d9b5cd2bff8fe6d922eec041968
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: 2fb043fc32646900be7848881dc03588438cb1b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902808"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361612"
 ---
 # <a name="bug-check-0xc1-specialpooldetectedmemorycorruption"></a>バグ チェック 0xC1:特別な\_プール\_検出\_メモリ\_破損
 
@@ -26,7 +26,7 @@ ms.locfileid: "59902808"
 特殊な\_プール\_検出\_メモリ\_破損バグ チェックが 0x000000C1 の値を持ちます。 これは、ドライバーが特別なプールの無効なセクションに記述したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="specialpooldetectedmemorycorruption-parameters"></a>特別な\_プール\_検出\_メモリ\_破損パラメーター

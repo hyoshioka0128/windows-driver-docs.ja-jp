@@ -13,19 +13,19 @@ keywords:
 - ソフトウェア ベースの DEP WDK ブート パラメーター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3596cbb5b4a27a270c4f8cb0efba16e1899b58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac10907d10d41c66b677f8090e3c1251bde3f8d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359048"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360411"
 ---
 # <a name="boot-parameters-to-configure-dep-and-pae"></a>DEP と PAE を構成するためのブート パラメーター
 
 
 このトピックでは、ブート パラメーターを使用して有効化、無効化、およびこれらの機能をサポートするオペレーティング システムでデータ実行防止 (DEP) と物理アドレス拡張 (PAE) を構成する方法について説明します。
 
-DEP と PAE のブート パラメーターについては、次を参照してください。、 [ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)コマンドと**nx**と**pae**オプション。
+DEP と PAE のブート パラメーターについては、次を参照してください。、 [ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)コマンドと**nx**と**pae**オプション。
 
 **重要な**  DEP は、非常に効果的なセキュリティ機能の代替手段があるない場合、無効にしないことです。 DEP と PAE の既定の設定は、ほとんどのシステムに最適です。 重要な処理タスクに干渉しない限りは、既定の設定を変更しないでください。 このセクションでは、これらの機能を構成する方法について説明するが、既定の設定を変更する推奨事項として解釈されませんする必要があります。
 
@@ -33,7 +33,7 @@ DEP と PAE のブート パラメーターについては、次を参照して�
 
 ### <a name="span-iddepandpaebootparametersspanspan-iddepandpaebootparametersspandep-and-pae-boot-parameters"></a><span id="dep_and_pae_boot_parameters"></span><span id="DEP_AND_PAE_BOOT_PARAMETERS"></span>DEP と PAE ブート パラメーター
 
-ブート時に有効になっているし、値の設定で構成されます DEP と PAE、 **nx**と**pae**パラメーターを使用して、 [ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)コマンド。
+ブート時に有効になっているし、値の設定で構成されます DEP と PAE、 **nx**と**pae**パラメーターを使用して、 [ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)コマンド。
 
 これらのブート パラメーターには、競合する影響があります。 DEP と PAE を構成するには、各パラメーターのドキュメントで説明しをこのトピックで説明するパラメーターの組み合わせのみを使用します。 特に実稼働システムでの競合するパラメーターを持つ実験しない操作を行います。
 
@@ -55,7 +55,7 @@ DEP の 2 種類あります。
 
 次の一覧には、DEP と PAE を構成するために使用するブート パラメーターの組み合わせについて説明します。
 
-**注**省略可能な **{**<em>ID</em>**}** 特定 Windows ブート ローダー ブート エントリを構成するための GUID です。 指定しない場合、 **{**<em>ID</em>**}** のコマンドは、現在のオペレーティング システムのブート エントリを変更します。 詳細については、次を参照してください。、 [ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)コマンド。
+**注**省略可能な **{** <em>ID</em> **}** 特定 Windows ブート ローダー ブート エントリを構成するための GUID です。 指定しない場合、 **{** <em>ID</em> **}** のコマンドは、現在のオペレーティング システムのブート エントリを変更します。 詳細については、次を参照してください。、 [ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)コマンド。
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b925fe2d92531a5f4886a9da3d4e3de466dd2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f98b9862567a1e95fae0bbb70ddd6440aad398de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324714"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361698"
 ---
 # <a name="bug-check-0x9a-systemlicenseviolation"></a>バグ チェック 0x9A:システム\_ライセンス\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "63324714"
 システム\_ライセンス\_違反のバグ チェックが 0x0000009a のエラーの値を持ちます。 このバグ チェックでは、ソフトウェア使用許諾契約に違反したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="systemlicenseviolation-parameters"></a>システム\_ライセンス\_違反パラメーター

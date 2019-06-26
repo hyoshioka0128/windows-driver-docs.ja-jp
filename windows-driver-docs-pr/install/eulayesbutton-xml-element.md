@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 89ee338145c931239052876dafac10129ab14780
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: c6d5ec84305baccb83b0928add12dd636a111553
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161486"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360317"
 ---
 # <a name="eulayesbutton-xml-element"></a>eulaYesButton XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **EulaYesButton** DPInst EULA ページの承認のオプション ボタンに関連付けられているテキストをカスタマイズする XML 要素。
 

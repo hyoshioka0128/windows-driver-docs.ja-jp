@@ -6,12 +6,12 @@ keywords:
 - USBView
 ms.date: 02/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfffcf440c5d834cd31df985827985ef026456e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2551383763c1f92f6aa8e6779d6036445acfb70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367986"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368633"
 ---
 # <a name="usbview"></a>USBView
 
@@ -71,7 +71,7 @@ Windows デバイス マネージャを使用して、USB 情報を表示しま�
 
 ## <a name="windows-usb-troubleshooter"></a>Windows USB のトラブルシューティング
 
-USB デバイス ハードウェアの安全な削除 ダイアログ ボックスを使用してを取り出せないを診断しようとする場合を試す可能性がある、 [Windows USB のトラブルシューティング](https://support.microsoft.com/help/17614/automatically-diagnose-and-fix-windows-usb-problems)します。
+USB デバイス ハードウェアの安全な削除 ダイアログ ボックスを使用してを取り出せないを診断しようとする場合を試す可能性がある、 [Windows USB のトラブルシューティング](https://support.microsoft.com/help/17614/windows-10-troubleshoot-common-usb-problems)します。
 
 
  
