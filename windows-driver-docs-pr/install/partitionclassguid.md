@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f4862863ed0bf78bab512167a87da07f5c3eafe3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 962fa0dbfd30f2f341afb9925be74b19cf01ba7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376470"
 ---
 # <a name="partitionclassguid"></a>PartitionClassGuid
 
 
-PartitionClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)パーティション デバイス。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_PARTITION** ](guid-devinterface-partition.md)このクラスの新しいインスタンスのクラス識別子。
+PartitionClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)パーティション デバイス。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_PARTITION** ](guid-devinterface-partition.md)このクラスの新しいインスタンスのクラス識別子。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

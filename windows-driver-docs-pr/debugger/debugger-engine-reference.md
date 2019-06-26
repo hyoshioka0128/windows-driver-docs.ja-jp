@@ -6,12 +6,12 @@ keywords:
 - デバッガー エンジン リファレンス
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c39baf12266a735aac3d2afd61edb3fc9749928
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd19f262f71447166e8a751da45e9c2673e9db72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368472"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366951"
 ---
 # <a name="debugger-engine-reference"></a>デバッガー エンジン リファレンス
 
@@ -21,17 +21,17 @@ ms.locfileid: "63368472"
 
 このセクションの内容:
 
-[クライアントの機能](https://msdn.microsoft.com/library/windows/hardware/ff539137)
+[クライアントの機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/client-com-interfaces)
 
 [デバッグ エンジンのインターフェイス](client-com-interfaces.md)
 
-[デバッグ エンジンのコールバック インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff539018)
+[デバッグ エンジンのコールバック インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugbaseeventcallbacks)
 
-[その他のデバッグ エンジンのインターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553166)
+[その他のデバッグ エンジンのインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/index)
 
-[構造体と定数](https://msdn.microsoft.com/library/windows/hardware/ff558820)
+[構造体と定数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/)
 
-特定の一般的な方法は、Microsoft Windows 上のすべての COM インターフェイスでサポートされます。 これらのメソッドは、このリファレンス セクションでは個別に表示されません。 詳細については、次を参照してください。[クライアント オブジェクトを使用する](https://msdn.microsoft.com/library/windows/hardware/ff560088)します。
+特定の一般的な方法は、Microsoft Windows 上のすべての COM インターフェイスでサポートされます。 これらのメソッドは、このリファレンス セクションでは個別に表示されません。 詳細については、次を参照してください。[クライアント オブジェクトを使用する](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-client-objects)します。
 
  
 

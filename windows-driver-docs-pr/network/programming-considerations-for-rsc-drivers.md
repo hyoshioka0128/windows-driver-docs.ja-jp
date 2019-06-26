@@ -4,12 +4,12 @@ description: 次のセクションでは、説明、受信セグメント合体 
 ms.assetid: 03FDD557-3918-408A-BD79-64CD52BDD43A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b914f68a10322564c788ef0596a3011f1d1f6e9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf825aaa588d314792ec620486d50f12c2d73d0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390288"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385465"
 ---
 # <a name="programming-considerations-for-rsc-drivers"></a>RSC ドライバーのプログラミングに関する考慮事項
 
@@ -24,7 +24,7 @@ ms.locfileid: "63390288"
 ## <a name="responding-to-queries-for-rsc-statistics"></a>RSC の統計情報のクエリに応答してください。
 
 
-NDIS、上にあるドライバー、およびユーザー モード アプリケーションを使用して、 [OID\_TCP\_RSC\_統計](https://msdn.microsoft.com/library/windows/hardware/hh451929)ミニポート アダプターの RSC の統計情報を取得する OID。 RSC 対応のミニポート ドライバーでは、この OID をサポートする必要があります。
+NDIS、上にあるドライバー、およびユーザー モード アプリケーションを使用して、 [OID\_TCP\_RSC\_統計](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-rsc-statistics)ミニポート アダプターの RSC の統計情報を取得する OID。 RSC 対応のミニポート ドライバーでは、この OID をサポートする必要があります。
 
 ## <a name="forwarded-tcp-packets"></a>転送された TCP パケット
 
@@ -47,11 +47,11 @@ NDIS はライトウェイト フィルター ドライバーやホスト スタ
 
 WFP コールアウト ドライバーは、カスタム引き出し関数を 1 つ以上のカーネル モードのフィルター処理レイヤーで、フィルター エンジンに追加することで、追加のフィルター処理機能を提供します。 コールアウト詳細な検査とパケットのサポートだけでなく変更をストリーミングします。
 
-WFP コールアウト ドライバーのサポートが MTU のリンクよりも大きいパケットを受信して処理のサポート。 (パケット サイズの制限の詳細については、次を参照してください[追跡とを示す 1 つにまとめセグメント](https://msdn.microsoft.com/library/windows/hardware/jj853326)。)。このような WFP コールアウト ドライバーは、次の操作を行います。
+WFP コールアウト ドライバーのサポートが MTU のリンクよりも大きいパケットを受信して処理のサポート。 (パケット サイズの制限の詳細については、次を参照してください[追跡とを示す 1 つにまとめセグメント](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-coalesced-segments)。)。このような WFP コールアウト ドライバーは、次の操作を行います。
 
 -   大きなパケットを処理するために、登録時にオプトインします。
 
--   リファレンス ページで指定されているコールアウト ドライバーのフラグを設定、 [ **FWPS\_CALLOUT2** ](https://msdn.microsoft.com/library/windows/hardware/hh439700)構造体。
+-   リファレンス ページで指定されているコールアウト ドライバーのフラグを設定、 [ **FWPS\_CALLOUT2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_callout2_)構造体。
 
 登録されていない大量のパケットを処理するためにオプトインするコールアウト ドライバーたびに WFP は、登録のコンテキストで TCP/IP を通知します。 この通知の処理の一環として、TCP/IP は、インターフェイスの RSC を無効になります。
 

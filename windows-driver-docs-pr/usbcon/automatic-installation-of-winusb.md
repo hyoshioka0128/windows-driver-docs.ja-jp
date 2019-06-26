@@ -3,12 +3,12 @@ Description: このトピックでは、WinUSB デバイスを Windows 8 で認�
 title: WinUSB デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0ae35ab57fdbea90f6b7c4a143b3c36b161cfc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47a0211426210626f492b5fb268fe2357969b567
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384485"
 ---
 # <a name="winusb-device"></a>WinUSB デバイス
 
@@ -149,7 +149,7 @@ OS の拡張プロパティの機能の記述子には、1 つまたは複数の
 
  
 
-USB ドライバー スタック、デバイスの列挙中に取得し、 **DeviceInterfaceGUID** OS の拡張プロパティの機能の記述子から値と、デバイスのハードウェア キーでデバイスを登録します。 アプリケーションを使用して値を取得できる**SetupDiXxx** Api (を参照してください[ **SetupDiOpenDevRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552079))。 詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
+USB ドライバー スタック、デバイスの列挙中に取得し、 **DeviceInterfaceGUID** OS の拡張プロパティの機能の記述子から値と、デバイスのハードウェア キーでデバイスを登録します。 アプリケーションを使用して値を取得できる**SetupDiXxx** Api (を参照してください[ **SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey))。 詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
 
 **有効化または WinUSB 電源管理機能を無効にします。**
 

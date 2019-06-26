@@ -6,12 +6,12 @@ keywords:
 - リモート デバッガー エンジンのデバッグ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80e17425462079d09e3f9b260d8bcd4a1f7a691e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9bf0ee28e37ba8758c7182419fb84f379bd62be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353572"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366420"
 ---
 # <a name="remote-debugging-debugger-engine"></a>リモート デバッグ (デバッガー エンジン)
 
@@ -22,7 +22,7 @@ ms.locfileid: "63353572"
 
 複数のクライアントは、ホストのエンジンに同時に接続できます。 ホスト エンジンは、同じデバッグ セッションで複数のターゲットに接続できます。 必要に応じて、1 つまたは複数のプロキシのクライアントとホスト エンジン間およびホスト エンジンと各ターゲットがあります。
 
-スマート クライアントは、ホスト エンジンと直接通信するクライアント オブジェクトです。 デバッグ クライアントが呼び出すことによって作成された[ **DebugConnect**](https://msdn.microsoft.com/library/windows/hardware/ff540465); クライアントは、エンジンの API のメソッドの呼び出しを表す RPC 呼び出しを使用してホスト エンジンと通信 (などを呼び出すホストエンジンでは、クライアントの[コールバック オブジェクト](client-objects.md#callback-objects))。
+スマート クライアントは、ホスト エンジンと直接通信するクライアント オブジェクトです。 デバッグ クライアントが呼び出すことによって作成された[ **DebugConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugconnect); クライアントは、エンジンの API のメソッドの呼び出しを表す RPC 呼び出しを使用してホスト エンジンと通信 (などを呼び出すホストエンジンでは、クライアントの[コールバック オブジェクト](client-objects.md#callback-objects))。
 
 デバッグ サーバーは、ターゲットと直接通信し、ホスト エンジンではまた、エンジンのインスタンスです。 プロセス サーバーおよびカーネルの接続のサーバーは、ターゲットと直接通信しますが、ホストのエンジンではありません。 ホスト エンジンは低レベルのメモリ、プロセッサ、およびオペレーティング システムの要求を送信して、プロセス サーバー、またはカーネル接続のサーバーと通信し、結果をサーバーが返信します。
 

@@ -11,12 +11,12 @@ keywords:
 - ブート ドライバーの置換
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8b2024711501fc64f02a9b967dd9c24fd74f23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 926132c7b7d65f294a025cfb33ee50b017d65fc3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383296"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366484"
 ---
 # <a name="mapping-driver-files"></a>ドライバー ファイルのマッピング
 
@@ -96,7 +96,7 @@ Windows 10 とデバッグ ツールの以降のバージョンでは、ドラ�
 -   ntoskrnl.sys
 -   windows\\system32\\ドライバー\\ntoskrnl.sys
 
-マップ ファイルは空白行を含めることができ、番号記号で始まるコメント行を含めることができます (**\#**)。 ただし、ファイルに「マップ」が表示されたら、次の 2 つの行は古いドライバーと、新しいドライバーをある必要があります。 空白行とコメント行は、マップの 3 行のブロックを解除できません。
+マップ ファイルは空白行を含めることができ、番号記号で始まるコメント行を含めることができます ( **\#** )。 ただし、ファイルに「マップ」が表示されたら、次の 2 つの行は古いドライバーと、新しいドライバーをある必要があります。 空白行とコメント行は、マップの 3 行のブロックを解除できません。
 
 次の例では、ドライバーの置換のマップ ファイルを示します。
 
@@ -128,7 +128,7 @@ map
 bcdedit -bootdebug on
 ```
 
-詳細については、次を参照してください。[オプションの参照を BCDEdit](https://msdn.microsoft.com/library/windows/hardware/ff542205)します。
+詳細については、次を参照してください。[オプションの参照を BCDEdit](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 カーネル デバッガーが終了した場合は複数のドライバーの置き換えなしに発生します。 ただし、既に置き換えられているすべてのドライバーに戻りません、古いバイナリでは、ドライバー ファイルが実際に上書きされるためです。
 

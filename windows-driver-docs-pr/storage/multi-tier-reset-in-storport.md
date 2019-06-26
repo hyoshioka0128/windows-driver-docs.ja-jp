@@ -7,12 +7,12 @@ keywords:
 - WDK Storport のエラー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0313a9e2c2982f752cc1dc5b576bd7af2757843d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 865a3e4e6c96ead2631fc55fe0218fe84466e62b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384661"
 ---
 # <a name="multi-tier-reset-in-storport"></a>Storport の多階層リセット
 
@@ -26,7 +26,7 @@ Storport ドライバーでは、SCSI ポートのドライバーよりもより
 
 高パフォーマンスのバスのより複雑な要件に対処するには、Storport より多様なオプションのリセットを許可する多階層のリセット操作を実装します。 1 つではなく、要求できるされる Srb 経由で送信されるリセットの 2 種類あります。
 
-バスのリセット操作に影響があります、同期コールバック ルーチンを最後に、 [ **HwStorResetBus**](https://msdn.microsoft.com/library/windows/hardware/ff557415)します。
+バスのリセット操作に影響があります、同期コールバック ルーチンを最後に、 [ **HwStorResetBus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus)します。
 
  
 

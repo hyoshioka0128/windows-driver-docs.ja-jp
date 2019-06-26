@@ -9,12 +9,12 @@ keywords:
 - 登録の SAN サービス プロバイダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62a857e152a43f844dcf79ef7310d3f7ad69b220
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce3cd2703ea3499a666caa6665b9a88f33237f54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324898"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382205"
 ---
 # <a name="installing-a-san-service-provider"></a>SAN サービス プロバイダーのインストール
 
@@ -24,7 +24,7 @@ ms.locfileid: "63324898"
 
 通常、SAN サービス プロバイダーは、Windows Sockets スイッチとのインターフェイスは、基本 Windows Sockets サービス プロバイダーとしてインストールされます。 SAN サービス プロバイダーをインストールできます直接使用するため、アプリケーションが代わりに、Windows Sockets ダイレクトのテクノロジは、SAN サービス プロバイダーを使用して、この方法でサポートしていません。 アプリケーションによって直接使用するためにインストールされている SAN サービス プロバイダーは、TCP/IP プロトコルのものではなく、ネイティブのアドレス ファミリとプロトコルの特性をエクスポートします。
 
-Windows Sockets スイッチを使ってアプリケーションに直接公開されている SAN サービス プロバイダーは、PFL を設定する必要があります\_で非表示フラグ、 **dwProviderFlags**の SAN サービス プロバイダーのメンバー [ **WSAPROTOCOL\_INFOW** ](https://msdn.microsoft.com/library/windows/hardware/ff565963)構造体。 オペレーティング システムの SAN サービス プロバイダーをインストール、SAN サービス プロバイダーのインストール メカニズムへの呼び出しでこの構造体を渡します、 **WSCInstallProvider**関数。 詳細については**WSCInstallProvider**、Microsoft Windows SDK のドキュメントを参照してください。 SAN サービス プロバイダーのインストール メカニズムは、たとえば、セットアップ プログラムまたは関数、SAN サービス プロバイダーがエクスポートされ、INF ファイルのディレクティブによって呼び出されます。
+Windows Sockets スイッチを使ってアプリケーションに直接公開されている SAN サービス プロバイダーは、PFL を設定する必要があります\_で非表示フラグ、 **dwProviderFlags**の SAN サービス プロバイダーのメンバー [ **WSAPROTOCOL\_INFOW** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565963(v=vs.85))構造体。 オペレーティング システムの SAN サービス プロバイダーをインストール、SAN サービス プロバイダーのインストール メカニズムへの呼び出しでこの構造体を渡します、 **WSCInstallProvider**関数。 詳細については**WSCInstallProvider**、Microsoft Windows SDK のドキュメントを参照してください。 SAN サービス プロバイダーのインストール メカニズムは、たとえば、セットアップ プログラムまたは関数、SAN サービス プロバイダーがエクスポートされ、INF ファイルのディレクティブによって呼び出されます。
 
 SAN サービス プロバイダーのインストール メカニズムはレジストリの型の値を追加する必要があります\_で SAN サービス プロバイダーを検出できる前に、レジストリで次のキーをバイナリ ベースの Windows Sockets サービス プロバイダーとしての Windows Sockets スイッチします。
 

@@ -6,12 +6,12 @@ keywords:
 - IRP_MN_CANCEL_STOP_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a00352d48f30fa25d8715f1f5e0ba161881ff458
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f497229f7a71aa30237073d5a88a315feac62d53
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384239"
 ---
 # <a name="handling-an-irpmncancelstopdevice-request-windows-2000-and-later"></a>IRP の処理\_MN\_キャンセル\_停止\_デバイス (Windows 2000 以降) を要求します。
 
@@ -19,7 +19,7 @@ ms.locfileid: "63359807"
 
 
 
-[ **IRP\_MN\_キャンセル\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff550826)デバイスの親のバス ドライバー、続いて各次に要求を最初に処理する必要があります高いデバイス スタックのドライバーです。 ドライバーのハンドルに Irp の停止、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+[ **IRP\_MN\_キャンセル\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)デバイスの親のバス ドライバー、続いて各次に要求を最初に処理する必要があります高いデバイス スタックのドライバーです。 ドライバーのハンドルに Irp の停止、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
 
 応答、 **IRP\_MN\_キャンセル\_停止\_デバイス**要求、ドライバーは、デバイスを開始状態に戻すし、通常の操作を再開する必要があります。 ドライバーは、キャンセル停止 IRP を成功する必要があります。
 
@@ -35,11 +35,11 @@ ms.locfileid: "63359807"
 
     場合は、ドライバーは、デバイスが停止保留中状態だったときに、要求を保持していた、保留を解除\_新規\_要求フラグし、IRP を保持するキューで、Irp を起動します。 参照してください[を保持している受信 Irp ときに、デバイスが一時停止](holding-incoming-irps-when-a-device-is-paused.md)詳細についてはします。
 
-4.  完了の IRP [ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)します。
+4.  完了の IRP [ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)します。
 
     -   関数またはフィルター ドライバーでは。
 
-        ドライバーの[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンには、状態が返されました\_詳細\_処理\_」の説明に従って、必要な[PnP IRP の延期。処理されるまで下ドライバー完了](postponing-pnp-irp-processing-until-lower-drivers-finish.md)ため、ドライバーの*DispatchPnP*ルーチンを呼び出す必要があります**IoCompleteRequest** I/O 完了処理を再開します。
+        ドライバーの[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンには、状態が返されました\_詳細\_処理\_」の説明に従って、必要な[PnP IRP の延期。処理されるまで下ドライバー完了](postponing-pnp-irp-processing-until-lower-drivers-finish.md)ため、ドライバーの*DispatchPnP*ルーチンを呼び出す必要があります**IoCompleteRequest** I/O 完了処理を再開します。
 
         ドライバー セット**Irp -&gt;IoStatus.Status**ステータス\_成功すると、呼び出し**IoCompleteRequest** IO の優先順位を上げると\_いいえ\_インクリメント、ステータスを返す\_成功からその*DispatchPnP*ルーチン。
 
@@ -51,7 +51,7 @@ ms.locfileid: "63359807"
 
         バス ドライバーでは、この操作は失敗する必要があります。 ドライバーが IRP の再起動に失敗した場合、デバイスは不整合な状態でありは正しく動作しません。
 
-ドライバーは、デバイスが開始され、アクティブなときに、誤ったキャンセル停止要求にすることがあります。 これが行われる、たとえば、ドライバー (またはデバイス履歴の上位にドライバー) が失敗した場合、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551725)要求。 デバイスが開始され、アクティブなとき、ドライバーは、デバイスの誤ったキャンセル停止要求に成功安全になります。
+ドライバーは、デバイスが開始され、アクティブなときに、誤ったキャンセル停止要求にすることがあります。 これが行われる、たとえば、ドライバー (またはデバイス履歴の上位にドライバー) が失敗した場合、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)要求。 デバイスが開始され、アクティブなとき、ドライバーは、デバイスの誤ったキャンセル停止要求に成功安全になります。
 
  
 

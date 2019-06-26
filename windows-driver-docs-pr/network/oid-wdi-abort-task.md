@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_ABORT_TASK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e72ddd10a06ce1e40583d7dd25fa9af9ef5e4760
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36e481f0eff633f580756a8dfc2f1165e30cc884
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384627"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353667"
 ---
 # <a name="oidwdiaborttask"></a>OID\_WDI\_中止\_タスク
 
@@ -31,7 +31,7 @@ OID\_WDI\_中止\_タスクは、特定の保留中のタスクをキャンセ�
 
 | TLV                                                                    | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                          |
 |------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------|
-| [**WDI\_TLV\_CANCEL\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926163) |                                |          | 取り消されているコマンドの情報です。 |
+| [**WDI\_TLV\_CANCEL\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-cancel-parameters) |                                |          | 取り消されているコマンドの情報です。 |
 
  
 

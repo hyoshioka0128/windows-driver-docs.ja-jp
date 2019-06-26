@@ -11,12 +11,12 @@ keywords:
 - WDK の印刷キュー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bda252290d66e281fa4172cad9ddaa7ffe1d09f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 95a8f7934148995366bec7ee7dc3467fb8b9bd7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330128"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385977"
 ---
 # <a name="installing-a-print-processor"></a>印刷プロセッサをインストールする
 
@@ -32,7 +32,7 @@ ms.locfileid: "63330128"
 
 既定の Windows がプリント プロセッサ、WinPrint である場合は、プラグ アンド プレイ (PnP) マネージャーが検出され、Windows 2000 または Windows XP では、いずれかを実行するシステムで印刷キューをインストールし、以外の印刷キューをインストールするために使用する INF ファイルに PrintProcessor エントリが含まれている場合、プリント プロセッサは、印刷キューに関連付けできません。 ただし、プリント プロセッサがインストールされます。 (プリンターの追加ウィザードを使用して、印刷キューをインストールする場合、プリント プロセッサが正しく印刷キューに関連付けられているに注意してください。 また、印刷キューをプリント プロセッサを Microsoft Windows Server 2003 以降の PnP マネージャーが正しく関連付けられていること。)
 
-プリント プロセッサにプラグ アンド プレイのインストールを Windows 2000 および Windows XP での印刷キューに関連付けるには、プリンター\_イベント\_プリンター インターフェイスの DLL の初期化ケース[ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)関数。 Microsoft Windows Server 2003 以降では、プリンターを追加する必要はありません\_イベント\_の初期化の場合、 **DrvPrinterEvent**関数。
+プリント プロセッサにプラグ アンド プレイのインストールを Windows 2000 および Windows XP での印刷キューに関連付けるには、プリンター\_イベント\_プリンター インターフェイスの DLL の初期化ケース[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)関数。 Microsoft Windows Server 2003 以降では、プリンターを追加する必要はありません\_イベント\_の初期化の場合、 **DrvPrinterEvent**関数。
 
 次のコード例のセット、 **pPrintProcessor**プリンターのメンバー\_情報\_、プリント プロセッサは、呼び出し、その後の名前に 2 つの構造、 **SetPrinter**関数 (Windows SDK のドキュメントで説明)、プリンターの設定を更新します。 注意のプリント プロセッサの名前*gszPrintProc* INF ファイルの PrintProcessor エントリである必要がありますと同じです。
 
@@ -102,7 +102,7 @@ DrvPrinterEvent(
 
 ### <a href="" id="associating-a-print-processor-with-a-print-queue-during-printer-driver"></a>印刷キューとプリンター ドライバーのアップグレード中にプリント プロセッサを関連付ける
 
-プリンター ドライバーが更新されると、更新された印刷キューのプリント プロセッサは変更されません。 新しいプリンタ ドライバには、特定のプリント プロセッサが必要とする場合、プリンターの DLL のインターフェイス[ **DrvUpgradePrinter** ](https://msdn.microsoft.com/library/windows/hardware/ff548648)関数を設定する必要があります、 **pPrintProcessor**のメンバープリンター\_情報\_新しいプリント プロセッサの名前に 2 つの構造体。 この後、この関数を呼び出す**SetPrinter**プリンターの設定を更新します。 スプーラ呼び出し、 **DrvUpgradePrinter**各プリンターでは、そのドライバーを使用しても、すべてのプリンターが必要なプリント プロセッサを使用することにより、1 回の関数。 次のコード例では、これらの点を示します。
+プリンター ドライバーが更新されると、更新された印刷キューのプリント プロセッサは変更されません。 新しいプリンタ ドライバには、特定のプリント プロセッサが必要とする場合、プリンターの DLL のインターフェイス[ **DrvUpgradePrinter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvupgradeprinter)関数を設定する必要があります、 **pPrintProcessor**のメンバープリンター\_情報\_新しいプリント プロセッサの名前に 2 つの構造体。 この後、この関数を呼び出す**SetPrinter**プリンターの設定を更新します。 スプーラ呼び出し、 **DrvUpgradePrinter**各プリンターでは、そのドライバーを使用しても、すべてのプリンターが必要なプリント プロセッサを使用することにより、1 回の関数。 次のコード例では、これらの点を示します。
 
 ```cpp
 BOOL

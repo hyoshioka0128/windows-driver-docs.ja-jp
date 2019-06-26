@@ -6,12 +6,12 @@ keywords:
 - OID_OFFLOAD_ENCAPSULATION、WDK の Oid、WDK のオブジェクト識別子では、WDK の Oid をネットワークのネットワーク
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fd894fa568a50c77207243c2f1c59e8c88d7027
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e13eb8eab9cc4e2529d5ccf0771360ef24606f16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350970"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383250"
 ---
 # <a name="oidoffloadencapsulation"></a>OID_OFFLOAD_ENCAPSULATION
 
@@ -21,23 +21,23 @@ ms.locfileid: "63350970"
 
 ## <a name="remarks"></a>注釈
 
-InformationBuffer メンバー、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [NDIS_OFFLOAD_ENCAPSULATION](https://msdn.microsoft.com/library/windows/hardware/ff566702)構造体。
+InformationBuffer メンバー、 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、 [NDIS_OFFLOAD_ENCAPSULATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)構造体。
 
 ### <a name="miniport-drivers"></a>ミニポート ドライバー
 
 ミニポート ドライバーは、オフロードとこの OID をサポートしていない、ドライバーは NDIS_STATUS_NOT_SUPPORTED を返す必要があります。
 
-ミニポート ドライバーの内容を使用する必要があります、 [NDIS_OFFLOAD_ENCAPSULATION](https://msdn.microsoft.com/library/windows/hardware/ff566702)オフロード機能の報告される現在の TCP を更新する構造体。 ミニポート ドライバーの更新後では、現在のタスク オフロード機能を報告する必要があります、 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)状態を示す値。 この状態を示す値により、新しい機能の情報ですべての上位のプロトコルのドライバーが更新されるようになります。
+ミニポート ドライバーの内容を使用する必要があります、 [NDIS_OFFLOAD_ENCAPSULATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)オフロード機能の報告される現在の TCP を更新する構造体。 ミニポート ドライバーの更新後では、現在のタスク オフロード機能を報告する必要があります、 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)状態を示す値。 この状態を示す値により、新しい機能の情報ですべての上位のプロトコルのドライバーが更新されるようになります。
 
 この OID を使用してすべての構成済みまたは有効なオフロードをアクティブ化またはすべてのオフロードを非アクティブ化 (つまり、ハードウェア開始する、オフロードを実行する)。 個々 のオフロードを細かく制御は提供されません。 代わりに、 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)は個々 のオフロードを構成に使用されできますもそれらをアクティブ化します。 一般に、ほとんどの TCP/IP タスク オフロードを構成および OID_TCP_OFFLOAD_PARAMETERS でアクティブ化します。
 
-ただし、この OID の NDIS_OFFLOAD_ENCAPSULATION 構造についても説明します OID_TCP_OFFLOAD_PARAMETERS のカバーされないその他の 2 つのカプセル化型[NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)構造体。**NDIS_ENCAPSULATION_IEEE_802_3**と**NDIS_ENCAPSULATION_IEEE_LLC_SNAP_ROUTED**します。 ミニポート ドライバーでは、さまざまな Oid でカバーされるカプセル化の種類の違いを処理する必要があります。
+ただし、この OID の NDIS_OFFLOAD_ENCAPSULATION 構造についても説明します OID_TCP_OFFLOAD_PARAMETERS のカバーされないその他の 2 つのカプセル化型[NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)構造体。**NDIS_ENCAPSULATION_IEEE_802_3**と**NDIS_ENCAPSULATION_IEEE_LLC_SNAP_ROUTED**します。 ミニポート ドライバーでは、さまざまな Oid でカバーされるカプセル化の種類の違いを処理する必要があります。
 
 この OID はすべてオフロードは、非アクティブ化するプロトコル ドライバーによって発行されている場合、**有効**NDIS_OFFLOAD_ENCAPSULATION メンバーのメンバーは NDIS_OFFLOAD_SET_OFF に設定されます。
 
 ### <a name="setting-encapsulation-protocol-drivers"></a>設定のカプセル化 (プロトコル ドライバー)
 
-プロトコル ドライバーは、カプセル化のシステム要件を決定した後、OID_OFFLOAD_ENCAPSULATION を設定します。 プロトコル ドライバーは、基になるミニポート アダプターからの機能を決定できます、 [NDIS_BIND_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff564832)構造体またはでクエリを実行する[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)します。 プロトコル ドライバーには、ミニポート アダプターが少なくとも 1 つのオフロード サービスをサポートする、カプセル化の種類を設定する必要があります。
+プロトコル ドライバーは、カプセル化のシステム要件を決定した後、OID_OFFLOAD_ENCAPSULATION を設定します。 プロトコル ドライバーは、基になるミニポート アダプターからの機能を決定できます、 [NDIS_BIND_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)構造体またはでクエリを実行する[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)します。 プロトコル ドライバーには、ミニポート アダプターが少なくとも 1 つのオフロード サービスをサポートする、カプセル化の種類を設定する必要があります。
 
 ミニポート ドライバーでは、要求されたカプセル化の種類をサポートする任意のオフロード型をサポートする場合、ドライバーは OID_OFFLOAD_ENCAPSULATION のセットへの応答で NDIS_STATUS_SUCCESS を返す必要があります。 それ以外の場合、ミニポート ドライバーでは、NDIS_STATUS_INVALID_PARAMETER を返す必要があります。
 
@@ -49,15 +49,15 @@ InformationBuffer メンバー、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/
 
 プロトコル ドライバーには、OID_OFFLOAD_ENCAPSULATION OID を設定した後にのみ、OID_OFFLOAD_ENCAPSULATION クエリを発行できます。
 
-NDIS はで応答を[NDIS_OFFLOAD_ENCAPSULATION](https://msdn.microsoft.com/library/windows/hardware/ff566702)カプセル化の現在の設定を含む構造体。
+NDIS はで応答を[NDIS_OFFLOAD_ENCAPSULATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)カプセル化の現在の設定を含む構造体。
 
 プロトコル ドライバーは、NDIS_STATUS_Xxx エラー コードを処理するために準備する必要があります。 プロトコル ドライバーにエラーが発生した場合、影響を受けるミニポート アダプターに転送されるオフロード操作を実行する読み取ろうとしないでします。
 
 ### <a name="see-also"></a>関連項目
 
-[NDIS_BIND_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff564832)  
-[NDIS_OFFLOAD_ENCAPSULATION](https://msdn.microsoft.com/library/windows/hardware/ff566702)  
-[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
+[NDIS_BIND_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)  
+[NDIS_OFFLOAD_ENCAPSULATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)  
+[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
 [NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG](ndis-status-task-offload-current-config.md)  
 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)
 

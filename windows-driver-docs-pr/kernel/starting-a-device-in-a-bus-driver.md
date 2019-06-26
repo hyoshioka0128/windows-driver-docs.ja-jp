@@ -6,12 +6,12 @@ keywords:
 - バス ドライバー WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18671be874293d10e008fc6870850bb360058103
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bd9c5f558bff02c2197ababdb3464bbe9c5befa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382997"
 ---
 # <a name="starting-a-device-in-a-bus-driver"></a>バス ドライバーでのデバイスの開始
 
@@ -29,7 +29,7 @@ ms.locfileid: "63331954"
 
 2.  IRP を完了します。
 
-    バス ドライバーの開始操作が成功した場合、ドライバーは設定**Irp -&gt;IoStatus.Status**ステータス\_成功と呼び出し[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343) IO の優先順位を指定する\_いいえ\_インクリメントします。 バス ドライバーのステータスを返します\_成功からその*DispatchPnP*ルーチン。
+    バス ドライバーの開始操作が成功した場合、ドライバーは設定**Irp -&gt;IoStatus.Status**ステータス\_成功と呼び出し[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IO の優先順位を指定する\_いいえ\_インクリメントします。 バス ドライバーのステータスを返します\_成功からその*DispatchPnP*ルーチン。
 
     バス ドライバーには、その開始操作中にエラーが発生すると、ドライバーが IRP の呼び出しではエラー状態を設定**IoCompleteRequest** IO と\_いいえ\_インクリメントし、そのからエラーを返します*DispatchPnP*ルーチン。
 

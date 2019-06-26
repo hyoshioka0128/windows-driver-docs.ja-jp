@@ -9,17 +9,17 @@ keywords:
 - IPrintTicketProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f267349111f0c5059197d720479957a1afc7ab5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa4b3b4550eed074635933317951a291c23a46bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342262"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382593"
 ---
 # <a name="adding-print-ticket-support-to-monolithic-print-drivers"></a>モノリシック印刷ドライバーに印刷チケット サポートを追加する
 
 
-印刷チケットを提供する場合は、モノリシック印刷ドライバーのサポート、サポート、[印刷チケットと印刷機能テクノロジ](print-ticket-and-print-capabilities-technologies.md)、それを実装する必要があります、 [IPrintTicketProvider インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff554375)とも印刷ドライバーによって使用される COM スタイルの呼び出し元メソッドのために必要な IClassFactory インターフェイスのサポートを提供します。 ドライバーには、少なくとも、ようになりました中に呼び出される IPrintTicketProvider インターフェイスのメソッドをサポートする必要がありますの下に示す順序で呼び出します。
+印刷チケットを提供する場合は、モノリシック印刷ドライバーのサポート、サポート、[印刷チケットと印刷機能テクノロジ](print-ticket-and-print-capabilities-technologies.md)、それを実装する必要があります、 [IPrintTicketProvider インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))とも印刷ドライバーによって使用される COM スタイルの呼び出し元メソッドのために必要な IClassFactory インターフェイスのサポートを提供します。 ドライバーには、少なくとも、ようになりました中に呼び出される IPrintTicketProvider インターフェイスのメソッドをサポートする必要がありますの下に示す順序で呼び出します。
 
 1.  [GetSupportedVersions](getsupportedversions.md)
 

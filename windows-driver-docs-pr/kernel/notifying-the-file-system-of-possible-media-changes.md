@@ -8,12 +8,12 @@ keywords:
 - 変更通知 WDK リムーバブル メディアをメディア
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c0f16444119e460ddab1434f8422769310ca2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba681783d64fb52d2f0921d77bfad2a421295539
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354992"
 ---
 # <a name="notifying-the-file-system-of-possible-media-changes"></a>メディア変更の可能性に関するファイル システムへの通知
 
@@ -25,7 +25,7 @@ ms.locfileid: "63341960"
 
 その物理デバイスでは、ドライバーは、I/O 操作を開始する前に、メディアの状態が変更された可能性を示している場合、または操作中に、ドライバー、次の操作する必要があります。
 
-1.  VPB をチェックして、ボリュームがマウントされていることを確認\_でマウントされたフラグ、 *VPB*します。 (ドライバーは設定しないで、ボリュームがマウントされていない場合\_確認\_ボリューム ビット。 ドライバーを設定する必要があります**IoStatus.Status**ステータス\_IO\_デバイス\_セットのエラー、 **IoStatus.Information**をゼロにして呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP にします)。
+1.  VPB をチェックして、ボリュームがマウントされていることを確認\_でマウントされたフラグ、 *VPB*します。 (ドライバーは設定しないで、ボリュームがマウントされていない場合\_確認\_ボリューム ビット。 ドライバーを設定する必要があります**IoStatus.Status**ステータス\_IO\_デバイス\_セットのエラー、 **IoStatus.Information**をゼロにして呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP にします)。
 
 2.  設定、**フラグ**で、**デバイス オブジェクト**Or で**フラグ**か\_確認\_ボリューム。
 
@@ -33,7 +33,7 @@ ms.locfileid: "63341960"
     -   **ステータス**状態に設定\_確認\_必要な作業
     -   **情報**を 0 に設定
 
-4.  任意の IRP を完了する前に、 **IoStatus**をブロック、**状態**フィールドは、状態に設定されていない\_成功すると、ドライバーが呼び出す必要があります[ **IoIsErrorUserInduced**](https://msdn.microsoft.com/library/windows/hardware/ff549375)、ブール値を返す**TRUE** 、次のいずれかの**状態**値。
+4.  任意の IRP を完了する前に、 **IoStatus**をブロック、**状態**フィールドは、状態に設定されていない\_成功すると、ドライバーが呼び出す必要があります[ **IoIsErrorUserInduced**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioiserroruserinduced)、ブール値を返す**TRUE** 、次のいずれかの**状態**値。
 
     -   ステータス\_確認\_必要な作業
     -   ステータス\_いいえ\_メディア\_IN\_デバイス
@@ -43,7 +43,7 @@ ms.locfileid: "63341960"
     -   ステータス\_IO\_タイムアウト
     -   ステータス\_デバイス\_いない\_準備完了
 
-    場合**IoIsErrorUserInduced**返します**TRUE**、ドライバーを呼び出す必要があります[ **IoSetHardErrorOrVerifyDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549707) FSD] ダイアログ ボックスを開くことができます。ユーザーに、正しいメディアを指定、元の要求を再試行してください。 または、要求された操作をキャンセルを選択できます。
+    場合**IoIsErrorUserInduced**返します**TRUE**、ドライバーを呼び出す必要があります[ **IoSetHardErrorOrVerifyDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iosetharderrororverifydevice) FSD ダイアログ ボックスを開くことができます。ユーザーに、正しいメディアを指定、元の要求を再試行してください。 または、要求された操作をキャンセルを選択できます。
 
  
 

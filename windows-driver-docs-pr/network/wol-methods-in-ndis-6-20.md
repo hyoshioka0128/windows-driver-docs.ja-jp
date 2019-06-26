@@ -4,12 +4,12 @@ description: NDIS 6.20 の WOL メソッド
 ms.assetid: A46C213D-B356-44A3-8863-D7B183B73C77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8cd7dc9eb916b4ba5aaa10e816e7fd7616954f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c0566541438f701d7da58fb0ef642293e5ccf10
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385993"
 ---
 # <a name="wol-methods-in-ndis-620"></a>NDIS 6.20 の WOL メソッド
 
@@ -25,7 +25,7 @@ NDIS 6.20 が動作し、以降のバージョンの NDIS でサポートされ�
 
 -   メディア上のウェイク アップのデバイスを接続します。
 
-以前のバージョンの Windows 電源管理機能の詳細については、次を参照してください。 [(NDIS 6.0 以降) の電源管理](https://msdn.microsoft.com/library/windows/hardware/hh205401)します。
+以前のバージョンの Windows 電源管理機能の詳細については、次を参照してください。 [(NDIS 6.0 以降) の電源管理](https://docs.microsoft.com/windows-hardware/drivers/network/power-management--ndis-6-20-)します。
 
 *Wake on マジック パケット*メソッドは、ネットワーク アダプターが受信すると、コンピューターをウェイクする*マジック パケット*。 A*マジック パケット*受信側のネットワーク アダプターのイーサネット アドレスの 16 個の連続したコピーが含まれています。
 

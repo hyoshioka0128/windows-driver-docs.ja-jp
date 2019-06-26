@@ -4,12 +4,12 @@ description: キャプティブ ポータル
 ms.assetid: 6f710440-3012-4bf4-92cc-3743b0f4fd34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a014465c600787e2c878dd17a3c572607a338128
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b91b1957cb2d8646d1f914f3c7a1ad861b8596f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392976"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364989"
 ---
 # <a name="captive-portals"></a>キャプティブ ポータル
 
@@ -60,7 +60,7 @@ Windows 8、Windows 8.1、および Windows 10 エクスペリエンスはタッ
 ## <a name="span-idpapspanspan-idpapspanprovision-after-purchase"></a><span id="pap"></span><span id="PAP"></span>購入後にプロビジョニングします。
 
 
-アプリによって適用される同じプロビジョニング ファイルは、web サイトによっても適用できます。 Web ページの JavaScript での可用性の確認、 [ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/dn529170)メソッド。 存在する場合、ブラウザーは、オペレーティング システムにプロビジョニング ファイルを中継できます。 参照してください[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)このプロビジョニング ファイルを生成する方法の詳細について。
+アプリによって適用される同じプロビジョニング ファイルは、web サイトによっても適用できます。 Web ページの JavaScript での可用性の確認、 [ **window.external.msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85))メソッド。 存在する場合、ブラウザーは、オペレーティング システムにプロビジョニング ファイルを中継できます。 参照してください[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)このプロビジョニング ファイルを生成する方法の詳細について。
 
 **注**   web サイトまたはモバイル ブロード バンド アプリではないアプリで提供されているときに、このプロビジョニング ファイルを署名する必要があります。
 

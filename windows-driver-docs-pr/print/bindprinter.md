@@ -6,21 +6,21 @@ keywords:
 - BindPrinter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b6fcc1d89295dc760f0e9fd41795e83f8e0bebc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c6f6d41ea4f74e06d31f3343c1456186c027082
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390618"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384193"
 ---
 # <a name="bindprinter"></a>BindPrinter
 
 
-[ **IPrintTicketProvider::BindPrinter** ](https://msdn.microsoft.com/library/windows/hardware/ff554354)メソッド プリンターまたは印刷キューを特定のバージョンの印刷チケットのスキーマにバインドします。 これにより、秘密の名前空間 Uri のセットをデバイスに関連付けるコア ドライバーです。
+[ **IPrintTicketProvider::BindPrinter** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554354(v=vs.85))メソッド プリンターまたは印刷キューを特定のバージョンの印刷チケットのスキーマにバインドします。 これにより、秘密の名前空間 Uri のセットをデバイスに関連付けるコア ドライバーです。
 
 デバイスへのバインドは、特定のオブジェクトをキャッシュするプロバイダーを有効にし、使用は、そのデバイスの将来の印刷チケットまたはデバイスの機能のサービスを実行することを処理します。
 
-[ **IPrintTicketProvider::BindPrinter** ](https://msdn.microsoft.com/library/windows/hardware/ff554354)メソッド PrintTicketProvider インスタンスごとに 1 回だけ呼び出されることが保証されます。
+[ **IPrintTicketProvider::BindPrinter** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554354(v=vs.85))メソッド PrintTicketProvider インスタンスごとに 1 回だけ呼び出されることが保証されます。
 
 次のサンプル コードは、メソッドの引数を示しています。
 

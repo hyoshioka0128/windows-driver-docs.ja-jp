@@ -13,16 +13,16 @@ api_type:
 - NA
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 797705e2c6ade14f4a9c6b641f5b6ccc164deb53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fd3bbc859f70910e3908e329e61d3d7d81dd538
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385925"
 ---
 # <a name="inf-addeventprovider-directive"></a>INF AddEventProvider ディレクティブ
 
-**AddEventProvider**内ディレクティブの使用、 [ **INF *DDInstall*します。[イベント] セクション**](inf-ddinstall-services-section.md)します。 特性を指定します、 [Windows のイベント トレース](https://msdn.microsoft.com/library/windows/desktop/aa363668)ドライバーに関連付けられている (ETW) プロバイダーです。 このディレクティブは 1809 およびそれ以降のバージョンの Windows 10 のサポートします。
+**AddEventProvider**内ディレクティブの使用、 [ **INF *DDInstall*します。[イベント] セクション**](inf-ddinstall-services-section.md)します。 特性を指定します、 [Windows のイベント トレース](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)ドライバーに関連付けられている (ETW) プロバイダーです。 このディレクティブは 1809 およびそれ以降のバージョンの Windows 10 のサポートします。
 
 ```ini
 [DDInstall.Events] 
@@ -61,12 +61,12 @@ ResourceFile=path-to-file
 ...
 ```
 
-各*イベント プロバイダーのインストール セクション*提供する必要があります**ProviderName**と**ResourceFile**します。 必要に応じて、チャネルのリストを指定の任意の組み合わせを使用して、プロバイダーの**ImportChannel(s)** と**AddChannel(s)**、それぞれ別々 の行にします。 INF ファイルでチャネルのリストの詳細については、次を参照してください。 [**チャネルの一覧を指定する**](#specifying-a-channel-list)以下。 詳細については[Windows イベント ログ](https://msdn.microsoft.com/library/windows/desktop/aa385780)チャネルを参照してください[定義チャネル](https://msdn.microsoft.com/library/windows/desktop/dd996911)します。
+各*イベント プロバイダーのインストール セクション*提供する必要があります**ProviderName**と**ResourceFile**します。 必要に応じて、チャネルのリストを指定の任意の組み合わせを使用して、プロバイダーの**ImportChannel(s)** と**AddChannel(s)** 、それぞれ別々 の行にします。 INF ファイルでチャネルのリストの詳細については、次を参照してください。 [**チャネルの一覧を指定する**](#specifying-a-channel-list)以下。 詳細については[Windows イベント ログ](https://docs.microsoft.com/windows/desktop/WES/windows-event-log)チャネルを参照してください[定義チャネル](https://docs.microsoft.com/windows/desktop/WES/defining-channels)します。
 
 ### <a name="event-provider-install-section-entries-and-values"></a>イベント プロバイダーのインストール」セクションのエントリと値
 
 <a href="" id="providername-name"></a>**ProviderName**=*name*  
-プロバイダーの名前を指定します。 名前が 255 文字より長くすることはできず、文字を含めることはできません: ' >'、' <'、'&'、'"'、' | '、'\'、':'、' '、'?'、' *'、値より小さい 31 の ascii 文字またはします。 さらに、名前はファイルおよびレジストリのキー名の一般的な制約に従う必要があります。 これらの制約をご覧[Naming a File](https://msdn.microsoft.com/library/windows/desktop/aa365247)と[レジストリ要素のサイズ制限](https://msdn.microsoft.com/library/windows/desktop/ms724872)します。
+プロバイダーの名前を指定します。 名前が 255 文字より長くすることはできず、文字を含めることはできません: ' >'、' <'、'&'、'"'、' | '、'\'、':'、' '、'?'、' *'、値より小さい 31 の ascii 文字またはします。 さらに、名前はファイルおよびレジストリのキー名の一般的な制約に従う必要があります。 これらの制約をご覧[Naming a File](https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file)と[レジストリ要素のサイズ制限](https://docs.microsoft.com/windows/desktop/SysInfo/registry-element-size-limits)します。
 
 <a href="" id="resourcefile-path-to-file"></a>**ResourceFile**=*ファイルへのパス*  
 Exe または %dirid%\filename で表される、プロバイダーのメタデータ リソースが含まれている dll へのパスを指定します。
@@ -87,7 +87,7 @@ Exe または %dirid%\filename で表される、プロバイダーのメタデ�
 
 ### <a name="specifying-a-channel-list"></a>チャネルの一覧を指定します。
 
-チャネルの一覧を指定するには、プロバイダー内の*イベント プロバイダーのインストール セクション*します。 チャネルをインポートしたり、チャネルを一覧に追加され、これらのチャネルの順序が保持されます。 詳細については、次を参照してください。[定義チャネル](https://msdn.microsoft.com/library/windows/desktop/dd996911)します。
+チャネルの一覧を指定するには、プロバイダー内の*イベント プロバイダーのインストール セクション*します。 チャネルをインポートしたり、チャネルを一覧に追加され、これらのチャネルの順序が保持されます。 詳細については、次を参照してください。[定義チャネル](https://docs.microsoft.com/windows/desktop/WES/defining-channels)します。
 
 *チャネル名*プロバイダーで使用されるチャネルのリスト内で一意である必要があります。 *チャネル名*255 文字未満にする必要があり、次の文字を含めることはできません: ' >'、' <'、'&'、'"'、' | '、'\'、':'、' '、'?'、' *'、値より小さい 31 の ascii 文字またはします。
 
@@ -119,7 +119,7 @@ Exe または %dirid%\filename で表される、プロバイダーのメタデ�
 [LoggingAutoBackup=0|1]
 ```
 
-チャネルの属性の詳細については、次を参照してください。[チャネル](https://msdn.microsoft.com/library/windows/desktop/aa382741)内で定義された[EventManifest スキーマ](https://msdn.microsoft.com/library/windows/desktop/aa384043)します。
+チャネルの属性の詳細については、次を参照してください。[チャネル](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-channeltype-complextype)内で定義された[EventManifest スキーマ](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-schema)します。
 
 ### <a name="channel-install-section-entries-and-values"></a>チャネル インストール セクションのエントリと値
 
@@ -133,7 +133,7 @@ Exe または %dirid%\filename で表される、プロバイダーのメタデ�
 <a href="" id="0x3--Custom-"></a>**0x3** (カスタム)  
 
 <a href="" id="access-access-string"></a>**アクセス**=*アクセス文字列*  
-オプションを指定します、[セキュリティ記述子定義言語](https://msdn.microsoft.com/library/windows/desktop/aa379567)(SDDL) へのアクセスの記述子がチャネルをサポートするログ ファイルへのアクセスを制御します。
+オプションを指定します、[セキュリティ記述子定義言語](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)(SDDL) へのアクセスの記述子がチャネルをサポートするログ ファイルへのアクセスを制御します。
 
 場合、この文字列は (書き込みアクセス許可は無視されます)、ファイルへの読み取りアクセスを制御、**分離**に設定されている**0x1** (アプリケーション) または**0x2** (システム) 中、制御チャネルと分離属性に設定されている場合は、ファイルへの読み取りアクセスに対する書き込みアクセス**0x3** (カスタム)。
 

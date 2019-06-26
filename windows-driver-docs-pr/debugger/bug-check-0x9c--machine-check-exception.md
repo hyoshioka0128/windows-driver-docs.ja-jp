@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: abc5ee90d151b5c37dbc9d4053a4e92c105ef162
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5c6f5b6e770c497d7339634163718f2968271fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324675"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361700"
 ---
 # <a name="bug-check-0x9c-machinecheckexception"></a>バグ チェック 0x9C:マシン\_確認\_例外
 
@@ -26,7 +26,7 @@ ms.locfileid: "63324675"
 マシン\_確認\_例外のバグ チェックが 0x0000009c の解説の値を持ちます。 このバグ チェックでは、致命的なマシン チェック例外が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="machinecheckexception-parameters"></a>マシン\_確認\_例外パラメーター

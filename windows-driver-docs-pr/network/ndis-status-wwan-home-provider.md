@@ -5,12 +5,12 @@ ms.assetid: a5733c62-be4e-4f86-9639-6addd31baf0c
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_HOME_PROVIDER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2274f406304e95cbd6e30157ee7df839a6ea4001
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae316d1b56ed440ea1aa02b9eff2db71680c5574
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354169"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385067"
 ---
 # <a name="ndisstatuswwanhomeprovider"></a>NDIS\_状態\_WWAN\_ホーム\_プロバイダー
 
@@ -19,7 +19,7 @@ ms.locfileid: "63354169"
 
 ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_ホーム\_プロバイダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567909)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_ホーム\_プロバイダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_home_provider)構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -34,7 +34,7 @@ ms.locfileid: "63354169"
 
 デバイスの準備完了状態を変更するときに、ミニポート ドライバーはこの情報を返す必要があります**WwanReadyStateInitialized** 、WWAN のすべてのメンバーの書式を設定して\_に応じて、プロバイダーの構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -59,7 +59,7 @@ ms.locfileid: "63354169"
 
 [OID\_WWAN\_ホーム\_プロバイダー](oid-wwan-home-provider.md)
 
-[**NDIS\_WWAN\_ホーム\_プロバイダー**](https://msdn.microsoft.com/library/windows/hardware/ff567909)
+[**NDIS\_WWAN\_ホーム\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_home_provider)
 
  
 

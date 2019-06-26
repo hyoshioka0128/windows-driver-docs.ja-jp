@@ -8,12 +8,12 @@ keywords:
 - ビデオ メモリ マネージャー WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f342510d634ef43fd8872888bb64fcfe1a6470e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7982c5b9fb4ce6c61bc66b1239d6384f7d7c3387
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389009"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381084"
 ---
 # <a name="using-memory-segments-to-describe-the-gpu-address-space"></a>メモリ セグメントを使用して GPU アドレス スペースを表す
 
@@ -23,7 +23,7 @@ ms.locfileid: "63389009"
 
 ビデオ メモリ マネージャーでは、GPU のアドレス空間を管理する前に、ディスプレイのミニポート ドライバーは、メモリのセグメントを使用して、ビデオ メモリ マネージャーに、GPU のアドレス空間を記述する必要があります。 表示のミニポート ドライバーでは、メモリのセグメントを汎用化し、ビデオ メモリ リソースを仮想化を作成します。 ドライバーはメモリに基づいてメモリ セグメントの種類を構成できます (たとえば、フレーム バッファー メモリまたはシステム メモリの開口部) ハードウェアがサポートします。
 
-ドライバーの初期化中に、ドライバーは、ビデオ メモリ マネージャーでのメモリ リソースの管理方法について説明します。 セグメントの種類の一覧を返す必要があります。 ドライバーをサポートし、応答の呼び出しをすることで各セグメントの種類について説明しますタイプのセグメントの数を指定します、 [ **DxgkDdiQueryAdapterInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff559746)関数。 ドライバーでは、各セグメントの使用方法について説明する[ **DXGK\_SEGMENTDESCRIPTOR** ](https://msdn.microsoft.com/library/windows/hardware/ff562035)構造体。 詳細については、次を参照してください。[メモリ セグメントの使用を初期化して](initializing-use-of-memory-segments.md)します。
+ドライバーの初期化中に、ドライバーは、ビデオ メモリ マネージャーでのメモリ リソースの管理方法について説明します。 セグメントの種類の一覧を返す必要があります。 ドライバーをサポートし、応答の呼び出しをすることで各セグメントの種類について説明しますタイプのセグメントの数を指定します、 [ **DxgkDdiQueryAdapterInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)関数。 ドライバーでは、各セグメントの使用方法について説明する[ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)構造体。 詳細については、次を参照してください。[メモリ セグメントの使用を初期化して](initializing-use-of-memory-segments.md)します。
 
 その後、セグメントの種類と数は変更されません。 ビデオ メモリ マネージャーにより各プロセスが、特定のセグメントでのリソースが公平に共有を受信するようになります。 ビデオ メモリ マネージャー管理個別に、すべてのセグメントされていませんし、セグメントが重複しません。 そのため、ビデオ メモリ マネージャーは、アプリケーションは、別のセグメントから現在保持しているリソースの量に関係なく、アプリケーションに 1 つのセグメントから大量のビデオ メモリ リソースを割り当てます。
 

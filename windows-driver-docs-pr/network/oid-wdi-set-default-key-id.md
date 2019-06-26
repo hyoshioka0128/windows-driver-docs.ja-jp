@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_DEFAULT_KEY_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bbbfb73d6cf5558266ea4c9edc853545d80ca058
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b92781490f0a7a83d6536a4629f499ae3935d565
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376607"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387248"
 ---
 # <a name="oidwdisetdefaultkeyid"></a>OID\_WDI\_設定\_既定\_キー\_ID
 
@@ -30,7 +30,7 @@ OID\_WDI\_設定\_既定\_キー\_パケットの送信ポートでの ID を既
 
 | TLV                                                                                             | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                             |
 |-------------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------|
-| [**WDI\_TLV\_既定\_TX\_キー\_ID\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926281) |                                |          | 既定値は、パケットの送信ポートでの ID をキーします。 |
+| [**WDI\_TLV\_既定\_TX\_キー\_ID\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-default-tx-key-id-parameters) |                                |          | 既定値は、パケットの送信ポートでの ID をキーします。 |
 
  
 

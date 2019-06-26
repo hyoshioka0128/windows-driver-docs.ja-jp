@@ -13,12 +13,12 @@ keywords:
 - デジタル ビデオのデコード WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8252c7ce899166483e6b9e3d38569747df59134
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea8fdc7311a6466368cbe6880bcbb6eecb091e29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372871"
 ---
 # <a name="motion-compensation-callbacks"></a>モーション補正コールバック
 
@@ -28,45 +28,45 @@ ms.locfileid: "63353076"
 
 [DirectX のビデオ アクセラレータ](directx-video-acceleration.md)DirectDraw でデジタル ビデオ デコーディングの高速化用のドライバーを処理するこのようなアルファ ブレンドのサポートを目的として DVD として提供される次の動き補正のコールバック関数の使用サブピクチャ サポート:
 
-[*DdMoCompBeginFrame*](https://msdn.microsoft.com/library/windows/hardware/ff549648)
+[*DdMoCompBeginFrame*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_beginframe)
 
-[*DdMoCompCreate*](https://msdn.microsoft.com/library/windows/hardware/ff549656)
+[*DdMoCompCreate*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)
 
-[*DdMoCompDestroy*](https://msdn.microsoft.com/library/windows/hardware/ff549664)
+[*DdMoCompDestroy*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)
 
-[*DdMoCompEndFrame*](https://msdn.microsoft.com/library/windows/hardware/ff549669)
+[*DdMoCompEndFrame*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_endframe)
 
-[*DdMoCompGetBuffInfo*](https://msdn.microsoft.com/library/windows/hardware/ff549683)
+[*DdMoCompGetBuffInfo*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getcompbuffinfo)
 
-[*DdMoCompGetFormats*](https://msdn.microsoft.com/library/windows/hardware/ff549691)
+[*DdMoCompGetFormats*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getformats)
 
-[*DdMoCompGetGuids*](https://msdn.microsoft.com/library/windows/hardware/ff550236)
+[*DdMoCompGetGuids*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids)
 
-[*DdMoCompGetInternalInfo*](https://msdn.microsoft.com/library/windows/hardware/ff550240)
+[*DdMoCompGetInternalInfo*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getinternalinfo)
 
-[*DdMoCompQueryStatus*](https://msdn.microsoft.com/library/windows/hardware/ff550243)
+[*DdMoCompQueryStatus*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)
 
-[*DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)
+[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)
 
-動き補正のコールバック関数には、DirectX ビデオ アクセラレータ インターフェイスのデバイス ドライバーの側が構成されています。 動き補正のコールバック関数がのメンバーで指定された、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造体。 次の手順では、モーション補正のコールバック関数へのアクセス方法を示しています。
+動き補正のコールバック関数には、DirectX ビデオ アクセラレータ インターフェイスのデバイス ドライバーの側が構成されています。 動き補正のコールバック関数がのメンバーで指定された、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造体。 次の手順では、モーション補正のコールバック関数へのアクセス方法を示しています。
 
-1.  Guid から受信した**IAMVideoAccelerator::GetVideoAcceleratorGUIDs** 、デバイス ドライバーの由来[ *DdMoCompGetGuids*](https://msdn.microsoft.com/library/windows/hardware/ff550236)します。
+1.  Guid から受信した**IAMVideoAccelerator::GetVideoAcceleratorGUIDs** 、デバイス ドライバーの由来[ *DdMoCompGetGuids*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids)します。
 
-2.  ダウン ストリームの入力ピン呼び出し**IAMVideoAccelerator::GetUncompFormatsSupported**から、デバイス ドライバーのデータを返す[ *DdMoCompGetFormats*](https://msdn.microsoft.com/library/windows/hardware/ff549691)します。
+2.  ダウン ストリームの入力ピン呼び出し**IAMVideoAccelerator::GetUncompFormatsSupported**から、デバイス ドライバーのデータを返す[ *DdMoCompGetFormats*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getformats)します。
 
-3.  関連の処理の開始時、 [ **DXVA\_ConnectMode** ](https://msdn.microsoft.com/library/windows/hardware/ff563138)データ構造体のデコーダーの出力ピンが**IAMVideoAcceleratorNotify:。GetCreateVideoAcceleratorData** 、デバイス ドライバーに渡される[ *DdMoCompCreate*](https://msdn.microsoft.com/library/windows/hardware/ff549656)、ビデオ アクセラレータ オブジェクトのデコーダーを通知します。
+3.  関連の処理の開始時、 [ **DXVA\_ConnectMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_connectmode)データ構造体のデコーダーの出力ピンが**IAMVideoAcceleratorNotify:。GetCreateVideoAcceleratorData** 、デバイス ドライバーに渡される[ *DdMoCompCreate*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)、ビデオ アクセラレータ オブジェクトのデコーダーを通知します。
 
-4.  返されるデータ**IAMVideoAccelerator::GetCompBufferInfo** 、デバイス ドライバーの発生元[ *DdMoCompGetBuffInfo*](https://msdn.microsoft.com/library/windows/hardware/ff549683)します。
+4.  返されるデータ**IAMVideoAccelerator::GetCompBufferInfo** 、デバイス ドライバーの発生元[ *DdMoCompGetBuffInfo*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getcompbuffinfo)します。
 
-5.  使用して送信バッファー **IAMVideoAccelerator::Execute** 、デバイス ドライバーのによって受信されて[ *DdMoCompRender*](https://msdn.microsoft.com/library/windows/hardware/ff550248)します。
+5.  使用して送信バッファー **IAMVideoAccelerator::Execute** 、デバイス ドライバーのによって受信されて[ *DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)します。
 
-6.  使用**IAMVideoAccelerator::QueryRenderStatus**呼び出し、デバイス ドライバーの[ *DdMoCompQueryStatus*](https://msdn.microsoft.com/library/windows/hardware/ff550243)します。 DDERR のリターン コード\_から WASSTILLDRAWING *DdMoCompQueryStatus* E のリターン コードとしてホスト デコーダーによって表示されるように\_から PENDING **IAMVideoAccelerator::QueryRenderStatus**.
+6.  使用**IAMVideoAccelerator::QueryRenderStatus**呼び出し、デバイス ドライバーの[ *DdMoCompQueryStatus*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)します。 DDERR のリターン コード\_から WASSTILLDRAWING *DdMoCompQueryStatus* E のリターン コードとしてホスト デコーダーによって表示されるように\_から PENDING **IAMVideoAccelerator::QueryRenderStatus**.
 
-7.  送信されるデータ**IAMVideoAccelerator::BeginFrame**を受信したデバイス ドライバーの[ *DdMoCompBeginFrame*](https://msdn.microsoft.com/library/windows/hardware/ff549648)します。 DDERR のリターン コード\_から WASSTILLDRAWING が必要な*DdMoCompBeginFrame* E の順序で\_への応答で、ホストのデコーダーで認識されるに保留**IAMVideoAccelerator::BeginFrame**.
+7.  送信されるデータ**IAMVideoAccelerator::BeginFrame**を受信したデバイス ドライバーの[ *DdMoCompBeginFrame*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_beginframe)します。 DDERR のリターン コード\_から WASSTILLDRAWING が必要な*DdMoCompBeginFrame* E の順序で\_への応答で、ホストのデコーダーで認識されるに保留**IAMVideoAccelerator::BeginFrame**.
 
-8.  送信されるデータ**IAMVideoAccelerator::EndFrame**を受信したデバイス ドライバーの[ *DdMoCompEndFrame*](https://msdn.microsoft.com/library/windows/hardware/ff549669)します。
+8.  送信されるデータ**IAMVideoAccelerator::EndFrame**を受信したデバイス ドライバーの[ *DdMoCompEndFrame*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_endframe)します。
 
-9.  関連する処理、デバイス ドライバーの末に[ *DdMoCompDestroy* ](https://msdn.microsoft.com/library/windows/hardware/ff549664)ドライバーに通知する現在のビデオ アクセラレータ オブジェクトは使用されなく、ドライバーが実行できるようにするために使用必要なクリーンアップします。
+9.  関連する処理、デバイス ドライバーの末に[ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)ドライバーに通知する現在のビデオ アクセラレータ オブジェクトは使用されなく、ドライバーが実行できるようにするために使用必要なクリーンアップします。
 
  
 

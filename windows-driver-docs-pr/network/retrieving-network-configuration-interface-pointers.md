@@ -10,12 +10,12 @@ keywords:
 - ポインターの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b75f0597dc3d4259fc22310f43cbe18f7430a3b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4ca82f92c031c53f170d1e4b1f25df1a8a8c087
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377538"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386526"
 ---
 # <a name="retrieving-network-configuration-interface-pointers"></a>ネットワーク構成インターフェイス ポインターの取得
 
@@ -23,7 +23,7 @@ ms.locfileid: "63377538"
 
 
 
-ネットワーク構成のサブシステムが通知オブジェクトのインスタンスを初期化する」の説明に従ってと[を作成して、通知オブジェクトのインスタンスを初期化して](creating-and-initializing-an-instance-of-a-notify-object.md)、オブジェクトを受け取ります[ **INetCfgComponent** ](https://msdn.microsoft.com/library/windows/hardware/ff547715)と[ **INetCfg** ](https://msdn.microsoft.com/library/windows/hardware/ff547694)インターフェイス ポインター。 **INetCfgComponent**にアクセスして、コンポーネントを制御するオブジェクトで使用できる通知オブジェクトのコンポーネントのインターフェイスを指します。 **INetCfg**通知オブジェクトを使用してネットワークの構成のすべての側面にアクセスするルートのネットワーク構成インターフェイスを指します。 次のコードを使用してこれら**INetCfgComponent**と**INetCfg**インターフェイス ポインターを通知オブジェクトを必要とする他のネットワーク構成インターフェイスを取得します。
+ネットワーク構成のサブシステムが通知オブジェクトのインスタンスを初期化する」の説明に従ってと[を作成して、通知オブジェクトのインスタンスを初期化して](creating-and-initializing-an-instance-of-a-notify-object.md)、オブジェクトを受け取ります[ **INetCfgComponent** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547715(v=vs.85))と[ **INetCfg** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547694(v=vs.85))インターフェイス ポインター。 **INetCfgComponent**にアクセスして、コンポーネントを制御するオブジェクトで使用できる通知オブジェクトのコンポーネントのインターフェイスを指します。 **INetCfg**通知オブジェクトを使用してネットワークの構成のすべての側面にアクセスするルートのネットワーク構成インターフェイスを指します。 次のコードを使用してこれら**INetCfgComponent**と**INetCfg**インターフェイス ポインターを通知オブジェクトを必要とする他のネットワーク構成インターフェイスを取得します。
 
 ```C++
 // Using the notify object's component interface that the notify 

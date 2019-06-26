@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ec2aa2eef0f29371e670ef7f06c7a40dd49478
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 424a61bfc744cd5270e1850c0caff425bc84b100
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362752"
 ---
 # <a name="tvotpushbutton"></a>TVOT\_プッシュ ボタン
 
@@ -29,7 +29,7 @@ ms.locfileid: "63390251"
 
 TVOT\_プッシュ ボタンのオプションの種類は、グループ ボックス内でのプッシュ ボタンで構成されています。
 
-<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://msdn.microsoft.com/library/windows/hardware/ff559656)構造体  
+<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)構造体  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
 依存、**スタイル**次のように、OPTPARAM$ のメンバーが構造体します。
@@ -67,7 +67,7 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 
  
 
-<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM$** ](https://msdn.microsoft.com/library/windows/hardware/ff559660)構造体の配列 (**pOptParam**のメンバー [ **OPTTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff559670))  
+<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM$** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)構造体の配列 (**pOptParam**のメンバー [ **OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype))  
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
 依存、**スタイル**メンバーは、次のようにします。
@@ -86,7 +86,7 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 <tbody>
 <tr class="odd">
 <td><p>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff564313" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564313)"> <strong>_CPSUICALLBACK</strong></a>-関数の型を指定します。</p></td>
+<td><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-_cpsuicallback" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-_cpsuicallback)"> <strong>_CPSUICALLBACK</strong></a>-関数の型を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_DLGPROC</p></td>
@@ -98,7 +98,7 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_HTSETUP</p></td>
-<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff552832" data-raw-source="[&lt;strong&gt;DEVHTADJDATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552832)"> <strong>DEVHTADJDATA</strong> </a>構造体。</p></td>
+<td><p>ポインターを<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_devhtadjdata" data-raw-source="[&lt;strong&gt;DEVHTADJDATA&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_devhtadjdata)"> <strong>DEVHTADJDATA</strong> </a>構造体。</p></td>
 </tr>
 </tbody>
 </table>
@@ -162,12 +162,12 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 </tr>
 <tr class="even">
 <td><p><span id="PUSHBUTTON_TYPE_CALLBACK"></span><span id="pushbutton_type_callback"></span>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>CPSUI 呼び出し、アプリケーションの<a href="https://msdn.microsoft.com/library/windows/hardware/ff564313" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564313)"> <strong>_CPSUICALLBACK</strong></a>-コールバック関数をボタンのイベントを処理するために型指定された、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>構造体の<strong>理由</strong>メンバー CPSUICB_REASON_PUSHBUTTON に設定します。 (CPSUI は、コールバック関数の戻り値を無視します)。</p></td>
+<td><p>CPSUI 呼び出し、アプリケーションの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-_cpsuicallback" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-_cpsuicallback)"> <strong>_CPSUICALLBACK</strong></a>-コールバック関数をボタンのイベントを処理するために型指定された、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_cpsuicbparam" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_cpsuicbparam)"> <strong>CPSUICBPARAM</strong> </a>構造体の<strong>理由</strong>メンバー CPSUICB_REASON_PUSHBUTTON に設定します。 (CPSUI は、コールバック関数の戻り値を無視します)。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="PUSHBUTTON_TYPE_DLGPROC"></span><span id="pushbutton_type_dlgproc"></span>PUSHBUTTON_TYPE_DLGPROC</p></td>
-<td><p>アプリケーションのダイアログ ボックス プロシージャでは、ボタンのイベントを処理します。 (詳細については、次を参照してください、<strong>解説</strong>セクション<a href="https://msdn.microsoft.com/library/windows/hardware/ff547607" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547607)"> <strong>DLGPAGE</strong></a>。)。</p>
-<p>関数は、WM_INITDIALOG メッセージを受信するときにその<em>lParam</em>引数が指す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>構造体、<strong>理由</strong>メンバー CPSUICB_REASON_DLGPROC に設定します。</p></td>
+<td><p>アプリケーションのダイアログ ボックス プロシージャでは、ボタンのイベントを処理します。 (詳細については、次を参照してください、<strong>解説</strong>セクション<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage)"> <strong>DLGPAGE</strong></a>。)。</p>
+<p>関数は、WM_INITDIALOG メッセージを受信するときにその<em>lParam</em>引数が指す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_cpsuicbparam" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_cpsuicbparam)"> <strong>CPSUICBPARAM</strong> </a>構造体、<strong>理由</strong>メンバー CPSUICB_REASON_DLGPROC に設定します。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="PUSHBUTTON_TYPE_HTCLRADJ"></span><span id="pushbutton_type_htclradj"></span>PUSHBUTTON_TYPE_HTCLRADJ</p></td>
@@ -182,7 +182,7 @@ TVOT\_プッシュ ボタンのオプションの種類は、グループ ボッ
 
  
 
-<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)構造体  
+<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)構造体  
 
 <span id="___________Type__________"></span><span id="___________type__________"></span><span id="___________TYPE__________"></span> 型   
 TVOT\_プッシュ ボタン
@@ -194,11 +194,11 @@ TVOT\_プッシュ ボタン
 次のオプションのビット フラグを指定することができます。
 
 <span id="OTS_PUSH_ENABLE_ALWAYS"></span><span id="ots_push_enable_always"></span>OTS\_プッシュ\_を有効にする\_常に  
-かどうか設定すると、プッシュ ボタンは常に有効、ユーザーは、プロパティ シート ページを変更できない場合でも (つまり場合でも CPSUIF\_UPDATE\_アクセス許可が設定されていない、 [ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211)構造)。
+かどうか設定すると、プッシュ ボタンは常に有効、ユーザーは、プロパティ シート ページを変更できない場合でも (つまり場合でも CPSUIF\_UPDATE\_アクセス許可が設定されていない、 [ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)構造)。
 
 プッシュ ボタンのコールバック関数は、ダイアログ ボックスで、表示する必要がありますが、ユーザーによる変更をすることはできません。
 
-注: このフラグを設定する必要がありますも、**フラグ**のメンバー、 [ **OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)構造体。
+注: このフラグを設定する必要がありますも、**フラグ**のメンバー、 [ **OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)構造体。
 
 <span id="OTS_PUSH_INCL_SETUP_TITLE"></span><span id="ots_push_incl_setup_title"></span>OTS\_プッシュ\_含める\_セットアップ\_タイトル  
 設定すると、CPSUI が含まれるかどうか、単語「セットアップ」、ボタンの名前の文字列の後 (**pName** OPTITEM で)。
@@ -207,7 +207,7 @@ TVOT\_プッシュ ボタン
 かどうか設定、CPSUI 後を含む 3 つのドット (...) ボタンの名前の文字列 (**pName** OPTITEM で)。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
-場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://msdn.microsoft.com/library/windows/hardware/ff547607) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
+場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
 
 それ以外の場合、 **BegCtrlID**順番に番号付きの一連のコントロール id の最初のコントロールの識別子を含める必要があります。 コントロールの id は、次の Windows コントロールを識別する必要があります。
 
@@ -252,7 +252,7 @@ TVOT\_プッシュ ボタン
 
  
 
-詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)します。
+詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)します。
 
 <a name="requirements"></a>要件
 ------------

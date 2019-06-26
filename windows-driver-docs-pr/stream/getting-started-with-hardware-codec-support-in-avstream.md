@@ -6,12 +6,12 @@ keywords:
 - ハードウェアのコーデック サポート WDK AVStream を使用して
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e21751d64eac49db8337e789474709134f08782
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c00e7000ce4b8be7166306a6620dee5bbe0e754
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363623"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384046"
 ---
 # <a name="getting-started-with-hardware-codec-support-in-avstream"></a>AVStream のハードウェア コーデック サポートの概要
 
@@ -45,19 +45,19 @@ Windows 7 には、ソフトウェア ベースのコード変換もサポート
 
 -   Windows 7 および Windows の以降のバージョンで利用可能な次 KS カテゴリのいずれかで KS フィルターの処理、メディアを登録します。
 
-    -   [**KSMFT\_カテゴリ\_ビデオ\_デコーダー**](https://msdn.microsoft.com/library/windows/hardware/ff548602)
-    -   [**KSMFT\_カテゴリ\_ビデオ\_エンコーダー**](https://msdn.microsoft.com/library/windows/hardware/ff548611)
-    -   [**KSMFT\_カテゴリ\_ビデオ\_プロセッサ**](https://msdn.microsoft.com/library/windows/hardware/ff548613)
-    -   [**KSMFT\_CATEGORY\_AUDIO\_DECODER**](https://msdn.microsoft.com/library/windows/hardware/ff548572)
-    -   [**KSMFT\_CATEGORY\_AUDIO\_ENCODER**](https://msdn.microsoft.com/library/windows/hardware/ff548584)
+    -   [**KSMFT\_カテゴリ\_ビデオ\_デコーダー**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-decoder)
+    -   [**KSMFT\_カテゴリ\_ビデオ\_エンコーダー**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-encoder)
+    -   [**KSMFT\_カテゴリ\_ビデオ\_プロセッサ**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-processor)
+    -   [**KSMFT\_CATEGORY\_AUDIO\_DECODER**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-decoder)
+    -   [**KSMFT\_CATEGORY\_AUDIO\_ENCODER**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-encoder)
 
     さらに、次のカテゴリはトランス コードの他のシナリオで使用するためも定義されます。
 
-    -   [**KSMFT\_カテゴリ\_ビデオ\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff548607)
-    -   [**KSMFT\_カテゴリ\_マルチプレクサー**](https://msdn.microsoft.com/library/windows/hardware/ff548596)
-    -   [**KSMFT\_カテゴリ\_デマルチプレクサー**](https://msdn.microsoft.com/library/windows/hardware/ff548594)
-    -   [**KSMFT\_CATEGORY\_AUDIO\_EFFECT**](https://msdn.microsoft.com/library/windows/hardware/ff548578)
-    -   [**KSMFT\_カテゴリ\_OTHER**](https://msdn.microsoft.com/library/windows/hardware/ff548601)
+    -   [**KSMFT\_カテゴリ\_ビデオ\_効果**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-effect)
+    -   [**KSMFT\_カテゴリ\_マルチプレクサー**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-multiplexer)
+    -   [**KSMFT\_カテゴリ\_デマルチプレクサー**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-demultiplexer)
+    -   [**KSMFT\_CATEGORY\_AUDIO\_EFFECT**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-effect)
+    -   [**KSMFT\_カテゴリ\_OTHER**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-other)
 -   Media foundation アプリケーションを使用できますし、 [MFTEnumEx](https://go.microsoft.com/fwlink/p/?linkid=155058)関数に記載されているカテゴリを使用して、仕様として登録されているデバイスを列挙します。
 
  

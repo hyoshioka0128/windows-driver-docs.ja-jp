@@ -9,12 +9,12 @@ keywords:
 - HwVidGetVideoChildDescriptor
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6978919b2dce9f3f36ca7c44f8735aa4626387
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be2ea7678a3883d317618a2ee416da83f6a93f0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348842"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384879"
 ---
 # <a name="detecting-child-devices"></a>子デバイスの検出
 
@@ -22,17 +22,17 @@ ms.locfileid: "63348842"
 ## <span id="ddk_detecting_child_devices_gg"></span><span id="DDK_DETECTING_CHILD_DEVICES_GG"></span>
 
 
-実装する必要があります[ *HwVidGetVideoChildDescriptor* ](https://msdn.microsoft.com/library/windows/hardware/ff567341)グラフィックス アダプターの子デバイスを検出することができる、プラグ アンド プレイ マネージャーは、ミニポート ドライバー。
+実装する必要があります[ *HwVidGetVideoChildDescriptor* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_get_child_descriptor)グラフィックス アダプターの子デバイスを検出することができる、プラグ アンド プレイ マネージャーは、ミニポート ドライバー。
 
-既定では、 [ *HwVidGetVideoChildDescriptor* ](https://msdn.microsoft.com/library/windows/hardware/ff567341)まで、親デバイスが開始されている後に呼び出すことができません、 *HwVidGetVideoChildDescriptor*呼び出すことができませんまで後[ *HwVidFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff567332)が完了します。 設定することができます、いつでも発生する子列挙できますつまり、この既定をオーバーライドする、 **AllowEarlyEnumeration**のメンバー [**ビデオ\_HW\_の初期化。\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff570505)に**TRUE**します。
+既定では、 [ *HwVidGetVideoChildDescriptor* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_get_child_descriptor)まで、親デバイスが開始されている後に呼び出すことができません、 *HwVidGetVideoChildDescriptor*呼び出すことができませんまで後[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)が完了します。 設定することができます、いつでも発生する子列挙できますつまり、この既定をオーバーライドする、 **AllowEarlyEnumeration**のメンバー [**ビデオ\_HW\_の初期化。\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_hw_initialization_data)に**TRUE**します。
 
 一部のデバイスは、システムまたは既存のハードウェアが、システムから切断されている場合、新しいハードウェアが接続されているときに、割り込みを生成します。 このような割り込みを処理するために、ミニポート ドライバーは、次の操作を行う必要があります。
 
--   DPC の実装 ([**HwVidDpcRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff567327)) を呼び出す[ **VideoPortEnumerateChildren**](https://msdn.microsoft.com/library/windows/hardware/ff570297)します。
+-   DPC の実装 ([**HwVidDpcRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pminiport_dpc_routine)) を呼び出す[ **VideoPortEnumerateChildren**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportenumeratechildren)します。
 
--   割り込みハンドラーの実装 ([*HwVidInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff567349)) を呼び出す[ **VideoPortQueueDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff570339)ときに、割り込み、DPC キューに入れ、デバイスに発生します。
+-   割り込みハンドラーの実装 ([*HwVidInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_interrupt)) を呼び出す[ **VideoPortQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportqueuedpc)ときに、割り込み、DPC キューに入れ、デバイスに発生します。
 
-[**VideoPortEnumerateChildren** ](https://msdn.microsoft.com/library/windows/hardware/ff570297)強制的によって、ミニポート ドライバーのアダプターの子のデバイスの再列挙[ *HwVidGetVideoChildDescriptor* ](https://msdn.microsoft.com/library/windows/hardware/ff567341)関数親デバイスの子のそれぞれに対して呼び出されます。 プラグ アンド プレイ マネージャーは、親デバイスとその子間のリレーションシップを適宜更新されます。
+[**VideoPortEnumerateChildren** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportenumeratechildren)強制的によって、ミニポート ドライバーのアダプターの子のデバイスの再列挙[ *HwVidGetVideoChildDescriptor* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_get_child_descriptor)関数親デバイスの子のそれぞれに対して呼び出されます。 プラグ アンド プレイ マネージャーは、親デバイスとその子間のリレーションシップを適宜更新されます。
 
  
 

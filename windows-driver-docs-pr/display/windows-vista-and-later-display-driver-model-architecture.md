@@ -9,12 +9,12 @@ keywords:
 - ユーザー モード ドライバー WDK Windows Vista では、アーキテクチャの表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f0d6774937d17cbf1939807252a6086cc392c19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbf217677d6e3ba7479943d5c4ce6978e77df48e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391134"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386233"
 ---
 # <a name="windows-display-driver-model-wddm-architecture"></a>Windows Display Driver Model (WDDM) のアーキテクチャ
 
@@ -26,7 +26,7 @@ ms.locfileid: "63391134"
 
 ![wddm アーキテクチャを示す図](images/dx10arch.png)
 
-グラフィックス ハードウェアのベンダーには、ユーザー モードのディスプレイ ドライバーとディスプレイのミニポート ドライバーを指定する必要があります。 ユーザー モードのディスプレイ ドライバーは、マイクロソフトの Direct3D ランタイムによって読み込まれるダイナミック リンク ライブラリ (DLL) です。 表示*ミニポート ドライバー* Microsoft DirectX グラフィックスのカーネル サブシステムと通信します。 ユーザー モードのディスプレイ ドライバーとディスプレイのミニポート ドライバーの詳細については、次を参照してください。、 [Windows 表示 Driver Model (WDDM) 参照](https://msdn.microsoft.com/library/windows/hardware/ff570595)します。
+グラフィックス ハードウェアのベンダーには、ユーザー モードのディスプレイ ドライバーとディスプレイのミニポート ドライバーを指定する必要があります。 ユーザー モードのディスプレイ ドライバーは、マイクロソフトの Direct3D ランタイムによって読み込まれるダイナミック リンク ライブラリ (DLL) です。 表示*ミニポート ドライバー* Microsoft DirectX グラフィックスのカーネル サブシステムと通信します。 ユーザー モードのディスプレイ ドライバーとディスプレイのミニポート ドライバーの詳細については、次を参照してください。、 [Windows 表示 Driver Model (WDDM) 参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_display/)します。
 
  
 

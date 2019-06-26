@@ -5,12 +5,12 @@ ms.assetid: 0481f225-869f-4313-9bc5-7af1de0b7d2d
 ms.date: 08/08/2017
 keywords: -OID_GEN_RCV_ERROR ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5718f66189768fcb9ff929955ad9c52b30a162ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cdded96c483e6b4ab9bf2cdaed354a34644f017e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571616"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386223"
 ---
 # <a name="oidgenrcverror"></a>OID\_GEN\_受信\_エラー
 
@@ -37,9 +37,9 @@ ms.locfileid: "56571616"
 <a name="remarks"></a>コメント
 -------
 
-Oid の統計に関する概要については、[General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)を参照してください。
+Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

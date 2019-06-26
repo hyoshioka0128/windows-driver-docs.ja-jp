@@ -11,12 +11,12 @@ keywords:
 - IRP の完了ルーチン WDK IRP の完了ルーチンの詳細については、システムをファイルします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 338c545fd61f462936207280f66cf8504b53f1b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed82fa6e50c103aefc06e53b444e695109af9a2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379420"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380278"
 ---
 # <a name="using-irp-completion-routines"></a>IRP 完了ルーチンの使用
 
@@ -29,7 +29,7 @@ ms.locfileid: "63379420"
 </div>
  
 
-ファイル システム フィルター ドライバーは、デバイス ドライバーで使用されるものに類似した完了ルーチンを使用します。 A*完了ルーチン*完了 IRP の処理を実行します。 [次へ] の下位レベルのドライバーは IRP を通過するドライバーのルーチンは呼び出すことによって IRP の完了ルーチンを必要に応じて登録できます[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679)呼び出す前に[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+ファイル システム フィルター ドライバーは、デバイス ドライバーで使用されるものに類似した完了ルーチンを使用します。 A*完了ルーチン*完了 IRP の処理を実行します。 [次へ] の下位レベルのドライバーは IRP を通過するドライバーのルーチンは呼び出すことによって IRP の完了ルーチンを必要に応じて登録できます[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)呼び出す前に[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
 
 すべて IRP の完了ルーチンの定義は次のとおりです。
 
@@ -44,7 +44,7 @@ NTSTATUS
 
 完了のルーチンは IRQL で呼び出される&lt;= ディスパッチ\_レベルを任意のスレッド コンテキスト。
 
-IRQL のディスパッチで呼び出すことができるため、\_レベル、完了ルーチンは、下の IRQL でなど、呼び出す必要があるカーネル モードのルーチンを呼び出すことはできません[ **IoDeleteDevice**](https://msdn.microsoft.com/library/windows/hardware/ff549083)します。 同じ理由で完了ルーチンで使用されている任意のデータ構造は、非ページ プールから割り当てる必要があります。
+IRQL のディスパッチで呼び出すことができるため、\_レベル、完了ルーチンは、下の IRQL でなど、呼び出す必要があるカーネル モードのルーチンを呼び出すことはできません[ **IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)します。 同じ理由で完了ルーチンで使用されている任意のデータ構造は、非ページ プールから割り当てる必要があります。
 
 このセクションでは、次のトピックについて説明します。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d0584931acec5a0ad9bcaa52f3a7d80197bbe821
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: acc241672d79941a4bad6a461d6b832225e8a9dc
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360443"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391982"
 ---
 # <a name="bug-check-0x144-bugcodeusb3driver"></a>バグ チェック 0x144:BUGCODE\_USB3\_ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63360443"
 **BUGCODE\_USB3\_ドライバー**バグ チェックが 0x00000144 の値を持ちます。 これは、すべての USB 3 のバグ チェックに使用されるコードです。 パラメーター 1 は、USB 3 のバグ チェックの種類を指定し、その他のパラメーターの意味では、パラメーター 1 に依存します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="bugcodeusb3driver-parameters"></a>BUGCODE\_USB3\_ドライバーのパラメーター
@@ -66,7 +66,7 @@ ms.locfileid: "63360443"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>任意。 IRP へのポインター、URB を送信するために使用</p></td>
+<td align="left"><p>(省略可能)。 IRP へのポインター、URB を送信するために使用</p></td>
 <td align="left"><p>破損した URB へのポインター</p></td>
 <td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーでは、core スタックに破損した URB が送信されます。 クライアント ドライバーを使用して、URB も割り当てられませんでしたので、これに<strong>USBD_<em>xxx</em>UrbAllocate</strong>またはクライアント ドライバーが、バッファー アンダーラン URB の。</p></td>
@@ -102,13 +102,13 @@ ms.locfileid: "63360443"
 <tr class="even">
 <td align="left"><p>0x804</p></td>
 <td align="left"><p>漏洩したハンドル コンテキスト。 実行<strong>! usbanalyze v</strong>漏洩ハンドルと翻訳に関する情報を取得します。 クライアント ドライバーをドライバーの検証を有効にする必要があります。</p></td>
-<td align="left"><p>デバイス オブジェクトに渡される <strong><a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[USBD_CreateHandle](https://msdn.microsoft.com/library/windows/hardware/hh406241)">USBD_CreateHandle</a></strong>します。</p></td>
+<td align="left"><p>デバイス オブジェクトに渡される <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[USBD_CreateHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)">USBD_CreateHandle</a></strong>します。</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>使用して作成された、ハンドルを閉じることを忘れた場合、クライアント ドライバー <strong><a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[USBD_CreateHandle](https://msdn.microsoft.com/library/windows/hardware/hh406241)">USBD_CreateHandle</a></strong> URB、割り当てを解放していませんか。</p></td>
+<td align="left"><p>使用して作成された、ハンドルを閉じることを忘れた場合、クライアント ドライバー <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[USBD_CreateHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)">USBD_CreateHandle</a></strong> URB、割り当てを解放していませんか。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x805</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff542962" data-raw-source="[WDFREQUEST](https://msdn.microsoft.com/library/windows/hardware/ff542962)">WDFREQUEST</a>閉じる静的ストリーム URB の処理</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects" data-raw-source="[WDFREQUEST](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-request-objects)">WDFREQUEST</a>閉じる静的ストリーム URB の処理</p></td>
 <td align="left"><p>閉じる静的ストリーム URB へのポインター</p></td>
 <td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
 <td align="left"><p>クライアント ドライバーでは、(たとえば、D0 の終了を処理) 後、無効な状態で閉じる静的ストリーム URB を送信します。</p></td>
@@ -118,14 +118,14 @@ ms.locfileid: "63360443"
 <td align="left"><p>IRP へのポインター</p></td>
 <td align="left"><p>URB へのポインター</p></td>
 <td align="left"><p>クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバーが、チェーンを送信しようとしています。 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong>チェーンのクエリを実行する前に<strong>MDL</strong>機能します。 クライアント ドライバーは、連鎖送信できない<strong>MDL</strong> 、チェーンを正常に照会した後まで<strong>MDL</strong>機能します。 詳細については、「解説」を参照してください。</p></td>
+<td align="left"><p>クライアント ドライバーが、チェーンを送信しようとしています。 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong>チェーンのクエリを実行する前に<strong>MDL</strong>機能します。 クライアント ドライバーは、連鎖送信できない<strong>MDL</strong> 、チェーンを正常に照会した後まで<strong>MDL</strong>機能します。 詳細については、「解説」を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x807</p></td>
-<td align="left"><p>連鎖的に呼び出すへのポインター  <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong></p></td>
+<td align="left"><p>連鎖的に呼び出すへのポインター  <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong></p></td>
 <td align="left"><p>URB へのポインター</p></td>
 <td align="left"><p>使用可能な場合に、クライアント ドライバーのデバイス オブジェクトへのポインター</p></td>
-<td align="left"><p>クライアント ドライバー、URB に送信、転送 core スタック バッファー長をバイト数よりも長い (によって返される <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554530" data-raw-source="[MmGetMdlByteCount](https://msdn.microsoft.com/library/windows/hardware/ff554530)">MmGetMdlByteCount</a></strong>) の <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong>で渡されます。 詳細については、「解説」を参照してください。</p></td>
+<td align="left"><p>クライアント ドライバー、URB に送信、転送 core スタック バッファー長をバイト数よりも長い (によって返される <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetmdlbytecount" data-raw-source="[MmGetMdlByteCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetmdlbytecount)">MmGetMdlByteCount</a></strong>) の <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[MDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)">MDL</a></strong>で渡されます。 詳細については、「解説」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1001</p></td>
@@ -401,14 +401,14 @@ ms.locfileid: "63360443"
 <a name="remarks"></a>注釈
 -------
 
-USB 機能の 1 つのクエリを実行するクライアント ドライバーを呼び出す必要があります[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh439434)または[ **USBD\_QueryUsbCapability**](https://msdn.microsoft.com/library/windows/hardware/hh406230)
+USB 機能の 1 つのクエリを実行するクライアント ドライバーを呼び出す必要があります[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)または[ **USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))
 
-チェーンを送信する[ **MDL**](https://msdn.microsoft.com/library/windows/hardware/ff554414)、クライアント ドライバーを呼び出す必要があります[ **USBD\_QueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh406230)して**URB\_関数\_一括\_OR\_INTERRUPT\_転送\_USING\_連結された\_MDL**または**URB\_関数\_アイソクロナス\_転送\_USING\_連結された\_MDL**します。
+チェーンを送信する[ **MDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)、クライアント ドライバーを呼び出す必要があります[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))して**URB\_関数\_一括\_OR\_INTERRUPT\_転送\_USING\_連結された\_MDL**または**URB\_関数\_アイソクロナス\_転送\_USING\_連結された\_MDL**します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)
 
  
 

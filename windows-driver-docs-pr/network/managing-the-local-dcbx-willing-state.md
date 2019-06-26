@@ -4,12 +4,12 @@ description: ローカル DCBX Willing 状態の管理
 ms.assetid: B37CA18B-FCCD-414D-95AB-0C54B9F1F421
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8bf348dbc6ee033ae6cd0f0e3f85b04ff4bd7fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25805d3cac9ba70ceb59eac15e0151f371b8bfc1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343498"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379208"
 ---
 # <a name="managing-the-local-dcbx-willing-state"></a>ローカル DCBX Willing 状態の管理
 
@@ -38,9 +38,9 @@ ETS と PFC TLVs 定義と少し呼ばれる、*許容*ビット。 ネットワ
 
 ミニポート ドライバーでは、ローカルの DCBX しようとして次のように状態を管理します。
 
--   呼び出すことによって、ミニポート ドライバーが初期化される場合、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数、しようとして状態を IHV で定義されている独自の QoS 設定に基づいてローカル DCBX を有効にする必要があります.
+-   呼び出すことによって、ミニポート ドライバーが初期化される場合、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数、しようとして状態を IHV で定義されている独自の QoS 設定に基づいてローカル DCBX を有効にする必要があります.
 
--   DCB コンポーネント (Msdcb.sys) のオブジェクト識別子 (OID) メソッド要求の発行[OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)ネットワーク アダプターでローカルの QoS パラメーターを構成します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)この OID 要求、へのポインターが含まれている構造体[ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。
+-   DCB コンポーネント (Msdcb.sys) のオブジェクト識別子 (OID) メソッド要求の発行[OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)ネットワーク アダプターでローカルの QoS パラメーターを構成します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)この OID 要求、へのポインターが含まれている構造体[ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体。
 
     場合、 **NDIS\_QOS\_パラメーター\_WILLING**フラグに設定されて、**フラグ**この構造体のメンバーは、有効にしようとして状態 DCBX ミニポート ドライバー。 このビットが設定されていない場合、ミニポート ドライバーには、状態のような場面 DCBX が無効になります。
 
@@ -48,7 +48,7 @@ LLDP の詳細については、IEEE 802.1AB を参照してください-2005 st
 
 ローカルの DCBX 許容 bits と TLVs の詳細については、IEEE 802.1 qaz を参照してくださいドラフト標準。
 
-**注**  以降 Windows Server 2012 では、DCB コンポーネントで構成できますオンまたはオフにするには、PowerShell コマンドレット、 **NDIS\_QOS\_パラメーター\_WILLING**フラグを発行するとき、 [OID\_QOS\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451835)要求。 これにより、それぞれ有効または無効にしようとして状態ローカル DCBX ミニポート ドライバーです。
+**注**  以降 Windows Server 2012 では、DCB コンポーネントで構成できますオンまたはオフにするには、PowerShell コマンドレット、 **NDIS\_QOS\_パラメーター\_WILLING**フラグを発行するとき、 [OID\_QOS\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)要求。 これにより、それぞれ有効または無効にしようとして状態ローカル DCBX ミニポート ドライバーです。
 
  
 

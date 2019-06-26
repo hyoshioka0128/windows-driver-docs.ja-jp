@@ -1,14 +1,14 @@
 ---
-Description: The topics in this section examine the ways in which the WDM power model interacts with the power management properties of USB devices.
+Description: このセクションのトピックでは、USB デバイスの電源管理のプロパティを持つ WDM power モデルが対話する方法を確認します。
 title: USB クライアント ドライバーでの電源管理の実装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2285cfc9e7096b73433a880cb7e4ef2279e3baeb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: baa5df03cbffcf5e42e9c4623e2df9ef2fc10d12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582016"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356582"
 ---
 # <a name="implementing-power-management-in-usb-client-drivers"></a>USB クライアント ドライバーでの電源管理の実装
 
@@ -17,9 +17,9 @@ ms.locfileid: "56582016"
 
 ユニバーサル シリアル バス (USB) 仕様に準拠している USB デバイスの電源管理機能には、電源管理機能のリッチで複雑なセットがあります。 これらの機能が Windows Driver Model (WDM) とやり取りする方法を理解することが重要と、システム アーキテクチャのウェイク アップをサポートするために特に機能 Microsoft Windows が標準の USB を適応させる方法。
 
-カーネル モード ドライバー WDM 電源管理については、[電源管理の実装](https://msdn.microsoft.com/library/windows/hardware/ff547131)を参照してください。
+カーネル モード ドライバー WDM 電源管理については、次を参照してください。[電源管理の実装](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)します。
 
-USB クライアント ドライバーは、カーネル モード ドライバー フレームワーク (KMDF) に基づいており、ユーザー モード ドライバー フレームワーク (UMDF) は、基本テクノロジや USB デバイスの電源を管理するためのそれぞれのフレームワークでサポートされているメカニズムを使用する必要があります。 KMDF ベースのクライアント ドライバーでの電源を管理する方法の詳細については、次を参照してください[PnP をサポートしていると、ドライバーでの電源管理](https://msdn.microsoft.com/library/windows/hardware/ff544686); UMDF ベースのクライアント ドライバーでは、を参照してください[UMDFベースのドライバーでのPnPと電源管理](https://msdn.microsoft.com/library/windows/hardware/ff560449)。
+USB クライアント ドライバーは、カーネル モード ドライバー フレームワーク (KMDF) に基づいており、ユーザー モード ドライバー フレームワーク (UMDF) は、基本テクノロジや USB デバイスの電源を管理するためのそれぞれのフレームワークでサポートされているメカニズムを使用する必要があります。 KMDF ベースのクライアント ドライバーでの電源を管理する方法の詳細については、次を参照してください[PnP をサポートしていると、ドライバーでの電源管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-your-driver); UMDF ベースのクライアント ドライバーでは、を参照してください[UMDFベースのドライバーでのPnPと電源管理。](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-in-umdf-drivers)
 
 ## <a name="in-this-section"></a>このセクションの内容
 

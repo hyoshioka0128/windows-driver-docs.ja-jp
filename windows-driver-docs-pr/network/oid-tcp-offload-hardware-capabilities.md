@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES、WDK の Oid、WDK のオブジェクト識別子では、WDK の Oid をネットワークのネットワーク
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82142e79d6df74a739bc36e402ff40b5f3c59718
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ba72d60d8adc52b40dc97e2a752cd99535a8710
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354147"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386962"
 ---
 # <a name="oidtcpoffloadhardwarecapabilities"></a>OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES
 
@@ -21,16 +21,16 @@ ms.locfileid: "63354147"
 
 ## <a name="remarks"></a>注釈
 
-NDIS は、ミニポート ドライバーには、この OID を処理します。 ミニポート ドライバーでは、NDIS ミニポート アダプター ハードウェア機能を報告します。 レポート タスク オフロードのハードウェア機能を NDIS ミニポート ドライバーおよび NDIS から上にあるドライバーについては、次を参照してください。 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)します。
+NDIS は、ミニポート ドライバーには、この OID を処理します。 ミニポート ドライバーでは、NDIS ミニポート アダプター ハードウェア機能を報告します。 レポート タスク オフロードのハードウェア機能を NDIS ミニポート ドライバーおよび NDIS から上にあるドライバーについては、次を参照してください。 [NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)します。
 
-**InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。 NDIS は、バッファーの大きさがない場合、NDIS_STATUS_BUFFER_TOO_SHORT を返します。
+**InformationBuffer**のメンバー、 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、 [NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造体。 NDIS は、バッファーの大きさがない場合、NDIS_STATUS_BUFFER_TOO_SHORT を返します。
 
 上位のアプリケーションまたはドライバーを使用できます、ミニポート アダプターのハードウェア機能を決定した後、 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) によって報告される現在の機能を有効にするOIDが有効にしないように[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md) OID。
 
 ### <a name="see-also"></a>関連項目
 
-[NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)  
-[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
+[NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)  
+[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)  
 [OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md)  
 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)  
 

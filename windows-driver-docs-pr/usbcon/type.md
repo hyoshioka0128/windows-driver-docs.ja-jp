@@ -3,12 +3,12 @@ Description: このトピックでは、有効になっている C USB の型シ
 title: USB Type-C 手動相互運用性テスト手順
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d67c271a1983222ebbe8aa529b6c216cac979eea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdbbe69fb2defd000933a0842b6a2cfcf07cb392
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324388"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393132"
 ---
 # <a name="usb-type-c-manual-interoperability-test-procedures"></a>USB Type-C 手動相互運用性テスト手順
 
@@ -19,7 +19,7 @@ ms.locfileid: "63324388"
 -   さまざまなテストの計画、割り当てられた時間の特定の目的を解決するためのものです。
 -   診断手順とデバイスの追加と削除などのシナリオを確認するためのヒント。
 
-* * に適用されます * *
+\* * に適用されます * *
 
 -   Windows 10
 
@@ -155,7 +155,7 @@ USB タイプ C での課金を確認します。
 
 その他の使用可能なシステム電源の状態については、このテストを繰り返します。(S3) をスリープ、休止状態 (S4) とハイブリッド スリープします。
 
-**注**  pwrtest.exe、Windows Driver Kit (WDK) で含まれているを使用して、電源の状態への移行を簡略化します。 詳細については、次を参照してください。 [PwrTest](https://msdn.microsoft.com/library/windows/hardware/ff550682)します。
+**注**  pwrtest.exe、Windows Driver Kit (WDK) で含まれているを使用して、電源の状態への移行を簡略化します。 詳細については、次を参照してください。 [PwrTest](https://docs.microsoft.com/windows-hardware/drivers/devtest/pwrtest)します。
 
  
 
@@ -175,7 +175,7 @@ USB タイプ C での課金を確認します。
 選択的の追加情報を中断、次のソースから確認できます。
 
 -   [HID の中断選択を有効にします。](https://go.microsoft.com/fwlink/p/?LinkId=623307)
--   [HID を USB デバイスをセレクティブ中断します。](https://msdn.microsoft.com/library/windows/hardware/jj131716)
+-   [HID を USB デバイスをセレクティブ中断します。](https://docs.microsoft.com/windows-hardware/drivers/hid/selective-suspend-for-hid-over-usb-devices)
 -   [選択的分かりやすい解説を中断]( https://go.microsoft.com/fwlink/p/?LinkId=623308)
 
 ## <a href="" id="ft5"></a>FT ケース 5:ドッキング ステーションの識別
@@ -408,7 +408,7 @@ USB タイプ C での課金を確認します。
 ## <a href="" id="connect"></a>システムにデバイスを接続する方法
 
 
--   3.x の USB デバイスがテスト デバイスに適切な USB 3.x ケーブルを使用することを確認します。
+-   3\.x の USB デバイスがテスト デバイスに適切な USB 3.x ケーブルを使用することを確認します。
 -   デバイスがシステムによって認識されない場合は、不適切なケーブルまたはコネクタをチェックする同じ型の別のケーブルでデバイスを接続してみます。
 
 ## <a href="" id="wake"></a>システム スリープ解除のトラブルシューティング

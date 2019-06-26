@@ -18,12 +18,12 @@ keywords:
 - 状態遷移の遅延の WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2faaebfb81910add8e59229db8b83e5da9f52564
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 3f5aae2c72ec3be0d1a58fe40a925f6687b1efbc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106374"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385012"
 ---
 # <a name="device-low-power-states"></a>デバイスの低電力状態
 
@@ -58,7 +58,7 @@ D1 と D2 は、中間の省電力状態です。 デバイスの多くのクラ
 一般に、D1 から D0 にデバイスを復元するために必要な時間では、D0 へ D2 からの復元より小さくする必要があります。
 
 <a href="" id="wake-up-capability"></a>*ウェイク アップ機能*  
-D1 内のデバイスは、ウェイク アップを要求できる可能性があります。 この状態がウェイク信号をサポートするかどうかに関する情報を指定するバス ドライバーを使用して、 [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体、または Windows 8 では、以降では、 [GUID\_D3COLD\_サポート\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh967714)ドライバー インターフェイス。
+D1 内のデバイスは、ウェイク アップを要求できる可能性があります。 この状態がウェイク信号をサポートするかどうかに関する情報を指定するバス ドライバーを使用して、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体、または Windows 8 では、以降では、 [GUID\_D3COLD\_サポート\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh967714)ドライバー インターフェイス。
 
 通常、D1 を使用するデバイスはこの状態から再開すると、デバイスの完全なハードウェアのコンテキストを復元するドライバーが必要ないためです。 ユーザーの認識の遅延を最小限に抑えるには、デバイスを復元する D0 D1 から可能な限り最小限の遅延が発生する必要があります。 状態遷移の遅延を最小限に抑えることは、電力消費量を減らすことよりも重要です。
 
@@ -79,7 +79,7 @@ D2 は、次の特性を持つ中間デバイス低電力の状態を示しま�
 少なくとも D1 から D0 にデバイスを復元すると同程度に時間がかかり D2 から D0 にデバイスを復元します。 大規模なフレーム バッファーをグラフィックス アダプターでは、大量の D2 から D0 への移行後に復元するハードウェアのコンテキストがあるデバイスの例を示します。 このようなデバイスは、D2 からの復元時は D1 から、復元時間よりもはるかにあります。
 
 <a href="" id="wake-up-capability"></a>*ウェイク アップ機能*  
-D2 内のデバイスは、ウェイク アップを要求できる可能性があります。 この状態がウェイク信号をサポートするかどうかに関する情報を指定するバス ドライバーを使用して、 [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体、または Windows 8 では、以降では、 [GUID\_D3COLD\_サポート\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh967714)ドライバー インターフェイス。
+D2 内のデバイスは、ウェイク アップを要求できる可能性があります。 この状態がウェイク信号をサポートするかどうかに関する情報を指定するバス ドライバーを使用して、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体、または Windows 8 では、以降では、 [GUID\_D3COLD\_サポート\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh967714)ドライバー インターフェイス。
 
 通常、D2 をサポートするドライバーは自分のデバイスは、D3 からのスリープ解除をサポートできないので。 これらのデバイス D2 状態の電力消費量はウェイク信号への応答で元のデバイスが回復できる最も低いレベルを削除します。 ユーザーによって認識される遅延を減らしますが実装されている D1 の状態とは対照的 D2 の状態を実装する目的は、電源を節約するためにです。 その結果、D0 D2 からの復元時間通常を超えています D1 から D0 にします。 D2 の状態などバス上の制限の power 可能性が、デバイスを再起動し、デバイスを復元するまでに時間必要になるため、その機能の一部を無効にします。
 
@@ -89,7 +89,7 @@ D2 内のデバイスは、ウェイク アップを要求できる可能性が�
 
 D3 は、デバイスの電源が最も低い低電力状態です。 すべてのデバイスでは、この状態をサポートする必要があります。
 
-オペレーティング システム以降 Windows 8 では、2 つ異なる下位、D3hot と D3cold に D3 に細分化します。 Windows の以前のバージョンが D3 の状態が D3hot できませんを定義し、D3cold substates します。 ただし、すべてのバージョンの[PCI バス Power Management Interface Specification](https://www.pcisig.com/specifications/conventional/)個別 D3hot と D3cold の下位と 4 以降のバージョンを定義、 [Advanced Configuration and Power Interface Specification](https://go.microsoft.com/fwlink/p/?linkid=57185) D3hot を定義し、D3cold substates します。
+オペレーティング システム以降 Windows 8 では、2 つ異なる下位、D3hot と D3cold に D3 に細分化します。 Windows の以前のバージョンが D3 の状態が D3hot できませんを定義し、D3cold substates します。 ただし、すべてのバージョンの[PCI バス Power Management Interface Specification](https://pcisig.com/specifications/conventional/)個別 D3hot と D3cold の下位と 4 以降のバージョンを定義、 [Advanced Configuration and Power Interface Specification](https://go.microsoft.com/fwlink/p/?linkid=57185) D3hot を定義し、D3cold substates します。
 
 Windows 8 の前に Windows のバージョンは D3 の D3hot と D3cold 下位を明示的に定義しても、これらの下位は以前のバージョンの Windows で暗黙的に存在しません。 デバイスは暗黙的に D3hot 下位状態場合は、デバイスが明示的に D3 の状態であり、コンピューターが S0 システム電源の状態。 累乗に D3hot でデバイスが接続されている (ただし、現在の低を描画するためには、デバイスを構成する場合があります)、ソースおよびバス上のデバイスの存在を検出できます。 D3 の状態が明示的にあり、コンピューターが省電力 Sx 状態 (S0 以外の状態) の場合、デバイスは下位 D3cold 状態で暗黙的にです。 この暗黙的な D3cold 下位状態でそのデバイスは現在、トリクルを受け取る可能性があります、デバイスとコンピューターが効果的に無効になっていますウェイク イベントが発生するまで。
 
@@ -134,7 +134,7 @@ D3hot には、次の特徴があります。
 合計復元時間は D3cold、以外の電源の状態は、デバイスのいずれかの最大値が、通常は D2 からの復元時刻よりも大きくありません。
 
 <a href="" id="wake-up-capability"></a>*ウェイク アップ機能*  
-下位 D3hot 状態内のデバイスでは、可能性があります。 またはできないウェイク アップを要求することがあります。 バス ドライバーを使用してこの下位状態がウェイク信号をサポートするかどうかに関する情報を指定する、 [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体、または Windows 8 では、以降では、 [GUID\_D3COLD\_サポート\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh967714)ドライバー インターフェイス。
+下位 D3hot 状態内のデバイスでは、可能性があります。 またはできないウェイク アップを要求することがあります。 バス ドライバーを使用してこの下位状態がウェイク信号をサポートするかどうかに関する情報を指定する、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体、または Windows 8 では、以降では、 [GUID\_D3COLD\_サポート\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh967714)ドライバー インターフェイス。
 
 D3hot、最小限のトリクル現在は使用できます。 電源の有無は、ドライバーとハードウェアを準備する必要があります。 通常 D3hot をサポートするバスの仕様では、この状態で使用できる電源の詳細な要件を提供します。 デバイスを動作状態に戻ります、デバイスのドライバーを復元し、オプションでは、デバイスで利用できる可能性がある ROM コードが実行している BIOS によってことがなく、デバイスを再初期化する必要がありますできます。
 
@@ -159,7 +159,7 @@ D3cold には、次の特徴があります。
 合計復元時間は、デバイスの電源状態のいずれかの最大値。
 
 <a href="" id="wake-up-capability"></a>*ウェイク アップ機能*  
-D3cold 下位状態で、デバイスは休止中のコンピューターをウェイクするためウェイク信号をトリガーすることにあります。 この機能が報告される、 [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体し、によって、Windows 8 以降、 [ *GetIdleWakeInfo*](https://msdn.microsoft.com/library/windows/hardware/hh967712)で日常的な[GUID\_D3COLD\_サポート\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh967714)ドライバー インターフェイス。 シグナルは、コンピューターを起動した後、デバイス ドライバーは D3cold から D0 へのデバイスの移行を開始します。 詳細については、次の「解説」を参照してください。
+D3cold 下位状態で、デバイスは休止中のコンピューターをウェイクするためウェイク信号をトリガーすることにあります。 この機能が報告される、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体し、によって、Windows 8 以降、 [ *GetIdleWakeInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_idle_wake_info)で日常的な[GUID\_D3COLD\_サポート\_インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh967714)ドライバー インターフェイス。 シグナルは、コンピューターを起動した後、デバイス ドライバーは D3cold から D0 へのデバイスの移行を開始します。 詳細については、次の「解説」を参照してください。
 
 Windows 8 以降、D3cold 下位状態内のデバイスは S0 システム電源の状態にあるコンピューターにウェイク信号をトリガーすることがあります。 この機能がによって報告された、 *GetIdleWakeInfo*ルーチン。 **デバイス\_機能**構造では、この機能の詳細についての情報は含まれません。 ウェイク信号が到着すると、デバイス ドライバーは D3cold から D0 へのデバイスの移行を開始します。 この場合は、信号が到着すると、デバイスのみをスリープ解除する必要がある場合は、コンピューターが起動します。
 

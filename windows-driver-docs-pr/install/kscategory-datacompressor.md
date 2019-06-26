@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1272c0c4fe52eeb5589d5cd20b817737cd26b947
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa6c4474251788e78f54f67f40ef03e4839ff923
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385903"
 ---
 # <a name="kscategorydatacompressor"></a>KSCATEGORY_DATACOMPRESSOR
 
 
-KSCATEGORY_DATACOMPRESSOR[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)データ ストリームを圧縮する (KS) 機能のカテゴリ。
+KSCATEGORY_DATACOMPRESSOR[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)データ ストリームを圧縮する (KS) 機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_DATACOMPRESSOR[デバイス インターフェイス クラス](https
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_DATACOMPRESSOR 機能カテゴリをサポートすることを示す KSCATEGORY_DATACOMPRESSOR のインスタンスを登録します。
 
-KSCATEGORY_DATACOMPRESSOR 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)します。
+KSCATEGORY_DATACOMPRESSOR 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)します。
 
 データ ストリームを圧縮解除 KS 機能のカテゴリに対して定義されているデバイスのインターフェイス クラスについては、次を参照してください。 [ **KSCATEGORY_DATADECOMPRESSOR**](kscategory-datadecompressor.md)します。
 
@@ -81,7 +81,7 @@ KSCATEGORY_DATACOMPRESSOR 機能のカテゴリは、のいずれか、 [ **KSPR
 
 [**KSCATEGORY_DATADECOMPRESSOR**](kscategory-datadecompressor.md)
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

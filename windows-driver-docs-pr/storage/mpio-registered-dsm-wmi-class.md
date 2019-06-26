@@ -4,12 +4,12 @@ description: MPIO\_REGISTERED\_DSM WMI クラス
 ms.assetid: 3be335bd-e5d8-4611-9ccf-bd7fb0457b61
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2a0bc7e71000eba08061c133e8062e9e902ba080
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc5270747e93080250298617e67fe566043065d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383046"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386145"
 ---
 # <a name="mpioregistereddsm-wmi-class"></a>MPIO\_REGISTERED\_DSM WMI クラス
 
@@ -44,7 +44,7 @@ class MPIO_REGISTERED_DSM
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_REGISTERED\_DSM** ](https://msdn.microsoft.com/library/windows/hardware/ff562449)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_REGISTERED\_DSM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_registered_dsm)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

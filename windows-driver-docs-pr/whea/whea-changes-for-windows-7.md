@@ -9,23 +9,23 @@ keywords:
 - Windows 7 の WDK WHEA、WHEA の変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 213e7015a20186da329760fac190eb3949789a2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b556a934f98db12869340f06d83ae0b46621abc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340636"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387143"
 ---
 # <a name="whea-changes-for-windows-7"></a>Windows 7 での WHEA の変更点
 
 
 Windows 7 以降で、次の変更が加えられました Windows ハードウェア エラー アーキテクチャ (WHEA) します。
 
--   新しいエラー レコードの形式 ([**WHEA\_エラー\_パケット\_V2**](https://msdn.microsoft.com/library/windows/hardware/ff560480)) Windows 7 および Windows の以降のバージョンでハードウェア エラーを報告するために使用します。 以前のエラー レコードの形式 ([WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)) に変更されました[ **WHEA\_エラー\_パケット\_V1**](https://msdn.microsoft.com/library/windows/hardware/ff560476)、Windows Server 2008 および Windows Vista SP1 でのハードウェア エラーをレポートにのみ使用されます。
+-   新しいエラー レコードの形式 ([**WHEA\_エラー\_パケット\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_packet_v2)) Windows 7 および Windows の以降のバージョンでハードウェア エラーを報告するために使用します。 以前のエラー レコードの形式 ([WHEA\_エラー\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))) に変更されました[ **WHEA\_エラー\_パケット\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_packet_v1)、Windows Server 2008 および Windows Vista SP1 でのハードウェア エラーをレポートにのみ使用されます。
 
     以降で、Windows 7 Windows Driver Kit (WDK)、WHEA\_エラー\_パケットは、ビルド ターゲットによって参照か、WHEA マクロ\_エラー\_パケット\_V1 または WHEA\_エラー\_パケット\_V2 構造体。
 
-    この変更の詳細については、次を参照してください。 [WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)します。
+    この変更の詳細については、次を参照してください。 [WHEA\_エラー\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))します。
 
 -   さまざまな Windows ハードウェア エラー アーキテクチャ (WHEA) データ型は、Windows 7 Windows Driver Kit (WDK) で名前変更されています。 これらの変更の詳細については、次を参照してください。 [WHEA データ型の名前を変更](renamed-whea-data-types.md)します。
 
@@ -33,7 +33,7 @@ Windows 7 以降で、次の変更が加えられました Windows ハードウ�
 
     A[プラットフォーム固有のハードウェア エラー ドライバー (PSHED) プラグイン](platform-specific-hardware-error-driver-plug-ins2.md)ECC メモリ PFA 自体を実行することによって、WHEA の PFA サポートを拡張できます。 これにより、プラグインする必要がありますのタイミングを判断をオフライン状態に、メモリ ページを表示します。
 
--   WHEA エラー固有のハードウェアの他のエラーが定義されています。 これらのエラーの詳細については、次を参照してください。 [WHEA ハードウェア エラー イベント (Windows Server 2008、Windows Vista SP1 以降)](https://msdn.microsoft.com/library/windows/hardware/ff560537)します。
+-   WHEA エラー固有のハードウェアの他のエラーが定義されています。 これらのエラーの詳細については、次を参照してください。 [WHEA ハードウェア エラー イベント (Windows Server 2008、Windows Vista SP1 以降)](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560537(v=vs.85))します。
 
  
 

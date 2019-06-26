@@ -10,12 +10,12 @@ keywords:
 - Direct3D の WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00dd1da159a813e24e99989f98bf053d3d46e5c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 637bd7e27d01a6a452bdd12c90bc5f4c9878b580
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358920"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373612"
 ---
 # <a name="user-mode-display-drivers"></a>ユーザー モード ディスプレイ ドライバー
 
@@ -23,7 +23,7 @@ ms.locfileid: "63358920"
 ## <span id="ddk_user_mode_display_drivers_gg"></span><span id="DDK_USER_MODE_DISPLAY_DRIVERS_GG"></span>
 
 
-グラフィックス ハードウェア ベンダーは、そのディスプレイ アダプターのユーザー モードのディスプレイ ドライバーを記述する必要があります。 ユーザー モードのディスプレイ ドライバーは、マイクロソフトの Direct3D ランタイムによって読み込まれるダイナミック リンク ライブラリ (DLL) です。 ユーザー モードのディスプレイ ドライバーをサポートする必要がありますには少なくとも、 [Direct3D のバージョン 9 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552927)します。 ユーザー モードのディスプレイ ドライバーがサポートしているのも、 [Direct3D のバージョン 10 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552909)します。 ユーザー モードのディスプレイ ドライバーは、Direct3D バージョン 9 DDI と Direct3D のバージョンの両方のバージョン 9 のいずれかとその他の Direct3D DDI 10 のバージョンの 2 つの独立した Dll で構成できます DDI 10 またはをサポートする 1 つの DLL で構成できます。 次のトピックでは、ユーザー モードのディスプレイ ドライバーのさまざまな側面について説明します。
+グラフィックス ハードウェア ベンダーは、そのディスプレイ アダプターのユーザー モードのディスプレイ ドライバーを記述する必要があります。 ユーザー モードのディスプレイ ドライバーは、マイクロソフトの Direct3D ランタイムによって読み込まれるダイナミック リンク ライブラリ (DLL) です。 ユーザー モードのディスプレイ ドライバーをサポートする必要がありますには少なくとも、 [Direct3D のバージョン 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/index)します。 ユーザー モードのディスプレイ ドライバーがサポートしているのも、 [Direct3D のバージョン 10 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 ユーザー モードのディスプレイ ドライバーは、Direct3D バージョン 9 DDI と Direct3D のバージョンの両方のバージョン 9 のいずれかとその他の Direct3D DDI 10 のバージョンの 2 つの独立した Dll で構成できます DDI 10 またはをサポートする 1 つの DLL で構成できます。 次のトピックでは、ユーザー モードのディスプレイ ドライバーのさまざまな側面について説明します。
 
 [ランタイム関数から受信したエラー コードを返す](returning-error-codes-received-from-runtime-functions.md)
 

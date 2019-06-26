@@ -4,12 +4,12 @@ description: IStiUSD エスケープ メソッドの使用
 ms.assetid: f9b1ede6-8311-4cc9-8bf7-20018cb35a3d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 963accfe0d2908aab78faabd35d778ac49f128ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 480aff9db018cbd4dcc131e5132ae1430ae7a9de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383693"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375384"
 ---
 # <a name="using-the-istiusd-escape-method"></a>IStiUSD エスケープ メソッドの使用
 
@@ -17,9 +17,9 @@ ms.locfileid: "63383693"
 
 
 
-[ **IStiUSD::Escape** ](https://msdn.microsoft.com/library/windows/hardware/ff543815)ハードウェアに直接情報を渡すメソッドが呼び出されます。 このメソッドは、Windows XP およびそれ以降のオペレーティング システムでのみサポートされます。
+[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)ハードウェアに直接情報を渡すメソッドが呼び出されます。 このメソッドは、Windows XP およびそれ以降のオペレーティング システムでのみサポートされます。
 
-データ ソースのマネージャーに TWAIN と互換性のあるアプリケーションと、WIA ドライバーの間のすべての通信は最初 (*twain\_32. dll*)、TWAIN 互換性レイヤーをさらに呼び出し (*wiadss.dll*). TWAIN 互換性レイヤーを呼び出して、WIA ドライバーの[ **IStiUSD::Escape** ](https://msdn.microsoft.com/library/windows/hardware/ff543815)メソッド、およびメソッドに次の 2 つのエスケープ コードのパス 1 つ。
+データ ソースのマネージャーに TWAIN と互換性のあるアプリケーションと、WIA ドライバーの間のすべての通信は最初 (*twain\_32. dll*)、TWAIN 互換性レイヤーをさらに呼び出し (*wiadss.dll*). TWAIN 互換性レイヤーを呼び出して、WIA ドライバーの[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)メソッド、およびメソッドに次の 2 つのエスケープ コードのパス 1 つ。
 
 [ESC\_TWAIN\_機能エスケープ コード](esc-twain-capability-escape-code.md)
 

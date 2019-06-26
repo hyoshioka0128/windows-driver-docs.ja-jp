@@ -6,12 +6,12 @@ keywords:
 - NetAdapterCx NetCx 電源管理の構成、電源管理の構成
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de18f627adbca92c95da655f01db06c5db76c29c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b26b818dae7c449f354c11fa8bc6228933fa097
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372707"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386367"
 ---
 # <a name="configuring-power-management"></a>電源管理の構成
 
@@ -54,7 +54,7 @@ NetAdapterSetPowerCapabilities(NetAdapter, &powerCaps);
 
 ## <a name="programming-protocol-offload-and-wake-patterns"></a>プログラミングのプロトコルがオフロードし、復帰のパターン
 
-その[ *EvtDeviceArmWakeFromS0* ](https://msdn.microsoft.com/library/windows/hardware/ff540843)と[ *EvtDeviceArmWakeFromSx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx)コールバック関数では、ドライバーは、有効を反復処理ウェイク アップのパターンとプロトコルは、負荷を軽減し、ハードウェアへのプログラムします。
+その[ *EvtDeviceArmWakeFromS0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)と[ *EvtDeviceArmWakeFromSx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx)コールバック関数では、ドライバーは、有効を反復処理ウェイク アップのパターンとプロトコルは、負荷を軽減し、ハードウェアへのプログラムします。
 
 最初に呼び出すことによって、アダプターに関連付けられている NETPOWERSETTINGS オブジェクトへのハンドルを取得[ **NetAdapterGetPowerSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptergetpowersettings)から[ *EvtDeviceArmWakeFromS0* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)または関連するコールバック関数。  次の例では、ウェイク アップのパターンを反復処理する方法を示します。
 

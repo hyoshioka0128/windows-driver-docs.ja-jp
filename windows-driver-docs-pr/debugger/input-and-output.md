@@ -8,12 +8,12 @@ keywords:
 - 出力
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b468aedee74ed0f07e5127eff8fd6bf16ae86a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8250722a6d024e828b40747ef8118cb982e5047
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372078"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366826"
 ---
 # <a name="input-and-output"></a>入力と出力
 
@@ -22,7 +22,7 @@ ms.locfileid: "63372078"
 
 デバッガー エンジンは、保持、*入力ストリーム*と*出力ストリーム*します。 入力ストリームと出力ストリームに送信される出力から入力を要求できます。
 
-ときに、 [**入力**](https://msdn.microsoft.com/library/windows/hardware/ff550962)メソッドを呼び出して、エンジンの入力ストリームからの入力を要求する、エンジンがすべて呼び出し、登録済み[コールバックを入力](using-input-and-output.md#input-callbacks)であることを通知するには入力を待機しています。 入力のコールバックを呼び出すことによって、入力を提供し、待機、 [ **ReturnInput** ](https://msdn.microsoft.com/library/windows/hardware/ff554600)メソッド。
+ときに、 [**入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol-input)メソッドを呼び出して、エンジンの入力ストリームからの入力を要求する、エンジンがすべて呼び出し、登録済み[コールバックを入力](using-input-and-output.md#input-callbacks)であることを通知するには入力を待機しています。 入力のコールバックを呼び出すことによって、入力を提供し、待機、 [ **ReturnInput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-returninput)メソッド。
 
 エンジンが登録されている呼び出しをエンジンの出力ストリームに出力が送信されると、[コールバックを出力](using-input-and-output.md#output-callbacks)に出力を渡します。 出力ストリームに出力を送信するときに、クライアント オブジェクトでフィルタできます。この場合は、特定のクライアント オブジェクトに登録されている出力コールバックのみ、出力が返されます。
 

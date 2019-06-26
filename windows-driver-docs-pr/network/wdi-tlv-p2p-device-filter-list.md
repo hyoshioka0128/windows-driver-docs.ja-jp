@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_DEVICE_FILTER_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 9124439f9d88e64a2d5a2f19cc6a42209c99f814
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e90369d8c488671416b8808bc037b28764501f7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355105"
 ---
 # <a name="wditlvp2pdevicefilterlist"></a>WDI\_TLV\_P2P\_デバイス\_フィルター\_一覧
 
@@ -26,14 +26,14 @@ WDI\_TLV\_P2P\_デバイス\_フィルター\_一覧は、Wi-Fi Direct デバイ
 ## <a name="length"></a>長さ
 
 
-配列のサイズをバイト単位で[ **WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)構造体。 配列には、1 つ以上の構造を格納する必要があります。
+配列のサイズをバイト単位で[ **WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)構造体。 配列には、1 つ以上の構造を格納する必要があります。
 
 ## <a name="values"></a>値
 
 
 | 型                                                  | 説明                                                                                         |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)\[\] | Wi-Fi Direct デバイスと Wi-Fi Direct デバイスの検出中に検索するグループの所有者の一覧。 |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | Wi-Fi Direct デバイスと Wi-Fi Direct デバイスの検出中に検索するグループの所有者の一覧。 |
 
  
 

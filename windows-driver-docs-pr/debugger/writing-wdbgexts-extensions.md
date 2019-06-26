@@ -6,12 +6,12 @@ keywords:
 - WdbgExts 拡張機能の記述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 686589b1bd882c31abac940d115b7359595bd910
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65f8eca3cee4c7455302259b3cc90489233a1f14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369398"
 ---
 # <a name="writing-wdbgexts-extensions"></a>WdbgExts 拡張機能の作成
 
@@ -27,7 +27,7 @@ WdbgExts 拡張機能は、デバッガーの拡張の元の種類です。 DbgE
 
 [WdbgExts 拡張機能の設計ガイド](wdbgexts-extension-design-guide.md)
 
-[WdbgExts 拡張機能の参照](https://msdn.microsoft.com/library/windows/hardware/ff561252)
+[WdbgExts 拡張機能の参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/)
 
  
 

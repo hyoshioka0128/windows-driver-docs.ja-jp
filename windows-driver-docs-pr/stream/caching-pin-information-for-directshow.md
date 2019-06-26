@@ -11,12 +11,12 @@ keywords:
 - BDA WDK AVStream、暗証番号 (pin) のデータ キャッシュ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f215ce1a0a39092dc180dc1e5390dd7a5a1a6f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 483eef10387cc0931b853372c240fc5526f47c81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370266"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386677"
 ---
 # <a name="caching-pin-information-for-directshow"></a>DirectShow のピン情報のキャッシュ
 
@@ -32,11 +32,11 @@ ms.locfileid: "63370266"
 
 -   BDA ミニドライバーは、必須、ミニドライバーは最初にそのミニドライバーがユーザー モードで DirectShow フィルターとして BDA フィルターを表示する方法に応じて BDA フィルターのインスタンスを作成するときに、DirectShow の暗証番号 (pin) のデータ キャッシュを更新することができない可能性があります。 BDA ミニドライバーの情報 (INF) ファイルには、ミニドライバーは、DirectShow フィルター BDA フィルターに使用するメカニズムを指定します。
 
-    BDA ミニドライバーを使用して、通常、 [(KS) proxy モジュールのカーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560877)(*Ksproxy.ax*) DirectShow フィルター処理をフィルターするには、BDA を提示します。 KS プロキシは、これらのフィルターのインスタンスが最初に作成されるたびに、BDA フィルターの暗証番号 (pin) 情報を公開する DirectShow の暗証番号 (pin) のデータ キャッシュを自動的に更新します。 そのため、KS プロキシを使用する BDA ミニドライバーでは、最初に、フィルターのインスタンスを作成するときに、DirectShow の暗証番号 (pin) のデータ キャッシュを更新する操作を実行する必要はありません。 BDA フィルターが KS プロキシ経由のユーザー モードに公開されている場合は、キャッシュされた情報は、メディアを自動的に追加し、直後に、フィルターのフィルターのインスタンス上に存在するファクトリを暗証番号 (pin) のメディアの種類がディスパッチ ルーチンを返します。 を作成します。
+    BDA ミニドライバーを使用して、通常、 [(KS) proxy モジュールのカーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)(*Ksproxy.ax*) DirectShow フィルター処理をフィルターするには、BDA を提示します。 KS プロキシは、これらのフィルターのインスタンスが最初に作成されるたびに、BDA フィルターの暗証番号 (pin) 情報を公開する DirectShow の暗証番号 (pin) のデータ キャッシュを自動的に更新します。 そのため、KS プロキシを使用する BDA ミニドライバーでは、最初に、フィルターのインスタンスを作成するときに、DirectShow の暗証番号 (pin) のデータ キャッシュを更新する操作を実行する必要はありません。 BDA フィルターが KS プロキシ経由のユーザー モードに公開されている場合は、キャッシュされた情報は、メディアを自動的に追加し、直後に、フィルターのフィルターのインスタンス上に存在するファクトリを暗証番号 (pin) のメディアの種類がディスパッチ ルーチンを返します。 を作成します。
 
-    いくつか BDA ミニドライバーは、DirectShow フィルターとして BDA フィルターを提示するのに KS プロキシを使用することはしません。 たとえば、受信 BDA を実装する BDA 受信者ミニドライバーをフィルター処理またはアナログ テレビ信号の受信プロセスは、いずれかを使用、 *KSTVTune.ax*または*KSXBar.ax*モジュールとしてこれらの BDA フィルターを表示するにはDirectShow フィルター。 これらのモジュールは、DirectShow の暗証番号 (pin) のデータ キャッシュを更新する標準的な KS プロキシ インターフェイスのメソッドを使用しないので、BDA フィルターがこの種の BDA ミニドライバーは、ミニドライバーは、最初にフィルターのインスタンスを作成するとき DirectShow の暗証番号 (pin) のデータ キャッシュを更新する必要があります。 BDA ミニドライバーの呼び出しをこれらのフィルターのインスタンスを作成するときに、DirectShow の暗証番号 (pin) のデータ キャッシュが更新されることを確認するには、するには、 [ **BdaFilterFactoryUpdateCacheData** ](https://msdn.microsoft.com/library/windows/hardware/ff556455)呼び出した後すぐに関数[ **BdaInitFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff556464)フィルターの実装内部の関数のディスパッチ ルーチンを作成します。 この呼び出しでは、ミニドライバーは、フィルターのすべての初期ピンを更新する pin 情報を渡します。
+    いくつか BDA ミニドライバーは、DirectShow フィルターとして BDA フィルターを提示するのに KS プロキシを使用することはしません。 たとえば、受信 BDA を実装する BDA 受信者ミニドライバーをフィルター処理またはアナログ テレビ信号の受信プロセスは、いずれかを使用、 *KSTVTune.ax*または*KSXBar.ax*モジュールとしてこれらの BDA フィルターを表示するにはDirectShow フィルター。 これらのモジュールは、DirectShow の暗証番号 (pin) のデータ キャッシュを更新する標準的な KS プロキシ インターフェイスのメソッドを使用しないので、BDA フィルターがこの種の BDA ミニドライバーは、ミニドライバーは、最初にフィルターのインスタンスを作成するとき DirectShow の暗証番号 (pin) のデータ キャッシュを更新する必要があります。 BDA ミニドライバーの呼び出しをこれらのフィルターのインスタンスを作成するときに、DirectShow の暗証番号 (pin) のデータ キャッシュが更新されることを確認するには、するには、 [ **BdaFilterFactoryUpdateCacheData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)呼び出した後すぐに関数[ **BdaInitFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdainitfilter)フィルターの実装内部の関数のディスパッチ ルーチンを作成します。 この呼び出しでは、ミニドライバーは、フィルターのすべての初期ピンを更新する pin 情報を渡します。
 
--   ピンを作成できます BDA フィルターを動的にフィルターのディスパッチの作成後ルーチンが完了します。 BDA フィルターの最初に作成されたインスタンスが BDA フィルターのテンプレートのトポロジに記載されているすべてのピンのインスタンスを公開しないかどうか ([**BDA\_フィルター\_テンプレート**](https://msdn.microsoft.com/library/windows/hardware/ff556523))、BDA ミニドライバーを呼び出す必要がありますし、 **BdaFilterFactoryUpdateCacheData**については、フィルターのテンプレートのトポロジで表示されているすべてのピンを強制的にします。
+-   ピンを作成できます BDA フィルターを動的にフィルターのディスパッチの作成後ルーチンが完了します。 BDA フィルターの最初に作成されたインスタンスが BDA フィルターのテンプレートのトポロジに記載されているすべてのピンのインスタンスを公開しないかどうか ([**BDA\_フィルター\_テンプレート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_filter_template))、BDA ミニドライバーを呼び出す必要がありますし、 **BdaFilterFactoryUpdateCacheData**については、フィルターのテンプレートのトポロジで表示されているすべてのピンを強制的にします。
 
 **注**  触れるし、レジストリが変更されために、更新 DirectShow の暗証番号 (pin) のデータ キャッシュが大きなオーバーヘッドです。 さらに、DirectShow の暗証番号 (pin) のデータ キャッシュを更新するには、DirectShow フィルター グラフを自動的にビルドするために必要な時間に影響します。 そのため、BDA ミニドライバーを呼び出す必要があります**BdaFilterFactoryUpdateCacheData** DirectShow を使用する pin データ キャッシュが最新ではないことを決定する場合にのみ可能なピンをすべて。
 

@@ -9,12 +9,12 @@ keywords:
 - 仮想接続 WDK いる CoNDIS 仮想接続について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6820b06a00bcfb7211dd1de311f6427d0fe79967
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4112c0eb5f54c3ff2bce50b2ff4cc6babdf4f265
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377888"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373220"
 ---
 # <a name="virtual-connections"></a>仮想接続
 
@@ -32,7 +32,7 @@ ms.locfileid: "63377888"
 
 -   特定の呼び出しに必要な SVC が作成されます。 たとえば、接続指向のクライアントにこれは呼び出しの VC の作成を開始します。 同様に、コール マネージャーまたは MCM ドライバーは、接続指向のクライアントに示すれますを着信呼び出しの VC の作成を開始します。 コール マネージャーまたは MCM ドライバーする必要があります通信し、場合によってリモート側と VC のパラメーターをネゴシエートします。
 
--   永続的な VC は手動で作成および NDIS で指定されていない構成ユーティリティを使用してオペレーターが最終的に削除します。 このような手動で作成および Pvc の削除を監視するクライアントが使用できる、 [OID\_CO\_追加\_PVC](https://msdn.microsoft.com/library/windows/hardware/ff569087)と[OID\_CO\_DELETE\_PVC](https://msdn.microsoft.com/library/windows/hardware/ff569090)コール マネージャーまたは MCM のドライバーを追加または PVC をまたは構成されている Pvc の一覧からを削除することを要求する Oid。 PVC の QoS は、演算子によって構成され、ネットワーク経由では譲渡されません。
+-   永続的な VC は手動で作成および NDIS で指定されていない構成ユーティリティを使用してオペレーターが最終的に削除します。 このような手動で作成および Pvc の削除を監視するクライアントが使用できる、 [OID\_CO\_追加\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-add-pvc)と[OID\_CO\_DELETE\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-delete-pvc)コール マネージャーまたは MCM のドライバーを追加または PVC をまたは構成されている Pvc の一覧からを削除することを要求する Oid。 PVC の QoS は、演算子によって構成され、ネットワーク経由では譲渡されません。
 
 NDIS、VC はネットワーク上の VC に関する状態情報を維持するために、ミニポート ドライバーによって割り当てられているリソースで構成されます。 これらのリソースを含めることができますが、メモリ バッファー、イベント、およびデータ構造に限定されません。 発信呼び出しまたは呼び出し用の接続指向のクライアントでの VC 着信呼び出し用のマネージャーにこのようなコンテキストを作成するミニポート ドライバーが要求されます。 Vc の作成に関する詳細については、次を参照してください。[作成 VC](creating-a-vc.md)します。
 

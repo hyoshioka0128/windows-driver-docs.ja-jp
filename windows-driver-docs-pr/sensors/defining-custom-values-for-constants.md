@@ -4,12 +4,12 @@ description: センサーの定数のカスタム値を定義します。
 ms.assetid: 0ed635c2-117d-4a49-a565-31e5a0a9861d
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4474861e525c39e8b08bc952ed98eb773660782c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80de189f6c5e9db56f3abec634515dade09abb9c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377821"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384183"
 ---
 # <a name="defining-custom-values-for-sensor-constants"></a>センサーの定数のカスタム値を定義します。
 
@@ -18,7 +18,7 @@ ms.locfileid: "63377821"
 
 ## <a name="guidelines-for-custom-values"></a>カスタム値に関するガイドライン
 
-一連のプラットフォームで定義されている定数は機能がある場合、新しい定数を定義しないでください。 調査およびカテゴリ、種類、データ フィールド、プロパティ、およびイベントの説明を理解、[定数](https://msdn.microsoft.com/library/windows/hardware/ff545409)セクションを参照し、センサー ドライバーがプラットフォーム、フレームワークに収まるかどうかを決定します。
+一連のプラットフォームで定義されている定数は機能がある場合、新しい定数を定義しないでください。 調査およびカテゴリ、種類、データ フィールド、プロパティ、およびイベントの説明を理解、[定数](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)セクションを参照し、センサー ドライバーがプラットフォーム、フレームワークに収まるかどうかを決定します。
 
 カスタム値を定義する場合は、これらのガイドラインに従います。
 
@@ -78,7 +78,7 @@ DEFINE_PROPERTYKEY(SAMPLE_SENSOR_DATA_TYPE_SECOND,
 Initguid.h を含むとライブラリ ファイルを参照することがなく、マクロの使用を LNK2001 エラーとなります。
 
 ## <a name="related-topics"></a>関連トピック
-[センサー地理位置情報ドライバー サンプル](https://msdn.microsoft.com/library/windows/hardware/hh768273)
+[センサー地理位置情報ドライバー サンプル](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
 
 
 

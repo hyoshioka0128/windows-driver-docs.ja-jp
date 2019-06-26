@@ -17,12 +17,12 @@ keywords:
 - WDK RDBSS を状態します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 048e3de725fe96da64cc97e96bf208aa49cc6d5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 586517298b3cefcd9845afb62d0e16712a859141
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322182"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382294"
 ---
 # <a name="work-queue-dispatching-mechanisms"></a>ワーク キューのディスパッチ メカニズム
 
@@ -36,7 +36,7 @@ RDBSS は、RDBSS で使用されるディスパッチ メカニズムを実装�
 
 RDBSS は、デバイス オブジェクトごとに作業項目の追跡を保持します。 これにより、読み込みとアンロードのネットワークのミニ リダイレクターに関連付けられている競合状態を処理するために RDBSS できます。 これには、RDBSS で一定でないすべてのリソースを使用してから 1 つのネットワークのミニ リダイレクターを回避するためのメカニズムも提供します。
 
-作業のディスパッチはどの項目は避けられません特定のシナリオがあります。 頻繁にメモリの割り当てを回避して、作業のこれらのシナリオでの操作を解放する\_キュー\_項目が別のデータの一部として割り当てられます。 ディスパッチはまれな他のシナリオで必要になるまで、メモリの割り当てを回避するためによいでしょう。 RDBSS 作業キューの実装は、ディスパッチ、および作業のキューの要求の送信の形式でこれらのシナリオの両方を提供します。 使用してディスパッチの場合、 [ **RxDispatchToWorkerThread** ](https://msdn.microsoft.com/library/windows/hardware/ff554398)ルーチン、作業のメモリが\_キュー\_項目は、呼び出し元によって割り当てられる必要があります。 使用してをポストするため、 [ **RxPostToWorkerThread** ](https://msdn.microsoft.com/library/windows/hardware/ff554620)ルーチン、作業メモリ\_キュー\_項目は、呼び出し元によって割り当てられる必要があります。
+作業のディスパッチはどの項目は避けられません特定のシナリオがあります。 頻繁にメモリの割り当てを回避して、作業のこれらのシナリオでの操作を解放する\_キュー\_項目が別のデータの一部として割り当てられます。 ディスパッチはまれな他のシナリオで必要になるまで、メモリの割り当てを回避するためによいでしょう。 RDBSS 作業キューの実装は、ディスパッチ、および作業のキューの要求の送信の形式でこれらのシナリオの両方を提供します。 使用してディスパッチの場合、 [ **RxDispatchToWorkerThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxdispatchtoworkerthread)ルーチン、作業のメモリが\_キュー\_項目は、呼び出し元によって割り当てられる必要があります。 使用してをポストするため、 [ **RxPostToWorkerThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxposttoworkerthread)ルーチン、作業メモリ\_キュー\_項目は、呼び出し元によって割り当てられる必要があります。
 
 ワーカー スレッドにディスパッチ操作の 2 つの一般的なケースがあります。
 
@@ -81,15 +81,15 @@ RDBSS には、ブックキーピング情報 (キューの状態および型な
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554398" data-raw-source="[&lt;strong&gt;RxDispatchToWorkerThread&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554398)"><strong>RxDispatchToWorkerThread</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxdispatchtoworkerthread" data-raw-source="[&lt;strong&gt;RxDispatchToWorkerThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxdispatchtoworkerthread)"><strong>RxDispatchToWorkerThread</strong></a></p></td>
 <td align="left"><p>このルーチンは、ワーカー スレッドのコンテキスト内のルーチンを呼び出します。 WORK_QUEUE_ITEM 用のメモリは、このルーチンによって割り当てられます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554620" data-raw-source="[&lt;strong&gt;RxPostToWorkerThread&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554620)"><strong>RxPostToWorkerThread</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxposttoworkerthread" data-raw-source="[&lt;strong&gt;RxPostToWorkerThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxposttoworkerthread)"><strong>RxPostToWorkerThread</strong></a></p></td>
 <td align="left"><p>このルーチンは、ワーカー スレッドのコンテキストでルーチンを呼び出します。 呼び出し元によって、WORK_QUEUE_ITEM のメモリを割り当てる必要があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554734" data-raw-source="[&lt;strong&gt;RxSpinDownMRxDispatcher&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554734)"><strong>RxSpinDownMRxDispatcher</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxspindownmrxdispatcher" data-raw-source="[&lt;strong&gt;RxSpinDownMRxDispatcher&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxworkq/nf-rxworkq-rxspindownmrxdispatcher)"><strong>RxSpinDownMRxDispatcher</strong></a></p></td>
 <td align="left"><p>このルーチンのネットワークのミニ リダイレクター ディスパッチャー コンテキストを廃棄します。</p>
 <p>このルーチンは、Windows Server 2003 および Windows XP で使用可能なだけに注意してください。</p></td>
 </tr>

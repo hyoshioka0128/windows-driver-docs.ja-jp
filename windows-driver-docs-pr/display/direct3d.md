@@ -13,12 +13,12 @@ keywords:
 - Windows 2000 ディスプレイ ドライバー モデル WDK、Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 992732431b885822997f7ac21afa063c1d036a08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fad3dd856538861d1a1fcb07b90f7c2147029186
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384860"
 ---
 # <a name="direct3d-ddi"></a>Direct3D DDI
 
@@ -35,7 +35,7 @@ Windows 2000 以降のすべての Direct3D ドライバーは、Microsoft Direc
 Microsoft Windows 2000 以降、マイクロソフトの Direct3D ドライバーを作成しているドライバーの作成者は、次のヘッダー ファイルを使用してください。
 
 <span id="D3DNTHAL.H"></span>*d3dnthal.h*  
-ドライバー レベルの構造体のドライバーによって実装されるコールバックのプロトタイプと定義が含まれています。 [ **D3DHAL\_DP2OPERATION** ](https://msdn.microsoft.com/library/windows/hardware/ff545678)列挙型は、このファイルで定義されます。 このヘッダーが含まれている*winddi.h*、すべての Windows 2000 に含める必要があるあり、ドライバーを後で表示します。
+ドライバー レベルの構造体のドライバーによって実装されるコールバックのプロトタイプと定義が含まれています。 [ **D3DHAL\_DP2OPERATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ne-d3dhal-_d3dhal_dp2operation)列挙型は、このファイルで定義されます。 このヘッダーが含まれている*winddi.h*、すべての Windows 2000 に含める必要があるあり、ドライバーを後で表示します。
 
 <span id="D3DTYPES.H"></span>*d3dtypes.h*  
 アプリケーションとドライバーの両方で使用される、Direct3D 型定義が含まれています。 D3DHAL を除く\_DP2OPERATION、その他すべての Direct3D 列挙型は、このヘッダーで定義されます。
@@ -55,7 +55,7 @@ Microsoft Windows 2000 以降、マイクロソフトの Direct3D ドライバ�
 
  
 
-Direct3D DDI 関数では、構造体、ページを参照し、列挙型が記載[Direct3D ドライバー関数](https://msdn.microsoft.com/library/windows/hardware/ff552853)、 [Direct3D ドライバー構造](https://msdn.microsoft.com/library/windows/hardware/ff552858)、および[Direct3D ドライバー列挙型](https://msdn.microsoft.com/library/windows/hardware/ff552850).
+Direct3D DDI 関数では、構造体、ページを参照し、列挙型が記載[Direct3D ドライバー関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、 [Direct3D ドライバー構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、および[Direct3D ドライバー列挙型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index).
 
 Direct3D インターフェイスの SDK に関連する側面のプライマリ参照では、Microsoft Windows SDK ドキュメントです。 *コンピューターのグラフィックス:基本原則と実習*Foley、van ダム、Feiner、および Hughes、addison-wesley 発行された、このによっては役に立つ一般的なグラフィックスの参照。
 

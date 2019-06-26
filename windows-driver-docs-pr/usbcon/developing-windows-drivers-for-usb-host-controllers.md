@@ -3,12 +3,12 @@ Description: USB ホスト コントローラー用 Windows ドライバーの�
 title: USB ホスト コントローラー用 Windows ドライバーの開発
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cee2cfac0dd75e730bf43ce1307ea73279dcaf3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8cbad6ab61187126394408a596dcfb1116c6c226
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377404"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394032"
 ---
 # <a name="developing-windows-drivers-for-usb-host-controllers"></a>USB ホスト コントローラー用 Windows ドライバーの開発
 
@@ -28,7 +28,7 @@ ms.locfileid: "63377404"
 <p>1 つ UCX です、 <a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers in Windows](usb-3-0-driver-stack-architecture.md)">Windows での USB ホスト側ドライバー</a>します。 ホスト コント ローラー デバイス スタックの FDO として読み込まれます。</p>
 <p><strong>USB ホスト コント ローラーのドライバー</strong></p>
 <p>UCX は、拡張可能なは、さまざまなホスト コント ローラーのドライバーをサポートするために設計されています。 Windows では、(Usbxhci.sys) そのターゲット USB xHCI ホスト コント ローラー、xHCI ドライバーを提供します。</p>
-<p>ホスト コント ローラーのドライバーとして書き込まれます UCX のクライアントは、<a href="https://msdn.microsoft.com/library/windows/hardware/ff551869" data-raw-source="[Kernel-Mode Driver Framework](https://msdn.microsoft.com/library/windows/hardware/ff551869)">カーネル モード ドライバー フレームワーク</a>(KMDF) ドライバー。</p>
+<p>ホスト コント ローラーのドライバーとして書き込まれます UCX のクライアントは、<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-debugging" data-raw-source="[Kernel-Mode Driver Framework](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-debugging)">カーネル モード ドライバー フレームワーク</a>(KMDF) ドライバー。</p>
 <p><strong>Microsoft から提供されたバイナリ</strong></p>
 <p>ホスト コント ローラー用ドライバーを作成するには、UCX (Ucx01000.sys) とスタブ ライブラリ (Ucx01000.lib) が必要です。 スタブ ライブラリは、Windows Driver Kit (WDK) にします。 ライブラリは、2 つの主な機能を実行します。</p>
 <ul>
@@ -47,24 +47,24 @@ ms.locfileid: "63377404"
 <a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers in Windows](usb-3-0-driver-stack-architecture.md)">Windows での USB ホスト側ドライバー</a>
 <a href="get-started-with-host-controller-driver-development.md" data-raw-source="[Architecture: USB host controller extension (UCX)](get-started-with-host-controller-driver-development.md)">アーキテクチャ。USB ホスト コント ローラーの拡張機能 (UCX)</a>
 <p><strong>UCX オブジェクトおよびハンドルと理解します。</strong></p>
-<p>UCX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 WDF のオブジェクトの詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>します。</p>
+<p>UCX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 WDF のオブジェクトの詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects" data-raw-source="[Introduction to Framework Objects](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects)">Framework オブジェクトの概要</a>します。</p>
 <p>基になるホスト コント ローラー ドライバーにキュー要求の場合は、UCX は、これらのオブジェクトを使用します。 詳細については、次を参照してください。 <a href="ucx-objects-and-handles-used-by-host-controller-driver.md" data-raw-source="[UCX objects and handles used by a host controller driver](ucx-objects-and-handles-used-by-host-controller-driver.md)">UCX オブジェクトと、処理ホスト コント ローラーのドライバーによって使用される</a>します。</p>
 <p></p>
 <dl>
 <dt>ホスト コント ローラーのオブジェクト (UCXCONTROLLER)</dt>
-<dd><p>ホスト コント ローラーのドライバーによって作成されるホスト コント ローラーを表します。 ドライバーは、ホスト コント ローラーのインスタンスごとに 1 つだけのホスト コント ローラー オブジェクトを作成する必要があります。 内で作成された通常、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff541693" data-raw-source="[**EVT_WDF_DRIVER_DEVICE_ADD**](https://msdn.microsoft.com/library/windows/hardware/ff541693)"> <strong>EVT_WDF_DRIVER_DEVICE_ADD</strong></a>コールバックを呼び出すことによって、 <a href="https://msdn.microsoft.com/library/windows/hardware/mt188033" data-raw-source="[&lt;strong&gt;UcxControllerCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188033)"> <strong>UcxControllerCreate</strong> </a>メソッド。</p>
+<dd><p>ホスト コント ローラーのドライバーによって作成されるホスト コント ローラーを表します。 ドライバーは、ホスト コント ローラーのインスタンスごとに 1 つだけのホスト コント ローラー オブジェクトを作成する必要があります。 内で作成された通常、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add" data-raw-source="[**EVT_WDF_DRIVER_DEVICE_ADD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)"> <strong>EVT_WDF_DRIVER_DEVICE_ADD</strong></a>コールバックを呼び出すことによって、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188033(v=vs.85)" data-raw-source="[&lt;strong&gt;UcxControllerCreate&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188033(v=vs.85))"> <strong>UcxControllerCreate</strong> </a>メソッド。</p>
 </dd>
 <dt>ルート ハブ オブジェクト (UCXROOTHUB)</dt>
-<dd><p>取得し、ホスト コント ローラーのルートのポートの状態を制御します。 通常内のホスト コント ローラーのドライバーによって作成された、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff541693" data-raw-source="[**EVT_WDF_DRIVER_DEVICE_ADD**](https://msdn.microsoft.com/library/windows/hardware/ff541693)"> <strong>EVT_WDF_DRIVER_DEVICE_ADD</strong> </a>コールバックを呼び出すことによって、 <a href="https://msdn.microsoft.com/library/windows/hardware/mt188048" data-raw-source="[&lt;strong&gt;UcxRootHubCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188048)"> <strong>UcxRootHubCreate</strong> </a>メソッド。</p>
+<dd><p>取得し、ホスト コント ローラーのルートのポートの状態を制御します。 通常内のホスト コント ローラーのドライバーによって作成された、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add" data-raw-source="[**EVT_WDF_DRIVER_DEVICE_ADD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)"> <strong>EVT_WDF_DRIVER_DEVICE_ADD</strong> </a>コールバックを呼び出すことによって、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188048(v=vs.85)" data-raw-source="[&lt;strong&gt;UcxRootHubCreate&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188048(v=vs.85))"> <strong>UcxRootHubCreate</strong> </a>メソッド。</p>
 </dd>
 <dt>USB デバイス オブジェクト (UCXUSBDEVICE)</dt>
-<dd><p>バスに接続されている物理的な USB デバイスを表します。 通常内のホスト コント ローラーのドライバーによって作成された、 <a href="https://msdn.microsoft.com/library/windows/hardware/mt187823" data-raw-source="[&lt;em&gt;EVT_UCX_CONTROLLER_USBDEVICE_ADD&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/mt187823)"> <em>EVT_UCX_CONTROLLER_USBDEVICE_ADD</em> </a>コールバックを呼び出すことによって、 <a href="https://msdn.microsoft.com/library/windows/hardware/mt188052" data-raw-source="[&lt;strong&gt;UcxUsbDeviceCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188052)"> <strong>UcxUsbDeviceCreate</strong></a>メソッド。</p>
+<dd><p>バスに接続されている物理的な USB デバイスを表します。 通常内のホスト コント ローラーのドライバーによって作成された、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_usbdevice_add" data-raw-source="[&lt;em&gt;EVT_UCX_CONTROLLER_USBDEVICE_ADD&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_usbdevice_add)"> <em>EVT_UCX_CONTROLLER_USBDEVICE_ADD</em> </a>コールバックを呼び出すことによって、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nf-ucxusbdevice-ucxusbdevicecreate" data-raw-source="[&lt;strong&gt;UcxUsbDeviceCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nf-ucxusbdevice-ucxusbdevicecreate)"> <strong>UcxUsbDeviceCreate</strong></a>メソッド。</p>
 </dd>
 <dt>Endpoint オブジェクト (UCXENDPOINT)</dt>
-<dd><p>USB デバイス オブジェクトのエンドポイントを表します。 通常内のホスト コント ローラーのドライバーによって作成された、 <a href="https://msdn.microsoft.com/library/windows/hardware/mt187839" data-raw-source="[&lt;em&gt;EVT_UCX_USBDEVICE_DEFAULT_ENDPOINT_ADD&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/mt187839)"> <em>EVT_UCX_USBDEVICE_DEFAULT_ENDPOINT_ADD</em> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/mt187843" data-raw-source="[&lt;em&gt;EVT_UCX_USBDEVICE_ENDPOINT_ADD&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/mt187843)"> <em>EVT_UCX_USBDEVICE_ENDPOINT_ADD</em></a>コールバックを呼び出すことによって、 <a href="https://msdn.microsoft.com/library/windows/hardware/mt188039" data-raw-source="[&lt;strong&gt;UcxEndpointCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188039)"> <strong>UcxEndpointCreate</strong> </a>メソッド。</p>
+<dd><p>USB デバイス オブジェクトのエンドポイントを表します。 通常内のホスト コント ローラーのドライバーによって作成された、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_default_endpoint_add" data-raw-source="[&lt;em&gt;EVT_UCX_USBDEVICE_DEFAULT_ENDPOINT_ADD&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_default_endpoint_add)"> <em>EVT_UCX_USBDEVICE_DEFAULT_ENDPOINT_ADD</em> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_endpoint_add" data-raw-source="[&lt;em&gt;EVT_UCX_USBDEVICE_ENDPOINT_ADD&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_endpoint_add)"> <em>EVT_UCX_USBDEVICE_ENDPOINT_ADD</em></a>コールバックを呼び出すことによって、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nf-ucxendpoint-ucxendpointcreate" data-raw-source="[&lt;strong&gt;UcxEndpointCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nf-ucxendpoint-ucxendpointcreate)"> <strong>UcxEndpointCreate</strong> </a>メソッド。</p>
 </dd>
 <dt>Stream オブジェクト (UCXSTREAMS)</dt>
-<dd><p>1 つの一括エンドポイント全体をデバイスにパイプの数を表します。 通常内のホスト コント ローラーのドライバーによって作成された、 <a href="https://msdn.microsoft.com/library/windows/hardware/mt187830" data-raw-source="[&lt;em&gt;EVT_UCX_ENDPOINT_STATIC_STREAMS_ADD&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/mt187830)"> <em>EVT_UCX_ENDPOINT_STATIC_STREAMS_ADD</em> </a>コールバックを呼び出すことによって、 <a href="https://msdn.microsoft.com/library/windows/hardware/mt188050" data-raw-source="[&lt;strong&gt;UcxStaticStreamsCreate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt188050)"> <strong>UcxStaticStreamsCreate</strong></a>メソッド。</p>
+<dd><p>1 つの一括エンドポイント全体をデバイスにパイプの数を表します。 通常内のホスト コント ローラーのドライバーによって作成された、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_static_streams_add" data-raw-source="[&lt;em&gt;EVT_UCX_ENDPOINT_STATIC_STREAMS_ADD&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_static_streams_add)"> <em>EVT_UCX_ENDPOINT_STATIC_STREAMS_ADD</em> </a>コールバックを呼び出すことによって、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxsstreams/nf-ucxsstreams-ucxstaticstreamscreate" data-raw-source="[&lt;strong&gt;UcxStaticStreamsCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxsstreams/nf-ucxsstreams-ucxstaticstreamscreate)"> <strong>UcxStaticStreamsCreate</strong></a>メソッド。</p>
 </dd>
 </dl>
 <p><strong>ドキュメントのセクション</strong></p>
@@ -86,7 +86,7 @@ ms.locfileid: "63377404"
  
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

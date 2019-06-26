@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_SUPPORTED_GUIDS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: cd7980524d3fd6716a3968eeecdabeac6d44293e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5935be389a74715f9ecf00275dcf968d247bffa3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386207"
 ---
 # <a name="wditlvsupportedguids"></a>WDI\_TLV\_サポートされている\_GUID
 
@@ -30,7 +30,7 @@ WDI\_TLV\_サポートされている\_GUID は、TLV サポートされてい�
 ## <a name="length"></a>長さ
 
 
-サイズ (バイト単位) で、 [NDIS\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff549898)構造体。
+サイズ (バイト単位) で、 [NDIS\_GUID](https://docs.microsoft.com/windows-hardware/drivers/network/filling-in-an-ndis-guid-structure)構造体。
 
 ## <a name="values"></a>値
 
@@ -41,7 +41,7 @@ WDI\_TLV\_サポートされている\_GUID は、TLV サポートされてい�
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -68,7 +68,7 @@ WDI\_TLV\_サポートされている\_GUID は、TLV サポートされてい�
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WDI\_取得\_アダプター\_機能](https://msdn.microsoft.com/library/windows/hardware/dn925838)
+[OID\_WDI\_取得\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)
 
  
 

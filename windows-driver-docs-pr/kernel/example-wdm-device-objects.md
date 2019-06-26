@@ -13,12 +13,12 @@ keywords:
 - フィルター DOs WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73cd60fc30e362259d8721461ba247c2ba264d1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: afcde6eb20b0a96af34c848fbd8566ae9db7ec3f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386624"
 ---
 # <a name="example-wdm-device-objects"></a>WDM デバイス オブジェクトの例
 
@@ -26,7 +26,7 @@ ms.locfileid: "56582044"
 
 
 
-次の図は、前に示した図の説明でキーボードとマウス デバイスを表すデバイス オブジェクトを示しています。[キーボードとマウスのハードウェア構成](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)します。 図の説明に示すようにキーボードとマウスのドライバー[キーボードとマウス ドライバー レイヤー](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers) I/O サポート ルーチンを呼び出すことによってこれらのデバイス オブジェクトを作成 ([**IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)).
+次の図は、前に示した図の説明でキーボードとマウス デバイスを表すデバイス オブジェクトを示しています。[キーボードとマウスのハードウェア構成](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)します。 図の説明に示すようにキーボードとマウスのドライバー[キーボードとマウス ドライバー レイヤー](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers) I/O サポート ルーチンを呼び出すことによってこれらのデバイス オブジェクトを作成 ([**IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)).
 
 ![キーボードとマウス デバイス オブジェクト](images/2sampdos.png)
 

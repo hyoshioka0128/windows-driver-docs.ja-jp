@@ -4,19 +4,19 @@ description: デバイスのプロパティにアクセスするための SetupA
 ms.assetid: ec00d9c0-1355-478b-af48-0b589628e2d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0893fed50015044d7b8d3b08f1ce4ec2ee7d27d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7149a0e3f00511d64fc9a1caf7bf0684de3e90d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384755"
 ---
 # <a name="using-setupapi-and-configuration-manager-to-access-device-properties"></a>デバイスのプロパティにアクセスするための SetupAPI と構成マネージャーの使用
 
 
 Windows Server 2003、Windows XP、および Windows 2000 のサポートでサポートされているデバイスのシステム定義のプロパティのほとんどに対応しているデバイス プロパティ表現、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)の Windows Vista とWindows の以降のバージョン。
 
-Windows では、以前のバージョンで[SetupAPI 関数](setupapi.md)、[構成マネージャー関数](https://msdn.microsoft.com/library/windows/hardware/ff549713)、し、次の説明に従って、デバイスのプロパティにアクセスする Windows レジストリの関数を使用できますトピック:
+Windows では、以前のバージョンで[SetupAPI 関数](setupapi.md)、[構成マネージャー関数](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))、し、次の説明に従って、デバイスのプロパティにアクセスする Windows レジストリの関数を使用できますトピック:
 
 [デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](accessing-device-instance-spdrp-xxx-properties.md)
 

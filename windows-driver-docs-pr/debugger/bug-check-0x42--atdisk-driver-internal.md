@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f8d4c0fa56cfcc5ed517251826ed0761f9dd79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7474cc7d56e8797cd9e58d2df25ed6508b0fafed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325500"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367458"
 ---
 # <a name="bug-check-0x42-atdiskdriverinternal"></a>バグ チェック 0x42:ATDISK\_ドライバー\_内部
 
@@ -28,7 +28,7 @@ ATDISK\_ドライバー\_内部バグ チェックが 0x00000042 の値を持ち
 このバグ チェックが非常に少ない回数が表示されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
  

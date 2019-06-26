@@ -4,12 +4,12 @@ description: MSiSCSI\_SessionStatistics WMI クラス
 ms.assetid: fc9afa1b-dad3-4f3d-9fe2-e37d402f7bef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b5e2de2b91ddef3adceccc134a6668198d58aa85
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d5dc1d7c7d0c67bf4d8898f8bb620fd960dfbbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389450"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384669"
 ---
 # <a name="msiscsisessionstatistics-wmi-class"></a>MSiSCSI\_SessionStatistics WMI クラス
 
@@ -98,7 +98,7 @@ class MSiSCSI_SessionStatistics : Win32_PerfRawData {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_SessionStatistics** ](https://msdn.microsoft.com/library/windows/hardware/ff563137)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_SessionStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_sessionstatistics)データ構造体。
 
 イニシエーターは、MSiSCSI を登録する必要があります\_SessionStatistics クラス、セッションの次の動的インスタンス名。
 

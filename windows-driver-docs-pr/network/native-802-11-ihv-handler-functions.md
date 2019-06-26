@@ -8,12 +8,12 @@ keywords:
 ms.assetid: BF0DC1C7-48E1-487E-8F64-146BBA322F40
 ms.date: 04/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c92d8407c06c5ab590d047f4378439f4c65c3a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bafaec6d047925a94e9072ed5e84660ef29b1d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368280"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387285"
 ---
 # <a name="native-80211-ihv-handler-functions"></a>ネイティブの 802.11 IHV ハンドラー関数
 
@@ -31,30 +31,30 @@ ms.locfileid: "63368280"
 IHV UI 拡張機能の DLL の詳細については、次を参照してください。[ネイティブ 802.11 IHV UI 拡張機能の DLL](native-802-11-ihv-ui-extensions-dll2.md)します。
 
 > [!NOTE]
-> 例外として[Dot11ExtIhvGetVersionInfo](https://msdn.microsoft.com/library/windows/hardware/ff547464)と[Dot11ExtIhvInitService](https://msdn.microsoft.com/library/windows/hardware/ff547470)、オペレーティング システムは、のメンバーに関連付けられている、関数ポインターを通じてIHVハンドラー関数を呼び出します。[DOT11EXT_IHV_HANDLERS](https://msdn.microsoft.com/library/windows/hardware/ff547625)構造体。 オペレーティング システムを呼び出すと、 *Dot11ExtIhvInitService* IHV ハンドラー関数で IHV 拡張機能の DLL を使用して、IHV ハンドラー関数をポインターのリストが返されます、 *pDot11IHVHandlers*パラメーター。
+> 例外として[Dot11ExtIhvGetVersionInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_get_version_info)と[Dot11ExtIhvInitService](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_service)、オペレーティング システムは、のメンバーに関連付けられている、関数ポインターを通じてIHVハンドラー関数を呼び出します。[DOT11EXT_IHV_HANDLERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_handlers)構造体。 オペレーティング システムを呼び出すと、 *Dot11ExtIhvInitService* IHV ハンドラー関数で IHV 拡張機能の DLL を使用して、IHV ハンドラー関数をポインターのリストが返されます、 *pDot11IHVHandlers*パラメーター。
 
 このセクションでは、次のネイティブの 802.11 IHV ハンドラー関数について説明します。
 
-- [Dot11ExtIhvAdapterReset](https://msdn.microsoft.com/library/windows/hardware/ff547434)
-- [Dot11ExtIhvControl](https://msdn.microsoft.com/library/windows/hardware/ff547438)
-- [Dot11ExtIhvCreateDiscoveryProfiles](https://msdn.microsoft.com/library/windows/hardware/ff547445)
-- [Dot11ExtIhvDeinitAdapter](https://msdn.microsoft.com/library/windows/hardware/ff547452)
-- [Dot11ExtIhvDeinitService](https://msdn.microsoft.com/library/windows/hardware/ff547457)
-- [Dot11ExtIhvGetVersionInfo](https://msdn.microsoft.com/library/windows/hardware/ff547464)
-- [Dot11ExtIhvInitAdapter](https://msdn.microsoft.com/library/windows/hardware/ff547469)
-- [Dot11ExtIhvInitService](https://msdn.microsoft.com/library/windows/hardware/ff547470)
-- [Dot11ExtIhvInitVirtualStation](https://msdn.microsoft.com/library/windows/hardware/ff547475)
-- [Dot11ExtIhvIsUIRequestPending](https://msdn.microsoft.com/library/windows/hardware/ff547479)
-- [Dot11ExtIhvOneXIndicateResult](https://msdn.microsoft.com/library/windows/hardware/ff547482)
-- [Dot11ExtIhvPerformCapabilityMatch](https://msdn.microsoft.com/library/windows/hardware/ff547488)
-- [Dot11ExtIhvPerformPostAssociate](https://msdn.microsoft.com/library/windows/hardware/ff547492)
-- [Dot11ExtIhvPerformPreAssociate](https://msdn.microsoft.com/library/windows/hardware/ff547499)
-- [Dot11ExtIhvProcessSessionChange](https://msdn.microsoft.com/library/windows/hardware/ff547501)
-- [Dot11ExtIhvProcessUIResponse](https://msdn.microsoft.com/library/windows/hardware/ff547504)
-- [Dot11ExtIhvQueryUIRequest](https://msdn.microsoft.com/library/windows/hardware/ff547507)
-- [Dot11ExtIhvReceiveIndication](https://msdn.microsoft.com/library/windows/hardware/ff547512)
-- [Dot11ExtIhvReceivePacket](https://msdn.microsoft.com/library/windows/hardware/ff547513)
-- [Dot11ExtIhvSendPacketCompletion](https://msdn.microsoft.com/library/windows/hardware/ff547516)
-- [Dot11ExtIhvStopPostAssociate](https://msdn.microsoft.com/library/windows/hardware/ff547521)
-- [Dot11ExtIhvValidateProfile](https://msdn.microsoft.com/library/windows/hardware/ff547523)
+- [Dot11ExtIhvAdapterReset](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_adapter_reset)
+- [Dot11ExtIhvControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_control)
+- [Dot11ExtIhvCreateDiscoveryProfiles](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_create_discovery_profiles)
+- [Dot11ExtIhvDeinitAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_adapter)
+- [Dot11ExtIhvDeinitService](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_deinit_service)
+- [Dot11ExtIhvGetVersionInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_get_version_info)
+- [Dot11ExtIhvInitAdapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter)
+- [Dot11ExtIhvInitService](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_service)
+- [Dot11ExtIhvInitVirtualStation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_virtual_station)
+- [Dot11ExtIhvIsUIRequestPending](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_is_ui_request_pending)
+- [Dot11ExtIhvOneXIndicateResult](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result)
+- [Dot11ExtIhvPerformCapabilityMatch](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_capability_match)
+- [Dot11ExtIhvPerformPostAssociate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)
+- [Dot11ExtIhvPerformPreAssociate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_pre_associate)
+- [Dot11ExtIhvProcessSessionChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_process_session_change)
+- [Dot11ExtIhvProcessUIResponse](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_process_ui_response)
+- [Dot11ExtIhvQueryUIRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_query_ui_request)
+- [Dot11ExtIhvReceiveIndication](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_receive_indication)
+- [Dot11ExtIhvReceivePacket](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_receive_packet)
+- [Dot11ExtIhvSendPacketCompletion](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)
+- [Dot11ExtIhvStopPostAssociate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_stop_post_associate)
+- [Dot11ExtIhvValidateProfile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_validate_profile)
 

@@ -4,12 +4,12 @@ description: このトピックでは、ユーザーが、効果を構成でき�
 ms.assetid: C8D1CB20-2E77-430A-9933-4BDFFB997158
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfac675a3f9b846ca43822e1036e2947b3de20b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f5e67efffcf1228841b3bb454571d33c85d2c04
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333497"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359931"
 ---
 # <a name="implementing-a-ui-for-configuring-apo-effects"></a>APO 効果を構成するための UI の実装
 
@@ -63,7 +63,7 @@ Microsoft では、コントロール パネルのサウンド アプレット�
 
 2.  プロパティ ページを DLL としてパッケージ化します。 参照してください[の作成と DLL を使用する](https://go.microsoft.com/fwlink/p/?linkid=106014)カスタム ページの DLL としてパッケージ化の詳細についてはトピック。
 
-3.  変更、 [INF ファイル](https://msdn.microsoft.com/library/windows/hardware/ff549520)をインストールし、プロパティ ページの DLL を登録します。
+3.  変更、 [INF ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)をインストールし、プロパティ ページの DLL を登録します。
 
     次の INF ファイル フラグメントは、カスタム プロパティ ページを登録する INF ファイルを変更する方法を示します。
 

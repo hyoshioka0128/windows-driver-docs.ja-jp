@@ -10,22 +10,22 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e35aa4bc374926694c531f5b1cd7865d355d9557
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d5505c930d0dcd85b4b6d973b1b523b3ac8956f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375210"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370534"
 ---
 # <a name="enabling-nfp"></a>NFP を有効にします。
 
 
-クライアントは、以前に無効なサブスクリプション、パブリケーション、およびプレゼンスに再び有効にできます[ **IOCTL\_NFP\_を有効にする**](https://msdn.microsoft.com/library/windows/hardware/jj853316)します。
+クライアントは、以前に無効なサブスクリプション、パブリケーション、およびプレゼンスに再び有効にできます[ **IOCTL\_NFP\_を有効にする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_enable)します。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[フィールドの近接 DDI 参照の近く](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

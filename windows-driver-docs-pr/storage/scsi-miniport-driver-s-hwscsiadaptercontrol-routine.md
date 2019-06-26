@@ -7,12 +7,12 @@ keywords:
 - HwScsiAdapterControl
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2034a3919e09ecbfb462c801a25ade9aa47220cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58bc3c42b2ef854b7b466f4dad207398dbdba861
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341884"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384327"
 ---
 # <a name="scsi-miniport-drivers-hwscsiadaptercontrol-routine"></a>SCSI ミニポート ドライバーの HwScsiAdapterControl ルーチン
 
@@ -20,7 +20,7 @@ ms.locfileid: "63341884"
 ## <span id="ddk_scsi_miniport_drivers_hwscsiadaptercontrol_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIADAPTERCONTROL_ROUTINE_KG"></span>
 
 
-NT ベースのオペレーティング システムのミニポート ドライバーにこのエントリ ポイントを設定する必要があります**NULL**で、 [ **HW\_初期化\_データ (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456) (参照してください[必須およびオプションの SCSI ミニポート ドライバー ルーチン](required-and-optional-scsi-miniport-driver-routines.md)) ミニポート ドライバーがプラグ アンド プレイをサポートしていない場合。 それ以外の場合、ミニポート ドライバーが必要、 [ **HwScsiAdapterControl**](https://msdn.microsoft.com/library/windows/hardware/ff557274)ルーチンの HBA の PnP や電源管理操作をサポートします。
+NT ベースのオペレーティング システムのミニポート ドライバーにこのエントリ ポイントを設定する必要があります**NULL**で、 [ **HW\_初期化\_データ (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data) (参照してください[必須およびオプションの SCSI ミニポート ドライバー ルーチン](required-and-optional-scsi-miniport-driver-routines.md)) ミニポート ドライバーがプラグ アンド プレイをサポートしていない場合。 それ以外の場合、ミニポート ドライバーが必要、 [ **HwScsiAdapterControl**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))ルーチンの HBA の PnP や電源管理操作をサポートします。
 
 ミニポート ドライバーの*HwScsiAdapterControl*ルーチンは、まずポート ドライバーによって呼び出されます**ScsiQuerySupportedControlTypes** HBA が初期化された後、最初の I/O、決定する前に。その他の操作、ミニポート ドライバーでサポートされています。 ミニポート ドライバーではサポートされているがサポートする操作を設定する\_コントロール\_型\_ポート ドライバーによって割り当てられているリスト。 後*HwScsiAdapterControl*ポート ドライバーのみ、ミニポート ドライバーによって示された操作をもう一度ルーチンを呼び出すと、この最初の呼び出しから返します。
 
@@ -36,11 +36,11 @@ NT ベースのオペレーティング システムのミニポート ドライ
 
 -   **ScsiSetBootConfig** BIOS は、システムを起動する必要がある HBA の設定を復元します。
 
-    ミニポート ドライバーをサポートする必要があります**ScsiSetBootConfig**を呼び出す必要がある場合[ **ScsiPortGetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff564624)または[ **ScsiPortSetBusDataByOffset** ](https://msdn.microsoft.com/library/windows/hardware/ff564751)このような設定を復元します。 ポート ドライバー呼び出しミニポート ドライバーの*HwScsiAdapterControl*で**ScsiSetBootConfig** HBA を停止するルーチンを呼び出した後。
+    ミニポート ドライバーをサポートする必要があります**ScsiSetBootConfig**を呼び出す必要がある場合[ **ScsiPortGetBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetbusdata)または[ **ScsiPortSetBusDataByOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportsetbusdatabyoffset)このような設定を復元します。 ポート ドライバー呼び出しミニポート ドライバーの*HwScsiAdapterControl*で**ScsiSetBootConfig** HBA を停止するルーチンを呼び出した後。
 
 -   **ScsiSetRunningConfig**ミニポート ドライバーは、システムの実行中に、HBA を制御する必要がある HBA の設定を復元します。
 
-    ミニポート ドライバーをサポートする必要があります**ScsiSetRunningConfig**を呼び出す必要がある場合**ScsiPortGetBusData**または[ **ScsiPortSetBusDataByOffset** ](https://msdn.microsoft.com/library/windows/hardware/ff564751)このような設定を復元します。 ポート ドライバー呼び出しミニポート ドライバーの*HwScsiAdapterControl*で**ScsiSetRunningConfig** HBA を再起動するルーチンを呼び出す前にします。
+    ミニポート ドライバーをサポートする必要があります**ScsiSetRunningConfig**を呼び出す必要がある場合**ScsiPortGetBusData**または[ **ScsiPortSetBusDataByOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportsetbusdatabyoffset)このような設定を復元します。 ポート ドライバー呼び出しミニポート ドライバーの*HwScsiAdapterControl*で**ScsiSetRunningConfig** HBA を再起動するルーチンを呼び出す前にします。
 
 -   **ScsiRestartAdapter**を電源管理のシャット ダウンされた HBA を再起動します。
 
@@ -48,7 +48,7 @@ NT ベースのオペレーティング システムのミニポート ドライ
 
     ミニポート ドライバーがサポートされていない場合**ScsiRestartAdapter**、ポート ドライバー呼び出し、ミニポート ドライバーの*HwScsiFindAdapter*と*HwScsiInitialize*ルーチンHBA を再起動します。 ただし、このようなルーチンが必要な領域を再起動するとため、このようなミニポート ドライバーに電源が入らないの HBA をサポートするミニポート ドライバーだけ早く検出作業を行うことがあります**ScsiRestartAdapter**します。
 
-参照してください[ **HwScsiAdapterControl** ](https://msdn.microsoft.com/library/windows/hardware/ff557274)詳細についてはします。
+参照してください[ **HwScsiAdapterControl** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557274(v=vs.85))詳細についてはします。
 
  
 

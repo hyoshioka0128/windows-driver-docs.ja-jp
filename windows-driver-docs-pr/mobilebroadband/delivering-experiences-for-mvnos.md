@@ -4,12 +4,12 @@ description: MVNO 向けエクスペリエンスの提供
 ms.assetid: fcb2a3d4-bc19-4fa5-b81d-b0df287404a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32710e477237a1bbd9f18c4d2c68023b56e42f5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e449dad173c6471002fa1a241b8a21f188d95045
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574887"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380951"
 ---
 # <a name="delivering-experiences-for-mvnos"></a>MVNO 向けエクスペリエンスの提供
 
@@ -25,11 +25,11 @@ ms.locfileid: "56574887"
 
 -   [CDMA ネットワーク上に一致します。](#matching-on-cdma-networks)
 
-正しく MNO と MVNO にサービス メタデータと一致するために必要なハードウェアについては、[通信事業者ハードウェア概要](mobile-operator-hardware-overview.md)を参照してください。
+正しく MNO と MVNO にサービス メタデータと一致するために必要なハードウェアについては、次を参照してください。[通信事業者ハードウェア概要](mobile-operator-hardware-overview.md)します。
 
-サービスのメタデータについては、[サービス メタデータ](service-metadata.md)を参照してください。
+サービスのメタデータについては、次を参照してください。[サービス メタデータ](service-metadata.md)します。
 
-サービス メタデータ パッケージのスキーマについては、[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)を参照してください。
+サービス メタデータ パッケージのスキーマについては、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
 
 ## <a name="matching-on-gsm-networks"></a>GSM ネットワーク上に一致します。
 
@@ -214,7 +214,7 @@ MNO のネットワークのかどうかこれらの機能 (たとえば、MNO �
 
 ユーザーのモバイル ブロード バンド データ プランへの関連付けが決定されますと、モバイル ブロード バンド アプリでは、Windows 接続マネージャーに表示されるロゴとネットワークの名前を変更できます。 これは、アカウントのプロビジョニングにより、Windows に関連する特定のサブスクライバーのプランの情報を XML ベースの情報を送信する事業者アプリのメタデータを使用して行います。
 
-アカウント プロビジョニングについての詳細については、[アカウント プロビジョニング](account-provisioning.md)を参照してください。
+アカウント プロビジョニングについての詳細については、次を参照してください。[アカウント プロビジョニング](account-provisioning.md)します。
 
 **サービス メタデータの更新**
 
@@ -236,7 +236,7 @@ MNO のネットワークのかどうかこれらの機能 (たとえば、MNO �
 
 -   アプリのコンテンツ自体 (は、アプリ内のすべては特定の演算子に対して)。 これは、完全に制御がどのアプリのコードです。 ヘルプ コンテンツ、ナビゲーション オプション、ページ レイアウト、色を変更して、MNO または MVNO に基づいて、アプリ内のブランド化します。
 
--   アプリのタイルは、特定のイメージと演算子に固有のレイアウトを表示するのには動的に更新できます。 タイルのコンテンツを動的に更新する方法については、次を参照してください。[クイック スタート。タイルの更新を送信する](https://msdn.microsoft.com/library/windows/apps/hh465439)します。
+-   アプリのタイルは、特定のイメージと演算子に固有のレイアウトを表示するのには動的に更新できます。 タイルのコンテンツを動的に更新する方法については、次を参照してください。[クイック スタート。タイルの更新を送信する](https://docs.microsoft.com/previous-versions/windows/apps/hh465439(v=win.10))します。
 
 アプリで、次のものを rebrand ことはできません。
 
@@ -355,7 +355,7 @@ MVNOs に割り当てられているモバイル ブロード バンド デバ�
 
 -   IMSI や ICCID または CDMA のプロバイダーの名前または SID 値が対象となるパッケージに一致します。
 
-モバイル ブロード バンド メタデータの詳細については、[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)を参照してください。
+モバイル ブロード バンド メタデータの詳細については、次を参照してください。[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)します。
 
  
 

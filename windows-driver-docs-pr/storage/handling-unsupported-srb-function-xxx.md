@@ -9,12 +9,12 @@ keywords:
 - サポートされていない SRB_FUNCTION_XXX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 116843f42de7234ae8c4d1cd23fe0b5a8c3b8ed9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53764b5a0dea1f3800db006f6a58d29dbbe44dfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371156"
 ---
 # <a name="handling-unsupported-srbfunctionxxx"></a>処理のサポートされていない SRB\_関数\_XXX
 
@@ -26,7 +26,7 @@ ms.locfileid: "63383111"
 
 1.  セットの入力 SRB の**SrbStatus** SRB に\_状態\_無効な\_を要求します。
 
-2.  呼び出す[ **ScsiPortNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff564657)で、 *NotificationType * * * RequestComplete** SRB の入力を使用しています。
+2.  呼び出す[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)で、 *NotificationType * * * RequestComplete** SRB の入力を使用しています。
 
 3.  呼び出す**ScsiPortNotification**を使用して、* NotificationType ***NextRequest**、または**NextLuRequest** HBA は、タグが付けられたキューをサポートしているかあたり複数の要求論理ユニット。
 

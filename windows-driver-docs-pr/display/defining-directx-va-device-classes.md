@@ -7,12 +7,12 @@ keywords:
 - デバイスは、WDK DirectX VA をクラスします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a95ad517c67d0ec418cfafc4d99749eca8e0ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6073f426af2c4158293210ed6c275cd10851dc12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327130"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384910"
 ---
 # <a name="defining-directx-va-device-classes"></a>DirectX VA デバイス クラスの定義
 
@@ -20,7 +20,7 @@ ms.locfileid: "63327130"
 ## <span id="ddk_defining_directx_va_device_classes_gg"></span><span id="DDK_DEFINING_DIRECTX_VA_DEVICE_CLASSES_GG"></span>
 
 
-このセクションではインター コンテナー デバイス、ProcAmp 制御デバイス、インター モードのデバイスのデバイス クラスを定義するコード例を使用して (たとえば、 [bob](bob-deinterlacing.md)) と COPP デバイス。 これらのデバイス クラスを構成するメンバー関数の宣言を含めることが、 [ProcAmp コントロール DDI](https://msdn.microsoft.com/library/windows/hardware/ff569186)と[インター レースを解除 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552701)します。 これらのデバイス クラス定義は、ドライバーによって提供されるヘッダー ファイルで宣言できます。
+このセクションではインター コンテナー デバイス、ProcAmp 制御デバイス、インター モードのデバイスのデバイス クラスを定義するコード例を使用して (たとえば、 [bob](bob-deinterlacing.md)) と COPP デバイス。 これらのデバイス クラスを構成するメンバー関数の宣言を含めることが、 [ProcAmp コントロール DDI](https://docs.microsoft.com/windows-hardware/drivers/display/procamp-control-ddi)と[インター レースを解除 DDI](https://docs.microsoft.com/windows-hardware/drivers/display/deinterlace-ddi)します。 これらのデバイス クラス定義は、ドライバーによって提供されるヘッダー ファイルで宣言できます。
 
 各デバイスの種類と各デバイスの種類に適用される基本クラスを定義するのにには、次のコード例を使用します。
 

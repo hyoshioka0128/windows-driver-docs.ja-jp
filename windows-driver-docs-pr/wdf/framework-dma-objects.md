@@ -13,12 +13,12 @@ keywords:
 - トランザクション オブジェクト WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24fb74d9d301986c333c543f46322acad0db13ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60d8c02e326586d098c4e85c2b1b89091c6dc850
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368679"
 ---
 # <a name="framework-dma-objects"></a>フレームワーク DMA オブジェクト
 
@@ -41,9 +41,9 @@ Framework の共通のバッファー オブジェクトは、ドライバーと
 
 これらのオブジェクトをエクスポートするインターフェイスについてを参照してください。
 
-[Framework DMA オブジェクト参照](https://msdn.microsoft.com/library/windows/hardware/dn265634)
+[Framework DMA オブジェクト参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/)
 
-[バッファー オブジェクト参照の一般的なフレームワーク](https://msdn.microsoft.com/library/windows/hardware/dn265627)
+[バッファー オブジェクト参照の一般的なフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcommonbuffer/)
 
  
 

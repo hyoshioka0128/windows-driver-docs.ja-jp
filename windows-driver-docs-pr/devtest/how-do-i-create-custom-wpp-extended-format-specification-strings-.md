@@ -4,12 +4,12 @@ description: 作成する方法カスタム WPP 拡張書式指定文字列
 ms.assetid: 6c4c47c6-71b2-48a0-bab3-8498029b8244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc4778aab27945662eca2422ae55cb594c516632
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57fac7ac4e0fdd36248b1df4787ce3ad8a8917b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359488"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358297"
 ---
 # <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>カスタムの WPP 拡張書式指定文字列を作成する方法
 
@@ -115,7 +115,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    このステートメントは、長さと可変長バッファーのアドレスを保存するために使用する構造体を定義します。 ログにこの構造体が初期化されて\_LENSTR のマクロの呼び出しごとにローカルと[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)内を使用する 16 進ダンプの複合型、 *FormatString*パラメーター。
+    このステートメントは、長さと可変長バッファーのアドレスを保存するために使用する構造体を定義します。 ログにこの構造体が初期化されて\_LENSTR のマクロの呼び出しごとにローカルと[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))内を使用する 16 進ダンプの複合型、 *FormatString*パラメーター。
 
 3.  <span codelanguage=""></span>
     <table>
@@ -129,7 +129,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    このステートメントは、[xstr] を初期化するために使用されるマクロを定義します。\_可変長バッファーの t の構造体。 このマクロを使用して、内の可変長バッファーを渡す必要があります、 *VariableList*パラメーターの[ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)します。
+    このステートメントは、[xstr] を初期化するために使用されるマクロを定義します。\_可変長バッファーの t の構造体。 このマクロを使用して、内の可変長バッファーを渡す必要があります、 *VariableList*パラメーターの[ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))します。
 
 4.  <span codelanguage=""></span>
     <table>
@@ -150,7 +150,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     -   最初の呼び出し WPP\_LOGPAIR は可変長バッファーのサイズを渡します。
     -   WPP の 2 番目の呼び出し\_LOGPAIR 自体のバッファーのアドレスを渡します。
 
-    **注**  このマクロである必要があります、[xstr]\_t 構造がログへの呼び出しで、可変長バッファーの初期化されて\_LENSTR します。 その結果、可変長バッファーを渡す必要があります[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)ログを通じて\_LENSTR マクロ。
+    **注**  このマクロである必要があります、[xstr]\_t 構造がログへの呼び出しで、可変長バッファーの初期化されて\_LENSTR します。 その結果、可変長バッファーを渡す必要があります[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))ログを通じて\_LENSTR マクロ。
 
      
 

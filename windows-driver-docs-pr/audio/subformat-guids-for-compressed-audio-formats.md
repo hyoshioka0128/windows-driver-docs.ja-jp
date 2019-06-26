@@ -4,12 +4,12 @@ description: 圧縮されたオーディオ形式のサブ形式 GUID
 ms.assetid: f9595d6c-952c-4266-8eb5-5c8581051d28
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e8f98aa32f658ea9cc530859523330a2189477
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 78aaf7021bd163df49c1da399a43b40d059d2db8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161386"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354245"
 ---
 # <a name="subformat-guids-for-compressed-audio-formats"></a>圧縮されたオーディオ形式のサブ形式 GUID
 
@@ -18,7 +18,7 @@ Windows 7 では、圧縮されたオーディオ形式のサポートを提供�
 
 CEA-d 861 standard では、結果として、CEA デバイスでサポートされていないオーディオの形式がこのようなデバイスに転送されないことを確認する必要があります。 高品位のマルチ メディア インターフェイス (HDMI) と[ディスプレイ ポート等](https://www.displayport.org/)CEA デバイスの例を示します。
 
-ユーザー モードへのアクセスの Guid がで指定された、**サブフォーマット**のメンバー [WAVEFORMATEXTENSIBLE](https://go.microsoft.com/fwlink/p/?linkid=142020)し、 **FormatExt**のメンバー [WAVEFORMATEXTENSIBLE\_IEC61937](https://go.microsoft.com/fwlink/p/?linkid=142021)します。 オーディオ ドライバーのカーネル モードによるアクセスは、Guid がで指定された、 **DataRange**のメンバー、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096)構造体
+ユーザー モードへのアクセスの Guid がで指定された、**サブフォーマット**のメンバー [WAVEFORMATEXTENSIBLE](https://go.microsoft.com/fwlink/p/?linkid=142020)し、 **FormatExt**のメンバー [WAVEFORMATEXTENSIBLE\_IEC61937](https://go.microsoft.com/fwlink/p/?linkid=142021)します。 オーディオ ドライバーのカーネル モードによるアクセスは、Guid がで指定された、 **DataRange**のメンバー、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)構造体
 
 使用可能な圧縮オーディオ形式の Guid は、次の表に一覧表示されます。
 
@@ -181,9 +181,9 @@ CEA-d 861 standard では、結果として、CEA デバイスでサポートさ
 
  
 
-次のコード例は、オーディオのミニポート ドライバーの定義し、初期化を示しています、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096)を持つ完全に機能 Dolby Digital HDMI シンクで使用するための構造。さらにデコーダー。 このタイプのシンクには、44.1 と 48 KHz の転送速度がサポートされています。
+次のコード例は、オーディオのミニポート ドライバーの定義し、初期化を示しています、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)を持つ完全に機能 Dolby Digital HDMI シンクで使用するための構造。さらにデコーダー。 このタイプのシンクには、44.1 と 48 KHz の転送速度がサポートされています。
 
-オーディオのミニポート ドライバー 48 KHz のサンプリング レートの定義を初期化し、次のコードを使用して、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096)構造体。 このコードは、オーディオのミニポート ドライバーを公開するデータ範囲を示しています。
+オーディオのミニポート ドライバー 48 KHz のサンプリング レートの定義を初期化し、次のコードを使用して、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)構造体。 このコードは、オーディオのミニポート ドライバーを公開するデータ範囲を示しています。
 
 ```cpp
 //Define and initialize KSDATARANGE_AUDIO structure
@@ -203,7 +203,7 @@ drDDPlus48.MinimumSampleFrequency = 192000; // 48 KHz * 4.
 drDDPlus48.MaximumSampleFrequency = 192000;
 ```
 
-オーディオのミニポート ドライバーのサンプリング レート 44.1 KHz については、定義を初期化し、次のコードを使用して、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096)構造体。
+オーディオのミニポート ドライバーのサンプリング レート 44.1 KHz については、定義を初期化し、次のコードを使用して、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)構造体。
 
 ```cpp
 //Define and initialize KSDATARANGE_AUDIO structure

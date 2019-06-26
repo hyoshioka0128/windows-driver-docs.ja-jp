@@ -4,12 +4,12 @@ description: Windows 10 以降できます機能を拡張するドライバー �
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83b5d99db73c0f2ba82cbc8cbda66875f58d79ac
-ms.sourcegitcommit: 1de5a464a908f77a1f68fcd52ac33852e9419589
+ms.openlocfilehash: faed1e66952e25d1b5b6e1d3340a500365768451
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66220060"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384777"
 ---
 # <a name="using-an-extension-inf-file"></a>拡張 INF ファイルの使用
 
@@ -63,7 +63,7 @@ Windows 10 では、以前は、Windows は、特定のデバイスをインス�
 
 INF の拡張機能として、INF を定義する必要があるエントリを次に示します。
 
-1.  これらの値を指定**クラス**と**ClassGuid**で、 [**バージョン**](inf-version-section.md)セクション。 セットアップ クラスの詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://msdn.microsoft.com/library/windows/hardware/ff553426)します。
+1.  これらの値を指定**クラス**と**ClassGuid**で、 [**バージョン**](inf-version-section.md)セクション。 セットアップ クラスの詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)します。
 
     ```cpp
     [Version]
@@ -100,7 +100,7 @@ INF の拡張機能として、INF を定義する必要があるエントリを
 
 ほとんどの場合に提出する INF 拡張機能パッケージ ハードウェア デベロッパー センターとは別にドライバー パッケージから。  パッケージの拡張機能、Inf とサンプル コードへのリンクの例についてを参照してください。[ユニバーサル ドライバー シナリオ](../develop/universal-driver-scenarios.md)します。
 
-ドライバーの検証と送信のプロセスは、拡張機能と正規表現の Inf Inf のと同じです。 詳細については、次を参照してください。 [Windows HLK Getting Started](https://msdn.microsoft.com/library/windows/hardware/dn915002)します。
+ドライバーの検証と送信のプロセスは、拡張機能と正規表現の Inf Inf のと同じです。 詳細については、次を参照してください。 [Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)します。
 
 ## <a name="uninstalling-an-extension-driver"></a>拡張機能、ドライバーのアンインストール
 

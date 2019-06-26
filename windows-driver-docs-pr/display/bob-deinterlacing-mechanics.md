@@ -9,12 +9,12 @@ keywords:
 - WDK DirectX va なので、bob、mechanics デインター レース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afedf91ae8d5627c2bb96dd6d6a9998888f2dd71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e739027d64bce5b37f2fccb40cb06a3a2ebd8ca6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358200"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384618"
 ---
 # <a name="bob-deinterlacing-mechanics"></a>bob デインターレース メカニズム
 
@@ -30,7 +30,7 @@ ms.locfileid: "63358200"
 
 ![インターリーブの 2 つのフィールドを格納している画面のメモリ レイアウトを示す図](images/deinterlace.png)
 
-指定されたビデオのサンプルには、インターリーブされた 2 つのフィールドが含まれている場合、 **DXVA\_SampleFieldInterleavedEvenFirst**と**DXVA\_SampleFieldInterleavedOddFirst**メンバー、 [ **DXVA\_SampleFormat** ](https://msdn.microsoft.com/library/windows/hardware/ff564045)列挙型、2 番目のフィールドの開始時刻を使用して計算、 **rtStart**と**rtEnd**のメンバー、 [ **DXVA\_VideoSample** ](https://msdn.microsoft.com/library/windows/hardware/ff564085)次のように構造体します。
+指定されたビデオのサンプルには、インターリーブされた 2 つのフィールドが含まれている場合、 **DXVA\_SampleFieldInterleavedEvenFirst**と**DXVA\_SampleFieldInterleavedOddFirst**メンバー、 [ **DXVA\_SampleFormat** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ne-dxva-_dxva_sampleformat)列挙型、2 番目のフィールドの開始時刻を使用して計算、 **rtStart**と**rtEnd**のメンバー、 [ **DXVA\_VideoSample** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videosample)次のように構造体します。
 
 (**rtStart** + **rtEnd**)/2
 

@@ -4,12 +4,12 @@ description: このトピックでは、WDI ドライバーでのログ記録 IH
 ms.assetid: C9784C2D-75B1-4229-A219-748C52F430D5
 ms.date: 06/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48331866a493beda962b0d9334ec5c57c544697f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bed127cb83a53ab8f507a9e590a40ba55468196f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362502"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366540"
 ---
 # <a name="user-initiated-feedback---repro-mode"></a>ユーザーが開始したフィードバック - 再現モード
 
@@ -84,10 +84,10 @@ IHV は、ETW のログ記録コード内の ETW コントロールのコール�
 
 ETW のログ記録の実装方法によって、ETW コールバックを有効にする 2 つの方法はあります。
 
-1. 使用して自動生成されたコードで ETWs を指します`MC.exe`します。 参照してください[、インストルメンテーション マニフェストを記述](https://msdn.microsoft.com/library/windows/desktop/dd996930)の詳細。
+1. 使用して自動生成されたコードで ETWs を指します`MC.exe`します。 参照してください[、インストルメンテーション マニフェストを記述](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)の詳細。
     1. 次のスニペット (etwtracingevents.h) のヘッダーを使用して作成された自動生成された ETW イベントのヘッダーは、`MC.exe`します。 前提に、ETW イベントが既に生成されている、ため、このトピックではこの部分で説明されます。
     1. MCGEN_PRIVATE_ENABLE_CALLBACK_V2 は自動生成された ETW のヘッダーをインクルードする前に定義する必要があります。 それ以外の場合、コールバックは呼び出されません。
-1. 使用して ETW コールバックの登録、 [ **EventRegister** ](https://msdn.microsoft.com/library/windows/desktop/aa363744) API。
+1. 使用して ETW コールバックの登録、 [ **EventRegister** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventregister) API。
     1. コールバックの ETW プロバイダーに渡す必要があります、 **EventRegister**トレース プロバイダーの登録時に機能します。
 
 このスニペットは、ETW のコールバック関数のプロトタイプを示しています。

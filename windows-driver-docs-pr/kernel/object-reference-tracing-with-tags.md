@@ -6,12 +6,12 @@ keywords:
 - オブジェクトにタグを付ける WDK を参照します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cd71cca13a7d87fb4e981215cef0f6c593964a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a38db3c02fd749c4cb6f7d05b7d55c8ad75026f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351071"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386583"
 ---
 # <a name="object-reference-tracing-with-tags"></a>タグを使用したオブジェクト参照トレース
 
@@ -22,23 +22,23 @@ ms.locfileid: "63351071"
 
 ドライバーがオブジェクトへのすべての参照を解放しない場合は、オブジェクトの参照カウントをゼロにデクリメントでことはありませんし、オブジェクトは削除されません。 したがって、オブジェクト (たとえば、システム メモリ) によって使用されているシステム リソースは*リーク*します。 つまり、オペレーティング システムによって開始される次回まで使用できません。
 
-参照エラーの別の型は、ドライバーの場合に発生します。*参照 *オブジェクト。 この場合、ドライバーはドライバーが実際に保持しているよりもオブジェクトを参照を解放します。 このエラーが発生すると、その他のクライアントはオブジェクトへのアクセス試行を続けている途中で、削除するオブジェクト。
+参照エラーの別の型は、ドライバーの場合に発生します。*参照* オブジェクト。 この場合、ドライバーはドライバーが実際に保持しているよりもオブジェクトを参照を解放します。 このエラーが発生すると、その他のクライアントはオブジェクトへのアクセス試行を続けている途中で、削除するオブジェクト。
 
 リークとカーネル オブジェクトの不足の参照は、難しいバグを追跡するを指定できます。 たとえば、プロセス オブジェクトまたはデバイス オブジェクトは、数万の参照があります。 このような場合は、オブジェクト参照のバグの原因を特定することは難しい。
 
 Windows 7 および Windows の以降のバージョンでは、オブジェクト参照をすると、これらのバグを見つけやすいようにタグ付けできます。 次のルーチンでは、取得とカーネル オブジェクトへの参照の解放とタグを関連付けます。
 
-[**ObDereferenceObjectDeferDeleteWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff557732)
+[**ObDereferenceObjectDeferDeleteWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobjectdeferdeletewithtag)
 
-[**ObDereferenceObjectWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff557734)
+[**ObDereferenceObjectWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobjectwithtag)
 
-[**ObReferenceObjectByHandleWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff558683)
+[**ObReferenceObjectByHandleWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandlewithtag)
 
-[**ObReferenceObjectByPointerWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff558688)
+[**ObReferenceObjectByPointerWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointerwithtag)
 
-[**ObReferenceObjectWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff558690)
+[**ObReferenceObjectWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectwithtag)
 
-たとえば、 **ObReferenceObjectWithTag**と**ObDereferenceObjectWithTag**、強化されたバージョンのでは Windows 7、Windows の以降のバージョンで利用可能な[ **ObReferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff558678)と[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)ルーチンは Windows 2000 以降のバージョンの Windows で利用できます。 これらの強化されたルーチンを使用すると、入力パラメーターとして、4 バイトのカスタム タグ値を指定できます。 呼び出しごとにタグの値に追加、[オブジェクト参照トレース](https://go.microsoft.com/fwlink/p/?linkid=153590)によってアクセスできる、 [Windows デバッグ ツール](https://go.microsoft.com/fwlink/p/?linkid=153599)します。 **ObReferenceObject**と**ObDereferenceObject**カスタム タグを指定する呼び出し元を有効にせずに、Windows 7 および Windows の以降のバージョンでは、これらのルーチンは、トレースを (タグ値"Dflt") を含む既定のタグを追加します。 そのため、呼び出しを**ObReferenceObject**または**ObDereferenceObject**への呼び出しと同じ効果**ObReferenceObjectWithTag**または**ObDereferenceObjectWithTag** "Dflt"のタグ値を指定します。 (プログラムでは、このタグの値として表されます 0x746c6644 または 'tlfD'。)
+たとえば、 **ObReferenceObjectWithTag**と**ObDereferenceObjectWithTag**、強化されたバージョンのでは Windows 7、Windows の以降のバージョンで利用可能な[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)と[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)ルーチンは Windows 2000 以降のバージョンの Windows で利用できます。 これらの強化されたルーチンを使用すると、入力パラメーターとして、4 バイトのカスタム タグ値を指定できます。 呼び出しごとにタグの値に追加、[オブジェクト参照トレース](https://go.microsoft.com/fwlink/p/?linkid=153590)によってアクセスできる、 [Windows デバッグ ツール](https://go.microsoft.com/fwlink/p/?linkid=153599)します。 **ObReferenceObject**と**ObDereferenceObject**カスタム タグを指定する呼び出し元を有効にせずに、Windows 7 および Windows の以降のバージョンでは、これらのルーチンは、トレースを (タグ値"Dflt") を含む既定のタグを追加します。 そのため、呼び出しを**ObReferenceObject**または**ObDereferenceObject**への呼び出しと同じ効果**ObReferenceObjectWithTag**または**ObDereferenceObjectWithTag** "Dflt"のタグ値を指定します。 (プログラムでは、このタグの値として表されます 0x746c6644 または 'tlfD'。)
 
 関連付けられている潜在的なオブジェクト リークや参照の不足を追跡しのセットを識別する**ObReferenceObject*Xxx*WithTag**と**ObDereferenceObject*Xxx*WithTag**をインクリメントおよびデクリメント、特定のオブジェクトの参照カウントは、ドライバーを呼び出します。 このセット内のすべての呼び出しに使用するには、一般的なタグ値 (たとえば、"Lky8") を選択します。 ドライバーが完了したらオブジェクト、デクリメントの数を使用する必要がありますインクリメント数正確に一致します。 これらの番号が一致しない場合、ドライバーは、オブジェクト参照のバグが。 デバッガーは、インクリメントおよびデクリメント各タグの値の数を比較し、一致しないかどうかに通知することができます。 この機能により、参照カウントの不一致の原因をすばやく特定できます。
 
@@ -95,4 +95,4 @@ Tag: Lky8 References: 1 Dereferences: 2 Under reference by: 1
 
 既定では、オペレーティング システムは、オブジェクトの解放後にオブジェクトのオブジェクト参照のトレースを削除することによってメモリを節約できます。 過小の参照を追跡するには、オブジェクトを解放した後も、トレースがメモリに格納されたままことが必要です。 この目的では、Gflags ツールは、コンピューターがシャット ダウンし、もう一度開始中にメモリ内でトレースを保持する「永続的な」オプションを提供します。
 
-タグなしのオブジェクト参照のトレースは、Windows XP で導入されました。 トレースには、タグが含まれていないが、開発者はあまり便利な手法を使用して、オブジェクト参照のバグを特定する必要があります。 デバッガーは、オブジェクトの種類によって、開発者が選択されているオブジェクトのグループの参照を追跡できます。 開発者がオブジェクト参照のさまざまなソースを識別でき、逆参照は、唯一の方法は、その呼び出し履歴を比較するでした。 以前[! obtrace](https://docs.microsoft.com/windows-hardware/drivers/debugger/-obtrace)例には、特定の種類、プロセスなどのオブジェクトのスタック 5 つのみにはが含まれています ([**」プロセス**](eprocess.md)) オブジェクト、参照される場合が、数千回の逆参照します。 何千もスタックを検査するのでは、タグを使用せず、オブジェクトのリークまたは過小参照のソースを識別するために難しい場合があります。
+タグなしのオブジェクト参照のトレースは、Windows XP で導入されました。 トレースには、タグが含まれていないが、開発者はあまり便利な手法を使用して、オブジェクト参照のバグを特定する必要があります。 デバッガーは、オブジェクトの種類によって、開発者が選択されているオブジェクトのグループの参照を追跡できます。 開発者がオブジェクト参照のさまざまなソースを識別でき、逆参照は、唯一の方法は、その呼び出し履歴を比較するでした。 以前[! obtrace](https://docs.microsoft.com/windows-hardware/drivers/debugger/-obtrace)例には、特定の種類、プロセスなどのオブジェクトのスタック 5 つのみにはが含まれています ([ **」プロセス**](eprocess.md)) オブジェクト、参照される場合が、数千回の逆参照します。 何千もスタックを検査するのでは、タグを使用せず、オブジェクトのリークまたは過小参照のソースを識別するために難しい場合があります。

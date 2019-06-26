@@ -6,23 +6,23 @@ keywords:
 - デバッガーのエンジンの API、ターゲット、状態
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1881d6ab03e7f163c1ffa7dbfe9639ff7e63b393
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 058e1649f6741d354797932948592c9bd621bde1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368649"
 ---
 # <a name="target-state"></a>ターゲットの状態
 
 
-メソッド[ **OutputCurrentState** ](https://msdn.microsoft.com/library/windows/hardware/ff553206)デバッガーの出力ストリームにターゲットの現在の状態が出力されます。
+メソッド[ **OutputCurrentState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-outputcurrentstate)デバッガーの出力ストリームにターゲットの現在の状態が出力されます。
 
-ターゲットの現在の実行状態がによって返される[ **GetExecutionStatus**](https://msdn.microsoft.com/library/windows/hardware/ff546675)します。 ターゲットが中断されている場合、メソッド[ **SetExecutionStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff556693)実行モードのいずれかの実行を再開するために使用できます。
+ターゲットの現在の実行状態がによって返される[ **GetExecutionStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getexecutionstatus)します。 ターゲットが中断されている場合、メソッド[ **SetExecutionStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-setexecutionstatus)実行モードのいずれかの実行を再開するために使用できます。
 
-メソッド[ **GetReturnOffset** ](https://msdn.microsoft.com/library/windows/hardware/ff548237)現在の関数が返されるときに実行される命令のアドレスを返します。
+メソッド[ **GetReturnOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getreturnoffset)現在の関数が返されるときに実行される命令のアドレスを返します。
 
-[**GetNearInstruction** ](https://msdn.microsoft.com/library/windows/hardware/ff547197)命令を特定のアドレスに対する相対の位置を返します。
+[**GetNearInstruction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getnearinstruction)命令を特定のアドレスに対する相対の位置を返します。
 
 ### <a name="span-idexaminingthestacktracespanspan-idexaminingthestacktracespanexamining-the-stack-trace"></a><span id="examining_the_stack_trace"></span><span id="EXAMINING_THE_STACK_TRACE"></span>スタック トレースを調べる
 
@@ -32,7 +32,7 @@ A*コール スタック*スレッドによって行われる関数呼び出し�
 
  
 
-呼び出し履歴を取得するまたは*スタック トレース*、メソッドを使用して[ **GetStackTrace** ](https://msdn.microsoft.com/library/windows/hardware/ff548425)と[ **GetContextStackTrace**](https://msdn.microsoft.com/library/windows/hardware/ff545748). スタック トレースを使用して印刷できる[ **OutputStackTrace** ](https://msdn.microsoft.com/library/windows/hardware/ff553252)と[ **OutputContextStackTrace**](https://msdn.microsoft.com/library/windows/hardware/ff553203)します。
+呼び出し履歴を取得するまたは*スタック トレース*、メソッドを使用して[ **GetStackTrace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getstacktrace)と[ **GetContextStackTrace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-getcontextstacktrace). スタック トレースを使用して印刷できる[ **OutputStackTrace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-outputstacktrace)と[ **OutputContextStackTrace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-outputcontextstacktrace)します。
 
  
 

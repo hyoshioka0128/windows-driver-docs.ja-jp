@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34574ad8c0a8528f750e9a5ce296564517dd540e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e41a31a569ffdfdab67fe415b49b2106ebe95d14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331708"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386753"
 ---
 # <a name="avcfunctiongetconnectinfo"></a>AVC\_関数\_取得\_接続情報
 
@@ -90,7 +90,7 @@ typedef struct _AVC_PRECONNECT_INFO {
 } AVC_PRECONNECT_INFO, *PAVC_PRECONNECT_INFO;
 ```
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
 **ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
 
@@ -110,7 +110,7 @@ AV/C デバイスの接続情報を指定します。
 
 ### <a name="see-also"></a>関連項目
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177), [**AVC\_PRECONNECT\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff554190), [**AVCPRECONNECTINFO**](https://msdn.microsoft.com/library/windows/hardware/ff554103), [**AVC\_FUNCTION**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb), [**AVC\_PRECONNECT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_preconnect_info), [**AVCPRECONNECTINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcpreconnectinfo), [**AVC\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
 
  
 

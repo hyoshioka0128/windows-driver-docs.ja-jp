@@ -13,19 +13,19 @@ keywords:
 - ミニドライバー WDK VRAM のキャプチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15648b4a90d3be8e89662406132babbad8ab4a72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e33a58ce1de5794913affa95b9e2396dff608f5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386657"
 ---
 # <a name="capturing-video-to-vram-using-avstream"></a>AVStream を使用してビデオを VRAM にキャプチャする
 
 
 Windows vista 以降では、ビデオおよびオーディオ グラフィックス アダプターの VRAM に直接、AVStream ドライバーはキャプチャできます。 Windows Vista より前に存在していた AVStream ドライバーでは、まず VRAM にデータ、システム メモリに転送する、および VRAM を表示するため最後にバックアップする必要があります。
 
-GPU がスケジュール設定と VRAM の仮想化によって提供される新しい VRAM のキャプチャのサポートを利用、 [Windows Vista Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570593)します。
+GPU がスケジュール設定と VRAM の仮想化によって提供される新しい VRAM のキャプチャのサポートを利用、 [Windows Vista Display Driver Model](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)します。
 
 VRAM をキャプチャするには、デバイスはキャプチャを含めるし、同じビデオ カードの機能を表示する必要があります。
 

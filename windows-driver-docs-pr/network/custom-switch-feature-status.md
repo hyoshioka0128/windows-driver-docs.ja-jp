@@ -4,12 +4,12 @@ description: カスタム スイッチ機能の状態
 ms.assetid: 2362EE05-9CC9-451D-80D1-C18CC9274BAB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5efba9e9f5e2dbb0c7731998a1164bdc74feaa34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ac3ed87e4b6e31bec0f33402a4788c663146ab3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387396"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383699"
 ---
 # <a name="custom-switch-feature-status"></a>カスタム スイッチ機能の状態
 
@@ -61,7 +61,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_CustomSwitchData.mof
 net start vmms
 ```
 
-MOF コンパイラを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://msdn.microsoft.com/library/windows/hardware/ff542012)します。
+MOF コンパイラを使用する方法の詳細については、次を参照してください。[ドライバーの MOF ファイルをコンパイルする](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)します。
 
 次の例では、スイッチのデータを取得するカスタム スイッチ機能の状態の定義を使用する方法を示します。 この例では、Fabrikam\_CustomSwitchData MOF クラスを使用して"TestSwitch"という名前のスイッチからスイッチの状態を取得します。 Fabrikam, Inc. の拡張機能では、vSwitch"TestSwitch"が有効になり、123 の状態を返すことができます。
 

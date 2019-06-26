@@ -7,12 +7,12 @@ keywords:
 - I/O WDK カーネル、デバイスのプログラミング
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d00f776d44156e398b227077a9968b0a5e18550
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62d4a425124dcdca06df6766ef70c17448edd0e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378788"
 ---
 # <a name="programming-a-device-for-an-io-operation"></a>I/O 操作のためのデバイスのプログラミング
 
@@ -20,7 +20,7 @@ ms.locfileid: "63381360"
 
 
 
-次の一般的なガイドラインを使用して、設計、書き込み、および呼び出しの[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928) I/O 操作のデバイスのプログラミング ルーチン。
+次の一般的なガイドラインを使用して、設計、書き込み、および呼び出しの[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine) I/O 操作のデバイスのプログラミング ルーチン。
 
 -   A *SynchCritSection* I/O 操作のデバイスをプログラムするルーチンができるだけ早く制御を返す必要があります。
 

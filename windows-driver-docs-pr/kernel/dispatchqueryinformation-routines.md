@@ -9,12 +9,12 @@ keywords:
 - クエリ情報ディスパッチ ルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17970f99a883ff1a2488370da303f65e68acf3e4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ccd4b3f0c6c53e852a66a4dac2740d03a0d6524a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387227"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384985"
 ---
 # <a name="dispatchqueryinformation-routines"></a>DispatchQueryInformation ルーチン
 
@@ -22,7 +22,7 @@ ms.locfileid: "63387227"
 
 
 
-ドライバーの[ *DispatchQueryInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_クエリ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff550788) I/O 関数のコード。 この I/O 関数のコードのドライバー サポートのオプションですとに通常表示される上位レベルまたはファイル システム ドライバー。 この要求は、I/O マネージャーとその他のオペレーティング システムのコンポーネントでは、その他のカーネル モード ドライバーによって送信されます。 たとえば、ユーザー モード アプリケーションを呼び出すときに送信される[ **GetFileInformationByHandle**](https://msdn.microsoft.com/library/windows/desktop/aa364952)、カーネル モード コンポーネントを呼び出すと、 [ **ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052).
+ドライバーの[ *DispatchQueryInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_クエリ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-query-information) I/O 関数のコード。 この I/O 関数のコードのドライバー サポートのオプションですとに通常表示される上位レベルまたはファイル システム ドライバー。 この要求は、I/O マネージャーとその他のオペレーティング システムのコンポーネントでは、その他のカーネル モード ドライバーによって送信されます。 たとえば、ユーザー モード アプリケーションを呼び出すときに送信される[ **GetFileInformationByHandle**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-getfileinformationbyhandle)、カーネル モード コンポーネントを呼び出すと、 [ **ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile).
 
  
 

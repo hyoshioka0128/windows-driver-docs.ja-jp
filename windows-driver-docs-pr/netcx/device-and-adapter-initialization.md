@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/18/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fbd4bfca2a0026f133e1b7b445f56a42c147e3b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34986af9bf87c1d25c012ac00da75b446f2c537d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372704"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386365"
 ---
 # <a name="device-and-adapter-initialization"></a>デバイスとアダプターの初期化
 
@@ -22,7 +22,7 @@ ms.locfileid: "63372704"
 
 ## <a name="evtwdfdriverdeviceadd"></a>EVT_WDF_DRIVER_DEVICE_ADD
 
-NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数を呼び出すときに[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)その[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff540807)ルーチン。
+NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数を呼び出すときに[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)その[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチン。
 
 [ *EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)、NetAdapterCx クライアント ドライバーは、次の順序で行う必要があります。
 
@@ -36,7 +36,7 @@ NetAdapterCx のクライアント ドライバーは、登録、 [ *EVT_WDF_DRI
     }
     ```
 
-2. 呼び出す[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)します。 
+2. 呼び出す[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。 
 
     > [!TIP]
     > デバイスは、1 つ以上の NETADAPTER をサポートする、デバイス コンテキストで各アダプターへのポインターを格納することをお勧めします。

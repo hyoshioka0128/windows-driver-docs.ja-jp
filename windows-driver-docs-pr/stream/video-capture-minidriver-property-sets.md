@@ -4,12 +4,12 @@ description: ビデオ キャプチャ ミニドライバーのプロパティ �
 ms.assetid: adbf62c4-1c66-46e9-ae8e-867a88bb107c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e596e25e29914dc7f8f49fa30376f41ffa11b2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f82ee31d07d3d901c8c33dcd0081343212527b8c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380618"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385387"
 ---
 # <a name="video-capture-minidriver-property-sets"></a>ビデオ キャプチャ ミニドライバーのプロパティ セット
 
@@ -42,13 +42,13 @@ ms.locfileid: "63380618"
 
 -   **プロパティ記述子の型**
 
-    プロパティ記述子には、プロパティとそのプロパティに対して実行する操作を指定します。 記述子が常に始まり、 [ **KSPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)構造がいくつかの型記述子の追加情報を格納します。 たとえば、 [ **KSNODEPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff537143)構造体は、プロパティ記述子を KSPROPERTY 構造で始まりますが、ノード識別子も含まれています。
+    プロパティ記述子には、プロパティとそのプロパティに対して実行する操作を指定します。 記述子が常に始まり、 [ **KSPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)構造がいくつかの型記述子の追加情報を格納します。 たとえば、 [ **KSNODEPROPERTY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)構造体は、プロパティ記述子を KSPROPERTY 構造で始まりますが、ノード識別子も含まれています。
 
 -   **プロパティ値の型**
 
     プロパティの値を持つし、この値の型は、プロパティによって異なります。 たとえば、オンまたはオフ----だけ 2 つの状態のいずれかの可能性のあるプロパティには、ブール値通常があります。 ULONG 値 0x0 からの整数値を 0 xffffffff にことが前提としているプロパティがあります。 複雑なプロパティは、配列や構造体の値があります。
 
-プロパティ記述子と上記のプロパティ値は、インスタンス仕様のプロパティに固有のバージョンおよび操作データをバッファーする[KS プロパティ、イベント、およびメソッド](https://msdn.microsoft.com/library/windows/hardware/ff567673)について説明します。
+プロパティ記述子と上記のプロパティ値は、インスタンス仕様のプロパティに固有のバージョンおよび操作データをバッファーする[KS プロパティ、イベント、およびメソッド](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)について説明します。
 
 プロパティ要求では、次のフラグのいずれかを使用して、プロパティに対して実行する操作を指定します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "63380618"
 
 -   KSPROPERTY\_型\_設定
 
-フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 サポートされるかどうか、*取得*と*設定*操作は、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティがありますのみが必要です、*設定*操作が、get 操作が現在の設定を読み取るために役立つ可能性も。 ビデオ キャプチャ プロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。 [KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。
+フィルターと暗証番号 (pin) のすべてのオブジェクトは、それらのプロパティを basic サポート操作をサポートします。 サポートされるかどうか、*取得*と*設定*操作は、プロパティによって異なります。 フィルターまたは pin オブジェクトの固有の機能を表すプロパティは、get 操作のみを必要とする可能性があります。 構成可能な設定を表すプロパティがありますのみが必要です、*設定*操作が、get 操作が現在の設定を読み取るために役立つ可能性も。 ビデオ キャプチャ プロパティで、get、セット、および操作を basic サポートを使用する方法の詳細については、次を参照してください。 [KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。
 
 すべてのプロパティの説明には、ビデオ キャプチャ ミニドライバーが読み取りまたは書き込みのプロパティをサポートする必要があるかどうかを示すテーブルが含まれています。 ビデオ キャプチャ ミニドライバーは、状態を返す必要があります\_いない\_を取得または設定、ミニドライバーでサポートされていないプロパティに対する要求の応答ではサポートされています。
 
@@ -92,7 +92,7 @@ ms.locfileid: "63380618"
 
 [PROPSETID\_VIDCAP\_VIDEOPROCAMP](propsetid-vidcap-videoprocamp.md)
 
-次のプロパティのセットで使用できる、 [USB ビデオ クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568649):
+次のプロパティのセットで使用できる、 [USB ビデオ クラス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver):
 
 [PROPSETID\_しました\_CAMERACONTROL](propsetid-vidcap-cameracontrol.md)
 

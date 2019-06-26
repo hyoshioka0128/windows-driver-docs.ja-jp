@@ -8,12 +8,12 @@ keywords:
 - ドライバー通知 WDK の動的なハードウェアがパーティション分割、メモリ通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55f0bd81829a2bf2d5fdc2f3f131a50aa7015fad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84f08d66871385bf73969b27f7eafbf8dbaedea3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341028"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369755"
 ---
 # <a name="introduction-to-driver-notification"></a>ドライバー通知の概要
 
@@ -105,9 +105,9 @@ ms.locfileid: "63341028"
 
 ## <a name="resource-rebalance"></a>リソースのバランス調整
 
-以降、Windows Server 2008 では、ハードウェアのパーティションに新しいプロセッサを追加すると、オペレーティング システムは、システム全体のリソースのバランス調整を開始します。 設定によって決まりますが、デバイスはこのようなリソースのバランス調整に参加するかどうか、 [ **DEVPKEY\_デバイス\_DHP\_を再調整\_ポリシー** ](https://msdn.microsoft.com/library/windows/hardware/ff542423)デバイスのデバイス プロパティ。 ネットワーク アダプターでのデバイスの既定の動作 (クラス = Net)[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)システムに追加リソースの新しいプロセッサが動的に再調整は参加しません。 その他のすべてのデバイス セットアップ クラス内のデバイスの既定の動作は、リソースの新しいプロセッサがシステムに動的に追加されたときに再調整に参加することです。
+以降、Windows Server 2008 では、ハードウェアのパーティションに新しいプロセッサを追加すると、オペレーティング システムは、システム全体のリソースのバランス調整を開始します。 設定によって決まりますが、デバイスはこのようなリソースのバランス調整に参加するかどうか、 [ **DEVPKEY\_デバイス\_DHP\_を再調整\_ポリシー** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-dhp-rebalance-policy)デバイスのデバイス プロパティ。 ネットワーク アダプターでのデバイスの既定の動作 (クラス = Net)[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)システムに追加リソースの新しいプロセッサが動的に再調整は参加しません。 その他のすべてのデバイス セットアップ クラス内のデバイスの既定の動作は、リソースの新しいプロセッサがシステムに動的に追加されたときに再調整に参加することです。
 
-オペレーティング システムが送信する場合は、デバイスは、プラグ アンド プレイ (PnP) デバイスと、このようなリソースのバランス調整に含まれている、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551725)、 [ **IRP\_MN\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551755)、および[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749) PnP Irp のリソースの操作を再調整中にデバイス ドライバーにします。 これらの PnP 要求は、ドライバー、ハードウェアのパーティションでハードウェアの変更が発生したことを通知します。 デバイス ドライバーは、リソースを適切に処理を再調整をサポートする必要があります、 **IRP\_MN\_クエリ\_停止\_デバイス**と**IRP\_MN\_停止\_デバイス**PnP 要求。 デバイス ドライバーを拒否すべきことはありません、 **IRP\_MN\_クエリ\_停止\_デバイス**PnP 要求。
+オペレーティング システムが送信する場合は、デバイスは、プラグ アンド プレイ (PnP) デバイスと、このようなリソースのバランス調整に含まれている、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)、および[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) PnP Irp のリソースの操作を再調整中にデバイス ドライバーにします。 これらの PnP 要求は、ドライバー、ハードウェアのパーティションでハードウェアの変更が発生したことを通知します。 デバイス ドライバーは、リソースを適切に処理を再調整をサポートする必要があります、 **IRP\_MN\_クエリ\_停止\_デバイス**と**IRP\_MN\_停止\_デバイス**PnP 要求。 デバイス ドライバーを拒否すべきことはありません、 **IRP\_MN\_クエリ\_停止\_デバイス**PnP 要求。
 
 これらの PnP 要求は、新しいプロセッサを追加した後は、ハードウェア パーティションでアクティブなプロセッサの新しいセットを完全に使用するためのデバイス ドライバーを有効にします。 具体的には、リソースの再調整をサポートしているデバイス ドライバーは、割り込みサービス ルーチン (Isr) を切断し、更新されたプロセッサのアフィニティ値に再接続してリソースのバランス調整中に受信する PnP の要求を使用します。 これにより、割り込み要求を処理するため、すべての新しいプロセッサを含むハードウェア パーティションで現在アクティブなすべてのプロセッサを使用するデバイス ドライバーができます。
 

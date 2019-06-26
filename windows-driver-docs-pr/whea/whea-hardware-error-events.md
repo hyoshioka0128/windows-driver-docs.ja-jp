@@ -12,17 +12,17 @@ keywords:
 - WDK WHEA イベント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4113478be650c3c8cccd820b1cbbc123b10677b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b8226243c435e6aede57631301886e50151a7fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376376"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387141"
 ---
 # <a name="whea-hardware-error-events"></a>WHEA ハードウェア エラー イベント
 
 
-Windows ハードウェア エラー アーキテクチャ (WHEA) は、ハードウェア エラーが発生したときに、Event Tracing for Windows (ETW) イベントを発生させます。 これらのハードウェア エラー イベントは、システム イベント ログに記録されます。 WHEA によって発生するさまざまなハードウェアのエラー イベントの説明については、次を参照してください。[ハードウェア エラー イベント](https://msdn.microsoft.com/library/windows/hardware/ff559387)します。
+Windows ハードウェア エラー アーキテクチャ (WHEA) は、ハードウェア エラーが発生したときに、Event Tracing for Windows (ETW) イベントを発生させます。 これらのハードウェア エラー イベントは、システム イベント ログに記録されます。 WHEA によって発生するさまざまなハードウェアのエラー イベントの説明については、次を参照してください。[ハードウェア エラー イベント](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)します。
 
 アプリケーションは、WHEA によってログに記録されたイベントをクエリすることによって、システム イベント ログからハードウェア エラー イベントを取得できます。 システム イベント ログから WHEA ハードウェア エラーのイベントを取得する方法の例については、次を参照してください。[のハードウェア エラー イベント、システム イベント ログを照会](querying-the-system-event-log-for-hardware-error-events.md)します。
 

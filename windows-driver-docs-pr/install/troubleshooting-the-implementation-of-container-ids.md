@@ -6,12 +6,12 @@ keywords:
 - コンテナー Id の WDK のトラブルシューティング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 165189d318d5065d594cf721a9b0c958e536bdf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b103c8c1ec2973a837f9267c6ca0846951930dfd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384787"
 ---
 # <a name="troubleshooting-the-implementation-of-container-ids"></a>コンテナー ID の実装のトラブルシューティング
 
@@ -41,7 +41,7 @@ ms.locfileid: "63339519"
 
     コンテナー ID またはハードウェアの一意の識別子の形式が指定したバスの形式の要件に準拠していることを確認します。 詳細については、次を参照してください。[コンテナー Id は、バスに固有の一意の ID から生成された](container-ids-generated-from-a-bus-specific-unique-id.md)します。
 
-    デバイスの devnode は、カスタム バス ドライバーによって列挙されますが場合、は、バス ドライバーに正しく応答することを確認、 [ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)要求**BusQueryContainerID**.
+    デバイスの devnode は、カスタム バス ドライバーによって列挙されますが場合、は、バス ドライバーに正しく応答することを確認、 [ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)要求**BusQueryContainerID**.
 
 -   デバイス同時にコンピューターに接続されて、1 つ以上のバスによってでしょうか。
 

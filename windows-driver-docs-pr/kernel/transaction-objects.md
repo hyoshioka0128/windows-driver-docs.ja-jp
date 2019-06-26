@@ -11,25 +11,25 @@ keywords:
 - トランザクション オブジェクト WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed57a6b79a7213dc921ac3c4c31ff6d8f4ce6c27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb0a41d448e01bb13d5fe6dae95ed0d661605e3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385490"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382941"
 ---
 # <a name="transaction-objects"></a>トランザクション オブジェクト
 
 
 *トランザクション オブジェクト*トランザクションを表します。 トランザクション クライアント トランザクションを作成するには、何らかの動作をし、いずれかのコミットを実行します。 または、トランザクションをロールバックします。
 
-KTM のセットを提供する[トランザクション オブジェクト ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff564831)カーネル モードのトランザクションのクライアントが呼び出すことができます。 KTM では、ユーザー モード アプリケーションを呼び出すことができるユーザー モード ルーチンのようなセットも提供します。 ユーザー モードのルーチンの詳細については、Microsoft Windows SDK を参照してください。
+KTM のセットを提供する[トランザクション オブジェクト ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)カーネル モードのトランザクションのクライアントが呼び出すことができます。 KTM では、ユーザー モード アプリケーションを呼び出すことができるユーザー モード ルーチンのようなセットも提供します。 ユーザー モードのルーチンの詳細については、Microsoft Windows SDK を参照してください。
 
-クライアントを呼び出すと KTM トランザクション オブジェクトが作成[ **ZwCreateTransaction**](https://msdn.microsoft.com/library/windows/hardware/ff566429)します。 クライアントは、いずれかを呼び出すことができます[ **ZwCommitTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566420)または[ **ZwRollbackTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567086)をコミットまたはトランザクションをロールバックします。
+クライアントを呼び出すと KTM トランザクション オブジェクトが作成[ **ZwCreateTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)します。 クライアントは、いずれかを呼び出すことができます[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)または[ **ZwRollbackTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)をコミットまたはトランザクションをロールバックします。
 
-[TP コンポーネント](understanding-tps-components.md)呼び出すことができます[ **ZwOpenTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567033)トランザクション オブジェクトへの追加のハンドルを開きます。
+[TP コンポーネント](understanding-tps-components.md)呼び出すことができます[ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)トランザクション オブジェクトへの追加のハンドルを開きます。
 
-クライアントが呼び出すことでトランザクション オブジェクトへのハンドルを閉じる[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)します。 KTM をトランザクション オブジェクトがコミットされる前に最後のハンドルが閉じている場合、トランザクションを送信します\_通知\_をトランザクションの参加リストを持つすべてのリソース マネージャーにロールバック通知します。
+クライアントが呼び出すことでトランザクション オブジェクトへのハンドルを閉じる[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。 KTM をトランザクション オブジェクトがコミットされる前に最後のハンドルが閉じている場合、トランザクションを送信します\_通知\_をトランザクションの参加リストを持つすべてのリソース マネージャーにロールバック通知します。
 
 オペレーティング システムは、最後のハンドルが閉じられ、KTM には、オブジェクトへのすべての参照がリリース後に、オブジェクトを削除します。
 

@@ -7,12 +7,12 @@ keywords:
 - 記憶域の IDE コント ローラー ミニドライバー、WDK をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 984e040b1b7d48ba59f136f727624a671bdaa235
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 942e6dcddf3490f85bb6e4eb7cde63c42befbd86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368791"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379108"
 ---
 # <a name="installing-ide-controller-minidrivers"></a>IDE コントローラー ミニドライバーのインストール
 
@@ -22,7 +22,7 @@ ms.locfileid: "63368791"
 
 このセクションでは、IDE コント ローラーのドライバーと Microsoft Windows 2000 以降のオペレーティング システムでのコント ローラー ミニドライバーに固有のインストール情報を提供します。
 
-独自のコント ローラー ミニドライバーを提供しているベンダー ドライバーを行う必要がありますでハード ディスク コント ローラー (HDC) セットアップ クラスのメンバー、 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)ドライバーの INF ファイル。 以下に例を示します。
+独自のコント ローラー ミニドライバーを提供しているベンダー ドライバーを行う必要がありますでハード ディスク コント ローラー (HDC) セットアップ クラスのメンバー、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)ドライバーの INF ファイル。 以下に例を示します。
 
 ```cpp
 [version]
@@ -35,7 +35,7 @@ IDE コント ローラーのミニドライバーをインストールに関連
 
 インストールの詳細については、Windows 2000 以降のオペレーティング システムでサポートされているコント ローラーのハードウェアの一覧を含むハード ディスク コント ローラーのシステム提供の INF ファイルを参照*ある*します。
 
-Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、次を参照してください。 [Vendor-Supplied IDE コント ローラーのミニドライバーの要件](requirements-for-vendor-supplied-ide-controller-minidrivers.md)と[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+Windows 2000 以降のオペレーティング システムでデバイスのインストールの詳細については、次を参照してください。 [Vendor-Supplied IDE コント ローラーのミニドライバーの要件](requirements-for-vendor-supplied-ide-controller-minidrivers.md)と[デバイス インストールの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)します。
 
  
 

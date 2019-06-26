@@ -7,12 +7,12 @@ keywords:
 - PCMCIA_INTERFACE_STANDARD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0a66a5d3311d4f29bd05bab984db6278851d7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b83c27a6113a03ef82e683a855ec21f5885175e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378196"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386193"
 ---
 # <a name="pcmciainterfacestandard-interface-for-memory-cards"></a>PCMCIA\_インターフェイス\_メモリ カードの標準的なインターフェイス
 
@@ -22,13 +22,13 @@ ms.locfileid: "63378196"
 
 このセクションで説明、PCMCIA\_インターフェイス\_標準インターフェイスを Microsoft Windows 2000 と PCMCIA メモリ カードおよび線形のフラッシュ メモリ カードの以降のオペレーティング システムを提供します。
 
-[PCMCIA の機能\_インターフェイス\_標準インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537117)
+[PCMCIA の機能\_インターフェイス\_標準インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/functionality-of-the-pcmcia-interface-standard-interface)
 
-[取得、PCMCIA\_インターフェイス\_標準インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537439)
+[取得、PCMCIA\_インターフェイス\_標準インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/obtaining-a-pcmcia-interface-standard-interface)
 
-[呼び出す、PCMCIA\_インターフェイス\_標準的なインターフェイスのルーチン](https://msdn.microsoft.com/library/windows/hardware/ff537023)
+[呼び出す、PCMCIA\_インターフェイス\_標準的なインターフェイスのルーチン](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/calling-a-pcmcia-interface-standard-interface-routine)
 
-[PCMCIA メモリ カードのドライバーの特別な考慮事項](https://msdn.microsoft.com/library/windows/hardware/ff538196)
+[PCMCIA メモリ カードのドライバーの特別な考慮事項](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/special-considerations-for-pcmcia-memory-card-drivers)
 
  
 

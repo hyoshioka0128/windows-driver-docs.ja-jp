@@ -4,12 +4,12 @@ description: INF ファイルを使用して、拡張 Display Identification Dat
 ms.assetid: AA7DC29B-54D5-461A-8252-600D84F0F581
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 007e804eb65b6713ae015c6ae16a506bbedc5ed6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a84fb6212511a8ceb06b532c30509519dd166a74
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366209"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394111"
 ---
 # <a name="overriding-monitor-edids-with-an-inf"></a>モニター EDIDs、INF をオーバーライドします。
 
@@ -67,7 +67,7 @@ INF を使用して、EDID を更新します。
 ## <a name="span-idoverridinganedidwithaninfspanspan-idoverridinganedidwithaninfspanspan-idoverridinganedidwithaninfspanoverriding-an-edid-with-an-inf"></a><span id="Overriding_an_EDID_with_an_INF"></span><span id="overriding_an_edid_with_an_inf"></span><span id="OVERRIDING_AN_EDID_WITH_AN_INF"></span>INF、EDID をオーバーライドします。
 
 
-EDID をオーバーライドするには、 [ **AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)次の形式で、無効にする各ブロックに対して、INF で。
+EDID をオーバーライドするには、 [ **AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)次の形式で、無効にする各ブロックに対して、INF で。
 
 ```inf
 HKR, EDID_OVERRIDE, BlockNumber, Byte 1, Byte 2, Byte 3, Byte 4,...
@@ -88,7 +88,7 @@ HKR, EDID_OVERRIDE, 5, 1, 24, 5C, ..., 2D
 ...
 ```
 
-一般に、Inf の詳細について、 **AddReg**と**DDInstall**具体的を参照してください[INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff538378)します。
+一般に、Inf の詳細について、 **AddReg**と**DDInstall**具体的を参照してください[INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/hid/creating-an-inf-file)します。
 
 ```inf
 ; monsamp.INF

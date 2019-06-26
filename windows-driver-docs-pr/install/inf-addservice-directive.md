@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db323bce9bb2f6ab32fd34b607363eb3077719b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be29020ed3df4a8661278bf9cbf4c23c2a5587ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379462"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385919"
 ---
 # <a name="inf-addservice-directive"></a>INF AddService ディレクティブ
 
@@ -163,7 +163,7 @@ SERVICE_xxxx 定数で定義されて*Wdm.h*と*Ntddk.h*します。
 
 この値は、初期化中にデバイスの検出を行う、システムをロードする必要はありませんが、PnP ドライバーで使用する必要があります。
 
-たとえば、レガシ デバイスも検出する PnP ドライバーがこの値の INF でこれを指定する必要があります、 [ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)場合でも、そのデバイスにすることはできません、従来のデバイスを検索するルーチンが呼び出されますPnP マネージャーによって列挙されます。
+たとえば、レガシ デバイスも検出する PnP ドライバーがこの値の INF でこれを指定する必要があります、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)場合でも、そのデバイスにすることはできません、従来のデバイスを検索するルーチンが呼び出されますPnP マネージャーによって列挙されます。
 
 <a href="" id="0x2--service-auto-start-"></a>**0x2** (SERVICE_AUTO_START)  
 システムの起動時に、サービス コントロール マネージャーによって開始ドライバーを示します。
@@ -207,17 +207,17 @@ SERVICE_xxxx 定数で定義されて*Wdm.h*と*Ntddk.h*します。
 <a href="" id="startname-driver-object-name"></a>**StartName**=*driver-object-name*  
 この省略可能なエントリでは、このデバイスを表すドライバー オブジェクトの名前を指定します。 場合*型コード*指定**1** (SERVICE_KERNEL_DRIVER) または**2** (SERVICE_FILE_SYSTEM_DRIVER) この名前は I/O マネージャーが読み込みに使用するドライバー オブジェクト名、ドライバー。
 
-<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**=*add-registry-section*\[**,**<em>add-registry-section</em>\]...  
+<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**=*add-registry-section*\[ **,** <em>add-registry-section</em>\]...  
 1 つを参照またはより INF ライター-定義*追加レジストリ セクション*で新しくインストールしたサービスに関連するすべてのレジストリ情報が設定されています。 **HKR**などの仕様、*追加レジストリ セクション*指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\ServiceName**レジストリ キー。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)します。
 
 サービス インストール セクションには、このディレクティブを使用ことはほとんどありません。
 
-<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg**=*del-registry-section*\[**,**<em>del-registry-section</em>\]...  
+<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg**=*del-registry-section*\[ **,** <em>del-registry-section</em>\]...  
 1 つを参照またはより INF ライター-定義*del のセクション レジストリ*関連レジストリで、既にインストールされているサービスの情報が削除されます。 **HKR**などの仕様、 *del-section レジストリ*指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\ServiceName**レジストリ キー。 詳細については、次を参照してください。 [ **INF してディレクティブ**](inf-delreg-directive.md)します。
 
 このディレクティブは使用がほとんどない、*サービス-インストール セクション*が、同じデバイス ドライバー/サービスの以前のインストール用にレジストリを「更新」する INF で使用する場合があります。
 
-<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg**=*bit-registry-section*\[**,**<em>bit-registry-section</em>\]...  
+<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg**=*bit-registry-section*\[ **,** <em>bit-registry-section</em>\]...  
 有効では、*サービス-インストール セクション*はほぼ使用しませんが、します。 **HKR**などの仕様、*ビットのレジストリ セクション*することも指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\ServiceName**レジストリ キー。
 
 <a href="" id="loadordergroup-load-order-group-name"></a>**LoadOrderGroup**=*load-order-group-name*  
@@ -227,7 +227,7 @@ SERVICE_xxxx 定数で定義されて*Wdm.h*と*Ntddk.h*します。
 
 詳細については**LoadOrderGroup**を参照してください[ドライバーの読み込み順序を指定する](specifying-driver-load-order.md)します。
 
-<a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>**依存関係**=*依存、上の項目の名前*\[**、**<em>依存、上の項目の名前</em>\].  
+<a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>**依存関係**=*依存、上の項目の名前*\[ **、** <em>依存、上の項目の名前</em>\].  
 各*依存、上の項目の名前*依存関係一覧内の項目は、デバイス ドライバーが依存するサービスまたはロード順序グループの名前を指定します。
 
 場合、*依存、上の項目の名前*サービスでは、このドライバーを開始する前に実行されている必要がありますサービスを指定します。 たとえば、システム提供の Win32 の TCP/IP 印刷サービスの INF は、基になる (カーネル モード) の TCP/IP トランスポート スタックのサポートに依存します。 その結果、としては、このエントリの指定 TCP/IP 印刷サービスの INF**依存関係 TCPIP =** します。
@@ -235,9 +235,9 @@ SERVICE_xxxx 定数で定義されて*Wdm.h*と*Ntddk.h*します。
 A*依存、上の項目の名前*このデバイス/ドライバーが依存しているロード順序グループを指定できます。 指定されたグループの少なくとも 1 つのメンバーが開始された場合にのみ、このようなドライバーが開始されます。 プラス記号 (+) でグループ名を前します。 たとえば、システム RAS サービス INF のようなエントリがある**依存関係 = + NetBIOSGroup, RpcSS**ロード順序グループとサービスの両方を一覧表示します。
 
 <a href="" id="security--security-descriptor-string-"></a>**セキュリティ**="*セキュリティ記述子の文字列*"  
-サービスに適用する、セキュリティ記述子を指定します。 このセキュリティ記述子には、開始、停止、およびサービスの構成などの操作を実行するために必要なアクセス許可を指定します。 *セキュリティ記述子の文字列*値を DACL を示すためにトークンを使用する文字列です (**d:**) セキュリティ コンポーネント。
+サービスに適用する、セキュリティ記述子を指定します。 このセキュリティ記述子には、開始、停止、およびサービスの構成などの操作を実行するために必要なアクセス許可を指定します。 *セキュリティ記述子の文字列*値を DACL を示すためにトークンを使用する文字列です (**d:** ) セキュリティ コンポーネント。
 
-セキュリティ記述子文字列については、次を参照してください。[セキュリティ記述子定義言語 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)します。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
+セキュリティ記述子文字列については、次を参照してください。[セキュリティ記述子定義言語 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)します。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
 
 セキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
 
@@ -295,7 +295,7 @@ AddReg=add-registry-section[, add-registry-section]...
  ...
 ```
 
-一般的なデバイスとドライバー INF ファイルの場合、*イベント ログ-インストール セクション*のみを使用して、 **AddReg**ドライバーのイベント ログ メッセージ ファイルを設定するディレクティブ。 **HKR**内の指定、*追加レジストリ セクション*指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\EventLog\\**<em>EventLogType</em>**\\**<em>EventName</em>レジストリ キー。 このイベント ログを記録*追加レジストリ セクション*は次の一般的な形式があります。
+一般的なデバイスとドライバー INF ファイルの場合、*イベント ログ-インストール セクション*のみを使用して、 **AddReg**ドライバーのイベント ログ メッセージ ファイルを設定するディレクティブ。 **HKR**内の指定、*追加レジストリ セクション*指定、 **HKLM\\システム\\CurrentControlSet\\サービス\\EventLog\\** <em>EventLogType</em> **\\** <em>EventName</em>レジストリ キー。 このイベント ログを記録*追加レジストリ セクション*は次の一般的な形式があります。
 
 ```ini
 [drivername_EventLog_AddReg]

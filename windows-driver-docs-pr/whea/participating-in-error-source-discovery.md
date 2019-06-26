@@ -12,17 +12,17 @@ keywords:
 - WDK WHEA エラー ソースの検出
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55743724efa39befa3e190ff105f74ddb7915dee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee5bad768e29f04c4822d51506d324a68bfbb26f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340766"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387159"
 ---
 # <a name="participating-in-error-source-discovery"></a>エラー ソース検出への参加
 
 
-エラー ソースの検出に参加するにプラグインの PSHED を実装する必要があります、 [ *GetAllErrorSources* ](https://msdn.microsoft.com/library/windows/hardware/ff559366)コールバック関数。 エラー ソースの検出に参加している PSHED プラグインは、省略可能な実装も[ *GetErrorSourceInfo* ](https://msdn.microsoft.com/library/windows/hardware/ff559368)コールバック関数。
+エラー ソースの検出に参加するにプラグインの PSHED を実装する必要があります、 [ *GetAllErrorSources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_all_error_sources)コールバック関数。 エラー ソースの検出に参加している PSHED プラグインは、省略可能な実装も[ *GetErrorSourceInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_get_error_source_info)コールバック関数。
 
 次のコード例では、これらのコールバック関数を実装する方法を示します。
 

@@ -5,12 +5,12 @@ ms.assetid: 3e6f6cb7-14fc-4eee-b5d6-d5e0cad46ea2
 ms.date: 08/08/2017
 keywords: -OID_WWAN_READY_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b34a8b706684b9b3871f6ae1f71d3ed20b4132a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5485b1c2352c82f4155e56075f15c4bfe2e6654
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368517"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383187"
 ---
 # <a name="oidwwanreadyinfo"></a>OID\_WWAN\_準備\_情報
 
@@ -19,12 +19,12 @@ OID\_WWAN\_準備\_情報がデバイスの準備完了の状態、その Subscr
 
 要求のセットがサポートされていません。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_準備\_情報**](ndis-status-wwan-ready-info.md)状態通知を含む、 [ **NDIS\_WWAN\_準備完了\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567916)クエリ要求を完了したときに、構造体を示す MB デバイスの準備完了状態。
+ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_準備\_情報**](ndis-status-wwan-ready-info.md)状態通知を含む、 [ **NDIS\_WWAN\_準備完了\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)クエリ要求を完了したときに、構造体を示す MB デバイスの準備完了状態。
 
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB デバイスの準備](https://msdn.microsoft.com/library/windows/hardware/ff557164)します。
+詳細については、この OID を使用して、次を参照してください。 [MB デバイスの準備](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-readiness)します。
 
 ミニポート ドライバーがデバイスのメモリをアクセスまたは SIM カードの処理時にクエリ操作が、プロバイダーのネットワークにアクセスしないでください。
 
@@ -67,11 +67,11 @@ OID\_WWAN\_準備\_情報がデバイスの準備完了の状態、その Subscr
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_準備\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567916)
+[**NDIS\_WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
 
 [**NDIS\_状態\_WWAN\_準備\_情報**](ndis-status-wwan-ready-info.md)
 
-[MB デバイスの準備](https://msdn.microsoft.com/library/windows/hardware/ff557164)
+[MB デバイスの準備](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-readiness)
 
  
 

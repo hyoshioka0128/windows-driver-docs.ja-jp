@@ -6,12 +6,12 @@ keywords:
 - 緊急データ WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10370e2e6d1a6e44d6145abc9832ff5fa465f09f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2168866c5b17ec8deb1b15c72d0c896646ff055a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346756"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386833"
 ---
 # <a name="sending-urgent-data-on-a-san"></a>SAN での緊急データの送信
 
@@ -25,9 +25,9 @@ ms.locfileid: "63346756"
 
 2.  スイッチは、緊急のデータをコントロール メッセージ バッファーのペイロード部分にコピーします。
 
-3.  スイッチは、適切なの SAN サービス プロバイダーを呼び出して[ **WSPSend** ](https://msdn.microsoft.com/library/windows/hardware/ff566316) SAN ソケットでのリモート ピアの接続をコントロール メッセージに含まれている緊急のデータを送信する関数。 SAN NIC は、さらに、緊急データを送信します。
+3.  スイッチは、適切なの SAN サービス プロバイダーを呼び出して[ **WSPSend** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566316(v=vs.85)) SAN ソケットでのリモート ピアの接続をコントロール メッセージに含まれている緊急のデータを送信する関数。 SAN NIC は、さらに、緊急データを送信します。
 
-4.  リモート ピアにあるスイッチで、ポストされた受信バッファーに送信されるデータを受信する、 [ **WSPRecv** ](https://msdn.microsoft.com/library/windows/hardware/ff566309)関数。
+4.  リモート ピアにあるスイッチで、ポストされた受信バッファーに送信されるデータを受信する、 [ **WSPRecv** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566309(v=vs.85))関数。
 
 5.  リモート ピアにあるスイッチは、プライベート ストレージに、受信バッファーから受信したデータをコピーします。
 

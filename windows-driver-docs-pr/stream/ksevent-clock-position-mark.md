@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 559a0eb9a8fba816c2bb769a2685092808bb4aae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1faf2e794817333cb415bce67cf4c83dacc954d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330292"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382435"
 ---
 # <a name="kseventclockpositionmark"></a>KSEVENT\_クロック\_位置\_マーク
 
@@ -26,12 +26,12 @@ KSEVENT\_クロック\_位置\_マークのイベント、時計の特定の日�
 
 ### <a name="span-ideventdataspanspan-ideventdataspanevent-data"></a><span id="event_data"></span><span id="EVENT_DATA"></span>イベント データ
 
-型の構造体を使用して、 [ **KSEVENT\_時間\_マーク**](https://msdn.microsoft.com/library/windows/hardware/ff561891)として、 *OutBuffer*パラメーターを呼び出すときに[ **KsSynchronousDeviceControl** ](https://msdn.microsoft.com/library/windows/hardware/ff567142)このイベントに登録します。
+型の構造体を使用して、 [ **KSEVENT\_時間\_マーク**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksevent_time_mark)として、 *OutBuffer*パラメーターを呼び出すときに[ **KsSynchronousDeviceControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-kssynchronousdevicecontrol)このイベントに登録します。
 
 <a name="remarks"></a>コメント
 -------
 
-イベントを登録する方法については、次を参照してください。 [KS イベント](https://msdn.microsoft.com/library/windows/hardware/ff567643)します。
+イベントを登録する方法については、次を参照してください。 [KS イベント](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-events)します。
 
  
 

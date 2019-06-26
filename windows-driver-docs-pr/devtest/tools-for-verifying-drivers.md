@@ -9,12 +9,12 @@ keywords:
 - WDK ドライバーの検証
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c952e904309e7eb119d7a51e037ad1247107f8
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.openlocfilehash: 8e0767c9c7fb82868c3a011991de8bfa09f20b15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381832"
 ---
 # <a name="tools-for-verifying-drivers"></a>ドライバーを検証するためのツール
 
@@ -32,7 +32,7 @@ Windows Driver Kit (WDK) には、検出し、開発プロセス中にドライ�
 
 [検証ツールのアンケート](survey-of-verification-tools.md)
 
-[DDI 準拠の規則](https://msdn.microsoft.com/library/windows/hardware/ff552840)
+[DDI 準拠の規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 [Windows のチェック ビルド](checked-build-of-windows.md)
 

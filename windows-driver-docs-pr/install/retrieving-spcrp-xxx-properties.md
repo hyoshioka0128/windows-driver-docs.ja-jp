@@ -4,12 +4,12 @@ description: SPCRP_Xxx プロパティの取得
 ms.assetid: a5d52da9-a593-42bd-aeaf-8ab203bc3d21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c94ea84c139cfaec7a800734a67c3dcd632376ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd557f70585b4b3903503d170c39f80621526140
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384260"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382277"
 ---
 # <a name="retrieving-spcrpxxx-properties"></a>SPCRP_Xxx プロパティの取得
 
@@ -18,11 +18,11 @@ Windows Vista および Windows での以降のバージョンで、[統一さ�
 
 Windows Server 2003、Windows XP、および Windows 2000 もこれらのデバイス セットアップ クラスのプロパティのほとんどをサポートします。 ただし、Windows の以前のバージョンには、統一されたデバイス プロパティのモデルのプロパティのキーはできません。 代わりに、これらのバージョンの Windows バージョンを使用して、SPCRP_*Xxx*識別子を表すし、デバイスへのアクセスをクラスのプロパティを設定します。 Windows の以前のバージョンとの互換性を維持するために Windows Vista およびそれ以降のバージョンも使用をサポートして SPCRP_*Xxx*デバイスのセットアップへのアクセスに識別子クラスのプロパティ。 ただし、デバイス セットアップ クラスのプロパティにアクセスするのに、統一されたデバイス プロパティのモデルのプロパティのキーを使用する必要があります。
 
-システム定義のデバイス セットアップ クラスのプロパティの一覧は、次を参照してください。[デバイス セットアップ クラスのプロパティに対応している SPCRP_Xxx 識別子](https://msdn.microsoft.com/library/windows/hardware/ff542245)します。 デバイス セットアップ クラスのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。 プロパティのキーで提供される情報は、対応する SPCRP_ も含まれています。*Xxx*プロパティを、Windows Server 2003、Windows XP、および Windows 2000 へのアクセスに使用できる識別子。
+システム定義のデバイス セットアップ クラスのプロパティの一覧は、次を参照してください。[デバイス セットアップ クラスのプロパティに対応している SPCRP_Xxx 識別子](https://docs.microsoft.com/previous-versions/ff542245(v=vs.85))します。 デバイス セットアップ クラスのプロパティは、Windows Vista およびそれ以降のバージョンのプロパティへのアクセスに使用するプロパティのキー識別子が表示されます。 プロパティのキーで提供される情報は、対応する SPCRP_ も含まれています。*Xxx*プロパティを、Windows Server 2003、Windows XP、および Windows 2000 へのアクセスに使用できる識別子。
 
 プロパティのキーを使用して、Windows Vista およびそれ以降のバージョンのデバイス セットアップ クラスのプロパティにアクセスする方法については、次を参照してください。[にアクセスするデバイス クラスのプロパティ (Windows Vista 以降)](accessing-device-class-properties--windows-vista-and-later-.md)します。
 
-Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスのプロパティを取得する、 [ **SetupDiGetClassRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551097)関数。
+Windows Server 2003、Windows XP、および Windows 2000 でのデバイス セットアップ クラスのプロパティを取得する、 [ **SetupDiGetClassRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)関数。
 
 SetupDiGetClassRegistryProperty を使用して、SPCRP_Xxx 識別子に対応するプロパティを取得する、次の手順に従います。
 
@@ -37,7 +37,7 @@ SetupDiGetClassRegistryProperty を使用して、SPCRP_Xxx 識別子に対応�
     -   設定*MachineName*コンピューターの名前にします。
     -   設定するために予約**NULL**します。
 
-    呼び出しに応答[ **SetupDiGetClassRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551097)、 **SetupDiGetClassRegistryProperty**設定\* *RequiredSize*プロパティ値を取得するために必要なバッファーのバイト単位でログ、ERROR_INSUFFICIENT_BUFFER エラー コードのサイズにし、返します**FALSE**します。 後続の呼び出し[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)最近記録されたエラー コードを最大限に戻ります。
+    呼び出しに応答[ **SetupDiGetClassRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)、 **SetupDiGetClassRegistryProperty**設定\* *RequiredSize*プロパティ値を取得するために必要なバッファーのバイト単位でログ、ERROR_INSUFFICIENT_BUFFER エラー コードのサイズにし、返します**FALSE**します。 後続の呼び出し[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)最近記録されたエラー コードを最大限に戻ります。
 
 2.  呼び出す**SetupDiGetClassRegistryProperty**プロパティ値を取得し、次の変更を除き、最初の呼び出しで指定された同じパラメーターを指定します。
     -   設定*PropertyBuffer*プロパティの値を受け取るバッファーへのポインター。

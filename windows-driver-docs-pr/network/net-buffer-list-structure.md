@@ -9,12 +9,12 @@ keywords:
 - パケットの WDK ネットワーク、データ構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce60b4adcbb38b5090190385a7cc03b711bbf5cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f64bb5e011115f145592b04cbb69bc1ab5623203
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386336"
 ---
 # <a name="netbufferlist-structure"></a>NET\_バッファー\_リスト構造
 
@@ -22,13 +22,13 @@ ms.locfileid: "63323427"
 
 
 
-A [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体は、NET のリンク リストをパッケージ\_バッファーの構造体。
+A [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体は、NET のリンク リストをパッケージ\_バッファーの構造体。
 
 次の図は、NET でフィールドを示します\_バッファー\_リスト構造体。
 
 ![net のフィールドを示す図\-バッファー\-構造体を一覧表示](images/netbufferlist.png)
 
-NET\_バッファー\_リスト構造が含まれています、 [ **NET\_バッファー\_一覧\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff568400)構造体、 **NetBufferListHeader**メンバー。 NET\_バッファー\_一覧\_ヘッダー構造が含まれています、 [ **NET\_バッファー\_一覧\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568393)構造体**NetBufferListData**メンバー。 NET のアクセスに NDIS マクロを使用する必要があります\_バッファー\_構造体メンバーの一覧。 これらのマクロの詳細については、次を参照してください。、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造のリファレンス ページです。
+NET\_バッファー\_リスト構造が含まれています、 [ **NET\_バッファー\_一覧\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_header)構造体、 **NetBufferListHeader**メンバー。 NET\_バッファー\_一覧\_ヘッダー構造が含まれています、 [ **NET\_バッファー\_一覧\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_data)構造体**NetBufferListData**メンバー。 NET のアクセスに NDIS マクロを使用する必要があります\_バッファー\_構造体メンバーの一覧。 これらのマクロの詳細については、次を参照してください。、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造のリファレンス ページです。
 
 一部のメンバーは NDIS でのみ使用されます。 ドライバーが最もよく使用するメンバーは、次の一覧で定義されます。
 
@@ -48,18 +48,18 @@ NET\_バッファー\_リスト構造が含まれています、 [ **NET\_バッ
 ドライバーに、バインディングまたは、次のドライバーによって提供されるルーチンのいずれかを使用して操作を添付する NDIS が提供されるハンドル:
 
 <a href="" id="miniport-driver"></a>ミニポート ドライバー  
-[*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
 
 <a href="" id="protocol-driver"></a>プロトコル ドライバー  
-[*ProtocolBindAdapterEx*](https://msdn.microsoft.com/library/windows/hardware/ff570220)
+[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)
 
 <a href="" id="filter-driver"></a>フィルター ドライバー  
-[*FilterAttach*](https://msdn.microsoft.com/library/windows/hardware/ff549905)
+[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)
 
 NDIS を使用して**SourceHandle**を返す、NET\_バッファー\_ネットを送信するドライバーにリスト構造\_バッファー\_リスト構造体。 NDIS ドライバーは、このハンドルを読み取りません。
 
 <a href="" id="childrefcount"></a>**ChildRefCount**  
-場合、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体は、親 (複製、フラグメント、または再アセンブリの操作によって派生した子がある)、 **ChildRefCount**既存の子の数を指定します。 それ以外の場合、このパラメーターは 0 です。
+場合、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体は、親 (複製、フラグメント、または再アセンブリの操作によって派生した子がある)、 **ChildRefCount**既存の子の数を指定します。 それ以外の場合、このパラメーターは 0 です。
 
 <a href="" id="flags"></a>**フラグ**  
 NET の属性の将来の仕様用に予約\_バッファー\_リスト構造体。 現在、フラグはドライバーはありません。
@@ -68,7 +68,7 @@ NET の属性の将来の仕様用に予約\_バッファー\_リスト構造体
 このネットワークにネットワークのデータ操作の最終的な完了状態を示す\_バッファー\_リスト構造体。 ミニポート ドライバーでは、送信操作を完了する前にこの値を記述します。
 
 <a href="" id="netbufferlistinfo"></a>**NetBufferListInfo**  
-指定します[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)すべてに共通する情報を構造体[ **NET\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff568376)リスト内の構造体。 この情報は、「帯域外の (OOB) データ」と呼ばれる多くの場合、
+指定します[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)すべてに共通する情報を構造体[ **NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)リスト内の構造体。 この情報は、「帯域外の (OOB) データ」と呼ばれる多くの場合、
 
 <a href="" id="next"></a>**次に**  
 [次へ] のネットワークへのポインターを指定します\_バッファー\_NET のリンク リストにリスト構造\_バッファー\_リストの構造体。 場合、NET\_バッファー\_リスト構造は、最後の構造の一覧で、このメンバーは**NULL**します。
@@ -76,7 +76,7 @@ NET の属性の将来の仕様用に予約\_バッファー\_リスト構造体
 <a href="" id="firstnetbuffer"></a>**FirstNetBuffer**  
 最初のネットワークへのポインターを指定します\_NET のリンク リストにバッファー構造\_この NET に関連付けられているバッファーの構造体\_バッファー\_リスト構造体。
 
-**注**  **コンテキスト**へのポインターを[ **NET\_バッファー\_一覧\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff568389)構造体。 NDIS マクロとにデータを操作する関数を提供する**コンテキスト**します。 NET の詳細については\_バッファー\_一覧\_CONTEXT 構造体を参照してください[NET\_バッファー\_一覧\_CONTEXT 構造](net-buffer-list-context-structure.md)します。
+**注**  **コンテキスト**へのポインターを[ **NET\_バッファー\_一覧\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)構造体。 NDIS マクロとにデータを操作する関数を提供する**コンテキスト**します。 NET の詳細については\_バッファー\_一覧\_CONTEXT 構造体を参照してください[NET\_バッファー\_一覧\_CONTEXT 構造](net-buffer-list-context-structure.md)します。
 
  
 

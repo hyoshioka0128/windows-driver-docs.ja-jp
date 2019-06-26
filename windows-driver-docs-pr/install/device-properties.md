@@ -7,12 +7,12 @@ keywords:
 - デバイスの WDK デバイス インストールのプロパティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f02f9b585f56992659a6153bbea8b8e02640e9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e746d2bc7eae799c87096a671545399bad26e7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387117"
 ---
 # <a name="device-properties"></a>デバイス プロパティ
 
@@ -23,7 +23,7 @@ Windows Vista および Windows のサポートの以降のバージョン、[�
 
 Microsoft Windows Server 2003、Windows XP、および Windows 2000 では、この統一されたデバイス プロパティのモデルはサポートされません。 ただし、以前の Windows バージョンではその対応をサポートして[デバイス プロパティ表現](device-property-representations--windows-server-2003--windows-xp--and-.md)コンポーネントの種類とプロパティの型に依存します。 以前の Windows バージョンとの互換性を維持するために Windows Vista および Windows の以降のバージョンもサポートこれらの以前の表現。 ただし、およびデバイスのプロパティにアクセスするには、後で Windows Vista の統一されたデバイス プロパティのモデルを使用する必要があります。
 
-リファレンス情報については、コンポーネントのプロパティの統一されたデバイス モデル: デバイス プロパティ関数、デバイスのシステム定義プロパティ、データ構造、INF ファイルのディレクティブを含む — を参照してください[デバイス プロパティの参照](https://msdn.microsoft.com/library/windows/hardware/ff541483).
+リファレンス情報については、コンポーネントのプロパティの統一されたデバイス モデル: デバイス プロパティ関数、デバイスのシステム定義プロパティ、データ構造、INF ファイルのディレクティブを含む — を参照してください[デバイス プロパティの参照](https://docs.microsoft.com/previous-versions/ff541483(v=vs.85)).
 
  
 

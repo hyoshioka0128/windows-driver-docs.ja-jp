@@ -10,23 +10,23 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ad5b29f3064cb5cc84f6e9844c514fc2bb1d9f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6955f0d4a63a68633c0f321a7af371e47a7a0133
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373721"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386517"
 ---
 # <a name="publishing-nfp-messages"></a>発行 NFP メッセージ
 
 
-パブリケーションは、ドライバー内で一意のオープン ハンドルとして表されます。 アクティブな発行は、型とデータ バッファーの両方が必要です。 ファイル名を"Pubs"名前空間で開くことで、型が設定されています。 データ バッファーを送信することによって設定[ **IOCTL\_NFP\_設定\_ペイロード**](https://msdn.microsoft.com/library/windows/hardware/jj853321)します。
+パブリケーションは、ドライバー内で一意のオープン ハンドルとして表されます。 アクティブな発行は、型とデータ バッファーの両方が必要です。 ファイル名を"Pubs"名前空間で開くことで、型が設定されています。 データ バッファーを送信することによって設定[ **IOCTL\_NFP\_設定\_ペイロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_set_payload)します。
 
-実行しようとした伝送でのコールバックを指定を通じて、完了した[ **IOCTL\_NFP\_取得\_次\_送信\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853320).
+実行しようとした伝送でのコールバックを指定を通じて、完了した[ **IOCTL\_NFP\_取得\_次\_送信\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message).
 
-使用してパブリケーションが一時的に無効にできますが、 [ **IOCTL\_NFP\_を無効にする**](https://msdn.microsoft.com/library/windows/hardware/jj853315)します。
+使用してパブリケーションが一時的に無効にできますが、 [ **IOCTL\_NFP\_を無効にする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_disable)します。
 
-パブリケーションを使用して再度有効にすることができます、 [ **IOCTL\_NFP\_を有効にする**](https://msdn.microsoft.com/library/windows/hardware/jj853316)します。
+パブリケーションを使用して再度有効にすることができます、 [ **IOCTL\_NFP\_を有効にする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_enable)します。
 
 ##  <a name="handles"></a>ハンドル数
 
@@ -42,7 +42,7 @@ ms.locfileid: "63373721"
           DeviceID          NearFieldProximity Interface Class     *  Protocol   SubType
 ```
 
-ハンドルを開いた後、クライアント設定する必要がありますし、公開するメッセージのペイロード、 [ **IOCTL\_NFP\_設定\_ペイロード**](https://msdn.microsoft.com/library/windows/hardware/jj853321)します。
+ハンドルを開いた後、クライアント設定する必要がありますし、公開するメッセージのペイロード、 [ **IOCTL\_NFP\_設定\_ペイロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_set_payload)します。
 
 指定したファイル名 (パブリケーションの種類) を読み取るための機能はありません。
 
@@ -102,21 +102,21 @@ ms.locfileid: "63373721"
 ### <a name="required-actions"></a>必要な操作
 
 
-ドライバーする必要がありますすべてのメッセージの削除 (およびそれらのリソースを解放)、クライアントが、置換を送信していない場合は、「受信」キューから[ **IOCTL\_NFP\_取得\_次\_サブスクライブ済み\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853319)以前 IOCTL 完了の 10 ~ 20 秒以内です。
+ドライバーする必要がありますすべてのメッセージの削除 (およびそれらのリソースを解放)、クライアントが、置換を送信していない場合は、「受信」キューから[ **IOCTL\_NFP\_取得\_次\_サブスクライブ済み\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)以前 IOCTL 完了の 10 ~ 20 秒以内です。
 
 ## <a name="unresponsive-or-misbehaving-clients"></a>クライアントが応答していないか、不適切な動作
 
 
-クライアントは、必要な送信が失敗した場合[ **IOCTL\_NFP\_取得\_次\_送信\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853320) 10 個のピリオドの要求20 秒に\[10 ~ 20 秒\]ドライバーが、クライアントがなくなったことを想定してください。 通常の状況では、クライアントは、1 秒の範囲内での要求を更新する必要があります\[1 s\]します。 このような場合、ドライバーは"CompleteEventImmediately"カウンターを 0 に設定する必要があり、クライアントがウェイク アップし、必要な IRP を送信するまで、カウンターをインクリメントしない必要があります。
+クライアントは、必要な送信が失敗した場合[ **IOCTL\_NFP\_取得\_次\_送信\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message) 10 個のピリオドの要求20 秒に\[10 ~ 20 秒\]ドライバーが、クライアントがなくなったことを想定してください。 通常の状況では、クライアントは、1 秒の範囲内での要求を更新する必要があります\[1 s\]します。 このような場合、ドライバーは"CompleteEventImmediately"カウンターを 0 に設定する必要があり、クライアントがウェイク アップし、必要な IRP を送信するまで、カウンターをインクリメントしない必要があります。
 
 ### <a name="required-actions"></a>必要な操作
 
-ドライバーは、"CompleteEventImmediately"をカウンターを 0 に設定する必要があり、クライアントが、置換を送信していない場合は、カウンターをインクリメントする必要がありますいない[ **IOCTL\_NFP\_取得\_次\_送信済み\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853320)以前 IOCTL 完了の 10 ~ 20 秒以内です。
+ドライバーは、"CompleteEventImmediately"をカウンターを 0 に設定する必要があり、クライアントが、置換を送信していない場合は、カウンターをインクリメントする必要がありますいない[ **IOCTL\_NFP\_取得\_次\_送信済み\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)以前 IOCTL 完了の 10 ~ 20 秒以内です。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[フィールドの近接 DDI 参照の近く](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

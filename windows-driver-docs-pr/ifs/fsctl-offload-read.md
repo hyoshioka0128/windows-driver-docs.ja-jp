@@ -14,27 +14,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a233425428aa634d23743dd825e95e4165a77e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a05f79788ff75ca58f23cb86c3fafb2170dd832
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380116"
 ---
 # <a name="fsctloffloadread-control-code"></a>FSCTL\_オフロード\_読み取り制御コード
 
 
 **FSCTL\_オフロード\_読み取り**のオフロードをサポートするストレージ システム内のデータのブロックがプリミティブを読み取るコードはコントロールが、オフロード読み取りを開始します。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 **Parameters**
 
 <a href="" id="instance--in-"></a>*インスタンス\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
 
 <a href="" id="fileobject--in-"></a>*FileObject\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ファイルからの読み取りを示すファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 ファイルからの読み取りを示すファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
 
 <a href="" id="filehandle--in-"></a>*FileHandle\[で\]*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 読み取るファイルのファイル ハンドル。 このパラメーターは、必要なは、NULL にすることはできません。
@@ -43,13 +43,13 @@ ms.locfileid: "63391780"
 操作の制御コード。 使用**FSCTL\_オフロード\_読み取り**この操作にします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-ポインターを[ **FSCTL\_オフロード\_読み取り\_入力**](https://msdn.microsoft.com/library/windows/hardware/hh451104)構造体は、読み取るデータ ブロックのオフセットとサイズが含まれています。
+ポインターを[ **FSCTL\_オフロード\_読み取り\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input)構造体は、読み取るデータ ブロックのオフセットとサイズが含まれています。
 
 <a href="" id="inputbufferlength--in-"></a>*InputBufferLength\[で\]*  
 指し示されるバッファーのバイト単位のサイズを*InputBuffer*します。 この値は**sizeof**(FSCTL\_オフロード\_読み取り\_入力)。
 
 <a href="" id="outputbuffer--out-"></a>*OutputBuffer\[アウト\]*  
-ポインターを[ **FSCTL\_オフロード\_読み取り\_出力**](https://msdn.microsoft.com/library/windows/hardware/hh451109)オフロードの結果を受け取る構造体は、読み取り操作。
+ポインターを[ **FSCTL\_オフロード\_読み取り\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output)オフロードの結果を受け取る構造体は、読み取り操作。
 
 <a href="" id="outputbufferlength--out-"></a>*OutputBufferLength\[アウト\]*  
 指し示されるバッファーのバイト単位で、サイズ、 *OutputBuffer*パラメーター。 この値は以上である必要があります**sizeof**(FSCTL\_オフロード\_読み取り\_出力)。
@@ -57,7 +57,7 @@ ms.locfileid: "63391780"
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
 
 <table>
 <colgroup>
@@ -66,7 +66,7 @@ ms.locfileid: "63391780"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -78,13 +78,13 @@ ms.locfileid: "63391780"
 <tr class="even">
 <td align="left"><p> <strong>STATUS_INVALID_PARAMETER</strong></p></td>
 <td align="left"><p>ファイル サイズは、PAGE_SIZE 未満です。</p>
-<p>- または -</p>
+<p>\- または -</p>
 <p><em>InputBufferLength</em> &lt; <strong>sizeof</strong>(FSCTL_OFFLOAD_READ_INPUT)。</p>
-<p>- または -</p>
-<p>1 つ以上のこれらのメンバーの<a href="https://msdn.microsoft.com/library/windows/hardware/hh451104" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451104)"> <strong>FSCTL_OFFLOAD_READ_INPUT</strong> </a>が正しくありません。</p>
+<p>\- または -</p>
+<p>1 つ以上のこれらのメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input)"> <strong>FSCTL_OFFLOAD_READ_INPUT</strong> </a>が正しくありません。</p>
 <strong>FileOffset</strong>ボリュームの論理セクター サイズの倍数ではありません。
 <strong>CopyLength</strong>ボリュームの論理セクター サイズの倍数ではありません。
-<strong>サイズ</strong>が、サイズ、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451104" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451104)"> <strong>FSCTL_OFFLOAD_READ_INPUT</strong> </a>構造体。
+<strong>サイズ</strong>が、サイズ、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input)"> <strong>FSCTL_OFFLOAD_READ_INPUT</strong> </a>構造体。
 <strong>FileOffset</strong> + <strong>CopyLength</strong> &gt; <strong>MAXULONGLONG</strong>します。</td>
 </tr>
 <tr class="odd">
@@ -125,7 +125,7 @@ ms.locfileid: "63391780"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_END_OF_FILE</strong></p></td>
-<td align="left"><p><strong>FileOffset</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/hh451104" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451104)"> <strong>FSCTL_OFFLOAD_READ_INPUT</strong> </a>ファイル終端 (EOF) した後に開始します。</p></td>
+<td align="left"><p><strong>FileOffset</strong>のメンバー <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input)"> <strong>FSCTL_OFFLOAD_READ_INPUT</strong> </a>ファイル終端 (EOF) した後に開始します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_DISMOUNTED_VOLUME</strong></p></td>
@@ -137,7 +137,7 @@ ms.locfileid: "63391780"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_BUFFER_TOO_SMALL</strong></p></td>
-<td align="left"><p><em>OutputBufferLength</em>に対して小さすぎる<em>OutputBuffer</em>を受信する、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451109" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_OUTPUT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451109)"> <strong>FSCTL_OFFLOAD_READ_OUTPUT</strong> </a>構造体。</p></td>
+<td align="left"><p><em>OutputBufferLength</em>に対して小さすぎる<em>OutputBuffer</em>を受信する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_OUTPUT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output)"> <strong>FSCTL_OFFLOAD_READ_OUTPUT</strong> </a>構造体。</p></td>
 </tr>
 </tbody>
 </table>
@@ -174,13 +174,13 @@ ms.locfileid: "63391780"
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 
-[**FSCTL\_オフロード\_読み取り\_入力**](https://msdn.microsoft.com/library/windows/hardware/hh451104)
+[**FSCTL\_オフロード\_読み取り\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_input)
 
-[**FSCTL\_オフロード\_読み取り\_出力**](https://msdn.microsoft.com/library/windows/hardware/hh451109)
+[**FSCTL\_オフロード\_読み取り\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsctl_offload_read_output)
 
  
 

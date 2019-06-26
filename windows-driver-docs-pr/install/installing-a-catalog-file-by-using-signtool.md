@@ -4,17 +4,17 @@ description: SignTool を使用したカタログ ファイルのインストー
 ms.assetid: b3d151af-d49b-468f-a34a-04e5ab875a07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d44c4c1437798c9324cd785b364f83b2aab8999
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe329758b5bb80980a8aa8364199a7be9d704fad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379460"
 ---
 # <a name="installing-a-catalog-file-by-using-signtool"></a>SignTool を使用したカタログ ファイルのインストール
 
 
-[**SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)再頒布可能パッケージのツールではありませんし、再配布インストール アプリケーションを付属したがってすることはできません。 ただし、ツールのマイクロソフト ソフトウェア ライセンス条項に準拠しているように既にインストールされている SignTool をあるコンピューター上で SignTool を使用できます。 A[カタログ ファイル](catalog-files.md)手動でコマンドラインからインストールまたは SignTool の次のコマンドを使用して、コマンドのスクリプトによってインストールされていることができます。
+[**SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)再頒布可能パッケージのツールではありませんし、再配布インストール アプリケーションを付属したがってすることはできません。 ただし、ツールのマイクロソフト ソフトウェア ライセンス条項に準拠しているように既にインストールされている SignTool をあるコンピューター上で SignTool を使用できます。 A[カタログ ファイル](catalog-files.md)手動でコマンドラインからインストールまたは SignTool の次のコマンドを使用して、コマンドのスクリプトによってインストールされていることができます。
 
 ```cpp
 SignTool catdb /v /u CatalogFileName.cat

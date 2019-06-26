@@ -4,12 +4,12 @@ description: Windows 8 には、デスクトップのコラボレーションと
 ms.assetid: 5D4CBEA1-3C13-4B5C-A43D-7E6DBBB1A80F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b9e7d6792d60a231da694ff409c7e502a734a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 306d812ef0e04a8241075cdb2728642b8cc8c8d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348890"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384893"
 ---
 # <a name="desktop-duplication"></a>デスクトップの重複
 
@@ -41,7 +41,7 @@ API は、モニターの境界に沿ってデスクトップの内容にアク�
     -   ハードウェア アクセラレータを使用して、移動、およびマウスのデータを処理するアプリケーションを選択できます。
     -   圧縮をストリーミングする前にハードウェア アクセラレータを使用するアプリケーションを選択できます。
 
-詳細なドキュメントとサンプルでは、次を参照してください。[デスクトップ重複 API](https://msdn.microsoft.com/library/windows/desktop/hh404487)します。
+詳細なドキュメントとサンプルでは、次を参照してください。[デスクトップ重複 API](https://docs.microsoft.com/windows/desktop/direct3ddxgi/desktop-dup-api)します。
 
  
 

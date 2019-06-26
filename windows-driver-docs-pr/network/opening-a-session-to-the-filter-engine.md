@@ -9,17 +9,17 @@ keywords:
 - 開くフィルター エンジン セッション WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 455f6b34ad5e1bc6551de23406673649cf5136bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46a3b49bf2b5ad3c0fca3dc5ff90ddfc001a7d15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384228"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366558"
 ---
 # <a name="opening-a-session-to-the-filter-engine"></a>フィルター エンジンへのセッションを開く
 
 
-コールアウト ドライバーでは、フィルター エンジンにフィルターを追加するなどの管理タスクを実行するフィルター エンジンへのセッションを開く必要があります。 コールアウト ドライバーを呼び出すことによって、フィルター エンジンにセッションを開くと、 [ **FwpmEngineOpen0** ](https://msdn.microsoft.com/library/windows/hardware/ff550075)関数。 次に、例を示します。
+コールアウト ドライバーでは、フィルター エンジンにフィルターを追加するなどの管理タスクを実行するフィルター エンジンへのセッションを開く必要があります。 コールアウト ドライバーを呼び出すことによって、フィルター エンジンにセッションを開くと、 [ **FwpmEngineOpen0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpmk/nf-fwpmk-fwpmengineopen0)関数。 例:
 
 ```cpp
 HANDLE engineHandle;

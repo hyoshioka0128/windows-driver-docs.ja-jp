@@ -4,12 +4,12 @@ description: このセクションは、USB セレクティブ サスペンド W
 ms.assetid: 4FCF726B-4CCF-4F0F-9088-2EABA0DA7D3C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2c250d0be241b1f12e69199cf92cf082168bd48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c73a3624c765a303ee0128d3904e7f037df8061
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366645"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384343"
 ---
 # <a name="wdi-and-wlan-selective-suspend-capability"></a>WDI および WLAN セレクティブ サスペンド機能
 
@@ -24,17 +24,17 @@ WDI は、次のソースに基づくサポートを有効します。
 
 -   デバイスの INF:これは、上記のキーワードからデバイスのセットアップでは、次の項目に書き込まれます。
 -   レジストリ設定:これは、INF またはデバイス マネージャーでデバイスの高度なプロパティ シートから設定されます。
--   電源管理機能からの戻り値で[OID\_WDI\_取得\_アダプター\_機能](https://msdn.microsoft.com/library/windows/hardware/dn925838)します。
--   内のハンドラーをアイドル[ **NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://msdn.microsoft.com/library/windows/hardware/mt297617)します。
-    -   [*MiniportWdiIdleNotification*](https://msdn.microsoft.com/library/windows/hardware/mt297563)
+-   電源管理機能からの戻り値で[OID\_WDI\_取得\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)します。
+-   内のハンドラーをアイドル[ **NDIS\_ミニポート\_ドライバー\_WDI\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)します。
+    -   [*MiniportWdiIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_idle_notification)
 
-    -   [*MiniportWdiCancelIdleNotification*](https://msdn.microsoft.com/library/windows/hardware/mt297560)
+    -   [*MiniportWdiCancelIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_cancel_idle_notification)
 
 WDI ドライバーは、LE の 2 つのコールバック関数を公開します。
 
--   [**IdleNotificationComplete**](https://msdn.microsoft.com/library/windows/hardware/mt297600)
+-   [**IdleNotificationComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_idle_notification_complete)
 
--   [**IdleNotificationConfirm**](https://msdn.microsoft.com/library/windows/hardware/mt297601)
+-   [**IdleNotificationConfirm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_idle_notification_confirm)
 
  
 

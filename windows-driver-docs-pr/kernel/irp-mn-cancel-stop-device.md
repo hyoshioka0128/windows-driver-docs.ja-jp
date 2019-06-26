@@ -6,12 +6,12 @@ ms.assetid: 7047c266-84b4-4260-ad75-d56c87c8c9ef
 keywords:
 - IRP_MN_CANCEL_STOP_DEVICE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d0034468905d5507a0b59ba82641e5fbae457b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a077ad80a4c11379ff0e3bfa1751d3793a4faae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368403"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382251"
 ---
 # <a name="irpmncancelstopdevice"></a>IRP\_MN\_キャンセル\_停止\_デバイス
 
@@ -52,7 +52,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 場合は、デバイスがまだアクティブな状態で、ドライバーは、この IRP を受信すると、関数またはフィルター ドライバーは単に状態を成功に設定し、[次へ] のドライバーを IRP を渡します。 親のバス ドライバーは IRP を完了します。 このようなキャンセル停止 IRP では、関数またはフィルター ドライバーは完了ルーチンを設定しない必要があります。
 
-参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)停止 Irp の処理の詳細については、すべてを処理するための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)停止 Irp の処理の詳細については、すべてを処理するための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
 
 **この IRP を送信します。**
 

@@ -13,12 +13,12 @@ keywords:
 - アクションは、WDK WDTF をインターフェイスします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad1ceebb1450740034b8b80d21462843c1f606d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e5e724f617b7f06d1aca970555ebda34460198a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341206"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366487"
 ---
 # <a name="extending-the-framework"></a>フレームワークの拡張
 
@@ -31,11 +31,11 @@ WDTF は拡張性が構築されています。 性は、次の図に示すよ�
 
 -   **サンプル スクリプトを変更する**します。 このメソッドは、上記の図の緑色に表示されます。 WDTF 標準のいずれかを実行することができます[サンプル スクリプト](sample-wdtf-scenarios.md)シナリオに合わせて変更しています。 できます[WDTF シナリオを作成](creating-wdtf-scenarios.md)最初から。
 
--   **既存の実装** [**アクション インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355)**と同様に、** SimpleIO します。 このメソッドは、黄色が上記の図に表示されます。 インターフェイスが機能する対象の種類を拡張する既存のアクション インターフェイスを実装できます。 デバイスの種類に、SimpleIO を実装する場合、デバイスの I/O の検証を実行する WDTF ベースの既存のシナリオのすべてを自動的に開始されます。
+-   **既存の実装** [**アクション インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)**と同様に、** SimpleIO します。 このメソッドは、黄色が上記の図に表示されます。 インターフェイスが機能する対象の種類を拡張する既存のアクション インターフェイスを実装できます。 デバイスの種類に、SimpleIO を実装する場合、デバイスの I/O の検証を実行する WDTF ベースの既存のシナリオのすべてを自動的に開始されます。
 
     WDTF は、SimpleIO の実装で支援するために Microsoft Visual Studio テンプレートを提供します。 詳細については、次を参照してください。 [WDTF SimpleIO がデバイスのプラグインを記述](writing-a-wdtf-simpleio-plug-in-for-your-device.md)します。
 
--   **作成 (および実装し)、新しい** [**アクション インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355)します。 このメソッドは、上記の図で赤色で表示されます。 WDTF を提供する機能が、コンポーネント ベースのシナリオを構築するのに十分でない場合は、新しいコンポーネントを作成する WDTF を使用できます。
+-   **作成 (および実装し)、新しい** [**アクション インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 このメソッドは、上記の図で赤色で表示されます。 WDTF を提供する機能が、コンポーネント ベースのシナリオを構築するのに十分でない場合は、新しいコンポーネントを作成する WDTF を使用できます。
 
     必要があるために、このメソッドは 3 つのメソッドの中で最も難しい[COM インターフェイスの設計スキル](com-interface-design-skills.md)します。 設計と COM オートメーション インターフェイスを使用して、機能の単純な抽象化を実装する必要があります。
 

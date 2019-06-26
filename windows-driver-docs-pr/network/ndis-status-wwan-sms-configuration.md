@@ -5,12 +5,12 @@ ms.assetid: 86dfe2dc-070b-43d9-b6fa-54dee985c65d
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_SMS_CONFIGURATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 6edeb040b97225603118c9313d61b490536387f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb3f97a1dcad87fb73eadfcb4a88c1dfa6b9d48f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379302"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386857"
 ---
 # <a name="ndisstatuswwansmsconfiguration"></a>NDIS\_状態\_WWAN\_SMS\_構成
 
@@ -19,14 +19,14 @@ ms.locfileid: "63379302"
 
 ミニポート ドライバーには、この通知が不要なイベントを送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_SMS\_構成**](https://msdn.microsoft.com/library/windows/hardware/ff567935)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_configuration)構造体。
 
 <a name="remarks"></a>注釈
 -------
 
 ミニポート ドライバーは、MB デバイスの SMS サブシステムが SMS 操作の準備ができたときこの迷惑なを示す値を送信する必要があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -51,7 +51,7 @@ ms.locfileid: "63379302"
 
 [OID\_WWAN\_SMS\_構成](oid-wwan-sms-configuration.md)
 
-[**NDIS\_WWAN\_SMS\_構成**](https://msdn.microsoft.com/library/windows/hardware/ff567935)
+[**NDIS\_WWAN\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_configuration)
 
  
 

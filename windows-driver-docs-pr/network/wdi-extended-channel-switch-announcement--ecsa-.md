@@ -4,12 +4,12 @@ description: このセクションでは、拡張チャネル スイッチのお
 ms.assetid: 9C59C8A2-335F-4BA4-8682-6DFFB82E1CAF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d652f12f862992d6d02c5de2f269a3cc4bfb069
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6aea45a28acbb098ba0204b849c2dcbf5e62b27f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330518"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384339"
 ---
 # <a name="wdi-extended-channel-switch-announcement-ecsa"></a>WDI 拡張チャネル スイッチ アナウンス (ECSA)
 
@@ -24,7 +24,7 @@ ms.locfileid: "63330518"
     -   リモート ピアに ECSA がサポートしている場合は、ピアを 1 つのチャネルを生成するチャネルの構成に移動する ECSA に情報交換できます。
 -   デバイスは、クライアントでマルチ チャネルのモードでは。
     -   ECSA 要求をリモート ピアからの場合、サポートします。
--   オペレーティング システムにチャネルの変更通知を送信[NDIS\_状態\_WDI\_INDICATION\_P2P\_グループ\_オペレーティング\_チャネル](https://msdn.microsoft.com/library/windows/hardware/dn925643).
+-   オペレーティング システムにチャネルの変更通知を送信[NDIS\_状態\_WDI\_INDICATION\_P2P\_グループ\_オペレーティング\_チャネル](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-p2p-group-operating-channel).
 
  
 

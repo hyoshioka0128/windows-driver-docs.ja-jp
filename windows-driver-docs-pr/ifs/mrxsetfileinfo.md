@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf86f3ea29db3027c62041b8e33fc261a57ae05c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02bbd05358a2ec1f1b9b00448d2d002cb18970f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352846"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385319"
 ---
 # <a name="mrxsetfileinfo-routine"></a>MRxSetFileInfo ルーチン
 
 
-*MRxSetFileInfo*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのファイル情報を設定することを要求します。
+*MRxSetFileInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのファイル情報を設定することを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -116,7 +116,7 @@ RDBSS への呼び出しを発行する*MRxSetFileInfo*受信に応答する[ **
 
 **Info.Length**に設定されているメンバー **IrpSp -&gt;Parameters.SetFile.Length**します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -139,7 +139,7 @@ RDBSS への呼び出しを発行する*MRxSetFileInfo*受信に応答する[ **
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

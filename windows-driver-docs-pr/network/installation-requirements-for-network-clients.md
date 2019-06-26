@@ -7,12 +7,12 @@ keywords:
 - クライアントのインストール要件の WDK のネットワーク接続
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 679354e31aed3527137b22a623ceab7aa98357f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ebe2a520242b88cbc446889f319e9b5218a1f1f4
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393382"
 ---
 # <a name="installation-requirements-for-network-clients"></a>ネットワーク クライアントのインストール要件
 
@@ -47,13 +47,13 @@ ms.locfileid: "63324912"
 <p><strong>ClassGuid</strong>= {4D36E973-E325-11CE-BFC1-08002BE10318}</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547478" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547478)"><strong>INF SourceDisksNames セクション</strong></a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff547472" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547472)"> <strong>INF SourceDisksFiles セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)"><strong>INF SourceDisksNames セクション</strong></a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)"> <strong>INF SourceDisksFiles セクション</strong></a></p></td>
 <td align="left"><p>必要な場合は.</p></td>
 <td align="left"><p>INF ファイルは、Windows 2000 では配布されませんが必要です。 INF ファイルが Windows 2000 で分散している場合、 <strong>LayoutFile</strong>でエントリを指定する必要があります、<strong>バージョン</strong>セクション、および<strong>SourceDisksNames</strong>と<strong>SourceDisksFiles</strong>のセクションでは使用されません。</p>
 <p>特定のネットワークの要件はありません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547383" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547383)"><strong>INF DestinationDirs セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)"><strong>INF DestinationDirs セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
@@ -63,7 +63,7 @@ ms.locfileid: "63324912"
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547454" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547454)"><strong>製造元の INF セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)"><strong>製造元の INF セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
@@ -121,7 +121,7 @@ ms.locfileid: "63324912"
 <td align="left"><p>ネットワーク クライアントが、印刷プロバイダーが必要です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547485" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547485)"><strong>INF 文字列 セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)"><strong>INF 文字列 セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>

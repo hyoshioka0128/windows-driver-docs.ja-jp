@@ -11,17 +11,17 @@ keywords:
 - 変換先接続の WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a43c1dffa9b5222398253992ff99d32d173ed7cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82572ed424d9f3f1a9645f49689754591bf6cb14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379571"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386567"
 ---
 # <a name="disconnecting-a-socket-from-a-destination"></a>宛先からのソケットの切断
 
 
-Winsock カーネル (WSK) アプリケーションには、確立されたソケット接続経由でデータの送受信が完了したらは、接続指向のソケットが接続されているリモートのトランスポート アドレスから切断ができます。 WSK アプリケーションでは、リモートのトランスポート アドレスからソケットを切断を呼び出して、 [ **WskDisconnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571129)関数。 WSK アプリケーションが実行するか、*中止になる切断*または*正常な切断*ソケットの。 中止になる切断と正常な切断の違いの詳細については、次を参照してください。 **WskDisconnect**します。
+Winsock カーネル (WSK) アプリケーションには、確立されたソケット接続経由でデータの送受信が完了したらは、接続指向のソケットが接続されているリモートのトランスポート アドレスから切断ができます。 WSK アプリケーションでは、リモートのトランスポート アドレスからソケットを切断を呼び出して、 [ **WskDisconnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_disconnect)関数。 WSK アプリケーションが実行するか、*中止になる切断*または*正常な切断*ソケットの。 中止になる切断と正常な切断の違いの詳細については、次を参照してください。 **WskDisconnect**します。
 
 次のコード例では、どのように WSK アプリケーションを適切にから切断できます接続指向のソケット リモート トランスポート アドレスを示します。
 
@@ -123,7 +123,7 @@ NTSTATUS
 }
 ```
 
-WSK アプリケーションでは、ソケットの正常な切断を実行する場合、アプリケーションを送信するデータの最終的なバッファー リモート トランスポート アドレスへのポインターを渡すことによって、ソケットが切断されるまで、 [ **WSK\_BUF**](https://msdn.microsoft.com/library/windows/hardware/ff571153)構造体を[ **WskDisconnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571129)関数。
+WSK アプリケーションでは、ソケットの正常な切断を実行する場合、アプリケーションを送信するデータの最終的なバッファー リモート トランスポート アドレスへのポインターを渡すことによって、ソケットが切断されるまで、 [ **WSK\_BUF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_buf)構造体を[ **WskDisconnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_disconnect)関数。
 
 WSK アプリケーションでは、接続されているリモートのトランスポート アドレスからソケットを接続したまま接続指向のソケットが閉じ、WSK サブシステムは自動的に中止になるソケットを閉じる前に、ソケットの切断を実行します。 ソケットを閉じることの詳細については、次を参照してください。[ソケットを閉じて](closing-a-socket.md)します。
 

@@ -4,12 +4,12 @@ description: MPIO\_ディスク\_ヘルス\_情報 WMI クラス
 ms.assetid: 5a3ca8be-8940-4ba4-9206-75d0c7c90d53
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d85cf76339f5f411a767adcfaa55a3c7d5fe1d20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26f557913e60f271c03c4dd4ee10a2ee52c05abd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386165"
 ---
 # <a name="mpiodiskhealthinfo-wmi-class"></a>MPIO\_ディスク\_ヘルス\_情報 WMI クラス
 
@@ -41,7 +41,7 @@ class MPIO_DISK_HEALTH_INFO
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_ディスク\_正常性\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff562359)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_ディスク\_正常性\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_disk_health_info)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

@@ -4,12 +4,12 @@ description: MB PIN 操作
 ms.assetid: ca9e1537-29e8-4849-a634-5c2177886321
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc6e164116a4c427b4da5395d9b865811bf506f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d3ce5cc457e997450b662b30e1b6a3b6072e486
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343291"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374046"
 ---
 # <a name="mb-pin-operations"></a>MB PIN 操作
 
@@ -18,7 +18,7 @@ ms.locfileid: "63343291"
 
 ## <a name="mb-pin-operations-for-device-hibernation"></a>デバイスの休止状態の MB のピン留め操作
 
-ごと、 [3 gpp](http://www.3gpp.org/about-3gpp)標準、別の種類があります SIM Pin。  このページの情報は、SIM PIN1、特定の SIM カードのユニバーサル ピン留めとも呼ばれますにのみ適用されます。  
+ごと、 [3 gpp](https://www.3gpp.org/about-3gpp)標準、別の種類があります SIM Pin。  このページの情報は、SIM PIN1、特定の SIM カードのユニバーサル ピン留めとも呼ばれますにのみ適用されます。  
 
 携帯電話のモデムが、低電力状態から再開するたびに標準の 3 gpp は、SIM 資格情報が移動体通信ネットワークに接続する前に更新することが必要です。  
 
@@ -32,7 +32,7 @@ Windows ではこれを基になるモデム デバイス D3 コールド電源�
 
 USB モデム デバイスでコールド D3 を有効にする方法については、参照してください。
 
-* [USB デバイスの D3Cold をサポートしている](https://blogs.msdn.microsoft.com/usbcoreblog/2013/02/18/supporting-d3cold-for-usb-devices)します。
-* [ドライバーで D3cold のサポート](https://msdn.microsoft.com/library/windows/hardware/hh967717)
+* [USB デバイスの D3Cold をサポートしている](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog)します。
+* [ドライバーで D3cold のサポート](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-d3cold-in-a-driver)
 
-ピン留め操作の詳細については、次を参照してください。 [OID\_WWAN\_PIN](https://msdn.microsoft.com/library/windows/hardware/ff569828)します。
+ピン留め操作の詳細については、次を参照してください。 [OID\_WWAN\_PIN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin)します。

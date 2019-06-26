@@ -7,12 +7,12 @@ keywords:
 - Windows Vista のディスプレイ ドライバー モデル WDK、利点があります。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eeebf753a7ffe3452e5ce939ccba286abd8da72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76e132ab651e064aed65ebee1083e669086177ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347016"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384629"
 ---
 # <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) のメリット
 
@@ -32,11 +32,11 @@ ms.locfileid: "63347016"
 
     サーフェスの作成のオペレーティング システムで以前 Windows Vista よりも次のカーネル モードの連続する呼び出しが必要です。
 
-    1.  [*DdCanCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549213)
-    2.  [*DdCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549263)
-    3.  [**D3dCreateSurfaceEx**](https://msdn.microsoft.com/library/windows/hardware/ff542840)
+    1.  [*DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))
+    2.  [*DdCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))
+    3.  [**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)
 
-    WDDM のサーフェスの作成にのみが必要です、 [ **CreateResource** ](https://msdn.microsoft.com/library/windows/hardware/ff540688)を呼び出してユーザー モード ディスプレイ ドライバー呼び出し、 [ **pfnAllocateCb** ](https://msdn.microsoft.com/library/windows/hardware/ff568893)関数。 カーネル モードへの呼び出し[ **DxgkDdiCreateAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff559606)関数が実行されます。
+    WDDM のサーフェスの作成にのみが必要です、 [ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)を呼び出してユーザー モード ディスプレイ ドライバー呼び出し、 [ **pfnAllocateCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)関数。 カーネル モードへの呼び出し[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)関数が実行されます。
 
 -   呼び出しを作成し、サーフェスを破棄して、ロックおよびリソースをロック解除をより均等にペアになっています。
 

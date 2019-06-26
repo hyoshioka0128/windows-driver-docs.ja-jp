@@ -10,12 +10,12 @@ keywords:
 description: コネクト スタンバイの NFP デバイスの要件を満たすについて説明します。 プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a6d3968dbe771d7cdb638beddfbd7411b8f0e76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 740b1f070e12955636d8ede47df663fd782e328a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378841"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383575"
 ---
 # <a name="nfc-client-driver-power-management-requirements"></a>NFC クライアント ドライバーの電源の管理要件
 
@@ -36,5 +36,5 @@ NFC クライアント ドライバーでは、D0 と D3 の能力を NFP プラ
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  

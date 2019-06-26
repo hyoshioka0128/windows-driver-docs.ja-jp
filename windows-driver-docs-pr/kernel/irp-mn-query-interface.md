@@ -6,12 +6,12 @@ ms.assetid: ae1dab46-c387-4e5f-9368-451e625ddbc1
 keywords:
 - IRP_MN_QUERY_INTERFACE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: d33afe8a8fc3e6f0030ade6ccc8fc60eb1c06955
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 072b9a08d229a83ecf51833888d9394ab83c5500
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381433"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370856"
 ---
 # <a name="irpmnqueryinterface"></a>IRP\_MN\_クエリ\_インターフェイス
 
@@ -36,12 +36,12 @@ ms.locfileid: "63381433"
 
 ドライバーまたはシステム コンポーネントでは、この IRP を送信 IRQL でパッシブ =\_任意のスレッド コンテキストでします。
 
-ドライバーがドライバーの後にいつでもこの IRP を受信できる[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)デバイスのルーチンが呼び出されました。 デバイスの場合がありますまたはこの IRP が送信されるときに起動しない可能性があります (ドライバーが正常に完了したことを想定できません、 [ **IRP\_MN\_開始\_デバイス**](irp-mn-start-device.md)デバイスの要求)。
+ドライバーがドライバーの後にいつでもこの IRP を受信できる[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)デバイスのルーチンが呼び出されました。 デバイスの場合がありますまたはこの IRP が送信されるときに起動しない可能性があります (ドライバーが正常に完了したことを想定できません、 [ **IRP\_MN\_開始\_デバイス**](irp-mn-start-device.md)デバイスの要求)。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.QueryInterface**のメンバー、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造自体が構造体、について説明しますが、要求されているインターフェイス。 構造体には、次の情報が含まれています。
+**Parameters.QueryInterface**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造自体が構造体、について説明しますが、要求されているインターフェイス。 構造体には、次の情報が含まれています。
 
 ```cpp
 CONST GUID *InterfaceType;
@@ -57,7 +57,7 @@ PVOID InterfaceSpecificData
 要求されているインターフェイスを識別する GUID を指します。 GUID などのシステム定義のインターフェイスの GUID を指定できます\_BUS\_インターフェイス\_STANDARD、またはカスタム インターフェイスです。 システム定義のインターフェイスの Guid は、Wdmguid.h で一覧表示されます。 Uuidgen では、カスタム インターフェイスの Guid を生成する必要があります。
 
 <a href="" id="size"></a>**サイズ**  
-要求されているインターフェイスのサイズを指定します。 この IRP を処理するドライバーに返す必要がありますいないを[**インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff547825)構造よりも大きい**サイズ**バイト。
+要求されているインターフェイスのサイズを指定します。 この IRP を処理するドライバーに返す必要がありますいないを[**インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_interface)構造よりも大きい**サイズ**バイト。
 
 <a href="" id="version"></a>**バージョン**  
 要求されているインターフェイスのバージョンを指定します。
@@ -65,7 +65,7 @@ PVOID InterfaceSpecificData
 ドライバーは、インターフェイスの 1 つ以上のバージョンをサポートする場合、ドライバーは、要求されたバージョンを超えずに最も近いサポートされているバージョンを返します。 IRP を送信するコンポーネントは、返された調べる必要があります**Interface.Version**フィールドし、その値に基づいて処理を決定します。
 
 <a href="" id="interface"></a>**インターフェイス**  
-要求されたインターフェイスが返される構造体をポイントします。 この構造体を含める必要があります、 [**インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff547825)その最初のメンバーとして構造体。 IRP を送信するコンポーネントは、ページングされたメモリからこの構造体を割り当てます。
+要求されたインターフェイスが返される構造体をポイントします。 この構造体を含める必要があります、 [**インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_interface)その最初のメンバーとして構造体。 IRP を送信するコンポーネントは、ページングされたメモリからこの構造体を割り当てます。
 
 新しい構造型含むインターフェイスをエクスポートするドライバーの定義、**インターフェイス**構造、およびルーチンまたはインターフェイス内のデータ メンバー。 (ドライバーは、インターフェイスの GUID も定義」の説明に従って、 **InterfaceType**メンバー、上記)。
 
@@ -88,7 +88,7 @@ PVOID InterfaceSpecificData
 
 成功した場合、バス ドライバーの設定**Irp -&gt;IoStatus.Information**をゼロにします。
 
-呼び出す関数またはフィルター ドライバーがこの IRP を処理しない場合[ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)し、[次へ] のドライバーに IRP を渡します。 このようなドライバーを変更する必要がありますいない**Irp -&gt;IoStatus.Status** IRP を完了する必要があります。
+呼び出す関数またはフィルター ドライバーがこの IRP を処理しない場合[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)し、[次へ] のドライバーに IRP を渡します。 このようなドライバーを変更する必要がありますいない**Irp -&gt;IoStatus.Status** IRP を完了する必要があります。
 
 バス ドライバーでは、要求されたインターフェイスではエクスポートされませんし、そのため子 PDO のこの IRP を処理は、する場合は、バス ドライバーのまま**Irp -&gt;IoStatus.Status** IRP の完了であり。
 
@@ -97,25 +97,25 @@ PVOID InterfaceSpecificData
 
 ドライバーは、パラメーターは、インターフェイス、ドライバーのサポートを指定した場合、この IRP を処理します。
 
-ドライバーは、IRP がドライバーがサポートされていないインターフェイスを要求した場合、この IRP をキューに配置しない必要があります。 ドライバーを確認する必要があります**Parameters.QueryInterface.InterfaceType**でその[ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造体。 インターフェイスでない場合、ドライバーを 1 つをサポートしています、ドライバーは、[次へ] の下ドライバー デバイス スタックに IRP をブロックすることがなく渡す必要があります。
+ドライバーは、IRP がドライバーがサポートされていないインターフェイスを要求した場合、この IRP をキューに配置しない必要があります。 ドライバーを確認する必要があります**Parameters.QueryInterface.InterfaceType**でその[ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造体。 インターフェイスでない場合、ドライバーを 1 つをサポートしています、ドライバーは、[次へ] の下ドライバー デバイス スタックに IRP をブロックすることがなく渡す必要があります。
 
-各インターフェイスを提供する必要があります**InterfaceReference**と**InterfaceDereference**ルーチン、およびドライバー インターフェイスをエクスポートするでこれらのルーチンのアドレスを指定する必要があります、 [**インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff547825)構造体。 呼び出すことによって、インターフェイスの参照カウントを増やす必要があります、ドライバーは IRP への応答でインターフェイスを返します、前にその**InterfaceReference**ルーチン。 インターフェイスを要求したドライバーの使用が完了したら、そのドライバーが呼び出してインターフェイスの参照カウントをデクリメントする必要があります**InterfaceDereference**ルーチン。
+各インターフェイスを提供する必要があります**InterfaceReference**と**InterfaceDereference**ルーチン、およびドライバー インターフェイスをエクスポートするでこれらのルーチンのアドレスを指定する必要があります、 [**インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_interface)構造体。 呼び出すことによって、インターフェイスの参照カウントを増やす必要があります、ドライバーは IRP への応答でインターフェイスを返します、前にその**InterfaceReference**ルーチン。 インターフェイスを要求したドライバーの使用が完了したら、そのドライバーが呼び出してインターフェイスの参照カウントをデクリメントする必要があります**InterfaceDereference**ルーチン。
 
 ドライバーは IRP を送信する場合 (ドライバー *x*) 後で、インターフェイスを別のドライバーに渡します (ドライバー *y*) し、ドライバー *x*インターフェイスの参照カウントを増やす必要があり、ドライバー *y*デクリメントする必要があります。
 
 この IRP を処理するドライバーは IRP を要求されたインターフェイスを取得するもう 1 つのデバイス スタックに渡すことを避ける必要があります。 このような設計では、管理が困難であるデバイス スタック間の依存関係を作成します。 たとえば、最初のスタックの適切なドライバーが、インターフェイスを逆参照されるまでは、2 つ目のデバイス スタックによって表されるデバイスを削除できません。
 
-インターフェイスには、bus 固有またはバスに依存しないを指定できます。 バスに固有のインターフェイスは、それらのバスのヘッダー ファイルで定義されます。 システムは、バスに依存しないインターフェイスを定義[ **BUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff540707)、標準バス インターフェイスをエクスポートします。
+インターフェイスには、bus 固有またはバスに依存しないを指定できます。 バスに固有のインターフェイスは、それらのバスのヘッダー ファイルで定義されます。 システムは、バスに依存しないインターフェイスを定義[ **BUS\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)、標準バス インターフェイスをエクスポートします。
 
-参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
 
-複数層のカーネル モード デバイス ドライバーの間で日常的なエントリ ポイントを渡すためには、具体的には、この IRP が使用されます。 この IRP によって公開されるインターフェイスを混同しないでください*デバイス インターフェイス*します。 デバイスのインターフェイスは、ユーザー モード コンポーネントまたはその他のカーネル コンポーネントで使用するためのデバイスへのパスを公開するためには、主に使用されます。 デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)します。
+複数層のカーネル モード デバイス ドライバーの間で日常的なエントリ ポイントを渡すためには、具体的には、この IRP が使用されます。 この IRP によって公開されるインターフェイスを混同しないでください*デバイス インターフェイス*します。 デバイスのインターフェイスは、ユーザー モード コンポーネントまたはその他のカーネル コンポーネントで使用するためのデバイスへのパスを公開するためには、主に使用されます。 デバイス インターフェイスの詳細については、次を参照してください。[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)します。
 
 **この IRP を送信します。**
 
-参照してください[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
+参照してください[Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
 
--   割り当て、 [**インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff547825)ページ プールから構造体し、ゼロに初期化します。 インターフェイスは IRQL で呼び出せる場合&gt;= ディスパッチ\_レベル、インターフェイス コントラクトに基づき、呼び出し元にコピーできます内容非ページ プールから割り当てられたメモリ。
+-   割り当て、 [**インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_interface)ページ プールから構造体し、ゼロに初期化します。 インターフェイスは IRQL で呼び出せる場合&gt;= ディスパッチ\_レベル、インターフェイス コントラクトに基づき、呼び出し元にコピーできます内容非ページ プールから割り当てられたメモリ。
 
 -   IRP の I/O スタック内の次の場所の値を設定します設定**MajorFunction**に[ **IRP\_MJ\_PNP**](irp-mj-pnp.md)設定 **。MinorFunction**に**IRP\_MN\_クエリ\_インターフェイス**、適切な値を設定および**Parameters.QueryInterface**します。
 
@@ -125,9 +125,9 @@ PVOID InterfaceSpecificData
 
 -   インターフェイスの仕様」の説明に従って、インターフェイスのルーチンとコンテキスト パラメーターを使用します。
 
--   使用してその参照カウントをデクリメント、 [ *InterfaceDereference* ](https://msdn.microsoft.com/library/windows/hardware/ff547829)ルーチン インターフェイスが不要になったとき。 インターフェイスを逆参照した後は、インターフェイス ルーチンを呼び出さないでください。
+-   使用してその参照カウントをデクリメント、 [ *InterfaceDereference* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pinterface_dereference)ルーチン インターフェイスが不要になったとき。 インターフェイスを逆参照した後は、インターフェイス ルーチンを呼び出さないでください。
 
-ドライバーでは、この IRP がドライバーが接続されているデバイス スタックの一番上に通常送信します。 ドライバーは、この IRP を別のデバイス スタックに送信する場合、ドライバーを他のデバイス上のターゲット デバイスの通知の登録する必要がある場合は、その他のデバイスは、ドライバーが処理しているデバイスの先祖ではありません。 このようなドライバーを呼び出す[ **IoRegisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff549526)で、*によって*の**EventCategoryTargetDeviceChange**します。 ドライバーが GUID 型の通知を受信すると\_ターゲット\_デバイス\_クエリ\_REMOVE、ドライバー インターフェイス参照を解除する必要があります。 後続の GUID を受信した場合、ドライバーが、インターフェイスの requery できます\_ターゲット\_デバイス\_削除\_キャンセル通知します。
+ドライバーでは、この IRP がドライバーが接続されているデバイス スタックの一番上に通常送信します。 ドライバーは、この IRP を別のデバイス スタックに送信する場合、ドライバーを他のデバイス上のターゲット デバイスの通知の登録する必要がある場合は、その他のデバイスは、ドライバーが処理しているデバイスの先祖ではありません。 このようなドライバーを呼び出す[ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)で、*によって*の**EventCategoryTargetDeviceChange**します。 ドライバーが GUID 型の通知を受信すると\_ターゲット\_デバイス\_クエリ\_REMOVE、ドライバー インターフェイス参照を解除する必要があります。 後続の GUID を受信した場合、ドライバーが、インターフェイスの requery できます\_ターゲット\_デバイス\_削除\_キャンセル通知します。
 
 <a name="requirements"></a>要件
 ------------
@@ -148,11 +148,11 @@ PVOID InterfaceSpecificData
 ## <a name="see-also"></a>関連項目
 
 
-[**バス\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff540707)
+[**バス\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)
 
-[**インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff547825)
+[**インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_interface)
 
-[**IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)
+[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)
 
  
 

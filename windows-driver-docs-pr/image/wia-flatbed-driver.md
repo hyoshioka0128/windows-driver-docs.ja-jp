@@ -4,12 +4,12 @@ description: WIA フラットベッド ドライバー
 ms.assetid: 83c35b1f-10e0-47e1-97cc-5a7a79fb8088
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d3ba2f9affb0c05218ce660243561248cae846d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b27d274f2b494b2fa48b83b49e2324bb0497b221
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356117"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384799"
 ---
 # <a name="wia-flatbed-driver"></a>WIA フラットベッド ドライバー
 
@@ -39,7 +39,7 @@ Microdriver には、デバイスでサポートされていないデータ型�
 
 ### <a name="file-formats"></a>ファイル形式
 
-既定のファイル形式は、ビットマップ (BMP) です。 使用して、他の形式のサポートを追加することができます、 [WIA microdriver の省略可能なコマンド](https://msdn.microsoft.com/library/windows/hardware/ff546016)CMD\_SETFORMAT します。
+既定のファイル形式は、ビットマップ (BMP) です。 使用して、他の形式のサポートを追加することができます、 [WIA microdriver の省略可能なコマンド](https://docs.microsoft.com/windows-hardware/drivers/image/optional-commands)CMD\_SETFORMAT します。
 
 ### <a name="supported-transfer-types"></a>サポートされている転送の種類
 

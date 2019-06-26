@@ -6,12 +6,12 @@ keywords:
 - いる出力
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f3f439c1fd1a72561cb5c25adf8e8158b94de8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee0b0f5fa489d944f94e7a068340d3ebd60fd29b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339029"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368202"
 ---
 # <a name="storage-class-drivers-getdescriptor-routine"></a>記憶域クラス ドライバーの GetDescriptor ルーチン
 
@@ -21,9 +21,9 @@ ms.locfileid: "63339029"
 
 データ転送操作では、記憶域クラス ドライバーには、自分のデバイスが接続されているバスを推進する各 HBA に関する構成情報が必要があります。 この情報を取得するには、クラス ドライバーかを呼び出す内部*いる出力*ルーチンで同じ機能を実装またはその*StartDevice*ルーチン。 (について*StartDevice*を参照してください[、記憶域クラス ドライバーの PnP 開始を処理](handling-pnp-start-in-a-storage-class-driver.md))。
 
-A*いる出力*日常的なビルドや要求のクエリ プロパティを設定 ([**IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744) で[**IOCTL\_ストレージ\_クエリ\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff560590)) ポート ドライバー クラス ドライバーはそのデバイスに格納されるデバイスとアダプターの記述子を取得するには拡張機能。 クラス ドライバーは、記述子が返されるデータに従って、デバイスの拡張機能でドライバーによりライターで決定されたフラグを設定する可能性がありますもできます。
+A*いる出力*日常的なビルドや要求のクエリ プロパティを設定 ([**IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) で[**IOCTL\_ストレージ\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property)) ポート ドライバー クラス ドライバーはそのデバイスに格納されるデバイスとアダプターの記述子を取得するには拡張機能。 クラス ドライバーは、記述子が返されるデータに従って、デバイスの拡張機能でドライバーによりライターで決定されたフラグを設定する可能性がありますもできます。
 
-クラスのドライバーを検査、返された[**ストレージ\_デバイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566971)など、デバイスの機能 (SCSI 問い合わせデータまたは非 SCSI に相当) を決定して、SCSI デバイスの入力 (ある場合)、デバイスのメディアが取り外し可能かどうか (**RemovableMedia**) デバイスが複数の未実行のコマンドをサポートするかどうか、(**CommandQueueing**)、およびさまざまな ID文字列。 クラスのドライバーを検査、返された[**ストレージ\_アダプター\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566346)データなど、アダプターの機能を決定します。
+クラスのドライバーを検査、返された[**ストレージ\_デバイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_device_descriptor)など、デバイスの機能 (SCSI 問い合わせデータまたは非 SCSI に相当) を決定して、SCSI デバイスの入力 (ある場合)、デバイスのメディアが取り外し可能かどうか (**RemovableMedia**) デバイスが複数の未実行のコマンドをサポートするかどうか、(**CommandQueueing**)、およびさまざまな ID文字列。 クラスのドライバーを検査、返された[**ストレージ\_アダプター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)データなど、アダプターの機能を決定します。
 
 -   特定の HBA が 1 つの操作で転送できるバイトの最大数 (**MaximumTransferLength**)。
 
@@ -31,9 +31,9 @@ A*いる出力*日常的なビルドや要求のクエリ プロパティを設�
 
 -   転送クラス ドライバーが適切に設定できるように、HBA のアラインメント要件、 **AlignmentRequirement**フィールドにそのデバイス オブジェクト (**AlignmentMask**)。
 
-    送信するアプリケーション[ **IOCTL\_SCSI\_渡す\_を通じて**](https://msdn.microsoft.com/library/windows/hardware/ff560519)要求もこのフィールドを使用可能性があります。
+    送信するアプリケーション[ **IOCTL\_SCSI\_渡す\_を通じて**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)要求もこのフィールドを使用可能性があります。
 
-    設定の詳細については**AlignmentRequirement**でデバイス オブジェクトを参照してください。[デバイス オブジェクトを初期化して](https://msdn.microsoft.com/library/windows/hardware/ff547807)します。
+    設定の詳細については**AlignmentRequirement**でデバイス オブジェクトを参照してください。[デバイス オブジェクトを初期化して](https://docs.microsoft.com/windows-hardware/drivers/kernel/initializing-a-device-object)します。
 
 -   HBA が SCSI のタグ付けされたキューや lun ごとの内部キューをサポートするかどうか (**CommandQueueing**)。
 

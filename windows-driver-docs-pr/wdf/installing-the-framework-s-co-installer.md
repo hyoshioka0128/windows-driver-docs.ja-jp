@@ -12,28 +12,28 @@ keywords:
 - Wdf の INF ファイル セクション WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17d345625221a546ad4f612e3fb7b3b5fc33c7fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 765a8157d08c843a8187c9ceea452d4c4657b531
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572660"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381096"
 ---
 # <a name="specifying-the-kmdf-co-installer-in-an-inf-file"></a>KMDF 共同インストーラーを INF ファイルで指定します。
 
 
-共同インストーラーを含める場合は、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff539954)ドライバーの INF ファイルで指定する必要がありますセクションに関する情報は、このトピックの読み取り。 この情報は、Microsoft 提供の .msu 再頒布可能パッケージを呼び出す独自のセットアップ アプリケーションを提供する場合に適用されません。
+共同インストーラーを含める場合は、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)ドライバーの INF ファイルで指定する必要がありますセクションに関する情報は、このトピックの読み取り。 この情報は、Microsoft 提供の .msu 再頒布可能パッケージを呼び出す独自のセットアップ アプリケーションを提供する場合に適用されません。
 
 ##  <a name="inf-file-sections-for-the-co-installer"></a>共同インストーラーのセクションでは INF ファイル
 
 
-ドライバーの INF ファイルは、INF を含める必要があります<em>DDInstall</em>**します。CoInstallers**共同インストーラーがインストール セクション。 このセクションの名前など**MyDevice.ntx86.CoInstallers**します。 INF ファイルで共同インストーラーを指定する方法については、[ **INF DDInstall.CoInstallers セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547321)を参照してください。
+ドライバーの INF ファイルは、INF を含める必要があります<em>DDInstall</em>**します。CoInstallers**共同インストーラーがインストール セクション。 このセクションの名前など**MyDevice.ntx86.CoInstallers**します。 INF ファイルで共同インストーラーを指定する方法については、次を参照してください。 [ **INF DDInstall.CoInstallers セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)します。
 
 さらに、ドライバーの INF ファイルは、INF を含める必要があります<em>DDInstall</em>**します。Wdf**共同インストーラーがインストールされていた後を読み取っていることをセクションします。 このセクションの名前など、 **MyDevice.ntx86.Wdf**します。 フレームワークの共同インストーラーがインストールされた後は、ドライバーをインストールしているときに、このセクションを読み取ります。
 
 INF <em>DDInstall</em>**します。Wdf**セクションには、次のディレクティブが含まれています。
 
-- **KmdfService =** <em>DriverService</em>**、**<em>Wdf のインストール-セクション</em>
+- **KmdfService =** <em>DriverService</em> **、** <em>Wdf のインストール-セクション</em>
 
 *DriverService*オペレーティング システムが、ドライバーのカーネル モードのサービスに割り当てる名前を表すと*Wdf のインストール-セクション*共同インストーラーを取得する読み取りする INF セクションの名前を表しますドライバーに関する情報。
 
@@ -52,7 +52,7 @@ KmdfService = Echo, Echo_wdfsect
 KmdfLibraryVersion = 1.0
 ```
 
-INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツール。 INX ファイルの詳細については、[INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)を参照してください。
+INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)ツール。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)します。
 
 ### <a href="" id="sample-inf-ddinstall-coinstallers-and-ddinstall-wdf-sections"></a>**サンプル INF** * **DDInstall *。共同インストーラーと** * **DDInstall *。Wdf のセクションでは**
 

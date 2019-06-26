@@ -8,12 +8,12 @@ keywords:
 - デバイス オブジェクトのフラグの WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdf46453087e4173551db7f0d8a4ffc76fff27de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80f70acd3b5008b45b62efd5821504fa5dda5c6f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352794"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384801"
 ---
 # <a name="operations-that-can-be-irp-based-or-fast-io"></a>IRP ベースまたは高速 I/O とすることが可能な操作
 
@@ -27,7 +27,7 @@ ms.locfileid: "63352794"
 
 -   IRP\_MJ\_クエリ\_情報。 場合、この操作は高速の I/O にできる、 **FileInformationClass**パラメーターが**FileBasicInformation**、 **FileStandardInformation**、または**FileNetworkOpenInformation**します。
 
--   IRP\_MJ\_を読み取る。 ミニフィルター ドライバーは、FLTFL を設定できる\_操作\_登録\_スキップ\_CACHED\_IO フラグ、 [ **FLT\_操作\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff544668)高速の I/O IRP を受信しないために構造\_MJ\_読み取り操作および IRP ベースのキャッシュの読み取り。
+-   IRP\_MJ\_を読み取る。 ミニフィルター ドライバーは、FLTFL を設定できる\_操作\_登録\_スキップ\_CACHED\_IO フラグ、 [ **FLT\_操作\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_operation_registration)高速の I/O IRP を受信しないために構造\_MJ\_読み取り操作および IRP ベースのキャッシュの読み取り。
 
 -   IRP\_MJ\_を記述します。 ミニフィルター ドライバーは、FLTFL を設定できます\_操作\_登録\_スキップ\_CACHED\_IO フラグ、FLT\_操作\_を避けるために、登録の構造体高速の I/O IRP を受信\_MJ\_書き込み操作と IRP ベースのキャッシュの書き込み。
 

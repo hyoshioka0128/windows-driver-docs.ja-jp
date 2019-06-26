@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c35079702e61b65a659d1c83839e8971e1d65226
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 357bd54dc2f59762fdbc53e6f594c2a2213e38d3
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332590"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391576"
 ---
 # <a name="kspropertytelephonycallinfo"></a>KSPROPERTY\_テレフォニー\_CALLINFO
 
@@ -50,19 +50,19 @@ ms.locfileid: "63332590"
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt169884" data-raw-source="[&lt;strong&gt;KSTELEPHONY_CALLINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt169884)"><strong>KSTELEPHONY_CALLINFO</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_callinfo" data-raw-source="[&lt;strong&gt;KSTELEPHONY_CALLINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_callinfo)"><strong>KSTELEPHONY_CALLINFO</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値が型[ **KSTELEPHONY\_CALLINFO**](https://msdn.microsoft.com/library/windows/hardware/mt169884)状態と、電話の種類を指定します。
+プロパティ値が型[ **KSTELEPHONY\_CALLINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_callinfo)状態と、電話の種類を指定します。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-A **KSPROPERTY\_テレフォニー\_CALLINFO**プロパティ要求を返します、 [ **KSTELEPHONY\_CALLINFO** ](https://msdn.microsoft.com/library/windows/hardware/mt169884)される構造呼び出しの種類 (LTE パケット交換 WLAN パケット交換または回線交換) が含まれていて、呼び出しの状態 (有効、無効になっている、保持されている、またはプロバイダーの移行中)。
+A **KSPROPERTY\_テレフォニー\_CALLINFO**プロパティ要求を返します、 [ **KSTELEPHONY\_CALLINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_callinfo)される構造呼び出しの種類 (LTE パケット交換 WLAN パケット交換または回線交換) が含まれていて、呼び出しの状態 (有効、無効になっている、保持されている、またはプロバイダーの移行中)。
 
 <a name="requirements"></a>必要条件
 ------------

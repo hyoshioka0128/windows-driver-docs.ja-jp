@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_BSS_ENTRY_AGE_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b89ffc3be66d87efc8ed80ecdf8d8a03eb127b87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3672b36a4aa0ec6a9ea2da8f1f80991e7c82218
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327570"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387209"
 ---
 # <a name="wditlvbssentryageinfo"></a>WDI\_TLV\_BSS\_エントリ\_年齢\_情報
 
@@ -45,7 +45,7 @@ WDI\_TLV\_BSS\_エントリ\_年齢\_情報が BSS エントリの有効期間�
 <tbody>
 <tr class="odd">
 <td>UINT64</td>
-<td>この BSS エントリが最後に検出されたときのタイムスタンプ。 タイムスタンプを取得する必要があります<a href="https://msdn.microsoft.com/library/windows/hardware/ff562629" data-raw-source="[&lt;strong&gt;NdisGetCurrentSystemTime&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562629)"> <strong>NdisGetCurrentSystemTime</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff553068" data-raw-source="[&lt;strong&gt;KeQuerySystemTime&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553068)"> <strong>KeQuerySystemTime</strong></a>します。</td>
+<td>この BSS エントリが最後に検出されたときのタイムスタンプ。 タイムスタンプを取得する必要があります<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetcurrentsystemtime" data-raw-source="[&lt;strong&gt;NdisGetCurrentSystemTime&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetcurrentsystemtime)"> <strong>NdisGetCurrentSystemTime</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime" data-raw-source="[&lt;strong&gt;KeQuerySystemTime&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)"> <strong>KeQuerySystemTime</strong></a>します。</td>
 </tr>
 <tr class="even">
 <td>UINT8</td>

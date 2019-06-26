@@ -7,12 +7,12 @@ keywords:
 - 一覧表示されたフレームワーク オブジェクト WDK UMDF、
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9f1a58238ff1f83e45559f62a00c3ee6d9a4770
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a80824e0662eb8d652acd84c97cdee8108a29bd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384451"
 ---
 # <a name="framework-objects"></a>フレームワーク オブジェクト
 
@@ -43,7 +43,7 @@ ms.locfileid: "63378084"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="framework-driver-object.md" data-raw-source="[Driver object](framework-driver-object.md)">ドライバー オブジェクト</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff558893" data-raw-source="[IWDFDriver](https://msdn.microsoft.com/library/windows/hardware/ff558893)">IWDFDriver</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdriver" data-raw-source="[IWDFDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdriver)">IWDFDriver</a></p></td>
 <td align="left"><p>ドライバーを表します</p></td>
 <td align="left"><p>なし</p></td>
 <td align="left"><p>X</p></td>
@@ -51,7 +51,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="framework-device-object.md" data-raw-source="[Device object](framework-device-object.md)">デバイス オブジェクト</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556917" data-raw-source="[IWDFDevice](https://msdn.microsoft.com/library/windows/hardware/ff556917)">IWDFDevice</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice" data-raw-source="[IWDFDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)">IWDFDevice</a></p></td>
 <td align="left"><p>デバイスを表します</p></td>
 <td align="left"><p>ドライバー オブジェクト</p></td>
 <td align="left"><p>X</p></td>
@@ -59,7 +59,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="framework-file-object.md" data-raw-source="[File object](framework-file-object.md)">ファイル オブジェクト</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff558912" data-raw-source="[IWDFFile](https://msdn.microsoft.com/library/windows/hardware/ff558912)">IWDFFile</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile" data-raw-source="[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)">IWDFFile</a></p></td>
 <td align="left"><p>ファイルを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>X</p></td>
@@ -68,7 +68,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="framework-interrupt-object.md" data-raw-source="[Interrupt object](framework-interrupt-object.md)">オブジェクトを中断します。</a></p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/hh451283" data-raw-source="[IWDFInterrupt](https://msdn.microsoft.com/library/windows/hardware/hh451283)">IWDFInterrupt</a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfinterrupt" data-raw-source="[IWDFInterrupt](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfinterrupt)">IWDFInterrupt</a></td>
 <td align="left"><p>割り込みを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>X</p></td>
@@ -76,7 +76,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="framework-i-o-queue-object.md" data-raw-source="[Queue object](framework-i-o-queue-object.md)">キュー オブジェクト</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff558943" data-raw-source="[IWDFIoQueue](https://msdn.microsoft.com/library/windows/hardware/ff558943)">IWDFIoQueue</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfioqueue" data-raw-source="[IWDFIoQueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfioqueue)">IWDFIoQueue</a></p></td>
 <td align="left"><p>I/O 要求を受信する I/O キューを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>X</p></td>
@@ -84,7 +84,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="framework-i-o-request-object.md" data-raw-source="[Request object](framework-i-o-request-object.md)">オブジェクトを要求します。</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff558985" data-raw-source="[IWDFIoRequest](https://msdn.microsoft.com/library/windows/hardware/ff558985)">IWDFIoRequest</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest" data-raw-source="[IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest)">IWDFIoRequest</a></p></td>
 <td align="left"><p>I/O 要求を表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p></p>
@@ -94,7 +94,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="framework-i-o-target-object.md" data-raw-source="[Target object](framework-i-o-target-object.md)">ターゲット オブジェクト</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559170" data-raw-source="[IWDFIoTarget](https://msdn.microsoft.com/library/windows/hardware/ff559170)">IWDFIoTarget</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotarget" data-raw-source="[IWDFIoTarget](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotarget)">IWDFIoTarget</a></p></td>
 <td align="left"><p>別のドライバーが要求を送信するドライバーを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>X</p></td>
@@ -103,7 +103,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="even">
 <td align="left"><p>USB デバイス オブジェクト</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560362" data-raw-source="[IWDFUsbTargetDevice](https://msdn.microsoft.com/library/windows/hardware/ff560362)">IWDFUsbTargetDevice</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice" data-raw-source="[IWDFUsbTargetDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)">IWDFUsbTargetDevice</a></p></td>
 <td align="left"><p>USB に接続されているデバイスを表します。</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>X</p></td>
@@ -111,7 +111,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="odd">
 <td align="left"><p>USB パイプ オブジェクト</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560391" data-raw-source="[IWDFUsbTargetPipe](https://msdn.microsoft.com/library/windows/hardware/ff560391)">IWDFUsbTargetPipe</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe" data-raw-source="[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)">IWDFUsbTargetPipe</a></p></td>
 <td align="left"><p>USB デバイスのパイプを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>X</p></td>
@@ -119,7 +119,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="even">
 <td align="left"><p>USB インターフェイス オブジェクト</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560312" data-raw-source="[IWDFUsbInterface](https://msdn.microsoft.com/library/windows/hardware/ff560312)">IWDFUsbInterface</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface" data-raw-source="[IWDFUsbInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbinterface)">IWDFUsbInterface</a></p></td>
 <td align="left"><p>USB デバイスのインターフェイスを表します</p></td>
 <td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>X</p></td>
@@ -127,7 +127,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="framework-base-object.md" data-raw-source="[Base object](framework-base-object.md)">基本オブジェクト</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560200" data-raw-source="[IWDFObject](https://msdn.microsoft.com/library/windows/hardware/ff560200)">IWDFObject</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfobject" data-raw-source="[IWDFObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfobject)">IWDFObject</a></p></td>
 <td align="left"><p>一般的な基本オブジェクトを表します</p></td>
 <td align="left"><p>ドライバー オブジェクト</p></td>
 <td align="left"><p>〇</p></td>
@@ -135,7 +135,7 @@ ms.locfileid: "63378084"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="framework-memory-object.md" data-raw-source="[Memory object](framework-memory-object.md)">メモリ オブジェクト</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559249" data-raw-source="[IWDFMemory](https://msdn.microsoft.com/library/windows/hardware/ff559249)">IWDFMemory</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfmemory" data-raw-source="[IWDFMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfmemory)">IWDFMemory</a></p></td>
 <td align="left"><p>メモリ オブジェクトを表します</p></td>
 <td align="left"><p>ドライバー オブジェクト</p></td>
 <td align="left"><p>〇</p></td>

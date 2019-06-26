@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CIPHER_KEY_CCMP_KEY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ae078e2089abc9c274fd4e39df036b5de07f7740
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38f85d2706ff35b030a83863e9e7afd8ddfded22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391016"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387192"
 ---
 # <a name="wditlvcipherkeyccmpkey"></a>WDI\_TLV\_暗号\_キー\_CCMP\_キー
 
 
-WDI\_TLV\_暗号\_キー\_CCMP\_キーがの CCMP 暗号アルゴリズムのキー データを含む TLV [OID\_WDI\_設定\_の追加\_暗号\_キー](https://msdn.microsoft.com/library/windows/hardware/dn925855)します。
+WDI\_TLV\_暗号\_キー\_CCMP\_キーがの CCMP 暗号アルゴリズムのキー データを含む TLV [OID\_WDI\_設定\_の追加\_暗号\_キー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -37,7 +37,7 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

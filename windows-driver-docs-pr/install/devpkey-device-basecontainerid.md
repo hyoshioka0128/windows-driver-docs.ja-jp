@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2bb33eda4fbf0c898e3b69c32df217ae97726fa4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6fd92b523af1bffd23524dbde1840f36d4dbd4c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369466"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387108"
 ---
 # <a name="devpkeydevicebasecontainerid"></a>DEVPKEY_Device_BaseContainerId
 
@@ -64,21 +64,21 @@ PnP マネージャーでは、次のメソッドのいずれかを使用して 
 
 -   バス ドライバーは、コンテナー ID を提供します。
 
-    PnP マネージャーでは、コンテナー ID を割り当てる devnode に、まず devnode のバス ドライバーがコンテナー ID を指定できるかどうか バス ドライバーを通じてコンテナー ID を提供する、 [ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)クエリ要求を**Parameters.QueryId.IdType**フィールドに設定**BusQueryContainerID**します。
+    PnP マネージャーでは、コンテナー ID を割り当てる devnode に、まず devnode のバス ドライバーがコンテナー ID を指定できるかどうか バス ドライバーを通じてコンテナー ID を提供する、 [ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)クエリ要求を**Parameters.QueryId.IdType**フィールドに設定**BusQueryContainerID**します。
 
 -   PnP マネージャーでは、リムーバブル デバイスの機能を使用して、コンテナー ID が生成されます。
 
-    バス ドライバーは、列挙 devnode のコンテナーの ID を提供することはできません、PnP マネージャーは、デバイスに列挙されているすべての devnode のコンテナー ID を生成するのにリムーバブル デバイスの機能を使用します。 バス ドライバーへの応答でこのデバイスの機能の報告、 [ **IRP_MN_QUERY_CAPABILITIES** ](https://msdn.microsoft.com/library/windows/hardware/ff551664)要求。
+    バス ドライバーは、列挙 devnode のコンテナーの ID を提供することはできません、PnP マネージャーは、デバイスに列挙されているすべての devnode のコンテナー ID を生成するのにリムーバブル デバイスの機能を使用します。 バス ドライバーへの応答でこのデバイスの機能の報告、 [ **IRP_MN_QUERY_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求。
 
 -   PnP マネージャーでは、リムーバブル デバイスの機能のオーバーライドを使用してコンテナー ID を生成します。
 
     優先機構はリムーバブル デバイスの機能の値を変更していない、強制的に、PnP マネージャー デバイス用のコンテナーの Id を生成するときに、上書きの設定とリムーバブル デバイスの機能の値ではなくを使用する作成されます。
 
-これらのメソッドの詳細については、次を参照してください。[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)します。
+これらのメソッドの詳細については、次を参照してください。[どのコンテナー Id が生成される](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)します。
 
 コンテナーの ID 値を取得する方法に関係なく、PnP マネージャーは devnode の DEVPKEY_Device_BaseContainerId プロパティに値を割り当てます。
 
-その他のシステムに存在する devnode で新しい devnode のグループ化を強制する DEVPKEY_Device_BaseContainerId プロパティを使用できます。 これにより、親として新しい devnode を使用できます (または*基本*) その他のコンテナーの ID に関連する devnode します。 これを行うには、まず既存の devnode の DEVPKEY_Device_BaseContainerID GUID を入手する必要があります。 次に、応答で、コンテナーの新しい devnode ID GUID を返す必要がある、 [ **IRP_MN_QUERY_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551679)クエリ要求を持つ、 **Parameters.QueryId.IdType**フィールドに設定**BusQueryContainerID**します。
+その他のシステムに存在する devnode で新しい devnode のグループ化を強制する DEVPKEY_Device_BaseContainerId プロパティを使用できます。 これにより、親として新しい devnode を使用できます (または*基本*) その他のコンテナーの ID に関連する devnode します。 これを行うには、まず既存の devnode の DEVPKEY_Device_BaseContainerID GUID を入手する必要があります。 次に、応答で、コンテナーの新しい devnode ID GUID を返す必要がある、 [ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)クエリ要求を持つ、 **Parameters.QueryId.IdType**フィールドに設定**BusQueryContainerID**します。
 
 **注**   、DEVPKEY_Device_BaseContainerId のクエリによって返される値または[ **DEVPKEY_Device_ContainerId** ](devpkey-device-containerid.md)プロパティが同じ devnode 異なることが.
 
@@ -88,7 +88,7 @@ PnP マネージャーでは、次のメソッドのいずれかを使用して 
 
  
 
-コンテナー Id の詳細については、次を参照してください。[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)します。
+コンテナー Id の詳細については、次を参照してください。[コンテナー Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -113,11 +113,11 @@ PnP マネージャーでは、次のメソッドのいずれかを使用して 
 ## <a name="see-also"></a>関連項目
 
 
-[コンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540024)
+[コンテナー Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)
 
 [**DEVPKEY_Device_ContainerId**](devpkey-device-containerid.md)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

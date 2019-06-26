@@ -5,12 +5,12 @@ ms.assetid: 9888E4EC-D4BB-4BAC-B20B-DFA51005EEDA
 ms.date: 08/08/2017
 keywords: -OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: aa2574afdffd0d5d1b91ab38743747f748ba4eb9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 388538b352ad2b280ed31d5829fc4284eb0e1b8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343243"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385494"
 ---
 # <a name="oidwwanenumeratedeviceservicecommands"></a>OID\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド
 
@@ -19,7 +19,7 @@ OID\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンドは、デバイス
 
 要求のセットがサポートされていません。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド**](https://msdn.microsoft.com/library/windows/hardware/hh846210)状態通知を含む、 [ **NDIS\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド**](https://msdn.microsoft.com/library/windows/hardware/hh831862)操作の結果を記述する構造体。
+ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)状態通知を含む、 [ **NDIS\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_enumerate_device_service_commands)操作の結果を記述する構造体。
 
 ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_指定したデバイスのサービスまたは操作をサポートしていない場合にサポートされます。
 
@@ -46,9 +46,9 @@ OID\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンドは、デバイス
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド**](https://msdn.microsoft.com/library/windows/hardware/hh846210)
+[**NDIS\_状態\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)
 
-[**NDIS\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド**](https://msdn.microsoft.com/library/windows/hardware/hh831862)
+[**NDIS\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_enumerate_device_service_commands)
 
  
 

@@ -3,35 +3,35 @@ Description: このトピックでは、Windows.Devices.Usb 名前空間を使�
 title: アプリ マニフェストへの USB デバイス機能の追加方法
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 013695e2f0990172d3a79304f96dda4a9f0db553
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3cd0db64cf5fe520efc1fefe5d18853380f7a3b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355094"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368761"
 ---
 # <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>アプリ マニフェストへの USB デバイス機能の追加方法
 
 
-**要約**
+**概要**
 
 -   USB デバイスの機能では、Package.appxmanifest を更新する必要があります。
 -   デバイス クラスには、サポートされているクラスのいずれかを指定する必要があります。
 
-このトピックでは、使用する Windows アプリを必要とされるデバイスの機能を説明します、 [ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)名前空間。
+このトピックでは、使用する Windows アプリを必要とされるデバイスの機能を説明します、 [ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)名前空間。
 
 ## <a name="usb-device-capability-usage"></a>USB デバイスの機能の使用状況
 
 
-USB アプリは、特定のデバイスの機能を含める必要があります、[アプリ パッケージのマニフェスト](https://msdn.microsoft.com/library/windows/apps/br211474)デバイスに関する重要な情報を指定します。 階層の順序で、必要な要素を示します。
+USB アプリは、特定のデバイスの機能を含める必要があります、[アプリ パッケージのマニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)デバイスに関する重要な情報を指定します。 階層の順序で、必要な要素を示します。
 
-[**&lt;DeviceCapability&gt;**](https://msdn.microsoft.com/library/windows/apps/br211430):**名前**属性は"usb"である必要があります。
+[ **&lt;DeviceCapability&gt;** ](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability):**名前**属性は"usb"である必要があります。
 
-**&lt;デバイス&gt;**:**Id**属性は、ベンダーと製品 Id を指定する必要がありますまたは"any"関数の型と一致する任意のデバイスにアクセスできるようにすることができます。
+**&lt;デバイス&gt;** :**Id**属性は、ベンダーと製品 Id を指定する必要がありますまたは"any"関数の型と一致する任意のデバイスにアクセスできるようにすることができます。
 
-**&lt;関数&gt;**:**型**属性は、デバイス クラスのコードや名前など、デバイス インターフェイスの GUID を指定できます。
+**&lt;関数&gt;** :**型**属性は、デバイス クラスのコードや名前など、デバイス インターフェイスの GUID を指定できます。
 
-**注**  Microsoft Visual Studio 2013 での USB デバイスの機能を変更することはできません。 Package.appxmanifest ファイルを右クリックする必要があります**ソリューション エクスプ ローラー**選択**プログラムから開く.**、し**XML (テキスト) エディター**します。 プレーンな XML では、ファイルが開きます。
+**注**  Microsoft Visual Studio 2013 での USB デバイスの機能を変更することはできません。 Package.appxmanifest ファイルを右クリックする必要があります**ソリューション エクスプ ローラー**選択**プログラムから開く.** 、し**XML (テキスト) エディター**します。 プレーンな XML では、ファイルが開きます。
 
  
 

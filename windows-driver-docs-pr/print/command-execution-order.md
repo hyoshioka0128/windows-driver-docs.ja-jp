@@ -7,12 +7,12 @@ keywords:
 - シーケンス番号の WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 950bc0c7bc784778d077f5e298d3901ea8b5754f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5203480878d5c8fac31f2d642276fdad5425dbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385981"
 ---
 # <a name="command-execution-order"></a>コマンド実行順序
 
@@ -31,19 +31,19 @@ ms.locfileid: "63392889"
 コマンドの実行順序は--をジョブ セクションの名前とシーケンス番号を 2 つのコンポーネントの構成されます。 Unidrv ドライバーでは、各印刷ジョブを 6 つのセクションに分割します。 各セクションでは、Unidrv によって、セクションを指定したシーケンスに割り当てられているコマンドがプリンターに送信します。 次のセクションが定義されています。
 
 <a href="" id="job-setup"></a>ジョブ\_セットアップ  
-ジョブに割り当てられているコマンド\_ジョブごとのセットアップ セクションが 1 回送信されます。 新しいジョブの開始時に送信される最初のコマンドが表示されます。 これらのコマンドは、の Unidrv の実装内から送信される、 [ **DrvStartDoc** ](https://msdn.microsoft.com/library/windows/hardware/ff556296)関数。
+ジョブに割り当てられているコマンド\_ジョブごとのセットアップ セクションが 1 回送信されます。 新しいジョブの開始時に送信される最初のコマンドが表示されます。 これらのコマンドは、の Unidrv の実装内から送信される、 [ **DrvStartDoc** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartdoc)関数。
 
 <a href="" id="doc-setup"></a>DOC\_セットアップ  
 ドキュメントに割り当てられているコマンド\_設定」のセクションは、ドキュメントの最初のページが送信される前に送信されます。 コマンドは、DrvStartDoc 関数の Unidrv の実装内からを送信されます。 (これらのコマンドも送信後、アプリケーションが Win32 印刷関数を呼び出します。 このセクションのコマンドで削除しないでダウンロードについては、ソフト フォントやパターンなど。)
 
 <a href="" id="page-setup"></a>ページ\_セットアップ  
-ページに割り当てられているコマンド\_設定」のセクションは、描画を開始する前に、新しい各ページの先頭に送信されます。 これらのコマンドは、の Unidrv の実装内から送信される、 [ **DrvStartPage** ](https://msdn.microsoft.com/library/windows/hardware/ff556298)関数。
+ページに割り当てられているコマンド\_設定」のセクションは、描画を開始する前に、新しい各ページの先頭に送信されます。 これらのコマンドは、の Unidrv の実装内から送信される、 [ **DrvStartPage** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartpage)関数。
 
 <a href="" id="page-finish"></a>ページ\_完了  
-ページに割り当てられているコマンド\_描画が完了したら、[完了] セクションが、各ページの最後に送信されます。 これらのコマンドは、の Unidrv の実装内から送信される、 [ *DrvSendPage* ](https://msdn.microsoft.com/library/windows/hardware/ff556281)関数。
+ページに割り当てられているコマンド\_描画が完了したら、[完了] セクションが、各ページの最後に送信されます。 これらのコマンドは、の Unidrv の実装内から送信される、 [ *DrvSendPage* ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsendpage)関数。
 
 <a href="" id="doc-finish"></a>DOC\_完了  
-ドキュメントに割り当てられているコマンド\_ドキュメントの最後のページが送信された後、[完了] のセクションは送信されます。 コマンドは、の Unidrv の実装内から送信される、 [ **DrvEndDoc** ](https://msdn.microsoft.com/library/windows/hardware/ff556215)関数。 (このセクションのコマンドでは、ソフト フォントやパターンなど、ダウンロードした情報を削除する必要がありますされません)。
+ドキュメントに割り当てられているコマンド\_ドキュメントの最後のページが送信された後、[完了] のセクションは送信されます。 コマンドは、の Unidrv の実装内から送信される、 [ **DrvEndDoc** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenddoc)関数。 (このセクションのコマンドでは、ソフト フォントやパターンなど、ダウンロードした情報を削除する必要がありますされません)。
 
 <a href="" id="job-finish"></a>ジョブ\_完了  
 ジョブに割り当てられているコマンド\_[完了] のセクションでは、ジョブごと 1 回送信されます。 ジョブの終了時に送信された最後のコマンドが表示されます。 これらのコマンドは、DrvEndDoc 関数の Unidrv の実装内からを送信されます。

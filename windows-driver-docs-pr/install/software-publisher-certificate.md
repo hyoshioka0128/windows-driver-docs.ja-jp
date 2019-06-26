@@ -11,19 +11,19 @@ keywords:
 - クロス証明書の WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b506b5c3b44183dc0f203435f7b485905517163f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fafb1af6c37e3e8de4da2566d6089a0a7f58276
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348754"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393409"
 ---
 # <a name="software-publisher-certificate"></a>ソフトウェア発行元証明書
 
 
 準拠する、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md) Windows の 64 ビット バージョンのソフトウェア発行元証明書 (SPC) を使用して、カーネル モード ドライバーに署名することができます。 SPC は、マイクロソフトがこのような証明書を発行する権限を持つサード パーティ証明機関 (CA) から取得されます。 この種類の SPC 生成された署名にも準拠して、 [PnP ドライバーの署名要件](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)の 64 ビットと 32 ビット バージョンの Windows。
 
-**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は Windows ハードウェア デベロッパー センター ダッシュ ボード Windows ハードウェア デベロッパー センター ダッシュ ボードを署名する必要がありますEV 証明書が必要です。 これらの変更に関する詳細については、次を参照してください。 [Windows 10 でドライバー署名の変更](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/04/01/driver-signing-changes-in-windows-10.aspx)します。
+**注**  デスクトップ エディション (Home、Pro、Enterprise、および Education) および Windows Server 2016 カーネル モード ドライバー用の Windows 10 は Windows ハードウェア デベロッパー センター ダッシュ ボード Windows ハードウェア デベロッパー センター ダッシュ ボードを署名する必要がありますEV 証明書が必要です。 これらの変更に関する詳細については、次を参照してください。 [Windows 10 でドライバー署名の変更](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)します。
 
  
 
@@ -37,7 +37,7 @@ SPCs を提供する証明機関の一覧については、およびクロス証
 
 ## <a name="installing-spc-information-in-the-personal-certificate-store"></a>個人証明書ストアに SPC 情報をインストールします。
 
-準拠している方法でドライバーの署名に、SPC を使用するために、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)、Personal Information Exchange 証明書の情報を含める必要がありますはまず (*.pfx*)ファイルです。 含まれている情報、 *.pfx*ドライバーに署名するローカル コンピューターの個人証明書ストアにファイルを追加し、必要があります。
+準拠している方法でドライバーの署名に、SPC を使用するために、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)、Personal Information Exchange 証明書の情報を含める必要がありますはまず ( *.pfx*)ファイルです。 含まれている情報、 *.pfx*ドライバーに署名するローカル コンピューターの個人証明書ストアにファイルを追加し、必要があります。
 
 CA が発行する可能性があります、 *.pfx*必要な証明書情報を含むファイル。 そのため、追加できる場合、します。*pfx*ファイルで説明されている手順に従って個人証明書ストアを[個人用証明書ストアに .pfx ファイルをインストールする](#installing-a-pfx-file-in-the-personal-certificate-store)します。
 
@@ -51,7 +51,7 @@ CA が発行する可能性があります、 *.pfx*必要な証明書情報を�
 
 作成します。*pfx* CA によって発行されたファイルのペアからファイルを次の手順に従います。
 
--   変換する、 *.pvk*ファイルと *.spc*ファイルを *.pfx*ファイルで、次を使用して、 [ **Pvk2Pfx** ](https://msdn.microsoft.com/library/windows/hardware/ff550672)コマンド プロンプトでコマンド:
+-   変換する、 *.pvk*ファイルと *.spc*ファイルを *.pfx*ファイルで、次を使用して、 [ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)コマンド プロンプトでコマンド:
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc myspcfile.spc -pfx mypfxfile.pfx -po pfxpassword -f
@@ -63,7 +63,7 @@ CA が発行する可能性があります、 *.pfx*必要な証明書情報を�
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc mycerfile.cer -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
-使用されるパラメーターを以下に示します、 [ **Pvk2Pfx** ](https://msdn.microsoft.com/library/windows/hardware/ff550672)コマンド。
+使用されるパラメーターを以下に示します、 [ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)コマンド。
 
 -   **- Pvk**  *mypvkfile.pvk*パラメーターを指定します、 *.pvk*ファイル。
 

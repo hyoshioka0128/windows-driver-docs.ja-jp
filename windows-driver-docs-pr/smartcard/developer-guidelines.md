@@ -4,12 +4,12 @@ description: このトピックでは、使用してスマート カード ミ�
 ms.assetid: 48999DF6-3AC2-4DEA-8ABC-C427237B31E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72c16f8406c3c834d5b15bb9991a531d81945752
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cef25db934557a47597f9a103b40c8c7913636d
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370916"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393103"
 ---
 # <a name="developer-guidelines"></a>開発者向けのガイドライン
 
@@ -46,17 +46,17 @@ ms.locfileid: "63370916"
 ## <a name="span-idsessionpinsandsecurepinchannelspanspan-idsessionpinsandsecurepinchannelspanspan-idsessionpinsandsecurepinchannelspan-session-pins-and-secure-pin-channel"></a><span id="_Session_PINs_and_Secure_PIN_Channel"></span><span id="_session_pins_and_secure_pin_channel"></span><span id="_SESSION_PINS_AND_SECURE_PIN_CHANNEL"></span> セッション Pin とセキュリティで保護された PIN チャネル
 
 
-Windows では、PIN 認証をセキュリティで保護された PIN チャネルを確立する必要があります、ミニドライバーで次の一連の操作が実行されます。 ミニドライバーとカードが従うは、次の順序で互換性がなければなりません。 具体的には、セッション Pin には、プロセス間で譲渡と過去の特定の期間だけがあります。 (任意のセッション PIN である有効なカードのコールド リセットされるまで、カードを使用することをお勧めします\_認証\_セッション\_PIN フラグ場合であっても[ **CardAuthenticateEx** ](https://msdn.microsoft.com/library/windows/hardware/dn468703)。生成を使用して呼び出した\_セッション\_暗証番号 (pin) フラグを設定します)。
+Windows では、PIN 認証をセキュリティで保護された PIN チャネルを確立する必要があります、ミニドライバーで次の一連の操作が実行されます。 ミニドライバーとカードが従うは、次の順序で互換性がなければなりません。 具体的には、セッション Pin には、プロセス間で譲渡と過去の特定の期間だけがあります。 (任意のセッション PIN である有効なカードのコールド リセットされるまで、カードを使用することをお勧めします\_認証\_セッション\_PIN フラグ場合であっても[ **CardAuthenticateEx** ](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))。生成を使用して呼び出した\_セッション\_暗証番号 (pin) フラグを設定します)。
 
 次の動作をサポートする必要があります。
 
 1.  アプリケーション A を信頼済みのシステム プロセスは、スマート カードを識別するハンドルを取得し、PIN を収集します。
-2.  アプリケーション A はその呼び出しカード[ **CardAuthenticateEx** ](https://msdn.microsoft.com/library/windows/hardware/dn468703)ミニドライバー関数、およびパスが収集されると、カードを設定する PIN\_認証\_生成\_セッション\_ピン留めするフラグ。 これには、カードのロック解除するのには発生しません。
+2.  アプリケーション A はその呼び出しカード[ **CardAuthenticateEx** ](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))ミニドライバー関数、およびパスが収集されると、カードを設定する PIN\_認証\_生成\_セッション\_ピン留めするフラグ。 これには、カードのロック解除するのには発生しません。
 3.  アプリケーション A は、セッションが生成され、カードとカードのミニドライバーを識別するハンドルを解放する PIN を格納します。 カードは、コールド リセットではありません。
 4.  A のアプリケーションが、セッション PIN と、リーダーであり、アプリケーション B に手順 1. で取得されたカードの名前
 5.  アプリケーション B は、1 のように同じカードを取得します。
-6.  アプリケーション B 呼び出し[ **CardAuthenticateEx** ](https://msdn.microsoft.com/library/windows/hardware/dn468703)セッション PIN で渡すし、カードを設定\_認証\_セッション\_ピン留めするフラグ。 セッション PIN は、現在も有効ですが場合、カードは、認証済みと使用できる有効なにしてください。
-7.  アプリケーション B が完了すると、カードを使用して、呼び出す[ **CardDeauthenticateEx** ](https://msdn.microsoft.com/library/windows/hardware/dn468713) deauthorize カードにします。
+6.  アプリケーション B 呼び出し[ **CardAuthenticateEx** ](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))セッション PIN で渡すし、カードを設定\_認証\_セッション\_ピン留めするフラグ。 セッション PIN は、現在も有効ですが場合、カードは、認証済みと使用できる有効なにしてください。
+7.  アプリケーション B が完了すると、カードを使用して、呼び出す[ **CardDeauthenticateEx** ](https://docs.microsoft.com/previous-versions/dn468713(v=vs.85)) deauthorize カードにします。
 
 この動作では、次の実用的な制限があります。
 
@@ -76,7 +76,7 @@ Windows では、PIN 認証をセキュリティで保護された PIN チャネ
 ## <a name="span-idread-onlycardsspanspan-idread-onlycardsspanspan-idread-onlycardsspanread-only-cards"></a><span id="Read-Only_Cards"></span><span id="read-only_cards"></span><span id="READ-ONLY_CARDS"></span>読み取り専用のカード
 
 
-本質的に読み取り専用、読み取り専用のカードの新しい概念が導入されていますが、Base CSP または KSP 環境の外部に設定されているアドレス カード。 これを提供する必要があります、カードが読み取り専用の場合は、 [ **CardGetProperty** ](https://msdn.microsoft.com/library/windows/hardware/dn468729)関数 (この仕様で以前には、このセクションを参照してください)。
+本質的に読み取り専用、読み取り専用のカードの新しい概念が導入されていますが、Base CSP または KSP 環境の外部に設定されているアドレス カード。 これを提供する必要があります、カードが読み取り専用の場合は、 [ **CardGetProperty** ](https://docs.microsoft.com/previous-versions/dn468729(v=vs.85))関数 (この仕様で以前には、このセクションを参照してください)。
 
 読み取り専用のカードは、バージョン 7 のカード ミニドライバー インターフェイスのサブセットのみをサポートする必要があり、管理者 PIN をサポートする必要はありません。
 
@@ -97,227 +97,227 @@ Windows では、PIN 認証をセキュリティで保護された PIN チャネ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468701" data-raw-source="[&lt;strong&gt;CardAcquireContext&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468701)"><strong>CardAcquireContext</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468701(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAcquireContext&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))"><strong>CardAcquireContext</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468715" data-raw-source="[&lt;strong&gt;CardDeleteContext&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468715)"><strong>CardDeleteContext</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468715(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteContext&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468715(v=vs.85))"><strong>CardDeleteContext</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468704" data-raw-source="[&lt;strong&gt;CardAuthenticatePin&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468704)"><strong>CardAuthenticatePin</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468704(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticatePin&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468704(v=vs.85))"><strong>CardAuthenticatePin</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468723" data-raw-source="[&lt;strong&gt;CardGetChallenge&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468723)"><strong>CardGetChallenge</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468723(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetChallenge&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468723(v=vs.85))"><strong>CardGetChallenge</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468702" data-raw-source="[&lt;strong&gt;CardAuthenticateChallenge&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468702)"><strong>CardAuthenticateChallenge</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468702(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticateChallenge&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468702(v=vs.85))"><strong>CardAuthenticateChallenge</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468712" data-raw-source="[&lt;strong&gt;CardDeauthenticate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468712)"><strong>CardDeauthenticate</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468712(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeauthenticate&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468712(v=vs.85))"><strong>CardDeauthenticate</strong></a></td>
 <td align="left">[はい] (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468742" data-raw-source="[&lt;strong&gt;CardUnblockPin&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468742)"><strong>CardUnblockPin</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468742(v=vs.85)" data-raw-source="[&lt;strong&gt;CardUnblockPin&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468742(v=vs.85))"><strong>CardUnblockPin</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468705" data-raw-source="[&lt;strong&gt;CardChangeAuthenticator&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468705)"><strong>CardChangeAuthenticator</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468705(v=vs.85)" data-raw-source="[&lt;strong&gt;CardChangeAuthenticator&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468705(v=vs.85))"><strong>CardChangeAuthenticator</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468710" data-raw-source="[&lt;strong&gt;CardCreateDirectory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468710)"><strong>CardCreateDirectory</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468710(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateDirectory&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468710(v=vs.85))"><strong>CardCreateDirectory</strong></a></td>
 <td align="left">X</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468716" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468716)"><strong>CardDeleteDirectory</strong></a></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468736" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468736)"><strong>CardReadFile</strong></a></td>
-<td align="left">〇</td>
-<td align="left">カードのミニドライバーは、ファイル システムをエミュレートする必要があります。</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468711" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468711)"><strong>CardCreateFile</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468716(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468716(v=vs.85))"><strong>CardDeleteDirectory</strong></a></td>
 <td align="left">X</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468727" data-raw-source="[&lt;strong&gt;CardGetFileInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468727)"><strong>CardGetFileInfo</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468736(v=vs.85)" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468736(v=vs.85))"><strong>CardReadFile</strong></a></td>
 <td align="left">〇</td>
 <td align="left">カードのミニドライバーは、ファイル システムをエミュレートする必要があります。</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468743" data-raw-source="[&lt;strong&gt;CardWriteFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468743)"><strong>CardWriteFile</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468711(v=vs.85))"><strong>CardCreateFile</strong></a></td>
 <td align="left">X</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468711" data-raw-source="[&lt;strong&gt;CardDeleteFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468711)"><strong>CardDeleteFile</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468727(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetFileInfo&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468727(v=vs.85))"><strong>CardGetFileInfo</strong></a></td>
+<td align="left">〇</td>
+<td align="left">カードのミニドライバーは、ファイル システムをエミュレートする必要があります。</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468743(v=vs.85)" data-raw-source="[&lt;strong&gt;CardWriteFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468743(v=vs.85))"><strong>CardWriteFile</strong></a></td>
+<td align="left">X</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468711(v=vs.85))"><strong>CardDeleteFile</strong></a></td>
 <td align="left">X</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468721" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468721)"><strong>CardEnumFiles</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468721(v=vs.85)" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468721(v=vs.85))"><strong>CardEnumFiles</strong></a></td>
 <td align="left">〇</td>
 <td align="left">カードのミニドライバーは、ファイル システムをエミュレートする必要があります。</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468734" data-raw-source="[&lt;strong&gt;CardQueryFreeSpace&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468734)"><strong>CardQueryFreeSpace</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468734(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryFreeSpace&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468734(v=vs.85))"><strong>CardQueryFreeSpace</strong></a></td>
 <td align="left">〇</td>
 <td align="left">カードのミニドライバーは、ファイル システムをエミュレートする必要があります。</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468733" data-raw-source="[&lt;strong&gt;CardQueryCapabilities&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468733)"><strong>CardQueryCapabilities</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468733(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryCapabilities&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468733(v=vs.85))"><strong>CardQueryCapabilities</strong></a></td>
 <td align="left">〇</td>
 <td align="left">カードのミニドライバーは、ファイル システムをエミュレートする必要があります。</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468708" data-raw-source="[&lt;strong&gt;CardCreateContainer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468708)"><strong>CardCreateContainer</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468708(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateContainer&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468708(v=vs.85))"><strong>CardCreateContainer</strong></a></td>
 <td align="left">X</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468709" data-raw-source="[&lt;strong&gt;CardCreateContainerEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468709)"><strong>CardCreateContainerEx</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468709(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateContainerEx&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468709(v=vs.85))"><strong>CardCreateContainerEx</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468714" data-raw-source="[&lt;strong&gt;CardDeleteContainer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468714)"><strong>CardDeleteContainer</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468714(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteContainer&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468714(v=vs.85))"><strong>CardDeleteContainer</strong></a></td>
 <td align="left">X</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468725" data-raw-source="[&lt;strong&gt;CardGetContainerInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468725)"><strong>CardGetContainerInfo</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468725(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetContainerInfo&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468725(v=vs.85))"><strong>CardGetContainerInfo</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468737" data-raw-source="[&lt;strong&gt;CardRSADecrypt&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468737)"><strong>CardRSADecrypt</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468737(v=vs.85)" data-raw-source="[&lt;strong&gt;CardRSADecrypt&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468737(v=vs.85))"><strong>CardRSADecrypt</strong></a></td>
 <td align="left">[はい] (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468707" data-raw-source="[&lt;strong&gt;CardConstructDHAgreement&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468707)"><strong>CardConstructDHAgreement</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468707(v=vs.85)" data-raw-source="[&lt;strong&gt;CardConstructDHAgreement&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468707(v=vs.85))"><strong>CardConstructDHAgreement</strong></a></td>
 <td align="left">[はい] (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468718" data-raw-source="[&lt;strong&gt;CardDeriveKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468718)"><strong>CardDeriveKey</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468718(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeriveKey&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468718(v=vs.85))"><strong>CardDeriveKey</strong></a></td>
 <td align="left">[はい] (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468719" data-raw-source="[&lt;strong&gt;CardDestroyDHAgreement&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468719)"><strong>CardDestroyDHAgreement</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468719(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDestroyDHAgreement&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468719(v=vs.85))"><strong>CardDestroyDHAgreement</strong></a></td>
 <td align="left">[はい] (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468741" data-raw-source="[&lt;strong&gt;CardSignData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468741)"><strong>CardSignData</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468741(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSignData&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468741(v=vs.85))"><strong>CardSignData</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468735" data-raw-source="[&lt;strong&gt;CardQueryKeySizes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468735)"><strong>CardQueryKeySizes</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468735(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryKeySizes&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468735(v=vs.85))"><strong>CardQueryKeySizes</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468703" data-raw-source="[&lt;strong&gt;CardAuthenticateEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468703)"><strong>CardAuthenticateEx</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468703(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticateEx&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468703(v=vs.85))"><strong>CardAuthenticateEx</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468706" data-raw-source="[&lt;strong&gt;CardChangeAuthenticatorEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468706)"><strong>CardChangeAuthenticatorEx</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468706(v=vs.85)" data-raw-source="[&lt;strong&gt;CardChangeAuthenticatorEx&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468706(v=vs.85))"><strong>CardChangeAuthenticatorEx</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468713" data-raw-source="[&lt;strong&gt;CardDeauthenticateEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468713)"><strong>CardDeauthenticateEx</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468713(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeauthenticateEx&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468713(v=vs.85))"><strong>CardDeauthenticateEx</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468724" data-raw-source="[&lt;strong&gt;CardGetChallengeEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468724)"><strong>CardGetChallengeEx</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468724(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetChallengeEx&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468724(v=vs.85))"><strong>CardGetChallengeEx</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468726" data-raw-source="[&lt;strong&gt;CardGetContainerProperty&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468726)"><strong>CardGetContainerProperty</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468726(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetContainerProperty&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468726(v=vs.85))"><strong>CardGetContainerProperty</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468738" data-raw-source="[&lt;strong&gt;CardSetContainerProperty&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468738)"><strong>CardSetContainerProperty</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468738(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetContainerProperty&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468738(v=vs.85))"><strong>CardSetContainerProperty</strong></a></td>
 <td align="left">X</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468729" data-raw-source="[&lt;strong&gt;CardGetProperty&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468729)"><strong>CardGetProperty</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468729(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetProperty&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468729(v=vs.85))"><strong>CardGetProperty</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468740" data-raw-source="[&lt;strong&gt;CardSetProperty&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468740)"><strong>CardSetProperty</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468740(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetProperty&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468740(v=vs.85))"><strong>CardSetProperty</strong></a></td>
 <td align="left">〇</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468757" data-raw-source="[&lt;strong&gt;MDImportSessionKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468757)"><strong>MDImportSessionKey</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468757(v=vs.85)" data-raw-source="[&lt;strong&gt;MDImportSessionKey&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468757(v=vs.85))"><strong>MDImportSessionKey</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468756" data-raw-source="[&lt;strong&gt;MDEncryptData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468756)"><strong>MDEncryptData</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468756(v=vs.85)" data-raw-source="[&lt;strong&gt;MDEncryptData&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468756(v=vs.85))"><strong>MDEncryptData</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468731" data-raw-source="[&lt;strong&gt;CardImportSessionKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468731)"><strong>CardImportSessionKey</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468731(v=vs.85)" data-raw-source="[&lt;strong&gt;CardImportSessionKey&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468731(v=vs.85))"><strong>CardImportSessionKey</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468730" data-raw-source="[&lt;strong&gt;CardGetSharedKeyHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468730)"><strong>CardGetSharedKeyHandle</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468730(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetSharedKeyHandle&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468730(v=vs.85))"><strong>CardGetSharedKeyHandle</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468722" data-raw-source="[&lt;strong&gt;CardGetAlgorithmProperty&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468722)"><strong>CardGetAlgorithmProperty</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468722(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetAlgorithmProperty&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468722(v=vs.85))"><strong>CardGetAlgorithmProperty</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468728" data-raw-source="[&lt;strong&gt;CardGetKeyProperty&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468728)"><strong>CardGetKeyProperty</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468728(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetKeyProperty&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468728(v=vs.85))"><strong>CardGetKeyProperty</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468739" data-raw-source="[&lt;strong&gt;CardSetKeyProperty&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468739)"><strong>CardSetKeyProperty</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468739(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetKeyProperty&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468739(v=vs.85))"><strong>CardSetKeyProperty</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468720" data-raw-source="[&lt;strong&gt;CardDestroyKey&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468720)"><strong>CardDestroyKey</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468720(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDestroyKey&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468720(v=vs.85))"><strong>CardDestroyKey</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/dn468732" data-raw-source="[&lt;strong&gt;CardProcessEncryptedData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468732)"><strong>CardProcessEncryptedData</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468732(v=vs.85)" data-raw-source="[&lt;strong&gt;CardProcessEncryptedData&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468732(v=vs.85))"><strong>CardProcessEncryptedData</strong></a></td>
 <td align="left">いいえ (省略可能)</td>
 <td align="left"></td>
 </tr>
@@ -363,7 +363,7 @@ Windows では、PIN 認証をセキュリティで保護された PIN チャネ
 
 -   すべて Base CSP または KSP ファイルが必要です、例外として ('cardcf' や 'cardid') 'msroots' ファイルが読み取り専用のカードに存在する必要があります (または、ミニドライバー インターフェイスを仮想化する必要があります)。
 -   読み取り専用のカードは、プライマリのカードによって保護されているカード上の少なくとも 1 つのキーを含める必要があります (つまり、ロール\_ユーザー) ピン留めします。
--   読み取り専用のカードを許可して、管理者キーが含まれていません。 ミニドライバーはサポートされていないことが予想は、状況の場合は、 [ **CardGetChallenge**](https://msdn.microsoft.com/library/windows/hardware/dn468723)、 [ **CardAuthenticateChallenge** ](https://msdn.microsoft.com/library/windows/hardware/dn468702)、および[ **CardUnblockPin**](https://msdn.microsoft.com/library/windows/hardware/dn468742)します。
+-   読み取り専用のカードを許可して、管理者キーが含まれていません。 ミニドライバーはサポートされていないことが予想は、状況の場合は、 [ **CardGetChallenge**](https://docs.microsoft.com/previous-versions/dn468723(v=vs.85))、 [ **CardAuthenticateChallenge** ](https://docs.microsoft.com/previous-versions/dn468702(v=vs.85))、および[ **CardUnblockPin**](https://docs.microsoft.com/previous-versions/dn468742(v=vs.85))します。
 -   読み取り専用のカード、照会されたときは、0 バイトが使用可能なと 0 の使用可能なコンテナーに返す必要があります。
 -   CP のみ\_親\_ウィンドウと CP\_PIN\_コンテキスト\_読み取り専用のカードに設定する文字列プロパティを許可する必要があります。
 -   読み取り専用カードは、CP\_サポート\_WIN\_X509\_登録プロパティを false にする必要があります。
@@ -371,10 +371,10 @@ Windows では、PIN 認証をセキュリティで保護された PIN チャネ
 ## <a name="span-idcachemodesspanspan-idcachemodesspanspan-idcachemodesspancache-modes"></a><span id="Cache_Modes"></span><span id="cache_modes"></span><span id="CACHE_MODES"></span>キャッシュ モード
 
 
-Base CSP または KSP がによって返されたキャッシュ モードによってキャッシュの 3 つの異なるモードをサポートしている、 [ **CardGetProperty** ](https://msdn.microsoft.com/library/windows/hardware/dn468729) CP パラメーターで呼び出された\_カード\_キャッシュ\_モード。
+Base CSP または KSP がによって返されたキャッシュ モードによってキャッシュの 3 つの異なるモードをサポートしている、 [ **CardGetProperty** ](https://docs.microsoft.com/previous-versions/dn468729(v=vs.85)) CP パラメーターで呼び出された\_カード\_キャッシュ\_モード。
 
 -   場合、返されたフラグは CP\_キャッシュ\_モード\_GLOBAL\_キャッシュとカードの報告、CP\_読み取り\_のみ\_カード プロパティを TRUE、Base CSP または KSP データ キャッシュが、グローバル キャッシュします。 カードが読み取り専用の場合は、Base CSP または KSP は cardcf ファイルに書き込めません。 場合は、カードは、Base CSP または KSP を書き込むことが、これは今日として動作します。
--   CP の詳細については\_カード\_キャッシュ\_モードと CP\_キャッシュ\_モード\_GLOBAL\_キャッシュを参照してください[ **CardGetProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468729).
+-   CP の詳細については\_カード\_キャッシュ\_モードと CP\_キャッシュ\_モード\_GLOBAL\_キャッシュを参照してください[ **CardGetProperty**](https://docs.microsoft.com/previous-versions/dn468729(v=vs.85)).
 -   ときに返されたフラグは、CP\_キャッシュ\_モード\_セッション\_のみ、Base CSP または KSP 動作して、カードが削除または再挿入されたことを検出した場合に、データ キャッシュをオフにします。 つまり、カードの抜き差し間の期間にセッションを定義しています。
 -   キャッシュはプロセスごとにも実装されていて、グローバルではありません。 このモードは、いくつか government ステーションまたはその他の外部のサイトではなくが、ユーザーの pc では変更されない読み取り専用のカードに適しています。 (このモードは、読み取り/書き込みのカードのサポートしますが、これらのカードのグローバル キャッシュをお勧めします)。
 -   アプリケーションが後で、キャッシュが st を含めることが状況を回避するには、この仕様で説明されているないキャッシュ モードを使用する必要があります、カードは読み取り専用 (Base CSP または KSP 以外の手段) によってユーザーの PC にカードを変更する可能性がある場合は、ale データ。
@@ -670,7 +670,7 @@ Microsoft CNG スマート カード キー記憶域プロバイダーのグル�
     -   CRYPT\_既定\_コンテナー\_(省略可能)
     -   CRYPT\_DELETEKEYSET
     -   CRYPT\_VERIFYCONTEXT
--   [**CardDeleteContext** ](https://msdn.microsoft.com/library/windows/hardware/dn468715)後も呼び出すことができる*DllMain* DLL で呼び出されました\_プロセス\_デタッチします。
+-   [**CardDeleteContext** ](https://docs.microsoft.com/previous-versions/dn468715(v=vs.85))後も呼び出すことができる*DllMain* DLL で呼び出されました\_プロセス\_デタッチします。
 
  
 

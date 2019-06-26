@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b549a6bc2e32ab23fd3b999450b09e948c22fe39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd93abe1ae3ba49d4f1693f2ad41c129bcef0976
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358953"
 ---
 # <a name="kspropertyaudiocpuresources"></a>KSPROPERTY\_オーディオ\_CPU\_リソース
 
@@ -53,7 +53,7 @@ KSPROPERTY\_オーディオ\_CPU\_リソース プロパティは、ノードの
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -103,11 +103,11 @@ KSPROPERTY\_オーディオ\_CPU\_リソース プロパティの要求がステ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSNODETYPE\_音響\_エコー\_キャンセル**](ksnodetype-acoustic-echo-cancel.md)
 
-[**KSNODETYPE\_ノイズ\_を抑制します。**](ksnodetype-noise-suppress.md)
+[**KSNODETYPE\_ノイズ\_を抑制します。** ](ksnodetype-noise-suppress.md)
 
 [**KSNODETYPE\_PEAKMETER**](ksnodetype-peakmeter.md)
 

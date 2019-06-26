@@ -4,12 +4,12 @@ description: PROPSETID\_しました\_ビデオ プロシージャ アンプ
 ms.assetid: ea1d9c96-b1a5-4849-b607-4c508a526512
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 641f5eaced2a1eed4f49172ef3904cb99519dc55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5373370c0e7ce409577b4c8655466334ea04b4d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390880"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385696"
 ---
 # <a name="propsetidvidcapvideoprocamp"></a>PROPSETID\_しました\_ビデオ プロシージャ アンプ
 
@@ -45,7 +45,7 @@ USB ビデオ クラスでは、前に、この列挙体には、以下プロパ
 
 [**KSPROPERTY\_ビデオ プロシージャ アンプ\_を得る**](ksproperty-videoprocamp-gain.md)
 
-導入に伴い、 [USB ビデオ クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568649)、次のプロパティは、KSPROPERTY に追加された\_しました\_ビデオ プロシージャ アンプ列挙体。
+導入に伴い、 [USB ビデオ クラス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)、次のプロパティは、KSPROPERTY に追加された\_しました\_ビデオ プロシージャ アンプ列挙体。
 
 [**KSPROPERTY\_ビデオ プロシージャ アンプ\_デジタル\_乗数**](ksproperty-videoprocamp-digital-multiplier.md)
 

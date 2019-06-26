@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 59d559254eed63f7aa85df5afde4d8321e44cb91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46927af0f08f37c77a264ac0bdeec0e0bf68fd9b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357622"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367950"
 ---
 # <a name="bug-check-0x108-thirdpartyfilesystemfailure"></a>バグ チェック 0x108:3 番目\_パーティ\_ファイル\_システム\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63357622"
 3 番目\_パーティ\_ファイル\_システム\_エラーのバグ チェックが 0x00000108 の値を持ちます。 これは、サード パーティ製のファイル システムまたはファイル システム フィルターで回復できない問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="thirdpartyfilesystemfailure-parameters"></a>3 番目\_パーティ\_ファイル\_システム\_エラー パラメーター
@@ -76,7 +76,7 @@ ms.locfileid: "63357622"
 <a name="resolution"></a>解決方法
 ----------
 
-**この問題をデバッグします。** 使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。
+**この問題をデバッグします。** 使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。
 
 **ディスク破損の問題を解決するには。** デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性があるシステムで、SCSI、IDE、またはその他のディスク コント ローラーからのエラー メッセージをイベント ビューアーを確認します。 ウイルス スキャナー、バックアップ プログラム、またはシステムを継続的に監視するディスク デフラグ ツールを無効にしてください。 ファイル システムまたはファイル システム フィルターの製造元によって提供されるハードウェア診断を実行することも必要があります。
 

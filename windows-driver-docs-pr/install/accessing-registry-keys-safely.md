@@ -7,12 +7,12 @@ keywords:
 - キーのレジストリへのアクセスに安全に WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62b7e171d77620bdd977ed66e48a66a9cf36f96d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c096e156a2432fb372de612248605991926047d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358528"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386049"
 ---
 # <a name="accessing-registry-keys-safely"></a>レジストリ キーへの安全なアクセス
 
@@ -23,7 +23,7 @@ ms.locfileid: "63358528"
 
 -   重要なレジストリ キーのアクセス許可を変更します。
 
-レジストリ キーの KEY_ALL_ACCESS のアクセス許可を使用して外部コンポーネントで発生する問題の多くが原因です。 以降では、Windows Server 2003、 [ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973) KEY_READ と KEY_WRITE のみがアクセス許可と KEY_ALL_ACCESS されませんをアクセスを許可します。 Windows Vista 以降では、追加の KEY_ALL_ACCESS 制限が適用されます。
+レジストリ キーの KEY_ALL_ACCESS のアクセス許可を使用して外部コンポーネントで発生する問題の多くが原因です。 以降では、Windows Server 2003、 [ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya) KEY_READ と KEY_WRITE のみがアクセス許可と KEY_ALL_ACCESS されませんをアクセスを許可します。 Windows Vista 以降では、追加の KEY_ALL_ACCESS 制限が適用されます。
 
 レジストリ キーを安全にアクセスする次のガイドラインに従います。
 
@@ -51,13 +51,13 @@ ms.locfileid: "63358528"
 
     デバイス セットアップ クラスのキーを安全に開くには、次のガイドラインに従います。
 
-    -   使用[ **SetupDiOpenClassRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552065)します。
+    -   使用[ **SetupDiOpenClassRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)します。
 
-    -   使用[ **SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)で DIOCR_INSTALLER を設定して、*フラグ*パラメーター。
+    -   使用[ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)で DIOCR_INSTALLER を設定して、*フラグ*パラメーター。
 
 -   直接インターフェイス クラスのデバイスのキーで開かないでレジストリ。 レジストリ キーと同様に Windows のバージョン間でデバイス インターフェイス クラスのキーの名前と場所を変更可能性があります。
 
-    インターフェイス クラスのデバイスのキーを安全に開くを使用して[ **SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)で DIOCR_INSTALLER を設定して、*フラグ*パラメーター。
+    インターフェイス クラスのデバイスのキーを安全に開くを使用して[ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)で DIOCR_INSTALLER を設定して、*フラグ*パラメーター。
 
 -   INF ディレクティブのみを使用すると、オペレーティング システムで使用するために予約されているレジストリ キーを変更できます。 詳細については、次を参照してください。 [INF ディレクティブの概要](summary-of-inf-directives.md)します。
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 711c81d0e78b01ca3198556dbc8f086b66cf6ada
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1acf61ef1314849a6ed90fb76c4fc80ccf07b62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382198"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366715"
 ---
 # <a name="kscategoryaudio"></a>KSCATEGORY_AUDIO
 
 
-KSCATEGORY_AUDIO[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS)、オーディオ デバイスの機能のカテゴリ。
+KSCATEGORY_AUDIO[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS)、オーディオ デバイスの機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_AUDIO[デバイス インターフェイス クラス](https://msdn.m
 
 KS オーディオ デバイス用のドライバーは、デバイスが KSCATEGORY_AUDIO 機能カテゴリをサポートするオペレーティング システムに示すためにこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)します。
 
 INF ファイルでこの機能のカテゴリを登録する方法については、ヘルプ ファイルを参照してください*INFViewer.html*と*ac97smpl.inf*、付属している、 [AC'97 サンプル ドライバー。](https://go.microsoft.com/fwlink/p/?linkid=256075) WDK に含まれています。
 

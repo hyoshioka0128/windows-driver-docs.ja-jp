@@ -6,12 +6,12 @@ keywords:
 - CM_PROB_DUPLICATE_DEVICE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cc72f297d125b5f55d64f6d02833a432cf7c32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d66f1ec6fec173426c2867d00374bb70f16c2f59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342388"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385626"
 ---
 # <a name="cmprobduplicatedevice"></a>CM_PROB_DUPLICATE_DEVICE
 
@@ -37,4 +37,4 @@ ms.locfileid: "63342388"
 
 - バス ドライバーで作成、バスの 2 つの同じ名前を持つ子 これは、同じシリアル番号を報告するバス上の複数のデバイスが原因です。 2 つまたは複数のデバイスの同じハードウェア識別子を正しく報告するバス ドライバーが原因の可能性もあります。
 
-    ここでお問い合わせください[Microsoft サポート](http://support.microsoft.com/)にこの問題に問い合わせます。
+    ここでお問い合わせください[Microsoft サポート](https://support.microsoft.com/en-us)にこの問題に問い合わせます。

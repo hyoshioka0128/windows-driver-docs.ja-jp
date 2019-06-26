@@ -4,12 +4,12 @@ description: モバイル ブロードバンド アプリのランディング �
 ms.assetid: 3a42886f-8a32-4576-af31-65443bb718ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e9f8d7ba8c0f644190989d2e8ccb0789adcbb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c54350bcb3064dc7a21b23143306483734b87f58
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56572413"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393476"
 ---
 # <a name="design-the-landing-page-of-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリのランディング ページを設計する
 
@@ -52,7 +52,7 @@ ms.locfileid: "56572413"
 ## <a name="span-idopmsgspanspan-idopmsgspanoperator-messages--show-an-overview-or-link"></a><span id="opmsg"></span><span id="OPMSG"></span>演算子メッセージ – 概要またはリンクを表示します。
 
 
-ランディング ページは、テキスト メッセージの演算子の一覧を強調できます。 演算子のメッセージ数は、優先度の高いであるために、ユーザーはこれらを簡単にアクセスすることを選びます。 テキスト メッセージを組み込む必要がある機能の詳細については、[モバイル ブロード バンド アプリでのメッセージを設計](design-messages-in-a-mobile-broadband-app.md)を参照してください。
+ランディング ページは、テキスト メッセージの演算子の一覧を強調できます。 演算子のメッセージ数は、優先度の高いであるために、ユーザーはこれらを簡単にアクセスすることを選びます。 テキスト メッセージを組み込む必要がある機能の詳細については、次を参照してください。[モバイル ブロード バンド アプリでのメッセージを設計](design-messages-in-a-mobile-broadband-app.md)します。
 
 ## <a name="span-idkeylinksspanspan-idkeylinksspanlinks-to-other-key-pages"></a><span id="keylinks"></span><span id="KEYLINKS"></span>その他のキーのページへのリンク
 
@@ -64,18 +64,18 @@ ms.locfileid: "56572413"
 
 ランディング ページを記述する場合は、アプリ内のナビゲーションに注意してください。 アプリは、複数のページをさまざまな目的を持つ必要があります。 Windows 10 には、ナビゲーションに使用できる次のツールが用意されています。
 
--   **[戻る] ボタン**アプリでは、前のページに戻るには、[戻る] ボタンを使用できます。 戻るボタンのスタイル設定の詳細については、[クイック スタート: コントロールのスタイル](https://msdn.microsoft.com/library/windows/apps/hh465498)を参照してください。
+-   **[戻る] ボタン**アプリでは、前のページに戻るには、[戻る] ボタンを使用できます。 戻るボタンのスタイル設定の詳細については、次を参照してください。[クイック スタート: コントロールのスタイル](https://docs.microsoft.com/previous-versions/windows/apps/hh465498(v=win.10))します。
 
 -   **ヘッダー テキストを含むドロップダウン アフォー ダンス**ヘッダー テキストは、アプリの複数のページ間のナビゲーションのドロップ ダウン アフォー ダンスとして使用できます。 クリックすると、前の図で**アカウントの概要**次の図に示すように移動できるアプリ内のページのドロップダウン リストになります。
 
     ![アプリ間を移動します。](images/mb-fig3-nav-between-apps.png)
 
-    アプリのナビゲーションを設計する方法の詳細については、次を参照してください。[クイック スタート。単一ページ ナビゲーションを使用して](https://msdn.microsoft.com/library/windows/apps/hh452768)と[**要素の選択 | オブジェクトを選択**](https://msdn.microsoft.com/library/windows/apps/hh466252)します。
+    アプリのナビゲーションを設計する方法の詳細については、次を参照してください。[クイック スタート。単一ページ ナビゲーションを使用して](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))と[**要素の選択 | オブジェクトを選択**](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)します。
 
 ## <a name="span-idopbrandspanspan-idopbrandspanoperator-branding"></a><span id="opbrand"></span><span id="OPBRAND"></span>ブランド化演算子
 
 
-個々 のブランド化スタイルに合ったモバイル ブロード バンド アプリをカスタマイズできます。 さまざまなカスタマイズを使用すると、一意でわかりやすいにアプリを行うことができます。 アプリをブランド化する方法の詳細については、[モバイル ブロード バンド アプリでのブランド化の設計](design-branding-in-a-mobile-broadband-app.md)を参照してください。
+個々 のブランド化スタイルに合ったモバイル ブロード バンド アプリをカスタマイズできます。 さまざまなカスタマイズを使用すると、一意でわかりやすいにアプリを行うことができます。 アプリをブランド化する方法の詳細については、次を参照してください。[モバイル ブロード バンド アプリでのブランド化の設計](design-branding-in-a-mobile-broadband-app.md)します。
 
 ## <a name="span-idsumspanspan-idsumspanquick-summary"></a><span id="sum"></span><span id="SUM"></span>簡単な概要
 
@@ -99,13 +99,13 @@ ms.locfileid: "56572413"
 ## <a name="span-idresspanspan-idresspanadditional-resources"></a><span id="res"></span><span id="RES"></span>その他のリソース
 
 
--   [UWP アプリ用のインデックスの UX のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [UWP アプリ用のインデックスの UX のガイドライン](https://developer.microsoft.com/windows/apps/design)
 
--   [コントロールとコンテンツの追加](https://msdn.microsoft.com/library/windows/apps/hh465393)
+-   [コントロールとコンテンツの追加](https://docs.microsoft.com/previous-versions/windows/apps/hh465393(v=win.10))
 
 -   [すばらしい UWP アプリを作成します。](https://msdn.microsoft.com/library/windows/apps/hh464920)
 
--   [UI のレイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)
+-   [UI のレイアウト](https://docs.microsoft.com/previous-versions/windows/apps/hh465304(v=win.10))
 
 -   [その他の Windows コンポーネントと統合して、モバイル ブロード バンド アプリ](integrate-a-mobile-broadband-app-with-other-windows-components.md#splash)
 

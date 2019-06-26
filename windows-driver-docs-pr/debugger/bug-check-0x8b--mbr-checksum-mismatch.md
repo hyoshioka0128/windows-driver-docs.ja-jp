@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0aa37b409a9a4212f94fe1fc117bbb73c5b991
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc162159813a6c09781742e4b2af6bfd90b56a37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367356"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361720"
 ---
 # <a name="bug-check-0x8b-mbrchecksummismatch"></a>バグ チェック 0x8B:MBR\_チェックサム\_が一致しません
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367356"
 MBR\_チェックサム\_の不一致のバグ チェックが 0x0000008B の値を持ちます。 このバグ チェックでは、MBR チェックサムの不一致が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="mbrchecksummismatch-parameters"></a>MBR\_チェックサム\_不一致パラメーター

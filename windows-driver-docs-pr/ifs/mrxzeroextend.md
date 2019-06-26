@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b13e646a2c9051ce9aeb320479779020143d3a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c99066f28cfe3772be45e98e5a169ac08d3c01d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352946"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370076"
 ---
 # <a name="mrxzeroextend-routine"></a>MRxZeroExtend ルーチン
 
 
-*MRxZeroExtend*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターがファイル システム オブジェクトの内容を切り捨てることを要求します。
+*MRxZeroExtend*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトの内容を切り捨てることを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -76,11 +76,11 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 *MRxZeroExtend*ファイル オブジェクトが削除のマークされていないと、ファイル オブジェクトは、ページング ファイルではない場合に、クリーンアップ操作の一部として呼び出されます。 *MRxZeroExtend*が呼び出され、有効なデータの長さとファイルのサイズの部分では、ゼロ拡張があることを確認します。 呼び出した後*MRxZeroExtend*、RDBSS セット、 **Header.ValidDataLength.QuadPart**等しく FCB 構造体の構造体のメンバー、 **Header.FileSize.QuadPart**FCB 構造体のメンバー。
 
-呼び出し*MRxZeroExtend*への呼び出しに続いて[ **MRxCleanupFobx** ](https://msdn.microsoft.com/library/windows/hardware/ff549841)クリーンアップ操作の一部として。
+呼び出し*MRxZeroExtend*への呼び出しに続いて[ **MRxCleanupFobx** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))クリーンアップ操作の一部として。
 
 戻り値を無視する RDBSS *MRxZeroExtend*します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -103,29 +103,29 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxAreFilesAliased**](https://msdn.microsoft.com/library/windows/hardware/ff549838)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
-[**MRxCleanupFobx**](https://msdn.microsoft.com/library/windows/hardware/ff549841)
+[**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://msdn.microsoft.com/library/windows/hardware/ff549845)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://msdn.microsoft.com/library/windows/hardware/ff549871)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://msdn.microsoft.com/library/windows/hardware/ff549872)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://msdn.microsoft.com/library/windows/hardware/ff549878)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxExtendForNonCache**](mrxextendfornoncache.md)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://msdn.microsoft.com/library/windows/hardware/ff550677)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://msdn.microsoft.com/library/windows/hardware/ff550691)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

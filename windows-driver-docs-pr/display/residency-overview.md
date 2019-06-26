@@ -4,12 +4,12 @@ description: 常駐の概要
 ms.assetid: E610C2B8-354C-4DF5-8B25-6472A9313B15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ca2d31c9921b88a1c991d6fc22d984d9f22f71a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a0d9f717edf193d8acec81ae3f6111c070d4a4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378434"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385657"
 ---
 # <a name="residency-overview"></a>常駐の概要
 
@@ -24,9 +24,9 @@ ms.locfileid: "63378434"
 
 新しい保存場所のモデルの導入に伴い、コマンドごとのバッファーの一覧ではなく、デバイス上の保存場所を明示的なリストに移動中です。 ビデオ メモリ マネージャーがそのデバイスに属する任意のコンテキストが実行をスケジュールする前に特定のデバイスの保存場所の要件の一覧ですべての割り当てが常駐していることを確認します。
 
-保存場所を管理するために、ユーザー モード ドライバー アクセスすることが 2 つ新しいデバイス ドライバー インターフェイス (Ddi) [ *MakeResident* ](https://msdn.microsoft.com/library/windows/hardware/dn906357)と[*削除*](https://msdn.microsoft.com/library/windows/hardware/dn906355)新しい実装するために必要になるほか、 [ *TrimResidency* ](https://msdn.microsoft.com/library/windows/hardware/dn906364)コールバック。 *MakeResident*デバイスの保存場所の要件の一覧に 1 つまたは複数の割り当てを追加します。 *削除*そのリストから複数割り当てのいずれかが削除されます。 *TrimResidency*ユーザー モード ドライバーが常駐要件を削減する必要があるときにそのコールバックがビデオ メモリ マネージャーによって呼び出されます。
+保存場所を管理するために、ユーザー モード ドライバー アクセスすることが 2 つ新しいデバイス ドライバー インターフェイス (Ddi) [ *MakeResident* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)と[*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)新しい実装するために必要になるほか、 [ *TrimResidency* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)コールバック。 *MakeResident*デバイスの保存場所の要件の一覧に 1 つまたは複数の割り当てを追加します。 *削除*そのリストから複数割り当てのいずれかが削除されます。 *TrimResidency*ユーザー モード ドライバーが常駐要件を削減する必要があるときにそのコールバックがビデオ メモリ マネージャーによって呼び出されます。
 
-[*MakeResident* ](https://msdn.microsoft.com/library/windows/hardware/dn906357)と[*削除*](https://msdn.microsoft.com/library/windows/hardware/dn906355)つまり複数の呼び出しに内部参照カウントを保持する更新された*MakeResident*等しい数が必要になります*削除*の呼び出しを実際には、割り当てを削除します。
+[*MakeResident* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)と[*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)つまり複数の呼び出しに内部参照カウントを保持する更新された*MakeResident*等しい数が必要になります*削除*の呼び出しを実際には、割り当てを削除します。
 
 モデルでは、新しい保存場所、コマンドごとのバッファーの割り当てと修正プログラムの場所のリストが緩やかに変化段階的です。これらのリストに存在するには一部のシナリオで、これらの保存場所を制御がされなくなります。
 

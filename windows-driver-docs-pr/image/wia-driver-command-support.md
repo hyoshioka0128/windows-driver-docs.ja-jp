@@ -4,12 +4,12 @@ description: WIA ドライバー コマンドのサポート
 ms.assetid: 9c552316-7dd6-4102-88d3-fab9732d1e5d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b9346832723f38f7bbf10784807153abe7cc0cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 704189e861cc4e97b71b530327eceb848830cee3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383767"
 ---
 # <a name="wia-driver-command-support"></a>WIA ドライバー コマンドのサポート
 
@@ -66,11 +66,11 @@ WIA\_CMD\_XXX コマンドが、Microsoft Windows SDK ドキュメントに記�
 
 ### <a name="adding-device-command-support"></a>デバイス コマンドのサポートを追加します。
 
-To device コマンドのレポート、WIA ミニドライバーを正しく設定するには、レポートでサポートされているコマンドの配列、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff543977)メソッド。 実装例については、 **IWiaMiniDrv::drvGetCapabilities**メソッドを参照してください[中断イベントのサポートを追加する](adding-interrupt-event-support.md)します。
+To device コマンドのレポート、WIA ミニドライバーを正しく設定するには、レポートでサポートされているコマンドの配列、 [ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)メソッド。 実装例については、 **IWiaMiniDrv::drvGetCapabilities**メソッドを参照してください[中断イベントのサポートを追加する](adding-interrupt-event-support.md)します。
 
 ### <a name="implementing-the-iwiaminidrvdrvdevicecommand-method"></a>IWiaMiniDrv::drvDeviceCommand メソッドを実装します。
 
-WIA サービスの呼び出し、 [ **IWiaMiniDrv::drvDeviceCommand** ](https://msdn.microsoft.com/library/windows/hardware/ff543967)メソッドへのアプリケーションの呼び出しに応答、 **IWiaItem::DeviceCommand**メソッド (で説明されている、Microsoft Windows SDK のドキュメント)。 **IWiaMiniDrv::drvDeviceCommand**メソッドは、次のタスクを実行する必要があります。
+WIA サービスの呼び出し、 [ **IWiaMiniDrv::drvDeviceCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdevicecommand)メソッドへのアプリケーションの呼び出しに応答、 **IWiaItem::DeviceCommand**メソッド (で説明されている、Microsoft Windows SDK のドキュメント)。 **IWiaMiniDrv::drvDeviceCommand**メソッドは、次のタスクを実行する必要があります。
 
 1.  送信されたコマンドがサポートされているコマンドであるかどうかを確認します。
 

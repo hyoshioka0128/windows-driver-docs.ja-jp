@@ -4,12 +4,12 @@ description: 一般的な統計情報 OID
 ms.assetid: ebdd5723-d913-4c1a-8b1f-f70e4b0080ad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35fd0aea63406a37355fd12967cbdc510640104e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ba17db14a0fe6374ebc2291bead3c4c8e2de469
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349900"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382761"
 ---
 # <a name="general-statistic-oids"></a>一般的な統計情報 OID
 
@@ -35,97 +35,97 @@ ms.locfileid: "63349900"
 <tbody>
 <tr class="odd">
 <td align="left"><p>必須</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569656" data-raw-source="[OID_GEN_XMIT_OK](https://msdn.microsoft.com/library/windows/hardware/ff569656)">OID_GEN_XMIT_OK</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-ok" data-raw-source="[OID_GEN_XMIT_OK](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-ok)">OID_GEN_XMIT_OK</a></p></td>
 <td align="left"><p>エラーなしで送信されたフレーム</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必須</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569632" data-raw-source="[OID_GEN_RCV_OK](https://msdn.microsoft.com/library/windows/hardware/ff569632)">OID_GEN_RCV_OK</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-ok" data-raw-source="[OID_GEN_RCV_OK](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-ok)">OID_GEN_RCV_OK</a></p></td>
 <td align="left"><p>エラーなしで受信したフレーム</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>必須</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569654" data-raw-source="[OID_GEN_XMIT_ERROR](https://msdn.microsoft.com/library/windows/hardware/ff569654)">OID_GEN_XMIT_ERROR</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-error" data-raw-source="[OID_GEN_XMIT_ERROR](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-error)">OID_GEN_XMIT_ERROR</a></p></td>
 <td align="left"><p>エラーの転送されたフレーム</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>必須</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569629" data-raw-source="[OID_GEN_RCV_ERROR](https://msdn.microsoft.com/library/windows/hardware/ff569629)">OID_GEN_RCV_ERROR</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-error" data-raw-source="[OID_GEN_RCV_ERROR](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-error)">OID_GEN_RCV_ERROR</a></p></td>
 <td align="left"><p>エラーを受信したフレーム</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>必須</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569631" data-raw-source="[OID_GEN_RCV_NO_BUFFER](https://msdn.microsoft.com/library/windows/hardware/ff569631)">OID_GEN_RCV_NO_BUFFER</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-no-buffer" data-raw-source="[OID_GEN_RCV_NO_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-no-buffer)">OID_GEN_RCV_NO_BUFFER</a></p></td>
 <td align="left"><p>フレームがなく、バッファーがありません。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569578" data-raw-source="[OID_GEN_DIRECTED_BYTES_XMIT](https://msdn.microsoft.com/library/windows/hardware/ff569578)">OID_GEN_DIRECTED_BYTES_XMIT</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-bytes-xmit" data-raw-source="[OID_GEN_DIRECTED_BYTES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-bytes-xmit)">OID_GEN_DIRECTED_BYTES_XMIT</a></p></td>
 <td align="left"><p>有向のエラーのない転送バイト数</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569580" data-raw-source="[OID_GEN_DIRECTED_FRAMES_XMIT](https://msdn.microsoft.com/library/windows/hardware/ff569580)">OID_GEN_DIRECTED_FRAMES_XMIT</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-frames-xmit" data-raw-source="[OID_GEN_DIRECTED_FRAMES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-frames-xmit)">OID_GEN_DIRECTED_FRAMES_XMIT</a></p></td>
 <td align="left"><p>エラーなしで送信されたフレームを送信</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569612" data-raw-source="[OID_GEN_MULTICAST_BYTES_XMIT](https://msdn.microsoft.com/library/windows/hardware/ff569612)">OID_GEN_MULTICAST_BYTES_XMIT</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-bytes-xmit" data-raw-source="[OID_GEN_MULTICAST_BYTES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-bytes-xmit)">OID_GEN_MULTICAST_BYTES_XMIT</a></p></td>
 <td align="left"><p>エラーなしで送信されたマルチキャスト バイト数</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569614" data-raw-source="[OID_GEN_MULTICAST_FRAMES_XMIT](https://msdn.microsoft.com/library/windows/hardware/ff569614)">OID_GEN_MULTICAST_FRAMES_XMIT</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-frames-xmit" data-raw-source="[OID_GEN_MULTICAST_FRAMES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-frames-xmit)">OID_GEN_MULTICAST_FRAMES_XMIT</a></p></td>
 <td align="left"><p>エラーなしで送信されたマルチキャスト フレーム</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569440" data-raw-source="[OID_GEN_BROADCAST_BYTES_XMIT](https://msdn.microsoft.com/library/windows/hardware/ff569440)">OID_GEN_BROADCAST_BYTES_XMIT</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-bytes-xmit" data-raw-source="[OID_GEN_BROADCAST_BYTES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-bytes-xmit)">OID_GEN_BROADCAST_BYTES_XMIT</a></p></td>
 <td align="left"><p>エラーなしで送信されたバイトをブロードキャストします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569442" data-raw-source="[OID_GEN_BROADCAST_FRAMES_XMIT](https://msdn.microsoft.com/library/windows/hardware/ff569442)">OID_GEN_BROADCAST_FRAMES_XMIT</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-frames-xmit" data-raw-source="[OID_GEN_BROADCAST_FRAMES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-frames-xmit)">OID_GEN_BROADCAST_FRAMES_XMIT</a></p></td>
 <td align="left"><p>エラーなしで送信されたフレームをブロードキャストします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569577" data-raw-source="[OID_GEN_DIRECTED_BYTES_RCV](https://msdn.microsoft.com/library/windows/hardware/ff569577)">OID_GEN_DIRECTED_BYTES_RCV</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-bytes-rcv" data-raw-source="[OID_GEN_DIRECTED_BYTES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-bytes-rcv)">OID_GEN_DIRECTED_BYTES_RCV</a></p></td>
 <td align="left"><p>エラーなしで受信したバイトを送信</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569579" data-raw-source="[OID_GEN_DIRECTED_FRAMES_RCV](https://msdn.microsoft.com/library/windows/hardware/ff569579)">OID_GEN_DIRECTED_FRAMES_RCV</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-frames-rcv" data-raw-source="[OID_GEN_DIRECTED_FRAMES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-frames-rcv)">OID_GEN_DIRECTED_FRAMES_RCV</a></p></td>
 <td align="left"><p>エラーなしで受信したフレームを送信</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569611" data-raw-source="[OID_GEN_MULTICAST_BYTES_RCV](https://msdn.microsoft.com/library/windows/hardware/ff569611)">OID_GEN_MULTICAST_BYTES_RCV</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-bytes-rcv" data-raw-source="[OID_GEN_MULTICAST_BYTES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-bytes-rcv)">OID_GEN_MULTICAST_BYTES_RCV</a></p></td>
 <td align="left"><p>エラーなしで受信したマルチキャスト バイト数</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569613" data-raw-source="[OID_GEN_MULTICAST_FRAMES_RCV](https://msdn.microsoft.com/library/windows/hardware/ff569613)">OID_GEN_MULTICAST_FRAMES_RCV</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-frames-rcv" data-raw-source="[OID_GEN_MULTICAST_FRAMES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-frames-rcv)">OID_GEN_MULTICAST_FRAMES_RCV</a></p></td>
 <td align="left"><p>エラーなしで受信したマルチキャスト フレーム</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569439" data-raw-source="[OID_GEN_BROADCAST_BYTES_RCV](https://msdn.microsoft.com/library/windows/hardware/ff569439)">OID_GEN_BROADCAST_BYTES_RCV</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-bytes-rcv" data-raw-source="[OID_GEN_BROADCAST_BYTES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-bytes-rcv)">OID_GEN_BROADCAST_BYTES_RCV</a></p></td>
 <td align="left"><p>エラーのない受信バイト数をブロードキャストします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569441" data-raw-source="[OID_GEN_BROADCAST_FRAMES_RCV](https://msdn.microsoft.com/library/windows/hardware/ff569441)">OID_GEN_BROADCAST_FRAMES_RCV</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-frames-rcv" data-raw-source="[OID_GEN_BROADCAST_FRAMES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-frames-rcv)">OID_GEN_BROADCAST_FRAMES_RCV</a></p></td>
 <td align="left"><p>エラーなしで受信したフレームをブロードキャストします。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569627" data-raw-source="[OID_GEN_RCV_CRC_ERROR](https://msdn.microsoft.com/library/windows/hardware/ff569627)">OID_GEN_RCV_CRC_ERROR</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-crc-error" data-raw-source="[OID_GEN_RCV_CRC_ERROR](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-crc-error)">OID_GEN_RCV_CRC_ERROR</a></p></td>
 <td align="left"><p>循環冗長検査 (CRC) またはフレームを持つ受信フレーム チェック シーケンス (FCS) エラー</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569646" data-raw-source="[OID_GEN_TRANSMIT_QUEUE_LENGTH](https://msdn.microsoft.com/library/windows/hardware/ff569646)">OID_GEN_TRANSMIT_QUEUE_LENGTH</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-transmit-queue-length" data-raw-source="[OID_GEN_TRANSMIT_QUEUE_LENGTH](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-transmit-queue-length)">OID_GEN_TRANSMIT_QUEUE_LENGTH</a></p></td>
 <td align="left"><p>送信キューの長さ</p></td>
 </tr>
 </tbody>

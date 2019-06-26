@@ -11,12 +11,12 @@ keywords:
 - WDK の Ioctl ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46c969488f1429b4a9103fa8da58a60c05309e8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78164b0adb8e21f166845a785b84bfab444cd94a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344356"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371302"
 ---
 # <a name="tampering-with-data"></a>データの改ざん
 
@@ -38,7 +38,7 @@ ms.locfileid: "63344356"
 
 開発者がありますを使用してその IOCTL、 **FastIoDeviceControl**ディスパッチは生のユーザーのバッファーでデータを渡します。 したがって Ioctl の高速な I/O バージョンを実装するドライバーには、問題を回避する適切な手順を実行する必要があります。
 
-単独で、データの検証ではないことだけに注意してください。 たとえば、成功した呼び出し[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)それ以降の変更、アプリケーションのアドレス空間を変更するには、その状態が発生する可能性がありますが、バッファーが有効である可能性があります。 アプリケーションは、実際に直接、バッファーを使用して、ドライバーの前に終了でしたなどが。 そのため、ドライバーは、アプリケーションのアドレス空間内のすべての変更から保護する必要があります。 通常これは、例外処理を使用して構造化を使用して **\_\_お試しください**と **\_\_を除く**ユーザー バッファーにアクセスするコード直接のアドレス。
+単独で、データの検証ではないことだけに注意してください。 たとえば、成功した呼び出し[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)それ以降の変更、アプリケーションのアドレス空間を変更するには、その状態が発生する可能性がありますが、バッファーが有効である可能性があります。 アプリケーションは、実際に直接、バッファーを使用して、ドライバーの前に終了でしたなどが。 そのため、ドライバーは、アプリケーションのアドレス空間内のすべての変更から保護する必要があります。 通常これは、例外処理を使用して構造化を使用して **\_\_お試しください**と **\_\_を除く**ユーザー バッファーにアクセスするコード直接のアドレス。
 
  
 

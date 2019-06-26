@@ -15,12 +15,12 @@ keywords:
 - WDK の IEEE 1394 のデータを転送します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f51c6ed708badb260aa34d715aa89ccc11df8a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4dd85a0297ca7bbdf61eb82e1b2877814383890e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371030"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385765"
 ---
 # <a name="isochronous-io-for-ieee-1394-devices"></a>IEEE 1394 デバイスの等時性 I/O
 
@@ -32,17 +32,17 @@ ms.locfileid: "63371030"
 
 このセクションの内容:
 
-[IEEE 1394 デバイス Isochronous 転送の設定](https://msdn.microsoft.com/library/windows/hardware/ff538108)
+[IEEE 1394 デバイス Isochronous 転送の設定](https://docs.microsoft.com/windows-hardware/drivers/ieee/setting-up-isochronous-transfer-for-ieee-1394-devices)
 
-[IEEE 1394 デバイス バッファリング アイソクロナス DMA 転送](https://msdn.microsoft.com/library/windows/hardware/ff537014)
+[IEEE 1394 デバイス バッファリング アイソクロナス DMA 転送](https://docs.microsoft.com/windows-hardware/drivers/ieee/buffering-isochronous-dma-transfers-for-ieee-1394-devices)
 
-[IEEE 1394 デバイス アイソクロナス リッスン オプション](https://msdn.microsoft.com/library/windows/hardware/ff537377)
+[IEEE 1394 デバイス アイソクロナス リッスン オプション](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-listen-options-for-ieee-1394-devices)
 
-[IEEE 1394 デバイス アイソクロナス トーク オプション](https://msdn.microsoft.com/library/windows/hardware/ff537380)
+[IEEE 1394 デバイス アイソクロナス トーク オプション](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-talk-options-for-ieee-1394-devices)
 
-[IEEE 1394 デバイス アイソクロナス同期オプション](https://msdn.microsoft.com/library/windows/hardware/ff537379)
+[IEEE 1394 デバイス アイソクロナス同期オプション](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-synchronization-options-for-ieee-1394-devices)
 
-[Isochronous データ転送を完了します。](https://msdn.microsoft.com/library/windows/hardware/ff537058)
+[Isochronous データ転送を完了します。](https://docs.microsoft.com/windows-hardware/drivers/ieee/completing-an-isochronous-data-transfer)
 
  
 

@@ -4,12 +4,12 @@ description: プラグイン分析拡張機能を記述するときに、呼び�
 ms.assetid: 13B9B7A5-1D68-49A3-825B-454AC070FCC1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f859a93a32304c8fc75c3ebf4f101297fa515da0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1544f26c71207c0e25d294ee2d8b1d645cd999a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341725"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366474"
 ---
 # <a name="metadata-files-for-analysis-extension-plug-ins"></a>分析拡張機能プラグインのメタデータ ファイル
 
@@ -77,7 +77,7 @@ ExceptionCode   0xC0000005
 ExecutableName  MyApp.exe
 ```
 
-ビルドに使用できるサンプルにはデバッグ ツールの Windows dbgexts.dll をという名前のデバッガー拡張機能モジュール。 この拡張機能モジュールがいくつかのデバッガー拡張機能のコマンドを実装することも提供することが分析の拡張機能としてプラグインです。つまり、エクスポート、 [  **\_EFN\_分析**](https://msdn.microsoft.com/library/windows/hardware/jj983432)関数。 プラグインの分析拡張機能として dbgexts.dll を記述するメタデータ ファイルを次に示します。
+ビルドに使用できるサンプルにはデバッグ ツールの Windows dbgexts.dll をという名前のデバッガー拡張機能モジュール。 この拡張機能モジュールがいくつかのデバッガー拡張機能のコマンドを実装することも提供することが分析の拡張機能としてプラグインです。つまり、エクスポート、 [  **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nc-extsfns-ext_analysis_plugin)関数。 プラグインの分析拡張機能として dbgexts.dll を記述するメタデータ ファイルを次に示します。
 
 ```text
 PluginId         PluginSample
@@ -98,9 +98,9 @@ help text from plug-in analysis}
 
 [分析の拡張機能プラグインを拡張する記述! 分析](writing-an-analysis-extension-to-extend--analyze.md)
 
-[**\_EFN\_分析**](https://msdn.microsoft.com/library/windows/hardware/jj983432)
+[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extsfns/nc-extsfns-ext_analysis_plugin)
 
-[**! 分析**](-analyze.md)
+[ **! 分析**](-analyze.md)
 
  
 

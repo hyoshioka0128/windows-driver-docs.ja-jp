@@ -7,12 +7,12 @@ keywords:
 - WDK の INF ファイルのセクションでは
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32335accd55ea8f78b088d11a1322773069458db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa0b03aac3d3887d79b4db17c3a31762e4a25caa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339668"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385872"
 ---
 # <a name="summary-of-inf-sections"></a>INF セクションの概要
 
@@ -60,7 +60,7 @@ INF のこのセクションでは、一連のファイルに埋め込まれた�
 
 1 つのプロバイダーの 1 つまたは複数のデバイスとドライバーをインストールする INF ファイルには、1 つだけを指定しなければ*モデル*セクションがのデバイス クラスに対するシステム INF ファイルは多くは INF ライター定義*モデル*セクション。
 
-<a href="" id="ddinstall-section--per-models-entry--"></a>[***DDInstall*セクション**](inf-ddinstall-section.md) (あたり*モデル*エントリ)   
+<a href="" id="ddinstall-section--per-models-entry--"></a>[ ***DDInstall*セクション**](inf-ddinstall-section.md) (あたり*モデル*エントリ)   
 このセクションでは実際に記載されているすべてのデバイスをインストールするために必要な*モデル*と共にこのような各デバイスのドライバーの INF ファイルでセクション。 A *DDInstall*セクションは、1 つ以上で共有できる*モデル*セクション。
 
 <a href="" id="ddinstall-services-section"></a>[***DDInstall *。「サービス」セクション**](inf-ddinstall-services-section.md)  
@@ -90,7 +90,7 @@ Microsoft Windows 2000 以降、このセクションは必須の拡張として
 
  
 
-このセクションの作成に使用されます、[構成をオーバーライドする](https://msdn.microsoft.com/library/windows/hardware/ff547012#logical-configuration-types-for-resource-requirements-lists)、バス ドライバーのプラグ アンド プレイ デバイスの報告されたハードウェア リソース要件をオーバーライドします。
+このセクションの作成に使用されます、[構成をオーバーライドする](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#logical-configuration-types-for-resource-requirements-lists)、バス ドライバーのプラグ アンド プレイ デバイスの報告されたハードウェア リソース要件をオーバーライドします。
 
 <a href="" id="ddinstall-interfaces-section"></a>[***DDInstall *。インターフェイス セクション**](inf-ddinstall-interfaces-section.md)  
 ドライバーはカーネル ストリーミング静止画キャプチャまたはデータの圧縮解除などのインターフェイス クラスの新しいインスタンスを作成するため、デバイスのインターフェイス クラスの機能をエクスポートする場合、INF ファイルはこのセクションを持つことができます。
@@ -105,7 +105,7 @@ INF ファイルの**DefaultInstall** INF ファイル名を右クリックし�
 このセクションと同じ、 [ **INF DDInstall.Services セクション**](inf-ddinstall-services-section.md)との関連付けで使用して、 [ **INF DefaultInstall セクション**](inf-defaultinstall-section.md).
 
 <a href="" id="strings-section"></a>[**文字列のセクション**](inf-strings-section.md)  
-このセクションでは、すべての INF ファイルでそれぞれを定義する必要が**%** <em>strkey</em> **%** INF で指定したトークン。 慣例により、**文字列**セクション (セクション、INF ロケール固有のセットを提供する場合または**文字列**のセクションでは) すべての保守とローカライズ性の INF ファイルをシステム提供の最後に表示されます。
+このセクションでは、すべての INF ファイルでそれぞれを定義する必要が **%** <em>strkey</em> **%** INF で指定したトークン。 慣例により、**文字列**セクション (セクション、INF ロケール固有のセットを提供する場合または**文字列**のセクションでは) すべての保守とローカライズ性の INF ファイルをシステム提供の最後に表示されます。
 
 いくつかのセクションにはここに示した特に*インストール*名前の INF ライター定義の追加のセクションを参照するディレクティブを含めることができます。 各ディレクティブには、インストール プロセス中に適切な種類 INF ライター定義のセクションの下に表示する項目で実行する特定の操作が発生します。
 
@@ -113,7 +113,7 @@ INF ファイルの**DefaultInstall** INF ファイル名を右クリックし�
 
 オプションのエントリとそのような各セクション内でのディレクティブを次の例と、太字でない角かっこで囲まれています。
 
-**\[バージョン\]** .\[**プロバイダー = %**<em>INF 作成者</em>**%** \] .**プロバイダー**内のエントリを**\[バージョン\]** セクションはすべての INF ファイルで必須のエントリではないことの意味では省略可能です。
+**\[バージョン\]** .\[**プロバイダー = %** <em>INF 作成者</em> **%** \] .**プロバイダー**内のエントリを **\[バージョン\]** セクションはすべての INF ファイルで必須のエントリではないことの意味では省略可能です。
 
  
 

@@ -4,12 +4,12 @@ description: レガシ アプリケーションと Windows Vista ドライバー
 ms.assetid: 6f4ebcc7-ecf0-4e0b-bcef-e5b72dc472dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c7c711bb93cfd9d1b33f55ed46aa2a49f4fb4a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52bc8ff3126171f533c65de6cde87e9206e7b774
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380387"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378850"
 ---
 # <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>レガシ アプリケーションと Windows Vista ドライバーのマッピング
 
@@ -40,7 +40,7 @@ ms.locfileid: "63380387"
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>無視されます。 このメッセージは常にへの呼び出しと共に送信されます<a href="https://msdn.microsoft.com/library/windows/hardware/ff545039" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545039)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>します。 すべてのメッセージを重複していない、これは実装、 <strong>GetNextStream</strong>実装代わりにします。</p></td>
+<td><p>無視されます。 このメッセージは常にへの呼び出しと共に送信されます<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>します。 すべてのメッセージを重複していない、これは実装、 <strong>GetNextStream</strong>実装代わりにします。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
@@ -92,7 +92,7 @@ ms.locfileid: "63380387"
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>無視されます。 このメッセージは常にへの呼び出しと共に送信されます<a href="https://msdn.microsoft.com/library/windows/hardware/ff545039" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545039)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>します。 重複するメッセージを避けるためには、このメッセージが実装されている、 <strong>GetNextStream</strong>実装代わりにします。</p></td>
+<td><p>無視されます。 このメッセージは常にへの呼び出しと共に送信されます<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>します。 重複するメッセージを避けるためには、このメッセージが実装されている、 <strong>GetNextStream</strong>実装代わりにします。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
@@ -121,7 +121,7 @@ ms.locfileid: "63380387"
 
  
 
-詳細については、従来の転送でメッセージを参照してください、 [IWiaMiniDrvCallBack インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543943)します。
+詳細については、従来の転送でメッセージを参照してください、 [IWiaMiniDrvCallBack インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)します。
 
 TYMED 定数の詳細については、次を参照してください。[理解 TYMED](understanding-tymed.md)します。
 

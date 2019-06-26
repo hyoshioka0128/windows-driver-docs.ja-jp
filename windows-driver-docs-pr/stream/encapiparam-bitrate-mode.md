@@ -4,12 +4,12 @@ description: ENCAPIPARAM\_ビットレート\_モード
 ms.assetid: d7e82483-bee3-44bd-9066-c2877130a1f9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18593d48db168d4a891b8fbe4691c956cbcaa9a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b575dd02c77fb58be26d4da106828c2588d4b14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363668"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384143"
 ---
 # <a name="encapiparambitratemode"></a>ENCAPIPARAM\_ビットレート\_モード
 
@@ -49,11 +49,11 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスの
 
  
 
-プロパティの値 (データの操作) は、VT\_I4 の値で指定された、 **PropertyItem.Values**のメンバー、 [ **KSPROPERTY\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff565617)不連続のサポートされている値の一覧を含む構造体、 [ **VIDEOENCODER\_ビットレート\_モード**](https://msdn.microsoft.com/library/windows/hardware/ff568695)列挙体。
+プロパティの値 (データの操作) は、VT\_I4 の値で指定された、 **PropertyItem.Values**のメンバー、 [ **KSPROPERTY\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_set)不連続のサポートされている値の一覧を含む構造体、 [ **VIDEOENCODER\_ビットレート\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)列挙体。
 
 ### <a name="comments"></a>コメント
 
-このプロパティを使用する方法のサンプルでは、次を参照してください。[エンコーダーのコード例](https://msdn.microsoft.com/library/windows/hardware/ff559532)します。
+このプロパティを使用する方法のサンプルでは、次を参照してください。[エンコーダーのコード例](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-code-examples)します。
 
 ミニドライバーは、静的なを指定するかに必要な**PropertyItem.Values**プロパティ項目またはハンドルの基本的な説明がクエリをサポートし、値を入力します。 ミニドライバーは、このプロパティの既定値も指定する必要があります。
 
@@ -63,7 +63,7 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスの
 
 ### <a name="see-also"></a>参照
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)、 [ **VIDEOENCODER\_ビットレート\_モード**](https://msdn.microsoft.com/library/windows/hardware/ff568695)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)、 [ **VIDEOENCODER\_ビットレート\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)
 
  
 

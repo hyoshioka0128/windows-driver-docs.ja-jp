@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e0864fb84b9f86c3be3db8d6c2658134276871
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96e6f0d2a57868707467aa795ddb6395622c7e59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344962"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384279"
 ---
 # <a name="kspropertybdatemplateconnections"></a>KSPROPERTY\_BDA\_テンプレート\_接続
 
@@ -68,7 +68,7 @@ ms.locfileid: "63344962"
 
 Pin とテンプレートのトポロジのノード間の接続の一覧は、配列 bda\_テンプレート\_接続構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -87,11 +87,11 @@ Pin とテンプレートのトポロジのノード間の接続の一覧は、�
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaPropertyTemplateConnections**](https://msdn.microsoft.com/library/windows/hardware/ff556501)
+[**BdaPropertyTemplateConnections**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertytemplateconnections)
 
-[**BDA\_テンプレート\_接続**](https://msdn.microsoft.com/library/windows/hardware/ff556558)
+[**BDA\_テンプレート\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_template_connection)
 
-[**KSPIN\_記述子\_例**](https://msdn.microsoft.com/library/windows/hardware/ff563534)
+[**KSPIN\_記述子\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

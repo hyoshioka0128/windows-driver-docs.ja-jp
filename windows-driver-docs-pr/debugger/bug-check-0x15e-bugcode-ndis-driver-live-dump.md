@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e98fcf1099ed5daaf66c261fd9f27a899dabb74e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f17c10a2034b88a4052d05867cf80c8a2b3806f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358115"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362169"
 ---
 # <a name="bug-check-0x15e-bugcodendisdriverlivedump"></a>バグ チェック 0x15E:BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358115"
 BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E の値を持ちます。 このバグのコードでは、NDIS がライブ カーネル ダンプをキャプチャしたことを示します。 NDIS には、このような状況でのバグ チェックが生成されません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_ドライバーのパラメーター
@@ -61,11 +61,11 @@ BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E �
 <td align="left"><p>このライブ ダンプされる原因となった致命的なエラーです。 設定可能な値:</p>
 <ol>
 <li>70:ユーザー モードに起因</li>
-<li>71:による <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff563661" data-raw-source="[NdisMRemoveMiniport](https://msdn.microsoft.com/library/windows/hardware/ff563661)">NdisMRemoveMiniport</a></strong></li>
-<li>72:による<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562727" data-raw-source="[NdisIMInitializeDeviceInstanceEx](https://msdn.microsoft.com/library/windows/hardware/ff562727)">NdisIMInitializeDeviceInstanceEx</a></strong>失敗</li>
-<li>73:による<em><a href="https://msdn.microsoft.com/library/windows/hardware/ff559435" data-raw-source="[MiniportRestart](https://msdn.microsoft.com/library/windows/hardware/ff559435)">MiniportRestart</a></em>失敗</li>
-<li>74:失敗の原因となった、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff569780" data-raw-source="[OID_PNP_SET_POWER (D0)](https://msdn.microsoft.com/library/windows/hardware/ff569780)">OID_PNP_SET_POWER (D0)</a>要求</li>
-<li>75:失敗の原因となった、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff569780" data-raw-source="[OID_PNP_SET_POWER (Dx)](https://msdn.microsoft.com/library/windows/hardware/ff569780)">OID_PNP_SET_POWER (Dx)</a>要求</li>
+<li>71:による <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismremoveminiport" data-raw-source="[NdisMRemoveMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismremoveminiport)">NdisMRemoveMiniport</a></strong></li>
+<li>72:による<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisiminitializedeviceinstanceex" data-raw-source="[NdisIMInitializeDeviceInstanceEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisiminitializedeviceinstanceex)">NdisIMInitializeDeviceInstanceEx</a></strong>失敗</li>
+<li>73:による<em><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart" data-raw-source="[MiniportRestart](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)">MiniportRestart</a></em>失敗</li>
+<li>74:失敗の原因となった、 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (D0)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER (D0)</a>要求</li>
+<li>75:失敗の原因となった、 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (Dx)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER (Dx)</a>要求</li>
 </ol></td>
 </tr>
 <tr class="even">
@@ -115,7 +115,7 @@ BUGCODE\_NDIS\_ドライバー\_LIVE\_ダンプ バグ コードが 0x0000015E �
 <td align="left"><p>パラメーター 4 の値は、パラメーター 2 の値によって異なります。 この一覧の各番号は、パラメーター 2 で同じ番号に対応します。</p>
 <ul>
 <li>0x01 :0</li>
-<li>0x02 :スタックのイベントの NET_PNP_EVENT_CODE します。 これらのコードの詳細については、次を参照してください <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568751" data-raw-source="[NET_PNP_EVENT](https://msdn.microsoft.com/library/windows/hardware/ff568751)">NET_PNP_EVENT</a></strong>.。</li>
+<li>0x02 :スタックのイベントの NET_PNP_EVENT_CODE します。 これらのコードの詳細については、次を参照してください <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event" data-raw-source="[NET_PNP_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)">NET_PNP_EVENT</a></strong>。</li>
 <li>0x03 :スタックの表示の NDIS_STATUS コードです。 使用<strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">! ndiskd.help</a></strong>にデコードします。</li>
 <li>0x04 :0</li>
 <li>パターン:0</li>

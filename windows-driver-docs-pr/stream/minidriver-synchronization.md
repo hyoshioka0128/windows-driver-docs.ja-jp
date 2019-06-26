@@ -9,12 +9,12 @@ keywords:
 - WDK ストリーミング ミニドライバーの同期
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f790ce83603ffe974e670073e93426509894414
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ffa765cb1a49fce79ac73cac13fc1402b770d26d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348520"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363298"
 ---
 # <a name="minidriver-synchronization"></a>ミニドライバーの同期
 
@@ -22,7 +22,7 @@ ms.locfileid: "63348520"
 
 
 
-ストリーミングのミニドライバーの開発者には、同期を処理するクラス ドライバーを許可するオプションがあります。 設定クラス ドライバー提供の同期を選択できますミニドライバーは、クラス ドライバーを使用したそのものを登録するときに、 **TurnOffSynchronization**のメンバー [ **HW\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff559682)に**FALSE**します。
+ストリーミングのミニドライバーの開発者には、同期を処理するクラス ドライバーを許可するオプションがあります。 設定クラス ドライバー提供の同期を選択できますミニドライバーは、クラス ドライバーを使用したそのものを登録するときに、 **TurnOffSynchronization**のメンバー [ **HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)に**FALSE**します。
 
 クラス ドライバーは、同期を処理するときに 2 つのミニドライバー コードが同時に実行されることになります。 クラス ドライバーは、ストリームのすべての要求をキューし、それらを一度に 1 つミニドライバーに渡します。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63348520"
 
 同期が無効にすると、ミニドライバーは WDM モデルに準拠している同期を実行する責任を負います。 場合、ミニドライバーはパッシブでコールバック\_レベル、Dpc、割り込みより高い IRQL イベントによって、割り込まれることができます。 同様に、ディスパッチに戻り、ミニドライバーが呼び出された場合\_レベル、割り込みによって、その後割り込まれることができます。 共有リソースを操作するミニドライバー関数は、アクセスを同期する必要があります。
 
-複数の要求に同時に実行できる同じまたは別のストリームにストリーム クラスの同期がオフの場合。 ミニドライバーは、独自の要求をキューし、ISR とその他のスレッドのハードウェアの同期を処理する必要があります。 スピンロック、ミュー テックス、および[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)ストリーム ミニドライバーのストリーム クラス同期せずに実行する同期オブジェクトのいくつか利用します。
+複数の要求に同時に実行できる同じまたは別のストリームにストリーム クラスの同期がオフの場合。 ミニドライバーは、独自の要求をキューし、ISR とその他のスレッドのハードウェアの同期を処理する必要があります。 スピンロック、ミュー テックス、および[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)ストリーム ミニドライバーのストリーム クラス同期せずに実行する同期オブジェクトのいくつか利用します。
 
  
 

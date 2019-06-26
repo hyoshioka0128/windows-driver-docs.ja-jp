@@ -6,12 +6,12 @@ ms.assetid: f00c0021-a909-4d76-9114-6710e1aa4307
 keywords:
 - IRP_MN_POWER_SEQUENCE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 827976878f8f947d00a9b96c78654108f662ecb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc80b848a2e4b93ae8d6c33651d8caffa23a1f7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391969"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383309"
 ---
 # <a name="irpmnpowersequence"></a>IRP\_MN\_POWER\_シーケンス
 
@@ -26,7 +26,7 @@ ms.locfileid: "63391969"
 
 ドライバーは、そのデバイスが特定の電源状態を実際に入力されたかどうかを判断するよう最適化として、この IRP を送信します。 この IRP のサポートは、省略可能です。
 
-この IRP を送信するドライバーを呼び出す必要があります[ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)を主要な IRP のコードを指定する、IRP を割り当てる[ **IRP\_MJ\_POWER**](irp-mj-power.md)と IRP コードの軽微な**IRP\_MN\_POWER\_シーケンス**します。 ドライバーは呼び出す必要がありますし、 [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) (Windows Vista) または[ **PoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff559654) (の Windows Server 2003、Windows XP、および Windows 2000) [次へ] の下位のドライバーに IRP を渡す。 電源マネージャーは、この IRP を送信できません。
+この IRP を送信するドライバーを呼び出す必要があります[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)を主要な IRP のコードを指定する、IRP を割り当てる[ **IRP\_MJ\_POWER**](irp-mj-power.md)と IRP コードの軽微な**IRP\_MN\_POWER\_シーケンス**します。 ドライバーは呼び出す必要がありますし、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (Windows Vista) または[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) (の Windows Server 2003、Windows XP、および Windows 2000) [次へ] の下位のドライバーに IRP を渡す。 電源マネージャーは、この IRP を送信できません。
 
 この IRP の送信者は IRQL で実行する必要があります&lt;= ディスパッチ\_レベル。
 

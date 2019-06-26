@@ -16,12 +16,12 @@ keywords:
 - データ転送の WDK カーネル、読み取り/書き込みディスパッチ ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c29c3d97b5b080923c38f399823f5e9693701f45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12500961b4e637857e934b225c3ac850e420303c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387195"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384980"
 ---
 # <a name="dispatchread-dispatchwrite-and-dispatchreadwrite-routines"></a>DispatchRead、DispatchWrite、DispatchReadWrite ルーチン
 
@@ -29,7 +29,7 @@ ms.locfileid: "63387195"
 
 
 
-ドライバーの[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)と[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの I/O 関数のコードの Irp の処理[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)、それぞれします。 または、組み合わされた[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは、これらの I/O 関数コードの両方の Irp を処理できます。
+ドライバーの[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)と[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの I/O 関数のコードの Irp の処理[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)、それぞれします。 または、組み合わされた[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは、これらの I/O 関数コードの両方の Irp を処理できます。
 
 コンピューターをシステムに転送元となるデータ デバイスのすべてのドライバーが必要、 *DispatchRead*ルーチン。 すべてのドライバーをシステムからデータを転送できるデバイスの必要があります、 *DispatchWrite*ルーチン。 双方向のデータを転送する任意のドライバーが組み合わされたことができますが*DispatchReadWrite*ルーチン。
 

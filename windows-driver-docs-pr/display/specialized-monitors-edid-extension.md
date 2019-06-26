@@ -14,12 +14,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: b3d0009724a22ad2aceb221c4dc99d89c21e8bc4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca05c3f72063d88d9ceacee2f279674412703b35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382333"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385322"
 ---
 # <a name="edid-extension-vsdb-for-hmds-and-specialized-displays"></a>EDID 拡張機能 (VSDB) HMDs し、特殊な表示
 
@@ -43,7 +43,7 @@ ms.locfileid: "63382333"
 
 ## <a name="vendor-specific-data-block-vsdb"></a>ベンダー固有のデータ ブロック (VSDB)
 
-EDID を含むファームウェア コードの作成を担当のパーティは、CTA 拡張機能のブロックを含めるし、そのブロック内で、マイクロソフトによって定義されたベンダー固有のデータ ブロック (VSDB) を配置する必要があります。 Standard では、"VESA 拡張拡張表示識別データ"EDIDs の構造が説明されている ([E EDID](https://www.vesa.org/vesa-standards/standards-summaries/))、version 1.4、release A を 2 にリビジョン セクション 2.2 の記述の拡張機能要素を参照してください。  CTA 拡張機能のブロックは、CTA の 861 シリーズ ドキュメント「するデジタル テレビのプロファイルの圧縮されていない高速デジタル インターフェイス」で定義されます。  7.5.4 (記事の執筆時) の最新版の公開されたバージョンでは、VSDBs が説明されている[CTA-g 861](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf)などその他のデータ ブロックを基準と VSDB の順序。 
+EDID を含むファームウェア コードの作成を担当のパーティは、CTA 拡張機能のブロックを含めるし、そのブロック内で、マイクロソフトによって定義されたベンダー固有のデータ ブロック (VSDB) を配置する必要があります。 Standard では、"VESA 拡張拡張表示識別データ"EDIDs の構造が説明されている ([E EDID](https://vesa.org/vesa-standards/standards-summaries/))、version 1.4、release A を 2 にリビジョン セクション 2.2 の記述の拡張機能要素を参照してください。  CTA 拡張機能のブロックは、CTA の 861 シリーズ ドキュメント「するデジタル テレビのプロファイルの圧縮されていない高速デジタル インターフェイス」で定義されます。  7\.5.4 (記事の執筆時) の最新版の公開されたバージョンでは、VSDBs が説明されている[CTA-g 861](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf)などその他のデータ ブロックを基準と VSDB の順序。 
 
 VSDB 構造体は、形式と、次の表に記載されている値が必要です。
 

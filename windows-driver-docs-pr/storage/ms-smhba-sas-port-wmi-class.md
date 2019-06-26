@@ -4,12 +4,12 @@ description: MS\_SMHBA\_SAS\_Port WMI クラス
 ms.assetid: d3528212-f884-4db8-aadc-eb4ca15814da
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 170483796e69491975bb9211fb83ed3f1a93b70a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d32fd65f39bf2bd23c3e6f0980f074ce3fef5cd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325298"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386132"
 ---
 # <a name="mssmhbasasport-wmi-class"></a>MS\_SMHBA\_SAS\_Port WMI クラス
 
@@ -40,7 +40,7 @@ class MS_SMHBA_SAS_Port
 
 このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SMHBA\_SAS\_Port**](https://msdn.microsoft.com/library/windows/hardware/ff563186)
+[**MS\_SMHBA\_SAS\_Port**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_sas_port)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

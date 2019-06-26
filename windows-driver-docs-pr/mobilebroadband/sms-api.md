@@ -4,12 +4,12 @@ description: SMS API
 ms.assetid: d39d82b0-d88d-4448-a24a-22f329e95106
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20444950ac4e11f4354c9bc0004bcc3b8315700c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9392310bf93f85273be27bb4d1256b23643ba6a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355455"
 ---
 # <a name="sms-api"></a>SMS API
 
@@ -28,7 +28,7 @@ SMS API は、次のユース ケースをサポートしています。
 
 -   モバイル ブロード バンド デバイスのプロパティを取得 (アカウントの電話番号、モバイル通信用のグローバル システム\[GSM\]またはコード Division Multiple Access \[CDMA\]と同様の情報)。
 
-SMS API についての詳細については、次を参照してください。 [ **Windows.Devices.Sms 名前空間**](https://msdn.microsoft.com/library/windows/apps/br206567)します。
+SMS API についての詳細については、次を参照してください。 [ **Windows.Devices.Sms 名前空間**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

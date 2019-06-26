@@ -5,16 +5,16 @@ ms.assetid: 34B88444-DDF1-4AEA-8277-3EA87CA7004A
 keywords: プロトコル ドライバー OID 要求インターフェイス、同期プロトコル driverSynchronous OID 呼び出しプロトコル driverWDK 同期 Oid、プロトコル driverSynchronous OID 要求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2744d5b295dcaf08f9e5c76bf01bd212ce101d98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 777d7a36cfb8366b9a08a2566302b512d4778d4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330527"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385453"
 ---
 # <a name="protocol-driver-synchronous-oid-requests"></a>プロトコル ドライバー同期 OID 要求
 
-同期の OID の要求パスをサポートするプロトコルのドライバーの呼び出し、 [ **NdisSynchronousOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/BF539DDA-59ED-4010-88BC-3C7D8DC475EF)同期 OID を発行する関数。
+同期の OID の要求パスをサポートするプロトコルのドライバーの呼び出し、 [ **NdisSynchronousOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissynchronousoidrequest)同期 OID を発行する関数。
 
 プロトコルのドライバー、*同期 OID 要求インターフェイス*とは異なり、標準モードと直接 OID 要求インターフェイス プロトコル ドライバーを非同期に実装する必要はありません*完了*コールバック関数。 これは、パスの同期の性質のためです。 [全般] では、通常、直接、および同期の Oid との違いについての詳細については、次を参照してください。[同期 OID 要求インターフェイスで NDIS 6.80](synchronous-oid-request-interface-in-ndis-6-80.md)します。
 
@@ -25,5 +25,5 @@ ms.locfileid: "63330527"
 
 | 同期の OID 関数 | 標準の OID 関数 |
 | --- | --- |
-| [*NdisSynchronousOidRequest*](https://msdn.microsoft.com/library/windows/hardware/BF539DDA-59ED-4010-88BC-3C7D8DC475EF) | [*NdisOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff563710) |
+| [*NdisSynchronousOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissynchronousoidrequest) | [*NdisOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest) |
 

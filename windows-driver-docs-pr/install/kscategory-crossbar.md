@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f2d0da83456ef4219aa579fc8b79f2a09b82e5f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa5ce0a7f5e56a8db1d573b4192ffb949c0b221d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385905"
 ---
 # <a name="kscategorycrossbar"></a>KSCATEGORY_CROSSBAR
 
 
-KSCATEGORY_CROSSBAR[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)ビデオとオーディオのストリームをルーティングするクロスバー デバイスの機能のカテゴリ (KS)。
+KSCATEGORY_CROSSBAR[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)ビデオとオーディオのストリームをルーティングするクロスバー デバイスの機能のカテゴリ (KS)。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src\\swtuner\\algtuner。* WDK のディレクトリ。
 
-オーディオとビデオに対するクロスバー デバイスについては、次を参照してください。[ビデオ キャプチャ デバイスでのフィルター使用](https://msdn.microsoft.com/library/windows/hardware/ff559598)と[アナログ ビデオ カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff554095)します。
+オーディオとビデオに対するクロスバー デバイスについては、次を参照してください。[ビデオ キャプチャ デバイスでのフィルター使用](https://docs.microsoft.com/windows-hardware/drivers/stream/filters-used-with-the-video-capture-devices)と[アナログ ビデオ カテゴリ](https://docs.microsoft.com/windows-hardware/drivers/stream/analog-video-category)します。
 
 <a name="requirements"></a>必要条件
 ------------

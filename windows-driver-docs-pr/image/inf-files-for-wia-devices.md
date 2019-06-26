@@ -4,17 +4,17 @@ description: WIA デバイスの INF ファイル
 ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ef278843da0b6e35b5954b238a2f44f201f5a51c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 072cde1e6e71a124032d2e7ec074d7622e91ecfb
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352120"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391416"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA デバイスの INF ファイル
 
 
-既定クラスのインストーラーを静止画像デバイス、 *sti\_ci.dll*、INF ファイルのエントリの特殊なセットを認識します。 内でのデバイスの INF ファイル内でこれらのエントリを配置する必要があります[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)します。 エントリは、次の表で説明します。
+既定クラスのインストーラーを静止画像デバイス、 *sti\_ci.dll*、INF ファイルのエントリの特殊なセットを認識します。 内でのデバイスの INF ファイル内でこれらのエントリを配置する必要があります[ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。 エントリは、次の表で説明します。
 
 <table>
 <colgroup>
@@ -93,15 +93,15 @@ ms.locfileid: "63352120"
 <p>Message1 原因がシステム提供のメッセージが表示されます、およびセットの値、 <strong>CreateFileName</strong>エントリの値を AUTO にします。</p>
 <p>スキャナーとカメラを手動でインストールを必要とする両方に適用されます。</p></td>
 <td><p>省略可能</p>
-<p>プラグ アンド プレイ デバイスの場合は、注意してください<strong>PortSelect</strong>は無視されます、デバイスが引き続き必要がありますが、 <strong>CreateFileName</strong> WIA をデバイスを読み込むために、エントリの値が自動に設定します。 使用して、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff546320" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546320)"> <strong>INF AddReg ディレクティブ</strong></a>にこのエントリを追加する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547344" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547344)"> <strong>INF DDInstall セクション</strong></a>のデバイスの INF ファイル。</p></td>
+<p>プラグ アンド プレイ デバイスの場合は、注意してください<strong>PortSelect</strong>は無視されます、デバイスが引き続き必要がありますが、 <strong>CreateFileName</strong> WIA をデバイスを読み込むために、エントリの値が自動に設定します。 使用して、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)"> <strong>INF AddReg ディレクティブ</strong></a>にこのエントリを追加する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)"> <strong>INF DDInstall セクション</strong></a>のデバイスの INF ファイル。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**  デバイスを通信するために、ユーザー モードのクライアント (、ミニドライバー) は、デバイスのファイル名を作成したり開いたりするオブジェクトの名前を指定する文字列 WIA サービスを問い合わせる必要があります。 (ファイル名がディスク ファイルの名前になります。)このようなクエリに応答して、WIA サービスの取得から、デバイスのファイル名、 **CreateFileName**レジストリ エントリ。 (、 *Usbscan.sys*と*scsiscan.sys*クラスのインストーラーとカーネル モード ドライバーが、このエントリを作成します)。ミニドライバーは、呼び出すことによってこのファイル名を受け取る、 [ **IStiDeviceControl::GetMyDevicePortName** ](https://msdn.microsoft.com/library/windows/hardware/ff542944)メソッド。 呼び出すときに、ミニドライバーはこのファイル名を使用してできます、 [ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)関数 (Microsoft Windows SDK のドキュメントで説明) をデバイスを識別するハンドルを開きます。
-クラスのインストーラーを作成、デバイスを手動でインストールする場合、 **CreateFileName**エントリがポートの選択 ページで、ユーザーの選択に依存するいずれかの値を設定します。COM*X*、LPT*X*、または AUTO です。 手動でインストールされている一部のデバイス (ネットワーク スキャナーの例) では、ポートは必要ありません。 このような場合、結果として得られるポートの選択 ダイアログ ユーザーが混乱することができます。 このダイアログ ボックスを次のエントリを追加してが表示されないようにすることができます、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)のデバイスの INF ファイル。
+**注**  デバイスを通信するために、ユーザー モードのクライアント (、ミニドライバー) は、デバイスのファイル名を作成したり開いたりするオブジェクトの名前を指定する文字列 WIA サービスを問い合わせる必要があります。 (ファイル名がディスク ファイルの名前になります。)このようなクエリに応答して、WIA サービスの取得から、デバイスのファイル名、 **CreateFileName**レジストリ エントリ。 (、 *Usbscan.sys*と*scsiscan.sys*クラスのインストーラーとカーネル モード ドライバーが、このエントリを作成します)。ミニドライバーは、呼び出すことによってこのファイル名を受け取る、 [ **IStiDeviceControl::GetMyDevicePortName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)メソッド。 呼び出すときに、ミニドライバーはこのファイル名を使用してできます、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数 (Microsoft Windows SDK のドキュメントで説明) をデバイスを識別するハンドルを開きます。
+クラスのインストーラーを作成、デバイスを手動でインストールする場合、 **CreateFileName**エントリがポートの選択 ページで、ユーザーの選択に依存するいずれかの値を設定します。COM*X*、LPT*X*、または AUTO です。 手動でインストールされている一部のデバイス (ネットワーク スキャナーの例) では、ポートは必要ありません。 このような場合、結果として得られるポートの選択 ダイアログ ユーザーが混乱することができます。 このダイアログ ボックスを次のエントリを追加してが表示されないようにすることができます、 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)のデバイスの INF ファイル。
 
  
 
@@ -119,7 +119,7 @@ ms.locfileid: "63352120"
 
 ### <a name="additional-inf-file-entries"></a>追加の INF ファイルのエントリ
 
-次の表に、エントリは、デバイスのによって示されるセクション内に配置する必要があります[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320):
+次の表に、エントリは、デバイスのによって示されるセクション内に配置する必要があります[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive):
 
 <table>
 <colgroup>
@@ -140,7 +140,7 @@ ms.locfileid: "63352120"
 <td><p>デバイスを使用して接続の種類を示します。</p>
 <p>1, 1 − 汎用 WDM デバイス</p>
 <p>1, 2 − SCSI デバイス</p>
-<p>1.4 − USB デバイス</p>
+<p>1\.4 − USB デバイス</p>
 <p>1,8 − シリアル デバイス</p>
 <p>1,16 − 並列デバイス</p></td>
 <td><p>省略可能</p></td>
@@ -162,11 +162,11 @@ ms.locfileid: "63352120"
 
  
 
-既定クラスのインストーラーを静止画像デバイス標準をサポートする[ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)します。
+既定クラスのインストーラーを静止画像デバイス標準をサポートする[ **INF CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)します。
 
 まだのイメージのデバイスの既定の INF ファイル*sti.inf*デバイスの種類ごとに 2 つのインストール セクションを次のように定義します。
 
--   [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)、内で参照されている必要があります、 *DDInstall*のベンダーから提供された INF ファイルの次の表に示すようにします。
+-   [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)、内で参照されている必要があります、 *DDInstall*のベンダーから提供された INF ファイルの次の表に示すようにします。
 
     <table>
     <colgroup>
@@ -209,7 +209,7 @@ ms.locfileid: "63352120"
 
 <!-- -->
 
--   内で参照する必要があります INF DDInstall サービス セクションを[ **INF DDInstall.Services セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547349)のベンダーから提供された INF ファイルの次の表に示すようにします。
+-   内で参照する必要があります INF DDInstall サービス セクションを[ **INF DDInstall.Services セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)のベンダーから提供された INF ファイルの次の表に示すようにします。
 
     <table>
     <colgroup>
@@ -304,7 +304,7 @@ WIA デバイスとして、デバイスを指定するには、ミニドライ�
 
 **注釈**
 
-スキャナー、INF ファイルを開発するときに使用できます[Microsoft OS ディスクリプター](https://msdn.microsoft.com/library/windows/hardware/gg463179.aspx)互換性 ID 機能を有効にします。 これを行う場合は、複数のスキャナー モデルと互換性がある 1 つのスキャナー ドライバーを許可します。
+スキャナー、INF ファイルを開発するときに使用できます[Microsoft OS ディスクリプター](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))互換性 ID 機能を有効にします。 これを行う場合は、複数のスキャナー モデルと互換性がある 1 つのスキャナー ドライバーを許可します。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6150b222d9d94d17ee2c8664da68787345c17ac9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d35a1b8eefba0adeafd91531b8c639eae61575a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361702"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374624"
 ---
 # <a name="kspropertybdamodulationtype"></a>KSPROPERTY\_BDA\_変調\_型
 
@@ -68,7 +68,7 @@ ModulationType 列挙型から返される値は、復調器の種類を識別�
 
 **NodeId** KSP のメンバー\_ノード復調器ノードの識別子を指定します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -87,9 +87,9 @@ ModulationType 列挙型から返される値は、復調器の種類を識別�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
-[**ModulationType**](https://msdn.microsoft.com/library/windows/hardware/ff567735)
+[**ModulationType**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/modulationtype)
 
  
 

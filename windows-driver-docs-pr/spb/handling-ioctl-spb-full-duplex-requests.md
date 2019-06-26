@@ -4,12 +4,12 @@ description: SPI などのいくつかのバスは、読み取りを有効にし
 ms.assetid: B200461F-9F9C-43A7-BA78-0864FD58C64E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81667c573880a1c55ceace8dc78e959d3d0bba87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3c535226f6e57ad27718b01537ea4fd438ca0c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356736"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385229"
 ---
 # <a name="handling-ioctlspbfullduplex-requests"></a>処理の IOCTL\_SPB\_完全\_双方向の要求
 
@@ -23,8 +23,8 @@ SPB コント ローラーのドライバーでは、全二重転送の I/O 要�
 
 [ **IOCTL\_SPB\_完全\_双方向**](https://msdn.microsoft.com/library/windows/hardware/hh974774)と同じ要求の形式が、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)要求が、これらの制約。
 
--   [ **SPB\_転送\_一覧**](https://msdn.microsoft.com/library/windows/hardware/hh406221)要求内の構造が正確に 2 つのエントリを含める必要があります。 最初のエントリには、デバイスに書き込むデータを格納しているバッファーがについて説明します。 2 番目のエントリには、デバイスから読み取られるデータを保持するために使用されるバッファーがについて説明します。
--   各[ **SPB\_転送\_一覧\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/hh406223)転送リスト内の構造を指定する必要があります、 **DelayInUs**ゼロの値。
+-   [ **SPB\_転送\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spb/ns-spb-spb_transfer_list)要求内の構造が正確に 2 つのエントリを含める必要があります。 最初のエントリには、デバイスに書き込むデータを格納しているバッファーがについて説明します。 2 番目のエントリには、デバイスから読み取られるデータを保持するために使用されるバッファーがについて説明します。
+-   各[ **SPB\_転送\_一覧\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spb/ns-spb-spb_transfer_list_entry)転送リスト内の構造を指定する必要があります、 **DelayInUs**ゼロの値。
 
 読み取りと書き込みの転送は、全二重転送中に同時に開始します。 データの書き込みの最初のバイトは、読み取りデータの最初のバイトとして同時に、バス経由で送信されます。
 
@@ -41,9 +41,9 @@ SPB コント ローラーのドライバーでは、全二重転送の I/O 要�
 ## <a name="parameter-checking"></a>パラメーターのチェック
 
 
-ただし、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)と**IOCTL\_SPB\_完全\_双方向**要求と同様の形式、SPB フレームワーク拡張機能 (SpbCx) によって異なる方法で処理されます。 **IOCTL\_SPB\_EXECUTE\_シーケンス**要求、SpbCx は、要求内のパラメーター値を検証し、要求の送信元のプロセスのコンテキストでは、要求のバッファーをキャプチャします。 SpbCx 渡します**IOCTL\_SPB\_EXECUTE\_シーケンス**SPB コント ローラーを使用してドライバー、ドライバーの要求[ *EvtSpbControllerIoSequence*](https://msdn.microsoft.com/library/windows/hardware/hh450810)コールバック関数は、これらの要求をささげます。
+ただし、 [ **IOCTL\_SPB\_EXECUTE\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/hh450857)と**IOCTL\_SPB\_完全\_双方向**要求と同様の形式、SPB フレームワーク拡張機能 (SpbCx) によって異なる方法で処理されます。 **IOCTL\_SPB\_EXECUTE\_シーケンス**要求、SpbCx は、要求内のパラメーター値を検証し、要求の送信元のプロセスのコンテキストでは、要求のバッファーをキャプチャします。 SpbCx 渡します**IOCTL\_SPB\_EXECUTE\_シーケンス**SPB コント ローラーを使用してドライバー、ドライバーの要求[ *EvtSpbControllerIoSequence*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_sequence)コールバック関数は、これらの要求をささげます。
 
-これに対し、SpbCx が扱われます、 **IOCTL\_SPB\_完全\_双方向**IOCTL、ドライバーの定義済みのカスタム要求として要求します。 SpbCx 渡します**IOCTL\_SPB\_完全\_双方向**SPB コント ローラーを使用してドライバー、ドライバーの要求[ *EvtSpbControllerIoOther*](https://msdn.microsoft.com/library/windows/hardware/hh450805)も、ドライバーがサポートする任意のカスタムの IOCTL 要求を処理するコールバック関数。 SpbCx には、これらの要求パラメーターをチェックまたはバッファーのキャプチャは行われません。 ドライバーは、パラメーターのチェック、または、IOCTL に必要なバッファーのキャプチャ要求を介して、ドライバーが受け取るその*EvtSpbControllerIoOther*関数。 バッファーのキャプチャを有効にするドライバーを指定する必要があります、 [ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)コールバック関数、ドライバーの登録時にその*EvtSpbControllerIoOther*関数。 詳細については、次を参照してください。[を使用して、 **SPB\_転送\_一覧**カスタム Ioctl 構造](https://msdn.microsoft.com/library/windows/hardware/hh974776)します。
+これに対し、SpbCx が扱われます、 **IOCTL\_SPB\_完全\_双方向**IOCTL、ドライバーの定義済みのカスタム要求として要求します。 SpbCx 渡します**IOCTL\_SPB\_完全\_双方向**SPB コント ローラーを使用してドライバー、ドライバーの要求[ *EvtSpbControllerIoOther*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_other)も、ドライバーがサポートする任意のカスタムの IOCTL 要求を処理するコールバック関数。 SpbCx には、これらの要求パラメーターをチェックまたはバッファーのキャプチャは行われません。 ドライバーは、パラメーターのチェック、または、IOCTL に必要なバッファーのキャプチャ要求を介して、ドライバーが受け取るその*EvtSpbControllerIoOther*関数。 バッファーのキャプチャを有効にするドライバーを指定する必要があります、 [ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)コールバック関数、ドライバーの登録時にその*EvtSpbControllerIoOther*関数。 詳細については、次を参照してください。[を使用して、 **SPB\_転送\_一覧**カスタム Ioctl 構造](https://docs.microsoft.com/windows-hardware/drivers/spb/using-the-spb-transfer-list-structure)します。
 
 
 

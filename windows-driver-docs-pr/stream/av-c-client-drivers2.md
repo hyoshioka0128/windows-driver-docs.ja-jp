@@ -7,12 +7,12 @@ keywords:
 - AV/C WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f5dfa74d7f2b1a9229e23579d29c8f950ac43ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5e71d8913ce0fbc98083be2daaa52a2bd3d2784
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384825"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386770"
 ---
 # <a name="avc-client-drivers"></a>AV/C クライアント ドライバー
 
@@ -36,11 +36,11 @@ AV/C プロトコルをサポートするためには、Microsoft は、次の 2
 
 提供されるオプションのサポートを使用するデバイスの機能、に応じて*Avcstrm.sys* SDDV や MPEG2 TS のデータのストリーミングを支援します。 場合*Avcstrm.sys* 、接続管理とデータのストリーミングによって公開される機能を使用して、デバイスで使用される形式はサポートされません*61883.sys*、下にあるドライバースタックです。
 
-サブユニット ドライバーが従う必要があります、 [Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698) (WDM) アーキテクチャ。 サブユニット ドライバーには、Stream クラス インターフェイスまたは AVStream インターフェイスを使用できます。 AVStream は、サブユニット ドライバーを開発するための推奨されるインターフェイスです。 Stream クラスのインターフェイスは廃止されていますと Microsoft は、さらに開発を廃止します。 これら 2 つのインターフェイスの詳細については、次を参照してください。 [AV/C カーネル ストリーミング インターフェイスと KS プロキシ プラグイン](av-c-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins.md)します。
+サブユニット ドライバーが従う必要があります、 [Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) (WDM) アーキテクチャ。 サブユニット ドライバーには、Stream クラス インターフェイスまたは AVStream インターフェイスを使用できます。 AVStream は、サブユニット ドライバーを開発するための推奨されるインターフェイスです。 Stream クラスのインターフェイスは廃止されていますと Microsoft は、さらに開発を廃止します。 これら 2 つのインターフェイスの詳細については、次を参照してください。 [AV/C カーネル ストリーミング インターフェイスと KS プロキシ プラグイン](av-c-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins.md)します。
 
 AV/C のサブユニット ドライバーを作成する方法の詳細については、次を参照してください。 [AV/C 概要](av-c-overview.md)します。 使用する方法の詳細についての*Avcstrm.sys*ストリーミング データを支援するために、次を参照してください。 [/C AV ストリーミングの概要](av-c-streaming-overview.md)します。
 
-AV/C のプロトコルのサポートは、IEEE 1394 のドライバー スタックおよび IEC 61883 標準に基づいて構築されます。 IEC 61883 ドライバー スタックの詳細については、次を参照してください。 [IEC 61883 クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537188)します。
+AV/C のプロトコルのサポートは、IEEE 1394 のドライバー スタックおよび IEC 61883 標準に基づいて構築されます。 IEC 61883 ドライバー スタックの詳細については、次を参照してください。 [IEC 61883 クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)します。
 
  
 

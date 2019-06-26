@@ -10,12 +10,12 @@ keywords:
 - フィルター ドライバー WDK AV/C のストリーミング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2579916cf89f73d9c57c03877f51363883f3c6c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbf100cd30e67d04b732019bf2abf4b2d66058bf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386745"
 ---
 # <a name="avc-streaming-overview"></a>AV/C ストリーミングの概要
 
@@ -37,7 +37,7 @@ ms.locfileid: "63323533"
 
 AV/C Stream フィルター ドライバーに依存、 *61883.sys*プロトコル ドライバー。 *Avcstrm.sys*使用によって提供される Ddi *61883.sys*アイソクロナス接続とアイソクロナス データがストリーミングとそれを実行するために*Avc.sys*外部デバイスの制御 AV/C コマンドを発行するには.
 
-AV/C ストリーミング フィルター ドライバーの構築、AV/C プロトコルの詳細については、次を参照してください。 [AV/C 概要](av-c-overview.md)します。 61883 プロトコルの詳細については、次を参照してください。 [IEC 61883 クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537188)します。
+AV/C ストリーミング フィルター ドライバーの構築、AV/C プロトコルの詳細については、次を参照してください。 [AV/C 概要](av-c-overview.md)します。 61883 プロトコルの詳細については、次を参照してください。 [IEC 61883 クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)します。
 
 詳細情報とリソースは、次のリンクを参照してください。
 

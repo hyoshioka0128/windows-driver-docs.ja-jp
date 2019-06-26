@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7c7212c67a0f41bce4080445b77bb672a349d19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfeba975abf3b203a0fdcd590c9cf82578a3459e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379702"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384833"
 ---
 # <a name="irpmjdirectorycontrol"></a>IRP\_MJ\_ディレクトリ\_コントロール
 
@@ -39,7 +39,7 @@ IRP\_MJ\_ディレクトリ\_コントロール要求がや他のカーネル �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -72,13 +72,13 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://msdn.microsoft.com/library/windows/hardware/ff550659)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所のディレクトリの管理要求の処理中に、次のメンバーで設定されている情報を使用できます。
+ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所のディレクトリの管理要求の処理中に、次のメンバーで設定されている情報を使用できます。
 
 <a href="" id="deviceobject"></a>*デバイス オブジェクト*  
 ターゲット デバイスのオブジェクトへのポインター。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-ポインター、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)最終的な完了の状態と、要求された操作に関する情報を受け取る。
+ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。
 
 <a href="" id="irp--userbuffer"></a>*Irp-&gt;UserBuffer*  
 ディレクトリの内容に関する要求された情報を受け取る呼び出し元が指定の出力バッファーへのポインター。
@@ -157,7 +157,7 @@ IRP を指定します\_MJ\_ディレクトリ\_コントロール。
 -   IRP\_MN\_クエリ\_ディレクトリ
 
 <a href="" id="irpsp--parameters-notifydirectory-completionfilter"></a>*IrpSp-&gt;Parameters.NotifyDirectory.CompletionFilter*  
-詳細については、の説明を参照して、 *CompletionFilter*パラメーターを[ **FsRtlNotifyFullChangeDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff547026)します。
+詳細については、の説明を参照して、 *CompletionFilter*パラメーターを[ **FsRtlNotifyFullChangeDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)します。
 
 <a href="" id="irpsp--parameters-notifydirectory-length"></a>*IrpSp-&gt;Parameters.NotifyDirectory.Length*  
 によって示されるバッファーのバイト長*Irp -&gt;UserBuffer*します。
@@ -175,38 +175,38 @@ IRP を指定します\_MJ\_ディレクトリ\_コントロール。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>FileBothDirectoryInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540235" data-raw-source="[&lt;strong&gt;FILE_BOTH_DIR_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540235)"> <strong>FILE_BOTH_DIR_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_both_dir_information" data-raw-source="[&lt;strong&gt;FILE_BOTH_DIR_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_both_dir_information)"> <strong>FILE_BOTH_DIR_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileDirectoryInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540248" data-raw-source="[&lt;strong&gt;FILE_DIRECTORY_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540248)"> <strong>FILE_DIRECTORY_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_directory_information" data-raw-source="[&lt;strong&gt;FILE_DIRECTORY_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_directory_information)"> <strong>FILE_DIRECTORY_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFullDirectoryInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540289" data-raw-source="[&lt;strong&gt;FILE_FULL_DIR_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540289)"> <strong>FILE_FULL_DIR_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_full_dir_information" data-raw-source="[&lt;strong&gt;FILE_FULL_DIR_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_full_dir_information)"> <strong>FILE_FULL_DIR_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileIdBothDirectoryInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540303" data-raw-source="[&lt;strong&gt;FILE_ID_BOTH_DIR_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540303)"> <strong>FILE_ID_BOTH_DIR_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_both_dir_information" data-raw-source="[&lt;strong&gt;FILE_ID_BOTH_DIR_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_both_dir_information)"> <strong>FILE_ID_BOTH_DIR_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileIdFullDirectoryInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540310" data-raw-source="[&lt;strong&gt;FILE_ID_FULL_DIR_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540310)"> <strong>FILE_ID_FULL_DIR_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_full_dir_information" data-raw-source="[&lt;strong&gt;FILE_ID_FULL_DIR_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_full_dir_information)"> <strong>FILE_ID_FULL_DIR_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileNamesInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540329" data-raw-source="[&lt;strong&gt;FILE_NAMES_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540329)"> <strong>FILE_NAMES_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_names_information" data-raw-source="[&lt;strong&gt;FILE_NAMES_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_names_information)"> <strong>FILE_NAMES_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileObjectIdInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540335" data-raw-source="[&lt;strong&gt;FILE_OBJECTID_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540335)"> <strong>FILE_OBJECTID_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_objectid_information" data-raw-source="[&lt;strong&gt;FILE_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_objectid_information)"> <strong>FILE_OBJECTID_INFORMATION</strong> </a>ファイルごとに構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileQuotaInformation</strong></p></td>
@@ -214,7 +214,7 @@ IRP を指定します\_MJ\_ディレクトリ\_コントロール。
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileReparsePointInformation</strong></p></td>
-<td align="left"><p>1 つを返す<a href="https://msdn.microsoft.com/library/windows/hardware/ff540354" data-raw-source="[&lt;strong&gt;FILE_REPARSE_POINT_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540354)"> <strong>FILE_REPARSE_POINT_INFORMATION</strong> </a>ディレクトリの構造体。</p></td>
+<td align="left"><p>1 つを返す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_reparse_point_information" data-raw-source="[&lt;strong&gt;FILE_REPARSE_POINT_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_reparse_point_information)"> <strong>FILE_REPARSE_POINT_INFORMATION</strong> </a>ディレクトリの構造体。</p></td>
 </tr>
 </tbody>
 </table>
@@ -230,31 +230,31 @@ IRP を指定します\_MJ\_ディレクトリ\_コントロール。
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_両方\_DIR\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540235)
+[**ファイル\_両方\_DIR\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_both_dir_information)
 
-[**ファイル\_ディレクトリ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540248)
+[**ファイル\_ディレクトリ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_directory_information)
 
-[**ファイル\_完全\_DIR\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540289)
+[**ファイル\_完全\_DIR\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_full_dir_information)
 
-[**ファイル\_ID\_両方\_DIR\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540303)
+[**ファイル\_ID\_両方\_DIR\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_both_dir_information)
 
-[**ファイル\_ID\_完全\_DIR\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540310)
+[**ファイル\_ID\_完全\_DIR\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_id_full_dir_information)
 
-[**ファイル\_名\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540329)
+[**ファイル\_名\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_names_information)
 
-[**ファイル\_OBJECTID\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540335)
+[**ファイル\_OBJECTID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_objectid_information)
 
-[**ファイル\_再解析\_ポイント\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540354)
+[**ファイル\_再解析\_ポイント\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_reparse_point_information)
 
-[**FsRtlNotifyFullChangeDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff547026)
+[**FsRtlNotifyFullChangeDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_クエリ\_クォータ**](irp-mj-query-quota.md)
 

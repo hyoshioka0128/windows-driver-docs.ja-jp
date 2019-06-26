@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0192df62d3d4840b46116800ae07a47b00eb9d24
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75a86ccad7321ae0400279aac63bd5f916eb1103
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387039"
 ---
 # <a name="difnewdevicewizardselect"></a>DIF_NEWDEVICEWIZARD_SELECT
 
@@ -58,16 +58,16 @@ Windows では、「デバイス ドライバーを選択」ページが表示�
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)デバイスを格納しています。
+識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)デバイスを格納しています。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-ポインターを提供する[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを識別する構造体。
+ポインターを提供する[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを識別する構造体。
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、 *DeviceInfoData*します。
+デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*します。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-[ **SP_NEWDEVICEWIZARD_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff553305)構造が関連付けられている、 *DeviceInfoData*します。
+[ **SP_NEWDEVICEWIZARD_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)構造が関連付けられている、 *DeviceInfoData*します。
 
 ### <a name="installer-output"></a>インストーラーの出力
 
@@ -75,7 +75,7 @@ Windows では、「デバイス ドライバーを選択」ページが表示�
 インストーラーでは、デバイスのインストール パラメーターでフラグを変更できます。 Windows では、この差分要求の完了時にフラグをチェックしません。 ただしに後で、インストール プロセスにチェックインします。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-インストーラーを変更できる、 [ **SP_NEWDEVICEWIZARD_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff553305)カスタム ページを指定します。
+インストーラーを変更できる、 [ **SP_NEWDEVICEWIZARD_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)カスタム ページを指定します。
 
 ### <a name="installer-return-value"></a>インストーラーの戻り値
 
@@ -95,11 +95,11 @@ DIF_NEWDEVICEWIZARD_SELECT 要求は、標準の [ドライバ] ページを置�
 
 共同インストーラーは、クラスでは、処理後のパスと場合にのみ、カスタム ページを追加する必要がありますインストーラーは、カスタム ページを追加しませんでした。 クラスのインストーラーは、ページを追加する場合、共同インストーラーはいけない。 それ以外の場合、ユーザーの場合は、ドライバーを 2 回選択するよく寄せられる可能性があります。
 
-インストーラーによって、カスタム ページの選択、インストーラーは、選択したドライバーを設定する必要があります。 ユーザーがクリックした後、ウィザード ページをサポートするインストーラーのコードで**次**、インストーラーを呼び出す必要があります[ **SetupDiSetSelectedDriver**](https://msdn.microsoft.com/library/windows/hardware/ff552183)します。
+インストーラーによって、カスタム ページの選択、インストーラーは、選択したドライバーを設定する必要があります。 ユーザーがクリックした後、ウィザード ページをサポートするインストーラーのコードで**次**、インストーラーを呼び出す必要があります[ **SetupDiSetSelectedDriver**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)します。
 
 インストーラーには、Wizard 97 ヘッダーのタイトルとカスタム ウィザード ページの PROPSHEETPAGE 構造内のヘッダーのサブタイトルを指定する必要があります。 インストーラーは、ウィザードのシステム提供のタイトルを置き換えるいない必要があります。 PROPSHEETPAGE 構造体のドキュメントとプロパティのページの詳細については、Microsoft Windows SDK を参照してください。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -132,15 +132,15 @@ DIF_NEWDEVICEWIZARD_SELECT 要求は、標準の [ドライバ] ページを置�
 
 [**DIF_SELECTDEVICE**](dif-selectdevice.md)
 
-[**SetupDiSetSelectedDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552176)
+[**SetupDiSetSelectedDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddevice)
 
-[**SetupDiSetSelectedDriver**](https://msdn.microsoft.com/library/windows/hardware/ff552183)
+[**SetupDiSetSelectedDriver**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_NEWDEVICEWIZARD_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff553305)
+[**SP_NEWDEVICEWIZARD_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 
  
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8b8591dcfaca727f64c0309e8308355f360090
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76716ea9c151d4bb37c6f2784756672dada3b1aa
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352858"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392128"
 ---
 # <a name="wlantimedlinkquality-rule-ndis"></a>WlanTimedLinkQuality ルール (ndis)
 
@@ -30,7 +30,7 @@ ms.locfileid: "63352858"
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x0009400B) |
+| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x0009400B) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -46,7 +46,7 @@ ms.locfileid: "63352858"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a>を選択し、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh454208" data-raw-source="[NDIS/WIFI verification](https://msdn.microsoft.com/library/windows/hardware/hh454208)">NDIS/WIFI 検証</a>オプション。</p></td>
+<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>を選択し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[NDIS/WIFI verification](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">NDIS/WIFI 検証</a>オプション。</p></td>
 </tr>
 </tbody>
 </table>
@@ -56,13 +56,13 @@ ms.locfileid: "63352858"
 <a name="applies-to"></a>対象
 ----------
 
-[**MiniportHaltEx**](https://msdn.microsoft.com/library/windows/hardware/ff559388)
-[**MiniportOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff559416)
-[**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600) 
- [ **NdisMOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563622)も参照してください
+[**MiniportHaltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)
+[**MiniportOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex) 
+ [ **NdisMOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)も参照してください
 --------
 
-[NDIS\_状態\_DOT11\_リンク\_品質](https://msdn.microsoft.com/library/windows/hardware/ff567344)
+[NDIS\_状態\_DOT11\_リンク\_品質](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-link-quality)
  
 
  

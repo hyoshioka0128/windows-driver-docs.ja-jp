@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - WSK_RELEASE_SD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e6b760af3a66ce7cf6b4f02c0fb43aa9edc91c43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43396190f4f9d1e890437251ebfb5a922f1f1b4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356778"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386310"
 ---
 # <a name="wskreleasesd"></a>WSK\_リリース\_SD
 
 
 WSK アプリケーションの使用、WSK\_リリース\_SD のクライアント管理操作を使用して、以前に取得されているセキュリティ記述子のキャッシュされたコピーを解放する、 [ **WSK\_キャッシュ\_SD** ](wsk-cache-sd.md)クライアント管理の操作を使用して取得されたか、 [**ように\_WSK\_セキュリティ**](so-wsk-security.md)ソケット オプション。
 
-セキュリティ記述子のキャッシュされたコピーをリリースする WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)関数は次のパラメーター。
+セキュリティ記述子のキャッシュされたコピーをリリースする WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数は次のパラメーター。
 
 <table>
 <colgroup>

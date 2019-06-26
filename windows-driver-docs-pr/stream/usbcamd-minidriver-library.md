@@ -11,12 +11,12 @@ keywords:
 - カメラ WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b8227040f4b0b4655ae6de25b5331f61ebaaa02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b49a397adcd4ba4a22567b7979b408443cedda3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391886"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383125"
 ---
 # <a name="usbcamd-minidriver-library"></a>USBCAMD ミニドライバー ライブラリ
 
@@ -31,11 +31,11 @@ Microsoft のもの提供、USBCAMD2 ミニドライバー ライブラリだけ
 
 カメラのミニドライバーが責任を負います。
 
--   カーネルなどのプロパティをストリーミング用のサポートを実装する[PROPSETID\_しました\_ビデオ プロシージャ アンプ](https://msdn.microsoft.com/library/windows/hardware/ff568122)と[PROPSETID\_しました\_CAMERACONTROL](https://msdn.microsoft.com/library/windows/hardware/ff567802).
+-   カーネルなどのプロパティをストリーミング用のサポートを実装する[PROPSETID\_しました\_ビデオ プロシージャ アンプ](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp)と[PROPSETID\_しました\_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol).
 
--   データ ストリームが有効でありでカメラ ミニドライバーの現在または次のビデオ フレームの一部であるかどうかを決定する[ *CamProcessUSBPacketEx* ](https://msdn.microsoft.com/library/windows/hardware/ff557631)コールバック関数。
+-   データ ストリームが有効でありでカメラ ミニドライバーの現在または次のビデオ フレームの一部であるかどうかを決定する[ *CamProcessUSBPacketEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_process_packet_routine_ex)コールバック関数。
 
--   ストリームからビデオ フレームを抽出し、ビデオ フレームの処理を実行する前に、カメラのミニドライバーのでは、呼び出し元のアプリケーションに返されます[ *CamProcessRawVideoFrameEx* ](https://msdn.microsoft.com/library/windows/hardware/ff557625)コールバック関数。
+-   ストリームからビデオ フレームを抽出し、ビデオ フレームの処理を実行する前に、カメラのミニドライバーのでは、呼び出し元のアプリケーションに返されます[ *CamProcessRawVideoFrameEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex)コールバック関数。
 
 元の USBCAMD ミニドライバー ライブラリとして Windows 98 ではサポートされて*usbcamd.sys*が Windows 2000 ではサポートされていません。 Windows 2000 で、後で、Windows Millennium Edition 以降で両方と USBCAMD2 はサポートされて*usbcamd.sysand usbcamd2.sys*します。 USBCAMD2 も USBCAMD ミニドライバーの元のライブラリは、64 ビット プラットフォームでサポートされます。
 
@@ -45,7 +45,7 @@ Windows 2000 以降と Windows Millennium Edition と以降のオペレーティ
 
 **その他のリソース**
 
-開発者の内容を理解する必要があります[カーネル ストリーミング](kernel-streaming.md)、[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568275)と[ビデオ キャプチャ デバイス](video-capture-devices.md)します。
+開発者の内容を理解する必要があります[カーネル ストリーミング](kernel-streaming.md)、[ストリーミング ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)と[ビデオ キャプチャ デバイス](video-capture-devices.md)します。
 
 USB の仕様を含むその他の開発者については、次を参照してください。 [USB-IF 開発者領域](https://go.microsoft.com/fwlink/p/?linkid=8781)します。
 

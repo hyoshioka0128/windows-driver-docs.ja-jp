@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 46edb7fd52062034beb21670285e2020ff5528a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 876b2de144310d1a68a6b6c143d987e6a816ccf5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377332"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383377"
 ---
 # <a name="kscategorybdatransportinformation"></a>KSCATEGORY_BDA_TRANSPORT_INFORMATION
 
 
-KSCATEGORY_BDA_TRANSPORT_INFORMATION[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) でトランスポートについてフィルター (TIF) の機能のカテゴリ、 [ドライバーのアーキテクチャをブロードキャスト](https://msdn.microsoft.com/library/windows/hardware/ff556573)(性 BDA)。
+KSCATEGORY_BDA_TRANSPORT_INFORMATION[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) でトランスポートについてフィルター (TIF) の機能のカテゴリ、 [ドライバーのアーキテクチャをブロードキャスト](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)(性 BDA)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_BDA_TRANSPORT_INFORMATION[デバイス インターフェイス ク�
 
 BDA デバイス用のドライバーでは、オペレーティング システムに、デバイスが BDA トランスポートについてフィルターをサポートすることを示す KSCATEGORY_BDA_TRANSPORT_INFORMATION のインスタンスを登録します。
 
-BDA トランスポート情報のフィルターの KS 機能のカテゴリの詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
+BDA トランスポート情報のフィルターの KS 機能のカテゴリの詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)します。
 
 <a name="requirements"></a>要件
 ------------

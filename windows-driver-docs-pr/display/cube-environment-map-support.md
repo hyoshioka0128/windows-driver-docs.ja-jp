@@ -14,12 +14,12 @@ keywords:
 - WDK Direct3D 球のマップ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d97df29e447dc145706f62149dd11edf98342054
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48bd48c18dd1c1933dd58ddb5fe8ae79c32f4526
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376767"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370171"
 ---
 # <a name="cube-environment-map-support"></a>キューブ環境マップのサポート
 
@@ -35,7 +35,7 @@ Direct3D の複数のテクスチャのサポートでは、光源の効果や�
 
 一般に、キューブ マップは、複雑な光の効果や反射のリアルタイム環境マッピングを提供する最適な選択肢です。
 
-キューブ マップの使用は、ドライバーを使用して、渡される、 [ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)メカニズムの状態を表示します。 [FVF](fvf--flexible-vertex-format-.md)テクスチャ座標は、そのテクスチャ座標のセットの FVF コード 01 で渡されます。
+キューブ マップの使用は、ドライバーを使用して、渡される、 [ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)メカニズムの状態を表示します。 [FVF](fvf--flexible-vertex-format-.md)テクスチャ座標は、そのテクスチャ座標のセットの FVF コード 01 で渡されます。
 
 ワールド座標; で、キューブ マップが定義されています。これは、ワールド変換行列では、恒等行列があります。 キューブ マップにテクスチャの変換は、対応するテクスチャ座標インデックスで使用する場合は、さまざまな領域に表示されます。 これらのテクスチャ座標のインデックスは、4 つの面で直接する検索は、+ z の顔です。 Y は、既定の構成です。 配信元 (u、v) テクセルのグリッドが顔ごとの左上隅にある、キューブの中心からポイント カメラによって追加変換せず、顔の作成を許可するためには。
 
@@ -45,7 +45,7 @@ Direct3D の複数のテクスチャのサポートでは、光源の効果や�
 
 表示する場合のサーフェスのいずれかは、キューブ マップが、D3DPTEXTURECAPS と作成している必要があります\_キューブ マップの上限フラグを設定します。
 
-呼び出しで作成されていないすべての顔をセキュリティ記述子で指定された色で塗りつぶされますと見なされます**dwEmptyFaceColor**メンバー。 (を参照してください、 [ **DDSURFACEDESC2** ](https://msdn.microsoft.com/library/windows/hardware/ff550340)構造です)。
+呼び出しで作成されていないすべての顔をセキュリティ記述子で指定された色で塗りつぶされますと見なされます**dwEmptyFaceColor**メンバー。 (を参照してください、 [ **DDSURFACEDESC2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550340(v=vs.85))構造です)。
 
 **注**  現在の制限。すべてのキューブの面では、同じサイズである必要があり、正方形である必要があります。 キューブの面では、MIP マップを指定できます。 キューブ マップ テクスチャの色のキーの更新はサポートされません。 その他のテクスチャとアルファ チャネルとアルファ パレットはサポートされます。
 

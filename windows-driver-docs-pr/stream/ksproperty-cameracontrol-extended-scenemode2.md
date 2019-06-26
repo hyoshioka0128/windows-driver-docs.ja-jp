@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 99423671db7424201da693f6c671a439c76a2a04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da09f764efcbae8e64916046cbaf47a50005fa09
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351826"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366502"
 ---
 # <a name="kspropertycameracontrolextendedscenemode"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE
 
-**KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE**で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/dn917962)列挙体は Oem に細かく調整機能を他の ISP 制御パラメーターと共にシーン モードに応じて。
+**KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE**で定義されているプロパティ ID、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)列挙体は Oem に細かく調整機能を他の ISP 制御パラメーターと共にシーン モードに応じて。
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
@@ -108,7 +108,7 @@ ms.locfileid: "63351826"
 </tbody>
 </table>
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 <table>
 <colgroup>

@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9e3963531b94ed23490d0897cf98b72e0137f39c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 215cc82ab29f8dfce9c397a37d052fedb820c112
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363342"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384249"
 ---
 # <a name="package-xml-element"></a>package XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
-**パッケージ**の INF ファイルを指定する XML 要素を[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)します。
+**パッケージ**の INF ファイルを指定する XML 要素を[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)します。
 
 **要素タグ**
 
@@ -80,7 +80,7 @@ ms.locfileid: "63363342"
 
 **注釈**
 
-次のコード例に示します、**パッケージ**DirAbc を指定する要素\\Abc.inf の INF ファイルとして、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)します。
+次のコード例に示します、**パッケージ**DirAbc を指定する要素\\Abc.inf の INF ファイルとして、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)します。
 
 ```cpp
 <dpinst>

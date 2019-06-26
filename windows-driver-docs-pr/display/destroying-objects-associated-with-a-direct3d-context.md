@@ -8,12 +8,12 @@ keywords:
 - WDK DirectX 9.0 のコンテキストに関連付けられたオブジェクトの破棄
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa2d306fd89244ff0ca702ab85039f63c100b1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 361bf31541addd0034a9d46e6e016bd544d16cb3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384886"
 ---
 # <a name="destroying-objects-associated-with-a-direct3d-context"></a>Direct3D コンテキストに関連付けられたオブジェクトの破棄
 
@@ -23,7 +23,7 @@ ms.locfileid: "63348851"
 
 このトピックには、DirectX 7.0 以降が適用されます。
 
-ように、メモリ リーク、ディスプレイ ドライバーは、Direct3D のコンテキストに関連付けられたすべてのオブジェクトを解放する必要がありますと、ドライバーの[ **D3dContextDestroy** ](https://msdn.microsoft.com/library/windows/hardware/ff542180)関数が呼び出されます。 これらのオブジェクトが含まれて、たとえば、頂点とピクセル[シェーダー](direct3d-shaders.md)、[宣言と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)、リソースの[非同期クエリ](supporting-asynchronous-query-operations.md)、およびテクスチャリソース。
+ように、メモリ リーク、ディスプレイ ドライバーは、Direct3D のコンテキストに関連付けられたすべてのオブジェクトを解放する必要がありますと、ドライバーの[ **D3dContextDestroy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextdestroycb)関数が呼び出されます。 これらのオブジェクトが含まれて、たとえば、頂点とピクセル[シェーダー](direct3d-shaders.md)、[宣言と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)、リソースの[非同期クエリ](supporting-asynchronous-query-operations.md)、およびテクスチャリソース。
 
  
 

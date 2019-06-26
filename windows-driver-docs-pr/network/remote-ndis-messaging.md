@@ -6,12 +6,12 @@ keywords:
 - リモートの NDIS WDK ネットワーク、メッセージング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1c06267e3edc5937ae3161c2683ad1a10f41dd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e95adc44b4e0971fc13ab582fd6c5e94daec086
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350836"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385838"
 ---
 # <a name="remote-ndis-messaging"></a>リモート NDIS メッセージング
 
@@ -25,33 +25,33 @@ ms.locfileid: "63350836"
 
     NDIS リモート デバイスをホストおよびホストするリモート NDIS デバイス、リモートの NDIS コントロール メッセージを送信できます。 イーサネット 802.3 コネクションレスのデバイスでは、次のリモートの NDIS コントロール メッセージをサポートする必要があります。
 
-    [リモート\_NDIS\_初期化\_メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff570624)
+    [リモート\_NDIS\_初期化\_メッセージ](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85))
 
-    [リモート\_NDIS\_初期化\_CMPLT](https://msdn.microsoft.com/library/windows/hardware/ff570621)
+    [リモート\_NDIS\_初期化\_CMPLT](https://docs.microsoft.com/previous-versions/ff570621(v=vs.85))
 
-    [REMOTE\_NDIS\_HALT\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570613)
+    [REMOTE\_NDIS\_HALT\_MSG](https://docs.microsoft.com/previous-versions/ff570613(v=vs.85))
 
-    [リモート\_NDIS\_クエリ\_メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff570641)
+    [リモート\_NDIS\_クエリ\_メッセージ](https://docs.microsoft.com/previous-versions/ff570641(v=vs.85))
 
-    [リモート\_NDIS\_クエリ\_CMPLT](https://msdn.microsoft.com/library/windows/hardware/ff570638)
+    [リモート\_NDIS\_クエリ\_CMPLT](https://docs.microsoft.com/previous-versions/ff570638(v=vs.85))
 
-    [REMOTE\_NDIS\_SET\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570654)
+    [REMOTE\_NDIS\_SET\_MSG](https://docs.microsoft.com/previous-versions/ff570654(v=vs.85))
 
-    [リモート\_NDIS\_設定\_CMPLT](https://msdn.microsoft.com/library/windows/hardware/ff570651)
+    [リモート\_NDIS\_設定\_CMPLT](https://docs.microsoft.com/previous-versions/ff570651(v=vs.85))
 
-    [REMOTE\_NDIS\_RESET\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570648)
+    [REMOTE\_NDIS\_RESET\_MSG](https://docs.microsoft.com/previous-versions/ff570648(v=vs.85))
 
-    [リモート\_NDIS\_リセット\_CMPLT](https://msdn.microsoft.com/library/windows/hardware/ff570645)
+    [リモート\_NDIS\_リセット\_CMPLT](https://docs.microsoft.com/previous-versions/ff570645(v=vs.85))
 
-    [リモート\_NDIS\_を示す\_状態\_メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff570617)
+    [リモート\_NDIS\_を示す\_状態\_メッセージ](https://docs.microsoft.com/previous-versions/ff570617(v=vs.85))
 
-    [リモート\_NDIS\_KEEPALIVE\_メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff570629)
+    [リモート\_NDIS\_KEEPALIVE\_メッセージ](https://docs.microsoft.com/previous-versions/ff570629(v=vs.85))
 
-    [リモート\_NDIS\_KEEPALIVE\_CMPLT](https://msdn.microsoft.com/library/windows/hardware/ff570626)
+    [リモート\_NDIS\_KEEPALIVE\_CMPLT](https://docs.microsoft.com/previous-versions/ff570626(v=vs.85))
 
 -   **リモートの NDIS データ メッセージ**
 
-    リモートの NDIS デバイスに含まれているリモートの NDIS データ パケットを使用してデータを送受信する必要があります、[リモート\_NDIS\_パケット\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570635)メッセージの構造体。 帯域外データだけでなく、ネットワーク経由で移動するデータは、リモートの NDIS データ パケットは含めることもできます。
+    リモートの NDIS デバイスに含まれているリモートの NDIS データ パケットを使用してデータを送受信する必要があります、[リモート\_NDIS\_パケット\_MSG](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))メッセージの構造体。 帯域外データだけでなく、ネットワーク経由で移動するデータは、リモートの NDIS データ パケットは含めることもできます。
 
     (たとえば、802.3) はコネクションレスの両方と、デバイスの接続指向の (たとえば、ATM など) を使用して、同じ**リモート\_NDIS\_パケット\_MSG**容易共通するためにメッセージの構造パケットの処理のコードです。
 

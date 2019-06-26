@@ -4,12 +4,12 @@ description: これらの規則を使用すると、ドライバー、正しく�
 ms.assetid: A109A452-D3A7-4204-B267-1F0F98652597
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f876d189f9c83e274e16591aade6694eb24a3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 194ab0b45b87ba589f81b502a4444d5c3482d978
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356607"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394101"
 ---
 # <a name="ddi-usage-rule-set-ndis"></a>DDI 使用の規則セット (NDIS)
 
@@ -33,14 +33,14 @@ ms.locfileid: "63356607"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="ndis-init-deregisterinterrupt.md" data-raw-source="[&lt;strong&gt;Init_DeRegisterInterrupt&lt;/strong&gt;](ndis-init-deregisterinterrupt.md)"><strong>Init_DeRegisterInterrupt</strong></a></p></td>
-<td align="left"><p><a href="ndis-init-deregisterinterrupt.md" data-raw-source="[&lt;strong&gt;Init_DeRegisterInterrupt&lt;/strong&gt;](ndis-init-deregisterinterrupt.md)"> <strong>Init_DeRegisterInterrupt</strong> </a>規則で指定された場合<a href="https://msdn.microsoft.com/library/windows/hardware/ff563649" data-raw-source="[&lt;strong&gt;NdisMRegisterInterruptEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563649)"> <strong>NdisMRegisterInterruptEx</strong> </a>中に少なくとも 1 回呼び出されますMPInitilize、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff563575" data-raw-source="[&lt;strong&gt;NdisMDeregisterInterruptEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563575)"> <strong>NdisMDeregisterInterruptEx</strong> </a> MPHaltEx で少なくとも 1 回呼び出す必要があります。</p></td>
+<td align="left"><p><a href="ndis-init-deregisterinterrupt.md" data-raw-source="[&lt;strong&gt;Init_DeRegisterInterrupt&lt;/strong&gt;](ndis-init-deregisterinterrupt.md)"> <strong>Init_DeRegisterInterrupt</strong> </a>規則で指定された場合<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterinterruptex" data-raw-source="[&lt;strong&gt;NdisMRegisterInterruptEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterinterruptex)"> <strong>NdisMRegisterInterruptEx</strong> </a>中に少なくとも 1 回呼び出されますMPInitilize、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex" data-raw-source="[&lt;strong&gt;NdisMDeregisterInterruptEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex)"> <strong>NdisMDeregisterInterruptEx</strong> </a> MPHaltEx で少なくとも 1 回呼び出す必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-init-ndisallocateioworkitem.md" data-raw-source="[&lt;strong&gt;Init_NdisAllocateIoWorkItem&lt;/strong&gt;](ndis-init-ndisallocateioworkitem.md)"><strong>Init_NdisAllocateIoWorkItem</strong></a></p></td>
-<td align="left"><p><a href="ndis-init-ndisallocateioworkitem.md" data-raw-source="[&lt;strong&gt;Init_NdisAllocateIoWorkItem&lt;/strong&gt;](ndis-init-ndisallocateioworkitem.md)"> <strong>Init_NdisAllocateIoWorkItem</strong> </a>規則で指定された場合<a href="https://msdn.microsoft.com/library/windows/hardware/ff561604" data-raw-source="[&lt;strong&gt;NdisAllocateIoWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561604)"> <strong>NdisAllocateIoWorkItem</strong> </a> 中に少なくとも1回呼び出されます<a href="https://msdn.microsoft.com/library/windows/hardware/ff559389" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559389)"><em>MiniportInitializeEx</em></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff561855" data-raw-source="[&lt;strong&gt;NdisFreeIoWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561855)"> <strong>NdisFreeIoWorkItem</strong> </a>関数にする必要があります。</p>
+<td align="left"><p><a href="ndis-init-ndisallocateioworkitem.md" data-raw-source="[&lt;strong&gt;Init_NdisAllocateIoWorkItem&lt;/strong&gt;](ndis-init-ndisallocateioworkitem.md)"> <strong>Init_NdisAllocateIoWorkItem</strong> </a>規則で指定された場合<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocateioworkitem" data-raw-source="[&lt;strong&gt;NdisAllocateIoWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocateioworkitem)"> <strong>NdisAllocateIoWorkItem</strong> </a> 中に少なくとも1回呼び出されます<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)"><em>MiniportInitializeEx</em></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreeioworkitem" data-raw-source="[&lt;strong&gt;NdisFreeIoWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreeioworkitem)"> <strong>NdisFreeIoWorkItem</strong> </a>関数にする必要があります。</p>
 <ul>
-<li>- 場合に、MPHaltEx で少なくとも 1 回呼び出すこと<a href="https://msdn.microsoft.com/library/windows/hardware/ff559389" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559389)"> <em>MiniportInitializeEx</em> </a>が成功するとします。</li>
-<li>- 呼び出される<a href="https://msdn.microsoft.com/library/windows/hardware/ff559389" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559389)"> <em>MiniportInitializeEx</em></a>場合は、 <em>MiniportInitializeEx</em>は失敗します。</li>
+<li>- 場合に、MPHaltEx で少なくとも 1 回呼び出すこと<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)"> <em>MiniportInitializeEx</em> </a>が成功するとします。</li>
+<li>- 呼び出される<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)"> <em>MiniportInitializeEx</em></a>場合は、 <em>MiniportInitializeEx</em>は失敗します。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -55,11 +55,11 @@ ms.locfileid: "63356607"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndisfderegisterfilterdriver.md" data-raw-source="[&lt;strong&gt;NdisFDeregisterFilterDriver&lt;/strong&gt;](ndis-ndisfderegisterfilterdriver.md)"><strong>NdisFDeregisterFilterDriver</strong></a></p></td>
-<td align="left"><p>フィルター ドライバーを呼び出す必要があります<a href="https://msdn.microsoft.com/library/windows/hardware/ff561800" data-raw-source="[&lt;strong&gt;NdisFDeregisterFilterDriver&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561800)"> <strong>NdisFDeregisterFilterDriver</strong> </a>からその<a href="https://msdn.microsoft.com/library/windows/hardware/ff549936" data-raw-source="[&lt;strong&gt;FilterDriverUnload&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549936)"> <strong>FilterDriverUnload</strong> </a>ルーチン。</p></td>
+<td align="left"><p>フィルター ドライバーを呼び出す必要があります<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfderegisterfilterdriver" data-raw-source="[&lt;strong&gt;NdisFDeregisterFilterDriver&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfderegisterfilterdriver)"> <strong>NdisFDeregisterFilterDriver</strong> </a>からその<a href="https://docs.microsoft.com/windows-hardware/drivers/network/unloading-a-filter-driver" data-raw-source="[&lt;strong&gt;FilterDriverUnload&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/unloading-a-filter-driver)"> <strong>FilterDriverUnload</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-ndismderegisterinterruptex.md" data-raw-source="[&lt;strong&gt;NdisMDeregisterInterruptEx&lt;/strong&gt;](ndis-ndismderegisterinterruptex.md)"><strong>NdisMDeregisterInterruptEx</strong></a></p></td>
-<td align="left"><p>後<a href="https://msdn.microsoft.com/library/windows/hardware/ff563575" data-raw-source="[&lt;strong&gt;NdisMDeregisterInterruptEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563575)"> <strong>NdisMDeregisterInterruptEx</strong> </a>コントロールを返します、ミニポート ドライバーを呼び出すことはできません、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff563681" data-raw-source="[&lt;strong&gt;NdisMSynchronizeWithInterruptEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563681)"> <strong>NdisMSynchronizeWithInterruptEx</strong> </a>関数。</p></td>
+<td align="left"><p>後<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex" data-raw-source="[&lt;strong&gt;NdisMDeregisterInterruptEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex)"> <strong>NdisMDeregisterInterruptEx</strong> </a>コントロールを返します、ミニポート ドライバーを呼び出すことはできません、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsynchronizewithinterruptex" data-raw-source="[&lt;strong&gt;NdisMSynchronizeWithInterruptEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsynchronizewithinterruptex)"> <strong>NdisMSynchronizeWithInterruptEx</strong> </a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="nullcheckn.md" data-raw-source="[&lt;strong&gt;NullCheck&lt;/strong&gt;](nullcheckn.md)"><strong>NullCheck</strong></a></p></td>
@@ -68,7 +68,7 @@ ms.locfileid: "63356607"
 <li>以降は逆参照が NULL の代入です。</li>
 <li>ドライバーでは、後で逆参照が NULL の可能性があるプロシージャにグローバル/パラメーターがあるし、ポインターの初期値は NULL である可能性がありますの候補を示す、ドライバーでの明示的なチェックがあります。</li>
 </ul>
-<p>NullCheck ルール違反では、最も関連のコード ステートメントは、トレースのツリー ペインで強調表示されます。 レポートの出力の使用方法の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff552834" data-raw-source="[Static Driver Verifier Report](https://msdn.microsoft.com/library/windows/hardware/ff552834)">静的ドライバー検証ツールのレポート</a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff554020" data-raw-source="[Understanding the Trace Viewer](https://msdn.microsoft.com/library/windows/hardware/ff554020)">トレース ビューアーを理解する</a>します。</p>
+<p>NullCheck ルール違反では、最も関連のコード ステートメントは、トレースのツリー ペインで強調表示されます。 レポートの出力の使用方法の詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report" data-raw-source="[Static Driver Verifier Report](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report)">静的ドライバー検証ツールのレポート</a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/understanding-the-defect-viewer" data-raw-source="[Understanding the Trace Viewer](https://docs.microsoft.com/windows-hardware/drivers/devtest/understanding-the-defect-viewer)">トレース ビューアーを理解する</a>します。</p>
 <p></p></td>
 </tr>
 </tbody>
@@ -88,7 +88,7 @@ ms.locfileid: "63356607"
     msbuild /t:sdv /p:Inputs="/check:DDIUsage.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

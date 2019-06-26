@@ -8,12 +8,12 @@ keywords:
 - デバッグのセットアップ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f029ce155b512a667d225ceb97fd8116432f1dd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f61bcdc6d3db36d136cce714ea009965a87e450
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366925"
 ---
 # <a name="debugging-windows-setup-and-the-os-loader"></a>Windows セットアップと OS ローダーのデバッグ
 
@@ -23,8 +23,8 @@ ms.locfileid: "63346322"
 
 コンピューターの起動時にデバッグについては、次のトピックを参照してください。
 
--   [**BCDEdit/bootdebug**](https://msdn.microsoft.com/library/windows/hardware/ff542183)
--   [BCD のブート オプション リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff542205)
+-   [**BCDEdit/bootdebug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--bootdebug)
+-   [BCD のブート オプション リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

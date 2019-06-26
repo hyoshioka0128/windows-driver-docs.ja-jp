@@ -7,12 +7,12 @@ keywords:
 - SCSI ポート ドライバー WDK ストレージ、Storport ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09711e8b3ca0bba7c2b2c40db8b1042b5c0e5977
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63624e3036fea54a4755cfb8ecd7ff70ab47810c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355574"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386182"
 ---
 # <a name="making-scsi-port-miniport-drivers-work-with-storport"></a>SCSI ポート ミニポート ドライバーを Storport で動作させる
 
@@ -30,7 +30,7 @@ Storport ミニポート ドライバー インターフェイスは、できる
 
 3.  展開されたすべての構造が正しく初期化されていることを確認してください。
 
-    両方のサイズ、 [ **HW\_初期化\_データ (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456)構造と[**ポート\_構成\_情報 (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff563900)構造が変更されたので、新しいメンバーが正しく初期化されています。
+    両方のサイズ、 [ **HW\_初期化\_データ (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)構造と[**ポート\_構成\_情報 (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)構造が変更されたので、新しいメンバーが正しく初期化されています。
 
 Storport のヘッダー ファイル、 *storport.h、* SCSI ポート プレフィックス付きのコマンドと SCSI ポートからの移植を容易に StorPort プレフィックス付きのコマンドの両方が現在保持されます。
 

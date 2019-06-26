@@ -4,12 +4,12 @@ description: Windows 8.1 では、プリンター用の UWP デバイス アプ�
 ms.assetid: 30E247DB-E5B0-4CD5-89F5-4227EE20A564
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea61ec736cb596a7c1b8d36dd379fc04923cf8aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e9bb4b27115b24f0355281684e6a92baf7ab161
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369352"
 ---
 # <a name="how-to-manage-print-jobs-in-a-uwp-device-app"></a>UWP デバイス アプリでの印刷ジョブを管理する方法
 
@@ -25,7 +25,7 @@ C#のバージョン、[印刷ジョブの管理とプリンターの保守](htt
 ## <a name="span-idmanagingprintjobsspanspan-idmanagingprintjobsspanspan-idmanagingprintjobsspanmanaging-print-jobs"></a><span id="Managing_print_jobs"></span><span id="managing_print_jobs"></span><span id="MANAGING_PRINT_JOBS"></span>印刷ジョブの管理
 
 
-Windows 8.1 には、新しい印刷ジョブを管理するために使用できる、v4 プリンター ドライバーでのプリンター拡張機能のインターフェイスが導入されています。[**IPrinterQueue2**](https://msdn.microsoft.com/library/windows/hardware/dn265389)、 [ **IPrinterQueueView**](https://msdn.microsoft.com/library/windows/hardware/dn265392)、 [ **IPrinterQueueViewEvent**](https://msdn.microsoft.com/library/windows/hardware/dn265393)、 [ **IPrintJob**](https://msdn.microsoft.com/library/windows/hardware/dn265396)、および[ **IPrintJobCollection**](https://msdn.microsoft.com/library/windows/hardware/dn265397)します。 これらのインターフェイスを使うとを監視し、印刷ジョブをキャンセルできます。 詳細については、次を参照してください。[印刷ジョブの管理 (v4 プリンター ドライバー)](https://msdn.microsoft.com/library/windows/hardware/dn265419)します。
+Windows 8.1 には、新しい印刷ジョブを管理するために使用できる、v4 プリンター ドライバーでのプリンター拡張機能のインターフェイスが導入されています。[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)、 [ **IPrinterQueueView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueview)、 [ **IPrinterQueueViewEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueviewevent)、 [ **IPrintJob**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjob)、および[ **IPrintJobCollection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjobcollection)します。 これらのインターフェイスを使うとを監視し、印刷ジョブをキャンセルできます。 詳細については、次を参照してください。[印刷ジョブの管理 (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)します。
 
 **ヒント:**    C# JavaScript アプリは COM Api と直接動作できません。 作成する場合、C#または JavaScript UWP デバイス アプリ、プリンターの拡張機能ライブラリを使用して、これらのインターフェイス (このトピックで示す) にアクセスします。
 
@@ -86,7 +86,7 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**ヒント:**  の詳細については、`PrinterEnumeration`と`PrinterInfo`クラスを参照してください、 **PrinterEnumeration.cs**ファイル。
+**ヒント:**   の詳細については、`PrinterEnumeration`と`PrinterInfo`クラスを参照してください、 **PrinterEnumeration.cs**ファイル。
 
  
 
@@ -294,7 +294,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 次の手順では、アプリをビルドし、デバイスのメタデータをインストールします。
 
 1.  テスト署名を有効にします。
-    1.  開始、**デバイス メタデータの作成ウィザード**から *%programfiles (x86) %*\\Windows キット\\8.1\\bin\\をダブルクリックして、x86**DeviceMetadataWizard.exe**
+    1.  開始、**デバイス メタデータの作成ウィザード**から *%programfiles (x86) %* \\Windows キット\\8.1\\bin\\をダブルクリックして、x86**DeviceMetadataWizard.exe**
     2.  **ツール**メニューの **テスト署名を有効にする**します。
 
 2.  コンピューターを再起動します
@@ -306,7 +306,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 
      
 
-    1.  場合、**デバイス メタデータの作成ウィザード**が開くまだ、開始から *%programfiles (x86) %*\\Windows キット\\8.1\\bin\\x86 により、ダブルクリック**DeviceMetadataWizard.exe**します。
+    1.  場合、**デバイス メタデータの作成ウィザード**が開くまだ、開始から *%programfiles (x86) %* \\Windows キット\\8.1\\bin\\x86 により、ダブルクリック**DeviceMetadataWizard.exe**します。
     2.  クリックして**デバイス メタデータの編集**します。 これからは、既存のデバイス メタデータ パッケージを編集できます。
     3.  **オープン** ダイアログ ボックスで、UWP デバイス アプリに関連付けられている、デバイス メタデータ パッケージを見つけます。 (これが、 **devicemetadata ms**ファイル拡張子)。
     4.  **指定 UWP デバイスのアプリ情報** ページで、Microsoft Store アプリの情報を入力、 **UWP デバイス アプリ**ボックス。 をクリックして**インポート UWP アプリのマニフェスト ファイル**自動的に入力する、**パッケージ名**、**パブリッシャー名**と**UWP アプリの ID**します。
@@ -320,7 +320,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[ジョブの管理 (v4 プリンター ドライバー)](https://msdn.microsoft.com/library/windows/hardware/dn265419)
+[ジョブの管理 (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)
 
 [V4 印刷ドライバーの開発](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 

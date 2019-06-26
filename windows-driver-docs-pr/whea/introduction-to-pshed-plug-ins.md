@@ -7,19 +7,19 @@ keywords:
 - プラットフォーム固有のハードウェア エラー ドライバー プラグインについての PSHED プラグイン WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f864db184a687a7128a8e2dda2865dfa6ca115e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60ec3b4dd93f64a551367ce0a826028aa45fd5a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340798"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386463"
 ---
 # <a name="introduction-to-pshed-plug-ins"></a>PSHED プラグインの概要
 
 
 プラットフォーム ベンダーは、プラットフォーム固有の機能を活用するよう PSHED にプラグインを提供することで、既定の PSHED 機能を補うことができます。 PSHED のプラグインは、特殊な Windows デバイス ドライバー、PSHED によって呼び出されるコールバック インターフェイスを実装します。 プラグインの PSHED では、補強したり、Microsoft によって提供される PSHED の既定の動作をオーバーライドします。
 
-プラグインの PSHED として実装されている、 [Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698) (WDM) ドライバーは、システムの起動時に特定のハードウェア識別子が列挙されたときに、プラグ アンド プレイ (PnP) マネージャーによって読み込まれる。 プラットフォーム ベンダーは、PSHED プラグインの読み込みを開始するハードウェア識別子を指定します。 このハードウェア識別子を ACPI 名前空間にすることができますか、別のデバイスの名前空間を指定できます。
+プラグインの PSHED として実装されている、 [Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) (WDM) ドライバーは、システムの起動時に特定のハードウェア識別子が列挙されたときに、プラグ アンド プレイ (PnP) マネージャーによって読み込まれる。 プラットフォーム ベンダーは、PSHED プラグインの読み込みを開始するハードウェア識別子を指定します。 このハードウェア識別子を ACPI 名前空間にすることができますか、別のデバイスの名前空間を指定できます。
 
 PSHED プラグインは、ユーザー モード アプリケーションまたはより高いレベルのドライバーによって開始されたすべての I/O 要求を処理しません。 そのため、そのプラグイン PSHED がドライバー ディスパッチ ルーチンを実装するためにのみ必要です (を参照してください[ **DRIVER_DISPATCH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)) を処理する[IRP_MJ_PNP](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)と[IRP_MJ_POWER](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) Irp します。 PSHED プラグインは、デバイス インターフェイスを登録またはそれらのデバイス オブジェクトのシンボリック リンクを作成する必要はありません。
 

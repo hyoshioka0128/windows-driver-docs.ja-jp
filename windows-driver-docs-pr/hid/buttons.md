@@ -4,12 +4,12 @@ description: GPIO ボタンの Microsoft 提供のボタン ドライバーを�
 ms.assetid: FBA8141D-8DBA-4C68-8BB5-44B3EDB7D062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86a8556376cc86cc43c30b2cc8bdfa0561c2071d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da20c3b6476e1ab339e202979d2a6922d4af0e90
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390365"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393486"
 ---
 # <a name="hid-button-drivers"></a>HID ボタン ドライバー
 
@@ -18,7 +18,7 @@ ms.locfileid: "63390365"
 
 -   [ACPI と負荷の Microsoft 提供のドライバーの GPIO ボタンについて説明します](acpi-button-device.md)
 -   [HID ソース ドライバーを非 GPIO ボタンのカーネル モードの作成します。](virtual-hid-framework--vhf-.md)
--   [非 GPIO ボタンの UMDF HID ミニドライバーを作成します。](https://msdn.microsoft.com/library/windows/hardware/hh439579)
+-   [非 GPIO ボタンの UMDF HID ミニドライバーを作成します。](https://docs.microsoft.com/windows-hardware/drivers/wdf/creating-umdf-hid-minidrivers)
 
 **適用対象**
 
@@ -27,12 +27,12 @@ ms.locfileid: "63390365"
 
 **重要な API**
 
--   [仮想 HID Framework リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn925048)
--   [UMDF HID ミニドライバー Ioctl](https://msdn.microsoft.com/library/windows/hardware/hh463977)
+-   [仮想 HID Framework リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [UMDF HID ミニドライバー Ioctl](https://docs.microsoft.com/previous-versions/hh463977(v=vs.85))
 
 GPIO ボタンの Microsoft 提供のボタン ドライバーを使用します。それ以外の場合、オペレーティング システムに HID データを挿入するドライバーを実装します。
 
-(電源、Windows、ボリューム、および回転ロック) のボタンは通常、物理キーボードがコンバーチブルやスレートなどのフォーム ファクターで、ユーザーが利用できるときに発生したタスクに使用されます。 ボタン宣言自体、オペレーティング システムに HID デバイスとして指定することによって[HID ボタンのレポート記述子](https://msdn.microsoft.com/library/windows/hardware/dn457881)します。 これにより、標準化された方法で、目的とこれらのボタンのイベントを解釈するシステムです。 ボタンの状態変更では、そのイベントにマップされます、 [HID の使用](hid-usages.md)します。 HID のトランスポート ミニドライバーは、ユーザー モードまたはカーネル モードでの HID クライアントに詳細情報を送信する上位レベルのドライバーをこれらのイベントを報告します。
+(電源、Windows、ボリューム、および回転ロック) のボタンは通常、物理キーボードがコンバーチブルやスレートなどのフォーム ファクターで、ユーザーが利用できるときに発生したタスクに使用されます。 ボタン宣言自体、オペレーティング システムに HID デバイスとして指定することによって[HID ボタンのレポート記述子](https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/hid-button-report-descriptors)します。 これにより、標準化された方法で、目的とこれらのボタンのイベントを解釈するシステムです。 ボタンの状態変更では、そのイベントにマップされます、 [HID の使用](hid-usages.md)します。 HID のトランスポート ミニドライバーは、ユーザー モードまたはカーネル モードでの HID クライアントに詳細情報を送信する上位レベルのドライバーをこれらのイベントを報告します。
 
 物理の汎用入出力 (GPIO) ボタンが定義されている GPIO ハードウェア リソースを受信する割り込みに基づいてイベントを報告する Microsoft 提供のインボックス ドライバーは HID トランスポートのミニドライバーです。
 
@@ -57,7 +57,7 @@ GPIO ボタンの Microsoft 提供のボタン ドライバーを使用します
 <td><p>GPIO ボタンを実装する場合は、できるように、Windows オペレーティング システムにイベントを報告するボタン ドライバーとして Hidinterrupt.sys、インボックス ドライバーを読み込むことができます、ボタンを ACPI システムに説明してください。</p>
 <ul>
 <li><a href="acpi-button-device.md" data-raw-source="[ACPI button device](acpi-button-device.md)">ACPI ボタン デバイス</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/dn457871(v=vs.85).aspx" data-raw-source="[Button Behavior](https://msdn.microsoft.com/library/windows/hardware/dn457871(v=vs.85).aspx)">ボタンの動作</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/button-behavior" data-raw-source="[Button Behavior](https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/button-behavior)">ボタンの動作</a></li>
 <li><a href="acpi-button-device.md#acpi-button-phone" data-raw-source="[Sample buttons ACPI for phone/tablet](acpi-button-device.md#acpi-button-phone)">電話やタブレットのサンプル ボタン ACPI</a></li>
 <li><a href="acpi-button-device.md#acpi-button-desktop" data-raw-source="[Sample buttons ACPI for desktop](acpi-button-device.md#acpi-button-desktop)">デスクトップ用サンプル ボタン ACPI</a></li>
 </ul>
@@ -69,12 +69,12 @@ GPIO ボタンの Microsoft 提供のボタン ドライバーを使用します
 <td><p>別のソフトウェア コンポーネントで挿入する必要がある HID 形式でデータのストリームなどの非 GPIO ボタンを実装する場合は、カーネル モード ドライバーを記述することもできます。 Windows 10 以降、通信と仮想 HID フレームワーク (VHF) と取得して、HID クラス ドライバーとの間に、HID レポートを設定するプログラミング インターフェイスを呼び出すことによって、HID ソースのドライバーを記述できます。</p>
 <ul>
 <li><a href="virtual-hid-framework--vhf-.md" data-raw-source="[How to write a HID source driver that interacts with Virtual HID Framework (VHF)](virtual-hid-framework--vhf-.md)">仮想 HID フレームワーク (VHF) と連携する HID ソース ドライバーを記述する方法</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/dn925048" data-raw-source="[Virtual HID Framework Reference](https://msdn.microsoft.com/library/windows/hardware/dn925048)">仮想 HID Framework リファレンス</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index" data-raw-source="[Virtual HID Framework Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)">仮想 HID Framework リファレンス</a></li>
 </ul>
 <p>代わりに、カーネル モード HID トランスポート ミニドライバー Windows の以前のバージョンでサポートされているを記述することができます。 ただしは勧めこのアプローチ コーディング KMDF HID トランスポート ミニドライバー、システムがクラッシュすることができます。</p>
 <ul>
 <li><a href="transport-minidrivers.md" data-raw-source="[Transport Minidrivers](transport-minidrivers.md)">トランスポート ミニドライバー</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/ff539926" data-raw-source="[HID Minidriver IOCTLs](https://msdn.microsoft.com/library/windows/hardware/ff539926)">HID ミニドライバー Ioctl</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index" data-raw-source="[HID Minidriver IOCTLs](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)">HID ミニドライバー Ioctl</a></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -82,8 +82,8 @@ GPIO ボタンの Microsoft 提供のボタン ドライバーを使用します
 <p><img src="images/hid-umdf.png" alt="HID Transport Minidriver" /></p></td>
 <td><p>HID ソース ドライバーでは、書き込みの前のモデルを使用する代わりに、非 GPIO ボタンを実装している場合は、ユーザー モードで、HID トランスポート ミニドライバーを作成できます。 これらのドライバーはカーネル モード ドライバーよりも開発を容易にし、このドライバーでエラーがシステム全体をバグをオンにしないでいます。</p>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh439579" data-raw-source="[Creating UMDF HID Minidrivers](https://msdn.microsoft.com/library/windows/hardware/hh439579)">UMDF HID ミニドライバーを作成します。</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/hardware/hh463977" data-raw-source="[UMDF HID Minidriver IOCTLs](https://msdn.microsoft.com/library/windows/hardware/hh463977)">UMDF HID ミニドライバー Ioctl</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/creating-umdf-hid-minidrivers" data-raw-source="[Creating UMDF HID Minidrivers](https://docs.microsoft.com/windows-hardware/drivers/wdf/creating-umdf-hid-minidrivers)">UMDF HID ミニドライバーを作成します。</a></li>
+<li><a href="https://docs.microsoft.com/previous-versions/hh463977(v=vs.85)" data-raw-source="[UMDF HID Minidriver IOCTLs](https://docs.microsoft.com/previous-versions/hh463977(v=vs.85))">UMDF HID ミニドライバー Ioctl</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -94,12 +94,12 @@ GPIO ボタンの Microsoft 提供のボタン ドライバーを使用します
 ## <a name="universal-windows-drivers-for-hid-buttons"></a>HID ボタンのユニバーサル Windows ドライバー
 
 
-Windows 10 以降、HID ドライバーのプログラミング インターフェイスは、Windows OneCoreUAP ベース エディションの一部です。 使用して、ボタン ドライバーを記述するその共通のインターフェイスのセットを使用すると、[仮想 HID Framework](https://msdn.microsoft.com/library/windows/hardware/dn925048)または[トランスポート ミニドライバー](transport-minidrivers.md)インターフェイス。 これらのドライバーは、バージョンに両方のデスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の Windows 10 および Windows 10 Mobile、だけでなく他の Windows 10 で実行されます。
+Windows 10 以降、HID ドライバーのプログラミング インターフェイスは、Windows OneCoreUAP ベース エディションの一部です。 使用して、ボタン ドライバーを記述するその共通のインターフェイスのセットを使用すると、[仮想 HID Framework](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)または[トランスポート ミニドライバー](transport-minidrivers.md)インターフェイス。 これらのドライバーは、バージョンに両方のデスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の Windows 10 および Windows 10 Mobile、だけでなく他の Windows 10 で実行されます。
 
-ステップ バイ ステップ ガイダンスについては、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)します。
+ステップ バイ ステップ ガイダンスについては、次を参照してください。[ユニバーサル Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 ## <a name="related-topics"></a>関連トピック
-[ヒューマン インターフェイス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff543301)  
+[ヒューマン インターフェイス デバイス](https://developer.microsoft.com/windows/hardware)  
 
 
 

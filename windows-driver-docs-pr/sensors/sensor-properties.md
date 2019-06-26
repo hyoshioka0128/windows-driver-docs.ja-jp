@@ -32,12 +32,12 @@ api_type:
 - HeaderDef
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: df27b7653ba805bac4227aaf1ee15d5e16d62776
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 904dab515b04b4a838ec6ecb132e35b11c6dd3a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368805"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387177"
 ---
 # <a name="sensor-properties"></a>センサーのプロパティ
 
@@ -89,7 +89,7 @@ Sensor and Location プラットフォームは、センサーのプロパティ
 <td><span id="SENSOR_PROPERTY_CONNECTION_TYPE"></span><span id="sensor_property_connection_type"></span>
 <strong>SENSOR_PROPERTY_CONNECTION_TYPE</strong> (PID = 11)</td>
 <td><p><strong>VT_UI4</strong></p>
-<p>読み取り専用です。 <a href="https://msdn.microsoft.com/library/windows/desktop/dd318902" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/dd318902)"><strong>SensorConnectionType</strong> </a>を現在の接続の種類を含む値です。</p></td>
+<p>読み取り専用です。 <a href="https://docs.microsoft.com/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002)"><strong>SensorConnectionType</strong> </a>を現在の接続の種類を含む値です。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_CURRENT_REPORT_INTERVAL"></span><span id="sensor_property_current_report_interval"></span>
@@ -98,7 +98,7 @@ Sensor and Location プラットフォームは、センサーのプロパティ
 <p>読み取り/書き込みです。 センサー データの現在の経過時間 (ミリ秒単位) の生成を報告します。</p>
 <p>いずれかを返すことを通知する値を 0 に設定します。 既定のレポート間隔、または最小のレポート間隔。 1 つのみのクライアントが接続されている場合は、ドライバーは、既定のレポート間隔を返す必要があります。 複数のクライアントが接続されている場合、ドライバーは、これらのクライアントのいずれかによって要求された最短の間隔を返す必要があります。</p>
 <p>アプリケーションは、特定のレポート間隔を要求するには、この値を設定できますが、複数のアプリケーションが同じドライバーを使用します。 そのため、ドライバーは、内部ロジックに基づいて、実際のレポート間隔を決定します。 たとえば、ドライバーは呼び出し元で要求されている最短のレポート間隔を常に使用する場合があります。</p>
-<p>このプロパティを使用する方法の例は、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/dd319014" data-raw-source="[Using Sensor API Events](https://msdn.microsoft.com/library/windows/desktop/dd319014)">センサー API イベントを使用した</a>します。</p></td>
+<p>このプロパティを使用する方法の例は、次を参照してください。<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/using-sensor-api-events" data-raw-source="[Using Sensor API Events](https://docs.microsoft.com/windows/desktop/SensorsAPI/using-sensor-api-events)">センサー API イベントを使用した</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_DESCRIPTION"></span><span id="sensor_property_description"></span>
@@ -124,13 +124,13 @@ Sensor and Location プラットフォームは、センサーのプロパティ
 <strong>SENSOR_PROPERTY_LIGHT_RESPONSE_CURVE</strong> (PID = 16)</td>
 <td><p><strong>VT_VECTOR|VT_UI1</strong></p>
 <p>読み取り専用です。 アンビエント ライト レベルとオフセットの間のマッピングを指定する値のペアを含む counted 配列。 これらの値はパーセンテージとして表されます。 適応型輝度調整機能は、Windows では、ユーザーの現在のディスプレイの明るさ設定にこれらの値が適用されます。</p>
-<p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このプロパティに実際には 4 バイト符号なし整数としての各値が含まれています (<strong>VT_UI4)</strong>します。 配列の操作については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/desktop/ee264327" data-raw-source="[Retrieving Vector Types](https://msdn.microsoft.com/library/windows/desktop/ee264327)">ベクター型を取得する</a>します。</p></td>
+<p>ベクター型のデータは常としてシリアル化された<strong>VT_UI1</strong> (符号なし、1 バイト文字の配列)。 このプロパティに実際には 4 バイト符号なし整数としての各値が含まれています (<strong>VT_UI4)</strong>します。 配列の操作については、次を参照してください。<a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types)">ベクター型を取得する</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY"></span><span id="sensor_property_location_desired_accuracy"></span>
 <strong>SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY</strong> (PID = 19)</td>
 <td><p><strong>VT_UI4</strong></p>
-<p>読み取り/書き込みです。 値、 <a href="https://msdn.microsoft.com/library/windows/desktop/dd756639" data-raw-source="[&lt;strong&gt;LOCATION_DESIRED_ACCURACY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/dd756639)"> <strong>LOCATION_DESIRED_ACCURACY</strong> </a>クライアント アプリケーションによって要求された精度の処理の種類を示す列挙体。</p>
+<p>読み取り/書き込みです。 値、 <a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85)" data-raw-source="[&lt;strong&gt;LOCATION_DESIRED_ACCURACY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85))"> <strong>LOCATION_DESIRED_ACCURACY</strong> </a>クライアント アプリケーションによって要求された精度の処理の種類を示す列挙体。</p>
 <p><strong>LOCATION_DESIRED_ACCURACY_DEFAULT</strong> (0)、センサーが対象の電力使用とその他のコストに関する考慮事項を最適化できますが、精度を使用することを示します。</p>
 <p><strong>LOCATION_DESIRED_ACCURACY_HIGH</strong> (1)、センサーが、最も正確なレポートを配信することを示します。 これには、可能性があります、料金が請求されるサービスの使用またはより高いレベルのバッテリ電力または接続の帯域幅の消費が含まれます。</p></td>
 </tr>
@@ -156,7 +156,7 @@ Sensor and Location プラットフォームは、センサーのプロパティ
 <td><span id="SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID"></span><span id="sensor_property_persistent_unique_id"></span>
 <strong>SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID</strong> (PID = 5)</td>
 <td><p><strong>VT_CLSID</strong></p>
-<p>読み取り専用です。 必要な場合は、静的です。 A <strong>GUID</strong>センサーを識別します。 この値は、デバイス、またはコンピューターの列挙型と同じモデルのデバイス間では、各センサーに対して一意である必要があります。 このプロパティは、呼び出すことによって取得同じ値を含む<a href="https://msdn.microsoft.com/library/windows/desktop/dd318873" data-raw-source="[&lt;strong&gt;ISensor::GetID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/dd318873)"> <strong>ISensor::GetID</strong> </a>します。</p></td>
+<p>読み取り専用です。 必要な場合は、静的です。 A <strong>GUID</strong>センサーを識別します。 この値は、デバイス、またはコンピューターの列挙型と同じモデルのデバイス間では、各センサーに対して一意である必要があります。 このプロパティは、呼び出すことによって取得同じ値を含む<a href="https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid" data-raw-source="[&lt;strong&gt;ISensor::GetID&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid)"> <strong>ISensor::GetID</strong> </a>します。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_RANGE_MAXIMUM"></span><span id="sensor_property_range_maximum"></span>
@@ -188,9 +188,9 @@ Sensor and Location プラットフォームは、センサーのプロパティ
 <strong>SENSOR_PROPERTY_STATE</strong> (PID = 3)</td>
 <td><p><strong>VT_UI4</strong></p>
 <p>読み取り専用です。 必須。</p>
-<p><a href="https://msdn.microsoft.com/library/windows/desktop/dd318905" data-raw-source="[&lt;strong&gt;SensorState&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/dd318905)"><strong>SensorState</strong> </a>センサーの現在の状態を表す値です。</p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001" data-raw-source="[&lt;strong&gt;SensorState&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001)"><strong>SensorState</strong> </a>センサーの現在の状態を表す値です。</p>
 <div class="alert">
-<strong>注</strong>このプロパティを更新するを呼び出して、状態変更イベントを発生させる<a href="https://msdn.microsoft.com/library/windows/hardware/ff545523" data-raw-source="[&lt;strong&gt;ISensorClassExtension::PostStateChange&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545523)"> <strong>ISensorClassExtension::PostStateChange</strong></a>します。
+<strong>注</strong>このプロパティを更新するを呼び出して、状態変更イベントを発生させる<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange" data-raw-source="[&lt;strong&gt;ISensorClassExtension::PostStateChange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)"> <strong>ISensorClassExtension::PostStateChange</strong></a>します。
 </div>
 <div>
  
@@ -261,13 +261,13 @@ Sensor and Location プラットフォームは、センサーのプロパティ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**GetProperties**](https://msdn.microsoft.com/library/windows/desktop/dd318874)
+[**GetProperties**](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getproperties)
 
-[**GetProperty**](https://msdn.microsoft.com/library/windows/desktop/dd318876)
+[**GetProperty**](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getproperty)
 
 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=275070)
 
-[**SetProperties**](https://msdn.microsoft.com/library/windows/desktop/dd318899)
+[**SetProperties**](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-setproperties)
 
  
 

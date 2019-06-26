@@ -8,17 +8,17 @@ keywords:
 - ドライバー WDK の動的なハードウェア パーティション分割、非同期の通知に登録します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e69b632b3356a4f9a0eea762c77d4a7e0594682
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15a926e447e2ce368943e3ce6342b20f1a28f145
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369102"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378815"
 ---
 # <a name="processing-an-asynchronous-driver-notification"></a>非同期ドライバー通知の処理
 
 
-ポインターを渡す、オペレーティング システムに登録されたコールバック関数を呼び出すと、 [**デバイス\_インターフェイス\_変更\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff543134)構造体、*NotificationStructure*パラメーター。
+ポインターを渡す、オペレーティング システムに登録されたコールバック関数を呼び出すと、 [**デバイス\_インターフェイス\_変更\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_interface_change_notification)構造体、*NotificationStructure*パラメーター。
 
 次のコード例では、プロセッサのドライバーが非同期通知を処理するコールバック関数の実装を示しています。
 

@@ -8,12 +8,12 @@ keywords:
 - WDK いる CoNDIS WAN の問題
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5b2babe8e7ddde0ac5739a2352af8e318670a47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cf90153d19af7a177a0fc67c123a2e85993ebc0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380900"
 ---
 # <a name="indicating-received-data-from-a-condis-wan-miniport-driver"></a>CoNDIS WAN ミニポート ドライバーからの受信データの表示
 
@@ -23,13 +23,13 @@ ms.locfileid: "63327726"
 
 次の操作は、いる CoNDIS WAN ミニポート ドライバー ネットワーク データ パケットを受信するときに発生します。
 
-1.  ドライバーは、呼び出す前に必要な場合、ネットワーク データ パケットからドライバー固有のカプセル化を削除[ **NdisMCoIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563561) NETで受信したデータを示す\_バッファー\_リスト構造体。 たとえば、ドライバーは、PPPoE カプセル化を削除できます。 ただし、ミニポート ドライバーままようになど、PPP ヘッダーとペイロードのカプセル化されたデータ。
+1.  ドライバーは、呼び出す前に必要な場合、ネットワーク データ パケットからドライバー固有のカプセル化を削除[ **NdisMCoIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists) NETで受信したデータを示す\_バッファー\_リスト構造体。 たとえば、ドライバーは、PPPoE カプセル化を削除できます。 ただし、ミニポート ドライバーままようになど、PPP ヘッダーとペイロードのカプセル化されたデータ。
 
 2.  ドライバーの呼び出し、 **NdisMCoIndicateReceiveNetBufferLists** NDISWAN にパケットが届いたことを示す関数。
 
-3.  パケットと呼び出しを処理する NDISWAN [ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)をパケットの到着を示すためにします。
+3.  パケットと呼び出しを処理する NDISWAN [ **NdisMIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)をパケットの到着を示すためにします。
 
-4.  パケット、NDIS 呼び出しを転送するように、 [ **ProtocolReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff570267)上にあるバインドのプロトコル ドライバーの関数。
+4.  パケット、NDIS 呼び出しを転送するように、 [ **ProtocolReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_receive_net_buffer_lists)上にあるバインドのプロトコル ドライバーの関数。
 
  
 

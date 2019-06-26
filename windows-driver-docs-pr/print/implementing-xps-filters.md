@@ -10,31 +10,31 @@ keywords:
 - IPrintPipelineFilter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4b444e04e45231277c96e6798ea0bd3938e25ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fea73b80b1c487868731a0bb4c80ea000c5ffa8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340894"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385829"
 ---
 # <a name="implementing-xps-filters"></a>XPS フィルターの実装
 
 
-XPS のすべてのフィルターを実装する必要があります、 [IPrintPipelineFilter](https://msdn.microsoft.com/library/windows/hardware/ff554286)インターフェイス。
+XPS のすべてのフィルターを実装する必要があります、 [IPrintPipelineFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinefilter)インターフェイス。
 
-呼び出し中に、 [ **IPrintPipelineFilter::InitializeFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff554291)メソッドをフィルターする必要があります。
+呼び出し中に、 [ **IPrintPipelineFilter::InitializeFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)メソッドをフィルターする必要があります。
 
-1.  キャッシュへのポインター、 [IPrintPipelineManagerControl](https://msdn.microsoft.com/library/windows/hardware/ff554303)インターフェイス。
+1.  キャッシュへのポインター、 [IPrintPipelineManagerControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinemanagercontrol)インターフェイス。
 
-2.  関連するデータを処理、 [IPrintPipelinePropertyBag](https://msdn.microsoft.com/library/windows/hardware/ff554320)インターフェイス。
+2.  関連するデータを処理、 [IPrintPipelinePropertyBag](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinepropertybag)インターフェイス。
 
-3.  呼び出す、 [ **IInterFilterCommunicator::RequestReader** ](https://msdn.microsoft.com/library/windows/hardware/ff551054)と[ **IInterFilterCommunicator::RequestWriter** ](https://msdn.microsoft.com/library/windows/hardware/ff551057)のメソッド、**IInterfilterCommunicator**インターフェイス (pIInterFilterCom) フィルターのプロバイダーとコンシューマー インターフェイスを初期化します。
+3.  呼び出す、 [ **IInterFilterCommunicator::RequestReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iinterfiltercommunicator-requestreader)と[ **IInterFilterCommunicator::RequestWriter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iinterfiltercommunicator-requestwriter)のメソッド、**IInterfilterCommunicator**インターフェイス (pIInterFilterCom) フィルターのプロバイダーとコンシューマー インターフェイスを初期化します。
 
-データに PrintTicket セクションが含まれている場合は、Microsoft Win32 PrintTicket または PrintCapabilities API を通じて、データをアクセスできます。 XPSDrv に基づく UniDrv と PScript5 ドライバーのフィルターにアクセスできる、 [IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)構成サービスとしてのインターフェイスのコア Unidrv または PScript5 のドライバーです。
+データに PrintTicket セクションが含まれている場合は、Microsoft Win32 PrintTicket または PrintCapabilities API を通じて、データをアクセスできます。 XPSDrv に基づく UniDrv と PScript5 ドライバーのフィルターにアクセスできる、 [IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)構成サービスとしてのインターフェイスのコア Unidrv または PScript5 のドライバーです。
 
 フィルターは、ドライバーの設計によって、プロパティ バッグから専用の構成データにアクセスすることもあります。
 
-間フィルター Communicator は、フィルター パイプライン内のフィルター間の通信を処理するフィルター パイプライン マネージャーの一部です。 フィルター パイプライン マネージャーがフィルター、Communicator の間のフィルター インターフェイスを初期化します ([IInterFilterCommunicator](https://msdn.microsoft.com/library/windows/hardware/ff551050)) フィルターに渡されるため、フィルターは、読み取りを取得し、そのために定義されているインターフェイスを記述フィルターです。
+間フィルター Communicator は、フィルター パイプライン内のフィルター間の通信を処理するフィルター パイプライン マネージャーの一部です。 フィルター パイプライン マネージャーがフィルター、Communicator の間のフィルター インターフェイスを初期化します ([IInterFilterCommunicator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iinterfiltercommunicator)) フィルターに渡されるため、フィルターは、読み取りを取得し、そのために定義されているインターフェイスを記述フィルターです。
 
 Microsoft XPS ドキュメントとストリーム インターフェイスを提供するが、そのフィルターに対して定義されている独自の間のフィルター インターフェイスを作成できます。 マイクロソフトでは、次のインターフェイスを提供します。
 

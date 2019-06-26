@@ -4,12 +4,12 @@ description: Windows カーネルモード オブジェクト マネージャー
 ms.assetid: f10561a3-d831-4c13-9edf-be40fb1db403
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e511270bb63eb3865e1bd6b1109e197372a374c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d27c51d02b3c7ad393278f14170782cdc772c766
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357455"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374171"
 ---
 # <a name="windows-kernel-mode-object-manager"></a>Windows カーネルモード オブジェクト マネージャー
 
@@ -56,7 +56,7 @@ Windows では、25 を超える種類のオブジェクトがあります。 �
 
 Windows でのオブジェクトの詳細については、次を参照してください。[デバイス オブジェクトとデバイス スタック](device-objects-and-device-stacks.md)します。
 
-オブジェクト マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Ob**"。 たとえば、 **ObGetObjectSecurity**します。 オブジェクト マネージャーのルーチンの一覧は、次を参照してください。[オブジェクト マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff557759)します。
+オブジェクト マネージャーに直接インターフェイスを提供するルーチンには文字で、通常、プレフィックス"**Ob**"。 たとえば、 **ObGetObjectSecurity**します。 オブジェクト マネージャーのルーチンの一覧は、次を参照してください。[オブジェクト マネージャー ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557759(v=vs.85))します。
 
 Windows が、リソースの抽象化としてオブジェクトを使用することに注意してください。 ただし、Windows でないオブジェクト指向の用語の従来の C++ 意味します。 Windows は*オブジェクトに基づく*します。 Windows のオブジェクト ベースの意味の詳細については、次を参照してください。[オブジェクトに基づく](object-based.md)します。
 

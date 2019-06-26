@@ -16,12 +16,12 @@ keywords:
 - 記憶域 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6202c5524e84a9bb4239c866643c694809d5f9d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45142d784ea22eb7e9052314b9197de4321d6957
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343712"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383343"
 ---
 # <a name="clfs-marshalling-areas"></a>CLFS マーシャリング領域
 
@@ -31,7 +31,7 @@ ms.locfileid: "63343712"
 
 Common Log File System (CLFS) クライアントへのログ レコードの追加、 [*領域をマーシャ リング*](clfs-terminology.md#kernel-clfs-term-marshalling-area)揮発性メモリは、CLFS は安定ストレージにそれらのレコードを定期的に書き込みます。 マーシャ リング領域は、それぞれがいくつかのログ レコードを保持できる、ログの I/O バッファーのコレクションです。 バッファーされている最近保留中のレコードのログの I/O ストリームに書き込まれます (ただし、場合によって、安定ストレージにフラッシュされません)、ストリームから読み取られた最近のレコードとします。
 
-呼び出すことによって、マーシャ リング領域を作成する[ **ClfsCreateMarshallingArea**](https://msdn.microsoft.com/library/windows/hardware/ff541520)、ログ I/O のサイズのバッファーを指定する必要がある時にこれらのバッファーがかどうかであるおよびマーシャ リング領域が使用されますページまたは非ページ プール。 マーシャ リング領域内のすべてのログ I/O バッファーは、同じサイズと、CLFS によりサイズが、基になるの安定したストレージ メディア上のセクター サイズの倍数であるようになります。 CLFS は、要求されたサイズし、安定したストレージ メディアと互換性のある、I/O バッファーが必要になるとして切り上げます。
+呼び出すことによって、マーシャ リング領域を作成する[ **ClfsCreateMarshallingArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfscreatemarshallingarea)、ログ I/O のサイズのバッファーを指定する必要がある時にこれらのバッファーがかどうかであるおよびマーシャ リング領域が使用されますページまたは非ページ プール。 マーシャ リング領域内のすべてのログ I/O バッファーは、同じサイズと、CLFS によりサイズが、基になるの安定したストレージ メディア上のセクター サイズの倍数であるようになります。 CLFS は、要求されたサイズし、安定したストレージ メディアと互換性のある、I/O バッファーが必要になるとして切り上げます。
 
 CLFS は、割り当ておよび、必要に応じて、ログ I/O バッファーを解放しますが、一度に 1 つ割り当てることができる I/O バッファーの最大数を設定するオプションがあります。 また、独自のバッファーの割り当てと解放の関数を提供するオプションがあります。
 
@@ -41,7 +41,7 @@ CLFS は、割り当ておよび、必要に応じて、ログ I/O バッファ�
 
 独自のログの I/O バッファー メモリの割り当てを行う場合は、設定、 *pfnAllocBuffer*と*pfnFreeBuffer*のパラメーター、 **ClfsCreateMarshallingArea**関数独自の割り当てと解放の関数を指すようにします。 CLFS は関数を呼び出して、作成またはログの I/O バッファーを解放する必要があるたびに、実際のメモリ割り当てと解放を実行します。
 
-場合によっては、事前にマーシャ リング領域内の領域を予約する可能性があります。 たとえば、10 個のログ レコードのセットを作成しようとしているし、全体のマーシャ リング領域に十分な領域があることを確認することがわかっている場合があります。 10 個のレコードの領域を予約するの レコードのサイズを保持する 10 要素の配列を作成し、先の配列を渡す、 [ **ClfsReserveAndAppendLog** ](https://msdn.microsoft.com/library/windows/hardware/ff541723)で機能、 *rgcbReservation*パラメーター。 **ClfsReserveAndAppendLog**ストリームにログ レコードを追加またはものの両方をアトミックには、マーシャ リング領域の領域を確保する多目的関数です。 呼び出すことができます、パラメーターを適切に設定するには、 **ClfsReserveAndAppendLog**ストリームに実際にすべてのレコードを追加せずに将来使用するための領域を予約します。
+場合によっては、事前にマーシャ リング領域内の領域を予約する可能性があります。 たとえば、10 個のログ レコードのセットを作成しようとしているし、全体のマーシャ リング領域に十分な領域があることを確認することがわかっている場合があります。 10 個のレコードの領域を予約するの レコードのサイズを保持する 10 要素の配列を作成し、先の配列を渡す、 [ **ClfsReserveAndAppendLog** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreserveandappendlog)で機能、 *rgcbReservation*パラメーター。 **ClfsReserveAndAppendLog**ストリームにログ レコードを追加またはものの両方をアトミックには、マーシャ リング領域の領域を確保する多目的関数です。 呼び出すことができます、パラメーターを適切に設定するには、 **ClfsReserveAndAppendLog**ストリームに実際にすべてのレコードを追加せずに将来使用するための領域を予約します。
 
  
 

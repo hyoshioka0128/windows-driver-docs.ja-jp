@@ -13,17 +13,17 @@ keywords:
 - WDK ビデオ キャプチャの状態を実行します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a1068fdabfc1dc1747065eb09693d4ab6a0db3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af5cfb8fd93caf8d757d57cb527dfad278d4ee02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390865"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377776"
 ---
 # <a name="streaming-states"></a>ストリーミングの状態
 
 
-4 つの状態のいずれかで、ミニドライバーによって提供される各ストリームが存在します。KSSTATE\_停止、KSSTATE\_ACQUIRE、KSSTATE\_一時停止、または KSSTATE\_を実行します。 初期化時に、ストリームが、既定で、 **KSSTATE\_停止**状態。 Stream クラス インターフェイスを送信するときに他の状態に遷移が行われた、 [ **SRB\_設定\_ストリーム\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff568210)ミニドライバーに要求します。 次の表では、識別し、4 つのストリームの状態について説明します。
+4 つの状態のいずれかで、ミニドライバーによって提供される各ストリームが存在します。KSSTATE\_停止、KSSTATE\_ACQUIRE、KSSTATE\_一時停止、または KSSTATE\_を実行します。 初期化時に、ストリームが、既定で、 **KSSTATE\_停止**状態。 Stream クラス インターフェイスを送信するときに他の状態に遷移が行われた、 [ **SRB\_設定\_ストリーム\_状態**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-stream-state)ミニドライバーに要求します。 次の表では、識別し、4 つのストリームの状態について説明します。
 
 <table>
 <colgroup>

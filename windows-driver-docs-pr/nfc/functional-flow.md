@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a902df6b003ffc0740dbde6558807ed346a009a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e962f5ff35a21a56e3980140093059d4eb79e4ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372448"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370507"
 ---
 # <a name="functional-flow"></a>機能のフロー
 
@@ -28,5 +28,5 @@ ms.locfileid: "63372448"
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[スマート カード DDI とコマンドのリファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905601)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[スマート カード DDI とコマンドのリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  

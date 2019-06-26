@@ -10,12 +10,12 @@ keywords:
 - バス WDK DirectDraw をマスター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2baec9c6192ee5e8eed74c926c4d46acb836c28a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a442ce47fac9f6414ada2387a1adcbff86efb37c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361224"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381070"
 ---
 # <a name="dxapi-miniport-driver-functions-for-windows-2000-and-later"></a>Windows 2000 以降での DxApi ミニポート ドライバーの関数
 
@@ -31,7 +31,7 @@ DxApi インターフェイスのサポートは、次の操作のに役立ち�
 
 -   フィールドが IRQ を使用して MPEG データがフィルムからサンプリングされた最初の 3:2 プルダウンを元に戻すことができます MPEG ドライバーをサポートするためにスキップしています。
 
--   デバイスに電話しなくてもデータを継続的に転送できるように、マスターをバス[ *DdLock*](https://msdn.microsoft.com/library/windows/hardware/ff549599) / [*DdUnlock* ](https://msdn.microsoft.com/library/windows/hardware/ff550365)のすべてのフレーム。 これは、これらのデバイス ドライバーが WDM ドライバーのために特に便利です。
+-   デバイスに電話しなくてもデータを継続的に転送できるように、マスターをバス[ *DdLock*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock) / [*DdUnlock* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_unlock)のすべてのフレーム。 これは、これらのデバイス ドライバーが WDM ドライバーのために特に便利です。
 
 -   ビデオのキャプチャと VBI します。 ミニポート ドライバーはハードウェアのビデオ ポート IRQ またはグラフィックス IRQ に基づいてキャプチャ ビデオに簡単です。
 

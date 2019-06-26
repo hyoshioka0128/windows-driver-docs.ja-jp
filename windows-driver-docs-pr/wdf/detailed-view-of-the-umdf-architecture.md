@@ -9,12 +9,12 @@ keywords:
 - WDK UMDF のアーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb66dd12ef53c0176016e36aa09f3a3850a4f16f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fcb3c1b3c1e97bd588b8d99293f7f33972a0bad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384588"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377456"
 ---
 # <a name="architecture-of-umdf"></a>UMDF のアーキテクチャ
 
@@ -27,7 +27,7 @@ ms.locfileid: "63384588"
 
 ![reflector でデバイス オブジェクトと下矢印を含む umdf コンポーネント](images/umdfarch4.gif)
 
-UMDF ドライバーに、I/O 要求を送信するアプリケーションなどの呼び出し、Win32 ファイル I/O 関数では、 [ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)、 **ReadFileEx**、 **CancelIoEx**、または[ **DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)します。 Reflector は、クライアント アプリケーションから要求を受信したときに、適切なドライバーのホスト プロセスに要求を送信します。 ドライバー ホスト要求を処理し、ルート、適切なユーザー モード デバイス スタックの先頭にします。
+UMDF ドライバーに、I/O 要求を送信するアプリケーションなどの呼び出し、Win32 ファイル I/O 関数では、 [ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFileEx**、 **CancelIoEx**、または[ **DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)します。 Reflector は、クライアント アプリケーションから要求を受信したときに、適切なドライバーのホスト プロセスに要求を送信します。 ドライバー ホスト要求を処理し、ルート、適切なユーザー モード デバイス スタックの先頭にします。
 
 要求がユーザー モードのスタック内のドライバーのいずれかで完了したか、ドライバーを reflector のいずれかによって転送されます。 Reflector は、ユーザー モード ドライバー スタックからの要求を受信したときに、完了のカーネル モード スタック ダウン要求を送信します。
 

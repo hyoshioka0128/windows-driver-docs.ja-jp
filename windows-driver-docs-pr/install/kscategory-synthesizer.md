@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3c182cb446cf0ea2d4517ac3a939b91ea7e7f2df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4e0ef43b9d42bcbf5ff6d9b242c104c2f67338b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343795"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366695"
 ---
 # <a name="kscategorysynthesizer"></a>KSCATEGORY_SYNTHESIZER
 
 
-KSCATEGORY_SYNTHESIZER[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)MIDI データ wave オーディオ サンプルまたは、出力をアナログ信号に変換する (KS) 機能のカテゴリ。
+KSCATEGORY_SYNTHESIZER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)MIDI データ wave オーディオ サンプルまたは、出力をアナログ信号に変換する (KS) 機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -58,9 +58,9 @@ KS オーディオ アダプター デバイス用のドライバーでは、オ
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください、 *Ddksynth.inf* INF ファイルでのソフトウェアのシンセサイザー サンプルに含まれている、 *src\\オーディオ\\ddksynth。* WDK のディレクトリ。
 
-シンセサイザーの詳細については、次を参照してください。 [MIDI と DirectMusic フィルター](https://msdn.microsoft.com/library/windows/hardware/ff537520)します。
+シンセサイザーの詳細については、次を参照してください。 [MIDI と DirectMusic フィルター](https://docs.microsoft.com/windows-hardware/drivers/audio/midi-and-directmusic-filters)します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)します。
 
 <a name="requirements"></a>必要条件
 ------------

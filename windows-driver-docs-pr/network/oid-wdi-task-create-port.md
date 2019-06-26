@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_CREATE_PORT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c218861294d13130d5529d9c60c55e122102ab84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 487bd64619ee9b771ddc76999d35473e1bb6a2ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348464"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387242"
 ---
 # <a name="oidwditaskcreateport"></a>OID\_WDI\_タスク\_作成\_ポート
 
@@ -49,13 +49,13 @@ Wi-Fi Direct デバイスのポートでは、として機能する場合は、M
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926273" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926273)"><strong>WDI_TLV_CREATE_PORT_PARAMETERS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-parameters" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-parameters)"><strong>WDI_TLV_CREATE_PORT_PARAMETERS</strong></a></td>
 <td></td>
 <td></td>
 <td>ポートの作成のパラメーターです。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926270" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_MAC_ADDRESS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926270)"><strong>WDI_TLV_CREATE_PORT_MAC_ADDRESS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-mac-address" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_MAC_ADDRESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-mac-address)"><strong>WDI_TLV_CREATE_PORT_MAC_ADDRESS</strong></a></td>
 <td></td>
 <td>x</td>
 <td><p>この TLV は、UE は休止状態から再開中に、プライマリ以外のポートを再作成するときに使用されます。 この TLV が存在する場合は、ファームウェアは、ポートを作成するこの MAC アドレスを使用する必要があります。 この MAC アドレス、ファームウェアが休止状態の前に、ポートの種類を作成する MAC アドレスにすることが保証されます。</p>
@@ -71,7 +71,7 @@ Wi-Fi Direct デバイスのポートでは、として機能する場合は、M
 
 [NDIS\_STATUS\_WDI\_INDICATION\_CREATE\_PORT\_COMPLETE](ndis-status-wdi-indication-create-port-complete.md)
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

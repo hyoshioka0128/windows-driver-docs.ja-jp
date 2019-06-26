@@ -12,12 +12,12 @@ keywords:
 - WAN パケットのフレーミング WDK ネットワーク、WAN パケットのフレーミングについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec833a021ffec7f8dba9e4d78a5889f19ccdd4f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b47073f18d34134dab135939bab30f46d7fc81ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380564"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384349"
 ---
 # <a name="wan-packet-framing"></a>WAN パケット フレーミング
 
@@ -27,7 +27,7 @@ ms.locfileid: "63380564"
 
 このセクションでは、WAN パケットのフレーミングについての情報を提供します。
 
-NDISWAN 中間ドライバーに、ミニポート ドライバーの応答から WAN ミニポート ドライバーによって実行される WAN パケット フレームに関する情報を取得する、 [OID\_WAN\_MEDIUM\_サブタイプ](https://msdn.microsoft.com/library/windows/hardware/ff561216)クエリ情報の要求。
+NDISWAN 中間ドライバーに、ミニポート ドライバーの応答から WAN ミニポート ドライバーによって実行される WAN パケット フレームに関する情報を取得する、 [OID\_WAN\_MEDIUM\_サブタイプ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561216(v=vs.85))クエリ情報の要求。
 
 NDISWAN は、LAN から、発信パケット PPP 形式に変換します。 NDISWAN では、単純な HDLC フレームを使用します。 ミニポート ドライバーでは、メディア固有のフレームの大部分を実行する必要があります。
 

@@ -13,12 +13,12 @@ keywords:
 - Windows Vista SP1 WDK WHEA、WHEA の変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6486b0cf15fc125364549f162e9f60216a05138e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6481d9c693a7c51b0100bf1ce3d010247865689
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340641"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387140"
 ---
 # <a name="whea-changes-for-windows-server-2008-and-windows-vista-sp1"></a>Windows Server 2008 および Windows Vista SP1 での WHEA の変更点
 
@@ -35,7 +35,7 @@ Windows Server 2008 および Windows Vista SP1 以降、次の変更が行わ�
 
 -   WHEA では、ハードウェア エラーが発生したときに、Event Tracing for Windows (ETW) イベントを生成します。 Windows Server 2008 以降、WHEA ハードウェアのエラー イベントとそのハードウェアのエラー イベントを記述するデータ テンプレートは、イベントと Windows Vista でサポートされているテンプレートによって異なります。
 
-    WHEA で ETW のサポートの詳細については、次を参照してください。[ハードウェア エラー イベント](https://msdn.microsoft.com/library/windows/hardware/ff559387)します。
+    WHEA で ETW のサポートの詳細については、次を参照してください。[ハードウェア エラー イベント](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)します。
 
 -   [WHEA ハードウェア エラーのイベント処理アプリケーション](whea-hardware-error-event-processing-applications.md)WHEA によってログに記録されたイベントをクエリすることによって、システム イベント ログからハードウェアのエラー イベントを取得できます。 ただし、Windows Server 2008 以降では、WHEA ハードウェア エラーのイベント ログに記録するプロバイダーの名前が変更されました。 これらのアプリケーションは、新しいプロバイダーによってエラー イベントにアクセスする必要があります。 詳細については、次を参照してください。[のハードウェア エラー イベント、システム イベント ログを照会](querying-the-system-event-log-for-hardware-error-events.md)します。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ad2d41fe45aa2a504e9634dac65e54cc11a6e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c9bacd493cab280338f56f458cf47b6adf76032
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361570"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367532"
 ---
 # <a name="bug-check-0x26-cdfsfilesystem"></a>バグ チェック 0x26:CDFS\_ファイル\_システム
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361570"
 CDFS\_ファイル\_システムのバグ チェックが 0x00000026 の値を持ちます。 これは、CD ファイル システムで問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="cdfsfilesystem-parameters"></a>CDFS\_ファイル\_システム パラメーター
@@ -75,7 +75,7 @@ CDFS\_ファイル\_システムのバグ チェックが 0x00000026 の値を�
 <a name="resolution"></a>解決方法
 ----------
 
-**この問題をデバッグします。** 使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。
+**この問題をデバッグします。** 使用して、 [ **.cxr (コンテキスト レコードの表示)** ](-cxr--display-context-record-.md)パラメーター 3 では、コマンドを使用して[ **kb (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)します。
 
 **ディスク破損の問題を解決するには。** SCSI と FASTFAT (システム ログ)、またはデバイスや、エラーの原因となっているドライバーの特定に役立つ可能性がある Autochk (アプリケーション ログ) からのエラー メッセージをイベント ビューアを確認します。 ウイルス スキャナー、バックアップ プログラム、またはシステムを継続的に監視するディスク デフラグ ツールを無効にしてください。 システム製造元から提供されたハードウェア診断を実行することもあります。 詳細については、これらの手順は、コンピューターの製造元のマニュアルを参照してください。 実行**Chkdsk/f/r**を検出し、ファイル システム構造的な破損を解決します。 システム パーティションにディスクのスキャンが開始する前に、システムを再起動する必要があります。
 

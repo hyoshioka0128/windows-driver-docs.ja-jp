@@ -4,12 +4,12 @@ description: このセクションでは、NDIS 6.70 を紹介し、NDIS 6.60 �
 ms.assetid: D846EE68-2C84-40E0-91DE-2034F75D576F
 ms.date: 06/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91c955a03143d8f96d7c01dc4d47090ed41cb7ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a8429542744af8d3a9777e41edb36c4953d142e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386345"
 ---
 # <a name="introduction-to-ndis-670"></a>NDIS 6.70 の概要
 
@@ -79,5 +79,5 @@ NetAdapterCx データ構造の詳細については、次を参照してくだ�
 
 次のデータ構造は、NDIS 6.70 の新機能。
 
-- [NDIS_STATUS_WWAN_DEVICE_CAPS_EX](https://msdn.microsoft.com/library/windows/hardware/mt782396)
+- [NDIS_STATUS_WWAN_DEVICE_CAPS_EX](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps-ex)
 

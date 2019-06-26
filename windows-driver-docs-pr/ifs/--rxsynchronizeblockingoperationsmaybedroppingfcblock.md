@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 991df402d7c32af7a2715ec98306653f72b9370b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ea8d4efae6fe18b0134eb7c8d6879bf49db4ea6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381027"
 ---
 # <a name="rxsynchronizeblockingoperationsmaybedroppingfcblock-function"></a>\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock 関数
 
@@ -82,11 +82,11 @@ FCB のリソースを解放するかどうかを示すブール値。 このパ
 <a name="remarks"></a>注釈
 -------
 
- **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**ルーチンは、同じ作業キューにブロッキング I/O 要求を同期します。 RDBSS 使用 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**内部的に同期するパイプ操作の名前します。 作業キューが、ファイル オブジェクトに関連付けられている拡張子 (FOBX) によって参照されるキュー、 **pFcb** 、RX のメンバー\_によって示される CONTEXT 構造*RxContext*します。
+**\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**ルーチンは、同じ作業キューにブロッキング I/O 要求を同期します。 RDBSS 使用 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**内部的に同期するパイプ操作の名前します。 作業キューが、ファイル オブジェクトに関連付けられている拡張子 (FOBX) によって参照されるキュー、 **pFcb** 、RX のメンバー\_によって示される CONTEXT 構造*RxContext*します。
 
 ネットワークのミニ リダイレクターを使用して、可能性があります **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**ネットワーク ミニリダイレクターによって保持されている別のキューに対する操作を同期します。
 
-場合*RxContext* 、非同期操作のマークが付いて **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**は追加、 *RxContext*キューと状態の戻り値に\_保留します。 場合*RxContext* 、同期処理のマークが付いて **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**ブロックと*RxContext*への呼び出しが行われたときに再開[ **RxResumeBlockedOperations\_順次**](https://msdn.microsoft.com/library/windows/hardware/ff554701)します。
+場合*RxContext* 、非同期操作のマークが付いて **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**は追加、 *RxContext*キューと状態の戻り値に\_保留します。 場合*RxContext* 、同期処理のマークが付いて **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**ブロックと*RxContext*への呼び出しが行われたときに再開[ **RxResumeBlockedOperations\_順次**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)します。
 
 ブロッキング I/O 要求が取り消された場合 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**ステータスを返します\_キャンセル、エラーを示します。
 
@@ -98,7 +98,7 @@ FCB のリソースを解放するかどうかを示すブール値。 このパ
 
 **RxSynchronizeBlockingOperationsAndDropFcbLock** -を呼び出し、 *DropFcbLock*パラメーターに設定**TRUE**します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -125,21 +125,21 @@ FCB のリソースを解放するかどうかを示すブール値。 このパ
 ## <a name="see-also"></a>関連項目
 
 
-[**RxCompleteRequest\_Real**](https://msdn.microsoft.com/library/windows/hardware/ff554348)
+[**RxCompleteRequest\_Real**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxcompleterequest_real)
 
-[**RxCreateRxContext**](https://msdn.microsoft.com/library/windows/hardware/ff554367)
+[**RxCreateRxContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxcreaterxcontext)
 
-[**RxDereference**](https://msdn.microsoft.com/library/windows/hardware/ff554388)
+[**RxDereference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdereference)
 
-[**RxDereferenceAndDeleteRxContext\_Real**](https://msdn.microsoft.com/library/windows/hardware/ff554393)
+[**RxDereferenceAndDeleteRxContext\_Real**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxdereferenceanddeleterxcontext_real)
 
-[**RxInitializeContext**](https://msdn.microsoft.com/library/windows/hardware/ff554502)
+[**RxInitializeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxinitializecontext)
 
-[**RxPrepareContextForReuse**](https://msdn.microsoft.com/library/windows/hardware/ff554643)
+[**RxPrepareContextForReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxpreparecontextforreuse)
 
-[**RxResumeBlockedOperations\_順次**](https://msdn.microsoft.com/library/windows/hardware/ff554701)
+[**RxResumeBlockedOperations\_順次**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-rxresumeblockedoperations_serially)
 
-[**\_\_RxSynchronizeBlockingOperations**](https://msdn.microsoft.com/library/windows/hardware/ff557377)
+[ **\_\_RxSynchronizeBlockingOperations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)
 
  
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: be309712967d427624c2e4ab59a4aaf0df719c1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8c4f86938f72d321bc4538d483ba48ce0f5e57e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363729"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386430"
 ---
 # <a name="guiddevinterfaceparallel"></a>GUID_DEVINTERFACE_PARALLEL
 
 
-GUID_DEVINTERFACE_PARALLEL[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[パラレル ポート](https://msdn.microsoft.com/library/windows/hardware/ff544263)IEEE 1284 と互換性のあるハードウェア インターフェイスをサポートします。
+GUID_DEVINTERFACE_PARALLEL[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[パラレル ポート](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))IEEE 1284 と互換性のあるハードウェア インターフェイスをサポートします。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_PARALLEL[デバイス インターフェイス クラス](http
 
 パラレル ポートのシステムによって提供される関数のドライバーでは、パラレル ポートの場合は、このデバイス クラスのインスタンスを登録します。
 
-並列デバイスとドライバーについては、次を参照してください。[パラレル ポートやデバイスの概要](https://msdn.microsoft.com/library/windows/hardware/ff543964)します。
+並列デバイスとドライバーについては、次を参照してください。[パラレル ポートやデバイスの概要](https://docs.microsoft.com/previous-versions/ff543964(v=vs.85))します。
 
 パラレル ポートに接続されているデバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_PARCLASS**](guid-devinterface-parclass.md)します。
 

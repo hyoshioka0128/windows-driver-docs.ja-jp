@@ -4,12 +4,12 @@ description: Hyper-V 拡張可能スイッチ ポリシーの概要
 ms.assetid: 1D0AC55B-60F7-400E-A376-F3E2F7373A92
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dce3c0ff8072655d8922171319c9494084863e4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03529154bb12011839c48f0daf6cff2ac0ca75fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327700"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385725"
 ---
 # <a name="overview-of-hyper-v-extensible-switch-policies"></a>Hyper-V 拡張可能スイッチ ポリシーの概要
 
@@ -123,7 +123,7 @@ typedef struct _VARIABLE_LENGTH_STRING
 
     カスタム ポリシーのプロパティが、基になる拡張機能に発行されたときに、 **PropertyVersion**ポリシーのプロパティを定義する構造体のメンバーには、シリアル化されたバージョンの値が含まれています。
 
-    オブジェクト識別子 (OID) 要求を発行したときなど、拡張可能スイッチ インターフェイス[OID\_切り替える\_ポート\_プロパティ\_追加](https://msdn.microsoft.com/library/windows/hardware/hh598275)OID は、に関連付け[**NDIS\_スイッチ\_ポート\_プロパティ\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598238)構造体。 **PropertyVersion**その構造体のメンバーには、シリアル化されたバージョンの値が含まれています。
+    オブジェクト識別子 (OID) 要求を発行したときなど、拡張可能スイッチ インターフェイス[OID\_切り替える\_ポート\_プロパティ\_追加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)OID は、に関連付け[**NDIS\_スイッチ\_ポート\_プロパティ\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)構造体。 **PropertyVersion**その構造体のメンバーには、シリアル化されたバージョンの値が含まれています。
 
 -   シリアル化された C 構造体を格納しているバッファー内のオフセットには、すべての可変長文字列がシリアル化します。 それぞれの可変長文字列として書式設定、**変数\_長さ\_文字列**このバッファーのオフセット内の構造。
 

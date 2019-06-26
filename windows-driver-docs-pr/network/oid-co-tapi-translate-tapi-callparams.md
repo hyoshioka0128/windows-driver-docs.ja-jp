@@ -6,16 +6,16 @@ keywords:
 - OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48009bed0a7d7f7a66e83ad3b3de62bafc768c60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42f653a77c4d818465a6564ceca97cbb1097b586
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380703"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385506"
 ---
 # <a name="oidcotapitranslatetapicallparams"></a>OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS
 
-OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS OID は、NDIS 呼び出しのパラメーターに TAPI 呼び出しのパラメーターを変換するには、コール マネージャーまたは統合呼び出し manager ミニポート (MCM) ドライバーを要求します。 この OID が返される NDIS を使用してクエリが入力としてパラメーターを呼び出すクライアント (として書式設定、 [CO_CALL_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff545384)構造) に[NdisClMakeCall](https://msdn.microsoft.com/library/windows/hardware/ff561635)クライアントが発信呼び出しを配置します。
+OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS OID は、NDIS 呼び出しのパラメーターに TAPI 呼び出しのパラメーターを変換するには、コール マネージャーまたは統合呼び出し manager ミニポート (MCM) ドライバーを要求します。 この OID が返される NDIS を使用してクエリが入力としてパラメーターを呼び出すクライアント (として書式設定、 [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造) に[NdisClMakeCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmakecall)クライアントが発信呼び出しを配置します。
 
 この OID は、次のように定義されている CO_TAPI_TRANSLATE_TAPI_CALLPARAMS 構造体を使用します。
 
@@ -42,13 +42,13 @@ typedef struct _CO_TAPI_TRANSLATE_TAPI_CALLPARAMS {
 クライアントは、ビット CO_TAPI_FLAG_OUTGOING_CALL を設定する必要があります**ulFlags**します。 クライアントがビット CO_TAPI_USE_DEFAULT_CALLPARAMS を必要に応じて設定**ulFlags**を無視するには、コール マネージャーまたは MCM のドライバーを必要とする、 **LineCallParams**戻り値の既定の NDIS 呼び出しパラメーターデバイスです。
 
 **DestAddress**  
-指定します、 [NDIS_VAR_DATA_DESC](https://msdn.microsoft.com/library/windows/hardware/ff559020) NDIS_VAR_DATA_DESC 構造体の先頭から宛先アドレスへのオフセットを含む構造体が文字配列として書式設定します。 NDIS_VAR_DATA_DESC 構造体には、宛先アドレスの長さも含まれています。 送信先アドレスは、発信通話の転送先アドレスです。
+指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) NDIS_VAR_DATA_DESC 構造体の先頭から宛先アドレスへのオフセットを含む構造体が文字配列として書式設定します。 NDIS_VAR_DATA_DESC 構造体には、宛先アドレスの長さも含まれています。 送信先アドレスは、発信通話の転送先アドレスです。
 
 **LineCallParams**  
-指定します、 [NDIS_VAR_DATA_DESC](https://msdn.microsoft.com/library/windows/hardware/ff559020) LINE_CALL_PARAMS 構造に NDIS_VAR_DATA_DESC 構造体の先頭からのオフセットを含む構造体。 NDIS_VAR_DATA_DESC 構造体には、LINE_CALL_PARAMS 構造体の長さも含まれています。 LINE_CALL_PARAMS 構造体には、NDIS 呼び出しのパラメーターに変換する TAPI 呼び出しのパラメーターを指定します。 LINE_CALL_PARAMS 構造の詳細については、Microsoft Windows SDK と ndistapi.h ヘッダー ファイルを参照してください。
+指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) LINE_CALL_PARAMS 構造に NDIS_VAR_DATA_DESC 構造体の先頭からのオフセットを含む構造体。 NDIS_VAR_DATA_DESC 構造体には、LINE_CALL_PARAMS 構造体の長さも含まれています。 LINE_CALL_PARAMS 構造体には、NDIS 呼び出しのパラメーターに変換する TAPI 呼び出しのパラメーターを指定します。 LINE_CALL_PARAMS 構造の詳細については、Microsoft Windows SDK と ndistapi.h ヘッダー ファイルを参照してください。
 
 **NdisCallParams**  
-指定します、 [NDIS_VAR_DATA_DESC](https://msdn.microsoft.com/library/windows/hardware/ff559020) CO_CALL_PARAMETERS 構造に NDIS_VAR_DATA_DESC 構造体の先頭からのオフセットを含む構造体。 NDIS_VAR_DATA_DESC 構造がの長さにはも含まれています、 [CO_CALL_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff545384)構造体。 CO_CALL_PARAMETERS 構造体は、特定の TAPI 呼び出しのパラメーターに翻訳された NDIS 呼び出しのパラメーターを指定します。
+指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) CO_CALL_PARAMETERS 構造に NDIS_VAR_DATA_DESC 構造体の先頭からのオフセットを含む構造体。 NDIS_VAR_DATA_DESC 構造がの長さにはも含まれています、 [CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))構造体。 CO_CALL_PARAMETERS 構造体は、特定の TAPI 呼び出しのパラメーターに翻訳された NDIS 呼び出しのパラメーターを指定します。
 
 ## <a name="remarks"></a>注釈
 

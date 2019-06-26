@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28114
-ms.openlocfilehash: 7bab641cbf7f420e73c2e1574bd8bef686f25ec5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 574512fe4459111f41f538afcaec0d45b8f523f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364146"
 ---
 # <a name="c28114"></a>C28114
 
@@ -36,7 +36,7 @@ ms.locfileid: "63361436"
 
  
 
-ドライバーは IRP を正しくコピーは。 IRP を正しくコピーと、データとシステムのクラッシュの損失を含む、ドライバーでの重大な問題が発生することができます。 IRP をコピーする必要がある場合と[ **IoCopyCurrentIrpStackLocationToNext** ](https://msdn.microsoft.com/library/windows/hardware/ff548387)十分ではない、IRP の特定のメンバーは、コピーしてはならないか、コピーした後はゼロに設定する必要があります。
+ドライバーは IRP を正しくコピーは。 IRP を正しくコピーと、データとシステムのクラッシュの損失を含む、ドライバーでの重大な問題が発生することができます。 IRP をコピーする必要がある場合と[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)十分ではない、IRP の特定のメンバーは、コピーしてはならないか、コピーした後はゼロに設定する必要があります。
 
  
 

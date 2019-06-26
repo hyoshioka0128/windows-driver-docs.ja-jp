@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_CLEAR_RECEIVE_COALESCING ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8112b2bd06cb569387d0d34a9a09cdae600ab8ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e8e0196ad192f0b8ed54d33a5f985b26fe659d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387249"
 ---
 # <a name="oidwdisetclearreceivecoalescing"></a>OID\_WDI\_設定\_クリア\_受信\_COALESCING
 
@@ -30,7 +30,7 @@ OID\_WDI\_設定\_クリア\_受信\_COALESCING がパケットの結合のパ�
 
 | TLV                                                                                            | 許可されている複数の TLV インスタンス | 省略可能 | 説明                         |
 |------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------|
-| [**WDI\_TLV\_設定\_クリア\_受信\_COALESCING**](https://msdn.microsoft.com/library/windows/hardware/dn898057) |                                |          | 削除するパケット フィルター ID。 |
+| [**WDI\_TLV\_設定\_クリア\_受信\_COALESCING**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-clear-receive-coalescing) |                                |          | 削除するパケット フィルター ID。 |
 
  
 

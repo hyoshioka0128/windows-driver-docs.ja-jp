@@ -5,12 +5,12 @@ ms.assetid: 58d36a1e-cda2-42aa-9563-96df2f7319b2
 ms.date: 08/08/2017
 keywords: -AF_INET6 ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c706e97e6072e23efbbf48b48b043f268ed782c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a5279716f63da4ff24edc1f5e34cd0cac23fde8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367812"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382929"
 ---
 # <a name="afinet6"></a>AF\_INET6
 
@@ -19,7 +19,7 @@ AF\_INET6 アドレス ファミリが IPv6 のアドレス ファミリ。
 
 ### <a name="socket-address-structure"></a>ソケット アドレス構造
 
-IPv6 のトランスポート アドレスを指定した、 [ **SOCKADDR\_IN6** ](https://msdn.microsoft.com/library/windows/hardware/ff570824)構造体。
+IPv6 のトランスポート アドレスを指定した、 [ **SOCKADDR\_IN6** ](https://docs.microsoft.com/windows/desktop/api/ws2ipdef/ns-ws2ipdef-sockaddr_in6)構造体。
 
 ### <a name="socket-types"></a>ソケットの種類
 
@@ -34,7 +34,7 @@ IPv6 は、次の種類のソケットをサポートしています。
 <a href="" id="sock-raw"></a>SOCK\_RAW  
 トランスポート プロトコルへの生のアクセスをサポートしています。
 
-呼び出すときに、WSK アプリケーションはソケットの種類を指定します、 [ **WskSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571149)関数または[ **WskSocketConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571150)関数を作成する、新しいソケット。
+呼び出すときに、WSK アプリケーションはソケットの種類を指定します、 [ **WskSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)関数または[ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)関数を作成する、新しいソケット。
 
 ### <a name="protocols"></a>プロトコル
 
@@ -129,13 +129,13 @@ Raw IP パケット
 
 Raw ソケットを使用することは、その他のプロトコルがサポートされています。
 
-WSK アプリケーションを呼び出すときに、プロトコルを指定します、 [ **WskSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571149)関数または[ **WskSocketConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571150)関数を作成します。新しいソケット。
+WSK アプリケーションを呼び出すときに、プロトコルを指定します、 [ **WskSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)関数または[ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)関数を作成します。新しいソケット。
 
-WSK アプリケーションでは、プロトコルも指定します (として、*レベル*パラメーター) 呼び出し時に、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)設定またはトランスポート プロトコルのレベルを取得する関数またはネットワーク プロトコル レベルのソケット オプション。
+WSK アプリケーションでは、プロトコルも指定します (として、*レベル*パラメーター) 呼び出し時に、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)設定またはトランスポート プロトコルのレベルを取得する関数またはネットワーク プロトコル レベルのソケット オプション。
 
 ### <a name="combinations"></a>組み合わせ
 
-IPv6 は、各 WSK の次のようなソケットの種類とプロトコルの組み合わせをサポートしている[ソケット カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff571093):
+IPv6 は、各 WSK の次のようなソケットの種類とプロトコルの組み合わせをサポートしている[ソケット カテゴリ](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories):
 
 基本的なソケット SOCK\_ストリーム + IPPROTO\_TCP SOCK\_DGRAM + IPPROTO\_UDP SOCK\_RAW + IPPROTO\_*Xxx*リッスン ソケットの SOCK\_ストリーム + IPPROTO\_TCP
 

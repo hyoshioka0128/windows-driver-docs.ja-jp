@@ -9,12 +9,12 @@ keywords:
 - DispatchSystemControl ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 314ea313ef84033e1ca7feb29ca2efa3dd75ee28
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c4e59815ff2b921e6eb350415632549757b73561
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387186"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384971"
 ---
 # <a name="dispatchsystemcontrol-routines"></a>DispatchSystemControl ルーチン
 
@@ -22,7 +22,7 @@ ms.locfileid: "63387186"
 
 
 
-ドライバーの[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_システム\_コントロール** ](https://msdn.microsoft.com/library/windows/hardware/ff550813) I/O 関数のコード。
+ドライバーの[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_システム\_コントロール** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control) I/O 関数のコード。
 
 すべてのドライバーを提供する必要があります、 *DispatchSystemControl*ルーチン。 このルーチンでは、Windows Management Instrumentation (WMI) のサポートを提供します。 ドライバーが、WMI をサポートするかどうかに関係なく、このルーチンは次の下位のドライバーに IRP を渡す必要があります。
 

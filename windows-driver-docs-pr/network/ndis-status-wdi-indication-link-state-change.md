@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d97774df236ea57dcf280905378584c6922253f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2151af5c3ec4ff9df9713b111a6bb4896dcd0db1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390676"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384217"
 ---
 # <a name="ndisstatuswdiindicationlinkstatechange"></a>NDIS\_状態\_WDI\_INDICATION\_リンク\_状態\_変更
 
@@ -19,7 +19,7 @@ ms.locfileid: "63390676"
 ミニポート ドライバーを使用して、NDIS\_状態\_WDI\_を示す値\_リンク\_状態\_を次の状況のいずれかを示すために変更します。
 
 -   リンク速度を変更します。
--   しきい値を超えるによって変更されたリンクの品質。 接続品質のヒントが WDI に設定されている場合、しきい値が 1\_接続\_品質\_低\_待機時間 (で定義されている[ **WDI\_接続\_品質\_ヒント**](https://msdn.microsoft.com/library/windows/hardware/dn897807))。 それ以外の場合、しきい値には 5 です。
+-   しきい値を超えるによって変更されたリンクの品質。 接続品質のヒントが WDI に設定されている場合、しきい値が 1\_接続\_品質\_低\_待機時間 (で定義されている[ **WDI\_接続\_品質\_ヒント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_connection_quality_hint))。 それ以外の場合、しきい値には 5 です。
 
 | オブジェクト |
 |--------|
@@ -36,11 +36,11 @@ ms.locfileid: "63390676"
 
 | 種類                                                                                           | 許可されている複数の TLV インスタンス | 省略可能 | 説明                       |
 |------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------|
-| [**WDI\_TLV\_リンク\_状態\_変更\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn897842) |                                |          | リンクの状態は、パラメーターを変更します。 |
+| [**WDI\_TLV\_リンク\_状態\_変更\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-link-state-change-parameters) |                                |          | リンクの状態は、パラメーターを変更します。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

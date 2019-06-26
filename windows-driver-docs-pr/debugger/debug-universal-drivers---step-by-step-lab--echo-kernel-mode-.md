@@ -8,12 +8,12 @@ keywords:
 - エコー
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: abc15862af891762dc6c244b1f8f7767f2705386
-ms.sourcegitcommit: e3cf7d69c13846f3e7ece2b6178ecec23b9854ae
+ms.openlocfilehash: 7a3a6aefb65bd90c63ca9e2a8ee6a1d88f600b86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940377"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367028"
 ---
 # <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>ユニバーサル ドライバー - ステップ バイ ステップのラボ (エコー カーネル モード) のデバッグします。
 
@@ -91,7 +91,7 @@ ms.locfileid: "65940377"
 
 ![二重矢印で接続されている 2 台の pc](images/debuglab-image-targethostdrawing1.png)
 
-カーネル モードのアプリケーションを使用し、WinDbg を使用して、イーサネット転送を KDNET を使用することをお勧めします。 イーサネット トランスポート プロトコルを使用する方法については、次を参照してください。 [WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)します。 ターゲット コンピューターの設定に関する詳細については、次を参照してください。[手動ドライバーの展開のコンピューターを準備する](https://msdn.microsoft.com/windows-drivers/develop/preparing_a_computer_for_manual_driver_deployment)と[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
+カーネル モードのアプリケーションを使用し、WinDbg を使用して、イーサネット転送を KDNET を使用することをお勧めします。 イーサネット トランスポート プロトコルを使用する方法については、次を参照してください。 [WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)します。 ターゲット コンピューターの設定に関する詳細については、次を参照してください。[手動ドライバーの展開のコンピューターを準備する](https://docs.microsoft.com/windows-hardware/drivers)と[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
 
 ### <a name="span-idconfigurekernelmodedebuggingusingethernetspanspan-idconfigurekernelmodedebuggingusingethernetspanspan-idconfigurekernelmodedebuggingusingethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="Configure__kernel_mode_debugging_using_ethernet"></span><span id="configure__kernel_mode_debugging_using_ethernet"></span><span id="CONFIGURE__KERNEL_MODE_DEBUGGING_USING_ETHERNET"></span>イーサネットを使用してカーネル – モードのデバッグを構成します。
 
@@ -274,7 +274,7 @@ DML versions of commands on by default
 
 **ターゲット システム上の Windows のバージョンの表示**
 
-5. と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg ウィンドウでコマンド。
+5. 」と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: kd> vertarget
@@ -289,7 +289,7 @@ System Uptime: 0 days 01:31:58.931
 
 **読み込まれたモジュールを一覧表示します。**
 
-6. と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg ウィンドウでコマンド。
+6. 」と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: Kd> lm
@@ -358,11 +358,11 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     ![windows ドライバーのサンプル 全般 フォルダーおよび zip のダウンロード ボタンを強調表示](images/debuglab-image-github.png)
 
-    a.  このラボでは、ユニバーサル ドライバー サンプルは、1 つの zip ファイルをダウンロードする方法を示します。
+    a. このラボでは、ユニバーサル ドライバー サンプルは、1 つの zip ファイルをダウンロードする方法を示します。
 
     <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-    b.  Master.zip ファイルをローカル ハード ドライブにダウンロードします。
+    b. Master.zip ファイルをローカル ハード ドライブにダウンロードします。
 
     c. 右クリックして*Windows ドライバーのサンプル-master.zip*、選択**すべて展開**します。 新しいフォルダーを指定するか、抽出したファイルを保存する既存のサブスクリプションへの参照します。 たとえば、指定する*c:\\DriverSamples\\* として新しいファイルが抽出先フォルダーです。
 
@@ -380,7 +380,7 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
 3.  **サンプルの構成とプラットフォームを設定します。**
 
-    ソリューション エクスプ ローラーで右クリックして**ソリューション 'kmdfecho' (3 プロジェクト)**、選択**Configuration Manager**します。 構成とプラットフォームの設定は、3 つのプロジェクトの同じことを確認します。 既定では、構成が"Win10 Debug"に設定し、プラットフォームのすべてのプロジェクトの"Win64"に設定されています。 任意の構成または 1 つのプロジェクトのプラットフォームの変更を加えた場合は、残りの 3 つのプロジェクトに対しても同じ変更を行う必要があります。
+    ソリューション エクスプ ローラーで右クリックして**ソリューション 'kmdfecho' (3 プロジェクト)** 、選択**Configuration Manager**します。 構成とプラットフォームの設定は、3 つのプロジェクトの同じことを確認します。 既定では、構成が"Win10 Debug"に設定し、プラットフォームのすべてのプロジェクトの"Win64"に設定されています。 任意の構成または 1 つのプロジェクトのプラットフォームの変更を加えた場合は、残りの 3 つのプロジェクトに対しても同じ変更を行う必要があります。
 
 4.  **ランタイム ライブラリを設定します。**
 
@@ -443,9 +443,9 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
 テストを実行する機能を有効にするには、ドライバーが署名。
 
-a.  Windows の設定を開きます。
+a. Windows の設定を開きます。
 
-b.  更新プログラムおよびセキュリティ、 **Recovery**します。
+b. 更新プログラムおよびセキュリティ、 **Recovery**します。
 
 c. 高度な起動 で、次のようにクリックします。**今すぐ再起動**します。
 
@@ -745,7 +745,7 @@ set ENABLE_OPTIMIZER=0
 
 ![約 20 のノードを持つデバイス ノード ツリー](images/debuglab-image-device-node-tree.png)
 
-**注**より複雑なドライバー スタックの詳細については、次を参照してください。[ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/hh439632)と[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)します。
+**注**より複雑なドライバー スタックの詳細については、次を参照してください。[ドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)と[デバイス ノードとデバイス スタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)します。
 
 
 
@@ -855,11 +855,11 @@ set ENABLE_OPTIMIZER=0
 
 11. **&lt;ホスト システムで**
 
-    ドライバーが有効にすると、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)デバッグ ブレークポイントが起動して、ターゲット システムでドライバー コードの実行を停止する必要があります。 先頭に、実行を停止するか、ブレークポイントにヒットしたときに、 *AddDevice*ルーチン。 「1 のブレークポイントにヒット」デバッグ コマンドの出力が表示されます。
+    ドライバーが有効にすると、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)デバッグ ブレークポイントが起動して、ターゲット システムでドライバー コードの実行を停止する必要があります。 先頭に、実行を停止するか、ブレークポイントにヒットしたときに、 *AddDevice*ルーチン。 「1 のブレークポイントにヒット」デバッグ コマンドの出力が表示されます。
 
     ![サンプル コードのローカル変数とコマンド ウィンドウを表示する windbg](images/debuglab-image-breakpoint-echo-deviceadd.png)
 
-12. 」と入力して、コードで行をステップ、 **p**コマンドまたは次の末尾に到達するまで、f10 キーを押して、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。 中かっこ文字"}"のように強調表示されます。
+12. 」と入力して、コードで行をステップ、 **p**コマンドまたは次の末尾に到達するまで、f10 キーを押して、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。 中かっこ文字"}"のように強調表示されます。
 
     ![adddevice ルーチンの開始で強調表示されているかっこ文字を示すコード ウィンドウ](images/debuglab-image-breakpoint-end-deviceadd.png)
 
@@ -974,7 +974,7 @@ ba r 4 0x0003f7bf0
 
 *セクション 8 では、変数に関する情報を表示し、呼び出し履歴。*
 
-このラボは、停止したことを想定しています、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンの前に説明したプロセスを使用します。 ここで表示する出力を表示するには、必要に応じて、前に説明した手順を繰り返します。
+このラボは、停止したことを想定しています、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンの前に説明したプロセスを使用します。 ここで表示する出力を表示するには、必要に応じて、前に説明した手順を繰り返します。
 
 **&lt;ホスト システムで**
 
@@ -1468,7 +1468,7 @@ nt!DbgBreakPointWithStatus:
 fffff803`bb757020 cc              int     3
 ```
 
-また、クリックして、レジスタの内容を表示できる**ビュー** &gt; **登録**します。 詳細については、次を参照してください。 [ **r (レジスタ)**](r--registers-.md)します。
+また、クリックして、レジスタの内容を表示できる**ビュー** &gt; **登録**します。 詳細については、次を参照してください。 [ **r (レジスタ)** ](r--registers-.md)します。
 
 レジスタの内容の表示は、アセンブリ言語でコードが実行およびその他のシナリオでのステップするときに役立ちます。 アセンブリ言語の逆アセンブリの詳細については、次を参照してください。 [x86 注釈付き逆アセンブリ](annotated-x86-disassembly.md)と[x64 注釈付き逆アセンブリ](annotated-x64-disassembly.md)します。
 

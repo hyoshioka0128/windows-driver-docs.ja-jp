@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eea687d208bba24061d44244a7ad2354c40d734c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2961e34b5c28bdea6323547abd558c836c2e03d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367494"
 ---
 # <a name="bug-check-0x34-cachemanager"></a>バグ チェック 0x34:キャッシュ\_マネージャー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361642"
 キャッシュ\_MANAGER バグ チェックが 0x00000034 の値を持ちます。 これは、ファイル システムのキャッシュ マネージャーで問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="cachemanager-parameters"></a>キャッシュ\_マネージャーのパラメーター

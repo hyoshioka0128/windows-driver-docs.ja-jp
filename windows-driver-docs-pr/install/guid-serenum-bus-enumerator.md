@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b5917d46e84dd6daa2b44be80eb131226c77fab4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b33951e0f97be7fd3f0e380c70b6b573d4d76e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369970"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384781"
 ---
 # <a name="guidserenumbusenumerator"></a>GUID_SERENUM_BUS_ENUMERATOR
 
 
-GUID_SERENUM_BUS_ENUMERATOR は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)プラグ アンド プレイ (PnP) のシリアル ポート。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR** ](guid-devinterface-serenum-bus-enumerator.md)このクラスの新しいインスタンスのクラス識別子。
+GUID_SERENUM_BUS_ENUMERATOR は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)プラグ アンド プレイ (PnP) のシリアル ポート。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR** ](guid-devinterface-serenum-bus-enumerator.md)このクラスの新しいインスタンスのクラス識別子。
 
 <a name="remarks"></a>注釈
 -------
 
-WDK には、シリアル列挙子のサンプルが用意されています ([*serenum*](https://msdn.microsoft.com/library/windows/hardware/ff546505))。 シリアルの列挙子では、GUID_SERENUM_BUS_ENUMERATOR を使用して、このデバイスのインターフェイス クラスのインスタンスを登録します。 含まれている serenum サンプル、 *src\\カーネル*WDK のディレクトリ。
+WDK には、シリアル列挙子のサンプルが用意されています ([*serenum*](https://docs.microsoft.com/previous-versions/ff546505(v=vs.85)))。 シリアルの列挙子では、GUID_SERENUM_BUS_ENUMERATOR を使用して、このデバイスのインターフェイス クラスのインスタンスを登録します。 含まれている serenum サンプル、 *src\\カーネル*WDK のディレクトリ。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

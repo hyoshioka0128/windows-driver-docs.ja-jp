@@ -7,12 +7,12 @@ keywords:
 - デバイスのインストール アプリケーション WDK、ガイドライン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4836c78f2e1a864c291ad56f8b899bed6eb84676
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd25f55a13798c46185113374933264294c157b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391101"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383841"
 ---
 # <a name="guidelines-for-writing-device-installation-applications"></a>デバイスのインストール アプリケーションの記述に関するガイドライン
 
@@ -47,7 +47,7 @@ ms.locfileid: "63391101"
 
 -   ハードウェアが削除された場合でも、インストールされているドライバー ファイル、アンインストール操作中にシステムから削除します。
 
--   不要なシステムの再起動を強制します。 再起動は、通常の PnP デバイスまたはソフトウェア アプリケーションをインストールするために必要ありません。 *BRebootRequired*のパラメーター、 [ **UpdateDriverForPlugAndPlayDevices** ](https://msdn.microsoft.com/library/windows/hardware/ff553534)関数は、再起動の必要性を示します。
+-   不要なシステムの再起動を強制します。 再起動は、通常の PnP デバイスまたはソフトウェア アプリケーションをインストールするために必要ありません。 *BRebootRequired*のパラメーター、 [ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)関数は、再起動の必要性を示します。
 
 -   使用 RunOnce レジストリ キー、システムの再起動が要求されるためです。
 

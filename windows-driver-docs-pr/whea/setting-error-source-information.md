@@ -10,17 +10,17 @@ keywords:
 - ハードウェア エラー ソース WDK WHEA、情報を設定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fae1553ec7358460cca21634c1c0b25345ef079
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d8415bb2d2e67b3c46230cb1721b5495227ba9d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387151"
 ---
 # <a name="setting-error-source-information"></a>エラー ソース情報の設定
 
 
-ユーザー モード アプリケーションが特定の情報を設定できます[エラー ソース](hardware-errors-and-error-sources.md)ハードウェア プラットフォームによって呼び出すことによってサポートされている、 [ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn**](https://msdn.microsoft.com/library/windows/hardware/ff559531)メソッド。 このような状況では、アプリケーションを提供する[ **WHEA\_エラー\_ソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff560505)用に設定する情報を記述する構造体、指定したエラーのソース。
+ユーザー モード アプリケーションが特定の情報を設定できます[エラー ソース](hardware-errors-and-error-sources.md)ハードウェア プラットフォームによって呼び出すことによってサポートされている、 [ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド。 このような状況では、アプリケーションを提供する[ **WHEA\_エラー\_ソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)用に設定する情報を記述する構造体、指定したエラーのソース。
 
 次のコード例では、特定のエラーのソースのエラーのソース情報を設定する方法を示します。
 
@@ -173,7 +173,7 @@ pOutParameters->Release();
 
 2.  WHEA の内容を変更\_エラー\_ソース\_エラー ソースの構成を変更する記述子構造体。
 
-3.  呼び出すことによって、エラーの発生元のエラーのソース情報を設定、 [ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559531)メソッド
+3.  呼び出すことによって、エラーの発生元のエラーのソース情報を設定、 [ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)メソッド
 
 エラー ソースの構成に加えた変更は反映されませんまで、システムの再起動後です。
 

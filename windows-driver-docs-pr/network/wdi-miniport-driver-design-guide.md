@@ -6,12 +6,12 @@ keywords:
 - wi-fi ドライバー、wi-fi ドライバーを Windows 10、ワイヤレス ドライバー、ワイヤレス ドライバーの windows 10、wlan ドライバー、windows 10 の wlan ドライバー、wlan ドライバー インターフェイス、WDI ドライバー、WDI ネットワーク ドライバー、WDI Windows 10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23aff4fa1d8ac998f021aa9d284deffbc36365f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30576a70791634c954a809c0ffcb5a400b843c63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387206"
 ---
 # <a name="wdi-miniport-driver-design-guide"></a>WDI ミニポート ドライバー設計ガイド
 
@@ -49,7 +49,7 @@ WLAN デバイス ドライバー インターフェイス (WDI) は、デスク
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -113,7 +113,7 @@ WLAN デバイス ドライバー インターフェイス (WDI) は、デスク
 </tr>
 <tr class="even">
 <td align="left"><p>MAC アドレスのランダム化</p></td>
-<td align="left"><p>構成されている Windows 10 のユーザーのプライバシー保護を強化するために、Wi-fi MAC アドレスはなどで使用されて状況によっては、特定の Wi-fi ネットワーク、または特定の条件でスキャンを開始するときに接続する前にします。 これは、ステーションのポートにのみ適用されます。 システムはにより重要な接続のシナリオが切断されていないためそのランダム化を適切に使用されます。 システムでは、アドレスの変更を管理を発行して<a href="https://msdn.microsoft.com/library/windows/hardware/dn925952" data-raw-source="[OID_WDI_TASK_DOT11_RESET](https://msdn.microsoft.com/library/windows/hardware/dn925952)">OID_WDI_TASK_DOT11_RESET</a>スキャンを発行する前にコマンドやコマンドを接続します。 リセット コマンド パラメーターには、省略可能な MAC アドレス引数が含まれます。 引数が存在する場合は、MAC アドレスが指定した値にリセットされます。 存在しない場合は、MAC アドレスは現在の値のまま。 ランダム化された MAC アドレスを構成するときに、オペレーティング システムは IEEE802 アドレスに対して定義されている「ローカルで管理」の形式を使用します。</p></td>
+<td align="left"><p>構成されている Windows 10 のユーザーのプライバシー保護を強化するために、Wi-fi MAC アドレスはなどで使用されて状況によっては、特定の Wi-fi ネットワーク、または特定の条件でスキャンを開始するときに接続する前にします。 これは、ステーションのポートにのみ適用されます。 システムはにより重要な接続のシナリオが切断されていないためそのランダム化を適切に使用されます。 システムでは、アドレスの変更を管理を発行して<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-dot11-reset" data-raw-source="[OID_WDI_TASK_DOT11_RESET](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-dot11-reset)">OID_WDI_TASK_DOT11_RESET</a>スキャンを発行する前にコマンドやコマンドを接続します。 リセット コマンド パラメーターには、省略可能な MAC アドレス引数が含まれます。 引数が存在する場合は、MAC アドレスが指定した値にリセットされます。 存在しない場合は、MAC アドレスは現在の値のまま。 ランダム化された MAC アドレスを構成するときに、オペレーティング システムは IEEE802 アドレスに対して定義されている「ローカルで管理」の形式を使用します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ECSA</p></td>
@@ -127,7 +127,7 @@ WLAN デバイス ドライバー インターフェイス (WDI) は、デスク
 ## <a name="related-topics"></a>関連トピック
 
 
-[WDI ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn926075)
+[WDI ミニポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

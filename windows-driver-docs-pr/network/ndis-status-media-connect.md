@@ -6,26 +6,26 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_MEDIA_CONNECT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c6c19fa0ccc9453437e91bbd5565baa3238f9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4bdc7fb6c0ff013105d9d1b2cc50cb3171706416
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383266"
 ---
 # <a name="ndisstatusmediaconnect"></a>NDIS\_状態\_メディア\_接続
 
 
 NDIS\_状態\_メディア\_CONNECT のステータスは、デバイスのネットワーク接続の状態が変更されたことから切断されたに接続されていることを示します。 たとえば、デバイスは、(ワイヤレス デバイス) のアクセス ポイントの範囲内で言えば、または、ユーザーがデバイスのネットワーク ケーブルを接続するときを接続します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 NDIS 変換 NDIS\_状態\_メディア\_への接続状態インジケーター [ **NDIS\_状態\_リンク\_状態**](ndis-status-link-state.md)NDIS 6.0 のドライバーを後続の状態のインジケーター。
 
 NDIS 5。*x*以前のミニポート ドライバーを示し、 [ **NDIS\_状態\_メディア\_切断**](ndis-status-media-disconnect.md)ときミニポート ドライバーの状態ネットワーク接続が失われたことを決定します。 接続が復元されると、ドライバーは、NDIS を示します\_状態\_メディア\_CONNECT のステータス。
 
-NDIS の詳細については\_状態\_メディア\_接続を参照してください[を示す接続の状態 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff546856)と[802.11 ネットワークのメディアの状態インジケーター](https://msdn.microsoft.com/library/windows/hardware/ff549301).
+NDIS の詳細については\_状態\_メディア\_接続を参照してください[を示す接続の状態 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546856(v=vs.85))と[802.11 ネットワークのメディアの状態インジケーター](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549301(v=vs.85)).
 
 <a name="requirements"></a>必要条件
 ------------

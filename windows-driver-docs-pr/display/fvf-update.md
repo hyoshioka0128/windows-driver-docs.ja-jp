@@ -6,12 +6,12 @@ keywords:
 - FVF WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 842af6b95b24364acd77dc15f8e66fa20ddf60cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66f04e47f76ccd00df6c8c06bbab5f6336092cad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383439"
 ---
 # <a name="fvf-update"></a>FVF 更新
 
@@ -21,7 +21,7 @@ ms.locfileid: "63377988"
 
 FVF コード最初に定義された DirectX 6.0 ようになりました DirectX 7.0 でのテクスチャ座標のセットの仕様。
 
-だけでなく、通常 2 D テクスチャ、DirectX 6.0、7.0 を DirectX サポート 1 D、3 D、および 4 D のテクスチャではサポートされています。 さらに、テクスチャを投影することがあります。 **DwVertexType**のメンバー [ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff545957)ときに検査できる[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)各テクスチャの座標セットのサイズを調べるために呼び出されます。
+だけでなく、通常 2 D テクスチャ、DirectX 6.0、7.0 を DirectX サポート 1 D、3 D、および 4 D のテクスチャではサポートされています。 さらに、テクスチャを投影することがあります。 **DwVertexType**のメンバー [ **D3DHAL\_DRAWPRIMITIVES2DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_drawprimitives2data)ときに検査できる[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)各テクスチャの座標セットのサイズを調べるために呼び出されます。
 
 たとえば、5 つのテクスチャ座標のセットでの頂点がある場合これらのテクスチャのそれぞれが 1 次元、2 D、3 D を指定できます。 または 4 D とそれらに、射影されたテクスチャを指定することがあります。 ディメンションを座標のセットごとに異なることができるように、各テクスチャ ステージは独立しており、です。 含まれている FVF フラグの上位 16 ビット**dwVertexType**テクスチャ座標の大きさを調べることができます。
 
@@ -44,7 +44,7 @@ FVF コード最初に定義された DirectX 6.0 ようになりました Direc
 <div>
  
 </div>
-値</th>
+Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>

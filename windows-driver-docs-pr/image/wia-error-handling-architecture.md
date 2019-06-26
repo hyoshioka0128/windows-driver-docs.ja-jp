@@ -4,12 +4,12 @@ description: WIA エラー処理アーキテクチャ
 ms.assetid: 2672a5ee-d860-44de-9e68-bd70377d58a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 013671a2d138417f0c495a4607a6018a94241348
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d5d175fe245af2b5d2832f3d0959cf5b35d6d2d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355781"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383755"
 ---
 # <a name="wia-error-handling-architecture"></a>WIA エラー処理アーキテクチャ
 
@@ -47,7 +47,7 @@ WIA エラーの処理には、4 つのコンポーネントがあります。
 アプリケーション エラー処理を有効にするためには、これを実装する必要があります、 **IWiaAppErrorHandler**インターフェイス。 このインターフェイスは、アプリケーションのコールバック オブジェクトに渡されることを**IWiaTransfer::Download**と**IWiaTransfer::Upload**メソッド。 このコールバック オブジェクトが実装するために必要な**IWiaTransferCallback**インターフェイス。 実装することによって**IWiaAppErrorHandler**アプリケーションでは、データの転送時に呼び出されるエラー ハンドラーができることを示します。
 
 <a href="" id="the-driver-s-error-handler"></a>**ドライバーのエラー ハンドラー**  
-ドライバーのエラー ハンドラーは、ドライバーの拡張機能を実装する必要がある、 [IWiaErrorHandler インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543907)します。 エラー ハンドラーが処理およびすべての状態コードの UI を表示これらのステータス コードには、WIA 定義のステータス コードと同様に、ドライバー固有の状態コードが含まれます。
+ドライバーのエラー ハンドラーは、ドライバーの拡張機能を実装する必要がある、 [IWiaErrorHandler インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nn-wia_lh-iwiaerrorhandler)します。 エラー ハンドラーが処理およびすべての状態コードの UI を表示これらのステータス コードには、WIA 定義のステータス コードと同様に、ドライバー固有の状態コードが含まれます。
 
 <a href="" id="the-default-error-handler"></a>**既定のエラー ハンドラー**  
 既定のエラー ハンドラーは、WIA によって実装されます。 処理し、さまざまな汎用デバイス ステータス メッセージの UI が表示されます。 これらのメッセージは、両方の情報と例については、エラー。WIA\_エラー\_用紙\_詰まり、WIA\_状態\_WARMING\_をします。
@@ -56,9 +56,9 @@ WIA プロキシ処理しませんエラー メッセージ自体。 代わり�
 
 エラー ハンドラーは、システム状態データ転送を続行またはキャンセルできますを挿入しようとするユーザーを許可する UI を提供します。
 
-WIA を受信するときに\_転送\_MSG\_デバイス\_ステータス メッセージ、WIA プロキシはまず、アプリケーション エラー ハンドラーの呼び出し**IWiaAppErrorHandler::ReportStatus**メソッド。 WIA プロキシがドライバー エラー ハンドラーを呼び出すアプリケーションのコールバック ルーチンがデバイスの状態コードを処理しない場合[ **IWiaErrorHandler::ReportStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff543909)実装、および最後に、WIAプロキシは既定のエラー ハンドラーを呼び出します**IWiaErrorHandler::ReportStatus**実装します。 指定されたハンドラーが存在しない場合 (たとえば、ドライバー可能性がありますに付属していない、エラー処理拡張機能)、ドライバーのデバイスの状態のハンドラーは、WIA を返す場合、または\_状態\_いない\_処理済みであることを示す、ドライバーのハンドラーデバイス コードをサポートしていません、チェーン内の次のハンドラーは、機会が与えられます。 正常にまたはした場合も、デバイスのステータス メッセージが処理された後は、WIA プロキシ コールバックを返します。 したがって、ドライバー エラー ハンドラーの**ReportStatus**メソッドを返します。 S\_OK、すべてのメッセージに対して既定のエラー ハンドラーがする機会がない任意のデバイスのステータス メッセージを処理します。
+WIA を受信するときに\_転送\_MSG\_デバイス\_ステータス メッセージ、WIA プロキシはまず、アプリケーション エラー ハンドラーの呼び出し**IWiaAppErrorHandler::ReportStatus**メソッド。 WIA プロキシがドライバー エラー ハンドラーを呼び出すアプリケーションのコールバック ルーチンがデバイスの状態コードを処理しない場合[ **IWiaErrorHandler::ReportStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiaerrorhandler-reportstatus)実装、および最後に、WIAプロキシは既定のエラー ハンドラーを呼び出します**IWiaErrorHandler::ReportStatus**実装します。 指定されたハンドラーが存在しない場合 (たとえば、ドライバー可能性がありますに付属していない、エラー処理拡張機能)、ドライバーのデバイスの状態のハンドラーは、WIA を返す場合、または\_状態\_いない\_処理済みであることを示す、ドライバーのハンドラーデバイス コードをサポートしていません、チェーン内の次のハンドラーは、機会が与えられます。 正常にまたはした場合も、デバイスのステータス メッセージが処理された後は、WIA プロキシ コールバックを返します。 したがって、ドライバー エラー ハンドラーの**ReportStatus**メソッドを返します。 S\_OK、すべてのメッセージに対して既定のエラー ハンドラーがする機会がない任意のデバイスのステータス メッセージを処理します。
 
-エラー ハンドラーは、重大度を持つは、デバイスのステータス メッセージ サポートしないかどうか\_エラー (エラー メッセージ)、WIA プロキシ エラーが返されます、状態に、ドライバーは、さらに、転送を中止する必要があります。 ドライバーは、この結果の HRESULT 値を返す必要があります[ **IWiaMiniDrv::drvAcquireItemData** ](https://msdn.microsoft.com/library/windows/hardware/ff543956)アプリケーションからこの HRESULT を受け取ることは、 **IWiaTransfer::Download**または**IWiaTransfer::Upload**します。
+エラー ハンドラーは、重大度を持つは、デバイスのステータス メッセージ サポートしないかどうか\_エラー (エラー メッセージ)、WIA プロキシ エラーが返されます、状態に、ドライバーは、さらに、転送を中止する必要があります。 ドライバーは、この結果の HRESULT 値を返す必要があります[ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)アプリケーションからこの HRESULT を受け取ることは、 **IWiaTransfer::Download**または**IWiaTransfer::Upload**します。
 
 エラー ハンドラーは、重大度を持つは、デバイスの状態メッセージ処理しないかどうか\_WIA プロキシが返されます成功 (情報メッセージ)、S\_ドライバーには、[ok] です。
 

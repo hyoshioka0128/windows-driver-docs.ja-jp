@@ -8,12 +8,12 @@ keywords:
 - EnableKernelFlags WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c4923f32b7f38f04c30f28ec8375168f42cbce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c400e1c232f9bbd16367fefb779b31d88a1b1a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329746"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372693"
 ---
 # <a name="how-to-create-a-boot-time-global-logger-session"></a>起動時のグローバル ロガー セッションを作成する方法
 
@@ -28,7 +28,7 @@ ms.locfileid: "63329746"
 
     手順と詳細については、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)と[ロガー トレース セッションのグローバル](global-logger-trace-session.md)します。 例については、次を参照してください。[例 13。ロガーがグローバル セッションを作成する](example-13--creating-a-global-logger-session.md)します。
 
-2.  追加、REG\_という名前のバイナリ エントリ**EnableKernelFlags**を**HKLM\\システム\\CurrentControlSet\\コントロール\\WMI\\GlobalLogger**サブキー。 トレース ログを作成、 **GlobalLogger**レジストリ サブキーを使用する場合、 **tracelog-開始**コマンド。 使用できる値**EnableKernelFlags**の値から取得されますが、 **EnableFlags**のメンバー、**イベント\_トレース\_プロパティ**構造体。 説明については、 **EnableFlags**値を参照してください[**イベント\_トレース\_プロパティ**](https://msdn.microsoft.com/library/windows/desktop/aa363784)します。
+2.  追加、REG\_という名前のバイナリ エントリ**EnableKernelFlags**を**HKLM\\システム\\CurrentControlSet\\コントロール\\WMI\\GlobalLogger**サブキー。 トレース ログを作成、 **GlobalLogger**レジストリ サブキーを使用する場合、 **tracelog-開始**コマンド。 使用できる値**EnableKernelFlags**の値から取得されますが、 **EnableFlags**のメンバー、**イベント\_トレース\_プロパティ**構造体。 説明については、 **EnableFlags**値を参照してください[**イベント\_トレース\_プロパティ**](https://docs.microsoft.com/windows/desktop/ETW/event-trace-properties)します。
 
 3.  システムを再起動します。
 
@@ -44,12 +44,12 @@ ms.locfileid: "63329746"
 
 このトレース セッションを実行すると、使用、 **tracelog-削除**の値を設定するコマンド、**開始**エントリを追加したレジストリ サブキーを削除するには 0。 そうでない場合は、セッションは、システムを起動するたびに実行され、ログは非常に大きくなる可能性があります。
 
-詳細 Tracelog コマンドについては、次を参照してください[ **Tracelog コマンドの構文。**](tracelog-command-syntax.md)
+詳細 Tracelog コマンドについては、次を参照してください[ **Tracelog コマンドの構文。** ](tracelog-command-syntax.md)
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[**イベント\_トレース\_プロパティ**](https://msdn.microsoft.com/library/windows/desktop/aa363784)
+[**イベント\_トレース\_プロパティ**](https://docs.microsoft.com/windows/desktop/ETW/event-trace-properties)
 
 [13 の使用例:ロガーがグローバル セッションを作成します。](example-13--creating-a-global-logger-session.md)
 

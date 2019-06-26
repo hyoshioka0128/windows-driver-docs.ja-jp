@@ -4,17 +4,17 @@ description: このセクションでは、概要のネットワーク直接カ�
 ms.assetid: D9667238-FD2E-44DE-920F-FA4CF3365D93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c99b01f4560326b4bf393172166ba3bbe38f0c99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 028b126224c08f2fcdf75143de695750ad2e459d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391022"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384373"
 ---
 # <a name="overview-of-network-direct-kernel-provider-interface-ndkpi"></a>Network Direct Kernel Provider Interface (NDKPI) の概要
 
 
-ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI) では、NDIS Ihv (、RNIC とも呼ばれます) のネットワーク アダプターでのカーネル モード リモート ダイレクト メモリ アクセス (RDMA) のサポートを提供することができる拡張機能です。 アダプターの RDMA 機能を公開する、IHV する必要がありますインターフェイスを実装、NDKPI で定義されている、 [NDKPI 参照](https://msdn.microsoft.com/library/windows/hardware/jj206456)します。
+ネットワーク ダイレクト カーネル プロバイダー インターフェイス (NDKPI) では、NDIS Ihv (、RNIC とも呼ばれます) のネットワーク アダプターでのカーネル モード リモート ダイレクト メモリ アクセス (RDMA) のサポートを提供することができる拡張機能です。 アダプターの RDMA 機能を公開する、IHV する必要がありますインターフェイスを実装、NDKPI で定義されている、 [NDKPI 参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
 -   [NDKPI と RDMA の場合](#ndkpi-and-rdma)
 -   [NDK プロバイダー](#the-ndk-provider)
@@ -38,9 +38,9 @@ NDK プロバイダーが読み込まれ、PnP マネージャーによって初
 
 NDK プロバイダーがロードされ、初期化、NDK コンシューマーから要求を処理する準備ができてです。 プロバイダーの機能への呼び出しとしてこれらの要求が到着します。
 
-NDK コンシューマーからの要求を処理するときに、プロバイダーがコンシューマーの NDK コールバック関数を呼び出すことができます。 これらを以下に説明[NDKPI コンシューマーのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/jj879316)します。
+NDK コンシューマーからの要求を処理するときに、プロバイダーがコンシューマーの NDK コールバック関数を呼び出すことができます。 これらを以下に説明[NDKPI コンシューマーのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
-NDK プロバイダーが記載されている、NDKPI インターフェイスのすべての要素を実装する必要があります、 [NDKPI 参照](https://msdn.microsoft.com/library/windows/hardware/jj206456)を除く、 [NDKPI コンシューマーのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/jj879316)。
+NDK プロバイダーが記載されている、NDKPI インターフェイスのすべての要素を実装する必要があります、 [NDKPI 参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)を除く、 [NDKPI コンシューマーのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
 ### <a name="the-ndk-consumer"></a>NDK コンシューマー
 
@@ -50,9 +50,9 @@ NDK コンシューマーは、SMB サーバーとクライアントなどのカ
 
  
 
-NDK コンシューマーを呼び出して、プロバイダーの*NdkOpenAdapter* ([*オープン\_NDK\_アダプター\_ハンドラー*](https://msdn.microsoft.com/library/windows/hardware/hh440105)) にコールバック関数アダプター オブジェクトを作成し、 *NdkCloseAdapter* ([*NDK\_FN\_閉じます\_オブジェクト*](https://msdn.microsoft.com/library/windows/hardware/hh439863)) を閉じます。 プロバイダーが、そのアダプタ オブジェクトを作成、コンシューマーは、追加の NDK オブジェクトを作成するその他のプロバイダーのコールバック関数を呼び出します。
+NDK コンシューマーを呼び出して、プロバイダーの*NdkOpenAdapter* ([*オープン\_NDK\_アダプター\_ハンドラー*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndisndk/nc-ndisndk-open_ndk_adapter_handler)) にコールバック関数アダプター オブジェクトを作成し、 *NdkCloseAdapter* ([*NDK\_FN\_閉じます\_オブジェクト*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_close_object)) を閉じます。 プロバイダーが、そのアダプタ オブジェクトを作成、コンシューマーは、追加の NDK オブジェクトを作成するその他のプロバイダーのコールバック関数を呼び出します。
 
-NDK コンシューマーの実装、 [NDKPI コンシューマーのコールバック関数](https://msdn.microsoft.com/library/windows/hardware/jj879316)、NDK プロバイダーによって呼び出されします。
+NDK コンシューマーの実装、 [NDKPI コンシューマーのコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)、NDK プロバイダーによって呼び出されします。
 
 ## <a name="related-topics"></a>関連トピック
 

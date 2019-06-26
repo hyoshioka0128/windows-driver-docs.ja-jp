@@ -10,12 +10,12 @@ keywords:
 - 要求オブジェクト WDK KMDF、要求オブジェクトの概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80436e8fb83717536cadfbe3c8fe822d40eb5731
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d933a75c746dc341df1a3663f813d76616cd6cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378123"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384445"
 ---
 # <a name="framework-request-objects"></a>フレームワーク要求オブジェクト
 
@@ -23,9 +23,9 @@ ms.locfileid: "63378123"
 
 
 
-Framework 要求オブジェクトは、I/O マネージャーがドライバーに送信 I/O 要求を表します。 フレームワーク ベースのドライバーでは、各 I/O 要求を処理を呼び出して[framework 要求オブジェクトのメソッド](https://msdn.microsoft.com/library/windows/hardware/dn265664)します。
+Framework 要求オブジェクトは、I/O マネージャーがドライバーに送信 I/O 要求を表します。 フレームワーク ベースのドライバーでは、各 I/O 要求を処理を呼び出して[framework 要求オブジェクトのメソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/)します。
 
-I/O 要求ごとに、WDM が含まれています*I/O 要求パケット*([**IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694)構造)、framework ベースのドライバーが IRP 構造体にアクセスする必要はありません通常します。
+I/O 要求ごとに、WDM が含まれています*I/O 要求パケット*([**IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)構造)、framework ベースのドライバーが IRP 構造体にアクセスする必要はありません通常します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

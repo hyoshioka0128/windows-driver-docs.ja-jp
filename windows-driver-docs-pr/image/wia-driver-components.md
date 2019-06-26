@@ -4,12 +4,12 @@ description: WIA ドライバーのコンポーネント
 ms.assetid: 2c854945-2eda-4f4c-9cf6-5525e6e237ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d81e8d335eeaef389dd4d0770e6e96ab908097e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab7460db9c4b59e609d807bdb21600cf53134ea0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366981"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383779"
 ---
 # <a name="wia-driver-components"></a>WIA ドライバーのコンポーネント
 
@@ -29,7 +29,7 @@ WIA ミニドライバーは、2 つの論理レイヤーとして表示でき�
 
 ### <a name="wia-minidriver-interfaces"></a>WIA ミニドライバー インターフェイス
 
-WIA ミニドライバーが実装する COM オブジェクト、 **IUnknown** COM インターフェイスと 2 つの WIA 固有の COM インターフェイス。[IStiUSD](istiusd-com-interface.md)と[IWiaMiniDrv](https://msdn.microsoft.com/library/windows/hardware/ff545027)します。 WIA ミニドライバー インターフェイス レイヤーは、これらのインターフェイスを実装し、WIA ミニドライバーへのエントリ ポイントです。 アプリケーションは、WIA ミニドライバー インターフェイスを直接呼び出しません。WIA サービス呼び出しのみにこれらのインターフェイス。
+WIA ミニドライバーが実装する COM オブジェクト、 **IUnknown** COM インターフェイスと 2 つの WIA 固有の COM インターフェイス。[IStiUSD](istiusd-com-interface.md)と[IWiaMiniDrv](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)します。 WIA ミニドライバー インターフェイス レイヤーは、これらのインターフェイスを実装し、WIA ミニドライバーへのエントリ ポイントです。 アプリケーションは、WIA ミニドライバー インターフェイスを直接呼び出しません。WIA サービス呼び出しのみにこれらのインターフェイス。
 
 ### <a name="device-communication"></a>デバイスの通信
 

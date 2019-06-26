@@ -8,12 +8,12 @@ keywords:
 - インストールを実行する NDIS 中間ドライバー WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 025cc8d01e538359ca34ec1c04b8b2a02b2bd2d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 514232160158532356fecd69164da2af2e52d4fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324896"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382207"
 ---
 # <a name="installing-an-intermediate-driver"></a>中間ドライバーのインストール
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324896"
 
 プロトコルの INF ファイルは、プライマリの INF ファイルです。 プロトコルの下端がインストールされた後、プロトコルの INF ファイルで定義されているミニポート ドライバーの INF ファイルへの参照に基づく仮想ミニポート上端がインストールされます。
 
-Windows vista では、システムの INF ディレクトリに、ミニポート ドライバーの INF ファイルをコピーするのにには、通知オブジェクトまたはカスタム セットアップ アプリケーションを使用できます。 Windows Vista およびそれ以降のオペレーティング システム バージョンでは、使用する必要があります、 [ **INF CopyINF ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547317)ミニポート ドライバーの INF ファイルをコピーするプロトコル INF ファイル。 通知オブジェクトと INF ファイルのコピーの詳細については、次を参照してください。[中間ドライバーに通知オブジェクト](intermediate-driver-notify-object.md)します。
+Windows vista では、システムの INF ディレクトリに、ミニポート ドライバーの INF ファイルをコピーするのにには、通知オブジェクトまたはカスタム セットアップ アプリケーションを使用できます。 Windows Vista およびそれ以降のオペレーティング システム バージョンでは、使用する必要があります、 [ **INF CopyINF ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyinf-directive)ミニポート ドライバーの INF ファイルをコピーするプロトコル INF ファイル。 通知オブジェクトと INF ファイルのコピーの詳細については、次を参照してください。[中間ドライバーに通知オブジェクト](intermediate-driver-notify-object.md)します。
 
 下端は、プロトコルのシステム提供のデバイス セットアップ クラス**NetService**中級レベルのドライバーのフィルターと**NetTrans** MUX 中間ドライバー。 仮想ミニポートのドライバーのクラスは常に**Net**します。
 

@@ -4,12 +4,12 @@ description: プリンター拡張アプリは、ユーザーが Windows デス�
 ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ac419a9f97ecb648733dd3244c41e632ff722b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4ed731846692f7a79cb69c256a396918be138f0
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339944"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393080"
 ---
 # <a name="printer-extensions"></a>プリンター拡張機能
 
@@ -121,7 +121,7 @@ PrintNotify サービスを開始するとは、下のレジストリ キーの�
 
 プリンターの拡張機能は、ユーザーにリリースされたコンテキストと、イベント起動のコンテキストの両方で実行できる、ので、プリンターの拡張機能が動作するコンテキストを決定することができると便利です。 アプリを通知が起動された場合、すべてのキューの状態を列挙できませんや印刷設定など、このことができます。 (例: MSI や setup.exe の場合) と、ドライバーから個別にインストールされているプリンターの拡張機能がコマンド ライン スイッチ スタート メニューのショートカットのいずれかを使用することをお勧めしますまたは、中にレジストリの値が設定された AppPath エントリで。登録します。 DriverStore には、ドライバーを使用したインストールされているプリンターの拡張機能がインストールされている、ためこれらは起動できません外印刷の設定やプリンターの通知イベント。 そのためのコマンド ライン スイッチを指定はサポートされていませんここでします。
 
-を現在 PrinterDriverID のプリンター拡張機能が登録する場合、PrinterDriverID を、AppPath、含める必要があります。 たとえば、名前のプリンター拡張アプリ*printerextension.exe*との PrinterDriverID 値 *{GUID}*、 \[PrinterExtensionAppPath\]ようになります次:
+を現在 PrinterDriverID のプリンター拡張機能が登録する場合、PrinterDriverID を、AppPath、含める必要があります。 たとえば、名前のプリンター拡張アプリ*printerextension.exe*との PrinterDriverID 値 *{GUID}* 、 \[PrinterExtensionAppPath\]ようになります次:
 
 ```console
 "C:\program files\fabrikam\printerextension.exe {GUID}"
@@ -143,13 +143,13 @@ mgr.EnableEvents(new Guid(PrinterDriverID1));
 
 - 多くのアプリの初期化、できるだけまで遅らせる EnableEvents を呼び出した後。 その後、非同期メソッドを使用して初期化中に UI スレッドをブロックしていない UI の応答性を優先します。
 
-- Ngen を使用すると、インストール時にネイティブ イメージを生成します。 詳細については、次を参照してください。[ネイティブ イメージ ジェネレーター](https://msdn.microsoft.com/library/6t9t5wcf.aspx)します。
+- Ngen を使用すると、インストール時にネイティブ イメージを生成します。 詳細については、次を参照してください。[ネイティブ イメージ ジェネレーター](https://docs.microsoft.com/dotnet/framework/tools/ngen-exe-native-image-generator)します。
 
-- パフォーマンス測定ツールを使用すると、読み込みのパフォーマンスの問題を検索できます。 詳細については、次を参照してください。 [Windows パフォーマンス分析ツール](https://msdn.microsoft.com/performance/cc825801.aspx)します。
+- パフォーマンス測定ツールを使用すると、読み込みのパフォーマンスの問題を検索できます。 詳細については、次を参照してください。 [Windows パフォーマンス分析ツール](https://msdn.microsoft.com/)します。
 
 ### <a name="driverevent-handler"></a>DriverEvent ハンドラー
 
-OnDriverEvent、ハンドラーが登録されているし、イベントが有効になって印刷設定やプリンターの通知を処理するために、プリンターの拡張機能を起動した場合後、は、ハンドラーが呼び出されます。 上記のコード スニペットで OnDriverEvent という名前のメソッドは、イベント ハンドラーとして登録されました。 次のコード スニペットで、 *PrinterExtensionEventArgs*パラメーターは、構築するには、印刷設定とプリンターの通知シナリオを有効にするオブジェクト。 *PrinterExtensionEventArgs*用のラッパーです[ **IPrinterExtensionEventArgs**](https://msdn.microsoft.com/library/windows/hardware/hh973207)します。
+OnDriverEvent、ハンドラーが登録されているし、イベントが有効になって印刷設定やプリンターの通知を処理するために、プリンターの拡張機能を起動した場合後、は、ハンドラーが呼び出されます。 上記のコード スニペットで OnDriverEvent という名前のメソッドは、イベント ハンドラーとして登録されました。 次のコード スニペットで、 *PrinterExtensionEventArgs*パラメーターは、構築するには、印刷設定とプリンターの通知シナリオを有効にするオブジェクト。 *PrinterExtensionEventArgs*用のラッパーです[ **IPrinterExtensionEventArgs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)します。
 
 ```csharp
 static void OnDriverEvent(object sender, PrinterExtensionEventArgs eventArgs)
@@ -205,19 +205,19 @@ static void OnDriverEvent(object sender, PrinterExtensionEventArgs eventArgs)
 
 印刷設定は、PrintSchemaEventArgs.Ticket オブジェクトによって決まります。 このオブジェクトは、機能とデバイスのオプションについて説明する、PrintTicket と PrintCapabilities ドキュメントをカプセル化します。 基になる XML が利用できることも、オブジェクト モデル簡単にこれらの形式を使用します。
 
-各[ **IPrintSchemaTicket** ](https://msdn.microsoft.com/library/windows/hardware/hh451398)または[ **IPrintSchemaCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/hh451256)オブジェクトの機能があります ([ **IPrintSchemaFeature**](https://msdn.microsoft.com/library/windows/hardware/hh451284)) とオプション ([**IPrintSchemaOption**](https://msdn.microsoft.com/library/windows/hardware/hh451335))。 機能とオプションのためのインターフェイスでは、配信元に関係なく同じですが、基になる XML の結果として、動作が若干異なります。 たとえば、PrintCapabilities ドキュメントは、多くの機能、PrintTicket ドキュメントを指定だけ選択したときに (または既定値) ごとのオプション を指定します。 同様に、付きません PrintTicket ドキュメント PrintCapabilities ドキュメントは、ローカライズされた表示文字列を指定します。
+各[ **IPrintSchemaTicket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschematicket)または[ **IPrintSchemaCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemacapabilities)オブジェクトの機能があります ([ **IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemafeature)) とオプション ([**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemaoption))。 機能とオプションのためのインターフェイスでは、配信元に関係なく同じですが、基になる XML の結果として、動作が若干異なります。 たとえば、PrintCapabilities ドキュメントは、多くの機能、PrintTicket ドキュメントを指定だけ選択したときに (または既定値) ごとのオプション を指定します。 同様に、付きません PrintTicket ドキュメント PrintCapabilities ドキュメントは、ローカライズされた表示文字列を指定します。
 
-[PrinterExtensionSample](https://go.microsoft.com/fwlink/p/?LinkId=617945)データ バインディングを使用して、プリンターの設定のコンボ ボックス コントロールを作成します。 により、コードの拡散を減らすことで維持するためにはるかに簡単にデータ バインディングを使用することをお勧めします。 WPF でのデータ バインディングの詳細については、次を参照してください。[データ バインディングの概要](https://msdn.microsoft.com/library/ms752347.aspx)します。
+[PrinterExtensionSample](https://go.microsoft.com/fwlink/p/?LinkId=617945)データ バインディングを使用して、プリンターの設定のコンボ ボックス コントロールを作成します。 により、コードの拡散を減らすことで維持するためにはるかに簡単にデータ バインディングを使用することをお勧めします。 WPF でのデータ バインディングの詳細については、次を参照してください。[データ バインディングの概要](https://docs.microsoft.com/dotnet/framework/wpf/data/data-binding-overview)します。
 
 パフォーマンスを最大化するために、GetPrintCapabilities への呼び出しが PrintCapabilities ドキュメントを更新する必要がある場合のみ実行することをお勧めします。
 
 ユーザーが選択を使用して、データにバインドされたコンボ ボックス コントロール、PrintTicket オブジェクトが自動的に更新されます。 最後に、ユーザーがクリックすると**OK**、非同期の検証と完了のチェーンが開始されます。 この非同期パターンは、実行時間の長いタスクの UI スレッドで発生している UI の基本設定が印刷または印刷しているアプリのいずれかでハングが発生しないようにするために広範に使用されます。 ユーザーがクリックした後、PrintTicket の変更を処理するために使用する手順の一覧を次に**OK**します。
 
-1. PrintSchemaTicket が検証される asynchrously を使用して、 [ **IPrintSchemaTicket::ValidateAsync** ](https://msdn.microsoft.com/library/windows/hardware/hh451448)メソッド。
+1. PrintSchemaTicket が検証される asynchrously を使用して、 [ **IPrintSchemaTicket::ValidateAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprintschematicket-validateasync)メソッド。
 
 1. 非同期の検証が完了したら、共通言語ランタイム (CLR) は PrintTicketValidateCompleted メソッドを呼び出します。
 
-    1. 検証が成功した場合は、CommitPrintTicketAsync メソッドを呼び出して CommitPrintTicketAsync 呼び出し、 [ **IPrintSchemaTicket::CommitAsync** ](https://msdn.microsoft.com/library/windows/hardware/hh451382)メソッド。 これが印刷設定が完了することを示す PrinterExtensionEventArgs.Request.Complete メソッドを呼び出して便利なメソッドを呼び出す、PrintTicketCommitCompleted メソッドを呼び出す PrintTicket の更新が正常に完了したらとそのアプリを閉じます。
+    1. 検証が成功した場合は、CommitPrintTicketAsync メソッドを呼び出して CommitPrintTicketAsync 呼び出し、 [ **IPrintSchemaTicket::CommitAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprintschematicket-commitasync)メソッド。 これが印刷設定が完了することを示す PrinterExtensionEventArgs.Request.Complete メソッドを呼び出して便利なメソッドを呼び出す、PrintTicketCommitCompleted メソッドを呼び出す PrintTicket の更新が正常に完了したらとそのアプリを閉じます。
 
     1. それ以外の場合、制約の状況に対処するユーザーに UI を表示します。
 
@@ -233,7 +233,7 @@ EventHandler<PrinterQueueEventArgs>(OnBidiResponseReceived);
 PrinterQueue.SendBidiQuery("\\Printer.consumables");
 ```
 
-Bidi 応答が受信したときに、次のイベント ハンドラーが呼び出されます。 このイベント ハンドラーもにモックのインク状態実装では、デバイスが利用できない場合の開発に便利ですがありますに注意してください。 PrinterQueueEventArgs オブジェクトには、HRESULT と Bidi XML 応答の両方が含まれています。 Bidi XML 応答の詳細については、次を参照してください。[双方向の要求および応答スキーマ](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)します。
+Bidi 応答が受信したときに、次のイベント ハンドラーが呼び出されます。 このイベント ハンドラーもにモックのインク状態実装では、デバイスが利用できない場合の開発に便利ですがありますに注意してください。 PrinterQueueEventArgs オブジェクトには、HRESULT と Bidi XML 応答の両方が含まれています。 Bidi XML 応答の詳細については、次を参照してください。[双方向の要求および応答スキーマ](https://docs.microsoft.com/previous-versions/dd183368(v=vs.85))します。
 
 ```csharp
 private void OnBidiResponseReceived(object sender, PrinterQueueEventArgs e)
@@ -267,7 +267,7 @@ private void OnBidiResponseReceived(object sender, PrinterQueueEventArgs e)
 
 - PrinterExtensionEventArgs.DetailedReasonId – eventID ドライバー イベントの xml ファイルからの GUID が含まれます。
 
-通知の IPrinterExtensionEventArgs オブジェクトの最も重要な属性は、BidiNotification プロパティです。 これは実行をトリガーするイベントの原因となった Bidi XML です。 Bidi XML 応答の詳細については、次を参照してください。[双方向の要求および応答スキーマ](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)します。
+通知の IPrinterExtensionEventArgs オブジェクトの最も重要な属性は、BidiNotification プロパティです。 これは実行をトリガーするイベントの原因となった Bidi XML です。 Bidi XML 応答の詳細については、次を参照してください。[双方向の要求および応答スキーマ](https://docs.microsoft.com/previous-versions/dd183368(v=vs.85))します。
 
 ### <a name="managing-printers"></a>プリンターの管理
 
@@ -301,41 +301,41 @@ OpenPrinter
 ClosePrinter
 ```
 
-これらのレガシ Api を .NET にマーシャ リングする方法の詳細については、次を参照してください。 [Visual を使用して、プリンターに生データを送信する方法C#.NET](http://support.microsoft.com/?kbid=322091)または[Visual Basic .NET を使用して、プリンターに生データを送信する方法](http://support.microsoft.com/?kbid=322090)します。
+これらのレガシ Api を .NET にマーシャ リングする方法の詳細については、次を参照してください。 [Visual を使用して、プリンターに生データを送信する方法C#.NET](https://support.microsoft.com/help/322091)または[Visual Basic .NET を使用して、プリンターに生データを送信する方法](https://support.microsoft.com/help/322090)します。
 
 ## <a name="printer-extension-performance-best-practices"></a>プリンター拡張機能のパフォーマンスに関するベスト プラクティス
 
-最適なユーザー エクスペリエンスを確保するためにロードをできるだけ高速にプリンターの拡張機能を設計する必要があります。 プリンター拡張機能のサンプル プロジェクトは、実行時にネイティブ プロセッサ アーキテクチャに適した形式にコンパイルする必要がありますを中間言語 (IL) に構築されたを取得するには、.NET アプリケーションです。 インストール中には、ネイティブ システム アーキテクチャ、アプリがコンパイルされていることを確認するベスト プラクティスに従って、プリンターの拡張機能がインストールされていることをお勧めします。 コードのコンパイルとインストールのベスト プラクティスの詳細については、次を参照してください。 [、デスクトップ アプリケーションの起動パフォーマンスの向上](http://blogs.msdn.com/b/dotnet/archive/2012/03/20/improving-launch-performance-for-your-desktop-applications.aspx)します。
+最適なユーザー エクスペリエンスを確保するためにロードをできるだけ高速にプリンターの拡張機能を設計する必要があります。 プリンター拡張機能のサンプル プロジェクトは、実行時にネイティブ プロセッサ アーキテクチャに適した形式にコンパイルする必要がありますを中間言語 (IL) に構築されたを取得するには、.NET アプリケーションです。 インストール中には、ネイティブ システム アーキテクチャ、アプリがコンパイルされていることを確認するベスト プラクティスに従って、プリンターの拡張機能がインストールされていることをお勧めします。 コードのコンパイルとインストールのベスト プラクティスの詳細については、次を参照してください。 [、デスクトップ アプリケーションの起動パフォーマンスの向上](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)します。
 
 Microsoft では、プリンターの拡張機能が、EnableEvents メソッドが呼び出された後までのリソースの読み込みなどの初期化タスクを延期することもお勧めします。 これには、プリンターの拡張機能の 5 秒のタイムアウトの前に EnableEvents を呼び出し、アプリが発生する可能性が最小限に抑えます。
 
 OnDriverEvent の呼び出しの後のプリンター拡張は、UI を初期化し、応答性を確保できますが、非同期メソッドの使用を可能な限り迅速に描画する必要があります。 プリンターの拡張機能はないはずの依存関係ネットワーク呼び出しでまたは双方向のウィンドウの初期状態を作成するには印刷設定やプリンターの通知。
 
-ユーザーが行ったよう PrintTicket、プリンターの拡張機能に影響を与える UI で行う必要がありますに画面を使用して選択が IPrintSchemaTicket::ValidateAsync メソッドのできるだけ早い段階で変更を検証するために使用します。 最後に、プリンターの拡張機能を使用する必要があります、 [ **IPrintSchemaTicket::CommitAsync** ](https://msdn.microsoft.com/library/windows/hardware/hh451382) PrintTicket の変更をコミットするためにメソッド。
+ユーザーが行ったよう PrintTicket、プリンターの拡張機能に影響を与える UI で行う必要がありますに画面を使用して選択が IPrintSchemaTicket::ValidateAsync メソッドのできるだけ早い段階で変更を検証するために使用します。 最後に、プリンターの拡張機能を使用する必要があります、 [ **IPrintSchemaTicket::CommitAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprintschematicket-commitasync) PrintTicket の変更をコミットするためにメソッド。
 
 プリンターの拡張機能は常に実行のプロセスからのプロセスでは、それらを起動します。 プリンターの拡張機能を開発しているときにに注意してください ウィンドウの動作を維持する必要があります。
 
-- **WindowParent**プロパティから[ **IPrinterExtensionEventArgs** ](https://msdn.microsoft.com/library/windows/hardware/hh973207)アプリを起動するウィンドウ ハンドルを指定します。
-- **WindowModal**プロパティから[ **IPrinterExtensionEventArgs** ](https://msdn.microsoft.com/library/windows/hardware/hh973207) (印刷設定モード) では、プリンターの拡張機能がモーダルで実行するかどうかを指定します。
+- **WindowParent**プロパティから[ **IPrinterExtensionEventArgs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)アプリを起動するウィンドウ ハンドルを指定します。
+- **WindowModal**プロパティから[ **IPrinterExtensionEventArgs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs) (印刷設定モード) では、プリンターの拡張機能がモーダルで実行するかどうかを指定します。
 
 プリンター拡張機能のサンプルでは、一般に、最上位ウィンドウとして起動される UI を作成する方法を示します。 ただし、場合によっては、UI は表示されません、別の整合性レベルで呼び出される UI を原因となったプロセスが実行されている場合や、異なるプロセッサ アーキテクチャのプロセスがコンパイルされたときなど、フォア グラウンドで。 この場合、プリンターの拡張機能では、タスク バーにアイコンが点滅して、フォア グラウンドにユーザーの許可を要求する FlashWindowEx を呼び出す必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 
-[双方向の要求および応答スキーマ](https://msdn.microsoft.com/library/windows/desktop/dd183368.aspx)
+[双方向の要求および応答スキーマ](https://docs.microsoft.com/previous-versions/dd183368(v=vs.85))
 
-[データ バインディングの概要](https://msdn.microsoft.com/library/ms752347.aspx)
+[データ バインディングの概要](https://docs.microsoft.com/dotnet/framework/wpf/data/data-binding-overview)
 
-[Visual Basic .NET を使用して、プリンターに生データを送信する方法](http://support.microsoft.com/?kbid=322090)
+[Visual Basic .NET を使用して、プリンターに生データを送信する方法](https://support.microsoft.com/help/322090)
 
-[ビジュアルを使用してプリンターに生データを送信する方法C#.NET](http://support.microsoft.com/?kbid=322091)
+[ビジュアルを使用してプリンターに生データを送信する方法C#.NET](https://support.microsoft.com/help/322091)
 
-[デスクトップ アプリケーションの起動時のパフォーマンスを向上](http://blogs.msdn.com/b/dotnet/archive/2012/03/20/improving-launch-performance-for-your-desktop-applications.aspx)
+[デスクトップ アプリケーションの起動時のパフォーマンスを向上](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)
 
-[ネイティブ イメージ ジェネレーター](https://msdn.microsoft.com/library/6t9t5wcf.aspx)
+[ネイティブ イメージ ジェネレーター](https://docs.microsoft.com/dotnet/framework/tools/ngen-exe-native-image-generator)
 
-[印刷スキーマ インターフェイス](https://msdn.microsoft.com/library/windows/hardware/hh464019)
+[印刷スキーマ インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)
 
 [プリンター拡張機能のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617945)
 
-[Windows パフォーマンス分析ツール](https://msdn.microsoft.com/performance/cc825801.aspx)
+[Windows パフォーマンス分析ツール](https://msdn.microsoft.com/)

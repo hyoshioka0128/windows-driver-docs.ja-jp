@@ -8,12 +8,12 @@ keywords:
 - 解放されたメモリ WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b151f493ec60ab921f3c675ff3e5b0def93c86dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c65a1032595ea03bc0c32ab505865dff2dd9622
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354758"
 ---
 # <a name="miscellaneous-checks"></a>その他の検査
 
@@ -22,20 +22,20 @@ Driver Verifier の他の確認オプションのドライバーをドライバ�
 
 具体的には、その他のチェックのオプションは、次の不適切なドライバーの動作を探します。
 
--   **解放されたメモリのアクティブな作業項目です。** ドライバー呼び出し[ **ExFreePool** ](https://msdn.microsoft.com/library/windows/hardware/ff544590)を使用してキューに配置された作業項目を含むプールのブロックを解放する[ **IoQueueWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff549466). (このチェックは、Windows Server 2003 のチェック ビルドでは既定で有効です)。
+-   **解放されたメモリのアクティブな作業項目です。** ドライバー呼び出し[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)を使用してキューに配置された作業項目を含むプールのブロックを解放する[ **IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioqueueworkitem). (このチェックは、Windows Server 2003 のチェック ビルドでは既定で有効です)。
 
--   **解放されたメモリ内のアクティブなリソース。** ドライバー呼び出し[ **ExFreePool** ](https://msdn.microsoft.com/library/windows/hardware/ff544590) active を含むプールのブロックを解放する[÷ リソース構造](https://msdn.microsoft.com/library/windows/hardware/ff544281)します。 ドライバーを呼び出す必要があります[ **ExDeleteResource** ](https://msdn.microsoft.com/library/windows/hardware/ff544572)を呼び出す前に次のオブジェクトを削除する**ExFreePool**します。
+-   **解放されたメモリ内のアクティブなリソース。** ドライバー呼び出し[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool) active を含むプールのブロックを解放する[÷ リソース構造](https://docs.microsoft.com/windows-hardware/drivers/kernel/eresource-structures)します。 ドライバーを呼び出す必要があります[ **ExDeleteResource** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)を呼び出す前に次のオブジェクトを削除する**ExFreePool**します。
 
--   **内のアクティブなルック アサイド リストには、メモリが解放されます。** ドライバー呼び出し[ **ExFreePool** ](https://msdn.microsoft.com/library/windows/hardware/ff544590) active ルック アサイド リストがまだ含まれているプールのブロックを解放する ([**NPAGED\_ルック アサイド\_]ボックスの一覧**](https://msdn.microsoft.com/library/windows/hardware/ff556431)または[**ページ\_ルック アサイド\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff558775)構造体。 ドライバーを呼び出す必要があります[ **ExDeleteNPagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff544566)または[ **ExDeletePagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff544570)リストするには、ルック アサイドの削除呼び出しの前に**ExFreePool**します。
+-   **内のアクティブなルック アサイド リストには、メモリが解放されます。** ドライバー呼び出し[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool) active ルック アサイド リストがまだ含まれているプールのブロックを解放する ([**NPAGED\_ルック アサイド\_ボックスの一覧**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)または[**ページ\_ルック アサイド\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。 ドライバーを呼び出す必要があります[ **ExDeleteNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletenpagedlookasidelist)または[ **ExDeletePagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletepagedlookasidelist)リストするには、ルック アサイドの削除呼び出しの前に**ExFreePool**します。
 
 -   **Windows Management Instrumentation (WMI) および Event Tracing for Windows (ETW) の登録の問題。** ドライバーの検証ツールによって検出されたこのような問題は次のとおりです。
     -   その WMI コールバックの登録を解除せずにアンロードしようとするドライバー。
     -   WMI から登録解除されていないデバイス オブジェクトを削除しようとするドライバー。
     -   その ETW カーネル モード プロバイダーの登録を解除せずにアンロードしようとするドライバー。
     -   既に登録されていないプロバイダーの登録を解除しようとするドライバー。
--   **カーネル ハンドル エラー。** (Windows Vista およびそれ以降のバージョン)その他の確認オプションを有効にすると、カーネル ハンドルのリークの調査に支援するために、システム プロセスのハンドルのトレースはこともでき、 [ **0x93 のバグ チェック。無効な\_カーネル\_処理**](https://msdn.microsoft.com/library/windows/hardware/ff559292)します。 カーネル ハンドルのトレースが有効になっている、スタック トレースの収集は最近のハンドルを開くおよび閉じる操作。 スタック トレースを使用してカーネル デバッガーに表示できる、 **! htrace**デバッガー拡張機能。 詳細については **! htrace**ツールを Windows のデバッグ ドキュメントを参照してください。
+-   **カーネル ハンドル エラー。** (Windows Vista およびそれ以降のバージョン)その他の確認オプションを有効にすると、カーネル ハンドルのリークの調査に支援するために、システム プロセスのハンドルのトレースはこともでき、 [ **0x93 のバグ チェック。無効な\_カーネル\_処理**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x93--invalid-kernel-handle)します。 カーネル ハンドルのトレースが有効になっている、スタック トレースの収集は最近のハンドルを開くおよび閉じる操作。 スタック トレースを使用してカーネル デバッガーに表示できる、 **! htrace**デバッガー拡張機能。 詳細については **! htrace**ツールを Windows のデバッグ ドキュメントを参照してください。
 
--   **カーネル モードへのアクセスをユーザー モード ハンドル**以降、Windows 7 では、その他の確認オプションを選択すると、ドライバーの検証もチェックへの呼び出しに[ **ObReferenceObjectByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff558679). カーネル モードへのアクセスをユーザー モードのハンドルを渡すことはできません。 このような操作が発生した場合、Driver Verifier は 0xF6 のパラメーター 1 の値を持つバグ チェック 0xC4 を発行します。
+-   **カーネル モードへのアクセスをユーザー モード ハンドル**以降、Windows 7 では、その他の確認オプションを選択すると、ドライバーの検証もチェックへの呼び出しに[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle). カーネル モードへのアクセスをユーザー モードのハンドルを渡すことはできません。 このような操作が発生した場合、Driver Verifier は 0xF6 のパラメーター 1 の値を持つバグ チェック 0xC4 を発行します。
 
 -   **カーネル スタックに割り当てられた同期オブジェクトのユーザー モードの待機**
 
@@ -43,9 +43,9 @@ Driver Verifier の他の確認オプションのドライバーをドライバ�
 
     カーネル スタック上のローカル変数として KEVENT 構造体などの同期オブジェクトの割り当ては、一般的な方法です。 プロセスがメモリに読み込まれて、中に、カーネル スタック、スレッドのことはありませんワーキング セットから除去されるか、ディスクにページ アウト。 このような非ページ メモリの同期オブジェクトの割り当てが正しいです。
 
-    ただし、ときにドライバー Api を呼び出すよう[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)または[ **KeWaitForMultipleObjects** ](https://msdn.microsoft.com/library/windows/hardware/ff553324)であるオブジェクトを待機するには指定する必要があります、スタックに割り当て、 **kernelmode である**API の値*WaitMode*パラメーター。 プロセスのすべてのスレッドが待機しているとき**UserMode**モード、プロセスが、ディスクにスワップ アウトする対象となります。 そのため場合、指定されたドライバー **UserMode**として、 *WaitMode*パラメーター、オペレーティング システムを入れ替えることも、現在のプロセスと同じプロセス内で他のすべてのスレッドが待機している限り、 **UserMode**もします。 ディスクにアウト プロセス全体をスワップすると、そのカーネル スタックをページングが含まれています。 オペレーティング システムにスワップ アウトする同期オブジェクトで待機しているが正しくありません。 ある時点で、スレッドが登場しと、同期オブジェクトを通知する必要があります。 IRQL でオブジェクトを操作する Windows カーネルは、同期オブジェクトがシグナル通知ディスパッチ =\_レベルまたはそれ以降。 ページ アウトをタッチまたはメモリのディスパッチに取り替える\_レベル、またはシステムの結果の上にクラッシュします。
+    ただし、ときにドライバー Api を呼び出すよう[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)または[ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)であるオブジェクトを待機するには指定する必要があります、スタックに割り当て、 **kernelmode である**API の値*WaitMode*パラメーター。 プロセスのすべてのスレッドが待機しているとき**UserMode**モード、プロセスが、ディスクにスワップ アウトする対象となります。 そのため場合、指定されたドライバー **UserMode**として、 *WaitMode*パラメーター、オペレーティング システムを入れ替えることも、現在のプロセスと同じプロセス内で他のすべてのスレッドが待機している限り、 **UserMode**もします。 ディスクにアウト プロセス全体をスワップすると、そのカーネル スタックをページングが含まれています。 オペレーティング システムにスワップ アウトする同期オブジェクトで待機しているが正しくありません。 ある時点で、スレッドが登場しと、同期オブジェクトを通知する必要があります。 IRQL でオブジェクトを操作する Windows カーネルは、同期オブジェクトがシグナル通知ディスパッチ =\_レベルまたはそれ以降。 ページ アウトをタッチまたはメモリのディスパッチに取り替える\_レベル、またはシステムの結果の上にクラッシュします。
 
-    Driver Verifier チェック以降、Windows 7 ではその他の確認オプションを選択すると、同期での待機中に検証済みのドライバーを使用するオブジェクト**UserMode**は現在のスレッドのカーネルに割り当てられていませんスタックです。 発行 Driver Verifier は、このような不適切な待機を検出すると、 [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)パラメーター 1 値は 0x123 です。
+    Driver Verifier チェック以降、Windows 7 ではその他の確認オプションを選択すると、同期での待機中に検証済みのドライバーを使用するオブジェクト**UserMode**は現在のスレッドのカーネルに割り当てられていませんスタックです。 発行 Driver Verifier は、このような不適切な待機を検出すると、 [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)パラメーター 1 値は 0x123 です。
 
 -   **不適切なカーネル ハンドルの参照**
 
@@ -53,11 +53,11 @@ Driver Verifier の他の確認オプションのドライバーをドライバ�
 
     A*カーネル ハンドル*として、システム プロセスのハンドル テーブルに対して有効なハンドル。 A*ユーザーのハンドル*として、システム プロセスを除く任意のプロセスに対して有効なハンドル。
 
-    Windows 7 では、Driver Verifier は、カーネルを参照する試行が正しくない値の処理を検出します。 これらのドライバーの欠陥として報告される、 [ **0x93 のバグ チェック。無効な\_カーネル\_処理**](https://msdn.microsoft.com/library/windows/hardware/ff559292)ドライバー検証ツールの他のチェックのオプションが有効になっている場合。 通常、ドライバーが既にそのハンドルを閉じていますが、使用を継続しようとして、この種の不適切なハンドルの参照を意味します。 参照されているハンドルの値が再利用された既に別の関連のないドライバーによって、この種の問題はシステムの予期しない問題の可能性します。
+    Windows 7 では、Driver Verifier は、カーネルを参照する試行が正しくない値の処理を検出します。 これらのドライバーの欠陥として報告される、 [ **0x93 のバグ チェック。無効な\_カーネル\_処理**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x93--invalid-kernel-handle)ドライバー検証ツールの他のチェックのオプションが有効になっている場合。 通常、ドライバーが既にそのハンドルを閉じていますが、使用を継続しようとして、この種の不適切なハンドルの参照を意味します。 参照されているハンドルの値が再利用された既に別の関連のないドライバーによって、この種の問題はシステムの予期しない問題の可能性します。
 
-    カーネル ドライバーがカーネル ハンドルが最近閉じたレビュー、閉じられたハンドルを後で参照する場合、ドライバーの検証ツールは、前述のようバグ チェックを強制します。 この場合の出力、 [ **! htrace** ](https://msdn.microsoft.com/library/windows/hardware/ff563208)デバッガー拡張機能は、このハンドルを終了するコード パスのスタック トレースを提供します。 システム プロセスのアドレスを使用して、パラメーターとして **! htrace**します。 システム プロセスのアドレスを検索するには、使用、 **! 処理 4 0**コマンド。
+    カーネル ドライバーがカーネル ハンドルが最近閉じたレビュー、閉じられたハンドルを後で参照する場合、ドライバーの検証ツールは、前述のようバグ チェックを強制します。 この場合の出力、 [ **! htrace** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-htrace)デバッガー拡張機能は、このハンドルを終了するコード パスのスタック トレースを提供します。 システム プロセスのアドレスを使用して、パラメーターとして **! htrace**します。 システム プロセスのアドレスを検索するには、使用、 **! 処理 4 0**コマンド。
 
-    Windows 7 以降、Driver Verifier の追加のチェックを[ **ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679)します。 Kernelmode であるアクセス権を持つユーザー スペースのハンドルを渡すに禁止されているようになりました。 このような組み合わせが検出されると、ドライバーの検証ツール発行[ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)0xF6 のパラメーター 1 の値。
+    Windows 7 以降、Driver Verifier の追加のチェックを[ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)します。 Kernelmode であるアクセス権を持つユーザー スペースのハンドルを渡すに禁止されているようになりました。 このような組み合わせが検出されると、ドライバーの検証ツール発行[ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)0xF6 のパラメーター 1 の値。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
@@ -100,7 +100,7 @@ Driver Verifier の他の確認オプションのドライバーをドライバ�
 
 その他の確認オプションの結果を表示する、 **! verifier**カーネル デバッガーでの拡張機能。 (について **! verifier**を参照してください、*ツールを Windows のデバッグ*ドキュメントです)。
 
-次の例では、その他の確認オプションが検出されました、ドライバーが、解放しようとしていたメモリ内のアクティブなスケジュール作成構造体で[ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187)します。 バグ チェック 0xC4 表示には、スケジュールを作成し、影響を受けるメモリのアドレスが含まれています。
+次の例では、その他の確認オプションが検出されました、ドライバーが、解放しようとしていたメモリ内のアクティブなスケジュール作成構造体で[ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)します。 バグ チェック 0xC4 表示には、スケジュールを作成し、影響を受けるメモリのアドレスが含まれています。
 
 ```
 1: kd> !verifier 1
@@ -145,7 +145,7 @@ Entry     State           NonPagedPool   PagedPool   Module
                4 -  Pool allocation size.
 ```
 
-プールの割り当てを調査するために使用して、 [ **! プール**](https://msdn.microsoft.com/library/windows/hardware/ff564691)デバッガー 9655D 468、プールの割り当ての開始アドレスと拡張機能。 (、 *2*フラグが指定されたアドレスを格納するプールに関してのみ、ヘッダー情報が表示されます。 他のプールのヘッダー情報は表示されません。)
+プールの割り当てを調査するために使用して、 [ **! プール**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-pool)デバッガー 9655D 468、プールの割り当ての開始アドレスと拡張機能。 (、 *2*フラグが指定されたアドレスを格納するプールに関してのみ、ヘッダー情報が表示されます。 他のプールのヘッダー情報は表示されません。)
 
 ```
 1: kd> !pool 9655d468  2
@@ -153,7 +153,7 @@ Pool page 9655d468 region is Paged pool
 *9655d468 size:   b0 previous size:    8  (Allocated) *Bug_
 ```
 
-については、次を検索するには使用、 [ **! ロック (! kdext\*.locks)** ](https://msdn.microsoft.com/library/windows/hardware/ff563980)デバッガー拡張機能、構造体のアドレスを使用します。
+については、次を検索するには使用、 [ **! ロック (! kdext\*.locks)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-locks---kdext--locks-)デバッガー拡張機能、構造体のアドレスを使用します。
 
 ```
 1: kd> !locks 0x9655D4A8     <<<<<- ERESOURCE @0x9655D4A8 lives inside the pool block being freed

@@ -5,12 +5,12 @@ ms.assetid: ff81d6b0-806d-4ddf-9da1-a169221be61f
 ms.date: 08/08/2017
 keywords: -OID_GEN_STATISTICS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: cdf0225cb619a87db386adb6140a3472e80edfae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 059e96534bcb16c0958a0a0ea1e631c86dd39a0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372440"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386999"
 ---
 # <a name="oidgenstatistics"></a>OID\_GEN\_統計情報
 
@@ -58,7 +58,7 @@ NDIS\_統計\_情報の構造は次のように定義されます。
 この構造体には、次のメンバーが含まれています。
 
 <a href="" id="header"></a>**ヘッダー**  
-[ **NDIS\_オブジェクト\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff566588) NDIS 構造\_統計\_情報構造体。 設定、**型**、構造体のメンバーを**ヘッダー**を使用する NDIS\_オブジェクト\_型\_既定では、**リビジョン**NDIS にメンバー\_統計\_情報\_リビジョン\_1、および**サイズ**NDIS にメンバー\_SIZEOF\_統計\_情報\_リビジョン\_1。
+[ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header) NDIS 構造\_統計\_情報構造体。 設定、**型**、構造体のメンバーを**ヘッダー**を使用する NDIS\_オブジェクト\_型\_既定では、**リビジョン**NDIS にメンバー\_統計\_情報\_リビジョン\_1、および**サイズ**NDIS にメンバー\_SIZEOF\_統計\_情報\_リビジョン\_1。
 
 <a href="" id="supportedstatistics"></a>**SupportedStatistics**  
 ミニポート ドライバーがサポートする統計情報のセット。
@@ -201,7 +201,7 @@ NDIS\_統計\_情報の構造は次のように定義されます。
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_オブジェクト\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff566588)
+[**NDIS\_オブジェクト\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)
 
 [OID\_GEN\_ブロードキャスト\_バイト\_受信](oid-gen-broadcast-bytes-rcv.md)
 

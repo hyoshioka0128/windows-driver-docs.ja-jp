@@ -10,12 +10,12 @@ keywords:
 - ハードウェアは、WDK NDIS をリセットします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 910ddf81b74e9e316d4de863609c0f1e91390d25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a159eedcae3d9d1a305c70b9d638fde28273338e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342627"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378702"
 ---
 # <a name="miniport-driver-hardware-reset"></a>ミニポート ドライバー ハードウェア リセット
 
@@ -23,9 +23,9 @@ ms.locfileid: "63342627"
 
 
 
-ミニポート ドライバーを登録する必要があります、 [ *MiniportResetEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559432)関数と[ **NdisMRegisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563654)します。
+ミニポート ドライバーを登録する必要があります、 [ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)関数と[ **NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)します。
 
-*MiniportResetEx*への呼び出しでの同期または非同期で完了できます[ **NdisMResetComplete**](https://msdn.microsoft.com/library/windows/hardware/ff563663)(次の図を参照してください)。
+*MiniportResetEx*への呼び出しでの同期または非同期で完了できます[ **NdisMResetComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismresetcomplete)(次の図を参照してください)。
 
 ![ネットワーク インターフェイス カードをリセットするかを示す図](images/207-09.png)
 
@@ -39,16 +39,16 @@ ms.locfileid: "63342627"
 
 ミニポート ドライバーは、マルチキャスト アドレス、パケット フィルター、タスクのオフロード設定、およびウェイク アップのパターンを除く、デバイスのハードウェアの状態を復元します。 これらの設定は、ミニポート ドライバーまたは NDIS が復元されます。 ミニポート ドライバーでブール値を返すことによってこれらの設定を復元するため担当するユーザーを決定する、 *AddressingReset*パラメーター。
 
-ミニポート ドライバーに返された場合**FALSE**で、 *AddressingReset*パラメーター、そのマルチキャスト アドレス、パケット フィルター、タスクのオフロード設定、およびウェイク アップするパターン、ミニポート ドライバーが復元されますその。初期状態です。 ミニポート ドライバーに返された場合**TRUE**で*AddressingReset*、NDIS 呼び出しコネクションレス ミニポート ドライバーの[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)関数または接続指向のミニポート ドライバーの[ **MiniportCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559362)次の構成設定を設定します。
+ミニポート ドライバーに返された場合**FALSE**で、 *AddressingReset*パラメーター、そのマルチキャスト アドレス、パケット フィルター、タスクのオフロード設定、およびウェイク アップするパターン、ミニポート ドライバーが復元されますその。初期状態です。 ミニポート ドライバーに返された場合**TRUE**で*AddressingReset*、NDIS 呼び出しコネクションレス ミニポート ドライバーの[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)関数または接続指向のミニポート ドライバーの[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)次の構成設定を設定します。
 
--   セット要求を使用して、ネットワーク パケット フィルター [OID\_GEN\_現在\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569575)します。
+-   セット要求を使用して、ネットワーク パケット フィルター [OID\_GEN\_現在\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)します。
 
--   マルチキャスト アドレスの一覧のセット要求を通じて[OID\_802\_3\_マルチキャスト\_一覧](https://msdn.microsoft.com/library/windows/hardware/ff569073)します。
+-   マルチキャスト アドレスの一覧のセット要求を通じて[OID\_802\_3\_マルチキャスト\_一覧](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-multicast-list)します。
 
--   タスクのオフロード カプセル化の設定のセット要求を通じて[OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)します。
+-   タスクのオフロード カプセル化の設定のセット要求を通じて[OID\_オフロード\_カプセル化](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)します。
 
--   電源管理のウェイク アップ パターンのセット要求を通じて[OID\_PNP\_追加\_WAKE\_を\_パターン](https://msdn.microsoft.com/library/windows/hardware/ff569773)します。
-    **注**  以降 NDIS 6.20 が動作では、ウェイク アップのパターンをを通じて設定[OID\_PM\_追加\_WOL\_パターン](https://msdn.microsoft.com/library/windows/hardware/ff569764)ミニポート ドライバーで復元する必要があります。
+-   電源管理のウェイク アップ パターンのセット要求を通じて[OID\_PNP\_追加\_WAKE\_を\_パターン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-add-wake-up-pattern)します。
+    **注**  以降 NDIS 6.20 が動作では、ウェイク アップのパターンをを通じて設定[OID\_PM\_追加\_WOL\_パターン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)ミニポート ドライバーで復元する必要があります。
 
      
 
@@ -59,7 +59,7 @@ ms.locfileid: "63342627"
 
 [ミニポート アダプタの状態と操作](miniport-adapter-states-and-operations.md)
 
-[ミニポート ドライバーのリセットと Halt 関数](https://msdn.microsoft.com/library/windows/hardware/ff564064)
+[ミニポート ドライバーのリセットと Halt 関数](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564064(v=vs.85))
 
  
 

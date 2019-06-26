@@ -13,12 +13,12 @@ keywords:
 - DDSCAPS2_COMMANDBUFFER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea323e33290e6a6a4181500c71f98bf73457e77f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55e87aceba35e03e1d90a71a0089ad5314157b21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343043"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370686"
 ---
 # <a name="command-and-vertex-buffer-allocation"></a>コマンド バッファーと頂点バッファーの割り当て
 
@@ -40,25 +40,25 @@ Direct3D で使用されるバッファーの次の 3 つの種類がありま�
 
 コマンド バッファーは、Direct3D によってバッチ コマンドに使用されます。 Multibuffered ことができます、TLVERTEX またはクリッピングを行わない実行バッファー API 呼び出しを除くすべての Api を使用します。 この種類のバッファーが DDSCAPS2 フラグでマークされている\_COMMANDBUFFER します。 これらは明示的なフラグが設定されていないと、無効な命令が含まれるありませんが常に書き込み専用です。
 
-既定では、Direct3D ランタイムは、すべてのこれらのバッファーを割り当てます。 暗黙的な頂点バッファーとコマンド バッファーについては、関連付けられたサーフェスを通じてアクセスします。 すべてのバッファーは、ドライバーに渡される[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)コールバック。
+既定では、Direct3D ランタイムは、すべてのこれらのバッファーを割り当てます。 暗黙的な頂点バッファーとコマンド バッファーについては、関連付けられたサーフェスを通じてアクセスします。 すべてのバッファーは、ドライバーに渡される[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コールバック。
 
 ### <a name="span-iddriver-allocatedvertexandcommandbuffersspanspan-iddriver-allocatedvertexandcommandbuffersspanspan-iddriver-allocatedvertexandcommandbuffersspandriver-allocated-vertex-and-command-buffers"></a><span id="Driver-Allocated_Vertex_and_Command_Buffers"></span><span id="driver-allocated_vertex_and_command_buffers"></span><span id="DRIVER-ALLOCATED_VERTEX_AND_COMMAND_BUFFERS"></span>ドライバーによって割り当てられた頂点とコマンド バッファー
 
-必要に応じて、Direct3D ドライバーは、コールバック関数を指定して頂点とコマンドのバッファーの割り当てを実行します。 Direct3D のドライバーが記入をこれらのコールバック関数を指定する、 [ **DD\_D3DBUFCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff550557)構造とポイント、 **lpD3DBufCallbacks**のメンバー[ **DD\_HALINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551627)を構造体。 DD\_HALINFO がによって返される[ **DrvGetDirectDrawInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556229)ドライバーの DirectDraw コンポーネントの初期化に応答します。 コールバックは、DD で報告される\_D3DBUFCALLBACKS 構造体には。
+必要に応じて、Direct3D ドライバーは、コールバック関数を指定して頂点とコマンドのバッファーの割り当てを実行します。 Direct3D のドライバーが記入をこれらのコールバック関数を指定する、 [ **DD\_D3DBUFCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_d3dbufcallbacks)構造とポイント、 **lpD3DBufCallbacks**のメンバー[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)を構造体。 DD\_HALINFO がによって返される[ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)ドライバーの DirectDraw コンポーネントの初期化に応答します。 コールバックは、DD で報告される\_D3DBUFCALLBACKS 構造体には。
 
--   [*CanCreateD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff539361)
+-   [*CanCreateD3DBuffer*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_cancreatesurface)
 
--   [*CreateD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff540616)
+-   [*CreateD3DBuffer*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurface)
 
--   [*DestroyD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff552754)
+-   [*DestroyD3DBuffer*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552754(v=vs.85))
 
--   [*LockD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff568216)
+-   [*LockD3DBuffer*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568216(v=vs.85))
 
--   [*UnlockD3DBuffer*](https://msdn.microsoft.com/library/windows/hardware/ff570106)
+-   [*UnlockD3DBuffer*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570106(v=vs.85))
 
-同じ方法でこれらの関数を呼び出す、 *DdXxxSurface*コールバック (など[ *DdCanCreateSurface*](https://msdn.microsoft.com/library/windows/hardware/ff549213)) と場合にのみ、DDSCAPS\_EXECUTEBUFFERフラグが設定されています。 バッファーの作成フラグは DDSCAPS\_WRITEONLY、DDSCAPS2\_すぐ、および DDSCAPS2\_COMMANDBUFFER します。
+同じ方法でこれらの関数を呼び出す、 *DdXxxSurface*コールバック (など[ *DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))) と場合にのみ、DDSCAPS\_EXECUTEBUFFERフラグが設定されています。 バッファーの作成フラグは DDSCAPS\_WRITEONLY、DDSCAPS2\_すぐ、および DDSCAPS2\_COMMANDBUFFER します。
 
-ドライバーをチェックして、要求されているバッファーの種類を決定する、 **ddsCaps**のメンバー、 [ **DD\_画面\_ローカル**](https://msdn.microsoft.com/library/windows/hardware/ff551733)構造体渡される、 **CanCreateExecuteBuffer**と**CreateExecuteBuffer**コールバックを次のフラグ。
+ドライバーをチェックして、要求されているバッファーの種類を決定する、 **ddsCaps**のメンバー、 [ **DD\_画面\_ローカル**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)構造体渡される、 **CanCreateExecuteBuffer**と**CreateExecuteBuffer**コールバックを次のフラグ。
 
 -   DDSCAPS\_筆者は、ドライバーが、明示的な頂点バッファーを割り当てることを示します。
 
@@ -68,7 +68,7 @@ Direct3D で使用されるバッファーの次の 3 つの種類がありま�
 
 内部的には、ドライバーは、頂点とコマンド バッファーと順番にこれらのバッファーを割り当てます。 Direct3D は、ハードウェアが、他のキューに登録されたバッファーから非同期的にレンダリング中に、特定のペアを格納します。 これは、ダイレクト メモリ アクセス (DMA) と非常に便利です。
 
-Multibuffering セット内のバッファーは、システムまたはビデオ メモリでは、さまざまなメモリの種類ですることができます。 ドライバーは、最初のバッファーを作成する呼び出されると、セットをすぐに作成し、Direct3D にセットの最初のバッファーを返します。 ドライバーは、セット内の各バッファーを割り当てるために使用されるメモリの種類を指定するのにフラグを使用します。 ドライバーは、呼び出しごとにシステム メモリ内で新しいバッファーを返す必要があります[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)場合、D3DHALDP2\_SWAPVERTEXBUFFER または D3DHALDP2\_SWAPCOMMANDBUFFER フラグ設定されています。 かどうか、返されたバッファーはビデオ メモリ、対応する D3DHALDP2\_VIDMEMVERTEXBUF または D3DHALDP2\_VIDMEMCOMMANDBUF フラグを設定する必要があります。
+Multibuffering セット内のバッファーは、システムまたはビデオ メモリでは、さまざまなメモリの種類ですることができます。 ドライバーは、最初のバッファーを作成する呼び出されると、セットをすぐに作成し、Direct3D にセットの最初のバッファーを返します。 ドライバーは、セット内の各バッファーを割り当てるために使用されるメモリの種類を指定するのにフラグを使用します。 ドライバーは、呼び出しごとにシステム メモリ内で新しいバッファーを返す必要があります[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)場合、D3DHALDP2\_SWAPVERTEXBUFFER または D3DHALDP2\_SWAPCOMMANDBUFFER フラグ設定されています。 かどうか、返されたバッファーはビデオ メモリ、対応する D3DHALDP2\_VIDMEMVERTEXBUF または D3DHALDP2\_VIDMEMCOMMANDBUF フラグを設定する必要があります。
 
 場合によっては、Direct3D は、次のバッファーの最小サイズを要求します。 サイズが大きすぎる場合、ドライバーはシステム メモリ (バッキング画面) 内でバッファーを割り当てる必要があります。 サイズが小さすぎる場合より大きなバッファーを提供するドライバーが許可されています。 ドライバーはの追跡バッファーの数とどのようなメモリ型されていて、終了時にすべてをクリーンアップします。
 

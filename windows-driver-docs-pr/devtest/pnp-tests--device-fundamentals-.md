@@ -4,12 +4,12 @@ description: デバイスの基礎 PnP テスト PnP Irp; のほぼすべてを�
 ms.assetid: 4224F92B-5430-4F55-900D-0B08ADBE54F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27b170a9b1e0db4666b7afe370e3b23f435e7384
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: f0b8e5dfef06ffa08835cd167b4ae8ee24ff1c28
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392070"
 ---
 # <a name="pnp-tests-device-fundamentals"></a>PnP テスト (Device Fundamental)
 
@@ -19,7 +19,7 @@ ms.locfileid: "65405111"
 ## <a name="pnp-tests"></a>PNP テスト
 
 
-プラグ アンド プレイ (PnP) テストでは、ドライバーとユーザー モード コンポーネントでさまざまな PnP に関連するコード パスを実行します。 PnP のテストが実行する必要があります[Driver Verifier](driver-verifier.md)テスト コンピューターで有効にします。 ドライバーの検証を有効にする方法については、次を参照してください。[ドライバー プロジェクトの Driver Verifier プロパティ](https://msdn.microsoft.com/windows-drivers/develop/driver_verifier_properties_for__driver_projects)します。
+プラグ アンド プレイ (PnP) テストでは、ドライバーとユーザー モード コンポーネントでさまざまな PnP に関連するコード パスを実行します。 PnP のテストが実行する必要があります[Driver Verifier](driver-verifier.md)テスト コンピューターで有効にします。 ドライバーの検証を有効にする方法については、次を参照してください。[ドライバー プロジェクトの Driver Verifier プロパティ](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 <table>
 <colgroup>
@@ -36,7 +36,7 @@ ms.locfileid: "65405111"
 <tr class="odd">
 <td align="left"><p><span id="Disable_Enhanced_Device_Testing__EDT__Support_"></span><span id="disable_enhanced_device_testing__edt__support_"></span><span id="DISABLE_ENHANCED_DEVICE_TESTING__EDT__SUPPORT_"></span>テスト (EDT) サポート、強化されたデバイスを無効にします。</p></td>
 <td align="left"><p>このテストでは、DQ パラメーターを使用して指定したデバイスの上限をフィルターとして、テスト フィルター ドライバー (msdmfilt.sys) をアンインストールします。 このテストのフィルターは、このテスト カテゴリのテストの実行の一部としてインストールを取得します</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -49,7 +49,7 @@ ms.locfileid: "65405111"
 <td align="left"><p>このテストは、システムの再起動を備えたデバイスでの基本的な PnP の無効化/有効化と I/O を実行します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PNP_DisableEnable_Reboot_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>メソッドをテストします。</strong>PNP_DisableEnable_Reboot_With_IO_Before_And_After</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -59,15 +59,15 @@ ms.locfileid: "65405111"
 <p>このテストは、次を行います。</p>
 <ol>
 <li>デバイスの問題のコードをレポート作成システム上のデバイスがないことを確認します。</li>
-<li>WDTF 単純な I/O プラグインを使用して、システム上のすべてのデバイスで I/O をテストします。 参照してください<a href="https://msdn.microsoft.com/library/windows/hardware/hh781398" data-raw-source="[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)">WDTF の単純な I/O を提供するプラグイン</a>詳細についてはします。</li>
-<li>WDTF PnP アクションのインターフェイスを使用して、システム上のすべてのデバイスを参照してください有効と無効になります<a href="https://msdn.microsoft.com/library/windows/hardware/hh451068" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::DisableDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451068)"> <strong>IWDTFPNPAction2::DisableDevice</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/hh451082" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::EnableDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451082)"> <strong>IWDTFPNPAction2::EnableDevice</strong> </a>方法の詳細について。</li>
+<li>WDTF 単純な I/O プラグインを使用して、システム上のすべてのデバイスで I/O をテストします。 参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins" data-raw-source="[Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)">WDTF の単純な I/O を提供するプラグイン</a>詳細についてはします。</li>
+<li>WDTF PnP アクションのインターフェイスを使用して、システム上のすべてのデバイスを参照してください有効と無効になります<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::DisableDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice)"> <strong>IWDTFPNPAction2::DisableDevice</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::EnableDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice)"> <strong>IWDTFPNPAction2::EnableDevice</strong> </a>方法の詳細について。</li>
 <li>デバイスの問題のコードをレポート作成システム上のデバイスがないことを確認します。</li>
-<li>WDTF 単純な I/O プラグインを使用して、システム上のすべてのデバイスで I/O をテストします。 参照してください<a href="https://msdn.microsoft.com/library/windows/hardware/hh781398" data-raw-source="[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)">WDTF の単純な I/O を提供するプラグイン</a>詳細についてはします。</li>
+<li>WDTF 単純な I/O プラグインを使用して、システム上のすべてのデバイスで I/O をテストします。 参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins" data-raw-source="[Provided WDTF Simple I/O plug-ins](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)">WDTF の単純な I/O を提供するプラグイン</a>詳細についてはします。</li>
 <li>手順 3 ~ 5 を複数回繰り返されます。</li>
 </ol>
 <p><strong>バイナリをテストします。</strong>Devfund_PNP_DisableEnable_With_IO_BeforeAndAfter.wsc</p>
 <p><strong>メソッドをテストします。</strong>PNP_DisableEnable_With_IO_Before_And_After</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -77,7 +77,7 @@ ms.locfileid: "65405111"
 <p>詳細については、次を参照してください。 <a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">、デバイスの削除に関するテスト</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPCancelRemoveDevice</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -90,7 +90,7 @@ ms.locfileid: "65405111"
 <p>詳細については、次を参照してください。<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPCancelStopDevice</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -99,10 +99,10 @@ ms.locfileid: "65405111"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="PNP_DIF_Remove_Device_Test"></span><span id="pnp_dif_remove_device_test"></span><span id="PNP_DIF_REMOVE_DEVICE_TEST"></span>PNP DIF 削除デバイス テスト</p></td>
-<td align="left"><p>このテストでは、SetupDi API を使用して、送信、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff543717" data-raw-source="[&lt;strong&gt;DIF_REMOVE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543717)"> <strong>DIF_REMOVE</strong> </a>デバイスを削除するインストーラーを要求します。</p>
+<td align="left"><p>このテストでは、SetupDi API を使用して、送信、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove" data-raw-source="[&lt;strong&gt;DIF_REMOVE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove)"> <strong>DIF_REMOVE</strong> </a>デバイスを削除するインストーラーを要求します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPDIFRemoveAndRescanParentDevice</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -114,7 +114,7 @@ ms.locfileid: "65405111"
 <td align="left"><p>このテストは無効にし、ターゲット デバイスを使用します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPDisableAndEnableDevice</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -128,7 +128,7 @@ ms.locfileid: "65405111"
 <p>詳細については、次を参照してください。<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPTryStopDeviceAndFailRestart</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -141,7 +141,7 @@ ms.locfileid: "65405111"
 <p>詳細については、次を参照してください。<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPTryStopDeviceRequestNewResourcesAndRestartDevice</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -154,7 +154,7 @@ ms.locfileid: "65405111"
 <p>詳細については、次を参照してください。 <a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">、デバイスの削除に関するテスト</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPRemoveAndRestartDevice</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -167,7 +167,7 @@ ms.locfileid: "65405111"
 <p>詳細については、次を参照してください。<a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">テストについて、再調整</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPTryStopAndRestartDevice</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -180,7 +180,7 @@ ms.locfileid: "65405111"
 <p>詳細については、次を参照してください。<a href="#about-the-surprise-removal-test" data-raw-source="[About the Surprise Removal test](#about-the-surprise-removal-test)">突然についての取り外しテスト</a>します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_PnPDTest.dll</p>
 <p><strong>メソッドをテストします。</strong>PNPSurpriseRemoveAndRestartDevice</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -284,7 +284,7 @@ ms.locfileid: "65405111"
 ## <a name="device-error-codes"></a>デバイスのエラー コード
 
 
-テストには、デバイスの状態が OK でないというエラー メッセージが利用できますが場合、できる詳細を確認するデバイスの状態のデバイス マネージャーを使用します。 さまざまなデバイスのエラー コードの概要については、次を参照してください。[デバイス マネージャーのエラー メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff541422)します。
+テストには、デバイスの状態が OK でないというエラー メッセージが利用できますが場合、できる詳細を確認するデバイスの状態のデバイス マネージャーを使用します。 さまざまなデバイスのエラー コードの概要については、次を参照してください。[デバイス マネージャーのエラー メッセージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)します。
 
 ## <a name="debug-installation-failures-using-the-setup-api-logs"></a>API のセットアップ ログを使用して、インストール エラーをデバッグします。
 
@@ -300,17 +300,17 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 ## <a name="related-topics"></a>関連トピック
 
 
-[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
 [テストを選択し、デバイスの基本を構成する方法](https://docs.microsoft.com/windows-hardware/drivers/develop/how-to-select-and-configure-the-device-fundamental-tests)
 
 [Device Fundamental のテスト](device-fundamentals-tests.md)
 
-[Device Fundamental テストのパラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[Device Fundamental テストのパラメーター](https://docs.microsoft.com/windows-hardware/drivers)
 
-[提供されている WDTF シンプル I/O プラグイン](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[提供されている WDTF シンプル I/O プラグイン](https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins)
 
-[コマンド プロンプトから実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[コマンド プロンプトから実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

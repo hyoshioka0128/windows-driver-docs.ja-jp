@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_P2P_DISCOVER ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1252f2fa12cd227c3c860ced7444488f4af9ee4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bf74806fe5597255e91f727c0ee05732199a3f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387236"
 ---
 # <a name="oidwditaskp2pdiscover"></a>OID\_WDI\_タスク\_P2P\_検出
 
@@ -53,56 +53,56 @@ Wi-Fi Direct の検出は、標準的な Wi-fi スキャンの対象から相互
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897878" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVER_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897878)"><strong>WDI_TLV_P2P_DISCOVER_MODE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discover-mode" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVER_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discover-mode)"><strong>WDI_TLV_P2P_DISCOVER_MODE</strong></a></td>
 <td></td>
 <td></td>
 <td>スキャンの種類、数、およびスキャンの間隔などの検出モード情報。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898051" data-raw-source="[&lt;strong&gt;WDI_TLV_SCAN_DWELL_TIME&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898051)"><strong>WDI_TLV_SCAN_DWELL_TIME</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-scan-dwell-time" data-raw-source="[&lt;strong&gt;WDI_TLV_SCAN_DWELL_TIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-scan-dwell-time)"><strong>WDI_TLV_SCAN_DWELL_TIME</strong></a></td>
 <td></td>
 <td></td>
 <td>ドウェル時刻の設定をスキャンしています。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897877" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897877)"><strong>WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings)"><strong>WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS</strong></a></td>
 <td>x</td>
 <td>x</td>
 <td>期間とをスキャンするチャネルの一覧をスキャンします。 指定した場合、リッスンの設定をオーバーライド WDI_TLV_SCAN_DWELL_TIME で指定されています。 このリストが空の場合、ポートがでサポートされているすべてのチャンネル スキャンし、WDI_TLV_SCAN_DWELL_TIME からリッスン設定を使用する必要があります。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898064" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898064)"><strong>WDI_TLV_SSID</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid)"><strong>WDI_TLV_SSID</strong></a></td>
 <td>x</td>
 <td>x</td>
 <td>ポートをスキャンする必要がある Ssid の一覧。 この一覧で複数の Ssid 許可されるは、ワイルドカードは、それらのいずれか。 チャネルで作業中のスキャンを実施する際に、ポートは、一覧には、各 SSID のプローブ要求を送信する必要があります。 このリストが空の場合は、Ssid のすべてのポートをスキャンする必要があります。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898009" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_NAME_HASH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898009)"><strong>WDI_TLV_P2P_SERVICE_NAME_HASH</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-name-hash" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_NAME_HASH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-name-hash)"><strong>WDI_TLV_P2P_SERVICE_NAME_HASH</strong></a></td>
 <td>x</td>
 <td>x</td>
 <td>クエリを実行するハッシュのサービス名の一覧。 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_NAME_ONLY または WDI_P2P_SERVICE_DISCOVERY_TYPE_ASP2_SERVICE_NAME_ONLY が指定されているかどうかに必要です。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898076" data-raw-source="[&lt;strong&gt;WDI_TLV_VENDOR_SPECIFIC_IE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898076)"><strong>WDI_TLV_VENDOR_SPECIFIC_IE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie" data-raw-source="[&lt;strong&gt;WDI_TLV_VENDOR_SPECIFIC_IE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)"><strong>WDI_TLV_VENDOR_SPECIFIC_IE</strong></a></td>
 <td></td>
 <td>x</td>
 <td>ポートによって送信されたプローブ要求に含める必要がある 1 つまたは複数の i。 これらでは、パッシブ スキャンは使用されません。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/mt269140" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt269140)"><strong>WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-information-discovery-entry" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-information-discovery-entry)"><strong>WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></td>
 <td>x</td>
 <td>x</td>
 <td>クエリを実行するサービス情報の検出のエントリのオプションのリスト。 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_INFORMATION が指定されている場合、この機能が必要です。 サービス名のハッシュを使用してプローブ要求/応答に対して P2P サービスの検出を実行するには、ドライバーが必要です。 サービス情報を含むサービス エントリごとに、ドライバーは、実行、ANQP クエリ要求/応答サービスの情報を照会すると想定されます。</td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt769912" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt769912)"><strong>WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-asp2-service-information-discovery-entry" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-asp2-service-information-discovery-entry)"><strong>WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></p></td>
 <td>x</td>
 <td><p>x</p></td>
 <td><p>Windows 10 version 1607 では、バージョン 1.0.21 WDI に追加されます。</p>
 <p>クエリを実行する ASP2 サービス情報の検出のエントリのオプションのリスト。 WDI_P2P_SERVICE_DISCOVERY_TYPE_ASP2_SERVICE_INFORMATION が指定されている場合、この機能が必要です。 サービス名のハッシュを使用してプローブ要求/応答に対して P2P サービスの検出を実行するには、ドライバーが必要です。 サービス情報を含むサービス エントリごとに、ドライバーは、実行、ANQP クエリ要求/応答サービスの情報を照会すると想定されます。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt769913" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt769913)"><strong>WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-include-listen-channel" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-include-listen-channel)"><strong>WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL</strong></a></p></td>
 <td></td>
 <td><p>x</p></td>
 <td><p>Windows 10 version 1607 では、バージョン 1.0.21 WDI に追加されます。</p>
@@ -122,7 +122,7 @@ Wi-Fi Direct の検出は、標準的な Wi-fi スキャンの対象から相互
 
 [NDIS\_STATUS\_WDI\_INDICATION\_BSS\_ENTRY\_LIST](ndis-status-wdi-indication-bss-entry-list.md)
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

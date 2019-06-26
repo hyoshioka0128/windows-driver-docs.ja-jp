@@ -12,19 +12,19 @@ keywords:
 - 変換先接続の WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 389ed729c4c6d8376fca6b0a52cd37f159a17258
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1312e98992ba3fd4b2e4c544eff51c06e0b7d553
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352962"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384557"
 ---
 # <a name="establishing-a-connection-with-a-destination"></a>宛先との接続の確立
 
 
 Winsock カーネル (WSK) アプリケーションがローカル トランスポート アドレスに接続指向のソケットをバインドした後に、リモート システムとの接続を確立するために、ソケット、リモートのトランスポート アドレスを接続できます。 WSK アプリケーションは、送信したり、ソケット経由でデータを受信する前に、リモートのトランスポート アドレスに接続指向のソケットを接続する必要があります。
 
-WSK アプリケーションでは、リモートのトランスポート アドレスにソケットを接続呼び出すことによって、 [ **WskConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571125)関数。 **WskConnect**関数で指し示されます、 **WskConnect**ソケットのプロバイダーのディスパッチ構造体のメンバー。 ソケットのプロバイダーのディスパッチ構造体を指す、**ディスパッチ**ソケット オブジェクトの構造体のメンバー ( [ **WSK\_ソケット**](https://msdn.microsoft.com/library/windows/hardware/ff571182)) によって返された、ソケットの作成時に WSK サブシステムです。
+WSK アプリケーションでは、リモートのトランスポート アドレスにソケットを接続呼び出すことによって、 [ **WskConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_connect)関数。 **WskConnect**関数で指し示されます、 **WskConnect**ソケットのプロバイダーのディスパッチ構造体のメンバー。 ソケットのプロバイダーのディスパッチ構造体を指す、**ディスパッチ**ソケット オブジェクトの構造体のメンバー ( [ **WSK\_ソケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_socket)) によって返された、ソケットの作成時に WSK サブシステムです。
 
 次のコード例では、リモートのトランスポート アドレスに、WSK アプリケーションが接続指向のソケットを接続する方法を示します。
 
@@ -127,7 +127,7 @@ NTSTATUS
 }
 ```
 
-WSK アプリケーションが呼び出すことができます、 [ **WskSocketConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571150)関数を作成し、バインドして、1 つの関数の呼び出しで、接続指向のソケットを接続します。
+WSK アプリケーションが呼び出すことができます、 [ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)関数を作成し、バインドして、1 つの関数の呼び出しで、接続指向のソケットを接続します。
 
  
 

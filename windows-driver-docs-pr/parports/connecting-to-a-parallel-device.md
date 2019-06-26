@@ -6,12 +6,12 @@ keywords:
 - デバイス接続、WDK を並列します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec8aa8e7076f59f93b6168b6204ec5e2b439f4d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 117dc1b7831ebbc45070c1d6a65ec84f10c47df0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373553"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385985"
 ---
 # <a name="connecting-to-a-parallel-device"></a>パラレル デバイスへの接続
 
@@ -19,7 +19,7 @@ ms.locfileid: "63373553"
 
 
 
-クライアントを使用して、 [ **IOCTL\_内部\_PARCLASS\_CONNECT** ](https://msdn.microsoft.com/library/windows/hardware/ff544040)を取得する要求を[ **PARCLASS\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff544334)を含む構造体。
+クライアントを使用して、 [ **IOCTL\_内部\_PARCLASS\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_parclass_connect)を取得する要求を[ **PARCLASS\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ns-parallel-_parclass_information)を含む構造体。
 
 -   パラレル ポートに割り当てられている I/O リソース
 
@@ -31,7 +31,7 @@ ms.locfileid: "63373553"
 
 コールバック ルーチンは、関数の一般的なドライバーが必要な機能を提供します。 コールバック ルーチンを使用すると、同等のデバイスに対する制御要求を使用するよりも効率的です。
 
-使用して、クライアントがデバイスから切断する[ **IOCTL\_内部\_PARCLASS\_切断**](https://msdn.microsoft.com/library/windows/hardware/ff544046)要求。
+使用して、クライアントがデバイスから切断する[ **IOCTL\_内部\_PARCLASS\_切断**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_parclass_disconnect)要求。
 
  
 

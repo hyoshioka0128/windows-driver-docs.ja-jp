@@ -4,23 +4,23 @@ description: NDIS セレクティブ サスペンド用の標準化された INF
 ms.assetid: A45EE23D-1C60-4DA4-82A5-89DB5CE48E21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02d0600974ce3ac2af10344d13adb8049244d0bf
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 24e0d1489e2117ec59ccdf9ed0a05e8839d73c10
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405278"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378637"
 ---
 # <a name="standardized-inf-keywords-for-ndis-selective-suspend"></a>NDIS セレクティブ サスペンド用の標準化された INF キーワード
 
 
 有効化、無効にするには、NDIS 選択的なが中断ミニポート ドライバーでのパラメーターを構成するは、次の標準化された INF キーワードが定義されています。
 
-[**\*SelectiveSuspend** INF キーワード](#selectivesuspend-inf-keyword)
+[ **\*SelectiveSuspend** INF キーワード](#selectivesuspend-inf-keyword)
 
-[**\*SSIdleTimeout** INF キーワード](#ssidletimeout-inf-keyword)
+[ **\*SSIdleTimeout** INF キーワード](#ssidletimeout-inf-keyword)
 
-[**\*SSIdleTimeoutScreenOff** INF キーワード](#ssidletimeoutscreenoff-inf-keyword)
+[ **\*SSIdleTimeoutScreenOff** INF キーワード](#ssidletimeoutscreenoff-inf-keyword)
 
 
 標準化された INF キーワードの詳細については、次を参照してください。[ネットワーク デバイスの標準化された INF キーワード](standardized-inf-keywords-for-network-devices.md)します。
@@ -42,7 +42,7 @@ INF ファイルで指定する必要があります、キーワードの名前�
 <a href="" id="paramdesc"></a>ParamDesc  
 SubkeyName に関連付けられているテキスト。
 
-**注**  独立系ハードウェア ベンダー (IHV) は、SubkeyName のわかりやすいテキストを定義できます。
+**注**   独立系ハードウェア ベンダー (IHV) は、SubkeyName のわかりやすいテキストを定義できます。
 
  
 
@@ -90,7 +90,7 @@ SubkeyName に関連付けられているテキスト。
 ## <a name="ssidletimeout-inf-keyword"></a>\*SSIdleTimeout INF キーワード
 
 
-NDIS 選択的な中断をサポートしていますが、省略可能な指定する必要がありますミニポート ドライバーのファイル、INF **\*SSIdleTimeout** INF キーワードを標準化します。 このキーワードは、秒単位でアイドル状態のタイムアウト期間を指定します。 超える期間の NDIS にネットワーク アダプター上の任意のアクティビティが検出されない場合、 **\*SSIdleTimeout** 値、NDIS 開始をセレクティブ サスペンド操作を呼び出して、ミニポート ドライバーの[ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)ハンドラー関数。
+NDIS 選択的な中断をサポートしていますが、省略可能な指定する必要がありますミニポート ドライバーのファイル、INF **\*SSIdleTimeout** INF キーワードを標準化します。 このキーワードは、秒単位でアイドル状態のタイムアウト期間を指定します。 超える期間の NDIS にネットワーク アダプター上の任意のアクティビティが検出されない場合、 **\*SSIdleTimeout** 値、NDIS 開始をセレクティブ サスペンド操作を呼び出して、ミニポート ドライバーの[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)ハンドラー関数。
 
 管理者を更新できます、ドライバーがインストールされた後、 **\*SSIdleTimeout** でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
 
@@ -159,7 +159,7 @@ NDIS の 30% の精度はタイマーを使用して、アイドル タイムア
 ## <a name="ssidletimeoutscreenoff-inf-keyword"></a>\*SSIdleTimeoutScreenOff INF キーワード
 
 
-NDIS 選択的な中断をサポートしていますが、省略可能な指定する必要がありますミニポート ドライバーのファイル、INF **\*SSIdleTimeoutScreenOff** INF キーワードを標準化します。 このキーワードは、アイドル状態のタイムアウト期間を秒単位で指定しは、画面がオフの場合にのみ適用されます。 超える期間の NDIS にネットワーク アダプター上の任意のアクティビティが検出されない場合、 **\*SSIdleTimeoutScreenOff** 値、画面がオフにした後、NDIS 開始をセレクティブ サスペンド操作ミニポートを呼び出すことによってドライバーの[ *MiniportIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464092)ハンドラー関数。
+NDIS 選択的な中断をサポートしていますが、省略可能な指定する必要がありますミニポート ドライバーのファイル、INF **\*SSIdleTimeoutScreenOff** INF キーワードを標準化します。 このキーワードは、アイドル状態のタイムアウト期間を秒単位で指定しは、画面がオフの場合にのみ適用されます。 超える期間の NDIS にネットワーク アダプター上の任意のアクティビティが検出されない場合、 **\*SSIdleTimeoutScreenOff** 値、画面がオフにした後、NDIS 開始をセレクティブ サスペンド操作ミニポートを呼び出すことによってドライバーの[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)ハンドラー関数。
 
 管理者を更新できます、ドライバーがインストールされた後、 **\*SSIdleTimeoutScreenOff** でキーワード値、 **[詳細設定]** ネットワーク アダプターのプロパティ ページ。 高度なプロパティの詳細については、次を参照してください。[プロパティの詳細 ページの構成パラメーターを指定する](specifying-configuration-parameters-for-the-advanced-properties-page.md)します。
 

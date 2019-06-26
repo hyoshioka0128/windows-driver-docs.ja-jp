@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WDI_INDICATION_NLO_DISCOVERY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: deab9e17b1009b1e72dbfd4d849b70e3f185a053
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d96a1b4a5e730f63fa41e82b55fa27700fd70b9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390675"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384915"
 ---
 # <a name="ndisstatuswdiindicationnlodiscovery"></a>NDIS\_状態\_WDI\_INDICATION\_NLO\_検出
 
@@ -46,11 +46,11 @@ NLO 検出の指標は、次の 2 つのケースで行われます。
 
 | 種類                                                   | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                      |
 |--------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_BSS\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn926162) | x                              |          | Bssid の一覧。 一覧には、この探索の状態を発生させたエントリが含まれる少なくとも必要があります。 |
+| [**WDI\_TLV\_BSS\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry) | x                              |          | Bssid の一覧。 一覧には、この探索の状態を発生させたエントリが含まれる少なくとも必要があります。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

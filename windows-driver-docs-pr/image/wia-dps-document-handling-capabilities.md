@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20762860ae8d4239a9ec93b064b596b9ebc6d6a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92d5c8a07be5fa414f59bdc3d83400d5f95c5fda
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335461"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393356"
 ---
 # <a name="wiadpsdocumenthandlingcapabilities"></a>WIA\_DPS\_ドキュメント\_処理\_機能
 
@@ -49,7 +49,7 @@ WIA\_DPS\_ドキュメント\_処理\_機能プロパティには、スキャナ
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -88,14 +88,14 @@ WIA\_DPS\_ドキュメント\_処理\_機能プロパティには、スキャナ
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>AUTO_SOURCE</p></td>
-<td><p>デバイスでサポートする<a href="https://msdn.microsoft.com/library/windows/hardware/ff539393" data-raw-source="[auto-configured scanning](https://msdn.microsoft.com/library/windows/hardware/ff539393)">スキャンの自動構成</a>します。</p></td>
+<td><p>デバイスでサポートする<a href="https://docs.microsoft.com/windows-hardware/drivers/image/auto-configured-scanning" data-raw-source="[auto-configured scanning](https://docs.microsoft.com/windows-hardware/drivers/image/auto-configured-scanning)">スキャンの自動構成</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -111,7 +111,7 @@ WIA\_DPS\_ドキュメント\_処理\_機能プロパティには、スキャナ
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -150,7 +150,7 @@ WIA\_DPS\_ドキュメント\_処理\_機能プロパティには、スキャナ
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -193,7 +193,7 @@ WIA\_DPS\_ドキュメント\_処理\_機能プロパティには、スキャナ
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -215,7 +215,7 @@ WIA\_DPS\_ドキュメント\_処理\_機能プロパティには、スキャナ
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

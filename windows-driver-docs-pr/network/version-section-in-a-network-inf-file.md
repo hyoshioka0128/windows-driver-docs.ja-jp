@@ -8,12 +8,12 @@ keywords:
 - バージョン セクション WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f46f9c7a5a95b1d2163f2ea4857b84b1aa40ba4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb813db3c53693f66f49abe8aa064b967db88025
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346626"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384357"
 ---
 # <a name="version-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の Version セクション
 
@@ -21,7 +21,7 @@ ms.locfileid: "63346626"
 
 
 
-**バージョン**ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)します。
+**バージョン**ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)します。
 
 **バージョン**ネットワーク INF ファイルでセクションが次のネットワークに固有のエントリには。
 
@@ -111,7 +111,7 @@ TCP/IP、IPX、接続指向のクライアントでは、接続指向のコー�
 
 ### <a name="pnplockdown"></a>PnpLockDown
 
-**PnpLockDown**エントリは、アプリケーションがドライバー パッケージの INF ファイルを指定するファイルを直接変更するを防ぐに 1 に設定する必要があります。 このエントリの詳細については、次を参照してください。 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)します。
+**PnpLockDown**エントリは、アプリケーションがドライバー パッケージの INF ファイルを指定するファイルを直接変更するを防ぐに 1 に設定する必要があります。 このエントリの詳細については、次を参照してください。 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)します。
 
 ### <a name="catalogfile"></a>CatalogFile
 

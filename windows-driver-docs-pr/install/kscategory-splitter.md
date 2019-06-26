@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c82c6787948473707fc23e29fd927b56c2a3c0e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1c0ec5833c3af47f354307de44466fbff619e87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366700"
 ---
 # <a name="kscategorysplitter"></a>KSCATEGORY_SPLITTER
 
 
-KSCATEGORY_SPLITTER[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)データ ストリームを分割する (KS) 機能のカテゴリ。
+KSCATEGORY_SPLITTER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)データ ストリームを分割する (KS) 機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ KSCATEGORY_SPLITTER[デバイス インターフェイス クラス](https://msd
 
 KS オーディオ アダプター デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_SPLITTER 機能カテゴリをサポートすることを示す KSCATEGORY_SPLITTER のインスタンスを登録します。
 
-KSCATEGORY_SPLITTER 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799)機能別に分類します。
+KSCATEGORY_SPLITTER 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)機能別に分類します。
 
-分割ウィンドウについては、次を参照してください。 [AVStream スプリッター](https://msdn.microsoft.com/library/windows/hardware/ff554255)します。
+分割ウィンドウについては、次を参照してください。 [AVStream スプリッター](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-splitters)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -79,7 +79,7 @@ KSCATEGORY_SPLITTER 機能のカテゴリは、のいずれか、 [ **KSPROPERTY
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

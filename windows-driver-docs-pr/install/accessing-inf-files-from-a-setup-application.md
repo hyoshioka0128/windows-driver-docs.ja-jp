@@ -6,12 +6,12 @@ keywords:
 - INF ファイル WDK デバイスのインストール、デバイスのインストール アプリケーションの操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61eb38511d9c1f71da3c44563eed2e5280eda4c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a42d099c0db92bad8cc41b4afb0bb87113d2aedc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370019"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386054"
 ---
 # <a name="accessing-inf-files-from-a-device-installation-application"></a>デバイスのインストール アプリケーションからの INF ファイルへのアクセス
 
@@ -19,7 +19,7 @@ ms.locfileid: "63370019"
 
 
 
-ほとんどの INF ファイル システム クラスのインストーラー、およびその他によって使用*デバイス インストール アプリケーション*します。 このセクションを使用して INF ファイルでのデバイスのベンダーから提供されたインストール アプリケーションが実行できる一般的な操作を説明します、[一般的なセットアップ関数](https://msdn.microsoft.com/library/windows/hardware/ff544985)します。 これらの関数を使用する方法については、Windows SDK のドキュメントを参照してください。
+ほとんどの INF ファイル システム クラスのインストーラー、およびその他によって使用*デバイス インストール アプリケーション*します。 このセクションを使用して INF ファイルでのデバイスのベンダーから提供されたインストール アプリケーションが実行できる一般的な操作を説明します、[一般的なセットアップ関数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))します。 これらの関数を使用する方法については、Windows SDK のドキュメントを参照してください。
 
 このセクションでは、次のトピックについて説明します。
 

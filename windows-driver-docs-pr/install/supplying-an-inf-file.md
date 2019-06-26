@@ -14,12 +14,12 @@ keywords:
 - INF ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 222e73663b9d19edac1e57e92a76eaf3eeaf0eac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08dd93b486b7ae5a5d207237052c8012b5494129
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339645"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385877"
 ---
 # <a name="supplying-an-inf-file"></a>INF ファイルの提供
 
@@ -27,7 +27,7 @@ ms.locfileid: "63339645"
 
 
 
-すべてのドライバー パッケージは、INF を含める必要がありますファイルを[デバイス インストール コンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff541277)デバイスのインストール時の読み取り。 INF ファイルは、インストール スクリプトではありません。 これが ASCII または Unicode テキスト ファイル ドライバー ファイル、レジストリ エントリ、デバイスの Id など、デバイスとドライバーの情報を提供する[カタログ ファイル](catalog-files.md)、およびデバイスまたはドライバーをインストールするために必要なバージョン情報。 だけでなく、デバイスまたはドライバーのインストール時にまずもドライバー、ユーザーの要求を通じてデバイス マネージャーを更新するときに、INF が使用されます。
+すべてのドライバー パッケージは、INF を含める必要がありますファイルを[デバイス インストール コンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))デバイスのインストール時の読み取り。 INF ファイルは、インストール スクリプトではありません。 これが ASCII または Unicode テキスト ファイル ドライバー ファイル、レジストリ エントリ、デバイスの Id など、デバイスとドライバーの情報を提供する[カタログ ファイル](catalog-files.md)、およびデバイスまたはドライバーをインストールするために必要なバージョン情報。 だけでなく、デバイスまたはドライバーのインストール時にまずもドライバー、ユーザーの要求を通じてデバイス マネージャーを更新するときに、INF が使用されます。
 
 正確な内容と INF ファイルの形式に依存して、[デバイス セットアップ クラス](device-setup-classes.md)します。 [INF セクションの概要](summary-of-inf-sections.md)INF の種類ごとに必要な情報について説明します。 一般に、製造元ごとの情報にある、 [ **INF*モデル*セクション**](inf-models-section.md)します。 内のエントリ、**モデル**セクションを参照してください[ **INF *DDInstall*セクション**](inf-ddinstall-section.md)モデルに固有の詳細が含まれます。
 

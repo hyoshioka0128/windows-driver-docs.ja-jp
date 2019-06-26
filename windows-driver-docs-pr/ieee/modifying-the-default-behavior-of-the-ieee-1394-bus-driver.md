@@ -4,12 +4,12 @@ description: Windows 7 には、1394ohci.sys、カーネル モード ドライ�
 ms.assetid: B636943E-EE52-4D0D-A638-89C05AD41F1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 305c180c8c9930b43a420d72395a4bdc2ffc9bf0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37ba44dc4d49d7f52e8fcf6afac1008118e40ad6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370983"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381050"
 ---
 # <a name="modifying-the-default-behavior-of-the-ieee-1394-bus-driver"></a>IEEE 1394 バス ドライバーの既定の動作の変更
 
@@ -50,7 +50,7 @@ Windows 7 には、1394ohci.sys、カーネル モード ドライバー フレ�
 <tr class="header">
 <th>名前</th>
 <th>種類</th>
-<th>値</th>
+<th>Value</th>
 <th>Default</th>
 <th>説明</th>
 </tr>
@@ -109,8 +109,8 @@ Windows 7 には、1394ohci.sys、カーネル モード ドライバー フレ�
  
 
 ## <a name="related-topics"></a>関連トピック
-[IEEE 1394 ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/ff538867)  
-[Windows 7 での IEEE 1394 バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/gg266402)  
+[IEEE 1394 ドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)  
+[Windows 7 での IEEE 1394 バス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/IEEE-1394-Bus-Driver-in-Windows-7)  
 
 
 

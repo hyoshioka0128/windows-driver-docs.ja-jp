@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cf8ded26b336b57c798ec9085c97824a77244f00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f07412691c910f5bffc3790b7f53726eea10462f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383851"
 ---
 # <a name="devproptypentstatus"></a>DEVPROP_TYPE_NTSTATUS
 
@@ -29,7 +29,7 @@ DEVPROP_TYPE_NTSTATUS 識別子は Ntstatus.h に定義されている NTSTATUS 
 <a name="remarks"></a>注釈
 -------
 
-Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](https://msdn.microsoft.com/library/windows/hardware/ff553515)も定義、 [ **DEVPROP_TYPE_ERROR** ](devprop-type-error.md) Microsoft の基本データ型識別子Win32 エラー コード値。
+Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)も定義、 [ **DEVPROP_TYPE_ERROR** ](devprop-type-error.md) Microsoft の基本データ型識別子Win32 エラー コード値。
 
 のみ DEVPROP_TYPE_NTSTATUS を組み合わせることができます、 [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)プロパティ データ型の修飾子。
 
@@ -57,7 +57,7 @@ NTSTATUS エラー コード値に関連付けられている説明テキスト�
 
 -   わかりやすいテキストを取得する、必要に応じて、他のオプションとパラメーターを設定します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

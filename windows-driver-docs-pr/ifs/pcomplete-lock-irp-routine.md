@@ -15,12 +15,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8a40500a0655403aa3746edb4f3692e690c63cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfcbe5acc8aa646816652cd9e5c2ec153eeaecd0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352778"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386063"
 ---
 # <a name="pcompletelockirproutine-routine"></a>PCOMPLETE\_ロック\_IRP\_ルーチン ルーチン
 
@@ -44,7 +44,7 @@ NTSTATUS CompleteLockIrpRoutine(
 ----------
 
 *コンテキスト*\[で\]  
-渡されたコンテキスト ポインター [ **FsRtlProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547166)します。
+渡されたコンテキスト ポインター [ **FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)します。
 
 *Irp* \[で\]  
 ファイル ロックの IRP [ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)遂行される要求。 ロック要求の種類は、次のいずれかになります。
@@ -67,7 +67,7 @@ IRP\_MN\_UNLOCK\_単一
 
 ファイル システム フィルター ドライバー (レガシ フィルター) を指定できます、PCOMPLETE\_ロック\_IRP\_のレガシ フィルターとしてルーチンに型指定されたルーチン*CompleteLockIrpRoutine*の日常的なバイト範囲のファイルのロック。
 
-このルーチンを指定するには、レガシ フィルターでは、としてルーチンにポインターを渡します、 *CompleteLockIrpRoutine*パラメーター [ **FsRtlAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff545640)または[ **FsRtlInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546122)します。
+このルーチンを指定するには、レガシ フィルターでは、としてルーチンにポインターを渡します、 *CompleteLockIrpRoutine*パラメーター [ **FsRtlAllocateFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)または[ **FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)します。
 
 レガシ フィルターを指定する場合、 *CompleteLockIrpRoutine*ファイル ロックを日常的なシステム ルーチンを呼び出すこの完了したときに、 [ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)ファイル ロックを操作します。
 
@@ -98,19 +98,19 @@ IRP\_MN\_UNLOCK\_単一
 ## <a name="see-also"></a>関連項目
 
 
-[**FsRtlAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff545640)
+[**FsRtlAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)
 
-[**FsRtlCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545758)
+[**FsRtlCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforreadaccess)
 
-[**FsRtlCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545760)
+[**FsRtlCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforwriteaccess)
 
-[**FsRtlFreeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546011)
+[**FsRtlFreeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfreefilelock)
 
-[**FsRtlInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546122)
+[**FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)
 
-[**FsRtlProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547166)
+[**FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)
 
-[**FsRtlUninitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547313)
+[**FsRtlUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtluninitializefilelock)
 
 [**IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)
 

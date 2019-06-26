@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_OPER_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e81f990eed12f8de9ee1abe72ac8dd1df63ce461
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f303b176eb45e2792d88a6bbe19bf693c90610b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368560"
 ---
 # <a name="ndisstatusoperstatus"></a>NDIS\_状態\_工程\_状態
 
@@ -23,9 +23,9 @@ NDIS\_状態\_工程\_ステータスは、NDIS ドライバーに関連する�
 
 NDIS が生成されます。 この状態の表示NDIS ミニポート ドライバーでは、この状態を示す値を生成する必要があります。
 
-NDIS の提供、 [ **NDIS\_工程\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff566737)構造体、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。
+NDIS の提供、 [ **NDIS\_工程\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_oper_state)構造体、 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。
 
-**StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373) sizeof に構造体が設定されている (NDIS\_工程\_状態の場合)。
+**StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication) sizeof に構造体が設定されている (NDIS\_工程\_状態の場合)。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -50,9 +50,9 @@ NDIS の提供、 [ **NDIS\_工程\_状態**](https://msdn.microsoft.com/library
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_工程\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff566737)
+[**NDIS\_工程\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_oper_state)
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
  
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f72b8c9b1a6cbfdbd8da0ca5fdbb52e77463ea0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43cb459217c39a6fd4197b3c27fef287d3303e75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386739"
 ---
 # <a name="avcfunctiongetpindescriptor"></a>AVC\_関数\_取得\_PIN\_記述子
 
@@ -103,7 +103,7 @@ AV/C サブユニット デバイスで pin の説明を指定します。
 
 ### <a name="see-also"></a>関連項目
 
-[**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)、 [ **AVC\_PIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff554185)、 [ **AVC\_関数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)、 [ **KSPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563533)、 [ **AV/C 交差ハンドラー**](https://msdn.microsoft.com/library/windows/hardware/ff556379)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)、 [ **AVC\_PIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_pin_descriptor)、 [ **AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)、 [ **KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)、 [ **AV/C 交差ハンドラー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/nc-avc-pfnavcintersecthandler)
 
  
 

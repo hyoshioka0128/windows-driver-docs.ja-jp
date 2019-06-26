@@ -10,12 +10,12 @@ keywords:
 - ホット プラグ可能な bus WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b1975fe02c6bad443df880c74c494d01e284943
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5a8b44b2bde697dd3befcdd375aac08626ec5ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363602"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385399"
 ---
 # <a name="device-error-states"></a>デバイスのエラー状態
 
@@ -50,7 +50,7 @@ ms.locfileid: "63363602"
     -   プリンターがオフライン状態になったときに、デバイスが印刷を再試行できる状態になるまでに、印刷ジョブがジョブ キューに残っていることを確認します。 ジョブが正常に完了しする必要があります。
     -   中および印刷ジョブの前に、プリンターの電源を取り外します。 プリンターがジョブ キューを再取得し、もう一度印刷が開始を確認します。 詳細についてを参照してください。[電源管理](power-management.md)します。
 -   **ホット プラグ可能な Bus エラー**
-    -   デバイスが接続されている、アンロードし、デバイス スタックを読み込む (たとえば、 [USB ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/hh406256))。 前に、実行時に、およびスタックをアンロードした後は、印刷ジョブを送信します。 たとえば、USB デバイスが接続されているの使用には、USB ルート ハブまたはホスト コント ローラー、デバイスが接続されているをアンインストールします。
+    -   デバイスが接続されている、アンロードし、デバイス スタックを読み込む (たとえば、 [USB ドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index))。 前に、実行時に、およびスタックをアンロードした後は、印刷ジョブを送信します。 たとえば、USB デバイスが接続されているの使用には、USB ルート ハブまたはホスト コント ローラー、デバイスが接続されているをアンインストールします。
     -   アンロードして、デバイス スタックと進行中のジョブを印刷しない場合の読み込みをテストします。 ジョブのキャンセルから、回復し、再起動をできることを確認します。
     -   印刷ジョブの適切な回復を許可するデバイス スタックを再読み込みします。
 

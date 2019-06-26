@@ -7,12 +7,12 @@ keywords:
 - WDK のファイル システムの状態を返す
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f7d305d3599b7d105f9580bd0812d7efd1ec95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 674dfc788bad0b87b53d289286b8d8482d5dac36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344553"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385941"
 ---
 # <a name="returning-status-from-a-minifilter-driverentry-routine"></a>ミニフィルター DriverEntry ルーチンから返される状態
 
@@ -22,7 +22,7 @@ ms.locfileid: "63344553"
 
 ミニフィルター ドライバーの**DriverEntry**ルーチンが通常の状態を返します\_成功します。 ミニフィルターの初期化に失敗した場合は、 **DriverEntry**ルーチンは、適切なエラー NTSTATUS 値を返す必要があります。
 
-場合、 **DriverEntry**ミニフィルター ドライバーをアンロードして、ルーチンが成功 NTSTATUS 値ではない状態の値を返すシステムが応答します。 ミニフィルター ドライバーの[ **FilterUnloadCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff551085)ルーチンは呼び出されません。 このため、 **DriverEntry**ルーチンは、成功 NTSTATUS 値ではない状態の値を返す前にシステム リソースの割り当てられたメモリを解放する必要があります。
+場合、 **DriverEntry**ミニフィルター ドライバーをアンロードして、ルーチンが成功 NTSTATUS 値ではない状態の値を返すシステムが応答します。 ミニフィルター ドライバーの[ **FilterUnloadCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)ルーチンは呼び出されません。 このため、 **DriverEntry**ルーチンは、成功 NTSTATUS 値ではない状態の値を返す前にシステム リソースの割り当てられたメモリを解放する必要があります。
 
  
 

@@ -4,12 +4,12 @@ description: 電源管理パラメーターの取得と更新
 ms.assetid: 46c4d2ab-e6d9-4d23-bf40-0037b80b01af
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a80244107ea0a90e0c527a9e004d6c277bd0512
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9a209bcdfbe55d40169d79e8b9a7f78648a2589
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354529"
 ---
 # <a name="obtaining-and-updating-power-management-parameters"></a>電源管理パラメーターの取得と更新
 
@@ -17,7 +17,7 @@ ms.locfileid: "63380717"
 
 
 
-プロトコル ドライバーを使用できる、 [OID\_PM\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569768)が現在有効になっているネットワーク アダプターのハードウェア機能のクエリを実行する OID。 で、クエリから正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、ポインター、 [ **NDIS\_PM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566759)構造体。
+プロトコル ドライバーを使用できる、 [OID\_PM\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)が現在有効になっているネットワーク アダプターのハードウェア機能のクエリを実行する OID。 で、クエリから正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、ポインター、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体。
 
 プロトコル ドライバーできます OID を使用しても\_PM\_セットの要求としてパラメーターを有効またはネットワーク アダプターの現在のハードウェア機能を無効にします。 プロトコル ドライバー、NDIS へのポインターを提供する\_PM\_パラメーター構造体、 **InformationBuffer**の NDIS メンバー\_OID\_要求の構造。
 
@@ -32,10 +32,10 @@ ms.locfileid: "63380717"
 NDIS\_PM\_パラメーターには、次の情報が含まれています。
 
 <a href="" id="enabledwolpacketpatterns"></a>**EnabledWoLPacketPatterns**  
-内で報告して、ミニポート ドライバー機能に対応するフラグを含む、 **SupportedWoLPacketPatterns**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。 たとえば、ビットマップ、WOL マジック パケットの場合、または EAP over LAN (EAPOL) 要求の識別子のメッセージを受信すると、ウェイク アップ イベントを生成するネットワーク アダプターが有効にします。 現在のオペレーティング システムで可能なパターンの完全な一覧を参照してください、 [ **NDIS\_PM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566759)リファレンス ページです。
+内で報告して、ミニポート ドライバー機能に対応するフラグを含む、 **SupportedWoLPacketPatterns**のメンバー、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。 たとえば、ビットマップ、WOL マジック パケットの場合、または EAP over LAN (EAPOL) 要求の識別子のメッセージを受信すると、ウェイク アップ イベントを生成するネットワーク アダプターが有効にします。 現在のオペレーティング システムで可能なパターンの完全な一覧を参照してください、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)リファレンス ページです。
 
 <a href="" id="enabledprotocoloffloads"></a>**EnabledProtocolOffloads**  
-内で報告して、ミニポート ドライバー機能に対応するフラグを含む、 **SupportedProtocolOffloads**のメンバー、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。 NDIS は、これらのフラグを使用して有効またはネットワーク アダプターでは、低電力プロトコル オフロード機能を無効にします。 たとえば、ネットワーク アダプターは、IPv4 ARP、IPv6 近隣要請 (NS)、または信頼性の高いセキュリティで保護されたネットワーク (RSN) 4 方向と双方向のハンドシェイクが有効になっている IEEE 802.11 オフロードします。 現在のオペレーティング システムでサポートされているプロトコルのオフロードの完全な一覧を参照してください、 [ **NDIS\_PM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566759)リファレンス ページです。
+内で報告して、ミニポート ドライバー機能に対応するフラグを含む、 **SupportedProtocolOffloads**のメンバー、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。 NDIS は、これらのフラグを使用して有効またはネットワーク アダプターでは、低電力プロトコル オフロード機能を無効にします。 たとえば、ネットワーク アダプターは、IPv4 ARP、IPv6 近隣要請 (NS)、または信頼性の高いセキュリティで保護されたネットワーク (RSN) 4 方向と双方向のハンドシェイクが有効になっている IEEE 802.11 オフロードします。 現在のオペレーティング システムでサポートされているプロトコルのオフロードの完全な一覧を参照してください、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)リファレンス ページです。
 
 <a href="" id="wakeupflags"></a>**WakeUpFlags**  
 NDIS を使用して有効にするか、ネットワーク アダプターにウェイク アップ機能を無効にするフラグが含まれています。
@@ -44,7 +44,7 @@ NDIS 6.20 が動作する場合、NDIS の\_PM\_WAKE\_ON\_リンク\_変更\_有
 
 NDIS 6.30、NDIS 以降\_PM\_セレクティブ\_SUSPEND\_有効フラグ NDIS 選択時に基になる USB のネットワーク アダプターを中断、サポートを有効します。 詳細については、次を参照してください。 [NDIS セレクティブ サスペンド](ndis-selective-suspend.md)します。
 
-ドライバーが設定した場合、 [OID\_PM\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569768) OID、NDIS で、ミニポート ドライバーに転送することがなく、要求が完了します。 NDIS は、要求された設定を格納し、このような他の要求の設定ではそれらを結合します。
+ドライバーが設定した場合、 [OID\_PM\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters) OID、NDIS で、ミニポート ドライバーに転送することがなく、要求が完了します。 NDIS は、要求された設定を格納し、このような他の要求の設定ではそれらを結合します。
 
 NDIS 低電力状態にネットワーク アダプターへの移行前に、NDIS は NDIS が格納されている要求のすべての設定の組み合わせを含むミニポート ドライバーにセットの要求を送信します。 低電力状態を設定する方法についての詳細については、次を参照してください。 [Wake on LAN の低電力](low-power-for-wake-on-lan.md)します。
 

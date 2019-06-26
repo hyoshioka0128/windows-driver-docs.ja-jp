@@ -7,12 +7,12 @@ keywords:
 - KMDF WDK、ページング可能なドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0984215e80be19dca7079e6c595cbf25c04bbca9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cc4b4be6d98f53cfd2042b7475aadf1d6843087
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382367"
 ---
 # <a name="creating-pageable-code-in-a-kmdf-driver"></a>KMDF ドライバーでのページング可能なコードの作成
 
@@ -23,11 +23,11 @@ ms.locfileid: "63392698"
 
 1.  ページング可能なセクションでは、ドライバーを特定します。
 
-    ページング可能なセクションでは必要になるまでメモリに読み込まれません。 ドライバーではページング可能なセクションを作成する方法については、次を参照してください。[ドライバー ページングを行う](https://msdn.microsoft.com/library/windows/hardware/ff554346)します。
+    ページング可能なセクションでは必要になるまでメモリに読み込まれません。 ドライバーではページング可能なセクションを作成する方法については、次を参照してください。[ドライバー ページングを行う](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)します。
 
 2.  ページングされたドライバーのコードが低電力状態からすばやくがスリープ解除するコンピューターの機能を阻害していないことを確認します。
 
-    IRQL でドライバーを提供するすべてのデバイス オブジェクトのコールバック関数が呼び出される = パッシブ\_レベルで、作成するコードをページングすることができます (」の説明に従って[ドライバー ページングを行う](https://msdn.microsoft.com/library/windows/hardware/ff554346))。
+    IRQL でドライバーを提供するすべてのデバイス オブジェクトのコールバック関数が呼び出される = パッシブ\_レベルで、作成するコードをページングすることができます (」の説明に従って[ドライバー ページングを行う](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable))。
 
     ただし、ことは避けてくださいコールバック関数のコード ページの場合は、フレームワークは、デバイスが低電力状態のまま、作業 (D0) 状態に戻すときにコールバック関数を呼び出します。
 
@@ -37,9 +37,9 @@ ms.locfileid: "63392698"
 
 3.  ドライバーがドライバー ファイル、レジストリなどの外部のページング可能なデータにアクセスする必要がありますまたは電源の遷移中にページ プール、かどうかを決定します。
 
-    有効にして、電源の遷移中にページング可能なデータにアクセスするドライバーの機能を無効にする方法については、次を参照してください[ **WdfDeviceInitSetPowerPageable** ](https://msdn.microsoft.com/library/windows/hardware/ff546766)と[  **。WdfDeviceInitSetPowerNotPageable**](https://msdn.microsoft.com/library/windows/hardware/ff546147)します。
+    有効にして、電源の遷移中にページング可能なデータにアクセスするドライバーの機能を無効にする方法については、次を参照してください[ **WdfDeviceInitSetPowerPageable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpageable)と[  **。WdfDeviceInitSetPowerNotPageable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowernotpageable)します。
 
-    ときに、ドライバーが非ページング状態を確認する方法については、次を参照してください。 [ **WdfDevStateIsNP**](https://msdn.microsoft.com/library/windows/hardware/ff546958)します。
+    ときに、ドライバーが非ページング状態を確認する方法については、次を参照してください。 [ **WdfDevStateIsNP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevstateisnp)します。
 
  
 

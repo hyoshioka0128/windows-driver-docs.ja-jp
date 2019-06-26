@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8158f5e9d97425b19d3765a647520873b2e9d20f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5fd1be85ac24b22d45115bdaac40579c2b7a1cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378086"
 ---
 # <a name="devpkeydeviceclassdefaultservice"></a>DEVPKEY_DeviceClass_DefaultService
 
 
-DEVPKEY_DeviceClass_DefaultService のデバイス プロパティの既定のサービスの名前を表します、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
+DEVPKEY_DeviceClass_DefaultService のデバイス プロパティの既定のサービスの名前を表します、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
 
 <table>
 <colgroup>
@@ -60,13 +60,13 @@ DEVPKEY_DeviceClass_DefaultService のデバイス プロパティの既定の�
 <a name="remarks"></a>注釈
 -------
 
-デバイス セットアップ クラスに対する既定のサービスがインストールされているし、デバイスがデバイスに固有のサービスをインストールしていない場合、 [ **INF ClassInstall32.Services セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546339)のクラスをインストールする INF ファイルデバイスのクラスの既定のサービスをインストールします。
+デバイス セットアップ クラスに対する既定のサービスがインストールされているし、デバイスがデバイスに固有のサービスをインストールしていない場合、 [ **INF ClassInstall32.Services セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-services-section)のクラスをインストールする INF ファイルデバイスのクラスの既定のサービスをインストールします。
 
 DEVPKEY_DeviceClass_DefaultService の値は、の値、**既定 Service**クラスのレジストリ キーの下のレジストリ値。
 
-呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_ の値を取得するにはDefaultService します。
+呼び出すことができます[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) DEVPKEY_DeviceClass_ の値を取得するにはDefaultService します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_DefaultService プロパティのキーをサポートしていません。 対応するこのプロパティの値にアクセスすることができます**既定 Service**クラスのレジストリ キーの下のレジストリ値。 クラスのレジストリ キー値のエントリをアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff537751)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_DefaultService プロパティのキーをサポートしていません。 対応するこのプロパティの値にアクセスすることができます**既定 Service**クラスのレジストリ キーの下のレジストリ値。 クラスのレジストリ キー値のエントリをアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-registry-entry-values-under-the-class-registry-key)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,11 +91,11 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF ClassInstall32.Services セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546339)
+[**INF ClassInstall32.Services セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-services-section)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
  
 

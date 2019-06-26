@@ -7,12 +7,12 @@ keywords:
 - バスに固有のウェイク アップ行 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ba0a88f668f1de6d2a43f1cf94d0f135bbf9927
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8823ff3c51a22d544424036b0165ca39701e91e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327166"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381322"
 ---
 # <a name="handling-wake-up-events"></a>ウェイクアップ イベントの処理
 
@@ -20,7 +20,7 @@ ms.locfileid: "63327166"
 
 
 
-ミニポート ドライバーが NIC で検出されたウェイク アップ イベントを処理しません。 NIC は、有効なウェイク アップ イベントを検出すると、バスに固有のウェイク アップ行をアサートします。 電源マネージャーは、NDIS、応答、ミニポート ドライバーを送信しますこれを power IRP を送信し、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)に NIC を配置するミニポート ドライバーを要求する OID、。highest-powered (D0) の状態。
+ミニポート ドライバーが NIC で検出されたウェイク アップ イベントを処理しません。 NIC は、有効なウェイク アップ イベントを検出すると、バスに固有のウェイク アップ行をアサートします。 電源マネージャーは、NDIS、応答、ミニポート ドライバーを送信しますこれを power IRP を送信し、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)に NIC を配置するミニポート ドライバーを要求する OID、。highest-powered (D0) の状態。
 
  
 

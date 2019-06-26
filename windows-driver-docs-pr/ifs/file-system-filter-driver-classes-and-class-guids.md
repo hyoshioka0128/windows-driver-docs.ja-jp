@@ -10,12 +10,12 @@ keywords:
 - ファイル システム フィルター ドライバー WDK、クラス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6787d8b4cb6787cfae6003d263b42001a6e8d1ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc508e492f70e77466e50fcf475d95bf318dcfaf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327495"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385551"
 ---
 # <a name="file-system-filter-driver-classes-and-class-guids"></a>ファイル システム フィルター ドライバー クラスとクラス GUID
 
@@ -23,11 +23,11 @@ ms.locfileid: "63327495"
 ## <span id="ddk_file_system_filter_driver_classes_and_class_guids_if"></span><span id="DDK_FILE_SYSTEM_FILTER_DRIVER_CLASSES_AND_CLASS_GUIDS_IF"></span>
 
 
-Microsoft Windows XP およびそれ以降のオペレーティング システムは、ファイル システム フィルター ドライバーのセットアップ クラスを提供します。 これらのクラスは、ハードウェア デバイスのシステム提供のデバイス セットアップ クラスを提供する機能のサブセットを提供します。 (ハードウェア デバイスのセットアップ クラスの詳細については、次を参照してください[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)。)。
+Microsoft Windows XP およびそれ以降のオペレーティング システムは、ファイル システム フィルター ドライバーのセットアップ クラスを提供します。 これらのクラスは、ハードウェア デバイスのシステム提供のデバイス セットアップ クラスを提供する機能のサブセットを提供します。 (ハードウェア デバイスのセットアップ クラスの詳細については、次を参照してください[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。)。
 
 各セットアップ クラスは、クラスの GUID に関連付けられています。 システム定義のクラス Guid は devguid.h で定義されます。
 
-このトピックでは、ファイル システム フィルター ドライバーのセットアップ クラスを使用します。 各クラスの定義で、**クラス**と**ClassGuid**エントリで指定する必要があります値を含める、 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)のフィルターの INF ファイル。 フィルター ドライバーには、クラスとドライバーの INF ファイルで指定されているロード順序グループに一致する GUID を使用する必要があります。
+このトピックでは、ファイル システム フィルター ドライバーのセットアップ クラスを使用します。 各クラスの定義で、**クラス**と**ClassGuid**エントリで指定する必要があります値を含める、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)のフィルターの INF ファイル。 フィルター ドライバーには、クラスとドライバーの INF ファイルで指定されているロード順序グループに一致する GUID を使用する必要があります。
 
 デバイスの場合、またはに加え、INF ファイル内の適切なクラス GUID 値を指定して、**クラス** = *クラス名*エントリのパフォーマンスを大幅に向上します。システム INF ファイルを検索します。
 

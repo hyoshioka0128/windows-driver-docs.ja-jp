@@ -8,12 +8,12 @@ keywords:
 - イーサネット フレーム WDK ネットワー キングの TCP/IP トランスポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15adc2eebb1980445ecdd39c90f6a6a880236749
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b69885cb4c26c31513b526eed9ee88d8070dc7d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327740"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380919"
 ---
 # <a name="indicating-received-ethernet-frames"></a>受信済みイーサネット フレームの表示
 
@@ -29,17 +29,17 @@ Windows の TCP/IP プロトコル ドライバーには、一連のイーサネ
 
 イーサネットが発信されたドライバーの受信の表示、次の要件をサポートする必要があります。
 
--   ドライバーを割り当てる必要があります、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)受信したイーサネット フレームの構造体。 各**NET\_バッファー\_一覧**構造体で定義されている、アウト オブ バンド (OOB) データを含める必要があります、 **NetBufferListInfo**のメンバー、 **NET\_バッファー\_一覧**特定の使用に必要な。
+-   ドライバーを割り当てる必要があります、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)受信したイーサネット フレームの構造体。 各**NET\_バッファー\_一覧**構造体で定義されている、アウト オブ バンド (OOB) データを含める必要があります、 **NetBufferListInfo**のメンバー、 **NET\_バッファー\_一覧**特定の使用に必要な。
 
--   ドライバーを割り当てる必要があります、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)フレームの構造体し、をリンク、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 イーサネット ミニポートには、1 つずつ割り当てる必要があります**NET\_バッファー**構造体を**NET\_バッファー\_一覧**構造を示す場合にデータを受信しました。 この制限は、イーサネットのみに適用されます。 パスを受信します。 ネイティブの 802.11 ワイヤレス LAN インターフェイスなど、他のメディア タイプに適用可能でないです。 または、[全般] で NDIS。
+-   ドライバーを割り当てる必要があります、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)フレームの構造体し、をリンク、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 イーサネット ミニポートには、1 つずつ割り当てる必要があります**NET\_バッファー**構造体を**NET\_バッファー\_一覧**構造を示す場合にデータを受信しました。 この制限は、イーサネットのみに適用されます。 パスを受信します。 ネイティブの 802.11 ワイヤレス LAN インターフェイスなど、他のメディア タイプに適用可能でないです。 または、[全般] で NDIS。
 
--   特定の状況で NDIS 6.1 以降、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造は、受信したイーサネット フレームに対して複数のメモリ記述子リスト (MDLs) と関連付けることができます。 場合でも、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体は、1 つを含める必要があります**NET\_バッファー**複数 MDLs を使用して、構造体別のバッファーに受信したパケット データを分割するドライバーをできます。
+-   特定の状況で NDIS 6.1 以降、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造は、受信したイーサネット フレームに対して複数のメモリ記述子リスト (MDLs) と関連付けることができます。 場合でも、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体は、1 つを含める必要があります**NET\_バッファー**複数 MDLs を使用して、構造体別のバッファーに受信したパケット データを分割するドライバーをできます。
 
-    たとえば、ヘッダー データの分割インターフェイスをサポートするイーサネットのドライバーは、1 つに関連付けられている複数の MDLs のリンク リストを使用して受信したイーサネット フレームを分割[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 詳細については、次を参照してください。[ヘッダー データの分割](header-data-split.md)します。
+    たとえば、ヘッダー データの分割インターフェイスをサポートするイーサネットのドライバーは、1 つに関連付けられている複数の MDLs のリンク リストを使用して受信したイーサネット フレームを分割[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 詳細については、次を参照してください。[ヘッダー データの分割](header-data-split.md)します。
 
-    単純さとパフォーマンスの理由から、強くお勧めヘッダー データの分割をサポートしていないドライバーがそれぞれに 1 つだけ MDL を使用[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。
+    単純さとパフォーマンスの理由から、強くお勧めヘッダー データの分割をサポートしていないドライバーがそれぞれに 1 つだけ MDL を使用[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。
 
-    **注**  Windows Vista では、NDIS 6.0 の各[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体は、1 つだけ MDL を含める必要があります。
+    **注**  Windows Vista では、NDIS 6.0 の各[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体は、1 つだけ MDL を含める必要があります。
 
      
 

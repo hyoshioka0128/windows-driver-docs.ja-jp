@@ -4,12 +4,12 @@ description: MPIO\_ドライブ\_情報 WMI クラス
 ms.assetid: 4c116157-5f5b-4213-abdd-9128ebbfa341
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7a1e4a6d443c172f88f49c7947e7bd1b920b2177
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 535686b0e2f5bed53a433fc6d9c8337e6c3ba5eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386157"
 ---
 # <a name="mpiodriveinfo-wmi-class"></a>MPIO\_ドライブ\_情報 WMI クラス
 
@@ -41,7 +41,7 @@ class MPIO_DRIVE_INFO
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_ドライブ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff562377)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_ドライブ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_drive_info)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

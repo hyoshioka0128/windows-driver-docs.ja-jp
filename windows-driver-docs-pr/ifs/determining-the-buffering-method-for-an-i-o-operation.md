@@ -13,12 +13,12 @@ keywords:
 - ファイル システムの I/O の WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f21cc89dd5d464b6d993178b70342571b1f2707f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 184f6713ecc6e0acda8e01146e187ff4030d72a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327031"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386104"
 ---
 # <a name="determining-the-buffering-method-for-an-io-operation"></a>I/O 操作用のバッファー処理メソッドの確認
 
@@ -38,13 +38,13 @@ ms.locfileid: "63327031"
 
 すべての標準的な Microsoft ファイル システムでは、ほとんどの I/O 処理バッファーもダイレクト I/O を使用します。
 
-バッファリング メソッドの詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://msdn.microsoft.com/library/windows/hardware/ff554436)します。
+バッファリング メソッドの詳細については、次を参照してください。[メソッドにアクセスするデータ バッファーの](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)します。
 
 IRP ベースの I/O 操作では、バッファリングに使用されるメソッドは操作固有でありは、次の要因によって決まります。
 
 -   実行されている I/O 操作の種類
 
--   値、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)ファイル システム ボリュームの構造
+-   値、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)ファイル システム ボリュームの構造
 
 -   I/O 制御 (IOCTL) とファイル システム コントロール (FSCTL) 操作の値、 *TransferType* CTL に渡されたパラメーター\_IOCTL または FSCTL が定義されている場合、コードのマクロ
 

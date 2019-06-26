@@ -4,12 +4,12 @@ description: WexLogger
 ms.assetid: D9F4AD08-19EA-4a6c-AD25-886FBEA334B8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4270d21d5b4ca1313e50d54c97a355cd3b9c179f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7dfce409c3ee6e3de49ac8ddf1ea8c308caa8c3d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383024"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384487"
 ---
 # <a name="wexlogger"></a>WexLogger
 
@@ -256,12 +256,12 @@ log.Comment("Render succeeded");
 2.  その環境ブロックに設定することで、またはコマンド プロンプトの引数として渡すことによって、子プロセスと接続データを通信します。 例:
 
     **WexLogger で認識されるコマンド プロンプトで名前付き引数として渡します。**  
-    /wexlogger\_connectiondata =*\[接続データ\]*
+    /wexlogger\_connectiondata = *\[接続データ\]*
 
     **注:** 場合、このオプションを使用し、手順 1、**子プロセス**以下のセクション**ない**必要です。
 
     **WexLogger を認識する名前付きの環境変数として渡します。**  
-    \[YourAppName\_cmd\]=/wexlogger\_connectiondata =*\[接続データ\]*
+    \[YourAppName\_cmd\]=/wexlogger\_connectiondata = *\[接続データ\]*
 
     **注:** 場合、このオプションを使用し、手順 1、**子プロセス**以下のセクション**ない**必要です。
 
@@ -275,7 +275,7 @@ log.Comment("Render succeeded");
     -   **RemoteLogController.WexLoggerRemoteConnectionData**Wex.Logger.Interop.dll で
 
 3.  接続データを持つ子プロセスを起動します。
-4.  呼び出す**RemoteLogController::InitalizeLogging (*\[手順 1. で作成された接続データ\]*)** します。 タイムアウト値は、子が要求されていない場合があるため、子プロセスの起動後に、この呼び出しを行う必要があります**LogController::InitializeLogging()** 適切なタイミングでします。
+4.  呼び出す**RemoteLogController::InitalizeLogging ( *\[手順 1. で作成された接続データ\]* )** します。 タイムアウト値は、子が要求されていない場合があるため、子プロセスの起動後に、この呼び出しを行う必要があります**LogController::InitializeLogging()** 適切なタイミングでします。
 
     **注:** この呼び出しの戻り値を確認してください。
 
@@ -290,7 +290,7 @@ log.Comment("Render succeeded");
 
 1.  接続データが場合は**いない**コマンド プロンプトで名前付き引数と子プロセスには、その WexLogger は (上記の手順 2 を参照してください) を理解、渡されたし、そのため、環境変数を設定する必要があります。
 
-    \[YourAppName\_cmd\]=/wexlogger\_connectiondata =*\[接続データ\]*
+    \[YourAppName\_cmd\]=/wexlogger\_connectiondata = *\[接続データ\]*
 
     **例えば：**
 
@@ -306,9 +306,9 @@ log.Comment("Render succeeded");
 ## <a name="determining-test-outcome"></a>テスト結果を決定します。
 
 
-テスト_ケースの目的の結果を明示的に提供されるメソッドがありますが (**ログ:: Result()**) がない**必要があります**ほとんどの場合、このメソッドを使用するテスト_ケースの。
+テスト_ケースの目的の結果を明示的に提供されるメソッドがありますが (**ログ:: Result()** ) がない**必要があります**ほとんどの場合、このメソッドを使用するテスト_ケースの。
 
-テスト_ケースが明示的に呼び出していない場合など、**ログ:: Result()**、および**しない**エラー ログに記録 (を使用して**ログ:: Error()**)、既定と見なされます成功テスト_ケース;その**は**エラー ログに記録、失敗したテストの場合は。
+テスト_ケースが明示的に呼び出していない場合など、**ログ:: Result()** 、および**しない**エラー ログに記録 (を使用して**ログ:: Error()** )、既定と見なされます成功テスト_ケース;その**は**エラー ログに記録、失敗したテストの場合は。
 
 ただし場合、テスト ケース**は**を明示的に呼び出す**Log::Result(TestResults::TestPassed)** も**は**テスト ケース内でエラーのログ、テストもカウントされますとしてテスト内でエラーが発生したため失敗します。
 
@@ -418,7 +418,7 @@ LogController.InitializeLogging();
 ## <a name="c-error-handling"></a>C++ のエラー処理
 
 
-各ログ API 呼び出しの戻り値をチェックする負担からテスト_ケースの作成者を保護するために、WexLogger は、省略可能なコールバック機構を使用して、予期しないエラー状態を報告します。**WexLoggerErrorCallback**関数。 Initializaiton 時に、 **WexLogger** (を使用して**LogController::InitializeLogging()**)、クライアントを指定することもできます、 **WexLoggerErrorCallback**に呼び出す関数内で予期しないエラー状態が発生する、 **WexLogger**します。 **WexLoggerErrorCallback**関数は、次のシグネチャを使用する必要があります。
+各ログ API 呼び出しの戻り値をチェックする負担からテスト_ケースの作成者を保護するために、WexLogger は、省略可能なコールバック機構を使用して、予期しないエラー状態を報告します。**WexLoggerErrorCallback**関数。 Initializaiton 時に、 **WexLogger** (を使用して**LogController::InitializeLogging()** )、クライアントを指定することもできます、 **WexLoggerErrorCallback**に呼び出す関数内で予期しないエラー状態が発生する、 **WexLogger**します。 **WexLoggerErrorCallback**関数は、次のシグネチャを使用する必要があります。
 
 ```cpp
 void __stdcall MyLoggerErrorCallback(const unsigned short* pszMessage, HRESULT hr);
@@ -429,7 +429,7 @@ WexLoggerErrorCallback 関数の一般的な用途は、(テスト ハーネス�
 ## <a name="net-40-compatibility"></a>.NET 4.0 の互換性
 
 
-読み込むことができます NetFx 3.5 2/3/と NetFx 4 の両方を処理できるように、Wex.Logger.Interop として NetFx 2/3/3.5、バイナリにコンパイルされます。 これにより、TAEF NetFx 2 上のすべてのマネージ アセンブリを実行できます。 Wex.Logger TAEF、以外を使用しているかどうかは、追加する必要がある、[構成ファイル](https://msdn.microsoft.com/library/ms229689.aspx)は exe に NetFx 3.5 2/3/バイナリを読み込む NetFx 4 ランタイムを構成するプロセスです。 構成ファイルには、次が含まれます。
+読み込むことができます NetFx 3.5 2/3/と NetFx 4 の両方を処理できるように、Wex.Logger.Interop として NetFx 2/3/3.5、バイナリにコンパイルされます。 これにより、TAEF NetFx 2 上のすべてのマネージ アセンブリを実行できます。 Wex.Logger TAEF、以外を使用しているかどうかは、追加する必要がある、[構成ファイル](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms229689(v=vs.90))は exe に NetFx 3.5 2/3/バイナリを読み込む NetFx 4 ランタイムを構成するプロセスです。 構成ファイルには、次が含まれます。
 
 ```cpp
 <configuration> 

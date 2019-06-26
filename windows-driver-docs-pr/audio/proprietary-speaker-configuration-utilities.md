@@ -6,12 +6,12 @@ keywords:
 - 専用のスピーカー構成ユーティリティの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5836daea553c951b31be90b572ce59b19c660d0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28f5190c13ad3a5445aad6d93f24168d749e8482
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328718"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362529"
 ---
 # <a name="proprietary-speaker-configuration-utilities"></a>専用のスピーカー構成ユーティリティ
 
@@ -25,7 +25,7 @@ ms.locfileid: "63328718"
 
 場合によっては、ハードウェア ベンダーは、コントロール パネルの [スピーカー] ダイアログの代わりに、オーディオ ドライバーで使用する専用のスピーカー構成ユーティリティを提供します。 このようなユーティリティがある潜在的な問題: スピーカーの構成の変更の Windows の通知に失敗した独自の方法が変更ができます。 コントロール パネルにある独自のユーティリティの設定が一致しない場合は、不適切なユーザー エクスペリエンスをこれがあります。 デバイスが、独自のユーティリティが必要であると思われる場合、ユーティリティを Windows に統合するには、次の手順を行う必要があります。
 
-1.  ドライバーをサポートする DAC のノードを実装、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)プロパティ。 このノードからは、Windows は、コントロール パネルの ユーザーによって行われた変更のすぐにドライバーを通知します。
+1.  ドライバーをサポートする DAC のノードを実装、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)プロパティ。 このノードからは、Windows は、コントロール パネルの ユーザーによって行われた変更のすぐにドライバーを通知します。
 
 2.  DirectSound メソッドを呼び出して、スピーカーの構成を管理するには、構成ユーティリティを設計**GetSpeakerConfig**と**SetSpeakerConfig**します。
 

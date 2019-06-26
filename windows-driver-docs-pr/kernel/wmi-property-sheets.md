@@ -8,12 +8,12 @@ keywords:
 - デバイスのプロパティ シートの WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaccb3051dfdef003fcfc46a1ffe403a48a876a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8be259a3af64e5c3df1e2af8527d82cf53cbe350
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391046"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383796"
 ---
 # <a name="wmi-property-sheets"></a>WMI プロパティ シート
 
@@ -21,7 +21,7 @@ ms.locfileid: "63391046"
 
 
 
-わかりやすいドライバーを通じてその設定を制御するユーザーは、その**デバイス マネージャー**プロパティ シートです。 参照してください[デバイス マネージャーを使用して](https://msdn.microsoft.com/library/windows/hardware/ff553570)デバイス マネージャーの説明についてはします。
+わかりやすいドライバーを通じてその設定を制御するユーザーは、その**デバイス マネージャー**プロパティ シートです。 参照してください[デバイス マネージャーを使用して](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager)デバイス マネージャーの説明についてはします。
 
 ドライバーを使用して、プロパティ シートで実装する任意の WMI クラスを自動的に公開、 [WMI 汎用プロパティ ページのプロバイダー](wmi-generic-property-page-provider.md)します。
 

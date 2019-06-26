@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2cea6c348f4c37d6d3e1d7d5bb935236b7a0cc34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f019caa5dae00c4ca4a4f9b1fe8e589bad91492
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374259"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387030"
 ---
 # <a name="kscategorydrmdescramble"></a>KSCATEGORY_DRM_DESCRAMBLE
 
 
-KSCATEGORY_DRM_DESCRAMBLE[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)wave の DRM で保護されたストリームを解読 (KS) 機能のカテゴリ。
+KSCATEGORY_DRM_DESCRAMBLE[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)wave の DRM で保護されたストリームを解読 (KS) 機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_DRM_DESCRAMBLE[デバイス インターフェイス クラス](https
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_DRM_DESCRAMBLE 機能カテゴリをサポートすることを示す KSCATEGORY_DRM_DESCRAMBLE のインスタンスを登録します。
 
-この機能のカテゴリの詳細については、次を参照してください。[オーディオ アダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+この機能のカテゴリの詳細については、次を参照してください。[オーディオ アダプターのデバイスのインターフェイスをインストールする](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)します。
 
 <a name="requirements"></a>要件
 ------------

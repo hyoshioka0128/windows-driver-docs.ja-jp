@@ -14,12 +14,12 @@ keywords:
 - WMI セキュリティ WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec18f97b7e3e4f4a2a6f0985069702dc5e6375d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f463a8a57e5a83b32fa5aa9908ec82c9ab7488ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392002"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356291"
 ---
 # <a name="creating-secure-device-installations"></a>セキュリティで保護されたデバイスのインストールの作成
 
@@ -45,7 +45,7 @@ ms.locfileid: "63392002"
 
 ### <a name="security-settings-for-devices-and-interfaces"></a>デバイスとインターフェイスのセキュリティ設定
 
-システムは、すべての既定のセキュリティ記述子を提供[システム提供のデバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)します。 一般に、これらの記述子のシステム管理者のフル アクセスと読み取り/書き込み/実行アクセスのユーザーに対して許可します。 (デバイスへのアクセス制御もデバイスへのアクセスを制御するセキュリティ記述子[デバイス インターフェイス クラス](device-interface-classes.md)、存在する場合)。
+システムは、すべての既定のセキュリティ記述子を提供[システム提供のデバイス セットアップ クラス](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))します。 一般に、これらの記述子のシステム管理者のフル アクセスと読み取り/書き込み/実行アクセスのユーザーに対して許可します。 (デバイスへのアクセス制御もデバイスへのアクセスを制御するセキュリティ記述子[デバイス インターフェイス クラス](device-interface-classes.md)、存在する場合)。
 
 WDM ドライバーの INF ファイルには、セキュリティ、クラスごとまたはデバイスごとのいずれかを上書きする設定、システムの既定の設定を指定できます。 新しいデバイス セットアップ クラスを作成するベンダーは、クラスのセキュリティ記述子を指定してください。 一般に、デバイス固有のセキュリティ記述子を指定する必要はありません。 同じクラスに属しているデバイスの種類によって大幅に異なる種類のユーザーがある場合、デバイス固有のセキュリティ記述子を指定すると便利な場合があります。
 
@@ -55,9 +55,9 @@ WDM のデバイス セットアップ クラスに属している 1 つのデ�
 
 既定では、セキュリティ記述子がデバイスを表すデバイス オブジェクトを開くための要求へのデバイスの設定が適用されます (たとえば、NT デバイス名を持つデバイスを開く要求 *\\デバイス\\DeviceName*)。
 
-ただし、システムは既定では適用されませんデバイスの設定、デバイスの名前空間でオブジェクトを開く要求にデバイスの名前空間に名前を持つフォームがあるすべてのオブジェクトが含まれているセキュリティ記述子 *\\デバイス\\DeviceName\\ObjectName*します。 デバイスの名前空間でオブジェクトに対する要求を開くに同じセキュリティ設定が適用されることを確認するには、デバイスの FILE_DEVICE_SECURE_OPEN デバイス特性フラグを設定します。 セキュリティで保護されたデバイスへのアクセスの詳細については、次を参照してください。[デバイス Namespace アクセスの制御 (Windows ドライバー)](https://msdn.microsoft.com/library/windows/hardware/ff542068)します。 FILE_DEVICE_SECURE_OPEN デバイスの特性のフラグを設定する方法については、次を参照してください。[デバイスの特性を指定する (Windows ドライバー)](https://msdn.microsoft.com/library/windows/hardware/ff563818)します。
+ただし、システムは既定では適用されませんデバイスの設定、デバイスの名前空間でオブジェクトを開く要求にデバイスの名前空間に名前を持つフォームがあるすべてのオブジェクトが含まれているセキュリティ記述子 *\\デバイス\\DeviceName\\ObjectName*します。 デバイスの名前空間でオブジェクトに対する要求を開くに同じセキュリティ設定が適用されることを確認するには、デバイスの FILE_DEVICE_SECURE_OPEN デバイス特性フラグを設定します。 セキュリティで保護されたデバイスへのアクセスの詳細については、次を参照してください。[デバイス Namespace アクセスの制御 (Windows ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)します。 FILE_DEVICE_SECURE_OPEN デバイスの特性のフラグを設定する方法については、次を参照してください。[デバイスの特性を指定する (Windows ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)します。
 
-PnP マネージャーがドライバーを呼び出した後に、デバイス オブジェクトのセキュリティの値を設定[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。 WDM ドライバーによっては呼び出すことによって、物理デバイス オブジェクト (PDO) を作成するときに、デバイス固有のセキュリティ記述子を指定できます[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)します。 詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](https://msdn.microsoft.com/library/windows/hardware/ff563688)します。
+PnP マネージャーがドライバーを呼び出した後に、デバイス オブジェクトのセキュリティの値を設定[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。 WDM ドライバーによっては呼び出すことによって、物理デバイス オブジェクト (PDO) を作成するときに、デバイス固有のセキュリティ記述子を指定できます[ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)します。 詳細については、次を参照してください。[デバイス オブジェクトのセキュリティで保護する](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)します。
 
 ### <a name="security-settings-for-driver-files"></a>ドライバー ファイルのセキュリティ設定
 

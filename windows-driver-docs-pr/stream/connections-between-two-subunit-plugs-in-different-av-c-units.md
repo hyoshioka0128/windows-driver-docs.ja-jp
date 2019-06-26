@@ -8,12 +8,12 @@ keywords:
 - AVCCONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cca8650152be9426efe116983dc958ac08dcf6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbdfeb5137670399a60b170dc936e2648619d475
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384500"
 ---
 # <a name="connections-between-two-subunit-plugs-in-different-avc-units"></a>異なる AV/C ユニット内の 2 つのサブユニット プラグ間の接続
 
@@ -30,7 +30,7 @@ ms.locfileid: "63374248"
 
 シナリオ 5 は、接続をローカルのピン留めを説明の**データフロー**メンバーが KSPIN\_データフロー\_in です。
 
-次の表に各列のメンバーに対応して、 [ **AVCCONNECTINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff554101)構造体であり、ソースのサブユニット プラグのこれらのメンバーの値を指定します。
+次の表に各列のメンバーに対応して、 [ **AVCCONNECTINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)構造体であり、ソースのサブユニット プラグのこれらのメンバーの値を指定します。
 
 <table>
 <colgroup>

@@ -9,12 +9,12 @@ keywords:
 - IRP_MJ_SET_INFORMATION I/O 関数のコード
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f259e0b3bf2e743bcaa3b87115d436e4e00e2a22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8dc2bc374abc5ff464a69c18d55b0f9ad5da67ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387191"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384969"
 ---
 # <a name="dispatchsetinformation-routines"></a>DispatchSetInformation ルーチン
 
@@ -22,7 +22,7 @@ ms.locfileid: "63387191"
 
 
 
-ドライバーの[ *DispatchSetInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_設定\_情報** ](https://msdn.microsoft.com/library/windows/hardware/ff550799) I/O 関数のコード。 この I/O 関数のコードのドライバー サポートのオプションですとに通常表示される上位レベルまたはファイル システム ドライバー。 この要求は、I/O マネージャーとその他のオペレーティング システムのコンポーネントでは、その他のカーネル モード ドライバーによって送信されます。 たとえば、ユーザー モード アプリケーションを呼び出すときに送信される[ **SetEndOfFile**](https://msdn.microsoft.com/library/windows/desktop/aa365531)、カーネル モード コンポーネントを呼び出すと、 [ **ZwSetInformationFile** ](https://msdn.microsoft.com/library/windows/hardware/ff567096).
+ドライバーの[ *DispatchSetInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_設定\_情報** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-set-information) I/O 関数のコード。 この I/O 関数のコードのドライバー サポートのオプションですとに通常表示される上位レベルまたはファイル システム ドライバー。 この要求は、I/O マネージャーとその他のオペレーティング システムのコンポーネントでは、その他のカーネル モード ドライバーによって送信されます。 たとえば、ユーザー モード アプリケーションを呼び出すときに送信される[ **SetEndOfFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-setendoffile)、カーネル モード コンポーネントを呼び出すと、 [ **ZwSetInformationFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile).
 
  
 

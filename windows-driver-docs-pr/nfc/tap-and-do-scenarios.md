@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe7f4ccc7d27a0e4ece5ce4fc16ef9855613733e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ebe437c10ca3edec64db575bb13cf739cecd33cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373592"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386819"
 ---
 # <a name="tap-and-do-scenarios"></a>Tap and Do のシナリオ
 
@@ -44,6 +44,6 @@ Windows では、ユーザーが自分のデバイスを他のユーザーや、
 
  
 ## <a name="related-topics"></a>関連トピック
- [NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[フィールドの近接 DDI 参照の近く](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+ [NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

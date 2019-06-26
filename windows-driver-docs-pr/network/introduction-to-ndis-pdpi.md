@@ -4,12 +4,12 @@ description: このセクションで概説する NDIS PacketDirect プロバイ
 ms.assetid: E85ED51E-BDE5-43BE-93BA-19F214670B8F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca37eb13e3ef06867136802fbe44d5a7c1d74270
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3fa27ab5d48fa244f36c6dfd19cea1b3643cd98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343654"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386343"
 ---
 # <a name="introduction-to-the-ndis-packetdirect-provider-interface"></a>NDIS PacketDirect プロバイダー インターフェイスの概要
 
@@ -46,7 +46,7 @@ Windows によって実装される PacketDirect プラットフォームは、�
 
 **PacketDirect プロバイダー インターフェイス (お)**
 
-おでは、高パフォーマンスの送信を公開し、受信機能、Windows OS に NIC ドライバーを許可します。 実装される関数は、完了ミニポート機能のサブセット、PD を実装するすべての Nic にジェネリック。 おのリファレンス ドキュメントについては、次を参照してください。 [PacketDirect プロバイダー インターフェイス (お) 参照](https://msdn.microsoft.com/library/windows/hardware/dn931858)します。
+おでは、高パフォーマンスの送信を公開し、受信機能、Windows OS に NIC ドライバーを許可します。 実装される関数は、完了ミニポート機能のサブセット、PD を実装するすべての Nic にジェネリック。 おのリファレンス ドキュメントについては、次を参照してください。 [PacketDirect プロバイダー インターフェイス (お) 参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
 **PacketDirect クライアント インターフェイス (PDCI)**
 
@@ -55,7 +55,7 @@ PDCI、ファースト パーティの Windows サービス/アプリケーシ�
 ## <a name="related-topics"></a>関連トピック
 
 
-[PacketDirect プロバイダー インターフェイス (お) リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn931858)
+[PacketDirect プロバイダー インターフェイス (お) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

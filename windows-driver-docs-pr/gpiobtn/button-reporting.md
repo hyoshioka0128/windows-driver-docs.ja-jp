@@ -4,12 +4,12 @@ description: ボックスで汎用入出力 (GPIO) ボタン ドライバーは�
 ms.assetid: 7D96E1CB-3406-4D61-9D5C-65BC6BFD1FFA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6f0c40026327c04bb08d41e0927643dfc18518e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3850e9d4e623abf71b21064d7732c3b99a8917ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385167"
 ---
 # <a name="button-reporting"></a>ボタンのレポート
 
@@ -97,9 +97,9 @@ ms.locfileid: "63326096"
  
 
 **注:**  
--   完全なガイダンスと、電源ボタンの実装では、次を参照してください。[電源ボタンの動作と実装](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)します。
--   ボタンのコネクト スタンバイのガイダンスについては、次を参照してください。[スタンバイ状態の接続されたソースのスリープ解除](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=49891)します。
--   ACPI の実装の詳細については、次を参照してください。 [ACPI 設計ガイド](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48755)します。
+-   完全なガイダンスと、電源ボタンの実装では、次を参照してください。[電源ボタンの動作と実装](https://aka.ms/connect-redirect?DownloadID=47452)します。
+-   ボタンのコネクト スタンバイのガイダンスについては、次を参照してください。[スタンバイ状態の接続されたソースのスリープ解除](https://aka.ms/connect-redirect?DownloadID=49891)します。
+-   ACPI の実装の詳細については、次を参照してください。 [ACPI 設計ガイド](https://aka.ms/connect-redirect?DownloadID=48755)します。
 
  
 

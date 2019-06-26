@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d330fe593c297a41ab575a65dc0cf4f23d28f741
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 821537302427b9418495d68b38c262ba5aac2533
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367920"
 ---
 # <a name="bug-check-0x111-recursivenmi"></a>バグ チェック 0x111:再帰的な\_NMI
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358188"
 再帰的な\_NMI バグ チェックが 0x00000111 の値を持ちます。 このバグ チェックでは、前の NMI の処理中に、非マスク-割り込み (NMI) が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 <a name="remarks"></a>注釈

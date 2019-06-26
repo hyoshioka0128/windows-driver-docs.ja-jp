@@ -4,12 +4,12 @@ description: WDI IHV ミニポート ドライバーでは、すべての NDIS �
 ms.assetid: 08996045-674B-465D-8880-088320770D2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f81c75d19a1f3a45773116f0f78d1da1617d153
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b61885b461d5c78315be0068a4704a6cd1fbad3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385325"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381156"
 ---
 # <a name="wdi-ndis-interface-restrictions"></a>WDI NDIS インターフェイスの制限
 
@@ -20,11 +20,11 @@ WDI IHV ミニポート ドライバーでは、NDIS インターフェイスに
 
 関数 | 制限 | 代わりに 
 ---|---|--- 
-[**NdisMRegisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563654) | Disallowed |  [**NdisMRegisterWdiMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/mt297596) 
-[**NdisMDeregisterMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/ff563578) | Disallowed |  [**NdisMDeregisterWdiMiniportDriver**](https://msdn.microsoft.com/library/windows/hardware/mt297595) 
-[**NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672) | 許可されていない**MiniportAttributes**型。<br />[**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565934)<br />[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)<br />[**NDIS\_ミニポート\_アダプター\_ネイティブ\_802\_11\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565926) | なし。 これらは、WDI コマンドを使用して照会されます。 
-[**NdisMIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563598) | Disallowed | WDI データ パスの受信ハンドラーを受信したパケットを示します。 
-[**NdisMSendNetBufferListsComplete**](https://msdn.microsoft.com/library/windows/hardware/ff563668) | Disallowed | WDI データ パスは、ハンドラーが送信されたパケットを完了するを送信します。
+[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver) | Disallowed |  [**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver) 
+[**NdisMDeregisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterminiportdriver) | Disallowed |  [**NdisMDeregisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nf-dot11wdi-ndismderegisterwdiminiportdriver) 
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes) | 許可されていない**MiniportAttributes**型。<br />[**NDIS\_ミニポート\_アダプター\_登録\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)<br />[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)<br />[**NDIS\_ミニポート\_アダプター\_ネイティブ\_802\_11\_属性**](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff565926(v=vs.85)) | なし。 これらは、WDI コマンドを使用して照会されます。 
+[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists) | Disallowed | WDI データ パスの受信ハンドラーを受信したパケットを示します。 
+[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete) | Disallowed | WDI データ パスは、ハンドラーが送信されたパケットを完了するを送信します。
 
  
 

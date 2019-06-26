@@ -67,7 +67,7 @@ KSPROPERTY\_TOPOLOGYNODE\_リセット プロパティをリセット、ノー�
 
 KSPROPERTY\_TOPOLOGYNODE\_プロパティのリセット要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

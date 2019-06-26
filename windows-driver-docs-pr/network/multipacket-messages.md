@@ -4,12 +4,12 @@ description: マルチパケット メッセージ
 ms.assetid: 58979799-4618-43b9-a6dc-0635f6ade9b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72ab94c9d61fdb211e6591d16d083bb6e3a41a4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b441642ac3f61e53e156e504c9c06178bb380419
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382630"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393085"
 ---
 # <a name="multipacket-messages"></a>マルチパケット メッセージ
 
@@ -17,13 +17,13 @@ ms.locfileid: "63382630"
 
 
 
-複数[**リモート\_NDIS\_パケット\_MSG** ](https://msdn.microsoft.com/library/windows/hardware/ff570635)いずれかの方向の 1 つの転送にメッセージを送信できます。 Multipacket メッセージが複数の連結して形成された**リモート\_NDIS\_パケット\_MSG**要素。 このような転送の最大長に準拠するもの、 *MaxTransferSize*パラメーターが渡された、 [**リモート\_NDIS\_初期化\_MSG**](https://msdn.microsoft.com/library/windows/hardware/ff570624)と応答メッセージ。 ホストがメッセージへの転送を 1 つに、バンドルの数を制限しても、 *MaxPacketsPerMessage*にデバイスによって返されるパラメーター、 [**リモート\_NDIS\_初期化\_CMPLT** ](https://msdn.microsoft.com/library/windows/hardware/ff570621)応答メッセージ。
+複数[**リモート\_NDIS\_パケット\_MSG** ](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))いずれかの方向の 1 つの転送にメッセージを送信できます。 Multipacket メッセージが複数の連結して形成された**リモート\_NDIS\_パケット\_MSG**要素。 このような転送の最大長に準拠するもの、 *MaxTransferSize*パラメーターが渡された、 [**リモート\_NDIS\_初期化\_MSG**](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85))と応答メッセージ。 ホストがメッセージへの転送を 1 つに、バンドルの数を制限しても、 *MaxPacketsPerMessage*にデバイスによって返されるパラメーター、 [**リモート\_NDIS\_初期化\_CMPLT** ](https://docs.microsoft.com/previous-versions/ff570621(v=vs.85))応答メッセージ。
 
-メッセージの単一パケットの場合はその違いは、 *MessageLength*フィールドでそれぞれ[**リモート\_NDIS\_パケット\_MSG** ](https://msdn.microsoft.com/library/windows/hardware/ff570635)ヘッダーには、いくつか追加の埋め込みバイトが含まれます。 すべては、最後にこれらの埋め込みバイトが追加**リモート\_NDIS\_パケット\_MSG**ように後続リモート\_NDIS\_パケット\_メッセージ適切なバイトの境界から開始します。 各リモート ホストに、デバイスから送信されたメッセージでこの埋め込みが生成\_NDIS\_パケット\_MSG バイトから始まるオフセット multipacket メッセージの先頭から始まる 8 バイトの倍数では。 ホストは、デバイスに multipacket メッセージを送信するときにに従う、 *PacketAlignmentFactor*内のデバイスで指定された、 [**リモート\_NDIS\_INITIALIZE\_CMPLT** ](https://msdn.microsoft.com/library/windows/hardware/ff570621)応答メッセージ。
+メッセージの単一パケットの場合はその違いは、 *MessageLength*フィールドでそれぞれ[**リモート\_NDIS\_パケット\_MSG** ](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))ヘッダーには、いくつか追加の埋め込みバイトが含まれます。 すべては、最後にこれらの埋め込みバイトが追加**リモート\_NDIS\_パケット\_MSG**ように後続リモート\_NDIS\_パケット\_メッセージ適切なバイトの境界から開始します。 各リモート ホストに、デバイスから送信されたメッセージでこの埋め込みが生成\_NDIS\_パケット\_MSG バイトから始まるオフセット multipacket メッセージの先頭から始まる 8 バイトの倍数では。 ホストは、デバイスに multipacket メッセージを送信するときにに従う、 *PacketAlignmentFactor*内のデバイスで指定された、 [**リモート\_NDIS\_INITIALIZE\_CMPLT** ](https://docs.microsoft.com/previous-versions/ff570621(v=vs.85))応答メッセージ。
 
-なお multipacket メッセージの数のどちらを合わせた長さ[**リモート\_NDIS\_パケット\_MSG** ](https://msdn.microsoft.com/library/windows/hardware/ff570635)まとめられたメッセージ内の要素が与えられます明示的に、リモートの NDIS フィールドを定義します。 合わせた長さは、バスに固有の転送メカニズムで暗黙的で、ホストまたはデバイスが説明する必要があります、 *MessageLength*の数を決定する結合のメッセージのフィールドは、メッセージを結合します。
+なお multipacket メッセージの数のどちらを合わせた長さ[**リモート\_NDIS\_パケット\_MSG** ](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))まとめられたメッセージ内の要素が与えられます明示的に、リモートの NDIS フィールドを定義します。 合わせた長さは、バスに固有の転送メカニズムで暗黙的で、ホストまたはデバイスが説明する必要があります、 *MessageLength*の数を決定する結合のメッセージのフィールドは、メッセージを結合します。
 
-次の表に、2 つのリモートで構成される multipacket メッセージの例は、\_NDIS\_パケット\_ホストからデバイスへ送信されるメッセージ。 中に、 [**リモート\_NDIS\_初期化\_MSG** ](https://msdn.microsoft.com/library/windows/hardware/ff570624)交換については、要求されたデバイス、 *PacketAlignmentFactor* (3配置を 8 バイト境界に沿って)。
+次の表に、2 つのリモートで構成される multipacket メッセージの例は、\_NDIS\_パケット\_ホストからデバイスへ送信されるメッセージ。 中に、 [**リモート\_NDIS\_初期化\_MSG** ](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85))交換については、要求されたデバイス、 *PacketAlignmentFactor* (3配置を 8 バイト境界に沿って)。
 
 <table>
 <colgroup>
@@ -37,7 +37,7 @@ ms.locfileid: "63382630"
 <th align="left">Offset</th>
 <th align="left">サイズ</th>
 <th align="left">フィールド</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -122,7 +122,7 @@ ms.locfileid: "63382630"
 <tr class="even">
 <td align="left"><p>72</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>MessageType (2 つ目の開始<a href="https://msdn.microsoft.com/library/windows/hardware/ff570635" data-raw-source="[&lt;strong&gt;REMOTE_NDIS_PACKET_MSG&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570635)"> <strong>REMOTE_NDIS_PACKET_MSG</strong></a>)</p></td>
+<td align="left"><p>MessageType (2 つ目の開始<a href="https://docs.microsoft.com/previous-versions/ff570635(v=vs.85)" data-raw-source="[&lt;strong&gt;REMOTE_NDIS_PACKET_MSG&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))"> <strong>REMOTE_NDIS_PACKET_MSG</strong></a>)</p></td>
 <td align="left"><p>0x1</p></td>
 </tr>
 <tr class="odd">

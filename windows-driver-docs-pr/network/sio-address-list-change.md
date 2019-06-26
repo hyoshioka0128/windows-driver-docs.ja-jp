@@ -5,19 +5,19 @@ ms.assetid: d451208d-c850-4f2f-9ee0-d34139454ed4
 ms.date: 08/08/2017
 keywords: -SIO_ADDRESS_LIST_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: bfb3f9f96087e2cf76f0df1ff01fc8db178f0d81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c36e03403cd41e8dbf71cf02d7a72da4d07510e4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384907"
 ---
 # <a name="sioaddresslistchange"></a>SIO\_アドレス\_一覧\_変更
 
 
 SIO\_アドレス\_一覧\_変更ソケット I/O 制御操作は、ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧への変更があったときに、WSK アプリケーションに通知します。 このソケット I/O 制御操作は、すべての種類のソケットに適用されます。
 
-ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧への変更があったときの通知、WSK アプリケーションが呼び出す、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧への変更があったときの通知、WSK アプリケーションが呼び出す、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -68,7 +68,7 @@ SIO\_アドレス\_一覧\_変更ソケット I/O 制御操作は、ソケット
 
 呼び出すときに、WSK アプリケーションは IRP へのポインターを指定する必要があります、 **WskControlSocket**ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧への変更の通知を受け取る関数。 WSK サブシステム IRP のキューおよび状態を返します\_保留します。 ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧に変更が行われた場合、WSK サブシステムは IRP を完了します。 IRP の完了ルーチンを呼び出すと、WSK アプリケーションで使用できます、 [ **SIO\_アドレス\_一覧\_クエリ**](sio-address-list-query.md)ソケット、新しいクエリを実行する I/O 制御操作ソケットのアドレス ファミリ用のローカル トランスポート アドレスのリスト。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

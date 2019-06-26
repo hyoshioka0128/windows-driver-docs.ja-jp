@@ -14,12 +14,12 @@ keywords:
 - WDK カーネルの状態を待機します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d512786419ff1104986e9a8d2fe080a11f6dff6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40e3f1ef03e76f03af3427e1a94ba5a9255b1e59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364103"
 ---
 # <a name="semaphore-objects"></a>セマフォ オブジェクト
 
@@ -31,13 +31,13 @@ ms.locfileid: "63342717"
 
 I/O 操作を要求しているスレッドのコンテキストで実行される、最上位レベルのドライバーのディスパッチ ルーチンでは、ディスパッチ ルーチンの間で共有されているリソースを保護するのに、セマフォを使用可能性があります。 同期 I/O 操作の下位レベルのドライバーのディスパッチ ルーチンは、またはドライバーが作成したスレッドにディスパッチ ルーチンのサブセット間で共有されているリソースを保護するのに、セマフォを使用可能性があります。
 
-セマフォ オブジェクトを使用するすべてのドライバーを呼び出す必要があります[ **KeInitializeSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff552150)上で待機またはセマフォを解放します。 次の図を使用してドライバーをスレッドがセマフォ オブジェクトを使用する方法を示します。
+セマフォ オブジェクトを使用するすべてのドライバーを呼び出す必要があります[ **KeInitializeSemaphore** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializesemaphore)上で待機またはセマフォを解放します。 次の図を使用してドライバーをスレッドがセマフォ オブジェクトを使用する方法を示します。
 
 ![セマフォ オブジェクトの待機を示す図](images/3semobj.png)
 
 前の図に示すように、このようなドライバーは、常駐として使用するセマフォ オブジェクトの記憶域を提供する必要があります。 ドライバーを使用して、[デバイス拡張機能](device-extensions.md)コント ローラーの拡張機能を使用する場合、デバイスのドライバーが作成したオブジェクトの[コント ローラー オブジェクト](using-controller-objects.md)、または、ドライバーによって割り当てられた非ページ プール。
 
-ときに、ドライバーの[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンの呼び出し**KeInitializeSemaphore**、セマフォ オブジェクトのドライバーの常駐ストレージへのポインターを渡す必要があります。 また、呼び出し元を指定する必要があります、*カウント*セマフォ オブジェクトの初期状態 (シグナルされたを 0 以外) を決定する前の図に示すようにします。
+ときに、ドライバーの[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンの呼び出し**KeInitializeSemaphore**、セマフォ オブジェクトのドライバーの常駐ストレージへのポインターを渡す必要があります。 また、呼び出し元を指定する必要があります、*カウント*セマフォ オブジェクトの初期状態 (シグナルされたを 0 以外) を決定する前の図に示すようにします。
 
 また、呼び出し元を指定する必要があります、*制限*セマフォのできる、次のいずれか。
 
@@ -57,17 +57,17 @@ I/O 操作を要求しているスレッドのコンテキストで実行され�
 
 初期化のセマフォでのドライバーが読み込まれた後は、セマフォ、共有リソースを保護する操作を同期します。 たとえば、前の図に示すように、システム フロッピー コント ローラー ドライバーなどの Irp でキューを管理するデバイス専用のスレッドでのドライバーは IRP のキュー、セマフォを同期可能性があります。
 
-1.  スレッドの呼び出し[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)自体、待機状態に初期化されたセマフォ オブジェクトのドライバーが指定した記憶域へのポインター。
+1.  スレッドの呼び出し[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)自体、待機状態に初期化されたセマフォ オブジェクトのドライバーが指定した記憶域へのポインター。
 
-2.  Irp を開始するにはデバイスの I/O 操作を必要とします。 ドライバーのディスパッチ ルーチンの呼び出し、スピン ロックの管理下のインタロックされたキューにこのような各 IRP を挿入する[ **KeReleaseSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff553143)ドライバーにより決定された、セマフォ オブジェクトへのポインタースレッドに対して priority boost (*インクリメント*前の図に示すように、)、*調整*1 各 IRP がキューに置かれた、セマフォのカウントに追加されると、ブール値の*待機*設定**FALSE**します。 0 以外のセマフォのカウントは、セマフォ オブジェクトを待機中のスレッドの状態を準備完了状態に変更され、シグナルされた状態に設定します。
+2.  Irp を開始するにはデバイスの I/O 操作を必要とします。 ドライバーのディスパッチ ルーチンの呼び出し、スピン ロックの管理下のインタロックされたキューにこのような各 IRP を挿入する[ **KeReleaseSemaphore** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)ドライバーにより決定された、セマフォ オブジェクトへのポインタースレッドに対して priority boost (*インクリメント*前の図に示すように、)、*調整*1 各 IRP がキューに置かれた、セマフォのカウントに追加されると、ブール値の*待機*設定**FALSE**します。 0 以外のセマフォのカウントは、セマフォ オブジェクトを待機中のスレッドの状態を準備完了状態に変更され、シグナルされた状態に設定します。
 
 3.  カーネルは、プロセッサが使用可能なすぐにスレッドの実行をディスパッチします。 つまり、優先度が高いその他のスレッドは現在準備完了状態で、より高い IRQL で実行されるルーチンをカーネル モードではありません。
 
-    スレッドは IRP をスピン ロックの管理下にあるインター ロックされたキューから削除します、さらに処理すると、その他のドライバー ルーチンに渡しますおよび呼び出す[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)もう一度です。 セマフォは、シグナルされた状態 (つまり、その数は 0 以外の場合、複数の Irp がドライバーのインタロックされたキュー内にあることを示す) に設定されても場合、カーネルもう一度、スレッドの状態変更待機から準備完了状態にします。
+    スレッドは IRP をスピン ロックの管理下にあるインター ロックされたキューから削除します、さらに処理すると、その他のドライバー ルーチンに渡しますおよび呼び出す[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)もう一度です。 セマフォは、シグナルされた状態 (つまり、その数は 0 以外の場合、複数の Irp がドライバーのインタロックされたキュー内にあることを示す) に設定されても場合、カーネルもう一度、スレッドの状態変更待機から準備完了状態にします。
 
     この方法でカウント セマフォを使用してドライバー スレッドがこのような"knows"スレッドが実行されるたびに、インタロックされたキューから削除する IRP があります。
 
-呼び出す[ **KeReleaseSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff553143)で、*待機*パラメーターに設定**TRUE**を直ちに呼び出す呼び出し元の意図を示す、**KeWait*Xxx*オブジェクト**から返された場合 (s) サポート ルーチン**KeReleaseSemaphore**します。
+呼び出す[ **KeReleaseSemaphore** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)で、*待機*パラメーターに設定**TRUE**を直ちに呼び出す呼び出し元の意図を示す、**KeWait*Xxx*オブジェクト**から返された場合 (s) サポート ルーチン**KeReleaseSemaphore**します。
 
 設定の次のガイドラインを考慮して、*待機*KeReleaseSemaphore パラメーター。
 

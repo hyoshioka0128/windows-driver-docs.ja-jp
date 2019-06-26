@@ -11,12 +11,12 @@ keywords:
 - LLHEH WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd43fbbff691133978503716618368cbabed8a7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08386323a75e6991fc0e81a20d442cd8b18f9bdb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386471"
 ---
 # <a name="how-whea-performs-pfa-on-ecc-memory"></a>WHEA が ECC メモリ上で PFA を実行する方法
 
@@ -27,7 +27,7 @@ WHEA は、次の条件に当てはまる場合にのみ、ECC メモリ ペー�
 
 -   レジストリ値**MemPfaDisable** 1 に設定されていません。
 
--   A[プラットフォーム固有のハードウェア エラー ドライバー (PSHED) プラグイン](platform-specific-hardware-error-driver-plug-ins2.md)が既に設定されていない、 **PlatformPfaControl**ビット、 [ **WHEA\_エラー\_パケット\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff560472)のメンバー、 [WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)構造体を 1 にします。 プラグインに設定 PFA を実行する場合のこのビットをします。 PFA の実行方法でこのプラグインの詳細については、次を参照してください。 [PFA 実行プラグイン PSHED](pfa-performed-by-a-pshed-plug-in.md)します。
+-   A[プラットフォーム固有のハードウェア エラー ドライバー (PSHED) プラグイン](platform-specific-hardware-error-driver-plug-ins2.md)が既に設定されていない、 **PlatformPfaControl**ビット、 [ **WHEA\_エラー\_パケット\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_packet_flags)のメンバー、 [WHEA\_エラー\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))構造体を 1 にします。 プラグインに設定 PFA を実行する場合のこのビットをします。 PFA の実行方法でこのプラグインの詳細については、次を参照してください。 [PFA 実行プラグイン PSHED](pfa-performed-by-a-pshed-plug-in.md)します。
 
 [メモリ] ページは、ECC メモリ エラーが発生するときに WHEA は、次の手順に従って ECC メモリ ページで PFA を実行します。
 

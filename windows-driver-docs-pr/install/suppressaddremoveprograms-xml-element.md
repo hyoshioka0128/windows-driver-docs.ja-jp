@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 26ac21a7d8b1b9db9aef1c8c957a8f6f1c43387e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71aadbb2643f2a46fa729bea8ac9c9cc4c9ab4fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339640"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385869"
 ---
 # <a name="suppressaddremoveprograms-xml-element"></a>suppressAddRemovePrograms XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
-**SuppressAddRemovePrograms** XML 要素が空の要素を設定する、 **suppressAddRemovePrograms**フラグには、構成エントリの追加を抑制する DPInst **プログラムと機能**コントロール パネルの します。 これらのエントリを表す、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)と DPInst をインストールするドライバー パッケージのグループ。
+**SuppressAddRemovePrograms** XML 要素が空の要素を設定する、 **suppressAddRemovePrograms**フラグには、構成エントリの追加を抑制する DPInst **プログラムと機能**コントロール パネルの します。 これらのエントリを表す、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)と DPInst をインストールするドライバー パッケージのグループ。
 
 **注**  DPInst がするドライバー パッケージのエントリを追加する Windows Vista より前のバージョンの Windows で**プログラム追加と削除**コントロール パネルの します。
 
@@ -71,7 +71,7 @@ ms.locfileid: "63339640"
 
 ### <a href="" id="comments"></a>「解説」
 
-既定で、 **suppressAddRemovePrograms**フラグが OFF に設定します。 設定する、 **suppressAddRemovePrograms**を ON にすべてのドライバーのドライバーのすべての DPInst がインストールされるフラグ[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)グループが含まれて、 **suppressAddRemovePrograms**要素の子要素として、 **dpinst** DPInst の記述子ファイルか使用して XML 要素、 **/sa** コマンド ライン スイッチ。 設定する、 **suppressAddRemoverPrograms**の特定のドライバー パッケージのグループにのみフラグは、含める、 **suppressAddRemovePrograms**要素に対応する子要素として**グループ** DPInst の記述子ファイルの XML 要素。
+既定で、 **suppressAddRemovePrograms**フラグが OFF に設定します。 設定する、 **suppressAddRemovePrograms**を ON にすべてのドライバーのドライバーのすべての DPInst がインストールされるフラグ[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)グループが含まれて、 **suppressAddRemovePrograms**要素の子要素として、 **dpinst** DPInst の記述子ファイルか使用して XML 要素、 **/sa** コマンド ライン スイッチ。 設定する、 **suppressAddRemoverPrograms**の特定のドライバー パッケージのグループにのみフラグは、含める、 **suppressAddRemovePrograms**要素に対応する子要素として**グループ** DPInst の記述子ファイルの XML 要素。
 
 次のコード例に示します、 **suppressAddRemovePrograms**要素の子要素である、 **dpinst**要素。
 

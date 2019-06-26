@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4cc770e4647f0d62c51f1e6d82aa4dcaf995c8d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5952e676bf68fb821d9b9ef745ec82c4d1dd02eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367880"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384251"
 ---
 # <a name="kscategoryclock"></a>KSCATEGORY_CLOCK
 
 
-KSCATEGORY_CLOCK[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)クロック デバイスの機能のカテゴリ (KS)。
+KSCATEGORY_CLOCK[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)クロック デバイスの機能のカテゴリ (KS)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_CLOCK[デバイス インターフェイス クラス](https://msdn.m
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_CLOCK 機能カテゴリをサポートすることを示す KSCATEGORY_CLOCK のインスタンスを登録します。
 
-カーネルのクロックのストリームの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)、 [KS クロック](https://msdn.microsoft.com/library/windows/hardware/ff567307)、および[AVStream クロック](https://msdn.microsoft.com/library/windows/hardware/ff554208)します。
+カーネルのクロックのストリームの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-minidriver-architecture)、 [KS クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)、および[AVStream クロック](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)します。
 
 <a name="requirements"></a>要件
 ------------

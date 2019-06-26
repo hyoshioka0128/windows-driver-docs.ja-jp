@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f166b84eb9c00b3ae4fb289e6f84f7d8150637e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fd038d56c0b0d1b284297019760880866c5b21e
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332784"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391457"
 ---
 # <a name="kspropertyaudiogfxcapturetargetdeviceid"></a>KSPROPERTY\_AUDIOGFX\_CAPTURETARGETDEVICEID
 
@@ -53,7 +53,7 @@ KSPROPERTY\_AUDIOGFX\_CAPTURETARGETDEVICEID プロパティは、キャプチャ
 <td align="left"><p>X</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>WCHAR 配列</p></td>
 </tr>
 </tbody>
@@ -72,9 +72,9 @@ KSPROPERTY\_AUDIOGFX\_CAPTURETARGETDEVICEID プロパティ要求がステータ
 
 このプロパティのセットのみ要求のターゲットは、キャプチャ、または GFX キャプチャ-レンダー/フィルターとして使用するために構成されている GFX フィルターです。
 
-プロパティ値を保持するために必要なバッファーのサイズを確認するのを参照してください。[オーディオのプロパティの基本的なクエリがサポート](https://msdn.microsoft.com/library/windows/hardware/ff536225)します。
+プロパティ値を保持するために必要なバッファーのサイズを確認するのを参照してください。[オーディオのプロパティの基本的なクエリがサポート](https://docs.microsoft.com/windows-hardware/drivers/audio/basic-support-queries-for-audio-properties)します。
 
-デバイス Id の詳細については、次を参照してください。[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
+デバイス Id の詳細については、次を参照してください。[識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -95,7 +95,7 @@ KSPROPERTY\_AUDIOGFX\_CAPTURETARGETDEVICEID プロパティ要求がステータ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
  
 

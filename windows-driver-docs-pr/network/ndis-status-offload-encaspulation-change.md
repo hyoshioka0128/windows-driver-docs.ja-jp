@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_OFFLOAD_ENCASPULATION_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c0078f342297f19958da8cc173225fcd650b6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f066bb82d5fdbc9fddb8a67772a7195944fbf5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383277"
 ---
 # <a name="ndisstatusoffloadencaspulationchange"></a>NDIS\_状態\_オフロード\_カプセル化\_変更
 
@@ -21,9 +21,9 @@ ms.locfileid: "63344232"
 <a name="remarks"></a>注釈
 -------
 
-**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造に含まれる、 [ **NDIS\_オフロード\_カプセル化**](https://msdn.microsoft.com/library/windows/hardware/ff566702)構造体。 NDIS\_オフロード\_カプセル化をカプセル化の設定を指定します。
+**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造に含まれる、 [ **NDIS\_オフロード\_カプセル化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)構造体。 NDIS\_オフロード\_カプセル化をカプセル化の設定を指定します。
 
-カプセル化設定の詳細については、次を参照してください。 [OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)します。
+カプセル化設定の詳細については、次を参照してください。 [OID\_オフロード\_カプセル化](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -48,11 +48,11 @@ ms.locfileid: "63344232"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_オフロード\_カプセル化**](https://msdn.microsoft.com/library/windows/hardware/ff566702)
+[**NDIS\_オフロード\_カプセル化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_オフロード\_カプセル化](https://msdn.microsoft.com/library/windows/hardware/ff569762)
+[OID\_オフロード\_カプセル化](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)
 
  
 

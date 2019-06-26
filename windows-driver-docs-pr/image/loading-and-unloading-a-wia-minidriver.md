@@ -4,12 +4,12 @@ description: WIA ミニドライバーのロードとアンロード
 ms.assetid: a5f930c3-f92c-498a-a334-b5eb60fbd61b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26978081c3a9afbb3d9e4a1fce13ca7a68033a5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93b88277b8eaa89a20f33e9554d091492181cc2a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384550"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378870"
 ---
 # <a name="loading-and-unloading-a-wia-minidriver"></a>WIA ミニドライバーのロードとアンロード
 
@@ -17,23 +17,23 @@ ms.locfileid: "63384550"
 
 
 
-WIA デバイス ドライバーをインストールした後、WIA サービスを初めて読み込むしようとします。 WIA ミニドライバーの[ **IStiUSD::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff543824)メソッドは呼び出され、次のタスクを実行する必要があります。
+WIA デバイス ドライバーをインストールした後、WIA サービスを初めて読み込むしようとします。 WIA ミニドライバーの[ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)メソッドは呼び出され、次のタスクを実行する必要があります。
 
-1.  このデバイス ドライバーを初期化するため、呼び出し元の意図を判断する転送モードを確認します。 これは、呼び出すことで、 [ **IStiDeviceControl::GetMyDeviceOpenMode** ](https://msdn.microsoft.com/library/windows/hardware/ff542942)メソッド。
+1.  このデバイス ドライバーを初期化するため、呼び出し元の意図を判断する転送モードを確認します。 これは、呼び出すことで、 [ **IStiDeviceControl::GetMyDeviceOpenMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceopenmode)メソッド。
 
-2.  このドライバーを呼び出すことができるように、インストールされているデバイスのポートの名前を取得[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858) (Microsoft Windows SDK に記載されている)、デバイスにアクセスする適切なポートでします。 これは、呼び出すことで、 [ **IStiDeviceControl::GetMyDevicePortName** ](https://msdn.microsoft.com/library/windows/hardware/ff542944)メソッド。
+2.  このドライバーを呼び出すことができるように、インストールされているデバイスのポートの名前を取得[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea) (Microsoft Windows SDK に記載されている)、デバイスにアクセスする適切なポートでします。 これは、呼び出すことで、 [ **IStiDeviceControl::GetMyDevicePortName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)メソッド。
 
 3.  デバイスのインストール中に書き込まれたデバイス固有のレジストリ設定を読み取ります。 これを使用して行うことができます*hParametersKey*に渡されるパラメーター **IStiUSD::Initialize**します。
 
-WIA サービスの呼び出し、 **IStiUSD::Initialize**メソッド、ドライバーが最初に読み込まれます。 **IStiUSD::Initialize**クライアントは、従来の STI Ddi および呼び出しを使用する場合、メソッドが呼び出されますも、 [ **IStillImage::CreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff543778)メソッド。
+WIA サービスの呼び出し、 **IStiUSD::Initialize**メソッド、ドライバーが最初に読み込まれます。 **IStiUSD::Initialize**クライアントは、従来の STI Ddi および呼び出しを使用する場合、メソッドが呼び出されますも、 [ **IStillImage::CreateDevice** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543778(v=vs.85))メソッド。
 
-**IStiUSD::Initialize**メソッドは、WIA ドライバーと使用のデバイスを初期化する必要があります。 WIA ドライバーが格納できる、 **IStiDeviceControl**インターフェイス ポインターに後で必要な場合。 [ **IStiDeviceControl::AddRef** ](https://msdn.microsoft.com/library/windows/hardware/ff542933)メソッドは、このインターフェイスを格納する前に呼び出す必要があります。 インターフェイスを格納する必要がない場合は、それを無視します。 *いない*リリース、 **IStiDeviceControl**インターフェイスが呼び出さない場合**IStiDeviceControl::AddRef**最初。 予期しない結果がある可能性があります。 [IStiDeviceControl COM インターフェイス](istidevicecontrol-com-interface.md)デバイスのポートに関する情報を取得するが必要です。 呼び出しで使用されるポートの名前、 [ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)関数を呼び出すことによって取得できます、 **IStiDeviceControl::GetMyDevicePortName**メソッド。 デバイスのシリアル ポートなどの共有ポート上のデバイス用のポートを開く**IStiUSD::Initialize**はお勧めしません。 呼び出しでのみ、ポートを開く必要が**IStiUSD::LockDevice**します。 ポートの終了は、高速アクセスを提供する内部的に管理必要があります。 (開閉**IStiUSD::LockDevice**と**IStiUSD::UnLockDevice**非常に効率的ではありません。 **CreateFile**低速で、ユーザーに応答しないように表示されるデバイス遅延が発生することができます)。
+**IStiUSD::Initialize**メソッドは、WIA ドライバーと使用のデバイスを初期化する必要があります。 WIA ドライバーが格納できる、 **IStiDeviceControl**インターフェイス ポインターに後で必要な場合。 [ **IStiDeviceControl::AddRef** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-addref)メソッドは、このインターフェイスを格納する前に呼び出す必要があります。 インターフェイスを格納する必要がない場合は、それを無視します。 *いない*リリース、 **IStiDeviceControl**インターフェイスが呼び出さない場合**IStiDeviceControl::AddRef**最初。 予期しない結果がある可能性があります。 [IStiDeviceControl COM インターフェイス](istidevicecontrol-com-interface.md)デバイスのポートに関する情報を取得するが必要です。 呼び出しで使用されるポートの名前、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数を呼び出すことによって取得できます、 **IStiDeviceControl::GetMyDevicePortName**メソッド。 デバイスのシリアル ポートなどの共有ポート上のデバイス用のポートを開く**IStiUSD::Initialize**はお勧めしません。 呼び出しでのみ、ポートを開く必要が**IStiUSD::LockDevice**します。 ポートの終了は、高速アクセスを提供する内部的に管理必要があります。 (開閉**IStiUSD::LockDevice**と**IStiUSD::UnLockDevice**非常に効率的ではありません。 **CreateFile**低速で、ユーザーに応答しないように表示されるデバイス遅延が発生することができます)。
 
-WIA ドライバーは、複数をサポートできない場合[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858) 、同じデバイスのポートで呼び出し、 **IStiDeviceControl::GetMyDeviceOpenMode**メソッドを呼び出す必要があります。
+WIA ドライバーは、複数をサポートできない場合[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea) 、同じデバイスのポートで呼び出し、 **IStiDeviceControl::GetMyDeviceOpenMode**メソッドを呼び出す必要があります。
 
 WIA ドライバーは、STI に返されたモード値を確認する必要があります\_デバイス\_作成\_データは、フラグを設定し、それに応じて、ポートを開きます。
 
-かどうか、デバイスのポートを開いてへの呼び出し[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)使用する必要があります。 ポート、ファイルを開くときに\_フラグ\_OVERLAPPED フラグを使用する必要があります。 これにより、デバイスにアクセスするときに使用される (Windows SDK のドキュメントで説明)、OVERLAPPED 構造体です。 オーバー ラップ I/O を使用すると、ハードウェアに応答性の高いアクセスを制御ができます。 WIA ドライバーを呼び出すことができます、問題が検出されると、 **CancelIo** (Windows SDK のドキュメントで説明) を現在のすべてのハードウェア アクセスを停止します。
+かどうか、デバイスのポートを開いてへの呼び出し[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)使用する必要があります。 ポート、ファイルを開くときに\_フラグ\_OVERLAPPED フラグを使用する必要があります。 これにより、デバイスにアクセスするときに使用される (Windows SDK のドキュメントで説明)、OVERLAPPED 構造体です。 オーバー ラップ I/O を使用すると、ハードウェアに応答性の高いアクセスを制御ができます。 WIA ドライバーを呼び出すことができます、問題が検出されると、 **CancelIo** (Windows SDK のドキュメントで説明) を現在のすべてのハードウェア アクセスを停止します。
 
 次の例の実装を示しています、 **IStiUSD::Initialize**メソッド。
 
@@ -155,7 +155,7 @@ STDMETHODIMP CWIADevice::Initialize(
 }
 ```
 
-サービス呼び出しで WIA [ **IStiUSD::GetCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff543817)呼び出しに成功した後、 **IStiUSD::Initialize**メソッド。 **IStiUSD::GetCapabilities**提供し、 [ **STI\_USD\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff548404) STI バージョンについては、WIA をサポートするフラグを示す (ビット フラグ構造体ドライバーの機能)、そのイベントの要件。
+サービス呼び出しで WIA [ **IStiUSD::GetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)呼び出しに成功した後、 **IStiUSD::Initialize**メソッド。 **IStiUSD::GetCapabilities**提供し、 [ **STI\_USD\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/ns-stiusd-_sti_usd_caps) STI バージョンについては、WIA をサポートするフラグを示す (ビット フラグ構造体ドライバーの機能)、そのイベントの要件。
 
 次の例の実装を示しています。 **IStiUSD::GetCapabilities**します。
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d5e00285233b5e15aaef46d2d75f92cd974a4257
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78668560a88fb8e926544e28471b559f485cb120
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391542"
 ---
 # <a name="guiddevinterfacehid"></a>GUID_DEVINTERFACE_HID
 
 
-GUID_DEVINTERFACE_HID[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[HID コレクション](https://msdn.microsoft.com/library/windows/hardware/ff539861)します。
+GUID_DEVINTERFACE_HID[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[HID コレクション](https://docs.microsoft.com/windows-hardware/drivers/hid/hid-collections)します。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_HID[デバイス インターフェイス クラス](https://m
 
 HID コレクション用のドライバーでは、オペレーティング システムと HID コレクションの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-システム提供[HID クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/jj126193) HID コレクションにこのデバイスのインターフェイス クラスのインスタンスを登録します。 たとえば、HID クラス ドライバーは、USB キーボードまたはマウス デバイスのインターフェイスを登録します。 HID クラス ドライバーでサポートされている I/O インターフェイスを使用して、HID コレクションへのアクセスします。
+システム提供[HID クラス ドライバー](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85)) HID コレクションにこのデバイスのインターフェイス クラスのインスタンスを登録します。 たとえば、HID クラス ドライバーは、USB キーボードまたはマウス デバイスのインターフェイスを登録します。 HID クラス ドライバーでサポートされている I/O インターフェイスを使用して、HID コレクションへのアクセスします。
 
 HID デバイスとドライバーについては、次を参照してください。 [HIDClass デバイス](../hid/binding-minidrivers-to-the-hid-class.md)します。
 

@@ -9,12 +9,12 @@ keywords:
 - INF ファイル ストリーミング WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be7d284b830590360670381c4eeffd7d307dec6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a6717b21fb421315c1418bc8383392e78c8c6f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386763"
 ---
 # <a name="avc-streaming-inf-example"></a>AV/C ストリーミングの INF の例
 
@@ -45,7 +45,7 @@ ServiceBinary = %12%\subunit.sys
 Dependencies  = AVCSTRM   ; loaded before subunit.sys
 ```
 
-デバイスのインストール ファイルの詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+デバイスのインストール ファイルの詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
  
 

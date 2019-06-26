@@ -7,12 +7,12 @@ keywords:
 - ミニドライバー WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36202095f6d007dc86d2177a8dc6e7c43cd226b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47ff106c645c7c4bac80bde397f2e927f5dc5977
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385973"
 ---
 # <a name="installing-a-pcl-xl-minidriver"></a>PCL XL ミニドライバーをインストールする
 
@@ -27,7 +27,7 @@ Ntprint.inf が、次に、Windows XP 以降では、 \[PCLXL します。OEM\]�
 CopyFiles=PCLXL,@PCL5ERES.DLL
 ```
 
-[ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)すべてで示されているファイルのコピー、 \[PCLXL\]セクションと pcl5eres.dll、既定のインストール先ディレクトリにします。 \[PCLXL\]セクションも ntprint.inf に表示され、コピーするファイルを一覧表示されます。
+[ **INF CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)すべてで示されているファイルのコピー、 \[PCLXL\]セクションと pcl5eres.dll、既定のインストール先ディレクトリにします。 \[PCLXL\]セクションも ntprint.inf に表示され、コピーするファイルを一覧表示されます。
 
 ```cpp
 [PCLXL]

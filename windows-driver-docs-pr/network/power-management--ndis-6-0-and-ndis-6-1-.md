@@ -10,12 +10,12 @@ keywords:
 - 電源管理ミニポート ドライバーの電源管理についての WDK NDIS ミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e386c5e8f29eb9ef099686979b27964badfb749
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf4cce87afac49cffd4ebaf7856eb857551efb6a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342959"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384538"
 ---
 # <a name="power-management-ndis-60-and-ndis-61"></a>電源管理 (NDIS 6.0 および NDIS 6.1)
 
@@ -57,7 +57,7 @@ ms.locfileid: "63342959"
 
 [NDIS 電源管理の問題を回避](avoiding-ndis-power-management-problems.md)
 
-**注**  以降 NDIS 6.20 が動作では、NDIS 電源管理のインターフェイスが改訂され拡張します。 電源管理をサポートする NDIS 6.20 ミニポート ドライバーを開発している場合は、内の情報を確認してください[(NDIS 6.20 以降) の電源管理](https://msdn.microsoft.com/library/windows/hardware/hh205401)します。 電源管理をサポートする NDIS 6.30 ミニポート ドライバーを開発している場合は、内の情報を確認してください[(NDIS 6.30 以降) の電源管理](https://msdn.microsoft.com/library/windows/hardware/hh440160)します。
+**注**  以降 NDIS 6.20 が動作では、NDIS 電源管理のインターフェイスが改訂され拡張します。 電源管理をサポートする NDIS 6.20 ミニポート ドライバーを開発している場合は、内の情報を確認してください[(NDIS 6.20 以降) の電源管理](https://docs.microsoft.com/windows-hardware/drivers/network/power-management--ndis-6-20-)します。 電源管理をサポートする NDIS 6.30 ミニポート ドライバーを開発している場合は、内の情報を確認してください[(NDIS 6.30 以降) の電源管理](https://docs.microsoft.com/windows-hardware/drivers/network/power-management--ndis-6-30-)します。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - NDIS は、ドライバー WDK を中間、受信操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4bb97a5a664978159a5cae81afd6292eb7cb7b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3c8b81ecd6cd88967ac5e27101ddf148aa53c7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380918"
 ---
 # <a name="indicating-receive-network-data-to-higher-level-drivers"></a>高レベル ドライバーへの受信ネットワーク データの表示
 
@@ -20,9 +20,9 @@ ms.locfileid: "63327809"
 
 
 
-コネクションレス中間ドライバーでは、呼び出すことで、[次へ] 以上のドライバーをネットワーク データを受信を示す、 [ **NdisMIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563598)関数。 接続指向の中間ドライバーでは、呼び出すことで、[次へ] 以上のドライバーをネットワーク データを受信を示す、 [ **NdisMCoIndicateReceiveNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff563561)関数。
+コネクションレス中間ドライバーでは、呼び出すことで、[次へ] 以上のドライバーをネットワーク データを受信を示す、 [ **NdisMIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)関数。 接続指向の中間ドライバーでは、呼び出すことで、[次へ] 以上のドライバーをネットワーク データを受信を示す、 [ **NdisMCoIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)関数。
 
-前に、受信ネットワーク データより高度なドライバーで、データは、おそらく、形式に変換することが想定されているドライバーのプロセスを示すと、必要な場合は、中間にドライバーで割り当てられたに関連付けられているMDLsに関連するデータをコピー[**NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。
+前に、受信ネットワーク データより高度なドライバーで、データは、おそらく、形式に変換することが想定されているドライバーのプロセスを示すと、必要な場合は、中間にドライバーで割り当てられたに関連付けられているMDLsに関連するデータをコピー[**NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。
 
  
 

@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6823f929ad1c0951ae30e15fb0087209dbba542a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c333347a3a9354e184efcffb0e7b512c8ef3d53
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379471"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384804"
 ---
 # <a name="mrxstop-routine"></a>MRxStop ルーチン
 
 
-*MRxStop*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニリダイレクターを停止します。
+*MRxStop*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニリダイレクターを停止します。
 
 <a name="syntax"></a>構文
 ------
@@ -94,7 +94,7 @@ RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイ
 
 **StartStopContext.pStopContext** 、RDBSS のメンバー\_デバイス\_によって示されるオブジェクトの構造*RxDeviceObject*に設定されている、 *RxContext*パラメーター。
 
-*MRxStop*から RDBSS によって呼び出される、 [ **RxStopMinirdr** ](https://msdn.microsoft.com/library/windows/hardware/ff554743)ルーチン。
+*MRxStop*から RDBSS によって呼び出される、 [ **RxStopMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)ルーチン。
 
 場合*MRxStop*ステータスを返します\_成功すると、そのルーチンが成功しました。 その他の戻り値は、ネットワークのミニ リダイレクターを停止でエラーが発生したことを示します。
 
@@ -102,7 +102,7 @@ RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイ
 
 ネットワークのミニ リダイレクターは、ネットワークのミニ リダイレクターが開始したかどうかを示す内部変数を保持して通常します。 など、開始、停止されるとき、および操作の開始または停止操作が進行中、ネットワークのミニ リダイレクターは追跡可能性があります。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -127,9 +127,9 @@ RDBSS へのポインター\_デバイス\_ネットワークをミニ リダイ
 
 [**MRxDevFcbXXXControlFile**](mrxdevfcbxxxcontrolfile.md)
 
-[**MrxStart**](https://msdn.microsoft.com/library/windows/hardware/ff550829)
+[**MrxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)
 
-[**RxStopMinirdr**](https://msdn.microsoft.com/library/windows/hardware/ff554743)
+[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)
 
  
 

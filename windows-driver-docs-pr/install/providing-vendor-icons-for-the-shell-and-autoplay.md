@@ -1,6 +1,6 @@
 ---
-title: シェルと自動再生のベンダーのアイコンを提供します。
-description: シェルと自動再生のベンダーのアイコンを提供します。
+title: シェルと自動再生用のベンダー アイコンの提供
+description: シェルと自動再生用のベンダー アイコンの提供
 ms.assetid: 2e3afbf6-57f6-4b83-b10a-c33d9b1c1731
 keywords:
 - 自動再生アイコン WDK
@@ -14,14 +14,14 @@ keywords:
 - アイコン ファイルのコピー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a418b127b32be34732dc2882f3fbd39a20984794
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 495919e0be8910d3d6aedcddfd28abc65c29e002
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528498"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386397"
 ---
-# <a name="providing-vendor-icons-for-the-shell-and-autoplay"></a>シェルと自動再生のベンダーのアイコンを提供します。
+# <a name="providing-vendor-icons-for-the-shell-and-autoplay"></a>シェルと自動再生用のベンダー アイコンの提供
 
 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56528498"
 
 個々 のデバイスのアイコンを指定するだけでなく指定することもすべてのデバイスのアイコンをユーザー定義のデバイス グループまたは[デバイス セットアップ クラス](device-setup-classes.md)します。 詳細については、次を参照してください。、[ハードウェアの準備と自動再生で使用するためのソフトウェア](https://go.microsoft.com/fwlink/p/?linkid=12032)web サイト。
 
-場合、更新された[ドライバー パッケージ](driver-packages.md)カスタムを格納しているにアイコンが投稿された[Windows Update](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)ユーザーは新しいダウンロードが利用できるように求められます。
+場合、更新された[ドライバー パッケージ](driver-packages.md)カスタムを格納しているにアイコンが投稿された[Windows Update](https://docs.microsoft.com/windows-hardware/drivers)ユーザーは新しいダウンロードが利用できるように求められます。
 
 アイコン ファイルを含むドライバー パッケージ内に 2 つの手順があります。
 
@@ -76,17 +76,17 @@ ms.locfileid: "56528498"
 
 Windows の保存、**アイコン**と**NoMediaIcons**の下のエントリの値、**デバイス パラメーター** デバイスのキー*ハードウェア キー*。 次の例は、レジストリの場所、値、エントリの種類の値を指定します、**アイコン**と**NoMediaIcons**デバイス インスタンス ID は USB デバイスのエントリの値\\Vid_0000 & Pid_0000\\059B003112010E93 します。
 
-**HKEY_LOCAL_MACHINE\\システム\\CurrentControlSet\\Enum\\**<em>USB\\Vid_0000 & Pid_0000\\059B003112010E93</em>\\**デバイス パラメーター**
+**HKEY_LOCAL_MACHINE\\システム\\CurrentControlSet\\Enum\\** <em>USB\\Vid_0000 & Pid_0000\\059B003112010E93</em>\\**デバイス パラメーター**
 
-**Icons** \[REG_MULTI_SZ\] = %*SystemRoo*t%*\\system32\\icon.ico*
+**Icons** \[REG_MULTI_SZ\] = %*SystemRoo*t% *\\system32\\icon.ico*
 
-**NoMediaIcons** \[REG_MULTI_SZ\] % =*SystemRoot*%*\\system32\\noicon.ico*
+**NoMediaIcons** \[REG_MULTI_SZ\] % =*SystemRoot*% *\\system32\\noicon.ico*
 
 ドライバーやその他のコードは決してアクセスまたは変更、**デバイス パラメーター**直接キーします。 代わりに、次のシステム関数を使用する必要があります。
 
--   ユーザーのモードから[ **SetupDiCreateDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550973)と[ **SetupDiOpenDevRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552079)します。
+-   ユーザーのモードから[ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)と[ **SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)します。
 
--   カーネル モードから使用して[ **IoOpenDeviceRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff549443)します。
+-   カーネル モードから使用して[ **IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)します。
 
  
 

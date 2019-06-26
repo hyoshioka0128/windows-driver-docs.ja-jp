@@ -78,7 +78,7 @@ WMI は、最初のデータ コンシューマーがイベントを有効に、
 
 イベント ブロックを定義する方法については、送信側のイベント、およびトレースを参照してください[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

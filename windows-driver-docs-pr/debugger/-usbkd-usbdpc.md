@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ce6dc5e85b3babfa41e6018f61a02332bb399075
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b342e26fa856acfd2e457f61ffe635e81d64fe60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334105"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367991"
 ---
 # <a name="usbkdusbdpc"></a>!usbkd.usbdpc
 
@@ -55,7 +55,7 @@ UHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001e77010
 
 上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! uhci\_情報 ffffe00001c7d1a0**します。
 
-DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072) XDPC 一覧を取得します。
+DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext) XDPC 一覧を取得します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001c7d1a0

@@ -6,12 +6,12 @@ keywords:
 - Windows Mobile プラン コールバック通知、モバイルのプランの実装モバイル演算子
 ms.date: 05/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d93561092bac4024e8c537b7af5f6e22cfe7f9c
-ms.sourcegitcommit: 335096107bfc92718d9ba809527214113c993da7
+ms.openlocfilehash: 1aa695f92c24639a44557b4b0dbeee4afc5a7d01
+ms.sourcegitcommit: 19575e9a2aed6bebe7c465e561c10c86baf8d24b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455233"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67395431"
 ---
 # <a name="mobile-plans-callback-notifications"></a>コールバック通知をモバイル プラン
 
@@ -206,7 +206,7 @@ var purchaseMetaData = MobilePlans.createPurchaseMetaData();
 
 ## <a name="cancel-esim-profile-download"></a>Esim 状のプロファイルのダウンロードをキャンセルします。
 
-現時点では、これは適用されます、[プロファイルのダウンロードを遅延 esim 状](#deferred-eSIM-profile-download-and-activation)今後のユーザーの場合のシナリオを使用できます。
+現時点では、これは、プロファイルのダウンロードのシナリオの遅延の esim 状に適用されますが、今後のユーザーの場合にされる可能性があります。
 
 次の図は、Mobile プラン プログラムでコントロール、MODirect ポータルを離れることがなく eSIM プロファイルのダウンロードのキャンセルをサポートする方法の大まかな流れを示します。
 
@@ -378,6 +378,6 @@ function finishPurchaseWithCancellation() {
 | moDirectStatus | String | 設定可能な値: <ul><li>完了します。ユーザーが購入を正常に完了したことを示します。</li><li>サービス エラー:ユーザーが月のサービス エラーのための購入を完了できなかったことを示します。</li><li>InvalidSIM:ポータルに渡される ICCID が正しいことを示します。</li><li>LogOnFailed: は、ユーザーが、MO ポータルへのログインに失敗したことを示します。</li><li>PurchaseFailed:課金エラーのために、購入が失敗したことを示します。</li><li>ClientError。引数が無効ですが、ポータルに渡されたことを示します。</li>BillingError:ユーザーの課金でエラーがあったことを示します。</li></ul> | "moDirectStatus":"Complete" |
 | プラン名 | String | 成功したトランザクションでは、このフィールドは空にする必要がありますは、プランのわかりやすい名前を指定する必要があります。 失敗したトランザクションでは、このフィールドは空の文字列を指定する必要があります。 | 「プラン名」:"2 GB 毎月"|
 
-## <a name="legacy-callback-notifications"></a>従来のコールバック通知
+## <a name="legacy-callback-notifications"></a>レガシ コールバック通知
 
 従来のすべてのコールバックが記載されている特定のページを参照してください[ここ](mobile-plans-legacy-callback-notifications.md)

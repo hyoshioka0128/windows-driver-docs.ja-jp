@@ -4,12 +4,12 @@ description: 仮想スイッチ フィルターの使用
 ms.assetid: 09325037-F9A4-45C8-97E0-8FCA7D42A120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c48c44856961ddf2b5cc7ee8abddda0289b13344
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bc223e89112b4e749c60510891a6f3d43fa0ecb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361808"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384367"
 ---
 # <a name="using-virtual-switch-filtering"></a>仮想スイッチ フィルターの使用
 
@@ -19,29 +19,29 @@ ms.locfileid: "63361808"
 
 この WFP 機能は、仮想スイッチ仮想ポート (VPort) と仮想マシンの識別子 (VM ID) などの特定のフィールドと同様に、MAC ヘッダー、IP ヘッダーと上位のプロトコルのポートのフィールドでフィルター処理を使用できます。 これらの層は、仮想スイッチを通過するすべてのパケットのパケット単位ごとに呼び出されます。 これらの層は、仮想スイッチ拡張機能フィルターからアクセスされます — NDIS lightweight filter (LWF) ドライバーの種類。
 
-コールアウト ドライバーは呼び出し、 [ **FwpsvSwitchEventsSubscribe0** ](https://msdn.microsoft.com/library/windows/hardware/hh439687)仮想スイッチのレイヤーのイベントのコールバックのエントリ ポイントを登録する関数。
+コールアウト ドライバーは呼び出し、 [ **FwpsvSwitchEventsSubscribe0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsvswitcheventssubscribe0)仮想スイッチのレイヤーのイベントのコールバックのエントリ ポイントを登録する関数。
 
-コールバックの通知関数のエントリ ポイントがで指定された、 [ **FWPS\_VSWITCH\_イベント\_ディスパッチ\_TABLE0** ](https://msdn.microsoft.com/library/windows/hardware/hh451263)構造体. 使用できるコールバック関数は次のとおりです。
+コールバックの通知関数のエントリ ポイントがで指定された、 [ **FWPS\_VSWITCH\_イベント\_ディスパッチ\_TABLE0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_vswitch_event_dispatch_table0_)構造体. 使用できるコールバック関数は次のとおりです。
 
-* [*FWPS\_VSWITCH\_FILTER\_ENGINE\_REORDER\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451267)
-* [*FWPS\_VSWITCH\_インターフェイス\_イベント\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451269)
-* [*FWPS\_VSWITCH\_有効期間\_イベント\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451271)
-* [*FWPS\_VSWITCH\_ポリシー\_イベント\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451272)
-* [*FWPS\_VSWITCH\_ポート\_イベント\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451276)
-* [*FWPS\_VSWITCH\_ランタイム\_状態\_復元\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451281)
-* [*FWPS\_VSWITCH\_RUNTIME\_STATE\_SAVE\_CALLBACK0*](https://msdn.microsoft.com/library/windows/hardware/hh451286)
+* [*FWPS\_VSWITCH\_FILTER\_ENGINE\_REORDER\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_filter_engine_reorder_callback0)
+* [*FWPS\_VSWITCH\_インターフェイス\_イベント\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_interface_event_callback0)
+* [*FWPS\_VSWITCH\_有効期間\_イベント\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_lifetime_event_callback0)
+* [*FWPS\_VSWITCH\_ポリシー\_イベント\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_policy_event_callback0)
+* [*FWPS\_VSWITCH\_ポート\_イベント\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_port_event_callback0)
+* [*FWPS\_VSWITCH\_ランタイム\_状態\_復元\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_runtime_state_restore_callback0)
+* [*FWPS\_VSWITCH\_RUNTIME\_STATE\_SAVE\_CALLBACK0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_vswitch_runtime_state_save_callback0)
 
-[ **FWPS\_VSWITCH\_イベント\_型**](https://msdn.microsoft.com/library/windows/hardware/hh451265)列挙の値を定義する、 *eventType*仮想のパラメーター通知関数を切り替えます。
+[ **FWPS\_VSWITCH\_イベント\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_vswitch_event_type_)列挙の値を定義する、 *eventType*仮想のパラメーター通知関数を切り替えます。
 
-最終的にコールアウト ドライバーを呼び出す必要があります[ **FwpsvSwitchEventsUnsubscribe0** ](https://msdn.microsoft.com/library/windows/hardware/hh439691)システム リソースを解放します。
+最終的にコールアウト ドライバーを呼び出す必要があります[ **FwpsvSwitchEventsUnsubscribe0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsvswitcheventsunsubscribe0)システム リソースを解放します。
 
-コールアウト ドライバーの状態を返す場合\_WFP 通知関数からの保留、WFP の状態は返します\_OID 要求ハンドラーを保留します。 コールアウト ドライバーを呼び出す必要があります、 [ **FwpsvSwitchNotifyComplete0** ](https://msdn.microsoft.com/library/windows/hardware/hh439695)関数が保留中の操作を完了します。 後に、 **FwpsvSwitchNotifyComplete0**呼び出すには、WFP 呼び出し、 [ **NdisFOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff561833)関数が仮想スイッチの OID を完了します。
+コールアウト ドライバーの状態を返す場合\_WFP 通知関数からの保留、WFP の状態は返します\_OID 要求ハンドラーを保留します。 コールアウト ドライバーを呼び出す必要があります、 [ **FwpsvSwitchNotifyComplete0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsvswitchnotifycomplete0)関数が保留中の操作を完了します。 後に、 **FwpsvSwitchNotifyComplete0**呼び出すには、WFP 呼び出し、 [ **NdisFOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequestcomplete)関数が仮想スイッチの OID を完了します。
 
 コールバックを追加または通知関数のコンテキストで同期的に WFP フィルターを削除しない必要があります。 さらに、通知機能の状態を返すコールバックを許可する場合\_PENDING、および状況コールアウト。\_保留中、吹き出しする必要がありますいないを追加または削除 WFP フィルター、通知を完了する前にします。
 
 ## <a name="wfp-virtual-switch-filter-layer-and-fields"></a>WFP 仮想スイッチのフィルター レイヤーとフィールド
 
-[実行時のフィルター処理レイヤー識別子](https://msdn.microsoft.com/library/windows/hardware/ff570731)仮想スイッチがフィルター処理が含まれます。
+[実行時のフィルター処理レイヤー識別子](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers)仮想スイッチがフィルター処理が含まれます。
 
 * FWPS\_レイヤー\_イングレス\_VSWITCH\_イーサネット
 * FWPS\_レイヤー\_エグレス\_VSWITCH\_イーサネット
@@ -50,14 +50,14 @@ ms.locfileid: "63361808"
 * FWPS\_レイヤー\_エグレス\_VSWITCH\_トランスポート\_V4
 * FWPS\_レイヤー\_エグレス\_VSWITCH\_トランスポート\_V6
 
-[データ フィールドの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546312)仮想スイッチがフィルター処理が含まれます。
+[データ フィールドの識別子](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)仮想スイッチがフィルター処理が含まれます。
 
-* [**FWPS\_フィールド\_エグレス\_VSWITCH\_イーサネット**](https://msdn.microsoft.com/library/windows/hardware/hh439709)
-* [**FWPS\_フィールド\_エグレス\_VSWITCH\_トランスポート\_V4**](https://msdn.microsoft.com/library/windows/hardware/hh439715)
-* [**FWPS\_FIELDS\_EGRESS\_VSWITCH\_TRANSPORT\_V6**](https://msdn.microsoft.com/library/windows/hardware/hh439721)
-* [**FWPS\_フィールド\_イングレス\_VSWITCH\_イーサネット**](https://msdn.microsoft.com/library/windows/hardware/hh439733)
-* [**FWPS\_フィールド\_イングレス\_VSWITCH\_トランスポート\_V4**](https://msdn.microsoft.com/library/windows/hardware/hh439738)
-* [**FWPS\_FIELDS\_INGRESS\_VSWITCH\_TRANSPORT\_V6**](https://msdn.microsoft.com/library/windows/hardware/hh439745)
+* [**FWPS\_フィールド\_エグレス\_VSWITCH\_イーサネット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_ethernet_)
+* [**FWPS\_フィールド\_エグレス\_VSWITCH\_トランスポート\_V4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_transport_v4_)
+* [**FWPS\_FIELDS\_EGRESS\_VSWITCH\_TRANSPORT\_V6**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_egress_vswitch_transport_v6_)
+* [**FWPS\_フィールド\_イングレス\_VSWITCH\_イーサネット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_ethernet_)
+* [**FWPS\_フィールド\_イングレス\_VSWITCH\_トランスポート\_V4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_transport_v4_)
+* [**FWPS\_FIELDS\_INGRESS\_VSWITCH\_TRANSPORT\_V6**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_fields_ingress_vswitch_transport_v6_)
 
 ## <a name="guidance-for-wfp-virtual-switch-callout-writers"></a>WFP 仮想スイッチのコールアウトのライターのガイダンス
 

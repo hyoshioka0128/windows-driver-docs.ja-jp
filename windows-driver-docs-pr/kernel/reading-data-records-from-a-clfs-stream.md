@@ -15,12 +15,12 @@ keywords:
 - 次への元に戻す Lsn WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c5f095ea49fc39b62bee5a87f7006a0aec1ba0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02a83d13ff1d5dfac77e0dd5e9430f0510124a1c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382649"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378753"
 ---
 # <a name="reading-data-records-from-a-clfs-stream"></a>CLFS ストリームからのデータ レコードの読み取り
 
@@ -31,9 +31,9 @@ Common Log File System (CLFS) ストリーム内のレコードの 2 種類が�
 
 すべてのバリエーションでデータ レコードのシーケンスを読み取り、次の手順を完了します。
 
-1.  呼び出す[ **ClfsReadLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541682)読み取りコンテキストと、シーケンス内の最初のデータ レコードを取得します。
+1.  呼び出す[ **ClfsReadLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadlogrecord)読み取りコンテキストと、シーケンス内の最初のデータ レコードを取得します。
 
-2.  手順 1 で取得した読み取りコンテキストを渡す[ **ClfsReadNextLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541690)シーケンス内の残りのデータ レコードを取得するために繰り返し。
+2.  手順 1 で取得した読み取りコンテキストを渡す[ **ClfsReadNextLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadnextlogrecord)シーケンス内の残りのデータ レコードを取得するために繰り返し。
 
 **注意**  読み取りコンテキストはスレッド セーフではありません。 クライアントは、コンテキストの読み取りアクセス許可をシリアル化する責任を負います。
 
@@ -261,13 +261,13 @@ CLFS ストリームからデータ レコードを書き込む場合は、ス�
 
 CLFS ストリームからデータ レコードを書き込む場合は、ストリームに以前作成した任意のレコードの LSN をデータ レコードの元に戻す次の LSN を設定できます。 元に戻す次の LSN を設定するには、逆の順序で走査できる関連するレコードのチェーンを作成できます。 作成して、元に戻す次チェーンの解釈の詳細については、次を参照してください。 [CLFS ログ シーケンス番号](clfs-log-sequence-numbers.md)します。
 
-元に戻す次の Lsn によってリンクされているデータ レコードのチェーンを記述したとします。 レコードのチェーンを読み取りを呼び出す必要がある[ **ClfsReadLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541682)そのモードになっている読み取りコンテキストを作成する設定**ClfsContextUndoNext**します。 その後、プロセスは、(このトピックで既に説明した) 前回の Lsn によってリンクされているチェーンの読み取りと同じです。
+元に戻す次の Lsn によってリンクされているデータ レコードのチェーンを記述したとします。 レコードのチェーンを読み取りを呼び出す必要がある[ **ClfsReadLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadlogrecord)そのモードになっている読み取りコンテキストを作成する設定**ClfsContextUndoNext**します。 その後、プロセスは、(このトピックで既に説明した) 前回の Lsn によってリンクされているチェーンの読み取りと同じです。
 
 ### <a name="reading-a-chain-of-data-records-linked-by-the-user-lsn"></a>ユーザーの LSN によってリンクされているデータ レコードのチェーンの読み取り
 
 だけでなく、以前の Lsn と元に戻す次の Lsn によってリンクされているチェーン、レコードのデータに埋め込むことが、独自の Lsn によってリンクされているチェーンを作成できます。
 
-レコード データ自体に保管されている Lsn によってリンクされているデータ レコードのチェーンを記述したとします。 レコードのチェーンを読み取り、そのモードのいずれかに設定された読み取りのコンテキストを作成する必要が**ClfsContextPrevious**または**ClfsContextUndoNext**します。 読み取りのコンテキストを作成し、呼び出すことによって、チェーンの直前に書き込まれたレコードを取得[ **ClfsReadLogRecord**](https://msdn.microsoft.com/library/windows/hardware/ff541682)します。 呼び出して[ **ClfsReadNextLogRecord** ](https://msdn.microsoft.com/library/windows/hardware/ff541690)チェーン内の前のレコードを取得するために繰り返し。 呼び出すたびに**ClfsReadNextLogRecord**、設定、 *plsnUser*パラメーター、チェーンの前のレコードの lsn。 指定した LSN *plsnUser*現在のレコードの LSN 前または次への元に戻す LSN フィールドに格納されている値を上書きします。
+レコード データ自体に保管されている Lsn によってリンクされているデータ レコードのチェーンを記述したとします。 レコードのチェーンを読み取り、そのモードのいずれかに設定された読み取りのコンテキストを作成する必要が**ClfsContextPrevious**または**ClfsContextUndoNext**します。 読み取りのコンテキストを作成し、呼び出すことによって、チェーンの直前に書き込まれたレコードを取得[ **ClfsReadLogRecord**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadlogrecord)します。 呼び出して[ **ClfsReadNextLogRecord** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreadnextlogrecord)チェーン内の前のレコードを取得するために繰り返し。 呼び出すたびに**ClfsReadNextLogRecord**、設定、 *plsnUser*パラメーター、チェーンの前のレコードの lsn。 指定した LSN *plsnUser*現在のレコードの LSN 前または次への元に戻す LSN フィールドに格納されている値を上書きします。
 
 ことができますのみ後方に移動、ストリームを呼び出すときに注意してください**ClfsReadNextLogRecord**レコードのチェーンを読み込むことです。 指定した LSN *plsnUser*チェーン内の現在のレコードの LSN よりも小さい必要があります。
 

@@ -10,12 +10,12 @@ keywords:
 - フレームワークは、WDK KMDF、デバイス オブジェクトをオブジェクトします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f94a1a8a2989fb80d3f497eb0613974ab32928ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b0ae33c4247b688b2dba8f851ce1bd6b64a2d68
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358497"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383113"
 ---
 # <a name="creating-a-framework-device-object"></a>フレームワーク デバイス オブジェクトの作成
 
@@ -24,7 +24,7 @@ ms.locfileid: "63358497"
 
 Framework デバイス オブジェクトを作成するには、3 つの手順が含まれます。
 
-1.  ポインターを取得する、 [ **WDFDEVICE\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff546951)構造体。
+1.  ポインターを取得する、 [ **WDFDEVICE\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体。
 
     これは、デバイスに関する情報を格納しているドライバーをシステムによって割り当てられた構造体の非透過です。
 
@@ -32,7 +32,7 @@ Framework デバイス オブジェクトを作成するには、3 つの手順�
 
     ドライバーは、一連の構造体に情報を追加するフレームワークが指定した関数を呼び出します。
 
-3.  呼び出す[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)します。
+3.  呼び出す[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)します。
 
     ドライバーに渡します、WDFDEVICE\_へのポインターを初期化構造体の**WdfDeviceCreate**メソッド。 メソッドは、framework デバイス オブジェクトを作成し、情報を使用して、WDFDEVICE\_INIT 構造オブジェクトを初期化します。
 

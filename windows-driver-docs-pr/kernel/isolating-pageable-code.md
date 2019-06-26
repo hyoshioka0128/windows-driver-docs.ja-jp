@@ -8,12 +8,12 @@ keywords:
 - スピン ロック WDK メモリ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aeac616d22df883b0ba9a919bd5c3b0e0dc8587
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 056257ab3c5f732f5703d2acab3800ed4cada192
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381391"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376438"
 ---
 # <a name="isolating-pageable-code"></a>ページング可能なコードの分離
 
@@ -70,7 +70,7 @@ if (!DeviceObject->ReferenceCount && !DeviceObject->AttachedDevice) {
 
 上記のルーチンを持たせてページング可能な (約 160 バイトの保存)、スピン ロックを別のルーチンに参照するわずか数行のコードを移動することによって。
 
-さらに、覚えてドライバー コードする必要がありますいないマークすることと、いずれかを呼び出す場合ページング可能な**Ke * Xxx*** などのルーチンのサポート[ **KeReleaseMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff553140)または[ **KeReleaseSemaphore**](https://msdn.microsoft.com/library/windows/hardware/ff553143)、これで、*待機*パラメーターを設定する**TRUE**。 このような呼び出しがディスパッチで IRQL を返します\_レベル。
+さらに、覚えてドライバー コードする必要がありますいないマークすることと、いずれかを呼び出す場合ページング可能な**Ke * Xxx*** などのルーチンのサポート[ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)または[ **KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)、これで、*待機*パラメーターを設定する**TRUE**。 このような呼び出しがディスパッチで IRQL を返します\_レベル。
 
  
 

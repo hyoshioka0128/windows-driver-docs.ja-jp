@@ -4,12 +4,12 @@ description: すべての機能のオプション属性
 ms.assetid: 0d269fdf-f4a1-431a-9f07-044289b9f0fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8ce8bb8392726042b2727072d6e8d7ab2e9526
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ccf05db340ca211f795c1e3ac869d3acedb2db6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366324"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385961"
 ---
 # <a name="option-attributes-for-all-features"></a>すべての機能のオプション属性
 
@@ -70,7 +70,7 @@ ms.locfileid: "63366324"
 </tr>
 <tr class="odd">
 <td><p></em><strong>オプション Id</strong></p></td>
-<td><p>プリンターに Unidrv を格納する一意のオプションの識別子を表す数値<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>構造体。 用紙サイズ、InputSlot、ハーフトーン、およびメディアの種類の機能でのみ使用します。 DEVMODE 構造体の値が格納されている<strong>dmPaperSize</strong>、 <strong>dmDefaultSource</strong>、 <strong>dmDitherType</strong>、または<strong>dmMediaType</strong>メンバーそれぞれします。</p></td>
+<td><p>プリンターに Unidrv を格納する一意のオプションの識別子を表す数値<a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"> <strong>DEVMODEW</strong> </a>構造体。 用紙サイズ、InputSlot、ハーフトーン、およびメディアの種類の機能でのみ使用します。 DEVMODE 構造体の値が格納されている<strong>dmPaperSize</strong>、 <strong>dmDefaultSource</strong>、 <strong>dmDitherType</strong>、または<strong>dmMediaType</strong>メンバーそれぞれします。</p></td>
 <td><p>任意。 指定しない場合、Unidrv が識別子の値を割り当てます (&gt;256)。 Unidrv によって割り当てられた識別子と競合を回避するために、指定した値は 512 より大きくなければなりません。</p></td>
 </tr>
 <tr class="even">

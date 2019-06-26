@@ -4,12 +4,12 @@ description: MS\_SMHBA\_FC\_Port WMI クラス
 ms.assetid: 671f14e4-c591-4df2-85a1-2db3f802ef5e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1149f715e6818d3f05e983d128a85c7438fe733c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a280e8c66722218b200801cd16aed55ec87d8b46
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380243"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386133"
 ---
 # <a name="mssmhbafcport-wmi-class"></a>MS\_SMHBA\_FC\_Port WMI クラス
 
@@ -55,7 +55,7 @@ class MS_SMHBA_FC_Port
 
 このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SMHBA\_FC\_ポート**](https://msdn.microsoft.com/library/windows/hardware/ff563162)
+[**MS\_SMHBA\_FC\_ポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_fc_port)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

@@ -6,23 +6,23 @@ keywords:
 - 吹き出し関数 WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 596e4e19fafe9952299a6cce5f4d6273d5afb3a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a64682863c16ba3aa111bf1710e1c1b5b6d98245
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369069"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382809"
 ---
 # <a name="callout-function"></a>コールアウト関数
 
 
 A*コールアウト関数*によって実装されている関数には、[コールアウト ドライバー](callout-driver.md)を定義する関数の 1 つは、[コールアウト](callout.md)。 コールアウトは、引き出し関数の次の一覧で構成されます。
 
--   A [ *notifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff568803)通知を処理する関数。
+-   A [ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)通知を処理する関数。
 
--   A [ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)プロセス分類する関数。
+-   A [ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)プロセス分類する関数。
 
--   A [ *flowDeleteFn* ](https://msdn.microsoft.com/library/windows/hardware/ff550025)関数をプロセス フローの削除 (省略可能)。
+-   A [ *flowDeleteFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_flow_delete_notify_fn0)関数をプロセス フローの削除 (省略可能)。
 
 [フィルター エンジン](filter-engine.md)コールアウトは、ネットワークのデータを処理できるように吹き出しのコールアウトが関数の呼び出し。
 

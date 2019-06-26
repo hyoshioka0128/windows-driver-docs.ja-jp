@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 072590cdf56942140b974362c1b3ec13928a5128
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 089d3293af3429121f7dec3dabeecfacbefa11f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324262"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361180"
 ---
 # <a name="mrxquerysdinfo-routine"></a>MRxQuerySdInfo routine
 
 
-*MRxQuerySdInfo*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのセキュリティ記述子の情報を照会することを要求します。
+*MRxQuerySdInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイル システム オブジェクトのセキュリティ記述子の情報を照会することを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -128,7 +128,7 @@ RDBSS への呼び出しを発行する*MRxQuerySdInfo*受信に応答する[ **
 
 成功した場合、ネットワークのミニ リダイレクターを設定する必要があります、 **InformationToReturn** 、RX のメンバー\_セキュリティ情報の長さの CONTEXT 構造体が返されます。 場合に呼び出し*MRxQuerySdInfo*が成功した場合は、RDBSS セット、 **IoStatus.Information**に IRP のメンバー、 **InformationToReturn** RX のメンバー\_コンテキスト。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -151,7 +151,7 @@ RDBSS への呼び出しを発行する*MRxQuerySdInfo*受信に応答する[ **
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

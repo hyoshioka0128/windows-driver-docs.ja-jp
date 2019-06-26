@@ -8,12 +8,12 @@ keywords:
 - レガシ フィルター ドライバー WDK ファイル システム ミニフィルター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05c0fa4298b205552d18ba98dff3a6d283491de0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c41fe9546f8aa784ef72a24c80f1c1efcd82ea9d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365894"
 ---
 # <a name="guidelines-for-porting-legacy-filter-drivers"></a>レガシ フィルター ドライバーの移植ガイドライン
 
@@ -78,18 +78,18 @@ ms.locfileid: "63370137"
 </tr>
 <tr class="odd">
 <td align="left"><p>Preoperation コールバック ルーチン内の保留操作</p></td>
-<td align="left"><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff543371" data-raw-source="[&lt;strong&gt;FltLockUserBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543371)"> <strong>FltLockUserBuffer</strong> </a>ユーザー バッファーが [ワーカー スレッドでアクセスできるように正しくロックされていることを確認するために必要とします。</p>
-<p>呼び出すことによってワーカー スレッドに作業をキューのサポート ルーチン<a href="https://msdn.microsoft.com/library/windows/hardware/ff541720" data-raw-source="[&lt;strong&gt;FltAllocateDeferredIoWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541720)"> <strong>FltAllocateDeferredIoWorkItem</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff543449" data-raw-source="[&lt;strong&gt;FltQueueDeferredIoWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543449)"> <strong>FltQueueDeferredIoWorkItem</strong> </a>.</p>
+<td align="left"><p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltlockuserbuffer" data-raw-source="[&lt;strong&gt;FltLockUserBuffer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltlockuserbuffer)"> <strong>FltLockUserBuffer</strong> </a>ユーザー バッファーが ワーカー スレッドでアクセスできるように正しくロックされていることを確認するために必要とします。</p>
+<p>呼び出すことによってワーカー スレッドに作業をキューのサポート ルーチン<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatedeferredioworkitem" data-raw-source="[&lt;strong&gt;FltAllocateDeferredIoWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatedeferredioworkitem)"> <strong>FltAllocateDeferredIoWorkItem</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem" data-raw-source="[&lt;strong&gt;FltQueueDeferredIoWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem)"> <strong>FltQueueDeferredIoWorkItem</strong> </a>.</p>
 <p>Preoperation コールバック ルーチンから FLT_PREOP_PENDING を返します。</p>
-<p>フィルター マネージャーに、I/O 操作を戻る準備が<a href="https://msdn.microsoft.com/library/windows/hardware/ff541913" data-raw-source="[&lt;strong&gt;FltCompletePendedPreOperation&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541913)"> <strong>FltCompletePendedPreOperation</strong></a>します。</p>
+<p>フィルター マネージャーに、I/O 操作を戻る準備が<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpreoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPreOperation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpreoperation)"> <strong>FltCompletePendedPreOperation</strong></a>します。</p>
 <p>参照してください<a href="pending-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Pending an I/O Operation in a Preoperation Callback Routine](pending-an-i-o-operation-in-a-preoperation-callback-routine.md)">Preoperation コールバック ルーチン内の I/O 操作の保留中</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Postoperation コールバック ルーチン内の保留操作</p></td>
-<td align="left"><p>Preoperation コールバック ルーチンを呼び出して<a href="https://msdn.microsoft.com/library/windows/hardware/ff543371" data-raw-source="[&lt;strong&gt;FltLockUserBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543371)"> <strong>FltLockUserBuffer</strong> </a>そのユーザーを確実に正しくロックされているバッファーをワーカー スレッドでアクセスできるようにします。</p>
-<p>呼び出すことによってワーカー スレッドに作業をキューのサポート ルーチン<a href="https://msdn.microsoft.com/library/windows/hardware/ff541749" data-raw-source="[&lt;strong&gt;FltAllocateGenericWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541749)"> <strong>FltAllocateGenericWorkItem</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff543452" data-raw-source="[&lt;strong&gt;FltQueueGenericWorkItem&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543452)"> <strong>FltQueueGenericWorkItem</strong> </a>.</p>
+<td align="left"><p>Preoperation コールバック ルーチンを呼び出して<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltlockuserbuffer" data-raw-source="[&lt;strong&gt;FltLockUserBuffer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltlockuserbuffer)"> <strong>FltLockUserBuffer</strong> </a>そのユーザーを確実に正しくロックされているバッファーをワーカー スレッドでアクセスできるようにします。</p>
+<p>呼び出すことによってワーカー スレッドに作業をキューのサポート ルーチン<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocategenericworkitem" data-raw-source="[&lt;strong&gt;FltAllocateGenericWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocategenericworkitem)"> <strong>FltAllocateGenericWorkItem</strong> </a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueuegenericworkitem" data-raw-source="[&lt;strong&gt;FltQueueGenericWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueuegenericworkitem)"> <strong>FltQueueGenericWorkItem</strong> </a>.</p>
 <p>Postoperation コールバック ルーチンから FLT_POSTOP_MORE_PROCESSING_REQUIRED を返します。</p>
-<p>フィルター マネージャーに、I/O 操作を戻る準備が<a href="https://msdn.microsoft.com/library/windows/hardware/ff541897" data-raw-source="[&lt;strong&gt;FltCompletePendedPostOperation&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541897)"> <strong>FltCompletePendedPostOperation</strong></a>します。</p>
+<p>フィルター マネージャーに、I/O 操作を戻る準備が<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpostoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPostOperation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpostoperation)"> <strong>FltCompletePendedPostOperation</strong></a>します。</p>
 <p>参照してください<a href="pending-an-i-o-operation-in-a-postoperation-callback-routine.md" data-raw-source="[Pending an I/O Operation in a Postoperation Callback Routine](pending-an-i-o-operation-in-a-postoperation-callback-routine.md)">Postoperation コールバック ルーチン内の I/O 操作の保留中</a>します。</p></td>
 </tr>
 <tr class="odd">
@@ -99,14 +99,14 @@ ms.locfileid: "63370137"
 </tr>
 <tr class="even">
 <td align="left"><p>Preoperation コールバック ルーチンで操作を完了します。</p></td>
-<td align="left"><p>最終的な操作の状態および情報の設定、 <strong>IoStatus</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544620" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544620)"> <strong>FLT_CALLBACK_DATA</strong> </a>操作の構造。</p>
+<td align="left"><p>最終的な操作の状態および情報の設定、 <strong>IoStatus</strong>のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)"> <strong>FLT_CALLBACK_DATA</strong> </a>操作の構造。</p>
 <p>Preoperation コールバック ルーチンから FLT_PREOP_COMPLETE を返します。</p>
 <p>参照してください<a href="completing-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Completing an I/O Operation in a Preoperation Callback Routine](completing-an-i-o-operation-in-a-preoperation-callback-routine.md)">Preoperation コールバック ルーチン内の I/O 操作の完了</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Preoperation コールバック ルーチンを保留にされた後、操作を完了します。</p></td>
-<td align="left"><p>最終的な操作の状態および情報の設定、 <strong>IoStatus</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544620" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544620)"> <strong>FLT_CALLBACK_DATA</strong> </a>操作の構造。</p>
-<p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff541913" data-raw-source="[&lt;strong&gt;FltCompletePendedPreOperation&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541913)"> <strong>FltCompletePendedPreOperation</strong> </a>として FLT_PREOP_COMPLETE を渡して、I/O 操作を処理するワーカー スレッドから、 <em>CallbackStatus</em>パラメーター。</p>
+<td align="left"><p>最終的な操作の状態および情報の設定、 <strong>IoStatus</strong>のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)"> <strong>FLT_CALLBACK_DATA</strong> </a>操作の構造。</p>
+<p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpreoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPreOperation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcompletependedpreoperation)"> <strong>FltCompletePendedPreOperation</strong> </a>として FLT_PREOP_COMPLETE を渡して、I/O 操作を処理するワーカー スレッドから、 <em>CallbackStatus</em>パラメーター。</p>
 <p>参照してください<a href="completing-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Completing an I/O Operation in a Preoperation Callback Routine](completing-an-i-o-operation-in-a-preoperation-callback-routine.md)">Preoperation コールバック ルーチン内の I/O 操作の完了</a>します。</p></td>
 </tr>
 <tr class="even">
@@ -116,7 +116,7 @@ ms.locfileid: "63370137"
 </tr>
 <tr class="odd">
 <td align="left"><p>安全な IRQL で作業を完了</p></td>
-<td align="left"><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff542047" data-raw-source="[&lt;strong&gt;FltDoCompletionProcessingWhenSafe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff542047)"> <strong>FltDoCompletionProcessingWhenSafe</strong> </a> postoperation コールバック ルーチンから。</p>
+<td align="left"><p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe" data-raw-source="[&lt;strong&gt;FltDoCompletionProcessingWhenSafe&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe)"> <strong>FltDoCompletionProcessingWhenSafe</strong> </a> postoperation コールバック ルーチンから。</p>
 <p>参照してください<a href="ensuring-that-completion-processing-is-performed-at-safe-irql.md" data-raw-source="[Ensuring that Completion Processing is Performed at Safe IRQL](ensuring-that-completion-processing-is-performed-at-safe-irql.md)">完了処理が安全な IRQL で実行されることを確認</a>します。</p></td>
 </tr>
 <tr class="even">
@@ -127,8 +127,8 @@ ms.locfileid: "63370137"
 </tr>
 <tr class="odd">
 <td align="left"><p>失敗、成功した操作を作成します。</p></td>
-<td align="left"><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff541784" data-raw-source="[&lt;strong&gt;FltCancelFileOpen&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541784)"> <strong>FltCancelFileOpen</strong> </a>作成操作の postoperation コールバック ルーチンから。</p>
-<p>適切なエラー NTSTATUS の値を設定、 <strong>IoStatus</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544620" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544620)"> <strong>FLT_CALLBACK_DATA</strong> </a>操作の構造。</p>
+<td align="left"><p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcancelfileopen" data-raw-source="[&lt;strong&gt;FltCancelFileOpen&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcancelfileopen)"> <strong>FltCancelFileOpen</strong> </a>作成操作の postoperation コールバック ルーチンから。</p>
+<p>適切なエラー NTSTATUS の値を設定、 <strong>IoStatus</strong>のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)"> <strong>FLT_CALLBACK_DATA</strong> </a>操作の構造。</p>
 <p>FLT_POSTOP_FINISHED_PROCESSING を返します。</p>
 <p>参照してください<a href="failing-an-i-o-operation-in-a-postoperation-callback-routine.md" data-raw-source="[Failing an I/O Operation in a Postoperation Callback Routine](failing-an-i-o-operation-in-a-postoperation-callback-routine.md)">Postoperation コールバック ルーチン内の I/O 操作が失敗した</a>します。</p></td>
 </tr>
@@ -139,8 +139,8 @@ ms.locfileid: "63370137"
 </tr>
 <tr class="odd">
 <td align="left"><p>I/O 操作のパラメーターを修正します。</p></td>
-<td align="left"><p>変更されたパラメーター値を設定、 <strong>Iopb</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544620" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544620)"> <strong>FLT_CALLBACK_DATA</strong> </a>操作の構造。</p>
-<p>呼び出して FLT_CALLBACK_DATA 構造体をダーティとしてマーク<a href="https://msdn.microsoft.com/library/windows/hardware/ff544383" data-raw-source="[&lt;strong&gt;FltSetCallbackDataDirty&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544383)"> <strong>FltSetCallbackDataDirty</strong></a>の内容が変更されたときを除く、 <strong>IoStatus</strong> FLT_ のメンバーCALLBACK_DATA 構造体。</p>
+<td align="left"><p>変更されたパラメーター値を設定、 <strong>Iopb</strong>のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)"> <strong>FLT_CALLBACK_DATA</strong> </a>操作の構造。</p>
+<p>呼び出して FLT_CALLBACK_DATA 構造体をダーティとしてマーク<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetcallbackdatadirty" data-raw-source="[&lt;strong&gt;FltSetCallbackDataDirty&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetcallbackdatadirty)"> <strong>FltSetCallbackDataDirty</strong></a>の内容が変更されたときを除く、 <strong>IoStatus</strong> FLT_ のメンバーCALLBACK_DATA 構造体。</p>
 <p>参照してください<a href="modifying-the-parameters-for-an-i-o-operation.md" data-raw-source="[Modifying the Parameters for an I/O Operation](modifying-the-parameters-for-an-i-o-operation.md)">I/O 操作のパラメーターを変更する</a>します。</p></td>
 </tr>
 <tr class="even">

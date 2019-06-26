@@ -23,12 +23,12 @@ keywords:
 - SDV の WDK、Static Driver Verifier のレポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc0afed9f938254957b4cd9d8c08a83e6102158
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f43dfd3b366ab27c1caa6a0a733164dc7f5188e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327271"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382831"
 ---
 # <a name="using-the-static-driver-verifier-report"></a>静的ドライバー検証ツールのレポートの使用
 
@@ -53,17 +53,17 @@ SDV で「欠陥」(規則の違反) を報告する場合、**結果**ウィン
 
 検索しようとする前に、コードでは、規則違反は、ドライバーに違反した規則に詳しくなります。
 
-[静的ドライバー検証規則](https://msdn.microsoft.com/library/windows/hardware/ff551714)セクションには、たとえば、各ルールを説明するトピックが含まれています。 [CancelSpinLock](https://msdn.microsoft.com/library/windows/hardware/ff542478)します。
+[静的ドライバー検証規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)セクションには、たとえば、各ルールを説明するトピックが含まれています。 [CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)します。
 
 規則のコードを表示する、**ソース コード**静的ドライバー検証ツールのレポートのペインが CancelSpinLock.slic など、ルールのコードを持つタブをクリックします。
 
-たとえば、 **CancelSpinLock**規則に違反する場合は、ドライバーは呼び出し[ **IoAcquireCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff548196)または[ **IoReleaseCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549550)順序、またはドライバーが、スピン ロックを解除する前に、ルーチンを終了します。
+たとえば、 **CancelSpinLock**規則に違反する場合は、ドライバーは呼び出し[ **IoAcquireCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))または[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))順序、またはドライバーが、スピン ロックを解除する前に、ルーチンを終了します。
 
 ### <a name="span-idtracethedefectpathspanspan-idtracethedefectpathspantrace-the-defect-path"></a><span id="trace_the_defect_path"></span><span id="TRACE_THE_DEFECT_PATH"></span>欠陥のパスをトレースします。
 
 ときに、**ビューアーの参加を解除**ウィンドウが開き、内の要素、**トレース ツリー**欠陥パスの最初の不可欠なドライバーの呼び出しを表すペインが選択されています。 **ソース コード**ウィンドウで、ソース コードの関連する行が青色で強調表示されます。
 
-次のスクリーン ショットが開いたときのビューを示しています、**静的ドライバー検証ツールの欠陥ビューアー**の違反をウィンドウ、 [CancelSpinLock](https://msdn.microsoft.com/library/windows/hardware/ff542478)ルールによって、失敗\_Driver1 サンプル ドライバー。 この例で CancelSpinLock ルールに違反するパスの最初のドライバー呼び出しがへの呼び出し[ **IoAcquireCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff548196)ドライバーの**DispatchSystemControl**ルーチン。
+次のスクリーン ショットが開いたときのビューを示しています、**静的ドライバー検証ツールの欠陥ビューアー**の違反をウィンドウ、 [CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)ルールによって、失敗\_Driver1 サンプル ドライバー。 この例で CancelSpinLock ルールに違反するパスの最初のドライバー呼び出しがへの呼び出し[ **IoAcquireCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))ドライバーの**DispatchSystemControl**ルーチン。
 
 ![静的ドライバー検証ツールの開始ビューのスクリーン ショット cancelspinlock 規則違反のビューア ウィンドウの参加を解除します。](images/sdv-tracetree.png)
 

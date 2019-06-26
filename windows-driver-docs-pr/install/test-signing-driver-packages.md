@@ -14,21 +14,21 @@ keywords:
 - テスト署名ドライバー パッケージ、WDK テスト署名ドライバー パッケージについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d8214197c221c1f426ecea21e5fae9d0119fab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3774b4f68596745731e02b857f04f6fec270a059
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380972"
 ---
 # <a name="test-signing-driver-packages"></a>ドライバー パッケージのテスト署名
 
 
 このセクションに Windows Vista および Windows の以降のバージョンをリリース用のドライバーの署名を検査するコンピューターを参照として、*コンピューターを署名*します。 署名のコンピューターでは、Windows XP SP2 または以降のバージョンの Windows が実行されている必要があります。 たとえば、ドライバーが Windows 7 のリリースのためのものは、Windows Vista を実行するコンピューターで署名できます。
 
-使用するには、[ドライバーの署名ツール](https://msdn.microsoft.com/library/windows/hardware/ff552958)WDK の以降のバージョンがインストールされている、署名のコンピューターは、Windows Vista をいる必要があります。
+使用するには、[ドライバーの署名ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)WDK の以降のバージョンがインストールされている、署名のコンピューターは、Windows Vista をいる必要があります。
 
-**注**  のバージョンを使用する必要があります、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778) Windows Vista およびそれ以降のバージョンの Windows Driver Kit (WDK) で提供されるツールです。 以前のバージョンの SignTool の署名ポリシーを Windows Vista 以降のバージョンの Windows カーネル モード コードではできません。
+**注**  のバージョンを使用する必要があります、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) Windows Vista およびそれ以降のバージョンの Windows Driver Kit (WDK) で提供されるツールです。 以前のバージョンの SignTool の署名ポリシーを Windows Vista 以降のバージョンの Windows カーネル モード コードではできません。
 
  
 
@@ -88,7 +88,7 @@ Windows Hardware Quality Labs (WHQL) テスト署名から要求を送信でき�
 
 PnP デバイス インストールの署名の要件は、非 PnP ドライバーには適用されません。
 
-**注**  一般的により簡単かつ署名済みカタログ ファイルを使用するよりも効率的には埋め込みの署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)します。
+**注**  一般的により簡単かつ署名済みカタログ ファイルを使用するよりも効率的には埋め込みの署名を使用します。 詳細については、長所と短所の埋め込み署名を使用して、署名済みカタログ ファイルとは、次を参照してください。[テスト署名ドライバー](https://docs.microsoft.com/windows-hardware/drivers)します。
 
  
 

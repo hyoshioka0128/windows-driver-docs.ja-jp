@@ -1,6 +1,6 @@
 ---
-title: 多重化 ID の管理
-description: 多重化 ID の管理
+title: 多重 ID 管理
+description: 多重 ID 管理
 ms.assetid: feffc421-bd51-4174-80a4-1f9a36355667
 keywords:
 - RDBSS WDK ファイル システム、ID を多重化します。
@@ -12,14 +12,14 @@ keywords:
 - MID_MAP 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 618f98ab29c57b8d16506a852f7b8a5ac774e9e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dcad2321ab6254231361170c0dbc54c74bd92a84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537685"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383863"
 ---
-# <a name="multiplex-id-management"></a>多重化 ID の管理
+# <a name="multiplex-id-management"></a>多重 ID 管理
 
 
 ## <span id="ddk_multiplex_id_management_if"></span><span id="DDK_MULTIPLEX_ID_MANAGEMENT_IF"></span>
@@ -37,7 +37,7 @@ MID\_ATLAS データ構造、MID\_マップの構造と搭載が異なるさま�
 
 -   サーバーに要求を送信するための新しい MID を生成しています。 このルーチンは、一意の id。 指定された各同時実行要求をタグ付けの場合と同様、最大接続数制限の適用のクライアントで使用されます。
 
-MID は、65,536 値の組み合わせから、一意のタグ付けおよび搭載 (通常は 50) 数の id を効率的に管理できる必要があります。 場合によっては、小さな MID を作成する方が必要があります\_MID で使用されるカーネルのメモリを節約する ATLAS 構造\_構造をマップおよび MID のサイズを拡張\_ATLAS 構造の使用率が高くを効率的に処理するために必要な場合。 適切な時間領域のトレードオフを確実には、検索は、3 つのレベルの階層として編成されます。 MID を表すために使用される 16 ビットは、ビット フィールドの 3 つに分類されます。 (最下位) の最も右にあるフィールドの長さは初期 atlas で使用できる搭載の最大数によって決定されます。 この最大値にパラメーターを渡すは、 [ **RxCreateMidAtlas** ](https://msdn.microsoft.com/library/windows/hardware/ff554352)ルーチンと MID\_ATLAS データ構造が最初に作成します。 この最大値、MID の初期サイズを決定する\_ATLAS データ構造が作成されると数 MID\_マップ データ構造に対応することができます。 残りの長さは可能な下位 MID の最大サイズを決定する次の 2 つのフィールドの間で均等に分割されます\_ATLAS 構造を展開し、既存の MID を拡張するために定義できる\_ATLAS が 3 つのレベルMID の階層\_マップ データ構造体。 したがってには、各 MID\_ATLAS データ構造が MID の最大数を含めることができます\_マップ構造または 1 つの下位 MID へのポインター\_ATLAS と MID\_マップの構造体。
+MID は、65,536 値の組み合わせから、一意のタグ付けおよび搭載 (通常は 50) 数の id を効率的に管理できる必要があります。 場合によっては、小さな MID を作成する方が必要があります\_MID で使用されるカーネルのメモリを節約する ATLAS 構造\_構造をマップおよび MID のサイズを拡張\_ATLAS 構造の使用率が高くを効率的に処理するために必要な場合。 適切な時間領域のトレードオフを確実には、検索は、3 つのレベルの階層として編成されます。 MID を表すために使用される 16 ビットは、ビット フィールドの 3 つに分類されます。 (最下位) の最も右にあるフィールドの長さは初期 atlas で使用できる搭載の最大数によって決定されます。 この最大値にパラメーターを渡すは、 [ **RxCreateMidAtlas** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxcreatemidatlas)ルーチンと MID\_ATLAS データ構造が最初に作成します。 この最大値、MID の初期サイズを決定する\_ATLAS データ構造が作成されると数 MID\_マップ データ構造に対応することができます。 残りの長さは可能な下位 MID の最大サイズを決定する次の 2 つのフィールドの間で均等に分割されます\_ATLAS 構造を展開し、既存の MID を拡張するために定義できる\_ATLAS が 3 つのレベルMID の階層\_マップ データ構造体。 したがってには、各 MID\_ATLAS データ構造が MID の最大数を含めることができます\_マップ構造または 1 つの下位 MID へのポインター\_ATLAS と MID\_マップの構造体。
 
 たとえば、最大 50 の搭載の作成時に割り当てられると場合、に、最初のフィールドの長さは 6 (64 (2 \* \* 6) が 50 より大きい)。 残りの長さに分割されて、2 番目と 3 つ目の階層のレベルの 5 ビットごとの 2 つのフィールドのためを既存の MID\_ATLAS データ構造を展開するには複数 MID を対応するために\_マップ エントリ。
 
@@ -56,27 +56,27 @@ RDBSS 作成と操作、MID、次のルーチンを提供する\_ATLAS データ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553388" data-raw-source="[&lt;strong&gt;RxAssociateContextWithMid&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553388)"><strong>RxAssociateContextWithMid</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxassociatecontextwithmid" data-raw-source="[&lt;strong&gt;RxAssociateContextWithMid&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxassociatecontextwithmid)"><strong>RxAssociateContextWithMid</strong></a></p></td>
 <td align="left"><p>このルーチンは、指定した不透明なコンテキストを MID_ATLAS 構造から使用可能な MID に関連付けます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554352" data-raw-source="[&lt;strong&gt;RxCreateMidAtlas&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554352)"><strong>RxCreateMidAtlas</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxcreatemidatlas" data-raw-source="[&lt;strong&gt;RxCreateMidAtlas&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxcreatemidatlas)"><strong>RxCreateMidAtlas</strong></a></p></td>
 <td align="left"><p>このルーチンでは、MID_ATLAS データ構造体の新しいインスタンス、それを初期化します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554395" data-raw-source="[&lt;strong&gt;RxDestroyMidAtlas&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554395)"><strong>RxDestroyMidAtlas</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxdestroymidatlas" data-raw-source="[&lt;strong&gt;RxDestroyMidAtlas&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxdestroymidatlas)"><strong>RxDestroyMidAtlas</strong></a></p></td>
 <td align="left"><p>このルーチンは MID_ATLAS データ構造体の既存のインスタンスを破棄し、それに割り当てられたメモリを解放します。 副作用として呼び出して、渡された MID_ATLAS 構造内のすべての有効なコンテキストのコンテキストのデストラクターでします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554545" data-raw-source="[&lt;strong&gt;RxMapMidToContext&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554545)"><strong>RxMapMidToContext</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxmapmidtocontext" data-raw-source="[&lt;strong&gt;RxMapMidToContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxmapmidtocontext)"><strong>RxMapMidToContext</strong></a></p></td>
 <td align="left"><p>このルーチンは、MID を MID_ATLAS 構造に関連付けられているそのコンテキストにマップします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554541" data-raw-source="[&lt;strong&gt;RxMapAndDissociateMidFromContext&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554541)"><strong>RxMapAndDissociateMidFromContext</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxmapanddissociatemidfromcontext" data-raw-source="[&lt;strong&gt;RxMapAndDissociateMidFromContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxmapanddissociatemidfromcontext)"><strong>RxMapAndDissociateMidFromContext</strong></a></p></td>
 <td align="left"><p>このルーチンは、MID_ATLAS 構造では、関連付けられているコンテキストに、MID をマップし、コンテキストから MID の関連付けを解除します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554686" data-raw-source="[&lt;strong&gt;RxReassociateMid&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554686)"><strong>RxReassociateMid</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxreassociatemid" data-raw-source="[&lt;strong&gt;RxReassociateMid&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/midatlax/nf-midatlax-rxreassociatemid)"><strong>RxReassociateMid</strong></a></p></td>
 <td align="left"><p>このルーチンは、代替のコンテキストで、MID を再関連付けします。</p></td>
 </tr>
 </tbody>

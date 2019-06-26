@@ -4,12 +4,12 @@ description: このトピックでは、Windows の更新 (WU) サービスを�
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6eeab3f3f202b34af9f094e2dd56380f3b9735b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c620882d02e54124c187ac5aae690be6067929d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339487"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384785"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>Windows Update を使用したデバイス ファームウェアの更新
 
@@ -23,7 +23,7 @@ ms.locfileid: "63339487"
 
 通常、ファームウェア ドライバーの更新では、軽量のデバイス ドライバーには、次です。
 
-* デバイスの開始時またはドライバーの[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。
+* デバイスの開始時またはドライバーの[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。
 
     1. アタッチされているデバイスを識別します。
     2. ドライバーがデバイスのバージョンより新しいファームウェアのバージョンを持っているかどうかを決定します。

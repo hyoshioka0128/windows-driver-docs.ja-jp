@@ -4,12 +4,12 @@ description: PWM コント ローラーは、SoC の一部であるため、メ�
 ms.assetid: 911375A9-6761-45C1-BB5E-79BC0E4409AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa980ceb8c5e2d9108c5763ee9bfee6d99331032
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f1bbeb1a4550f2f967088e44575a22408161717
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352711"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386304"
 ---
 # <a name="pwm-driver-for-an-on-soc-pwm-module"></a>on-SoC PWM モジュールの PWM ドライバー
 SoC の一部であるパルス幅変調 (PWM) コント ローラーへのアクセスを提供して、メモリ マップト SoC のアドレス空間に、する必要があるライターはカーネル モード ドライバー。 ドライバーは、UWP アプリは Windows.Devices.Pwm 名前空間で定義されている PWM WinRT Api を介して公開されているシステム PWM デバイスにアクセスできるように、PWM コント ローラーのデバイス クラスのインターフェイスを登録する必要があります。 
@@ -45,7 +45,7 @@ PWM デバイスは、単一のコント ローラーと 1 つまたは複数の
 
 **重要な API**
 
--   [PWM IOCTLs](https://msdn.microsoft.com/library/windows/desktop/mt826481)
+-   [PWM IOCTLs](https://docs.microsoft.com/windows/desktop/DevIO/pwm-api)
 
 ## <a name="about-pwm"></a>PWM について
 PWM では、波形の平均値のバリエーションで変調されたパルス幅を四角形のパルス wave を生成するための基本的な手法について説明します。  
@@ -101,9 +101,9 @@ PWM を通じてピンには、Ioctl が定義されているまたはアプリ�
 
 ## <a name="setting-device-interface-properties"></a>デバイス インターフェイスのプロパティの設定
 
-UWP アプリから PWM WinRT Api を使用してこれら[デバイス インターフェイスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541409(v=vs.85).aspx)設定する必要があります。
+UWP アプリから PWM WinRT Api を使用してこれら[デバイス インターフェイスのプロパティ](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))設定する必要があります。
 
--   [DEVPKEY_DeviceInterface_Restricted](https://msdn.microsoft.com/library/windows/hardware/hh406291(v=vs.85).aspx) 
+-   [DEVPKEY_DeviceInterface_Restricted](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted) 
 
     現在の UWP デバイスへのアクセス モデルに従って、PWM デバイス インターフェイスへの UWP アプリへのアクセスを提供する設定の制限付きデバイス インターフェイスのプロパティを FALSE が必要です。   
 
@@ -487,20 +487,20 @@ PWM IOCTL 要求は、アプリケーションまたは別のドライバーに�
 
 **コント ローラーの Ioctl**
 
--    [**IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD**](https://msdn.microsoft.com/library/windows/desktop/mt826475) 
--    [**IOCTL_PWM_CONTROLLER_GET_INFO**](https://msdn.microsoft.com/library/windows/desktop/mt826476) 
--    [**IOCTL_PWM_CONTROLLER_SET_DESIRED_PERIOD**](https://msdn.microsoft.com/library/windows/desktop/mt826478)
+-    [**IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_get_actual_period) 
+-    [**IOCTL_PWM_CONTROLLER_GET_INFO**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_get_info) 
+-    [**IOCTL_PWM_CONTROLLER_SET_DESIRED_PERIOD**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_set_desired_period)
 
 
 **Pin の Ioctl**
 
--    [**IOCTL_PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](https://msdn.microsoft.com/library/windows/desktop/mt843915)
--    [**IOCTL_PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](https://msdn.microsoft.com/library/windows/desktop/mt843918)
--    [**IOCTL_PWM_PIN_GET_POLARITY**](https://msdn.microsoft.com/library/windows/desktop/mt843916)
--    [**IOCTL_PWM_PIN_SET_POLARITY**](https://msdn.microsoft.com/library/windows/desktop/mt843919)
--    [**IOCTL_PWM_PIN_START**](https://msdn.microsoft.com/library/windows/desktop/mt843920)
--    [**IOCTL_PWM_PIN_STOP**](https://msdn.microsoft.com/library/windows/desktop/mt843921)
--    [**IOCTL_PWM_PIN_IS_STARTED**](https://msdn.microsoft.com/library/windows/desktop/mt843917)    
+-    [**IOCTL_PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_get_active_duty_cycle_percentage)
+-    [**IOCTL_PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_set_active_duty_cycle_percentage)
+-    [**IOCTL_PWM_PIN_GET_POLARITY**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_get_polarity)
+-    [**IOCTL_PWM_PIN_SET_POLARITY**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_set_polarity)
+-    [**IOCTL_PWM_PIN_START**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_start)
+-    [**IOCTL_PWM_PIN_STOP**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_stop)
+-    [**IOCTL_PWM_PIN_IS_STARTED**](https://docs.microsoft.com/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_is_started)    
 
 IOCTL 要求ごとに、PWM drivr が、次を確認する必要があります。 
 

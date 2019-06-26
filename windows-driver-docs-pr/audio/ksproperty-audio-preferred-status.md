@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2bcbcf8f0facc1830f7d3309fcc2c482237086a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 334ad5a7deb914f6f3cd31892da7e1426088bc35
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332949"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391466"
 ---
 # <a name="kspropertyaudiopreferredstatus"></a>KSPROPERTY\_オーディオ\_優先\_状態
 
@@ -53,8 +53,8 @@ KSPROPERTY\_オーディオ\_優先\_STATUS プロパティは、システムの
 <td align="left"><p>X</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537093" data-raw-source="[&lt;strong&gt;KSAUDIO_PREFERRED_STATUS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537093)"><strong>KSAUDIO_PREFERRED_STATUS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_preferred_status" data-raw-source="[&lt;strong&gt;KSAUDIO_PREFERRED_STATUS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_preferred_status)"><strong>KSAUDIO_PREFERRED_STATUS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ KSPROPERTY\_オーディオ\_優先\_プロパティの状態要求のステー�
 <a name="remarks"></a>注釈
 -------
 
-[SysAudio システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#sysaudio-system-driver) wave レコード、MIDI、またはミキサーのデバイスを優先する新しいデバイスを選択したとき、または以前に選択したときに優先するデバイスの選択を解除ウェーブの再生を通知するためにこのプロパティを使用します。
+[SysAudio システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#sysaudio-system-driver) wave レコード、MIDI、またはミキサーのデバイスを優先する新しいデバイスを選択したとき、または以前に選択したときに優先するデバイスの選択を解除ウェーブの再生を通知するためにこのプロパティを使用します。
 
 任意のデバイスについては、次を参照してください。 [ **SetupPreferredAudioDevices**](setuppreferredaudiodevices.md)します。
 
@@ -93,9 +93,9 @@ KSPROPERTY\_オーディオ\_優先\_プロパティの状態要求のステー�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAUDIO\_優先\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff537093)
+[**KSAUDIO\_優先\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_preferred_status)
 
 [**SetupPreferredAudioDevices**](setuppreferredaudiodevices.md)
 

@@ -7,12 +7,12 @@ keywords:
 - 旧バージョンとの互換性 WDK NDIS 6.20 が動作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9c56a0c1522da4a934aef8160c95ec9802e09f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9b5c9a8f0fc758149df88b0b345c5f1f924cb87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383613"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387277"
 ---
 # <a name="ndis-620-backward-compatibility"></a>NDIS 6.20 の下位互換性
 
@@ -42,7 +42,7 @@ Windows 7 の後に、Microsoft Windows のバージョンでこの IrDA ミニ�
 
 Windows 7 の後に、Microsoft Windows のバージョンでこの中間のフィルター ドライバーはサポートされません。 NDIS 6.0 フィルター ドライバー インターフェイスを使用する必要があります。 フィルター ドライバーの詳細については、次を参照してください。 [NDIS フィルター ドライバー](ndis-filter-drivers.md)します。
 
-Windows 7 の後に、Microsoft Windows のバージョンでこの 802.3 をエミュレートするドライバーが 802.11 はサポートされません。 NDIS 802.11 ドライバーでは、ネイティブの 802.11 インターフェイスをサポートする必要があります。 ネイティブの 802.11 の詳細については、次を参照してください。[ネイティブ 802.11 ワイヤレス LAN](https://msdn.microsoft.com/library/windows/hardware/ff560689)します。
+Windows 7 の後に、Microsoft Windows のバージョンでこの 802.3 をエミュレートするドライバーが 802.11 はサポートされません。 NDIS 802.11 ドライバーでは、ネイティブの 802.11 インターフェイスをサポートする必要があります。 ネイティブの 802.11 の詳細については、次を参照してください。[ネイティブ 802.11 ワイヤレス LAN](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560689(v=vs.85))します。
 
 Windows 7 の後に、Microsoft Windows のバージョンでこの NDIS WAN ドライバーはサポートされません。 NDIS 6.0 いる CoNDIS WAN ドライバー モデルには、NDIS WAN のドライバーを移植する必要があります。 いる CoNDIS WAN の詳細については、WAN ミニポート ドライバーを参照してください。
 

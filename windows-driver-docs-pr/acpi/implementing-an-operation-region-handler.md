@@ -9,12 +9,12 @@ keywords:
 - WDM 関数ドライバー WDK ACPI、領域の操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f814c1b018c8b93f9fec94ef066bd08346ddb185
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b33bf2f8820507cd9b8409532f6444b7a30c65c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328823"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355837"
 ---
 # <a name="implementing-an-operation-region-handler"></a>操作領域ハンドラーを実装する
 
@@ -22,7 +22,7 @@ ms.locfileid: "63328823"
 
 
 
-ドライバーは、これは操作リージョン ハンドラーを提供する必要があります、 [ **PACPI\_OP\_リージョン\_ハンドラー**](https://msdn.microsoft.com/library/windows/hardware/ff536153)-コールバックの型を指定します。 ACPI ドライバーでは、ドライバーの操作のリージョン内のデータ フィールドにアクセスする操作のハンドラーを呼び出します。 関数ドライバーと ACPI BIOS の結合操作は、ベンダー定義し、デバイスに固有です。 一般に、関数のドライバーと ACPI BIOS は、デバイス固有の操作が発生し、戻り値のすべての情報が適切なインデックス操作の領域でアクセスします。
+ドライバーは、これは操作リージョン ハンドラーを提供する必要があります、 [ **PACPI\_OP\_リージョン\_ハンドラー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/oprghdlr/nc-oprghdlr-acpi_op_region_handler)-コールバックの型を指定します。 ACPI ドライバーでは、ドライバーの操作のリージョン内のデータ フィールドにアクセスする操作のハンドラーを呼び出します。 関数ドライバーと ACPI BIOS の結合操作は、ベンダー定義し、デバイスに固有です。 一般に、関数のドライバーと ACPI BIOS は、デバイス固有の操作が発生し、戻り値のすべての情報が適切なインデックス操作の領域でアクセスします。
 
 操作リージョン ハンドラーは、通常、ACPI ドライバーは、ハンドラーに渡される次のパラメーターを使用します。
 

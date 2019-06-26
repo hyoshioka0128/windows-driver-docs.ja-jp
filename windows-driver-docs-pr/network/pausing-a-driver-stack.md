@@ -7,12 +7,12 @@ keywords:
 - 一時停止ドライバー スタックの WDK ネットワー キング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a414f751dd242c165dbeba95c375488fd5320c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ee227b67327fef41ab6503eb07bda8d9b54096f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382624"
 ---
 # <a name="pausing-a-driver-stack"></a>ドライバー スタックの一時停止
 
@@ -28,11 +28,11 @@ NDIS は、フィルター モジュールを挿入したり、バインドの�
 
 2.  NDIS には、スタックの上部にある以降およびミニポート ドライバーに進行して、すべてのフィルター モジュールが一時停止します。
 
-    NDIS フィルター ドライバーを呼び出してから[ *FilterPause* ](https://msdn.microsoft.com/library/windows/hardware/ff549957)関数、フィルター モジュールは、一時停止状態になります。 で未処理のすべての NDIS 返しますが、指示を受信し、すべての未処理の送信操作が完了した後、フィルター モジュールが一時停止状態になります。
+    NDIS フィルター ドライバーを呼び出してから[ *FilterPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_pause)関数、フィルター モジュールは、一時停止状態になります。 で未処理のすべての NDIS 返しますが、指示を受信し、すべての未処理の送信操作が完了した後、フィルター モジュールが一時停止状態になります。
 
 3.  NDIS は、ミニポート アダプターを一時停止します。
 
-    NDIS ミニポート ドライバーを呼び出してから[ *MiniportPause* ](https://msdn.microsoft.com/library/windows/hardware/ff559418)関数、ミニポート アダプターは一時停止状態になります。 未処理のすべての NDIS 返します兆候を受け取った後、ミニポート アダプターは一時停止状態になります。
+    NDIS ミニポート ドライバーを呼び出してから[ *MiniportPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_pause)関数、ミニポート アダプターは一時停止状態になります。 未処理のすべての NDIS 返します兆候を受け取った後、ミニポート アダプターは一時停止状態になります。
 
 **注**  NDIS ドライバーに一時停止要求が失敗することはできません。 発生したエラーを記録する必要があります。
 

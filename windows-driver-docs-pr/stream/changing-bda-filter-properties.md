@@ -8,12 +8,12 @@ keywords:
 - メソッドは、WDK BDA、フィルター プロパティの変更を設定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f2d456e8e19154c4d5d1c3012defd46343c9c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 252f2d35a721a52b6ee4839a28d78e0386b5b8b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351852"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386653"
 ---
 # <a name="changing-bda-filter-properties"></a>BDA フィルター プロパティの変更
 
@@ -21,7 +21,7 @@ ms.locfileid: "63351852"
 
 
 
-メディア放送のビューがシステムに同時に実行できるアプリケーションの複数のインスタンス、フィルターの複数のインスタンスに対応する BDA ミニドライバーを作成する必要があります。 各フィルターのインスタンスは、さまざまな情報を含めることができます。 たとえば、チューナーのフィルターの 1 つのインスタンスは、別のインスタンスにチャネル 8 にチューニングする要求を含めることができます、5、チャネルを調整できる要求を含めることができます。 コントロールが遷移する 1 つのインスタンスから、BDA ミニドライバーにリソースを構成する方法を変更する場合は、基になるチューニング デバイスを指定する必要があります。 BDA ミニドライバーのメソッドの要求の処理、 [KSMETHODSETID\_BdaChangeSync](https://msdn.microsoft.com/library/windows/hardware/ff563403)プロパティの一覧を調整する設定メソッドでは、ミニドライバーのフィルターのインスタンスを 1 つ上に要求します。
+メディア放送のビューがシステムに同時に実行できるアプリケーションの複数のインスタンス、フィルターの複数のインスタンスに対応する BDA ミニドライバーを作成する必要があります。 各フィルターのインスタンスは、さまざまな情報を含めることができます。 たとえば、チューナーのフィルターの 1 つのインスタンスは、別のインスタンスにチャネル 8 にチューニングする要求を含めることができます、5、チャネルを調整できる要求を含めることができます。 コントロールが遷移する 1 つのインスタンスから、BDA ミニドライバーにリソースを構成する方法を変更する場合は、基になるチューニング デバイスを指定する必要があります。 BDA ミニドライバーのメソッドの要求の処理、 [KSMETHODSETID\_BdaChangeSync](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdachangesync)プロパティの一覧を調整する設定メソッドでは、ミニドライバーのフィルターのインスタンスを 1 つ上に要求します。
 
 主な目的、KSMETHODSETID\_BdaChangeSync メソッドのセットがフィルターの基になるミニドライバーを取得し、ミニドライバーのデバイス オブジェクトからリソースを解放する位置のトリガー ポイントを提供することです。 ミニドライバーは、フィルターの移行と停止の状態の間でこれらのトリガー ポイントを調整する必要があります。 たとえば、フィルターが停止状態にある場合、ミニドライバーする必要があります、フィルターに新しいリソースを割り当てるがネットワーク プロバイダーを指定 BDA トポロジの変更をコミットするたびに、これらのリソースを取得できません。 フィルターは、その後その停止状態から遷移をミニドライバーは、基になるデバイスからそれらのリソースを取得しようとする必要があります。
 
@@ -29,13 +29,13 @@ ms.locfileid: "63351852"
 
 通常は、BDA ミニドライバーのフィルター オブジェクトを傍受し、KSMETHODSETID のメソッドのメソッドを提供\_BdaChangeSync メソッドのセット。 たとえば、ミニドライバーは、以降、検査、およびフィルターの変更をコミットし、フィルターの変更状態を取得するメソッドを提供します。 さらに、次のミニドライバーが指定したメソッド呼び出す必要があります BDA サポートは、対応するライブラリ関数、ミニドライバーは BDA サポート ライブラリに既に登録された構造に変更を同期します。
 
--   変更の開始メソッドの呼び出し、 [ **BdaStartChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff556507)関数。
+-   変更の開始メソッドの呼び出し、 [ **BdaStartChanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdastartchanges)関数。
 
--   チェック変更メソッドの呼び出し、 [ **BdaCheckChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff556433)関数。
+-   チェック変更メソッドの呼び出し、 [ **BdaCheckChanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacheckchanges)関数。
 
--   変更をコミット メソッドの呼び出し、 [ **BdaCommitChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff556435)関数。
+-   変更をコミット メソッドの呼び出し、 [ **BdaCommitChanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacommitchanges)関数。
 
--   Get 変更状態メソッドの呼び出し、 [ **BdaGetChangeState** ](https://msdn.microsoft.com/library/windows/hardware/ff556458)関数。
+-   Get 変更状態メソッドの呼び出し、 [ **BdaGetChangeState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdagetchangestate)関数。
 
 次のコード スニペットは、KSMETHODSETID のメソッドの要求をインターセプトする方法を示しています。\_BdaChangeSync メソッドの内部メソッドを使用して設定します。
 

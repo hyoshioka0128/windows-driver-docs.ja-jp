@@ -9,12 +9,12 @@ keywords:
 - デバイス履歴の WDK カーネル、デバイスの特性
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1adc7d7d5416fd08aaacf3d1ab24c358335063f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b19d5cb4f7f61d73ee556ad352b2b46503291f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367930"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383005"
 ---
 # <a name="specifying-device-characteristics"></a>デバイスの特性の指定
 
@@ -22,13 +22,13 @@ ms.locfileid: "63367930"
 
 
 
-各デバイス オブジェクトには、1 つまたは複数のデバイスの特性を設定できます。 デバイスの特性が flags でフラグとして格納されている、**特性**デバイス オブジェクトのメンバー [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。
+各デバイス オブジェクトには、1 つまたは複数のデバイスの特性を設定できます。 デバイスの特性が flags でフラグとして格納されている、**特性**デバイス オブジェクトのメンバー [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。
 
 ほとんどのドライバー ファイルのみを指定する\_デバイス\_SECURE\_特性を開きます。 これにより、デバイスの名前空間に同じセキュリティ設定が開いているすべての要求に適用されることができます。 詳細については、次を参照してください。[デバイス Namespace のアクセスを制御する](controlling-device-namespace-access.md)します。
 
-ファイル\_自動生成された\_デバイス\_名は Pdo のみ使用します。 ファイル\_フロッピー\_フロッピー ディスク、ファイル\_リムーバブル\_メディア、およびファイル\_書き込み\_1 回\_メディアの特性は記憶域デバイスに固有です。 可能なデバイスの特性フラグの説明は、の説明を参照して、**特性**のメンバー [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)します。
+ファイル\_自動生成された\_デバイス\_名は Pdo のみ使用します。 ファイル\_フロッピー\_フロッピー ディスク、ファイル\_リムーバブル\_メディア、およびファイル\_書き込み\_1 回\_メディアの特性は記憶域デバイスに固有です。 可能なデバイスの特性フラグの説明は、の説明を参照して、**特性**のメンバー [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)します。
 
-ファイルなど、特定のデバイスの特性\_自動生成された\_デバイス\_名、個々 のデバイス オブジェクトにのみ適用されます。 呼び出すことによって、デバイス オブジェクトを作成するとき、ドライバーは、デバイスの特性の個々 のデバイス オブジェクトの設定を指定できます[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)または[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)します。
+ファイルなど、特定のデバイスの特性\_自動生成された\_デバイス\_名、個々 のデバイス オブジェクトにのみ適用されます。 呼び出すことによって、デバイス オブジェクトを作成するとき、ドライバーは、デバイスの特性の個々 のデバイス オブジェクトの設定を指定できます[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)または[ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)します。
 
 次の特性は、デバイス全体のスタックに適用されます。
 

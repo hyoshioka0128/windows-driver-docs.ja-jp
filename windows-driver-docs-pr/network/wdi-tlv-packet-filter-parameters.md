@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PACKET_FILTER_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd75422df1cb7dad11058eecd90245232412ec4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fefe392f204db6abb985054e2658573e2cf8886d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385411"
 ---
 # <a name="wditlvpacketfilterparameters"></a>WDI\_TLV\_パケット\_フィルター\_パラメーター
 
 
-WDI\_TLV\_パケット\_フィルター\_パラメーターは、のパケット フィルター パラメーターを含む TLV [OID\_WDI\_設定\_受信\_パケット\_フィルター](https://msdn.microsoft.com/library/windows/hardware/dn925942)します。
+WDI\_TLV\_パケット\_フィルター\_パラメーターは、のパケット フィルター パラメーターを含む TLV [OID\_WDI\_設定\_受信\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-receive-packet-filter)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -33,7 +33,7 @@ Uint32 型のサイズをバイト単位で。
 
 | 型                                                                      | 説明                                |
 |---------------------------------------------------------------------------|--------------------------------------------|
-| [**WDI\_パケット\_フィルター\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926104) (UINT32) | 必要な Wi-fi パケット フィルターを指定します。 |
+| [**WDI\_パケット\_フィルター\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_packet_filter_type) (UINT32) | 必要な Wi-fi パケット フィルターを指定します。 |
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - WDK のバッファーにファイル システムがありません。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73cbfd8855a3481090d997b436f5d80d36dd1c84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1106fef7d2c48024f28dc2a33136545a853fb0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379716"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384567"
 ---
 # <a name="irp-based-ioctl-and-fsctl-operations"></a>IRP ベースの IOCTL と FSCTL 操作
 
@@ -44,7 +44,7 @@ ms.locfileid: "63379716"
 #define METHOD_NEITHER                  3
 ```
 
-詳細については、CTL\_マクロのコードは、「 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)します。
+詳細については、CTL\_マクロのコードは、「 [I/O 制御コードを定義する](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)します。
 
 注その IRP\_MJ\_デバイス\_コントロールは高速な I/O 操作にもできます。 高速な I/O 操作である場合は、IOCTL の転送の種類に関係なく、バッファーも直接 I/O が常に使用します。 タイミングの詳細については IRP\_MJ\_デバイス\_コントロールが高速な I/O 操作を参照してください[操作することができますが IRP ベースまたは高速の I/O](operations-that-can-be-irp-based-or-fast-i-o.md)します。
 

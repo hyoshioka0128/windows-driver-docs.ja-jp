@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fcf284c92c6f288d3118e341a6edc727f72bba5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f86676100072366aae4fb61127b5307f49a78e6
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379506"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392147"
 ---
 # <a name="wlanconnectionroaming-rule-ndis"></a>WlanConnectionRoaming ルール (ndis)
 
@@ -30,7 +30,7 @@ ms.locfileid: "63379506"
 
 |                                   |                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x00093005) |
+| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00093005) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -46,7 +46,7 @@ ms.locfileid: "63379506"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a>を選択し、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh454208" data-raw-source="[NDIS/WIFI verification](https://msdn.microsoft.com/library/windows/hardware/hh454208)">NDIS/WIFI 検証</a>オプション。</p></td>
+<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>を選択し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[NDIS/WIFI verification](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">NDIS/WIFI 検証</a>オプション。</p></td>
 </tr>
 </tbody>
 </table>
@@ -56,14 +56,14 @@ ms.locfileid: "63379506"
 <a name="applies-to"></a>対象
 ----------
 
-[**MiniportHaltEx**](https://msdn.microsoft.com/library/windows/hardware/ff559388)
-[**NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)も参照してください
+[**MiniportHaltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)
+[**NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)も参照してください
 --------
 
-[接続の一般的な操作のガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff552458)
-[NDIS\_状態\_DOT11\_接続\_開始](https://msdn.microsoft.com/library/windows/hardware/ff567328)
-[OID\_DOT11\_リセット\_要求](https://msdn.microsoft.com/library/windows/hardware/ff569409)
-[NDIS\_状態\_DOT11\_ローミング\_開始](https://msdn.microsoft.com/library/windows/hardware/ff567360)
+[接続の一般的な操作のガイドライン](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines)
+[NDIS\_状態\_DOT11\_接続\_開始](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-connection-start)
+[OID\_DOT11\_リセット\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)
+[NDIS\_状態\_DOT11\_ローミング\_開始](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-roaming-start)
  
 
  

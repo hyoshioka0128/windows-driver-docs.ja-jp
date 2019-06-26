@@ -5,12 +5,12 @@ ms.assetid: ac7120a3-58bb-4047-b4b7-ad9fbaf14e4f
 ms.date: 08/08/2017
 keywords: -OID_GEN_XMIT_OK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 72108ade883a18748ad1839258d00c37769673ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d97a14765112a61347797a6283dd6f5431c492b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355930"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385733"
 ---
 # <a name="oidgenxmitok"></a>OID\_GEN\_XMIT\_OK
 
@@ -39,7 +39,7 @@ ms.locfileid: "63355930"
 
 OID\_GEN\_XMIT\_[ok] をエラーなしで送信されるフレームの数を指定します。 ただし、 [OID\_GEN\_統計](oid-gen-statistics.md)この情報は含まれません。
 
-注: 統計の Oid は NDIS は、それを処理しない限り、NDIS 6.0 とそれ以降のミニポート ドライバーの必須です。 Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
+注: 統計の Oid は NDIS は、それを処理しない限り、NDIS 6.0 とそれ以降のミニポート ドライバーの必須です。 Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
 
 <a name="requirements"></a>要件
 ------------

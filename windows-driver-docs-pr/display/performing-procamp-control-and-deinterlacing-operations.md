@@ -7,12 +7,12 @@ keywords:
 - WDK の DirectX va なので、ProcAmp デインター レース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32b32c139c33177a0e148add6278f6a6e3f8efb0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6e83c1ceb72977a838d98cf1f08a193826aa252
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385569"
 ---
 # <a name="performing-procamp-control-and-deinterlacing-operations"></a>ProcAmp コントロールおよびデインターレース操作の実行
 
@@ -20,7 +20,7 @@ ms.locfileid: "63366306"
 ## <span id="ddk_performing_procamp_control_and_deinterlacing_operations_gg"></span><span id="DDK_PERFORMING_PROCAMP_CONTROL_AND_DEINTERLACING_OPERATIONS_GG"></span>
 
 
-次のコード例を使用すると、ProcAmp コントロールと操作をデインター レースを実行できます。 このコードは、の実装、 [ *DdMoCompRender* ](https://msdn.microsoft.com/library/windows/hardware/ff550248)コールバック関数。 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)コールバック関数へのポインターを構造体します。
+次のコード例を使用すると、ProcAmp コントロールと操作をデインター レースを実行できます。 このコードは、の実装、 [ *DdMoCompRender* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)コールバック関数。 **RenderMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)コールバック関数へのポインターを構造体します。
 
 ```cpp
 DWORD APIENTRY

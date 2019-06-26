@@ -4,12 +4,12 @@ description: このホワイト ペーパーでは、Windows Driver Foundation (
 ms.assetid: C89A218F-3E73-4D3E-8F53-5D52E97711EF
 ms.date: 07/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ccf50f665a9025c01bfbc5f9cb3657a578c0110
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7eda183d28c0af33f88e0ae90fc89c122ca00be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392702"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363817"
 ---
 # <a name="tracing-and-diagnosability-for-wdf-drivers"></a>WDF ドライバーのトレースと診断能力
 
@@ -34,7 +34,7 @@ ms.locfileid: "63392702"
 
 Microsoft Word ファイル
 
-[Office ファイル ビューアーを入手します。](http://www.microsoft.com/download/office.aspx)
+[Office ファイル ビューアーを入手します。](https://www.microsoft.com/download/office.aspx)
 
 [![ここをクリックしてダウンロードするには](./images/download.png)](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/WPP_intro.docx)
 

@@ -4,12 +4,12 @@ description: 機能電源状態のサポート
 ms.assetid: F96214C9-702D-402E-B873-5DF57C521B34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b35c98b3faa551fbdf954c2d2a6ee0d9a24d5ca4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79bf569f7c99db281d18e59c71cc09f153bcac48
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382083"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368646"
 ---
 # <a name="supporting-functional-power-states"></a>機能電源状態のサポート
 
@@ -43,7 +43,7 @@ KMDF バージョン 1.11 以降、KMDF ドライバーを利用できます PoF
 <td align="left"><p>サポート対象</p></td>
 <td align="left"><p>サポート対象</p></td>
 <td align="left"><p>電源エンジン プラグイン (PEP) をアイドル タイムアウト値を判断して、ドライバーが 1 つだけの F 状態。</p>
-<p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff545903" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545903)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>で<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>または<strong>SystemManagedIdleTimoutWithHint</strong>します。</p></td>
+<p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>で<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>または<strong>SystemManagedIdleTimoutWithHint</strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="supporting-multiple-functional-power-states-for-single-component-devices.md" data-raw-source="[Single component, multiple states (F0, F1, F2…)](supporting-multiple-functional-power-states-for-single-component-devices.md)">1 つのコンポーネントでは、複数の状態 (F0、F1、F2...)</a></p></td>
@@ -51,8 +51,8 @@ KMDF バージョン 1.11 以降、KMDF ドライバーを利用できます PoF
 <td align="left"><p>サポートされない</p></td>
 <td align="left"><p>ドライバーは、1 つ以上の F 状態が場合。</p>
 <ul>
-<li>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/hh451097" data-raw-source="[&lt;strong&gt;WdfDeviceWdmAssignPowerFrameworkSettings&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451097)"> <strong>WdfDeviceWdmAssignPowerFrameworkSettings</strong> </a> WDM PoFx コールバックを登録します。</li>
-<li>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff545903" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545903)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>で<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>します。</li>
+<li>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings" data-raw-source="[&lt;strong&gt;WdfDeviceWdmAssignPowerFrameworkSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmassignpowerframeworksettings)"> <strong>WdfDeviceWdmAssignPowerFrameworkSettings</strong> </a> WDM PoFx コールバックを登録します。</li>
+<li>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings" data-raw-source="[&lt;strong&gt;WdfDeviceAssignS0IdleSettings&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)"> <strong>WdfDeviceAssignS0IdleSettings</strong> </a>で<em>IdleTimeoutType</em> = <strong>SystemManagedIdleTimout</strong>します。</li>
 </ul>
 <p>この場合は、KMDF、PoFx やり取りのほとんどを処理します。</p>
 <p>サンプル コードでは、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=617937" data-raw-source="[PoFx sample drivers](https://go.microsoft.com/fwlink/p/?LinkId=617937)">PoFx サンプル ドライバー</a>します。</p></td>
@@ -69,7 +69,7 @@ KMDF バージョン 1.11 以降、KMDF ドライバーを利用できます PoF
 
  
 
-KMDF PoFx 上に最小限の抽象化を追加するためには、ドライバーを記述する前に PoFx の基本を理解することをお勧めします。 確認すること勧めその結果、 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)これらのトピックを読む前にします。
+KMDF PoFx 上に最小限の抽象化を追加するためには、ドライバーを記述する前に PoFx の基本を理解することをお勧めします。 確認すること勧めその結果、 [、電源管理フレームワークの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)これらのトピックを読む前にします。
 
  
 

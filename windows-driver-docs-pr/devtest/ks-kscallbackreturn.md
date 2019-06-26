@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f02bcdc1007a9434bca667fad3ea6c6f7af8baa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e4ad0ceade5e4db82ea23d7ad6572a20553a09d
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374730"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67392778"
 ---
 # <a name="kscallbackreturn-rule-"></a>KsCallbackReturn rule ()
 
@@ -30,7 +30,7 @@ KsCallbackReturn ルールでは、カーネル ストリーミング (KS) ミ�
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x00081005) |
+| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00081005) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -49,7 +49,7 @@ KsCallbackReturn ルールでは、カーネル ストリーミング (KS) ミ�
 <td align="left"><p>このルールを確認するには、コマンド プロンプト ウィンドウを開きます。 Driver Verifier のコマンドを入力し、指定<strong>/domain ks</strong>します。</p>
 <p>次に、例を示します。</p>
 <p><strong>verifier /domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a>します。</p></td>
+<p>詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,9 +59,9 @@ KsCallbackReturn ルールでは、カーネル ストリーミング (KS) ミ�
 <a name="see-also"></a>関連項目
 --------
 
-[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)
-[*AVStrMiniPinSetDeviceState*](https://msdn.microsoft.com/library/windows/hardware/ff556359)
-[*AVStrMiniPinSetDataFormat*](https://msdn.microsoft.com/library/windows/hardware/ff556355)
+[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
+[*AVStrMiniPinSetDeviceState*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)
+[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)
  
 
  

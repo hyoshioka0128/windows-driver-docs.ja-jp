@@ -6,12 +6,12 @@ keywords:
 - GetOptionAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f857b23a017d99b4640668d821dcb5bfd1c4f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4040f5ec83409a89825450c8f21a43cd5546262
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379018"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362728"
 ---
 # <a name="using-getoptionattribute"></a>GetOptionAttribute の使用
 
@@ -21,7 +21,7 @@ ms.locfileid: "63379018"
 
 この関数は、PPD 機能のみサポートされます。 特定の属性が使用できない場合**GetOptionAttribute**返します E\_INVALIDARG します。
 
-次の表に、 *pdwDataType*パラメーターの値には、 [ **EATTRIBUTE\_DATATYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff548692)列挙型。
+次の表に、 *pdwDataType*パラメーターの値には、 [ **EATTRIBUTE\_DATATYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ne-printoem-_eattribute_datatype)列挙型。
 
 ### <a name="output-parameters-for-general-option-attributes"></a>[全般] オプションの属性の出力パラメーター
 
@@ -156,7 +156,7 @@ ms.locfileid: "63379018"
 
 *\*pdwDataType*: kADT\_CUSTOMSIZEPARAMS
 
-*pbData*: CUSTOMPARAM の配列\_最大の要素、各要素が、 [ **CUSTOMSIZEPARAM** ](https://msdn.microsoft.com/library/windows/hardware/ff547337)構造体。 この配列の各要素で PPD の指定された値を格納する\*ParamCustomPageSize キーワードの paramOption エントリ。 「方向」以外 paramOption、ミクロン lMinVal と lMaxVal 値です。 LMinVal と lMaxVal 値は「方向」の範囲で\[0、3\]します。
+*pbData*: CUSTOMPARAM の配列\_最大の要素、各要素が、 [ **CUSTOMSIZEPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_customsizeparam)構造体。 この配列の各要素で PPD の指定された値を格納する\*ParamCustomPageSize キーワードの paramOption エントリ。 「方向」以外 paramOption、ミクロン lMinVal と lMaxVal 値です。 LMinVal と lMaxVal 値は「方向」の範囲で\[0、3\]します。
 
 *\*pcbNeeded*: **sizeof**(CUSTOMSIZEPARAM) \* CUSTOMPARAM\_MAX
 
@@ -190,7 +190,7 @@ ms.locfileid: "63379018"
 
 ### <a name="note-on-paramcustompagesize"></a>ParamCustomPageSize に関する注意事項
 
-PPD ファイルの元の順序、min、および最大値を取得する方法を示すいくつかのサンプル コードをここでは、"\*ParamCustomPageSize 幅"エントリ。 CUSTOMPARAM\_printoem.h で定義されている幅定数のオフセットを示す、 [ **CUSTOMSIZEPARAM** ](https://msdn.microsoft.com/library/windows/hardware/ff547337)幅エントリに関連する情報を格納する構造体。 この構造体は CUSTOMPARAM のいずれかの\_このような構造体の配列を形成する最大 CUSTOMSIZEPARAM 構造体。 Printoem.h ヘッダー CUSTOMPARAM という名前の定数のセットを定義する\_XXX (幅、高さ、WidthOffset、HeightOffset、および印刷の向き) は、この配列内の構造体のオフセットを一覧表示します。
+PPD ファイルの元の順序、min、および最大値を取得する方法を示すいくつかのサンプル コードをここでは、"\*ParamCustomPageSize 幅"エントリ。 CUSTOMPARAM\_printoem.h で定義されている幅定数のオフセットを示す、 [ **CUSTOMSIZEPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_customsizeparam)幅エントリに関連する情報を格納する構造体。 この構造体は CUSTOMPARAM のいずれかの\_このような構造体の配列を形成する最大 CUSTOMSIZEPARAM 構造体。 Printoem.h ヘッダー CUSTOMPARAM という名前の定数のセットを定義する\_XXX (幅、高さ、WidthOffset、HeightOffset、および印刷の向き) は、この配列内の構造体のオフセットを一覧表示します。
 
 ```cpp
 PCUSTOMSIZEPARAM  pCSParam;

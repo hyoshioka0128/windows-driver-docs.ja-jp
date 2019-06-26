@@ -4,12 +4,12 @@ description: このセクションでは、Network Virtualization using Generic 
 ms.assetid: D1BE5659-4491-411B-9D32-9CB7A141A240
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ff1dc27865727c148b2450d29d31f288135aff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d0fb599d7766d119fa8ba2c998f0eb8645f8817
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348265"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371219"
 ---
 # <a name="network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>汎用ルーティング カプセル化 (NVGRE) タスク オフロードを使用したネットワークの仮想化
 
@@ -40,8 +40,8 @@ NVGRE の詳細については、次のインターネット ドラフトを参�
 
 NVGRE は、Generic Routing Encapsulation (GRE) に基づいています。 GRE の詳細については、次のリソースを参照してください。
 
--   [RFC 2784:汎用ルーティング カプセル化 (GRE)](http://tools.ietf.org/html/rfc2784)
--   [RFC 2890:GRE をキーとシーケンス番号の拡張機能](http://tools.ietf.org/html/rfc2890)
+-   [RFC 2784:汎用ルーティング カプセル化 (GRE)](https://tools.ietf.org/html/rfc2784)
+-   [RFC 2890:GRE をキーとシーケンス番号の拡張機能](https://tools.ietf.org/html/rfc2890)
 
 このセクションの内容:
 

@@ -6,12 +6,12 @@ keywords:
 - Irp WDK カーネル、Irp の処理
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 555dc8d8fb051791959fe6492633481888f1fc87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bccfd7b4ba8f0a8514520220105b6b6f50031eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342696"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384991"
 ---
 # <a name="different-ways-of-handling-irps---cheat-sheet"></a>IRP 処理のさまざまな方法 - チート シート 
 
@@ -73,7 +73,7 @@ DispatchRoutine_1(
 
 ### <a name="scenario-2-forward-and-wait"></a>例 2:前方参照と待機
 
-ドライバーは、下位のドライバーに IRP を転送し、返す IRP を処理できるようにするまで待機する必要がある場合は、次のコードを使用します。 これは、PNP Irp を処理するときに頻繁に実行されます。 たとえば、受信、 [IRP_MN_START_DEVICE](irp-mn-start-device.md) IRP、バス ドライバーに IRP を転送し、デバイスを開始する前に完了するまで待機します。 呼び出すことができます[ **IoForwardIrpSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff549100)を簡単にこの操作を実行します。
+ドライバーは、下位のドライバーに IRP を転送し、返す IRP を処理できるようにするまで待機する必要がある場合は、次のコードを使用します。 これは、PNP Irp を処理するときに頻繁に実行されます。 たとえば、受信、 [IRP_MN_START_DEVICE](irp-mn-start-device.md) IRP、バス ドライバーに IRP を転送し、デバイスを開始する前に完了するまで待機します。 呼び出すことができます[ **IoForwardIrpSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioforwardirpsynchronously)を簡単にこの操作を実行します。
 
 ```cpp
 NTSTATUS
@@ -355,9 +355,9 @@ DispatchRoutine_5(
 |    I/O マネージャーは IRP に関連付けられているバッファーを解放するための完了後です。                                                     |    I/O マネージャーは、クリーンアップを行うことはできません。 ドライバーは、完了ルーチンを提供し、IRP に関連付けられているバッファーを解放する必要があります。          |
 |    PASSIVE_LEVEL 等しく IRQL レベルで送信する必要があります。                                                                                                |    IRQL で送信できる以下 DISPATCH_LEVEL ターゲット ドライバーのディスパッチ ルーチンは DISPATCH_LEVEL で要求を処理できる場合にします。     |
 
-### <a name="scenario-6-send-a-synchronous-device-control-request-irpmjinternaldevicecontrolirpmjdevicecontrol-by-using-iobuilddeviceiocontrolrequest"></a>シナリオ 6:IoBuildDeviceIoControlRequest を使用して同期デバイス制御要求 (IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL) を送信します。
+### <a name="scenario-6-send-a-synchronous-device-control-request-irpmjinternaldevicecontrolirpmjdevicecontrol-by-using-iobuilddeviceiocontrolrequest"></a>シナリオ 6: IoBuildDeviceIoControlRequest を使用して同期デバイス制御要求 (IRP_MJ_INTERNAL_DEVICE_CONTROL/IRP_MJ_DEVICE_CONTROL) を送信します。
 
-次のコードを呼び出す方法を示します[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)同期 IOCTL 要求に要求します。  詳細については、次を参照してください。 [IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)と[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)します。
+次のコードを呼び出す方法を示します[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)同期 IOCTL 要求に要求します。  詳細については、次を参照してください。 [IRP_MJ_INTERNAL_DEVICE_CONTROL](irp-mj-internal-device-control.md)と[IRP_MJ_DEVICE_CONTROL](irp-mj-device-control.md)します。
 
 ```cpp
 NTSTATUS
@@ -627,8 +627,8 @@ MakeSynchronousIoctlWithTimeOutCompletion(
 }
 ```
 
-### <a name="scenario-8-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statuscontinuecompletion"></a>シナリオ 8:IoBuildSynchronousFsdRequest を使用して、IOCTL 以外の同期要求を送信する-完了ルーチンが STATUS_CONTINUE_COMPLETION を返します
-次のコードは、呼び出すことによって、IOCTL 以外の同期要求を作成する方法を示しています。 [ **IoBuildSynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548330)します。 ここで示す手法は、シナリオ 6 に似ています。
+### <a name="scenario-8-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statuscontinuecompletion"></a>シナリオ 8: IoBuildSynchronousFsdRequest を使用して、IOCTL 以外の同期要求を送信する-完了ルーチンが STATUS_CONTINUE_COMPLETION を返します
+次のコードは、呼び出すことによって、IOCTL 以外の同期要求を作成する方法を示しています。 [ **IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)します。 ここで示す手法は、シナリオ 6 に似ています。
 
 ```cpp
 NTSTATUS
@@ -726,7 +726,7 @@ MakeSynchronousNonIoctlRequestCompletion(
 }
 ```
 
-### <a name="scenario-9-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statusmoreprocessingrequired"></a>シナリオ 9:IoBuildSynchronousFsdRequest を使用して、IOCTL 以外の同期要求を送信する-完了ルーチンが STATUS_MORE_PROCESSING_REQUIRED を返します 
+### <a name="scenario-9-send-a-synchronous-non-ioctl-request-by-using-iobuildsynchronousfsdrequest---completion-routine-returns-statusmoreprocessingrequired"></a>シナリオ 9: IoBuildSynchronousFsdRequest を使用して、IOCTL 以外の同期要求を送信する-完了ルーチンが STATUS_MORE_PROCESSING_REQUIRED を返します 
 このシナリオと 8 のシナリオの唯一の違いは、完了ルーチンが STATUS_MORE_PROCESSING_REQUIRED を返します。 
 
 ```cpp
@@ -832,8 +832,8 @@ NTSTATUS MakeSynchronousNonIoctlRequestCompletion2(
 }
 ```
 
-### <a name="scenario-10-send-an-asynchronous-request-by-using-iobuildasynchronousfsdrequest"></a>シナリオ 10:IoBuildAsynchronousFsdRequest を使用して非同期要求を送信します。 
-このシナリオは、呼び出すことによって、非同期要求を作成する方法を示しています。 [ **IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)します。 
+### <a name="scenario-10-send-an-asynchronous-request-by-using-iobuildasynchronousfsdrequest"></a>シナリオ 10: IoBuildAsynchronousFsdRequest を使用して非同期要求を送信します。 
+このシナリオは、呼び出すことによって、非同期要求を作成する方法を示しています。 [ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)します。 
 
 非同期の要求で要求を作成したスレッドは IRP が完了するまで待機するがありません。 IRP がスレッドに関連付けられていないために、IRP を任意のスレッド コンテキストで作成できます。 完了ルーチンを提供し、IRP を再利用する予定がない場合に、完了ルーチンのバッファーと IRP をリリースする必要があります。 これは I/O マネージャーがドライバーを作成する非同期 Irp の完了後のクリーンアップを実行できないためです (で作成された**IoBuildAsynchronousFsdRequest**と**IoAllocateIrp**)。 
 
@@ -965,7 +965,7 @@ MakeAsynchronousRequestCompletion(
 
 ### <a name="scenario-11-send-an-asynchronous-request-by-using-ioallocateirp"></a>シナリオ 11:IoAllocateIrp を使用して非同期要求を送信します。
 
-このシナリオは、呼び出す代わりに点を除いて前のシナリオに似ています[ **IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)、このシナリオでは、 [ **IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257) IRP を作成する関数。
+このシナリオは、呼び出す代わりに点を除いて前のシナリオに似ています[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)、このシナリオでは、 [ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp) IRP を作成する関数。
 
 ```cpp
 NTSTATUS

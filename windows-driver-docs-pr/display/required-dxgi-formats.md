@@ -4,19 +4,19 @@ description: このトピックでは、そのマイクロソフトの Direct3D 
 ms.assetid: 1CB419B9-DD5E-492F-AAAC-CFFFDE247F7F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6574b60f5870c902fdc37adf7d4fd0de9188731e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62aed2dd826310e43360d65109e42ae260450640
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383220"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385665"
 ---
 # <a name="required-dxgi-formats"></a>必須の DXGI 形式
 
 
 このトピックでは、そのマイクロソフトの Direct3D 機能レベルにユーザー モードのディスプレイ ドライバーの要件を示します。
 
-最初のテーブルの最初と 2 番目の列は、すべての Direct3D 形式の型を表示し、ドライバーをサポートする必要があります。 3 番目の列は、関連するすべての Direct3D の定数値を示しています [**D3D10\_形式\_サポート**](https://msdn.microsoft.com/library/windows/desktop/bb205063)や[ **D3D11\_。形式\_サポート**](https://msdn.microsoft.com/library/windows/desktop/ff476134)列挙型、ドライバーをサポートする必要があります。 4 番目の列には、ドライバーを各形式をサポートする必要があります最小 Direct3D 機能レベルが表示されます。
+最初のテーブルの最初と 2 番目の列は、すべての Direct3D 形式の型を表示し、ドライバーをサポートする必要があります。 3 番目の列は、関連するすべての Direct3D の定数値を示しています [**D3D10\_形式\_サポート**](https://docs.microsoft.com/windows/desktop/api/d3d10/ne-d3d10-d3d10_format_support)や[ **D3D11\_。形式\_サポート**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)列挙型、ドライバーをサポートする必要があります。 4 番目の列には、ドライバーを各形式をサポートする必要があります最小 Direct3D 機能レベルが表示されます。
 
 2 番目のテーブルは、各列挙値の Direct3D 10Level 9 のサポートのアルゴリズムを示しています。
 

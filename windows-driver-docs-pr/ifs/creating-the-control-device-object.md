@@ -7,12 +7,12 @@ keywords:
 - CDOs WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87cb1f62e103544254cf6909a5ce23c0db6e574b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca04fd82f9048a8f388a665f2a5b1c4cd662bba8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359365"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366790"
 ---
 # <a name="creating-the-control-device-object"></a>コントロール デバイス オブジェクトの作成
 
@@ -20,7 +20,7 @@ ms.locfileid: "63359365"
 ## <span id="ddk_creating_the_control_device_object_if"></span><span id="DDK_CREATING_THE_CONTROL_DEVICE_OBJECT_IF"></span>
 
 
-ファイル システム フィルター ドライバーの[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンが通常作成して開始、*制御デバイス オブジェクト*します。 コントロールのデバイス オブジェクトの目的は、フィルターはファイル システム ボリュームまたはボリューム デバイス オブジェクトにアタッチする前に、直接フィルター ドライバーと通信を許可するのにです。
+ファイル システム フィルター ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンが通常作成して開始、*制御デバイス オブジェクト*します。 コントロールのデバイス オブジェクトの目的は、フィルターはファイル システム ボリュームまたはボリューム デバイス オブジェクトにアタッチする前に、直接フィルター ドライバーと通信を許可するのにです。
 
 ファイル システムもオブジェクトを作成できるコントロール デバイスに注意してください。 ファイル システム フィルター ドライバーは、個々 のファイル システム ボリュームではなく、ファイル システムに自体をアタッチ、するときに、ファイル システムの制御デバイス オブジェクトをアタッチすること自体では。
 
@@ -41,7 +41,7 @@ RtlInitUnicodeString(&linkString, MYLEGACYFILTER_DOSDEVICE_NAME);
 status = IoCreateSymbolicLink(&linkString, &nameString);
 ```
 
-ファイル システム フィルター ドライバーは、ファイル システムとは異なり、デバイス オブジェクト、コントロールに名前を付ける必要はありません。 ユーザー モードのアプリケーションへの呼び出しからデバイス名でフィルター ドライバーにアクセスできません[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)はデバイスのコントロール オブジェクトは無効です。 以外の場合**NULL**値が渡された、 *DeviceName*制御デバイス オブジェクトの名前をパラメーターでは、この値になります。 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンを呼び出して、 [ **IoCreateSymbolicLink** ](https://msdn.microsoft.com/library/windows/hardware/ff549043)リンク前のコード例で示すように、ルーチンアプリケーションに表示されるユーザー モードの名前に、オブジェクトのカーネル モードの名前。
+ファイル システム フィルター ドライバーは、ファイル システムとは異なり、デバイス オブジェクト、コントロールに名前を付ける必要はありません。 ユーザー モードのアプリケーションへの呼び出しからデバイス名でフィルター ドライバーにアクセスできません[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)はデバイスのコントロール オブジェクトは無効です。 以外の場合**NULL**値が渡された、 *DeviceName*制御デバイス オブジェクトの名前をパラメーターでは、この値になります。 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンを呼び出して、 [ **IoCreateSymbolicLink** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatesymboliclink)リンク前のコード例で示すように、ルーチンアプリケーションに表示されるユーザー モードの名前に、オブジェクトのカーネル モードの名前。
 
 **注**  ドライバー スタックにアタッチされていない唯一のデバイス オブジェクトのため、コントロールのデバイス オブジェクトが唯一の種類のデバイス オブジェクトを安全に付けることができます。 そのため、ファイル システム フィルター ドライバーのデバイス オブジェクトをコントロール必要に応じて名前を指定できます。 ファイル システムのデバイス オブジェクトをコントロールの指定する必要がありますに注意してください。 デバイス オブジェクトをフィルターを指定しない必要があります。
 
@@ -51,7 +51,7 @@ status = IoCreateSymbolicLink(&linkString, &nameString);
 
 以外の場合**NULL**値が渡された、 *DeviceName*パラメーター、 *DeviceCharacteristics*フラグは、ファイルを含める必要があります\_デバイス\_セキュリティで保護された\_開きます。 このフラグは、コントロールのデバイス オブジェクトに送信される要求を開いているすべてのセキュリティ チェックを実行する I/O マネージャーに指示します。 名前付きのデバイス オブジェクトの ACL に対しては、これらのセキュリティ チェックが行われました。
 
-ディスパッチ ルーチンで、独自の制御デバイス オブジェクトを識別するためには、ファイル システム フィルター ドライバーの効果的な方法では、デバイスのポインターと制御デバイス オブジェクトを以前に保存されたグローバル ポインターの比較です。 したがって、上記のサンプルが格納、*デバイス オブジェクト*によって返されたポインター [ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)に`gControlDeviceObject`、グローバルに定義されたポインター変数。
+ディスパッチ ルーチンで、独自の制御デバイス オブジェクトを識別するためには、ファイル システム フィルター ドライバーの効果的な方法では、デバイスのポインターと制御デバイス オブジェクトを以前に保存されたグローバル ポインターの比較です。 したがって、上記のサンプルが格納、*デバイス オブジェクト*によって返されたポインター [ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)に`gControlDeviceObject`、グローバルに定義されたポインター変数。
 
  
 

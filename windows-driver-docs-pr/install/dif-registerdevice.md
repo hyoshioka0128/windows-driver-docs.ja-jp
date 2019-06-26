@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fea8e67c711ba52156d66247893f6c921b22a97d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e7c659ae9263048f0e964cc8897af235e6efb4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356091"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386897"
 ---
 # <a name="difregisterdevice"></a>DIF_REGISTERDEVICE
 
@@ -58,13 +58,13 @@ DIF_REGISTERDEVICE 要求は、PnP マネージャーで、インスタンスを
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)デバイスを格納しています。
+識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)デバイスを格納しています。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-ポインターを提供する[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを識別する構造体。
+ポインターを提供する[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを識別する構造体。
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、 *DeviceInfoData*します。
+デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*します。
 
 <a href="" id="class-installation-parameters-"></a>インストール パラメーターをクラスします。   
 なし
@@ -79,7 +79,7 @@ DIF_REGISTERDEVICE 要求は、PnP マネージャーで、インスタンスを
 
 インストーラーのデバイスに複製されていると判断した場合は、ERROR_DUPLICATE_FOUND を返します。
 
-クラスのインストーラーが正常にこの要求を処理する場合と[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)既定のハンドラーを呼び出す必要があります、その後、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
+クラスのインストーラーが正常にこの要求を処理する場合と[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)既定のハンドラーを呼び出す必要があります、その後、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
 
 クラスのインストーラーが正常に既定のハンドラーを直接呼び出しなど、この要求を処理する場合、クラスのインストーラーは NO_ERROR を返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しはもう一度です。
 
@@ -87,7 +87,7 @@ DIF_REGISTERDEVICE 要求は、PnP マネージャーで、インスタンスを
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
+既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)します。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
@@ -95,19 +95,19 @@ DIF_REGISTERDEVICE 要求は、PnP マネージャーで、インスタンスを
 
 ### <a name="default-dif-code-handler"></a>既定の差分コード ハンドラー
 
-[**SetupDiRegisterDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff552091)
+[**SetupDiRegisterDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
 A*デバイス インストール アプリケーション*通常マネージャー、PnP と非 PnP デバイスを登録するには、この差分要求を送信します。 Microsoft Windows 2000 以降、非 PnP デバイス登録する必要ありますをインストールする前にします。
 
-インストーラーは、通常、重複データ検出を実行するには、この差分要求を処理します。 このようなインストーラーは、通常、既定のハンドラーを呼び出します ([**SetupDiRegisterDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff552091)) し、検出ルーチンを指定します。 登録が成功し、インストーラーは、デバイスが重複しているではありませんを決定します。 インストーラーは NO_ERROR を返します。
+インストーラーは、通常、重複データ検出を実行するには、この差分要求を処理します。 このようなインストーラーは、通常、既定のハンドラーを呼び出します ([**SetupDiRegisterDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)) し、検出ルーチンを指定します。 登録が成功し、インストーラーは、デバイスが重複しているではありませんを決定します。 インストーラーは NO_ERROR を返します。
 
 共同インストーラーには、前処理のパスでは、この差分要求を処理するために操作を実行する必要があります。 後処理共同インストーラーが呼び出されるは、デバイス インスタンスはクラスのインストーラーまたは既定のハンドラーのいずれかによって既に登録されています。
 
 インストーラーでは、この差分コードのエラーが返された場合通常 ERROR_DUPLICATE_FOUND、Windows デバイスを削除、デバイス情報のセットから。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -134,11 +134,11 @@ A*デバイス インストール アプリケーション*通常マネージャ
 
 [**DIF_DETECT**](dif-detect.md)
 
-[**SetupDiRegisterDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff552091)
+[**SetupDiRegisterDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
 

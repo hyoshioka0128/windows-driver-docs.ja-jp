@@ -4,12 +4,12 @@ description: ミット ソフトウェア パッケージに含まれている I
 ms.assetid: E40B9ABB-B119-4EC1-A383-EB96CC350A25
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c75ff728d0ec8fa36aac492c746e039fde3c61db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d3df2e310649d5e488e738d860799368c9be4b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376943"
 ---
 # <a name="i2c-controller-tests-in-mitt"></a>MITT の I2C コントローラー テスト
 
@@ -27,9 +27,9 @@ ms.locfileid: "63360231"
 ## <a name="before-you-begin"></a>開始する前にしています.
 
 
--   ミット ボードと I²C アダプターのボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://msdn.microsoft.com/library/windows/hardware/dn919811)します。
--   [ミット ソフトウェア パッケージをダウンロード](https://msdn.microsoft.com/library/windows/hardware/dn919810)します。 テスト対象のシステムにインストールします。
--   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://msdn.microsoft.com/library/windows/hardware/dn919779)します。
+-   ミット ボードと I²C アダプターのボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)します。
+-   [ミット ソフトウェア パッケージをダウンロード](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))します。 テスト対象のシステムにインストールします。
+-   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)します。
 
 ## <a name="hardware-setup"></a>ハードウェアのセットアップ
 
@@ -73,7 +73,7 @@ I²C コント ローラーがテスト対象システムで次の手順に従�
 
 
 
-2.  ACPI システムを変更し、この ASL テーブルが含まれます。 使用することができます、 [Microsoft ASL コンパイラ](https://msdn.microsoft.com/library/windows/hardware/dn551195)します。
+2.  ACPI システムを変更し、この ASL テーブルが含まれます。 使用することができます、 [Microsoft ASL コンパイラ](https://docs.microsoft.com/windows-hardware/drivers/bringup/microsoft-asl-compiler)します。
 
     **注**変更"\\\\\_SB\_します。I2C2"I²C コント ローラーからテストの ACPI エントリ名にします。
 
@@ -170,7 +170,7 @@ Device(TP5) {
 
 I²C テストを実行する準備が整いました。 すべてのテストを一度に 1 つのテストを実行したり、手動でテストを実行できます。
 
-- 使用して 1 つのテストを実行、 **/name: *&lt;テスト名&gt;*** オプション。 このコマンドは、BasicIORead テストを実行します。
+- 使用して 1 つのテストを実行、 **/name: *&lt;テスト名&gt;** * オプション。 このコマンドは、BasicIORead テストを実行します。
 
   ![ミット i2c コマンド](images/mitt-i2c-cmds1.png)
 
@@ -186,7 +186,7 @@ I²C テストを実行する準備が整いました。 すべてのテスト�
 ![i2c 概略図](images/i2c-schematic.png)
 
 ## <a name="related-topics"></a>関連トピック
-[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

@@ -4,17 +4,17 @@ description: デバイス インスタンス ID は、システムでデバイ�
 ms.assetid: 578973f4-463f-4707-8dc3-dff27b3d3052
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4f37a4f3fecfb35c3e6ae952af9492fc737601
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9857ee9a7e697cf14153f7b39e6ca74228edd81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387129"
 ---
 # <a name="device-instance-id"></a>デバイス インスタンス ID
 
 
-デバイス インスタンス ID は、システムでデバイスを一意に識別するシステム提供のデバイスの識別文字列です。 プラグ アンド プレイ (PnP) マネージャーでは、デバイスの各ノードにデバイス インスタンス ID が割り当てられます (*devnode*) システムの[デバイス ツリー](https://msdn.microsoft.com/library/windows/hardware/ff543194)します。
+デバイス インスタンス ID は、システムでデバイスを一意に識別するシステム提供のデバイスの識別文字列です。 プラグ アンド プレイ (PnP) マネージャーでは、デバイスの各ノードにデバイス インスタンス ID が割り当てられます (*devnode*) システムの[デバイス ツリー](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)します。
 
 
 

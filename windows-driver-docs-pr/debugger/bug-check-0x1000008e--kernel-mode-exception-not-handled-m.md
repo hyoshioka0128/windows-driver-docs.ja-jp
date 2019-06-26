@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cdbd1fd7471c4c726fa0d23f15dc6611f6d3c99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe7a8e5d4df6f95dddb42c299a6a89771ce28f5a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347824"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367956"
 ---
 # <a name="bug-check-0x1000008e-kernelmodeexceptionnothandledm"></a>バグ チェック 0x1000008E:カーネル\_モード\_例外\_いない\_HANDLED\_M
 
@@ -28,7 +28,7 @@ ms.locfileid: "63347824"
 バグ チェック 0x1000008E が同じ意味とパラメーターとして[**バグ チェック 0x8E** ](bug-check-0x8e--kernel-mode-exception-not-handled.md) (カーネル\_モード\_例外\_いない\_処理済み)。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
  

@@ -9,12 +9,12 @@ keywords:
 - Avc.sys 関数ドライバー WDK、識別子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d10ce9df44cef5b42d05f81ef48cc3667eeee9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4fa02d60e30f19679d94c2e90c9085a2be90585
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384808"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386766"
 ---
 # <a name="avc-device-identifiers"></a>AV/C デバイス識別子
 
@@ -46,7 +46,7 @@ ms.locfileid: "63384808"
 
 *Avc.sys*同一の複数のサブユニットを区別できない***SubunitType***ロードを追加して、これらのサブユニットを削除、および最高のサブユニットに対応するドライバーをアンロードするため、 ***SubunitID***.
 
-各サブユニットのデバイス オブジェクトには、1 つまたは 2 つのハードウェア識別子と互換性のある複数の識別子があります。 これらのハードウェアや、サブユニット ドライバーの INF ファイルで以下の互換性のある識別子の 1 つ以上の製造元から提供する必要があります。 Windows では、これらのデバイス識別子を使用して、デバイスがコンピューターに接続されている最初のサブユニットたびにロードするのに適したドライバーを検索します。 Microsoft が提供するかを調べることができます*61883.inf*、 *Msdv.inf*と*Mstape.inf*ハードウェアと AV C/デバイスの互換性のあるデバイスの識別子の例のファイル。 INF ファイルの実装の詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+各サブユニットのデバイス オブジェクトには、1 つまたは 2 つのハードウェア識別子と互換性のある複数の識別子があります。 これらのハードウェアや、サブユニット ドライバーの INF ファイルで以下の互換性のある識別子の 1 つ以上の製造元から提供する必要があります。 Windows では、これらのデバイス識別子を使用して、デバイスがコンピューターに接続されている最初のサブユニットたびにロードするのに適したドライバーを検索します。 Microsoft が提供するかを調べることができます*61883.inf*、 *Msdv.inf*と*Mstape.inf*ハードウェアと AV C/デバイスの互換性のあるデバイスの識別子の例のファイル。 INF ファイルの実装の詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
 デバイス識別子の文字列の個々 の要素は次のとおりです。
 
@@ -83,7 +83,7 @@ ms.locfileid: "63384808"
 
 次に、例を示します。**AVC\\VEN\_50F2 MOD &\_0 & TYP\_4 & * SubunitID***
 
-型の一連のサブユニット*Avc.sys*サポートとその対応する数値の値を参照してください。 [ **AvcSubunitType**](https://msdn.microsoft.com/library/windows/hardware/ff554137)します。
+型の一連のサブユニット*Avc.sys*サポートとその対応する数値の値を参照してください。 [ **AvcSubunitType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavcsubunittype)します。
 
 <a href="" id="subunitid"></a>***SubunitID***  
 場合、 ***SubunitType***フィールドは、使用可能な***SubunitID***フィールドもを使用できます。 ときに*Avc.sys*デバイスの種類ごとのサブユニットの数は、応答のサブユニットは、AV/C デバイスを照会します。 この 0 から始まる数は、各サブユニットのデバイス id の作成に使用されます。 サブユニット アドレスの指定ができます、 ***SubunitID***フィールドを拡張するのには、サブユニット ドライバーから (および、INF ファイルの作成者であるユーザーから) この側面は表示されません。 0 から始まるインスタンス数は、すべてのケースで使用されます。 たとえば場合、 ***SubunitID***フィールドが 270 のサブユニットをサポートするために拡張、270th サブユニット 10 D (10 進 269) のサブユニット識別子があります。 次に、例を示します。

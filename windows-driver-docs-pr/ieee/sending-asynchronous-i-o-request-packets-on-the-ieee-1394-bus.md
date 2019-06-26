@@ -17,12 +17,12 @@ keywords:
 - WDK の IEEE 1394 をロック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 900b3d0c4690d8f778ed42725fbc4a6e0b03365d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3241353282dac50fefebbc983cc932d2244c3384
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390329"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381038"
 ---
 # <a name="sending-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>IEEE 1394 バスでの非同期 I/O 要求パケットの送信
 
@@ -34,7 +34,7 @@ ms.locfileid: "63390329"
 
 ### <a name="types-of-addressing"></a>種類のアドレス指定
 
-非同期 I/O 要求を作成するドライバーは、型の変換先のアドレスを指定する必要があります[ **IO\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff537346)で、 **DestinationAddress** IRB のメンバー。 送信先アドレスは、2 つの値で構成されています。 ノードのアドレスとアドレスのオフセット。 バス ドライバーは、これら 2 つの値を解釈は、要求を開始するドライバーによって使用されるアドレス指定のモードによって異なります。
+非同期 I/O 要求を作成するドライバーは、型の変換先のアドレスを指定する必要があります[ **IO\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_io_address)で、 **DestinationAddress** IRB のメンバー。 送信先アドレスは、2 つの値で構成されています。 ノードのアドレスとアドレスのオフセット。 バス ドライバーは、これら 2 つの値を解釈は、要求を開始するドライバーによって使用されるアドレス指定のモードによって異なります。
 
 アドレス指定の 3 つのモードが非同期 1394 パケットを送信できる:*通常*、*生*、および*仮想*します。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2c744d5160f981939c2650b0cfb88dc89d6ae69c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae9b8b778e45d8343faeafc1811f769322ae1ed0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365849"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387038"
 ---
 # <a name="difremove"></a>DIF_REMOVE
 
@@ -58,18 +58,18 @@ DIF_REMOVE 要求は、Windows がデバイスを削除しようし、インス�
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)を削除するデバイスを格納しています。
+識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)を削除するデバイスを格納しています。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-ポインターを提供する[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセットでのデバイスの構造体。
+ポインターを提供する[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセットでのデバイスの構造体。
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、 *DeviceInfoData*します。
+デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*します。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-[ **SP_REMOVEDEVICE_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff553323)構造が関連付けられる可能性があります、 *DeviceInfoData*します。
+[ **SP_REMOVEDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_removedevice_params)構造が関連付けられる可能性があります、 *DeviceInfoData*します。
 
-DI_CLASSINSTALLPARAMS フラグがオフの場合、要求のクラスのインストールのパラメーターがない、 [ **SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)します。 この場合は、ハードウェア プロファイルが指定されていないと、デバイスは、全体として、システムから削除します。
+DI_CLASSINSTALLPARAMS フラグがオフの場合、要求のクラスのインストールのパラメーターがない、 [ **SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)します。 この場合は、ハードウェア プロファイルが指定されていないと、デバイスは、全体として、システムから削除します。
 
 ### <a name="installer-output"></a>インストーラーの出力
 
@@ -79,7 +79,7 @@ DI_CLASSINSTALLPARAMS フラグがオフの場合、要求のクラスのイン�
 
 共同インストーラーには、NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED、または Win32 エラー コードを返すことができます。
 
-クラスのインストーラーが正常にこの要求を処理する場合と[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)既定のハンドラーを呼び出す必要があります、その後、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
+クラスのインストーラーが正常にこの要求を処理する場合と[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)既定のハンドラーを呼び出す必要があります、その後、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
 
 クラスのインストーラーが正常に既定のハンドラーを直接呼び出しなど、この要求を処理する場合、クラスのインストーラーは NO_ERROR を返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しはもう一度です。
 
@@ -87,13 +87,13 @@ DI_CLASSINSTALLPARAMS フラグがオフの場合、要求のクラスのイン�
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
+既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)します。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
 ### <a name="default-dif-code-handler"></a>既定の差分コード ハンドラー
 
-[**SetupDiRemoveDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552097)
+[**SetupDiRemoveDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice)
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
@@ -109,7 +109,7 @@ DIF_REMOVE 要求に応答して、インストーラーは通常、一部のク
 
 Windows では、PnP - クエリの削除を開始する前に、この差分要求を送信し、処理を削除します。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -134,13 +134,13 @@ Windows では、PnP - クエリの削除を開始する前に、この差分要
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiRemoveDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552097)
+[**SetupDiRemoveDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_REMOVEDEVICE_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553323)
+[**SP_REMOVEDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_removedevice_params)
 
  
 

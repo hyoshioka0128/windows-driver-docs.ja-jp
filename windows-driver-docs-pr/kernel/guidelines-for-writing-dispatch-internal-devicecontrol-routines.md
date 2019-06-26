@@ -13,12 +13,12 @@ keywords:
 - デバイス制御ディスパッチ ルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 588966e1a0767a9201345d00cf6205d833bd9e51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8829955a94cde61040eca5d3e026dd3c2cc4ccb9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386027"
 ---
 # <a name="guidelines-for-writing-dispatchinternaldevicecontrol-routines"></a>Dispatch(Internal)DeviceControl ルーチンの記述に関するガイドライン
 
@@ -28,7 +28,7 @@ ms.locfileid: "63359878"
 
 書き込み時に、次の点を留意してください、 [ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)または[ *DispatchInternalDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
 
-高度なドライバーには、少なくとものパラメーターをコピーする必要があります、 [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)または[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766) IRP では、独自 I/O スタックの場所から、[次へ] の下位レベルのドライバーの I/O スタックの場所への要求。 呼び出す必要がありますし、 [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)次の下位ドライバーのデバイス オブジェクトと IRP へのポインター。
+高度なドライバーには、少なくとものパラメーターをコピーする必要があります、 [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)または[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control) IRP では、独自 I/O スタックの場所から、[次へ] の下位レベルのドライバーの I/O スタックの場所への要求。 呼び出す必要がありますし、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)次の下位ドライバーのデバイス オブジェクトと IRP へのポインター。
 
 高度なドライバーがによって返される状態値を反映する必要があります**保留**または下位のドライバーを同期的に処理する要求の制御が戻ったときに返される IRP の I/O の状態のブロックに設定します。
 

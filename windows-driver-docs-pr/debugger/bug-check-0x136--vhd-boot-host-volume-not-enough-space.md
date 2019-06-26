@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c32859b33b781fc99d68253eea3a2de5560aaea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c445fd277c8d61f4a5aa7c59e564490dd4ab5077
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367846"
 ---
 # <a name="bug-check-0x136-vhdboothostvolumenotenoughspace"></a>バグ チェック 0x136:VHD\_ブート\_ホスト\_ボリューム\_いない\_ENOUGH\_領域
 
@@ -26,7 +26,7 @@ ms.locfileid: "63351194"
 VHD\_ブート\_ホスト\_ボリューム\_いない\_ENOUGH\_領域のバグ チェックが 0x00000136 の値を持ちます。 これは、VHD から起動を試みているときに初期化エラーが発生したことを示します。 VHD をホストしているボリュームには、VHD を拡張するための十分な空き領域がありません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="vhdboothostvolumenotenoughspace-parameters"></a>VHD\_ブート\_ホスト\_ボリューム\_いない\_ENOUGH\_空間パラメーター

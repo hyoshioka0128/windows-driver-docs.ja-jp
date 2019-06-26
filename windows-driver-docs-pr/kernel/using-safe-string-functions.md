@@ -8,12 +8,12 @@ keywords:
 - バッファー WDK 安全な文字列関数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee63e77c0760c1aef2619c25e18d0038da4082b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 291d441111be74bef4d5c5821bc77cb1da07365b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381522"
 ---
 # <a name="using-safe-string-functions"></a>セーフ文字列関数の使用
 
@@ -31,13 +31,13 @@ ms.locfileid: "63351000"
 
 一連のカーネル モードの安全な文字列関数は、次の 2 つのサブセットで構成されます。
 
--   [Unicode と ANSI 文字の安全な文字列関数](https://msdn.microsoft.com/library/windows/hardware/ff563642)
+-   [Unicode と ANSI 文字の安全な文字列関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-    これらの各関数は、2 バイト Unicode 文字をサポートする W サフィックス付きのバージョンと 1 バイトの ANSI 文字をサポートする A サフィックス付きのバージョンで使用できます。 たとえば、 [ **RtlStringCbCatN**](https://msdn.microsoft.com/library/windows/hardware/ff562801)、2 つの文字列を連結および追加の文字列の長さを制限するは**RtlStringCbCatNW**と**RtlStringCbCatNA**します。
+    これらの各関数は、2 バイト Unicode 文字をサポートする W サフィックス付きのバージョンと 1 バイトの ANSI 文字をサポートする A サフィックス付きのバージョンで使用できます。 たとえば、 [ **RtlStringCbCatN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna)、2 つの文字列を連結および追加の文字列の長さを制限するは**RtlStringCbCatNW**と**RtlStringCbCatNA**します。
 
--   [UNICODE の安全な文字列関数\_文字列の構造体](https://msdn.microsoft.com/library/windows/hardware/ff563644)
+-   [UNICODE の安全な文字列関数\_文字列の構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-    これらの各関数を受け入れる、 [ **UNICODE\_文字列**](https://msdn.microsoft.com/library/windows/hardware/ff564879)を入力または出力パラメーターまたはその両方として構造体。 たとえば、 [ **RtlStringCbCopyUnicodeString** ](https://msdn.microsoft.com/library/windows/hardware/ff562815)入力パラメーターとして構造体を受け入れる[ **RtlUnicodeStringCopyString** ](https://msdn.microsoft.com/library/windows/hardware/ff562948)出力パラメーターとして構造体を受け入れると[ **RtlUnicodeStringCopy** ](https://msdn.microsoft.com/library/windows/hardware/ff562942)入力と出力の両方のパラメーターとして構造体を受け入れます。
+    これらの各関数を受け入れる、 [ **UNICODE\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)を入力または出力パラメーターまたはその両方として構造体。 たとえば、 [ **RtlStringCbCopyUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring)入力パラメーターとして構造体を受け入れる[ **RtlUnicodeStringCopyString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring)出力パラメーターとして構造体を受け入れると[ **RtlUnicodeStringCopy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy)入力と出力の両方のパラメーターとして構造体を受け入れます。
 
 カーネル モードの安全な文字列関数は、次の機能を提供します。
 
@@ -47,9 +47,9 @@ ms.locfileid: "63351000"
 
 -   すべての安全な文字列関数は、可能な成功コードを 1 つだけで、NTSTATUS 値を返す (ステータス\_成功した場合)。
 
--   ほとんどの安全な文字列関数は、バイト カウントと文字カウントされたバージョンの両方で使用できます。 たとえば、 [ **RtlStringCbCat** ](https://msdn.microsoft.com/library/windows/hardware/ff562795)バイト数の 2 つの文字列を連結しますおよび[ **RtlStringCchCat** ](https://msdn.microsoft.com/library/windows/hardware/ff562834) 2 つを連結します。文字列の文字カウントされます。
+-   ほとんどの安全な文字列関数は、バイト カウントと文字カウントされたバージョンの両方で使用できます。 たとえば、 [ **RtlStringCbCat** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcata)バイト数の 2 つの文字列を連結しますおよび[ **RtlStringCchCat** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcchcata) 2 つを連結します。文字列の文字カウントされます。
 
--   ほとんどの安全な文字列関数の追加機能を提供する拡張、Ex サフィックス付きのバージョンで利用できます。 たとえば、 [ **RtlStringCbCatEx** ](https://msdn.microsoft.com/library/windows/hardware/ff562799)の機能を拡張[ **RtlStringCbCat**](https://msdn.microsoft.com/library/windows/hardware/ff562795)します。
+-   ほとんどの安全な文字列関数の追加機能を提供する拡張、Ex サフィックス付きのバージョンで利用できます。 たとえば、 [ **RtlStringCbCatEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcatexa)の機能を拡張[ **RtlStringCbCat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcata)します。
 
 ここでは、次のトピックについて説明します。
 

@@ -10,12 +10,12 @@ keywords:
 - 検証ユーティリティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73737850d38bc3ddfb5e0f6fb38581e40d43fe10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91e295dea65a5b3742a2ac9c5483479b21fd6b81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359317"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386102"
 ---
 # <a name="development-and-testing-tools"></a>開発とテスト ツール
 
@@ -30,7 +30,7 @@ Fltmc.exe コントロール プログラムは、一般的なミニフィルタ
 
 ### <a name="span-idfltkddebuggerextensionspanspan-idfltkddebuggerextensionspanspan-idfltkddebuggerextensionspanfltkd-debugger-extension"></a><span id="_fltkd_Debugger_Extension"></span><span id="_fltkd_debugger_extension"></span><span id="_FLTKD_DEBUGGER_EXTENSION"></span>! fltkd デバッガー拡張機能
 
-! で fltkd デバッガーの拡張機能の提供、 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)ツール。 よく使用されるコマンドを以下に示します。
+! で fltkd デバッガーの拡張機能の提供、 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)ツール。 よく使用されるコマンドを以下に示します。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Fltmc.exe コントロール プログラムは、一般的なミニフィルタ
 
 ### <a name="span-idfilterverifierspanspan-idfilterverifierspanspan-idfilterverifierspanfilter-verifier"></a><span id="Filter_Verifier"></span><span id="filter_verifier"></span><span id="FILTER_VERIFIER"></span>フィルターの検証方法
 
-フィルターの検証ツールは、 [I/O の検証](https://msdn.microsoft.com/library/windows/hardware/ff548045)オプション[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)ミニフィルター ドライバーの使用状況のフィルター マネージャーの機能を検証します。 フィルター検証ツールは、フィルター マネージャーと共にインストールされます。 開発者は、Driver Verifier でミニフィルター ドライバーを開発常にする必要があり、フィルター検証機能を有効にします。
+フィルターの検証ツールは、 [I/O の検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/i-o-verification)オプション[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)ミニフィルター ドライバーの使用状況のフィルター マネージャーの機能を検証します。 フィルター検証ツールは、フィルター マネージャーと共にインストールされます。 開発者は、Driver Verifier でミニフィルター ドライバーを開発常にする必要があり、フィルター検証機能を有効にします。
 
 フィルター検証ツールを使用するには、ミニフィルター ドライバーの名前を指定し、Driver Verifier (Verifier.exe) で I/O の検証オプションを有効にします。 フィルター マネージャーとミニフィルター ドライバーの登録時に検証を開始します。
 

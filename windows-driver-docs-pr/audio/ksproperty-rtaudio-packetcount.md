@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c339780650097e711d9969ae9033113d0968f50b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c726f41ff11389ee6ef7669809f16a52c9783929
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332672"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391646"
 ---
 # <a name="kspropertyrtaudiopacketcount"></a>KSPROPERTY\_RTAUDIO\_PACKETCOUNT
 
@@ -50,7 +50,7 @@ KSPROPERTY\_RTAUDIO\_PACKETCOUNT はハードウェアに WaveRT バッファー
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ulong" data-raw-source="[&lt;strong&gt;ULONG&lt;/strong&gt;](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ulong)"><strong>ULONG</strong></a></p></td>
 </tr>
 </tbody>
@@ -58,7 +58,7 @@ KSPROPERTY\_RTAUDIO\_PACKETCOUNT はハードウェアに WaveRT バッファー
 
  
 
-プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 要求を送信する前に、クライアントは、ハードウェアに WaveRT バッファーから完全に転送パケットの数を (1 から始まる) の構造体を読み込みます。
+プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 要求を送信する前に、クライアントは、ハードウェアに WaveRT バッファーから完全に転送パケットの数を (1 から始まる) の構造体を読み込みます。
 
 プロパティの値は、ULONG 型の変数です。
 
@@ -77,7 +77,7 @@ OS は、いつでもこのプロパティを取得する可能性がありま�
 
 ドライバーがパケットの数を 0 にリセット ストリームが KSSTATE で\_を停止します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

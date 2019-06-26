@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18ba999460a15325da7c3fa648006ce4108295db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b589fdef812ace0bac2fabea63c5ab1fc140a54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378192"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373170"
 ---
 # <a name="kspropertycameracontroltiltrelative"></a>KSPROPERTY\_CAMERACONTROL\_傾き\_相対
 
@@ -53,7 +53,7 @@ KSPROPERTY\_CAMERACONTROL\_傾き\_相対プロパティは、カメラの垂直
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564439" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564439)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff564420" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564420)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
 <td><p>LONG</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_CAMERACONTROL\_傾き\_相対プロパティは、カメラの垂直
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -95,9 +95,9 @@ KSPROPERTY\_CAMERACONTROL\_傾き\_相対プロパティは、カメラの垂直
 <a name="remarks"></a>注釈
 -------
 
-**値**のメンバー、 [ **KSPROPERTY\_CAMERACONTROL\_ノード\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff564420)構造が相対の傾きを指定します。
+**値**のメンバー、 [ **KSPROPERTY\_CAMERACONTROL\_ノード\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)構造が相対の傾きを指定します。
 
-特定のデバイスが一定の速度の範囲だけをサポート可能性がありますに注意してください。 アプリケーションの速度、デバイスでサポートされている範囲を決定する、KSPROPERTY を発行できます\_型\_BASICSUPPORT 要求。 KSPROPERTY を指定する\_型\_で BASICSUPPORT、**フラグ**のメンバー、 [ **KSPROPERTY\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff565176)構造体。
+特定のデバイスが一定の速度の範囲だけをサポート可能性がありますに注意してください。 アプリケーションの速度、デバイスでサポートされている範囲を決定する、KSPROPERTY を発行できます\_型\_BASICSUPPORT 要求。 KSPROPERTY を指定する\_型\_で BASICSUPPORT、**フラグ**のメンバー、 [ **KSPROPERTY\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_item)構造体。
 
 一部のデバイスでは、1 つは、速度を傾けるのみをサポートします。 ここでの符号、**値**メンバーを傾きの方向を示します。
 
@@ -128,7 +128,7 @@ Get 要求を行うときに、クライアントは受信値のいずれかで�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_CAMERACONTROL\_ノード\_S**](https://msdn.microsoft.com/library/windows/hardware/ff564420)
+[**KSPROPERTY\_CAMERACONTROL\_ノード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
 
  
 

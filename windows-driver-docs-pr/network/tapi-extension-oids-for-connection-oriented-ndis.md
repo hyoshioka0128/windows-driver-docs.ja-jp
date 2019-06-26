@@ -6,12 +6,12 @@ keywords:
 - TAPI 拡張機能の Oid 接続指向の NDIS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c5a2735e5ec011bdbbe16e442a04979ecf671cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4696cec3aa91953fc254becc8ce2dc8fe2342fce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378725"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384705"
 ---
 # <a name="tapi-extension-oids-for-connection-oriented-ndis"></a>接続指向の NDIS の TAPI 拡張 OID
 
@@ -29,5 +29,5 @@ ms.locfileid: "63378725"
 | 不定 | O |   | [OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS](oid-co-tapi-translate-tapi-callparams.md) |
 | 不定 | O |   | [OID_CO_TAPI_TRANSLATE_TAPI_SAP](oid-co-tapi-translate-tapi-sap.md) |
 
-呼び出しで[NdisCoRequest](https://msdn.microsoft.com/library/windows/hardware/ff551877)、TAPI の拡張機能の Oid のいずれかのクエリを実行するクライアントを指定する必要があります、 *NdisAfHandle*要求を適用するアドレス ファミリを識別します。 クライアントを指定できます、 *NdisVcHandle*要求が適用される仮想接続 (VC) を識別します。 コール マネージャーまたは MCM のドライバーがこの VC ハンドルからは、特定の行と、要求を適用するアドレスなどを派生させることができます。
+呼び出しで[NdisCoRequest](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff551877(v=vs.85))、TAPI の拡張機能の Oid のいずれかのクエリを実行するクライアントを指定する必要があります、 *NdisAfHandle*要求を適用するアドレス ファミリを識別します。 クライアントを指定できます、 *NdisVcHandle*要求が適用される仮想接続 (VC) を識別します。 コール マネージャーまたは MCM のドライバーがこの VC ハンドルからは、特定の行と、要求を適用するアドレスなどを派生させることができます。
 

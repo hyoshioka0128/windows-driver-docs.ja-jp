@@ -10,12 +10,12 @@ keywords:
 - HBA WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a0e5523d18b6dbb500a41ffc48c6cc2c54a4924
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 213dcbeda8bb27f283cea1c46d84ae54ea7f30a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386489"
 ---
 # <a name="scsi-miniport-drivers"></a>SCSI ミニポート ドライバー
 
@@ -35,7 +35,7 @@ ms.locfileid: "63368726"
 
 [必須およびオプションの SCSI ミニポート ドライバー ルーチン](required-and-optional-scsi-miniport-driver-routines.md)
 
-NT ベースのオペレーティング システムのミニポート ドライバーを SCSI HBA 固有はオペレーティング システムに依存しません。 これは、システムが指定した SCSI ポート ドライバー ダイナミック リンク ライブラリ (DLL) は、ポートのドライバーだけの呼び出しでの各ミニポート ドライバー リンク自体 **ScsiPort * * * Xxx*システムとその HBA と通信するルーチン。 このような SCSI ミニポート ドライバーが Microsoft Win32 アプリケーションをサポートし、エクスポートも他の Microsoft オペレーティング システムで実行、**ScsiPort * * * Xxx*ルーチン。 詳細については、**ScsiPort * * * Xxx*ルーチンを参照してください[SCSI ポート ライブラリ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff565375)します。
+NT ベースのオペレーティング システムのミニポート ドライバーを SCSI HBA 固有はオペレーティング システムに依存しません。 これは、システムが指定した SCSI ポート ドライバー ダイナミック リンク ライブラリ (DLL) は、ポートのドライバーだけの呼び出しでの各ミニポート ドライバー リンク自体 **ScsiPort * * * Xxx*システムとその HBA と通信するルーチン。 このような SCSI ミニポート ドライバーが Microsoft Win32 アプリケーションをサポートし、エクスポートも他の Microsoft オペレーティング システムで実行、**ScsiPort * * * Xxx*ルーチン。 詳細については、**ScsiPort * * * Xxx*ルーチンを参照してください[SCSI ポート ライブラリ ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 ある SCSI ミニポート ドライバーを呼び出すルーチン以外に注意してください。、**ScsiPort * * * Xxx* Microsoft オペレーティング システムの両方の環境で実行することはできません。 のみ、システム提供の NT ベースのオペレーティング システムを含む、Microsoft Windows のシステム間で移植可能なままに SCSI ミニポート ドライバーが呼び出す必要があります **ScsiPort * * * Xxx*します。
 

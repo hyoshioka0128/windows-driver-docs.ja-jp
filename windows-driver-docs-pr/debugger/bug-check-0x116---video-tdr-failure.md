@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b50a6aa80bfd796270831d6af9028832468a435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04df97366f329f1ed409f27ec3baf93b38930a22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358178"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362333"
 ---
 # <a name="bug-check-0x116-videotdrfailure"></a>バグ チェック 0x116:ビデオ\_TDR\_エラー
 
@@ -27,7 +27,7 @@ ms.locfileid: "63358178"
 ビデオ\_TDR\_エラーのバグ チェックが 0x00000116 の値を持ちます。 これは、ディスプレイ ドライバーをリセットするか、タイムアウトから復旧試行が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="videotdrfailure-parameters"></a>ビデオ\_TDR\_エラー パラメーター
@@ -71,15 +71,15 @@ ms.locfileid: "63358178"
 
 一般的な安定性問題をグラフィックスでは、システムが完全にフリーズやハングした、エンドユーザーのコマンドまたは操作の処理中に表示されたらに発生します。 通常、GPU は、ゲーム プレイ中に、負荷の高いグラフィックスの操作を通常処理でビジー状態です。 画面の更新が発生しないと、ユーザーは、システムが固定されていることを想定します。 ユーザーは、通常は数秒待ってからして、電源ボタンを押して、システムを再起動します。 Windows は、この問題のある状況がハングし、応答性の高いデスクトップを動的に回復を検出しようとします。
 
-この検出と回復のプロセスは、タイムアウト検出と復旧 (TDR) と呼びます。 既定のタイムアウトは 2 秒です。 ビデオ カードの TDR プロセスで、オペレーティング システムの GPU のスケジューラを呼び出すディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)ドライバーを再初期化し、GPU をリセットする関数。
+この検出と回復のプロセスは、タイムアウト検出と復旧 (TDR) と呼びます。 既定のタイムアウトは 2 秒です。 ビデオ カードの TDR プロセスで、オペレーティング システムの GPU のスケジューラを呼び出すディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)ドライバーを再初期化し、GPU をリセットする関数。
 
-このプロセス中には、オペレーティング システムは、ドライバーがハードウェアまたはメモリにアクセスしないように指示し、現在実行中のスレッドが完了する短い形式の時刻を示します。 スレッドが、タイムアウト以内に完了しなかったかどうかは、0x116 によるチェックのシステムのバグ ビデオ\_TDR\_失敗します。 詳細については、次を参照してください。[スレッドの同期と TDR](https://msdn.microsoft.com/library/windows/hardware/ff570082)します。
+このプロセス中には、オペレーティング システムは、ドライバーがハードウェアまたはメモリにアクセスしないように指示し、現在実行中のスレッドが完了する短い形式の時刻を示します。 スレッドが、タイムアウト以内に完了しなかったかどうかは、0x116 によるチェックのシステムのバグ ビデオ\_TDR\_失敗します。 詳細については、次を参照してください。[スレッドの同期と TDR](https://docs.microsoft.com/windows-hardware/drivers/display/thread-synchronization-and-tdr)します。
 
 ビデオをチェックできますもバグのシステム\_TDR\_エラー TDR イベントの数が短時間で発生した場合既定で 5 つを超える TDRs 1 分以内にします。
 
 回復プロセスが成功した場合、メッセージが表示されます、ことを示す、「ディスプレイ ドライバー応答を停止したし、が回復します」。
 
-詳細については、タイムアウト検出と復旧 (TDR) を参照してください[TDR レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff569918)と[Windows 8 での TDR 変更](https://msdn.microsoft.com/library/windows/hardware/jj676805)に存在する[Windows Display Driver Model (のデバッグのヒントWDDM)](https://msdn.microsoft.com/library/windows/hardware/ff551790)します。
+詳細については、タイムアウト検出と復旧 (TDR) を参照してください[TDR レジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-registry-keys)と[Windows 8 での TDR 変更](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-changes-in-windows-8)に存在する[Windows Display Driver Model (のデバッグのヒントWDDM)](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)します。
 
 <a name="resolution"></a>解決方法
 ----------
@@ -124,7 +124,7 @@ MODULE_NAME: nvlddmkm
 IMAGE_NAME:  nvlddmkm.sys
 ```
 
-使用することができます、 [ **lm (読み込まれたモジュールの一覧)**](lm--list-loaded-modules-.md)タイムスタンプを含む、エラーが発生したドライバーに関する情報を表示するコマンド。
+使用することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md)タイムスタンプを含む、エラーが発生したドライバーに関する情報を表示するコマンド。
 
 ```dbgcmd
 1: kd> lmvm nvlddmkm

@@ -6,12 +6,12 @@ keywords:
 - ネットワーク アダプターの WDF クラスの拡張機能の制限事項、NetAdapterCx の制限事項、NetCx の制限事項
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21146fe5f8dc5301b1d2e07807f0328d69a9848d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a2d3c13a895607ccfc56399f385c9878728c79f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375345"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382823"
 ---
 # <a name="netadaptercx-limitations"></a>NetAdapterCx の制限事項
 
@@ -21,7 +21,7 @@ ms.locfileid: "63375345"
 
 |関数 | 説明 |
 |-|-|
-| [**WdfDeviceInitAssignSDDLString**](https://msdn.microsoft.com/library/windows/hardware/ff546035) | 既定で[ **NetAdapterDeviceInitConfig** ](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterdeviceinitconfig)割り当てます`SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RW_RES_R`SDDL の既定値として。 制限の厳しい SDDL を指定する場合、アプリケーションをクエリの Oid をアダプターに送信することできない可能性があります。 |
-|[**WdfDeviceInitSetFileObjectConfig**](https://msdn.microsoft.com/library/windows/hardware/ff546107)| クライアント ドライバーを設定する必要がありますいない**WdfFileObjectWdfCanUseFsContext**で、 **FileObjectClass**のメンバー [WDF_FILEOBJECT_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff551319)します。 |
-| [**WdfDeviceInitAssignName**](https://msdn.microsoft.com/library/windows/hardware/ff546029)、 [ **WdfDeviceInitSetReleaseHardwareOrderOnFailure**](https://msdn.microsoft.com/library/windows/hardware/hh706196)、 [ **WdfDeviceInitSetDeviceType**](https://msdn.microsoft.com/library/windows/hardware/ff546090)、 [ **WdfDeviceInitSetCharacteristics**](https://msdn.microsoft.com/library/windows/hardware/ff546074)、 [ **WdfDeviceInitSetIoType**](https://msdn.microsoft.com/library/windows/hardware/ff546128)、 [ **WdfDeviceInitSetPowerPageable**](https://msdn.microsoft.com/library/windows/hardware/ff546766) | [**NetAdapterDeviceInitConfig** ](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterdeviceinitconfig)クライアント ドライバーの代わりにこれらのルーチンを呼び出します。 クライアント ドライバーはこれら呼び出さないでください。
-| [**WdfDeviceCreateDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff545935) | クライアント ドライバーを呼び出す場合[ **WdfDeviceCreateDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff545935)で、 **ReferenceString**パラメーターと等しい**NULL**、NDISデバイス インターフェイスへの送信 I/O 要求をインターセプトします。 この動作を回避するには、任意の参照文字列を指定します。
+| [**WdfDeviceInitAssignSDDLString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring) | 既定で[ **NetAdapterDeviceInitConfig** ](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterdeviceinitconfig)割り当てます`SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RW_RES_R`SDDL の既定値として。 制限の厳しい SDDL を指定する場合、アプリケーションをクエリの Oid をアダプターに送信することできない可能性があります。 |
+|[**WdfDeviceInitSetFileObjectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetfileobjectconfig)| クライアント ドライバーを設定する必要がありますいない**WdfFileObjectWdfCanUseFsContext**で、 **FileObjectClass**のメンバー [WDF_FILEOBJECT_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_fileobject_config)します。 |
+| [**WdfDeviceInitAssignName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)、 [ **WdfDeviceInitSetReleaseHardwareOrderOnFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetreleasehardwareorderonfailure)、 [ **WdfDeviceInitSetDeviceType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetdevicetype)、 [ **WdfDeviceInitSetCharacteristics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetcharacteristics)、 [ **WdfDeviceInitSetIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotype)、 [ **WdfDeviceInitSetPowerPageable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpageable) | [**NetAdapterDeviceInitConfig** ](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterdeviceinitconfig)クライアント ドライバーの代わりにこれらのルーチンを呼び出します。 クライアント ドライバーはこれら呼び出さないでください。
+| [**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface) | クライアント ドライバーを呼び出す場合[ **WdfDeviceCreateDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)で、 **ReferenceString**パラメーターと等しい**NULL**、NDISデバイス インターフェイスへの送信 I/O 要求をインターセプトします。 この動作を回避するには、任意の参照文字列を指定します。

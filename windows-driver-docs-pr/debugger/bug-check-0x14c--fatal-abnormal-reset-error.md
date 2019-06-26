@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ff89117ab3d2ecfbba74c1126fd4423a321478
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fd31b79d2f895ee914eb4d016acd0559b62615a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335574"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362209"
 ---
 # <a name="bug-check-0x14c-fatalabnormalreseterror"></a>バグ チェック 0x14C:致命的な\_異常\_リセット\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63335574"
 致命的なエラー\_異常\_リセット\_エラーのバグ チェックが 0x0000014C の値を持ちます。 回復不能なシステム エラーが発生しましたまたはシステムがリセット異常のことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="fatalabnormalreseterror-parameters"></a>致命的な\_異常\_リセット\_エラー パラメーター

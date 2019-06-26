@@ -4,16 +4,16 @@ description: 以降では、Windows 8、SPB フレームワークの拡張機能
 ms.assetid: 0A752413-FA0B-4C26-BF6D-19033E07095E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91ebce26adba414e14a4685b2f664248c99bfe23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0a007058fb4cb7f59b7c8f03cb4eb8bf747bcd1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325300"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383497"
 ---
 # <a name="using-the-spb-io-request-interface"></a>SPB I/O 要求インターフェイスの使用
 
-Windows 8 では、以降では、 [SPB フレームワーク拡張](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)(SpbCx) がサポートするシステム提供のコンポーネント、 [SPB の I/O 要求インターフェイス](https://docs.microsoft.com/previous-versions//hh698224(v=vs.85))。 SPB 周辺機器のデバイス ドライバーを I²C、SPI、およびその他に接続されているデバイスの I/O 要求を送信するこのインターフェイスを使用して[単純な周辺機器のバス](https://docs.microsoft.com/previous-versions//hh450903(v=vs.85))(SPBs)。 SpbCx によってさまざまな種類のバスの間で標準化された I/O 要求インターフェイスを使用できるようにするには、さまざまなハードウェア プラットフォームや別のハードウェアから SPB のコント ローラーの周辺機器のファミリをドライバーのサポートを提供するためのタスクを簡略化します。ベンダー。
+Windows 8 では、以降では、 [SPB フレームワーク拡張](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)(SpbCx) がサポートするシステム提供のコンポーネント、 [SPB の I/O 要求インターフェイス](https://docs.microsoft.com/previous-versions/hh698224(v=vs.85))。 SPB 周辺機器のデバイス ドライバーを I²C、SPI、およびその他に接続されているデバイスの I/O 要求を送信するこのインターフェイスを使用して[単純な周辺機器のバス](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))(SPBs)。 SpbCx によってさまざまな種類のバスの間で標準化された I/O 要求インターフェイスを使用できるようにするには、さまざまなハードウェア プラットフォームや別のハードウェアから SPB のコント ローラーの周辺機器のファミリをドライバーのサポートを提供するためのタスクを簡略化します。ベンダー。
 
 次の条件が満たされた場合、SPB に接続されている周辺機器デバイスのハードウェア ベンダーは複数のバスの種類で動作する 1 つのデバイス ドライバーを開発できます。
 
@@ -30,7 +30,7 @@ SPBs に接続されている周辺機器がメモリ マップトでなく、�
 
 ドライバー、ドライバーは、sp B に接続されている周辺機器に I/O 要求を送信できるようにを開きますが、デバイスへの接続を論理的に開く必要があります。 この接続を開くには、ドライバーは、プラグ アンド プレイ マネージャからのハードウェア リソースとして受信した接続 ID を使用します。 詳細については、次を参照してください。 [SPB の周辺機器の接続 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)します。
 
-SpbCx と SPB コント ローラーのドライバーは共同で読み取りを処理し、周辺機器の SPB 接続要求を記述します。 応答、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/previous-versions//ff546883(v=vs.85)) SPB コント ローラーは、指定したバイト数を周辺機器からドライバーによって提供されるバッファーに転送を要求します。 応答、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/en-us/previous-versions//ff546904(v=vs.85)) SPB コント ローラーは、ドライバーによって提供されるバッファーから指定したバイト数を周辺機器のデバイスに転送を要求します。
+SpbCx と SPB コント ローラーのドライバーは共同で読み取りを処理し、周辺機器の SPB 接続要求を記述します。 応答、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85)) SPB コント ローラーは、指定したバイト数を周辺機器からドライバーによって提供されるバッファーに転送を要求します。 応答、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/en-us/previous-versions//ff546904(v=vs.85)) SPB コント ローラーは、ドライバーによって提供されるバッファーから指定したバイト数を周辺機器のデバイスに転送を要求します。
 
 **IRP\_MJ\_読み取り**または**IRP\_MJ\_書き込み**0 バイトの転送を要求、SpbCx状態要求が完了すると\_成功の状態コードが操作を実行しません。
 

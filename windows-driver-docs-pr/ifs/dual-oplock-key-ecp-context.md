@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0ba635e1df0999b9fd89a1736f4f03f4a395c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad5182048de61499d8e8bb36fe41a87af6761fb1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383856"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386093"
 ---
 # <a name="dualoplockkeyecpcontext-structure"></a>デュアル\_OPLOCK\_キー\_ECP\_CONTEXT 構造体
 
@@ -39,7 +39,7 @@ typedef struct _DUAL_OPLOCK_KEY_ECP_CONTEXT {
 } DUAL_OPLOCK_KEY_ECP_CONTEXT, *PDUAL_OPLOCK_KEY_ECP_CONTEXT;
 ```
 
-<a name="members"></a>メンバー
+<a name="members"></a>Members
 -------
 
 **ParentOplockKey**  
@@ -57,11 +57,11 @@ A **GUID**ターゲット oplock のキー値を表します。
 <a name="remarks"></a>注釈
 -------
 
-**デュアル\_OPLOCK\_キー\_ECP\_コンテキスト**構造体には、ファイルとディレクトリの oplock の要求を許可するデュアル oplock キーが提供されます。 ように、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](oplock-key-ecp-context.md)構造、**デュアル\_OPLOCK\_キー\_ECP\_コンテキスト**余分な設定は、パラメーター リストの作成 ([**ECP\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff540148))の処理中に後で、ファイルオブジェクトに関連付けられていると[**IRP\_MJ\_作成**](irp-mj-create.md)によってファイル システムまたはファイル システム フィルター ドライバー。
+**デュアル\_OPLOCK\_キー\_ECP\_コンテキスト**構造体には、ファイルとディレクトリの oplock の要求を許可するデュアル oplock キーが提供されます。 ように、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](oplock-key-ecp-context.md)構造、**デュアル\_OPLOCK\_キー\_ECP\_コンテキスト**余分な設定は、パラメーター リストの作成 ([**ECP\_一覧**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85)))の処理中に後で、ファイルオブジェクトに関連付けられていると[**IRP\_MJ\_作成**](irp-mj-create.md)によってファイル システムまたはファイル システム フィルター ドライバー。
 
-値**GUID\_ECP\_デュアル\_OPLOCK\_キー**などサポート ルーチンを呼び出すときに使用が[ **FsRtlAllocateExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545609)、 [ **FsRtlInitializeExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546113)、または[ **FltRemoveExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff544339)します。
+値**GUID\_ECP\_デュアル\_OPLOCK\_キー**などサポート ルーチンを呼び出すときに使用が[ **FsRtlAllocateExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545609)、 [ **FsRtlInitializeExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546113)、または[ **FltRemoveExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltremoveextracreateparameter)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -84,17 +84,17 @@ A **GUID**ターゲット oplock のキー値を表します。
 ## <a name="see-also"></a>関連項目
 
 
-[**ECP\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff540148)
+[**ECP\_一覧**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))
 
-[**IO\_DRIVER\_CREATE\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff548565)
+[**IO\_DRIVER\_CREATE\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_io_driver_create_context)
 
-[**IoCreateFileEx**](https://msdn.microsoft.com/library/windows/hardware/ff548283)
+[**IoCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefileex)
 
 [**IRP\_MJ\_CREATE**](irp-mj-create.md)
 
 [**OPLOCK\_KEY\_ECP\_CONTEXT**](oplock-key-ecp-context.md)
 
-[Oplock のセマンティクス](https://msdn.microsoft.com/library/windows/hardware/ff551007)
+[Oplock のセマンティクス](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-semantics)
 
  
 

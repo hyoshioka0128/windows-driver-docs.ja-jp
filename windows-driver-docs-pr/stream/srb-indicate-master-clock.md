@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f23a17bc8a404ee9fb93809db24ccdc33966272c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65db7727a7a4ae1b2be815e15c5f7f47e2afb310
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390860"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377908"
 ---
 # <a name="srbindicatemasterclock"></a>SRB\_を示す\_マスター\_クロック
 
@@ -42,9 +42,9 @@ ms.locfileid: "63390860"
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバー セット、 **CommandData**.**MasterClockHandle**によって示されるメンバー *pSrb*マスターのクロックを表すクロック オブジェクトのハンドルにします。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。
+クラスのドライバー セット、 **CommandData**.**MasterClockHandle**によって示されるメンバー *pSrb*マスターのクロックを表すクロック オブジェクトのハンドルにします。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。
 
-ストリームはマスターのクロックを識別するハンドルを渡すことによって、マスターのクロックの時刻の値を照会することが[ **StreamClassQueryMasterClock** ](https://msdn.microsoft.com/library/windows/hardware/ff568249)または[ **StreamClassQueryMasterClockSync**](https://msdn.microsoft.com/library/windows/hardware/ff568251).
+ストリームはマスターのクロックを識別するハンドルを渡すことによって、マスターのクロックの時刻の値を照会することが[ **StreamClassQueryMasterClock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassquerymasterclock)または[ **StreamClassQueryMasterClockSync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassquerymasterclocksync).
 
 ミニドライバーは、SRB を受け取るまで\_を示す\_マスター\_クロックの特定のストリームをそのことができますがあると想定ストリームを実行している無料。 この SRB 下位暗証番号 (pin) は、ハンドルと同じです渡されたハンドルのミニドライバーに渡す場合[ **SRB\_オープン\_マスター\_クロック**](srb-open-master-clock.md)、、ミニドライバー。マスターとは従属要素を制御しているために、マスター クロックから直接時間を読み取ることができます。
 

@@ -5,17 +5,17 @@ ms.assetid: 418f4ce8-64af-4e1e-877a-4cc606f63747
 ms.date: 08/08/2017
 keywords: -OID_PM_ADD_PROTOCOL_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e04155e5118fd1971cdd753cba629235da9d1644
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88f670648342b9be8dc2e239f9b1016f7090eee0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346796"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383237"
 ---
 # <a name="oidpmaddprotocoloffload"></a>OID\_PM\_追加\_プロトコル\_オフロード
 
 
-NDIS プロトコル ドライバーが、OID を使用し、セットとして\_PM\_追加\_プロトコル\_プロトコルを追加する OID のオフロードが電源管理ネットワーク アダプターにオフロードします。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566760)構造体。
+NDIS プロトコル ドライバーが、OID を使用し、セットとして\_PM\_追加\_プロトコル\_プロトコルを追加する OID のオフロードが電源管理ネットワーク アダプターにオフロードします。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -26,20 +26,20 @@ NDIS 6.20 が動作し、後でプロトコル ドライバーを使用して、
 
 NDIS およびその他のネットワーク アダプターを低電力状態に設定する NDIS の開始後に、同じミニポート アダプタにバインドされているプロトコル ドライバーでの競合状態を避けるためには、そのネットワーク アダプターに別のプロトコルの負荷を軽減しようとすると失敗になります。 NDIS プロトコル ドライバーの処理のコンテキストでのプロトコルの負荷を軽減しようとする場合など、 **NetEventSetPower** NDIS そのネットワーク アダプターのイベント通知には、要求が失敗します。
 
-NDIS は、NDIS ドライバーは、基になるまでこの OID 要求を送信または上にあるドライバーへの要求が完了すると、前に設定、ULONG **ProtocolOffloadId**のメンバー、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566760)を一意の値構造体。 プロトコル ドライバーおよび NDIS でこのプロトコルのオフロード識別子を使用して、 [OID\_PM\_削除\_プロトコル\_オフロード](oid-pm-remove-protocol-offload.md)OID 要求からプロトコル オフロードを削除する、基になるネットワーク アダプター。
+NDIS は、NDIS ドライバーは、基になるまでこの OID 要求を送信または上にあるドライバーへの要求が完了すると、前に設定、ULONG **ProtocolOffloadId**のメンバー、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)を一意の値構造体。 プロトコル ドライバーおよび NDIS でこのプロトコルのオフロード識別子を使用して、 [OID\_PM\_削除\_プロトコル\_オフロード](oid-pm-remove-protocol-offload.md)OID 要求からプロトコル オフロードを削除する、基になるネットワーク アダプター。
 
 **注**  プロトコルのオフロード識別子は、各ネットワーク アダプターに設定されているプロトコルのオフロードの一意の値。 ただし、プロトコル オフロード識別子はグローバルに一意なすべてのネットワーク アダプターです。
 
  
 
-生成 NDIS または基になるネットワーク アダプターに、オフロードが拒否された場合、 [ **NDIS\_状態\_PM\_オフロード\_REJECTED** ](https://msdn.microsoft.com/library/windows/hardware/ff567412)状態示します。 これは NDIS が返された後に発生\_状態\_OID の成功します。 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体には ULONG プロトコル オフロード識別子が含まれています、プロトコルのオフロードが拒否されます。
+生成 NDIS または基になるネットワーク アダプターに、オフロードが拒否された場合、 [ **NDIS\_状態\_PM\_オフロード\_REJECTED** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-offload-rejected)状態示します。 これは NDIS が返された後に発生\_状態\_OID の成功します。 **StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体には ULONG プロトコル オフロード識別子が含まれています、プロトコルのオフロードが拒否されます。
 
-ネイティブの 802.11 ワイヤレス LAN のミニポート ドライバーでこの OID を使用する方法については、次を参照してください。[の追加および削除する低電力プロトコルをオフロード](https://msdn.microsoft.com/library/windows/hardware/ff543707)します。
+ネイティブの 802.11 ワイヤレス LAN のミニポート ドライバーでこの OID を使用する方法については、次を参照してください。[の追加および削除する低電力プロトコルをオフロード](https://docs.microsoft.com/windows-hardware/drivers/network/adding-and-deleting-low-power-protocol-offloads)します。
 
 ミニポート ドライバーでは、要求の状態コードの次のいずれかを返します。
 
 <a href="" id="ndis-status-success"></a>NDIS\_状態\_成功  
-要求されたプロトコルのオフロードが正常に追加されました。 **ProtocolOffloadId**のメンバー、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566760)構造体には、プロトコルのオフロードが含まれています。識別子です。
+要求されたプロトコルのオフロードが正常に追加されました。 **ProtocolOffloadId**のメンバー、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造体には、プロトコルのオフロードが含まれています。識別子です。
 
 <a href="" id="ndis-status-pending"></a>NDIS\_状態\_PENDING  
 完了待ちになっています。 NDIS では、要求が完了した後、最終的な状態コードと結果を呼び出し元の OID 要求完了ハンドラーに渡すは。
@@ -51,7 +51,7 @@ NDIS は、NDIS ドライバーは、基になるまでこの OID 要求を送�
 NDIS または基になるネットワーク アダプターを追加できなかったため新しいプロトコル オフロード リソースが不足しています。
 
 <a href="" id="ndis-status-invalid-parameter"></a>NDIS\_状態\_無効な\_パラメーター  
-1 つまたは複数のパラメーターで、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566760)構造が無効です。
+1 つまたは複数のパラメーターで、 [ **NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)構造が無効です。
 
 <a href="" id="ndis-status-buffer-too-short"></a>NDIS\_状態\_バッファー\_すぎます\_短い  
 情報バッファーが小さすぎます。 NDIS セット、**データ。設定\_情報。BytesNeeded** NDIS でメンバー\_OID\_構造体を最小バッファー サイズを要求が必要です。
@@ -85,17 +85,17 @@ NDIS または基になるネットワーク アダプターを追加できな�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_プロトコル\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566760)
+[**NDIS\_PM\_プロトコル\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_状態\_PM\_オフロード\_拒否済み**](https://msdn.microsoft.com/library/windows/hardware/ff567412)
+[**NDIS\_状態\_PM\_オフロード\_拒否済み**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-offload-rejected)
 
 [OID\_PM\_削除\_プロトコル\_オフロード](oid-pm-remove-protocol-offload.md)
 
-[追加と削除の省電力プロトコルのオフロード](https://msdn.microsoft.com/library/windows/hardware/ff543707)
+[追加と削除の省電力プロトコルのオフロード](https://docs.microsoft.com/windows-hardware/drivers/network/adding-and-deleting-low-power-protocol-offloads)
 
  
 

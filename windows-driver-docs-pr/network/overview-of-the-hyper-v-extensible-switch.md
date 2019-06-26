@@ -4,12 +4,12 @@ description: このセクションでは、HYPER-V 拡張可能スイッチの�
 ms.assetid: 78181C72-FBFD-4860-A664-C297997D780F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 580a23ec1d8cb1622c0e6c47bad2a9723a29e059
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 4dc38a28d6f723fdb894a783f19ee32c93137921
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405170"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378678"
 ---
 # <a name="overview-of-the-hyper-v-extensible-switch"></a>Hyper-V 拡張可能スイッチの概要
 
@@ -26,9 +26,9 @@ Windows Server 2012 では、HYPER-V 拡張可能スイッチ (HYPER-V 仮想ス
 
 このテクノロジとその基盤の高度な技術概要については、次の TechNet ドキュメントを参照してください。
 
--   [Hyper-V 仮想スイッチの概要](https://technet.microsoft.com/library/hh831823.aspx)
--   [Hyper-V ネットワーク仮想化の概要](https://technet.microsoft.com/library/jj134230.aspx)
--   [HYPER-V の概要](https://technet.microsoft.com/library/hh831531.aspx)
+-   [Hyper-V 仮想スイッチの概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831823(v=ws.11))
+-   [Hyper-V ネットワーク仮想化の概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134230(v=ws.11))
+-   [HYPER-V の概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))
 
 ## <a name="types-of-hyper-v-extensible-switches-and-network-adapters"></a>HYPER-V 拡張可能スイッチおよびネットワーク アダプターの種類
 

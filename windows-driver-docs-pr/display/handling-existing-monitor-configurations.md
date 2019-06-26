@@ -8,17 +8,17 @@ keywords:
 - TMM WDK の表示、既存のモニターの構成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d3d751bb13851f9c0c18fbbf4062b1e6b8b9231
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 322bd3a7737266c46224238be5b48ca34f8869d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323740"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382318"
 ---
 # <a name="handling-existing-monitor-configurations"></a>既存のモニター構成の処理
 
 
-新しいモニターを検出するほか、2 つのモニターの構成で TMM ダイアログを起動するには、TMM もする必要があります復元前の構成を表示します。 TMM はを通じてユーザー モードのディスプレイ ドライバーにデータの表示を渡すことによって表示の構成を復元することができます、 [ **IViewHelper::SetConfiguration** ](https://msdn.microsoft.com/library/windows/hardware/ff568176)メソッド。 TMM はメモリを割り当てるし、メモリ内の表示モードとトポロジの情報を格納します。 TMM 渡すのでは、このメモリを**IStream**インターフェイス、 *pIStream*パラメーターの**された SetConfiguration**を指します。 ユーザー モードのディスプレイ ドライバーを変更したりその他の表示データ (たとえば、ガンマまたはテレビの設定) にもできます。 データの表示では、ドライバーが完了したら、ドライバーを呼び出す、 **IStream::Release**メモリを解放するメソッド。
+新しいモニターを検出するほか、2 つのモニターの構成で TMM ダイアログを起動するには、TMM もする必要があります復元前の構成を表示します。 TMM はを通じてユーザー モードのディスプレイ ドライバーにデータの表示を渡すことによって表示の構成を復元することができます、 [ **IViewHelper::SetConfiguration** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568176(v=vs.85))メソッド。 TMM はメモリを割り当てるし、メモリ内の表示モードとトポロジの情報を格納します。 TMM 渡すのでは、このメモリを**IStream**インターフェイス、 *pIStream*パラメーターの**された SetConfiguration**を指します。 ユーザー モードのディスプレイ ドライバーを変更したりその他の表示データ (たとえば、ガンマまたはテレビの設定) にもできます。 データの表示では、ドライバーが完了したら、ドライバーを呼び出す、 **IStream::Release**メモリを解放するメソッド。
 
 次の図は、TMM 既存のモニター構成を復元するときに発生する操作の流れを示しています。
 

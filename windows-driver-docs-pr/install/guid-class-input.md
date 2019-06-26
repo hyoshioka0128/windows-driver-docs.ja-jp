@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: faa3437f37eac87a062153f21e7ad87d9f474316
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c23cc8dd32f4ab78ce09499b0da07b470357233b
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392471"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393426"
 ---
 # <a name="guidclassinput"></a>GUID_CLASS_INPUT
 
 
-GUID_CLASS_INPUT は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)の[HID コレクション](https://msdn.microsoft.com/library/windows/hardware/ff539861)します。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_HID** ](guid-devinterface-hid.md)このクラスの新しいインスタンスのクラス識別子。
+GUID_CLASS_INPUT は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)の[HID コレクション](https://docs.microsoft.com/windows-hardware/drivers/hid/hid-collections)します。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_HID** ](guid-devinterface-hid.md)このクラスの新しいインスタンスのクラス識別子。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

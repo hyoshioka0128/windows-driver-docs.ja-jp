@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa377ae400a9a5da4a0ba92fe68c4eb649f6848a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1787d958a65628e4af4440795120ce8ab46c8d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380942"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383776"
 ---
 # <a name="wiadpspagesize"></a>WIA\_DPS\_ページ\_サイズ
 
@@ -49,7 +49,7 @@ WIA\_DPS\_ページ\_サイズ プロパティには、スキャンする現在�
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>定義</th>
 </tr>
 </thead>
@@ -83,7 +83,7 @@ WIA\_PROP\_リストに型指定された値は、WIA の有効な設定に依�
 
 ミニドライバーことを確認します、WIA\_IP\_選択領域を現在の ORIENTATION プロパティ意見に同意します。 アプリケーションには、WIA の値が変更された場合\_IP\_向きを現在選択されているページ サイズ、ミニドライバーの有効なものは、WIA の値を変更する必要があります\_DPS\_ページ\_ページ サイズ新しい向きの値がサポートされているサイズ。
 
-アプリケーション設定、WIA 場合\_DPS\_ページ\_サイズ プロパティは、WIA を\_ページ\_カスタムでは、現在の選択領域が影響を受けません。 WIA ミニドライバーは、現在のイメージのレイアウトを取得する必要がありますの現在の設定から、 [ **WIA\_IP\_XPOS** ](wia-ips-xpos.md)と[ **WIA\_IP\_YPOS** ](wia-ips-ypos.md)プロパティ。 スキャナーの外にある選択領域の場合、ページ サイズ設定、ミニドライバー、WIA の値に自動的に調整する必要があります\_IP\_XPOS と WIA\_IP\_有効 YPOS プロパティ設定。 場合、WIA\_DPS\_ページ\_サイズと WIA\_IP\_向きプロパティは同時に設定し無効な組み合わせに適用されると、ミニドライバーが失敗する必要があります、アプリケーションの設定でエラーを返すことによって、 [ **IWiaMiniDrv::drvValidateItemProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff545017)メソッド。
+アプリケーション設定、WIA 場合\_DPS\_ページ\_サイズ プロパティは、WIA を\_ページ\_カスタムでは、現在の選択領域が影響を受けません。 WIA ミニドライバーは、現在のイメージのレイアウトを取得する必要がありますの現在の設定から、 [ **WIA\_IP\_XPOS** ](wia-ips-xpos.md)と[ **WIA\_IP\_YPOS** ](wia-ips-ypos.md)プロパティ。 スキャナーの外にある選択領域の場合、ページ サイズ設定、ミニドライバー、WIA の値に自動的に調整する必要があります\_IP\_XPOS と WIA\_IP\_有効 YPOS プロパティ設定。 場合、WIA\_DPS\_ページ\_サイズと WIA\_IP\_向きプロパティは同時に設定し無効な組み合わせに適用されると、ミニドライバーが失敗する必要があります、アプリケーションの設定でエラーを返すことによって、 [ **IWiaMiniDrv::drvValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)メソッド。
 
 次の 4 つのコード例は次の WIA を表示する\_DPS\_ページ\_サイズ シナリオ。
 
@@ -117,7 +117,7 @@ WIA_DPS_PAGE_SIZE WIA_PAGE_LETTER WIA_DPS_PAGE_HEIGHT = 11000 WIA_DPS_PAGE_WIDTH
 
 WIA_DPS_PAGE_SIZE WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT を = = 10000 WIA_DPS_PAGE_WIDTH = 8500 WIA_IPS_ORIENTATION LANSCAPE WIA_IPS_XPOS を = = 0 WIA_IPS_YPOS = 0 WIA_IPS_XEXTENT = 1000 WIA_IPS_YEXTENT 850 WIA_IPS_XRES を = = 100 WIA_IPS_YRES = 100
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -139,7 +139,7 @@ WIA_DPS_PAGE_SIZE WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT を = = 10000 WIA_DPS_PAGE
 
 ## <a name="see-also"></a>関連項目
 
-[**IWiaMiniDrv::drvValidateItemProperties**](https://msdn.microsoft.com/library/windows/hardware/ff545017)
+[**IWiaMiniDrv::drvValidateItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)
 
 [**WIA\_DPS\_ページ\_高さ**](wia-dps-page-height.md)
 

@@ -11,12 +11,12 @@ keywords:
 - WDM 低い edge WDK ネットワー キング、WDM 下端について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e869d20fc9e72c5f870112e7c79312a7124ed68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f7b8a16287d9333b8fed8428072cd6a207482cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357269"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380908"
 ---
 # <a name="miniport-driver-with-a-wdm-lower-edge"></a>WDM の下端を含むミニポート ドライバー
 
@@ -45,10 +45,10 @@ NDIS WDM ミニポート ドライバーの USB ドライバー スタックと�
 その他のベンダーから提供された USB クライアント ドライバー。
 
 <a href="" id="usb-class-interface"></a>USB クラス インターフェイス  
-[USB ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff540046)と[I/O 要求](https://msdn.microsoft.com/library/windows/hardware/ff537421)USB クライアント ドライバーが使用できることを USB ドライバー スタックとのインターフェイス。
+[USB ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85))と[I/O 要求](https://docs.microsoft.com/previous-versions/ff537421(v=vs.85))USB クライアント ドライバーが使用できることを USB ドライバー スタックとのインターフェイス。
 
 <a href="" id="usb-driver-stack"></a>USB ドライバー スタック  
-USB デバイスのドライバー スタックです。 詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/hh406256)します。
+USB デバイスのドライバー スタックです。 詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 

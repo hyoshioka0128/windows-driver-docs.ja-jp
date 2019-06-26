@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7336945ef936002bc5337316af88626355b591f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b955c6fa76a549a95e6f935ff04f3646ac229e91
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332974"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391464"
 ---
 # <a name="kspropertyaudioposition"></a>KSPROPERTY\_オーディオ\_位置
 
@@ -53,8 +53,8 @@ KSPROPERTY\_オーディオ\_位置プロパティは、pin のオーディオ �
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537091" data-raw-source="[&lt;strong&gt;KSAUDIO_POSITION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537091)"><strong>KSAUDIO_POSITION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_position" data-raw-source="[&lt;strong&gt;KSAUDIO_POSITION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_position)"><strong>KSAUDIO_POSITION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -72,9 +72,9 @@ KSPROPERTY\_オーディオ\_位置プロパティ要求がステータスを返
 
 DirectSound は、KSPROPERTY\_オーディオ\_POSITION プロパティを実装する、 **IDirectSoundBuffer::GetCurrentPosition**と**IDirectSoundBuffer::SetCurrentPosition**メソッド。 Windows のマルチ メディア機能**waveInGetPosition**と**waveOutGetPosition**もこのプロパティを使用します。 DirectSound と Windows のマルチ メディア機能の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-WaveCyclic と WavePci のミニポート ドライバーは KSPROPERTY のプロパティのハンドラーを実装する必要はありません\_オーディオ\_WaveCyclic と WavePci ポート ドライバー ミニポート ドライバーの代わりにこのプロパティを処理するために配置します。 ポート ドライバー プロパティ ハンドラーが、ミニポート ドライバーを呼び出すレンダリング ストリームの再生位置またはキャプチャ ストリーム内のレコードの位置を取得する[ **IMiniportWaveCyclicStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536716)または[ **IMiniportWavePciStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536727)メソッド。
+WaveCyclic と WavePci のミニポート ドライバーは KSPROPERTY のプロパティのハンドラーを実装する必要はありません\_オーディオ\_WaveCyclic と WavePci ポート ドライバー ミニポート ドライバーの代わりにこのプロパティを処理するために配置します。 ポート ドライバー プロパティ ハンドラーが、ミニポート ドライバーを呼び出すレンダリング ストリームの再生位置またはキャプチャ ストリーム内のレコードの位置を取得する[ **IMiniportWaveCyclicStream::GetPosition** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-getposition)または[ **IMiniportWavePciStream::GetPosition** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)メソッド。
 
-詳細については、次を参照してください。[オーディオ位置プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff536211)します。
+詳細については、次を参照してください。[オーディオ位置プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-position-property)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -95,13 +95,13 @@ WaveCyclic と WavePci のミニポート ドライバーは KSPROPERTY のプ�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSAUDIO\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537091)
+[**KSAUDIO\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_position)
 
-[**IMiniportWaveCyclicStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536716)
+[**IMiniportWaveCyclicStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-getposition)
 
-[**IMiniportWavePciStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536727)
+[**IMiniportWavePciStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)
 
  
 

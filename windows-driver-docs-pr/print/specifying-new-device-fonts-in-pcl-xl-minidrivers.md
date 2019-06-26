@@ -8,12 +8,12 @@ keywords:
 - フォント WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90596e8d09a7a10edb939e19cf1063a392e81bc3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c4e75ba4c434bc53a3e9175824939a9f40634971
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355093"
 ---
 # <a name="specifying-new-device-fonts-in-pcl-xl-minidrivers"></a>PCL XL ミニドライバーで新しいデバイス フォントを指定する
 
@@ -25,13 +25,13 @@ PCL XL ミニドライバーで新しいデバイス フォントをサポート
 
 UFM ファイルには、次の形式があります。
 
-A [ **UNIFM\_HDR** ](https://msdn.microsoft.com/library/windows/hardware/ff563587) UFM ファイルのヘッダーとして機能する構造体
+A [ **UNIFM\_HDR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_unifm_hdr) UFM ファイルのヘッダーとして機能する構造体
 
-A [ **UNIDRVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff562872)構造体
+A [ **UNIDRVINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_unidrvinfo)構造体
 
-[ **IFIMETRICS** ](https://msdn.microsoft.com/library/windows/hardware/ff567418)構造体
+[ **IFIMETRICS** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_ifimetrics)構造体
 
-[ **EXTTEXTMETRIC** ](https://msdn.microsoft.com/library/windows/hardware/ff548801)構造体
+[ **EXTTEXTMETRIC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prntfont/ns-prntfont-_exttextmetric)構造体
 
 文字幅の表
 

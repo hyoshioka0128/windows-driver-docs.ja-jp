@@ -5,12 +5,12 @@ ms.assetid: 84d7231b-8af2-4bdb-8df5-37088767f708
 ms.date: 08/08/2017
 keywords: -OID_GEN_PHYSICAL_MEDIUM ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5627c37f1bef00ea906d4fa5f46f932898a6604b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c16590256702ad74a32609d2ab3a38ee09241057
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385745"
 ---
 # <a name="oidgenphysicalmedium"></a>OID\_GEN\_物理\_中
 
@@ -32,7 +32,7 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 
 **NdisPhysicalMediumUnspecified**物理メディアは、前のメディアなし。 たとえば、一方向のサテライト フィードは、指定されていない物理メディアです。
 
-**NdisPhysicalMediumWirelessLan** 802.11 インターフェイスに準拠しているミニポート ドライバーを通じてワイヤレス LAN ネットワーク経由でパケットが転送されます。 このインターフェイスの詳細についてを参照してください。 [802.11 ワイヤレス LAN のミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff543933)
+**NdisPhysicalMediumWirelessLan** 802.11 インターフェイスに準拠しているミニポート ドライバーを通じてワイヤレス LAN ネットワーク経由でパケットが転送されます。 このインターフェイスの詳細についてを参照してください。 [802.11 ワイヤレス LAN のミニポート ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff543933(v=vs.85))
 
 **NdisPhysicalMediumCableModem** DOCSIS ベース ケーブルのネットワークを介してパケットが転送されます。
 
@@ -48,7 +48,7 @@ NDIS は、ミニポート ドライバーには、この OID を処理します
 
 **NdisPhysicalMediumWirelessWan**ワイヤレス WAN リンク経由でパケットが転送されます。 たとえば、CDPD、CDMA、および GPRS に含まれています。
 
-<a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802\_11**ネイティブ 802.11 インターフェイスに準拠のミニポート ドライバーを介してワイヤレス LAN ネットワーク経由でパケットが転送されます。 このインターフェイスの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff560648)します。
+<a href="" id="ndisphysicalmediumnative802-11"></a>**NdisPhysicalMediumNative802\_11**ネイティブ 802.11 インターフェイスに準拠のミニポート ドライバーを介してワイヤレス LAN ネットワーク経由でパケットが転送されます。 このインターフェイスの詳細については、次を参照してください。 [802.11 ワイヤレス LAN のネイティブのミニポート ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560648(v=vs.85))します。
 
 **注**  NDIS 6.0 以降およびそれ以降、およびそれ以降のバージョンで、ネイティブの 802.11 インターフェイスがサポートされています。
 

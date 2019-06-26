@@ -4,12 +4,12 @@ description: Vista アプリケーションとレガシ ドライバーのマッ
 ms.assetid: 176157b0-cc30-467b-95ec-2d25a40c43ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96a305c388f371e151bd27b84b26e6fb36487b1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 399fc92bd60e01d0f0897ea285ec86ed3e017e4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378844"
 ---
 # <a name="mapping-for-a-vista-application-and-legacy-driver"></a>Vista アプリケーションとレガシ ドライバーのマッピング
 
@@ -110,7 +110,7 @@ ms.locfileid: "63379686"
 
  
 
-従来の転送メッセージの詳細については、次を参照してください。、 [IWiaMiniDrvCallBack インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543943)します。
+従来の転送メッセージの詳細については、次を参照してください。、 [IWiaMiniDrvCallBack インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)します。
 
 TYMED 定数の詳細については、次を参照してください。[理解 TYMED](understanding-tymed.md)します。
 

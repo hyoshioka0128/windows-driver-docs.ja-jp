@@ -5,19 +5,19 @@ ms.assetid: 7D5EB64B-3345-478A-8D42-192939C0B9C2
 ms.date: 08/08/2017
 keywords: -OID_SRIOV_RESET_VF ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1484aa08143befd9544f0237b73c08806addb440
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8cf2f544bf4f76198d7855da49087dec8e5ea60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366588"
 ---
 # <a name="oidsriovresetvf"></a>OID\_SRIOV\_リセット\_VF
 
 
 ドライバーの問題に関連オブジェクト識別子 (OID) の設定の OID 要求\_SRIOV\_リセット\_VF を指定された PCI Express (PCIe) 仮想機能 (VF) でシングル ルート I/O 仮想化をサポートするネットワーク アダプターをリセットします。 上にあるドライバーは、、PCI Express (PCIe) 物理機能 (PF) ネットワーク アダプターのミニポート ドライバーをこの OID セット要求を発行します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_リセット\_VF\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451682)構造体。 上にあるドライバーをリセットする VF の識別子を指定する、 **VFId**この構造体のメンバー。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_リセット\_VF\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)構造体。 上にあるドライバーをリセットする VF の識別子を指定する、 **VFId**この構造体のメンバー。
 
 <a name="remarks"></a>注釈
 -------
@@ -26,11 +26,11 @@ VF にを通じて、PCI Express (PCIe) 関数レベルのリセット (FLR) を
 
 この OID 要求を処理する場合、PF ミニポート ドライバーは次のガイドラインに従います。
 
--   PF のミニポート ドライバーは、VF がで指定されたを確認する必要があります、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_リセット\_VF\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451682)構造体を以前に割り当てられているリソースします。 PF のミニポート ドライバーを VF 用のリソースの割り当ての OID メソッド要求中に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。 指定した VF 用のリソースが割り当てられていない場合、ドライバーは OID 要求に失敗する必要があります。
+-   PF のミニポート ドライバーは、VF がで指定されたを確認する必要があります、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_リセット\_VF\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)構造体を以前に割り当てられているリソースします。 PF のミニポート ドライバーを VF 用のリソースの割り当ての OID メソッド要求中に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。 指定した VF 用のリソースが割り当てられていない場合、ドライバーは OID 要求に失敗する必要があります。
 
 -   リセット操作には、指定 VF のみ影響する必要があります。 操作では、その他の VFs または同じネットワーク アダプターの PF には影響する必要があります。
 
-詳細については、次を参照してください。[仮想関数をリセットする](https://msdn.microsoft.com/library/windows/hardware/hh440219)します。
+詳細については、次を参照してください。[仮想関数をリセットする](https://docs.microsoft.com/windows-hardware/drivers/network/resetting-a-virtual-function)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -58,11 +58,11 @@ PF のミニポート ドライバーでは、OID のセットの要求に関す
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://msdn.microsoft.com/library/windows/hardware/hh451682" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_RESET_VF_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451682)"> <strong>NDIS_SRIOV_RESET_VF_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_RESET_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)"> <strong>NDIS_SRIOV_RESET_VF_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 PF のミニポート ドライバーを設定する必要があります、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 PF のミニポート ドライバーを設定する必要があります、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -97,9 +97,9 @@ PF のミニポート ドライバーでは、OID のセットの要求に関す
 
 
 ****
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_リセット\_VF\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451682)
+[**NDIS\_SRIOV\_リセット\_VF\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)
 
 [OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
 

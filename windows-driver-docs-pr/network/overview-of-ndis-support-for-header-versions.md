@@ -7,12 +7,12 @@ keywords:
 - NDIS バージョン情報 WDK、ヘッダーのメンバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e202b391daab20778cbbe2bfbe28ee02a986930
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4db96e96fd92e75ec843403193676b4fc3b0f78
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348090"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384380"
 ---
 # <a name="overview-of-ndis-support-for-header-versions"></a>NDIS のヘッダー バージョンのサポートの概要
 
@@ -22,7 +22,7 @@ ms.locfileid: "63348090"
 
 多くの NDIS 構造体には、構造体のバージョン情報が含まれます。 NDIS または NDIS ドライバーの初期化、**ヘッダー**構造ごとに必要に応じて、このような構造内のメンバー。 NDIS ドライバーが存在する場合、バージョン情報を確認する必要があります構造体のメンバーにアクセスする前に、各構造にします。
 
-**ヘッダー**メンバーは、 [ **NDIS\_オブジェクト\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff566588)構造体。 この構造体には、リビジョン番号、型、およびを含む構造体のサイズが含まれています、**ヘッダー**メンバー。
+**ヘッダー**メンバーは、 [ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)構造体。 この構造体には、リビジョン番号、型、およびを含む構造体のサイズが含まれています、**ヘッダー**メンバー。
 
 構造体が含まれる、**ヘッダー**メンバーは、次の要件を満たします。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63348090"
 
      
 
--   NDIS ドライバーでは、定義済みのリビジョン値を常に使用する必要があります。 NDIS Xxx の形式では、このような定義を提供する\_リビジョン\_Nn と NDIS\_SIZEOF\_Xxx\_リビジョン\_Nn の**リビジョン**と**サイズ**のメンバー [ **NDIS\_オブジェクト\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff566588)それぞれします。 また、Xxx は、構造体の名前を表す、Nn はリビジョン番号。 リビジョンとの最初のリビジョンのサイズなど、 [ **NDIS\_フィルター\_部分\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565544)構造は NDIS\_フィルター\_部分\_特性\_リビジョン\_1 および NDIS\_SIZEOF\_フィルター\_部分\_特性\_リビジョン\_1 それぞれします。
+-   NDIS ドライバーでは、定義済みのリビジョン値を常に使用する必要があります。 NDIS Xxx の形式では、このような定義を提供する\_リビジョン\_Nn と NDIS\_SIZEOF\_Xxx\_リビジョン\_Nn の**リビジョン**と**サイズ**のメンバー [ **NDIS\_オブジェクト\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)それぞれします。 また、Xxx は、構造体の名前を表す、Nn はリビジョン番号。 リビジョンとの最初のリビジョンのサイズなど、 [ **NDIS\_フィルター\_部分\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_partial_characteristics)構造は NDIS\_フィルター\_部分\_特性\_リビジョン\_1 および NDIS\_SIZEOF\_フィルター\_部分\_特性\_リビジョン\_1 それぞれします。
 
 -   **Header.Size**値が同じにする必要があります、 **Header.Revision**値。 つまり場合、**リビジョン**メンバーには Xxx が含まれています\_リビジョン\_1、**サイズ**NDIS 以上のメンバー値がある必要があります\_SIZEOF\_Xxx\_リビジョン\_1。
 

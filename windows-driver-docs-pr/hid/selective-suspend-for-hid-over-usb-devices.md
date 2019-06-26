@@ -4,12 +4,12 @@ description: ユニバーサル シリアル バス仕様のバージョン 2.0 
 ms.assetid: A4560D7C-8A32-4A91-95B6-4377E0F0D0C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db622b90b32fff0e64e92fc8738edd0939d3d0da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ffdbb2132bdcf6e9982d3761faa750059d24b8f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345448"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385809"
 ---
 # <a name="selective-suspend-for-hid-over-usb-devices"></a>HID over USB デバイスのセレクティブ サスペンド
 
@@ -28,7 +28,7 @@ ms.locfileid: "63345448"
 
 Windows 8 には、HID USB デバイスをセレクティブ サスペンドを有効にするための 2 つのメソッドがサポートしています。 それらは次のとおりです。
 
-1.  **Microsoft OS ディスクリプター\[優先\]**:USB HID セレクティブ サスペンドをサポートするために必要なレジストリ キーを記述する、Microsoft OS ディスクリプターの拡張プロパティの記述子を使用できます。
+1.  **Microsoft OS ディスクリプター\[優先\]** :USB HID セレクティブ サスペンドをサポートするために必要なレジストリ キーを記述する、Microsoft OS ディスクリプターの拡張プロパティの記述子を使用できます。
 2.  **ベンダー提供の INF**:ハードウェアの製造元は、適切なレジストリ キーをインストールする (HID devnode の USB ハードウェア ID に一致) する INF ファイルを提供できます。
 
 ハードウェア ベンダーと PC 製造元のどちらが USB HID セレクティブ サスペンドを有効にする最初のオプションを使用することをお勧めします。 このオプションの利点は次のとおりです。
@@ -98,7 +98,7 @@ VendorXYZ.DeviceDesc = "VendorXYZ Device"
 
 各項目の意味は次のとおりです。
 
-1.  [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)する必要がありますが、 **CLASSGUID**と**DriverVer**ディレクティブは次のように設定。
+1.  [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)する必要がありますが、 **CLASSGUID**と**DriverVer**ディレクティブは次のように設定。
 
     -   **CLASSGUID**ディレクティブは、HID デバイスの Microsoft クラス GUID を指定する必要があります。 この GUID は、{745a17a0-74d3-11d0-b6fe-00a0c90f57da} 値を持ちます。
 
@@ -106,13 +106,13 @@ VendorXYZ.DeviceDesc = "VendorXYZ Device"
 
 2.  2. VendorXYZDevice\*のセクションでは、ベンダーの HID デバイスのハードウェア識別子 (ID) を指定します。 ハードウェア ID は、販売元の識別子 (VID) と製品 id (PID) で構成されます。 各ハードウェア ID、デバイスを製造元とデバイスに固有の VID/PID 値が必要です。 これにより、同じハードウェア ID が複数の名前と設定に対応していません
 
-3.  3. VendorXYZDevice\_Install.NT と VendorXYZDevice\_Install.NT.HW セクションは、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)します。 この例では、これらのセクションでは、INF を含めることが**Include**と**必要がある**ディレクティブ。
+3.  3. VendorXYZDevice\_Install.NT と VendorXYZDevice\_Install.NT.HW セクションは、 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。 この例では、これらのセクションでは、INF を含めることが**Include**と**必要がある**ディレクティブ。
 
     **Include**ディレクティブ参照システム提供 Input.inf ファイル、USB のセレクティブを有効にするために必要な INF セクションが含まれますが、ベンダーの HID デバイスの機能を中断します。
 
     **必要がある**ディレクティブを示す Input.inf からセクションは、デバイスのインストール中に処理する必要があります。 この場合は、HID\_SelSus\_HID 既定ではなく命令セクションが選択されている\_命令のセクションで、選択的でサポートされていない中断します。
 
-4.  4. VendorXYZDevice\_Install.NT.Services セクションは、 [ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)します。 この例で、セクションも含まれていますと同じ値、INF の**Include**と**必要がある**ディレクティブ。
+4.  4. VendorXYZDevice\_Install.NT.Services セクションは、 [ **INF DDInstall.HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)します。 この例で、セクションも含まれていますと同じ値、INF の**Include**と**必要がある**ディレクティブ。
 
  
 

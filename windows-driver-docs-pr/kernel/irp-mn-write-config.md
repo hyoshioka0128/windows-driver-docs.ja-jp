@@ -6,12 +6,12 @@ ms.assetid: d57c30b8-83bd-41c9-906d-b8c95f8ca54e
 keywords:
 - IRP_MN_WRITE_CONFIG Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bb1da29df64250ee92f5f00d1edce07afa2b871
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b12c949ad7a4ef2f3c56d242645d1aefb77d7176
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381394"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376453"
 ---
 # <a name="irpmnwriteconfig"></a>IRP\_MN\_書き込み\_構成
 
@@ -73,15 +73,15 @@ ULONG Length
 
 バス ドライバーでは、その子デバイス (子 Pdo) の場合は、この IRP を処理します。
 
-関数とフィルター ドライバーは、この IRP; を処理しません[次へ] の下位のドライバーに変更を加えるに渡される**Irp -&gt;IoStatus.Status**を設定しないと、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。
+関数とフィルター ドライバーは、この IRP; を処理しません[次へ] の下位のドライバーに変更を加えるに渡される**Irp -&gt;IoStatus.Status**を設定しないと、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
 
-参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
 
 **この IRP を送信します。**
 
 通常、関数のドライバーでは、デバイス スタックがアタッチされているし、IRP が親のバス ドライバーによって処理されるをこの IRP を送信します。
 
-参照してください[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
+参照してください[Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
 
 -   ページ プールからバッファーを割り当て、書き込まれるデータで初期化します。
 
@@ -95,9 +95,9 @@ ULONG Length
 
 ドライバーがディスパッチにバスの構成の領域にアクセスできる\_を通じて、バス インターフェイス ルーチンでは、レベルの親のバス ドライバーは、このようなインターフェイスをエクスポートする場合。 バスのインターフェイスを取得するドライバーの送信、 [ **IRP\_MN\_クエリ\_インターフェイス**](irp-mn-query-interface.md)その親のバス ドライバーに要求します。 ドライバーは、インターフェイスで返される適切なルーチンを呼び出します。
 
-例では、ディスパッチから構成領域を書き込む\_レベルのドライバーを呼び出すことができます**IRP\_MN\_クエリ\_インターフェイス**を取得するドライバーの初期化中に、 [**BUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff540707)親バス ドライバーからのインターフェイス。 ドライバーは、IRQL パッシブから IRP のクエリを送信\_レベル。 以降、IRQL のディスパッチにコードから\_レベルなど、インターフェイスで返される適切なルーチンを呼び出すと、ドライバー、 **Interface.SetBusData**ルーチン。
+例では、ディスパッチから構成領域を書き込む\_レベルのドライバーを呼び出すことができます**IRP\_MN\_クエリ\_インターフェイス**を取得するドライバーの初期化中に、 [**BUS\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)親バス ドライバーからのインターフェイス。 ドライバーは、IRQL パッシブから IRP のクエリを送信\_レベル。 以降、IRQL のディスパッチにコードから\_レベルなど、インターフェイスで返される適切なルーチンを呼び出すと、ドライバー、 **Interface.SetBusData**ルーチン。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

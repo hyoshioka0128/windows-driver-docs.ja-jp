@@ -6,12 +6,12 @@ keywords:
 - デバイス インターフェイスのプロパティへのアクセス、WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca0bc49279780ca2150d912a08bc7012e852c66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b7e9aef5c01f0324e545a02b3acae84b0fed74d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386041"
 ---
 # <a name="accessing-the-properties-of-installed-device-interfaces"></a>インストール済みのデバイス インターフェイスのプロパティへのアクセス
 
@@ -22,17 +22,17 @@ ms.locfileid: "63360328"
 
 -   ユーザー モード アプリケーションは、次の手順に従う必要があります。
 
-    1.  使用[ **SetupDiOpenDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff552074)デバイス インターフェイスを見つけて、その名前から、セットに追加します。
+    1.  使用[ **SetupDiOpenDeviceInterface** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfacea)デバイス インターフェイスを見つけて、その名前から、セットに追加します。
 
-    2.  使用[ **SetupDiGetDeviceInterfaceDetail** ](https://msdn.microsoft.com/library/windows/hardware/ff551120)デバイス インターフェイスの詳細を取得します。
+    2.  使用[ **SetupDiGetDeviceInterfaceDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)デバイス インターフェイスの詳細を取得します。
 
-        省略可能な*DeviceInfoData*パラメーターが表示されます、 [ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)インターフェイスで登録されたデバイスの要素。
+        省略可能な*DeviceInfoData*パラメーターが表示されます、 [ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)インターフェイスで登録されたデバイスの要素。
 
-    3.  デバイスのインターフェイス クラスのカスタム設定のレジストリの永続的なストレージを使用します。 これを行うには、次のように使用します[ **SetupDiCreateDeviceInterfaceRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff550967) (新しいレジストリ キーを作成) するまたは[ **SetupDiOpenDeviceInterfaceRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552075)。(を既存のレジストリ キーを開きます)。
+    3.  デバイスのインターフェイス クラスのカスタム設定のレジストリの永続的なストレージを使用します。 これを行うには、次のように使用します[ **SetupDiCreateDeviceInterfaceRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinterfaceregkeya) (新しいレジストリ キーを作成) するまたは[ **SetupDiOpenDeviceInterfaceRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)。(を既存のレジストリ キーを開きます)。
 
         カスタムの設定を保存するには使用[RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543)レジストリ キーが作成または開きます。
 
--   カーネル モード ドライバーを使用する必要があります[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)デバイス インターフェイス クラスのレジストリ キーを開けません。
+-   カーネル モード ドライバーを使用する必要があります[ **IoOpenDeviceInterfaceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)デバイス インターフェイス クラスのレジストリ キーを開けません。
 
  
 

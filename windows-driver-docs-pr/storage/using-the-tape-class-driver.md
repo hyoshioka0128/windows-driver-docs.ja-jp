@@ -7,12 +7,12 @@ keywords:
 - テープ ドライバーに関するテープ ドライバー WDK、ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a992634d000b1b152ce14649d3ba75da51053dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a531ffbba711534f11f039672d696cc23e558424
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386791"
 ---
 # <a name="using-the-tape-class-driver"></a>テープ クラス ドライバーの使用
 
@@ -40,7 +40,7 @@ ms.locfileid: "63357215"
 
 -   テープ miniclass ドライバー (minitape 拡張機能とコマンド拡張機能) のドライバーのコンテキストの領域を割り当てます。
 
-参照してください[テープ クラス ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff567959)の説明については、**TapeClass * * * Xxx*テープ miniclass ドライバーによって呼び出すことができるルーチン。
+参照してください[テープ クラス ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)の説明については、**TapeClass * * * Xxx*テープ miniclass ドライバーによって呼び出すことができるルーチン。
 
  
 

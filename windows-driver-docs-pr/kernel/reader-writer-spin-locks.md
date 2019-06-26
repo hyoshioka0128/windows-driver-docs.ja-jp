@@ -4,12 +4,12 @@ description: Windows Vista Service Pack 1 (SP1)、関連するルーチンのセ
 ms.assetid: E2853F35-590E-4EF5-8647-1261BC4B8D15
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9da891fc77c5a1f3a4bd17b36936cf2c9eab7035
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45f63fa0f73ae12122abe06c717943eb7088aa58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378762"
 ---
 # <a name="readerwriter-spin-locks"></a>読み取り/書き込みスピン ロック
 
@@ -26,15 +26,15 @@ Windows Vista Service Pack 1 (SP1)、関連するルーチンのセットで、�
 
 | ルーチンの名前                                                                                | 説明                                                                                                           |
 |---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| [**ExAcquireSpinLockExclusive**](https://msdn.microsoft.com/library/windows/hardware/hh451007)                         | 呼び出し元、排他アクセスのスピン ロックを取得し、ディスパッチに指示\_レベル。                      |
-| [**ExAcquireSpinLockExclusiveAtDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/hh451009)    | IRQL で既に実行されている呼び出し元によって排他的にスピン ロック&gt;= ディスパッチ\_レベル。          |
-| [**ExAcquireSpinLockShared**](https://msdn.microsoft.com/library/windows/hardware/hh451053)                               | 共有のアクセス、呼び出し元のスピン ロックを取得し、ディスパッチする指示\_レベル。                         |
-| [**ExAcquireSpinLockSharedAtDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/hh451055)           | IRQL で既に実行されている呼び出し元による共有アクセス スピン ロック&gt;= ディスパッチ\_レベル。             |
+| [**ExAcquireSpinLockExclusive**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451007(v=vs.85))                         | 呼び出し元、排他アクセスのスピン ロックを取得し、ディスパッチに指示\_レベル。                      |
+| [**ExAcquireSpinLockExclusiveAtDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451009(v=vs.85))    | IRQL で既に実行されている呼び出し元によって排他的にスピン ロック&gt;= ディスパッチ\_レベル。          |
+| [**ExAcquireSpinLockShared**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451053(v=vs.85))                               | 共有のアクセス、呼び出し元のスピン ロックを取得し、ディスパッチする指示\_レベル。                         |
+| [**ExAcquireSpinLockSharedAtDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451055(v=vs.85))           | IRQL で既に実行されている呼び出し元による共有アクセス スピン ロック&gt;= ディスパッチ\_レベル。             |
 | [**ExReleaseSpinLockExclusive**](https://msdn.microsoft.com/library/windows/hardware/hh451061)                        | 呼び出し元がへの排他アクセスを取得し、元の IRQL が復元は、スピン ロックを解放します。                   |
-| [**ExReleaseSpinLockExclusiveFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/hh451058) | 呼び出し元がへの排他アクセスを取得し、IRQL が低下しないスピン ロックを解放します。                      |
+| [**ExReleaseSpinLockExclusiveFromDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451058(v=vs.85)) | 呼び出し元がへの排他アクセスを取得し、IRQL が低下しないスピン ロックを解放します。                      |
 | [**ExReleaseSpinLockShared**](https://msdn.microsoft.com/library/windows/hardware/hh451067)                              | 取得の呼び出し元の共有アクセス、スピン ロックを解放し、元の IRQL を復元します。                      |
-| [**ExReleaseSpinLockSharedFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/hh451064)      | 取得の呼び出し元の共有アクセス、スピン ロックを解放し、IRQL が低下します。                         |
-| [**ExTryConvertSharedSpinLockExclusive**](https://msdn.microsoft.com/library/windows/hardware/hh451070)      | 呼び出し元を既に共有アクセスのための排他アクセスを保持するスピン ロックのアクセスの状態を変換しようとしています。 |
+| [**ExReleaseSpinLockSharedFromDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh451064(v=vs.85))      | 取得の呼び出し元の共有アクセス、スピン ロックを解放し、IRQL が低下します。                         |
+| [**ExTryConvertSharedSpinLockExclusive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-extryconvertsharedspinlockexclusive)      | 呼び出し元を既に共有アクセスのための排他アクセスを保持するスピン ロックのアクセスの状態を変換しようとしています。 |
 
  
 

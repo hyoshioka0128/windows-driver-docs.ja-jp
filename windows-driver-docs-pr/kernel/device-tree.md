@@ -17,12 +17,12 @@ keywords:
 - PnP WDK のリレーションシップ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d599233d34f62fd03486ce65e964f06f7682921
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58a2fd8e0044f23057831c2a5eda0d958cb2c9d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388144"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385007"
 ---
 # <a name="device-tree"></a>デバイス ツリー
 
@@ -38,7 +38,7 @@ PnP マネージャーでは、デバイス、システム内の追跡するデ�
 
 デバイスのツリーの各ノードは、[デバイス] ノードと呼ばれるまたは*devnode*します。 Devnode から成る、*デバイス オブジェクト*のデバイスのドライバー、および内部の情報がシステムによって保持されます。 したがって、それぞれの devnode は*デバイス スタック*します。
 
-PnP マネージャー要求バス ドライバーの子の一覧を使用してデバイスを[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)要求。 バス ドライバーは、そのバス プロトコルに従って子の一覧を決定します。 たとえば、 [ACPI の Windows ドライバー](acpi-driver.md)を Acpi.sys は、ACPI 名前空間、PCI ドライバー クエリ PCI 構成領域を検索し、USB ハブのドライバーが、USB バス プロトコルに従います。
+PnP マネージャー要求バス ドライバーの子の一覧を使用してデバイスを[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)要求。 バス ドライバーは、そのバス プロトコルに従って子の一覧を決定します。 たとえば、 [ACPI の Windows ドライバー](acpi-driver.md)を Acpi.sys は、ACPI 名前空間、PCI ドライバー クエリ PCI 構成領域を検索し、USB ハブのドライバーが、USB バス プロトコルに従います。
 
 デバイスのツリーが階層的、バス アダプター、コント ローラーまたはその他の「子」として表されるバス上のデバイスに*バス デバイス*します。 (バス デバイスは、その他の物理、論理、または仮想デバイスを接続できる任意のデバイスです)。デバイス マネージャーを使用して、デバイスを接続して表示することができますな表示オプションを選択、デバイス ツリー内のデバイスの階層を表示できます。
 
@@ -46,7 +46,7 @@ PnP マネージャー要求バス ドライバーの子の一覧を使用して
 
 デバイスのツリーは動的です。 デバイスは、追加し、コンピューターから削除、PnP マネージャー (ドライバー) とは、システム上のデバイスの現在の画像を保持します。
 
-デバイス ツリーで表される階層リレーションシップだけでなく、マシン上のデバイスの間のリレーションシップが表示されます。 以下の*取り外し関係*と*取り出し関係*します。 リファレンス ページを参照してください。 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)詳細についてはします。
+デバイス ツリーで表される階層リレーションシップだけでなく、マシン上のデバイスの間のリレーションシップが表示されます。 以下の*取り外し関係*と*取り出し関係*します。 リファレンス ページを参照してください。 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)詳細についてはします。
 
 バス デバイスがその子デバイスの前に、構成されている点を除いて、デバイス ツリーのビルド順序を想定することはできません。 1 つを想定するなど、しないでくださいバス上の別のデバイスの前に、バス上のデバイスを構成します。
 

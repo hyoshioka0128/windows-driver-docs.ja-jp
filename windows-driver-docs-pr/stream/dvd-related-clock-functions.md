@@ -9,12 +9,12 @@ keywords:
 - WDK DVD デコーダーをクロックします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f11e19af62d483e943fae8ef1f6d41a91e09b159
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73dfe7ab923b05866060743b1abfd4f2df49d0e4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363826"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384145"
 ---
 # <a name="dvd-related-clock-functions"></a>DVD 関連のクロック関数
 
@@ -37,15 +37,15 @@ ms.locfileid: "63363826"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568190" data-raw-source="[&lt;strong&gt;SRB_OPEN_MASTER_CLOCK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568190)"><strong>SRB_OPEN_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-open-master-clock" data-raw-source="[&lt;strong&gt;SRB_OPEN_MASTER_CLOCK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-open-master-clock)"><strong>SRB_OPEN_MASTER_CLOCK</strong></a></p></td>
 <td><p>DVD デコーダー ミニドライバーに、指定したストリームがマスター制が開かれると、そのクロックにアクセスするため、DVD デコーダー ミニドライバー マスター クロック ルーチンの呼び出しはすべてで使用されるマスター クロック ハンドルを提供することを示します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568163" data-raw-source="[&lt;strong&gt;SRB_CLOSE_MASTER_CLOCK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568163)"><strong>SRB_CLOSE_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-close-master-clock" data-raw-source="[&lt;strong&gt;SRB_CLOSE_MASTER_CLOCK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-close-master-clock)"><strong>SRB_CLOSE_MASTER_CLOCK</strong></a></p></td>
 <td><p>指定されたマスター クロック ハンドルがアクティブでなくなったことを示します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568179" data-raw-source="[&lt;strong&gt;SRB_INDICATE_MASTER_CLOCK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568179)"><strong>SRB_INDICATE_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-indicate-master-clock" data-raw-source="[&lt;strong&gt;SRB_INDICATE_MASTER_CLOCK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-indicate-master-clock)"><strong>SRB_INDICATE_MASTER_CLOCK</strong></a></p></td>
 <td><p>時間の通話ルーティング オーケストレーションは、ときに使用されるハンドルのすべてのストリームを提供します。</p></td>
 </tr>
 </tbody>

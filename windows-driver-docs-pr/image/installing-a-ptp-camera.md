@@ -4,12 +4,12 @@ description: PTP カメラのインストール
 ms.assetid: bf18a245-1344-47f1-83bc-3c369627bcdf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c0aaf85660f250c1afb8fac6479e691318c1266
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3b05221eb1d8d2e4d9e828fd6de84c5fb4cfdc9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378946"
 ---
 # <a name="installing-a-ptp-camera"></a>PTP カメラのインストール
 
@@ -23,7 +23,7 @@ ms.locfileid: "63326072"
 
 INF ファイルにセクションが含まれることに注意してください。 *sti.inf*します。 これにより、今後の更新には、Microsoft *sti.inf* 、必要なときに、INF の影響を与えずにファイルします。
 
-USB Device Working Group には、まだイメージのカメラのクラス ID 0x06 が割り当てられます。 Windows の今後のリリースで、Microsoft はこのクラスの id として PTP ドライバーをロードする INF ファイルを出荷する*互換性 ID*と一致します。 つまり、ベンダーが含む INF ファイルを配布してでカスタム ドライバーを読み込むことができますもこと、*ハードウェア ID*します。 Windows インストーラー クラス ID と一致するよりもハードウェア ID に一致する優先順位の高い配置します。 Windows では、ハードウェア ID を持つ INF ファイルが付属していない、ベンダーのドライバーは自動的に読み込まれません。 ただし、CD の自動実行プログラムを呼び出すことができます[ **UpdateDriverForPlugAndPlayDevices** ](https://msdn.microsoft.com/library/windows/hardware/ff553534)を簡単に、ベンダーのドライバーを更新します。
+USB Device Working Group には、まだイメージのカメラのクラス ID 0x06 が割り当てられます。 Windows の今後のリリースで、Microsoft はこのクラスの id として PTP ドライバーをロードする INF ファイルを出荷する*互換性 ID*と一致します。 つまり、ベンダーが含む INF ファイルを配布してでカスタム ドライバーを読み込むことができますもこと、*ハードウェア ID*します。 Windows インストーラー クラス ID と一致するよりもハードウェア ID に一致する優先順位の高い配置します。 Windows では、ハードウェア ID を持つ INF ファイルが付属していない、ベンダーのドライバーは自動的に読み込まれません。 ただし、CD の自動実行プログラムを呼び出すことができます[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)を簡単に、ベンダーのドライバーを更新します。
 
 PTP カメラの例の INF ファイル:
 

@@ -4,12 +4,12 @@ description: これらの規則を使用すると、さまざまなコンテキ�
 ms.assetid: 6557A741-C49F-456B-B285-DE6D171DDCEE
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 90c6e93119e5230ac4cabbb3a1e8255c8e990ed1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f4f44ec222de6d779476f23a6f0398894ee9f507
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380468"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394036"
 ---
 # <a name="warning-rule-set-storport"></a>警告の規則セット (Storport)
 
@@ -33,7 +33,7 @@ ms.locfileid: "63380468"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="storport-pagedcode.md" data-raw-source="[&lt;strong&gt;PagedCode&lt;/strong&gt;](storport-pagedcode.md)"><strong>PagedCode</strong></a></p></td>
-<td align="left"><p>このルールの検証時に、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff558773" data-raw-source="[&lt;strong&gt;PAGED_CODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff558773)"> <strong>PAGED_CODE</strong> </a>マクロが呼び出されると、ドライバーが、 <strong>IRQL &lt; DISPATCH_LEVEL</strong>します。 任意のコード実行<strong>IRQL &gt;= DISPATCH_LEVEL</strong>ページ フォールトを回避するために、非ページ メモリである必要があります。</p></td>
+<td align="left"><p>このルールの検証時に、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PAGED_CODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PAGED_CODE</strong> </a>マクロが呼び出されると、ドライバーが、 <strong>IRQL &lt; DISPATCH_LEVEL</strong>します。 任意のコード実行<strong>IRQL &gt;= DISPATCH_LEVEL</strong>ページ フォールトを回避するために、非ページ メモリである必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportstatuspending.md" data-raw-source="[&lt;strong&gt;StorPortStatusPending&lt;/strong&gt;](storport-storportstatuspending.md)"><strong>StorPortStatusPending</strong></a></p></td>
@@ -56,7 +56,7 @@ ms.locfileid: "63380468"
     msbuild /t:sdv /p:Inputs="/check:Warning.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

@@ -4,24 +4,24 @@ description: SerCx2 で管理されたシリアル ポートに周辺機器の�
 ms.assetid: 75FC5E79-59E9-4C07-9119-A4FE81CC318E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ae94aa1db3908bcb976e1efb55efe6b27b37a9c
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 576a4ac1b9d2e26a06437cf66a4d9c196aadad06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385697"
 ---
 # <a name="connecting-a-umdf-peripheral-driver-to-a-serial-port"></a>UMDF 周辺機器ドライバーをシリアル ポートに接続する
 
 SerCx2 で管理されたシリアル ポートに周辺機器のデバイスの UMDF ドライバーでは、デバイスを操作する特定のハードウェア リソースが必要です。 これらのリソースに含まれるは、ドライバーは、シリアル ポートへの論理接続を開く必要がある情報です。 その他のリソースは、割り込みを含めることができ、1 つまたは複数の GPIO 入力または出力ピンです。
 
-このドライバーは、実装、 [ **IPnpCallbackHardware2** ](https://msdn.microsoft.com/library/windows/hardware/hh439727)インターフェイス、および Windows ドライバー フレームワークの呼び出し中に、ドライバーのこのインターフェイスに登録[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)メソッド。 フレームワークでメソッドを呼び出します、 **IPnpCallbackHardware2**インターフェイス、デバイスの電源状態の変化のドライバーに通知します。
+このドライバーは、実装、 [ **IPnpCallbackHardware2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware2)インターフェイス、および Windows ドライバー フレームワークの呼び出し中に、ドライバーのこのインターフェイスに登録[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッド。 フレームワークでメソッドを呼び出します、 **IPnpCallbackHardware2**インターフェイス、デバイスの電源状態の変化のドライバーに通知します。
 
-逐次的に接続されている周辺機器が初期化されていない D0 デバイスの電源状態を入力した後、ドライバーのフレームワークが、ドライバーの[ **IPnpCallbackHardware2::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/hh439734)メソッドへの通知使用するためには、このデバイスを準備するドライバー。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *PWdfResourcesRaw*パラメーターが指す生のリソースの一覧と*pWdfResourcesTranslated*パラメーターは変換されたリソースの一覧を指します。 両方のパラメーターがへのポインター [ **IWDFCmResourceList** ](https://msdn.microsoft.com/library/windows/hardware/hh439762)オブジェクト。 翻訳済みのリソースには、周辺機器のドライバーが連続的に接続されている周辺機器への論理接続を確立する必要がある接続 ID が含まれます。
+逐次的に接続されている周辺機器が初期化されていない D0 デバイスの電源状態を入力した後、ドライバーのフレームワークが、ドライバーの[ **IPnpCallbackHardware2::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware)メソッドへの通知使用するためには、このデバイスを準備するドライバー。 この呼び出し中には、ドライバーは、入力パラメーターとして 2 つのハードウェア リソースのリストを受け取ります。 *PWdfResourcesRaw*パラメーターが指す生のリソースの一覧と*pWdfResourcesTranslated*パラメーターは変換されたリソースの一覧を指します。 両方のパラメーターがへのポインター [ **IWDFCmResourceList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfcmresourcelist)オブジェクト。 翻訳済みのリソースには、周辺機器のドライバーが連続的に接続されている周辺機器への論理接続を確立する必要がある接続 ID が含まれます。
 
 そのリソースの一覧で接続 Id を受信する周辺 UMDF ドライバーを有効にするドライバーをインストールする INF ファイルは、WDF 固有で、次のディレクティブを含める必要があります**DDInstall**セクション。
 
-**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](https://msdn.microsoft.com/library/windows/hardware/ff560526)します。 このディレクティブを使用する (対応する INF ファイルをビルドするために使用) INX ファイルの例で SpbAccelerometer を参照してください、 [WDK ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)します。
+**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**このディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](https://docs.microsoft.com/windows-hardware/drivers/wdf/specifying-wdf-directives-in-inf-files)します。 このディレクティブを使用する (対応する INF ファイルをビルドするために使用) INX ファイルの例で SpbAccelerometer を参照してください、 [WDK ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)します。
 
 次のコード例は、ドライバーの**OnPrepareHardware**メソッドからの接続 ID の取得、 *pWdfResourcesTranslated*パラメーター。
 
@@ -134,11 +134,11 @@ if (FAILED(hres))
 }
 ```
 
-上記のコード例で、`pRemoteTarget`パラメーターへのポインター、 [ **IWDFRemoteTarget** ](https://msdn.microsoft.com/library/windows/hardware/ff560247)オブジェクト。 場合に呼び出し、 [ **IWDFRemoteTarget::OpenFileByName** ](https://msdn.microsoft.com/library/windows/hardware/ff560273)メソッドが成功すると、ドライバー、逐次的に接続されている周辺機器を使用できます、 **IWDFRemoteTarget**シリアル コント ローラーに I/O 要求を送信するオブジェクト。
+上記のコード例で、`pRemoteTarget`パラメーターへのポインター、 [ **IWDFRemoteTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfremotetarget)オブジェクト。 場合に呼び出し、 [ **IWDFRemoteTarget::OpenFileByName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfremotetarget-openfilebyname)メソッドが成功すると、ドライバー、逐次的に接続されている周辺機器を使用できます、 **IWDFRemoteTarget**シリアル コント ローラーに I/O 要求を送信するオブジェクト。
 
-読み取りを送信または周辺機器への書き込み要求は、ドライバー最初に呼び出すこのオブジェクトの[ **IWDFRemoteTarget::FormatRequestForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559233)または[ **IWDFRemoteTarget:。FormatRequestForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559236)メソッド要求の書式を設定します。 (、 **IWDFRemoteTarget**インターフェイスからこれらの 2 つのメソッドを継承する、 [ **IWDFIoTarget** ](https://msdn.microsoft.com/library/windows/hardware/ff559170)インターフェイスです)。
+読み取りを送信または周辺機器への書き込み要求は、ドライバー最初に呼び出すこのオブジェクトの[ **IWDFRemoteTarget::FormatRequestForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)または[ **IWDFRemoteTarget:。FormatRequestForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite)メソッド要求の書式を設定します。 (、 **IWDFRemoteTarget**インターフェイスからこれらの 2 つのメソッドを継承する、 [ **IWDFIoTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotarget)インターフェイスです)。
 
-最初の呼び出しをシリアル コント ローラー、ドライバーに I/O 制御要求を送信する、 [ **IWDFRemoteTarget::FormatRequestForIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff559230)メソッド要求の書式を設定します。 (、 **IWDFRemoteTarget**インターフェイスからこのメソッドを継承する、 **IWDFIoTarget**インターフェイスです)。次に、ドライバーを呼び出し、 **IWDFIoRequest::Send** I/O 制御の要求を逐次的に接続されている周辺機器に送信するメソッド。
+最初の呼び出しをシリアル コント ローラー、ドライバーに I/O 制御要求を送信する、 [ **IWDFRemoteTarget::FormatRequestForIoctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)メソッド要求の書式を設定します。 (、 **IWDFRemoteTarget**インターフェイスからこのメソッドを継承する、 **IWDFIoTarget**インターフェイスです)。次に、ドライバーを呼び出し、 **IWDFIoRequest::Send** I/O 制御の要求を逐次的に接続されている周辺機器に送信するメソッド。
 
 次のコード例では、周辺機器のドライバーは、シリアル コント ローラーに I/O 制御要求を送信します。
 
@@ -219,9 +219,9 @@ if (fSynchronous || FAILED(hres))
 
 上記のコード例は、次のこと。
 
-1.  `pWdfDevice`変数がへのポインター、 [ **IWDFDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff556917)逐次的に接続されている周辺機器を表す framework デバイス オブジェクトのインターフェイス。 [ **IWDFDevice::CreateRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff557021)メソッドは、I/O 要求を作成しでこの要求をカプセル化、 [ **IWDFIoRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff558985)インターフェイスのインスタンスを指している`pWdfIoRequest`パラメーター。 I/O 要求は後で削除されます (手順 6 を参照してください)。 作成し、送信される各 I/O 要求の要求オブジェクトを削除するため、この実装はやや効率的ではありません。 効率的な方法では、一連の I/O 要求の同じ要求オブジェクトを再利用します。 詳細については、次を参照してください。 [Framework 要求オブジェクトを再利用](https://msdn.microsoft.com/library/windows/hardware/ff544600)します。
-2.  `pWdfDriver`変数がへのポインター、 [ **IWDFDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff558893)周辺のドライバーを表すフレームワーク ドライバー オブジェクトのインターフェイス。 `pInBuffer`と`inBufferSize`変数は、アドレスと I/O 制御要求の入力バッファーのサイズを指定します。 [ **IWDFDriver::CreatePreallocatedWdfMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff558902)メソッドは、入力バッファーの framework メモリ オブジェクトを作成し、指定、 **IWDFIoRequest**ポイントされるオブジェクト`pWdfIoRequest`メモリ オブジェクトの親オブジェクトとして。
-3.  `pWdfRemoteTarget`変数は、リモート ターゲット ポインターから取得された、 **OpenFileByName**前のコード例で呼び出します。 [ **IWDFRemoteTarget::FormatRequestForIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff559230)メソッドは、I/O 制御操作の要求を書式設定します。 `ioctlCode`変数がテーブルに表示されている I/O 制御コードのいずれかに設定されている[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)します。
-4.  `fSynchronous`変数**TRUE** I/O 制御の要求が同期的に送信してはかどうか**FALSE**非同期的に送信する場合。 `pCallback`変数が以前に作成したへのポインター [ **IRequestCallbackRequestCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556904)インターフェイス。 かどうか、要求は、非同期的に呼び出しを送信する、 [ **IWDFIoRequest::SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)メソッドは、このインターフェイスを登録します。 後で、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)メソッドが呼び出され、要求が非同期的に完了したときに、ドライバーに通知します。
+1.  `pWdfDevice`変数がへのポインター、 [ **IWDFDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)逐次的に接続されている周辺機器を表す framework デバイス オブジェクトのインターフェイス。 [ **IWDFDevice::CreateRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createrequest)メソッドは、I/O 要求を作成しでこの要求をカプセル化、 [ **IWDFIoRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest)インターフェイスのインスタンスを指している`pWdfIoRequest`パラメーター。 I/O 要求は後で削除されます (手順 6 を参照してください)。 作成し、送信される各 I/O 要求の要求オブジェクトを削除するため、この実装はやや効率的ではありません。 効率的な方法では、一連の I/O 要求の同じ要求オブジェクトを再利用します。 詳細については、次を参照してください。 [Framework 要求オブジェクトを再利用](https://docs.microsoft.com/windows-hardware/drivers/wdf/reusing-framework-request-objects)します。
+2.  `pWdfDriver`変数がへのポインター、 [ **IWDFDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdriver)周辺のドライバーを表すフレームワーク ドライバー オブジェクトのインターフェイス。 `pInBuffer`と`inBufferSize`変数は、アドレスと I/O 制御要求の入力バッファーのサイズを指定します。 [ **IWDFDriver::CreatePreallocatedWdfMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createpreallocatedwdfmemory)メソッドは、入力バッファーの framework メモリ オブジェクトを作成し、指定、 **IWDFIoRequest**ポイントされるオブジェクト`pWdfIoRequest`メモリ オブジェクトの親オブジェクトとして。
+3.  `pWdfRemoteTarget`変数は、リモート ターゲット ポインターから取得された、 **OpenFileByName**前のコード例で呼び出します。 [ **IWDFRemoteTarget::FormatRequestForIoctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)メソッドは、I/O 制御操作の要求を書式設定します。 `ioctlCode`変数がテーブルに表示されている I/O 制御コードのいずれかに設定されている[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)します。
+4.  `fSynchronous`変数**TRUE** I/O 制御の要求が同期的に送信してはかどうか**FALSE**非同期的に送信する場合。 `pCallback`変数が以前に作成したへのポインター [ **IRequestCallbackRequestCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)インターフェイス。 かどうか、要求は、非同期的に呼び出しを送信する、 [ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)メソッドは、このインターフェイスを登録します。 後で、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)メソッドが呼び出され、要求が非同期的に完了したときに、ドライバーに通知します。
 5.  **送信**メソッドは、逐次的に接続されている周辺機器に書式設定された書き込み要求を送信します。 `Flags`変数は、書き込み要求が同期的または非同期的に送信するかどうかを示します。
-6.  要求が同期的に送信される場合、 [ **IWDFIoRequest::DeleteWdfObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560210)メソッドによって示される、両方の I/O 要求オブジェクトを削除`pWdfIoRequest`によって示される子オブジェクトと`pInputMemory`. **IWDFIoRequest**インターフェイスからこのメソッドを継承する、 [ **IWDFObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560200)インターフェイス。 呼び出し、要求は、非同期的に送信されてかどうか、 **DeleteWdfObject**メソッドは、ドライバーので、後で発生する必要があります**OnCompletion**メソッド。
+6.  要求が同期的に送信される場合、 [ **IWDFIoRequest::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)メソッドによって示される、両方の I/O 要求オブジェクトを削除`pWdfIoRequest`によって示される子オブジェクトと`pInputMemory`. **IWDFIoRequest**インターフェイスからこのメソッドを継承する、 [ **IWDFObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfobject)インターフェイス。 呼び出し、要求は、非同期的に送信されてかどうか、 **DeleteWdfObject**メソッドは、ドライバーので、後で発生する必要があります**OnCompletion**メソッド。

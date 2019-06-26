@@ -7,12 +7,12 @@ keywords:
 - COM インターフェイスの WDK ネイティブ 802.11 IHV UI 拡張 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a44c0b76244ba7d05efbcbdcbe1912549096686b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc40bc2ff7a3fcf4a12eb8be0711dd88199e3eca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383617"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387284"
 ---
 # <a name="native-80211-ihv-ui-extensions-com-interfaces"></a>ネイティブ 802.11 IHV UI 拡張 COM インターフェイス
 
@@ -28,7 +28,7 @@ ms.locfileid: "63383617"
 
 802.11 IHV UI 拡張機能のネイティブ DLL での実装を提供する必要があります、 **IDot11ExtUI** COM インターフェイスです。
 
-この COM インターフェイスの詳細については、次を参照してください。 [IDot11ExtUI COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553769)します。
+この COM インターフェイスの詳細については、次を参照してください。 [IDot11ExtUI COM インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553769(v=vs.85))します。
 
 <a href="" id="idot11extuiproperty"></a>**IDot11ExtUIProperty**  
 を通じて、 **IDot11ExtUIProperty** COM インターフェイス、802.11 IHV UI 拡張機能のネイティブ DLL がネイティブの 802.11 ネットワークの構成 UI で表示される接続とセキュリティのプロパティを拡張できます。
@@ -37,7 +37,7 @@ ms.locfileid: "63383617"
 
 802.11 IHV UI 拡張機能のネイティブ DLL がの 1 つまたは複数の実装を提供できる、 **IDot11ExtUIProperty**ネイティブ 802.11 プロパティへの IHV で定義された拡張機能を表す各実装での COM インターフェイスです。 DLL は、セキュリティ設定の 1 つまたは複数のプロパティの拡張機能を提供できます。 Windows Vista では、DLL は、接続の設定は複数のプロパティの拡張機能を追加できます。
 
-この COM インターフェイスの詳細については、次を参照してください。 [IDot11ExtUIProperty COM インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff553746)します。
+この COM インターフェイスの詳細については、次を参照してください。 [IDot11ExtUIProperty COM インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff553746(v=vs.85))します。
 
 <a href="" id="iwizardextension"></a>**IWizardExtension**  
 802.11 IHV UI 拡張機能のネイティブ DLL がの 1 つまたは複数の実装を提供できる、 **IWizardExtension** COM インターフェイスです。 各実装は、1 つまたは複数のカスタム UI ページの表示をサポートします。 次のいずれかでは、これらの UI ページが表示されます。

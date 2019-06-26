@@ -4,12 +4,12 @@ description: このトピックでは、ADXL345 加速度計のサンプル セ�
 ms.assetid: F9D8D124-DAD6-4779-9F03-B1743BADC31A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cc90e628a90382bf1cf4e1bde1be3101ce92c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97efc50cef8b4beda312b448dd2d904210053a76
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368881"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393347"
 ---
 # <a name="build-the-sensor-driver"></a>センサー ドライバーをビルドします。
 
@@ -19,7 +19,7 @@ ms.locfileid: "63368881"
 ## <a name="download-the-driver-files"></a>ドライバー ファイルをダウンロードします。
 
 
-移動し、 [Microsoft]、[Windows のサンプル ドライバー](https://github.com/Microsoft/Windows-driver-samples) 、github サイトし、ダウンロードしてセンサー ドライバーのサンプルをビルドするには、次のタスクを実行します。 このトピックの実習では、開発用コンピューターにインストールされている Microsoft Visual Studio 2015 を使用するいると仮定します。 そうでない場合は、次を参照してください。[このダウンロード サイト](https://www.visualstudio.com/downloads/visual-studio-2015-downloads-vs.aspx)Microsoft Visual Studio のコピーをダウンロードする方法についてはします。
+移動し、 [Microsoft]、[Windows のサンプル ドライバー](https://github.com/Microsoft/Windows-driver-samples) 、github サイトし、ダウンロードしてセンサー ドライバーのサンプルをビルドするには、次のタスクを実行します。 このトピックの実習では、開発用コンピューターにインストールされている Microsoft Visual Studio 2015 を使用するいると仮定します。 そうでない場合は、次を参照してください。[このダウンロード サイト](https://visualstudio.microsoft.com/downloads/)Microsoft Visual Studio のコピーをダウンロードする方法についてはします。
 
 1. ダウンロード サンプル センサー ドライバーのファイルの開発用コンピューター上のフォルダーを作成します。
 

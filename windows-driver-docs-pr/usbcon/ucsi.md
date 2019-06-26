@@ -3,12 +3,12 @@ Description: Microsoft では、USB 型 C コネクタ システム ソフトウ
 title: USB Type-C Connector System Software Interface (UCSI) ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 623a0fddd4f04d1d82a554924edc8354f15b9719
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0be6ee091146807d11c417b80c4f6645702eac6c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368785"
 ---
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB Type-C Connector System Software Interface (UCSI) ドライバー
 
@@ -49,13 +49,13 @@ Microsoft では、ACPI トランスポートの USB 型 C コネクタ シス�
 
 -   **デバイス側の USB ドライバー**
 
-    [デバイス側の USB ドライバー](usb-device-side-drivers-in-windows.md)関数デバイス/周辺機器のサービスを提供します。 USB 関数コント ローラー クラスの拡張サポート MTP (Media Transfer Protocol) と充電 BC 1.2 を使用しています。 Microsoft では、Synopsys USB 3.0、および ChipIdea USB 2.0 コント ローラーの組み込みのクライアント ドライバーを提供します。 使用して、関数のコント ローラーのカスタム クライアント ドライバーを記述する[USB 関数コント ローラー クライアント ドライバーのプログラミング インターフェイス](https://msdn.microsoft.com/library/windows/hardware/mt188010)します。 詳細については、次を参照してください。 [usb ドライバーを Windows の開発機能のコント ローラー](developing-windows-drivers-for-usb-function-controllers.md)します。
+    [デバイス側の USB ドライバー](usb-device-side-drivers-in-windows.md)関数デバイス/周辺機器のサービスを提供します。 USB 関数コント ローラー クラスの拡張サポート MTP (Media Transfer Protocol) と充電 BC 1.2 を使用しています。 Microsoft では、Synopsys USB 3.0、および ChipIdea USB 2.0 コント ローラーの組み込みのクライアント ドライバーを提供します。 使用して、関数のコント ローラーのカスタム クライアント ドライバーを記述する[USB 関数コント ローラー クライアント ドライバーのプログラミング インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))します。 詳細については、次を参照してください。 [usb ドライバーを Windows の開発機能のコント ローラー](developing-windows-drivers-for-usb-function-controllers.md)します。
 
     SoC ベンダー可能性があります関数下位の USB フィルター ドライバーとの提供充電器の検出。 インボックス Synopsys USB 3.0 または ChipIdea USB 2.0 のクライアント ドライバーを使用している場合は、独自のフィルター ドライバーを実装できます。
 
 -   **ホスト側の USB ドライバー**
 
-    ホスト側の USB ドライバーでは、EHCI または XHCI 準拠の USB ホスト コント ローラーを使用するドライバーのセットです。 役割の交代ドライバー ホスト ロールを列挙する場合は、ドライバーが読み込まれます。 ホスト コント ローラーが仕様に準拠していないかどうかは、使用してカスタム ドライバーを記述する[USB ホスト コント ローラーの拡張機能 (UCX) プログラミング インターフェイス](https://msdn.microsoft.com/library/windows/hardware/mt188009)します。 詳しくは、次を参照してください。[開発 Windows ドライバーの USB ホスト コント ローラー](developing-windows-drivers-for-usb-host-controllers.md)します。
+    ホスト側の USB ドライバーでは、EHCI または XHCI 準拠の USB ホスト コント ローラーを使用するドライバーのセットです。 役割の交代ドライバー ホスト ロールを列挙する場合は、ドライバーが読み込まれます。 ホスト コント ローラーが仕様に準拠していないかどうかは、使用してカスタム ドライバーを記述する[USB ホスト コント ローラーの拡張機能 (UCX) プログラミング インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))します。 詳しくは、次を参照してください。[開発 Windows ドライバーの USB ホスト コント ローラー](developing-windows-drivers-for-usb-host-controllers.md)します。
 
     **注**  いない[USB デバイスのすべてのクラス](supported-usb-classes.md)Windows 10 Mobile でサポートされます。
 
@@ -114,7 +114,7 @@ BIOS で UCSI を実装するために必要なタスクについては、次を
 ## <a name="how-to-test-ucsi"></a>UCSI をテストする方法
 
 
-UCSI 実装をテストする方法を数多くあります。 UCSI BIOS/EC の実装で個々 のコマンドをテストするで提供されており、UCSIControl.exe を使用、 [MUTT ソフトウェア パック](mutt-software-package.md)します。 完全な UCSI 実装をテストするには、Windows ハードウェア ラボ キット (HLK) および」の手順ではありますが、両方の UCSI テストを使用して、[種類 C の相互運用機能のプロシージャを手動](https://msdn.microsoft.com/library/windows/hardware/mt422725)します。
+UCSI 実装をテストする方法を数多くあります。 UCSI BIOS/EC の実装で個々 のコマンドをテストするで提供されており、UCSIControl.exe を使用、 [MUTT ソフトウェア パック](mutt-software-package.md)します。 完全な UCSI 実装をテストするには、Windows ハードウェア ラボ キット (HLK) および」の手順ではありますが、両方の UCSI テストを使用して、[種類 C の相互運用機能のプロシージャを手動](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)します。
 
 **UCSIControl.exe**
 

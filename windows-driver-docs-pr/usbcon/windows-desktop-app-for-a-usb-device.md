@@ -3,21 +3,21 @@ Description: アプリケーションが USB デバイスと通信する WinUSB 
 title: USB デバイス用の Windows デスクトップ アプリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 557ae71709675dc25facc322c8d9a752fbd2c73f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 114a672ed3ad7678e629ccb38eb577eb52bd721b
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393826"
 ---
 # <a name="windows-desktop-app-for-a-usb-device"></a>USB デバイス用の Windows デスクトップ アプリ
 
 
-このトピックでは、アプリケーションを呼び出す方法について説明します[WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb) USB デバイスと通信します。 このようなアプリケーションには、 [WinUSB](winusb.md) (Winusb.sys) は、デバイスの機能のドライバーとしてインストールする必要があります。 デバイスのカーネル モード スタックで WinUSB します。 このドライバーにはでの Windows が含まれて、 \\Windows\\System32\\ドライバー フォルダー。
+このトピックでは、アプリケーションを呼び出す方法について説明します[WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) USB デバイスと通信します。 このようなアプリケーションには、 [WinUSB](winusb.md) (Winusb.sys) は、デバイスの機能のドライバーとしてインストールする必要があります。 デバイスのカーネル モード スタックで WinUSB します。 このドライバーにはでの Windows が含まれて、 \\Windows\\System32\\ドライバー フォルダー。
 
-Winusb.sys として USB デバイスの機能のドライバーを使用している場合は、呼び出す[WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb) 、デバイスと通信するアプリケーションから。 ユーザー モード DLL Winusb.dll、によって公開されるこれらの関数は、通信プロセスを簡略化します。 (デバイスを構成、制御の要求を送信して転送するデータをまたはデバイスから) などの標準の USB 操作を実行するデバイスの I/O 制御要求を構築するには、代わりには、アプリケーションは、同等の WinUSB 関数を呼び出します。
+Winusb.sys として USB デバイスの機能のドライバーを使用している場合は、呼び出す[WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) 、デバイスと通信するアプリケーションから。 ユーザー モード DLL Winusb.dll、によって公開されるこれらの関数は、通信プロセスを簡略化します。 (デバイスを構成、制御の要求を送信して転送するデータをまたはデバイスから) などの標準の USB 操作を実行するデバイスの I/O 制御要求を構築するには、代わりには、アプリケーションは、同等の WinUSB 関数を呼び出します。
 
-Winusb.dll はアプリケーションによって提供されるデータを使用して、適切なデバイスの I/O 制御要求を作成し、要求を処理するため Winusb.sys に送信します。 WinUSB 関数を呼び出し、USB スタックと通信する、 [ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)アプリケーションの要求に関連付けられた適切な IOCTL で関数をします。 要求が完了したら、WinUSB 関数は呼び出し元のプロセスに返信 Winusb.sys (読み取り要求からのデータ) などによって返されるすべての情報を渡します。 場合に呼び出し**DeviceIoControl**が成功すると、0 以外の値はすべて返します。 呼び出しが故障したかが保留されています (処理されませんすぐに)、 **DeviceIoControl**ゼロ値を返します。 エラーが発生した場合、アプリケーションを呼び出すことができます[ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)より詳細なエラー メッセージ。
+Winusb.dll はアプリケーションによって提供されるデータを使用して、適切なデバイスの I/O 制御要求を作成し、要求を処理するため Winusb.sys に送信します。 WinUSB 関数を呼び出し、USB スタックと通信する、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)アプリケーションの要求に関連付けられた適切な IOCTL で関数をします。 要求が完了したら、WinUSB 関数は呼び出し元のプロセスに返信 Winusb.sys (読み取り要求からのデータ) などによって返されるすべての情報を渡します。 場合に呼び出し**DeviceIoControl**が成功すると、0 以外の値はすべて返します。 呼び出しが故障したかが保留されています (処理されませんすぐに)、 **DeviceIoControl**ゼロ値を返します。 エラーが発生した場合、アプリケーションを呼び出すことができます[ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)より詳細なエラー メッセージ。
 
 WinUSB 関数を使用してドライバーを実装するよりも、デバイスと通信する方が簡単になります。 ただし、次の制限事項に注意してください。
 
@@ -69,7 +69,7 @@ WinUSB 関数を使用してドライバーを実装するよりも、デバイ�
 <td><p>最初のアプリは、2 つの方法のいずれかで記述できます。</p>
 <ul>
 <li><p>Visual Studio に含まれている WinUSB テンプレートに基づいてアプリを作成します。 詳細については、次を参照してください。 <a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a Windows desktop app based on the WinUSB template](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB テンプレートに基づく Windows デスクトップ アプリを記述</a>します。</p></li>
-<li><p>呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/ff550855" data-raw-source="[SetupAPI](https://msdn.microsoft.com/library/windows/hardware/ff550855)">SetupAPI</a>ルーチンをデバイスを識別するハンドルを取得して呼び出すことによって開きます<a href="https://msdn.microsoft.com/library/windows/hardware/ff540277" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540277)"> <strong>WinUsb_Initialize</strong></a>します。 詳細については、次を参照してください。 <a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">WinUSB 関数を使用して、USB デバイスへのアクセス方法</a>します。</p></li>
+<li><p>呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/install/setupapi" data-raw-source="[SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)">SetupAPI</a>ルーチンをデバイスを識別するハンドルを取得して呼び出すことによって開きます<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)"> <strong>WinUsb_Initialize</strong></a>します。 詳細については、次を参照してください。 <a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">WinUSB 関数を使用して、USB デバイスへのアクセス方法</a>します。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -104,7 +104,7 @@ WinUSB 関数を使用してドライバーを実装するよりも、デバイ�
 
 ## <a name="related-topics"></a>関連トピック
 [USB デバイスの Windows アプリケーションの開発](developing-windows-applications-that-communicate-with-a-usb-device.md)  
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

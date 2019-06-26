@@ -6,12 +6,12 @@ keywords:
 - Windows Mobile プランの Web ポータルでモバイルのプランの実装モバイル演算子
 ms.date: 03/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f6874f0c18083de57a31acc9499914b9fe2427ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3099470ebe1bba49efefed573d15bc9b688c0aaa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378716"
 ---
 # <a name="mobile-plans-mobile-operator-web-portal"></a>Web ポータルのモバイル プラン Mobile 演算子
 
@@ -85,7 +85,7 @@ MyWebView.Navigate(“https://moportal.com?iccid=8988247000100003319&imei=001102
 
 ## <a name="web-portal-design-policies"></a>Web ポータルのデザインのポリシー
 
-Windows 上の最適なユーザー エクスペリエンスのために、このセクションでは、ポリシーに従う必要があります、MO の直接のエクスペリエンスを開発するときにします。 これらのポリシーは、使用の条件に補助、 *Mobile プラン*パートナーの補遺[Windows アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)と[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)します。
+Windows 上の最適なユーザー エクスペリエンスのために、このセクションでは、ポリシーに従う必要があります、MO の直接のエクスペリエンスを開発するときにします。 これらのポリシーは、使用の条件に補助、 *Mobile プラン*パートナーの補遺[Windows アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)と[Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies)します。
 
 ### <a name="business-functions"></a>ビジネス関数
 

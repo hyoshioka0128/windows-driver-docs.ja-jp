@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d54dd95ae168e5b6245df0d63d2759e98d9614aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b1ec07e063f906516e394124acaccc94f390a4d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365088"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386077"
 ---
 # <a name="fltparameters-for-irpmjcreate-union"></a>FLT\_IRP のパラメーター\_MJ\_共用体の作成
 
 
-次の共用体のコンポーネントが使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)操作は構造体[ **IRP\_MJ\_作成**](irp-mj-create.md)します。
+次の共用体のコンポーネントが使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)操作は構造体[ **IRP\_MJ\_作成**](irp-mj-create.md)します。
 
 <a name="syntax"></a>構文
 ------
@@ -56,34 +56,34 @@ typedef union _FLT_PARAMETERS {
 **SecurityContext**  
 SecurityContext-&gt;AccessState
 
-ポインター、 [**アクセス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff538840)オブジェクトのサブジェクトのコンテキストを含んでいる構造体のアクセスが許可の種類、および残りの必要なアクセスの種類。
+ポインター、 [**アクセス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_access_state)オブジェクトのサブジェクトのコンテキストを含んでいる構造体のアクセスが許可の種類、および残りの必要なアクセスの種類。
 
 SecurityContext-&gt;DesiredAccess
 
-[**アクセス\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff540466)ファイルに対して要求されたアクセス権を指定する構造体。 詳細については、次を参照してください。、 *DesiredAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+[**アクセス\_マスク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)ファイルに対して要求されたアクセス権を指定する構造体。 詳細については、次を参照してください。、 *DesiredAccess*パラメーターを[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)します。
 
 **[オプション]**  
-作成またはファイルが既に存在する場合に実行されるアクションと同様に、ファイルを開くときに適用されるオプションを指定するフラグのビットマスク。 このメンバーの下位 24 ビットに対応しています、 *CreateOptions*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。 上位の 8 ビットに対応しています、 *CreateDisposition*パラメーターを**FltCreateFile**します。
+作成またはファイルが既に存在する場合に実行されるアクションと同様に、ファイルを開くときに適用されるオプションを指定するフラグのビットマスク。 このメンバーの下位 24 ビットに対応しています、 *CreateOptions*パラメーターを[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)します。 上位の 8 ビットに対応しています、 *CreateDisposition*パラメーターを**FltCreateFile**します。
 
 **FileAttributes**  
-属性の作成またはファイルを開く際に適用するビット マスク。 詳細については、次を参照してください。、 *FileAttributes*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+属性の作成またはファイルを開く際に適用するビット マスク。 詳細については、次を参照してください。、 *FileAttributes*パラメーターを[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)します。
 
 **ShareAccess**  
-ファイルに、要求は共有アクセス権限のビットマスクです。 このパラメーターが 0 の場合は、排他的アクセスが要求されています。 詳細については、次を参照してください。、 *ShareAccess*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+ファイルに、要求は共有アクセス権限のビットマスクです。 このパラメーターが 0 の場合は、排他的アクセスが要求されています。 詳細については、次を参照してください。、 *ShareAccess*パラメーターを[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)します。
 
 **EaLength**  
-バッファーのバイト単位の長さを**EaBuffer**へのポインターします。 詳細については、次を参照してください。、 *EaLength*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+バッファーのバイト単位の長さを**EaBuffer**へのポインターします。 詳細については、次を参照してください。、 *EaLength*パラメーターを[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)します。
 
 **EaBuffer**  
-呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545793)-に適用される拡張属性 (EA) の情報を格納している構造化されたバッファーファイルです。 詳細については、次を参照してください。、 *EaBuffer*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+呼び出し元が指定へのポインター [**ファイル\_完全\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)-に適用される拡張属性 (EA) の情報を格納している構造化されたバッファーファイルです。 詳細については、次を参照してください。、 *EaBuffer*パラメーターを[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)します。
 
 **AllocationSize**  
-必要に応じて、ファイルのバイト単位で初期割り当てサイズを指定します。 0 以外の値及ぼしませんしない限り、ファイルが作成されている、上書き、または置き換えできます。 詳細については、次を参照してください。、 *AllocationSize*パラメーターを[ **FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)します。
+必要に応じて、ファイルのバイト単位で初期割り当てサイズを指定します。 0 以外の値及ぼしませんしない限り、ファイルが作成されている、上書き、または置き換えできます。 詳細については、次を参照してください。、 *AllocationSize*パラメーターを[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)します。
 
 <a name="remarks"></a>コメント
 -------
 
-[ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)用の構造、 [ **IRP\_MJ\_作成**](irp-mj-create.md)操作コールバック データによって表される ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)構造体。
+[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)用の構造、 [ **IRP\_MJ\_作成**](irp-mj-create.md)操作コールバック データによって表される ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体。
 
 IRP\_MJ\_作成は IRP ベースの操作。
 
@@ -106,25 +106,25 @@ IRP\_MJ\_作成は IRP ベースの操作。
 ## <a name="see-also"></a>関連項目
 
 
-[**アクセス\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff540466)
+[**アクセス\_マスク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)
 
-[**アクセス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff538840)
+[**アクセス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_access_state)
 
-[**ファイル\_完全\_EA\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545793)
+[**ファイル\_完全\_EA\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)
 
-[**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544645)
+[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544648)
+[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544654)
+[**FLT\_IS\_IRP\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)
+[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)
 
 [**IRP\_MJ\_CREATE**](irp-mj-create.md)
 

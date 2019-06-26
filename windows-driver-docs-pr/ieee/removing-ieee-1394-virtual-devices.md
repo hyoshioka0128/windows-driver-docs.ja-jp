@@ -9,12 +9,12 @@ keywords:
 - 仮想デバイスを削除します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f37fcbd77653fcc4e0b7b34931265a595758766
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0a8b12396033e6ff246f49a350886081259ccf8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370976"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381048"
 ---
 # <a name="removing-ieee-1394-virtual-devices"></a>IEEE 1394 仮想デバイスの削除
 
@@ -24,14 +24,14 @@ ms.locfileid: "63370976"
 
 これには 2 つの仮想デバイスの物理デバイス オブジェクト (PDO) を削除する方法があります。
 
-1.  **標準、プラグ アンド プレイ (PnP) デバイスを削除する方法**します。 このメソッドを使用して、送信には、ドライバーがある、 [ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)仮想デバイスに要求します。
+1.  **標準、プラグ アンド プレイ (PnP) デバイスを削除する方法**します。 このメソッドを使用して、送信には、ドライバーがある、 [ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)仮想デバイスに要求します。
 
     I/O スタックは、次の値を含める必要があります。
 
     -   **MajorFunction** IRP を =\_MJ\_PNP
     -   **MinorFunction** IRP を =\_MN\_削除\_デバイス
 
-2.  **型の I/O 要求パケット (IRP)** IOCTL\_IEEE1394\_API\_要求。このメソッドを使用して、送信には、ドライバーがある、 [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)仮想デバイスに要求します。
+2.  **型の I/O 要求パケット (IRP)** IOCTL\_IEEE1394\_API\_要求。このメソッドを使用して、送信には、ドライバーがある、 [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)仮想デバイスに要求します。
 
     I/O スタックは、次の値を含める必要があります。
 
@@ -40,7 +40,7 @@ ms.locfileid: "63370976"
 
     IRP では、次の値を含める必要があります。
 
-    -   **AssocicatedIrp.SystemBuffer -&gt;SystemBuffer**を指す、 [ **IEEE1394\_API\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff537204)構造体
+    -   **AssocicatedIrp.SystemBuffer -&gt;SystemBuffer**を指す、 [ **IEEE1394\_API\_要求**](https://docs.microsoft.com/previous-versions/ff537204(v=vs.85))構造体
     -   **RequestNumber** IEEE1394 のメンバー\_API\_要求 = [ **IEEE1394\_API\_削除\_仮想\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff537201)
 
 最初のメソッド (IRP\_MN\_削除\_デバイス)、デバイスが削除されますが、次回、コンピューターが開始を復元、デバイスが永続的な場合。 2 番目のメソッド (IEEE1394\_API\_削除\_仮想\_デバイス) が不要になったリブート持続するように、デバイスを完全に削除されます。 次回のコンピューターの起動時、デバイスは復元されません。

@@ -3,12 +3,12 @@ Description: WinUSB - Winusb.sys、カーネル モード ドライバーおよ�
 title: WinUSB アーキテクチャとモジュール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8af8e1ac30fd4585ee25864ed38080d3a4cc6fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcf343743493aa12fe9d8c843b2ed322b9e8091c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389185"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385691"
 ---
 # <a name="winusb-architecture-and-modules"></a>WinUSB アーキテクチャとモジュール
 
@@ -16,9 +16,9 @@ ms.locfileid: "63389185"
 [WinUSB](winusb.md)の 2 つの主要なコンポーネントで構成されます。
 
 -   Winusb.sys は、USB デバイスのカーネル モード デバイス スタックでプロトコル ドライバーの上のフィルターまたは関数のいずれかのドライバーとしてインストール可能なカーネル モード ドライバーです。
--   Winusb.dll が公開しているユーザー モード DLL [WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)します。 アプリケーションでは、デバイスの機能のドライバーとしてインストールされているときに、Winusb.sys との通信にこれらの関数を使用できます。
+-   Winusb.dll が公開しているユーザー モード DLL [WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)します。 アプリケーションでは、デバイスの機能のドライバーとしてインストールされているときに、Winusb.sys との通信にこれらの関数を使用できます。
 
-デバイスのユーザー定義関数のドライバーを必要としない場合、機能のドライバーとして Winusb.sys デバイスのカーネル モード スタックでインストールできます。 ユーザー モード デバイス I/O 制御要求のセットを使用して、または呼び出すことによって、プロセスは Winusb.sys と通信し、できる[WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)します。
+デバイスのユーザー定義関数のドライバーを必要としない場合、機能のドライバーとして Winusb.sys デバイスのカーネル モード スタックでインストールできます。 ユーザー モード デバイス I/O 制御要求のセットを使用して、または呼び出すことによって、プロセスは Winusb.sys と通信し、できる[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)します。
 
 次の図には、Winusb.sys のいくつかのインスタンスを含む USB ドライバー スタックが表示されます。
 
@@ -39,7 +39,7 @@ Winusb.sys の 1 つだけの読み込まれたインスタンスがあります
 [WinUSB 関数を使用して、USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [ポリシーの変更をパイプ WinUSB 関数](winusb-functions-for-pipe-policy-modification.md)  
 [WinUSB 電源管理](winusb-power-management.md)  
-[WinUSB 関数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)  
+[WinUSB 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
 
 

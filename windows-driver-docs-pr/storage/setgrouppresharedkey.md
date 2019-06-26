@@ -4,12 +4,12 @@ description: SetGroupPresharedKey
 ms.assetid: 7dedcc62-4ad6-42d5-a461-b0a69c9c97cd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1e357d03f819bdc5d10c6ac35c6e645749d272cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ce667bae8316995458a1af2335e751a85a4696b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384651"
 ---
 # <a name="setgrouppresharedkey"></a>SetGroupPresharedKey
 
@@ -22,7 +22,7 @@ ms.locfileid: "63331093"
 
 後に、 **SetGroupPresharedKey**メソッドは、既定のキーを指定します、イニシエーターは、不揮発性記憶域が使用可能な場合に、不揮発性記憶域でのこのキーを格納する必要があります。 ただし、発信側も、IKE フェーズ 1 のネゴシエーション中にすばやく使用をすることができるように、作業メモリにキーを保持する必要があります。 これにより、キー交換の効率が向上します。
 
-**SetGroupPresharedKey** 、パブリッシュされていないに属している[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **SetGroupPresharedKey**メソッドのメンバーの説明を参照してください、 [ **SetGroupPresharedKey\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565695)と[ **SetGroupPresharedKey\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565697)構造体。
+**SetGroupPresharedKey** 、パブリッシュされていないに属している[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **SetGroupPresharedKey**メソッドのメンバーの説明を参照してください、 [ **SetGroupPresharedKey\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setgrouppresharedkey_in)と[ **SetGroupPresharedKey\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setgrouppresharedkey_out)構造体。
 
 ミニポート ドライバー、MSiSCSI を実装する\_SecurityConfigOperations WMI クラスをサポートする必要があります**SetGroupPresharedKey**します。
 

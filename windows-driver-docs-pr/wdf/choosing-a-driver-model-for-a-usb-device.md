@@ -11,18 +11,18 @@ keywords:
 - USB デバイス WDK UMDF、ドライバー モデル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6514dde6b5776575ed1b53beb48fa2be1d79ff86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d67663d3e9addaa3bcbc50100bf8d489071ce4ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376883"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383121"
 ---
 # <a name="choosing-a-driver-model-for-a-usb-device"></a>USB デバイスのドライバー モデルの選択
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-USB デバイスの必要なドライバーの種類を確認する方法については、次を参照してください。 [USB クライアント ドライバーを開発するためのドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff540215)します。
+USB デバイスの必要なドライバーの種類を確認する方法については、次を参照してください。 [USB クライアント ドライバーを開発するためのドライバー モデルを選択する](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 

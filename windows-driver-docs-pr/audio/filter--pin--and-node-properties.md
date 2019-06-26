@@ -18,12 +18,12 @@ keywords:
 - ピン WDK のオーディオ、プロパティの概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4776ad0dc678ee1b15d24d16f12fe48459f351b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a6075e54ad8626156e6c0efa43e57410533f702
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360030"
 ---
 # <a name="filter-pin-and-node-properties"></a>フィルター、ピン、ノードのプロパティ
 
@@ -55,13 +55,13 @@ Microsoft Windows Driver Model (WDM) オーディオ ドライバー、KS フィ
 
 通常、ポート ドライバーは、フィルターおよび pin プロパティのほとんどの要求を処理し、ミニポート ドライバーがノードのプロパティに対する要求を処理します。
 
-ポート ドライバーによって使用されるフィルターと pin のプロパティの独自の組み込みのハンドラーを提供する、 [SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver) (を参照してください[KSPROPSETID\_Sysaudio](https://msdn.microsoft.com/library/windows/hardware/ff537489)と[KSPROPSETID\_Sysaudio\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff537490)) と[WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)します。 ミニポート ドライバーは、ポート ドライバーを処理するプロパティのハンドラーを実装する必要はありません。 一般的なミニポート ドライバーでは、フィルターと pin のプロパティの場合は、いくつかのハンドラーを提供します。 ミニポート ドライバーには、オーディオ デバイスのハードウェアに依存する機能を表すノードのプロパティのハンドラーが用意されています。 ポート ドライバー指定しない場合は、ノードのプロパティの組み込みの処理は例外です[ **KSPROPERTY\_トポロジ\_名前**](https://msdn.microsoft.com/library/windows/hardware/ff565809)します。
+ポート ドライバーによって使用されるフィルターと pin のプロパティの独自の組み込みのハンドラーを提供する、 [SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver) (を参照してください[KSPROPSETID\_Sysaudio](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-sysaudio)と[KSPROPSETID\_Sysaudio\_Pin](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-sysaudio-pin)) と[WDMAud システム ドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)します。 ミニポート ドライバーは、ポート ドライバーを処理するプロパティのハンドラーを実装する必要はありません。 一般的なミニポート ドライバーでは、フィルターと pin のプロパティの場合は、いくつかのハンドラーを提供します。 ミニポート ドライバーには、オーディオ デバイスのハードウェアに依存する機能を表すノードのプロパティのハンドラーが用意されています。 ポート ドライバー指定しない場合は、ノードのプロパティの組み込みの処理は例外です[ **KSPROPERTY\_トポロジ\_名前**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-name)します。
 
 ポート ドライバーとミニポート ドライバーの両方が同じプロパティのハンドラーを指定時にポート ドライバーは、独自のハンドラーを使用して、ミニポート ドライバーのハンドラーは無視されます。
 
 ### <a name="span-idfilterdescriptorsspanspan-idfilterdescriptorsspanspan-idfilterdescriptorsspanfilter-descriptors"></a><span id="Filter_Descriptors"></span><span id="filter_descriptors"></span><span id="FILTER_DESCRIPTORS"></span>フィルター記述子
 
-ポート ドライバーは、呼び出すことによって、ミニポート ドライバーのプロパティのハンドラーへのポインターを取得、 [ **IMiniport::GetDescription** ](https://msdn.microsoft.com/library/windows/hardware/ff536765)メソッド。 このメソッドでは、ポート ドライバーが型の構造体である、ミニポート ドライバーのフィルター記述子へのポインターを取得[ **PCFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537694)します。 この構造体は、フィルター、pin、およびノードのプロパティのミニポート ドライバーのプロパティのハンドラーを指定します。
+ポート ドライバーは、呼び出すことによって、ミニポート ドライバーのプロパティのハンドラーへのポインターを取得、 [ **IMiniport::GetDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-getdescription)メソッド。 このメソッドでは、ポート ドライバーが型の構造体である、ミニポート ドライバーのフィルター記述子へのポインターを取得[ **PCFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)します。 この構造体は、フィルター、pin、およびノードのプロパティのミニポート ドライバーのプロパティのハンドラーを指定します。
 
 -   PCFILTER\_記述子構造体の**AutomationTable**メンバーがフィルターのオートメーションのテーブルをポイントします。 このテーブルには、フィルターのプロパティのミニポート ドライバーのプロパティのハンドラーを指定します。
 
@@ -73,45 +73,45 @@ Microsoft Windows Driver Model (WDM) オーディオ ドライバー、KS フィ
 
 ポート ドライバーを通じて、ミニポート ドライバーのフィルター プロパティ ハンドラーにアクセスする、 **AutomationTable** PCFILTER のメンバー\_記述子。 通常、この automation テーブルには、ポート ドライバーには、独自の組み込みハンドラー SysAudio と WDMAud クエリし、オーディオ デバイスの構成に使用するすべてのフィルター プロパティが用意されているためにほとんどのハンドラーが含まれません。
 
-ただし、ミニポート ドライバーできますなどの指定のフィルター プロパティ ハンドラー [ **KSPROPERTY\_全般\_COMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff565171)ハードウェア依存の情報を提供します。ポートのドライバーを利用でないです。 2 つのサンプル オーディオ ドライバー Microsoft Windows Driver Kit (WDK) での処理、KSPROPERTY\_全般\_COMPONENTID プロパティ。 詳細については、ミニポート ドライバーの実装、Msvad および Sb16 のサンプルを参照してください。
+ただし、ミニポート ドライバーできますなどの指定のフィルター プロパティ ハンドラー [ **KSPROPERTY\_全般\_COMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-general-componentid)ハードウェア依存の情報を提供します。ポートのドライバーを利用でないです。 2 つのサンプル オーディオ ドライバー Microsoft Windows Driver Kit (WDK) での処理、KSPROPERTY\_全般\_COMPONENTID プロパティ。 詳細については、ミニポート ドライバーの実装、Msvad および Sb16 のサンプルを参照してください。
 
-Portcls.sys にあるすべてのポート ドライバーの処理を提供する、 [KSPROPSETID\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff566584)と[KSPROPSETID\_トポロジ](https://msdn.microsoft.com/library/windows/hardware/ff566598)プロパティを設定します。 これらのセット内のすべてのプロパティは例外です、フィルタのプロパティを[ **KSPROPERTY\_トポロジ\_名前**](https://msdn.microsoft.com/library/windows/hardware/ff565809)、(pin ではない、フィルターのハンドルを使用しているノードのプロパティですハンドル、要求のターゲットを指定)。 ポート ドライバー、KSPROPSETID の次のサブセットをサポートする\_Pin のプロパティ。
+Portcls.sys にあるすべてのポート ドライバーの処理を提供する、 [KSPROPSETID\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)と[KSPROPSETID\_トポロジ](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-topology)プロパティを設定します。 これらのセット内のすべてのプロパティは例外です、フィルタのプロパティを[ **KSPROPERTY\_トポロジ\_名前**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-name)、(pin ではない、フィルターのハンドルを使用しているノードのプロパティですハンドル、要求のターゲットを指定)。 ポート ドライバー、KSPROPSETID の次のサブセットをサポートする\_Pin のプロパティ。
 
-[**KSPROPERTY\_PIN\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff565192)
+[**KSPROPERTY\_PIN\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)
 
-[**KSPROPERTY\_PIN\_CINSTANCES**](https://msdn.microsoft.com/library/windows/hardware/ff565193)
+[**KSPROPERTY\_PIN\_CINSTANCES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-cinstances)
 
-[**KSPROPERTY\_PIN\_通信**](https://msdn.microsoft.com/library/windows/hardware/ff565194)
+[**KSPROPERTY\_PIN\_通信**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-communication)
 
-[**KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES**](https://msdn.microsoft.com/library/windows/hardware/ff565195)
+[**KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-constraineddataranges)
 
-[**KSPROPERTY\_PIN\_CTYPES**](https://msdn.microsoft.com/library/windows/hardware/ff565196)
+[**KSPROPERTY\_PIN\_CTYPES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-ctypes)
 
-[**KSPROPERTY\_PIN\_データ フロー**](https://msdn.microsoft.com/library/windows/hardware/ff565197)
+[**KSPROPERTY\_PIN\_データ フロー**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataflow)
 
-[**KSPROPERTY\_PIN\_DATAINTERSECTION**](https://msdn.microsoft.com/library/windows/hardware/ff565198)
+[**KSPROPERTY\_PIN\_DATAINTERSECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)
 
-[**KSPROPERTY\_PIN\_DATARANGES**](https://msdn.microsoft.com/library/windows/hardware/ff565199)
+[**KSPROPERTY\_PIN\_DATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataranges)
 
-[**KSPROPERTY\_PIN\_GLOBALCINSTANCES**](https://msdn.microsoft.com/library/windows/hardware/ff565200)
+[**KSPROPERTY\_PIN\_GLOBALCINSTANCES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-globalcinstances)
 
-[**KSPROPERTY\_PIN\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff565201)
+[**KSPROPERTY\_PIN\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-interfaces)
 
-[**KSPROPERTY\_PIN\_メディア**](https://msdn.microsoft.com/library/windows/hardware/ff565202)
+[**KSPROPERTY\_PIN\_メディア**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-mediums)
 
-[**KSPROPERTY\_PIN\_名**](https://msdn.microsoft.com/library/windows/hardware/ff565203)
+[**KSPROPERTY\_PIN\_名**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-name)
 
-[**KSPROPERTY\_PIN\_NECESSARYINSTANCES**](https://msdn.microsoft.com/library/windows/hardware/ff565204)
+[**KSPROPERTY\_PIN\_NECESSARYINSTANCES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-necessaryinstances)
 
-[**KSPROPERTY\_PIN\_PHYSICALCONNECTION**](https://msdn.microsoft.com/library/windows/hardware/ff565205)
+[**KSPROPERTY\_PIN\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-physicalconnection)
 
-[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff565206)
+[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat)
 
-[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**](https://msdn.microsoft.com/library/windows/hardware/dn567589)
+[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat2)
 
 これらのプロパティは、フィルターに属する pin ファクトリに関する情報を提供します。 通常、クライアントは、暗証番号 (pin) のインスタンスを作成する前にこれらのプロパティ フィルターを照会します。 ポートのドライバー サポート、KSPROPSETID の 4 つすべて\_トポロジ プロパティは、フィルターの内部のトポロジに関する情報を提供します。
 
-さらに、Dmu ポート ドライバーは、ハンドラーを[ **KSPROPERTY\_シンセサイザー\_MASTERCLOCK** ](https://msdn.microsoft.com/library/windows/hardware/ff537403) DirectMusic フィルターの取得専用プロパティであるプロパティ。 KSPROPERTY\_シンセサイザー\_MASTERCLOCK のメンバーである、 [KSPROPSETID\_SynthClock](https://msdn.microsoft.com/library/windows/hardware/ff537487)プロパティ セット。
+さらに、Dmu ポート ドライバーは、ハンドラーを[ **KSPROPERTY\_シンセサイザー\_MASTERCLOCK** ](https://docs.microsoft.com/previous-versions/ff537403(v=vs.85)) DirectMusic フィルターの取得専用プロパティであるプロパティ。 KSPROPERTY\_シンセサイザー\_MASTERCLOCK のメンバーである、 [KSPROPSETID\_SynthClock](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synthclock)プロパティ セット。
 
 ### <a name="span-idpinpropertiesspanspan-idpinpropertiesspanspan-idpinpropertiesspanpin-properties"></a><span id="Pin_Properties"></span><span id="pin_properties"></span><span id="PIN_PROPERTIES"></span>Pin のプロパティ
 
@@ -121,21 +121,21 @@ Portcls.sys にあるすべてのポート ドライバーの処理を提供す�
 
 を除き、トポロジ ポート ドライバーは、Portcls.sys にあるすべてのポート ドライバーは、pin のプロパティを次の組み込みのハンドラーを指定します。
 
-[**KSPROPERTY\_接続\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff565110)
+[**KSPROPERTY\_接続\_状態**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-state)
 
-[**KSPROPERTY\_接続\_DATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff565103)
+[**KSPROPERTY\_接続\_DATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-dataformat)
 
-[**KSPROPERTY\_接続\_ALLOCATORFRAMING**](https://msdn.microsoft.com/library/windows/hardware/ff565099)
+[**KSPROPERTY\_接続\_ALLOCATORFRAMING**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-allocatorframing)
 
-[**KSPROPERTY\_ストリーム\_アロケーター**](https://msdn.microsoft.com/library/windows/hardware/ff565684)
+[**KSPROPERTY\_ストリーム\_アロケーター**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-allocator)
 
-[**KSPROPERTY\_ストリーム\_MASTERCLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff565713)
+[**KSPROPERTY\_ストリーム\_MASTERCLOCK**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-masterclock)
 
-[**KSPROPERTY\_オーディオ\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537297)
+[**KSPROPERTY\_オーディオ\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)
 
-[**KSPROPERTY\_DRMAUDIOSTREAM\_CONTENTID**](https://msdn.microsoft.com/library/windows/hardware/ff537351)
+[**KSPROPERTY\_DRMAUDIOSTREAM\_CONTENTID**](https://docs.microsoft.com/previous-versions/ff537351(v=vs.85))
 
-この一覧のプロパティの一部には、ミニポート ドライバーからハードウェアに依存する情報が必要です。 ポート ドライバーでは、これらのプロパティの 1 つの要求を含む IRP を受信するは IRP に渡さないミニポート ドライバー。 代わりに、ポート、ドライバー自体には、要求を処理するが、そのハンドラーは、ミニポート ドライバーでエントリ ポイントを呼び出すことによって必要な情報を取得します。 ポート ドライバーが KSPROPERTY の独自のプロパティのハンドラーを提供するなど、\_オーディオ\_位置要求。 このハンドラーには、ミニポート ドライバー ストリームの呼び出すだけです**GetPosition**メソッド (たとえば、 [ **IMiniportWavePciStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536727)) 現在の位置を取得します。
+この一覧のプロパティの一部には、ミニポート ドライバーからハードウェアに依存する情報が必要です。 ポート ドライバーでは、これらのプロパティの 1 つの要求を含む IRP を受信するは IRP に渡さないミニポート ドライバー。 代わりに、ポート、ドライバー自体には、要求を処理するが、そのハンドラーは、ミニポート ドライバーでエントリ ポイントを呼び出すことによって必要な情報を取得します。 ポート ドライバーが KSPROPERTY の独自のプロパティのハンドラーを提供するなど、\_オーディオ\_位置要求。 このハンドラーには、ミニポート ドライバー ストリームの呼び出すだけです**GetPosition**メソッド (たとえば、 [ **IMiniportWavePciStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)) 現在の位置を取得します。
 
 ### <a name="span-idnodepropertiesspanspan-idnodepropertiesspanspan-idnodepropertiesspannode-properties"></a><span id="Node_Properties"></span><span id="node_properties"></span><span id="NODE_PROPERTIES"></span>ノードのプロパティ
 
@@ -149,7 +149,7 @@ Portcls.sys にあるすべてのポート ドライバーの処理を提供す�
 
 -   フィルターに特定のノードの 1 つだけのインスタンスが含まれている場合、ノード プロパティの要求はフィルターのハンドルを指定します。 フィルターのハンドルとノードの ID の組み合わせは、要求の対象となっているノードを明確に識別するために十分です。
 
-特定のノード プロパティのハンドラーを実装する前に、ドライバーのライターを参照してください[オーディオ ドライバーのプロパティ セット](https://msdn.microsoft.com/library/windows/hardware/ff536197)ハンドルまたは暗証番号 (pin) が処理をフィルターとして、プロパティのターゲットを指定する必要があるかどうかを確認します。
+特定のノード プロパティのハンドラーを実装する前に、ドライバーのライターを参照してください[オーディオ ドライバーのプロパティ セット](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)ハンドルまたは暗証番号 (pin) が処理をフィルターとして、プロパティのターゲットを指定する必要があるかどうかを確認します。
 
 Portcls.sys でポートのドライバーは、現在は KSPROPERTY を除く、ノードのプロパティの組み込みの処理を指定しない\_トポロジ\_名。
 
@@ -169,9 +169,9 @@ Portcls.sys でポートのドライバーは、現在は KSPROPERTY を除く�
 
 歴史的な理由から、オーディオ、いくつかのプロパティはこれらの一般的な規則に違反している行動 quirks があります。 次に例を示します。
 
--   」の説明に従って[スピーカー構成設定の適用](applying-speaker-configuration-settings.md)、クライアントは設定してスピーカーのオーディオ デバイスの構成を変更することができます、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250) 3-D ノードのプロパティ ([**KSNODETYPE\_3D\_効果**](https://msdn.microsoft.com/library/windows/hardware/ff537148))。 デバイスは、スピーカーから再生をミックスに含まれるすべてのストリームのスピーカーの構成を変更するため、スピーカーの構成設定はグローバルです。 フィルター全体に影響を与えるノード プロパティの要求には、一般的な規則に従って、フィルター ハンドル (とノード ID) を指定する必要があります。 ただし、この特定のプロパティには、フィルターのハンドルではなく暗証番号 (pin) のハンドルが必要です。 暗証番号 (pin) のハンドルは、要求の対象となっている 3-D ノードを含む暗証番号 (pin) のインスタンスを指定します。
+-   」の説明に従って[スピーカー構成設定の適用](applying-speaker-configuration-settings.md)、クライアントは設定してスピーカーのオーディオ デバイスの構成を変更することができます、 [ **KSPROPERTY\_オーディオ\_チャネル\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config) 3-D ノードのプロパティ ([**KSNODETYPE\_3D\_効果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects))。 デバイスは、スピーカーから再生をミックスに含まれるすべてのストリームのスピーカーの構成を変更するため、スピーカーの構成設定はグローバルです。 フィルター全体に影響を与えるノード プロパティの要求には、一般的な規則に従って、フィルター ハンドル (とノード ID) を指定する必要があります。 ただし、この特定のプロパティには、フィルターのハンドルではなく暗証番号 (pin) のハンドルが必要です。 暗証番号 (pin) のハンドルは、要求の対象となっている 3-D ノードを含む暗証番号 (pin) のインスタンスを指定します。
 
--   [**KSPROPERTY\_シンセサイザー\_ボリューム**](https://msdn.microsoft.com/library/windows/hardware/ff537409)と[ **KSPROPERTY\_シンセサイザー\_MASTERCLOCK** ](https://msdn.microsoft.com/library/windows/hardware/ff537403)のプロパティは、シンセサイザー ノード ([**KSNODETYPE\_シンセサイザー**](https://msdn.microsoft.com/library/windows/hardware/ff537203))。 ノードのプロパティは両方が、これらのプロパティに対する要求はノード Id は含まれません。 (型の構造体は、要求のプロパティ記述子、 [ **KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)ではなく、 [ **KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143))。この動作ノードのプロパティが、ノード ID が必要である一般的な規則に違反しています このような相違に関係なく、これらのプロパティをサポートしているミニポート ドライバーを使用して、プロパティ ハンドラーを指定します、**ノード**PCFILTER のメンバー\_記述子 (の代わりに、**ピン**。メンバーの場合)。
+-   [**KSPROPERTY\_シンセサイザー\_ボリューム**](https://docs.microsoft.com/previous-versions/ff537409(v=vs.85))と[ **KSPROPERTY\_シンセサイザー\_MASTERCLOCK** ](https://docs.microsoft.com/previous-versions/ff537403(v=vs.85))のプロパティは、シンセサイザー ノード ([**KSNODETYPE\_シンセサイザー**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer))。 ノードのプロパティは両方が、これらのプロパティに対する要求はノード Id は含まれません。 (型の構造体は、要求のプロパティ記述子、 [ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))ではなく、 [ **KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty))。この動作ノードのプロパティが、ノード ID が必要である一般的な規則に違反しています このような相違に関係なく、これらのプロパティをサポートしているミニポート ドライバーを使用して、プロパティ ハンドラーを指定します、**ノード**PCFILTER のメンバー\_記述子 (の代わりに、**ピン**。メンバーの場合)。
 
  
 

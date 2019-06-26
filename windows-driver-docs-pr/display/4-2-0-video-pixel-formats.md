@@ -10,12 +10,12 @@ keywords:
 - 4 2 0 ビデオの WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4de7df17be95da7aa3f4efcd5d757ab4b00359
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ff6831ff4fdba483c4d811096068c4be140aa72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391255"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384272"
 ---
 # <a name="420-video-pixel-formats"></a>4:2:0 ビデオ ピクセル形式
 
@@ -38,4 +38,4 @@ ms.locfileid: "63391255"
 | IMC3 | Cb と Cr スワップすることを除き、IMC1 と同じです。 | 
 | IMC4 | Cb と Cr スワップすることを除き、IMC2 と同じです。 | 
 
-これらの形式の詳細については、次を参照してください。[ビデオをレンダリングするための推奨の 8 ビット YUV 形式](https://msdn.microsoft.com/library/windows/desktop/dd206750)Microsoft メディア ファンデーション ドキュメント。
+これらの形式の詳細については、次を参照してください。[ビデオをレンダリングするための推奨の 8 ビット YUV 形式](https://docs.microsoft.com/windows/desktop/medfound/recommended-8-bit-yuv-formats-for-video-rendering)Microsoft メディア ファンデーション ドキュメント。

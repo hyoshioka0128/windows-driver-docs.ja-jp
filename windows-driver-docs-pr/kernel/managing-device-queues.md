@@ -8,12 +8,12 @@ keywords:
 - StartIo ルーチン、補足的なデバイスのキュー
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4770452519f3a944611d088f93884e18d81e2b45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b42f9735f08de48925380515fb21761f0679c1e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360290"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386019"
 ---
 # <a name="managing-device-queues"></a>デバイス キューの管理
 
@@ -21,7 +21,7 @@ ms.locfileid: "63360290"
 
 
 
-通常 (fsd に対して表示される) を除き、I/O マネージャー ドライバーを呼び出すときに関連付けられているデバイスのキュー オブジェクトを作成します[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)します。 また、 [ **IoStartPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff550370)と[**います**](https://msdn.microsoft.com/library/windows/hardware/ff550358)、どのドライバーが I/O マネージャーに Irp の挿入を呼び出すことができます、デバイスのキューまたは呼び出しに関連付けられた、 [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチン。
+通常 (fsd に対して表示される) を除き、I/O マネージャー ドライバーを呼び出すときに関連付けられているデバイスのキュー オブジェクトを作成します[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)します。 また、 [ **IoStartPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartpacket)と[**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)、どのドライバーが I/O マネージャーに Irp の挿入を呼び出すことができます、デバイスのキューまたは呼び出しに関連付けられた、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチン。
 
 ゚は必要ありません (または特に便利です) は、その結果、ドライバーが Irp の独自デバイスのキュー オブジェクトを設定します。 可能性の高い候補は、いくつかの単一のコント ローラーまたはバス アダプター経由でサービスが提供される異種のデバイスのドライバーを密接に結合されたクラスからの受信の Irp を調整する必要がある、SCSI ポート ドライバーなどのドライバーです。
 
@@ -29,11 +29,11 @@ ms.locfileid: "63360290"
 
 ### <a name="using-supplemental-device-queues-with-a-startio-routine"></a>StartIo ルーチンに補足的なデバイスのキューを使用します。
 
-呼び出して**IoStartPacket**と**います**、ドライバーのディスパッチと[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079) (または[ *CustomDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542972)) ルーチンの呼び出しの同期、 *StartIo*ドライバーには、デバイス オブジェクトが作成されたときに、I/O マネージャーが作成されたデバイスのキューを使用してルーチン。 ポート ドライバー、 *StartIo*ルーチン、 **IoStartPacket**と**います**を挿入し、ポート ドライバーの共有デバイスのデバイスのキューに Irp の削除コント ローラー/アダプター。 ポート ドライバー密接に結合された上位レベルのクラス ドライバーからの要求を保持するために、補足的なデバイスのキューの設定も場合、「並べ替える必要があります」受信 Irp の補足的なデバイスのキューへは、通常でその*StartIo*ルーチン。
+呼び出して**IoStartPacket**と**います**、ドライバーのディスパッチと[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine) (または[ *CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)) ルーチンの呼び出しの同期、 *StartIo*ドライバーには、デバイス オブジェクトが作成されたときに、I/O マネージャーが作成されたデバイスのキューを使用してルーチン。 ポート ドライバー、 *StartIo*ルーチン、 **IoStartPacket**と**います**を挿入し、ポート ドライバーの共有デバイスのデバイスのキューに Irp の削除コント ローラー/アダプター。 ポート ドライバー密接に結合された上位レベルのクラス ドライバーからの要求を保持するために、補足的なデバイスのキューの設定も場合、「並べ替える必要があります」受信 Irp の補足的なデバイスのキューへは、通常でその*StartIo*ルーチン。
 
 ポート ドライバーでは、適切なキューにその IRP を挿入する前に各 IRP が属している補足デバイス キューを指定する必要があります。 ターゲット デバイスのオブジェクトへのポインターは、ドライバーのディスパッチ ルーチンに IRP に渡されます。 ドライバーには、着信 Irp を「並べ替え」で使用するためのポインターを保存する必要があります。 渡されるデバイス オブジェクトへのポインターに注意してください、 *StartIo*ルーチンは、ドライバーのデバイスを表すオブジェクトをデバイスのコント ローラー/アダプターのため、この目的には使用できません。
 
-キューの任意の Irp 後、は、ドライバーは、その共有コント ローラー/アダプター要求を実行するをプログラムします。 ポート ドライバーがへの呼び出しまで、先着順ですべてのデバイスの受信要求を処理するために、 [ **KeInsertDeviceQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff552180) IRP を特定のクラス ドライバーのデバイスのキューに配置します。
+キューの任意の Irp 後、は、ドライバーは、その共有コント ローラー/アダプター要求を実行するをプログラムします。 ポート ドライバーがへの呼び出しまで、先着順ですべてのデバイスの受信要求を処理するために、 [ **KeInsertDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertdevicequeue) IRP を特定のクラス ドライバーのデバイスのキューに配置します。
 
 処理する独自 Irp のすべてのデバイスのキューを使用してその*StartIo*日常的な基になるポート ドライバーをシリアル化、共有デバイス (または bus) コント ローラー/アダプターを介して接続されているすべてのデバイスを操作します。 Irp を保持する別のデバイスのキューでサポートされている各デバイスの場合がありますでは、このポート ドライバーは、I/O スループットを向上させるときにビジー状態にあるデバイスの場合は、その共有ハードウェアにより I/O その他のすべてのデバイスに対して Irp の処理を禁止します。
 
@@ -69,11 +69,11 @@ Irp のキューを密接に結合された一連のクラス ドライバーの
 
 1.  *DpcForIsr*ルーチンの呼び出し**います**が、 *StartIo*ルーチンは、[次へ] の IRP が共有デバイスのコント ローラーにキューに置かれた処理を開始します。
 
-2.  *DpcForIsr*ルーチンの呼び出し[ **KeRemoveDeviceQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff553156)を代行では、デバイスのデバイスの内部キューに保持していることの (あれば) [次へ] の IRP をデキューするにはIRP の完了に約
+2.  *DpcForIsr*ルーチンの呼び出し[ **KeRemoveDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremovedevicequeue)を代行では、デバイスのデバイスの内部キューに保持していることの (あれば) [次へ] の IRP をデキューするにはIRP の完了に約
 
 3.  場合**KeRemoveDeviceQueue** NULL 以外のポインターを返します、 *DpcForIsr*ルーチンの呼び出し**IoStartPacket**がデキューされるだけの IRP では、共有デバイスに、キューコント ローラー/アダプター。 それ以外の場合への呼び出し**KeRemoveDeviceQueue** Not ビジー状態にデバイスのキュー オブジェクトの状態を単にリセットし、 *DpcForIsr*ルーチンへの呼び出しを省略する**IoStartPacket**.
 
-4.  次に、 *DpcForIsr*ルーチンの呼び出し[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)をポート ドライバー完了した I/O の処理、I/O を設定して、入力の IRP にエラー、または I/O 要求を満たすことで、ブロックを状態です。
+4.  次に、 *DpcForIsr*ルーチンの呼び出し[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)をポート ドライバー完了した I/O の処理、I/O を設定して、入力の IRP にエラー、または I/O 要求を満たすことで、ブロックを状態です。
 
 前のシーケンスことを意味に注意してください、 *DpcForIsr*ルーチンも、デバイスの現在の (入力) 効率的に Irp の内部キューを管理するために IRP が終了を決定する必要があります。
 

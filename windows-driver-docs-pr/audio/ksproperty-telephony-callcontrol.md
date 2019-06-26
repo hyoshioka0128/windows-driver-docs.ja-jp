@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2498e8864aa0a5ef167ff05c5f80d45012d04a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e92e6adca6755789f9cb7449eee50220d3df3731
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332606"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391594"
 ---
 # <a name="kspropertytelephonycallcontrol"></a>KSPROPERTY\_テレフォニー\_CALLCONTROL
 
@@ -50,8 +50,8 @@ KSPROPERTY\_テレフォニー\_CALLCONTROL プロパティを使用して、起
 <td align="left"><p>X</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt169883" data-raw-source="[&lt;strong&gt;KSTELEPHONY_CALLCONTROL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt169883)"><strong>KSTELEPHONY_CALLCONTROL</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_callcontrol" data-raw-source="[&lt;strong&gt;KSTELEPHONY_CALLCONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstelephony_callcontrol)"><strong>KSTELEPHONY_CALLCONTROL</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -71,7 +71,7 @@ KSPROPERTY\_テレフォニー\_CALLCONTROL には CallType と CallControlOp �
 
 テレフォニー\_CALLCONTROLOP\_無効にするにはオーディオ ドライバーの観点から携帯電話の通話を終了、更新プログラムのジャック状態双方向の移動体通信のエンドポイントに関連付けられているの電源が入っていないし、呼び出しの状態の更新を無効にします。 呼び出しの種類は、ここでは無視されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
