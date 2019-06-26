@@ -15,12 +15,12 @@ keywords:
 - I/O 要求パケット WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ca29d334f077081fd4143bd449aceade882e81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d2e12e28e1fbdda3170d91fac2d3b1c17acd20f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385115"
 ---
 # <a name="supporting-devices-that-have-wake-up-capabilities"></a>ウェイクアップ機能を備えたデバイスのサポート
 
@@ -28,7 +28,7 @@ ms.locfileid: "63345436"
 
 
 
-外部ウェイク信号に応答できるデバイスのドライバーが処理できる必要があります[ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)要求 (*待機またはスリープ状態の解除Irp*)。 このようなデバイスの電源ポリシー所有者は、送信できる必要があります、 **IRP\_MN\_待機\_WAKE**要求。
+外部ウェイク信号に応答できるデバイスのドライバーが処理できる必要があります[ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)要求 (*待機またはスリープ状態の解除Irp*)。 このようなデバイスの電源ポリシー所有者は、送信できる必要があります、 **IRP\_MN\_待機\_WAKE**要求。
 
 通常、どのによりウェイク信号をアサートするデバイスは、デバイスの通常のサービス イベントではも。 たとえば、システムをスリープ解除するキーボードが発生する可能性があります、ユーザー入力は、キーボードとそのドライバーの通常イベントです。
 

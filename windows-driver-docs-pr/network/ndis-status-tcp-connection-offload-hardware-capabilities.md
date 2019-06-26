@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a97a33ab6ca824dcf7045bc36b9edc902feb34d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c68abc8dc96ea9b6a9e8337c025a17d9f58d1570
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372569"
 ---
 # <a name="ndisstatustcpconnectionoffloadhardwarecapabilities"></a>NDIS\_状態\_TCP\_接続\_オフロード\_ハードウェア\_機能
 
@@ -23,9 +23,9 @@ MUX 中間ドライバーを使用して、NDIS\_状態\_TCP\_接続\_オフロ�
 
 基になる NIC を追加したり削除したり、MUX 中間ドライバーに関連付けられているハードウェア機能の全体的なセットを変更できます。
 
-**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造に含まれる、 [ **NDIS\_TCP\_接続\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567875)構造体。 NDIS\_TCP\_接続\_オフロードは、タスクのオフロード ハードウェア機能を指定します。
+**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造に含まれる、 [ **NDIS\_TCP\_接続\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)構造体。 NDIS\_TCP\_接続\_オフロードは、タスクのオフロード ハードウェア機能を指定します。
 
-タスクのオフロード ハードウェア機能の詳細については、次を参照してください。 [OID\_TCP\_接続\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569803)します。
+タスクのオフロード ハードウェア機能の詳細については、次を参照してください。 [OID\_TCP\_接続\_オフロード\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-hardware-capabilities)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -50,11 +50,11 @@ MUX 中間ドライバーを使用して、NDIS\_状態\_TCP\_接続\_オフロ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_TCP\_接続\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567875)
+[**NDIS\_TCP\_接続\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)
 
-[OID\_TCP\_接続\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569803)
+[OID\_TCP\_接続\_オフロード\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-hardware-capabilities)
 
  
 

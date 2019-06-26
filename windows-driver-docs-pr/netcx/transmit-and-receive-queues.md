@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/24/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d8a103df6facbd9d0144902462c744e209d96d43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14bc9211d3ccfc8f0cf39a601a1183a906a351ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369916"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382816"
 ---
 # <a name="transmit-and-receive-queues"></a>要求の送信と受信
 
@@ -22,7 +22,7 @@ ms.locfileid: "63369916"
 
 *パケット キュー*、または*データパス キュー* NetAdapterCx ハードウェアなどのハードウェア機能をモデル化するクライアント ドライバーを有効にするので導入されたオブジェクトの送信し、ソフトウェア ドライバーで、キューをより明示的に受信には. このトピックでは、送信操作および NetAdapterCx でキューを受信する方法について説明します。 
 
-クライアント ドライバーを呼び出すと[ **NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)、通常はからその[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)イベントのコールバック関数では、2 つのキューの作成のコールバックを提供します。[*EVT_NET_ADAPTER_CREATE_TXQUEUE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)と[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)します。 クライアントは、転送を作成し、これらのコールバックで受信したキューは、それぞれします。
+クライアント ドライバーを呼び出すと[ **NET_ADAPTER_DATAPATH_CALLBACKS_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_datapath_callbacks_init)、通常はからその[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)イベントのコールバック関数では、2 つのキューの作成のコールバックを提供します。[*EVT_NET_ADAPTER_CREATE_TXQUEUE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)と[ *EVT_NET_ADAPTER_CREATE_RXQUEUE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_rxqueue)します。 クライアントは、転送を作成し、これらのコールバックで受信したキューは、それぞれします。
 
 フレームワークは、低電力状態に遷移する前にキューを空にし、アダプターを削除する前にそれらを削除します。
 
@@ -201,7 +201,7 @@ PCI の NIC の送信キューの通知を有効にする、通常は、送信�
 
 NetAdapterCx を呼び出す場合*EvtPacketQueueSetNotificationEnabled*で*NotificationEnabled*設定**FALSE**、クライアントが呼び出す必要がありますいない[ **NetTxQueueNotifyMoreCompletedPacketsAvailable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nettxqueue/nf-nettxqueue-nettxqueuenotifymorecompletedpacketsavailable) NetAdapterCx が次では、このコールバック関数を呼び出すまで*NotificationEnabled*設定**TRUE**.
 
-例:
+次に、例を示します。
 
 ```C++
 VOID

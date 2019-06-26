@@ -21,12 +21,12 @@ keywords:
 - I/O 要求パケット WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e0525d2ac28ad6e37efde2b9fdbe5a12b1beb46
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7896440bed422e3348c252e0f8c4d9e5809b45c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350020"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371906"
 ---
 # <a name="handling-power-irps"></a>電源 IRP の処理
 
@@ -34,15 +34,15 @@ ms.locfileid: "63350020"
 
 
 
-ドライバーで電源 Irp の処理、 [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 主要な IRP コードがあるすべての電源管理の要求[ **IRP\_MJ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff550784)し、次の小さなコードのいずれか。
+ドライバーで電源 Irp の処理、 [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 主要な IRP コードがあるすべての電源管理の要求[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)し、次の小さなコードのいずれか。
 
-[**IRP\_MN\_クエリ\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551699) : 電源の状態の変更が可能かどうかを判断するクエリ
+[**IRP\_MN\_クエリ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power) : 電源の状態の変更が可能かどうかを判断するクエリ
 
-[**IRP\_MN\_設定\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744) — 1 つの電源の状態から別の変更を要求
+[**IRP\_MN\_設定\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) — 1 つの電源の状態から別の変更を要求
 
-[**IRP\_MN\_待機\_WAKE**](https://msdn.microsoft.com/library/windows/hardware/ff551766) — 要求自体またはシステムをスリープ解除するデバイスを有効にします。
+[**IRP\_MN\_待機\_WAKE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) — 要求自体またはシステムをスリープ解除するデバイスを有効にします。
 
-[**IRP\_MN\_POWER\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/ff551644) -特定のデバイスへの復元の電源を最適化するために情報を要求します。
+[**IRP\_MN\_POWER\_シーケンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-power-sequence) -特定のデバイスへの復元の電源を最適化するために情報を要求します。
 
 サポート**IRP\_MN\_設定\_POWER**と**IRP\_MN\_クエリ\_POWER**が必要です。 これらの Irp を処理するためにすべてのドライバーを準備する必要があります。
 

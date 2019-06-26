@@ -10,12 +10,12 @@ keywords:
 - スキャッター/ギャザー DMA WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68c7a60344d3a9f86d034b679d9b10fb04f87cea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09da591b31b56e447afebd7286000cd45bdede44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325128"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376186"
 ---
 # <a name="starting-a-dma-transaction"></a>DMA トランザクションの開始
 
@@ -25,7 +25,7 @@ ms.locfileid: "63325128"
 
 
 
-ドライバーが[作成され、DMA トランザクションを初期化](creating-and-initializing-a-dma-transaction.md)、ドライバーを呼び出すことができます、 [ **WdfDmaTransactionExecute** ](https://msdn.microsoft.com/library/windows/hardware/ff547062)トランザクションを開始する方法。 このメソッドは、最初のスキャッター/ギャザー リストを構築[DMA 転送](dma-transactions-and-dma-transfers.md)トランザクションに関連付けられています。 次に、メソッドを呼び出して、 [ *EvtProgramDma* ](https://msdn.microsoft.com/library/windows/hardware/ff541816)トランザクションのドライバーが登録されているコールバック関数。 コールバック関数[プログラム DMA ハードウェア](programming-dma-hardware.md)転送を開始します。
+ドライバーが[作成され、DMA トランザクションを初期化](creating-and-initializing-a-dma-transaction.md)、ドライバーを呼び出すことができます、 [ **WdfDmaTransactionExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionexecute)トランザクションを開始する方法。 このメソッドは、最初のスキャッター/ギャザー リストを構築[DMA 転送](dma-transactions-and-dma-transfers.md)トランザクションに関連付けられています。 次に、メソッドを呼び出して、 [ *EvtProgramDma* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)トランザクションのドライバーが登録されているコールバック関数。 コールバック関数[プログラム DMA ハードウェア](programming-dma-hardware.md)転送を開始します。
 
 ドライバーの呼び出しの前に**WdfDmaTransactionExecute**ドライバーはドライバーには、トランザクションに関連付けられている各 DMA 転送が完了すると後で取得することができるように、DMA のトランザクション ハンドルを格納する必要があります。 Framework のオブジェクトでは、通常、デバイスの framework デバイス オブジェクトのコンテキストのメモリはトランザクション ハンドルを格納する適切な場所。 オブジェクト コンテキストのメモリの使用に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](framework-object-context-space.md)します。
 

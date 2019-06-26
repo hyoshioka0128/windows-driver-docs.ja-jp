@@ -7,12 +7,12 @@ keywords:
 - クライアントの操作を WDK いる CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c96f4bf462c572c5d47feeab75cf9fddf950c09c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51f6d6b0820d31deb0a1ef0594c96634e90428f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374958"
 ---
 # <a name="connection-oriented-operations-performed-by-clients"></a>クライアントによって実行される接続指向操作
 
@@ -32,7 +32,7 @@ ms.locfileid: "63357406"
 
 -   **追加し、Pvc を削除します。**
 
-    ときに、演算子を手動で構成または永続的な VC (PVC) では、接続指向のクライアントを監視できます。 このようなアクションに応答してで、クライアントを PVC を構成済み Pvc の一覧に追加したり、PVC をこの一覧から削除するコール マネージャーまたは MCM ドライバー要求できます (を参照してください[OID\_CO\_追加\_PVC](https://msdn.microsoft.com/library/windows/hardware/ff569087)と[OID\_CO\_削除\_PVC](https://msdn.microsoft.com/library/windows/hardware/ff569090))。
+    ときに、演算子を手動で構成または永続的な VC (PVC) では、接続指向のクライアントを監視できます。 このようなアクションに応答してで、クライアントを PVC を構成済み Pvc の一覧に追加したり、PVC をこの一覧から削除するコール マネージャーまたは MCM ドライバー要求できます (を参照してください[OID\_CO\_追加\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-add-pvc)と[OID\_CO\_削除\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-delete-pvc))。
 
 -   **発信呼び出しを使用します。**
 

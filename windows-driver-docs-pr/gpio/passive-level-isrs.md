@@ -4,12 +4,12 @@ description: Windows 8、カーネル モード ドライバー フレームワ�
 ms.assetid: E7556046-D85C-4CD1-8C27-578BF5CAFF2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4530aab95ee8564db0230bcaccca66efbd588aa9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39258d98e11655456236ef66f5edb3125f2ae24c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326122"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383424"
 ---
 # <a name="passive-level-isrs"></a>パッシブレベルの ISR
 
@@ -18,8 +18,8 @@ Windows 8、カーネル モード ドライバー フレームワーク (KMDF) 
 
 KMDF および UMDF ドライバーのパッシブ レベル isr を特定の詳細については、次のトピックを参照してください。
 
--   [割り込みパッシブ レベルをサポートしています。](https://msdn.microsoft.com/library/windows/hardware/hh451035)
--   [ハードウェアにアクセスして、割り込み処理](https://msdn.microsoft.com/library/windows/hardware/hh439560)
+-   [割り込みパッシブ レベルをサポートしています。](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-passive-level-interrupts)
+-   [ハードウェアにアクセスして、割り込み処理](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-hardware-and-handling-interrupts)
 
 Windows 割り込みの抽象化が簡単に GPIO コント ローラーのハードウェア固有の詳細情報を無視するには、このデバイスのドライバーを有効の周辺機器は、プロセッサに割り込み要求をリレーする汎用の I/O (GPIO) ピン留めを使用している場合この pin が属しています。 GPIO 中継割り込みに応答でカーネルのトラップ ハンドラーを実行するとデバイスからの要求、このハンドラーに自動的にクリアまたはマスク、GPIO のハードウェア レジスタに割り込みを必須とします。 さらに、カーネルのトラップ ハンドラー直接呼び出し、デバイスの ISR、または別のスレッドで実行するには、この ISR をスケジュールします。
 

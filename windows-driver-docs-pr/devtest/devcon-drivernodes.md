@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53e8c9e4ee674b9d2965e3348d159d2b5710842c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c70290635a84b60b11a51d3c3a054b234c8cf38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347696"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371402"
 ---
 # <a name="devcon-drivernodes"></a>DevCon DriverNodes
 
 
-すべてを一覧表示[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff539954)と共に順位付け、バージョン、デバイスと互換性のあります。 ローカル コンピューターでのみ有効です。
+すべてを一覧表示[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)と共に順位付け、バージョン、デバイスと互換性のあります。 ローカル コンピューターでのみ有効です。
 
 ```
     devcon drivernodes {* | ID [ID ...] | =class [ID [ID ...]]} 
@@ -31,11 +31,11 @@ ms.locfileid: "63347696"
 ## <a name="span-idddkdevcondrivernodestoolsspanspan-idddkdevcondrivernodestoolsspanparameters"></a><span id="ddk_devcon_drivernodes_tools"></span><span id="DDK_DEVCON_DRIVERNODES_TOOLS"></span>パラメーター
 
 
-<span id="______________"></span> **\\***   
+<span id="______________"></span> **\\** *   
 コンピューター上のすべてのデバイスを表します。
 
 <span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id (**&**) 引用符で囲む必要があります。
+ハードウェア ID、互換性 ID、またはデバイスのデバイス インスタンス ID のすべてまたは一部を指定します。 複数の Id を指定する場合は、各 ID の間にスペースを入力します。 アンパサンド文字を含む Id ( **&** ) 引用符で囲む必要があります。
 
 次の特殊文字は、ID パラメーターを変更します。
 
@@ -69,7 +69,7 @@ ms.locfileid: "63347696"
 
 
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=**<em>クラス</em>デバイスのデバイス セットアップ クラスを指定します。 等号 (=) (**=**) クラスの名前として文字列を識別します。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>クラス</em>デバイスのデバイス セットアップ クラスを指定します。 等号 (=) ( **=** ) クラスの名前として文字列を識別します。
 
 ハードウェア Id、互換性 Id、デバイス インスタンス Id、または ID パターンを次のクラス名を指定することもできます。 各 ID またはパターンの間にスペースを入力します。 DevCon は、指定した Id に一致するクラス内のデバイスを検索します。
 

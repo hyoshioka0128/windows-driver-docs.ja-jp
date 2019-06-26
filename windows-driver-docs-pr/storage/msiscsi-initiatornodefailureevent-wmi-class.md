@@ -4,12 +4,12 @@ description: MSiSCSI\_InitiatorNodeFailureEvent WMI クラス
 ms.assetid: 2e542667-4da8-447b-b625-2cd27d52da61
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 66639c294f1eaf5b7b055c9496ce909eea4dd435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50af3d823d7933ef87c3728b34717dec72ef7c98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382529"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370454"
 ---
 # <a name="msiscsiinitiatornodefailureevent-wmi-class"></a>MSiSCSI\_InitiatorNodeFailureEvent WMI クラス
 
@@ -40,7 +40,7 @@ class MSiSCSI_InitiatorNodeFailureEvent : WMIEvent {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_InitiatorNodeFailureEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff563046)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_InitiatorNodeFailureEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_msiscsi_initiatornodefailureevent)データ構造体。
 
  
 

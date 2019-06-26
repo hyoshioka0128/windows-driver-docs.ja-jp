@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4003c4f0f143187f339f0dc9a0092d2ed46faa20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2ad3ad61e5b4bcf5b610a29d01de988ded3b071
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335229"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370037"
 ---
 # <a name="inf-reboot-directive"></a>INF Reboot ディレクティブ
 
@@ -35,7 +35,7 @@ Reboot
 
 **再起動**システムを再起動する必要が自動的に検出されるため、デバイスの一部として検出される共通の条件に基づく Windows にインストール用の INF ファイルでディレクティブが指定されてほとんどないです。インストールします。 たとえば、システムは呼び出し元に通知ファイルのコピー操作のいくつかターゲット ファイルが使用する場合、またはデバイスは、インストール時に自動的に再開できない場合、再起動が必要です。 **再起動**ディレクティブは、いくつかのシステムの再起動は、システム自体によって自動的に検出できないドライバーのインストール後は必要では常に特定の条件がある場合にのみ使用する必要があります。
 
-再起動のディレクティブを指定すると、システムの再起動がこの INF インストール セクションを使用して任意のデバイスのインストールを完了する必要があることが呼び出し元に通知されます。 ときに、インストールが開始された関数を通じてなど[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)、 [ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)、または[ **DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710)、その結果、 *NeedReboot* out パラメーターを TRUE に設定されているこれらのルーチンの。
+再起動のディレクティブを指定すると、システムの再起動がこの INF インストール セクションを使用して任意のデバイスのインストールを完了する必要があることが呼び出し元に通知されます。 ときに、インストールが開始された関数を通じてなど[ **UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)、 [ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)、または[ **DiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)、その結果、 *NeedReboot* out パラメーターを TRUE に設定されているこれらのルーチンの。
 
 <a name="remarks"></a>注釈
 -------

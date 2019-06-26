@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56dde9f5e26f242ef54a2cb0d2805d7808661405
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 783b0bbfad8ccd149b23b43b89f17674750a1e66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369506"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377334"
 ---
 # <a name="wiaipaitemflags"></a>WIA\_IPA\_項目\_フラグ
 
@@ -38,7 +38,7 @@ WIA\_IPA\_項目\_フラグ プロパティには、WIA 項目の内容を示す
 <a name="remarks"></a>注釈
 -------
 
-WIA 項目のフラグは、内のものと同じ、 *lObjectFlags*のパラメーター、 [ **wiasCreateDrvItem** ](https://msdn.microsoft.com/library/windows/hardware/ff549160)ユーティリティ関数のサービスを提供します。 WIA サービスを作成して維持、WIA\_IPA\_項目\_FLAGS プロパティ。
+WIA 項目のフラグは、内のものと同じ、 *lObjectFlags*のパラメーター、 [ **wiasCreateDrvItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)ユーティリティ関数のサービスを提供します。 WIA サービスを作成して維持、WIA\_IPA\_項目\_FLAGS プロパティ。
 
 アプリケーションは、WIA を読み取ります\_IPA\_項目\_WIA 項目の説明を決定するフラグ値にフラグを設定します。
 
@@ -223,7 +223,7 @@ WIA 項目のフラグは、内のものと同じ、 *lObjectFlags*のパラメ�
 
 [**WIA\_IPA\_項目\_カテゴリ**](wia-ipa-item-category.md)
 
-[**wiasCreateDrvItem**](https://msdn.microsoft.com/library/windows/hardware/ff549160)
+[**wiasCreateDrvItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)
 
  
 

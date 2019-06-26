@@ -8,12 +8,12 @@ keywords:
 - 中間ドライバーをリセットします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4027bcbd6bbc4013877eb42dee0344ec4712fe8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a89ee57187b31dc742597e74ede4f6218465e70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391653"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371825"
 ---
 # <a name="intermediate-driver-reset-operations"></a>中間ドライバー リセット操作
 
@@ -23,7 +23,7 @@ ms.locfileid: "63391653"
 
 中間のドライバーは、基になる NIC をリセットするための基になるドライバーへのバインドで未処理の送信のドロップされる状況を処理するために準備する必要があります。
 
-基になるドライバーは、NDIS ミニポート ドライバーを呼び出すため、通常、NIC をリセット[ *MiniportResetEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559432) NDIS がキューに置かれた送信タイムアウトまたは要求の NIC にバインドするときに関数 NDIS を呼び出す、基になる NIC をリセットする場合、 [ **ProtocolStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff570270)(または[ **ProtocolCoStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff570258)) の各関数には、プロトコルがバインドされています。ドライバーおよび NDIS の状態で中間ドライバー\_状態\_リセット\_を開始します。 NDIS ミニポート ドライバーには、リセットが完了すると、呼び出すもう一度*ProtocolStatusEx*(または*ProtocolCoStatusEx*) 状態の NDIS\_状態\_リセット\_終わり。
+基になるドライバーは、NDIS ミニポート ドライバーを呼び出すため、通常、NIC をリセット[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset) NDIS がキューに置かれた送信タイムアウトまたは要求の NIC にバインドするときに関数 NDIS を呼び出す、基になる NIC をリセットする場合、 [ **ProtocolStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_status_ex)(または[ **ProtocolCoStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_status_ex)) の各関数には、プロトコルがバインドされています。ドライバーおよび NDIS の状態で中間ドライバー\_状態\_リセット\_を開始します。 NDIS ミニポート ドライバーには、リセットが完了すると、呼び出すもう一度*ProtocolStatusEx*(または*ProtocolCoStatusEx*) 状態の NDIS\_状態\_リセット\_終わり。
 
 NIC をいつリセット、バインドされた中間ドライバーには、保留中である送信ネットワークのデータが含まれている場合、その NIC に NDIS 中間ドライバーを適切な状態に戻す、ネットワーク データが完了するとします。 中間ドライバーは、リセットが完了したときに、これらネットワーク データをもう一度再発行する必要があります。
 
@@ -37,7 +37,7 @@ NIC をいつリセット、バインドされた中間ドライバーには、�
 
 後*ProtocolStatusEx*(または*ProtocolCoStatusEx*) 受信 NDIS\_状態\_リセット\_最後に、中間のドライバーを再開できますネットワークのデータを送信します。要求を行うと、問題により高度なドライバーを作成します。
 
-中間のドライバーが提供されない、 [ *MiniportResetEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559432)関数。
+中間のドライバーが提供されない、 [ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)関数。
 
  
 

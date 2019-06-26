@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 03174c0f7843337bfd333921d34d130e73681972
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c6508d21385a5ea8f5d2a60c0e45e6fb1b5adff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342363"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377295"
 ---
 # <a name="devpkeydrvpkgicon"></a>DEVPKEY_DrvPkg_Icon
 
@@ -82,7 +82,7 @@ DEVPKEY_DrvPkg_Icon デバイス プロパティは、Windows はデバイスの
 
 -   提供された識別子が正の値、例では、値のかどうかは*n*Windows は、識別子を持つ、n + 1 内の最小値、実行可能ファイルは、実行可能ファイルにリソースを使用します。 たとえば場合の値*n*は 1 です。 Windows 実行可能ファイルで 2 番目に小さい値を持つファイル識別子を持つリソースを使用します。
 
-DEVPKEY_DrvPkg_Icon によっての値を設定することができます、 [ **INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)に含まれている、 [ **INF *DDInstall*セクション** ](https://msdn.microsoft.com/library/windows/hardware/ff547344)のデバイスをインストールする INF ファイル。 DEVPKEY_DrvPkg_Icon の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)します。
+DEVPKEY_DrvPkg_Icon によっての値を設定することができます、 [ **INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)に含まれている、 [ **INF *DDInstall*セクション** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)のデバイスをインストールする INF ファイル。 DEVPKEY_DrvPkg_Icon の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)します。
 
 次に、INF を使用する方法の例**AddProperty** 、INF によってインストールされているデバイスに DEVPKEY_DrvPkg_Icon を設定するディレクティブ*DDInstall* "SampleDDInstallSection"のセクションします。
 
@@ -97,7 +97,7 @@ DeviceIcon,,,,"SomeResource.dll,-2","SomeIcon.icon"
 ...
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -120,11 +120,11 @@ DeviceIcon,,,,"SomeResource.dll,-2","SomeIcon.icon"
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)
+[**INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
 
-[**INF *DDInstall*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

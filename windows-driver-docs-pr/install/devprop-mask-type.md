@@ -14,26 +14,26 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 588f05f697edd108f607e4f80dd3385d6a55755d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07c8e60f5f872b51a7135fc44e429a146363f288
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376789"
 ---
 # <a name="devpropmasktype"></a>DEVPROP_MASK_TYPE
 
 
-Windows Vista および以降のバージョンの Windows では、DEVPROP_MASK_TYPE マスクでビットごとの AND で結合できます、[プロパティ データ型識別子](https://msdn.microsoft.com/library/windows/hardware/ff541476)を抽出する、 [**基本データ型識別子**](https://msdn.microsoft.com/library/windows/hardware/ff537793)データ型のプロパティの識別子から。
+Windows Vista および以降のバージョンの Windows では、DEVPROP_MASK_TYPE マスクでビットごとの AND で結合できます、[プロパティ データ型識別子](https://docs.microsoft.com/previous-versions/ff541476(v=vs.85))を抽出する、 [**基本データ型識別子**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))データ型のプロパティの識別子から。
 
 <a name="remarks"></a>注釈
 -------
 
 このマスクは、基本データ型識別子、データ型のプロパティの修飾子、またはデータ型のプロパティの識別子として使用できません。
 
-DEVPROP_TYPEMOD_Xxx を抽出する方法については[**プロパティ データ型の修飾子**](https://msdn.microsoft.com/library/windows/hardware/ff549770)からデータ型のプロパティの識別子では、次を参照してください[ **DEVPROP_MASK_TYPEMOD。**](devprop-mask-typemod.md).
+DEVPROP_TYPEMOD_Xxx を抽出する方法については[**プロパティ データ型の修飾子**](https://docs.microsoft.com/previous-versions/ff549770(v=vs.85))からデータ型のプロパティの識別子では、次を参照してください[ **DEVPROP_MASK_TYPEMOD。** ](devprop-mask-typemod.md).
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

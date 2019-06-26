@@ -4,12 +4,12 @@ description: HID クラス ドライバーの操作
 ms.assetid: 3A8F5545-F8EB-47E2-989D-7DE83E32110E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c9e0ae2cf19ed107445480cef430d4b13a61f02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 492f60975ba9097f8d2ff8c4d7e58ce973f0881d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371951"
 ---
 # <a name="minidrivers-and-the-hid-class-driver"></a>ミニドライバーと HID クラス ドライバー
 
@@ -30,7 +30,7 @@ HID クラス ドライバーは、次を行います。
 
     HID クラス ドライバーは透過的に管理し、上位レベルのドライバーとアプリケーションと HID コレクションをサポートする、基になる入力デバイス間のすべての通信をルーティングします。 さまざまな入力デバイスで使用されるさまざまなデータ プロトコルと同じ HID コレクションに対して 1 つ以上の開いているファイルをサポートする入力キューを管理します。
 
-    HID コレクションに上位レベルのインターフェイスを構成、 [HID クラス ドライバーの Ioctl](https://msdn.microsoft.com/library/windows/hardware/ff539849)、 [HIDClass サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff538865)、および[HIDClass 構造](https://msdn.microsoft.com/library/windows/hardware/ff538854)。
+    HID コレクションに上位レベルのインターフェイスを構成、 [HID クラス ドライバーの Ioctl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、 [HIDClass サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)、および[HIDClass 構造](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 -   ミニドライバーの標準のドライバーのルーチンを呼び出すことによって、HID ミニドライバーと通信します。
 
@@ -44,37 +44,37 @@ HID クラス ドライバーは、次を行います。
 
 ### <a name="binding-a-minidriver-to-hidclass"></a>HIDClass へ、ミニドライバーのバインド
 
-HID ミニドライバー HID クラス ドライバーを呼び出すことによって、操作をバインドする[ **HidRegisterMinidriver** ](https://msdn.microsoft.com/library/windows/hardware/ff539835) HID クラス ドライバーを使用したそのものを登録します。 登録操作は、次を行います。
+HID ミニドライバー HID クラス ドライバーを呼び出すことによって、操作をバインドする[ **HidRegisterMinidriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/nf-hidport-hidregisterminidriver) HID クラス ドライバーを使用したそのものを登録します。 登録操作は、次を行います。
 
 -   HID クラス ドライバーのデバイスの拡張機能の HID ミニドライバーの標準のドライバーのルーチンをエントリ ポイント (ポインター) のコピーを保存します。
 
-    HID ミニドライバーでは、そのエントリ ポイントを設定、ミニドライバーをへの入力として受け取るドライバー オブジェクトでその[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン。 HID ミニドライバーは、HID クラス ドライバーに登録する前に、これらのエントリ ポイントを設定します。
+    HID ミニドライバーでは、そのエントリ ポイントを設定、ミニドライバーをへの入力として受け取るドライバー オブジェクトでその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。 HID ミニドライバーは、HID クラス ドライバーに登録する前に、これらのエントリ ポイントを設定します。
 
 -   HID クラス ドライバーによって提供される標準のドライバーのルーチンのエントリ ポイントにミニドライバーのドライバー オブジェクト内のエントリ ポイントをリセットします。
 
 HID クラス ドライバーには、次の標準のドライバー ルーチンが用意されています。
 
--   [*AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)と[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチン
+-   [*AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)と[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン
 
 -   次の I/O 要求のディスパッチ ルーチン:
 
-    [**IRP\_MJ\_CREATE**](https://msdn.microsoft.com/library/windows/hardware/ff550729)
+    [**IRP\_MJ\_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)
 
-    [**IRP\_MJ\_CLOSE**](https://msdn.microsoft.com/library/windows/hardware/ff550720)
+    [**IRP\_MJ\_CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)
 
-    [**IRP\_MJ\_DEVICE\_CONTROL**](https://msdn.microsoft.com/library/windows/hardware/ff550744)
+    [**IRP\_MJ\_DEVICE\_CONTROL**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)
 
-    [**IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)
+    [**IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)
 
-    [**IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff550772)
+    [**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)
 
-    [**IRP\_MJ\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550813)
+    [**IRP\_MJ\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control)
 
 また、登録プロセスは、HID mindriver デバイス拡張機能のメモリを割り当てます。 HID クラス ドライバーによって、メモリの割り当て、HID ミニドライバーだけでは、このデバイスの拡張機能を使用します。
 
 ### <a name="communicating-with-a-hid-minidriver"></a>HID ミニドライバーとの通信
 
-HID クラス ドライバーは、HID ミニドライバーを呼び出すことによって、HID ミニドライバーと通信する[ *AddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff540521)、 [*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)とディスパッチ次のようにルーチン:
+HID クラス ドライバーは、HID ミニドライバーを呼び出すことによって、HID ミニドライバーと通信する[ *AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)、 [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)とディスパッチ次のようにルーチン:
 
 ### <a name="calling-the-adddevice-routine"></a>AddDevice ルーチンの呼び出し
 
@@ -120,13 +120,13 @@ HID クラス ドライバーの詳細については、HID クラス ドライ�
 
 ### <a name="registering-a-hid-minidriver"></a>HID ミニドライバーを登録します。
 
-ミニドライバーの内に他のドライバーのすべての初期化の完了後、HID その[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン、HID ミニドライバーの操作にバインド HID クラス ドライバーを呼び出して[ **HidRegisterMinidriver**](https://msdn.microsoft.com/library/windows/hardware/ff539835)します。
+ミニドライバーの内に他のドライバーのすべての初期化の完了後、HID その[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン、HID ミニドライバーの操作にバインド HID クラス ドライバーを呼び出して[ **HidRegisterMinidriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/nf-hidport-hidregisterminidriver)します。
 
-HID ミニドライバーは、HID クラス ドライバーを使用した登録を使用して、 [ **HID\_ミニドライバー\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff539929)構造体を次を指定します。HID リビジョン、HID ミニドライバー ドライバー オブジェクト、HID ミニドライバー デバイス拡張機能のサイズかどうかにデバイスをポーリングするかどうかとします。
+HID ミニドライバーは、HID クラス ドライバーを使用した登録を使用して、 [ **HID\_ミニドライバー\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ns-hidport-_hid_minidriver_registration)構造体を次を指定します。HID リビジョン、HID ミニドライバー ドライバー オブジェクト、HID ミニドライバー デバイス拡張機能のサイズかどうかにデバイスをポーリングするかどうかとします。
 
 ### <a name="hid-minidriver-extension"></a>HID のミニドライバーの拡張機能
 
-HID ミニドライバー デバイス拡張機能は、デバイスに固有では HID ミニドライバーでのみ使用します。 HID クラス ドライバー メモリを割り当てて、ミニドライバー デバイス拡張機能クラス ドライバーは、そのデバイスの拡張機能のデバイス オブジェクトを作成するときに (*FDO*)。 HID ミニドライバーは、HID クラス ドライバーを使用した、ミニドライバーを登録するときに、そのデバイスの拡張機能のサイズを指定します。 サイズが指定された、 **DeviceExtensionSize**のメンバー、 [ **HID\_ミニドライバー\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff539929)構造体。
+HID ミニドライバー デバイス拡張機能は、デバイスに固有では HID ミニドライバーでのみ使用します。 HID クラス ドライバー メモリを割り当てて、ミニドライバー デバイス拡張機能クラス ドライバーは、そのデバイスの拡張機能のデバイス オブジェクトを作成するときに (*FDO*)。 HID ミニドライバーは、HID クラス ドライバーを使用した、ミニドライバーを登録するときに、そのデバイスの拡張機能のサイズを指定します。 サイズが指定された、 **DeviceExtensionSize**のメンバー、 [ **HID\_ミニドライバー\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ns-hidport-_hid_minidriver_registration)構造体。
 
 ### <a href="" id="using-the-hid-device-extension-structure"></a>HID を使用して\_デバイス\_拡張機能の構造体
 
@@ -164,13 +164,13 @@ HID ミニドライバーは、HID ミニドライバー ディスパッチ ル�
 
 ### <a name="driverentry-routine"></a>DriverEntry ルーチン
 
-[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113) HID ミニドライバーのルーチンは、次を実行します。
+[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize) HID ミニドライバーのルーチンは、次を実行します。
 
 -   ドライバーのドライバー (HID クラス ドライバーおよび HID ミニドライバー) のリンクのペアを作成します。
 
 -   HID ミニドライバー ドライバー オブジェクトに必要なドライバーのエントリ ポイントを設定します。
 
--   呼び出し[ **HidRegisterMinidriver** ](https://msdn.microsoft.com/library/windows/hardware/ff539835) HID クラス ドライバーを使用した HID ミニドライバーを登録します。
+-   呼び出し[ **HidRegisterMinidriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/nf-hidport-hidregisterminidriver) HID クラス ドライバーを使用した HID ミニドライバーを登録します。
 
 -   HID ミニドライバーでのみ使用されるデバイス固有の構成を行います。
 
@@ -178,13 +178,13 @@ HID ミニドライバーは、HID ミニドライバー ディスパッチ ル�
 
 HID クラス ドライバーは処理を作成して、機能のデバイス オブジェクトの初期化 (*FDO*) の基になる入力デバイス。 HID クラス ドライバーは、基になるデバイスとその子デバイス (HID コレクション) に、上位レベルのインターフェイスの観点から FDO も動作します。
 
-HID クラス ドライバー [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンは、HID ミニドライバーを呼び出す*AddDevice*ルーチンのミニドライバーは、デバイス固有の内部の初期化を実行できるようにします。
+HID クラス ドライバー [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンは、HID ミニドライバーを呼び出す*AddDevice*ルーチンのミニドライバーは、デバイス固有の内部の初期化を実行できるようにします。
 
-HID ミニドライバーに渡されるパラメーター [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンは、ミニドライバー ドライバー オブジェクトと、FDO します。 (HID クラス ドライバーが、FDO をミニドライバーに渡すことに注意してください*AddDevice*日常的な、基になる入力デバイスの物理デバイス オブジェクトにありません。)。
+HID ミニドライバーに渡されるパラメーター [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンは、ミニドライバー ドライバー オブジェクトと、FDO します。 (HID クラス ドライバーが、FDO をミニドライバーに渡すことに注意してください*AddDevice*日常的な、基になる入力デバイスの物理デバイス オブジェクトにありません。)。
 
-HID ミニドライバー [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン、FDO からミニドライバー デバイス拡張機能にポインターを取得します。
+HID ミニドライバー [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン、FDO からミニドライバー デバイス拡張機能にポインターを取得します。
 
--   HID ミニドライバーでは通常、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンは、次を実行します。
+-   HID ミニドライバーでは通常、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンは、次を実行します。
 
 -   ミニドライバー デバイス拡張機能を初期化します。 デバイスの拡張機能は、ミニドライバーでのみ使用されます。
 
@@ -216,7 +216,7 @@ HID ミニドライバーは、デバイス制御要求のディスパッチ ル
 
 ### <a href="" id="irp-mj-internal-device-control"></a>IRP\_MJ\_内部\_デバイス\_コントロール
 
-HID ミニドライバーで説明されている要求をサポートする内部デバイス制御要求のディスパッチ ルーチンを提供する必要があります[HID MinidriverIOCTLs](https://msdn.microsoft.com/library/windows/hardware/ff539926)します。
+HID ミニドライバーで説明されている要求をサポートする内部デバイス制御要求のディスパッチ ルーチンを提供する必要があります[HID MinidriverIOCTLs](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 主に、HID クラス ドライバーは、基になる入力デバイスにアクセスするのに内部デバイス制御要求を使用します。
 

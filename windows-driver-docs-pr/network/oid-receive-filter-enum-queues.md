@@ -5,19 +5,19 @@ ms.assetid: e8a946a2-9ee9-42a0-8175-fbc592d404d1
 ms.date: 08/08/2017
 keywords: -OID_RECEIVE_FILTER_ENUM_QUEUES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f81be0b7e2db312be29601ce16a8f1fda2f07b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a81201dee22a03547a823eeef2173cd8a0deaf5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380888"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371202"
 ---
 # <a name="oidreceivefilterenumqueues"></a>OID\_受信\_フィルター\_ENUM\_キュー
 
 
 上にあるドライバーとユーザー モード アプリケーション発行オブジェクト識別子 (OID) のクエリ要求の OID\_受信\_フィルター\_ENUM\_ネットワーク上に割り当てられたすべての受信キューの一覧を取得するキューアダプター。
 
-OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、 [ **NDIS\_受信\_キュー\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567205)が続く構造体、 [**NDIS\_受信\_キュー\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567204)各フィルターの構造体。
+OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_受信\_キュー\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_info_array)が続く構造体、 [**NDIS\_受信\_キュー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_info)各フィルターの構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -26,7 +26,7 @@ NDIS から受信したデータの内部キャッシュからの情報の取得
 
 上にあるドライバーとユーザー モード アプリケーションは、OID の OID クエリ要求を発行\_受信\_フィルター\_ENUM\_ネットワーク アダプターの受信キューを列挙するキュー。
 
-内で、要求の入力プロトコル ドライバーには、要求が発行した場合、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に設定されている**NdisRequestQueryInformation**この OID は、ネットワーク アダプターのプロトコル ドライバーに割り当てられているすべての受信キューの配列を返します。 内で、要求の種類、ユーザー モード アプリケーションが要求を発行した場合、 **NDIS\_OID\_要求**構造に設定されている**NdisRequestQueryStatistics**、し、この OID を返しますネットワーク アダプターに、すべての受信キューに関する情報の配列。
+内で、要求の入力プロトコル ドライバーには、要求が発行した場合、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に設定されている**NdisRequestQueryInformation**この OID は、ネットワーク アダプターのプロトコル ドライバーに割り当てられているすべての受信キューの配列を返します。 内で、要求の種類、ユーザー モード アプリケーションが要求を発行した場合、 **NDIS\_OID\_要求**構造に設定されている**NdisRequestQueryStatistics**、し、この OID を返しますネットワーク アダプターに、すべての受信キューに関する情報の配列。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -46,7 +46,7 @@ OID の OID のクエリ要求を処理する NDIS\_受信\_フィルター\_ENU
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>要求は正常に完了しました。 <strong>InformationBuffer</strong>を指す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567205" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_QUEUE_INFO_ARRAY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567205)"> <strong>NDIS_RECEIVE_QUEUE_INFO_ARRAY</strong> </a>構造体。</p></td>
+<td><p>要求は正常に完了しました。 <strong>InformationBuffer</strong>を指す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_info_array" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_QUEUE_INFO_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_info_array)"> <strong>NDIS_RECEIVE_QUEUE_INFO_ARRAY</strong> </a>構造体。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
@@ -54,7 +54,7 @@ OID の OID のクエリ要求を処理する NDIS\_受信\_フィルター\_ENU
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ</strong>.<strong>METHOD_INFORMATION</strong>.<strong>BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ</strong>.<strong>METHOD_INFORMATION</strong>.<strong>BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_FAILURE</strong></p></td>
@@ -88,11 +88,11 @@ OID の OID のクエリ要求を処理する NDIS\_受信\_フィルター\_ENU
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_受信\_キュー\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567204)
+[**NDIS\_受信\_キュー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_info)
 
-[**NDIS\_受信\_キュー\_情報\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff567205)
+[**NDIS\_受信\_キュー\_情報\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_info_array)
 
 [OID\_受信\_フィルター\_ALLOCATE\_キュー](oid-receive-filter-allocate-queue.md)
 

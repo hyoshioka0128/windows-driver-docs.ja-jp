@@ -6,17 +6,17 @@ keywords:
 - ビデオ WDK DirectX VA を処理する、デバイスの作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbccc35674a7f1531d321facaee55e6c93502976
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d7ca4ae86f624ebba7734a6b88781c62e890c30
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370227"
 ---
 # <a name="creating-a-video-processing-device"></a>ビデオ処理デバイスの作成
 
 
-マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateVideoProcessDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540729)ビデオ ストリームを処理するためのデバイスを作成する関数。 ユーザー モードのディスプレイ ドライバーの呼び出し、デバイスで Direct3D ランタイムが終了したら、 [ **DestroyVideoProcessDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552814)関数。
+マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateVideoProcessDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createvideoprocessdevice)ビデオ ストリームを処理するためのデバイスを作成する関数。 ユーザー モードのディスプレイ ドライバーの呼び出し、デバイスで Direct3D ランタイムが終了したら、 [ **DestroyVideoProcessDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_destroyvideoprocessdevice)関数。
 
  
 

@@ -5,12 +5,12 @@ ms.assetid: 3eac6818-c346-47f6-b812-f98b808dc36a
 ms.date: 08/08/2017
 keywords: -OID_GEN_DISCONTINUITY_TIME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c21d8223fec9e08bfee378b5edb19fb762c92b7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26b11a4694eac734ce093c0863188676dc3c02ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381357"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369118"
 ---
 # <a name="oidgendiscontinuitytime"></a>OID\_GEN\_以降の不連続性\_時間
 
@@ -28,9 +28,9 @@ ms.locfileid: "63381357"
 <a name="remarks"></a>注釈
 -------
 
-のみ[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
+のみ[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
 
-この OID は、インターフェイスがある、統計カウンターを維持する上で連続していない場合に、最後のコンピューターの再起動から開始時間を返します。 インターフェイスが無効になっているか、関連付けられているアダプターがコンピューターから削除されたため、以降の不連続性がありましたなど。 統計カウンターの詳細については、次を参照してください。 [OID\_GEN\_統計](oid-gen-statistics.md)します。 現在の時刻を取得するインターフェイスをプロバイダーが呼び出すことができます、 [ **NdisGetSystemUpTimeEx** ](https://msdn.microsoft.com/library/windows/hardware/ff562675)関数。
+この OID は、インターフェイスがある、統計カウンターを維持する上で連続していない場合に、最後のコンピューターの再起動から開始時間を返します。 インターフェイスが無効になっているか、関連付けられているアダプターがコンピューターから削除されたため、以降の不連続性がありましたなど。 統計カウンターの詳細については、次を参照してください。 [OID\_GEN\_統計](oid-gen-statistics.md)します。 現在の時刻を取得するインターフェイスをプロバイダーが呼び出すことができます、 [ **NdisGetSystemUpTimeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetsystemuptimeex)関数。
 
 インターフェイスの最後の再初期化後にこのような不連続性が発生していない場合は、この値は 0 にする必要があります。 インターフェイス プロバイダーは、以降の不連続性の時間を追跡していない、この値は 0 にする必要があります。
 
@@ -55,7 +55,7 @@ ms.locfileid: "63381357"
 ## <a name="see-also"></a>関連項目
 
 
-[NDIS ネットワーク インターフェイスの Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

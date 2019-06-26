@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 18757cc3041b8e5673218516f4368a083892f502
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af92340222bfd1f6e5baab39bda2de06af81bdd3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389091"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371667"
 ---
 # <a name="bcdedit-emssettings"></a>BCDEdit /emssettings
 
@@ -46,15 +46,15 @@ EMS を使用するシリアル ボー レートを指定します。 このコ�
 
 正しく Windows をインストールした後は、EMS のコンソールのリダイレクトを有効に、Windows のコンピューターで帯域外通信に使用されるポートと送信レートを把握する必要があります。 Windows では、EMS のコンソールのリダイレクトをこれらの同じ設定を使用します。
 
-コンピューターの BIOS ファームウェアと ACPI シリアル ポート Console Redirection (SPCR) テーブルでは、Windows は SPCR テーブル内のエントリを読み取ることで、BIOS で確立された帯域外の設定を確認できます。 これらのシステムで使用することができます、 **BIOS**ポートの設定の SPCR テーブルで検索する Windows に出力するためのパラメーターを使用できる、 **emsport:**<em>ポート</em>と**emsbaudrate:**<em>baudrate</em> SPCR テーブルの設定を上書きするパラメーター。
+コンピューターの BIOS ファームウェアと ACPI シリアル ポート Console Redirection (SPCR) テーブルでは、Windows は SPCR テーブル内のエントリを読み取ることで、BIOS で確立された帯域外の設定を確認できます。 これらのシステムで使用することができます、 **BIOS**ポートの設定の SPCR テーブルで検索する Windows に出力するためのパラメーターを使用できる、 **emsport:** <em>ポート</em>と**emsbaudrate:** <em>baudrate</em> SPCR テーブルの設定を上書きするパラメーター。
 
-BIOS ファームウェア、SPCR テーブルにはありませんがいるコンピューターで、BCDEdit を使用して、 **/emssettings**コマンドと、 **emsport:**<em>ポート</em>ポートを指定するパラメーターと**emsbaudrate:**<em>baudrate</em>転送速度を指定するパラメーター。
+BIOS ファームウェア、SPCR テーブルにはありませんがいるコンピューターで、BCDEdit を使用して、 **/emssettings**コマンドと、 **emsport:** <em>ポート</em>ポートを指定するパラメーターと**emsbaudrate:** <em>baudrate</em>転送速度を指定するパラメーター。
 
 すべてのシステムで使用して、 [ **BCDEdit/ems** ](bcdedit--ems.md)コマンドし、ブート エントリが読み込まれるオペレーティング システムで EMS のコンソール リダイレクトを有効にするブート エントリを指定します。
 
 このセクションで説明されているブート パラメーターでは、Windows のインストール後に、EMS のコンソールのリダイレクトが有効にします。 新規インストールまたは Windows のアップグレード中に、EMS を有効にする方法についてで「を有効にする緊急管理サービス」の検索、 [Microsoft TechNet](https://go.microsoft.com/fwlink/p/?linkid=10111) web サイト。
 
-詳細の例では、次を参照してください。 [EMS のリダイレクトを有効にするのにブート パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542282)します。
+詳細の例では、次を参照してください。 [EMS のリダイレクトを有効にするのにブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-ems-redirection)します。
 
  
 

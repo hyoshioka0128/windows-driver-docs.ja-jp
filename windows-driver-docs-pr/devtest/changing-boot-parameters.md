@@ -8,12 +8,12 @@ keywords:
 - ブート オプション WDK、ブート パラメーター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f330203a0065139f51f0a37a564f461845d0344
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 519cac2938ab247961affcbc8f3d1339cad13fd6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371614"
 ---
 # <a name="changing-boot-parameters"></a>ブート パラメーターの変更
 
@@ -23,7 +23,7 @@ Windows を実行するシステム上のブート パラメーターを変更�
 
 ## <a name="span-idusingbcdeditspanspan-idusingbcdeditspanusing-bcdedit"></a><span id="using_bcdedit"></span><span id="USING_BCDEDIT"></span>BCDEdit を使用してください。
 
-にブート エントリを、ブート構成パラメーターを追加するなど、グローバル設定を変更する BCDEdit のブート エントリのオプションを使用して、 **/ems**、 **/debug**、 **/dbgsettings**、または設定します。個々 のパラメーターを使用して、 [ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)オプション。 コマンド プロンプトで、BCDEdit のオプションの完全な一覧については、入力**BCDEdit/でしょうか。** または**BCDEdit/でしょうか。** &lt;コマンド&gt;特定のコマンドに関するヘルプを検索します。
+にブート エントリを、ブート構成パラメーターを追加するなど、グローバル設定を変更する BCDEdit のブート エントリのオプションを使用して、 **/ems**、 **/debug**、 **/dbgsettings**、または設定します。個々 のパラメーターを使用して、 [ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)オプション。 コマンド プロンプトで、BCDEdit のオプションの完全な一覧については、入力**BCDEdit/でしょうか。** または**BCDEdit/でしょうか。** &lt;コマンド&gt;特定のコマンドに関するヘルプを検索します。
 
 たとえば、次のコマンドは、指定されたブート エントリの PAE を有効。 にします。
 

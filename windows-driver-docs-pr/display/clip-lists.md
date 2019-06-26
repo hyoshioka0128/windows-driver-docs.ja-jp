@@ -12,12 +12,12 @@ keywords:
 - クリップ blt WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcb21390ea3a0a40403f643746c8ea5bc38f2106
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f10669cfae7b403840832cd5b4ed9362da32004
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370702"
 ---
 # <a name="clip-lists"></a>クリップ リスト
 
@@ -25,7 +25,7 @@ ms.locfileid: "63354322"
 ## <span id="ddk_clip_lists_gg"></span><span id="DDK_CLIP_LISTS_GG"></span>
 
 
-クリップされた blt は、Microsoft Windows 2000 以降では、ドライバーに渡されることはありません。 **IsClipped**のメンバー [ **DD\_BLTDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff550474)は常に**FALSE**、常に、クリップされた一覧と**NULL**します。
+クリップされた blt は、Microsoft Windows 2000 以降では、ドライバーに渡されることはありません。 **IsClipped**のメンバー [ **DD\_BLTDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_bltdata)は常に**FALSE**、常に、クリップされた一覧と**NULL**します。
 
  
 

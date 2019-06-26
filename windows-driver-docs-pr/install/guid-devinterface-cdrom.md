@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dac56719f1334916bda5c00089210247317bc87e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf8e3c75144eda4b84e05af890107e8a6241243f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358827"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372732"
 ---
 # <a name="guiddevinterfacecdrom"></a>GUID_DEVINTERFACE_CDROM
 
 
-GUID_DEVINTERFACE_CDROM[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)CD-ROM が定義されている[記憶装置](https://msdn.microsoft.com/library/windows/hardware/ff566969)します。
+GUID_DEVINTERFACE_CDROM[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)CD-ROM が定義されている[記憶装置](https://docs.microsoft.com/windows-hardware/drivers/storage/index)します。
 
 <table>
 <colgroup>
@@ -60,7 +60,7 @@ CD-ROM の記憶域デバイスのシステム指定のクラス ドライバー
 
 チェンジャーの CD-ROM デバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_CDCHANGER**](guid-devinterface-cdchanger.md)します。
 
-記憶域デバイスについては、次を参照してください。[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976)します。
+記憶域デバイスについては、次を参照してください。[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)します。
 
 <a name="requirements"></a>必要条件
 ------------

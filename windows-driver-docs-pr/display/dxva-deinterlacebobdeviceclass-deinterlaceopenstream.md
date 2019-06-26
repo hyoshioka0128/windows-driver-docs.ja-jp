@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 614d6dfa6fdee4d9496af412031ef003828d8a20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf4aee45fb98a422dc8d226e2448818af560f3d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375821"
 ---
 # <a name="dxvadeinterlacebobdeviceclassdeinterlaceopenstream-method"></a>DXVA\_DeinterlaceBobDeviceClass::DeinterlaceOpenStream メソッド
 
@@ -51,20 +51,20 @@ HRESULT DeinterlaceOpenStream(
 
 使用して GUID を確認した後のインター モード、 [ **DeinterlaceQueryAvailableModes** ](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)関数、インター ストリーム オブジェクトを作成できます。 このオブジェクトは、任意のハードウェアを予約するディスプレイ ドライバーを使用できます。 要求されたを実行するために必要なリソース操作インター レースを解除します。
 
-ドライバーを実行する方法の詳細についてはインター レースを解除またはによって提供される情報を使用して、フレーム レートの変換操作、 *lpVideoDescription*パラメーターを参照してください[インターのビデオのコンテンツとフレーム レート変換](https://msdn.microsoft.com/library/windows/hardware/ff570502)します。
+ドライバーを実行する方法の詳細についてはインター レースを解除またはによって提供される情報を使用して、フレーム レートの変換操作、 *lpVideoDescription*パラメーターを参照してください[インターのビデオのコンテンツとフレーム レート変換](https://docs.microsoft.com/windows-hardware/drivers/display/video-content-for-deinterlace-and-frame-rate-conversion)します。
 
-サンプル*DeinterlaceOpenStream*関数のマップに直接、 **CreateMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)構造、GUID はインター モードを要求します。 **LpData**のメンバー、 [ **DD\_CREATEMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff550529)へのポインターを構造体、 [ **DXVA\_VideoDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff564070)構造体。
+サンプル*DeinterlaceOpenStream*関数のマップに直接、 **CreateMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)構造、GUID はインター モードを要求します。 **LpData**のメンバー、 [ **DD\_CREATEMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)へのポインターを構造体、 [ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)構造体。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)
+[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD\_CREATEMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff550529)
+[**DD\_CREATEMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)
 
 [**DeinterlaceQueryAvailableModes**](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)
 
-[**DXVA\_VideoDesc**](https://msdn.microsoft.com/library/windows/hardware/ff564070)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
 
  
 

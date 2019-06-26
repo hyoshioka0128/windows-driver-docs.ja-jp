@@ -9,12 +9,12 @@ keywords:
 - 読み込みの部分的なチェック ビルド WDK ブート オプション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27993aaf78504ddf3ea490e98d52b0dea746b206
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 594198ba68e4b32beda3a9d527633496b068ef4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371640"
 ---
 #  <a name="boot-parameters-to-load-a-partial-checked-build"></a>部分チェック ビルドを読み込むためのブート パラメーター
 
@@ -26,7 +26,7 @@ A*チェック済みビルドの部分的な*チェック ビルド バージョ
 
 ### <a name="span-idconfiguringapartialcheckedbuildinwindowsvistaandlaterspanspan-idconfiguringapartialcheckedbuildinwindowsvistaandlaterspanconfiguring-a-partial-checked-build-in-windows"></a><span id="configuring_a_partial_checked_build_in_windows_vista_and_later"></span><span id="CONFIGURING_A_PARTIAL_CHECKED_BUILD_IN_WINDOWS_VISTA_AND_LATER"></span>Windows での部分的なチェック ビルドの構成
 
-部分を構成するビルドの使用をチェック、 [ **BCDedit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)コマンドと**カーネル**と**hal**オプション。
+部分を構成するビルドの使用をチェック、 [ **BCDedit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)コマンドと**カーネル**と**hal**オプション。
 
 次のコマンドは、チェックされているバージョンのカーネルとハードウェア アブストラクション レイヤー (HAL) を使用するブート エントリを構成します。
 

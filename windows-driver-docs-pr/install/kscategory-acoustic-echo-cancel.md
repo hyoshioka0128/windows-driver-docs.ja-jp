@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ecde56415d4c1f5266057adf38a4177105fbcf5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fdd47dc67f9b4300949bbaaf88acd663c00371dd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374984"
 ---
 # <a name="kscategoryacousticechocancel"></a>KSCATEGORY_ACOUSTIC_ECHO_CANCEL
 
 
-KSCATEGORY_ACOUSTIC_ECHO_CANCEL[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)アコースティック エコー キャンセルを実行します (KS) 機能のカテゴリ。
+KSCATEGORY_ACOUSTIC_ECHO_CANCEL[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)アコースティック エコー キャンセルを実行します (KS) 機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_ACOUSTIC_ECHO_CANCEL[デバイス インターフェイス クラス]
 
 KS オーディオ デバイス用のドライバーでは、オペレーティング システムに、デバイスがアコースティック エコー キャンセルを実行する KS 機能のカテゴリをサポートすることを示す KSCATEGORY_ACOUSTIC_ECHO_CANCEL のインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)します。
 
 <a name="requirements"></a>要件
 ------------

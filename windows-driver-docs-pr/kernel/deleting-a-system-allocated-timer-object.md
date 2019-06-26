@@ -13,19 +13,19 @@ keywords:
 - EX_TIMER
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62e5af582c1926f1222f53050f749438548dea06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7346235a95ed5f5d970f9bcf25ff1922621db2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377106"
 ---
 # <a name="deleting-a-system-allocated-timer-object"></a>システムによって割り当てられたタイマー オブジェクトの削除
 
 
-Windows 8.1 では、以降、 [ **ExDeleteTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265181)ルーチンによって作成されたタイマー オブジェクトの削除、 [ **ExAllocateTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265179)ルーチンです。 このタイマー オブジェクトは、システムによって割り当てられた[ **EX\_タイマー** ](https://msdn.microsoft.com/library/windows/hardware/dn265199)のメンバーは、ドライバーを非透過構造体。 タイマー オブジェクトを削除すると、前に**ExDeleteTimer**さらに、オブジェクトに対する操作をタイマーを無効にし、キャンセルまたは保留中の進行中の可能性のあるオブジェクトの操作が完了するとします。
+Windows 8.1 では、以降、 [ **ExDeleteTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletetimer)ルーチンによって作成されたタイマー オブジェクトの削除、 [ **ExAllocateTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)ルーチンです。 このタイマー オブジェクトは、システムによって割り当てられた[ **EX\_タイマー** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)のメンバーは、ドライバーを非透過構造体。 タイマー オブジェクトを削除すると、前に**ExDeleteTimer**さらに、オブジェクトに対する操作をタイマーを無効にし、キャンセルまたは保留中の進行中の可能性のあるオブジェクトの操作が完了するとします。
 
-ドライバーを呼び出してから**ExDeleteTimer**、このルーチンは、いくつかの手順をタイマー オブジェクトを安全に削除できることを確認します。 まず、 **ExDeleteTimer**ドライバーが、オブジェクトを使用して、新しいタイマー操作を開始するを防ぐために無効になっている、タイマー オブジェクトをマークします。 タイマー オブジェクトを無効にするへの呼び出し、 [ **ExSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265188)または[ **ExCancelTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265180)ルーチンがを直ちに返します**FALSE**演算を実行しないとします。 2 番目の呼び出しにも、 **ExDeleteTimer**返します**FALSE**演算を実行しないとします。
+ドライバーを呼び出してから**ExDeleteTimer**、このルーチンは、いくつかの手順をタイマー オブジェクトを安全に削除できることを確認します。 まず、 **ExDeleteTimer**ドライバーが、オブジェクトを使用して、新しいタイマー操作を開始するを防ぐために無効になっている、タイマー オブジェクトをマークします。 タイマー オブジェクトを無効にするへの呼び出し、 [ **ExSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)または[ **ExCancelTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excanceltimer)ルーチンがを直ちに返します**FALSE**演算を実行しないとします。 2 番目の呼び出しにも、 **ExDeleteTimer**返します**FALSE**演算を実行しないとします。
 
 次に、 **ExDeleteTimer**タイマーがかどうかを確認します。 以前の呼び出しから保留中のままで**ExDeleteTimer**します。 タイマー オブジェクトを無効にする場合は、オブジェクトが無効になる前に設定されたタイマーは取り消されません。 次の 2 つのケースのいずれか、タイマー オブジェクトを無効にした後、設定されているタイマーが期限切れ。
 
@@ -34,7 +34,7 @@ Windows 8.1 では、以降、 [ **ExDeleteTimer** ](https://msdn.microsoft.com/
 
 定期的なタイマーはことができます、タイマー オブジェクトを無効にした後で 2 回以上有効期限はありません。
 
-ドライバーが実装されている場合、 [ *ExTimerCallback* ](https://msdn.microsoft.com/library/windows/hardware/dn265190)コールバック ルーチン、*タイマー*タイマーを有効なポインター オブジェクト (が常にこのルーチンへのパラメーターのことが保証されます**EX\_タイマー**構造) タイマーが切れたタイマー オブジェクトを無効にした後場合でも、します。
+ドライバーが実装されている場合、 [ *ExTimerCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ext_callback)コールバック ルーチン、*タイマー*タイマーを有効なポインター オブジェクト (が常にこのルーチンへのパラメーターのことが保証されます**EX\_タイマー**構造) タイマーが切れたタイマー オブジェクトを無効にした後場合でも、します。
 
 タイマーが保留中でない場合**ExDeleteTimer**タイマー オブジェクトを削除し、待機せずに戻ります。
 
@@ -46,7 +46,7 @@ Windows 8.1 では、以降、 [ **ExDeleteTimer** ](https://msdn.microsoft.com/
 
 場合*キャンセル*は**TRUE**と*待機*は**FALSE**、 **ExDeleteTimer**呼び出し元のスレッドをブロックしません。 タイマー オブジェクトを直ちに削除できない場合**ExDeleteTimer**保留中のタイマーは、期限切れにならないが完了した後に削除することを示す、タイマー オブジェクトをマークし、タイマーがいずれかを待機することがなくすぐに返します有効期限が切れる、または削除するオブジェクト。
 
-場合*キャンセル*と*待機*はどちらも**TRUE**、 **ExDeleteTimer**タイマー オブジェクトを直ちに削除できない場合は、呼び出し元のスレッドをブロック. **ExDeleteTimer** 、タイマーが期限切れにならないを完了し、ドライバーに実装する任意のコールバックの必要な場合、待機*ExTimerCallback*ルーチンを完了します。 次に、 **ExDeleteTimer**タイマー オブジェクトと呼び出しを削除、 [ *ExTimerDeleteCallback* ](https://msdn.microsoft.com/library/windows/hardware/dn265192)ルーチン、ドライバーは、このルーチンを実装している場合。 最後に、 **ExDeleteTimer**を返します。
+場合*キャンセル*と*待機*はどちらも**TRUE**、 **ExDeleteTimer**タイマー オブジェクトを直ちに削除できない場合は、呼び出し元のスレッドをブロック. **ExDeleteTimer** 、タイマーが期限切れにならないを完了し、ドライバーに実装する任意のコールバックの必要な場合、待機*ExTimerCallback*ルーチンを完了します。 次に、 **ExDeleteTimer**タイマー オブジェクトと呼び出しを削除、 [ *ExTimerDeleteCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ext_delete_callback)ルーチン、ドライバーは、このルーチンを実装している場合。 最後に、 **ExDeleteTimer**を返します。
 
 ドライバーを呼び出すことができます**ExDeleteTimer**からドライバーの*ExTimerCallback* IRQL で実行されるルーチンは、ディスパッチ =\_レベルでは、ドライバーを設定する必要があります、*待機*この呼び出しでパラメーター **FALSE**します。
 

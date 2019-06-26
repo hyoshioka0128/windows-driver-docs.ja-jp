@@ -4,12 +4,12 @@ description: 一般的なカメラおよびスキャナーのプロパティ
 ms.assetid: 7d988a1b-4c2f-43f7-be09-a250d9ede35c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cdf8dcc7124beb17079222e90f28fad33082f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b0950e8d93d5ad3dbdebdeabdfd06b01aaaa1d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373177"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375942"
 ---
 # <a name="common-camera-and-scanner-properties"></a>一般的なカメラおよびスキャナーのプロパティ
 
@@ -73,7 +73,7 @@ WIA プロパティ名の途中で 3 文字の頭字語には、プロパティ�
 
  
 
-参照してください[WIA プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff552739)WIA の一般的なカメラに固有とスキャナーに固有のプロパティの完全な一覧についてはします。
+参照してください[WIA プロパティ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties)WIA の一般的なカメラに固有とスキャナーに固有のプロパティの完全な一覧についてはします。
 
  
 

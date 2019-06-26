@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30030
-ms.openlocfilehash: b5542a3de5f333824c20d9f2588b5668b3861d66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3014a05934855aaae1795c5cb67803747fee3979
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371693"
 ---
 # <a name="c30030"></a>C30030
 
@@ -27,16 +27,16 @@ C30030 を警告します。メモリ割り当て関数を呼び出すと、実�
 
 次のいずれかのオプションを使用します。
 
--   プリプロセッサの定義を指定[プール\_NX\_OPTIN\_自動](https://msdn.microsoft.com/library/windows/hardware/hh920390)ソース/プロジェクトの設定にします。
--   プリプロセッサの定義を指定[プール\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)ソース/プロジェクトの設定と呼び出しで**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** ドライバーの初期化関数から (**DriverEntry**または**DllInitialize**)。
+-   プリプロセッサの定義を指定[プール\_NX\_OPTIN\_自動](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)ソース/プロジェクトの設定にします。
+-   プリプロセッサの定義を指定[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)ソース/プロジェクトの設定と呼び出しで**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** ドライバーの初期化関数から (**DriverEntry**または**DllInitialize**)。
 
-**注**を使用するかどうかを選択した[プール\_NX\_OPTIN\_自動](https://msdn.microsoft.com/library/windows/hardware/hh920390)または[プール\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)大きく左右作成する方法の多くのバイナリを対象とするプラットフォームで。 両方のオプションと、これらの 2 種類に変更されますが (コンパイラ、または実行時に)、NX 対応します。 詳細についてはトピックのリンクを参照してください。
+**注**を使用するかどうかを選択した[プール\_NX\_OPTIN\_自動](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)または[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)大きく左右作成する方法の多くのバイナリを対象とするプラットフォームで。 両方のオプションと、これらの 2 種類に変更されますが (コンパイラ、または実行時に)、NX 対応します。 詳細についてはトピックのリンクを参照してください。
 
 
 
 **注**次の条件のいずれかが true の場合は、false 正警告を表示可能性があります。
 -   ドライバーの初期化関数を呼び出す別の関数を呼び出す**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)**
--   作成して、**ドライバー\_ライブラリ**し、指定した[プール\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)初期化関数はありません。
+-   作成して、**ドライバー\_ライブラリ**し、指定した[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)初期化関数はありません。
 
 
 
@@ -70,7 +70,7 @@ C_DEFINES=$(C_DEFINES)
 C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN=1
 ```
 
-**DriverEntry()**、すべてのメモリ割り当てが行われる前に。
+**DriverEntry()** 、すべてのメモリ割り当てが行われる前に。
 
 ```
 NTSTATUS
@@ -119,7 +119,7 @@ ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
 
 **その他の特殊なケース:**
 
-変更があった、 [ **ExInitializeNPagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545301)日常的なことになったを使用する非実行可能ファイルの非ページ プール メモリを指定します。 たとえば、次のコードでは、この警告が生成されます。
+変更があった、 [ **ExInitializeNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)日常的なことになったを使用する非実行可能ファイルの非ページ プール メモリを指定します。 たとえば、次のコードでは、この警告が生成されます。
 
 ```
 ExInitializeNPagedLookasideList(pLookaside,
@@ -146,7 +146,7 @@ ExInitializeNPagedLookasideList(pLookaside,
 ## <a name="span-idfordefectsinvolvingpageprotectionsspanspan-idfordefectsinvolvingpageprotectionsspanspan-idfordefectsinvolvingpageprotectionsspanfor-defects-involving-page-protections"></a><span id="For_defects_involving_page_protections_"></span><span id="for_defects_involving_page_protections_"></span><span id="FOR_DEFECTS_INVOLVING_PAGE_PROTECTIONS_"></span>ページの保護に関連する障害を検出します。
 
 
-一部の Api では、ページの保護を指定できます。 [ **ZwMapViewOfSection** ](https://msdn.microsoft.com/library/windows/hardware/ff566481)はこれらの 1 つです。 このような場合は、保護の種類の非実行可能ファイルのバージョンを使用します。
+一部の Api では、ページの保護を指定できます。 [ **ZwMapViewOfSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)はこれらの 1 つです。 このような場合は、保護の種類の非実行可能ファイルのバージョンを使用します。
 
 ［変更］:
 
@@ -190,12 +190,12 @@ Status = ZwMapViewOfSection(   handle,
 ## <a name="span-idfordefectsinvolvingcachetypesspanspan-idfordefectsinvolvingcachetypesspanspan-idfordefectsinvolvingcachetypesspanfor-defects-involving-cache-types"></a><span id="For_defects_involving_cache_types_"></span><span id="for_defects_involving_cache_types_"></span><span id="FOR_DEFECTS_INVOLVING_CACHE_TYPES_"></span>キャッシュの種類に関連する障害を検出します。
 
 
-一部の Api は、キャッシュの種類に依存する実行可能ファイルのアクセス許可を持つメモリを割り当てます。 このような 2 つの Api は[ **MmAllocateContiguousMemorySpecifyCache** ](https://msdn.microsoft.com/library/windows/hardware/ff554464)と[ **MmAllocateContiguousMemorySpecifyCacheNode**](https://msdn.microsoft.com/library/windows/hardware/ff554469)します。 キャッシュの種類をする必要があります**MmCached**使用 (を参照してください[**メモリ\_CACHING\_型**](https://msdn.microsoft.com/library/windows/hardware/ff554430))、実行可能なメモリが割り当てられます。 これを解決する別のキャッシュの種類を選択またはキャッシュされたメモリが必要な場合は、API を使用して[ **MmAllocateContiguousNodeMemory**](https://msdn.microsoft.com/library/windows/hardware/jj602795)します。
+一部の Api は、キャッシュの種類に依存する実行可能ファイルのアクセス許可を持つメモリを割り当てます。 このような 2 つの Api は[ **MmAllocateContiguousMemorySpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)と[ **MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)します。 キャッシュの種類をする必要があります**MmCached**使用 (を参照してください[**メモリ\_CACHING\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_memory_caching_type))、実行可能なメモリが割り当てられます。 これを解決する別のキャッシュの種類を選択またはキャッシュされたメモリが必要な場合は、API を使用して[ **MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)します。
 
 ［変更］:
 
 -   **MmCached**に**MmNonCached**または**MmWriteCombined**キャッシュ メモリが必要ない場合
--   API を[ **MmAllocateContiguousNodeMemory** ](https://msdn.microsoft.com/library/windows/hardware/jj602795)キャッシュ メモリが必要な場合
+-   API を[ **MmAllocateContiguousNodeMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)キャッシュ メモリが必要な場合
 
 次のコードでは、警告が生成されます。
 
@@ -258,7 +258,7 @@ MmAllocateContiguousNodeMemory(       numberOfBytes,
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[**プール\_型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)
+[**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)
 
 
 

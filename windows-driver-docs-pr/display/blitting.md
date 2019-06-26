@@ -15,12 +15,12 @@ keywords:
 - DdBlt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ae0a0c05c630a09bea15e02b39b3005c69741f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5975ff3329eeb296548c9a463e96128b7f66cf7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384619"
 ---
 # <a name="blitting"></a>ビット ブロックの転送
 
@@ -30,7 +30,7 @@ ms.locfileid: "63382967"
 
 Blt が 1 つの画面内で発生しているソースと変換先の領域が重なっている場合は、適切な方向がコピーされる前に、ソースの一部が上書きされないように決定する必要があります。 これは、画面の反対側の角にある 2 つの潜在的な方法で開始にポイントを実現できます。 Blt エンジンが必要なすべてが、各イメージのサイズと場所です。
 
-高速化する実際の blt も行う必要があります。 IF ステートメントを回避するためにコードのセクションを複製することをドライバーなどの速度を上げることがあります。 おそらく、この手法の最適な実装はマクロにコードを追加して、関数の呼び出しを行うのではなく、さまざまな場所で使用します。 詳細については、次を参照してください。 [ *DdBlt*](https://msdn.microsoft.com/library/windows/hardware/ff549205)します。
+高速化する実際の blt も行う必要があります。 IF ステートメントを回避するためにコードのセクションを複製することをドライバーなどの速度を上げることがあります。 おそらく、この手法の最適な実装はマクロにコードを追加して、関数の呼び出しを行うのではなく、さまざまな場所で使用します。 詳細については、次を参照してください。 [ *DdBlt*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)します。
 
  
 

@@ -4,12 +4,12 @@ description: KMDF ドライバーの関数役割型を使用した関数の宣�
 ms.assetid: 73a408ba-0219-4fde-8dad-ca330e4e67c3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9024cd3b17c4b2aa5f43326268468183d248c0b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fc2d66d9fce3302cb8bcb2e2c5d41dc80bd9222
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341168"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371418"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-kmdf-drivers"></a>KMDF ドライバーの関数役割型を使用した関数の宣言
 
@@ -18,7 +18,7 @@ KMDF ドライバーを分析する SDV を有効にするには、kmdf 役割�
 
 KMDF ドライバー内の各イベントのコールバック関数は、対応するロールの種類を指定して宣言する必要があります。
 
-たとえば、次のコード例の関数の役割の型宣言を示しています。、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数。 この例では、コールバック関数が呼び出されます*myDriver\_EvtDriverDeviceAdd*します。 関数のロールの種類は EVT\_WDF\_ドライバー\_デバイス\_を追加します。
+たとえば、次のコード例の関数の役割の型宣言を示しています。、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数。 この例では、コールバック関数が呼び出されます*myDriver\_EvtDriverDeviceAdd*します。 関数のロールの種類は EVT\_WDF\_ドライバー\_デバイス\_を追加します。
 
 ```
 EVT_WDF_DRIVER_DEVICE_ADD myDriver_EvtDriverDeviceAdd;
@@ -66,13 +66,13 @@ EVT_WDF_FILE_CONTEXT_DESTROY_CALLBACK FileContextDestroy;
 
 C プログラミング言語で必要に応じて関数定義で使用するパラメーターの型は、関数プロトタイプのパラメーターの型と一致する必要があります。 またはこの場合、関数のロールを入力します。 SDV は、分析関数のシグネチャに依存し、一致しないシグネチャを持つ関数を無視します。
 
-たとえば、宣言する必要があります、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693) 、EVT を使用してルーチン\_WDF\_ドライバー\_デバイス\_関数ロールの種類を追加します。
+たとえば、宣言する必要があります、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 、EVT を使用してルーチン\_WDF\_ドライバー\_デバイス\_関数ロールの種類を追加します。
 
 ```
 EVT_WDF_DRIVER_DEVICE_ADD myEvtDriverDeviceAdd;
 ```
 
-関数を実装する場合*myEvtDriverDeviceAdd*、EVT によって使用されるパラメーターの型が一致する必要があります\_WDF\_ドライバー\_デバイス\_WDFDRIVER と PWDFDEVICE namely を追加\_INIT (を参照してください[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)構文の日常的な)。
+関数を実装する場合*myEvtDriverDeviceAdd*、EVT によって使用されるパラメーターの型が一致する必要があります\_WDF\_ドライバー\_デバイス\_WDFDRIVER と PWDFDEVICE namely を追加\_INIT (を参照してください[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)構文の日常的な)。
 
 ```
 NTSTATUS

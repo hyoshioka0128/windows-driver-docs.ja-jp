@@ -19,12 +19,12 @@ keywords:
 - ネットワーク ドライバー WDK、種類
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1384d03543b91995b46f11e04e7dac9032366573
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7e39dd3c0a960ba85871d2221a09908e9b3655a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365366"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369193"
 ---
 # <a name="learning-about-miniport-drivers"></a>ミニポート ドライバーについて
 
@@ -70,7 +70,7 @@ IrDA アダプターを制御するミニポート ドライバーを作成す�
 <a href="" id="miniport-drivers-that-support-scalable-networking"></a>**スケーラブルなネットワークをサポートするミニポート ドライバー**  
 スケーラブルなネットワークをサポートするミニポート ドライバーの詳細については、次のようになります。
 
--   [スケーラブル ネットワーク](https://msdn.microsoft.com/library/windows/hardware/ff570735)
+-   [スケーラブル ネットワーク](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 <a href="" id="miniport-drivers-that-support-offloading-tcp-ip--------to-hardware-------"></a>**TCP/IP をハードウェアにオフロードをサポートするミニポート ドライバー**   
 TCP/IP をハードウェアにオフロード ミニポート ドライバーの詳細については、次のようになります。

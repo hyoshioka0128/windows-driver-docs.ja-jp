@@ -12,12 +12,12 @@ keywords:
 - ドライバーの初期化
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9a975c42093c796c3b631410ad45a5972e092c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc16d18213a3f73e2c265040bdca372cca294e35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374150"
 ---
 # <a name="writing-a-driverentry-routine"></a>DriverEntry ルーチンの記述
 
@@ -25,9 +25,9 @@ ms.locfileid: "63372193"
 
 
 
-各ドライバーが必要、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンで、ドライバー レベルのデータ構造とリソースを初期化します。 I/O マネージャーの呼び出し、 **DriverEntry**ルーチン、ドライバーの読み込み時にします。
+各ドライバーが必要、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンで、ドライバー レベルのデータ構造とリソースを初期化します。 I/O マネージャーの呼び出し、 **DriverEntry**ルーチン、ドライバーの読み込み時にします。
 
-すべてのドライバーが、プラグ アンド プレイ (PnP) をサポートするドライバー、 **DriverEntry**ルーチンは責任を負います*ドライバー*の初期化中に、 [ *AddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン (し、PnP を処理するディスパッチ ルーチンではおそらく、 [ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)要求) は、責任を負います*デバイス*初期化します。 ドライバーの初期化には、ドライバーの初期化中、他のエントリ ポイントのエクスポートが含まれています。 特定のオブジェクト、ドライバーの使用、およびさまざまなドライバーごとのシステム リソースを設定します。 (ドライバー開発キットの説明に従って、非 PnP ドライバーが大幅に用途を持つ\[DDK\] for Microsoft Windows NT 4.0 以降です)。
+すべてのドライバーが、プラグ アンド プレイ (PnP) をサポートするドライバー、 **DriverEntry**ルーチンは責任を負います*ドライバー*の初期化中に、 [ *AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン (し、PnP を処理するディスパッチ ルーチンではおそらく、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求) は、責任を負います*デバイス*初期化します。 ドライバーの初期化には、ドライバーの初期化中、他のエントリ ポイントのエクスポートが含まれています。 特定のオブジェクト、ドライバーの使用、およびさまざまなドライバーごとのシステム リソースを設定します。 (ドライバー開発キットの説明に従って、非 PnP ドライバーが大幅に用途を持つ\[DDK\] for Microsoft Windows NT 4.0 以降です)。
 
 **DriverEntry**ルーチンは IRQL でシステムのスレッドのコンテキストで呼び出される = パッシブ\_レベル。
 

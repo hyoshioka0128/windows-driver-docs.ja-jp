@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: bc97015c4885a5becd1f3d90f5ae8173343682a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df588cf19d381e39a1bf5da5d404efbe59dba84a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342917"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377000"
 ---
 # <a name="wditlvmulticastdataalgorithmlist"></a>WDI\_TLV\_マルチキャスト\_データ\_アルゴリズム\_一覧
 
@@ -45,8 +45,8 @@ WDI\_ALGO\_ペアは、次の要素で構成されます。
 
 | 種類  | 説明                                                                                     |
 |-------|-------------------------------------------------------------------------------------------------|
-| UINT8 | 定義されている認証アルゴリズム[ **WDI\_AUTH\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897792)します。 |
-| UINT8 | 定義されている暗号アルゴリズム[ **WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802)します。     |
+| UINT8 | 定義されている認証アルゴリズム[ **WDI\_AUTH\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm)します。 |
+| UINT8 | 定義されている暗号アルゴリズム[ **WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)します。     |
 
  
 

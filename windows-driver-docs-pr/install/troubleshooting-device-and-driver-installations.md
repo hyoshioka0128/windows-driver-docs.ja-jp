@@ -11,12 +11,12 @@ keywords:
 - デバイス、WDK SetupAPI をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c61b64038e69aced7f5e58b67c575561b8319da8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff801448db37d9ddb27ed0dbc7b6d38f7a684254
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371280"
 ---
 # <a name="troubleshooting-device-and-driver-installations"></a>デバイスとドライバーのインストールのトラブルシューティング
 
@@ -36,7 +36,7 @@ ms.locfileid: "63339539"
 
 -   デバイスの実行にテスト プログラムを実行します。 これには、Windows Driver Kit (WDK) で提供されるテストおよびデバッグ ツールが含まれます。
 
-Windows Server 2003、Windows XP、および Windows 2000 では、さらで、[共同インストーラー](writing-a-co-installer.md)ユーザー、デバイスに関する問題の診断に役立つトラブルシューティング ツールを提供することができます。 参照してください[ **DIF_TROUBLESHOOTER** ](https://msdn.microsoft.com/library/windows/hardware/ff543726)詳細についてはします。
+Windows Server 2003、Windows XP、および Windows 2000 では、さらで、[共同インストーラー](writing-a-co-installer.md)ユーザー、デバイスに関する問題の診断に役立つトラブルシューティング ツールを提供することができます。 参照してください[ **DIF_TROUBLESHOOTER** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-troubleshooter)詳細についてはします。
 
  
 

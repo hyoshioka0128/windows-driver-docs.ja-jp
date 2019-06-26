@@ -12,12 +12,12 @@ keywords:
 - デバイスのスリープ解除 ups WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 745120e7270a05fca085e969fb0066770c806d9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfe98ed5a1d0cbe9e5c5bf56c683259dcdf90a34
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377096"
 ---
 # <a name="power-irps-for-individual-devices"></a>個々のデバイスの電源 IRP
 
@@ -25,15 +25,15 @@ ms.locfileid: "63369187"
 
 
 
-A*デバイスの電源 IRP* IRP の主要なコードを指定します[ **IRP\_MJ\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff550784)、1 つ以下に示すマイナー power IRP コードと値**DevicePowerState**で、 **Power.Type**メンバー。
+A*デバイスの電源 IRP* IRP の主要なコードを指定します[ **IRP\_MJ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)、1 つ以下に示すマイナー power IRP コードと値**DevicePowerState**で、 **Power.Type**メンバー。
 
-[**IRP\_MN\_クエリ\_電源**](https://msdn.microsoft.com/library/windows/hardware/ff551699)
+[**IRP\_MN\_クエリ\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)
 
-[**IRP\_MN\_SET\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744)
+[**IRP\_MN\_SET\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)
 
-[**IRP\_MN\_待機\_WAKE**](https://msdn.microsoft.com/library/windows/hardware/ff551766)
+[**IRP\_MN\_待機\_WAKE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)
 
-[**IRP\_MN\_POWER\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/ff551644)
+[**IRP\_MN\_POWER\_シーケンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-power-sequence)
 
 デバイス スタックのすべてのドライバーです。 このような Irp を受信します。通常、デバイス電源ポリシー マネージャーだけでは、これらの Irp を送信できます。 しかし、電源マネージャー送信がデバイスの電源 IRP に代わって、デバイスをアイドル状態の検出を実行するときにで説明したよう[電源マネージャー ルーチンをアイドル状態の検出を使用して](using-power-manager-routines-for-idle-detection.md)します。
 
@@ -55,25 +55,25 @@ A*デバイスの電源 IRP* IRP の主要なコードを指定します[ **IRP\
 
 前の図に示すよう IRP が送信されると、デバイスの電源は、転送し、次の手順で完了します。
 
-1.  デバイスの電源ポリシー所有者呼び出し[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734) IRP のデバイスの電源を割り当てるには、PDO IRP と IRP の完了時に呼び出されるコールバック ルーチンの対象となっているを指定します。
+1.  デバイスの電源ポリシー所有者呼び出し[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp) IRP のデバイスの電源を割り当てるには、PDO IRP と IRP の完了時に呼び出されるコールバック ルーチンの対象となっているを指定します。
 
 2.  電源マネージャーは、デバイスの電源 IRP を割り当てます、ターゲット PDO デバイス スタックの最上位のドライバーに送信します。
 
 3.  ドライバーは、次の操作を実行します。
 
-    -   セット、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンのいずれかが必要な場合。
+    -   セット、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンのいずれかが必要な場合。
 
-    -   呼び出し[ **PoStartNextPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559776) (Windows Server 2003、Windows XP、および Windows 2000) 完了ルーチンを使用しない場合。 Windows Vista 以降、この呼び出しは必要ありませんし、このような呼び出しには電源管理操作は実行されません。
+    -   呼び出し[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp) (Windows Server 2003、Windows XP、および Windows 2000) 完了ルーチンを使用しない場合。 Windows Vista 以降、この呼び出しは必要ありませんし、このような呼び出しには電源管理操作は実行されません。
 
-    -   呼び出し[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) (Windows 7 および Windows Vista) または呼び出し[ **PoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff559654) (の Windows Server 2003、Windows XP、および Windows 2000) を次の下位ドライバーに IRP を渡します。
+    -   呼び出し[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (Windows 7 および Windows Vista) または呼び出し[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) (の Windows Server 2003、Windows XP、および Windows 2000) を次の下位ドライバーに IRP を渡します。
 
-    スタック内の各ドライバーは IRP バス ドライバーに到達するまで、します。 すぐに実行する必要があります、呼び出すし、ドライバーは IRP を失敗する必要があります、 [ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)します。
+    スタック内の各ドライバーは IRP バス ドライバーに到達するまで、します。 すぐに実行する必要があります、呼び出すし、ドライバーは IRP を失敗する必要があります、 [ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)します。
 
 4.  デバイス PDO を保持するには、バス ドライバーが要求されたアクションを実行しを呼び出して**IoCompleteRequest** IRP を完了します。 バス ドライバーには、デバイスが失敗する可能性がパワーアップ IRP デバイスが削除される場合、または削除処理中です。
 
 5.  I/O マネージャー呼び出し*IoCompletion* IRP が渡されるときに、ドライバーによって設定されたルーチンがスタックをダウンします。 結局、 *IoCompletion*ルーチンが呼び出された、コールバック ルーチンを実行します。
 
-デバイスの電源 Irp の詳細については、次を参照してください。[個々 のデバイスを管理する Power](managing-power-for-individual-devices.md)と[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)します。 電源シーケンス IRP の詳細については、「 [ **IRP\_MN\_POWER\_シーケンス**](https://msdn.microsoft.com/library/windows/hardware/ff551644)します。
+デバイスの電源 Irp の詳細については、次を参照してください。[個々 のデバイスを管理する Power](managing-power-for-individual-devices.md)と[サポート デバイスがあるウェイク アップ機能](supporting-devices-that-have-wake-up-capabilities.md)します。 電源シーケンス IRP の詳細については、「 [ **IRP\_MN\_POWER\_シーケンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-power-sequence)します。
 
  
 

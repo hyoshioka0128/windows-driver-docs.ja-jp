@@ -4,12 +4,12 @@ description: UMDF 検証ツールの使用
 ms.assetid: 95D85894-86AF-4312-B5BD-F1C9E8F8B2E5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1825120f534ba82299792ae6971ee0775bdf2dd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7119e957b86704e1c3eb04aa9490cd4f9816915
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391827"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372171"
 ---
 # <a name="using-umdf-verifier"></a>UMDF 検証ツールの使用
 
@@ -53,7 +53,7 @@ UMDF 1.11 以降では、フレームワークの検証は常にオンおよび�
 
  
 
-UMDF 検証機能が有効になっているかどうかを確認するには、ドライバーの呼び出しの後の場所にブレークポイントを設定します[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)を使用すると、 [ **! wdfdriverinfo**。](https://msdn.microsoft.com/library/windows/hardware/ff565724)デバッガー拡張機能コマンド。
+UMDF 検証機能が有効になっているかどうかを確認するには、ドライバーの呼び出しの後の場所にブレークポイントを設定します[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)を使用すると、 [ **! wdfdriverinfo**。](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)デバッガー拡張機能コマンド。
 
 **!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;*  **** **0x1**
 
@@ -62,7 +62,7 @@ UMDF 検証機能が有効になっているかどうかを確認するには、
 ## <a name="controlling-the-verifiers-behavior"></a>検証の動作を制御します。
 
 
-レジストリの値を変更することによって、UMDF 検証ツールの動作を制御できます。 また、使用することができます、 [WDF Verifier コントロール アプリケーション](https://msdn.microsoft.com/library/windows/hardware/ff556129)をこれらの値を設定します。
+レジストリの値を変更することによって、UMDF 検証ツールの動作を制御できます。 また、使用することができます、 [WDF Verifier コントロール アプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)をこれらの値を設定します。
 
 次のレジストリ値は、UMDF 1 で使用できます。*x* UMDF 2.0 以降のドライバーとドライバー。
 

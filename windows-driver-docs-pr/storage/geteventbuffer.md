@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5a679fa505baa2d488df7a70518ddc8ac98232a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0c7256bdac73282af3c5a2c0a96004b8baf2141
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383138"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378552"
 ---
 # <a name="geteventbuffer-function"></a>GetEventBuffer 関数
 
@@ -42,13 +42,13 @@ void GetEventBuffer(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetEventBuffer\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553937)構造体。
+に返された場合、操作の状態を示す WMI 修飾子の値を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetEventBuffer\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)構造体。
 
 *EventCount*   
-返された場合の情報が取得されたイベントの数を示します。 ミニポート ドライバーには、この情報が返されます、**イベント カウント**のメンバー、 [ **GetEventBuffer\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553937)構造体。
+返された場合の情報が取得されたイベントの数を示します。 ミニポート ドライバーには、この情報が返されます、**イベント カウント**のメンバー、 [ **GetEventBuffer\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)構造体。
 
-*イベント\[\]*   
-型の構造体の配列[ **MSFC\_EventBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff562480) HBA のイベント キューでは、[次へ] のイベントに関する情報が含まれています。 ミニポート ドライバーには、この情報が返されます、**イベント**のメンバー、 [ **GetEventBuffer\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff553937)構造体。
+*イベント\[\]*    
+型の構造体の配列[ **MSFC\_EventBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer) HBA のイベント キューでは、[次へ] のイベントに関する情報が含まれています。 ミニポート ドライバーには、この情報が返されます、**イベント**のメンバー、 [ **GetEventBuffer\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -89,9 +89,9 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**GetEventBuffer\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff553937)
+[**GetEventBuffer\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)
 
-[**MSFC\_EventBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff562480)
+[**MSFC\_EventBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)
 
  
 

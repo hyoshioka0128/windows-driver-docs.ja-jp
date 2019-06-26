@@ -7,17 +7,17 @@ keywords:
 - 構成の変更時に、プリンターの自動構成の WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7a9df7b0b9aa67cc82eaaea6b7802002f57f7f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cd3e878dbd482c0ba72504ef97438c9a2cecb38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370505"
 ---
 # <a name="autoconfiguration-during-configuration-change"></a>構成変更時の自動構成
 
 
-デバイスがインストールされた後、ポート モニターがイベントを送信することによって、またはポーリングによって、構成データを最新に保つ責任を負います。 ドライバーまたはアプリケーションがデバイスの現在の構成に関心がある、ときに使用できる、[双方向の通信インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545163)と[双方向通信スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff545175)ポート モニターにクエリを実行するにはこの情報。
+デバイスがインストールされた後、ポート モニターがイベントを送信することによって、またはポーリングによって、構成データを最新に保つ責任を負います。 ドライバーまたはアプリケーションがデバイスの現在の構成に関心がある、ときに使用できる、[双方向の通信インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)と[双方向通信スキーマ](https://docs.microsoft.com/windows-hardware/drivers/print/bidi-communications-schema-reference)ポート モニターにクエリを実行するにはこの情報。
 
 次の図は、デバイスの構成が変更されたときの自動構成で、データ フローを示します。
 

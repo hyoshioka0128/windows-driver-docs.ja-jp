@@ -20,12 +20,12 @@ keywords:
 - 使用中のステージング領域
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33aa59f884e99a17349c2c73a66dd404553de677
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e14bbffc9fae6cd8cf2e6b2c3a5468f585e5dbcb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371307"
 ---
 # <a name="storage-volumes"></a>ストレージ ボリューム
 
@@ -43,9 +43,9 @@ A*記憶域ボリューム*、または*ストレージ デバイス オブジ�
 
 *マウント マネージャ*ボリューム名、ドライブ文字、およびボリュームのマウント ポイントの記憶域ボリュームの情報を管理を担当する I/O システムの一部です。 新しい記憶域ボリュームがシステムに追加されると、マウント マネージャは、次の方法のいずれかで到着の通知します。
 
--   記憶域ボリュームの呼び出しを作成するクラス ドライバー [ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506) 、MOUNTDEV で新しいインターフェイスを登録する\_マウント済み\_デバイス\_インターフェイス クラスの GUID です。 この場合、プラグ アンド プレイ デバイスのインターフェイスの通知メカニズムは、システムのボリュームの到着のマウント マネージャを警告します。
+-   記憶域ボリュームの呼び出しを作成するクラス ドライバー [ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface) 、MOUNTDEV で新しいインターフェイスを登録する\_マウント済み\_デバイス\_インターフェイス クラスの GUID です。 この場合、プラグ アンド プレイ デバイスのインターフェイスの通知メカニズムは、システムのボリュームの到着のマウント マネージャを警告します。
 
--   記憶域ボリューム用のドライバーが IRP マウント Manager に送信\_MJ\_デバイス\_制御の要求を指定する[ **IOCTL\_MOUNTMGR\_ボリューム\_到着\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff560477) I/O に対してコードを制御します。 この要求を呼び出すことによって作成できます[ **IoBuildDeviceIoControlRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548318)します。
+-   記憶域ボリューム用のドライバーが IRP マウント Manager に送信\_MJ\_デバイス\_制御の要求を指定する[ **IOCTL\_MOUNTMGR\_ボリューム\_到着\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mountmgr/ni-mountmgr-ioctl_mountmgr_volume_arrival_notification) I/O に対してコードを制御します。 この要求を呼び出すことによって作成できます[ **IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)します。
 
 ### <a name="span-idddkuniquevolumenameifspanspan-idddkuniquevolumenameifspanunique-volume-name"></a><span id="ddk_unique_volume_name_if"></span><span id="DDK_UNIQUE_VOLUME_NAME_IF"></span>一意のボリューム名
 
@@ -57,7 +57,7 @@ A*記憶域ボリューム*、または*ストレージ デバイス オブジ�
 
 -   ドライブ文字など、ボリュームの推奨される永続的なシンボリック リンクの名前 (たとえば、"\\\dosdevices\z\\d:")
 
-記憶装置ドライバーとマウント マネージャ間の相互作用の詳細については、次を参照してください。[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff567603)します。
+記憶装置ドライバーとマウント マネージャ間の相互作用の詳細については、次を参照してください。[マウント マネージャーの要求、記憶域クラス ドライバーをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/storage/supporting-mount-manager-requests-in-a-storage-class-driver)します。
 
  
 

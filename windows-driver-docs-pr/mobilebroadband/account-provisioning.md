@@ -4,12 +4,12 @@ description: アカウントのプロビジョニング
 ms.assetid: 3ffcd769-253f-4918-8095-a9206445a201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf7dc1f67600a9deccc4773d733330654744c7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a7c0ed1be4ff24c8a0b4f4f24e4a1e2598e53cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386916"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374089"
 ---
 # <a name="account-provisioning"></a>アカウントのプロビジョニング
 
@@ -19,7 +19,7 @@ ms.locfileid: "63386916"
 
 ![xml ファイルの階層のプロビジョニング](images/mb-provisioningmetadata.jpg)
 
-プロビジョニングのスキーマの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
+プロビジョニングのスキーマの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/schema-root)します。
 
 ## <a name="updating-the-provisioning-metadata"></a>プロビジョニングのメタデータを更新します。
 
@@ -29,7 +29,7 @@ ms.locfileid: "63386916"
 
 モバイル ブロード バンド アプリは、コンピューターにインストールした後、取得または更新されたアプリに実装する任意のトリガーに基づくプロビジョニング ファイルを生成することできます。
 
-モバイル ブロード バンド アプリを使用してプロビジョニング ファイルを適用することができます、 [ **Windows.Networking.NetworkOperator.ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397) Api。 使用できる場合は、アプリは、ネットワーク アカウントの ID に関連付けられて、 [ **CreateFromNetworkAccountId** ](https://msdn.microsoft.com/library/windows/apps/br207398)符号なしのメタデータを提供します。 既定のコンス トラクターを使用する必要があります、アプリが、ネットワーク アカウント ID と関連付けられていない場合は、 **ProvisioningAgent**し、XML に署名します。
+モバイル ブロード バンド アプリを使用してプロビジョニング ファイルを適用することができます、 [ **Windows.Networking.NetworkOperator.ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent) Api。 使用できる場合は、アプリは、ネットワーク アカウントの ID に関連付けられて、 [ **CreateFromNetworkAccountId** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_CreateFromNetworkAccountId_System_String_)符号なしのメタデータを提供します。 既定のコンス トラクターを使用する必要があります、アプリが、ネットワーク アカウント ID と関連付けられていない場合は、 **ProvisioningAgent**し、XML に署名します。
 
 モバイル ブロード バンド アプリは、次のトリガーを使用して、プロビジョニングのメタデータを更新できます。
 
@@ -47,7 +47,7 @@ ms.locfileid: "63386916"
 
 ### <a name="web-based-provisioning"></a>Web ベースのプロビジョニング
 
-Web サイトを使用してプロビジョニング データを指定できます、 [ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/hh848316) API。 この API に渡されるファイルのプロビジョニングは、X.509 証明書と XML DSig を使用して署名する必要があります。
+Web サイトを使用してプロビジョニング データを指定できます、 [ **window.external.msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) API。 この API に渡されるファイルのプロビジョニングは、X.509 証明書と XML DSig を使用して署名する必要があります。
 
 証明書は、APN データベース、サービスのメタデータまたはメタデータ ファイルをプロビジョニングする前のアカウントを使用して、コンピューターを事前に用意されたであることができます。 証明書は既に信頼されている場合、ユーザー操作はありません。 証明書は、コンピューターにまだは認識されて、EV 証明書である必要があり、証明書を受け入れる前に同意を求められます。
 
@@ -75,19 +75,19 @@ Web サイトを使用してプロビジョニング データを指定できま
 
 - [許可されている組み合わせ](#permitted-combinations)
 
-これらのセクションの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
+これらのセクションの詳細については、次を参照してください。 [CarrierControlSchema スキーマ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/schema-root)します。
 
 ### <a name="global"></a>グローバル
 
 グローバル セクションは、プロビジョニングのすべてのファイルに必要です。 このセクションで必要な要素は次のとおりです。
 
-- [**CarrierId** ](https://msdn.microsoft.com/library/windows/apps/hh868288)ファイルを作成した組織を一意に識別する GUID。 モバイル ブロード バンドのアプリを構築する場合で指定した GUID を使用する必要があります、[サービス数](https://msdn.microsoft.com/library/windows/hardware/dn236413)フィールド**ServiceInfo.xml**サービス メタデータ パッケージにします。 サービス メタデータ パッケージのスキーマについては、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
+- [**CarrierId** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-carrierid)ファイルを作成した組織を一意に識別する GUID。 モバイル ブロード バンドのアプリを構築する場合で指定した GUID を使用する必要があります、[サービス数](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)フィールド**ServiceInfo.xml**サービス メタデータ パッケージにします。 サービス メタデータ パッケージのスキーマについては、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
 
   > [!NOTE]
   > これは、同じサービス数で指定した、**作成モバイル ブロード バンド エクスペリエンス ウィザード**Windows デベロッパー センターのダッシュ ボードでハードウェア。
   > モバイル ブロード バンドのアプリを作成していない場合は、組織の使用の GUID を生成できます。 どちらの場合は、常に、組織が発行するすべてのプロビジョニング ファイルを同じ GUID を使用する必要があります。
 
-- [**サブスクライバー Id** ](https://msdn.microsoft.com/library/windows/apps/hh868305)組織内の顧客を一意に識別する文字列。 通信事業者の場合は、GSM 演算子 IMSI または ICCID 範囲またはプロバイダーの ID または CDMA 演算子のプロバイダー名があります。 通信事業者でない場合は、十分に一意の文字列を選択できます。
+- [**サブスクライバー Id** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-subscriberid)組織内の顧客を一意に識別する文字列。 通信事業者の場合は、GSM 演算子 IMSI または ICCID 範囲またはプロバイダーの ID または CDMA 演算子のプロバイダー名があります。 通信事業者でない場合は、十分に一意の文字列を選択できます。
 
 ### <a name="activation"></a>ライセンス認証
 
@@ -103,13 +103,13 @@ Web サイトを使用してプロビジョニング データを指定できま
 
 モバイル ブロード バンド情報には、いくつかの要素が含まれています。
 
-[**MBNProfiles**](https://msdn.microsoft.com/library/windows/apps/hh868295)
+[**MBNProfiles**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-mbnprofiles)
 
 通信事業者ネットワーク上のサブスクライバーの情報を定義します。 使用できる 2 つの異なるプロファイルがあります。
 
-- [**PurchaseProfile**](https://msdn.microsoft.com/library/windows/apps/hh868301):新しいサブスクリプションを購入するオペレーターのネットワークに接続するために必要な情報です。
+- [**PurchaseProfile**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-purchaseprofile):新しいサブスクリプションを購入するオペレーターのネットワークに接続するために必要な情報です。
 
-- [**DefaultProfile** ](https://msdn.microsoft.com/library/windows/apps/hh868290)すべてのモバイル ブロード バンド サブスクリプションは、ホーム ネットワーク オペレーターへの接続に使用される 1 つの既定のプロファイルを持つことができます。 Windows 接続マネージャーは、ネットワークに自動接続するため、このプロファイルを使用します。
+- [**DefaultProfile** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-defaultprofile)すべてのモバイル ブロード バンド サブスクリプションは、ホーム ネットワーク オペレーターへの接続に使用される 1 つの既定のプロファイルを持つことができます。 Windows 接続マネージャーは、ネットワークに自動接続するため、このプロファイルを使用します。
 
     ```xml
     <MBNProfiles>
@@ -128,7 +128,7 @@ Web サイトを使用してプロビジョニング データを指定できま
       </MBNProfiles>
     ```
 
-[**ブランド化**](https://msdn.microsoft.com/library/windows/apps/hh868446)
+[**ブランド化**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-branding)
 
 > [!IMPORTANT]
 > Windows 10 バージョン 1709 以降 ProvisioningAgent API によってプロビジョニングされたブランド化のフィールドはブランド COSA データベース内のフィールドで置き換えられました。 **ロゴ**は置き換えられました**ブランド アイコン**COSA でと**名前**代わられました**ブランド名**COSA でします。
@@ -139,9 +139,9 @@ Web サイトを使用してプロビジョニング データを指定できま
 
 Windows が、モバイル ブロード バンド ネットワークを表示する方法を指定することができますをブランド化します。 この情報は、存在する場合に、サービス メタデータをオーバーライドします。 情報が指定されていない場合は、サービス メタデータ パッケージの内容が使用されます。 ブランド化要素は次のとおりです。
 
-- [**ロゴ**](https://msdn.microsoft.com/library/windows/apps/hh868460) Base64 でエンコードされました。PNG またはします。XML に埋め込まれている BMP ファイルです。 このロゴは、ネットワークの一覧に表示する場合は、モバイル ブロード バンド プロファイルに適用されます。
+- [**ロゴ**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-logo) Base64 でエンコードされました。PNG またはします。XML に埋め込まれている BMP ファイルです。 このロゴは、ネットワークの一覧に表示する場合は、モバイル ブロード バンド プロファイルに適用されます。
 
-- [**名前**](https://msdn.microsoft.com/library/windows/apps/hh868463)モバイル ブロード バンド プロファイルの通信事業者の表示名を設定します。
+- [**名前**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-name)モバイル ブロード バンド プロファイルの通信事業者の表示名を設定します。
 
 #### <a name="sms-parsing"></a>SMS の解析
 
@@ -169,7 +169,7 @@ SMS 通知の詳細については、次を参照してください。 [mobile o
 
   - **使用状況、UsagePercentage、UsageOverage、UsageOveragePercentage**:データの制限を超えた場合の数として、データの制限の割合としての絶対数として、またはデータの制限の割合としては、現在の使用量を表します。 絶対値では、値を表す単位を指定するグループを参照できます。
 
-  - **UsageTimestamp**:日付と時間の使用法フィールドを計算します。 存在する場合はこの情報を含める必要がある**使用状況\\*** フィールドが含まれています。 書式指定文字列には、express、部分文字列を解釈する方法を次の識別子が含まれています。
+  - **UsageTimestamp**:日付と時間の使用法フィールドを計算します。 存在する場合はこの情報を含める必要がある**使用状況\\** * フィールドが含まれています。 書式指定文字列には、express、部分文字列を解釈する方法を次の識別子が含まれています。
 
     <table>
     <colgroup>
@@ -412,7 +412,7 @@ WLAN セクションを指定すると、コンピューターで構成される
 
 一般に、顧客のサブスクリプションの期間にわたって低頻度で変更する要素を含みます。
 
-- [**PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)演算子での顧客が請求関係の種類。
+- [**PlanType** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-plantype)演算子での顧客が請求関係の種類。
 
   - **無制限**使用状況では追加コストは発生しません。
 
@@ -420,39 +420,39 @@ WLAN セクションを指定すると、コンピューターで構成される
 
   - **変数**ユーザーに基づいて使用量を支払います。
 
-- [**SecurityUpdatesExempt** ](https://msdn.microsoft.com/library/windows/apps/hh868374)セキュリティがお客様による使用量にカウントを更新するかどうかを指定するブール値。
+- [**SecurityUpdatesExempt** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-securityupdatesexempt)セキュリティがお客様による使用量にカウントを更新するかどうかを指定するブール値。
 
-- [**DataLimitInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868367)ユーザーの場合、使用量が割り当てられた[ **PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)は**固定**します。
+- [**DataLimitInMegabytes** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-datalimitinmegabytes)ユーザーの場合、使用量が割り当てられた[ **PlanType** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-plantype)は**固定**します。
 
-- [**BillingCycle** ](https://msdn.microsoft.com/library/windows/apps/hh868366)定義、プランの開始日付と時間、その継続時間、および請求サイクルの最後で何が発生します。
+- [**BillingCycle** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-billingcycle)定義、プランの開始日付と時間、その継続時間、および請求サイクルの最後で何が発生します。
 
-- [**BandwidthInKbps** ](https://msdn.microsoft.com/library/windows/apps/hh868343)としてネットワークで許可されているユーザーの接続を高速化; これは、そのプランでは、標準を反映または輻輳または過剰な使用 (最大 2 Gbps) のため、通信事業者による削減率が反映されます。
+- [**BandwidthInKbps** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/dusm/element-bandwidthinkbps)としてネットワークで許可されているユーザーの接続を高速化; これは、そのプランでは、標準を反映または輻輳または過剰な使用 (最大 2 Gbps) のため、通信事業者による削減率が反映されます。
 
-- [**MaxTransferSizeInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868371)準拠しているアプリケーションを許可するように使用されている接続の明示的なユーザーの承認がない場合、従量制課金接続を経由する個別のダウンロードのサイズを表す整数。
+- [**MaxTransferSizeInMegabytes** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-maxtransfersizeinmegabytes)準拠しているアプリケーションを許可するように使用されている接続の明示的なユーザーの承認がない場合、従量制課金接続を経由する個別のダウンロードのサイズを表す整数。
 
-- [**UserSMSEnabled** ](https://msdn.microsoft.com/library/windows/apps/hh868376)ユーザー - SMS のサポートが、プランに含まれるかどうかを示します。 True の場合、Windows には、モバイル ブロード バンド インターフェイスが使用されていない場合でも、コネクト スタンバイのネットワークに接続されたデバイスが保持されます。 コンピューターがアイドル状態のとき、場合は false、Windows の電源の電源を節約するためにモバイル ブロード バンド インターフェイスがネットワークでアドレス指定可能なデバイスでないされいます。
+- [**UserSMSEnabled** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-usersmsenabled)ユーザー - SMS のサポートが、プランに含まれるかどうかを示します。 True の場合、Windows には、モバイル ブロード バンド インターフェイスが使用されていない場合でも、コネクト スタンバイのネットワークに接続されたデバイスが保持されます。 コンピューターがアイドル状態のとき、場合は false、Windows の電源の電源を節約するためにモバイル ブロード バンド インターフェイスがネットワークでアドレス指定可能なデバイスでないされいます。
 
 ### <a name="usage"></a>使用方法
 
 次の要素は、高い頻度で変更できます。
 
-- [**UsageInMegabytes** ](https://msdn.microsoft.com/library/windows/apps/hh868350)ユーザーの最新のデータ使用量。
+- [**UsageInMegabytes** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/dusm/element-usageinmegabytes)ユーザーの最新のデータ使用量。
 
-- [**OverDataLimit** ](https://msdn.microsoft.com/library/windows/apps/hh868465)を示すブール値をユーザーが割り当てられた使用量を渡すかどうかを示す場合[ **PlanType** ](https://msdn.microsoft.com/library/windows/apps/hh868468)は**固定**します。
+- [**OverDataLimit** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-overdatalimit)を示すブール値をユーザーが割り当てられた使用量を渡すかどうかを示す場合[ **PlanType** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-plantype)は**固定**します。
 
-- [**混雑**](https://msdn.microsoft.com/library/windows/apps/hh868449)通常よりも低接続速度は過剰な使用により強制されているかどうかを示す、ブール値。 Congested フラグことを示します、ネットワークが、現在発生している (またはされると予想して)、負荷の高い優先順位の低い転送を可能であれば、別の時間まで延期する必要があります。 ピーク時間帯などの概念を示すために、オーバー ロードされたホット スポットに応答するか、このフラグを使用することができます。
+- [**混雑**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-congested)通常よりも低接続速度は過剰な使用により強制されているかどうかを示す、ブール値。 Congested フラグことを示します、ネットワークが、現在発生している (またはされると予想して)、負荷の高い優先順位の低い転送を可能であれば、別の時間まで延期する必要があります。 ピーク時間帯などの概念を示すために、オーバー ロードされたホット スポットに応答するか、このフラグを使用することができます。
 
 ### <a name="refresh"></a>Refresh
 
 ネットワークの変更のため、またはテクニカル サポートについては、必要に応じて、コンピューターに更新された設定をプッシュできます。 Windows では、ユーザーやプロビジョニング API によって提供される情報を使用して定期的な更新を試行します。 更新は、演算子からの SMS 通知によってトリガーできます。 更新を有効にするには、プロビジョニング XML では、次の情報を提供する必要があります。
 
-- [**TrustedCertificates** ](https://msdn.microsoft.com/library/windows/apps/hh868307)今後プロビジョニング ファイルの署名が信頼された証明書の拇印の一覧。
+- [**TrustedCertificates** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-trustedcertificates)今後プロビジョニング ファイルの署名が信頼された証明書の拇印の一覧。
 
-- [**DelayInDays** ](https://msdn.microsoft.com/library/windows/apps/hh868291) (整数) の数日前に、更新は行われません。
+- [**DelayInDays** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-delayindays) (整数) の数日前に、更新は行われません。
 
-- [**RefreshURL** ](https://msdn.microsoft.com/library/windows/apps/hh868303)ユーザーの最新のコピーを取得するための HTTPS URL のファイルをプロビジョニングします。
+- [**RefreshURL** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-refreshurl)ユーザーの最新のコピーを取得するための HTTPS URL のファイルをプロビジョニングします。
 
-- [**ユーザー名**](https://msdn.microsoft.com/library/windows/apps/hh868308) & [**パスワード**](https://msdn.microsoft.com/library/windows/apps/hh868297)再プロビジョニング ファイルを取得するときに、HTTP 認証を使用して、表示される省略可能な資格情報。 格納されている場合、この情報を暗号化する必要があります。
+- [**ユーザー名**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-username) & [**パスワード**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-password)再プロビジョニング ファイルを取得するときに、HTTP 認証を使用して、表示される省略可能な資格情報。 格納されている場合、この情報を暗号化する必要があります。
 
 または、モバイル ブロード バンド アプリを提供できます、新しいファイルをプロビジョニング、いつでも、アプリとオペレーターのバックエンド間の通信に基づきます。
 
@@ -518,7 +518,7 @@ WLAN セクションを指定すると、コンピューターで構成される
 
 ### <a name="permitted-combinations"></a>許可されている組み合わせ
 
-[ **Global** ](https://msdn.microsoft.com/library/windows/apps/hh868294)は他のノードの特定の組み合わせは一般的なスキーマで必要なだけ最初のレベル ノードです。 このセクションでは、これらの一般的な組み合わせについて説明します。
+[ **Global** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-global)は他のノードの特定の組み合わせは一般的なスキーマで必要なだけ最初のレベル ノードです。 このセクションでは、これらの一般的な組み合わせについて説明します。
 
 - **プロファイル (WLANProfiles、MBNProfiles) + 説明と使用状況を含むプラン**情報およびそれぞれに現在の使用量の計画を作成または更新プログラムの完全なプロファイルの設定し、適用されます。 プロファイルが同じプロビジョニング ファイルで指定されていないプランを参照し、プロビジョニング ファイル内のプロファイルには、指定したプランが参照されていない場合に警告が返される場合は、エラーが返されます。
 
@@ -558,9 +558,9 @@ XSD スキーマで使用可能な **%systemroot%\\スキーマ\\プロビジョ
 
 モバイル ブロード バンド アプリからプロビジョニングします。
 
-1. インスタンスを作成、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)インスタンス (を使用して[ **Windows.Networking.NetworkOperators.ProvisioningAgent.CreateFromNetworkAccountId**](https://msdn.microsoft.com/library/windows/apps/br207398)).
+1. インスタンスを作成、 [ **ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)インスタンス (を使用して[ **Windows.Networking.NetworkOperators.ProvisioningAgent.CreateFromNetworkAccountId**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_CreateFromNetworkAccountId_System_String_)).
 
-2. 呼び出す[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)、符号なしのプロビジョニングの XML ドキュメントに渡します。
+2. 呼び出す[ **ProvisionFromXmlDocumentAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)、符号なしのプロビジョニングの XML ドキュメントに渡します。
 
 非同期操作の完了と、プロビジョニング操作の結果が返されます。
 
@@ -568,9 +568,9 @@ XSD スキーマで使用可能な **%systemroot%\\スキーマ\\プロビジョ
 
 1. 署名付きのアカウント プロビジョニング XML ドキュメントを生成します。
 
-2. インスタンスを作成、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397) (を既定のコンス トラクターを使用) のインスタンス。
+2. インスタンスを作成、 [ **ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent) (を既定のコンス トラクターを使用) のインスタンス。
 
-3. 呼び出す[ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)、署名の XML ドキュメントに渡します。
+3. 呼び出す[ **ProvisionFromXmlDocumentAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)、署名の XML ドキュメントに渡します。
 
 非同期操作が完了して、プロビジョニング操作の結果が返されます。
 
@@ -578,7 +578,7 @@ Web サイト: から
 
 1. 署名付きのアカウント プロビジョニング XML ドキュメントを生成します。
 
-2. 呼び出す[ **window.external.msProvisionNetworks**](https://msdn.microsoft.com/library/hh848316)、署名の XML ドキュメントに渡します。
+2. 呼び出す[ **window.external.msProvisionNetworks**](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85))、署名の XML ドキュメントに渡します。
 
 操作が完了して、プロビジョニング操作の結果が返されます。
 
@@ -646,7 +646,7 @@ Web サイト: から
 </CarrierProvisioning>
 ```
 
-子要素**MSM**ネットワークに接続する方法を定義します。 これには、必要な EAP 構成が含まれます。 MSM 要素のすべての子要素、 [WLAN\_プロファイル スキーマ](https://msdn.microsoft.com/library/windows/desktop/ms707341)はサポートされています。 詳細については、プロビジョニングの XML スキーマ リファレンスを参照してください。
+子要素**MSM**ネットワークに接続する方法を定義します。 これには、必要な EAP 構成が含まれます。 MSM 要素のすべての子要素、 [WLAN\_プロファイル スキーマ](https://docs.microsoft.com/windows/desktop/NativeWiFi/wlan-profileschema-schema)はサポートされています。 詳細については、プロビジョニングの XML スキーマ リファレンスを参照してください。
 
 ### <a name="provision-the-device-to-connect-automatically-to-a-wispr-enabled-hotspot"></a>WISPr が有効なホット スポットに自動的に接続するデバイスをプロビジョニングします。
 
@@ -727,7 +727,7 @@ Web サイト: から
 
 ### <a name="sending-activation-to-the-mobile-broadband-device"></a>モバイル ブロード バンド デバイスにライセンス認証を送信します。
 
-内に含まれている任意バイナリ ラージ オブジェクト (BLOB)、 [ **CarrierSpecificData** ](https://msdn.microsoft.com/library/windows/apps/hh868447)要素は、ProvisioningAgent を使用して、Base64 でエンコードされた、デバイスへの送信を指定できます。 使用してこれを行う、**アクティベーション&lt;ServiceActivatation&gt;** プロビジョニング XML ディレクティブ。
+内に含まれている任意バイナリ ラージ オブジェクト (BLOB)、 [ **CarrierSpecificData** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/wwan/element-carrierspecificdata)要素は、ProvisioningAgent を使用して、Base64 でエンコードされた、デバイスへの送信を指定できます。 使用してこれを行う、**アクティベーション&lt;ServiceActivatation&gt;** プロビジョニング XML ディレクティブ。
 
 ``` syntax
 <?xml version="1.0"?>
@@ -744,7 +744,7 @@ Web サイト: から
 </CarrierProvisioning>
 ```
 
-このメソッドを呼び出すには、 [ **IMbnVendorSpecificOperation::SetVendorSpecific** ](https://msdn.microsoft.com/library/windows/desktop/dd323208)モバイル ブロード バンド API では、および BLOB の内容と共に SAFEARRAY を渡す方法です。
+このメソッドを呼び出すには、 [ **IMbnVendorSpecificOperation::SetVendorSpecific** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnvendorspecificoperation-setvendorspecific)モバイル ブロード バンド API では、および BLOB の内容と共に SAFEARRAY を渡す方法です。
 
 ### <a name="force-the-mobile-broadband-device-to-reconnect-to-the-network-after-provisioning-completes"></a>プロビジョニングが完了したら、ネットワークに再接続する場合は、モバイル ブロード バンド デバイスを強制します。
 
@@ -783,7 +783,7 @@ Web サイト: から
 
 ### <a name="updating-data-usage-statistics-for-a-connection-profile"></a>接続プロファイルのデータ使用状況の統計を更新しています
 
-使用してプロビジョニングしたプロファイルの使用状況を更新することができますのみ、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)プラン情報が更新されたファイルをプロビジョニングする新しいアカウントを適用することで。 使用状況の情報のみを含むプロビジョニング ファイルを提供したりできますのみプラン情報。 量に応じて、システム構成を変更する、新しいプロビジョニング ファイルは、次を含めることができます。
+使用してプロビジョニングしたプロファイルの使用状況を更新することができますのみ、 [ **ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)プラン情報が更新されたファイルをプロビジョニングする新しいアカウントを適用することで。 使用状況の情報のみを含むプロビジョニング ファイルを提供したりできますのみプラン情報。 量に応じて、システム構成を変更する、新しいプロビジョニング ファイルは、次を含めることができます。
 
 - プロファイル、プランの説明については、および使用状況
 
@@ -809,13 +809,13 @@ Web サイト: から
 
 プロビジョニングが失敗した場合、プロビジョニング操作を実行するときに例外を受け取ります。 例外が発生したエラーを以下に示します。
 
-- プロビジョニング XML は準拠していない、 [CarrierControlSchema スキーマ](https://msdn.microsoft.com/library/windows/apps/hh868312)します。
+- プロビジョニング XML は準拠していない、 [CarrierControlSchema スキーマ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/carriercontrolschema/schema-root)します。
 
 - プロビジョニング XML は、シグネチャが必要ですが、適切に署名がありません。
 
 ### <a name="partial-provisioning-failures"></a>部分的なプロビジョニング エラー
 
-プロビジョニング操作の一部のさまざまな理由により成功しません。 たとえば、プロビジョニング時に、Wi-fi ハードウェアへの参照があります。 プロビジョニング エージェントは、ファイル内のすべてのプロビジョニングを試行します。 プロビジョニングを使用して非同期的に返される結果が記載されて何かが失敗した場合、 [ **ProvisionFromXmlDocumentAsync**](https://msdn.microsoft.com/library/windows/apps/br207400)します。
+プロビジョニング操作の一部のさまざまな理由により成功しません。 たとえば、プロビジョニング時に、Wi-fi ハードウェアへの参照があります。 プロビジョニング エージェントは、ファイル内のすべてのプロビジョニングを試行します。 プロビジョニングを使用して非同期的に返される結果が記載されて何かが失敗した場合、 [ **ProvisionFromXmlDocumentAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)します。
 
 結果は、XML としてが返され、障害を検出するために解析できます。 要素は、失敗の内容を表示する構造体を提供し、 **ErrorCode**属性は、標準的な HRESULT として失敗の理由を示します。
 

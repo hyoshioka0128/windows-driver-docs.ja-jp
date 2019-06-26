@@ -4,12 +4,12 @@ description: このトピックでは、すべてのセンサーの一般的な�
 ms.assetid: 3E4DD221-BA8E-446E-BA7A-EF84DFED332F
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aa167e2b04935467d8638ea909372dc4847624a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 356d6348d986997c1f25f2ae3635b66d48ddc2f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330105"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376940"
 ---
 # <a name="common-sensor-properties"></a>センサーの共通プロパティ
 
@@ -41,14 +41,14 @@ ms.locfileid: "63330105"
 <td><p>VT_CLSID</p></td>
 <td><p>R/O</p></td>
 <td><p>必須</p></td>
-<td><p>センサーの種類。 GUID は、Windows センサー (SENSOR_TYPE_ACCELEROMETER_3D など) と同じ形式で構成されます。 センサーの種類の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/dn946707" data-raw-source="[Sensor type GUIDs](https://msdn.microsoft.com/library/windows/hardware/dn946707)">センサーの種類の Guid</a>します。</p></td>
+<td><p>センサーの種類。 GUID は、Windows センサー (SENSOR_TYPE_ACCELEROMETER_3D など) と同じ形式で構成されます。 センサーの種類の詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)">センサーの種類の Guid</a>します。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_State</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>必須</p></td>
-<td><p>センサーの状態。 センサーの状態の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/dn946703" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn946703)"> <strong>SENSOR_STATE</strong></a>します。</p></td>
+<td><p>センサーの状態。 センサーの状態の詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state)"> <strong>SENSOR_STATE</strong></a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_MinimumDataInterval_Ms</p></td>
@@ -139,7 +139,7 @@ ms.locfileid: "63330105"
 
 Windows 10、バージョン 1511 以降でサポートが HID センサー クラス ドライバーを使用してデータのバッチ処理を実装するために使用できます。 これについては、次を参照してください。[センサーのバッチ処理コントロール](sensor-batching-for-power-saving-.md)します。
 
-参照してください[EvtSensorSetBatchLatency](https://msdn.microsoft.com/library/windows/hardware/mt219125)については、コールバック関数に関連するデータのバッチ処理します。
+参照してください[EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)については、コールバック関数に関連するデータのバッチ処理します。
 
 CPU と、鍵の SX 状態からのオペレーティング システムをスリープ解除する、センサーの追加機能と共に\_センサー\_WakeCapable がセンサーのかどうかを検索する PnP ドライバー ストアからクエリを実行できる列挙型のプロパティとしても使用されますコネクト スタンバイからシステムをスリープ解除だけでなく、SX からシステムをスリープ解除できること。
 
@@ -155,15 +155,15 @@ CPU と、鍵の SX 状態からのオペレーティング システムをス�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[EvtSensorSetBatchLatency](https://msdn.microsoft.com/library/windows/hardware/mt219125)
+[EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 [PROPVARIANT 構造体](https://go.microsoft.com/fwlink/p/?linkid=313395)
 
 [センサーのプロパティ](sensor-properties2.md)
 
-[**センサー\_状態**](https://msdn.microsoft.com/library/windows/hardware/dn946703)
+[**センサー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state)
 
-[センサーの種類の Guid](https://msdn.microsoft.com/library/windows/hardware/dn946707)
+[センサーの種類の Guid](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)
 
  
 

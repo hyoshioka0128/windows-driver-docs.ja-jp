@@ -15,12 +15,12 @@ keywords:
 - 並列プレフィックス解決の WDK ネットワーク リダイレクター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b86dddd6c52d4b2fa9649604289c7cef540a1a4a
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 669e244b650a573319b7d259ebec3c6f321bc9c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161561"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371320"
 ---
 # <a name="support-for-unc-naming-and-mup"></a>UNC 名前付けと MUP のサポート
 
@@ -59,7 +59,7 @@ MUP を決定するプロバイダーは IRP では通常に名前ベースの�
 
 -   プロバイダーと主張した場合、プレフィックスは、MUP によって保持されるプレフィックスのキャッシュに入力されます。 残りの名前ベースの操作は、MUP は、決定かどうか、プロバイダーは既に要求プレフィックスのプレフィックスの解決を実行するのに前にこのプレフィックス キャッシュを使用します。 このプレフィックスのキャッシュ内の各エントリは、("TTL"と呼ばれます)、タイムアウトの対象とキャッシュに追加されます。 このタイムアウトの期限が切れた後に、エントリを破棄は、どの時点で MUP しますプレフィックス解決もう一度その後の名前に基づく操作では、このプレフィックスの。
 
-プレフィックスの解決を発行して実行して MUP、 [ **IOCTL\_REDIR\_クエリ\_パス**](https://msdn.microsoft.com/library/windows/hardware/ff548313) MUP に登録されているネットワーク リダイレクターを要求します。 IOCTL の入力と出力バッファー\_REDIR\_クエリ\_パスは、次のとおり。
+プレフィックスの解決を発行して実行して MUP、 [ **IOCTL\_REDIR\_クエリ\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ni-ntifs-ioctl_redir_query_path) MUP に登録されているネットワーク リダイレクターを要求します。 IOCTL の入力と出力バッファー\_REDIR\_クエリ\_パスは、次のとおり。
 
 <table>
 <colgroup>
@@ -192,9 +192,9 @@ IOCTL\_REDIR\_クエリ\_パスの要求が MUP から取得する必要があ�
 
 ネットワーク リダイレクター サーバー名を要求する場合 (\\\\サーバーなど)、このサーバー上の共有に対するすべての要求はこのネットワーク リダイレクターに移動します。 この動作は、許容されるは、別のネットワーク リダイレクターでアクセスされている同じサーバー上の別の共有の可能性がない場合のみ。 たとえば、ネットワーク リダイレクターと主張して\\ \\UNC パスのサーバーがこのサーバー上の他の共有には、その他のネットワーク リダイレクターによるアクセスを防ぐため (へのアクセスを WebDAV \\\\サーバー\\web、).
 
-レガシ ネットワーク リダイレクター (RDBSS を使用するのには基づいていない) を呼び出して MUP の UNC プロバイダーとして登録する[ **FsRtlRegisterUncProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff547178) IOCTL 受け取ります\_REDIR\_クエリ\_パス要求。
+レガシ ネットワーク リダイレクター (RDBSS を使用するのには基づいていない) を呼び出して MUP の UNC プロバイダーとして登録する[ **FsRtlRegisterUncProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider) IOCTL 受け取ります\_REDIR\_クエリ\_パス要求。
 
-A ネットワーク UNC プロバイダーはこのプレフィックスの要求を受信は IRP の場合と同様のサポートを示すミニ リダイレクター\_MJ\_作成の呼び出し。 この要求の作成はユーザー モードに似ています**Createfile**ファイルを使用して呼び出す\_作成\_ツリー\_接続フラグを設定します。 ネットワークのミニ リダイレクターの呼び出しとプレフィックスの要求を受信しません[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)します。 RDBSS プレフィックスのクレームの送信、 [ **MRxCreateSrvCall** ](https://msdn.microsoft.com/library/windows/hardware/ff549864)要求への呼び出し後にネットワーク ミニリダイレクター [ **MRxSrvCallWinnerNotify**](https://msdn.microsoft.com/library/windows/hardware/ff550824)と[ **MRxCreateVNetRoot**](https://msdn.microsoft.com/library/windows/hardware/ff549869)します。 ネットワークのミニ リダイレクター登録される RDBSS と、キー RDBSS 内部 RDBSS エントリ ポイントをポイントする場所を空けるのネットワークのミニ リダイレクター ドライバー ディスパッチ テーブルがコピーされます。 この IOCTL 受信 RDBSS\_REDIR\_クエリ\_ネットワーク ミニリダイレクターと呼び出しの内部パス**MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**、および**MRxCreateVNetRoot**します。 元の IOCTL\_REDIR\_クエリ\_RX に含まれるパス IRP\_に渡されるコンテキストの構造、 **MRxCreateSrvCall**ルーチン。 さらに、次のメンバー、RX で\_に渡されるコンテキスト**MRxCreateSrvCall**が変更されます。
+A ネットワーク UNC プロバイダーはこのプレフィックスの要求を受信は IRP の場合と同様のサポートを示すミニ リダイレクター\_MJ\_作成の呼び出し。 この要求の作成はユーザー モードに似ています**Createfile**ファイルを使用して呼び出す\_作成\_ツリー\_接続フラグを設定します。 ネットワークのミニ リダイレクターの呼び出しとプレフィックスの要求を受信しません[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)します。 RDBSS プレフィックスのクレームの送信、 [ **MRxCreateSrvCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_srvcall)要求への呼び出し後にネットワーク ミニリダイレクター [ **MRxSrvCallWinnerNotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_srvcall_winner_notify)と[ **MRxCreateVNetRoot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_create_v_net_root)します。 ネットワークのミニ リダイレクター登録される RDBSS と、キー RDBSS 内部 RDBSS エントリ ポイントをポイントする場所を空けるのネットワークのミニ リダイレクター ドライバー ディスパッチ テーブルがコピーされます。 この IOCTL 受信 RDBSS\_REDIR\_クエリ\_ネットワーク ミニリダイレクターと呼び出しの内部パス**MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**、および**MRxCreateVNetRoot**します。 元の IOCTL\_REDIR\_クエリ\_RX に含まれるパス IRP\_に渡されるコンテキストの構造、 **MRxCreateSrvCall**ルーチン。 さらに、次のメンバー、RX で\_に渡されるコンテキスト**MRxCreateSrvCall**が変更されます。
 
 **MajorFunction** IRP にメンバーが設定されている\_MJ\_作成元の IRP が IRP も\_MJ\_デバイス\_コントロール。
 
@@ -210,7 +210,7 @@ A ネットワーク UNC プロバイダーはこのプレフィックスの要�
 
 RX でこれらのメンバーを読み取ることができるプレフィックスの要求の詳細を表示する場合、ネットワーク ミニリダイレクター\_に渡されるコンテキスト**MRxCreateSrvCall**します。 それ以外の場合、サーバー共有に接続して状態を返す試みることができますのみ\_成功した場合、 **MRxCreateSrvCall**呼び出しに成功しました。 RDBSS はミニ リダイレクターにに代わってネットワーク要求のプレフィックスになります。
 
-ネットワークのミニ リダイレクターがでしたこの IOCTL を直接受信する 1 つのケースがあります。 ネットワークのミニ リダイレクターは、の初期化と RDBSS を登録する前にそのドライバー ディスパッチ テーブルのコピーを保存する可能性があります。 呼び出した後[ **RxRegisterMinirdr** ](https://msdn.microsoft.com/library/windows/hardware/ff554693) RDBSS に登録するネットワーク ミニリダイレクターでした、新しいドライバー ディスパッチ テーブル エントリ ポイント RDBSS によってインストールのコピーを保存し、その元のドライバーを復元ディスパッチ テーブルです。 復元されたドライバーのディスパッチ テーブルは、ネットワークのミニ リダイレクターに関心のあるものの受信の IRP をオンにした後、呼び出しは RDBSS ドライバーのディスパッチのエントリ ポイントに転送されるように変更する必要があります。 ドライバーは、RDBSS と呼び出しを初期化します。 ときに、ネットワークのミニ リダイレクターのドライバーのディスパッチ テーブルを介して RDBSS がコピーされます**RxRegisterMinrdr**します。 A ネットワークに対してリンク ミニ リダイレクター *rdbsslib.lib*呼び出す前に元のドライバー ディスパッチ テーブルを保存する必要があります[ **RxDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554404)そのから**DriverEntry** RDBSS スタティック ライブラリを初期化し、そのドライバー ディスパッチ テーブルを呼び出した後に復元するルーチン**RxRegisterMinrdr**します。 これは、両方のネットワークのミニ リダイレクター ディスパッチ テーブル上の RDBSS をコピーするため、 **RxDriverEntry**と**RxRegisterMinrdr**ルーチン。
+ネットワークのミニ リダイレクターがでしたこの IOCTL を直接受信する 1 つのケースがあります。 ネットワークのミニ リダイレクターは、の初期化と RDBSS を登録する前にそのドライバー ディスパッチ テーブルのコピーを保存する可能性があります。 呼び出した後[ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr) RDBSS に登録するネットワーク ミニリダイレクターでした、新しいドライバー ディスパッチ テーブル エントリ ポイント RDBSS によってインストールのコピーを保存し、その元のドライバーを復元ディスパッチ テーブルです。 復元されたドライバーのディスパッチ テーブルは、ネットワークのミニ リダイレクターに関心のあるものの受信の IRP をオンにした後、呼び出しは RDBSS ドライバーのディスパッチのエントリ ポイントに転送されるように変更する必要があります。 ドライバーは、RDBSS と呼び出しを初期化します。 ときに、ネットワークのミニ リダイレクターのドライバーのディスパッチ テーブルを介して RDBSS がコピーされます**RxRegisterMinrdr**します。 A ネットワークに対してリンク ミニ リダイレクター *rdbsslib.lib*呼び出す前に元のドライバー ディスパッチ テーブルを保存する必要があります[ **RxDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxdriverentry)そのから**DriverEntry** RDBSS スタティック ライブラリを初期化し、そのドライバー ディスパッチ テーブルを呼び出した後に復元するルーチン**RxRegisterMinrdr**します。 これは、両方のネットワークのミニ リダイレクター ディスパッチ テーブル上の RDBSS をコピーするため、 **RxDriverEntry**と**RxRegisterMinrdr**ルーチン。
 
 プレフィックスの解決時に、プロバイダーを照会する順序は、REG によって制御されます\_SZ ProviderOrder レジストリ値が次のキーに格納されます。
 

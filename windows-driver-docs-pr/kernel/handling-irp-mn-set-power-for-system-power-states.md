@@ -8,12 +8,12 @@ keywords:
 - セット power Irp WDK の電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36e2048aac516b4420188cbbd383317396f67956
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa8055a2c17d064a0875add70055671a956ecb9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350013"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383321"
 ---
 # <a name="handling-irpmnsetpower-for-system-power-states"></a>IRP の処理\_MN\_設定\_システム電源の状態の電源
 
@@ -21,11 +21,11 @@ ms.locfileid: "63350013"
 
 
 
-電源マネージャー送信電源コードの軽微なを指定する IRP [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)と次の理由の 1 つのシステム電源の状態。
+電源マネージャー送信電源コードの軽微なを指定する IRP [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)と次の理由の 1 つのシステム電源の状態。
 
 -   システム電源の状態を変更します。
 
--   失敗した後、現在の電源状態のことを再確認する[ **IRP\_MN\_クエリ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551699)要求。
+-   失敗した後、現在の電源状態のことを再確認する[ **IRP\_MN\_クエリ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)要求。
 
 I/O マネージャーを通じて電源マネージャーは IRP を PnP デバイスの各ノードでデバイス スタックの最上位のドライバーに送信します。 IRP では、適切なシステム電源の状態の履歴内のすべてのドライバーに通知します。
 

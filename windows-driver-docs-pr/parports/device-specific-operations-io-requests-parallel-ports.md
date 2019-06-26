@@ -7,12 +7,12 @@ keywords:
 - 並列 IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4a93a0019b61b5f9df628a94a59f8f19eeeb4a21
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38634b4c51f2009d3ca6ab7833a44296fa146248
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373527"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376960"
 ---
 # <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>パラレル ポートの I/O 要求に対するデバイス固有の操作
 このトピックでは、パラレル ポートの I/O 要求の次のデバイスに固有の操作を説明します。
@@ -22,10 +22,10 @@ ms.locfileid: "63373527"
 
 
 ##  <a name="irpmjcreate"></a>IRP_MJ_CREATE 
-[Irp_mj_create 用](https://msdn.microsoft.com/library/windows/hardware/ff550729)要求は、パラレル ポートを開きます。
+[Irp_mj_create 用](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)要求は、パラレル ポートを開きます。
 
 ### <a name="when-sent"></a>送信時
-クライアントを使用する必要があります、 [irp_mj_create 用](https://msdn.microsoft.com/library/windows/hardware/ff550729)ポートまたはデバイスにアクセスできる前に、パラレル ポートを開く要求をポートに接続します。
+クライアントを使用する必要があります、 [irp_mj_create 用](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)ポートまたはデバイスにアクセスできる前に、パラレル ポートを開く要求をポートに接続します。
 
 ### <a name="input-parameters"></a>入力パラメーター
 なし。
@@ -52,7 +52,7 @@ STATUS_DELETE_PENDING
 
 
 ##   <a name="irpmjinternaldevicecontrol"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
-[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550766)要求は、パラレル ポートの内部の動作モードを設定します。
+[IRP_MJ_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求は、パラレル ポートの内部の動作モードを設定します。
 
 ### <a name="when-sent"></a>送信時
 クライアントは、次の種類の操作を実行する内部デバイス コントロール要求を送信します。
@@ -61,7 +61,7 @@ STATUS_DELETE_PENDING
 * ポートを割り当てるか、ポート上のデバイスを選択します
 * 通信モードを設定します。
 
-参照してください[パラレル ポートの内部デバイス制御要求](https://msdn.microsoft.com/library/windows/hardware/ff543963)します。
+参照してください[パラレル ポートの内部デバイス制御要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 ### <a name="input-parameters"></a>入力パラメーター
 入力は、要求ごとに固有です。
@@ -100,7 +100,7 @@ STATUS_PENDING
 
 ## <a name="related-topics"></a>関連トピック
 
-[パラレル ポートの内部デバイス制御の要求](https://msdn.microsoft.com/library/windows/hardware/ff543963)
+[パラレル ポートの内部デバイス制御の要求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[パラレル ポートに接続されている並列のデバイスの動作](https://msdn.microsoft.com/windows/hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
+[パラレル ポートに接続されている並列のデバイスの動作](https://docs.microsoft.com/windows-hardware/drivers/parports/operating-a-parallel-device-attached-to-a-parallel-port.md)
 

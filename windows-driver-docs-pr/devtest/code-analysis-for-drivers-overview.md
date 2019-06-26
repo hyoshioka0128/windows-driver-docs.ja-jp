@@ -4,12 +4,12 @@ description: Windows ドライバー キットは、Microsoft Visual Studio Ulti
 ms.assetid: 2A780608-F386-4838-A4EB-022C2F0EED3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f97641467932fa3abe3b9648f5f15363e5886ad9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b775f9e6a8d7ae59dfe91045577b4016bee7ae8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343963"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371619"
 ---
 # <a name="code-analysis-for-drivers-overview"></a>ドライバーのコード分析の概要
 
@@ -40,7 +40,7 @@ Windows Driver Kit にドライバー固有の拡張機能を提供する、[コ
 
 -   **カーネル モードのコーディング プラクティス:** 不透明なメモリ記述子のリスト (MDL) 構造の変更によって呼び出された関数では、一連の変数の値を確認に失敗する、安全な文字列関数ではなく、C と C++ の文字列操作関数を使用してなどのエラーを引き起こす可能性のあるコーディングのプラクティスNtstrsafe.h で定義されます。
 
--   **ドライバー固有のコーディング プラクティス:** 多くの場合、カーネル モード ドライバーでエラーの原因を特定の操作。 たとえば、メンバーを変更してで引数をコピーする代わりに引数を文字列または構造体を指すポインターを保存せず全体の I/O 要求パケット (IRP) をコピー、 [ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン。
+-   **ドライバー固有のコーディング プラクティス:** 多くの場合、カーネル モード ドライバーでエラーの原因を特定の操作。 たとえば、メンバーを変更してで引数をコピーする代わりに引数を文字列または構造体を指すポインターを保存せず全体の I/O 要求パケット (IRP) をコピー、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。
 
 ## <a name="span-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspancode-analysis-warnings"></a><span id="Code_Analysis_warnings"></span><span id="code_analysis_warnings"></span><span id="CODE_ANALYSIS_WARNINGS"></span>コード分析の警告
 

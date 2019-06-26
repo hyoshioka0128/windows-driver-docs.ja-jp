@@ -4,12 +4,12 @@ description: WIA 項目ツリー構造の変更
 ms.assetid: fa6c9d25-4435-43ee-a262-9e267b9a0a69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f7fd29bf0cc83d36923e35c094a7218f5f88b89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 79376077e55bb593e47d18d23529096074016c16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373534"
 ---
 # <a name="changing-the-wia-item-tree-structure"></a>WIA 項目ツリー構造の変更
 
@@ -19,11 +19,11 @@ ms.locfileid: "63373307"
 
 WIA ミニドライバーは、いつでも、WIA 項目のツリー構造を変更する権限を持ちます。 ミニドライバーが WIA 項目のツリーに変更するとき、ミニドライバーは、サービスに WIA を通知する必要があります。 WIA サービスは、接続されたすべての WIA アプリケーションを通知します。 通知が受信した後、WIA アプリケーションは、変更の結果を判定 WIA 項目ツリーを列挙する必要があります。
 
-ミニドライバーは、WIA サービス ユーティリティ関数を使用して[ **wiasQueueEvent**](https://msdn.microsoft.com/library/windows/hardware/ff549296)、WIA サービスにツリー構造での変更が通知されます。 WIA ミニドライバーがで報告されているイベントのみをキュー [ **IWiaMiniDrv::drvGetCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff543977)します。 WIA イベントをレポートの詳細については、次を参照してください。[イベントの報告](event-reporting.md)します。
+ミニドライバーは、WIA サービス ユーティリティ関数を使用して[ **wiasQueueEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiasqueueevent)、WIA サービスにツリー構造での変更が通知されます。 WIA ミニドライバーがで報告されているイベントのみをキュー [ **IWiaMiniDrv::drvGetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)します。 WIA イベントをレポートの詳細については、次を参照してください。[イベントの報告](event-reporting.md)します。
 
 ### <a name="explanation-of-the-iwiaminidrvdrvdeleteitem-implementation"></a>IWiaMiniDrv::drvDeleteItem 実装の説明
 
-WIA サービスの呼び出し、 [ **IWiaMiniDrv::drvDeleteItem** ](https://msdn.microsoft.com/library/windows/hardware/ff543961)メソッド WIA アプリケーションを呼び出すと、 **IWiaItem::DeleteItem**メソッド (Microsoft Windows で説明します。SDK のドキュメント) WIA 項目を削除します。
+WIA サービスの呼び出し、 [ **IWiaMiniDrv::drvDeleteItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdeleteitem)メソッド WIA アプリケーションを呼び出すと、 **IWiaItem::DeleteItem**メソッド (Microsoft Windows で説明します。SDK のドキュメント) WIA 項目を削除します。
 
 WIA サービスは、このメソッドを呼び出す前に、次を確認します。
 

@@ -8,12 +8,12 @@ keywords:
 - 動的なバッファー WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c91fbbb9f1a2d52a447615698fd06c2ef4e7a57d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05fcfc74dbc1b47759e7881d81457553fc2fc53f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360362"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383097"
 ---
 # <a name="dynamic-vertex-and-index-buffers"></a>動的な頂点バッファーとインデックス バッファー
 
@@ -21,7 +21,7 @@ ms.locfileid: "63360362"
 ## <span id="ddk_dynamic_vertex_and_index_buffers_gg"></span><span id="DDK_DYNAMIC_VERTEX_AND_INDEX_BUFFERS_GG"></span>
 
 
-動的頂点またはインデックス バッファーは、頻繁にアプリケーションのロックと書き込みをリソースです。 ドライバーの呼び出しでの動的なバッファーのロック時[ *LockD3DBuffer* ](https://msdn.microsoft.com/library/windows/hardware/ff568216)関数の場合、DDLOCK\_OKTOSWAP ビット (D3DLOCK とも呼ばれます\_破棄ビット)、の**dwFlags** 、DD のメンバー\_呼び出し元が、バッファーの既存の内容を必要としないことを示す LOCKDATA 構造を設定することができます。 そのため、ドライバーは、データをバッファーするポインターを返す前に、内容を破棄できます。 呼び出し元に、既存の内容を必要としないため、ドライバーの名前を変更バッファー設定、 **fpVidMem** 、DD のメンバー\_画面\_バッファーに新しい値のグローバル構造体。 バッファー (つまり、複数のバッファリングを設定) の名前を変更するには、ドライバーは、ハードウェアの停止を回避します。
+動的頂点またはインデックス バッファーは、頻繁にアプリケーションのロックと書き込みをリソースです。 ドライバーの呼び出しでの動的なバッファーのロック時[ *LockD3DBuffer* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568216(v=vs.85))関数の場合、DDLOCK\_OKTOSWAP ビット (D3DLOCK とも呼ばれます\_破棄ビット)、の**dwFlags** 、DD のメンバー\_呼び出し元が、バッファーの既存の内容を必要としないことを示す LOCKDATA 構造を設定することができます。 そのため、ドライバーは、データをバッファーするポインターを返す前に、内容を破棄できます。 呼び出し元に、既存の内容を必要としないため、ドライバーの名前を変更バッファー設定、 **fpVidMem** 、DD のメンバー\_画面\_バッファーに新しい値のグローバル構造体。 バッファー (つまり、複数のバッファリングを設定) の名前を変更するには、ドライバーは、ハードウェアの停止を回避します。
 
 DDLOCK\_OKTOSWAP ビットは、動的なバッファーをロックして静的バッファーをロックすることはありませんのみ設定できます。
 

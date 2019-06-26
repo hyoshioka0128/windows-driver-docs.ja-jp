@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9f8776a4c7b6a684ccb1d216bf8bf519d78e6482
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fed786df7d85d8553e89606112e07d8e8d5eb93c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363736"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375282"
 ---
 # <a name="guiddevinterfacemodem"></a>GUID_DEVINTERFACE_MODEM
 
 
-GUID_DEVINTERFACE_MODEM[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[モデム デバイス](https://msdn.microsoft.com/library/windows/hardware/ff542573)します。
+GUID_DEVINTERFACE_MODEM[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[モデム デバイス](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542573(v=vs.85))します。
 
 <table>
 <colgroup>
@@ -71,7 +71,7 @@ GUID_DEVINTERFACE_MODEM *Ntddmodm.h*のインクルードする前に、正し�
 ...
 ```
 
-モデム デバイスについては、次を参照してください。[モデム デバイスの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff542476)します。
+モデム デバイスについては、次を参照してください。[モデム デバイスの設計ガイド](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542476(v=vs.85))します。
 
 このデバイスのインターフェイス クラスを使用しての例は、次を参照してください。、 [FakeModem - ユニモデム コント ローラーのないモデム サンプル ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256110) WDK で提供されるサンプル。
 

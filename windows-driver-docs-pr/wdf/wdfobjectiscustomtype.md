@@ -6,12 +6,12 @@ keywords:
 - WdfObjectIsCustomType マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ba823aba603d630fca01bd84f61ac10c6e9bed7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 246314f39cf6478a646b0f882d6832c9648fe6e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385057"
 ---
 # <a name="wdfobjectiscustomtype-macro"></a>WdfObjectIsCustomType マクロ
 
@@ -47,7 +47,7 @@ Framework のオブジェクトへのハンドル。
 <a name="remarks"></a>コメント
 -------
 
-オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
+オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-custom-types)します。
 
 <a name="requirements"></a>必要条件
 ------------

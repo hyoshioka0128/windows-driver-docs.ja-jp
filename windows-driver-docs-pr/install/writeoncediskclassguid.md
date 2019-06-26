@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cd9461fd2f7b62f3a83b46f4eb27a072d2da82f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40f72b2e7dc461f6a80afc0c6f6b41033f60a485
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339235"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370923"
 ---
 # <a name="writeoncediskclassguid"></a>WriteOnceDiskClassGuid
 
 
-WriteOnceDiskClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)書き込み用のディスク デバイスの 1 回です。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_WRITEONCEDISK** ](guid-devinterface-writeoncedisk.md)このクラスの新しいインスタンスのクラス識別子。
+WriteOnceDiskClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)書き込み用のディスク デバイスの 1 回です。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_WRITEONCEDISK** ](guid-devinterface-writeoncedisk.md)このクラスの新しいインスタンスのクラス識別子。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

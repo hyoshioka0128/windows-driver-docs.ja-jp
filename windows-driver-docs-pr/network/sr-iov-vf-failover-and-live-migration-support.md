@@ -4,12 +4,12 @@ description: SR-IOV VF フェールオーバーおよびライブ マイグレ�
 ms.assetid: 93D6EFC7-B701-4D10-8114-FA437E80096B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 764a4c1297dda8282014042edcc75abcb9a3b011
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5166be41a6ba05ab1c35f35ddd949ee8685ee28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346015"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377005"
 ---
 # <a name="sr-iov-vf-failover-and-live-migration-support"></a>SR-IOV VF フェールオーバーおよびライブ マイグレーションのサポート
 
@@ -38,13 +38,13 @@ VF と合成データ パスの間の遷移では、パケットの損失が最�
 
     拡張の詳細については、次を参照してください。[仮想ポート (拡張)](virtual-ports--vports-.md)します。
 
-2.  仮想化スタックのオブジェクト識別子 (OID) セット要求を発行して、VF に関連付けられている VPort の削除[OID\_NIC\_スイッチ\_削除\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451818) PF をミニポート ドライバー。 ミニポート ドライバーは、VPort に関連付けられているハードウェアとソフトウェアのリソースを解放し、OID 要求を完了します。
+2.  仮想化スタックのオブジェクト識別子 (OID) セット要求を発行して、VF に関連付けられている VPort の削除[OID\_NIC\_スイッチ\_削除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport) PF をミニポート ドライバー。 ミニポート ドライバーは、VPort に関連付けられているハードウェアとソフトウェアのリソースを解放し、OID 要求を完了します。
 
     詳細については、次を参照してください。[仮想ポートを削除する](deleting-a-virtual-port.md)します。
 
-3.  仮想化スタックは、そのリソースの割り当てが解除される前に、PCIe 関数レベルのリセット (FLR)、VF を要求します。 スタックの OID セット要求を発行することによって[OID\_SRIOV\_リセット\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451889)PF ミニポート ドライバーにします。 FLR では、VF をにより、SR-IOV ネットワーク アダプターで休止状態にし、VF の保留中の中断イベントをクリアします。
+3.  仮想化スタックは、そのリソースの割り当てが解除される前に、PCIe 関数レベルのリセット (FLR)、VF を要求します。 スタックの OID セット要求を発行することによって[OID\_SRIOV\_リセット\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)PF ミニポート ドライバーにします。 FLR では、VF をにより、SR-IOV ネットワーク アダプターで休止状態にし、VF の保留中の中断イベントをクリアします。
 
-4.  仮想化スタックがの OID セット要求を発行して VF リソースの割り当て解除を要求、VF のリセット後[OID\_NIC\_スイッチ\_FREE\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451822) PF をミニポート ドライバー。 これにより、ミニポート ドライバー、VF に関連付けられたハードウェア リソースを解放します。
+4.  仮想化スタックがの OID セット要求を発行して VF リソースの割り当て解除を要求、VF のリセット後[OID\_NIC\_スイッチ\_FREE\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf) PF をミニポート ドライバー。 これにより、ミニポート ドライバー、VF に関連付けられたハードウェア リソースを解放します。
 
 このプロセスの詳細については、次を参照してください。[仮想関数の破棄順序](virtual-function-teardown-sequence.md)します。
 

@@ -13,12 +13,12 @@ keywords:
 - Pdo WDK の電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58cea02da33eb028b76b361ec20682be5a85b0e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b32f38aa3a355bc79befa1cd489399d7d24c5202
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355359"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382943"
 ---
 # <a name="understanding-the-path-of-waitwake-irps-through-a-device-tree"></a>デバイス ツリーを通じた待機/ウェイク IRP のパスの概要
 
@@ -64,13 +64,13 @@ ACPI は、ACPI のコンピューターで、各リーフ デバイスからウ
 
 ![usb のサンプル構成の irp の要求を待機スリープ解除.](images/wwcascade.png)
 
-バス ドライバーが受信すると、 [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)作成 PDO を対象とする必要があります要求する必要が別**IRP\_MN\_待機\_WAKE**デバイス スタックを電源ポリシーを所有し、FDO を作成します。
+バス ドライバーが受信すると、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)作成 PDO を対象とする必要があります要求する必要が別**IRP\_MN\_待機\_WAKE**デバイス スタックを電源ポリシーを所有し、FDO を作成します。
 
 : 前の図に示す
 
-1.  キーボードのドライバー呼び出し[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)待機/ウェイク アップを送信する、pdo IRP (IRP1)。
+1.  キーボードのドライバー呼び出し[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)待機/ウェイク アップを送信する、pdo IRP (IRP1)。
 
-    電源マネージャーは IRP を割り当てるし、キーボード デバイス スタックの一番上に、I/O マネージャーを通じて送信されます。 ドライバー セット[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンを渡します IRP PDO キーボードに達するまで、スタックをダウンします。 キーボードのバス ドライバーとして機能する、USB のハブのドライバーでは、保留中の IRP1 を保持します。
+    電源マネージャーは IRP を割り当てるし、キーボード デバイス スタックの一番上に、I/O マネージャーを通じて送信されます。 ドライバー セット[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンを渡します IRP PDO キーボードに達するまで、スタックをダウンします。 キーボードのバス ドライバーとして機能する、USB のハブのドライバーでは、保留中の IRP1 を保持します。
 
 2.  USB ハブのドライバーを呼び出す必要がありますので、ウェイク アップの信号が到着すると、USB ハブのドライバーはシステムをスリープ解除できない、 **PoRequestPowerIrp** USB ハブのデバイス スタックの待機/ウェイク IRP (IRP2) を要求します。
 
@@ -88,7 +88,7 @@ ACPI は、ACPI のコンピューターで、各リーフ デバイスからウ
 
 キーボードは、ウェイク アップの信号をアサートする場合は、Acpi.sys はインターセプトします。 ACPI、ただし、確認できません、キーボードにのみルート デバイスを介して、信号が付属するいると、シグナルがアサートされること。 Acpi.sys 完了 IRP4、および I/O マネージャーを呼び出す*IoCompletion*旅行ルーチンは、PCI デバイス スタックをバックアップします。 IRP4 が完了すると、すべて*IoCompletion*ルーチンが実行した場合、PCI ドライバのコールバック ルーチンが呼び出されます。 そのコールバック ルーチンでは、PCI ドライバは、信号が通過 USB ホスト コント ローラーを決定します。 PCI ドライバは、IRP3 を完了します。 同じシーケンスは、キーボードのドライバーが IRP1 を受信するまでに、USB ホスト コント ローラーのスタックと、USB ハブ スタックを介して行われます。 この時点でのキーボード ドライバーでは、必要に応じて、ウェイク アップ イベントを処理できます。
 
-設定する必要がありますドライバー待機/ウェイク IRP を親 PDO に送信するたびに、 [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742) IRP を独自のルーチンです。 設定、*キャンセル*ルーチンはそれをトリガーした IRP が取り消された場合は、新しい IRP をキャンセルする機会、ドライバーを示します。 USB の例でのキーボード ドライバーがその待機/ウェイク IRP (したがってキーボードのウェイク アップを無効化) をキャンセルした場合、USB ハブ、USB ホスト コント ローラー、および PCI ドライバー取り消す必要があります Irp キーボード IRP の結果として送信します。 詳細については、次を参照してください。[待機/ウェイク Irp のキャンセル ルーチン](canceling-a-wait-wake-irp.md#ddk-cancel-routines-for-wait-wake-irps-kg)します。
+設定する必要がありますドライバー待機/ウェイク IRP を親 PDO に送信するたびに、 [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel) IRP を独自のルーチンです。 設定、*キャンセル*ルーチンはそれをトリガーした IRP が取り消された場合は、新しい IRP をキャンセルする機会、ドライバーを示します。 USB の例でのキーボード ドライバーがその待機/ウェイク IRP (したがってキーボードのウェイク アップを無効化) をキャンセルした場合、USB ハブ、USB ホスト コント ローラー、および PCI ドライバー取り消す必要があります Irp キーボード IRP の結果として送信します。 詳細については、次を参照してください。[待機/ウェイク Irp のキャンセル ルーチン](canceling-a-wait-wake-irp.md#ddk-cancel-routines-for-wait-wake-irps-kg)します。
 
 1 つだけ待機/ウェイク IRP が保留されているが、親のドライバーでは、待機またはスリープ解除を有効にできる 1 つ以上の子を列挙可能性があります、PDO の。 このような場合は、親のドライバーは待機/ウェイク IRP を保持することを確認してください保留中のときにそのデバイスのいずれかが有効になってウェイク アップします。 これを行うには、ドライバーは待機/ウェイク IRP を受信するたびに内部カウンターをインクリメントします。 ドライバーが待機/ウェイク IRP を完了するたびに、デクリメント カウントし、結果の値が 0 以外の場合は、そのデバイス スタックを別の待機またはスリープ解除 IRP を送信します。
 

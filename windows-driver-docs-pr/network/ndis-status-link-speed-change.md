@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_LINK_SPEED_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a43927435161ab2e5a4737b1db3ae7450681188
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50025c65d233ce489acf3d2fd5c4b867ff15d9e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375685"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368576"
 ---
 # <a name="ndisstatuslinkspeedchange"></a>NDIS\_状態\_リンク\_速度\_変更
 
@@ -21,9 +21,9 @@ NDIS\_状態\_リンク\_速度\_状態の変更がリンク速度の変更を�
 <a name="remarks"></a>注釈
 -------
 
-NDIS 変換 NDIS\_状態\_リンク\_速度\_変更の状態インジケーターを[ **NDIS\_状態\_リンク\_の状態**](ndis-status-link-state.md) NDIS 6.0 のドライバーを後続の状態のインジケーター。 NDIS が、NDIS を受信すると\_状態\_リンク\_速度\_状態の変更の OID クエリ要求を発行する NDIS [OID\_GEN\_リンク\_速度](https://msdn.microsoft.com/library/windows/hardware/ff569593). NDIS OID の結果を使用する\_GEN\_リンク\_速度クエリを発行する NDIS\_状態\_リンク\_NDIS 6.0 のドライバーに関連する状態。
+NDIS 変換 NDIS\_状態\_リンク\_速度\_変更の状態インジケーターを[ **NDIS\_状態\_リンク\_の状態**](ndis-status-link-state.md) NDIS 6.0 のドライバーを後続の状態のインジケーター。 NDIS が、NDIS を受信すると\_状態\_リンク\_速度\_状態の変更の OID クエリ要求を発行する NDIS [OID\_GEN\_リンク\_速度](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed). NDIS OID の結果を使用する\_GEN\_リンク\_速度クエリを発行する NDIS\_状態\_リンク\_NDIS 6.0 のドライバーに関連する状態。
 
-NDIS 5。*x*または以前のミニポート ドライバーにある DWORD 型の値を指定する、 *StatusBuffer*のパラメーター、 [ **NdisMIndicateStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff553538)関数。 NDIS の詳細については\_状態\_リンク\_速度\_変更を参照してください[OID\_IRDA\_レート\_スニフ](https://msdn.microsoft.com/library/windows/hardware/ff560287)します。
+NDIS 5。*x*または以前のミニポート ドライバーにある DWORD 型の値を指定する、 *StatusBuffer*のパラメーター、 [ **NdisMIndicateStatus** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553538(v=vs.85))関数。 NDIS の詳細については\_状態\_リンク\_速度\_変更を参照してください[OID\_IRDA\_レート\_スニフ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560287(v=vs.85))します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -50,11 +50,11 @@ NDIS 5。*x*または以前のミニポート ドライバーにある DWORD 型
 
 [**NDIS\_状態\_リンク\_状態**](ndis-status-link-state.md)
 
-[**NdisMIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff553538)
+[**NdisMIndicateStatus**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553538(v=vs.85))
 
-[OID\_GEN\_リンク\_速度](https://msdn.microsoft.com/library/windows/hardware/ff569593)
+[OID\_GEN\_リンク\_速度](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed)
 
-[OID\_IRDA\_レート\_盗聴](https://msdn.microsoft.com/library/windows/hardware/ff560287)
+[OID\_IRDA\_レート\_盗聴](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560287(v=vs.85))
 
  
 

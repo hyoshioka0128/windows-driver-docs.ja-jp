@@ -7,12 +7,12 @@ keywords:
 - イベントの WDK ビデオのミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f3c70d2f060e3c23cb8f625b8635798a63d209
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb86cb9d3b414098b805b12683919e40f2ad3a6f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383729"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371004"
 ---
 # <a name="events-in-video-miniport-drivers-windows-2000-model"></a>ビデオ ミニポート ドライバー内のイベント (Windows 2000 モデル)
 
@@ -20,7 +20,7 @@ ms.locfileid: "63383729"
 ## <span id="ddk_events_in_video_miniport_drivers_windows_2000_model__gg"></span><span id="DDK_EVENTS_IN_VIDEO_MINIPORT_DRIVERS_WINDOWS_2000_MODEL__GG"></span>
 
 
-ビデオ ポート ドライバーでは、イベントの種類のサポート[カーネルのディスパッチャー オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff553202)ディスパッチ以下を実行している 2 つのスレッドの同期に使用できる\_レベル。 ビデオのミニポート ドライバーは、イベントを使用して、ビデオ ハードウェアへのアクセスを同期できます。
+ビデオ ポート ドライバーでは、イベントの種類のサポート[カーネルのディスパッチャー オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/kernel/kernel-dispatcher-objects)ディスパッチ以下を実行している 2 つのスレッドの同期に使用できる\_レベル。 ビデオのミニポート ドライバーは、イベントを使用して、ビデオ ハードウェアへのアクセスを同期できます。
 
 -   ビデオのミニポート ドライバーと、ディスプレイ ドライバーによって
 
@@ -41,27 +41,27 @@ ms.locfileid: "63383729"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570284" data-raw-source="[&lt;strong&gt;VideoPortClearEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570284)"><strong>VideoPortClearEvent</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportclearevent" data-raw-source="[&lt;strong&gt;VideoPortClearEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportclearevent)"><strong>VideoPortClearEvent</strong></a></p></td>
 <td align="left"><p>特定のイベント オブジェクトを非シグナル状態に設定します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570287" data-raw-source="[&lt;strong&gt;VideoPortCreateEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570287)"><strong>VideoPortCreateEvent</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportcreateevent" data-raw-source="[&lt;strong&gt;VideoPortCreateEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportcreateevent)"><strong>VideoPortCreateEvent</strong></a></p></td>
 <td align="left"><p>イベント オブジェクトを作成します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570292" data-raw-source="[&lt;strong&gt;VideoPortDeleteEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570292)"><strong>VideoPortDeleteEvent</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportdeleteevent" data-raw-source="[&lt;strong&gt;VideoPortDeleteEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportdeleteevent)"><strong>VideoPortDeleteEvent</strong></a></p></td>
 <td align="left"><p>指定されたイベント オブジェクトを削除します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570352" data-raw-source="[&lt;strong&gt;VideoPortReadStateEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570352)"><strong>VideoPortReadStateEvent</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportreadstateevent" data-raw-source="[&lt;strong&gt;VideoPortReadStateEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportreadstateevent)"><strong>VideoPortReadStateEvent</strong></a></p></td>
 <td align="left"><p>特定のイベント オブジェクトの現在の状態を返します。 シグナル状態か非シグナル状態。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570364" data-raw-source="[&lt;strong&gt;VideoPortSetEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570364)"><strong>VideoPortSetEvent</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsetevent" data-raw-source="[&lt;strong&gt;VideoPortSetEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsetevent)"><strong>VideoPortSetEvent</strong></a></p></td>
 <td align="left"><p>状態にある既にでしたし、イベント オブジェクトの以前の状態を返す場合は、イベント オブジェクトをシグナル状態に設定します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570378" data-raw-source="[&lt;strong&gt;VideoPortWaitForSingleObject&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570378)"><strong>VideoPortWaitForSingleObject</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportwaitforsingleobject" data-raw-source="[&lt;strong&gt;VideoPortWaitForSingleObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportwaitforsingleobject)"><strong>VideoPortWaitForSingleObject</strong></a></p></td>
 <td align="left"><p>指定されたディスパッチ オブジェクトがシグナルの状態に設定されるまで待機状態に、現在のスレッドは、(必要に応じて)、または、待機がタイムアウトするまでです。</p></td>
 </tr>
 </tbody>
@@ -71,7 +71,7 @@ ms.locfileid: "63383729"
 
 GDI では、ドライバーを表示するイベントのサポートも提供します。 参照してください[イベントを使用したディスプレイ ドライバーで](using-events-in-display-drivers.md)詳細についてはします。
 
-イベントに関するより広範なパースペクティブは、次を参照してください。[イベント オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff544323)で、*カーネル モード ドライバーの設計ガイド*します。
+イベントに関するより広範なパースペクティブは、次を参照してください。[イベント オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/kernel/event-objects)で、*カーネル モード ドライバーの設計ガイド*します。
 
  
 

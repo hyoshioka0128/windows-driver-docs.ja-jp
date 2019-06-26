@@ -5,12 +5,12 @@ ms.assetid: f8ee887a-969e-4167-9b39-9ee6ef8b1fbc
 ms.date: 08/08/2017
 keywords: -OID_GEN_LINK_SPEED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 097bc08b6a61f54b242d1ab844e23f2b94964a31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c364b7a156b9496828881e08796079417b30073d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369844"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369060"
 ---
 # <a name="oidgenlinkspeed"></a>OID\_GEN\_リンク\_速度
 
@@ -37,7 +37,7 @@ ms.locfileid: "63369844"
 <a name="remarks"></a>注釈
 -------
 
-[OID\_GEN\_リンク\_状態](oid-gen-link-state.md)は、NDIS 6.0 とこの OID 以降およびそれ以降に相当します。 NDIS 6.0 とそれ以降のミニポート ドライバーを使用する必要がありますが、 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391)状態を示す値をリンクの速度を示すために変更します。
+[OID\_GEN\_リンク\_状態](oid-gen-link-state.md)は、NDIS 6.0 とこの OID 以降およびそれ以降に相当します。 NDIS 6.0 とそれ以降のミニポート ドライバーを使用する必要がありますが、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状態を示す値をリンクの速度を示すために変更します。
 
 測定単位は 100,000 の値が 10 Mbps のハードウェア ビット レートを表すためにの 100 bps です。
 
@@ -60,7 +60,7 @@ ms.locfileid: "63369844"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391)
+[**NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)
 
 [OID\_GEN\_リンク\_状態](oid-gen-link-state.md)
 

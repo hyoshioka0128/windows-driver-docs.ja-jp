@@ -4,12 +4,12 @@ description: Windows のすべてのバージョンでは、D3cold にする (S1
 ms.assetid: C2C6166D-8269-4FCE-81A8-B350626052D4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 13ce1874616b11a35323b9acce5b247bdaee4f2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 110c9633e45e1e24da9398df5f1d76e62694f8d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362017"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384945"
 ---
 # <a name="enabling-transitions-to-d3cold"></a>D3cold への遷移の有効化
 
@@ -22,7 +22,7 @@ Windows 8 以降では、デバイスは入力をコンピューターは、S0 �
 
 ドライバーは、D3hot から D3cold へのデバイスの移行を開始しません。 代わりに、このデバイスで共通の電源を共有する他のすべてのデバイスが D3hot では、D3cold を入力する準備がときに、この遷移が発生します。 これらのデバイスの最後には、D3hot が入るは、基になるバス ドライバーとシステム ファームウェアは、電源を削除し、デバイスを調和よく D3cold を入力します。
 
-デバイスの PPO ドライバーは、D3hot から D3cold へのデバイスの移行を有効にするかどうかをオペレーティング システムに指示します。 ドライバーが、デバイスをインストールする INF ファイルでは、この情報を指定またはドライバーを呼び出すことができます、 [ *SetD3ColdSupport* ](https://msdn.microsoft.com/library/windows/hardware/hh967716)実行時に動的に有効または無効に、デバイスの日常的なD3cold に遷移します。 詳細については、次を参照してください。 [GUID を使用して\_D3COLD\_サポート\_ドライバー インターフェイス](using-guid-d3cold-support-interface.md)します。
+デバイスの PPO ドライバーは、D3hot から D3cold へのデバイスの移行を有効にするかどうかをオペレーティング システムに指示します。 ドライバーが、デバイスをインストールする INF ファイルでは、この情報を指定またはドライバーを呼び出すことができます、 [ *SetD3ColdSupport* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_d3cold_support)実行時に動的に有効または無効に、デバイスの日常的なD3cold に遷移します。 詳細については、次を参照してください。 [GUID を使用して\_D3COLD\_サポート\_ドライバー インターフェイス](using-guid-d3cold-support-interface.md)します。
 
 D3cold を入力するデバイスを有効にすると、ドライバーは、次の動作を保証します。
 
@@ -33,7 +33,7 @@ D3cold を入力するデバイスを有効にすると、ドライバーは、�
 
 D3cold にデバイスを配置することは、必ずしもデバイスの電源のすべてのソースを削除されていることのみをバスを介してデバイスに通信を許可する能力のソースがなくなったことを意味します。 デバイスは、プロセッサにウェイク イベントを通知するための十分な電力を消費することがある可能性があります。 たとえばのイーサネット ネットワーク インターフェイス カード (NIC) が主電源ソースを削除では、イーサネット ケーブルから power を描画する可能性があります。
 
-D3cold がバスは、デバイスとの通信に使用できない状態であるため、ドライバーことはできません、デバイス D3cold に直接配置します。 ドライバーを最初に呼び出す代わりに、 [ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734) D3 power IRP を要求するルーチン (、 [ **IRP\_MN\_設定\_電源**](https://msdn.microsoft.com/library/windows/hardware/ff551744)対象の状態を含む要求 = **PowerDeviceD3**) D0 から D3hot にデバイスを移動します。 D3hot を入力すると、デバイスによっては、D3hot から D3cold に移動できます。 デバイスは、バスに電源がオフ、親のバス ドライバー、バスをオフのときに発生する場合にのみ、またはシステム ファームウェアがハードウェア プラットフォームのセクションの電源をオフにする場合に、D3cold を入力します。
+D3cold がバスは、デバイスとの通信に使用できない状態であるため、ドライバーことはできません、デバイス D3cold に直接配置します。 ドライバーを最初に呼び出す代わりに、 [ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp) D3 power IRP を要求するルーチン (、 [ **IRP\_MN\_設定\_電源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)対象の状態を含む要求 = **PowerDeviceD3**) D0 から D3hot にデバイスを移動します。 D3hot を入力すると、デバイスによっては、D3hot から D3cold に移動できます。 デバイスは、バスに電源がオフ、親のバス ドライバー、バスをオフのときに発生する場合にのみ、またはシステム ファームウェアがハードウェア プラットフォームのセクションの電源をオフにする場合に、D3cold を入力します。
 
  
 

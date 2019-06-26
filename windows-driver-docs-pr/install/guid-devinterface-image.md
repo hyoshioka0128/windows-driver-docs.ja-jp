@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 356480f1c4ce98332ad69428e4c9512d68892f52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3642dc07bee9be83f0bd59ee6d4e0f1de6c83e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363748"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375276"
 ---
 # <a name="guiddevinterfaceimage"></a>GUID_DEVINTERFACE_IMAGE
 
 
-GUID_DEVINTERFACE_IMAGE[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[WIA デバイスとデバイスのイメージ (まだ STI)](https://msdn.microsoft.com/library/windows/hardware/ff542729)デジタル カメラやスキャナーなど、します。
+GUID_DEVINTERFACE_IMAGE[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[WIA デバイスとデバイスのイメージ (まだ STI)](https://docs.microsoft.com/windows-hardware/drivers/image/index)デジタル カメラやスキャナーなど、します。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_IMAGE[デバイス インターフェイス クラス](https:/
 
 WIA デバイス用のシステム提供のカーネル モード ドライバーでは、オペレーティング システムと WIA デバイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-WIA ドライバーと STI ドライバーについては、次を参照してください。 [Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)します。
+WIA ドライバーと STI ドライバーについては、次を参照してください。 [Windows Image Acquisition ドライバー](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)します。
 
 <a name="requirements"></a>要件
 ------------
