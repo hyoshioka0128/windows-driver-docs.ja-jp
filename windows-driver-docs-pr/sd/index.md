@@ -11,30 +11,30 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: f13493efc0b787f87da7a6742fee306bc0aa9007
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feee59de8c33a4a6a0c17359eb6b307ebf7090a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326011"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384508"
 ---
 # <a name="sd-bus-driver-design-guide"></a>SD バス ドライバー設計ガイド
 
 
 ## <a name="in-this-section"></a>このセクションの内容
-[SD カードのドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/ff537964)
+[SD カードのドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-driver-stack)
 
-[SD カードのバス インターフェイスを開く、初期化する、および閉じる](https://msdn.microsoft.com/library/windows/hardware/ff537442)
+[SD カードのバス インターフェイスを開く、初期化する、および閉じる](https://docs.microsoft.com/windows-hardware/drivers/sd/opening--initializing-and-closing-an-sd-card-bus-interface)
 
-[SD カードの割り込みの処理](https://msdn.microsoft.com/library/windows/hardware/ff537177)
+[SD カードの割り込みの処理](https://docs.microsoft.com/windows-hardware/drivers/sd/handling-sd-card-interrupts)
 
-[SD カードの要求](https://msdn.microsoft.com/library/windows/hardware/ff537983)
+[SD カードの要求](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-requests)
  
 
 ## <a name="sd-card-hardware-identifiers"></a>SD カードのハードウェア識別子
 
 
-セキュア デジタル (SD) デバイスの ID 文字列の詳細については、「[Identifiers for Secure Digital (SD) Devices (セキュア デジタル (SD) デバイスの識別子)](https://msdn.microsoft.com/library/windows/hardware/ff546279)」をご覧ください。
+セキュア デジタル (SD) デバイスの ID 文字列の詳細については、「[Identifiers for Secure Digital (SD) Devices (セキュア デジタル (SD) デバイスの識別子)](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-secure-digital--sd--devices)」をご覧ください。
 
 ## <a name="restrictions-on-sd-card-drivers"></a>SD カード ドライバーに関する制限事項
 
@@ -47,7 +47,7 @@ SD コンボ (多機能) カード上の関数を管理するセキュア デジ
 
 -   別のデバイス スタックの関数番号を指定する SD I/O コマンド。
 
-SD デバイス ドライバーでは、型 SDRF\_GET\_PROPERTY および SDRF\_SET\_PROPERTY の関数要求を使用して [**SdBusSubmitRequest**](https://msdn.microsoft.com/library/windows/hardware/ff537909) を呼び出すことで、ホスト コントローラーの一般的なレジスタ セットとデバイスの状態を管理できます。 これらの関数要求の型の説明については、「[**SD\_REQUEST\_FUNCTION**](https://msdn.microsoft.com/library/windows/hardware/ff538012)」をご覧ください。
+SD デバイス ドライバーでは、型 SDRF\_GET\_PROPERTY および SDRF\_SET\_PROPERTY の関数要求を使用して [**SdBusSubmitRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/nf-ntddsd-sdbussubmitrequest) を呼び出すことで、ホスト コントローラーの一般的なレジスタ セットとデバイスの状態を管理できます。 これらの関数要求の型の説明については、「[**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/ne-ntddsd-sd_request_function)」をご覧ください。
 
 ## <a name="sd-bus-sample"></a>SD バスのサンプル
 

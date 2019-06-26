@@ -16,12 +16,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: e621c90ee1e8929f6333d60064d73ec2240b77f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe8a87c9a313c930c8b7204a0368fe7717b1b6b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361844"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386381"
 ---
 # <a name="multifunction-device-driver-design-guide"></a>多機能デバイス ドライバー設計ガイド
 
@@ -59,7 +59,7 @@ Windows XP またはそれ以降のオペレーティング システム上の�
 
 デバイスがそのバスの標準に準拠しない場合は、デバイス機能の機能ドライバーと INF ファイルだけでなく、mf.sys 機能と同等のドライバーを指定する必要があります。
 
-多機能デバイスをインストールするには、通常、デバイスの基本 INF ファイル、各デバイス機能の追加の INF ファイルを指定します。 基本の INF ファイルは、通常、デバイスの個々の機能に対して、INF ファイルをコピーします。 これを実行する方法については、[INF のコピー](https://msdn.microsoft.com/library/windows/hardware/ff540117)に関するページを参照してください。
+多機能デバイスをインストールするには、通常、デバイスの基本 INF ファイル、各デバイス機能の追加の INF ファイルを指定します。 基本の INF ファイルは、通常、デバイスの個々の機能に対して、INF ファイルをコピーします。 これを実行する方法については、[INF のコピー](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)に関するページを参照してください。
 
 次のセクションでは、さまざまな種類の多機能デバイスのドライバーおよびインストールの要件について説明します。
 
@@ -73,11 +73,11 @@ Windows XP またはそれ以降のオペレーティング システム上の�
 
 [多機能デバイス用のリソース マップの作成](creating-resource-maps-for-a-multifunction-device.md)
 
-INF ファイルの構文については、「[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)」を参照してください。
+INF ファイルの構文については、「[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)」を参照してください。
 
 このセクションの残りの部分では、Windows 2000 およびそれ以降の NT ベースのプラットフォーム上の多機能デバイスのみをサポートする方法について説明します。
 
-Windows Driver Kit (WDK) には、[多機能オーディオ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537574)をサポートする方法を説明する別のセクションが含まれています。
+Windows Driver Kit (WDK) には、[多機能オーディオ デバイス](https://docs.microsoft.com/windows-hardware/drivers/audio/multifunction-audio-devices)をサポートする方法を説明する別のセクションが含まれています。
 
  
 

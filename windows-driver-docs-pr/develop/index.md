@@ -11,12 +11,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: b89f67ab77281bd37d424dbb2bca5cfb7f8b2c03
-ms.sourcegitcommit: 276a3aef2d4463bbe653d30ed55d7bab20000aa6
+ms.openlocfilehash: 4b721253df53581f92797717d7cb2474da6e8e15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65814906"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370727"
 ---
 # <a name="developing-testing-and-deploying-drivers"></a>ドライバーの開発、テスト、および展開
 
@@ -24,7 +24,7 @@ Windows のドライバー開発環境と Windows デバッガーは、Microsoft
 
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/9673727b-89ef-4a54-8228-dad41dbd8201]
 
-統合開発環境をセットアップするには、まず Visual Studio をインストールしてから WDK をインストールします。 Visual Studio と WDK の入手方法について詳しくは、[こちら](https://go.microsoft.com/fwlink/p/?linkid=239721)をご覧ください。 [Debugging Tools for Windows](https://msdn.microsoft.com/Library/Windows/Hardware/Ff551063) は、WDK のインストールに含まれています。
+統合開発環境をセットアップするには、まず Visual Studio をインストールしてから WDK をインストールします。 Visual Studio と WDK の入手方法について詳しくは、[こちら](https://go.microsoft.com/fwlink/p/?linkid=239721)をご覧ください。 [Debugging Tools for Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/index) は、WDK のインストールに含まれています。
 
 WDK は MSBuild.exe を使用します。これは、Visual Studio のユーザー インターフェイスとコマンド ラインツールの両方で使用できます。 Visual Studio の環境で作成されたドライバーは、Project ファイルと Solution ファイルを使って、プロジェクトまたはプロジェクトのグループを記述します。 Visual Studio 環境には、レガシの Sources ファイルと Dirs ファイルを Project ファイルと Solution ファイルに変換するツールが用意されています。
 

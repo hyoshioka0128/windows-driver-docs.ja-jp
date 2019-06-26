@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: d9b07f09279255c5e4d3f93ed20c6ea7baa08ea8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0717d2b20721f85a2cd6a28d870988eb3d1c10a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357656"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353563"
 ---
 # <a name="partner-app-development"></a>パートナー アプリ開発
 
@@ -26,7 +26,7 @@ ms.locfileid: "63357656"
 |--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | [デバイス ドライバー用のバックグラウンド タスクとカスタム トリガー](background-tasks-and-oem-triggers.md) | タスクとトリガーをデバイス ドライバーとアプリと共に使用する方法について説明します。                     |
 | [パートナーの設定アプリを作成する](create-a-system-settings-application.md)                        | カスタム ハードウェア コンポーネント用の OEM 設定アプリを作成してブランドを区別する方法について説明します。 |
-| [モバイル ブロードバンド](https://msdn.microsoft.com/windows/hardware/drivers/mobilebroadband/index)                                                    | モバイル ブロードバンドの詳細および顧客のモバイル ブロードバンド エクスペリエンスを構成する方法を示します。   |
+| [モバイル ブロードバンド](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/index)                                                    | モバイル ブロードバンドの詳細および顧客のモバイル ブロードバンド エクスペリエンスを構成する方法を示します。   |
 | [Wi-fi Direct](wi-fi-direct.md) | Wi-Fi Direct および Windows の Wi-Fi Direct サービス API の詳細を示します。 
 
  

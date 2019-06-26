@@ -12,12 +12,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 44d44052931908765abca644b470588d880702a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c769143685283a998ce078b9e96e0a975b93cea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378314"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386201"
 ---
 # <a name="pcmcia-bus-driver-design-guide"></a>PCMCIA バス ドライバー設計ガイド
 
@@ -27,11 +27,11 @@ ms.locfileid: "63378314"
 
 このセクションの内容:
 
-[PCMCIA デバイスの属性メモリにアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff536892)
+[PCMCIA デバイスの属性メモリにアクセスする](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-attribute-memory-of-a-pcmcia-device)
 
-[メモリ カードの PCMCIA\_INTERFACE\_STANDARD インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff537606)
+[メモリ カードの PCMCIA\_INTERFACE\_STANDARD インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/pcmcia-interface-standard-interface-for-memory-cards)
 
-[Windows XP での PCMCIA IRQ ルーティング](https://msdn.microsoft.com/library/windows/hardware/ff537608)
+[Windows XP での PCMCIA IRQ ルーティング](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/pcmcia-irq-routing-on-windows-xp)
 
  
 

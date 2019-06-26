@@ -5,19 +5,19 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 093fd0c73cb5589acbf918a7f7db3badc686bf29
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 2909ebe474011590da8323b811d37f3709c297ba
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161474"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393264"
 ---
 # <a name="universal-serial-bus-usb"></a>ユニバーサル シリアル バス (USB)
 
 
 ユニバーサル シリアル バス (USB) は、ホットプラグ対応で拡張性のあるプラグ アンド プレイ シリアル インターフェイスを提供します。このインターフェイスによって、キーボード、マウス、ジョイスティック、プリンター、スキャナー、記憶装置、モデム、ビデオ会議用カメラなどの周辺機器を低コストの標準方式で接続できます。 PS/2、シリアル ポート、パラレル ポートなど、旧式ポートを使用する周辺機器については、すべて USB に移行することをお勧めします。
 
-USB-IF は Special Interest Groups (SIGs) であり、[公式の USB 仕様](http://www.usb.org/developers/docs/)、テスト仕様、テスト ツールに準拠しています。
+USB-IF は Special Interest Groups (SIGs) であり、[公式の USB 仕様](https://www.usb.org/documents)、テスト仕様、テスト ツールに準拠しています。
 
 Windows オペレーティング システムは、公式の USB 仕様に準拠する USB ホスト コントローラー、ハブ、デバイス、システムをネイティブ サポートしています。 Windows からはプログラミング インターフェイスも提供されます。これを利用し、USB デバイスと通信する[デバイス ドライバー](usb-driver-development-guide.md)や[アプリケーション](developing-windows-applications-that-communicate-with-a-usb-device.md)を開発できます。
 
@@ -97,9 +97,9 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <p>USB ハードウェアまたはソフトウェアをテストするためのツールに関する情報を取得し、操作やその他のシステム イベントの足跡を記録し、クライアント ドライバーまたはアプリケーションによって送信された要求に USB ドライバー スタックがどのように応答するのかを観察します。</p>
 <p>ハードウェア認証キットでテストの概要を読みます。ハードウェアのベンダーやデバイスのメーカーは自社の USB デバイスやホスト コントローラーを Windows ハードウェア認定のために提出するとき、このキットを利用して準備します。</p>
 <p><strong>USB のためのその他のリソース</strong></p>
-<a href="http://www.usb.org/developers/docs/" data-raw-source="[Official USB Specification](http://www.usb.org/developers/docs/)">公式の USB 仕様</a>
+<a href="https://www.usb.org/documents" data-raw-source="[Official USB Specification](https://www.usb.org/documents)">公式の USB 仕様</a>
 <p>USB プロトコルの技術的な詳細がすべて含まれています。</p>
-<a href="https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/" data-raw-source="[Microsoft Windows USB Core Team Blog](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/)">Microsoft Windows USB コア チーム ブログ</a>
+<a href="https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog" data-raw-source="[Microsoft Windows USB Core Team Blog](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog)">Microsoft Windows USB コア チーム ブログ</a>
 <p>Microsoft USB チームが記述した投稿をご覧ください。 このブログでは、Windows PC に搭載されたさまざまな USB ホスト コントローラーや USB ハブと連動する Windows USB ドライバー スタックを中心に取り上げています。 USB クライアント ドライバーの開発者や USB ハードウェアのデザイナーがドライバー スタック実装を理解し、一般的な問題を解決し、ツールを利用してトレースとログ ファイルを集める方法を説明する際に役立つリソース。</p>
 <a href="https://community.osr.com/categories/ntdev" data-raw-source="[OSR Online Lists - ntdev](https://community.osr.com/categories/ntdev)">OSR オンライン リスト - ntdev</a>
 <p>カーネルモード ドライバーの開発者のための <a href="http://www.osronline.com/index.cfm" data-raw-source="[OSR Online](http://www.osronline.com/index.cfm)">OSR オンライン</a>によって管理されるディスカッション リスト。</p>
@@ -107,10 +107,10 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <p>Windows オペレーティング システムで動作する USB デバイスとドライバーを初めて開発する開発者からよく寄せられる質問に基づくその他のリソース。</p>
 <p></p>
 <p><strong>USB 関連の動画</strong></p>
-<a href="http://channel9.msdn.com/Events/Build/2013/3-924a" data-raw-source="[UWP apps for USB devices](http://channel9.msdn.com/Events/Build/2013/3-924a)">USB デバイスの UWP アプリ</a>
-<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T" data-raw-source="[Understanding USB 3.0 in Windows 8](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T)">Windows 8 の USB 3.0 を理解する</a>
-<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T" data-raw-source="[Building great USB 3.0 devices](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T)">優れた USB 3.0 デバイスを開発する</a>
-<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P" data-raw-source="[USB Debugging Innovations in Windows 8 (Part I, II, & III)](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P)">Windows 8 の USB デバッグの革新技術 (パート I、II、& III)</a>
+<a href="https://channel9.msdn.com/Events/Build/2013/3-924a" data-raw-source="[UWP apps for USB devices](https://channel9.msdn.com/Events/Build/2013/3-924a)">USB デバイスの UWP アプリ</a>
+<a href="https://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T" data-raw-source="[Understanding USB 3.0 in Windows 8](https://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T)">Windows 8 の USB 3.0 を理解する</a>
+<a href="https://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T" data-raw-source="[Building great USB 3.0 devices](https://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T)">優れた USB 3.0 デバイスを開発する</a>
+<a href="https://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P" data-raw-source="[USB Debugging Innovations in Windows 8 (Part I, II, & III)](https://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P)">Windows 8 の USB デバッグの革新技術 (パート I、II、& III)</a>
 <p><strong>学習向け USB ハードウェア</strong></p>
 <a href="microsoft-usb-test-tool--mutt--devices.md" data-raw-source="[MUTT devices](microsoft-usb-test-tool--mutt--devices.md)">MUTT デバイス</a>
 <p>MUTT デバイス、SuperMUTT デバイス、付随するソフトウェア パッケージは USB テストの HCK スイートに統合されています。 USB のコントローラー、デバイス、システムの開発周期において、特にストレス テストにおいて使用できる自動化されたテストを提供します。</p>

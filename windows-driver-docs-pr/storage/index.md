@@ -6,19 +6,19 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: e6ef00ecde147cb9e241651cb9f0b0385aae79c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63341c28963b8f3be5e065a2dde458dda897e727
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380832"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386818"
 ---
 # <a name="storage-driver-design-guide"></a>記憶装置ドライバー設計ガイド
 
 
 記憶装置ドライバーには、[クラス](storage-class-drivers.md)、[ポート](storage-port-drivers.md)、[ミニポート](storage-miniport-drivers.md)、および[フィルター](storage-filter-drivers.md)の各ドライバーが含まれています。 通常、デバイス ベンダーでは、特定のアダプターまたはアダプターの種類に対応したミニポート ドライバーを実装します。 一般的ではありませんが、新しい記憶域クラスを定義できます。そのクラス用に新しいクラス ドライバーが開発されます。 Windows の記憶域クラスには、ディスク、CD-ROM、USB 記憶装置、および暗号化されたドライブの各クラスが含まれます。 通常、記憶装置ドライバーの開発は、[StorPort](storport-driver.md) ポート ドライバーと連携するミニポート ドライバーの作成に制限されます。
 
-他の種類の記憶装置ドライバーは、マルチパス I/O 用のセキュリティで保護された[サイロ](storage-silo-drivers.md) ドライバーおよびデバイス固有モジュール (DSM) です。 記憶域の管理のために、ドライバーに対する制御インターフェイスとして [WMI](https://msdn.microsoft.com/library/windows/hardware/ff567016) プロバイダーが開発されます。
+他の種類の記憶装置ドライバーは、マルチパス I/O 用のセキュリティで保護された[サイロ](storage-silo-drivers.md) ドライバーおよびデバイス固有モジュール (DSM) です。 記憶域の管理のために、ドライバーに対する制御インターフェイスとして [WMI](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-wmi-classes) プロバイダーが開発されます。
 
 ## <a name="span-idstoragedriverwdkresourcesspanspan-idstoragedriverwdkresourcesspanspan-idstoragedriverwdkresourcesspanoverview"></a><span id="Storage_Driver_WDK_Resources"></span><span id="storage_driver_wdk_resources"></span><span id="STORAGE_DRIVER_WDK_RESOURCES"></span>概要
 この設計ガイドには次のセクションが含まれます。
@@ -43,9 +43,9 @@ ms.locfileid: "63380832"
 ## <a name="span-iddriververificationforstorportspanspan-iddriververificationforstorportspanspan-iddriververificationforstorportspandriver-verification-for-storport"></a><span id="Driver_Verification_for_StorPort"></span><span id="driver_verification_for_storport"></span><span id="DRIVER_VERIFICATION_FOR_STORPORT"></span>StorPort 用のドライバーの検証
 
 
-ドライバーの開発およびテストの際にコード分析ツールを使用すると、記憶装置ドライバーにおけるパフォーマンスの問題や欠陥を把握するのに役立ちます。 [静的ドライバー検証ツール (SDV)](https://msdn.microsoft.com/library/windows/hardware/ff552808) を使用すると、記憶装置ドライバーのコードの欠陥を検出できます。 SDV には、StorPort のルーチンがミニポート ドライバーによって適切に使用されているかどうかを検証するためのコンプライアンス [ルール](https://msdn.microsoft.com/library/windows/hardware/hh454238)が付属しています。
+ドライバーの開発およびテストの際にコード分析ツールを使用すると、記憶装置ドライバーにおけるパフォーマンスの問題や欠陥を把握するのに役立ちます。 [静的ドライバー検証ツール (SDV)](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier) を使用すると、記憶装置ドライバーのコードの欠陥を検出できます。 SDV には、StorPort のルーチンがミニポート ドライバーによって適切に使用されているかどうかを検証するためのコンプライアンス [ルール](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)が付属しています。
 
-記憶域ハードウェア認定のテストは、[Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613) に含まれています。 記憶装置のテストは、HCK の [Devices.Storage](https://msdn.microsoft.com/library/windows/hardware/jj125097) カテゴリに含まれています。
+記憶域ハードウェア認定のテストは、[Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613) に含まれています。 記憶装置のテストは、HCK の [Devices.Storage](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj125097(v=vs.85)) カテゴリに含まれています。
 
  
 

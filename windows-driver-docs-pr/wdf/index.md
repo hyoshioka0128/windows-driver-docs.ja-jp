@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 2d3dc6a72993a7df74bae3de857cefd7709b52b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31fef22eec9de042d353910d4250deef892f58fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380568"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 の WDF ドライバーの新機能
 
@@ -78,7 +78,7 @@ Windows 10、バージョン 1703 では、WDF に以下の機能強化が含ま
 
 * SleepStudy ツールから KMDF ドライバーに関する情報が提供される
 
-    SleepStudy ソフトウェア ツールからは、システムがスリープに入ることを防ぐ、KMDF ドライバーの電源参照の数が報告されます。  詳細については、「[モダン スタンバイの SleepStudy](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/modern-standby-sleepstudy)」を参照してください。
+    SleepStudy ソフトウェア ツールからは、システムがスリープに入ることを防ぐ、KMDF ドライバーの電源参照の数が報告されます。  詳細については、「[モダン スタンバイの SleepStudy](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby-sleepstudy)」を参照してください。
 
 このページの残りでは、Windows 10、バージョン 1507 で追加された機能について説明します。
 
@@ -99,7 +99,7 @@ WinDbg を使用して Windows 10 の WDF ドライバーをデバッグする�
 ## <a name="universal-driver-compliance"></a>ユニバーサル ドライバー コンプライアンス
 
 
-WDF ドライバーのサンプルと Visual Studio ドライバーのテンプレートはすべて、[ユニバーサル Windows ドライバー](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)に準拠しています。
+WDF ドライバーのサンプルと Visual Studio ドライバーのテンプレートはすべて、[ユニバーサル Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers)に準拠しています。
 
 KMDF と UMDF 2 の機能はすべて、ユニバーサル Windows ドライバーに準拠しています。
 
@@ -110,7 +110,7 @@ UMDF 1 ドライバーは、Windows 10 デスクトップ エディションと�
 
 -   すべての KMDF ドライバーと UMDF 2 ドライバーで、常にオンで常に利用できる Inflight Trace Recorder (IFR) を使用できます。 ドライバーからカスタム トレースが与えられるとき、ドライバー IFR ログにはトレース メッセージが含まれます。 新しいドライバー IFR ログは、ドライバーごとに WDF によって作成されるフレームワーク IFR ログとは分かれていることに注目してください。
 
-    IFR は簡単にオンにできます。 「[トレースをログに記録するための Inflight Trace Recorder (IFR)](https://msdn.microsoft.com/library/windows/hardware/dn914610)」と「[KMDF ドライバーと UMDF ドライバーで Inflight Trace Recorder を使用する](using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)」を参照してください。
+    IFR は簡単にオンにできます。 「[トレースをログに記録するための Inflight Trace Recorder (IFR)](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-wpp-recorder)」と「[KMDF ドライバーと UMDF ドライバーで Inflight Trace Recorder を使用する](using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)」を参照してください。
 
 -   IFR によって、ページングできないメモリの WPP トレースの循環バッファーが保守管理されます。 ドライバーがクラッシュする場合、クラッシュ ダンプ ファイルにログが入っていることがたびたびあります。
 
@@ -118,21 +118,21 @@ UMDF 1 ドライバーは、Windows 10 デスクトップ エディションと�
 
     -   IFR ログは、それを担当するドライバーが不明の場合やクラッシュがホストのタイムアウトであった場合を除き、ミニダンプ ファイルに入ります。
 
-    -   デバッガーを接続している場合、[**!wdfkd.wdflogdump**](https://msdn.microsoft.com/library/windows/hardware/ff565805) を発行することでドライバーとフレームワークの両方の IFR ログにアクセスできます。
+    -   デバッガーを接続している場合、[ **!wdfkd.wdflogdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump) を発行することでドライバーとフレームワークの両方の IFR ログにアクセスできます。
 
     -   デバッガーを接続していない場合でも両方のログにアクセスできます。  方法については、「[ デバッガーなしでドライバー IFR ログにアクセスする](video--accessing-driver-ifr-logs-without-a-debugger.md)」 を参照してください。
 
-    -   UMDF ドライバーをデバッグするとき、**!wdfkd.wdflogdump** *&lt;drivername.dll&gt;* **-m** を発行することでフレームワーク ログとドライバー ログを結合できます。
+    -   UMDF ドライバーをデバッグするとき、 **!wdfkd.wdflogdump** *&lt;drivername.dll&gt;* **-m** を発行することでフレームワーク ログとドライバー ログを結合できます。
 
 -   UMDF ログ (WudfTrace.etl) とダンプは、%ProgramData%\\Microsoft\\WDF instead of %systemDrive%\\LogFiles\\Wudf に置かれるようになりました。
 
--   新しいデバッガー コマンド [**!wdfkd.wdfumtriage**](https://msdn.microsoft.com/library/windows/hardware/dn961126) を実行すると、システムの全 UMDF デバイスをカーネルを中心として表示できます。
+-   新しいデバッガー コマンド [ **!wdfkd.wdfumtriage**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumtriage) を実行すると、システムの全 UMDF デバイスをカーネルを中心として表示できます。
 
--   [**!analyze**](https://msdn.microsoft.com/library/windows/hardware/ff562112) を実行すると、UMDF 検証ツールの失敗や UMDF の未処理例外を調査できます。 これはライブ カーネル デバッグと、*%ProgramData%*\\Microsoft\\WDF からのユーザー クラッシュ ダンプ ファイルのデバッグで機能します。
+-   [ **!analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) を実行すると、UMDF 検証ツールの失敗や UMDF の未処理例外を調査できます。 これはライブ カーネル デバッグと、 *%ProgramData%* \\Microsoft\\WDF からのユーザー クラッシュ ダンプ ファイルのデバッグで機能します。
 
 -   KMDF と UMDF 2 では、デバッガーの電源参照使用を監視できます。 詳細については、「[WDF を使用した Power 参照リークのデバッグ](debugging-power-reference-leaks-in-wdf.md)」を参照してください。
 
--   [**!wdfkd.wdfcrashdump**](https://msdn.microsoft.com/library/windows/hardware/ff565682) を使用すると、UMDF 2 ドライバーに関するエラー情報を表示できます。 詳細については、「**!wdfkd.wdfcrashdump**」を参照してください。
+-   [ **!wdfkd.wdfcrashdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcrashdump) を使用すると、UMDF 2 ドライバーに関するエラー情報を表示できます。 詳細については、「 **!wdfkd.wdfcrashdump**」を参照してください。
 
 ## <a name="performance-tracing-tool-for-wdf-drivers"></a>WDF ドライバーのパフォーマンス トレース ツール
 

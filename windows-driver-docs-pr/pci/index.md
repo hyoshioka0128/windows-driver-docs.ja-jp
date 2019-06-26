@@ -17,12 +17,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 180cb4ad234242d536f7124b6f84f6dcbe21c89a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1f9558b563fcadcb3ade7461de2b88daf2f0882
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391633"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393379"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI ドライバー プログラミング ガイド
 
@@ -30,7 +30,7 @@ ms.locfileid: "63391633"
 ## <a name="supported-pcie-features-in-windows"></a>Windows でサポートされている PCIe 機能
 
 
-次の表は、さまざまなバージョンの Windows でサポートされている PCIe 機能をまとめたものです。 詳細については、[公式の PCIe の仕様](http://www.pcisig.com/specifications/pciexpress/review_zone/)の指定のセクションをご覧ください。
+次の表は、さまざまなバージョンの Windows でサポートされている PCIe 機能をまとめたものです。 詳細については、[公式の PCIe の仕様](http://pcisig.com/specifications/review-zone)の指定のセクションをご覧ください。
 
 <table>
 <colgroup>
@@ -97,7 +97,7 @@ ms.locfileid: "63391633"
 </tr>
 <tr class="even">
 <td><p>シングル ルート I/O 仮想化 (SR-IOV)</p>
-<p>「<a href="https://msdn.microsoft.com/library/windows/hardware/hh440235" data-raw-source="[Single Root I/O Virtualization (SR-IOV)](https://msdn.microsoft.com/library/windows/hardware/hh440235)">Single Root I/O Virtualization (SR-IOV) (シングル ルート I/O 仮想化 (SR-IOV))</a>」をご覧ください。</p></td>
+<p>「<a href="https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-" data-raw-source="[Single Root I/O Virtualization (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)">Single Root I/O Virtualization (SR-IOV) (シングル ルート I/O 仮想化 (SR-IOV))</a>」をご覧ください。</p></td>
 <td><p>Windows 8</p>
 <p>Windows Server 2012</p></td>
 </tr>
@@ -111,16 +111,16 @@ ms.locfileid: "63391633"
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [PCI 電源の管理とデバイス ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn607302)
--   [PCI デバイス構成領域へのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff536890)
--   [I/O リソース使用量の削減](https://msdn.microsoft.com/library/windows/hardware/ff537424)
--   [開始デバイス IRP でのリソースの順序](https://msdn.microsoft.com/library/windows/hardware/ff537445)
--   [PCI Express のグラフィックスに関する FAQ](https://msdn.microsoft.com/library/windows/hardware/dn653979)
--   [PCI のサンプル](https://msdn.microsoft.com/library/windows/hardware/hh450892)
+-   [PCI 電源の管理とデバイス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-power-management-and-device-drivers)
+-   [PCI デバイス構成領域へのアクセス](https://docs.microsoft.com/windows-hardware/drivers/pci/accessing-pci-device-configuration-space)
+-   [I/O リソース使用量の削減](https://docs.microsoft.com/windows-hardware/drivers/pci/i-o-resource-usage-reduction)
+-   [開始デバイス IRP でのリソースの順序](https://docs.microsoft.com/windows-hardware/drivers/pci/order-of-resources-in-start-device-irp)
+-   [PCI Express のグラフィックスに関する FAQ](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-express-faq-for-graphics)
+-   [PCI のサンプル](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-sample)
 
 
 ## <a name="see-also"></a>参照
--   [公式の PCIe の仕様](http://www.pcisig.com/specifications/pciexpress/review_zone/)
+-   [公式の PCIe の仕様](http://pcisig.com/specifications/review-zone)
 
  
 

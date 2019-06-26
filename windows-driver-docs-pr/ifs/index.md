@@ -6,17 +6,17 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 018a4787252d6c76dd96e3883b467c9c808c5470
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80820f7c46f3f46e52645285d552cdbef411018b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375686"
 ---
 # <a name="installable-file-systems-driver-design-guide"></a>インストール可能ファイル システム ドライバー設計ガイド
 
 
-Windows のファイル システムは、ストレージ システムの上で動作するファイル システム ドライバーとして実装されます。 Windows の各ファイル システムは、信頼性の高いデータ ストレージを与えるように設計されています。さまざまな機能でユーザーの要件を満たします。 Windows の各標準ファイル システムの機能比較は、「[File System Functionality Comparison](https://msdn.microsoft.com/library/windows/desktop/ee681827)」 (ファイル システムの機能比較) にあります。 Windows Server 2012 の新機能は ReFS です。 ReFS は、スケーラブルに大容量をサポートし、ディスク上のデータ破損を検出して、修復できるファイル システムです。
+Windows のファイル システムは、ストレージ システムの上で動作するファイル システム ドライバーとして実装されます。 Windows の各ファイル システムは、信頼性の高いデータ ストレージを与えるように設計されています。さまざまな機能でユーザーの要件を満たします。 Windows の各標準ファイル システムの機能比較は、「[File System Functionality Comparison](https://docs.microsoft.com/windows/desktop/FileIO/filesystem-functionality-comparison)」 (ファイル システムの機能比較) にあります。 Windows Server 2012 の新機能は ReFS です。 ReFS は、スケーラブルに大容量をサポートし、ディスク上のデータ破損を検出して、修復できるファイル システムです。
 
 Windows 提供のものに加え、新しいファイル システム ドライバーを作成する必要はおそらくありません。 ファイル システムとファイル システム フィルター ドライバーによって、既存のファイル システムの操作を変更するために必要なあらゆる動作をカスタマイズできます。
 
@@ -30,7 +30,7 @@ Windows 提供のものに加え、新しいファイル システム ドライ�
 ## <a name="span-idfilesystemfilterdrivercertificationspanspan-idfilesystemfilterdrivercertificationspanspan-idfilesystemfilterdrivercertificationspanfile-system-filter-driver-certification"></a><span id="File_System_Filter_Driver_Certification"></span><span id="file_system_filter_driver_certification"></span><span id="FILE_SYSTEM_FILTER_DRIVER_CERTIFICATION"></span>ファイル システム フィルター ドライバー認定
 
 
-ファイル システムとファイル システム フィルター ドライバーの認定情報は [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613) にあります。 ファイル システムとファイル システム フィルター ドライバーのテストは HCK の [Filter.Driver](https://msdn.microsoft.com/library/windows/hardware/jj124779) カテゴリにあります。
+ファイル システムとファイル システム フィルター ドライバーの認定情報は [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613) にあります。 ファイル システムとファイル システム フィルター ドライバーのテストは HCK の [Filter.Driver](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124779(v=vs.85)) カテゴリにあります。
 
 ## <a name="span-idfilesystemfilterdriverdeveloperresourcesspanspan-idfilesystemfilterdriverdeveloperresourcesspanspan-idfilesystemfilterdriverdeveloperresourcesspanfile-system-filter-driver-developer-resources"></a><span id="File_System_Filter_Driver_Developer_Resources"></span><span id="file_system_filter_driver_developer_resources"></span><span id="FILE_SYSTEM_FILTER_DRIVER_DEVELOPER_RESOURCES"></span>ファイル システム フィルター ドライバー開発者リソース
 

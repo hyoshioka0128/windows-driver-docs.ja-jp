@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 95b4c9591a701c1a16b80590addb7eee35d2acf9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00f9ca560a7b0374c9e91fa47db4cd94910ae869
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371260"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372612"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows ドライバーの概要
 
@@ -38,7 +38,7 @@ ms.locfileid: "63371260"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Windows Driver Kit (WDK)](https://msdn.microsoft.com/library/windows/hardware/ff557573)
+[Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/)
 
 [ドライバーのセキュリティ ガイダンス](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/)
 

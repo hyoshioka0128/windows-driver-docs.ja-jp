@@ -14,12 +14,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 4e40115732291ff40d95066ad500a3f0f5e5448d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75849ee70ab54e5ca094274af8d8d110be78601b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386470"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows Hardware Error Architecture (WHEA) 設計ガイド
 
@@ -34,7 +34,7 @@ ms.locfileid: "63340803"
 
 WHEA の詳細とハードウェア プラットフォームでの WHEA の実装方法については、「WHEA Platform Design Guide (WHEA プラットフォーム設計ガイド)」を参照してください。 プラットフォーム ベンダーは、<wheafb@microsoft.com> に電子メールを送信してこの設計ガイドを入手できます。
 
-**注**   WHEA は、Windows Vista、Windows Server 2008、およびそれ以降のバージョンの Windows オペレーティング システムでサポートされています。 Windows Vista より前のバージョンの Microsoft Windows でサポートされているハードウェア エラー レポートについては、「[Machine Check Architecture (MCA)](https://msdn.microsoft.com/library/windows/hardware/ff540685)」を参照してください。
+**注**   WHEA は、Windows Vista、Windows Server 2008、およびそれ以降のバージョンの Windows オペレーティング システムでサポートされています。 Windows Vista より前のバージョンの Microsoft Windows でサポートされているハードウェア エラー レポートについては、「[Machine Check Architecture (MCA)](https://docs.microsoft.com/previous-versions/windows/hardware/mca/ff540685(v=vs.85))」を参照してください。
 
  
 
@@ -58,9 +58,9 @@ WHEA の詳細とハードウェア プラットフォームでの WHEA の実�
 [Windows Hardware Error Architecture デバッガー拡張機能](windows-hardware-error-architecture-debugger-extensions.md)
 
 ## <a name="related-topics"></a>関連トピック
-[Windows Hardware Error Architecture ACPI テーブルの仕様](https://msdn.microsoft.com/windows/hardware/gg463511)  
-[ハードウェアの管理とセキュリティ](https://msdn.microsoft.com/library/windows/hardware/dn614601)  
-[**Bug Check 0x124:WHEA\_UNCORRECTABLE\_ERROR (Windows デバッガー)**](https://msdn.microsoft.com/library/windows/hardware/ff557321)  
+[Windows Hardware Error Architecture ACPI テーブルの仕様](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/WHEA_ACPI-tables.docx)  
+[ハードウェアの管理とセキュリティ](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614601(v=vs.85))  
+[**Bug Check 0x124:WHEA\_UNCORRECTABLE\_ERROR (Windows デバッガー)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x124---whea-uncorrectable-error)  
 
 
 

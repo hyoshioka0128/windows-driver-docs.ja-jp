@@ -12,12 +12,12 @@ ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 07e076c9e410d035cf564d2a64ba4c253041a17a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35eb1449cc09ac664bbfba5eab0801e294d1b765
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360786"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372981"
 ---
 # <a name="driver-development-tools"></a>ドライバー開発ツール
 
@@ -46,16 +46,16 @@ ms.locfileid: "63360786"
 <p><a href="tools-for-software-tracing.md" data-raw-source="[Tools for Software Tracing](tools-for-software-tracing.md)">ソフトウェア トレース用ツール</a></p>
 <p><a href="additional-driver-tools.md" data-raw-source="[Additional Driver Tools](additional-driver-tools.md)">その他のドライバー ツール</a></p>
 <td align="left"><p><strong>リソース</strong></p>
-<p><a href="https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers" data-raw-source="[Getting Started with Universal Windows Drivers](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)">ユニバーサル Windows ドライバーの概要</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Getting Started with Universal Windows Drivers](https://docs.microsoft.com/windows-hardware/drivers)">ユニバーサル Windows ドライバーの概要</a></p>
 <p>ユニバーサル Windows ドライバーを使うと、組み込みシステムからタブレットやデスクトップ PC まで、複数の種類のデバイスで動作する 1 つのドライバーを作成できます。 ハードウェア開発者は、フォーム ファクターが違っても、既存のコンポーネントとデバイス ドライバーを使用することができます。</p>
-<p><a href="https://msdn.microsoft.com/windows-drivers/develop/converting_wdk_8_1_projects_to_wdk_10" data-raw-source="[Converting WDK 8.1 Projects to WDK 10](https://msdn.microsoft.com/windows-drivers/develop/converting_wdk_8_1_projects_to_wdk_10)">WDK 8.1 プロジェクトから WDK 10 への変換</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Converting WDK 8.1 Projects to WDK 10](https://docs.microsoft.com/windows-hardware/drivers)">WDK 8.1 プロジェクトから WDK 10 への変換</a></p>
 <p>WDK 8 や Windows Driver Kit (WDK) 8.1 を使って作成したプロジェクトやソリューションを、Windows Driver Kit (WDK) 10 と Visual Studio 2015 で動作するように変換できます。 プロジェクトやソリューションを開く前に、ProjectUpgradeTool を実行してください。 ProjectUpgradeTool はプロジェクトとソリューションを変換し、WDK for Windows 10 を使って構築できるようにします。</p>
 <p></p>
-<p><a href="https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers" data-raw-source="[Validating Universal Windows drivers](https://msdn.microsoft.com/windows-drivers/develop/validating_universal_drivers)">ユニバーサル Windows ドライバーの検証</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Validating Universal Windows drivers](https://docs.microsoft.com/windows-hardware/drivers)">ユニバーサル Windows ドライバーの検証</a></p>
 <p>ApiValidator.exe ツールを使うと、ドライバーから呼び出される API が、ユニバーサル Windows ドライバーにとって有効であるかどうかを確認できます。 ユニバーサル Windows ドライバーにとって有効な API セットの外部にある API をドライバーが呼び出すと、エラーが返されます。 このツールは、WDK for Windows 10 の一部です。</p>
 <a href="wdk-and-visual-studio-build-environment.md" data-raw-source="[WDK and Visual Studio build environment](wdk-and-visual-studio-build-environment.md)">WDK と Visual Studio のビルド環境</a>
 <p>ドライバー開発者向けの WDK と Visual Studio ビルド環境の使用に関する詳細情報とヒントは以下で確認できます。</p>
-<a href="https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment" data-raw-source="[Developing, Testing, and Deploying Drivers](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)">ドライバーの開発、テスト、および展開</a>
+<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Developing, Testing, and Deploying Drivers](https://docs.microsoft.com/windows-hardware/drivers)">ドライバーの開発、テスト、および展開</a>
 <p>Visual Studio 開発環境でのドライバーの構築、検証ツールの使用、テストに特化した情報を確認できます。</p></td>
 </tr>
 </tbody>

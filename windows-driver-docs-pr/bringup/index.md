@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 9d891f71c09c066030be98387068a706ddb49c19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65386ecb58d51a43a28ef24fc9cd9317e7009a61
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364528"
 ---
 # <a name="bring-up-guide"></a>起動ガイド
 
@@ -45,7 +45,7 @@ ms.locfileid: "63337531"
 </tr>
 <tr>
 <td><p><a href="windows-acpi-design-guide-for-soc-platforms.md" data-raw-source="[Windows ACPI design guide for SoC platforms](windows-acpi-design-guide-for-soc-platforms.md)">SoC プラットフォーム向け Windows ACPI 設計ガイド</a></p></td>
-<td><p>Advanced Configuration and Power Interface Specification, Revision 5.0 (<a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 仕様</a>) では、システム オン チップ (SoC) IC をベースとし、コネクト スタンバイ電源モデルを実装する省電力のモバイル デバイスをサポートする新しい機能のセットが定義されています。 Windows 8/Windows 8.1 および Windows Server 2012/2012 R2 以降の Windows では、SoC ベースのプラットフォーム向けの新しい ACPI 5.0 の機能がサポートされます。</p></td>
+<td><p>Advanced Configuration and Power Interface Specification, Revision 5.0 (<a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 仕様</a>) では、システム オン チップ (SoC) IC をベースとし、コネクト スタンバイ電源モデルを実装する省電力のモバイル デバイスをサポートする新しい機能のセットが定義されています。 Windows 8/Windows 8.1 および Windows Server 2012/2012 R2 以降の Windows では、SoC ベースのプラットフォーム向けの新しい ACPI 5.0 の機能がサポートされます。</p></td>
 </tr>
 <tr>
 <td><p><a href="security-overview.md" data-raw-source="[Security](security-overview.md)">セキュリティ</a></p></td>

@@ -12,12 +12,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 14e7dc78177d9171608ed6a91032b44b60e7b74e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 683ae52d151ad6769dbae1eb780fd76cb4123358
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348182"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386203"
 ---
 # <a name="near-field-communications-nfc-design-guide"></a>近距離無線通信 (NFC) 設計ガイド
 
@@ -33,8 +33,8 @@ NFC のサポートを有効にするために、Microsoft は、これらのト
 User-Mode Driver Framework (UMDF) 2.0 を使用して、デスクトップ エディション (Home、Pro、Enterprise、および Education) 用の Windows 10 および Windows 10 Mobile 用の NFC ドライバーを作成します。
 
 ## <a name="related-topics"></a>関連トピック
- [UMDF の概要](https://msdn.microsoft.com/library/windows/hardware/dn384105)  
- [NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://msdn.microsoft.com/library/windows/hardware/mt715815)    
+ [UMDF の概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)  
+ [NFC デバイス ドライバー インターフェイス (DDI) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)    
 
 
 ----------
