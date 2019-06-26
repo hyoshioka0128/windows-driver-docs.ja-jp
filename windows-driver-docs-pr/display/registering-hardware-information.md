@@ -7,23 +7,23 @@ keywords:
 - レジストリの WDK 表示でハードウェアの情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8910e3aafbbc0532a6694a9f7db9ea3405cd00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2396c65a93cbe8ef8a52b3f7aff5b20c22a4aca3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378554"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386445"
 ---
 # <a name="registering-hardware-information"></a>ハードウェア情報の登録
 
 
-ユーザーとデバッグについての支援を有用な情報を表示するには、ディスプレイのミニポート ドライバーは、レジストリの特定のハードウェア情報を設定する必要があります。 ディスプレイのミニポート ドライバーには、チップの種類、アナログ デジタル コンバーター (DAC) 型、(アダプター) のメモリ サイズおよびアダプターを識別する文字列を設定する必要があります。 この情報で表示されます、**表示**コントロール パネルの アプリケーション。 通常、ドライバーがこの情報を設定その[ **DxgkDdiAddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff559586)関数。
+ユーザーとデバッグについての支援を有用な情報を表示するには、ディスプレイのミニポート ドライバーは、レジストリの特定のハードウェア情報を設定する必要があります。 ディスプレイのミニポート ドライバーには、チップの種類、アナログ デジタル コンバーター (DAC) 型、(アダプター) のメモリ サイズおよびアダプターを識別する文字列を設定する必要があります。 この情報で表示されます、**表示**コントロール パネルの アプリケーション。 通常、ドライバーがこの情報を設定その[ **DxgkDdiAddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_add_device)関数。
 
 この情報は、ドライバーを設定するには。
 
 1.  呼び出し、 **IoOpenDeviceRegistryKey**ドライバー固有の情報を格納するためです。 この呼び出しで、ドライバーは、PLUGPLAY を指定します\_REGKEY\_ドライバー フラグ、 *DevInstKeyType*パラメーターと、キー\_設定\_値、キー\_書き込み、またはキー\_すべて\_アクセス値で、 *DesiredAccess*パラメーター。
 
-2.  呼び出し、 [ **ZwSetValueKey** ](https://msdn.microsoft.com/library/windows/hardware/ff567109)ハードウェア情報の種類ごとの設定を複数回に機能します。 各呼び出しで、ドライバー単位で指定します、 *KeyHandle*パラメーターでは、ソフトウェア キー ハンドルから取得された**IoOpenDeviceRegistryKey**します。
+2.  呼び出し、 [ **ZwSetValueKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwsetvaluekey)ハードウェア情報の種類ごとの設定を複数回に機能します。 各呼び出しで、ドライバー単位で指定します、 *KeyHandle*パラメーターでは、ソフトウェア キー ハンドルから取得された**IoOpenDeviceRegistryKey**します。
 
     次の表に、ドライバーを選択し、登録する必要がありますの詳細を提供情報、 *ValueName*と*データ*パラメーターの**ZwSetValueKey**:
 

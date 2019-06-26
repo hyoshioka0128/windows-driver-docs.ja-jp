@@ -8,12 +8,12 @@ keywords:
 - 高速な I/O ディスパッチ ルーチン WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07967e2347cd4a7f41edfa80e80ee196969d8850
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c01659704ce6645b68643aa147b641dd68a597c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370314"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385135"
 ---
 # <a name="registering-fast-io-dispatch-routines"></a>高速 I/O ディスパッチ ルーチンの登録
 
@@ -21,7 +21,7 @@ ms.locfileid: "63370314"
 ## <span id="ddk_registering_fast_io_dispatch_routines_if"></span><span id="DDK_REGISTERING_FAST_IO_DISPATCH_ROUTINES_IF"></span>
 
 
-*DriverObject*パラメーター、フィルター ドライバーの[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンは、フィルター ドライバーへのポインターを提供[**ドライバーオブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff544174)します。
+*DriverObject*パラメーター、フィルター ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンは、フィルター ドライバーへのポインターを提供[**ドライバーオブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)します。
 
 ファイル システム フィルター ドライバーの高速な I/O ディスパッチ ルーチンを登録する必要がありますを割り当てると高速な I/O ディスパッチ テーブルを初期化、テーブルに高速の I/O ディスパッチ ルーチンのエントリ ポイントを格納および内のテーブルのアドレスを格納、 **FastIoDispatch**ドライバー オブジェクトのメンバー。
 

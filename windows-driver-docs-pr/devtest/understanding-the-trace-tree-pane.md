@@ -1,20 +1,20 @@
 ---
-title: '[Trace Tree]\(トレース ツリー) ウィンドウの概要'
-description: '[Trace Tree]\(トレース ツリー) ウィンドウの概要'
+title: '[Trace Tree] (トレース ツリー) ウィンドウの概要'
+description: '[Trace Tree] (トレース ツリー) ウィンドウの概要'
 ms.assetid: 98640d7e-29fc-4397-ac6b-47f4e17f88a1
 keywords:
 - 静的ドライバー検証レポートの WDK、トレースのツリー ウィンドウ
 - トレースのツリー ペイン WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bad7e81607d18d05e2ee4c487062a3b8a5430eff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c98788e5e772bfc8aa32038a80f832cf77cd3cf9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377770"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363798"
 ---
-# <a name="understanding-the-trace-tree-pane"></a>[Trace Tree]\(トレース ツリー) ウィンドウの概要
+# <a name="understanding-the-trace-tree-pane"></a>[Trace Tree] (トレース ツリー) ウィンドウの概要
 
 
 **トレース ツリー**ウィンドウ欠陥ビューアーの焦点であります。 コードでは、順を追って通常、**トレース ツリー**内のコードでは、その効果を見ているときに、ウィンドウ、**ソース コード**ウィンドウ内の値で、**状態**ウィンドウ。
@@ -33,7 +33,7 @@ ms.locfileid: "63377770"
 IoReleaseCancelSpinLock(KeGetCurrentIrql());
 ```
 
-このような状況で、**トレース ツリー**ウィンドウには重要な要素が含まれます、 [ **KeGetCurrentIrql** ](https://msdn.microsoft.com/library/windows/hardware/ff552054)関数呼び出し、SDV オペレーティング システムのモデルにいくつかの呼び出しランダムに生成、IRQL とし、呼び出しを[ **IoReleaseCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549550)返された IRQL とします。
+このような状況で、**トレース ツリー**ウィンドウには重要な要素が含まれます、 [ **KeGetCurrentIrql** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kegetcurrentirql)関数呼び出し、SDV オペレーティング システムのモデルにいくつかの呼び出しランダムに生成、IRQL とし、呼び出しを[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))返された IRQL とします。
 
  
 

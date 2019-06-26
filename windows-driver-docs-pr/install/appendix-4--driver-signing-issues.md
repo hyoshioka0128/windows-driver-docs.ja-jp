@@ -4,12 +4,12 @@ description: 2 つの既知のドライバーの署名に関する問題を以�
 ms.assetid: EC244022-A02B-4AAD-93EE-B9AE3E72A674
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1592fab6e387c7d4c01c005e62dcdaad77403b96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 273daee6b40dbe80fc9249a942be64acce40d521
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342012"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385635"
 ---
 # <a name="appendix-4-driver-signing-issues"></a>付録 4:ドライバーの署名の問題
 
@@ -38,7 +38,7 @@ Signtool sign /fd sha256 /ac C:\MyCrossCert\Crosscert.cer /s my /n “MyCompany 
 
 場所 XX.XX は、セカンダリ署名を使用する証明書のハッシュです。 タイムスタンプの署名に/tr を追加します。
 
-**注**  マイクロソフト セキュリティ アドバイザリを確認してください ([2880823](https://technet.microsoft.com/library/security/2880823))"非推奨の sha-1 ハッシュ アルゴリズムの Microsoft Root Certificate Program"を記述するポリシーの変更、Microsoft がありません現在の SSL とコード署名の 2016 年 1 月 1 日の後の目的の sha-1 ハッシュ アルゴリズムを使用して X.509 証明書を発行する証明書機関のルートを許可します。
+**注**  マイクロソフト セキュリティ アドバイザリを確認してください ([2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823))"非推奨の sha-1 ハッシュ アルゴリズムの Microsoft Root Certificate Program"を記述するポリシーの変更、Microsoft がありません現在の SSL とコード署名の 2016 年 1 月 1 日の後の目的の sha-1 ハッシュ アルゴリズムを使用して X.509 証明書を発行する証明書機関のルートを許可します。
 
  
 

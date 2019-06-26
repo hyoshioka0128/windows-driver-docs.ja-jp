@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 961bcb465af3150829a5e9bee1ee28b2d42ac47e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cb251fd01ee2f96b941af63536fec4963d09d27
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324367"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384831"
 ---
 # <a name="irpmjfilesystemcontrol"></a>IRP\_MJ\_ファイル\_システム\_コントロール
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324367"
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_ファイル\_システム\_コントロール要求がや他のカーネル モード ドライバー I/O マネージャーとその他のオペレーティング システム コンポーネントによって送信されます。 送信できる、たとえば、ユーザー モード アプリケーションには、Microsoft Win32 が呼び出されたときに[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)ファイル システム I/O コントロール (FSCTL) 要求を送信する関数。
+IRP\_MJ\_ファイル\_システム\_コントロール要求がや他のカーネル モード ドライバー I/O マネージャーとその他のオペレーティング システム コンポーネントによって送信されます。 送信できる、たとえば、ユーザー モード アプリケーションには、Microsoft Win32 が呼び出されたときに[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)ファイル システム I/O コントロール (FSCTL) 要求を送信する関数。
 
 ## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
 
@@ -56,7 +56,7 @@ IRP\_MJ\_ファイル\_システム\_コントロール要求がや他のカー�
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_USER_FS_REQUEST</p></td>
-<td align="left"><p>Microsoft Win32 DeviceIoControl 関数と呼ばれる、ユーザー モード アプリケーションに代わって可能性がありますまたはカーネル モード コンポーネントと呼ばれるに代わって、FSCTL の要求を示します<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"> <strong>ZwDeviceIoControlFile</strong></a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff548318" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548318)"> <strong>IoBuildDeviceIoControlRequest</strong></a>します。</p>
+<td align="left"><p>Microsoft Win32 DeviceIoControl 関数と呼ばれる、ユーザー モード アプリケーションに代わって可能性がありますまたはカーネル モード コンポーネントと呼ばれるに代わって、FSCTL の要求を示します<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"> <strong>ZwDeviceIoControlFile</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"> <strong>IoBuildDeviceIoControlRequest</strong></a>します。</p>
 <p>FSCTL 要求の詳細については、Microsoft Windows SDK ドキュメントの「デバイスの入力と出力コントロールのコード」を参照してください。</p></td>
 </tr>
 <tr class="even">
@@ -101,7 +101,7 @@ IRP\_MJ\_ファイル\_システム\_コントロール要求がや他のカー�
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://msdn.microsoft.com/library/windows/hardware/ff550659)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所、ファイル システムの制御要求の処理には、次のメンバーで設定されている情報を使用できます。
+ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所、ファイル システムの制御要求の処理には、次のメンバーで設定されている情報を使用できます。
 
 <a href="" id="deviceobject"></a>*デバイス オブジェクト*  
 ターゲット デバイスのオブジェクトへのポインター。
@@ -110,7 +110,7 @@ IRP\_MJ\_ファイル\_システム\_コントロール要求がや他のカー�
 ターゲット ボリュームのファイル システムまたはファイル システム フィルター ドライバーに渡されるシステム指定の入力バッファーへのポインター。 メソッドの使用\_バッファーに格納された、またはメソッド\_ダイレクト I/O。 このパラメーターが必要かどうかは、特定のファイル システムの制御コードに依存します。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-ポインター、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)最終的な完了の状態と、要求された操作に関する情報を受け取る。
+ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。
 
 <a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
 ターゲット ボリュームのファイル システムまたはファイル システム フィルター ドライバーに渡される出力バッファーを記述するメモリ記述子一覧 (MDL) のアドレス。 メソッドの使用\_ダイレクト I/O。 このパラメーターが必要かどうかは、特定の I/O 制御コードに依存します。
@@ -143,7 +143,7 @@ IRP を指定します\_MJ\_ファイル\_システム\_コントロール。
 <a href="" id="irpsp--parameters-filesystemcontrol-fscontrolcode"></a>*IrpSp-&gt;Parameters.FileSystemControl.FsControlCode*  
 ターゲット ボリュームのファイル システムまたはファイル システム フィルター ドライバーに渡される FSCTL 関数コードです。 IRP で使用するため\_MN\_ユーザー\_FS\_のみを要求します。
 
-IOCTL および FSCTL 要求の詳細については、次を参照してください[I/O 制御コードを使用して](https://msdn.microsoft.com/library/windows/hardware/ff565406)で、*カーネル モードのアーキテクチャ ガイド*と"デバイスの入力と出力の制御コード"、Microsoft Windows sdk。ドキュメントです。
+IOCTL および FSCTL 要求の詳細については、次を参照してください[I/O 制御コードを使用して](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)で、*カーネル モードのアーキテクチャ ガイド*と"デバイスの入力と出力の制御コード"、Microsoft Windows sdk。ドキュメントです。
 
 <a href="" id="irpsp--parameters-filesystemcontrol-inputbufferlength"></a>*IrpSp-&gt;Parameters.FileSystemControl.InputBufferLength*  
 によって示されるバッファーのバイト サイズ*Irp -&gt;AssociatedIrp.SystemBuffer*します。
@@ -169,19 +169,19 @@ IOCTL および FSCTL 要求の詳細については、次を参照してくだ�
 ## <a name="see-also"></a>関連項目
 
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)
+[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)
 
-[**IoBuildDeviceIoControlRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548318)
+[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
 
-[**IoBuildSynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548330)
+[**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)
 

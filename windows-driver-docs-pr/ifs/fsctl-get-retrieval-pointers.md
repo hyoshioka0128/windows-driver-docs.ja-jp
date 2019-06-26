@@ -14,26 +14,26 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf4e8f8a9444818e00007be4b6b511dc9a59ad6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b500a5ba4094de7de16dd26f8b90a5df9e764122
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571394"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365024"
 ---
 # <a name="fsctlgetretrievalpointers-control-code"></a>FSCTL\_取得\_取得\_ポインター制御コード
 
 
 **FSCTL\_取得\_取得\_ポインター**制御コードは、特定のファイルのディスクの割り当てと場所を記述する可変サイズのデータ構造を取得します。 構造体には、仮想クラスター番号 (ために、VCN、ファイルまたはストリーム領域内のオフセット) および論理クラスター番号 (LCN、ボリュームの領域内のオフセット) 間のマッピングについて説明します。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 再解析ポイントと FSCTL の詳細については\_取得\_取得\_ポインター制御コードを Microsoft Windows SDK のマニュアルを参照してください。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 代替ストリーム、ファイル、またはどの FSCTL のディレクトリのファイル オブジェクト ポインター\_取得\_取得\_ポインターは、マッピングを取得します。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 代替ストリーム、ファイル、またはどの FSCTL のディレクトリのファイル オブジェクト ポインター\_取得\_取得\_ポインターは、マッピングを取得します。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 代替ストリーム、ファイル、またはどの FSCTL のディレクトリのファイル ハンドル\_取得\_取得\_ポインターは、マッピングを取得します。 場合の値*FileHandle* VCNs と不良クラスターのファイルのエクステントのマップ、ルーチンを返します、ボリューム全体のハンドルです。 このパラメーターが必要とすることはできません**NULL**します。
@@ -53,7 +53,7 @@ typedef struct {
 **メンバー**
 
 <a href="" id="startingvcn"></a>**StartingVcn**  
-ために、どの FSCTL で VCN\_取得\_取得\_ポインターは、エクステントおよび関連付けられている仮想と論理クラスター番号の列挙を開始します。 最初の呼び出しで[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ファイルのシステム コントロールのコードは FSCTL\_取得\_取得\_ポインター、 **StartingVcn** 0 に設定する必要があります。
+ために、どの FSCTL で VCN\_取得\_取得\_ポインターは、エクステントおよび関連付けられている仮想と論理クラスター番号の列挙を開始します。 最初の呼び出しで[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ファイルのシステム コントロールのコードは FSCTL\_取得\_取得\_ポインター、 **StartingVcn** 0 に設定する必要があります。
 
 場合*OutputBuffer*が十分に大きくない VCNs とファイルのエクステントのマップ全体を保持するために、呼び出し元する必要がありますより多くのマップ データを使用して要求で返される値、 **NextVcn**取得のメンバー\_ポインター\_のために、開始、VCN として、バッファーの構造体。
 
@@ -97,13 +97,13 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)状態を返す両方\_成功または適切な NTSTATUS エラー値。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)状態を返す両方\_成功または適切な NTSTATUS エラー値。
 
-場合のために、VCN エクステント マップが適合しない/ *OutputBuffer*、2 つのルーチンは、状態の値を返す\_バッファー\_オーバーフロー、および呼び出し元に返される値を使用して複数のマップ データを要求する必要があります、 **NextVcn**メンバー取得の\_ポインター\_ために、開始、VCN とバッファーの構造 (**StartingVcn**) には、次の呼び出しで[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)します。
+場合のために、VCN エクステント マップが適合しない/ *OutputBuffer*、2 つのルーチンは、状態の値を返す\_バッファー\_オーバーフロー、および呼び出し元に返される値を使用して複数のマップ データを要求する必要があります、 **NextVcn**メンバー取得の\_ポインター\_ために、開始、VCN とバッファーの構造 (**StartingVcn**) には、次の呼び出しで[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)します。
 
 場合に指定されている値**StartingVcn**がステータス、ファイルの末尾を越える\_エンド\_の\_ファイルが返されます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **FSCTL\_取得\_取得\_ポインター**制御コードは、FastFAT および exFAT のデバイスで使用できます。 この機能は、フラッシュ ドライブなどのデバイス用の BitLocker の使用をサポートします。
@@ -127,7 +127,7 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

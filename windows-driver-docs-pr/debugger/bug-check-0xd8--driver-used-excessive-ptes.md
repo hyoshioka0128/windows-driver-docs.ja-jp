@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 14a782223f3bcd1842ca9cc06f6f6d103c60be49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9b901c992123018f4c957dca89d1a4b368923f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371740"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367138"
 ---
 # <a name="bug-check-0xd8-driverusedexcessiveptes"></a>バグ チェック 0xD8:ドライバー\_使用\_の過剰な\_PTE
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371740"
 ドライバー\_使用\_の過剰な\_PTE バグ チェックが 0x000000D8 の値を持ちます。 これがない複数のシステム ページ テーブル エントリ (PTE) の残りを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="driverusedexcessiveptes-parameters"></a>ドライバー\_使用\_の過剰な\_PTE パラメーター

@@ -6,12 +6,12 @@ keywords:
 - 行パターンの繰り返し WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce303a8f85fb7e1aba7aaf00cb3da37f62986d97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e613c3ac27101017036c2842fbd42cff1d2c548
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365551"
 ---
 # <a name="setting-the-number-of-line-pattern-repetitions"></a>行パターン繰り返しの数の設定
 
@@ -21,7 +21,7 @@ ms.locfileid: "63390432"
 
 アプリケーションは、solid またはパターンの行を使用するプリミティブを表示するために、Direct3D デバイスを直接送信できます。 アプリケーションは、デバイスは、繰り返しパターンをサポートしている場合、特定の行のパターンを拡張もできます。 デバイスのドライバーが、D3DPMISCCAPS を設定する必要があります\_LINEPATTERNREP デバイスが、パターンを特定の行を繰り返しをサポートしていることを示すフラグ。 このフラグを設定する方法は、DirectX のバージョンによって異なります。
 
--   DirectX 7.0 以降このフラグを設定、 **dwMiscCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)構造体。
+-   DirectX 7.0 以降このフラグを設定、 **dwMiscCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体。
 
 -   DirectX 8.0 以降では、このフラグを設定、 **PrimitiveMiscCaps** 、D3DCAPS のメンバー*Xx*構造、場所*Xx* DirectX のバージョン (たとえば、D3DCAPS8 を示しますバージョン 8 とバージョン 9 D3DCAPS9)。 DirectX SDK ドキュメントのそれぞれのバージョンでは、D3DCAPS8 と D3DCAPS9 が説明します。
 

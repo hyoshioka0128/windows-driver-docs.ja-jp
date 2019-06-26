@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: da3053780adbfa1717a3adc30e3dda8fed390168
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84f5a2916529f95aaa945dbce03bc9e10555067f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334649"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363171"
 ---
 # <a name="bugdump"></a>!bugdump
 
@@ -64,7 +64,7 @@ ms.locfileid: "63334649"
 
 この拡張機能は、バグ チェックが行われた後、またはカーネル モードのクラッシュ ダンプ ファイルをデバッグするときにのみ使用できます。
 
-*コンポーネント*パラメーターで使用される最後のパラメーターに対応[ **KeRegisterBugCheckCallback**](https://msdn.microsoft.com/library/windows/hardware/ff553105)します。
+*コンポーネント*パラメーターで使用される最後のパラメーターに対応[ **KeRegisterBugCheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)します。
 
 最小メモリ ダンプには、コールバックのデータを保持するバッファーを使用できません。 これらのバッファーは、カーネル メモリ ダンプし、完全メモリ ダンプに存在します。 ただし、Windows XP SP1、Windows Server 2003、および以降のバージョンの Windows、ダンプ ファイルが作成されるドライバーの前に**BugCheckCallback**ルーチンが呼び出され、そのため、これらのバッファーにはこれらによって書き込まれたデータは含まないルーチン。
 

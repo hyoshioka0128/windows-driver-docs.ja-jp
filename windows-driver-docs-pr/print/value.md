@@ -6,12 +6,12 @@ keywords:
 - 値の構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92dda2e223f51cf507b07411db7d51d8f227255d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c8724d2049a7417c7b02fb80124012840b48de8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376456"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384513"
 ---
 # <a name="value-wsd"></a>Value (WSD)
 
@@ -43,12 +43,12 @@ WSD`Value`コンストラクトでは、Web サービス インターフェイ�
 <td><p>スキーマの値の名前。</p></td>
 </tr>
 <tr class="even">
-<td><p>クエリ (query)</p></td>
+<td><p>query</p></td>
 <td><p>WSD モニターを実行するクエリの型。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>type</strong></p></td>
-<td><p>内のデータ型、 <code>Value</code> 値を構築、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
+<td><p>内のデータ型、 <code>Value</code> 値を構築、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>xmllang</strong></p></td>

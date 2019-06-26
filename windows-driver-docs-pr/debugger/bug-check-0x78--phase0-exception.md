@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 23b604756518a17ec586637e963e8e8bb2df4b8d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: fd61f9bc89601692e8d8c57aee1d866a1fe109ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903740"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367333"
 ---
 # <a name="bug-check-0x78-phase0exception"></a>バグ チェック 0x78:PHASE0\_例外
 
@@ -28,7 +28,7 @@ PHASE0\_例外のバグ チェックが 0x00000078 の値を持ちます。
 このバグ チェックでは、HAL の初期化中に、予期しない中断が発生したときに発生します。 設定した場合、この中断が発生する可能性が、 **中断/** ブート設定でパラメーターがカーネル デバッグを有効にしていません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
  

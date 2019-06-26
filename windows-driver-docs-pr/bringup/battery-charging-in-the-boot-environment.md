@@ -4,12 +4,12 @@ description: Windows 10 Mobile 用のブート環境でのバッテリー充電
 ms.assetid: 5aa1ef68-6939-4896-aabd-d499ba23f89f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21508f751ebaf0a5ffb5e90fbb49609e436dd505
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 228cc7c671f0b1fcb88cc95adcade6d7cd240051
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328148"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364634"
 ---
 # <a name="battery-charging-in-the-boot-environment-for-windows-10-mobile"></a>Windows 10 Mobile 用のブート環境でのバッテリー充電
 
@@ -168,7 +168,7 @@ Microsoft では、いくつかのバッテリが充電しきい値を適切な�
 <tr class="even">
 <td><p>しきい値をメインの OS がシャット ダウン</p></td>
 <td><p>これは、位置、ソフトウェアに安全にシャット ダウン デバイス オフしきい値です。 システム メモリの破損を回避することが必要です。</p></td>
-<td><p>OEM がこのしきい値よりも少なくなるを設定する必要があります、<em>メイン OS しきい値にブート</em>よりも小さい、<em>メイン OS 警告しきい値</em>します。 さらに、このしきい値は、2% 以上にある必要があります。 このしきい値は、 <strong>DefaultAlert1</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/desktop/aa372661.aspx" data-raw-source="[BATTERY_INFORMATION](https://msdn.microsoft.com/library/windows/desktop/aa372661.aspx)">BATTERY_INFORMATION</a>構造体。 このしきい値を変更する方法の詳細については、SoC ベンダーにお問い合わせください。</p></td>
+<td><p>OEM がこのしきい値よりも少なくなるを設定する必要があります、<em>メイン OS しきい値にブート</em>よりも小さい、<em>メイン OS 警告しきい値</em>します。 さらに、このしきい値は、2% 以上にある必要があります。 このしきい値は、 <strong>DefaultAlert1</strong>のメンバー、 <a href="https://docs.microsoft.com/windows/desktop/Power/battery-information-str" data-raw-source="[BATTERY_INFORMATION](https://docs.microsoft.com/windows/desktop/Power/battery-information-str)">BATTERY_INFORMATION</a>構造体。 このしきい値を変更する方法の詳細については、SoC ベンダーにお問い合わせください。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ハードウェアのしきい値をシャット ダウン</p></td>

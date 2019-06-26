@@ -5,12 +5,12 @@ ms.assetid: f4dbb7e8-1348-4fa8-abac-f644a443df48
 ms.date: 08/08/2017
 keywords: -OID_WWAN_SMS_READ ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c9df125aa1d4117581d83ba156fb0a7660e8f33d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36c3efe3fadfc6a15ac79b3506e16bbf7d1e7b85
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387363"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361158"
 ---
 # <a name="oidwwansmsread"></a>OID\_WWAN\_SMS\_読み取り
 
@@ -19,14 +19,14 @@ OID\_WWAN\_SMS\_読み取り MB のデバイスまたは Subscriber Identity Mod
 
 要求のセットがサポートされていません。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_SMS\_受信**](ndis-status-wwan-sms-receive.md)状態通知を含む、 [ **NDIS\_WWAN\_SMS\_読み取る**](https://msdn.microsoft.com/library/windows/hardware/ff567941)クエリ要求を完了するときに、呼び出し元が最初に指定した SMS メッセージの要求を提供する構造体。
+ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_SMS\_受信**](ndis-status-wwan-sms-receive.md)状態通知を含む、 [ **NDIS\_WWAN\_SMS\_読み取る**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)クエリ要求を完了するときに、呼び出し元が最初に指定した SMS メッセージの要求を提供する構造体。
 
 SMS テキスト メッセージの読み取りを要求する呼び出し元の提供、NDIS\_WWAN\_SMS\_SMS メッセージ、呼び出し元を返すミニポートを示す読み取り構造体。
 
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)します。
 
 この OID を処理するときに、ミニポート ドライバーは Subscriber Identity Module (SIM カード) にアクセスできますが、プロバイダーのネットワークにアクセスしないでください。
 
@@ -63,9 +63,9 @@ SMS テキスト メッセージ機能を実装するミニポート ドライ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_SMS\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff567941)
+[**NDIS\_WWAN\_SMS\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)
 
-[WWAN SMS の操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)
+[WWAN SMS の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
 
  
 

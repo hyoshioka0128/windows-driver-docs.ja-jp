@@ -4,12 +4,12 @@ description: MSiSCSI\_NICConfig WMI クラス
 ms.assetid: 9b7a466d-a9bb-41c5-8f38-e5baf21e863a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9539ec204863a567a79c39c8644f00248733ee62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e2a35cca86758bf07a1e92a122fb04a61895467
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387836"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385827"
 ---
 # <a name="msiscsinicconfig-wmi-class"></a>MSiSCSI\_NICConfig WMI クラス
 
@@ -50,7 +50,7 @@ class MSiSCSI_NICConfig {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_NICConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff563079)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_NICConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_nicconfig)データ構造体。
 
  
 

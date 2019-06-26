@@ -5,12 +5,12 @@ ms.assetid: c19cecf3-ae47-4fd1-b5dc-1f3de469e548
 ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_PACKET_FILTERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 157b47e3be2f47858c051f0600a4c77161696f0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87debd95e54b258fdaed5beb4b47a8395da2f227
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387886"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386991"
 ---
 # <a name="oidgensupportedpacketfilters"></a>OID\_GEN\_サポートされている\_パケット\_フィルター
 
@@ -34,13 +34,13 @@ NDIS と関連付けたドライバー ミニポート アダプターが初期�
 
 ミニポート ドライバーでは、初期化中に、サポートされているパケット フィルターを指定します。
 
-サポートされているパケット フィルターを指定するミニポート ドライバーの設定、 **SupportedPacketFilters**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_[全般]\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)構造体し、構造体を渡す、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)関数。
+サポートされているパケット フィルターを指定するミニポート ドライバーの設定、 **SupportedPacketFilters**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_[全般]\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体し、構造体を渡す、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。
 
-NDIS は、プロトコル ドライバーに情報を渡す、 **SupportedPacketFilters**のメンバー、 [ **NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)構造体。
+NDIS は、プロトコル ドライバーに情報を渡す、 **SupportedPacketFilters**のメンバー、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)構造体。
 
 内の値**SupportedPacketFilters**フィルターのビットごとの OR 型のフラグが。 フィルターの型のフラグの一覧は、次を参照してください。、 [OID\_GEN\_現在\_パケット\_フィルター](oid-gen-current-packet-filter.md) OID。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -59,11 +59,11 @@ NDIS は、プロトコル ドライバーに情報を渡す、 **SupportedPacke
 ## <a name="see-also"></a>関連項目
 
 
-[**NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
 
-[**NDIS\_バインド\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff564832)
+[**NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)
 
-[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
+[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
 [OID\_GEN\_現在\_パケット\_フィルター](oid-gen-current-packet-filter.md)
 

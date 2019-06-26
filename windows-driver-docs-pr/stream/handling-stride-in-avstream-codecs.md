@@ -6,12 +6,12 @@ keywords:
 - AVStream ハードウェア コーデックは、WDK、stride の処理をサポートします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5de3736283b0696c18a771971bb8e33241a5d74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23d2e57ae0a23a8649dfb954374dd08f5f0ceafe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363506"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384017"
 ---
 # <a name="handling-stride-in-avstream-codecs"></a>AVStream コーデックのストライド処理
 
@@ -20,7 +20,7 @@ ms.locfileid: "63363506"
 
 レンダリングの前に D3D のサーフェスにコピーする必要があります、システム メモリのバッファーとは異なり、レンダリング エンジンによって直接 D3D バッファーを表示できます。 そのため、D3D バッファーを使用して、システム メモリのバッファーではなくで、ミニドライバー各バッファーのコピー操作が保存されます。
 
-解明できるミニドライバーは、D3D バッファーを受け取り、D3D 画面がロックされているし、へのポインターにある[ **KSSTREAM\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff567138).**データ**します。 指定されている surface stride 情報、 [ **KS\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567645) KSSTREAM 拡張\_ヘッダー、次のコード例に示すように。
+解明できるミニドライバーは、D3D バッファーを受け取り、D3D 画面がロックされているし、へのポインターにある[ **KSSTREAM\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header).**データ**します。 指定されている surface stride 情報、 [ **KS\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info) KSSTREAM 拡張\_ヘッダー、次のコード例に示すように。
 
 ```cpp
 typedef struct KS_FRAME_INFO {
@@ -44,9 +44,9 @@ typedef struct KS_FRAME_INFO {
 } KS_FRAME_INFO, *PKS_FRAME_INFO;
 ```
 
-ミニドライバーを使用する必要があります、 **biWidth**のメンバー、 [ **KS\_BITMAPINFOHEADER** ](https://msdn.microsoft.com/library/windows/hardware/ff567305)表面幅として構造体。
+ミニドライバーを使用する必要があります、 **biWidth**のメンバー、 [ **KS\_BITMAPINFOHEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)表面幅として構造体。
 
-([**KS\_VIDEOINFOHEADER**](https://msdn.microsoft.com/library/windows/hardware/ff567700).**bmiHeader**型 KS\_BITMAPINFOHEADER します。 [**KS\_DATARANGE\_ビデオ**](https://msdn.microsoft.com/library/windows/hardware/ff567628).**VideoInfoHeader**型 KS\_VIDEOINFOHEADER)。
+([**KS\_VIDEOINFOHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_videoinfoheader).**bmiHeader**型 KS\_BITMAPINFOHEADER します。 [**KS\_DATARANGE\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video).**VideoInfoHeader**型 KS\_VIDEOINFOHEADER)。
 
 場合 KS\_フレーム\_情報 **。lSurfacePitch** 0 以外の値を持つ、ミニドライバーを使用する必要があります**lSurfacePitch**関連 KSSTREAM で指定されているバッファーの幅/stride として\_ヘッダー。 それ以外の場合、出力の画像は、文字が正しく表示されます。
 

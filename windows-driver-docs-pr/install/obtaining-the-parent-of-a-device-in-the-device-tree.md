@@ -12,12 +12,12 @@ keywords:
 - デバイスの直接の親ツリー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1adc2c37dbbcfc164eeef73fa99853abde93a1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3dc93f63c6fcab85a2b3a645a266746370eb9ad6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365853"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366667"
 ---
 # <a name="obtaining-the-parent-of-a-device-in-the-device-tree"></a>デバイス ツリーでのデバイスの親の取得
 
@@ -29,17 +29,17 @@ ms.locfileid: "63365853"
 
 **デバイス ツリー内のデバイスの直接の親の SP_DEVINFO_DATA 構造体を取得するには**
 
-1.  デバイスに devnode があることを確認、[デバイス ツリー](https://msdn.microsoft.com/library/windows/hardware/ff543194)呼び出して[ **CM_Get_DevNode_Status** ](https://msdn.microsoft.com/library/windows/hardware/ff538514)デバイス。
+1.  デバイスに devnode があることを確認、[デバイス ツリー](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)呼び出して[ **CM_Get_DevNode_Status** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)デバイス。
     -   デバイスが devnode を持つ場合、関数は CR_SUCCESS を返します。
     -   デバイスが devnode を持たない場合、関数は CR_NO_SUCH_DEVINST を返します。
 
-2.  デバイスに devnode がある場合は、呼び出す[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)デバイスの親のデバイスのインスタンス ハンドルを取得します。
+2.  デバイスに devnode がある場合は、呼び出す[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)デバイスの親のデバイスのインスタンス ハンドルを取得します。
 
     (デバイスが、devnode を持たない場合**CM_Get_Parent**ルート デバイスのデバイスのインスタンス ハンドルを返します)。
 
-3.  親デバイスのデバイスのインスタンス ハンドルを使用して、呼び出す[ **CM_Get_Device_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff538405)親デバイスのデバイス インスタンス ID を取得します。
+3.  親デバイスのデバイスのインスタンス ハンドルを使用して、呼び出す[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)親デバイスのデバイス インスタンス ID を取得します。
 
-4.  親デバイスのデバイスのインスタンス ID を使用して、呼び出す[ **SetupDiOpenDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff552071)親デバイス SP_DEVINFO_DATA 構造体を取得します。
+4.  親デバイスのデバイスのインスタンス ID を使用して、呼び出す[ **SetupDiOpenDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)親デバイス SP_DEVINFO_DATA 構造体を取得します。
 
 **接続されているシーケンス、デバイス、デバイス ツリー内の先祖の SP_DEVINFO_DATA 構造体を取得するには**
 

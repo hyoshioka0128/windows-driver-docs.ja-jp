@@ -4,12 +4,12 @@ description: デバイス メタデータのエラー コード
 ms.assetid: 7ca3b9d3-8e7d-4421-affa-bddea2d4c262
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0724edeae8b219dd267367712229b3a9158f87e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbd6411a9886304c3ca7eee48c7be967757d1c6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357892"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387121"
 ---
 # <a name="device-metadata-error-codes"></a>デバイス メタデータのエラー コード
 
@@ -129,7 +129,7 @@ ms.locfileid: "63357892"
 <td align="left"><p>50000022</p></td>
 <td align="left"><p><em>PackageInfo.xml</em>形式が正しくありませんし、解析できません。</p>
 <div class="alert">
-<strong>注</strong>このエラー コードには、ケースが含まれています場所か、 <em>PackageInfo.xml</em>ドキュメントには、必要な要素がありません。 または、1 つ以上の要素の無効な構文に基づく、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff549614" data-raw-source="[PackageInfo XML Schema](https://msdn.microsoft.com/library/windows/hardware/ff549614)">PackageInfo XML。スキーマ</a>します。
+<strong>注</strong>このエラー コードには、ケースが含まれています場所か、 <em>PackageInfo.xml</em>ドキュメントには、必要な要素がありません。 または、1 つ以上の要素の無効な構文に基づく、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549614(v=vs.85)" data-raw-source="[PackageInfo XML Schema](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549614(v=vs.85))">PackageInfo XML。スキーマ</a>します。
 </div>
 <div>
  

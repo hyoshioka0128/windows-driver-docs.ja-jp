@@ -3,17 +3,17 @@ Description: Windows.Devices.Usb 名前空間には、外部の USB デバイス
 title: USB デバイス用の UWP アプリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30bde1de66ca92298e34c272d2c8ddca339eac1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4519017a0238e888526ce247eeeedc5b73d51084
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385339"
 ---
 # <a name="uwp-app-for-a-usb-device"></a>USB デバイス用の UWP アプリ
 
 
-[ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)名前空間は、デバイス ドライバーとして WinUSB (Winusb.sys) を使用する外部の USB デバイスと通信する Windows アプリを提供します。
+[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)名前空間は、デバイス ドライバーとして WinUSB (Winusb.sys) を使用する外部の USB デバイスと通信する Windows アプリを提供します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -36,12 +36,12 @@ ms.locfileid: "63389106"
 </tr>
 <tr class="even">
 <td><p><a href="updating-the-app-manifest-with-usb-device-capabilities.md" data-raw-source="[How to add USB device capabilities to the app manifest](updating-the-app-manifest-with-usb-device-capabilities.md)">アプリケーション マニフェストに USB デバイスの機能を追加する方法</a></p></td>
-<td><p>このトピックでは、使用する Windows アプリを必要とされるデバイスの機能を説明します、 <a href="https://msdn.microsoft.com/library/windows/apps/dn278466" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn278466)"> <strong>Windows.Devices.Usb</strong> </a>名前空間。</p></td>
+<td><p>このトピックでは、使用する Windows アプリを必要とされるデバイスの機能を説明します、 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)"> <strong>Windows.Devices.Usb</strong> </a>名前空間。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="how-to-connect-to-a-usb-device--uwp-app-.md" data-raw-source="[How to connect to a USB device (UWP app)](how-to-connect-to-a-usb-device--uwp-app-.md)">USB デバイス (UWP アプリ) に接続する方法</a></p></td>
 <td><p>Windows 8.1 では、USB デバイスと対話する UWP アプリを記述できます。 アプリは、管理コマンドを送信、デバイスの情報を取得、読み取り、および一括および割り込みのエンドポイントとの間のデータを書き込むことができます。 すべての操作を行うことができます、前にデバイスを検出し、接続を確立する必要があります。</p>
-<p>この部分では、使用する方法を説明します、 <a href="https://msdn.microsoft.com/library/windows/apps/br225446" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br225446)"> <strong>DeviceWatcher</strong> </a>デバイスを見つけて、ファイルを開いて、アプリからの通信を開始するオブジェクト。 使用してこれが完了したら、デバイスを閉じる方法も学習します。</p></td>
+<p>この部分では、使用する方法を説明します、 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"> <strong>DeviceWatcher</strong> </a>デバイスを見つけて、ファイルを開いて、アプリからの通信を開始するオブジェクト。 使用してこれが完了したら、デバイスを閉じる方法も学習します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="how-to-send-a-usb-control-transfer--uwp-app-.md" data-raw-source="[How to send a USB control transfer (UWP app)](how-to-send-a-usb-control-transfer--uwp-app-.md)">USB 制御転送 (UWP アプリ) を送信する方法</a></p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "63389106"
 </tr>
 <tr class="even">
 <td><p><a href="how-to-select-a-usb-interface-setting--uwp-app-.md" data-raw-source="[How to select a USB interface setting (UWP app)](how-to-select-a-usb-interface-setting--uwp-app-.md)">USB インターフェイスの設定 (UWP アプリ) を選択する方法</a></p></td>
-<td><p>このトピックでは、USB インターフェイス内の設定を変更する方法について学習します。 使用して、 <a href="https://msdn.microsoft.com/library/windows/apps/dn264278" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn264278)"> <strong>UsbInterfaceSetting</strong> </a>オブジェクトを現在の設定を取得し、インターフェイスで設定します。</p></td>
+<td><p>このトピックでは、USB インターフェイス内の設定を変更する方法について学習します。 使用して、 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting&lt;/strong&gt;](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)"> <strong>UsbInterfaceSetting</strong> </a>オブジェクトを現在の設定を取得し、インターフェイスで設定します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -78,7 +78,7 @@ ms.locfileid: "63389106"
 ## <a name="what-are-the-limitations-of-the-namespace"></a>名前空間の制限事項とは
 
 
-*できません*使用[ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)このような場合。
+*できません*使用[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)このような場合。
 
 -   デバイス ドライバーが Winusb.sys でない場合は。
 -   デバイスの USB アイソクロナス エンドポイントと通信するには。
@@ -94,10 +94,10 @@ ms.locfileid: "63389106"
 
      
 
--   デバイスに複数の USB 構成と、先頭以外の構成を選択します。 [**Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)既定で最初の構成を選択します。
+-   デバイスに複数の USB 構成と、先頭以外の構成を選択します。 [**Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)既定で最初の構成を選択します。
 
 ## <a name="related-topics"></a>関連トピック
-[**Windows.Devices.Usb**](https://msdn.microsoft.com/library/windows/apps/dn278466)  
+[**Windows.Devices.Usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)  
 
 
 

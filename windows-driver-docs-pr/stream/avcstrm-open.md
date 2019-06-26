@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28a3dd4abe1e4fb2a76fa75366758d386a7810fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2877bce3c32ca5aec13d1b1bbb9cfc0aa38eb6f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374498"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386718"
 ---
 # <a name="avcstrmopen"></a>AVCSTRM\_開く
 
@@ -31,7 +31,7 @@ ms.locfileid: "63374498"
 
 成功した場合、 *avcstrm.sys*設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
 
-成功した場合、ステータス\_でストリームのコンテキストと共に成功が返される**AVCStreamContext**のメンバー、 [ **AVC\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff554194)構造体。 このコンテキストは、後で、その他の使用*avcstrm.sys*要求。
+成功した場合、ステータス\_でストリームのコンテキストと共に成功が返される**AVCStreamContext**のメンバー、 [ **AVC\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)構造体。 このコンテキストは、後で、その他の使用*avcstrm.sys*要求。
 
 値には、可能性のあるエラーが返されます。
 
@@ -103,7 +103,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 ### <a name="span-idavcstreamrequestblockinputspanspan-idavcstreamrequestblockinputspanavcstreamrequestblock-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC\_ストリーム\_要求\_ブロックの入力
 
 <span id="SizeOfThisBlock__Version_and_Function"></span><span id="sizeofthisblock__version_and_function"></span><span id="SIZEOFTHISBLOCK__VERSION_AND_FUNCTION"></span>**SizeOfThisBlock、バージョン、および関数**  
-使用して、 [ **INIT\_AVCSTRM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff560750)マクロをこれらのメンバーを初期化します。 渡す**AVCSTRM\_オープン**マクロの要求の引数にします。
+使用して、 [ **INIT\_AVCSTRM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)マクロをこれらのメンバーを初期化します。 渡す**AVCSTRM\_オープン**マクロの要求の引数にします。
 
 <span id="AVCStreamContext"></span><span id="avcstreamcontext"></span><span id="AVCSTREAMCONTEXT"></span>**AVCStreamContext**  
 ストリームのコンテキスト (ハンドル) を指定します。 これは、アカウントは**NULL** 、入力の場合に**AVCSTRM\_オープン**このメンバーには有効なストリームのコンテキストが含まれていますが、正常に返さ後続*avcstrm.sys*操作です。
@@ -111,9 +111,9 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 <span id="OpenStruct"></span><span id="openstruct"></span><span id="OPENSTRUCT"></span>**OpenStruct**  
 作成される AV/C ストリームの説明を指定します。
 
-[ **AVCSTRM\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff554114)列挙体は (IEC 61883 仕様) からの AV/C のサポートされているストリーミング形式の一覧を*avcstrm.sys*SDDV (61883 2) と MPEG2TS (61883 ~ 4) などをサポートする。
+[ **AVCSTRM\_形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ne-avcstrm-_avcstrm_format)列挙体は (IEC 61883 仕様) からの AV/C のサポートされているストリーミング形式の一覧を*avcstrm.sys*SDDV (61883 2) と MPEG2TS (61883 ~ 4) などをサポートする。
 
-パラメーター アイソクロナスの接続、CIP ヘッダーおよびサブユニットが依存するようにするために必要なし、で定義されて、 [ **AVCSTRM\_形式\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff554117)構造体。
+パラメーター アイソクロナスの接続、CIP ヘッダーおよびサブユニットが依存するようにするために必要なし、で定義されて、 [ **AVCSTRM\_形式\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_format_info)構造体。
 
 MPEG2TS 形式については、データを受信するための例を次に示します。
 
@@ -149,9 +149,9 @@ MPEG2TS 形式については、データを受信するための例を次に示
     },
 ```
 
-サブユニット ドライバーは IRP を割り当てる必要があります最初、 [ **AVC\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff554194)構造体。 次に、使用する必要があります、 [ **INIT\_AVCSTRM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff560750) 、AVC を初期化するためにマクロ\_ストリーム\_要求\_ブロック構造体渡す**AVCSTRM\_オープン**マクロに要求の引数として。 次に、サブユニット ドライバーの設定、 **AVCStreamContext**メンバー **NULL**します。 このメンバーの操作が成功すると、その後で使用されている有効なストリーム コンテキスト (ハンドル) を含める必要があります*avcstrm.sys*操作。 このメンバーは変更できませんその後で、ストリームが閉じられるまで[ **AVCSTRM\_閉じる**](avcstrm-close.md). 最後に、サブユニット ドライバーの設定、 **OpenStruct**のメンバー、 **CommandData**開かれるストリームを記述する共用体。
+サブユニット ドライバーは IRP を割り当てる必要があります最初、 [ **AVC\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)構造体。 次に、使用する必要があります、 [ **INIT\_AVCSTRM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header) 、AVC を初期化するためにマクロ\_ストリーム\_要求\_ブロック構造体渡す**AVCSTRM\_オープン**マクロに要求の引数として。 次に、サブユニット ドライバーの設定、 **AVCStreamContext**メンバー **NULL**します。 このメンバーの操作が成功すると、その後で使用されている有効なストリーム コンテキスト (ハンドル) を含める必要があります*avcstrm.sys*操作。 このメンバーは変更できませんその後で、ストリームが閉じられるまで[ **AVCSTRM\_閉じる**](avcstrm-close.md). 最後に、サブユニット ドライバーの設定、 **OpenStruct**のメンバー、 **CommandData**開かれるストリームを記述する共用体。
 
-この要求を送信するには、サブユニットの送信、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)で IRP、 **IoControlCode** IRP のメンバーに設定[ **IOCTL\_AVCSTRM\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560778)と **[引数 1]** IRP のメンバーに設定AVC\_ストリーム\_要求\_行われるようにオープン操作を記述するブロック構造体。
+この要求を送信するには、サブユニットの送信、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)で IRP、 **IoControlCode** IRP のメンバーに設定[ **IOCTL\_AVCSTRM\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ni-avcstrm-ioctl_avcstrm_class)と **[引数 1]** IRP のメンバーに設定AVC\_ストリーム\_要求\_行われるようにオープン操作を記述するブロック構造体。
 
 サブユニット ドライバーは、このコマンドが同期的に完了することができます。 保留中の操作なしですぐに結果が返され*avcstrm.sys*します。
 
@@ -159,7 +159,7 @@ MPEG2TS 形式については、データを受信するための例を次に示
 
 ### <a name="see-also"></a>関連項目
 
-[**AVC\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff554194)、 [ **INIT\_AVCSTRM\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff560750)、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)、 [ **IOCTL\_AVCSTRM\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff560778)、 [ **AVCSTRM\_オープン\_構造体**](https://msdn.microsoft.com/library/windows/hardware/ff554127)、 [ **AVCSTRM\_関数**](https://msdn.microsoft.com/library/windows/hardware/ff554120)、 [ **AVCSTRM\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff554114)、 [ **AVCSTRM\_形式\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff554117)
+[**AVC\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)、 [ **INIT\_AVCSTRM\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)、 [ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)、 [ **IOCTL\_AVCSTRM\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ni-avcstrm-ioctl_avcstrm_class)、 [ **AVCSTRM\_オープン\_構造体**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_open_struct)、 [ **AVCSTRM\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ne-avcstrm-_avcstrm_function)、 [ **AVCSTRM\_形式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ne-avcstrm-_avcstrm_format)、 [ **AVCSTRM\_形式\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avcstrm_format_info)
 
  
 

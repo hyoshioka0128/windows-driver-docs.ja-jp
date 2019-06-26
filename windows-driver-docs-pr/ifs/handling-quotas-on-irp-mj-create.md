@@ -8,12 +8,12 @@ keywords:
 - セキュリティは、WDK のファイル システム、irp_mj_create 用を確認します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 162182ad651b4ab694eb11e9efb0f8f891937f4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b41944cf14b9becec9f13b9308d1ff2357f66cc4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370138"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365874"
 ---
 # <a name="handling-quotas-on-irpmjcreate"></a>IRP のクォータを処理\_MJ\_を作成します。
 
@@ -21,7 +21,7 @@ ms.locfileid: "63370138"
 ## <span id="ddk_handling_quotas_on_irp_mj_create_if"></span><span id="DDK_HANDLING_QUOTAS_ON_IRP_MJ_CREATE_IF"></span>
 
 
-いくつかのロジックは、ファイル システム クォータをサポートしている場合は、クォータの情報を取得する可能性がありますも含まれます。 ファイル システムを採用している 1 つの戦略に関するクォータ情報のブロックを取得すること[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff548630)を後でチェックありのディスパッチ ルーチンによって更新ファイルのサイズを変更できる他の IRP 要求 (削除および書き込み操作など)。
+いくつかのロジックは、ファイル システム クォータをサポートしている場合は、クォータの情報を取得する可能性がありますも含まれます。 ファイル システムを採用している 1 つの戦略に関するクォータ情報のブロックを取得すること[ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)を後でチェックありのディスパッチ ルーチンによって更新ファイルのサイズを変更できる他の IRP 要求 (削除および書き込み操作など)。
 
  
 

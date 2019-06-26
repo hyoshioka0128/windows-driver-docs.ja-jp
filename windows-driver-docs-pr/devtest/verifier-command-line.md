@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 463b13e77e3ed54609b1c733f9b18593c28d93c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11b9b8b31f3e77cf5abd47298c6e627fc7f7b1c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379870"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363756"
 ---
 # <a name="driver-verifier-command-syntax"></a>ドライバーの検証ツールのコマンド構文
 
@@ -32,7 +32,7 @@ verifier /flags 7 /driver beep.sys flpydisk.sys
 
 **Windows 10**
 
-使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile**で、 **/flags**オプション[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/** 。 使用することはできません **/volatile**で、 **/flags**オプション[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
 ```
   verifier /standard /all
@@ -60,7 +60,7 @@ verifier /flags 7 /driver beep.sys flpydisk.sys
 
 **Windows 8.1**
 
-使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile**で、 **/flags**オプション[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/** 。 使用することはできません **/volatile**で、 **/flags**オプション[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、または[SCSI 検証](scsi-verification.md)です。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
 ```
   verifier /standard /all
@@ -84,7 +84,7 @@ verifier /flags 7 /driver beep.sys flpydisk.sys
 
 **Windows 8、Windows 7、Windows Vista の構文**
 
-使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/**。 使用することはできません **/volatile** 、/flags オプションを付けて[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、 [SCSI 検証](scsi-verification.md)または **/ディスク**します。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+使用することができます、 **/volatile**パラメーターをいくつかの Driver Verifier **/flags**オプションを使用して**標準/** 。 使用することはできません **/volatile** 、/flags オプションを付けて[DDI 準拠の検査](ddi-compliance-checking.md)、 [Power Framework 遅延ファジー テスト](concurrency-stress-test.md)、 [Storport 検証](dv-storport-verification.md)、 [SCSI 検証](scsi-verification.md)または **/ディスク**します。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
 
 ```
 verifier [/volatile] [/standard | /flags Options ] [ /all | /driver DriverList ]
@@ -202,7 +202,7 @@ Driver Verifier の設定は、再起動後に有効になっているかどう�
 
 
 
-<span id="_faultssystematic"></span><span id="_FAULTSSYSTEMATIC"></span>**/faultssystematic**  
+<span id="_faultssystematic"></span><span id="_FAULTSSYSTEMATIC"></span> **/faultssystematic**  
 オプションを指定します[体系的な低リソース シミュレーション](systematic-low-resource-simulation.md)します。 使用して、 **0x40000** Systematic を選択するフラグの低リソース シミュレーション オプション。
 
 <table>
@@ -507,7 +507,7 @@ Windows 2000 では、10 進数形式で数値を入力します。 Windows XP �
 
 I/O の検証が有効でない場合 (を使用して **/flags 0x10**)、 **/iolevel**は無視されます。
 
-<span id="________log________LogFileName_______interval_Seconds_______"></span><span id="________log________logfilename_______interval_seconds_______"></span><span id="________LOG________LOGFILENAME_______INTERVAL_SECONDS_______"></span> **/log** *LogFileName* \[**/interval**|*Seconds*\]   
+<span id="________log________LogFileName_______interval_Seconds_______"></span><span id="________log________logfilename_______interval_seconds_______"></span><span id="________LOG________LOGFILENAME_______INTERVAL_SECONDS_______"></span> **/log** *LogFileName* \[ **/interval**|*Seconds*\]   
 名前のログ ファイルが作成*LogFileName*します。 Driver Verifier は、このファイルに、統計情報を定期的に書き込みます。 詳細については、次を参照してください。[ログ ファイルの作成](creating-log-files.md)です。
 
 場合、 **verifier/log**コマンドラインでコマンドを入力すると、コマンド プロンプトは返されません。 ログ ファイルを閉じるし、プロンプトを返すするには、ctrl キーを押しながら C キーを使用します。 再起動後、ログを作成する必要がありますを送信する、 **verifier/log**コマンドを再実行します。
@@ -558,11 +558,11 @@ I/O の検証が有効でない場合 (を使用して **/flags 0x10**)、 **/io
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>既定</strong> <em>ID</em></p></td>
-<td align="left"><p>ルールのセット<em>ID</em>既定の状態にします。 サポートされている規則、ルールの<em>ID</em>は、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff560187" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560187)"><strong>バグ チェック 0xC4</strong> </a> (DRIVER_VERIFIER_DETECTED_VIOLATION) パラメーター 1 の値。</p></td>
+<td align="left"><p>ルールのセット<em>ID</em>既定の状態にします。 サポートされている規則、ルールの<em>ID</em>は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)"><strong>バグ チェック 0xC4</strong> </a> (DRIVER_VERIFIER_DETECTED_VIOLATION) パラメーター 1 の値。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>無効にする</strong> <em>ID</em></p></td>
-<td align="left"><p>指定されたルールを無効にします<em>ID</em>します。 サポートされている規則、ルールの<em>ID</em>は、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff560187" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560187)"><strong>バグ チェック 0xC4</strong> </a> (DRIVER_VERIFIER_DETECTED_VIOLATION) パラメーター 1 の値。</p></td>
+<td align="left"><p>指定されたルールを無効にします<em>ID</em>します。 サポートされている規則、ルールの<em>ID</em>は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)"><strong>バグ チェック 0xC4</strong> </a> (DRIVER_VERIFIER_DETECTED_VIOLATION) パラメーター 1 の値。</p></td>
 </tr>
 </tbody>
 </table>
@@ -687,7 +687,7 @@ Driver Verifier の現在のアクティビティの概要を表示します。 
 <span id="________livedump_______"></span><span id="________LIVEDUMP_______"></span> **/livedump**   
 有効では、選択されている検証拡張機能によって検出された規則違反のメモリ ダンプの収集を live です。
 
-<span id="_______________"></span> **/?**   
+<span id="_______________"></span> **/?**    
 コマンドラインのヘルプを表示します。
 
 これらのコマンドの使用に関する詳細については、次を参照してください。 [Driver Verifier を制御する](controlling-driver-verifier.md)と[Driver Verifier の監視](monitoring-driver-verifier.md)します。

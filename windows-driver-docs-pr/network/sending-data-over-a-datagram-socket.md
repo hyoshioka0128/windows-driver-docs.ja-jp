@@ -8,17 +8,17 @@ keywords:
 - WskSendTo
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d5848cf1a2abcf49e9ce5d373058d48a3b8efdb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf31762e2c838a660b15d63045dbabefd0a862a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346766"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386847"
 ---
 # <a name="sending-data-over-a-datagram-socket"></a>データグラム ソケット経由でのデータの送信
 
 
-Winsock カーネル (WSK) アプリケーションがローカル トランスポート アドレスにデータグラム ソケットをバインドした後、ソケットを使ってデータグラムを送信できます。 WSK アプリケーション データグラム ソケット経由で呼び出すことによって、データグラムを送信する、 [ **WskSendTo** ](https://msdn.microsoft.com/library/windows/hardware/ff571148)関数。
+Winsock カーネル (WSK) アプリケーションがローカル トランスポート アドレスにデータグラム ソケットをバインドした後、ソケットを使ってデータグラムを送信できます。 WSK アプリケーション データグラム ソケット経由で呼び出すことによって、データグラムを送信する、 [ **WskSendTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)関数。
 
 次のコード例では、データグラム ソケット経由で、WSK アプリケーションがデータグラムを送信する方法を示します。
 
@@ -129,11 +129,11 @@ NTSTATUS
 }
 ```
 
-WSK アプリケーションがリモートの固定のトランスポート アドレスまたはデータグラム ソケットの固定の送信先のトランスポート アドレスのいずれかを設定する場合、 *RemoteAddress*に渡されるパラメーター、 [ **WskSendTo**](https://msdn.microsoft.com/library/windows/hardware/ff571148)関数は省略可能でありできる**NULL**します。 場合**NULL**データグラムをリモートの固定のトランスポート アドレスまたは固定の送信先のトランスポート アドレスに送信します。 場合以外**NULL**データグラムをリモートの指定したトランスポート アドレスに送信します。
+WSK アプリケーションがリモートの固定のトランスポート アドレスまたはデータグラム ソケットの固定の送信先のトランスポート アドレスのいずれかを設定する場合、 *RemoteAddress*に渡されるパラメーター、 [ **WskSendTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)関数は省略可能でありできる**NULL**します。 場合**NULL**データグラムをリモートの固定のトランスポート アドレスまたは固定の送信先のトランスポート アドレスに送信します。 場合以外**NULL**データグラムをリモートの指定したトランスポート アドレスに送信します。
 
-データグラム ソケットに対して固定のリモート トランスポート アドレスを設定する方法についての詳細については、次を参照してください。 [ **SIO\_WSK\_設定\_リモート\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570820)します。
+データグラム ソケットに対して固定のリモート トランスポート アドレスを設定する方法についての詳細については、次を参照してください。 [ **SIO\_WSK\_設定\_リモート\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-remote-address)します。
 
-データグラム ソケットに対して固定の送信先のトランスポート アドレスを設定する方法についての詳細については、次を参照してください[ **SIO\_WSK\_設定\_SENDTO\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/ff570821).
+データグラム ソケットに対して固定の送信先のトランスポート アドレスを設定する方法についての詳細については、次を参照してください[ **SIO\_WSK\_設定\_SENDTO\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-sendto-address).
 
  
 

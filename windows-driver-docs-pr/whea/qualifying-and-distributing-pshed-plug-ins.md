@@ -8,27 +8,27 @@ keywords:
 - PSHED プラグイン WDK WHEA、配布します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 906c41d26fd154203b9ce07efbd8c24d8766ecd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f409665dc7d3f3890032e1bc2fee31f16671a189
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340704"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387154"
 ---
 # <a name="qualifying-and-distributing-pshed-plug-ins"></a>PSHED プラグインの認定と配布
 
 
 品質およびドライバーの整合性を確保するには、プラグインの PSHED をデジタル署名する必要があります。 プラグインの PSHED をデジタル署名するときに、プラットフォーム ベンダーは次のガイドラインに従う必要があります。
 
--   システムの起動時間を最小限に抑えるには、推奨の埋め込み、 [Authenticode](https://msdn.microsoft.com/library/windows/hardware/ff686697) PSHED プラグイン ファイルにデジタル署名します。 この手順の詳細については、次を参照してください。[埋め込みの署名でのドライバーをリリース署名](https://msdn.microsoft.com/library/windows/hardware/ff549832)します。
+-   システムの起動時間を最小限に抑えるには、推奨の埋め込み、 [Authenticode](https://docs.microsoft.com/windows-hardware/drivers/install/authenticode) PSHED プラグイン ファイルにデジタル署名します。 この手順の詳細については、次を参照してください。[埋め込みの署名でのドライバーをリリース署名](https://docs.microsoft.com/windows-hardware/drivers/install/release-signing-a-driver-through-an-embedded-signature)します。
 
--   ハードウェア プラットフォームがサーバーのロゴ テストに追加の検証を受ける前に処理する、プラグインの[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)Windows Hardware Quality Labs (WHQL) デジタル署名が必要です。 このデジタル署名を取得するには、テストし、Unclassified WHQL テスト カテゴリを使用して、ドライバー パッケージを送信する必要があります。
+-   ハードウェア プラットフォームがサーバーのロゴ テストに追加の検証を受ける前に処理する、プラグインの[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)Windows Hardware Quality Labs (WHQL) デジタル署名が必要です。 このデジタル署名を取得するには、テストし、Unclassified WHQL テスト カテゴリを使用して、ドライバー パッケージを送信する必要があります。
 
-    **注**  WHQL プラグインの PSHED に埋め込まれたかどうかに関係なく、ドライバー パッケージのデジタル署名を取得する必要があります、 [Authenticode](https://msdn.microsoft.com/library/windows/hardware/ff686697)デジタル署名します。
+    **注**  WHQL プラグインの PSHED に埋め込まれたかどうかに関係なく、ドライバー パッケージのデジタル署名を取得する必要があります、 [Authenticode](https://docs.microsoft.com/windows-hardware/drivers/install/authenticode)デジタル署名します。
 
      
 
-プラグインの PSHED をデジタル署名する方法の詳細については、次を参照してください。[パブリック リリース用のドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff552289)します。
+プラグインの PSHED をデジタル署名する方法の詳細については、次を参照してください。[パブリック リリース用のドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/signing-drivers-for-public-release--windows-vista-and-later-)します。
 
 プラグイン PSHED が WHQL のデジタル署名を取得後、プラグインできますシステム ロゴの認定を要求する任意のシステムで。 サーバーのロゴ認定プロセスの詳細については、次を参照してください。 [Windows ロゴ プログラム](https://go.microsoft.com/fwlink/p/?linkid=26144)します。
 

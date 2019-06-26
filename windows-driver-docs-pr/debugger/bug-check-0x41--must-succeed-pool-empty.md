@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa914bd46f773dd69b6e7fe3b672ea0b4982de10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ab852875436539bcb350564d2362856e911fb2d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361884"
 ---
 # <a name="bug-check-0x41-mustsucceedpoolempty"></a>バグ チェック 0x41:必要があります\_SUCCEED\_プール\_空
 
@@ -26,7 +26,7 @@ ms.locfileid: "63353648"
 必要があります\_SUCCEED\_プール\_空のバグ チェックが 0x00000041 の値を持ちます。 これは、カーネル モードのスレッドが多すぎる must-succeed プールを要求したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="mustsucceedpoolempty-parameters"></a>必要があります\_SUCCEED\_プール\_空のパラメーター

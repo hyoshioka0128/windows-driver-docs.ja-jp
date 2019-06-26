@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ca0398bd54f65feef6a17cbc046d0fa72794ded
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f56bbcbbd64c7bb65c3da38da8fee1ed47ba627c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369997"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384793"
 ---
 # <a name="guiddisplaydevicearrival"></a>GUID_DISPLAY_DEVICE_ARRIVAL
 
 
-GUID_DISPLAY_DEVICE_ARRIVAL[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[ディスプレイ アダプター](https://msdn.microsoft.com/library/windows/hardware/ff554044)します。
+GUID_DISPLAY_DEVICE_ARRIVAL[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[ディスプレイ アダプター](https://docs.microsoft.com/windows-hardware/drivers/display/index)します。
 
 <table>
 <colgroup>
@@ -54,11 +54,11 @@ GUID_DISPLAY_DEVICE_ARRIVAL[デバイス インターフェイス クラス](htt
 <a name="remarks"></a>注釈
 -------
 
-システム提供のコンポーネント、 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)オペレーティング システムとディスプレイ アダプターの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
+システム提供のコンポーネント、 [Windows Vista のディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)オペレーティング システムとディスプレイ アダプターの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
 については、デバイス インターフェイスのクラスでサポートされている表示ビューは、アダプターを表示を参照してください[ **GUID_DEVINTERFACE_DISPLAY_ADAPTER**](guid-devinterface-display-adapter.md)します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

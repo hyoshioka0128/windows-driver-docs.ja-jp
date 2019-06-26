@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 44ebf74d7c9f495ebe035da08e01476c4c833f8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7740546338320770e748e887da0e36d9df91fff2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367424"
 ---
 # <a name="bug-check-0x4e-pfnlistcorrupt"></a>バグ チェック 0x4E:PFN\_一覧\_が壊れています
 
@@ -26,7 +26,7 @@ ms.locfileid: "63363463"
 PFN\_一覧\_破損バグ チェックが 0x0000004E の値を持ちます。 これは、ページのフレーム数 (PFN) の一覧が破損していることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="pfnlistcorrupt-parameters"></a>PFN\_一覧\_破損しているパラメーター

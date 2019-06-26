@@ -10,12 +10,12 @@ keywords:
 - 存在しないドライバー WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f371e29e64de92310352164b9c1e7a8f2f6d461
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5e4be192c2a4809e36ec37cdbda048c8bed6237
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352052"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362942"
 ---
 # <a name="installing-a-null-driver"></a>Null ドライバーのインストール
 
@@ -44,7 +44,7 @@ AddService = ,2    ; no value for the service name
 
 デバイスのハードウェア ID、*モデル*セクションがデバイスを識別、具体的には、サブシステムのベンダー ID とその他のすべての情報が関連するを使用しています。
 
-オペレーティング システムは、[デバイス] ノードを作成 (*devnode*) デバイスが raw モードで実行できる場合は、デバイスのオペレーティング システムは開始されません、デバイスに関数のドライバーが割り当てられていないためです。 なお、ただし、そのデバイスにある場合、[ブート構成](https://msdn.microsoft.com/library/windows/hardware/ff547012#logical-configuration-types-for-resource-lists)、それらのリソースは予約されています。
+オペレーティング システムは、[デバイス] ノードを作成 (*devnode*) デバイスが raw モードで実行できる場合は、デバイスのオペレーティング システムは開始されません、デバイスに関数のドライバーが割り当てられていないためです。 なお、ただし、そのデバイスにある場合、[ブート構成](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#logical-configuration-types-for-resource-lists)、それらのリソースは予約されています。
 
  
 

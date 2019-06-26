@@ -7,12 +7,12 @@ keywords:
 - WDK PCMCIA のバスのメモリ、読み取りと書き込みを属性します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd15a15d86a294fe2a2cd511f2b615ec96218522
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cc8a12e30b47c83c1d3fc112e0099481745fa595
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580957"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382621"
 ---
 # <a name="read-and-write-attribute-memory"></a>属性メモリの読み取りと書き込み
 
@@ -24,9 +24,9 @@ ms.locfileid: "56580957"
 
 Windows 2000 と以降のオペレーティング システムは、構成領域として PC カードまたは CardBus カードのメモリの属性を処理します。
 
-一般に、属性のメモリにアクセスするドライバーは、する必要があります作成 IRP の主要な関数のコードを使用して IRP\_MJ\_PNP とマイナーの関数コード[ **IRP\_MN\_読み取り\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)または[ **IRP\_MN\_書き込み\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff551769)します。
+一般に、属性のメモリにアクセスするドライバーは、する必要があります作成 IRP の主要な関数のコードを使用して IRP\_MJ\_PNP とマイナーの関数コード[ **IRP\_MN\_読み取り\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)または[ **IRP\_MN\_書き込み\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)します。
 
-必要に応じて、ドライバーを永続的なメモリ ウィンドウを使用して直接属性メモリにアクセスできます。 参照してください[アクセス PCMCIA 属性メモリを介して、永続的なメモリ ウィンドウ](https://msdn.microsoft.com/library/windows/hardware/ff536901)の詳細。
+必要に応じて、ドライバーを永続的なメモリ ウィンドウを使用して直接属性メモリにアクセスできます。 参照してください[アクセス PCMCIA 属性メモリを介して、永続的なメモリ ウィンドウ](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-pcmcia-attribute-memory-through-a-permanent-memory-window)の詳細。
 
 PCMCIA メモリ カードのドライバーは、次の操作を実行します。
 

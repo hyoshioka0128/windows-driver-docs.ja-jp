@@ -4,12 +4,12 @@ description: Windows Vista アプリケーションとレガシ ドライバー�
 ms.assetid: 0acb2ca3-6ac6-441d-a12d-446ae5b70295
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75ea897f1a5be214671057a2fbdb26fe1db4e132
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57e16fa6d760462f47e8e4dbdadeb83b8f6352ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364630"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360860"
 ---
 # <a name="data-transfer-between-windows-vista-application-and-legacy-driver"></a>Windows Vista アプリケーションとレガシ ドライバー間のデータ転送
 
@@ -22,7 +22,7 @@ WIA サービス内で従来のコールバック オブジェクトは、従来
 
 Windows Vista のアプリケーションは、TYMED のみが必要です\_ファイルと TYMED\_マルチページ\_互換性レイヤが責任を担うファイルその TYMED\_コールバックと TYMED\_マルチページ。\_従来、ドライバーからは、Windows Vista アプリケーションにコールバックは公開されません。
 
-互換レイヤーのこの部分を実装する最も簡単な方法は、常にレガシ TYMED ドライバーへの呼び出しをされている\_ファイルと TYMED\_マルチページ\_ファイル セットです。 これの欠点は、こと、ドライバーは常にしなければデータは、アプリケーションのストリームにライトバックでした前に、イメージ全体をスキャンします。 互換レイヤーは TYMED を使用してそのため、\_Windows Vista アプリケーションの形式のスキャンを要求する場合にコールバック**WiaImgFmt\_BMP** (、 [ **WIA\_IPA\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff551553)プロパティに設定**WiaImgFmt\_BMP)** します。 これにより、データ バックアップ バンドでバンドを記述する互換性レイヤーです。
+互換レイヤーのこの部分を実装する最も簡単な方法は、常にレガシ TYMED ドライバーへの呼び出しをされている\_ファイルと TYMED\_マルチページ\_ファイル セットです。 これの欠点は、こと、ドライバーは常にしなければデータは、アプリケーションのストリームにライトバックでした前に、イメージ全体をスキャンします。 互換レイヤーは TYMED を使用してそのため、\_Windows Vista アプリケーションの形式のスキャンを要求する場合にコールバック**WiaImgFmt\_BMP** (、 [ **WIA\_IPA\_形式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)プロパティに設定**WiaImgFmt\_BMP)** します。 これにより、データ バックアップ バンドでバンドを記述する互換性レイヤーです。
 
 ただし、従来のドライバーをサポートしません**WiaImgFmt\_BMP**が**WiaImgFmt\_MEMORYBMP**ため TYMED\_コールバック。 したがって、BMP ファイル ヘッダーを作成しても、アプリケーションにこのファイルのヘッダーを書き戻す変換のコールバック オブジェクトがあります。 これは、ときに、BMP ファイル ヘッダー直接から構築できる BMP 情報のヘッダーなどの簡単な場合があります。 あります。 ただし、BMP 情報ヘッダーの高さが 0 に設定します。 この場合、WIA 互換性レイヤーは、BMP ファイルのヘッダーを記述して、BMP 情報ヘッダーを更新する前にすべてのデータが転送されるまで待つ必要があります。
 

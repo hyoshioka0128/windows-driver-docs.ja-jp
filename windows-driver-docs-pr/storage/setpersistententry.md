@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8e12638d8ad8ba5c02646e759f888fbebc517c39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1056e3d3c088b8d3887f6122c896ec8809f39fa7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363962"
 ---
 # <a name="setpersistententry-function"></a>SetPersistentEntry 関数
 
@@ -44,10 +44,10 @@ void SetPersistentEntry(
 永続的なバインドが変更するポートを示す世界中の名前。
 
 *バインド*   
-型の構造体[ **HBAFCPBindingEntry2** ](https://msdn.microsoft.com/library/windows/hardware/ff556035)バインドの指定されたポートの一覧から削除するバインディングを示します。
+型の構造体[ **HBAFCPBindingEntry2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)バインドの指定されたポートの一覧から削除するバインディングを示します。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetPersistentEntry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565795)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SetPersistentEntry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -82,9 +82,9 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**SetPersistentEntry\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565790)
+[**SetPersistentEntry\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_in)
 
-[**SetPersistentEntry\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565795)
+[**SetPersistentEntry\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_out)
 
  
 

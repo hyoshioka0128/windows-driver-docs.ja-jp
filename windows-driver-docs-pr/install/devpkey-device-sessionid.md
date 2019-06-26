@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: db6d9e3ad65edac142af51b1864fa553038eea76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 951628a50589c0a3111c71378212e64eb1c5148a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370066"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363009"
 ---
 # <a name="devpkeydevicesessionid"></a>DEVPKEY_Device_SessionId
 
@@ -64,11 +64,11 @@ DEVPKEY_Device_SessionId デバイス プロパティは、ターミナル サ�
 
 -   DEVPKEY_Device_SessionId プロパティが存在し、プロパティの値が 0 に設定されて、デバイスがサービスによってのみアクセスできます。 セッション 0 では、サービスのみが実行できる特殊なセッションです。
 
-DEVPKEY_Device_SessionId プロパティを呼び出すことによってアクセスできる[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)と[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163).
+DEVPKEY_Device_SessionId プロパティを呼び出すことによってアクセスできる[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)と[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw).
 
 Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -91,9 +91,9 @@ Windows Server 2003、Windows XP、および Windows 2000 では、このプロ�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)
+[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

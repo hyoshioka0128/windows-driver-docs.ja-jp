@@ -9,19 +9,19 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28143
-ms.openlocfilehash: 8ceebf56e2341a885d11d11416ecc4c2e748259a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce477d3a0df259ad3bfdba86490f6ec70f9e6df0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364124"
 ---
 # <a name="c28143"></a>C28143
 
 
 C28143 を警告します。IoMarkIrpPending を呼び出すディスパッチ ルーチンは、状態を返す必要がありますも\_PENDING
 
-呼び出すディスパッチ ルーチン[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)ドライバーが状態以外の値を返すに少なくとも 1 つのパスを含む\_保留します。
+呼び出すディスパッチ ルーチン[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)ドライバーが状態以外の値を返すに少なくとも 1 つのパスを含む\_保留します。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
 

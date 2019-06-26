@@ -4,17 +4,17 @@ description: オンライン クラッシュ分析 (OCA) は、Windows エラー
 ms.assetid: 56F4202D-6A5F-4177-BBFD-70DA717FF24A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2a29ec8c61a0a2e3d4873370c800ab6a80f359a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a345f080250f0d5c7dd690f759cd5d9c9551878f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350578"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391964"
 ---
 # <a name="debugging-oca-minidump-files"></a>OCA ミニダンプ ファイルをデバッグする
 
 
-Online Crash Analysis (OCA) が行うためのレポート機能[Windows エラー報告 (WER)](https://msdn.microsoft.com/library/windows/hardware/gg487440)情報。 会社で OCA クラッシュ ダンプを使用すると、顧客の問題を分析することができます。
+Online Crash Analysis (OCA) が行うためのレポート機能[Windows エラー報告 (WER)](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)情報。 会社で OCA クラッシュ ダンプを使用すると、顧客の問題を分析することができます。
 
 ## <a name="span-idanalyzedumpfilesspanspan-idanalyzedumpfilesspanspan-idanalyzedumpfilesspananalyze-dump-files"></a><span id="Analyze_dump_files"></span><span id="analyze_dump_files"></span><span id="ANALYZE_DUMP_FILES"></span>ダンプ ファイルを分析します。
 
@@ -42,7 +42,7 @@ Online Crash Analysis (OCA) が行うためのレポート機能[Windows エラ�
 -   ローカル変数の名前、データ型、アドレス、スコープ
 -   ソース コードで、各バイナリ命令に対応する行番号
 
-[Windows Driver Kit (WDK)](https://msdn.microsoft.com/library/windows/hardware/gg487463) に含まれているツールを使用すると、シンボル ファイル内のシンボルの数を減らすことができます。 ソース レベルの情報をすべて含むシンボル ファイルは、フル シンボル ファイルと呼ばれます。 情報が減らされたシンボル ファイルは、ストリップ シンボル ファイルと呼ばれます。
+[Windows Driver Kit (WDK)](https://developer.microsoft.com/windows/hardware) に含まれているツールを使用すると、シンボル ファイル内のシンボルの数を減らすことができます。 ソース レベルの情報をすべて含むシンボル ファイルは、フル シンボル ファイルと呼ばれます。 情報が減らされたシンボル ファイルは、ストリップ シンボル ファイルと呼ばれます。
 
 シンボル データは Windows エラー報告 (WER) のデータから有益なクラッシュ情報を取得するうえで重要であるため、署名用にドライバーを提出するときはシンボルを提出することをお勧めします。 提出されたシンボルはサーバーに格納され、関連付けられた WER プロセスとシンボル データが同期されます。 このストレージ プロセスにより、ミニダンプ ファイルで報告されたクラッシュを容易に分類し、最終的に Microsoft からより適切なデータを受け取ることができます。
 
@@ -51,7 +51,7 @@ Microsoft はインターネット上でシンボル サーバーを提供して
 ## <a name="span-idintegratewerintoapplicationsspanspan-idintegratewerintoapplicationsspanspan-idintegratewerintoapplicationsspanintegrate-wer-into-applications"></a><span id="Integrate_WER_into_applications"></span><span id="integrate_wer_into_applications"></span><span id="INTEGRATE_WER_INTO_APPLICATIONS"></span>WER をアプリケーションに統合します。
 
 
-WER をアプリケーションに統合する場合の詳細については、「[Using WER](https://msdn.microsoft.com/library/bb513616.aspx)」(WER の使用) を参照してください。
+WER をアプリケーションに統合する場合の詳細については、「[Using WER](https://docs.microsoft.com/windows/desktop/wer/using-wer)」(WER の使用) を参照してください。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
@@ -62,13 +62,13 @@ WER をアプリケーションに統合する場合の詳細については、�
 
 [デバッグの基礎ドライバー \[WinHEC 2007; 633 KB\] \[PPT\]](https://download.microsoft.com/download/a/f/d/afdfd50d-6eb9-425e-84e1-b4085a80e34e/dvr-t410_wh07.pptx)
 
-[クラッシュが発生した場合は、Windows によって作成された小さいメモリ ダンプ ファイルを読み取る方法](https://support.microsoft.com/kb/315263)
+[クラッシュが発生した場合は、Windows によって作成された小さいメモリ ダンプ ファイルを読み取る方法](https://support.microsoft.com/help/315263/how-to-read-the-small-memory-dump-file-that-is-created-by-windows-if-a)
 
-[リソース定義ステートメント](https://msdn.microsoft.com/library/aa381043.aspx)
+[リソース定義ステートメント](https://docs.microsoft.com/windows/desktop/menurc/resource-definition-statements)
 
-[Windows エラー報告](https://msdn.microsoft.com/library/bb513641(vs.85).aspx)
+[Windows エラー報告](https://docs.microsoft.com/windows/desktop/wer/windows-error-reporting)
 
-[VERSIONINFO リソース](https://msdn.microsoft.com/library/aa381058.aspx)
+[VERSIONINFO リソース](https://docs.microsoft.com/windows/desktop/menurc/versioninfo-resource)
 
  
 

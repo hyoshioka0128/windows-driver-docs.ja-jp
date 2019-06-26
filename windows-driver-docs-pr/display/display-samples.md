@@ -4,12 +4,12 @@ description: ディスプレイのサンプル
 ms.assetid: 4595369c-20fa-4c8d-ad1d-aada97ab9fc2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1d5754eef187a709248ca4f76eb2c969f5a25ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8e2e7eee15bfe29eee5f30dc0ed61b8889cd3b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365750"
 ---
 # <a name="display-samples"></a>ディスプレイのサンプル
 
@@ -58,7 +58,7 @@ Windows 8 Windows 7 Windows Server 2008 Windows Vista Windows Server 2003 Window
 Windows 8 Windows 7 Windows Server 2008 Windows Vista Windows Server 2003 Windows XP</td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>X</p></td>
-<td align="left"><p>実装する方法を示します、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540585" data-raw-source="[CPixel](https://msdn.microsoft.com/library/windows/hardware/ff540585)">CPixel</a>クラス。</p></td>
+<td align="left"><p>実装する方法を示します、 <a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-support-methods-for-lightweight-mip-maps" data-raw-source="[CPixel](https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-support-methods-for-lightweight-mip-maps)">CPixel</a>クラス。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ミラーの GDI コンテンツのミラーリングのミラー ドライバー</p></td>

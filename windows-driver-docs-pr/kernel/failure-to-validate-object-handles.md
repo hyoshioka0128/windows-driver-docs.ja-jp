@@ -8,12 +8,12 @@ keywords:
 - オブジェクト ハンドル WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 198ace4aca05664a91f8244398fe2e3bc80c6ef5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 352e771725815de8e4fb81d2ab88466315e56814
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386606"
 ---
 # <a name="failure-to-validate-object-handles"></a>オブジェクト ハンドルの検証失敗
 
@@ -23,7 +23,7 @@ ms.locfileid: "63359994"
 
 一部のドライバーでは、呼び出し元が、渡されたオブジェクトを操作する必要があります。 または同時に 2 つのファイル オブジェクトを処理する必要があります。 たとえば、モデムのドライバーは、イベント オブジェクトを識別するハンドルを受け取ることがあります。 またはネットワーク ドライバーは、2 つの別のファイル オブジェクトへのハンドルを受け取ることがあります。 ドライバーは、これらのハンドルを検証する必要があります。 I/O マネージャーではなく、呼び出し元によって渡されるために、I/O マネージャーは、検証チェックを実行できません。
 
-たとえば、次のコード スニペットで、ドライバーが渡されたハンドル**AscInfo -&gt;AddressHandle**を呼び出す前に、検証されていませんが、 [ **ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679):
+たとえば、次のコード スニペットで、ドライバーが渡されたハンドル**AscInfo -&gt;AddressHandle**を呼び出す前に、検証されていませんが、 [ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle):
 
 ```cpp
    //

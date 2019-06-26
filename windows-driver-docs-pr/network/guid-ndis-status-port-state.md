@@ -6,12 +6,12 @@ keywords:
 - GUID_NDIS_STATUS_PORT_STATE、WDK GUID_NDIS_STATUS_PORT_STATE ネットワーク ドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cd62de203e732d306abd348d1b67e535fc0c87d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7413087988a808903d0557500d3e8f09ef405661
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349852"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366640"
 ---
 # <a name="guidndisstatusportstate"></a>GUID_NDIS_STATUS_PORT_STATE
 
@@ -21,7 +21,7 @@ NDIS ポートの使用をサポートするミニポート ドライバー、 [
 
 ミニポート ドライバーでは、ポートの状態が変更されたことを示します、NDIS は WMI GUID_NDIS_STATUS_PORT_STATE イベントを WMI クライアントの状態表示を変換します。
 
-この GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_PORT_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569624)構造体。
+この GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_event_header)が続く構造体、 [NDIS_PORT_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-port-state)構造体。
 
 ポートの状態の詳細については、次を参照してください。 [OID_GEN_PORT_STATE](oid-gen-port-state.md)します。
 

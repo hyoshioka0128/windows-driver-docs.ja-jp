@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fe02a3fd21dc33c192073f46a822212ed16db36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24b3d3a26112c0edbdbab91fa8522cd1679796c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359561"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367772"
 ---
 # <a name="bug-check-0x154-unexpectedstoreexception"></a>バグ チェック 0x154:予期しない\_ストア\_例外
 
@@ -26,7 +26,7 @@ ms.locfileid: "63359561"
 予期しない\_ストア\_例外のバグ チェックが 0x00000154 の値を持ちます。 これは、ストアのコンポーネントが予期しない例外をキャッチすることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="unexpectedstoreexception-parameters"></a>予期しない\_ストア\_例外パラメーター

@@ -1,17 +1,17 @@
 ---
-title: V4 プリンター ドライバーのレンダリング アーキテクチャ
+title: V4 プリンター ドライバー レンダリング アーキテクチャ
 description: V4 プリンター ドライバー モデルのレンダリング アーキテクチャでは、XPSDrv アーキテクチャと同じです。
 ms.assetid: 132BB5D5-426C-4449-8562-B5E43E331858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e41b41db70243585742df0b22e74622e306584a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 100d89678075dbca81bcd8e37d195f3fedacef7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56529644"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362692"
 ---
-# <a name="v4-printer-driver-rendering-architecture"></a>V4 プリンター ドライバーのレンダリング アーキテクチャ
+# <a name="v4-printer-driver-rendering-architecture"></a>V4 プリンター ドライバー レンダリング アーキテクチャ
 
 
 V4 プリンター ドライバー モデルのレンダリング アーキテクチャは XPSDrv のアーキテクチャと同じであり、XPS フィルター パイプラインでは、いくつかの注目すべき追加内容を含む、Windows の以前のバージョンで使用されていた同じデザインもに従います。
@@ -60,11 +60,11 @@ IHV 機能の複数のフィルターを使用した製造元は、これらの�
 ## <a name="color-management"></a>色の管理
 
 
-色の管理は、v4 印刷ドライバーでサポートされます。 ドライバーを含める必要があります[Windows カラー システム](https://msdn.microsoft.com/library/windows/hardware/ff563783)(WCS) 準拠のカラー プロファイルまたは International Color Consortium (ICC) のカラー プロファイル。 V4 印刷ドライバーでは、デバイスに固有のカラー テーブルのドライバーのプロパティ バッグも使用可能性があります。
+色の管理は、v4 印刷ドライバーでサポートされます。 ドライバーを含める必要があります[Windows カラー システム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)(WCS) 準拠のカラー プロファイルまたは International Color Consortium (ICC) のカラー プロファイル。 V4 印刷ドライバーでは、デバイスに固有のカラー テーブルのドライバーのプロパティ バッグも使用可能性があります。
 
 ## <a name="related-topics"></a>関連トピック
 [V4 プリンター ドライバーの表示](v4-driver-rendering.md)  
-[Windows カラー システム](https://msdn.microsoft.com/library/windows/hardware/ff563783)  
+[Windows カラー システム](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)  
 
 
 

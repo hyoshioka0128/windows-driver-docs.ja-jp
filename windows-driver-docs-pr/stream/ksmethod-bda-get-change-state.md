@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ca0eea973a0ff33afc3cf50539b1a643ed51814
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f85096e8d1605cda1e30efdba0ef7d8abedc4e99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355853"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362636"
 ---
 # <a name="ksmethodbdagetchangestate"></a>KSMETHOD\_BDA\_取得\_変更\_状態
 
@@ -37,7 +37,7 @@ KSMETHOD**フラグ**メンバー KSMETHOD に設定\_型\_を読み取る。
 
 値、BDA から\_変更\_現在の状態の列挙型は、フィルターの状態を変更します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -56,11 +56,11 @@ KSMETHOD**フラグ**メンバー KSMETHOD に設定\_型\_を読み取る。
 ## <a name="see-also"></a>関連項目
 
 
-[**BDA\_変更\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff556518)
+[**BDA\_変更\_状態**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556518(v=vs.85))
 
-[**BdaGetChangeState**](https://msdn.microsoft.com/library/windows/hardware/ff556458)
+[**BdaGetChangeState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdagetchangestate)
 
-[**KSMETHOD**](https://msdn.microsoft.com/library/windows/hardware/ff563398)
+[**KSMETHOD**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85))
 
  
 

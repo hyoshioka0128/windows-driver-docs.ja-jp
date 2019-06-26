@@ -4,12 +4,12 @@ description: ACL とデバイス スタック
 ms.assetid: DAFC851D-E808-4588-86D2-E608584FD05B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6567b89243c3f685217e250e0a7678c89110cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cac1865e8eeb6e488eb75d46fb8701a9a34bcd0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386294"
 ---
 # <a name="acls-and-the-device-stack"></a>ACL とデバイス スタック
 
@@ -32,7 +32,7 @@ UFD などのホット プラグ可能なデバイスのドライバー スタ�
 
 -   まず、アプリケーションは、読み取り/書き込みアクセスのドライブ インターフェイスを識別するハンドルを開きます。
 
--   ハンドルが正常に開かれた後、アプリケーションが使用できる、 [ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) SCSI 要求をデバイスに送信する関数。
+-   ハンドルが正常に開かれた後、アプリケーションが使用できる、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) SCSI 要求をデバイスに送信する関数。
 
 ドライバー スタックは、デバイスのインターフェイスを作成するとき、ACL は、そのデバイスに適用されます。 ACL のアクセス制御要素 (ACE) では、ユーザー グループを説明し、アクセス許可に関連します。 など、Administrators グループの ACE は管理者がそのデバイス インターフェイスのある読み取り/書き込みアクセスのアクセス許可を記述する場合もあります。
 
@@ -63,7 +63,7 @@ UFD などのホット プラグ可能なデバイスのドライバー スタ�
 |          |                                  |
 |----------|----------------------------------|
 | プロパティ | SPDRP\_セキュリティ                  |
-| 値    | **セキュリティ\_記述子**         |
+| Value    | **セキュリティ\_記述子**         |
 | サイズ     | **sizeof**(セキュリティ\_記述子) |
 
  
@@ -80,7 +80,7 @@ UFD などのホット プラグ可能なデバイスのドライバー スタ�
 ## <a name="span-idsecuritycheckprocessspanspan-idsecuritycheckprocessspanspan-idsecuritycheckprocessspansecurity-check-process"></a><span id="Security_Check_Process"></span><span id="security_check_process"></span><span id="SECURITY_CHECK_PROCESS"></span>セキュリティ確認の処理
 
 
-アプリケーションはしようとすると、デバイス インターフェイスへのハンドルを開くと、I/O マネージャーがで要求されているアクセス権限がユーザーに許可されているかどうかを確認します、 [ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)呼び出します。 ハンドルが開かれた場合は、それ以外の場合、呼び出しはエラーへのアクセス失敗\_が拒否されました。
+アプリケーションはしようとすると、デバイス インターフェイスへのハンドルを開くと、I/O マネージャーがで要求されているアクセス権限がユーザーに許可されているかどうかを確認します、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)呼び出します。 ハンドルが開かれた場合は、それ以外の場合、呼び出しはエラーへのアクセス失敗\_が拒否されました。
 
 ハンドルが開かれた後、アプリケーション コマンドを送信できる、デバイスに直接通常 IOCTL を使用しています。 たとえば、SCSI パススルー コマンドを送信するアプリケーションは使用**IOCTL\_SCSI\_渡す\_を通じて**または**IOCTL\_SCSI\_のパス\_を通じて\_直接**します。
 
@@ -90,7 +90,7 @@ UFD などのホット プラグ可能なデバイスのドライバー スタ�
 
 SCSI パススルー要求で指定されたコマンド記述子ブロック (CDB) オペコードは、読み取り、書き込み、両方の読み取りおよび書き込みアクセス権が必要であるかどうかを判断するのにはチェックされません。 Windows が常に、アプリケーションだけを行う、読み取り、書き込み、またはデータが転送されずに場合でもにパススルーの要求の読み取りと書き込み用に開かれるデバイスを識別するハンドルが必要です。
 
-**IOCTL\_ディスク\_を確認してください**で要求されたアクセス許可に関係なく送信できる、 [ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)呼び出します。 その IOCTL に必要なアクセス許可をチェックし、比較することで呼び出し元に付与されるアクセス許可と I/O マネージャー受け取ると、IOCTL、 **CreateFile**呼び出します。 IOCTL がターゲット デバイスに送信される一致がある場合IOCTL 呼び出しをアクセス エラーで失敗するそれ以外の場合、\_が拒否されました。
+**IOCTL\_ディスク\_を確認してください**で要求されたアクセス許可に関係なく送信できる、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)呼び出します。 その IOCTL に必要なアクセス許可をチェックし、比較することで呼び出し元に付与されるアクセス許可と I/O マネージャー受け取ると、IOCTL、 **CreateFile**呼び出します。 IOCTL がターゲット デバイスに送信される一致がある場合IOCTL 呼び出しをアクセス エラーで失敗するそれ以外の場合、\_が拒否されました。
 
 たとえば、次のように、呼び出し元には、次のように、読み取り専用アクセスのハンドルが開かれている場合です。
 

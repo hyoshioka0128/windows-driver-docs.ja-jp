@@ -7,12 +7,12 @@ keywords:
 - IPsec オフロード WDK TCP/IP トランスポートは、IPsec タスク オフロードの詳細について
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cdda04345886efb2e8ab4c6e4d4445f1157cbf7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b6ae9209efb7d1a4dbdc41e76338042fa26d6ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323542"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368492"
 ---
 # <a name="offloading-ipsec-tasks"></a>IPsec タスクをオフロード
 
@@ -23,7 +23,7 @@ ms.locfileid: "63323542"
 
 このセクションでは、インターネット プロトコル セキュリティ (IPsec) タスクのオフロードについて説明します。
 
-**注**  で IPsec オフロード アウト オブ バンド (OOB) データが格納されている、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)情報の配列。 OOB のデータの詳細については、次を参照してください。 [TCP/IP Offload NET のへのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。
+**注**  で IPsec オフロード アウト オブ バンド (OOB) データが格納されている、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)情報の配列。 OOB のデータの詳細については、次を参照してください。 [TCP/IP Offload NET のへのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。
 
  
 

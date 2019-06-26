@@ -5,12 +5,12 @@ ms.assetid: 3C992E0D-132E-4687-B38E-31409E1A9F54
 ms.date: 08/08/2017
 keywords: -OID_WWAN_DELETE_MAC ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 02fbe5937ce640e9afb74032fd19cbf9553f8427
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae5d5e1f04ffef07ef6d6b37083f52caa912c5e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341381"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362850"
 ---
 # <a name="oidwwandeletemac"></a>OID\_WWAN\_削除\_MAC
 
@@ -30,9 +30,9 @@ OID\_WWAN\_削除\_NDIS 状態エラー コード NDIS 削除の既定のポー�
 
 OID を受け取ると\_WWAN\_削除\_ミニポート ドライバーを非アクティブ化、ポートに関連付けられた PDP コンテキストがない既に非アクティブの場合、MAC を要求します。 これは、突然の削除イベントが発生する可能性があるためにです。 このような時に PDP コンテキストを非アクティブ化では、モデムとミニポート ドライバーを正常な状態で維持することが確認されます。
 
-ときに、ドライバーは、突然削除すると、ドライバーのブロックを受信し、さらにすべての Oid を取り消します。 つまり、ドライバーが除外 OID\_WWAN\_削除\_Windows OID で呼び出しを送信する場合でも MAC\_WWAN\_削除\_MAC の一部として、 [ *フィルター\_デタッチ*](https://msdn.microsoft.com/library/windows/hardware/ff549918)呼び出します。
+ときに、ドライバーは、突然削除すると、ドライバーのブロックを受信し、さらにすべての Oid を取り消します。 つまり、ドライバーが除外 OID\_WWAN\_削除\_Windows OID で呼び出しを送信する場合でも MAC\_WWAN\_削除\_MAC の一部として、 [ *フィルター\_デタッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)呼び出します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

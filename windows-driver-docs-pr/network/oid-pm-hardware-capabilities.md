@@ -5,29 +5,29 @@ ms.assetid: 52446584-bb73-4cf4-bda9-bf92ef2488e3
 ms.date: 08/08/2017
 keywords: -OID_PM_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 46da6ba6459bb342712f07af1d5638cc307bfed0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e2847699aa2768de596ba00da52ebaa6ad1b6d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377578"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360796"
 ---
 # <a name="oidpmhardwarecapabilities"></a>OID\_PM\_ハードウェア\_機能
 
 
-クエリとしてドライバーを重なってできます OID を使用\_PM\_ハードウェア\_ネットワーク アダプターのハードウェアの電源の管理機能のクエリを実行する機能の OID。 OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。
+クエリとしてドライバーを重なってできます OID を使用\_PM\_ハードウェア\_ネットワーク アダプターのハードウェアの電源の管理機能のクエリを実行する機能の OID。 OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、ミニポート ドライバーにクエリを処理します。 以降では、NDIS 6.20 が動作は、ミニポート ドライバーを指定のハードウェアの電源管理機能の初期化中に、 **PowerManagementCapabilitiesEx**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)構造体。
+NDIS は、ミニポート ドライバーにクエリを処理します。 以降では、NDIS 6.20 が動作は、ミニポート ドライバーを指定のハードウェアの電源管理機能の初期化中に、 **PowerManagementCapabilitiesEx**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体。
 
-ミニポート ドライバーを発行する必要があります、 [ **NDIS\_状態\_PM\_機能\_変更**](https://msdn.microsoft.com/library/windows/hardware/ff567410)電源の変更の報告に状態の表示NDIS および上にあるドライバーをネットワーク アダプターのハードウェア機能を管理します。
+ミニポート ドライバーを発行する必要があります、 [ **NDIS\_状態\_PM\_機能\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-capabilities-change)電源の変更の報告に状態の表示NDIS および上にあるドライバーをネットワーク アダプターのハードウェア機能を管理します。
 
 NDIS は、要求の次のステータス コードのいずれかを返します。
 
 <a href="" id="ndis-status-success"></a>NDIS\_状態\_成功  
-要求は正常に完了しました。 **InformationBuffer**を指す、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)構造体。
+要求は正常に完了しました。 **InformationBuffer**を指す、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。
 
 <a href="" id="ndis-status-pending"></a>NDIS\_状態\_PENDING  
 完了待ちになっています。 NDIS では、要求が完了した後、最終的な状態コードと結果を呼び出し元の OID 要求完了ハンドラーに渡すは。
@@ -61,13 +61,13 @@ NDIS は、要求の次のステータス コードのいずれかを返しま�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
+[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)
+[**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
 
-[**NDIS\_状態\_PM\_機能\_変更**](https://msdn.microsoft.com/library/windows/hardware/ff567410)
+[**NDIS\_状態\_PM\_機能\_変更**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-capabilities-change)
 
  
 

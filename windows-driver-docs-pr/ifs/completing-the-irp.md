@@ -7,12 +7,12 @@ keywords:
 - WDK のファイル システムを要求する I/O の完了
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9bfa4598522deba749cbc0e19761eab473c29d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d96d1301bcb4ce22aaf78cc31cf48eb7adb32155
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391118"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363552"
 ---
 # <a name="completing-the-irp"></a>IRP の完了
 
@@ -28,7 +28,7 @@ ms.locfileid: "63391118"
 
 1.  設定**Irp -&gt;IoStatus.Status** NTSTATUS の適切な値にします。
 
-2.  呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP を I/O マネージャーに戻ります。
+2.  呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP を I/O マネージャーに戻ります。
 
 3.  呼び出し元には、手順 1 と同じ状態の値を返します。
 
@@ -38,7 +38,7 @@ IRP の完了は「成功」または「失敗」IRP と呼ばれるをことが
 
 -   *失敗*IRP の状態などのエラーまたは警告の NTSTATUS 値を使用することを意味\_無効な\_デバイス\_要求または状態\_バッファー\_オーバーフローします。
 
-NTSTATUS の値は ntstatus.h に定義されます。 これらの値は 4 つのカテゴリに分類されます。 成功すると、情報、警告、およびエラー。 詳細については、次を参照してください。 [NTSTATUS 値を使用して](https://msdn.microsoft.com/library/windows/hardware/ff565436)します。
+NTSTATUS の値は ntstatus.h に定義されます。 これらの値は 4 つのカテゴリに分類されます。 成功すると、情報、警告、およびエラー。 詳細については、次を参照してください。 [NTSTATUS 値を使用して](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)します。
 
 **注**  が状態\_PENDING は成功 NTSTATUS 値、状態が IRP を完了すると、プログラミング エラー\_保留します。
 

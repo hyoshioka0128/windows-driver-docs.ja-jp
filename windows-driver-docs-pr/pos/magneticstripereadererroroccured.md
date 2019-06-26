@@ -4,12 +4,12 @@ description: MagneticStripeReaderErrorOccured イベントでは、スキャン�
 ms.assetid: c2402411-1bbf-44c1-bf7f-813f6d967822
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 256b7ddf3ee94902e89bf315dc5820da7ed9fc1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8bafd029ac4bdbabc63cecc5dbe56559e3afddf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349286"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363373"
 ---
 # <a name="magneticstripereadererroroccured"></a>MagneticStripeReaderErrorOccured
 
@@ -39,14 +39,14 @@ typedef struct _MSR_ERROR_EVENT
 |--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x00000009                                                          | **EventType = PosEventType:。MagneticStripeReaderErrorOccurred**                                                               |
 | UINT32                                                              | **DataLength** = sizeof(**PosEventDataHeader**) + sizeof(**MSR\_ERROR\_EVENT**)                                                |
-| 32 ビット[MsrTrackErrorType](https://msdn.microsoft.com/library/windows/hardware/dn772173)                   | **Track1Status**                                                                                                               |
-| 32 ビット[MsrTrackErrorType](https://msdn.microsoft.com/library/windows/hardware/dn772173)                   | **Track2Status**                                                                                                               |
-| 32 ビット[MsrTrackErrorType](https://msdn.microsoft.com/library/windows/hardware/dn772173)                   | **Track3Status**                                                                                                               |
-| 32 ビット[MsrTrackErrorType](https://msdn.microsoft.com/library/windows/hardware/dn772173)                   | **Track4Status**                                                                                                               |
-| 32 ビット[UnifiedPosErrorSeverity](https://msdn.microsoft.com/library/windows/hardware/dn790053)       | **重要度**                                                                                                                   |
-| 32 ビット[UnifiedPosErrorReason](https://msdn.microsoft.com/library/windows/hardware/dn790050)           | **Reason**                                                                                                                     |
+| 32 ビット[MsrTrackErrorType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrtrackerrortype)                   | **Track1Status**                                                                                                               |
+| 32 ビット[MsrTrackErrorType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrtrackerrortype)                   | **Track2Status**                                                                                                               |
+| 32 ビット[MsrTrackErrorType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrtrackerrortype)                   | **Track3Status**                                                                                                               |
+| 32 ビット[MsrTrackErrorType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrtrackerrortype)                   | **Track4Status**                                                                                                               |
+| 32 ビット[UnifiedPosErrorSeverity](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicecommontypes/ne-pointofservicecommontypes-driverunifiedposerrorseverity)       | **重要度**                                                                                                                   |
+| 32 ビット[UnifiedPosErrorReason](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicecommontypes/ne-pointofservicecommontypes-driverunifiedposerrorreason)           | **Reason**                                                                                                                     |
 | UINT32                                                              | **拡張の理由**                                                                                                            |
-| 32 ビット[MsrCardType](https://msdn.microsoft.com/library/windows/hardware/dn772167)                               | **CardType**                                                                                                                   |
+| 32 ビット[MsrCardType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrcardtype)                               | **CardType**                                                                                                                   |
 | unsigned char                                                       | **Track1EncryptedDataLength**                                                                                                  |
 | unsigned char                                                       | **Track2EncryptedDataLength**                                                                                                  |
 | unsigned char                                                       | **Track3EncryptedDataLength**                                                                                                  |

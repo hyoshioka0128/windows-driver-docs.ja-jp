@@ -4,12 +4,12 @@ description: 概要
 ms.assetid: 3b2895a2-9a2e-46eb-b8fb-47d6db4a1de0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee729166924cf60c7af642c2891c6e6e7745135d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ba1960e7c3053527cc17a4d1238a575b8f9ce88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352784"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386065"
 ---
 # <a name="overview"></a>概要
 
@@ -45,11 +45,11 @@ Windows NT 3.1 では、レベル 1、レベル 2、およびバッチの各 opl
 
 カーネルの oplock のパッケージのコア機能が実装されている (主にを通じて*FsRtlXxx*ルーチン)。 ファイル システムは、自身のファイル システムに oplock 機能を実装するには、このパッケージを呼び出します。 このドキュメントでは、NTFS ファイル システムがカーネル oplock のパッケージと相互運用する方法について説明します。 他のファイル システムは、若干の違いがある可能性がありますが、同様の方法で機能します。
 
-各 Oplock がストリームのハンドルに付与されます。 つまり、ストリームの特定のオープンの oplock が与えられています。 Windows 7 以降では、ストリームのハンドルを関連付ける、 *oplock キー*、つまりに属している複数のハンドルを識別するために使用される GUID 値と同じクライアントのキャッシュを表示 (このトピックの注を参照してください)。 Oplock のキーを明示的に指定することができます (に[ **IoCreateFileEx**](https://msdn.microsoft.com/library/windows/hardware/ff548283)) ハンドルが作成されたとき。 Oplock のキーを指定しない場合は明示的にハンドルが作成されたときに、システムはその他のいずれかのハンドルの他の任意のキーとそのキーは異なるように、それに関連付けられている一意の oplock のキーを持つものとしてハンドルを扱います。 Oplock が許可されたもの以外のハンドルでファイルの操作を受信したと操作のハンドルに関連付けられているキーから oplock のハンドルに関連付けられている oplock キーとは異なる、その操作と互換性がない場合、現在 oplock を与え、し、その oplock は解除されます。 プロセスまたは互換性のない操作を実行するスレッドが同じである場合でも、oplock が解除されます。 プロセスは排他 oplock が付与されますストリームを開き、同じプロセスで同じストリームをもう一度表示し、別の (またはなし) の使用など、oplock キー排他 oplock が壊れているすぐにします。
+各 Oplock がストリームのハンドルに付与されます。 つまり、ストリームの特定のオープンの oplock が与えられています。 Windows 7 以降では、ストリームのハンドルを関連付ける、 *oplock キー*、つまりに属している複数のハンドルを識別するために使用される GUID 値と同じクライアントのキャッシュを表示 (このトピックの注を参照してください)。 Oplock のキーを明示的に指定することができます (に[ **IoCreateFileEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatefileex)) ハンドルが作成されたとき。 Oplock のキーを指定しない場合は明示的にハンドルが作成されたときに、システムはその他のいずれかのハンドルの他の任意のキーとそのキーは異なるように、それに関連付けられている一意の oplock のキーを持つものとしてハンドルを扱います。 Oplock が許可されたもの以外のハンドルでファイルの操作を受信したと操作のハンドルに関連付けられているキーから oplock のハンドルに関連付けられている oplock キーとは異なる、その操作と互換性がない場合、現在 oplock を与え、し、その oplock は解除されます。 プロセスまたは互換性のない操作を実行するスレッドが同じである場合でも、oplock が解除されます。 プロセスは排他 oplock が付与されますストリームを開き、同じプロセスで同じストリームをもう一度表示し、別の (またはなし) の使用など、oplock キー排他 oplock が壊れているすぐにします。
 
 Oplock のキーが、ハンドルの上に存在「れたりする」、ハンドル、ハンドルが作成されることに注意してください。 各 oplock が付与されていない場合でも、oplock のキーを持つハンドルを関連付けることができます。
 
-**注**  がより正確に言えば、oplock のキーに関連付けられていること、 [**ファイル\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff545834)ストリームのハンドルを表す構造体。 など、ハンドルが重複している場合は、この区別が重要で[DuplicateHandle](https://go.microsoft.com/fwlink/p/?linkid=124237)します。 それぞれの重複するハンドルを同じ基になる指す**ファイル\_オブジェクト**構造体。
+**注**  がより正確に言えば、oplock のキーに関連付けられていること、 [**ファイル\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_object)ストリームのハンドルを表す構造体。 など、ハンドルが重複している場合は、この区別が重要で[DuplicateHandle](https://go.microsoft.com/fwlink/p/?linkid=124237)します。 それぞれの重複するハンドルを同じ基になる指す**ファイル\_オブジェクト**構造体。
 
  
 

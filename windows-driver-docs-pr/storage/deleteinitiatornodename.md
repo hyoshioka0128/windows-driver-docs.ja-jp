@@ -4,12 +4,12 @@ description: DeleteInitiatorNodeName
 ms.assetid: 955ff574-a73b-42fa-8302-1012de5c9fee
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2bfc297849ded7333cca5e576da3a7b280412f4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00fb087e06a510dfa0ac5504860d29b6cc34c1fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392747"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368308"
 ---
 # <a name="deleteinitiatornodename"></a>DeleteInitiatorNodeName
 
@@ -18,7 +18,7 @@ ms.locfileid: "63392747"
 
 実装するミニポート ドライバー、 [MSiSCSI\_操作 WMI クラス](msiscsi-operations-wmi-class.md)このメソッドをサポートする必要はありません。
 
-MSiSCSI\_操作 WMI クラスは発行されません。 パラメーターの説明については、 **DeleteInitiatorNodeName**メソッドのメンバーの説明を参照してください、 [ **DeleteInitiatorNodeName\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff552505)[ **DeleteInitiatorNodeName\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff552506)構造体。
+MSiSCSI\_操作 WMI クラスは発行されません。 パラメーターの説明については、 **DeleteInitiatorNodeName**メソッドのメンバーの説明を参照してください、 [ **DeleteInitiatorNodeName\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_deleteinitiatornodename_in)[ **DeleteInitiatorNodeName\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_deleteinitiatornodename_out)構造体。
 
  
 

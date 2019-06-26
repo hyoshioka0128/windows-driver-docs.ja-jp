@@ -5,12 +5,12 @@ Robots: noindex, nofollow
 ms.assetid: 4415522d-6ea3-42f6-9acc-0e3ceaa36dc7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 257bf93483dc6bd31b7aa48361f688a5c724460c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c244b178522ecf323c67abe4a4818f48e03ee1f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331378"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366833"
 ---
 # <a name="i"></a>I
 
@@ -45,7 +45,7 @@ I/O 要求を表し、その処理を制御するために使用するデータ�
 詳細については、次を参照してください。[を使用してブレークポイント](using-breakpoints.md)します。
 
 <span id="input_callback_objects"></span><span id="INPUT_CALLBACK_OBJECTS"></span>**入力のコールバック オブジェクト**  
-インスタンス、 [IDebugInputCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550785)クライアントに登録されているインターフェイス。 デバッガー エンジンが入力を必要とされるたびに、入力のコールバックを提供するよう要求されます。
+インスタンス、 [IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebuginputcallbacks)クライアントに登録されているインターフェイス。 デバッガー エンジンが入力を必要とされるたびに、入力のコールバックを提供するよう要求されます。
 
 出力のコールバックを参照してください。
 

@@ -4,12 +4,12 @@ description: DSM\_カウンター WMI クラス
 ms.assetid: 11ff77d7-5643-45ec-ac38-26ee70e6ea94
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d9a038eb06228b83f567f336d7161807ad213ef1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9f5a8bebf89044358d72d997a9932265de7ec7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380676"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368257"
 ---
 # <a name="dsmcounters-wmi-class"></a>DSM\_カウンター WMI クラス
 
@@ -60,7 +60,7 @@ class DSM_COUNTERS
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **DSM\_カウンター** ](https://msdn.microsoft.com/library/windows/hardware/ff552683)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **DSM\_カウンター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_dsm_counters)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

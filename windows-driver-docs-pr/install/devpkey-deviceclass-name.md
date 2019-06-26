@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f155a5aa82191509e84c46cbd22bb967fe557bba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d8ac3c6dd0e1ff16531f1d399b3f548901e761c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362970"
 ---
 # <a name="devpkeydeviceclassname"></a>DEVPKEY_DeviceClass_Name
 
 
-DEVPKEY_DeviceClass_Name デバイス プロパティの表示名を表す、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
+DEVPKEY_DeviceClass_Name デバイス プロパティの表示名を表す、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
 
 <table>
 <colgroup>
@@ -56,11 +56,11 @@ DEVPKEY_DeviceClass_Name デバイス プロパティの表示名を表す、[�
 <a name="remarks"></a>注釈
 -------
 
-DEVPKEY_DeviceClass_Name の値によって設定されます、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)に含まれている、 [ **INF ClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)クラスをインストールするとします。 クラスのフレンドリ名を設定するには、使用、 **AddReg**を設定するディレクティブ、 **(既定)** クラスのレジストリ エントリの値。
+DEVPKEY_DeviceClass_Name の値によって設定されます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に含まれている、 [ **INF ClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)クラスをインストールするとします。 クラスのフレンドリ名を設定するには、使用、 **AddReg**を設定するディレクティブ、 **(既定)** クラスのレジストリ エントリの値。
 
-呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_Name の値を取得するには.
+呼び出すことができます[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) DEVPKEY_DeviceClass_Name の値を取得するには.
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_Name プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 上のデバイス セットアップ クラスのフレンドリ名にアクセスする方法については、次を参照してください。[フレンドリ名と、デバイス セットアップ クラスのクラス名にアクセスする](https://msdn.microsoft.com/library/windows/hardware/ff537755)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_Name プロパティのキーをサポートしていません。 Windows Server 2003、Windows XP、および Windows 2000 上のデバイス セットアップ クラスのフレンドリ名にアクセスする方法については、次を参照してください。[フレンドリ名と、デバイス セットアップ クラスのクラス名にアクセスする](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-the-friendly-name-and-class-name-of-a-device-setup-class)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -85,15 +85,15 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF ClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)
+[**INF ClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiGetClassDescriptionEx**](https://msdn.microsoft.com/library/windows/hardware/ff551058)
+[**SetupDiGetClassDescriptionEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa)
 
  
 

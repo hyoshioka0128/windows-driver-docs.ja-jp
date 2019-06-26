@@ -9,12 +9,12 @@ keywords:
 - PnP デバイスの一時停止
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c680f3cd8438d462082b9f52a330b655ed9ec2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f18513365c36fbb0c26811af5930ab1025bc6b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364300"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363434"
 ---
 # <a name="holding-incoming-irps-when-a-device-is-paused"></a>デバイスが一時停止したときの着信 IRP の保留
 
@@ -22,13 +22,13 @@ ms.locfileid: "63364300"
 
 
 
-デバイスのドライバーでは、そのリソースが調整されている場合、デバイスを一時停止する必要があります。 リソースが再調整中に一部のドライバーは、デバイスへの応答を一時停止、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551725)要求およびその他ドライバーの遅延を受け取るまで、デバイスの一時停止、 [ **IRP\_MN\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551755)要求。 どちらの場合、デバイスがある必要がありますと一時停止、 **IRP\_MN\_停止\_デバイス**が成功するとします。
+デバイスのドライバーでは、そのリソースが調整されている場合、デバイスを一時停止する必要があります。 リソースが再調整中に一部のドライバーは、デバイスへの応答を一時停止、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)要求およびその他ドライバーの遅延を受け取るまで、デバイスの一時停止、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求。 どちらの場合、デバイスがある必要がありますと一時停止、 **IRP\_MN\_停止\_デバイス**が成功するとします。
 
 ドライバーは、デバイス上で進行中の任意の Irp を完了し、デバイスへのアクセスを必要とする新しい Irp を開始しない必要があります。
 
 デバイスが一時停止中に Irp を保持するには、ドライバーは、次の手順を実装します。
 
-1.  その[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン、保留中のような名前で、デバイスの拡張機能のフラグを定義する\_新規\_要求。 フラグをオフにします。
+1.  その[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン、保留中のような名前で、デバイスの拡張機能のフラグを定義する\_新規\_要求。 フラグをオフにします。
 
 2.  Irp を保持するため、FIFO キューを作成します。
 

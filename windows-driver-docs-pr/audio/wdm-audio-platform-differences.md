@@ -7,12 +7,12 @@ keywords:
 - オーディオ ドライバー WDK、プラットフォームの違い
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c4e76bfb1610d61e3394d5aa3b3df4e79dbc6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e853c5fc2c78ae3504ba4c6b2371efb089cec8cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328464"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364779"
 ---
 # <a name="wdm-audio-platform-differences"></a>WDM オーディオ プラットフォームの相違点
 
@@ -32,7 +32,7 @@ WDM プラットフォームの違いの詳細については、Windows Driver K
 
 -   Windows のバージョン間で PortCls アダプター ドライバーのバージョン番号の違いについては、次を参照してください。[オーディオ ドライバーのバージョン番号](version-numbers-for-audio-drivers.md)します。
 
--   どの WDM ドライバーのサポートは、一般に Windows のバージョンでは、ドライバーは、浮動小数点の問題の説明などによって異なります。 については、次を参照してください。 [WDM バージョン間の違い](https://msdn.microsoft.com/library/windows/hardware/ff543216)します。
+-   どの WDM ドライバーのサポートは、一般に Windows のバージョンでは、ドライバーは、浮動小数点の問題の説明などによって異なります。 については、次を参照してください。 [WDM バージョン間の違い](https://docs.microsoft.com/windows-hardware/drivers/kernel/differences-in-wdm-versions)します。
 
  
 

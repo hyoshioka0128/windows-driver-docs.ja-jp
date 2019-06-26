@@ -4,12 +4,12 @@ description: Static Driver Verifier (SDV) は、一連のインターフェイ�
 ms.assetid: 94D4104C-66ED-4C1E-8EE1-4C669EB4EAAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf17c5836dd28eb12f398a4fb11bbf9c342a960
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71a9611cab2d6e43ab818510abb4bfbe88ebf118
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371559"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363779"
 ---
 # <a name="using-static-driver-verifier-to-find-defects-in-windows-drivers"></a>Windows ドライバーの不具合を見つけるための静的ドライバー検証ツールの使用
 
@@ -28,7 +28,7 @@ SDV は、次のドライバー モデルのいずれかに準拠しているカ
 
 1.  **ロールの種類の関数を使用して、ドライバーによって提供される関数を宣言します。**
 
-    SDV は、関数の役割の種類の宣言を使用して、関数を宣言することが必要です。 たとえば、 [ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンは、ドライバーを使用して宣言する必要があります\_INITIALIZE 関数ロールの種類。
+    SDV は、関数の役割の種類の宣言を使用して、関数を宣言することが必要です。 たとえば、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンは、ドライバーを使用して宣言する必要があります\_INITIALIZE 関数ロールの種類。
 
     ```
     DRIVER_INITIALIZE DriverEntry;
@@ -122,7 +122,7 @@ SDV は、次のドライバー モデルのいずれかに準拠しているカ
 
     Static Driver Verifier の種類の検出のドライバー (WDF、WDM、NDIS、または Storport) を分析しているし、ドライバーの種類の既定の規則セットを選択します。 最初に、ドライバーでは、SDV を実行している場合は、既定の規則セットを実行する必要があります。
 
-    ルールについては、次を参照してください。 [DDI 準拠規則](https://msdn.microsoft.com/library/windows/hardware/ff552840)します。
+    ルールについては、次を参照してください。 [DDI 準拠規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 5.  静的分析を開始します。 をクリックして、 **Main**タブをクリックし、をクリックして**開始**します。 クリックすると**開始**分析が実行に長時間かかることやスタティック分析をスケジュールすることを知らせるメッセージが表示されます。 続行するには、 **[OK]** をクリックします。 分析は、スケジュールした時刻に開始します。
 
@@ -155,7 +155,7 @@ SDV は、タイムアウトを報告または有用な結果に失敗した場�
 
 [関数の役割の種類の宣言を使用してください。](using-function-role-type-declarations.md)
 
-[Static Driver Verifier の規則](https://msdn.microsoft.com/library/windows/hardware/ff552840)
+[Static Driver Verifier の規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 [コード分析ツール](https://go.microsoft.com/fwlink/p/?linkid=226836)
 

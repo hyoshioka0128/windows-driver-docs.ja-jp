@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_ADD_PM_PROTOCOL_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1fd1db45482274a5c30993f4e4dd7900e42770d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd47b8cd9f4fc80ae2c6bea40ac4778223b8d08e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331226"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387260"
 ---
 # <a name="oidwdisetaddpmprotocoloffload"></a>OID\_WDI\_設定\_追加\_PM\_プロトコル\_オフロード
 
@@ -32,9 +32,9 @@ OID\_WDI\_設定\_追加\_PM\_プロトコル\_オフロードが 1 つまたは
 
 | TLV                                                                                                         | 許可されている複数の TLV インスタンス | 省略可能 | 説明                            |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------|
-| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv4ARP**](https://msdn.microsoft.com/library/windows/hardware/dn898035)                |                                | x        | IPv4 ARP プロトコルでは、パラメーターをオフロードします。  |
-| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv6NS**](https://msdn.microsoft.com/library/windows/hardware/dn898036)                  |                                | x        | IPv6 NS プロトコルでは、パラメーターをオフロードします。   |
-| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_80211RSN\_キー更新**](https://msdn.microsoft.com/library/windows/hardware/dn898033) |                                | x        | キーを再入力 RSN プロトコルでは、パラメーターをオフロードします。 |
+| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv4ARP**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-ipv4arp)                |                                | x        | IPv4 ARP プロトコルでは、パラメーターをオフロードします。  |
+| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv6NS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-ipv6ns)                  |                                | x        | IPv6 NS プロトコルでは、パラメーターをオフロードします。   |
+| [**WDI\_TLV\_PM\_プロトコル\_オフロード\_80211RSN\_キー更新**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-80211rsn-rekey) |                                | x        | キーを再入力 RSN プロトコルでは、パラメーターをオフロードします。 |
 
  
 

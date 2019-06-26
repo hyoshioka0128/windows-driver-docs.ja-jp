@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_TASK_DISCONNECT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a18882adea48a6e9c4256e4cf6aa11a1450f00ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2885a124087ee0934beaa09a7042ab145da3267d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383591"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387239"
 ---
 # <a name="oidwditaskdisconnect"></a>OID\_WDI\_タスク\_切断
 
@@ -31,7 +31,7 @@ OID\_WDI\_タスク\_切断は、ピアとの接続を終了するために使�
 
 | TLV                                                                            | 許可されている複数の TLV インスタンス | 省略可能 | 説明                |
 |--------------------------------------------------------------------------------|--------------------------------|----------|----------------------------|
-| [**WDI\_TLV\_切断\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926300) |                                |          | 切断のパラメーター。 |
+| [**WDI\_TLV\_切断\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-disconnect-parameters) |                                |          | 切断のパラメーター。 |
 
  
 
@@ -46,7 +46,7 @@ OID\_WDI\_タスク\_切断は、ピアとの接続を終了するために使�
 
 ポートは、関連付けの解除を示す値が送信される前に、ピアに関連付けられている状態を消去する必要があります。 これには、任意のキーと、ピアに関連付けられている 802.1 x ポート承認情報が含まれます。 ポートでは、単独でのローミングがトリガーされない必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

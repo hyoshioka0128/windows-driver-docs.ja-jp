@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1b650d02b6abc31e9e8aa8c29e2ccb410603c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbb42db9d56bab021bd7f0a25194e31398110bbf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336593"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362496"
 ---
 # <a name="gle"></a>!gle
 
@@ -60,12 +60,12 @@ Ext.dll Ntsdexts.dll</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については、 [ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)ルーチン、Micorosft Windows SDK のドキュメントを参照してください。
+詳細については、 [ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)ルーチン、Micorosft Windows SDK のドキュメントを参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-**! Gle**拡張機能の値を表示する[ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)この値をデコードしようとします。
+**! Gle**拡張機能の値を表示する[ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)この値をデコードしようとします。
 
 カーネル モードで、 **! gle**デバッガー スレッド環境ブロックの終了を読み取ることができる場合にのみ拡張機能の作業です。
 

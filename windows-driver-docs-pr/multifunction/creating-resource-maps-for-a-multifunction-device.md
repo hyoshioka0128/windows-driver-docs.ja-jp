@@ -8,12 +8,12 @@ keywords:
 - 子関数のリソースは、WDK をマップします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1752592c8ecf49df4ed509df51d1e5e3f1a638f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1392401397dbd09a0df1ece29fedf8e778898fd7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323646"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362927"
 ---
 # <a name="creating-resource-maps-for-a-multifunction-device"></a>多機能デバイス用のリソース マップの作成
 
@@ -21,7 +21,7 @@ ms.locfileid: "63323646"
 
 
 
-A*リソース マップ*子関数によって使用されている多機能デバイスのリソースを識別します。 リソース マップを指定する、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。 多機能デバイスには、リソース マップが必要とする場合、デバイスの INF には通常、デバイスの各関数に対して、リソース マップが含まれます。
+A*リソース マップ*子関数によって使用されている多機能デバイスのリソースを識別します。 リソース マップを指定する、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。 多機能デバイスには、リソース マップが必要とする場合、デバイスの INF には通常、デバイスの各関数に対して、リソース マップが含まれます。
 
 2 種類のリソース マップ −*標準*リソース マップと*さまざまな*リソース マップします。 このセクションでは、リソース マップを構築する方法について説明し、次のトピックが含まれています。
 

@@ -4,17 +4,17 @@ description: ACPI 5.0 仕様には、Windows を実行している SoC ベース
 ms.assetid: C8AA4EE1-D9A6-438E-801B-8EDDF8AA0560
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 807841e42f46a4204619df75a9937f510115a2d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3504315b3a3aa87a1188b0736ca39549619ade9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337527"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364546"
 ---
 # <a name="hardware-requirements-for-soc-based-platforms"></a>SoC ベースのプラットフォームのハードウェア要件
 
 
-[ACPI 5.0 仕様](https://www.uefi.org/specifications)Windows を実行している SoC ベースのプラットフォームをサポートするためのハードウェア要件の新しいセットが導入されています。 ACPI 5.0 は、コストを削減するシステムのハードウェア制限の設計をサポートしていますが、長いバッテリ寿命を有効にするコネクテッド スタンバイ電源モデルをサポートしています。
+[ACPI 5.0 仕様](https://uefi.org/specifications)Windows を実行している SoC ベースのプラットフォームをサポートするためのハードウェア要件の新しいセットが導入されています。 ACPI 5.0 は、コストを削減するシステムのハードウェア制限の設計をサポートしていますが、長いバッテリ寿命を有効にするコネクテッド スタンバイ電源モデルをサポートしています。
 
 ## <a name="hardware-reduced-acpi-platforms"></a>ACPI プラットフォームのハードウェア制限
 
@@ -39,7 +39,7 @@ ACPI 固定ハードウェア インターフェイスを実装していない�
 
 Windows では、ACPI のハードウェアに削減または完全な ACPI を実装するかどうかに関係なく低電力アイドル状態の S0 機能を備えたプラットフォームをサポートします。 ただし、ACPI 5.0 仕様で必要に応じて Windows を使用しません従来スリープ/再開機能 ACPI 構成に関係なく、低電力アイドル状態の S0 機能を持つ複数のプラットフォームで。
 
-スタンバイ電源が接続されているモデルの詳細については、次を参照してください。[最新スタンバイ](https://msdn.microsoft.com/library/windows/hardware/dn915061)します。
+スタンバイ電源が接続されているモデルの詳細については、次を参照してください。[最新スタンバイ](https://docs.microsoft.com/previous-versions/dn915061(v=vs.85))します。
 
 ## <a name="acpi-events"></a>ACPI イベント
 

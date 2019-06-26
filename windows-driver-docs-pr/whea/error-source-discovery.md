@@ -12,17 +12,17 @@ keywords:
 - WDK WHEA エラー ソースの検出
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3bc3c4e90efb599b74768a0df920c874141239
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ceb3b06a3e412ff43516f75dc7d07ca436d75d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386474"
 ---
 # <a name="error-source-discovery"></a>エラー ソース検出
 
 
-オペレーティング システムの初期化中に、Windows カーネルのクエリのすべての一覧については PSHED、[エラー ソース](hardware-errors-and-error-sources.md)ハードウェア プラットフォームにより実装されます。 一覧を返します、PSHED [ **WHEA\_エラー\_ソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff560505)の各ハードウェア プラットフォームをサポートするエラーのソースを記述する構造体. オペレーティング システムでは、この情報を使用して、、ハードウェア プラットフォームからのエラー通知を処理するために必要な低レベル ハードウェア エラー ハンドラー (LLHEHs) を有効にします。
+オペレーティング システムの初期化中に、Windows カーネルのクエリのすべての一覧については PSHED、[エラー ソース](hardware-errors-and-error-sources.md)ハードウェア プラットフォームにより実装されます。 一覧を返します、PSHED [ **WHEA\_エラー\_ソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)の各ハードウェア プラットフォームをサポートするエラーのソースを記述する構造体. オペレーティング システムでは、この情報を使用して、、ハードウェア プラットフォームからのエラー通知を処理するために必要な低レベル ハードウェア エラー ハンドラー (LLHEHs) を有効にします。
 
 次は、PSHED で検出されたエラーのソースの最小セットです。
 

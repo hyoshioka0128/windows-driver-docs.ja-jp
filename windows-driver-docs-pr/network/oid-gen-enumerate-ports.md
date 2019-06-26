@@ -5,12 +5,12 @@ ms.assetid: 42a12a05-e360-4493-b037-d3a63906a132
 ms.date: 08/08/2017
 keywords: -OID_GEN_ENUMERATE_PORTS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b622ba3d331a92898e07e07d55233ebaff71a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c720449c94075208d95308d6c5f870b13f09900
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381352"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369112"
 ---
 # <a name="oidgenenumerateports"></a>OID\_GEN\_ENUMERATE\_ポート
 
@@ -30,7 +30,7 @@ ms.locfileid: "63381352"
 
 NDIS は、この OID を処理し、ミニポート ドライバーには、この OID クエリは受け取りません。
 
-NDIS が NDIS を返します、クエリが成功すると、\_状態\_成功でクエリの結果を示し、 [ **NDIS\_ポート\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff566786)構造体. **NumberOfPorts**の NDIS メンバー\_ポート\_ミニポート アダプターに関連付けられているアクティブなポートの数が配列に含まれています。 **ポート**の NDIS メンバー\_ポート\_配列へのポインターのリストに含まれる[ **NDIS\_ポート\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566791)構造体。 各 NDIS\_ポート\_の特性構造が 1 つの NDIDS ポートの特性を定義します。
+NDIS が NDIS を返します、クエリが成功すると、\_状態\_成功でクエリの結果を示し、 [ **NDIS\_ポート\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_array)構造体. **NumberOfPorts**の NDIS メンバー\_ポート\_ミニポート アダプターに関連付けられているアクティブなポートの数が配列に含まれています。 **ポート**の NDIS メンバー\_ポート\_配列へのポインターのリストに含まれる[ **NDIS\_ポート\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_characteristics)構造体。 各 NDIS\_ポート\_の特性構造が 1 つの NDIDS ポートの特性を定義します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -51,9 +51,9 @@ NDIS が NDIS を返します、クエリが成功すると、\_状態\_成功�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_ポート\_配列**](https://msdn.microsoft.com/library/windows/hardware/ff566786)
+[**NDIS\_ポート\_配列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_array)
 
-[**NDIS\_ポート\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566791)
+[**NDIS\_ポート\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_port_characteristics)
 
  
 

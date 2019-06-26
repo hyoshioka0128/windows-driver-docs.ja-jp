@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d6d0a0bffdc0d067be7bf742c727e159be8ab30a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08f0b203d506a29907dbb33d59216aed6115084b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358132"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362288"
 ---
 # <a name="bug-check-0x124-wheauncorrectableerror"></a>バグ チェック 0x124:WHEA\_修正不可能な\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358132"
 WHEA\_修正不可能な\_エラーのバグ チェックが 0x00000124 の値を持ちます。 このバグ チェックでは、ハードウェアの致命的なエラーが発生したことを示します。 このバグ チェックでは、Windows ハードウェア エラー アーキテクチャ (WHEA) によって提供されるエラー データを使用します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="wheauncorrectableerror-parameters"></a>WHEA\_修正不可能な\_エラー パラメーター
@@ -154,7 +154,7 @@ WHEA\_修正不可能な\_エラーのバグ チェックが 0x00000124 の値�
 
 パラメーター 1 では、エラーが報告されたエラーのソースの種類を識別します。 2 番目のパラメーターは、WHEA のアドレスを保持\_エラー\_レコード構造のエラー条件について説明します。
 
-ハードウェア エラーが発生したときに、WHEA はハードウェアのエラー状態に関連付けられているエラー情報を格納するエラー レコードを作成します。 各 error レコードには、WHEA によって記述\_エラー\_レコードの構造体。 Windows カーネルには、システム イベント ログにエラー レコードが保存されるように、エラー応答を生成した Event Tracing for Windows (ETW) のハードウェア エラー イベントのエラー レコードが含まれています。 WHEA で使用されるエラー レコードの形式は、Unified Extensible Firmware Interface (UEFI) 仕様のバージョン 2.2 の付録 N」の説明に従って、共通のプラットフォーム エラー レコードに基づいています。 詳細については、次を参照してください。 [WHEA\_エラー\_レコード](https://msdn.microsoft.com/library/windows/hardware/ff560483)と[Windows ハードウェア エラー アーキテクチャ (WHEA)](https://msdn.microsoft.com/library/windows/hardware/ff559509)します。
+ハードウェア エラーが発生したときに、WHEA はハードウェアのエラー状態に関連付けられているエラー情報を格納するエラー レコードを作成します。 各 error レコードには、WHEA によって記述\_エラー\_レコードの構造体。 Windows カーネルには、システム イベント ログにエラー レコードが保存されるように、エラー応答を生成した Event Tracing for Windows (ETW) のハードウェア エラー イベントのエラー レコードが含まれています。 WHEA で使用されるエラー レコードの形式は、Unified Extensible Firmware Interface (UEFI) 仕様のバージョン 2.2 の付録 N」の説明に従って、共通のプラットフォーム エラー レコードに基づいています。 詳細については、次を参照してください。 [WHEA\_エラー\_レコード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record)と[Windows ハードウェア エラー アーキテクチャ (WHEA)](https://docs.microsoft.com/windows-hardware/drivers/whea)します。
 
 使用することができます[ **! errrec** ](-errrec.md) &lt;addr&gt; WHEA を表示する\_エラー\_パラメーター 2 で提供されるアドレスを使用してレコードの構造体。 [ **! Whea** ](-whea.md)と[ **! errpkt** ](-errpkt.md) WHEA 情報を表示する拡張機能を使用できます。
 

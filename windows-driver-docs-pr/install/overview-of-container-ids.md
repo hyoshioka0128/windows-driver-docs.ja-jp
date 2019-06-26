@@ -6,12 +6,12 @@ keywords:
 - コンテナー Id WDK, 概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3ca4c823eeb57be16b15bb94eee1326045a37e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e408ccdd1af64187fe284a141be33ebe8be705e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330261"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366652"
 ---
 # <a name="overview-of-container-ids"></a>コンテナー ID の概要
 
@@ -34,7 +34,7 @@ Windows 7 以降のオペレーティング システムで新しい ID を使�
 
 一般に、返さない NULL_GUID として既定では、コンテナー ID を報告するときに 代わりに、しない BusQueryContainerIDs ケース IRP_MN_QUERY_ID を処理するようにし、PnP できるように、既定のロジックを適用します。
 
-コンテナー ID として NULL_GUID を返すときに、バス ドライバーを宣言します PnP をデバイスには、したがって NULL_GUID は非常に特殊なケースだけで適切なを返す任意のコンテナーの一部にする必要があります。 たとえば、 *devnode*ボリューム デバイスは、複数のコンテナー内の複数のディスクにまたがる可能性がありますが、任意のコンテナーに属していないなど。 このようなデバイスには、 [ **DEVPKEY_Device_BaseContainerId** ](https://msdn.microsoft.com/library/windows/hardware/ff542360) NULL_GUID、等しいし、はありません、 [ **DEVPKEY_Device_ContainerId** ](https://msdn.microsoft.com/library/windows/hardware/ff542400)まったくです。
+コンテナー ID として NULL_GUID を返すときに、バス ドライバーを宣言します PnP をデバイスには、したがって NULL_GUID は非常に特殊なケースだけで適切なを返す任意のコンテナーの一部にする必要があります。 たとえば、 *devnode*ボリューム デバイスは、複数のコンテナー内の複数のディスクにまたがる可能性がありますが、任意のコンテナーに属していないなど。 このようなデバイスには、 [ **DEVPKEY_Device_BaseContainerId** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-basecontainerid) NULL_GUID、等しいし、はありません、 [ **DEVPKEY_Device_ContainerId** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-containerid)まったくです。
 
 別に、非常に特殊なケースは、そのバスから NULL_GUID 値を報告するハードウェアの障害を防ぐ必要がありますハードウェア デバイスとバス ドライバーのレポートと、バス ドライバーする必要があります NULL_GUID を返さない。 このような場合は、バス ドライバーはする必要があります、としてデバイス エラーの場合は、この脅威またはいずれか、デバイスは、値を報告しなかったかのように扱うことです。
 

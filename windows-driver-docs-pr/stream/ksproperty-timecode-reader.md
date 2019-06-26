@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd96b9dcb708218c4985a77dd743a1fe98d2585b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58a00bec3c3ed9b091e0565fc9cce1b3a6770099
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363976"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384007"
 ---
 # <a name="kspropertytimecodereader"></a>KSPROPERTY\_タイムコード\_リーダー
 
@@ -53,8 +53,8 @@ KSPROPERTY\_タイムコード\_リーダー プロパティを現在のテー�
 <td><p>〇</p></td>
 <td><p>X</p></td>
 <td><p>デバイス</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565781" data-raw-source="[&lt;strong&gt;KSPROPERTY_TIMECODE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565781)"><strong>KSPROPERTY_TIMECODE_S</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568528" data-raw-source="[&lt;strong&gt;TIMECODE_SAMPLE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568528)"><strong>TIMECODE_SAMPLE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_timecode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TIMECODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_timecode_s)"><strong>KSPROPERTY_TIMECODE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagtimecode_sample" data-raw-source="[&lt;strong&gt;TIMECODE_SAMPLE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagtimecode_sample)"><strong>TIMECODE_SAMPLE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +68,7 @@ KSPROPERTY\_タイムコード\_リーダー プロパティを現在のテー�
 
 **TimecodeSamp** 、KSPROPERTY のメンバー\_タイムコード\_の構造は、現在のテープの位置のタイムコードをについて説明します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -89,9 +89,9 @@ KSPROPERTY\_タイムコード\_リーダー プロパティを現在のテー�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_タイムコード\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565781)
+[**KSPROPERTY\_タイムコード\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_timecode_s)
 
-[**タイムコード\_サンプル**](https://msdn.microsoft.com/library/windows/hardware/ff568528)
+[**タイムコード\_サンプル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagtimecode_sample)
 
  
 

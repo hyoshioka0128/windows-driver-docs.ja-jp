@@ -10,12 +10,12 @@ keywords:
 - 通知の WDK ネットワーク、ネットワーク コンポーネントのインストール
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fc83661eace51218225ef60b7af2db8b0c63703
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f308279c7ed2deecc7fc8692b8832f8b7a19a069
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380736"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385846"
 ---
 # <a name="installing-network-components"></a>ネットワーク コンポーネントのインストール
 
@@ -31,18 +31,18 @@ ms.locfileid: "63380736"
     HKR, Ndi, ComponentDll,     0,     "notifyobject.dll"
     ```
 
-    クラスのインストーラーは、通知オブジェクトを登録すると、DLL のエントリ ポイント関数を呼び出します。 ネットワーク構成のサブシステムが通知オブジェクトのインスタンスを作成し、オブジェクトを呼び出して[ **INetCfgComponentControl::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff547729)メソッド。 このメソッドは、オブジェクトを初期化し、コンポーネントとネットワークの構成のすべての側面へのアクセスを提供します。
+    クラスのインストーラーは、通知オブジェクトを登録すると、DLL のエントリ ポイント関数を呼び出します。 ネットワーク構成のサブシステムが通知オブジェクトのインスタンスを作成し、オブジェクトを呼び出して[ **INetCfgComponentControl::Initialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547729(v=vs.85))メソッド。 このメソッドは、オブジェクトを初期化し、コンポーネントとネットワークの構成のすべての側面へのアクセスを提供します。
 
-2.  コンポーネントをインストールするために必要な操作を行うには、ネットワーク構成のサブシステムは通知オブジェクトを呼び出します。 [ **INetCfgComponentSetup::Install** ](https://msdn.microsoft.com/library/windows/hardware/ff547762)メソッド。
+2.  コンポーネントをインストールするために必要な操作を行うには、ネットワーク構成のサブシステムは通知オブジェクトを呼び出します。 [ **INetCfgComponentSetup::Install** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547762(v=vs.85))メソッド。
 
-    ネットワーク構成のサブシステムが通知オブジェクトを呼び出す場合は、コンポーネントのインストールは無人で実行、 [ **INetCfgComponentSetup::ReadAnswerFile** ](https://msdn.microsoft.com/library/windows/hardware/ff547765)メソッド。 このメソッドが開き、コンポーネントのパラメーターと呼ばれる無人セットアップ ファイルから取得、*応答ファイル*します。
+    ネットワーク構成のサブシステムが通知オブジェクトを呼び出す場合は、コンポーネントのインストールは無人で実行、 [ **INetCfgComponentSetup::ReadAnswerFile** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547765(v=vs.85))メソッド。 このメソッドが開き、コンポーネントのパラメーターと呼ばれる無人セットアップ ファイルから取得、*応答ファイル*します。
 
-3.  サブシステムに通知オブジェクトの呼び出し後、ネットワーク構成のサブシステムでは、インスタンスを作成し、通知オブジェクトを初期化します、 [ **INetCfgComponentNotifyGlobal::GetSupportedNotifications** ](https://msdn.microsoft.com/library/windows/hardware/ff547734)オブジェクトで必要な通知の種類を取得します。 サブシステムでは、この情報を使用して、オブジェクトに必要な通知を送信します。 オブジェクトは、これらの通知を使用して、ネットワークのセットアップと構成オブジェクトを所有するコンポーネントに影響を与える可能性がありますの側面を制御できます。 サブシステムを呼び出す場合など、 [ **INetCfgComponentNotifyGlobal::SysNotifyComponent** ](https://msdn.microsoft.com/library/windows/hardware/ff547736)オブジェクトに通知するメソッド、サブシステムがインストールされているか、別のネットワーク コンポーネントを削除しますオブジェクトの変更に関連する操作を実行する機会があります。
+3.  サブシステムに通知オブジェクトの呼び出し後、ネットワーク構成のサブシステムでは、インスタンスを作成し、通知オブジェクトを初期化します、 [ **INetCfgComponentNotifyGlobal::GetSupportedNotifications** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547734(v=vs.85))オブジェクトで必要な通知の種類を取得します。 サブシステムでは、この情報を使用して、オブジェクトに必要な通知を送信します。 オブジェクトは、これらの通知を使用して、ネットワークのセットアップと構成オブジェクトを所有するコンポーネントに影響を与える可能性がありますの側面を制御できます。 サブシステムを呼び出す場合など、 [ **INetCfgComponentNotifyGlobal::SysNotifyComponent** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547736(v=vs.85))オブジェクトに通知するメソッド、サブシステムがインストールされているか、別のネットワーク コンポーネントを削除しますオブジェクトの変更に関連する操作を実行する機会があります。
 
-    ネットワーク構成のサブシステムでは、インスタンスを作成し、通知オブジェクトを初期化します、サブシステムも呼び出して通知オブジェクトのメソッドのいずれかの[INetCfgComponentNotifyBinding](https://msdn.microsoft.com/library/windows/hardware/ff547730)インターフェイス、オブジェクトに通知するには方法の変更の詳細については、サブシステムは、通知オブジェクトを所有するコンポーネントを他のネットワーク コンポーネントをバインドします。
+    ネットワーク構成のサブシステムでは、インスタンスを作成し、通知オブジェクトを初期化します、サブシステムも呼び出して通知オブジェクトのメソッドのいずれかの[INetCfgComponentNotifyBinding](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547730(v=vs.85))インターフェイス、オブジェクトに通知するには方法の変更の詳細については、サブシステムは、通知オブジェクトを所有するコンポーネントを他のネットワーク コンポーネントをバインドします。
 
-4.  通知オブジェクトの呼び出し、ネットワーク構成のサブシステムのコンポーネントのプロパティをオペレーティング システムに適用する準備ができたら[ **INetCfgComponentControl::ApplyRegistryChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff547727)コンポーネントのレジストリ キーの下で、コンポーネントのパラメーターを割り当てる方法。 通知オブジェクトは、そのコンポーネントを呼び出して[ **INetCfgComponent::OpenParamKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547890)メソッドを開き、コンポーネントのレジストリ キーを取得します。
+4.  通知オブジェクトの呼び出し、ネットワーク構成のサブシステムのコンポーネントのプロパティをオペレーティング システムに適用する準備ができたら[ **INetCfgComponentControl::ApplyRegistryChanges** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547727(v=vs.85))コンポーネントのレジストリ キーの下で、コンポーネントのパラメーターを割り当てる方法。 通知オブジェクトは、そのコンポーネントを呼び出して[ **INetCfgComponent::OpenParamKey** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547890(v=vs.85))メソッドを開き、コンポーネントのレジストリ キーを取得します。
 
-5.  コンポーネントのドライバーを構成するには、ネットワーク構成のサブシステムは、通知オブジェクトを呼び出します[ **INetCfgComponentControl::ApplyPnpChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff547726)メソッドを呼び出し、 [ **。INetCfgPnpReconfigCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547935)インターフェイス。 通知オブジェクトの呼び出し、 [ **INetCfgPnpReconfigCallback::SendPnpReconfig** ](https://msdn.microsoft.com/library/windows/hardware/ff547943)にそのコンポーネントのドライバーの構成情報を送信する方法。
+5.  コンポーネントのドライバーを構成するには、ネットワーク構成のサブシステムは、通知オブジェクトを呼び出します[ **INetCfgComponentControl::ApplyPnpChanges** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547726(v=vs.85))メソッドを呼び出し、 [ **。INetCfgPnpReconfigCallback** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547935(v=vs.85))インターフェイス。 通知オブジェクトの呼び出し、 [ **INetCfgPnpReconfigCallback::SendPnpReconfig** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547943(v=vs.85))にそのコンポーネントのドライバーの構成情報を送信する方法。
 
 無人セットアップ ファイルとセットアップ API についての詳細については、Microsoft Windows SDK を参照してください。

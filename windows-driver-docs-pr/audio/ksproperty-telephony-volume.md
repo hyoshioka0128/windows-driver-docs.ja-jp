@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8911068ddd02bbf30434394ce495d554b8501d08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a05123ace413a6253855943e4db2cbaf78aa009f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391565"
 ---
 # <a name="kspropertytelephonyvolume"></a>KSPROPERTY\_テレフォニー\_ボリューム
 
@@ -50,7 +50,7 @@ ms.locfileid: "63332576"
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
@@ -69,7 +69,7 @@ A **KSPROPERTY\_テレフォニー\_ボリューム**プロパティ要求が携
 
 携帯電話の呼び出しに対してのみ、このボリュームは、携帯電話のデータに適用され、エンドポイントのボリュームが影響を与えません。 このプロパティは、システムでアクティブな電話呼び出しがない場合でも、設定可能にする必要があります。 このプロパティの基本的なサポートは、最小のボリューム、最大のボリュームとボリュームの範囲を返す必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

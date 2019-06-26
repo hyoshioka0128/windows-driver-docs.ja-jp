@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3b2173c904da6ec23cf0b27cb32ee0a609f5ef4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99607a6cfd6c477035f0a11a224d7c03dbf2a9e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362664"
 ---
 # <a name="sendrnid-function"></a>SendRNID 関数
 
@@ -44,19 +44,19 @@ void SendRNID(
 ----------
 
 *wwn*   
-RNID コマンドを送信するポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **wwn**のメンバー、 [ **SendRNID\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565485)構造体。
+RNID コマンドを送信するポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **wwn**のメンバー、 [ **SendRNID\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_in)構造体。
 
 *wwntype*   
 使用しないでください。 使わないでください。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRNID\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_out)構造体。
 
 *ResponseBufferCount*   
-RNID コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ResponseBufferCount**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。
+RNID コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ResponseBufferCount**のメンバー、 [ **SendRNID\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_out)構造体。
 
 *ResponseBuffer*   
-RNID コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **ResponseBuffer**のメンバー、 [ **SendRNID\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565486)構造体。
+RNID コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **ResponseBuffer**のメンバー、 [ **SendRNID\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -97,9 +97,9 @@ WMI メソッドには適用されません。
 
 [HBA\_状態](hba-status.md)
 
-[**SendRNID\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565485)
+[**SendRNID\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_in)
 
-[**SendRNID\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565486)
+[**SendRNID\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_out)
 
  
 

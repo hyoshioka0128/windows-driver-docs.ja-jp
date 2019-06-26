@@ -11,12 +11,12 @@ keywords:
 - カスタムのシンセサイザー WDK のオーディオ、シンセサイザーの登録
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd1f097de62f8db600962712e44d847e7ef14c61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e6035a67c5be95d35f635b9d6547317a15c4f02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328704"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362520"
 ---
 # <a name="registering-your-synthesizer"></a>ご利用のシンセサイザーの登録
 
@@ -24,7 +24,7 @@ ms.locfileid: "63328704"
 ## <span id="registering_your_synthesizer"></span><span id="REGISTERING_YOUR_SYNTHESIZER"></span>
 
 
-シンセサイザー、ソフトウェアを作成すると、後に列挙できる DirectMusic ポートとしてそれをアプリケーションに使用できるようにシステム レジストリに追加する必要があります。 インストール プログラムが DLL を呼び出すときに[ **DllRegisterServer** ](https://msdn.microsoft.com/library/windows/desktop/ms682162)自体として COM に登録する DLL を指示する COM 関数オブジェクト、関数もシンセサイザーを登録できます。 これを行うには、関数は、次のパスにキーを作成して、利用可能なソフトウェアのシンセサイザーの一覧にエントリを追加します。
+シンセサイザー、ソフトウェアを作成すると、後に列挙できる DirectMusic ポートとしてそれをアプリケーションに使用できるようにシステム レジストリに追加する必要があります。 インストール プログラムが DLL を呼び出すときに[ **DllRegisterServer** ](https://docs.microsoft.com/windows/desktop/api/olectl/nf-olectl-dllregisterserver)自体として COM に登録する DLL を指示する COM 関数オブジェクト、関数もシンセサイザーを登録できます。 これを行うには、関数は、次のパスにキーを作成して、利用可能なソフトウェアのシンセサイザーの一覧にエントリを追加します。
 
 ```inf
   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectMusic\SoftwareSynths
@@ -81,7 +81,7 @@ ms.locfileid: "63328704"
   }
 ```
 
-`CLSIDToStr` ローカルで定義されている CLSID 値を文字列に変換する関数 (上記のコード例では表示されません)。 似ています、 [ **StringFromCLSID** ](https://msdn.microsoft.com/library/windows/desktop/ms683917) Microsoft Windows SDK ドキュメントで説明されている関数。
+`CLSIDToStr` ローカルで定義されている CLSID 値を文字列に変換する関数 (上記のコード例では表示されません)。 似ています、 [ **StringFromCLSID** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-stringfromclsid) Microsoft Windows SDK ドキュメントで説明されている関数。
 
  
 

@@ -4,12 +4,12 @@ description: 以前の Windows バージョンでの Bluetooth バージョン�
 ms.assetid: 5209DE94-241D-4EFA-BA00-884EC74C8C1B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61688024b9680eaedadce06558b647e1c9065dde
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 9027ed017d7bdc55987fa782b80911982eebf7df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161369"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364646"
 ---
 # <a name="bluetooth-version-and-profile-support-in-previous-windows-versions"></a>以前の Windows バージョンでの Bluetooth バージョンとプロファイルのサポート
 
@@ -152,7 +152,7 @@ Windows は、次の表に示すように、さまざまなバージョンの仕
 Windows 8.1 には、Bluetooth スタックと関連するソフトウェアを次の機能強化が含まれています。
 
 -   Bluetooth バージョン 4.0 の受信トレイ ラジオの管理コントロールがラジオだとします。
--   Windows ランタイム API サポート[ **RFCOMM** ](https://msdn.microsoft.com/library/windows/apps/dn263529)と[ **GATT** ](https://msdn.microsoft.com/library/windows/apps/dn297685)アクセス プロトコルします。
+-   Windows ランタイム API サポート[ **RFCOMM** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)と[ **GATT** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)アクセス プロトコルします。
 
 ## <a name="span-idwhatsnewinwindows8spanspan-idwhatsnewinwindows8spanspan-idwhatsnewinwindows8spanwhats-new-in-windows8"></a><span id="What_s_new_in_Windows_8_"></span><span id="what_s_new_in_windows_8_"></span><span id="WHAT_S_NEW_IN_WINDOWS_8_"></span>Windows 8 の新機能
 
@@ -412,7 +412,7 @@ Windows Phone 8 プロファイル/プロトコルの実装への準拠ステー
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindows81spanspan-idwhatprogramminginterfaceswereintroducedinwindows81spanwhat-programming-interfaces-were-introduced-in-windows81"></a><span id="what_programming_interfaces_were_introduced_in_windows_8.1_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_8.1_"></span>どのようなプログラミング インターフェイスは、Windows 8.1 で導入されたでしょうか。
 
 
-Windows 8.1 にアクセスするための新しい Windows ランタイム Api の導入、 [ **RFCOMM** ](https://msdn.microsoft.com/library/windows/apps/dn263529) (標準的な Bluetooth) 経由と[ **GATT** ](https://msdn.microsoft.com/library/windows/apps/dn297685) (超えるBluetooth Low Energy)。
+Windows 8.1 にアクセスするための新しい Windows ランタイム Api の導入、 [ **RFCOMM** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) (標準的な Bluetooth) 経由と[ **GATT** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) (超えるBluetooth Low Energy)。
 
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindows8spanspan-idwhatprogramminginterfaceswereintroducedinwindows8spanspan-idwhatprogramminginterfaceswereintroducedinwindows8spanwhat-programming-interfaces-were-introduced-in-windows8"></a><span id="What_programming_interfaces_were_introduced_in_Windows_8_"></span><span id="what_programming_interfaces_were_introduced_in_windows_8_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_8_"></span>どのようなプログラミング インターフェイスは、Windows 8 で導入されたでしょうか。
 
@@ -422,7 +422,7 @@ Windows 8 には、拡張可能なトランスポートのモデルを使用し�
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindows7spanspan-idwhatprogramminginterfaceswereintroducedinwindows7spanspan-idwhatprogramminginterfaceswereintroducedinwindows7spanwhat-programming-interfaces-were-introduced-in-windows7"></a><span id="What_programming_interfaces_were_introduced_in_Windows_7_"></span><span id="what_programming_interfaces_were_introduced_in_windows_7_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_7_"></span>どのようなプログラミング インターフェイスは、Windows 7 で導入されたでしょうか。
 
 
-Windows 7 が Ex バージョンの以前の Api 拡張機能を提供する新しい導入されました。 たとえば、BluetoothAuthenticateDeviceEx 関数では、帯域外のデータが認証されるデバイスの関数呼び出しに渡されることができます。 同様に、 [ **BluetoothRegisterForAuthenticationEx** ](https://msdn.microsoft.com/library/windows/desktop/cc766820)関数には、pin の要求と数値比較の機能が含まれています。 また、 [ **BluetoothSendAuthenticationResponseEx** ](https://msdn.microsoft.com/library/windows/desktop/cc766821)数値比較の応答を送信する認証要求を受信したときに呼び出されます。 新しいバージョンをこれらの Api の例の詳細については、次を参照してください。[の Bluetooth 機能](https://msdn.microsoft.com/library/windows/desktop/aa362927)します。
+Windows 7 が Ex バージョンの以前の Api 拡張機能を提供する新しい導入されました。 たとえば、BluetoothAuthenticateDeviceEx 関数では、帯域外のデータが認証されるデバイスの関数呼び出しに渡されることができます。 同様に、 [ **BluetoothRegisterForAuthenticationEx** ](https://docs.microsoft.com/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothregisterforauthenticationex)関数には、pin の要求と数値比較の機能が含まれています。 また、 [ **BluetoothSendAuthenticationResponseEx** ](https://docs.microsoft.com/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothsendauthenticationresponseex)数値比較の応答を送信する認証要求を受信したときに呼び出されます。 新しいバージョンをこれらの Api の例の詳細については、次を参照してください。[の Bluetooth 機能](https://docs.microsoft.com/windows/desktop/Bluetooth/bluetooth-functions)します。
 
 ## <a name="span-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanspan-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanspan-idwhatprogramminginterfaceswereintroducedinwindowsvistaspanwhat-programming-interfaces-were-introduced-in-windowsvista"></a><span id="What_programming_interfaces_were_introduced_in_Windows_Vista_"></span><span id="what_programming_interfaces_were_introduced_in_windows_vista_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_VISTA_"></span>どのようなプログラミング インターフェイスは、Windows Vista で導入されたでしょうか。
 

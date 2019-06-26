@@ -4,12 +4,12 @@ description: 通信事業者の通知イベントの技術的な詳細
 ms.assetid: 639f238a-4bb4-4ac0-9b59-92a761dbc351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e25284f32fe27ffdd4379ec3c218045d1a7ad708
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c81c7eb80b3bccf5af0ae11c499d8b89ea97134
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356926"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364960"
 ---
 # <a name="mobile-operator-notification-event-technical-details"></a>通信事業者の通知イベントの技術的な詳細
 
@@ -135,7 +135,7 @@ SMS、USSD など、受信操作メッセージと共に、適切な対応する
 
 ### <a name="span-iddataplanthresholdreachedspanspan-iddataplanthresholdreachedspanspan-iddataplanthresholdreachedspandataplanthresholdreached"></a><span id="DataPlanThresholdReached"></span><span id="dataplanthresholdreached"></span><span id="DATAPLANTHRESHOLDREACHED"></span>DataPlanThresholdReached
 
-既定では、このメッセージの種類は無効です。 プロビジョニングのメタデータを指定するを使用して有効にすることができます、 [ **DataUsageInMobileOperatorNotificationEnabled** ](https://msdn.microsoft.com/library/windows/apps/hh868368)フィールドに、次のようにします。
+既定では、このメッセージの種類は無効です。 プロビジョニングのメタデータを指定するを使用して有効にすることができます、 [ **DataUsageInMobileOperatorNotificationEnabled** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-datausageinmobileoperatornotificationenabled)フィールドに、次のようにします。
 
 ``` syntax
 <?xml version="1.0"?>
@@ -196,7 +196,7 @@ Windows 8 でローカル データのカウンターは 1 分で更新されま
 
 ProfileConnected MessageType はモバイル ブロード バンド インターフェイスの L2 接続でトリガーされます。
 
-**注**  ネットワーク id が完了する前に、このトリガーが発生します。 [ **NetworkStatusChanged** ](https://msdn.microsoft.com/library/windows/apps/br207299)イベント (の一部、 [ **NetworkInformation** ](https://msdn.microsoft.com/library/windows/apps/br207293) API) が生成されるときにネットワーク idネットワークの接続レベルを決定します。 ネットワーク id の詳細については、次を参照してください。[クイック スタート。ネットワーク接続情報の取得](https://msdn.microsoft.com/library/windows/apps/hh452990)と**NetworkInformation**クラス。
+**注**  ネットワーク id が完了する前に、このトリガーが発生します。 [ **NetworkStatusChanged** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged)イベント (の一部、 [ **NetworkInformation** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API) が生成されるときにネットワーク idネットワークの接続レベルを決定します。 ネットワーク id の詳細については、次を参照してください。[クイック スタート。ネットワーク接続情報の取得](https://docs.microsoft.com/previous-versions/windows/apps/hh452990(v=win.10))と**NetworkInformation**クラス。
 
  
 
@@ -210,7 +210,7 @@ ProfileConnected MessageType はモバイル ブロード バンド インター
 
 この MobileOperatorNotification イベントが生成された**MessageType**すると、ユーザーがインターネット共有をオンにします。 ユーザーが、携帯電話会社が設定されている限り、インターネット共有を使用しようとしています。 たびにイベントがトリガーされた、 [AllowTethering](allowtethering.md)にサービス メタデータ スキーマ内の要素**EntitlementCheckRequired**します。 サービス メタデータのスキーマの詳細については、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
 
-アプリが携帯ネットワークでサポートされている適切な権利チェック メカニズムを実行しを使用して、結果をシステムに送信する必要があります、 [ **AuthorizeTethering** ](https://msdn.microsoft.com/library/windows/apps/dn266090)メソッド、の[ **NetworkOperatorNotificationEventDetails** ](https://msdn.microsoft.com/library/windows/apps/br207377)クラス、 [ **Windows.Networking.NetworkOperators** ](https://msdn.microsoft.com/library/windows/apps/br241148)名前空間。 携帯電話会社がサービス メタデータを変更する必要があります、アプリが権利チェックを実行する機能を持たない場合[AllowTethering](allowtethering.md)要素**常に**または**Never**、イベントは生成されません。
+アプリが携帯ネットワークでサポートされている適切な権利チェック メカニズムを実行しを使用して、結果をシステムに送信する必要があります、 [ **AuthorizeTethering** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails#Windows_Networking_NetworkOperators_NetworkOperatorNotificationEventDetails_AuthorizeTethering_System_Boolean_System_String_)メソッド、の[ **NetworkOperatorNotificationEventDetails** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)クラス、 [ **Windows.Networking.NetworkOperators** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)名前空間。 携帯電話会社がサービス メタデータを変更する必要があります、アプリが権利チェックを実行する機能を持たない場合[AllowTethering](allowtethering.md)要素**常に**または**Never**、イベントは生成されません。
 
 ## <a name="span-idregmdspanspan-idregmdspanregister-for-the-mobileoperatornotification-event-by-using-metadata"></a><span id="regmd"></span><span id="REGMD"></span>メタデータを使用して MobileOperatorNotification イベントを登録します。
 

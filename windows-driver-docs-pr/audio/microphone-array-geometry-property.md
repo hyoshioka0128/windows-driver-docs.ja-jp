@@ -8,17 +8,17 @@ keywords:
 - マイク配列 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51a9ca3ddc96b3ece4005691749373dfc0f9d2d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 187d66850be8f88f728efcd2026633174b37ba16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332334"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362586"
 ---
 # <a name="microphone-array-geometry-property"></a>マイク配列ジオメトリのプロパティ
 
 
-Windows Vista 以降では、マイク配列のサポートが提供されます。 ほとんどの場合、ラップトップ コンピューターやモニターに埋め込まれている 1 つのマイクをキャプチャしませんサウンドも非常にします。 マイクの配列が優れてをサウンドのソースを特定し、アンビエント ノイズとリバーブを拒否します。 [ **KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY** ](https://msdn.microsoft.com/library/windows/hardware/ff537289)プロパティがマイク配列のジオメトリを指定します。 プロパティの値[ **KSAUDIO\_MIC\_配列\_GEOMETRY**](https://msdn.microsoft.com/library/windows/hardware/ff537087)配列型 (線形、平面、)、マイク、配列内の数を記述し、その他の機能です。
+Windows Vista 以降では、マイク配列のサポートが提供されます。 ほとんどの場合、ラップトップ コンピューターやモニターに埋め込まれている 1 つのマイクをキャプチャしませんサウンドも非常にします。 マイクの配列が優れてをサウンドのソースを特定し、アンビエント ノイズとリバーブを拒否します。 [ **KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry)プロパティがマイク配列のジオメトリを指定します。 プロパティの値[ **KSAUDIO\_MIC\_配列\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)配列型 (線形、平面、)、マイク、配列内の数を記述し、その他の機能です。
 
 このトピックでは、外部 USB マイクが配列を使用できます Windows Vista で提供されているマイク配列のサポートについて説明します。 外部 USB マイク配列は、ジオメトリとその配列への応答の他の機能を説明するために必要なパラメーターを指定する必要があります、**取得\_MEM**要求。
 

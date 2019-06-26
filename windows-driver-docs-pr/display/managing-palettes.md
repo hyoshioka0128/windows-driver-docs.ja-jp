@@ -10,12 +10,12 @@ keywords:
 - WDK の GDI や色の描画
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff45614ba2c715cb754b9491f8b918da57011758
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4cdbd9a79ed9f292f798997d81c91441e323a21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380399"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383431"
 ---
 # <a name="managing-palettes"></a>パレットの管理
 
@@ -23,9 +23,9 @@ ms.locfileid: "63380399"
 ## <span id="ddk_managing_palettes_gg"></span><span id="DDK_MANAGING_PALETTES_GG"></span>
 
 
-グラフィック ドライバーの管理作業の GDI サポートで「します。 ドライバーは、既定で GDI パレットを指定する必要があります、 [ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835) GDI 関数を呼び出すときに[ **DrvEnablePDEV**](https://msdn.microsoft.com/library/windows/hardware/ff556211)します。 この時点で、ドライバーは、GDI サービスの関数の呼び出しで既定のパレットを作成する必要があります[ **EngCreatePalette**](https://msdn.microsoft.com/library/windows/hardware/ff564212)します。
+グラフィック ドライバーの管理作業の GDI サポートで「します。 ドライバーは、既定で GDI パレットを指定する必要があります、 [ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo) GDI 関数を呼び出すときに[ **DrvEnablePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)します。 この時点で、ドライバーは、GDI サービスの関数の呼び出しで既定のパレットを作成する必要があります[ **EngCreatePalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)します。
 
-設定可能なパレットをサポートするドライバーもサポートする必要があります、 [ **DrvSetPalette** ](https://msdn.microsoft.com/library/windows/hardware/ff556282)関数。 この関数は、ディスプレイ ドライバーによって排他的に使用されます。
+設定可能なパレットをサポートするドライバーもサポートする必要があります、 [ **DrvSetPalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpalette)関数。 この関数は、ディスプレイ ドライバーによって排他的に使用されます。
 
  
 

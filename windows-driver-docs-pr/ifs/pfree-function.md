@@ -14,12 +14,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d31dc2539a728f5486c909e3395be404ebfd7e69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1944414572ba8d944743ecbcd9c14feccd774321
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528899"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366785"
 ---
 # <a name="pfreefunction-function-pointer"></a>PFREE\_関数の関数ポインター
 
@@ -59,7 +59,7 @@ typedef VOID ( *FreeCallback)(
 
  
 
-定義する、 *FreeCallback*という名前のコールバック関数*MyFreeFunction*、最初に指定する必要あります関数の宣言を[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808) (SDV) とその他の検証ツールが必要です、とおり。
+定義する、 *FreeCallback*という名前のコールバック関数*MyFreeFunction*、最初に指定する必要あります関数の宣言を[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier) (SDV) とその他の検証ツールが必要です、とおり。
 
 ```cpp
 FREE_FUNCTION MyFreeFunction;
@@ -75,7 +75,7 @@ VOID
   {...}
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -114,9 +114,9 @@ VOID
 
 [**FSRTL\_PER\_STREAM\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff547357)
 
-[レガシ ファイル システム フィルター ドライバーのファイルごとのコンテキストの追跡](https://msdn.microsoft.com/library/windows/hardware/ff556856)
+[レガシ ファイル システム フィルター ドライバーのファイルごとのコンテキストの追跡](https://docs.microsoft.com/windows-hardware/drivers/ifs/tracking-per-file-context-in-a-legacy-file-system-filter-driver)
 
-[レガシ ファイル システム フィルター ドライバーでの Stream あたりのコンテキストの追跡](https://msdn.microsoft.com/library/windows/hardware/ff556859)
+[レガシ ファイル システム フィルター ドライバーでの Stream あたりのコンテキストの追跡](https://docs.microsoft.com/windows-hardware/drivers/ifs/tracking-per-stream-context-in-a-legacy-file-system-filter-driver)
 
  
 

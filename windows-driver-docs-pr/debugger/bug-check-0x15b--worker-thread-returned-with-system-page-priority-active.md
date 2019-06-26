@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e4eb3e1ccfc8ea9b976702ab3b00bbd6114bf3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 466eedab6b1c567959b76ccc797406e80242fb69
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358130"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362166"
 ---
 # <a name="bug-check-0x15b-workerthreadreturnedwithsystempagepriorityactive"></a>バグ チェック 0x15B:ワーカー\_スレッド\_から返された\_WITH\_システム\_ページ\_優先度\_ACTIVE
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358130"
 ワーカー\_スレッド\_から返された\_WITH\_システム\_ページ\_優先度\_アクティブなバグ チェックが 0x0000015B の値を持ちます。 これは、ワーカーが呼び出されたルーチンによってワーカー スレッドのシステム ページの優先順位がリークされたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="workerthreadreturnedwithsystempagepriorityactive-parameters"></a>ワーカー\_スレッド\_から返された\_WITH\_システム\_ページ\_優先度\_ACTIVE パラメーター

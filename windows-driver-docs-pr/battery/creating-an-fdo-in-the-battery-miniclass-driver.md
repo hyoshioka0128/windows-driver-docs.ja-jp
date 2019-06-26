@@ -8,12 +8,12 @@ keywords:
 - 機能のデバイス オブジェクトの WDK バッテリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88fdf96a5adcf0cb1bbf60421c63e715c1960e75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a77a79e746d437e1731c4114e0c61fa50c65582
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335451"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364758"
 ---
 # <a name="creating-an-fdo-in-the-battery-miniclass-driver"></a>バッテリ ミニクラス ドライバーの FDO の作成
 
@@ -23,7 +23,7 @@ ms.locfileid: "63335451"
 
 Miniclass ドライバーは、FDO を作成し、次のように、デバイスのデバイス スタックにアタッチする必要があります。
 
-1.  呼び出す[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)次のように、現在のデバイス用に FDO を作成します。
+1.  呼び出す[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)次のように、現在のデバイス用に FDO を作成します。
 
     ```cpp
     Status = IoCreateDevice(
@@ -37,7 +37,7 @@ Miniclass ドライバーは、FDO を作成し、次のように、デバイス
              );
     ```
 
-    入力パラメーターを[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)に渡されたドライバー オブジェクトへのポインターは、 *AddDevice*ルーチン、NULL の代わりにデバイスの拡張機能のサイズデバイス名、およびデバイスのシステム定義の種類 (ファイル\_デバイス\_バッテリ)。 バッテリ miniclass ドライバーに 0 を指定できます、 *DeviceCharacteristics*パラメーターで、これらのドライバーには使用されません。 複数のスレッドは、miniclass ドライバーが FALSE に渡すために、バッテリの I/O 要求を送信できるとして、*排他*パラメーター。 **IoCreateDevice**作成 FDO へのポインターを返します。
+    入力パラメーターを[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)に渡されたドライバー オブジェクトへのポインターは、 *AddDevice*ルーチン、NULL の代わりにデバイスの拡張機能のサイズデバイス名、およびデバイスのシステム定義の種類 (ファイル\_デバイス\_バッテリ)。 バッテリ miniclass ドライバーに 0 を指定できます、 *DeviceCharacteristics*パラメーターで、これらのドライバーには使用されません。 複数のスレッドは、miniclass ドライバーが FALSE に渡すために、バッテリの I/O 要求を送信できるとして、*排他*パラメーター。 **IoCreateDevice**作成 FDO へのポインターを返します。
 
 2.  返される FDO では、フラグとスタックのサイズを設定します。 次に、例を示します。
 
@@ -63,7 +63,7 @@ Miniclass ドライバーは、FDO を作成し、次のように、デバイス
 
     デバイスの拡張機能に格納された情報を指定します。 たとえば、スマート バッテリ ドライバー可能性があります、数を保持、バッテリのバッテリ セレクターが存在するかどうかと、必要に応じて、そのバッテリ セレクターに関する情報を示すブール値。
 
-4.  呼び出す[ **IoAttachDeviceToDeviceStack** ](https://msdn.microsoft.com/library/windows/hardware/ff548300)デバイス スタックを FDO をアタッチし、ポインターを格納返された、次のようにします。
+4.  呼び出す[ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)デバイス スタックを FDO をアタッチし、ポインターを格納返された、次のようにします。
 
     ```cpp
     NewBatt->LowerDO = IoAttachDeviceToDeviceStack(Fdo,Pdo);

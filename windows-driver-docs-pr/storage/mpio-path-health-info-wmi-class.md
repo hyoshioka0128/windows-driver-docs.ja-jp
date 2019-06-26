@@ -4,12 +4,12 @@ description: MPIO\_パス\_ヘルス\_情報 WMI クラス
 ms.assetid: 26c329d0-0d9c-4d24-bbe4-ebb7d7b36a89
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cff2fa5b9c4476b8e7fe21b552503dcdd9545093
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f9130d84e1d07cd85a6348ceba969a6817eb30d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383056"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386151"
 ---
 # <a name="mpiopathhealthinfo-wmi-class"></a>MPIO\_パス\_ヘルス\_情報 WMI クラス
 
@@ -41,7 +41,7 @@ class MPIO_PATH_HEALTH_INFO
 };
 ```
 
-WMI ツールの suiteit によって、クラス定義をコンパイルするときに生成、 [ **MPIO\_パス\_ヘルス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff562431)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+WMI ツールの suiteit によって、クラス定義をコンパイルするときに生成、 [ **MPIO\_パス\_ヘルス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_path_health_info)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

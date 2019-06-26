@@ -3,17 +3,17 @@ Description: Winusb.dll では、パイプの既定のポリシーを取得す�
 title: パイプ ポリシー修正のための WinUSB 関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be882716dba12fa59631c16209c695a0d6a5f078
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab94d3398371d57831b4f4f4defad7534e92fffe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385677"
 ---
 # <a name="winusb-functions-for-pipe-policy-modification"></a>パイプ ポリシー修正のための WinUSB 関数
 
 
-Winusb.dll を公開するアプリケーションを取得およびエンドポイント パイプの既定のポリシー パラメーターの設定を有効にする、 [ **WinUsb\_GetPipePolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff540266)パイプの既定のポリシーを取得します。 [ **WinUsb\_SetPipePolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff540304)関数により、アプリケーションでポリシー パラメーターを新しい値に設定します。
+Winusb.dll を公開するアプリケーションを取得およびエンドポイント パイプの既定のポリシー パラメーターの設定を有効にする、 [ **WinUsb\_GetPipePolicy** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)パイプの既定のポリシーを取得します。 [ **WinUsb\_SetPipePolicy** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpipepolicy)関数により、アプリケーションでポリシー パラメーターを新しい値に設定します。
 
 WinUSB は、エンドポイントのパイプにポリシーを適用することで、既定の動作を変更することができます。 これらのポリシーを使用すると、その機能は、デバイスに最適に WinUSB を構成できます。 次の表では、WinUSB でサポートされているパイプ ポリシーの一覧を示します。
 
@@ -100,7 +100,7 @@ WinUSB は、エンドポイントのパイプにポリシーを適用するこ�
 <tr class="even">
 <td>0x08</td>
 <td>MAXIMUM_TRANSFER_SIZE</td>
-<td>WinUSB でサポートされている USB 転送の最大サイズを取得します。 これは、読み取り専用のポリシーで、呼び出すことによって取得できる<a href="https://msdn.microsoft.com/library/windows/hardware/ff540266" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540266)"> <strong>WinUsb_GetPipePolicy</strong></a>します。</td>
+<td>WinUSB でサポートされている USB 転送の最大サイズを取得します。 これは、読み取り専用のポリシーで、呼び出すことによって取得できる<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)"> <strong>WinUsb_GetPipePolicy</strong></a>します。</td>
 <td><p>一括 (IN)</p>
 <p>(OUT) 一括します。</p>
 <p>割り込み (IN)</p>
@@ -142,7 +142,7 @@ WinUSB は、エンドポイントのパイプにポリシーを適用するこ�
 <td>SHORT_PACKET_TERMINATE(0x01)</td>
 <td>デバイスでは、長さ 0 のパケットで終了するためにアウト転送が必要です。 ほとんどのデバイスには、この要件はありません。</td>
 <td><p>有効になっている場合 (ポリシー パラメーターの値が<strong>TRUE</strong>または 0 以外の場合)、エンドポイントでサポートされている最大パケット サイズの倍数であるすべての書き込み要求の長さ 0 のパケットが続きます。</p>
-<p>ホスト コント ローラーにデータを送信した後 WinUSB が長さ 0 のパケットの書き込み要求を送信し、によって作成された要求を完了し、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540322" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540322)"> <strong>WinUsb_WritePipe</strong></a>します。</p></td>
+<p>ホスト コント ローラーにデータを送信した後 WinUSB が長さ 0 のパケットの書き込み要求を送信し、によって作成された要求を完了し、 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)"> <strong>WinUsb_WritePipe</strong></a>します。</p></td>
 </tr>
 <tr class="even">
 <td>AUTO_CLEAR_STALL</td>
@@ -151,7 +151,7 @@ WinUSB は、エンドポイントのパイプにポリシーを適用するこ�
 <li><p>有効になっている場合 (ポリシー パラメーターの値が<strong>TRUE</strong>または 0 以外の場合)、停止状態が自動的にクリアします。 このポリシーのパラメーターは、コントロールのパイプには影響しません。</p>
 <p>場合読み取りの要求が失敗し、ホスト コント ローラーに STATUS_CANCELLED または STATUS_DEVICE_NOT_CONNECTED 以外の状態が返されます、WinUSB は、失敗した要求を完了する前に、パイプをリセットします。 パイプをリセットするデータ フローを中断することがなく失速条件をクリアします。 データ転送の新しいデバイスから到着する限り、エンドポイントでフローし続けます。 新しい転送には、いずれかの停止が発生したときにキューにあったを含めることができます。</p>
 <p>このポリシーを有効にしても、パフォーマンスが大幅に影響はありません。</p></li>
-<li>無効になっている場合 (ポリシー パラメーターの値が<strong>FALSE</strong>または 0)、呼び出し元が呼び出すことによって、エンドポイントのパイプを手動でリセットされるまで、遅延の転送後、エンドポイントに到着するすべての転送が失敗する<a href="https://msdn.microsoft.com/library/windows/hardware/ff540300" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540300)"> <strong>WinUsb_ResetPipe</strong></a>します。</li>
+<li>無効になっている場合 (ポリシー パラメーターの値が<strong>FALSE</strong>または 0)、呼び出し元が呼び出すことによって、エンドポイントのパイプを手動でリセットされるまで、遅延の転送後、エンドポイントに到着するすべての転送が失敗する<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_resetpipe" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_resetpipe)"> <strong>WinUsb_ResetPipe</strong></a>します。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -208,10 +208,10 @@ WinUSB は、エンドポイントのパイプにポリシーを適用するこ�
 <tr class="odd">
 <td>RAW_IO</td>
 <td>パフォーマンスが優先度をし、アプリケーションが同じエンドポイントに同時の読み取り要求を送信します。
-<p>RAW_IO で呼び出し元によって渡されるバッファーに対して特定の制限は、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540297" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540297)"> <strong>WinUsb_ReadPipe</strong></a>:</p>
+<p>RAW_IO で呼び出し元によって渡されるバッファーに対して特定の制限は、 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)"> <strong>WinUsb_ReadPipe</strong></a>:</p>
 <ul>
 <li>バッファーの長さは、エンドポイントの最大パケット サイズの倍数である必要があります。</li>
-<li>長さはによって取得された MAXIMUM_TRANSFER_SIZE の値未満である必要があります<a href="https://msdn.microsoft.com/library/windows/hardware/ff540266" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540266)"> <strong>WinUsb_GetPipePolicy</strong></a>します。</li>
+<li>長さはによって取得された MAXIMUM_TRANSFER_SIZE の値未満である必要があります<a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)"> <strong>WinUsb_GetPipePolicy</strong></a>します。</li>
 </ul></td>
 <td><p>有効な場合、キューと複数の読み取り要求のパフォーマンスを向上させるための処理エラーの転送をバイパスします。 WinUSB ハンドルは、次のような要求を表示します。</p>
 <ul>
@@ -237,9 +237,9 @@ WinUSB は、エンドポイントのパイプにポリシーを適用するこ�
 [USB クライアント ドライバーを開発するためのドライバー モデルの選択](winusb-considerations.md)  
 [WinUSB (Winusb.sys) のインストール](winusb-installation.md)  
 [WinUSB 関数を使用して、USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)  
-[WinUSB 関数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)  
-[**WinUsb\_GetPipePolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540266)  
-[**WinUsb\_SetPipePolicy**](https://msdn.microsoft.com/library/windows/hardware/ff540304)  
+[WinUSB 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
+[**WinUsb\_GetPipePolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)  
+[**WinUsb\_SetPipePolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpipepolicy)  
 [WinUSB](winusb.md)  
 
 

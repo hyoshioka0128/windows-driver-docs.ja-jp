@@ -8,17 +8,17 @@ keywords:
 - ストリーム データの詳細な検査 WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8d4876ba56d25b5b9b5ae27223292936a475c8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67d3391fd639d2b63c62d455ff755ec23ccd4776
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372250"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386826"
 ---
 # <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>ストリーム データの詳細検査へのコールアウトの使用
 
 
-コールアウトは、データをストリームを検査時にその[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数は、固定のデータ フィールド、メタデータ フィールド、およびそれに渡される生のストリーム データの任意の組み合わせと、関連するデータの格納されているを確認できます、フィルターまたはデータに関連付けられたコンテキスト フロー。
+コールアウトは、データをストリームを検査時にその[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数は、固定のデータ フィールド、メタデータ フィールド、およびそれに渡される生のストリーム データの任意の組み合わせと、関連するデータの格納されているを確認できます、フィルターまたはデータに関連付けられたコンテキスト フロー。
 
 以下に例を示します。
 
@@ -134,7 +134,7 @@ VOID NTAPI
 }
 ```
 
-値*フィルター -&gt;action.type*吹き出しのアクションを決定します[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)に吹き出し関数が返す必要があります、 **actionType**メンバー指す構造体の*classifyOut*パラメーター。 これらのアクションの詳細については、次を参照してください。、 [ **FWPS\_ACTION0** ](https://msdn.microsoft.com/library/windows/hardware/ff551215)構造体。
+値*フィルター -&gt;action.type*吹き出しのアクションを決定します[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)に吹き出し関数が返す必要があります、 **actionType**メンバー指す構造体の*classifyOut*パラメーター。 これらのアクションの詳細については、次を参照してください。、 [ **FWPS\_ACTION0** ](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)構造体。
 
 パケットとストリームのデータ検査の詳細については、次を参照してください。[パケットを検査し、Stream データ](inspecting-packet-and-stream-data.md)します。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 431e3f54f6bb397f0b25c72998720767c28ba614
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5998b03c5b981337c47b4faedf1c7285742c457b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354700"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362286"
 ---
 # <a name="bug-check-0x128-workerthreadreturnedwithbadiopriority"></a>バグ チェック 0x128:ワーカー\_スレッド\_から返された\_WITH\_不良\_IO\_優先順位
 
@@ -26,7 +26,7 @@ ms.locfileid: "63354700"
 ワーカー\_スレッド\_から返された\_WITH\_不良\_IO\_優先度のバグ チェックが 0x00000128 の値を持ちます。 これは、ワーカー スレッド IOPriority が呼び出されるワーカー ルーチンによって誤って変更されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="workerthreadreturnedwithbadiopriority-parameters"></a>ワーカー\_スレッド\_から返された\_WITH\_不良\_IO\_優先度パラメーター

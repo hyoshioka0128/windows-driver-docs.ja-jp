@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 243e8237329d196b40c24f2f12e090ef2f412502
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9b01577a878ea1162d70d7911e59ddf5497eb7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385911"
 ---
 # <a name="kscategorycommunicationstransform"></a>KSCATEGORY_COMMUNICATIONSTRANSFORM
 
 
-KSCATEGORY_COMMUNICATIONSTRANSFORM[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)通信変換デバイスの機能のカテゴリ (KS)。
+KSCATEGORY_COMMUNICATIONSTRANSFORM[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)通信変換デバイスの機能のカテゴリ (KS)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_COMMUNICATIONSTRANSFORM[デバイス インターフェイス クラ�
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_COMMUNICATIONSTRANSFORM 機能カテゴリをサポートすることを示す KSCATEGORY_COMMUNICATIONSTRANSFORM のインスタンスを登録します。
 
-KSCATEGORY_COMMUNICATIONSTRANSFORM 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)します。
+KSCATEGORY_COMMUNICATIONSTRANSFORM 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -77,7 +77,7 @@ KSCATEGORY_COMMUNICATIONSTRANSFORM 機能のカテゴリは、のいずれか、
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

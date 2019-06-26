@@ -12,16 +12,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fec31a2b8ae23c04ed5a58b8505b016dfc75771e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcddd75b4a243630c7b7c43f949d96580f1ed456
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368153"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366964"
 ---
 # <a name="debugbaseeventcallbackswide-class"></a>DebugBaseEventCallbacksWide class 
 
-DebugBaseEventCallbacksWide クラスの基本実装を提供する、 [IDebugEventCallbacksWide](https://msdn.microsoft.com/library/windows/hardware/ff550563.aspx)インターフェイス。 
+DebugBaseEventCallbacksWide クラスの基本実装を提供する、 [IDebugEventCallbacksWide](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbackswide)インターフェイス。 
 
 プログラムでは、DebugBaseEventCallbacksWide からイベントのコールバック クラスを派生でき、必要なメソッドのみを実装することができます。 
 

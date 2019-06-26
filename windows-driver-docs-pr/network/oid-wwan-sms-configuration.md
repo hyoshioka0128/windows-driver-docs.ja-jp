@@ -5,12 +5,12 @@ ms.assetid: 3292a91d-4aa8-4c57-9223-d7d984dc5d69
 ms.date: 08/08/2017
 keywords: -OID_WWAN_SMS_CONFIGURATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 55f35f7b33e78fe4097492fb3fe625d34666db66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f285c21c3b0bc8010de3beb3493e13ddb44eeae9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361172"
 ---
 # <a name="oidwwansmsconfiguration"></a>OID\_WWAN\_SMS\_構成
 
@@ -21,12 +21,12 @@ OID\_WWAN\_SMS\_構成が MB デバイスの SMS テキスト メッセージの
 
 クエリ要求には、MB デバイスの現在 SMS テキスト メッセージの構成、デバイスまたはサブスクライバー Identity モジュール (SIM) カードに格納されているが返されます。
 
-セットの使用を要求する、 [ **NDIS\_WWAN\_設定\_SMS\_構成**](https://msdn.microsoft.com/library/windows/hardware/ff567929) MB デバイスの SMS テキスト メッセージの構成を変更する構造体.
+セットの使用を要求する、 [ **NDIS\_WWAN\_設定\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sms_configuration) MB デバイスの SMS テキスト メッセージの構成を変更する構造体.
 
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)します。
 
 この OID を処理するときに、ミニポート ドライバーは、SIM カードにアクセスできますが、プロバイダーのネットワークにアクセスしないでください。
 
@@ -61,11 +61,11 @@ GSM ベースのデバイスのミニポート ドライバーは、両方のク
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_設定\_SMS\_構成**](https://msdn.microsoft.com/library/windows/hardware/ff567929)
+[**NDIS\_WWAN\_設定\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sms_configuration)
 
 [**NDIS\_状態\_WWAN\_SMS\_構成**](ndis-status-wwan-sms-configuration.md)
 
-[WWAN SMS の操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)
+[WWAN SMS の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
 
  
 

@@ -10,19 +10,19 @@ keywords:
 - オブジェクトへのアクセス権の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9369d9dc60b76851346a1e8fe9c115a0fe140510
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e9bb7c6a5ee5f9ee6b1a612d3217affd0b91f43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339143"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363473"
 ---
 # <a name="access-rights"></a>アクセス権
 
 
 *アクセス権*はオブジェクトの特定の操作を実行する権限。 たとえば、ファイル\_読み取り\_適切なデータ アクセスをファイルから読み取る権限を指定します。
 
-オブジェクトへのハンドルを開くと、オブジェクトで実行できる操作に対応するアクセス権のセットを指定します。 システムは、現在のユーザーの各操作が許可されている場合に表示するオブジェクトのセキュリティ記述子に対して指定したアクセス権を確認します。 (詳細については、次を参照してください[セキュリティ記述子](https://msdn.microsoft.com/library/windows/hardware/ff556612)。)。
+オブジェクトへのハンドルを開くと、オブジェクトで実行できる操作に対応するアクセス権のセットを指定します。 システムは、現在のユーザーの各操作が許可されている場合に表示するオブジェクトのセキュリティ記述子に対して指定したアクセス権を確認します。 (詳細については、次を参照してください[セキュリティ記述子](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-descriptors)。)。
 
 アクセス権は 2 種類があります。
 

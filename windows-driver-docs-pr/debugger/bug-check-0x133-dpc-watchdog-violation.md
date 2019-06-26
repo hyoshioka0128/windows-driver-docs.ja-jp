@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f780d210c5d337f02cf017c9e7c68a3d854c82fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6573e5debe3eb5da8b994c1fe49f4aa713814dd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362250"
 ---
 # <a name="bug-check-0x133-dpcwatchdogviolation"></a>バグ チェック 0x133 DPC\_ウォッチドッグ\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "63351248"
 DPC\_ウォッチドッグ\_違反のバグ チェックが 0x00000133 の値を持ちます。 このバグ チェックを示します、DPC ウォッチドッグが実行する、1 つの実行時間の長い遅延プロシージャ呼び出し (DPC) が検出されたか、またはシステムでは、長時間にわたる時間を費やして、割り込み要求レベル (IRQL) ためのディスパッチ\_レベルまたはそれ以降。 パラメーター 1 の値は、1 つの DPC が、タイムアウトを超えたかどうかを示す、システムが累積的 IRQL のディスパッチに長時間を費やしたかどうか、または\_レベルまたはそれ以降。 Dpc を 100 マイクロ秒より長く実行しないでくださいと Isr を 25 (マイクロ秒) よりも長く実行しないでください、ただし実際のタイムアウト値、システムは、非常に高いに設定されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="dpcwatchdogviolation-parameters"></a>DPC\_ウォッチドッグ\_違反パラメーター

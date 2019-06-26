@@ -4,23 +4,23 @@ description: 情報ログ エントリの書き込み
 ms.assetid: 624d2a3e-2a11-47fd-941e-1ab59e299821
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b9c2da14b013ff9fb2b1d9d812a54df0c64978
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56719940cefae8e5105ddb03d47e1b3b60e484b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363485"
 ---
 # <a name="writing-an-information-log-entry"></a>情報ログ エントリの書き込み
 
 
-次の例は、アプリケーションが呼び出す可能性があります通常方法[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)でが information のエントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)が警告ではありませんメッセージまたはエラー メッセージ。
+次の例は、アプリケーションが呼び出す可能性があります通常方法[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)でが information のエントリを書き込む、 [SetupAPI テキスト ログ](setupapi-text-logs.md)が警告ではありませんメッセージまたはエラー メッセージ。
 
 呼び出しについては**SetupWriteTextLog** 、エラー メッセージを記録するには、次を参照してください。[エラーや警告のエントリを記録する呼び出し SetupWriteTextLog](writing-an-error-or-warning-log-entry.md)します。
 
-アプリケーション呼び出し[ **SetupWriteTextLog**](https://msdn.microsoft.com/library/windows/hardware/ff552218)、次のパラメーター値を指定します。
+アプリケーション呼び出し[ **SetupWriteTextLog**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)、次のパラメーター値を指定します。
 
--   *LogToken*ログのトークン値を呼び出すことによって取得されたいずれかに設定されている[ **SetupGetThreadLogToken** ](https://msdn.microsoft.com/library/windows/hardware/ff552211) で説明されているトークンの値は、システム定義のログの1つまたは[ログイン トークン](log-tokens.md)します。
+-   *LogToken*ログのトークン値を呼び出すことによって取得されたいずれかに設定されている[ **SetupGetThreadLogToken** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken) で説明されているトークンの値は、システム定義のログの1つまたは[ログイン トークン](log-tokens.md)します。
 
 -   *カテゴリ*TXTLOG_VENDOR で、ログ エントリがベンダーから提供されたアプリケーションによって行われたことを示しますに設定されます。 イベント カテゴリについては、後述[テキスト ログのイベント カテゴリを有効にする](enabling-event-categories-for-a-text-log.md)します。
 

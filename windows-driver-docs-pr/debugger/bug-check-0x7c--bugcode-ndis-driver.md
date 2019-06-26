@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bc18ba456481541387fad7d89252866eae24cd5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a42e48d82c2eea5043a1cd71a4a2d0990c0595c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367373"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367306"
 ---
 # <a name="bug-check-0x7c-bugcodendisdriver"></a>バグ チェック 0x7C:BUGCODE\_NDIS\_ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367373"
 BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持ちます。 このバグ チェックでは、オペレーティング システムに、ネットワークのドライバーでエラーが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_ドライバーのパラメーター
@@ -56,7 +56,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="odd">
 <td align="left"><p>0x01</p></td>
 <td align="left"><p>NDIS_BUGCHECK_ALLOCATE_SHARED_MEM_HIGH_IRQL</p>
-<p>ドライバーと呼ばれる<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562782" data-raw-source="[NdisMAllocateSharedMemory](https://msdn.microsoft.com/library/windows/hardware/ff562782)">NdisMAllocateSharedMemory</a></strong>なります。</p></td>
+<p>ドライバーと呼ばれる<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory" data-raw-source="[NdisMAllocateSharedMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory)">NdisMAllocateSharedMemory</a></strong>なります。</p></td>
 <td align="left"><p>特定のミニポート アダプター ブロックのアドレス。 実行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">! ndiskd.netadapter</a></strong>詳細については、このアドレスを使用します。</p></td>
 <td align="left"><p>要求された共有メモリの長さ</p></td>
 <td align="left"><p>現在の IRQL</p></td>
@@ -64,7 +64,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="even">
 <td align="left"><p>0x02</p></td>
 <td align="left"><p>NDIS_BUGCHECK_SHARED_MEM_CORRUPTION</p>
-<p>呼び出し中に <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562782" data-raw-source="[NdisMAllocateSharedMemory](https://msdn.microsoft.com/library/windows/hardware/ff562782)">NdisMAllocateSharedMemory</a></strong>NDIS は、共有メモリを以前に割り当てられたページが破損していたことが検出されました。</p></td>
+<p>呼び出し中に <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory" data-raw-source="[NdisMAllocateSharedMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory)">NdisMAllocateSharedMemory</a></strong>NDIS は、共有メモリを以前に割り当てられたページが破損していたことが検出されました。</p></td>
 <td align="left"><p>特定のミニポート アダプター ブロックのアドレス。 実行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">! ndiskd.netadapter</a></strong>詳細については、このアドレスを使用します。</p></td>
 <td align="left"><p>共有メモリ ページが破損しています。</p></td>
 <td align="left"><p>共有メモリの割り当て、ドライバーでの追跡を NDIS_WRAPPER_CONTEXTE のアドレス</p></td>
@@ -72,7 +72,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="odd">
 <td align="left"><p>0x03</p></td>
 <td align="left"><p>NDIS_BUGCHECK_FREE_INVALID_SHARED_MEM</p>
-<p>ミニポート ドライバーと呼ばれます<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff563589" data-raw-source="[NdisMFreeSharedMemory](https://msdn.microsoft.com/library/windows/hardware/ff563589)">NdisMFreeSharedMemory</a></strong> (<strong>Async</strong>) が既に解放されて共有メモリ アドレスを使用します。</p></td>
+<p>ミニポート ドライバーと呼ばれます<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreesharedmemory" data-raw-source="[NdisMFreeSharedMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismfreesharedmemory)">NdisMFreeSharedMemory</a></strong> (<strong>Async</strong>) が既に解放されて共有メモリ アドレスを使用します。</p></td>
 <td align="left"><p>特定のミニポート アダプター ブロックのアドレス。 実行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">! ndiskd.netadapter</a></strong>詳細については、このアドレスを使用します。</p></td>
 <td align="left"><p>この共有メモリの割り当てられたページ</p></td>
 <td align="left"><p>共有メモリの仮想アドレス</p></td>
@@ -80,7 +80,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="even">
 <td align="left"><p>0x04</p></td>
 <td align="left"><p>NDIS_BUGCHECK_UNLOAD_DRIVER_INVALID_PARAMETER</p>
-<p><strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff540521" data-raw-source="[AddDevice](https://msdn.microsoft.com/library/windows/hardware/ff540521)">AddDevice</a></strong>  NDIS に登録されているドライバーの一覧ではないにドライバーが呼び出されました。</p>
+<p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device" data-raw-source="[AddDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)">AddDevice</a></strong>  NDIS に登録されているドライバーの一覧ではないにドライバーが呼び出されました。</p>
 <p>特別なインストルメント化された NDIS でのみ有効にします。</p></td>
 <td align="left"><p>NDIS_M_DRIVER_BLOCK のアドレス</p></td>
 <td align="left"><p>DRIVER_OBJECT のアドレス</p></td>
@@ -173,7 +173,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="odd">
 <td align="left"><p>0x0F</p></td>
 <td align="left"><p>NDIS_BUGCHECK_RESET_COMPLETE_UNEXPECTED</p>
-<p>ミニポート ドライバーと呼ばれます<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff563663" data-raw-source="[NdisMResetComplete](https://msdn.microsoft.com/library/windows/hardware/ff563663)">NdisMResetComplete</a></strong>任意の保留中のリセットの要求なし。</p></td>
+<p>ミニポート ドライバーと呼ばれます<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismresetcomplete" data-raw-source="[NdisMResetComplete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismresetcomplete)">NdisMResetComplete</a></strong>任意の保留中のリセットの要求なし。</p></td>
 <td align="left"><p>特定のミニポート アダプター ブロックのアドレス。 実行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">! ndiskd.netadapter</a></strong>詳細については、このアドレスを使用します。</p></td>
 <td align="left"><p>リセットの状態</p></td>
 <td align="left"><p>AddressingReset (BOOLEAN)</p></td>
@@ -215,7 +215,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="even">
 <td align="left"><p>0x14</p></td>
 <td align="left"><p>NDIS_BUGCHECK_WAIT_EVENT_HIGH_IRQL</p>
-<p>NDIS ドライバーと呼ばれる<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff564651" data-raw-source="[NdisWaitEvent](https://msdn.microsoft.com/library/windows/hardware/ff564651)">NdisWaitEvent</a></strong>不正な IRQL で</p></td>
+<p>NDIS ドライバーと呼ばれる<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswaitevent" data-raw-source="[NdisWaitEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswaitevent)">NdisWaitEvent</a></strong>不正な IRQL で</p></td>
 <td align="left"><p>実際の IRQL</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
@@ -240,7 +240,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="odd">
 <td align="left"><p>0x17</p></td>
 <td align="left"><p>NDIS_BUGCHECK_IFPROVIDER_DEREGISTER_UNEXPECTED</p>
-<p>インターフェイスをプロバイダーと呼ばれる<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562703" data-raw-source="[NdisIfDeregisterProvider](https://msdn.microsoft.com/library/windows/hardware/ff562703)">NdisIfDeregisterProvider</a></strong>最初に、そのすべてのインターフェイスを削除します。</p></td>
+<p>インターフェイスをプロバイダーと呼ばれる<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifderegisterprovider" data-raw-source="[NdisIfDeregisterProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifderegisterprovider)">NdisIfDeregisterProvider</a></strong>最初に、そのすべてのインターフェイスを削除します。</p></td>
 <td align="left"><p>インターフェイスのプロバイダーのハンドルのアドレス。 実行<strong><a href="-ndiskd-ifprovider.md" data-raw-source="[!ndiskd.ifprovider](-ndiskd-ifprovider.md)">! ndiskd.ifprovider</a></strong>詳細については、このアドレスを使用します。</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
@@ -248,7 +248,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="even">
 <td align="left"><p>0x1B</p></td>
 <td align="left"><p>NDIS_BUGCHECK_IF_STACK_TABLE_LOOP</p>
-<p>ドライバーは、ifStackTable にインターフェイスを追加しようとしていますが、サイクルが発生するとします。 IfStackTable いないサイクルが必要です。 実行<strong><a href="-ndiskd-ifstacktable.md" data-raw-source="[!ndiskd.ifstacktable](-ndiskd-ifstacktable.md)">! ndiskd.ifstacktable</a></strong>を現在のテーブルを参照してください (この呼び出しの前に <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff562693" data-raw-source="[NdisIfAddIfStackEntry](https://msdn.microsoft.com/library/windows/hardware/ff562693)">NdisIfAddIfStackEntry</a></strong>)。</p></td>
+<p>ドライバーは、ifStackTable にインターフェイスを追加しようとしていますが、サイクルが発生するとします。 IfStackTable いないサイクルが必要です。 実行<strong><a href="-ndiskd-ifstacktable.md" data-raw-source="[!ndiskd.ifstacktable](-ndiskd-ifstacktable.md)">! ndiskd.ifstacktable</a></strong>を現在のテーブルを参照してください (この呼び出しの前に <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifaddifstackentry" data-raw-source="[NdisIfAddIfStackEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifaddifstackentry)">NdisIfAddIfStackEntry</a></strong>)。</p></td>
 <td align="left"><p>テーブルに追加されている HigherLayerIfIndex</p></td>
 <td align="left"><p>テーブルに追加されている LowerLayerIfIndex</p></td>
 <td align="left"><p>0</p></td>
@@ -266,7 +266,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <td align="left"><p>NDIS_BUGCHECK_OID_REQUEST_INVALID_BUFFER</p>
 <p>ミニポート ドライバーまたはフィルター ドライバーが完了した OID 要求を不正にします。 BytesWritten がバッファーの全体の長さを超えていないことを確認します。</p></td>
 <td align="left"><p>特定のミニポート アダプターまたはフィルター モジュールのブロックのアドレス。 実行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">! ndiskd.netadapter</a></strong>または<strong><a href="-ndiskd-filter.md" data-raw-source="[!ndiskd.filter](-ndiskd-filter.md)">! ndiskd.filter</a></strong>詳細については、このアドレスを使用します。</p></td>
-<td align="left"><p>アドレスを<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)">NDIS_OID_REQUEST</a></strong>不法を完了しました。 検査で <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">! ndiskd.oid</a></strong>します。</p></td>
+<td align="left"><p>アドレスを<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)">NDIS_OID_REQUEST</a></strong>不法を完了しました。 検査で <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">! ndiskd.oid</a></strong>します。</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="odd">
@@ -294,7 +294,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="odd">
 <td align="left"><p>0x20</p></td>
 <td align="left"><p>NDIS_BUGCHECK_STATUS_INDICATION_INVALID_BUFFER</p>
-<p>ミニポート ドライバーまたはフィルター ドライバーに不正なが示される <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567373" data-raw-source="[NDIS_STATUS_INDICATION](https://msdn.microsoft.com/library/windows/hardware/ff567373)">NDIS_STATUS_INDICATION</a></strong>します。</p></td>
+<p>ミニポート ドライバーまたはフィルター ドライバーに不正なが示される <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication" data-raw-source="[NDIS_STATUS_INDICATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)">NDIS_STATUS_INDICATION</a></strong>します。</p></td>
 <td align="left"><p>状態表示の型。 実行<strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">! ndiskd.help</a></strong>詳細については、このコードを使用します。</p></td>
 <td align="left"><p>この無効な状態を示す値を指定するドライバーのインスタンスのハンドル。 実行<strong><a href="-ndiskd-netadapter.md" data-raw-source="[!ndiskd.netadapter](-ndiskd-netadapter.md)">! ndiskd.netadapter</a></strong>または<strong><a href="-ndiskd-filter.md" data-raw-source="[!ndiskd.filter](-ndiskd-filter.md)">! ndiskd.filter</a></strong>詳細については、このハンドルを使用します。</p></td>
 <td align="left"><p>状態を示す値のペイロードのアドレス。 その解釈は、状態表示の種類によって異なります。</p></td>
@@ -302,7 +302,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="even">
 <td align="left"><p>0x21</p></td>
 <td align="left"><p>NDIS_BUGCHECK_INVALID_OBJECT_HEADER</p>
-<p>ドライバーの作成、無効な <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff566588" data-raw-source="[NDIS_OBJECT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff566588)">NDIS_OBJECT_HEADER</a></strong>します。</p></td>
+<p>ドライバーの作成、無効な <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header" data-raw-source="[NDIS_OBJECT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)">NDIS_OBJECT_HEADER</a></strong>します。</p></td>
 <td align="left"><p>無効な状態の表示を示す、ドライバーのハンドル。 実行<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">! ndiskd.minidriver</a></strong>または<strong><a href="-ndiskd-filterdriver.md" data-raw-source="[!ndiskd.filterdriver](-ndiskd-filterdriver.md)">! ndiskd.filterdriver</a></strong>詳細については、このハンドルを使用します。</p></td>
 <td align="left"><p>正しくない形式のヘッダーを持つオブジェクト。 その解釈は、呼び出される API に依存します。 たとえば、ドライバーと呼ばれる<strong>NdisAllocateCloneOidRequest</strong>ndis をオブジェクトにキャストし、!NDIS_OID_REQUEST します。</p></td>
 <td align="left"><p>0</p></td>
@@ -310,7 +310,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="odd">
 <td align="left"><p>0x22</p></td>
 <td align="left"><p>NDIS_BUGCHECK_ILLEGAL_NET_PNP_EVENT</p>
-<p>ミニポート ドライバーまたはフィルター ドライバーに不正なが示される <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568752" data-raw-source="[NET_PNP_EVENT_NOTIFICATION](https://msdn.microsoft.com/library/windows/hardware/ff568752)">NET_PNP_EVENT_NOTIFICATION</a></strong>します。</p></td>
+<p>ミニポート ドライバーまたはフィルター ドライバーに不正なが示される <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification" data-raw-source="[NET_PNP_EVENT_NOTIFICATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)">NET_PNP_EVENT_NOTIFICATION</a></strong>します。</p></td>
 <td align="left"><p>無効な状態の表示を示す、ドライバーのハンドル。 実行<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">! ndiskd.minidriver</a></strong>または<strong><a href="-ndiskd-filterdriver.md" data-raw-source="[!ndiskd.filterdriver](-ndiskd-filterdriver.md)">! ndiskd.filterdriver</a></strong>詳細については、このハンドルを使用します。</p></td>
 <td align="left"><p>NET_PNP_EVENT_NOTIFICATION にキャスト</p></td>
 <td align="left"><p>0</p></td>
@@ -415,7 +415,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <td align="left"><p>パラメーター 4 の値は、パラメーター 2 の値によって異なります。 この一覧の各番号は、パラメーター 2 で同じの 16 進数値に対応します。</p>
 <ul>
 <li>0x01 :0</li>
-<li>0x02 :スタックのイベントの NET_PNP_EVENT_CODE します。 これらのコードの詳細については、次を参照してください <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568751" data-raw-source="[NET_PNP_EVENT](https://msdn.microsoft.com/library/windows/hardware/ff568751)">NET_PNP_EVENT</a></strong>。</li>
+<li>0x02 :スタックのイベントの NET_PNP_EVENT_CODE します。 これらのコードの詳細については、次を参照してください <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event" data-raw-source="[NET_PNP_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)">NET_PNP_EVENT</a></strong>。</li>
 <li>0x03 :スタックの表示の NDIS_STATUS コードです。 使用<strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">! ndiskd.help</a></strong>にデコードします。</li>
 <li>0x04 :0</li>
 <li>パターン:0</li>
@@ -441,7 +441,7 @@ BUGCODE\_NDIS\_ドライバーのバグ チェックが 0x0000007C の値を持�
 <tr class="even">
 <td align="left"><p>0x27</p></td>
 <td align="left"><p>NDIS_BUGCHECK_LEAKED_NBL</p>
-<p>ドライバーが漏洩した、 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff568388" data-raw-source="[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)">NET_BUFFER_LIST</a></strong>構造体。 確認<strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">! ndiskd.pendingnbls</a></strong>任意 NBLs を表示するこのドライバーで保留中のあります。</p></td>
+<p>ドライバーが漏洩した、 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list" data-raw-source="[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)">NET_BUFFER_LIST</a></strong>構造体。 確認<strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">! ndiskd.pendingnbls</a></strong>任意 NBLs を表示するこのドライバーで保留中のあります。</p></td>
 <td align="left"><p>場所、リークが検出されました。 設定可能な値:</p>
 <ul>
 <li><p>0x01 :NBL の追跡ツールでメモリ リークが検出されました。 現在の登録を解除またはバインド解除されているドライバーでは、最も一般的な原因です。 バグチェック スレッドの呼び出し履歴を確認します。 ドライバーは、バインド解除またはこれらの鉄則 active NBLs 中の登録を解除する必要がありますできません。</p></li>

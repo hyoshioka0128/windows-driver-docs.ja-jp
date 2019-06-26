@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8c86184f23a9afccecaea0764e77d5f67799e38
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3711df6a20a0e794d0f83eadb86f1837c3cd3c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355523"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384286"
 ---
 # <a name="kspropertyvpconfigmaxpixelrate"></a>KSPROPERTY\_VPCONFIG\_MAXPIXELRATE
 
@@ -54,7 +54,7 @@ KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づ
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567234" data-raw-source="[&lt;strong&gt;KSVPMAXPIXELRATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567234)"><strong>KSVPMAXPIXELRATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpmaxpixelrate" data-raw-source="[&lt;strong&gt;KSVPMAXPIXELRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpmaxpixelrate)"><strong>KSVPMAXPIXELRATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づ
 
 プロパティの値 (データの操作) は、幅、高さ、および最大値を表す KSVPMAXPIXELRATE 構造体のビデオ ポートをサポートする 1 秒あたりのピクセルの数。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -84,7 +84,7 @@ KSPROPERTY\_VPCONFIG\_MAXPIXELRATE プロパティがピクセル形式に基づ
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSVPMAXPIXELRATE**](https://msdn.microsoft.com/library/windows/hardware/ff567234)
+[**KSVPMAXPIXELRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksvpmaxpixelrate)
 
  
 

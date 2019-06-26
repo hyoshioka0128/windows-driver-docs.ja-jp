@@ -8,12 +8,12 @@ keywords:
 - トレーリング エッジ ストリーム ポインター WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cba66bb34a726076a97d47d52022cd0427f50ff7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 370ef4395a69c56b0a7738648122dcd9a7342671
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383553"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386648"
 ---
 # <a name="leading-and-trailing-edge-stream-pointers"></a>先頭と末尾のエッジ ストリーム ポインター
 
@@ -25,7 +25,7 @@ ms.locfileid: "63383553"
 
 キューに到着すると、新しいフレーム、AVStream は、フレームを既に指してされていないのリーディング エッジをこのフレームをポイントするリーディング エッジを設定します。
 
-リーディング エッジ ストリーム ポインターへのポインターを取得するようにミニドライバーを呼び出す[ **KsPinGetLeadingEdgeStreamPointer**](https://msdn.microsoft.com/library/windows/hardware/ff563513)します。
+リーディング エッジ ストリーム ポインターへのポインターを取得するようにミニドライバーを呼び出す[ **KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer)します。
 
 すべてのリーディング エッジが次の表に示す 2 つの状況を進めるため、ミニドライバーが担当します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "63383553"
 
 ### <a name="specifying-a-trailing-edge-stream-pointer"></a>トレーリング エッジの Stream ポインターを指定します。
 
-ミニドライバーは、キューがトレーリング エッジ ストリーム ポインターがあることを指定できます。 トレーリング エッジは、通常、ミニドライバーに関心のある最も古いフレームを示します。 トレーリング エッジを指定する設定、KSPIN\_フラグ\_DISTINCT\_トレーリング\_EDGE フラグ、**フラグ**の関連メンバー [ **KSPIN\_記述子\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。 呼び出して[ **KsPinGetTrailingEdgeStreamPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff563518)トレーリング エッジ ストリーム ポインターへのポインターを取得します。
+ミニドライバーは、キューがトレーリング エッジ ストリーム ポインターがあることを指定できます。 トレーリング エッジは、通常、ミニドライバーに関心のある最も古いフレームを示します。 トレーリング エッジを指定する設定、KSPIN\_フラグ\_DISTINCT\_トレーリング\_EDGE フラグ、**フラグ**の関連メンバー [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。 呼び出して[ **KsPinGetTrailingEdgeStreamPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingettrailingedgestreampointer)トレーリング エッジ ストリーム ポインターへのポインターを取得します。
 
 トレーリング エッジが進めますが既に 0 にドロップを指しているフレームとフレームの参照カウントが完了します。 シンク pin IRP を呼び出し元が完了すると、フレームが IRP を内に含まれる最後の場合は、ソース暗証番号 (pin) は、接続されている pin に IRP を送信します。
 

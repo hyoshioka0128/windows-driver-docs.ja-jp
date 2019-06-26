@@ -9,12 +9,12 @@ keywords:
 - 最上位レベルのオブジェクトのディレクトリの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 809fbba9f52f255f77fa42c3f4ec4c3104742561
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28fe256e7ea82465e2d1e3f111483654b1d715c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351070"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365386"
 ---
 # <a name="object-directories"></a>オブジェクト ディレクトリ
 
@@ -46,7 +46,7 @@ ms.locfileid: "63351070"
 
 システムが他の最上位レベルのディレクトリを作成しますが、システムの使用に予約されています。
 
-ドライバーは呼び出すことによってオブジェクトの新しいディレクトリを作成することができます、 [ **ZwCreateDirectoryObject** ](https://msdn.microsoft.com/library/windows/hardware/ff566421)ルーチン。
+ドライバーは呼び出すことによってオブジェクトの新しいディレクトリを作成することができます、 [ **ZwCreateDirectoryObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject)ルーチン。
 
  
 

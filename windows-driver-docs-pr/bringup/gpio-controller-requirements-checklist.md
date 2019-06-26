@@ -4,12 +4,12 @@ description: このトピックでは、ハードウェア、ファームウェ�
 ms.assetid: 8097F391-ABF0-44A6-94D2-243AFBA3F984
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07b0b5f9818c99a5c3f28bc8f14a84e957415ac7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b491538fa261b91a10cb827bab2787f27afdbeb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337587"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364535"
 ---
 # <a name="gpio-controller-requirements-checklist"></a>GPIO コントローラーの要件チェック リスト
 
@@ -50,11 +50,11 @@ ms.locfileid: "63337587"
 
 -   GpioClx と GPIO コント ローラー ドライバー間のインターフェイスのバージョン 2 をサポートします。
 
-    -   実装、 [*クライアント\_QueryEnabledInterrupts* ](https://msdn.microsoft.com/library/windows/hardware/dn265184)コールバック関数。 これは、大幅に割り込みストームを診断する際に支援します。
-    -   場合、 **BankIdlePowerMgmtSupported**フラグに設定されて、 [**コント ローラー\_BASIC\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh439358) GPIO コント ローラーのドライバーを構成します。実装する必要があります、 [*クライアント\_SaveBankHardwareContext* ](https://msdn.microsoft.com/library/windows/hardware/hh439419)と[*クライアント\_RestoreBankHardwareContext*](https://msdn.microsoft.com/library/windows/hardware/hh439414)コールバック関数、およびこれらの関数する必要があります保存/復元銀行のコンテキストに適切にマスク/マスク解除されて、割り込みの状態などです。 割り込みは、この関数が呼び出された時点で切断する保証はありませんが、マスクされる保証されている場合、接続されていることに注意してください。
-    -   場合、 **DeviceIdlePowerMgmtSupported**フラグに設定されて、**コント ローラー\_BASIC\_情報**構造、 [*クライアント\_StartController* ](https://msdn.microsoft.com/library/windows/hardware/hh439424)と[*クライアント\_StopController* ](https://msdn.microsoft.com/library/windows/hardware/hh439430)コールバック機能する必要がありますを保存/復元すべての銀行のコンテキスト割り込みのマスク/マスク解除されて状態が適切になど。 割り込みは、この関数が呼び出された時点で切断する保証はありませんが、マスクされる保証されている場合、接続されていることに注意してください。
+    -   実装、 [*クライアント\_QueryEnabledInterrupts* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts)コールバック関数。 これは、大幅に割り込みストームを診断する際に支援します。
+    -   場合、 **BankIdlePowerMgmtSupported**フラグに設定されて、 [**コント ローラー\_BASIC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information) GPIO コント ローラーのドライバーを構成します。実装する必要があります、 [*クライアント\_SaveBankHardwareContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_save_bank_hardware_context)と[*クライアント\_RestoreBankHardwareContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_restore_bank_hardware_context)コールバック関数、およびこれらの関数する必要があります保存/復元銀行のコンテキストに適切にマスク/マスク解除されて、割り込みの状態などです。 割り込みは、この関数が呼び出された時点で切断する保証はありませんが、マスクされる保証されている場合、接続されていることに注意してください。
+    -   場合、 **DeviceIdlePowerMgmtSupported**フラグに設定されて、**コント ローラー\_BASIC\_情報**構造、 [*クライアント\_StartController* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_start_controller)と[*クライアント\_StopController* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_stop_controller)コールバック機能する必要がありますを保存/復元すべての銀行のコンテキスト割り込みのマスク/マスク解除されて状態が適切になど。 割り込みは、この関数が呼び出された時点で切断する保証はありませんが、マスクされる保証されている場合、接続されていることに注意してください。
 -   設定、 **EmulateDebouncing**フラグ、**コント ローラー\_BASIC\_情報**構造体。 これは、静電気 (ボタン、プラグインするときなど) の対象デバイスの割り込みのノイズ電磁波耐性が大幅に向上します。
--   設定、 **EmulateActiveBoth**フラグ、**コント ローラー\_BASIC\_情報**構造体、および、実装、 [*クライアント\_ReconfigureInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/hh698243)コールバック関数。 これにより、ActiveBoth 割り込みの信頼性の高い境界の検出。
+-   設定、 **EmulateActiveBoth**フラグ、**コント ローラー\_BASIC\_情報**構造体、および、実装、 [*クライアント\_ReconfigureInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)コールバック関数。 これにより、ActiveBoth 割り込みの信頼性の高い境界の検出。
 
  
 

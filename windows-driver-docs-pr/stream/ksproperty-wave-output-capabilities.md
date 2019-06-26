@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6815546e0e7328dd18f23ba95ff7c920c0777d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b3310c81f8498d7f8331a918e6949c3561055609
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329962"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386277"
 ---
 # <a name="kspropertywaveoutputcapabilities"></a>KSPROPERTY\_WAVE\_出力\_機能
 
@@ -54,7 +54,7 @@ KSPROPERTY\_WAVE\_出力\_機能プロパティは、wave デバイスの波の�
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567248" data-raw-source="[&lt;strong&gt;KSWAVE_OUTPUT_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567248)"><strong>KSWAVE_OUTPUT_CAPABILITIES</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_output_capabilities" data-raw-source="[&lt;strong&gt;KSWAVE_OUTPUT_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_output_capabilities)"><strong>KSWAVE_OUTPUT_CAPABILITIES</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ KSPROPERTY\_WAVE\_出力\_機能プロパティは、wave デバイスの波の�
 
 プロパティの値 (データの操作) は、KSWAVE\_出力\_wave デバイス、オーディオ チャンネル、サンプルごとのビットの範囲の範囲の最大数の出力の機能を説明する機能の構造体サンプリング周波数、接続数の合計とアクティブです。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -84,7 +84,7 @@ KSPROPERTY\_WAVE\_出力\_機能プロパティは、wave デバイスの波の�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSWAVE\_出力\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff567248)
+[**KSWAVE\_出力\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_output_capabilities)
 
  
 

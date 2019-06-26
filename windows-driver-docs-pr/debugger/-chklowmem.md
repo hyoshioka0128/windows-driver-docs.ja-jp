@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4069c87228cf7fab8b0c29c374fcb6fe32c0b6ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd654f9e840d118313a262ddf6daa49df6e78871
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334635"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363167"
 ---
 # <a name="chklowmem"></a>!chklowmem
 
 
-**! Chklowmem**拡張機能では、4 GB 未満の物理メモリのページが必要な塗りつぶしのパターンを使用して起動されているコンピューターに格納されるかどうかを決定、 [ **/pae** ](https://msdn.microsoft.com/library/windows/hardware/ff557168)[ **/nolowmem** ](https://msdn.microsoft.com/library/windows/hardware/ff557144)オプション。
+**! Chklowmem**拡張機能では、4 GB 未満の物理メモリのページが必要な塗りつぶしのパターンを使用して起動されているコンピューターに格納されるかどうかを決定、 [ **/pae** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-pae)[ **/nolowmem** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-nolowmem)オプション。
 
 ```dbgsyntax
 !chklowmem

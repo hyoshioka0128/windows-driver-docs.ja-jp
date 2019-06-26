@@ -9,12 +9,12 @@ keywords:
 - WDK の INF ファイルのディレクトリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef026ea881e2e5a2f130c8b99832cd9a1df69bdb
-ms.sourcegitcommit: cab03f9f6b1143a29be74a894e917b26762a42ee
+ms.openlocfilehash: 95ef0a89c5542e89020af097d6b09ae973b82251
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384765"
 ---
 # <a name="using-dirids"></a>Dirids の使用
 
@@ -41,7 +41,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 
 2. INF ファイルのエントリの構文は、ファイルのパスを指定する場合は、このパスの一部またはすべてを表す、システム指定文字列を置換を使用できます。 この置換では、次の形式があります。
 
-   **%**<em>Dirid</em>**%**
+   **%** <em>Dirid</em> **%**
 
    このフォームは、パーセント (%) で構成されています文字の後に、 *dirid*を指定するディレクトリの後にもう 1 つのパーセント (%)文字。 終端の円記号 (\)文字は、次のファイル名またはパスに追加のディレクトリからこの式を区切ります<strong>します。</strong>
 
@@ -52,7 +52,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
    ServiceBinary = %12%\aic78xx.sys
    ```
 
-   完全に展開すると、前の例に示すように、パスは次のようになります*c:*\\*windows*\\*system32* \\ *。ドライバー*\\*aic78xx.sys* (で Windows がインストールされていると仮定すると、 *c:*\\*windows*ディレクトリ)。 注意してくださいを文字列の置換、または %*dirid*の例外に、文字列が想定される場所 % のフォームで使用できます、 [ **INF 文字列セクション**](inf-strings-section.md)の INF ファイル。
+   完全に展開すると、前の例に示すように、パスは次のようになります*c:* \\*windows*\\*system32* \\ *。ドライバー*\\*aic78xx.sys* (で Windows がインストールされていると仮定すると、 *c:* \\*windows*ディレクトリ)。 注意してくださいを文字列の置換、または %*dirid*の例外に、文字列が想定される場所 % のフォームで使用できます、 [ **INF 文字列セクション**](inf-strings-section.md)の INF ファイル。
 
    次の 2 つの例の表示文字列の置換がどのように*いない*使用します。
 
@@ -101,7 +101,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>13</strong></p></td>
-<td align="left"><p>ドライバー パッケージの<a href="https://msdn.microsoft.com/windows/hardware/drivers/install/driver-store">ドライバー ストア</a>ディレクトリ。</p>
+<td align="left"><p>ドライバー パッケージの<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-store">ドライバー ストア</a>ディレクトリ。</p>
 <p>Windows 8.1 と Windows の以降のバージョンでは、ドライバー パッケージがインポートされたドライバー ストア ディレクトリへのパスを指定します。
 
 使用しない<a href="inf-delfiles-directive.md" data-raw-source="[DelFiles](inf-delfiles-directive.md)">DelFiles</a>対象のファイルで<strong>DestinationDirs</strong>が含まれています<em>dirid</em> 13。
@@ -151,7 +151,7 @@ INF ファイルに表示されるディレクトリの多くは、ディレク�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>51</strong></p></td>
-<td align="left"><p>スプール ディレクトリ (<em>いない</em>−「プリンター ドライバー インストールに使用される<a href="https://msdn.microsoft.com/library/windows/hardware/ff560821">プリンター Dirids</a>)</p></td>
+<td align="left"><p>スプール ディレクトリ (<em>いない</em>−「プリンター ドライバー インストールに使用される<a href="https://docs.microsoft.com/windows-hardware/drivers/print/printer-dirids">プリンター Dirids</a>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>52</strong></p></td>

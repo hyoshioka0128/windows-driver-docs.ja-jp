@@ -4,12 +4,12 @@ description: Windows 7 ディスプレイ ドライバーの機能スコアの�
 ms.assetid: 7b2cf25d-a88d-48e1-8d62-8c245c289566
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9148246fd84492b9a12f0ffe2e2d4e47f93ca185
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 055dcf0f7133e3b0021b9ee5035a729c67713a16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365557"
 ---
 # <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>Windows 7 ディスプレイ ドライバーの機能スコアの設定
 
@@ -79,7 +79,7 @@ score</th>
 
  
 
-Wddm ドライバー、グラフィックス ハードウェアのベンダーを配置する必要があります、 **FeatureScore**下ディレクティブ、 [ **DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)の INF ファイルと使用**FeatureScore**ドライバーに、特徴のスコアを適用します。
+Wddm ドライバー、グラフィックス ハードウェアのベンダーを配置する必要があります、 **FeatureScore**下ディレクティブ、 [ **DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)の INF ファイルと使用**FeatureScore**ドライバーに、特徴のスコアを適用します。
 
 [Windows 2000 Display Driver Model](windows-2000-display-driver-model-design-guide.md)ドライバー、Microsoft で、Windows 2000 Display Driver Model ドライバーのまたは、INF ドライバーのインストールの実行時に、クラスのインストーラーで適切な特徴のスコアが適用されます。 ベンダーが使用する必要があります、 **FeatureScore**ディレクティブには、Windows 2000 Display Driver Model ドライバーの特徴のスコアを挿入します。
 

@@ -10,12 +10,12 @@ keywords:
 - ビデオのビデオをデコードについての詳細の WDK DirectX va なのでのデコード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed668d18e83876a0e7d695e5b240db0e2452e559
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b800d011f23e0ac8e83ab8ac632eb8cb776f033d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365083"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365087"
 ---
 # <a name="video-decoding"></a>ビデオ デコード
 
@@ -25,7 +25,7 @@ ms.locfileid: "63365083"
 
 DirectX VA により、デコード処理の間で分割するビデオの 1 つまたは複数の段階、*ホスト CPU*とビデオ ハードウェア アクセラレータ。 実行される、[動き補償予測](motion-compensated-prediction.md)(MCP) 逆コサイン不連続変換 (IDCT) とデコードの処理の可変長のデコード (VLD) ステージも実行され、します。
 
-DirectX の VA API は、1 つのビデオ ストリームをデコードします。 複数のビデオ ストリームのサポートには、各ビデオ ストリーム (出力および入力ピンがグラフの操作をフィルターで使用するには、ビデオ デコーダーとの高速化のドライバーの独立したペアなど) の別の DirectX VA セッションが必要です。 フィルターのグラフの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff567656)します。
+DirectX の VA API は、1 つのビデオ ストリームをデコードします。 複数のビデオ ストリームのサポートには、各ビデオ ストリーム (出力および入力ピンがグラフの操作をフィルターで使用するには、ビデオ デコーダーとの高速化のドライバーの独立したペアなど) の別の DirectX VA セッションが必要です。 フィルターのグラフの詳細については、次を参照してください。 [KS ミニドライバー アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-minidriver-architecture)します。
 
  
 

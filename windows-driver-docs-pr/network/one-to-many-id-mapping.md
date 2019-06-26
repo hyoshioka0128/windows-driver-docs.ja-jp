@@ -9,12 +9,12 @@ keywords:
 - アップグレード前の Id の WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f00afe01ebf2b07208652a2eda65b56505901805
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef0e5dfd30cabad4a530aea809596a96597f1be8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384229"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366570"
 ---
 # <a name="one-to-many-id-mapping"></a>1 対多の ID のマッピング
 
@@ -40,7 +40,7 @@ ms.locfileid: "63384229"
 
 指定した netmap.inf ファイル ファイル セクション*セクション名*次のエントリが含まれています。
 
-**ValueName = "**<em>Name</em>**"**
+**ValueName = "** <em>Name</em> **"**
 
 ネットワーク アダプターのインスタンスのパラメーターの値を格納するレジストリ キー NetSetup を読み取る値を指定します。 *名前*特定のネットワーク アダプターを識別します。
 
@@ -89,7 +89,7 @@ NetSetup は一対多の ID を実行します。 次のようにマッピング
 
 このような状況を処理の最も効果的な方法は次のとおりです。
 
-1.  ネットワーク移行 DLL の[ **PreUpgradeInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff562439)関数は、レジストリ、ネットワーク アダプターのインスタンスごとに一意の値に含まれるように、レジストリを変更します。 これらの一意の値は、アダプターの種類を示す必要があります。
+1.  ネットワーク移行 DLL の[ **PreUpgradeInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562439(v=vs.85))関数は、レジストリ、ネットワーク アダプターのインスタンスごとに一意の値に含まれるように、レジストリを変更します。 これらの一意の値は、アダプターの種類を示す必要があります。
 
 2.  **PreUpgradeInitialize**関数の設定、NUA\_要求\_中止\_NetSetup winnt32.exe を再起動し、中止するよう求めるメッセージを表示すると、アップグレードのフラグ、アップグレードします。
 

@@ -12,12 +12,12 @@ keywords:
 - Irp WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ff91cc55e650034135110bf976f808f6cffae1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6088b666e17302512cc3ef6b639f67111dc0e517
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367155"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385648"
 ---
 # <a name="writing-irp-dispatch-routines"></a>IRP ディスパッチ ルーチンの記述
 
@@ -42,9 +42,9 @@ NTSTATUS
     ); 
 ```
 
-ファイル システム フィルター ドライバーのディスパッチ ルーチンは、IRQL パッシブに最も多くの場合、呼び出されます。\_レベル、ユーザー モード アプリケーションのスレッドでは通常、I/O 要求を生成したスレッドのコンテキストでします。 ただし、このルールをいくつかの例外もあります。 たとえば、ページ フォールトは読み取りが発生して、IRQL APC 時に呼び出すディスパッチ ルーチンを記述\_レベル。 これらの例外は内のテーブルにまとめます[ディスパッチ日常的な IRQL とスレッドのコンテキスト](dispatch-routine-irql-and-thread-context.md)します。 残念ながら、現時点フィルター チェーン内のドライバーの呼び出しを防止することはない[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) IRQL で&gt;パッシブ\_レベル (たとえばに障害が発生しました。リリース spinlock または高速なミュー テックス)。 それにもかかわらず、強くお勧めルーチンが常に呼び出し、そのフィルター ディスパッチ**保留**呼び出される位置同じ IRQL でします。
+ファイル システム フィルター ドライバーのディスパッチ ルーチンは、IRQL パッシブに最も多くの場合、呼び出されます。\_レベル、ユーザー モード アプリケーションのスレッドでは通常、I/O 要求を生成したスレッドのコンテキストでします。 ただし、このルールをいくつかの例外もあります。 たとえば、ページ フォールトは読み取りが発生して、IRQL APC 時に呼び出すディスパッチ ルーチンを記述\_レベル。 これらの例外は内のテーブルにまとめます[ディスパッチ日常的な IRQL とスレッドのコンテキスト](dispatch-routine-irql-and-thread-context.md)します。 残念ながら、現時点フィルター チェーン内のドライバーの呼び出しを防止することはない[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) IRQL で&gt;パッシブ\_レベル (たとえばに障害が発生しました。リリース spinlock または高速なミュー テックス)。 それにもかかわらず、強くお勧めルーチンが常に呼び出し、そのフィルター ディスパッチ**保留**呼び出される位置同じ IRQL でします。
 
-ディスパッチ ルーチンにできるページング可能なで説明する条件を満たす場合、[ドライバー ページングを行う](https://msdn.microsoft.com/library/windows/hardware/ff554346)カーネル モード ドライバーのアーキテクチャの設計ガイドの「します。
+ディスパッチ ルーチンにできるページング可能なで説明する条件を満たす場合、[ドライバー ページングを行う](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)カーネル モード ドライバーのアーキテクチャの設計ガイドの「します。
 
 ファイル システム フィルター ドライバーに制御デバイス オブジェクト (CDO) がある場合は、そのディスパッチ ルーチンを検出し、IRP のターゲット デバイス オブジェクトが、マウントされたボリュームのボリューム デバイス オブジェクト (提供) ではなく、CDO である場合の処理である必要があります。 詳細については、CDO を参照してください。[フィルター ドライバーの制御デバイス オブジェクト](the-filter-driver-s-control-device-object.md)します。
 

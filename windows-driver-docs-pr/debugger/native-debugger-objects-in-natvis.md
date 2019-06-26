@@ -5,12 +5,12 @@ keywords:
 - NatVis 内のオブジェクトをネイティブ デバッガー"
 ms.date: 08/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22087a2b36d254b9b287d85ca37103f119647af0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 652481c6f8c329c3ff45eea74cbe2f662046def5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353102"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366458"
 ---
 # <a name="native-debugger-objects-in-natvis"></a>NatVis のネイティブ デバッガー オブジェクト
 
@@ -38,17 +38,17 @@ JavaScript を使用してデバッガー オブジェクトを操作するこ�
 
 これらのリソースの NatVis の使用に関する一般的な情報を参照してください。
 
-[ネイティブ オブジェクトのカスタム ビューを作成します。](https://msdn.microsoft.com/library/jj620914.aspx)
+[ネイティブ オブジェクトのカスタム ビューを作成します。](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)
 
 [.Natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)
 
-[**.nvload**](-nvload--natvis-load-.md)
+[ **.nvload**](-nvload--natvis-load-.md)
 
-[**.nvlist**](-nvlist--natvis-list-.md)
+[ **.nvlist**](-nvlist--natvis-list-.md)
 
-[**.nvunload**](-nvunload--natvis-unload-.md)
+[ **.nvunload**](-nvunload--natvis-unload-.md)
 
-[**.nvunloadall**](-nvunloadall--natvis-unload-all-.md)
+[ **.nvunloadall**](-nvunloadall--natvis-unload-all-.md)
 
 
 ## <a name="span-idcustomnatvisobjectexamplespanspan-idcustomnatvisobjectexamplespanspan-idcustomnatvisobjectexamplespancustom-natvis-object-example"></a><span id="Custom_NatVis_object_example"></span><span id="custom_natvis_object_example"></span><span id="CUSTOM_NATVIS_OBJECT_EXAMPLE"></span>カスタムの NatVis オブジェクトの例
@@ -88,7 +88,7 @@ Windows のツールのデバッグのビジュアライザー フォルダー�
 
 C:\\プログラム ファイル\\(x64) の Windows 用デバッグ ツール\\ビジュアライザー
 
-プログラムを実行し、main 関数に分割します。 ステップを実行できるように、変数`MyDog`が初期化されます。 表示`MyDog`を使用して[**いますか。**](----evaluate-c---expression-.md) 使用してもう一度と**dx**します。
+プログラムを実行し、main 関数に分割します。 ステップを実行できるように、変数`MyDog`が初期化されます。 表示`MyDog`を使用して[**いますか。** ](----evaluate-c---expression-.md) 使用してもう一度と**dx**します。
 
 ```dbgcmd
 0:000> ??MyDog

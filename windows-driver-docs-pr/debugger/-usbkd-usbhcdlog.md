@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 508a0b6f751c70bcacecdc1607d8c6e5e687eac8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 83f4f717e87a9dc35aac053467012d4818ef95e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363082"
 ---
 # <a name="usbkdusbhcdlog"></a>!usbkd.usbhcdlog
 
 
-[ **! Usbkd.usbhcdlog** ](https://msdn.microsoft.com/library/windows/hardware/dn367076)コマンドは、デバッグ ログを USB ホスト コント ローラーの一部を表示します。
+[ **! Usbkd.usbhcdlog** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdlog)コマンドは、デバッグ ログを USB ホスト コント ローラーの一部を表示します。
 
 ```dbgcmd
 !usbkd.usbhcdlog DeviceExtension[, NumberOfEntries]

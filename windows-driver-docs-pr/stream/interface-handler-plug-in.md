@@ -7,12 +7,12 @@ keywords:
 - インターフェイス ハンドラー WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d84fba54f75adecaa81bab881d8790e3a63c377
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11c5e3759b86c4098d042f3e5037d5a277e1496a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370915"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360658"
 ---
 # <a name="interface-handler-plug-in"></a>インターフェイス ハンドラー プラグイン
 
@@ -37,7 +37,7 @@ private:
 
 具体的には、 **CreateInstance**プラグインのメソッドが不明な外部として KS プロキシへのポインターを受け取ります。
 
-この MS 標準へのポインターの外側のオブジェクトをクエリできる[IKsPropertySet](https://msdn.microsoft.com/library/windows/hardware/ff560718)インターフェイス。
+この MS 標準へのポインターの外側のオブジェクトをクエリできる[IKsPropertySet](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nn-dsound-ikspropertyset)インターフェイス。
 
 ```cpp
 hResult = piOuterUnknown->QueryInterface(
@@ -49,9 +49,9 @@ hResult = piOuterUnknown->QueryInterface(
 
 ポインターを提供**IKsPropertySet**コンス トラクターの呼び出しでパラメーターとして。 コンス トラクターは、m と iKsPropertySet へのポインターを保持し\_piKsPropertySet メンバーで、前の宣言。
 
-これで Get を実装し、クラスのメソッドを設定できます呼び出す[ **IKsPropertySet::Get** ](https://msdn.microsoft.com/library/windows/hardware/ff560719)と[ **IKsPropertySet::Set** ](https://msdn.microsoft.com/library/windows/hardware/ff560721)プロパティは、ドライバーによって公開されている操作それぞれに。
+これで Get を実装し、クラスのメソッドを設定できます呼び出す[ **IKsPropertySet::Get** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikspropertyset-get)と[ **IKsPropertySet::Set** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nf-dsound-ikspropertyset-set)プロパティは、ドライバーによって公開されている操作それぞれに。
 
-ポインターの不明な外部のクエリを実行する代わりに、その**IKsObject**インターフェイス。 呼び出して[ **IKsObject::KsGetObjectHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff559890)ファイル ハンドルを取得します。 呼び出してデバイスのプロパティを操作するようになりました[ **KsSynchronousIoControlDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff567143)をこのファイルのハンドル。
+ポインターの不明な外部のクエリを実行する代わりに、その**IKsObject**インターフェイス。 呼び出して[ **IKsObject::KsGetObjectHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-iksobject-ksgetobjecthandle)ファイル ハンドルを取得します。 呼び出してデバイスのプロパティを操作するようになりました[ **KsSynchronousIoControlDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kssynchronousiocontroldevice)をこのファイルのハンドル。
 
  
 

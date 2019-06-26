@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 14c65d8fb3d41dda2ca8e681462272a997aea023
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: bc0926afdd49debe941ddc86f575fb11459b871b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362030"
 ---
 # <a name="bug-check-0x1a-memorymanagement"></a>バグ チェック 0x1A:メモリ\_管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "67161424"
 メモリ\_管理のバグ チェックが 0x0000001A の値を持ちます。 これは、重大なメモリ管理エラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="memorymanagement-parameters"></a>メモリ\_管理パラメーター

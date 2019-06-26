@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_SET_ADVERTISEMENT_INFORMATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 234a9a733e924990ad39668c2ad04f434929d683
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96b35d61ffee2379406de49ce02ea64ccb2259cc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365771"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387257"
 ---
 # <a name="oidwdisetadvertisementinformation"></a>OID\_WDI\_設定\_広告\_情報
 
@@ -29,16 +29,16 @@ OID\_WDI\_設定\_広告\_情報プローブ要求、プローブ応答、およ
 ## <a name="set-property-parameters"></a>プロパティ パラメーターの設定
 
 
-WDI は、提供するサービスの構成済みの一連のプレフィックス ハッシュを指定できます。 ピアは、ハッシュを送信する場合、ドライバーがで定義されているサービス名のハッシュと一致するようにまず[ **WDI\_TLV\_P2P\_アドバタイズ\_プレフィックス\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/mt269134). サービス、ドライバーを検索プレフィックス ハッシュの一致が見つかった場合[ **WDI\_TLV\_P2P\_アドバタイズ\_サービス\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn897861)プレフィックスがあり、これらは応答をします。 ドライバーが要求されたサービス名のハッシュと一致しようとした、一致が見つからない場合[ **WDI\_TLV\_P2P\_アドバタイズ\_サービス\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn897861).
+WDI は、提供するサービスの構成済みの一連のプレフィックス ハッシュを指定できます。 ピアは、ハッシュを送信する場合、ドライバーがで定義されているサービス名のハッシュと一致するようにまず[ **WDI\_TLV\_P2P\_アドバタイズ\_プレフィックス\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-advertised-prefix-entry). サービス、ドライバーを検索プレフィックス ハッシュの一致が見つかった場合[ **WDI\_TLV\_P2P\_アドバタイズ\_サービス\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-advertised-service-entry)プレフィックスがあり、これらは応答をします。 ドライバーが要求されたサービス名のハッシュと一致しようとした、一致が見つからない場合[ **WDI\_TLV\_P2P\_アドバタイズ\_サービス\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-advertised-service-entry).
 
 | TLV                                                                                                 | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                     |
 |-----------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------|
-| [**WDI\_TLV\_追加\_IES**](https://msdn.microsoft.com/library/windows/hardware/dn926122)                                    |                                | x        | 含まれる IEs を追加します。                  |
-| [**WDI\_TLV\_P2P\_デバイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn897875)                                 |                                | x        | Wi-Fi Direct デバイス情報。                |
-| [**WDI\_TLV\_P2P\_デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn897872)                     |                                | x        | Wi-Fi Direct デバイス機能。               |
-| [**WDI\_TLV\_P2P\_グループ\_所有者\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn897954)          |                                | x        | グループ所有者を Wi-Fi Direct 機能情報 |
-| [**WDI\_TLV\_P2P\_SECONDARY\_DEVICE\_TYPE\_LIST**](https://msdn.microsoft.com/library/windows/hardware/dn897991) |                                | x        | Wi-Fi Direct のセカンダリ デバイスの種類の一覧です。    |
-| [**WDI\_TLV\_P2P\_アドバタイズ\_サービス**](https://msdn.microsoft.com/library/windows/hardware/dn897860)                 |                                | x        | Wi-Fi Direct サービスを提供します。               |
+| [**WDI\_TLV\_追加\_IES**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-additional-ies)                                    |                                | x        | 含まれる IEs を追加します。                  |
+| [**WDI\_TLV\_P2P\_デバイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-device-info)                                 |                                | x        | Wi-Fi Direct デバイス情報。                |
+| [**WDI\_TLV\_P2P\_デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-device-capability)                     |                                | x        | Wi-Fi Direct デバイス機能。               |
+| [**WDI\_TLV\_P2P\_グループ\_所有者\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-group-owner-capability)          |                                | x        | グループ所有者を Wi-Fi Direct 機能情報 |
+| [**WDI\_TLV\_P2P\_SECONDARY\_DEVICE\_TYPE\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-secondary-device-type-list) |                                | x        | Wi-Fi Direct のセカンダリ デバイスの種類の一覧です。    |
+| [**WDI\_TLV\_P2P\_アドバタイズ\_サービス**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-advertised-services)                 |                                | x        | Wi-Fi Direct サービスを提供します。               |
 
  
 

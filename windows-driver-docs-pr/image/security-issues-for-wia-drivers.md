@@ -4,12 +4,12 @@ description: WIA ドライバーに関するセキュリティの問題
 ms.assetid: 5d8fc015-cbf5-43a3-8f65-3ebb17754417
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7869102247ce3d88a400666d2657d2458eeb0c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2685e61c3dc34d91fed8ba12e35ce04f435547c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356200"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363517"
 ---
 # <a name="security-issues-for-wia-drivers"></a>WIA ドライバーに関するセキュリティの問題
 
@@ -29,7 +29,7 @@ Windows Server 2003 では、前に、WIA サービスと WIA ドライバーが
 
 [WIA セキュリティのベスト プラクティス](wia-security-best-practices.md)
 
-デバイス ドライバーのセキュリティの詳細については、次を参照してください。、[デバイス オブジェクトのセキュリティで保護する](https://msdn.microsoft.com/library/windows/hardware/ff563688)と[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)セクション。
+デバイス ドライバーのセキュリティの詳細については、次を参照してください。、[デバイス オブジェクトのセキュリティで保護する](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)と[セキュリティで保護されたデバイスのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)セクション。
 
  
 

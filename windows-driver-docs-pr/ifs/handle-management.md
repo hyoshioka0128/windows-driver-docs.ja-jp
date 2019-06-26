@@ -7,12 +7,12 @@ keywords:
 - 脅威を最小限に抑え、セキュリティ WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0845ab39acdb99bf15bce48f5714355f8d924339
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 702edb8a5cec03a318938543efabaa67a574720b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370134"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365876"
 ---
 # <a name="handle-management"></a>ハンドル管理
 
@@ -34,7 +34,7 @@ ms.locfileid: "63370134"
 
 アプリケーション プログラムによって作成されたハンドルを使用するドライバー、これらのハンドルの使用を十分注意して行う必要があります。
 
--   ベスト プラクティスは、呼び出すことによって、ハンドルをオブジェクト ポインターに変換する[ **ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679)、適切なを指定する*AccessMode* (通常は Irpから&gt;Requestormode で)、 *DesiredAccess*、および*ObjectType* IoFileObjectType または ExEventObjectType などのパラメーター。
+-   ベスト プラクティスは、呼び出すことによって、ハンドルをオブジェクト ポインターに変換する[ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)、適切なを指定する*AccessMode* (通常は Irpから&gt;Requestormode で)、 *DesiredAccess*、および*ObjectType* IoFileObjectType または ExEventObjectType などのパラメーター。
 
 -   呼び出し内で直接ハンドルを使用する場合は、関数の Nt バリアントではなく、Zw 系の関数を使用することをお勧めします。 前のモードになるため、オペレーティング システムによってパラメーターのチェックおよびハンドルの検証が適用されますこの**UserMode**および信頼されていないためです。 以前のモードの場合に、ポインターである Nt 関数に渡されるパラメーターが検証を失敗可能性がありますので注意して**UserMode**します。 Nt と Zw ルーチンを返す、 *IoStatusBlock* parameterwith のエラー情報をエラーを確認する必要があります。
 

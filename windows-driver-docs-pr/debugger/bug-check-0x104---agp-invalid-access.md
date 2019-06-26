@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aafffa8115c95a04cd51ca9d8aefdb900e6938aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3b309d58b6a386a4092bc50d732fcab4a01d3e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362356"
 ---
 # <a name="bug-check-0x104-agpinvalidaccess"></a>バグ チェック 0x104:AGP\_無効な\_アクセス
 
@@ -26,7 +26,7 @@ ms.locfileid: "63357624"
 AGP\_無効な\_アクセスのバグ チェックが 0x00000104 の値を持ちます。 これは、GPU が既にコミットされていないポート (AGP) メモリについてする範囲の高速化グラフィックスを記述していることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="agpinvalidaccess-parameters"></a>AGP\_無効な\_アクセス パラメーター

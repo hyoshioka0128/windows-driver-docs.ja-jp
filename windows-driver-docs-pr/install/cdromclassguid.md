@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 91a246f2734fc1d4d118ef26015a2ae4eaa79d1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05bcecbd8741639ddaa215da3bf846186f1f859e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385271"
 ---
 # <a name="cdromclassguid"></a>CdRomClassGuid
 
 
-CdRomClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)CD-ROM の[記憶装置](https://msdn.microsoft.com/library/windows/hardware/ff566969)します。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_CDROM** ](guid-devinterface-cdrom.md)このクラスの新しいインスタンスのクラス識別子。
+CdRomClassGuid は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)CD-ROM の[記憶装置](https://docs.microsoft.com/windows-hardware/drivers/storage/index)します。 Microsoft Windows 2000 以降を使用して、 [ **GUID_DEVINTERFACE_CDROM** ](guid-devinterface-cdrom.md)このクラスの新しいインスタンスのクラス識別子。
 
 <a name="remarks"></a>注釈
 -------
 
 記憶域[サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK で含める、 [CDROM クラス ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256093)サンプルと[Addfilter ストレージ フィルター ツール](https://go.microsoft.com/fwlink/p/?linkid=256076)。 CDROM クラス ドライバーのサンプルでは、CdRomClassGuid を使用して、GUID_DEVINTERFACE_CDROM デバイス インターフェイスのクラスのインスタンスを登録します。 サンプルの Addfilter アプリケーションでは、CdRomClassGuid を使用して、GUID_DEVINTERFACE_CDROM デバイス インターフェイスのクラスのインスタンスを列挙します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

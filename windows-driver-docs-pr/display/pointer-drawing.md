@@ -10,12 +10,12 @@ keywords:
 - Windows 2000 の WDK のポインターの色の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0194b0d84ba3cc3f097c3ed40f7cabcb7369be41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7eb6a48f2f26749da0d7cb7fa9c3b7aad403f4d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358454"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365702"
 ---
 # <a name="pointer-drawing"></a>ポインターの描画
 
@@ -25,7 +25,7 @@ ms.locfileid: "63358454"
 
 GDI は、ポインターの色とモノクロ ポインターの両方をサポートします。 モノクロのポインターの形状は、1 つのビットマップによって定義されます。 ビットマップの幅は、同じように、表示がビットマップの上にポインターの幅がある垂直方向のエクステントとして 2 回、2 つのマスクを格納することができますに表示されます。
 
-ポインターの関数に対する呼び出しは、GDI によってシリアル化されます。 つまり、ドライバーの 2 つの異なるスレッドでは、ポインター、関数を同時に実行することはできません。 2 つの可能なポインター関数があります。[**DrvSetPointerShape** ](https://msdn.microsoft.com/library/windows/hardware/ff556289)と[ **DrvMovePointer**](https://msdn.microsoft.com/library/windows/hardware/ff556248)します。
+ポインターの関数に対する呼び出しは、GDI によってシリアル化されます。 つまり、ドライバーの 2 つの異なるスレッドでは、ポインター、関数を同時に実行することはできません。 2 つの可能なポインター関数があります。[**DrvSetPointerShape** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpointershape)と[ **DrvMovePointer**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvmovepointer)します。
 
  
 

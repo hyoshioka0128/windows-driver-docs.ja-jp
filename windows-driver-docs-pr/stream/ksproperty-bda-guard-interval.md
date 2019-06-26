@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cadafae4ce7d46c0da6f89f4771548563a5eaa96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7667081ba0e2191f9aaef93af4b91d9ef4618c61
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340880"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364864"
 ---
 # <a name="kspropertybdaguardinterval"></a>KSPROPERTY\_BDA\_GUARD\_間隔
 
@@ -87,9 +87,9 @@ GuardInterval 列挙型から返される値は、ガード間隔の設定を識
 ## <a name="see-also"></a>関連項目
 
 
-[**GuardInterval**](https://msdn.microsoft.com/library/windows/hardware/ff559626)
+[**GuardInterval**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/guardinterval)
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

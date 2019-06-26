@@ -5,26 +5,26 @@ ms.assetid: 51be35fe-750b-4c2b-aab3-a9df59711f7d
 ms.date: 08/08/2017
 keywords: -OID_WWAN_CONNECT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: f1982fce3fb60b3a19151a2a3ef50e5483ea0752
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7f93008a12b7cee62c899d109e38d45e1e16adb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386740"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362859"
 ---
 # <a name="oidwwanconnect"></a>OID\_WWAN\_接続
 
 
 OID\_WWAN\_接続がアクティブにまたは特定のパケットのコンテキストを非アクティブ化し、コンテキストのアクティブ化の状態を読み取ります。
 
-ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_コンテキスト\_状態**](ndis-status-wwan-context-state.md)状態通知を含む、 [ **NDIS\_WWAN\_コンテキスト\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567906)セットまたはクエリの要求の完了に関係なく MB デバイスのパケット データ プロトコル (PDP) コンテキストの状態を示す構造体。
+ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_コンテキスト\_状態**](ndis-status-wwan-context-state.md)状態通知を含む、 [ **NDIS\_WWAN\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)セットまたはクエリの要求の完了に関係なく MB デバイスのパケット データ プロトコル (PDP) コンテキストの状態を示す構造体。
 
-MB デバイスのパケット データ プロトコル (PDP) コンテキストの状態を設定するように要求して呼び出し元に提供する[ **NDIS\_WWAN\_設定\_コンテキスト\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567920)適切な情報、ミニポート ドライバー構造体。
+MB デバイスのパケット データ プロトコル (PDP) コンテキストの状態を設定するように要求して呼び出し元に提供する[ **NDIS\_WWAN\_設定\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_context_state)適切な情報、ミニポート ドライバー構造体。
 
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN パケット コンテキスト管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN パケット コンテキスト管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)します。
 
 このオブジェクトをアクティブにまたは特定のパケットのコンテキストを非アクティブ化し、コンテキストのアクティブ化の状態を読み取ります。 ミニポート ドライバーは、アクティブ化の状態が変更されるたびに、適切なイベント通知を送信する必要があります。
 
@@ -91,7 +91,7 @@ MB デバイスのパケット データ プロトコル (PDP) コンテキス�
 ## <a name="see-also"></a>関連項目
 
 
-[WWAN パケット コンテキスト管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)
+[WWAN パケット コンテキスト管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)
 
  
 

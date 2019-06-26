@@ -7,12 +7,12 @@ keywords:
 - ダウンロード
 ms.date: 01/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cb53107af0e3721d5d71c1419eb0fe4c359363c
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 5b1cd20c5e248ee98549434950d3731e4284eaee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161419"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366960"
 ---
 # <a name="download-debugging-tools-for-windows"></a>Windows 用デバッグ ツールをダウンロードします。
 
@@ -23,7 +23,7 @@ Windows デバッガー (WinDbg) を使用すると、クラッシュ ダンプ�
 
 WinDbg Preview は、最新の外観、高速なウィンドウ、本格的なスクリプトの操作性を備え、拡張可能なデバッガー データモデルを中心に構築された WinDbg の新しいバージョンです。 WinDbg プレビューは、現行の WinDbg と同じ基本エンジンを使用しているため、すべてのコマンド、拡張機能、ワークフローがこれまでどおり動作します。
 
- - Microsoft Store から WinDbg のプレビューをダウンロードします。[WinDbg プレビュー](https://microsoft.com/store/p/windbg/9pgjgd53tn86)します。
+ - Microsoft Store から WinDbg のプレビューをダウンロードします。[WinDbg プレビュー](https://www.microsoft.com/store/p/windbg/9pgjgd53tn86)します。
 
  - インストールと構成について[WinDbg Preview - インストール](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)します。
 
@@ -51,12 +51,12 @@ Windows 10 または Visual Studio 2017 のデバッグ ツールの Windows 10�
 
 ## <a name="looking-for-related-downloads"></a>関連するダウンロードも探しますか?
 
- - [Windows Driver Kit (WDK)](https://developer.microsoft.com/windows/hardware/windows-driver-kit)
+ - [Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
 
  - [Windows デバッガーのシンボル](debugger-download-symbols.md)  
 
- - [Windows HLK、HCK、または Logo Kit](https://developer.microsoft.com/windows/hardware/windows-hardware-lab-kit)
+ - [Windows HLK、HCK、または Logo Kit](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
 
- - [Windows アセスメント & デプロイメント キット (Windows ADK)](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
+ - [Windows アセスメント & デプロイメント キット (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 
  - [Windows Insider Preview ビルド](https://insider.windows.com/)

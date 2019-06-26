@@ -4,12 +4,12 @@ description: 音量レベルの持続性の無効化
 ms.assetid: e96533be-25e8-49ae-8e56-7105dfa92b5a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d5742006ae28e4a5db2166e674197e4f4ab0f29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d2714ac7bbe5a410ba6827b1c426f370e9ff62a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332274"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363175"
 ---
 # <a name="opting-out-of-volume-level-persistence"></a>音量レベルの持続性の無効化
 
@@ -18,7 +18,7 @@ ms.locfileid: "63332274"
 
 ドライバー、ドライバーが、独自のレジストリのキャッシュとハードウェア自体、ドライバーの読み込み時に、レベルを設定する場合、ボリュームの永続化をオプトアウトすることができます。
 
-INF ファイルを使用してボリュームの永続化を解除するには使用、 [ **AddProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff546318)鍵の値を設定するレジストリ ディレクティブ\_AudioDevice\_DontPersistControls レジストリ「1」にキー。 既定値は「0」です。
+INF ファイルを使用してボリュームの永続化を解除するには使用、 [ **AddProperty** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)鍵の値を設定するレジストリ ディレクティブ\_AudioDevice\_DontPersistControls レジストリ「1」にキー。 既定値は「0」です。
 
 次の INF ファイル フラグメントは、ボリュームの永続化を無効にする方法を示します。
 
@@ -55,11 +55,11 @@ MfgName = "My Company Name Inc"
 DeviceDescription = "My WDM device driver"
 ```
 
-**注**  のみ、上記の INF ファイルのフラグメントが表示されます、**バージョン**セクションと関連するセクションで、 [ **AddProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff546318)ディレクティブ。
+**注**  のみ、上記の INF ファイルのフラグメントが表示されます、**バージョン**セクションと関連するセクションで、 [ **AddProperty** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)ディレクティブ。
 
  
 
-**% MfgName CompanyName =** 内のエントリの行、**製造元**セクション参照、 **CompanyName**セクション where オーディオのアダプターのモデルとハードウェア ID (hw id)提供されます。 このセクションで、モデルとハードウェア id の情報が提供されている、INF ファイルと呼びます、*セクションをモデル化*します。 セクションの実際のタイトルでは、ユーザーが定義し、前の例では**CompanyName**します。 INF ファイルのモデルのセクションの詳細については、次を参照してください。 [ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)します。
+**% MfgName CompanyName =** 内のエントリの行、**製造元**セクション参照、 **CompanyName**セクション where オーディオのアダプターのモデルとハードウェア ID (hw id)提供されます。 このセクションで、モデルとハードウェア id の情報が提供されている、INF ファイルと呼びます、*セクションをモデル化*します。 セクションの実際のタイトルでは、ユーザーが定義し、前の例では**CompanyName**します。 INF ファイルのモデルのセクションの詳細については、次を参照してください。 [ **INF モデル セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)します。
 
 モデルのセクションは、さらに、セットアップ プログラムをコピーする必要があるその他の INF ファイルに関する情報を提供する場所、デバイス ドライバー インストール (DDInstall) セクションを参照します。 このセクションの実際のタイトルでは、ユーザーが定義し、前の例では**HdAudModel**します。 **KS を = 必要があります。登録しています.** 行のエントリのインストールについては、セットアップ プログラムを取得する必要があります、INF ファイル内で特定のセクションでは、データを提供
 
@@ -69,7 +69,7 @@ DeviceDescription = "My WDM device driver"
 
 **HdAudModel**セクションがコメント アウトされた最初のものの 2 つの行エントリを示しています。コメント アウトされている行のエントリが「1」にデバイス プロパティの値を設定します。 コメント アウトされていない行のエントリは、セットアップ プログラムを読み取ります。 この行のエントリが「0」に設定するデバイスのプロパティの値 このデバイスのプロパティが「0」に設定されている場合、オーディオ デバイス ボリュームの永続化からオプトアウトします。
 
-AddProperty ディレクティブの詳細については、次を参照してください。 [ **INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)します。
+AddProperty ディレクティブの詳細については、次を参照してください。 [ **INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)します。
 
 上記の INF ファイルのコードでプロパティ カテゴリ GUID およびプロパティ ID に対応するプロパティ名が鍵\_AudioDevice\_DontPersistControls します。
 

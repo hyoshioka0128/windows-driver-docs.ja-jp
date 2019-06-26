@@ -4,12 +4,12 @@ description: このトピックでは、JavaScript を使用して、デバッ�
 ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
 ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ab8a09abb89ace35b8d44b6f1356432d73d860b4
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: aecec2cbf92677e31617a7b17a48178c91a848b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902474"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366819"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript デバッガーのスクリプト
 
@@ -92,11 +92,11 @@ Available Script Providers:
 
 次のコマンドは、JavaScript デバッガーのスクリプトで使用できます。
 
--   [**.scriptproviders (スクリプト プロバイダーの一覧)**](-scriptproviders--list-script-providers-.md)
--   [**.scriptload (スクリプトの読み込み)**](-scriptload--load-script-.md)
--   [**.scriptunload (アンロード スクリプト)**](-scriptunload--unload-script-.md)
--   [**.scriptrun (スクリプトの実行)**](-scriptrun--run-script-.md)
--   [**.scriptlist (読み込まれたスクリプトを一覧表示)**](-scriptlist--list-loaded-scripts-.md)
+-   [ **.scriptproviders (スクリプト プロバイダーの一覧)** ](-scriptproviders--list-script-providers-.md)
+-   [ **.scriptload (スクリプトの読み込み)** ](-scriptload--load-script-.md)
+-   [ **.scriptunload (アンロード スクリプト)** ](-scriptunload--unload-script-.md)
+-   [ **.scriptrun (スクリプトの実行)** ](-scriptrun--run-script-.md)
+-   [ **.scriptlist (読み込まれたスクリプトを一覧表示)** ](-scriptlist--list-loaded-scripts-.md)
 
 **必要条件**
 
@@ -122,7 +122,7 @@ Available Script Providers:
 
 終わるすべてのファイル"です。NatVis"は、NatVis スクリプトと考えるし、".js"で終わるすべてのファイルが JavaScript スクリプトとして認識します。 .Scriptload コマンドを使用してスクリプトのいずれかの型を読み込むことができます。
 
-詳細については、次を参照してください[ **.scriptproviders (スクリプト プロバイダーの一覧)。**](-scriptproviders--list-script-providers-.md)
+詳細については、次を参照してください[ **.scriptproviders (スクリプト プロバイダーの一覧)。** ](-scriptproviders--list-script-providers-.md)
 
 ## <a name="span-idscriptloadloadscriptspanspan-idscriptloadloadscriptspanscriptload-load-script"></a><span id=".scriptload__load_script_"></span><span id=".SCRIPTLOAD__LOAD_SCRIPT_"></span>.scriptload (スクリプトの読み込み)
 
@@ -136,7 +136,7 @@ JavaScript script successfully loaded from 'C:\WinDbg\Scripts\TestScript.js'
 
 スクリプトによって行われたすべてのオブジェクト モデル操作は、スクリプトが読み込まれた後または別のコンテンツを再度実行するまで、場所に維持されます。
 
-詳細については、次を参照してください[ **.scriptload (スクリプトの読み込み)。**](-scriptload--load-script-.md)
+詳細については、次を参照してください[ **.scriptload (スクリプトの読み込み)。** ](-scriptload--load-script-.md)
 
 ## <a name="span-idscriptrunspanscriptrun"></a><span id=".SCRIPTRUN"></span>.scriptrun
 
@@ -151,7 +151,7 @@ Hello World!  We are in JavaScript!
 
 スクリプトによって行われたすべてのデバッガー オブジェクト モデルの操作は、スクリプトが読み込まれた後または別のコンテンツを再度実行するまで、場所に維持されます。
 
-詳細については、次を参照してください。 [ **.scriptrun (スクリプトの実行)**](-scriptrun--run-script-.md)します。
+詳細については、次を参照してください。 [ **.scriptrun (スクリプトの実行)** ](-scriptrun--run-script-.md)します。
 
 ## <a name="span-idscriptunloadunloadscriptspanspan-idscriptunloadunloadscriptspanscriptunload-unload-script"></a><span id=".scriptunload__unload_script_"></span><span id=".SCRIPTUNLOAD__UNLOAD_SCRIPT_"></span>.scriptunload (アンロード スクリプト)
 
@@ -163,7 +163,7 @@ Hello World!  We are in JavaScript!
 JavaScript script unloaded from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-詳細については、次を参照してください。 [ **.scriptunload (アンロード スクリプト)**](-scriptunload--unload-script-.md)します。
+詳細については、次を参照してください。 [ **.scriptunload (アンロード スクリプト)** ](-scriptunload--unload-script-.md)します。
 
 ## <a name="span-idscriptlistlistloadedscriptsspanspan-idscriptlistlistloadedscriptsspanscriptlist-list-loaded-scripts"></a><span id=".scriptlist__list_loaded_scripts_"></span><span id=".SCRIPTLIST__LIST_LOADED_SCRIPTS_"></span>.scriptlist (読み込まれたスクリプトを一覧表示)
 
@@ -176,7 +176,7 @@ Command Loaded Scripts:
     JavaScript script from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-詳細については、次を参照してください。 [ **.scriptlist (読み込まれたスクリプトの一覧)**](-scriptlist--list-loaded-scripts-.md)します。
+詳細については、次を参照してください。 [ **.scriptlist (読み込まれたスクリプトの一覧)** ](-scriptlist--list-loaded-scripts-.md)します。
 
 ## <a name="span-idstartedspanspan-idstartedspanspan-idstartedspanget-started-with-javascript-debugger-scripting"></a><span id="Started"></span><span id="started"></span><span id="STARTED"></span>JavaScript デバッガーがスクリプトの概要します。
 
@@ -478,7 +478,7 @@ function main()
 ## <a name="span-idvisualizerspanspan-idvisualizerspanspan-idvisualizerspancreating-a-debugger-visualizer-in-javascript"></a><span id="Visualizer"></span><span id="visualizer"></span><span id="VISUALIZER"></span>JavaScript でデバッガー ビジュアライザーを作成します。
 
 
-カスタム ビジュアル ファイルを使用すると、グループ化およびデータ間の関係とコンテンツを正確に反映させた視覚エフェクトの構造内のデータを整理できます。 JavaScript デバッガー拡張機能を使用して、非常に NatVis と同様の方法で操作を実行するデバッガー ビジュアライザーを記述することができます。 これは、特定のデータ ビジュアライザーとして機能する入力、JavaScript プロトタイプ オブジェクト (または、ES6 クラス) の作成を使用して実現されます。 NatVis とデバッガーの詳細については、次を参照してください。 [ **dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)します。
+カスタム ビジュアル ファイルを使用すると、グループ化およびデータ間の関係とコンテンツを正確に反映させた視覚エフェクトの構造内のデータを整理できます。 JavaScript デバッガー拡張機能を使用して、非常に NatVis と同様の方法で操作を実行するデバッガー ビジュアライザーを記述することができます。 これは、特定のデータ ビジュアライザーとして機能する入力、JavaScript プロトタイプ オブジェクト (または、ES6 クラス) の作成を使用して実現されます。 NatVis とデバッガーの詳細については、次を参照してください。 [ **dx (表示 NatVis 式)** ](dx--display-visualizer-variables-.md)します。
 
 **クラスの例 - Simple1DArray**
 
@@ -1224,13 +1224,13 @@ JavaScript ファイル内の参照を VS Code 自動的に表示されます In
 
 JavaScript のデバッグ拡張機能を開発する際に役立つ可能性がある JavaScript リソースを次に示します。
 
--   [JavaScript コードの記述](https://msdn.microsoft.com/library/cte3c772.aspx)
+-   [JavaScript コードの記述](https://docs.microsoft.com/scripting/javascript/writing-javascript-code)
 
--   [JScript 言語のツアー](https://msdn.microsoft.com/library/t895bwkh.aspx)
+-   [JScript 言語のツアー](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/t895bwkh(v=vs.100))
 
 -   [Mozilla JavaScript リファレンス](https://developer.mozilla.org/docs/Web/JavaScript)
 
--   [WinJS:JavaScript 用 Windows ライブラリ](https://developer.microsoft.com/windows/develop/winjs)
+-   [WinJS:JavaScript 用 Windows ライブラリ](https://github.com/winjs/winjs)
 
 -   [ECMAScript 6-新機能:比較 (&) の概要](https://es6-features.org/)
 

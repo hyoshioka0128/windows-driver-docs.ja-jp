@@ -4,12 +4,12 @@ description: デバッガーのマークアップ言語 (DML) は、デバッガ
 ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a734a7c41b28019e0b59fe63ba4a5120e9ed1527
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46be7d6159f7d75d138ab8528f6ff19945a492e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361462"
 ---
 # <a name="customizing-debugger-output-using-dml"></a>DML を使用したデバッガー出力のカスタマイズ
 
@@ -489,9 +489,9 @@ Exec タグは、クリック可能な項目としてわかりやすいテキス
 出力制御フラグ デバッグ\_OUTCTL\_DML では、dbgeng メソッドによって生成されたテキストが DML コンテンツとして処理することを示します。 このフラグを指定しない場合、テキストはプレーン テキストのコンテキストとして扱われます。 デバッグ\_OUTCTL\_DML は、次の方法で使用できます。
 
 -   [**IDebugControl4::ControlledOutput**](https://msdn.microsoft.com/library/windows/hardware/ff539248)
--   [**IDebugControl4::ControlledOutputVaList**](https://msdn.microsoft.com/library/windows/hardware/ff539252)
+-   [**IDebugControl4::ControlledOutputVaList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)
 -   [**IDebugControl4::ControlledOutputWide**](https://msdn.microsoft.com/library/windows/hardware/ff539266)
--   [**IDebugControl4::ControlledOutputVaListWide**](https://msdn.microsoft.com/library/windows/hardware/ff539259)
+-   [**IDebugControl4::ControlledOutputVaListWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-controlledoutputvalistwide)
 
 指定されたテキストは、有効な文字 DML 規則に従う必要があります。
 

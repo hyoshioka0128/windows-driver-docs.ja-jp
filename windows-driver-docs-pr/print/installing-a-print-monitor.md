@@ -10,12 +10,12 @@ keywords:
 - WDK のポート モニターが印刷をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a984a8e558b4c77cf82a905911a9b0bb07183e70
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8746157eb85bc5e3230ae4e4d5d1fb141d31d68d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330124"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385980"
 ---
 # <a name="installing-a-print-monitor"></a>印刷モニターのインストール
 
@@ -23,11 +23,11 @@ ms.locfileid: "63330124"
 
 
 
-このセクションでは、印刷のモニターをインストールするために使用する方法を説明します。 (使用するプリンターをインストールする INF ファイルと同じファイルで印刷のモニターをインストールできます。 INF ファイルの詳細については、次を参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)と[電源管理](https://msdn.microsoft.com/library/windows/hardware/ff547131)。)。
+このセクションでは、印刷のモニターをインストールするために使用する方法を説明します。 (使用するプリンターをインストールする INF ファイルと同じファイルで印刷のモニターをインストールできます。 INF ファイルの詳細については、次を参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)と[電源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)。)。
 
 ### <a href="" id="ddk-installing-a-language-monitor-gg"></a>言語モニターをインストールします。
 
-言語モニターをインストールするには、LanguageMonitor エントリを追加、 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)の INF ファイル。 LanguageMonitor エントリでは、言語モニターの表示名と INF の次の例のように、その DLL の名前の一覧を表示します。 LanguageMonitor エントリは、プリンター言語モニターを使用することを制御するすべてのプリンター ドライバーを含める必要があります。 詳細については、次を参照してください。[プリンター INF ファイル](printer-inf-files.md)します。
+言語モニターをインストールするには、LanguageMonitor エントリを追加、 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)の INF ファイル。 LanguageMonitor エントリでは、言語モニターの表示名と INF の次の例のように、その DLL の名前の一覧を表示します。 LanguageMonitor エントリは、プリンター言語モニターを使用することを制御するすべてのプリンター ドライバーを含める必要があります。 詳細については、次を参照してください。[プリンター INF ファイル](printer-inf-files.md)します。
 
 ```cpp
 [AcmeInst]
@@ -61,7 +61,7 @@ acmemon.dll = 1,\i386
 
 ### <a href="" id="ddk-installing-a-port-monitor-gg"></a>ポート モニターをインストールします。
 
-ポート モニターをインストールするには、インストール メディアがプリンター INF ファイルを含める必要があります (どのクラスに対して、INF ファイルは、プリンターを =) PortMonitors セクションを格納しています。 このセクションでは 1 つのエントリが 2 つのエントリを含むインストール セクションを指す: [ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)のすべてのポート モニター、および PortMonitorDll エントリを構成するファイルを一覧表示します。ポート モニター インターフェイスは、前の一覧の実装でいる DLL を指定します。 次のコード例は、これらの点を示しています。 PortMonitors セクションのという名前の SamplePortMon インストール セクションへのポインター。 ここでは、INF、 **CopyFiles**ディレクティブは、ポート モニターを構成する 3 つのファイルをコピーします。 次は、PortMonitorDll エントリは、ポート モニターのインターフェイスを実装する DLL を識別します。
+ポート モニターをインストールするには、インストール メディアがプリンター INF ファイルを含める必要があります (どのクラスに対して、INF ファイルは、プリンターを =) PortMonitors セクションを格納しています。 このセクションでは 1 つのエントリが 2 つのエントリを含むインストール セクションを指す: [ **INF CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)のすべてのポート モニター、および PortMonitorDll エントリを構成するファイルを一覧表示します。ポート モニター インターフェイスは、前の一覧の実装でいる DLL を指定します。 次のコード例は、これらの点を示しています。 PortMonitors セクションのという名前の SamplePortMon インストール セクションへのポインター。 ここでは、INF、 **CopyFiles**ディレクティブは、ポート モニターを構成する 3 つのファイルをコピーします。 次は、PortMonitorDll エントリは、ポート モニターのインターフェイスを実装する DLL を識別します。
 
 ```cpp
 [PortMonitors]
@@ -74,7 +74,7 @@ PortMonitorDll = file1.dll
 
 ポート モニターをインストールするには、コントロール パネルの [プリンタ] フォルダを開きます。 プリンター フォルダーの**ファイル**メニューの **サーバー プロパティ**します。 **ファイル サーバーのプロパティ**ダイアログ ボックスで、をクリックして、**ポート**タブをクリックし、をクリックし、**ポートの追加.** ボタンをクリックします。 **プリンター ポート**ダイアログ ボックスで、をクリックして、**新しいポートの種類.** ボタンをクリックします。 テキスト入力ボックスでは、INF ファイルへのパスを入力し、クリックして**OK**します。
 
-カスタム インストール アプリケーションがポートをインストールする代わりへの呼び出しで DLL を監視、 **AddMonitor**で説明されているとおりに機能[ポート モニター](https://msdn.microsoft.com/library/windows/desktop/dd162825.aspx)します。
+カスタム インストール アプリケーションがポートをインストールする代わりへの呼び出しで DLL を監視、 **AddMonitor**で説明されているとおりに機能[ポート モニター](https://docs.microsoft.com/windows/desktop/printdocs/port-monitors)します。
 
  
 

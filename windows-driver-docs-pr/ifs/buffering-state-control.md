@@ -11,12 +11,12 @@ keywords:
 - SRV_OPEN 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3042dc6dd1a967db8b6fad3f7b4b6c050a687f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c44aa59b0b2ba409dfc57d334bbfc0a7c7f40db0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391498"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364355"
 ---
 # <a name="buffering-state-control"></a>バッファー処理状態の制御
 
@@ -42,13 +42,13 @@ SRV を識別するときに関係する計算作業量\_オープン構造体�
 
 SRV バッファリング状態変更を示す RDBSS で指定された 2 つのルーチンがある\_構造体の開く。
 
--   [**RxIndicateChangeOfBufferingState** ](https://msdn.microsoft.com/library/windows/hardware/ff554485)要求を登録します。
+-   [**RxIndicateChangeOfBufferingState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)要求を登録します。
 
--   [**RxIndicateChangeOfBufferingStateForSrvOpen** ](https://msdn.microsoft.com/library/windows/hardware/ff554490) 、SRV を関連付けるため\_キーを持つ構造体を開く
+-   [**RxIndicateChangeOfBufferingStateForSrvOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen) 、SRV を関連付けるため\_キーを持つ構造体を開く
 
 キーの関連付けが元に戻せる状態でないし、関連付けられている SRV の有効期間が最後に注意してください\_オープン構造体。
 
-ミニ リダイレクター multiplex Id から、SRV へのマッピングを確立するための補助のメカニズムを必要があるネットワーク\_オープン構造が使用できる[ **RxIndicateChangeOfBufferingState**](https://msdn.microsoft.com/library/windows/hardware/ff554485)、このサポートを必要としないネットワークのミニ-リダイレクターを使用できます[ **RxIndicateChangeOfBufferingStateForSrvOpen**](https://msdn.microsoft.com/library/windows/hardware/ff554490)します。
+ミニ リダイレクター multiplex Id から、SRV へのマッピングを確立するための補助のメカニズムを必要があるネットワーク\_オープン構造が使用できる[ **RxIndicateChangeOfBufferingState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)、このサポートを必要としないネットワークのミニ-リダイレクターを使用できます[ **RxIndicateChangeOfBufferingStateForSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)します。
 
 RDBSS のバッファー マネージャーは、さまざまな段階でこれらの要求を処理します。 さまざまな基になるネットワーク ミニ-リダイレクターでいくつかのリストのいずれかから受信した要求を保持します。
 
@@ -75,15 +75,15 @@ RDBSS には、ネットワークのミニ リダイレクター ドライバー
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554335" data-raw-source="[&lt;strong&gt;RxChangeBufferingState&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554335)"><strong>RxChangeBufferingState</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxchangebufferingstate" data-raw-source="[&lt;strong&gt;RxChangeBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxchangebufferingstate)"><strong>RxChangeBufferingState</strong></a></p></td>
 <td align="left"><p>このルーチンは、バッファリング状態の変更要求の処理に呼び出されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554485" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingState&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554485)"><strong>RxIndicateChangeOfBufferingState</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)"><strong>RxIndicateChangeOfBufferingState</strong></a></p></td>
 <td align="left"><p>このルーチンはバッファリング状態変更要求 (oplock 中断を示す値、たとえば) 後で処理するための登録と呼ばれます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554490" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingStateForSrvOpen&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554490)"><strong>RxIndicateChangeOfBufferingStateForSrvOpen</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingStateForSrvOpen&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)"><strong>RxIndicateChangeOfBufferingStateForSrvOpen</strong></a></p></td>
 <td align="left"><p>このルーチンはバッファリング状態変更要求 (oplock 中断を示す値、たとえば) 後で処理するための登録と呼ばれます。</p></td>
 </tr>
 </tbody>

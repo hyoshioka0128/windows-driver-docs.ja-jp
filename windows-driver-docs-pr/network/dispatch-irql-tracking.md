@@ -10,12 +10,12 @@ keywords:
 - WDK のネットワー キングの追跡の IRQL をディスパッチします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d86f23825ef547a60fb480a81d41529c1efa0c6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61daa1c24766a6d7907016b9e640d1a6256792a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386565"
 ---
 # <a name="dispatch-irql-tracking"></a>ディスパッチ IRQL の追跡
 
@@ -23,7 +23,7 @@ ms.locfileid: "63379563"
 
 
 
-一部の NDIS 関数、システムのパフォーマンスを向上させるために (たとえば、 [ *MiniportSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff559440)関数)、ディスパッチ レベルを示すフラグ現在の IRQL にはが含まれます。 適切なディスパッチ レベルのフラグの使用は、IRQL を設定しようと不要なを回避するのに役立ちます。
+一部の NDIS 関数、システムのパフォーマンスを向上させるために (たとえば、 [ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)関数)、ディスパッチ レベルを示すフラグ現在の IRQL にはが含まれます。 適切なディスパッチ レベルのフラグの使用は、IRQL を設定しようと不要なを回避するのに役立ちます。
 
 他の属性を制御するその他のフラグがディスパッチ レベルのフラグの名前。
 

@@ -9,12 +9,12 @@ keywords:
 - デバイス セットアップ クラスを列挙する、WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73cf7ac20435bb3cd91edc88e7b1b22c433620eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3293b81b496c2607b9b02346f0686e73927c8d4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386985"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379476"
 ---
 # <a name="enumerating-installed-device-setup-classes"></a>インストール済みのデバイス セットアップ クラスの列挙
 
@@ -23,13 +23,13 @@ ms.locfileid: "63386985"
 
 安全に、インストール済みのデバイス セットアップ クラスを検出してセットアップ クラスのプロパティを変更し、次の手順に従います。
 
-1.  使用[ **SetupDiBuildClassInfoList** ](https://msdn.microsoft.com/library/windows/hardware/ff550909)または[ **SetupDiBuildClassInfoListEx** ](https://msdn.microsoft.com/library/windows/hardware/ff550911)デバイス セットアップ クラスのセットを取得するには現在システムにインストールします。
+1.  使用[ **SetupDiBuildClassInfoList** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuildclassinfolist)または[ **SetupDiBuildClassInfoListEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuildclassinfolistexa)デバイス セットアップ クラスのセットを取得するには現在システムにインストールします。
 
-2.  使用[ **SetupDiGetClassDescription** ](https://msdn.microsoft.com/library/windows/hardware/ff551053)または[ **SetupDiGetClassDescriptionEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551058)インストール済みのセットアップの説明を取得するにはクラス。
+2.  使用[ **SetupDiGetClassDescription** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptiona)または[ **SetupDiGetClassDescriptionEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa)インストール済みのセットアップの説明を取得するにはクラス。
 
-3.  使用[ **SetupDiGetClassRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551097)セットアップ クラスのプロパティを照会し、 [ **SetupDiSetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552169)を設定するにはセットアップ クラスのプロパティ。
+3.  使用[ **SetupDiGetClassRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)セットアップ クラスのプロパティを照会し、 [ **SetupDiSetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)を設定するにはセットアップ クラスのプロパティ。
 
-4.  使用[ **SetupDiOpenClassRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552065)または[ **SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)カスタム デバイスのレジストリの永続的なストレージにアクセスするにはクラスの設定をセットアップします。
+4.  使用[ **SetupDiOpenClassRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)または[ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)カスタム デバイスのレジストリの永続的なストレージにアクセスするにはクラスの設定をセットアップします。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - コールバック関数を使用して、WdbgExts 拡張機能
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d58272bc50854d1b0e9f2fa11012cfbdbd68027
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1894029c682903a32440ec1ca8621fafd59f41b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366330"
 ---
 # <a name="using-wdbgexts-extension-callbacks"></a>WdbgExts 拡張機能コールバックの使用
 
@@ -21,7 +21,7 @@ ms.locfileid: "63390535"
 
 WdbgExts 拡張 DLL を記述するときに、特定の関数をエクスポートできます。
 
--   という名前の関数をエクスポートする必要があります[ *WinDbgExtensionDllInit*](https://msdn.microsoft.com/library/windows/hardware/ff561303)します。 最初に呼び出し、デバッガーでは、拡張 DLL が読み込まれたら、 *WinDbgExtensionDllInit*を 3 つの引数を渡します。
+-   という名前の関数をエクスポートする必要があります[ *WinDbgExtensionDllInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_extension_dll_init)します。 最初に呼び出し、デバッガーでは、拡張 DLL が読み込まれたら、 *WinDbgExtensionDllInit*を 3 つの引数を渡します。
 
     -   ポインターを**WINDBG\_拡張子\_APIS64**構造体は、デバッガーによって実装され、Wdbgexts.h で宣言される関数へのポインターが含まれています。 DLL で作成したグローバル変数に、構造全体をコピーする必要があります。
     -   メジャー バージョン番号。 メジャー バージョン番号は、DLL で作成したグローバル変数にコピーする必要があります。
@@ -44,9 +44,9 @@ WdbgExts 拡張 DLL を記述するときに、特定の関数をエクスポー
     }
     ```
 
--   呼び出される関数をエクスポートする必要があります[ *ExtensionApiVersion*](https://msdn.microsoft.com/library/windows/hardware/ff543968)します。 デバッガーは、この関数を呼び出すし、戻りポインターを要求する**EXT\_API\_バージョン**拡張 DLL のバージョン番号を含む構造体。 などのコマンドを実行するときに、デバッガーはこのバージョン番号を使用して[ **.chain** ](-chain--list-debugger-extensions-.md)と[**バージョン**](version--show-debugger-version-.md)拡張機能のバージョンを表示します。数です。
+-   呼び出される関数をエクスポートする必要があります[ *ExtensionApiVersion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_extension_api_version)します。 デバッガーは、この関数を呼び出すし、戻りポインターを要求する**EXT\_API\_バージョン**拡張 DLL のバージョン番号を含む構造体。 などのコマンドを実行するときに、デバッガーはこのバージョン番号を使用して[ **.chain** ](-chain--list-debugger-extensions-.md)と[**バージョン**](version--show-debugger-version-.md)拡張機能のバージョンを表示します。数です。
 
--   呼び出される関数をエクスポートすることができます必要に応じて[ *CheckVersion*](https://msdn.microsoft.com/library/windows/hardware/ff539096)します。 デバッガーは、拡張機能コマンドを使用するたびに、このルーチンを呼び出します。 これを使用するには、DLL を実行するを防ぐために若干異なるバージョンのデバッガーよりも十分な異なるがない場合は、バージョンの不一致の警告を印刷します。
+-   呼び出される関数をエクスポートすることができます必要に応じて[ *CheckVersion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_check_version)します。 デバッガーは、拡張機能コマンドを使用するたびに、このルーチンを呼び出します。 これを使用するには、DLL を実行するを防ぐために若干異なるバージョンのデバッガーよりも十分な異なるがない場合は、バージョンの不一致の警告を印刷します。
 
  
 

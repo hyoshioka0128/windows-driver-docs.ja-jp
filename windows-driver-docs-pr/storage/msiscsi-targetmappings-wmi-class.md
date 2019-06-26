@@ -4,12 +4,12 @@ description: MSiSCSI\_TargetMappings WMI クラス
 ms.assetid: 12bfe80a-8431-4607-99f5-ddd6815aecc6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1221885af565d908e6d35f8c57fe432972551e80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 106ace48cc639d24bbbc3d7c7679463e47801a17
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389444"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384665"
 ---
 # <a name="msiscsitargetmappings-wmi-class"></a>MSiSCSI\_TargetMappings WMI クラス
 
@@ -25,7 +25,7 @@ MSiSCSI\_TargetMappings WMI クラスには、一連セッションに関連付�
 
 MSiSCSI\_TargetMappings クラスは発行されませんしで定義されている*Operations.mof*します。
 
-WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **MSiSCSI\_TargetMappings** ](https://msdn.microsoft.com/library/windows/hardware/ff563144)データ構造体。
+WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **MSiSCSI\_TargetMappings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_msiscsi_targetmappings)データ構造体。
 
 イニシエーターは、MSiSCSI を実装する必要は\_TargetMappings クラス。
 

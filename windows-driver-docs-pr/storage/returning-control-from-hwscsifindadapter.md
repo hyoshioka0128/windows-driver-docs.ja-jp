@@ -9,12 +9,12 @@ keywords:
 - 状態値は WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a987b07a9f153f9c2e063c52f5607525f685aea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cda7f2b37b80c9ed48bc4e0791f986a3583bd8c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391524"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386115"
 ---
 # <a name="returning-control-from-hwscsifindadapter"></a>HwScsiFindAdapter から制御を返す
 
@@ -22,11 +22,11 @@ ms.locfileid: "63391524"
 ## <span id="ddk_returning_control_from_hwscsifindadapter_kg"></span><span id="DDK_RETURNING_CONTROL_FROM_HWSCSIFINDADAPTER_KG"></span>
 
 
-ときに、従来のミニポート ドライバーの[ *HwScsiFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff557300)ルーチンは、コントロールを返します[ **ScsiPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff564645) を返します**DriverEntry**日常的な場合に着信*HwScsiFindAdapter*ミニポート ドライバーが、HBA をサポートされていないことが示されます。 それ以外の場合、 **ScsiPortInitialize**レジストリ内のリソースを要求し、ミニポート ドライバーに代わって、割り込みとアダプター オブジェクトなどの必要なシステム リソースを設定します。 次に、ミニポート ドライバーの呼び出し*HwScsiInitialize*ルーチンを記載[SCSI ミニポート ドライバー HwScsiInitialize ルーチン](scsi-miniport-driver-s-hwscsiinitialize-routine.md)します。
+ときに、従来のミニポート ドライバーの[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチンは、コントロールを返します[ **ScsiPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize) を返します**DriverEntry**日常的な場合に着信*HwScsiFindAdapter*ミニポート ドライバーが、HBA をサポートされていないことが示されます。 それ以外の場合、 **ScsiPortInitialize**レジストリ内のリソースを要求し、ミニポート ドライバーに代わって、割り込みとアダプター オブジェクトなどの必要なシステム リソースを設定します。 次に、ミニポート ドライバーの呼び出し*HwScsiInitialize*ルーチンを記載[SCSI ミニポート ドライバー HwScsiInitialize ルーチン](scsi-miniport-driver-s-hwscsiinitialize-routine.md)します。
 
-プラグ アンド プレイのミニポート ドライバーのときに*HwScsiFindAdapter*ルーチンは、コントロールを返します、ミニポート ドライバーをアンロードする場合に、プラグ アンド プレイ マネージャが許可されているへの着信*HwScsiFindAdapter*示されますいるミニポート ドライバーでは、HBA をサポートできませんでした。 ポートのドライバーが割り込みを接続する場合は、(その他のリソースを要求し、する前に設定されていること、 *HwScsiFindAdapter*呼び出し)、ミニポート ドライバーの呼び出しと[ *HwScsiInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff557302)ルーチンで、HBA を初期化します。
+プラグ アンド プレイのミニポート ドライバーのときに*HwScsiFindAdapter*ルーチンは、コントロールを返します、ミニポート ドライバーをアンロードする場合に、プラグ アンド プレイ マネージャが許可されているへの着信*HwScsiFindAdapter*示されますいるミニポート ドライバーでは、HBA をサポートできませんでした。 ポートのドライバーが割り込みを接続する場合は、(その他のリソースを要求し、する前に設定されていること、 *HwScsiFindAdapter*呼び出し)、ミニポート ドライバーの呼び出しと[ *HwScsiInitialize*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557302(v=vs.85))ルーチンで、HBA を初期化します。
 
-現時点では、設定に値のほか、 [**ポート\_構成\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff563900)、ポート ドライバーもを無効にするユーザー設定の値のレジストリをチェックまたは次のすべて。
+現時点では、設定に値のほか、 [**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)、ポート ドライバーもを無効にするユーザー設定の値のレジストリをチェックまたは次のすべて。
 
 -   HBA の同期の転送
 

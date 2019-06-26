@@ -9,12 +9,12 @@ keywords:
 - DIF_FINISHINSTALL_ACTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 864dc05160af9936e933627232d0be9302498b43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdb393883831b65d8359891185c525486d15e6c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373192"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385935"
 ---
 # <a name="implementing-finish-install-actions"></a>インストールの完了アクションの実装
 
@@ -23,11 +23,11 @@ ms.locfileid: "63373192"
 
 完了-インストール アクション、インストーラーを実装するには。
 
-1.  インストーラーを処理するときに DI_FLAGSEX_FINISHINSTALL_ACTION フラグを設定、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702) DIF コードを次のエラー コードのいずれかを返します。
+1.  インストーラーを処理するときに DI_FLAGSEX_FINISHINSTALL_ACTION フラグを設定、 [ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall) DIF コードを次のエラー コードのいずれかを返します。
     -   ERROR_DI_DO_DEFAULT 完了インストール ウィザードのページがないクラスのインストーラーである場合。
     -   NO_ERROR 完了インストール ウィザードのページまたは 完了-インストール ウィザードのページの有無の共同インストーラー クラスのインストーラーである場合。
 
-2.  処理時に 完了-インストール アクションを実行する[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)要求。
+2.  処理時に 完了-インストール アクションを実行する[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)要求。
 
     インストーラーでは、次の表に、エラー コードのいずれかを返します。
 
@@ -70,9 +70,9 @@ ms.locfileid: "63373192"
 
 完了-インストール アクションを開発する方法については、次を参照してください。[完了インストール アクションの実装に関するガイドライン](guidelines-for-implementing-finish-install-actions.md)完了インストール アクションを実装する方法を示すサンプル コードでは、次のトピックを参照してください。
 
-[コード例:クラスのインストーラーでインストールが完了アクション](code-example--finish-install-actions-in-a-class-installer.md)
+[コードの例:クラスのインストーラーでインストールが完了アクション](code-example--finish-install-actions-in-a-class-installer.md)
 
-[コード例:共同インストーラー - インストールが完了アクション](code-example--finish-install-actions-in-a-co-installer.md)
+[コードの例:共同インストーラー - インストールが完了アクション](code-example--finish-install-actions-in-a-co-installer.md)
 
 
 

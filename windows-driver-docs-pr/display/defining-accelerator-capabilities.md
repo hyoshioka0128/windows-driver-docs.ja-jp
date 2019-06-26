@@ -9,12 +9,12 @@ keywords:
 - 制限付きプロファイル WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b6751a906b48c22c4bc989e962a7bc658c4cd37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74aebaf943d28f01e093a8ca7efb6d85cc7049b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327157"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384903"
 ---
 # <a name="defining-accelerator-capabilities"></a>アクセラレータ機能の定義
 
@@ -32,7 +32,7 @@ ms.locfileid: "63327157"
 
 ### <a name="span-idnonrestrictedoperationspanspan-idnonrestrictedoperationspanspan-idnonrestrictedoperationspannonrestricted-operation"></a><span id="Nonrestricted_Operation"></span><span id="nonrestricted_operation"></span><span id="NONRESTRICTED_OPERATION"></span>Nonrestricted 操作
 
-DirectX VA で、アクセラレータを使用せずに制限されているプロファイルでは、厳密に準拠している場合、 **wRestrictedMode**のメンバー、 [ **DXVA\_ConnectMode** ](https://msdn.microsoft.com/library/windows/hardware/ff563138)構造体は、制限のこのがないことを示す 0 xffff に設定する必要があります。
+DirectX VA で、アクセラレータを使用せずに制限されているプロファイルでは、厳密に準拠している場合、 **wRestrictedMode**のメンバー、 [ **DXVA\_ConnectMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_connectmode)構造体は、制限のこのがないことを示す 0 xffff に設定する必要があります。
 
 すべての値が定義されている、 **bDXVA\_Func**変数が許可されます。
 

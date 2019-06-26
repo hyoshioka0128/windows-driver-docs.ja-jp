@@ -16,12 +16,12 @@ keywords:
 - 特権 WDK ファイル システムを復元します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e39a8149f75a1de93d7f05854961196d9a87baa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc1e5b9ce64f715994662e26db1db4e3748d79a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352837"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385155"
 ---
 # <a name="privileges"></a>権限
 
@@ -51,15 +51,15 @@ ms.locfileid: "63352837"
 
 ファイル システム内の特権を管理するためのキーの Windows ルーチンは次のとおりです。
 
--   [**SePrivilegeCheck**](https://msdn.microsoft.com/library/windows/hardware/ff556686)--このルーチンは、特定の必要な権限のセットに対してチェックを実行します。
+-   [**SePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seprivilegecheck)--このルーチンは、特定の必要な権限のセットに対してチェックを実行します。
 
--   [**SeSinglePrivilegeCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563740)--このルーチンは、1 つの特定の権限のチェックを実行します。 は、最適化されたバージョンの[ **SePrivilegeCheck**](https://msdn.microsoft.com/library/windows/hardware/ff556686)します。
+-   [**SeSinglePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-sesingleprivilegecheck)--このルーチンは、1 つの特定の権限のチェックを実行します。 は、最適化されたバージョンの[ **SePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seprivilegecheck)します。
 
--   [**SeAccessCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563674)--このルーチンは通常のアクセス オブジェクト (通常、ファイル システムのファイル オブジェクト) のチェックを実行します。
+-   [**SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)--このルーチンは通常のアクセス オブジェクト (通常、ファイル システムのファイル オブジェクト) のチェックを実行します。
 
--   [**SeFreePrivileges**](https://msdn.microsoft.com/library/windows/hardware/ff556656)--このルーチンは、以前の呼び出しによって返される特権ブロックを解放[ **SeAccessCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563674)します。
+-   [**SeFreePrivileges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-sefreeprivileges)--このルーチンは、以前の呼び出しによって返される特権ブロックを解放[ **SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)します。
 
--   [**SeAppendPrivileges**](https://msdn.microsoft.com/library/windows/hardware/ff554762)--このルーチンは、アクセスに有効な権限を追加します。\_状態構造体。 通常、ファイル システムは、アクセスを使用して\_IRP 中に渡される状態\_MJ\_作成処理します。
+-   [**SeAppendPrivileges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seappendprivileges)--このルーチンは、アクセスに有効な権限を追加します。\_状態構造体。 通常、ファイル システムは、アクセスを使用して\_IRP 中に渡される状態\_MJ\_作成処理します。
 
  
 

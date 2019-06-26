@@ -12,12 +12,12 @@ keywords:
 - データ転送の WDK カーネル、読み取り/書き込みディスパッチ ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9437729bd477f3489265614a6b35d502065600b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54b2b9918de2b89d0c6ed7d4777908a8402a6c72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384978"
 ---
 # <a name="dispatchreadwrite-in-higher-level-drivers"></a>上位レベル ドライバーの DispatchReadWrite
 
@@ -25,11 +25,11 @@ ms.locfileid: "63387217"
 
 
 
-ファイル システム ドライバーを除くより高度なドライバーは、通常はありませんすべてのドライバーの内部キュー Irp の。 このようなドライバーの[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン渡すことができます Irp 下位のドライバーに有効なパラメーターを持つ可能性がありますを設定した後、 [ *IoCompletion*](https://msdn.microsoft.com/library/windows/hardware/ff548354) 」の説明に従って、ルーチン[ドライバー スタックを渡して Irp](passing-irps-down-the-driver-stack.md)します。
+ファイル システム ドライバーを除くより高度なドライバーは、通常はありませんすべてのドライバーの内部キュー Irp の。 このようなドライバーの[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン渡すことができます Irp 下位のドライバーに有効なパラメーターを持つ可能性がありますを設定した後、 [ *IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) 」の説明に従って、ルーチン[ドライバー スタックを渡して Irp](passing-irps-down-the-driver-stack.md)します。
 
-ただし、SCSI クラス ドライバーの*DispatchReadWrite*ルーチンは IRP を主な機能のコードを送信する前に、必要に応じて、大規模な転送要求を分割[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)または[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819) SCSI ポート/ミニポート ドライバーのペアにします。 詳細については、次を参照してください。[記憶域クラス ドライバー SplitTransferRequest ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff566965)します。
+ただし、SCSI クラス ドライバーの*DispatchReadWrite*ルーチンは IRP を主な機能のコードを送信する前に、必要に応じて、大規模な転送要求を分割[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)または[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) SCSI ポート/ミニポート ドライバーのペアにします。 詳細については、次を参照してください。[記憶域クラス ドライバー SplitTransferRequest ルーチン](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-class-driver-s-splittransferrequest-routine)します。
 
-高度なドライバーがセットアップで次の下位のドライバーを 1 つまたは複数の Irp を割り当てた場合、 *DispatchReadWrite*ルーチンは、いくつかの部分の転送を要求する、 *DispatchReadWrite*ルーチンを呼び出す必要があります[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679)各ドライバーに割り当てられた IRP にします。 ドライバーを登録する必要があります、 *IoCompletion*ルーチンを各部分転送操作で転送されるデータの量を追跡するように、 *IoCompletion*ルーチンは、すべてのドライバーに割り当てられた Irp をリリースできますと、最終的には、元の要求を完了します。
+高度なドライバーがセットアップで次の下位のドライバーを 1 つまたは複数の Irp を割り当てた場合、 *DispatchReadWrite*ルーチンは、いくつかの部分の転送を要求する、 *DispatchReadWrite*ルーチンを呼び出す必要があります[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)各ドライバーに割り当てられた IRP にします。 ドライバーを登録する必要があります、 *IoCompletion*ルーチンを各部分転送操作で転送されるデータの量を追跡するように、 *IoCompletion*ルーチンは、すべてのドライバーに割り当てられた Irp をリリースできますと、最終的には、元の要求を完了します。
 
 基になるドライバーでは、リムーバブル メディア デバイスを制御する上位レベルのドライバーによって割り当てられた任意の Irp にスレッド コンテキストが必要です。 スレッド コンテキストを設定する割り当てのドライバーが設定する必要があります、 **Irp -&gt;Tail.Overlay**します。各スレッドは IRP の着信の転送に同じ値から IRP を新しく割り当てられます。 詳細については、次を参照してください。[リムーバブル メディアをサポートしている](supporting-removable-media.md)します。
 

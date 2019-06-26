@@ -9,12 +9,12 @@ keywords:
 - カーネル モード実行 WDK プリンター グラフィックス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7effd5c2c5439c27525f03bf9bf0205df242c2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44b01cc556652bbb66876366047d447470b9ab91
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351972"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364924"
 ---
 # <a name="choosing-user-mode-or-kernel-mode"></a>ユーザー モードまたはカーネル モードを選択する
 
@@ -75,7 +75,7 @@ Windows Vista では、カーネル モード プリンター ドライバーを
 
 ### <a name="using-the-graphics-ddi-in-user-mode"></a>ユーザー モードでのグラフィックス DDI の使用
 
-ユーザー モードのプリンター グラフィックス DLL は呼び出し元に限定されない、 [GDI サポート サービス](https://msdn.microsoft.com/library/windows/hardware/ff566714)への Eng プレフィックス付きのグラフィックス DDI コールバック関数。 ただし、これには従う必要があるいくつかのルールがあります。
+ユーザー モードのプリンター グラフィックス DLL は呼び出し元に限定されない、 [GDI サポート サービス](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-support-services)への Eng プレフィックス付きのグラフィックス DDI コールバック関数。 ただし、これには従う必要があるいくつかのルールがあります。
 
 -   カーネル モードのようなグラフィックスの Dll、ユーザー モードのグラフィックスの Dll が作成または描画サーフェイスを変更するグラフィックス Ddi を呼び出す必要があります。 これらのコールバック関数は、GDI サポート サービスと、これらの描画関数の Win32 関数を呼び出すことは許可されていません。
 
@@ -83,19 +83,19 @@ Windows Vista では、カーネル モード プリンター ドライバーを
 
 -   Eng プレフィックス付きグラフィックス DDI 関数の次の一覧は、ユーザー モード Dll によって呼び出すことができません。
 
-    [**EngCreatePath**](https://msdn.microsoft.com/library/windows/hardware/ff564755)
+    [**EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)
 
-    [**EngGetType1FontList**](https://msdn.microsoft.com/library/windows/hardware/ff564956)
+    [**EngGetType1FontList**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-enggettype1fontlist)
 
-    [**EngMapModule**](https://msdn.microsoft.com/library/windows/hardware/ff564974)
+    [**EngMapModule**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engmapmodule)
 
-    [**EngDebugBreak**](https://msdn.microsoft.com/library/windows/hardware/ff564773)
+    [**EngDebugBreak**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdebugbreak)
 
--   ユーザー モード プリンター グラフィックスの Dll を引き続き使用できますグラフィックス DDI 関数[GDI 浮動小数点サービス](https://msdn.microsoft.com/library/windows/hardware/ff566535)します。
+-   ユーザー モード プリンター グラフィックスの Dll を引き続き使用できますグラフィックス DDI 関数[GDI 浮動小数点サービス](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-floating-point-services)します。
 
 ### <a name="converting-an-existing-printer-graphics-dll-to-user-mode"></a>プリンター グラフィックス DLL をユーザー モードに変換します。
 
-以前プリンター グラフィックス カーネル モードで実行される DLL を開発した場合は、ユーザー モードでの実行に、DLL を変換できます。 変換すると、単に追加、 [ **DrvQueryDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556261) DLL に関数を次の規則に従う[プリンター グラフィックス DLL をビルド](building-a-printer-graphics-dll.md)します。
+以前プリンター グラフィックス カーネル モードで実行される DLL を開発した場合は、ユーザー モードでの実行に、DLL を変換できます。 変換すると、単に追加、 [ **DrvQueryDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo) DLL に関数を次の規則に従う[プリンター グラフィックス DLL をビルド](building-a-printer-graphics-dll.md)します。
 
 ### <a name="creating-a-new-printer-graphics-dll-in-user-mode"></a>ユーザー モードでの新しいプリンター グラフィックス DLL の作成
 
@@ -251,9 +251,9 @@ Windows Vista では、カーネル モード プリンター ドライバーを
 
 <!-- -->
 
--   関数の作成または描画サービスを変更する場合、新しいドライバーが呼び出しを続ける必要があります[GDI サポート サービス](https://msdn.microsoft.com/library/windows/hardware/ff566714)と、Win32 関数ではありません。
+-   関数の作成または描画サービスを変更する場合、新しいドライバーが呼び出しを続ける必要があります[GDI サポート サービス](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-support-services)と、Win32 関数ではありません。
 
--   グラフィックスを使用する代わりに DDI 関数の[GDI 浮動小数点サービス](https://msdn.microsoft.com/library/windows/hardware/ff566535)、FLOAT データ型を使用することができます。
+-   グラフィックスを使用する代わりに DDI 関数の[GDI 浮動小数点サービス](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-floating-point-services)、FLOAT データ型を使用することができます。
 
  
 

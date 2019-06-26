@@ -4,12 +4,12 @@ description: Windows 8 以降、ミニポート ドライバーは Windows Power
 ms.assetid: 27A0DD72-8AD0-4F38-B17C-9BDD63C5E7E1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a6770297adafe12a4cb6d01637c2766c232039e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60275cf4760644fe40a1bbed72d31936fdde7b21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328762"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362554"
 ---
 # <a name="portcls-private-pep-context-sharing"></a>PortCls プライベート PEP コンテキストの共有
 
@@ -23,13 +23,13 @@ WaveRT ポートでの IPortClsRuntimePower の新しいインターフェイス
 
 ミニポート ドライバーでは、次の一連のイベントを使用してそのポートの IPortClsRuntimePower にアクセスします。
 
-1. ミニポート ドライバー呼び出し[ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715) IID を提供および\_IPortWaveRT、REFID として。
+1. ミニポート ドライバー呼び出し[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport) IID を提供および\_IPortWaveRT、REFID として。
 
-2. **PcNewPort**型のポート インターフェイス (サポート) を作成します。 [IPortWaveRT](https://msdn.microsoft.com/library/windows/hardware/ff536920)します。
+2. **PcNewPort**型のポート インターフェイス (サポート) を作成します。 [IPortWaveRT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportwavert)します。
 
 3. ミニポート ドライバーで、新しく作成した QueryInterface を呼び出して**IPortWaveRT**インターフェイス、ポートし、IID を指定します\_IPortClsRuntimePower インターフェイスの GUID として。
 
-4. **IPortWaveRT**ポート インターフェイスへのポインターをミニポート ドライバーを提供します。 その[ **IPortClsRuntimePower** ](https://msdn.microsoft.com/library/windows/hardware/dn265125)インターフェイス。
+4. **IPortWaveRT**ポート インターフェイスへのポインターをミニポート ドライバーを提供します。 その[ **IPortClsRuntimePower** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclsruntimepower)インターフェイス。
 
 *Portcls.h*ヘッダー ファイルの GUID から、IPortClsRuntimePower 用の次のように定義します。
 
@@ -42,7 +42,7 @@ DEFINE_GUID(IID_IPortClsRuntimePower,
 ## <a name="span-idregisteringacallbackspanspan-idregisteringacallbackspanspan-idregisteringacallbackspanregistering-a-callback"></a><span id="Registering_a_callback"></span><span id="registering_a_callback"></span><span id="REGISTERING_A_CALLBACK"></span>コールバックの登録
 
 
-ミニポート ドライバーを使用して、 [ **IPortClsRuntimePower::RegisterPowerControlCallback** ](https://msdn.microsoft.com/library/windows/hardware/dn265126)コールバックを登録するメソッド。 PEP は、プライベートの要求を開始したときにまたはプライベートのミニポート ドライバー自体が開始した要求に対する応答では、このメソッドが呼び出されます。 コールバックの登録は、ドライバーは IRP を処理している間に通常実行する必要があります\_MN\_開始\_PNP Irp のデバイス。
+ミニポート ドライバーを使用して、 [ **IPortClsRuntimePower::RegisterPowerControlCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsruntimepower-registerpowercontrolcallback)コールバックを登録するメソッド。 PEP は、プライベートの要求を開始したときにまたはプライベートのミニポート ドライバー自体が開始した要求に対する応答では、このメソッドが呼び出されます。 コールバックの登録は、ドライバーは IRP を処理している間に通常実行する必要があります\_MN\_開始\_PNP Irp のデバイス。
 
 コールバックで指定されているコンテキストのポインターとは別に、他のパラメーターは、ランタイム power framework の PowerControlCallback の定義を同じ定義されます。 さらに、ミニポートのコールバック型でなければなりません PCPFNRUNTIME\_POWER\_コントロール\_コールバックから次のスニペットで定義されている、 *Portcls.h*ヘッダー ファイル。
 
@@ -62,14 +62,14 @@ _IRQL_requires_max_(DISPATCH_LEVEL)
 );
 ```
 
-これを使用する必要があります、ドライバーを停止または削除すると、ときに、 [ **IPortClsRuntimePower::UnregisterPowerControlCallback** ](https://msdn.microsoft.com/library/windows/hardware/dn265128)いずれかの登録を解除するメソッドがコールバックを登録します。
+これを使用する必要があります、ドライバーを停止または削除すると、ときに、 [ **IPortClsRuntimePower::UnregisterPowerControlCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsruntimepower-unregisterpowercontrolcallback)いずれかの登録を解除するメソッドがコールバックを登録します。
 
 ## <a name="span-idsendingprivatepowercontrolsspanspan-idsendingprivatepowercontrolsspanspan-idsendingprivatepowercontrolsspansending-private-power-controls"></a><span id="Sending_private_power_controls"></span><span id="sending_private_power_controls"></span><span id="SENDING_PRIVATE_POWER_CONTROLS"></span>送信側のプライベート power コントロール
 
 
-ミニポートへのアクセスを確立した後で、 **IPortClsRuntimePower**インターフェイス、およびインターフェイスの使用**RegisterPowerControlCallback**コールバックを登録するメソッドをプライベートに送信する準備がようになりました電源を制御します。 ミニポート ドライバーを使用して、コールバック メソッドが呼び出されたときに、 [ **IPortClsRuntimePower::SendPowerControl** ](https://msdn.microsoft.com/library/windows/hardware/dn265127) Windows PEP にプライベートの電源制御を送信する方法。
+ミニポートへのアクセスを確立した後で、 **IPortClsRuntimePower**インターフェイス、およびインターフェイスの使用**RegisterPowerControlCallback**コールバックを登録するメソッドをプライベートに送信する準備がようになりました電源を制御します。 ミニポート ドライバーを使用して、コールバック メソッドが呼び出されたときに、 [ **IPortClsRuntimePower::SendPowerControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsruntimepower-sendpowercontrol) Windows PEP にプライベートの電源制御を送信する方法。
 
-例外として、*デバイス オブジェクト*パラメーター、その他のすべてのパラメーターがのランタイム power framework の場合と同じで定義されている[PoFxPowerControl](https://msdn.microsoft.com/library/windows/hardware/hh439518.aspx)メソッド。
+例外として、*デバイス オブジェクト*パラメーター、その他のすべてのパラメーターがのランタイム power framework の場合と同じで定義されている[PoFxPowerControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxpowercontrol)メソッド。
 
  
 

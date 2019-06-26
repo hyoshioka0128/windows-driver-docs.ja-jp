@@ -7,12 +7,12 @@ keywords:
 - レジストリの WDK デバイス オブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de830ef6bae0a979b7447ccbc0e1710bdb7c3592
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 018b9182ab4081dac105a40ee1b93e5e0cdb51e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363431"
 ---
 # <a name="setting-device-object-properties-in-the-registry"></a>レジストリでのデバイス オブジェクトのプロパティの設定
 
@@ -22,13 +22,13 @@ ms.locfileid: "63385533"
 
 デバイス オブジェクトのプロパティは、次のように、レジストリで設定できます。
 
--   WDM ドライバー、または全体のデバイス セットアップ クラスに対するデバイスのモデルごとにプロパティを設定することができます。 (デバイス セットアップ クラスの詳細については、次を参照してください[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)。)。
+-   WDM ドライバー、または全体のデバイス セットアップ クラスに対するデバイスのモデルごとにプロパティを設定することができます。 (デバイス セットアップ クラスの詳細については、次を参照してください[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。)。
 
--   非 WDM ドライバーでは、名前付きのデバイス オブジェクトのデバイス セットアップ クラスのプロパティを設定できます。 デバイス オブジェクトを作成するときに、ドライバーはデバイス セットアップ クラスを指定します**IoCreateDeviceSecure**します。 デバイス セットアップ クラスを指定する方法の詳細については、次を参照してください。 [ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)します。
+-   非 WDM ドライバーでは、名前付きのデバイス オブジェクトのデバイス セットアップ クラスのプロパティを設定できます。 デバイス オブジェクトを作成するときに、ドライバーはデバイス セットアップ クラスを指定します**IoCreateDeviceSecure**します。 デバイス セットアップ クラスを指定する方法の詳細については、次を参照してください。 [ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)します。
 
 レジストリ内のすべての設定は、ドライバーのデバイス オブジェクトを作成するときに指定するプロパティをオーバーライドします。
 
-レジストリ設定は、デバイスのインストール中に使用される INF ファイルで指定されたかを呼び出すアプリケーションをインストール後に指定することができます、[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)します。
+レジストリ設定は、デバイスのインストール中に使用される INF ファイルで指定されたかを呼び出すアプリケーションをインストール後に指定することができます、[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))します。
 
 このセクションには、次のサブセクションが含まれています。
 

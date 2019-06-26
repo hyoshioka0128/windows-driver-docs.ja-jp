@@ -10,12 +10,12 @@ keywords:
 - 要求の意味が WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a45786810fa0afed81032af4481142dfa7bf87e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7587cc600364d89fb54b9f7544edcdaafbcefaba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339052"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368222"
 ---
 # <a name="storage-class-drivers-buildrequest-routine"></a>記憶域クラス ドライバーの BuildRequest ルーチン
 
@@ -29,7 +29,7 @@ ms.locfileid: "63339052"
 
 -   **Parameters.Scsi.Srb** SRB へのポインターが含まれています
 
-各クラス ドライバーは、それらを設定する Cdb で基になる記憶域ポート ドライバーともされる Srb のメモリの割り当てを担当します。 クラス ドライバーとそのされる Srb のルック アサイド リストを設定できますか**ExInitializeNPageLookasideList**呼び出したり**ExAllocatePool**非ページ メモリ。 参照してください[ルック アサイド リストを使用した](https://msdn.microsoft.com/library/windows/hardware/ff565416)ルック アサイド リストおよび非ページ プールの使用に関する詳細。
+各クラス ドライバーは、それらを設定する Cdb で基になる記憶域ポート ドライバーともされる Srb のメモリの割り当てを担当します。 クラス ドライバーとそのされる Srb のルック アサイド リストを設定できますか**ExInitializeNPageLookasideList**呼び出したり**ExAllocatePool**非ページ メモリ。 参照してください[ルック アサイド リストを使用した](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-lookaside-lists)ルック アサイド リストおよび非ページ プールの使用に関する詳細。
 
 プールから、またはドライバーが作成したルック アサイド リストから、メモリを割り当てます、かどうかすべての記憶域クラス ドライバーはされる Srb のメモリを解放します。 記憶域クラス ドライバーの*IoCompletion*で説明されているルーチン[記憶域クラス ドライバー IoCompletion ルーチン](storage-class-driver-s-iocompletion-routines.md)、通常される Srb ルック アサイド リストに戻るに割り当てられたメモリを解放します。
 
@@ -39,7 +39,7 @@ A *BuildRequest*ルーチンが、SRB のペアを設定する責任を共有*Se
 
 ほとんどされる Srb 設定クラス ドライバーが読み込まれた後、**関数**メンバー SRB に設定\_関数\_EXECUTE\_SCSI バス経由で送信するデバイスの I/O 要求を示します。
 
-システム定義の SRB メンバーとその値の詳細については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)します。
+システム定義の SRB メンバーとその値の詳細については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)します。
 
 ### <a name="span-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespanspan-idsettingupsrbsforrequestsensespansetting-up-srbs-for-request-sense"></a><span id="Setting_Up_SRBs_for_Request_Sense"></span><span id="setting_up_srbs_for_request_sense"></span><span id="SETTING_UP_SRBS_FOR_REQUEST_SENSE"></span>要求の意味のされる Srb の設定
 

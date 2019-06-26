@@ -14,27 +14,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37404a1e47e980836fc981c080ec2b376f4f3bfc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfd1ae9a3e53e940aad3297c3f3b6b3f30ff7cf7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327880"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365045"
 ---
 # <a name="fsctlenumoverlay-control-code"></a>FSCTL\_ENUM\_オーバーレイ コントロール コード
 
 
 **FSCTL\_ENUM\_オーバーレイ**制御コードは、指定されたボリュームのバックアップ プロバイダーからのすべてのデータ ソースを列挙します。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 **Parameters**
 
 <a href="" id="instance--in-"></a>*インスタンス\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 呼び出し元のポインターを不透明なインスタンス。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 呼び出し元のポインターを不透明なインスタンス。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="fileobject--in-"></a>*FileObject\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 マウントを解除するボリュームを指定する、ファイル ポインター オブジェクト。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 マウントを解除するボリュームを指定する、ファイル ポインター オブジェクト。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle--in-"></a>*FileHandle\[で\]*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 マウントを解除するボリュームのファイル ハンドル。 このパラメーターが必要とすることはできません**NULL**します。
@@ -43,13 +43,13 @@ ms.locfileid: "63327880"
 操作のコードを制御します。 使用**FSCTL\_削除\_オーバーレイ**この操作にします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-含める必要がありますが、入力バッファーへのポインターを[ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造体。
+含める必要がありますが、入力バッファーへのポインターを[ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造体。
 
 <a href="" id="inputbufferlength--in-"></a>*InputBufferLength\[で\]*  
 設定**sizeof**(WOF\_外部\_情報)。
 
 <a href="" id="outputbuffer--out-"></a>*OutputBuffer\[アウト\]*  
-1 つまたは複数を受信する出力バッファーへのポインター [ **WIM\_プロバイダー\_オーバーレイ\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn632451)ボリュームをバックアップするデータ ソースの構造体。
+1 つまたは複数を受信する出力バッファーへのポインター [ **WIM\_プロバイダー\_オーバーレイ\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_update_overlay_input)ボリュームをバックアップするデータ ソースの構造体。
 
 <a href="" id="outputbufferlength--out-"></a>*OutputBufferLength\[アウト\]*  
 バッファーのサイズが指す*OutputBuffer*、(バイト単位)。
@@ -60,7 +60,7 @@ ms.locfileid: "63327880"
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
 
 <table>
 <colgroup>
@@ -69,7 +69,7 @@ ms.locfileid: "63327880"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -98,7 +98,7 @@ ms.locfileid: "63327880"
 <a name="remarks"></a>注釈
 -------
 
-出力バッファーの配列には WIM プロバイダーのデータ ソースを列挙するときに[ **WIM\_プロバイダー\_オーバーレイ\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn632451)構造体。 出力バッファーのサイズは、オーバーレイのすべてのエントリを格納するのに十分な大きさである必要がありますまたは呼び出しの状態が返す\_バッファー\_すぎます\_小さい。
+出力バッファーの配列には WIM プロバイダーのデータ ソースを列挙するときに[ **WIM\_プロバイダー\_オーバーレイ\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_update_overlay_input)構造体。 出力バッファーのサイズは、オーバーレイのすべてのエントリを格納するのに十分な大きさである必要がありますまたは呼び出しの状態が返す\_バッファー\_すぎます\_小さい。
 
 追加のバックアップ プロバイダーでは、特定の列挙の構造を定義します。
 
@@ -125,13 +125,13 @@ ms.locfileid: "63327880"
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 
 [**FSCTL\_追加\_オーバーレイ**](fsctl-add-overlay.md)
 
-[**WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)
+[**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)
 
  
 

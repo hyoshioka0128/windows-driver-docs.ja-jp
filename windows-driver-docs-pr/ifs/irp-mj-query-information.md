@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de1812876bd03cf21fb598d34d0fd223022c5e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 719700c238e08ce3044b58e0a891e1d7dfd02acd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324354"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384818"
 ---
 # <a name="irpmjqueryinformation"></a>IRP\_MJ\_QUERY\_INFORMATION
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324354"
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_クエリ\_I/O マネージャーとその他のオペレーティング システム コンポーネント、またはその他のカーネル モード ドライバーによる情報の要求が送信されます。 この要求を送信できますなど、ユーザー モード アプリケーションには、Microsoft Win32 関数が呼び出されるとなど**GetFileInformationByHandle**カーネル モード コンポーネントが呼び出されたときまたは[ **ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)します。
+IRP\_MJ\_クエリ\_I/O マネージャーとその他のオペレーティング システム コンポーネント、またはその他のカーネル モード ドライバーによる情報の要求が送信されます。 この要求を送信できますなど、ユーザー モード アプリケーションには、Microsoft Win32 関数が呼び出されるとなど**GetFileInformationByHandle**カーネル モード コンポーネントが呼び出されたときまたは[ **ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)します。
 
 ## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
 
@@ -34,14 +34,14 @@ IRP\_MJ\_クエリ\_I/O マネージャーとその他のオペレーティン�
 
 クエリを実行できるファイルとディレクトリの情報の種類はファイル システムに依存するが、通常、次が含まれます。
 
-FileAllInformation FileAlternateNameInformation FileAttributeTagInformation FileBasicInformation FileCompressionInformation FileEaInformation FileInternalInformation FileNameInformation FileNetworkOpenInformationFilePositionInformation FileStandardInformation FileStreamInformation FileHardLinkInformation が FileAccessInformation、FileAlignmentInformation、および FileModeInformation 情報の種類はできるにパラメーターとして渡すことも[ **ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)、この情報は、ファイル システムに依存しません。 したがって**ZwQueryInformationFile** IRP を送信することがなく、直接この情報を提供\_MJ\_クエリ\_ファイル システムに情報の要求。
+FileAllInformation FileAlternateNameInformation FileAttributeTagInformation FileBasicInformation FileCompressionInformation FileEaInformation FileInternalInformation FileNameInformation FileNetworkOpenInformationFilePositionInformation FileStandardInformation FileStreamInformation FileHardLinkInformation が FileAccessInformation、FileAlignmentInformation、および FileModeInformation 情報の種類はできるにパラメーターとして渡すことも[ **ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)、この情報は、ファイル システムに依存しません。 したがって**ZwQueryInformationFile** IRP を送信することがなく、直接この情報を提供\_MJ\_クエリ\_ファイル システムに情報の要求。
 
 これらの情報の種類の詳細については、以下のリンクも「を参照してください。 すべての可能な情報の種類の一覧は、ファイルを参照してください。\_情報\_ntifs.h でクラスの列挙体。
 
 ## <a name="operation-network-redirector-drivers"></a>操作:ネットワーク リダイレクター ドライバー
 
 
-基づかないネットワーク リダイレクター ドライバー [RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810) IRP を受信する\_MJ\_クエリ\_FileAllInformation または FileNameInformation、情報の要求は、完全な"で応答する必要があります\\server\\共有\\ファイル"を先頭にバック スラッシュを単一サーバー名の前にファイル名のパス。 汎用名前付け規則 (UNC) 名としてアクセスされるファイルの名前については、この形式を返す必要がある (*\\\\server\\共有\\フォルダー\\ファイル名.txt*など) またはマップされたドライブ上にあるファイル (*x:\\フォルダー\\ファイル名.txt*など)。
+基づかないネットワーク リダイレクター ドライバー [RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library) IRP を受信する\_MJ\_クエリ\_FileAllInformation または FileNameInformation、情報の要求は、完全な"で応答する必要があります\\server\\共有\\ファイル"を先頭にバック スラッシュを単一サーバー名の前にファイル名のパス。 汎用名前付け規則 (UNC) 名としてアクセスされるファイルの名前については、この形式を返す必要がある ( *\\\\server\\共有\\フォルダー\\ファイル名.txt*など) またはマップされたドライブ上にあるファイル (*x:\\フォルダー\\ファイル名.txt*など)。
 
 ネットワーク ミニ リダイレクター (rdbss.sys を動的にリンクするドライバーやドライバー rdbsslib.lib と静的にリンクする)、ドライバーの IRP\_MJ\_クエリ\_FileNameInformation の情報の要求が内部的に処理されますRDBSS と正しい名前では、情報が返されます。 ネットワークのミニ リダイレクター ドライバーは IRP\_MJ\_クエリ\_FileAllInformation の情報の要求は要求の名前情報の一部の RDBSS によって内部的に処理します。 FileAllInformation 要求の他の部分は、解決するのにはネットワーク ミニ リダイレクター ドライバーに個別の要求として送信されます。
 
@@ -55,7 +55,7 @@ IRP を受信するネットワーク リダイレクター\_MJ\_クエリ\_場�
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://msdn.microsoft.com/library/windows/hardware/ff550659)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP のクエリ ファイルの情報の要求の処理に IRP スタックの場所は、次のメンバーで設定されている情報を使用できます。
+ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP で[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP のクエリ ファイルの情報の要求の処理に IRP スタックの場所は、次のメンバーで設定されている情報を使用できます。
 
 <a href="" id="deviceobject"></a>*デバイス オブジェクト*  
 ターゲット デバイスのオブジェクトへのポインター。
@@ -87,7 +87,7 @@ IRP を受信するネットワーク リダイレクター\_MJ\_クエリ\_場�
 
 ファイル\_リンク\_情報
 
-<a href="" id="irp--iostatus"></a>*Irp -&gt;IoStatus*へのポインター、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)に関する最終的な完了の状態および情報を受け取る、要求された操作。 詳細については、の説明を参照して、 *IoStatusBlock*パラメーター、 [ **ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)します。 ルーチンです。
+<a href="" id="irp--iostatus"></a>*Irp -&gt;IoStatus*へのポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)に関する最終的な完了の状態および情報を受け取る、要求された操作。 詳細については、の説明を参照して、 *IoStatusBlock*パラメーター、 [ **ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)します。 ルーチンです。
 
 <a href="" id="irp--userbuffer"></a>*Irp -&gt;UserBuffer*を呼び出し元が指定の出力バッファーへの省略可能なポインターの内容*Irp -&gt;AssociatedIrp.SystemBuffer* I/O マネージャーによって I/O の完了時にコピーされます。 ドライバーでは、要求のデータを返すこのバッファーは使用しません。
 
@@ -106,7 +106,7 @@ IRP を受信するネットワーク リダイレクター\_MJ\_クエリ\_場�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -117,11 +117,11 @@ IRP を受信するネットワーク リダイレクター\_MJ\_クエリ\_場�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileAttributeTagInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545750" data-raw-source="[&lt;strong&gt;FILE_ATTRIBUTE_TAG_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545750)"> <strong>FILE_ATTRIBUTE_TAG_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_attribute_tag_information" data-raw-source="[&lt;strong&gt;FILE_ATTRIBUTE_TAG_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_attribute_tag_information)"> <strong>FILE_ATTRIBUTE_TAG_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileBasicInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545762" data-raw-source="[&lt;strong&gt;FILE_BASIC_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545762)"> <strong>FILE_BASIC_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information" data-raw-source="[&lt;strong&gt;FILE_BASIC_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)"> <strong>FILE_BASIC_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileCompressionInformation</strong></p></td>
@@ -133,31 +133,31 @@ IRP を受信するネットワーク リダイレクター\_MJ\_クエリ\_場�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileInternalInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540318" data-raw-source="[&lt;strong&gt;FILE_INTERNAL_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540318)"> <strong>FILE_INTERNAL_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_internal_information" data-raw-source="[&lt;strong&gt;FILE_INTERNAL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_internal_information)"> <strong>FILE_INTERNAL_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileNameInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545817" data-raw-source="[&lt;strong&gt;FILE_NAME_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545817)"> <strong>FILE_NAME_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_name_information" data-raw-source="[&lt;strong&gt;FILE_NAME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_name_information)"> <strong>FILE_NAME_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileNetworkOpenInformation</strong></p></td>
-<td align="left"><p>1 つを返す<a href="https://msdn.microsoft.com/library/windows/hardware/ff545822" data-raw-source="[&lt;strong&gt;FILE_NETWORK_OPEN_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545822)"> <strong>FILE_NETWORK_OPEN_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>1 つを返す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_network_open_information" data-raw-source="[&lt;strong&gt;FILE_NETWORK_OPEN_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_network_open_information)"> <strong>FILE_NETWORK_OPEN_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FilePositionInformation</strong></p></td>
-<td align="left"><p>1 つを返す<a href="https://msdn.microsoft.com/library/windows/hardware/ff545848" data-raw-source="[&lt;strong&gt;FILE_POSITION_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545848)"> <strong>FILE_POSITION_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>1 つを返す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information" data-raw-source="[&lt;strong&gt;FILE_POSITION_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)"> <strong>FILE_POSITION_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileStandardInformation</strong></p></td>
-<td align="left"><p>1 つを返す<a href="https://msdn.microsoft.com/library/windows/hardware/ff545855" data-raw-source="[&lt;strong&gt;FILE_STANDARD_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545855)"> <strong>FILE_STANDARD_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>1 つを返す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information" data-raw-source="[&lt;strong&gt;FILE_STANDARD_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)"> <strong>FILE_STANDARD_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileStreamInformation</strong></p></td>
-<td align="left"><p>1 つを返す<a href="https://msdn.microsoft.com/library/windows/hardware/ff540364" data-raw-source="[&lt;strong&gt;FILE_STREAM_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540364)"> <strong>FILE_STREAM_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>1 つを返す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information" data-raw-source="[&lt;strong&gt;FILE_STREAM_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)"> <strong>FILE_STREAM_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileHardLinkInformation</strong></p></td>
-<td align="left"><p>返す、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff728841" data-raw-source="[&lt;strong&gt;FILE_LINKS_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff728841)"> <strong>FILE_LINKS_INFORMATION</strong> </a>ファイルの構造体。</p></td>
+<td align="left"><p>返す、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_links_information" data-raw-source="[&lt;strong&gt;FILE_LINKS_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_links_information)"> <strong>FILE_LINKS_INFORMATION</strong> </a>ファイルの構造体。</p></td>
 </tr>
 </tbody>
 </table>
@@ -176,39 +176,39 @@ IRP\_MJ\_クエリ\_情報の操作は、I/O マネージャーによって必�
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_配置\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545740)
+[**ファイル\_配置\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_alignment_information)
 
-[**ファイル\_属性\_タグ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545750)
+[**ファイル\_属性\_タグ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_attribute_tag_information)
 
-[**ファイル\_BASIC\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545762)
+[**ファイル\_BASIC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)
 
-[**ファイル\_内部\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540318)
+[**ファイル\_内部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_internal_information)
 
-[**ファイル\_名前\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545817)
+[**ファイル\_名前\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_name_information)
 
-[**FILE\_NETWORK\_OPEN\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff545822)
+[**FILE\_NETWORK\_OPEN\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_network_open_information)
 
-[**ファイル\_位置\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545848)
+[**ファイル\_位置\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_position_information)
 
-[**ファイル\_標準\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545855)
+[**ファイル\_標準\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_standard_information)
 
-[**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)
+[**ファイル\_ストリーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)
 
-[**ファイル\_リンク\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff728841)
+[**ファイル\_リンク\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_links_information)
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoCheckEaBufferValidity**](https://msdn.microsoft.com/library/windows/hardware/ff548252)
+[**IoCheckEaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocheckeabuffervalidity)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_SET\_INFORMATION**](irp-mj-set-information.md)
 
-[**ZwQueryInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567052)
+[**ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)
 
  
 

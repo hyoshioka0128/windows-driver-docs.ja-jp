@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 97206fc8e4bda2b67176005504b7a63dadf778a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37ba169b34ff6d94513357132c4dc64009d9354a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361646"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367490"
 ---
 # <a name="bug-check-0x36-devicereferencecountnotzero"></a>バグ チェック 0x36:デバイス\_参照\_カウント\_いない\_0
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361646"
 デバイス\_参照\_カウント\_いない\_0 個のバグ チェックが 0x00000036 の値を持ちます。 これは、正の値の参照カウントが含まれていたデバイス オブジェクトを削除するドライバーが試行されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="devicereferencecountnotzero-parameters"></a>デバイス\_参照\_カウント\_いない\_0 個のパラメーター

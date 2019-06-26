@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e492a9344cc7427d9eba3ee2b459b80807a2ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ecf7090d8a2494eef7749cfc50ba44aba4cc66c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362070"
 ---
 # <a name="bug-check-0x192-kernelautoboostlockacquisitionwithraisedirql"></a>バグ チェック 0x192:カーネル\_自動\_BOOST\_ロック\_買収\_WITH\_発生\_IRQL
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352436"
 カーネル\_自動\_BOOST\_ロック\_買収\_WITH\_発生\_IRQL のバグ チェックが 0x00000192 の値を持ちます。 これは、ディスパッチで実行中に AutoBoost によって追跡されるロックが取得されたことを示します\_レベルまたはそれ以降。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="kernelautoboostlockacquisitionwithraisedirql-parameters"></a>カーネル\_自動\_BOOST\_ロック\_買収\_WITH\_発生\_IRQL パラメーター

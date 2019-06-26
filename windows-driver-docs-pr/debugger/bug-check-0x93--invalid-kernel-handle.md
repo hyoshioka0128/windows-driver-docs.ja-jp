@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d214bf4dee47d6677f3e7036f8f7a186b8a67d0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30ac44c34a1fd418b86e7a851b469bc6ec23ff29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367292"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361704"
 ---
 # <a name="bug-check-0x93-invalidkernelhandle"></a>バグ チェック 0x93:無効な\_カーネル\_処理
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367292"
 無効な\_カーネル\_ハンドルのバグ チェックが 0x00000093 の値を持ちます。 このバグ チェックに、無効であるか、保護されているハンドルが渡されたことを示します**そのファイルに対してクローズ**します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="invalidkernelhandle-parameters"></a>無効な\_カーネル\_ハンドル パラメーター

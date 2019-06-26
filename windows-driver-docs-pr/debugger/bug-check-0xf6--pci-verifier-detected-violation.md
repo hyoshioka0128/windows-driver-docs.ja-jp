@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 381355b70ad2029a31d0c2c4bcde481baca8d7aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1975a6ef0891875fdf2f7a738586790d56ad37af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340620"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367070"
 ---
 # <a name="bug-check-0xf6-pciverifierdetectedviolation"></a>バグ チェック 0xF6:PCI\_VERIFIER\_検出\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "63340620"
 PCI\_VERIFIER\_検出\_違反のバグ チェックが 0x000000F6 の値を持ちます。 これは、BIOS または PCI ドライバーによって検証されている別のデバイスでエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="pciverifierdetectedviolation-parameters"></a>PCI\_VERIFIER\_検出\_違反パラメーター

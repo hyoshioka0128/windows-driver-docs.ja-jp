@@ -14,12 +14,12 @@ keywords:
 - WDK の Bluetooth の広告サービス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 374fec5c27b8f4beb594ebd914dd5d35ad096d02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69f6cb1e2dc116b8d06e565e28b0646e24e0b560
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364644"
 ---
 # <a name="communicating-with-sdp-servers"></a>SDP サーバーとの通信
 
@@ -28,11 +28,11 @@ Bluetooth ドライバー スタックは、サービスの探索プロトコル
 
 サービスは、情報、操作を実行または別のエンティティの代わりに、リソースを制御できるエンティティです。 サービスは、ソフトウェア、ハードウェア、またはハードウェアとソフトウェアの組み合わせとして実装する場合があります。 サービス レコードは、すべてのサービス属性の一覧で構成されます。
 
-使用して、SDP プロトコルとそのサービスをアドバタイズできます L2CAP サーバー プロファイル ドライバー レジスタに自体を L2CAP 接続要求を受け入れるように後、 [ **IOCTL\_両方\_SDP\_送信\_レコード**](https://msdn.microsoft.com/library/windows/hardware/ff536693)または[ **IOCTL\_両方\_SDP\_送信\_レコード\_WITH\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff536694)します。 各 SDP レコードは、ストリームとして送信されます。 プロファイルのドライバーは、IOCTL を使用している場合\_両方\_SDP\_送信\_レコード\_WITH\_については、プロファイルのドライバーの付加、 [**両方\_SDP\_レコード**](https://msdn.microsoft.com/library/windows/hardware/ff536650)生のストリームは、SDP の一部ではない追加の属性を格納する構造体自体を記録します。 これらには、要求元のクライアントのセキュリティ要件、SDP レコード、クラスからのデバイス (CoD) は、レコードおよびレコード自体の長さのパブリケーション オプションが含まれます。
+使用して、SDP プロトコルとそのサービスをアドバタイズできます L2CAP サーバー プロファイル ドライバー レジスタに自体を L2CAP 接続要求を受け入れるように後、 [ **IOCTL\_両方\_SDP\_送信\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_bth_sdp_submit_record)または[ **IOCTL\_両方\_SDP\_送信\_レコード\_WITH\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_bth_sdp_submit_record_with_info)します。 各 SDP レコードは、ストリームとして送信されます。 プロファイルのドライバーは、IOCTL を使用している場合\_両方\_SDP\_送信\_レコード\_WITH\_については、プロファイルのドライバーの付加、 [**両方\_SDP\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ns-bthioctl-_bth_sdp_record)生のストリームは、SDP の一部ではない追加の属性を格納する構造体自体を記録します。 これらには、要求元のクライアントのセキュリティ要件、SDP レコード、クラスからのデバイス (CoD) は、レコードおよびレコード自体の長さのパブリケーション オプションが含まれます。
 
 プロファイルのドライバーはそのサービスをアドバタイズされた後、他の Bluetooth デバイスが検索またはこれらのサービスを参照できます。 SDP サービスの詳細については、次を参照してください。 [SDP サービスの情報へのアクセス](accessing-sdp-service-information.md)します。
 
-プロファイルのドライバーが使用するには SDP をサービスのアドバタイズを停止するには、 [ **IOCTL\_両方\_SDP\_削除\_レコード**](https://msdn.microsoft.com/library/windows/hardware/ff536690)します。
+プロファイルのドライバーが使用するには SDP をサービスのアドバタイズを停止するには、 [ **IOCTL\_両方\_SDP\_削除\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthioctl/ni-bthioctl-ioctl_bth_sdp_remove_record)します。
 
  
 

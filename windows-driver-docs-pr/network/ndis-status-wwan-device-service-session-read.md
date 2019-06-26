@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION_READ ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d14f91a60d62edc0c64e81c2beb91efefe3e78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 037d00c44b3a6f0973c6182165ac1afcf619dfe1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369027"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366612"
 ---
 # <a name="ndisstatuswwandeviceservicesessionread"></a>NDIS\_状態\_WWAN\_デバイス\_サービス\_セッション\_読み取り
 
@@ -20,9 +20,9 @@ ms.locfileid: "63369027"
 
 ミニポート ドライバーでは、要請していないイベントを送信するのにこの通知のみ使用できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_サービス\_セッション\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/hh831859)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_サービス\_セッション\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_read)構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -45,7 +45,7 @@ ms.locfileid: "63369027"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_デバイス\_サービス\_セッション\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/hh831859)
+[**NDIS\_WWAN\_デバイス\_サービス\_セッション\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_read)
 
  
 

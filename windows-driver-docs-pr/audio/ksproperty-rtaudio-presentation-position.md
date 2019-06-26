@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 01/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa3bc9613bd4e57d3b181015ddee9baeaeb8b3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d525a9443ee6ce36da7a4dbb91756fe83ba9eb3
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332667"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391641"
 ---
 # <a name="kspropertyrtaudiopresentationposition"></a>KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置
 
@@ -50,16 +50,16 @@ KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置がストリームのプ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position"><STRONG>KSAUDIO_PRESENTATION_POSITION</STRONG></a></p></td>
 </tr>
 </tbody>
 </table>
  
 
-プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 要求を送信する前に、クライアントは、オーディオ データ ストリームの現在のカーソル位置を示す値を持つ構造体を読み込みます。
+プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 要求を送信する前に、クライアントは、オーディオ データ ストリームの現在のカーソル位置を示す値を持つ構造体を読み込みます。
 
-プロパティの値は、 [ **KSAUDIO\_プレゼンテーション\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450865)オーディオ データ ストリーム内の最近使用したプレゼンテーション位置を表す構造体です。
+プロパティの値は、 [ **KSAUDIO\_プレゼンテーション\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position)オーディオ データ ストリーム内の最近使用したプレゼンテーション位置を表す構造体です。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
@@ -70,7 +70,7 @@ KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置プロパティ要求が
 
 OS は、オーディオ ストリームとビデオやその他のアクティビティを同期する上位の層を許可するには、ドライバーから最近使用したプレゼンテーションの位置情報を取得するドライバーからこのプロパティを定期的に取得可能性があります。
 
-U64PositionInBlocks メンバーでは、値が返される[ **KSAUDIO\_プレゼンテーション\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450865) KSPROPERTYによって返されるパケットの数と一致する必要があります\_RTAUDIO\_PACKETCOUNT とパケットの数のドライバーの解釈 SetWritePacket に渡されます。 つまり、パケットが 0 の最初のサンプルには、ブロック 0 です。
+U64PositionInBlocks メンバーでは、値が返される[ **KSAUDIO\_プレゼンテーション\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position) KSPROPERTYによって返されるパケットの数と一致する必要があります\_RTAUDIO\_PACKETCOUNT とパケットの数のドライバーの解釈 SetWritePacket に渡されます。 つまり、パケットが 0 の最初のサンプルには、ブロック 0 です。
 
 限りませんその KSPROPERTY\_RTAUDIO\_PACKETCOUNT と KSPROPERTY\_RTAUDIO\_プレゼンテーション\_位置、同時に、呼び出された場合は値を返し、同じサンプルを参照してください。 KSPROPERTY\_RTAUDIO\_PACKETCOUNT が WaveRT バッファーから KSPROPERTY 中に、ハードウェアに転送されるサンプルに関する情報を返します\_RTAUDIO\_プレゼンテーション\_位置を返します。システムの出力を紹介するサンプルについて説明します。 これらは、2 つの異なる情報です。
 

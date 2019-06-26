@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a802b18e53834bd36ae655177f994ee920c05767
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc5079d4dfde0a07f088dec71e88c5378a8bea52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380088"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363020"
 ---
 # <a name="devpkeydevicesaferemovalrequiredoverride"></a>DEVPKEY_Device_SafeRemovalRequiredOverride
 
@@ -60,7 +60,7 @@ DEVPKEY_Device_SafeRemovalRequiredOverride デバイス プロパティは、デ
 
 -   DEVPROP_TRUE に DEVPKEY_Device_SafeRemovalRequiredOverride デバイスのプロパティを設定し、デバイス インスタンスが取り外し可能またはリムーバブル先祖、PnP セット DEVPROP_TRUE DEVPKEY_Device_SafeRemovalRequired デバイス プロパティを持つし、使用しない場合、ヒューリスティックです。
 
-    **注**  デバイス インスタンスは、リムーバブル デバイスの機能が設定されている場合は、リムーバブルと見なされます。 詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](https://msdn.microsoft.com/library/windows/hardware/ff549564)します。
+    **注**  デバイス インスタンスは、リムーバブル デバイスの機能が設定されている場合は、リムーバブルと見なされます。 詳細については、次を参照してください。[リムーバブル デバイスの機能の概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-the-removable-device-capability)します。
 
      
 
@@ -68,7 +68,7 @@ DEVPKEY_Device_SafeRemovalRequiredOverride デバイス プロパティは、デ
 
 -   場合 DEVPKEY_Device_SafeRemovalRequiredOverride デバイスのプロパティが設定か DEVPROP_FALSE に設定、PnP DEVPKEY_Device_SafeRemovalRequired デバイス プロパティ設定によって、ヒューリスティックを使用して決定される値にします。
 
-DEVPKEY_Device_SafeRemovalRequiredOverride の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)します。 呼び出すことによってこの値を設定することもできます。 [ **SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)します。
+DEVPKEY_Device_SafeRemovalRequiredOverride の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)します。 呼び出すことによってこの値を設定することもできます。 [ **SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -93,9 +93,9 @@ DEVPKEY_Device_SafeRemovalRequiredOverride の値を取得するには呼び出�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)
+[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

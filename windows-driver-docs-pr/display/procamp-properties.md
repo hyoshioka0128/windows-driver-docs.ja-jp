@@ -6,12 +6,12 @@ keywords:
 - ProcAmp の WDK DirectX va なので、プロパティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 399d2975d06360626c3590cd247b951cdea6d590
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 612db24bf80a455c7e8fb5dea4fc85e9b0157d1e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363709"
 ---
 # <a name="procamp-properties"></a>ProcAmp プロパティ
 
@@ -19,7 +19,7 @@ ms.locfileid: "63352188"
 ## <span id="ddk_procamp_properties_gg"></span><span id="DDK_PROCAMP_PROPERTIES_GG"></span>
 
 
-ディスプレイ ドライバーには、VMR ProcAmp プロパティについては、ドライバーを照会したときに最小値、最大値、ステップのサイズ、および既定値を指定する必要があります。 ドライバーは、この情報への呼び出しに応答を指定できます、 [ **ProcAmpControlQueryRange** ](https://msdn.microsoft.com/library/windows/hardware/ff563950)関数。 ドライバーは、ProcAmp プロパティの値を返すことができます、次に示します (すべての値が浮動小数点数) の推奨される設定。
+ディスプレイ ドライバーには、VMR ProcAmp プロパティについては、ドライバーを照会したときに最小値、最大値、ステップのサイズ、および既定値を指定する必要があります。 ドライバーは、この情報への呼び出しに応答を指定できます、 [ **ProcAmpControlQueryRange** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-procampcontrolqueryrange)関数。 ドライバーは、ProcAmp プロパティの値を返すことができます、次に示します (すべての値が浮動小数点数) の推奨される設定。
 
 <table>
 <colgroup>

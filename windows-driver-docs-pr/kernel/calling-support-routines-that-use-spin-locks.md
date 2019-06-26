@@ -12,12 +12,12 @@ keywords:
 - スピン ロック WDK カーネルをキューに登録
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64aef56ef4001526e43badff3e88767a3aa16c84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0be17e4e695f64b6cc7e10730f6fcc390d9bea3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338596"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385259"
 ---
 # <a name="calling-support-routines-that-use-spin-locks"></a>スピン ロックを使用するサポート ルーチンの呼び出し
 
@@ -25,15 +25,15 @@ ms.locfileid: "63338596"
 
 
 
-呼び出す[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)または[ **KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)ディスパッチに現在のプロセッサ上のIRQLを設定\_レベルに対応する呼び出しまで[ **KeReleaseSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553145)または[ **KeReleaseInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553130)復元前の IRQL します。 その結果、ドライバーは IRQL で実行する必要があります&lt;= ディスパッチ\_レベルの呼び出し時に**KeAcquireSpinLock**または**KeAcquireInStackQueuedSpinLock**します。
+呼び出す[ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)または[ **KeAcquireInStackQueuedSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))ディスパッチに現在のプロセッサ上のIRQLを設定\_レベルに対応する呼び出しまで[ **KeReleaseSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)または[ **KeReleaseInStackQueuedSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock)復元前の IRQL します。 その結果、ドライバーは IRQL で実行する必要があります&lt;= ディスパッチ\_レベルの呼び出し時に**KeAcquireSpinLock**または**KeAcquireInStackQueuedSpinLock**します。
 
-呼び出し元[ **KeAcquireSpinLockAtDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff551921)、 [ **KeAcquireInStackQueuedSpinLockAtDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff551908)、 [ **KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553137)、および[ **KeReleaseSpinLockFromDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff553150) IRQL で既に実行されているため、高速実行 =ディスパッチ\_のため、これらのルーチンをサポートのレベルが、現在のプロセッサで IRQL にリセットしない必要があります。 したがって、これが致命的なエラーを呼び出すのほとんどの Windows プラットフォームで**KeAcquireSpinLockAtDpcLevel**または**KeAcquireInStackQueuedSpinLockAtDpcLevel** IRQL ディスパッチ未満で実行中に\_レベル。 取得されたスピン ロックを解除するエラーも**KeAcquireSpinLock**呼び出して**KeReleaseSpinLockFromDpcLevel**呼び出し元が元の IRQL が復元されません。
+呼び出し元[ **KeAcquireSpinLockAtDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)、 [ **KeAcquireInStackQueuedSpinLockAtDpcLevel**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551908(v=vs.85))、 [ **KeReleaseInStackQueuedSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlockfromdpclevel)、および[ **KeReleaseSpinLockFromDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel) IRQL で既に実行されているため、高速実行 =ディスパッチ\_のため、これらのルーチンをサポートのレベルが、現在のプロセッサで IRQL にリセットしない必要があります。 したがって、これが致命的なエラーを呼び出すのほとんどの Windows プラットフォームで**KeAcquireSpinLockAtDpcLevel**または**KeAcquireInStackQueuedSpinLockAtDpcLevel** IRQL ディスパッチ未満で実行中に\_レベル。 取得されたスピン ロックを解除するエラーも**KeAcquireSpinLock**呼び出して**KeReleaseSpinLockFromDpcLevel**呼び出し元が元の IRQL が復元されません。
 
 ルーチン、役員を保持するなど、ロックを回転、 <strong>ExInterlocked*Xxx</strong><em>、IRQL で通常実行 = ディスパッチ\_スピン ロックを解放する呼び出し元に制御を返すまでのレベルします。ただし、ドライバーの可能性は[ </em>InterruptService<em> ](<https://msdn.microsoft.com/library/windows/hardware/ff547958>)ルーチンと[ </em>SynchCritSection<em> ](<https://msdn.microsoft.com/library/windows/hardware/ff563928>)するルーチン (DIRQL で実行) されます。呼び出す特定**ExInterlocked</em>Xxx*** ルーチンなど、 **ExInterlocked*Xxx*一覧**ルーチン、スピン限りルーチンに渡されるロックは、ISR によって排他的に使用し、 *SynchCritSection*ルーチン。
 
 関連付けられている割り込みオブジェクトのセットの DIRQL 割り込みスピン ロックを保持する各ルーチンを実行します。 したがって、ドライバーを呼び出す必要がありますいない**KeAcquireSpinLock**と**KeReleaseSpinLock**もその ISR から、executive スピン ロックを使用するその他の任意のルーチンまたは*SynchCritSection*ルーチン。 このような呼び出しは、ユーザーに自分のマシンの再起動を必要とする、システムのデッドロックを引き起こす可能性のあるエラーです。 ドライバーの ISR ことに注意してくださいまたは*SynchCritSection*ルーチンの呼び出し、 **ExInterlocked*Xxx*一覧**、日常的なドライバーを再利用できません、に渡す、スピンロック**ExInterlocked*Xxx*一覧**ルーチンの呼び出しで、 **Ke*Xxx*スピンロック**または**Ke*Xxx*SpinLock*Xxx*DpcLevel**ルーチンをサポートします。
 
-そのルーチンを呼び出すことができる場合、ドライバーは multivector ISR または 1 つ以上の ISR、 [ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302) IRQL で最大の実行中に、 *SynchronizeIrql*値接続されているときに割り込みが関連付けられているオブジェクトに指定します。
+そのルーチンを呼び出すことができる場合、ドライバーは multivector ISR または 1 つ以上の ISR、 [ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution) IRQL で最大の実行中に、 *SynchronizeIrql*値接続されているときに割り込みが関連付けられているオブジェクトに指定します。
 
  
 

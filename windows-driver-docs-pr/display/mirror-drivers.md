@@ -13,12 +13,12 @@ keywords:
 - 支援技術とミラー ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c977d484fa9f698afb2db77400efd5a2b821a740
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 432931f02678104afb7d657b26aeff5b5a40ca4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352428"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385591"
 ---
 # <a name="mirror-drivers"></a>ミラー ドライバー
 
@@ -108,19 +108,19 @@ GDI のサポート、*仮想デスクトップ*し、ミラーのデバイス�
 
 -   ユーザー モード サービスがミラー ドライバーの設定を維持するために使用することをお勧めします。 このアプリケーションはいることを確認、ドライバーがブート時に正しく読み込まれて、WM 経由での表示の変更の通知を取得することによって、デスクトップへの変更に適切に応答できます\_DISPLAYCHANGE メッセージ。
 
--   GDI は、ドライバーの外接する四角形と交差する DDI 描画操作、2 D グラフィックスのミラー ドライバーを呼び出します。 いる GDI チェックを実行しない、外接する四角形、サーフェスがデバイスの形式のビットマップ; である場合に注意してください。つまり場合、 [ **SURFOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff569901)が、 **i 種類**%s 型の\_DEVBITMAP します。
+-   GDI は、ドライバーの外接する四角形と交差する DDI 描画操作、2 D グラフィックスのミラー ドライバーを呼び出します。 いる GDI チェックを実行しない、外接する四角形、サーフェスがデバイスの形式のビットマップ; である場合に注意してください。つまり場合、 [ **SURFOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_surfobj)が、 **i 種類**%s 型の\_DEVBITMAP します。
 
--   常に、グローバル変数を使用せず、ミラー ドライバーを実装する必要があります。 すべての状態が存在する必要があります、 *PDEV*ドライバー。 GDI は呼び出す[ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)ビデオのミニポート ドライバーによって作成された各ハードウェア デバイスの拡張機能用です。
+-   常に、グローバル変数を使用せず、ミラー ドライバーを実装する必要があります。 すべての状態が存在する必要があります、 *PDEV*ドライバー。 GDI は呼び出す[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)ビデオのミニポート ドライバーによって作成された各ハードウェア デバイスの拡張機能用です。
 
 -   ミラー ドライバーが、DirectDraw をサポートしていません。
 
--   ミラー ドライバーが、GCAPS を設定する必要があります\_階層フラグを**TRUE**で、 **flGraphicsCaps**のメンバー、 [ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835)構造体。
+-   ミラー ドライバーが、GCAPS を設定する必要があります\_階層フラグを**TRUE**で、 **flGraphicsCaps**のメンバー、 [ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)構造体。
 
--   ユーザー補助のミラー ドライバーが、GCAPS2 を設定する必要があります\_EXCLUDELAYERED と GCAPS2\_INCLUDEAPIBITMAPS フラグを**TRUE**で、 **flGraphicsCaps2** のメンバー[ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835)構造体。
+-   ユーザー補助のミラー ドライバーが、GCAPS2 を設定する必要があります\_EXCLUDELAYERED と GCAPS2\_INCLUDEAPIBITMAPS フラグを**TRUE**で、 **flGraphicsCaps2** のメンバー[ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)構造体。
 
--   ミラー ドライバーを実装してブラシの実現をサポートできます必要に応じて[ **DrvRealizeBrush**](https://msdn.microsoft.com/library/windows/hardware/ff556273)します。
+-   ミラー ドライバーを実装してブラシの実現をサポートできます必要に応じて[ **DrvRealizeBrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvrealizebrush)します。
 
-GDI では、単一およびマルチ モニターの両方のシステムで実行する同じドライバーをできます。 マルチ モニター システムでのドライバーは、グローバル デスクトップ内での位置を追跡のみ必要があります。 GDI 提供されるたびに、Win32 のドライバーには、この位置**ChangeDisplaySettings**ときに、ユーザーに動的に変化するかなど、デスクトップで、モニターの配置コントロール パネルの 表示プログラムを使用して、呼び出しが発生します。 GDI の更新プログラム、 **dmPosition**のメンバー、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)このような変更が発生した場合は、それに応じて構造体します。 ドライバーが実装することでこのような変更の通知を受信できる[ **DrvNotify**](https://msdn.microsoft.com/library/windows/hardware/ff556252)します。 参照してください[ミラー ドライバーのインストール](mirror-driver-installation.md)詳細についてはします。
+GDI では、単一およびマルチ モニターの両方のシステムで実行する同じドライバーをできます。 マルチ モニター システムでのドライバーは、グローバル デスクトップ内での位置を追跡のみ必要があります。 GDI 提供されるたびに、Win32 のドライバーには、この位置**ChangeDisplaySettings**ときに、ユーザーに動的に変化するかなど、デスクトップで、モニターの配置コントロール パネルの 表示プログラムを使用して、呼び出しが発生します。 GDI の更新プログラム、 **dmPosition**のメンバー、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)このような変更が発生した場合は、それに応じて構造体します。 ドライバーが実装することでこのような変更の通知を受信できる[ **DrvNotify**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvnotify)します。 参照してください[ミラー ドライバーのインストール](mirror-driver-installation.md)詳細についてはします。
 
 **注**  ミラー ドライバーは、このような精度で、クライアント側でレンダリングが困難な可能性がある場合に正確にピクセル単位で正確にレンダリングする必要はありません。 たとえば、ミラー化されたイメージを受信アダプターまたはモニターは、レンダリングする必要はありません[グリッド交差量子化](cosmetic-lines.md)ミラー化されているアダプター/モニターと同じ精度で (GIQ) 線画と多角形を塗りつぶします。
 

@@ -4,17 +4,17 @@ description: このセクションでは、NDKPI リスナー、コネクタ、�
 ms.assetid: 956D3550-11C8-48D0-BCF4-9027515C7C0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 192f287d210db880df875b6a8e8a6daeb737bf19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1077bc6630531ca3000e56f0b1be3c62212141f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361838"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364043"
 ---
 # <a name="ndkpi-listeners-connectors-and-endpoints"></a>NDKPI リスナー、コネクタ、およびエンドポイント
 
 
-NDK コンシューマーを呼び出すことによって、NDK コネクタの接続、 *NdkConnect* ([*NDK\_FN\_CONNECT*](https://msdn.microsoft.com/library/windows/hardware/hh439865)) または*NdkConnectWithSharedEndpoint* ([*NDK\_FN\_CONNECT\_WITH\_SHARED\_エンドポイント*](https://msdn.microsoft.com/library/windows/hardware/hh439868)) 関数。
+NDK コンシューマーを呼び出すことによって、NDK コネクタの接続、 *NdkConnect* ([*NDK\_FN\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_connect)) または*NdkConnectWithSharedEndpoint* ([*NDK\_FN\_CONNECT\_WITH\_SHARED\_エンドポイント*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)) 関数。
 
 接続されている状態にある各コネクタでは、確立された NDK 接続のローカル側を表す基になるエンドポイントにもあります。
 
@@ -26,7 +26,7 @@ NDK プロバイダーがなんらかの各暗黙的または明示的なエン�
 
 ### <a name="reference-counting-for-non-shared-endpoints"></a>エンドポイントの (非共有) に対して参照カウント
 
-コンシューマーを呼び出すと、 *NdkListen* ([*NDK\_FN\_リッスン*](https://msdn.microsoft.com/library/windows/hardware/hh439902)) 関数、プロバイダーは、暗黙的なエンドポイントを作成します。 この暗黙的なエンドポイントでプロバイダーは次のように参照カウントを維持する必要があります。
+コンシューマーを呼び出すと、 *NdkListen* ([*NDK\_FN\_リッスン*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_listen)) 関数、プロバイダーは、暗黙的なエンドポイントを作成します。 この暗黙的なエンドポイントでプロバイダーは次のように参照カウントを維持する必要があります。
 
 -   エンドポイントの参照カウントには、リスナー自体の参照を追加します。
 -   各リスナーで受け入れられるコネクタへの参照を追加します。

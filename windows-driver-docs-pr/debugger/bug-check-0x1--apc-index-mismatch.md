@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0204a326523e449a853352eedb77275b26882a58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9396d9c9857af0d86a7925104127dcaf3826d609
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347818"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362390"
 ---
 # <a name="bug-check-0x1-apcindexmismatch"></a>バグ チェック 0x1:APC\_インデックス\_が一致しません
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347818"
 APC\_インデックス\_の不一致のバグ チェックが 0x00000001 の値を持ちます。 APC (非同期プロシージャ コール) の状態のインデックスで不一致が生じていますが、これを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="apcindexmismatch-parameters"></a>APC\_インデックス\_不一致パラメーター
@@ -96,7 +96,7 @@ Windows デバッガーを使用してこの問題に取り組むを備えてい
 ## <a name="remarks"></a>注釈
 -------
 
-これは、カーネルの内部エラーです。 このエラーは、システムの呼び出しからの終了時に発生します。 このバグ チェックの考えられる原因は、ファイル システムまたはドライバーが一致しない、一連のシステム呼び出しを入力するか、保護された、または重要な領域のままにします。 に対する各呼び出しなど[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)に一致する呼び出しがあります。 [ **KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)します。 ドライバーを開発している場合を使用できます[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)、静的分析ツールが、ドライバーを出荷する前に、コード内の問題を検出するために、Windows ドライバー キットで使用できます。 Static Driver Verifier の実行、 [CriticalRegions](https://msdn.microsoft.com/library/windows/hardware/ff543603)ソース コードがこれらのシステムを使用することを確認するルールを正しい順序で呼び出します。
+これは、カーネルの内部エラーです。 このエラーは、システムの呼び出しからの終了時に発生します。 このバグ チェックの考えられる原因は、ファイル システムまたはドライバーが一致しない、一連のシステム呼び出しを入力するか、保護された、または重要な領域のままにします。 に対する各呼び出しなど[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)に一致する呼び出しがあります。 [ **KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)します。 ドライバーを開発している場合を使用できます[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)、静的分析ツールが、ドライバーを出荷する前に、コード内の問題を検出するために、Windows ドライバー キットで使用できます。 Static Driver Verifier の実行、 [CriticalRegions](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-criticalregions)ソース コードがこれらのシステムを使用することを確認するルールを正しい順序で呼び出します。
 
  
 

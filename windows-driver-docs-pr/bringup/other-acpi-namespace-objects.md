@@ -4,12 +4,12 @@ description: デバイスの特定のクラスがいくつか、追加の ACPI �
 ms.assetid: 41EA8C3D-F2C9-4BA9-A839-FCB66F271E3C
 ms.date: 05/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c3c9c26dd4de717c6c386f427f3e5cb51a14bdc7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 321512a06471120b820a42e19701c68d28cc959e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364532"
 ---
 # <a name="other-acpi-namespace-objects"></a>その他の ACPI 名前空間オブジェクト
 
@@ -24,7 +24,7 @@ ACPI 名前空間では、プロセッサを列挙する必要があります。
 
 ## <a name="display-specific-objects"></a>表示に固有のオブジェクト
 
-表示に固有のオブジェクトに関する詳細については、の Appendix B「ビデオの拡張機能」を参照してください、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+表示に固有のオブジェクトに関する詳細については、の Appendix B「ビデオの拡張機能」を参照してください、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
 ### <a name="display-specific-object-requirements"></a>オブジェクトの表示に固有の要件
 
@@ -85,7 +85,7 @@ Windows デバイスに固有のメソッドを定義します (\_DSM) USB サ�
 
 Windows では、可視性と、システム上の の USB ポートの接続-機能を把握する必要があります。 これは、ポートやデバイスについてユーザーに正確な情報を提供するために必要です。 2 つのオブジェクト、デバイスの物理的な場所 (\_PLD) および USB ポートの機能 (\_UPC)、この目的に使用されます。 詳細については、以下を参照してください。
 
-- 6.1.6 のセクションでは、「デバイスの Id オブジェクト」と 9.13.1、"USB 2.0 ホスト コント ローラーと\_UPC と\_PLD"で、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+- 6\.1.6 のセクションでは、「デバイスの Id オブジェクト」と 9.13.1、"USB 2.0 ホスト コント ローラーと\_UPC と\_PLD"で、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 - [ACPI を使用してコンピューターに USB ポートを構成する](https://docs.microsoft.com/windows-hardware/drivers/install/using-acpi-to-configure-usb-ports-on-a-computer)します。
 
 ## <a name="sd-host-controllers-and-devices"></a>SD ホスト コント ローラーとデバイス
@@ -147,13 +147,13 @@ SD に接続されたデバイスは、SD バス ドライバーによって列�
 - 提供するカメラ デバイス、 \_PLD オブジェクト。
 - (GPIO 割り込みまたは I/O の接続、SPB 接続など)、カメラのドライバーで必要なすべての側波帯リソースがあるかどうか、 \_CRS オブジェクトでは、これらのリソースが提供されます。
 
-\_PLD オブジェクト、**パネル**フィールド (ビット 67 69)**カバー**フィールド (ビット 66) と**ドッキング**サーフェス上の値を修正するフィールド (ビット 65) が設定されて、カメラはマウントされます。 その他のすべてのフィールドは省略できます。 など、タブレット、ハンドヘルド モバイル デバイスの前面パネルは、表示画面を保持している 1 つを起点と左下隅にある縦向きに画面を表示するとき。 この参照を使用して、"Front"ことを示します、カメラが、[戻る] カメラがすぐに表示することを示します (webcam)、ユーザーを表示するユーザー (静止画またはビデオ カメラ) から。 詳細についてを参照してください、セクション、6.1.8"\_PLD (デバイスの物理的な場所)"で、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+\_PLD オブジェクト、**パネル**フィールド (ビット 67 69)**カバー**フィールド (ビット 66) と**ドッキング**サーフェス上の値を修正するフィールド (ビット 65) が設定されて、カメラはマウントされます。 その他のすべてのフィールドは省略できます。 など、タブレット、ハンドヘルド モバイル デバイスの前面パネルは、表示画面を保持している 1 つを起点と左下隅にある縦向きに画面を表示するとき。 この参照を使用して、"Front"ことを示します、カメラが、[戻る] カメラがすぐに表示することを示します (webcam)、ユーザーを表示するユーザー (静止画またはビデオ カメラ) から。 詳細についてを参照してください、セクション、6.1.8"\_PLD (デバイスの物理的な場所)"で、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
 ### <a name="acpi-namespace-hierarchy-and-adr-for-embedded-usb-devices"></a>ACPI 名前空間の階層と\_ADR の組み込みの USB デバイス
 
 組み込みの USB デバイスを ACPI 名前空間を追加する場合デバイス ノードの階層する必要がありますと正確に一致する Windows USB ドライバーで列挙されるデバイスの。 これは、「接続ビュー」モードで Windows デバイス マネージャを調べることで確認できます。 USB ホスト コント ローラーから開始し、組み込みのデバイスまで拡張する、階層全体を含める必要があります。 デバイス マネージャーで指定された各デバイスでデバイスのファームウェアを報告する必要があるアドレスは、"Address"プロパティ\_ADR します。
 
-[ACPI 5.0 仕様](https://www.uefi.org/specifications)USB デバイスのアドレスを次のように定義します。
+[ACPI 5.0 仕様](https://uefi.org/specifications)USB デバイスのアドレスを次のように定義します。
 
 |              |                                                                                                                  |
 |--------------|------------------------------------------------------------------------------------------------------------------|

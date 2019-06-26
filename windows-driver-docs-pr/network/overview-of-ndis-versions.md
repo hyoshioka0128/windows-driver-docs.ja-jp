@@ -9,21 +9,21 @@ keywords:
 - 互換性の WDK ネットワーク
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c15cbac0343e4dd952e0d8fd9b56cbb947545927
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: ed2f1c0546c4aa1186f152d87fdcab10a86d2733
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384377"
 ---
 # <a name="overview-of-ndis-versions"></a>NDIS バージョンの概要
 
 Microsoft Windows の複数のバージョンの NDIS ドライバーを記述する場合は使用している機能は、各 Windows バージョンではサポートします。 新機能が、各リリースでは、NDIS に追加されました。 その他の機能が使用できなくなったし、以降のバージョンの NDIS から削除されました。
 
-Windows Vista と以降のオペレーティング システムおよび NDIS 6.0 以降のドライバーは、この設計ガイド ドキュメントのセットを対象します。 Windows および NDIS の以前のバージョンのドキュメントは、ドキュメントの以前のリリースに含まれます。 Windows XP および NDIS 5.1 ドキュメントについては、次を参照してください。 [Windows 2000 および Windows XP のネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff565849)します。
+Windows Vista と以降のオペレーティング システムおよび NDIS 6.0 以降のドライバーは、この設計ガイド ドキュメントのセットを対象します。 Windows および NDIS の以前のバージョンのドキュメントは、ドキュメントの以前のリリースに含まれます。 Windows XP および NDIS 5.1 ドキュメントについては、次を参照してください。 [Windows 2000 および Windows XP のネットワーク設計ガイド](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565849(v=vs.85))します。
 
 > [!NOTE]
-> ドライバーは呼び出すことで NDIS バージョンをクエリすることができます、 [**エミュレーター**](https://msdn.microsoft.com/library/windows/hardware/ff564511) 関数と、 *キーワード* パラメーターに設定 **NdisVersion**. 
+> ドライバーは呼び出すことで NDIS バージョンをクエリすることができます、 [**エミュレーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration) 関数と、 *キーワード* パラメーターに設定 **NdisVersion**. 
 
 Windows オペレーティング システム、Microsoft Windows Driver Kit (WDK)、およびバージョンの NDIS ドライバー開発キット (DDK) バージョンでサポートおよび NDIS のバージョン間での主な NDIS 機能のサポートについては、次の表で説明します。
 
@@ -40,12 +40,12 @@ Windows オペレーティング システム、Microsoft Windows Driver Kit (WD
 | Windows Me | Windows NT 4.0 DDK または Vxd は、Windows 98 DDK | 5.0 | X | X | X |
 | Windows NT 3.5 | Windows NT 3.5 DDK | 3.0 |  |  |  |
 | Windows NT 4.0 | Windows NT 4.0 DDK | 4.0 |  |  |  |
-|  |  | これらの機能を追加するには。 <ul><li>[**MiniportSendPackets**](https://msdn.microsoft.com/library/windows/hardware/ff550524)</li><li>[**ProtocolReceivePacket**](https://msdn.microsoft.com/library/windows/hardware/ff563251)</li><li>[**MiniportAllocateComplete**](https://msdn.microsoft.com/library/windows/hardware/ff549352)</li></ul> |
+|  |  | これらの機能を追加するには。 <ul><li>[**MiniportSendPackets**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff550524(v=vs.85))</li><li>[**ProtocolReceivePacket**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff563251(v=vs.85))</li><li>[**MiniportAllocateComplete**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549352(v=vs.85))</li></ul> |
 | Windows NT 4.0 SP3 | 更新の NDIS ヘッダーとライブラリを Windows NT DDK | 4.1 | X | X | X |
 | Windows 2000 | Windows 2000 DDK | 5.0 | X | X | X |
 |  |  | サポートが追加されました。 <ul><li>Windows 95/98/自分と互換性のある新しい INF ファイルの形式</li><li>プラグ アンド プレイと電源管理</li><li>WMI に関するページ</li><li>LBFO</li><li>スキャッター/ギャザー DMA を逆シリアル化されたミニポート ドライバー サポート</li></ul> |
 | Windows XP | 参照してください[Windows ハードウェア開発キットのダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721) | 5.1 | X | X | X |
-|  |  | サポートが追加されました。 <ul><li>[**MiniportCancelSendPackets**](https://msdn.microsoft.com/library/windows/hardware/ff549359)</li><li>[**MiniportPnPEventNotify**](https://msdn.microsoft.com/library/windows/hardware/ff550487)</li><li>[**MiniportShutdown**](https://msdn.microsoft.com/library/windows/hardware/ff550533)</li><li>[**NdisCancelSendPackets**](https://msdn.microsoft.com/library/windows/hardware/ff550821)</li><li>[**NdisCopyFromPacketToPacketSafe**](https://msdn.microsoft.com/library/windows/hardware/ff551071)</li><li>[**NdisGeneratePartialCancelId**](https://msdn.microsoft.com/library/windows/hardware/ff562623)</li><li>[**NdisGetFirstBufferFromPacketSafe**](https://msdn.microsoft.com/library/windows/hardware/ff552066)</li><li>[**NdisGetPoolFromPacket**](https://msdn.microsoft.com/library/windows/hardware/ff552090)</li><li>[**NdisGetSharedDataAlignment**](https://msdn.microsoft.com/library/windows/hardware/ff562671)</li><li>[**NdisIMGetCurrentPacketStack**](https://msdn.microsoft.com/library/windows/hardware/ff552155)</li><li>[**NdisIMNotifyPnPEvent**](https://msdn.microsoft.com/library/windows/hardware/ff552203)</li><li>[**NdisQueryPendingIOCount**](https://msdn.microsoft.com/library/windows/hardware/ff554456)</li><li>[**NDIS\_取得\_パケット\_キャンセル\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff556988)</li><li>[**NDIS\_設定\_パケット\_キャンセル\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff557195)</li><li>[OID\_GEN\_マシン\_名](https://msdn.microsoft.com/library/windows/hardware/ff569596)</li><li>新しいミニポート ドライバー属性のフラグ</li><li>統計カウンターの 64 ビット</li><li>リモートの NDIS</li><li>スキャッター/ギャザーのサポートはシリアル化し、ミニポート ドライバーを逆シリアル化</li><li>中間ドライバー スタックのパケット</li><li>VLAN タグ付け</li><li>ESP の UDP カプセル化パケット (Windows Server 2003 のみ) の処理のオフロード</li><li>Wi-fi Protected Access (WPA) Windows XP sp1</li></ul> |
+|  |  | サポートが追加されました。 <ul><li>[**MiniportCancelSendPackets**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549359(v=vs.85))</li><li>[**MiniportPnPEventNotify**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff550487(v=vs.85))</li><li>[**MiniportShutdown**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff550533(v=vs.85))</li><li>[**NdisCancelSendPackets**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff550821(v=vs.85))</li><li>[**NdisCopyFromPacketToPacketSafe**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff551071(v=vs.85))</li><li>[**NdisGeneratePartialCancelId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgeneratepartialcancelid)</li><li>[**NdisGetFirstBufferFromPacketSafe**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552066(v=vs.85))</li><li>[**NdisGetPoolFromPacket**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552090(v=vs.85))</li><li>[**NdisGetSharedDataAlignment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetshareddataalignment)</li><li>[**NdisIMGetCurrentPacketStack**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552155(v=vs.85))</li><li>[**NdisIMNotifyPnPEvent**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff552203(v=vs.85))</li><li>[**NdisQueryPendingIOCount**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff554456(v=vs.85))</li><li>[**NDIS\_取得\_パケット\_キャンセル\_ID**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556988(v=vs.85))</li><li>[**NDIS\_設定\_パケット\_キャンセル\_ID**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557195(v=vs.85))</li><li>[OID\_GEN\_マシン\_名](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-machine-name)</li><li>新しいミニポート ドライバー属性のフラグ</li><li>統計カウンターの 64 ビット</li><li>リモートの NDIS</li><li>スキャッター/ギャザーのサポートはシリアル化し、ミニポート ドライバーを逆シリアル化</li><li>中間ドライバー スタックのパケット</li><li>VLAN タグ付け</li><li>ESP の UDP カプセル化パケット (Windows Server 2003 のみ) の処理のオフロード</li><li>Wi-fi Protected Access (WPA) Windows XP sp1</li></ul> |
 |  |  | ドロップのサポート: <ul><li>完全な Mac ドライバー</li><li>NDIS 3.0 プロトコル</li><li>**NdisQueryMapRegisterCount**</li><li>EISA バス</li></ul> |
 | Windows Vista | 参照してください[Windows ハードウェア開発キットのダウンロード](https://go.microsoft.com/fwlink/p/?linkid=239721) | 6.0 | X | X | X |
 |  |  | 次のように主要な機能強化は、クライアントとサーバーの両方のパフォーマンスが著しく向上を提供します。 <ul><li>ネットワーク データのパッケージ化</li><li>送信し、受信パス</li><li>実行時の再構成機能</li><li>DMA のスキャッター/ギャザー</li><li>フィルター ドライバー</li><li>受信したデータ処理のマルチプロセッサのスケーリング</li><li>Nic にオフロードすることの TCP タスク</li></ul> |

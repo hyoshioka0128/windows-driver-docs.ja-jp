@@ -7,12 +7,12 @@ keywords:
 - blit 操作 WDK DirectX 9.0 を拡張します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4269f3d0ed6899c4af7149c1f949c84692df79e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d07bfc1407ec2c6de09b8a352e296f0b308c309d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350134"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361231"
 ---
 # <a name="supporting-stretch-blit-operations"></a>ストレッチ ブリット操作のサポート
 
@@ -20,7 +20,7 @@ ms.locfileid: "63350134"
 ## <span id="ddk_supporting_stretch_blit_operations_gg"></span><span id="DDK_SUPPORTING_STRETCH_BLIT_OPERATIONS_GG"></span>
 
 
-ドライバーが伸縮ブリットを実行する方法は、それが実行されているプラットフォームに依存します。 Windows 98/Me プラットフォームときに、ドライバーの[ *DdBlt* ](https://msdn.microsoft.com/library/windows/hardware/ff549205)関数ブリット要求を受け取ると、ドライバーのクリッピング四角形領域からの stretch の係数を計算することができます、 **rOrigDest**と**rOrigSrc**のメンバー、 [ **DD\_BLTDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff550474)構造体であり、ブリットの実行時に計算を考慮操作です。
+ドライバーが伸縮ブリットを実行する方法は、それが実行されているプラットフォームに依存します。 Windows 98/Me プラットフォームときに、ドライバーの[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)関数ブリット要求を受け取ると、ドライバーのクリッピング四角形領域からの stretch の係数を計算することができます、 **rOrigDest**と**rOrigSrc**のメンバー、 [ **DD\_BLTDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_bltdata)構造体であり、ブリットの実行時に計算を考慮操作です。
 
 ドライバーで計算し、DDBLT ブリット要求を受信すると、拡張要素を記録する DirectX 9.0 と後で NT ベースのオペレーティング システムでは、\_拡張\_フラグと DDBLT\_拡張\_プレゼンテーション\_STRETCHFACTOR フラグのセット、 **dwFlags** DD のメンバー\_BLTDATA します。 ドライバーでクリッピングを行わないソースと変換先四角形領域の拡張の係数を計算する、 **rSrc**と**bltFX** DD のそれぞれのメンバー\_DDBLTでBLTDATA\_拡張\_プレゼンテーション\_STRETCHFACTOR セット。 ドライバーがで DDBLTFX 構造体の次のメンバーから変換先のクリッピング四角形の領域を取得する必要がありますに注意してください。 **bltFX**、内の情報を使用しないと、 **rDest**メンバー。
 

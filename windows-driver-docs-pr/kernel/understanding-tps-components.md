@@ -10,12 +10,12 @@ keywords:
 - リソース マネージャーでの TP の WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66708e2418a48d30492986900b278f39781817db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ed116920d1437ee962b9ca306b675bfeb204475
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355304"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382949"
 ---
 # <a name="understanding-tps-components"></a>TPS コンポーネントの概要
 
@@ -52,7 +52,7 @@ ms.locfileid: "63355304"
 
 システムでは、読み取りおよび書き込みのクライアントから要求への応答に、データベース内のデータを管理するリソース マネージャーを含める必要があります。 このリソース マネージャーは、クライアント トランザクションを関連付ける一連の読み取りと書き込み操作をできるようにするアプリケーション プログラミング インターフェイス (API) をエクスポートできました。
 
-リソース マネージャーが読み込まれるときにする必要があります自体が登録 KTM を呼び出して[ **ZwCreateTransactionManager** ](https://msdn.microsoft.com/library/windows/hardware/ff566430)と[ **ZwCreateResourceManager**](https://msdn.microsoft.com/library/windows/hardware/ff566427). 次に、リソース マネージャーは、トランザクションに参加できます。
+リソース マネージャーが読み込まれるときにする必要があります自体が登録 KTM を呼び出して[ **ZwCreateTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)と[ **ZwCreateResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager). 次に、リソース マネージャーは、トランザクションに参加できます。
 
 リソース マネージャーでデータ オブジェクトを作成、読み取り、データ オブジェクトに関連付けられているデータを書き込むようクライアントを有効にする関数のセットをサポートして、データ オブジェクトを閉じることがあります。 次の疑似コードは、クライアントからのコード シーケンスの例を示しています。
 
@@ -65,17 +65,17 @@ WriteData (IN DataHandle, IN Data);
 CloseDataObject (IN DataHandle);
 ```
 
-呼び出す前に、クライアント、リソース マネージャーの*CreateDataObject* 、日常的なクライアントする必要がありますトランザクション オブジェクトを作成の KTM を呼び出すことによって[ **ZwCreateTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566429)ルーチンを呼び出して、トランザクション オブジェクトの識別子を取得および[ **ZwQueryInformationTransaction**](https://msdn.microsoft.com/library/windows/hardware/ff567057)します。
+呼び出す前に、クライアント、リソース マネージャーの*CreateDataObject* 、日常的なクライアントする必要がありますトランザクション オブジェクトを作成の KTM を呼び出すことによって[ **ZwCreateTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransaction)ルーチンを呼び出して、トランザクション オブジェクトの識別子を取得および[ **ZwQueryInformationTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransaction)します。
 
-クライアントを呼び出すと、リソース マネージャーの*CreateDataObject* 、日常的なクライアントに渡すと、トランザクション オブジェクトの識別子、リソース マネージャー。 リソース マネージャーを呼び出すことができます[ **ZwOpenTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567033)トランザクション オブジェクト、しを識別するハンドルを取得することができますを呼び出す[ **ZwCreateEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff566422)トランザクションに参加登録します。
+クライアントを呼び出すと、リソース マネージャーの*CreateDataObject* 、日常的なクライアントに渡すと、トランザクション オブジェクトの識別子、リソース マネージャー。 リソース マネージャーを呼び出すことができます[ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)トランザクション オブジェクト、しを識別するハンドルを取得することができますを呼び出す[ **ZwCreateEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)トランザクションに参加登録します。
 
 この時点では、クライアントは、データ オブジェクトに対する操作の実行を開始できます。 クライアントでは、データ オブジェクトが作成されたときにトランザクション識別子が指定されて、ために、リソース マネージャーは、トランザクションにすべての読み取りおよび書き込み操作を割り当てることができます。
 
 Resource manager では、クライアントが永続的な結果を加えずを指定するデータ操作のすべての結果を記録する必要があります。 通常、リソース マネージャーは、トランザクション ログのストリームを操作の結果を記録するのに CLFS を使用します。
 
-KTM の呼び出し、クライアントは、マネージャーがトランザクションの操作を実行するリソースの呼び出しが完了したら、 [ **ZwCommitTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566420)ルーチン。 この時点では、KTM[通知](transaction-notifications.md)にする必要がありますように操作永続的なリソース マネージャー。 リソース マネージャーではログ ストリームから操作の結果が、データの永続的なストレージ メディアに移動します。 リソース マネージャーは、最後に、 [ **ZwCommitComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff566418)コミット操作が完了した KTM を通知するためにします。
+KTM の呼び出し、クライアントは、マネージャーがトランザクションの操作を実行するリソースの呼び出しが完了したら、 [ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)ルーチン。 この時点では、KTM[通知](transaction-notifications.md)にする必要がありますように操作永続的なリソース マネージャー。 リソース マネージャーではログ ストリームから操作の結果が、データの永続的なストレージ メディアに移動します。 リソース マネージャーは、最後に、 [ **ZwCommitComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)コミット操作が完了した KTM を通知するためにします。
 
-Resource manager へのクライアントの呼び出しのいずれかのエラーを報告する場合の対処*ReadData*または*WriteData*でしょうか。 クライアントが呼び出すことができます[ **ZwRollbackTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567086)トランザクションをロールバックします。 その呼び出しの結果としては、KTM は、元の状態にデータを復元する必要がありますが、リソース マネージャーで通知します。 次に、クライアントでは、同じ操作用の新しいトランザクションを作成できますかまたは続行することも可能です。
+Resource manager へのクライアントの呼び出しのいずれかのエラーを報告する場合の対処*ReadData*または*WriteData*でしょうか。 クライアントが呼び出すことができます[ **ZwRollbackTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbacktransaction)トランザクションをロールバックします。 その呼び出しの結果としては、KTM は、元の状態にデータを復元する必要がありますが、リソース マネージャーで通知します。 次に、クライアントでは、同じ操作用の新しいトランザクションを作成できますかまたは続行することも可能です。
 
 次の疑似コードは、クライアントのトランザクション操作のより詳細なシーケンスの例を示します。
 
@@ -100,9 +100,9 @@ Leave:
     return;
 ```
 
-コミットまたはロールバック前に、トランザクションを作成した後、システムがクラッシュした場合はどうなりますか 呼び出す必要があります、リソース マネージャーが読み込まれるたびに[ **ZwRecoverTransactionManager** ](https://msdn.microsoft.com/library/windows/hardware/ff567079)と[ **ZwRecoverResourceManager** ](https://msdn.microsoft.com/library/windows/hardware/ff567078). 呼び出す**ZwRecoverTransactionManager**をそのログ ストリームを開いて、トランザクション履歴を読み取る KTM をによりします。 呼び出す**ZwRecoverResourceManager** KTM に参加しているトランザクションが、クラッシュ前に進行中のリソース マネージャーに通知すると、トランザクション リソース マネージャーが回復する必要がありますしたがってとします。
+コミットまたはロールバック前に、トランザクションを作成した後、システムがクラッシュした場合はどうなりますか 呼び出す必要があります、リソース マネージャーが読み込まれるたびに[ **ZwRecoverTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager)と[ **ZwRecoverResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager). 呼び出す**ZwRecoverTransactionManager**をそのログ ストリームを開いて、トランザクション履歴を読み取る KTM をによりします。 呼び出す**ZwRecoverResourceManager** KTM に参加しているトランザクションが、クラッシュ前に進行中のリソース マネージャーに通知すると、トランザクション リソース マネージャーが回復する必要がありますしたがってとします。
 
-トランザクションのクライアントが呼び出された場合[ **ZwCommitTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff566420)クラッシュの前にトランザクションがトランザクションのコミット操作の処理を開始した、リソース マネージャーは、復元できる必要があります、クラッシュする直前にポイントするトランザクションの状態。 クライアントが、クラッシュ前にトランザクションをコミットする準備完了でない場合、リソース マネージャーは、データを破棄し、トランザクションをロールバックします。
+トランザクションのクライアントが呼び出された場合[ **ZwCommitTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)クラッシュの前にトランザクションがトランザクションのコミット操作の処理を開始した、リソース マネージャーは、復元できる必要があります、クラッシュする直前にポイントするトランザクションの状態。 クライアントが、クラッシュ前にトランザクションをコミットする準備完了でない場合、リソース マネージャーは、データを破棄し、トランザクションをロールバックします。
 
 トランザクションのクライアントを記述する方法の詳細については、次を参照してください。[トランザクションのクライアントを作成する](creating-a-transactional-client.md)します。
 
@@ -140,7 +140,7 @@ Leave:
     return;
 ```
 
-両方のリソース マネージャーを呼び出すことができますので、両方のリソース マネージャーに、クライアントが同じトランザクションの識別子を渡すと、 [ **ZwOpenTransaction** ](https://msdn.microsoft.com/library/windows/hardware/ff567033)と[ **ZwCreateEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff566422)トランザクションに参加します。 クライアントが最終的に呼び出すと[ **ZwCommitTransaction**](https://msdn.microsoft.com/library/windows/hardware/ff566420)、KTM[通知](transaction-notifications.md)操作恒久的なと、各マネージャーを作成する必要があること、各リソース マネージャーresource manager の呼び出し[ **ZwCommitComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff566418)が完了するとします。
+両方のリソース マネージャーを呼び出すことができますので、両方のリソース マネージャーに、クライアントが同じトランザクションの識別子を渡すと、 [ **ZwOpenTransaction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransaction)と[ **ZwCreateEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateenlistment)トランザクションに参加します。 クライアントが最終的に呼び出すと[ **ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)、KTM[通知](transaction-notifications.md)操作恒久的なと、各マネージャーを作成する必要があること、各リソース マネージャーresource manager の呼び出し[ **ZwCommitComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)が完了するとします。
 
 ### <a name="other-tps-scenarios"></a>その他の TP のシナリオ
 

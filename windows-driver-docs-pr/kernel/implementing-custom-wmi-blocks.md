@@ -11,12 +11,12 @@ keywords:
 - カスタム ブロック WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 808fe8aeb00c8b711885285ee2f7c1b3f021ae78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33a290819ab6e47154ae1b19b55162b2b3a72864
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365816"
 ---
 # <a name="implementing-custom-wmi-blocks"></a>カスタム WMI ブロックの実装
 
@@ -52,13 +52,13 @@ ms.locfileid: "63365355"
 
 -   イベント ブロックを 1 KB のサイズの最大サイズを制限します。
 
-    全体のレジストリで定義されているサイズの上限 (最初に、1 K) があるため、小さなデータ型として定義するイベント項目[**れた WNODE\_イベント\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff566373)構造体生成されたイベントが含まれています。 ドライバーが大量の通知を送信する、 [**れた WNODE\_イベント\_参照**](https://msdn.microsoft.com/library/windows/hardware/ff566374)構造体を取得する WMI を照会し、データ ブロックの 1 つのインスタンスを指定する、実際のイベント。 ただし、これは、イベントの発生と、通知の間のタイム ラグを増加します。
+    全体のレジストリで定義されているサイズの上限 (最初に、1 K) があるため、小さなデータ型として定義するイベント項目[**れた WNODE\_イベント\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_event_item)構造体生成されたイベントが含まれています。 ドライバーが大量の通知を送信する、 [**れた WNODE\_イベント\_参照**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_event_reference)構造体を取得する WMI を照会し、データ ブロックの 1 つのインスタンスを指定する、実際のイベント。 ただし、これは、イベントの発生と、通知の間のタイム ラグを増加します。
 
 -   可変サイズのデータ項目の後に、データ ブロックの先頭には、固定サイズのデータ項目を配置します。
 
     たとえば、データ ブロックを持つ 3 つの DWORD データ項目とそのいずれかの可変長文字列入れる 3 つの Dword 最初に、後に文字列。 ブロックの先頭に固定サイズのデータ項目を配置することをより簡単に抽出する WMI クライアントを許可します。
 
--   ドライバーのデータ ブロックにアクセスするには、システムのユーザーの種類を検討してください。 システムでは、WMI クラスの Guid をすべての既定のセキュリティ記述子を提供します。 必要に応じて、デバイスの INF ファイル内の代替のセキュリティ記述子を行うことができます。 詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://msdn.microsoft.com/library/windows/hardware/ff540212)します。
+-   ドライバーのデータ ブロックにアクセスするには、システムのユーザーの種類を検討してください。 システムでは、WMI クラスの Guid をすべての既定のセキュリティ記述子を提供します。 必要に応じて、デバイスの INF ファイル内の代替のセキュリティ記述子を行うことができます。 詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)します。
 
 WMI は、バージョン管理をサポートしていないため、ドライバーのライターが新しい MOF クラスを定義し、既存のカスタム ブロックの変更には、新しい GUID を生成する必要があります。
 

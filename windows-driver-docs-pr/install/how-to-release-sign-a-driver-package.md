@@ -14,12 +14,12 @@ keywords:
 - リリース署名ドライバー パッケージ、WDK テスト署名ドライバー パッケージについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 777ebffd59e2b14766050698aecff2995aca2b8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 011887145b17c78b44d96717ddff238c2d8ec056
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386936"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387035"
 ---
 # <a name="how-to-release-sign-a-driver-package"></a>ドライバー パッケージをリリース署名する方法
 
@@ -43,7 +43,7 @@ ms.locfileid: "63386936"
 このセクションを通じて、別々 のコンピューターは、ドライバーのリリースの署名に関連するさまざまな処理に使用されます。 これらのコンピューターは参照としては、次のように。
 
 <a href="" id="--------signing-computer"></a> **コンピューターの署名**  
-これは、リリースへのドライバーが Windows Vista および Windows の以降のバージョンのパッケージの署名を使用するコンピューターです。 このコンピューターでは、Windows XP SP2 または以降のバージョンの Windows が実行されている必要があります。 使用する、[ドライバーの署名ツール](https://msdn.microsoft.com/library/windows/hardware/ff552958)以降のバージョンの Windows Driver Kit (WDK) がインストールされている、このコンピューターは、Windows Vista をいる必要があります。
+これは、リリースへのドライバーが Windows Vista および Windows の以降のバージョンのパッケージの署名を使用するコンピューターです。 このコンピューターでは、Windows XP SP2 または以降のバージョンの Windows が実行されている必要があります。 使用する、[ドライバーの署名ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)以降のバージョンの Windows Driver Kit (WDK) がインストールされている、このコンピューターは、Windows Vista をいる必要があります。
 
 <a href="" id="test-computer"></a>**テスト コンピューター**  
 これは、インストールし、リリースで署名されたドライバー パッケージをテストするために使用するコンピューターです。 このコンピューターでは、Windows Vista または Windows の以降のバージョンが実行されている必要があります。

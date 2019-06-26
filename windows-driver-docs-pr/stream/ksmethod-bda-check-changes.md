@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0bd12054bc7370d39965d9f34323f6c0e588956
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbeba422263f0fb3b0ecd275e9505c2e24421538
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362640"
 ---
 # <a name="ksmethodbdacheckchanges"></a>KSMETHOD\_BDA\_確認\_の変更
 
@@ -42,7 +42,7 @@ KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
 
 変更の一覧をコミットする前に、ネットワーク プロバイダーを KSMETHOD\_BDA\_確認\_要求された変更が作業になっているかどうかを判別要求を変更します。 ミニドライバーは、リソースが使用できることを保証するために、この要求が行われたときにリソースを確保することができます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -61,9 +61,9 @@ KSMETHOD**フラグ**メンバーに KSMETHOD 設定\_型\_NONE。
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaCheckChanges**](https://msdn.microsoft.com/library/windows/hardware/ff556433)
+[**BdaCheckChanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacheckchanges)
 
-[**KSMETHOD**](https://msdn.microsoft.com/library/windows/hardware/ff563398)
+[**KSMETHOD**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85))
 
  
 

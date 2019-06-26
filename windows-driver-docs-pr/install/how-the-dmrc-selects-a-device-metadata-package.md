@@ -4,12 +4,12 @@ description: DMRC のデバイス メタデータ パッケージの選択方法
 ms.assetid: dbedc995-520a-4b54-8613-d5a7810ab99c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48545d2f50c2cf8f11ca0fd2ea601707f28b5b9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d97343bde5cc7b757dcf126719d84dd1a7db3c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387041"
 ---
 # <a name="how-the-dmrc-selects-a-device-metadata-package"></a>DMRC のデバイス メタデータ パッケージの選択方法
 
@@ -22,25 +22,25 @@ ms.locfileid: "63386968"
 
 DMRC は、パッケージで指定された、次のメタデータ XML 要素を使用して、デバイスの適切なパッケージを選択します。 これらの XML 要素の順序では、DMRC はメタデータ パッケージの選択を使用して、優先順位が反映されます。
 
--   [**ModelID** ](https://msdn.microsoft.com/library/windows/hardware/ff549295)と[ **ModelIDList**](https://msdn.microsoft.com/library/windows/hardware/ff549303)
+-   [**ModelID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))と[ **ModelIDList**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549303(v=vs.85))
 
--   [**HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)と[ **HardwareIDList**](https://msdn.microsoft.com/library/windows/hardware/ff546121)
+-   [**HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))と[ **HardwareIDList**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546121(v=vs.85))
 
--   [**ロケール**](https://msdn.microsoft.com/library/windows/hardware/ff548647)
+-   [**ロケール**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548647(v=vs.85))
 
--   [**LastModifiedDate**](https://msdn.microsoft.com/library/windows/hardware/ff548624)
+-   [**LastModifiedDate**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548624(v=vs.85))
 
 [DMRC](device-metadata-retrieval-client.md)デバイス メタデータ パッケージを選択するとこれらの手順に従います。
 
-1.  デバイスは、モデル ID を持つ場合、DMRC が間の一致をデバイス メタデータ パッケージを検索、 [ **ModelID** ](https://msdn.microsoft.com/library/windows/hardware/ff549295)パッケージのエントリ[ **ModelIDList** ](https://msdn.microsoft.com/library/windows/hardware/ff549303)XML 要素と、デバイスのモデル ID の値。
+1.  デバイスは、モデル ID を持つ場合、DMRC が間の一致をデバイス メタデータ パッケージを検索、 [ **ModelID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))パッケージのエントリ[ **ModelIDList** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549303(v=vs.85))XML 要素と、デバイスのモデル ID の値。
 
-2.  間で一致、DMRC がデバイス メタデータ パッケージを検索、デバイスが、モデル ID を持たない場合、 [ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)パッケージのエントリ[ **HardwareIDList**](https://msdn.microsoft.com/library/windows/hardware/ff546121) XML 要素と、デバイスのハードウェア Id。
+2.  間で一致、DMRC がデバイス メタデータ パッケージを検索、デバイスが、モデル ID を持たない場合、 [ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))パッケージのエントリ[ **HardwareIDList**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546121(v=vs.85)) XML 要素と、デバイスのハードウェア Id。
 
-3.  DMRC はデバイスの一覧に対して、手順 1. および 2. で説明されている検索条件を満たすメタデータ パッケージを作成します。 この一覧から、DMRC し、一覧のエントリの一致を検索、パッケージの間で[**ロケール**](https://msdn.microsoft.com/library/windows/hardware/ff548647) XML 要素との一覧は、コンピューターのユーザー ロケールを優先します。
+3.  DMRC はデバイスの一覧に対して、手順 1. および 2. で説明されている検索条件を満たすメタデータ パッケージを作成します。 この一覧から、DMRC し、一覧のエントリの一致を検索、パッケージの間で[**ロケール**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548647(v=vs.85)) XML 要素との一覧は、コンピューターのユーザー ロケールを優先します。
 
     この検索条件に一致するリスト内のエントリがない場合、DMRC を持つロケール XML 要素を含むデバイス メタデータ パッケージのリストにエントリを検索、**既定**属性に設定**true**します。 DMRC 一致が見つかった場合は、そのメタデータ パッケージを選択します。
 
-4.  含むパッケージ、DMRC には、手順 3 では、複数のデバイス メタデータ パッケージが検出されると、選択、 [ **LastModifiedDate** ](https://msdn.microsoft.com/library/windows/hardware/ff548624)を最新のタイムスタンプを持つ XML 要素。
+4.  含むパッケージ、DMRC には、手順 3 では、複数のデバイス メタデータ パッケージが検出されると、選択、 [ **LastModifiedDate** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548624(v=vs.85))を最新のタイムスタンプを持つ XML 要素。
 
 次の点がによって使用される選択アルゴリズムに関連する、 [DMRC](device-metadata-retrieval-client.md):
 
@@ -53,13 +53,13 @@ DMRC は、パッケージで指定された、次のメタデータ XML 要素�
 
     ハードウェア Id については、次を参照してください。[ハードウェア Id](hardware-ids.md)します。
 
--   デバイス メタデータ パッケージを 1 つだけを設定する必要があります、**既定**の属性、 [**ロケール**](https://msdn.microsoft.com/library/windows/hardware/ff548647) XML 要素を**true**します。 この属性は、順位付け値が最も高いハードウェア ID を含むパッケージで true にのみ設定する必要があります。
+-   デバイス メタデータ パッケージを 1 つだけを設定する必要があります、**既定**の属性、 [**ロケール**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548647(v=vs.85)) XML 要素を**true**します。 この属性は、順位付け値が最も高いハードウェア ID を含むパッケージで true にのみ設定する必要があります。
 
--   [ **LastModifiedDate** ](https://msdn.microsoft.com/library/windows/hardware/ff548624) XML 要素はバージョン管理の目的で使用し、デバイスのデバイス メタデータ パッケージの新しいバージョンを選択するために使用します。
+-   [ **LastModifiedDate** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548624(v=vs.85)) XML 要素はバージョン管理の目的で使用し、デバイスのデバイス メタデータ パッケージの新しいバージョンを選択するために使用します。
 
--   ローカルのメタデータ ストアに 2 つ以上のデバイス メタデータ パッケージに同じ値が含まれている場合、 [ **ModelIDList**](https://msdn.microsoft.com/library/windows/hardware/ff549303)、 [ **HardwareIDList** ](https://msdn.microsoft.com/library/windows/hardware/ff546121)、 [**ロケール**](https://msdn.microsoft.com/library/windows/hardware/ff548647)、または[ **LastModifiedDate** ](https://msdn.microsoft.com/library/windows/hardware/ff548624) DMRC の XML 要素では、デバイスのうち 1 つのみが選択されます。 この場合、DMRC 選択これらのパッケージのいずれかの非決定的な方法でします。
+-   ローカルのメタデータ ストアに 2 つ以上のデバイス メタデータ パッケージに同じ値が含まれている場合、 [ **ModelIDList**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549303(v=vs.85))、 [ **HardwareIDList** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546121(v=vs.85))、 [**ロケール**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548647(v=vs.85))、または[ **LastModifiedDate** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548624(v=vs.85)) DMRC の XML 要素では、デバイスのうち 1 つのみが選択されます。 この場合、DMRC 選択これらのパッケージのいずれかの非決定的な方法でします。
 
-デバイス メタデータの XML スキーマと要素の詳細については、次を参照してください。[デバイス メタデータのスキーマ リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff541452)します。
+デバイス メタデータの XML スキーマと要素の詳細については、次を参照してください。[デバイス メタデータのスキーマ リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541452(v=vs.85))します。
 
  
 

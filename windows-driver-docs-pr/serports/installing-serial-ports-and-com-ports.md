@@ -8,16 +8,16 @@ keywords:
 - シリアル ドライバー WDK では、COM ポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb6e2f5878cb6c8c07e67018956d5f19e19c5ad
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: d0e5324bcde130ab16d6228bdb3fa0e53e3e0532
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836353"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384185"
 ---
 # <a name="installing-serial-ports-and-com-ports"></a>シリアル ポートと COM ポートをインストールする
 
-ほとんどのデバイスでは、ポートの[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)シリアル関数ドライバーは、シリアル ポートや COM ポートを操作するために必要な機能を提供します。 シリアル ポートとこれらのシステム提供のコンポーネントを使用して COM ポートをインストールするには、次の操作を行います。
+ほとんどのデバイスでは、ポートの[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)シリアル関数ドライバーは、シリアル ポートや COM ポートを操作するために必要な機能を提供します。 シリアル ポートとこれらのシステム提供のコンポーネントを使用して COM ポートをインストールするには、次の操作を行います。
 
 - ポートのサービスとしてのポートのデバイス セットアップ クラスとシリアル機能ドライバーを指定する INF ファイルを提供します。
 

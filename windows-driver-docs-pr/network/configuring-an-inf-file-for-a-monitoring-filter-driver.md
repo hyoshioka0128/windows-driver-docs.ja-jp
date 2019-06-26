@@ -7,12 +7,12 @@ keywords:
 - フィルター ドライバー WDK ネットワークの監視
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a87b4a37c9e90a667ab65c51262c5900fd606d3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 968f214569d2065cd61c8b49cc24f6c2de975f21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363661"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384721"
 ---
 # <a name="configuring-an-inf-file-for-a-monitoring-filter-driver"></a>監視フィルター ドライバーの INF ファイルの構成
 
@@ -61,9 +61,9 @@ ms.locfileid: "63363661"
 
     前の例で 0x00000002 値は、フィルター モジュールが省略可能なことを示します。 必須のフィルター モジュールをインストールするには、設定、 **FilterRunType** 0x00000001 のエントリ。 詳細については、次を参照してください。[必須フィルター ドライバー](mandatory-filter-drivers.md)します。
 
-    **注**  制御された環境で使用する、場所がありますしないオプションがない限りに監視の lightweight filter (LWF) ドライバーを必須にしないことを強くお勧め LWF ドライバーを変更します。 これは必須の監視 LWF ドライバーが原因であるために失敗する LWF ドライバーを変更する省略可能な[ *FilterAttach*](https://msdn.microsoft.com/library/windows/hardware/ff549905)します。 監視 LWF ドライバーは、すべてのレベルでネットワーク トラフィックの監視を容易にするように設計上すべての変更のフィルターとバインディングにバインドされます。 次のシナリオを考えてみましょう。
+    **注**  制御された環境で使用する、場所がありますしないオプションがない限りに監視の lightweight filter (LWF) ドライバーを必須にしないことを強くお勧め LWF ドライバーを変更します。 これは必須の監視 LWF ドライバーが原因であるために失敗する LWF ドライバーを変更する省略可能な[ *FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)します。 監視 LWF ドライバーは、すべてのレベルでネットワーク トラフィックの監視を容易にするように設計上すべての変更のフィルターとバインディングにバインドされます。 次のシナリオを考えてみましょう。
     -   必須の監視 LWF ドライバーのインスタンスは、オプションの変更 LWF ドライバー経由でインストールされます。
-    -   下位の変更の省略可能な LWF ドライバーは、下位のコンポーネントにアタッチに失敗します。 これにより、必須監視 LWF ドライバーの[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)ハンドラーが呼び出されない。
+    -   下位の変更の省略可能な LWF ドライバーは、下位のコンポーネントにアタッチに失敗します。 これにより、必須監視 LWF ドライバーの[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)ハンドラーが呼び出されない。
     -   これで、必須の LWF ドライバーのインスタンスが読み込まれていない、ために、NDIS はインターフェイスまたは NIC、つまり使用できないインターフェイスをレンダリングする任意のプロトコル (TCP/IP など) をバインドできません。
 
      

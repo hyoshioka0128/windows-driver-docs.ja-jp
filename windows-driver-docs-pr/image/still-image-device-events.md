@@ -4,12 +4,12 @@ description: 静止画像デバイスのイベント
 ms.assetid: 5f9be89c-8442-4894-b2f6-a4d3558464bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d6b545966169e6c55d8028108049118329f366
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e738fde61797cff31c11a9b554aa5f6edcef159
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383719"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386913"
 ---
 # <a name="still-image-device-events"></a>静止画像デバイスのイベント
 
@@ -80,11 +80,11 @@ A*イメージ デバイス イベントではまだ*上位レベルのソフト
 
 ### <a name="event-notification"></a>イベント通知
 
-ドライバーは、(いずれかの非同期 I/O を使用またはポーリング) デバイスを監視する必要がありますを GUID ごとに関連付けられているイベントの発生時に決定します。 デバイスの機能に応じて、ドライバーを非同期的にまたはデバイスをポーリングする要求に応答することによってクライアント デバイス イベントの発生を通知できます。 (いずれかの方法) をデバイス イベントの通知を配信することができるすべてのドライバーが、STI に設定する必要があります\_GENCAP\_デバイスの通知フラグ[ **STI\_DEV\_キャップ** ](https://msdn.microsoft.com/library/windows/hardware/ff548380)構造体。 ドライバーが、ポーリングとしない非同期の通知をサポートする必要があります、STI を設定しても\_GENCAP\_ポーリング\_同じ構造にフラグが必要です。 (これらの機能を使用して指定することも必要があります、**機能**キーワード[の INF ファイルは、デバイスを静止画像](inf-files-for-still-image-devices.md))。
+ドライバーは、(いずれかの非同期 I/O を使用またはポーリング) デバイスを監視する必要がありますを GUID ごとに関連付けられているイベントの発生時に決定します。 デバイスの機能に応じて、ドライバーを非同期的にまたはデバイスをポーリングする要求に応答することによってクライアント デバイス イベントの発生を通知できます。 (いずれかの方法) をデバイス イベントの通知を配信することができるすべてのドライバーが、STI に設定する必要があります\_GENCAP\_デバイスの通知フラグ[ **STI\_DEV\_キャップ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_dev_caps)構造体。 ドライバーが、ポーリングとしない非同期の通知をサポートする必要があります、STI を設定しても\_GENCAP\_ポーリング\_同じ構造にフラグが必要です。 (これらの機能を使用して指定することも必要があります、**機能**キーワード[の INF ファイルは、デバイスを静止画像](inf-files-for-still-image-devices.md))。
 
-呼び出し、ドライバーは、イベントの非同期通知をサポートする場合、イベントの監視[ **IStiUSD::SetNotificationHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff543840)通知を要求して、イベント ハンドルを指定します。 デバイス イベントの発生時、ドライバーは、呼び出すことによってイベント モニタを通知する必要があります**SetEvent** (Microsoft Windows SDK のドキュメントを参照)、引数としてイベント ハンドルを使用します。 クライアントが呼び出すことができますし、 [ **IStiUSD::GetNotificationData** ](https://msdn.microsoft.com/library/windows/hardware/ff543821) GUID のイベントを取得します。
+呼び出し、ドライバーは、イベントの非同期通知をサポートする場合、イベントの監視[ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle)通知を要求して、イベント ハンドルを指定します。 デバイス イベントの発生時、ドライバーは、呼び出すことによってイベント モニタを通知する必要があります**SetEvent** (Microsoft Windows SDK のドキュメントを参照)、引数としてイベント ハンドルを使用します。 クライアントが呼び出すことができますし、 [ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata) GUID のイベントを取得します。
 
-イベントのポーリングが必要な場合は、呼び出しの監視[ **IStiUSD::GetStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff543823) 、ドライバーは、デバイスと戻り値の結果をさらにポーリングする必要がありますをポーリングする、 [ **STI\_デバイス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff548369)構造体。
+イベントのポーリングが必要な場合は、呼び出しの監視[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus) 、ドライバーは、デバイスと戻り値の結果をさらにポーリングする必要がありますをポーリングする、 [ **STI\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)構造体。
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - Nic の WDK ネットワークを追加します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d17cb4f22b8329a45bc722a486ef851e246f46e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7764a90093d709c595392fd85eab467b0cadcdc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362922"
 ---
 # <a name="adding-a-nic"></a>NIC の追加
 
@@ -22,9 +22,9 @@ ms.locfileid: "63367780"
 
 
 
-次の説明では、ミニポート ドライバーの読み込みで開始し、NIC を追加する方法について説明します。 手順 1 ~ 11 の PnP マネージャーは、実行中のシステムに追加されると、NIC を実行する初期処理を参照してください[PnP デバイスを追加するシステムを実行して](https://msdn.microsoft.com/library/windows/hardware/ff540535)します。
+次の説明では、ミニポート ドライバーの読み込みで開始し、NIC を追加する方法について説明します。 手順 1 ~ 11 の PnP マネージャーは、実行中のシステムに追加されると、NIC を実行する初期処理を参照してください[PnP デバイスを追加するシステムを実行して](https://docs.microsoft.com/windows-hardware/drivers/kernel/adding-a-pnp-device-to-a-running-system)します。
 
-1.  PnP マネージャーがドライバーを読み込むし、呼び出してミニポート ドライバーの NIC のミニポート ドライバーが既に読み込まれていない場合[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff548818)関数。 ドライバーは既に読み込まれている場合は、手順 4 で処理が続行されます。
+1.  PnP マネージャーがドライバーを読み込むし、呼び出してミニポート ドライバーの NIC のミニポート ドライバーが既に読み込まれていない場合[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/network/initializing-a-miniport-driver)関数。 ドライバーは既に読み込まれている場合は、手順 4 で処理が続行されます。
 
 2.  その**DriverEntry**関数、ミニポート ドライバーは、ミニポート ドライバーとして登録し、その他のドライバーの初期化を実行します。 ミニポート ドライバーとして登録の詳細については、次を参照してください。[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
 

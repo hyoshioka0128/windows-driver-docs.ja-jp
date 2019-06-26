@@ -8,12 +8,12 @@ keywords:
 - visual studio のイーサネット経由でのデバッグ
 ms.date: 05/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 45860732ff14a4b2186d3282b9c4efe2c4bb6872
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8420a344c8072411521aca2dd2f0c2476ab455aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381939"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366384"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-network-cable-in-visual-studio"></a>Visual Studio でのネットワーク ケーブル経由でのカーネルモード デバッグの設定
 
@@ -43,7 +43,7 @@ Visual Studio を使用して、イーサネットのデバッグを設定する
 
 
 1.  スイッチを使用して、適切なネットワーク ケーブルまたはネットワーク ハブに、ターゲット コンピューターのネットワーク アダプターを接続します。 標準ケーブルまたはワイヤレス接続を使用して切り替えるまたはネットワーク ハブに、ホスト コンピューターのネットワーク アダプターを接続します。
-2.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+2.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
 3.  Visual Studio で、ホスト コンピューターで、コンピューターの構成 ダイアログ ボックスのような場合が選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。
 4.  **接続の種類**、選択**ネットワーク**します。
 
@@ -97,7 +97,7 @@ busparams               0.29.7
 
 用に入力した値が表示されない場合**Bus パラメーター**、このコマンドを入力します。
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 場所*b*、 *d*、および*f*バス、デバイス、および関数のデバッグに使用する、選択したターゲット コンピューター上のネットワーク アダプター数。
 
@@ -140,7 +140,7 @@ busparams               0.29.7
 
 ポート番号を変更する必要がある場合は、次の手順を使用します。
 
-1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、**[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
+1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、 **[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
 2.  テスト用コンピューターの名前を選択し、クリックして**次**します。
 3.  選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。 **[次へ]** をクリックします。
 4.  **ポート番号**、ネットワーク管理者によって許可される範囲内にある数値を入力します。 **[次へ]** をクリックします。
@@ -150,7 +150,7 @@ busparams               0.29.7
 
 対象のコンピューターに 1 つ以上のネットワーク アダプターがある場合は、バス、デバイス、および関数をデバッグするために使用するネットワーク アダプター数を指定する必要があります。 バス パラメーターを指定するには、デバイス マネージャーを開き、デバッグに使用するネットワーク アダプターを探します。 ネットワーク アダプターのプロパティ ページを開き、バス番号、デバイスの数、および関数の数をメモしておきます。 管理者特権でコマンド プロンプト ウィンドウで、次のコマンドを入力します。 ここ*b*、 *d*、および*f* bus、デバイス、および関数の数値を 10 進数形式では。
 
-**bcdedit -set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit -set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 ターゲット コンピューターを再起動します。
 

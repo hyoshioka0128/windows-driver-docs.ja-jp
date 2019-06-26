@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c6f2750b6c9713d27d4d7bbdbfe1e4502d52884
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 430960b284f37f3d9a63623485adf1d212a8cbd4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349046"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361432"
 ---
 # <a name="debugrequestsetlocalimplicitcommandline"></a>デバッグ\_要求\_設定\_ローカル\_暗黙的\_コマンド\_行
 
 
-デバッグ\_要求\_設定\_ローカル\_暗黙的\_コマンド\_行[**要求**](request.md)操作、を設定します。[デバッガー エンジン](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)の暗黙的なコマンドライン。
+デバッグ\_要求\_設定\_ローカル\_暗黙的\_コマンド\_行[**要求**](request.md)操作、を設定します。[デバッガー エンジン](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine)の暗黙的なコマンドライン。
 
 **Parameters**
 
@@ -35,22 +35,22 @@ ms.locfileid: "63349046"
 <a name="remarks"></a>注釈
 -------
 
-暗黙的なコマンド ラインは、プロセスを作成するときに、コマンドラインとして使用できます。 プロセス作成のオプション ([**デバッグ\_作成\_プロセス\_オプション**](https://msdn.microsoft.com/library/windows/hardware/ff541464)) ではなく、指定された暗黙のコマンドラインを使用するためのオプションを含めるコマンド ライン プロセスを作成するときにします。
+暗黙的なコマンド ラインは、プロセスを作成するときに、コマンドラインとして使用できます。 プロセス作成のオプション ([**デバッグ\_作成\_プロセス\_オプション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)) ではなく、指定された暗黙のコマンドラインを使用するためのオプションを含めるコマンド ライン プロセスを作成するときにします。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
 [**要求**](request.md)
 
-[**デバッグ\_作成\_プロセス\_オプション**](https://msdn.microsoft.com/library/windows/hardware/ff541464)
+[**デバッグ\_作成\_プロセス\_オプション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)
 
 [**デバッグ\_要求\_取得\_追加\_作成\_オプション**](debug-request-get-additional-create-options.md)
 
 [**デバッグ\_要求\_設定\_追加\_作成\_オプション**](debug-request-set-additional-create-options.md)
 
-[**CreateProcess2**](https://msdn.microsoft.com/library/windows/hardware/ff539323)
+[**CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)
 
-[**CreateProcessAndAttach2**](https://msdn.microsoft.com/library/windows/hardware/ff540055)
+[**CreateProcessAndAttach2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach2)
 
  
 

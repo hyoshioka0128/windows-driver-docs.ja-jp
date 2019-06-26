@@ -7,12 +7,12 @@ keywords:
 - 登録している CoNDIS ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0449cb59335274dac5d1f51000918b27d95be131
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c02d91031d87c33fe723027f893af0cd745cfc54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351036"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385099"
 ---
 # <a name="condis-registration"></a>CoNDIS 登録
 
@@ -20,7 +20,7 @@ ms.locfileid: "63351036"
 
 
 
-いる CoNDIS をサポートするには、NDIS ドライバーは、省略可能ないる CoNDIS 関数のエントリ ポイントを登録する必要があります。 NDIS ドライバー呼び出し、 [ **NdisSetOptionalHandlers** ](https://msdn.microsoft.com/library/windows/hardware/ff564550)省略可能なサービスを登録する関数。
+いる CoNDIS をサポートするには、NDIS ドライバーは、省略可能ないる CoNDIS 関数のエントリ ポイントを登録する必要があります。 NDIS ドライバー呼び出し、 [ **NdisSetOptionalHandlers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetoptionalhandlers)省略可能なサービスを登録する関数。
 
 ここでは、次のトピックについて説明します。
 

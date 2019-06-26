@@ -3,12 +3,12 @@ title: トラステッド プラットフォーム モジュール (TPM) に関�
 description: トラステッド プラットフォーム モジュール (TPM) に関する考慮事項
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8ba6645ef8d5feef02e363898ea030822847814
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e131b4782316aecfa65e8ad5f10557c3fcf80dfa
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391755"
 ---
 # <a name="trusted-platform-module-tpm-considerations"></a>トラステッド プラットフォーム モジュール (TPM) に関する考慮事項
 
@@ -22,9 +22,9 @@ TPM 2.0 に従来の BIOS インターフェイスはありません。 ただ�
 
 [TPM の推奨事項](https://docs.microsoft.com/windows/security/hardware-protection/tpm/tpm-recommendations)
 
-[トラステッド プラットフォーム モジュール 2.0:簡単な概要について](http://www.trustedcomputinggroup.org/trusted-platform-module-2-0-brief-introduction/)
+[トラステッド プラットフォーム モジュール 2.0:簡単な概要について](https://trustedcomputinggroup.org/resource/trusted-platform-module-2-0-a-brief-introduction/)
 
-[トラステッド プラットフォーム モジュール (TPM)](http://www.trustedcomputinggroup.org/work-groups/trusted-platform-module/)
+[トラステッド プラットフォーム モジュール (TPM)](https://trustedcomputinggroup.org/work-groups/trusted-platform-module/)
 
 
 
