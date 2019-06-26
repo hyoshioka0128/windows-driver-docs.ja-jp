@@ -9,12 +9,12 @@ keywords:
 - WDK の HID ボタンの使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7f629555bf78105b0ad0f193b83eb88ee81b41b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02bce9ff79c1cf92e1a5e5c00bc483ace6f512ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390345"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375764"
 ---
 # <a name="button-capability-arrays"></a>ボタン機能配列
 
@@ -22,15 +22,15 @@ ms.locfileid: "63390345"
 
 
 
-A*ボタン機能配列*でサポートされているボタンの使用状況に関する情報を格納、[最上位のコレクション](top-level-collections.md)HID レポートの特定の種類。 コレクションの機能に関する情報が含まれているその[ **HIDP\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff539697)構造体。
+A*ボタン機能配列*でサポートされているボタンの使用状況に関する情報を格納、[最上位のコレクション](top-level-collections.md)HID レポートの特定の種類。 コレクションの機能に関する情報が含まれているその[ **HIDP\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_caps)構造体。
 
-ユーザー モード アプリケーションまたはカーネル モード ドライバーは、次のいずれかを使用して[HIDClass サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff538865)ボタンの機能情報を取得します。
+ユーザー モード アプリケーションまたはカーネル モード ドライバーは、次のいずれかを使用して[HIDClass サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ボタンの機能情報を取得します。
 
--   [**HidP\_GetButtonCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff539707)レポートの指定した型に含まれるすべてのボタン使用法を説明するボタンの機能の配列を返します。
+-   [**HidP\_GetButtonCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getbuttoncaps)レポートの指定した型に含まれるすべてのボタン使用法を説明するボタンの機能の配列を返します。
 
--   [**HidP\_GetSpecificButtonCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff539733)呼び出し元が指定した使用状況] ページ、使用状況の ID を返します、ボタンの機能情報をフィルター処理と[リンク コレクション](link-collections.md)します。
+-   [**HidP\_GetSpecificButtonCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificbuttoncaps)呼び出し元が指定した使用状況 ページ、使用状況の ID を返します、ボタンの機能情報をフィルター処理と[リンク コレクション](link-collections.md)します。
 
-ボタンの機能の配列に含まれる[ **HIDP\_ボタン\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff539693)うちそれぞれに関する次の情報を格納する構造を[するHID使用法](hid-usages.md)または[使用範囲](hid-usages.md#usage-range):
+ボタンの機能の配列に含まれる[ **HIDP\_ボタン\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_button_caps)うちそれぞれに関する次の情報を格納する構造を[するHID使用法](hid-usages.md)または[使用範囲](hid-usages.md#usage-range):
 
 -   使用状況または使用状況の範囲の使用状況 ページ
 

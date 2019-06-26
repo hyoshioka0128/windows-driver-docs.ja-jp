@@ -6,23 +6,23 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WWAN_AUTH_RESPONSE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 40f31d51a25ecbc8f102f4614af3198bbeb37ec3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c349fad7075286e8ab2c144b6e0d9801d3a7131a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376965"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382664"
 ---
 # <a name="ndisstatuswwanauthresponse"></a>NDIS\_状態\_WWAN\_AUTH\_応答
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_AUTH\_MB のサービスを使用して発行前チャレンジの要求から受信したチャレンジ応答の通知に応答の通知、 [OID\_WWAN\_AUTH\_チャレンジ](https://msdn.microsoft.com/library/windows/hardware/hh440092)クエリ要求。
+ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_AUTH\_MB のサービスを使用して発行前チャレンジの要求から受信したチャレンジ応答の通知に応答の通知、 [OID\_WWAN\_AUTH\_チャレンジ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-auth-challenge)クエリ要求。
 
 ミニポート ドライバーには、この通知が不要なイベントを送信できます。
 
-この NDIS 状態の通知を使用して、 [NDIS\_WWAN\_AUTH\_応答](https://msdn.microsoft.com/library/windows/hardware/hh439834)構造体。
+この NDIS 状態の通知を使用して、 [NDIS\_WWAN\_AUTH\_応答](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_auth_response)構造体。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -45,9 +45,9 @@ ms.locfileid: "63376965"
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_AUTH\_チャレンジ](https://msdn.microsoft.com/library/windows/hardware/hh440092)
+[OID\_WWAN\_AUTH\_チャレンジ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-auth-challenge)
 
-[NDIS\_WWAN\_AUTH\_RESPONSE](https://msdn.microsoft.com/library/windows/hardware/hh439834)
+[NDIS\_WWAN\_AUTH\_RESPONSE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_auth_response)
 
  
 
