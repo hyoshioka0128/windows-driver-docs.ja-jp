@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8ed726f6d2feff9fe2f7b5a2152ba16526d34f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ef1a3d41cb63c942c4cfee0c778e7383aa6f66c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332924"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358889"
 ---
 # <a name="kspropertyaudioquality"></a>KSPROPERTY\_オーディオ\_品質
 
@@ -53,7 +53,7 @@ KSPROPERTY\_オーディオ\_品質プロパティ ノードの出力ストリ�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -82,7 +82,7 @@ KSPROPERTY\_オーディオ\_品質プロパティ要求がステータスを返
 <a name="remarks"></a>注釈
 -------
 
-サンプル レートの変換の種類についてを[KMixer システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#kmixer-system-driver)実行するを参照してください[KMixer ドライバーのサンプル レートの変換との混合ポリシー](https://msdn.microsoft.com/library/windows/hardware/ff537047)します。
+サンプル レートの変換の種類についてを[KMixer システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#kmixer-system-driver)実行するを参照してください[KMixer ドライバーのサンプル レートの変換との混合ポリシー](https://docs.microsoft.com/windows-hardware/drivers/audio/kmixer-driver-sample-rate-conversion-and-mixing-policy)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -105,7 +105,7 @@ KSPROPERTY\_オーディオ\_品質プロパティ要求がステータスを返
 
 [**KSNODETYPE\_SRC**](ksnodetype-src.md)
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

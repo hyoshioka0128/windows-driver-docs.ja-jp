@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aff71afda39ff3646c3277d6f29f23d970e96b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ce24658adf6bb1f772f18b24a222ec51f2fc09f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358755"
 ---
 # <a name="kspropertyrtaudiobuffer"></a>KSPROPERTY\_RTAUDIO\_バッファー
 
@@ -53,14 +53,14 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティは、ドライバーによ�
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="ksrtaudio-buffer-property.md" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER_PROPERTY&lt;/strong&gt;](ksrtaudio-buffer-property.md)"><strong>KSRTAUDIO_BUFFER_PROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537493" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537493)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_バッファー\_プロパティ構造を含む、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)の他のメンバーと構造体。 クライアントは、構造体に、要求されたバッファー サイズを書き込みます。 としてベース アドレスを指定する必要があります、クライアントは、特定のベース アドレスを使用する必要はない場合、 **NULL**します。
+プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_バッファー\_プロパティ構造を含む、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))の他のメンバーと構造体。 クライアントは、構造体に、要求されたバッファー サイズを書き込みます。 としてベース アドレスを指定する必要があります、クライアントは、特定のベース アドレスを使用する必要はない場合、 **NULL**します。
 
 プロパティの値 (データの操作) は型 KSRTAUDIO の構造体\_バッファー。 ドライバーは、実際のバッファー サイズ、ベース アドレスは、割り当て済み循環バッファーのメモリ バリアのフラグと、この構造体を格納します。
 
@@ -112,7 +112,7 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティ要求がステータスを�
 
 呼び出す必要があるイベント通知を実行する場合に、 [ **KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md) KSPROPERTYではなく\_RTAUDIO\_バッファー。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -135,7 +135,7 @@ KSPROPERTY\_RTAUDIO\_バッファー プロパティ要求がステータスを�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSRTAUDIO\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff537493)
+[**KSRTAUDIO\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)
 
 [**KSRTAUDIO\_バッファー\_プロパティ**](ksrtaudio-buffer-property.md)
 

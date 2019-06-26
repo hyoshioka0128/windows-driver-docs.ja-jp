@@ -4,12 +4,12 @@ description: セキュリティの検査
 ms.assetid: fca92bad-7bb8-4a30-b303-48fd54c20c42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fb12bfe53650e83e04e9eb5e4d8adf25921dad7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8b741fdb923958895f5ed46e5264b6feb6cf718
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340138"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378289"
 ---
 # <a name="security-checks"></a>セキュリティの検査
 
@@ -30,9 +30,9 @@ Driver Verifier のセキュリティ チェックのオプションは、セキ
 Driver Verifier 以降、Windows 7 では、Driver Verifier のオプションを有効にすると、次のドライバーの動作を確認します。
 
 **オブジェクトの参照カウンターは、0 から 1 に変更します。**
-Windows カーネル オブジェクト マネージャーは、ファイル オブジェクトまたはスレッド オブジェクトなどのオブジェクトを作成するときに、新しいオブジェクトの参照カウンターが 1 に設定されます。 などのシステム関数を呼び出し[ **ObReferenceObjectByPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff558686)または[ **ObReferenceObjectByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff558679)インクリメントの参照カウンター。 すべての呼び出しに[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)参照カウンターをデクリメントのオブジェクトと同じです。
+Windows カーネル オブジェクト マネージャーは、ファイル オブジェクトまたはスレッド オブジェクトなどのオブジェクトを作成するときに、新しいオブジェクトの参照カウンターが 1 に設定されます。 などのシステム関数を呼び出し[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)または[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)インクリメントの参照カウンター。 すべての呼び出しに[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)参照カウンターをデクリメントのオブジェクトと同じです。
 
-参照カウンターには、値 0 に達すると、オブジェクトが解放する対象となります。 オブジェクト マネージャーが、すぐに解放可能性があるか、後では無料可能性があります。 Driver Verifier は、後続の呼び出しをチェック[ **ObReferenceObjectByPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff558686)と[ **ObReferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff558678)同じオブジェクトに対して。 これらの呼び出しでは、0 から 1 で、ドライバーが既に解放されたオブジェクトの参照カウンターをインクリメントに参照カウンターを変更します。 これは常に他のメモリ割り当てが破損していることができます。
+参照カウンターには、値 0 に達すると、オブジェクトが解放する対象となります。 オブジェクト マネージャーが、すぐに解放可能性があるか、後では無料可能性があります。 Driver Verifier は、後続の呼び出しをチェック[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)と[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)同じオブジェクトに対して。 これらの呼び出しでは、0 から 1 で、ドライバーが既に解放されたオブジェクトの参照カウンターをインクリメントに参照カウンターを変更します。 これは常に他のメモリ割り当てが破損していることができます。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 

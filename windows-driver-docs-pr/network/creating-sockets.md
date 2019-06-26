@@ -9,25 +9,25 @@ keywords:
 - WskSocket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52f3b71aaf46ad77ee7b9db0880a7ba0c970e894
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d204cc87cd897a1158aeb2b458f79319e53221b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374885"
 ---
 # <a name="creating-sockets"></a>ソケットの作成
 
 
-後は、Winsock カーネル (WSK) アプリケーションが正常に WSK サブシステムにアタッチと、ネットワーク I/O 操作に使用できるソケットを作成できます。 WSK アプリケーションが呼び出すことでソケットを作成、 [ **WskSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571149)関数。 **WskSocket**関数で指し示されます、 **WskSocket**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff571175)添付ファイルの中に、WSK サブシステムによって返された構造体。
+後は、Winsock カーネル (WSK) アプリケーションが正常に WSK サブシステムにアタッチと、ネットワーク I/O 操作に使用できるソケットを作成できます。 WSK アプリケーションが呼び出すことでソケットを作成、 [ **WskSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)関数。 **WskSocket**関数で指し示されます、 **WskSocket**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)添付ファイルの中に、WSK サブシステムによって返された構造体。
 
 WSK ソケットのカテゴリを作成している新しいソケットが作成されるたびに WSK アプリケーションが指定する必要があります。 WSK ソケットのカテゴリの詳細については、次を参照してください。 [Winsock カーネル ソケット カテゴリ](winsock-kernel-socket-categories.md)します。
 
-WSK アプリケーションにはアドレス ファミリ、ソケットの種類、およびプロトコルもを指定する必要がありますが、新しいソケットが作成されるたび。 WSK でサポートされているアドレス ファミリの詳細については、次を参照してください。 [WSK アドレス ファミリ](https://msdn.microsoft.com/library/windows/hardware/ff571151)します。
+WSK アプリケーションにはアドレス ファミリ、ソケットの種類、およびプロトコルもを指定する必要がありますが、新しいソケットが作成されるたび。 WSK でサポートされているアドレス ファミリの詳細については、次を参照してください。 [WSK アドレス ファミリ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))します。
 
 新しいソケットを作成するときに WSK アプリケーションは必要場合は、アプリケーションに、ソケットでイベントのコールバック関数が有効にするソケット コンテキストの値と、クライアント ディスパッチ テーブル構造へのポインターと提供する必要があります。 ソケットでのイベントのコールバック関数を有効にする方法の詳細については、次を参照してください。[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
 
-ソケットが正常に作成された場合、 **IoStatus.Information** IRP のフィールドには、ソケット オブジェクトの構造体へのポインターが含まれています ( [ **WSK\_ソケット**](https://msdn.microsoft.com/library/windows/hardware/ff571182))新しいソケット。 Irp を WSK 関数を使用する方法の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](using-irps-with-winsock-kernel-functions.md)します。
+ソケットが正常に作成された場合、 **IoStatus.Information** IRP のフィールドには、ソケット オブジェクトの構造体へのポインターが含まれています ( [ **WSK\_ソケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_socket))新しいソケット。 Irp を WSK 関数を使用する方法の詳細については、次を参照してください。 [Winsock カーネル関数を使用して Irp](using-irps-with-winsock-kernel-functions.md)します。
 
 次のコード例では、WSK アプリケーションがリスニング ソケットを作成する方法を示します。
 
@@ -153,7 +153,7 @@ NTSTATUS
 }
 ```
 
-接続指向のソケット WSK アプリケーションを呼び出すことができます、 [ **WskSocketConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571150)関数を作成し、バインドして、1 つの関数の呼び出しでソケットを接続します。
+接続指向のソケット WSK アプリケーションを呼び出すことができます、 [ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)関数を作成し、バインドして、1 つの関数の呼び出しでソケットを接続します。
 
  
 

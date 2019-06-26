@@ -9,12 +9,12 @@ keywords:
 - Irp WDK のキャンセル可能なカーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25b2fd53bf4b3079839853dac31f6475d17279b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a5947725b86a7f4221a1e06d56d8f7e0e8b647e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345433"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355468"
 ---
 # <a name="synchronizing-irp-cancellation"></a>IRP キャンセルの同期
 
@@ -26,13 +26,13 @@ ms.locfileid: "63345433"
 
 -   ドライバーのルーチンが呼び出された後が IRP をキューに配置する前に。
 
--   ルーチンは、ドライバーの後に呼び出されるしますが、IRP の処理を試みる前にします。 たとえば、ドライバーの後に IRP をキャンセルする可能性があります[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチンを呼び出すと、前に、 *StartIo*ルーチン IRP をデバイスのキューから削除します。
+-   ルーチンは、ドライバーの後に呼び出されるしますが、IRP の処理を試みる前にします。 たとえば、ドライバーの後に IRP をキャンセルする可能性があります[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンを呼び出すと、前に、 *StartIo*ルーチン IRP をデバイスのキューから削除します。
 
 -   ルーチンはドライバーの後に、IRP をデキューが要求された I/O を開始する前にします。
 
 ドライバーは IRP のキューしキューを保護するスピン ロックは解放、別のスレッドにアクセスして IRP の変更に注意してください。 元のスレッドを再開したとき-もすぐに次のコード行: IRP を既にされた可能性がありますがキャンセルまたはそれ以外の場合は変更します。
 
-ドライバーでは、IRP のキューを実装するために、キャンセルの安全な IRP のキューのフレームワークを使用できます。 システムを登録し、 [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742) Irp をキャンセルしても安全に同期を自動的に処理するドライバーの日常的な。 参照してください[キャンセル セーフ IRP キュー](cancel-safe-irp-queues.md)詳細についてはします。 それ以外の場合、ドライバーは、独自の同期を実装する必要があります。
+ドライバーでは、IRP のキューを実装するために、キャンセルの安全な IRP のキューのフレームワークを使用できます。 システムを登録し、 [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel) Irp をキャンセルしても安全に同期を自動的に処理するドライバーの日常的な。 参照してください[キャンセル セーフ IRP キュー](cancel-safe-irp-queues.md)詳細についてはします。 それ以外の場合、ドライバーは、独自の同期を実装する必要があります。
 
 IRP の次のメンバーには、取り消し処理についての情報が含まれます。
 

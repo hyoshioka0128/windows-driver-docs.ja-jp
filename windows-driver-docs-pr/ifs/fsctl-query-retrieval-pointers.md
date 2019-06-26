@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c54bbbfdb782e80955ff61c518bf530cec63e1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e09683e7fa5350d1546128a24f41942899783ba7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354200"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380078"
 ---
 # <a name="fsctlqueryretrievalpointers-control-code"></a>FSCTL\_クエリ\_取得\_ポインター制御コード
 
@@ -28,12 +28,12 @@ ms.locfileid: "63354200"
 
 **FSCTL\_クエリ\_取得\_ポインター**のような[ **FSCTL\_取得\_取得\_ポインター** ](fsctl-get-retrieval-pointers.md). ただし、 **FSCTL\_クエリ\_取得\_ポインター**ページング ファイルをローカルまたはシステム ハイブでカーネル モードでのみ機能します。 ページング ファイル、基になる物理記憶域を直接参照する LCN ボリューム内のために、VCN から一対一のマッピングが存在することが保証されます。 使用する必要がありますいない**FSCTL\_クエリ\_取得\_ポインター**ページング ファイル以外のファイルをミラー化されたボリュームなどのボリューム上に存在する可能性がありますのでがあるの一対多マッピングVCNs LCNs にします。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ページング ファイルや休止状態ファイルのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 ページング ファイルや休止状態ファイルのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 ページング ファイルや休止状態ファイルのファイル ハンドル。 このパラメーターが必要とすることはできません**NULL**します。
@@ -65,7 +65,7 @@ struct {
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)状態を返す両方\_成功または適切な NTSTATUS エラー値。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)状態を返す両方\_成功または適切な NTSTATUS エラー値。
 
 <a name="remarks"></a>注釈
 -------
@@ -91,7 +91,7 @@ struct {
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**FSCTL\_取得\_取得\_ポインター**](fsctl-get-retrieval-pointers.md)
 

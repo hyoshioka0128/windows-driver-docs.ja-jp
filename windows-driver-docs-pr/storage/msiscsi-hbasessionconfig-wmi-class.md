@@ -4,12 +4,12 @@ description: MSiSCSI\_HBASessionConfig WMI クラス
 ms.assetid: ef3ac7d0-be4a-457e-b837-a6434776dfc1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 916c0350f6fda5c23b66d04895d1fd81b765efb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 398207ad821975a8042c666ff523a96d64888367
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379676"
 ---
 # <a name="msiscsihbasessionconfig-wmi-class"></a>MSiSCSI\_HBASessionConfig WMI クラス
 
@@ -69,7 +69,7 @@ class MSiSCSI_HBASessionConfig {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_HBASessionConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff563021)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_HBASessionConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_msiscsi_hbasessionconfig)データ構造体。
 
  
 

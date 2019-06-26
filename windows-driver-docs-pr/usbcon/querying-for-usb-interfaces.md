@@ -3,12 +3,12 @@ Description: I/O 要求パケット (IRP) メカニズムを使用する代わ�
 title: バス ドライバー インターフェイスのクエリ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0af9d081017db8cb0c3346f27bf9933d274f70
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 906c726b2f0c2f56faef43a9dbd13bc435df805f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378856"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358361"
 ---
 # <a name="querying-for-bus-driver-interfaces"></a>バス ドライバー インターフェイスのクエリ
 
@@ -26,7 +26,7 @@ I/O 要求パケット (IRP) メカニズムを使用する代わりに USB ク�
 
 Windows Vista の USB クライアント ドライバー自体は公開できますを支援するためのインターフェイス、[共通クラス ジェネリック親ドライバーを USB](usb-common-class-generic-parent-driver.md)で、管理対象デバイスのインターフェイスのコレクションを定義します。
 
-クライアント ドライバーを送信する必要があります、バス ドライバー インターフェイスを取得する、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687)バス ドライバーに要求します。 クライアントは、ドライバー。
+クライアント ドライバーを送信する必要があります、バス ドライバー インターフェイスを取得する、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)バス ドライバーに要求します。 クライアントは、ドライバー。
 
 1.  作成型 IRP の IRP\_MN\_クエリ\_スタックの次の場所でインターフェイス。
     ```cpp
@@ -35,7 +35,7 @@ Windows Vista の USB クライアント ドライバー自体は公開できま
     irpstack->MinorFunction= IRP_MN_QUERY_INTERFACE;
     ```
 
-2.  インターフェイスのメモリの割り当てし、新しいメモリを指して、スタックを作成します。 メモリを割り当てる例については、 [ **USB\_BUS\_インターフェイス\_USBDI\_V0** ](https://msdn.microsoft.com/library/windows/hardware/ff539210)インターフェイス。
+2.  インターフェイスのメモリの割り当てし、新しいメモリを指して、スタックを作成します。 メモリを割り当てる例については、 [ **USB\_BUS\_インターフェイス\_USBDI\_V0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbbusif/ns-usbbusif-_usb_bus_interface_usbdi_v0)インターフェイス。
     ```cpp
     irpstack->Parameters.QueryInterface.Interface = (USB_BUS_INTERFACE_USBDI_V0) newly allocated interface buffer;
     ```
@@ -53,7 +53,7 @@ Windows Vista の USB クライアント ドライバー自体は公開できま
     ntStatus = IoCallDriver(PDO that the client passes URBs to, irp);
     ```
 
-5.  呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)を下位のスタックのクエリ インターフェイス IRP を渡します。
+5.  呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)を下位のスタックのクエリ インターフェイス IRP を渡します。
     ```cpp
     ntStatus = IoCallDriver(PDO that the client passes URBs to, irp);
     ```

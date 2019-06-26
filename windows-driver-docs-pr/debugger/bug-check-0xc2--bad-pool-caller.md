@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e4dca6534a7caa59805f9f6f0c6298d00aef3417
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.openlocfilehash: f50c89583a104abfcd0f2acf76f31503607a2aaa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239621"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367188"
 ---
 # <a name="developer-content-bug-check-0xc2-badpoolcaller"></a>(開発者向けコンテンツ)バグ チェック 0xC2 の。不適切な\_プール\_呼び出し元
 
@@ -26,7 +26,7 @@ ms.locfileid: "59239621"
 不適切な\_プール\_呼び出し元のバグ チェックが 0x000000C2 の値を持ちます。 これは、現在のスレッドが不正なプールの要求を行っていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="badpoolcaller-parameters"></a>不適切な\_プール\_呼び出し元のパラメーター
@@ -243,7 +243,7 @@ ms.locfileid: "59239621"
 
 **ドライバーの検証ツール**
 
-Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 ドライバー コードの実行でエラーが参照してください、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifer*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。
+Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 ドライバー コードの実行でエラーが参照してください、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifer*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
 
 **Windows メモリ診断**
 

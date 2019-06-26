@@ -10,12 +10,12 @@ keywords:
 - Windows 2000 の WDK のモードを表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20ffe555a994a8b2dd479190f5475db89751da78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 742c1411cde24ee8a39c993b4a3a3824491db0dd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389984"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365639"
 ---
 # <a name="returning-display-modes-drvgetmodes"></a>表示モードを返す: DrvGetModes
 
@@ -23,9 +23,9 @@ ms.locfileid: "63389984"
 ## <span id="ddk_returning_display_modes_drvgetmodes_gg"></span><span id="DDK_RETURNING_DISPLAY_MODES_DRVGETMODES_GG"></span>
 
 
-ディスプレイ ドライバーがサポートする必要がありますも[ **DrvGetModes**](https://msdn.microsoft.com/library/windows/hardware/ff556233)します。 この関数により、GDI のポインターの配列に[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)構造体。 構造体 (ピクセル単位、およびそのミリメートル) 内のディメンション、面の数、平面や色については、あたりのビット数など、サポートされるさまざまなモードの表示の属性を定義します。
+ディスプレイ ドライバーがサポートする必要がありますも[ **DrvGetModes**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)します。 この関数により、GDI のポインターの配列に[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体。 構造体 (ピクセル単位、およびそのミリメートル) 内のディメンション、面の数、平面や色については、あたりのビット数など、サポートされるさまざまなモードの表示の属性を定義します。
 
-ドライバーがメモリに使用できる表示モードを書き込みます順序と、 [ **DrvGetModes** ](https://msdn.microsoft.com/library/windows/hardware/ff556233)関数が呼び出される Windows が選択した最終的な表示モードの影響を与えることができます。 一般に、このアプリケーションでは、既定のモードを指定しない場合、システムは、ドライバーによって提供される一覧で最初の一致のモードを選択します。
+ドライバーがメモリに使用できる表示モードを書き込みます順序と、 [ **DrvGetModes** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)関数が呼び出される Windows が選択した最終的な表示モードの影響を与えることができます。 一般に、このアプリケーションでは、既定のモードを指定しない場合、システムは、ドライバーによって提供される一覧で最初の一致のモードを選択します。
 
 たとえば、現在の表示モードがあります。
 
@@ -43,7 +43,7 @@ ms.locfileid: "63389984"
 
 **ケース 1**
 
-アプリケーションが、モニターを設定しようとしています場合600x800x32bpp@60Hz、が、DM\_DISPLAYORIENTATION および DM\_で DISPLAYFIXEDOUTPUT フラグが設定されていない、 **dmFields**のメンバー [ **。DEVMODEW**](https://msdn.microsoft.com/library/windows/hardware/ff552837)システムの向きを選択する必要があり、出力モードを修正しました。 この場合、システムが表示モードを選択 C 現在 DMDFO に一致する最初の表示モードである\_CENTER の設定。
+アプリケーションが、モニターを設定しようとしています場合600x800x32bpp@60Hz、が、DM\_DISPLAYORIENTATION および DM\_で DISPLAYFIXEDOUTPUT フラグが設定されていない、 **dmFields**のメンバー [ **。DEVMODEW**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)システムの向きを選択する必要があり、出力モードを修正しました。 この場合、システムが表示モードを選択 C 現在 DMDFO に一致する最初の表示モードである\_CENTER の設定。
 
 **ケース 2**
 

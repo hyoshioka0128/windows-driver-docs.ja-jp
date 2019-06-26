@@ -4,12 +4,12 @@ description: アプリケーション項目とドライバー項目
 ms.assetid: 33b602dc-4a0b-47e1-90e2-b77ecc05f66d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4135db29b33359919bd2e911384bad9d852ce3d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17f2e83816dd4d51f1ad7cc6b3073942a8ef6e81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372605"
 ---
 # <a name="application-items-and-driver-items"></a>アプリケーション項目とドライバー項目
 
@@ -21,7 +21,7 @@ WIA 項目は、デバイスの属性とデバイスのデータを表します�
 
 1 つ以上のイメージング アプリケーションでは、同時に 1 つのイメージング デバイスを使用できます。 デバイス ツリー内の項目オブジェクトの各アプリケーションのビューは、別のアプリケーションのビューに依存しないため場合があります。 これは、次のように実現されます。
 
-1.  ミニドライバーのツリー項目を作成する[IWiaDrvItem インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543896)オブジェクトを使用して、 [IWiaMiniDrv インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545027)と[WIA ドライバー サービス ライブラリ関数](https://msdn.microsoft.com/library/windows/hardware/ff551473)します。 このドライバーの項目のツリー内の項目は、デバイスの項目を表す、ミニドライバーを使用するグローバル オブジェクトです。
+1.  ミニドライバーのツリー項目を作成する[IWiaDrvItem インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)オブジェクトを使用して、 [IWiaMiniDrv インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)と[WIA ドライバー サービス ライブラリ関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/index)します。 このドライバーの項目のツリー内の項目は、デバイスの項目を表す、ミニドライバーを使用するグローバル オブジェクトです。
 
 2.  イメージング アプリケーション要求へのアクセスをツリー内の項目、WIA サービスは、ドライバーの項目のコピーである項目オブジェクトを返します。 アプリケーションがアプリケーションを獲得する場合**IWiaItem** (Microsoft Windows SDK のドキュメントで説明) 項目オブジェクト (アプリケーションの項目)、ミニドライバーにこのオブジェクトの対応する WIA サービスへのリンク**IWiaDrvItem**オブジェクト、*ドライバー項目ツリー*します。
 

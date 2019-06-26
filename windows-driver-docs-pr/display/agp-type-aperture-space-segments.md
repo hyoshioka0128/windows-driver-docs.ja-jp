@@ -8,12 +8,12 @@ keywords:
 - aperture 空間セグメントの WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bd9394c6548d497e3f467437b618217e3ceea79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8b24145b1658b293f2725e72e09d89549f7c8ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381886"
 ---
 # <a name="agp-type-aperture-space-segments"></a>AGP タイプのアパーチャ領域セグメント
 
@@ -21,9 +21,9 @@ ms.locfileid: "63356256"
 ## <span id="ddk_agp_type_aperture_space_segments_gg"></span><span id="DDK_AGP_TYPE_APERTURE_SPACE_SEGMENTS_GG"></span>
 
 
-AGP 型の開口部領域セグメントは、線形 aperture 領域セグメントに似ていますただし、表示のミニポート ドライバーでは DXGK を公開しません\_操作\_マップ\_APERTURE\_セグメントと DXGK\_操作\_UNMAP\_APERTURE\_のセグメントの操作の種類、 [ **DxgkDdiBuildPagingBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff559587) AGP 型 aperture 領域のセグメントを使用してコールバック関数。 ビデオ メモリ マネージャーは GART ドライバーを使用して、マップおよびシステム ページをマップ解除する代わりに、(つまり、ビデオ メモリ マネージャーは実行されません、ディスプレイのミニポート ドライバー)。
+AGP 型の開口部領域セグメントは、線形 aperture 領域セグメントに似ていますただし、表示のミニポート ドライバーでは DXGK を公開しません\_操作\_マップ\_APERTURE\_セグメントと DXGK\_操作\_UNMAP\_APERTURE\_のセグメントの操作の種類、 [ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer) AGP 型 aperture 領域のセグメントを使用してコールバック関数。 ビデオ メモリ マネージャーは GART ドライバーを使用して、マップおよびシステム ページをマップ解除する代わりに、(つまり、ビデオ メモリ マネージャーは実行されません、ディスプレイのミニポート ドライバー)。
 
-ドライバーを設定する必要があります、 **Agp**でフラグをビット フィールド、**フラグ**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://msdn.microsoft.com/library/windows/hardware/ff562035)構造体AGP 型 aperture 領域セグメントを指定します。
+ドライバーを設定する必要があります、 **Agp**でフラグをビット フィールド、**フラグ**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)構造体AGP 型 aperture 領域セグメントを指定します。
 
  
 

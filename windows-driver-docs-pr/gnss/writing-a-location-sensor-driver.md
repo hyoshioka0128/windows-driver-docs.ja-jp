@@ -4,16 +4,16 @@ description: Windows 8.1 用位置センサー ドライバーの作成
 ms.assetid: 18852282-6529-4934-a448-b699e01987de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3c8d0a8e8015545f12f82bc4fe4e5e01829004f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7642faf1d1a633ce3c2052c486925cb0fe4d4f08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326166"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363634"
 ---
 # <a name="writing-a-location-sensor-driver-for-windows-81"></a>Windows 8.1 用位置センサー ドライバーの作成
 
-このセクションでは、場所データを提供するデバイス用のドライバーを記述するための具体的なガイダンスを提供します。 このセクションに含まれている情報だけでなく場所ドライバー作成者する必要がありますも理解し、で提供される情報を適用[センサー デバイス ドライバーを作成](https://msdn.microsoft.com/library/windows/hardware/ff545927)です。
+このセクションでは、場所データを提供するデバイス用のドライバーを記述するための具体的なガイダンスを提供します。 このセクションに含まれている情報だけでなく場所ドライバー作成者する必要がありますも理解し、で提供される情報を適用[センサー デバイス ドライバーを作成](https://docs.microsoft.com/windows-hardware/drivers/sensors/writing-a-sensor-device-driver)です。
 
 Sensor and Location プラットフォームは、自分のプログラムに簡単に場所の機能を追加するソフトウェア開発者を有効にする Windows Location API を提供します。 位置情報センサー用のドライバーを作成する場合は、ドライバーの場所 API 互換性を確保し、ガイドラインに従う方法を理解する必要があります[能力とパフォーマンスのドライバーのガイドラインを場所](location-driver-guidelines-for-power-and-performance.md)します。
 
@@ -49,7 +49,7 @@ Windows ハードウェア認定プログラムには、ハードウェアの製
 
 ## <a name="identifying-the-category"></a>カテゴリを識別します。
 
-呼び出される[ **ISensorDriver::OnGetProperties**](https://msdn.microsoft.com/library/windows/hardware/ff545610)、設定、 **WPD\_機能\_オブジェクト\_カテゴリ**プロパティの値を**センサー\_カテゴリ\_場所**します。 次のコード例は、この定数へのポインターを設定する方法を示しています。 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486) pValues という名前です。
+呼び出される[ **ISensorDriver::OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)、設定、 **WPD\_機能\_オブジェクト\_カテゴリ**プロパティの値を**センサー\_カテゴリ\_場所**します。 次のコード例は、この定数へのポインターを設定する方法を示しています。 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486) pValues という名前です。
 
 ```cpp
 hr = pValues->SetGuidValue(WPD_FUNCTIONAL_OBJECT_CATEGORY, SENSOR_CATEGORY_LOCATION);
@@ -57,7 +57,7 @@ hr = pValues->SetGuidValue(WPD_FUNCTIONAL_OBJECT_CATEGORY, SENSOR_CATEGORY_LOCAT
 
 ## <a name="setting-the-location-sensor-type"></a>場所のセンサーの種類の設定
 
-呼び出される[ **ISensorDriver::OnGetProperties**](https://msdn.microsoft.com/library/windows/hardware/ff545610)、設定、**センサー\_プロパティ\_型**プロパティの値は、正しい値。 次のコード例を使用して、センサーの種類を設定する方法を示しています、**センサー\_型\_場所\_GPS**へのポインターを通じて一定[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)pValues という名前です。
+呼び出される[ **ISensorDriver::OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)、設定、**センサー\_プロパティ\_型**プロパティの値は、正しい値。 次のコード例を使用して、センサーの種類を設定する方法を示しています、**センサー\_型\_場所\_GPS**へのポインターを通じて一定[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)pValues という名前です。
 
 ```cpp
 hr = pValues->SetGuidValue(SENSOR_PROPERTY_TYPE, SENSOR_TYPE_LOCATION_GPS);
@@ -77,9 +77,9 @@ LatLong レポートをサポートするためには、次のデータ フィ�
 
 -   センサー\_データ\_型\_国\_リージョン
 
-(プラットフォームで定義された場所のデータ フィールドの完全なセットを表示するのを参照してください[**センサー\_カテゴリ\_場所**](https://msdn.microsoft.com/library/windows/hardware/dn265186)で、 [Windows センサー参照](https://msdn.microsoft.com/library/windows/hardware/ff545907)。セクションです)。
+(プラットフォームで定義された場所のデータ フィールドの完全なセットを表示するのを参照してください[**センサー\_カテゴリ\_場所**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-category-loc)で、 [Windows センサー参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。セクションです)。
 
-呼び出すとき[ **ISensorDriver::OnGetSupportedDataFields**](https://msdn.microsoft.com/library/windows/hardware/ff545620)にサポートされているデータ フィールド プロパティ キー定数を追加、 [IPortableDeviceKeyCollection](https://go.microsoft.com/fwlink/p/?linkid=131484)を返す、 *ppSupportedDataFields*パラメーター。 次のコード例は、郵便番号のデータ フィールドを追加する方法を示しています。 [IPortableDeviceKeyCollection](https://go.microsoft.com/fwlink/p/?linkid=131484) pKeyCollection という名前の変数を使用します。
+呼び出すとき[ **ISensorDriver::OnGetSupportedDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields)にサポートされているデータ フィールド プロパティ キー定数を追加、 [IPortableDeviceKeyCollection](https://go.microsoft.com/fwlink/p/?linkid=131484)を返す、 *ppSupportedDataFields*パラメーター。 次のコード例は、郵便番号のデータ フィールドを追加する方法を示しています。 [IPortableDeviceKeyCollection](https://go.microsoft.com/fwlink/p/?linkid=131484) pKeyCollection という名前の変数を使用します。
 
 ```cpp
 pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
@@ -87,7 +87,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="support-the-required-properties"></a>必要なプロパティをサポートします。
 
-その他のセンサー ドライバーのようには、場所ドライバーは、一連のプロパティのセンサー自体に関する情報を提供します。 Windows ハードウェア認定プログラムでは、最低限必要な一連の位置情報センサーをサポートする必要がありますプロパティを指定します。 センサーのプロパティ、その意味、およびプロパティは、センサー ドライバーに必要な詳細については、次を参照してください。 [**センサー プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff545859)します。 次の一覧には、必要なプロパティが含まれています。
+その他のセンサー ドライバーのようには、場所ドライバーは、一連のプロパティのセンサー自体に関する情報を提供します。 Windows ハードウェア認定プログラムでは、最低限必要な一連の位置情報センサーをサポートする必要がありますプロパティを指定します。 センサーのプロパティ、その意味、およびプロパティは、センサー ドライバーに必要な詳細については、次を参照してください。 [**センサー プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-properties)します。 次の一覧には、必要なプロパティが含まれています。
 
 -   WPD\_機能\_オブジェクト\_カテゴリ
 
@@ -113,11 +113,11 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="providing-data"></a>データを提供します。
 
-ドライバーの場所は、他センサー ドライバーと同じメカニズムを通じてデータを提供します。 センサー クラスの拡張機能のドライバーは、呼び出しは、 [ **ISensorDriver::OnGetDataFields** ](https://msdn.microsoft.com/library/windows/hardware/ff545607)し、ドライバーによって値を返します、 *ppDataValues*パラメーター。
+ドライバーの場所は、他センサー ドライバーと同じメカニズムを通じてデータを提供します。 センサー クラスの拡張機能のドライバーは、呼び出しは、 [ **ISensorDriver::OnGetDataFields** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)し、ドライバーによって値を返します、 *ppDataValues*パラメーター。
 
 位置情報センサーからデータを提供するために、次の要件が適用されます。
 
--   同期要求を使用し、両方のデータを提供[イベントを発生させる](https://msdn.microsoft.com/library/windows/hardware/ff545695)します。
+-   同期要求を使用し、両方のデータを提供[イベントを発生させる](https://docs.microsoft.com/windows-hardware/drivers/sensors/raising-events)します。
 
 -   最新のデータのレポートのコピーを保持します。 要求するときに新しいデータが利用できない場合は、キャッシュされたレポートを返します。 タイムスタンプは更新されません。
 
@@ -129,7 +129,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 -   ドライバーは、緯度/経度と都市の住所のレポートの両方をサポートする場合、これらのレポート内の場所のデータは物理的に同じ場所に対応します。
 
-次の表、[センサー データ フィールド](https://msdn.microsoft.com/library/windows/hardware/ff545718)Location API データ レポートのフィールドに対応しています。 場所のデータのレポートを提供する場合は、これらのデータ フィールドの定数を使用します。
+次の表、[センサー データ フィールド](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-categories--types--and-data-fields)Location API データ レポートのフィールドに対応しています。 場所のデータのレポートを提供する場合は、これらのデータ フィールドの定数を使用します。
 
 <table>
 <colgroup>
@@ -167,7 +167,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 <td><p><strong>SENSOR_DATA_TYPE_CITY</strong></p></td>
 <td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=157828" data-raw-source="[ICivicAddressReport::GetCity](https://go.microsoft.com/fwlink/p/?linkid=157828)">ICivicAddressReport::GetCity</a></p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=157830" data-raw-source="[LocationDisp.DispCivicAddressReport.City](https://go.microsoft.com/fwlink/p/?linkid=157830)">LocationDisp.DispCivicAddressReport.City</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.civicaddress.city.aspx" data-raw-source="[Windows.Devices. Geolocation.CivicAddress](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.civicaddress.city.aspx)">含まれる windows devices です。Geolocation.CivicAddress</a></p></td>
+<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.CivicAddress#Windows_Devices_Geolocation_CivicAddress_City" data-raw-source="[Windows.Devices. Geolocation.CivicAddress](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.CivicAddress#Windows_Devices_Geolocation_CivicAddress_City)">含まれる windows devices です。Geolocation.CivicAddress</a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>SENSOR_DATA_TYPE_COUNTRY_REGION</strong></p></td>
@@ -204,7 +204,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="managing-state-transitions"></a>状態遷移の管理
 
-いつでもでも、状態の数のいずれかでセンサー ドライバーができます。 センサーの状態がによって定義されている、 [ **SensorState** ](https://msdn.microsoft.com/library/windows/hardware/ff545708)列挙体。 Location API を正常に機能するには、場所のセンサーは状態遷移を処理するため、これらの規則に従う必要があります。
+いつでもでも、状態の数のいずれかでセンサー ドライバーができます。 センサーの状態がによって定義されている、 [ **SensorState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001)列挙体。 Location API を正常に機能するには、場所のセンサーは状態遷移を処理するため、これらの規則に従う必要があります。
 
 -   センサーでは常にスタート\_状態\_の状態を初期化していますが、起動時に状態変更イベントを発生させません。
 
@@ -272,13 +272,13 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="raising-data-updated-and-state-changed-events"></a>データ更新、および状態変更イベントを発生させる
 
-Location API、データと状態変更情報を提供するイベントを発生させる、GPS センサーなどの場所のセンサーが必要です。 センサーのイベントの発生に関する詳細については、次を参照してください。[センサー ドライバー イベントについて](https://msdn.microsoft.com/library/windows/hardware/ff545385)します。
+Location API、データと状態変更情報を提供するイベントを発生させる、GPS センサーなどの場所のセンサーが必要です。 センサーのイベントの発生に関する詳細については、次を参照してください。[センサー ドライバー イベントについて](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-driver-events)します。
 
 これらのイベントを発生させる場合ドライバーの場所はこれらの規則に従う必要があります。
 
--   センサー クラスの拡張を呼び出して、状態変更イベントを発生させる[ **ISensorClassExtension::PostStateChange** ](https://msdn.microsoft.com/library/windows/hardware/ff545523)メソッド。 呼び出さない[ **PostEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff545519)状態変更イベントを発生させます。
+-   センサー クラスの拡張を呼び出して、状態変更イベントを発生させる[ **ISensorClassExtension::PostStateChange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)メソッド。 呼び出さない[ **PostEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)状態変更イベントを発生させます。
 
--   呼び出して、データ更新後のイベントを発生させる[ **PostEvent**](https://msdn.microsoft.com/library/windows/hardware/ff545519)します。
+-   呼び出して、データ更新後のイベントを発生させる[ **PostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)します。
 -   データが最新かつ正確な場合にのみ、データ更新イベントを発生します。
 
 -   2 回、データ更新イベントを発生しません。 これは、キャッシュされたデータを使用してデータ更新イベントを発生させるしないことを意味します。 データの同期要求への応答でキャッシュされたデータを行うことができます。
@@ -291,7 +291,7 @@ Location API、データと状態変更情報を提供するイベントを発�
 
 -   不完全なデータのレポートは提供されません。
 
--   GPS センサーがその修正を失ったときなど、必要なデータ フィールドの現在のデータができないことがあります。 この場合、センサーなどの拡張データ フィールドの更新に関する通知を提供する可能性がありますも\_データ\_型\_NMEA\_文。 このような通知を提供するにはカスタム イベントの種類を使用して、必要なデータ フィールドのデータが使用可能になるまでのカスタム イベントのみが発生します。 カスタム型を定義する方法については、次を参照してください。[定数のカスタム値を定義する](https://msdn.microsoft.com/library/windows/hardware/ff545437)します。
+-   GPS センサーがその修正を失ったときなど、必要なデータ フィールドの現在のデータができないことがあります。 この場合、センサーなどの拡張データ フィールドの更新に関する通知を提供する可能性がありますも\_データ\_型\_NMEA\_文。 このような通知を提供するにはカスタム イベントの種類を使用して、必要なデータ フィールドのデータが使用可能になるまでのカスタム イベントのみが発生します。 カスタム型を定義する方法については、次を参照してください。[定数のカスタム値を定義する](https://docs.microsoft.com/windows-hardware/drivers/sensors/defining-custom-values-for-constants)します。
 
 ## <a name="related-topics"></a>関連トピック
 

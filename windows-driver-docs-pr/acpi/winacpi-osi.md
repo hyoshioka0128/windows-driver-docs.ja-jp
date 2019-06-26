@@ -3,12 +3,12 @@ title: _OSI を使用して ACPI で Windows バージョンを識別する方�
 description: ホスト オペレーティング システムの識別に使用される ACPI ソース言語 (ASL) のオペレーティング システム インターフェイス レベル (\_OSI) メソッドについて説明します。
 ms.date: 11/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bed2365560ab1fd5e75303901746c2fa66975f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c25144a88437574a1aae4b762e7a459b09637c88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330860"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355798"
 ---
 # <a name="how-to-identify-the-windows-version-in-acpi-by-using-osi"></a>_OSI を使用して ACPI で Windows バージョンを識別する方法
 
@@ -36,7 +36,7 @@ ms.locfileid: "63330860"
 
 ## <a name="the-osi-method"></a>\_OSI メソッド
 
-Windows オペレーティング システムのすべての最新バージョンのコンポーネントをサポートする、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://www.uefi.org/specifications)します。 ACPI の仕様には、ACPI ソース言語 (ASL)、電源管理と構成のファームウェアで提供されるコントロールのメソッドを実行するオペレーティング システムを有効にする、インタープリター言語が定義されています。 ホスト オペレーティング システムのバージョンを識別するために ASL ライターの機能を向上させるのには、ASL はオペレーティング システム インターフェイス レベルを提供します。 (\_OSI)。
+Windows オペレーティング システムのすべての最新バージョンのコンポーネントをサポートする、 [Advanced Configuration and Power Interface (ACPI) 仕様](https://uefi.org/specifications)します。 ACPI の仕様には、ACPI ソース言語 (ASL)、電源管理と構成のファームウェアで提供されるコントロールのメソッドを実行するオペレーティング システムを有効にする、インタープリター言語が定義されています。 ホスト オペレーティング システムのバージョンを識別するために ASL ライターの機能を向上させるのには、ASL はオペレーティング システム インターフェイス レベルを提供します。 (\_OSI)。
 
 使用して、 \_OSI メソッド、ASL ライターは、ホスト オペレーティング システムをサポートする ACPI インターフェイスのバージョンを確認する簡単にします。 このバージョン管理メソッドでは、将来のオペレーティング システムをサポートでき、要求されたインターフェイスのレベルに基づく動作を変更するオペレーティング システムを有効にしているファームウェアを作成するため、ソリューションを提供します。
 
@@ -101,4 +101,4 @@ Windows オペレーティング システムが 0 xffffffff を返す場合に�
 オペレーティング システムを識別するルーチンを配置、 \_INI メソッドの下、 \\ \_SB スコープように\_OSI をできるだけ早く実行できます。 この配置は、オペレーティング システムでは、使用可能な機能への文字列引数に基づくために、重要な\_OSI メソッド。
 
 ## <a name="additional-resources"></a>その他の資料
-[Advanced Configuration and Power Interface Specification](https://www.uefi.org/specifications)
+[Advanced Configuration and Power Interface Specification](https://uefi.org/specifications)

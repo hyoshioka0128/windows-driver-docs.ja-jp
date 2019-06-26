@@ -9,17 +9,17 @@ keywords:
 - ヘルパー インターフェイス WDK プリンター インターフェイス DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 760de4d909082c4050ae870662fea039a8e23816
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68ebf1d245e9d043e14293091c517e9b4843c941
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354065"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378592"
 ---
 # <a name="unidrv-and-pscript5-helper-interfaces-for-plug-ins"></a>プラグインの Unidrv と Pscript5 ヘルパーのインターフェイス
 
 
-[IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)と[IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)インターフェイスの継承、 [IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)インターフェイス、3 つすべてのインターフェイスがの共通のセットを共有します。メソッド。 次の表では、ヘルパーのインターフェイスとメモが、方法を次の 3 つのすべてのインターフェイスで使用可能なとが、方法をインターフェイスの 1 つのみで使用可能なメソッドを示します。
+[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)と[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)インターフェイスの継承、 [IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)インターフェイス、3 つすべてのインターフェイスがの共通のセットを共有します。メソッド。 次の表では、ヘルパーのインターフェイスとメモが、方法を次の 3 つのすべてのインターフェイスで使用可能なとが、方法をインターフェイスの 1 つのみで使用可能なメソッドを示します。
 
 <table>
 <colgroup>

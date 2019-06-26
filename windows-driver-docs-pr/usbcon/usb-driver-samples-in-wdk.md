@@ -3,12 +3,12 @@ Description: トピックには、GitHub では、Windows ドライバーのサ�
 title: USB ドライバーのサンプル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dc88f736682a8c2cdecf1e04cc7f5f69cf2a6fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e8cecce9ec3e6ae3488f999674fdfb1095f664a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385060"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356601"
 ---
 # <a name="usb-driver-samples"></a>USB ドライバーのサンプル
 
@@ -58,7 +58,7 @@ ms.locfileid: "63385060"
 ## <a name="building-a-sample"></a>サンプルの構築
 
 
-サンプルのドライバーを構築する方法の詳細については、次を参照してください。[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)します。
+サンプルのドライバーを構築する方法の詳細については、次を参照してください。[開発、テスト、および展開ドライバー](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 ## <a name="related-topics"></a>関連トピック
 [USB クライアント ドライバー開発の概要](getting-started-with-usb-client-driver-development.md)  

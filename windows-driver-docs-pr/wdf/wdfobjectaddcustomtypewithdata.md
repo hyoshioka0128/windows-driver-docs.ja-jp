@@ -6,12 +6,12 @@ keywords:
 - WdfObjectAddCustomTypeWithData マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f81bf3e366d91547740e035434cac54a9699389b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 020c428597de68918546834a1ae104cae97246cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390828"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372101"
 ---
 # <a name="wdfobjectaddcustomtypewithdata-macro"></a>WdfObjectAddCustomTypeWithData マクロ
 
@@ -46,10 +46,10 @@ Framework のオブジェクトへのハンドル。
 ドライバーが提供するデータ バッファーへのポインター。 このパラメーターは省略可能です。
 
 *_cleanup*   
-ドライバーへのポインター [ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)コールバック関数、または NULL。 このパラメーターは省略可能です。
+ドライバーへのポインター [ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)コールバック関数、または NULL。 このパラメーターは省略可能です。
 
 *_destroy*   
-ドライバーへのポインター [ *EvtDestroyCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540841)コールバック関数、または NULL。 このパラメーターは省略可能です。
+ドライバーへのポインター [ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)コールバック関数、または NULL。 このパラメーターは省略可能です。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -92,9 +92,9 @@ Framework のオブジェクトへのハンドル。
 <a name="remarks"></a>注釈
 -------
 
-ドライバーを呼び出す場合**WdfObjectAddCustomTypeWithData**データ バッファーへのポインター、ドライバーを提供できます、 [ *EvtCleanupCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540840)または[ *EvtDestroyCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff540841)オブジェクトが削除されたときに、メモリ バッファーの割り当てを解除するコールバック関数。
+ドライバーを呼び出す場合**WdfObjectAddCustomTypeWithData**データ バッファーへのポインター、ドライバーを提供できます、 [ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)または[ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)オブジェクトが削除されたときに、メモリ バッファーの割り当てを解除するコールバック関数。
 
-オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
+オブジェクトのカスタム種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-custom-types)します。
 
 コード例では、次を参照してください。 [ **WdfObjectAddCustomType**](wdfobjectaddcustomtype.md)します。
 

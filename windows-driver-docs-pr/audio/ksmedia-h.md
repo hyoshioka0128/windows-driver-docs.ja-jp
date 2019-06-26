@@ -4,12 +4,12 @@ description: このセクションには、Ksmedia.h ヘッダーの参照トピ
 ms.assetid: D5654BC1-45F5-4EC9-9E93-60318EF4C159
 ms.date: 11/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 763afb3b4f28d1b66b8476f2d37ce193c0681cdf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71593cc0d8bfb181a6e04d9de8a944e6ec980bb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333423"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359035"
 ---
 # <a name="ksmediah"></a>Ksmedia.h
 
@@ -19,7 +19,7 @@ ms.locfileid: "63333423"
 
 |トピック|説明|
 |--- |--- |
-|[KSEVENT_CONTROL_CHANGE](ksevent-control-change.md)|KSEVENT_CONTROL_CHANGE イベントは、ハードウェア ボリューム コントロールのノブ、ミュート スイッチ、または手動のコントロールの他の種類を表すノードにあるコントロールの値の変更が発生したことを示します。 イベント値の型 (データの操作) は、イベントを使用する通知の種類を指定する KSEVENTDATA 構造です。|Pin|[KSE_NODE](https://msdn.microsoft.com/library/windows/hardware/ff561937)|[KSEVENTDATA](https://msdn.microsoft.com/library/windows/hardware/ff561750)|
+|[KSEVENT_CONTROL_CHANGE](ksevent-control-change.md)|KSEVENT_CONTROL_CHANGE イベントは、ハードウェア ボリューム コントロールのノブ、ミュート スイッチ、または手動のコントロールの他の種類を表すノードにあるコントロールの値の変更が発生したことを示します。 イベント値の型 (データの操作) は、イベントを使用する通知の種類を指定する KSEVENTDATA 構造です。|Pin|[KSE_NODE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kse_node)|[KSEVENTDATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)|
 |[KSEVENT_LOOPEDSTREAMING_POSITION](ksevent-loopedstreaming-position.md)|KSEVENT_LOOPEDSTREAMING_POSITION イベントは、オーディオのストリーム バッファーをループ内の指定位置に達したことを示します。|
 |[KSEVENT_SOUNDDETECTOR_MATCHDETECTED](ksevent-sounddetector-matchdetected.md)|KSEVENT_SOUNDDETECTOR_MATCHDETECTED イベントは、一致が検出されたときに、OS に通知するオーディオ ドライバーによって生成されます。|
 |[KSJACK_DESCRIPTION](ksjack-description.md)|KSJACK_DESCRIPTION 構造体には、オーディオ ジャックの物理属性を指定します。|
@@ -121,8 +121,8 @@ ms.locfileid: "63333423"
 |[KSPROPERTY_DIRECTSOUND3DLISTENER_POSITION](ksproperty-directsound3dlistener-position.md)|KSPROPERTY_DIRECTSOUND3DLISTENER_POSITION プロパティには、3 D リスナーの位置を指定します。|
 |[KSPROPERTY_DIRECTSOUND3DLISTENER_ROLLOFFFACTOR](ksproperty-directsound3dlistener-rollofffactor.md)|KSPROPERTY_DIRECTSOUND3DLISTENER_ROLLOFFFACTOR プロパティは、3 D リスナーのロールオフ係数を指定します。|
 |[KSPROPERTY_DIRECTSOUND3DLISTENER_VELOCITY](ksproperty-directsound3dlistener-velocity.md)|KSPROPERTY_DIRECTSOUND3DLISTENER_VELOCITY プロパティには、3 D リスナーの速度ベクターを指定します。|
-|[KSPROPERTY_FMRX_ANTENNAENDPOINTID](ksproperty-fmrx-antennaendpointid.md)|[KSTOPOLOGY_ENDPOINTID](https://msdn.microsoft.com/library/windows/hardware/mt169886)プロパティには、FM アンテナとして使用するエンドポイントに関する情報が含まれています。|
-|[KSPROPERTY_FMRX_ENDPOINTID](ksproperty-fmrx-endpointid.md)|[KSTOPOLOGY_ENDPOINTID](https://msdn.microsoft.com/library/windows/hardware/mt169886)プロパティには、FM ラジオ出力レンダー/エンドポイントのエンドポイント ID が含まれています。|
+|[KSPROPERTY_FMRX_ANTENNAENDPOINTID](ksproperty-fmrx-antennaendpointid.md)|[KSTOPOLOGY_ENDPOINTID](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstopology_endpointid)プロパティには、FM アンテナとして使用するエンドポイントに関する情報が含まれています。|
+|[KSPROPERTY_FMRX_ENDPOINTID](ksproperty-fmrx-endpointid.md)|[KSTOPOLOGY_ENDPOINTID](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_tagkstopology_endpointid)プロパティには、FM ラジオ出力レンダー/エンドポイントのエンドポイント ID が含まれています。|
 |[KSPROPERTY_FMRX_VOLUME](ksproperty-fmrx-volume.md)|[KSPROPERTY_FMRX_VOLUME](ksproperty-fmrx-volume.md)プロパティは、FM ラジオの量を制御します。|
 |[KSPROPERTY_HRTF3D_FILTER_FORMAT](ksproperty-hrtf3d-filter-format.md)|KSPROPERTY_HRTF3D_FILTER_FORMAT プロパティは、HRTF アルゴリズムで使用されるフィルターの形式を取得します。|
 |[KSPROPERTY_HRTF3D_INITIALIZE](ksproperty-hrtf3d-initialize.md)|KSPROPERTY_HRTF3D_INITIALIZE プロパティには、HRTF アルゴリズムを初期化するために使用するパラメーター値を指定します。|
@@ -171,6 +171,6 @@ ms.locfileid: "63333423"
 |[KSPROPERTY_TELEPHONY_VOLUME](ksproperty-telephony-volume.md)|[KSPROPERTY_TELEPHONY_VOLUME](ksproperty-telephony-volume.md)プロパティを使用して、携帯電話のすべての呼び出しの量を制御します。|
 |[KSPROPERTY_TOPOLOGYNODE_ENABLE](ksproperty-topologynode-enable.md)|KSPROPERTY_TOPOLOGYNODE_ENABLE プロパティは、オンまたはオフ、既にビルドされたトポロジでのトポロジのノードに使用されます。|
 |[KSPROPERTY_TOPOLOGYNODE_RESET](ksproperty-topologynode-reset.md)|KSPROPERTY_TOPOLOGYNODE_RESET プロパティをリセット ノード完全に初期状態に復元します。|
-|[KSRTAUDIO_BUFFER_PROPERTY](ksrtaudio-buffer-property.md)|バッファーの基本アドレスを要求したバッファーのサイズを KSRTAUDIO_BUFFER_PROPERTY 構造体を追加します、 [KSPROPERTY](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 この構造を使用してオーディオ バッファーの割り当てを要求するクライアントによって使用される[KSPROPERTY_RTAUDIO_BUFFER](ksproperty-rtaudio-buffer.md)します。|
+|[KSRTAUDIO_BUFFER_PROPERTY](ksrtaudio-buffer-property.md)|バッファーの基本アドレスを要求したバッファーのサイズを KSRTAUDIO_BUFFER_PROPERTY 構造体を追加します、 [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 この構造を使用してオーディオ バッファーの割り当てを要求するクライアントによって使用される[KSPROPERTY_RTAUDIO_BUFFER](ksproperty-rtaudio-buffer.md)します。|
 
 

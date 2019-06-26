@@ -5,12 +5,12 @@ ms.assetid: 6001dc07-43ab-420d-b29b-1138485ce218
 ms.date: 08/08/2017
 keywords: -OID_GEN_MULTICAST_FRAMES_RCV ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 61dcf96b55882c53755338a4a2853dbbeee53ca6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a007403031d92841832d5795f2f0c2f8fc6ed6a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354710"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379404"
 ---
 # <a name="oidgenmulticastframesrcv"></a>OID\_GEN\_マルチキャスト\_フレーム\_受信
 
@@ -37,7 +37,7 @@ ms.locfileid: "63354710"
 <a name="remarks"></a>注釈
 -------
 
-Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
+Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
 
 <a name="requirements"></a>要件
 ------------

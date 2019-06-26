@@ -13,12 +13,12 @@ keywords:
 - DVD decrypters WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a46dd2a8bacef749819c0878a2a5fc780e1d0a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4964b70bb285950e0dff19fdba6f6825d0d6ffda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364805"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377748"
 ---
 # <a name="synchronizing-key-exchange-with-data-flow"></a>キー交換とデータ フローの同期
 
@@ -26,9 +26,9 @@ ms.locfileid: "63364805"
 
 
 
-前のキーからすべてのデータが処理される前に、キーの交換プロセスを開始可能性があります。 この例は、セットでいくつかのムービー設定メイン プログラムのタイトルにトレーラー タイトルからの移行になります。 フラグがある、 **TypeSpecificFlags**のメンバー、 [ **KSSTREAM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567138)各データ パケットの構造体。 このフラグは**KS\_AM\_UseNewCSSKey**、定義されている*ksmedia.h*します。 ヘッダーの直後に続くデータ サンプルが新しいタイトル キーを適用する最初のデータ サンプルであることを示します。
+前のキーからすべてのデータが処理される前に、キーの交換プロセスを開始可能性があります。 この例は、セットでいくつかのムービー設定メイン プログラムのタイトルにトレーラー タイトルからの移行になります。 フラグがある、 **TypeSpecificFlags**のメンバー、 [ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)各データ パケットの構造体。 このフラグは**KS\_AM\_UseNewCSSKey**、定義されている*ksmedia.h*します。 ヘッダーの直後に続くデータ サンプルが新しいタイトル キーを適用する最初のデータ サンプルであることを示します。
 
-復号化には、古いキーを使用中に新しいキーの交換を処理できますが、プロパティを受信すると、DVD デコーダーのミニドライバーは、キーの交換を処理する必要があります。 すべてのムービー データまで、前のキーを必要とする処理が完了し、復号化の SRB を保持する場合は、復号化を待機する必要があります、**設定**プロパティ。 復号化を使用して、 [ **KS\_DVDCOPY\_設定\_コピー\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567639)パラメーターを使用した構造**KS\_DVDCOPYSTATE\_初期化**または**KS\_DVDCOPYSTATE\_初期化\_タイトル**が受信されるまで、 **KS\_AM\_UseNewCSSKey**フラグをそれに接続されているすべてのストリーム。 その後は、DVD デコーダーのミニドライバーは、その時点までに受信したすべてのパケットを処理します。 これにより、不正なキーを使用してデータになります。
+復号化には、古いキーを使用中に新しいキーの交換を処理できますが、プロパティを受信すると、DVD デコーダーのミニドライバーは、キーの交換を処理する必要があります。 すべてのムービー データまで、前のキーを必要とする処理が完了し、復号化の SRB を保持する場合は、復号化を待機する必要があります、**設定**プロパティ。 復号化を使用して、 [ **KS\_DVDCOPY\_設定\_コピー\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)パラメーターを使用した構造**KS\_DVDCOPYSTATE\_初期化**または**KS\_DVDCOPYSTATE\_初期化\_タイトル**が受信されるまで、 **KS\_AM\_UseNewCSSKey**フラグをそれに接続されているすべてのストリーム。 その後は、DVD デコーダーのミニドライバーは、その時点までに受信したすべてのパケットを処理します。 これにより、不正なキーを使用してデータになります。
 
  
 

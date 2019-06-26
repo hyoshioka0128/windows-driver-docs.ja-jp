@@ -4,12 +4,12 @@ description: Windows で自動的に最適な文字エンコードを選択す�
 ms.assetid: 3fde6e89-c9ea-43d2-a999-506686b223f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88e21083fe59d46ee4c9fae0e285f67e7b2db7a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2495041a5e4825c9a7c20af70004eaebc2f0810
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377289"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377626"
 ---
 # <a name="windows-automatically-selects-optimal-character-encoding"></a>Windows で自動的に最適な文字エンコードを選択する
 
@@ -88,7 +88,7 @@ Windows 8、Windows 8.1、および Windows 10 のサポートの一般的な文
 
  
 
-GSM 文字セットが定義されている[3 gpp TS 23.038。「のアルファベットおよび言語固有の情報」](http://www.3gpp.org/ftp/Specs/html-info/23038.md)します。 CDMA 文字セットが定義されている[3GPP2 C.R1001-d](http://www.3gpp2.org/Public_html/specs/C.R1001-D_v1.0_110403.pdf)します。
+GSM 文字セットが定義されている[3 gpp TS 23.038。「のアルファベットおよび言語固有の情報」](https://www.3gpp.org/DynaReport/23038.md)します。 CDMA 文字セットが定義されている[3GPP2 C.R1001-d](http://www.3gpp2.org/Public_html/specs/C.R1001-D_v1.0_110403.pdf)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

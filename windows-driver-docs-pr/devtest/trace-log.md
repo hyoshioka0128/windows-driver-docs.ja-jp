@@ -11,12 +11,12 @@ keywords:
 - トレース メッセージを格納します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e907f0f2082e4b0ff73c73336306f4eb435d5629
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a6aabdf804d313c7def6a33ae4c960a4e44802f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325829"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380247"
 ---
 # <a name="trace-log"></a>トレース ログ
 
@@ -28,7 +28,7 @@ ms.locfileid: "63325829"
 
 システムが最初に、トレースを格納メッセージ[トレース プロバイダー](trace-provider.md)トレース セッションのバッファーで生成し、それらに直接配信、[トレース コンシューマー](trace-consumer.md)またはトレース ログに書き込みます。
 
-メッセージが大量のディスク領域を占有できるため、トレース ログに保存するバイナリ形式に圧縮。 トレース コンシューマがトレース プロバイダーによって提供される情報を使用して、メッセージを読み取り、(、 *FormatString*パラメーター、 [ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)マクロ) を解析し、書式設定メッセージが読みやすいようにします。 トレース コンシューマーでこの情報を見つけることができます、 [PDB シンボル ファイル](pdb-symbol-files.md)または[トレース メッセージのフォーマット ファイル](trace-message-format-file.md)プロバイダー。
+メッセージが大量のディスク領域を占有できるため、トレース ログに保存するバイナリ形式に圧縮。 トレース コンシューマがトレース プロバイダーによって提供される情報を使用して、メッセージを読み取り、(、 *FormatString*パラメーター、 [ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロ) を解析し、書式設定メッセージが読みやすいようにします。 トレース コンシューマーでこの情報を見つけることができます、 [PDB シンボル ファイル](pdb-symbol-files.md)または[トレース メッセージのフォーマット ファイル](trace-message-format-file.md)プロバイダー。
 
  
 

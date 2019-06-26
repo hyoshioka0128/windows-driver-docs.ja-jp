@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f7c51ccf7f02182041c4fac9ad0b3b600978c42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf09b11b78474960a7953d62019b711862dde43b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367321"
 ---
 # <a name="bug-check-0x75-cannotwriteconfiguration"></a>バグ チェック 0x75:できません\_書き込み\_構成
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367385"
 できない\_書き込み\_構成のバグ チェックが 0x00000075 の値を持ちます。 このバグ チェックでは、マップ ファイルをシステム レジストリ ハイブ ファイルを変換することはできませんを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="cannotwriteconfiguration-parameters"></a>できません\_書き込み\_構成パラメーター

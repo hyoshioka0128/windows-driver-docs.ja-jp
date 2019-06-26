@@ -7,17 +7,17 @@ keywords:
 - ストリームのデータ変更 WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0612f461a8b6f780115296af5a52ba759eacd4e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 448e1a0a092e552ac08795e539662bc2481f5e96
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362319"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359225"
 ---
 # <a name="modifying-stream-data"></a>ストリーム データの変更
 
 
-コールアウトは、ストリーム レイヤーのデータを処理するときにその[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウト関数は、データ ストリーム内のデータを変更できます。 吹き出しの*classifyFn*コールアウト関数が変更されていない場合、ブロック データを削除するには、ストリームを通過するストリームで許容可能なデータを許可し、適切な場合は、ストリームに新しいまたは変データを挿入します。
+コールアウトは、ストリーム レイヤーのデータを処理するときにその[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数は、データ ストリーム内のデータを変更できます。 吹き出しの*classifyFn*コールアウト関数が変更されていない場合、ブロック データを削除するには、ストリームを通過するストリームで許容可能なデータを許可し、適切な場合は、ストリームに新しいまたは変データを挿入します。
 
 吹き出しできますと交換してストリーム内のデータを他のデータが置き換えられますが、データをブロックすることと同時に、ストリームに新しいデータを挿入します。 このような状況で、新しいデータは、ストリームからブロックされているデータの削除を同じ時点でストリームに挿入されます。
 

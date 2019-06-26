@@ -4,12 +4,12 @@ description: 検出プロセス
 ms.assetid: 6B94CAF1-D998-4EAF-8ABB-80A21193B50F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8906f30a46eff14f77d13550247ab845328a007
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a5463a6821ac631993ebfcc61f370e48033f365
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356727"
 ---
 # <a name="discovery-process"></a>検出プロセス
 
@@ -98,12 +98,12 @@ Windows 7 以降、Windows ロゴ プログラム (WLP) 経由のロゴ認定を
 これらのタスクのいずれかには、プラグ アンド プレイは、スマート カードの一意の ID を取得できる必要があります。 Windows 7 以降では、次に示しますプラグ アンド プレイを使用して、カードの一意の ID を派生するスマート カードの検出プロセス。
 
 1.  プラグ アンド プレイでは、ATR から履歴のバイト数を取得します。 これらのバイトは、この検出プロセスで後で使用されます。
-2.  プラグ アンド プレイでは、SC PNP AID を検索する SELECT コマンドを発行します。プラグ アンド プレイの問題が、独自の Windows を検索するデータの取得コマンド タグ 0x7F68 (ASN.1 DER でエンコードされた)。 詳細については、「Windows スマート カード フレームワーク カード識別子」次のサブセクションを参照してください。 このコマンドが成功した場合は、一意の識別子の一覧が返されます。 プラグ アンド プレイとしてスマート カードのデバイス ID の一覧で最初の識別子を使用し、カードの一意の ID の値を使用して 詳細については、次を参照してください。[デバイス Id](https://msdn.microsoft.com/library/windows/hardware/ff541237)します。
+2.  プラグ アンド プレイでは、SC PNP AID を検索する SELECT コマンドを発行します。プラグ アンド プレイの問題が、独自の Windows を検索するデータの取得コマンド タグ 0x7F68 (ASN.1 DER でエンコードされた)。 詳細については、「Windows スマート カード フレームワーク カード識別子」次のサブセクションを参照してください。 このコマンドが成功した場合は、一意の識別子の一覧が返されます。 プラグ アンド プレイとしてスマート カードのデバイス ID の一覧で最初の識別子を使用し、カードの一意の ID の値を使用して 詳細については、次を参照してください。[デバイス Id](https://docs.microsoft.com/windows-hardware/drivers/install/device-ids)します。
 3.  プラグ アンド プレイ スマート カードの一意の ID に派生している場合は、手順 12. に進みます。
 4.  Windows が上記の手順でデバイス ID の取得に失敗した場合、MF と EF の SELECT を発行します。ATR 後、バイナリの読み取りのコマンドでは、WU のデバイス ID として使用できる一意の識別子を取得中に Windows が成功した場合は、手順 12. に進みます。
 5.  上記の手順で一意の識別子を取得するプラグ アンド プレイに失敗した場合、PIV AID の SELECT コマンドを発行します。 プラグ アンド プレイが成功すると、スマート カードの PIV と互換性のあるデバイスであると見なします。 プラグ アンド プレイでは、カードの一意の ID として、次を使用します。
 
-    1.  デバイスの互換性のある ID として PIV と互換性のあるデバイス ID 詳細については、次を参照してください。[互換性 Id](https://msdn.microsoft.com/library/windows/hardware/ff539950)します。
+    1.  デバイスの互換性のある ID として PIV と互換性のあるデバイス ID 詳細については、次を参照してください。[互換性 Id](https://docs.microsoft.com/windows-hardware/drivers/install/compatible-ids)します。
     2.  デバイス ID と、カードの ATR の履歴バイト Windows で、PIV と互換性のあるデバイス id を使用して、デバイス ID と履歴 ATR のバイトがない場合は、
 
 6.  プラグ アンド プレイ スマート カードの一意の ID に派生している場合は、手順 12. に進みます。
@@ -123,7 +123,7 @@ Windows 7 以降、Windows ロゴ プログラム (WLP) 経由のロゴ認定を
 ## <a name="span-idwinscarddiscoveryprocessspanspan-idwinscarddiscoveryprocessspanspan-idwinscarddiscoveryprocessspanwinscard-discovery-process"></a><span id="Winscard_Discovery_Process"></span><span id="winscard_discovery_process"></span><span id="WINSCARD_DISCOVERY_PROCESS"></span>Winscard 検出プロセス
 
 
-Winscard (Winscard.dll) 検出プロセスは、システムにインストール済みのミニドライバーのカードを関連付けるに使用されます。 プロセスの開始時に[ **SCardListCards** ](https://msdn.microsoft.com/library/windows/desktop/aa379789)または[ **SCardLocateCards** ](https://msdn.microsoft.com/library/windows/desktop/aa379794)が呼び出されます。
+Winscard (Winscard.dll) 検出プロセスは、システムにインストール済みのミニドライバーのカードを関連付けるに使用されます。 プロセスの開始時に[ **SCardListCards** ](https://docs.microsoft.com/windows/desktop/api/winscard/nf-winscard-scardlistcardsa)または[ **SCardLocateCards** ](https://docs.microsoft.com/windows/desktop/api/winscard/nf-winscard-scardlocatecardsa)が呼び出されます。
 
 Windows 7 以降では、次に示します、Winscard 検出プロセス。
 
@@ -175,7 +175,7 @@ Windows 7 以降では、次に示します、Winscard 検出プロセス。
 ## <a name="span-idwindowssmartcardclassminidriverdiscoveryprocessspanspan-idwindowssmartcardclassminidriverdiscoveryprocessspanspan-idwindowssmartcardclassminidriverdiscoveryprocessspan-windows-smart-card-class-minidriver-discovery-process"></a><span id="_Windows_Smart_Card_Class_Minidriver_Discovery_Process"></span><span id="_windows_smart_card_class_minidriver_discovery_process"></span><span id="_WINDOWS_SMART_CARD_CLASS_MINIDRIVER_DISCOVERY_PROCESS"></span> Windows スマート カード クラス ミニドライバー検出プロセス
 
 
-Windows のスマート カード クラス ミニドライバーは、次の検出を実行します。 プロセスに[ **CardAcquireContext** ](https://msdn.microsoft.com/library/windows/hardware/dn468701)が呼び出されます。 ミニドライバーは、PIV または GID と互換性のあるとして関連付けられているカードをマークするには、この検出プロセスを実行します。
+Windows のスマート カード クラス ミニドライバーは、次の検出を実行します。 プロセスに[ **CardAcquireContext** ](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))が呼び出されます。 ミニドライバーは、PIV または GID と互換性のあるとして関連付けられているカードをマークするには、この検出プロセスを実行します。
 
 1.  ミニドライバーは、PIV AID の SELECT コマンドを発行します。 カードが PIV と互換性のある、検出とマークされているコマンドが成功すると、処理が終了します。
 2.  それ以外の場合、ミニドライバーは、MS GID で SELECT コマンドを発行します。 コマンドが成功するか、支援の検索に失敗する場合、ミニドライバーは、MS GID としてカードをマークします。

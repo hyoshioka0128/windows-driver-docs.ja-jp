@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05657209ef6c2cad47d7da062a303900261cacf7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fdd7876517039b0b13dde957e36c4f5aa0c6427
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352109"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375362"
 ---
 # <a name="wiadipdevtype"></a>WIA\_DIP\_DEV\_型
 
@@ -81,7 +81,7 @@ WIA\_DIP\_DEV\_型のプロパティには、デバイスの種類とデバイ�
 
  
 
-INF ファイルの詳細については、次を参照してください。 [WIA デバイスの INF ファイル](https://msdn.microsoft.com/library/windows/hardware/ff542770)します。 **StiDeviceType * * * Xxx*定数で定義されて*Sti.h*します。
+INF ファイルの詳細については、次を参照してください。 [WIA デバイスの INF ファイル](https://docs.microsoft.com/windows-hardware/drivers/image/inf-files-for-wia-devices)します。 **StiDeviceType * * * Xxx*定数で定義されて*Sti.h*します。
 
 <a name="requirements"></a>要件
 ------------

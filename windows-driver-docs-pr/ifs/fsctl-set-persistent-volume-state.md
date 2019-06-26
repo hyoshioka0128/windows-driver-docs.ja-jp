@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 697dd8aa46e2f1f83a51f4fb2b59b5d4d14ca875
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a863f3edc6a78add32904c32bb5bae39f59683d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380029"
 ---
 # <a name="fsctlsetpersistentvolumestate-control-code"></a>FSCTL\_設定\_持続\_ボリューム\_状態制御コード
 
 
 **FSCTL\_設定\_持続\_ボリューム\_状態**制御コードは、ファイル システム ボリュームの永続的な設定を設定します。 永続的な設定は、コンピューターの再起動の間でファイル システム ボリューム上に残ります。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ファイル システム ボリュームのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 ファイル システム ボリュームのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 ファイル システム ボリュームのファイル ハンドル。 このパラメーターが必要とすることはできません**NULL**します。
@@ -40,7 +40,7 @@ ms.locfileid: "63361921"
 操作の制御コード。 使用**FSCTL\_設定\_持続\_ボリューム\_状態**この操作にします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-呼び出し元が割り当てたへのポインター [**ファイル\_FS\_持続\_ボリューム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540280)永続的な設定を含む構造体ファイル システム ボリューム。
+呼び出し元が割り当てたへのポインター [**ファイル\_FS\_持続\_ボリューム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information)永続的な設定を含む構造体ファイル システム ボリューム。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 指し示されるバッファーのバイト単位で、サイズ、 *InputBuffer*パラメーター。
@@ -54,7 +54,7 @@ ms.locfileid: "63361921"
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_成功、または、次のいずれかなどの適切な NTSTATUS 値。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_成功、または、次のいずれかなどの適切な NTSTATUS 値。
 
 <table>
 <colgroup>
@@ -70,11 +70,11 @@ ms.locfileid: "63361921"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_NOT_SUPPORTED</strong></p></td>
-<td align="left"><p>要求されたレジストリの設定が 1 つのボリューム、または正しくないバージョン番号を指定した、<strong>バージョン</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff540280" data-raw-source="[&lt;strong&gt;FILE_FS_PERSISTENT_VOLUME_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540280)"> <strong>FILE_FS_PERSISTENT_VOLUME_INFORMATION</strong> </a>.</p></td>
+<td align="left"><p>要求されたレジストリの設定が 1 つのボリューム、または正しくないバージョン番号を指定した、<strong>バージョン</strong>のメンバー <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information" data-raw-source="[&lt;strong&gt;FILE_FS_PERSISTENT_VOLUME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information)"> <strong>FILE_FS_PERSISTENT_VOLUME_INFORMATION</strong> </a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_INVALID_PARAMETER</strong></p></td>
-<td align="left"><p>ファイル システム ボリュームが、開いているユーザー ボリュームか、呼び出し元で無効なフラグを指定する、 <strong>FlagMask</strong>のメンバー <a href="https://msdn.microsoft.com/library/windows/hardware/ff540280" data-raw-source="[&lt;strong&gt;FILE_FS_PERSISTENT_VOLUME_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540280)"> <strong>FILE_FS_PERSISTENT_VOLUME_INFORMATION</strong></a>します。</p></td>
+<td align="left"><p>ファイル システム ボリュームが、開いているユーザー ボリュームか、呼び出し元で無効なフラグを指定する、 <strong>FlagMask</strong>のメンバー <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information" data-raw-source="[&lt;strong&gt;FILE_FS_PERSISTENT_VOLUME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information)"> <strong>FILE_FS_PERSISTENT_VOLUME_INFORMATION</strong></a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_BUFFER_TOO_SMALL</strong></p></td>
@@ -101,7 +101,7 @@ ms.locfileid: "63361921"
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -124,9 +124,9 @@ ms.locfileid: "63361921"
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_FS\_持続\_ボリューム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540280)
+[**ファイル\_FS\_持続\_ボリューム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_persistent_volume_information)
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

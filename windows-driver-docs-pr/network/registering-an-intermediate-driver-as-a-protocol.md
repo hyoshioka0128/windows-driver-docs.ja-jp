@@ -8,12 +8,12 @@ keywords:
 - NDIS 中間ドライバ、WDK を登録します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c10a3197a78209a86ba6e1af6ca9ff30da5c030
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bc62c5a54a00b0f7642379bbc502776b05dd5b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374788"
 ---
 # <a name="registering-an-intermediate-driver-as-a-protocol"></a>中間ドライバーのプロトコルとしての登録
 
@@ -21,7 +21,7 @@ ms.locfileid: "63391960"
 
 
 
-中間のドライバーは、登録、 *ProtocolXxx* NDIS との関数のコンテキストでその[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)関数を呼び出すことによって[ **NdisRegisterProtocolDriver**](https://msdn.microsoft.com/library/windows/hardware/ff564520)します。
+中間のドライバーは、登録、 *ProtocolXxx* NDIS との関数のコンテキストでその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数を呼び出すことによって[ **NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)します。
 
 プロトコルとして中間のドライバーの登録は、プロトコル ドライバーとして登録することとほぼ同じです。 詳細については、次を参照してください。[プロトコル ドライバーの初期化](initializing-a-protocol-driver.md)します。
 

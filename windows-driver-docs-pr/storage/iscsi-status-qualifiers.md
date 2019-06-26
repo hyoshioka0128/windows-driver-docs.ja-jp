@@ -4,12 +4,12 @@ description: ISCSI\_状態\_修飾子
 ms.assetid: d39ed448-5608-4f19-b49c-bbd6727e9491
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cb1143cb392b3e4fd498879bfc2917357241db1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f7d2827962ccf4ddbeb55e7c8afd78975d3591aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378396"
 ---
 # <a name="iscsistatusqualifiers"></a>ISCSI\_状態\_修飾子
 
@@ -203,7 +203,7 @@ ISCSI\_状態\_修飾子 WMI プロパティ修飾子は、iSCSI HBA イニシ�
 </tr>
 <tr class="odd">
 <td align="left"><p>ISDSC_LOGIN_USER_INFO_BAD (0xEFFF002A)</p></td>
-<td align="left"><p>1 つまたは複数のパラメーターで指定されている、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff561600" data-raw-source="[&lt;strong&gt;LoginToTarget_IN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561600)"> <strong>LoginToTarget_IN</strong> </a>構造が無効です。</p></td>
+<td align="left"><p>1 つまたは複数のパラメーターで指定されている、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_logintotarget_in" data-raw-source="[&lt;strong&gt;LoginToTarget_IN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_logintotarget_in)"> <strong>LoginToTarget_IN</strong> </a>構造が無効です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ISDSC_TARGET_MAPPING_EXISTS (0xEFFF002B)</p></td>

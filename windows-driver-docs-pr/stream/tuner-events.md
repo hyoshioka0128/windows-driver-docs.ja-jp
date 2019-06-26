@@ -8,17 +8,17 @@ keywords:
 - EVENTSETID_TUNER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32a738879c95cfb3d4654bae447025d87394e1be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7d3844389ce57a4d65976902f6ae0f2a9a6c252
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354857"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377718"
 ---
 # <a name="tuner-events"></a>チューナーのイベント
 
 
-[EVENTSETID\_チューナー](https://msdn.microsoft.com/library/windows/hardware/ff559566)チューナー イベントがイベント セットに含まれています。 次の表に、イベント、EVENTSETID の一部である\_チューナー イベントのセット。 2 番目のテーブルには、Windows Vista 以降を実行している AVStream ミニドライバーに対して実装されるチューナー イベントについて説明します。
+[EVENTSETID\_チューナー](https://docs.microsoft.com/windows-hardware/drivers/stream/eventsetid-tuner)チューナー イベントがイベント セットに含まれています。 次の表に、イベント、EVENTSETID の一部である\_チューナー イベントのセット。 2 番目のテーブルには、Windows Vista 以降を実行している AVStream ミニドライバーに対して実装されるチューナー イベントについて説明します。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ ms.locfileid: "63354857"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561894" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_CHANGED&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561894)"><strong>KSEVENT_TUNER_CHANGED</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-changed" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_CHANGED&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-changed)"><strong>KSEVENT_TUNER_CHANGED</strong></a></p></td>
 <td><p>DirectShow チューナーが変更されたこと、たとえば、新しいテレビ チャンネルにチューニングのために通知します。</p></td>
 </tr>
 </tbody>
@@ -56,7 +56,7 @@ ms.locfileid: "63354857"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561898" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561898)"><strong>KSEVENT_TUNER_INITIATE_SCAN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan)"><strong>KSEVENT_TUNER_INITIATE_SCAN</strong></a></p></td>
 <td><p>シグナルのスキャンを開始し、スキャンが完了したら、DirectShow を通知します。</p></td>
 </tr>
 </tbody>

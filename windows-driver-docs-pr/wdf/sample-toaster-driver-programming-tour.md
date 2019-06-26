@@ -4,12 +4,12 @@ description: このトピックでは、学習目的用に設計されたカー�
 ms.assetid: 5977AC09-AB53-4CA4-A35A-0E5A1FEE936F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23706c4a4736d6911f3369ba062cbb1ceae8fe92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 709574fd3e7497b33d9132ef61c15c9d2ccf637a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325160"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376216"
 ---
 # <a name="sample-toaster-driver-programming-tour"></a>トースター ドライバーのサンプルのプログラミング ツアー
 
@@ -49,15 +49,15 @@ KMDF バス ドライバーは、トースター バス コント ローラー�
 
   子、バス ドライバーを列挙します。
 
-  1.  呼び出し[ **WdfPdoInitAllocate** ](https://msdn.microsoft.com/library/windows/hardware/ff548786)を取得する、 [WDFDEVICE\_INIT](https://msdn.microsoft.com/library/windows/hardware/ff546951)構造体。
+  1.  呼び出し[ **WdfPdoInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitallocate)を取得する、 [WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体。
 
-  2.  初期化します、 [WDFDEVICE\_INIT](https://msdn.microsoft.com/library/windows/hardware/ff546951)構造体。
+  2.  初期化します、 [WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)構造体。
 
-  3.  呼び出す[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926) PDO を表す framework デバイス オブジェクトを作成します。
+  3.  呼び出す[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate) PDO を表す framework デバイス オブジェクトを作成します。
 
-  呼び出した後[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)、ドライバー呼び出し[ **WdfFdoAddStaticChild** ](https://msdn.microsoft.com/library/windows/hardware/ff547225)子デバイスを子リストに追加します。
+  呼び出した後[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)、ドライバー呼び出し[ **WdfFdoAddStaticChild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoaddstaticchild)子デバイスを子リストに追加します。
 
-  ドライバーを使用する必要がありますのみため、あらかじめ決定されているデバイスの構成に関する静的な子の一覧で、永続的なドライバー通常変更を行わない静的子リスト作成した後。 ドライバーを呼び出すことができる場合、ドライバーは、子デバイスがアクセス不能になったことを決定します、 [ **WdfPdoMarkMissing**](https://msdn.microsoft.com/library/windows/hardware/ff548809)します。 (子デバイスがアクセスできるが、応答していない場合は、ドライバーを設定する必要があります、 **Failed**のメンバー、 [ **WDF\_デバイス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff551284)構造体**WdfTrue**を呼び出して[ **WdfDeviceSetDeviceState**](https://msdn.microsoft.com/library/windows/hardware/ff546884))。
+  ドライバーを使用する必要がありますのみため、あらかじめ決定されているデバイスの構成に関する静的な子の一覧で、永続的なドライバー通常変更を行わない静的子リスト作成した後。 ドライバーを呼び出すことができる場合、ドライバーは、子デバイスがアクセス不能になったことを決定します、 [ **WdfPdoMarkMissing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdomarkmissing)します。 (子デバイスがアクセスできるが、応答していない場合は、ドライバーを設定する必要があります、 **Failed**のメンバー、 [ **WDF\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_state)構造体**WdfTrue**を呼び出して[ **WdfDeviceSetDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate))。
 
   バス ドライバーが起動するたびに子デバイスを静的に列挙するために、トースター バス ドライバーのデバイス パラメーターのキーのレジストリ値を設定できます。
 
@@ -77,7 +77,7 @@ KMDF バス ドライバーは、トースター バス コント ローラー�
 
   たとえば、システムの PCI バスに接続されているデバイスの種類と数がシステムに依存するが、ユーザー電源をオフに、開く場合とを追加しますかドライバーを使用してデバイスを削除しない限り、永続的なは。 その一方で、ユーザーは追加または取り外しを行うシステムの実行中に、ケーブルを取り外すして USB デバイスを削除できます。
 
-  バス ドライバーが、子デバイスを識別するたびに子リストに子デバイスの説明を追加する必要があります、します。 ドライバーを呼び出してフレームワークが提供するデバイスの既定の子のリストを使用できますか[ **WdfFdoGetDefaultChildList**](https://msdn.microsoft.com/library/windows/hardware/ff547235)、リストを作成できます追加の子をグループ化の子を呼び出すことによって、または[**WdfChildListCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545615)します。 このサンプルでは、既定の子リストを使用します。 A*子説明*は、必須の*識別説明*は省略可能*説明に対処*。
+  バス ドライバーが、子デバイスを識別するたびに子リストに子デバイスの説明を追加する必要があります、します。 ドライバーを呼び出してフレームワークが提供するデバイスの既定の子のリストを使用できますか[ **WdfFdoGetDefaultChildList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdogetdefaultchildlist)、リストを作成できます追加の子をグループ化の子を呼び出すことによって、または[**WdfChildListCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)します。 このサンプルでは、既定の子リストを使用します。 A*子説明*は、必須の*識別説明*は省略可能*説明に対処*。
 
   <table>
   <colgroup>
@@ -86,18 +86,18 @@ KMDF バス ドライバーは、トースター バス コント ローラー�
   </colgroup>
   <thead>
   <tr class="header">
-  <th align="left">用語</th>
+  <th align="left">項目</th>
   <th align="left">説明</th>
   </tr>
   </thead>
   <tbody>
   <tr class="odd">
   <td align="left"><p><a href="" id="---------------------identification-description"></a> 識別の説明</p></td>
-  <td align="left"><p>識別の説明は、ドライバーを列挙する各デバイスを一意に識別する情報を含む構造です。 ドライバーは、この構造体を定義しますが、その最初のメンバーである必要があります、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff551223" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551223)"> <strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong> </a>構造体。</p></td>
+  <td align="left"><p>識別の説明は、ドライバーを列挙する各デバイスを一意に識別する情報を含む構造です。 ドライバーは、この構造体を定義しますが、その最初のメンバーである必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header)"> <strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong> </a>構造体。</p></td>
   </tr>
   <tr class="even">
   <td align="left"><p><a href="" id="---------------------address-description"></a> アドレスの説明</p></td>
-  <td align="left"><p>アドレスの説明は、デバイスが接続中に情報を変更できる場合、そのバス上のデバイスにアクセスできるようにをドライバーが必要な情報を格納する構造体です。 ドライバーは、この構造体を定義しますが、その最初のメンバーである必要があります、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff551223" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551223)"> <strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong> </a>構造体。 アドレスの説明は省略可能です。 このサンプルでは、アドレスの説明は使用しません。</p></td>
+  <td align="left"><p>アドレスの説明は、デバイスが接続中に情報を変更できる場合、そのバス上のデバイスにアクセスできるようにをドライバーが必要な情報を格納する構造体です。 ドライバーは、この構造体を定義しますが、その最初のメンバーである必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header)"> <strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong> </a>構造体。 アドレスの説明は省略可能です。 このサンプルでは、アドレスの説明は使用しません。</p></td>
   </tr>
   </tbody>
   </table>
@@ -105,9 +105,9 @@ KMDF バス ドライバーは、トースター バス コント ローラー�
 
 
 
-子の一覧では、ドライバーの呼び出しに子を追加する[ **WdfChildListAddOrUpdateChildDescriptionAsPresent** ](https://msdn.microsoft.com/library/windows/hardware/ff545591)検出された各子デバイス。 この呼び出しは、ドライバーが、親デバイスに接続されている子デバイスを検出されたことをフレームワークに通知します。 ドライバーを呼び出すと**WdfChildListAddOrUpdateChildDescriptionAsPresent**識別の説明と、必要に応じて、アドレスの説明を提供します。
+子の一覧では、ドライバーの呼び出しに子を追加する[ **WdfChildListAddOrUpdateChildDescriptionAsPresent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent)検出された各子デバイス。 この呼び出しは、ドライバーが、親デバイスに接続されている子デバイスを検出されたことをフレームワークに通知します。 ドライバーを呼び出すと**WdfChildListAddOrUpdateChildDescriptionAsPresent**識別の説明と、必要に応じて、アドレスの説明を提供します。
 
-ドライバーの呼び出し後[ **WdfChildListAddOrUpdateChildDescriptionAsPresent** ](https://msdn.microsoft.com/library/windows/hardware/ff545591)フレームワークを新しいデバイスを報告するには、新しいデバイスに存在する PnP マネージャーに通知します。 PnP マネージャーは、デバイス スタックと新しいデバイスのドライバー スタックを作成します。 このプロセスの一環として、フレームワークに呼び出す、バス ドライバーの[ *EvtChildListCreateDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540828)コールバック関数。 このコールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)を新しいデバイスの PDO を作成します。
+ドライバーの呼び出し後[ **WdfChildListAddOrUpdateChildDescriptionAsPresent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent)フレームワークを新しいデバイスを報告するには、新しいデバイスに存在する PnP マネージャーに通知します。 PnP マネージャーは、デバイス スタックと新しいデバイスのドライバー スタックを作成します。 このプロセスの一環として、フレームワークに呼び出す、バス ドライバーの[ *EvtChildListCreateDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)コールバック関数。 このコールバック関数を呼び出す必要があります[ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)を新しいデバイスの PDO を作成します。
 
 不足している子デバイスを報告するには、このドライバーは WdfChildListUpdateChildDescriptionAsMissing を呼び出します。 動的な列挙型の詳細については、framework のドキュメントを参照してください。
 
@@ -133,9 +133,9 @@ KMDF バス ドライバーは、トースター バス コント ローラー�
 ## <a name="kmdf-toastmon"></a>KMDF Toastmon
 
 
-このサンプルでは、デバイスを開くし、リモートの I/O ターゲット インターフェイスを使用してカーネル モードで I/O を実行する方法を示します。 このサンプルでは、呼び出すことによって、トースター インターフェイス クラスの PnP 通知コールバック ルーチンを登録します。 [ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)します。 トースター デバイスを接続、PnP マネージャーは、コールバックを呼び出します。 コールバックは、このサンプルは、リモート ターゲットを作成し、コールバックのデータで提供されるシンボリック リンクを使用して、デバイスを開きます。
+このサンプルでは、デバイスを開くし、リモートの I/O ターゲット インターフェイスを使用してカーネル モードで I/O を実行する方法を示します。 このサンプルでは、呼び出すことによって、トースター インターフェイス クラスの PnP 通知コールバック ルーチンを登録します。 [ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)します。 トースター デバイスを接続、PnP マネージャーは、コールバックを呼び出します。 コールバックは、このサンプルは、リモート ターゲットを作成し、コールバックのデータで提供されるシンボリック リンクを使用して、デバイスを開きます。
 
-また、このサンプルでは、非同期読み取りを示し、ターゲット デバイスへの書き込みにパッシブ タイマーを使用します。 登録することによって、デバイスの変更通知に応答する方法も示します[ *EvtIoTargetQueryRemove*](https://msdn.microsoft.com/library/windows/hardware/ff541793)/[*EvtIoTargetRemoveCanceled* ](https://msdn.microsoft.com/library/windows/hardware/ff541800) / [ *EvtIoTargetRemoveComplete* ](https://msdn.microsoft.com/library/windows/hardware/ff541806) I/O ターゲット オブジェクト。 ドライバーは、ドライバーを制御していない別のデバイスと通信する場合は、この手法を使用できます。 Wdftoastmon.inf を使用して、ルート列挙デバイスとしては、このドライバーをインストールします。 トースター バス ドライバーのインストールのと同じ手順を使用します。
+また、このサンプルでは、非同期読み取りを示し、ターゲット デバイスへの書き込みにパッシブ タイマーを使用します。 登録することによって、デバイスの変更通知に応答する方法も示します[ *EvtIoTargetQueryRemove*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove)/[*EvtIoTargetRemoveCanceled* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_canceled) / [ *EvtIoTargetRemoveComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_remove_complete) I/O ターゲット オブジェクト。 ドライバーは、ドライバーを制御していない別のデバイスと通信する場合は、この手法を使用できます。 Wdftoastmon.inf を使用して、ルート列挙デバイスとしては、このドライバーをインストールします。 トースター バス ドライバーのインストールのと同じ手順を使用します。
 
 ## <a name="umdf-function-driver"></a>UMDF 関数ドライバー
 

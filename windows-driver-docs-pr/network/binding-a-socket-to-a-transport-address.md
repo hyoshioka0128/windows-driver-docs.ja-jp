@@ -10,12 +10,12 @@ keywords:
 - トランスポート アドレス WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6aec2889d524592f029919f5b3bcc49a5247a0a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 9d8426226782a66bb545bac440823549745e952e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350013"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354635"
 ---
 # <a name="binding-a-socket-to-a-transport-address"></a>トランスポート アドレスへのソケットのバインド
 
@@ -26,9 +26,9 @@ Winsock カーネル (WSK) アプリケーションでは、ソケットが正�
 
  
 
-WSK アプリケーションでは、ローカル トランスポート アドレスにソケットをバインドを呼び出して、 [ **WskBind** ](https://msdn.microsoft.com/library/windows/hardware/ff571121)関数。 **WskBind**関数で指し示されます、 **WskBind**ソケットのプロバイダーのディスパッチ構造体のメンバー。 ソケットのプロバイダーのディスパッチ構造体を指す、**ディスパッチ**ソケット オブジェクトの構造体のメンバー ( [ **WSK\_ソケット**](https://msdn.microsoft.com/library/windows/hardware/ff571182)) によって返された、ソケットの作成時に WSK サブシステムです。
+WSK アプリケーションでは、ローカル トランスポート アドレスにソケットをバインドを呼び出して、 [ **WskBind** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_bind)関数。 **WskBind**関数で指し示されます、 **WskBind**ソケットのプロバイダーのディスパッチ構造体のメンバー。 ソケットのプロバイダーのディスパッチ構造体を指す、**ディスパッチ**ソケット オブジェクトの構造体のメンバー ( [ **WSK\_ソケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_socket)) によって返された、ソケットの作成時に WSK サブシステムです。
 
-ソケットは、ローカルのワイルドカード アドレスにバインドできます。 ローカルのワイルドカード アドレスにバインドされたソケットの動作に関する詳細については、**WskBind**を参照してください。
+ソケットは、ローカルのワイルドカード アドレスにバインドできます。 ローカルのワイルドカード アドレスにバインドされたソケットの動作に関する詳細については、次を参照してください。 **WskBind**します。
 
 次のコード例では、ローカル トランスポート アドレスを WSK アプリケーションがリスニング ソケットをバインドする方法を示します。
 
@@ -131,7 +131,7 @@ NTSTATUS
 }
 ```
 
-接続指向のソケット WSK アプリケーションを呼び出すことができます、 [ **WskSocketConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff571150)関数を作成し、バインドして、1 つの関数の呼び出しでソケットを接続します。
+接続指向のソケット WSK アプリケーションを呼び出すことができます、 [ **WskSocketConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)関数を作成し、バインドして、1 つの関数の呼び出しでソケットを接続します。
 
  
 

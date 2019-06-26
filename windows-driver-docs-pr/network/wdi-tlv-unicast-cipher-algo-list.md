@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_UNICAST_CIPHER_ALGO_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c164db319b3f8aff3fed9f80c71f08c39254cd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c8436230dcde0526cd3084b9d3baf913282a8be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366900"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357323"
 ---
 # <a name="wditlvunicastcipheralgolist"></a>WDI\_TLV\_ユニキャスト\_暗号\_ALGO\_一覧
 
@@ -26,18 +26,18 @@ WDI\_TLV\_ユニキャスト\_暗号\_ALGO\_リストがユニキャスト暗号
 ## <a name="length"></a>長さ
 
 
-配列のサイズをバイト単位で[ **WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802)構造体。 配列には、1 つ以上の要素を含める必要があります。
+配列のサイズをバイト単位で[ **WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)構造体。 配列には、1 つ以上の要素を含める必要があります。
 
 ## <a name="values"></a>値
 
 
 | 型                                                            | 説明                            |
 |-----------------------------------------------------------------|----------------------------------------|
-| [**WDI\_暗号\_アルゴリズム**](https://msdn.microsoft.com/library/windows/hardware/dn897802)\[\] | ユニキャスト暗号アルゴリズムの配列。 |
+| [**WDI\_暗号\_アルゴリズム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | ユニキャスト暗号アルゴリズムの配列。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

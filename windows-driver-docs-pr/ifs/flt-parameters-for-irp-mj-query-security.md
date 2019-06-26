@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73f22e34f84a446b3e922a3568e18de85cfcba25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99d8954cbb20859431bbcdfa7abc8770a43449b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379838"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380505"
 ---
 # <a name="fltparameters-for-irpmjquerysecurity-union"></a>FLT\_IRP のパラメーター\_MJ\_クエリ\_セキュリティ共用体
 
 
-共用体のコンポーネントで使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)用の構造、操作が[ **IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)します。
+共用体のコンポーネントで使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)用の構造、操作が[ **IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)します。
 
 <a name="syntax"></a>構文
 ------
@@ -90,7 +90,7 @@ typedef union _FLT_PARAMETERS {
 バッファーのバイト単位の長さを**SecurityBuffer**を指します。
 
 **SecurityBuffer**  
-指定したオブジェクトのセキュリティ記述子のコピーを受け取る呼び出し元が指定の出力バッファーへのポインター。 呼び出し元のプロセスを指定したオブジェクトのセキュリティ状態の側面を表示する権限が必要です。 [**セキュリティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff556610)構造が自己相対形式で返されます。
+指定したオブジェクトのセキュリティ記述子のコピーを受け取る呼び出し元が指定の出力バッファーへのポインター。 呼び出し元のプロセスを指定したオブジェクトのセキュリティ状態の側面を表示する権限が必要です。 [**セキュリティ\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))構造が自己相対形式で返されます。
 
 **MdlAddress**  
 バッファーを記述したメモリ記述子一覧 (MDL) のアドレスを**SecurityBuffer**を指します。 このメンバーは省略可能とは、 **NULL**します。
@@ -98,9 +98,9 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>注釈
 -------
 
-[ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)の構造体[ **IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)操作にコールバック データによって表される IRP ベースのセキュリティ情報の照会操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620))構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)構造体。
+[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)の構造体[ **IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)操作にコールバック データによって表される IRP ベースのセキュリティ情報の照会操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data))構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体。
 
-Windows xp 以降、オブジェクトを**TargetFileObject** 、FLT のメンバー\_IO\_パラメーター\_ブロック構造のポイントには、名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、次を参照してください。 [**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)します。
+Windows xp 以降、オブジェクトを**TargetFileObject** 、FLT のメンバー\_IO\_パラメーター\_ブロック構造のポイントには、名前付きのデータ ストリームを表すことができます。 名前付きのデータ ストリームの詳細については、次を参照してください。 [**ファイル\_ストリーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)します。
 
 IRP\_MJ\_クエリ\_セキュリティは IRP ベースの操作。
 
@@ -123,17 +123,17 @@ IRP\_MJ\_クエリ\_セキュリティは IRP ベースの操作。
 ## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_ストリーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff540364)
+[**ファイル\_ストリーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)
 
-[**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
 [**IRP\_MJ\_QUERY\_SECURITY**](irp-mj-query-security.md)
 
-[**セキュリティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff556610)
+[**セキュリティ\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 
 [**セキュリティ\_情報**](security-information.md)
 

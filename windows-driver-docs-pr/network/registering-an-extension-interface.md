@@ -10,21 +10,21 @@ keywords:
 - SIO_WSK_REGISTER_EXTENSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c8c178bb02314640a9b9db5d0922ee27289c4a9
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: a1adad4b82d8a0525014309b2db135c07856d005
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348635"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374798"
 ---
 # <a name="registering-an-extension-interface"></a>拡張インターフェイスの登録
 
 
-1 つ以上のソケットを登録するは、Winsock カーネル (WSK) アプリケーションでは、ソケットが正常に作成、[拡張機能インターフェイス](winsock-kernel-extension-interfaces.md)WSK サブシステムでサポートされています。 WSK アプリケーションの決定を調べることで、WSK サブシステムによって拡張機能インターフェイスのセットがサポートされている、**バージョン**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ** ](https://msdn.microsoft.com/library/windows/hardware/ff571175) WSK サブシステムは、添付ファイルの中に、アプリケーションに返される構造体。
+1 つ以上のソケットを登録するは、Winsock カーネル (WSK) アプリケーションでは、ソケットが正常に作成、[拡張機能インターフェイス](winsock-kernel-extension-interfaces.md)WSK サブシステムでサポートされています。 WSK アプリケーションの決定を調べることで、WSK サブシステムによって拡張機能インターフェイスのセットがサポートされている、**バージョン**のメンバー、 [ **WSK\_プロバイダー\_ディスパッチ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch) WSK サブシステムは、添付ファイルの中に、アプリケーションに返される構造体。
 
 各拡張機能インターフェイスは、WSK NPI から独立している、NPI によって定義されます。 ただし、拡張機能インターフェイスの NPIs が NPI 固有の特性をサポートしていないことに注意してください。
 
-WSK アプリケーションを実行することによって拡張機能インターフェイスの登録、 [ **SIO\_WSK\_登録\_拡張子**](https://msdn.microsoft.com/library/windows/hardware/ff570819)ソケット、ソケットの IOCTL 操作。 ソケットの IOCTL 操作を実行する方法の詳細については、[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)を参照してください。
+WSK アプリケーションを実行することによって拡張機能インターフェイスの登録、 [ **SIO\_WSK\_登録\_拡張子**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-register-extension)ソケット、ソケットの IOCTL 操作。 ソケットの IOCTL 操作を実行する方法の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
 
 WSK アプリケーションが、SIO WSK サブシステムでサポートされていない拡張機能インターフェイスのソケットを登録しようとしたかどうかは\_WSK\_登録\_拡張子ソケットの IOCTL 操作の状態が返されます\_されません\_サポートされています。
 

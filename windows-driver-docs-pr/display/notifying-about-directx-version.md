@@ -7,12 +7,12 @@ keywords:
 - DirectX バージョンの WDK DirectX 9.0 を通知します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d911214831a0f03d764a1e20692f20d14f27190
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08d9c5f7be466e5b130b8f056b4aeef3e9e396b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372796"
 ---
 # <a name="notifying-about-directx-version"></a>DirectX バージョンに関する通知
 
@@ -24,9 +24,9 @@ DirectX 8.0、およびそれ以降のドライバーが常に通知される、
 
 例では、DirectX 9.0 またはそれ以降のドライバーは、DirectX のランタイムのバージョン 8.0 では、D3DMULTISAMPLE の要素を使用して、マルチ サンプリングされたサーフェイスでのサンプルの数を設定できます\_の種類、ドライバーがサポートするかどうかにかかわらず、型の列挙マスクのマルチ サンプリングします。 ただし、DirectX のランタイムのバージョン 9.0 は、DirectX 9.0 またはそれ以降のドライバーをする必要があります設定 D3DMULTISAMPLE\_、DDSCAPS3 型ビット\_マルチ サンプリング\_ドライバーとしてマスクのビットをサポートしていない限りをマスクするマスク。 D3DMULTISAMPLE の詳細については\_型、DirectX SDK のドキュメントを参照してください。
 
-D3DGDI2\_型\_GETFORMATCOUNT クエリのランタイム バージョンのドライバーの通知を受け取る DirectX 9.0、 **dwReserved**のメンバー、 [ **DD\_GETFORMATCOUNTDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551566)構造体。 **DwReserved** DD にメンバーが設定されている\_ランタイム\_バージョンについては、DirectX 9.0 の 0x00000900 であります。
+D3DGDI2\_型\_GETFORMATCOUNT クエリのランタイム バージョンのドライバーの通知を受け取る DirectX 9.0、 **dwReserved**のメンバー、 [ **DD\_GETFORMATCOUNTDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getformatcountdata)構造体。 **DwReserved** DD にメンバーが設定されている\_ランタイム\_バージョンについては、DirectX 9.0 の 0x00000900 であります。
 
-D3DGDI2\_型\_GETFORMAT クエリのランタイム バージョンのドライバーの通知を受け取る DirectX 9.0、 **dwSize**で指定されている DDPIXELFORMAT 構造体のメンバー、**形式**のメンバー、 [ **DD\_GETFORMATDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551569)構造体。 **DwSize** DD にメンバーを設定しても\_ランタイム\_バージョン。
+D3DGDI2\_型\_GETFORMAT クエリのランタイム バージョンのドライバーの通知を受け取る DirectX 9.0、 **dwSize**で指定されている DDPIXELFORMAT 構造体のメンバー、**形式**のメンバー、 [ **DD\_GETFORMATDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getformatdata)構造体。 **DwSize** DD にメンバーを設定しても\_ランタイム\_バージョン。
 
  
 

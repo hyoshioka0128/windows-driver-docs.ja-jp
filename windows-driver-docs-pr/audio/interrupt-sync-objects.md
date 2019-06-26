@@ -12,12 +12,12 @@ keywords:
 - 非割り込みルーチン WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2f98ccb047e69d690fff296dd8500ebff5c4299
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a98c5cfb3c3da30d781916bdfb93628732420620
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333617"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359864"
 ---
 # <a name="interrupt-sync-objects"></a>割り込み同期のオブジェクト
 
@@ -25,7 +25,7 @@ ms.locfileid: "63333617"
 ## <span id="interrupt_sync_objects"></span><span id="INTERRUPT_SYNC_OBJECTS"></span>
 
 
-PortCls システム ドライバーの実装、 [IInterruptSync](https://msdn.microsoft.com/library/windows/hardware/ff536590)ミニポート ドライバーのためのインターフェイス。 **IInterruptSync**以外からの割り込みルーチンと割り込みサービス ルーチン (Isr) の一覧の実行を同期する割り込み同期オブジェクトを表します。
+PortCls システム ドライバーの実装、 [IInterruptSync](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iinterruptsync)ミニポート ドライバーのためのインターフェイス。 **IInterruptSync**以外からの割り込みルーチンと割り込みサービス ルーチン (Isr) の一覧の実行を同期する割り込み同期オブジェクトを表します。
 
 割り込み同期オブジェクトでは、2 つの主要機能を提供します。
 
@@ -35,7 +35,7 @@ PortCls システム ドライバーの実装、 [IInterruptSync](https://msdn.m
 
 割り込みの同期オブジェクトは、複数の Isr を処理する柔軟性があります。 Isr を特定は、割り込み時に、同期オブジェクトを通過するリンクのリストに存在します。 ミニポート ドライバーで ISR 同期オブジェクトを登録する場合は、ISR を先頭またはこのリストの末尾に追加するかどうかを指定します。
 
-ミニポート ドライバーは呼び出し、 [ **PcNewInterruptSync** ](https://msdn.microsoft.com/library/windows/hardware/ff537713)割り込み同期オブジェクトを作成する関数。 この呼び出し中には、ドライバーは、割り込み時に isr を特定のリストを走査するオブジェクトの方法を指定します。 呼び出しには、次の表に INTERRUPTSYNCMODE 列挙定数で指定されている 3 つのオプションがサポートしています。
+ミニポート ドライバーは呼び出し、 [ **PcNewInterruptSync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewinterruptsync)割り込み同期オブジェクトを作成する関数。 この呼び出し中には、ドライバーは、割り込み時に isr を特定のリストを走査するオブジェクトの方法を指定します。 呼び出しには、次の表に INTERRUPTSYNCMODE 列挙定数で指定されている 3 つのオプションがサポートしています。
 
 <table>
 <colgroup>
@@ -76,15 +76,15 @@ PortCls システム ドライバーの実装、 [IInterruptSync](https://msdn.m
 
 **IInterruptSync**インターフェイスは、次のメソッドをサポートしています。
 
-[**IInterruptSync::CallSynchronizedRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff536592)
+[**IInterruptSync::CallSynchronizedRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-callsynchronizedroutine)
 
-[**IInterruptSync::Connect**](https://msdn.microsoft.com/library/windows/hardware/ff536594)
+[**IInterruptSync::Connect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-connect)
 
-[**IInterruptSync::Disconnect**](https://msdn.microsoft.com/library/windows/hardware/ff536597)
+[**IInterruptSync::Disconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-disconnect)
 
-[**IInterruptSync::GetKInterrupt**](https://msdn.microsoft.com/library/windows/hardware/ff536599)
+[**IInterruptSync::GetKInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-getkinterrupt)
 
-[**IInterruptSync::RegisterServiceRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff536600)
+[**IInterruptSync::RegisterServiceRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-registerserviceroutine)
 
  
 

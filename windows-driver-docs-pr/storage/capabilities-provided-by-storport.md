@@ -4,12 +4,12 @@ description: Storport によって提供される機能
 ms.assetid: 30b4d2e4-2004-4d71-8c91-f066e52dd256
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a556b01864bdc5676e6fc47009510c3d102cee98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2eeeb27ec4ae887cec0463370f1f5a57ea7f49c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390559"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368364"
 ---
 # <a name="capabilities-provided-by-storport"></a>Storport によって提供される機能
 
@@ -45,7 +45,7 @@ Storport ドライバーは、次の機能を提供します。
 
 -   ホスト アダプターの制限に関する情報を含むクラス ドライバーを提供します。
 
-    ホスト バス アダプター (Hba) の制限に合わせてデータ転送のサイズを制御するクラス ドライバーの役目です。 ただし、Storport は、このタスクを実行する必要がある情報を使用してクラス ドライバーを提供します。 Storport、アダプターの記述子では、この情報を提供する ([**ストレージ\_アダプター\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566346)) IOCTL 要求に応答 ([ **IOCTL\_ストレージ\_クエリ\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff560590))。 クラス ドライバーは、要求をこの記述子で報告される情報に基づいて適切なサイズのチャンクに分割します。
+    ホスト バス アダプター (Hba) の制限に合わせてデータ転送のサイズを制御するクラス ドライバーの役目です。 ただし、Storport は、このタスクを実行する必要がある情報を使用してクラス ドライバーを提供します。 Storport、アダプターの記述子では、この情報を提供する ([**ストレージ\_アダプター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)) IOCTL 要求に応答 ([ **IOCTL\_ストレージ\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property))。 クラス ドライバーは、要求をこの記述子で報告される情報に基づいて適切なサイズのチャンクに分割します。
 
 -   バスの相対アドレスを論理アドレスを変換しています。
 
@@ -67,15 +67,15 @@ Storport ドライバーは、次の機能を提供します。
 
 Storport では、Storport のライブラリ ルーチンを使用して、ミニポート ドライバーにサービスを提供します。 ミニポート ドライバーの作成者には、1 つのモノリシック ポート ドライバーに提供する機能をコーディングするのではなく、これらのルーチンを呼び出すことができます。 によって、これらのルーチンを使用して最も重要なサービスの一部としては、
 
--   Storport ミニポート ドライバーが Storport に多くの OS に依存する初期化操作を委任できます[ **StorPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff567108)ライブラリ ルーチン。 たとえば、PnP に関連する詳細の処理、Storport ドライバーと DMA のマッピング。 これにより、オペレーティング システムのバージョンが異なって Storport ミニポート ドライバーが移植性にします。 Storport ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [Storport 使用した初期化をハードウェア](hardware-initialization-with-storport.md)します。
+-   Storport ミニポート ドライバーが Storport に多くの OS に依存する初期化操作を委任できます[ **StorPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)ライブラリ ルーチン。 たとえば、PnP に関連する詳細の処理、Storport ドライバーと DMA のマッピング。 これにより、オペレーティング システムのバージョンが異なって Storport ミニポート ドライバーが移植性にします。 Storport ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [Storport 使用した初期化をハードウェア](hardware-initialization-with-storport.md)します。
 
--   非 PnP デバイスの Storport ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **StorPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff567108)します。
+-   非 PnP デバイスの Storport ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)します。
 
--   Storport ミニポート ドライバーはドライバー オブジェクト内のエントリ ポイントのディスパッチを初期化できません。 Storport ドライバーは、ミニポート ドライバーに代わって、ミニポート ドライバーを呼び出すと[ **StorPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff567108)します。
+-   Storport ミニポート ドライバーはドライバー オブジェクト内のエントリ ポイントのディスパッチを初期化できません。 Storport ドライバーは、ミニポート ドライバーに代わって、ミニポート ドライバーを呼び出すと[ **StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)します。
 
--   Storport ミニポート ドライバーを使用して、論理アドレスにバスの相対アドレスは変換されない[ **HalTranslateBusAddress**](https://msdn.microsoft.com/library/windows/hardware/ff546637)します。 Storport ミニポート ドライバーでは、これを行うへの呼び出しによって[ **StorPortGetDeviceBase**](https://msdn.microsoft.com/library/windows/hardware/ff567080)します。
+-   Storport ミニポート ドライバーを使用して、論理アドレスにバスの相対アドレスは変換されない[ **HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))します。 Storport ミニポート ドライバーでは、これを行うへの呼び出しによって[ **StorPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)します。
 
-Storport が Storport ミニポート ドライバーを使用できるようにするライブラリ ルーチンの完全な一覧を参照してください。 [Storport ドライバー サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff567548)します。
+Storport が Storport ミニポート ドライバーを使用できるようにするライブラリ ルーチンの完全な一覧を参照してください。 [Storport ドライバー サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 

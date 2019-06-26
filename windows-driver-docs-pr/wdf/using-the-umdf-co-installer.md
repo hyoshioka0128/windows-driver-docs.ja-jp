@@ -13,17 +13,17 @@ keywords:
 - INF ファイル WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 264d49d80852a5635ed6fd8bac37e55034f28e32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92dce6b1497d25c5416d5628bd0e5f06e461171d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391828"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372188"
 ---
 # <a name="using-the-umdf-co-installer"></a>UMDF 共同インストーラーの使用
 
 
-共同インストーラーは、コンピューターに格納されているフレームワークのバージョンを更新し、フレームワーク固有の INF ファイルのセクションを処理します。 このトピックでは、2 つの UMDF 共同インストーラーとのいずれかに含める必要がある場合について説明します。、[ドライバー インストール パッケージ](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)または INF ファイルで共同インストーラーを参照します。
+共同インストーラーは、コンピューターに格納されているフレームワークのバージョンを更新し、フレームワーク固有の INF ファイルのセクションを処理します。 このトピックでは、2 つの UMDF 共同インストーラーとのいずれかに含める必要がある場合について説明します。、[ドライバー インストール パッケージ](https://docs.microsoft.com/windows-hardware/drivers)または INF ファイルで共同インストーラーを参照します。
 
 ## <a name="getting-the-co-installer-package"></a>共同インストーラー パッケージを取得します。
 
@@ -45,7 +45,7 @@ Windows 8.1 用 2.0 の UMDF ドライバーを作成する場合、INF ファ�
 
 作成する場合、ドライバーを使用するマシンを Windows 8.1 以前のオペレーティング システムをターゲット、ことをフレームワークのバージョン 1.11 UMDF 1.11 ドライバーがインストールされています。 これを行う 3 つの方法を次に示します。
 
--   INF ファイルで更新プログラムの共同インストーラーを参照してで更新プログラムの共同インストーラーを含める、[ドライバー インストール パッケージ](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。 オペレーティング システムが、ドライバーをインストールするときは、共同インストーラーを実行します。 ドライバーは、Windows Update を使用して分散は、このオプションを選択する必要があります。
+-   INF ファイルで更新プログラムの共同インストーラーを参照してで更新プログラムの共同インストーラーを含める、[ドライバー インストール パッケージ](https://docs.microsoft.com/windows-hardware/drivers)します。 オペレーティング システムが、ドライバーをインストールするときは、共同インストーラーを実行します。 ドライバーは、Windows Update を使用して分散は、このオプションを選択する必要があります。
 
 -   関連する MSU パッケージ (たとえば umdf-1.11-Win-6.0.msu) を呼び出すセットアップ アプリケーションと共に再配布します。 Src でこのようなアプリケーションのサンプルが見つかります\\全般\\WDK インストールの wdkinstall サブディレクトリ。 デバイスに付属し、デバイスを使用する前に実行する必要があるセットアップ プログラムを記述する場合は、このオプションを選択する可能性があります。 このオプションを選択した場合、INF ファイルは、構成共同インストーラーを参照する必要があります。
 
@@ -56,7 +56,7 @@ INF ファイルで更新プログラムの共同インストーラーまたは�
 ## <a name="inf-file-sections-for-the-co-installer"></a>共同インストーラーのセクションでは INF ファイル
 
 
-ドライバーの INF ファイルを含める必要があります、 [ **INF DDInstall.CoInstallers セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547321)します。 更新プログラムの共同インストーラーを再配布する場合、 **DDInstall.CoInstallers**セクションは、両方を含める必要があります、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)と[ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)、次の例を示しています。
+ドライバーの INF ファイルを含める必要があります、 [ **INF DDInstall.CoInstallers セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)します。 更新プログラムの共同インストーラーを再配布する場合、 **DDInstall.CoInstallers**セクションは、両方を含める必要があります、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)と[ **INF CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)、次の例を示しています。
 
 ```cpp
 [MyDriver_Install.CoInstallers]
@@ -89,7 +89,7 @@ HKR,,CoInstallers32,0x00010000,WudfCoinstaller.dll
 
 ドライバーの INF ファイルは常に含める必要があります、 **DDInstall.Wdf**共同インストーラーがインストールされていた後を読み取っていることをセクションします。 ドライバーを指定できますディレクティブについては**DDInstall.Wdf**を参照してください[INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
 
-INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツール。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)します。
+INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)ツール。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)します。
 
  
 

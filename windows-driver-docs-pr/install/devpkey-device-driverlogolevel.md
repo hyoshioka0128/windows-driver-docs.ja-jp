@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 55fc51513db1eadfc825369fb065fdda1eadd398
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 204782ab652c5aa51efcba69cf9dd2fb057642a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362332"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378282"
 ---
 # <a name="devpkeydevicedriverlogolevel"></a>DEVPKEY_Device_DriverLogoLevel
 
@@ -58,7 +58,7 @@ DEVPKEY_Device_DriverLogoLevel デバイス プロパティは、デバイスの
 
 Windows では、DEVPKEY_Device_DriverLogoLevel の値を設定します。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_DriverLogoLevel の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_DriverLogoLevel の値を取得します。
 
 Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティはサポートされません。
 
@@ -85,7 +85,7 @@ Windows Server 2003、Windows XP、および Windows 2000 では、このプロ�
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

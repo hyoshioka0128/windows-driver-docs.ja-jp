@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: db9b92435bd60bde07fff905bb7af15337799f5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7c29f87f569a5f921aa3fbea6955823bfc3c515
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383004"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366356"
 ---
 # <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx、sxd、sxe、sxi、sxn、sxr、sx- (例外の設定)
 
@@ -95,7 +95,7 @@ sxr
 
 **Sx-** コマンドでは、処理の状態や、指定した例外イベントの中断状態は変更されません。 このコマンドは、初回コマンドまたは特定のイベントに関連付けられている次の例外コマンドを変更する場合はその他の変更を希望しない場合に使用できます。
 
-含める場合は、 **-h**オプション (または、 **cc**、 **hc**、 **bpec**、または**ssec**イベントを指定)、**sxe**、 **sxd**、 **sxn**、および**sxi**コマンド コントロール、[処理ステータス](https://msdn.microsoft.com/library/windows/hardware/ff541490#handling-status)のイベントまたは例外。 その他のすべてのケースではこれらのコマンドを制御、[状態](https://msdn.microsoft.com/library/windows/hardware/ff541490#break-status)例外、またはイベントの。
+含める場合は、 **-h**オプション (または、 **cc**、 **hc**、 **bpec**、または**ssec**イベントを指定)、**sxe**、 **sxd**、 **sxn**、および**sxi**コマンド コントロール、[処理ステータス](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx#handling-status)のイベントまたは例外。 その他のすべてのケースではこれらのコマンドを制御、[状態](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx#break-status)例外、またはイベントの。
 
 中断状態を設定するとき、これらのコマンドは、次の影響を与えます。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bc0e194e94ab886f8aae1632dc990bca8f412cc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4165e861d2342d163bb301279b77270e3db9cf52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354042"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378519"
 ---
 # <a name="getpersistentbinding2-function"></a>GetPersistentBinding2 関数
 
@@ -43,14 +43,14 @@ void GetPersistentBinding2(
 <a name="parameters"></a>パラメーター
 ----------
 
-*PortWWN\[8\]*   
+*PortWWN\[8\]*    
 永続的なバインドを取得するポートを示す世界中の名前。
 
 *InEntryCount*   
 WMI プロバイダーをレポートできるバインド エントリの数を示す、*エントリ*パラメーター。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFcpPersistentBinding\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554936)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFcpPersistentBinding\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)構造体。
 
 *TotalEntryCount*   
 HBA に関連付けられた永続的なバインドの合計数を示します。
@@ -58,8 +58,8 @@ HBA に関連付けられた永続的なバインドの合計数を示します�
 *OutEntryCount*   
 によって取得された永続的なバインドの合計数を示す、 **GetPersistentBinding2**メソッド. この値の場合に等しいまたはそれよりも少なくなります*TotalEntryCount*します。
 
-*バインド\[\]*   
-型の構造体の配列[ **HBAFCPBindingEntry2** ](https://msdn.microsoft.com/library/windows/hardware/ff556035)オペレーティング システムとプロトコル (FCP) 識別子のファイバー チャネル HBA のバインディングを記述します。
+*バインド\[\]*    
+型の構造体の配列[ **HBAFCPBindingEntry2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)オペレーティング システムとプロトコル (FCP) 識別子のファイバー チャネル HBA のバインディングを記述します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -94,11 +94,11 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**GetFcpPersistentBinding\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff554933)
+[**GetFcpPersistentBinding\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_in)
 
-[**GetFcpPersistentBinding\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff554936)
+[**GetFcpPersistentBinding\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcppersistentbinding_out)
 
-[**HBAFCPBindingEntry2**](https://msdn.microsoft.com/library/windows/hardware/ff556035)
+[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)
 
  
 

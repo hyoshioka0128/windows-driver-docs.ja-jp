@@ -12,12 +12,12 @@ keywords:
 - KsProxy プラグイン サンプル WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f77a448fe853cff2a5ad91638378da915b5afa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fafacf2c00c2e0fda66e4aecd17d31978df30a84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389206"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355921"
 ---
 # <a name="sample-user-mode-code-for-methods-and-events"></a>メソッドとイベントのサンプル ユーザーモード コード
 
@@ -26,7 +26,7 @@ ms.locfileid: "63389206"
 
 カーネル モード、ミニドライバーでプロパティ、メソッド、およびイベントをサポートする方法については、次を参照してください。 [Automation テーブルを定義する](defining-automation-tables.md)します。
 
-指定されたメソッドをサポートするミニドライバーを指定したら、呼び出すことによってそのメソッドを呼び出すことができます[ **IKsControl::KsMethod** ](https://msdn.microsoft.com/library/windows/hardware/ff559785)からユーザー モードの次のコード例に示すようにプラグインします。
+指定されたメソッドをサポートするミニドライバーを指定したら、呼び出すことによってそのメソッドを呼び出すことができます[ **IKsControl::KsMethod** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksmethod)からユーザー モードの次のコード例に示すようにプラグインします。
 
 ```cpp
 PVOID MethodBuffer; // Your method arguments buffer
@@ -48,7 +48,7 @@ pIKsControl -> KsMethod (
     &BytesReturned);
 ```
 
-カーネル モードで指定した automation のテーブルで使用することができます、**フラグ**のメンバー [ **KSMETHOD\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563420)バッファーは読み取り/書き込みであるかどうかを指定してかどうかにする必要がありますのマップまたはコピーします。
+カーネル モードで指定した automation のテーブルで使用することができます、**フラグ**のメンバー [ **KSMETHOD\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmethod_item)バッファーは読み取り/書き込みであるかどうかを指定してかどうかにする必要がありますのマップまたはコピーします。
 
 ミニドライバーでサポートされるイベントに登録するには、次のユーザー モードのコード例を使用します。
 
@@ -78,7 +78,7 @@ pIKsControl -> KsEvent (
     &BytesReturned);
 ```
 
-上記の例では、通知は、ミニドライバーは、イベントを無効にします。 までを続行します。 イベントを無効にします。 呼び出す[ **IKsControl::KsEvent**](https://msdn.microsoft.com/library/windows/hardware/ff559772)します。 最初にこのイベントが発生したときにのみ通知する場合は、設定 KSEVENT\_型\_で ONESHOT **Event.Flags**します。
+上記の例では、通知は、ミニドライバーは、イベントを無効にします。 までを続行します。 イベントを無効にします。 呼び出す[ **IKsControl::KsEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksevent)します。 最初にこのイベントが発生したときにのみ通知する場合は、設定 KSEVENT\_型\_で ONESHOT **Event.Flags**します。
 
 USB ビデオ クラスの拡張機能のユニット数を持つイベントをサポートしている場合は、次を参照してください。[単位の拡張機能で自動更新のイベントをサポートしている](supporting-autoupdate-events-with-extension-units.md)します。
 

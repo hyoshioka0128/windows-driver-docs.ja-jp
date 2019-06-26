@@ -4,12 +4,12 @@ description: ジョブ キューのライブ ビューを提供するには、Wi
 ms.assetid: D1236DD2-D4AD-4615-9036-7EC75D6CADCE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6002e168002c41a4d67ff98b6ba96d3272ead709
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17df3c678b8051b4eebbc3aafbf607f93522896c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326026"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377526"
 ---
 # <a name="job-management"></a>ジョブ管理
 
@@ -23,24 +23,24 @@ ms.locfileid: "63326026"
 
 次のインターフェイスが、ジョブの管理機能を実装するために Windows 8.1 で導入されました。
 
-[**IPrinterQueue2**](https://msdn.microsoft.com/library/windows/hardware/dn265389)
+[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)
 
-[**IPrinterQueueView**](https://msdn.microsoft.com/library/windows/hardware/dn265392)
+[**IPrinterQueueView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueview)
 
-[**IPrinterQueueViewEvent**](https://msdn.microsoft.com/library/windows/hardware/dn265393)
+[**IPrinterQueueViewEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueviewevent)
 
-[**IPrintJob**](https://msdn.microsoft.com/library/windows/hardware/dn265396)
+[**IPrintJob**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjob)
 
-[**IPrintJobCollection**](https://msdn.microsoft.com/library/windows/hardware/dn265397)
+[**IPrintJobCollection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjobcollection)
 
 ## <a name="initiating-a-job-management-session"></a>ジョブの管理セッションを開始します。
 
 
-ジョブの管理セッションを開始するには、最初に指定し、管理するジョブの範囲を要求する必要があります。 このジョブの範囲は"view"と呼ばれ、使用する、 [ **IPrinterQueue2::GetPrinterQueueView** ](https://msdn.microsoft.com/library/windows/hardware/dn265390)メソッドを指定します。
+ジョブの管理セッションを開始するには、最初に指定し、管理するジョブの範囲を要求する必要があります。 このジョブの範囲は"view"と呼ばれ、使用する、 [ **IPrinterQueue2::GetPrinterQueueView** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueue2-getprinterqueueview)メソッドを指定します。
 
-さまざまな一連のジョブを監視するビューを変更する場合は、使用、 [ **IPrinterQueueView::SetViewRange** ](https://msdn.microsoft.com/library/windows/hardware/dn265395)を実行するメソッド。
+さまざまな一連のジョブを監視するビューを変更する場合は、使用、 [ **IPrinterQueueView::SetViewRange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueueview-setviewrange)を実行するメソッド。
 
-印刷キューは動的なキューであることに注意してください。 イベントが、毎回、印刷キューの変更の状態、および[ **IPrinterQueueViewEvent::OnChanged** ](https://msdn.microsoft.com/library/windows/hardware/dn265394)メソッドが要求されたビューの更新されたスナップショットを提供します。
+印刷キューは動的なキューであることに注意してください。 イベントが、毎回、印刷キューの変更の状態、および[ **IPrinterQueueViewEvent::OnChanged** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nf-printerextension-iprinterqueueviewevent-onchanged)メソッドが要求されたビューの更新されたスナップショットを提供します。
 
 次C#コード スニペットは、ジョブの管理セッションを開始するため、新しいインターフェイスの使用方法を示します。
 
@@ -94,11 +94,11 @@ UIDisplay が使用される汎用的な名前のユーザーに情報を表示�
 また、最初のイベント ハンドラーが追加され、最後のイベント ハンドラーが削除されたときに停止しているときにジョブの列挙が開始されるに注意してください。
 
 ## <a name="related-topics"></a>関連トピック
-[**IPrinterQueue2**](https://msdn.microsoft.com/library/windows/hardware/dn265389)  
-[**IPrinterQueueView**](https://msdn.microsoft.com/library/windows/hardware/dn265392)  
-[**IPrinterQueueViewEvent**](https://msdn.microsoft.com/library/windows/hardware/dn265393)  
-[**IPrintJob**](https://msdn.microsoft.com/library/windows/hardware/dn265396)  
-[**IPrintJobCollection**](https://msdn.microsoft.com/library/windows/hardware/dn265397)  
+[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)  
+[**IPrinterQueueView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueview)  
+[**IPrinterQueueViewEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueviewevent)  
+[**IPrintJob**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjob)  
+[**IPrintJobCollection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjobcollection)  
 
 
 

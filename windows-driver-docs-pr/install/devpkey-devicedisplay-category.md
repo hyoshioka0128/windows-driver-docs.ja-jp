@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7502cec2982d79633b3395031469b8afce967ed3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d77e358b158540f392fdf811dc9ac7471ccf8954
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378042"
 ---
 # <a name="devpkeydevicedisplaycategory"></a>DEVPKEY_DeviceDisplay_Category
 
@@ -56,9 +56,9 @@ DEVPKEY_DeviceDisplay_Category デバイス プロパティは、デバイスの
 <a name="remarks"></a>注釈
 -------
 
-物理デバイスのデバイス カテゴリを使用して指定、 [ **DeviceCategory** ](https://msdn.microsoft.com/library/windows/hardware/ff541101)内の XML 要素を[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)します。 システムでは、そのデバイスの各インスタンスは、その物理デバイスのデバイス カテゴリを継承します。
+物理デバイスのデバイス カテゴリを使用して指定、 [ **DeviceCategory** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))内の XML 要素を[デバイス メタデータ パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)します。 システムでは、そのデバイスの各インスタンスは、その物理デバイスのデバイス カテゴリを継承します。
 
-各物理デバイスには 1 つまたはより機能的なカテゴリがで指定された、[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)します。 各カテゴリは、認識されているデバイスのカテゴリのいずれかにデバイスのインスタンスをグループ化する Windows デバイスとプリンターによって使用されます。
+各物理デバイスには 1 つまたはより機能的なカテゴリがで指定された、[デバイス メタデータ パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)します。 各カテゴリは、認識されているデバイスのカテゴリのいずれかにデバイスのインスタンスをグループ化する Windows デバイスとプリンターによって使用されます。
 
 多機能デバイスは通常デバイスをサポートするハードウェア関数ごとに複数の機能カテゴリを特定します。 たとえば、多機能デバイスには、プリンター、fax、スキャナー、およびリムーバブル記憶域デバイスの機能の機能のカテゴリを識別できます。
 
@@ -68,7 +68,7 @@ DEVPKEY_DeviceDisplay_Category デバイスのプロパティは、1 つ以上�
 
 **デバイスとプリンター**コントロール パネルの ユーザー インターフェイスには、デバイスのインスタンスのプライマリとセカンダリ機能カテゴリが表示されます。 DEVPKEY_DeviceDisplay_Category デバイス プロパティで指定されている順序では、これらのカテゴリが表示されます。
 
-DEVPKEY_DeviceDisplay_Category プロパティを呼び出すことによってアクセスできる[ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)します。
+DEVPKEY_DeviceDisplay_Category プロパティを呼び出すことによってアクセスできる[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -93,9 +93,9 @@ DEVPKEY_DeviceDisplay_Category プロパティを呼び出すことによって�
 ## <a name="see-also"></a>関連項目
 
 
-[**DeviceCategory**](https://msdn.microsoft.com/library/windows/hardware/ff541101)
+[**DeviceCategory**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

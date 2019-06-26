@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c1219778bf3f8b8ec125f52400c30e0003a5e27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6a26bead65df45b350293a05273b3fbb4e33b28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336433"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363166"
 ---
 # <a name="ioctldecode"></a>!ioctldecode
 
 
-**! Ioctldecode**拡張機能が表示されます、*デバイスの種類*、*アクセスのために必要な*、*関数コード*と*転送型*IOCTL の特定のコードで指定します。 詳細については、IOCTL 制御コードは、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)します。
+**! Ioctldecode**拡張機能が表示されます、*デバイスの種類*、*アクセスのために必要な*、*関数コード*と*転送型*IOCTL の特定のコードで指定します。 詳細については、IOCTL 制御コードは、次を参照してください。 [I/O 制御コードを定義する](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)します。
 
 ```dbgcmd
 !ioctldecode IoctlCode 
@@ -86,7 +86,7 @@ No Mdl: No System Buffer: Thread 00000000:  Irp stack trace.
                                                 Args: ffffd581a6c61a50 00000000 0x220003 00000000
 ```
 
-ここで表示されます。 3 番目の引数*0x220003*、IOCTL コードに示します。 ここでは、IOCTL に関する情報を表示する IOCTL コードを使用して[ **IOCTL\_内部\_USB\_送信\_URB**](https://msdn.microsoft.com/library/windows/hardware/ff537271)します。
+ここで表示されます。 3 番目の引数*0x220003*、IOCTL コードに示します。 ここでは、IOCTL に関する情報を表示する IOCTL コードを使用して[ **IOCTL\_内部\_USB\_送信\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)します。
 
 ```dbgcmd
 0: kd> !ioctldecode 0x220003
@@ -116,7 +116,7 @@ IOCTL が識別されないが、IOCTL フィールドに関する情報が表�
 
 パブリックに定義された Ioctl のサブセットのみがで識別できることに注意してください、 **! ioctldecode**コマンド。
 
-Ioctl の詳細については、次を参照してください。 [I/O 制御コードの概要](https://msdn.microsoft.com/library/windows/hardware/ff548059)します。
+Ioctl の詳細については、次を参照してください。 [I/O 制御コードの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-i-o-control-codes)します。
 
 Irp と Ioctl の概要についてを参照してください*Windows Internals* E. のある Mark Russinovich、David A. Solomon Alex Ionescu しています。
 

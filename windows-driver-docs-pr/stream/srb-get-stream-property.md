@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a92d556c5fc34ddc63ca2aa15343f1661ebe9c48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb853a39296222da7ea31d5491290e777ae8e2c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377922"
 ---
 # <a name="srbgetstreamproperty"></a>SRB\_取得\_ストリーム\_プロパティ
 
@@ -42,7 +42,7 @@ ms.locfileid: "63390868"
 
 ### <a name="comments"></a>コメント
 
-クラス ドライバーは、操作のパラメーターを渡す、 *pSrb*-&gt;**CommandData**.**PropertyInfo**バッファー、フォームの構造[**ストリーム\_プロパティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff568442)します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。
+クラス ドライバーは、操作のパラメーターを渡す、 *pSrb*-&gt;**CommandData**.**PropertyInfo**バッファー、フォームの構造[**ストリーム\_プロパティ\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_stream_property_descriptor)します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。
 
 **プロパティ**ストリームのメンバー\_プロパティ\_記述子構造体が、問題の中にプロパティを記述、 **PropertyInfo**メンバーのコピー先バッファーを指定します、プロパティにデータをします。 バッファーが小さすぎる場合、ミニドライバーを設定する必要があります、**状態**によって示されるメンバー *pSrb*ステータス\_バッファー\_オーバーフローが発生します。
 
@@ -51,7 +51,7 @@ ms.locfileid: "63390868"
 
 [**SRB\_設定\_ストリーム\_プロパティ**](srb-set-stream-property.md)
 
-[**ストリーム\_プロパティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff568442)
+[**ストリーム\_プロパティ\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_stream_property_descriptor)
 
  
 

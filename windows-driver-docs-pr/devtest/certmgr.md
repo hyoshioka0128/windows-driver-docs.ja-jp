@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fad959a411067d190c0fa04ec2919b2b1b00aa00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e68db909d8b8f99f148e179dd9bcda1417230247
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375370"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371616"
 ---
 # <a name="certmgr"></a>CertMgr
 
 
 CertMgr (Certmgr.exe) は、コマンド ライン[CryptoAPI](https://go.microsoft.com/fwlink/p/?linkid=136391)証明書、証明書信頼リスト (Ctl)、および証明書失効リスト (Crl) を管理するツール。
 
-CertMgr は、スイッチの数が多いをサポートしますが、このセクションでは、管理に関連するもののみについて説明します[テスト証明書](https://msdn.microsoft.com/library/windows/hardware/ff553457)証明書ストア内で。
+CertMgr は、スイッチの数が多いをサポートしますが、このセクションでは、管理に関連するもののみについて説明します[テスト証明書](https://docs.microsoft.com/windows-hardware/drivers/install/test-certificates)証明書ストア内で。
 
 ```
     CertMgr [/add|/del|/put] [Switches] [/s [/r RegistryLocation ] ] SourceName [/s [/r RegistryLocation] ] [DestinationName]
@@ -48,19 +48,19 @@ CertMgr が証明書ストアまたはで指定されたファイルで、すべ
 
 ### <a name="span-idswitchesandargumentsspanspan-idswitchesandargumentsspanswitches-and-arguments"></a><span id="switches_and_arguments"></span><span id="SWITCHES_AND_ARGUMENTS"></span>スイッチと引数
 
-<span id="_c"></span><span id="_C"></span>**/c**  
+<span id="_c"></span><span id="_C"></span> **/c**  
 構成のみで指定されたファイルから証明書を処理する CertMgr *SourceName*します。
 
-<span id="_CTL"></span><span id="_ctl"></span>**/CTL**  
+<span id="_CTL"></span><span id="_ctl"></span> **/CTL**  
 構成のみで指定されたファイルから Ctl を処理する CertMgr *SourceName*します。
 
-<span id="_CRL"></span><span id="_crl"></span>**/CRL**  
+<span id="_CRL"></span><span id="_crl"></span> **/CRL**  
 構成のみで指定されたファイルからの Crl を処理する CertMgr *SourceName*します。
 
-<span id="_s"></span><span id="_S"></span>**/s**  
+<span id="_s"></span><span id="_S"></span> **/s**  
 構成で指定された証明書ストアにアクセスする CertMgr *SourceName*または*DestinationName*システム ストアとして。
 
-<span id="_r_registryLocation"></span><span id="_r_registrylocation"></span><span id="_R_REGISTRYLOCATION"></span>**/r** *registryLocation*  
+<span id="_r_registryLocation"></span><span id="_r_registrylocation"></span><span id="_R_REGISTRYLOCATION"></span> **/r** *registryLocation*  
 システムの証明書ストアのレジストリの場所を指定します。 **/R**スイッチが有効なで使用する場合のみ、 **/s**スイッチします。 *RegistryLocation*引数はいずれかである必要があります。
 
 <span id="currentUser"></span><span id="currentuser"></span><span id="CURRENTUSER"></span>*currentUser*  
@@ -71,9 +71,9 @@ HKEY レジストリの場所を指定します\_ローカル\_マシン。
 
 場合、 **/r**と共にスイッチが指定されていない、 **/s**切り替えるには、 *currentUser*既定値です。
 
-これらの証明書ストアの詳細については、次を参照してください。[証明書ストア](https://msdn.microsoft.com/library/windows/hardware/ff537890)します。
+これらの証明書ストアの詳細については、次を参照してください。[証明書ストア](https://docs.microsoft.com/windows-hardware/drivers/install/certificate-stores)します。
 
-<span id="_v"></span><span id="_V"></span>**/v**  
+<span id="_v"></span><span id="_V"></span> **/v**  
 CertMgr の証明書、Ctl、および Crl に関する詳細情報を表示するよう構成します。 このスイッチが指定されていない場合、CertMgr には簡単な情報のみが表示されます。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント

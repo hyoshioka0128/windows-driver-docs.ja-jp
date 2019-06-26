@@ -4,12 +4,12 @@ description: ISCSI\_DiscoveredTarget2 WMI クラス
 ms.assetid: 44b47db2-8e48-4b78-bba7-dc2c0254b3b4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 37430684d79451bbcf422faf9135af5a87a03fb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8cba8124eea6a070ae7757ddf85ad33532e98c2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339867"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378466"
 ---
 # <a name="iscsidiscoveredtarget2-wmi-class"></a>ISCSI\_DiscoveredTarget2 WMI クラス
 
@@ -20,7 +20,7 @@ ISCSI\_DiscoveredTarget2 WMI クラスが検出されたターゲットに関連
 
 ISCSI\_DiscoveredTarget2 クラスは発行されませんしで定義されている*Discover.mof*します。
 
-WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **ISCSI\_DiscoveredTarget2** ](https://msdn.microsoft.com/library/windows/hardware/ff561503)データ構造体。
+WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **ISCSI\_DiscoveredTarget2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsifnd/ns-iscsifnd-_iscsi_discoveredtarget2)データ構造体。
 
  
 

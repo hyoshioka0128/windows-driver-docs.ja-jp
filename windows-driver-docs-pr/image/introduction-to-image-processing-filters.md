@@ -4,12 +4,12 @@ description: 画像処理フィルターの概要
 ms.assetid: 59fc1bc1-c783-43df-9778-ea4306f6dd50
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cc0c7372512dbf7339029b162a070a6e4a486f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fe55552aa36c225056547ee83495c117e3d0a66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358883"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378922"
 ---
 # <a name="introduction-to-image-processing-filters"></a>画像処理フィルターの概要
 
@@ -23,7 +23,7 @@ ms.locfileid: "63358883"
 
 -   正確なライブ プレビューを有効にします。 正確なライブ プレビューを提供する Windows Vista WIA プレビュー コンポーネント (Microsoft Windows SDK のドキュメントで説明) の新しいイメージの処理のフィルターが使用されます。 このコンテキストで「ライブ」には、アプリケーションが、このセクションでは、後ほどいくつかのプロパティ設定を変更したら、スキャナーからのイメージを再取得する必要はありませんを意味します。 プレビューは、完全に独立したイメージには単なるランダムなフィルターではなく、実際のプレビュー イメージの仕入先コンポーネントでは実際に実行されて、フィルター処理から正確です。
 
-正確なプレビューを提供するためにフィルターを実装する必要があります[**明るさ**](https://msdn.microsoft.com/library/windows/hardware/ff552567)と[**コントラスト**](https://msdn.microsoft.com/library/windows/hardware/ff552573)には、少なくともプロパティ。 これは、明るさとコントラストのコントロールをユーザーに提供する共通の UI は正確なプレビューを表示できるようにします。
+正確なプレビューを提供するためにフィルターを実装する必要があります[**明るさ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-brightness)と[**コントラスト**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-contrast)には、少なくともプロパティ。 これは、明るさとコントラストのコントロールをユーザーに提供する共通の UI は正確なプレビューを表示できるようにします。
 
 イメージがスキャンされたときに、イメージ処理フィルターが常に実行されます。 したがって、アプリケーション、画像を最初に適用されるフィルターの処理をしなくても、スキャナーからのイメージを取得する方法はありません。 アプリケーションは、フィルターを意識する必要はありません。
 

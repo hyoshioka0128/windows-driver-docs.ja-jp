@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db873ce4b65d2b72d3fca6c4a0ef6444360c37d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 987bbe7954c5b56fe197848eb9a647ac5b7f22d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358738"
 ---
 # <a name="kspropertyrtaudiounregisternotificationevent"></a>KSPROPERTY\_RTAUDIO\_登録解除\_通知\_イベント
 
@@ -52,7 +52,7 @@ KSPROPERTY\_RTAUDIO\_登録解除\_通知\_イベント プロパティには、
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537499" data-raw-source="[&lt;strong&gt;KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537499)"><strong>KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property" data-raw-source="[&lt;strong&gt;KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property)"><strong>KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY</strong></a></p></td>
 <td align="left"><p><strong>NULL</strong></p></td>
 </tr>
 </tbody>
@@ -60,7 +60,7 @@ KSPROPERTY\_RTAUDIO\_登録解除\_通知\_イベント プロパティには、
 
  
 
-プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_通知\_イベント\_プロパティ構造を含む、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体と共にユーザー モード イベントのハンドル。
+プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_通知\_イベント\_プロパティ構造を含む、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体と共にユーザー モード イベントのハンドル。
 
 このプロパティのプロパティの値 (データの操作) が**NULL**操作データが返されないためです。
 
@@ -102,11 +102,11 @@ KSPROPERTY\_ RTAUDIO\_登録解除\_通知\_イベント プロパティの要�
 
 このプロパティは、DMA 駆動のイベント通知からのユーザー モード イベントの登録を解除するに使用されます。
 
-実行の状態に、暗証番号 (pin) を配置すると (KSSTATE\_実行) 循環バッファーのサイクルごとに 1 ~ 2 回登録されているイベントがシグナル状態に、通知によってカウント時に要求された[ **KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md)が呼び出されました。 KSSTATE の詳細については\_を実行しを参照してください、[状態遷移](https://msdn.microsoft.com/library/windows/hardware/ff568227)トピック。
+実行の状態に、暗証番号 (pin) を配置すると (KSSTATE\_実行) 循環バッファーのサイクルごとに 1 ~ 2 回登録されているイベントがシグナル状態に、通知によってカウント時に要求された[ **KSPROPERTY\_RTAUDIO\_バッファー\_WITH\_通知**](ksproperty-rtaudio-buffer-with-notification.md)が呼び出されました。 KSSTATE の詳細については\_を実行しを参照してください、[状態遷移](https://docs.microsoft.com/windows-hardware/drivers/stream/state-transitions)トピック。
 
 暗証番号 (pin) を停止すると、前の手順では、それを閉じるに登録されている各イベントする必要があります登録を解除する KSPROPERTY への呼び出しを使用して\_RTAUDIO\_登録解除\_通知\_イベント。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -129,9 +129,9 @@ KSPROPERTY\_ RTAUDIO\_登録解除\_通知\_イベント プロパティの要�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSRTAUDIO\_通知\_イベント\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff537499)
+[**KSRTAUDIO\_通知\_イベント\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property)
 
 [**KSPROPERTY\_RTAUDIO\_BUFFER\_WITH\_NOTIFICATION**](ksproperty-rtaudio-buffer-with-notification.md)
 

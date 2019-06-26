@@ -9,12 +9,12 @@ keywords:
 - NDIS フィルター ドライバー WDK、フィルター モジュールのデタッチ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77fb90910cf888b6f29071e72168a0b99ee6b732
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8b1f61ee168262c4a1cb44d945ba8028a286e90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364234"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381437"
 ---
 # <a name="detaching-a-filter-module"></a>フィルター モジュールのデタッチ
 
@@ -22,7 +22,7 @@ ms.locfileid: "63364234"
 
 
 
-NDIS フィルター ドライバーの呼び出しのドライバー スタックからフィルター モジュールをデタッチ プロセスを開始する[ *FilterDetach* ](https://msdn.microsoft.com/library/windows/hardware/ff549918)関数。 実行の開始時、 *FilterDetach*関数の場合、フィルター モジュールが入力、 *Detached*状態。 フィルター モジュールをデタッチする前に NDIS ドライバー スタックを一時停止する必要があります。 ドライバー スタックを一時停止の詳細については、次を参照してください。[ドライバー スタックを一時停止](pausing-a-driver-stack.md)します。
+NDIS フィルター ドライバーの呼び出しのドライバー スタックからフィルター モジュールをデタッチ プロセスを開始する[ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)関数。 実行の開始時、 *FilterDetach*関数の場合、フィルター モジュールが入力、 *Detached*状態。 フィルター モジュールをデタッチする前に NDIS ドライバー スタックを一時停止する必要があります。 ドライバー スタックを一時停止の詳細については、次を参照してください。[ドライバー スタックを一時停止](pausing-a-driver-stack.md)します。
 
 その*FilterDetach*関数の場合、ドライバーは、そのコンテキスト領域と、影響を受けるフィルター モジュール (バッファー プール) などその他のリソースを解放します。 フィルター ドライバーに呼び出しが失敗することはできません*FilterDetach*します。 そのため、フィルター ドライバーが事前割り当てを行う、アタッチ操作中にデタッチ操作を正常に実行するために必要なすべてのリソース。 フィルター モジュールのインポートに関する詳細については、次を参照してください。[フィルター モジュールのアタッチ](attaching-a-filter-module.md)します。
 

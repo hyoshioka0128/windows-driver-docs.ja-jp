@@ -11,12 +11,12 @@ keywords:
 - DDBLT_LAST_PRESENTATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 447fdb356dfca551498b760bf6af3a241764e59f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 563fabb561e7ee9f1048f7c6044542446f32a53d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369282"
 ---
 # <a name="presentation"></a>効果
 
@@ -24,7 +24,7 @@ ms.locfileid: "63383918"
 ## <span id="ddk_presentation_gg"></span><span id="DDK_PRESENTATION_GG"></span>
 
 
-DirectX 8.0「プレゼンテーション」(または、ユーザーに表示されるレンダリングの結果を行う) の概念を形式化する api。 以前は、全画面表示モードで反転ページまたはウィンドウ モードでの中のいずれか、これが実現されました。 アプリケーションを使用して、新しい**存在**full を実行する API フリッピングまたはウィンドウ表示モード中の画面します。 ただし、このメカニズムはまだ公開されていません、DDI レベル。 ランタイムは単にマップ、**存在**するか、API、 [ *DdFlip* ](https://msdn.microsoft.com/library/windows/hardware/ff549306)または[ *DdBlt* ](https://msdn.microsoft.com/library/windows/hardware/ff549205) DDI エントリアプリケーション モードによってポイント。
+DirectX 8.0「プレゼンテーション」(または、ユーザーに表示されるレンダリングの結果を行う) の概念を形式化する api。 以前は、全画面表示モードで反転ページまたはウィンドウ モードでの中のいずれか、これが実現されました。 アプリケーションを使用して、新しい**存在**full を実行する API フリッピングまたはウィンドウ表示モード中の画面します。 ただし、このメカニズムはまだ公開されていません、DDI レベル。 ランタイムは単にマップ、**存在**するか、API、 [ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)または[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) DDI エントリアプリケーション モードによってポイント。
 
 DirectX の 8.0 が blt 操作が実際にときの通知としてドライバーに渡される 2 つの新しい DirectDraw blt フラグを追加の一部を**存在**し、そのため、フレームの境界線をマークします。 これらの新しいフラグは DDBLT\_プレゼンテーションと DDBLT\_最後\_プレゼンテーション。 1 つのクリッピングがありますので、2 つのフラグが必要な**存在**ドライバーでの複数の blt 操作の呼び出しを呼び出します。 この場合は、すべての結果として呼び出される blt の**存在**操作がある、DDBLT\_プレゼンテーション フラグを設定します。 ただし、シーケンスの最終的な blt のみを使用して実行する、**存在**、DDBLT が\_最後\_プレゼンテーション ビットが設定されます。 そのため、blt を実装するために使用する場合、**存在**呼び出し、ドライバーが、DDBLT と 0 個以上の blt\_プレゼンテーション ビットが設定後に、両方の DDLT で 1 つだけ blt\_プレゼンテーションと DDBLT\_最後\_プレゼンテーション ビットを設定します。 これらのフラグは、アプリケーションで設定しないでください。 これらのフラグ、blt を渡して、ランタイムのみが許可されます。 さらに、これらのフラグでは、DirectX 8.0 DDI をサポートしているドライバーに渡されるだけです。
 

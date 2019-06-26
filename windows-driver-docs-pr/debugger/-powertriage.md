@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a760ab85eb0a5ea9b484754eb987dbd2c2a7da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5a96131147a9272bd50287b6b7bca70969df8c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334370"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363096"
 ---
 # <a name="powertriage"></a>!powertriage
 
@@ -58,9 +58,9 @@ ms.locfileid: "63334370"
 ! Powertriage 拡張機能には、次の情報が表示されます。
 
 1. 電源の状態と共に、[デバイス] ノードの! podev デバイスのすべてのオブジェクト。
-2. リンク[ **! rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)ドライバーが、IFR を有効にした場合。 IFR の詳細については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。
+2. リンク[ **! rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)ドライバーが、IFR を有効にした場合。 IFR の詳細については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers)します。
 3. リンク[ **! wdfkd.wdfdriverinfo** ](-wdfkd-wdfdriverinfo.md)と[ **! wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md) WDF ドライバー。
-4. リンクします。 fxdevice PoFx デバイス。 PoFX の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
+4. リンクします。 fxdevice PoFx デバイス。 PoFX の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)します。
 出力例を次に示します、! powertriage コマンド。
 
 ```dbgcmd

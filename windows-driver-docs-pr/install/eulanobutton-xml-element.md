@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 157fe441163e9f04717d801ca16a10c95f93add4
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 3814050045d847fb9aea604baa52e6351470f815
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161480"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364094"
 ---
 # <a name="eulanobutton-xml-element"></a>eulaNoButton XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **EulaNoButton** DPInst 使用許諾契約書 ページで、do not 受け入れるオプション ボタンに関連付けられているテキストをカスタマイズする XML 要素。
 

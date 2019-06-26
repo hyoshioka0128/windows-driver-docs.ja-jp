@@ -9,12 +9,12 @@ keywords:
 - DriverEntry WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fdc1ff1582d1cdd3b3b3f8c81f5b35fc21d4b30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: acd6ec68c3bffa5dad442379300239b5bd0f548a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380946"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381730"
 ---
 # <a name="initializing-a-file-system-filter-driver"></a>ファイル システム フィルター ドライバーの初期化
 
@@ -22,11 +22,11 @@ ms.locfileid: "63380946"
 ## <span id="ddk_initializing_a_file_system_filter_driver_if"></span><span id="DDK_INITIALIZING_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
 
 
-[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンは、ファイル システム フィルター ドライバーを初期化するためによく似ています、 **DriverEntry**ルーチンのデバイス ドライバーを初期化します。 ドライバーが読み込まれた後、同じコンポーネント、ドライバーを読み込むことも、ドライバー呼び出しを初期化します、ドライバーの**DriverEntry**ルーチン。 ファイル システム フィルター ドライバーをドライバーがロードされるコンポーネントは I/O マネージャー (開始型を持つサービスのフィルター\_ブート\_開始) または (他のスタートアップの種類) のサービス コントロール マネージャー。
+[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンは、ファイル システム フィルター ドライバーを初期化するためによく似ています、 **DriverEntry**ルーチンのデバイス ドライバーを初期化します。 ドライバーが読み込まれた後、同じコンポーネント、ドライバーを読み込むことも、ドライバー呼び出しを初期化します、ドライバーの**DriverEntry**ルーチン。 ファイル システム フィルター ドライバーをドライバーがロードされるコンポーネントは I/O マネージャー (開始型を持つサービスのフィルター\_ブート\_開始) または (他のスタートアップの種類) のサービス コントロール マネージャー。
 
-[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113) IRQL でシステム スレッド コンテキストで実行されるルーチン = パッシブ\_レベル。 このルーチンは、ページング可能なことができが破棄されるように、INIT セグメントでなければなりません。 ページング可能なドライバーのコードを作成する方法の詳細については、の「解説」を参照してください。 [ **MmLockPagableCodeSection**](https://msdn.microsoft.com/library/windows/hardware/ff554601)します。
+[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize) IRQL でシステム スレッド コンテキストで実行されるルーチン = パッシブ\_レベル。 このルーチンは、ページング可能なことができが破棄されるように、INIT セグメントでなければなりません。 ページング可能なドライバーのコードを作成する方法の詳細については、の「解説」を参照してください。 [ **MmLockPagableCodeSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmlockpagablecodesection)します。
 
-[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンは次のように定義されます。
+[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンは次のように定義されます。
 
 ```cpp
 NTSTATUS 
@@ -38,7 +38,7 @@ NTSTATUS
 
 このルーチンでは、2 つの入力パラメーターがあります。 まず、 *DriverObject*は、ファイル システム フィルター ドライバーが読み込まれたときに作成されたドライバー オブジェクトです。 次に、 *RegistryPath*ドライバーのレジストリ キーへのパスを含むカウント対象の Unicode 文字列へのポインターです。
 
-[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ファイル システム フィルター ドライバーのルーチンは、次の手順を実行します。
+[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ファイル システム フィルター ドライバーのルーチンは、次の手順を実行します。
 
 [コントロールのデバイス オブジェクトを作成します。](creating-the-control-device-object.md)
 

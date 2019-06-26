@@ -5,12 +5,12 @@ ms.assetid: 60527938-5627-482D-B94D-522DA8E32540
 ms.date: 08/08/2017
 keywords: -OID_SRIOV_WRITE_VF_CONFIG_BLOCK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 753364458f9d5a93ea4863d48a7a4bbb9f35631d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8466e7d2bba5468c73a5f78f7598c2c381329355
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362885"
 ---
 # <a name="oidsriovwritevfconfigblock"></a>OID\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック
 
@@ -19,9 +19,9 @@ ms.locfileid: "63351263"
 
 上にあるドライバーは、ネットワーク アダプターの PCIe 物理機能 (PF)、ミニポート ドライバーをこの OID セット要求を発行します。 この OID メソッド要求は、PF ミニポート ドライバー シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする必要があります。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体には、呼び出し元が割り当てたバッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、呼び出し元が割り当てたバッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
 
--   [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451687)のオフセットを含む構造体VF 構成ブロックに書き込まれたデータを格納しているバッファー内の場所をこの構造体の先頭からのバイト単位の単位。
+-   [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_block_parameters)のオフセットを含む構造体VF 構成ブロックに書き込まれたデータを格納しているバッファー内の場所をこの構造体の先頭からのバイト単位の単位。
 
 -   指定された VF 構成ブロックに書き込まれるデータの追加バッファー領域。
 
@@ -34,7 +34,7 @@ VF 構成ブロックは、PF と VF のミニポート ドライバーの間の
 
  
 
-OID の OID のセット要求を発行する前に\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック、重なって、ドライバーがのメンバーを設定する必要があります[ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451687)次のように構造体。
+OID の OID のセット要求を発行する前に\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック、重なって、ドライバーがのメンバーを設定する必要があります[ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_block_parameters)次のように構造体。
 
 -   設定、 **VFId**メンバー情報が書き込まれるの VF の識別子。
 
@@ -42,15 +42,15 @@ OID の OID のセット要求を発行する前に\_SRIOV\_書き込み\_VF\_CO
 
 -   設定、**長さ**VF 構成ブロックに書き込むバイト数のメンバー。
 
--   設定、 **BufferOffset** 、バッファー内のオフセットにメンバー (によって参照される**InformationBuffer**メンバー) が指定された VF 構成ブロックから書き込まれるデータが含まれます。 このオフセットがの先頭からバイト単位で指定された、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451687)構造体。
+-   設定、 **BufferOffset** 、バッファー内のオフセットにメンバー (によって参照される**InformationBuffer**メンバー) が指定された VF 構成ブロックから書き込まれるデータが含まれます。 このオフセットがの先頭からバイト単位で指定された、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_block_parameters)構造体。
 
 OID の OID のセット要求を処理するときに\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック、PF ミニポート ドライバーが次のガイドラインに従う必要があります。
 
--   PF のミニポート ドライバーは、VF がで指定されたを確認する必要があります、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451687)構造体を以前に割り当てられているリソースします。 PF のミニポート ドライバーを VF 用のリソースの割り当ての OID メソッド要求中に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。 指定した VF 用のリソースが割り当てられていない場合、ドライバーは OID 要求に失敗する必要があります。
+-   PF のミニポート ドライバーは、VF がで指定されたを確認する必要があります、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_block_parameters)構造体を以前に割り当てられているリソースします。 PF のミニポート ドライバーを VF 用のリソースの割り当ての OID メソッド要求中に[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。 指定した VF 用のリソースが割り当てられていない場合、ドライバーは OID 要求に失敗する必要があります。
 
--   PF のミニポート ドライバーは、ことを確認する必要があります、 **BlockId**のメンバー、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451687)構造体が有効な VF 構成ブロックを指定します。 それ以外の場合は、ドライバーは OID 要求に失敗する必要があります。
+-   PF のミニポート ドライバーは、ことを確認する必要があります、 **BlockId**のメンバー、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_block_parameters)構造体が有効な VF 構成ブロックを指定します。 それ以外の場合は、ドライバーは OID 要求に失敗する必要があります。
 
-シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](https://msdn.microsoft.com/library/windows/hardware/hh440251)します。
+シングル ルート I/O 仮想化 (SR-IOV) インターフェイス内でのバック チャネル通信の詳細については、次を参照してください。 [SR-IOV PF/VF のバック チャネル通信](https://docs.microsoft.com/windows-hardware/drivers/network/sr-iov-pf-vf-backchannel-communication)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -78,11 +78,11 @@ OID OID の要求の設定の次のステータス コードのいずれかの�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://msdn.microsoft.com/library/windows/hardware/hh451687" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_WRITE_VF_CONFIG_BLOCK_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451687)"> <strong>NDIS_SRIOV_WRITE_VF_CONFIG_BLOCK_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_block_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_WRITE_VF_CONFIG_BLOCK_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_block_parameters)"> <strong>NDIS_SRIOV_WRITE_VF_CONFIG_BLOCK_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -117,9 +117,9 @@ OID OID の要求の設定の次のステータス コードのいずれかの�
 
 
 ****
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451687)
+[**NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_ブロック\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_block_parameters)
 
 [OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
 

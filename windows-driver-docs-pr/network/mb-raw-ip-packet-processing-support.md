@@ -4,12 +4,12 @@ description: MB Raw IP パケット処理のサポート
 ms.assetid: 1c3327fa-1858-4247-9a18-b49d26e9a095
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54d702bc34e0e6269258d9394ae39914cba4fcda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0bbe7a81c027247557cd66b9d749e4ccae03413
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348255"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374022"
 ---
 # <a name="mb-raw-ip-packet-processing-support"></a>MB Raw IP パケット処理のサポート
 
@@ -20,7 +20,7 @@ ms.locfileid: "63348255"
 
 -   IPv4 パケットの場合。
 
-    **NblFlags**のメンバー、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体は、NDIS に設定する必要があります\_NBL\_フラグ\_IS\_IPV4 です。
+    **NblFlags**のメンバー、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体は、NDIS に設定する必要があります\_NBL\_フラグ\_IS\_IPV4 です。
 
     **NetBufferListFrameType** net メンバー\_バッファー\_リスト構造は、ネットワークのバイト順で 0x0800 (Ethertype IPv4) に設定する必要があります。
 
@@ -30,13 +30,13 @@ ms.locfileid: "63348255"
 
     **NetBufferListFrameType** net メンバー\_バッファー\_リスト構造は、ネットワークのバイト順で 0x86dd (Ethertype IPv6) に設定する必要があります。
 
-ミニポート ドライバーを使用できる、 [ **NdisSetNblFlag** ](https://msdn.microsoft.com/library/windows/hardware/ff564542)マクロを net バッファーの一覧にフラグを設定します。 次の行には、net バッファーの一覧で、IPv4 パケットのフラグを設定する方法を示しています。
+ミニポート ドライバーを使用できる、 [ **NdisSetNblFlag** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndissetnblflag)マクロを net バッファーの一覧にフラグを設定します。 次の行には、net バッファーの一覧で、IPv4 パケットのフラグを設定する方法を示しています。
 
 ```C++
 NdisSetNblFlag(pNbl, NDIS_NBL_FLAGS_IS_IPV4);
 ```
 
-ミニポート ドライバーを使用できる、 [ **NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff568401)を取得し、正味のバッファーの一覧で情報を設定します。 次の行を変更する方法を示します、 **NetBufferListFrameType** IPV4 パケットのネットワーク バッファーの一覧で OOB:
+ミニポート ドライバーを使用できる、 [ **NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)を取得し、正味のバッファーの一覧で情報を設定します。 次の行を変更する方法を示します、 **NetBufferListFrameType** IPV4 パケットのネットワーク バッファーの一覧で OOB:
 
 ```C++
 Value = ConvertToNetworkByteOrder(0x0800);

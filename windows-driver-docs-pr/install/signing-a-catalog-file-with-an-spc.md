@@ -4,17 +4,17 @@ description: SPC を使用したカタログ ファイルの署名
 ms.assetid: 8fe1fc32-73c9-4c09-96bd-93effb35c061
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86bda35fd6e72a83433dfe7e1f817ae5201076cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f291bc2a2f2973c7f250f5cb405e6bb60602b715
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348611"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373486"
 ---
 # <a name="signing-a-catalog-file-with-an-spc"></a>SPC を使用したカタログ ファイルの署名
 
 
-次を使用して、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)に署名するコマンド、[カタログ ファイル](catalog-files.md)カーネル モードの[ドライバー パッケージ](driver-packages.md)で、 [ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)します。 64 ビット バージョンの Windows Vista および以降のバージョンの Windows では、カーネル モード ドライバー パッケージがない、 [WHQL リリース署名](whql-release-signature.md)両方に準拠する SPC 署名を使って署名する必要があります、[カーネル モード コード署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)と[PnP デバイスのインストール要件を署名](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)します。
+次を使用して、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)に署名するコマンド、[カタログ ファイル](catalog-files.md)カーネル モードの[ドライバー パッケージ](driver-packages.md)で、 [ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)します。 64 ビット バージョンの Windows Vista および以降のバージョンの Windows では、カーネル モード ドライバー パッケージがない、 [WHQL リリース署名](whql-release-signature.md)両方に準拠する SPC 署名を使って署名する必要があります、[カーネル モード コード署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)と[PnP デバイスのインストール要件を署名](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)します。
 
 ```cpp
 SignTool sign /v /ac CrossCertificateFile /s SPCCertificateStore /n SPCCertificateName /t http://timestamp.verisign.com/scripts/timstamp.dll CatalogFileName.cat
@@ -36,7 +36,7 @@ SignTool sign /v /ac CrossCertificateFile /s SPCCertificateStore /n SPCCertifica
 
 -   *CatalogFileName.cat*カタログ ファイルの名前を指定します。
 
-たとえば、次のコマンドを記号、 *Tstamd64.cat* SPC とカタログ ファイルは、"my"証明書ストアと対応するクロス証明書に、個人で"contoso.com"をという名前*Rsacertsvrcross.cer*. 署名は、サービスによってタイムスタンプ http://timestamp.verisign.com/scripts/timstamp.dllします。 この例では、カタログ ファイルは、コマンドが実行される同じディレクトリには。
+たとえば、次のコマンドを記号、 *Tstamd64.cat* SPC とカタログ ファイルは、"my"証明書ストアと対応するクロス証明書に、個人で"contoso.com"をという名前*Rsacertsvrcross.cer*. 署名は、サービスによってタイムスタンプ http://timestamp.verisign.com/scripts/timstamp.dll します。 この例では、カタログ ファイルは、コマンドが実行される同じディレクトリには。
 
 ```cpp
 SignTool sign /v /ac c:\lab\rsacertsrvcross.cer /s my /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat 

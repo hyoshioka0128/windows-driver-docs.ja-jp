@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 325fb4ca0c437e29f742ee6a9465ad8303fcd740
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6dc071e9305791526340b4e9d2c35abad3c262e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322180"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372706"
 ---
 # <a name="guiddevinterfacedisplayadapter"></a>GUID_DEVINTERFACE_DISPLAY_ADAPTER
 
 
-GUID_DEVINTERFACE_DISPLAY_ADAPTER[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)表示ビューでサポートされているディスプレイ アダプターに対して定義されています。
+GUID_DEVINTERFACE_DISPLAY_ADAPTER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)表示ビューでサポートされているディスプレイ アダプターに対して定義されています。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ GUID_DEVINTERFACE_DISPLAY_ADAPTER[デバイス インターフェイス クラ�
 
 システム提供のディスプレイ ドライバーは、オペレーティング システムと表示ビューの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-ディスプレイ デバイスについては、次を参照してください。 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)と[Windows 2000 Display Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff570584)します。
+ディスプレイ デバイスについては、次を参照してください。 [Windows Vista のディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)と[Windows 2000 Display Driver Model](https://docs.microsoft.com/windows-hardware/drivers/display/windows-2000-display-driver-model-design-guide)します。
 
 ディスプレイ アダプターのデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)します。
 

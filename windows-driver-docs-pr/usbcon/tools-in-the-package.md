@@ -3,12 +3,12 @@ Description: デバイスのテストの目標は、さまざまなハブ シナ
 title: USB デバイスの MUTT デバイスでのテスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40160a68101b12e60d5398c333c5c4e587201868
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e7eeeae233407fefb0ed6c4831379754e1bfc0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368818"
 ---
 # <a name="usb-device-testing-with-mutt-devices"></a>USB デバイスの MUTT デバイスでのテスト
 
@@ -26,7 +26,7 @@ ms.locfileid: "63379919"
 ## <a name="suggested-device-tests"></a>デバイスのテストを提案
 
 
--   USB 場合電気をテストします。 すべてのテストは、プロトコルと状態の重点を置いています。 参照してください[USB の場合はコンプライアンス プログラム](http://www.usb.org/developers/compliance/)電気的なテストの詳細についてはします。
+-   USB 場合電気をテストします。 すべてのテストは、プロトコルと状態の重点を置いています。 参照してください[USB の場合はコンプライアンス プログラム](https://www.usb.org/compliance)電気的なテストの詳細についてはします。
 -   デバイスの基本的なテストです。 詳細については、次を参照してください。 [MUTT デバイス用の Visual Studio で devfund テストを実行する方法](how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md)します。
 -   Windows ハードウェア認定キットをコント ローラーをテストします。 詳細については、次を参照してください。 [USB-IF 証明検証テスト (コント ローラー)](https://go.microsoft.com/fwlink/p/?linkid=316509)します。
 -   セクションで、Windows テスト ガイダンス ドキュメントで見つかった、ホスト コント ローラーの手動テスト_ケース。
@@ -45,7 +45,7 @@ ms.locfileid: "63379919"
     ![デバイスが mutt パックのダウン ストリーム](images/fig14-topology-downstream-muttpack.png)
 
 ## <a name="related-topics"></a>関連トピック
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB Test Tool (MUTT) デバイス](microsoft-usb-test-tool--mutt--devices.md)  
 
 

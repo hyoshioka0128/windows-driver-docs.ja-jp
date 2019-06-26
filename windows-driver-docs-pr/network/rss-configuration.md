@@ -10,12 +10,12 @@ keywords:
 - WDK RSS ndirection テーブルの例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf8b8b30a3b5ffb52e5c274f61f636140091218e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c74ee2fcd4125d99bab95e2f5d26cf76f00970f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359114"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382157"
 ---
 # <a name="rss-configuration"></a>RSS 構成
 
@@ -23,19 +23,19 @@ ms.locfileid: "63359114"
 
 
 
-RSS 構成情報を取得する上位のドライバーがの OID クエリを送信できます[OID\_GEN\_受信\_スケール\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569636)ミニポート ドライバーにします。 NDIS はプロトコル ドライバーに関連する RSS 構成情報も提供します、 [ **NDIS\_バインド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564832)初期化中に構造体。
+RSS 構成情報を取得する上位のドライバーがの OID クエリを送信できます[OID\_GEN\_受信\_スケール\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-capabilities)ミニポート ドライバーにします。 NDIS はプロトコル ドライバーに関連する RSS 構成情報も提供します、 [ **NDIS\_バインド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)初期化中に構造体。
 
-上にあるドライバーは、ハッシュ関数、型、および間接指定テーブルを選択します。 ドライバーをこれらの構成オプションを設定するには、OID セット要求を送信します[OID\_GEN\_受信\_スケール\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569637)ミニポート ドライバーにします。 ドライバーに関連すると、現在の RSS の設定を取得するには、この OID をクエリもできます。 OID の情報バッファー\_GEN\_受信\_スケール\_パラメーター OID にはへのポインターが含まれています、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567228)構造体。
+上にあるドライバーは、ハッシュ関数、型、および間接指定テーブルを選択します。 ドライバーをこれらの構成オプションを設定するには、OID セット要求を送信します[OID\_GEN\_受信\_スケール\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)ミニポート ドライバーにします。 ドライバーに関連すると、現在の RSS の設定を取得するには、この OID をクエリもできます。 OID の情報バッファー\_GEN\_受信\_スケール\_パラメーター OID にはへのポインターが含まれています、 [ **NDIS\_受信\_スケール\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters)構造体。
 
 上にあるドライバーは、NIC で RSS を無効にできます。 この場合は、NDIS の設定、ドライバー\_RSS\_PARAM\_フラグ\_を無効にする\_RSS フラグ、**フラグ**NDIS のメンバー\_受信\_スケール\_パラメーター構造体。 ミニポート ドライバーがの他のフラグと設定すべて無視し、NIC で RSS を無効にするこのフラグが設定されている場合
 
 NDIS 処理 OID\_GEN\_受信\_スケール\_ミニポート ドライバーに渡す前にパラメーター ミニポート アダプターの更新と\*RSS は、必要な場合にキーワードを標準化します。 詳細については、  **\*RSS**キーワードを参照してください[の RSS の標準化された INF キーワード](standardized-inf-keywords-for-rss.md)します。
 
-受信した後、 [OID\_GEN\_受信\_スケール\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569637) NDIS とのセット要求\_RSS\_PARAM\_フラグ\_無効にする\_RSS フラグを設定、ミニポート ドライバーは初期化後に、NIC の初期状態に、NIC の RSS の状態を設定する必要があります。 そのため、ミニポート ドライバーは、後続の OID を受け取る場合\_GEN\_受信\_スケール\_パラメーターは、NDIS を使用して要求を設定\_RSS\_PARAM\_フラグ\_を無効にする\_RSS フラグがオフになって、ミニポート ドライバーには、OID が受信した後に設定された値と同じであるすべてのパラメーターが\_GEN\_受信\_スケール\_パラメーターは、ミニポート アダプターを初期化した後は、最初に要求を設定します。
+受信した後、 [OID\_GEN\_受信\_スケール\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters) NDIS とのセット要求\_RSS\_PARAM\_フラグ\_無効にする\_RSS フラグを設定、ミニポート ドライバーは初期化後に、NIC の初期状態に、NIC の RSS の状態を設定する必要があります。 そのため、ミニポート ドライバーは、後続の OID を受け取る場合\_GEN\_受信\_スケール\_パラメーターは、NDIS を使用して要求を設定\_RSS\_PARAM\_フラグ\_を無効にする\_RSS フラグがオフになって、ミニポート ドライバーには、OID が受信した後に設定された値と同じであるすべてのパラメーターが\_GEN\_受信\_スケール\_パラメーターは、ミニポート アダプターを初期化した後は、最初に要求を設定します。
 
-上位のドライバーを使用して、 [OID\_GEN\_受信\_ハッシュ](https://msdn.microsoft.com/library/windows/hardware/ff569635)OID を有効にし、ハッシュ計算を構成するのには、RSS を有効にしなくてもフレームを受信します。 ドライバーに関連すると、現在の受信にハッシュの設定を取得するには、この OID クエリもできます。
+上位のドライバーを使用して、 [OID\_GEN\_受信\_ハッシュ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-hash)OID を有効にし、ハッシュ計算を構成するのには、RSS を有効にしなくてもフレームを受信します。 ドライバーに関連すると、現在の受信にハッシュの設定を取得するには、この OID クエリもできます。
 
-OID の情報バッファー\_GEN\_受信\_ハッシュ OID にはへのポインターが含まれています、 [ **NDIS\_受信\_ハッシュ\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff567190)構造体。 セットの要求、OID ミニポート アダプターが使用するハッシュ パラメーターを指定します。 クエリ要求の場合は、OID はミニポート アダプターを使用しているハッシュ パラメーターを返します。 この OID では、RSS をサポートするドライバーに対して省略可能です。
+OID の情報バッファー\_GEN\_受信\_ハッシュ OID にはへのポインターが含まれています、 [ **NDIS\_受信\_ハッシュ\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_hash_parameters)構造体。 セットの要求、OID ミニポート アダプターが使用するハッシュ パラメーターを指定します。 クエリ要求の場合は、OID はミニポート アダプターを使用しているハッシュ パラメーターを返します。 この OID では、RSS をサポートするドライバーに対して省略可能です。
 
 **注**  場合受信ハッシュ計算が有効になっている、NDIS を無効にしますが RSS を有効にする前に、ハッシュの計算結果を受信します。 RSS が有効になっている場合、NDIS 無効にします。 これにより、前に、RSS の受信は、計算をハッシュします。
 
@@ -65,7 +65,7 @@ OID の情報バッファー\_GEN\_受信\_ハッシュ OID にはへのポイ�
 
 ミニポート ドライバーは、非常に多くの Cpu がある場合に、Cpu にパケットを配布するときに、負荷分散のための努力を桁違いになる可能性があります。 この場合、ドライバーの関連ネットワーク データの処理が発生する Cpu のサブセットを選択する必要があります。
 
-場合によっては、使用可能なハードウェアの数の受信キュー システムの Cpu 数よりも小さい場合があります。 ミニポート ドライバーでは、ハードウェア キューに関連付ける CPU 数を決定する間接指定テーブルを調べる必要があります。 間接指定テーブルに表示される別の CPU 数の合計数が、NIC をサポートするハードウェア キュー数よりも多い場合は、ミニポート ドライバーは間接指定テーブルから CPU 番号のサブセットを選択する必要があります。 サブセットは、ハードウェア キューの数の数と同じです。 取得した、ミニポート ドライバー、 **IndirectionTableSize**パラメーターから[OID\_GEN\_受信\_スケール\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569637)します。 指定されたミニポート ドライバー、 **NumberOfReceiveQueues** OID への応答値\_GEN\_受信\_スケール\_機能します。
+場合によっては、使用可能なハードウェアの数の受信キュー システムの Cpu 数よりも小さい場合があります。 ミニポート ドライバーでは、ハードウェア キューに関連付ける CPU 数を決定する間接指定テーブルを調べる必要があります。 間接指定テーブルに表示される別の CPU 数の合計数が、NIC をサポートするハードウェア キュー数よりも多い場合は、ミニポート ドライバーは間接指定テーブルから CPU 番号のサブセットを選択する必要があります。 サブセットは、ハードウェア キューの数の数と同じです。 取得した、ミニポート ドライバー、 **IndirectionTableSize**パラメーターから[OID\_GEN\_受信\_スケール\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)します。 指定されたミニポート ドライバー、 **NumberOfReceiveQueues** OID への応答値\_GEN\_受信\_スケール\_機能します。
 
  
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c48cbb6d2d0d813bc5c85b0a0a6c18401e5bb1e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae1db6f6fa35bf3bcde1da11534e27102e305f52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392109"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377854"
 ---
 # <a name="srbsetstreamstate"></a>SRB\_設定\_ストリーム\_状態
 
@@ -42,7 +42,7 @@ ms.locfileid: "63392109"
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバーで、新しいストリームの状態を指定する*pSrb*-&gt;**CommandData**.**StreamState**します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。 参照してください[ **KSPROPERTY\_接続\_状態**](ksproperty-connection-state.md)ストリームの状態の説明についてはします。
+クラスのドライバーで、新しいストリームの状態を指定する*pSrb*-&gt;**CommandData**.**StreamState**します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。 参照してください[ **KSPROPERTY\_接続\_状態**](ksproperty-connection-state.md)ストリームの状態の説明についてはします。
 
 ミニドライバーがストリームを指定した状態に設定する必要があり、状態を返す\_成功した場合は成功します。 操作が失敗した場合、適切なエラー コードが返されます。
 

@@ -4,12 +4,12 @@ description: ISCSI\_永続的な\_Login WMI クラス
 ms.assetid: ad00e6ed-adfa-4888-9386-51f937a278d8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 96badd06cbd1ec2fb4f135ae9828f6978ffd828c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69affbc9b69b4192b0c05baa8be72ba8a1b545b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359668"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378438"
 ---
 # <a name="iscsipersistentlogin-wmi-class"></a>ISCSI\_永続的な\_Login WMI クラス
 
@@ -21,7 +21,7 @@ ISCSI\_持続\_ログイン WMI クラスは永続的なログオンを定義し
 
 ISCSI\_持続\_ログイン クラスは発行されませんしで定義されている*Operations.mof*します。
 
-WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **ISCSI\_持続\_ログイン**](https://msdn.microsoft.com/library/windows/hardware/ff561553)データ構造体。
+WMI ツールのスイートでは、このクラスの定義をコンパイルするときに生成、 [ **ISCSI\_持続\_ログイン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_iscsi_persistent_login)データ構造体。
 
  
 

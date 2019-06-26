@@ -7,12 +7,12 @@ keywords:
 - 拡張機能、ExtEngCpp
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9760bf1fa71bfe44d4ba7e66688970dd8f6eac1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aadbb280d8cc9c433851a5f81b6c02a6d3c2a97f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361380"
 ---
 # <a name="engextcpp-extensions"></a>EngExtCpp 拡張機能
 
@@ -24,7 +24,7 @@ ms.locfileid: "63340555"
 
 [EngExtCpp 拡張機能の設計ガイド](engextcpp-extension-design-guide.md)
 
-[EngExtCpp 拡張機能の参照](https://msdn.microsoft.com/library/windows/hardware/ff543033)
+[EngExtCpp 拡張機能の参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/engextcpp/index)
 
  
 

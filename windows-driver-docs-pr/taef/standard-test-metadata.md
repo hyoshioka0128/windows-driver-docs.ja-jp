@@ -4,12 +4,12 @@ description: 標準的なテスト メタデータ
 ms.assetid: A95FC176-B3A1-4bbf-833E-411CDE73C571
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b871461fc606870f35813b86e56c734c5a634603
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e951d50c37e5dbe21fc741bc5ca7937cea40d15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374036"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372992"
 ---
 # <a name="standard-test-metadata"></a>標準的なテスト メタデータ
 
@@ -65,7 +65,7 @@ te Wex.Common.Tests.dll /select:@Owner='*Someone*'
 テストの実行内容の短い説明です。
 
 <span id="_DpiAware_"></span><span id="_dpiaware_"></span><span id="_DPIAWARE_"></span>"DpiAware"  
-"True"に TAEF セットは、DPI 対応としてマークされているプロセスでテストを実行するがと、を参照してください。[高 DPI](https://msdn.microsoft.com/library/windows/desktop/dd464646)します。
+"True"に TAEF セットは、DPI 対応としてマークされているプロセスでテストを実行するがと、を参照してください。[高 DPI](https://docs.microsoft.com/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)します。
 
 <span id="_ExecutionGroup_"></span><span id="_executiongroup_"></span><span id="_EXECUTIONGROUP_"></span>"ExecutionGroup"  
 一連の連続するテストの順序で実行する必要がある場合、グループの実行の前のテストがブロックされますクラス内が実行されないと、失敗します。 参照してください[実行グループ](execution-groups.md)詳細についてはします。

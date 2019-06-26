@@ -10,12 +10,12 @@ keywords:
 - MSI X WDK ネットワーク、割り込みの登録を解除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 648b059770ad572720b9f95a40e573d0eb4d1a06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02627f2084f59631c1e1cbf7e443a0a61ab7ef84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366664"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374786"
 ---
 # <a name="registering-and-deregistering-an-msi-interrupt"></a>MSI 割り込みの登録および登録解除
 
@@ -23,31 +23,31 @@ ms.locfileid: "63366664"
 
 
 
-ミニポート ドライバーの呼び出しの MSI サポートを登録する、 [ **NdisMRegisterInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563649) MSI 割り込みを登録する関数。 ドライバーは、初期化、 [ **NDIS\_ミニポート\_割り込み\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566465)割り込み特性を指定する構造体と関数のエントリ ポイント。 ドライバーを設定する必要があります、 **MsiSupported** NDIS のメンバー\_ミニポート\_INTERRUPT\_特性構造体を**TRUE**します。 ドライバーは、構造体を渡します**NdisMRegisterInterruptEx**します。
+ミニポート ドライバーの呼び出しの MSI サポートを登録する、 [ **NdisMRegisterInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterinterruptex) MSI 割り込みを登録する関数。 ドライバーは、初期化、 [ **NDIS\_ミニポート\_割り込み\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_interrupt_characteristics)割り込み特性を指定する構造体と関数のエントリ ポイント。 ドライバーを設定する必要があります、 **MsiSupported** NDIS のメンバー\_ミニポート\_INTERRUPT\_特性構造体を**TRUE**します。 ドライバーは、構造体を渡します**NdisMRegisterInterruptEx**します。
 
 割り込みの MSI をサポートするには、次の関数を定義する必要があります。
 
--   [*MiniportMessageInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559407)
+-   [*MiniportMessageInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt)
 
--   [*MiniportMessageInterruptDpc*](https://msdn.microsoft.com/library/windows/hardware/ff559411)
+-   [*MiniportMessageInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt_dpc)
 
--   [*MiniportDisableMessageInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559376)
+-   [*MiniportDisableMessageInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_disable_message_interrupt)
 
--   [*MiniportEnableMessageInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559383)
+-   [*MiniportEnableMessageInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_enable_message_interrupt)
 
 ミニポート ドライバーがドライバーには、MSI のエントリ ポイントがサポートしている場合でも、(これは、次のリストに表示されます) の行に基づく割り込み関数では、エントリ ポイントを提供する必要があります。 NDIS が、MSI の割り込みを与えない場合は、フォールバックの条件として標準割り込みを付与ができます。
 
 行の割り込み関数を以下に示します。
 
--   [*MiniportInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559395)
+-   [*MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)
 
--   [*MiniportInterruptDPC*](https://msdn.microsoft.com/library/windows/hardware/ff559398)
+-   [*MiniportInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)
 
--   [*MiniportDisableInterruptEx*](https://msdn.microsoft.com/library/windows/hardware/ff559375)
+-   [*MiniportDisableInterruptEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_disable_interrupt)
 
--   [*MiniportEnableInterruptEx*](https://msdn.microsoft.com/library/windows/hardware/ff559380)
+-   [*MiniportEnableInterruptEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_enable_interrupt)
 
-ドライバーを呼び出す必要があります、 [ **NdisMDeregisterInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563575)関数で以前に割り当てられたリソースを解放する**NdisMRegisterInterruptEx**します。
+ドライバーを呼び出す必要があります、 [ **NdisMDeregisterInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex)関数で以前に割り当てられたリソースを解放する**NdisMRegisterInterruptEx**します。
 
  
 

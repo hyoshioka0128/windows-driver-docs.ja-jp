@@ -10,12 +10,12 @@ keywords:
 - WST データ WDK ビデオのキャプチャします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55644df80bb964d4fb4d9094ccb042ae61cb0b9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e73268dafd6330ae10210329c9f83f5409320ad8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364819"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377739"
 ---
 # <a name="teletext-category"></a>テレテキスト カテゴリ
 
@@ -42,7 +42,7 @@ ms.locfileid: "63364819"
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 構造体</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567631" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567631)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video_vbi" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video_vbi)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 構造体</strong></p></td>

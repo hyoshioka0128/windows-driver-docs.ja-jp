@@ -4,19 +4,19 @@ description: 高度な機能とテクノロジ スタックを選択する拡張
 ms.assetid: E49BE897-28A5-42FE-875C-A8EB56EABF8B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d49bb40956cca3c8312d8aec4bf6d109385b94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 869208c9e22a766946fc4a9feab56225c0bd0afb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328122"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364596"
 ---
 # <a name="device-specific-methods-dsm"></a>デバイス固有のメソッド (\_DSM)
 
 
 高度な機能とテクノロジ スタックを選択する拡張機能をサポートする Windows デバイスに固有のメソッドを一切定義 (\_DSM) デバイス。
 
-[ACPI 5.0 仕様](https://www.uefi.org/specifications)チップ (SoC) 統合の回線でシステムを使用するハードウェア プラットフォームをサポートするために Windows で使用されるいくつかのデバイス固有のメソッドが導入されています。 このセクションのトピックでは、引数を説明し、これらのメソッドに対して定義されている値を返します。
+[ACPI 5.0 仕様](https://uefi.org/specifications)チップ (SoC) 統合の回線でシステムを使用するハードウェア プラットフォームをサポートするために Windows で使用されるいくつかのデバイス固有のメソッドが導入されています。 このセクションのトピックでは、引数を説明し、これらのメソッドに対して定義されている値を返します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -51,7 +51,7 @@ ms.locfileid: "63328122"
 </tr>
 <tr class="odd">
 <td><p><a href="hidi2c-device-specific-method---dsm-.md" data-raw-source="[HIDI2C Device-Specific Method (_DSM)](hidi2c-device-specific-method---dsm-.md)">HIDI2C デバイス固有のメソッド (_DSM)</a></p></td>
-<td><p>_DSM メソッドが、9.14.1"_DSM (デバイスの特定のメソッド)"でのセクションで定義されている、 <a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 仕様</a>します。 このメソッドは、個々 のデバイス固有のデータとデバイス ドライバーなど他のデバイスに固有のメソッドで競合することがなく呼び出すことができるコントロール関数を提供します。</p></td>
+<td><p>_DSM メソッドが、9.14.1"_DSM (デバイスの特定のメソッド)"でのセクションで定義されている、 <a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 仕様</a>します。 このメソッドは、個々 のデバイス固有のデータとデバイス ドライバーなど他のデバイスに固有のメソッドで競合することがなく呼び出すことができるコントロール関数を提供します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="windows-button-array-device-specific-method---dsm-.md" data-raw-source="[Windows button array Device-Specific Method (_DSM)](windows-button-array-device-specific-method---dsm-.md)">ボタン配列の Windows デバイスに固有のメソッド (_DSM)</a></p></td>
@@ -70,8 +70,8 @@ Microsoft Windows でドライバー スタックとプラットフォームの�
 |                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | トピック                                                                                                                                                                                       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| [\_バイトのアドレス指定可能なエネルギーの DSM インターフェイス関数クラス (関数インターフェイス 1) のバックアップ](https://msdn.microsoft.com/library/windows/hardware/mt604741) | \_DSM クラスのインターフェイスをバイト アドレス指定可能なエネルギー バックアップ関数 (関数のインターフェイスの 1) が BIOS の複雑さを軽減するために、JEDEC バイト アドレス指定可能なエネルギー バックアップ インターフェイスの標準にマップするように設計します。 OS ソフトウェアが同じメカニズムを通じてさまざまな実装が操作できるよう、デバイスの機能と機能、レポートの共通の基盤を提供します。 さらに、I2C レジスタへのアクセスによりベンダー固有の機能をサポートできます。 |
-| [\_SATA 用 DSM (デバイスの特定のメソッド)](https://msdn.microsoft.com/library/windows/hardware/dn613874)                                                                               | このメソッドは、全体として、SATA コント ローラー ホスト コント ローラーから個別の各ポートの管理を使用します。                                                                                                                                                                                                                                                                                                                                                                           |
+| [\_バイトのアドレス指定可能なエネルギーの DSM インターフェイス関数クラス (関数インターフェイス 1) のバックアップ](https://docs.microsoft.com/windows-hardware/drivers/storage/-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-) | \_DSM クラスのインターフェイスをバイト アドレス指定可能なエネルギー バックアップ関数 (関数のインターフェイスの 1) が BIOS の複雑さを軽減するために、JEDEC バイト アドレス指定可能なエネルギー バックアップ インターフェイスの標準にマップするように設計します。 OS ソフトウェアが同じメカニズムを通じてさまざまな実装が操作できるよう、デバイスの機能と機能、レポートの共通の基盤を提供します。 さらに、I2C レジスタへのアクセスによりベンダー固有の機能をサポートできます。 |
+| [\_SATA 用 DSM (デバイスの特定のメソッド)](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613874(v=vs.85))                                                                               | このメソッドは、全体として、SATA コント ローラー ホスト コント ローラーから個別の各ポートの管理を使用します。                                                                                                                                                                                                                                                                                                                                                                           |
 
  
 

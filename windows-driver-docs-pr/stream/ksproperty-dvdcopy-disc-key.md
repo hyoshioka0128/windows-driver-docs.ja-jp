@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff053e98431ce088782a8dd01ef9cef0bd8f3cd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eead2c7b46b8aa683b118c6d18782a4fc02e5380
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380634"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373063"
 ---
 # <a name="kspropertydvdcopydisckey"></a>KSPROPERTY\_DVDCOPY\_ディスク\_キー
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DVDCOPY\_ディスク\_キー プロパティ、DVD 著作権保護�
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567637" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_DISCKEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567637)"><strong>KS_DVDCOPY_DISCKEY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_disckey" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_DISCKEY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_disckey)"><strong>KS_DVDCOPY_DISCKEY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_ディスク\_キー プロパティ、DVD 著作権保護�
 <a name="remarks"></a>注釈
 -------
 
-ディスク キーの詳細については、次を参照してください。 [DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
+ディスク キーの詳細については、次を参照してください。 [DVD 著作権保護](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-copyright-protection)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -87,7 +87,7 @@ KSPROPERTY\_DVDCOPY\_ディスク\_キー プロパティ、DVD 著作権保護�
 ## <a name="see-also"></a>関連項目
 
 
-[**KS\_DVDCOPY\_DISCKEY**](https://msdn.microsoft.com/library/windows/hardware/ff567637)
+[**KS\_DVDCOPY\_DISCKEY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_disckey)
 
  
 

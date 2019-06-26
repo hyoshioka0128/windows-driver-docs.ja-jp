@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 357f99d56274da7ffcc1b61c5c911f73a29d42ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30d7fc354725bde72905d99432b4a107142d161c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377905"
 ---
 # <a name="srbinitializedevice"></a>SRB\_初期化\_デバイス
 
@@ -42,7 +42,7 @@ ms.locfileid: "63379950"
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバーが、ポートへのポインターを渡します\_構成\_情報の構造体で*pSrb*-&gt;**CommandData.ConfigInfo**します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。 ほとんどのフィールドに記入クラス ドライバー *pSrb*-&gt;**CommandData.ConfigInfo**オペレーティング システムからデバイスに関する情報を取得します。 ほとんどの状況では、ミニドライバーだけを埋めるために、 **StreamDescriptorSize**のメンバー **ConfigInfo**のサイズとその[ **HW\_ストリーム\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff559686)構造体。
+クラスのドライバーが、ポートへのポインターを渡します\_構成\_情報の構造体で*pSrb*-&gt;**CommandData.ConfigInfo**します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。 ほとんどのフィールドに記入クラス ドライバー *pSrb*-&gt;**CommandData.ConfigInfo**オペレーティング システムからデバイスに関する情報を取得します。 ほとんどの状況では、ミニドライバーだけを埋めるために、 **StreamDescriptorSize**のメンバー **ConfigInfo**のサイズとその[ **HW\_ストリーム\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor)構造体。
 
  
 

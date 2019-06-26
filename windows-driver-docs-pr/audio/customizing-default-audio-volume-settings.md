@@ -10,12 +10,12 @@ keywords:
 - ポート クラス オーディオ アダプター WDK、ボリュームの設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5ba4155d7a499646fadbee71b166d7c816f441
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f793853132974dbc0d5c0a8c40128ccf146b551c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333841"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359121"
 ---
 # <a name="customizing-hd-audio-driver-volume-settings"></a>HD オーディオ ドライバー音量設定のカスタマイズ
 
@@ -62,9 +62,9 @@ KS DB ステップ実行値は次のように定義されます infinity デシ�
 
 -2147483647 は-32767.99998474 デシベル (減衰)
 
-+ 2147483647 までは +32767.99998474 デシベル (向上)
+\+ 2147483647 までは +32767.99998474 デシベル (向上)
 
-(1/65536 db) を使用する測定単位の詳細については、次を参照してください。 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)します。
+(1/65536 db) を使用する測定単位の詳細については、次を参照してください。 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)します。
 
 Wdmudio.inf ファイルを上書きするには、Include およびニーズ ディレクティブ使用からこのコード セグメントで示すように、 *Microsoft 仮想のオーディオ デバイス ドライバー サンプル*として使用できるの一部、 [Windows Driver Kit (WDK) 8.1 サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052).
 
@@ -78,7 +78,7 @@ Needs=KS.Registration, WDMAUDIO.Registration
 ...
 ```
 
-Include およびニーズ ディレクティブの詳細については、次を参照してください。 [ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)と[INF ファイルのソース メディア](https://msdn.microsoft.com/library/windows/hardware/ff552302)します。
+Include およびニーズ ディレクティブの詳細については、次を参照してください。 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)と[INF ファイルのソース メディア](https://docs.microsoft.com/windows-hardware/drivers/install/source-media-for-inf-files)します。
 
 オーディオ クラス ドライバーの INF ファイルをラップするサンプル INF ラッパーを次に示します。
 
@@ -149,17 +149,17 @@ HKR,DefaultVolumeLevels\18,Boost,1,00,00,0A,00 ; Set to 0x000A0000 to set to 10d
 HdAudModel_DefaultVolume_DeviceDesc = "High Definition Audio Device"
 ```
 
-HKR の相対パスが指定されてために使用される特定の INF ファイルのセクションに基づく正確なドライバーのレジストリ パスが決定されます。 HKR の相対パスの詳細については、次を参照してください。 [ **INF AddReg ディレクティブ (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。 次の 2 つのレジストリ パスは、例、レジストリのパスを異なる可能性が高い。
+HKR の相対パスが指定されてために使用される特定の INF ファイルのセクションに基づく正確なドライバーのレジストリ パスが決定されます。 HKR の相対パスの詳細については、次を参照してください。 [ **INF AddReg ディレクティブ (Windows ドライバー)** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。 次の 2 つのレジストリ パスは、例、レジストリのパスを異なる可能性が高い。
 
 HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e96c-e325-11ce-bfc1-08002be10318}\\0002
 
-- - または -
+- \- または -
 
 HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e96c-e325-11ce-bfc1-08002be10318}\\0002\\DeviceInterfaces\\eAuxIn
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 [既定のオーディオの音量の設定](default-audio-volume-settings.md)  
-[**KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)  
+[**KSPROPERTY\_オーディオ\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)  
 
 
 

@@ -8,12 +8,12 @@ keywords:
 - NIC コンポーネント WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be57f40aeb1111a0e4ccb8f7254128a38b383cde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1f396dcb7eb444f076930fcad082b2f7bdc3af1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335443"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364925"
 ---
 # <a name="windows-sockets-direct-architecture"></a>Windows ソケット ダイレクト アーキテクチャ
 
@@ -47,7 +47,7 @@ Windows Sockets スイッチは、Windows Sockets ダイレクトのオペレー
 
 -   ネイティブの SAN サービス プロバイダーを使用する場合は、TCP/IP セマンティックをエミュレートします。
 
-スイッチの上端と下端のインターフェイスには、Windows Sockets サービス プロバイダー インターフェイス (SPI) に準拠しています。 スイッチの下のインターフェイスは、SAN の機能を活用するために Windows Sockets SPI の拡張機能を使用します。 これらの拡張機能が記載されて[Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)で完全に文書化されていると、 [Windows Sockets の直接参照](https://msdn.microsoft.com/library/windows/hardware/ff565857)します。
+スイッチの上端と下端のインターフェイスには、Windows Sockets サービス プロバイダー インターフェイス (SPI) に準拠しています。 スイッチの下のインターフェイスは、SAN の機能を活用するために Windows Sockets SPI の拡張機能を使用します。 これらの拡張機能が記載されて[Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)で完全に文書化されていると、 [Windows Sockets の直接参照](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565857(v=vs.85))します。
 
 スイッチは、アプリケーションのすべてのネットワークへのアクセスを管理します。 コンピューターには、複数の複数のベンダーから SAN Nic だけでなく 1 つまたは複数の LAN と WAN の Nic をイーサネット ネットワークをサポートしている LAN NIC などを含めることができます。 スイッチは、アプリケーションに透過的にこれらの Nic に関連付けられているすべてのネットワークへのアクセスを管理します。
 

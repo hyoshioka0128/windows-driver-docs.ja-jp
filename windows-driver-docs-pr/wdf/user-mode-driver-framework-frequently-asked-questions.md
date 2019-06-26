@@ -4,12 +4,12 @@ description: Windows Driver Frameworks (WDF) は、Windows オペレーティン
 ms.assetid: 0c07e514-73f9-4d24-86ad-8ac036fdbcf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b94151a985dfdfa262cfadeaff93b2da70f24e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 728116e9c0c59daf35d6e0a27a2647723a668af9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337791"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372291"
 ---
 # <a name="user-mode-driver-framework-frequently-asked-questions"></a>ユーザー モード ドライバー フレームワークについてよく寄せられる質問
 
@@ -83,7 +83,7 @@ UMDF ドライバーは、LocalService アカウントのセキュリティ資�
 ## <a name="what-is-the-difference-between-a-user-mode-driver-and-an-application"></a>ユーザー モード ドライバーとアプリケーションの違いは何ですか。
 
 
-ユーザー モード ドライバーでは、ドライバー マネージャーによって開始され、ドライバーのホスト プロセスで実行されます。 ドライバーの 1 つのインスタンスには、複数のアプリケーションからの同時要求を処理できます。 ドライバーとの通信には、アプリケーションは、Win32 API を使用して、ドライバーのデバイスに I/O 要求を発行します。 ユーザー モード ドライバーの主なエントリ ポイントは、 [ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)インターフェイス (UMDF 1.11 およびそれ以前) または[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)ルーチン (UMDF 2.0 以降) ではなく**main()** 関数。
+ユーザー モード ドライバーでは、ドライバー マネージャーによって開始され、ドライバーのホスト プロセスで実行されます。 ドライバーの 1 つのインスタンスには、複数のアプリケーションからの同時要求を処理できます。 ドライバーとの通信には、アプリケーションは、Win32 API を使用して、ドライバーのデバイスに I/O 要求を発行します。 ユーザー モード ドライバーの主なエントリ ポイントは、 [ **IDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)インターフェイス (UMDF 1.11 およびそれ以前) または[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチン (UMDF 2.0 以降) ではなく**main()** 関数。
 
 ドライバーには、I/O 要求とプラグ アンド プレイと電源の通知への応答で、追加のインターフェイスまたは呼び出されるコールバックも含まれます。 UMDF ドライバーによって管理されているデバイスは、システムに統合し、プラグ アンド プレイし、電源管理に参加します。
 
@@ -99,9 +99,9 @@ UMDF バージョン 2.0 以降、ことができますを使用する多くの�
 
 次のフォーラムでの Windows ドライバーのすべての側面のディスカッションをご覧ください。
 
--   マイクロソフトは、 [Windows ハードウェア WDK とドライバーの開発](http://social.msdn.microsoft.com/Forums/windowsdesktop/home?forum=wdk)フォーラム。
+-   マイクロソフトは、 [Windows ハードウェア WDK とドライバーの開発](https://social.msdn.microsoft.com/Forums/windowsdesktop/home?forum=wdk)フォーラム。
 
--   システム リソース (OSR) に保ちますを開き、 [OSR オンライン:NTDEV 一覧](http://www.osronline.com/showlists.cfm?list=ntdev)フォーラム。
+-   システム リソース (OSR) に保ちますを開き、 [OSR オンライン:NTDEV 一覧](https://community.osr.com/)フォーラム。
 
  
 

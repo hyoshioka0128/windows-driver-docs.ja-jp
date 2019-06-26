@@ -6,12 +6,12 @@ keywords:
 - Const のコンストラクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b11d920fea90128b47768c9b4cd6450ea77b3089
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db847ce99201eb146899bdaae9a422a0c2aada3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384503"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379715"
 ---
 # <a name="const-tcpip"></a>Const (TCP/IP)
 
@@ -36,7 +36,7 @@ TCP/IP Const コンストラクトでは、データ型と返される必要が�
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p>内のデータ型、<strong>値</strong>属性の値、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
+<td><p>内のデータ型、<strong>値</strong>属性の値、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>value</strong></p></td>

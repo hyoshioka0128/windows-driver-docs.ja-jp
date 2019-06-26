@@ -4,12 +4,12 @@ description: により、標準形式で適切に定義されたフレーム メ
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.custom: rs5, 19H1
-ms.openlocfilehash: 8a88e66f7f7d8fe90bd55bfdbc783b17c659a693
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7258dce4218dba9f25517a1e2cc2c897d7629d5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368148"
 ---
 # <a name="microsoft-extensions-to-usb-video-class-15-specification"></a>USB ビデオ クラス 1.5 仕様に対する Microsoft の拡張機能
 
@@ -270,7 +270,7 @@ SET_CUR 要求が、ファームウェアによってサポートされていな
 - GET_CUR 要求にはレポート フィールド寸法の現在の操作モードに設定および dwValue の現在の照明に設定を指定します。
 - SET_CUR 要求が受信されると、IR Torch は要求された動作モードを使用して prorate 輝度に、照明を設定します。
 
-IR トーチを出力する必要があります、 [ **MF_CAPTURE_METADATA_FRAME_ILLUMINATION** ](standardized-extended-controls-.md)のすべてのフレームの属性。  デバイス MFT またはを含めることによってこれを提供できます、 **MetadataId_FrameIllumination**カメラからのメタデータのペイロード内の属性。  2.2.3.4.4 セクションを参照してください。  
+IR トーチを出力する必要があります、 [ **MF_CAPTURE_METADATA_FRAME_ILLUMINATION** ](standardized-extended-controls-.md)のすべてのフレームの属性。  デバイス MFT またはを含めることによってこれを提供できます、 **MetadataId_FrameIllumination**カメラからのメタデータのペイロード内の属性。  2\.2.3.4.4 セクションを参照してください。  
 
 このメタデータの唯一の目的は、フレームが点灯しているかどうかどうかを示すです。  これは、同じメタデータが必要な[ **KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE** ](ksproperty-cameracontrol-extended-faceauth-mode.md) DDI、 **MSXU_FACE_AUTHENTICATION_CONTROL**セクションで定義されています。2.2.2.7 します。  
 
@@ -369,7 +369,7 @@ UVC 経由でフレーム ベースのビデオの転送中にビデオのフレ
 
 *SCR の場合:ソースの時計の参照、サイズ:6 バイトは、値:数*
 
-- SCR フィールドでは、BFH [0] フィールドに、SCR のビットが設定されている場合があります。 2.4.3.3 を参照してください*ビデオとイメージのペイロード ヘッダーも*で、*ビデオ デバイスの USB デバイス クラス定義*仕様。
+- SCR フィールドでは、BFH [0] フィールドに、SCR のビットが設定されている場合があります。 2\.4.3.3 を参照してください*ビデオとイメージのペイロード ヘッダーも*で、*ビデオ デバイスの USB デバイス クラス定義*仕様。
 
 既存の UVC ドライバー HLE フィールドは、12 バイト (PTS/SCR 存在) を 2 バイト (ありません PTS/SCR 存在) または最大のいずれかに固定されます。 ただし、サイズのバイトのフィールドでは、中、HLE フィールドは最大 255 バイト ヘッダー データの可能性がありますを指定できます。 ときにペイロード ヘッダーの最初の 12 バイトがビデオに固有の標準メタデータとして選択し、追加のデータの次のフレーム場合両方 PTS/SCR は、設定されており、HLE を超える 12 バイト、INF エントリ`StandardFormatMetadata<PinIndex>`設定されます。
 
@@ -453,11 +453,11 @@ typedef struct tagKSCAMERA_METADATA_CAPTURESTATS {
 
 ###### <a name="22342-metadataidcameraextrinsics"></a>2.2.3.4.2 MetadataId_CameraExtrinsics
 
-この識別子に対するメタデータの形式では、バイト配列のペイロードを続けて標準 KSCAMERA_METADATA_ITEMHEADER 必要があります。 ペイロードに揃える必要があります、 [MFCameraExtrinsics](https://msdn.microsoft.com/library/windows/desktop/mt740392)構造とそれに続く 0 個以上[MFCameraExtrinsic_CalibratedTransform](https://msdn.microsoft.com/library/windows/desktop/mt740393)構造体。 使用されていないすべてのバイトのペイロードの最後に行う必要があるし、0 に設定して、ペイロードは 8 バイトでアラインにあります。
+この識別子に対するメタデータの形式では、バイト配列のペイロードを続けて標準 KSCAMERA_METADATA_ITEMHEADER 必要があります。 ペイロードに揃える必要があります、 [MFCameraExtrinsics](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-_mfcameraextrinsics)構造とそれに続く 0 個以上[MFCameraExtrinsic_CalibratedTransform](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-_mfcameraextrinsic_calibratedtransform)構造体。 使用されていないすべてのバイトのペイロードの最後に行う必要があるし、0 に設定して、ペイロードは 8 バイトでアラインにあります。
 
 ###### <a name="22343-metadataidcameraintrinsics"></a>2.2.3.4.3 MetadataId_CameraIntrinsics
 
-この識別子に対するメタデータの形式では、バイト配列のペイロードを続けて標準 KSCAMERA_METADATA_ITEMHEADER 必要があります。 ペイロードに揃える必要があります、 [MFPinholeCameraIntrinsics](https://msdn.microsoft.com/library/windows/desktop/mt740396)構造体。 使用されていないすべてのバイトのペイロードの最後に行う必要があるし、0 に設定して、ペイロードは 8 バイトでアラインにあります。
+この識別子に対するメタデータの形式では、バイト配列のペイロードを続けて標準 KSCAMERA_METADATA_ITEMHEADER 必要があります。 ペイロードに揃える必要があります、 [MFPinholeCameraIntrinsics](https://docs.microsoft.com/windows/desktop/api/mfapi/ns-mfapi-_mfpinholecameraintrinsics)構造体。 使用されていないすべてのバイトのペイロードの最後に行う必要があるし、0 に設定して、ペイロードは 8 バイトでアラインにあります。
 
 ###### <a name="22344-metadataidframeillumination"></a>2.2.3.4.4 MetadataId_FrameIllumination
 

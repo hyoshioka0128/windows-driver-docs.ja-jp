@@ -4,12 +4,12 @@ description: WDI (WLAN デバイス ドライバー インターフェイス) �
 ms.assetid: 6EF92E34-7BC9-465E-B05D-2BCB29165A18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2c8b90af05caab82984ea70c062f5d3e682ab3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 156c4761e5b8d9b4db92640e176759bfef3c6e41
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378961"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370559"
 ---
 # <a name="wlan-universal-windows-driver-model"></a>WLAN ユニバーサル Windows ドライバー モデル
 
@@ -23,17 +23,17 @@ Wditypes.hpp と dot11wdi.h、WDI ヘッダー ファイルは、WDK に含ま�
 ## <a name="how-to-write-a-universal-wlan-driver"></a>ユニバーサル WLAN ドライバーを記述する方法
 
 
-ユニバーサル WLAN ドライバーを作成するを参照してください[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)、」の手順に従います*ユニバーサル Windows ドライバーをビルド*を使用して、ユニバーサル ドライバーをビルドするには。カーネル モード ドライバー (KMDF) のテンプレートです。
+ユニバーサル WLAN ドライバーを作成するを参照してください[ユニバーサル Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers)、」の手順に従います*ユニバーサル Windows ドライバーをビルド*を使用して、ユニバーサル ドライバーをビルドするには。カーネル モード ドライバー (KMDF) のテンプレートです。
 
 次に、実装のガイダンスについては、WDI デザインおよび参照セクションを参照してください。
 
 -   [WDI ミニポート ドライバーの設計ガイド](wdi-miniport-driver-design-guide.md)
--   [WDI ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn926075)
+-   [WDI ミニポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)
+[ユニバーサル Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers)
 
  
 

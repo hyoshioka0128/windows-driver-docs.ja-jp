@@ -6,12 +6,12 @@ keywords:
 - OID_GEN_CO_MEDIA_CONNECT_STATUS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a623db5f5dcd4c07f0ac66ad8953114c8059d36d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c88cda4dc1b2dd3b438c6ff73b4ae18e05e8fc43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379178"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361176"
 ---
 # <a name="oidgencomediaconnectstatus"></a>OID_GEN_CO_MEDIA_CONNECT_STATUS
 
@@ -21,7 +21,7 @@ OID_GEN_CO_MEDIA_CONNECT_STATUS OID は、次のシステム定義の値の 1 �
 
 **NdisMediaStateDisconnected**
 
-ミニポート ドライバーでは、ネットワーク接続が失われたことを検知、ときに呼び出す必要が[NdisMCoIndicateStatus](https://msdn.microsoft.com/library/windows/hardware/ff563562) NDIS_STATUS_MEDIA_DISCONNECT とします。 接続が復元されると、NDIS_STATUS_MEDIA_CONNECT で NdisMCoIndicateStatus を呼び出すことが必要があります。
+ミニポート ドライバーでは、ネットワーク接続が失われたことを検知、ときに呼び出す必要が[NdisMCoIndicateStatus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex) NDIS_STATUS_MEDIA_DISCONNECT とします。 接続が復元されると、NDIS_STATUS_MEDIA_CONNECT で NdisMCoIndicateStatus を呼び出すことが必要があります。
 
 ## <a name="requirements"></a>必要条件
 

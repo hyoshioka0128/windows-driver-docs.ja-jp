@@ -3,12 +3,12 @@ title: 統一された拡張ファームウェア インターフェイス (UEFI
 description: 統一された拡張ファームウェア インターフェイス (UEFI)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5736e2f9b0e135a62483059be3c9cbab5aded93c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 226f6a1802a0625d2044f33710ae73853a35f3f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337374"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364488"
 ---
 # <a name="unified-extensible-firmware-interface-uefi"></a>統一された拡張ファームウェア インターフェイス (UEFI) 
 
@@ -31,7 +31,7 @@ UEFI のコードを実装するときにメイン ブランチから最新の�
 
 ## <a name="related-resources"></a>関連リソース
 
-[UEFI 仕様のドキュメント](https://www.uefi.org/specifications)
+[UEFI 仕様のドキュメント](https://uefi.org/specifications)
 
 
 

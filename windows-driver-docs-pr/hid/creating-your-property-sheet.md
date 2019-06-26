@@ -11,12 +11,12 @@ keywords:
 - WDK DirectInput テンプレート
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4e1204fcafa9c1bc61f0a41ca6ee26c7c26661d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f02d5883325fcda76b9cef2e2e9d803e1d6fbe2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390337"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375760"
 ---
 # <a name="creating-your-property-sheet"></a>プロパティ シートを作成します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "63390337"
     > [!NOTE]
     > 独立したダイアログ ボックスとして、ページを起動するウィンドウとしてのプロパティ シートのテスト コンテナーを記述することがあります。 この時点では、DirectInput のコントロール パネル にする必要があります、既存のコントロール パネルを変換することも可能性があります。
 
-3. 設定、 [ **DIGCPAGEINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff538484)と[ **DIGCSHEETINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff538492)構造体し、の実装にその情報を返す[**IDIGameCntrlPropSheet::GetPageInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff540026)と[ **IDIGameCntrlPropSheet::GetSheetInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff540029)それぞれします。
+3. 設定、 [ **DIGCPAGEINFO** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff538484(v=vs.85))と[ **DIGCSHEETINFO** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff538492(v=vs.85))構造体し、の実装にその情報を返す[**IDIGameCntrlPropSheet::GetPageInfo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540026(v=vs.85))と[ **IDIGameCntrlPropSheet::GetSheetInfo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540029(v=vs.85))それぞれします。
 
 プロパティ シートのページの生成を行う、**プロパティ シート**関数。 この関数のすべての動作は、プロパティ シートのページに固有です。 たとえば、プロパティ シートのページには、受信した最大のダイアログ テンプレートが反映されます。 ユーザーは、1 つのページを作成します。 その関連テンプレートは非常に小さい場合は、これは表示されたダイアログのサイズに直接反映されます。
 

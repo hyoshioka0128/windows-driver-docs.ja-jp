@@ -7,12 +7,12 @@ keywords:
 - セットアップ クラス WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d80bc77f27e8d774e8bf844721cd1f9dcbd15105
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75cbcac95bef68304b96856dac14ef5441a6c30f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364340"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356321"
 ---
 # <a name="creating-a-new-device-setup-class"></a>新しいデバイス セットアップ クラスの作成
 
@@ -20,7 +20,7 @@ ms.locfileid: "63364340"
 
 
 
-のみ、どうしても必要な場合、新しいデバイス セットアップ クラスを作成する必要があります。 通常のいずれかに、デバイスを割り当てることは、[システム定義のデバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)します。
+のみ、どうしても必要な場合、新しいデバイス セットアップ クラスを作成する必要があります。 通常のいずれかに、デバイスを割り当てることは、[システム定義のデバイス セットアップ クラス](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))します。
 
 デバイスは、次の条件の両方を満たす場合、は、既存のデバイス セットアップ クラスに割り当てる必要があります。
 

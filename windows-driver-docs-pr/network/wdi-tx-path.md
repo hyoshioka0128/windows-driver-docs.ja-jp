@@ -4,12 +4,12 @@ description: このセクションには、WDI TX パスがについて説明し
 ms.assetid: 8DF3E82E-761E-4A90-A789-1CB8EE8F0377
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ed4b88e8d276c64d3cc4eba7b0831b1eaaaec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3556944f45e0e44eef30c9f2997b60c76e79cc00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361745"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357107"
 ---
 # <a name="wdi-tx-path"></a>WDI TX パス
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361745"
 
 話してでは、ターゲット TX 記述子 (TTD) を使用して、サイズのターゲットとフレームの場所を通知します。
 
-別のターゲットの WLAN のデバイス、TTD さまざまな定義があります。 このため、WDI によって提供される情報に基づいて、話して TTD プログラミングは実行できます。 TTD のプログラミング、WDI を指定します、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388) (NBL) を通じて、フレームの ID など、フレームのメタデータ拡張 TID、適用可能なタスク オフロード、および暗号化除外対象のアクションは、アクセスできます。
+別のターゲットの WLAN のデバイス、TTD さまざまな定義があります。 このため、WDI によって提供される情報に基づいて、話して TTD プログラミングは実行できます。 TTD のプログラミング、WDI を指定します、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) (NBL) を通じて、フレームの ID など、フレームのメタデータ拡張 TID、適用可能なタスク オフロード、および暗号化除外対象のアクションは、アクセスできます。
 
 ですかは、ターゲットに、TTD と TX フレームを転送します。 TTD とフレームのヘッダー内のフィールドのメタデータからターゲットに送信する方法と送信フレームの目的の受信者を判断できます。
 
@@ -96,40 +96,40 @@ WDI ポートのキューのうち、挿入されたすべてのフレームは�
 
 ### <a name="requests-to-txengine"></a>TxEngine への要求
 
--   [*ミニポート\_WDI\_TX\_中止*](https://msdn.microsoft.com/library/windows/hardware/mt297587)
--   [*ミニポート\_WDI\_TX\_データ\_送信*](https://msdn.microsoft.com/library/windows/hardware/mt297588)
--   [*ミニポート\_WDI\_TX\_話して\_キュー\_IN\_順序*](https://msdn.microsoft.com/library/windows/hardware/mt297590)
--   [*ミニポート\_WDI\_TX\_話して\_送信*](https://msdn.microsoft.com/library/windows/hardware/mt297591)
--   [*ミニポート\_WDI\_TX\_話して\_送信\_完了*](https://msdn.microsoft.com/library/windows/hardware/mt297592)
--   [*ミニポート\_WDI\_TX\_ターゲット\_DESC\_DEINIT*](https://msdn.microsoft.com/library/windows/hardware/mt297593)
--   [*ミニポート\_WDI\_TX\_ターゲット\_DESC\_INIT*](https://msdn.microsoft.com/library/windows/hardware/mt297594)
+-   [*ミニポート\_WDI\_TX\_中止*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_abort)
+-   [*ミニポート\_WDI\_TX\_データ\_送信*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_data_send)
+-   [*ミニポート\_WDI\_TX\_話して\_キュー\_IN\_順序*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_queue_in_order)
+-   [*ミニポート\_WDI\_TX\_話して\_送信*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_send)
+-   [*ミニポート\_WDI\_TX\_話して\_送信\_完了*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_send_complete)
+-   [*ミニポート\_WDI\_TX\_ターゲット\_DESC\_DEINIT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_target_desc_deinit)
+-   [*ミニポート\_WDI\_TX\_ターゲット\_DESC\_INIT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_target_desc_init)
 
 ### <a name="indications-from-txengine"></a>TxEngine からインジケーター
 
--   [*NDIS\_WDI\_TX\_デキュー\_IND*](https://msdn.microsoft.com/library/windows/hardware/mt297609)
--   [*NDIS\_WDI\_TX\_転送\_完了\_IND*](https://msdn.microsoft.com/library/windows/hardware/mt297616)
--   [*NDIS\_WDI\_TX\_送信\_完了\_IND*](https://msdn.microsoft.com/library/windows/hardware/mt297613)
--   [*NDIS\_WDI\_TX\_クエリ\_RA\_TID\_状態*](https://msdn.microsoft.com/library/windows/hardware/mt297611)
+-   [*NDIS\_WDI\_TX\_デキュー\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_dequeue_ind)
+-   [*NDIS\_WDI\_TX\_転送\_完了\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_transfer_complete_ind)
+-   [*NDIS\_WDI\_TX\_送信\_完了\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_complete_ind)
+-   [*NDIS\_WDI\_TX\_クエリ\_RA\_TID\_状態*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_query_ra_tid_state)
 
 ### <a name="tx-specific-control-requests"></a>特定のコントロール要求の送信
 
--   [*ミニポート\_WDI\_TX\_ピア\_バックログ*](https://msdn.microsoft.com/library/windows/hardware/mt297589)
+-   [*ミニポート\_WDI\_TX\_ピア\_バックログ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_peer_backlog)
 
 ### <a name="tx-specific-control-indications"></a>テキサス州の特定のコントロールがないです。
 
--   [*NDIS\_WDI\_TX\_送信\_一時停止\_IND*](https://msdn.microsoft.com/library/windows/hardware/mt297614)
--   [*NDIS\_WDI\_TX\_SEND\_RESTART\_IND*](https://msdn.microsoft.com/library/windows/hardware/mt297615)
--   [*NDIS\_WDI\_TX\_リリース\_フレーム\_IND*](https://msdn.microsoft.com/library/windows/hardware/mt297612)
--   [*NDIS\_WDI\_TX\_INJECT\_FRAME\_IND*](https://msdn.microsoft.com/library/windows/hardware/mt297610)
+-   [*NDIS\_WDI\_TX\_送信\_一時停止\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_pause_ind)
+-   [*NDIS\_WDI\_TX\_SEND\_RESTART\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_restart_ind)
+-   [*NDIS\_WDI\_TX\_リリース\_フレーム\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_release_frames_ind)
+-   [*NDIS\_WDI\_TX\_INJECT\_FRAME\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_inject_frame_ind)
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[WDI TX パス関数](https://msdn.microsoft.com/library/windows/hardware/mt269153)
+[WDI TX パス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
-[**NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)
+[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)
 
-[**WDI\_TXRX\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn898187)
+[**WDI\_TXRX\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_txrx_target_capabilities)
 
  
 

@@ -5,28 +5,28 @@ ms.assetid: 7e5a65d8-39ec-4624-aede-97df945ef5e5
 ms.date: 08/08/2017
 keywords: -OID_PM_WOL_PATTERN_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e3d635835d2a18d79b702371a91bdcbd3cf2c43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 85fc196b3050aaf8dd20f7ce42d35003e418e254
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359160"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373344"
 ---
 # <a name="oidpmwolpatternlist"></a>OID\_PM\_WOL\_パターン\_一覧
 
 
-クエリとしてドライバーを重なってできます OID を使用\_PM\_WOL\_パターン\_wake on LAN のパターンを基になるネットワーク アダプターに設定されているを列挙するリストの OID。 で、クエリから正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、一覧へのポインター [ **NDIS\_PM\_WOL\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566768)現在追加 WOL パターンを記述する構造体。
+クエリとしてドライバーを重なってできます OID を使用\_PM\_WOL\_パターン\_wake on LAN のパターンを基になるネットワーク アダプターに設定されているを列挙するリストの OID。 で、クエリから正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、一覧へのポインター [ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)現在追加 WOL パターンを記述する構造体。
 
 <a name="remarks"></a>注釈
 -------
 
 NDIS は、ミニポート ドライバーにクエリを処理します。 NDIS ドライバーは、OID を使用できる\_PM\_WOL\_パターン\_基になるネットワーク アダプターに設定されているパターンに LAN でウェイク アップの一覧を取得する OID をリストします。
 
-各[ **NDIS\_PM\_WOL\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566768) NDIS セットの一覧で構造体、 **NextWoLPatternOffset**メンバーをOID 情報バッファーの先頭からのオフセット (つまり、バッファーの先頭を**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)へのポインターを構造体) を次の先頭に**NDIS\_PM\_WOL\_パターン**リスト内の構造。 内のオフセット、 **NextWoLPatternOffset**一覧の最後の構造体のメンバーは 0 になります。
+各[ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern) NDIS セットの一覧で構造体、 **NextWoLPatternOffset**メンバーをOID 情報バッファーの先頭からのオフセット (つまり、バッファーの先頭を**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)へのポインターを構造体) を次の先頭に**NDIS\_PM\_WOL\_パターン**リスト内の構造。 内のオフセット、 **NextWoLPatternOffset**一覧の最後の構造体のメンバーは 0 になります。
 
-内のオフセットを[ **NDIS\_PM\_WOL\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566768)以外の構造体**NextWoLPatternOffset** (たとえば、 **NameBufferOffset**)、NDIS は、それぞれの先頭に相対的なオフセット**NDIS\_PM\_WOL\_パターン**構造体。
+内のオフセットを[ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)以外の構造体**NextWoLPatternOffset** (たとえば、 **NameBufferOffset**)、NDIS は、それぞれの先頭に相対的なオフセット**NDIS\_PM\_WOL\_パターン**構造体。
 
-ネットワーク アダプターに設定されている WOL パターンがない場合は、NDIS の設定、**データ。クエリ\_情報。BytesWritten**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体をゼロを返す**NDIS\_の状態\_成功**要求。 内のデータ、**データ。クエリ\_INFORMATION.InformationBuffer** NDIS によってメンバーが変更されていません。
+ネットワーク アダプターに設定されている WOL パターンがない場合は、NDIS の設定、**データ。クエリ\_情報。BytesWritten**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体をゼロを返す**NDIS\_の状態\_成功**要求。 内のデータ、**データ。クエリ\_INFORMATION.InformationBuffer** NDIS によってメンバーが変更されていません。
 
 NDIS は、要求の次のステータス コードのいずれかを返します。
 
@@ -65,9 +65,9 @@ NDIS は、要求の次のステータス コードのいずれかを返しま�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_WOL\_パターン**](https://msdn.microsoft.com/library/windows/hardware/ff566768)
+[**NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)
 
 [OID\_PM\_追加\_WOL\_パターン](oid-pm-add-wol-pattern.md)
 

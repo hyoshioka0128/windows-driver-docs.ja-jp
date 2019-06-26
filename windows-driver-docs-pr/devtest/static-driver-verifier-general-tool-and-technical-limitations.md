@@ -8,12 +8,12 @@ keywords:
 - SDV の WDK、制限事項
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7e5ae2e2ac118888b298e2a9703e91847e08b99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3b979bf5bb8b9aa7bd2aa737db1b993ad38cbae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353476"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379603"
 ---
 # <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静的ドライバー検証ツールの一般的なツールと技術的な制限
 
@@ -64,7 +64,7 @@ SDV[検証エンジン](verification-engine.md)にいくつかのドライバー
 
     SDV 関数ロールの種類が検出されない、SDV は、この関数から送信されるトレースを確認できません。
 
-    たとえば、ドライバーが定義されている場合 (または実装)、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)ファイル mydriver.c 内の関数。 このコンパイル単位 (またはその mydriver.c が含まれています、.h ファイルには) の関数の役割の型宣言を含める必要があります、 *EvtDriverDeviceAdd*関数。
+    たとえば、ドライバーが定義されている場合 (または実装)、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)ファイル mydriver.c 内の関数。 このコンパイル単位 (またはその mydriver.c が含まれています、.h ファイルには) の関数の役割の型宣言を含める必要があります、 *EvtDriverDeviceAdd*関数。
 
 -   構造化例外処理を解釈しません。 **試用/を除く**例外がスローされない場合、ステートメント、SDV は、保護されたセクションを分析します。 式または例外ハンドラーのコードは分析されません。
 

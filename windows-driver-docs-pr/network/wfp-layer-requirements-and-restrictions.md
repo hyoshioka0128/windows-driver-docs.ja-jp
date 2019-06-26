@@ -8,12 +8,12 @@ keywords:
 - 処理の WDK Windows フィルタ リング プラットフォーム パケットのレイヤー
 ms.date: 01/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2572a94f9889fe11afbd9803038817c922431593
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 65af57fd54cedef4acb03ea27c2a6fbbd563d503
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161404"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356986"
 ---
 # <a name="wfp-layer-requirements-and-restrictions"></a>WFP レイヤーの要件と制限
 
@@ -23,13 +23,13 @@ WFP レイヤーには、次の要件と制限が適用されます。
 <a href="" id="forwarding-layer-------"></a>**転送層**   
 IP パケットは、発生元であるコンピューターに割り当てられているアドレスの送信先となるパケットの IP 転送が有効になっていると、パケットが送信またはインターフェイスよりもさまざまなインターフェイスで受信した場合、転送層に配信されます、lローカル アドレスが割り当てられます。 既定では、IP 転送は無効になりを使用して有効にすることができます、 **netsh interface ipv4 インターフェイスを設定する**IPv4 転送のコマンドまたは**netsh interface ipv6 インターフェイスを設定する**IPv6 用コマンド転送します。
 
-転送層が到着すると、受信した各フラグメントを転送したり、すべてのフラグメントが到着し、それらを転送するまでは、IP ペイロードのフラグメントを保持することができます。 これと呼ばれます*フラグメント化*します。 フラグメントのグループ化が無効な場合 (これは既定で無効)、によってフラグメントが示された IP パケットが 1 回 WFP に転送されます。 フラグメントのグループ化を有効にすると、フラグメントと示されます WFP を 2 回--自体には、フラグメントとして最初にもう一度によって定義されたフラグメント グループ内で、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)チェーン。 WFP セット、 **FWP\_条件\_フラグ\_IS\_フラグメント\_グループ**フラグメント レイヤー コールアウトを転送するグループのフラグが示されている場合。 使用してフラグメントのグループ化を有効にすることができます、 **netsh インターフェイス {ipv4 | ipv6} 設定グローバル groupforwardedfragments = 有効になっている**コマンド。 フラグメントのグループ化は、再構築、移動先ホストにある元の IP パケットの再構築したものであると異なります。
+転送層が到着すると、受信した各フラグメントを転送したり、すべてのフラグメントが到着し、それらを転送するまでは、IP ペイロードのフラグメントを保持することができます。 これと呼ばれます*フラグメント化*します。 フラグメントのグループ化が無効な場合 (これは既定で無効)、によってフラグメントが示された IP パケットが 1 回 WFP に転送されます。 フラグメントのグループ化を有効にすると、フラグメントと示されます WFP を 2 回--自体には、フラグメントとして最初にもう一度によって定義されたフラグメント グループ内で、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)チェーン。 WFP セット、 **FWP\_条件\_フラグ\_IS\_フラグメント\_グループ**フラグメント レイヤー コールアウトを転送するグループのフラグが示されている場合。 使用してフラグメントのグループ化を有効にすることができます、 **netsh インターフェイス {ipv4 | ipv6} 設定グローバル groupforwardedfragments = 有効になっている**コマンド。 フラグメントのグループ化は、再構築、移動先ホストにある元の IP パケットの再構築したものであると異なります。
 
-[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)転送層で示される構造体は、完全な IP パケットや IP パケットのフラグメントを IP パケットのフラグメント グループを記述できます。 2 回に示す吹き出しにする、IP パケットのフラグメントでは、転送レイヤーは走査、中に: フラグメントとして最初、もう一度、フラグメント グループ内のフラグメントとして。
+[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)転送層で示される構造体は、完全な IP パケットや IP パケットのフラグメントを IP パケットのフラグメント グループを記述できます。 2 回に示す吹き出しにする、IP パケットのフラグメントでは、転送レイヤーは走査、中に: フラグメントとして最初、もう一度、フラグメント グループ内のフラグメントとして。
 
-フラグメントのグループは、指定したときに、 **FWP\_条件\_フラグ\_IS\_フラグメント\_グループ**コールアウト ドライバーの入力方向の値としてフラグが渡されます[*classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウト関数。 ここで、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)によって示される構造体、 *NetBufferList*パラメーターは、の最初のノード**NET\_バッファー\_一覧**チェーンでそれぞれ**NET\_バッファー\_一覧**パケットのフラグメントを記述します。
+フラグメントのグループは、指定したときに、 **FWP\_条件\_フラグ\_IS\_フラグメント\_グループ**コールアウト ドライバーの入力方向の値としてフラグが渡されます[*classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数。 ここで、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)によって示される構造体、 *NetBufferList*パラメーターは、の最初のノード**NET\_バッファー\_一覧**チェーンでそれぞれ**NET\_バッファー\_一覧**パケットのフラグメントを記述します。
 
-前方挿入されたパケットは、WFP レイヤーには表示されません。 挿入されたパケットは、もう一度コールアウト ドライバーに指示できます。 無限ループを防ぐためには、まず、ドライバーを呼び出して、 [ **FwpsQueryPacketInjectionState0** ](https://msdn.microsoft.com/library/windows/hardware/ff551202)関数への呼び出しを続行する前に、 *classifyFn*コールアウト関数、およびドライバーの挿入の状態を持つパケットを許可するように[ **FWPS\_パケット\_インジェクション\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff552408) に設定**FWPS\_パケット\_INJECTED\_BY\_セルフ**または**FWPS\_パケット\_以前\_INJECTED\_BY\_セルフ**変更されていないを通過します。
+前方挿入されたパケットは、WFP レイヤーには表示されません。 挿入されたパケットは、もう一度コールアウト ドライバーに指示できます。 無限ループを防ぐためには、まず、ドライバーを呼び出して、 [ **FwpsQueryPacketInjectionState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)関数への呼び出しを続行する前に、 *classifyFn*コールアウト関数、およびドライバーの挿入の状態を持つパケットを許可するように[ **FWPS\_パケット\_インジェクション\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ne-fwpsk-fwps_packet_injection_state_) に設定**FWPS\_パケット\_INJECTED\_BY\_セルフ**または**FWPS\_パケット\_以前\_INJECTED\_BY\_セルフ**変更されていないを通過します。
 
 次のコマンドを使用するには、システムの現在の「グループ転送されたフラグメント」設定を表示する: **netsh インターフェイス {ipv4 | ipv6} グローバル**します。
 

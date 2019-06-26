@@ -6,17 +6,17 @@ keywords:
 - HDAUDIO_BUS_INTERFACE 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38283a28dc2b033cac7026158f7a458353f5de5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 564ce09947de9b937ef48c5827b18d0542001fe3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332276"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363198"
 ---
 # <a name="obtaining-an-hdaudiobusinterface-ddi-object"></a>取得、HDAUDIO\_BUS\_インターフェイス DDI オブジェクト
 
 
-次の表は入力パラメーターの値に、関数のドライバーを書き込みます、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687) IOCTL、を取得するには[**HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)構造と、この構造体を定義する HD オーディオ DDI のバージョンのコンテキスト オブジェクト。
+次の表は入力パラメーターの値に、関数のドライバーを書き込みます、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface) IOCTL、を取得するには[**HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造と、この構造体を定義する HD オーディオ DDI のバージョンのコンテキスト オブジェクト。
 
 <table>
 <colgroup>
@@ -26,7 +26,7 @@ ms.locfileid: "63332276"
 <thead>
 <tr class="header">
 <th align="left">パラメーター</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -36,7 +36,7 @@ ms.locfileid: "63332276"
 </tr>
 <tr class="even">
 <td align="left"><p>USHORT<em>サイズ</em></p></td>
-<td align="left"><p><strong>sizeof</strong>(<a href="https://msdn.microsoft.com/library/windows/hardware/ff536413" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536413)"><strong>HDAUDIO_BUS_INTERFACE</strong></a>)</p></td>
+<td align="left"><p><strong>sizeof</strong>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)"><strong>HDAUDIO_BUS_INTERFACE</strong></a>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>USHORT<em>バージョン</em></p></td>
@@ -44,7 +44,7 @@ ms.locfileid: "63332276"
 </tr>
 <tr class="even">
 <td align="left"><p>PINTERFACE<em>インターフェイス</em></p></td>
-<td align="left"><p>ポインター <a href="https://msdn.microsoft.com/library/windows/hardware/ff536413" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536413)"> <strong>HDAUDIO_BUS_INTERFACE</strong> </a>構造体</p></td>
+<td align="left"><p>ポインター <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)"> <strong>HDAUDIO_BUS_INTERFACE</strong> </a>構造体</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PVOID <em>InterfaceSpecificData</em></p></td>
@@ -55,9 +55,9 @@ ms.locfileid: "63332276"
 
  
 
-Function ドライバーの記憶域の割り当て、 [ **HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)構造し、IOCTL でこの構造体へのポインターが含まれています。 前の表へのポインター、 **HDAUDIO\_BUS\_インターフェイス**構造が型にキャスト**PINTERFACE**、型の構造体へのポインターである[**インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff547825)します。 名前と型の最初の 5 つのメンバーの**HDAUDIO\_BUS\_インターフェイス**の 5 つのメンバーに合わせて**インターフェイス**します。 **HDAUDIO\_BUS\_インターフェイス**DDI ルーチンへの関数ポインターであるその他のメンバーが含まれています。 関数ドライバーからの IOCTL の受信に応答してでは、HD オーディオ バス ドライバー、全体で塗りつぶします**HDAUDIO\_BUS\_インターフェイス**構造体。
+Function ドライバーの記憶域の割り当て、 [ **HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造し、IOCTL でこの構造体へのポインターが含まれています。 前の表へのポインター、 **HDAUDIO\_BUS\_インターフェイス**構造が型にキャスト**PINTERFACE**、型の構造体へのポインターである[**インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_interface)します。 名前と型の最初の 5 つのメンバーの**HDAUDIO\_BUS\_インターフェイス**の 5 つのメンバーに合わせて**インターフェイス**します。 **HDAUDIO\_BUS\_インターフェイス**DDI ルーチンへの関数ポインターであるその他のメンバーが含まれています。 関数ドライバーからの IOCTL の受信に応答してでは、HD オーディオ バス ドライバー、全体で塗りつぶします**HDAUDIO\_BUS\_インターフェイス**構造体。
 
-次の表は、値の最初の 5 つのメンバーに、HD オーディオ バス ドライバーを記述、 [ **HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)構造体。
+次の表は、値の最初の 5 つのメンバーに、HD オーディオ バス ドライバーを記述、 [ **HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造体。
 
 <table>
 <colgroup>
@@ -67,13 +67,13 @@ Function ドライバーの記憶域の割り当て、 [ **HDAUDIO\_BUS\_イン�
 <thead>
 <tr class="header">
 <th align="left">Member</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>USHORT<strong>サイズ</strong></p></td>
-<td align="left"><p><strong>sizeof</strong>(<a href="https://msdn.microsoft.com/library/windows/hardware/ff536413" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536413)"><strong>HDAUDIO_BUS_INTERFACE</strong></a>)</p></td>
+<td align="left"><p><strong>sizeof</strong>(<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)"><strong>HDAUDIO_BUS_INTERFACE</strong></a>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>USHORT<strong>バージョン</strong></p></td>

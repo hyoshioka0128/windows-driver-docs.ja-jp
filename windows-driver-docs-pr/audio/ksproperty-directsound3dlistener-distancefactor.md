@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48168c1710bda956ff7c6f746a0cb600a3dff327
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fe6dfe30ade6190f2056c5a5f753533192a4458
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332754"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360550"
 ---
 # <a name="kspropertydirectsound3dlistenerdistancefactor"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR
 
@@ -53,7 +53,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_DISTANCEFACTOR プロパティは、距離の
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>FLOAT</p></td>
 </tr>
 </tbody>
@@ -97,7 +97,7 @@ DirectSound は、このプロパティを使用して、実装する、 **IDire
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

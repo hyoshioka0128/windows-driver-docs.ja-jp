@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9696710c1c4274e89895ddc7a8b08023e3c9b32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff521b394cba97ec24344394ee14ad2a62ff3a7c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367808"
 ---
 # <a name="bug-check-0x141-videoenginetimeoutdetected"></a>バグ チェック 0x141:VIDEO\_ENGINE\_TIMEOUT\_DETECTED
 
@@ -26,7 +26,7 @@ ms.locfileid: "63360107"
 ビデオ\_エンジン\_タイムアウト\_検出されたバグ チェックが 0x00000141 の値を持ちます。 これは、エンジンは、適切なタイミングで応答に失敗したディスプレイの 1 つを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="videoenginetimeoutdetected-parameters"></a>VIDEO\_ENGINE\_TIMEOUT\_DETECTED Parameters

@@ -6,12 +6,12 @@ keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40cf3a96a51a07948e032c63f4c00448f6232acc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f32d6a331607ab68f79d5987feaa273e1c4233a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381871"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379902"
 ---
 # <a name="interaction-between-obmc-and-inter4v-in-h263"></a>H.263 での OBMC と INTER4V の相互作用
 
@@ -49,7 +49,7 @@ H. 263 の間の相互作用についての詳細*OBMC*、 *INTER4V*、 *B*、 *
 
 ビット (11 -*は*) の**wPatternCode**残存の違いのデータをブロックに送信するかどうかを示します (ビット 0 が最下位ビット)*は*ここで、*しました* mpeg-2 ビデオの数値で指定されているマクロ ブロック内のブロックのインデックスは、6 ~ 10、6 ~ 11、および 6 ~ 12 (ラスター スキャンのため、Y が続く 4: Cb ラスター スキャンの順序での 2:0 ブロックが続く 4:4 の後に、Cr のブロックを 2:0: Cb のブロックを 2:2後に 4:4 の後に、Cr のブロックを 2:2:4: 4 ブロックの後に 4 Cb: Cr のブロックを 4:4)。 コード化されたブロックのデータ (11 - ビットがそれらのブロック*は*を 1 に等しい) がインデックス作成と同じ順序でバッファーをコーディング残余で見つかった (増加*は*)。 4:2:0 mpeg-2 データの値は、 **wPatternCode** 6 つのビット位置を左にシフト CBP (コード化されたブロックのパターン) のデコードされた値に対応 (4 用に使用されているビットの位置を下げるもの: 2:2 と 4:4:4 つの値の彩度形式)。
 
-場合、 **bConfigSpatialResidInterleaved**のメンバー [ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)は 1 ですホスト ベースの残存相違点はで送信される、。使用中の YUV ピクセル形式に一致する値の彩度インターリーブ フォームです。 この場合、各 Cb およびブロックの空間的に対応する Cr のペアは残存違いの 1 つの構造の単位として扱われます。 値またはの意味は変わりませんこの**wPatternCode**、送信ブロック Cb、Cr のデータの各ペアの両方のメンバーたびにこれらのデータ ブロックのいずれかが対応するビット (ビット 7 またはビット 6) 設定こと意味しますが、 **wPatternCode**します。 場合にビット**wPatternCode** Cb、Cr のブロックの組で残存の違いのデータ ブロックを送信が求められるたびに、0 として残存の違いの対応するデータ値を送信する必要が特定のデータ ブロックが 0 には、ブロックに関する、 **wPatternCode**ビットが 0 に等しい。
+場合、 **bConfigSpatialResidInterleaved**のメンバー [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)は 1 ですホスト ベースの残存相違点はで送信される、。使用中の YUV ピクセル形式に一致する値の彩度インターリーブ フォームです。 この場合、各 Cb およびブロックの空間的に対応する Cr のペアは残存違いの 1 つの構造の単位として扱われます。 値またはの意味は変わりませんこの**wPatternCode**、送信ブロック Cb、Cr のデータの各ペアの両方のメンバーたびにこれらのデータ ブロックのいずれかが対応するビット (ビット 7 またはビット 6) 設定こと意味しますが、 **wPatternCode**します。 場合にビット**wPatternCode** Cb、Cr のブロックの組で残存の違いのデータ ブロックを送信が求められるたびに、0 として残存の違いの対応するデータ値を送信する必要が特定のデータ ブロックが 0 には、ブロックに関する、 **wPatternCode**ビットが 0 に等しい。
 
  
 

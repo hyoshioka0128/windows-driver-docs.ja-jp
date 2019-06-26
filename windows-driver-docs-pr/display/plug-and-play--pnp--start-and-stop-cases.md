@@ -6,12 +6,12 @@ keywords:
 - WDK の表示のディスプレイ ドライバーのプラグ アンド プレイします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f7ea04050b879a58e41dbb6a143e77dbd90756f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ddb1ed1dfb1587f54179873694020a401ed92eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366183"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365705"
 ---
 # <a name="plug-and-play-pnp-in-wddm-12-and-later"></a>WDDM 1.2 以降でのプラグ アンド プレイ (PnP)
 
@@ -50,21 +50,21 @@ ms.locfileid: "63366183"
 
 Windows 8 以降、Microsoft DirectX グラフィックスのカーネルのサブシステムには、ディスプレイ デバイスが開始または休止状態から再開された場合、ドライバーを呼び出すことができるこの機能が提供します。
 
--   [**DxgkCbAcquirePostDisplayOwnership**](https://msdn.microsoft.com/library/windows/hardware/hh451339)
+-   [**DxgkCbAcquirePostDisplayOwnership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_acquire_post_display_ownership)
 
 これらの関数と構造体が表示のミニポート ドライバーおよび WDDM 1.2 と後での PnP 要件を実装するために使用できます。
 
--   [*DxgkDdiStopDeviceAndReleasePostDisplayOwnership*](https://msdn.microsoft.com/library/windows/hardware/hh451415)
--   [*DxgkDdiSystemDisplayEnable*](https://msdn.microsoft.com/library/windows/hardware/hh451426)
--   [*DxgkDdiSystemDisplayWrite*](https://msdn.microsoft.com/library/windows/hardware/hh451429)
--   [**DXGK\_表示\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh464017)
+-   [*DxgkDdiStopDeviceAndReleasePostDisplayOwnership*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)
+-   [*DxgkDdiSystemDisplayEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_system_display_enable)
+-   [*DxgkDdiSystemDisplayWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_system_display_write)
+-   [**DXGK\_表示\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgk_display_information)
 
 ## <a name="span-idpnpstartoperationspanspan-idpnpstartoperationspanspan-idpnpstartoperationspanpnp-start-operation"></a><span id="PnP_start_operation"></span><span id="pnp_start_operation"></span><span id="PNP_START_OPERATION"></span>PnP 開始操作
 
 
-ディスプレイ デバイスのプラグ アンド プレイ (PnP) の起動プロセスは起動中またはアップグレード中を別の 1 つのディスプレイ ドライバーから発生します。 この場合、ドライバーを呼び出す必要があります、 [ *DxgkCbAcquirePostDisplayOwnership* ](https://msdn.microsoft.com/library/windows/hardware/hh451339)関数および表示の同期を維持するために、フレーム バッファーに関する情報を取得します。 フレーム バッファー情報は、ファームウェア、または以前の WDDM 1.2 およびシステムに読み込まれている以降のバージョンのドライバーから提供されます。
+ディスプレイ デバイスのプラグ アンド プレイ (PnP) の起動プロセスは起動中またはアップグレード中を別の 1 つのディスプレイ ドライバーから発生します。 この場合、ドライバーを呼び出す必要があります、 [ *DxgkCbAcquirePostDisplayOwnership* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkcb_acquire_post_display_ownership)関数および表示の同期を維持するために、フレーム バッファーに関する情報を取得します。 フレーム バッファー情報は、ファームウェア、または以前の WDDM 1.2 およびシステムに読み込まれている以降のバージョンのドライバーから提供されます。
 
-呼び出し中にオペレーティング システムは、 [ *DxgkDdiSetPowerState* ](https://msdn.microsoft.com/library/windows/hardware/ff560764) D0 電源の状態とを返す関数、 [ *DxgkDdiStartDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff560775)関数、および WDDM 1.2 およびそれ以降のドライバーがソースの可視性を false に設定する必要があります ([**DXGKARG\_SETVIDPNSOURCEVISIBILITY**](https://msdn.microsoft.com/library/windows/hardware/ff559486).**表示される** = **FALSE**) すべてアクティブの存在するネットワーク (VidPN) のビデオ ターゲット。 ここでパイプラインされるディスプレイ ハードウェアが、モニターを使用して同期信号を維持する必要がありますが、黒のピクセル データをスキャンされている画面にどのようなピクセルのデータに関係なく、モニターを送信するパイプラインを続行する必要があります。これは、ピクセルのパイプラインがすべて黒ピクセルのモニターが非表示に保証されることを意味します。 後で、フレーム バッファーに最初のフレームがレンダリングされると、オペレーティング システムはソースの可視性を true に設定します。
+呼び出し中にオペレーティング システムは、 [ *DxgkDdiSetPowerState* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_set_power_state) D0 電源の状態とを返す関数、 [ *DxgkDdiStartDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_start_device)関数、および WDDM 1.2 およびそれ以降のドライバーがソースの可視性を false に設定する必要があります ([**DXGKARG\_SETVIDPNSOURCEVISIBILITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility).**表示される** = **FALSE**) すべてアクティブの存在するネットワーク (VidPN) のビデオ ターゲット。 ここでパイプラインされるディスプレイ ハードウェアが、モニターを使用して同期信号を維持する必要がありますが、黒のピクセル データをスキャンされている画面にどのようなピクセルのデータに関係なく、モニターを送信するパイプラインを続行する必要があります。これは、ピクセルのパイプラインがすべて黒ピクセルのモニターが非表示に保証されることを意味します。 後で、フレーム バッファーに最初のフレームがレンダリングされると、オペレーティング システムはソースの可視性を true に設定します。
 
 すべての手順は、モニターの同期を維持し、こと、ユーザーに表示されない点滅やちらつき、画面を確認します。
 
@@ -100,11 +100,11 @@ Windows 8 以降、Microsoft DirectX グラフィックスのカーネルのサ�
 ## <a name="span-idpnpstopoperationspanspan-idpnpstopoperationspanspan-idpnpstopoperationspanpnp-stop-operation"></a><span id="PnP_stop_operation"></span><span id="pnp_stop_operation"></span><span id="PNP_STOP_OPERATION"></span>PnP 停止操作
 
 
-ディスプレイ デバイスのプラグ アンド プレイ (PnP) 停止プロセスは、通常、ドライバーは、新しいバージョンにアップグレードされているときに発生します。 ここで、オペレーティング システムが、ドライバーを呼び出す[ *DxgkDdiStopDeviceAndReleasePostDisplayOwnership* ](https://msdn.microsoft.com/library/windows/hardware/hh451415)正確なフレーム バッファー情報を提供するドライバーを必要とする関数。
+ディスプレイ デバイスのプラグ アンド プレイ (PnP) 停止プロセスは、通常、ドライバーは、新しいバージョンにアップグレードされているときに発生します。 ここで、オペレーティング システムが、ドライバーを呼び出す[ *DxgkDdiStopDeviceAndReleasePostDisplayOwnership* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)正確なフレーム バッファー情報を提供するドライバーを必要とする関数。
 
-[ *DxgkDdiStopDeviceAndReleasePostDisplayOwnership* ](https://msdn.microsoft.com/library/windows/hardware/hh451415) active VidPn ターゲットのソースの可視性が true である呼び出し、ドライバーが確認する必要があります ([**DXGKARG\_SETVIDPNSOURCEVISIBILITY**](https://msdn.microsoft.com/library/windows/hardware/ff559486).**表示される** = **TRUE**)。 さらに、ドライバーが画面ピクセルのパイプラインがあるプログラムをスキャンすることを確認する必要がある WDDM 1.2 以降は黒ピクセルが格納されます。 ドライバーのソースの可視性を設定する前に黒のピクセルの表面の入力を完了する必要がありますを true にします。
+[ *DxgkDdiStopDeviceAndReleasePostDisplayOwnership* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership) active VidPn ターゲットのソースの可視性が true である呼び出し、ドライバーが確認する必要があります ([**DXGKARG\_SETVIDPNSOURCEVISIBILITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_setvidpnsourcevisibility).**表示される** = **TRUE**)。 さらに、ドライバーが画面ピクセルのパイプラインがあるプログラムをスキャンすることを確認する必要がある WDDM 1.2 以降は黒ピクセルが格納されます。 ドライバーのソースの可視性を設定する前に黒のピクセルの表面の入力を完了する必要がありますを true にします。
 
-実装も必ず[ *DxgkDdiStopDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff560781)ドライバー。 場合によっては、オペレーティング システムを呼び出すことができます*DxgkDdiStopDevice*の代わりに[ *DxgkDdiStopDeviceAndReleasePostDisplayOwnership*](https://msdn.microsoft.com/library/windows/hardware/hh451415)、または呼び出しの後に*DxgkDdiStopDeviceAndReleasePostDisplayOwnership*は失敗します。
+実装も必ず[ *DxgkDdiStopDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device)ドライバー。 場合によっては、オペレーティング システムを呼び出すことができます*DxgkDdiStopDevice*の代わりに[ *DxgkDdiStopDeviceAndReleasePostDisplayOwnership*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)、または呼び出しの後に*DxgkDdiStopDeviceAndReleasePostDisplayOwnership*は失敗します。
 
 これらは、リターン コードをドライバーは PnP 停止プロセスの後に返す必要があります。
 
@@ -122,17 +122,17 @@ Windows 8 以降、Microsoft DirectX グラフィックスのカーネルのサ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Success__and_driver_returns_mode_information"></span><span id="success__and_driver_returns_mode_information"></span><span id="SUCCESS__AND_DRIVER_RETURNS_MODE_INFORMATION"></span>成功した場合、およびドライバー モードの情報を返します</p></td>
-<td align="left"><p>ドライバーを停止する前に、基本的なディスプレイ ドライバーが使用できる、現在の解像度を使用して、フレーム バッファーに設定する必要があり、オペレーティング システムを呼び出すと、ドライバーはこの情報を返す必要があります、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>関数。 保存モードの情報は、BIOS と互換性があるがないし、システムが再起動されるまで、基本的なディスプレイ ドライバーが BIOS モードを提供しません。</p>
-<p>オペレーティング システムにより呼び出すことはありませんが、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff560781" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560781)"> <em>DxgkDdiStopDevice</em> </a>場合<a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>返します<strong>STATUS_SUCCESS</strong>します。</p></td>
+<td align="left"><p>ドライバーを停止する前に、基本的なディスプレイ ドライバーが使用できる、現在の解像度を使用して、フレーム バッファーに設定する必要があり、オペレーティング システムを呼び出すと、ドライバーはこの情報を返す必要があります、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>関数。 保存モードの情報は、BIOS と互換性があるがないし、システムが再起動されるまで、基本的なディスプレイ ドライバーが BIOS モードを提供しません。</p>
+<p>オペレーティング システムにより呼び出すことはありませんが、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device)"> <em>DxgkDdiStopDevice</em> </a>場合<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>返します<strong>STATUS_SUCCESS</strong>します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Success__and_driver_sets_the_Width_and_Height_members_of_the_DXGK_DISPLAY_INFORMATION_structure_to_zero"></span><span id="success__and_driver_sets_the_width_and_height_members_of_the_dxgk_display_information_structure_to_zero"></span><span id="SUCCESS__AND_DRIVER_SETS_THE_WIDTH_AND_HEIGHT_MEMBERS_OF_THE_DXGK_DISPLAY_INFORMATION_STRUCTURE_TO_ZERO"></span>成功した場合、およびドライバーのセット、<strong>幅</strong>と<strong>高さ</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh464017" data-raw-source="[&lt;strong&gt;DXGK_DISPLAY_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh464017)"> <strong>DXGK_DISPLAY_INFORMATION</strong> </a>をゼロに構造体</p></td>
-<td align="left"><p>このシナリオは、システムが 2 つのグラフィックス カード、モニターが、電源オン自己テスト (POST)、現在のデバイスに接続されていないおよびオペレーティング システムを呼び出す場合にのみ、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a> POST デバイスを停止する関数。</p>
+<td align="left"><p><span id="Success__and_driver_sets_the_Width_and_Height_members_of_the_DXGK_DISPLAY_INFORMATION_structure_to_zero"></span><span id="success__and_driver_sets_the_width_and_height_members_of_the_dxgk_display_information_structure_to_zero"></span><span id="SUCCESS__AND_DRIVER_SETS_THE_WIDTH_AND_HEIGHT_MEMBERS_OF_THE_DXGK_DISPLAY_INFORMATION_STRUCTURE_TO_ZERO"></span>成功した場合、およびドライバーのセット、<strong>幅</strong>と<strong>高さ</strong>のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgk_display_information" data-raw-source="[&lt;strong&gt;DXGK_DISPLAY_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgk_display_information)"> <strong>DXGK_DISPLAY_INFORMATION</strong> </a>をゼロに構造体</p></td>
+<td align="left"><p>このシナリオは、システムが 2 つのグラフィックス カード、モニターが、電源オン自己テスト (POST)、現在のデバイスに接続されていないおよびオペレーティング システムを呼び出す場合にのみ、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a> POST デバイスを停止する関数。</p>
 <p>2 番目のグラフィックス アダプターの実行は引き続きここで、現在の表示し、投稿デバイスをサポートするアダプターの基本的なディスプレイ ドライバーはヘッドレス モードで実行されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Failure"></span><span id="failure"></span><span id="FAILURE"></span>エラー</p></td>
-<td align="left"><p>オペレーティング システムが Windows 7 スタイルの PnP 停止のドライバー インターフェイスを通じてを呼び出し、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff560781" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560781)"> <em>DxgkDdiStopDevice</em> </a>関数。</p>
+<td align="left"><p>オペレーティング システムが Windows 7 スタイルの PnP 停止のドライバー インターフェイスを通じてを呼び出し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_stop_device)"> <em>DxgkDdiStopDevice</em> </a>関数。</p>
 <p>BIOS ベースのシステムでは、ドライバーは BIOS 互換モードに表示を設定する必要があります。</p>
 <p>UEFI ベースのシステムの場合は、基本的なは、グラフィックス アダプターのヘッドレス モードでドライバーの実行を表示します。</p></td>
 </tr>

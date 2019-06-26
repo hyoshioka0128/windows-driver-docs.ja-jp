@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_MULTICAST_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8a1a08abebf1983eb97b74bba2f3da119d6e9b4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e75b6985c2ddb8def25b852cc2f1f4ac39fc4e71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330164"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359216"
 ---
 # <a name="oidwdisetmulticastlist"></a>OID\_WDI\_設定\_マルチキャスト\_一覧
 
@@ -25,7 +25,7 @@ OID\_WDI\_設定\_マルチキャスト\_リスト、特定のポートのマル
 
  
 
-IHV コンポーネントがリストのサイズがで指定された制限を超えた場合のコマンドは、失敗のみ[ **WDI\_TLV\_インターフェイス\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn897835)します。
+IHV コンポーネントがリストのサイズがで指定された制限を超えた場合のコマンドは、失敗のみ[ **WDI\_TLV\_インターフェイス\_属性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-interface-attributes)します。
 
 マルチキャスト パケットのポートを使用して、フィルタ リングを有効にすた後ホスト[OID\_WDI\_設定\_受信\_パケット\_フィルター](oid-wdi-set-receive-packet-filter.md)デバイスが受信を指定する必要がありますホストにポートのマルチキャスト リスト内のアドレスに一致する宛先アドレスでマルチキャスト フレーム。 デバイスの処理の一環として、マルチキャストの一覧をオフにする必要があります[OID\_WDI\_タスク\_DOT11\_リセット](oid-wdi-task-dot11-reset.md)します。 指定したマルチキャスト リストのコマンドが送信されると、ドライバーは、そのマルチキャストの一覧をクリアする必要があります。 この場合、パケットは示されませんをしない限り、OID\_WDI\_設定\_受信\_パケット\_フィルターには、WDI\_パケット\_フィルター\_すべて\_マルチキャスト ビット セット。
 
@@ -34,7 +34,7 @@ IHV コンポーネントがリストのサイズがで指定された制限を�
 
 | TLV                                                              | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                  |
 |------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------|
-| [**WDI\_TLV\_マルチキャスト\_一覧**](https://msdn.microsoft.com/library/windows/hardware/dn897849) |                                | x        | マルチキャスト MAC の一覧に対処します。 一覧は空にできません。 |
+| [**WDI\_TLV\_マルチキャスト\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-multicast-list) |                                | x        | マルチキャスト MAC の一覧に対処します。 一覧は空にできません。 |
 
  
 
@@ -43,7 +43,7 @@ IHV コンポーネントがリストのサイズがで指定された制限を�
 
 追加データがありません。 ヘッダー内のデータで十分です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

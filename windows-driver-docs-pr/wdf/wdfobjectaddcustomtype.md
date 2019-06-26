@@ -6,12 +6,12 @@ keywords:
 - WdfObjectAddCustomType マクロ
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93403b63cc319393ba087b3af0c1d7be89fb3cb0
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 3fe421c1173819cf2f810334b274eb9b467a7658
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161564"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372105"
 ---
 # <a name="wdfobjectaddcustomtype-macro"></a>WdfObjectAddCustomType マクロ
 
@@ -82,7 +82,7 @@ Framework のオブジェクトへのハンドル。
 
 **WdfObjectAddCustomType**の簡易版です[ **WdfObjectAddCustomTypeWithData**](wdfobjectaddcustomtypewithdata.md)します。
 
-オブジェクトのドライバーの種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://msdn.microsoft.com/library/windows/hardware/hh406457)します。
+オブジェクトのドライバーの種類の詳細については、次を参照してください。 [Framework オブジェクトのカスタム型](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-custom-types)します。
 
 <a name="examples"></a>例
 --------

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e10195a2a799df88bb46967355a0b4a373a3948
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49e7bda7dbcaef6921fa0957003c7b18873c4401
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372178"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367147"
 ---
 # <a name="bug-check-0xd2-bugcodeiddriver"></a>バグ チェック 0xD2:BUGCODE\_ID\_ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63372178"
 BUGCODE\_ID\_ドライバーのバグ チェックが 0x000000D2 の値を持ちます。 これは、NDIS ドライバーで問題が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="bugcodeiddriver-parameters"></a>BUGCODE\_ID\_ドライバーのパラメーター

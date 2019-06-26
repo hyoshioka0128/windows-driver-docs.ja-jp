@@ -4,12 +4,12 @@ description: Windows カーネルモード構成マネージャー
 ms.assetid: 0499121b-6f0b-464f-b422-610122fb7d3b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 074f89e6b4dd93398e6d64fb3a624d89466fe73c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d5afb5aa574b1a50f17eda4fb92ed4e03ff59b9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358065"
 ---
 # <a name="windows-kernel-mode-configuration-manager"></a>Windows カーネルモード構成マネージャー
 
@@ -18,9 +18,9 @@ Microsoft Windows の以前の日、アプリケーションとオペレーテ�
 
 Windows カーネル モードの構成マネージャーでは、レジストリを管理します。 ドライバーは、レジストリの変更について知っておく必要がある場合、によって、特定のレジストリ データに対してコールバックを登録する configuration manager のルーチンを使用できます。 次に、レジストリ内のデータが変更されたときに、コールバックがトリガーされ、コールバック情報は、ドライバーを処理するコードを実行することができます。
 
-Configuration manager への直接インターフェイスを提供するルーチンの文字が付いて"**Cm**"。 たとえば、 **CmRegisterCallback**します。 Configuration manager のルーチンの一覧は、次を参照してください。 [Configuration Manager ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff542038)します。
+Configuration manager への直接インターフェイスを提供するルーチンの文字が付いて"**Cm**"。 たとえば、 **CmRegisterCallback**します。 Configuration manager のルーチンの一覧は、次を参照してください。 [Configuration Manager ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
-直接、構成マネージャーを呼び出し、その他の方法は、ドライバーのレジストリを操作することがあります。 詳細については、ドライバーのレジストリを使用して、次を参照してください。 [、ドライバーのレジストリを使用して](using-the-registry-in-a-driver.md)と[ドライバーのレジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff549538)します。
+直接、構成マネージャーを呼び出し、その他の方法は、ドライバーのレジストリを操作することがあります。 詳細については、ドライバーのレジストリを使用して、次を参照してください。 [、ドライバーのレジストリを使用して](using-the-registry-in-a-driver.md)と[ドライバーのレジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)します。
 
  
 

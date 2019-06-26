@@ -4,12 +4,12 @@ description: モバイル ブロードバンド アプリでサービス ペー�
 ms.assetid: 7c13a42f-b808-4f33-a740-a8596b3520f7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a84ecc4c73c676032f9972e061d7789ca8d1aaa6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7680b18b9c8d4f8a290cf35f9bf33cfd74a0ec8a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377641"
 ---
 # <a name="design-services-and-goods-pages-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリでサービス ページと商品ページを設計する
 
@@ -38,7 +38,7 @@ ms.locfileid: "63378335"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
-[クイック スタート:ListView の追加](https://msdn.microsoft.com/library/windows/apps/hh465496)
+[クイック スタート:ListView の追加](https://docs.microsoft.com/previous-versions/windows/apps/hh465496(v=win.10))
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

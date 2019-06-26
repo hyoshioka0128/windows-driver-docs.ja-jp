@@ -4,12 +4,12 @@ description: Microsoft Visual studio では、実行中のプロセスにアタ�
 ms.assetid: C19D1B6F-B97B-4C1B-AD84-AC974C5F5C8C
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f04f48700e6a6633d84e8be61ec6bb2faedf155
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51ff969a84d6c6b7a0e8496f53a2c395f3e4ce59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327352"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366936"
 ---
 # <a name="span-iddebuggerdebuggingauser-modeprocessusingvisualstudiospandebugging-a-user-mode-process-using-visual-studio"></a><span id="debugger.debugging_a_user-mode_process_using_visual_studio"></span>Visual Studio を使用してユーザー モード プロセスのデバッグ
 
@@ -49,7 +49,7 @@ Microsoft Visual studio では、実行中のプロセスにアタッチまた�
 ## <a name="span-idattachingtoarunningprocessonaseparatecomputerspanspan-idattachingtoarunningprocessonaseparatecomputerspanspan-idattachingtoarunningprocessonaseparatecomputerspanattaching-to-a-running-process-on-a-separate-computer"></a><span id="Attaching_to_a_running_process_on_a_separate_computer"></span><span id="attaching_to_a_running_process_on_a_separate_computer"></span><span id="ATTACHING_TO_A_RUNNING_PROCESS_ON_A_SEPARATE_COMPUTER"></span>別のコンピューターで実行中のプロセスにアタッチします。
 
 
-場合があります、デバッガーとデバッグ中のコードは、別のコンピューターで実行します。 デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコードを実行するコンピューターを呼び出すと、*対象のコンピュータ*します。 ホスト コンピューターでは、Visual Studio からターゲット コンピューターを構成できます。 ターゲット コンピューターの構成と呼ばれます*プロビジョニング*対象のコンピュータ。 詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)」をご覧ください。
+場合があります、デバッガーとデバッグ中のコードは、別のコンピューターで実行します。 デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコードを実行するコンピューターを呼び出すと、*対象のコンピュータ*します。 ホスト コンピューターでは、Visual Studio からターゲット コンピューターを構成できます。 ターゲット コンピューターの構成と呼ばれます*プロビジョニング*対象のコンピュータ。 詳しくは、「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」をご覧ください。
 
 対象のコンピュータがプロビジョニングされると、ホスト コンピューター上の Visual Studio を使用して、ターゲット コンピューターで実行されているプロセスにアタッチすることができます。
 

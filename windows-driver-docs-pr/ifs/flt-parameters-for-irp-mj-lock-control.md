@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a84304a4abd2e921a06c0e78d7886651d1a45b1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7c2f7741283770aa656a4fbe36ba4a89842dec4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364986"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380344"
 ---
 # <a name="fltparameters-for-irpmjlockcontrol-union"></a>FLT\_IRP のパラメーター\_MJ\_ロック\_コントロール共用体
 
 
-次の共用体のコンポーネントが使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)操作は構造体[ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)します。
+次の共用体のコンポーネントが使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)操作は構造体[ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)します。
 
 <a name="syntax"></a>構文
 ------
@@ -46,7 +46,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>メンバー
+<a name="members"></a>Members
 -------
 
 **LockControl**  
@@ -73,11 +73,11 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>注釈
 -------
 
-[ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673)用の構造、 [ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)コールバック データによって表される操作 ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)構造体。
+[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)用の構造、 [ **IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)コールバック データによって表される操作 ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 含まれている、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体。
 
 IRP\_MJ\_ロック\_IRP ベースの I/O 操作または I/O 操作が高速コントロールであることができます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -96,39 +96,39 @@ IRP\_MJ\_ロック\_IRP ベースの I/O 操作または I/O 操作が高速コ�
 ## <a name="see-also"></a>関連項目
 
 
-[**アクセス\_マスク**](https://msdn.microsoft.com/library/windows/hardware/ff540466)
+[**アクセス\_マスク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)
 
-[**アクセス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff538840)
+[**アクセス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_access_state)
 
-[**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544645)
+[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544648)
+[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544654)
+[**FLT\_IS\_IRP\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)
+[**FltAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock)
 
-[**FltCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541834)
+[**FltCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforreadaccess)
 
-[**FltCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541837)
+[**FltCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforwriteaccess)
 
-[**FltFreeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff542969)
+[**FltFreeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfreefilelock)
 
-[**FltInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff543273)
+[**FltInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltinitializefilelock)
 
-[**FltProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff543427)
+[**FltProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltprocessfilelock)
 
-[**FltUninitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff544595)
+[**FltUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuninitializefilelock)
 
 [**IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)
 
-[**PFLT\_完了\_ロック\_コールバック\_データ\_ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff551073)
+[**PFLT\_完了\_ロック\_コールバック\_データ\_ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_complete_lock_callback_data_routine)
 
 [**PUNLOCK\_ルーチン**](punlock-routine.md)
 

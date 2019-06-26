@@ -13,12 +13,12 @@ keywords:
 - 送信待機/ウェイク Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2210ec915ca4d224f6ccbc2eeb3a4cef3d456cab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7682bcbc0d2fc5327067d49bfb68620f1fd2253
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342680"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364085"
 ---
 # <a name="sending-a-waitwake-irp"></a>待機/ウェイク IRP の送信
 
@@ -26,7 +26,7 @@ ms.locfileid: "63342680"
 
 
 
-マイナー power IRP コード[ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)デバイスの起動時またはシステムをスリープ解除しています。 自分自身またはシステムをスリープ解除できるデバイスのドライバーの送信**IRP\_MN\_待機\_WAKE**要求。 システムは、送信**IRP\_MN\_待機\_WAKE**電源スイッチなど、システムを常にスリープ解除するデバイスのみに要求します。
+マイナー power IRP コード[ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)デバイスの起動時またはシステムをスリープ解除しています。 自分自身またはシステムをスリープ解除できるデバイスのドライバーの送信**IRP\_MN\_待機\_WAKE**要求。 システムは、送信**IRP\_MN\_待機\_WAKE**電源スイッチなど、システムを常にスリープ解除するデバイスのみに要求します。
 
 ドライバーの送信、 **IRP\_MN\_待機\_WAKE** 2 つの理由の 1 つの要求。
 

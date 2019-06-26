@@ -3,12 +3,12 @@ Description: BIOS および UEFI テストには、USB ブートとオペレー�
 title: MUTT デバイスを使用した BIOS/UEFI のテスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 624a3ab4d1873b409dad699d68b2ea4232e1408e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6ed3f494c8b15012357efdd31af06fbf81589f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366066"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378323"
 ---
 # <a name="biosuefi-testing-with-the-mutt-devices"></a>MUTT デバイスを使用した BIOS/UEFI のテスト
 
@@ -49,7 +49,7 @@ BIOS/UEFI が構成されていることを想定して USB から起動しま�
 このシナリオで予想される結果は、SuperMUTT パック MUTT パックが存在する機能と運用オペレーティング システムで起動し、標準の MUTT を実行しているテストの後です。 テスト デバイスが検証されると、システムは (S3、S4、) は、サポートされているシステム電源の状態の各操作を実行、各システムの再開後に、MUTT テスト デバイスは機能を維持するかを検証する必要があります。 再開の各イベント後に、MUTT テストを実行します。
 
 ## <a name="related-topics"></a>関連トピック
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Microsoft USB Test Tool (MUTT) デバイス](microsoft-usb-test-tool--mutt--devices.md)  
 
 

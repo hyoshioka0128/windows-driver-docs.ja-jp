@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b19f8db5152c9fdb7a8265216ce8148c7e73330d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05a96b83eb73b080c713fc7f0dab981305893a5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370890"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361616"
 ---
 # <a name="bug-check-0xc000021a-statussystemprocessterminated"></a>バグ チェック 0xC000021A:ステータス\_システム\_プロセス\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "63370890"
 ステータス\_システム\_プロセス\_TERMINATED バグ チェックが 0xC000021A の値を持ちます。 これは、ユーザー モードの重要なサブシステムでエラーが発生したことを意味します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="statussystemprocessterminated-parameters"></a>ステータス\_システム\_プロセス\_終了パラメーター
@@ -85,7 +85,7 @@ ms.locfileid: "63370890"
 
 -   最後にインストールされたアプリケーションを参照してください。 実行するこの移動を「アンインストールまたは変更するプログラム」がインストールされているアプリケーションをコントロール パネルと並べ替えには、インストールの日付。
 
--   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+-   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
 
 <a name="remarks"></a>注釈
 ----------
@@ -98,7 +98,7 @@ ms.locfileid: "63370890"
     SFC /scannow
     ```
 
-    詳細については、次を参照してください。[システム ファイル チェッカー ツールを使用してシステム ファイルの欠落または破損の修復](https://support.microsoft.com/kb/929833)します。
+    詳細については、次を参照してください。[システム ファイル チェッカー ツールを使用してシステム ファイルの欠落または破損の修復](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)します。
 
 -   ウイルス検出プログラムを実行します。 ウイルスに感染する可能性、Windows 用にフォーマットされたハード_ディスクのすべての種類と、結果として得られるディスクの破損は、システムのバグ チェックのコードを生成できます。 ウイルス検出プログラムへの感染マスター ブート レコードのチェックを確認します。
 

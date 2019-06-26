@@ -6,12 +6,12 @@ ms.assetid: 95ec9ed8-014f-4d01-bed7-3aeb29cd9e73
 keywords:
 - IRP_MN_QUERY_REMOVE_DEVICE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 5534a502f0f465fc2f94c9dbe7853100ec199732
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d4e6c8e515785d6629a8281cde1d406aa676305
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370859"
 ---
 # <a name="irpmnqueryremovedevice"></a>IRP\_MN\_クエリ\_削除\_デバイス
 
@@ -50,7 +50,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 この IRP に応答して、ドライバーは、コンピューターを中断することに、デバイスを削除できるかどうかを示します。
 
-この IRP の処理の詳細については、次を参照してください。 [IRP の処理\_MN\_クエリ\_削除\_デバイス要求](https://msdn.microsoft.com/library/windows/hardware/ff546674)します。 デバイスの削除のサポートに関する概要については、次を参照してください。[デバイスを削除する](https://msdn.microsoft.com/library/windows/hardware/ff561046)します。
+この IRP の処理の詳細については、次を参照してください。 [IRP の処理\_MN\_クエリ\_削除\_デバイス要求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-remove-device-request)します。 デバイスの削除のサポートに関する概要については、次を参照してください。[デバイスを削除する](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)します。
 
 **この IRP を送信します。**
 

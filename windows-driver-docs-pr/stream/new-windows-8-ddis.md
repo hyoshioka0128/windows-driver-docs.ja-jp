@@ -4,12 +4,12 @@ ms.assetid: B3C223BD-2A00-4B87-9D0E-557C0CA3F2DE
 description: AVStream ストリーミング メディアに関する情報は、新しいまたは Windows 8 向けに更新されたドライバー インターフェイスを提供します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feb2052137a12b339916fab962d53ce3696b6dea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 338b12fd0d7badc84ce0dde98274f90592ff39d7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363270"
 ---
 # <a name="new-avstream-interfaces-for-windows-8"></a>Windows 8 用の新しい AVStream インターフェイス
 
@@ -28,29 +28,29 @@ Windows 8 以降では、USB ビデオ クラス ドライバーの新しいバ�
 
 -   [USB ビデオ クラス ドライバーの概要](usb-video-class-driver-overview.md)
 -   [USB H.264 ビデオをカメラのサポート](usb-h-264-video-cameras-support.md)
--   [**KS\_DATAFORMAT\_H264VIDEOINFO**](https://msdn.microsoft.com/library/windows/hardware/hh463996)
--   [**KS\_DATARANGE\_H264\_ビデオ**](https://msdn.microsoft.com/library/windows/hardware/hh464002)
--   [**KS\_H264VIDEOINFO**](https://msdn.microsoft.com/library/windows/hardware/hh464008)
+-   [**KS\_DATAFORMAT\_H264VIDEOINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_dataformat_h264videoinfo)
+-   [**KS\_DATARANGE\_H264\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_h264_video)
+-   [**KS\_H264VIDEOINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_h264videoinfo)
 
-新しい定数の値が追加されているさらに、 [ **KS\_VideoControlFlags** ](https://msdn.microsoft.com/library/windows/hardware/ff567696)列挙体。
+新しい定数の値が追加されているさらに、 [ **KS\_VideoControlFlags** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ks_videocontrolflags)列挙体。
 
 ## <a name="image-data-format-structures"></a>イメージ データの形式の構造
 
 
 これらの構造は、JPEG イメージのキャプチャで使用して pin (またはストリーム) にイメージ データを指定するエンコードされます。
 
--   [**KS\_DATAFORMAT\_IMAGEINFO**](https://msdn.microsoft.com/library/windows/hardware/jj151598)
--   [**KS\_DATARANGE\_イメージ**](https://msdn.microsoft.com/library/windows/hardware/jj151599)
+-   [**KS\_DATAFORMAT\_IMAGEINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_dataformat_imageinfo)
+-   [**KS\_DATARANGE\_イメージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_image)
 
 ## <a name="device-removal-and-preemption"></a>デバイスの削除および切断
 
 
 この新しいインターフェイスは、カメラ デバイス (失わ) システムから削除されましたまたは新しい UWP アプリでは割り込まれましたときに使用されます。
 
--   [**KSEVENTSETID\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/jj156036)
--   [**KSEVENT\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/jj151588)
--   [**KSEVENT\_デバイス\_LOST**](https://msdn.microsoft.com/library/windows/hardware/jj156039)
--   [**KSEVENT\_デバイス\_割り込み**](https://msdn.microsoft.com/library/windows/hardware/jj156040)
+-   [**KSEVENTSETID\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-device)
+-   [**KSEVENT\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksevent_device)
+-   [**KSEVENT\_デバイス\_LOST**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-device-lost)
+-   [**KSEVENT\_デバイス\_割り込み**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-device-preempted)
 
  
 

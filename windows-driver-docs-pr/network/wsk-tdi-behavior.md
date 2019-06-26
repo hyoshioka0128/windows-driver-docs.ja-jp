@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WSK_TDI_BEHAVIOR ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 6321bd798bdec847caaefa8a4dddc517cf5e645a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9084b49cabc81300acf2bf805a64758e421897e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375288"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379714"
 ---
 # <a name="wsktdibehavior"></a>WSK\_TDI\_動作
 
@@ -20,11 +20,11 @@ ms.locfileid: "63375288"
 
  
 
-WSK アプリケーションの使用、WSK\_TDI\_WSK サブシステムがネットワーク I/O を転送するかどうか、クライアントの動作が制御する操作を制御[TDI](https://msdn.microsoft.com/library/windows/hardware/ff565094)トランスポート。 WSK アプリケーションは、WSK サブシステムの既定の動作をオーバーライドする必要がある場合にのみ、このクライアントの管理操作を使用します。
+WSK アプリケーションの使用、WSK\_TDI\_WSK サブシステムがネットワーク I/O を転送するかどうか、クライアントの動作が制御する操作を制御[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))トランスポート。 WSK アプリケーションは、WSK サブシステムの既定の動作をオーバーライドする必要がある場合にのみ、このクライアントの管理操作を使用します。
 
 WSK アプリケーション、WSK を使用している場合\_TDI\_クライアント コントロールの操作の動作が行う必要があります、ソケットを作成する前にします。
 
-WSK アプリケーションが呼び出す WSK サブシステムが TDI トランスポートにネットワーク I/O を転送するかどうかを制御するため、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)関数は次のパラメーター。
+WSK アプリケーションが呼び出す WSK サブシステムが TDI トランスポートにネットワーク I/O を転送するかどうかを制御するため、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数は次のパラメーター。
 
 <table>
 <colgroup>

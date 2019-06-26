@@ -5,12 +5,12 @@ ms.assetid: 8aaaa08b-b239-4648-8c4f-8db2efbda551
 ms.date: 08/08/2017
 keywords: -SO_CONDITIONAL_ACCEPT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ce45eb619d33c7feae23cf24c6f6b337bbd52bba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e57bbfe05657c5d18b076a727c4977e90ca17b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373770"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379114"
 ---
 # <a name="soconditionalaccept"></a>したがって\_条件付き\_ACCEPT
 
@@ -19,7 +19,7 @@ SO の状態\_条件付き\_ACCEPT ソケット オプションは、リスナ �
 
 WSK アプリケーションでは、このソケット オプションを設定する場合、ローカル トランスポート アドレスをリッスンしているソケットがバインドされる前に、実行する必要があります。
 
-WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -130,7 +130,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 
 一部のトランスポート プロトコル サポート条件ではありませんがリスニング ソケットでモードを受け付ける場合があります。
 
-条件付きで着信接続の受け入れの詳細については、次を参照してください。[リッスン中の接続と着信接続を受け入れる](https://msdn.microsoft.com/library/windows/hardware/ff557059)します。
+条件付きで着信接続の受け入れの詳細については、次を参照してください。[リッスン中の接続と着信接続を受け入れる](https://docs.microsoft.com/windows-hardware/drivers/network/listening-for-and-accepting-incoming-connections)します。
 
 <a name="requirements"></a>要件
 ------------

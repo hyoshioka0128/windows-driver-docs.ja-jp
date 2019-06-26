@@ -1,17 +1,17 @@
 ---
-title: モバイル ブロード バンド アプリ内購入フローをデザイン
-description: モバイル ブロード バンド アプリ内購入フローをデザイン
+title: モバイル ブロードバンド アプリで購入フローを設計する
+description: モバイル ブロードバンド アプリで購入フローを設計する
 ms.assetid: 1243b255-aac6-4d75-826a-e42482f5ac1b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0d5793433efe779b06f72c59ac7b6079704f3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 44539ff103b25ae0ace9b1d8800a1efc0f6c1200
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528117"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379335"
 ---
-# <a name="design-purchase-flows-in-a-mobile-broadband-app"></a>モバイル ブロード バンド アプリ内購入フローをデザイン
+# <a name="design-purchase-flows-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリで購入フローを設計する
 
 
 モバイル ブロード バンド アプリでは、使用してプランを購入するユーザーの購入のフローを含めることができます。 初めての購入を web 経由で購入フローをサポートします。 購入のフローの標準的な推奨事項を次に示します。
@@ -46,7 +46,7 @@ ms.locfileid: "56528117"
 
     -   数回のクリックとフィールドの数を最小限に抑えます。
 
-4.  ユーザーの情報を入力すると、購入を完了する前に、注文を確認することを許可します。 注文、アクティブ化が簡単な場合は、アクティブ化を続行し、アプリのランディング ページにリダイレクトします。 アクティブ化の時間がかかるが予想される場合は、アクティブ化の進行状況のプレース ホルダー ページが含まれますをアクティブ化が行われていることを表示する進行状況コントロールを使用することができます。 プログレス コントロールの概要の詳細については、[クイック スタート: 進行状況コントロールを追加する](https://msdn.microsoft.com/library/windows/apps/hh465487)を参照してください。
+4.  ユーザーの情報を入力すると、購入を完了する前に、注文を確認することを許可します。 注文、アクティブ化が簡単な場合は、アクティブ化を続行し、アプリのランディング ページにリダイレクトします。 アクティブ化の時間がかかるが予想される場合は、アクティブ化の進行状況のプレース ホルダー ページが含まれますをアクティブ化が行われていることを表示する進行状況コントロールを使用することができます。 プログレス コントロールの概要の詳細については、次を参照してください。[クイック スタート: 進行状況コントロールを追加する](https://docs.microsoft.com/previous-versions/windows/apps/hh465487(v=win.10))します。
 
 ## <a name="span-idquicksummaryspanspan-idquicksummaryspanspan-idquicksummaryspanquick-summary"></a><span id="Quick_summary"></span><span id="quick_summary"></span><span id="QUICK_SUMMARY"></span>簡単な概要
 
@@ -78,17 +78,17 @@ ms.locfileid: "56528117"
 ## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>その他のリソース
 
 
--   ビューとレイアウトの詳細については: を参照してください[レイアウトの選択](https://msdn.microsoft.com/library/windows/apps/hh465327)します。
+-   ビューとレイアウトの詳細については: を参照してください[レイアウトの選択](https://docs.microsoft.com/previous-versions/windows/apps/hh465327(v=win.10))します。
 
--   Listview の詳細については、次を参照してください。[クイック スタート。ListView を追加する](https://msdn.microsoft.com/library/windows/apps/hh465496)します。
+-   Listview の詳細については、次を参照してください。[クイック スタート。ListView を追加する](https://docs.microsoft.com/previous-versions/windows/apps/hh465496(v=win.10))します。
 
--   エラー処理の設計ガイダンスについては、[、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)を参照してください。
+-   エラー処理の設計ガイダンスについては、次を参照してください。 [、UI レイアウト](https://docs.microsoft.com/previous-versions/windows/apps/hh465304(v=win.10))します。
 
--   ユーザー補助のガイダンスについては、[、C++ を使用して UWP アプリのユーザー補助機能C#、または Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)を参照してください。
+-   ユーザー補助のガイダンスについては、次を参照してください。 [、C++ を使用して UWP アプリのユーザー補助機能C#、または Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh452680(v=win.10))します。
 
--   組み込みのコントロールを使用する方法の詳細については、[コントロールやコンテンツを追加する](https://msdn.microsoft.com/library/windows/apps/hh465393)を参照してください。
+-   組み込みのコントロールを使用する方法の詳細については、次を参照してください。[コントロールやコンテンツを追加する](https://docs.microsoft.com/previous-versions/windows/apps/hh465393(v=win.10))します。
 
--   タッチ入力のガイドラインについては、次を参照してください。[クイック スタート。タッチ入力](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)します。
+-   タッチ入力のガイドラインについては、次を参照してください。[クイック スタート。タッチ入力](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

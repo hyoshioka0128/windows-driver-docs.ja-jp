@@ -9,12 +9,12 @@ keywords:
 - INF エントリ WDK RSS
 ms.date: 02/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 595dda1f86ca1a69a9cd40f9dab06b2f1e7b25a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2678acbbcda42f5afd9dc6a80f8e936ec15fd421
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390658"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378626"
 ---
 # <a name="standardized-inf-keywords-for-rss"></a>RSS 用の標準化された INF キーワード
 
@@ -127,7 +127,7 @@ NDIS 6.30 サポートが追加されました **\*RSSProfile**します。
 
 PCI 拡張カードのドライバーでは、NUMA ノードに接続されているため、最も近いノードがどの PCI スロットにカードを依存の INF に静的に ID を指定しないでください。  指定のみ **\*NumaNodeId**かどうか、ネットワーク アダプターは、システムに統合されて、NUMA ノードは、事前に既知のおよびノードは、ACPI をクエリすることによって実行時に決定できません。
 
-**注**  NDIS がこの値を使用してこのキーワードが存在し、その値が、コンピューターの NUMA ノード数より小さい場合、 **PreferredNumaNode**内のメンバー、 [ **NDIS\_RSS\_プロセッサ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567274)構造体。
+**注**  NDIS がこの値を使用してこのキーワードが存在し、その値が、コンピューターの NUMA ノード数より小さい場合、 **PreferredNumaNode**内のメンバー、 [ **NDIS\_RSS\_プロセッサ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_processor_info)構造体。
 
  
 

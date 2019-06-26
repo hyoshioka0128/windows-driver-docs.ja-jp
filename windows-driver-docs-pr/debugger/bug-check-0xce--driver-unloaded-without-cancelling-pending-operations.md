@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6185ab8b90113e2ec9911236cf584d2e1a43304f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 258b8c3d03638b7fbe200e093223bcde615364c7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371774"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361583"
 ---
 # <a name="bug-check-0xce-driverunloadedwithoutcancellingpendingoperations"></a>バグ チェック 0xCE:ドライバー\_UNLOADED\_せず\_CANCELLING\_PENDING\_操作
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371774"
 ドライバー\_UNLOADED\_せず\_CANCELLING\_PENDING\_操作のバグ チェックが 0x000000CE の値を持ちます。 これは、ドライバーをアンロードする前に保留中の操作をキャンセルするが失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="driverunloadedwithoutcancellingpendingoperations-parameters"></a>ドライバー\_UNLOADED\_せず\_CANCELLING\_PENDING\_操作パラメーター

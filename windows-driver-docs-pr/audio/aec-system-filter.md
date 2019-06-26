@@ -18,12 +18,12 @@ keywords:
 - オーディオ フィルター グラフを WDK
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce62b73ba99f467017bb4007ecb5335e438da2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 436e12fd3a3eaf8f9880987876a0cd5431a8db00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326018"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355780"
 ---
 # <a name="aec-system-filter"></a>AEC システム フィルター
 
@@ -154,7 +154,7 @@ AEC システム フィルターのピンすべては、次の表に示すよう
 
  
 
-詳細については、 **MajorFormat**、**サブフォーマット**、および**指定子**、メンバーを参照してください[ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658). 例については、 [ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096)これら 3 つのパラメーター値を使用するデータ範囲の記述子を参照してください[PCM Stream データ範囲](pcm-stream-data-range.md)します。
+詳細については、 **MajorFormat**、**サブフォーマット**、および**指定子**、メンバーを参照してください[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85)). 例については、 [ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)これら 3 つのパラメーター値を使用するデータ範囲の記述子を参照してください[PCM Stream データ範囲](pcm-stream-data-range.md)します。
 
  
 

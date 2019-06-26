@@ -6,21 +6,21 @@ ms.date: 07/18/2017
 keywords:
 - WSK_TDI_DEVICENAME_MAPPING ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 626198cc16d0a30a644485fcf8e486cc31e48c36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57851b9e6e76a0d889724b84e959c8fe03bbf8b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379712"
 ---
 # <a name="wsktdidevicenamemapping"></a>WSK\_TDI\_DEVICENAME\_マッピング
 
 
-WSK アプリケーションの使用、WSK\_TDI\_DEVICENAME\_アドレス ファミリの組み合わせにマップするクライアント コントロールの操作をマッピングするには、ソケットの種類、およびプロトコルのデバイス名を[TDI](https://msdn.microsoft.com/library/windows/hardware/ff565094)トランスポート。 TDI トランスポートのサポートが必要な場合にのみ、WSK アプリケーションはこのクライアントの管理操作を使用します。 WSK アプリケーションでは、ソケットを作成するとき、WSK サブシステムは、アドレス ファミリ、ソケットの種類、および WSK アプリケーションによって指定されたプロトコルの組み合わせに対するネイティブ サポートがない場合にのみマッピングの一覧を参照します。
+WSK アプリケーションの使用、WSK\_TDI\_DEVICENAME\_アドレス ファミリの組み合わせにマップするクライアント コントロールの操作をマッピングするには、ソケットの種類、およびプロトコルのデバイス名を[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))トランスポート。 TDI トランスポートのサポートが必要な場合にのみ、WSK アプリケーションはこのクライアントの管理操作を使用します。 WSK アプリケーションでは、ソケットを作成するとき、WSK サブシステムは、アドレス ファミリ、ソケットの種類、および WSK アプリケーションによって指定されたプロトコルの組み合わせに対するネイティブ サポートがない場合にのみマッピングの一覧を参照します。
 
 WSK アプリケーション、WSK を使用している場合\_TDI\_DEVICENAME\_アドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせを TDI トランスポートのデバイス名にマップするクライアント コントロールの操作のマッピングを行う必要がありますいずれかの作成前にソケット。
 
-アドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせを TDI トランスポートのデバイス名をマップする WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)関数は次のパラメーター。
+アドレス ファミリ、ソケットの種類、およびプロトコルの組み合わせを TDI トランスポートのデバイス名をマップする WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -44,7 +44,7 @@ WSK アプリケーション、WSK を使用している場合\_TDI\_DEVICENAME\
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff571192" data-raw-source="[&lt;strong&gt;WSK_TDI_MAP_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571192)"> <strong>WSK_TDI_MAP_INFO</strong> </a>アドレス ファミリの組み合わせのマッピングの一覧を含む構造体のソケットの種類、およびプロトコルを<a href="https://msdn.microsoft.com/library/windows/hardware/ff565091" data-raw-source="[TDI](https://msdn.microsoft.com/library/windows/hardware/ff565091)">TDI</a>デバイス名。</p></td>
+<td><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_tdi_map_info" data-raw-source="[&lt;strong&gt;WSK_TDI_MAP_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_tdi_map_info)"> <strong>WSK_TDI_MAP_INFO</strong> </a>アドレス ファミリの組み合わせのマッピングの一覧を含む構造体のソケットの種類、およびプロトコルを<a href="https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565091(v=vs.85)" data-raw-source="[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565091(v=vs.85))">TDI</a>デバイス名。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -65,11 +65,11 @@ WSK アプリケーション、WSK を使用している場合\_TDI\_DEVICENAME\
 </tbody>
 </table>
 
-TDI トランスポートの使用に関する詳細については、次を参照してください。 [TDI トランスポートを使用して](https://msdn.microsoft.com/library/windows/hardware/ff571015)します。
+TDI トランスポートの使用に関する詳細については、次を参照してください。 [TDI トランスポートを使用して](https://docs.microsoft.com/windows-hardware/drivers/network/using-tdi-transports)します。
 
 *Irp*パラメーターである必要があります**NULL**このクライアントのコントロールの操作。
 
-**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](https://msdn.microsoft.com/library/windows/hardware/ff571068)または[Winsock Kernel](https://msdn.microsoft.com/library/windows/hardware/ff571083)代わりにします。
+**注**  Windows Vista の後に、TDI が Microsoft Windows のバージョンでサポートされません。 使用[Windows フィルタ リング プラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/network/windows-filtering-platform-callout-drivers2)または[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)代わりにします。
 
  
 

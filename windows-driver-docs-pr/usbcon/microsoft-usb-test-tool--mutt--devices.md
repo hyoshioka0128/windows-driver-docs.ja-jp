@@ -3,12 +3,12 @@ Description: Microsoft USB Test Tool (MUTT) には、USB のハードウェア�
 title: Microsoft USB テスト ツール (MUTT) デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 894db9398ea4e54685131e01e8ae2c6b9168802c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8cabb6d20a401825b247b2157314a5ad343d22c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379982"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379096"
 ---
 # <a name="microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB テスト ツール (MUTT) デバイス
 
@@ -133,7 +133,7 @@ USB タイプ C 接続 Exerciser (USB 型 C ConnEx) では、USB 型-C# の相�
 ![USB タイプ C ConnEx](images/connexc-side.jpg)
 
 ## <a name="related-topics"></a>関連トピック
-[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
 [Windows での USB ハードウェア、ドライバー、およびアプリのテスト](usb-driver-testing-guide.md)  
 
 

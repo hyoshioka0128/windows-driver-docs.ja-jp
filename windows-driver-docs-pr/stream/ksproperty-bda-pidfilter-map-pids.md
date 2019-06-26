@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a63f6dafe9d59b164126c4b267b35f388ff2c3f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6ef7a40a5ea937cd5bfb8344df62acedb4d69e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368854"
 ---
 # <a name="kspropertybdapidfiltermappids"></a>KSPROPERTY\_BDA\_PIDFILTER\_マップ\_PID
 
@@ -70,7 +70,7 @@ BDA\_PID\_マップ構造には、入力ストリームからフィルター処�
 
 PID フィルター ノードでは、ノードがダウン ストリーム渡して現在いる Pid の一覧で、このプロパティで提供されるリストを結合します。 指定されたリスト内の PID が PID フィルター ノードの一覧で既に場合は、指定された一覧の出力の種類が優先されます。 このプロパティは、型、ノードを出力するデータの取得にも使用されます。 BDA\_PID\_マップ構造には、この出力データのマップがについて説明します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -89,9 +89,9 @@ PID フィルター ノードでは、ノードがダウン ストリーム渡�
 ## <a name="see-also"></a>関連項目
 
 
-[**BDA\_PID\_マップ**](https://msdn.microsoft.com/library/windows/hardware/ff556534)
+[**BDA\_PID\_マップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_pid_map)
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

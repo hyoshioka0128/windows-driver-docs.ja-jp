@@ -10,12 +10,12 @@ keywords:
 - スイッチの自動表示 WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a1bf1a049a3685b00da1bf134c191d24a76cc44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 582c40ac08c11be025d8acce0fefec233656a215
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331278"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355539"
 ---
 # <a name="supporting-display-output-and-acpi-events"></a>ディスプレイ出力および ACPI イベントのサポート
 
@@ -25,7 +25,7 @@ ms.locfileid: "63331278"
 ## <a name="span-idbiosrequirementstosupportdisplayoutputdevicesspanspan-idbiosrequirementstosupportdisplayoutputdevicesspanspan-idbiosrequirementstosupportdisplayoutputdevicesspanbios-requirements-to-support-display-output-devices"></a><span id="BIOS_Requirements_to_Support_Display_Output_Devices"></span><span id="bios_requirements_to_support_display_output_devices"></span><span id="BIOS_REQUIREMENTS_TO_SUPPORT_DISPLAY_OUTPUT_DEVICES"></span>ディスプレイ デバイスの出力をサポートするための BIOS 要件
 
 
-ディスプレイのミニポート ドライバーまたはシステム BIOS サポート表示出力デバイス構成によって公開されている ACPI メソッド。 [ **DxgkDdiNotifyAcpiEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff559695) ACPI イベントに関するディスプレイ ミニポート ドライバーに通知する関数が呼び出されます。 出力デバイス スイッチに、ユーザーがキーボード ショートカットを押したときになど、 **DxgkDdiNotifyAcpiEvent**関数を呼び出すと ACPI\_通知\_サイクル\_表示\_DXGK のホットキー通知と、要求が入力\_ACPI\_変更\_表示\_モード。 その結果、オペレーティング システムの呼び出し、 [ **DxgkDdiRecommendFunctionalVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559775)出力デバイスを選択した表示のクエリを実行する関数。
+ディスプレイのミニポート ドライバーまたはシステム BIOS サポート表示出力デバイス構成によって公開されている ACPI メソッド。 [ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event) ACPI イベントに関するディスプレイ ミニポート ドライバーに通知する関数が呼び出されます。 出力デバイス スイッチに、ユーザーがキーボード ショートカットを押したときになど、 **DxgkDdiNotifyAcpiEvent**関数を呼び出すと ACPI\_通知\_サイクル\_表示\_DXGK のホットキー通知と、要求が入力\_ACPI\_変更\_表示\_モード。 その結果、オペレーティング システムの呼び出し、 [ **DxgkDdiRecommendFunctionalVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_recommendfunctionalvidpn)出力デバイスを選択した表示のクエリを実行する関数。
 
 Dispmprt.h では、ACPI 表示出力には、次のエイリアスが定義されています。
 
@@ -44,7 +44,7 @@ Dispmprt.h では、ACPI 表示出力には、次のエイリアスが定義さ�
 ## <a name="span-idexternalasynchronouseventsspanspan-idexternalasynchronouseventsspanspan-idexternalasynchronouseventsspanexternal-asynchronous-events"></a><span id="External_Asynchronous_Events"></span><span id="external_asynchronous_events"></span><span id="EXTERNAL_ASYNCHRONOUS_EVENTS"></span>外部の非同期イベント
 
 
-オペレーティング システムは、表示の出力デバイスに影響する外部の非同期のイベントについて通知する必要があります。 次の通知と関連する要求の種類が Dispmprt.h で定義されているし、で使用される、 [ **DxgkDdiNotifyAcpiEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff559695)関数。
+オペレーティング システムは、表示の出力デバイスに影響する外部の非同期のイベントについて通知する必要があります。 次の通知と関連する要求の種類が Dispmprt.h で定義されているし、で使用される、 [ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)関数。
 
 -   ACPI\_通知\_サイクル\_表示\_ホットキー - は、ユーザーのサイクルの表示のキーボード ショートカットが押されたことをオペレーティング システムに通知します。
 -   ACPI\_通知\_次\_表示\_ホットキー - は、ユーザーが次の表示のキーボード ショートカットを押されたことをオペレーティング システムに通知します。
@@ -59,7 +59,7 @@ Dispmprt.h では、ACPI 表示出力には、次のエイリアスが定義さ�
 -   DXGK\_ACPI\_変更\_表示\_モード - 要求モードを開始する変更を新しいアクティブなビデオ存在するネットワーク (VidPN) をお勧めします。
 -   DXGK\_ACPI\_ポーリング\_表示\_ディスプレイ アダプターの子の接続をポーリングする要求の子。
 
-**注**、以前の要求の値、 *AcpiFlags*パラメーターによって返される、 [ **DxgkDdiNotifyAcpiEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff559695)関数。
+**注**、以前の要求の値、 *AcpiFlags*パラメーターによって返される、 [ **DxgkDdiNotifyAcpiEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)関数。
 
  
 

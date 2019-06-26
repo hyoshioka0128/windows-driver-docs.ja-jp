@@ -4,12 +4,12 @@ description: プリンター ドライバーの分離では、印刷スプーラ
 ms.assetid: b0f11b3f-92f7-41f6-8edb-63b5651f5499
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d60aeadbefa59113df234c245fb03116f98744c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4cbff1bd4a672e0055ac1aa0b4579b4b3de08d1b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380650"
 ---
 # <a name="printer-driver-isolation"></a>プリンター ドライバーの分離
 
@@ -36,7 +36,7 @@ Windows の以前のバージョンでプリンター ドライバーを常に�
 
 Windows 7 および Windows Server 2008 R2 では、管理者は、オプションとして、構成できますプリンター ドライバーを分離プロセス - は、スプーラーのプロセスから別のプロセスで実行します。 ドライバーを分離するには、管理者は、印刷サービスの停止からドライバー コンポーネントで障害を予防できます。
 
-スプーラー機能の詳細については、次を参照してください。[スプーラー コンポーネントの関数と構造体](https://msdn.microsoft.com/library/windows/hardware/ff562686)します。
+スプーラー機能の詳細については、次を参照してください。[スプーラー コンポーネントの関数と構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)します。
 
 ### <a href="" id="driver-isolation-support-in-inf-files"></a> INF ファイルでのドライバーの分離のサポート
 

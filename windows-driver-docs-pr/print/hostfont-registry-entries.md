@@ -8,12 +8,12 @@ keywords:
 - レジストリ エントリの HostFontXxx WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3724e5fcd49ebd48875b94253914f7bc08c2d163
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf5315ae20c417bddc4aca6391adcb2e7b85164c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360530"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378590"
 ---
 # <a name="hostfont-registry-entries"></a>ホストフォント レジストリ エントリ
 
@@ -21,7 +21,7 @@ ms.locfileid: "63360530"
 
 
 
-OEM プラグイン %hostfont% 対応 PostScript インタープリターに一連のフォントと Pscript5 ドライバーに印刷ジョブの過程でダウンロードできるものと同じですが、使用できるを CIDFonts Pscript5 ドライバーに通知できます。 通知のフォントがこのように処理するは、レジストリ キーを配置することによって行われます。 Pscript5 ドライバーは、新しい情報がレジストリを確認します。 ときにその[ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)関数が呼び出されます。 プラグインことを確認、PDEV を有効にするには、現在のデータが。
+OEM プラグイン %hostfont% 対応 PostScript インタープリターに一連のフォントと Pscript5 ドライバーに印刷ジョブの過程でダウンロードできるものと同じですが、使用できるを CIDFonts Pscript5 ドライバーに通知できます。 通知のフォントがこのように処理するは、レジストリ キーを配置することによって行われます。 Pscript5 ドライバーは、新しい情報がレジストリを確認します。 ときにその[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)関数が呼び出されます。 プラグインことを確認、PDEV を有効にするには、現在のデータが。
 
 次の表は、%hostfont% レジストリ エントリの名前、その種類、および値を示します。 プラグインの OEM は、これらのエントリの名前を設定する SetPrinterData (Microsoft Windows SDK のドキュメントで説明) を呼び出す必要があります。 HostFont*Xxx*エントリの名前は相互に排他的です。 つまり、任意の時点で、レジストリに次のエントリの名前の 1 つだけ存在できます。
 

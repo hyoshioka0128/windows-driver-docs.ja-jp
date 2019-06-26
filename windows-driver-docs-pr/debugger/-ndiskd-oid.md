@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d13728dd646a86dd7bd32073a0886142beb6c77
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8a9af5dcfcdf9e2d2be4f5bd658b746334709b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335909"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363117"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
 
@@ -52,7 +52,7 @@ Ndiskd.dll
 <a name="remarks"></a>注釈
 -------
 
-**! ndiskd.oid**リストが表示保留中のすべての Oid のシステムで一度にシステム ハングのデバッグできるようにまたは[0x9F バグ チェック](https://msdn.microsoft.com/library/windows/hardware/ff559329)状況 (ドライバー\_POWER\_状態\_エラー)。 たとえば、架空の 0x9F バグ チェックが明らかに、システムが IRP のハング状態にして、NDIS を待機していたことを分析します。 は、NDIS、OS から Irp が電源切り替え効果も含めて、Oid に変換を実行してその **! ndiskd.oid** 、この例で、スタックの一番下にあるデバイス可能性がありますがされて音を参照してくださいでした、 [OID\_PNP\_設定\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)スタックの残りの部分がハングしたとします。 問題を解決するため、そのデバイスが長時間保留中の OID を保持する理由を調査する可能性がありますし、NDIS ドライバーは 1 秒間に複数の OID を保留しないを必要があります。
+**! ndiskd.oid**リストが表示保留中のすべての Oid のシステムで一度にシステム ハングのデバッグできるようにまたは[0x9F バグ チェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)状況 (ドライバー\_POWER\_状態\_エラー)。 たとえば、架空の 0x9F バグ チェックが明らかに、システムが IRP のハング状態にして、NDIS を待機していたことを分析します。 は、NDIS、OS から Irp が電源切り替え効果も含めて、Oid に変換を実行してその **! ndiskd.oid** 、この例で、スタックの一番下にあるデバイス可能性がありますがされて音を参照してくださいでした、 [OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)スタックの残りの部分がハングしたとします。 問題を解決するため、そのデバイスが長時間保留中の OID を保持する理由を調査する可能性がありますし、NDIS ドライバーは 1 秒間に複数の OID を保留しないを必要があります。
 
 <a name="examples"></a>例
 --------
@@ -121,32 +121,32 @@ ALL PENDING OIDs
         Current OID        OID_GEN_STATISTICS
 ```
 
-この例では保留中の OID は[OID\_GEN\_統計](https://msdn.microsoft.com/library/windows/hardware/ff569640)します。 結果を表示する! ndiskd.oid、Oid 通常に渡されたフィルターからミニポートとフィルターは、OID 要求を複製し、下位のスタックでは、それらを渡すことを思い出してください。 そのため、この例では同じ名前の 3 つの独立した OID 要求があるように思えるかもしれませんは行われている 3 つの Oid と 3 つのドライバーに物理的に分散 1 論理操作実際にです。
+この例では保留中の OID は[OID\_GEN\_統計](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)します。 結果を表示する! ndiskd.oid、Oid 通常に渡されたフィルターからミニポートとフィルターは、OID 要求を複製し、下位のスタックでは、それらを渡すことを思い出してください。 そのため、この例では同じ名前の 3 つの独立した OID 要求があるように思えるかもしれませんは行われている 3 つの Oid と 3 つのドライバーに物理的に分散 1 論理操作実際にです。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[0x9F バグ チェック](https://msdn.microsoft.com/library/windows/hardware/ff559329)
+[0x9F バグ チェック](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)
 
-[OID\_PNP\_設定\_電源](https://msdn.microsoft.com/library/windows/hardware/ff569780)
+[OID\_PNP\_設定\_電源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
 
-[**bp、bu、bm (ブレークポイントの設定)**](bp--bu--bm--set-breakpoint-.md)
+[**bp、bu、bm (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)
 
-[OID\_GEN\_統計情報](https://msdn.microsoft.com/library/windows/hardware/ff569640)
+[OID\_GEN\_統計情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)
 
-[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)
+[NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
-[NDIS OID 要求インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff566713)
+[NDIS OID 要求インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

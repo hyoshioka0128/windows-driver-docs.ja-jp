@@ -6,12 +6,12 @@ keywords:
 - IRP の完了ルーチン WDK ファイル システム、処理ステージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6016144ede00ebe471928c0bacd3681d82350d6b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e47fa85f64171274e1f63f98c5ebc90e7a62bfbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370128"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365864"
 ---
 # <a name="how-completion-processing-is-performed"></a>完了処理の実行方法
 
@@ -37,13 +37,13 @@ ms.locfileid: "63370128"
 
 -   イベントがで指定されている場合**Irp の&gt;UserEvent**、シグナル状態になることができます。 それ以外の場合、この IRP のファイル オブジェクトがある場合は、そのイベントがシグナル状態します。
 
--   IRP が呼び出すことによって作成された場合[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)または[ **IoBuildSynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548330)、キューから取り出さスレッドの保留中 I/O 要求の一覧。
+-   IRP が呼び出すことによって作成された場合[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)または[ **IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)、キューから取り出さスレッドの保留中 I/O 要求の一覧。
 
 -   ユーザー APC がキューに 1 つ、呼び出し元が要求された場合。
 
 -   IRP が解放されます。
 
-**注**  完了ルーチンに状態が返されたため完了 IRP の処理は停止\_詳細\_処理\_必要に応じて、再開できるように呼び出すことによって[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP が同じにします。 最初の段階の処理が再開には、状態が返されましたが完了ルーチンを 1 つのすぐ上のドライバーの完了のルーチンで始まるこのような場合は、\_詳細\_処理\_必要な作業です。
+**注**  完了ルーチンに状態が返されたため完了 IRP の処理は停止\_詳細\_処理\_必要に応じて、再開できるように呼び出すことによって[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP が同じにします。 最初の段階の処理が再開には、状態が返されましたが完了ルーチンを 1 つのすぐ上のドライバーの完了のルーチンで始まるこのような場合は、\_詳細\_処理\_必要な作業です。
 
  
 

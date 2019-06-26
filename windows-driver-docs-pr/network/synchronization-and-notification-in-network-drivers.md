@@ -15,12 +15,12 @@ keywords:
 - イベントの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 419fb53f0e53eecb6441c148ad975dcb70622c32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f4d9003e2e448d8e9bf105b2497f80bf935ebb37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362550"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377972"
 ---
 # <a name="synchronization-and-notification-in-network-drivers"></a>ネットワーク ドライバーの同期と通知
 
@@ -49,7 +49,7 @@ A*スピン ロック*IRQL で実行されているカーネル モードのス�
 
 スピン ロックのもう 1 つの特性は、関連付けられている IRQL です。 スピン ロックの取得を実行しようとしたは、スピン ロックに関連付けられている IRQL を要求しているスレッドの IRQL を一時的に生成します。 これは、同じプロセッサ上のすべての下位 IRQL スレッドが実行中のスレッドを優先することを防ぎます。 高い IRQL で実行されている、同じプロセッサ上のスレッドが実行中のスレッドを切断できますが、これらのスレッドが低いかどうかがあるため、スピン ロックを取得できません。 そのため、スレッドは、スピン ロックが取得された後に他のスレッドを取得できますありませんスピン ロックがリリースされるまで。 適切に記述されたネットワーク ドライバーは、スピン ロックが保持される時間を最小限に抑えます。
 
-スピンロックの一般的な用途は、キューを保護します。 たとえば、ミニポート ドライバーに送信関数、 [ *MiniportSendNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/ff559440)、プロトコル ドライバーによって渡されたパケットをキューに可能性があります。 その他のドライバー機能も、このキューを使用するため*MiniportSendNetBufferLists*一度に 1 つのスレッドは、リンクやその内容を操作できるように、スピン ロックでキューを保護する必要があります。 *MiniportSendNetBufferLists*スピン ロックを取得、パケットをキューに追加して、スピン ロックを解放します。 スピン ロックを使用して、ロックを保持しているスレッドが、パケットがキューに安全に追加中に、キューへのリンクを変更する唯一のスレッドにより。 ミニポート ドライバーでは、キューからのパケットを受け取り、このようなアクセスが同じスピン ロックで保護されます。 キューまたはキューを作成するリンク フィールドのいずれかのヘッドを変更する手順を実行するときに、ドライバーはスピン ロックでキューを保護する必要があります。
+スピンロックの一般的な用途は、キューを保護します。 たとえば、ミニポート ドライバーに送信関数、 [ *MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)、プロトコル ドライバーによって渡されたパケットをキューに可能性があります。 その他のドライバー機能も、このキューを使用するため*MiniportSendNetBufferLists*一度に 1 つのスレッドは、リンクやその内容を操作できるように、スピン ロックでキューを保護する必要があります。 *MiniportSendNetBufferLists*スピン ロックを取得、パケットをキューに追加して、スピン ロックを解放します。 スピン ロックを使用して、ロックを保持しているスレッドが、パケットがキューに安全に追加中に、キューへのリンクを変更する唯一のスレッドにより。 ミニポート ドライバーでは、キューからのパケットを受け取り、このようなアクセスが同じスピン ロックで保護されます。 キューまたはキューを作成するリンク フィールドのいずれかのヘッドを変更する手順を実行するときに、ドライバーはスピン ロックでキューを保護する必要があります。
 
 ドライバーは、投じなくてキューが注意する必要があります。 たとえば、ドライバーで実行できますいくつかの操作 (たとえば、長さを含むフィールドを入力) パケットのネットワーク ドライバーで予約されているフィールド、パケットをキューに配置する前に。 ドライバーは、スピン ロックで保護されたコード領域の外側のこれを行うことができますが、前に、パケットをキューに行う必要があります。 パケットがキューに、スピン ロックを解放する実行中のスレッドを後、ドライバーは、他のスレッドのデキューでパケットがすぐに処理できますと想定する必要があります。
 
@@ -57,7 +57,7 @@ A*スピン ロック*IRQL で実行されているカーネル モードのス�
 
 デッドロックが発生を避けるためには、NDIS ドライバーは、以外、NDIS 関数を呼び出す前にすべての NDIS スピン ロックを解放する必要があります、 **Ndis*Xxx*スピンロック**関数。 NDIS ドライバーは、この要件に準拠していない場合に、次のようにデッドロックが発生する可能性があります。
 
-1. NDIS スピン ロック A を保持するには、スレッド 1 が、 **Ndis * Xxx*** NDIS の取得を試みますが呼び出すことによってロック B をスピン関数、 [ **NdisAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff560699)関数。
+1. NDIS スピン ロック A を保持するには、スレッド 1 が、 **Ndis * Xxx*** NDIS の取得を試みますが呼び出すことによってロック B をスピン関数、 [ **NdisAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisacquirespinlock)関数。
 
 2. スレッド 2 では、NDIS スピン ロックを呼び出し、B を保持する、 **Ndis * Xxx*** NDIS スピン ロック A を呼び出すことによって取得を試行する関数、 **NdisAcquireSpinLock**関数。
 
@@ -86,13 +86,13 @@ NdisReleaseSpinLock(B);
 
 タイマーは、ポーリングまたは操作がタイムアウトに使用されます。 ドライバーは、タイマーを作成し、タイマー関数に関連付けます。 タイマーで指定された期間の期限が切れると、関連付けられている関数が呼び出されます。 タイマーは、1 回限りまたは定期的なを指定できます。 定期的なタイマーを設定するを明示的にクリアされるまで、各期間の期限切れの起動が続行されます。 ワンショット タイマーは、発生させるたびにリセットする必要があります。
 
-タイマーが作成され、呼び出すことによって初期化[ **NdisAllocateTimerObject** ](https://msdn.microsoft.com/library/windows/hardware/ff561618)呼び出すことによって設定および[ **NdisSetTimerObject**](https://msdn.microsoft.com/library/windows/hardware/ff564563)します。 非連続のタイマーを使用すると、呼び出すことでリセットする必要があります**NdisSetTimerObject**します。 タイマーが呼び出すことによってオフになって[ **NdisCancelTimerObject**](https://msdn.microsoft.com/library/windows/hardware/ff561624)します。
+タイマーが作成され、呼び出すことによって初期化[ **NdisAllocateTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatetimerobject)呼び出すことによって設定および[ **NdisSetTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissettimerobject)します。 非連続のタイマーを使用すると、呼び出すことでリセットする必要があります**NdisSetTimerObject**します。 タイマーが呼び出すことによってオフになって[ **NdisCancelTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscanceltimerobject)します。
 
 ### <a name="events"></a>イベント
 
-イベントは、2 つのスレッドの実行の間の操作を同期に使用されます。 イベントは、ドライバーによって割り当てられ、呼び出すことによって初期化[ **NdisInitializeEvent**](https://msdn.microsoft.com/library/windows/hardware/ff562732)します。 IRQL で実行しているスレッド = パッシブ\_レベル呼び出し[ **NdisWaitEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff564651)自体、待機状態にします。 ドライバー スレッドは、イベントを待機している場合は、待機する最大時間だけ待機するイベントを指定します。 スレッドの待機がときに満たされて[ **NdisSetEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff564539)がシグナルを送信するイベントを発生させた呼び出されるか、指定された最大待機時間間隔期限が切れたとき、どちらが最初に発生します。
+イベントは、2 つのスレッドの実行の間の操作を同期に使用されます。 イベントは、ドライバーによって割り当てられ、呼び出すことによって初期化[ **NdisInitializeEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitializeevent)します。 IRQL で実行しているスレッド = パッシブ\_レベル呼び出し[ **NdisWaitEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswaitevent)自体、待機状態にします。 ドライバー スレッドは、イベントを待機している場合は、待機する最大時間だけ待機するイベントを指定します。 スレッドの待機がときに満たされて[ **NdisSetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetevent)がシグナルを送信するイベントを発生させた呼び出されるか、指定された最大待機時間間隔期限が切れたとき、どちらが最初に発生します。
 
-呼び出す協調スレッドによって、イベントを設定する通常、 **NdisSetEvent**します。 作成されと待機中のスレッドを通知するために設定する必要がありますが、イベントはシグナルれません。 イベントがまでシグナル状態になります[ **NdisResetEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff564526)が呼び出されます。
+呼び出す協調スレッドによって、イベントを設定する通常、 **NdisSetEvent**します。 作成されと待機中のスレッドを通知するために設定する必要がありますが、イベントはシグナルれません。 イベントがまでシグナル状態になります[ **NdisResetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisresetevent)が呼び出されます。
 
 ## <a name="related-topics"></a>関連トピック
 

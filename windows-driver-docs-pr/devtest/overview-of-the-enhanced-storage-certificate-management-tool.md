@@ -4,12 +4,12 @@ description: Enhanced Storage Certificate Management Tool の概要
 ms.assetid: 963e6510-d62f-421f-9c3d-781092f98969
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89869f3ae2d630381283bcb63f13915e0ff7de92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d498a3be935663bfc1467b5ff5e167cb654ebf7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356331"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361266"
 ---
 # <a name="overview-of-the-enhanced-storage-certificate-management-tool"></a>Enhanced Storage Certificate Management Tool の概要
 
@@ -52,7 +52,7 @@ Windows 7 以降のオペレーティング システムが提供、*拡張記�
 
 各項目の意味は次のとおりです。
 
--   *USB\_ハードウェア\_ID*されているハードウェアや、USB ストレージ デバイスの互換性のある識別子 (ID)。 これらの Id の詳細については、次を参照してください。 [USB デバイスの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546284)します。
+-   *USB\_ハードウェア\_ID*されているハードウェアや、USB ストレージ デバイスの互換性のある識別子 (ID)。 これらの Id の詳細については、次を参照してください。 [USB デバイスの識別子](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-usb-devices)します。
 
 -   デバイス インスタンスを表す GUID。
 

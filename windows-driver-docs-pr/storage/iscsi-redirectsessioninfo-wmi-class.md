@@ -4,12 +4,12 @@ description: ISCSI\_RedirectSessionInfo WMI クラス
 ms.assetid: eb1ec866-2dcd-4099-a24f-ae1d0c702b95
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 498f01f3adecde383d40df806b3be6b3db9cb3bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02e743a20cc96fecbc9d0b6eee41e262c5e48e51
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359672"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378408"
 ---
 # <a name="iscsiredirectsessioninfo-wmi-class"></a>ISCSI\_RedirectSessionInfo WMI クラス
 
@@ -47,7 +47,7 @@ class ISCSI_RedirectSessionInfo
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_RedirectSessionInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff561563)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **ISCSI\_RedirectSessionInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_redirectsessioninfo)データ構造体。
 
  
 

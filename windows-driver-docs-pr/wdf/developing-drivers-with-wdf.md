@@ -4,12 +4,12 @@ description: Windows Driver Foundation 帳を使用して開発ドライバー�
 ms.assetid: 764A7A8F-3EB4-4652-B85F-C86C0D82F47B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43bec789e809e7f9ed1d2dfa38543376e0d828b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ad9b33f33a2e41dc4a45434d6ae06982ae6c4e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337797"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377432"
 ---
 # <a name="developing-drivers-with-the-windows-driver-foundation-reference-book"></a>Windows Driver Foundation でのドライバーの開発: リファレンス ブック
 
@@ -25,7 +25,7 @@ Orwick、小額と Guy Smith。 *Windows Driver Foundation でのドライバー
 
 この書籍は、次のリンクを使用して o ' reilly から購入できます。
 
--   [全体のコンテンツをプレビューまたは](http://safari.oreilly.com/9780735623743)Safari サブスクリプション
+-   [全体のコンテンツをプレビューまたは](https://www.safaribooksonline.com/)Safari サブスクリプション
 
  
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d0adf7bf6bef32e451d84b0c05fb13aa9f2c59f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed3beb3995e19bee9906cda44a31eb0a92d57598
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391821"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360336"
 ---
 # <a name="tracefmt-commands"></a>Tracefmt のコマンド
 
@@ -77,7 +77,7 @@ TMF ファイルを格納するディレクトリへのパスを指定します�
 
 ときに **-p**併用 **-i**、Tracefmt 配置 TMF ファイルで指定されたディレクトリで作成した **-p**します。 場合 **-p**は省略すると、Tracefmt TMF ファイル ディレクトリに配置トレース % の値で指定された\_形式\_検索\_%path% 環境変数、設定されている場合。 それ以外の場合、Tracefmt は、ローカル ディレクトリにファイルを配置します。
 
-<span id="_______-h_____"></span><span id="_______-H_____"></span> **-h** | **/?**  
+<span id="_______-h_____"></span><span id="_______-H_____"></span> **-h** |  **/?**  
 ヘルプを表示します。
 
 <span id="_______-o_______OutputFile______"></span><span id="_______-o_______outputfile______"></span><span id="_______-O_______OUTPUTFILE______"></span> **-o** *OutputFile*   
@@ -170,7 +170,7 @@ Tracefmt はトレース メッセージのパラメーターに書式を設定�
 *****FormatMessage Header(Header) of EventTrace, parameter 23 raised an exception*****
 ```
 
-同様の例外を発生する場合は、任意のユーザーが指定した変数型に特に注意して、ソース コードのメッセージ定義を確認します。 詳細については、次を参照してください。 [ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)します。
+同様の例外を発生する場合は、任意のユーザーが指定した変数型に特に注意して、ソース コードのメッセージ定義を確認します。 詳細については、次を参照してください。 [ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))します。
 
 **非 GUID ファイル名を持つ TMF ファイル**
 

@@ -11,12 +11,12 @@ keywords:
 - 記憶域周辺機器 WDK、記憶域周辺機器について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b52d7c5a34f4d9d02434ed301d83a436896111df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: deb243e6885b877bd7f77a2b3f217c16760e78a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325728"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378469"
 ---
 # <a name="handling-requests-to-storage-peripherals"></a>記憶域周辺機器への要求の処理
 
@@ -28,7 +28,7 @@ ms.locfileid: "63325728"
 
 記憶域クラス ドライバーは IRP でも渡す\_MJ\_基になるストレージ ポート ドライバーに SCSI 要求。 このような要求から発生すること、[ストレージ フィルター ドライバー](storage-filter-drivers.md)。
 
-[ **IOCTL\_SCSI\_渡す\_を通じて**](https://msdn.microsoft.com/library/windows/hardware/ff560519)で説明されている要求[SCSI パススルー要求の処理](handling-scsi-pass-through-requests.md)、クラスドライバーは、設定、 **MinorFunction**コード IRP を\_MJ\_デバイス\_IRPを渡す前にIRPのポートドライバーのI/Oスタックの場所でコントロール\_MJ\_デバイス\_コントロール要求を使用してドライバーをポート[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+[ **IOCTL\_SCSI\_渡す\_を通じて**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)で説明されている要求[SCSI パススルー要求の処理](handling-scsi-pass-through-requests.md)、クラスドライバーは、設定、 **MinorFunction**コード IRP を\_MJ\_デバイス\_IRPを渡す前にIRPのポートドライバーのI/Oスタックの場所でコントロール\_MJ\_デバイス\_コントロール要求を使用してドライバーをポート[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
 
 すべての記憶域クラス ドライバーは、転送要求を分割することを担当 (IRP\_MJ\_読み取りや IRP\_MJ\_書き込み) を基になる HBA の機能を超えます。 その結果、ほとんどのクラス ドライバーを呼び出すことも内部*SplitTransferRequest*ルーチンを記載[記憶域クラス ドライバー SplitTransferRequest ルーチン](storage-class-driver-s-splittransferrequest-routine.md)、または同じ機能を実装用のディスパッチ ルーチンは、読み取りおよび書き込み要求。
 

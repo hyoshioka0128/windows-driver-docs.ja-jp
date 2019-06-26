@@ -6,12 +6,12 @@ keywords:
 - MB デバイス ベースのリセットと回復、モバイル ブロード バンド デバイス ベースのリセットと回復、モバイル ブロード バンド ミニポート ドライバー デバイス ベースのリセット、および回復
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 72fa51716e5a80dbdfe838888b721179a662e405
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbe6c439d90d6aa13192eb60a3d38cf3a78291c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360273"
 ---
 # <a name="mb-device-based-reset-and-recovery"></a>MB デバイスベースのリセットと回復
 
@@ -21,7 +21,7 @@ ms.locfileid: "63343460"
 
 ## <a name="mb-device-based-reset-and-recovery-architecture-overview"></a>MB デバイス ベースのリセットと復旧のアーキテクチャの概要
 
-Windows MBB サービスを初期化し、標準を使用して携帯電話のデバイスを制御[モバイル ブロード バンド インターフェイス モデル](http://www.usb.org/developers/docs/devclass_docs/MBIM10Errata1_073013.zip "MBIM 仕様")USB トランスポート拡張上に構築された (MBIM) インターフェイスNCM の仕様。 IHV デバイスに送信される各コマンドは、受信トレイ Windows MBB クラス ドライバーを経由して、MBIM コマンドとして送信されます。 MBIM プロトコルの交換を使用して携帯電話のモデムが初期化されると、ホスト、モデム、およびネットワークの間でデータのパスを開始できます。 携帯電話のデバイスに送信されるすべての他のコントロールは、並列で MBIM プロトコル exchange を使用して続行します。 
+Windows MBB サービスを初期化し、標準を使用して携帯電話のデバイスを制御[モバイル ブロード バンド インターフェイス モデル](https://www.usb.org/developers/docs/devclass_docs/MBIM10Errata1_073013.zip "MBIM 仕様")USB トランスポート拡張上に構築された (MBIM) インターフェイスNCM の仕様。 IHV デバイスに送信される各コマンドは、受信トレイ Windows MBB クラス ドライバーを経由して、MBIM コマンドとして送信されます。 MBIM プロトコルの交換を使用して携帯電話のモデムが初期化されると、ホスト、モデム、およびネットワークの間でデータのパスを開始できます。 携帯電話のデバイスに送信されるすべての他のコントロールは、並列で MBIM プロトコル exchange を使用して続行します。 
 
 MBIM コントロールのパスと、データ パスの両方で発生するエラーを数多くあります。 バージョンの Windows 10、バージョンは 1809 より前に、の Windows、単純なエラー処理メカニズムが組み込まれています。 MBIM コマンドが送信され、デバイスが応答しなくなったをされるたびに、メカニズム、MBIM リセット コマンドを送信することによって、デバイスをリセットしようとします。 ただし、障害が多いため、応答していない MBIM インターフェイスにより、最初に、このリセットが機能しません。 さらに、データ パスの障害による接続の喪失などが発生するその他の失敗、メカニズムは取り扱いません。 
 

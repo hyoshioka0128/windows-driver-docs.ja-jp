@@ -4,12 +4,12 @@ description: Microsoft、さまざまなデバイス固有クラス通信は Win
 ms.assetid: 2891A78C-8C4F-4FE4-AB69-402F04DFA885
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9223bb68b3869bafa9e3c04a3c41c6781f42534
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6dc839797f3927ebfb9092f8e50554cf96a7f2bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337618"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364548"
 ---
 # <a name="gpio-controller-device-specific-method-dsm"></a>デバイス固有のメソッドに GPIO コント ローラー (\_DSM)
 
@@ -31,7 +31,7 @@ GPIO コント ローラーの GUID \_DSM メソッドとして定義されて�
 ## <a name="function-0"></a>関数 0
 
 
-関数 0 の各\_DSM がサポートされている関数のインデックスのセットを返しますは常に必要とするクエリ関数を示します。 関数 0 の定義、9.14.1、セクションを参照してください。"\_DSM (デバイスの特定のメソッド)"で、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+関数 0 の各\_DSM がサポートされている関数のインデックスのセットを返しますは常に必要とするクエリ関数を示します。 関数 0 の定義、9.14.1、セクションを参照してください。"\_DSM (デバイスの特定のメソッド)"で、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
 ## <a name="function-1"></a>関数 1
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba18a6c3d20937abf6c64160285b63b9323283a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a00dcd07dc45117626ed13752d756f9059a3ad1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324672"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361618"
 ---
 # <a name="bug-check-0xc6-drivercaughtmodifyingfreedpool"></a>バグ チェック 0xC6:ドライバー\_例外が発生しました\_変更\_FREED\_プール
 
@@ -26,7 +26,7 @@ ms.locfileid: "63324672"
 ドライバー\_例外が発生しました\_変更\_FREED\_プールのバグ チェックが 0x000000C6 の値を持ちます。 これは、ドライバーが解放されたメモリ プールへのアクセスを試行したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="drivercaughtmodifyingfreedpool-parameters"></a>ドライバー\_例外が発生しました\_変更\_FREED\_プールのパラメーター

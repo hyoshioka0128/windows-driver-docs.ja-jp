@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 628275034736daae073c035ac957d3a2ba7506ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4ecce29e5964073506566321c33879bff74e2966
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378145"
 ---
 # <a name="devpkeydevicepowerdata"></a>DEVPKEY_Device_PowerData
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_PowerData デバイス プロパティは、デバイスのイン
 <a name="remarks"></a>注釈
 -------
 
-Windows では、DEVPKEY_Device_PowerData の値を設定します。 DEVPKEY_Device_PowerData の値が含まれています、 [ **CM_POWER_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff541989)構造体。
+Windows では、DEVPKEY_Device_PowerData の値を設定します。 DEVPKEY_Device_PowerData の値が含まれています、 [ **CM_POWER_DATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-cm_power_data_s)構造体。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_PowerData の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_PowerData の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_PowerData プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_DEVICE_POWER_DATA 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)を参照してください。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_PowerData プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_DEVICE_POWER_DATA 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,9 +89,9 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**CM_POWER_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff541989)
+[**CM_POWER_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-cm_power_data_s)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

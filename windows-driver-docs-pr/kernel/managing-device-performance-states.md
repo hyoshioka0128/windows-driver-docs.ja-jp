@@ -9,12 +9,12 @@ keywords:
 - カスタムの電源設定 WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f5f05478854cfd09c60da765371607e72dc3d90
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e07ac7c0b3548e09d8ef5a5c43fd23a12530e50a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378730"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365788"
 ---
 # <a name="managing-device-performance-states"></a>デバイスのパフォーマンス状態の管理
 
@@ -35,9 +35,9 @@ Windows Vista の機能が向上するスタックのドライバーをできる
 
 -   必要に応じて、システム管理者が管理用テンプレートを作成できます (します。新しい電源設定のグループ ポリシー ベースの構成をできるようにする ADM) ファイル。
 
-個々 の電源設定には、すべての一意に識別する、名前、説明、および電源設定の値を指定するために必要な情報が含まれています。 各電源設定には、GUID、設定の名前、説明、および AC と DC の電源設定の既定の設定が定義されます。 カスタムの電源設定に対して作成できる静的に、デバイスを使用して、 [ **INF AddPowerSetting ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546313)、または電源に含まれている Win32 の電源管理機能を呼び出すことによって動的にMicrosoft Windows SDK のドキュメントで提供される管理の参照。
+個々 の電源設定には、すべての一意に識別する、名前、説明、および電源設定の値を指定するために必要な情報が含まれています。 各電源設定には、GUID、設定の名前、説明、および AC と DC の電源設定の既定の設定が定義されます。 カスタムの電源設定に対して作成できる静的に、デバイスを使用して、 [ **INF AddPowerSetting ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addpowersetting-directive)、または電源に含まれている Win32 の電源管理機能を呼び出すことによって動的にMicrosoft Windows SDK のドキュメントで提供される管理の参照。
 
-ドライバー呼び出し[ **PoRegisterPowerSettingCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559727)電源マネージャーを呼び出す、ドライバーの電源設定に変更を通知するコールバック ルーチンを登録します。 設定が変更されたときに電源マネージャーはコールバック ルーチンを呼び出すし、新しい設定の値を渡します。 ドライバーは、電源設定の適切なアクションを実行できます。 各設定は、電源設定の GUID によって識別されます。 システム定義の電源設定 Guid は、Wdm.h と Ntpoapi.h で定義されます。
+ドライバー呼び出し[ **PoRegisterPowerSettingCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterpowersettingcallback)電源マネージャーを呼び出す、ドライバーの電源設定に変更を通知するコールバック ルーチンを登録します。 設定が変更されたときに電源マネージャーはコールバック ルーチンを呼び出すし、新しい設定の値を渡します。 ドライバーは、電源設定の適切なアクションを実行できます。 各設定は、電源設定の GUID によって識別されます。 システム定義の電源設定 Guid は、Wdm.h と Ntpoapi.h で定義されます。
 
 たとえば、モニターの電源がオンまたはオフになっているときの通知、ドライバーは**PoRegisterPowerSettingCallback**、モニターの電源設定を識別する GUID を指定する (GUID\_モニター\_電源\_ON) と電源マネージャーがモニターの電源設定の値が変更されたときに呼び出すコールバック ルーチンへのポインター。
 

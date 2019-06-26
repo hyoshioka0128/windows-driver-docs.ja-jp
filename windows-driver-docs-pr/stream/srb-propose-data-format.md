@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 325f5403ad585813e81b06c3b8eb505c1a9cd5d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8206351223b7e4e455f66a371698727496a250f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351612"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377884"
 ---
 # <a name="srbproposedataformat"></a>SRB\_提案\_データ\_形式
 
@@ -45,11 +45,11 @@ ms.locfileid: "63351612"
 
 ### <a name="comments"></a>コメント
 
-クラス ドライバーが受信すると、 [ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](ksproperty-connection-proposedataformat.md)要求、提案された形式がサポートされているかどうかを判断するこの SRB コードを使用します。 クラスのドライバーで提案されたデータ形式を通過する、 **CommandData**.**OpenFormat**によって示されるメンバー *pSrb*します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。
+クラス ドライバーが受信すると、 [ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](ksproperty-connection-proposedataformat.md)要求、提案された形式がサポートされているかどうかを判断するこの SRB コードを使用します。 クラスのドライバーで提案されたデータ形式を通過する、 **CommandData**.**OpenFormat**によって示されるメンバー *pSrb*します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。
 
 ミニドライバーは、データ形式をサポートしていない場合は設定*pSrb*-&gt;**状態**ステータス\_いない\_サポートされています。 このフィールドは、状態を設定が、ミニドライバーは、ストリームを指定した形式に切り替えることが場合、\_成功します。
 
-ミニドライバーは、新しい形式を受け入れることは場合、クラス ドライバーが後で送信できます、ミニドライバーで示される形式の変更、 **OptionsFlags**内のメンバー、 [ **KSSTREAM\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff567138)構造体。
+ミニドライバーは、新しい形式を受け入れることは場合、クラス ドライバーが後で送信できます、ミニドライバーで示される形式の変更、 **OptionsFlags**内のメンバー、 [ **KSSTREAM\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)構造体。
 
 ## <a name="see-also"></a>関連項目
 

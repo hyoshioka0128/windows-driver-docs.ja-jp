@@ -4,12 +4,12 @@ description: IRP の主要な関数コード
 ms.date: 08/12/2017
 ms.assetid: 11c5b1a9-74c0-47fb-8cce-a008ece9efae
 ms.localizationpriority: medium
-ms.openlocfilehash: c42a08cb8dab6ce5102d0a0e485a0a991936ea62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88dc9a68ea446390e433b1be828c9bfc1afc70a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370920"
 ---
 # <a name="irp-major-function-codes"></a>IRP の主要な関数コード
 
@@ -21,7 +21,7 @@ ms.locfileid: "63382914"
 
 特定の操作の実行をドライバーを指定した**IRP\_MJ\_* XXX*** コードは、基になるデバイスにある程度の特に依存[ **IRP\_MJ\_デバイス\_コントロール**](irp-mj-device-control.md)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](irp-mj-internal-device-control.md)要求。 たとえば、キーボード ドライバーに送信された要求は必ずしも少し異なるディスク ドライバーに送信されたものです。 ただし、I/O マネージャーは、パラメーターと主要な関数のシステム定義の各コードの I/O スタックの場所の内容を定義します。
 
-上位レベルのすべてのドライバーが、下位レベルの次のドライバーと呼び出しの Irp で適切なの I/O のスタックの場所を設定する必要があります[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)、各入力の IRP またはドライバーが作成した IRP のいずれか (場合、高度なドライバーを保持したまま IRP の入力)。 その結果、すべての中間ドライバーには、基になるデバイス ドライバーを処理する各メジャーの関数コードのディスパッチ ルーチンが必要です。 それ以外の場合、新しい中間ドライバー「チェーンが破壊」されるたびに、アプリケーションのまたはまだより高度なドライバーが、デバイス ドライバーを基になるまでの I/O 要求を送信しようとしています。 します。
+上位レベルのすべてのドライバーが、下位レベルの次のドライバーと呼び出しの Irp で適切なの I/O のスタックの場所を設定する必要があります[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)、各入力の IRP またはドライバーが作成した IRP のいずれか (場合、高度なドライバーを保持したまま IRP の入力)。 その結果、すべての中間ドライバーには、基になるデバイス ドライバーを処理する各メジャーの関数コードのディスパッチ ルーチンが必要です。 それ以外の場合、新しい中間ドライバー「チェーンが破壊」されるたびに、アプリケーションのまたはまだより高度なドライバーが、デバイス ドライバーを基になるまでの I/O 要求を送信しようとしています。 します。
 
 ファイル システム ドライバーが必要なシステム定義のサブセットを処理も**IRP\_MJ\_* XXX*** 関数コード、従属要素を使用して一部**IRP\_MN\_* XXX*** コードに機能します。
 
@@ -59,7 +59,7 @@ ms.locfileid: "63382914"
 
 このセクションで説明されているパラメーターの入力と出力のパラメーターは、IRP の関数に固有のパラメーターです。
 
-Irp の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。
+Irp の詳細については、次を参照してください。 [Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)します。
 
  
 

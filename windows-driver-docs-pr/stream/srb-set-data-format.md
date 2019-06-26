@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75b6d550981ce1d1717984ebb3ded4ed6fe2a57a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0b97893b39d8e81e11696a6da8ceb00767eba4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351608"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377874"
 ---
 # <a name="srbsetdataformat"></a>SRB\_設定\_データ\_形式
 
@@ -37,9 +37,9 @@ ms.locfileid: "63351608"
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバーで新しいデータ形式を渡す、 **CommandData**.**OpenFormat**のメンバー、 *pSrb*ポインター。 (このポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造です)。
+クラスのドライバーで新しいデータ形式を渡す、 **CommandData**.**OpenFormat**のメンバー、 *pSrb*ポインター。 (このポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造です)。
 
-データ形式の詳細については、次を参照してください。、 [Stream クラス ミニドライバー設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568277)します。 参照してください[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
+データ形式の詳細については、次を参照してください。、 [Stream クラス ミニドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)します。 参照してください[AVStream のデータ範囲の交差部分](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)します。
 
  
 

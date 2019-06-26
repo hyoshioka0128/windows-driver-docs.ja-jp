@@ -7,27 +7,27 @@ keywords:
 - 要求の処理の WDK UMDF、パラメーターを取得します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2b548e9d319346afa33c8743476f8c8462552d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 10dc2f314f9e01885c27646a55804bf6bafe1d38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375069"
 ---
 # <a name="obtaining-parameters-for-io-requests"></a>I/O 要求のパラメーターの取得
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-I/O 要求を受信すると、ドライバー、ドライバーはの次のメソッドを使用できます、 [IWDFIoRequest](https://msdn.microsoft.com/library/windows/hardware/ff558985)要求に関連するパラメーターを取得するインターフェイス。
+I/O 要求を受信すると、ドライバー、ドライバーはの次のメソッドを使用できます、 [IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest)要求に関連するパラメーターを取得するインターフェイス。
 
--   [**IWDFIoRequest::GetCreateParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff559088)または[ **IWDFIoRequest2::GetCreateParametersEx**](https://msdn.microsoft.com/library/windows/hardware/ff558989)
+-   [**IWDFIoRequest::GetCreateParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getcreateparameters)または[ **IWDFIoRequest2::GetCreateParametersEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest2-getcreateparametersex)
 
--   [**IWDFIoRequest::GetDeviceIoControlParameters**](https://msdn.microsoft.com/library/windows/hardware/ff559095)
+-   [**IWDFIoRequest::GetDeviceIoControlParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getdeviceiocontrolparameters)
 
--   [**IWDFIoRequest::GetReadParameters**](https://msdn.microsoft.com/library/windows/hardware/ff559113)
+-   [**IWDFIoRequest::GetReadParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getreadparameters)
 
--   [**IWDFIoRequest::GetWriteParameters**](https://msdn.microsoft.com/library/windows/hardware/ff559130)
+-   [**IWDFIoRequest::GetWriteParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getwriteparameters)
 
  
 

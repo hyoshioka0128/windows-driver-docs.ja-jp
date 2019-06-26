@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d16ea1ac491224e49086f55d49a05a42f29edc5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d826674ac0fdee5ffebb1ce7da70f72cb0e42061
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380130"
 ---
 # <a name="fsctlmarkassystemhive-control-code"></a>FSCTL\_マーク\_AS\_システム\_HIVE 制御コード
 
@@ -28,12 +28,12 @@ ms.locfileid: "56560519"
 
 カーネル レベルのコンポーネントだけでは、このファイル システムの制御コードを使用できます。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ユーザー ファイルのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 ユーザー ファイルのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 ユーザー ファイルのハンドル。 このパラメーターが必要とすることはできません**NULL**します。
@@ -42,23 +42,23 @@ ms.locfileid: "56560519"
 操作の制御コード。 使用**FSCTL\_マーク\_AS\_システム\_HIVE**この操作にします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-使用されません。 値を割り当てる**NULL**このパラメーターにします。
+使用されていません。 値を割り当てる**NULL**このパラメーターにします。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-使用されません。
+使用されていません。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-使用されません。 値を割り当てる**NULL**このパラメーターにします。
+使用されていません。 値を割り当てる**NULL**このパラメーターにします。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-使用されません。
+使用されていません。
 
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数は、適切な NTSTATUS エラー コードを返します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数は、適切な NTSTATUS エラー コードを返します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -4,12 +4,12 @@ description: 早期起動マルウェア対策 (ELAM) ドライバーは、検�
 ms.assetid: ''
 ms.date: 04/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c19c473123fab03d9077931a47a7a4c03b66594
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da82e271d636a8d6128390bdb0054e820bca8da8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346148"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375013"
 ---
 # <a name="elam-driver-submission-process"></a>ELAM ドライバーの送信プロセス
 
@@ -17,7 +17,7 @@ ms.locfileid: "63346148"
 
 1. ELAM ドライバーの文書化されている要件に準拠するには、ドライバーを確認します。  参照してください[ELAM ドライバーの要件](elam-driver-requirements.md)と[INF SignatureAttributes セクション](inf-signatureattributes-section.md)詳細についてはします。
 
-2. ハードウェア ロゴ キット (HLK) とハードウェア認定キット (HCK) を使用して、ドライバーを検証します。 Windows 8 と Windows 10 では、ドライバーを使用する場合は、キットの両方のバージョンを実行する必要があります。 送信時に結果が含まれます。 参照してください[HLK ツールのテクニカル リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn939924)詳細についてはします。 必須の HCK テストについては、以下を参照してください。
+2. ハードウェア ロゴ キット (HLK) とハードウェア認定キット (HCK) を使用して、ドライバーを検証します。 Windows 8 と Windows 10 では、ドライバーを使用する場合は、キットの両方のバージョンを実行する必要があります。 送信時に結果が含まれます。 参照してください[HLK ツールのテクニカル リファレンス](https://docs.microsoft.com/windows-hardware/test/hlk/user/hlk-tools-technical-reference)詳細についてはします。 必須の HCK テストについては、以下を参照してください。
 
 3. カーネル モード ドライバーで説明したように、署名ポリシーに従って、[ドライバーの署名ポリシー](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)トピック。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70f69ce0942f55f617ec6ee7b83f752e418fc86a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b741cc917ea2c737c27aa1f9163b012a2a067175
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358772"
 ---
 # <a name="kspropertyjackcontainerid"></a>KSPROPERTY\_ジャック\_CONTAINERID
 
@@ -52,7 +52,7 @@ KSPROPERTY\_ジャック\_CONTAINERID プロパティは、フィルターのハ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>(フィルターのハンドル) を使用してファクトリをピン留めします。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td align="left"><p><strong>GUID</strong></p></td>
 </tr>
 </tbody>
@@ -77,7 +77,7 @@ KSPROPERTY\_ジャック\_CONTAINERID プロパティ要求が物理ジャック
 
 KSPROPERTY\_ジャック\_CONTAINERID プロパティは、オーディオのエンドポイントがプラスチックのオーディオのアダプターからのさまざまな部分にある場合に設定されることにのみ必要があります。 既定では、オーディオのエンドポイントは、親のコンテナーの ID を継承します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -104,9 +104,9 @@ KSPROPERTY\_ジャック\_CONTAINERID プロパティは、オーディオのエ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**BTHHFP\_記述子**](https://msdn.microsoft.com/library/windows/hardware/dn302030)
+[**BTHHFP\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ns-bthhfpddi-_bthhfp_descriptor)
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_CONTAINERID**](https://msdn.microsoft.com/library/windows/hardware/dn265107)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_CONTAINERID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_containerid)
 
  
 

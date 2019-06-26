@@ -8,12 +8,12 @@ keywords:
 - WDK のエラー チェック ビルド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b389a3ed5f0be1ebce5710c213d5e9464b873d98
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: b47d593a8fef0bc10c0e6298dbb6ad58e62e6ec8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371624"
 ---
 # <a name="checked-build-asserts"></a>チェック ビルドの ASSERT
 
@@ -21,7 +21,7 @@ ms.locfileid: "67161494"
 ## <span id="ddk_checked_build_asserts_tools"></span><span id="DDK_CHECKED_BUILD_ASSERTS_TOOLS"></span>
 
 
-このトピックでは、共通の一覧を含む[ **ASSERT**](https://msdn.microsoft.com/library/windows/hardware/ff542107)のドライバー作成者によって発生します。
+このトピックでは、共通の一覧を含む[ **ASSERT**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))のドライバー作成者によって発生します。
 
 ハンドル前述のアサート (とそれに記載されていない) する方法に関するヒントを参照してください[チェック ビルドで問題を示す方法](how-the-checked-build-indicates-a-problem.md)します。
 
@@ -42,27 +42,27 @@ ms.locfileid: "67161494"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548263" data-raw-source="[&lt;strong&gt;IoAllocateMdl&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548263)"><strong>IoAllocateMdl</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl" data-raw-source="[&lt;strong&gt;IoAllocateMdl&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)"><strong>IoAllocateMdl</strong></a></p></td>
 <td align="left"><p>ASSERT(Length)</p></td>
 <td align="left"><p>記述されているユーザー バッファーの長さは 0 です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548300" data-raw-source="[&lt;strong&gt;IoAttachDeviceToDeviceStack&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548300)"><strong>IoAttachDeviceToDeviceStack</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack" data-raw-source="[&lt;strong&gt;IoAttachDeviceToDeviceStack&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)"><strong>IoAttachDeviceToDeviceStack</strong></a></p></td>
 <td align="left"><p>ASSERT( sourceExtension-&gt;AttachedTo == <strong>NULL</strong> )</p></td>
 <td align="left"><p>デバイスが (ソース デバイス) にアタッチされるオブジェクトは別のデバイス オブジェクトに既にアタッチされています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548336" data-raw-source="[&lt;strong&gt;IoCallDriver&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548336)"><strong>保留</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver" data-raw-source="[&lt;strong&gt;IoCallDriver&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)"><strong>保留</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Type == IO_TYPE_IRP )</p></td>
 <td align="left"><p>PIRP 引数が IRP を指していません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548338" data-raw-source="[&lt;strong&gt;IoCancelIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548338)"><strong>IoCancelIrp</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp" data-raw-source="[&lt;strong&gt;IoCancelIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)"><strong>IoCancelIrp</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Type == IO_TYPE_IRP )</p></td>
 <td align="left"><p>PIRP 引数が IRP を指していません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548343" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548343)"><strong>IoCompleteRequest</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)"><strong>IoCompleteRequest</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Type == IO_TYPE_IRP )</p></td>
 <td align="left"><p>PIRP 引数が IRP を指していません。</p></td>
 </tr>
@@ -87,12 +87,12 @@ ms.locfileid: "67161494"
 <td align="left"><p>Status_reparse を不確実、IO_REPARSE_TAG_MOUNT_POINT、IRP が入力されていると補助バッファーが<strong>NULL</strong>します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548397" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548397)"><strong>IoCreateDevice</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)"><strong>IoCreateDevice</strong></a></p></td>
 <td align="left"><p>アサート ((DriverObject-&gt;フラグ & DRVO_UNLOAD_INVOKED) 0 を = =)</p></td>
 <td align="left"><p>デバイス オブジェクトが作成されたらは、作成すると、ドライバーは、アンロード設定されています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549113" data-raw-source="[&lt;strong&gt;IoFreeIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549113)"><strong>IoFreeIrp</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp" data-raw-source="[&lt;strong&gt;IoFreeIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)"><strong>IoFreeIrp</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Type == IO_TYPE_IRP )</p></td>
 <td align="left"><p>PIRP は IRP を指していません。</p></td>
 </tr>
@@ -107,7 +107,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>IRP が解放されているが、この IRP を処理するすべてのドライバーのまだ終了していません I/O 完了します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549661" data-raw-source="[&lt;strong&gt;IoReuseIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549661)"><strong>IoReuseIrp</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreuseirp" data-raw-source="[&lt;strong&gt;IoReuseIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreuseirp)"><strong>IoReuseIrp</strong></a></p></td>
 <td align="left"><p>ASSERT(Irp-&gt;CancelRoutine == <strong>NULL</strong>)</p></td>
 <td align="left"><p>再利用するように要求された IRP に残っているキャンセル ルーチンがあります。</p></td>
 </tr>
@@ -117,7 +117,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>IRP が再利用されるスレッドの IRP に表示されるボックスの一覧し、使用中でもそのためです。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549707" data-raw-source="[&lt;strong&gt;IoSetHardErrorOrVerifyDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549707)"><strong>IoSetHardErrorOrVerifyDevice</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iosetharderrororverifydevice" data-raw-source="[&lt;strong&gt;IoSetHardErrorOrVerifyDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iosetharderrororverifydevice)"><strong>IoSetHardErrorOrVerifyDevice</strong></a></p></td>
 <td align="left"><p>ASSERT( Irp-&gt;Tail.Overlay.Thread != <strong>NULL</strong> )</p></td>
 <td align="left"><p>すべてのスレッドの IRP の一覧で、IRP が。</p></td>
 </tr>
@@ -152,7 +152,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>IRP が保留中でマークされましたが、ステータスのディスパッチ ルーチンが同期的に返される! STATUS_PENDING を = です。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554664" data-raw-source="[&lt;strong&gt;MmProbeAndLockPages&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554664)"><strong>MmProbeAndLockPages</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages" data-raw-source="[&lt;strong&gt;MmProbeAndLockPages&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)"><strong>MmProbeAndLockPages</strong></a></p></td>
 <td align="left"><p>ASSERT (MemoryDescriptorList-&gt;ByteCount != 0)</p></td>
 <td align="left"><p>渡された MDL のバイト数には 0 です。</p></td>
 </tr>
@@ -182,7 +182,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>MDL で説明されているバッファー内のページが表示された時間数が異常に高いメモリにロックされています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556381" data-raw-source="[&lt;strong&gt;MmUnlockPages&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556381)"><strong>MmUnlockPages</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages" data-raw-source="[&lt;strong&gt;MmUnlockPages&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)"><strong>MmUnlockPages</strong></a></p></td>
 <td align="left"><p>アサート ((MemoryDescriptorList-&gt;MdlFlags & MDL_PAGES_LOCKED)! = 0)</p></td>
 <td align="left"><p>この MDL で説明されているバッファーを構成するページがロックされていません。</p></td>
 </tr>
@@ -217,7 +217,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>MDL のページ フレーム ポインターが無効です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554498" data-raw-source="[&lt;strong&gt;MmBuildMdlForNonPagedPool&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554498)"><strong>MmBuildMdlForNonPagedPool</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool" data-raw-source="[&lt;strong&gt;MmBuildMdlForNonPagedPool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)"><strong>MmBuildMdlForNonPagedPool</strong></a></p></td>
 <td align="left"><p>ASSERT (MemoryDescriptorList-&gt;ByteCount != 0)</p></td>
 <td align="left"><p>MDL で説明されているバッファーは、長さ 0 バイトです。</p></td>
 </tr>
@@ -232,7 +232,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>MDL には、ゼロ ページを使用して、バッファーがについて説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554629" data-raw-source="[&lt;strong&gt;MmMapLockedPagesSpecifyCache&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554629)"><strong>MmMapLockedPagesSpecifyCache</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache" data-raw-source="[&lt;strong&gt;MmMapLockedPagesSpecifyCache&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpagesspecifycache)"><strong>MmMapLockedPagesSpecifyCache</strong></a></p></td>
 <td align="left"><p>ASSERT (MemoryDescriptorList-&gt;ByteCount != 0)</p></td>
 <td align="left"><p>MDL が長さが 0 です。</p></td>
 </tr>
@@ -262,7 +262,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>MDL で説明されているバッファーには、メモリにロックされていないページが含まれています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556391" data-raw-source="[&lt;strong&gt;MmUnmapLockedPages&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556391)"><strong>MmUnmapLockedPages</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmaplockedpages" data-raw-source="[&lt;strong&gt;MmUnmapLockedPages&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmaplockedpages)"><strong>MmUnmapLockedPages</strong></a></p></td>
 <td align="left"><p>ASSERT (MemoryDescriptorList-&gt;ByteCount != 0)</p></td>
 <td align="left"><p>MDL では、ゼロ バイト長であるバッファーについて説明します。</p></td>
 </tr>
@@ -287,7 +287,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>MDL で説明されているバッファーには、メモリにロックされていないページが含まれています。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554618" data-raw-source="[&lt;strong&gt;MmMapIoSpace&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554618)"><strong>MmMapIoSpace</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace" data-raw-source="[&lt;strong&gt;MmMapIoSpace&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)"><strong>MmMapIoSpace</strong></a></p></td>
 <td align="left"><p>ASSERT (PhysicalAddress.HighPart == 0)</p></td>
 <td align="left"><p>物理メモリの 4 gb を超えるいない x86 ベース システムで実行しているが、I/O の領域のアドレスの上位 32 ビットを指定するには、この関数に渡されるパラメーターが 0 以外。</p></td>
 </tr>
@@ -302,12 +302,12 @@ ms.locfileid: "67161494"
 <td align="left"><p>アドレスの範囲のページは、I/O 領域ではありません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556387" data-raw-source="[&lt;strong&gt;MmUnmapIoSpace&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556387)"><strong>MmUnmapIoSpace</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace" data-raw-source="[&lt;strong&gt;MmUnmapIoSpace&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace)"><strong>MmUnmapIoSpace</strong></a></p></td>
 <td align="left"><p>ASSERT (NumberOfBytes != 0)</p></td>
 <td align="left"><p>マップ解除するバイト数を指定するには、この関数に渡されるパラメーターには 0 です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554460" data-raw-source="[&lt;strong&gt;MmAllocateContiguousMemory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554460)"><strong>MmAllocateContiguousMemory</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory" data-raw-source="[&lt;strong&gt;MmAllocateContiguousMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory)"><strong>MmAllocateContiguousMemory</strong></a></p></td>
 <td align="left"><p>ASSERT (NumberOfBytes != 0)</p></td>
 <td align="left"><p>割り当てるバイト数を指定するには、この関数に渡されるパラメーターには 0 です。</p></td>
 </tr>
@@ -317,7 +317,7 @@ ms.locfileid: "67161494"
 <td align="left"><p>割り当てるバイト数を指定するには、この関数に渡されるパラメーターには 0 です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554479" data-raw-source="[&lt;strong&gt;MmAllocateNonCachedMemory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554479)"><strong>MmAllocateNonCachedMemory</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory" data-raw-source="[&lt;strong&gt;MmAllocateNonCachedMemory&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory)"><strong>MmAllocateNonCachedMemory</strong></a></p></td>
 <td align="left"><p>ASSERT (NumberOfBytes != 0)</p></td>
 <td align="left"><p>割り当てるバイト数を指定するには、この関数に渡されるパラメーターには 0 です。</p></td>
 </tr>

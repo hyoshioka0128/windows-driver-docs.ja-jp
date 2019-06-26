@@ -8,12 +8,12 @@ keywords:
 - モデルのセクションの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10b8ff2269083b12e2c92b1202f68c2266465c44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca1450d79b01141757a3af63c0e7bed1d8b32418
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392975"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382210"
 ---
 # <a name="models-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の Models セクション
 
@@ -21,13 +21,13 @@ ms.locfileid: "63392975"
 
 
 
-**モデル**ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)します。
+**モデル**ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF モデル セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)します。
 
 **モデル**INF ファイルのセクションには、INF ファイルによってインストールされたコンポーネントの種類ごとに、次の形式のエントリが含まれています。
 
 \[*device-description*= *install-section.name*, *hw-id*\[, *compatible-id*...\]
 
-このエントリの詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)します。
+このエントリの詳細については、次を参照してください。 [INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)します。
 
 *Hw id* (とも呼ばれる、デバイス、ハードウェア、またはコンポーネント ID) アダプターのネットワーク アダプターによって、PnP マネージャーに指定されたハードウェア ID に一致する必要があります。
 

@@ -17,12 +17,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b8b6f73487c4b654eb46f666a62b14dd7e87752
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 4bb7f8916d775432b10917ce9b0028c29e49adef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366965"
 ---
 # <a name="debugsymbolxxx"></a>デバッグ\_シンボル\_XXX
 
@@ -101,7 +101,7 @@ depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**デバッグ\_シンボル\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff541673)
+[**デバッグ\_シンボル\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_symbol_parameters)
 
  
 

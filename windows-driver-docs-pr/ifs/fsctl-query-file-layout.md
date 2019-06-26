@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc655d499bbf667e1b861992d5aac68a6a64aee2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d3d2619b3e5af645379446a59d76fa86df6aa545
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559184"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380089"
 ---
 # <a name="fsctlqueryfilelayout-control-code"></a>FSCTL\_クエリ\_ファイル\_レイアウト制御コード
 
 
-FSCTL\_クエリ\_ファイル\_レイアウト コントロールのコードをファイル システム ボリュームのファイルのレイアウト情報を取得します。 この要求の結果は、ファイルのレイアウト情報のエントリのコレクションです。 返されるエントリの型包含フラグの設定によって制御されます、 [**クエリ\_ファイル\_レイアウト\_入力**](https://msdn.microsoft.com/library/windows/hardware/hh439457)構造体。 必要に応じて、結果をフィルター処理、レイアウト情報の選択を制限するファイルのエクステントのセットが提供されることができます。
+FSCTL\_クエリ\_ファイル\_レイアウト コントロールのコードをファイル システム ボリュームのファイルのレイアウト情報を取得します。 この要求の結果は、ファイルのレイアウト情報のエントリのコレクションです。 返されるエントリの型包含フラグの設定によって制御されます、 [**クエリ\_ファイル\_レイアウト\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_query_file_layout_input)構造体。 必要に応じて、結果をフィルター処理、レイアウト情報の選択を制限するファイルのエクステントのセットが提供されることができます。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-**パラメーター**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ファイル システム ボリュームのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 ファイル システム ボリュームのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 ファイル システム ボリュームのファイル ハンドル。 このパラメーターが必要とすることはできません**NULL**します。
@@ -40,21 +40,21 @@ FSCTL\_クエリ\_ファイル\_レイアウト コントロールのコード�
 操作の制御コード。 The FSCTL を使用して、\_クエリ\_ファイル\_この操作の制御コードをレイアウトします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-呼び出し元が割り当てたへのポインター [**クエリ\_ファイル\_レイアウト\_入力**](https://msdn.microsoft.com/library/windows/hardware/hh439457)構造体。 この構造体には、選択オプションが含まれています。 省略可能なファイルのエクステントが後に含まれている**クエリ\_ファイル\_レイアウト\_入力**します。
+呼び出し元が割り当てたへのポインター [**クエリ\_ファイル\_レイアウト\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_query_file_layout_input)構造体。 この構造体には、選択オプションが含まれています。 省略可能なファイルのエクステントが後に含まれている**クエリ\_ファイル\_レイアウト\_入力**します。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 指し示されるバッファーのバイト単位で、サイズ、 *InputBuffer*パラメーター。 サイズ*InputBuffer*以上である必要があります**sizeof**(クエリ\_ファイル\_レイアウト\_入力) + (**sizeof**(*フィルター処理*) \* (*NumberOfPairs* - 1)) ときに、 *NumberOfPairs* &gt; 0。 それ以外の場合、設定*InputBufferLength* = **sizeof**(クエリ\_ファイル\_レイアウト\_入力)。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-呼び出し元が割り当てたへのポインター [**クエリ\_ファイル\_レイアウト\_出力**](https://msdn.microsoft.com/library/windows/hardware/hh439461)構造体。 これは、このバッファーの次のファイルのレイアウトのエントリのヘッダーです。
+呼び出し元が割り当てたへのポインター [**クエリ\_ファイル\_レイアウト\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_query_file_layout_output)構造体。 これは、このバッファーの次のファイルのレイアウトのエントリのヘッダーです。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-指し示されるバッファーのバイト単位で、サイズ、 *OutputBuffer*パラメーター。 サイズ*OutputBuffer*を格納するのに十分な大きさである必要があります、 [**クエリ\_ファイル\_レイアウト\_出力**](https://msdn.microsoft.com/library/windows/hardware/hh439461)ファイルと一緒にレイアウトとストリームのレイアウト構造が返されます。
+指し示されるバッファーのバイト単位で、サイズ、 *OutputBuffer*パラメーター。 サイズ*OutputBuffer*を格納するのに十分な大きさである必要があります、 [**クエリ\_ファイル\_レイアウト\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_query_file_layout_output)ファイルと一緒にレイアウトとストリームのレイアウト構造が返されます。
 
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_これらの値のいずれかなど、成功、または、適切な NTSTATUS の値します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_これらの値のいずれかなど、成功、または、適切な NTSTATUS の値します。
 
 <table>
 <colgroup>
@@ -63,7 +63,7 @@ FSCTL\_クエリ\_ファイル\_レイアウト コントロールのコード�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -98,7 +98,7 @@ FSCTL\_クエリ\_ファイル\_レイアウト コントロールのコード�
 
 ボリュームの場合、FSCTL のすべてのレイアウト エントリを取得する\_クエリ\_ファイル\_レイアウトの要求が複数回発行される**状態\_エンド\_の\_ファイル**が返されます。 中に**状態\_成功**返されるか、呼び出し元が、FSCTL を送信を続けること\_クエリ\_ファイル\_レイアウトの残りのエントリのレイアウト要求。
 
-レイアウトのエントリの列挙体は、含めることによって、いつでも再起動可能性があります、**クエリ\_ファイル\_レイアウト\_再起動**フラグ、**フラグ**のメンバー[**クエリ\_ファイル\_レイアウト\_入力**](https://msdn.microsoft.com/library/windows/hardware/hh439457)します。 FSCTL 後も、\_クエリ\_ファイル\_レイアウトが返される**状態\_エンド\_の\_ファイル**、含める必要がある、**クエリ\_ファイル\_レイアウト\_再起動**次 FSCTL フラグ\_クエリ\_ファイル\_レイアウトの要求を別のレイアウトのエントリの列挙を開始します。
+レイアウトのエントリの列挙体は、含めることによって、いつでも再起動可能性があります、**クエリ\_ファイル\_レイアウト\_再起動**フラグ、**フラグ**のメンバー[**クエリ\_ファイル\_レイアウト\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_query_file_layout_input)します。 FSCTL 後も、\_クエリ\_ファイル\_レイアウトが返される**状態\_エンド\_の\_ファイル**、含める必要がある、**クエリ\_ファイル\_レイアウト\_再起動**次 FSCTL フラグ\_クエリ\_ファイル\_レイアウトの要求を別のレイアウトのエントリの列挙を開始します。
 
 **ReFS:  **このコードはサポートされていません。
 
@@ -125,11 +125,11 @@ FSCTL\_クエリ\_ファイル\_レイアウト コントロールのコード�
 ## <a name="see-also"></a>関連項目
 
 
-[**クエリ\_ファイル\_レイアウト\_入力**](https://msdn.microsoft.com/library/windows/hardware/hh439457)
+[**クエリ\_ファイル\_レイアウト\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_query_file_layout_input)
 
-[**クエリ\_ファイル\_レイアウト\_出力**](https://msdn.microsoft.com/library/windows/hardware/hh439461)
+[**クエリ\_ファイル\_レイアウト\_出力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_query_file_layout_output)
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

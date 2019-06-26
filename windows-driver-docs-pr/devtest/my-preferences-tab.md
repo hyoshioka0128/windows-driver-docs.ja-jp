@@ -4,14 +4,14 @@ description: このトピックでは、WDF Verifier の個人用設定 ペー�
 ms.assetid: 6f37fd6b-c60c-4d59-94fb-0dc7d3ff6f0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9245ab93209855704044f20a277a47ea3acb1fbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f06eb29157034687c7b55f7b700d5ce877dd9ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363126"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361294"
 ---
-# <a name="my-preferences-tab"></a>[My Preferences]\(基本設定\) タブ
+# <a name="my-preferences-tab"></a>My Preferences (基本設定) タブ
 
 
 このトピックで説明 WDF Verifier の**個人設定**ページ。 このページで、パネルの機能のコントロールのいくつかの基本設定を設定できます。
@@ -31,7 +31,7 @@ ms.locfileid: "63363126"
 
 選択した場合、**カスタマイズされたコマンド ライン**ボックス、WDF Verifier パスの指定した文字列をデバッガーのすべてを選択します。
 
-既定のコマンド ライン ツールを Windows のデバッグ デバッガーに対して、初期の中断をバイパスする、特定の PID を添付して、デバッガー、プロセスからデタッチし、デバッガーを終了するときに実行したままにするように指示します。 Microsoft 提供のデバッガーのコマンド ライン オプションの完全な一覧を参照してください。[コマンド ライン オプション](https://msdn.microsoft.com/library/windows/hardware/ff539174)します。
+既定のコマンド ライン ツールを Windows のデバッグ デバッガーに対して、初期の中断をバイパスする、特定の PID を添付して、デバッガー、プロセスからデタッチし、デバッガーを終了するときに実行したままにするように指示します。 Microsoft 提供のデバッガーのコマンド ライン オプションの完全な一覧を参照してください。[コマンド ライン オプション](https://docs.microsoft.com/windows-hardware/drivers/debugger/command-line-options)します。
 
 既定の設定を変更することもできます。 次に、例を示します。
 

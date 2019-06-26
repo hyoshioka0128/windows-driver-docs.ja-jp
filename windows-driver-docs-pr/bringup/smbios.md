@@ -3,12 +3,12 @@ title: SMBIOS
 description: SMBIOS 仕様には、データ構造体とは、システムに関連するデータ構造にある情報が定義されています。
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 81046d457daa15e0cd9a7c694d42ecd19d621ad9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cdf68f229626c8339282209a23cf4362b9b5a0f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337495"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364502"
 ---
 # <a name="smbios"></a>SMBIOS
 
@@ -86,7 +86,7 @@ SMBIOS 仕様には、データ構造体とは、システムに関連するデ�
             <td>不定</td>
             <td>08 h</td>
             <td>16</td>
-            <td>一意の ID 番号をユニバーサル<br>7.2.1 セクションを参照してください。 <a href="http://www.dmtf.org/standards/smbios">DMTF SMBIOS 仕様 3.1</a>またはそれ以降。</td>
+            <td>一意の ID 番号をユニバーサル<br>7\.2.1 セクションを参照してください。 <a href="https://www.dmtf.org/standards/smbios">DMTF SMBIOS 仕様 3.1</a>またはそれ以降。</td>
         </tr>
         <tr>
             <td>エンクロージャの種類</td>
@@ -204,28 +204,28 @@ SMBIOS 仕様には、データ構造体とは、システムに関連するデ�
         <tr>
             <td>BIOS ベンダー</td>
             <td>BIOS のベンダーの名前の文字列の数</td>
-            <td>3.1 以降、DMTF SMBIOS 仕様で定義されています。</td>
+            <td>3\.1 以降、DMTF SMBIOS 仕様で定義されています。</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td>BIOS Version (BIOS のバージョン)</td>
             <td>BIOS のバージョンの数の文字列を指定します。 この値はコアおよび OEM のバージョン情報を含む可能性のある自由形式の文字列です。</td>
-            <td>3.1 以降、DMTF SMBIOS 仕様で定義されています。</td>
+            <td>3\.1 以降、DMTF SMBIOS 仕様で定義されています。</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td>BIOS の主要なリリース</td>
             <td>主要なリリースのシステム BIOS では、たとえば、値はリビジョン 10.22 とリビジョン 2.1 h 02 0 ah します。 このフィールドまたはシステム BIOS のマイナー リリース フィールドは、特定のシステム BIOS の更新プログラムがリリースされるたびに更新されます。 システムがこのフィールドの使用をサポートしていない場合、値は、このフィールドとシステム BIOS のマイナー リリースのフィールドの両方の FFh です。</td>
-            <td>3.1 以降、DMTF SMBIOS 仕様で定義されています。</td>
+            <td>3\.1 以降、DMTF SMBIOS 仕様で定義されています。</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td>BIOS のマイナー リリース</td>
             <td>マイナー リリースのシステム BIOS では、たとえば、値がリビジョン 10.22 とリビジョン 2.1 h 01 16 時間。</td>
-            <td>3.1 以降、DMTF SMBIOS 仕様で定義されています。</td>
+            <td>3\.1 以降、DMTF SMBIOS 仕様で定義されています。</td>
             <td></td>
             <td></td>
         </tr>
@@ -287,7 +287,7 @@ SMBIOS 仕様には、データ構造体とは、システムに関連するデ�
 
 [ワークフローを発行する Windows 10 ドライバー](http://download.microsoft.com/download/B/A/8/BA89DCE0-DB25-4425-9EFF-1037E0BA06F9/windows10_driver_publishing_workflow.docx) 
 
-[SMBIOS DMTF 仕様](http://www.dmtf.org/standards/smbios)                                                 
+[SMBIOS DMTF 仕様](https://www.dmtf.org/standards/smbios)                                                 
 
 
 

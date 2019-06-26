@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 353fb9888ae7132190173f7727edfee877f0999f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2afd76c2183d31ec177e93d3c6a6319a9eb57203
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374582"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378158"
 ---
 # <a name="devpkeydeviceproblemcode"></a>DEVPKEY_Device_ProblemCode
 
@@ -58,9 +58,9 @@ DEVPKEY_Device_ProblemCode デバイス プロパティは、デバイスのイ�
 
 DEVPKEY_Device_ProblemCode の値がいずれか、CM_PROB_*Xxx* Cfg.h で定義されている問題のコード。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_ProblemCode の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_ProblemCode の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows 上のデバイスのインスタンスの問題のコードにアクセスする方法については、次を参照してください。[デバイス インスタンスの状態と問題のコードを取得する](https://msdn.microsoft.com/library/windows/hardware/ff550651)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティを直接サポートされません。 以前のバージョンの Windows 上のデバイスのインスタンスの問題のコードにアクセスする方法については、次を参照してください。[デバイス インスタンスの状態と問題のコードを取得する](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-the-status-and-problem-code-for-a-device-instance)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -85,9 +85,9 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**CM_Get_DevNode_Status**](https://msdn.microsoft.com/library/windows/hardware/ff538514)
+[**CM_Get_DevNode_Status**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

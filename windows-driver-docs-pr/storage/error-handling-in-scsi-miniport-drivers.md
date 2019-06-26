@@ -7,12 +7,12 @@ keywords:
 - エラー WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6aa30e3280f1d33d6f9ad939e20172118b125901
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9236a4bfdf94abe41c1576edd0c58273cd3f2058
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380507"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369578"
 ---
 # <a name="error-handling-in-scsi-miniport-drivers"></a>SCSI ミニポート ドライバーでのエラー処理
 
@@ -46,7 +46,7 @@ ms.locfileid: "63380507"
 
 データの不足、ミニポート ドライバーを SRB の更新する必要があります**DataTransferLength**を実際にどのくらいのデータは転送されたかを示します。
 
-さらに、ミニポート ドライバーに SRB を渡すことによって、上記のエラーの一部を記録する、次のガイドラインを使用する必要があります[ **ScsiPortLogError**](https://msdn.microsoft.com/library/windows/hardware/ff564652):
+さらに、ミニポート ドライバーに SRB を渡すことによって、上記のエラーの一部を記録する、次のガイドラインを使用する必要があります[ **ScsiPortLogError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportlogerror):
 
 SRB のドライバーの作成者の判断でエラー ログに記録\_状態\_エラー。
 
@@ -64,7 +64,7 @@ SRB のエラー ログを常に\_状態\_フェーズ\_シーケンス\_失敗�
 
 SRB のエラー ログを常に\_状態\_でハードウェア エラー ビジーです。
 
-ミニポート ドライバーの呼び出しエラーをログに記録する[ **ScsiPortLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff564652)次のシステム定義のエラーまたは警告コードのいずれかを使用します。
+ミニポート ドライバーの呼び出しエラーをログに記録する[ **ScsiPortLogError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportlogerror)次のシステム定義のエラーまたは警告コードのいずれかを使用します。
 
 SP\_BUS\_パリティ\_エラーにマップ SRB\_状態\_パリティ\_エラー
 
@@ -86,7 +86,7 @@ SP\_不良\_FW\_エラー (FW が*ファームウェア*)
 
 SP\_不良\_FW\_警告
 
-[**ScsiPortLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff564652)エラー ログのパケットを割り当てます、設定、およびミニポート ドライバーに代わってイベント ログに I/O エラーを記録します。 システム管理者またはユーザーの場合は、システム イベント ログを確認し、必要に応じて、再構成、修復、または失敗する前に、HBA を交換して HBA の状態を監視できます。
+[**ScsiPortLogError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportlogerror)エラー ログのパケットを割り当てます、設定、およびミニポート ドライバーに代わってイベント ログに I/O エラーを記録します。 システム管理者またはユーザーの場合は、システム イベント ログを確認し、必要に応じて、再構成、修復、または失敗する前に、HBA を交換して HBA の状態を監視できます。
 
  
 

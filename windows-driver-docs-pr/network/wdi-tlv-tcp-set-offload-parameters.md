@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_TCP_SET_OFFLOAD_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: de29cf89066bffa83a00584f91cad64ce3c56901
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb8119b7da3fca7f705e0773e8ea4280f5dfb872
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357316"
 ---
 # <a name="wditlvtcpsetoffloadparameters"></a>WDI\_TLV\_TCP\_設定\_オフロード\_パラメーター
 
 
-WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート アダプターの TCP オフロード機能を含む TLV [OID\_WDI\_セット\_TCP\_オフロード\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/dn925945)します。
+WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート アダプターの TCP オフロード機能を含む TLV [OID\_WDI\_セット\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-tcp-offload-parameters)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -232,7 +232,7 @@ WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート ア
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -259,9 +259,9 @@ WDI\_TLV\_TCP\_設定\_オフロード\_パラメーターはミニポート ア
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_オフロード\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566706)
+[**NDIS\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 
-[OID\_WDI\_設定\_TCP\_オフロード\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/dn925945)
+[OID\_WDI\_設定\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-tcp-offload-parameters)
 
  
 

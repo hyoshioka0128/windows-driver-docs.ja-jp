@@ -4,19 +4,19 @@ description: 仮想ポートのパラメーターのクエリ
 ms.assetid: 482DA041-2C70-438A-8D29-0F338CDCF935
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afb90e36f69cd108e752d3f30e2ff2a75dc0a54e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cec4cfcfa45094f724e5fdeb7a6fedc36ef21937
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339965"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379178"
 ---
 # <a name="querying-the-parameters-of-a-virtual-port"></a>仮想ポートのパラメーターのクエリ
 
 
-上にある、ドライバーは、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの NIC スイッチの仮想ポート (VPort) のパラメーターを取得できます。 ドライバーの問題のオブジェクト識別子 (OID) メソッド要求[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451825)これらのパラメーターを取得します。
+上にある、ドライバーは、シングル ルート I/O 仮想化 (SR-IOV) をサポートするネットワーク アダプターの NIC スイッチの仮想ポート (VPort) のパラメーターを取得できます。 ドライバーの問題のオブジェクト識別子 (OID) メソッド要求[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)これらのパラメーターを取得します。
 
-上にあるドライバーはこの OID メソッド要求を発行前に初期化する必要があります、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451597)構造体。 ドライバーは、次のようにこの構造体のメンバーを設定する必要があります。
+上にあるドライバーはこの OID メソッド要求を発行前に初期化する必要があります、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体。 ドライバーは、次のようにこの構造体のメンバーを設定する必要があります。
 
 -   **SwitchId**メンバーは、パラメーターが返されるには、NIC のスイッチの識別子を設定する必要があります。
 
@@ -26,17 +26,17 @@ ms.locfileid: "63339965"
 
 -   **VPortId** VPort に関連付けられている識別子にメンバーを設定する必要があります。 上にあるドライバーは、次の方法のいずれかで VPort 識別子を取得します。
 
-    -   前の OID メソッド要求から[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)します。
+    -   前の OID メソッド要求から[OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。
 
-    -   前の OID メソッド要求から[OID\_NIC\_スイッチ\_ENUM\_拡張](https://msdn.microsoft.com/library/windows/hardware/hh451821)します。
+    -   前の OID メソッド要求から[OID\_NIC\_スイッチ\_ENUM\_拡張](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)します。
 
-この OID メソッド要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451597)構造体。 この構造体には、指定した VPort のパラメーターが含まれています。
+この OID メソッド要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体。 この構造体には、指定した VPort のパラメーターが含まれています。
 
-NDIS ハンドル、 [OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451825)ミニポート ドライバーに要求します。 NDIS は、次のソースを調べることから保持されているデータの内部キャッシュから情報を返します。
+NDIS ハンドル、 [OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)ミニポート ドライバーに要求します。 NDIS は、次のソースを調べることから保持されているデータの内部キャッシュから情報を返します。
 
--   OID メソッド要求[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)します。
+-   OID メソッド要求[OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。
 
--   OID の要求を設定する[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/hh451825)します。
+-   OID の要求を設定する[OID\_NIC\_スイッチ\_VPORT\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)します。
 
  
 

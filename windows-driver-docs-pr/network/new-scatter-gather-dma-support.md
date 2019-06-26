@@ -8,12 +8,12 @@ keywords:
 - NDIS ミニポート ドライバー WDK、スキャッター/ギャザー DMA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a64a234cf49067a47d0bbc224329c29448c616cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6965f102a6ec4834e5f03d6a8313d9452d3d729
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380590"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371218"
 ---
 # <a name="new-scattergather-dma-support"></a>新しい Scatter/Gather DMA のサポート
 
@@ -29,7 +29,7 @@ NDIS の以前のバージョンとは異なり NDIS 6.0 では DMA の転送パ
 
 -   ミニポート ドライバーでは、マッピングの必要がなくなります、事前に割り当てられるバッファーにコピーすることで、小規模または高度に断片化されたパケットの送信を最適化できます。 これにより、不要な処理がなくなります。
 
--   NDIS は複数に安全に渡すことができます[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)ミニポート ドライバーが 1 つの関数呼び出しに構造体。 これによってミニポート ドライバーに少ない呼び出しになり、システム パフォーマンスが向上します。
+-   NDIS は複数に安全に渡すことができます[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)ミニポート ドライバーが 1 つの関数呼び出しに構造体。 これによってミニポート ドライバーに少ない呼び出しになり、システム パフォーマンスが向上します。
 
 -   ミニポート ドライバーがスキャッター/ギャザーの一覧については、メモリ事前割り当てを行うことができますので、NDIS がスキャッター/ギャザー リストの実行時にメモリを割り当てることはありません。
 

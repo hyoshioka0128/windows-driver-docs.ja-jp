@@ -4,12 +4,12 @@ description: 通信事業者の通知のシナリオ
 ms.assetid: 3749d9ab-3dff-4216-a23b-0e75c04d9a22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e3f15beb3013c2628437c57a1c38464a75a1d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a85da5a2d53187e5d4adfbb70d81785bcab55c5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391971"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364970"
 ---
 # <a name="mobile-operator-notification-scenarios"></a>通信事業者の通知のシナリオ
 
@@ -60,7 +60,7 @@ MNOs は、アカウントのプロビジョニングのメタデータの管理
 
 Windows 8、Windows 8.1、および Windows 10 アプリ開発を簡略化の詳細のほとんどを非表示にする、基になる USSD プロトコルの抽象化であるを USSD API に提供します。 フィルタ リング規則のプロビジョニングと一致するネットワークが開始した USSD を受信すると、 [MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)イベントをトリガーし、対応するバック グラウンド作業項目を使用して、USSD セッション経由で通信できます、USSD API です。
 
-USSD Api の詳細については、次を参照してください。 [ **Windows.Networking.NetworkOperators** ](https://msdn.microsoft.com/library/windows/apps/br241148)名前空間。
+USSD Api の詳細については、次を参照してください。 [ **Windows.Networking.NetworkOperators** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)名前空間。
 
 ## <a name="span-idtriglocspanspan-idtriglocspantriggering-data-usage-and-roaming-notifications"></a><span id="trigloc"></span><span id="TRIGLOC"></span>データの使用状況をトリガーして、通知のローミング
 

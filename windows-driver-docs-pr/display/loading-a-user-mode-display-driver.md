@@ -8,12 +8,12 @@ keywords:
 - WDK を表示するドライバーの読み込み
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81932134fbd1d5f3500ac576a3bc0703dd19f72a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a923ee29e3a66ad071ccfb96e5ff1e143d05fcc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380383"
 ---
 # <a name="loading-a-user-mode-display-driver"></a>ユーザー モード ディスプレイ ドライバーの読み込み
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347584"
 HKR,, UserModeDriverName,    %REG_MULTI_SZ%, Xxx.dll
 ```
 
-INF ファイルは、オペレーティング システム、システムの %systemroot% に、ユーザー モードのディスプレイ ドライバーのコピーを特定する情報を含める必要があります\\system32 ディレクトリ。 詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)と[ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)します。
+INF ファイルは、オペレーティング システム、システムの %systemroot% に、ユーザー モードのディスプレイ ドライバーのコピーを特定する情報を含める必要があります\\system32 ディレクトリ。 詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)と[ **INF DestinationDirs セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)します。
 
 Direct3D のランタイムは、ランタイムのプロセス空間内でユーザー モードのディスプレイ ドライバーを読み込むために、レジストリからユーザー モードのディスプレイ ドライバーの DLL の名前を取得します。
 

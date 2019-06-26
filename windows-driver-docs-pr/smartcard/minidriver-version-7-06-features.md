@@ -4,12 +4,12 @@ description: ミニドライバー バージョン 7.06 の機能
 ms.assetid: 6066C6F9-DF03-4886-A5AE-FFE50B2B34D8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2a6d6271c0492555495aeb94cee9832991ce5d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa4c0c1a624b414ee29be276326a8a5127b17218
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356750"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356687"
 ---
 # <a name="minidriver-version-706-features"></a>ミニドライバー バージョン 7.06 の機能
 
@@ -36,14 +36,14 @@ ms.locfileid: "63356750"
 
 暗号化されたデータを渡すために、次の構造は、このバージョンの仕様で定義されます。
 
--   [**カード\_認証**](https://msdn.microsoft.com/library/windows/hardware/dn468744)
--   [**カード\_認証\_応答**](https://msdn.microsoft.com/library/windows/hardware/dn468745)
--   [**カード\_変更\_AUTHENTICATOR**](https://msdn.microsoft.com/library/windows/hardware/dn468746)
--   [**カード\_変更\_AUTHENTICATOR\_応答**](https://msdn.microsoft.com/library/windows/hardware/dn468747)
--   [**カード\_ENCRYPTED\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468749)
--   [**カード\_インポート\_キー ペア**](https://msdn.microsoft.com/library/windows/hardware/dn468750)
+-   [**カード\_認証**](https://docs.microsoft.com/previous-versions/dn468744(v=vs.85))
+-   [**カード\_認証\_応答**](https://docs.microsoft.com/previous-versions/dn468745(v=vs.85))
+-   [**カード\_変更\_AUTHENTICATOR**](https://docs.microsoft.com/previous-versions/dn468746(v=vs.85))
+-   [**カード\_変更\_AUTHENTICATOR\_応答**](https://docs.microsoft.com/previous-versions/dn468747(v=vs.85))
+-   [**カード\_ENCRYPTED\_データ**](https://docs.microsoft.com/previous-versions/dn468749(v=vs.85))
+-   [**カード\_インポート\_キー ペア**](https://docs.microsoft.com/previous-versions/dn468750(v=vs.85))
 
-セキュリティで保護されたキーの挿入の次のカード プロパティは、この仕様のバージョン 7 で定義されます。 これらのプロパティの詳細については、次を参照してください。 [ **CardGetProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468729)します。
+セキュリティで保護されたキーの挿入の次のカード プロパティは、この仕様のバージョン 7 で定義されます。 これらのプロパティの詳細については、次を参照してください。 [ **CardGetProperty**](https://docs.microsoft.com/previous-versions/dn468729(v=vs.85))します。
 
 -   CP\_キー\_インポート\_サポート
 -   CP\_ENUM\_アルゴリズム
@@ -54,21 +54,21 @@ ms.locfileid: "63356750"
 
 サーバーの機能:
 
--   [**MDEncryptData**](https://msdn.microsoft.com/library/windows/hardware/dn468756)
--   [**MDImportSessionKey**](https://msdn.microsoft.com/library/windows/hardware/dn468757)
+-   [**MDEncryptData**](https://docs.microsoft.com/previous-versions/dn468756(v=vs.85))
+-   [**MDImportSessionKey**](https://docs.microsoft.com/previous-versions/dn468757(v=vs.85))
 
 共有関数:
 
--   [**CardDestroyKey**](https://msdn.microsoft.com/library/windows/hardware/dn468720)
--   [**CardGetAlgorithmProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468722)
--   [**CardGetKeyProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468728)
--   [**CardGetSharedKeyHandle**](https://msdn.microsoft.com/library/windows/hardware/dn468730)
--   [**CardProcessEncryptedData**](https://msdn.microsoft.com/library/windows/hardware/dn468732)
--   [**CardSetKeyProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468739)
+-   [**CardDestroyKey**](https://docs.microsoft.com/previous-versions/dn468720(v=vs.85))
+-   [**CardGetAlgorithmProperty**](https://docs.microsoft.com/previous-versions/dn468722(v=vs.85))
+-   [**CardGetKeyProperty**](https://docs.microsoft.com/previous-versions/dn468728(v=vs.85))
+-   [**CardGetSharedKeyHandle**](https://docs.microsoft.com/previous-versions/dn468730(v=vs.85))
+-   [**CardProcessEncryptedData**](https://docs.microsoft.com/previous-versions/dn468732(v=vs.85))
+-   [**CardSetKeyProperty**](https://docs.microsoft.com/previous-versions/dn468739(v=vs.85))
 
 クライアントの機能:
 
--   [**CardImportSessionKey**](https://msdn.microsoft.com/library/windows/hardware/dn468731)
+-   [**CardImportSessionKey**](https://docs.microsoft.com/previous-versions/dn468731(v=vs.85))
 
 ## <a name="span-idsupportforrsapaddingremovaloperationsinthesmartcardspanspan-idsupportforrsapaddingremovaloperationsinthesmartcardspanspan-idsupportforrsapaddingremovaloperationsinthesmartcardspansupport-for-rsa-padding-removal-operations-in-the-smart-card"></a><span id="Support_for_RSA_Padding_Removal_Operations_in_the_Smart_Card"></span><span id="support_for_rsa_padding_removal_operations_in_the_smart_card"></span><span id="SUPPORT_FOR_RSA_PADDING_REMOVAL_OPERATIONS_IN_THE_SMART_CARD"></span>スマート カードの削除操作のパディング RSA のサポート
 
@@ -77,7 +77,7 @@ ms.locfileid: "63356750"
 
 バージョン 7 には、削除を埋め込み、内部をサポートしない古いカード (または OnCard) のサポートも提供します。 これにより、これらのカードを引き続き Base CSP または KSP が用意されている埋め込みの削除機能を使用できます。
 
-詳細については、次を参照してください[ **PFN\_CSP\_UNPAD\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn468771)と[ **CardRSADecrypt** ](https://msdn.microsoft.com/library/windows/hardware/dn468737)。この仕様で後述します。
+詳細については、次を参照してください[ **PFN\_CSP\_UNPAD\_データ**](https://docs.microsoft.com/previous-versions/dn468771(v=vs.85))と[ **CardRSADecrypt** ](https://docs.microsoft.com/previous-versions/dn468737(v=vs.85))。この仕様で後述します。
 
 ## <a name="span-idsmartcardplugandplayspanspan-idsmartcardplugandplayspanspan-idsmartcardplugandplayspansmart-card-plug-and-play"></a><span id="Smart_Card_Plug_and_Play"></span><span id="smart_card_plug_and_play"></span><span id="SMART_CARD_PLUG_AND_PLAY"></span>スマート カードのプラグ アンド プレイ
 
@@ -89,9 +89,9 @@ Windows 7 コンピューターに接続されているカード リーダーに
 ## <a name="span-idcardcreatecontainerexspanspan-idcardcreatecontainerexspanspan-idcardcreatecontainerexspan-cardcreatecontainerex"></a><span id="_CardCreateContainerEx"></span><span id="_cardcreatecontainerex"></span><span id="_CARDCREATECONTAINEREX"></span> CardCreateContainerEx
 
 
-この新しい API では、機能を拡張、 [ **CardCreateContainer** ](https://msdn.microsoft.com/library/windows/hardware/dn468708) API。 キー コンテナーを作成するだけでなく、コンテナーが作成されると、この関数は暗証番号 (pin) のアソシエーションを確立します。
+この新しい API では、機能を拡張、 [ **CardCreateContainer** ](https://docs.microsoft.com/previous-versions/dn468708(v=vs.85)) API。 キー コンテナーを作成するだけでなく、コンテナーが作成されると、この関数は暗証番号 (pin) のアソシエーションを確立します。
 
-詳細については、次を参照してください。 [ **CardCreateContainerEx** ](https://msdn.microsoft.com/library/windows/hardware/dn468709)この仕様で後述します。
+詳細については、次を参照してください。 [ **CardCreateContainerEx** ](https://docs.microsoft.com/previous-versions/dn468709(v=vs.85))この仕様で後述します。
 
 ## <a name="span-idnewcardcontainerpropertyforecdsaecdhkeyassociationspanspan-idnewcardcontainerpropertyforecdsaecdhkeyassociationspanspan-idnewcardcontainerpropertyforecdsaecdhkeyassociationspannew-card-container-property-for-ecdsaecdh-key-association"></a><span id="New_Card_Container_Property_for_ECDSA_ECDH_Key_Association"></span><span id="new_card_container_property_for_ecdsa_ecdh_key_association"></span><span id="NEW_CARD_CONTAINER_PROPERTY_FOR_ECDSA_ECDH_KEY_ASSOCIATION"></span>ECDSA と ECDH キーの関連付けの新しいカード コンテナーのプロパティ
 

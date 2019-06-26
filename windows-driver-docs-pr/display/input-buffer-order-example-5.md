@@ -4,12 +4,12 @@ description: 入力バッファー順序の例 5
 ms.assetid: f0ba80bb-ff84-4944-aae5-52eb0848edf5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f61909e55eaf370fffe958f70998ea9eac8ce59b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4e23bc6693ff1fd2ac56b6e2e4219bb76276dde
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379918"
 ---
 # <a name="input-buffer-order-example-5"></a>入力バッファー順序の例 5
 
@@ -19,7 +19,7 @@ ms.locfileid: "63350248"
 
 **このセクションでは、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。**
 
-VMR ドライバーへの呼び出しを開始する[ **DeinterlaceBltEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563927)でデバイスを使用する関数[入力バッファーの順序の例 4](input-buffer-order-example-4.md)で 2 つのビデオ サブストリームを結合する、プログレッシブ ビデオ ストリーム。 これらのサンプルをコピー先のバッファーに出力を生成するために必要ない場合でも、VMR はまだプログレッシブ ビデオ サンプルのと同じ数を渡します。 内のサーフェスのシーケンス、 **lpBufferInfo**配列。
+VMR ドライバーへの呼び出しを開始する[ **DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)でデバイスを使用する関数[入力バッファーの順序の例 4](input-buffer-order-example-4.md)で 2 つのビデオ サブストリームを結合する、プログレッシブ ビデオ ストリーム。 これらのサンプルをコピー先のバッファーに出力を生成するために必要ない場合でも、VMR はまだプログレッシブ ビデオ サンプルのと同じ数を渡します。 内のサーフェスのシーケンス、 **lpBufferInfo**配列。
 
 <table>
 <colgroup>
@@ -78,7 +78,7 @@ VMR ドライバーへの呼び出しを開始する[ **DeinterlaceBltEx** ](htt
 
  
 
-ドライバーは、インター操作に必要ではないために、インデックス 1 および 3 をインデックスにあるサーフェスを無視できます。 プログレッシブのサンプルは、DXVA でマークされた\_SampleProgressiveFrame フラグ、 **SampleFormat**のメンバー [ **DXVA\_VideoSample2** ](https://msdn.microsoft.com/library/windows/hardware/ff564092)サンプルは、構造体。 サブストリームのサンプルは、新しい DXVA でマークされた\_SampleSubStream フラグ。
+ドライバーは、インター操作に必要ではないために、インデックス 1 および 3 をインデックスにあるサーフェスを無視できます。 プログレッシブのサンプルは、DXVA でマークされた\_SampleProgressiveFrame フラグ、 **SampleFormat**のメンバー [ **DXVA\_VideoSample2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videosample2)サンプルは、構造体。 サブストリームのサンプルは、新しい DXVA でマークされた\_SampleSubStream フラグ。
 
  
 

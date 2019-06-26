@@ -6,12 +6,12 @@ keywords:
 - Ws2def.h ネットワーク ドライバー
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e2098970cf0809c610199f0940d1bb4c92045e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e4592ef434b81aa984c8a530d96c79344bb926b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359727"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377942"
 ---
 # <a name="ws2defh"></a>Ws2def.h
 
@@ -22,7 +22,7 @@ Ws2def.h ヘッダーには、Winsock2 仕様の定義が含まれています�
 > [!IMPORTANT]
 > このセクションのトピックには、定義、マクロ、Oid、状態インジケーター、およびネットワーク ドライバー リファレンス (構造体、列挙型、関数、およびコールバック) の一部ではないその他のデータ構造のページが含まれています。 
 >
-> このヘッダーのネットワーク ドライバー リファレンスの詳細については、次を参照してください。 [Ws2def.h (リファレンス)](https://msdn.microsoft.com/library/windows/hardware/mt808757)します。
+> このヘッダーのネットワーク ドライバー リファレンスの詳細については、次を参照してください。 [Ws2def.h (リファレンス)](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

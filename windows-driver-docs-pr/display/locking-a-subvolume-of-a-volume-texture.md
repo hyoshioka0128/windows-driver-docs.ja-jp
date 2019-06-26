@@ -9,12 +9,12 @@ keywords:
 - subvolume WDK DirectX 8.0 のロック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 208dedf93e1cdce1ac3375f92ddf3ed55dd38895
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d8f79b87df37573d47ec63d4f8b246b6f7f9911
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347597"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360900"
 ---
 # <a name="locking-a-subvolume-of-a-volume-texture"></a>ボリューム テクスチャのサブボリュームのロック
 
@@ -22,7 +22,7 @@ ms.locfileid: "63347597"
 ## <span id="ddk_locking_a_subvolume_of_a_volume_texture_gg"></span><span id="DDK_LOCKING_A_SUBVOLUME_OF_A_VOLUME_TEXTURE_GG"></span>
 
 
-DirectX 8.1 にはボリューム テクスチャの subvolume だけをロックするドライバーをできる新しい機能が導入されています。 ときに、ドライバーの[ *DdLock* ](https://msdn.microsoft.com/library/windows/hardware/ff549599)関数が呼び出されると、ドライバーは、ボリューム全体のテクスチャではなく subvolume だけをロックすることによりシステム パフォーマンスを向上させることができます。
+DirectX 8.1 にはボリューム テクスチャの subvolume だけをロックするドライバーをできる新しい機能が導入されています。 ときに、ドライバーの[ *DdLock* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock)関数が呼び出されると、ドライバーは、ボリューム全体のテクスチャではなく subvolume だけをロックすることによりシステム パフォーマンスを向上させることができます。
 
 この機能のサポートを示すために、ドライバーは、D3DDEVCAPS を設定する必要があります\_SUBVOLUMELOCK ビット、 **DevCaps** D3DCAPS8 構造体のメンバー。 ドライバーがへの応答で D3DCAPS8 構造体を返します、 **GetDriverInfo2** 」の説明に従ってクエリ[DirectX 8.0 スタイル Direct3D の機能を Reporting](reporting-directx-8-0-style-direct3d-capabilities.md)します。 このクエリのサポートについては、「[サポート GetDriverInfo2](supporting-getdriverinfo2.md)します。
 

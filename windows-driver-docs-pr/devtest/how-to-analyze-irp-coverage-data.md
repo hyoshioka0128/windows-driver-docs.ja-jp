@@ -6,12 +6,12 @@ keywords:
 - ドライバー カバレッジ Toolkit WDK は、データの分析
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dd6779cd00fb756fccc96f5a057e1eb3ad7110c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55bd5232a9881c70eb66a335386229a2e8019011
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329730"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356502"
 ---
 # <a name="how-to-analyze-irp-coverage-data"></a>IRP カバレッジ データを分析する方法
 
@@ -26,7 +26,7 @@ ms.locfileid: "63329730"
 
 このトピックでは、使用して、例として、テスト コンピューター上のデバイス ノード (devnode) が有効になっている IRP カバレッジ データから生成されたレポート。 Devnode は 9740、および IRP カバレッジ有効だった devnode を実行して、 **IRP を有効にするカバレッジ データ コレクション**テスト コンピューター上のツール。
 
-WDK と Visual Studio のテスト環境の設定の詳細については、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法を](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)します。 選択して、テストとツールのパラメーターの構成については、次を参照してください。[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)と[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)します。
+WDK と Visual Studio のテスト環境の設定の詳細については、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法を](https://docs.microsoft.com/windows-hardware/drivers)します。 選択して、テストとツールのパラメーターの構成については、次を参照してください。[を選択して、デバイスの基本テストを構成する方法](https://docs.microsoft.com/windows-hardware/drivers)と[デバイス基礎テスト パラメーター](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 この devnode IRP カバレッジ レポートを実行して生成 IRP のカバレッジ データを収集すると、**表示 IRP カバレッジ データを収集する**テスト コンピューター上のツール。
 

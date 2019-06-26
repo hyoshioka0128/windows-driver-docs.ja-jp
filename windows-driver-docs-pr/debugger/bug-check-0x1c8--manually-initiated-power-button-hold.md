@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f2fabfaff787d5d0535e398bff4565d9d1311ea0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5866f09657b880050eaf720737c3322eba34dd98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361627"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362004"
 ---
 # <a name="bug-check-0x1c8-manuallyinitiatedpowerbuttonhold"></a>バグ チェック 0x1C8:手動で\_INITIATED\_POWER\_ボタン\_保持
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361627"
 ユーザーが一定時間の電源ボタンを保持しているときのバグチェックを開始する、システムが構成されました。  これは、システムが時間の電源ボタンの保留中のハード リセットしようとしているときにダンプをキャプチャするために使用する診断バグチェックです。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 画面ではなく、標準的な"青"表示されているこのバグ チェックが発生したときに、黒の背景に、次のテキストが % 完了のインジケーターと共に表示されることに注意してください。

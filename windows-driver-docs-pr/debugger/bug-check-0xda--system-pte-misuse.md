@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 16ae75a5de50453400e8463990805b1c82d98118
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d15af41c4b11739b5e03bff1718b639071b3fd8b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367130"
 ---
 # <a name="bug-check-0xda-systemptemisuse"></a>バグ チェック 0xDA:システム\_PTE\_誤用
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371726"
 システム\_PTE\_誤用のバグ チェックが 0x000000DA の値を持ちます。 これは、不適切な方法でページ テーブル エントリ (PTE) ルーチンが使用されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="systemptemisuse-parameters"></a>システム\_PTE\_誤用パラメーター
@@ -198,8 +198,8 @@ ms.locfileid: "63371726"
 <td align="left"><p>無効なマッピングのアドレス</p></td>
 <td align="left"><p>呼び出し元の識別タグ</p></td>
 <td align="left"><p>マッピングのアドレス空間内のマッピングの数</p></td>
-<td align="left"><p>マッピングのアドレス空間を解放しようとして、呼び出し元は、まだ予約されています。 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff556392" data-raw-source="[MmUnmapReservedMapping](https://msdn.microsoft.com/library/windows/hardware/ff556392)">MmUnmapReservedMapping</a></strong></p>
-<p>前に呼び出す必要があります <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554512" data-raw-source="[MmFreeMappingAddress](https://msdn.microsoft.com/library/windows/hardware/ff554512)">MmFreeMappingAddress</a></strong>します。</p></td>
+<td align="left"><p>マッピングのアドレス空間を解放しようとして、呼び出し元は、まだ予約されています。 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p>
+<p>前に呼び出す必要があります <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreemappingaddress" data-raw-source="[MmFreeMappingAddress](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreemappingaddress)">MmFreeMappingAddress</a></strong>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x104</p></td>
@@ -220,7 +220,7 @@ ms.locfileid: "63371726"
 <td align="left"><p>最初のアドレスのマッピング</p></td>
 <td align="left"><p>空でないマッピングのアドレス</p></td>
 <td align="left"><p>マッピングの最後のアドレス</p></td>
-<td align="left"><p>呼び出し元が、MDL を適切に予約されていないマッピング アドレス空間にマップしようとしています。 呼び出し元を呼び出す必要がある<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff556392" data-raw-source="[MmUnmapReservedMapping](https://msdn.microsoft.com/library/windows/hardware/ff556392)">MmUnmapReservedMapping</a></strong>呼び出す前に <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554640" data-raw-source="[MmMapLockedPagesWithReservedMapping](https://msdn.microsoft.com/library/windows/hardware/ff554640)">MmMapLockedPagesWithReservedMapping</a></strong></p></td>
+<td align="left"><p>呼び出し元が、MDL を適切に予約されていないマッピング アドレス空間にマップしようとしています。 呼び出し元を呼び出す必要がある<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong>呼び出す前に <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpageswithreservedmapping" data-raw-source="[MmMapLockedPagesWithReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpageswithreservedmapping)">MmMapLockedPagesWithReservedMapping</a></strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x108</p></td>

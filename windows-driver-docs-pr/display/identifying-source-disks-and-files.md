@@ -9,12 +9,12 @@ keywords:
 - 表示のソース ディスクまたはファイルを識別します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 344cb2f80d2402a6bb881605ecfafc36b0463726
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6815050947045be29ca067fc90f20949bd047e7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354732"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380178"
 ---
 # <a name="identifying-source-disks-and-files"></a>ソース ディスクおよびファイルの識別
 
@@ -31,7 +31,7 @@ UserModeDriverName1.dll  = 3426
 UserModeDriverName2.dll  = 3426
 ```
 
-詳細については、 **SourceDisksNames**と**SourceDisksFiles**のセクションを参照してください[ **INF SourceDisksNames セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547478)と[ **INF SourceDisksFiles セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547472)します。
+詳細については、 **SourceDisksNames**と**SourceDisksFiles**のセクションを参照してください[ **INF SourceDisksNames セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)と[ **INF SourceDisksFiles セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)します。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8712185a6da5fe9621a7f11a23ac9ea115509bc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10c57c80a62639eb1f468135789ab3b039de4c02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351091"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378204"
 ---
 # <a name="devpkeydevicelocationpaths"></a>DEVPKEY_Device_LocationPaths
 
@@ -62,9 +62,9 @@ DEVPKEY_Device_LocationPaths デバイス プロパティは、デバイス ツ�
 
 Windows では、DEVPKEY_Device_LocationPaths の値を設定します。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_LocationPaths の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_LocationPaths の値を取得します。
 
-Windows Server 2003 は、このプロパティをサポートしますが、DEVPKEY_Device_LocationPaths プロパティのキーをサポートしていません。 代わりに、Windows Server 2003 でプロパティの値へのアクセスに対応する SPDRP_LOCATION_PATHS 識別子を使用することができます。 Windows Server 2003 でこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003 は、このプロパティをサポートしますが、DEVPKEY_Device_LocationPaths プロパティのキーをサポートしていません。 代わりに、Windows Server 2003 でプロパティの値へのアクセスに対応する SPDRP_LOCATION_PATHS 識別子を使用することができます。 Windows Server 2003 でこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,7 +89,7 @@ Windows Server 2003 は、このプロパティをサポートしますが、DEV
 ## <a name="see-also"></a>関連項目
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

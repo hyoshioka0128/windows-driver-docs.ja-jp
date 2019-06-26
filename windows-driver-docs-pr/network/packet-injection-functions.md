@@ -7,12 +7,12 @@ keywords:
 - インジェクション関数 WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e080489c18e8ff80fd1b804e82e5cb0d35d566d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a1bbc61b4295003cafed8be66a142552455809d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363777"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357598"
 ---
 # <a name="packet-injection-functions"></a>パケット挿入関数
 
@@ -34,32 +34,32 @@ ms.locfileid: "63363777"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551177" data-raw-source="[&lt;strong&gt;FwpsInjectForwardAsync0&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551177)"><strong>FwpsInjectForwardAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectforwardasync0" data-raw-source="[&lt;strong&gt;FwpsInjectForwardAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectforwardasync0)"><strong>FwpsInjectForwardAsync0</strong></a></p></td>
 <td align="left"><p>ネットワーク層</p></td>
 <td align="left"><p>転送データのパス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551183" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkReceiveAsync0&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551183)"><strong>FwpsInjectNetworkReceiveAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkReceiveAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0)"><strong>FwpsInjectNetworkReceiveAsync0</strong></a></p></td>
 <td align="left"><p>ネットワーク層</p></td>
 <td align="left"><p>受信データのパス</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551185" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkSendAsync0&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551185)"><strong>FwpsInjectNetworkSendAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkSendAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0)"><strong>FwpsInjectNetworkSendAsync0</strong></a></p></td>
 <td align="left"><p>ネットワーク層</p></td>
 <td align="left"><p>送信データのパス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551186" data-raw-source="[&lt;strong&gt;FwpsInjectTransportReceiveAsync0&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551186)"><strong>FwpsInjectTransportReceiveAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportReceiveAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0)"><strong>FwpsInjectTransportReceiveAsync0</strong></a></p></td>
 <td align="left"><p>トランスポート、データグラム データ、ICMP のエラーまたは ALE レイヤーからのパケット データ</p></td>
 <td align="left"><p>受信データのパス</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551188" data-raw-source="[&lt;strong&gt;FwpsInjectTransportSendAsync0&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551188)"><strong>FwpsInjectTransportSendAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportSendAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0)"><strong>FwpsInjectTransportSendAsync0</strong></a></p></td>
 <td align="left"><p>トランスポート、データグラム データ、ICMP のエラーまたは ALE レイヤーからのパケット データ</p></td>
 <td align="left"><p>送信データのパス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551213" data-raw-source="[&lt;strong&gt;FwpsStreamInjectAsync0&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551213)"><strong>FwpsStreamInjectAsync0</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreaminjectasync0" data-raw-source="[&lt;strong&gt;FwpsStreamInjectAsync0&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)"><strong>FwpsStreamInjectAsync0</strong></a></p></td>
 <td align="left"><p>TCP データ セグメント</p></td>
 <td align="left"><p>データ ストリーム</p></td>
 </tr>
@@ -68,7 +68,7 @@ ms.locfileid: "63363777"
 
  
 
-さらに、 [ **FwpsQueryPacketInjectionState0** ](https://msdn.microsoft.com/library/windows/hardware/ff551202)パケット データの挿入の履歴を検査する関数を使用します。
+さらに、 [ **FwpsQueryPacketInjectionState0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)パケット データの挿入の履歴を検査する関数を使用します。
 
 引き出し線の挿入関数で必要とされるすべての必要な情報を指定できる場合クロス レイヤーの挿入が有効になっているし、net バッファーの一覧がインジェクション関数によって予期される形式。 コールアウトが転送パスでパケットをキャプチャ、ローカル コンピューター、および呼び出しの送信先アドレスの変更など**FwpsInjectTransportReceiveAsync0**にパケットをローカル コンピューターの TCP/IP スタックにリダイレクトします。
 

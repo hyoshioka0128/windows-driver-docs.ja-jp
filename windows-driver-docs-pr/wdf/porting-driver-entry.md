@@ -4,17 +4,17 @@ description: DriverEntry の移植
 ms.assetid: E880A45A-136C-480E-BE66-B61558F98227
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd941bc36d8d09cff1fd5b3c9a6d55001c787ad
-ms.sourcegitcommit: ead145093395141164ec18a4764b19472ea9ff4b
+ms.openlocfilehash: 88945db7afe17898f921bae61e7fd3c765f1771b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65760599"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379645"
 ---
 # <a name="porting-driverentry"></a>DriverEntry の移植
 
 
-WDM と framework ベースのドライバーの両方で、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)関数は、主なエントリ ポイント。 関数プロトタイプでは、両方のモデルで同じです。 システムの呼び出し、WDM ドライバーの**DriverEntry**ドライバーがメモリに読み込まれたとき。 DriverEntry のポインターを設定するドライバーの[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)で日常的な**DriverExtension -&gt;AddDevice**のフィールド、 [ **ドライバー\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff544174)構造、その I/O ディスパッチ ルーチンへのポインターのセット、 **MajorFunction**ドライバーの配列\_オブジェクトの構造、し、返します。 フレームワーク ベースのドライバーでは、システムで、フレームワークの内部**FxDriverEntry**ドライバーの読み込み時に機能します。 この内部関数が、フレームワークを初期化し、呼び出してドライバーの**DriverEntry**関数。 **DriverEntry**ドライバーへのポインターを設定[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバックと呼び出し[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175)に次の例のように、WDFDRIVER オブジェクトを作成します。
+WDM と framework ベースのドライバーの両方で、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)関数は、主なエントリ ポイント。 関数プロトタイプでは、両方のモデルで同じです。 システムの呼び出し、WDM ドライバーの**DriverEntry**ドライバーがメモリに読み込まれたとき。 DriverEntry のポインターを設定するドライバーの[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)で日常的な**DriverExtension -&gt;AddDevice**のフィールド、 [ **ドライバー\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)構造、その I/O ディスパッチ ルーチンへのポインターのセット、 **MajorFunction**ドライバーの配列\_オブジェクトの構造、し、返します。 フレームワーク ベースのドライバーでは、システムで、フレームワークの内部**FxDriverEntry**ドライバーの読み込み時に機能します。 この内部関数が、フレームワークを初期化し、呼び出してドライバーの**DriverEntry**関数。 **DriverEntry**ドライバーへのポインターを設定[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバックと呼び出し[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)に次の例のように、WDFDRIVER オブジェクトを作成します。
 
 ```cpp
 NTSTATUS
@@ -39,7 +39,7 @@ DriverEntry(
 }
 ```
 
-**DriverEntry**もルック アサイド リストの作成やトレースの初期化など、ドライバーを必要とするすべてのグローバルなデータやリソースを初期化します。 反[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175) WDM ドライバーがドライバーが保持されないと同様、ドライバーが、このハンドルを保持しません、WDFDRIVER を識別するハンドルでオブジェクトを返します\_オブジェクト ポインターを渡された、 **DriverEntry**ルーチン。 理由は、同じ: だけで、いくつかのドライバーがドライバー オブジェクトへのポインターを使用します。
+**DriverEntry**もルック アサイド リストの作成やトレースの初期化など、ドライバーを必要とするすべてのグローバルなデータやリソースを初期化します。 反[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate) WDM ドライバーがドライバーが保持されないと同様、ドライバーが、このハンドルを保持しません、WDFDRIVER を識別するハンドルでオブジェクトを返します\_オブジェクト ポインターを渡された、 **DriverEntry**ルーチン。 理由は、同じ: だけで、いくつかのドライバーがドライバー オブジェクトへのポインターを使用します。
 
  
 

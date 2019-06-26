@@ -7,12 +7,12 @@ keywords:
 - WDK DirectX VA マクロ ブロックをスキップ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28852808309a5fbda66c7f7d546b710ebe033601
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a06a0389eee08057c14bd0e81969b3d4822f55cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379992"
 ---
 # <a name="generating-skipped-macroblocks"></a>スキップされたマクロブロックの生成
 
@@ -38,7 +38,7 @@ DirectX VA でスキップされたマクロ ブロックの生成とは若干�
 (bMacroblockWidthMinus1+1) X (MBskipsFollowing+1)
 ```
 
-**BMacroblockWidthMinus1**にメンバーが含まれている[ **DXVA\_PictureParameters**](https://msdn.microsoft.com/library/windows/hardware/ff564012)します。 *MBskipsFollowing*変数は、 **wMBtype**各マクロ ブロック コントロールの構造体のメンバー。
+**BMacroblockWidthMinus1**にメンバーが含まれている[ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)します。 *MBskipsFollowing*変数は、 **wMBtype**各マクロ ブロック コントロールの構造体のメンバー。
 
 ### <a name="span-idskippedmacroblocksinh263annexfspanspan-idskippedmacroblocksinh263annexfspanspan-idskippedmacroblocksinh263annexfspanskipped-macroblocks-in-h263-annex-f"></a><span id="Skipped_Macroblocks_in_H.263__Annex_F_"></span><span id="skipped_macroblocks_in_h.263__annex_f_"></span><span id="SKIPPED_MACROBLOCKS_IN_H.263__ANNEX_F_"></span>H.263 (付録 F) でスキップされたマクロ ブロック
 
@@ -93,7 +93,7 @@ DirectX VA でスキップされたマクロ ブロックの生成とは若干�
 
  
 
-これらの 7 つのマクロ ブロックには、世代が必要です (少なくとも) の次の表に示すように 5 つの DirectX VA マクロ ブロック コントロール コマンド。 *MBskipsFollowing*変数がスキップされたマクロ ブロックの数を示します。 **WMBaddress**メンバーは、マクロ ブロックのアドレスを示します。 *MBskipsFollowing*と**wMBaddress**に含まれる、 [ **DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563997)、および[ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://msdn.microsoft.com/library/windows/hardware/ff563993)構造体。 (、 *MBskipsFollowing*で変数が定義されている、 **dwMB\_SNL**構造体のメンバーです)。
+これらの 7 つのマクロ ブロックには、世代が必要です (少なくとも) の次の表に示すように 5 つの DirectX VA マクロ ブロック コントロール コマンド。 *MBskipsFollowing*変数がスキップされたマクロ ブロックの数を示します。 **WMBaddress**メンバーは、マクロ ブロックのアドレスを示します。 *MBskipsFollowing*と**wMBaddress**に含まれる、 [ **DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)、および[ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)構造体。 (、 *MBskipsFollowing*で変数が定義されている、 **dwMB\_SNL**構造体のメンバーです)。
 
 <table>
 <colgroup>

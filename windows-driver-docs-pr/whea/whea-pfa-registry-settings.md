@@ -9,19 +9,19 @@ keywords:
 - WDK WHEA のポリシー設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbafed57b2ffb0e88de467d680cab4006e7b6c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0787cb6dfe69d07b9a9f5d36a7079a3ce318de7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384734"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377381"
 ---
 # <a name="whea-policy-settings"></a>WHEA ポリシー設定
 
 
 予測的な障害の分析 (PFA) として Windows ハードウェア エラー アーキテクチャ (WHEA) での実行は、レジストリ設定を使用して構成されます。 WHEA は、コンピューター システムの起動時に、これらのレジストリ設定を読み取ります。 これらの設定を変更するを有効にするには、システムを再起動する必要があります。
 
-Windows 8 以降、WHEA ポリシーがあることができますがどちらかで管理[ **WHEAPolicyManagementMethods** ](https://msdn.microsoft.com/library/windows/hardware/hh451252)または WHEA Powershell モジュールを使用します。 これらのモードのいずれかで、ポリシーが更新され、ポリシーの値が直ちに有効にします。
+Windows 8 以降、WHEA ポリシーがあることができますがどちらかで管理[ **WHEAPolicyManagementMethods** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)または WHEA Powershell モジュールを使用します。 これらのモードのいずれかで、ポリシーが更新され、ポリシーの値が直ちに有効にします。
 
 **注**  このトピックで説明されているレジストリ設定が使用するため WHEA によってのみです。 場合、[プラットフォーム固有のハードウェア エラー ドライバー (PSHED) プラグイン](platform-specific-hardware-error-driver-plug-ins2.md)PFA を実行し、その構成設定を格納する、レジストリを使用して、このトピックに記載されているものとは異なるレジストリ値を使用する必要があります。
 

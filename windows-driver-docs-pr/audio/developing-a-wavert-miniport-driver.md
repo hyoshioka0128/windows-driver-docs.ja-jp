@@ -4,12 +4,12 @@ description: WaveRT ミニポート ドライバーの開発
 ms.assetid: d2d37c9e-fbfb-4bf3-bd7d-c8e19070a3f1
 ms.date: 07/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 881105e63faa200ebcc09461a9ff8136f69f0402
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69a306e135dbb22291e22f162f5bdde79085403f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333806"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359072"
 ---
 # <a name="developing-a-wavert-miniport-driver"></a>WaveRT ミニポート ドライバーの開発
 
@@ -30,7 +30,7 @@ WaveRT ミニポート ドライバーを開発するために、最初、サン
 
 開始、WaveRT ミニポート ドライバーを設計してサンプル アダプターのドライバーを確認した後は、次のソフトウェアとハードウェアの機能をサポートしていることを確認する必要があります。 その結果、しをビルドするミニポート ドライバーが WaveRT ポートのシステムによって提供されるドライバーとは、Windows Vista の操作のモードと互換性のある[オーディオ エンジン](exploring-the-windows-vista-audio-engine.md)します。
 
--   **ハードウェアの低待機時間。** WaveRT ミニポート ドライバーは、完全に機能の実装を提供する必要があります、 [ **IMiniportWaveRTStream::GetHWLatency** ](https://msdn.microsoft.com/library/windows/hardware/ff536747)メソッド。 このメソッドは、サポートに必要な[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://msdn.microsoft.com/library/windows/hardware/ff537378)プロパティ。
+-   **ハードウェアの低待機時間。** WaveRT ミニポート ドライバーは、完全に機能の実装を提供する必要があります、 [ **IMiniportWaveRTStream::GetHWLatency** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536747(v=vs.85))メソッド。 このメソッドは、サポートに必要な[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-hwlatency)プロパティ。
 
 -   **FIFO を中断します。** WaveRT ミニポート ドライバーは、割り込みに自動的に生成する必要があります FIFO オーバーランとアンダーランが発生します。 この機能は、オーディオ デバイスとドライバー ソフトウェアのテストを実行すると、オーディオ ストリーム内の異常の検出を使用できます。 ハードウェアのサポートがない場合 (つまり、FIFO 中断)、不具合情報を取得するために便利で信頼性の高いメソッドが存在しません。
 
@@ -54,7 +54,7 @@ WaveRT ミニポート ドライバーを開発するために、最初、サン
 
     この種類の位置から、読み取りを得た後で登録は、クライアントは、Dac または ADCs を加算または減算コーデックを遅延して移動するサンプルの現在の位置を見積もることができます。 クライアントからコーデックの遅延を取得する、 **KSPROPERTY\_RTAUDIO\_HWLATENCY**プロパティ要求。 このため、WaveRT ミニポート ドライバーする必要があります正確に報告コーデック遅延ポート ドライバーを呼び出すと、 **IMiniportWaveRTStream::GetHardwareLatency**メソッドをこの種類のプロパティの要求に応答します。
 
-    WaveRT ポート ドライバーが位置レジスタがない既存のハードウェア設計をサポートしていることに注意してください。 WaveRT ミニポート ドライバー制限はこのデバイスへの呼び出しが失敗する必要があります、 [ **IMiniportWaveRTStream::GetPositionRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff536752)メソッドを返すことによって、**状態\_いない\_サポートされている**エラー コードは、強制的に失敗するポート ドライバー [ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://msdn.microsoft.com/library/windows/hardware/ff537381)プロパティに要求します。 この場合、クライアントが現在位置からを取得する必要があります、 [ **KSPROPERTY\_オーディオ\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537297)プロパティで、ユーザー モードの間の遷移のオーバーヘッドが発生します各位置のカーネル モードの読み取り。
+    WaveRT ポート ドライバーが位置レジスタがない既存のハードウェア設計をサポートしていることに注意してください。 WaveRT ミニポート ドライバー制限はこのデバイスへの呼び出しが失敗する必要があります、 [ **IMiniportWaveRTStream::GetPositionRegister** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536752(v=vs.85))メソッドを返すことによって、**状態\_いない\_サポートされている**エラー コードは、強制的に失敗するポート ドライバー [ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-positionregister)プロパティに要求します。 この場合、クライアントが現在位置からを取得する必要があります、 [ **KSPROPERTY\_オーディオ\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)プロパティで、ユーザー モードの間の遷移のオーバーヘッドが発生します各位置のカーネル モードの読み取り。
 
 -   **クロックに登録します。** クロックの登録は、WaveRT と互換性のあるオーディオ デバイスのハードウェアの省略可能ですが、便利な機能です。 オーディオ アプリケーション プログラムでは、2 つ以上独立したオーディオ デバイスで同期されていない別のハードウェア クロックのオーディオ ストリームを同期するのに時計のレジスタを使用できます。 クロックのレジスタせず、アプリケーションを検出し、ハードウェア クロック間ドリフトを修正できません。
 

@@ -9,12 +9,12 @@ keywords:
 - ミニポート ドライバー WDK、NDIS 6.20 が動作への移植
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04461247d1e2de053a49944bee8437e27c2b413f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72e2de480ac47b9f92730bbee2b4655a9fe600fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360758"
 ---
 # <a name="summary-of-changes-required-to-port-a-miniport-driver-to-ndis-620"></a>ミニポート ドライバーを NDIS 6.20 に移植するために必要な変更の概要
 
@@ -44,7 +44,7 @@ NDIS60 プリプロセッサの定義を置き換えます\_ミニポート\_ド
     64 を超えるプロセッサのサポートに関する詳細については、次を参照してください。 [NDIS 6.20 で 64 を超えるプロセッサのサポート](support-for-more-than-64-processors-in-ndis-6-20.md)します。
 
 <a href="" id="driver-initialization"></a>**ドライバーの初期化**  
--   NDIS バージョンで 6.20 が動作を設定、 **MajorNdisVersion**と**MinorNdisVersion**のメンバー、 [ **NDIS\_ミニポート\_ドライバー\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565958)に渡される構造体、 [ **NdisMRegisterMiniportDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff563654)関数。
+-   NDIS バージョンで 6.20 が動作を設定、 **MajorNdisVersion**と**MinorNdisVersion**のメンバー、 [ **NDIS\_ミニポート\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_driver_characteristics)に渡される構造体、 [ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)関数。
 
 -   ミニポート ドライバーのバージョンを設定、 **MajorDriverVersion**と**MinorDriverVersion**の NDIS メンバー\_ミニポート\_ドライバー\_特性適切なドライバー固有の値構造体。
 
@@ -57,17 +57,17 @@ NDIS60 プリプロセッサの定義を置き換えます\_ミニポート\_ド
     -   ハードウェア支援 (VMQ)
 -   これらの構造の更新バージョンを使用します。
 
-    -   [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
-    -   [**NDIS\_再起動\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff567260)
-    -   [**NDIS\_受信\_スケール\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff567228)
-    -   [**NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)
+    -   [**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
+    -   [**NDIS\_再起動\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_restart_general_attributes)
+    -   [**NDIS\_受信\_スケール\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters)
+    -   [**NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)
 
     NDIS 構造のバージョン情報については、次を参照してください。 [NDIS バージョン情報を指定する](specifying-ndis-version-information.md)します。
 
 <a href="" id="send-and-receive-code-paths"></a>**コード パスの送受信**  
--   NDIS 6.20 ドライバーは、受信側をサポートする必要があります (RST) をスロットル処理では割り込みを受信します。 *ReceiveThrottleParameters*のパラメーター、 [ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)と[ *MiniportMessageInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559411) DPC ハンドラー関数を指す、 [ **NDIS\_受信\_スロットル\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567241)構造体。 エントリを遅延プロシージャ呼び出し (DPC) ハンドラー、 **MaxNblsToIndicate** NDIS のメンバー\_受信\_スロットル\_の最大数を指定するパラメーター構造体[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)ミニポート ドライバーを指定する必要があります、DPC 構造。 RST の詳細については、次を参照してください。[受信側スロットル NDIS 6.20](receive-side-throttle-in-ndis-6-20.md)します。
+-   NDIS 6.20 ドライバーは、受信側をサポートする必要があります (RST) をスロットル処理では割り込みを受信します。 *ReceiveThrottleParameters*のパラメーター、 [ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)と[ *MiniportMessageInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt_dpc) DPC ハンドラー関数を指す、 [ **NDIS\_受信\_スロットル\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_receive_throttle_parameters)構造体。 エントリを遅延プロシージャ呼び出し (DPC) ハンドラー、 **MaxNblsToIndicate** NDIS のメンバー\_受信\_スロットル\_の最大数を指定するパラメーター構造体[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)ミニポート ドライバーを指定する必要があります、DPC 構造。 RST の詳細については、次を参照してください。[受信側スロットル NDIS 6.20](receive-side-throttle-in-ndis-6-20.md)します。
 
--   更新バージョンを使用して、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。
+-   更新バージョンを使用して、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。
 
 -   必要に応じて、仮想マシン キュー (VMQ) インターフェイスをサポートします。 VMQ の詳細については、次を参照してください。 [NDIS 6.20 で仮想マシン キュー (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)します。
 

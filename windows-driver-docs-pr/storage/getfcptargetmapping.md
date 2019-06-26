@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8092291719d0062002d7e15923959a48b9ecbf77
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a75f142476a2863f5b6aa7afb9cf70fd18a38696
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354061"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378538"
 ---
 # <a name="getfcptargetmapping-function"></a>GetFcpTargetMapping 関数
 
@@ -44,14 +44,14 @@ void GetFcpTargetMapping(
 <a name="parameters"></a>パラメーター
 ----------
 
-*HbaPortWWN\[8\]*   
-ポート マッピングのテーブルが含まれるが取得するには世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **HbaPortWWN**のメンバー、 [ **GetFcpTargetMapping\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff554950)構造体。
+*HbaPortWWN\[8\]*    
+ポート マッピングのテーブルが含まれるが取得するには世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **HbaPortWWN**のメンバー、 [ **GetFcpTargetMapping\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcptargetmapping_in)構造体。
 
 *InEntryCount*   
 WMI プロバイダーをレポートできるバインド エントリの数を示す、*エントリ*パラメーター。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFcpTargetMapping\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554952)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **GetFcpTargetMapping\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcptargetmapping_out)構造体。
 
 *TotalEntryCount*   
 HBA に関連付けられた永続的なバインドの合計数を示します。
@@ -59,8 +59,8 @@ HBA に関連付けられた永続的なバインドの合計数を示します�
 *OutEntryCount*   
 によって取得されたマッピングの合計数を示す、 **GetFcpTargetMapping**メソッド。 この値の場合に等しいまたはそれよりも少なくなります*TotalEntryCount*します。
 
-*エントリ\[\]*   
-型の構造体の配列[ **HBAFCPScsiEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff556040)オペレーティング システムとプロトコル (FCP) 識別子のファイバー チャネル HBA のバインディングを記述します。
+*エントリ\[\]*    
+型の構造体の配列[ **HBAFCPScsiEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpscsientry)オペレーティング システムとプロトコル (FCP) 識別子のファイバー チャネル HBA のバインディングを記述します。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -101,9 +101,9 @@ WMI メソッドには適用されません。
 
 [HBA\_状態](hba-status.md)
 
-[**GetFcpTargetMapping\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff554950)
+[**GetFcpTargetMapping\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcptargetmapping_in)
 
-[**GetFcpTargetMapping\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff554952)
+[**GetFcpTargetMapping\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcptargetmapping_out)
 
  
 

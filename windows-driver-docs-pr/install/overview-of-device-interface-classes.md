@@ -9,12 +9,12 @@ keywords:
 - デバイスのインターフェイス クラス WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60546d349fdad13ba3b59a6bead085cb1fd2e086
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8b9ea04c2ec854900378d29c72767aab108fc29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379446"
 ---
 # <a name="overview-of-device-interface-classes"></a>デバイス インターフェイス クラスの概要
 
@@ -36,7 +36,7 @@ Windows 2000 以降、ドライバー名前を指定しませんデバイス オ
 
 ドライバーは、デバイスのインターフェイス クラスのインスタンスを登録する場合に、I/O マネージャーは、シンボリック リンクの名前を持つ、デバイスとデバイスのインターフェイス クラス GUID を関連付けます。 リンク名は、レジストリに格納され、システムの起動時間が解決しません。 インターフェイスを使用するアプリケーションのクエリを実行できる、インターフェイスのインスタンスが受信インターフェイスをサポートするデバイスを表すシンボリック リンクの名前とします。 アプリケーションはシンボリック リンクの名前を I/O 要求のターゲットとして使用し、ことができます。
 
-デバイス インターフェイスへの応答でドライバーをエクスポートできるインターフェイスとを混同しないでください、 [ **IRP_MN_QUERY_INTERFACE** ](https://msdn.microsoft.com/library/windows/hardware/ff551687)要求。 その IRP を使用して、カーネル モード ドライバーの間で日常的なエントリ ポイントを渡します。
+デバイス インターフェイスへの応答でドライバーをエクスポートできるインターフェイスとを混同しないでください、 [ **IRP_MN_QUERY_INTERFACE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)要求。 その IRP を使用して、カーネル モード ドライバーの間で日常的なエントリ ポイントを渡します。
 
  
 

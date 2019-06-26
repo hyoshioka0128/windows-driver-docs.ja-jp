@@ -14,29 +14,29 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e74d5378ac92f6698bcbd0e96be9b2305e33e39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71408a589abb9a898e76a2f1eb25c0917405b27c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365018"
 ---
 # <a name="fsctlgetretrievalpointerbase-control-code"></a>FSCTL\_取得\_取得\_ポインター\_基本コントロールのコード
 
 
 **FSCTL\_取得\_取得\_ポインター\_ベース**ボリュームの先頭からの相対ファイル システムの最初の論理クラスター番号 (LCN) に、セクター オフセットを返します。
 
-この操作を実行するには、呼び出し、 [ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)関数または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)を次の関数パラメーター。
+この操作を実行するには、呼び出し、 [ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)関数または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)を次の関数パラメーター。
 
 **Parameters**
 
 <a href="" id="fileobject--in-"></a>*FileObject\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 対象のボリュームのファイル オブジェクト ポインター **FSCTL\_取得\_取得\_ポインター\_基本**ベースを取得することです。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 対象のボリュームのファイル オブジェクト ポインター **FSCTL\_取得\_取得\_ポインター\_基本**ベースを取得することです。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 対象のボリュームのファイル ハンドル**FSCTL\_取得\_取得\_ポインター\_基本**ベースを取得することです。 このパラメーターが必要とすることはできません**NULL**します。
 
-Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、次を参照してください。[ファイルのセキュリティとアクセス権](https://msdn.microsoft.com/library/windows/desktop/aa364399)します。
+Se、このハンドルを開く必要がある\_管理\_ボリューム\_アクセス権の名前。 詳細については、次を参照してください。[ファイルのセキュリティとアクセス権](https://docs.microsoft.com/windows/desktop/FileIO/file-security-and-access-rights)します。
 
 <a href="" id="fscontrolcode--in-"></a>*FsControlCode\[で\]*  
 操作の制御コード。 使用**FSCTL\_取得\_取得\_ポインター\_ベース**この操作にします。
@@ -56,7 +56,7 @@ Se、このハンドルを開く必要がある\_管理\_ボリューム\_アク
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_成功、または、次のいずれかなどの適切な NTSTATUS 値。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_成功、または、次のいずれかなどの適切な NTSTATUS 値。
 
 <table>
 <colgroup>
@@ -121,7 +121,7 @@ FSCTL\_取得\_取得\_ポインター\_FastFAT および exFAT のデバイス�
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

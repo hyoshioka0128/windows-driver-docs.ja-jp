@@ -12,12 +12,12 @@ keywords:
 - コミット フェーズ WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da1a107f0ca554dfd91937148a39bdc68c20c0a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a008d8ee7d089bbcf2f6ca3c979c7de97b343f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359474"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377640"
 ---
 # <a name="handling-commit-operations"></a>コミット操作の処理
 
@@ -38,7 +38,7 @@ ms.locfileid: "63359474"
 
 含む TP を[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md)単一フェーズ コミットを使用することはできません。
 
-リソース マネージャーがトランザクションを受信する登録されている場合\_通知\_単一\_フェーズ\_コミットの通知、KTM 送信この種の通知トランザクション クライアントが呼び出す[ **ZwCommitTransaction**](https://msdn.microsoft.com/library/windows/hardware/ff566420)します。
+リソース マネージャーがトランザクションを受信する登録されている場合\_通知\_単一\_フェーズ\_コミットの通知、KTM 送信この種の通知トランザクション クライアントが呼び出す[ **ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)します。
 
 リソース マネージャーがトランザクションを受信すると\_通知\_単一\_フェーズ\_コミット通知トランザクションでそのトランザクションをコミットするか単一フェーズ コミットを拒否します。
 
@@ -46,15 +46,15 @@ ms.locfileid: "63359474"
 
 1.  などの非永続的なキャッシュ (メモリ内ストレージ) に保持しているすべてのデータのフラッシュ、[領域をマーシャ リング CLFS](clfs-marshalling-areas.md)の[CLFS ログ ストリーム](using-log-streams-with-ktm.md)します。
 
-    リソース マネージャーは、永続的なストレージ メディアに、キャッシュからデータを移動する必要があります。 たとえば、CLFS を使用しているリソース マネージャーを呼び出すことができます[ **ClfsFlushBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff541544)します。
+    リソース マネージャーは、永続的なストレージ メディアに、キャッシュからデータを移動する必要があります。 たとえば、CLFS を使用しているリソース マネージャーを呼び出すことができます[ **ClfsFlushBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsflushbuffers)します。
 
 2.  永続的であり、パブリックにすべてのデータ変更を行う (つまり、リソース マネージャーのスコープ外部から参照できる)。
 
-3.  呼び出す[ **ZwCommitComplete**](https://msdn.microsoft.com/library/windows/hardware/ff566418)します。
+3.  呼び出す[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)します。
 
-呼び出した後**ZwCommitComplete**、resource manager を呼び出す必要があります[ **ZwClose** ](https://msdn.microsoft.com/library/windows/hardware/ff566417)登録ハンドルを閉じます。
+呼び出した後**ZwCommitComplete**、resource manager を呼び出す必要があります[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)登録ハンドルを閉じます。
 
-トランザクションの単一フェーズ コミット操作を拒否するには、resource manager を呼び出すことができます[ **ZwSinglePhaseReject**](https://msdn.microsoft.com/library/windows/hardware/ff567113)します。 リソース マネージャーを呼び出す場合**ZwSinglePhaseReject**KTM をすぐに変更のコミット操作単一フェーズからマルチ フェーズ。
+トランザクションの単一フェーズ コミット操作を拒否するには、resource manager を呼び出すことができます[ **ZwSinglePhaseReject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject)します。 リソース マネージャーを呼び出す場合**ZwSinglePhaseReject**KTM をすぐに変更のコミット操作単一フェーズからマルチ フェーズ。
 
 場合、他のリソース マネージャーは、同じトランザクションに参加する必要がある[読み取り専用](creating-a-resource-manager.md#kernel-creating-a-read-only-enlistment)します。 ただし、トランザクションの受信登録が必要な\_通知\_RM\_切断されている通知は、単一フェーズ コミット操作を処理しているリソース マネージャーは、参加を終了した場合に受信しました。示すことがコミットされたトランザクションをロールバックせずに処理します。
 
@@ -62,33 +62,33 @@ ms.locfileid: "63359474"
 
 複数フェーズのコミット操作では、次のイベントのいずれかが発生したときを始めます。
 
--   トランザクションのクライアントが呼び出す[ **ZwCommitTransaction**](https://msdn.microsoft.com/library/windows/hardware/ff566420)、トランザクションを受信するリソース マネージャーが登録されていない\_通知\_単一\_フェーズ\_コミット通知します。
+-   トランザクションのクライアントが呼び出す[ **ZwCommitTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommittransaction)、トランザクションを受信するリソース マネージャーが登録されていない\_通知\_単一\_フェーズ\_コミット通知します。
 
--   リソース マネージャーは、 [ **ZwSinglePhaseReject** ](https://msdn.microsoft.com/library/windows/hardware/ff567113)トランザクションを受け取った後\_通知\_単一\_フェーズ\_コミット通知します。
+-   リソース マネージャーは、 [ **ZwSinglePhaseReject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject)トランザクションを受け取った後\_通知\_単一\_フェーズ\_コミット通知します。
 
--   A[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md)呼び出し[ **ZwPrePrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567044)します。
+-   A[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md)呼び出し[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)します。
 
 複数フェーズのコミット操作は、3 つの連続したフェーズで構成されています:*事前準備*、*準備*、および*コミット*します。
 
 **事前準備フェーズ**
 
-Pre-prepare フェーズ (とも呼ばれます*フェーズ 0*) KTM トランザクションを送信するときに、コミットの操作を開始\_通知\_PREPREPARE 通知は、すべてのリソース マネージャーをします。 リソース マネージャーが、トランザクションでは、単一フェーズ コミット操作をサポートしない場合、または優先的なトランザクション マネージャーを呼び出す場合、KTM はこの通知を送信[ **ZwPrePrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567044)します。
+Pre-prepare フェーズ (とも呼ばれます*フェーズ 0*) KTM トランザクションを送信するときに、コミットの操作を開始\_通知\_PREPREPARE 通知は、すべてのリソース マネージャーをします。 リソース マネージャーが、トランザクションでは、単一フェーズ コミット操作をサポートしない場合、または優先的なトランザクション マネージャーを呼び出す場合、KTM はこの通知を送信[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)します。
 
 各リソース マネージャーがトランザクションを受信すると\_通知\_PREPREPARE 通知では、次を行う必要があります。
 
 1.  などの非永続的なキャッシュ (メモリ内ストレージ) に保持しているすべてのデータのフラッシュ、[領域をマーシャ リング CLFS](clfs-marshalling-areas.md)の[CLFS ログ ストリーム](using-log-streams-with-ktm.md)します。
 
-    リソース マネージャーは、永続的なストレージ メディアに、キャッシュからデータを移動する必要があります。 たとえば、CLFS を使用しているリソース マネージャーを呼び出すことができます[ **ClfsFlushBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff541544)します。
+    リソース マネージャーは、永続的なストレージ メディアに、キャッシュからデータを移動する必要があります。 たとえば、CLFS を使用しているリソース マネージャーを呼び出すことができます[ **ClfsFlushBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsflushbuffers)します。
 
-2.  呼び出す[ **ZwPrePrepareComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567040)します。
+2.  呼び出す[ **ZwPrePrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepreparecomplete)します。
 
 リソース後マネージャーが呼び出されて**ZwPreprepareComplete**を受け取り、クライアント要求サービスを続行します。 ただし、リソース マネージャーは、永続的なストレージ メディアにすぐに書き込まれるキャッシュ パススルー操作としてすべてのデータ変更を処理する必要があります。
 
-リソース マネージャーでは、トランザクションを処理している間に、エラーが発生したかどうかは\_通知\_呼び出す必要があります、PREPREPARE 通知[ **ZwRollbackEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff567083)をロールバックするにはトランザクションです。
+リソース マネージャーでは、トランザクションを処理している間に、エラーが発生したかどうかは\_通知\_呼び出す必要があります、PREPREPARE 通知[ **ZwRollbackEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)をロールバックするにはトランザクションです。
 
 **準備フェーズ**
 
-準備フェーズ (とも呼ばれます*フェーズ 1*) KTM トランザクションを送信するときに、コミットの操作を開始\_通知\_すべてのリソース マネージャーに通知を準備します。 KTM トランザクション後にこの通知を送信する\_通知\_単一フェーズ コミットまたは優先的なトランザクション マネージャーを呼び出すかどうかのリソース マネージャーをサポートしない場合の PREPREPARE [ **ZwPrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567039).
+準備フェーズ (とも呼ばれます*フェーズ 1*) KTM トランザクションを送信するときに、コミットの操作を開始\_通知\_すべてのリソース マネージャーに通知を準備します。 KTM トランザクション後にこの通知を送信する\_通知\_単一フェーズ コミットまたは優先的なトランザクション マネージャーを呼び出すかどうかのリソース マネージャーをサポートしない場合の PREPREPARE [ **ZwPrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment).
 
 各リソース マネージャーがトランザクションを受信すると\_通知\_PREPARE 通知では、次を行う必要があります。
 
@@ -96,13 +96,13 @@ Pre-prepare フェーズ (とも呼ばれます*フェーズ 0*) KTM トラン�
 
 2.  永続的なストレージにすべてのデータが移動されたことを確認します。
 
-3.  呼び出す[ **ZwPrepareComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567037)します。
+3.  呼び出す[ **ZwPrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete)します。
 
-リソース マネージャーでは、トランザクションを処理している間に、エラーが発生したかどうかは\_通知\_呼び出す必要があります PREPARE 通知[ **ZwRollbackEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff567083)をロールバックする、トランザクションです。 ただし、リソース マネージャーできないトランザクションをロールバックして呼び出し後に**ZwPrepareComplete**します。
+リソース マネージャーでは、トランザクションを処理している間に、エラーが発生したかどうかは\_通知\_呼び出す必要があります PREPARE 通知[ **ZwRollbackEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackenlistment)をロールバックする、トランザクションです。 ただし、リソース マネージャーできないトランザクションをロールバックして呼び出し後に**ZwPrepareComplete**します。
 
 **コミット フェーズ**
 
-コミット フェーズ (とも呼ばれます*フェーズ 2*) KTM トランザクションを送信するときに、コミットの操作を開始\_通知\_すべてのリソース マネージャーに通知をコミットします。 KTM トランザクション後にこの通知を送信する\_通知\_単一フェーズ コミットまたは優先的なトランザクション マネージャーを呼び出すかどうかのリソース マネージャーをサポートしない場合の準備[ **ZwCommitEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff566419).
+コミット フェーズ (とも呼ばれます*フェーズ 2*) KTM トランザクションを送信するときに、コミットの操作を開始\_通知\_すべてのリソース マネージャーに通知をコミットします。 KTM トランザクション後にこの通知を送信する\_通知\_単一フェーズ コミットまたは優先的なトランザクション マネージャーを呼び出すかどうかのリソース マネージャーをサポートしない場合の準備[ **ZwCommitEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment).
 
 各リソース マネージャーがトランザクションを受信すると\_通知\_コミット通知では、次を行う必要があります。
 
@@ -110,9 +110,9 @@ Pre-prepare フェーズ (とも呼ばれます*フェーズ 0*) KTM トラン�
 
     通常、リソース マネージャー、変更、永続的なパブリック ログ ストリームから、データベースの公開、永続的なストレージにトランザクションの保存されたデータをコピーしています。 ログ ストリームを使用する方法の詳細については、次を参照してください。 [ktm を使用するログ ストリーム](using-log-streams-with-ktm.md)します。
 
-2.  呼び出す[ **ZwCommitComplete**](https://msdn.microsoft.com/library/windows/hardware/ff566418)します。
+2.  呼び出す[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)します。
 
-Resource manager の呼び出し後**ZwCommitComplete**を呼び出す必要が[ **ZwClose** ](https://msdn.microsoft.com/library/windows/hardware/ff566417)登録ハンドルを閉じます。
+Resource manager の呼び出し後**ZwCommitComplete**を呼び出す必要が[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)登録ハンドルを閉じます。
 
 リソース マネージャーでは、トランザクションを処理している間に、エラーが発生したかどうかは\_通知\_コミット通知では、その必要がありますシャット ダウンします。 オペレーティング システムをリソース マネージャー、リソース マネージャーの再読み込みを次回[回復プロセス](handling-recovery-operations.md)トランザクションをエラーが発生する前に適切なことがわかっている状態に復元する必要があります。
 

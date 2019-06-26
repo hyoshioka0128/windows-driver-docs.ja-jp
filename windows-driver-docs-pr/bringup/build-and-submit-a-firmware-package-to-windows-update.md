@@ -3,12 +3,12 @@ title: ファームウェア パッケージを構築して Windows Update (WU) 
 description: ファームウェア パッケージを構築して Windows Update (WU) に送信する
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 24e94d3d264a4d8bb4afecbe7e597f10f62eee9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40d73866d11f451674744b2fcbb8e7676796234c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364593"
 ---
 # <a name="build-and-submit-a-firmware-package-to-windows-update-wu"></a>ファームウェア パッケージを構築して Windows Update (WU) に送信する
 
@@ -16,13 +16,13 @@ ms.locfileid: "63328099"
 
 1. ドライバー パッケージの内容でのシステムでテスト (SUT) がインストールされているときに、デバイスは、必須の Windows ハードウェア ラボ キット (HLK) テストを渡す必要があります。 具体的にはテストされているファームウェアのテストがない場合は、最も妥当な代替手段を見つけてに応じて HLK パッケージと結果を送信します。
 
-2. 次に、ドライバー パッケージを送信できます、[パートナー センター](https://developer.microsoft.com/windows/hardware/dashboard-sign-in)に署名するためです。
+2. 次に、ドライバー パッケージを送信できます、[パートナー センター](https://partner.microsoft.com/dashboard)に署名するためです。
 
 3. 署名済み後、ドライバー パッケージは、申請者が Windows Update (WU) 経由でのハードウェア ダッシュ ボードを発行するオプションが申請者に提供されます (ドライバーの配布機能を使用)。
 
-使用して Windows Update への発行を行う、[ハードウェア ダッシュ ボード](https://developer.microsoft.com/windows/hardware/dashboard-sign-in)ドライバーの配布機能を使用します。
+使用して Windows Update への発行を行う、[ハードウェア ダッシュ ボード](https://partner.microsoft.com/dashboard)ドライバーの配布機能を使用します。
 
-ドライバー パッケージの署名は、両方に署名する必要がある場合に、UEFI ファームウェアの署名と異なります。 署名は、ハードウェア ダッシュ ボードのファイル署名サービス機能を使用して使用します。 セキュリティのカタログを使用して配信される、ドライバー パッケージの署名は、UEFI に渡す前に firmware.bin の整合性を確認して、Windows によって使用されます。 Windows では、ファームウェアにセキュリティのカタログは提供されません。 UEFI ファームウェアまたはデバイスのファームウェア更新の署名は、プラットフォーム ファームウェアによって検証され、Windows ではチェックされません。 IHV および OEM は、整合性、および署名の検証、暗号化、またはその他の手段を介してファームウェアのセキュリティを確保します。 レビュー、[ポリシーの更新プログラムを Microsoft UEFI CA 署名](https://blogs.msdn.microsoft.com/windows_hardware_certification/2013/12/03/microsoft-uefi-ca-signing-policy-updates/)詳細については以下のリンクします。
+ドライバー パッケージの署名は、両方に署名する必要がある場合に、UEFI ファームウェアの署名と異なります。 署名は、ハードウェア ダッシュ ボードのファイル署名サービス機能を使用して使用します。 セキュリティのカタログを使用して配信される、ドライバー パッケージの署名は、UEFI に渡す前に firmware.bin の整合性を確認して、Windows によって使用されます。 Windows では、ファームウェアにセキュリティのカタログは提供されません。 UEFI ファームウェアまたはデバイスのファームウェア更新の署名は、プラットフォーム ファームウェアによって検証され、Windows ではチェックされません。 IHV および OEM は、整合性、および署名の検証、暗号化、またはその他の手段を介してファームウェアのセキュリティを確保します。 レビュー、[ポリシーの更新プログラムを Microsoft UEFI CA 署名](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)詳細については以下のリンクします。
 
 ターミネータの内容を次に、サインインします。 Capsule コンテンツ自体は、OEM によって決定されます。 ターミネータは OEM 形式を選択で更新するファームウェア イメージのカタログを含めることができますだけまたは EFI アプリケーション イメージ (PE と COFF ファイル形式) の形式で届く場合があります。 ターミネータが PE と COFF ファイルの場合する必要があります署名する必要が、OEM が Microsoft Windows のファームウェア更新プログラム パッケージの署名に送信する前にします。
 
@@ -73,7 +73,7 @@ C:\Desktop
 
 [ドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/dashboard)
 
-[Microsoft UEFI CA 署名ポリシーの更新](https://blogs.msdn.microsoft.com/windows_hardware_certification/2013/12/03/microsoft-uefi-ca-signing-policy-updates/)
+[Microsoft UEFI CA 署名ポリシーの更新](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
 
 [テスト結果を表示し、ログ ファイル](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/step-7-view-test-results-and-log-files)
 
@@ -83,10 +83,10 @@ C:\Desktop
 
 [Windows HLK を使用した Device Fundamentals 信頼性テストのトラブルシューティング](https://docs.microsoft.com/windows-hardware/test/hlk/testref/troubleshooting-device-fundamentals-reliability-testing-by-using-the-windows-hck)
 
-[Windows ハードウェア認定のブログ](https://blogs.msdn.microsoft.com/windows_hardware_certification)
+[Windows ハードウェア認定のブログ](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
 
 [Windows の UEFI ファームウェアを更新するプラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/bringup/windows-uefi-firmware-update-platform)
 
-[パートナー センター](https://developer.microsoft.com/windows/hardware/dashboard-sign-in)
+[パートナー センター](https://partner.microsoft.com/dashboard)
 
 [ESRT テーブルの定義 ](https://docs.microsoft.com/windows-hardware/drivers/bringup/esrt-table-definition)

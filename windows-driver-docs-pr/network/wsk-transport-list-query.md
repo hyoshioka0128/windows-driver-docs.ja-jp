@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - WSK_TRANSPORT_LIST_QUERY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 65997ba25bd54956a26215d79438b09b62fad78d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d3db89c4885f1dfec1c5b43fdb1e233f229584d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375228"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379706"
 ---
 # <a name="wsktransportlistquery"></a>WSK\_トランスポート\_一覧\_クエリ
 
 
 WSK アプリケーションの使用、WSK\_トランスポート\_一覧\_新しいソケットを作成するときに指定できる利用可能なネットワーク トランスポートの一覧を取得するクエリのクライアント管理操作。
 
-使用可能なネットワーク トランスポートの一覧を取得する WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)関数は次のパラメーター。
+使用可能なネットワーク トランスポートの一覧を取得する WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -50,7 +50,7 @@ WSK アプリケーションの使用、WSK\_トランスポート\_一覧\_新�
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>配列へのポインター <a href="https://msdn.microsoft.com/library/windows/hardware/ff571193" data-raw-source="[&lt;strong&gt;WSK_TRANSPORT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571193)"> <strong>WSK_TRANSPORT</strong> </a>構造体を使用可能なネットワーク トランスポートの一覧を受け取る</p></td>
+<td><p>配列へのポインター <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_transport" data-raw-source="[&lt;strong&gt;WSK_TRANSPORT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_transport)"> <strong>WSK_TRANSPORT</strong> </a>構造体を使用可能なネットワーク トランスポートの一覧を受け取る</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -63,7 +63,7 @@ WSK アプリケーションの使用、WSK\_トランスポート\_一覧\_新�
 </tbody>
 </table>
 
-WSK アプリケーションに 0 を指定できます、 *OutputSize*パラメーターと**NULL**で、 *OutputBuffer*パラメーターの配列のサイズを決定する[ **WSK\_トランスポート**](https://msdn.microsoft.com/library/windows/hardware/ff571193)構造、使用可能なネットワーク トランスポートの完全な一覧を格納するために必要なバイト数。 このような状況への呼び出し、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)ステータスを返します\_バッファー\_オーバーフロー、および変数を指している*OutputSizeReturned*パラメーターに必要なバッファー サイズが含まれています。 アプリケーションは、バッファーが使用可能なネットワーク トランスポートの完全な一覧を格納するのに十分な大きさを呼び出すことができますを割り当てることができますし、 **WskControlClient**関数に示すようなパラメーターを指定する、第 2 回、前の表。
+WSK アプリケーションに 0 を指定できます、 *OutputSize*パラメーターと**NULL**で、 *OutputBuffer*パラメーターの配列のサイズを決定する[ **WSK\_トランスポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_transport)構造、使用可能なネットワーク トランスポートの完全な一覧を格納するために必要なバイト数。 このような状況への呼び出し、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)ステータスを返します\_バッファー\_オーバーフロー、および変数を指している*OutputSizeReturned*パラメーターに必要なバッファー サイズが含まれています。 アプリケーションは、バッファーが使用可能なネットワーク トランスポートの完全な一覧を格納するのに十分な大きさを呼び出すことができますを割り当てることができますし、 **WskControlClient**関数に示すようなパラメーターを指定する、第 2 回、前の表。
 
 *Irp*パラメーターである必要があります**NULL**このクライアントのコントロールの操作。
 

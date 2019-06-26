@@ -4,12 +4,12 @@ description: Audio Endpoint Builder のアルゴリズム
 ms.assetid: 2338bca7-5743-42c3-9baf-ac4a54cf0393
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aac4c8b70594f341c51b2109aa17e185c59d3ec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f69a97162761e4bd8518eade06a69105470da62d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331512"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355729"
 ---
 # <a name="audio-endpoint-builder-algorithm"></a>Audio Endpoint Builder のアルゴリズム
 
@@ -22,7 +22,7 @@ Windows XP でオーディオのモデルでは、用語のオーディオ デ�
 
 Windows Vista での 2 つの新しい Api を使用した[MMDevice API](https://go.microsoft.com/fwlink/p/?linkid=130863)と[WASAPI](https://go.microsoft.com/fwlink/p/?linkid=130864)、アクセスし、これらの新しいオーディオ デバイスを操作することができます。 MMDevice API は、エンドポイントとして新しいオーディオ デバイスを指します。
 
-AudioEndpointBuilder サービス モニター、 [ **KSCATEGORY\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff548261)デバイス インターフェイスの到着と削除のためのクラス。 オーディオ デバイスが、KSCATEGORY の新しいインスタンスを登録するときに\_オーディオ デバイス インターフェイスのクラス、AudioEndpointBuilder サービスは、デバイス インターフェイスの通知を検出し、アルゴリズムを使用して、トポロジ内のオーディオ デバイスの確認システムを適切なアクション。
+AudioEndpointBuilder サービス モニター、 [ **KSCATEGORY\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-audio)デバイス インターフェイスの到着と削除のためのクラス。 オーディオ デバイスが、KSCATEGORY の新しいインスタンスを登録するときに\_オーディオ デバイス インターフェイスのクラス、AudioEndpointBuilder サービスは、デバイス インターフェイスの通知を検出し、アルゴリズムを使用して、トポロジ内のオーディオ デバイスの確認システムを適切なアクション。
 
 AudioEndpointBuilder によって使用されるアルゴリズムのしくみを次に示します。
 
@@ -32,7 +32,7 @@ AudioEndpointBuilder によって使用されるアルゴリズムのしくみ�
 
 3.  エンドポイントの既定のプロパティを設定します。 たとえば、名前、アイコン、およびフォーム ファクター AudioEndpointBuilder を設定します。
 
-4.  エンドポイントからパルス符号変調 (PCM) をサポートするホスト pin へのパスがあるかどうかを決定するオーディオ コーデック 3 (AC3) または Windows media ビデオ (WMV)。 ホストの pin が KSPIN に設定、通信のメンバーを持つ KSPIN 構造体\_通信\_シンクまたは KSPIN\_通信\_両方。 KSPIN 構造の詳細については、次を参照してください。 [ **KSPIN**](https://msdn.microsoft.com/library/windows/hardware/ff563483)します。
+4.  エンドポイントからパルス符号変調 (PCM) をサポートするホスト pin へのパスがあるかどうかを決定するオーディオ コーデック 3 (AC3) または Windows media ビデオ (WMV)。 ホストの pin が KSPIN に設定、通信のメンバーを持つ KSPIN 構造体\_通信\_シンクまたは KSPIN\_通信\_両方。 KSPIN 構造の詳細については、次を参照してください。 [ **KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin)します。
 
 5.  エンドポイントのプロパティ ストアは、オーディオ デバイス インターフェイスのレジストリ キーのプロパティ情報を設定します。
 

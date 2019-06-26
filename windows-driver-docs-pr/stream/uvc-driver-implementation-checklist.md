@@ -3,12 +3,12 @@ title: USB ビデオ クラス (UVC) ドライバー実装チェックリスト
 description: デバイスの USB ビデオ クラス (UVC) ドライバーを実装する手順について説明します。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ae4a63cf21c92ba4dad28a357fdcf35bbea51d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d361e4611d2f0ebdc4a44f757a92e4ba4438efd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367462"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356625"
 ---
 # <a name="usb-video-class-uvc-driver-implementation-checklist"></a>USB ビデオ クラス (UVC) ドライバー実装チェックリスト
 
@@ -16,7 +16,7 @@ ms.locfileid: "63367462"
 
 UVC に慣れ親しむには、これらのリンクを使用します。
 
-- アクセス、 [USB クラス](http://www.usb.org/developers/docs/devclass_docs/)USB.org ドキュメント (非 UVC 固有)
+- アクセス、 [USB クラス](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)USB.org ドキュメント (非 UVC 固有)
 
 - ダウンロード、 [USB ビデオ クラス 1.5](https://go.microsoft.com/fwlink/p/?linkid=2085170) USB.org からドキュメント
 
@@ -54,12 +54,12 @@ UVC に慣れ親しむには、これらのリンクを使用します。
 
     - Microsoft 固有のドキュメント:
 
-        - 2.2.1 と 2.2.2 でセクションを確認して、 [USB ビデオ クラス 1.5 の仕様に対する Microsoft 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)します。
+        - 2\.2.1 と 2.2.2 でセクションを確認して、 [USB ビデオ クラス 1.5 の仕様に対する Microsoft 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)します。
 
 ## <a name="step-5-test-your-uvc-implementation-to-ensure-it-passes-hlk-tests-and-meets-required-functionality-and-performance"></a>手順 5:HLK テストに合格し、必要な機能とパフォーマンスを満たしていることを確認する UVC 実装をテストします。
 
-- 実行[Windows HLK テスト](https://msdn.microsoft.com/library/windows/hardware/dn930814)
+- 実行[Windows HLK テスト](https://docs.microsoft.com/windows-hardware/drivers/)
 
-- カメラに固有の実行[Device.Streaming HLK テスト](https://msdn.microsoft.com/library/windows/hardware/dn941930)
+- カメラに固有の実行[Device.Streaming HLK テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-streaming)
 
 - カメラの要件を満たしているし、カメラが (たとえば、Skype、Windows こんにちは、およびなど) に準拠してもする必要がありますが、その他の製品 HLK テストが合格を確認してください。

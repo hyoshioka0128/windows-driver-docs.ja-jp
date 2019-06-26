@@ -11,23 +11,23 @@ keywords:
 - テスト署名ドライバー パッケージ WDK、カタログ ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71e7622aa7d62cb9292ab0bd316a4b9c2e4d58cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e4f812449e8075f371aeaa27a67dc267a4d0d32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339317"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380429"
 ---
 # <a name="verifying-the-signature-of-a-test-signed-catalog-file"></a>テスト署名されたカタログ ファイルの署名の検証
 
 
-確認する、[ドライバー パッケージの](driver-packages.md) [カタログ ファイル](catalog-files.md)によって、有効な署名された[テスト証明書](test-certificates.md)、次を使用して、 [ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)コマンド。
+確認する、[ドライバー パッケージの](driver-packages.md) [カタログ ファイル](catalog-files.md)によって、有効な署名された[テスト証明書](test-certificates.md)、次を使用して、 [ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンド。
 
 ```cpp
 SignTool verify /v /pa CatalogFileName.cat
 ```
 
-ファイルが表示されていることを確認する、[ドライバー パッケージの](driver-packages.md)カタログ ファイルは、次を使用して、テスト証明書によって署名済み、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)コマンド。
+ファイルが表示されていることを確認する、[ドライバー パッケージの](driver-packages.md)カタログ ファイルは、次を使用して、テスト証明書によって署名済み、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンド。
 
 ```cpp
 SignTool verify /v /pa /c CatalogFileName.cat DriverFileName

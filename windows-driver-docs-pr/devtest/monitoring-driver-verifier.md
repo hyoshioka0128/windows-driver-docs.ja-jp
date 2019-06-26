@@ -8,12 +8,12 @@ keywords:
 - 検証ユーティリティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bbabe4408bb041b09946662fb98f70f83f745c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba8de149fa0ca20980b3f7f9963ebae153eef901
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391326"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375948"
 ---
 # <a name="monitoring-driver-verifier"></a>ドライバーの検証ツールの監視
 
@@ -23,7 +23,7 @@ ms.locfileid: "63391326"
 
 Verifier ユーティリティには、検証されているドライバーとドライバーの検証のアクションを監視するいくつかの方法があります。
 
-カーネル デバッガー拡張機能 **! verifier** Driver Verifier のアクティビティに関連する統計データの監視およびレポートにも使用できます。 グラフィック ドライバーを検証するときに、 **! gdikdx.verifier**拡張機能を代わりに使用する必要があります。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+カーネル デバッガー拡張機能 **! verifier** Driver Verifier のアクティビティに関連する統計データの監視およびレポートにも使用できます。 グラフィック ドライバーを検証するときに、 **! gdikdx.verifier**拡張機能を代わりに使用する必要があります。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 このセクションの内容:
 

@@ -9,12 +9,12 @@ keywords:
 - WDK RSS のキューの受信します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3120c2ad34d3d818a90b109ed56d0d730e76631c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a8d51be9abba531e9702cd058371ed32dc19039
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382135"
 ---
 # <a name="rss-with-hardware-queuing"></a>ハードウェア キューを使用した RSS
 
@@ -46,18 +46,18 @@ ms.locfileid: "63359787"
 
         1 つの割り込みでシステムを処理する受信バッファーは、Cpu 間で分散されます。
 
-2.  NDIS ミニポート ドライバーの呼び出す[ *MiniportInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559395)関数 (ISR) システムで決定された CPU にします。
+2.  NDIS ミニポート ドライバーの呼び出す[ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)関数 (ISR) システムで決定された CPU にします。
 
 3.  ミニポート ドライバーでは、NDIS に空でないキューを作成する Cpu ごとの遅延プロシージャ呼び出し (Dpc) のキューに登録を要求します。
 
     すべての Dpc がドライバー割り込みを有効にする前に完了する必要があることに注意してください。 また、ISR を処理するバッファーを持たない CPU で実行できることに注意してください。
 
-4.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)の DPC キューごとに機能します。 特定の CPU で DPC:
+4.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)の DPC キューごとに機能します。 特定の CPU で DPC:
     1.  ビルドでは、そのキュー内のすべての受信バッファー記述子を受信し、ドライバー スタック上のデータを示します。
 
         詳細については、次を参照してください。 [RSS の受信データのことを示す](indicating-rss-receive-data.md)します。
 
-    2.  完了する最後の DPC にある場合は、割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 ドライバーは、分割不可能な操作を完了するのに最後の DPC を識別するために使用する必要があります。 たとえば、ドライバーを使用できます、 [ **NdisInterlockedDecrement** ](https://msdn.microsoft.com/library/windows/hardware/ff562751)アトミックのカウンターを実装する関数。
+    2.  完了する最後の DPC にある場合は、割り込みを有効にします。 この割り込みが完了し、プロセスが再び開始します。 ドライバーは、分割不可能な操作を完了するのに最後の DPC を識別するために使用する必要があります。 たとえば、ドライバーを使用できます、 [ **NdisInterlockedDecrement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinterlockeddecrement)アトミックのカウンターを実装する関数。
 
  
 

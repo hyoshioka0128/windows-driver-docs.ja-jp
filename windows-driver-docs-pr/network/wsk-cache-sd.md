@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - WSK_CACHE_SD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1089c9fda0ca6347c0db1df54e3f9b1fed9ccb63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d60a21a8e85b32aecd935af1d5c573246acc8d32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390953"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377944"
 ---
 # <a name="wskcachesd"></a>WSK\_キャッシュ\_SD
 
 
-WSK アプリケーションの使用、WSK\_キャッシュ\_SD のクライアント管理操作に渡すことができるセキュリティ記述子のキャッシュされたコピーを取得する、 [ **WskSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571149)、 [ **WskSocketConnect**](https://msdn.microsoft.com/library/windows/hardware/ff571150)、および[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数。
+WSK アプリケーションの使用、WSK\_キャッシュ\_SD のクライアント管理操作に渡すことができるセキュリティ記述子のキャッシュされたコピーを取得する、 [ **WskSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)、 [ **WskSocketConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)、および[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数。
 
-セキュリティ記述子のキャッシュされたコピーを取得する WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)関数は次のパラメーター。
+セキュリティ記述子のキャッシュされたコピーを取得する WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数は次のパラメーター。
 
 <table>
 <colgroup>

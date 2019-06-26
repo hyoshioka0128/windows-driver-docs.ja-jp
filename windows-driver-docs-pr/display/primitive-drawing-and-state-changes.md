@@ -10,12 +10,12 @@ keywords:
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bac427081e1d5c9a7d43e6e1f7ef23fc17f6763
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 828ca3e214d925e2a153d944cc43a6d1f4460f04
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363738"
 ---
 # <a name="primitive-drawing-and-state-changes"></a>プリミティブ描画と状態変更
 
@@ -23,7 +23,7 @@ ms.locfileid: "63352202"
 ## <span id="ddk_primitive_drawing_and_state_changes_gg"></span><span id="DDK_PRIMITIVE_DRAWING_AND_STATE_CHANGES_GG"></span>
 
 
-すべてのマイクロソフトの Direct3D グラフィックス プリミティブおよび状態の変更に渡される、 [ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)コマンドと頂点バッファーにコールバックします。 ドライバーは、これらのバッファーを解析し、すべての描画と状態変更要求を処理する必要があります。
+すべてのマイクロソフトの Direct3D グラフィックス プリミティブおよび状態の変更に渡される、 [ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コマンドと頂点バッファーにコールバックします。 ドライバーは、これらのバッファーを解析し、すべての描画と状態変更要求を処理する必要があります。
 
 次のセクションでは、コマンドと頂点バッファーのレイアウトを説明し、ドライバーが処理する方法について説明します。
 

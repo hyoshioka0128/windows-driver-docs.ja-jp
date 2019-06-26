@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - WSK_TRANSPORT_LIST_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5a9e6657e6d1d4d58956ad99695e0da5370bb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae2f9444a60c81913cb6bba15e7ecf5aa9d3935b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379710"
 ---
 # <a name="wsktransportlistchange"></a>WSK\_トランスポート\_一覧\_変更
 
 
 WSK アプリケーションの使用、WSK\_トランスポート\_一覧\_使用可能なネットワークの一覧の変更を転送する場合に通知を受信するクライアント管理操作を変更します。
 
-使用可能なネットワークの一覧が変更を転送するときの通知を受信する WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://msdn.microsoft.com/library/windows/hardware/ff571126)関数は次のパラメーター。
+使用可能なネットワークの一覧が変更を転送するときの通知を受信する WSK アプリケーションが呼び出す、 [ **WskControlClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_client)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -65,7 +65,7 @@ WSK アプリケーションの使用、WSK\_トランスポート\_一覧\_使�
 
 IRP では、このクライアントの管理操作に必要です。
 
-WSK サブシステムが保留中の取り消し Irp WSK アプリケーションから呼び出す場合[ **WskDeregister** ](https://msdn.microsoft.com/library/windows/hardware/ff571128) WSK サブシステムから自体をデタッチします。
+WSK サブシステムが保留中の取り消し Irp WSK アプリケーションから呼び出す場合[ **WskDeregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister) WSK サブシステムから自体をデタッチします。
 
 <a name="requirements"></a>要件
 ------------
