@@ -7,12 +7,12 @@ keywords:
 - Windows Filtering Platform コールアウト ドライバー WDK、IPsec との互換性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4df4238dce5f8e40169e09c891e33fdc42a4ea0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 059c6fa975f7776fc61cced49462a50ab8cce8a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381381"
 ---
 # <a name="developing-ipsec-compatible-callout-drivers"></a>IPsec 互換コールアウト ドライバーの開発
 
@@ -69,7 +69,7 @@ FWPS\_レイヤー\_送信\_IPPACKET\_V6\_破棄
 
 1.  登録のコールアウトの ALE で承認レイヤーの表示と同意 (**FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V4**または**FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V6**) トランスポート レイヤーだけでなく (FWPS\_レイヤー\_ *XXX*\_トランスポート\_V4 または\_V6)。
 
-2.  内部 Windows IPsec 処理への干渉を防ぐためには、登録よりも低い、重みが副層に吹き出し**FWPM\_副層\_ユニバーサル**します。 使用して、 [ **FwpmSubLayerEnum0** ](https://msdn.microsoft.com/library/windows/desktop/aa364211)副層の重量を検索します。 この関数については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。
+2.  内部 Windows IPsec 処理への干渉を防ぐためには、登録よりも低い、重みが副層に吹き出し**FWPM\_副層\_ユニバーサル**します。 使用して、 [ **FwpmSubLayerEnum0** ](https://docs.microsoft.com/windows/desktop/api/fwpmu/nf-fwpmu-fwpmsublayerenum0)副層の重量を検索します。 この関数については、次を参照してください。、 [Windows フィルタ リング プラットフォーム](https://go.microsoft.com/fwlink/p/?linkid=90220)Microsoft Windows SDK のドキュメント。
 
 3.  ALE で ALE 分類を検査する必要がある必要がありますトランスポート パケットを受信承認レイヤーの表示と同意 (**FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT。\_V4**または**FWPS\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V6**)。 このようなパケットは、受信トランスポート レイヤーから許可する必要があります。 Windows Vista Service Pack 1 (SP1)、Windows Server 2008 以降、使用して、 **FWPS\_メタデータ\_フィールド\_ALE\_分類\_REQUIRED**メタデータ フラグ着信パケットに指定されるかどうかを判断する、 **FWPM\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V4**と**FWPM\_レイヤー\_ALE\_AUTH\_RECV\_ACCEPT\_V6**レイヤーをフィルター処理します。 このメタデータ フラグが置き換えられます、 **FWP\_条件\_フラグ\_REQUIRES\_ALE\_分類**Windows Vista で使用されているフラグの条件します。
 
@@ -91,13 +91,13 @@ FWPS\_レイヤー\_送信\_IPPACKET\_V6\_破棄
     }
     ```
 
-5.  IPsec で保護されたパケットが暗号化を解除し、トランスポート層で確認した後、AH または ESP ヘッダーは、IP ヘッダーに残ります。 このようなパケットが TCP/IP スタックに返される場合、AH または ESP ヘッダーを削除する IP ヘッダーをリビルドしてください。 Windows Vista SP1 および Windows Server 2008 以降、これを行う、パケットを複製し、呼び出すことによって、 [ **FwpsConstructIpHeaderForTransportPacket0** ](https://msdn.microsoft.com/library/windows/hardware/ff551154)関数を持つ、 *headerIncludeHeaderSize*パラメーターは、複製されたパケットの IP ヘッダーのサイズに設定します。
+5.  IPsec で保護されたパケットが暗号化を解除し、トランスポート層で確認した後、AH または ESP ヘッダーは、IP ヘッダーに残ります。 このようなパケットが TCP/IP スタックに返される場合、AH または ESP ヘッダーを削除する IP ヘッダーをリビルドしてください。 Windows Vista SP1 および Windows Server 2008 以降、これを行う、パケットを複製し、呼び出すことによって、 [ **FwpsConstructIpHeaderForTransportPacket0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsconstructipheaderfortransportpacket0)関数を持つ、 *headerIncludeHeaderSize*パラメーターは、複製されたパケットの IP ヘッダーのサイズに設定します。
 
-6.  ALE 受信受け入れる層でコールアウトをチェックして IPsec で保護されたトラフィックを検出できるかどうか、 **FWP\_条件\_フラグ\_IS\_IPSEC\_セキュリティで保護された**フラグ設定されています。 トランスポート層では、コールアウトは、呼び出すことで IPsec で保護されたトラフィックを検出できる、 [ **FwpsGetPacketListSecurityInformation0** ](https://msdn.microsoft.com/library/windows/hardware/ff551174)関数とチェックするかどうか、 **FWPS\_パケット\_一覧\_INFORMATION0**フラグに設定されて、 *queryFlags*パラメーター。
+6.  ALE 受信受け入れる層でコールアウトをチェックして IPsec で保護されたトラフィックを検出できるかどうか、 **FWP\_条件\_フラグ\_IS\_IPSEC\_セキュリティで保護された**フラグ設定されています。 トランスポート層では、コールアウトは、呼び出すことで IPsec で保護されたトラフィックを検出できる、 [ **FwpsGetPacketListSecurityInformation0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsgetpacketlistsecurityinformation0)関数とチェックするかどうか、 **FWPS\_パケット\_一覧\_INFORMATION0**フラグに設定されて、 *queryFlags*パラメーター。
 
 ### <a name="working-with-ipsec-esp-packets"></a>IPsec ESP パケットの使用
 
-エンジンに復号化セキュリティ ペイロード (ESP) パケットのカプセル化することが示されている場合は、ESP の末尾のデータを除外するに切り捨てます。 エンジンが MDL のデータは、このようなパケットを処理する方法により、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体に適切なパケット長は反映されません。 使用して、正しい長さを取得できます、 [ **NET\_バッファー\_データ\_長さ**](https://msdn.microsoft.com/library/windows/hardware/ff568382)のデータ長を取得するマクロ、 **NET\_バッファー**構造体。
+エンジンに復号化セキュリティ ペイロード (ESP) パケットのカプセル化することが示されている場合は、ESP の末尾のデータを除外するに切り捨てます。 エンジンが MDL のデータは、このようなパケットを処理する方法により、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体に適切なパケット長は反映されません。 使用して、正しい長さを取得できます、 [ **NET\_バッファー\_データ\_長さ**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-data-length)のデータ長を取得するマクロ、 **NET\_バッファー**構造体。
 
  
 

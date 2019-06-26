@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6867d561a3a5024fb4490e8de5d715eb1ad722
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2920101f73028886758203bc8a998bd01ec38a40
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361634"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361895"
 ---
 # <a name="bug-check-0x39-systemexitownedmutex"></a>バグ チェック 0x39:システム\_終了\_所有されている\_ミュー テックス
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361634"
 システム\_終了\_所有されている\_ミュー テックスのバグ チェックが 0x00000039 の値を持ちます。 これは、ワーカーのルーチンが所有、ミュー テックス オブジェクトを解放することがなく返されることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="systemexitownedmutex-parameters"></a>システム\_終了\_所有されている\_ミュー テックス パラメーター

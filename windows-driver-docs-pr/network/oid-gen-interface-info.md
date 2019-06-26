@@ -5,12 +5,12 @@ ms.assetid: fa1dd52f-7cf6-4e95-af15-02ae65fcb872
 ms.date: 08/08/2017
 keywords: -OID_GEN_INTERFACE_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a094db6a5c26df79dac06e9fcf879ec2d9a33da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0215e658f9401ff6b735634cf7c0002de32fa995
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369100"
 ---
 # <a name="oidgeninterfaceinfo"></a>OID\_GEN\_インターフェイス\_情報
 
@@ -28,9 +28,9 @@ ms.locfileid: "63375679"
 <a name="remarks"></a>注釈
 -------
 
-のみ[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/library/windows/hardware/ff566527)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
+のみ[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)プロバイダー、およびミニポート ドライバーではないまたはフィルター ドライバー、そのためには、OID 要求としてこの OID をサポートする必要があります。
 
-クエリが成功すると、インターフェイス プロバイダーを返します NDIS\_状態\_成功して、クエリの結果は、 [ **NDIS\_インターフェイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565736)構造体。 この構造体には、インターフェイスの有効期間中に変化する情報が含まれています。
+クエリが成功すると、インターフェイス プロバイダーを返します NDIS\_状態\_成功して、クエリの結果は、 [ **NDIS\_インターフェイス\_情報**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)構造体。 この構造体には、インターフェイスの有効期間中に変化する情報が含まれています。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -51,9 +51,9 @@ ms.locfileid: "63375679"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_インターフェイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff565736)
+[**NDIS\_インターフェイス\_情報**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)
 
-[NDIS ネットワーク インターフェイスの Oid](https://msdn.microsoft.com/library/windows/hardware/ff566545)
+[NDIS ネットワーク インターフェイスの Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a6703261497045fb2dc4854bea9ee063bd4e049
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 433cde18bd95b095c9ef286ae6bf520cbd17d302
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368816"
 ---
 # <a name="kspropertywavebuffer"></a>KSPROPERTY\_WAVE\_バッファー
 
@@ -54,7 +54,7 @@ KSPROPERTY\_WAVE\_バッファー プロパティには、wave デバイスの�
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567239" data-raw-source="[&lt;strong&gt;KSWAVE_BUFFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567239)"><strong>KSWAVE_BUFFER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_buffer" data-raw-source="[&lt;strong&gt;KSWAVE_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_buffer)"><strong>KSWAVE_BUFFER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ KSPROPERTY\_WAVE\_バッファー プロパティには、wave デバイスの�
 
 プロパティの値 (データの操作) は、KSWAVE\_バッファー、バッファー サイズ (バイト単位)、およびバッファーの開始アドレスの属性をループを記述するバッファーの構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -84,7 +84,7 @@ KSPROPERTY\_WAVE\_バッファー プロパティには、wave デバイスの�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSWAVE\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff567239)
+[**KSWAVE\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kswave_buffer)
 
  
 

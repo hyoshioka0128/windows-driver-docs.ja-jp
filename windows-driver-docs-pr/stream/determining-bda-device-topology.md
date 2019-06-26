@@ -11,12 +11,12 @@ keywords:
 - テンプレート フィルター トポロジ WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e9fd63ba928358c3ae5395f3a3544c04c29ae1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f25c206f3a297f2a79f100b752ddc8ac100327e9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374068"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363326"
 ---
 # <a name="determining-bda-device-topology"></a>BDA デバイス トポロジの決定
 
@@ -26,7 +26,7 @@ ms.locfileid: "63374068"
 
 BDA デバイスのトポロジは、シグナルへの変換を表す各ノードの接続されたネットワークで構成されます。 ノードは、さまざまなフィルター間で任意にグループ化できます。 この任意のグループ化には、実装方法、ハードウェアとドライバーをサポートするネットワークのさまざまな種類のネットワーク プロバイダーを使用した一般的な方法でこのようなハードウェアとドライバーが処理できるように特定の自由でハードウェア ベンダーが提供します。
 
-この任意のグループ化アーキテクチャが機能するには、ネットワーク プロバイダーは変換の種類 (つまり、どのような種類のノードのネットワーク フィルター サポートできる) シグナルへのこれらのフィルターを実行するためのクエリ フィルターすることにあります。 フィルターの基になるリング 0 ミニドライバーを使用して、ネットワーク プロバイダーに、サポートされているノードのネットワークの図の伝達、 [KSPROPSETID\_BdaTopology](https://msdn.microsoft.com/library/windows/hardware/ff566561)プロパティ セット。
+この任意のグループ化アーキテクチャが機能するには、ネットワーク プロバイダーは変換の種類 (つまり、どのような種類のノードのネットワーク フィルター サポートできる) シグナルへのこれらのフィルターを実行するためのクエリ フィルターすることにあります。 フィルターの基になるリング 0 ミニドライバーを使用して、ネットワーク プロバイダーに、サポートされているノードのネットワークの図の伝達、 [KSPROPSETID\_BdaTopology](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdatopology)プロパティ セット。
 
 ネットワーク プロバイダーがノードの種類のリストを反復処理のフィルターのテンプレートのトポロジを決定するときに、暗証番号 (pin) の型し各ノードとその機能の暗証番号 (pin) クエリを実行します。 ネットワーク プロバイダー KSPROPSETID の次のプロパティを使用して\_BdaTopology フィルターのテンプレートのトポロジを決定します。
 
@@ -42,7 +42,7 @@ BDA デバイスのトポロジは、シグナルへの変換を表す各ノー�
 
     KSPROPERTY\_BDA\_テンプレート\_接続プロパティのノード型と、フィルターを構成できる暗証番号 (pin) 型の使用可能なすべての接続を表す配列を返します。 参照してください[接続トポロジのマッピング](mapping-connection-topology.md)詳細についてはします。
 
-フィルター インスタンスは最初に作成され、グラフに追加、ときに、通常に、入力ピン、出力ピンはないです。 出力ピンを作成するには、ネットワーク プロバイダー最初に使用して、KSPROPSETID\_BdaTopology プロパティをフィルターが実行できる操作を確認します。 これらのプロパティからは、ネットワーク プロバイダーは、グラフでは特定のフィルターを実行するフィルターが必要ですがどのような操作を決定します。 ネットワーク プロバイダーを使用し、 [KSMETHODSETID\_BdaDeviceConfiguration](https://msdn.microsoft.com/library/windows/hardware/ff563404)ピン留めする特定の種類に対応する出力ピンを作成し、実際のハードウェアのパスの間は、内部のトポロジを作成する方法の設定これらのピンと pin を入力します。 参照してください[BDA フィルターを構成する](configuring-a-bda-filter.md)詳細についてはします。
+フィルター インスタンスは最初に作成され、グラフに追加、ときに、通常に、入力ピン、出力ピンはないです。 出力ピンを作成するには、ネットワーク プロバイダー最初に使用して、KSPROPSETID\_BdaTopology プロパティをフィルターが実行できる操作を確認します。 これらのプロパティからは、ネットワーク プロバイダーは、グラフでは特定のフィルターを実行するフィルターが必要ですがどのような操作を決定します。 ネットワーク プロバイダーを使用し、 [KSMETHODSETID\_BdaDeviceConfiguration](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdadeviceconfiguration)ピン留めする特定の種類に対応する出力ピンを作成し、実際のハードウェアのパスの間は、内部のトポロジを作成する方法の設定これらのピンと pin を入力します。 参照してください[BDA フィルターを構成する](configuring-a-bda-filter.md)詳細についてはします。
 
 次のコード スニペットは、KSPROPSETID のディスパッチ ルーチンとして BDA サポート ライブラリによってエクスポートされる関数を定義する方法を示します\_BdaTopology プロパティ セット。
 

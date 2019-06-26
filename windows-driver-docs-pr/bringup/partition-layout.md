@@ -4,19 +4,19 @@ description: パーティション レイアウト
 ms.assetid: 59ac7ec7-1b96-4fe1-a221-d8422e60072d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7fccb17923cebd1236b368820130abb71900d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58197b0a15049649ef2e9d48bc93c1e2df3a8667
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337516"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364538"
 ---
 # <a name="windows-10-mobile-partition-layout"></a>Windows 10 Mobile のパーティション レイアウト
 
 
 Windows 10 Mobile、Microsoft およびシリコン ベンダー (SV) で記憶域のパーティションとパーティションのサイズを構成します。 十分な大きさの現在のすべてのコンポーネントと、電話の有効期間の更新を許可するように、パーティションを設計する必要があります。 スマート フォンでは、パーティションのサイズが設定され後、サイズを変更するだけの方法は、フラッシュ クリーンな完全な更新プログラム、電話のすべてのデータをワイプでデバイスを更新し直すことです。
 
-指定された要件を満たしている必要があります、スマート フォンの記憶域サブシステム[2.2 のセクションします。Windows 10 Mobile の最小ハードウェア要件のメモリ、](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx#section_2.0_-_minimum_hardware_requirements_for_windows_10_mobile)します。
+指定された要件を満たしている必要があります、スマート フォンの記憶域サブシステム[2.2 のセクションします。Windows 10 Mobile の最小ハードウェア要件のメモリ、](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview#section_2.0_-_minimum_hardware_requirements_for_windows_10_mobile)します。
 
 <div class="alert">
 <strong>注: </strong> Oem は追加しないと、削除、または、Microsoft と SV が設計されたレイアウトでのパーティションを変更します。 これにより、電話の更新プログラムによって、電話のすべてのソフトウェアと構成データを処理できることを確認します。 OEM コンポーネント通常に組み込まれている (プリロード済みのアプリケーションとネイティブ サービス) のメインの OS パーティション (データの事前に読み込まれたマップなど)、データのパーティションまたはデバイス (デバイスに固有の読み取り専用の構成データ) のパーティションをプロビジョニングします。
@@ -142,7 +142,8 @@ Windows 10 Mobile、Microsoft およびシリコン ベンダー (SV) で記憶�
 
 このパーティションは、サイズ 8 MB にあるものとします。
 
-<div class="alert">概要 DPP パーティション レイアウトの最初のパーティションとして保護手段をプロビジョニング情報の上書きする必要があります、その他のパーティションのサイズ、その後、変更があります。
+<div class="alert">
+<strong>重要:</strong> DPP パーティション レイアウトの最初のパーティションとして保護手段をプロビジョニング情報の上書きする必要があります、その他のパーティションのサイズ、その後、変更があります。
 </div>
 
 ### <a name="span-idsiliconvendorpartitionsspanspan-idsiliconvendorpartitionsspanspan-idsiliconvendorpartitionsspansilicon-vendor-partitions"></a><span id="Silicon_vendor_partitions"></span><span id="silicon_vendor_partitions"></span><span id="SILICON_VENDOR_PARTITIONS"></span>シリコン ベンダー パーティション
@@ -188,7 +189,8 @@ EFI システム パーティションには、Windows ブート マネージャ
 
 このパーティションの内部記憶域では、ユーザー データ、アプリケーション、およびアプリケーションの状態を格納します。 EMMC 上の領域の残りの部分を使用するパーティションのサイズを自動的に調整します。
 
-<div class="alert">概要 データのパーティション レイアウトの最後のパーティションがあります。
+<div class="alert">
+<strong>重要:</strong> データのパーティション レイアウトの最後のパーティションがあります。
 </div>
 
 ### <a name="span-idsdcardspanspan-idsdcardspanspan-idsdcardspansd-card"></a><span id="SD_card"></span><span id="sd_card"></span><span id="SD_CARD"></span>SD カード

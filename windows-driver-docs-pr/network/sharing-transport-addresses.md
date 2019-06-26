@@ -9,17 +9,17 @@ keywords:
 - トランスポート アドレス WDK Winsock カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd4d6fd1cc3f110e6694616c7196bc4a123f5c6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3df12778b20a884aacc5ed0f1b293f5beb75a83
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362013"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380826"
 ---
 # <a name="sharing-transport-addresses"></a>トランスポート アドレスの共有
 
 
-ほとんどの場合は、Winsock カーネル (WSK) アプリケーションは既に別のソケットが使用されているローカル トランスポート アドレスにソケットをバインドできません。 WSK アプリケーションで使用できます、[ように\_EXCLUSIVEADDRUSE](https://msdn.microsoft.com/library/windows/hardware/ff570830)と[ように\_REUSEADDR](https://msdn.microsoft.com/library/windows/hardware/ff570833)ソケットをバインドするローカル トランスポートの共有を制御するソケット オプションに対応します。 どちらのソケット オプションは、既定では、ソケットに対して設定されます。 ソケット オプションの設定の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
+ほとんどの場合は、Winsock カーネル (WSK) アプリケーションは既に別のソケットが使用されているローカル トランスポート アドレスにソケットをバインドできません。 WSK アプリケーションで使用できます、[ように\_EXCLUSIVEADDRUSE](https://docs.microsoft.com/windows-hardware/drivers/network/so-exclusiveaddruse)と[ように\_REUSEADDR](https://docs.microsoft.com/windows-hardware/drivers/network/so-reuseaddr)ソケットをバインドするローカル トランスポートの共有を制御するソケット オプションに対応します。 どちらのソケット オプションは、既定では、ソケットに対して設定されます。 ソケット オプションの設定の詳細については、次を参照してください。[ソケットで管理操作を実行する](performing-control-operations-on-a-socket.md)します。
 
 次の表では、既に別のソケットが使用されているローカル トランスポート アドレスを 2 つ目のソケットをバインドした結果を示します。 *ワイルドカード*と*特定*の場合は、ワイルドカードのローカル トランスポート アドレスまたは特定のローカル トランスポート アドレスに、ソケットがバインドされているかどうかを指定します。
 
@@ -259,9 +259,9 @@ ms.locfileid: "63362013"
 
 アクセス チェックが実行される前の表で定義されている場合、2 つ目のソケットのセキュリティ コンテキストは、最初のソケットのセキュリティ記述子に対してチェックされます。
 
--   ソケットのセキュリティ コンテキストが続く、 *OwningProcess*と*OwningThread*渡されるパラメーターにも、 [WskSocket](https://msdn.microsoft.com/library/windows/hardware/ff571149)関数または、 [WskSocketConnect](https://msdn.microsoft.com/library/windows/hardware/ff571150)ソケットが作成されるときに機能します。 特定のプロセスまたはスレッドが指定されていない場合、ソケットが作成されたときに、ソケットを作成したプロセスのセキュリティ コンテキストが使用されます。
+-   ソケットのセキュリティ コンテキストが続く、 *OwningProcess*と*OwningThread*渡されるパラメーターにも、 [WskSocket](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket)関数または、 [WskSocketConnect](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_socket_connect)ソケットが作成されるときに機能します。 特定のプロセスまたはスレッドが指定されていない場合、ソケットが作成されたときに、ソケットを作成したプロセスのセキュリティ コンテキストが使用されます。
 
--   ソケットのセキュリティ記述子がで指定された、 *SecurityDescriptor*ソケットが作成されたときに、WskSocket 関数または WskSocketConnect 関数に渡されるパラメーター。 特定のセキュリティ記述子が指定されていない場合、WSK サブシステムは、トランスポート アドレスの共有を許可しない既定のセキュリティ記述子を使用します。 使用して、ソケットが作成されたソケットにセキュリティ記述子を適用も、[ように\_WSK\_セキュリティ](https://msdn.microsoft.com/library/windows/hardware/ff570835)ソケット オプション。
+-   ソケットのセキュリティ記述子がで指定された、 *SecurityDescriptor*ソケットが作成されたときに、WskSocket 関数または WskSocketConnect 関数に渡されるパラメーター。 特定のセキュリティ記述子が指定されていない場合、WSK サブシステムは、トランスポート アドレスの共有を許可しない既定のセキュリティ記述子を使用します。 使用して、ソケットが作成されたソケットにセキュリティ記述子を適用も、[ように\_WSK\_セキュリティ](https://docs.microsoft.com/windows-hardware/drivers/network/so-wsk-security)ソケット オプション。
 
 2 つのソケットは、2 つの異なる特定のローカル トランスポート アドレスにバインドする場合はありませんかトランスポート アドレスを共有します。 このような場合、2 番目のバインド操作は正常に完了常にします。
 

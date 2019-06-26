@@ -4,12 +4,12 @@ description: 廃止されたカーネル モード ドライバー サポート�
 ms.assetid: 8bdfbd2e-a0d6-424f-9092-297e533efa33
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba0d1b2c9edd652f6ffe760c979c88caa5045216
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17ff682aae4bcfda4cd617aea7131fd531c4aba2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332289"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363201"
 ---
 # <a name="obsolete-kernel-mode-driver-support-functions"></a>廃止されたカーネル モード ドライバー サポート関数
 
@@ -37,19 +37,19 @@ ms.locfileid: "63332289"
 <tbody>
 <tr class="odd">
 <td align="left"><p>WIN95COMPAT_ReadPortUChar</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560797" data-raw-source="[&lt;strong&gt;READ_PORT_UCHAR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560797)"><strong>READ_PORT_UCHAR</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-read_port_uchar" data-raw-source="[&lt;strong&gt;READ_PORT_UCHAR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-read_port_uchar)"><strong>READ_PORT_UCHAR</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WIN95COMPAT_WritePortUChar</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566386" data-raw-source="[&lt;strong&gt;WRITE_PORT_UCHAR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566386)"><strong>WRITE_PORT_UCHAR</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-write_port_uchar" data-raw-source="[&lt;strong&gt;WRITE_PORT_UCHAR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-write_port_uchar)"><strong>WRITE_PORT_UCHAR</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>WIN95COMPAT_ReadPortUShort</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560806" data-raw-source="[&lt;strong&gt;READ_PORT_USHORT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560806)"><strong>READ_PORT_USHORT</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-read_port_ushort" data-raw-source="[&lt;strong&gt;READ_PORT_USHORT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-read_port_ushort)"><strong>READ_PORT_USHORT</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WIN95COMPAT_WritePortUShort</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566388" data-raw-source="[&lt;strong&gt;WRITE_PORT_USHORT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566388)"><strong>WRITE_PORT_USHORT</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-write_port_ushort" data-raw-source="[&lt;strong&gt;WRITE_PORT_USHORT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-write_port_ushort)"><strong>WRITE_PORT_USHORT</strong></a></p></td>
 </tr>
 </tbody>
 </table>

@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9407a23995113b7fde4e7d613607621d334c01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4cbd90ffa71764c3ae82d53d2a882cef1eaa5e9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363145"
 ---
 # <a name="ndiskdinterfaces"></a>!ndiskd.interfaces
 
 
 **! Ndiskd.interfaces**拡張機能は、ネットワーク インターフェイスに関する情報を表示します。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd すべてのネットワーク インターフェイスの一覧が表示されます。
 
-ネットワーク インターフェイスの詳細については、次を参照してください。[ネットワーク インターフェイスの NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-network-interfaces2)します。
+ネットワーク インターフェイスの詳細については、次を参照してください。[ネットワーク インターフェイスの NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)します。
 
 ```console
 !ndiskd.interfaces [-handle <x>] [-luid <x>] 
@@ -37,7 +37,7 @@ ms.locfileid: "63336067"
 ネットワーク インターフェイスのハンドル。
 
 <span id="_______-luid______"></span><span id="_______-LUID______"></span> *-luid*   
-[NetLuid](https://msdn.microsoft.com/windows/hardware/drivers/network/net-luid-value) (Net ローカル一意識別子) のネットワーク インターフェイス。
+[NetLuid](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value) (Net ローカル一意識別子) のネットワーク インターフェイス。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -123,19 +123,19 @@ STATE
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[ネットワークの NDIS インターフェイス](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-network-interfaces2)
+[ネットワークの NDIS インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)
 
-[NET\_LUID 値](https://msdn.microsoft.com/windows/hardware/drivers/network/net-luid-value)
+[NET\_LUID 値](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value)
 
  
 

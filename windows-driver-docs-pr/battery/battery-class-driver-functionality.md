@@ -6,12 +6,12 @@ keywords:
 - バッテリ クラス ドライバー WDK、機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 690868fa1c96399032f44e61acbe07ef7b7716a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b724319a72a710bfb3efe7e98bae3620fabf517
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364771"
 ---
 # <a name="battery-class-driver-functionality"></a>バッテリ クラス ドライバーの機能
 
@@ -25,7 +25,7 @@ ms.locfileid: "63328442"
 
 -   Miniclass ドライバーの初期化、miniclass ドライバーのクラスのデータ用のシステム リソースと容量の割り当てなどの大きな部分を実行します。
 
--   デバイスの制御 Irp の処理 ([**IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)) バッテリ クラス Ioctl を指定します。 (これらの Ioctl については、Microsoft Windows SDK を参照してください)。
+-   デバイスの制御 Irp の処理 ([**IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)) バッテリ クラス Ioctl を指定します。 (これらの Ioctl については、Microsoft Windows SDK を参照してください)。
 
 -   バッテリのデバイスへの要求をシリアル化します。
 
@@ -35,7 +35,7 @@ ms.locfileid: "63328442"
 
 -   特定の標準のバッテリ WMI クラスの処理
 
-参照してください[バッテリ Miniclass ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff536286)バッテリ miniclass ドライバーにバッテリ クラス ドライバーをエクスポートするルーチンの説明についてはします。
+参照してください[バッテリ Miniclass ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)バッテリ miniclass ドライバーにバッテリ クラス ドライバーをエクスポートするルーチンの説明についてはします。
 
  
 

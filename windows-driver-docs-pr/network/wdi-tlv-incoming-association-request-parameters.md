@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_INCOMING_ASSOCIATION_REQUEST_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ee261a46dc34faa5b06b3858f371991b73a671f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67f160ee7f6e3f8c09db65f27d97c26479eb110a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342278"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380792"
 ---
 # <a name="wditlvincomingassociationrequestparameters"></a>WDI\_TLV\_受信\_アソシエーション\_要求\_パラメーター
 
@@ -33,12 +33,12 @@ WDI\_TLV\_受信\_アソシエーション\_要求\_パラメーターは、ア�
 
 | 型                                              | 説明                                                                                                                   |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 送信者の MAC アドレス。                                                                                                |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 送信者の MAC アドレス。                                                                                                |
 | UINT8                                             | これは、再関連付け要求かどうかを示すビット。 1 の値では、再関連付け要求であることを示します。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

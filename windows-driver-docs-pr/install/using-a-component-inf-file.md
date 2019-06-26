@@ -3,12 +3,12 @@ title: コンポーネント INF ファイルの使用
 description: ソフトウェア コンポーネントを使用して、デバイスに固有のユーザー モード ソフトウェアを追加する方法について説明します。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 633023f0187a3ff1d331d1bdf83bad258d125ce1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eeda366397fc82430a1667da4adaebdddf872cbb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380450"
 ---
 # <a name="using-a-component-inf-file"></a>コンポーネント INF ファイルの使用
 
@@ -82,15 +82,15 @@ Needs=UmPass.Services
 
 次に、ソフトウェア コンポーネントが汎用を対象とする場合[ターゲット プラットフォーム](../develop/windows-10-editions-for-universal-drivers.md)、次の手順します。
 
-1. 呼び出す[ **CM_Locate_DevNode** ](https://msdn.microsoft.com/library/windows/hardware/ff538742)デバイスにデバイス ハンドルを取得するソフトウェア コンポーネントの ID をインスタンス化します。
-2. 呼び出す[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)をそのデバイスの親を識別するハンドルを取得します。  この親が使用するソフトウェア コンポーネントを追加するデバイスでは、 [INF AddComponent ディレクティブ](inf-addcomponent-directive.md)します。
-3. 次に、親のデバイス インスタンス ID を取得する呼び出し[ **CM_Get_Device_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff538405)からハンドル[ **CM_Get_Parent**](https://msdn.microsoft.com/library/windows/hardware/ff538610)します。
+1. 呼び出す[ **CM_Locate_DevNode** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_locate_devnodea)デバイスにデバイス ハンドルを取得するソフトウェア コンポーネントの ID をインスタンス化します。
+2. 呼び出す[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)をそのデバイスの親を識別するハンドルを取得します。  この親が使用するソフトウェア コンポーネントを追加するデバイスでは、 [INF AddComponent ディレクティブ](inf-addcomponent-directive.md)します。
+3. 次に、親のデバイス インスタンス ID を取得する呼び出し[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)からハンドル[ **CM_Get_Parent**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)します。
 
 ソフトウェア コンポーネントが、デスクトップを対象とする場合[ターゲット プラットフォーム](../develop/windows-10-editions-for-universal-drivers.md)のみ、次の手順を使用します。
 
-1. 呼び出す[ **SetupDiCreateDeviceInfoList** ](https://msdn.microsoft.com/library/windows/hardware/ff550956)空のデバイス情報を作成するには設定します。
-2. 呼び出す[ **SetupDiOpenDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff552071)ソフトウェア コンポーネントのデバイスのデバイスとインスタンス id。
-3. 呼び出す[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)で`DEVPKEY_Device_Parent`親デバイス インスタンス ID を取得します。
+1. 呼び出す[ **SetupDiCreateDeviceInfoList** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfolist)空のデバイス情報を作成するには設定します。
+2. 呼び出す[ **SetupDiOpenDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)ソフトウェア コンポーネントのデバイスのデバイスとインスタンス id。
+3. 呼び出す[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)で`DEVPKEY_Device_Parent`親デバイス インスタンス ID を取得します。
 
 ## <a name="example"></a>例
 
@@ -178,9 +178,9 @@ CONTOSO = "Contoso"
 ContosoCtrlPnl.DeviceDesc = "Contoso Control Panel" 
 ```
 
-ドライバーの検証と送信のプロセスは、通常 Inf とコンポーネント Inf のと同じです。 詳細については、次を参照してください。 [Windows HLK Getting Started](https://msdn.microsoft.com/library/windows/hardware/dn915002)します。
+ドライバーの検証と送信のプロセスは、通常 Inf とコンポーネント Inf のと同じです。 詳細については、次を参照してください。 [Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)します。
 
-セットアップ クラスの詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://msdn.microsoft.com/library/windows/hardware/ff553426)します。
+セットアップ クラスの詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)します。
 
 ## <a name="see-also"></a>参照
 

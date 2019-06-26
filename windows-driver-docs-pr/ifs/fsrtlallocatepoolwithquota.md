@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 380e7a2cd05be62c3aca788519702fb271fb0157
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d761623ebceb331b7b0624b83951299e10b93a88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370170"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365907"
 ---
 # <a name="fsrtlallocatepoolwithquota"></a>FsRtlAllocatePoolWithQuota
 
@@ -25,7 +25,7 @@ ms.locfileid: "63370170"
 
 
 
-**FsRtlAllocatePoolWithQuota**ルーチンは、廃止されていますが、既存のドライバー バイナリをサポートするためにエクスポートされます。 使用[ **FsRtlAllocatePoolWithQuotaTag** ](https://msdn.microsoft.com/library/windows/hardware/ff545665)代わりにします。
+**FsRtlAllocatePoolWithQuota**ルーチンは、廃止されていますが、既存のドライバー バイナリをサポートするためにエクスポートされます。 使用[ **FsRtlAllocatePoolWithQuotaTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlallocatepoolwithquotatag)代わりにします。
 
  
 

@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a00b21b822ad710cf165e6c08fbf3adbc6e2fdf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4753ecccdad52d6f03845e3c85f791f79896725b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327894"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380484"
 ---
 # <a name="fltparameters-for-irpmjsystemcontrol-union"></a>FLT\_IRP のパラメーター\_MJ\_システム\_コントロール共用体
 
 
-共用体のコンポーネントで使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)用の構造、操作が IRP\_MJ\_システム\_コントロール。
+共用体のコンポーネントで使用されるときに、 **MajorFunction**のフィールド、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)用の構造、操作が IRP\_MJ\_システム\_コントロール。
 
 <a name="syntax"></a>構文
 ------
@@ -44,7 +44,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>メンバー
+<a name="members"></a>Members
 -------
 
 **WMI**  
@@ -65,35 +65,35 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>注釈
 -------
 
-[ **FLT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff544673) IRP の構造\_MJ\_システム\_管理操作には、システム コントロールの操作のパラメーターが含まれています。コールバック データによって表される ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
+[ **FLT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters) IRP の構造\_MJ\_システム\_管理操作には、システム コントロールの操作のパラメーターが含まれています。コールバック データによって表される ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 FLT に含まれている\_IO\_パラメーター\_ブロック構造体。
 
-IRP の意味\_MJ\_システム\_制御パラメーターは、マイナー関数コードによって異なります。 (を参照してください、 **MinorFunction**のメンバー、 [ **FLT\_IO\_パラメーター\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff544638)構造です)。詳細については、次の小さな関数のコードに対して参照エントリを参照してください。
+IRP の意味\_MJ\_システム\_制御パラメーターは、マイナー関数コードによって異なります。 (を参照してください、 **MinorFunction**のメンバー、 [ **FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造です)。詳細については、次の小さな関数のコードに対して参照エントリを参照してください。
 
-[**IRP\_MN\_変更\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff550831)
+[**IRP\_MN\_変更\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-instance)
 
-[**IRP\_MN\_変更\_単一\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff550836)
+[**IRP\_MN\_変更\_単一\_項目**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-item)
 
-[**IRP\_MN\_DISABLE\_COLLECTION**](https://msdn.microsoft.com/library/windows/hardware/ff550848)
+[**IRP\_MN\_DISABLE\_COLLECTION**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-collection)
 
-[**IRP\_MN\_を無効にする\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff550851)
+[**IRP\_MN\_を無効にする\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-events)
 
-[**IRP\_MN\_ENABLE\_COLLECTION**](https://msdn.microsoft.com/library/windows/hardware/ff550857)
+[**IRP\_MN\_ENABLE\_COLLECTION**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-collection)
 
-[**IRP\_MN\_を有効にする\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff550859)
+[**IRP\_MN\_を有効にする\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-events)
 
-[**IRP\_MN\_EXECUTE\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/ff550868)
+[**IRP\_MN\_EXECUTE\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-execute-method)
 
-[**IRP\_MN\_クエリ\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff551650)
+[**IRP\_MN\_クエリ\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)
 
-[**IRP\_MN\_クエリ\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff551718)
+[**IRP\_MN\_クエリ\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance)
 
-[**IRP\_MN\_REGINFO**](https://msdn.microsoft.com/library/windows/hardware/ff551731)
+[**IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)
 
-[**IRP\_MN\_REGINFO\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff551734)
+[**IRP\_MN\_REGINFO\_EX**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)
 
 IRP\_MJ\_システム\_コントロールが IRP ベースの操作。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -112,39 +112,39 @@ IRP\_MJ\_システム\_コントロールが IRP ベースの操作。
 ## <a name="see-also"></a>関連項目
 
 
-[**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544645)
+[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544648)
+[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544654)
+[**FLT\_IS\_IRP\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**IRP\_MN\_変更\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff550831)
+[**IRP\_MN\_変更\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-instance)
 
-[**IRP\_MN\_変更\_単一\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff550836)
+[**IRP\_MN\_変更\_単一\_項目**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-item)
 
-[**IRP\_MN\_DISABLE\_COLLECTION**](https://msdn.microsoft.com/library/windows/hardware/ff550848)
+[**IRP\_MN\_DISABLE\_COLLECTION**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-collection)
 
-[**IRP\_MN\_を無効にする\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff550851)
+[**IRP\_MN\_を無効にする\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-events)
 
-[**IRP\_MN\_ENABLE\_COLLECTION**](https://msdn.microsoft.com/library/windows/hardware/ff550857)
+[**IRP\_MN\_ENABLE\_COLLECTION**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-collection)
 
-[**IRP\_MN\_を有効にする\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff550859)
+[**IRP\_MN\_を有効にする\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-events)
 
-[**IRP\_MN\_EXECUTE\_メソッド**](https://msdn.microsoft.com/library/windows/hardware/ff550868)
+[**IRP\_MN\_EXECUTE\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-execute-method)
 
-[**IRP\_MN\_クエリ\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff551650)
+[**IRP\_MN\_クエリ\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)
 
-[**IRP\_MN\_クエリ\_単一\_インスタンス**](https://msdn.microsoft.com/library/windows/hardware/ff551718)
+[**IRP\_MN\_クエリ\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance)
 
-[**IRP\_MN\_REGINFO**](https://msdn.microsoft.com/library/windows/hardware/ff551731)
+[**IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)
 
-[**IRP\_MN\_REGINFO\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff551734)
+[**IRP\_MN\_REGINFO\_EX**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)
 
  
 

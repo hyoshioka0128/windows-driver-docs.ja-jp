@@ -16,12 +16,12 @@ keywords:
 - Stdunk サンプル オーディオ ドライバー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 797b125b9aca5968b380e511c40fda3ee731a4d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a6fb728afe77ad0c6c4b8aff8c7047c72d56e7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328650"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355271"
 ---
 # <a name="sample-audio-drivers"></a>オーディオ ドライバーのサンプル
 
@@ -65,11 +65,11 @@ Sysvad オーディオ サンプルは、ここを参照できます。
 
 以下の手順をダウンロードして SYSVAD サンプルを開きます。
 
-a.  GitHub ツールを使用して、サンプルを使用することができます。 1 つの zip ファイルに汎用ドライバー サンプルをダウンロードすることもできます。
+a. GitHub ツールを使用して、サンプルを使用することができます。 1 つの zip ファイルに汎用ドライバー サンプルをダウンロードすることもできます。
 
 <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-b.  Master.zip ファイルをローカル ハード ドライブにダウンロードします。
+b. Master.zip ファイルをローカル ハード ドライブにダウンロードします。
 
 c. 右クリックして*Windows ドライバーのサンプル-master.zip*、選択**すべて展開**します。 新しいフォルダーを指定するか、抽出したファイルを保存する既存のサブスクリプションへの参照します。 たとえば、指定する*c:\\DriverSamples\\* として新しいファイルの抽出先フォルダーです。
 
@@ -108,7 +108,7 @@ Visual Studio では、ソリューション エクスプ ローラーを見つ�
 
 詳細については、各 WDK でこれらのサンプルに付属する readme ドキュメントを参照してください。
 
-WDK サンプルについては、次を参照してください。 [Windows ドライバー キット サンプル パック (Windows ドライバー)。](https://msdn.microsoft.com/library/windows/hardware/ff554118)
+WDK サンプルについては、次を参照してください。 [Windows ドライバー キット サンプル パック (Windows ドライバー)。](https://docs.microsoft.com/windows-hardware/drivers/samples/index)
 
  
 

@@ -4,12 +4,12 @@ description: SetPresharedKeyForId
 ms.assetid: d966fd05-31ac-4774-b970-e4ce3d02a5ba
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82dbca93b9b8c4e29ebddf0aab6587825a8c429c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2baab8921ae1b1c04bf53f57d3c45281b0967695
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341264"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363965"
 ---
 # <a name="setpresharedkeyforid"></a>SetPresharedKeyForId
 
@@ -22,7 +22,7 @@ ms.locfileid: "63341264"
 
 管理アプリケーションを使用できる、 **SetPresharedKeyForId**特定イニシエーター識別子と事前共有キーを関連付けるメソッド。 イニシエーターの識別子のすべての既定のキーを関連付ける、アプリケーションを呼び出すことができます、 [SetGroupPresharedKey](setgrouppresharedkey.md)メソッド。 識別子とキーの間の明示的な関連付けが存在する場合は、明示的な関連付けを指定するキーが、既定のキーよりも優先されます。
 
-**SetPresharedKeyForId** 、パブリッシュされていないに属している[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **SetPresharedKeyForId**メソッドのメンバーの説明を参照してください、 [ **SetPresharedKeyForId\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565806)と[ **SetPresharedKeyForId\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565810)構造体。
+**SetPresharedKeyForId** 、パブリッシュされていないに属している[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **SetPresharedKeyForId**メソッドのメンバーの説明を参照してください、 [ **SetPresharedKeyForId\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setpresharedkeyforid_in)と[ **SetPresharedKeyForId\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setpresharedkeyforid_out)構造体。
 
 ミニポート ドライバー、MSiSCSI を実装する\_SecurityConfigOperations WMI クラスをサポートする必要があります**SetPresharedKeyForId**します。
 

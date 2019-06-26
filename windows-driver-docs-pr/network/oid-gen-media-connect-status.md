@@ -5,12 +5,12 @@ ms.assetid: 3ed26e62-a285-4b78-91c6-7c3cc0963570
 ms.date: 08/08/2017
 keywords: -OID_GEN_MEDIA_CONNECT_STATUS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 72575278de3943b532989997a37fd8f3e8afcfa3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 991e796be503fc0acff52df400c9819dcfbcd805
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358744"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369038"
 ---
 # <a name="oidgenmediaconnectstatus"></a>OID\_GEN\_メディア\_CONNECT\_状態
 
@@ -45,7 +45,7 @@ OID\_GEN\_メディア\_CONNECT\_状態 OID は、次のシステム定義の値
 
 **NdisMediaStateDisconnected**
 
-呼び出す必要がありますもミニポート ドライバーでは、ネットワーク接続が失われたことを検知、ときに、 [ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)または[ **NdisMCoIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563562) NDIS で関数を\_状態\_メディア\_(NDIS 5.1) の切断または NDIS\_状態\_リンク\_を持つ状態**MediaConnectStateDisconnected** MediaConnectState プロパティ (NDIS の 6.x)。 呼び出す必要がありますし、接続が復元されると、 **NdisM (Co) IndicateStatus** NDIS に\_状態\_メディア\_(NDIS 5.1) の接続または NDIS\_状態\_リンク\_を持つ状態**MediaConnectStateConnected** MediaConnectState プロパティ (NDIS の 6.x)。
+呼び出す必要がありますもミニポート ドライバーでは、ネットワーク接続が失われたことを検知、ときに、 [ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)または[ **NdisMCoIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex) NDIS で関数を\_状態\_メディア\_(NDIS 5.1) の切断または NDIS\_状態\_リンク\_を持つ状態**MediaConnectStateDisconnected** MediaConnectState プロパティ (NDIS の 6.x)。 呼び出す必要がありますし、接続が復元されると、 **NdisM (Co) IndicateStatus** NDIS に\_状態\_メディア\_(NDIS 5.1) の接続または NDIS\_状態\_リンク\_を持つ状態**MediaConnectStateConnected** MediaConnectState プロパティ (NDIS の 6.x)。
 
 <a name="requirements"></a>要件
 ------------
@@ -66,9 +66,9 @@ OID\_GEN\_メディア\_CONNECT\_状態 OID は、次のシステム定義の値
 ## <a name="see-also"></a>関連項目
 
 
-[**NdisMCoIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563562)
+[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)
 
-[**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
 
  
 

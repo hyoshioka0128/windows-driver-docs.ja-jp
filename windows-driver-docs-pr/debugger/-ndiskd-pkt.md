@@ -12,21 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ca8137aa4480ba730fe78828825da8847677600
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21e4bfaf61efaed618a1262a32b20625b657fe48
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363116"
 ---
 # <a name="ndiskdpkt"></a>!ndiskd.pkt
 
 
-**警告**  は従来の NDIS 5.x ドライバーのこの拡張子です。 [NDIS\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff557086)構造とその関連付けられているアーキテクチャが使用されなくなりました。
+**警告**  は従来の NDIS 5.x ドライバーのこの拡張子です。 [NDIS\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))構造とその関連付けられているアーキテクチャが使用されなくなりました。
 
  
 
-**! Ndiskd.pkt**拡張機能に関する情報を表示する、 [NDIS\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff557086)構造体。
+**! Ndiskd.pkt**拡張機能に関する情報を表示する、 [NDIS\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))構造体。
 
 ```console
 !ndiskd.pkt [-packet] [-verbosity] 
@@ -47,7 +47,7 @@ Ndiskd.dll
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
-[NDIS\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff557086)
+[NDIS\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))
 
  
 

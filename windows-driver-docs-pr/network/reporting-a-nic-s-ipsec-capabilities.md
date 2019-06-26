@@ -8,12 +8,12 @@ keywords:
 - IPsec オフロード WDK TCP/IP トランスポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb715f1e9e3b01cc9ec53099807a835e28259707
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d015fd344ec4e515cf7e67218f4f65f32ebbb54
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373275"
 ---
 # <a name="reporting-a-nics-ipsec-capabilities"></a>NIC の IPsec 機能のレポート
 
@@ -22,15 +22,15 @@ ms.locfileid: "63365801"
 
 
 
-NDIS ミニポート ドライバーが、インターネット プロトコル セキュリティ (IPsec) オフロードの現在の構成では、NIC を指定します、 [ **NDIS\_IPSEC\_オフロード\_V1** ](https://msdn.microsoft.com/library/windows/hardware/ff565796)構造体。ミニポート ドライバーで現在 IPsec オフロードの構成を含める必要があります、 [ **NDIS\_ミニポート\_アダプター\_オフロード\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565930)構造体。 ミニポート ドライバーの呼び出し、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)関数を[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数を渡す、NDIS 情報\_ミニポート\_アダプター\_オフロード\_属性。
+NDIS ミニポート ドライバーが、インターネット プロトコル セキュリティ (IPsec) オフロードの現在の構成では、NIC を指定します、 [ **NDIS\_IPSEC\_オフロード\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)構造体。ミニポート ドライバーで現在 IPsec オフロードの構成を含める必要があります、 [ **NDIS\_ミニポート\_アダプター\_オフロード\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_offload_attributes)構造体。 ミニポート ドライバーの呼び出し、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数を[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数を渡す、NDIS 情報\_ミニポート\_アダプター\_オフロード\_属性。
 
-ミニポート ドライバーが存在する場合、変更、IPsec でオフロード機能を報告する必要がありますで、 [ **NDIS\_状態\_タスク\_オフロード\_現在\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff567424)状態を示す値。
+ミニポート ドライバーが存在する場合、変更、IPsec でオフロード機能を報告する必要がありますで、 [ **NDIS\_状態\_タスク\_オフロード\_現在\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)状態を示す値。
 
-クエリに対する応答で[OID\_TCP\_オフロード\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569805)、NDIS には、NDIS が含まれています\_IPSEC\_オフロード\_V1構造体、 [ **NDIS\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566599) NDIS を表す構造体、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 NDIS は、ミニポート ドライバーが提供される情報を使用します。
+クエリに対する応答で[OID\_TCP\_オフロード\_現在\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)、NDIS には、NDIS が含まれています\_IPSEC\_オフロード\_V1構造体、 [ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload) NDIS を表す構造体、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。 NDIS は、ミニポート ドライバーが提供される情報を使用します。
 
 ミニポート ドライバーは、NDIS で次の情報を示す\_IPSEC\_オフロード\_V1 構造体。
 
--   カプセル化の設定で、**カプセル化**メンバー。 このメンバーの詳細については、「解説」セクションを参照してください。 [ **NDIS\_IPSEC\_オフロード\_V1**](https://msdn.microsoft.com/library/windows/hardware/ff565796)します。
+-   カプセル化の設定で、**カプセル化**メンバー。 このメンバーの詳細については、「解説」セクションを参照してください。 [ **NDIS\_IPSEC\_オフロード\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)します。
 
 -   NIC が実行できるかどうかを組み合わせて、パケットに IPsec 操作は、NIC は、認証ヘッダー (AH) と、カプセル化セキュリティ ペイロード (ESP) で、次の形式のパケットの両方を含むパケットを処理できるかどうか。
 

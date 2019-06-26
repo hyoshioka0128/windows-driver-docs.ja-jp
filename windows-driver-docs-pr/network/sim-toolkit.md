@@ -4,12 +4,12 @@ description: SIM ツールキット
 ms.assetid: 39869948-d61c-438c-a90c-05dcb099acad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 351dbe512f2009553db5ba0127db56d367b5fb10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c3199bf2d87d413af845b308c11c2c36cb8c84f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330569"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380816"
 ---
 # <a name="sim-toolkit"></a>SIM ツールキット
 
@@ -61,7 +61,7 @@ Oem は、既定値は、携帯電話会社の要件を満たしていない場�
 
 -   GETINKEY:60 秒
 
-これらのカスタマイズについては、次を参照してください。[カスタマイズ SIM toolkit](https://msdn.microsoft.com/library/windows/hardware/mt629102)します。
+これらのカスタマイズについては、次を参照してください。[カスタマイズ SIM toolkit](https://docs.microsoft.com/windows-hardware/customize/mobile/mcsf/customize-the-sim-toolkit)します。
 
 ### <a name="example-of-processing-a-sim-toolkit-command"></a>SIM toolkit コマンドの処理の例
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c7346e6c70adc19aa020aef0753998df05a144f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e78bfa6be6a40b4125c9e0d969c7cd0a20c185c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374282"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362976"
 ---
 # <a name="devpkeydeviceclassnoinstallclass"></a>DEVPKEY_DeviceClass_NoInstallClass
 
 
-DEVPKEY_DeviceClass_NoInstallClass デバイス セットアップ クラス プロパティはブール値をかどうかを制御するフラグでデバイスを[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)に表示される、**ハードウェアの追加ウィザード**します。
+DEVPKEY_DeviceClass_NoInstallClass デバイス セットアップ クラス プロパティはブール値をかどうかを制御するフラグでデバイスを[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)に表示される、**ハードウェアの追加ウィザード**します。
 
 <table>
 <colgroup>
@@ -62,11 +62,11 @@ DEVPKEY_DeviceClass_NoInstallClass デバイス セットアップ クラス プ
 
 DEVPROP_TRUE DEVPKEY_DeviceClass_NoInstallClass の値を設定するには、クラス内のデバイスのインストールでは、エンドユーザーの操作は必要はないことを示します。 DEVPROP_TRUE には、この値は設定されていない、ハードウェアの追加ウィザードは、デバイス セットアップ クラスに対するデバイスを表示します。
 
-**NoInstallClass**のデバイス セットアップ クラスに対するレジストリ値を設定することができます、 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)に含まれている、 [ **INFClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)のクラスをインストールする INF ファイル。
+**NoInstallClass**のデバイス セットアップ クラスに対するレジストリ値を設定することができます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に含まれている、 [ **INFClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)のクラスをインストールする INF ファイル。
 
-呼び出すことができます[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)または[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090) DEVPKEY_DeviceClass_ の値を取得するにはNoInstallClass します。
+呼び出すことができます[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) DEVPKEY_DeviceClass_ の値を取得するにはNoInstallClass します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_NoInstallClass プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**NoInstallClass**クラスのレジストリ キーの下のレジストリ値。 クラスのレジストリ キー値のエントリをアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff537751)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_NoInstallClass プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**NoInstallClass**クラスのレジストリ キーの下のレジストリ値。 クラスのレジストリ キー値のエントリをアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-registry-entry-values-under-the-class-registry-key)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,13 +91,13 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF ClassInstall32 セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546335)
+[**INF ClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
  
 

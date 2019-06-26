@@ -19,12 +19,12 @@ keywords:
 - ブート開始ドライバー WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48beeb607b42424f5c7337512532b499a23585ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65617157d8ff04db9dc73a6fd06b0121cf1b0bc2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380265"
 ---
 # <a name="what-determines-when-a-driver-is-loaded"></a>ドライバーのロード時期の決定方法
 
@@ -57,7 +57,7 @@ OS の初期化中に、ドライバーの開始を示します。 この開始�
 
 ドライバー開発者は、次の方法のいずれかでインストール時に開始ドライバーの種類を指定できます。
 
--   必要な開始の種類を指定することによって、 **StartType**内のエントリ、*サービス-インストール セクション*によって参照される、 [ **AddService** ](https://msdn.microsoft.com/library/windows/hardware/ff546326)ドライバーの INF ファイルでディレクティブです。 このメソッドは、ServiceInstall セクションで説明されています。
+-   必要な開始の種類を指定することによって、 **StartType**内のエントリ、*サービス-インストール セクション*によって参照される、 [ **AddService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ドライバーの INF ファイルでディレクティブです。 このメソッドは、ServiceInstall セクションで説明されています。
 
 -   目的を渡すことによって開始の種類、 *dwStartType*パラメーターを呼び出すときに**CreateService**または**changeserviceconfig が**ユーザー モードのインストール プログラムから。 このメソッドが参照のエントリで説明されている**CreateService**と**changeserviceconfig が**Microsoft Windows SDK ドキュメント。
 
@@ -87,7 +87,7 @@ OS の初期化中に、ドライバーの開始を示します。 この開始�
 
 -   目的を渡すことによって開始の種類、 *lpLoadOrderGroup*パラメーターを呼び出すときに**CreateService**または**changeserviceconfig が**ユーザー モードのインストール プログラムから。 このメソッドが参照のエントリで説明されている**CreateService**と**changeserviceconfig が**Microsoft Windows SDK ドキュメント。
 
-ドライバーに関する一般的な情報の読み込み順序と読み込み順グループを参照してください[ドライバーの読み込み順序を指定する](https://msdn.microsoft.com/library/windows/hardware/ff552319)します。
+ドライバーに関する一般的な情報の読み込み順序と読み込み順グループを参照してください[ドライバーの読み込み順序を指定する](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)します。
 
  
 

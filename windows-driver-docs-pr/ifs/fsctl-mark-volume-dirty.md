@@ -14,27 +14,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d90cde19dc53dfc9ebefcd8f876d5643a161afd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ec703816f5154a7cae2ff48a5d794b779aa5462
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380113"
 ---
 # <a name="fsctlmarkvolumedirty-control-code"></a>FSCTL\_マーク\_ボリューム\_ダーティ制御コード
 
 
 **FSCTL\_マーク\_ボリューム\_DIRTY**制御コードが、次のシステムの再起動中に、ボリューム上で実行する Autochk.exe をトリガーする、ダーティとして指定されたボリュームをマークします。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 **Parameters**
 
 <a href="" id="instance"></a>*インスタンス*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 不透明なインスタンスへのポインターを FSCTL 要求を開始するミニフィルター ドライバーのインスタンス。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 不透明なインスタンスへのポインターを FSCTL 要求を開始するミニフィルター ドライバーのインスタンス。
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 ダーティとしてマークするボリュームを指定するファイル ポインター オブジェクト。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 ダーティとしてマークするボリュームを指定するファイル ポインター オブジェクト。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 ダーティとマークするのには、ボリュームへのハンドル。 このパラメーターが必要とすることはできません**NULL**します。
@@ -57,7 +57,7 @@ ms.locfileid: "63391782"
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ルーチンがステータスを返します\_成功、または、適切な NTSTATUS値。
+[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ルーチンがステータスを返します\_成功、または、適切な NTSTATUS値。
 
 <table>
 <colgroup>
@@ -66,7 +66,7 @@ ms.locfileid: "63391782"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -101,7 +101,7 @@ ms.locfileid: "63391782"
 
 **ReFS:  **このコードはサポートされていません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -120,7 +120,7 @@ ms.locfileid: "63391782"
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**FSCTL\_IS\_ボリューム\_DIRTY**](fsctl-is-volume-dirty.md)
 

@@ -9,12 +9,12 @@ keywords:
 - SetupWriteTextLog
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b40ef65859e8919d115c1da2922c9807e860908e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b02b1ba366a32f50ae5e74cadc899b5b68c70ec7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363479"
 ---
 # <a name="writing-indented-log-entries"></a>インデントされたログ エントリの記述
 
@@ -60,7 +60,7 @@ entry_prefix time_stamp event_category indentation formatted_message
 
  
 
-次の一連の呼び出しなど[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)セクション ヘッダーの後にインデントを設定したログ エントリのシーケンスを書き込みが*section_title*フィールド"インデント Example"し*instance_identifier*フィールドが「0 をインスタンス化」します。
+次の一連の呼び出しなど[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)セクション ヘッダーの後にインデントを設定したログ エントリのシーケンスを書き込みが*section_title*フィールド"インデント Example"し*instance_identifier*フィールドが「0 をインスタンス化」します。
 
 ```cpp
 // The LogToken value was previously returned by a call to 

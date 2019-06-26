@@ -7,12 +7,12 @@ keywords:
 - ターミナル サーバーの WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 533e945e07f8fcdc22eb6d8a5dbed996b69d61a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74cb02a357bacca18ee00d08559d9a1b339db193
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388058"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372360"
 ---
 # <a name="terminal-server-printing"></a>ターミナル サーバーの印刷
 
@@ -39,10 +39,10 @@ Microsoft Windows 2000 以降では、ターミナル サービスを 1 台の�
 -   デバイスは、カスタム ドライバーによってサポートされている必要がある場合に、ドライバーが Microsoft's に正確に従う必要があります[プリンター ドライバーのアーキテクチャ](printer-driver-architecture.md)します。 具体的には、次のとおりです。
     1.  作成する必要があります、[プリンター インターフェイス DLL](printer-interface-dll.md)します。
     2.  作成する必要があります、[プリンター グラフィックス DLL](printer-graphics-dll.md)します。 この DLL は、ユーザー モードまたはカーネル モードのいずれかで実行できますが、ユーザー モードをお勧めします。
-    3.  カーネル モード コードを作成する場合を使用してコードをテストする必要があります[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。
+    3.  カーネル モード コードを作成する場合を使用してコードをテストする必要があります[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
     4.  」の説明に従って、セットアップ INF ファイルに基づくインストール手順を提供する必要があります[のインストールと構成のプリンター ドライバー](installing-and-configuring-printer-drivers.md)します。
 
-すべてのカスタム ドライバー コードは、再入可能である必要があります。 ユーザー モードのコードでは、クリティカル セクション オブジェクトの (Windows SDK のドキュメントで説明) を使用する必要があります。 カーネル モード コードは、セマフォを使用する必要があります (を参照してください[ **EngCreateSemaphore** ](https://msdn.microsoft.com/library/windows/hardware/ff564760)および関連する関数)。
+すべてのカスタム ドライバー コードは、再入可能である必要があります。 ユーザー モードのコードでは、クリティカル セクション オブジェクトの (Windows SDK のドキュメントで説明) を使用する必要があります。 カーネル モード コードは、セマフォを使用する必要があります (を参照してください[ **EngCreateSemaphore** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatesemaphore)および関連する関数)。
 
 プリンター ドライバーとカスタム スプーラー コンポーネントする必要がありますレジストリへのアクセス、これらのドライバーとスプーラー コンポーネントの場合は、専用のインターフェイスを介してのみ、WDK の適切なセクションで説明します。
 
@@ -59,7 +59,7 @@ Microsoft Windows 2000 以降では、ターミナル サービスを 1 台の�
     2.  ファイルを置き換える必要がある場合、セットアップ コードは、古いバージョンをアンロードし、(たとえば、サービスを再起動し、ファイルを置き換える、ドライバー サービスを停止する) を新しいバージョンを読み込む手順を実行する必要があります。
     3.  再記録オフ ログオンするユーザーを要求するには、はシステムの再起動を必要とすることをお勧めします。
 
-共同インストーラーとクラスのインストーラーの詳細については、次を参照してください。[クラスのインストーラーを執筆および共同インストーラー](https://msdn.microsoft.com/library/windows/hardware/ff819060)します。
+共同インストーラーとクラスのインストーラーの詳細については、次を参照してください。[クラスのインストーラーを執筆および共同インストーラー](https://docs.microsoft.com/windows-hardware/drivers/install/writing-class-installers-and-co-installers)します。
 
 **注**  カスタム セットアップ コードを記述する前に、Windows SDK のドキュメントで説明するガイドラインをプログラミングするターミナル サービスを読み取る必要があります。
 
@@ -71,9 +71,9 @@ Microsoft Windows 2000 以降では、ターミナル サービスを 1 台の�
 
 ほぼすべてのプリンター ドライバーのコードでは、スプーラーの実行コンテキストで実行され、そのため、ユーザー インターフェイスを表示することはできません。 プリンター インターフェイス Dll、およびのみ内からのみ、ユーザー インターフェイスが表示されることができます、次の機能。
 
--   [ **DrvDevicePropertySheets** ](https://msdn.microsoft.com/library/windows/hardware/ff548542)と[ **DrvDocumentPropertySheets** ](https://msdn.microsoft.com/library/windows/hardware/ff548548)関数で、プロパティ ページを作成します。
+-   [ **DrvDevicePropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicepropertysheets)と[ **DrvDocumentPropertySheets** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets)関数で、プロパティ ページを作成します。
 
--   [ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)関数で、プリンターのイベントを識別するイベント コードを受信します。 関数が、プリンターに対してのみユーザー インターフェイスを表示できます\_イベント\_追加\_接続とプリンターの\_イベント\_削除\_イベント コードを接続します。
+-   [ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)関数で、プリンターのイベントを識別するイベント コードを受信します。 関数が、プリンターに対してのみユーザー インターフェイスを表示できます\_イベント\_追加\_接続とプリンターの\_イベント\_削除\_イベント コードを接続します。
 
 その他のすべてのプリンター ドライバーのコードは、スプーラーのコンテキストで実行します。 このコンテキストから呼び出し**メッセージ ボックス**または**MessageBoxEx**が許可されている MB に設定する必要がありますが、\_サービス\_通知。 これらの関数は、Windows SDK のドキュメントで説明します。
 

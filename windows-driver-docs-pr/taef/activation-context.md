@@ -4,12 +4,12 @@ description: ライセンス認証コンテキスト
 ms.assetid: 76584379-2AEF-47e0-B14E-C7698903658F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3388671e65c10e205114934ddb1c2fbb26ce0505
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e971058f70649e42c7ec4cffc01d57416e4005ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380500"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373036"
 ---
 # <a name="activation-context"></a>ライセンス認証コンテキスト
 
@@ -33,7 +33,7 @@ TAEF は、テストを実行する必要があります アクティベーシ�
 </assembly>
 ```
 
-マニフェスト ファイルを **'Comctlv6.manifest'** に表示される前のテストの実行時に使用される、comctl32.dll バージョン 6 を指定します。 マニフェスト ファイルの詳細については、次を参照してください[マニフェスト ファイルのリファレンス。](https://msdn.microsoft.com/library/aa375632(VS.85).aspx)
+マニフェスト ファイルを **'Comctlv6.manifest'** に表示される前のテストの実行時に使用される、comctl32.dll バージョン 6 を指定します。 マニフェスト ファイルの詳細については、次を参照してください[マニフェスト ファイルのリファレンス。](https://docs.microsoft.com/windows/desktop/SbsCs/manifest-files-reference)
 
 ## <a name="span-idspecifyingactivationcontextmanifestatthecommandpromptspanspan-idspecifyingactivationcontextmanifestatthecommandpromptspanspan-idspecifyingactivationcontextmanifestatthecommandpromptspanspecifying-activationcontext-manifest-at-the-command-prompt"></a><span id="Specifying_ActivationContext_manifest_at_the_Command_Prompt"></span><span id="specifying_activationcontext_manifest_at_the_command_prompt"></span><span id="SPECIFYING_ACTIVATIONCONTEXT_MANIFEST_AT_THE_COMMAND_PROMPT"></span>コマンド プロンプトで ActivationContext マニフェストを指定します。
 

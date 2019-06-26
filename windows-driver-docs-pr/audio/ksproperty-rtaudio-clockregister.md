@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32b22c090abbb36dda353946fb2360044a6928b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd9304c59a33c2a40882d090ec0d80757dc36722
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332678"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354392"
 ---
 # <a name="kspropertyrtaudioclockregister"></a>KSPROPERTY\_RTAUDIO\_CLOCKREGISTER
 
@@ -52,15 +52,15 @@ KSPROPERTY\_RTAUDIO\_CLOCKREGISTER プロパティは、クライアントがア
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537498" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537498)"><strong>KSRTAUDIO_HWREGISTER_PROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537497" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537497)"><strong>KSRTAUDIO_HWREGISTER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property)"><strong>KSRTAUDIO_HWREGISTER_PROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister" data-raw-source="[&lt;strong&gt;KSRTAUDIO_HWREGISTER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister)"><strong>KSRTAUDIO_HWREGISTER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_HWREGISTER\_プロパティ構造を含む、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 要求を送信する前にクライアントの読み込み、KSRTAUDIO\_HWREGISTER\_クロック登録の推奨されるベース アドレスを示す値を持つプロパティ構造体。
+プロパティ記述子 (インスタンス データ) から成る、KSRTAUDIO\_HWREGISTER\_プロパティ構造を含む、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 要求を送信する前にクライアントの読み込み、KSRTAUDIO\_HWREGISTER\_クロック登録の推奨されるベース アドレスを示す値を持つプロパティ構造体。
 
 プロパティの値 (データの操作) は、KSRTAUDIO へのポインター\_HWREGISTER 構造体のレジスタのアドレスと登録更新頻度をプロパティ ハンドラーを書き込みます。 この登録アドレスは、ハードウェア レジスタのマップ先のユーザー モードまたはカーネル モード仮想アドレスです。 クライアントは、このアドレスから直接登録を読み取ることができます。
 
@@ -79,9 +79,9 @@ KSPROPERTY\_RTAUDIO\_CLOCKREGISTER プロパティ要求がステータスを返
 
 クロック レジスタのマッピングは、暗証番号 (pin) の終了時に破棄されます。 クライアントは、暗証番号 (pin) のインスタンスの有効期間中に 1 回だけ登録をマップでき、そのインスタンス用にもう一度クロック レジスタにマップする任意の後続の呼び出しは失敗します。
 
-これは通常高速化を送信するよりも、クロックの登録を読み取る、 [ **KSPROPERTY\_クロック\_時間**](https://msdn.microsoft.com/library/windows/hardware/ff565095)要求は、ユーザー モードとカーネル モードの間の遷移が必要ですユーザー モードのクライアントです。
+これは通常高速化を送信するよりも、クロックの登録を読み取る、 [ **KSPROPERTY\_クロック\_時間**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-clock-time)要求は、ユーザー モードとカーネル モードの間の遷移が必要ですユーザー モードのクライアントです。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -104,9 +104,9 @@ KSPROPERTY\_RTAUDIO\_CLOCKREGISTER プロパティ要求がステータスを返
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSRTAUDIO\_HWREGISTER\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff537498)
+[**KSRTAUDIO\_HWREGISTER\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister_property)
 
-[**KSRTAUDIO\_HWREGISTER**](https://msdn.microsoft.com/library/windows/hardware/ff537497)
+[**KSRTAUDIO\_HWREGISTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwregister)
 
  
 

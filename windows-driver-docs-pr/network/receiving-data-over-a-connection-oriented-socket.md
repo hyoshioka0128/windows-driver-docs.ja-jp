@@ -7,17 +7,17 @@ keywords:
 - WskReceive
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d984c939ed015fb5e1638385257e3f07c7b9de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f47d82f64c900dc380f4f4bd4738d594fd3d46b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358314"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373302"
 ---
 # <a name="receiving-data-over-a-connection-oriented-socket"></a>接続指向ソケット経由でのデータの受信
 
 
-Winsock カーネル (WSK) アプリケーションがリモートのトランスポート アドレスに接続指向のソケットを接続した後、ソケットを使ってデータを受信できます。 WSK アプリケーションでは、リッスン ソケットの受け入れ、接続指向のソケットでもデータを受信できます。 WSK アプリケーション接続指向のソケット経由で呼び出すことによってデータを受信する、 [ **WskReceive** ](https://msdn.microsoft.com/library/windows/hardware/ff571139)関数。
+Winsock カーネル (WSK) アプリケーションがリモートのトランスポート アドレスに接続指向のソケットを接続した後、ソケットを使ってデータを受信できます。 WSK アプリケーションでは、リッスン ソケットの受け入れ、接続指向のソケットでもデータを受信できます。 WSK アプリケーション接続指向のソケット経由で呼び出すことによってデータを受信する、 [ **WskReceive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive)関数。
 
 次のコード例では、WSK アプリケーションが接続指向のソケット経由でデータを受信する方法を示します。
 
@@ -124,7 +124,7 @@ NTSTATUS
 }
 ```
 
-呼び出す代わりとして、 [ **WskReceive** ](https://msdn.microsoft.com/library/windows/hardware/ff571139)接続指向のソケット経由でデータを受信する関数を WSK アプリケーションを有効にすることができます、 [ *WskReceiveEvent*](https://msdn.microsoft.com/library/windows/hardware/ff571140)ソケットでのイベントのコールバック関数。 WSK アプリケーションを使用する場合、 *WskReceiveEvent*接続指向のソケットでのイベントのコールバック関数、WSK サブシステムを呼び出す、ソケットの*WskReceiveEvent*イベント コールバック関数のたびに新しいデータは、ソケットで受信されます。 接続指向のソケットの有効化の詳細については*WskReceiveEvent*イベントのコールバック関数を参照してください[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
+呼び出す代わりとして、 [ **WskReceive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive)接続指向のソケット経由でデータを受信する関数を WSK アプリケーションを有効にすることができます、 [ *WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event)ソケットでのイベントのコールバック関数。 WSK アプリケーションを使用する場合、 *WskReceiveEvent*接続指向のソケットでのイベントのコールバック関数、WSK サブシステムを呼び出す、ソケットの*WskReceiveEvent*イベント コールバック関数のたびに新しいデータは、ソケットで受信されます。 接続指向のソケットの有効化の詳細については*WskReceiveEvent*イベントのコールバック関数を参照してください[の有効化と無効にするとイベントのコールバック関数](enabling-and-disabling-event-callback-functions.md)します。
 
 次のコード例は、接続指向のソケットの呼び出す WSK サブシステムによって、WSK アプリケーションがデータを受信する方法を示しています。 *WskReceiveEvent*イベント コールバック関数。
 
@@ -169,7 +169,7 @@ NTSTATUS WSKAPI
 }
 ```
 
-接続指向のソケットの場合、 [ *WskReceiveEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571140)イベント コールバック関数はのすべてのリストに含まれるデータを取得できません[ **WSK\_データ\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff571165)によって示される構造体、 *DataIndication*パラメーターの状態を返すことによってさらに処理するためのリストを保持して\_保留します。 このような状況で WSK アプリケーションを呼び出す必要があります、 [ **WskRelease** ](https://msdn.microsoft.com/library/windows/hardware/ff571144)関数解放 WSK の一覧を\_データ\_を示す値構造体を WSK サブシステムにバックアップした後リスト内の構造体から取得するすべてのデータを完了します。
+接続指向のソケットの場合、 [ *WskReceiveEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event)イベント コールバック関数はのすべてのリストに含まれるデータを取得できません[ **WSK\_データ\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_data_indication)によって示される構造体、 *DataIndication*パラメーターの状態を返すことによってさらに処理するためのリストを保持して\_保留します。 このような状況で WSK アプリケーションを呼び出す必要があります、 [ **WskRelease** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571144(v=vs.85))関数解放 WSK の一覧を\_データ\_を示す値構造体を WSK サブシステムにバックアップした後リスト内の構造体から取得するすべてのデータを完了します。
 
 接続指向のソケットの場合、 *WskReceiveEvent*イベント コールバック関数は受信したデータのバイト数の合計の一部のみを受け入れるが指す変数を設定する必要があります、 *BytesAccepted*パラメーターを実際に許可されたデータのバイト数。 ただし場合、ソケットの*WskReceiveEvent*イベント コールバック関数が受け入れるすべての受信データを指す変数を設定する必要はありません、 *BytesAccepted*パラメーター。
 

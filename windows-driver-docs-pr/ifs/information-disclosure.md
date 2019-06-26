@@ -11,12 +11,12 @@ keywords:
 - 漏えい WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0d0885ff139ee76fc800b28e1dfbbc95bf9ac2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48bc4f32857404df5762707fb097da443d42edc1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380956"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381736"
 ---
 # <a name="information-disclosure"></a>情報の漏洩
 
@@ -30,9 +30,9 @@ I/O マネージャーがから追加のデータをコピーする場合は、�
 
 ファイル システムまたはファイル システム フィルター ドライバーは、データにアクセスしないことを許可する必要がありますユーザーにファイル情報の開示の追加のリスクがあります。 これは、さまざまな方法で実行できます。
 
--   使用するフィルター ドライバー [ **ZwCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)にファイルを開いて、その中間のハンドルを使用してデータへのアクセスを提供します。 **ZwCreateFile**関数は、既定では、ファイルを開き、要求がカーネル モードから送信されるため、バイパスのセキュリティを確認します。 そのため、このハンドルを使用してアクセスでは、通常、アプリケーションで使用できるはできない情報を開示できます。
+-   使用するフィルター ドライバー [ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)にファイルを開いて、その中間のハンドルを使用してデータへのアクセスを提供します。 **ZwCreateFile**関数は、既定では、ファイルを開き、要求がカーネル モードから送信されるため、バイパスのセキュリティを確認します。 そのため、このハンドルを使用してアクセスでは、通常、アプリケーションで使用できるはできない情報を開示できます。
 
-    フィルター ドライバーは、アクセス チェックを公開する必要がない、データがない公開することを確認する必要があるかどうかは、フィルター ドライバーは、OBJ を指定する必要があります\_FORCE\_アクセス\_チェックイン、 *ObjectAttributes*のパラメーター、 [ **ZwCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566424)関数。
+    フィルター ドライバーは、アクセス チェックを公開する必要がない、データがない公開することを確認する必要があるかどうかは、フィルター ドライバーは、OBJ を指定する必要があります\_FORCE\_アクセス\_チェックイン、 *ObjectAttributes*のパラメーター、 [ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)関数。
 
 -   (アクセス チェックをバイパスする)、カーネル モードでのハンドルを開いて、OBJ で指定されていないフィルター ドライバー\_カーネル\_を処理します。 このため、作成されたハンドルは、現在のプロセスのハンドル テーブルに格納されます。 データへのフル アクセスを使用してこのハンドルはユーザー モードで表示されます。 悪意のあるアプリケーションは、このような処理を監視とデータへのアクセスで使用することができます。
 

@@ -6,12 +6,12 @@ keywords:
 - NdisCmXxx 関数 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e60f11be0dba00b38df3876e4cd53ea46dce6924
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a4a3f7138c93e35f97a337b46d8dea309af57f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379580"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381379"
 ---
 # <a name="differences-in-calls-to-ndisxxx-functions"></a>NdisXxx 関数の呼び出しの違い
 
@@ -23,15 +23,15 @@ ms.locfileid: "63379580"
 
 MCM にドライバーを呼び出しません、 **NdisCo * Xxx*** クライアントの接続指向とコール マネージャーの両方を呼び出す関数。 代わりに、MCM、ドライバーを呼び出す次同等**NdisMCm * Xxx*** 関数。
 
--   [**NdisMCmCreateVc** ](https://msdn.microsoft.com/library/windows/hardware/ff562812)の代わりに[ **NdisCoCreateVc**](https://msdn.microsoft.com/library/windows/hardware/ff561696)
+-   [**NdisMCmCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmcreatevc)の代わりに[ **NdisCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscocreatevc)
 
--   [**NdisMCmDeleteVc** ](https://msdn.microsoft.com/library/windows/hardware/ff562819)の代わりに[ **NdisCoDeleteVc**](https://msdn.microsoft.com/library/windows/hardware/ff561698)
+-   [**NdisMCmDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeletevc)の代わりに[ **NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscodeletevc)
 
--   [**NdisMCmOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563548)の代わりに[ **NdisCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561711)
+-   [**NdisMCmOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmoidrequest)の代わりに[ **NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)
 
--   [**NdisMCmOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563551)の代わりに[ **NdisCoOidRequestComplete**](https://msdn.microsoft.com/library/windows/hardware/ff561716)
+-   [**NdisMCmOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmoidrequestcomplete)の代わりに[ **NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequestcomplete)
 
-MCM にドライバーに匹敵する呼び出しが不要[ **NdisCoSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff561728)コール マネージャーとミニポート ドライバー間の送信インターフェイスは、MCM ドライバーに内部であるため、NDIS したがって不透明になります。
+MCM にドライバーに匹敵する呼び出しが不要[ **NdisCoSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscosendnetbufferlists)コール マネージャーとミニポート ドライバー間の送信インターフェイスは、MCM ドライバーに内部であるため、NDIS したがって不透明になります。
 
  
 

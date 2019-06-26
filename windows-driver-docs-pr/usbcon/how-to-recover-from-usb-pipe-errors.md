@@ -3,12 +3,12 @@ Description: このトピックでは、ときに、USB パイプへのデータ
 title: USB パイプ エラーからの回復方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8934d75986713bb65f32e461d388326a12304b9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df58d4e869dd4f86ecc8f411dd80ba4fbb880712
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364736"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363917"
 ---
 # <a name="how-to-recover-from-usb-pipe-errors"></a>USB パイプ エラーからの回復方法
 
@@ -27,7 +27,7 @@ USB クライアント ドライバーは、コントロールの転送を既定
 
 エラー状態をクリアするにリセット パイプ操作を開始し、必要がある場合にのみ、リセット ポート サイクル-ポートなどのより複雑な操作を実行します。
 
-<em>***さまざまな復旧のメカニズムを調整</em>*: * *
+<em>***さまざまな復旧のメカニズムを調整</em>* : * *
 
 <table>
 <colgroup>
@@ -57,7 +57,7 @@ USB クライアント ドライバーは、コントロールの転送を既定
 
     Microsoft Visual Studio Professional 2012 と共に用意されている USB テンプレートを使用する場合、テンプレート コードは、これらのタスクを実行します。 テンプレート コードでは、ターゲット デバイス オブジェクトを識別するハンドルを取得し、デバイス コンテキストに格納します。
 
-    KMDF クライアント ドライバーは、呼び出すことによって WDFUSBDEVICE ハンドルを取得する必要があります、 [ **WdfUsbTargetDeviceCreateWithParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh439428)メソッド。 詳細については、「デバイスのソース コード」を参照してください[USB クライアント ドライバー コード構造 (KMDF) について](understanding-the-kmdf-template-code-for-usb.md)します。
+    KMDF クライアント ドライバーは、呼び出すことによって WDFUSBDEVICE ハンドルを取得する必要があります、 [ **WdfUsbTargetDeviceCreateWithParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)メソッド。 詳細については、「デバイスのソース コード」を参照してください[USB クライアント ドライバー コード構造 (KMDF) について](understanding-the-kmdf-template-code-for-usb.md)します。
 
 -   クライアント ドライバーでは、フレームワーク ターゲットのパイプ オブジェクトを識別するハンドルが必要です。 詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
 
@@ -68,40 +68,40 @@ USB クライアント ドライバーは、コントロールの転送を既定
 
 クライアント ドライバーでは、USB 要求ブロック (URB) を使用して、データ転送を開始します。 要求が完了すると、USB ドライバー スタックは、転送が成功したか、失敗したかどうかを示す USBD ステータス コードを返します。 発生するでは、USBD コードは、失敗の理由を示します。
 
--   呼び出して URB を送信した場合、 [ **WdfUsbTargetDeviceSendUrbSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff550105)メソッド、チェック、 **Hdr.Status**のメンバー、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)メソッドが返された後構造体します。
--   呼び出すことによって、URB を非同期的に送信した場合、 [ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド、URB 状態を確認、 [ *EVT_WDF_REQUEST_COMPLETION_ROUTINE*](https://msdn.microsoft.com/library/windows/hardware/ff540745). *Params*パラメーターが指す、 [ **WDF\_要求\_完了\_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552454)構造体。 USBD ステータス コードを確認するには、検査、 **Usb -&gt;UsbdStatus**メンバー。 コードについては、次を参照してください。 [USBD\_状態](https://msdn.microsoft.com/library/windows/hardware/ff539136)します。
+-   呼び出して URB を送信した場合、 [ **WdfUsbTargetDeviceSendUrbSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)メソッド、チェック、 **Hdr.Status**のメンバー、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)メソッドが返された後構造体します。
+-   呼び出すことによって、URB を非同期的に送信した場合、 [ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)メソッド、URB 状態を確認、 [ *EVT_WDF_REQUEST_COMPLETION_ROUTINE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine). *Params*パラメーターが指す、 [ **WDF\_要求\_完了\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)構造体。 USBD ステータス コードを確認するには、検査、 **Usb -&gt;UsbdStatus**メンバー。 コードについては、次を参照してください。 [USBD\_状態](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))します。
 
 USBD など、デバイスのエラーからの転送エラーが発生\_状態\_失速\_PID または USBD\_状態\_BABBLE\_が検出されました。 ホスト コント ローラーの USBD などによって報告されたエラーのため発生する可能性も\_状態\_XACT\_エラー。
 
 ### <a href="" id="determine-whether-the-device-is-connected-to-the-port"></a>手順 2:デバイスがポートに接続されているかどうかを判断します。
 
-パイプ デバイスをリセットするすべての要求を発行する前に、デバイスが接続されていることを確認します。 呼び出すことによって、デバイスの接続状態を調べる、 [ **WdfUsbTargetDeviceIsConnectedSynchronous** ](https://msdn.microsoft.com/library/windows/hardware/ff550095)メソッド。
+パイプ デバイスをリセットするすべての要求を発行する前に、デバイスが接続されていることを確認します。 呼び出すことによって、デバイスの接続状態を調べる、 [ **WdfUsbTargetDeviceIsConnectedSynchronous** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceisconnectedsynchronous)メソッド。
 
 ### <a href="" id="cancel-all-pending-transfers-to-the-pipe"></a>手順 3:パイプへのすべての保留中の転送をキャンセルします。
 
 ポートまたはパイプをリセットするすべての要求を送信する前に、パイプでは、USB ドライバー スタックがまだ完了していないすべての保留中の転送要求をキャンセルします。 次の方法のいずれかで要求をキャンセルできます。
 
--   I/O ターゲットを呼び出すことによって停止、 [ **WdfIoTargetStop** ](https://msdn.microsoft.com/library/windows/hardware/ff548680)メソッド。
+-   I/O ターゲットを呼び出すことによって停止、 [ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)メソッド。
 
-    I/O ターゲットを停止するには、最初に、呼び出して framework パイプ オブジェクトに関連付けられている WDFIOTARGET ハンドルを取得、 [ **WdfUsbTargetPipeGetIoTarget** ](https://msdn.microsoft.com/library/windows/hardware/ff551146)メソッド。 ハンドルを使用すると、呼び出す[ **WdfIoTargetStop**](https://msdn.microsoft.com/library/windows/hardware/ff548680)します。 呼び出しでアクションを設定**WdfIoTargetCancelSentIo** (を参照してください[ **WDF\_IO\_ターゲット\_SENT\_IO\_アクション** ](https://msdn.microsoft.com/library/windows/hardware/ff552388)) USB ドライバー スタックが完了していないすべての要求を取り消すために、フレームワークに指示します。 完了した要求の場合、クライアント ドライバーにフレームワークによって呼び出される場合は、その完了コールバックを待つ必要があります。
+    I/O ターゲットを停止するには、最初に、呼び出して framework パイプ オブジェクトに関連付けられている WDFIOTARGET ハンドルを取得、 [ **WdfUsbTargetPipeGetIoTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetiotarget)メソッド。 ハンドルを使用すると、呼び出す[ **WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)します。 呼び出しでアクションを設定**WdfIoTargetCancelSentIo** (を参照してください[ **WDF\_IO\_ターゲット\_SENT\_IO\_アクション** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/ne-wdfiotarget-_wdf_io_target_sent_io_action)) USB ドライバー スタックが完了していないすべての要求を取り消すために、フレームワークに指示します。 完了した要求の場合、クライアント ドライバーにフレームワークによって呼び出される場合は、その完了コールバックを待つ必要があります。
 
 -   中止パイプ要求を送信します。 これらのメソッドのいずれかを呼び出すことによって、要求を送信できます。
-    -   呼び出す、 [ **WdfUsbTargetPipeAbortSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff551129)メソッド。
+    -   呼び出す、 [ **WdfUsbTargetPipeAbortSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously)メソッド。
 
-        呼び出しが同期され返しますのみすべて保留中の要求は取り消されます。 [**WdfUsbTargetPipeAbortSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff551129)は省略可能な*要求*パラメーター。 事前に割り当てられる framework 要求オブジェクトに WDFREQUEST ハンドルを渡すことをお勧めします。 パラメーターは、使用のフレームワークは、ドライバーがアクセスできない内部要求オブジェクトではなく、指定された要求オブジェクトを使用します。 このパラメーターの値により**WdfUsbTargetPipeAbortSynchronously**メモリ不足が原因で失敗しません。
+        呼び出しが同期され返しますのみすべて保留中の要求は取り消されます。 [**WdfUsbTargetPipeAbortSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously)は省略可能な*要求*パラメーター。 事前に割り当てられる framework 要求オブジェクトに WDFREQUEST ハンドルを渡すことをお勧めします。 パラメーターは、使用のフレームワークは、ドライバーがアクセスできない内部要求オブジェクトではなく、指定された要求オブジェクトを使用します。 このパラメーターの値により**WdfUsbTargetPipeAbortSynchronously**メモリ不足が原因で失敗しません。
 
-    -   呼び出す、 [ **WdfUsbTargetPipeFormatRequestForAbort** ](https://msdn.microsoft.com/library/windows/hardware/ff551132)メソッドは、パイプの中止の要求の要求オブジェクトを書式設定を呼び出すことによって、要求を送信[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド。
+    -   呼び出す、 [ **WdfUsbTargetPipeFormatRequestForAbort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforabort)メソッドは、パイプの中止の要求の要求オブジェクトを書式設定を呼び出すことによって、要求を送信[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)メソッド。
 
-        ドライバーは、非同期的に要求を送信する場合、ドライバーへのポインターを指定する必要があります[ *EVT_WDF_REQUEST_COMPLETION_ROUTINE* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)ドライバーを実装します。 ポインターを指定するには、呼び出し、 [ **WdfRequestSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff550030)メソッド。
+        ドライバーは、非同期的に要求を送信する場合、ドライバーへのポインターを指定する必要があります[ *EVT_WDF_REQUEST_COMPLETION_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)ドライバーを実装します。 ポインターを指定するには、呼び出し、 [ **WdfRequestSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)メソッド。
 
-        ドライバーは WDF を指定することで、要求を同期的に送信できます\_要求\_送信\_オプション\_同期で、要求オプションの 1 つとして[ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027). 同期的に、要求を送信する場合、呼び出す[ **WdfUsbTargetPipeAbortSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff551129)代わりにします。
+        ドライバーは WDF を指定することで、要求を同期的に送信できます\_要求\_送信\_オプション\_同期で、要求オプションの 1 つとして[ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend). 同期的に、要求を送信する場合、呼び出す[ **WdfUsbTargetPipeAbortSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously)代わりにします。
 
 ### <a href="" id="reset-the-usb-pipe"></a>手順 4:USB パイプをリセットします。
 
 パイプをリセットすることで、エラーからの回復を開始します。 これらのメソッドのいずれかを呼び出すことによってリセット パイプ要求を送信することができます。
 
--   呼び出す、 [ **WdfUsbTargetPipeResetSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff551156)パイプのリセット要求を同期的に送信します。
--   呼び出す、 [ **WdfUsbTargetPipeFormatRequestForReset** ](https://msdn.microsoft.com/library/windows/hardware/ff551138)メソッドは、リセット パイプ要求の要求オブジェクトを書式設定を呼び出すことによって、要求を送信[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド。 これらの呼び出しは、手順 3. で説明したように、中止パイプ要求に似ています。
+-   呼び出す、 [ **WdfUsbTargetPipeResetSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpiperesetsynchronously)パイプのリセット要求を同期的に送信します。
+-   呼び出す、 [ **WdfUsbTargetPipeFormatRequestForReset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforreset)メソッドは、リセット パイプ要求の要求オブジェクトを書式設定を呼び出すことによって、要求を送信[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)メソッド。 これらの呼び出しは、手順 3. で説明したように、中止パイプ要求に似ています。
 
 **注**  リセット パイプ操作が完了するまで新しい要求を転送いずれかを送信しません。
 
@@ -118,9 +118,9 @@ USBD など、デバイスのエラーからの転送エラーが発生\_状態\
 1.  デバイスへのすべての転送をキャンセルします。 これを行うには、現在の構成内のすべてのパイプを列挙し、保留中の各パイプのスケジュール要求をキャンセルします。
 2.  デバイスの I/O ターゲットを停止します。
 
-    呼び出す、 [ **WdfUsbTargetDeviceGetIoTarget** ](https://msdn.microsoft.com/library/windows/hardware/ff550093)フレームワーク ターゲットのデバイス オブジェクトに関連付けられた WDFIOTARGET ハンドルを取得します。 次に呼び出す[ **WdfIoTargetStop** ](https://msdn.microsoft.com/library/windows/hardware/ff548680) WDFIOTARGET ハンドルを指定するとします。 呼び出しでは、アクションを設定**WdfIoTargetCancelSentIo** (WDF\_IO\_ターゲット\_SENT\_IO\_アクション)。
+    呼び出す、 [ **WdfUsbTargetDeviceGetIoTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetiotarget)フレームワーク ターゲットのデバイス オブジェクトに関連付けられた WDFIOTARGET ハンドルを取得します。 次に呼び出す[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) WDFIOTARGET ハンドルを指定するとします。 呼び出しでは、アクションを設定**WdfIoTargetCancelSentIo** (WDF\_IO\_ターゲット\_SENT\_IO\_アクション)。
 
-3.  呼び出してリセット ポートの要求を送信、 [ **WdfUsbTargetDeviceResetPortSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff550097)メソッド。
+3.  呼び出してリセット ポートの要求を送信、 [ **WdfUsbTargetDeviceResetPortSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceresetportsynchronously)メソッド。
 
 リセット ポート操作により、デバイスで USB バスで列挙を取得します。 USB ドライバー スタックは、列挙体の後にデバイスの構成を保持します。 ドライバー スタックにより、既存のパイプ ハンドルが有効であるために、クライアント ドライバーでは、以前に取得したパイプ ハンドルを使用できます。
 
@@ -135,11 +135,11 @@ USBD など、デバイスのエラーからの転送エラーが発生\_状態\
 1.  デバイスへのすべての転送をキャンセルします。 保留中の現在の構成で各パイプのスケジュール要求をキャンセルすることを確認します (手順 3 を参照してください)。
 2.  デバイスの I/O ターゲットを停止します。
 
-    呼び出す、 [ **WdfUsbTargetDeviceGetIoTarget** ](https://msdn.microsoft.com/library/windows/hardware/ff550093)フレームワーク ターゲットのデバイス オブジェクトに関連付けられた WDFIOTARGET ハンドルを取得します。 次に呼び出す[ **WdfIoTargetStop** ](https://msdn.microsoft.com/library/windows/hardware/ff548680) WDFIOTARGET ハンドルを指定するとします。 呼び出しでは、アクションを設定**WdfIoTargetCancelSentIo** (WDF\_IO\_ターゲット\_SENT\_IO\_アクション)。
+    呼び出す、 [ **WdfUsbTargetDeviceGetIoTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetiotarget)フレームワーク ターゲットのデバイス オブジェクトに関連付けられた WDFIOTARGET ハンドルを取得します。 次に呼び出す[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) WDFIOTARGET ハンドルを指定するとします。 呼び出しでは、アクションを設定**WdfIoTargetCancelSentIo** (WDF\_IO\_ターゲット\_SENT\_IO\_アクション)。
 
 3.  これらのメソッドのいずれかを呼び出してサイクル ポート要求を送信します。
-    -   呼び出す、 [ **WdfUsbTargetDeviceCyclePortSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff550080)サイクル ポートの要求を同期的に送信します。
-    -   呼び出す、 [ **WdfUsbTargetDeviceFormatRequestForCyclePort** ](https://msdn.microsoft.com/library/windows/hardware/ff550084)サイクル ポートの要求では、要求オブジェクトを書式設定および呼び出すことによって、要求を送信するメソッド[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド。 これらの呼び出しは、手順 3. で説明したように、中止パイプ要求に似ています。
+    -   呼び出す、 [ **WdfUsbTargetDeviceCyclePortSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecycleportsynchronously)サイクル ポートの要求を同期的に送信します。
+    -   呼び出す、 [ **WdfUsbTargetDeviceFormatRequestForCyclePort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcycleport)サイクル ポートの要求では、要求オブジェクトを書式設定および呼び出すことによって、要求を送信するメソッド[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)メソッド。 これらの呼び出しは、手順 3. で説明したように、中止パイプ要求に似ています。
 
 クライアント ドライバーは、サイクル ポート要求が完了した後にのみ、デバイスに転送要求を送信できます。 USB ドライバー スタック サイクル ポート要求の処理中に、[デバイス] ノードが削除されるためです。
 

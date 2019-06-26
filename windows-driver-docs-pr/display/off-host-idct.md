@@ -10,12 +10,12 @@ keywords:
 - IDCT WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f05277f80d8d86a26702a8f089ab695acec40f87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 564d6af5d6c73f6f84b2dfc73dc1b12cd75cdd29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383998"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372790"
 ---
 # <a name="off-host-idct"></a>オフホスト IDCT
 
@@ -25,7 +25,7 @@ ms.locfileid: "63383998"
 
 オフホスト IDCT 処理するためのマクロ ブロック逆コサイン不連続変換 (IDCT) 係数のデータの転送が完了するスキャンのインデックスと値の情報のバッファーを使用して定義し、変換式を指定します。 インデックス情報は、(ただし、6 ビット数だけは、8 x 8 変換ブロックを本当に必要な)、16 ビット ワードとして送信されます。 符号付き 16 ビット ワードとして変換係数値の情報が送信されます (8 x 8 変換ブロックの通常のケースに必要な 12 ビットだけと*BPP* 8 です)。
 
-変換係数がいずれかで送信される、 [ **DXVA\_TCoefSingle** ](https://msdn.microsoft.com/library/windows/hardware/ff564060)構造体、または[ **DXVA\_TCoef4Group**](https://msdn.microsoft.com/library/windows/hardware/ff564053)構造体。 場合、 **bConfig4GroupedCoefs**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)構造が 0 で、係数は、DXVAを使用して個別に送信されます\_TCoefSingle 構造体。 場合**bConfig4GroupedCoefs**は 1 です。 係数は、DXVA を使用して 4 つのグループに送信される\_TCoef4Group 構造体。
+変換係数がいずれかで送信される、 [ **DXVA\_TCoefSingle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_tcoefsingle)構造体、または[ **DXVA\_TCoef4Group**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_tcoef4group)構造体。 場合、 **bConfig4GroupedCoefs**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造が 0 で、係数は、DXVAを使用して個別に送信されます\_TCoefSingle 構造体。 場合**bConfig4GroupedCoefs**は 1 です。 係数は、DXVA を使用して 4 つのグループに送信される\_TCoef4Group 構造体。
 
  
 

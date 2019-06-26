@@ -4,26 +4,26 @@ description: SoC ベースのプラットフォームでは、Advanced Configura
 ms.assetid: 6EFCD288-031D-46BB-ABF3-8ADB53E7B4B1
 ms.date: 07/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8392a2f25f3a62be193cfd93bb62d9c4bc9f27a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 271680d03845b271cc14b1562620d8395776cf47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328112"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364591"
 ---
 # <a name="acpi-system-description-tables"></a>ACPI システム記述テーブル
 
 
 SoC ベースのプラットフォームでは、Advanced Configuration and Power Interface (ACPI) ハードウェアの仕様の実装は必要はありませんが、ACPI ソフトウェアの仕様の多くは (または、) 必要です。 ACPI は、ジェネリック、拡張可能なテーブルを渡すメカニズム、およびオペレーティング システム プラットフォームを記述するための特定のテーブルを定義します。
 
-テーブルの構造と ID とチェックサムのフィールドを含むヘッダーがで定義されている、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。 Windows では、この記事で説明されている特定のテーブルだけでなく、このテーブルを渡すメカニズムを利用します。
+テーブルの構造と ID とチェックサムのフィールドを含むヘッダーがで定義されている、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。 Windows では、この記事で説明されている特定のテーブルだけでなく、このテーブルを渡すメカニズムを利用します。
 
 これらのテーブルの背後にある考え方は、さまざまな方法でさまざまなプラットフォームに統合できる標準的な知的財産 (IP) ブロックをサポートするために一般的なソフトウェアを有効にするのにです。 表の方針で、特定のプラットフォームのプラットフォーム変数属性は、テーブルで提供され、一般的なソフトウェア プラットフォームに統合 IP ブロックの特定のセットに自身を適応するために使用します。 このソフトウェアしたがって記述できます 1 回、徹底的にテスト、および最適化します。 時間の経過と共にします。
 
 ## <a name="root-system-description-pointer-rsdp"></a>ルート System 説明ポインター (RSDP)
 
 
-Windows は、ハードウェア プラットフォームの起動に UEFI ファームウェアに依存します。 そのため、Windows を使用して、EFI システム テーブル、RSDP を検索のセクション、5.2.5.2「を検索、RSDP で UEFI 有効になっているシステム」」の説明に従って、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。 プラットフォームのファームウェアを RSDT または XSDT、RSDP 内のいずれかのアドレスを設定します。 (テーブルの両方のアドレスを指定すると、Windows は場合は、XSDT ください。 )
+Windows は、ハードウェア プラットフォームの起動に UEFI ファームウェアに依存します。 そのため、Windows を使用して、EFI システム テーブル、RSDP を検索のセクション、5.2.5.2「を検索、RSDP で UEFI 有効になっているシステム」」の説明に従って、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。 プラットフォームのファームウェアを RSDT または XSDT、RSDP 内のいずれかのアドレスを設定します。 (テーブルの両方のアドレスを指定すると、Windows は場合は、XSDT ください。 )
 
 ## <a name="root-system-description-table-rsdt"></a>ルート System 記述テーブル (RSDT)
 
@@ -55,12 +55,12 @@ RSDT (または XSDT) プラットフォームで提供されるその他の任�
 -   新しいフィールドは、ハードウェアに削減 ACPI プラットフォームで従来の PC のスリープ/再開をサポートするために追加されます。 これらのフィールドは、Windows では無視されますが、コンプライアンスのため、テーブルに存在する必要があります。
 -   場合、ハードウェア\_減少\_ACPI フラグが設定されて、ACPI ハードウェアの仕様に関連するすべてのフィールドは、オペレーティング システムによって無視されます。
 
-その他のすべての FADT 設定では、ACPI 4.0 以前のバージョンからその意味を保持します。 詳細については、のセクション 5.2.9、"固定 ACPI 説明テーブル (FADT)"を参照してください。、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+その他のすべての FADT 設定では、ACPI 4.0 以前のバージョンからその意味を保持します。 詳細については、のセクション 5.2.9、"固定 ACPI 説明テーブル (FADT)"を参照してください。、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
 ## <a name="multiple-apic-description-table-madt"></a>複数の APIC 記述テーブル (MADT)
 
 
-ACPI、複数の APIC 説明テーブル (MADT)、および PC 固有の PC の実装では割り込みコント ローラー記述子を使用して、システムの割り込みのモデルを記述します。 SoC の ARM ベースのプラットフォームでは、ACPI 5.0 は、ARM Holdings の汎用の割り込みコント ローラー (GIC) と GIC ディストリビューターの記述子を追加します。 Windows には、受信トレイ サポート GIC と GIC ディストリビューターが含まれます。 これらの記述子の詳細についてを参照してください 5.2.12.14 のセクションでは、"GIC Structure"および"GIC ディストリビューター Structure"である 5.2.12.15 の[ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+ACPI、複数の APIC 説明テーブル (MADT)、および PC 固有の PC の実装では割り込みコント ローラー記述子を使用して、システムの割り込みのモデルを記述します。 SoC の ARM ベースのプラットフォームでは、ACPI 5.0 は、ARM Holdings の汎用の割り込みコント ローラー (GIC) と GIC ディストリビューターの記述子を追加します。 Windows には、受信トレイ サポート GIC と GIC ディストリビューターが含まれます。 これらの記述子の詳細についてを参照してください 5.2.12.14 のセクションでは、"GIC Structure"および"GIC ディストリビューター Structure"である 5.2.12.15 の[ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
 割り込みコント ローラー記述子構造体は、直後 MADT の Flags フィールドに一覧表示されます。 ARM プラットフォームでは、各 GIC ディストリビューターに 1 つ後に、各 GIC の記述子が 1 つが表示されます。 ブートのプロセッサに対応する GIC は割り込みコント ローラー記述子のリストの最初のエントリである必要があります。
 
@@ -80,7 +80,7 @@ CSRT では、各リソース グループが特定の種類のハードウェ�
 
 HAL 拡張機能のメンテナンスをサポートし、これらの拡張機能で使用されるシステム リソースを管理するには、CSRT で説明されている各リソース グループをプラットフォームの ACPI 名前空間内のデバイスとして表されますもする必要があります。 詳細については、次の「差別化されたシステムの説明テーブル (します。)」セクションを参照してください。 リソース グループのヘッダーで使用されるデバイスの識別子は、デバイスの名前空間ノードで使用される識別子と一致する必要があります。 詳細については、次を参照してください。、 **ACPI のデバイスの識別**セクション、[デバイス管理の名前空間オブジェクト](device-management-namespace-objects.md)トピック。 これらのリソース グループの名前空間のデバイスの存在は、Windows の更新サービスによって提供されるを HAL 拡張機能を使用できます。
 
-詳細については、次を参照してください。、[コア システム リソース テーブル (CSRT) 仕様](http://acpica.org/related-documents)します。
+詳細については、次を参照してください。、[コア システム リソース テーブル (CSRT) 仕様](https://acpica.org/related-documents)します。
 
 ## <a name="debug-port-table-2-dbg2"></a>デバッグ ポート テーブル 2 (DBG2)
 
@@ -98,7 +98,7 @@ ACPI の周辺機器とプラットフォームでのシステム ハードウ�
 
 ACPI は、システム デバイス、機能、および OS に依存しない方法で、プラットフォーム固有のコントロールを記述するため、インタープリター言語 (ACPI ソース言語、または ASL) と実行環境 (ACPI 仮想マシン) を定義します。 ASL は ACPI 名前空間で名前付きオブジェクトを定義するために使用し、 [Microsoft ASL コンパイラ](microsoft-asl-compiler.md)します。 オペレーティング システムに送信する ACPI 機械語 (AML) バイトのコードを生成するために使用します。 受信トレイ[ACPI の Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)Acpi.sys、ACPI の仮想マシンを実装し、AML バイトのコードを解釈します。 AML オブジェクトの説明情報を返す単に可能性があります。 または、AML オブジェクトの計算を実行または I/O 操作はメソッドがあります。 A*メソッドの制御*はプラットフォームのハードウェア上の I/O 操作を実行するオペレーティング システムのデバイス ドライバーを使用する実行可能ファイルの AML オブジェクトです。 ASL OpRegions を使用して、オペレーティング システムでアクセス可能なさまざまなアドレス空間を抽象化します。 コントロールのメソッドは、一連の OpRegions で宣言された名前付きフィールドと転送として I/O 操作を実行します。
 
-OpRegions に関する詳細については、5.5.2.4、「アクセスする操作領域」のセクションを参照してください、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。 ASL と制御の方法の詳細については、ACPI 5.0 仕様の 5.5 では、"ACPI Namespace"」セクションを参照してください。
+OpRegions に関する詳細については、5.5.2.4、「アクセスする操作領域」のセクションを参照してください、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。 ASL と制御の方法の詳細については、ACPI 5.0 仕様の 5.5 では、"ACPI Namespace"」セクションを参照してください。
 
 Windows では、開発および ASL コードをデバッグするためのサポートを提供します。 ASL コンパイラには、名前空間をデバッグ対象から読み込む実行者を有効にする逆アセンブラーが含まれています。 迅速なプロトタイプ作成とテストの対象に、名前空間を再適用する ASL コンパイラを使用しできます-システム ファームウェアをフラッシュする必要はありません。 さらに、Windows カーネル デバッガー Acpi.sys ドライバーのチェックを行う (CHK) バージョンと共にトレースとサポート AML 実行を分析します。 詳細については、次を参照してください。 [AMLI デバッガー](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction-to-the-amli-debugger)します。
 

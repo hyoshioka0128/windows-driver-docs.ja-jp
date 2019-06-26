@@ -10,12 +10,12 @@ keywords:
 - 好みのデバイス Id の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fb5b8b04d2bf243e2d3b3b181e5d45b54d05b7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7a187d7022dcaf5905f1593d9e024a107e7ae16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328750"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362552"
 ---
 # <a name="preferred-voice-communications-device-id"></a>推奨される音声通信デバイス ID
 
@@ -27,7 +27,7 @@ Windows 2000 以降、Windows のマルチ メディア機能と Windows Me で*
 
 推奨される音声通信デバイスを知ることは、アプリケーション プログラムをたとえば、2 つまたは複数のデバイスの一覧から開くには、デバイスを選択するために役立ちます。 このようなアプリケーションは、通常、リスト内のデバイス間では、好みのデバイスを示す必要があります。
 
-現在の推奨される音声通信デバイスのデバイス ID を取得するアプリケーションは、wave を呼び出す*Xxx*メッセージ パラメーターを定数に設定して関数をメッセージ[ **DRVM\_マッパー\_CONSOLEVOICECOM\_取得**](https://msdn.microsoft.com/library/windows/hardware/ff536361)します。
+現在の推奨される音声通信デバイスのデバイス ID を取得するアプリケーションは、wave を呼び出す*Xxx*メッセージ パラメーターを定数に設定して関数をメッセージ[ **DRVM\_マッパー\_CONSOLEVOICECOM\_取得**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536361(v=vs.85))します。
 
 呼び出すときに、 **waveInMessage**または**waveOutMessage** 、DRVM で関数を\_マッパー\_CONSOLEVOICECOM\_メッセージ、デバイスの値を指定WAVE として処理\_マッパー HWAVEIN または HWAVEOUT 適切なハンドルの種類には、この値をキャストします。 Wave *Xxx*メッセージ関数は、有効なデバイス ハンドルの代わりにこの値を受け付けるようにするデバイスを開くことがなくアプリケーションの既定のデバイス ID のクエリを実行できます。 詳細については、wave *Xxx*メッセージ関数を参照してください[System-Intercepted デバイス メッセージ](system-intercepted-device-messages.md)します。
 

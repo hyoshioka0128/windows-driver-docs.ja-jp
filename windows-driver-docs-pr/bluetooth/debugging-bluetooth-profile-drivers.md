@@ -9,21 +9,21 @@ keywords:
 - ドライバー WDK の Bluetooth のプロファイルのデバッグ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecaf8b97b1ce29faf84cecef41e4e5d7f339d44e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e28755c13871a4982affb5ebb396c893d7e41323
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328220"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364640"
 ---
 # <a name="debugging-bluetooth-profile-drivers"></a>Bluetooth プロファイル ドライバーのデバッグ
 
 
-使用することができます、Bluetooth プロファイル ドライバーを開発するときに[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)のデバッグが支援します。
+使用することができます、Bluetooth プロファイル ドライバーを開発するときに[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)のデバッグが支援します。
 
-必要な検証チェックを有効にする[Bthusb.sys の Driver Verifier を有効にする](https://msdn.microsoft.com/library/windows/hardware/ff551729)します。 これを行わない場合は、検証チェックが無効になります。
+必要な検証チェックを有効にする[Bthusb.sys の Driver Verifier を有効にする](https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-drivers-to-be-verified)します。 これを行わない場合は、検証チェックが無効になります。
 
-検証を利用するチェック完全には、確認、Bluetooth 要求ブロック (BRB) 割り当てルーチンを使用すると、たとえば、 [ **BthAllocateBrb** ](https://msdn.microsoft.com/library/windows/hardware/ff536634)と[ **BthInitializeBrb**](https://msdn.microsoft.com/library/windows/hardware/ff536639)、Bluetooth ドライバー スタックが用意されている[ビルドおよび送信 BRBs](building-and-sending-a-brb.md)します。 これらのルーチンには、プロファイルのドライバーのデバッグに役立つ追加の機能が含まれます。
+検証を利用するチェック完全には、確認、Bluetooth 要求ブロック (BRB) 割り当てルーチンを使用すると、たとえば、 [ **BthAllocateBrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbth_allocate_brb)と[ **BthInitializeBrb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/nc-bthddi-pfnbth_initialize_brb)、Bluetooth ドライバー スタックが用意されている[ビルドおよび送信 BRBs](building-and-sending-a-brb.md)します。 これらのルーチンには、プロファイルのドライバーのデバッグに役立つ追加の機能が含まれます。
 
 検証チェックは、次のようなエラーをキャッチできます。
 

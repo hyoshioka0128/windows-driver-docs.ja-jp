@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a244cd2eb084e78e780ed26556f55f00188e969
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9560941a1c61d4f33d9910d9ae1bfe711ed50b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367321"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367309"
 ---
 # <a name="bug-check-0x8-irqlnotdispatchlevel"></a>バグ チェック 0x8:IRQL\_いない\_ディスパッチ\_レベル
 
@@ -28,7 +28,7 @@ IRQL\_いない\_ディスパッチ\_レベルのバグ チェックが 0x000000
 このバグ チェックが非常に少ない回数が表示されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
  

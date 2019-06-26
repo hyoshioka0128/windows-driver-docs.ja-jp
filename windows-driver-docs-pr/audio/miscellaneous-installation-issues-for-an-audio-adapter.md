@@ -8,12 +8,12 @@ keywords:
 - ポート クラス オーディオ アダプター、WDK をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc213ade503bb193ad906a3414e5104d33a0c7f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 484c26d67c15a042090d999423c15adc8f4e3f2c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332303"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355347"
 ---
 # <a name="miscellaneous-installation-issues-for-an-audio-adapter"></a>オーディオ アダプターためのインストールに関するその他の問題
 
@@ -33,11 +33,11 @@ ms.locfileid: "63332303"
 
 -   オーディオ ドライバーはオーディオ アダプター カードを同じシステムに接続の複数の同じインスタンスに簡単に設計されています。 詳細については、次を参照してください。[システム全体の一意のデバイス Id](system-wide-unique-device-ids.md)します。
 
--   すべてのデバイス クラスに共通する INF ファイルのキーワードの一覧は、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。 ただし、この一覧は、メディアに固有のいくつかのキーワードは含まれません。 詳細については、次を参照してください。 [INF ファイルのメディアに固有のキーワード](media-specific-inf-file-keywords.md)します。
+-   すべてのデバイス クラスに共通する INF ファイルのキーワードの一覧は、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。 ただし、この一覧は、メディアに固有のいくつかのキーワードは含まれません。 詳細については、次を参照してください。 [INF ファイルのメディアに固有のキーワード](media-specific-inf-file-keywords.md)します。
 
 -   方法、アダプタのドライバまたはミニポート ドライバーできますセットアップ情報をレジストリから取得方法の詳細については、次を参照してください。[デバイスのセットアップ情報を取得する](retrieving-device-setup-information.md)します。
 
--   物理ボリューム コントロール ノブがないオーディオのアダプター用の Windows Vista のサポートについては、次を参照してください。、 [Windows Vista ソフトウェア ボリューム コントロール サポート](https://msdn.microsoft.com/library/windows/hardware/ff539263)トピック。
+-   物理ボリューム コントロール ノブがないオーディオのアダプター用の Windows Vista のサポートについては、次を参照してください。、 [Windows Vista ソフトウェア ボリューム コントロール サポート](https://docs.microsoft.com/windows-hardware/drivers/audio/software-volume-control-support)トピック。
 
  
 

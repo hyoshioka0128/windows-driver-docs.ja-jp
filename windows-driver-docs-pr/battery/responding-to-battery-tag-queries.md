@@ -6,12 +6,12 @@ keywords:
 - バッテリ タグ WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 676e5b55603f5749d5ee3422a9e44f3dceca276a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a6d55947ad46b05c3780241a7a998ade62017b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364720"
 ---
 # <a name="responding-to-battery-tag-queries"></a>バッテリ タグ クエリへの応答
 
@@ -19,7 +19,7 @@ ms.locfileid: "63335050"
 ## <span id="ddk_responding_to_battery_tag_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_TAG_QUERIES_DG"></span>
 
 
-バッテリのタグは、初期化し、miniclass ドライバーによってインクリメント ULONG カウンターです。 バッテリのクラス ドライバー呼び出し[ *BatteryMiniQueryTag* ](https://msdn.microsoft.com/library/windows/hardware/ff536275)タグの現在の値を要求します。
+バッテリのタグは、初期化し、miniclass ドライバーによってインクリメント ULONG カウンターです。 バッテリのクラス ドライバー呼び出し[ *BatteryMiniQueryTag* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)タグの現在の値を要求します。
 
 この miniclass ドライバー ルーチンに次のように宣言されます。
 
@@ -32,7 +32,7 @@ NTSTATUS
     );
 ```
 
-*コンテキスト*パラメーター miniclass ドライバーによって割り当てられ、バッテリのクラス ドライバーに渡されるコンテキスト領域へのポインターは、\_ミニポート\_でデバイスの初期化 (情報構造体[**BatteryClassInitializeDevice**](https://msdn.microsoft.com/library/windows/hardware/ff536266))。 *BatteryTag*値が作成され、miniclass ドライバーによって維持されます。
+*コンテキスト*パラメーター miniclass ドライバーによって割り当てられ、バッテリのクラス ドライバーに渡されるコンテキスト領域へのポインターは、\_ミニポート\_でデバイスの初期化 (情報構造体[**BatteryClassInitializeDevice**](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice))。 *BatteryTag*値が作成され、miniclass ドライバーによって維持されます。
 
 バッテリが挿入されるたびに、miniclass ドライバーかどうかに関係なく、タグの値を増やす必要がありますこれは、新しいバッテリまたは同じのバッテリが以前存在でします。
 

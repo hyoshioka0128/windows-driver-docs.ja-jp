@@ -12,24 +12,24 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97833e2dae3f018a93f95e17e1d6684273034f2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc53452329a57104721074f9a41697c2e9bb886c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393020"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365031"
 ---
 # <a name="fsctlfindfilesbysid-control-code"></a>FSCTL\_検索\_ファイル\_BY\_SID 制御コード
 
 
 FSCTL\_検索\_ファイル\_BY\_SID 制御コード検索ディレクトリにファイルの作成者と所有者 matche SID を指定します。
 
-ミニフィルター ドライバーの呼び出しは、この操作を実行する[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)の次のパラメーターとファイル システム リダイレクター、および従来のファイル システム フィルター ドライバー呼び出し[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+ミニフィルター ドライバーの呼び出しは、この操作を実行する[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)の次のパラメーターとファイル システム リダイレクター、および従来のファイル システム フィルター ドライバー呼び出し[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 検索するディレクトリのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 検索するディレクトリのファイル オブジェクト ポインター。 このパラメーターが必要とすることはできません**NULL**します。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 検索するディレクトリのファイル ハンドル。 このパラメーターが必要とすることはできません**NULL**します。
@@ -53,7 +53,7 @@ typedef struct {
 検索を再開するかどうかを示します。 このメンバーは、ルートから検索を開始できるように、最初の呼び出しで 1 に設定する必要があります。 後続の呼び出しの検索が停止した位置に再開されますので、このメンバーを 0 に設定する必要があります。
 
 <a href="" id="sid-"></a>**sid**   
-型の構造体[ **SID** ](https://msdn.microsoft.com/library/windows/hardware/ff556740)作成者と所有者を指定します。
+型の構造体[ **SID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_sid)作成者と所有者を指定します。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 (バイト単位)、バッファーの長さ*InputBuffer*します。
@@ -90,14 +90,14 @@ typedef struct _FIND_BY_SID_OUTPUT {
 <a name="remarks"></a>注釈
 -------
 
-ときに[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)プロセス、 **FSCTL\_検索\_ファイル\_BY\_SID**制御コードは、これらのルーチンは、すべてのファイルと、ボリューム上のディレクトリを確認します。 この操作は、検索するディレクトリが非常に小さい場合でもボリュームでは、多くのファイルがある場合は低速可能性があります。
+ときに[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)プロセス、 **FSCTL\_検索\_ファイル\_BY\_SID**制御コードは、これらのルーチンは、すべてのファイルと、ボリューム上のディレクトリを確認します。 この操作は、検索するディレクトリが非常に小さい場合でもボリュームでは、多くのファイルがある場合は低速可能性があります。
 
 ## <a name="see-also"></a>関連項目
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**SID**](https://msdn.microsoft.com/library/windows/hardware/ff556740)
+[**SID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_sid)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

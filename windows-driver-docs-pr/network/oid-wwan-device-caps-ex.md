@@ -7,19 +7,19 @@ keywords:
 ms.date: 04/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d6e8f7efe2c671f559714562899953b9fc5d3d8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c80b2e2426d94638857e3465d09667fe3c3f7ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386743"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362854"
 ---
 # <a name="oidwwandevicecapsex"></a>OID\_WWAN\_デバイス\_CAP\_例
 
 
 OID\_WWAN\_デバイス\_CAP\_EX がのような[OID\_WWAN\_デバイス\_CAP](oid-wwan-device-caps.md)実行プログラムあたり OID_WWAN_ とは異なり、OID が、これは、デバイスごとの OID DEVICE_CAPS します。 この OID を LTE 接続 APN 構成など、省略可能な機能の拡張機能を含む、ハードウェアのデバイス/実行プログラムの機能を示すためには機能します。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_後で送信する前に、元の要求に必要な[ **NDIS\_状態\_WWAN\_デバイス\_CAP\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782396)状態通知を含む、 [ **NDIS\_WWAN\_デバイス\_CAP\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782401)を格納する構造体、 [ **WWAN\_デバイス\_CAP\_EX**](https://msdn.microsoft.com/library/windows/hardware/mt799889)構造体には、デバイスの機能に関する情報を提供します。
+ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_後で送信する前に、元の要求に必要な[ **NDIS\_状態\_WWAN\_デバイス\_CAP\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps-ex)状態通知を含む、 [ **NDIS\_WWAN\_デバイス\_CAP\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps_ex)を格納する構造体、 [ **WWAN\_デバイス\_CAP\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps_ex)構造体には、デバイスの機能に関する情報を提供します。
 
 次の図は、クエリ要求を示しています。
 
@@ -77,11 +77,11 @@ Windows 10、バージョンが 1903 年以降 OID_WWAN_DEVICE_CAPS_EX は、リ
 
 [OID\_WWAN\_デバイス\_キャップ](oid-wwan-device-caps.md)
 
-[**NDIS\_状態\_WWAN\_デバイス\_CAP\_例**](https://msdn.microsoft.com/library/windows/hardware/mt782396)
+[**NDIS\_状態\_WWAN\_デバイス\_CAP\_例**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps-ex)
 
-[**NDIS\_WWAN\_デバイス\_CAP\_例**](https://msdn.microsoft.com/library/windows/hardware/mt782401)
+[**NDIS\_WWAN\_デバイス\_CAP\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps_ex)
 
-[**WWAN\_デバイス\_CAP\_例**](https://msdn.microsoft.com/library/windows/hardware/mt799889)
+[**WWAN\_デバイス\_CAP\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps_ex)
 
 
 

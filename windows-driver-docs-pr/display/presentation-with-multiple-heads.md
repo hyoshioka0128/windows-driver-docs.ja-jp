@@ -7,12 +7,12 @@ keywords:
 - WDK DirectX 9.0 のプレゼンテーション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e37ca5e1535322dd7fbf81e500c4e1ced7ffc7b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1de73f1b6d7360ff3f48dc7a1dde9af6b2a6fdfc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363739"
 ---
 # <a name="presentation-with-multiple-heads"></a>複数ヘッドによるプレゼンテーション
 
@@ -22,7 +22,7 @@ ms.locfileid: "63352218"
 
 アプリケーションが呼び出すことができます、**存在**メソッドすべてのヘッドのバック バッファーの内容を一度に表示するか、個々 の head バック バッファーを提示します。 詳細については**存在**、DirectX SDK の最新のドキュメントを参照してください。
 
-ランタイムは、ドライバーの独立した連続した呼び出しをさらに、 [ *DdFlip* ](https://msdn.microsoft.com/library/windows/hardware/ff549306)または[ *DdBlt* ](https://msdn.microsoft.com/library/windows/hardware/ff549205)関数。 各ヘッドの表示モードとリフレッシュ レートが異なる可能性があります、ため、これらの呼び出しは DDI レベルで独立して常に。
+ランタイムは、ドライバーの独立した連続した呼び出しをさらに、 [ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)または[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)関数。 各ヘッドの表示モードとリフレッシュ レートが異なる可能性があります、ため、これらの呼び出しは DDI レベルで独立して常に。
 
  
 

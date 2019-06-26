@@ -4,12 +4,12 @@ description: PnP ドライバー パッケージ用のカタログ ファイル�
 ms.assetid: 2af431f1-a35d-4312-86f6-a928ef4148df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 958bd97952c05b5cff884f34c476603dde0b563e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa946915d6035f4f3384909b956008c812c36654
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344281"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365481"
 ---
 # <a name="creating-a-catalog-file-for-a-pnp-driver-package"></a>PnP ドライバー パッケージ用のカタログ ファイルの作成
 
@@ -18,7 +18,7 @@ ms.locfileid: "63344281"
 
 1. 追加の必要な INF **CatalogFile**=<em>FileName</em>**します。Cat**エントリまたは INF **CatalogFile** 。<em>PlatformExtension</em>=<em>一意のファイル名</em>**します。Cat**エントリを[ **INF バージョン セクション**](inf-version-section.md)の[ドライバー パッケージの](driver-packages.md)INF ファイル。 プラットフォームの拡張機能を使用する方法については、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
 
-2. 使用して、 [ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)ツールをターゲット プラットフォームのドライバー パッケージを署名できることを確認し、符号なしの生成を[カタログ ファイル](catalog-files.md)(*.cat*ファイル) のターゲット プラットフォームに適用されています。
+2. 使用して、 [ **Inf2Cat** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)ツールをターゲット プラットフォームのドライバー パッケージを署名できることを確認し、符号なしの生成を[カタログ ファイル](catalog-files.md)( *.cat*ファイル) のターゲット プラットフォームに適用されています。
 
 符号なしのカタログ ファイルを作成するのにには、次の Inf2Cat コマンドを使用します。
 
@@ -28,9 +28,9 @@ Inf2Cat /driver:DriverPath /os:WindowsVersionList
 
 各項目の意味は次のとおりです。
 
-- **/Driver:**<em>DriverPath</em>パラメーターにより、ディレクトリの名前を[ドライバー パッケージ](driver-packages.md)が配置されています。
+- **/Driver:** <em>DriverPath</em>パラメーターにより、ディレクトリの名前を[ドライバー パッケージ](driver-packages.md)が配置されています。
 
-- **/Os:**<em>WindowsVersionList</em>パラメーターがドライバー パッケージが Windows の一覧で指定されている Windows バージョンの署名の要件に準拠していることを確認する Inf2Cat を構成しますバージョン識別子。
+- **/Os:** <em>WindowsVersionList</em>パラメーターがドライバー パッケージが Windows の一覧で指定されている Windows バージョンの署名の要件に準拠していることを確認する Inf2Cat を構成しますバージョン識別子。
 
 ### <a name="examples"></a>例
 

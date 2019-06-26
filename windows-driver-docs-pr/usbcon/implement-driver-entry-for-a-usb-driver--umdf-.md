@@ -3,19 +3,19 @@ Description: UMDF のクライアント ドライバーを作成するのにに�
 title: 初めての USB クライアント ドライバーの記述方法 (UMDF)
 ms.date: 06/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b6dc3fa4802deb3a028aef7545cae6ee5e7c9cad
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: b585d2341a2d73cc0ed8610949982a75f3f3d77d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380586"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-umdf"></a>初めての USB クライアント ドライバーの記述方法 (UMDF)
 
 
 このトピックでは使用し、 **USB ユーザー モード ドライバー**ユーザー モード ドライバー フレームワーク (UMDF) を記述する、Microsoft Visual Studio 2019 に付属するテンプレートのベースのクライアント ドライバー。 を構築してクライアント ドライバーをインストールしたら、クライアント ドライバーを表示します**デバイス マネージャー**し、デバッガーでドライバーの出力を表示します。
 
-UMDF (このトピックの「フレームワークと呼ばれます) は、コンポーネント オブジェクト モデル (COM) に基づきます。 フレームワークのすべてのオブジェクトを実装する必要があります[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)とそのメソッドでは、 [ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)、 [ **AddRef**](https://msdn.microsoft.com/library/windows/desktop/ms691379)、および[**リリース**](https://msdn.microsoft.com/library/windows/desktop/ms682317)、既定では。 **AddRef**と**リリース**クライアント ドライバーは、参照カウントを維持する必要はありませんので、メソッドがオブジェクトの有効期間を管理します。 **QueryInterface**メソッドは、Windows Driver Frameworks (WDF) オブジェクト モデルの他のフレームワーク オブジェクト インターフェイス ポインターを取得するクライアント ドライバーを使用できます。 Framework オブジェクトでは、ドライバーの複雑なタスクを実行し、Windows との対話します。 Framework の特定のオブジェクトは、フレームワークと対話するためのクライアント ドライバーを有効にするインターフェイスを公開します。
+UMDF (このトピックの「フレームワークと呼ばれます) は、コンポーネント オブジェクト モデル (COM) に基づきます。 フレームワークのすべてのオブジェクトを実装する必要があります[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)とそのメソッドでは、 [ **QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))、 [ **AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)、および[**リリース**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release)、既定では。 **AddRef**と**リリース**クライアント ドライバーは、参照カウントを維持する必要はありませんので、メソッドがオブジェクトの有効期間を管理します。 **QueryInterface**メソッドは、Windows Driver Frameworks (WDF) オブジェクト モデルの他のフレームワーク オブジェクト インターフェイス ポインターを取得するクライアント ドライバーを使用できます。 Framework オブジェクトでは、ドライバーの複雑なタスクを実行し、Windows との対話します。 Framework の特定のオブジェクトは、フレームワークと対話するためのクライアント ドライバーを有効にするインターフェイスを公開します。
 
 UMDF ベースのクライアント ドライバーは、インプロセス COM サーバー (DLL) として実装し、C++ は USB デバイスのクライアント ドライバーを記述するための優先言語。 通常、クライアント ドライバーは、フレームワークによって公開されているいくつかのインターフェイスを実装します。 このトピックでは、クライアント ドライバーで定義されているコールバック クラスとして framework インターフェイスを実装するクラスを参照します。 これらのクラスをインスタンス化した後、結果のコールバック オブジェクトは特定のフレームワーク オブジェクトと提携しました。 このパートナーシップには、クライアント ドライバーのデバイスや、フレームワークによって報告されるシステムに関連するイベントに応答する機会が与えられます。 Windows では、特定のイベントに関する、フレームワークに通知、たびに、フレームワークがある場合、クライアント ドライバーのコールバックを呼び出します。 それ以外の場合、フレームワークは、イベントの既定の処理を続行します。 テンプレート コードでは、ドライバー、デバイス、およびキュー コールバック クラスを定義します。
 
@@ -40,7 +40,7 @@ UMDF ベースのクライアント ドライバーは、インプロセス COM 
     キットには、ヘッダー、ライブラリ、ツール、ドキュメント、およびデバッグ ツールを開発するために必要なビルド、および USB クライアント ドライバーをデバッグします。 WDK からの最新版を入手できます[、WDK を取得する方法](https://go.microsoft.com/fwlink/p/?linkid=617585)します。
 
 -   ホスト コンピューターでは、Windows 用デバッグ ツールの最新バージョンがあります。 WDK から最新バージョンを取得することもできますを[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=617701)します。
--   2 台のコンピューターを使用している場合は、ユーザー モード デバッグのホストとターゲットのコンピューターを構成する必要があります。 詳細については、次を参照してください。[ユーザー モード デバッグのセットアップでは、Visual Studio](https://msdn.microsoft.com/library/windows/hardware/hh439381)します。
+-   2 台のコンピューターを使用している場合は、ユーザー モード デバッグのホストとターゲットのコンピューターを構成する必要があります。 詳細については、次を参照してください。[ユーザー モード デバッグのセットアップでは、Visual Studio](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-user-mode-debugging-in-visual-studio)します。
 
 **ハードウェア要件**
 
@@ -50,10 +50,10 @@ USB ドライバーの開発に慣れていない場合は、OSR USB FX2 ラー�
 
 **推奨資料**
 
--   [すべてのドライバー開発者向けの概念](https://msdn.microsoft.com/library/windows/hardware/ff554731)
--   [デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)
--   [Windows ドライバーの概要](https://msdn.microsoft.com/library/windows/hardware/ff554690)
--   [ユーザー モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff560027)
+-   [すべてのドライバー開発者向けの概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)
+-   [デバイス ノードとデバイス スタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
+-   [Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/index)
+-   [ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-debugging)
 -   *Windows Driver Foundation でのドライバーの開発*少額 Orwick と Guy Smith によって書き込まれた、します。 詳細については、次を参照してください。 [WDF のドライバーが開発](https://go.microsoft.com/fwlink/p/?linkid=617702)します。
 
 <a name="instructions"></a>手順
@@ -61,7 +61,7 @@ USB ドライバーの開発に慣れていない場合は、OSR USB FX2 ラー�
 
 ### <a href="" id="generate-the-umdf-driver-code-by-using-the-visual-studio-2019-usb-driver-template"></a>手順 1:Visual Studio 2019 USB ドライバーのテンプレートを使用して UMDF ドライバーのコードを生成します。
 
-<a href="" id="generate"></a> UMDF ドライバー コードの生成方法については、次を参照してください。 [UMDF ドライバーの作成、テンプレートに基づく](https://msdn.microsoft.com/library/windows/hardware/hh439659)します。
+<a href="" id="generate"></a> UMDF ドライバー コードの生成方法については、次を参照してください。 [UMDF ドライバーの作成、テンプレートに基づく](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-umdf-driver-based-on-a-template)します。
 
 **USB に固有のコードを Visual Studio 2019 で、次のオプションを選択します。**
 
@@ -80,9 +80,9 @@ USB ドライバーの開発に慣れていない場合は、OSR USB FX2 ラー�
 
 | ファイル                      | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Driver.h;Driver.c         | 宣言および実装するコールバック クラスを定義、 [ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)インターフェイス。 クラスは、フレームワークのドライバー オブジェクトによって呼び出されるメソッドを定義します。 このクラスの主な目的では、クライアント ドライバー用にデバイス オブジェクトを作成します。                                                                                                                                                                     |
-| Device.h;Device.c         | 宣言および実装するコールバック クラスを定義、 [ **IPnpCallbackHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556764)インターフェイス。 クラスは、フレームワークのデバイス オブジェクトによって呼び出されるメソッドを定義します。 このクラスの主な目的は、プラグ アンド プレイ (PnP) の状態の変更の結果として発生するイベントを処理するためにです。 クラスは、割り当ても、システムが読み込まれている限り、クライアント ドライバーで必要なリソースを初期化します。 |
-| IoQueue.h;IoQueue.c       | 宣言および実装するコールバック クラスを定義、 [ **IQueueCallbackDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff556852)インターフェイス。 クラスは、フレームワークのキュー オブジェクトによって呼び出されるメソッドを定義します。 このクラスでは、フレームワークでキューに置かれた I/O 要求を取得します。                                                                                                                               |
+| Driver.h;Driver.c         | 宣言および実装するコールバック クラスを定義、 [ **IDriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)インターフェイス。 クラスは、フレームワークのドライバー オブジェクトによって呼び出されるメソッドを定義します。 このクラスの主な目的では、クライアント ドライバー用にデバイス オブジェクトを作成します。                                                                                                                                                                     |
+| Device.h;Device.c         | 宣言および実装するコールバック クラスを定義、 [ **IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)インターフェイス。 クラスは、フレームワークのデバイス オブジェクトによって呼び出されるメソッドを定義します。 このクラスの主な目的は、プラグ アンド プレイ (PnP) の状態の変更の結果として発生するイベントを処理するためにです。 クラスは、割り当ても、システムが読み込まれている限り、クライアント ドライバーで必要なリソースを初期化します。 |
+| IoQueue.h;IoQueue.c       | 宣言および実装するコールバック クラスを定義、 [ **IQueueCallbackDeviceIoControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol)インターフェイス。 クラスは、フレームワークのキュー オブジェクトによって呼び出されるメソッドを定義します。 このクラスでは、フレームワークでキューに置かれた I/O 要求を取得します。                                                                                                                               |
 | internal.h                 | USB デバイスと通信するクライアント ドライバーとユーザー アプリケーションによって共有される一般的な宣言を提供します。 トレース関数とマクロも宣言されています。                                                                                                                                                                                                                                                                          |
 | Dllsup.cpp                 | ドライバー モジュールのエントリ ポイントの実装が含まれています。                                                                                                                                                                                                                                                                                                                                                                              |
 | *&lt;プロジェクト名&gt;* .inf | INF ファイル、ターゲット コンピューターにクライアント ドライバーをインストールするために必要です。                                                                                                                                                                                                                                                                                                                                                               |
@@ -139,7 +139,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
     `AddService=WinUsb,0x000001f8,WinUsb_ServiceInstall  ; this service is installed because its a filter.`
 
--   WinUSB — WinUSB がカーネル モードの USB ドライバー スタックへのゲートウェイをクライアント ドライバーのために、インストール パッケージが Winusb.sys の共同インストーラーを含める必要があります。 別のコンポーネントが読み込まれるには、ユーザー モード DLL、クライアント ドライバーのホスト プロセス (Wudfhost.exe) で、WinUsb.dll をという名前です。 Winusb.dll 公開[WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)クライアント ドライバーと WinUSB 間の通信プロセスを簡略化します。
+-   WinUSB — WinUSB がカーネル モードの USB ドライバー スタックへのゲートウェイをクライアント ドライバーのために、インストール パッケージが Winusb.sys の共同インストーラーを含める必要があります。 別のコンポーネントが読み込まれるには、ユーザー モード DLL、クライアント ドライバーのホスト プロセス (Wudfhost.exe) で、WinUsb.dll をという名前です。 Winusb.dll 公開[WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)クライアント ドライバーと WinUSB 間の通信プロセスを簡略化します。
 
 ### <a href="" id="build-the-usb-client-driver-code"></a>手順 3:USB クライアント ドライバー コードをビルドします。
 
@@ -157,7 +157,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
 ### <a href="" id="configure-a-computer-for-testing-and-debugging"></a>手順 4:テストとデバッグ用のコンピューターを構成します。
 
-でテストおよびドライバーをデバッグするには、ホスト コンピューターとターゲット コンピューターのドライバーにデバッガーを実行します。 ここまでは、ドライバーをビルドするのにホスト コンピューターで Visual Studio を使用しています。 次に、ターゲット コンピューターを構成する必要があります。 対象のコンピュータを構成する手順については、[ドライバーの展開とテスト用にプロビジョニング](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+でテストおよびドライバーをデバッグするには、ホスト コンピューターとターゲット コンピューターのドライバーにデバッガーを実行します。 ここまでは、ドライバーをビルドするのにホスト コンピューターで Visual Studio を使用しています。 次に、ターゲット コンピューターを構成する必要があります。 対象のコンピュータを構成する手順については、[ドライバーの展開とテスト用にプロビジョニング](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
 
 ### <a href="" id="enable-tracing-for-kernel-debugging"></a>手順 5:カーネルのデバッグ トレースを有効にします。
 
@@ -171,7 +171,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
    **tracepdb -f \[PDBFiles\] -p \[TMFDirectory\]**
 
-   **-F**オプションは、場所と PDB シンボル ファイルの名前を指定します。 **-P** Tracepdb によって作成される TMF ファイルの場所を指定します。 詳細については、次を参照してください。 [ **Tracepdb コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff553043)します。
+   **-F**オプションは、場所と PDB シンボル ファイルの名前を指定します。 **-P** Tracepdb によって作成される TMF ファイルの場所を指定します。 詳細については、次を参照してください。 [ **Tracepdb コマンド**](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracepdb-commands)します。
 
    指定した位置には、3 つのファイル (.c ファイルで、プロジェクトごとに 1 つ) を確認します。 GUID ファイル名が表示されます。
 
@@ -194,7 +194,7 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 
 **WPP トレースの対象のコンピューターを構成するには**
 
-1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\10\\ツール\\ *&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://msdn.microsoft.com/library/windows/hardware/ff553012)します。
+1. ターゲット コンピューターにトレース ログ ツールがあることを確認します。 ツールがである、 <em>&lt;インストール\_フォルダー&gt;</em>Windows キット\\10\\ツール\\ *&lt;arch&gt;*  WDK のフォルダー。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog-command-syntax)します。
 2. 開く、**コマンド ウィンドウ**管理者として実行します。
 3. 次のコマンドを入力します。
 
@@ -274,11 +274,11 @@ INF AddReg ディレクティブが UMDF を共同インストーラー再頒布
 -   クライアント ドライバー-USB デバイスのユーザー モード関数ドライバー。
 -   UMDF: クライアント ドライバーの代わりに Windows とのほとんど対話を処理するフレームワーク モジュール。 クライアント ドライバーがドライバーの一般的なタスクを実行するユーザー モード デバイス ドライバー インターフェイス (Ddi) を公開します。
 -   ディスパッチャー、ホスト プロセスで実行されているメカニズムユーザー モード ドライバーによって処理されたおよびユーザー モードのスタックの一番下に達した後に、カーネル モードへの要求を転送する方法を決定します。 図では、ディスパッチャーは、ユーザー モード DLL Winusb.dll に要求を転送します。
--   Winusb.dll—a を公開する Microsoft 提供のユーザー モード DLL [WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)クライアント ドライバーと WinUSB (Winusb.sys、カーネル モードで読み込まれます) の間の通信プロセスを簡略化します。
+-   Winusb.dll—a を公開する Microsoft 提供のユーザー モード DLL [WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)クライアント ドライバーと WinUSB (Winusb.sys、カーネル モードで読み込まれます) の間の通信プロセスを簡略化します。
 -   Winusb.sys—a Microsoft 提供のドライバーの USB デバイスのすべての UMDF クライアント ドライバーで必要とされます。 カーネル モードでの USB ドライバー スタックへのゲートウェイとしては、reflector と機能の下、ドライバーをインストールする必要があります。 詳細については、次を参照してください。 [WinUSB](winusb.md)します。
 -   USB ドライバー スタックなど、一連のドライバー、Microsoft が提供されている USB デバイスとプロトコル レベルの通信を処理します。 詳細については、次を参照してください。 [Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)します。
 
-アプリケーションでは、USB ドライバー スタックの要求を行う、たびに、Windows I/O マネージャーは、reflector は、ユーザー モードでのクライアント ドライバーにリダイレクトする、要求を送信します。 クライアント ドライバーでは、要求を処理、内部的に呼び出す特定の UMDF メソッドを呼び出して、 [WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb) WinUSB に要求を送信します。 要求を受信したら WinUSB は要求を処理するか、または USB ドライバー スタックに転送。
+アプリケーションでは、USB ドライバー スタックの要求を行う、たびに、Windows I/O マネージャーは、reflector は、ユーザー モードでのクライアント ドライバーにリダイレクトする、要求を送信します。 クライアント ドライバーでは、要求を処理、内部的に呼び出す特定の UMDF メソッドを呼び出して、 [WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) WinUSB に要求を送信します。 要求を受信したら WinUSB は要求を処理するか、または USB ドライバー スタックに転送。
 
 ## <a name="related-topics"></a>関連トピック
 [USB クライアント ドライバーの UMDF テンプレート コードを理解します。](understanding-the-umdf-template-code-for-usb.md)  

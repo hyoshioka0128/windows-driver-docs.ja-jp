@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0d697517464b122e2c4b2e9adc86af0b1ff783ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b891cfe32185e853af382f0d7a5f47fa729a7cca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362169"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373503"
 ---
 # <a name="difallowinstall"></a>DIF_ALLOW_INSTALL
 
@@ -58,13 +58,13 @@ DIF_ALLOW_INSTALL 要求は、Windows デバイスのインストールを続行
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)デバイスを格納しています。
+識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)デバイスを格納しています。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-ポインターを提供する[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを識別する構造体。
+ポインターを提供する[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを識別する構造体。
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、 *DeviceInfoData*します。
+デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*します。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
 なし
@@ -81,7 +81,7 @@ DIF_ALLOW_INSTALL 要求は、Windows デバイスのインストールを続行
 
 この差分要求の標準的な Win32 のエラー コード、ERROR_DI_DONT_INSTALL ERROR_NON_WINDOWS_NT_DRIVER があります。
 
-**注**  クラスのインストーラーと共同インストーラーが、freturn ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION いないデバイスのインストールが失敗する原因となったためです。 クラスのインストーラーと共同インストーラーをサポートする必要があります、デバイスのインストールは、ユーザーの介入を必要とする場合、[完了-インストール アクション](https://msdn.microsoft.com/library/windows/hardware/ff544940)します。
+**注**  クラスのインストーラーと共同インストーラーが、freturn ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION いないデバイスのインストールが失敗する原因となったためです。 クラスのインストーラーと共同インストーラーをサポートする必要があります、デバイスのインストールは、ユーザーの介入を必要とする場合、[完了-インストール アクション](https://docs.microsoft.com/windows-hardware/drivers/install/finish-install-actions--windows-vista-and-later-)します。
 
  
 
@@ -101,7 +101,7 @@ DIF_ALLOW_INSTALL 要求への応答では、インストーラーは、Windows 
 
 インストーラーには、この差分要求が失敗した DI_QUIETINSTALL がデバイスのインストール パラメーターで設定されていない場合は、インストーラーはデバイスがないインストールされている理由を説明するメッセージとダイアログ ボックスを表示する必要があります。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -126,9 +126,9 @@ DIF_ALLOW_INSTALL 要求への応答では、インストーラーは、Windows 
 ## <a name="see-also"></a>関連項目
 
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
 

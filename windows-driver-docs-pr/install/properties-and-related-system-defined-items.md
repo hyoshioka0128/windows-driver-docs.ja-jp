@@ -4,12 +4,12 @@ description: プロパティと関連するシステム定義の項目
 ms.assetid: 87787a84-6403-4246-abf5-49747b883202
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 708b308a6b77f3058a2fc3254484582f8c981136
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b6b8c410ea9731037ef256e2dd8e450f56adc56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369439"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380466"
 ---
 # <a name="properties-and-related-system-defined-items"></a>プロパティと関連するシステム定義の項目
 
@@ -28,13 +28,13 @@ Windows Vista および Windows の以降のバージョンでは、統一され
 
 デバイスのプロパティに関連付けられているシステム定義の項目間の通信については、次のトピックを参照してください。
 
-[デバイス インスタンスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541334)
+[デバイス インスタンスのプロパティ](https://docs.microsoft.com/previous-versions/ff541334(v=vs.85))
 
-[デバイス セットアップ クラスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff542239)
+[デバイス セットアップ クラスのプロパティ](https://docs.microsoft.com/previous-versions/ff542239(v=vs.85))
 
-[デバイスのインターフェイス クラスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541406)
+[デバイスのインターフェイス クラスのプロパティ](https://docs.microsoft.com/previous-versions/ff541406(v=vs.85))
 
-[デバイス インターフェイスのプロパティ](https://msdn.microsoft.com/library/windows/hardware/ff541409)
+[デバイス インターフェイスのプロパティ](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))
 
  
 

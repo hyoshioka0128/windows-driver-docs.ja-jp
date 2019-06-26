@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e8373d377191fc7c735244a64f777a672c9395
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1da1334d6d85780ad08b5f72e536b8e1dac842b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352580"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362103"
 ---
 # <a name="bug-check-0x178-elamdriverdetectedfatalerror"></a>バグ チェック 0x178:ELAM\_ドライバー\_検出\_FATAL\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352580"
 ELAM\_ドライバー\_検出\_FATAL\_エラーのバグ チェックが 0x00000178 の値を持ちます。 これは、ELAM ドライバーに致命的なエラーが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="elamdriverdetectedfatalerror-parameters"></a>ELAM\_ドライバー\_検出\_FATAL\_エラー パラメーター

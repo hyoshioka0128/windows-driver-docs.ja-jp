@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6e662a22b27114ee6faf4629340c20cc3611baf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2030111598ad5cef739af4a1f341c6071f3a462a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354897"
 ---
 # <a name="smsendrps-function"></a>SM\_SendRPS 関数
 
@@ -112,7 +112,7 @@ WMI メソッドには適用されません。
 
 [HBA\_状態](hba-status.md)
 
-[**SM\_SendRPS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff566320)
+[**SM\_SendRPS\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendrps_out)
 
  
 

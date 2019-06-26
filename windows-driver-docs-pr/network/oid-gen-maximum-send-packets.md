@@ -5,17 +5,17 @@ ms.assetid: 7e87285f-26c5-4b7d-99a8-bc0f30c643dc
 ms.date: 08/08/2017
 keywords: -OID_GEN_MAXIMUM_SEND_PACKETS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9b2b2828bae1cabfd19ba17f7a9748bdcd605b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28ebd8a34c5347f0884c66c14d3764781913b573
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358754"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369053"
 ---
 # <a name="oidgenmaximumsendpackets"></a>OID\_GEN\_最大\_送信\_パケット
 
 
-クエリ、OID として\_GEN\_最大\_送信\_パケットの OID はの最大数の送信パケットの記述子を指定します、ミニポート ドライバーの[ *MiniportSendPackets*](https://msdn.microsoft.com/library/windows/hardware/ff550524)関数が受け入れることができます。
+クエリ、OID として\_GEN\_最大\_送信\_パケットの OID はの最大数の送信パケットの記述子を指定します、ミニポート ドライバーの[ *MiniportSendPackets*](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff550524(v=vs.85))関数が受け入れることができます。
 
 **バージョン情報**
 
@@ -58,7 +58,7 @@ OID のクエリに対する応答の逆シリアル化されたドライバー�
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportSendPackets*](https://msdn.microsoft.com/library/windows/hardware/ff550524)
+[*MiniportSendPackets*](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff550524(v=vs.85))
 
  
 

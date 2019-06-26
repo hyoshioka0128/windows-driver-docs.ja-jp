@@ -14,19 +14,19 @@ keywords:
 - WDK の署名をリリースします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef269a55dd9be31ec269a4218c3f1153531cf228
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60596af7ee0ad6c35c80fe7bf09c81fce599c499
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348595"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373488"
 ---
 # <a name="signing-drivers-for-public-release"></a>一般リリース用のドライバーへの署名
 
 
 カーネル モード バイナリの発行元を識別するリリース署名 (たとえば、ドライバーまたは *.dll*) Windows Vista および Windows の以降のバージョンを読み込みます。 カーネル モード バイナリは、いずれかでリリース署名です。
 
--   A [WHQL リリース署名](whql-release-signature.md)経由で取得した、 [Windows ロゴ プログラム](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)します。
+-   A [WHQL リリース署名](whql-release-signature.md)経由で取得した、 [Windows ロゴ プログラム](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 -   使って作成されたリリース署名、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)します。
 

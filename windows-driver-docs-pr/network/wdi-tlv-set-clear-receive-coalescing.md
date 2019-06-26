@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_SET_CLEAR_RECEIVE_COALESCING ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a8134b0ce0dce23fd108bbf42fa52102ea6b7d63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e87b85be1b6698c6fc8859be4b4d4c4857df244
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330402"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362814"
 ---
 # <a name="wditlvsetclearreceivecoalescing"></a>WDI\_TLV\_設定\_クリア\_受信\_COALESCING
 
 
-WDI\_TLV\_設定\_クリア\_受信\_COALESCING のフィルター ID を含む TLV [OID\_WDI\_設定\_クリア\_受信\_COALESCING](https://msdn.microsoft.com/library/windows/hardware/dn925926)します。
+WDI\_TLV\_設定\_クリア\_受信\_COALESCING のフィルター ID を含む TLV [OID\_WDI\_設定\_クリア\_受信\_COALESCING](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-clear-receive-coalescing)します。
 
 ## <a name="tlv-type"></a>TLV 型
 

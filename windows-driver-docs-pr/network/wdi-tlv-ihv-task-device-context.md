@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_IHV_TASK_DEVICE_CONTEXT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f42ab8d6b3213e04229945447cbd1b28283fd3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a5dcabc0c42b41c273a6378f5fcb3adaa66170d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392377"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380804"
 ---
 # <a name="wditlvihvtaskdevicecontext"></a>WDI\_TLV\_IHV\_タスク\_デバイス\_コンテキスト
 
 
-WDI\_TLV\_IHV\_タスク\_デバイス\_コンテキストがの IHV で提供されるデバイス コンテキストを含む TLV [NDIS\_状態\_WDI\_INDICATION\_IHV\_タスク\_要求](https://msdn.microsoft.com/library/windows/hardware/dn925637)します。
+WDI\_TLV\_IHV\_タスク\_デバイス\_コンテキストがの IHV で提供されるデバイス コンテキストを含む TLV [NDIS\_状態\_WDI\_INDICATION\_IHV\_タスク\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-ihv-task-request)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -37,7 +37,7 @@ UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 �
 
  
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

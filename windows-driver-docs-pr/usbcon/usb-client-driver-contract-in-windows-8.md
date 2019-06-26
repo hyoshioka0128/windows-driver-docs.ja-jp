@@ -3,12 +3,12 @@ Description: このトピックでは、割り当て、構築、および Window
 title: ベスト プラクティス - を使用して翻訳
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 283f411c2d4d79f1d0a823b18e87869ca169793a
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e3c8d2bbb6bed330ef9f537e07f9fd991638b7bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405088"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369525"
 ---
 # <a name="best-practices-using-urbs"></a>ベスト プラクティス:URB の使用
 
@@ -17,7 +17,7 @@ ms.locfileid: "65405088"
 
 Windows 8 には、ユニバーサル シリアル バス (USB) 3.0 デバイスをサポートする新しい USB ドライバー スタックが含まれています。 新しい USB 3.0 ドライバー スタックは、USB 3.0 の仕様に従って、いくつかの新機能を実装します。 さらに、ドライバー スタックには、一般的なタスクを効率的に実行するためのクライアント ドライバーを有効にするその他の機能が含まれています。 たとえば、新しいドライバー スタックは、チェーン-MDLs 隣接していないページの物理メモリ内転送バッファーを送信するクライアント ドライバーを許可するを受け入れます。
 
-クライアント ドライバーは、Windows 8 USB ドライバー スタックの新機能を使用して、前に、ドライバーする必要がありますの登録には、デバイスが Windows によって読み込まれる基になる USB ドライバー スタック。 クライアント ドライバーを登録するには、呼び出す[ **USBD\_CreateHandle** ](https://msdn.microsoft.com/library/windows/hardware/hh406241)を指定し、*コントラクト バージョン*します。 クライアント ドライバーをビルド、実行、および Windows 8 の強化点と新機能を使用する場合は、クライアント コントラクト バージョンは USBD\_クライアント\_コントラクト\_バージョン\_602 します。
+クライアント ドライバーは、Windows 8 USB ドライバー スタックの新機能を使用して、前に、ドライバーする必要がありますの登録には、デバイスが Windows によって読み込まれる基になる USB ドライバー スタック。 クライアント ドライバーを登録するには、呼び出す[ **USBD\_CreateHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)を指定し、*コントラクト バージョン*します。 クライアント ドライバーをビルド、実行、および Windows 8 の強化点と新機能を使用する場合は、クライアント コントラクト バージョンは USBD\_クライアント\_コントラクト\_バージョン\_602 します。
 
 USBD の\_クライアント\_コントラクト\_バージョン\_クライアント ドライバーは、次の一連の規則に準拠するいると仮定 602 のバージョンのクライアント ドライバーを USB ドライバー スタック。
 
@@ -41,12 +41,12 @@ USB ドライバー スタックは、受信した要求の検証を実行し、
 
 Windows 8 は、割り当て、作成、および USB 要求のブロック (翻訳) を解放するための新しいルーチンを提供します。 翻訳を割り当てるには、Windows Driver Model (WDM) のクライアント ドライバーは常に次の一覧に表示される新しいルーチンを使用する必要があります。
 
--   [**USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)
--   [**USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)
--   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406243)
--   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406245)
--   [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
--   [**USBD\_AssignUrbToIoStackLocation**](https://msdn.microsoft.com/library/windows/hardware/hh406228)
+-   [**USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)
+-   [**USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)
+-   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)
+-   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)
+-   [**USBD\_UrbFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urbfree)
+-   [**USBD\_AssignUrbToIoStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation)
 
 上記のルーチンは、追跡と処理を向上させるために割り当てられた URB を非透過の URB コンテキストをアタッチ可能性があります。 クライアント ドライバーでは、表示または URB コンテキストの内容を変更できません。 Windows 8 で URB 割り当ての詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)します。
 
@@ -63,16 +63,16 @@ USB ドライバー スタックのバグチェックでは意図的に URB に�
 
 クライアント ドライバーの完了のルーチンが呼び出された後、ドライバーは、特定の種類の要求完了ルーチン内での翻訳を再送信できます。 再送信の次の規則が適用されます。
 
--   クライアント ドライバーが割り当てられる、URB 再利用する必要があります[ **USBD\_SelectConfigUrbAllocateAndBuild** ](https://msdn.microsoft.com/library/windows/hardware/hh406243)同じを選択する select 構成要求以外の要求の種類にかかわらず構成します。
--   クライアント ドライバーが割り当てられる、URB 再利用する必要があります[ **USBD\_SelectInterfaceUrbAllocateAndBuild** ](https://msdn.microsoft.com/library/windows/hardware/hh406245)同じを選択する select インターフェイス要求以外の要求の種類にかかわらず代替インターフェイスで設定します。 例については、「解説」を参照してください。 **USBD\_SelectInterfaceUrbAllocateAndBuild**します。
--   割り当てられる、URB [ **USBD\_IsochUrbAllocate** ](https://msdn.microsoft.com/library/windows/hardware/hh406231)アイソクロナス転送要求に対してのみ再利用する必要があります。 逆に、他の種類の I/O 要求 (コントロールや一括、割り込み) に割り当てられた、URB が、アイソクロナス要求の使用はできません。
+-   クライアント ドライバーが割り当てられる、URB 再利用する必要があります[ **USBD\_SelectConfigUrbAllocateAndBuild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)同じを選択する select 構成要求以外の要求の種類にかかわらず構成します。
+-   クライアント ドライバーが割り当てられる、URB 再利用する必要があります[ **USBD\_SelectInterfaceUrbAllocateAndBuild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)同じを選択する select インターフェイス要求以外の要求の種類にかかわらず代替インターフェイスで設定します。 例については、「解説」を参照してください。 **USBD\_SelectInterfaceUrbAllocateAndBuild**します。
+-   割り当てられる、URB [ **USBD\_IsochUrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)アイソクロナス転送要求に対してのみ再利用する必要があります。 逆に、他の種類の I/O 要求 (コントロールや一括、割り込み) に割り当てられた、URB が、アイソクロナス要求の使用はできません。
 
-    たとえば、クライアント ドライバーの割り当て、ビルド、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)一括転送要求の構造体。 また、クライアント ドライバーは、デバイスのアイソクロナス エンドポイントにデータを送信したいと考えているとします。 クライアント ドライバーである必要がありますを一括転送要求が完了すると、*いない*再フォーマットし、URB アイソクロナス要求を送信します。 アイソクロナス、要求に関連付けられている、URB があるパケットの数によっては可変長であるためにです。 さらに、パケットは、開始および終了、フレームの境界線を必要があります。 (一括転送) の割り当てられた URB アイソクロナスの転送に必要なバッファー レイアウトに適合しないと、要求が失敗する可能性があります。
+    たとえば、クライアント ドライバーの割り当て、ビルド、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)一括転送要求の構造体。 また、クライアント ドライバーは、デバイスのアイソクロナス エンドポイントにデータを送信したいと考えているとします。 クライアント ドライバーである必要がありますを一括転送要求が完了すると、*いない*再フォーマットし、URB アイソクロナス要求を送信します。 アイソクロナス、要求に関連付けられている、URB があるパケットの数によっては可変長であるためにです。 さらに、パケットは、開始および終了、フレームの境界線を必要があります。 (一括転送) の割り当てられた URB アイソクロナスの転送に必要なバッファー レイアウトに適合しないと、要求が失敗する可能性があります。
 
--   割り当てられる、URB [ **USBD\_UrbAllocate** ](https://msdn.microsoft.com/library/windows/hardware/hh406250)アイソクロナス、選択構成、または選択インターフェイス要求の再利用する必要があります。 URB は、デバイスで選択した構成を無効にする NULL 構成を選択するため再利用できます。 URB をアクティブにすることはできませんし、クライアント ドライバーは、呼び出すことによって、URB を再フォーマットする必要があります、 [ **UsbBuildSelectConfigurationRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538968)マクロとで NULL が渡される、 *ConfigurationDescriptor*パラメーター。
+-   割り当てられる、URB [ **USBD\_UrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)アイソクロナス、選択構成、または選択インターフェイス要求の再利用する必要があります。 URB は、デバイスで選択した構成を無効にする NULL 構成を選択するため再利用できます。 URB をアクティブにすることはできませんし、クライアント ドライバーは、呼び出すことによって、URB を再フォーマットする必要があります、 [ **UsbBuildSelectConfigurationRequest** ](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))マクロとで NULL が渡される、 *ConfigurationDescriptor*パラメーター。
 -   URB を再送信する前に、クライアント ドライバーは、適切なを使用して URB をフォーマットする必要があります**UsbBuildXxx**要求の種類に対して定義されているマクロ。 USB スタックの内容の一部変更がある可能性がありますので、ドライバー、URB を書式設定するために重要です。
 
-    たとえば、ドライバーを呼び出す[ **UsbBuildInterruptOrBulkTransferRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538953) 、URB 一括転送要求の処理を初期化するために (を参照してください[  **\_URB\_一括\_または\_INTERRUPT\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff540352))。 ドライバーが初期化する場合、 **TransferBufferMDL**のメンバー、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体を null の場合、USB ドライバー スタックは、指定した転送バッファーを使用して**TransferBuffer**MDL ではなく、デバイスとデータを交換します。 ただし、内部的には、USB ドライバー スタック、可能性があります、MDL の作成で MDL へのポインターを格納**TransferBufferMDL**MDL を使用して、スタックで、データを渡すとします。 USB ドライバー スタック MDL のメモリを解放する場合でも**TransferBufferMDL**クライアント ドライバーが完了ルーチンの URB を処理するときに、NULL をできない可能性があります。 URB のメンバーが正しく書式設定は、ドライバーを呼び出す必要があります**UsbBuildInterruptOrBulkTransferRequest** URB を要求を送信する前に再フォーマットするには、もう一度
+    たとえば、ドライバーを呼び出す[ **UsbBuildInterruptOrBulkTransferRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbbuildinterruptorbulktransferrequest) 、URB 一括転送要求の処理を初期化するために (を参照してください[  **\_URB\_一括\_または\_INTERRUPT\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_bulk_or_interrupt_transfer))。 ドライバーが初期化する場合、 **TransferBufferMDL**のメンバー、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体を null の場合、USB ドライバー スタックは、指定した転送バッファーを使用して**TransferBuffer**MDL ではなく、デバイスとデータを交換します。 ただし、内部的には、USB ドライバー スタック、可能性があります、MDL の作成で MDL へのポインターを格納**TransferBufferMDL**MDL を使用して、スタックで、データを渡すとします。 USB ドライバー スタック MDL のメモリを解放する場合でも**TransferBufferMDL**クライアント ドライバーが完了ルーチンの URB を処理するときに、NULL をできない可能性があります。 URB のメンバーが正しく書式設定は、ドライバーを呼び出す必要があります**UsbBuildInterruptOrBulkTransferRequest** URB を要求を送信する前に再フォーマットするには、もう一度
 
 ## <a name="do-not-use-polling-period-greater-than-8-for-high-speed-and-superspeed-isochronous-transfers"></a>高速および SuperSpeed isochronous 転送のポーリング期間が 8 より大きい値を使用しないでください。
 
@@ -82,7 +82,7 @@ USB ドライバー スタックは、高速および SuperSpeed アイソクロ
 ## <a name="make-sure-that-the-number-of-isochronous-packets-that-is-a-multiple-of-number-of-packets-per-frame"></a>必ずフレームあたりのパケットの数の倍数であるアイソクロナス パケットの数
 
 
-高速および SuperSpeed アイソクロナス転送は、フレームごとの isochronous パケットの数は 8/ポーリングの期間として計算されます。 クライアント ドライバーように注意してください、 **NumberOfPackets** URB で指定された値 (を参照してください[  **\_URB\_アイソクロナス\_転送**](https://msdn.microsoft.com/library/windows/hardware/ff540414)) フレームあたりのパケットの数の倍数です。
+高速および SuperSpeed アイソクロナス転送は、フレームごとの isochronous パケットの数は 8/ポーリングの期間として計算されます。 クライアント ドライバーように注意してください、 **NumberOfPackets** URB で指定された値 (を参照してください[  **\_URB\_アイソクロナス\_転送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer)) フレームあたりのパケットの数の倍数です。
 
 USB ドライバー スタックは、アイソクロナス転送の翻訳をサポートしていません、 **NumberOfPackets**フレームあたりのパケットの数の倍数ではありません。
 

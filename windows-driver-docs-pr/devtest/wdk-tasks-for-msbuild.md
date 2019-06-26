@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) には、ビルド プロセスでよく�
 ms.assetid: 53A5AAC2-A608-4153-9482-D8EF3D05EF04
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c41a5ae6821997fef5d49809758b4105b929236
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0866d245d39c642b4e153e817e60314abf3ac1f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363753"
 ---
 # <a name="wdk-tasks-for-msbuild"></a>MSBuild 用の WDK タスク
 
@@ -84,7 +84,7 @@ WDK のコマンド ライン ツールでは、多数のオプションをサ�
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="message-compiler-task.md" data-raw-source="[Message compiler task](message-compiler-task.md)">メッセージ コンパイラ タスク</a></p></td>
-<td align="left"><p>WDK には、MSBuild を使用してドライバーをビルドするときに、MC.exe ツールを実行できるようにの MessageCompiler タスクが用意されています。 MC.exe を使用する方法の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/desktop/aa385638" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa385638)"><strong>メッセージ コンパイラ (MC.exe)</strong></a>します。</p></td>
+<td align="left"><p>WDK には、MSBuild を使用してドライバーをビルドするときに、MC.exe ツールを実行できるようにの MessageCompiler タスクが用意されています。 MC.exe を使用する方法の詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)"><strong>メッセージ コンパイラ (MC.exe)</strong></a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ctrpp-task.md" data-raw-source="[Ctrpp task](ctrpp-task.md)">Ctrpp タスク</a></p></td>
@@ -98,13 +98,13 @@ WDK のコマンド ライン ツールでは、多数のオプションをサ�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[**CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)
+[**CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)
 
-[Wmimofck.exe を使用します。](https://msdn.microsoft.com/library/windows/hardware/ff565588)
+[Wmimofck.exe を使用します。](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)
 
-[**メッセージ コンパイラ (MC.exe)**](https://msdn.microsoft.com/library/windows/desktop/aa385638)
+[**メッセージ コンパイラ (MC.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)
 
-[**mofcomp**](https://msdn.microsoft.com/library/aa392389)
+[**mofcomp**](https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp)
 
 [Stampinf](stampinf.md)
 

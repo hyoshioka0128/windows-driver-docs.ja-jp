@@ -4,19 +4,19 @@ description: DeploymentItem メタデータ
 ms.assetid: 7F18CD71-F000-4231-9093-82980EB7584D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eade6e024352f6b6eb881863534e470c75b8ebf8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e80be6a1d97a4670de74360db4fa351a21b4e611
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373029"
 ---
 # <a name="deploymentitem-metadata"></a>DeploymentItem メタデータ
 
 
 **DeploymentItem**メタデータ ファイルと Taef は、これらを識別し、適切にコピーすることができるように、テストの実行中に、テストで使用されるフォルダーのファイルとフォルダーの依存関係を識別します (など、で[クロス マシン実行シナリオ](cross-machine-execution.md)、Taef はで識別されるファイルは展開**DeploymentItem**プロパティを指定されたテスト マシン)。
 
-Taef DeploymentItem 実装に非常に似ています、[と同等の VSTS 機能](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.deploymentitemattribute(VS.80).aspx)します。
+Taef DeploymentItem 実装に非常に似ています、[と同等の VSTS 機能](https://docs.microsoft.com/en-US/dotnet/api/microsoft.visualstudio.testtools.unittesting.deploymentitemattribute?redirectedfrom=MSDN&view=mstest-net-1.2.0)します。
 
 アセンブリ、クラス、またはテスト レベルのいずれかに DeploymentItem メタデータを適用できます。 DeploymentItem メタデータで指定された項目は、送信者 (アセンブリ、テスト クラスまたはテスト) のセットアップの実行時間によってデプロイされます。 DeploymentItem メタデータ依存関係 (たとえば、ファイル) を指定する、転送先にその依存関係が既に存在する場合は、TAEF CRC 比較がし、変更された場合にのみ、ファイルをコピーします。 エラーが記録されます DeploymentItem メタデータは、依存関係と依存関係を検出することはできませんを指定する場合、テストが失敗する (またはクラスやアセンブリのテストをそれに応じてテストすべて)。 アセンブリ、クラス、またはテスト - あたり、展開、クラス、すべてのアセンブリに行われるまたはしませんこれらは、データ駆動型の場合は、展開をテストしたら TAEF はファイルのみ配置します。
 

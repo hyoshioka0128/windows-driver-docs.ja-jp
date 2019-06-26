@@ -18,12 +18,12 @@ keywords:
 - WDK のデバイス情報を一覧表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 909ac5e2f1ae49d83f7c2a0ef59fa44d5a9dae1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1298d1f2c410bcbeb23989ba44c121d07b129552
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371512"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows デバイス コンソール (Devcon.exe)
 
@@ -83,11 +83,11 @@ DevCon は、ローカル コンピューターおよびリモート コンピ�
 Devcon 機能は次のとおりです。
 
 -   **ドライバーとデバイスの情報を表示する**DevCon は、ローカル コンピューターおよびリモート コンピューターにドライバーとデバイスの次のプロパティを表示することができます (Windows XP を実行している以前のバージョン)。
-    -   ハードウェア Id、互換性 Id、およびデバイス インスタンス Id。 これらの識別子がで詳しく説明されている[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
-    -   [デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)
+    -   ハードウェア Id、互換性 Id、およびデバイス インスタンス Id。 これらの識別子がで詳しく説明されている[識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)します。
+    -   [デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)
     -   デバイスのデバイス セットアップ クラス
     -   INF ファイルとデバイスのドライバー ファイル
-    -   詳細[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff539954)
+    -   詳細[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)
     -   ハードウェア リソース
     -   デバイスの状態
     -   必要なドライバー スタック
@@ -109,7 +109,7 @@ Devcon 機能は次のとおりです。
 ## <a name="span-iddevconsourcecodespanspan-iddevconsourcecodespanspan-iddevconsourcecodespandevcon-source-code"></a><span id="DevCon_source_code"></span><span id="devcon_source_code"></span><span id="DEVCON_SOURCE_CODE"></span>DevCon ソース コード
 
 
-DevCon のソース コードを使用できるは、DevCon を使用して取得し、セットアップと構成データを変更する方法を確認するようにもです。 DevCon の使用方法を示します[関数の一般的なセットアップ](https://msdn.microsoft.com/library/windows/hardware/ff544985)、[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)、および[PnP の Configuration Manager 機能](https://msdn.microsoft.com/library/windows/hardware/ff549713)します。 ソース コード、[デバイス コンソール (DevCon) ツール](https://go.microsoft.com/fwlink/p/?LinkId=617966)で使用できるは、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+DevCon のソース コードを使用できるは、DevCon を使用して取得し、セットアップと構成データを変更する方法を確認するようにもです。 DevCon の使用方法を示します[関数の一般的なセットアップ](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))、[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))、および[PnP の Configuration Manager 機能](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))します。 ソース コード、[デバイス コンソール (DevCon) ツール](https://go.microsoft.com/fwlink/p/?LinkId=617966)で使用できるは、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

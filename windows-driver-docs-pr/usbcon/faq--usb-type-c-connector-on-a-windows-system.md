@@ -3,12 +3,12 @@ Description: よく寄せられる型-C# の USB コネクタでの Windows シ�
 title: よく寄せられる質問 - Windows システム上の C-USB 型コネクタ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fad2532569b47489fc502097aa4991f94a29368
-ms.sourcegitcommit: ead145093395141164ec18a4764b19472ea9ff4b
+ms.openlocfilehash: cf0fe390047cdfb56f12883d905e64b32aac8aa4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65760597"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363912"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>よくあるご質問:Windows システムにおける USB Type-C コネクタ
 
@@ -80,7 +80,7 @@ ms.locfileid: "65760597"
 
 ## <a name="operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane"></a>オペレーティング システム入力代替モードを DP 2 レーン vs など、ネゴシエートする必要があります。配布ポイントの 4 レーン
 
-いいえ。 オペレーティング システム (または、Microsoft が提供するソフトウェア コンポーネント) には、別のモードを選択する際に一部再生されません。 コネクタは、USB コネクタ マネージャー (UCM) クライアント ドライバー具体的には、ドライバーによって決定されます。 ドライバーのハードウェア インターフェイスを使用して、コネクタのファームウェアと通信して行われます。
+No. オペレーティング システム (または、Microsoft が提供するソフトウェア コンポーネント) には、別のモードを選択する際に一部再生されません。 コネクタは、USB コネクタ マネージャー (UCM) クライアント ドライバー具体的には、ドライバーによって決定されます。 ドライバーのハードウェア インターフェイスを使用して、コネクタのファームウェアと通信して行われます。
 
 ## <a name="pre-os-charging-with-type-c-and-pd"></a>型から C と PD 充電 os 起動前
 
@@ -176,4 +176,4 @@ Windows 10 用 Windows HLK で USB テストを実行することをお勧めし
 
 ## <a name="vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension"></a>VBus/VConn 制御とロール UCM クラスの拡張機能で処理操作を切り替える
 
-UCM クラスの拡張機能は、コネクタのデータまたは電源の方向を変更するオペレーティング システムから要求を取得する可能性があります。 クライアント ドライバーの実装を呼び出すときに、それらの要求を取得、 [ *EVT\_UCM\_コネクタ\_設定\_データ\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187818)と[ *EVT\_UCM\_コネクタ\_設定\_POWER\_ロール*](https://msdn.microsoft.com/library/windows/hardware/mt187819)コールバック関数 (場合、コネクタPD を実装)。 実装では、クライアント ドライバーが必要なコントロール、VBUS と VCONN pin です。 これらのコールバック関数の詳細については、次を参照してください。[型-C# の USB コネクタ ドライバー](bring-up-a-usb-type-c-connector-on-a-windows-system.md)します。
+UCM クラスの拡張機能は、コネクタのデータまたは電源の方向を変更するオペレーティング システムから要求を取得する可能性があります。 クライアント ドライバーの実装を呼び出すときに、それらの要求を取得、 [ *EVT\_UCM\_コネクタ\_設定\_データ\_ロール*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)と[ *EVT\_UCM\_コネクタ\_設定\_POWER\_ロール*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)コールバック関数 (場合、コネクタPD を実装)。 実装では、クライアント ドライバーが必要なコントロール、VBUS と VCONN pin です。 これらのコールバック関数の詳細については、次を参照してください。[型-C# の USB コネクタ ドライバー](bring-up-a-usb-type-c-connector-on-a-windows-system.md)します。

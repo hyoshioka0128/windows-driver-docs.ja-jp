@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b19bb4dbaeb35dd53d085ae465526795b2f4451c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de7c838efefeef435bdf931785c2e26394684577
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373375"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354861"
 ---
 # <a name="kspropertyextdevicepowerstate"></a>KSPROPERTY\_EXTDEVICE\_POWER\_状態
 
@@ -53,7 +53,7 @@ KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部の�
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>デバイス</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565156" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565156)"><strong>KSPROPERTY_EXTDEVICE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s)"><strong>KSPROPERTY_EXTDEVICE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -68,7 +68,7 @@ KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部の�
 
 **PowerState** 、KSPROPERTY のメンバー\_EXTDEVICE\_構造が外部のデバイスの電源設定を指定します。 **PowerState**に等しいまたはスタンバイにメンバーを設定することがあります。 たとえば、バッテリ駆動外部などのデバイス、DV カメラを電源オフ可能性があります。 AC 電源 DVHS デバイスは、スタンバイに配置することがあります。 デバイスがスタンバイ状態にある場合、電源をオンに後でする可能性があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -89,7 +89,7 @@ KSPROPERTY\_EXTDEVICE\_POWER\_状態プロパティを設定または外部の�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTDEVICE\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565156)
+[**KSPROPERTY\_EXTDEVICE\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extdevice_s)
 
  
 

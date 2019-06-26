@@ -20,12 +20,12 @@ keywords:
 - I/O 要求 WDK KMDF、Irp
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70b117ebc4b00a809b0f2a12bce704410e4abdc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87dc5539862a17bf299b96a717efe3bd3f79821c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385714"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354449"
 ---
 # <a name="wdm-concepts-for-wdf-drivers"></a>WDF ドライバーでの WDM の概念
 
@@ -34,7 +34,7 @@ Windows Driver Frameworks (WDF) には、Microsoft Windows Driver Model (WDM) �
 
 ### <a name="driver-types"></a>ドライバーの種類
 
-Windows ベースのドライバーは次の 3 種類に分けられます:[バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540704)、[関数ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff546516)と[フィルター ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff545890)します。 バス ドライバーでは、親のバスに接続されている子デバイスを検出し、その特性を報告して I/O バスをサポートします。 (このアクティビティが呼び出される*列挙体のバス*)。関数のドライバーでは、デバイスとバスの I/O 操作を制御します。 フィルター ドライバーは、受信確認、およびユーザー アプリケーションとドライバー、または個々 のドライバー間を流れるデータを変更します。
+Windows ベースのドライバーは次の 3 種類に分けられます:[バス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)、[関数ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)と[フィルター ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)します。 バス ドライバーでは、親のバスに接続されている子デバイスを検出し、その特性を報告して I/O バスをサポートします。 (このアクティビティが呼び出される*列挙体のバス*)。関数のドライバーでは、デバイスとバスの I/O 操作を制御します。 フィルター ドライバーは、受信確認、およびユーザー アプリケーションとドライバー、または個々 のドライバー間を流れるデータを変更します。
 
 バス ドライバーには、基本的の関数ドライバーも子の列挙ですが。 ドライバーは"bus driver"として機能するときに、バス上の子デバイスを列挙します。 それ以外の場合、バス アダプターのハードウェアにアクセスする I/O 操作を処理する場合は、バスの"関数 driver"として同じドライバーが機能します。
 
@@ -48,7 +48,7 @@ Windows ベースのドライバーは次の 3 種類に分けられます:[バ�
 
 ### <a name="device-stacks"></a>デバイス スタック
 
-各ドライバー スタックは、1 つまたは複数サポートしています。*デバイス スタック*します。 デバイス スタックは、一連の*デバイス オブジェクト*WDM 定義から作成される[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 各デバイス スタックは、1 つのデバイスを表します。 各ドライバーでは、各デバイスのデバイス オブジェクトを作成し、デバイス スタックを各デバイス オブジェクトをアタッチします。 デバイス スタックが作成しデバイスが接続されているために、削除され、電源が入っていないし、システムを再起動するたびにします。
+各ドライバー スタックは、1 つまたは複数サポートしています。*デバイス スタック*します。 デバイス スタックは、一連の*デバイス オブジェクト*WDM 定義から作成される[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。 各デバイス スタックは、1 つのデバイスを表します。 各ドライバーでは、各デバイスのデバイス オブジェクトを作成し、デバイス スタックを各デバイス オブジェクトをアタッチします。 デバイス スタックが作成しデバイスが接続されているために、削除され、電源が入っていないし、システムを再起動するたびにします。
 
 バス ドライバーでは、子デバイスが接続されているまたは電源が入っていないことを検出すると、プラグ アンド プレイ (PnP) マネージャーに通知します。 応答として、PnP マネージャーは、親デバイス (つまり、バス) に接続されている子デバイスごとに物理デバイス オブジェクト (PDO) を作成するバス ドライバーを要求します。 PDO は、デバイス スタックの一番下になります。
 

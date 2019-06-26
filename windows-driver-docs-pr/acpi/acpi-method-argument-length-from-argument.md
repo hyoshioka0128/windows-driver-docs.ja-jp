@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_ARGUMENT_LENGTH_FROM_ARGUMENT マクロ ACPI デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d86579c407b4219c0e8ca4ac89d2bdfdb4e2589f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfb2c0c331d10f6b99661db36e477a471ab7444d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328870"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355884"
 ---
 # <a name="acpimethodargumentlengthfromargument-macro"></a>ACPI\_メソッド\_引数\_長さ\_FROM\_引数マクロ
 
 
-ACPI\_メソッド\_引数\_長さ\_FROM\_マクロの引数のデータ配列に含まれるデータのバイト単位のサイズを計算する、 [ **ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)構造体。
+ACPI\_メソッド\_引数\_長さ\_FROM\_マクロの引数のデータ配列に含まれるデータのバイト単位のサイズを計算する、 [ **ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -66,7 +66,7 @@ ACPI へのポインター\_メソッド\_引数構造体。
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)
+[**ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)
 
  
 

@@ -3,12 +3,12 @@ Description: Windows は、USB 型-c コネクタおよびタスク C-USB 型シ
 title: USB Type-C コネクタに対する Windows サポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 313e6caf41852998ca277011a9abe13d956d0a1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be4cca50437de9aadbcd65be59bfbdf75042e1fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368831"
 ---
 # <a name="windows-support-for-usb-type-c-connectors"></a>USB Type-C コネクタに対する Windows サポート
 
@@ -53,7 +53,7 @@ USB タイプ-c コネクタは、元に戻すことと対称です。
 - [埋め込みコント ローラーを備えた USB 型-c システムのハードウェアの設計](ucsi.md)
 
 設計とハードウェアの最小要件、Windows ハードウェア互換性プログラムの要件およびそれらの要件に構築されたその他の推奨事項を含め、USB のコンポーネントの開発に関する推奨事項を検討してください。
-[USB ハードウェア コンポーネントのガイドライン](https://msdn.microsoft.com/library/windows/hardware/dn915125)
+[USB ハードウェア コンポーネントのガイドライン](https://docs.microsoft.com/windows-hardware/design/component-guidelines/universal-serial-bus--usb-)
 
 ## <a name="choose-a-driver-model"></a>ドライバー モデルを選択します。
 

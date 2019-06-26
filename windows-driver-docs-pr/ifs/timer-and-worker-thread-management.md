@@ -13,12 +13,12 @@ keywords:
 - 定期的なトリガー WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4a8dfe208ca36533faa9cb2f4d614ffac96678e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 19452c73b5791200316e6ab67e3736fa2ddfc523
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575124"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380330"
 ---
 # <a name="timer-and-worker-thread-management"></a>タイマーとワーカー スレッド管理
 
@@ -49,15 +49,15 @@ RDBSS は、ワーカー スレッド管理のためのいくつかのタイマ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553395" data-raw-source="[&lt;strong&gt;RxCancelTimerRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553395)"><strong>RxCancelTimerRequest</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxtimer/nf-rxtimer-rxcanceltimerrequest" data-raw-source="[&lt;strong&gt;RxCancelTimerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxtimer/nf-rxtimer-rxcanceltimerrequest)"><strong>RxCancelTimerRequest</strong></a></p></td>
 <td align="left"><p>このルーチンは、タイマーの要求をキャンセルします。 要求をキャンセルするのへのポインター、ルーチンとコンテキスト パラメーターによって識別されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554612" data-raw-source="[&lt;strong&gt;RxPostOneShotTimerRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554612)"><strong>RxPostOneShotTimerRequest</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxtimer/nf-rxtimer-rxpostoneshottimerrequest" data-raw-source="[&lt;strong&gt;RxPostOneShotTimerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxtimer/nf-rxtimer-rxpostoneshottimerrequest)"><strong>RxPostOneShotTimerRequest</strong></a></p></td>
 <td align="left"><p>このルーチンは、1 回限りのタイマー要求を初期化するために、ドライバーによって使用されます。 このルーチンに渡されるワーカー スレッド ルーチンは、タイマーが期限切れにすると呼び出されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554615" data-raw-source="[&lt;strong&gt;RxPostRecurrentTimerRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554615)"><strong>RxPostRecurrentTimerRequest</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxtimer/nf-rxtimer-rxpostrecurrenttimerrequest" data-raw-source="[&lt;strong&gt;RxPostRecurrentTimerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxtimer/nf-rxtimer-rxpostrecurrenttimerrequest)"><strong>RxPostRecurrentTimerRequest</strong></a></p></td>
 <td align="left"><p>このルーチンでは、定期的なタイマー要求を初期化します。 このルーチンに渡されるワーカー スレッド ルーチンが一定の間隔と呼ばれるこのルーチンへの入力パラメーターに基づいた繰り返しタイマーが起動されるときにします。</p></td>
 </tr>
 </tbody>

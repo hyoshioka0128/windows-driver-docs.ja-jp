@@ -6,12 +6,12 @@ ms.assetid: a5c81db0-e753-4d91-97e4-c58ea05f5ce8
 keywords:
 - IRP_MN_STOP_DEVICE カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: d51e1856e9bb4b97d93a56cb59cba07c3fe58577
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5539899abb88753e7a39e2230cacf0875e8c04c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381403"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371846"
 ---
 # <a name="irpmnstopdevice"></a>IRP\_MN\_停止\_デバイス
 
@@ -54,13 +54,13 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 
 この IRP、Windows 2000 以降のドライバーを応答では、デバイスを停止し、I/O ポートと割り込みなど、デバイスで使用されている、ハードウェア リソースを解放します。
 
-Windows 2000 以降、stop IRP を再構成するために、デバイスのハードウェア リソースを解放するためだけに使用されます。 リソースの再構成後、デバイスが再起動します。 停止 IRP は削除 IRP の前身ではありません。 参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)どの PnP Irp の順序の詳細についてはデバイスに送信されます。
+Windows 2000 以降、stop IRP を再構成するために、デバイスのハードウェア リソースを解放するためだけに使用されます。 リソースの再構成後、デバイスが再起動します。 停止 IRP は削除 IRP の前身ではありません。 参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)どの PnP Irp の順序の詳細についてはデバイスに送信されます。
 
 Windows 98 で/Me 停止 IRP のデバイスを無効にされていると失敗した開始後にも使用します。 これらのオペレーティング システム上で実行される WDM ドライバーは、デバイスを停止、任意の受信の I/O は失敗を無効にしておよび他のユーザー モード インターフェイスを登録解除する必要があります。
 
 ドライバーでは、この IRP が失敗する必要があります。 ドライバーは、デバイスのハードウェア リソースを解放できない場合に、上記のクエリ停止 IRP が失敗する必要があります。
 
-参照してください[デバイスを停止する](https://msdn.microsoft.com/library/windows/hardware/ff563868)処理の詳細については Irp を停止します。
+参照してください[デバイスを停止する](https://docs.microsoft.com/windows-hardware/drivers/kernel/stopping-a-device)処理の詳細については Irp を停止します。
 
 **この IRP を送信します。**
 
@@ -89,9 +89,9 @@ Windows 98 で/Me 停止 IRP のデバイスを無効にされていると失敗
 
 [**IRP\_MN\_START\_DEVICE**](irp-mn-start-device.md)
 
-[**IoSetDeviceInterfaceState**](https://msdn.microsoft.com/library/windows/hardware/ff549700)
+[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)
 
-[**IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506)
+[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)
 
  
 

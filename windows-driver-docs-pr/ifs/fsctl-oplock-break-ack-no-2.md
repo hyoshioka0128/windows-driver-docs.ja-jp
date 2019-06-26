@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2885de10de1e1d9c31986ce23b5af9f853e4bff5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 585b9e40204b95ed87ec882ec712cb5ee0fa3038
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372734"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380099"
 ---
 # <a name="fsctloplockbreakackno2-control-code"></a>FSCTL\_OPLOCK\_中断\_ACK\_いいえ\_2 制御コード
 
@@ -28,7 +28,7 @@ ms.locfileid: "63372734"
 
 クライアント アプリケーションでは、このコントロールのコードを oplock が受信確認し、oplock がレベル 2 の中断されたレベル 1 の oplock の場合は、そのたくないレベル 2 oplock を示すために送信します。
 
-ミニフィルターを呼び出し、この制御コードを処理する[ **FltOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff543398)次のパラメーターを使用します。 ファイル システムまたはレガシ フィルター ドライバーを呼び出す[ **FsRtlOplockFsctrl**](https://msdn.microsoft.com/library/windows/hardware/ff547112)します。
+ミニフィルターを呼び出し、この制御コードを処理する[ **FltOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltoplockfsctrl)次のパラメーターを使用します。 ファイル システムまたはレガシ フィルター ドライバーを呼び出す[ **FsRtlOplockFsctrl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)します。
 
 便宜的ロックおよび FSCTL についての詳細については\_OPLOCK\_中断\_ACK\_いいえ\_2 制御コードを Microsoft Windows SDK のマニュアルを参照してください。
 
@@ -38,10 +38,10 @@ ms.locfileid: "63372734"
 ファイルの oplock の不透明なオブジェクトのポインター。
 
 <a href="" id="callbackdata"></a>*ここ*  
-[**FltOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff543398)のみです。 コールバック データ ([**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)) IRP の構造\_MJ\_ファイル\_システム\_コントロール FSCTL要求。 *FsControlCode*操作のパラメーターに FSCTL をする必要があります\_OPLOCK\_中断\_ACK\_いいえ\_2。
+[**FltOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltoplockfsctrl)のみです。 コールバック データ ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) IRP の構造\_MJ\_ファイル\_システム\_コントロール FSCTL要求。 *FsControlCode*操作のパラメーターに FSCTL をする必要があります\_OPLOCK\_中断\_ACK\_いいえ\_2。
 
 <a href="" id="irp"></a>*Irp*  
-[**FsRtlOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff547112)のみです。 IRP の IRP\_MJ\_ファイル\_システム\_コントロール FSCTL 要求。 *FsControlCode*操作のパラメーターに FSCTL をする必要があります\_OPLOCK\_中断\_ACK\_いいえ\_2。
+[**FsRtlOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)のみです。 IRP の IRP\_MJ\_ファイル\_システム\_コントロール FSCTL 要求。 *FsControlCode*操作のパラメーターに FSCTL をする必要があります\_OPLOCK\_中断\_ACK\_いいえ\_2。
 
 <a href="" id="opencount"></a>*OpenCount*  
 この操作では使用されません。0 に設定します。
@@ -49,9 +49,9 @@ ms.locfileid: "63372734"
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff543398) FLT は常に返します\_PREOP\_この操作を完了します。
+[**FltOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltoplockfsctrl) FLT は常に返します\_PREOP\_この操作を完了します。
 
-[**FsRtlOplockFsctrl** ](https://msdn.microsoft.com/library/windows/hardware/ff547112)この操作は次の NTSTATUS の値を返します。
+[**FsRtlOplockFsctrl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)この操作は次の NTSTATUS の値を返します。
 
 <table>
 <colgroup>
@@ -60,7 +60,7 @@ ms.locfileid: "63372734"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -97,13 +97,13 @@ ms.locfileid: "63372734"
 ## <a name="see-also"></a>関連項目
 
 
-[**FLT\_コールバック\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
+[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
 [**FLT\_IRP のパラメーター\_MJ\_ファイル\_システム\_コントロール**](flt-parameters-for-irp-mj-file-system-control.md)
 
-[**FltOplockFsctrl**](https://msdn.microsoft.com/library/windows/hardware/ff543398)
+[**FltOplockFsctrl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltoplockfsctrl)
 
 [**FSCTL\_OPBATCH\_ACK\_CLOSE\_PENDING**](fsctl-opbatch-ack-close-pending.md)
 
@@ -119,7 +119,7 @@ ms.locfileid: "63372734"
 
 [**FSCTL\_要求\_OPLOCK\_レベル\_2**](fsctl-request-oplock-level-2.md)
 
-[**FsRtlOplockFsctrl**](https://msdn.microsoft.com/library/windows/hardware/ff547112)
+[**FsRtlOplockFsctrl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrl)
 
 [**IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)
 

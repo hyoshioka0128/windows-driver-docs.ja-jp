@@ -4,12 +4,12 @@ description: Windows 8.1 と Windows の以降のバージョンは、Wi-Fi Dire
 ms.assetid: B2FC1293-F9E4-43A4-84BF-21EF8C3D27E0
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ef2a07b95369716d567bb4bfd4c8d3cb94ca63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 675b761a7371d5b26379f1b1735ab045cdbc57d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370386"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368966"
 ---
 # <a name="wi-fi-direct-printing"></a>Wi-Fi Direct 印刷
 
@@ -31,7 +31,7 @@ Windows Wi-Fi Direct 印刷サポートを実装する印刷デバイスは、�
 </colgroup>
 <thead>
 <tr class="header">
-<th>用語</th>
+<th>項目</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -85,7 +85,7 @@ Wi-Fi Direct 印刷サポートに関する一般的な情報が記載されて�
 関連情報については、次のトピックを参照してください。
 
 [コンテナー Id の概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)
-[PnP-x:プラグ アンド プレイ Extensions for Windows 仕様](https://msdn.microsoft.com/windows/hardware/gg463082)
+[PnP-x:プラグ アンド プレイ Extensions for Windows 仕様](https://docs.microsoft.com/previous-versions/gg463082(v=msdn.10))
 [Wi-fi Alliance - Wi-Fi Direct 業界に関するホワイト ペーパー](https://go.microsoft.com/fwlink/p/?LinkId=784967)
  
 

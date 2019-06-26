@@ -4,12 +4,12 @@ description: Windows 8.1 では、UWP デバイス アプリは印刷ヘッド�
 ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20471a126d170cfbc779250a4d2dc6af3bf1d765
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1288d4566c91c52f74a8e31cab779be386144df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387924"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369355"
 ---
 # <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>UWP アプリのデバイスのプリンターのメンテナンスを実行する方法
 
@@ -25,7 +25,7 @@ C#のバージョン、[印刷ジョブの管理とプリンターの保守](htt
 ## <a name="span-idprintermaintenancespanspan-idprintermaintenancespanspan-idprintermaintenancespanprinter-maintenance"></a><span id="Printer_maintenance"></span><span id="printer_maintenance"></span><span id="PRINTER_MAINTENANCE"></span>プリンターのメンテナンス
 
 
-Windows 8.1 には、新しいデバイスのメンテナンスを実装するために使用できる、v4 プリンター ドライバーでのプリンター拡張機能のインターフェイスが導入されています。[**IPrinterBidiSetRequestCallback**](https://msdn.microsoft.com/library/windows/hardware/dn265385)、 [ **IPrinterExtensionAsyncOperation** ](https://msdn.microsoft.com/library/windows/hardware/dn265387) 、および[ **IPrinterQueue2** ](https://msdn.microsoft.com/library/windows/hardware/dn265389). これらのインターフェイスを使用すれば、デバイスとプロトコルに固有のコマンドに変換してから、プリンターに送信できるように、ポート モニターを双方向の要求を非同期的に送信できます。 詳細については、次を参照してください。[デバイスのメンテナンス (v4 プリンター ドライバー)](https://msdn.microsoft.com/library/windows/hardware/dn265274)します。
+Windows 8.1 には、新しいデバイスのメンテナンスを実装するために使用できる、v4 プリンター ドライバーでのプリンター拡張機能のインターフェイスが導入されています。[**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterbidisetrequestcallback)、 [ **IPrinterExtensionAsyncOperation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensionasyncoperation) 、および[ **IPrinterQueue2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2). これらのインターフェイスを使用すれば、デバイスとプロトコルに固有のコマンドに変換してから、プリンターに送信できるように、ポート モニターを双方向の要求を非同期的に送信できます。 詳細については、次を参照してください。[デバイスのメンテナンス (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)します。
 
 **ヒント:**    C# JavaScript アプリは COM Api と直接動作できません。 作成する場合、C#または JavaScript UWP デバイス アプリ、プリンターの拡張機能ライブラリを使用して、これらのインターフェイス (このトピックで示す) にアクセスします。
 
@@ -102,7 +102,7 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**ヒント:**  の詳細については、`PrinterEnumeration`と`PrinterInfo`クラスを参照してください、 **PrinterEnumeration.cs**ファイル。
+**ヒント:**   の詳細については、`PrinterEnumeration`と`PrinterInfo`クラスを参照してください、 **PrinterEnumeration.cs**ファイル。
 
  
 
@@ -211,7 +211,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 次の手順では、アプリをビルドし、デバイスのメタデータをインストールします。
 
 1.  テスト署名を有効にします。
-    1.  開始、**デバイス メタデータの作成ウィザード**から *%programfiles (x86) %*\\Windows キット\\8.1\\bin\\をダブルクリックして、x86**DeviceMetadataWizard.exe**
+    1.  開始、**デバイス メタデータの作成ウィザード**から *%programfiles (x86) %* \\Windows キット\\8.1\\bin\\をダブルクリックして、x86**DeviceMetadataWizard.exe**
     2.  **ツール**メニューの **テスト署名を有効にする**します。
 
 2.  コンピューターを再起動します
@@ -223,7 +223,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 
      
 
-    1.  場合、**デバイス メタデータの作成ウィザード**が開くまだ、開始から *%programfiles (x86) %*\\Windows キット\\8.1\\bin\\x86 により、ダブルクリック**DeviceMetadataWizard.exe**します。
+    1.  場合、**デバイス メタデータの作成ウィザード**が開くまだ、開始から *%programfiles (x86) %* \\Windows キット\\8.1\\bin\\x86 により、ダブルクリック**DeviceMetadataWizard.exe**します。
     2.  クリックして**デバイス メタデータの編集**します。 これからは、既存のデバイス メタデータ パッケージを編集できます。
     3.  **オープン** ダイアログ ボックスで、UWP デバイス アプリに関連付けられている、デバイス メタデータ パッケージを見つけます。 (これが、 **devicemetadata ms**ファイル拡張子)。
     4.  **指定 UWP デバイスのアプリ情報** ページで、Microsoft Store アプリの情報を入力、 **UWP デバイス アプリ**ボックス。 をクリックして**インポート UWP アプリのマニフェスト ファイル**自動的に入力する、**パッケージ名**、**パブリッシャー名**と**UWP アプリの ID**します。
@@ -237,7 +237,7 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[デバイスのメンテナンス (v4 プリンター ドライバー)](https://msdn.microsoft.com/library/windows/hardware/dn265274)
+[デバイスのメンテナンス (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
 
 [V4 印刷ドライバーの開発](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 

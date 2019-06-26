@@ -12,12 +12,12 @@ api_type:
 - COM
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9276b12ec7d0b8e9c5238bc526f2d66b518e02a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad9797ed32f6342c250075053b59930097a07844
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349144"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368913"
 ---
 # <a name="removevirtualport-method"></a>RemoveVirtualPort メソッド
 
@@ -37,7 +37,7 @@ void RemoveVirtualPort(
 <a name="parameters"></a>パラメーター
 ----------
 
-*WWPN\[8\]*   
+*WWPN\[8\]*    
 削除する仮想ポートのワールド ワイド ポート名。
 
 *状態*   
@@ -51,7 +51,7 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[NPIV 状態コード](https://msdn.microsoft.com/library/windows/hardware/dn386176)
+[NPIV 状態コード](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn386176(v=vs.85))
 
  
 

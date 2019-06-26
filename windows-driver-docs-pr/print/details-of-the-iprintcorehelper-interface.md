@@ -6,12 +6,12 @@ keywords:
 - IPrintCoreHelper
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8d4904bb4c27f071dd8290bf4c9fd6b2bc83aec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c130c1d466541f4ed047fb61b1998103a1aa218e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352990"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382045"
 ---
 # <a name="details-of-the-iprintcorehelper-interface"></a>IPrintCoreHelper インターフェイスの詳細
 
@@ -20,7 +20,7 @@ ms.locfileid: "63352990"
 
 -   **IPrintCoreHelper**インターフェイスがありません、 **QuerySimulatedCapabilities**メソッド。 代わりに、 **IPrintCoreHelper**インターフェイスは、明確に定義されたと認識可能な方法で定期的機能とオプションの一覧にシミュレートされた機能をマップします。
 
--   **IPrintCoreHelper**インターフェイスを渡すため、呼び出し元がよく寄せられる、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)の代わりに構造体、 [ **OEMUIOBJ**](https://msdn.microsoft.com/library/windows/hardware/ff559571)構造体。
+-   **IPrintCoreHelper**インターフェイスを渡すため、呼び出し元がよく寄せられる、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)の代わりに構造体、 [ **OEMUIOBJ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_oemuiobj)構造体。
 
 使用する場合、 **IPrintCoreHelper**インターフェイスまたはそこから継承するインターフェイスでは、次の点をする必要があります。
 

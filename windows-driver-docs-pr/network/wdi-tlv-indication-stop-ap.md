@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_INDICATION_STOP_AP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc35b827bccd41c052bf27a34e6a568eb300949
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7087e406b044010d4ebf48c3838c7720140d347f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380775"
 ---
 # <a name="wditlvindicationstopap"></a>WDI\_TLV\_INDICATION\_停止\_アジア太平洋
 
@@ -33,11 +33,11 @@ Uint32 型のサイズをバイト単位で。
 
 | 型   | 説明                                                                                                  |
 |--------|--------------------------------------------------------------------------------------------------------------|
-| UINT32 | アジア太平洋の停止の理由です。 参照してください[ **WDI\_停止\_AP\_理由**](https://msdn.microsoft.com/library/windows/hardware/dn926116)の考えられる理由の値。 |
+| UINT32 | アジア太平洋の停止の理由です。 参照してください[ **WDI\_停止\_AP\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_stop_ap_reason)の考えられる理由の値。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -64,7 +64,7 @@ Uint32 型のサイズをバイト単位で。
 ## <a name="see-also"></a>関連項目
 
 
-[NDIS\_STATUS\_WDI\_INDICATION\_STOP\_AP](https://msdn.microsoft.com/library/windows/hardware/dn925661)
+[NDIS\_STATUS\_WDI\_INDICATION\_STOP\_AP](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-stop-ap)
 
  
 

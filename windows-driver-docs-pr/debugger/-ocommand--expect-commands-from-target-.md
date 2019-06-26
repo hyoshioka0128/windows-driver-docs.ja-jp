@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fed3a43c22ade7994ff92ebd3df1bbf8a32b470
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fa9315c0da45e0fd15e150745fb3e0bb01c7ca5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334439"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362448"
 ---
 # <a name="ocommand-expect-commands-from-target"></a>.ocommand (ターゲットからコマンドを受け取る)
 
@@ -67,18 +67,18 @@ ms.locfileid: "63334439"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-詳細については[ **OutputDebugString** ](https://msdn.microsoft.com/library/windows/desktop/aa363362)と、デバッガーと通信するその他のユーザー モード関数は、Microsoft Windows SDK のマニュアルを参照してください。
+詳細については[ **OutputDebugString** ](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)と、デバッガーと通信するその他のユーザー モード関数は、Microsoft Windows SDK のマニュアルを参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
 使用する場合、 **.ocommand**パラメーターを指定せずコマンドと、デバッガーは、現在のコマンド プレフィックス文字列を表示します。 既存の文字列をクリアする **.ocommand-d**します。
 
-すべてターゲットの出力をコマンドのプレフィックス文字列を設定したら、(の内容など、 [ **OutputDebugString** ](https://msdn.microsoft.com/library/windows/desktop/aa363362)コマンド) がスキャンされます。 この出力は、コマンドのプレフィックス文字列で始まっている場合、プレフィックス文字列を次の出力のテキストはデバッガー コマンド文字列として扱われを実行します。 このテキストが実行されたときにコマンド文字列は表示されません。
+すべてターゲットの出力をコマンドのプレフィックス文字列を設定したら、(の内容など、 [ **OutputDebugString** ](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)コマンド) がスキャンされます。 この出力は、コマンドのプレフィックス文字列で始まっている場合、プレフィックス文字列を次の出力のテキストはデバッガー コマンド文字列として扱われを実行します。 このテキストが実行されたときにコマンド文字列は表示されません。
 
 ターゲットを含めることができます、 [ **.echo (エコー コメント)** ](-echo--echo-comment-.md)メッセージを追加する場合、出力文字列にコマンドします。 プレフィックス文字列で始まらないターゲットの出力は、通常どおりに表示されます。
 
-コマンド内のコマンドの後に文字列が実行されたら、最後のコマンドがない限り、デバッガーに分割、ターゲットは[ **g (移動)**](g--go-.md)します。
+コマンド内のコマンドの後に文字列が実行されたら、最後のコマンドがない限り、デバッガーに分割、ターゲットは[ **g (移動)** ](g--go-.md)します。
 
 コマンドのプレフィックス文字列とターゲットの出力の比較では、大文字小文字を区別しません。 (ただし、後続の使用 **.ocommand**保持ケースで入力した文字列の表示)。
 

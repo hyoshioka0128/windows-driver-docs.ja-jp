@@ -4,19 +4,19 @@ description: Windows Display Driver Model (WDDM) ドライバーは、ハイブ�
 ms.assetid: ECBB0AA7-50C2-41C8-9DC6-6EEFC5CEEB15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b08b9d2b3c7fbaecb9d10b7784b10bd81f8291
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea3970fae802be698797d295a53192fae0c02b3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389086"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373571"
 ---
 # <a name="span-iddisplayusingcross-adapterresourcesinahybridsystemspanusing-cross-adapter-resources-in-a-hybrid-system"></a><span id="display.using_cross-adapter_resources_in_a_hybrid_system"></span>ハイブリッド システムでクロス アダプター リソースの使用
 
 
 Windows Display Driver Model (WDDM) ドライバーをサポートできる Windows 8.1 以降、*ハイブリッド システム*ここで、*クロス アダプター リソース*統合の GPU と、独立した GPU の間で共有されると、アプリケーションは、アプリケーションのニーズに応じて、いずれかの GPU 上で実行できます。 オペレーティング システムとドライバーをまとめて、GPU でアプリケーションを実行する必要がありますを決定します。
 
-ディスプレイのミニポート ドライバーはクロス アダプター リソースのサポートを設定して express する必要があります、 **CrossAdapterResource**のメンバー、 [ **DXGK\_VIDMMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff562072)構造体。
+ディスプレイのミニポート ドライバーはクロス アダプター リソースのサポートを設定して express する必要があります、 **CrossAdapterResource**のメンバー、 [ **DXGK\_VIDMMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidmmcaps)構造体。
 
 ドライバーは、割り当ての種類に応じて異なる方法で情報を取得します。 ユーザー モードのディスプレイ ドライバーがプライマリ フラグ、ビデオのネットワーク (VidPN) 存在するソース ID、リフレッシュ レート、および回転など、プライマリの作成時に、通常提供される情報を取得、割り当てが、従来の全画面表示のプライマリの場合は、情報。 ただし、割り当てが、直接に反転するプライマリの場合は、クロス アダプターの割り当ては、プライマリとして使用することがユーザー モードのディスプレイ ドライバーは、プライマリが作成されるときに提供される一般的な情報を得られません。 また、ここでは、個別のユーザー モードのディスプレイ ドライバー プライマリに関する情報を受け取るが検証されない必要があります。 統合されたドライバーは、プライマリであるかを示す情報を受信しません。
 

@@ -4,12 +4,12 @@ description: 複数の PDP コンテキストを使用したアプリの開発
 ms.assetid: 6a977a69-397d-4922-890d-1810dd54dff4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ae541384047ff1741fa50258360dc7c4fea8ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19e2b03402ca37669dfa61ab392d1cb59ee28dfb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380305"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381501"
 ---
 # <a name="developing-apps-using-multiple-pdp-contexts"></a>複数の PDP コンテキストを使用したアプリの開発
 
@@ -46,7 +46,7 @@ Premium サービスを有効にするのには、複数の PDP コンテキス�
 
 UWP のモバイル ブロード バンド アプリでは、特別な PDP コンテキストをアクティブ化し、データのトラフィックをルーティングする規則を指定する複数の PDP コンテキストを利用できます。 これらのアプリでは、特定の送信先のまたはすべてのデータ トラフィックのルールを作成できます。
 
-モバイル ブロード バンド アプリは、ネットワークとデータを交換する必要がある、使用可能な接続されたネットワークを確認します。 モバイル ブロード バンド アプリにこれらのネットワークのいずれかの特別な規則がある場合、特別な PDP コンテキストを開く、接続マネージャー API を使用します。 この接続が成功した場合は、PDP コンテキストはこの接続のルーティング規則を提供し、ネットワーク Api を使用してデータを転送します。 モバイル ブロード バンド アプリはこの手順を繰り返しますを受信した場合、 [ **NetworkStatusChanged** ](https://msdn.microsoft.com/library/windows/apps/br207299)イベントをすべての接続が変更されたかどうかと、新しい接続の PDP コンテキストを開く必要があるかどうかを参照してください。
+モバイル ブロード バンド アプリは、ネットワークとデータを交換する必要がある、使用可能な接続されたネットワークを確認します。 モバイル ブロード バンド アプリにこれらのネットワークのいずれかの特別な規則がある場合、特別な PDP コンテキストを開く、接続マネージャー API を使用します。 この接続が成功した場合は、PDP コンテキストはこの接続のルーティング規則を提供し、ネットワーク Api を使用してデータを転送します。 モバイル ブロード バンド アプリはこの手順を繰り返しますを受信した場合、 [ **NetworkStatusChanged** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged)イベントをすべての接続が変更されたかどうかと、新しい接続の PDP コンテキストを開く必要があるかどうかを参照してください。
 
 ![図 2](images/mb-pdp-fig2.jpg)
 
@@ -56,10 +56,10 @@ UWP のモバイル ブロード バンド アプリでは、特別な PDP コ�
 
 ### <a name="span-idhttp-basedapisspanspan-idhttp-basedapisspanspan-idhttp-basedapisspanhttp-based-apis"></a><span id="HTTP-based_APIs"></span><span id="http-based_apis"></span><span id="HTTP-BASED_APIS"></span>HTTP ベースの Api
 
-HTTP ベースの Api など[ **XMLHTTPRequest**](https://msdn.microsoft.com/library/windows/apps/br229787)、 [IXHR2](https://msdn.microsoft.com/library/windows/desktop/hh831163)、 [ **Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)と[ **Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)、Api は、JQuery など、Windows HTTP プロトコルに基づくと、 [ **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)、特定のインターフェイスにバインドする機能はありません。 これらの Api の場合、Windows では、ポリシーを使用して、特別な PDP コンテキストへのデータのルーティングを処理します。 特別な PDP コンテキストがアクティブ化されると、アプリは、変換先および特別な PDP コンテキストに基づくルーティングの規則を指定できます。 宛先は、ドメイン名または video.fabrikam.com などの IP アドレスを指定できます。 contoso.com または 123.23.34.333 します。 ルーティング規則を指定するには、アプリで使用する場合、上記の HTTP Api のデータを転送する Windows は送信データ ルーティング ルールに基づいて特殊な PDP コンテキストにします。 アプリのデータ転送が完了するとは、特別な PDP コンテキストを切断する必要があり、ルートのポリシーを削除します。
+HTTP ベースの Api など[ **XMLHTTPRequest**](https://docs.microsoft.com/previous-versions/windows/apps/br229787(v=win.10))、 [IXHR2](https://docs.microsoft.com/previous-versions/windows/desktop/ixhr2/ixmlhttprequest2-portal)、 [ **Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication)と[ **Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)、Api は、JQuery など、Windows HTTP プロトコルに基づくと、 [ **Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)、特定のインターフェイスにバインドする機能はありません。 これらの Api の場合、Windows では、ポリシーを使用して、特別な PDP コンテキストへのデータのルーティングを処理します。 特別な PDP コンテキストがアクティブ化されると、アプリは、変換先および特別な PDP コンテキストに基づくルーティングの規則を指定できます。 宛先は、ドメイン名または video.fabrikam.com などの IP アドレスを指定できます。 contoso.com または 123.23.34.333 します。 ルーティング規則を指定するには、アプリで使用する場合、上記の HTTP Api のデータを転送する Windows は送信データ ルーティング ルールに基づいて特殊な PDP コンテキストにします。 アプリのデータ転送が完了するとは、特別な PDP コンテキストを切断する必要があり、ルートのポリシーを削除します。
 
 **注**  
-[**バック グラウンド転送 Api** ](https://msdn.microsoft.com/library/windows/apps/br207242)と[HTTP クライアント (C#) Api](https://msdn.microsoft.com/library/windows/apps/system.net.http.httpclient.aspx)ルーティング ポリシーを使用することはできません。
+[**バック グラウンド転送 Api** ](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer)と[HTTP クライアント (C#) Api](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118))ルーティング ポリシーを使用することはできません。
 
  
 
@@ -67,7 +67,7 @@ HTTP ベースの Api など[ **XMLHTTPRequest**](https://msdn.microsoft.com/lib
 
 ### <a name="span-idsocket-basedapisspanspan-idsocket-basedapisspanspan-idsocket-basedapisspansocket-based-apis"></a><span id="Socket-based_APIs"></span><span id="socket-based_apis"></span><span id="SOCKET-BASED_APIS"></span>ソケット ベースの Api
 
-ソケット ベースの Api で使用できる、 [ **Windows.Networking.Sockets** ](https://msdn.microsoft.com/library/windows/apps/br226960) TCP、UDP、およびストリームのソケットなどの名前空間は、特定のインターフェイスにバインドするためのメカニズムを提供します。 アプリでは、ソケット Api を使用する場合は、特別な PDP コンテキストへのルーティングのデータの特定のインターフェイスにバインドする必要があります。 特別な PDP コンテキストがアクティブ化される、 [ **AcquireConnectionAsync** ](https://msdn.microsoft.com/library/windows/apps/dn266103) API アプリにインターフェイスの情報を提供します。 この情報を使用して特定のインターフェイスにバインドし、データ転送を開始できです。
+ソケット ベースの Api で使用できる、 [ **Windows.Networking.Sockets** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) TCP、UDP、およびストリームのソケットなどの名前空間は、特定のインターフェイスにバインドするためのメカニズムを提供します。 アプリでは、ソケット Api を使用する場合は、特別な PDP コンテキストへのルーティングのデータの特定のインターフェイスにバインドする必要があります。 特別な PDP コンテキストがアクティブ化される、 [ **AcquireConnectionAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_) API アプリにインターフェイスの情報を提供します。 この情報を使用して特定のインターフェイスにバインドし、データ転送を開始できです。
 
 ![図 4](images/mb-pdp-fig3.jpg)
 
@@ -75,13 +75,13 @@ HTTP ベースの Api など[ **XMLHTTPRequest**](https://msdn.microsoft.com/lib
 
 Windows 8.1 および Windows 10 では、複数の PDP コンテキストをサポートするために、次の Api が追加します。
 
--   [**CellularApnContext** ](https://msdn.microsoft.com/library/windows/apps/dn266056)このクラスには、ネットワーク上のアクセス ポイントを指定するためのプロパティが含まれています。 **CellularApnContext**でオブジェクトが渡される、 [ **AcquireConnectionAsync** ](https://msdn.microsoft.com/library/windows/apps/dn266103)呼び出しを特定のアクセス ポイントへの接続を確立します。
+-   [**CellularApnContext** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.CellularApnContext)このクラスには、ネットワーク上のアクセス ポイントを指定するためのプロパティが含まれています。 **CellularApnContext**でオブジェクトが渡される、 [ **AcquireConnectionAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_)呼び出しを特定のアクセス ポイントへの接続を確立します。
 
--   [**ConnectivityManager::AcquireConnectionAsync** ](https://msdn.microsoft.com/library/windows/apps/dn266103)この API は、指定のアクセス ポイント名 (APN) または PDP コンテキストの新しい接続をアクティブにします。 この非同期メソッドは、適切な構成情報と、特定の APN または PDP コンテキストへの接続を要求するアプリを使用します。 特別な APN をアクティブにした後は、Windows とアプリに新しい仮想インターフェイスとして表示されます。
+-   [**ConnectivityManager::AcquireConnectionAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_)この API は、指定のアクセス ポイント名 (APN) または PDP コンテキストの新しい接続をアクティブにします。 この非同期メソッドは、適切な構成情報と、特定の APN または PDP コンテキストへの接続を要求するアプリを使用します。 特別な APN をアクティブにした後は、Windows とアプリに新しい仮想インターフェイスとして表示されます。
 
--   [**ConnectivityManager::AddHttpRoutePolicy** ](https://msdn.microsoft.com/library/windows/apps/dn266105)このメソッドは、ルーティングのデータに特別な PDP コンテキスト スタックの HTTP トラフィックで使用するポリシーを追加します。 アプリでは、ドメイン名と IP アドレス、および特殊な PDP コンテキストのプロファイルなどの変換先に基づくポリシーを指定できます。 Windows の HTTP スタックは、アプリがポリシーを作成したら、データを特別な PDP コンテキストにルーティングするため、ポリシーを使用します。
+-   [**ConnectivityManager::AddHttpRoutePolicy** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AddHttpRoutePolicy_Windows_Networking_Connectivity_RoutePolicy_)このメソッドは、ルーティングのデータに特別な PDP コンテキスト スタックの HTTP トラフィックで使用するポリシーを追加します。 アプリでは、ドメイン名と IP アドレス、および特殊な PDP コンテキストのプロファイルなどの変換先に基づくポリシーを指定できます。 Windows の HTTP スタックは、アプリがポリシーを作成したら、データを特別な PDP コンテキストにルーティングするため、ポリシーを使用します。
 
--   [**ConnectivityManager::RemoveHttpRoutePolicy** ](https://msdn.microsoft.com/library/windows/apps/dn266106)このメソッドは、以前に追加された HTTP ルーティング ポリシーを削除します。
+-   [**ConnectivityManager::RemoveHttpRoutePolicy** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_RemoveHttpRoutePolicy_Windows_Networking_Connectivity_RoutePolicy_)このメソッドは、以前に追加された HTTP ルーティング ポリシーを削除します。
 
 次のコードは、HTTP ベースのデータ転送にこれらの Api を使用する方法を示しています。
 
@@ -175,7 +175,7 @@ socket.close();
 currentConnectionSession.close();
 ```
 
-アプリを処理する必要があります[ **NetworkStatusChanged** ](https://msdn.microsoft.com/library/windows/apps/br207299)特別な PDP コンテキスト接続でネットワーク移行を処理するイベントです。
+アプリを処理する必要があります[ **NetworkStatusChanged** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged)特別な PDP コンテキスト接続でネットワーク移行を処理するイベントです。
 
 ### <a name="span-idscenariopremiummobilebroadbandappprovidesfreedataaccessusingspecialapnspanspan-idscenariopremiummobilebroadbandappprovidesfreedataaccessusingspecialapnspanspan-idscenariopremiummobilebroadbandappprovidesfreedataaccessusingspecialapnspanscenario-premium-mobile-broadband-app-provides-free-data-access-using-special-apn"></a><span id="Scenario__Premium_mobile_broadband_app_provides_free_data_access_using_special_APN"></span><span id="scenario__premium_mobile_broadband_app_provides_free_data_access_using_special_apn"></span><span id="SCENARIO__PREMIUM_MOBILE_BROADBAND_APP_PROVIDES_FREE_DATA_ACCESS_USING_SPECIAL_APN"></span>シナリオ:Premium モバイル ブロード バンド アプリは、特別な APN を使用して無料のデータ アクセスを提供します。
 
@@ -531,7 +531,7 @@ foreach (var connectionProfile in connectionProfiles)
 
 ![アプリのストリーミングのワークフロー](images/mb-pdp-fig6.jpg)
 
-使用することができます[Player Framework](http://playerframework.codeplex.com/)またはその他のビデオのフレームワークに基づいて、 [WinInet](https://msdn.microsoft.com/library/windows/desktop/aa385331) Api。
+使用することができます[Player Framework](https://archive.codeplex.com/?p=playerframework)またはその他のビデオのフレームワークに基づいて、 [WinInet](https://docs.microsoft.com/windows/desktop/WinInet/portal) Api。
 
 ## <a name="span-idinstantgospanspan-idinstantgospanspan-idinstantgospaninstantgo"></a><span id="InstantGo"></span><span id="instantgo"></span><span id="INSTANTGO"></span>InstantGo
 
@@ -556,23 +556,23 @@ InstantGo では、次のシナリオがサポートされています。
 
 -   バック グラウンド オーディオおよび音楽の再生
 
-InstantGo の詳細については、次を参照してください。 [InstantGo 概要](https://msdn.microsoft.com/library/windows/hardware/mt282515)します。
+InstantGo の詳細については、次を参照してください。 [InstantGo 概要](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby)します。
 
 モバイル ブロード バンド アプリは、これら InstantGo シナリオをいくつかの操作を有効にするための特別な PDP コンテキストを使用できます。 次のロジックを使用して範囲外であるため、切断されている場合は、特別な PDP コンテキストに再接続する必要があります。 デバイスがコネクト スタンバイ電源状態になったとき、Windows は 10 分後に特別な PDP コンテキストへのすべての接続を切断し、アプリをもう一度接続を要求する必要があります。
 
-バック グラウンドのモバイル ブロード バンド アプリでのネットワークを有効にする方法の詳細については、次を参照してください。[バック グラウンド タスクの概要](http://www.microsoft.com/download/details.aspx?id=27411)と[バック グラウンド ネットワーク](http://www.microsoft.com/download/details.aspx?id=28999)します。
+バック グラウンドのモバイル ブロード バンド アプリでのネットワークを有効にする方法の詳細については、次を参照してください。[バック グラウンド タスクの概要](https://www.microsoft.com/download/details.aspx?id=27411)と[バック グラウンド ネットワーク](https://www.microsoft.com/download/details.aspx?id=28999)します。
 
 ![instantgo with pdp context](images/mb-pdp-fig5.jpg)
 
 ### <a name="span-idaudiostreaminginbackgroundspanspan-idaudiostreaminginbackgroundspanspan-idaudiostreaminginbackgroundspanaudio-streaming-in-background"></a><span id="Audio_streaming_in_background"></span><span id="audio_streaming_in_background"></span><span id="AUDIO_STREAMING_IN_BACKGROUND"></span>バック グラウンドでストリーミング オーディオ
 
-オーディオのストリーミング アプリケーションでは、特別な PDP コンテキストを使用してバック グラウンドでと、コネクト スタンバイ電源状態でのオーディオことができます。 バック グラウンドでオーディオを再生する方法の詳細については、次を参照してください。[バック グラウンドでオーディオを再生する方法を](https://msdn.microsoft.com/library/windows/apps/hh700367)します。
+オーディオのストリーミング アプリケーションでは、特別な PDP コンテキストを使用してバック グラウンドでと、コネクト スタンバイ電源状態でのオーディオことができます。 バック グラウンドでオーディオを再生する方法の詳細については、次を参照してください。[バック グラウンドでオーディオを再生する方法を](https://docs.microsoft.com/previous-versions/windows/apps/hh700367(v=win.10))します。
 
 ### <a name="span-idreal-timecommunicationappsspanspan-idreal-timecommunicationappsspanspan-idreal-timecommunicationappsspanreal-time-communication-apps"></a><span id="Real-time_communication_apps"></span><span id="real-time_communication_apps"></span><span id="REAL-TIME_COMMUNICATION_APPS"></span>リアルタイム通信アプリ
 
-VoIP またはチャット アプリなどのリアルタイム通信アプリでは、特別な PDP コンテキストのトリガーをウェイク アップを受信できます。 ウェイク アップ トリガーには、時間、システムがコネクト スタンバイ電源状態の場合も含むすべてのトリガーされるように、アプリができます。 ウェイク アップ トリガーを有効にする方法の詳細については、次を参照してください。[バック グラウンド ネットワーク](http://www.microsoft.com/download/details.aspx?id=28999)します。
+VoIP またはチャット アプリなどのリアルタイム通信アプリでは、特別な PDP コンテキストのトリガーをウェイク アップを受信できます。 ウェイク アップ トリガーには、時間、システムがコネクト スタンバイ電源状態の場合も含むすべてのトリガーされるように、アプリができます。 ウェイク アップ トリガーを有効にする方法の詳細については、次を参照してください。[バック グラウンド ネットワーク](https://www.microsoft.com/download/details.aspx?id=28999)します。
 
-このシナリオを有効にするモバイル ブロード バンド デバイス必要があります wake on をサポートするフィルター PDP コンテキストが特別なで説明したように、[モバイル ブロード バンド インターフェイス モデル (MBIM) 仕様](https://msdn.microsoft.com/library/windows/hardware/dn265427)します。
+このシナリオを有効にするモバイル ブロード バンド デバイス必要があります wake on をサポートするフィルター PDP コンテキストが特別なで説明したように、[モバイル ブロード バンド インターフェイス モデル (MBIM) 仕様](https://docs.microsoft.com/windows-hardware/drivers/network/mb-interface-model)します。
 
 ## <a name="mobile-broadband-devices"></a>モバイル ブロードバンド デバイス
 

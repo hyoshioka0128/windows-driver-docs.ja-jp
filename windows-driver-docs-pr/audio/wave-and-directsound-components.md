@@ -18,12 +18,12 @@ keywords:
 - アプリケーションでは、wave WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2acbfc84da63ea183c31742ee8a0a3b108824356
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfb3775a0f32ce6b11da3e16ac504573ea82be2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328510"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364816"
 ---
 # <a name="wave-and-directsound-components"></a>Wave と DirectSound コンポーネント
 
@@ -31,7 +31,7 @@ ms.locfileid: "63328510"
 ## <span id="wave_and_directsound_components"></span><span id="WAVE_AND_DIRECTSOUND_COMPONENTS"></span>
 
 
-アプリケーション プログラムは、(入力) をキャプチャし、(出力) wave ストリームを表示するユーザー モードとカーネル モードのコンポーネントの組み合わせに依存します。 Wave ストリームがデータ形式はデジタル オーディオ ストリーム、 [ **WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff538799)または[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)構造体。
+アプリケーション プログラムは、(入力) をキャプチャし、(出力) wave ストリームを表示するユーザー モードとカーネル モードのコンポーネントの組み合わせに依存します。 Wave ストリームがデータ形式はデジタル オーディオ ストリーム、 [ **WAVEFORMATEX** ](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)または[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)構造体。
 
 アプリケーションは、次のいずれかを使用できますの波のレンダリングやキャプチャ ソフトウェア インターフェイス。
 
@@ -51,9 +51,9 @@ DirectSound と Windows のマルチ メディア wave 関数は、クライア�
 
 上記の図の左側にある表示コンポーネントが表示され、キャプチャ コンポーネントは、右側に表示されます。 これらは、ベンダーから提供されたコンポーネントであることを示すためには、wave ミニポート ドライバーを表すボックスが暗くなります。 他のコンポーネントの図には、システムが提供します。
 
-左上の図、wave レンダリング (または「wave アウト」) のアプリケーション インターフェイスを通じて、waveOut WDM オーディオ ドライバーに*Xxx*関数、ユーザー モードで実装される[WinMM システム コンポーネント](user-mode-wdm-audio-components.md#winmm_system_component)、Winmm.dll します。 アプリケーションは、ファイルと呼び出しから wave のブロックにオーディオ サンプルを読み取り、 [ **waveOutWrite** ](https://msdn.microsoft.com/library/windows/desktop/dd743876)それらをレンダリングする関数。
+左上の図、wave レンダリング (または「wave アウト」) のアプリケーション インターフェイスを通じて、waveOut WDM オーディオ ドライバーに*Xxx*関数、ユーザー モードで実装される[WinMM システム コンポーネント](user-mode-wdm-audio-components.md#winmm_system_component)、Winmm.dll します。 アプリケーションは、ファイルと呼び出しから wave のブロックにオーディオ サンプルを読み取り、 [ **waveOutWrite** ](https://docs.microsoft.com/previous-versions/dd743876(v=vs.85))それらをレンダリングする関数。
 
-ユーザー モードとカーネル モードの両方のコンポーネント (Wdmaud.drv と Wdmaud.sys) から成るの波形データをバッファーには、WDMAud、 [ **waveOutWrite** ](https://msdn.microsoft.com/library/windows/desktop/dd743876)呼び出しを wave のストリームを出力、 [KMixer システム ドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver)WDMAud の下の図に表示されます。
+ユーザー モードとカーネル モードの両方のコンポーネント (Wdmaud.drv と Wdmaud.sys) から成るの波形データをバッファーには、WDMAud、 [ **waveOutWrite** ](https://docs.microsoft.com/previous-versions/dd743876(v=vs.85))呼び出しを wave のストリームを出力、 [KMixer システム ドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver)WDMAud の下の図に表示されます。
 
 KMixer は、wave PCM 1 つまたは複数のソースからストリームし、wave PCM 形式でも、単一出力ストリームを形成する合成を受信するシステム コンポーネントです。
 
@@ -61,7 +61,7 @@ KMixer は、wave ポートおよびミニポート ドライバーが前の図�
 
 または、KMixer はによって制御される、USB オーディオ デバイスにその出力ストリームを渡すことができます、 [USBAudio クラスのシステム ドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver) (非表示の図)、WaveCyclic または WavePci デバイスではなく。
 
-アダプタのドライバを呼び出して WaveCyclic または WavePci ポート ドライバーのインスタンスを作成します[ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715)の GUID 値を持つ**CLSID\_PortWaveCyclic**または**CLSID\_PortWavePci**、それぞれします。
+アダプタのドライバを呼び出して WaveCyclic または WavePci ポート ドライバーのインスタンスを作成します[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)の GUID 値を持つ**CLSID\_PortWaveCyclic**または**CLSID\_PortWavePci**、それぞれします。
 
 上記の図の右側にあるは、波形データをファイルをキャプチャするアプリケーションをサポートするために必要なコンポーネントを示します。 "Wave in"は wave キャプチャ (または) のアプリケーションは、waveIn を通じて WDM オーディオ ドライバーと通信*Xxx*関数で、WinMM システム コンポーネントで実装されます。
 
@@ -73,7 +73,7 @@ Wave ポート ドライバーでは、直接、wave ストリーム KMixer ま�
 
 かどうかで USB デバイスまたは WaveCyclic または WavePci デバイスで wave ストリームをキャプチャしたらに関係なく KMixer は他のストリームとの混合は行われませんが、必要である場合、ストリームのサンプル レートの変換を実行します。 KMixer は、WDMAud システム ドライバーの半分 Wdmaud.sys、カーネル モードの結果として得られるストリームを出力します。 Wdmaud.drv が、waveIn によるアプリケーション プログラムを wave ストリームを出力する半分に、ユーザー モード*Xxx*関数で、Winmm.dll で実装されます。 最後に、図の上部にある、wave キャプチャ アプリケーション、wave データを書き込むファイル。
 
-Wave キャプチャ アプリケーションの呼び出し時に、 [ **waveInOpen** ](https://msdn.microsoft.com/library/windows/desktop/dd743847)キャプチャ ストリームを開く関数をそのコールバック ルーチンへのポインターを渡します。 Wave キャプチャ イベントが発生したときに、オペレーティング システムは、キャプチャ デバイスから wave サンプルの次のブロックを格納するバッファーをコールバック ルーチンを呼び出します。 コールバックに応答してでは、アプリケーションは、ファイルに次のウェーブ データ ブロックを書き込みます。
+Wave キャプチャ アプリケーションの呼び出し時に、 [ **waveInOpen** ](https://docs.microsoft.com/previous-versions/dd743847(v=vs.85))キャプチャ ストリームを開く関数をそのコールバック ルーチンへのポインターを渡します。 Wave キャプチャ イベントが発生したときに、オペレーティング システムは、キャプチャ デバイスから wave サンプルの次のブロックを格納するバッファーをコールバック ルーチンを呼び出します。 コールバックに応答してでは、アプリケーションは、ファイルに次のウェーブ データ ブロックを書き込みます。
 
 ### <a name="span-iddirectsoundcomponentsspanspan-iddirectsoundcomponentsspanspan-iddirectsoundcomponentsspandirectsound-components"></a><span id="DirectSound_Components"></span><span id="directsound_components"></span><span id="DIRECTSOUND_COMPONENTS"></span>DirectSound コンポーネント
 

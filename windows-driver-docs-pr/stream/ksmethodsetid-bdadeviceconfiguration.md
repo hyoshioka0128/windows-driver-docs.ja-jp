@@ -4,12 +4,12 @@ description: KSMETHODSETID\_BdaDeviceConfiguration
 ms.assetid: a0014869-2ea0-4f55-be3a-da1e624ad61c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ada463b308805a22d8fe4b6fdc28dfce4ff695e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f1f54f083881bc8dc856ce2a2909240b33aea99
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391521"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362632"
 ---
 # <a name="ksmethodsetidbdadeviceconfiguration"></a>KSMETHODSETID\_BdaDeviceConfiguration
 
@@ -38,7 +38,7 @@ BDA ミニドライバーが定義されていない場合、このメソッド�
 
 ### <a name="see-also"></a>関連項目
 
-[**BdaInitFilter**](https://msdn.microsoft.com/library/windows/hardware/ff556464)
+[**BdaInitFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdainitfilter)
 
  
 

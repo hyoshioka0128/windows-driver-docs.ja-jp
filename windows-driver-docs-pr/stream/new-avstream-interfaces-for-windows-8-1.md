@@ -4,12 +4,12 @@ description: AVStream ストリーミング メディア ドライバー イン�
 ms.assetid: 1D06A754-236B-441D-A0BB-A78B419270E9
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5757cf789163b01866878740c822b69456b8012f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a993e9c969075cf6d771bd7f5ad410d80ba1942f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363275"
 ---
 # <a name="new-avstream-interfaces-for-windows-81"></a>Windows 8.1 用の新しい AVStream インターフェイス
 
@@ -23,42 +23,42 @@ AVStream ストリーミング メディア ドライバー インターフェ�
 
 これらのデバイス ドライバー インターフェイス (Ddi) は、これらの拡張機能をサポートし、新規または更新。
 
--   [**KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET**](https://msdn.microsoft.com/library/windows/hardware/dn567560)
--   [**KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://msdn.microsoft.com/library/windows/hardware/dn567561)
--   [**KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW**](https://msdn.microsoft.com/library/windows/hardware/dn567562)
+-   [**KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)
+-   [**KSCAMERA\_EXTENDEDPROP\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_evcompensation)
+-   [**KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview)
 -   [**KSCAMERA\_EXTENDEDPROP\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 -   [**KSCAMERA\_EXTENDEDPROP\_PHOTOMODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_photomode)
 -   [**KSCAMERA\_EXTENDEDPROP\_値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)
--   [**KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING**](https://msdn.microsoft.com/library/windows/hardware/dn567566)
+-   [**KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)
 -   [**KSCAMERA\_MAXVIDEOFPS\_FORPHOTORES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_maxvideofps_forphotores)
--   [KSEVENTSETID\_VolumeLimit](https://msdn.microsoft.com/library/windows/hardware/dn567568)
--   [**KSEVENT\_VOLUMELIMIT\_CHANGED**](https://msdn.microsoft.com/library/windows/hardware/dn567569)
--   [KSPROPERTYSETID\_ExtendedCameraControl](https://msdn.microsoft.com/library/windows/hardware/dn567570) (これらのプロパティが含まれています)。
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_CAMERAANGLEOFFSET**](https://msdn.microsoft.com/library/windows/hardware/dn567571)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_EVCOMPENSATION**](https://msdn.microsoft.com/library/windows/hardware/dn567572)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_EXPOSUREMODE**](https://msdn.microsoft.com/library/windows/hardware/dn567573)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_FIELDOFVIEW**](https://msdn.microsoft.com/library/windows/hardware/dn567574)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_FLASHMODE**](https://msdn.microsoft.com/library/windows/hardware/dn567575)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSMODE**](https://msdn.microsoft.com/library/windows/hardware/dn567576)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_ISO**](https://msdn.microsoft.com/library/windows/hardware/dn567577)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_MAXVIDFPS\_PHOTORES**](https://msdn.microsoft.com/library/windows/hardware/dn567578)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_OPTIMIZATIONHINT**](https://msdn.microsoft.com/library/windows/hardware/dn567579)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOFRAMERATE**](https://msdn.microsoft.com/library/windows/hardware/dn567580)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMAXFRAMERATE**](https://msdn.microsoft.com/library/windows/hardware/dn567581)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMODE**](https://msdn.microsoft.com/library/windows/hardware/dn567582)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOTHUMBNAIL**](https://msdn.microsoft.com/library/windows/hardware/dn567583)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOTRIGGERTIME**](https://msdn.microsoft.com/library/windows/hardware/dn567584)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE**](https://msdn.microsoft.com/library/windows/hardware/dn567585)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_TORCHMODE**](https://msdn.microsoft.com/library/windows/hardware/dn567586)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_WARMSTART という**](https://msdn.microsoft.com/library/windows/hardware/dn567587)
-    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_WHITEBALANCEMODE**](https://msdn.microsoft.com/library/windows/hardware/dn567588)
--   [**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**](https://msdn.microsoft.com/library/windows/hardware/dn567589)
--   [**KSPROPERTY\_CAMERACONTROL\_イメージ\_PIN\_機能\_S** ](https://msdn.microsoft.com/library/windows/hardware/jj553707) (新しい**KSPROPERTY\_CAMERACONTROL\_イメージ\_PIN\_機能\_シーケンス\_排他\_WITH\_レコード**メンバー)
--   [**KSP\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff566722) (新しい**フラグ**メンバー)
--   [**KSPROPERTY\_CAMERACONTROL\_リージョン\_の\_関心\_S** ](https://msdn.microsoft.com/library/windows/hardware/jj151592) (新しい**構成**メンバー)
--   [**KS\_VideoControlFlags** ](https://msdn.microsoft.com/library/windows/hardware/ff567696) (新しい**KS\_VideoControlFlag\_StartPhotoSequenceCapture**と**KS\_VideoControlFlag\_StopPhotoSequenceCapture**定数値)
--   [**KS\_FRAME\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff567645) (new **FrameCompletionNumber** member)
--   メモも追加[KSPROPERTYSETID\_ExtendedCameraControl](https://msdn.microsoft.com/library/windows/hardware/dn567570)プロパティ設定で表示されている[ビデオ キャプチャ ミニドライバー プロパティ セット](https://msdn.microsoft.com/library/windows/hardware/ff568714)します。
+-   [KSEVENTSETID\_VolumeLimit](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-volumelimit)
+-   [**KSEVENT\_VOLUMELIMIT\_CHANGED**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-volumelimit-changed)
+-   [KSPROPERTYSETID\_ExtendedCameraControl](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol) (これらのプロパティが含まれています)。
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_CAMERAANGLEOFFSET**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-cameraangleoffset)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_EVCOMPENSATION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-evcompensation)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_EXPOSUREMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-exposuremode)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_FIELDOFVIEW**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-fieldofview)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_FLASHMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-flashmode)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_FOCUSMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-focusmode)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_ISO**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-iso)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_MAXVIDFPS\_PHOTORES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-maxvidfps-photores)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_OPTIMIZATIONHINT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-optimizationhint)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOFRAMERATE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-photoframerate)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMAXFRAMERATE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-photomaxframerate)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-photomode)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOTHUMBNAIL**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-photothumbnail)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOTRIGGERTIME**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-phototriggertime)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_SCENEMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-scenemode)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_TORCHMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-torchmode)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_WARMSTART という**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-warmstart)
+    -   [**KSPROPERTY\_CAMERACONTROL\_拡張\_WHITEBALANCEMODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-whitebalancemode)
+-   [**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat2)
+-   [**KSPROPERTY\_CAMERACONTROL\_イメージ\_PIN\_機能\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_image_pin_capability_s) (新しい**KSPROPERTY\_CAMERACONTROL\_イメージ\_PIN\_機能\_シーケンス\_排他\_WITH\_レコード**メンバー)
+-   [**KSP\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin) (新しい**フラグ**メンバー)
+-   [**KSPROPERTY\_CAMERACONTROL\_リージョン\_の\_関心\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_region_of_interest_s) (新しい**構成**メンバー)
+-   [**KS\_VideoControlFlags** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ks_videocontrolflags) (新しい**KS\_VideoControlFlag\_StartPhotoSequenceCapture**と**KS\_VideoControlFlag\_StopPhotoSequenceCapture**定数値)
+-   [**KS\_FRAME\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_frame_info) (new **FrameCompletionNumber** member)
+-   メモも追加[KSPROPERTYSETID\_ExtendedCameraControl](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol)プロパティ設定で表示されている[ビデオ キャプチャ ミニドライバー プロパティ セット](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-minidriver-property-sets)します。
 
  
 

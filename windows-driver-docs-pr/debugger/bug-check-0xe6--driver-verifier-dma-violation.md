@@ -5,7 +5,7 @@ ms.assetid: badf8948-356c-4728-b34e-02f1638630a6
 keywords:
 - バグ チェック 0xE6 DRIVER_VERIFIER_DMA_VIOLATION
 - DRIVER_VERIFIER_DMA_VIOLATION
-ms.date: 03/26/2019
+ms.date: 05/07/2019
 topic_type:
 - apiref
 api_name:
@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fc56ca19fa671aa379caf40f095c2f915fb79566
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: deac160416738fceba842b4cd880d0e20d68233e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367111"
 ---
 # <a name="bug-check-0xe6-driververifierdmaviolation"></a>バグ チェック 0xE6:ドライバー\_VERIFIER\_DMA\_違反
 
@@ -26,7 +26,7 @@ ms.locfileid: "63372760"
 ドライバー\_VERIFIER\_DMA\_違反のバグ チェックが 0x000000E6 の値を持ちます。 これは、すべての Driver Verifier のバグ チェック コード**DMA の検証**違反。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="driververifierdmaviolation-parameters"></a>ドライバー\_VERIFIER\_DMA\_違反パラメーター
@@ -319,7 +319,7 @@ ms.locfileid: "63372760"
 
 ドライバー開発者の場合は、このバグ チェックで得られた情報を使用して、コードで、バグを修正します。
 
-Driver Verifier **DMA の検証**オプションは、Windows XP およびそれ以降のバージョンで使用できるのみです。 詳細については、Driver Verifier は、Windows ドライバー キットを参照してください。
+Driver Verifier の詳細については、次を参照してください。 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
 
  
 

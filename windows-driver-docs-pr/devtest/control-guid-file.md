@@ -8,12 +8,12 @@ keywords:
 - ctl ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a3288402a4bb5d59047fa389c521fae3acb6bcd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db5c212feb92780f3a19423fc0c53067965d8c58
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371590"
 ---
 # <a name="control-guid-file"></a>コントロール GUID ファイル
 
@@ -27,7 +27,7 @@ ControlGUID GUIDFriendlyName
 
 トレース プロバイダーの開発者は、通常、このファイルを指定します。 トレース プロバイダーのソース コードがあれば、GUID と GUID のフレンドリ名を検索し、制御 GUID ファイルを作成できます。
 
-ソース コードでの定義を見つけ、 [WPP\_コントロール\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)マクロ。 GUID 値と GUID のフレンドリ名が表示されます次の例では太字です。
+ソース コードでの定義を見つけ、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロ。 GUID 値と GUID のフレンドリ名が表示されます次の例では太字です。
 
 ```C
 #define WPP_CONTROL_GUIDS \

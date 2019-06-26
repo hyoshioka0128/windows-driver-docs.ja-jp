@@ -6,12 +6,12 @@ keywords:
 - モバイル ブロードバンド メタデータ作成ウィザードでのハードウェア ID の追加
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3d89980809aedc4d280e73e1321f266a1e26f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3f3b258d6a39f50b4f8ac7ab56c9e1a8ee233ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371692"
 ---
 # <a name="add-hardware-ids-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロードバンド メタデータ作成ウィザードでのハードウェア ID の追加
 
@@ -87,6 +87,6 @@ IMSI または ICCID (GSM ネットワーク オペレーター)、SID、プロ�
 
 4. をクリックして**OK**に戻る、**アソシエーション** タブ。
 
-各サービス スタイルのハードウェア ID の詳細については、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://msdn.microsoft.com/library/windows/hardware/dn973175)します。
+各サービス スタイルのハードウェア ID の詳細については、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/service-metadata-package-schema-reference)します。
 
-照合に関する詳細については、次を参照してください。 [MVNOs のエクスペリエンスを提供する](https://msdn.microsoft.com/library/windows/hardware/dn973075)します。
+照合に関する詳細については、次を参照してください。 [MVNOs のエクスペリエンスを提供する](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/delivering-experiences-for-mvnos)します。

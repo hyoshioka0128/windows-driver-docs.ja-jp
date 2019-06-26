@@ -6,19 +6,19 @@ keywords:
 - WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE macro
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6576bcf7e3c04dce211fdacc6cfc15b9c664ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 986ba27c2313630cd28b078c8b1b96b54671f777
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390854"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372116"
 ---
 # <a name="wdfobjectattributessetcontexttype-macro"></a>WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE macro
 
 
 \[KMDF および UMDF に適用されます。\]
 
-WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロは、オブジェクトのオブジェクトのドライバー定義のコンテキスト情報を挿入[ **WDF_OBJECT_ATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。
+WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロは、オブジェクトのオブジェクトのドライバー定義のコンテキスト情報を挿入[ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -34,7 +34,7 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 ----------
 
 *方法を示します*   
-オブジェクトへのポインター [ **WDF_OBJECT_ATTRIBUTES** ](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。
+オブジェクトへのポインター [ **WDF_OBJECT_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。
 
 *_contexttype*   
 オブジェクトのコンテキストの領域の内容を記述したドライバー定義構造体の構造体の型名。
@@ -47,9 +47,9 @@ void WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
 <a name="remarks"></a>コメント
 -------
 
-呼び出した後、WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロを使用する必要があります[ **WDF_OBJECT_ATTRIBUTES_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552402)します。
+呼び出した後、WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロを使用する必要があります[ **WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)します。
 
-WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://msdn.microsoft.com/library/windows/hardware/ff542873)します。
+WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)します。
 
 このマクロを使用するためのコード例を参照してください。 [ **WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)します。
 
@@ -86,9 +86,9 @@ WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE マクロの使用に関する詳細に�
 
 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)
 
-[**WDF_OBJECT_ATTRIBUTES**](https://msdn.microsoft.com/library/windows/hardware/ff552400)
+[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)
 
-[**WDF_OBJECT_ATTRIBUTES_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552402)
+[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdf_object_attributes_init)
 
 [**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**](wdf-object-attributes-init-context-type.md)
 

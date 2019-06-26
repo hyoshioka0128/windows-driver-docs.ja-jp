@@ -13,12 +13,12 @@ keywords:
 - 実行状態の WDK ne
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ea5eebc608b3bb5748cebc166cea444dc732ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d719bde7713315e02458bef8baa2608e54dc688d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345312"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363392"
 ---
 # <a name="filter-module-states-and-operations"></a>フィルター モジュールの状態と操作
 
@@ -29,7 +29,7 @@ ms.locfileid: "63345312"
 フィルター ドライバーは、ドライバーを管理する各フィルター モジュール (フィルター ドライバーのインスタンス) の次の操作の状態をサポートする必要があります。
 
 <a href="" id="detached"></a>デタッチ  
-*Detached*状態は、フィルター モジュールの初期状態です。 NDIS フィルター ドライバーを呼び出すことができますフィルター モジュールがこの状態のときは、 [ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)ドライバー スタックに、フィルター モジュールにアタッチします。
+*Detached*状態は、フィルター モジュールの初期状態です。 NDIS フィルター ドライバーを呼び出すことができますフィルター モジュールがこの状態のときは、 [ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)ドライバー スタックに、フィルター モジュールにアタッチします。
 
 <a href="" id="attaching"></a>アタッチ  
 *アタッチ*状態では、フィルター ドライバーはドライバー スタックに、フィルター モジュールをアタッチする準備を行います。
@@ -177,31 +177,31 @@ ms.locfileid: "63345312"
 プライマリ フィルター ドライバーのイベントの定義は次のとおりです。
 
 <a href="" id="--------filter-attach--------"></a> フィルターをアタッチします。   
-NDIS というドライバーの[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)ドライバー スタックにフィルター モジュールにアタッチします。 フィルター モジュールのインポートに関する詳細については、次を参照してください。[フィルター モジュールのアタッチ](attaching-a-filter-module.md)します。
+NDIS というドライバーの[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)ドライバー スタックにフィルター モジュールにアタッチします。 フィルター モジュールのインポートに関する詳細については、次を参照してください。[フィルター モジュールのアタッチ](attaching-a-filter-module.md)します。
 
 <a href="" id="attach-is-complete"></a>アタッチが完了しました  
 フィルター モジュールの場合、*アタッチ*状態と、フィルター ドライバーは、フィルター モジュールに必要なリソース フィルター モジュールが入力したすべての初期化が完了すると、 *Paused*状態。
 
 <a href="" id="--------filter-detach--------"></a> フィルターをデタッチします。   
-NDIS というドライバーの[ *FilterDetach* ](https://msdn.microsoft.com/library/windows/hardware/ff549918)ドライバー スタックからフィルター モジュールをデタッチする関数。 詳細については、次を参照してください。[フィルター モジュールをデタッチ](detaching-a-filter-module.md)します。
+NDIS というドライバーの[ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)ドライバー スタックからフィルター モジュールをデタッチする関数。 詳細については、次を参照してください。[フィルター モジュールをデタッチ](detaching-a-filter-module.md)します。
 
 <a href="" id="--------filter-restart--------"></a> 再起動をフィルター処理します。   
-NDIS というドライバーの[ *FilterRestart* ](https://msdn.microsoft.com/library/windows/hardware/ff559435)関数を一時停止中のフィルター モジュールを再起動します。 詳細については、次を参照してください。[フィルター モジュールの開始](starting-a-filter-module.md)します。
+NDIS というドライバーの[ *FilterRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)関数を一時停止中のフィルター モジュールを再起動します。 詳細については、次を参照してください。[フィルター モジュールの開始](starting-a-filter-module.md)します。
 
 <a href="" id="restart-is-complete"></a>再起動が完了  
 フィルター モジュールの場合、*再起動*状態と、ドライバーは、送信を実行し、操作を受信する準備が、フィルター モジュールが入力、*を実行している*状態。
 
 <a href="" id="--------filter-pause--------"></a> 一時停止をフィルター処理します。   
-NDIS というドライバーの[ *FilterPause* ](https://msdn.microsoft.com/library/windows/hardware/ff549957)フィルター モジュールを一時停止する関数。 詳細については、次を参照してください。[フィルター モジュールを一時停止](pausing-a-filter-module.md)します。
+NDIS というドライバーの[ *FilterPause* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_pause)フィルター モジュールを一時停止する関数。 詳細については、次を参照してください。[フィルター モジュールを一時停止](pausing-a-filter-module.md)します。
 
 <a href="" id="pause-is-complete"></a>一時停止が完了  
 ドライバーの送信を停止し、受信操作に必要なすべての操作が完了した、一時停止操作が完了し、フィルター モジュールが、 *Paused*状態。
 
 <a href="" id="attach-failed"></a>アタッチに失敗しました  
-NDIS ドライバーの場合[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)関数と、アタッチ操作は、(たとえば、必要なリソースを利用できません) ために失敗した場合、フィルター モジュールを返す、 *デタッチされた*状態。
+NDIS ドライバーの場合[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)関数と、アタッチ操作は、(たとえば、必要なリソースを利用できません) ために失敗した場合、フィルター モジュールを返す、 *デタッチされた*状態。
 
 <a href="" id="restart-failed"></a>再起動に失敗しました  
-NDIS ドライバーの場合[ *FilterRestart* ](https://msdn.microsoft.com/library/windows/hardware/ff549962)関数と、再起動が失敗、フィルター モジュールを返します、 *Paused*状態。
+NDIS ドライバーの場合[ *FilterRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_restart)関数と、再起動が失敗、フィルター モジュールを返します、 *Paused*状態。
 
 <a href="" id="send-and-receive-operations"></a>送信し、受信操作  
 ドライバーが送信を処理しでの操作を受け取ることができます、*を実行している*と*一時停止中*状態。 送信し、受信操作についての詳細についてを参照してください。[フィルター モジュールの送信と受信操作](filter-module-send-and-receive-operations.md)します。

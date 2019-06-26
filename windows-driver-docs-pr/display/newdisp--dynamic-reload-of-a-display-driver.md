@@ -9,12 +9,12 @@ keywords:
 - 再起動による動的な再読み込み WDK Windows 2000 の表示防止
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 326c4a27c513995c2465fd58eb0717168826021f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 227d1b6e018315d23f339d6810d532410e411648
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345526"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372818"
 ---
 # <a name="newdisp-dynamic-reload-of-a-display-driver"></a>NewDisp: ディスプレイ ドライバーの動的再読み込み
 
@@ -42,7 +42,7 @@ ms.locfileid: "63345526"
 
 -   すぐに実行する別**ChangeDisplaySettings**を元のモードは、新しいディスプレイ ドライバー DLL から読み込まれると、コールバック *\\system32*ディレクトリ、および 16 の色VGA ディスプレイ ドライバー DLL を読み込む。
 
-ドライバーがアクティブの Direct3D を持っている場合、ドライバーのインスタンスへの参照が存在する[ **WNDOBJ**](https://msdn.microsoft.com/library/windows/hardware/ff570599)、または[ **DRIVEROBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff556162)オブジェクト。 ときに*newdisp*を実行しているドライバーのインスタンスへの参照が存在する、古いディスプレイ ドライバー DLL をアンロードすることはありませんが、これに応じて拡大縮小、新しいディスプレイ ドライバー DLL は読み込むことはありません。
+ドライバーがアクティブの Direct3D を持っている場合、ドライバーのインスタンスへの参照が存在する[ **WNDOBJ**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_wndobj)、または[ **DRIVEROBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_driverobj)オブジェクト。 ときに*newdisp*を実行しているドライバーのインスタンスへの参照が存在する、古いディスプレイ ドライバー DLL をアンロードすることはありませんが、これに応じて拡大縮小、新しいディスプレイ ドライバー DLL は読み込むことはありません。
 
 *Newdisp*動的ドライバーが Windows 2000 と; を再起動しなくてもドライバーを再読み込みするには、後で追加されている機能の読み込み依存その結果、これでは動作しません Windows NT 4.0 と以前のオペレーティング システムのバージョン。 ない場合でも機能グラフィックス デバイスでは、VGA ドライバーを読み込むことができませんまたは VGA ドライバーで処理するモードではなく 640 x 480 x 16 のモードの色、ネイティブ ドライバーでを表示する場合。
 

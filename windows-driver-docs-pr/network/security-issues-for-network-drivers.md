@@ -7,24 +7,24 @@ keywords:
 - WDK ネットワークのセキュリティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae0dc4ac862d4fadfae7b610923667dacfe90fc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 414046a7bd47f40a35ad726bc05dbd13ef2373c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374556"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382117"
 ---
 # <a name="security-issues-for-network-drivers"></a>ネットワーク ドライバーのセキュリティの問題
 
-セキュリティで保護されたドライバーの記述の概要については、次を参照してください。[信頼性の高いカーネル モード ドライバーの作成](https://msdn.microsoft.com/library/windows/hardware/ff542904)です。
+セキュリティで保護されたドライバーの記述の概要については、次を参照してください。[信頼性の高いカーネル モード ドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)です。
 
 次の安全なコーディング手法を全般的なデバイス ドライバーに関するガイダンスだけでなく、ネットワーク ドライバーはセキュリティを強化するために、次を実行してください。
 
-- すべてのネットワーク ドライバーは、レジストリから読み取る必要が値を検証する必要があります。 具体的には、呼び出し元の[**エミュレーター** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)または[ **NdisReadNetworkAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff564512)についてどのような想定を行ってはいけません値は、レジストリから読み取られ、各レジストリ値を読み取ることを検証する必要があります。 場合、呼び出し元の**エミュレーター**値が範囲外です、既定値を代わりに使用することを決定します。 場合、呼び出し元の**NdisReadNetworkAddress**決定する値が範囲外です、永続的なメディア アクセス制御 (MAC) アドレスまたは既定のアドレスを代わりに使用してください。
+- すべてのネットワーク ドライバーは、レジストリから読み取る必要が値を検証する必要があります。 具体的には、呼び出し元の[**エミュレーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)または[ **NdisReadNetworkAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadnetworkaddress)についてどのような想定を行ってはいけません値は、レジストリから読み取られ、各レジストリ値を読み取ることを検証する必要があります。 場合、呼び出し元の**エミュレーター**値が範囲外です、既定値を代わりに使用することを決定します。 場合、呼び出し元の**NdisReadNetworkAddress**決定する値が範囲外です、永続的なメディア アクセス制御 (MAC) アドレスまたは既定のアドレスを代わりに使用してください。
 
 ## <a name="oid-specific-issues"></a>OID に固有の問題
 
-- ミニポート ドライバーで、その[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)または[ **MiniportCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559362)関数の場合は、任意のオブジェクト識別子を検証する必要があります設定 (OID) の値をドライバーが要求されました。 ドライバーは、設定する値が範囲外であるかを決定します、これはセットの要求が失敗します。 オブジェクト識別子の詳細については、次を参照してください。[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
+- ミニポート ドライバーで、その[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)または[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)関数の場合は、任意のオブジェクト識別子を検証する必要があります設定 (OID) の値をドライバーが要求されました。 ドライバーは、設定する値が範囲外であるかを決定します、これはセットの要求が失敗します。 オブジェクト識別子の詳細については、次を参照してください。[取得し、ミニポート ドライバー情報の設定と、WMI の NDIS サポート](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)します。
 
 - 場合、中間ドライバー *MiniportOidRequest*関数は、基になるミニポート ドライバーにセットの操作を渡さない、関数は、OID 値を検証する必要があります。 詳細については、次を参照してください。[ドライバー クエリの中間と設定操作](intermediate-driver-query-and-set-operations.md)します。
 
@@ -86,7 +86,7 @@ ms.locfileid: "63374556"
     }
     ```
 
-2. 埋め込みのオフセットで OID を検証するときに、埋め込まれたバッファーが、OID ペイロード内にあるを検証する必要があります。 これには、いくつかのチェックが必要です。 たとえば、 [OID_PM_ADD_WOL_PATTERN](https://msdn.microsoft.com/library/windows/hardware/ff569764)チェックする必要がある埋め込みのパターンを提供することがあります。 適切な検証では、チェックが必要です。
+2. 埋め込みのオフセットで OID を検証するときに、埋め込まれたバッファーが、OID ペイロード内にあるを検証する必要があります。 これには、いくつかのチェックが必要です。 たとえば、 [OID_PM_ADD_WOL_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)チェックする必要がある埋め込みのパターンを提供することがあります。 適切な検証では、チェックが必要です。
 
     1. InformationBufferSize > sizeof(NDIS_PM_PACKET_PATTERN) を =
 
@@ -152,7 +152,7 @@ ms.locfileid: "63374556"
 
 ## <a name="other-network-driver-security-issues"></a>その他のネットワーク ドライバーのセキュリティの問題
 
-- 多くの NDIS ミニポート ドライバーでは、NdisRegisterDeviceEx を使用して制御装置を公開します。 WDM ドライバーと同じすべてのセキュリティ規則では、IOCTL ハンドラー、これを監査する必要があります。 詳細については、次を参照してください。 [I/O 制御コードに関するセキュリティの問題](https://msdn.microsoft.com/library/windows/hardware/ff563700(v=vs.85).aspx)します。
+- 多くの NDIS ミニポート ドライバーでは、NdisRegisterDeviceEx を使用して制御装置を公開します。 WDM ドライバーと同じすべてのセキュリティ規則では、IOCTL ハンドラー、これを監査する必要があります。 詳細については、次を参照してください。 [I/O 制御コードに関するセキュリティの問題](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)します。
 
 - 適切に設計された NDIS ミニポート ドライバーは、特定のプロセスのコンテキストで呼び出される依存したり (Ioctl) 例外をされている Oid で usermode を非常に密接に対話する必要がありますしません。 Usermode ハンドルを開いたり、ユーザー モードの待機を実行したり usermode クォータに対してメモリを割り当てられているミニポートを表示する赤いフラグがあります。 そのコードを調査する必要があります。
 

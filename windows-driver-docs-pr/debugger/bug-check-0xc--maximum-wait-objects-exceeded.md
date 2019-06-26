@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 93202d4febfc2dd88c4049d19985f955dab359eb
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: e12ae81019e14659b092d78902887b9dcbc4e488
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902560"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361623"
 ---
 # <a name="bug-check-0xc-maximumwaitobjectsexceeded"></a>バグ チェック 0xC:最大\_待機\_オブジェクト\_超過
 
@@ -26,7 +26,7 @@ ms.locfileid: "59902560"
 最大\_待機\_オブジェクト\_超過のバグ チェックが 0x0000000C の値を持ちます。 これは、現在のスレッドが待機オブジェクトの許可されている数を超えていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="maximumwaitobjectsexceeded-parameters"></a>最大\_待機\_オブジェクト\_超過パラメーター

@@ -11,12 +11,12 @@ keywords:
 - WDK の GDI の表面的な行のスタイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6006683ce59cfb0f38598a6fe3f0d9984fd20b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73bd53c651e0e9b756cadd942d6e563bb8f25a08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375990"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364364"
 ---
 # <a name="styled-cosmetic-lines"></a>スタイル付きのコスメティック線
 
@@ -24,11 +24,11 @@ ms.locfileid: "63375990"
 ## <span id="ddk_styled_cosmetic_lines_gg"></span><span id="DDK_STYLED_COSMETIC_LINES_GG"></span>
 
 
-[ **DrvStrokePath** ](https://msdn.microsoft.com/library/windows/hardware/ff556316)関数は、単色のブラシを使用して任意のクリッピングと表面的な線の描画をサポートする必要があります。 ドライバーは、GDI サービスへの呼び出しを行うことができます[ **PATHOBJ\_vEnumStartClipLines** ](https://msdn.microsoft.com/library/windows/hardware/ff568857)領域 precompute にします。
+[ **DrvStrokePath** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)関数は、単色のブラシを使用して任意のクリッピングと表面的な線の描画をサポートする必要があります。 ドライバーは、GDI サービスへの呼び出しを行うことができます[ **PATHOBJ\_vEnumStartClipLines** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-pathobj_venumstartcliplines)領域 precompute にします。
 
-表面的な行のスタイルは、繰り返し配列によって指定されているため、ジオメトリの太線に似ています。 表面的な行のスタイルを適用した場合は、配列エントリは、スタイルの手順で長さを含む LONG 値です。 によってスタイル手順とピクセルの間のリレーションシップが定義されている、 **xStyleStep**、 **yStyleStep**、および**denStyleStep**フィールド、 [ **GDIINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff566484)によって返される構造体、 [ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)関数。
+表面的な行のスタイルは、繰り返し配列によって指定されているため、ジオメトリの太線に似ています。 表面的な行のスタイルを適用した場合は、配列エントリは、スタイルの手順で長さを含む LONG 値です。 によってスタイル手順とピクセルの間のリレーションシップが定義されている、 **xStyleStep**、 **yStyleStep**、および**denStyleStep**フィールド、 [ **GDIINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)によって返される構造体、 [ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)関数。
 
-ドライバーを呼び出すと[ **PATHOBJ\_bEnumClipLines**](https://msdn.microsoft.com/library/windows/hardware/ff568852)、複雑なクリッピングを表面的な行のスタイル処理するために、GDI の値を変更する、 [ **CLIPLINE** ](https://msdn.microsoft.com/library/windows/hardware/ff539416)構造体の**iStyleState**スタイルの状態を表すメンバー。 スタイルの状態が線のセグメントの最初のピクセルにオフセット行はクリップされませんがある場合に表示が最初のピクセルは、します。 スタイルの状態は、2 つの 16 ビット値がまとめられて ULONG 値で構成されます。 高値と安値の場合は、上位と下位 16 ビット スタイルの状態のスタイルの位置と呼ばれる、スタイルの状態の小数部のバージョンとして計算することができます。
+ドライバーを呼び出すと[ **PATHOBJ\_bEnumClipLines**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-pathobj_benumcliplines)、複雑なクリッピングを表面的な行のスタイル処理するために、GDI の値を変更する、 [ **CLIPLINE** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_clipline)構造体の**iStyleState**スタイルの状態を表すメンバー。 スタイルの状態が線のセグメントの最初のピクセルにオフセット行はクリップされませんがある場合に表示が最初のピクセルは、します。 スタイルの状態は、2 つの 16 ビット値がまとめられて ULONG 値で構成されます。 高値と安値の場合は、上位と下位 16 ビット スタイルの状態のスタイルの位置と呼ばれる、スタイルの状態の小数部のバージョンとして計算することができます。
 
 `
     style position = HIGH + LOW/denStyleStep
@@ -62,11 +62,11 @@ ms.locfileid: "63375990"
 
 ![表面的な行のスタイルを示す図](images/102-02.png)
 
-この図では、表示されるピクセル グリッドは、正方形ではありませんが、する 4 つのピクセルの x 方向の y 方向の 3 つのピクセルと同じ距離を表す、EGA ディスプレイのあるように表示されます。 手順をスタイル、 [ **GDIINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff566484)構造体は、ディスプレイのピクセルは正方形で任意の傾きで同じスタイル設定された行が表示されることを確認します。 この図では、スタイルの配列で (によって定義された、 **pstyle**のメンバー、 [ **LINEATTRS** ](https://msdn.microsoft.com/library/windows/hardware/ff568195)構造) は{1,1}を破損した行が同じサイズにはドットとの矛盾点です。 ドライバーの値の**xStyleStep**が 3、 **yStyleStep**は 4、および**denStyleStep** 12。
+この図では、表示されるピクセル グリッドは、正方形ではありませんが、する 4 つのピクセルの x 方向の y 方向の 3 つのピクセルと同じ距離を表す、EGA ディスプレイのあるように表示されます。 手順をスタイル、 [ **GDIINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)構造体は、ディスプレイのピクセルは正方形で任意の傾きで同じスタイル設定された行が表示されることを確認します。 この図では、スタイルの配列で (によって定義された、 **pstyle**のメンバー、 [ **LINEATTRS** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_lineattrs)構造) は{1,1}を破損した行が同じサイズにはドットとの矛盾点です。 ドライバーの値の**xStyleStep**が 3、 **yStyleStep**は 4、および**denStyleStep** 12。
 
 さらに示すために、ドット マトリックス プリンターが 144 dpi の水平方向の解像度と、72 dpi 垂直方向の解像度とします。 さらに、最小のドットのドットの長さは 1/24 インチとします。 このプリンターをサポートするには、最小の番号を選択します**xStyleStep**と**yStyleStep** 1 などのプリンターの縦横比を補うことができます**xStyleStep**と。2 (144/72 インチ) の**yStyleStep**から 6 (144/24) の**denStyleStep**します。
 
-場合、LA\_のフラグで代替のビットが設定されて、 [ **LINEATTRS** ](https://msdn.microsoft.com/library/windows/hardware/ff568195)表面的な行の構造、特殊なスタイルを使用します。 ここでは、他のすべてのピクセルは方向や縦横比に関係なく、です。 スタイルの配列の場合と、スタイルの状態が返される{1,1}と**xStyleStep**、 **yStyleStep**、および**denStyleStep**はすべて 1 つ。 つまり場合、 **lStyleState** 0 の場合は、上の最初のピクセルが場合**lStyleState**は 1 つは、最初のピクセルはオフです。
+場合、LA\_のフラグで代替のビットが設定されて、 [ **LINEATTRS** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_lineattrs)表面的な行の構造、特殊なスタイルを使用します。 ここでは、他のすべてのピクセルは方向や縦横比に関係なく、です。 スタイルの配列の場合と、スタイルの状態が返される{1,1}と**xStyleStep**、 **yStyleStep**、および**denStyleStep**はすべて 1 つ。 つまり場合、 **lStyleState** 0 の場合は、上の最初のピクセルが場合**lStyleState**は 1 つは、最初のピクセルはオフです。
 
 場合、LA\_STARTGAP ビットが LINEATTRS フラグの設定、スタイルの配列内の要素の意味を反転します。 2 番目のエントリなど、最初のダッシュの長さを指定する、配列の最初のエントリが最初の空白の長さを指定します。
 

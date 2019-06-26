@@ -15,12 +15,12 @@ keywords:
 - WDK のオーディオ、DirectMusic をフィルター処理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaac8459cff2e29ebb2ee8f6bed6beced2629321
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87c4e93dbf30bedb745867cb4a9c2fa0acdee4b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332342"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363849"
 ---
 # <a name="midi-and-directmusic-filters"></a>MIDI フィルターと DirectMusic フィルター
 
@@ -48,11 +48,11 @@ MIDI フィルターは、ポート/ミニポート ドライバーのペアと�
 
 -   MIDI のミニポート ドライバー オブジェクトがインスタンス化します。
 
--   呼び出すことによって、MIDI ポート ドライバー オブジェクトをインスタンス化[ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715)の GUID 値**CLSID\_PortMidi**します。
+-   呼び出すことによって、MIDI ポート ドライバー オブジェクトをインスタンス化[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)の GUID 値**CLSID\_PortMidi**します。
 
--   ポート ドライバーの呼び出す[ **iport::init** ](https://msdn.microsoft.com/library/windows/hardware/ff536943)ポート ドライバーに、ミニポート ドライバーをバインドするメソッド。
+-   ポート ドライバーの呼び出す[ **iport::init** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-init)ポート ドライバーに、ミニポート ドライバーをバインドするメソッド。
 
-コード例で[サブデバイス作成](subdevice-creation.md)このプロセスを示しています。 ポートおよびミニポートのドライバーがを介して相互に通信、 [IPortMidi](https://msdn.microsoft.com/library/windows/hardware/ff536891)と[IMiniportMidi](https://msdn.microsoft.com/library/windows/hardware/ff536703)インターフェイス。
+コード例で[サブデバイス作成](subdevice-creation.md)このプロセスを示しています。 ポートおよびミニポートのドライバーがを介して相互に通信、 [IPortMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportmidi)と[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)インターフェイス。
 
 MIDI 出力とシンセサイザーをサポートするためには、デバイス、MIDI ポート ドライバーには 1 ミリ秒のタイマー精度のミニポート ドライバーに生の MIDI メッセージを出力するソフトウェア sequencer が含まれています。
 
@@ -60,9 +60,9 @@ MIDI 出力とシンセサイザーをサポートするためには、デバイ
 
 DirectMusic フィルターは、MIDI フィルターの機能のスーパー セットを提供します。 スーパー セットには、これらの追加機能が含まれます。
 
--   MIDI instruments を示す波形とアーティキュレーションのデータが含まれているリソースを DLS (ダウンロード可能なサウンド)。 A [ **KSPROPERTY\_シンセサイザー\_DLS\_ダウンロード**](https://msdn.microsoft.com/library/windows/hardware/ff537396)プロパティの設定要求は、フィルターに DLS リソースをダウンロードします。
+-   MIDI instruments を示す波形とアーティキュレーションのデータが含まれているリソースを DLS (ダウンロード可能なサウンド)。 A [ **KSPROPERTY\_シンセサイザー\_DLS\_ダウンロード**](https://docs.microsoft.com/previous-versions/ff537396(v=vs.85))プロパティの設定要求は、フィルターに DLS リソースをダウンロードします。
 
--   選択可能な instruments の数を拡張するためのチャネル グループ。 [ **DMU\_カーネル\_イベント**](https://msdn.microsoft.com/library/windows/hardware/ff536340) MIDI ストリーム内の各タイムスタンプ MIDI メッセージをパッケージ化に使用される、構造体がそのメッセージを使用するには、どのチャネル グループを指定します。
+-   選択可能な instruments の数を拡張するためのチャネル グループ。 [ **DMU\_カーネル\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/ns-dmusicks-_dmus_kernel_event) MIDI ストリーム内の各タイムスタンプ MIDI メッセージをパッケージ化に使用される、構造体がそのメッセージを使用するには、どのチャネル グループを指定します。
 
 -   ハードウェア MIDI シーケンス処理をサポートするための 100 ナノ秒の解像度の 64 ビットの時刻スタンプ。 DMU\_カーネル\_イベントの構造が高解像度 MIDI メッセージのタイムスタンプを指定します。
 
@@ -72,11 +72,11 @@ DirectMusic フィルターは、ポート/ミニポート ドライバーのペ
 
 -   Dmu (DirectMusic) のミニポート ドライバー オブジェクトがインスタンス化します。
 
--   呼び出すことによって、Dmu ポート ドライバー オブジェクトをインスタンス化[ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715)の GUID 値**CLSID\_PortDMus**します。
+-   呼び出すことによって、Dmu ポート ドライバー オブジェクトをインスタンス化[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)の GUID 値**CLSID\_PortDMus**します。
 
--   ポート ドライバーの呼び出す[ **iport::init** ](https://msdn.microsoft.com/library/windows/hardware/ff536943)ポート ドライバーに、ミニポート ドライバーをバインドするメソッド。
+-   ポート ドライバーの呼び出す[ **iport::init** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-init)ポート ドライバーに、ミニポート ドライバーをバインドするメソッド。
 
-コード例で[サブデバイス作成](subdevice-creation.md)このプロセスを示しています。 ポートおよびミニポートのドライバーがを介して相互に通信、 [IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)と[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)インターフェイス。
+コード例で[サブデバイス作成](subdevice-creation.md)このプロセスを示しています。 ポートおよびミニポートのドライバーがを介して相互に通信、 [IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)と[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)インターフェイス。
 
 DirectMusic シンセサイザー デバイスをサポートするためには、Dmu ポート ドライバーには、MIDI イベントを再生できるようにスケジュールされているときに前のハードウェア sequencer のバッファーにタイムスタンプを出力できるは、低解像度 (1 ミリ秒) ソフトウェア sequencer が含まれています。 DirectMusic 出力デバイスをサポートするためには、ポート ドライバーのソフトウェアの sequencer で再生するには、生の MIDI メッセージを出力する構成もできます。
 
@@ -88,7 +88,7 @@ MIDI 入力または出力を列挙する場合、Windows のマルチ メディ
 
 MIDI または Dmu のミニポート ドライバーが型 KSDATAFORMAT の主要な形式を指定して MIDI または DirectMusic 暗証番号 (pin) のデータ範囲を指定するときに\_型\_音楽およびのサブフォーマット型 KSDATARANGE\_サブタイプ\_の MIDI、MIDI pin または KSDATARANGE\_サブタイプ\_DirectMusic pin の DIRECTMUSIC します。 MIDI と DirectMusic ピンのデータ範囲の記述子の例が記載[MIDI Stream データ範囲](midi-stream-data-range.md)と[DirectMusic Stream データ範囲](directmusic-stream-data-range.md)、それぞれします。
 
-MIDI フィルター MIDI 暗証番号 (pin) のインスタンスを公開、 [IMiniportMidiStream](https://msdn.microsoft.com/library/windows/hardware/ff536704)インターフェイス。 DirectMusic フィルター MIDI または DirectMusic の暗証番号 (pin) インスタンスを公開、 [IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)インターフェイス。
+MIDI フィルター MIDI 暗証番号 (pin) のインスタンスを公開、 [IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidistream)インターフェイス。 DirectMusic フィルター MIDI または DirectMusic の暗証番号 (pin) インスタンスを公開、 [IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)インターフェイス。
 
 Windows Me、98/DirectMusic で同じの片方のデバイスを 2 回列挙場合があります。 理由は、一部のハードウェア ベンダーが、片方デバイスのレガシ、プレ WDM MIDI デバイスと WDM デバイスの両方を公開することです。 レガシ デバイスの場合は、DirectMusic は DMusic.dll から Ihvaudio.dll への直接パスを表す片方デバイスを列挙します。 WDM デバイスの場合は、DirectMusic は、次の一連のコンポーネントで構成される circuitous パスを使用して同じ片方デバイスを列挙します。
 
@@ -114,9 +114,9 @@ PortCls システム ドライバーには、いくつかシステム提供 MIDI
 
 -   UART ミニポート ドライバーは、片方のハードウェア インターフェイスでは、MIDI デバイスをサポートしていますが、このドライバー (Windows 98 金) した後は廃止されており既存のアダプターのドライバーに対してのみサポートされます。 新しいアダプターのドライバー コードには、UART を置き換え、その機能のスーパー セットを実装する DMusUART ミニポート ドライバー (Windows 98 SE、および Windows Me と Windows 2000 以降)、代わりに使用する必要があります。
 
-アダプターのドライバーは、システム提供のミニポート ドライバーを呼び出すことによってアクセスできる、 [ **PcNewMiniport** ](https://msdn.microsoft.com/library/windows/hardware/ff537714)関数。 FMSynth と DMusUART ミニポート ドライバーも Windows Driver Kit (WDK) でのサンプル オーディオ ドライバーとして含まれています。 これらのサンプルのソース コードを変更すると、ハードウェア ベンダーが独自の機能を自分のデバイスを管理するドライバーを拡張できます。
+アダプターのドライバーは、システム提供のミニポート ドライバーを呼び出すことによってアクセスできる、 [ **PcNewMiniport** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)関数。 FMSynth と DMusUART ミニポート ドライバーも Windows Driver Kit (WDK) でのサンプル オーディオ ドライバーとして含まれています。 これらのサンプルのソース コードを変更すると、ハードウェア ベンダーが独自の機能を自分のデバイスを管理するドライバーを拡張できます。
 
-DMusUART は、MIDI と DirectMusic の両方のピンを公開しますが、DLS ダウンロードまたはハードウェアのシーケンス処理はサポートされない Dmu ミニポート ドライバーの例に示します。 シンセサイザー ノードがある、ミニポート ドライバーの DirectMusic レンダリング pin ([**KSNODETYPE\_シンセサイザー**](https://msdn.microsoft.com/library/windows/hardware/ff537203)) いくつかサポートしている[KSPROPSETID\_シンセサイザー](https://msdn.microsoft.com/library/windows/hardware/ff537486)プロパティ。 ミニポート ドライバーは KSCATEGORY のカテゴリに含まれます\_レンダリングと KSCATEGORY\_キャプチャが含まれない KSCATEGORY\_シンセサイザー (ため、内部のシンセサイザーは含まれません)。 詳細については、WDK の DMusUART サンプル オーディオ ドライバーを参照してください。
+DMusUART は、MIDI と DirectMusic の両方のピンを公開しますが、DLS ダウンロードまたはハードウェアのシーケンス処理はサポートされない Dmu ミニポート ドライバーの例に示します。 シンセサイザー ノードがある、ミニポート ドライバーの DirectMusic レンダリング pin ([**KSNODETYPE\_シンセサイザー**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)) いくつかサポートしている[KSPROPSETID\_シンセサイザー](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth)プロパティ。 ミニポート ドライバーは KSCATEGORY のカテゴリに含まれます\_レンダリングと KSCATEGORY\_キャプチャが含まれない KSCATEGORY\_シンセサイザー (ため、内部のシンセサイザーは含まれません)。 詳細については、WDK の DMusUART サンプル オーディオ ドライバーを参照してください。
 
 Windows XP 以降では、MIDI、Dmu ポート ドライバーが、同じ内部ソフトウェア実装を使用することに注意してください。 つまり、 **CLSID\_PortMidi**と**CLSID\_PortDMus**を呼び出すときに、Guid が等しい**PcNewPort**します。 Windows の以前のバージョン用に記述されたアプリケーションを MIDI、Dmu ポート ドライバーの統合の結果の動作の変更を確認できません。
 

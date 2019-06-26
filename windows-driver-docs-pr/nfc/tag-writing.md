@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b61266fffa648c57f55c630d2e5cd67c1cf508f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4560f2c8c8d3ee7bad36137f4b70483d59a86b7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373596"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380730"
 ---
 # <a name="tag-writing"></a>タグの書き込み
 
@@ -64,12 +64,12 @@ NFC フォーラムの仕様に従って、厳密な NDEF エンコードの規�
 -   1 つ以上の場合"\*: タグ書き込み"パブリケーションは、ドライバーが、ペイロードの少なくとも 1 つの使用可能な十分な領域を持つ書き込み可能なタグを検出した時点で有効になっている、ドライバーに書き込む必要が、ペイロードの 1 つだけタグ。 o は、複数のパブリケーションはアクティブ、小さくすれば、タグに書き込むことが最も最近作成または有効になっている"\*: タグ書き込み"パブリケーションは書き込まれる 1 つである必要があります。
 -   場合、"\*: タグ書き込み"場合でもに、ドライバーが既に説明したとおりに、ドライバーする必要がありますをタグに、ペイロードを書き込むパブリケーションが作成または処理中、ドライバーがペイロードの使用可能な十分な領域を持つ書き込み可能なタグとの通信を有効になっている、タグ。
 -   ドライバーは、以前の内容が上書きされるようにタグを記述する必要があります。
--   場合、"\*: タグ書き込み"ペイロードが正常に作成、タグに、ドライバーをトリガーする必要があります、 [ **IOCTL\_NFP\_取得\_次\_送信\_メッセージ**](https://msdn.microsoft.com/library/windows/hardware/jj853320)そのパブリケーション (上で指定した) として処理します。
+-   場合、"\*: タグ書き込み"ペイロードが正常に作成、タグに、ドライバーをトリガーする必要があります、 [ **IOCTL\_NFP\_取得\_次\_送信\_メッセージ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)そのパブリケーション (上で指定した) として処理します。
 
  
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[フィールドの近接 DDI 参照の近く](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

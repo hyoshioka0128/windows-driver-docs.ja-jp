@@ -4,12 +4,12 @@ description: チーミング プロバイダー拡張機能
 ms.assetid: 94F73ECD-54D0-4218-B3C4-33DC3BD57ED0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cac8019547ac19006c46433307eb0ce9c75ecf37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa4f4c7173ef582cdc86732051e5f7997eefe7c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379758"
 ---
 # <a name="teaming-provider-extensions"></a>チーミング プロバイダー拡張機能
 
@@ -44,7 +44,7 @@ ms.locfileid: "63350845"
 
 -   チーム化のプロバイダーは、拡張可能スイッチのネットワーク接続が確立された対象のすべての物理ネットワーク アダプターの状態を維持する必要があります。
 
-    拡張可能スイッチのプロトコルのエッジがの独立した OID セット要求を発行する外部ネットワーク アダプターにバインドされているすべての物理ネットワーク アダプターの[OID\_切り替える\_NIC\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598263)です。 この OID 要求は、基になる物理アダプターにネットワーク接続の作成に関する拡張機能を通知します。
+    拡張可能スイッチのプロトコルのエッジがの独立した OID セット要求を発行する外部ネットワーク アダプターにバインドされているすべての物理ネットワーク アダプターの[OID\_切り替える\_NIC\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)です。 この OID 要求は、基になる物理アダプターにネットワーク接続の作成に関する拡張機能を通知します。
 
 -   物理ネットワーク アダプターへのネットワーク接続が作成されると、外部ネットワーク アダプターが接続されているポートに対して一意である、0 以外のインデックス値が割り当てられます。
 
@@ -54,15 +54,15 @@ ms.locfileid: "63350845"
 
 -   チーム化のプロバイダーが発行または物理アダプターにパケットを転送は、物理アダプターの接続の 0 以外のネットワーク アダプターのインデックス値を指定する必要があります。
 
-    パケットの帯域外の転送のコンテキストのソースのネットワーク アダプターのインデックス値を決定できるプロバイダーでは、パケットを受信するときに、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 転送コンテキストに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
+    パケットの帯域外の転送のコンテキストのソースのネットワーク アダプターのインデックス値を決定できるプロバイダーでは、パケットを受信するときに、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 転送コンテキストに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチの転送コンテキスト](hyper-v-extensible-switch-forwarding-context.md)します。
 
     詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのデータ パス](hyper-v-extensible-switch-data-path.md)します。
 
--   物理アダプターに OID 要求の転送を発行するにはチーム化のプロバイダーに OID 要求内でカプセル化、 [ **NDIS\_スイッチ\_NIC\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/hh598214)構造体。 プロバイダーを設定する必要があります、 **DestinationNicIndex**メンバーを物理アダプターの接続の 0 以外のネットワーク アダプターのインデックス値。 プロバイダーの OID セット要求を発行し、 [OID\_スイッチ\_NIC\_要求](https://msdn.microsoft.com/library/windows/hardware/hh598266)ターゲットの物理アダプターにカプセル化された OID 要求を配信します。
+-   物理アダプターに OID 要求の転送を発行するにはチーム化のプロバイダーに OID 要求内でカプセル化、 [ **NDIS\_スイッチ\_NIC\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)構造体。 プロバイダーを設定する必要があります、 **DestinationNicIndex**メンバーを物理アダプターの接続の 0 以外のネットワーク アダプターのインデックス値。 プロバイダーの OID セット要求を発行し、 [OID\_スイッチ\_NIC\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)ターゲットの物理アダプターにカプセル化された OID 要求を配信します。
 
     詳細については、次を参照してください。 [OID 要求を物理ネットワーク アダプターを管理する](managing-oid-requests-to-physical-network-adapters.md)します。
 
--   チーム化のプロバイダーは、基になる物理アダプターに代わって、NDIS 状態インジケーターを発行できます。 内で示す値をプロバイダーには、カプセル化する必要があります、 [ **NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/hh598217)構造体。 プロバイダーを設定する必要があります、 **SourceNicIndex**メンバーを物理アダプターの接続の 0 以外のネットワーク アダプターのインデックス値。 プロバイダーの NDIS 状態を示す値を発行し、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://msdn.microsoft.com/library/windows/hardware/hh598205)カプセル化された状態を配信するには拡張可能スイッチのドライバー スタックのドライバーの関連を示します。
+-   チーム化のプロバイダーは、基になる物理アダプターに代わって、NDIS 状態インジケーターを発行できます。 内で示す値をプロバイダーには、カプセル化する必要があります、 [ **NDIS\_スイッチ\_NIC\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_nic_status_indication)構造体。 プロバイダーを設定する必要があります、 **SourceNicIndex**メンバーを物理アダプターの接続の 0 以外のネットワーク アダプターのインデックス値。 プロバイダーの NDIS 状態を示す値を発行し、 [ **NDIS\_状態\_スイッチ\_NIC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)カプセル化された状態を配信するには拡張可能スイッチのドライバー スタックのドライバーの関連を示します。
 
     詳細については、次を参照してください。[物理ネットワーク アダプターから NDIS 状態インジケーターを管理する](managing-ndis-status-indications-from-physical-network-adapters.md)します。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a6f14e3a8ae50daaacfb47f466fa340789730d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 051fcc3bca820d5180286790c8ad36d895211ed9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368688"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373124"
 ---
 # <a name="kspropertyconnectionallocatorframing"></a>KSPROPERTY\_接続\_ALLOCATORFRAMING
 
@@ -54,7 +54,7 @@ ms.locfileid: "63368688"
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560979" data-raw-source="[&lt;strong&gt;KSALLOCATOR_FRAMING&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560979)"><strong>KSALLOCATOR_FRAMING</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing" data-raw-source="[&lt;strong&gt;KSALLOCATOR_FRAMING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing)"><strong>KSALLOCATOR_FRAMING</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "63368688"
 <a name="remarks"></a>注釈
 -------
 
-このプロパティを返します、 [ **KSALLOCATOR\_フレーム**](https://msdn.microsoft.com/library/windows/hardware/ff560979)pin のフレームの要件をについて説明します。 たとえば、**フレーム ・ サイズ**メンバーが、ピンでデータのフレーム サイズを指定します。
+このプロパティを返します、 [ **KSALLOCATOR\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing)pin のフレームの要件をについて説明します。 たとえば、**フレーム ・ サイズ**メンバーが、ピンでデータのフレーム サイズを指定します。
 
 AVStream ミニドライバーを使用する必要があります[ **KSPROPERTY\_接続\_ALLOCATORFRAMING\_EX**](ksproperty-connection-allocatorframing-ex.md)します。
 
-参照してください[KS アロケーター](https://msdn.microsoft.com/library/windows/hardware/ff567257)します。 [AVStream アロケーター](https://msdn.microsoft.com/library/windows/hardware/ff554202)します。
+参照してください[KS アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-allocators)します。 [AVStream アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-allocators)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,7 +89,7 @@ AVStream ミニドライバーを使用する必要があります[ **KSPROPERTY
 ## <a name="see-also"></a>関連項目
 
 
-[**KSALLOCATOR\_フレーム**](https://msdn.microsoft.com/library/windows/hardware/ff560979)
+[**KSALLOCATOR\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing)
 
  
 

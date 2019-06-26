@@ -4,17 +4,17 @@ description: 商用リリース証明書で署名されたカタログ ファイ
 ms.assetid: 153bb1e7-009d-4ef8-b5d7-a9e6eecf65bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1780998634cbbe23211e080ef8c6012fdd1512b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba65c034d8ee43849282e5fdb3e60952bb789bbf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339305"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380428"
 ---
 # <a name="verifying-the-signature-of-a-catalog-file-signed-by-a-commercial-release-certificate"></a>商用リリース証明書で署名されたカタログ ファイルの署名の検証
 
 
-確認する、[カタログ ファイル](catalog-files.md)によって、有効な署名が[コマーシャル リリースの証明書](commercial-release-certificate.md)、次を使用して、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)コマンド。
+確認する、[カタログ ファイル](catalog-files.md)によって、有効な署名が[コマーシャル リリースの証明書](commercial-release-certificate.md)、次を使用して、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンド。
 
 ```cpp
 SignTool verify /v /pa CatalogFileName.cat

@@ -15,12 +15,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 17b1e03b9936675fb38758ddc4a1d26fe622c762
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53ac61939065cfdc70709eed6d885f8d5cb6696f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336403"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362494"
 ---
 # <a name="irp"></a>!irp
 
@@ -61,7 +61,7 @@ IRP の 16 進数のアドレスを指定します。
 
 参照してください[プラグ アンド プレイ デバッグ](plug-and-play-debugging.md)と[デバッグ中断ストーム](debugging-an-interrupt-storm.md)この拡張機能コマンドのアプリケーション。 Irp の詳細については、Windows Driver Kit (WDK) ドキュメントを参照してくださいと*Microsoft Windows internals 』* Mark Russinovich と David Solomon します。 メジャーおよびマイナーの関数コードの詳細については、Windows Driver Kit (WDK) ドキュメントを参照してください。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
-このトピックで説明、IRP 構造[ **IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)します。
+このトピックで説明、IRP 構造[ **IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)します。
 
 返される引数を含む IRP の構造体をデコードの詳細については、次のリソースを参照してください。
 
@@ -513,11 +513,11 @@ SCSI マイナー関数のコードは次のとおりです。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
-[**! irpfind**](-irpfind.md)
+[ **! irpfind**](-irpfind.md)
 
-[**! ioctldecode**](-ioctldecode.md)
+[ **! ioctldecode**](-ioctldecode.md)
 
  
 

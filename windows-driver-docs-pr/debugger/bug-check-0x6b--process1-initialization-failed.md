@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cbd94e081b19f34fda6e198b6d80beabb0a16de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9dd2a4c37258a5130acb59f7f3c3dbd8d3ef2e94
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361500"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361792"
 ---
 # <a name="bug-check-0x6b-process1initializationfailed"></a>バグ チェック 0x6B:PROCESS1\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361500"
 PROCESS1\_初期化\_失敗のバグ チェックが 0x0000006B の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="process1initializationfailed-parameters"></a>PROCESS1\_初期化\_FAILED パラメーター
