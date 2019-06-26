@@ -10,12 +10,12 @@ keywords:
 - デバイス オブジェクトの I/O 要求の WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85ee67d1928696ea0e49789e21259748af9ff07b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e90725415de436bfec0c21f6f19ec61630c8c5d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341524"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369250"
 ---
 # <a name="filter-device-object-attached-to-a-volume"></a>ボリュームにアタッチされるフィルター デバイス オブジェクト
 
@@ -29,51 +29,51 @@ ms.locfileid: "63341524"
 
 ボリューム上に関連付けられているフィルター デバイス オブジェクトは、次の種類の I/O 要求を受信する概してできます。
 
-[**IRP\_MJ\_クリーンアップ**](https://msdn.microsoft.com/library/windows/hardware/ff548608)
+[**IRP\_MJ\_クリーンアップ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-cleanup)
 
-[**IRP\_MJ\_CLOSE**](https://msdn.microsoft.com/library/windows/hardware/ff548621)
+[**IRP\_MJ\_CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-close)
 
-[**IRP\_MJ\_CREATE**](https://msdn.microsoft.com/library/windows/hardware/ff548630)
+[**IRP\_MJ\_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)
 
-[**IRP\_MJ\_DEVICE\_CONTROL**](https://msdn.microsoft.com/library/windows/hardware/ff548649)
+[**IRP\_MJ\_DEVICE\_CONTROL**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-device-control)
 
-[**IRP\_MJ\_ディレクトリ\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff548658)
+[**IRP\_MJ\_ディレクトリ\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-directory-control)
 
-[**IRP\_MJ\_ファイル\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff548670)
+[**IRP\_MJ\_ファイル\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-file-system-control)
 
-[**IRP\_MJ\_フラッシュ\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff549235)
+[**IRP\_MJ\_フラッシュ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-flush-buffers)
 
-[**IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff549241)
+[**IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-internal-device-control)
 
-[**IRP\_MJ\_ロック\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff549251)
+[**IRP\_MJ\_ロック\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-lock-control)
 
-[**IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff549268)
+[**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-pnp)
 
-[**IRP\_MJ\_クエリ\_EA**](https://msdn.microsoft.com/library/windows/hardware/ff549279)
+[**IRP\_MJ\_クエリ\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-ea)
 
-[**IRP\_MJ\_クエリ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff549283)
+[**IRP\_MJ\_クエリ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-information)
 
-[**IRP\_MJ\_クエリ\_クォータ**](https://msdn.microsoft.com/library/windows/hardware/ff549293)
+[**IRP\_MJ\_クエリ\_クォータ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-quota)
 
-[**IRP\_MJ\_QUERY\_SECURITY**](https://msdn.microsoft.com/library/windows/hardware/ff549298)
+[**IRP\_MJ\_QUERY\_SECURITY**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-security)
 
-[**IRP\_MJ\_クエリ\_ボリューム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff549318)
+[**IRP\_MJ\_クエリ\_ボリューム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-volume-information)
 
-[**IRP\_MJ\_READ**](https://msdn.microsoft.com/library/windows/hardware/ff549327)
+[**IRP\_MJ\_READ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)
 
-[**IRP\_MJ\_SET\_EA**](https://msdn.microsoft.com/library/windows/hardware/ff549346)
+[**IRP\_MJ\_SET\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-ea)
 
-[**IRP\_MJ\_SET\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff549366)
+[**IRP\_MJ\_SET\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-information)
 
-[**IRP\_MJ\_SET\_QUOTA**](https://msdn.microsoft.com/library/windows/hardware/ff549401)
+[**IRP\_MJ\_SET\_QUOTA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-quota)
 
-[**IRP\_MJ\_SET\_SECURITY**](https://msdn.microsoft.com/library/windows/hardware/ff549407)
+[**IRP\_MJ\_SET\_SECURITY**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-security)
 
-[**IRP\_MJ\_設定\_ボリューム\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff549415)
+[**IRP\_MJ\_設定\_ボリューム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-volume-information)
 
-[**IRP\_MJ\_シャット ダウン**](https://msdn.microsoft.com/library/windows/hardware/ff549423)
+[**IRP\_MJ\_シャット ダウン**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-shutdown)
 
-[**IRP\_MJ\_WRITE**](https://msdn.microsoft.com/library/windows/hardware/ff549427)
+[**IRP\_MJ\_WRITE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-write)
 
 **FastIoCheckIfPossible**
 
@@ -131,7 +131,7 @@ ms.locfileid: "63341524"
 
 **ReleaseForModWrite**
 
-詳細については、参照のエントリを参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)します。
+詳細については、参照のエントリを参照してください。 [ **FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)します。
 
  
 

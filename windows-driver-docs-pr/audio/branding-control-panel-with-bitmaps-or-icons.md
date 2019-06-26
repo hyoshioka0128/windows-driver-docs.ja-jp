@@ -16,12 +16,12 @@ keywords:
 - WDK オーディオのブランド イメージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1270c27fa33320da4e67627a07d9051f0de356e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b1528a4f32b56473d2b0da84a26b6693d709126
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333895"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355613"
 ---
 # <a name="branding-control-panel-with-bitmaps-or-icons"></a>ビットマップまたはアイコンを使用してコントロール パネルをブランド化する
 
@@ -72,11 +72,11 @@ Windows Vista では、ブランド情報でユーザーに表示されて、**�
 
  
 
-これらの値は、追加レジストリ セクション内のディレクティブで、レジストリに追加されます (を参照してください[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)) のデバイス ドライバーをインストールする INF ファイル。 コントロール パネルの不足している任意の値の既定値を使用して、**ブランド**サブキー。
+これらの値は、追加レジストリ セクション内のディレクティブで、レジストリに追加されます (を参照してください[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)) のデバイス ドライバーをインストールする INF ファイル。 コントロール パネルの不足している任意の値の既定値を使用して、**ブランド**サブキー。
 
 上部にある独自のデバイス名の左側に"bitmap"ロゴが表示される、**ボリューム**ページ。 SndVol32 コントロール メニューの左上隅にある「アイコン」ロゴが表示されます。
 
-前に説明したページに表示される独自のデバイス名とは、デバイスのフレンドリ名です。 このフレンドリ名は、追加のレジストリのセクションで、デバイスをインストールする INF ファイルのディレクティブによって指定されます。 例で示すように、このディレクティブが"FriendlyName"キーワードを含む[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。 Windows xp の場合、**ボリューム**ページと SndVol32 名の文字列の最初の 31 文字のみを表示します。 長い文字列は切り捨てられます。 Windows Vista および Windows の以降のバージョンでは、コントロール パネルの デバイス名が表示されるときにこの 31 文字に制限が削除されます。 たとえば、Windows Vista より前のバージョンの Windows でサポートされていた Api を使用すると[MCI\_GetDevCaps](https://go.microsoft.com/fwlink/p/?linkid=149692)、31 文字の制限がまだ API に指定したデバイス名に適用します。
+前に説明したページに表示される独自のデバイス名とは、デバイスのフレンドリ名です。 このフレンドリ名は、追加のレジストリのセクションで、デバイスをインストールする INF ファイルのディレクティブによって指定されます。 例で示すように、このディレクティブが"FriendlyName"キーワードを含む[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。 Windows xp の場合、**ボリューム**ページと SndVol32 名の文字列の最初の 31 文字のみを表示します。 長い文字列は切り捨てられます。 Windows Vista および Windows の以降のバージョンでは、コントロール パネルの デバイス名が表示されるときにこの 31 文字に制限が削除されます。 たとえば、Windows Vista より前のバージョンの Windows でサポートされていた Api を使用すると[MCI\_GetDevCaps](https://go.microsoft.com/fwlink/p/?linkid=149692)、31 文字の制限がまだ API に指定したデバイス名に適用します。
 
 **重要な**  で Windows Vista と以降のバージョンの Windows での使用のビットマップ画像を保存のサード パーティ製のブランド化はサポートされていません。 サード パーティ製のオーディオ ドライバー開発者が、オーディオ デバイスのコントロールをブランド化する場合は、アイコンを使用する必要があります。 これらのアイコンのサポートされているピクセル寸法とは、32 x 32 または 48 x 48 です。
 
@@ -96,7 +96,7 @@ Windows Vista では、ブランド情報でユーザーに表示されて、**�
 
 例のディレクティブを**アイコン**"imagefile"の形式を使用する値を変更できますが、ここでは、文字列値は .ico ファイル名拡張子の付いたファイルのパス名を含める必要があります。
 
-コントロール パネルのソフトウェアが同じとして検索パスの一覧を検索する「ファイル, resourceid」の形式の場合、 **LoadLibrary**関数 (Microsoft Windows SDK のドキュメントで説明)。 ソフトウェアでは、ドライバーのディレクトリを検索もこのパスの一覧にファイルが含まれていない場合 (を参照してください[ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383))。 この形式は、ドライバー ファイル自体を INF ファイルの絶対パス名を指定することを必要とせずに簡単に格納されるイメージをできます。
+コントロール パネルのソフトウェアが同じとして検索パスの一覧を検索する「ファイル, resourceid」の形式の場合、 **LoadLibrary**関数 (Microsoft Windows SDK のドキュメントで説明)。 ソフトウェアでは、ドライバーのディレクトリを検索もこのパスの一覧にファイルが含まれていない場合 (を参照してください[ **INF DestinationDirs セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section))。 この形式は、ドライバー ファイル自体を INF ファイルの絶対パス名を指定することを必要とせずに簡単に格納されるイメージをできます。
 
 ### <a name="span-idexample2spanspan-idexample2span-example-2"></a><span id="example_2"></span><span id="EXAMPLE_2"></span> 例 2
 

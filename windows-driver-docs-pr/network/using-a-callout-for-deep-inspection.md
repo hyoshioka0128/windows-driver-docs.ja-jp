@@ -7,17 +7,17 @@ keywords:
 - 詳細な検査 WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f7d44ec5fa7ba6292037a71e687a792f0abfd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90398573152f2a067fcdd237243f97084cbd155a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372182"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369631"
 ---
 # <a name="using-a-callout-for-deep-inspection"></a>詳細検査へのコールアウトの使用
 
 
-吹き出しの詳細な検査を実行するときにその[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数は、固定のデータ フィールド、メタデータ フィールド、およびそれに渡されるすべての未処理のパケット データの任意の組み合わせとされている、関連するデータを検査できますフィルターまたはデータに関連付けられたコンテキストに格納されているフロー。
+吹き出しの詳細な検査を実行するときにその[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数は、固定のデータ フィールド、メタデータ フィールド、およびそれに渡されるすべての未処理のパケット データの任意の組み合わせとされている、関連するデータを検査できますフィルターまたはデータに関連付けられたコンテキストに格納されているフロー。
 
 次に、例を示します。
 
@@ -112,11 +112,11 @@ VOID NTAPI
 }
 ```
 
-値*フィルター -&gt;action.type*吹き出しのアクションを決定します[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)に吹き出し関数が返す必要があります、 **actionType**メンバー指す構造体の*classifyOut*パラメーター。 これらのアクションの詳細については、次を参照してください。、 [ **FWPS\_ACTION0** ](https://msdn.microsoft.com/library/windows/hardware/ff551215)構造体。
+値*フィルター -&gt;action.type*吹き出しのアクションを決定します[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)に吹き出し関数が返す必要があります、 **actionType**メンバー指す構造体の*classifyOut*パラメーター。 これらのアクションの詳細については、次を参照してください。、 [ **FWPS\_ACTION0** ](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)構造体。
 
-コールアウトは、外側のパケット データの追加の処理を実行する必要がある場合その[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数、データの許可またはブロックする必要があります、かどうかにする必要があります保留パケット データの処理までを決定できる前に、データが完了するとします。 パケット データを保留する方法については、次を参照してください。[型のコールアウト](types-of-callouts.md)と[ **FwpsPendOperation0**](https://msdn.microsoft.com/library/windows/hardware/ff551199)します。
+コールアウトは、外側のパケット データの追加の処理を実行する必要がある場合その[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数、データの許可またはブロックする必要があります、かどうかにする必要があります保留パケット データの処理までを決定できる前に、データが完了するとします。 パケット データを保留する方法については、次を参照してください。[型のコールアウト](types-of-callouts.md)と[ **FwpsPendOperation0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpspendoperation0)します。
 
-いくつかのレイヤーをフィルター処理、*データ*吹き出しのフィルター エンジンによって渡されるパラメーター [classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数は**NULL**します。
+いくつかのレイヤーをフィルター処理、*データ*吹き出しのフィルター エンジンによって渡されるパラメーター [classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数は**NULL**します。
 
 ストリーム データの詳細な検査を実行する方法については、次を参照してください。[コールアウトを使用して、Stream データの詳細な検査](using-a-callout-for-deep-inspection-of-stream-data.md)します。
 

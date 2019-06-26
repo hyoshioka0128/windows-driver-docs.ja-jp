@@ -9,12 +9,12 @@ keywords:
 - 検証プロセス WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25782357a3f8c7bd9f2b2d0372aa4ce6c6216ecc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23dd1149e2fd1a7d47a2b47b6c039760e64994ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379874"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381798"
 ---
 # <a name="verification-process"></a>検証プロセス
 
@@ -35,7 +35,7 @@ SDV の実施、*検証*動作が適切な動作を定義するルールに準�
 
 ### <a name="span-idcheckspanspan-idcheckspancheck"></a><span id="check"></span><span id="CHECK"></span>チェック
 
-中に、**確認**ステップ、SDV の準備および検証の選択した規則を使用して、ドライバーを確認します。 選択可能なルールの詳細については、次を参照してください。[静的ドライバー検証規則](https://msdn.microsoft.com/library/windows/hardware/ff551714)します。
+中に、**確認**ステップ、SDV の準備および検証の選択した規則を使用して、ドライバーを確認します。 選択可能なルールの詳細については、次を参照してください。[静的ドライバー検証規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 SDV は、オペレーティング システムのモデルの追加のコンポーネントを選択した規則が必要かどうかを開始します。 場合は、SDV は、ドライバーのソース ディレクトリに追加のオペレーティング システムのモデル ファイルをコピーします。
 

@@ -8,12 +8,12 @@ keywords:
 - デバイス インターフェイスの変更通知 PnP WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b584bfdeeae4d3c46cb2389a2d5448e62efc619
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2701f626bb3d990ce9ba68c25ebe49a7a89e490
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391069"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381576"
 ---
 # <a name="using-pnp-device-interface-change-notification"></a>PnP デバイス インターフェイス変更通知の使用
 
@@ -29,7 +29,7 @@ ms.locfileid: "63391069"
 
 [デバイス インターフェイスの変更イベントの処理](handling-device-interface-change-events.md)
 
-参照してください[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)および関連するデバイスのインターフェイスについてルーチン。
+参照してください[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)および関連するデバイスのインターフェイスについてルーチン。
 
  
 

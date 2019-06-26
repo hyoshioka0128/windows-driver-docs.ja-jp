@@ -6,12 +6,12 @@ keywords:
 - ネットワーク ドライバーをメタデータ フィールドの識別子
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7184bf3303cc236f1d78e4cbcc265d51b978a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8909e982412432d25e68f25617dfe040fdb2c807
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373998"
 ---
 # <a name="metadata-field-identifiers"></a>メタデータ フィールド識別子
 
@@ -165,7 +165,7 @@ ms.locfileid: "63367568"
 <p>FWPS_METADATA_FIELD_ORIGINAL_DESTINATION</p>
 </td>
 <td>
-<p>A <a href="https://msdn.microsoft.com/library/windows/hardware/ff570825"> <b>SOCKADDR_STORAGE</b> </a>パケットの元の送信先を指定する構造体。</p>
+<p>A <a href="https://docs.microsoft.com/windows/desktop/api/ws2def/ns-ws2def-sockaddr_storage"> <b>SOCKADDR_STORAGE</b> </a>パケットの元の送信先を指定する構造体。</p>
 <p>
 <div class="alert"><b>注</b>  Windows 7 以降ではサポートされています。</div>
 <div> </div>

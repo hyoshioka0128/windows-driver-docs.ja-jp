@@ -8,12 +8,12 @@ keywords:
 - Irp WDK の電源管理のウェイク/待機を送信します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a8a9ffd7a78d2f5d436a1a0eba3f478208e8de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13bcd0548c378c0d47aad223cd2f363198fc636b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388171"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371264"
 ---
 # <a name="determining-when-to-send-a-waitwake-irp"></a>待機/ウェイク IRP を送信するタイミングの決定
 
@@ -27,7 +27,7 @@ ms.locfileid: "63388171"
 
 -   システムがスリープ状態になると、デバイスは、それがスリープ解除できる必要があります。
 
-電源ポリシー所有者は、このような条件が迫っていないか前に待機/ウェイク IRP を送信する必要があります。 いつ D0、そのデバイスが IRP を送信できますが、それが別のセットの電源を処理中に IRP またはクエリ power IRP が送信する必要があります。 一般的な規則として、ドライバーは、プラグ アンド プレイの上司の処理中に、IRP を送信する必要があります[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)を要求した後初期化され、デバイスを開始します。
+電源ポリシー所有者は、このような条件が迫っていないか前に待機/ウェイク IRP を送信する必要があります。 いつ D0、そのデバイスが IRP を送信できますが、それが別のセットの電源を処理中に IRP またはクエリ power IRP が送信する必要があります。 一般的な規則として、ドライバーは、プラグ アンド プレイの上司の処理中に、IRP を送信する必要があります[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)を要求した後初期化され、デバイスを開始します。
 
  
 

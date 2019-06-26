@@ -11,12 +11,12 @@ keywords:
 - WDK のネットワークの状態遷移の電源
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d05eb24845eea55e44ebc3900835fcab9282229
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 800da6faa1c0f9a20b9c878613119c7c1e105ff3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364180"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381388"
 ---
 # <a name="device-power-states-for-network-adapters"></a>ネットワーク アダプターのデバイス電源状態
 
@@ -32,10 +32,10 @@ ms.locfileid: "63364180"
 
 デバイスの状態の詳細な説明は、次のトピックを参照してください。
 
-* [デバイスの電源の状態](https://msdn.microsoft.com/library/windows/hardware/ff543162)
-* [デバイスの動作状態 D0](https://msdn.microsoft.com/library/windows/hardware/ff543210)
-* [デバイスの低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)
-* [デバイスの電源状態の必要なサポート](https://msdn.microsoft.com/library/windows/hardware/ff561073)
+* [デバイスの電源の状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)
+* [デバイスの動作状態 D0](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-working-state-d0)
+* [デバイスの低電力状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)
+* [デバイスの電源状態の必要なサポート](https://docs.microsoft.com/windows-hardware/drivers/kernel/required-support-for-device-power-states)
 
 **注**  NDIS プロセスの電源管理の Irp では、NDIS ドライバーがないです。
 
@@ -45,7 +45,7 @@ ms.locfileid: "63364180"
 
 ### <a href="" id="d0"></a>デバイスの動作状態 D0
 
-この電源状態の説明は、すべてのデバイスで[デバイスの操作状態 D0](https://msdn.microsoft.com/library/windows/hardware/ff543210)します。 ネットワーク アダプターおよびミニポート ドライバー。
+この電源状態の説明は、すべてのデバイスで[デバイスの操作状態 D0](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-working-state-d0)します。 ネットワーク アダプターおよびミニポート ドライバー。
 
 <a href="" id="power-consumption"></a>電力消費量  
 ネットワーク アダプターでは、完全に供給し、配信の完全な機能とパフォーマンスが。
@@ -61,7 +61,7 @@ ms.locfileid: "63364180"
 
 ### <a href="" id="d1"></a>デバイスの電源状態 D1
 
-この電源状態の説明は、すべてのデバイスで[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)します。 ネットワーク アダプターおよびミニポート ドライバー。
+この電源状態の説明は、すべてのデバイスで[デバイス低電力状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)します。 ネットワーク アダプターおよびミニポート ドライバー。
 
 <a href="" id="power-consumption"></a>電力消費量  
 この状態は、highest-powered スリープ状態です。 電力消費は、状態とより大きいまたは D2 の状態と等しい D0 でよりも短くなっています。
@@ -81,7 +81,7 @@ ms.locfileid: "63364180"
 
 ### <a href="" id="d2"></a>デバイスの電源状態 D2
 
-この電源状態の説明は、すべてのデバイスで[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)します。 ネットワーク アダプターおよびミニポート ドライバー。
+この電源状態の説明は、すべてのデバイスで[デバイス低電力状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)します。 ネットワーク アダプターおよびミニポート ドライバー。
 
 <a href="" id="power-consumption"></a>電力消費量  
 中間のスリープ状態です。 電力消費は、状態とより大きいまたは D3 状態と等しい D1 でよりも短くなっています。
@@ -97,10 +97,10 @@ D1 の場合と同じです。
 
 ### <a href="" id="d3"></a>デバイスの電源状態 D3
 
-この電源状態の説明は、すべてのデバイスで[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)します。 ネットワーク アダプターおよびミニポート ドライバー。
+この電源状態の説明は、すべてのデバイスで[デバイス低電力状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)します。 ネットワーク アダプターおよびミニポート ドライバー。
 
 <a href="" id="power-consumption"></a>電力消費量  
-電力量が少なくとスリープの状態。 電力量がゼロ以外 (D3hot) あります。 または、正確に 0 (D3cold) がある可能性があります。 D3hot と D3cold の詳細については、次を参照してください。[デバイス低電力状態](https://msdn.microsoft.com/library/windows/hardware/ff543186)します。
+電力量が少なくとスリープの状態。 電力量がゼロ以外 (D3hot) あります。 または、正確に 0 (D3cold) がある可能性があります。 D3hot と D3cold の詳細については、次を参照してください。[デバイス低電力状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)します。
 
 <a href="" id="device-context"></a>デバイス コンテキスト  
 D1 の場合と同じです。

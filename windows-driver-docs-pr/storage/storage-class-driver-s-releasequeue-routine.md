@@ -9,12 +9,12 @@ keywords:
 - 固定されたキュー WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c9f2be59fc652ae3e9b262b6a8bcc0f66eea0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dc978b236bd1c3afc8ffb7fdc17540d7216d293
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339027"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368888"
 ---
 # <a name="storage-class-drivers-releasequeue-routine"></a>記憶域クラス ドライバーの ReleaseQueue ルーチン
 
@@ -38,7 +38,7 @@ ms.locfileid: "63339027"
 
 A *ReleaseQueue*日常的な割り当てや IRP と、SRB リリースまたは保持されているキューをフラッシュのいずれかに設定します。 **関数**SRB に、SRB のメンバーを設定する必要があります\_関数\_リリース\_キューまたは SRB\_関数\_フラッシュ\_キュー両方を解放します。保持されているキューとキャンセル中のすべてのキューに要求ターゲット論理ユニットです。 ポートのドライバーをフラッシュ キュー内のすべての要求が完了すると、 **SrbStatus** SRB にメンバーが設定\_状態\_要求\_フラッシュされました。
 
-保持されているキューの解放に失敗により、デバイスは、アクセスできないため、ドライバーの*ReleaseQueue*がメモリ不足の状態であっても成功するルーチンを設計する必要があります。 A *ReleaseQueue*ルーチンを呼び出すことによって、SRB のメモリの割り当てに試みる必要がある最初[ **ExAllocatePool** ](https://msdn.microsoft.com/library/windows/hardware/ff544501)で、 **NonPagedPool**メモリを入力し、その割り当てに失敗した場合をドライバーの初期化中に事前に割り当てられますが、SRB を使用します。 場合は、ドライバーの割り当て」の説明に従って、デバイスの拡張機能の初期化時に予約で保持するために、SRB[デバイス拡張機能の設定を記憶域クラス ドライバーの](setting-up-a-storage-class-driver-s-device-extension.md)その*ReleaseQueue*場合、その SRB を使用できます、同時リリースの複数の操作に必要な場合は、メモリ プールが低く、適切な同期メカニズムです。
+保持されているキューの解放に失敗により、デバイスは、アクセスできないため、ドライバーの*ReleaseQueue*がメモリ不足の状態であっても成功するルーチンを設計する必要があります。 A *ReleaseQueue*ルーチンを呼び出すことによって、SRB のメモリの割り当てに試みる必要がある最初[ **ExAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepool)で、 **NonPagedPool**メモリを入力し、その割り当てに失敗した場合をドライバーの初期化中に事前に割り当てられますが、SRB を使用します。 場合は、ドライバーの割り当て」の説明に従って、デバイスの拡張機能の初期化時に予約で保持するために、SRB[デバイス拡張機能の設定を記憶域クラス ドライバーの](setting-up-a-storage-class-driver-s-device-extension.md)その*ReleaseQueue*場合、その SRB を使用できます、同時リリースの複数の操作に必要な場合は、メモリ プールが低く、適切な同期メカニズムです。
 
 なおクラス ドライバーの*ReleaseQueue*ルーチンは、非同期的に呼び出されますから通常その*IoCompletion*ルーチン。 クラス ドライバーの*IoCompletion*ルーチンを呼び出すことはできません*ReleaseQueue*が固定されているキューをフラッシュします。 ただし、呼び出すことができます*ReleaseQueue*単に、固定されていないキュー、およびポートのドライバーをリリースするこのような要求は無視されます。
 

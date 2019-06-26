@@ -4,12 +4,12 @@ description: STI コンポーネントの概要
 ms.assetid: 30aaa622-fb86-42dc-a417-df61e0093db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbe34f780fcf3f153551987db0b1a21f91ca7a54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f856a68715e29b263f62831669f2458b023be0c1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392650"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374326"
 ---
 # <a name="overview-of-sti-components"></a>STI コンポーネントの概要
 
@@ -65,7 +65,7 @@ Microsoft STI には、さまざまな Microsoft STI コンポーネント間の
 
 ### <a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>静止画像ミニドライバーのユーザー モード
 
-ユーザー モード静止画像ミニドライバーは、適切なカーネル モード ドライバーにデバイスに固有のユーザー モード インターフェイスを提供するベンダーから提供されたコンポーネントです。 これらのユーザー モード ドライバーの各を実装する必要があります、 [IStiUSD COM インターフェイス](istiusd-com-interface.md)します。 呼び出すことによってカーネル モード ドライバーの通信が、 [ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)、 **ReadFile**、 **WriteFile**、および[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) (Microsoft Windows SDK のドキュメントで説明) の Win32 関数。 詳細については、次を参照してください。[ユーザー モードのままイメージ ミニドライバーを作成する](creating-a-user-mode-still-image-minidriver.md)します。
+ユーザー モード静止画像ミニドライバーは、適切なカーネル モード ドライバーにデバイスに固有のユーザー モード インターフェイスを提供するベンダーから提供されたコンポーネントです。 これらのユーザー モード ドライバーの各を実装する必要があります、 [IStiUSD COM インターフェイス](istiusd-com-interface.md)します。 呼び出すことによってカーネル モード ドライバーの通信が、 [ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**、および[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) (Microsoft Windows SDK のドキュメントで説明) の Win32 関数。 詳細については、次を参照してください。[ユーザー モードのままイメージ ミニドライバーを作成する](creating-a-user-mode-still-image-minidriver.md)します。
 
 ### <a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>静止画像のカーネル モード ドライバー
 
@@ -83,13 +83,13 @@ Microsoft STI には、さまざまな Microsoft STI コンポーネント間の
 ユーザー モード ドライバー呼び出す bus 固有[のカーネル モード ドライバーは、デバイスを静止画像](accessing-kernel-mode-drivers-for-still-image-devices.md)します。
 
 <a href="" id="devices-connected-to-a-parallel-port"></a>**パラレル ポートに接続されているデバイス**  
-拡張機能ポート (ECP) と、強化されたパラレル ポート (EPP) モードがサポートされています。 ベンダーから提供されたカーネル モード*フィルター ドライバー*静止のイメージのユーザー モード ドライバーとカーネル モードのバス ドライバー スタックとの間に追加することができます。 (パラレル ポート ドライバーの詳細については、次を参照してください。[並列のデバイス デザイン ガイド](https://msdn.microsoft.com/library/windows/hardware/ff544263)と[並列デバイス参照](https://msdn.microsoft.com/library/windows/hardware/ff544269)します。 フィルター ドライバーの詳細については、次を参照してください[フィルター ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff545890)。)。
+拡張機能ポート (ECP) と、強化されたパラレル ポート (EPP) モードがサポートされています。 ベンダーから提供されたカーネル モード*フィルター ドライバー*静止のイメージのユーザー モード ドライバーとカーネル モードのバス ドライバー スタックとの間に追加することができます。 (パラレル ポート ドライバーの詳細については、次を参照してください。[並列のデバイス デザイン ガイド](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))と[並列デバイス参照](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 フィルター ドライバーの詳細については、次を参照してください[フィルター ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)。)。
 
 <a href="" id="devices-connected-to-an-ieee-1394-bus"></a>**IEEE 1394 バスに接続されているデバイス**  
 デバイス sbp-2 プロトコルをサポートしている場合、ユーザー モード ドライバーは Microsoft の sbp-2 インターフェイスを呼び出すことができます。 それ以外の場合、フィルターのベンダーから提供されたドライバーが必要です。
 
 <a href="" id="devices-connected-to-a-serial-port"></a>**シリアル ポートに接続されているデバイス**  
-標準のシリアル ポートのドライバーが使用されます。 (詳細については、次を参照してください[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)。)。
+標準のシリアル ポートのドライバーが使用されます。 (詳細については、次を参照してください[シリアル デバイスとドライバー](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))。)。
 
 <a href="" id="devices-connected-to-an-infrared-interface"></a>**赤外線のインターフェイスに接続されているデバイス**  
 ドライバーを呼び出すことができます、 **IrSock**ソフトウェア インターフェイスが (Microsoft Windows SDK のドキュメントで説明)。

@@ -4,12 +4,12 @@ description: このトピックでは、プリンターの拡張機能ライブ�
 ms.assetid: A47B17CE-BF5A-4C02-807C-890F315A13E0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de9fbe871c89b268ce541dd03816077cb55c8f3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d070674bac7259c6314aa1dd3df2d96bb3f6e7a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323388"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369364"
 ---
 # <a name="printer-extension-library-overview-for-uwp-device-apps"></a>UWP アプリのデバイスのプリンター拡張機能ライブラリの概要
 
@@ -61,9 +61,9 @@ DeviceAppForPrintersLibrary、という名前の追加のプロジェクトで�
 
 [プリンター拡張機能インターフェイス (v4 印刷ドライバー)](https://go.microsoft.com/fwlink/p/?LinkID=299887)
 
-[ジョブの管理 (v4 プリンター ドライバー)](https://msdn.microsoft.com/library/windows/hardware/dn265419)
+[ジョブの管理 (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)
 
-[デバイスのメンテナンス (v4 プリンター ドライバー)](https://msdn.microsoft.com/library/windows/hardware/dn265274)
+[デバイスのメンテナンス (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
 
 [双方向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)
 

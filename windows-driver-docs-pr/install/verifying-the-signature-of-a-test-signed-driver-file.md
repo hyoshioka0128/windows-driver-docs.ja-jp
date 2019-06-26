@@ -12,17 +12,17 @@ keywords:
 - テスト署名ドライバー パッケージにドライバー ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e923126bbf0a19944589be54d8bd86af3e44728
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a0eb47889fef17c2a4084622cb08a368a88e455
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339298"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380420"
 ---
 # <a name="verifying-the-signature-of-a-test-signed-driver-file"></a>テスト署名されたドライバー ファイルの署名の検証
 
 
-ドライバー ファイルに埋め込まれているテスト署名を確認するには、次を使用して[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)コマンド。
+ドライバー ファイルに埋め込まれているテスト署名を確認するには、次を使用して[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンド。
 
 ```cpp
 SignTool verify /v /pa DriverFileName.sys

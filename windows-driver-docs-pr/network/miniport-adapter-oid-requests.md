@@ -1,6 +1,6 @@
 ---
-title: ミニポート アダプタの OID 要求
-description: ミニポート アダプタの OID 要求
+title: ミニポート アダプター OID 要求
+description: ミニポート アダプター OID 要求
 ms.assetid: c3769b1e-c84a-499d-9f93-17a31441a477
 keywords:
 - Oid WDK ネットワーク、ミニポート アダプターの要求
@@ -9,20 +9,20 @@ keywords:
 - オブジェクト識別子の WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8aaa235a875f479dae951da3f5ec63c23e971b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a442f4eb223c43108279df4ba2d8c77aec267972
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550239"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373947"
 ---
-# <a name="miniport-adapter-oid-requests"></a>ミニポート アダプタの OID 要求
+# <a name="miniport-adapter-oid-requests"></a>ミニポート アダプター OID 要求
 
 
 
 
 
-NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含めるミニポート アダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)を参照してください。
+NDIS は、デバイスの特性、構成可能な設定、および統計情報などのパラメーターを含めるミニポート アダプターのパラメーターを識別するためにオブジェクト識別子 (OID) の値を定義します。 Oid の詳細については、次を参照してください。 [NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
 NDIS 6.1 と以降のミニポート ドライバーでは、NDIS の提供、 [OID 要求インターフェイスを直接](direct-oid-request-interface-in-ndis-6-1.md)します。 *直接 OID 要求パス*クエリを実行したり、頻繁に設定されている OID 要求をサポートします。 直接 OID 要求インターフェイスでは、NDIS ドライバーの省略可能です。
 

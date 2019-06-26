@@ -4,12 +4,12 @@ description: このトピックでは、Windows デベロッパー センター 
 ms.assetid: 5A4A371E-42A2-43C8-A496-CC3C38C17182
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e75953f87c5fb48ee01edb45ff87bbd867eca9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 576d0ee6446b767730c6dfb8afcde3a7d8f0ebad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531005"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369345"
 ---
 # <a name="step-6-submit-device-metadata-for-your-uwp-device-app"></a>手順 6:UWP デバイス アプリのデバイス メタデータを送信します。
 
@@ -18,13 +18,13 @@ ms.locfileid: "56531005"
 
 このトピックでは、Windows デベロッパー センター ハードウェア ダッシュ ボードに UWP デバイス アプリのデバイス メタデータを送信する方法について説明します。
 
-UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)を参照してください。
+UWP デバイスのアプリは、内部や周辺機器デバイスに対応するとして機能するデバイスの製造元が作成した UWP アプリの特別な種類です。 デバイス メタデータを使用すると、デバイス アプリは、特権操作を実行して、デバイスが接続されているときに自動的にインストールします。 UWP デバイスのアプリに関する詳細については、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
 
 **注**  このトピックはステップ バイ ステップの一連の一部です。 参照してください[ステップ バイ ステップの UWP デバイスのアプリをビルド](build-a-uwp-device-app-step-by-step.md)導入します。
 
  
 
-## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>開始する前に
+## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>始める前に
 
 
 ハードウェア ダッシュ ボードに、デバイス メタデータ パッケージを送信する 2 つの方法はあります。
@@ -60,7 +60,7 @@ UWP デバイスのアプリは、内部や周辺機器デバイスに対応す�
 
 6.  **提出用の準備一括パッケージ**] ページで [**署名ウィザードの起動**を開始する、**デジタル署名ウィザード**、一括のデジタル署名に使用します。提出パッケージ。
 
-ハードウェア ダッシュ ボードへのデバイス メタデータ パッケージの送信についての詳細については、[デバイス メタデータ](https://msdn.microsoft.com/library/windows/hardware/br230800.aspx)を参照してください。
+ハードウェア ダッシュ ボードへのデバイス メタデータ パッケージの送信についての詳細については、次を参照してください。[デバイス メタデータ](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)します。
 
  
 

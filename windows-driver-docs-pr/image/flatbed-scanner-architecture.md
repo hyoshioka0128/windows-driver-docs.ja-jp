@@ -4,12 +4,12 @@ description: フラットベッド スキャナーのアーキテクチャ
 ms.assetid: 04f7df17-d289-44a1-8c2d-7d0fa618cc97
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 002946aa4e4678c1c190969697298dc7ce8053ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ab8f111acdbcd44ef0e7472adf3df40d41ddd47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380036"
 ---
 # <a name="flatbed-scanner-architecture"></a>フラットベッド スキャナーのアーキテクチャ
 
@@ -17,7 +17,7 @@ ms.locfileid: "63352211"
 
 
 
-スキャナーのデバイスでは、フラット ベッドからプラテン上のスキャンをサポートする場合は、その WIA 項目ツリーで、ルート項目から直接、最初の子項目としてフラット ベッド スキャナーの項目が実装する必要があります。また、 [ **WIA\_IPA\_項目\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff551581) WIA にプロパティを設定する必要があります\_カテゴリ\_ベッドします。 ベッドは、この項目は、プログラミング可能なデータ ソースを表し、データ転送はこの項目から要求されたときに、スキャナーのフラット ベッドからプラテン上に現在配置されているドキュメントからイメージを生成します。
+スキャナーのデバイスでは、フラット ベッドからプラテン上のスキャンをサポートする場合は、その WIA 項目ツリーで、ルート項目から直接、最初の子項目としてフラット ベッド スキャナーの項目が実装する必要があります。また、 [ **WIA\_IPA\_項目\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category) WIA にプロパティを設定する必要があります\_カテゴリ\_ベッドします。 ベッドは、この項目は、プログラミング可能なデータ ソースを表し、データ転送はこの項目から要求されたときに、スキャナーのフラット ベッドからプラテン上に現在配置されているドキュメントからイメージを生成します。
 
 フラット ベッドのプラテン スキャンのみをサポートするスキャナーには、次の図に示す WIA 項目のツリーがあります。
 

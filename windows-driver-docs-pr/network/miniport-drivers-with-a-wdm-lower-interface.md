@@ -9,12 +9,12 @@ keywords:
 - WDM 低いインターフェイス WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3bb792ffb6d3328e33a8fcbcd719e06e1dd75fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e75d2d1d3e5e028458dd7508a63518788e8f070a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362324"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380890"
 ---
 # <a name="miniport-drivers-with-a-wdm-lower-interface"></a>WDM の下位インターフェイスを含むミニポート ドライバー
 
@@ -22,7 +22,7 @@ ms.locfileid: "63362324"
 
 
 
-Microsoft のミニポート ドライバー [Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698) (WDM) 下位インターフェイスとも呼ばれますが、 *NDIS WDM ミニポート ドライバー*します。 この種類のミニポート ドライバーでは:
+Microsoft のミニポート ドライバー [Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) (WDM) 下位インターフェイスとも呼ばれますが、 *NDIS WDM ミニポート ドライバー*します。 この種類のミニポート ドライバーでは:
 
 -   WDM 下端を使用します。
 

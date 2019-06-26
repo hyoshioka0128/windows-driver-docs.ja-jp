@@ -8,12 +8,12 @@ keywords:
 - RegistryPath 文字列のコピー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd0bac911f9fd2e9a8fc1fcc8dc387c9f4c5ad7b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0eebf5f499a9342f46b4ce6e55ecb7c40b2371e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366794"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381765"
 ---
 # <a name="optional-saving-a-copy-of-the-registry-path-string"></a>\[省略可能な\]レジストリのパス文字列のコピーを保存しています
 
@@ -25,7 +25,7 @@ ms.locfileid: "63366794"
 
  
 
-コピーを保存、 *RegistryPath*への入力として渡された文字列を**DriverEntry**します。 このパラメーターが、ドライバーのレジストリ キーへのパスを指定する、カウントされた Unicode 文字列を指す**\\レジストリ\\マシン\\システム\\CurrentControlSet\\サービス\\** <em>DriverName</em>ここで、 *DriverName*ドライバーの名前を指定します。 場合、 *RegistryPath*文字列は、後で必要になります**DriverEntry**ポインターが後に無効になっているために、これだけでなく、ポインターのコピーを保存する必要があります、 **DriverEntry**ルーチンを返します。 使用することができます、 [ **RtlCopyUnicodeString** ](https://msdn.microsoft.com/library/windows/hardware/ff561817)をコピーするルーチン、 *RegistryPath*を宛先文字列に文字列のソースします。
+コピーを保存、 *RegistryPath*への入力として渡された文字列を**DriverEntry**します。 このパラメーターが、ドライバーのレジストリ キーへのパスを指定する、カウントされた Unicode 文字列を指す **\\レジストリ\\マシン\\システム\\CurrentControlSet\\サービス\\** <em>DriverName</em>ここで、 *DriverName*ドライバーの名前を指定します。 場合、 *RegistryPath*文字列は、後で必要になります**DriverEntry**ポインターが後に無効になっているために、これだけでなく、ポインターのコピーを保存する必要があります、 **DriverEntry**ルーチンを返します。 使用することができます、 [ **RtlCopyUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcopyunicodestring)をコピーするルーチン、 *RegistryPath*を宛先文字列に文字列のソースします。
 
  
 

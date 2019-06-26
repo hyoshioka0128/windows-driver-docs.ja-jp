@@ -7,12 +7,12 @@ keywords:
 - Driver Verifier の WDK、グローバル フラグ ユーティリティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97aefe3397738391d7c510d92aa7028917a2c1b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8cdbde060c10e8c92c9c6a70f838fa4d2509159
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327241"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381805"
 ---
 # <a name="using-the-global-flags-utility"></a>グローバル フラグ ユーティリティの使用
 
@@ -22,7 +22,7 @@ ms.locfileid: "63327241"
 
 グローバル フラグ (gflags.exe) ユーティリティでは、システム レジストリ内の特定のキーの設定、実行中のシステムのカーネル設定を調整すること、およびイメージ ファイルの設定を変更することの簡単な方法を提供します。 これらのキーは、グラフィカルまたはコマンド ライン インターフェイスを使用して設定できます。
 
-Windows サポート ツール パッケージとツールを Windows のデバッグ パッケージは、グローバル フラグ ユーティリティを確認できます。 後者については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+Windows サポート ツール パッケージとツールを Windows のデバッグ パッケージは、グローバル フラグ ユーティリティを確認できます。 後者については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 グローバル フラグ ユーティリティは、ドライバーの検証ツールの特別なプールのオプションを構成するか、個々 のメモリ割り当てに使用するための特別なプールを指定するにも使用できます。
 

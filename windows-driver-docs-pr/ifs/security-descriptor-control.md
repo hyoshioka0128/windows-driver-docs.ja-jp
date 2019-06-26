@@ -4,17 +4,17 @@ description: セキュリティ\_記述子\_コントロール
 ms.assetid: 6a7fe617-156d-4eb0-83f7-df78104acbde
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4f2e57328ae536802892d1ef121fb2366600db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3739184af0f8c1c972f523d61683bddfe28e9483
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344486"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371338"
 ---
 # <a name="securitydescriptorcontrol"></a>セキュリティ\_記述子\_コントロール
 
 
-**セキュリティ\_記述子\_コントロール**型は一連のビット フラグの意味を対象となる、 [**セキュリティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff556610)構造体またはそのコンポーネント。 各セキュリティ記述子が、**コントロール**を格納するメンバー、**セキュリティ\_記述子\_コントロール**ビット。
+**セキュリティ\_記述子\_コントロール**型は一連のビット フラグの意味を対象となる、 [**セキュリティ\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))構造体またはそのコンポーネント。 各セキュリティ記述子が、**コントロール**を格納するメンバー、**セキュリティ\_記述子\_コントロール**ビット。
 
 セキュリティ\_記述子\_コントロール
 
@@ -31,7 +31,7 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -50,13 +50,13 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 <td align="left"><p>SE_DACL_DEFAULTED</p></td>
 <td align="left"><p>既定の DACL のセキュリティ記述子を示します。 たとえば、オブジェクトの作成者は、DACL を指定しない場合、オブジェクトは、作成者のアクセス トークンから既定の DACL を受け取ります。 このフラグは、ACE の継承に関して、DACL の処理方法に影響します。 SE_DACL_PRESENT フラグが設定されていない場合、このフラグは無視されます。</p>
 <p>このフラグは、オブジェクトの最終的な DACL の計算方法を決定するために使用され、セキュリティ保護可能なオブジェクトのセキュリティ記述子のコントロールに物理的に格納されていません。</p>
-<p>このフラグを設定するには使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff562781" data-raw-source="[&lt;strong&gt;RtlSetDaclSecurityDescriptor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562781)"> <strong>RtlSetDaclSecurityDescriptor</strong></a>します。</p></td>
+<p>このフラグを設定するには使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlsetdaclsecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetDaclSecurityDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)"> <strong>RtlSetDaclSecurityDescriptor</strong></a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SE_DACL_PRESENT</p></td>
 <td align="left"><p>DACL のあるセキュリティ記述子を示します。 このフラグが設定されていない場合、またはこのフラグが設定されていて、DACL は<strong>NULL</strong>のセキュリティ記述子は、すべてのユーザーへのフル アクセスを許可します。</p>
 <p>このフラグは、セキュリティ記述子にはセキュリティ保護可能なオブジェクトに関連付けられたまで、呼び出し元によって指定されたセキュリティ情報を保持するために使用されます。 セキュリティ記述子は、セキュリティ保護可能なオブジェクトに関連付けられたが、常にセキュリティ記述子制御 SE_DACL_PRESENT フラグが設定されます。</p>
-<p>このフラグを設定するには使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff562781" data-raw-source="[&lt;strong&gt;RtlSetDaclSecurityDescriptor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff562781)"> <strong>RtlSetDaclSecurityDescriptor</strong></a>します。</p></td>
+<p>このフラグを設定するには使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlsetdaclsecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetDaclSecurityDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)"> <strong>RtlSetDaclSecurityDescriptor</strong></a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SE_DACL_PROTECTED</p></td>
@@ -72,11 +72,11 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 </tr>
 <tr class="even">
 <td align="left"><p>SE_OWNER_DEFAULTED</p></td>
-<td align="left"><p>セキュリティ記述子の元のプロバイダーではなく、既定の機構を提供、セキュリティ記述子の所有者セキュリティ識別子 (SID)。 このフラグを設定するには使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff553220" data-raw-source="[&lt;strong&gt;RtlSetOwnerSecurityDescriptor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553220)"> <strong>RtlSetOwnerSecurityDescriptor</strong></a>します。</p></td>
+<td align="left"><p>セキュリティ記述子の元のプロバイダーではなく、既定の機構を提供、セキュリティ記述子の所有者セキュリティ識別子 (SID)。 このフラグを設定するには使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlsetownersecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetOwnerSecurityDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlsetownersecuritydescriptor)"> <strong>RtlSetOwnerSecurityDescriptor</strong></a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SE_RM_CONTROL_VALID</p></td>
-<td align="left"><p>セキュリティ記述子内のリソース コントロール マネージャー ビットが有効であることを示します。 リソース マネージャー コントロール ビットは 8 ビットで、 <strong>Sbz1</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556610" data-raw-source="[&lt;strong&gt;SECURITY_DESCRIPTOR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556610)"> <strong>SECURITY_DESCRIPTOR</strong> </a>リソースに固有の情報を含む構造体構造体にアクセスするマネージャー。 (詳細については、Microsoft Windows ソフトウェア開発キット (SDK) for Windows 7 および .NET Framework 4.0 のドキュメントを参照してください)。</p></td>
+<td align="left"><p>セキュリティ記述子内のリソース コントロール マネージャー ビットが有効であることを示します。 リソース マネージャー コントロール ビットは 8 ビットで、 <strong>Sbz1</strong>のメンバー、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85)" data-raw-source="[&lt;strong&gt;SECURITY_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))"> <strong>SECURITY_DESCRIPTOR</strong> </a>リソースに固有の情報を含む構造体構造体にアクセスするマネージャー。 (詳細については、Microsoft Windows ソフトウェア開発キット (SDK) for Windows 7 および .NET Framework 4.0 のドキュメントを参照してください)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SE_SACL_AUTO_INHERIT_REQ</p></td>
@@ -122,13 +122,13 @@ ntifs.h (ntifs.h を含む)
 
 [**ACE**](ace.md)
 
-[**ACL**](https://msdn.microsoft.com/library/windows/hardware/ff538866)
+[**ACL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_acl)
 
-[**RtlSetDaclSecurityDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff562781)
+[**RtlSetDaclSecurityDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)
 
-[**RtlSetOwnerSecurityDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff553220)
+[**RtlSetOwnerSecurityDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-rtlsetownersecuritydescriptor)
 
-[**セキュリティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff556610)
+[**セキュリティ\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 
  
 

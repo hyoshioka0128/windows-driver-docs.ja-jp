@@ -4,17 +4,17 @@ description: リリース署名されたドライバー ファイルの署名の
 ms.assetid: 70876389-6493-4c16-8a82-ca72fc23325c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dadda4e302a79b3fba8699a06f0c82885286b2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a96c2fc31034c5fe8876b8fc130bc2d3b928f231
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339312"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380438"
 ---
 # <a name="verifying-the-signature-of-a-release-signed-driver-file"></a>リリース署名されたドライバー ファイルの署名の検証
 
 
-によって作成されるドライバー ファイルの埋め込みの署名を検証する、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)、次を使用して、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)コマンド。
+によって作成されるドライバー ファイルの埋め込みの署名を検証する、[ソフトウェア発行元証明書 (SPC)](software-publisher-certificate.md)、次を使用して、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンド。
 
 ```cpp
 SignTool verify /v /kp DriverFileName.sys

@@ -3,12 +3,12 @@ title: カスタムの機能に関する FAQ
 description: ハードウェア サポート アプリ (HSA) とその他の機能との違いについては、カスタム機能を説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 432e205c52bb9cd5617ab2cb3f024ae7b8adab7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87bb8913c51f02798d3e17d7d1080dc94f325c4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369378"
 ---
 # <a name="faq-on-custom-capabilities"></a>カスタムの機能に関する FAQ
 
@@ -27,5 +27,5 @@ ms.locfileid: "63387928"
 |アプリの自動取得  |周辺機器の使用                                  |すべてのハードウェアの利用可能          |
 |展開の依存関係    |WU:ドライバー パッケージ<br>ストア:App|WU:ドライバー パッケージ<br>ストア:App                  |
                                                                                                                                                                                                     
-Dca の詳細については、次を参照してください。[デバイス アプリを Microsoft Store の概要](https://msdn.microsoft.com/windows/hardware/drivers/devapps/getting-started)します。
+Dca の詳細については、次を参照してください。[デバイス アプリを Microsoft Store の概要](https://docs.microsoft.com/windows-hardware/drivers/devapps/getting-started)します。
 

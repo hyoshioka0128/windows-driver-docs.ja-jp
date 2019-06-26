@@ -10,12 +10,12 @@ keywords:
 - 仮想ミニポートを停止しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e808d8171210c2b1fc70a4f7cd27f308a169a7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57852bcba2ea4b12d703303b9ebe6dd3937be2aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379832"
 ---
 # <a name="halting-a-virtual-miniport"></a>仮想ミニポートの停止
 
@@ -23,11 +23,11 @@ ms.locfileid: "63349814"
 
 
 
-場合は、NDIS 中間ドライバの呼び出し、 [ **NdisIMDeinitializeDeviceInstance** ](https://msdn.microsoft.com/library/windows/hardware/ff562721)関数では、NDIS 呼び出し、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)影響を受ける仮想ミニポートの関数。 通常、中間ドライバーを呼び出します**NdisIMDeInitializeDeviceInstance**からその[ *ProtocolUnbindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570278)関数。
+場合は、NDIS 中間ドライバの呼び出し、 [ **NdisIMDeinitializeDeviceInstance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisimdeinitializedeviceinstance)関数では、NDIS 呼び出し、 [ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)影響を受ける仮想ミニポートの関数。 通常、中間ドライバーを呼び出します**NdisIMDeInitializeDeviceInstance**からその[ *ProtocolUnbindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_unbind_adapter_ex)関数。
 
 NDIS セット、 *HaltAction*パラメーターを**NdisHaltDeviceInstanceDeInitialized** NDIS が中間のドライバーの呼び出しに対応のアダプターを停止することを示す、 **NdisIMDeInitializeDeviceInstance**関数。
 
-中間のドライバーの[ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数は、仮想ミニポートに関連付けられているすべてのドライバーに割り当てられたリソースを解放する必要があります。
+中間のドライバーの[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数は、仮想ミニポートに関連付けられているすべてのドライバーに割り当てられたリソースを解放する必要があります。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - プラグ アンド プレイ WDK カーネルでは、プラグ アンド プレイについて
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e2c52f52d119bafd897400df1c65b4e3afe7768
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50b7c9ebc4370f3c2f207443451e15cff88abe01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369918"
 ---
 # <a name="introduction-to-plug-and-play"></a>プラグ アンド プレイの概要
 
@@ -42,7 +42,7 @@ PnP デバイスのハードウェア、システムのソフトウェアとド�
 
 -   ドライバー、PnP システムと対話するためのプログラミング インターフェイス
 
-    インターフェイスが含まれています[I/O マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff551797)、[プラグ アンド プレイ マイナー Irp](https://msdn.microsoft.com/library/windows/hardware/ff558807)必要な[標準ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)、およびレジストリの情報。
+    インターフェイスが含まれています[I/O マネージャー ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551797(v=vs.85))、[プラグ アンド プレイ マイナー Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)必要な[標準ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)、およびレジストリの情報。
 
 -   ドライバーとアプリケーションを活用して学習ハードウェア環境での変更のためのメカニズムに適切なアクション
 

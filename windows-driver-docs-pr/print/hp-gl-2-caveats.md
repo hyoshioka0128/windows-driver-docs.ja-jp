@@ -7,12 +7,12 @@ keywords:
 - PCL 5e WDK Unidrv、追加の考慮事項
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48978b4c47b9e42d9dc1e07cb5bb06dffac3089e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 394529ca3723c5cf127ec36efb7f1d5fdabef2cc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360506"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373812"
 ---
 # <a name="hp-gl2-caveats"></a>HP-GL/2 注意事項
 
@@ -30,9 +30,9 @@ ms.locfileid: "63360506"
 
         さらに、HP-GL/2 のすべてのコマンドは、ドライバーでハードコードします。
 
-3.  マスクへの呼び出しで受け取った[ **DrvBitBlt** ](https://msdn.microsoft.com/library/windows/hardware/ff556180)しその他のビット ブロック転送機能が正しく動作しない可能性があります。
+3.  マスクへの呼び出しで受け取った[ **DrvBitBlt** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvbitblt)しその他のビット ブロック転送機能が正しく動作しない可能性があります。
 
-4.  Windows XP Unidrv が Windows 2000 で使用すると、HP-GL/2 をアクティブ化、一部のグラフィックスのレンダリング関数が正しく動作しない可能性があります。 出力例: [ **DrvGradientFill** ](https://msdn.microsoft.com/library/windows/hardware/ff556236)呼び出しが赤、青が逆になります。
+4.  Windows XP Unidrv が Windows 2000 で使用すると、HP-GL/2 をアクティブ化、一部のグラフィックスのレンダリング関数が正しく動作しない可能性があります。 出力例: [ **DrvGradientFill** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill)呼び出しが赤、青が逆になります。
 
 5.  Unidrv では、プリンターのハードウェアが ROP コマンドをサポートしていることを前提としています。 プリンターが ROP をサポートしていない場合、いくつかのドキュメントが正しく印刷されない可能性があります。
 

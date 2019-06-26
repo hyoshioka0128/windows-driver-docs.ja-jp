@@ -17,12 +17,12 @@ keywords:
 - ブール ロジック WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1505fcacd17be2590a8a85bc3bbdfd06e82c0472
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c4506c87e759b6978de5286b57035eb866795450
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355452"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369486"
 ---
 # <a name="simple-data-evaluation-language-overview"></a>Simple Data Evaluation Language の概要
 
@@ -31,7 +31,7 @@ WDTF には、属性またはリレーションシップに基づくターゲッ
 
 このトピックでは、次のセクションでは、SDEL を使用する方法について説明します。
 
-**注**  名前空間のすべてのトークンとそれらに含まれる属性のトークンの一覧は、次を参照してください。 [SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)します。
+**注**  名前空間のすべてのトークンとそれらに含まれる属性のトークンの一覧は、次を参照してください。 [SDEL トークン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 
@@ -73,7 +73,7 @@ SDEL では、属性、トークンに従うさまざまな比較演算子を許
 
 ### <a name="understanding-attribute-namespaces"></a>属性の名前空間について
 
-SDEL 属性をグループ化の名前空間のトークンを使用します。 名前空間のすべてのトークンとそれらに含まれる属性のトークンの一覧は、次を参照してください。 [SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)します。
+SDEL 属性をグループ化の名前空間のトークンを使用します。 名前空間のすべてのトークンとそれらに含まれる属性のトークンの一覧は、次を参照してください。 [SDEL トークン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 ルート名前空間の外にあるすべての属性を使用するには、名前空間の名前とし、2 つのコロン (:) を持つ属性を付ける必要があります。 次の VBScript コード例では、Disk::IsRemovable 属性の値が表示されます。
 
@@ -83,15 +83,15 @@ WScript.Echo "Is Removable?: " & DeviceObj.GetValue("Disk::IsRemovable")
 
 ### <a name="examining-a-target-by-using-getvalue-and-eval"></a>GetValue を使用して、評価版のターゲットを調べる
 
-[ **IWDTFTarget2::GetValue** ](https://msdn.microsoft.com/library/windows/hardware/hh439403)メソッドを使用して、その属性のターゲットを確認できます。 VBScript のコード例を次の値を表示する、 [FriendlyName](https://msdn.microsoft.com/library/windows/hardware/ff539571)ターゲットの属性。
+[ **IWDTFTarget2::GetValue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-getvalue)メソッドを使用して、その属性のターゲットを確認できます。 VBScript のコード例を次の値を表示する、 [FriendlyName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ターゲットの属性。
 
 ```cpp
 WScript.Echo "FriendlyName: " & Device.GetValue("FriendlyName")
 ```
 
-トークンの属性の一覧については、次を参照してください。 [SDEL トークン](https://msdn.microsoft.com/library/windows/hardware/ff539571)します。
+トークンの属性の一覧については、次を参照してください。 [SDEL トークン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
-使用することも、 [ **IWDTFTarget2::Eval** ](https://msdn.microsoft.com/library/windows/hardware/hh439396)ターゲットに対して、SDEL ステートメントを評価するメソッド。 **Eval**返します**バリアント\_TRUE**または**バリアント\_FALSE**します。 次の VBScript コード例では**Eval**デバイスを無効にするかどうかを判断します。
+使用することも、 [ **IWDTFTarget2::Eval** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-eval)ターゲットに対して、SDEL ステートメントを評価するメソッド。 **Eval**返します**バリアント\_TRUE**または**バリアント\_FALSE**します。 次の VBScript コード例では**Eval**デバイスを無効にするかどうかを判断します。
 
 ```cpp
 If Device.Eval("IsDisableable=true") Then 
@@ -99,7 +99,7 @@ If Device.Eval("IsDisableable=true") Then
 End If
 ```
 
-使用することも[ **Eval** ](https://msdn.microsoft.com/library/windows/hardware/hh439396)属性の存在をテストします。 渡す場合**Eval**属性がない比較演算子または値、 **Eval**戻ります**バリアント\_TRUE**属性または名前空間は、任意の値 (を保持している場合他にも**VT\_空**)。 次の VBScript コード例では**Eval**にターゲット SymbolicLink キーワードがあるか。
+使用することも[ **Eval** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-eval)属性の存在をテストします。 渡す場合**Eval**属性がない比較演算子または値、 **Eval**戻ります**バリアント\_TRUE**属性または名前空間は、任意の値 (を保持している場合他にも**VT\_空**)。 次の VBScript コード例では**Eval**にターゲット SymbolicLink キーワードがあるか。
 
 ```cpp
 If Device.Eval("SymbolicLink") Then 
@@ -111,13 +111,13 @@ End If
 
 ### <a name="navigating-relationships"></a>リレーションシップのナビゲーション
 
-多くの場合、テストするには、関連するデバイスの状態を変更するときの動作を確認する必要があります。 たとえば、USB ハブを無効にするの操作を行いますにアタッチされているデバイス状態の変更を適切に処理しますか。 さらに、関連するデバイスの情報に基づいたデバイスを検索する場合があります。 この機能をサポートするためには、SDEL には、任意の属性または名前空間の前に (ただし、それらのいずれかの後ではなく) 1 つまたは複数の論理リレーションシップを指定する方法が含まれています。 リレーションシップのトークンは、属性または名前空間からフォワード スラッシュ (/) で区切られます。 VBScript のコード例を次の値を表示する、 [FriendlyName](https://msdn.microsoft.com/library/windows/hardware/ff539571)ターゲットの親のデバイスの属性。
+多くの場合、テストするには、関連するデバイスの状態を変更するときの動作を確認する必要があります。 たとえば、USB ハブを無効にするの操作を行いますにアタッチされているデバイス状態の変更を適切に処理しますか。 さらに、関連するデバイスの情報に基づいたデバイスを検索する場合があります。 この機能をサポートするためには、SDEL には、任意の属性または名前空間の前に (ただし、それらのいずれかの後ではなく) 1 つまたは複数の論理リレーションシップを指定する方法が含まれています。 リレーションシップのトークンは、属性または名前空間からフォワード スラッシュ (/) で区切られます。 VBScript のコード例を次の値を表示する、 [FriendlyName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ターゲットの親のデバイスの属性。
 
 ```cpp
 WScript.Echo "FriendlyName: " & Device.GetValue("parent/FriendlyName")
 ```
 
-リレーションシップの修飾子を組み合わせることもできます。 VBScript のコード例を次の値を表示する、 [FriendlyName](https://msdn.microsoft.com/library/windows/hardware/ff539571)ターゲット オブジェクトの祖父母デバイスの属性です。
+リレーションシップの修飾子を組み合わせることもできます。 VBScript のコード例を次の値を表示する、 [FriendlyName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ターゲット オブジェクトの祖父母デバイスの属性です。
 
 ```cpp
 WScript.Echo "FriendlyName: " & Device.GetValue("parent/parent/FriendlyName")
@@ -125,27 +125,27 @@ WScript.Echo "FriendlyName: " & Device.GetValue("parent/parent/FriendlyName")
 
 場合によっては、デバイスは、多対多のリレーションシップを持ちます。 たとえば、論理記憶域ボリュームが多数の物理ディスクに存在する可能性があり、これらの個々 のディスクは、多数のボリュームに領域を投稿可能性があります。
 
-WDTF、ファントム以外のすべてのデバイス内で (つまり、物理的に操作するデバイス) ルート デバイスの子孫 (から取得できますが、 [ **RootDevice** ](https://msdn.microsoft.com/library/windows/hardware/hh406413)プロパティ)。 (ファントムのデバイスの詳細については、次を参照してください[WDTF シナリオの作成](creating-wdtf-scenarios.md)。)。
+WDTF、ファントム以外のすべてのデバイス内で (つまり、物理的に操作するデバイス) ルート デバイスの子孫 (から取得できますが、 [ **RootDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtfdevicedepot2-get_rootdevice)プロパティ)。 (ファントムのデバイスの詳細については、次を参照してください[WDTF シナリオの作成](creating-wdtf-scenarios.md)。)。
 
 ### <a name="collecting-targets-by-using-getrelations"></a>GetRelations を使用して、ターゲットの収集
 
-次の図は、 [ **IWDTFTarget2::GetRelations** ](https://msdn.microsoft.com/library/windows/hardware/hh439400)メソッド。
+次の図は、 [ **IWDTFTarget2::GetRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-getrelations)メソッド。
 
 ![target::getrelations メソッドを示す図](images/wdtf-getrelations.gif)
 
-[ **IWDTFTarget2::GetRelations** ](https://msdn.microsoft.com/library/windows/hardware/hh439400)メソッド SDEL ステートメントの構文の関係指定子の部分だけを受け取り、返します、 [ **IWDTFTargets2**](https://msdn.microsoft.com/library/windows/hardware/hh439458)を含むすべての関係の条件を満たすターゲット コレクションのインターフェイス。 次の VBScript コード例では、元のターゲットとその兄弟すべてを含むコレクションを返します。
+[ **IWDTFTarget2::GetRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-getrelations)メソッド SDEL ステートメントの構文の関係指定子の部分だけを受け取り、返します、 [ **IWDTFTargets2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2)を含むすべての関係の条件を満たすターゲット コレクションのインターフェイス。 次の VBScript コード例では、元のターゲットとその兄弟すべてを含むコレクションを返します。
 
 ```cpp
 Set TestDevices = Device.GetRelations("parent/child/", "")
 ```
 
-2 番目のパラメーターを[ **GetRelations** ](https://msdn.microsoft.com/library/windows/hardware/hh439400)に渡されるステートメントを含めることができます必要に応じて、 [ **Eval** ](https://msdn.microsoft.com/library/windows/hardware/hh439396)するメソッドをそれぞれ対象特定のリレーションシップを満たしています。 追加する場合など、 *IsDisableable = true* 2 番目のパラメーターとして、上記のコード例をデバイスのみと無効にできる、兄弟返すとします。
+2 番目のパラメーターを[ **GetRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-getrelations)に渡されるステートメントを含めることができます必要に応じて、 [ **Eval** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-eval)するメソッドをそれぞれ対象特定のリレーションシップを満たしています。 追加する場合など、 *IsDisableable = true* 2 番目のパラメーターとして、上記のコード例をデバイスのみと無効にできる、兄弟返すとします。
 
 一致がない場合は、0 個の項目のコレクションが返されます。
 
 ### <a name="collecting-targets-by-using-query"></a>クエリを使用してターゲットの収集
 
-[ **IWDTFDeviceDepot2** ](https://msdn.microsoft.com/library/windows/hardware/hh406391)インターフェイスが含まれています、**クエリ**メソッド。 このメソッドは、SDEL ステートメント用に設計された、 [ **IWDTFTarget2::Eval** ](https://msdn.microsoft.com/library/windows/hardware/hh439396)メソッドの新しいインスタンスを返します、 [ **IWDTFTargets2** ](https://msdn.microsoft.com/library/windows/hardware/hh439458)クエリの条件を満たすターゲットのサブセットを格納しているコレクションのインターフェイス。 次の VBScript コード例では、ファントム以外のすべてのデバイスを列挙し、各デバイスのフレンドリ名を示します。
+[ **IWDTFDeviceDepot2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtfdevicedepot2)インターフェイスが含まれています、**クエリ**メソッド。 このメソッドは、SDEL ステートメント用に設計された、 [ **IWDTFTarget2::Eval** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-eval)メソッドの新しいインスタンスを返します、 [ **IWDTFTargets2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2)クエリの条件を満たすターゲットのサブセットを格納しているコレクションのインターフェイス。 次の VBScript コード例では、ファントム以外のすべてのデバイスを列挙し、各デバイスのフレンドリ名を示します。
 
 ```cpp
 For Each Device In WDTF.DeviceDepot.Query("IsPhantom=false")
@@ -153,11 +153,11 @@ For Each Device In WDTF.DeviceDepot.Query("IsPhantom=false")
 Next
 ```
 
-返されるコレクションには、 [ **IWDTFTargets2::Query** ](https://msdn.microsoft.com/library/windows/hardware/hh439483)メソッド、同一の実装に**IWDTFDeviceDepot2::Query**。 **IWDTFTargets2::Query** SDEL ステートメントに一致する元のコレクションからターゲットのサブセットを返します。
+返されるコレクションには、 [ **IWDTFTargets2::Query** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftargets2-query)メソッド、同一の実装に**IWDTFDeviceDepot2::Query**。 **IWDTFTargets2::Query** SDEL ステートメントに一致する元のコレクションからターゲットのサブセットを返します。
 
 ### <a name="boolean-logic-in-sdel"></a>SDEL でブール ロジック
 
-[ **IWDTFTarget2::GetRelations** ](https://msdn.microsoft.com/library/windows/hardware/hh439400)メソッドがブール値のみを受け入れる**または**演算子が、呼び出しを[ **IWDTFTargets2:。クエリ**](https://msdn.microsoft.com/library/windows/hardware/hh439483)、 [ **IWDTFTarget2::Eval**](https://msdn.microsoft.com/library/windows/hardware/hh439396)、および[ **IWDTFTarget2::GetValue** ](https://msdn.microsoft.com/library/windows/hardware/hh439403)メソッドはブール値を使用できます**AND**と**または**演算子。 **クエリ**メソッドと**Eval**メソッド、演算子は通常のブール演算子を予想どおりの結果を返すように動作します。 ただし、 **GetValue**メソッド、 **AND**自体の両方の側で値を構成し、**または**(左から開始) が見つかった最初の値のみが返されます。
+[ **IWDTFTarget2::GetRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-getrelations)メソッドがブール値のみを受け入れる**または**演算子が、呼び出しを[ **IWDTFTargets2:。クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftargets2-query)、 [ **IWDTFTarget2::Eval**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-eval)、および[ **IWDTFTarget2::GetValue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftarget2-getvalue)メソッドはブール値を使用できます**AND**と**または**演算子。 **クエリ**メソッドと**Eval**メソッド、演算子は通常のブール演算子を予想どおりの結果を返すように動作します。 ただし、 **GetValue**メソッド、 **AND**自体の両方の側で値を構成し、**または**(左から開始) が見つかった最初の値のみが返されます。
 
 ### <a name="parentheses-in-sdel"></a>SDEL 内のかっこ
 

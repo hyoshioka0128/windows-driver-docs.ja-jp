@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18de40713521aa72349c99cf97836bb3f5d9c205
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24b2a9eb3495f187f1e540aa1c423ab3e47c0228
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380689"
 ---
 # <a name="printer-commands"></a>プリンター コマンド
 
@@ -30,7 +30,7 @@ ms.locfileid: "63380531"
 
 -   GPD ファイルには、デバイス固有のコマンド文字列を配置できます。 Unidrv では、適切なタイミングで印刷スプーラーにコマンド文字列を送信します。
 
--   実装することができます、 [ **IPrintOemUni::CommandCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff554216) COM メソッドは、コマンド文字列を動的に生成されます。 Unidrv は、スプーラーにコマンドを送信する必要があるたびに、メソッドを呼び出します。 詳細については、次を参照してください。[プリンター コマンドを動的に生成された](dynamically-generated-printer-commands.md)で[をカスタマイズする Microsoft のプリンター ドライバー](customizing-microsoft-s-printer-drivers.md)します。
+-   実装することができます、 [ **IPrintOemUni::CommandCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback) COM メソッドは、コマンド文字列を動的に生成されます。 Unidrv は、スプーラーにコマンドを送信する必要があるたびに、メソッドを呼び出します。 詳細については、次を参照してください。[プリンター コマンドを動的に生成された](dynamically-generated-printer-commands.md)で[をカスタマイズする Microsoft のプリンター ドライバー](customizing-microsoft-s-printer-drivers.md)します。
 
 次のトピックでは、GPD ファイルでプリンターのコマンドを指定する方法について説明します。
 

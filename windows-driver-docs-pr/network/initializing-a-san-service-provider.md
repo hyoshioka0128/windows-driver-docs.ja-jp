@@ -8,12 +8,12 @@ keywords:
 - SAN サービス プロバイダー、WDK の初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb648da3f8c65306a287587fb73c1e57fdde264
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2706dc2af4c4a519705b69e1dcddc980bdcd1287
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324997"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381333"
 ---
 # <a name="initializing-a-san-service-provider"></a>SAN サービス プロバイダーの初期化
 
@@ -29,15 +29,15 @@ Windows 読み込み Windows Sockets では、アプリケーションのプロ�
 
 **SAN サービス プロバイダーを初期化するには**
 
-1.  スイッチの検出、TCP/IP プロバイダーを読み込み、および」の説明に従って、これらのプロバイダーでは、すべてを検出するために、レジストリの SAN サービス プロバイダーの一覧を照会し[SAN サービス プロバイダーのインストール](installing-a-san-service-provider.md)します。 スイッチの呼び出しによって検出された各プロバイダーの[ **WSPStartupEx** ](https://msdn.microsoft.com/library/windows/hardware/ff566321)関数はそのプロバイダーの使用を開始します。
+1.  スイッチの検出、TCP/IP プロバイダーを読み込み、および」の説明に従って、これらのプロバイダーでは、すべてを検出するために、レジストリの SAN サービス プロバイダーの一覧を照会し[SAN サービス プロバイダーのインストール](installing-a-san-service-provider.md)します。 スイッチの呼び出しによって検出された各プロバイダーの[ **WSPStartupEx** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566321(v=vs.85))関数はそのプロバイダーの使用を開始します。
 
-2.  **WSPStartupEx**呼び出し、スイッチはへのポインターを渡します、 [ **WSAPROTOCOL\_INFOW** ](https://msdn.microsoft.com/library/windows/hardware/ff565963) TCP/IP プロバイダーのプロトコルを含む構造体情報。 TCP/IP プロバイダーのプロトコルは、こと、初期化されている他の複数層サービス プロバイダーや、Windows ソケット インターフェイスではなく、スイッチで SAN サービス プロバイダーに示します。 スイッチは、Windows Sockets サービス プロバイダー、Microsoft Windows SDK ドキュメントのインターフェイス (SPI) のセクションで提案されている SAN サービス プロバイダーのトランスポートは、代わりに、TCP/IP プロバイダーのプロトコル情報を渡します。
+2.  **WSPStartupEx**呼び出し、スイッチはへのポインターを渡します、 [ **WSAPROTOCOL\_INFOW** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565963(v=vs.85)) TCP/IP プロバイダーのプロトコルを含む構造体情報。 TCP/IP プロバイダーのプロトコルは、こと、初期化されている他の複数層サービス プロバイダーや、Windows ソケット インターフェイスではなく、スイッチで SAN サービス プロバイダーに示します。 スイッチは、Windows Sockets サービス プロバイダー、Microsoft Windows SDK ドキュメントのインターフェイス (SPI) のセクションで提案されている SAN サービス プロバイダーのトランスポートは、代わりに、TCP/IP プロバイダーのプロトコル情報を渡します。
 
     スイッチでそれが初期化されている SAN サービス プロバイダーが検出できる、ために、適切な一連のスイッチのエントリ ポイント関数を公開できます。 アプリケーションによって直接 SAN サービス プロバイダーが初期化される場合は、アプリケーションへのエントリ ポイント関数の別のセットが公開できます。 スイッチの下、SAN サービス プロバイダーが階層化されている場合、そのプロバイダーが拡張機能とこのセクションで説明した動作に従う必要があります。
 
-3.  SAN サービス プロバイダーのプロキシ ドライバーは、」の説明に従って、その管理下にある各 NIC に割り当てられた IP アドレスの一覧を取得します。 [SAN NIC の通知を登録する](registering-for-san-nic-notifications.md)します。 SAN サービス プロバイダーでは、プライベート インターフェイスを使用して、そのプロキシ ドライバーからこの一覧を取得します。 スイッチの呼び出し、SAN サービス プロバイダーの[ **WSPSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566319)ソケットを作成する関数。 スイッチでは、このソケットを使用して、SAN サービス プロバイダーのプロキシのドライバーの制御下での Nic に割り当てられた IP アドレスの完全な一覧を取得します。 スイッチが」の説明に従って、この一覧を取得[受信および変換の NIC アドレス](receiving-and-translating-nic-addresses.md)します。 この一覧およびその他の SAN サービス プロバイダーの一覧に基づいて、スイッチは、ローカルの IP サブネットを SAN サービス プロバイダーにマップするテーブルを作成します。
+3.  SAN サービス プロバイダーのプロキシ ドライバーは、」の説明に従って、その管理下にある各 NIC に割り当てられた IP アドレスの一覧を取得します。 [SAN NIC の通知を登録する](registering-for-san-nic-notifications.md)します。 SAN サービス プロバイダーでは、プライベート インターフェイスを使用して、そのプロキシ ドライバーからこの一覧を取得します。 スイッチの呼び出し、SAN サービス プロバイダーの[ **WSPSocket** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566319(v=vs.85))ソケットを作成する関数。 スイッチでは、このソケットを使用して、SAN サービス プロバイダーのプロキシのドライバーの制御下での Nic に割り当てられた IP アドレスの完全な一覧を取得します。 スイッチが」の説明に従って、この一覧を取得[受信および変換の NIC アドレス](receiving-and-translating-nic-addresses.md)します。 この一覧およびその他の SAN サービス プロバイダーの一覧に基づいて、スイッチは、ローカルの IP サブネットを SAN サービス プロバイダーにマップするテーブルを作成します。
 
-4.  Windows Sockets スイッチが使用するための Windows Sockets サービス プロバイダー インターフェイス (SPI) を拡張する SAN サービス プロバイダーのエントリ ポイント関数へのポインターを取得する必要がありますと San です。 Windows Sockets スイッチ、SAN サービス プロバイダーの呼び出しのこれらの関数の拡張を取得する[ **WSPIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff566296)関数を渡す、SIO\_取得\_拡張機能\_関数\_ポインター コマンド コード値を持つが次のいずれかを識別する GUID とは、関数を拡張します。
+4.  Windows Sockets スイッチが使用するための Windows Sockets サービス プロバイダー インターフェイス (SPI) を拡張する SAN サービス プロバイダーのエントリ ポイント関数へのポインターを取得する必要がありますと San です。 Windows Sockets スイッチ、SAN サービス プロバイダーの呼び出しのこれらの関数の拡張を取得する[ **WSPIoctl** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566296(v=vs.85))関数を渡す、SIO\_取得\_拡張機能\_関数\_ポインター コマンド コード値を持つが次のいずれかを識別する GUID とは、関数を拡張します。
 
     これらの関数の詳細については、次を参照してください。 [Windows Sockets SPI Extensions for San](windows-sockets-spi-extensions-for-sans.md)します。
 

@@ -8,12 +8,12 @@ keywords:
 - RSS 以外は受信 WDK RSS の処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a438d2a11f122be219c7433e04a7629b4c622d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03f0397ab37d1be760e76b5e1b348777d36142d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368977"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371208"
 ---
 # <a name="non-rss-receive-processing"></a>非 RSS 受信処理
 
@@ -39,13 +39,13 @@ ms.locfileid: "63368977"
 
     システムを 1 つの割り込みのサイクルで処理する受信バッファーは、多くのさまざまなネットワーク接続を関連付けることができます。
 
-3.  NDIS ミニポート ドライバーの呼び出す[ *MiniportInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559395)関数 (ISR) システムで決定された CPU にします。
+3.  NDIS ミニポート ドライバーの呼び出す[ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)関数 (ISR) システムで決定された CPU にします。
 
     理想的には、ISR は、少なくともビジー状態の CPU に移動する必要があります。 ただし、一部のシステムで、システムは、使用可能な CPU または NIC に関連付けられている CPU に ISR を割り当てます
 
 4.  ISR には、割り込みと NDIS を要求を受信したデータの処理に遅延プロシージャ呼び出し (DPC) のキューが無効にします。
 
-5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://msdn.microsoft.com/library/windows/hardware/ff559398)現在の CPU に (DPC) の関数。
+5.  NDIS 呼び出し、 [ *MiniportInterruptDPC* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)現在の CPU に (DPC) の関数。
 
 6.  DPC ビルドでは、すべての受信バッファーの記述子が表示され、ドライバー スタック上のデータを示します。 詳細については、次を参照してください。[ネットワーク データの受信](receiving-network-data.md)します。
 

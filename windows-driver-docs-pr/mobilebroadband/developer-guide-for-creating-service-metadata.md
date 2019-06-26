@@ -4,12 +4,12 @@ description: サービス メタデータの作成に関する開発者向けガ
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09df5432075549f14093fbeda9005d5faab7f774
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 963dba2a9f72c638d40b216fdb3150cd0deb2614
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405171"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381547"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>サービス メタデータの作成に関する開発者向けガイド
 
@@ -32,7 +32,7 @@ Windows と緊密に統合されたエクスペリエンスを作成するサー
 
 ### <a name="span-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanspan-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanspan-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>Windows デベロッパー センター ハードウェア ダッシュ ボードで、会社を登録します。
 
--   会社では、Windows デベロッパー センター ハードウェア ダッシュ ボードで、アクティブなアカウントを持ちます。 会社が、Windows デベロッパー センター ハードウェア ダッシュ ボード上にアカウントを持たない場合は、新しいアカウントを作成し、あなたの会社にユーザー アカウントを追加します。 詳細については、次を参照してください。[管理](https://msdn.microsoft.com/library/windows/hardware/mt786447)、Windows デベロッパー センター ハードウェア ダッシュ ボードのヘルプ。
+-   会社では、Windows デベロッパー センター ハードウェア ダッシュ ボードで、アクティブなアカウントを持ちます。 会社が、Windows デベロッパー センター ハードウェア ダッシュ ボード上にアカウントを持たない場合は、新しいアカウントを作成し、あなたの会社にユーザー アカウントを追加します。 詳細については、次を参照してください。[管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/administration)、Windows デベロッパー センター ハードウェア ダッシュ ボードのヘルプ。
 
 -   会社では、署名、パッケージの署名に証明書 VeriSign コードがあります。
 
@@ -258,7 +258,7 @@ Windows デベロッパー センター ハードウェア ダッシュ ボー�
 
 ### <a name="span-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespantest-a-service-metadata-package-in-preview-mode"></a><span id="Test_a_service_metadata_package_in_preview_mode"></span><span id="test_a_service_metadata_package_in_preview_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_PREVIEW_MODE"></span>プレビュー モードでのサービス メタデータ パッケージをテストします。
 
-サービス メタデータ パッケージは、プレビュー モードでは場合、は、テスト コンピューターに PreviewKey レジストリ エントリを作成する必要があります。 PreviewKey のレジストリ エントリを構成する方法の詳細については、次を参照してください。[プレビュー パッケージを作成する](https://msdn.microsoft.com/library/windows/hardware/br230780)します。
+サービス メタデータ パッケージは、プレビュー モードでは場合、は、テスト コンピューターに PreviewKey レジストリ エントリを作成する必要があります。 PreviewKey のレジストリ エントリを構成する方法の詳細については、次を参照してください。[プレビュー パッケージを作成する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)します。
 
 **注:**  
 テスト プレビュー モードでは、サービス メタデータ パッケージをテストする署名を有効にすることはありません。
@@ -499,9 +499,9 @@ Write-Host "END"
 
 2. すべてのインターフェイスからすべてのモバイル ブロード バンド プロファイルを削除します。
 
-   1. 管理者特権でコマンド プロンプトで、次のように入力します**netsh mbn 表示 pro i =。\\***
+   1. 管理者特権でコマンド プロンプトで、次のように入力します**netsh mbn 表示 pro i =。\\** *
 
-   2. プロファイルのそれぞれについて、次のように入力します。 **netsh mbn 削除プロファイル名 ="、ここにプロファイル名"は =\\*** し、Enter キーを押します。
+   2. プロファイルのそれぞれについて、次のように入力します。 **netsh mbn 削除プロファイル名 ="、ここにプロファイル名"は =\\** * し、Enter キーを押します。
 
 3. すべてのモバイル ブロード バンド アダプターを無効にします。
 
@@ -570,7 +570,7 @@ Write-Host "END"
 
 メタデータの更新では、問題が解決しないが、サービス メタデータ パッケージが有効であると、正しいハードウェア Id があることを確認します。 これを行うには、次の手順を実行します。
 
-1. 移動します **%programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\**<em>カルチャ</em>ここで、 *カルチャ*はテスト用コンピューターの現在のカルチャのカルチャ コード (たとえば、 **en-ご**または **、es-es**)。
+1. 移動します **%programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\** <em>カルチャ</em>ここで、 *カルチャ*はテスト用コンピューターの現在のカルチャのカルチャ コード (たとえば、 **en-ご**または **、es-es**)。
 
 2. メタデータ パッケージと同じ名前を持つフォルダーを探します (なし、 **.devicemetadata ms**拡張機能)。 このディレクトリが存在しない場合、次の 4 つのいずれかに意味があります。
 

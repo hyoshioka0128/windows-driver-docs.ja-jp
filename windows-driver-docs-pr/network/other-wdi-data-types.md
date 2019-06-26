@@ -6,16 +6,16 @@ keywords:
 - 他の WDI データ型、WDK WDI の他のデータ型のネットワーク ドライバー
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7abaa3f717907af12e5f2e09fe47e21f026aea47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 305a19e6e09a8fad9138429d7e50b097d5c8bddf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378292"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372492"
 ---
 # <a name="other-wdi-data-types"></a>他の WDI データ型
 
-記載されている構造体、列挙型のデータ型だけでなく[WDI ミニポート ドライバーのデータ型](https://msdn.microsoft.com/library/windows/hardware/dn926077)、WDI ミニポート ドライバーは、次の型を使用こともできます。
+記載されている構造体、列挙型のデータ型だけでなく[WDI ミニポート ドライバーのデータ型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)、WDI ミニポート ドライバーは、次の型を使用こともできます。
 
 [WDI_BAND_ID](wdi-band-id.md)
 

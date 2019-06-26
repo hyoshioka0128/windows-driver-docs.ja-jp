@@ -9,16 +9,16 @@ keywords:
 - ハードウェア
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fddb468087e7068dace633c9f3d7a5df5a84b861
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 0fe3ab8127550a8b16e36859f0a6d1d9002ee6e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67047044"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369372"
 ---
 # <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>ハードウェア サポート アプリ (HSA):ドライバー開発者向けの手順
 
-ハードウェア サポート アプリ (HSA) は、特定のドライバーとペアになっているデバイスに固有のアプリまたは[RPC (リモート プロシージャ コール)](https://msdn.microsoft.com/library/windows/desktop/aa378651)エンドポイント。
+ハードウェア サポート アプリ (HSA) は、特定のドライバーとペアになっているデバイスに固有のアプリまたは[RPC (リモート プロシージャ コール)](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)エンドポイント。
 
 ドライバーを使用して、ストア アプリを関連付けるには、カスタム機能と呼ばれる特殊な値を最初に予約します。 機能を提供し、機能を提供して、アプリ開発者にアプリへのアクセスを許可します。  このページは、ドライバー開発者向けの次の手順を説明します。
 
@@ -42,7 +42,7 @@ HSA の 4 つ ("DCHU") の設計原則の 1 つ[ユニバーサル Windows ド�
       * ユーザーのデバイスで長時間のデータ イベントまたはに送信パートナーですか?
     * データ機能をでへのアクセスを提供しますか。
     * この機能のエンド ユーザーにとってのメリットは何ですか。
-    * Microsoft Store アプリの発行元 ID が含まれます  いずれかを取得するには、Microsoft Store のページで、アプリのスケルトン エントリを作成します。 アプリの PFN の予約の詳細については、次を参照してください。[の名前を予約することで、アプリを作成する](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)します。
+    * Microsoft Store アプリの発行元 ID が含まれます  いずれかを取得するには、Microsoft Store のページで、アプリのスケルトン エントリを作成します。 アプリの PFN の予約の詳細については、次を参照してください。[の名前を予約することで、アプリを作成する](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)します。
 
 2.  Microsoft の電子メール要求を承認すると場合、は、バックアップの形式でカスタム機能の一意の文字列名**CompanyName.capabilityName\_PublisherID**します。
 
@@ -52,7 +52,7 @@ HSA の 4 つ ("DCHU") の設計原則の 1 つ[ユニバーサル Windows ド�
 
 カスタム機能を持つ UWP アプリへの RPC エンドポイントへのアクセスを許可するのには、次の手順を実行します。
 
-1.  呼び出す[ **DeriveCapabilitySidsFromName** ](https://msdn.microsoft.com/library/windows/desktop/mt803273)セキュリティ ID (SID) にカスタム機能名を変換します。
+1.  呼び出す[ **DeriveCapabilitySidsFromName** ](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname)セキュリティ ID (SID) にカスタム機能名を変換します。
 2.  許可されていると共に、RPC エンドポイントのセキュリティ記述子のために必要なその他の Sid の ACE のアクセスに SID を追加します。
 3.  セキュリティ記述子から情報を使用して RPC エンドポイントを作成します。
 
@@ -182,13 +182,13 @@ Microsoft によって署名された SCCD を取得する前に、これには�
 * [ユニバーサル Windows プラットフォームの紹介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [ユニバーサル Windows プラットフォーム (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)
 * [アプリの機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)
-* [Visual Studio を使用して UWP アプリを開発します。](https://developer.microsoft.com/windows/apps/develop)
+* [Visual Studio を使用して UWP アプリを開発します。](https://docs.microsoft.com/windows/uwp/develop/)
 * [ユニバーサル Windows プラットフォーム (UWP) アプリとドライバーのペアリング](../install/pairing-app-and-driver-versions.md)
-* [UWP アプリの開発](https://developer.microsoft.com/windows/apps/develop)
+* [UWP アプリの開発](https://docs.microsoft.com/windows/uwp/develop/)
 * [Desktop App Converter (デスクトップ ブリッジ) を使用してアプリをパッケージ化](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 * [カスタムの機能のサンプル アプリ](https://go.microsoft.com/fwlink/p/?LinkId=846904)
 * [カスタムの機能のドライバーのサンプル](https://aka.ms/customcapabilitydriversample )
-* [Windows 10 でアプリをサイドロードします。](https://technet.microsoft.com/library/mt269549.aspx)
+* [Windows 10 でアプリをサイドロードします。](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
 * [カスタムの機能に関する FAQ](FAQ-on-custom-capabilities.md)
 
 ## <a name="sccd-xml-schema"></a>SCCD XML スキーマ

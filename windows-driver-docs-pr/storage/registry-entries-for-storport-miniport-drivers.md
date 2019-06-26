@@ -4,12 +4,12 @@ description: StorPort では、StorPort およびミニポートの操作の動�
 ms.assetid: 543EC6A4-113C-4525-8063-28854B50760E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e6769c2bf7bcb19a3c21553ba1b283bee22c3e
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: a122a246d60b796d9b00295256368522a01e8808
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161334"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368943"
 ---
 # <a name="registry-entries-for-storport-miniport-drivers"></a>StorPort ミニポート ドライバーのレジストリ エントリ
 
@@ -48,7 +48,7 @@ StorPort では、StorPort およびミニポートの操作の動作を構成�
 </tr>
 <tr class="odd">
 <td align="left">説明</td>
-<td align="left"><p>Storport がこのレジストリ データを取得し、としてミニポートにバッファーを渡します<em>パラメーター</em>ミニポートの呼び出し時に<a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557390)"> <strong>HwStorFindAdapter</strong> </a>ルーチン。</p></td>
+<td align="left"><p>Storport がこのレジストリ データを取得し、としてミニポートにバッファーを渡します<em>パラメーター</em>ミニポートの呼び出し時に<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)"> <strong>HwStorFindAdapter</strong> </a>ルーチン。</p></td>
 </tr>
 <tr class="even">
 <td align="left">適用対象します。</td>

@@ -4,12 +4,12 @@ description: Windows のセキュリティ モデルは、主に少数のシス�
 ms.assetid: 3A7ECA7C-1FE6-4ADB-97A9-A61C6FCE9F04
 ms.date: 02/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e1d01bdc20dc36d5f01c9c9135f74296cea7ccc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf94f3917fe21917a4136cd5f4f7ffd40c18f820
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371996"
 ---
 # <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanwindows-security-model-for-driver-developers"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>ドライバー開発者向けの Windows セキュリティ モデル
 
@@ -46,14 +46,14 @@ Sid は、オペレーティング システムやドメイン サーバーな�
 
 既定では、プロセスのスレッドがセキュリティ保護可能なオブジェクトと対話するたびに、システムはプロセスのプライマリ アクセス トークンを使用します。 ただし、スレッドは、クライアントのアカウントを偽装できます。 スレッドが偽装するときだけでなく、独自のプライマリ トークン偽装トークンがあります。 権限借用トークンは、スレッドが偽装されるユーザー アカウントのセキュリティ コンテキストについて説明します。 権限借用は、リモート プロシージャ コール (RPC) の処理で特に一般的です。
 
-スレッドまたはプロセスに対して制限付きのセキュリティ コンテキストを記述するアクセス トークンは、制限付きトークンと呼ばれます。 内の Sid を*制限付きトークン*セキュリティ保護可能なオブジェクトへのアクセスを拒否のアクセスを拒否する場合にのみ設定できます。 さらに、トークンは、システム全体の特権の制限のセットを記述できます。 ユーザーの SID と id は同じままですが、プロセスが制限付きトークンを使用して、ユーザーのアクセス権が制限されます。 [CreateRestrictedToken](https://msdn.microsoft.com/library/windows/desktop/aa446583.aspx)関数は、制限付きトークンを作成します。
+スレッドまたはプロセスに対して制限付きのセキュリティ コンテキストを記述するアクセス トークンは、制限付きトークンと呼ばれます。 内の Sid を*制限付きトークン*セキュリティ保護可能なオブジェクトへのアクセスを拒否のアクセスを拒否する場合にのみ設定できます。 さらに、トークンは、システム全体の特権の制限のセットを記述できます。 ユーザーの SID と id は同じままですが、プロセスが制限付きトークンを使用して、ユーザーのアクセス権が制限されます。 [CreateRestrictedToken](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken)関数は、制限付きトークンを作成します。
 
 
 ### <a name="security-descriptors"></a>セキュリティ記述子
 
 各名前付きの Windows オブジェクトがセキュリティ記述子。一部の名前のないオブジェクトには、すぎます。 セキュリティ記述子には、所有者とその Acl とオブジェクトのグループの Sid がについて説明します。
 
-通常、オブジェクトのセキュリティ記述子は、オブジェクトを作成する関数によって作成されます。 ドライバーを呼び出すと、 [IoCreateDevice](https://msdn.microsoft.com/library/windows/hardware/ff548397.aspx)または[IoCreateDeviceSecure](https://msdn.microsoft.com/library/windows/hardware/ff548407.aspx)デバイス オブジェクトを作成する日常的なシステム セキュリティ記述子を作成したデバイス オブジェクトに適用され、オブジェクトの Acl を設定します。 ほとんどのデバイスの Acl は、デバイスの情報 (INF) ファイルで指定されます。
+通常、オブジェクトのセキュリティ記述子は、オブジェクトを作成する関数によって作成されます。 ドライバーを呼び出すと、 [IoCreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)または[IoCreateDeviceSecure](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)デバイス オブジェクトを作成する日常的なシステム セキュリティ記述子を作成したデバイス オブジェクトに適用され、オブジェクトの Acl を設定します。 ほとんどのデバイスの Acl は、デバイスの情報 (INF) ファイルで指定されます。
 
 詳細については[セキュリティ記述子](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-descriptors)カーネル ドライバーのドキュメントにします。
 

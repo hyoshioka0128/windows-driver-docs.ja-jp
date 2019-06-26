@@ -9,12 +9,12 @@ keywords:
 - ACPI の制御方法、WDK を列挙します。
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: be30adb9728de68c69567f18d1f781de404b6f32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13e053c5a360d38fd08e03749d361a0696bf1698
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328830"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355847"
 ---
 # <a name="enumerating-child-devices-and-control-methods"></a>子デバイスと制御メソッドを列挙する
 
@@ -31,7 +31,7 @@ ms.locfileid: "63328830"
  _FOO            control method
 ```
 
-使用する[ **IOCTL\_ACPI\_EVAL\_メソッド\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff536149)または[ **IOCTL\_ACPI\_ASYNC\_EVAL\_メソッド\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff536146)デバイスのドライバーを ACPI 名前空間管理メソッドの名前とパスを提供します。 デバイスのデバイスと子オブジェクトの名前とパスを取得するには、Windows のサポート、 [ **IOCTL\_ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536147)要求。 例として、デバイスのデバイス スタック内のドライバーこのセクションで説明する簡略化された ACPI 名前空間を参照する 'ABCD' は、次の操作をこの要求を使用できます。
+使用する[ **IOCTL\_ACPI\_EVAL\_メソッド\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)または[ **IOCTL\_ACPI\_ASYNC\_EVAL\_メソッド\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_async_eval_method_ex)デバイスのドライバーを ACPI 名前空間管理メソッドの名前とパスを提供します。 デバイスのデバイスと子オブジェクトの名前とパスを取得するには、Windows のサポート、 [ **IOCTL\_ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)要求。 例として、デバイスのデバイス スタック内のドライバーこのセクションで説明する簡略化された ACPI 名前空間を参照する 'ABCD' は、次の操作をこの要求を使用できます。
 
 -   デバイス 'ABCD' と 'ABCD ' の直接の子デバイスを列挙します。 要求を使用して、返されるなど '\\ABCD、''\\ABCD します。CHL1、' と '\\ABCD します。CHL2 '。
 
@@ -41,7 +41,7 @@ ms.locfileid: "63328830"
 
 ドライバーは、コントロールのメソッドの名前とパスを取得した後、その IOCTL への入力として名前とパスを指定できます\_ACPI\_EVAL\_メソッド\_EX または IOCTL\_ACPI\_ASYNC\_EVAL\_メソッド\_」の説明に従って、EX [ACPI コントロールのメソッドを同期的評価](evaluating-acpi-control-methods-synchronously.md)します。
 
-[ **IOCTL\_ACPI\_ENUM\_子**](https://msdn.microsoft.com/library/windows/hardware/ff536147)ドライバーに割り当てられた可変長を入力としての要求の受け取り[ **ACPI\_列挙型\_子\_入力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff536110)次のメンバーを含む構造体。
+[ **IOCTL\_ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)ドライバーに割り当てられた可変長を入力としての要求の受け取り[ **ACPI\_列挙型\_子\_入力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)次のメンバーを含む構造体。
 
 <a href="" id="signature"></a>**署名**  
 入力のバッファーは、ACPI に設定する必要がありますが、署名\_ENUM\_子\_入力\_バッファー\_署名します。

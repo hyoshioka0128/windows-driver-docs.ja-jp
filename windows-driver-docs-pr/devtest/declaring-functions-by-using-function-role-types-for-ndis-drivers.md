@@ -4,12 +4,12 @@ description: NDIS ドライバーの関数役割型を使用した関数の宣�
 ms.assetid: 232c4272-0bf0-4a4e-9560-3bceeca8a3e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6467f919247aa8b34e9df5b81eaf001e2965f6b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a813e3e039f01d709f52781ed2f88874bb0625d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341156"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371559"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-ndis-drivers"></a>NDIS ドライバーの関数役割型を使用した関数の宣言
 
@@ -75,13 +75,13 @@ NDIS_IO_WORKITEM MPQueuedWorkItem;
 
 C プログラミング言語で必要に応じて関数定義で使用するパラメーターの型は、関数プロトタイプのパラメーターの型と一致する必要があります。 またはこの場合、関数のロールを入力します。 SDV は、分析関数のシグネチャに依存し、一致しないシグネチャを持つ関数を無視します。
 
-たとえば、宣言する必要があります、 [ *MiniportInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559395)ミニポートを使用して機能\_ISR 関数ロールの種類。
+たとえば、宣言する必要があります、 [ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)ミニポートを使用して機能\_ISR 関数ロールの種類。
 
 ```
 MINIPORT_ISR myMPIsr;
 ```
 
-割り込みのルーチンを実装するときに*myMPIsr*、ミニポートによって使用されるパラメーターの型が一致する必要があります\_ISR、具体的には、NDIS\_ハンドル、PBOOLEAN、および PULONG (を参照してください、 [ *MiniportInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559395)構文の関数)。
+割り込みのルーチンを実装するときに*myMPIsr*、ミニポートによって使用されるパラメーターの型が一致する必要があります\_ISR、具体的には、NDIS\_ハンドル、PBOOLEAN、および PULONG (を参照してください、 [ *MiniportInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)構文の関数)。
 
 ```
 BOOLEAN 

@@ -10,12 +10,12 @@ keywords:
 - WDK Direct3D のコンテキストを破棄します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1e824842c66c6dd67493c887760733651c4c5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c054cfb77603e54fd25747a864b075afe8fd91da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346910"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370220"
 ---
 # <a name="creating-and-destroying-a-context"></a>コンテキストの作成と破棄
 
@@ -29,11 +29,11 @@ ms.locfileid: "63346910"
 
 -   デバイス固有のコンテキストを割り当てると、0 に初期化します。
 
--   参照してください[ **D3dContextCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff542178)そのコールバック内で実行する追加の手順についてはします。 **D3dContextCreate**アプリケーションは、HAL の Direct3D デバイスを作成するときに呼び出されるコールバック。 ドライバーは、このコールバックを実装する必要があります。
+-   参照してください[ **D3dContextCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextcreatecb)そのコールバック内で実行する追加の手順についてはします。 **D3dContextCreate**アプリケーションは、HAL の Direct3D デバイスを作成するときに呼び出されるコールバック。 ドライバーは、このコールバックを実装する必要があります。
 
-ドライバーによって作成されたすべてのテクスチャ ハンドルを参照できる必要があります[ **D3dCreateSurfaceEx** ](https://msdn.microsoft.com/library/windows/hardware/ff542840)内に作成したコンテキストでします。 これによりへの呼び出し時に、このコンテキスト内で作成したテクスチャに関連するすべてのドライバー固有のデータをクリーンアップするドライバー、 [ **D3dContextDestroy** ](https://msdn.microsoft.com/library/windows/hardware/ff542180)関数を作成します。
+ドライバーによって作成されたすべてのテクスチャ ハンドルを参照できる必要があります[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)内に作成したコンテキストでします。 これによりへの呼び出し時に、このコンテキスト内で作成したテクスチャに関連するすべてのドライバー固有のデータをクリーンアップするドライバー、 [ **D3dContextDestroy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextdestroycb)関数を作成します。
 
-Direct3D の呼び出し[ **D3dContextDestroy** ](https://msdn.microsoft.com/library/windows/hardware/ff542180) Direct3D HAL デバイスが破棄されることをアプリケーションが要求したとき。 ドライバーは、指定したコンテキストに割り当てられている、すべてのリソースを解放する必要があります。 これらのリソース リソースが含まれる、たとえば、テクスチャ、頂点とピクセル[シェーダー](direct3d-shaders.md)、[宣言と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)、およびリソースの[非同期クエリ](supporting-asynchronous-query-operations.md).
+Direct3D の呼び出し[ **D3dContextDestroy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextdestroycb) Direct3D HAL デバイスが破棄されることをアプリケーションが要求したとき。 ドライバーは、指定したコンテキストに割り当てられている、すべてのリソースを解放する必要があります。 これらのリソース リソースが含まれる、たとえば、テクスチャ、頂点とピクセル[シェーダー](direct3d-shaders.md)、[宣言と頂点シェーダーのコード](separating-declarations-and-code-for-vertex-shaders.md)、およびリソースの[非同期クエリ](supporting-asynchronous-query-operations.md).
 
  
 

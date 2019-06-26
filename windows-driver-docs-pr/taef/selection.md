@@ -4,12 +4,12 @@ description: 選択
 ms.assetid: 5DFE5B52-4D58-491c-9363-95E4A2FD680C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7c427c3fac66724743d68d6096cf0423eed5566
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c1430cc30c56e2e3d4c28b934560b46808a147b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372999"
 ---
 # <a name="selection"></a>選択
 
@@ -22,7 +22,7 @@ ms.locfileid: "63324782"
 TE <test_binaries> [/select:<selection criteria>]
 ```
 
-このセクションの説明、TE.exe**選択/:**<em>選択基準</em>オプション。 TE.exe の詳細については、次を参照してください。 [TE.exe コマンド オプション](te-exe-command-line-parameters.md)します。
+このセクションの説明、TE.exe**選択/:** <em>選択基準</em>オプション。 TE.exe の詳細については、次を参照してください。 [TE.exe コマンド オプション](te-exe-command-line-parameters.md)します。
 
 選択基準は、コマンド プロンプトで説明したすべてのテスト バイナリをグローバルに適用されます。 2 つのテストについて考えてみましょう\_バイナリ。**例\\CPP します。SelectionCriteria1.Example.dll**と**例\\CPP します。SelectionCriteria2.Example.dll**します。 次の例は、プロパティ、またはこれらのテストでさまざまなレベルで指定されたメタデータ\_バイナリ。 指定することで取得することもできます、 **/listproperties**コマンド プロンプト ウィンドウでオプションです。
 
@@ -206,7 +206,7 @@ Te.exe Examples\CPP.SelectionCriteria1.Example.dll Examples\CPP.SelectionCriteri
 ## <a name="span-idsmartquotesspanspan-idsmartquotesspanspan-idsmartquotesspansmart-quotes"></a><span id="Smart_Quotes"></span><span id="smart_quotes"></span><span id="SMART_QUOTES"></span>スマート クォート
 
 
-コピーする場合の選択条件を Outlook または Word ドキュメントから経由でコマンド プロンプトには、選択基準での引用符があります。 どのようなスマート クォートの詳細についてを見つけることができます:<http://en.wikipedia.org/wiki/Smart_quotes>と[スマート引用符。コンピューターの消費するためのもののテキストの非表示の災禍](https://blogs.msdn.microsoft.com/oldnewthing/20090225-00/?p=19033/)
+コピーする場合の選択条件を Outlook または Word ドキュメントから経由でコマンド プロンプトには、選択基準での引用符があります。 どのようなスマート クォートの詳細についてを見つけることができます:<http://en.wikipedia.org/wiki/Smart_quotes>と[スマート引用符。コンピューターの消費するためのもののテキストの非表示の災禍](https://devblogs.microsoft.com/oldnewthing/?p=19033)
 
 スマート クォートを回避する簡単な方法はありません - 最良のアプローチがすべて削除するには、"二重引用符と ' コピー経由でコマンド プロンプトにして、クエリの見積もりの一部を再入力した後の単一引用符の選択基準。
 

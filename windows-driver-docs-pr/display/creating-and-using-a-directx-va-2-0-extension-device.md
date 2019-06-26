@@ -9,21 +9,21 @@ keywords:
 - 拡張機能のデバイス WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee104a279eaf8f80bf33dac35494d07356545cd5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a1547c9016d02e3bba756d0cc12a29ae07b455a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346922"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370204"
 ---
 # <a name="creating-and-using-a-directx-va-20-extension-device"></a>DirectX VA 2.0 拡張デバイスの作成と使用
 
 
-マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateExtensionDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540644) DirectX VA 2.0、拡張機能のデバイスを作成する関数。 ユーザー モードのディスプレイ ドライバーの呼び出し、デバイスで Direct3D ランタイムが終了したら、 [ **DestroyExtensionDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552774)関数。
+マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateExtensionDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createextensiondevice) DirectX VA 2.0、拡張機能のデバイスを作成する関数。 ユーザー モードのディスプレイ ドライバーの呼び出し、デバイスで Direct3D ランタイムが終了したら、 [ **DestroyExtensionDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_destroyextensiondevice)関数。
 
-Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **DecodeExtensionExecute** ](https://msdn.microsoft.com/library/windows/hardware/ff551811)非標準のビデオをデコードする関数がデバイスとの間、開始フレームとフレームの終了時間帯をデコードします。特定のレンダー ターゲットのサーフェイス。 ビデオのデコードについての概要については、次を参照してください。[ビデオのデコード](decoding-video.md)します。
+Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **DecodeExtensionExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeextensionexecute)非標準のビデオをデコードする関数がデバイスとの間、開始フレームとフレームの終了時間帯をデコードします。特定のレンダー ターゲットのサーフェイス。 ビデオのデコードについての概要については、次を参照してください。[ビデオのデコード](decoding-video.md)します。
 
-Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **ExtensionExecute** ](https://msdn.microsoft.com/library/windows/hardware/ff565604)拡張機能のデバイスでの非標準の DirectX VA 2.0 操作を実行する関数。
+Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **ExtensionExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_extensionexecute)拡張機能のデバイスでの非標準の DirectX VA 2.0 操作を実行する関数。
 
  
 

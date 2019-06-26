@@ -5,12 +5,12 @@ ms.assetid: 31109117-2242-40E0-B215-0FAE014B2035
 ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_CREATE_VPORT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 742bee63784913086d9e777607e401369c4c5ff1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62f76d87871998c29841ed07eb3a71d9bebab56a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383596"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380857"
 ---
 # <a name="oidnicswitchcreatevport"></a>OID\_NIC\_スイッチ\_作成\_VPORT
 
@@ -19,24 +19,24 @@ ms.locfileid: "63383596"
 
 上にあるドライバーは、ネットワーク アダプターの PF. のミニポート ドライバーにこの OID メソッド要求を発行します。 この OID メソッド要求は、PF ミニポート ドライバー シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする必要があります。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451597)構造体。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構造体。
 
 <a name="remarks"></a>注釈
 -------
 
-上にあるドライバーを初期化します、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451597)構成情報を含む構造体既定を作成する VPort 以外。 構成情報には、先 VPort がアタッチされている既定以外と数、キュー ペア VPort 既定以外の PCIe 関数が含まれています。
+上にあるドライバーを初期化します、 [ **NDIS\_NIC\_スイッチ\_VPORT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)構成情報を含む構造体既定を作成する VPort 以外。 構成情報には、先 VPort がアタッチされている既定以外と数、キュー ペア VPort 既定以外の PCIe 関数が含まれています。
 
-PF のミニポート ドライバーには、OID 要求が発行される、ドライバーは指定した既定以外の VPort に関連付けられているハードウェアおよびソフトウェア リソースを割り当てます。 すべてのリソースが正常に割り当てられた後、PF ミニポート ドライバー、OID が正常に完了 NDIS を返すことによって\_状態\_から成功[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416).
+PF のミニポート ドライバーには、OID 要求が発行される、ドライバーは指定した既定以外の VPort に関連付けられているハードウェアおよびソフトウェア リソースを割り当てます。 すべてのリソースが正常に割り当てられた後、PF ミニポート ドライバー、OID が正常に完了 NDIS を返すことによって\_状態\_から成功[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request).
 
 場合、OID\_NIC\_スイッチ\_作成\_VPORT 要求が正常に完了すると、PF ミニポート ドライバーおよび上位のドライバーを保持する必要があります、 **VPortId**既定以外の値連続した操作の VPort します。 **VPortId**値は、これらの操作中に使用されます。
 
 -   NDIS および上にあるドライバーを使用して、 **VPortId**を既定以外の連続する OID で VPort を識別する値を要求などに関連するこの VPort、 [OID\_NIC\_スイッチ\_VPORT\_パラメーター](oid-nic-switch-vport-parameters.md)と[OID\_NIC\_スイッチ\_削除\_VPORT](oid-nic-switch-delete-vport.md)します。
 
--   送信操作では中、NDIS を指定します、 **VPortId** VPort のパケットの送信元を識別する値。 バンドの外 (OOB) 内でこの値が指定されて[ **NDIS\_NET\_バッファー\_一覧\_フィルター\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff566567)のデータ、[NET\_バッファー\_一覧](https://msdn.microsoft.com/library/windows/hardware/ff568412)構造体。
+-   送信操作では中、NDIS を指定します、 **VPortId** VPort のパケットの送信元を識別する値。 バンドの外 (OOB) 内でこの値が指定されて[ **NDIS\_NET\_バッファー\_一覧\_フィルター\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)のデータ、[NET\_バッファー\_一覧](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)構造体。
 
--   中に受信操作、PF ミニポート ドライバーを指定します、 **VPortId**パケットが転送される値。 この値は、OOB 内も指定[ **NDIS\_NET\_バッファー\_一覧\_フィルター\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff566567)データ、の[NET\_バッファー\_一覧](https://msdn.microsoft.com/library/windows/hardware/ff568412)構造体。
+-   中に受信操作、PF ミニポート ドライバーを指定します、 **VPortId**パケットが転送される値。 この値は、OOB 内も指定[ **NDIS\_NET\_バッファー\_一覧\_フィルター\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)データ、の[NET\_バッファー\_一覧](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)構造体。
 
-詳細については、次を参照してください。[仮想ポートを作成する](https://msdn.microsoft.com/library/windows/hardware/hh439412)します。
+詳細については、次を参照してください。[仮想ポートを作成する](https://docs.microsoft.com/windows-hardware/drivers/network/creating-a-virtual-port)します。
 
 **注**  VPort は常に存在し、ない既定値は OID の OID 要求を作成した\_NIC\_スイッチ\_作成\_VPORT します。 既定 VPort NDIS の識別子を持つ\_既定\_VPORT\_id。 PF のミニポート ドライバーでは、NIC のスイッチを作成するとき、ドライバーは自動的に既定 VPort をネットワーク アダプターの PF アタッチします。
 
@@ -68,11 +68,11 @@ NDIS または PF ミニポート ドライバーの OID の OID メソッド要
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://msdn.microsoft.com/library/windows/hardware/hh451597" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451597)"> <strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"> <strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーの長さが sizeof より小さい (<a href="https://msdn.microsoft.com/library/windows/hardware/hh451597" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451597)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>)。 PF のミニポート ドライバーを設定する必要があります、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーの長さが sizeof より小さい (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>)。 PF のミニポート ドライバーを設定する必要があります、<strong>データ。METHOD_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -107,15 +107,15 @@ NDIS または PF ミニポート ドライバーの OID の OID メソッド要
 
 
 ****
-[*MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)
+[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)
 
-[**NDIS\_NIC\_SWITCH\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/hh451587)
+[**NDIS\_NIC\_SWITCH\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)
 
-[**NDIS\_NIC\_スイッチ\_VPORT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451597)
+[**NDIS\_NIC\_スイッチ\_VPORT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[NET\_バッファー\_一覧](https://msdn.microsoft.com/library/windows/hardware/ff568412)
+[NET\_バッファー\_一覧](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
 [OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
 

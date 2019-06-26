@@ -7,12 +7,12 @@ keywords:
 - WDK、WPP に関するトレース WPP ソフトウェア
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79be44e1a36d0108ec7c9017f6f1a1a043dce07c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d0f5bda5d9026d4be87a79d2a31295f20a40006
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381818"
 ---
 # <a name="using-wpp-software-tracing-in-a-trace-provider"></a>トレース プロバイダーでの WPP ソフトウェア トレースの使用
 
@@ -22,9 +22,9 @@ ms.locfileid: "63379872"
 
 WPP ソフトウェア トレースの既定の形式を使用する、[トレース プロバイダー](trace-provider.md)カーネル モード ドライバーまたはユーザー モード アプリケーションを次の操作など。
 
--   コントロールを一意に識別する GUID 定義、[トレース プロバイダー](trace-provider.md)します。 プロバイダーの定義にこの GUID を指定する、 [WPP\_コントロール\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)マクロや関連するコントロール ファイルで使用される[Tracelog](tracelog.md)します。
+-   コントロールを一意に識別する GUID 定義、[トレース プロバイダー](trace-provider.md)します。 プロバイダーの定義にこの GUID を指定する、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロや関連するコントロール ファイルで使用される[Tracelog](tracelog.md)します。
 
--   必要な追加 WPP に関連する C プリプロセッサ ディレクティブと WPP マクロの呼び出しをプロバイダーのソース、ファイル、」の説明に従って[WPP マクロをトレース プロバイダーを追加する](adding-wpp-macros-to-a-trace-provider.md)し、 [WPP ソフトウェア トレース参照](https://msdn.microsoft.com/library/windows/hardware/ff556205)。
+-   必要な追加 WPP に関連する C プリプロセッサ ディレクティブと WPP マクロの呼び出しをプロバイダーのソース、ファイル、」の説明に従って[WPP マクロをトレース プロバイダーを追加する](adding-wpp-macros-to-a-trace-provider.md)し、 [WPP ソフトウェア トレース参照](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556205(v=vs.85))。
 
 -   」の説明に従って、ドライバーをビルド[WPP プリプロセッサ](wpp-preprocessor.md)します。
 

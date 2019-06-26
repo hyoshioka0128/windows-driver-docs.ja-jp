@@ -8,19 +8,19 @@ keywords:
 - 状態の変更、WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32b676e55353c1dbfd290149bba7ba1d79631ec0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e253c29111f582a92db828895e048c881b6dfbd7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369556"
 ---
 # <a name="power-and-state-changes-in-avstream"></a>AVStream の電源と状態の変更
 
 
-AVStream を受信すると、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)要求、ミニドライバーの呼び出す[ *AVStrMiniDeviceSetPower* ](https://msdn.microsoft.com/library/windows/hardware/ff554309)コールバック ルーチンを 1 つ、ミニドライバーが指定されている場合。
+AVStream を受信すると、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)要求、ミニドライバーの呼び出す[ *AVStrMiniDeviceSetPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdevicesetpower)コールバック ルーチンを 1 つ、ミニドライバーが指定されている場合。
 
-AVStream がのセット要求を受信すると、 [ **KSPROPERTY\_接続\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff565110)プロパティ、ミニドライバーの呼び出す[ *AVStrMiniPinSetDeviceState* ](https://msdn.microsoft.com/library/windows/hardware/ff556359)コールバック ルーチンを 1 つ、ミニドライバーが指定されている場合。
+AVStream がのセット要求を受信すると、 [ **KSPROPERTY\_接続\_状態**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-state)プロパティ、ミニドライバーの呼び出す[ *AVStrMiniPinSetDeviceState* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)コールバック ルーチンを 1 つ、ミニドライバーが指定されている場合。
 
 AVStream ミニドライバーを呼び出すことができます、システムは、スリープ状態から再開、 *AVStrMiniPinSetDeviceState*と*AVStrMiniDeviceSetPower*想定されている順序の逆の順序でコールバック ルーチン。 たとえば、 *AVStrMiniPinSetDeviceState*を呼び出すことは*beforeAVStrMiniDeviceSetPower*します。
 

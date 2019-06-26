@@ -8,12 +8,12 @@ keywords:
 - アダプターのドライバー WDK オーディオ、PCI 構成領域
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4b1ba8f3e1412004c97a482f65706019ad7ec9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc96eac37b3e58b5c56d31177d18a30a003a5a5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327626"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355781"
 ---
 # <a name="accessing-pci-configuration-space"></a>PCI 構成領域へのアクセス
 
@@ -21,11 +21,11 @@ ms.locfileid: "63327626"
 ## <span id="accessing_pci_configuration_space"></span><span id="ACCESSING_PCI_CONFIGURATION_SPACE"></span>
 
 
-Windows で Me/98、Windows 2000 以降のアダプター ドライバーが IRQL パッシブに、そのアダプター カードの PCI 構成領域にアクセスできると\_レベルを使用して、 [ **IRP\_MN\_読み取り\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)と[ **IRP\_MN\_書き込み\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551769)要求。
+Windows で Me/98、Windows 2000 以降のアダプター ドライバーが IRQL パッシブに、そのアダプター カードの PCI 構成領域にアクセスできると\_レベルを使用して、 [ **IRP\_MN\_読み取り\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)と[ **IRP\_MN\_書き込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)要求。
 
-Windows 2000 以降では、PCI ドライバー スタックのエクスポート、 [ **BUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff540707) IRQL ディスパッチで PCI 構成領域へのアクセスを提供するインターフェイス\_レベル。
+Windows 2000 以降では、PCI ドライバー スタックのエクスポート、 [ **BUS\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard) IRQL ディスパッチで PCI 構成領域へのアクセスを提供するインターフェイス\_レベル。
 
-詳細については、次を参照してください。[へのアクセスのデバイス構成領域](https://msdn.microsoft.com/library/windows/hardware/ff540450)します。
+詳細については、次を参照してください。[へのアクセスのデバイス構成領域](https://docs.microsoft.com/windows-hardware/drivers/kernel/accessing-device-configuration-space)します。
 
  
 

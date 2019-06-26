@@ -10,12 +10,12 @@ keywords:
 - INF ファイル WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12200ae5547499daf0dfc284ccf50df25da619b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eaaf81a58225e3df48ef086ffcefc0cab7abb669
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381248"
 ---
 # <a name="installation-of-callout-drivers"></a>コールアウト ドライバーのインストール
 
@@ -28,7 +28,7 @@ ms.locfileid: "63324928"
 net start drivername
 ```
 
-指定された値に応じて、 **StartType**内のエントリ、 \[ *drivername*します。サービス\]、コールアウト ドライバーの INF ファイルのセクションで読み込まれることが自動的に、次回のシステムを再起動します。 コールアウト ドライバーでは、0 を指定する必要があります、通常は (サービス\_ブート\_開始) この値のドライバーが読み込まれ、吹き出しが前に登録されているように、フィルター エンジンが起動します。 参照してください、 [ **INF AddService ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546326)詳細についてはします。
+指定された値に応じて、 **StartType**内のエントリ、 \[ *drivername*します。サービス\]、コールアウト ドライバーの INF ファイルのセクションで読み込まれることが自動的に、次回のシステムを再起動します。 コールアウト ドライバーでは、0 を指定する必要があります、通常は (サービス\_ブート\_開始) この値のドライバーが読み込まれ、吹き出しが前に登録されているように、フィルター エンジンが起動します。 参照してください、 [ **INF AddService ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)詳細についてはします。
 
 現在読み込まれているコールアウト ドライバーをアンロードできるコマンド プロンプトで次を入力して (停止)。
 

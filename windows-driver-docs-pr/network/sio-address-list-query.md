@@ -5,19 +5,19 @@ ms.assetid: c50520a3-6ba3-448e-bbb4-bf3425dcbc41
 ms.date: 08/08/2017
 keywords: -SIO_ADDRESS_LIST_QUERY ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 06e8f6308dd07e453592c612a65f91189d913eb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb204b36ee0a88e7940b3dfb15df0bcb90e0eb2a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380810"
 ---
 # <a name="sioaddresslistquery"></a>SIO\_アドレス\_一覧\_クエリ
 
 
 SIO\_アドレス\_一覧\_クエリ ソケット I/O 制御操作により、現在、ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧を照会する WSK アプリケーション。 このソケット I/O 制御操作は、すべての種類のソケットに適用されます。
 
-WSK アプリケーションを呼び出して、現在、ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧を照会するには[ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出して、現在、ソケットのアドレス ファミリ用のローカル トランスポート アドレスの一覧を照会するには[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -70,7 +70,7 @@ WSK アプリケーションを呼び出して、現在、ソケットのアド�
 
 呼び出すときに、WSK アプリケーションが IRP へのポインターを指定しない、 **WskControlSocket**ソケットのアドレス ファミリ用のローカル トランスポート アドレスの現在の一覧を照会する関数。
 
-場合に呼び出し、 **WskControlSocket**関数が成功すると、出力バッファーが含まれています、 [**ソケット\_アドレス\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff570826)構造体SOCKADDR 構造体、ソケットのアドレス ファミリ用のローカル トランスポート アドレスごとに続きます。
+場合に呼び出し、 **WskControlSocket**関数が成功すると、出力バッファーが含まれています、 [**ソケット\_アドレス\_一覧**](https://docs.microsoft.com/windows/desktop/api/ws2def/ns-ws2def-_socket_address_list)構造体SOCKADDR 構造体、ソケットのアドレス ファミリ用のローカル トランスポート アドレスごとに続きます。
 
 場合、 **WskControlSocket**ステータスを返します\_バッファー\_オーバーフロー、変数を指していますが、 *OutputSizeReturned*パラメーターには、出力バッファーが含まれています。サイズ (バイト単位)、ソケットのアドレス ファミリ用のローカル トランスポート アドレスの完全な一覧を格納するために必要な。
 

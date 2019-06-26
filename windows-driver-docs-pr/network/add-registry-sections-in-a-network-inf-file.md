@@ -12,12 +12,12 @@ keywords:
 - WDK の値はネットワーク INF ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce91eca10d49e0b3dfdcd8a3f87f2eadb2825387
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd28ec0fb1090fda1038a8411adef697b563555b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367792"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379294"
 ---
 # <a name="add-registry-sections-in-a-network-inf-file"></a>ネットワーク INF ファイル内のレジストリの追加セクション
 
@@ -25,7 +25,7 @@ ms.locfileid: "63367792"
 
 
 
-INF ファイルを含む 1 つまたは複数*追加レジストリ セクション*コンポーネントごとがインストールされます。 *追加レジストリ セクション*キーと値をレジストリに追加します。 **DDInstall** INF ファイルのセクションが含まれています、 **AddReg** 1 つまたは複数の参照ディレクティブ*追加レジストリ セクション*します。 詳細については、*追加レジストリ セクション*と**AddReg**ディレクティブを参照してください[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+INF ファイルを含む 1 つまたは複数*追加レジストリ セクション*コンポーネントごとがインストールされます。 *追加レジストリ セクション*キーと値をレジストリに追加します。 **DDInstall** INF ファイルのセクションが含まれています、 **AddReg** 1 つまたは複数の参照ディレクティブ*追加レジストリ セクション*します。 詳細については、*追加レジストリ セクション*と**AddReg**ディレクティブを参照してください[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
 
 ### <a name="adding-keys-and-values-to-instance-keys"></a>インスタンス キーにキーと値を追加します。
 

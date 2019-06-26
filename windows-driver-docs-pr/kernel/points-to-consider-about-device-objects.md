@@ -6,12 +6,12 @@ keywords:
 - デバイス オブジェクトの WDK カーネル、設計に関する考慮事項
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2a91f5c25628340f2fb93350e7fa02ec504aec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4dc0760f01dbc565109c96cf0c2070d377a5a1b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369710"
 ---
 # <a name="points-to-consider-about-device-objects"></a>デバイス オブジェクトについて考慮すべき点
 
@@ -27,7 +27,7 @@ ms.locfileid: "63369230"
 
 -   プラグ アンド プレイ ハードウェア バス ドライバーなど、最下位レベルのドライバーでは、各デバイスの制御の物理デバイス オブジェクト (PDO) を作成します。 関数の PnP ドライバーなど、中間のドライバーは、機能のデバイス オブジェクト (FDO) を作成します。
 
-    WDM ドライバーのデバイス オブジェクトを作成します。 その[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンで、デバイスの列挙した後、PnP マネージャーによって呼び出されます。
+    WDM ドライバーのデバイス オブジェクトを作成します。 その[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンで、デバイスの列挙した後、PnP マネージャーによって呼び出されます。
 
 -   ほとんどの最下位レベルおよび中間ドライバーについては、各デバイス オブジェクトのデバイスの拡張機能は、各ドライバーのプライマリ (および多くの場合のみ) のグローバル データ ストレージ領域です。 多くのドライバーは、デバイスの状態と、他のデバイスに固有のデータと各デバイスのドライバーが作成したオブジェクトの拡張機能でドライバーの定義済みのデバイス ドライバーが必要なリソースをすべて維持します。
 

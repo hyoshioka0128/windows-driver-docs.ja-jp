@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_IHV_TASK_REQUEST_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b5b4fdf1a6404c128fd32ff69e504ca567ad471
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60a227b1c4a58f931d6e19e80e745abfbc956eb8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380790"
 ---
 # <a name="wditlvihvtaskrequestparameters"></a>WDI\_TLV\_IHV\_タスク\_要求\_パラメーター
 
 
-WDI\_TLV\_IHV\_タスク\_要求\_パラメーターが要求された優先度を含む TLV [NDIS\_状態\_WDI\_INDICATION\_IHV\_タスク\_要求](https://msdn.microsoft.com/library/windows/hardware/dn925637)します。
+WDI\_TLV\_IHV\_タスク\_要求\_パラメーターが要求された優先度を含む TLV [NDIS\_状態\_WDI\_INDICATION\_IHV\_タスク\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-ihv-task-request)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -33,7 +33,7 @@ Uint32 型のサイズをバイト単位で。
 
 | 型   | 説明                                                                                                                             |
 |--------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | このタスクの IHV から要求された優先順位。 参照してください[ **WDI\_IHV\_タスク\_優先度**](https://msdn.microsoft.com/library/windows/hardware/dn926064)の有効な優先度の値。 |
+| UINT32 | このタスクの IHV から要求された優先順位。 参照してください[ **WDI\_IHV\_タスク\_優先度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_ihv_task_priority)の有効な優先度の値。 |
 
  
 

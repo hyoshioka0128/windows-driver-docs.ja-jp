@@ -5,19 +5,19 @@ ms.assetid: 24b93d4e-461d-44c3-b721-85cf41a1680a
 ms.date: 08/08/2017
 keywords: -:So_broadcast ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: afa77d7a6ef19f0ea47f1f1787216698aff9f137
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f69fec261969b6f62938d778aecc7469c5b018dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342592"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379122"
 ---
 # <a name="sobroadcast"></a>したがって\_ブロードキャスト
 
 
 SO の状態\_ブロードキャスト ソケット オプションは、データグラム ソケット経由でブロードキャスト メッセージを送信できるかどうかを決定します。 このソケット オプションは、データグラム ソケットだけに適用されます。
 
-WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>

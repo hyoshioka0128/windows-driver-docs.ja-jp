@@ -6,12 +6,12 @@ keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb8d6a9bd201341c4d06c19ebdbf2ae65fc3af6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c404e328a368f8e07cc6fb603677857ddd1a4fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373411"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379993"
 ---
 # <a name="generic-form-of-macroblock-control-command-structures"></a>マクロブロック制御コマンド構造の一般的なフォーム
 
@@ -21,13 +21,13 @@ ms.locfileid: "63373411"
 
 次のマクロ ブロック制御構造がで明示的に定義*dxva.h* DirectX VA のマクロ ブロック コントロール コマンドに使用する汎用的な設計の特殊なケースします。
 
-[**DXVA\_MBctrl\_I\_HostResidDiff\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563983)
+[**DXVA\_MBctrl\_I\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)
 
-[**DXVA\_MBctrl\_I\_OffHostIDCT\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563989)
+[**DXVA\_MBctrl\_I\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)
 
-[**DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563993)
+[**DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)
 
-[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://msdn.microsoft.com/library/windows/hardware/ff563997)
+[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)
 
 これらの構造は、最もよく使用されるマクロ ブロック コントロール コマンドの形式のみを表します。 その他のビデオのデコード要素をサポートし、デコード処理ごとに異なる構成を処理するために、ドライバーを許可するこれらの既存の構造の設計に基づいて、マクロ ブロックの追加コントロールのコマンドを作成できます。
 

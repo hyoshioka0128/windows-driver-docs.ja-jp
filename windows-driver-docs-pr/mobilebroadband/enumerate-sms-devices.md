@@ -4,19 +4,19 @@ description: SMS デバイスの列挙
 ms.assetid: d0d57a4f-df83-4f3b-b7b4-417ad4e11350
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2415989df11aba351d28b3a9da915070fd773ac2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce34411624b6ee9b972b8d2160084463ba2b18d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380241"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381486"
 ---
 # <a name="enumerate-sms-devices"></a>SMS デバイスの列挙
 
 
 モバイル ブロード バンド SMS プラットフォームでは、最初 SMS 対応モバイル ブロード バンド デバイス、または、すべての SMS 対応モバイル ブロード バンド デバイスの一覧を取得する機能を提供します。 次のサンプル コードでは、既定の SMS デバイスと、特定のデバイスは、SMS オブジェクトをインスタンス化を示します。
 
-**注**  を使用するアプリでC#または C++ で Windows 8、Windows 8.1、または Windows 10 での最初の使用、 [ **SmsDevice** ](https://msdn.microsoft.com/library/windows/apps/br206511)を呼び出すオブジェクト[ **GetDefaultAsync** ](https://msdn.microsoft.com/library/windows/apps/br211915)または[ **FromIdAsync** ](https://msdn.microsoft.com/library/windows/apps/br211914) STA スレッドでする必要があります。 MTA スレッドからの呼び出しと、未定義の動作があります。
+**注**  を使用するアプリでC#または C++ で Windows 8、Windows 8.1、または Windows 10 での最初の使用、 [ **SmsDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms.SmsDevice)を呼び出すオブジェクト[ **GetDefaultAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_GetDefaultAsync)または[ **FromIdAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_FromIdAsync_System_String_) STA スレッドでする必要があります。 MTA スレッドからの呼び出しと、未定義の動作があります。
 
  
 

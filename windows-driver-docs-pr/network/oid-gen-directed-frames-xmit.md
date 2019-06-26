@@ -5,12 +5,12 @@ ms.assetid: 7863c5c5-618f-4e3c-9a50-3bfdcf00034d
 ms.date: 08/08/2017
 keywords: -OID_GEN_DIRECTED_FRAMES_XMIT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 340b2456f364ccc39d742d79f6b6ddf2b9a29959
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a953c40d52c6001e893153b5cc952e06e5a6d9a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369130"
 ---
 # <a name="oidgendirectedframesxmit"></a>OID\_GEN\_ダイレクト\_フレーム\_XMIT
 
@@ -37,7 +37,7 @@ ms.locfileid: "63368925"
 <a name="remarks"></a>注釈
 -------
 
-Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
+Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
 
 <a name="requirements"></a>要件
 ------------

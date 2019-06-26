@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9a3bc72cbccd803c0adb5f3d37026f2853ac6340
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f14b87c0f216509f9c3fd34951c746bef0326d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325800"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370020"
 ---
 # <a name="installallornone-xml-element"></a>installAllOrNone XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
-**InstallAllOrNone** XML 要素が空の要素を設定する、 **installAllOrNone**でドライバーをインストールする DPInst を構成するには、フラグ、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)のみすべてのインストール パッケージにドライバー パッケージをインストールする場合、または場合、すべてのドライバー パッケージ グループでのドライバー パッケージをインストールすることができます。
+**InstallAllOrNone** XML 要素が空の要素を設定する、 **installAllOrNone**でドライバーをインストールする DPInst を構成するには、フラグ、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)のみすべてのインストール パッケージにドライバー パッケージをインストールする場合、または場合、すべてのドライバー パッケージ グループでのドライバー パッケージをインストールすることができます。
 
 ### <a name="element-tag"></a>**要素タグ**
 
@@ -67,7 +67,7 @@ ms.locfileid: "63325800"
 
 ### <a href="" id="comments"></a>「解説」
 
-既定で、 **installAllOrNone**フラグが OFF に設定します。 設定する、 **installAllOrNone** ON のすべてのフラグ、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)、含めるドライバー パッケージのグループに含めて、 **installAllOrNone**子要素として要素を**dpinst** 、XML 要素を使用して、または、 **/a** コマンド ライン スイッチ。 設定する、 **installAllOrNone**の特定のドライバー パッケージのグループにのみフラグを ON に、インクルード、 **installAllOrNone**要素に対応する子要素として**グループ**XML 要素。
+既定で、 **installAllOrNone**フラグが OFF に設定します。 設定する、 **installAllOrNone** ON のすべてのフラグ、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)、含めるドライバー パッケージのグループに含めて、 **installAllOrNone**子要素として要素を**dpinst** 、XML 要素を使用して、または、 **/a** コマンド ライン スイッチ。 設定する、 **installAllOrNone**の特定のドライバー パッケージのグループにのみフラグを ON に、インクルード、 **installAllOrNone**要素に対応する子要素として**グループ**XML 要素。
 
 次のコード例に示します、 **installAllOrNone**要素の子要素である、 **dpinst**要素。
 

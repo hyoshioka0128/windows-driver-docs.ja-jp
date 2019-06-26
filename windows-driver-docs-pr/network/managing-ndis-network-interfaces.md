@@ -7,12 +7,12 @@ keywords:
 - ネットワーク インターフェイス、WDK を管理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 173a4fd8912f5bd27b8230b44b1dc800cd6202e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 410a7003ce97ffb2f9f8cf15ff61c51f8d8d80ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343621"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356150"
 ---
 # <a name="managing-ndis-network-interfaces"></a>NDIS ネットワーク インターフェイスの管理
 
@@ -20,7 +20,7 @@ ms.locfileid: "63343621"
 
 
 
-NDIS ネットワーク インターフェイスのプロバイダーは、NDIS をネットワーク インターフェイスを登録します。 インターフェイスを登録する前に、インターフェイス プロバイダーを取得、 [ **NET\_LUID** ](https://msdn.microsoft.com/library/windows/hardware/ff568747)値インターフェイスに対応します。 NDIS インターフェイス インデックスを割り当てます ( *IfIndex*で RFC 2863) が登録されている場合にインターフェイスにします。
+NDIS ネットワーク インターフェイスのプロバイダーは、NDIS をネットワーク インターフェイスを登録します。 インターフェイスを登録する前に、インターフェイス プロバイダーを取得、 [ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)値インターフェイスに対応します。 NDIS インターフェイス インデックスを割り当てます ( *IfIndex*で RFC 2863) が登録されている場合にインターフェイスにします。
 
 NDIS は、ドライバーは、インターフェイスの履歴テーブル内のエントリの管理に使用できるサービスも用意されています。 (*ifStackTable*で RFC 2863)。
 

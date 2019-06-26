@@ -11,17 +11,17 @@ keywords:
 - 装飾の INF WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfbc0b46e48adbdb7bb8a64c85fa096c8730cde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bc627d388c65e3e785f2b4dc7bc3a36732eed25
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360523"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378586"
 ---
 # <a name="how-to-use-decorations-in-inf-files-for-printer-drivers"></a>プリンター ドライバーの INF ファイルで装飾を使用する方法
 
 
-Windows Server 2003 SP1 以降で実行されるプリンター ドライバーまたは 64 ビット バージョンの Windows XP 以降を対象とする x64 では、アーキテクチャを装飾に含める必要があります[ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)よう次の例です。 ただし、Windows Server 2003 SP1 の前に Windows のバージョンで追加のドライバーとドライバーをインストールする場合があります、ために、INF ファイル非装飾の INF モデル セクションが提供することする必要がありますも。 Itanium ベースのドライバーをインストールする文字装飾を使用することをお勧めします。
+Windows Server 2003 SP1 以降で実行されるプリンター ドライバーまたは 64 ビット バージョンの Windows XP 以降を対象とする x64 では、アーキテクチャを装飾に含める必要があります[ **INF モデル セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)よう次の例です。 ただし、Windows Server 2003 SP1 の前に Windows のバージョンで追加のドライバーとドライバーをインストールする場合があります、ために、INF ファイル非装飾の INF モデル セクションが提供することする必要がありますも。 Itanium ベースのドライバーをインストールする文字装飾を使用することをお勧めします。
 
 次の例では、1 つのプロセッサ アーキテクチャ用のドライバーをインストールするために使用する INF ファイルを書き込む方法を示します。
 

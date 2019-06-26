@@ -6,12 +6,12 @@ keywords:
 - アルファ ブレンド組み合わせ WDK DirectX VA を設定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5178e52a2ba26fb847dab41fd44e252815fb1968
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f3b3d0c86b6c0b2468c308b0b1ba3266ee876ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380435"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370334"
 ---
 # <a name="alpha-blend-combination-set"></a>アルファ ブレンドの結合セット
 
@@ -19,7 +19,7 @@ ms.locfileid: "63380435"
 ## <span id="ddk_alpha_blend_combination_set_gg"></span><span id="DDK_ALPHA_BLEND_COMBINATION_SET_GG"></span>
 
 
-アルファ ブレンドの組み合わせから成るに、最小限の相互運用性の設定、 **bConfigBlendType**のメンバー、 [ **DXVA\_ConfigAlphaCombine** ](https://msdn.microsoft.com/library/windows/hardware/ff563126)構造体に、さまざまな値による、[制限プロファイル](restricted-profiles.md)に実装されています。
+アルファ ブレンドの組み合わせから成るに、最小限の相互運用性の設定、 **bConfigBlendType**のメンバー、 [ **DXVA\_ConfigAlphaCombine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphacombine)構造体に、さまざまな値による、[制限プロファイル](restricted-profiles.md)に実装されています。
 
  
 

@@ -4,19 +4,19 @@ description: デバイスが PIN ロックされているかどうかを決定�
 ms.assetid: 7889c049-e8a2-4d69-9e5b-4b4756dcf1b4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b758ae2f468fd1f4d1447627dfb21c9f24e0c551
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0d156ab5e78fddff13b61dfb0dbce8b5d7126e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378329"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381514"
 ---
 # <a name="determine-if-a-device-is-pin-locked"></a>デバイスが PIN ロックされているかどうかを決定する
 
 
-ロックされたデバイス (たとえば、ICCID または IMEI) 上のサブスクリプション情報を利用できない可能性があります、ため、すべてのロックされたデバイスは、使用可能なネットワーク アカウントを列挙します。 アカウントがロックされているデバイスを表すかどうかを知るには、クエリ、 [ **NetworkDeviceStatus** ](https://msdn.microsoft.com/library/windows/apps/br207369)のプロパティ、 [ **CurrentDeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/hh770609)アカウントのプロパティ。 [**NetworkDeviceStatus**](https://msdn.microsoft.com/library/windows/apps/br207375).**DeviceLocked** PIN ロックでは、一方をことを示します**NetworkDeviceStatus**.**DeviceBlocked** PUK ブロックを示します。
+ロックされたデバイス (たとえば、ICCID または IMEI) 上のサブスクリプション情報を利用できない可能性があります、ため、すべてのロックされたデバイスは、使用可能なネットワーク アカウントを列挙します。 アカウントがロックされているデバイスを表すかどうかを知るには、クエリ、 [ **NetworkDeviceStatus** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation#Windows_Networking_NetworkOperators_MobileBroadbandDeviceInformation_NetworkDeviceStatus)のプロパティ、 [ **CurrentDeviceInformation** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandAccount#Windows_Networking_NetworkOperators_MobileBroadbandAccount_CurrentDeviceInformation)アカウントのプロパティ。 [**NetworkDeviceStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkDeviceStatus).**DeviceLocked** PIN ロックでは、一方をことを示します**NetworkDeviceStatus**.**DeviceBlocked** PUK ブロックを示します。
 
-次に、例を示します。
+例:
 
 ``` syntax
 var account = Windows.Networking.NetworkOperators.MobileBroadbandAccount.createFromNetworkAccountId(accountId);

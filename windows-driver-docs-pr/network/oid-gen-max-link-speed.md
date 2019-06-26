@@ -5,12 +5,12 @@ ms.assetid: 4009c5c6-57ec-47f5-80d6-d69df797857f
 ms.date: 08/08/2017
 keywords: -OID_GEN_MAX_LINK_SPEED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: bbfdbdb9d0dd747be6e650d2298e4aafa4f4d67b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c23d18623989c565594fdefb44f25d452ab46b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358770"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369062"
 ---
 # <a name="oidgenmaxlinkspeed"></a>OID\_GEN\_最大\_リンク\_速度
 
@@ -30,9 +30,9 @@ ms.locfileid: "63358770"
 
 ミニポート ドライバーでは、初期化中に最大リンク速度を提供します。
 
-最大のリンク速度を指定するには、設定、 **MaxXmitLinkSpeed**と**MaxRcvLinkSpeed**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)ミニポート ドライバーに渡します構造、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)関数。 ミニポート ドライバーがこの OID をサポートしていない場合、ドライバーは NDIS を返す必要があります\_状態\_いない\_サポートされています。 ミニポート ドライバーでは、この OID をサポートする場合の最大数のリンク速度が返されます、 [ **NDIS\_リンク\_速度**](https://msdn.microsoft.com/library/windows/hardware/ff565864)構造体。
+最大のリンク速度を指定するには、設定、 **MaxXmitLinkSpeed**と**MaxRcvLinkSpeed**のメンバー、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)ミニポート ドライバーに渡します構造、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)関数。 ミニポート ドライバーがこの OID をサポートしていない場合、ドライバーは NDIS を返す必要があります\_状態\_いない\_サポートされています。 ミニポート ドライバーでは、この OID をサポートする場合の最大数のリンク速度が返されます、 [ **NDIS\_リンク\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_speed)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -51,11 +51,11 @@ ms.locfileid: "63358770"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_リンク\_速度**](https://msdn.microsoft.com/library/windows/hardware/ff565864)
+[**NDIS\_リンク\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_speed)
 
-[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
+[**NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
 
  
 

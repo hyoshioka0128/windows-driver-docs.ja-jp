@@ -4,12 +4,12 @@ description: セキュリティ\_情報
 ms.assetid: 28023f0f-62ae-407b-b81b-1c98499df9a2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f7c9855a951997ce400616536f3bc8033b15ebf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29d4ba2e9766057e6ed226a81c75d80f4b7027f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371335"
 ---
 # <a name="securityinformation"></a>セキュリティ\_情報
 
@@ -43,7 +43,7 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 <th align="left">アクセス権</th>
 </tr>
@@ -153,7 +153,7 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 
  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 
 Wdm.h (Wdm.h を含む)
@@ -161,15 +161,15 @@ Wdm.h (Wdm.h を含む)
 ## <a name="related-topics"></a>関連トピック
 
 
-[**ACL**](https://msdn.microsoft.com/library/windows/hardware/ff538866)
+[**ACL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_acl)
 
-[**セキュリティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff556610)
+[**セキュリティ\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 
-[**SeQuerySecurityDescriptorInfo**](https://msdn.microsoft.com/library/windows/hardware/ff556692)
+[**SeQuerySecurityDescriptorInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-sequerysecuritydescriptorinfo)
 
-[**SeSetSecurityDescriptorInfo**](https://msdn.microsoft.com/library/windows/hardware/ff556709)
+[**SeSetSecurityDescriptorInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-sesetsecuritydescriptorinfo)
 
-[**SeSetSecurityDescriptorInfoEx**](https://msdn.microsoft.com/library/windows/hardware/ff556712)
+[**SeSetSecurityDescriptorInfoEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-sesetsecuritydescriptorinfoex)
 
 [**ZwQuerySecurityObject**](https://msdn.microsoft.com/library/windows/hardware/ff567066)
 

@@ -6,12 +6,12 @@ keywords:
 - GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES、WDK GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES ネットワーク ドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f9a3b2e6cfcbe0219e3f03ae45211f6a6514220
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 296c738742425851722d1e8ad6910c2bd4e10aea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369660"
 ---
 # <a name="guidndisstatusoffloadhwcapabilities"></a>GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES
 
@@ -21,7 +21,7 @@ MUX 中間ドライバーの使用、 [NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABIL
 
 ドライバーでは、タスクのオフロード ハードウェアの変更を示します、NDIS は WMI GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES イベントを WMI クライアントの状態表示を変換します。
 
-GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)が続く構造体、 [NDIS_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。
+GUID を持つ NDIS を提供するデータ バッファーを含む、 [NDIS_WMI_EVENT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_event_header)が続く構造体、 [NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造体。
 
 タスクのオフロード機能の詳細については、次を参照してください。 [NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES](ndis-status-task-offload-hardware-capabilities.md)と[OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES](oid-tcp-offload-hardware-capabilities.md)します。
 

@@ -9,12 +9,12 @@ keywords:
 - 重複 I/O の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b949b319fd2bd2e9c7307be4f733fbe1f8f87458
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 164114ca8f813472a08e49879c01753f50c1fa4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341060"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369759"
 ---
 # <a name="introduction-to-controller-objects"></a>コントローラー オブジェクトの概要
 
@@ -50,7 +50,7 @@ I/O チャネルでのデバイス ドライバーと一連の論理デバイス
 
 -   現在ビジー状態のデバイス オブジェクトの I/O 操作を実行して、現在の IRP が完了するまで、他のデバイス オブジェクトの受信の Irp をもう一度キューします。
 
-上記の同期方法には、IRP がドライバーの対象のデバイス オブジェクトのすべての処理がシリアル化します。 完了する前に現在の IRP にドライバーも強制的に注意してください。 その[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチンが残念ながらドライバーのパフォーマンスが低下する次の IRP の処理を開始することができます。
+上記の同期方法には、IRP がドライバーの対象のデバイス オブジェクトのすべての処理がシリアル化します。 完了する前に現在の IRP にドライバーも強制的に注意してください。 その[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンが残念ながらドライバーのパフォーマンスが低下する次の IRP の処理を開始することができます。
 
 特定のデバイス操作を重ねることができる場合コント ローラー オブジェクトを使用すると、この同期手法では、ドライバー、物理デバイスを設定する前に、操作に重複がかどうかを判断するためにはドライバーの I/O のスループットが拡大できます。 たとえば、ディスク コント ローラーにドライバーをことができますが重複しては別のディスクの読み取り/書き込み操作を 1 つのディスクにシークします。
 

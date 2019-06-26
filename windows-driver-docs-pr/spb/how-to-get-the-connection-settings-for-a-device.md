@@ -4,23 +4,23 @@ description: SPB コント ローラーのドライバーが EvtSpbTargetConnect
 ms.assetid: B614993A-0EA9-4B91-A336-80EEF9BE3E69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 337e1089e103bc67e2da9b8d4ba96e1746ae4814
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f078309195886eb3764641ba7d9c57e58f614d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373756"
 ---
 # <a name="how-to-get-the-connection-settings-for-a-device"></a>デバイスの接続設定を取得する方法
 
 
-SPB コント ローラーのドライバーを登録する場合、 [ *EvtSpbTargetConnect* ](https://msdn.microsoft.com/library/windows/hardware/hh450818)コールバック関数、 [SPB フレームワーク拡張](https://msdn.microsoft.com/library/windows/hardware/hh406203)(SpbCx) は、クライアント (ときに、この関数を呼び出す周辺機器のドライバー)、コント ローラーの送信、 [ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729)バス上のターゲット デバイスへの論理接続を開く要求。 応答、 *EvtSpbTargetConnect* SPB コント ローラーのドライバーを呼び出す必要があります、コールバック、 [ **SpbTargetGetConnectionParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh450926)の接続を取得する方法ターゲット デバイスの設定です。 SPB コント ローラーのドライバーでは、これらの設定を格納し、それらを後でクライアントからの I/O 要求に応答内のデバイスへのアクセスに使用します。
+SPB コント ローラーのドライバーを登録する場合、 [ *EvtSpbTargetConnect* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)コールバック関数、 [SPB フレームワーク拡張](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)(SpbCx) は、クライアント (ときに、この関数を呼び出す周辺機器のドライバー)、コント ローラーの送信、 [ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)バス上のターゲット デバイスへの論理接続を開く要求。 応答、 *EvtSpbTargetConnect* SPB コント ローラーのドライバーを呼び出す必要があります、コールバック、 [ **SpbTargetGetConnectionParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbtargetgetconnectionparameters)の接続を取得する方法ターゲット デバイスの設定です。 SPB コント ローラーのドライバーでは、これらの設定を格納し、それらを後でクライアントからの I/O 要求に応答内のデバイスへのアクセスに使用します。
 
 たとえば、I2C バス上のターゲット デバイスの接続設定には、デバイス、アドレスの幅 (7 または 10 ビット)、およびデバイスのアクセス時に使用するバスのクロック周波数のバスのアドレスが含まれます。 I2C コント ローラーのドライバーでは、これらの設定を使用して、I2C バス経由でデバイスにアクセスするコント ローラーを構成します。
 
-SPB のコント ローラー ドライバーは呼び出し**SpbTargetGetConnectionParameters**へのポインターを取得する、*シリアル バス接続記述子*I2C 型のシリアル バスにターゲット デバイスの接続を記述するか、SPI を示します。 この記述子には、両方シリアル バスの種類に共通であり、デバイスが接続されているシリアル バスに固有の情報が続きますされる接続情報が含まれています。 この記述子の形式の詳細については、次を参照してください。、 [ACPI 5.0 仕様](https://www.uefi.org/specifications)します。
+SPB のコント ローラー ドライバーは呼び出し**SpbTargetGetConnectionParameters**へのポインターを取得する、*シリアル バス接続記述子*I2C 型のシリアル バスにターゲット デバイスの接続を記述するか、SPI を示します。 この記述子には、両方シリアル バスの種類に共通であり、デバイスが接続されているシリアル バスに固有の情報が続きますされる接続情報が含まれています。 この記述子の形式の詳細については、次を参照してください。、 [ACPI 5.0 仕様](https://uefi.org/specifications)します。
 
-次のコード例では、I2C コント ローラーのドライバー定義、 **PNP\_I2C\_シリアル\_BUS\_記述子**構造体。 この構造体を表す、 *I2C シリアル バス接続記述子*、これは、ACPI 5.0 仕様を使用して、I2C に固有の接続設定が後に続くシリアル バス接続記述子をについて説明する用語バスです。 最初のメンバー、 **PNP\_I2C\_シリアル\_BUS\_記述子**構造、 **SerialBusDescriptor**は、 [ **PNP\_シリアル\_BUS\_記述子**](https://msdn.microsoft.com/library/windows/hardware/jj938062)シリアル バス接続記述子を表す構造体です。 **ConnectionSpeed**と**SlaveAddress**メンバー I2C に固有の接続設定を含めることができます。
+次のコード例では、I2C コント ローラーのドライバー定義、 **PNP\_I2C\_シリアル\_BUS\_記述子**構造体。 この構造体を表す、 *I2C シリアル バス接続記述子*、これは、ACPI 5.0 仕様を使用して、I2C に固有の接続設定が後に続くシリアル バス接続記述子をについて説明する用語バスです。 最初のメンバー、 **PNP\_I2C\_シリアル\_BUS\_記述子**構造、 **SerialBusDescriptor**は、 [ **PNP\_シリアル\_BUS\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/reshub/ns-reshub-_pnp_serial_bus_descriptor)シリアル バス接続記述子を表す構造体です。 **ConnectionSpeed**と**SlaveAddress**メンバー I2C に固有の接続設定を含めることができます。
 
 ```cpp
 #include <reshub.h>
@@ -46,7 +46,7 @@ I2C シリアル バス接続記述子は、隣接するフィールドが介在
 
 **ConnectionSpeed**のメンバー、 **PNP\_I2C\_シリアル\_BUS\_記述子**構造体では、ヘルツで、頻度を指定します。I2C バスは、ターゲット デバイスのアクセス中にクロックします。 **SlaveAddress**メンバーは、ターゲット デバイスのバスのアドレス。 I2C コント ローラーのドライバーによって、 **SlaveAddress**メンバーは、任意のベンダー固有データの後に指定可能性がありますが、このデータは、このコード例では、ドライバーによって使用されていないは、そのため、構造体の定義の一部です。
 
-次のコード例では、I2C コント ローラー ドライバーが前の例から実装、`GetTargetSettings`ルーチンを呼び出す[ **SpbTargetGetConnectionParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh450926)接続設定を取得するにはI2C バス上のターゲット デバイス *ターゲット*このルーチンへの入力パラメーターは、ターゲット デバイスを識別するハンドル。 *設定*ドライバーに割り当てられたへのポインターに出力パラメーターが[ **SPB\_接続\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh406204)構造体、ルーチン一連の接続パラメーターを書き込みます。 これらのパラメーターには、要求された接続の設定へのポインターが含まれます。
+次のコード例では、I2C コント ローラー ドライバーが前の例から実装、`GetTargetSettings`ルーチンを呼び出す[ **SpbTargetGetConnectionParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbtargetgetconnectionparameters)接続設定を取得するにはI2C バス上のターゲット デバイス *ターゲット*このルーチンへの入力パラメーターは、ターゲット デバイスを識別するハンドル。 *設定*ドライバーに割り当てられたへのポインターに出力パラメーターが[ **SPB\_接続\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/ns-spbcx-_spb_connection_parameters)構造体、ルーチン一連の接続パラメーターを書き込みます。 これらのパラメーターには、要求された接続の設定へのポインターが含まれます。
 
 ```cpp
 #define I2C_SERIAL_BUS_TYPE 0x01
@@ -103,11 +103,11 @@ GetTargetSettings(_In_ SPBTARGET Target, _Out_ PI2C_TARGET_SETTINGS Settings)
 }
 ```
 
-上記のコード例で[ **SpbTargetGetConnectionParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh450926)接続パラメーターを書き込むドライバーに割り当てられた`Params`構造体。 **ConnectionParameters**のメンバー`Params`を指す、 [ **RH\_クエリ\_接続\_プロパティ\_出力\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/jj938063)構造 (reshub.h で定義されている) が**ConnectionProperties**メンバーがシリアルの最初のバイト バス接続記述子; この記述子の残りのバイト直後に、 **ConnectionProperties**メンバー。 によって示されるバッファー、 **ConnectionParameters**のメンバー`Params`を格納するのに十分な大きさが、 **RH\_クエリ\_接続\_プロパティ\_出力\_バッファー**さらにこの構造に従う記述子バイト構造体します。
+上記のコード例で[ **SpbTargetGetConnectionParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbtargetgetconnectionparameters)接続パラメーターを書き込むドライバーに割り当てられた`Params`構造体。 **ConnectionParameters**のメンバー`Params`を指す、 [ **RH\_クエリ\_接続\_プロパティ\_出力\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/reshub/ns-reshub-_rh_query_connection_properties_output_buffer)構造 (reshub.h で定義されている) が**ConnectionProperties**メンバーがシリアルの最初のバイト バス接続記述子; この記述子の残りのバイト直後に、 **ConnectionProperties**メンバー。 によって示されるバッファー、 **ConnectionParameters**のメンバー`Params`を格納するのに十分な大きさが、 **RH\_クエリ\_接続\_プロパティ\_出力\_バッファー**さらにこの構造に従う記述子バイト構造体します。
 
 ドライバー実装`GetTargetSettings`ルーチンが上記のコード例から受信した接続パラメーターには、次のパラメーター チェックを実行します**SpbTargetGetConnectionParameters**:。
 
--   シリアル バス接続記述子のサイズが含まれることを確認、 [ **RH\_クエリ\_接続\_プロパティ\_出力\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/jj938063)構造は、少なくとも**sizeof**(**PNP\_シリアル\_BUS\_記述子**)。
+-   シリアル バス接続記述子のサイズが含まれることを確認、 [ **RH\_クエリ\_接続\_プロパティ\_出力\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/reshub/ns-reshub-_rh_query_connection_properties_output_buffer)構造は、少なくとも**sizeof**(**PNP\_シリアル\_BUS\_記述子**)。
 -   シリアル バス接続記述子の最初のバイトがシリアルに設定されていることを確認します。\_BUS\_記述子 (定数値 0x8e) ACPI 5.0 仕様で必要とします。
 -   I2C にシリアル バス接続記述子のシリアル バスの種類が設定されていることを確認します。\_シリアル\_BUS\_I2C としてシリアル バスの種類を識別する型 (定数値 0x01)。
 

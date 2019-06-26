@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_DISALLOWED_BSSIDS_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ad8824c6a1264b3601d24fc52a8ebefb6c164373
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d8eeec8fce1764418611b57a481c1ef5363f313
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380884"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369028"
 ---
 # <a name="wditlvdisallowedbssidslist"></a>WDI\_TLV\_許可しない\_BSSID\_一覧
 
@@ -26,14 +26,14 @@ WDI\_TLV\_許可しない\_BSSID\_リストは、関連付けに使用するの�
 ## <a name="length"></a>長さ
 
 
-配列のサイズをバイト単位で[ **WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)構造体。 配列には、1 つ以上の構造を格納する必要があります。
+配列のサイズをバイト単位で[ **WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)構造体。 配列には、1 つ以上の構造を格納する必要があります。
 
 ## <a name="values"></a>値
 
 
 | 型                                                  | 説明                                                                                                                                               |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)\[\] | 関連付けに使用するのには許可されていない Bssid の一覧。 アダプターがこの一覧にない任意の AP に関連付ける必要がありますいない場合、これを指定すると、 |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | 関連付けに使用するのには許可されていない Bssid の一覧。 アダプターがこの一覧にない任意の AP に関連付ける必要がありますいない場合、これを指定すると、 |
 
  
 

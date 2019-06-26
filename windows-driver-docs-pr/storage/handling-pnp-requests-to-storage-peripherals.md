@@ -9,12 +9,12 @@ keywords:
 - プラグ アンド プレイ WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f111fc01d7d9c7d0fc0e28caf05f1c3512bcaacc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 465717bdf58aa313528d117dc007fc72432ffb1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390900"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378502"
 ---
 # <a name="handling-pnp-requests-to-storage-peripherals"></a>記憶域周辺機器への PnP 要求の処理
 
@@ -28,7 +28,7 @@ ms.locfileid: "63390900"
 
 -   削除要求への応答でそのデバイスを削除する (IRP\_MJ\_PNP IRP の\_MN\_削除\_デバイス)。 参照してください[ストレージ クラス ドライバーの RemoveDevice ルーチン](storage-class-driver-s-removedevice-routine.md)します。
 
--   そのデバイスは、システムのページング ファイルを含めることができます場合、ページングのポケットベルによる通知の要求に対する応答で、デバイスの拡張機能内のパスの通知回数をカウントする (IRP\_MJ\_で PNP [ **IRP\_。MN\_デバイス\_使用状況\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff550841)) と、次の下位ドライバーへの要求を転送します。
+-   そのデバイスは、システムのページング ファイルを含めることができます場合、ページングのポケットベルによる通知の要求に対する応答で、デバイスの拡張機能内のパスの通知回数をカウントする (IRP\_MJ\_で PNP [ **IRP\_。MN\_デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)) と、次の下位ドライバーへの要求を転送します。
 
 -   クエリの削除、クエリ停止要求を処理し、システムのページング ファイルや休止状態ファイルが、デバイスが含まれる場合は、このような要求を失敗します。 ドライバーも失敗するクエリの削除要求のクラッシュ ダンプ、そのデバイスが要求した場合クラッシュ ダンプを無効にこのようなデバイスを削除するため。
 

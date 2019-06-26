@@ -6,12 +6,12 @@ keywords:
 - KSPROPERTY_VIDCAP_CAMERACONTROL
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54231c135b9d3cc27eacfe345b2fb3e2760e6867
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 851416fefc0246c3c30b10127fb42edee7535630
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379069"
 ---
 # <a name="propsetidvidcapcameracontrol"></a>PROPSETID\_しました\_CAMERACONTROL
 
@@ -35,13 +35,13 @@ USB ビデオ クラスでは、前に、この列挙体には、次のプロパ
 
 [**KSPROPERTY\_CAMERACONTROL\_ズーム**](ksproperty-cameracontrol-zoom.md)
 
-[**KSPROPERTY\_CAMERACONTROL\_方向へパンします。**](ksproperty-cameracontrol-pan.md)
+[**KSPROPERTY\_CAMERACONTROL\_方向へパンします。** ](ksproperty-cameracontrol-pan.md)
 
 [**KSPROPERTY\_CAMERACONTROL\_ロール**](ksproperty-cameracontrol-roll.md)
 
 [**KSPROPERTY\_CAMERACONTROL\_傾き**](ksproperty-cameracontrol-tilt.md)
 
-導入に伴い、 [USB ビデオ クラス ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568649)、次のプロパティは、KSPROPERTY に追加された\_しました\_CAMERACONTROL 列挙体。 Windows Vista および Windows の以降のバージョンでは、これらのプロパティがサポートされています。
+導入に伴い、 [USB ビデオ クラス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)、次のプロパティは、KSPROPERTY に追加された\_しました\_CAMERACONTROL 列挙体。 Windows Vista および Windows の以降のバージョンでは、これらのプロパティがサポートされています。
 
 [**KSPROPERTY\_CAMERACONTROL\_SCANMODE**](ksproperty-cameracontrol-scanmode.md)
 
@@ -78,7 +78,7 @@ Windows 8 以降、これらの追加プロパティは、カメラのコント�
 
 [**KSPROPERTY\_CAMERACONTROL\_FLASH\_プロパティ**](ksproperty-cameracontrol-flash-property.md)
 
-[**KSPROPERTY\_CAMERACONTROL\_イメージ\_PIN\_機能\_S**](https://msdn.microsoft.com/library/windows/hardware/jj553707)
+[**KSPROPERTY\_CAMERACONTROL\_イメージ\_PIN\_機能\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_image_pin_capability_s)
 
 [**KSPROPERTY\_CAMERACONTROL\_リージョン\_の\_関心\_プロパティ**](ksproperty-cameracontrol-region-of-interest-property.md)
 
