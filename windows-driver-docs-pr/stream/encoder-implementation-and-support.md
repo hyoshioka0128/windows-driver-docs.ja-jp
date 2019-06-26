@@ -15,12 +15,12 @@ keywords:
 - ENCAPIPARAM_PEAK_BITRATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd29935e2de3aae94f170c5b0fe3aaa64aa37f75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98a0bd04cedcdc81ea44d501bef1d7868dfb08f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363556"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384119"
 ---
 # <a name="encoder-implementation-and-support"></a>エンコーダーの実装とサポート
 
@@ -39,15 +39,15 @@ Windows XP Service Pack 1 で、Microsoft では、3 つのカーネル スト�
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff559520" data-raw-source="[ENCAPIPARAM_BITRATE](https://msdn.microsoft.com/library/windows/hardware/ff559520)">ENCAPIPARAM_BITRATE</a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate" data-raw-source="[ENCAPIPARAM_BITRATE](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)">ENCAPIPARAM_BITRATE</a></td>
 <td><p>実装する、エンコーディングを指定するには、このプロパティ セットのビット レートのエンコーダーのデバイスでサポートされています。 参照してください<a href="encoder-code-examples.md" data-raw-source="[Encoder Code Examples](encoder-code-examples.md)">エンコーダーのコード例</a>の詳細。</p></td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff559524" data-raw-source="[ENCAPIPARAM_BITRATE_MODE](https://msdn.microsoft.com/library/windows/hardware/ff559524)">ENCAPIPARAM_BITRATE_MODE</a></td>
-<td><p>このプロパティを設定すると、デバイスでサポートされているエンコード モードを実装します。 このプロパティの設定は、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568695" data-raw-source="[&lt;strong&gt;VIDEOENCODER_BITRATE_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568695)"> <strong>VIDEOENCODER_BITRATE_MODE</strong> </a>サポートされているモードを指定する列挙体。 参照してください<a href="encoder-code-examples.md" data-raw-source="[Encoder Code Examples](encoder-code-examples.md)">エンコーダーのコード例</a>の詳細。</p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode" data-raw-source="[ENCAPIPARAM_BITRATE_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)">ENCAPIPARAM_BITRATE_MODE</a></td>
+<td><p>このプロパティを設定すると、デバイスでサポートされているエンコード モードを実装します。 このプロパティの設定は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-videoencoder_bitrate_mode" data-raw-source="[&lt;strong&gt;VIDEOENCODER_BITRATE_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)"> <strong>VIDEOENCODER_BITRATE_MODE</strong> </a>サポートされているモードを指定する列挙体。 参照してください<a href="encoder-code-examples.md" data-raw-source="[Encoder Code Examples](encoder-code-examples.md)">エンコーダーのコード例</a>の詳細。</p></td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff559529" data-raw-source="[ENCAPIPARAM_PEAK_BITRATE](https://msdn.microsoft.com/library/windows/hardware/ff559529)">ENCAPIPARAM_PEAK_BITRATE</a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-peak-bitrate" data-raw-source="[ENCAPIPARAM_PEAK_BITRATE](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-peak-bitrate)">ENCAPIPARAM_PEAK_BITRATE</a></td>
 <td><p>このプロパティを設定すると、デバイスの最大のエンコード ビット レートを実装します。</p></td>
 </tr>
 </tbody>
@@ -72,27 +72,27 @@ DirectX 9.0、6 つの追加のプロパティ セットと 1 つのイベント
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff557705" data-raw-source="[CODECAPI_VIDEO_ENCODER](https://msdn.microsoft.com/library/windows/hardware/ff557705)">CODECAPI_VIDEO_ENCODER</a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-video-encoder" data-raw-source="[CODECAPI_VIDEO_ENCODER](https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-video-encoder)">CODECAPI_VIDEO_ENCODER</a></td>
 <td><p>デバイスは、エンコード ビデオ ストリーミングを (テレビ オーディオなどの補助的なオーディオを含む) をサポートしている場合は、このプロパティ セットのサポートを実装します。</p></td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff557693" data-raw-source="[CODECAPI_AUDIO_ENCODER](https://msdn.microsoft.com/library/windows/hardware/ff557693)">CODECAPI_AUDIO_ENCODER</a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-audio-encoder" data-raw-source="[CODECAPI_AUDIO_ENCODER](https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-audio-encoder)">CODECAPI_AUDIO_ENCODER</a></td>
 <td><p>デバイスがエンコーダーをオーディオのみの場合は、CODECAPI_VIDEO_ENCODER ではなく、このプロパティのサポートを実装します。</p></td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff557702" data-raw-source="[CODECAPI_SETALLDEFAULTS](https://msdn.microsoft.com/library/windows/hardware/ff557702)">CODECAPI_SETALLDEFAULTS</a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-setalldefaults" data-raw-source="[CODECAPI_SETALLDEFAULTS](https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-setalldefaults)">CODECAPI_SETALLDEFAULTS</a></td>
 <td><p>このプロパティのエンコード ビット レートとモードを既定値をエンコードするなど、すべてのエンコーダー デバイスの内部設定をリセットする設定を実装します。</p></td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff557691" data-raw-source="[CODECAPI_ALLSETTINGS](https://msdn.microsoft.com/library/windows/hardware/ff557691)">CODECAPI_ALLSETTINGS</a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-allsettings" data-raw-source="[CODECAPI_ALLSETTINGS](https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-allsettings)">CODECAPI_ALLSETTINGS</a></td>
 <td><p>エンコーダーのデバイスの現在の設定を通信するためにこのプロパティを実装します。 このプロパティ セットは、クライアントとの間の通信に使用されます。</p></td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff557703" data-raw-source="[CODECAPI_SUPPORTSEVENTS](https://msdn.microsoft.com/library/windows/hardware/ff557703)">CODECAPI_SUPPORTSEVENTS</a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-supportsevents" data-raw-source="[CODECAPI_SUPPORTSEVENTS](https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-supportsevents)">CODECAPI_SUPPORTSEVENTS</a></td>
 <td><p>デバイスは、エンコード モード、ビット レート、またはその他の設定を変更するなど、ユーザー モード - からイベントをサポートする場合は、このプロパティのセットを実装します。 このプロパティのセットを実装する場合、CODECAPI_CHANGELISTS イベントのサポートも実装する必要があります。</p></td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff557700" data-raw-source="[CODECAPI_CURRENTCHANGELIST](https://msdn.microsoft.com/library/windows/hardware/ff557700)">CODECAPI_CURRENTCHANGELIST</a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-currentchangelist" data-raw-source="[CODECAPI_CURRENTCHANGELIST](https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-currentchangelist)">CODECAPI_CURRENTCHANGELIST</a></td>
 <td><p>このプロパティがどのエンコーダー パラメーターが 1 つまたは複数のエンコーダーのプロパティを設定する前の呼び出しで変更されたかを決定する設定を実装します。</p></td>
 </tr>
 </tbody>
@@ -111,7 +111,7 @@ DirectX 9.0、6 つの追加のプロパティ セットと 1 つのイベント
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557696" data-raw-source="[CODECAPI_CHANGELISTS](https://msdn.microsoft.com/library/windows/hardware/ff557696)">CODECAPI_CHANGELISTS</a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-changelists" data-raw-source="[CODECAPI_CHANGELISTS](https://docs.microsoft.com/windows-hardware/drivers/stream/codecapi-changelists)">CODECAPI_CHANGELISTS</a></p></td>
 <td><p>デバイスは、CODECAPI_SUPPORTSEVENTS プロパティ セットをユーザー モード イベントへの応答をサポートする場合は、このイベントがクライアントの結果の前と変更されたエンコーダーの設定の一覧を返すように設定を実装し、<em>設定</em>-プロパティの CODECAPI_SETALLDEFAULTS または CODECAPI_ALLSETTINGS のいずれかの呼び出しです。</p></td>
 </tr>
 </tbody>

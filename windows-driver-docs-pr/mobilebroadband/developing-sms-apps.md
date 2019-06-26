@@ -4,12 +4,12 @@ description: SMS アプリの開発
 ms.assetid: 052eb3cc-4a39-4667-8678-b18650f3b5c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a557fd4fd86601539752af582208ead05fe5ae2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd269574dfc7fdf6e8f19d0fd0b3a033c9fcb3b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380275"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381474"
 ---
 # <a name="developing-sms-apps"></a>SMS アプリの開発
 
@@ -114,7 +114,7 @@ MNOs は、Windows のプロビジョニングし、プラットフォームに 
 ## <a name="span-iddevelopsmsappspanspan-iddevelopsmsappspanspan-iddevelopsmsappspandeveloping-your-sms-app"></a><span id="DevelopSMSApp"></span><span id="developsmsapp"></span><span id="DEVELOPSMSAPP"></span>SMS アプリの開発
 
 
-JavaScript を記述するC#、またはを使用する C++ アプリ、 [ **Windows.Devices.Sms** ](https://msdn.microsoft.com/library/windows/apps/br206567)送信、読み取り、およびメッセージを削除する API。
+JavaScript を記述するC#、またはを使用する C++ アプリ、 [ **Windows.Devices.Sms** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms)送信、読み取り、およびメッセージを削除する API。
 
 **注**   Windows 7 モバイル ブロード バンド SMS API は、SMS のモデムの低レベル インターフェイスのみを提供します。 Windows 8、Windows 8.1、および Windows 10 は、全般的なアプリ開発に適した代替のテキスト モード インターフェイスを提供します。
 

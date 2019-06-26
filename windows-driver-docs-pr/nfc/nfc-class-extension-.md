@@ -11,12 +11,12 @@ keywords:
 - CX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ff8f74e80942dc8d8578e9921cf23e9b7995a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49c58e50c15397a56b43777947b2ebe28c59a503
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383577"
 ---
 # <a name="nfc-class-extension-cx-design-guide"></a>NFC クラスの拡張 (CX) 設計ガイド
 
@@ -32,10 +32,10 @@ NFC のクライアント ドライバーでは、トランスポート層の NF
 ## <a name="nfc-driver-ddi"></a>NFC ドライバー DDI
 次に、Windows による NFC ドライバー DDI NFC CX ドライバーによって実装されています。
 
--   [フィールドの近接 DDI 近く](https://msdn.microsoft.com/library/windows/hardware/jj866056)
--   [NFC 要素をセキュリティで保護された管理 DDI](https://msdn.microsoft.com/library/windows/hardware/dn905485)
--   [スマート カード DDI になっているコンタクトレス スマート カードのアクセス](https://msdn.microsoft.com/library/windows/hardware/dn905601)
--   [DDI の NFC 無線管理](https://msdn.microsoft.com/library/windows/hardware/dn905577)
+-   [フィールドの近接 DDI 近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [NFC 要素をセキュリティで保護された管理 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+-   [スマート カード DDI になっているコンタクトレス スマート カードのアクセス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))
+-   [DDI の NFC 無線管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 -   DTA DDI NFC フォーラムの認定資格
 
 ## <a name="nfc-forum-specifications"></a>NFC フォーラムの仕様

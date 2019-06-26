@@ -9,25 +9,25 @@ keywords:
 - アダプター子デバイス WDK ビデオ存在するネットワークを表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07cb1882314d685b120e308037ce35f0d7e2240d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9a629b06681594fd022295e66c59dd33a6f6684
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354337"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370718"
 ---
 # <a name="child-devices-of-the-display-adapter"></a>ディスプレイ アダプターの子デバイス
 
 
 ディスプレイ アダプターの子デバイスは、ディスプレイのミニポート ドライバーによって子として列挙されているディスプレイ アダプター上のデバイスです。 ディスプレイ アダプターのすべての子デバイスがオンボードします。モニターとその他の外部に接続するデバイス ディスプレイ アダプターは、子デバイスは考慮されません。
 
-ディスプレイのミニポート ドライバーの[ **DxgkDdiQueryChildRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff559750)関数は子デバイスのディスプレイ アダプターを列挙する責任を負います。 列挙中にディスプレイのミニポート ドライバーでは、型とホット プラグ検出 (HPD) 認識の値にそれぞれの子デバイスが割り当てられます。 種類は、のいずれか、 [ **DXGK\_子\_デバイス\_型**](https://msdn.microsoft.com/library/windows/hardware/ff561008)列挙子。
+ディスプレイのミニポート ドライバーの[ **DxgkDdiQueryChildRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_child_relations)関数は子デバイスのディスプレイ アダプターを列挙する責任を負います。 列挙中にディスプレイのミニポート ドライバーでは、型とホット プラグ検出 (HPD) 認識の値にそれぞれの子デバイスが割り当てられます。 種類は、のいずれか、 [ **DXGK\_子\_デバイス\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ne-dispmprt-_dxgk_child_device_type)列挙子。
 
 -   **TypeVideoOutput**
 
 -   **TypeOther**
 
-HPD 認識値が 1 の[ **DXGK\_子\_デバイス\_HPD\_認識**](https://msdn.microsoft.com/library/windows/hardware/ff561006)列挙子。
+HPD 認識値が 1 の[ **DXGK\_子\_デバイス\_HPD\_認識**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgk_child_device_hpd_awareness)列挙子。
 
 -   **HpdAwarenessAlwaysConnected**
 

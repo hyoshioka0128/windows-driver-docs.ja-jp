@@ -13,12 +13,12 @@ keywords:
 - ストリーミング ミニドライバー WDK カーネル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69095716a217e18fb93825f1c2fff581d2865cd6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fff36b0ca25a7f99d48d12f18cbb4e679f82c4a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376474"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382541"
 ---
 # <a name="kernel-streaming"></a>カーネル ストリーミング
 
@@ -44,13 +44,13 @@ Windows XP SP2 以降では、Microsoft が提供、 [USB ビデオ クラス](u
 
 [KS アロケーター](ks-allocators.md)
 
-詳細については*portcls.sys*を参照してください[オーディオ ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536191)します。
+詳細については*portcls.sys*を参照してください[オーディオ ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/index)します。
 
-詳細については、 *stream.sys*ドライバーを参照してください[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568275)します。
+詳細については、 *stream.sys*ドライバーを参照してください[ストリーミング ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)します。
 
 AVStream については、次を参照してください。、 [AVStream の概要](avstream-overview.md)します。
 
-[DVD デコーダー ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff558742)のクライアント*stream.sys*します。
+[DVD デコーダー ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)のクライアント*stream.sys*します。
 
 [ビデオ キャプチャ ミニドライバー](video-capture-devices.md)のいずれかのクライアントは、 *stream.sys*または*ks.sys*します。
 

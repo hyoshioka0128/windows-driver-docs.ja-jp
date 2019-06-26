@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 89cf5cd97caac3b8eef64b46e0b919dc0c13c5cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34d06aa7f71fb505586ba2252e74421d3ff067d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356702"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384318"
 ---
 # <a name="smgetbindingcapability-function"></a>SM\_GetBindingCapability 関数
 
@@ -88,9 +88,9 @@ SM\_GetBindingSupport メソッド返すは、現在有効になっているバ�
 
 [HBA\_状態](hba-status.md)
 
-[**SM\_GetBindingCapability\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566224)
+[**SM\_GetBindingCapability\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getbindingcapability_in)
 
-[**SM\_GetBindingCapability\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff566227)
+[**SM\_GetBindingCapability\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getbindingcapability_out)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - プリンターの自動構成 WDK プリンター、プリンターの自動構成について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a93005862ccec292fccc41477680bd0af0f073
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70c4a6cd3d6756bbdf429389e273b98a9f6d98ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350804"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370490"
 ---
 # <a name="autoconfiguration-details"></a>自動構成の詳細
 
@@ -31,7 +31,7 @@ ms.locfileid: "63350804"
 
 -   双方向の通知スキーマを使用してデバイス構成の変更に関する通知を受信できるようにします。
 
--   使用してプリンターから構成データを集めることができる、[双方向の通信インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545163)、および IBidiSpl2 COM インターフェイスでは具体的には。
+-   使用してプリンターから構成データを集めることができる、[双方向の通信インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)、および IBidiSpl2 COM インターフェイスでは具体的には。
 
 ポート モニターにする必要があります。
 

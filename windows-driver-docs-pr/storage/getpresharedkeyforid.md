@@ -4,12 +4,12 @@ description: GetPresharedKeyForId
 ms.assetid: cd83d1dc-7aa8-4514-a108-50aee91d272b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d86bdb59a5f3fce3b826d1e86eda5dfd57adba4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2dd5b0370e0689a5bb60826f7f921fa3af5c4d6c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354062"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378512"
 ---
 # <a name="getpresharedkeyforid"></a>GetPresharedKeyForId
 
@@ -20,7 +20,7 @@ ms.locfileid: "63354062"
 
 ただし、すべて認証のネゴシエーションでは、事前共有キーが使用されます。 **GetPresharedKeyForId**メソッドにより、ユーザー モード サービスまたは管理アプリケーションを事前共有キーを持つ特定の識別子の IKE id ペイロードが構成されているかどうかを判断します。
 
-この WMI メソッドは、パブリッシュされていないに属する[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **GetPresharedKeyForId**メソッドのメンバーの説明を参照してください、 [ **GetPresharedKeyForId\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff554973)と[ **GetPresharedKeyForId\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff554975)構造体。
+この WMI メソッドは、パブリッシュされていないに属する[MSiSCSI\_SecurityConfigOperations WMI クラス](msiscsi-securityconfigoperations-wmi-class.md)します。 パラメーターの説明については、 **GetPresharedKeyForId**メソッドのメンバーの説明を参照してください、 [ **GetPresharedKeyForId\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_getpresharedkeyforid_in)と[ **GetPresharedKeyForId\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_getpresharedkeyforid_out)構造体。
 
  
 

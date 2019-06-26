@@ -11,12 +11,12 @@ keywords:
 - UMDF WDK、デバッグ シナリオでは、UMDF デバイスの状態
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca57211ad0850d1e1cc41d92b2bcb2b7b5c1e398
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31efec7ebf074d7c67b153a95c7509bdf36036a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344953"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377444"
 ---
 # <a name="determining-the-state-of-a-umdf-device"></a>UMDF デバイスの状態の判断
 
@@ -78,14 +78,14 @@ UMDF バージョン 1、wudfext.dll で実装された拡張機能のコマン�
             **!thread &lt;thread-addr&gt;**
 
 2.  デバッガーで使用して、 **.chain** wudfext.dll (UMDF 1) または wdfkd.dll (UMDF 2) デバッガー拡張機能ライブラリが読み込まれていることを確認するコマンド。
-3.  使用して、必要なライブラリが存在しない場合、 [ **.load** ](https://msdn.microsoft.com/library/windows/hardware/ff563964)をデバッガーに拡張 DLL を読み込むコマンド。 Enter **.reload**シンボル情報を再読み込みします。
-4.  使用[ **! wudfext.umdevstacks** ](https://msdn.microsoft.com/library/windows/hardware/ff566191) (UMDF 1) または[ **! wdfkd.wdfumdevstacks** ](https://msdn.microsoft.com/library/windows/hardware/dn265380)ホスト プロセスで読み込まれた (UMDF 2)、すべてのデバイス スタックを参照してください。
+3.  使用して、必要なライブラリが存在しない場合、 [ **.load** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-load---loadby--load-extension-dll-)をデバッガーに拡張 DLL を読み込むコマンド。 Enter **.reload**シンボル情報を再読み込みします。
+4.  使用[ **! wudfext.umdevstacks** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umdevstacks) (UMDF 1) または[ **! wdfkd.wdfumdevstacks** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)ホスト プロセスで読み込まれた (UMDF 2)、すべてのデバイス スタックを参照してください。
 
-    使用して[ **! wudfext.umdevstack** ](https://msdn.microsoft.com/library/windows/hardware/ff566189) (UMDF 1) または[ **! wdfkd.wdfumdevstack** ](https://msdn.microsoft.com/library/windows/hardware/dn265379)デバイスに関する詳細情報を取得する (UMDF 2)スタックです。
+    使用して[ **! wudfext.umdevstack** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umdevstack) (UMDF 1) または[ **! wdfkd.wdfumdevstack** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack)デバイスに関する詳細情報を取得する (UMDF 2)スタックです。
 
-5.  使用[ **! wudfext.wudfdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff566199) (UMDF 1) または[ **! wdfkd.wdfdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff565703) (UMDF 2)、プラグ アンド プレイ (PnP) に関する情報を取得し、デバイスの電源管理の状態。
+5.  使用[ **! wudfext.wudfdevice** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdevice) (UMDF 1) または[ **! wdfkd.wdfdevice** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevice) (UMDF 2)、プラグ アンド プレイ (PnP) に関する情報を取得し、デバイスの電源管理の状態。
 
-6.  使用[ **! wudfext.wudfdriverinfo** ](https://msdn.microsoft.com/library/windows/hardware/ff566207) (UMDF 1) または[ **! wdfkd.wdfdriverinfo** ](https://msdn.microsoft.com/library/windows/hardware/ff565724) (UMDF 2) に関する追加情報を表示しますこのドライバーを使用して、そのデバイス ツリーを含みます。
+6.  使用[ **! wudfext.wudfdriverinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-wudfdriverinfo) (UMDF 1) または[ **! wdfkd.wdfdriverinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo) (UMDF 2) に関する追加情報を表示しますこのドライバーを使用して、そのデバイス ツリーを含みます。
 
  
 

@@ -6,17 +6,17 @@ keywords:
 - LowerLogoVersion
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9590339d89be7b99c7dce4b5bb25f7e64a4ad4f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5537c7a7d02fc02c9ec7dec3f7f24286b6bceb60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356942"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377668"
 ---
 # <a name="lowerlogoversion"></a>LowerLogoVersion
 
 
-**LowerLogoVersion**は、[デバイス セットアップ クラス プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff542239)次のように、ドライバーの署名のスコアに影響します。
+**LowerLogoVersion**は、[デバイス セットアップ クラス プロパティ](https://docs.microsoft.com/previous-versions/ff542239(v=vs.85))次のように、ドライバーの署名のスコアに影響します。
 
 -   Windows が同じである Windows バージョンについては、WHQL 署名が含まれるドライバーに署名のハイスコアを割り当てますかそれより遅い、 **LowerLogoVersion**値。
 

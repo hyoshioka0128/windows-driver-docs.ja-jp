@@ -9,12 +9,12 @@ keywords:
 - ページング パス WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cedb4d9f3200c276d0860fa9f7ca4c405966b22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3515a0b9e1a9f87df9679fd1dd1ad0430018aac4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346550"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373196"
 ---
 # <a name="restrictions-on-pageable-code-in-storage-drivers"></a>ストレージ ドライバーでのページング可能コードの制約
 
@@ -28,11 +28,11 @@ ms.locfileid: "63346550"
 
 Microsoft では、する必要がすべて*ストレージ*IOCTL 要求はパッシブで提出する\_レベルで、ディスパッチ ルーチンは、それ自体ではありませんが、ページングを呼び出すことがストレージ IOCTL 要求を処理するサブルーチンをページング可能な。 これらのサブルーチンでは、ページング可能なメモリもアクセスできます。
 
-などのルーチン[ **DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff544113)、 [**を再初期化**](https://msdn.microsoft.com/library/windows/hardware/ff561022)、および[**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)、I/O をしないし、IRQL で実行を = パッシブ\_レベルでは、ページング可能なコードはこともできます。
+などのルーチン[ **DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)、 [**を再初期化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)、および[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)、I/O をしないし、IRQL で実行を = パッシブ\_レベルでは、ページング可能なコードはこともできます。
 
 ページングのパスでの記憶域デバイスを管理するドライバーに特別な考慮事項が適用されます。 ドライバーが、「ページング パス」ページング ファイルの I/O 操作に含まれているかどうか。 ページングのパスが記憶装置ドライバーの場合、 [ **DispatchPower** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) IRP の日常的な\_MJ\_POWER 要求をページングすることはできません。
 
-既定では、カーネル モード ドライバー用のコードはページング可能なもがグローバル メモリをページング可能なカーネル モード ドライバーで使用します。 ページング可能なコードを作成する方法については、次を参照してください。[ドライバー コードの作成やページング可能なデータ](https://msdn.microsoft.com/library/windows/hardware/ff554349)します。
+既定では、カーネル モード ドライバー用のコードはページング可能なもがグローバル メモリをページング可能なカーネル モード ドライバーで使用します。 ページング可能なコードを作成する方法については、次を参照してください。[ドライバー コードの作成やページング可能なデータ](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-driver-code-or-data-pageable)します。
 
  
 

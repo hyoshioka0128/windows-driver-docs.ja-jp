@@ -12,12 +12,12 @@ keywords:
 - ダイレクト メモリ アクセスの WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 609be5b5f3c7b4f286dd5dc5e8eaf7540a7d0d2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2d6e0e64977d32f4af41eaf9024affdae2c8dac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366625"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382851"
 ---
 # <a name="handling-dma-operations-in-kmdf-drivers"></a>KMDF ドライバーでの DMA 操作の処理
 
@@ -42,7 +42,7 @@ ms.locfileid: "63366625"
 -   [DMA のリソースを予約](reserving-dma-resources.md)
 -   [KMDF ドライバーで DMA のテスト](testing-dma-in-kmdf-drivers.md)
 
-詳細については、WDM ドライバーで DMA 操作をサポートを参照してください[DMA プログラミング手法](https://msdn.microsoft.com/library/windows/hardware/ff544074)します。
+詳細については、WDM ドライバーで DMA 操作をサポートを参照してください[DMA プログラミング手法](https://docs.microsoft.com/windows-hardware/drivers/kernel/dma-programming-techniques)します。
 
  
 

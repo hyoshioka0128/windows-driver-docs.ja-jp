@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 15132e04dd58c0c7de3a2329b04dc31240f8ee7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f02be039bb15e3eb46de568a6b0a0b166fc9178f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366530"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382179"
 ---
 # <a name="ndisstatuswdiindicationapassociationrequestreceived"></a>NDIS\_状態\_WDI\_INDICATION\_AP\_アソシエーション\_要求\_受信日時
 
@@ -29,7 +29,7 @@ ms.locfileid: "63366530"
 
 | 種類                                                                                                     | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                   |
 |----------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------|
-| [**WDI\_TLV\_受信\_アソシエーション\_要求\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn926315) |                                |          | 受信の関連付け要求情報。 |
+| [**WDI\_TLV\_受信\_アソシエーション\_要求\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-incoming-association-request-info) |                                |          | 受信の関連付け要求情報。 |
 
  
 

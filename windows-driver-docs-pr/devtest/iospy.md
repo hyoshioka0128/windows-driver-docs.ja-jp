@@ -4,12 +4,12 @@ description: IoSpy は、デバイスのカーネル モード ドライバー�
 ms.assetid: 5fe52fe6-97b4-477a-9450-727c5bf9bd72
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3ccbd84b0f29683d6d94495fd8563d214be76a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9446da21ab50fd7e7ef8dceeba7114f83f622a7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350520"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373702"
 ---
 > [!NOTE]
 > IoSpy と IoAttack は Windows 10 バージョン 1703 後は WDK に含まれて使用できなくします。
@@ -59,7 +59,7 @@ IoSpy は、デバイスのカーネル モード ドライバーに対して行
 <td align="left"><p>1 つ以上のデバイスでの I/O スパイを無効にします。 IoSpy をアンインストールし、IOCTL と WMI フィルターをテスト システム上のすべてのデバイスを無効にします。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_IOSpy_DisableSupport.wsc</p>
 <p><strong>メソッドをテストします。</strong>DisableIoSpy</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="even">
@@ -73,7 +73,7 @@ IoSpy は、デバイスのカーネル モード ドライバーに対して行
 <td align="left"><p>テスト システムで IoSpy をインストールし、IOCTL および WMI の 1 つまたは複数のデバイスでフィルター処理を有効にします。 DQ パラメーターは、IoSpy フィルター ドライバーのインストールはデバイスを制御します。</p>
 <p><strong>バイナリをテストします。</strong>Devfund_IOSpy_EnableSupport.wsc</p>
 <p><strong>メソッドをテストします。</strong>EnableIoSpy</p>
-<p><strong>パラメーター:</strong> -を参照してください<a href="https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests" data-raw-source="[Device Fundamentals Test Parameters](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)">デバイス基礎テスト パラメーター</a></p>
+<p><strong>パラメーター:</strong> -を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">デバイス基礎テスト パラメーター</a></p>
 <p><em>DQ</em></p>
 <p><em>DFD</em> - IoSpy データ ファイルへのパスを指定します。 既定の場所は %SystemDrive%\DriverTest\IoSpy</p></td>
 </tr>

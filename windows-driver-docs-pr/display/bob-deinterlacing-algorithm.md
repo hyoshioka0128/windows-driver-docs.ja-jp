@@ -7,12 +7,12 @@ keywords:
 - WDK DirectX va なので、bob、アルゴリズムをデインター レース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20cf5e3cbab2f267ddaf61e07947dd42ac0e078c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 739c0516bde72b1358f9b7e1e30a541e47ae4bad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344635"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384625"
 ---
 # <a name="bob-deinterlacing-algorithm"></a>bob デインターレース アルゴリズム
 
@@ -20,7 +20,7 @@ ms.locfileid: "63344635"
 ## <span id="ddk_bob_deinterlacing_algorithm_gg"></span><span id="DDK_BOB_DEINTERLACING_ALGORITHM_GG"></span>
 
 
-ディスプレイ ドライバーは、DXVA を実装している場合[DDI デインター レース](https://msdn.microsoft.com/library/windows/hardware/ff552701)、だけでなく、独自のアルゴリズムをデインター レース bob スタイル デインター レース アルゴリズムをサポートする必要があります。 次に、bob スタイル デインター レース アルゴリズムの説明を示します。
+ディスプレイ ドライバーは、DXVA を実装している場合[DDI デインター レース](https://docs.microsoft.com/windows-hardware/drivers/display/deinterlace-ddi)、だけでなく、独自のアルゴリズムをデインター レース bob スタイル デインター レース アルゴリズムをサポートする必要があります。 次に、bob スタイル デインター レース アルゴリズムの説明を示します。
 
 入力がフィールド F<sub>で</sub>(i, j) MxN がこのようなサイズの 0 &lt;i = &lt;M-1 と 0 を = &lt;j = &lt;N-1, i と j が行と列のインデックスでは、それぞれを = です。
 

@@ -7,12 +7,12 @@ keywords:
 - WDK は、ネットワークの要件を分割するイーサネット フレーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f06b029c1a4b5db1e96a0c37e5205b21bc56415f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14c8717c3cb38392c6dded5bf147b8e61c121e4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342317"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373980"
 ---
 # <a name="minimum-requirements-for-supporting-header-data-split"></a>ヘッダー データの分割をサポートするための最小要件
 
@@ -26,7 +26,7 @@ ms.locfileid: "63342317"
 
 -   プロバイダーは許可されませんフレームの分割、[の場合、ヘッダー データ分割が使用されていない](cases-where-header-data-split-is-not-used.md)トピックについて説明します。
 
--   プロバイダーは、仮想 LAN (VLAN) タグを移動する必要があります、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388) OOB データ構造体します。 VLAN の要件の詳細については、次を参照してください。[ヘッダー データの分割と受信の兆候](receive-indications-with-header-data-split.md)します。
+-   プロバイダーは、仮想 LAN (VLAN) タグを移動する必要があります、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) OOB データ構造体します。 VLAN の要件の詳細については、次を参照してください。[ヘッダー データの分割と受信の兆候](receive-indications-with-header-data-split.md)します。
 
 -   プロバイダーでは、オプションを指定せず、分割の IPv4 フレームをサポートする必要があります。 IPv4 のフレームの分割の詳細については、次を参照してください。 [IPv4 フレームの分割](splitting-ipv4-frames.md)します。
 
@@ -38,9 +38,9 @@ ms.locfileid: "63342317"
 
 -   プロバイダーは、初期化属性を分割ヘッダー データをサポートする必要があります。 これらの属性の詳細については、次を参照してください。[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)します。
 
--   プロバイダーは、ヘッダー データの分割をサポートする必要がありますの要件を示す値を受信すると、フラグを分割ヘッダー データの設定を含む、 **NblFlags**のメンバー、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造、ヘッダーのサイズ要件、およびデータ バックフィル要件。 詳細については、受け取った要件を参照してください[ヘッダー データの分割と受信の兆候](receive-indications-with-header-data-split.md)します。
+-   プロバイダーは、ヘッダー データの分割をサポートする必要がありますの要件を示す値を受信すると、フラグを分割ヘッダー データの設定を含む、 **NblFlags**のメンバー、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造、ヘッダーのサイズ要件、およびデータ バックフィル要件。 詳細については、受け取った要件を参照してください[ヘッダー データの分割と受信の兆候](receive-indications-with-header-data-split.md)します。
 
--   プロバイダーをサポートする必要があります、 [OID\_GEN\_HD\_分割\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569587) OID、 [OID\_GEN\_HD\_分割\_現在\_CONFIG](https://msdn.microsoft.com/library/windows/hardware/ff569586) OID、 [ **NDIS\_状態\_HD\_分割\_現在\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff567370)状態を示す値、およびレジストリ設定します。 ヘッダー データの分割パラメーターと設定の詳細については、次を参照してください。[ヘッダー データの分割の管理と構成](header-data-split-administration-and-configuration.md)します。
+-   プロバイダーをサポートする必要があります、 [OID\_GEN\_HD\_分割\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-hd-split-parameters) OID、 [OID\_GEN\_HD\_分割\_現在\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-hd-split-current-config) OID、 [ **NDIS\_状態\_HD\_分割\_現在\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-hd-split-current-config)状態を示す値、およびレジストリ設定します。 ヘッダー データの分割パラメーターと設定の詳細については、次を参照してください。[ヘッダー データの分割の管理と構成](header-data-split-administration-and-configuration.md)します。
 
 プロトコルおよびフィルター ドライバーのヘッダー データの分割要件の詳細については、次を参照してください。[プロトコル ドライバーとフィルター ドライバーでヘッダー データの分割をサポートしている](supporting-header-data-split-in-protocol-driver-and-filter-drivers.md)します。
 

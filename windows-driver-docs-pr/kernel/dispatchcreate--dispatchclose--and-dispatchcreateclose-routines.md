@@ -15,12 +15,12 @@ keywords:
 - ディスパッチ ルーチン WDK カーネルを閉じる
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 539efa05a13f866c6aeb66b2af6a982cf6fda117
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 47b259a4c10bbb28a0d7acfd246ad2058afb9f93
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362036"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381720"
 ---
 # <a name="dispatchcreate-dispatchclose-and-dispatchcreateclose-routines"></a>DispatchCreate、DispatchClose、DispatchCreateClose ルーチン
 
@@ -28,9 +28,9 @@ ms.locfileid: "63362036"
 
 
 
-ドライバーの[ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) Irp の I/O 関数のコードを持つ[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729)と[**IRP\_MJ\_閉じる**](https://msdn.microsoft.com/library/windows/hardware/ff550720)、それぞれします。 または、組み合わされた[ *DispatchCreateClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは、これらの I/O 関数コードの両方の Irp を処理できます。
+ドライバーの[ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) Irp の I/O 関数のコードを持つ[ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)と[**IRP\_MJ\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)、それぞれします。 または、組み合わされた[ *DispatchCreateClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは、これらの I/O 関数コードの両方の Irp を処理できます。
 
-作成要求の送信元のいずれか (場合によって、アプリケーションまたはサブシステム レベル ドライバー) に代わって、デバイスを表すファイル オブジェクトを識別するハンドルを取得または呼び出しでより高度なドライバーのユーザー モード サブシステムの試行から[ **IoGetDeviceObjectPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff549198)または[ **IoAttachDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548294)します。
+作成要求の送信元のいずれか (場合によって、アプリケーションまたはサブシステム レベル ドライバー) に代わって、デバイスを表すファイル オブジェクトを識別するハンドルを取得または呼び出しでより高度なドライバーのユーザー モード サブシステムの試行から[ **IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)または[ **IoAttachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevice)します。
 
 相互の終了要求は、ドライバーのデバイス オブジェクトに関連付けられたファイル オブジェクトのハンドルのユーザー モード サブシステムの終了から発生します。
 

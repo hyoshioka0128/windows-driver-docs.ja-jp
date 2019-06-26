@@ -9,12 +9,12 @@ keywords:
 - セッションを開始する、保護対象のビデオの WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15ecca5754a3df8e0857d69de15de968fde21e59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6719fd43702613885be96d02bbe9c4221af4f03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376014"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376046"
 ---
 # <a name="starting-a-protected-video-session"></a>保護されたビデオ セッションの開始
 
@@ -28,13 +28,13 @@ ms.locfileid: "63376014"
 
 保護されたビデオ セッションを開始するには、次の順序で COPP デバイスの機能に呼び出しが行われます。
 
-1.  [ *COPPOpenVideoSession* ](https://msdn.microsoft.com/library/windows/hardware/ff539650) COPP デバイスを初期化します。 、戻る前に、ドライバーは、COPP にデバイスの状態の定数を設定する必要があります\_OPENED します。
+1.  [ *COPPOpenVideoSession* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppopenvideosession) COPP デバイスを初期化します。 、戻る前に、ドライバーは、COPP にデバイスの状態の定数を設定する必要があります\_OPENED します。
 
-2.  [ *COPPGetCertificateLength* ](https://msdn.microsoft.com/library/windows/hardware/ff539644)グラフィックス ハードウェアで使用される証明書のバイト単位のサイズを取得します。 ドライバーがデバイス状態の定数が現在 COPP に設定することを確認する必要がありますまず\_OPENED します。 ドライバーを返す必要がありますそれがないかどうか、E\_予期しません。 、戻る前に、ドライバーは、COPP にデバイスの状態の定数を設定する必要があります\_CERT\_長さ\_から返されました。
+2.  [ *COPPGetCertificateLength* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppgetcertificatelength)グラフィックス ハードウェアで使用される証明書のバイト単位のサイズを取得します。 ドライバーがデバイス状態の定数が現在 COPP に設定することを確認する必要がありますまず\_OPENED します。 ドライバーを返す必要がありますそれがないかどうか、E\_予期しません。 、戻る前に、ドライバーは、COPP にデバイスの状態の定数を設定する必要があります\_CERT\_長さ\_から返されました。
 
-3.  [ *COPPKeyExchange* ](https://msdn.microsoft.com/library/windows/hardware/ff539646)グラフィックス ハードウェアで使用されるデジタル証明書を取得します。 ドライバーがデバイス状態の定数が現在 COPP に設定することを確認する必要がありますまず\_CERT\_長さ\_から返されました。 ドライバーを返す必要がありますそれがないかどうか、E\_予期しません。 、戻る前に、ドライバーは、COPP にデバイスの状態の定数を設定する必要があります\_キー\_EXCHANGED します。
+3.  [ *COPPKeyExchange* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppkeyexchange)グラフィックス ハードウェアで使用されるデジタル証明書を取得します。 ドライバーがデバイス状態の定数が現在 COPP に設定することを確認する必要がありますまず\_CERT\_長さ\_から返されました。 ドライバーを返す必要がありますそれがないかどうか、E\_予期しません。 、戻る前に、ドライバーは、COPP にデバイスの状態の定数を設定する必要があります\_キー\_EXCHANGED します。
 
-4.  [ *COPPSequenceStart* ](https://msdn.microsoft.com/library/windows/hardware/ff540421)ビデオ セッションを保護モードに設定します。 ドライバーがデバイス状態の定数が現在 COPP に設定することを確認する必要がありますまず\_キー\_EXCHANGED します。 ドライバーを返す必要がありますそれがないかどうか、E\_予期しません。 、戻る前に、ドライバーは、COPP にデバイスの状態の定数を設定する必要があります\_セッション\_ビデオ セッションが、保護モードを表示するのにはアクティブです。
+4.  [ *COPPSequenceStart* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppsequencestart)ビデオ セッションを保護モードに設定します。 ドライバーがデバイス状態の定数が現在 COPP に設定することを確認する必要がありますまず\_キー\_EXCHANGED します。 ドライバーを返す必要がありますそれがないかどうか、E\_予期しません。 、戻る前に、ドライバーは、COPP にデバイスの状態の定数を設定する必要があります\_セッション\_ビデオ セッションが、保護モードを表示するのにはアクティブです。
 
 ビデオのミニポート ドライバーが処理できるビデオ セッションを保護されたモードに設定すると後、 [COPP コマンド](copp-commands.md)の要求と[COPP 状態](copp-status.md)、渡す[COPP ステータス イベント](copp-status-events.md)。
 

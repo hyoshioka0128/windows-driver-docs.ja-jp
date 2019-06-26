@@ -13,12 +13,12 @@ keywords:
 - WDK の Windows 2000 を調整する色を表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a9395da8b7007a77225667c99b8d9dbfbd5aa53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86c4fec743424c579e1fb6efc8663ff36b93b34d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354224"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370700"
 ---
 # <a name="color-management-for-displays"></a>ディスプレイの色の管理
 
@@ -28,7 +28,7 @@ ms.locfileid: "63354224"
 
 GDI は、イメージの色の管理 (ICM) バージョン 2.0 をサポートします。 ディスプレイ ドライバーは、特別なコードを実装することがなく ICM を使用できます。
 
-ディスプレイ ハードウェアがサポートしている場合、*ガンマ ランプ*、ディスプレイ ドライバーを実装する必要があります[ **DrvIcmSetDeviceGammaRamp**](https://msdn.microsoft.com/library/windows/hardware/ff556243)します。 色の調整を色の精度を必要とするアプリケーションでは、この機能を使用します。 DirectDraw は、DirectX アプリケーション--RGB モードのパレットのアニメーションを実行するゲームなどを許可する - ガンマごとの傾斜増加を制御するためにもこの関数を使用します。 コード例を参照してください、 *Permedia*ディスプレイ ドライバーのサンプルです。
+ディスプレイ ハードウェアがサポートしている場合、*ガンマ ランプ*、ディスプレイ ドライバーを実装する必要があります[ **DrvIcmSetDeviceGammaRamp**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvicmsetdevicegammaramp)します。 色の調整を色の精度を必要とするアプリケーションでは、この機能を使用します。 DirectDraw は、DirectX アプリケーション--RGB モードのパレットのアニメーションを実行するゲームなどを許可する - ガンマごとの傾斜増加を制御するためにもこの関数を使用します。 コード例を参照してください、 *Permedia*ディスプレイ ドライバーのサンプルです。
 
 **注**   3 dlabs permedia2 チップが、Microsoft Windows Driver Kit (WDK) に含まれていない (*3dlabs.htm*) と 3 dlabs Permedia3 (*Perm3.htm*) ディスプレイ ドライバーのサンプルです。 これらのサンプル ドライバーから、Windows Server 2003 SP1 ドライバー開発キット (DDK)、DDK - WDHC web サイトの Windows ドライバー開発キットのページからダウンロード可能を取得できます。
 

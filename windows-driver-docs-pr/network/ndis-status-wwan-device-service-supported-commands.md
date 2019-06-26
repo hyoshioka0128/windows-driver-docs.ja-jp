@@ -6,23 +6,23 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f9d6f5b41c30704d9ed3f4d3f92e46287e1468
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13779876e95387e189ca1fab19f50a350fd1334f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343284"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384393"
 ---
 # <a name="ndisstatuswwandeviceservicesupportedcommands"></a>NDIS\_状態\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド通知のクエリの完了を報告する[OID\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド](https://msdn.microsoft.com/library/windows/hardware/hh846221)します。
+ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド通知のクエリの完了を報告する[OID\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-enumerate-device-service-commands)します。
 
 ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド**](https://msdn.microsoft.com/library/windows/hardware/hh846214)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_supported_commands)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -45,9 +45,9 @@ ms.locfileid: "63343284"
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド](https://msdn.microsoft.com/library/windows/hardware/hh846221)
+[OID\_WWAN\_ENUMERATE\_デバイス\_サービス\_コマンド](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-enumerate-device-service-commands)
 
-[**NDIS\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド**](https://msdn.microsoft.com/library/windows/hardware/hh846214)
+[**NDIS\_WWAN\_デバイス\_サービス\_サポートされている\_コマンド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_supported_commands)
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc3c6304eed44dde17e62313cf33e17c10ce13fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a00284a74243602da6004af8757d9823f264707
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329981"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373135"
 ---
 # <a name="kspropertyclockstate"></a>KSPROPERTY\_クロック\_状態
 
@@ -54,7 +54,7 @@ ms.locfileid: "63329981"
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566856" data-raw-source="[&lt;strong&gt;KSSTATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566856)"><strong>KSSTATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate" data-raw-source="[&lt;strong&gt;KSSTATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)"><strong>KSSTATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "63329981"
 <a name="remarks"></a>注釈
 -------
 
-参照してください[KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。
+参照してください[KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -85,7 +85,7 @@ ms.locfileid: "63329981"
 ## <a name="see-also"></a>関連項目
 
 
-[**KSSTATE**](https://msdn.microsoft.com/library/windows/hardware/ff566856)
+[**KSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)
 
  
 

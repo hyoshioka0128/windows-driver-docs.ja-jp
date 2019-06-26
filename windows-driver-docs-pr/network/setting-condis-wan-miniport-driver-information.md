@@ -7,12 +7,12 @@ keywords:
 - OID_WAN_CO_SET_LINK_INFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ae3a27bae1767e10445859090f81b00f6cf61b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b73413927e8f3ba8d6a24a849528d877821644de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346694"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377022"
 ---
 # <a name="setting-condis-wan-miniport-driver-information"></a>CoNDIS WAN ミニポート ドライバー情報の設定
 
@@ -20,11 +20,11 @@ ms.locfileid: "63346694"
 
 
 
-このトピックでは、いる CoNDIS WAN ミニポート ドライバーに情報を設定するための要件の概要を示します。 上位層、ドライバーは呼び出し[ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)いる CoNDIS WAN ミニポート ドライバーと、ミニポート ドライバーの NIC を管理する情報を変更するセットの要求とします。
+このトピックでは、いる CoNDIS WAN ミニポート ドライバーに情報を設定するための要件の概要を示します。 上位層、ドライバーは呼び出し[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)いる CoNDIS WAN ミニポート ドライバーと、ミニポート ドライバーの NIC を管理する情報を変更するセットの要求とします。
 
-NDISWAN 中間ドライバーでは、セットの要求を転送する NDIS 呼び出して WAN ミニポート ドライバーの[ **MiniportCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559362)関数。 いる CoNDIS WAN ミニポート ドライバーでは、この関数はすべている CoNDIS ミニポート ドライバーの場合と同様、いる CoNDIS WAN ミニポート ドライバーがサポートする点を除いて[いる CoNDIS WAN オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff545146)します。
+NDISWAN 中間ドライバーでは、セットの要求を転送する NDIS 呼び出して WAN ミニポート ドライバーの[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)関数。 いる CoNDIS WAN ミニポート ドライバーでは、この関数はすべている CoNDIS ミニポート ドライバーの場合と同様、いる CoNDIS WAN ミニポート ドライバーがサポートする点を除いて[いる CoNDIS WAN オブジェクト](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/index)します。
 
-その他の要求は送信できずいる CoNDIS WAN ミニポート ドライバーにセットの現在の要求が完了するまでです。 NDIS ミニポート ドライバーがセットの要求がすぐに完了しない場合を返します\_状態\_から PENDING *MiniportCoOidRequest*後で呼び出す必要がありますと[ **NdisCoOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff561716)要求を完了します。
+その他の要求は送信できずいる CoNDIS WAN ミニポート ドライバーにセットの現在の要求が完了するまでです。 NDIS ミニポート ドライバーがセットの要求がすぐに完了しない場合を返します\_状態\_から PENDING *MiniportCoOidRequest*後で呼び出す必要がありますと[ **NdisCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequestcomplete)要求を完了します。
 
 いる CoNDIS WAN ミニポート ドライバーが認識し、次のいる CoNDIS WAN Oid に適切に対応する必要があります。
 
@@ -42,7 +42,7 @@ NDISWAN 中間ドライバーでは、セットの要求を転送する NDIS 呼
 <tbody>
 <tr class="odd">
 <td align="left"><p></p>
-<a href="https://msdn.microsoft.com/library/windows/hardware/ff569822" data-raw-source="[OID_WAN_CO_SET_LINK_INFO](https://msdn.microsoft.com/library/windows/hardware/ff569822)">OID_WAN_CO_SET_LINK_INFO</a> VC の情報を設定します。</td>
+<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wan-co-set-link-info" data-raw-source="[OID_WAN_CO_SET_LINK_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wan-co-set-link-info)">OID_WAN_CO_SET_LINK_INFO</a> VC の情報を設定します。</td>
 <td align="left"><p>必須</p></td>
 </tr>
 </tbody>
@@ -50,7 +50,7 @@ NDISWAN 中間ドライバーでは、セットの要求を転送する NDIS 呼
 
  
 
-いる CoNDIS WAN ミニポート ドライバーは、NDIS もサポートしています。[全般オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff546510)します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、次を参照してください。[クエリの実行または情報を設定する](querying-or-setting-information.md)します。
+いる CoNDIS WAN ミニポート ドライバーは、NDIS もサポートしています。[全般オブジェクト](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546510(v=vs.85))します。 いる CoNDIS ミニポート ドライバーでは情報の設定の詳細については、次を参照してください。[クエリの実行または情報を設定する](querying-or-setting-information.md)します。
 
  
 

@@ -13,12 +13,12 @@ keywords:
 - パッケージのデジタル署名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bdb37e22072617e6190035ab52f921be5ebbcc3
-ms.sourcegitcommit: 6a8675c349e6aba2a89a40b5f1451005bd5e1297
+ms.openlocfilehash: 65260eead78016a2d7461be432623606eb467699
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169133"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377256"
 ---
 # <a name="driver-signing-policy"></a>ドライバーの署名ポリシー
 
@@ -72,7 +72,7 @@ Windows 10 バージョン 1607 を所有する前に、次の種類のドライ
 
 ドライバー コードの署名、だけでなく、PnP デバイス インストールの署名のドライバーをインストールするための要件を満たす必要があります。  詳細については、次を参照してください。[プラグ アンド プレイ (PnP) デバイスのインストール要件を署名](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)します。
 
-ELAM ドライバーの署名方法の詳細については、次を参照してください。[早期起動マルウェア対策](https://msdn.microsoft.com/library/windows/desktop/hh848061(v=vs.85).aspx)します。
+ELAM ドライバーの署名方法の詳細については、次を参照してください。[早期起動マルウェア対策](https://docs.microsoft.com/windows/desktop/w8cookbook/secured-boot)します。
 
 ## <a name="see-also"></a>関連項目
 

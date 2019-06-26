@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e4d3d93833fc553b4a2e98f2fcc3e1129ba7214
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bf42a7d4d4f02646f91c2aaeb70b73d2e74c568
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324345"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370079"
 ---
 # <a name="mrxquerydirectory-routine"></a>MRxQueryDirectory ルーチン
 
 
-*MRxQueryDirectory*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターがファイルのディレクトリの情報を照会することを要求します。
+*MRxQueryDirectory*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがファイルのディレクトリの情報を照会することを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -118,9 +118,9 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 ワイルドカード クエリ ("\*.\*"など)、RDBSS は設定、 **UnicodeQueryTemplate.Buffer**ワイルドカード クエリに関連付けられている FOBX のメンバーが渡されます。
 
-場合、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**TRUE**戻り時にから*MRxQueryDirectory*、RDBSS は呼び出す[ **RxFsdPostRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff554472) RX を渡す\_ワーカー キュー、ファイル システムのプロセス (FSP) による処理のための構造体。
+場合、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**TRUE**戻り時にから*MRxQueryDirectory*、RDBSS は呼び出す[ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest) RX を渡す\_ワーカー キュー、ファイル システムのプロセス (FSP) による処理のための構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -143,7 +143,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryEaInfo**](mrxqueryeainfo.md)
 
@@ -167,7 +167,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
-[**RxFsdPostRequest**](https://msdn.microsoft.com/library/windows/hardware/ff554472)
+[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)
 
  
 
