@@ -14,12 +14,12 @@ keywords:
 - キャンセル ルーチン、Irp を待ってスリープ解除.
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 930e7d6a365f2cc49c0588909e04062619cd4b40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b90b67dd13e51c831319d4684b68f94f9e3ec225
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343790"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383367"
 ---
 # <a name="canceling-a-waitwake-irp"></a>待機/ウェイク IRP のキャンセル
 
@@ -31,35 +31,35 @@ ms.locfileid: "63343790"
 
 ドライバーは、保留中待機/ウェイク IRP 次の状況をキャンセルする必要があります。
 
--   ドライバーが受信、PnP [ **IRP\_MN\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551755)、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551705)、 [ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)、または[ **IRP\_MN\_突然\_削除**](https://msdn.microsoft.com/library/windows/hardware/ff551760)デバイスの要求。 ドライバーは IRP 待機/ウェイクを再発行する必要があります ([**PoRequestPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559734))、デバイスが再起動後です。
+-   ドライバーが受信、PnP [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)、 [ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)、または[ **IRP\_MN\_突然\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)デバイスの要求。 ドライバーは IRP 待機/ウェイクを再発行する必要があります ([**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp))、デバイスが再起動後です。
 
 -   システムがスリープ状態にしようが、デバイスをシステムをスリープ解除を有効にするされません。
 
     たとえば、USB ハブのドライバーは送信、 **IRP\_MN\_待機\_WAKE**スリープ状態に後でその入力デバイスの 1 つ置かれる場合は、デバイスの起動時に要求します。 システムが稼働状態には、ウェイク信号をデバイスからデバイスを動作状態に戻します (ただし、システムの電源状態に影響を与えません)。 システムがシャット ダウンする準備を行います、システムがスリープ解除するデバイスを許可しない場合、USB ハブのドライバーはこの IRP をキャンセルします。
 
--   システムが元となるデバイス呼び起こすことはできません、スリープ状態を入力します。 つまりよりも小さいの電源状態が入力、 [ **SystemWake** ](systemwake.md)で指定された値、 [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)構造体。
+-   システムが元となるデバイス呼び起こすことはできません、スリープ状態を入力します。 つまりよりも小さいの電源状態が入力、 [ **SystemWake** ](systemwake.md)で指定された値、 [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)構造体。
 
 -   デバイスが応答をウェイク アップ信号できない電源状態を入力します。 つまりより低い電源状態が入力、 [ **DeviceWake** ](devicewake.md)で指定された値、**デバイス\_機能**構造体。
 
-待機/ウェイク IRP、IRP の呼び出しを送信したドライバーをキャンセルする[ **IoCancelIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548338)、ドライバーが呼び出されたときに以前返された IRP にポインターを渡す**PoRequestPowerIrp**.
+待機/ウェイク IRP、IRP の呼び出しを送信したドライバーをキャンセルする[ **IoCancelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)、ドライバーが呼び出されたときに以前返された IRP にポインターを渡す**PoRequestPowerIrp**.
 
 ドライバーは、待機/ウェイク送信しなかった IRP をキャンセルする必要があります。
 
 ### <a href="" id="ddk-cancel-routines-for-wait-wake-irps-kg"></a>待機/ウェイク Irp のルーチンをキャンセルします。
 
-多くの関数とバス ドライバーを設定する必要があります[*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742)保留中のためのルーチン待機/ウェイク Irp; 次の種類のドライバーは、このようなルーチンを設定する必要があります。
+多くの関数とバス ドライバーを設定する必要があります[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)保留中のためのルーチン待機/ウェイク Irp; 次の種類のドライバーは、このようなルーチンを設定する必要があります。
 
 -   ドライバーを有効または無効のウェイク アップにデバイスの設定を変更します。
 
--   送信ドライバー [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)親デバイスのドライバーを要求します。
+-   送信ドライバー [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)親デバイスのドライバーを要求します。
 
-A [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742)ルーチンがそのデバイスのウェイク アップを無効にして、保留中待機/ウェイク IRP に関連するすべてのデータをクリーンアップするドライバーを使用します。 ドライバーの要求を待機/ウェイク Irp の親デバイスにもこれら Irp をキャンセルできます。
+A [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチンがそのデバイスのウェイク アップを無効にして、保留中待機/ウェイク IRP に関連するすべてのデータをクリーンアップするドライバーを使用します。 ドライバーの要求を待機/ウェイク Irp の親デバイスにもこれら Irp をキャンセルできます。
 
 その待機/ウェイクで*キャンセル*、日常的なドライバーは、以下の手順を実行する必要があります。
 
-1.  呼び出す[ **IoSetCancelRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549674)をリセットする、*キャンセル*に IRP の日常的な**NULL**します。
+1.  呼び出す[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)をリセットする、*キャンセル*に IRP の日常的な**NULL**します。
 
-2.  呼び出す[ **IoReleaseCancelSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff549550)を渡して、 **CancelIRQL** IRP のキャンセル スピン ロックを解除する IRP で指定します。
+2.  呼び出す[ **IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))を渡して、 **CancelIRQL** IRP のキャンセル スピン ロックを解除する IRP で指定します。
 
 3.  デバイスの拡張機能内の関連するフィールドをリセットします。 たとえば、待機/ウェイク IRP が保留中の場合は、ほとんどのドライバーは、フラグを設定し、デバイス拡張機能の IRP にポインターを保持すること。
 
@@ -69,11 +69,11 @@ A [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff5407
 
 5.  設定**Irp -&gt;IoStatus.Status**ステータス\_キャンセルします。
 
-6.  呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)待機/ウェイク IRP を完了するには、IO を指定する\_いいえ\_インクリメントします。
+6.  呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)待機/ウェイク IRP を完了するには、IO を指定する\_いいえ\_インクリメントします。
 
 7.  場合は、ドライバー、関連する以前要求した**IRP\_MN\_待機\_WAKE**親デバイスの場合、ドライバーがその IRP 内からをキャンセルしますその*キャンセル*。ルーチンです。 ドライバーは、親の IRP をキャンセルする前に、キャンセルのスピン ロックを解放する必要があります。
 
-    たとえばはデバイスのバス ドライバーとして機能し、その親の電源ポリシーのドライバーを所有しているドライバーでは、関連する待機/ウェイクの IRP をその親に送信された以前を取り消す必要があります。 呼び出す[ **IoCancelIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548338)は起動の親の*キャンセル*日常的なデバイス スタックの下位にあります。
+    たとえばはデバイスのバス ドライバーとして機能し、その親の電源ポリシーのドライバーを所有しているドライバーでは、関連する待機/ウェイクの IRP をその親に送信された以前を取り消す必要があります。 呼び出す[ **IoCancelIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)は起動の親の*キャンセル*日常的なデバイス スタックの下位にあります。
 
  
 

@@ -4,12 +4,12 @@ description: SINCOS 命令形式
 ms.assetid: df9b51ef-5a9f-4222-a0be-a40d5b577f9a
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e21722699b161c6a5f365747e980fc5df4f0726
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bd9c2121f606d97252a75fbde750e8f16e036da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365493"
 ---
 # <a name="sincos-instruction-format"></a>SINCOS 命令形式
 
@@ -23,7 +23,7 @@ SINCOS 命令を正弦と余弦をラジアン単位で計算します。 結果
 
 [命令トークン](instruction-token.md)D3DSIO を格納している\_SINCOS します。 説明の長さは 4 です。
 
-[変換先のパラメーター トークン](destination-parameter-token.md)、D3DSPR を使用して\_TEMP[の種類を登録](https://msdn.microsoft.com/library/windows/hardware/ff569707)します。
+[変換先のパラメーター トークン](destination-parameter-token.md)、D3DSPR を使用して\_TEMP[の種類を登録](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)します。
 
 最初[ソース パラメーター トークン](source-parameter-token.md)します。 レプリケート スィズル、つまり、X、Y、Z、または W のスィズル コンポーネント (または同等の R、G、B、または A) を明示的に使用する必要があります指定する必要があります。
 

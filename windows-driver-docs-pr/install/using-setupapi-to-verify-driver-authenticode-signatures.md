@@ -11,12 +11,12 @@ keywords:
 - Authenticode 署名を確認
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6710e892a5dae0827394540786ae5bba00e6e19d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 95400f0eea3f1b1fbc86a0e94d271863735384a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339378"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384753"
 ---
 # <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>ドライバーの Authenticode 署名を検証するための SetupAPI の使用
 
@@ -30,7 +30,7 @@ ms.locfileid: "63339378"
 
 DNF_AUTHENTICODE_SIGNED フラグを確認します。
 
-Windows がこのフラグを設定するドライバーに有効な Authenticode 署名がある場合、**フラグ**のドライバー ノードのメンバー [ **SP_DRVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff553290)構造体。 (また、ドライバーがある場合、Windows が DNF_INF_IS_SIGNED フラグを設定する、 [WHQL リリース署名](whql-release-signature.md)Authenticode 署名がある場合、またはシステム提供のドライバーである場合)。
+Windows がこのフラグを設定するドライバーに有効な Authenticode 署名がある場合、**フラグ**のドライバー ノードのメンバー [ **SP_DRVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_drvinstall_params)構造体。 (また、ドライバーがある場合、Windows が DNF_INF_IS_SIGNED フラグを設定する、 [WHQL リリース署名](whql-release-signature.md)Authenticode 署名がある場合、またはシステム提供のドライバーである場合)。
 
 ### <a name="to-verify-that-an-inf-file-has-a-valid-authenticode-signature"></a>INF ファイルを有効な Authenticode 署名があることを確認するには
 

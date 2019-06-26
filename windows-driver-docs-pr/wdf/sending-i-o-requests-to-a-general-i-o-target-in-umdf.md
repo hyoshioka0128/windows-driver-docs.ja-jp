@@ -7,12 +7,12 @@ keywords:
 - WDK UMDF を要求する I/O を送信します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b59f816e17a9de00da4d77fc083b2ba16bc4a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 217e10ce4b5a2ff3e15f19a8069bf24ddb511a9b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325174"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376215"
 ---
 # <a name="sending-io-requests-to-a-general-io-target-in-umdf"></a>UMDF での一般 I/O ターゲットへの I/O 要求の送信
 
@@ -40,31 +40,31 @@ UMDF ドライバーは、I/O のターゲットに、I/O 要求を送信する�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559077" data-raw-source="[&lt;strong&gt;IWDFIoRequest::FormatUsingCurrentType&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559077)"><strong>IWDFIoRequest::FormatUsingCurrentType</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-formatusingcurrenttype" data-raw-source="[&lt;strong&gt;IWDFIoRequest::FormatUsingCurrentType&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-formatusingcurrenttype)"><strong>IWDFIoRequest::FormatUsingCurrentType</strong></a></p></td>
 <td align="left"><p>ドライバーは、ドライバーは、未変更の状態で、ターゲットに、要求を送信できるように、フレームワークから受信要求を書式設定します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559230" data-raw-source="[&lt;strong&gt;IWDFIoTarget::FormatRequestForIoctl&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559230)"><strong>IWDFIoTarget::FormatRequestForIoctl</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl" data-raw-source="[&lt;strong&gt;IWDFIoTarget::FormatRequestForIoctl&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)"><strong>IWDFIoTarget::FormatRequestForIoctl</strong></a></p></td>
 <td align="left"><p>デバイスの制御要求を形式します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559233" data-raw-source="[&lt;strong&gt;IWDFIoTarget::FormatRequestForRead&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559233)"><strong>IWDFIoTarget::FormatRequestForRead</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread" data-raw-source="[&lt;strong&gt;IWDFIoTarget::FormatRequestForRead&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)"><strong>IWDFIoTarget::FormatRequestForRead</strong></a></p></td>
 <td align="left"><p>読み取り要求を書式設定します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559236" data-raw-source="[&lt;strong&gt;IWDFIoTarget::FormatRequestForWrite&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559236)"><strong>IWDFIoTarget::FormatRequestForWrite</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite" data-raw-source="[&lt;strong&gt;IWDFIoTarget::FormatRequestForWrite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforwrite)"><strong>IWDFIoTarget::FormatRequestForWrite</strong></a></p></td>
 <td align="left"><p>書き込み要求を形式します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559182" data-raw-source="[&lt;strong&gt;IWDFIoTarget2::FormatRequestForFlush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559182)"><strong>IWDFIoTarget2::FormatRequestForFlush</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget2-formatrequestforflush" data-raw-source="[&lt;strong&gt;IWDFIoTarget2::FormatRequestForFlush&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget2-formatrequestforflush)"><strong>IWDFIoTarget2::FormatRequestForFlush</strong></a></p></td>
 <td align="left"><p>バッファーをフラッシュする要求を書式設定します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559184" data-raw-source="[&lt;strong&gt;IWDFIoTarget2::FormatRequestForQueryInformation&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559184)"><strong>IWDFIoTarget2::FormatRequestForQueryInformation</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget2-formatrequestforqueryinformation" data-raw-source="[&lt;strong&gt;IWDFIoTarget2::FormatRequestForQueryInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget2-formatrequestforqueryinformation)"><strong>IWDFIoTarget2::FormatRequestForQueryInformation</strong></a></p></td>
 <td align="left"><p>ファイル情報を取得する要求を書式設定します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff559191" data-raw-source="[&lt;strong&gt;IWDFIoTarget2::FormatRequestForSetInformation&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559191)"><strong>IWDFIoTarget2::FormatRequestForSetInformation</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget2-formatrequestforsetinformation" data-raw-source="[&lt;strong&gt;IWDFIoTarget2::FormatRequestForSetInformation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget2-formatrequestforsetinformation)"><strong>IWDFIoTarget2::FormatRequestForSetInformation</strong></a></p></td>
 <td align="left"><p>ファイル情報を設定する要求を書式設定します。</p></td>
 </tr>
 </tbody>
@@ -72,9 +72,9 @@ UMDF ドライバーは、I/O のターゲットに、I/O 要求を送信する�
 
  
 
-ドライバーの呼び出しに I/O ターゲットを I/O 要求を送信する、 [ **IWDFIoRequest::Send** ](https://msdn.microsoft.com/library/windows/hardware/ff559149)メソッド。 I/O 要求を同期的に送信する、ドライバーは、WDF を渡します\_要求\_送信\_オプション\_同期フラグを*フラグ*パラメーター。 それ以外の場合、ドライバーは、I/O 要求を非同期的に送信します。 ドライバーは、非同期 I/O 要求を送信する場合、ドライバーで別のドライバーが要求を完了すると、通知が通常必要です。 ドライバーを定義する必要があります、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)コールバック関数を呼び出すことによって、登録、 [ **IWDFIoRequest:。SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)メソッド。 詳細については、次を参照してください。 [I/O 要求の完了](completing-i-o-requests.md)します。
+ドライバーの呼び出しに I/O ターゲットを I/O 要求を送信する、 [ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッド。 I/O 要求を同期的に送信する、ドライバーは、WDF を渡します\_要求\_送信\_オプション\_同期フラグを*フラグ*パラメーター。 それ以外の場合、ドライバーは、I/O 要求を非同期的に送信します。 ドライバーは、非同期 I/O 要求を送信する場合、ドライバーで別のドライバーが要求を完了すると、通知が通常必要です。 ドライバーを定義する必要があります、 [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)コールバック関数を呼び出すことによって、登録、 [ **IWDFIoRequest:。SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)メソッド。 詳細については、次を参照してください。 [I/O 要求の完了](completing-i-o-requests.md)します。
 
-呼び出すドライバー **IWDFIoRequest::Send** 、I/O を送信する要求が呼び出すことによって、要求の後で取り消しを試みることができます、 [ **IWDFIoRequest::CancelSentRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff559067)メソッド。 ドライバー、フレームワークから受信したドライバーをドライバー必要のある常に、I/O 要求をキャンセルした場合は、呼び出すことによって、要求を完了、 [ **IWDFIoRequest::Complete** ](https://msdn.microsoft.com/library/windows/hardware/ff559070)または[ **IWDFIoRequest::CompleteWithInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559074)メソッドを*CompletionStatus*パラメーターの状態に設定\_キャンセルします。 ドライバーを呼び出す場合は、ドライバーは、要求オブジェクトを作成、 [ **IWDFObject::DeleteWdfObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560210)要求を完了するのではなく。
+呼び出すドライバー **IWDFIoRequest::Send** 、I/O を送信する要求が呼び出すことによって、要求の後で取り消しを試みることができます、 [ **IWDFIoRequest::CancelSentRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-cancelsentrequest)メソッド。 ドライバー、フレームワークから受信したドライバーをドライバー必要のある常に、I/O 要求をキャンセルした場合は、呼び出すことによって、要求を完了、 [ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[ **IWDFIoRequest::CompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドを*CompletionStatus*パラメーターの状態に設定\_キャンセルします。 ドライバーを呼び出す場合は、ドライバーは、要求オブジェクトを作成、 [ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)要求を完了するのではなく。
 
  
 

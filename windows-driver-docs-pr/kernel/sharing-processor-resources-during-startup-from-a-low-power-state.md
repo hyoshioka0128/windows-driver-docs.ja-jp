@@ -4,12 +4,12 @@ description: 低電力状態からスタートアップするときのプロセ�
 ms.assetid: 2b2e6a1b-7c2d-4f38-9407-a417b75daa6a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c6faa61189f36e60c0692bc99cf643a5b8fa4427
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f6823ec88b22d38a04b8820580ded20d35ddcb6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367864"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383019"
 ---
 # <a name="sharing-processor-resources-during-startup-from-a-low-power-state"></a>低電力状態からスタートアップするときのプロセッサ リソースの共有
 
@@ -24,7 +24,7 @@ DPC ルーチンを設計するのにには、次のベスト プラクティス
 
 -   1 つの DPC ルーチンはする必要がありますの 100 を超える (マイクロ秒) は実行されません。
 
--   DPC ルーチンを呼び出す、 [ **KeStallExecutionProcessor** ](https://msdn.microsoft.com/library/windows/hardware/ff553295)実行を遅延させるルーチンが 100 を超えるマイクロ秒の遅延を指定する必要があります。
+-   DPC ルーチンを呼び出す、 [ **KeStallExecutionProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestallexecutionprocessor)実行を遅延させるルーチンが 100 を超えるマイクロ秒の遅延を指定する必要があります。
 
 -   タスクが 100 マイクロ秒を超える必要があり、ディスパッチで実行されるかどうか\_レベル、DPC ルーチンが 100 マイクロ秒後に終了およびは後でタスクを完了する 1 つまたは複数の DPC タイマー ルーチンをスケジュールします。
 

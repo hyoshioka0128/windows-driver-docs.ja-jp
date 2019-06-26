@@ -12,12 +12,12 @@ keywords:
 - WDK GDL のアーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5e6ea7d05b5b01b4a6a3440041f5b76fd0a9aad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfb3467d4ddfb859c082626b34c2bc9412e1dc1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364900"
 ---
 # <a name="gdl-architecture"></a>GDL アーキテクチャ
 
@@ -28,13 +28,13 @@ ms.locfileid: "63363194"
 
 仕様は、GDL スキーマに変換することができます。 データ セットが含まれる各ファイルは、GDL スキーマを参照します。 このスキーマは、データ セットがスキーマに準拠していることを確認して、スナップショットが作成されるときに、指定した変換を実行する GDL パーサーを使用できます。
 
-データ セットと、スキーマを定義した後、クライアントは、複数のビューを作成できますか[スナップショット](gdl-snapshots.md)、さまざまな構成を指定することで、1 つのデータ セットから。 Unidrv 構成とレンダリングのプラグインは、クライアントがアクセスできる、スナップショット内のメソッドによる、 [IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)インターフェイス. GDL パーサーは、データ セットで指定されているスキーマを読み込むし、データ セットをそのスキーマに準拠していることを確認します。 データ セットが準拠していない場合、パーサーはファイルの解析にエラーを示します。
+データ セットと、スキーマを定義した後、クライアントは、複数のビューを作成できますか[スナップショット](gdl-snapshots.md)、さまざまな構成を指定することで、1 つのデータ セットから。 Unidrv 構成とレンダリングのプラグインは、クライアントがアクセスできる、スナップショット内のメソッドによる、 [IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)インターフェイス. GDL パーサーは、データ セットで指定されているスキーマを読み込むし、データ セットをそのスキーマに準拠していることを確認します。 データ セットが準拠していない場合、パーサーはファイルの解析にエラーを示します。
 
 データ セットと、スキーマを定義したら、クライアントは、構成を指定することによってデータ セットのスナップショットを作成できます。
 
-1.  プラグインへのポインターを取得、 **IPrintCoreHelperUni**インターフェイスを通じて、 [ **IPrintOemUI::PublishDriverInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff554184)メソッド。
+1.  プラグインへのポインターを取得、 **IPrintCoreHelperUni**インターフェイスを通じて、 [ **IPrintOemUI::PublishDriverInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-publishdriverinterface)メソッド。
 
-2.  いずれかを呼び出すことによって、スナップショットへのアクセスを要求プラグイン[ **IPrintCoreHelperUni::CreateGDLSnapshot** ](https://msdn.microsoft.com/library/windows/hardware/ff552923)または[ **IPrintCoreHelperUni:。CreateDefaultGDLSnapshot**](https://msdn.microsoft.com/library/windows/hardware/ff552917)します。 場合、プラグイン呼び出し**CreateGDLSnapshot**、呼び出し元が、パーサーを使用して、スナップショットのビューを決定する構成を含む DEVMODE 構造体を提供します。
+2.  いずれかを呼び出すことによって、スナップショットへのアクセスを要求プラグイン[ **IPrintCoreHelperUni::CreateGDLSnapshot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperuni-creategdlsnapshot)または[ **IPrintCoreHelperUni:。CreateDefaultGDLSnapshot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcorehelperuni-createdefaultgdlsnapshot)します。 場合、プラグイン呼び出し**CreateGDLSnapshot**、呼び出し元が、パーサーを使用して、スナップショットのビューを決定する構成を含む DEVMODE 構造体を提供します。
 
 3.  GDL パーサーでは、データ セットをそのスキーマに準拠していることを確認します。 データ セット内で指定されているスキーマを読み込みます。 データ セットが準拠していない場合は、エラー メッセージが発行されます。
 
@@ -44,7 +44,7 @@ ms.locfileid: "63363194"
 
 スキーマを省略した場合、パーサーはスキーマの検証を実行するだけとスナップショットの値は、スナップショットで GDL ソース ファイル内で定義された最初のバイトの文字列として表現されます。
 
-**注**   、 **PublishDriverInterface**メソッドの一部である、 **IPrintOemUni**インターフェイスおよびその他のインターフェイスもします。 プラグインは必ずしもインターフェイスを取得できませんヘルパーからように[ **IPrintOemUI::PublishDriverInterface**](https://msdn.microsoft.com/library/windows/hardware/ff554184)します。 ヘルパー インターフェイスを取得できる**IPrintOemUni::PublishDriverInterface**インターフェイスの種類によって別の場所またはプラグインの実装。
+**注**   、 **PublishDriverInterface**メソッドの一部である、 **IPrintOemUni**インターフェイスおよびその他のインターフェイスもします。 プラグインは必ずしもインターフェイスを取得できませんヘルパーからように[ **IPrintOemUI::PublishDriverInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-publishdriverinterface)します。 ヘルパー インターフェイスを取得できる**IPrintOemUni::PublishDriverInterface**インターフェイスの種類によって別の場所またはプラグインの実装。
 
  
 

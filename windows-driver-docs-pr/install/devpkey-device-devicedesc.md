@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e9a4760eb3d4ccdc3c8ed4a651616804370f0142
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b3e8a496c5fe47909ce8e225d34522433e3ea069
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387081"
 ---
 # <a name="devpkeydevicedevicedesc"></a>DEVPKEY_Device_DeviceDesc
 
@@ -60,13 +60,13 @@ DEVPKEY_Device_DeviceDesc デバイスのプロパティは、デバイスのイ
 <a name="remarks"></a>注釈
 -------
 
-DEVPKEY_Device_DeviceDesc の値によって設定されます、*デバイス説明*エントリの値によって指定された、 [ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)をインストールする INF ファイルのデバイスです。
+DEVPKEY_Device_DeviceDesc の値によって設定されます、*デバイス説明*エントリの値によって指定された、 [ **INF モデル セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)をインストールする INF ファイルのデバイスです。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_DEVICE_DeviceDesc の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_DEVICE_DeviceDesc の値を取得します。
 
 値を取得することができます、 [ **DEVPKEY_NAME** ](devpkey-name--device-instance-.md)デバイス インスタンスのプロパティをユーザー インターフェイスの項目に表示する必要があります、デバイスの名前を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DeviceDesc プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンは、プロパティの値へのアクセスに対応する SPDRP_DEVICEDESC 識別子を使用します。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DeviceDesc プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンは、プロパティの値へのアクセスに対応する SPDRP_DEVICEDESC 識別子を使用します。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,11 +91,11 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**DEVPKEY_NAME (デバイス インスタンス)**](devpkey-name--device-instance-.md)
+[**DEVPKEY_NAME (デバイス インスタンス)** ](devpkey-name--device-instance-.md)
 
-[**INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)
+[**INF モデル セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

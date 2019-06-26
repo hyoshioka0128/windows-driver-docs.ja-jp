@@ -5,19 +5,19 @@ ms.assetid: 218b52ac-95ee-4047-ad75-76d6ae6ab14e
 ms.date: 08/08/2017
 keywords: -SO_RCVBUF ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ee27d5493475bf6a8cbabd46a3bca144bac299fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5359ac9f72fda333d14fcc3275cac74a0e9cb641
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373772"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374746"
 ---
 # <a name="sorcvbuf"></a>したがって\_RCVBUF
 
 
 SO\_RCVBUF ソケット オプションは、ソケットのサイズには、基になるトランスポートによって使用されるバッファーの受信を決定します。 このソケット オプションは、リッスンしているソケット、データグラム ソケットでは、接続指向のソケットにのみ適用されます。
 
-このソケット オプションの値を設定する WSK アプリケーションを呼び出す、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+このソケット オプションの値を設定する WSK アプリケーションを呼び出す、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>

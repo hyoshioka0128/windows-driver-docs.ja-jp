@@ -4,12 +4,12 @@ description: Windows 10 用のカメラのドライバー インターフェイ�
 ms.assetid: CB5EEDF2-650D-4CD3-A5DE-DF0D6F10B394
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30be0220c48c29aff792afc99f7196dbba7ae793
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fc8ef50d7469cbe7ca6d9cf62424e88def4d18b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329942"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385355"
 ---
 # <a name="universal-camera-driver-design-guide-for-windows-10"></a>Windows 10 用のユニバーサル カメラ ドライバー設計のガイド
 
@@ -31,7 +31,7 @@ Windows 10 用のカメラのドライバー インターフェイスはすべ�
 
 ## <a name="build-a-universal-camera-driver"></a>ユニバーサル カメラ ドライバーをビルドします。
 
-ユニバーサルのカメラのドライバーが上に構築された、AVStream ミニドライバー、 [Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698) (WDM)。
+ユニバーサルのカメラのドライバーが上に構築された、AVStream ミニドライバー、 [Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) (WDM)。
 
 詳細については、次のセクションを参照してください、 [Windows 10 用のユニバーサル カメラ ドライバー モデルのリファレンス](windows-10-technical-preview-camera-drivers-reference.md):
 

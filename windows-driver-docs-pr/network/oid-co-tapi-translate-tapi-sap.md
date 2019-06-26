@@ -6,16 +6,16 @@ keywords:
 - OID_CO_TAPI_TRANSLATE_TAPI_SAP
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b15fd2a12a55088c3667d1dbbc6edca93e6748e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0302579e16016b3888e93830325792b502140949
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380701"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385504"
 ---
 # <a name="oidcotapitranslatetapisap"></a>OID_CO_TAPI_TRANSLATE_TAPI_SAP
 
-OID_CO_TAPI_TRANSLATE_TAPI_SAP OID は、TAPI の呼び出しのパラメーターから 1 つまたは複数の SAPs を準備するには、コール マネージャーまたは MCM の統合のドライバーを要求します。 この OID のクエリを実行するクライアントは、コール マネージャーまたは入力としての MCM ドライバーによって返される NDIS SAP を使用して (として書式設定、 [CO_SAP](https://msdn.microsoft.com/library/windows/hardware/ff545392)構造) に[NdisClRegisterSap](https://msdn.microsoft.com/library/windows/hardware/ff561648)で SAP を登録するクライアントを呼び出す着信呼び出しを受信します。
+OID_CO_TAPI_TRANSLATE_TAPI_SAP OID は、TAPI の呼び出しのパラメーターから 1 つまたは複数の SAPs を準備するには、コール マネージャーまたは MCM の統合のドライバーを要求します。 この OID のクエリを実行するクライアントは、コール マネージャーまたは入力としての MCM ドライバーによって返される NDIS SAP を使用して (として書式設定、 [CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))構造) に[NdisClRegisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclregistersap)で SAP を登録するクライアントを呼び出す着信呼び出しを受信します。
 
 この要求は、次のように定義されている CO_TAPI_TRANSLATE_SAP 構造体を使用します。
 
@@ -89,12 +89,12 @@ typedef struct _CO_TAPI_TRANSLATE_SAP {
 これは予約されています。 クライアントは、このフィールドを 0 に設定する必要があります。
 
 **NumberOfSaps**  
-数を指定[NDIS_VAR_DATA_DESC](https://msdn.microsoft.com/library/windows/hardware/ff559020) 、バッファー内に含まれている構造体**NdisSapParams**します。
+数を指定[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85)) 、バッファー内に含まれている構造体**NdisSapParams**します。
 
 **NdisSapParams**  
-1 つまたは複数の NDIS_VAR_DATA_DESC 構造体を含む可変長配列を指定します。 各 NDIS_VAR_DATA_DESC 構造体にはの長さと同様に、オフセットが含まれています、 [CO_SAP](https://msdn.microsoft.com/library/windows/hardware/ff545392)構造体。 各 CO_SAP 構造体には、接続指向のクライアントが着信呼び出しを受信できるサービス アクセス ポイント (SAP) を指定します。
+1 つまたは複数の NDIS_VAR_DATA_DESC 構造体を含む可変長配列を指定します。 各 NDIS_VAR_DATA_DESC 構造体にはの長さと同様に、オフセットが含まれています、 [CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))構造体。 各 CO_SAP 構造体には、接続指向のクライアントが着信呼び出しを受信できるサービス アクセス ポイント (SAP) を指定します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

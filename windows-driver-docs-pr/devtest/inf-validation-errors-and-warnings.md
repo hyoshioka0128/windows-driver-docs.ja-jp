@@ -4,12 +4,12 @@ description: ドライバーのインストールのエラーと警告は、Micr
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6caa307ecdfe6a720f8f1050c89193a9a6e72040
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e98e2fb7ab63bd3c82a5305d7d601f0ade74eb26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360784"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366822"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF の検証エラーと警告
 
@@ -125,7 +125,7 @@ Provider="Microsoft"
 </tr>
 <tr>
 <td><strong>1220:含まれる、INF で定義されているセクションを直接参照することはできません。</strong></td>
-<td>INF ファイルを参照する場合、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547344">DDInstall</a>セクションに含まれる INF では、使用する必要があります、<strong>必要がある</strong>ディレクティブ。 含まれる INF セクションを参照するその他のディレクティブは、エラー 1220 になります。
+<td>INF ファイルを参照する場合、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section">DDInstall</a>セクションに含まれる INF では、使用する必要があります、<strong>必要がある</strong>ディレクティブ。 含まれる INF セクションを参照するその他のディレクティブは、エラー 1220 になります。
 <p>この例では、A.INF のインストール セクションは、B.INF、同等のインストール」セクションを参照します。</p>
 <p>A.INF が含まれます。</p>
 <div class="code">
@@ -178,7 +178,7 @@ CatalogFile=wudf.cat
 </tr>
 <tr>
 <td><strong>1235:[文字列] で定義されていない文字列トークン</strong></td>
-<td>[文字列] セクションでは、指定した文字列のトークンの定義がありません。 たとえば、INF ファイルを指定します<em>%reg_dword</em>で、<em>追加レジストリ セクション</em>で指定された、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff546320"> <strong>AddReg</strong> </a>ディレクティブがあります。対応するありません REG_DWORD = で 0x00010001、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547485">[文字列]</a>セクション。
+<td>[文字列] セクションでは、指定した文字列のトークンの定義がありません。 たとえば、INF ファイルを指定します<em>%reg_dword</em>で、<em>追加レジストリ セクション</em>で指定された、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive"> <strong>AddReg</strong> </a>ディレクティブがあります。対応するありません REG_DWORD = で 0x00010001、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section">[文字列]</a>セクション。
 <p>このエラーは、INF ファイルを環境変数を含むレジストリ値を指定する場合に頻繁に発生します。 以下に例を示します。</p>
 <pre>
 [MyAddReg]
@@ -202,7 +202,7 @@ HKR,,DllPath,%%SystemRoot%%\System32\myDll.sys
 
 以前いない含める場合このセクションで、サービスはありませんでしたし、受信トレイのドライバー サービスに依存しているため、しを作成しなければならないのです。サービスのセクションで、ニーズを使用して受信トレイ INF のサービスを参照し、ステートメントが含まれています。  
 
-次に、例を示します。INF ファイルに次の必要があります。このエラーを解決するには、各 OS ターゲット セクションをサービスします。
+例:INF ファイルに次の必要があります。このエラーを解決するには、各 OS ターゲット セクションをサービスします。
 
 <pre>
 [XXXXXXXX.Install.NTx86.Services]
@@ -237,11 +237,11 @@ INF 構成機能には、次のエラーと警告が関連します。
 <tbody>
 <tr>
 <td><strong>1300:見つかったレガシ</strong><em>Xxx</em></td>
-<td>セクションでは非推奨またはディレクティブをなど、使用する場合、このエラーが表示されます<a href="https://msdn.microsoft.com/library/windows/hardware/ff547448"> <strong>LogConfig</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff547321"> <strong>DDInstall.CoInstallers</strong></a>します。</td>
+<td>セクションでは非推奨またはディレクティブをなど、使用する場合、このエラーが表示されます<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive"> <strong>LogConfig</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section"> <strong>DDInstall.CoInstallers</strong></a>します。</td>
 </tr>
 <tr>
 <td><strong>1301:見つかったレガシ</strong><em>Xxx</em><strong>操作</strong><em>Xxx</em></td>
-<td>セクションでは非推奨またはディレクティブをなど、使用する場合、このエラーが表示されます<a href="https://msdn.microsoft.com/library/windows/hardware/ff547448"> <strong>LogConfig</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff547321"> <strong>DDInstall.CoInstallers</strong></a>します。</td>
+<td>セクションでは非推奨またはディレクティブをなど、使用する場合、このエラーが表示されます<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive"> <strong>LogConfig</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section"> <strong>DDInstall.CoInstallers</strong></a>します。</td>
 </tr>
 <tr>
 <td><strong>1302:見つかったレガシ</strong><em>Xxx</em><strong>操作</strong><em>Xxx</em></td>
@@ -300,17 +300,17 @@ AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 </tr>
 <tr>
 <td><strong>2222:従来のディレクティブは無視されます。</strong></td>
-<td>この警告は、INF が非推奨のディレクティブを指定することを示します。 ドライバーがインストールされているときに、セクションを参照するディレクティブは評価されません。 たとえば、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547448"> <strong>INF LogConfig ディレクティブ</strong></a>ディレクティブは現在サポートされていません、ため、この警告で、次のセクションの結果します。
+<td>この警告は、INF が非推奨のディレクティブを指定することを示します。 ドライバーがインストールされているときに、セクションを参照するディレクティブは評価されません。 たとえば、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive"> <strong>INF LogConfig ディレクティブ</strong></a>ディレクティブは現在サポートされていません、ため、この警告で、次のセクションの結果します。
 <pre>
 [InstallSection.LogConfigOverride]
 LogConfig=LogConfigSection
 ...
 </pre>
-ディレクティブは非推奨する INF の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547388">INF ディレクティブ</a>します。</td>
+ディレクティブは非推奨する INF の詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-directives">INF ディレクティブ</a>します。</td>
 </tr>
 <tr>
 <td><strong>2223:セクションは、アーキテクチャの装飾である必要があります。</strong></td>
-<td>この警告は、INF ファイルが含まれていることを示します、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547454"> <strong>INF 製造元セクション</strong></a>を指定する、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547456"><strong>モデル セクション</strong></a>なしでアーキテクチャの装飾。 たとえば、次の INF 構文が、警告になります。 2223。
+<td>この警告は、INF ファイルが含まれていることを示します、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section"> <strong>INF 製造元セクション</strong></a>を指定する、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section"><strong>モデル セクション</strong></a>なしでアーキテクチャの装飾。 たとえば、次の INF 構文が、警告になります。 2223。
 <pre>
 [Manufacturer]
 %MfgName% = InstallSection

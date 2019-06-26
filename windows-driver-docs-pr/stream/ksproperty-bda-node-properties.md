@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9de3d195f94ff4fd1914a794522c28cce2f96446
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d304764b28cb186446db9ba86869b213d8f6c44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362244"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376668"
 ---
 # <a name="kspropertybdanodeproperties"></a>KSPROPERTY\_BDA\_ノード\_プロパティ
 
@@ -68,7 +68,7 @@ ms.locfileid: "63362244"
 
 ネットワーク プロバイダーでは、このプロパティを使用して、BDA テンプレートの接続リスト内の各ノードの機能のクエリを実行します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -87,7 +87,7 @@ ms.locfileid: "63362244"
 ## <a name="see-also"></a>関連項目
 
 
-[**BdaPropertyNodeProperties**](https://msdn.microsoft.com/library/windows/hardware/ff556496)
+[**BdaPropertyNodeProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertynodeproperties)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

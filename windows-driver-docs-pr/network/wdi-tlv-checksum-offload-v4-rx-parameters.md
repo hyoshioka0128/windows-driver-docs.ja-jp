@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS (0xD2) ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b4b965a0bb49874db4c5c73d5e35c56a38a8d81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d28c5ebbc1df165a019b7e25793c3260fec6e4c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382893"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387199"
 ---
 # <a name="wditlvchecksumoffloadv4rxparameters-0xd2"></a>WDI\_TLV\_チェックサム\_オフロード\_V4\_RX\_パラメーター (0xD2)
 
 
 WDI\_TLV\_チェックサム\_オフロード\_V4\_RX\_パラメーターは、IPv4 の Rx チェックサム オフロード用のパラメーターを含む TLV します。
 
-記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567878)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://msdn.microsoft.com/library/windows/hardware/dn925838)します。
+記載されている機能の値が報告[ **NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)します。 NDIS を使用して、\_オフロード\_いない\_サポートと NDIS\_オフロード\_を介して機能を指定する際にサポートされている[OID\_WDI\_GET\_アダプター\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -77,7 +77,7 @@ WDI\_TLV\_チェックサム\_オフロード\_V4\_RX\_パラメーターは、I
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

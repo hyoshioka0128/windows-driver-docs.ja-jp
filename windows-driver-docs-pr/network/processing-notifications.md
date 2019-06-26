@@ -8,12 +8,12 @@ keywords:
 - 通知の WDK ネットワーク、処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 611fe10146bda63f712dce90bcf57717edc68ff2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15b995f194a9b22a890cab228e6c0fcec3056603
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327620"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385480"
 ---
 # <a name="processing-notifications"></a>通知の処理
 
@@ -35,9 +35,9 @@ ms.locfileid: "63327620"
 
 2.  ネットワークの変更に関する通知オブジェクトに、ネットワーク構成のサブシステムが通知を送信した後、通知オブジェクト以前要求した、通知オブジェクトがそれらの変更を追跡するのには、その内部データ構造を変更します。
 
-3.  サブシステムに、通知オブジェクトの呼び出し、ネットワーク構成のサブシステムには、通知オブジェクトに通知の送信が完了したら、 [ **INetCfgComponentControl::ApplyRegistryChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff547727)メソッドシステム レジストリに変更をコミットします。
+3.  サブシステムに、通知オブジェクトの呼び出し、ネットワーク構成のサブシステムには、通知オブジェクトに通知の送信が完了したら、 [ **INetCfgComponentControl::ApplyRegistryChanges** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547727(v=vs.85))メソッドシステム レジストリに変更をコミットします。
 
-**注**  上記の順序で説明されている通知は、通知オブジェクトの呼び出しを含めることができますも[ **INetCfgComponentControl::CancelChanges** ](https://msdn.microsoft.com/library/windows/hardware/ff547728)メソッド場合、通知オブジェクトは、元のネットワーク構成に戻す必要があります。
+**注**  上記の順序で説明されている通知は、通知オブジェクトの呼び出しを含めることができますも[ **INetCfgComponentControl::CancelChanges** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547728(v=vs.85))メソッド場合、通知オブジェクトは、元のネットワーク構成に戻す必要があります。
 元のネットワーク構成を変更する前に、通知オブジェクトは、構成の 2 つのコピーを作成する必要があります。 通知オブジェクトは、変更を含めるし、他のコピー元の状態のままにする 1 つのコピーを変更できます。 元のネットワーク構成に戻すと、通知オブジェクトは変更されていないコピーを使用できます。
 
  

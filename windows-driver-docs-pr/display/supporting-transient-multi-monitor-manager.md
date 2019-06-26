@@ -10,17 +10,17 @@ keywords:
 - モニターの構成の WDK 表示、TMM サポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c0c9e6a3c68c6c9ec944c25e8976c5fd98b9fda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35d3ce0e1463f832fa04b3a5dbd9d24d83d69202
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361215"
 ---
 # <a name="supporting-transient-multi-monitor-manager"></a>一時的なマルチ モニター マネージャーのサポート
 
 
-マルチ モニターの一時的なマネージャーは、モバイル コンピューターでの表示構成のセットアップを簡素化する Windows Vista の機能です。 新しいモニターが検出されたときに、TMM は複製ビューにモバイル コンピューターのディスプレイを (たとえば、ラップトップ コンピューター ディスプレイ) に配置できます。 TMM はデスクトップ コンピューター上で無効になります。 Windows vista の場合は、複製のビューを入力するアプリケーションを呼び出すことができる GDI 関数はありません。 ハードウェア ベンダーは、自分独自の方法を使用して、デスクトップ コンピューターに複製ビューの入力を続ける必要があります。 ただし、ハードウェア ベンダーが実装する必要があります、提供、 [IViewHelper](https://msdn.microsoft.com/library/windows/hardware/ff568164) TMM モバイル コンピューターに複製表示モードを設定すると、COM インターフェイスのオブジェクト。
+マルチ モニターの一時的なマネージャーは、モバイル コンピューターでの表示構成のセットアップを簡素化する Windows Vista の機能です。 新しいモニターが検出されたときに、TMM は複製ビューにモバイル コンピューターのディスプレイを (たとえば、ラップトップ コンピューター ディスプレイ) に配置できます。 TMM はデスクトップ コンピューター上で無効になります。 Windows vista の場合は、複製のビューを入力するアプリケーションを呼び出すことができる GDI 関数はありません。 ハードウェア ベンダーは、自分独自の方法を使用して、デスクトップ コンピューターに複製ビューの入力を続ける必要があります。 ただし、ハードウェア ベンダーが実装する必要があります、提供、 [IViewHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) TMM モバイル コンピューターに複製表示モードを設定すると、COM インターフェイスのオブジェクト。
 
 このセクションの内容:
 

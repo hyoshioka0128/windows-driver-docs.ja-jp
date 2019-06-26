@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fb68a4af20bc46a483193d3ce7e6fd16966669b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c69d2a88516f0048ab2cf87e1d9967e4bd8c555
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362412"
 ---
 # <a name="while"></a>.while
 
@@ -44,7 +44,7 @@ ms.locfileid: "63332106"
 <a name="remarks"></a>コメント
 -------
 
-[ **.Break** ](https://msdn.microsoft.com/library/windows/hardware/ff556242)と[ **.continue** ](-continue.md)を終了または再起動のトークンを使用できます、*コマンド*ブロックします。
+[ **.Break** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/-break)と[ **.continue** ](-continue.md)を終了または再起動のトークンを使用できます、*コマンド*ブロックします。
 
  
 

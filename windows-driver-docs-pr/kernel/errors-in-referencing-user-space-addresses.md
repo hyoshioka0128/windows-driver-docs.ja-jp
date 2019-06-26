@@ -9,12 +9,12 @@ keywords:
 - 埋め込みポインター WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e21689350241f805401a639a3047b7e9d48e2937
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bdf3ea2d23319a461de5a30ce7a9608946a2912
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361869"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385129"
 ---
 # <a name="errors-in-referencing-user-space-addresses"></a>ユーザー領域のアドレス参照エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361869"
 
 ### <a href="" id="failure-to-validate-addresses-passed-in-method-neither-ioctls-and-fsctls"></a>メソッドに渡されたアドレスの検証に失敗した\_NEITHER Ioctl と FSCTLs
 
-I/O マネージャーには、検証は行われませんメソッドに一切\_も Ioctl と FSCTLs します。 ユーザー スペースの住所が有効なことに、ドライバーを使用する必要があります、 [ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)と[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)ルーチン内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。
+I/O マネージャーには、検証は行われませんメソッドに一切\_も Ioctl と FSCTLs します。 ユーザー スペースの住所が有効なことに、ドライバーを使用する必要があります、 [ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)と[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)ルーチン内のすべてのバッファー参照を囲む**試用/を除く**ブロックします。
 
 次の例では、ドライバーに渡される値前提としています、 **Type3InputBuffer**有効なアドレスを表します。
 

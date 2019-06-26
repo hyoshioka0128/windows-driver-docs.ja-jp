@@ -5,12 +5,12 @@ ms.assetid: bcf04d0b-70f3-48b7-a505-c82e50edadb2
 ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_CAPS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4efc9997106ba5df31a4ce9cdb2011a73aff2c52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cece38d740ade8029b242ebc9adb434dbdce09a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362852"
 ---
 # <a name="oidwwandevicecaps"></a>OID\_WWAN\_デバイス\_キャップ
 
@@ -19,14 +19,14 @@ OID\_WWAN\_デバイス\_CAP 返します方式のサポートを含む、MB デ
 
 要求のセットがサポートされていません。
 
-ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_デバイス\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567845)状態通知を含む、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567907)クエリ要求を完了するときは、MB デバイスの機能を示す構造体。
+ミニポート ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)状態通知を含む、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)クエリ要求を完了するときは、MB デバイスの機能を示す構造体。
 
 <a name="remarks"></a>コメント
 -------
 
-Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更新されましたがします。 Windows 8 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567907)構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_2**の*クエリ*要求。 Windows 7 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 **NDIS\_WWAN\_デバイス\_CAP**構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_1**の*クエリ*要求。
+Windows 8 以降、MB ドライバー モデルは、バージョン 2.0 に更新されましたがします。 Windows 8 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_2**の*クエリ*要求。 Windows 7 のミニポート ドライバーを設定する必要があります、 **Header.Revision**のメンバー、 **NDIS\_WWAN\_デバイス\_CAP**構造体を**NDIS\_WWAN\_デバイス\_CAP\_リビジョン\_1**の*クエリ*要求。
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN ドライバーの初期化プロシージャ](https://msdn.microsoft.com/library/windows/hardware/ff557186)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN ドライバーの初期化プロシージャ](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)します。
 
 処理クエリ、操作が、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) にアクセスしないでください、ミニポート ドライバーはデバイスのメモリにアクセスできます。
 
@@ -271,7 +271,7 @@ AWS バンド
 
 バンド 16 世
 
-2.5 GHz バンドの米国
+2\.5 GHz バンドの米国
 
 2502 - 2568
 
@@ -310,9 +310,9 @@ AWS バンド
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_デバイス\_キャップ**](https://msdn.microsoft.com/library/windows/hardware/ff567907)
+[**NDIS\_WWAN\_デバイス\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)
 
-[WWAN ドライバーの初期化の手順](https://msdn.microsoft.com/library/windows/hardware/ff557186)
+[WWAN ドライバーの初期化の手順](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
 
  
 

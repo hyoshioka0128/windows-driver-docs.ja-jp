@@ -14,12 +14,12 @@ keywords:
 - デバイス WDK、アプリケーションのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4963dac2ff7bc9a626767bc2c3eb3e49b61471
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e7bff2a6d3601234d40d5a5f931e4a88c7b999e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363496"
 ---
 # <a name="writing-a-device-installation-application"></a>デバイスのインストール アプリケーションの記述
 
@@ -31,7 +31,7 @@ ms.locfileid: "63339248"
 
  
 
-ドライバーをパッケージ化する場合は、これらのコンポーネントをインストールします。 デバイスのインストール アプリケーションと配布メディアは、自動実行が開始されるように、アプリケーションに自動的にユーザーが、配布メディアを挿入するときに、自動実行と互換性があります。 自動実行の詳細については、次を参照してください。 [AutoRun-Enabled アプリケーションを作成する](https://msdn.microsoft.com/library/windows/desktop/cc144206)します。
+ドライバーをパッケージ化する場合は、これらのコンポーネントをインストールします。 デバイスのインストール アプリケーションと配布メディアは、自動実行が開始されるように、アプリケーションに自動的にユーザーが、配布メディアを挿入するときに、自動実行と互換性があります。 自動実行の詳細については、次を参照してください。 [AutoRun-Enabled アプリケーションを作成する](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/cc144206(v=vs.85))します。
 
 デバイスのインストール アプリケーションを記述する方法に関するガイドラインについては、次を参照してください。[デバイス インストール アプリケーションの作成に関するガイドライン](guidelines-for-writing-device-installation-applications.md)します。
 

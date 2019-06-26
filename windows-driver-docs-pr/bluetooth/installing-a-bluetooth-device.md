@@ -9,12 +9,12 @@ keywords:
 - INF ファイル WDK Bluetooth
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 212adebec6cd3e04f98c905d70da82bb39109cbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 885bfe978798fda0073865883cd4d92b9cb0a72e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328197"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364627"
 ---
 # <a name="installing-a-bluetooth-device"></a>Bluetooth デバイスのインストール
 
@@ -83,7 +83,7 @@ AdjustTokenPrivileges(procToken, FALSE, &tp, sizeof(TOKEN_PRIVILEGES), (PTOKEN_P
 
 プロファイル ドライバーの INF ファイルには、インストールのクライアント側の Bluetooth デバイスに関する情報が含まれています。 サーバー側インストールでは、INF ファイルには、サービスのインストール アプリケーションで作成された GUID に対応するデバイス ID を指定します。 Bluetooth デバイスのすべてのメンバーである、 **Bluetooth**クラス。 Bluetooth クラスのインストーラー ( *Bthci.dll*) プロファイルのドライバーのインストールに役立ちます。
 
-作成と INF ファイルを配布するドライバーのインストールの詳細については、次を参照してください。 [INF ファイルを作成する](https://msdn.microsoft.com/library/windows/hardware/ff549520)と[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+作成と INF ファイルを配布するドライバーのインストールの詳細については、次を参照してください。 [INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)と[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
 ### <a name="span-idplugandplayidsspanspan-idplugandplayidsspanplug-and-play-ids"></a><span id="plug_and_play_ids"></span><span id="PLUG_AND_PLAY_IDS"></span>**プラグ アンド プレイ Id**
 

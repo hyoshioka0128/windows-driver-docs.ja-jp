@@ -13,12 +13,12 @@ keywords:
 - 双方向通信 WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07ac1ee03c461ea2a8931e5e827e3b113fb2c3e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36f4eba5f7f96da40ca254e07ca518359fcc53b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373487"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372370"
 ---
 # <a name="customizing-the-printer-port-monitors"></a>プリンター ポート モニターをカスタマイズする
 
@@ -79,7 +79,7 @@ ms.locfileid: "63373487"
 
 ### <a name="conversion-of-winsnmp-to-bidi-data-types"></a>WinSNMP 双方向のデータ型への変換
 
-簡易ネットワーク管理プロトコル (SNMP) の種類と bidi 型間の通信がで指定された、 [ **BIDI\_型**](https://msdn.microsoft.com/library/windows/hardware/ff545211)列挙トピック。
+簡易ネットワーク管理プロトコル (SNMP) の種類と bidi 型間の通信がで指定された、 [ **BIDI\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)列挙トピック。
 
 このセクションの残りの部分には、独自の bidi スキーマの拡張機能を作成するために、次のトピックが含まれています。
 

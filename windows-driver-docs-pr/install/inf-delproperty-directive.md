@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af3fee05f59822117c7416135f2dada6eb1dd17
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d9c4540e78c1eac8d19eff5a088eb82e9d82678
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365846"
 ---
 # <a name="inf-delproperty-directive"></a>INF DelProperty ディレクティブ
 
@@ -81,7 +81,7 @@ A *del-section プロパティ*の任意の数を持つことができます*プ
 削除操作を制御する省略可能な 16 進数のフラグ値を指定します。 サポートされる唯一のフラグ値は次のとおりです。
 
 <a href="" id="0x00000001--flg-delproperty-multi-sz-delstring-"></a>**0x00000001** (FLG_DELPROPERTY_MULTI_SZ_DELSTRING)  
-プロパティのデータ型の場合[ **DEVPROP_TYPE_STRING_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff543614)、この操作は、既存の文字列リストに値のエントリの値によって指定された文字列に一致するすべての文字列を削除します。 文字の大文字と小文字は、指定された文字列と文字列の一覧で、既存の文字列の比較ではありません。
+プロパティのデータ型の場合[ **DEVPROP_TYPE_STRING_LIST**](https://docs.microsoft.com/windows-hardware/drivers/install/devprop-type-string-list)、この操作は、既存の文字列リストに値のエントリの値によって指定された文字列に一致するすべての文字列を削除します。 文字の大文字と小文字は、指定された文字列と文字列の一覧で、既存の文字列の比較ではありません。
 
 <a href="" id="value"></a>*値*  
 プロパティのデータ型は DEVPROP_TYPE_STRING_LIST いてフラグ エントリが**0x00000001**、*値*エントリの値が一致する文字列で、削除操作を使用して検索する文字列を提供します既存の文字列を一覧表示し、削除操作が既存の文字列の一覧から、一致した文字列を削除する一致する文字列が見つかった場合します。

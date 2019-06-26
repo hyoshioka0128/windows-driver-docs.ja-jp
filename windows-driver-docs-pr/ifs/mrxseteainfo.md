@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbadee5acb93cf4e00be28b4ef2ddcc1626bf3c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5b68cf37fc4c1bf23a8e0dda7c7912540ff25fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382314"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385651"
 ---
 # <a name="mrxseteainfo-routine"></a>MRxSetEaInfo ルーチン
 
 
-*MRxSetEaInfo*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターのセットがファイル システム オブジェクトの属性情報を拡張することを要求します。
+*MRxSetEaInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターのセットがファイル システム オブジェクトの属性情報を拡張することを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -149,7 +149,7 @@ RDBSS への呼び出しを発行する*MRxSetEaInfo*受信に応答する[ **IR
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

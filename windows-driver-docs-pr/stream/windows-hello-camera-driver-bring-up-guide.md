@@ -4,12 +4,12 @@ description: このトピックでは、赤外線 (IR) カメラの顔認証を�
 ms.assetid: 5CE619F4-E136-4F8F-8F90-F7F96DE4642E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0842652ef965ac39a694619d4640ec1648b88cc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5c36f71847f5565d0312721c72f053d8f126260
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387972"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385357"
 ---
 # <a name="camera-driver-bring-up-guide"></a>カメラ ドライバー構築ガイド
 
@@ -35,7 +35,7 @@ Windows 10 バージョン 1607 を Windows こんにちはをサポートする
 
     -   **KSCAMERA\_EXTENDEDPROP\_FACEAUTH\_モード\_バック グラウンド\_減算**
 
-    このコントロールは、ビット フラグを使用して、顔の認証モードを設定する方法の詳細については、次を参照してください、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_FACEAUTH\_モード。** ](https://msdn.microsoft.com/library/windows/hardware/mt742028)トピック。
+    このコントロールは、ビット フラグを使用して、顔の認証モードを設定する方法の詳細については、次を参照してください、 [ **KSPROPERTY\_CAMERACONTROL\_拡張\_FACEAUTH\_モード。** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)トピック。
 
 -   **MF\_CAPTURE\_METADATA\_FRAME\_ILLUMINATION**
 
@@ -153,6 +153,6 @@ HKR,,SkipCameraEnumeration,0x00010001,0x00000001
 
 ## <a name="related-topics"></a>関連トピック
 
-[MediaCapture を使った写真とビデオのキャプチャ](https://msdn.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-mediacapture)  
+[MediaCapture を使った写真とビデオのキャプチャ](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-mediacapture)  
 
-[Windows.Media.Capture 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.aspx)  
+[Windows.Media.Capture 名前空間](https://docs.microsoft.com/uwp/api/Windows.Media.Capture)  

@@ -4,12 +4,12 @@ description: このセクションでは、WDI TLV パーサー インターフ�
 ms.assetid: FD204F24-0336-4A54-992C-ACF46565D8D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dbc589320da8a58a13eea02299398db9e8b2f28
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 296a68189d454f66f7097d14200cc676f7f44be8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377879"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385065"
 ---
 # <a name="wdi-tlv-parser-interface-overview"></a>WDI TLV パーサー インターフェイスの概要
 
@@ -17,7 +17,7 @@ ms.locfileid: "63377879"
 ## <a name="callee-allocation-model"></a>呼び出し先の割り当てのモデル
 
 
-ドライバー内のエントリ ポイントは、メッセージまたは TLVs を含むを示す値を受け取ります。 コードのメッセージ ID を抽出しますと、汎用的な解析ルーチンを呼び出すが、ID を処理する場合と判断したと TLV blob を渡します (範囲を超えた後に、 [ **WDI\_メッセージ\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/dn926074)) C 構造体に、TLVs を解析します。
+ドライバー内のエントリ ポイントは、メッセージまたは TLVs を含むを示す値を受け取ります。 コードのメッセージ ID を抽出しますと、汎用的な解析ルーチンを呼び出すが、ID を処理する場合と判断したと TLV blob を渡します (範囲を超えた後に、 [ **WDI\_メッセージ\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)) C 構造体に、TLVs を解析します。
 
 ```c
 ndisStatus = Parse(
@@ -64,7 +64,7 @@ CleanupParsedWdiGetAdapterCapabilities(&adapterCapabilitiesParsed);
 
 CleanupParse API を呼び出した後、構造内のすべてのデータは無効です。
 
-一部のメッセージには、関連付けられたデータはありません。 API の完全を期すため、適切に名前付きの Parse メソッドが提供されます。 これらのメソッドは、バイト ストリームが空であることを検証します。 Typedef は、パラメーターの型に提供されますが、呼び出し元は、また、呼び出し元割り当てモデルを使用している場合、out パラメーターの NULL を渡すことができます。 すべてのケースでは、パーサーは、定数の空の解析の構造体を返すことによって割り当てを回避します。 呼び出し元がこの返される空の構造体に書き込むことはありません必要があります (唯一のフィールドの名前はそのため**\_占有**)。 これらのメッセージは"その他のデータがありませんとして記載されています。 ヘッダー内のデータで十分です"。
+一部のメッセージには、関連付けられたデータはありません。 API の完全を期すため、適切に名前付きの Parse メソッドが提供されます。 これらのメソッドは、バイト ストリームが空であることを検証します。 Typedef は、パラメーターの型に提供されますが、呼び出し元は、また、呼び出し元割り当てモデルを使用している場合、out パラメーターの NULL を渡すことができます。 すべてのケースでは、パーサーは、定数の空の解析の構造体を返すことによって割り当てを回避します。 呼び出し元がこの返される空の構造体に書き込むことはありません必要があります (唯一のフィールドの名前はそのため **\_占有**)。 これらのメッセージは"その他のデータがありませんとして記載されています。 ヘッダー内のデータで十分です"。
 
 ## <a name="message-direction"></a>メッセージの方向
 

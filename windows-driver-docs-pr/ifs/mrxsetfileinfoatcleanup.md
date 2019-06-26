@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4fdd8d5637ad3796f6f27357ee934ceec746694
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 812fb9b8a5d074a15aea1052aa19b0c15295934a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352949"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385313"
 ---
 # <a name="mrxsetfileinfoatcleanup-routine"></a>MRxSetFileInfoAtCleanup ルーチン
 
 
-*MRxSetFileInfoAtCleanup*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターがクリーンアップでファイル システム オブジェクトでファイルの情報を設定することを要求します。
+*MRxSetFileInfoAtCleanup*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがクリーンアップでファイル システム オブジェクトでファイルの情報を設定することを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -77,7 +77,7 @@ RDBSS への呼び出しを発行する*MRxSetFileInfoAtCleanup*ファイル オ
 
 このルーチンで何もしないリターン状態を選択できますネットワーク ミニリダイレクター\_成功します。 ファイルのサイズやタイムスタンプを変更するは、クリーンアップ操作中に処理されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -100,7 +100,7 @@ RDBSS への呼び出しを発行する*MRxSetFileInfoAtCleanup*ファイル オ
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

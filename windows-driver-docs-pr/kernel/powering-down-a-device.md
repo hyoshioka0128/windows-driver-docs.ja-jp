@@ -21,12 +21,12 @@ keywords:
 - I/O 要求パケット WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91053c853868ea8bc43347fd855472fbb508aa59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d45f2103467af7e2b0aa543b78b5f4873787e45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369142"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374186"
 ---
 # <a name="powering-down-a-device"></a>デバイスの電源切断
 
@@ -36,11 +36,11 @@ ms.locfileid: "63369142"
 
 ウェイク アップでデバイスを有効にしない限り、そのドライバー電源をオフ、システムのシャット ダウン時。 デバイスの削除または突然の削除時にオフ電源常にする必要があります。
 
-デバイスが削除されるときに、プラグ アンド プレイ マネージャに送信、 [ **IRP\_MN\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551738)デバイス スタックを要求します。 この IRP への応答、デバイスのドライバーがいることを確認デバイスの電源ダウン。 削除処理の暗黙の部分には、デバイスの電源デバイスの電源ポリシー所有者は、送信する必要はありません、 [ **IRP\_MN\_設定\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)の**PowerDeviceD3**します。
+デバイスが削除されるときに、プラグ アンド プレイ マネージャに送信、 [ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)デバイス スタックを要求します。 この IRP への応答、デバイスのドライバーがいることを確認デバイスの電源ダウン。 削除処理の暗黙の部分には、デバイスの電源デバイスの電源ポリシー所有者は、送信する必要はありません、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)の**PowerDeviceD3**します。
 
-ドライバーの処理、 **IRP\_MN\_削除\_デバイス**要求、保留中の呼び出しを完了して、処理、任意の必要な削除を実行する I/O の待機[ **PoSetPowerState** ](https://msdn.microsoft.com/library/windows/hardware/ff559765) D3、状態、デバイスが電源マネージャーに通知し、このデバイスの作成、デバイス オブジェクトを削除します。 通常、バス ドライバーは、デバイスの電源をオフにします。
+ドライバーの処理、 **IRP\_MN\_削除\_デバイス**要求、保留中の呼び出しを完了して、処理、任意の必要な削除を実行する I/O の待機[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate) D3、状態、デバイスが電源マネージャーに通知し、このデバイスの作成、デバイス オブジェクトを削除します。 通常、バス ドライバーは、デバイスの電源をオフにします。
 
-デバイスは、Windows 2000 以降のオペレーティング システムから削除されるが予期せず、プラグ アンド プレイ manager 送信、 [ **IRP\_MN\_突然\_削除**](https://msdn.microsoft.com/library/windows/hardware/ff551760)対応するデバイス スタックの一番上に要求します。 この IRP への応答、デバイスのドライバーする必要があります突然の削除、処理を実行」の説明に従って[IRP の処理\_MN\_突然\_削除要求](handling-an-irp-mn-surprise-removal-request.md)します。
+デバイスは、Windows 2000 以降のオペレーティング システムから削除されるが予期せず、プラグ アンド プレイ manager 送信、 [ **IRP\_MN\_突然\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)対応するデバイス スタックの一番上に要求します。 この IRP への応答、デバイスのドライバーする必要があります突然の削除、処理を実行」の説明に従って[IRP の処理\_MN\_突然\_削除要求](handling-an-irp-mn-surprise-removal-request.md)します。
 
 システムのシャット ダウン、電源マネージャー送信、 **IRP\_MN\_設定\_POWER**システム電源の状態 (S4 または S5)。 デバイスの電源ポリシー所有者は、この IRP を受信するときに送信する必要があります、 **IRP\_MN\_設定\_POWER**の**PowerDeviceD3**下位のドライバーを終了できるように、職場と電力は、デバイスをダウンします。
 

@@ -8,12 +8,12 @@ keywords:
 - 不透明度 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b33cfa177d3334655ebfd369573ba97412158673
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 623c0cc359821d26878b645e516c2243b46043b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380932"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365437"
 ---
 # <a name="object-based"></a>オブジェクトベース
 
@@ -49,7 +49,7 @@ I/O マネージャーは、構造とファイル オブジェクト、デバイ
 
 *オブジェクト*オブジェクトの種類を識別します。
 
-たとえば、I/O マネージャーの[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)ルーチンが I/O 要求のターゲットとして物理、論理、または仮想デバイスを表すデバイス オブジェクトを作成します。
+たとえば、I/O マネージャーの[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)ルーチンが I/O 要求のターゲットとして物理、論理、または仮想デバイスを表すデバイス オブジェクトを作成します。
 
 1 つのシステム コンポーネントには、別のコンポーネントのサポート ルーチンを呼び出すルーチンをエクスポートできます。 これは、ドライバーを構成する必要がある呼び出しの数を削減できます。 I/O マネージャーは、具体的には、ドライバーの開発を容易に特定のルーチンをエクスポートします。 たとえば、 **IoConnectInterruptEx**、カーネルのサポート ルーチンを呼び出す*オブジェクトを中断*します。
 

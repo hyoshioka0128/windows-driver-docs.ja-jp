@@ -7,12 +7,12 @@ keywords:
 - ヘッダー データ プロバイダー WDK の分割
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3c4360f78c06d16486a52c7e8768ba31cd323d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b694ff32cebc0d0220bd092fc0c17e4bf801717f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351023"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386352"
 ---
 # <a name="header-data-split-architecture"></a>ヘッダー データの分割のアーキテクチャ
 
@@ -30,9 +30,9 @@ ms.locfileid: "63351023"
 
 ヘッダー データの分割操作の対応している NIC イーサネット フレームを受信して、ヘッダーを分割し、データを別の受信バッファー。
 
-通常の NDIS ミニポート ドライバー使用には、NDIS に受信したデータを示す関数が表示されます。 また、ドライバーを割り当てる必要があります 1 つだけ[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体を[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造を示す場合にデータを受信しました。 詳細については、次を参照してください。[受信イーサネット フレームのことを示す](indicating-received-ethernet-frames.md)します。
+通常の NDIS ミニポート ドライバー使用には、NDIS に受信したデータを示す関数が表示されます。 また、ドライバーを割り当てる必要があります 1 つだけ[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体を[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造を示す場合にデータを受信しました。 詳細については、次を参照してください。[受信イーサネット フレームのことを示す](indicating-received-ethernet-frames.md)します。
 
-ヘッダー データの分割、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)受信インジケーターの構造は、記述子のヘッダー (MDLs) を一覧表示する別のメモリを使用して、受信したイーサネット フレームを分割し、データ。 また、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造に含まれるヘッダー データについては、.NET での分割\_バッファー\_情報を一覧表示します。
+ヘッダー データの分割、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)受信インジケーターの構造は、記述子のヘッダー (MDLs) を一覧表示する別のメモリを使用して、受信したイーサネット フレームを分割し、データ。 また、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造に含まれるヘッダー データについては、.NET での分割\_バッファー\_情報を一覧表示します。
 
 次の図は、受信したフレーム、分割バッファー、およびヘッダーのバッファーのメモリ レイアウトを示します。
 

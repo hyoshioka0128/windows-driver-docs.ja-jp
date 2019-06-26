@@ -9,12 +9,12 @@ keywords:
 - WDK CPSUI を制御するウィンドウ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 701bc284d746eaf7e81991bbf94ed4dbade64622
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba50584d1175f17860d5e541d5a890fcc9793c5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365579"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372440"
 ---
 # <a name="cpsui-supported-window-controls"></a>CPSUI 指定のウィンドウ コントロール
 
@@ -36,9 +36,9 @@ CPSUI には、ユーザーに一貫性のあるインターフェイスを提�
 
 -   チェック ボックス
 
-このウィンドウのコントロールのセットは、指定するときに常に使用する必要があります[プロパティ シート オプション](property-sheet-options.md)します。 ウィンドウ コントロールを使用して指定[CPSUI オプションの種類](https://msdn.microsoft.com/library/windows/hardware/ff547142)します。 通常は必要なときに、これらのコントロールの外観をカスタマイズできます。 詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](customizing-cpsui-supported-window-controls.md)します。
+このウィンドウのコントロールのセットは、指定するときに常に使用する必要があります[プロパティ シート オプション](property-sheet-options.md)します。 ウィンドウ コントロールを使用して指定[CPSUI オプションの種類](https://docs.microsoft.com/windows-hardware/drivers/print/cpsui-option-types)します。 通常は必要なときに、これらのコントロールの外観をカスタマイズできます。 詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](customizing-cpsui-supported-window-controls.md)します。
 
-CPSUI には、拡張のチェック ボックスと拡張のプッシュ ボタンと呼ばれる、2 つの特殊なコントロールも定義します。 使用して、これらのコントロールでは、標準のチェック ボックスとプッシュ ボタンのもの以外の機能を提供するを指定することができます、 [ **EXTCHKBOX** ](https://msdn.microsoft.com/library/windows/hardware/ff548781)と[ **EXTPUSH**](https://msdn.microsoft.com/library/windows/hardware/ff548795)構造体に、それぞれします。
+CPSUI には、拡張のチェック ボックスと拡張のプッシュ ボタンと呼ばれる、2 つの特殊なコントロールも定義します。 使用して、これらのコントロールでは、標準のチェック ボックスとプッシュ ボタンのもの以外の機能を提供するを指定することができます、 [ **EXTCHKBOX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_extchkbox)と[ **EXTPUSH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_extpush)構造体に、それぞれします。
 
  
 

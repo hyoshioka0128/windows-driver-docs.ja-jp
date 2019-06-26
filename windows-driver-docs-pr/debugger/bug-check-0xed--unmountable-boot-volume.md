@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dc3195969d7ce4895d3f12559fa4ffedabd18eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e29007fc389c91b986d4b8a79135c0868da0f82
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323167"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361512"
 ---
 # <a name="bug-check-0xed-unmountablebootvolume"></a>バグ チェック 0xED:ベーシック\_ブート\_ボリューム
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323167"
 UNMOUNTABLE\_ブート\_ボリュームのバグ チェックが 0x000000ED の値を持ちます。 これは、I/O サブシステムが、ブート ボリュームをマウントしようとしています。 し、失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="unmountablebootvolume-parameters"></a>ベーシック\_ブート\_ボリューム パラメーター

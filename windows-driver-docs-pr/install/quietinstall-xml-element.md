@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0ab0641646d788e02e1e65459e002842b4491a10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9c26850c3949f9cc69d7cf55ab2b51b2f6bf990c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56531072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386402"
 ---
 # <a name="quietinstall-xml-element"></a>quietInstall XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **QuietInstall** XML 要素が空の要素を設定する、 **quietInstall**フラグには、ウィザード ページおよびその他のほとんどのユーザー メッセージの表示を抑制する DPInst を構成します。
 

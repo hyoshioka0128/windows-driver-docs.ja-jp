@@ -4,12 +4,12 @@ description: このトピックでは、セキュリティで保護された boo
 ms.assetid: 4e206bd2-7bb4-48c2-9e01-8da041e798ef
 ms.date: 05/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e067a47fb535af8e217ed202ece51e48f3f15f80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07e484a77f8b3686b17b3bfb750d15cd2470577e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337421"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364518"
 ---
 # <a name="secure-boot-and-device-encryption-overview"></a>セキュリティで保護されたブートとデバイス暗号化の概要
 
@@ -57,7 +57,7 @@ Oem は、次の要件とセキュア ブートに関連する考慮事項の注
 
 -   製造時に、セキュア ブートの有効化プロセスの一環として、リプレイ保護されたメモリ ブロック (RPMB) eMMC 部分をプロビジョニングする必要があります。 このプロビジョニングの発生後特定 eMMC 部分と、デバイスで SoC コンポーネントをまとめて; バインドします。eMMC 部分は削除され、OS、RPMB の利用を持つ別のデバイスで再利用されることはできません。
 
--   セキュア ブートを有効にすると、すべてのドライバーとデバイス上のアプリは、ために、オペレーティング システムによって読み込まれる署名する必要があります。 詳細については、次を参照してください。[コード署名](https://msdn.microsoft.com/library/windows/hardware/dn756634)します。
+-   セキュア ブートを有効にすると、すべてのドライバーとデバイス上のアプリは、ために、オペレーティング システムによって読み込まれる署名する必要があります。 詳細については、次を参照してください。[コード署名](https://docs.microsoft.com/previous-versions/windows/hardware/code-signing/dn756634(v=vs.85))します。
 
 ## <a name="device-encryption"></a>デバイスの暗号化
 

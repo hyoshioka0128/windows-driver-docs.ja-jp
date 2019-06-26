@@ -4,12 +4,12 @@ description: SCSI ポートによって提供される機能
 ms.assetid: 549dc3f1-b62f-4047-bdc0-7e24d5bc6ad5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47801d82b5d3959b9b27751b602ae5da18163c8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e5f7714f7c41045a4fcf165b0a1d64f7465fc3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368362"
 ---
 # <a name="capabilities-provided-by-scsi-port"></a>SCSI ポートによって提供される機能
 
@@ -46,7 +46,7 @@ SCSI ポート ドライバーは、次の機能を提供します。
 
 -   ホスト アダプターの制限に関する情報を含むクラス ドライバーを提供します。
 
-    ホスト バス アダプター (HBA) の制限に合わせてデータ転送のサイズを制御するクラス ドライバーの役目です。 ただし、SCSI ポートは、このタスクを実行する必要がある情報を使用してクラス ドライバーを提供します。 SCSI ポートは、アダプターの記述子では、この情報を提供 ([**ストレージ\_アダプター\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff566346)) への応答、 [ **IOCTL\_記憶域\_クエリ\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff560590) IOCTL 要求。 クラス ドライバーは、要求をこの記述子で報告される情報に基づいて適切なサイズのチャンクに分割します。
+    ホスト バス アダプター (HBA) の制限に合わせてデータ転送のサイズを制御するクラス ドライバーの役目です。 ただし、SCSI ポートは、このタスクを実行する必要がある情報を使用してクラス ドライバーを提供します。 SCSI ポートは、アダプターの記述子では、この情報を提供 ([**ストレージ\_アダプター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)) への応答、 [ **IOCTL\_記憶域\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property) IOCTL 要求。 クラス ドライバーは、要求をこの記述子で報告される情報に基づいて適切なサイズのチャンクに分割します。
 
 -   バスの相対アドレスを論理アドレスを変換しています。
 
@@ -68,15 +68,15 @@ SCSI ポート ドライバーは、次の機能を提供します。
 
 SCSI ポートは、SCSI ポート ライブラリのルーチンを使用して、ミニポート ドライバーにサービスを提供します。 ミニポート ドライバーの作成者には、1 つのモノリシック ポート ドライバーに提供する機能をコーディングするのではなく、これらのルーチンを呼び出すことができます。 によって、これらのルーチンを使用して最も重要なサービスの一部としては、
 
--   SCSI ポート ミニポート ドライバーは、SCSI ポートの多くの OS に依存する初期化操作を委任できます[ **ScsiPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff564645)ライブラリ ルーチン。 これにより、オペレーティング システムのバージョンが異なって SCSI ポート ミニポート ドライバーが移植性にします。 SCSI ポート ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [SCSI ミニポート ドライバー DriverEntry ルーチン](scsi-miniport-driver-s-driverentry-routine.md)します。
+-   SCSI ポート ミニポート ドライバーは、SCSI ポートの多くの OS に依存する初期化操作を委任できます[ **ScsiPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)ライブラリ ルーチン。 これにより、オペレーティング システムのバージョンが異なって SCSI ポート ミニポート ドライバーが移植性にします。 SCSI ポート ミニポート ドライバーの初期化作業の詳細については、次を参照してください。 [SCSI ミニポート ドライバー DriverEntry ルーチン](scsi-miniport-driver-s-driverentry-routine.md)します。
 
--   非 PnP デバイスの SCSI ポート ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)します。
+-   非 PnP デバイスの SCSI ポート ミニポート ドライバーには、アダプターを検索して、レポート、リソース、PnP マネージャーをタスクが消費されません。 これを行う[ **ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)します。
 
--   SCSI ポート ミニポート ドライバーはドライバー オブジェクト内のエントリ ポイントのディスパッチを初期化できません。 SCSI ポート ドライバーは、ミニポート ドライバーに代わって、ミニポート ドライバーを呼び出すと[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)します。
+-   SCSI ポート ミニポート ドライバーはドライバー オブジェクト内のエントリ ポイントのディスパッチを初期化できません。 SCSI ポート ドライバーは、ミニポート ドライバーに代わって、ミニポート ドライバーを呼び出すと[ **ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)します。
 
--   SCSI ポート ミニポート ドライバーを使用して、論理アドレスにバスの相対アドレスは変換されない[ **HalTranslateBusAddress**](https://msdn.microsoft.com/library/windows/hardware/ff546637)します。 SCSI ポート ミニポート ドライバーでは、これを行うへの呼び出しによって[ **ScsiPortGetDeviceBase**](https://msdn.microsoft.com/library/windows/hardware/ff564629)します。
+-   SCSI ポート ミニポート ドライバーを使用して、論理アドレスにバスの相対アドレスは変換されない[ **HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))します。 SCSI ポート ミニポート ドライバーでは、これを行うへの呼び出しによって[ **ScsiPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetdevicebase)します。
 
-SCSI ポートのミニポート ドライバー SCSI ポートが利用できるようにするライブラリ ルーチンの完全な一覧を参照してください。 [SCSI ポート ライブラリ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff565375)します。
+SCSI ポートのミニポート ドライバー SCSI ポートが利用できるようにするライブラリ ルーチンの完全な一覧を参照してください。 [SCSI ポート ライブラリ ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
  
 

@@ -6,16 +6,16 @@ keywords:
 - フィルタ リング層識別子の実行時にネットワーク ドライバー
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 091079e2f5f170fcc139fcac724d7a8990ecabc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ef652ec1d3a8e8e774fe3cd912e54f8a78e6cff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382138"
 ---
 # <a name="run-time-filtering-layer-identifiers"></a>実行時フィルター レイヤー識別子
 
-実行時のフィルタ リング層識別子がコールアウト ドライバーのカーネル モードとは、ローカルで一意の識別子によって表される各で使用されます ([LUID](https://msdn.microsoft.com/library/windows/hardware/ff557080))、64 ビットのサイズ。 これらの識別子は、Fwpsk.h で定義されている FWPS_BUILTIN_LAYERS 列挙で定数の値です。 これらの識別子の定義は次のとおりです。
+実行時のフィルタ リング層識別子がコールアウト ドライバーのカーネル モードとは、ローカルで一意の識別子によって表される各で使用されます ([LUID](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/igpupvdev/ns-igpupvdev-_luid))、64 ビットのサイズ。 これらの識別子は、Fwpsk.h で定義されている FWPS_BUILTIN_LAYERS 列挙で定数の値です。 これらの識別子の定義は次のとおりです。
 
 > [!NOTE]
 > レイヤーのランタイム識別子の末尾に V4 および V6 サフィックスは、レイヤーは、IPv4 ネットワーク スタックまたは IPv6 のネットワーク スタックに配置されているかどうかを示します。
@@ -75,5 +75,5 @@ ms.locfileid: "63386203"
 | FWPS_LAYER_RPC_PROXY_IF | このフィルター処理レイヤーは、RpcProxy 接続に使用されるインターフェイスを検査できます。 これは、ユーザー モードのフィルタ リング層です。 |
 | FWPS_LAYER_KM_AUTHORIZATION | このフィルター処理レイヤー承認セキュリティ アソシエーションを確立できます。 |
 
-各レイヤーのランタイム識別子には、定数値のセットを表す関連付けられている実行時のデータ フィールド識別子があります。 これらのデータ フィールドの識別子は、Fwpsk.h で FWPS_FIELDS_XXX 列挙型として宣言されます。 詳細については、次を参照してください。[データ フィールドの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546312)します。
+各レイヤーのランタイム識別子には、定数値のセットを表す関連付けられている実行時のデータ フィールド識別子があります。 これらのデータ フィールドの識別子は、Fwpsk.h で FWPS_FIELDS_XXX 列挙型として宣言されます。 詳細については、次を参照してください。[データ フィールドの識別子](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)します。
 

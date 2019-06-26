@@ -4,12 +4,12 @@ description: DSM\_ロード\_残高\_ポリシー WMI クラス
 ms.assetid: 7de58fe6-7c95-412a-9135-3894c07137a7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dfd2e1d024a66aae0079b8649a643c76a11dbac6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54056dbf5c83d852fd487120989828f043004b04
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380672"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368242"
 ---
 # <a name="dsmloadbalancepolicy-wmi-class"></a>DSM\_ロード\_残高\_ポリシー WMI クラス
 
@@ -83,7 +83,7 @@ class DSM_Load_Balance_Policy
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **DSM\_ロード\_残高\_ポリシー** ](https://msdn.microsoft.com/library/windows/hardware/ff552696)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **DSM\_ロード\_残高\_ポリシー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsm_load_balance_policy)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

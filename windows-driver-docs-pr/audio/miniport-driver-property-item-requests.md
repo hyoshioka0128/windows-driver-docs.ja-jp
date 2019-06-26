@@ -7,12 +7,12 @@ keywords:
 - ミニポート ドライバー WDK オーディオ、プロパティ項目の要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b08e4e2741f112ed684a2f9a69936ffaa29c378
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c22fddd2c3dc5c885f5e6e2e563ef3cb7a6fa7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332310"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363219"
 ---
 # <a name="miniport-driver-property-item-requests"></a>ミニポート ドライバー プロパティの項目要求
 
@@ -20,15 +20,15 @@ ms.locfileid: "63332310"
 ## <span id="miniport_driver_property_item_requests"></span><span id="MINIPORT_DRIVER_PROPERTY_ITEM_REQUESTS"></span>
 
 
-このセクションでは、DirectMusic プロパティ項目の要求を簡単に紹介します。 これと他のカーネル ストリーミングの概念の概要が記載[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff560842)します。
+このセクションでは、DirectMusic プロパティ項目の要求を簡単に紹介します。 これと他のカーネル ストリーミングの概念の概要が記載[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming)します。
 
-DirectMusic ミニポート ドライバーを処理する必要があります[オーディオ ドライバーのプロパティ セット](https://msdn.microsoft.com/library/windows/hardware/ff536197)します。 2 つの部分プロパティ要求を受信します。 最初の部分は、プロパティ セットで定義されている、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 2 つ目は、プロパティ項目に固有のインスタンス データを格納するデータ バッファーです。
+DirectMusic ミニポート ドライバーを処理する必要があります[オーディオ ドライバーのプロパティ セット](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)します。 2 つの部分プロパティ要求を受信します。 最初の部分は、プロパティ セットで定義されている、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 2 つ目は、プロパティ項目に固有のインスタンス データを格納するデータ バッファーです。
 
 KSPROPERTY 構造体には、次のものが含まれています。
 
--   定義済みのセットを指定する GUID (など[KSPROPSETID\_シンセサイザー\_Dls](https://msdn.microsoft.com/library/windows/hardware/ff537488))。
+-   定義済みのセットを指定する GUID (など[KSPROPSETID\_シンセサイザー\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls))。
 
--   セット内のプロパティ項目を指定する項目の ID (など[ **KSPROPERTY\_シンセサイザー\_DLS\_ダウンロード**](https://msdn.microsoft.com/library/windows/hardware/ff537396))。
+-   セット内のプロパティ項目を指定する項目の ID (など[ **KSPROPERTY\_シンセサイザー\_DLS\_ダウンロード**](https://docs.microsoft.com/previous-versions/ff537396(v=vs.85)))。
 
 -   要求された操作を指定するフラグ。
 
@@ -51,7 +51,7 @@ KSPROPERTY 構造体には、次のものが含まれています。
 
 ミニポート ドライバー トポロジでは、特定のノードには、プロパティ項目の要求を送信できます。 ミニポート ドライバーのトポロジでは、ドライバーと基になるハードウェアのレイアウトについて説明します。 暗証番号 (pin) インスタンスが使用可能な要求の時点であるかどうか、トポロジ内ではプロパティの項目を送信するノードを指定できます。
 
-DirectMusic 再生の暗証番号 (pin) のインスタンスを作成する必要があります。 DirectMusic データ型のノードに送信[ **KSNODETYPE\_DMSYNTH**](https://msdn.microsoft.com/library/windows/hardware/ff537167)します。 ミニポート ドライバーの接続の例を次に示します。
+DirectMusic 再生の暗証番号 (pin) のインスタンスを作成する必要があります。 DirectMusic データ型のノードに送信[ **KSNODETYPE\_DMSYNTH**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dmsynth)します。 ミニポート ドライバーの接続の例を次に示します。
 
 -   シンセサイザーにストリームに接続します。
 

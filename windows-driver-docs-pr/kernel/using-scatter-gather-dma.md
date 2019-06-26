@@ -10,12 +10,12 @@ keywords:
 - DMA 転送 WDK カーネルでは、DMA のスキャッター/ギャザー
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b2227b4bf979e90a35375764b18eb74441337da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c50cb5d5789f48b1cc96b8540f47c729496c3f63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370661"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387003"
 ---
 # <a name="using-scattergather-dma"></a>スキャッター/ギャザー DMA の使用
 
@@ -23,19 +23,19 @@ ms.locfileid: "63370661"
 
 
 
-システムを実行するドライバーやバス マスター、パケットに基づく DMA では、スキャッター/ギャザー DMA 向けサポート ルーチンを使用できます。 記載されているルーチンのシーケンスを呼び出す代わりに[Using Packet-Based システム DMA](using-packet-based-system-dma.md)と[パケットに基づくバス-マスター DMA](using-packet-based-bus-master-dma.md)、ドライバーを使用できる[ **GetScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff546531)と[ **PutScatterGatherList**](https://msdn.microsoft.com/library/windows/hardware/ff559967)します。
+システムを実行するドライバーやバス マスター、パケットに基づく DMA では、スキャッター/ギャザー DMA 向けサポート ルーチンを使用できます。 記載されているルーチンのシーケンスを呼び出す代わりに[Using Packet-Based システム DMA](using-packet-based-system-dma.md)と[パケットに基づくバス-マスター DMA](using-packet-based-bus-master-dma.md)、ドライバーを使用できる[ **GetScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pget_scatter_gather_list)と[ **PutScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pput_scatter_gather_list)します。
 
 デバイスは、そのドライバーは、これらのルーチンを使用するための組み込みのスキャッター/ギャザー サポートされている必要はありません。
 
 パケットに基づく DMA を使用するドライバーは、スキャッター/ギャザー操作のサポート ルーチンの次の一般的なシーケンスを呼び出します。
 
-1.  [**MmGetMdlVirtualAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff554539)への呼び出しでパラメーターとして必要な MDL にインデックスを取得する**GetScatterGatherList**
+1.  [**MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)への呼び出しでパラメーターとして必要な MDL にインデックスを取得する**GetScatterGatherList**
 
-2.  [**GetScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff546531)ドライバーが DMA のデバイスをプログラムする準備ができておよび DMA コント ローラーのシステムまたはバス マスター アダプターが必要
+2.  [**GetScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pget_scatter_gather_list)ドライバーが DMA のデバイスをプログラムする準備ができておよび DMA コント ローラーのシステムまたはバス マスター アダプターが必要
 
-    **GetScatterGatherList** DMA コント ローラーのシステムまたはバス マスター アダプターを割り当て、マップの数を決定しますレジスタが必要なおよびライセンスを割り当てます、スキャッター/ギャザーの一覧を入力し、ドライバーのを呼び出す[  *。AdapterListControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540513)ルーチン DMA コント ローラーまたはアダプターとマップのレジスタが使用できる場合。
+    **GetScatterGatherList** DMA コント ローラーのシステムまたはバス マスター アダプターを割り当て、マップの数を決定しますレジスタが必要なおよびライセンスを割り当てます、スキャッター/ギャザーの一覧を入力し、ドライバーのを呼び出す[  *。AdapterListControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_list_control)ルーチン DMA コント ローラーまたはアダプターとマップのレジスタが使用できる場合。
 
-3.  [**PutScatterGatherList** ](https://msdn.microsoft.com/library/windows/hardware/ff559967)直後、要求されたすべてのデータが転送されたまたはドライバーが IRP をデバイス I/O エラーのために失敗
+3.  [**PutScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pput_scatter_gather_list)直後、要求されたすべてのデータが転送されたまたはドライバーが IRP をデバイス I/O エラーのために失敗
 
     **PutScatterGatherList**アダプター バッファーをフラッシュ、マップのレジスタを解放し、スキャッター/ギャザーの一覧を解放します。 ドライバーを呼び出す必要があります**PutScatterGatherList**バッファー内のデータにアクセスします。
 
@@ -43,7 +43,7 @@ ms.locfileid: "63370661"
 
 **GetScatterGatherList**ルーチンにはへの呼び出しが含まれています**AllocateAdapterChannel**と**MapTransfer**ので、ドライバーはこれらの呼び出しを作成する必要はありません。 ルーチンは、以下をパラメーターとしてを受け取ります。
 
--   ポインター、 [ **DMA\_アダプター** ](https://msdn.microsoft.com/library/windows/hardware/ff544062)によって返される構造体[ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)
+-   ポインター、 [ **DMA\_アダプター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_adapter)によって返される構造体[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)
 
 -   DMA 操作の対象のデバイス オブジェクトへのポインター
 
@@ -53,7 +53,7 @@ ms.locfileid: "63370661"
 
 -   マップするバイト数
 
--   ポインター、 [ *AdapterListControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540513)転送を実行するルーチン
+-   ポインター、 [ *AdapterListControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_list_control)転送を実行するルーチン
 
 -   渡されるコンテキストのドライバー定義領域へのポインター、 *AdapterListControl*ルーチン
 
@@ -61,11 +61,11 @@ ms.locfileid: "63370661"
 
 必要なマップのレジスタの数を決定した後の割り当て、アダプター チャネルとマップの登録、スキャッター/ギャザーの一覧を入力し、転送を準備**GetScatterGatherList**ドライバーによって提供されるを呼び出す*AdapterListControl*ルーチン。 *AdapterListControl*ルーチンは IRQL で任意のスレッド コンテキストで実行 = ディスパッチ\_レベル。
 
-*AdapterListControl*への呼び出しでの日常的なドライバー提供**GetScatterGatherList**とは異なります、 [ *AdapterControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540504)渡されたルーチン**AllocateAdapterChannel**以下の重要なは尊重します。
+*AdapterListControl*への呼び出しでの日常的なドライバー提供**GetScatterGatherList**とは異なります、 [ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)渡されたルーチン**AllocateAdapterChannel**以下の重要なは尊重します。
 
--   *AdapterListControl*ルーチンには、戻り値がありませんが、 *AdapterControl*ルーチンを返します、 [ **IO\_割り当て\_アクション**](https://msdn.microsoft.com/library/windows/hardware/ff550534).
+-   *AdapterListControl*ルーチンには、戻り値がありませんが、 *AdapterControl*ルーチンを返します、 [ **IO\_割り当て\_アクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_io_allocation_action).
 
--   ポインターではなく、 *MapRegisterBase*システムによって割り当てられたマップ レジスタ、3 番目のパラメーターについて、 *AdapterListControl*ルーチンの代わりに指す、 [ **散布図\_収集\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff563664)構造体のドライバーが DMA を実行します。
+-   ポインターではなく、 *MapRegisterBase*システムによって割り当てられたマップ レジスタ、3 番目のパラメーターについて、 *AdapterListControl*ルーチンの代わりに指す、 [ **散布図\_収集\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_scatter_gather_list)構造体のドライバーが DMA を実行します。
 
 -   *AdapterListControl*ルーチンで必要なタスクのサブセットを実行する、 *AdapterControl*ルーチン。
 

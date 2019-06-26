@@ -8,23 +8,23 @@ keywords:
 - アンロード ドライバー WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0af4f957b5e8bc92b513c13e3b7e164814fa6c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 419babaf2c99b35bfb2f645317818cd4ef5fb618
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346634"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386001"
 ---
 # <a name="unloading-a-callout-driver"></a>コールアウト ドライバーのアンロード
 
 
 コールアウト ドライバーをアンロードするには、は、オペレーティング システムは、コールアウト ドライバーのアンロード関数を呼び出します。 コールアウト ドライバーのアンロード関数を指定する方法の詳細については、次を参照してください。 [、アンロード関数を指定する](specifying-an-unload-function.md)します。
 
-コールアウト ドライバーのアンロード関数では、コールアウト ドライバーがシステム メモリからアンロードの直前には、コールアウト ドライバーのコールアウトはフィルター エンジンから登録しないことを保証します。 コールアウト ドライバーを呼び出すか、 [ **FwpsCalloutUnregisterById0** ](https://msdn.microsoft.com/library/windows/hardware/ff551144)関数または[ **FwpsCalloutUnregisterByKey0** ](https://msdn.microsoft.com/library/windows/hardware/ff551145)関数フィルター エンジンからの引き出し線の登録を解除します。 コールアウト ドライバーはする必要があります、フィルター エンジンからそのすべての吹き出しを登録解除が正常にした後、まで、アンロード関数から返されません。
+コールアウト ドライバーのアンロード関数では、コールアウト ドライバーがシステム メモリからアンロードの直前には、コールアウト ドライバーのコールアウトはフィルター エンジンから登録しないことを保証します。 コールアウト ドライバーを呼び出すか、 [ **FwpsCalloutUnregisterById0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutunregisterbyid0)関数または[ **FwpsCalloutUnregisterByKey0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscalloutunregisterbykey0)関数フィルター エンジンからの引き出し線の登録を解除します。 コールアウト ドライバーはする必要があります、フィルター エンジンからそのすべての吹き出しを登録解除が正常にした後、まで、アンロード関数から返されません。
 
-コールアウト ドライバーは、フィルター エンジンからそのすべてのコールアウトの登録を解除、デバイスを削除する必要がありますが、最初の吹き出しを登録する前に、作成されたオブジェクトします。 Windows Driver Model (WDM) の呼び出しに基づいているコールアウト ドライバー、 [ **IoDeleteDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549083)デバイス オブジェクトを削除する関数。 Windows Driver Frameworks (WDF) の呼び出しに基づいているコールアウト ドライバー、 [ **WdfObjectDelete** ](https://msdn.microsoft.com/library/windows/hardware/ff548734) framework デバイス オブジェクトを削除する関数。
+コールアウト ドライバーは、フィルター エンジンからそのすべてのコールアウトの登録を解除、デバイスを削除する必要がありますが、最初の吹き出しを登録する前に、作成されたオブジェクトします。 Windows Driver Model (WDM) の呼び出しに基づいているコールアウト ドライバー、 [ **IoDeleteDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)デバイス オブジェクトを削除する関数。 Windows Driver Frameworks (WDF) の呼び出しに基づいているコールアウト ドライバー、 [ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) framework デバイス オブジェクトを削除する関数。
 
-コールアウト ドライバーをする必要がありますを呼び出して以前に作成したいずれかのパケット インジェクション ハンドルを破棄しても、 [ **FwpsInjectionHandleDestroy0** ](https://msdn.microsoft.com/library/windows/hardware/ff551181)アンロード、関数から返す前に機能します。
+コールアウト ドライバーをする必要がありますを呼び出して以前に作成したいずれかのパケット インジェクション ハンドルを破棄しても、 [ **FwpsInjectionHandleDestroy0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsinjectionhandledestroy0)アンロード、関数から返す前に機能します。
 
 次に、例を示します。
 

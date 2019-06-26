@@ -6,19 +6,19 @@ ms.date: 08/08/2017
 keywords:
 - OID_WWAN_MODEM_CONFIG_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee6dbf13c9a69f5a19b50463464ae22e26024df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9771208aa2f23f2fd8920b8c38521668c1c3e4c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353734"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376758"
 ---
 # <a name="oidwwanmodemconfiginfo"></a>OID\_WWAN\_モデム\_CONFIG\_情報
 
 
 OID\_WWAN\_モデム\_CONFIG\_情報は、モデムの構成情報に関する情報を取得します。
 
-MBB ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_後で送信する前に、元の要求に必要な[NDIS\_の状態\_WWAN\_モデム\_CONFIG\_情報](ndis-status-wwan-modem-config-info.md)状態通知を含む、 [ **NDIS\_WWAN\_モデム\_構成\_情報**](https://msdn.microsoft.com/library/windows/hardware/07C2BAED-157A-459C-B558-115C0091ECE5)を格納する構造体、 [ **WWAN\_モデム\_CONFIG\_情報**](https://msdn.microsoft.com/library/windows/hardware/14FBFA51-F4A5-417A-8905-241CEA543774)モデムの構成に関する情報を提供する構造体。
+MBB ドライバーは、最初に、非同期的には、NDIS を返すクエリ要求を処理する必要があります\_状態\_INDICATION\_後で送信する前に、元の要求に必要な[NDIS\_の状態\_WWAN\_モデム\_CONFIG\_情報](ndis-status-wwan-modem-config-info.md)状態通知を含む、 [ **NDIS\_WWAN\_モデム\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)を格納する構造体、 [ **WWAN\_モデム\_CONFIG\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_modem_config_info)モデムの構成に関する情報を提供する構造体。
 
 要求のセットには適用されません。
 
@@ -52,9 +52,9 @@ MBB ドライバーは、初期のクエリ中にモデムからまだ有効な�
 
 [NDIS\_状態\_WWAN\_モデム\_CONFIG\_情報](ndis-status-wwan-modem-config-info.md)
 
-[**NDIS\_WWAN\_モデム\_CONFIG\_情報**](https://msdn.microsoft.com/library/windows/hardware/07C2BAED-157A-459C-B558-115C0091ECE5)
+[**NDIS\_WWAN\_モデム\_CONFIG\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)
 
-[**WWAN\_モデム\_CONFIG\_情報**](https://msdn.microsoft.com/library/windows/hardware/14FBFA51-F4A5-417A-8905-241CEA543774)
+[**WWAN\_モデム\_CONFIG\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_modem_config_info)
 
 
 

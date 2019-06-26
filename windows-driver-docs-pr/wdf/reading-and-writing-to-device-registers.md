@@ -4,21 +4,21 @@ description: デバイス レジスターの読み取りと書き込み
 ms.assetid: 58A94C75-94C1-4517-A300-9F04AA7B771A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6584ea910624f07992ab6c3d40e1a86cfb973f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 648f6c6b772b08f9ccb0636c5606a889bfed7f64
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390037"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376314"
 ---
 # <a name="reading-and-writing-to-device-registers"></a>デバイス レジスターの読み取りと書き込み
 
 
-」の説明に従って、ドライバーのレジスタがマップする後[マッピング ハードウェア リソースの検索と](finding-and-mapping-hardware-resources.md)、KMDF ドライバーを使用して、 [ **HAL ライブラリ ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff546644)読み取りし、書き込みをする登録すると、通常 UMDF ドライバー (バージョン 2.0 以降) を使用中に、 [WDF 登録/ポート アクセス関数](https://msdn.microsoft.com/library/windows/hardware/dn265662)します。
+」の説明に従って、ドライバーのレジスタがマップする後[マッピング ハードウェア リソースの検索と](finding-and-mapping-hardware-resources.md)、KMDF ドライバーを使用して、 [ **HAL ライブラリ ルーチン**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))読み取りし、書き込みをする登録すると、通常 UMDF ドライバー (バージョン 2.0 以降) を使用中に、 [WDF 登録/ポート アクセス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfhwaccess/)します。
 
-INF ディレクティブを設定できる UMDF ドライバーでは、メモリ マップト レジスタに直接アクセスする必要があるを場合**UmdfRegisterAccessMode**に**RegisterAccessUsingUserModeMapping**を呼び出して[ **WdfDeviceGetHardwareRegisterMappedAddress** ](https://msdn.microsoft.com/library/windows/hardware/dn265603)ユーザー モードを取得するアドレスをマップします。 フレームワークは、読み取りを検証し、この方法で実行するアクセスの書き込みありません、ため、この手法はレジスタへのアクセスは推奨されません。 UMDF INF ディレクティブの一覧については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
+INF ディレクティブを設定できる UMDF ドライバーでは、メモリ マップト レジスタに直接アクセスする必要があるを場合**UmdfRegisterAccessMode**に**RegisterAccessUsingUserModeMapping**を呼び出して[ **WdfDeviceGetHardwareRegisterMappedAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegethardwareregistermappedaddress)ユーザー モードを取得するアドレスをマップします。 フレームワークは、読み取りを検証し、この方法で実行するアクセスの書き込みありません、ため、この手法はレジスタへのアクセスは推奨されません。 UMDF INF ディレクティブの一覧については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
 
-次の例には、KMDF (1.13 またはそれ以降) または UMDF (2.0 以降) を使用してコンパイルでしたコードが含まれています。 ドライバーの使用方法の例を示します、 [ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)そのメモリ マップト登録リソースを確認し、ユーザー モード アドレス空間にマップするコールバック関数。 例は、メモリの場所にアクセスする方法を示します。
+次の例には、KMDF (1.13 またはそれ以降) または UMDF (2.0 以降) を使用してコンパイルでしたコードが含まれています。 ドライバーの使用方法の例を示します、 [ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)そのメモリ マップト登録リソースを確認し、ユーザー モード アドレス空間にマップするコールバック関数。 例は、メモリの場所にアクセスする方法を示します。
 
 デバイスの登録とポートへのアクセスをする前に、UMDF ドライバーを設定する必要があります、 **UmdfDirectHardwareAccess**ディレクティブを**AllowDirectHardwareAccess**ドライバーの INF ファイルでします。
 

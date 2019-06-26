@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53aea7985010841a83d0447ef7cb073ba4c5b018
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aab738e8870e3cf4197b5f9c82e85abaa80ed2f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377209"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368123"
 ---
 # <a name="kspropertydvdcopyregion"></a>KSPROPERTY\_DVDCOPY\_リージョン
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DVDCOPY\_REGION プロパティは、言語の制限に従って DVD
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567638" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_REGION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567638)"><strong>KS_DVDCOPY_REGION</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_region" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_REGION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_region)"><strong>KS_DVDCOPY_REGION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_REGION プロパティは、言語の制限に従って DVD
 <a name="remarks"></a>コメント
 -------
 
-言語の制限の詳細については、次を参照してください。 [DVD 加入](https://msdn.microsoft.com/library/windows/hardware/ff559512)と[DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
+言語の制限の詳細については、次を参照してください。 [DVD 加入](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-regionalization)と[DVD 著作権保護](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-copyright-protection)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -87,7 +87,7 @@ KSPROPERTY\_DVDCOPY\_REGION プロパティは、言語の制限に従って DVD
 ## <a name="see-also"></a>関連項目
 
 
-[**KS\_DVDCOPY\_REGION**](https://msdn.microsoft.com/library/windows/hardware/ff567638)
+[**KS\_DVDCOPY\_REGION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_region)
 
  
 
