@@ -5,19 +5,19 @@ ms.assetid: 47b29218-f227-4d36-b206-d8bf009252c0
 ms.date: 08/08/2017
 keywords: -接続ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ea6dc1c84d48b2c0daae9e315c8703ed45cbcffb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ac6604509fe3a17c93428e4ea503157cbcfbd4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376420"
 ---
 # <a name="sokeepalive"></a>したがって\_KEEPALIVE
 
 
 SO の状態\_KEEPALIVE ソケット オプションは、接続指向のソケットで、キープ アライブ パケットが送信されるかどうかを決定します。 このソケット オプションは、リッスン ソケットとの接続指向のソケットにのみ適用されます。
 
-WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -136,7 +136,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 
 詳細については、キープ アライブ パケットを使用して、次を参照してください。 *RFC 1122*、セクション 4.2.3.6、"TCP Keep-alive"。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

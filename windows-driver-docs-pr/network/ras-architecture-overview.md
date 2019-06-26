@@ -8,12 +8,12 @@ keywords:
 - アーキテクチャの WDK WAN RAS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9901d484f64a3a1eb56dff45c2758f3b49500400
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bac8fbb5a5b5347790d7900003ed7e37a6c5c8d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343226"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377035"
 ---
 # <a name="ras-architecture-overview"></a>RAS アーキテクチャの概要
 
@@ -63,17 +63,17 @@ TAPI サービス (Tapisrv.exe) のプロセスはテレフォニー サービ�
 
 KMDDSP (Kmddsp.tsp) は、サービス プロバイダー、TAPI サービス プロセスのコンテキストで実行されている DLL です。 KMDDSP TAPI サービスに提示する TSPI インターフェイスを提供する[TAPI 対応アプリケーション](#ddk-tapi-aware-applications-ng)ように[NDISTAPI](#ddk-ndistapi-ng)ユーザー モード アプリケーションと通信できます。
 
-ユーザー モードの要求を対応する TAPI Oid に変換する NDISTAPI 連携 KMDDSP (OID\_TAPI\_*Xxx*)。 TAPI Oid の詳細については、次を参照してください。 [TAPI オブジェクト](https://msdn.microsoft.com/library/windows/hardware/ff564235)します。
+ユーザー モードの要求を対応する TAPI Oid に変換する NDISTAPI 連携 KMDDSP (OID\_TAPI\_*Xxx*)。 TAPI Oid の詳細については、次を参照してください。 [TAPI オブジェクト](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff564235(v=vs.85))します。
 
 ### <a href="" id="ddk-ndptsp-ng"></a>NDPTSP
 
 NDPTSP (Ndptsp.tsp) は、サービス プロバイダー、TAPI サービス プロセスのコンテキストで実行されている DLL です。 NDPTSP TAPI サービスは、TAPI 対応のアプリケーションに提示する TSPI インターフェイスを提供するように[NDPROXY](#ddk-ndproxy-ng)ユーザー モード アプリケーションと通信できます。
 
-TAPI 接続指向の Oid をユーザー モードの要求を変換する NDPROXY 連携 NDPTSP (OID\_CO\_TAPI\_*Xxx*)。 TAPI の詳細については、Oid を接続指向に、参照してください[Connection-Oriented NDIS の TAPI 拡張](https://msdn.microsoft.com/library/windows/hardware/ff570924)します。
+TAPI 接続指向の Oid をユーザー モードの要求を変換する NDPROXY 連携 NDPTSP (OID\_CO\_TAPI\_*Xxx*)。 TAPI の詳細については、Oid を接続指向に、参照してください[Connection-Oriented NDIS の TAPI 拡張](https://docs.microsoft.com/windows-hardware/drivers/network/tapi-extension-oids-for-connection-oriented-ndis)します。
 
 ### <a href="" id="ddk-ndistapi-ng"></a>NDISTAPI
 
-NDISTAPI (Ndistapi.sys) から発行される TAPI 要求を受信する[KMDDSP](#ddk-kmddsp-ng)号餧ェヒェマル[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710) NDIS WAN ミニポート ドライバーに対応する TAPI Oid をルーティングします。 NDISTAPI の詳細については、次を参照してください。 [NDISTAPI 概要](ndistapi-overview.md)します。
+NDISTAPI (Ndistapi.sys) から発行される TAPI 要求を受信する[KMDDSP](#ddk-kmddsp-ng)号餧ェヒェマル[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest) NDIS WAN ミニポート ドライバーに対応する TAPI Oid をルーティングします。 NDISTAPI の詳細については、次を参照してください。 [NDISTAPI 概要](ndistapi-overview.md)します。
 
 ### <a href="" id="ddk-ndproxy-ng"></a>NDPROXY
 

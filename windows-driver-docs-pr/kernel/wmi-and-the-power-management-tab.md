@@ -10,12 +10,12 @@ keywords:
 - プロパティ ページの WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2045ef0e2cc8102c1876275cb7784bfa5620a631
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e12509b6ddec12d9524c2f1801810e5511a281ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386867"
 ---
 # <a name="wmi-and-the-power-management-tab"></a>WMI と電源管理タブ
 
@@ -33,7 +33,7 @@ GUID\_POWER\_デバイス\_*XXX*クラスの Guid が次のようにプロパテ
 
 -   GUID\_POWER\_デバイス\_WAKE\_を有効にします。
 
-    送信待機/ウェイク Irp をアクティブ化またはチェック ボックスを有効にします。 選択した場合、ドライバーを送信する必要があります、 [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766)物理デバイス、そのオブジェクトを要求します。 これにより、外部のイベントに応答システムをスリープ解除するデバイスです。 たとえば、キーボード クラス ドライバーを有効にすると、キーボード デバイスがシステムをスリープ解除キーが押されたときにします。 チェック ボックスを選択していない場合、ドライバーを取り消すか、 **IRP\_MN\_待機\_WAKE**要求。 WMI クラスのデータ ブロックは、チェック ボックスの現在の状態を示す単一のブール値で構成されます。
+    送信待機/ウェイク Irp をアクティブ化またはチェック ボックスを有効にします。 選択した場合、ドライバーを送信する必要があります、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)物理デバイス、そのオブジェクトを要求します。 これにより、外部のイベントに応答システムをスリープ解除するデバイスです。 たとえば、キーボード クラス ドライバーを有効にすると、キーボード デバイスがシステムをスリープ解除キーが押されたときにします。 チェック ボックスを選択していない場合、ドライバーを取り消すか、 **IRP\_MN\_待機\_WAKE**要求。 WMI クラスのデータ ブロックは、チェック ボックスの現在の状態を示す単一のブール値で構成されます。
 
 WMI クエリの要求が送信され、GUID\_POWER\_デバイス\_*XXX* WMI クラスの Guid、ドライバーのプロパティ シートがデバイス マネージャーを開くたびにします。 WMI の変更要求のたびに、チェック ボックスのいずれかの値が送信される、**電源管理** タブの変更。 ユーザーがそれらのドライバーが、レジストリのいずれかのプロパティの現在の値を格納する必要がありますので、ドライバーの読み込みとアンロードされるの間で維持する設定の値を期待します。
 

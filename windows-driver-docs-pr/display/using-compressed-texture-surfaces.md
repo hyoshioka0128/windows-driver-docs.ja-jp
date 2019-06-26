@@ -12,12 +12,12 @@ keywords:
 - rasterizers WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88457f90904660b129113cfa9cba967d83db152c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe7b8cbde8c87ef60cf4f369ff49daad3726bc87
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389753"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373570"
 ---
 # <a name="using-compressed-texture-surfaces"></a>圧縮テクスチャ サーフェスの使用
 
@@ -25,7 +25,7 @@ ms.locfileid: "63389753"
 ## <span id="ddk_using_compressed_texture_surfaces_gg"></span><span id="DDK_USING_COMPRESSED_TEXTURE_SURFACES_GG"></span>
 
 
-DirectDraw のみ同じ DXT 型の 2 つの画面間の blt を行う場合、ドライバーを呼び出して、DDCAPS2\_COPYFOURCC フラグに設定されて、 **dwCaps2**のメンバー、 [ **DDCORECAPS**](https://msdn.microsoft.com/library/windows/hardware/ff549248)構造体。 このフラグが設定されていない場合、DirectDraw HEL は、blt を実行します。 これは、機能は、メモリを表示するサーフェスを (システム メモリ) をバックアップからのテクスチャをダウンロードするためのメカニズムは、このため、画面に表示のコピーの blt をバックアップするために重要です。 したがって、DXT テクスチャ サーフェスを効果的に公開する必要があります、DDCAPS2 をサポートするために、ドライバー\_COPYFOURCC フラグ。
+DirectDraw のみ同じ DXT 型の 2 つの画面間の blt を行う場合、ドライバーを呼び出して、DDCAPS2\_COPYFOURCC フラグに設定されて、 **dwCaps2**のメンバー、 [ **DDCORECAPS**](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)構造体。 このフラグが設定されていない場合、DirectDraw HEL は、blt を実行します。 これは、機能は、メモリを表示するサーフェスを (システム メモリ) をバックアップからのテクスチャをダウンロードするためのメカニズムは、このため、画面に表示のコピーの blt をバックアップするために重要です。 したがって、DXT テクスチャ サーフェスを効果的に公開する必要があります、DDCAPS2 をサポートするために、ドライバー\_COPYFOURCC フラグ。
 
 DDCAPS2\_COPYFOURCC フラグがいくつかの問題。 ドライバーは、少なくともこれらの属性を持つ FOURCC 形式の間での blt を実行できる必要があります。
 
@@ -51,7 +51,7 @@ Blt 操作の DXT 形式に圧縮する場合は、DirectDraw HEL は常に、bl
 
 DirectDraw DDCAPS のセマンティクス\_CANBLTSYSMEM 機能ビットがメモリを表示するシステム メモリからすべての転送、ディスプレイ ドライバーが呼び出されることを意味します。 その結果、ドライバーから呼び出すことがこのような転送 DXT サーフェス DXT 非サーフェスにします。 ドライバーは、DDHAL を返す唯一の要件がここでは\_ドライバー\_NOTHANDLED、圧縮解除を実行できない場合。 これにより、DDERR を伝達する DirectDraw\_アプリケーションにサポートされていないエラー コード。 ドライバーでは、メモリを表示するシステム メモリから転送の圧縮解除を実装することができますが、これは DirectX 6.0 およびそれ以降のバージョンでは必要ありません。
 
-DirectDraw 表示のメモリ割り当てルーチンは、ピクセル形式に関する考慮事項を処理しないでください。 [**HeapVidMemAllocAligned**](https://msdn.microsoft.com/library/windows/hardware/ff567267)、たとえばは、入力パラメーターとしてバイト数が必要です。 同様に、DDHAL\_PLEASEALLOC\_BLOCKSIZE (を参照してください、 **fpVidMem**のメンバー、 [ **DD\_画面\_GLOBAL** ](https://msdn.microsoft.com/library/windows/hardware/ff551726)構造) ことを示す、 **dwBlockSizeX**と**dwBlockSizeY** 、DD のメンバー\_画面\_グローバル構造体はバイト数と、行の数それぞれします。 その結果、ドライバーは、DirectDraw アロケーターを介して表示メモリを割り当て、これらのメカニズムのいずれかを使用している場合、ドライバーは、メモリ使用量、(バイト単位) を単独で DXT サーフェスを計算することである必要があります。 次の例は、この計算を実行する 1 つの方法を示しています。
+DirectDraw 表示のメモリ割り当てルーチンは、ピクセル形式に関する考慮事項を処理しないでください。 [**HeapVidMemAllocAligned**](https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)、たとえばは、入力パラメーターとしてバイト数が必要です。 同様に、DDHAL\_PLEASEALLOC\_BLOCKSIZE (を参照してください、 **fpVidMem**のメンバー、 [ **DD\_画面\_GLOBAL** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global)構造) ことを示す、 **dwBlockSizeX**と**dwBlockSizeY** 、DD のメンバー\_画面\_グローバル構造体はバイト数と、行の数それぞれします。 その結果、ドライバーは、DirectDraw アロケーターを介して表示メモリを割り当て、これらのメカニズムのいずれかを使用している場合、ドライバーは、メモリ使用量、(バイト単位) を単独で DXT サーフェスを計算することである必要があります。 次の例は、この計算を実行する 1 つの方法を示しています。
 
 ```cpp
 DWORD dx, dy;
@@ -87,7 +87,7 @@ dy = (nHeight + 3) >> 2;
 surfsize = dx * dy * blksize;
 ```
 
-アプリケーションを呼び出すと、 **IDirect3DVertexBuffer7::Lock**または**IDirectDrawSurface7::GetSurfaceDesc** (それぞれ、Direct3D、DirectDraw SDK のドキュメント セットで説明) メソッド圧縮の画面で、ドライバーが、DDSD を設定する必要があります\_LINEARSIZE フラグ、 **dwFlags**のメンバー、 [ **DDSURFACEDESC2** ](https://msdn.microsoft.com/library/windows/hardware/ff550340)構造体。 さらに、ドライバーが圧縮された画面のデータが含まれてに割り当てられたバイト数を設定する必要があります、 **dwLinearSize**同じ構造体のメンバー。 (、 **DwLinearSize**共用体のメンバーが存在する、 **lPitch**メンバー、これらのメンバーが相互に排他的では、DDSD\_LINEARSIZE と DDSD\_ピッチ フラグ)。
+アプリケーションを呼び出すと、 **IDirect3DVertexBuffer7::Lock**または**IDirectDrawSurface7::GetSurfaceDesc** (それぞれ、Direct3D、DirectDraw SDK のドキュメント セットで説明) メソッド圧縮の画面で、ドライバーが、DDSD を設定する必要があります\_LINEARSIZE フラグ、 **dwFlags**のメンバー、 [ **DDSURFACEDESC2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550340(v=vs.85))構造体。 さらに、ドライバーが圧縮された画面のデータが含まれてに割り当てられたバイト数を設定する必要があります、 **dwLinearSize**同じ構造体のメンバー。 (、 **DwLinearSize**共用体のメンバーが存在する、 **lPitch**メンバー、これらのメンバーが相互に排他的では、DDSD\_LINEARSIZE と DDSD\_ピッチ フラグ)。
 
 ハードウェアまたはドライバーは、変換し、(通常、順序変更ハードウェア効率的なレイアウトに) を選択した任意の形式で圧縮したテクスチャを格納します。 ただし、ハードウェアまたはドライバーできる必要があります DirectDraw で必要なつまり、アプリケーションが呼び出すたびにされるたびに、元の DXT コード形式に圧縮テクスチャを変換する、 **IDirect3DVertexBuffer7::Lock**メソッド.
 
@@ -101,7 +101,7 @@ wHeight         = dy;
 dwRGBBitCount   = 8;
 ```
 
-ドライバーが検出した場合、システム メモリ DXT 画面などで[ **D3dCreateSurfaceEx**](https://msdn.microsoft.com/library/windows/hardware/ff542840)、作成する前にフェールバックするフィールドをマップする必要がありますの使用。 戻すマッピングです。
+ドライバーが検出した場合、システム メモリ DXT 画面などで[ **D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)、作成する前にフェールバックするフィールドをマップする必要がありますの使用。 戻すマッピングです。
 
 ```cpp
 realWidth        = (wWidth  << 2) / blksize;

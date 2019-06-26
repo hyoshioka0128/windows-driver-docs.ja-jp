@@ -12,12 +12,12 @@ keywords:
 - Irp をデキューする.
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7097e21699724fb9cf539e40110268278803bb9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 480a44b015bd461edfd4e82773b87ecb474df0a4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374154"
 ---
 # <a name="writing-a-startio-routine"></a>StartIo ルーチンの記述
 
@@ -25,13 +25,13 @@ ms.locfileid: "63384531"
 
 
 
-その名前からわかるように、 [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチンは、物理デバイスの I/O 操作を開始を担当します。
+その名前からわかるように、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチンは、物理デバイスの I/O 操作を開始を担当します。
 
 最下位レベルのほとんどのドライバーを提供、 *StartIo*ルーチンとデバイスのシステム提供のキューにキューの Irp に I/O マネージャーに依存します。 設定して、独自の補足の IRP キューを管理する最下位レベルの一部のドライバーが設計されていますが、通常はも提供もこれらを*StartIo*ルーチン。 (補足的なキューの詳細については、次を参照してください[セットアップ、およびデバイスのキューを使用して](setting-up-and-using-device-queues.md)と[を管理するデバイスのキュー](managing-device-queues.md)。)。
 
 Fsd に対して表示される、PnP 関数とフィルター ドライバーなどのより高度なドライバーがめったにありませんが、 *StartIo*ルーチンのため、パフォーマンスが低下することができます。 代わりに、ほとんどのファイル システム ドライバーは、セットアップし、Irp の内部キューを維持します。 その他の高度なドライバーは Irp の内部キューがあるか、またはそのディスパッチ ルーチンから下位のドライバーに Irp を渡すだけです。 参照してください[Driver-Managed IRP キュー](driver-managed-irp-queues.md)詳細についてはします。
 
-使用することができます、 [ **IoSetStartIoAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff550330)ルーチンを変更する属性の設定を*StartIo*ドライバーの処理します。
+使用することができます、 [ **IoSetStartIoAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iosetstartioattributes)ルーチンを変更する属性の設定を*StartIo*ドライバーの処理します。
 
 このセクションでは、次のトピックについて説明します。
 

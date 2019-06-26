@@ -9,12 +9,12 @@ keywords:
 - WDK BDA フィルターの構成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67271ef4282cf2e8634f16dc35bafe50db68bfd6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5676193716a52220377bff23cca7514b20369ef2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386643"
 ---
 # <a name="configuring-a-bda-filter"></a>BDA フィルターの構成
 
@@ -22,7 +22,7 @@ ms.locfileid: "63374188"
 
 
 
-BDA ミニドライバーのメソッドの要求の処理、 [KSMETHODSETID\_BdaDeviceConfiguration](https://msdn.microsoft.com/library/windows/hardware/ff563404)フィルターの現在のグラフでミニドライバーのフィルターのインスタンスを構成する方法を設定します。
+BDA ミニドライバーのメソッドの要求の処理、 [KSMETHODSETID\_BdaDeviceConfiguration](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdadeviceconfiguration)フィルターの現在のグラフでミニドライバーのフィルターのインスタンスを構成する方法を設定します。
 
 2 つ、KSMETHODSETID のメソッドの次のコード スニペットで\_BDA サポート ライブラリに直接ディスパッチ BdaDeviceConfiguration メソッドのセットと残りのメソッドにディスパッチする前にインターセプト BDA ミニドライバーで最初BDA サポート ライブラリ。
 
@@ -99,7 +99,7 @@ errExit:
 }
 ```
 
-KSMETHOD\_BDA\_作成\_トポロジ メソッド要求は、ミニドライバーの CFilter::CreateTopology メソッドを呼び出します。 このメソッドは、BDA サポート ライブラリ関数を呼び出す[ **BdaMethodCreateTopology** ](https://msdn.microsoft.com/library/windows/hardware/ff556471)フィルター ピンの間のトポロジを作成します。 実際には、この関数は、その他のプロパティ セットのフィルターの既知の接続を反映するリング 3 でトポロジ構造を作成します。 BDA ミニドライバーは、KSMETHOD をインターセプトする必要があります\_BDA\_作成\_メソッド要求のかどうかそのミニドライバー送信する必要が特別な手順については、ハードウェアに接続するときに特定の前のコード スニペットに示すトポロジ入力ピンが 1 つからオフに変換し暗証番号 (pin) の種類--BDA デバイスがハードウェアの多重を実行し、任意の数の出力ピンを作成する場合などです。
+KSMETHOD\_BDA\_作成\_トポロジ メソッド要求は、ミニドライバーの CFilter::CreateTopology メソッドを呼び出します。 このメソッドは、BDA サポート ライブラリ関数を呼び出す[ **BdaMethodCreateTopology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethodcreatetopology)フィルター ピンの間のトポロジを作成します。 実際には、この関数は、その他のプロパティ セットのフィルターの既知の接続を反映するリング 3 でトポロジ構造を作成します。 BDA ミニドライバーは、KSMETHOD をインターセプトする必要があります\_BDA\_作成\_メソッド要求のかどうかそのミニドライバー送信する必要が特別な手順については、ハードウェアに接続するときに特定の前のコード スニペットに示すトポロジ入力ピンが 1 つからオフに変換し暗証番号 (pin) の種類--BDA デバイスがハードウェアの多重を実行し、任意の数の出力ピンを作成する場合などです。
 
  
 

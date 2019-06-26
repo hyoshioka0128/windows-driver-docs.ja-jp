@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f3532ff933f6912db02381b2c0581ae24b1033df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28052e758d5951ac77eb1e0e13bbd6341d0f9ca5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340018"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387231"
 ---
 # <a name="oidwditaskp2psendresponseactionframe"></a>OID\_WDI\_タスク\_P2P\_送信\_応答\_アクション\_フレーム
 
@@ -57,13 +57,13 @@ WDI インターフェイス自体は変更されずは引き続き以前と同�
 
 | TLV                                                                                                               | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                                    |
 |-------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_ACTION\_FRAME\_RESPONSE\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn897859)   |                                |          | フレームのアクションの種類、対象のピア アダプター、およびダイアログのトークンのデバイスのアドレスなどのパラメーター。                                                 |
-| [**WDI\_TLV\_P2P\_GO\_NEGOTIATION\_RESPONSE\_INFO**](https://msdn.microsoft.com/library/windows/hardware/dn897942)           |                                | x        | ネゴシエーション応答のパラメーターを参照してください。 WfdRequestFrameType が移動のネゴシエーション応答の場合、ポートだけこの構造体で検証されます。            |
-| [**WDI\_TLV\_P2P\_移動\_ネゴシエーション\_確認\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn897880)   |                                | x        | ネゴシエーション確認パラメーターを参照してください。 WfdRequestFrameType が移動のネゴシエーション確認の場合、ポートだけこの構造体で検証されます。    |
-| [**WDI\_TLV\_P2P\_INVITATION\_RESPONSE\_INFO**](https://msdn.microsoft.com/library/windows/hardware/dn897968)                    |                                | x        | 招待の応答のパラメーター。 WfdRequestFrameType が応答を場合、ポートはこの構造体を調べるだけ必要があります。                   |
-| [**WDI\_TLV\_P2P\_プロビジョニング\_検出\_応答\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn897983) |                                | x        | 検出応答のパラメーターをプロビジョニングします。 WfdRequestFrameType がプロビジョニング検出の応答の場合、ポートはこの構造を調べてのみものとします。 |
-| [**WDI\_TLV\_P2P\_受信\_フレーム\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn897957)                |                                |          | 以前に受信した P2P アクション フレームから指定された情報です。 ポートに受信した指示が提供されます。            |
-| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076)                                         |                                | x        | ポートによって送信されたフレームに含める必要がある 1 つまたは複数の i。                                                                           |
+| [**WDI\_TLV\_P2P\_ACTION\_FRAME\_RESPONSE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-action-frame-response-parameters)   |                                |          | フレームのアクションの種類、対象のピア アダプター、およびダイアログのトークンのデバイスのアドレスなどのパラメーター。                                                 |
+| [**WDI\_TLV\_P2P\_GO\_NEGOTIATION\_RESPONSE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-negotiation-response-info)           |                                | x        | ネゴシエーション応答のパラメーターを参照してください。 WfdRequestFrameType が移動のネゴシエーション応答の場合、ポートだけこの構造体で検証されます。            |
+| [**WDI\_TLV\_P2P\_移動\_ネゴシエーション\_確認\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-negotiation-confirmation-info)   |                                | x        | ネゴシエーション確認パラメーターを参照してください。 WfdRequestFrameType が移動のネゴシエーション確認の場合、ポートだけこの構造体で検証されます。    |
+| [**WDI\_TLV\_P2P\_INVITATION\_RESPONSE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-invitation-response-info)                    |                                | x        | 招待の応答のパラメーター。 WfdRequestFrameType が応答を場合、ポートはこの構造体を調べるだけ必要があります。                   |
+| [**WDI\_TLV\_P2P\_プロビジョニング\_検出\_応答\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-provision-discovery-response-info) |                                | x        | 検出応答のパラメーターをプロビジョニングします。 WfdRequestFrameType がプロビジョニング検出の応答の場合、ポートはこの構造を調べてのみものとします。 |
+| [**WDI\_TLV\_P2P\_受信\_フレーム\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-incoming-frame-information)                |                                |          | 以前に受信した P2P アクション フレームから指定された情報です。 ポートに受信した指示が提供されます。            |
+| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)                                         |                                | x        | ポートによって送信されたフレームに含める必要がある 1 つまたは複数の i。                                                                           |
 
  
 
@@ -72,7 +72,7 @@ WDI インターフェイス自体は変更されずは引き続き以前と同�
 
 [NDIS\_STATUS\_WDI\_INDICATION\_P2P\_SEND\_RESPONSE\_ACTION\_FRAME\_COMPLETE](ndis-status-wdi-indication-p2p-send-response-action-frame-complete.md)
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

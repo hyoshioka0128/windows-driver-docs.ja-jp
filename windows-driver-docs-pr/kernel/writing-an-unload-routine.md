@@ -16,12 +16,12 @@ keywords:
 - ドライバーの再読み込み WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 814cbfd448b1d7d3de0f731036537a1e807fc73d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a595acf53b68821110913161b7dee2997803d63c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355998"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374127"
 ---
 # <a name="writing-an-unload-routine"></a>アンロード ルーチンの記述
 
@@ -29,9 +29,9 @@ ms.locfileid: "63355998"
 
 
 
-置換、またはアンロード、およびシステムの実行中の再読み込みが可能な任意のドライバーが必要、 [*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチン。 WDM ドライバーがすべて必要があります*アンロード*ルーチン。
+置換、またはアンロード、およびシステムの実行中の再読み込みが可能な任意のドライバーが必要、 [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン。 WDM ドライバーがすべて必要があります*アンロード*ルーチン。
 
-*アンロード*ルーチンが非 WDM ドライバーでは、省略可能な[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)は用意されていないドライバーの失敗、*アンロード*ルーチン。
+*アンロード*ルーチンが非 WDM ドライバーでは、省略可能な[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)は用意されていないドライバーの失敗、*アンロード*ルーチン。
 
 このセクションでは、次のトピックについて説明します。
 

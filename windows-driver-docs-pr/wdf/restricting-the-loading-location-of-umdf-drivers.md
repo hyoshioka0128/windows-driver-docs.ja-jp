@@ -11,19 +11,19 @@ keywords:
 - INF ファイルの場所を読み込んで、WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4232d013b5cd416928241301aa7d1d4386f06aaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac2debb2b190ef3a599c05643b576d6b4fb38b9c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325177"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376274"
 ---
 # <a name="restricting-the-loading-location-of-umdf-drivers"></a>UMDF ドライバーの読み込み場所の制限
 
 
 UMDF プラットフォームの %systemroot% 以外の任意の場所からのメインの UMDF ドライバー バイナリの読み込みに失敗\\System32\\ドライバー\\Umdf ディレクトリ。 そのため、UMDF INF ファイルは、そのディレクトリに UMDF ドライバーをインストールする場所を制限する必要があります。 UMDF ドライバーは、特権のないユーザーが改ざんされないことによりもこのディレクトリにインストールします。
 
-%Systemroot% に UMDF ドライバー バイナリをインストールする\\System32\\ドライバー\\Umdf、UMDF ドライバーの INF ファイルを含める必要があります、 [ **INF DestinationDirs セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547383)次のコード例と同様です。
+%Systemroot% に UMDF ドライバー バイナリをインストールする\\System32\\ドライバー\\Umdf、UMDF ドライバーの INF ファイルを含める必要があります、 [ **INF DestinationDirs セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)次のコード例と同様です。
 
 ```cpp
 [DestinationDirs]
@@ -37,7 +37,7 @@ UMDriverCopy=12,UMDF ; copies to drivers\umdf
 WUDFOsrUsbDriver.dll
 ```
 
-[ **CopyFiles ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)も参照する必要があります、 **UMDriverCopy**セクションは、ソースからコピーするオペレーティング システム用の UMDF ドライバー バイナリの一覧を示します次の例に示すように、先にメディア。
+[ **CopyFiles ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)も参照する必要があります、 **UMDriverCopy**セクションは、ソースからコピーするオペレーティング システム用の UMDF ドライバー バイナリの一覧を示します次の例に示すように、先にメディア。
 
 ```cpp
 [OsrUsb_Install.NT]

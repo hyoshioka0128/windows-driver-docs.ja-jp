@@ -8,12 +8,12 @@ keywords:
 - チェンジャー ドライバーのクラス ドライバー WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91613ffdd4037b6622537eff242a6d9cd72c25a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a335cd9dec3c85127de78dee5c7f919a1df6315b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390208"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386805"
 ---
 # <a name="the-changer-class-driver"></a>チェンジャー クラス ドライバー
 
@@ -33,9 +33,9 @@ ms.locfileid: "63390208"
 
 -   呼び出し **チェンジャー * * * Xxx* miniclass ドライバーのルーチンをデバイスに固有の情報を割り当てること、およびその他の要求を受信するチェンジャーを準備する空き領域の量を決定します。
 
--   デバイス非依存の前処理を実行します[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)要求、呼び出しの適切な **チェンジャー * * * Xxx* miniclass ルーチンでは、要求が完了するとします。
+-   デバイス非依存の前処理を実行します[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求、呼び出しの適切な **チェンジャー * * * Xxx* miniclass ルーチンでは、要求が完了するとします。
 
--   デバイスに依存しないはエラーの前処理を実行し、呼び出す miniclass ドライバーの[ **ChangerError** ](https://msdn.microsoft.com/library/windows/hardware/ff551418)デバイスに固有の処理ルーチン。
+-   デバイスに依存しないはエラーの前処理を実行し、呼び出す miniclass ドライバーの[ **ChangerError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changererror)デバイスに固有の処理ルーチン。
 
 -   呼び出し **チェンジャー * * * Xxx*製品データを取得する miniclass ドライバー ルーチンは要素の状態を変更またはクエリの照会またはボリュームのデータにタグを付けます。
 

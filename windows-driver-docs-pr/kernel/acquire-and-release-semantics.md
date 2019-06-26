@@ -10,12 +10,12 @@ keywords:
 - セマンティクスの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d7d319514ffff2e6995e142bb93b31c0925604
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df00cf901bb64b0406ab6b658d08b8627b261238
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339105"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387017"
 ---
 # <a name="acquire-and-release-semantics"></a>取得と解放のセマンティクス
 
@@ -37,7 +37,7 @@ ms.locfileid: "63339105"
 
 などのアトミック操作を**Interlocked * Xxx*** ルーチンの実行が両方とも取得および解放のセマンティクスを既定では。 ただし、Itanium ベースのプロセッサは、取得のみがやのみ解放のセマンティクスを両方が指定されているよりも高速の操作を実行します。 そのため、システムが提供**Interlocked*Xxx*Acquire**と**Interlocked*Xxx*リリース**のいくつかのバージョン**Interlocked * Xxx*** ルーチン。
 
-たとえば、 [ **InterlockedIncrementAcquire** ](https://msdn.microsoft.com/library/windows/hardware/ff547916)ルーチンは、変数をインクリメントするためのセマンティクスを取得します。 上記のコード例を次のように書き換える: 場合
+たとえば、 [ **InterlockedIncrementAcquire** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547916(v=vs.85))ルーチンは、変数をインクリメントするためのセマンティクスを取得します。 上記のコード例を次のように書き換える: 場合
 
 ```cpp
  InterlockedIncrementAcquire(&a);
@@ -47,7 +47,7 @@ ms.locfileid: "63339105"
 
 他のプロセッサがの増分値を表示して常に`a`のインクリメントする前に`b`と`c`します。
 
-同様に、 [ **InterlockedIncrementRelease** ](https://msdn.microsoft.com/library/windows/hardware/ff547919)ルーチンは、変数をインクリメントするためのセマンティクスをリリースします。 コード例は、次のように、もう一度:unchecked: 場合
+同様に、 [ **InterlockedIncrementRelease** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547919(v=vs.85))ルーチンは、変数をインクリメントするためのセマンティクスをリリースします。 コード例は、次のように、もう一度:unchecked: 場合
 
 ```cpp
  a++;
@@ -76,19 +76,19 @@ ms.locfileid: "63339105"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547910" data-raw-source="[&lt;strong&gt;InterlockedIncrement&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547910)"><strong>InterlockedIncrement</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547916" data-raw-source="[&lt;strong&gt;InterlockedIncrementAcquire&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547916)"><strong>InterlockedIncrementAcquire</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547919" data-raw-source="[&lt;strong&gt;InterlockedIncrementRelease&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547919)"><strong>InterlockedIncrementRelease</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedincrement" data-raw-source="[&lt;strong&gt;InterlockedIncrement&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedincrement)"><strong>InterlockedIncrement</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547916(v=vs.85)" data-raw-source="[&lt;strong&gt;InterlockedIncrementAcquire&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547916(v=vs.85))"><strong>InterlockedIncrementAcquire</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547919(v=vs.85)" data-raw-source="[&lt;strong&gt;InterlockedIncrementRelease&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547919(v=vs.85))"><strong>InterlockedIncrementRelease</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547871" data-raw-source="[&lt;strong&gt;InterlockedDecrement&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547871)"><strong>InterlockedDecrement</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547875" data-raw-source="[&lt;strong&gt;InterlockedDecrementAcquire&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547875)"><strong>InterlockedDecrementAcquire</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547883" data-raw-source="[&lt;strong&gt;InterlockedDecrementRelease&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547883)"><strong>InterlockedDecrementRelease</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockeddecrement" data-raw-source="[&lt;strong&gt;InterlockedDecrement&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockeddecrement)"><strong>InterlockedDecrement</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547875(v=vs.85)" data-raw-source="[&lt;strong&gt;InterlockedDecrementAcquire&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547875(v=vs.85))"><strong>InterlockedDecrementAcquire</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547883(v=vs.85)" data-raw-source="[&lt;strong&gt;InterlockedDecrementRelease&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547883(v=vs.85))"><strong>InterlockedDecrementRelease</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547853" data-raw-source="[&lt;strong&gt;InterlockedCompareExchange&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547853)"><strong>InterlockedCompareExchange</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547857" data-raw-source="[&lt;strong&gt;InterlockedCompareExchangeAcquire&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547857)"><strong>InterlockedCompareExchangeAcquire</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547867" data-raw-source="[&lt;strong&gt;InterlockedCompareExchangeRelease&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547867)"><strong>InterlockedCompareExchangeRelease</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedcompareexchange" data-raw-source="[&lt;strong&gt;InterlockedCompareExchange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedcompareexchange)"><strong>InterlockedCompareExchange</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547857(v=vs.85)" data-raw-source="[&lt;strong&gt;InterlockedCompareExchangeAcquire&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547857(v=vs.85))"><strong>InterlockedCompareExchangeAcquire</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547867(v=vs.85)" data-raw-source="[&lt;strong&gt;InterlockedCompareExchangeRelease&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff547867(v=vs.85))"><strong>InterlockedCompareExchangeRelease</strong></a></p></td>
 </tr>
 </tbody>
 </table>

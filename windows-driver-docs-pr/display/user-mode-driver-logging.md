@@ -4,12 +4,12 @@ description: ビデオ メモリのより実用的な内訳を取得するには
 ms.assetid: E850E148-821D-4544-A778-00B1B9D13964
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 291bc3072a934958d816240d2e563e0f90e14792
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa4ebe2158b0299a4d5a29937e0347bb0a9809ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359131"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373589"
 ---
 # <a name="span-iddisplayuser-modedriverloggingspanuser-mode-driver-logging"></a><span id="display.user-mode_driver_logging"></span>ユーザー モード ドライバーのログ記録
 
@@ -38,12 +38,12 @@ DDI を使用するには、内部メモリの断片化またはサーフェス�
 
 これらの関数を使用して、ディスプレイ ドライバーの列挙、およびユーザー モードでイベントを記録する Umdprovider.h ヘッダーからの構造体。
 
--   [**UMDEtwLogMapAllocation** ](https://msdn.microsoft.com/library/windows/hardware/jj542437)関数
--   [**UMDEtwLogUnmapAllocation** ](https://msdn.microsoft.com/library/windows/hardware/jj542438)関数
--   [**UMDEtwRegister** ](https://msdn.microsoft.com/library/windows/hardware/jj542439)関数
--   [**UMDEtwUnregister** ](https://msdn.microsoft.com/library/windows/hardware/jj542440)関数
--   [**UMDETW\_割り当て\_SEMANTIC** ](https://msdn.microsoft.com/library/windows/hardware/jj542441)列挙型
--   [**UMDETW\_割り当て\_使用状況**](https://msdn.microsoft.com/library/windows/hardware/jj542442)構造体
+-   [**UMDEtwLogMapAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwlogmapallocation)関数
+-   [**UMDEtwLogUnmapAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwlogunmapallocation)関数
+-   [**UMDEtwRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwregister)関数
+-   [**UMDEtwUnregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/nf-umdprovider-umdetwunregister)関数
+-   [**UMDETW\_割り当て\_SEMANTIC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/ne-umdprovider-_umdetw_allocation_semantic)列挙型
+-   [**UMDETW\_割り当て\_使用状況**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/umdprovider/ns-umdprovider-_umdetw_allocation_usage)構造体
 
 また、Umdetw.h ヘッダーを参照してください。
 

@@ -11,12 +11,12 @@ keywords:
 - WDF ベース コールアウト ドライバー WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdeb8eb4b248d1976be8c70c9b7aa87c67627789
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b5c662a1d1f5cd670fcd5b5ad6dd5dc6536124c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357390"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374936"
 ---
 # <a name="creating-a-device-object"></a>デバイス オブジェクトの作成
 
@@ -25,7 +25,7 @@ ms.locfileid: "63357390"
 
 ### <a name="wdm-based-callout-drivers"></a>WDM ベース コールアウト ドライバー
 
-呼び出すことによって、デバイス オブジェクトを作成、コールアウト ドライバーは、WDM に基づいている場合、 [ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)関数。 例:
+呼び出すことによって、デバイス オブジェクトを作成、コールアウト ドライバーは、WDM に基づいている場合、 [ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)関数。 次に、例を示します。
 
 ```C++
 PDEVICE_OBJECT deviceObject;
@@ -60,7 +60,7 @@ NTSTATUS
 
 ### <a name="wdf-based-callout-drivers"></a>WDF ベース コールアウト ドライバー
 
-呼び出して framework デバイス オブジェクトを作成、コールアウト ドライバーは WDF に基づいている場合、 [ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)関数。 そのコールアウト フィルター エンジンに登録するには、WDF ベースのコールアウト ドライバーは、framework デバイス オブジェクトに関連付けられている WDM デバイス オブジェクトへのポインターを取得する必要があります。 WDF ベースのコールアウト ドライバーが呼び出すことによってこの WDM デバイス オブジェクトへのポインターを取得、 [ **WdfDeviceWdmGetDeviceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff546942)関数。 次に、例を示します。
+呼び出して framework デバイス オブジェクトを作成、コールアウト ドライバーは WDF に基づいている場合、 [ **WdfDeviceCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)関数。 そのコールアウト フィルター エンジンに登録するには、WDF ベースのコールアウト ドライバーは、framework デバイス オブジェクトに関連付けられている WDM デバイス オブジェクトへのポインターを取得する必要があります。 WDF ベースのコールアウト ドライバーが呼び出すことによってこの WDM デバイス オブジェクトへのポインターを取得、 [ **WdfDeviceWdmGetDeviceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmgetdeviceobject)関数。 例:
 
 ```C++
 WDFDEVICE wdfDevice;

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b113b6958355a6bc9539758f3aa758f640775cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f939950cbfdb9ea471847276ee83bf73da08d60f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332612"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391612"
 ---
 # <a name="kspropertysysaudiodevicefriendlyname"></a>KSPROPERTY\_SYSAUDIO\_デバイス\_フレンドリ\_名
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_デバイス\_フレンドリ\_NAME プロパティは、�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a>+ ULONG</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a>+ ULONG</p></td>
 <td align="left"><p>LPWSTR</p></td>
 </tr>
 </tbody>
@@ -69,7 +69,7 @@ KSPROPERTY\_SYSAUDIO\_デバイス\_フレンドリ\_NAME プロパティは、�
 
 KSPROPERTY\_SYSAUDIO\_デバイス\_フレンドリ\_プロパティの名前の要求がステータスを返します\_を正常に完了したことを示すために成功します。 それ以外の場合、要求は、適切なエラー状態コードを返します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -88,7 +88,7 @@ KSPROPERTY\_SYSAUDIO\_デバイス\_フレンドリ\_プロパティの名前の
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
 [**KSPROPERTY\_SYSAUDIO\_デバイス\_数**](ksproperty-sysaudio-device-count.md)
 

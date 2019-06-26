@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ba54a090e39a5c976b8432f8ac5f93cc388fcc55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 406c326784aa2a1c9f1060d4b3c7dc5ddd71fcab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390747"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374226"
 ---
 # <a name="kscategorymultiplexer"></a>KSCATEGORY_MULTIPLEXER
 
 
-KSCATEGORY_MULTIPLEXER[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)マルチプレクサーのデバイスの機能のカテゴリ (KS)。
+KSCATEGORY_MULTIPLEXER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)マルチプレクサーのデバイスの機能のカテゴリ (KS)。
 
 <table>
 <colgroup>
@@ -58,9 +58,9 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-Multiplexers については、次を参照してください。[トポロジ フィルター](https://msdn.microsoft.com/library/windows/hardware/ff538552)します。
+Multiplexers については、次を参照してください。[トポロジ フィルター](https://docs.microsoft.com/windows-hardware/drivers/audio/topology-filters)します。
 
-KSCATEGORY_MULTIPLEXER 機能のカテゴリの詳細については、次を参照してください。[エンコーダーのインストールと登録](https://msdn.microsoft.com/library/windows/hardware/ff559551)します。
+KSCATEGORY_MULTIPLEXER 機能のカテゴリの詳細については、次を参照してください。[エンコーダーのインストールと登録](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-installation-and-registration)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 96d8e707a44bdb5f5f6944f3226e90196f13e46f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a9b0a869b6993cae7d9494e7f542244f138abe1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386413"
 ---
 # <a name="headerpath-xml-element"></a>headerPath XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **HeaderPath** XML 要素を DPInst は DPInst EULA ページと DPInst のインストール ページの右上隅に表示されるカスタム ヘッダー ビットマップのソース ファイル名を指定します。
 

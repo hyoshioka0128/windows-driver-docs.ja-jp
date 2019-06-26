@@ -4,12 +4,12 @@ description: WIA ビルド環境のセットアップ
 ms.assetid: 0e961aca-1b0c-483c-9269-e656daee3e5e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce4350d2b6305bdbd53e68032fae6947ed64557
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6fb63098f4f8e228a17254f97fcddeda579361a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366996"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386057"
 ---
 # <a name="setting-up-the-wia-build-environment"></a>WIA ビルド環境のセットアップ
 
@@ -23,7 +23,7 @@ ms.locfileid: "63366996"
 
 [WIA Microdriver の構築](building-a-wia-microdriver.md)
 
-WDK の環境でのドライバーをビルドする方法の詳細については、次を参照してください。[構築ドライバー ツール](https://msdn.microsoft.com/library/windows/hardware/ff552950)します。
+WDK の環境でのドライバーをビルドする方法の詳細については、次を参照してください。[構築ドライバー ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-building-drivers)します。
 
  
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: db83a1fffaf2605b93a6aa91ee37e8779bfe35c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d62c0266e5673b8d9b8bec98080a49bd2e46bfeb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353830"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377273"
 ---
 # <a name="devpkeydrvpkgmodel"></a>DEVPKEY_DrvPkg_Model
 
 
-DEVPKEY_DrvPkg_Model デバイス[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)プロパティ インスタンスのデバイス モデルの名前を表します。
+DEVPKEY_DrvPkg_Model デバイス[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)プロパティ インスタンスのデバイス モデルの名前を表します。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ DEVPKEY_DrvPkg_Model デバイス[ドライバー パッケージ](https://msdn.
 <a name="remarks"></a>注釈
 -------
 
-DEVPKEY_DrvPkg_Model によっての値を設定することができます、 [ **INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)に含まれている、 [ **INF *DDInstall*セクション** ](https://msdn.microsoft.com/library/windows/hardware/ff547344)のデバイスをインストールする INF ファイル。 DEVPKEY_DrvPkg_Model プロパティの値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)します。
+DEVPKEY_DrvPkg_Model によっての値を設定することができます、 [ **INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)に含まれている、 [ **INF *DDInstall*セクション** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)のデバイスをインストールする INF ファイル。 DEVPKEY_DrvPkg_Model プロパティの値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)します。
 
 INF を使用する方法の例を次に**AddProperty** 、INF によってインストールされているデバイスの DEVPKEY_DrvPkg_Model の値を設定するディレクティブ*DDInstall* "SampleDDInstallSection"のセクションします。
 
@@ -71,7 +71,7 @@ DeviceModel,,,,"DSC-530"
 ...
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -94,11 +94,11 @@ DeviceModel,,,,"DSC-530"
 ## <a name="see-also"></a>関連項目
 
 
-[**INF AddProperty ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546318)
+[**INF AddProperty ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
 
-[**INF *DDInstall*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 
