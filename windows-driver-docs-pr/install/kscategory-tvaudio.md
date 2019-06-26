@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f69f125f9b47a424ce294b3096f965007e8ec9f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 528a83c13ba086a2557a1ce68b4be3ce83bfa6f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362165"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366676"
 ---
 # <a name="kscategorytvaudio"></a>KSCATEGORY_TVAUDIO
 
 
-KSCATEGORY_TVAUDIO[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)テレビのオーディオ デバイスの機能のカテゴリ (KS)。
+KSCATEGORY_TVAUDIO[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)テレビのオーディオ デバイスの機能のカテゴリ (KS)。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ KS デバイス用のドライバーは、デバイスが KSCATEGORY_TVAUDIO 機
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)、[フィルターのグラフ例](https://msdn.microsoft.com/library/windows/hardware/ff559605)、および[エンコーダー デバイス](https://msdn.microsoft.com/library/windows/hardware/ff559535)します。
+ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)、[フィルターのグラフ例](https://docs.microsoft.com/windows-hardware/drivers/stream/filter-graph-examples)、および[エンコーダー デバイス](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-devices)します。
 
 <a name="requirements"></a>要件
 ------------

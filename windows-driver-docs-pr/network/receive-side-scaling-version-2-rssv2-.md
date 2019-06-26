@@ -5,12 +5,12 @@ ms.assetid: 192CAA41-0D17-4C06-8F13-68EA7C26D023
 keywords: 受信側のスケーリングのバージョン 2、RSSv2、受信側のスケーリングのバージョン 2 WDK、RSSv2 ネットワーク ドライバー
 ms.date: 10/12/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7dad30280a68c572c982e119b16bbce0b8293d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da4d6482f7d27203e12f5c20ed2963c00522e673
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368469"
 ---
 # <a name="receive-side-scaling-version-2-rssv2"></a>Receive Side Scaling Version 2 (RSSv2)
 
@@ -33,18 +33,18 @@ RSSv2 は、RSSv1 と比較して、CPU 負荷の測定と間接指定テーブ�
 | RSSv1 | 第 1 世代は受信側のスケーリング メカニズムです。 使用して[OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)します。 |
 | RSSv2 | 第 2 世代は受信側のスケーリング メカニズムは、Windows 10、バージョン 1803 でサポートされているし、後で、このトピックで説明です。 |
 | エンティティのスケーリング| ミニポート アダプター自体ネイティブ RSS モード、または、VPort RSSv2 モードにします。 |
-| ITE | スケーリングの特定のエンティティの間接指定テーブル エントリ (項目)。 Ite 用 VPort ごとの合計数を超えることはできません**NumberOfIndirectionTableEntriesPerNonDefaultPFVPort**または**NumberOfIndirectionTableEntriesForDefaultVPort** VMQ モードまたはネイティブ RSS に 128大文字にします。 **NumberOfIndirectionTableEntriesPerNonDefaultPFVPort**と**NumberOfIndirectionTableEntriesForDefaultVPort**のメンバーである、 [NDIS_NIC_SWITCH_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/ff566583)構造体。 |
+| ITE | スケーリングの特定のエンティティの間接指定テーブル エントリ (項目)。 Ite 用 VPort ごとの合計数を超えることはできません**NumberOfIndirectionTableEntriesPerNonDefaultPFVPort**または**NumberOfIndirectionTableEntriesForDefaultVPort** VMQ モードまたはネイティブ RSS に 128大文字にします。 **NumberOfIndirectionTableEntriesPerNonDefaultPFVPort**と**NumberOfIndirectionTableEntriesForDefaultVPort**のメンバーである、 [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。 |
 | スケーリング モード | 実行時にその ite 用の処理方法を制御する VPort あたり vmswitch ポリシー。 これには、静的 (負荷の変化により ITE 移動がありません) または動的 (拡張および現在のトラフィックの負荷に応じて結合) を指定できます。 |
 | キュー | 基になるハードウェア オブジェクト (キュー)、項目をバックアップします。 構成キューは、ハードウェアと間接指定テーブルによって、ite 用の複数をバックアップする可能性があります。 既定のキューで使用される 1 つ以上のキューの合計数は、通常、管理者によって設定された構成済みの制限を超えることはできません。 |
 | 既定のプロセッサ | ハッシュを計算できませんパケットを受信するプロセッサ。 各 VPort では、既定のプロセッサを搭載します。
-| プライマリのプロセッサ | として指定したプロセッサ、 **ProcessorAffinity**のメンバー、 [NDIS_NIC_SWITCH_VPORT_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/hh451597) VPort の作成中に構造体。 このプロセッサは、実行時に更新して、VMQ トラフィックの誘導先を指定します。 |
+| プライマリのプロセッサ | として指定したプロセッサ、 **ProcessorAffinity**のメンバー、 [NDIS_NIC_SWITCH_VPORT_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters) VPort の作成中に構造体。 このプロセッサは、実行時に更新して、VMQ トラフィックの誘導先を指定します。 |
 | ソースの CPU | 項目が現在マップされているプロセッサ。 |
 | ターゲット CPU | 項目が再マップされる (RSSv2 を使用して) プロセッサ。 |
 | アクターの CPU | 要求が行われる中でどの RSSv2 プロセッサ。 |
 
 ## <a name="advertising-rssv2-capability-in-a-miniport-driver"></a>ミニポート ドライバーで RSSv2 機能を提供
 
-ミニポート ドライバーを設定して RSSv2 サポートを提供する、 **CapabilitiesFlags**のメンバー、 [NDIS_RECEIVE_SCALE_CAPABILITIES](https://msdn.microsoft.com/library/windows/hardware/ff567220)構造体、 *NDIS_RSS_CAPS_SUPPORTS_INDEPENDENT_ENTRY_MOVE*フラグ。 この機能は RSSv2 の CPU の負荷分散と共に機能を有効にするために必要、 *NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_SUPPORTED* RSSv1 動的既定以外の拡張 (の分散を可能にするフラグVMQs)。
+ミニポート ドライバーを設定して RSSv2 サポートを提供する、 **CapabilitiesFlags**のメンバー、 [NDIS_RECEIVE_SCALE_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)構造体、 *NDIS_RSS_CAPS_SUPPORTS_INDEPENDENT_ENTRY_MOVE*フラグ。 この機能は RSSv2 の CPU の負荷分散と共に機能を有効にするために必要、 *NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_SUPPORTED* RSSv1 動的既定以外の拡張 (の分散を可能にするフラグVMQs)。
 
 > [!NOTE]
 > 上位層プロトコルでは、RSSv2 ミニポート ドライバーの既定 VPort のプライマリのプロセッサを移動できることを前提としています。

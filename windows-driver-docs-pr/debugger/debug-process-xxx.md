@@ -13,17 +13,17 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f89e1a255133e0b23037f7fd6bf630bcf2f669
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd957c3e15efbc2a06f05374b5b43a05852a8f72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366980"
 ---
 # <a name="debugprocessxxx"></a>デバッグ\_プロセス\_XXX
 
 
-処理オプションがそのコントロールを設定して少し方法、[デバッガー エンジン](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)ユーザー モードを扱う[プロセス](https://msdn.microsoft.com/library/windows/hardware/ff539300#processes)します。 これらの処理オプションの一部はグローバルです。他のユーザーは、プロセスに固有です。
+処理オプションがそのコントロールを設定して少し方法、[デバッガー エンジン](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine)ユーザー モードを扱う[プロセス](https://docs.microsoft.com/windows-hardware/drivers/debugger/controlling-threads-and-processes#processes)します。 これらの処理オプションの一部はグローバルです。他のユーザーは、プロセスに固有です。
 
 処理オプションは、ライブ ユーザー モードのデバッグにのみ適用されます。
 
@@ -71,7 +71,7 @@ ms.locfileid: "63339760"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**.childdbg**](https://msdn.microsoft.com/library/windows/hardware/ff562215)
+[ **.childdbg**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-childdbg--debug-child-processes-)
 
  
 

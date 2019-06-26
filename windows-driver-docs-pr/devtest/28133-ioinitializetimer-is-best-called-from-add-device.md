@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28133
-ms.openlocfilehash: 0ed3998850b8ea85fa62039ae5d5cdc07695c68c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a91c7a2698fe50347940e0c02cf5b753c73bf64
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361587"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364144"
 ---
 # <a name="c28133"></a>C28133
 
@@ -36,7 +36,7 @@ C28133 を警告します。IoInitializeTimer は AddDevice から最もと呼�
 
  
 
-ドライバーを呼び出す[ **IoInitializeTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff549344)以外のルーチンでその**AddDevice**ルーチン。 コード分析ツールは、エラーを防止し、ドライバー コードの信頼性を高めることができますベスト プラクティス推奨事項を提案する、この機会を使用しています。
+ドライバーを呼び出す[ **IoInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializetimer)以外のルーチンでその**AddDevice**ルーチン。 コード分析ツールは、エラーを防止し、ドライバー コードの信頼性を高めることができますベスト プラクティス推奨事項を提案する、この機会を使用しています。
 
  
 

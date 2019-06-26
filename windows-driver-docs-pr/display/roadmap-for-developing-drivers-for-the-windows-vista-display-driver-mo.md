@@ -5,12 +5,12 @@ ms.assetid: 4f7ea2f4-ca2f-4b1d-97be-fb22e81c8080
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 6a408c2930d801f0d8565eb3f6b35f2878ae4d3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aad2b93de22631e7c3f3a2ce0de4f31e743a7549
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385688"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365619"
 ---
 # <a name="roadmap-for-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) のロードマップ
 
@@ -23,7 +23,7 @@ Windows 表示 Driver Model (WDDM) では、グラフィックス ハードウ�
 
 -   手順 1:Windows アーキテクチャとドライバーについて説明します。
 
-    Windows オペレーティング システムでのドライバーのしくみの基礎を理解する必要があります。 基本事項を把握すると、適切な設計上の決定を行い、開発プロセスを効率化することは役立ちます。 参照してください[ドライバー開発者向けのすべての概念](https://msdn.microsoft.com/library/windows/hardware/ff554731)します。
+    Windows オペレーティング システムでのドライバーのしくみの基礎を理解する必要があります。 基本事項を把握すると、適切な設計上の決定を行い、開発プロセスを効率化することは役立ちます。 参照してください[ドライバー開発者向けのすべての概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)します。
 
 -   手順 2:ディスプレイ ドライバーの WDDM の基礎について説明します。
 
@@ -38,7 +38,7 @@ Windows 表示 Driver Model (WDDM) では、グラフィックス ハードウ�
 
 -   手順 4:Windows ドライバーのビルド、テスト、およびデバッグ プロセスおよびツールについて説明します。
 
-    ドライバーの構築は、ユーザー モード アプリケーションを構築することと同じではありません。 参照してください[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment) Windows ドライバーのビルド、デバッグ、およびテスト プロセス、ドライバーの署名、およびドライバーの検証について。 参照してください[ドライバー開発ツール](https://msdn.microsoft.com/library/windows/hardware/ff545440)については、検証、および、デバッグ ツールを構築、テストします。
+    ドライバーの構築は、ユーザー モード アプリケーションを構築することと同じではありません。 参照してください[開発、テスト、および展開ドライバー](https://docs.microsoft.com/windows-hardware/drivers) Windows ドライバーのビルド、デバッグ、およびテスト プロセス、ドライバーの署名、およびドライバーの検証について。 参照してください[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/index)については、検証、および、デバッグ ツールを構築、テストします。
 
 -   手順 5:追加ディスプレイ ドライバーの設計に関する決定事項を作成します。
 
@@ -48,15 +48,15 @@ Windows 表示 Driver Model (WDDM) では、グラフィックス ハードウ�
 
 -   手順 7:開発、ビルド、テスト、および、ディスプレイ ドライバーをデバッグします。
 
-    グラフィックス アダプターのディスプレイ ドライバーを開発する方法については、次を参照してください[初期化表示ミニポートとユーザー モード ドライバーの表示](initializing-display-miniport-and-user-mode-display-drivers.md)と[Windows 表示 Driver Model (WDDM) 操作フロー](windows-vista-and-later-display-driver-model-operation-flow.md). 参照してください[開発、テスト、および展開ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)については反復的なビルド、テスト、およびデバッグします。 ディスプレイ ドライバー固有のヒントをデバッグするには、次を参照してください。 [Windows 表示 Driver Model (WDDM) のデバッグのヒント](debugging-tips-for-the-windows-vista-display-driver-model.md)します。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
+    グラフィックス アダプターのディスプレイ ドライバーを開発する方法については、次を参照してください[初期化表示ミニポートとユーザー モード ドライバーの表示](initializing-display-miniport-and-user-mode-display-drivers.md)と[Windows 表示 Driver Model (WDDM) 操作フロー](windows-vista-and-later-display-driver-model-operation-flow.md). 参照してください[開発、テスト、および展開ドライバー](https://docs.microsoft.com/windows-hardware/drivers)については反復的なビルド、テスト、およびデバッグします。 ディスプレイ ドライバー固有のヒントをデバッグするには、次を参照してください。 [Windows 表示 Driver Model (WDDM) のデバッグのヒント](debugging-tips-for-the-windows-vista-display-driver-model.md)します。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
 
 -   手順 8:ディスプレイ ドライバーのドライバー パッケージを作成します。
 
-    詳細については、次を参照してください。[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。 グラフィックス アダプターのディスプレイ ドライバーをインストールする方法については、次を参照してください。[ミニポートの表示と表示のユーザー モード ドライバーのインストール要件](installing-display-miniport-and-user-mode-display-drivers.md)します。
+    詳細については、次を参照してください。[ドライバー パッケージを配布する](https://docs.microsoft.com/windows-hardware/drivers)します。 グラフィックス アダプターのディスプレイ ドライバーをインストールする方法については、次を参照してください。[ミニポートの表示と表示のユーザー モード ドライバーのインストール要件](installing-display-miniport-and-user-mode-display-drivers.md)します。
 
 -   手順 9:サインインし、ディスプレイ ドライバーを配布します。
 
-    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーがで定義されている品質基準を満たしているかどうか、 [Windows ハードウェア認定キット](https://go.microsoft.com/fwlink/p/?linkid=248337)以前の Windows Logo Kit (WLK)、Microsoft Windows 更新プログラムを通じて配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)します。
+    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーがで定義されている品質基準を満たしているかどうか、 [Windows ハードウェア認定キット](https://go.microsoft.com/fwlink/p/?linkid=248337)以前の Windows Logo Kit (WLK)、Microsoft Windows 更新プログラムを通じて配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 これらは、基本的な手順です。 追加の手順は、個々 のドライバーのニーズに基づいて、必要でにあります。
 

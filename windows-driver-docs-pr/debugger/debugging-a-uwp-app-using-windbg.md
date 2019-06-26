@@ -4,24 +4,24 @@ description: WinDbg を使用してユニバーサル Windows プラットフォ
 ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e3ffdbbde7fd0177e3ab5707f1be90e887d1a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5756bb217cef8a051426f6bbaa704d65d916ca38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377195"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366940"
 ---
 # <a name="debugging-a-uwp-app-using-windbg"></a>WinDbg を使用した UWP アプリのデバッグ
 
 
-WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグすることができます。 このアプローチは通常使用の高度なシナリオは、場所、ビルドを使用して Visual Studio デバッガーでデバッグ タスクを完了することはできません。 Visual Studio でのデバッグの詳細については、次を参照してください。 [Visual Studio でのデバッグ](https://msdn.microsoft.com/library/sc65sadd.aspx)します。
+WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグすることができます。 このアプローチは通常使用の高度なシナリオは、場所、ビルドを使用して Visual Studio デバッガーでデバッグ タスクを完了することはできません。 Visual Studio でのデバッグの詳細については、次を参照してください。 [Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio?view=vs-2015)します。
 
 ## <a name="span-idattachingtoauwpappspanspan-idattachingtoauwpappspanspan-idattachingtoauwpappspanattaching-to-a-uwp-app"></a><span id="Attaching_to_a_UWP_app"></span><span id="attaching_to_a_uwp_app"></span><span id="ATTACHING_TO_A_UWP_APP"></span>UWP アプリへのアタッチ
 
 
 UWP のプロセスにアタッチすると、ユーザー モード プロセスにアタッチする場合と同じです。 たとえば、WinDbg で割り当てることができます、実行中のプロセスを選択して**ファイルからプロセスにアタッチ**メニューまたは F6 キーを押しています。 詳細については、次を参照してください。[デバッグ ユーザー モード プロセスを使用して WinDbg](debugging-a-user-mode-process-using-windbg.md)します。
 
-UWP アプリは、デバッグ中でない場合と同じ方法では中断されません。 明示的に中断または再開するため、UWP アプリを .suspendpackage と .resumepackage コマンド (以下の詳細) を使用できます。 プロセスのライフ サイクル管理 (PLM) UWP アプリで使用される一般的な情報は、次を参照してください。[アプリのライフ サイクル](https://msdn.microsoft.com/library/windows/apps/mt243287)と[Launching, resuming, とバック グラウンド タスク](https://msdn.microsoft.com/library/windows/apps/mt227652)します。
+UWP アプリは、デバッグ中でない場合と同じ方法では中断されません。 明示的に中断または再開するため、UWP アプリを .suspendpackage と .resumepackage コマンド (以下の詳細) を使用できます。 プロセスのライフ サイクル管理 (PLM) UWP アプリで使用される一般的な情報は、次を参照してください。[アプリのライフ サイクル](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)と[Launching, resuming, とバック グラウンド タスク](https://docs.microsoft.com/windows/uwp/launch-resume/index)します。
 
 ## <a name="span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app"></a><span id="Launching_and_debugging__a_UWP_app"></span><span id="launching_and_debugging__a_uwp_app"></span><span id="LAUNCHING_AND_DEBUGGING__A_UWP_APP"></span>起動して、UWP アプリのデバッグ
 
@@ -51,7 +51,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>ApplicationId は、アプリケーション マニフェスト ファイルにあるし、このトピックで説明したように、.querypackage または .querypackages コマンドを使用して表示できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>します。</p></td>
+<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">アプリ パッケージのマニフェスト</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[&lt;パラメーター&gt;]</td>
@@ -64,7 +64,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 
 **HelloWorld サンプル**
 
-UWP のデバッグを示すためには、このトピックは「HelloWorld サンプルを使用して[作成"Hello, world"アプリ (XAML)](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)します。
+UWP のデバッグを示すためには、このトピックは「HelloWorld サンプルを使用して[作成"Hello, world"アプリ (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)します。
 
 テストの実行可能なアプリを作成するには、まで、ラボの 3 つの手順を完了する必要はのみです。
 
@@ -150,7 +150,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 <tr class="odd">
 <td align="left">&lt;BackgroundTaskId&gt;</td>
 <td align="left"><p>BackgroundTaskId を以下に示すように、.querypackages コマンドを使用して配置できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>します。</p></td>
+<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">アプリ パッケージのマニフェスト</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -315,7 +315,7 @@ AppId: BackgroundTask.App
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>ApplicationId は、このトピックで前述したように、.querypackage または .querypackages を使用して配置できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">アプリ パッケージのマニフェスト</a>します。</p></td>
+<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">アプリ パッケージのマニフェスト</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[&lt;パラメーター&gt;]</td>

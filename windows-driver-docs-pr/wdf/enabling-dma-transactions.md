@@ -8,12 +8,12 @@ keywords:
 - バス マスター DMA WDK KMDF、トランザクション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e75b39f9d1ecb46c5b19bd6f370512ecf0aad033
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 368246e9a5e4dd192bf87bfaad5fc948660711d5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342830"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368726"
 ---
 # <a name="enabling-dma-transactions"></a>DMA トランザクションの有効化
 
@@ -23,13 +23,13 @@ ms.locfileid: "63342830"
 
 
 
-フレームワークに基づくドライバーでは、DMA デバイスの I/O 操作を処理する場合、ドライバーは、DMA デバイスごとのフレームワークの DMA 機能を有効にする必要があります。 これらを有効にする機能、ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)または[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数にする必要があります。
+フレームワークに基づくドライバーでは、DMA デバイスの I/O 操作を処理する場合、ドライバーは、DMA デバイスごとのフレームワークの DMA 機能を有効にする必要があります。 これらを有効にする機能、ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)または[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数にする必要があります。
 
-1.  呼び出す[ **WdfDeviceSetAlignmentRequirement** ](https://msdn.microsoft.com/library/windows/hardware/ff546861)バッファーの配置のデバイスの要件を指定します。
+1.  呼び出す[ **WdfDeviceSetAlignmentRequirement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetalignmentrequirement)バッファーの配置のデバイスの要件を指定します。
 
-2.  呼び出す[ **WdfDmaEnablerCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff546983) DMA 操作 (1 つのパケットまたはスキャッター/ギャザー) と、デバイスをサポートする最大転送サイズの種類を指定します。 フレームワークには、KMDF バージョン 1.11 以降、[システム モードの DMA](supporting-system-mode-dma.md)チップ (SoC) のシステムに – ベースの Windows 8 またはそれ以降のバージョンのオペレーティング システムで実行されているシステム。
+2.  呼び出す[ **WdfDmaEnablerCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablercreate) DMA 操作 (1 つのパケットまたはスキャッター/ギャザー) と、デバイスをサポートする最大転送サイズの種類を指定します。 フレームワークには、KMDF バージョン 1.11 以降、[システム モードの DMA](supporting-system-mode-dma.md)チップ (SoC) のシステムに – ベースの Windows 8 またはそれ以降のバージョンのオペレーティング システムで実行されているシステム。
 
-3.  呼び出す[ **WdfDmaEnablerSetMaximumScatterGatherElements** ](https://msdn.microsoft.com/library/windows/hardware/ff547014)デバイスは、スキャッター/ギャザーをサポートしている場合は、スキャッター/ギャザーの一覧で、デバイスをサポートできる要素の最大数を指定するには操作です。
+3.  呼び出す[ **WdfDmaEnablerSetMaximumScatterGatherElements** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablersetmaximumscattergatherelements)デバイスは、スキャッター/ギャザーをサポートしている場合は、スキャッター/ギャザーの一覧で、デバイスをサポートできる要素の最大数を指定するには操作です。
 
 次のコード例から、 [PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)サンプル フレームワークの DMA の機能を有効にする方法を示しています。 このコードは、 *Init.c ファイル*します。
 
@@ -48,7 +48,7 @@ status = WdfDmaEnablerCreate( DevExt->Device,
 
 かどうか、ドライバー共通のバッファーが必要、ドライバーの*EvtDriverDeviceAdd*コールバック関数通常それらを設定します。 これらのバッファーの詳細については、次を参照してください。[を使用して一般的なバッファー](using-common-buffers.md)します。
 
-ドライバーが呼び出された後**WdfDmaEnablerCreate**、呼び出すことができます[ **WdfDmaEnablerWdmGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff547020) WDM へのポインターを取得する[ **DMA\_アダプター** ](https://msdn.microsoft.com/library/windows/hardware/ff544062)デバイスの入力と出力方向のフレームワークを作成する構造体。 ただし、ほとんどのフレームワーク ベースのドライバーでは、これらの構造体にアクセスする必要はありません。
+ドライバーが呼び出された後**WdfDmaEnablerCreate**、呼び出すことができます[ **WdfDmaEnablerWdmGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablerwdmgetdmaadapter) WDM へのポインターを取得する[ **DMA\_アダプター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_adapter)デバイスの入力と出力方向のフレームワークを作成する構造体。 ただし、ほとんどのフレームワーク ベースのドライバーでは、これらの構造体にアクセスする必要はありません。
 
 
 

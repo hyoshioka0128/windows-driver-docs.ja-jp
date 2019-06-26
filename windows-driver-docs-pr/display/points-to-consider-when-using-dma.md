@@ -9,12 +9,12 @@ keywords:
 - VideoPortStartDma
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d7e50ae6a1d8807f396bba492f5622fedcbd05b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe26c24fa604001e8db28b8b6230e2c7063e7bff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383939"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365695"
 ---
 # <a name="points-to-consider-when-using-dma"></a>DMA 使用時の考慮点
 
@@ -26,9 +26,9 @@ ms.locfileid: "63383939"
 
 ### <a name="span-idadditionalnotesonvideoportstartdmaspanspan-idadditionalnotesonvideoportstartdmaspanadditional-notes-on-videoportstartdma"></a><span id="additional_notes_on_videoportstartdma"></span><span id="ADDITIONAL_NOTES_ON_VIDEOPORTSTARTDMA"></span>VideoPortStartDma についての注意事項
 
-通常、ディスプレイ ドライバーは、実際には、DMA の転送を実行するミニポート ドライバーに転送要求を送信します。 ディスプレイ ドライバーの DMA エンジンがアイドル状態のためだけの転送要求のすべてのデータが転送されたこととは限りません。 これは、ミニポート ドライバーを呼び出す必要があるため[ **VideoPortStartDma** ](https://msdn.microsoft.com/library/windows/hardware/ff570369)と[ **VideoPortCompleteDma** ](https://msdn.microsoft.com/library/windows/hardware/ff570286)複数回の大規模転送要求。 ハードウェアの DMA エンジンはこのような 2 つの DMA 操作間のアイドル状態も転送する追加のデータがある可能性があります。 譲渡要求は完全に実現されている場合は、ディスプレイ ドライバーを通知するために、ミニポート ドライバーの役目です。
+通常、ディスプレイ ドライバーは、実際には、DMA の転送を実行するミニポート ドライバーに転送要求を送信します。 ディスプレイ ドライバーの DMA エンジンがアイドル状態のためだけの転送要求のすべてのデータが転送されたこととは限りません。 これは、ミニポート ドライバーを呼び出す必要があるため[ **VideoPortStartDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportstartdma)と[ **VideoPortCompleteDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportcompletedma)複数回の大規模転送要求。 ハードウェアの DMA エンジンはこのような 2 つの DMA 操作間のアイドル状態も転送する追加のデータがある可能性があります。 譲渡要求は完全に実現されている場合は、ディスプレイ ドライバーを通知するために、ミニポート ドライバーの役目です。
 
-*コンテキスト*パラメーターの**VideoPortStartDma**ハードウェア拡張機能でメモリなどの非ページ メモリを指す必要があります。 このパラメーターは、ミニポート ドライバーに渡す[ **HwVidExecuteDma** ](https://msdn.microsoft.com/library/windows/hardware/ff567330) IRQL ディスパッチで実行されるコールバック ルーチン\_レベル。
+*コンテキスト*パラメーターの**VideoPortStartDma**ハードウェア拡張機能でメモリなどの非ページ メモリを指す必要があります。 このパラメーターは、ミニポート ドライバーに渡す[ **HwVidExecuteDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pexecute_dma) IRQL ディスパッチで実行されるコールバック ルーチン\_レベル。
 
 ### <a name="span-iddmaandinterruptsspanspan-iddmaandinterruptsspandma-and-interrupts"></a><span id="dma_and_interrupts"></span><span id="DMA_AND_INTERRUPTS"></span>DMA と割り込み
 
@@ -38,7 +38,7 @@ ms.locfileid: "63383939"
 
 ### <a name="span-idlogicaladdressesversusphysicaladdressesspanspan-idlogicaladdressesversusphysicaladdressesspanlogical-addresses-versus-physical-addresses"></a><span id="logical_addresses_versus_physical_addresses"></span><span id="LOGICAL_ADDRESSES_VERSUS_PHYSICAL_ADDRESSES"></span>論理アドレスと物理アドレス
 
-ビデオ ポート ドライバーの DMA の実装では、論理アドレスは、DMA ハードウェアで使用されるアドレスの概念を使用します。 論理アドレスは、物理アドレスを異なっていてもかまいません。 ビデオ ポート ドライバー提供の DMA 関数では、プラットフォーム固有のメモリ制限を考慮します。 このためなどのカーネル モードの機能ではなくビデオ ポート ドライバー DMA 関数を使用する重要な[ **MmGetPhysicalAddress**](https://msdn.microsoft.com/library/windows/hardware/ff554547)します。 参照してください[アダプター オブジェクトと DMA](https://msdn.microsoft.com/library/windows/hardware/ff540519)論理アドレスの詳細についてはします。
+ビデオ ポート ドライバーの DMA の実装では、論理アドレスは、DMA ハードウェアで使用されるアドレスの概念を使用します。 論理アドレスは、物理アドレスを異なっていてもかまいません。 ビデオ ポート ドライバー提供の DMA 関数では、プラットフォーム固有のメモリ制限を考慮します。 このためなどのカーネル モードの機能ではなくビデオ ポート ドライバー DMA 関数を使用する重要な[ **MmGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmgetphysicaladdress)します。 参照してください[アダプター オブジェクトと DMA](https://docs.microsoft.com/windows-hardware/drivers/kernel/adapter-objects-and-dma)論理アドレスの詳細についてはします。
 
 ### <a name="span-idconcurrentdmaspanspan-idconcurrentdmaspanconcurrent-dma"></a><span id="concurrent_dma"></span><span id="CONCURRENT_DMA"></span>同時実行の DMA
 

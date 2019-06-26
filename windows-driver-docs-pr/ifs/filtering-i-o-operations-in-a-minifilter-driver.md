@@ -7,12 +7,12 @@ keywords:
 - postoperation コールバック ルーチン WDK ファイル システム ミニフィルター、ガイドライン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60d3dc0f9729f1421a8dc83f06eb6c98589fad92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8d4643f762e03d3ace13ba87b40acdb43e93f98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380390"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369239"
 ---
 # <a name="filtering-io-operations-in-a-minifilter-driver"></a>ミニフィルター ドライバーでの I/O 操作のフィルタリング
 
@@ -22,9 +22,9 @@ ms.locfileid: "63380390"
 
 次の一覧には、ファイル システム ミニフィルター ドライバーでの I/O 操作の特定の種類をフィルター処理するためのいくつかのガイドラインについて説明します。
 
--   [ **Preoperation コールバック ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff551109) IRP の\_MJ\_を作成することはできませんクエリまたはため、ファイル、ストリーム、またはストリームのハンドルは、コンテキストを設定済み作成時に、ファイルまたはストリーム (ある場合) を作成することが決定されていません。
+-   [ **Preoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback) IRP の\_MJ\_を作成することはできませんクエリまたはため、ファイル、ストリーム、またはストリームのハンドルは、コンテキストを設定済み作成時に、ファイルまたはストリーム (ある場合) を作成することが決定されていません。
 
--   [ **Postoperation コールバック ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff551107) IRP の\_MJ\_閉じるを設定またはいるため、ファイル、ストリーム、またはストリームのハンドルは、コンテキストを照会できませんシステム内部構造これらの項目が関連付けられているは、後の終了ルーチンを呼び出す前に、解放します。
+-   [ **Postoperation コールバック ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback) IRP の\_MJ\_閉じるを設定またはいるため、ファイル、ストリーム、またはストリームのハンドルは、コンテキストを照会できませんシステム内部構造これらの項目が関連付けられているは、後の終了ルーチンを呼び出す前に、解放します。
 
 -   ミニフィルター ドライバーは IRP に失敗することは決して\_MJ\_クリーンアップまたは IRP\_MJ\_閉じる操作。 これらの操作は、保留、フィルター マネージャーに返されるか、状態で完了しました\_成功します。 ただし、preoperation コールバック ルーチンでは、これらの操作が失敗しない必要があります。
 

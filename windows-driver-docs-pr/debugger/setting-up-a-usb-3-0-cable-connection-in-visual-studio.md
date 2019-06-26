@@ -4,12 +4,12 @@ description: Microsoft Visual Studio を使用して、設定し、USB 3.0 ケ�
 ms.assetid: F8DD0475-13CE-464A-A491-AEFA962A96DB
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed02881634cb1ada2f2cf26a4b4cf8bc80e8ed05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edf7742c8de8fdb4f7f09d7a7e5481915e529989
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342530"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366370"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-in-visual-studio"></a>Visual Studio での USB 3.0 ケーブル経由でのカーネルモード デバッグの設定
 
@@ -66,7 +66,7 @@ USB 3.0 接続経由でのデバッグには、次のハードウェアが必要
 ## <a name="span-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>ホストおよびターゲット コンピュータの構成
 
 
-1.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+1.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
 2.  Visual Studio で、ホスト コンピューターで、コンピューターの構成 ダイアログ ボックスのような場合が選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。
 3.  **接続の種類**、選択**USB**します。
 
@@ -106,7 +106,7 @@ busparams               48.0.0
 
 用に入力した値が表示されない場合**Bus パラメーター**、このコマンドを入力します。
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 場所*b*、 *d*、および*f*は、バス、デバイス、およびデバッグに使用する、選択したターゲット コンピューター上の xHCI コント ローラーの関数の数。
 

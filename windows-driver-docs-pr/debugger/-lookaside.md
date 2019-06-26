@@ -15,12 +15,12 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: 88fcc86a36fcc5b79a4eb7bfffc026d8f9d0ec33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a94732fc070f29d09aa343e8ad31f54fe53af299
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336108"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365792"
 ---
 # <a name="lookaside"></a>!lookaside
 
@@ -39,7 +39,7 @@ ms.locfileid: "63336108"
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
 ルック アサイド リストを表示または変更の 16 進数のアドレスを指定します。
 
-場合*アドレス*を省略すると (または 0) および **-すべて**オプションが指定されていない、よく知られている、標準のシステムのルック アサイド リストのセットが表示されます。 リストのセットはすべてを網羅します。つまり、すべてのシステムのルック アサイド リストは含まれません。 また、セットにはカスタム ルック アサイド リストへの呼び出しによって作成された含まれません[ **ExInitializePagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545309)または[ **ExInitializeNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff545301).
+場合*アドレス*を省略すると (または 0) および **-すべて**オプションが指定されていない、よく知られている、標準のシステムのルック アサイド リストのセットが表示されます。 リストのセットはすべてを網羅します。つまり、すべてのシステムのルック アサイド リストは含まれません。 また、セットにはカスタム ルック アサイド リストへの呼び出しによって作成された含まれません[ **ExInitializePagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)または[ **ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist).
 
 場合*アドレス*を省略すると (または 0) および **-すべて**オプションを指定すると、すべてのルック アサイド リストが表示されます。
 
@@ -60,7 +60,7 @@ ms.locfileid: "63336108"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ルック アサイド リストについては、次を参照してください。、 [Windows Driver Kit (WDK) ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=201141)と*Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
+ルック アサイド リストについては、次を参照してください。、 [Windows Driver Kit (WDK) ドキュメント](https://go.microsoft.com/fwlink/p/?linkid=201141)と*Microsoft Windows internals 』* 、Mark Russinovich と David Solomon します。 (これらのリソースできない場合がありますのいくつかの言語および国。)
 
 <a name="remarks"></a>コメント
 -------

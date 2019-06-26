@@ -11,12 +11,12 @@ keywords:
 - DOs WDK ファイル システム フィルター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23855c49a21b874809fe998826d801e452f67d13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1bd6111b0c9f9b85f0573c8c233c78fd0c8d6f1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359346"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366794"
 ---
 # <a name="creating-the-filter-device-object"></a>フィルター デバイス オブジェクトの作成
 
@@ -24,7 +24,7 @@ ms.locfileid: "63359346"
 ## <span id="ddk_creating_the_filter_device_object_if"></span><span id="DDK_CREATING_THE_FILTER_DEVICE_OBJECT_IF"></span>
 
 
-呼び出す[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)次の例のように、ボリュームまたはファイル システム スタックにアタッチするフィルター デバイス オブジェクトを作成します。
+呼び出す[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)次の例のように、ボリュームまたはファイル システム スタックにアタッチするフィルター デバイス オブジェクトを作成します。
 
 ```cpp
 status = IoCreateDevice(
@@ -45,7 +45,7 @@ status = IoCreateDevice(
 PDEVICE_OBJECT AttachedToDeviceObject;
 ```
 
-呼び出しで、上記[ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)で、設定、 *DeviceName*パラメーターを**NULL**フィルター デバイス オブジェクトを指定します。というされません。 オブジェクトが決してという名前のデバイスをフィルター処理します。 フィルターのデバイス オブジェクトがファイル システム ボリュームまたはボリューム ドライバー スタックにアタッチされている、ため、フィルター デバイス オブジェクトに名前を割り当てると、システム セキュリティ ホールは作成します。
+呼び出しで、上記[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)で、設定、 *DeviceName*パラメーターを**NULL**フィルター デバイス オブジェクトを指定します。というされません。 オブジェクトが決してという名前のデバイスをフィルター処理します。 フィルターのデバイス オブジェクトがファイル システム ボリュームまたはボリューム ドライバー スタックにアタッチされている、ため、フィルター デバイス オブジェクトに名前を割り当てると、システム セキュリティ ホールは作成します。
 
 *DeviceType*パラメーターは、フィルター デバイス オブジェクトをアタッチする (ファイル システムまたはフィルター) のターゲット デバイス オブジェクトの場合と同じデバイスの種類に常に設定する必要があります。 I/O マネージャーを使用し、アプリケーションに報告することができますので、この方法でデバイスの種類を反映されるまでに重要です。
 

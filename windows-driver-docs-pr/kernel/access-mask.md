@@ -4,17 +4,17 @@ description: アクセス権の指定
 ms.assetid: 8ef4b4bb-5f4e-4095-b4ab-1182c0f75619
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5017af564e071f69c2973513b8d826801d1ba5b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e77526cb40bb9d43d099040fc06cbff517701437
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339132"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363472"
 ---
 # <a name="specifying-access-rights"></a>アクセス権の指定
 
 
-アクセス\_マスクの種類のアクセス権限のセットを示すビットマスクである、[アクセス マスク](https://msdn.microsoft.com/library/windows/hardware/ff538834)の[アクセス制御エントリ](https://msdn.microsoft.com/library/windows/hardware/ff538813)します。
+アクセス\_マスクの種類のアクセス権限のセットを示すビットマスクである、[アクセス マスク](https://docs.microsoft.com/windows-hardware/drivers/ifs/access-mask)の[アクセス制御エントリ](https://docs.microsoft.com/windows-hardware/drivers/ifs/access-control-entry)します。
 
 ``` syntax
 typedef ULONG  ACCESS_MASK;
@@ -44,7 +44,7 @@ typedef ULONG  ACCESS_MASK;
 </tr>
 <tr class="odd">
 <td><p>SYNCHRONIZE</p></td>
-<td><p>呼び出し元は、オブジェクトの待機操作を実行できます。 (たとえばにオブジェクトを渡すことができます<a href="https://msdn.microsoft.com/library/windows/hardware/ff553324" data-raw-source="[&lt;strong&gt;KeWaitForMultipleObjects&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553324)"> <strong>KeWaitForMultipleObjects</strong></a>)。</p></td>
+<td><p>呼び出し元は、オブジェクトの待機操作を実行できます。 (たとえばにオブジェクトを渡すことができます<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects" data-raw-source="[&lt;strong&gt;KeWaitForMultipleObjects&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)"> <strong>KeWaitForMultipleObjects</strong></a>)。</p></td>
 </tr>
 <tr class="even">
 <td><p>WRITE_DAC</p></td>
@@ -135,21 +135,21 @@ typedef ULONG  ACCESS_MASK;
 
  
 
-オブジェクトの種類ごとに独自の追加のアクセス権をことができます。 ファイル、ディレクトリ、またはデバイスに適用されるアクセス権については、次を参照してください。 [ **ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)します。 オブジェクト マネージャーのディレクトリに適用されるアクセス権については、次を参照してください。 [ **ZwCreateDirectoryObject**](https://msdn.microsoft.com/library/windows/hardware/ff566421)します。 レジストリ キーに適用されるアクセス権については、次を参照してください。 [ **ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)します。 セクション オブジェクトに適用されるアクセス権については、次を参照してください。 [ **ZwOpenSection**](https://msdn.microsoft.com/library/windows/hardware/ff567029)します。 WMI データのブロックに適用されるアクセス権については、次を参照してください。 [ **IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)します。
+オブジェクトの種類ごとに独自の追加のアクセス権をことができます。 ファイル、ディレクトリ、またはデバイスに適用されるアクセス権については、次を参照してください。 [ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)します。 オブジェクト マネージャーのディレクトリに適用されるアクセス権については、次を参照してください。 [ **ZwCreateDirectoryObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject)します。 レジストリ キーに適用されるアクセス権については、次を参照してください。 [ **ZwCreateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)します。 セクション オブジェクトに適用されるアクセス権については、次を参照してください。 [ **ZwOpenSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection)します。 WMI データのブロックに適用されるアクセス権については、次を参照してください。 [ **IoWMIOpenBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiopenblock)します。
 
 アクセス権の詳細については、Microsoft Windows SDK のドキュメントでは、次のトピックを参照してください。
 
--   [アクセス権やアクセス マスク](https://msdn.microsoft.com/library/windows/desktop/aa374902)
--   [アクセス\_マスク](https://msdn.microsoft.com/library/windows/desktop/aa374892)
+-   [アクセス権やアクセス マスク](https://docs.microsoft.com/windows/desktop/SecAuthZ/access-rights-and-access-masks)
+-   [アクセス\_マスク](https://docs.microsoft.com/windows/desktop/SecAuthZ/access-mask)
 
 Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)
 
 ## <a name="related-topics"></a>関連トピック
-[**IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)  
-[**ZwCreateDirectoryObject**](https://msdn.microsoft.com/library/windows/hardware/ff566421)  
-[**ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)  
-[**ZwCreateKey**](https://msdn.microsoft.com/library/windows/hardware/ff566425)  
-[**ZwOpenSection**](https://msdn.microsoft.com/library/windows/hardware/ff567029)  
+[**IoWMIOpenBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiopenblock)  
+[**ZwCreateDirectoryObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatedirectoryobject)  
+[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)  
+[**ZwCreateKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatekey)  
+[**ZwOpenSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopensection)  
 
 
 

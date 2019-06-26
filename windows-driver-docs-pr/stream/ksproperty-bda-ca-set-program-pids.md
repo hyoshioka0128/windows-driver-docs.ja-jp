@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69a83c6d750605c9ab00d4f4b3c989f26449663e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d15d6d1cac90709fa45414ace31a5f8f223065a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325222"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364892"
 ---
 # <a name="kspropertybdacasetprogrampids"></a>KSPROPERTY\_BDA\_CA\_設定\_プログラム\_PID
 
@@ -66,7 +66,7 @@ ms.locfileid: "63325222"
 
 BDA\_プログラム\_PID\_リスト構造体には、パケットの識別子を指定したプログラムの一覧が含まれています。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -85,11 +85,11 @@ BDA\_プログラム\_PID\_リスト構造体には、パケットの識別子�
 ## <a name="see-also"></a>関連項目
 
 
-[**BDA\_プログラム\_PID\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff556549)
+[**BDA\_プログラム\_PID\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_program_pid_list)
 
 [**KSEVENT\_BDA\_プログラム\_フロー\_状態\_CHANGED**](ksevent-bda-program-flow-status-changed.md)
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

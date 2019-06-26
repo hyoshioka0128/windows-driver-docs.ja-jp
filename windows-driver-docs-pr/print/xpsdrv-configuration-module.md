@@ -10,12 +10,12 @@ keywords:
 - イベント通知 WDK XPSDrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 285383a33f7bccdabb724ed3818343456ccb4016
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d50343abebb3690d191699f89b035089468be6aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354764"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363372"
 ---
 # <a name="xpsdrv-configuration-module"></a>XPSDrv 構成モジュール
 
@@ -34,7 +34,7 @@ XPSDrv プリンターのドライバーの 2 つの主要なコンポーネン�
 
 ### <a name="xpsdrv-document-events"></a>XPSDrv ドキュメント イベント
 
-XPSDrv ドライバーを通じて GDI ドキュメント イベントを受信できる、 [ **DrvDocumentEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548544)関数には、印刷は Win32 ベースのアプリケーションとドライバーを XPS ドキュメントのイベントを受信できます。DrvDocumentEvent に WPF アプリケーションを印刷するとき。 XPSDrv ドキュメント イベントの詳細については、次を参照してください。 [XPSDrv ドライバーのドキュメント イベント](xps-driver-document-events.md)します。
+XPSDrv ドライバーを通じて GDI ドキュメント イベントを受信できる、 [ **DrvDocumentEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentevent)関数には、印刷は Win32 ベースのアプリケーションとドライバーを XPS ドキュメントのイベントを受信できます。DrvDocumentEvent に WPF アプリケーションを印刷するとき。 XPSDrv ドキュメント イベントの詳細については、次を参照してください。 [XPSDrv ドライバーのドキュメント イベント](xps-driver-document-events.md)します。
 
 ### <a name="xpsdrv-driver-installation"></a>XPSDrv ドライバーのインストール
 

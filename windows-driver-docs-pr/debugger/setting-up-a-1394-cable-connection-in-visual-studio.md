@@ -4,12 +4,12 @@ description: Microsoft Visual Studio を使用して、設定し、カーネル 
 ms.assetid: 07784500-83F1-4927-998F-7CEEEADAA2B0
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fdba3fb40ce68c9fca9640221560a15b4239f4a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65f9dfb5dff6b13fef47ba4112624d6652a4574a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366390"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-1394-cable-in-visual-studio"></a>Visual Studio での 1394 ケーブル経由でのカーネルモード デバッグの設定
 
@@ -28,7 +28,7 @@ Microsoft Visual Studio を使用して、設定し、カーネル モードの 
 
 
 1.  ホストおよびターゲット コンピューターでデバッグするため、選択した 1394 コント ローラーには、1394 ケーブルを接続します。
-2.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+2.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
 3.  Visual Studio で、ホスト コンピューターで、コンピューターの構成 ダイアログに表示される場合が選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。
 4.  **接続の種類**、選択**Firewire**します。
 
@@ -71,7 +71,7 @@ busparams               4.0.0
 
 用に入力した値が表示されない場合**Bus パラメーター**、このコマンドを入力します。
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 場所*b*、 *d*、および*f*は、バス、デバイス、およびデバッグに使用する、選択したターゲット コンピューターに 1394 コント ローラーの関数の数。
 
@@ -107,7 +107,7 @@ busparams               4.0.0
 
 ターゲット コンピューターで有効になって 1394 コント ローラーが複数ある場合は、デバッガーがデバッグの要求をコント ローラーを認識できるように bus パラメーターを指定する必要があります。 デバイス マネージャーを開き、バスのパラメーターを指定し、デバッグに使用する 1394 コント ローラーを見つけます。 コント ローラーのプロパティ ページを開き、バス番号、デバイスの数、および関数の数をメモしておきます。 管理者特権でコマンド プロンプト ウィンドウで、次のコマンドを入力します。 ここ*b*、 *d*、および*f* bus、デバイス、および関数の数値を 10 進数形式では。
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>
+**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
 
 ターゲット コンピューターを再起動します。
 

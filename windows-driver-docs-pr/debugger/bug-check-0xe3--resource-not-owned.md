@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e3124a079143f07a3b4daebc5fabadc549014802
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f62846d50ce3a5f194247601c8268450e71f56e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367110"
 ---
 # <a name="bug-check-0xe3-resourcenotowned"></a>バグ チェック 0xE3:リソース\_いない\_所有されています。
 
@@ -26,7 +26,7 @@ ms.locfileid: "63353103"
 リソース\_いない\_所有されているバグ チェックが 0x000000E3 の値を持ちます。 これは、スレッドが所有せず、リソースを解放しようとしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="resourcenotowned-parameters"></a>リソース\_いない\_所有されているパラメーター

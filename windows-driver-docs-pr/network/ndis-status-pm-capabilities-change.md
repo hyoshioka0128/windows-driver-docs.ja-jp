@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_PM_CAPABILITIES_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd5f1e2dadeb9ff4a8b2c9fbfb62fc7fc18f6d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32757fb530afbef0e591a7d43a5a6d64294ca83c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362888"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368536"
 ---
 # <a name="ndisstatuspmcapabilitieschange"></a>NDIS\_状態\_PM\_機能\_変更
 
@@ -23,7 +23,7 @@ NDIS\_状態\_PM\_機能\_状態の変更がドライバーに関連するネッ
 
 NDIS 生成、NDIS\_状態\_PM\_機能\_変更状態の表示時に以前に報告された電源管理機能への更新が必要です。
 
-**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体にはへのポインターが含まれています、 [ **NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)更新された電源管理機能を含む構造体。
+**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体にはへのポインターが含まれています、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)更新された電源管理機能を含む構造体。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -48,9 +48,9 @@ NDIS 生成、NDIS\_状態\_PM\_機能\_変更状態の表示時に以前に報�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_PM\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)
+[**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
  
 

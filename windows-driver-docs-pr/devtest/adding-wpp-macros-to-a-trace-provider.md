@@ -8,12 +8,12 @@ keywords:
 - WDK WPP マクロ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eb6a46812d076b70c3f20ad65816db34d900e60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac55b640ebc38669e8754de2d192011356a216a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332056"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371464"
 ---
 # <a name="adding-wpp-macros-to-a-trace-provider"></a>トレース プロバイダーへの WPP マクロの追加
 
@@ -29,27 +29,27 @@ WPP ソフトウェア トレースの既定のフォームを追加する、[�
     #include <source-file-name.tmh>
     ```
 
-    トレース メッセージのヘッダー ファイルは、WPP マクロ呼び出しの前に、定義した後は、ソース ファイルに含める必要がある、 [WPP\_コントロール\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)マクロ。
+    トレース メッセージのヘッダー ファイルは、WPP マクロ呼び出しの前に、定義した後は、ソース ファイルに含める必要がある、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロ。
 
--   A [WPP\_コントロール\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)他 WPP マクロを含む各ソース ファイルにディレクティブを定義します。
+-   A [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))他 WPP マクロを含む各ソース ファイルにディレクティブを定義します。
 
     この定義は、ドライバーのコントロールの GUID とドライバー定義のトレース フラグの名前を指定します。 定義する前にソース ファイルに追加する必要があります、 **\#含める**ファイルのトレース メッセージのヘッダー ファイルを含むステートメント。
 
--   1 つ[WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)マクロの呼び出し、ドライバーのソース コードにします。
+-   1 つ[WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))マクロの呼び出し、ドライバーのソース コードにします。
 
-    ドライバーは、このマクロは、ドライバーでのソフトウェアのトレースをアクティブにします。 このマクロは通常初期化中に呼び出さドライバー、たとえば、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン。
+    ドライバーは、このマクロは、ドライバーでのソフトウェアのトレースをアクティブにします。 このマクロは通常初期化中に呼び出さドライバー、たとえば、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。
 
     ユーザー モード アプリケーションでは、場所トレース試行以前加えられていない時点のソース コードでこのマクロを呼び出します。
 
     初期化後は、使用することができます[traceview で](traceview.md)または[Tracelog](tracelog.md)ソフトウェア トレース セッションを開始して、トレース メッセージを表示します。
 
--   1 つ[WPP\_クリーンアップ](https://msdn.microsoft.com/library/windows/hardware/ff556179)マクロの呼び出し、[トレース プロバイダーの](trace-provider.md)ソース コード。 このマクロは、ドライバーでのソフトウェアのトレースを無効になります。
+-   1 つ[WPP\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))マクロの呼び出し、[トレース プロバイダーの](trace-provider.md)ソース コード。 このマクロは、ドライバーでのソフトウェアのトレースを無効になります。
 
-    ドライバーは、このマクロの呼び出しは通常、ドライバーに追加[**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチン。
+    ドライバーは、このマクロの呼び出しは通常、ドライバーに追加[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチン。
 
     ユーザー モード アプリケーションでは、トレースの最後の試行が行われた後、ソース コード内でこのマクロを呼び出します。
 
--   [**DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)マクロの呼び出しをトレース メッセージを記録します。
+-   [**DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロの呼び出しをトレース メッセージを記録します。
 
  
 

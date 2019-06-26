@@ -6,12 +6,12 @@ keywords:
 - Ioctl WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fbf14e5ffb345417be42fd1d0d375267f35718
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0333c04d549e7e29607c78e915f6555036134cdb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331339"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370260"
 ---
 # <a name="copp-video-miniport-driver-ioctl-template-code"></a>COPP ビデオ ミニポート ドライバーの IOCTL テンプレート コード
 
@@ -21,7 +21,7 @@ ms.locfileid: "63331339"
 
 このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。
 
-ビデオのミニポート ドライバーを実装する必要があります、 [ *HwVidStartIO* ](https://msdn.microsoft.com/library/windows/hardware/ff567367)ディスプレイ ドライバーで発生する I/O 要求を処理する関数。 次のコード例では、ビデオのミニポート ドライバーが COPP Ioctl を処理する方法のみを示しています。
+ビデオのミニポート ドライバーを実装する必要があります、 [ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)ディスプレイ ドライバーで発生する I/O 要求を処理する関数。 次のコード例では、ビデオのミニポート ドライバーが COPP Ioctl を処理する方法のみを示しています。
 
 ```cpp
 BOOLEAN

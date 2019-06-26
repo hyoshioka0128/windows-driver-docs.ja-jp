@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_MEDIA_DISCONNECT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 155e63b7bb3d2bf9af0d50f2db842869dc9dc52e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39889b36bcb6fdd91b61095979f6c6b7cb87c94a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380150"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368580"
 ---
 # <a name="ndisstatusmediadisconnect"></a>NDIS\_状態\_メディア\_切断
 
@@ -25,7 +25,7 @@ NDIS 変換 NDIS\_状態\_メディア\_切断状態のインジケーターを[
 
 NDIS 5。*x*以前のミニポート ドライバーを示し、 [ **NDIS\_状態\_メディア\_CONNECT** ](ndis-status-media-connect.md)の接続時の状態復元します。
 
-NDIS の詳細については\_状態\_メディア\_切断を参照してください[を示す接続の状態 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff546856)と[802.11 ネットワークのメディアの状態インジケーター](https://msdn.microsoft.com/library/windows/hardware/ff549301).
+NDIS の詳細については\_状態\_メディア\_切断を参照してください[を示す接続の状態 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546856(v=vs.85))と[802.11 ネットワークのメディアの状態インジケーター](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549301(v=vs.85)).
 
 <a name="requirements"></a>要件
 ------------

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb47ba37497f378082b855452ab8db79f334df3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 500f422a91baa313947e5d4e2127857b89eba7ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365844"
 ---
 # <a name="inf-ini2reg-directive"></a>INF Ini2Reg ディレクティブ
 
@@ -72,7 +72,7 @@ INI ファイル、レジストリにコピーするには、キーの名前を�
 このエントリで指定されたその他の値のレジストリ ツリーのルートを識別します。 詳しくは、リファレンスを参照してください、 [ **AddReg ディレクティブ**](inf-addreg-directive.md)します。
 
 <a href="" id="subkey"></a>*サブキー*  
-値を受け取るサブキーを指定 % として表される*strkey*% のトークンで定義されている、 [**文字列**](inf-strings-section.md)セクション、INF のか、明示的なレジストリ パス (<em>key1</em>**\\**<em>key2</em>**\\**<em>key3</em>...) から、指定されました。*reg ルート*します。
+値を受け取るサブキーを指定 % として表される*strkey*% のトークンで定義されている、 [**文字列**](inf-strings-section.md)セクション、INF のか、明示的なレジストリ パス (<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...) から、指定されました。*reg ルート*します。
 
 <a href="" id="flags"></a>*フラグ*  
 転送後に指定された情報をレジストリにや (ビット 1) で次のように、既存のレジストリ情報を上書きするかどうか、INI ファイルを処理する方法 (ビット 0) で指定します。
@@ -94,7 +94,7 @@ INI ファイル、レジストリにコピーするには、キーの名前を�
 
 **Ini2Reg**ディレクティブは、正式な構文のステートメントで次のセクションのいずれかで無効です。 このディレクティブは、INF ライター定義のセクションで参照されているは有効ではまた、 [ **AddInterface** ](inf-addinterface-directive.md)ディレクティブまたはで参照されている、 [ **InterfaceInstall32**](inf-interfaceinstall32-section.md)セクション。
 
-INF ファイルにはする必要がありますが含まれていない場合は、INF ファイルを使用するには、Windows XP および以降のバージョンの Windows デバイスをインストールすると、 **Ini2Reg**ディレクティブ。 INF ファイルが含まれている**Ini2Reg**ディレクティブに合格しない["Windows 用に設計されています"のロゴ テスト](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)、デジタル署名は表示されず、そのため、Windows によって信頼されます (を参照してください[方法Windows ドライバーを選択します。](how-setup-selects-drivers.md))。
+INF ファイルにはする必要がありますが含まれていない場合は、INF ファイルを使用するには、Windows XP および以降のバージョンの Windows デバイスをインストールすると、 **Ini2Reg**ディレクティブ。 INF ファイルが含まれている**Ini2Reg**ディレクティブに合格しない["Windows 用に設計されています"のロゴ テスト](https://docs.microsoft.com/windows-hardware/drivers)、デジタル署名は表示されず、そのため、Windows によって信頼されます (を参照してください[方法Windows ドライバーを選択します。](how-setup-selects-drivers.md))。
 
 各*セクション レジストリ ini*名は、INF ファイルに一意である必要があります。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
