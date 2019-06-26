@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5512d79baa88e74de9a386e36fdd11b614781fa8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd1d3ac2d8c9c7d8131bada2cefdc4483b37c50d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341830"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382899"
 ---
 # <a name="kspropertycameracontrolfocallength"></a>KSPROPERTY\_CAMERACONTROL\_焦点\_長さ
 
@@ -53,7 +53,7 @@ KSPROPERTY\_CAMERACONTROL\_焦点\_LENGTH プロパティは、カメラの焦�
 <td><p>〇</p></td>
 <td><p>X</p></td>
 <td><p>フィルターまたはノード</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564408" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564408)"><strong>KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff564418" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564418)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_focal_length_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_focal_length_s)"><strong>KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH_S</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_focal_length_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_focal_length_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_FOCAL_LENGTH_S</strong></a></p></td>
 <td><p>LONG</p></td>
 </tr>
 </tbody>
@@ -66,13 +66,13 @@ KSPROPERTY\_CAMERACONTROL\_焦点\_LENGTH プロパティは、カメラの焦�
 <a name="remarks"></a>注釈
 -------
 
-このプロパティの要求を使用すると、ズーム値を解釈します。 ズームの範囲がでなければなりません**lObjectiveFocalLengthMin**/**lOcularFocalLength**と**lObjectiveFocalLengthMax** / **lOcularFocalLength**します。 (**lOcularFocalLength**、 **lObjectiveFocalLengthMin**、および**lObjectiveFocalLengthMax**のメンバーである、 [ **KSPROPERTY\_CAMERACONTROL\_焦点\_長さ\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff564408)と[ **KSPROPERTY\_CAMERACONTROL\_ノード\_焦点\_長さ\_S** ](https://msdn.microsoft.com/library/windows/hardware/ff564418)構造体)。
+このプロパティの要求を使用すると、ズーム値を解釈します。 ズームの範囲がでなければなりません**lObjectiveFocalLengthMin**/**lOcularFocalLength**と**lObjectiveFocalLengthMax** / **lOcularFocalLength**します。 (**lOcularFocalLength**、 **lObjectiveFocalLengthMin**、および**lObjectiveFocalLengthMax**のメンバーである、 [ **KSPROPERTY\_CAMERACONTROL\_焦点\_長さ\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_focal_length_s)と[ **KSPROPERTY\_CAMERACONTROL\_ノード\_焦点\_長さ\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_focal_length_s)構造体)。
 
 たとえば場合、 **lObjectiveFocalLengthMax** 105 = と**lOcularFocalLength** = 35、このカメラは 105/35、または 3 の光学ズームの最大比率。
 
 また、*光学ズーム*USB ビデオ クラス デバイス クラス仕様のセクション。 この仕様は、 [USB Implementers Forum](https://go.microsoft.com/fwlink/p/?linkid=8780) web サイト。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -95,9 +95,9 @@ KSPROPERTY\_CAMERACONTROL\_焦点\_LENGTH プロパティは、カメラの焦�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY\_CAMERACONTROL\_焦点\_長さ\_S**](https://msdn.microsoft.com/library/windows/hardware/ff564408)
+[**KSPROPERTY\_CAMERACONTROL\_焦点\_長さ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_focal_length_s)
 
-[**KSPROPERTY\_CAMERACONTROL\_ノード\_焦点\_長さ\_S**](https://msdn.microsoft.com/library/windows/hardware/ff564418)
+[**KSPROPERTY\_CAMERACONTROL\_ノード\_焦点\_長さ\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_focal_length_s)
 
 [**KSPROPERTY\_CAMERACONTROL\_ズーム**](ksproperty-cameracontrol-zoom.md)
 

@@ -8,19 +8,19 @@ keywords:
 - WDK のプリンターをワイヤレス接続
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cfa49f9ac332a3167380cc4014a7e05204fba22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3717501c17b9048e51143806cc1247941a17f29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360588"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384189"
 ---
 # <a name="bluetooth-printing"></a>Bluetooth 印刷
 
 
 印刷デバイスが Bluetooth をサポートする場合、次の要件を満たすように。
 
--   印刷デバイス、USB または並列バス 1284 ID を返します、Bluetooth バスは、1284 ID を返す必要があります。 目的の場合、[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)(PnP) id に、デバイス ID を返す 1284 並列または USB バスで、Bluetooth バスは PnP id の 1284 ID を使用する必要がありますもします。
+-   印刷デバイス、USB または並列バス 1284 ID を返します、Bluetooth バスは、1284 ID を返す必要があります。 目的の場合、[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)(PnP) id に、デバイス ID を返す 1284 並列または USB バスで、Bluetooth バスは PnP id の 1284 ID を使用する必要がありますもします。
     **注**  1284 ID がまだパラレル ポートまたは USB ポートがなかったデバイスに含まれている必要があります PnP、1284 ID を使用せず、印刷キューは作成されません。
 
      

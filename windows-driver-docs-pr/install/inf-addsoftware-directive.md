@@ -3,12 +3,12 @@ title: INF AddSoftware ディレクティブ
 description: AddSoftware ディレクティブでは、スタンドアロンのソフトウェアのインストールについて説明します。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8c757b95faf9047b1d06f66f79197d72f8a90b87
-ms.sourcegitcommit: 7e0ac000726f8e79d9eb8b9991a2c698f9472507
+ms.openlocfilehash: f1f6c1baf39b231235c9f1ec544ed8505abb9815
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65531266"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365860"
 ---
 # <a name="inf-addsoftware-directive"></a>INF AddSoftware ディレクティブ
 
@@ -69,8 +69,8 @@ SoftwareType=type-code
 
 使用してをインストールしたソフトウェア**AddSoftware**は**いない**仮想ソフトウェア コンポーネントのデバイスまたはその親デバイスをアンインストールする場合にアンインストールされます。 ソフトウェアは、UWP アプリではない場合 (つまり使用している**AddSoftware**値は 1 です)、ユーザーでは、レジストリでトレースを離れることがなくアンインストール簡単にかどうかを確認してください。 次の手順に従います。
 
-* MSI インストーラーを使用している場合のセットアップ、[プログラムの追加/削除](https://msdn.microsoft.com/library/windows/desktop/aa368032)アプリケーションの Windows インストーラー パッケージ内のエントリ。
-* カスタム EXE (ローカルのデバイスの設定を補足する) ではなくそのインストール グローバル レジストリ/ファイルの状態を使用している場合は、使用、 [Uninstall レジストリ キー](https://msdn.microsoft.com/library/windows/desktop/aa372105)します。 
+* MSI インストーラーを使用している場合のセットアップ、[プログラムの追加/削除](https://docs.microsoft.com/windows/desktop/Msi/configuring-add-remove-programs-with-windows-installer)アプリケーションの Windows インストーラー パッケージ内のエントリ。
+* カスタム EXE (ローカルのデバイスの設定を補足する) ではなくそのインストール グローバル レジストリ/ファイルの状態を使用している場合は、使用、 [Uninstall レジストリ キー](https://docs.microsoft.com/windows/desktop/Msi/uninstall-registry-key)します。 
 
 ## <a name="software-install-section-softwaretype"></a>[ソフトウェアのインストール-セクション]:SoftwareType
 

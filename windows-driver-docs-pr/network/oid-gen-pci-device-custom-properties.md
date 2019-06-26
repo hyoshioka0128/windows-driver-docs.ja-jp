@@ -5,12 +5,12 @@ ms.assetid: fe94884b-f5e3-4c60-8f52-e61d0df81a2a
 ms.date: 08/08/2017
 keywords: -OID_GEN_PCI_DEVICE_CUSTOM_PROPERTIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 792e7ea9d146f741762dc4fc025644af5c470146
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4682a1d13192db3a0cfe06dce88da1446a1dbda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324339"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386219"
 ---
 # <a name="oidgenpcidevicecustomproperties"></a>OID\_GEN\_PCI\_デバイス\_カスタム\_プロパティ
 
@@ -24,7 +24,7 @@ NDIS 処理 OID\_GEN\_PCI\_デバイス\_カスタム\_プロパティおよび�
 
 このクエリでは、その他の NDIS ドライバーのオプションです。
 
-NDIS を返します、 [ **NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff566745) PCI のカスタム プロパティを含む構造体。
+NDIS を返します、 [ **NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties) PCI のカスタム プロパティを含む構造体。
 
 NDIS ミニポート アダプターが非 PCI、OID は失敗\_GEN\_PCI\_デバイス\_カスタム\_NDIS プロパティ\_状態\_無効な\_デバイス\_状態コードを要求します。
 
@@ -51,7 +51,7 @@ NDIS ミニポート アダプターが非 PCI、OID は失敗\_GEN\_PCI\_デバ
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff566745)
+[**NDIS\_PCI\_デバイス\_カスタム\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)
 
  
 

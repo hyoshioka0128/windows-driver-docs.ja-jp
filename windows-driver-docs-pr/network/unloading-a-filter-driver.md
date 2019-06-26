@@ -8,12 +8,12 @@ keywords:
 - フィルター ドライバーをアンロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0a3406d78d85bb7292fd2156194defa40ff97c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5281f141ccdf5711b5df6a95812abb3b2e110480
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366139"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382095"
 ---
 # <a name="unloading-a-filter-driver"></a>フィルター ドライバーのアンロード
 
@@ -21,12 +21,12 @@ ms.locfileid: "63366139"
 
 
 
-NDIS フィルター ドライバーに関連付けられているドライバー オブジェクトを指定します、 [*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)というルーチン*FilterDriverUnload*します。 システムを呼び出すことができます、 *FilterDriverUnload*ルーチンとフィルター ドライバーのサービスが削除されているすべてのミニポート アダプター。
+NDIS フィルター ドライバーに関連付けられているドライバー オブジェクトを指定します、 [*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)というルーチン*FilterDriverUnload*します。 システムを呼び出すことができます、 *FilterDriverUnload*ルーチンとフィルター ドライバーのサービスが削除されているすべてのミニポート アダプター。
 
-[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ドライバー固有のリソースを解放する必要があります。 フィルター ドライバーを作成したすべてのデバイス オブジェクトを破棄する必要があります。 システムは、後にドライバー アンロード操作を完了できる*FilterDriverUnload*を返します。
+[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ドライバー固有のリソースを解放する必要があります。 フィルター ドライバーを作成したすべてのデバイス オブジェクトを破棄する必要があります。 システムは、後にドライバー アンロード操作を完了できる*FilterDriverUnload*を返します。
 
-アンロード関数の機能は、ドライバー固有です。 一般的な規則として[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、次を参照してください。[フィルター ドライバーの初期化](initializing-a-filter-driver.md)します。
+アンロード関数の機能は、ドライバー固有です。 一般的な規則として[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ドライバーの初期化中に実行された操作を元に戻す必要があります。 ドライバーの初期化の詳細については、次を参照してください。[フィルター ドライバーの初期化](initializing-a-filter-driver.md)します。
 
-フィルター ドライバーを呼び出す必要があります、 [ **NdisFDeregisterFilterDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff561800)関数[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)します。 **NdisFDeregisterFilterDriver**呼び出し[ *FilterDetach* ](https://msdn.microsoft.com/library/windows/hardware/ff549918)このフィルター ドライバーに関連付けられているすべてのフィルターが現在アタッチされているモジュールをデタッチします。
+フィルター ドライバーを呼び出す必要があります、 [ **NdisFDeregisterFilterDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfderegisterfilterdriver)関数[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)します。 **NdisFDeregisterFilterDriver**呼び出し[ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)このフィルター ドライバーに関連付けられているすべてのフィルターが現在アタッチされているモジュールをデタッチします。
 
 アンロードのフィルター ドライバーの詳細については、次を参照してください。[ドライバー スタックを停止する](stopping-a-driver-stack.md)します。

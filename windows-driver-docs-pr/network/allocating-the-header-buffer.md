@@ -8,12 +8,12 @@ keywords:
 - WDK のヘッダー データ バッファーの割り当てを分割します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af30ffb732817fba0b7516b09d357b4052606cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da6252aaf3691551266ac65aecf9e0765a0f9226
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367713"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384413"
 ---
 # <a name="allocating-the-header-buffer"></a>ヘッダー バッファーの割り当て
 
@@ -21,7 +21,7 @@ ms.locfileid: "63367713"
 
 
 
-NDIS ミニポート ドライバーに割り当てる必要がありますヘッダーの最大サイズを指定する、 **MaxHeaderSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565694)構造体。 ヘッダー データの分割の属性を設定する方法についての詳細については、次を参照してください。[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)します。
+NDIS ミニポート ドライバーに割り当てる必要がありますヘッダーの最大サイズを指定する、 **MaxHeaderSize**のメンバー、 [ **NDIS\_HD\_分割\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_hd_split_attributes)構造体。 ヘッダー データの分割の属性を設定する方法についての詳細については、次を参照してください。[ヘッダー データの分割プロバイダーの初期化](initializing-a-header-data-split-provider.md)します。
 
 指定したイーサネット フレームのヘッダー部分のサイズを超えない NIC では、ヘッダーと受信したイーサネット フレーム内のデータを分割、ときに、 **MaxHeaderSize**値。
 

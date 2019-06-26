@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b276df52c16c415bf26b0eb341d7e6b81149808
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bbd8b3f6ac3bb3f83cc697bc8fb902a863670161
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323466"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362406"
 ---
 # <a name="wdfkdwdflogdump"></a>!wdfkd.wdflogdump
 
@@ -83,18 +83,18 @@ KMDF 1、UMDF 2
 
 フレームワークのエラー ログの記録を表示する、[小さいメモリ ダンプ](small-memory-dump.md)を使用して、 [ **! wdfkd.wdfcrashdump** ](-wdfkd-wdfcrashdump.md)拡張機能。
 
-デバッガーは、WPP トレース メッセージの書式を設定する必要がある情報を設定する方法の詳細については、次を参照してください[ **! wdfkd.wdftmffile** ](-wdfkd-wdftmffile.md)と[ **! wdfkd.wdfsettraceprefix。**](-wdfkd-wdfsettraceprefix.md).
+デバッガーは、WPP トレース メッセージの書式を設定する必要がある情報を設定する方法の詳細については、次を参照してください[ **! wdfkd.wdftmffile** ](-wdfkd-wdftmffile.md)と[ **! wdfkd.wdfsettraceprefix。** ](-wdfkd-wdfsettraceprefix.md).
 
 **追加情報**
 
-実行中のトレース レコーダーには、ドライバーを有効にする方法については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。 ドライバーを WDF のデバッグの詳細については、次を参照してください。[デバッグ WDF ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540790)します。 KMDF のデバッグ方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
+実行中のトレース レコーダーには、ドライバーを有効にする方法については、次を参照してください。[を使用して転送トレース レコーダー (IFR) KMDF および UMDF 2 ドライバー](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers)します。 ドライバーを WDF のデバッグの詳細については、次を参照してください。[デバッグ WDF ドライバー](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)します。 KMDF のデバッグ方法の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークのデバッグ](kernel-mode-driver-framework-debugging.md)します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**!wdfkd.wdfcrashdump**](-wdfkd-wdfcrashdump.md)
+[ **!wdfkd.wdfcrashdump**](-wdfkd-wdfcrashdump.md)
 
-[**!wdfkd.wdfsettraceprefix**](-wdfkd-wdfsettraceprefix.md)
+[ **!wdfkd.wdfsettraceprefix**](-wdfkd-wdfsettraceprefix.md)
 
  
 

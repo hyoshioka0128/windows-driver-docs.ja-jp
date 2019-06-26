@@ -3,12 +3,12 @@ Description: デバイスのカーネル モード スタックでドライバ�
 title: WinUSB (Winusb.sys) のインストール
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0898e03722bfa73103966b5855cc016d9ce05ef1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c443aba3a413f3c1a1b941bd188b3130b98b101
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389175"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383480"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) のインストール
 
@@ -156,7 +156,7 @@ REG_MULTI_SZ = 0x00010000
 
 -   **USB\_Install.HW**:このセクションでは、.inf ファイルのキーです。 これには、デバイスのデバイス インターフェイス グローバル一意識別子 (GUID) を指定します。 **AddReg**ディレクティブは、標準のレジストリ値で指定されたインターフェイスの GUID を設定します。 デバイスの機能のドライバーとして Winusb.sys が読み込まれると、レジストリ キーを読み取って値 DeviceInterfaceGUIDs と、指定された GUID を使用して、デバイス インターフェイスを表します。 この例では GUID は、具体的にはお使いのデバイスを作成するものに置き換える必要があります。 デバイスのプロトコルを変更する場合は、新しいデバイス インターフェイスの GUID を作成します。
 
-    **注**  ユーザー モードのソフトウェアを呼び出す必要があります[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)デバイス インターフェイスのいずれかに関連付けられている登録済みデバイスのインターフェイスを列挙するにはDeviceInterfaceGUIDs キーで指定されているクラス。 **SetupDiGetClassDevs**ユーザー モード ソフトウェアに渡す必要がありますし、デバイスのデバイス ハンドルを返します、 [ **WinUsb\_初期化**](https://msdn.microsoft.com/library/windows/hardware/ff540277) WinUSB ハンドルを取得するルーチンデバイスのインターフェイス。 これらのルーチンの詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
+    **注**  ユーザー モードのソフトウェアを呼び出す必要があります[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)デバイス インターフェイスのいずれかに関連付けられている登録済みデバイスのインターフェイスを列挙するにはDeviceInterfaceGUIDs キーで指定されているクラス。 **SetupDiGetClassDevs**ユーザー モード ソフトウェアに渡す必要がありますし、デバイスのデバイス ハンドルを返します、 [ **WinUsb\_初期化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize) WinUSB ハンドルを取得するルーチンデバイスのインターフェイス。 これらのルーチンの詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
 
 次の INF には、x64 ベース システムで OSR USB FX2 ボードの機能のドライバーとして WinUSB がインストールされます。 この例では、WDF 共同インストーラーを INF を示します。
 
@@ -279,13 +279,13 @@ WinUSB 関数ドライバーとしてを使用するには、ドライバー パ
 
 1. [Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)し、インストールします。
 2. コンピューターに USB デバイスが接続されているドライバー パッケージのフォルダーを作成します。 たとえば、c:\\UsbDevice します。
-3. (WinusbcoinstallerX.dll) WinUSB 共同インストーラーをコピー、 **WinDDK\\**<em>BuildNumber</em>**\\redist\\winusb**ドライバー パッケージ フォルダーのフォルダー。
+3. (WinusbcoinstallerX.dll) WinUSB 共同インストーラーをコピー、 **WinDDK\\** <em>BuildNumber</em> **\\redist\\winusb**ドライバー パッケージ フォルダーのフォルダー。
 
-   WinUSB 共同インストーラー (Winusbcoinstaller.dll) は、必要に応じて、ターゲット システムに WinUSB をインストールします。 次の 3 つのバージョン システム アーキテクチャに応じて共同インストーラーにはが WDK に含まれています。 x86 ベース、x64 ベースおよび Itanium ベース システム。 WinusbcoinstallerX.dll すべてという名前は、適切なサブディレクトリにある、 **WinDDK\\**<em>BuildNumber</em>**\\redist\\winusb**フォルダー。
+   WinUSB 共同インストーラー (Winusbcoinstaller.dll) は、必要に応じて、ターゲット システムに WinUSB をインストールします。 次の 3 つのバージョン システム アーキテクチャに応じて共同インストーラーにはが WDK に含まれています。 x86 ベース、x64 ベースおよび Itanium ベース システム。 WinusbcoinstallerX.dll すべてという名前は、適切なサブディレクトリにある、 **WinDDK\\** <em>BuildNumber</em> **\\redist\\winusb**フォルダー。
 
-4. (WdfcoinstallerXXX.dll) KMDF 共同インストーラーをコピー、 **WinDDK\\**<em>BuildNumber</em>**\\redist\\wdf**フォルダードライバー パッケージのフォルダー。
+4. (WdfcoinstallerXXX.dll) KMDF 共同インストーラーをコピー、 **WinDDK\\** <em>BuildNumber</em> **\\redist\\wdf**フォルダードライバー パッケージのフォルダー。
 
-   KMDF 共同インストーラー (WdfcoinstallerXXX.dll) は、必要に応じて、ターゲット システムでは、KMDF の正しいバージョンをインストールします。 WinUSB 共同インストーラーのバージョンは、Winusb.sys などの KMDF ベースのクライアント ドライバーは、システムに正しくインストールするために、KMDF フレームワークの対応するバージョンを必要とするため、KMDF 共同インストーラーと一致する必要があります。 たとえば、Winusbcoinstaller2.dll KMDF Wdfcoinstaller01009.dll によってインストールされるバージョン 1.9 が必要です。 WdfcoinstallerXXX.dll の x86 および x64 バージョンでは、下の WDK に含まれています、 **WinDDK\\**<em>BuildNumber</em>**\\redist\\wdf**フォルダー。 次の表は、ターゲット システムで使用するには、WinUSB 共同インストーラーと関連付けられている KMDF 共同インストーラーを示します。
+   KMDF 共同インストーラー (WdfcoinstallerXXX.dll) は、必要に応じて、ターゲット システムでは、KMDF の正しいバージョンをインストールします。 WinUSB 共同インストーラーのバージョンは、Winusb.sys などの KMDF ベースのクライアント ドライバーは、システムに正しくインストールするために、KMDF フレームワークの対応するバージョンを必要とするため、KMDF 共同インストーラーと一致する必要があります。 たとえば、Winusbcoinstaller2.dll KMDF Wdfcoinstaller01009.dll によってインストールされるバージョン 1.9 が必要です。 WdfcoinstallerXXX.dll の x86 および x64 バージョンでは、下の WDK に含まれています、 **WinDDK\\** <em>BuildNumber</em> **\\redist\\wdf**フォルダー。 次の表は、ターゲット システムで使用するには、WinUSB 共同インストーラーと関連付けられている KMDF 共同インストーラーを示します。
 
    WinUSB 共同インストーラーと関連付けられている KMDF 共同インストーラーを確認するのにには、このテーブルを使用します。
 
@@ -336,7 +336,7 @@ WinUSB 関数ドライバーとしてを使用するには、ドライバー パ
 [WinUSB 関数を使用して、USB デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [WinUSB 電源管理](winusb-power-management.md)  
 [ポリシーの変更をパイプ WinUSB 関数](winusb-functions-for-pipe-policy-modification.md)  
-[WinUSB 関数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)  
+[WinUSB 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
 
 

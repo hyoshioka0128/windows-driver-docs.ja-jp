@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40350124803ca03d65941b025d3d994a0a8a7c25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc7e381acd431fdd53de0c2b9f2724676db514ee
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390886"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391539"
 ---
 # <a name="kspropertystreamdegradation"></a>KSPROPERTY\_ストリーム\_低下
 
@@ -54,7 +54,7 @@ KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパテ
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441)"><strong>KSMULTIPLE_ITEM</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff561671" data-raw-source="[&lt;strong&gt;KSDEGRADE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561671)"> <strong>KSDEGRADE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>、 <a href="https://docs.microsoft.com/previous-versions/ff561671(v=vs.85)" data-raw-source="[&lt;strong&gt;KSDEGRADE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))"> <strong>KSDEGRADE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパテ
 <a name="remarks"></a>注釈
 -------
 
-返される構造体の数とサイズ プロパティを返すクエリを実行時に[ **KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)形式、続けて[ **KSDEGRADE**](https://msdn.microsoft.com/library/windows/hardware/ff561671)構造体。
+返される構造体の数とサイズ プロパティを返すクエリを実行時に[ **KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)形式、続けて[ **KSDEGRADE**](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))構造体。
 
 クエリでこのプロパティを返します KSMULTIPLE で返される構造体の数とサイズ\_KSDEGRADE 構造体の後に、項目の形式。 複数の項目の形式は、クエリを実行して低下戦略の設定の両方で使用する必要があります。
 
-クライアントは、現在のパフォーマンス低下の設定を取得するには、このプロパティにクエリを実行または現在のパフォーマンス低下の設定を変更するには、このプロパティを設定できます。 品質管理 (QM) 準拠への応答フィルターのピン留めしてリソースの使用量を変更する、またはいくつかのより高いレベルに戻すの品質を調整する、パフォーマンス低下の設定が使用されます。 これは通常使用品質マネージャーによって低下の設定を調整し、調整できる設定とその現在の値の型のクエリを実行します。 値を設定するときに、複数の KSDEGRADE 構造体を渡すこと可能性があります。 品質のマネージャーの詳細については、次を参照してください。[品質管理](https://msdn.microsoft.com/library/windows/hardware/ff568124)します。
+クライアントは、現在のパフォーマンス低下の設定を取得するには、このプロパティにクエリを実行または現在のパフォーマンス低下の設定を変更するには、このプロパティを設定できます。 品質管理 (QM) 準拠への応答フィルターのピン留めしてリソースの使用量を変更する、またはいくつかのより高いレベルに戻すの品質を調整する、パフォーマンス低下の設定が使用されます。 これは通常使用品質マネージャーによって低下の設定を調整し、調整できる設定とその現在の値の型のクエリを実行します。 値を設定するときに、複数の KSDEGRADE 構造体を渡すこと可能性があります。 品質のマネージャーの詳細については、次を参照してください。[品質管理](https://docs.microsoft.com/windows-hardware/drivers/stream/quality-management)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -91,9 +91,9 @@ KSPROPERTY\_ストリーム\_低下プロパティが省略可能なプロパテ
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSMULTIPLE\_項目**](https://msdn.microsoft.com/library/windows/hardware/ff563441)
+[**KSMULTIPLE\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
-[**KSDEGRADE**](https://msdn.microsoft.com/library/windows/hardware/ff561671)
+[**KSDEGRADE**](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))
 
  
 

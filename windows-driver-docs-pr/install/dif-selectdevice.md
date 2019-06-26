@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a0e76a73484167adf1f17d9a027bd694430dc6d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68ed03c74b939132633fa52c1da558ba24ac9290
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365946"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380998"
 ---
 # <a name="difselectdevice"></a>DIF_SELECTDEVICE
 
@@ -58,20 +58,20 @@ DIF_SELECTDEVICE 要求は、インストーラーへの参加のデバイス �
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)ドライバーを選択するデバイスを格納しています。 [デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)に関連付けられている、 *DeviceInfoSet*します。
+識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)ドライバーを選択するデバイスを格納しています。 [デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)に関連付けられている、 *DeviceInfoSet*します。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-必要に応じてへのポインターを提供、 [ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを識別する構造体。
+必要に応じてへのポインターを提供、 [ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを識別する構造体。
 
-場合*DeviceInfoData*は**NULL**、この要求がのドライバーを選択するには、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)に関連付けられている、 *DeviceInfoSet*します。
+場合*DeviceInfoData*は**NULL**、この要求がのドライバーを選択するには、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)に関連付けられている、 *DeviceInfoSet*します。
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-場合*DeviceInfoData*ない**NULL**、デバイスのインストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、*DeviceInfoData*します。 場合*DeviceInfoData*は**NULL**、インストールのパラメーターに関連付けられているデバイスがある、 *DeviceInfoSet*します。
+場合*DeviceInfoData*ない**NULL**、デバイスのインストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、*DeviceInfoData*します。 場合*DeviceInfoData*は**NULL**、インストールのパラメーターに関連付けられているデバイスがある、 *DeviceInfoSet*します。
 
 特に興味深いは、 **DriverPath**ドライバーの一覧の構築に使用する INF(s) の場所が含まれています。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-[ **SP_SELECTDEVICE_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff553326)構造が関連付けられている、 *DeviceInfoData*場合*DeviceInfoData*ない**NULL**します。 それ以外の場合、クラスのインストール パラメーターは、セット全体のデバイス情報に関連付けられています。
+[ **SP_SELECTDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)構造が関連付けられている、 *DeviceInfoData*場合*DeviceInfoData*ない**NULL**します。 それ以外の場合、クラスのインストール パラメーターは、セット全体のデバイス情報に関連付けられています。
 
 ### <a name="installer-output"></a>インストーラーの出力
 
@@ -79,7 +79,7 @@ DIF_SELECTDEVICE 要求は、インストーラーへの参加のデバイス �
 インストーラーでは、デバイスのインストール パラメーターを変更できます。 これは変更しないでください、ただし、 **DriverPath**フィールド。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-インストーラーを変更できる、 [ **SP_SELECTDEVICE_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553326)します。 たとえば、インストーラーは可能性があります、タイトルや Windows でドライバーを選択するユーザーを確認するダイアログ ボックスを使用するための手順に指定します。
+インストーラーを変更できる、 [ **SP_SELECTDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)します。 たとえば、インストーラーは可能性があります、タイトルや Windows でドライバーを選択するユーザーを確認するダイアログ ボックスを使用するための手順に指定します。
 
 インストーラーは、前のインストーラーによって設定されるパラメーターを変更すると、新しい デバイス パラメーターを設定する場合、インストーラーは、フィールドを設定しませんを 0 する必要があります。
 
@@ -87,7 +87,7 @@ DIF_SELECTDEVICE 要求は、インストーラーへの参加のデバイス �
 
 この差分コードの何も共同インストーラー場合は、前処理のパスから NO_ERROR を返します。 共同インストーラーは、この差分コードを処理する場合する必要があるためプリプロセスで渡す行い NO_ERROR または Win32 エラー コードを返します。 処理後の共同インストーラーが呼び出されるまでに、ドライバーは既に選択されています。
 
-クラスのインストーラーが正常にこの要求を処理する場合と[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)既定のハンドラーを呼び出す必要があります、その後、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
+クラスのインストーラーが正常にこの要求を処理する場合と[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)既定のハンドラーを呼び出す必要があります、その後、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
 
 クラスのインストーラーが正常に既定のハンドラーを直接呼び出しなど、この要求を処理する場合、クラスのインストーラーは NO_ERROR を返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しはもう一度です。
 
@@ -95,15 +95,15 @@ DIF_SELECTDEVICE 要求は、インストーラーへの参加のデバイス �
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://msdn.microsoft.com/library/windows/hardware/ff537868)します。
+既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)します。
 
 クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
 
-場合、クラスのインストーラーが ERROR_DI_BAD_PATH を返します、 **DriverPath**の対応するメンバー [ **SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346)構造体が等しくない**NULL**が、指定したパスの場所で有効なドライバーがないです。 これは、パスの場所でドライバーがない場合、またはドライバーがある場合に発生することができますが、**フラグ**のメンバー、 [ **SP_DRVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff553290)各ドライバーの構造の設定DN_BAD_DRIVER フラグ。 このエラー コードに対しては、Windows には、ユーザーにエラーが表示されます。
+場合、クラスのインストーラーが ERROR_DI_BAD_PATH を返します、 **DriverPath**の対応するメンバー [ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)構造体が等しくない**NULL**が、指定したパスの場所で有効なドライバーがないです。 これは、パスの場所でドライバーがない場合、またはドライバーがある場合に発生することができますが、**フラグ**のメンバー、 [ **SP_DRVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_drvinstall_params)各ドライバーの構造の設定DN_BAD_DRIVER フラグ。 このエラー コードに対しては、Windows には、ユーザーにエラーが表示されます。
 
 ### <a name="default-dif-code-handler"></a>既定の差分コード ハンドラー
 
-[**SetupDiSelectDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552115)
+[**SetupDiSelectDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiselectdevice)
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
@@ -115,17 +115,17 @@ DIF_SELECTDEVICE 要求に応答してでは、インストーラーは、その
 
 -   Windows 選択 UI に表示される select 文字列を指定します。
 
-    インストーラーは、クラスのインストール パラメータで select 文字列を指定できます ([**SP_SELECTDEVICE_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553326))。 たとえば、インストーラーを変更できます、**指示**またはウィンドウのヘッダー**タイトル**します。
+    インストーラーは、クラスのインストール パラメータで select 文字列を指定できます ([**SP_SELECTDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a))。 たとえば、インストーラーを変更できます、**指示**またはウィンドウのヘッダー**タイトル**します。
 
     クラスのインストーラー共同インストーラーに select 文字列が既に提供されている場合 select 文字列を指定する必要があります。 共同インストーラーには、おそらく、関連性の高い情報がいます。
 
-    インストーラーを変更する場合、 [ **SP_SELECTDEVICE_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553326)、インストーラーで DI_USECI_SELECTSTRINGS フラグを設定する必要がありますも、 [ **SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346).
+    インストーラーを変更する場合、 [ **SP_SELECTDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)、インストーラーで DI_USECI_SELECTSTRINGS フラグを設定する必要がありますも、 [ **SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a).
 
     インストーラーが正常に select 文字列を提供している場合 Windows はまだ既定のハンドラーを呼び出します。 そのため、ここでは、共同インストーラーには NO_ERROR が返され、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
 
 -   デバイスのインストール パラメーターを変更します。
 
-    インストーラーは、デバイスのインストール パラメーターを変更できます ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346))。 たとえば、インストーラーが Windows 表示 DI_SHOWOEM フラグを設定可能性があります、**ディスク**ボタンをクリックします。
+    インストーラーは、デバイスのインストール パラメーターを変更できます ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a))。 たとえば、インストーラーが Windows 表示 DI_SHOWOEM フラグを設定可能性があります、**ディスク**ボタンをクリックします。
 
     クラスのインストーラーは、デバイスのインストール パラメーターを正常に変更、クラスのインストーラーは ERROR_DI_DO_DEFAULT を返します。
 
@@ -137,8 +137,8 @@ DIF_SELECTDEVICE 要求に応答してでは、インストーラーは、その
 
     インストーラーでは、次の手順で不適切なドライバーをマークします。
 
-    1.  ドライバーの一覧を呼び出すことによってビルド[ **SetupDiBuildDriverInfoList** ](https://msdn.microsoft.com/library/windows/hardware/ff550917)で、 *DriverType* SPDIT_CLASSDRIVER の。
-    2.  呼び出すことによってリスト内の最初のドライバーに関する情報を取得[ **SetupDiEnumDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff551018)と[ **SetupDiGetDriverInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff551978). ドライバーがデバイスに適切でない場合 DNF_BAD_DRIVER フラグを設定、**フラグ**パラメーターのフィールド。 呼び出すことによって、パラメーターに変更を適用[ **SetupDiSetDriverInstallParams**](https://msdn.microsoft.com/library/windows/hardware/ff552172)します。
+    1.  ドライバーの一覧を呼び出すことによってビルド[ **SetupDiBuildDriverInfoList** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)で、 *DriverType* SPDIT_CLASSDRIVER の。
+    2.  呼び出すことによってリスト内の最初のドライバーに関する情報を取得[ **SetupDiEnumDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa)と[ **SetupDiGetDriverInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa). ドライバーがデバイスに適切でない場合 DNF_BAD_DRIVER フラグを設定、**フラグ**パラメーターのフィールド。 呼び出すことによって、パラメーターに変更を適用[ **SetupDiSetDriverInstallParams**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdriverinstallparamsa)します。
     3.  リスト内のすべてのドライバーが処理するまでは、前の手順を繰り返します。 インクリメントするかどうかを確認、 *MemberIndex*パラメーターを**SetupDiEnumDriverInfo**その関数のリファレンス ページで説明されているとします。
 
     インストーラーはドライバーの一覧で 1 つまたは複数のドライバの DNF_BAD_DRIVER フラグを設定することがありますが、インストーラーは、そのフラグをクリアしない必要があります。
@@ -153,7 +153,7 @@ DIF_SELECTDEVICE 要求に応答してでは、インストーラーは、その
 
 デバイスのインストール パラメーターで DI_ENUMSINGLEINF フラグが設定されている場合、 **DriverPath**はディレクトリのパスではなく 1 つの INF ファイルのパスです。 インストーラーは、その 1 つの INF のみを使用して、ドライバーの一覧を作成する必要があります。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -180,13 +180,13 @@ DIF_SELECTDEVICE 要求に応答してでは、インストーラーは、その
 
 [**DIF_NEWDEVICEWIZARD_SELECT**](dif-newdevicewizard-select.md)
 
-[**SetupDiSelectDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552115)
+[**SetupDiSelectDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiselectdevice)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_SELECTDEVICE_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553326)
+[**SP_SELECTDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - デバイス オブジェクトのフラグを確認しています
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a18fbb363181d3199418d64f441f62103aedc7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ea3cea627c87b24ef8c4bffb6d5b24a85deedcc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343723"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383365"
 ---
 # <a name="checking-flags-in-the-device-object"></a>デバイス オブジェクトのフラグの確認
 
@@ -24,7 +24,7 @@ ms.locfileid: "63343723"
 
 各 IRP とリムーバブル メディアからの I/O 操作を要求すると、リムーバブル メディア デバイス ドライバーを決定する必要があるかどうかの操作を行います\_を確認してください\_ボリュームが既に設定されてその**デバイス オブジェクト -&gt;フラグ**します。 この値を設定すると、ドライバーが、次の操作にする必要があります。
 
--   [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)、 [ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)、および[**IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744) 、要求を確認するかどうか SL\_オーバーライド\_を確認してください\_でボリュームが設定されて、**フラグ**のドライバーのメンバー [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造体。 場合は、要求された操作を続行します。
+-   [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)、および[**IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) 、要求を確認するかどうか SL\_オーバーライド\_を確認してください\_でボリュームが設定されて、**フラグ**のドライバーのメンバー [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造体。 場合は、要求された操作を続行します。
 
     基になるメディアの論理構造に関する情報を返すデバイス制御の要求がある SL\_オーバーライド\_を確認してください\_ボリュームで I/O スタックの場所のセット**フラグ**メンバーと、IFS では、マウントまたはリムーバブル メディア ボリュームを再マウントします。
 

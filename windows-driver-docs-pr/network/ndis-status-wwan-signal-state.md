@@ -5,12 +5,12 @@ ms.assetid: b5d6b2a6-ed19-45d9-85ca-ac66e38f41fd
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_WWAN_SIGNAL_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd6fd10142ae4457849732c50876103fc9a89f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cb20e46bf69c79c37a4bcddbb2ce3486fd0bcd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372239"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386863"
 ---
 # <a name="ndisstatuswwansignalstate"></a>NDIS\_状態\_WWAN\_信号\_状態
 
@@ -19,7 +19,7 @@ ms.locfileid: "63372239"
 
 ミニポート ドライバーには、この通知が不要なイベントを送信できます。
 
-この通知を使用して、 [ **NDIS\_WWAN\_信号\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567931)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_信号\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -53,7 +53,7 @@ ms.locfileid: "63372239"
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_信号\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567931)
+[**NDIS\_WWAN\_信号\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)
 
 [OID\_WWAN\_信号\_状態](oid-wwan-signal-state.md)
 

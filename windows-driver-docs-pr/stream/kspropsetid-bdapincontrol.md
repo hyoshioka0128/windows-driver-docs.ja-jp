@@ -4,12 +4,12 @@ description: KSPROPSETID\_BdaPinControl
 ms.assetid: f3c6ae83-d50f-49c8-a851-763f191f1932
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8c7d765eef00b29bc36c20fb68337b9d90104d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f365c182efe38f6edd5097fa18fe2a4e913308b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371840"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384493"
 ---
 # <a name="kspropsetidbdapincontrol"></a>KSPROPSETID\_BdaPinControl
 
@@ -37,7 +37,7 @@ BDA フィルターの各ピンの工場出荷時に、このプロパティを�
 
 ### <a name="see-also"></a>関連項目
 
-[**BdaCreatePin**](https://msdn.microsoft.com/library/windows/hardware/ff556445), [**BdaInitFilter**](https://msdn.microsoft.com/library/windows/hardware/ff556464), [**BdaPropertyGetPinControl**](https://msdn.microsoft.com/library/windows/hardware/ff556483), [KSMETHODSETID\_BdaDeviceConfiguration](ksmethodsetid-bdadeviceconfiguration.md)
+[**BdaCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatepin), [**BdaInitFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdainitfilter), [**BdaPropertyGetPinControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertygetpincontrol), [KSMETHODSETID\_BdaDeviceConfiguration](ksmethodsetid-bdadeviceconfiguration.md)
 
  
 

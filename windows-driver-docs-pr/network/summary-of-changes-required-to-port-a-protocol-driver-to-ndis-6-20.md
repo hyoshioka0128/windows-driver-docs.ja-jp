@@ -9,12 +9,12 @@ keywords:
 - プロトコル ドライバー WDK、NDIS 6.20 が動作への移植
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: deed1d77b98591e6be28971a09e706d601647c9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b0a5bc242f27a2ac0e28ec0935e1e92b396e24c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366354"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357354"
 ---
 # <a name="summary-of-changes-required-to-port-a-protocol-driver-to-ndis-620"></a>プロトコル ドライバーを NDIS 6.20 に移植するために必要な変更の概要
 
@@ -28,7 +28,7 @@ NDIS 6.20 が動作は、以前のバージョンの NDIS との下位互換性�
 
 NDIS 6.20 が動作環境をサポートするためにプロトコル ドライバーを更新するには、ように NDIS 6.x プロトコルのドライバーを変更する必要があります。
 
-<a href="" id="build-environment-------"></a>**環境を構築します。**   
+<a href="" id="build-environment-------"></a>**環境を構築します。**    
 NDIS620 NDIS61 または NDIS60 プリプロセッサの定義に置き換えます。
 
 <a href="" id="general-porting-requirements-------"></a>**移植の一般的な要件**   
@@ -44,7 +44,7 @@ NDIS620 NDIS61 または NDIS60 プリプロセッサの定義に置き換えま
     64 を超えるプロセッサのサポートに関する詳細については、次を参照してください。 [NDIS 6.20 で 64 を超えるプロセッサのサポート](support-for-more-than-64-processors-in-ndis-6-20.md)します。
 
 <a href="" id="driver-initialization-------"></a>**ドライバーの初期化**   
--   NDIS バージョンで 6.20 が動作を設定、 **MajorNdisVersion**と**MinorNdisVersion**のメンバー、 [ **NDIS\_プロトコル\_ドライバー\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566825)に渡される構造体、 [ **NdisRegisterProtocolDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff564520)関数。
+-   NDIS バージョンで 6.20 が動作を設定、 **MajorNdisVersion**と**MinorNdisVersion**のメンバー、 [ **NDIS\_プロトコル\_ドライバー\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_protocol_driver_characteristics)に渡される構造体、 [ **NdisRegisterProtocolDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)関数。
 
 -   プロトコル ドライバーのバージョンを設定、 **MajorDriverVersion**と**MinorDriverVersion**の NDIS メンバー\_プロトコル\_ドライバー\_特性適切なドライバー固有の値構造体。
 
@@ -56,13 +56,13 @@ NDIS620 NDIS61 または NDIS60 プリプロセッサの定義に置き換えま
     -   ハードウェア支援 (VMQ)
 -   これらの構造の更新バージョンを使用します。
 
-    -   [**NDIS\_バインド\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff564832)
-    -   [**NDIS\_オフロード\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566706)
+    -   [**NDIS\_バインド\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)
+    -   [**NDIS\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 
     NDIS 構造のバージョン情報については、次を参照してください。 [NDIS バージョン情報を指定する](specifying-ndis-version-information.md)します。
 
 <a href="" id="send-and-receive-data-paths-------"></a>**送信および受信データのパス**   
--   更新バージョンを使用して、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。
+-   更新バージョンを使用して、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。
 
 -   必要に応じて、仮想マシン キュー (VMQ) インターフェイスをサポートします。 VMQ の詳細については、次を参照してください。 [NDIS 6.20 で仮想マシン キュー (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)します。
 

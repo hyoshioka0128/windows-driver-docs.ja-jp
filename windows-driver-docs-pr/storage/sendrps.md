@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c52a673094b3821c1e80fe6b3b4f60cf44203916
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df8753e2a370cca6645de02d3a68edca752b665d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329985"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362656"
 ---
 # <a name="sendrps-function"></a>SendRPS 関数
 
@@ -48,31 +48,31 @@ void SendRPS(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565516)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendRPS\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)構造体。
 
 *PortWWN*   
-RPS コマンドを送信するローカル ポートに世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)構造体。
+RPS コマンドを送信するローカル ポートに世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **PortWWN**のメンバー、 [ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)構造体。
 
 *AgentWWN*   
-ポートのポートの状態を照会するのには、世界中の名前で示されます*ObjectWWN*します。 この情報は、ミニポート ドライバーに配信される、 **AgentWWN**のメンバー、 [ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)構造体。
+ポートのポートの状態を照会するのには、世界中の名前で示されます*ObjectWWN*します。 この情報は、ミニポート ドライバーに配信される、 **AgentWWN**のメンバー、 [ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)構造体。
 
 *ObjectWWN*   
-状態が返されるポートのポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **ObjectWWN**のメンバー、 [ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)構造体。
+状態が返されるポートのポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **ObjectWWN**のメンバー、 [ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)構造体。
 
 *AgentDomain*   
-ポートの状態のクエリを実行するドメイン コント ローラーのドメインの数が示される*ObjectWWN*します。 この情報は、ミニポート ドライバーに配信される、 **AgentDomain**のメンバー、 [ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)構造体。
+ポートの状態のクエリを実行するドメイン コント ローラーのドメインの数が示される*ObjectWWN*します。 この情報は、ミニポート ドライバーに配信される、 **AgentDomain**のメンバー、 [ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)構造体。
 
 *ObjectPortNumber*   
-状態が返されるポートのポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **ObjectPortNumber**のメンバー、 [ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)構造体。
+状態が返されるポートのポートの世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **ObjectPortNumber**のメンバー、 [ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)構造体。
 
 *TotalRspBufferSize*   
-RPS コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **TotalRspBufferSize**のメンバー、 [ **SendRPS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565516)構造体。
+RPS コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **TotalRspBufferSize**のメンバー、 [ **SendRPS\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)構造体。
 
 *ActualRspBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ActualRspBufferSize**のメンバー、 [ **SendRPS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565516)構造体。
+実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ActualRspBufferSize**のメンバー、 [ **SendRPS\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)構造体。
 
 *RspBuffer*   
-RPS コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **RspBuffer**のメンバー、 [ **SendRPS\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565516)構造体。
+RPS コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **RspBuffer**のメンバー、 [ **SendRPS\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -113,9 +113,9 @@ WMI メソッドには適用されません。
 
 [HBA\_状態](hba-status.md)
 
-[**SendRPS\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565512)
+[**SendRPS\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)
 
-[**SendRPS\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565516)
+[**SendRPS\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)
 
  
 

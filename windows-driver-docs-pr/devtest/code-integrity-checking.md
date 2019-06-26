@@ -6,16 +6,16 @@ keywords:
 - Driver Verifier のコードの整合性チェック
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a596e6e1e9e7adc71efa3e66ac582b7bedcd1de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1be91e04333fe33af07b01338b078989fcbda00b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343938"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371622"
 ---
 # <a name="code-integrity-checking"></a>コード整合性チェック
 
-[Device Guard](https://blogs.msdn.microsoft.com/windows_hardware_certification/2015/05/22/driver-compatibility-with-device-guard-in-windows-10/) Windows オペレーティング システムの残りの部分からコードの整合性 (CI) の意思決定関数を分離するハードウェア テクノロジと仮想化を使用できます。 仮想化ベースのセキュリティを使用して、コードの整合性を分離する、カーネル メモリは、実行可能になることができますのみの方法は、コードの整合性の検証です。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。 コードの整合性チェックでは、これらのコードの整合性規則の互換性を確保し、次の違反を検出します。
+[Device Guard](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification) Windows オペレーティング システムの残りの部分からコードの整合性 (CI) の意思決定関数を分離するハードウェア テクノロジと仮想化を使用できます。 仮想化ベースのセキュリティを使用して、コードの整合性を分離する、カーネル メモリは、実行可能になることができますのみの方法は、コードの整合性の検証です。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。 コードの整合性チェックでは、これらのコードの整合性規則の互換性を確保し、次の違反を検出します。
 
 <table>
   <tr>

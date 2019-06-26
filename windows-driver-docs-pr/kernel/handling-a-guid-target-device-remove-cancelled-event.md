@@ -9,12 +9,12 @@ keywords:
 - GUID_TARGET_DEVICE_REMOVE_CANCELLED
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d6dfcb47f6ce0c590e78faee78958798087407
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3c8adea938b74a4c7f9eddfcfacf85c0f198dff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359865"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385251"
 ---
 # <a name="handling-a-guidtargetdeviceremovecancelled-event"></a>GUID の処理\_ターゲット\_デバイス\_削除\_キャンセル イベント
 
@@ -22,7 +22,7 @@ ms.locfileid: "63359865"
 
 
 
-場合、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551705) PnP マネージャー送信要求に失敗した、 [ **IRP\_MN\_キャンセル\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff550823) IRP デバイスのドライバーをします。 キャンセルと削除 IRP が正常に完了した後、PnP マネージャーは、任意の通知に登録するコールバック ルーチン**EventCategoryTargetDeviceChange**デバイスにします。 PnP マネージャーを指定します、 *NotificationStructure*.**イベント**GUID の\_ターゲット\_デバイス\_削除\_キャンセルします。
+場合、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device) PnP マネージャー送信要求に失敗した、 [ **IRP\_MN\_キャンセル\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device) IRP デバイスのドライバーをします。 キャンセルと削除 IRP が正常に完了した後、PnP マネージャーは、任意の通知に登録するコールバック ルーチン**EventCategoryTargetDeviceChange**デバイスにします。 PnP マネージャーを指定します、 *NotificationStructure*.**イベント**GUID の\_ターゲット\_デバイス\_削除\_キャンセルします。
 
 GUID を処理するときに\_ターゲット\_デバイス\_削除\_CANCELLED のイベント通知のコールバック ルーチンをする必要があります。
 
@@ -30,7 +30,7 @@ GUID を処理するときに\_ターゲット\_デバイス\_削除\_CANCELLED 
 
     ドライバーにクエリの削除通知に対する応答で以前登録ハンドルが閉じているため、ドライバーは新しいハンドルを開く必要があります。 ドライバーが必要です。
 
-    1.  削除での登録が古い[ **IoUnregisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff550398)します。
+    1.  削除での登録が古い[ **IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)します。
 
     2.  デバイスへの新しいハンドルを開きます。
 

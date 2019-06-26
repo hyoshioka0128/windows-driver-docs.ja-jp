@@ -4,12 +4,12 @@ description: INF AddProperty ディレクティブと INF DelProperty ディレ�
 ms.assetid: e5ae8d66-b2dc-409e-bdac-9034a9e24672
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf63e5b2cb5d9ddda5d616d563f4f76fa07df949
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dac0f50c870a71d8236deda453177d895d72bf8f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384750"
 ---
 # <a name="using-the-inf-addproperty-directive-and-the-inf-delproperty-directive"></a>INF AddProperty ディレクティブと INF DelProperty ディレクティブの使用
 
@@ -43,10 +43,10 @@ Windows Vista および Windows の以降のバージョンで使用できます
  **{** <em>プロパティ カテゴリの guid</em> **}、** <em>プロパティ pid</em> **、** <em>型</em> **、\[** <em>フラグ</em> ** \]、** <em>値</em>エントリの値は、次を指定します。
 
 <a href="" id="property-name"></a>*property-name*  
-DEVPKEY_DrvPkg_ を識別する名前*Xxx*プロパティ。 たとえば、 **DeviceModel**、表す、 [ **DEVPKEY_DrvPkg_Model** ](https://msdn.microsoft.com/library/windows/hardware/ff543523)プロパティ、または**DeviceVendorWebSite**を表す、 [ **DEVPKEY_DrvPkg_VendorWebSite** ](https://msdn.microsoft.com/library/windows/hardware/ff543527)プロパティ。
+DEVPKEY_DrvPkg_ を識別する名前*Xxx*プロパティ。 たとえば、 **DeviceModel**、表す、 [ **DEVPKEY_DrvPkg_Model** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-drvpkg-model)プロパティ、または**DeviceVendorWebSite**を表す、 [ **DEVPKEY_DrvPkg_VendorWebSite** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-drvpkg-vendorwebsite)プロパティ。
 
 <a href="" id="property-category-guid"></a>*property-category-guid*  
-プロパティが所属するプロパティのカテゴリの GUID 値。 など、システム定義[ **DEVPKEY_Device_FriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff542502)プロパティ。 GUID 値には、カスタム デバイス カテゴリも指定できます。
+プロパティが所属するプロパティのカテゴリの GUID 値。 など、システム定義[ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)プロパティ。 GUID 値には、カスタム デバイス カテゴリも指定できます。
 
 <a href="" id="property-pid"></a>*プロパティの pid*  
 プロパティのカテゴリ内のプロパティを識別するプロパティの識別子。 たとえば、DEVPKEY_Device_FriendlyName プロパティの識別子のプロパティの値には 14 です。
@@ -87,16 +87,16 @@ DeviceModel,,,,"Sample Device Model Name"
 *プロパティ名* \[ **、および***フラグ* \[ **、** <em>値</em>\] \] **{** <em>プロパティ カテゴリの guid</em> **}、** *プロパティ pid* \[ **、** *フラグ* \[ **、** <em>値</em>\] \]エントリの値は、次を指定します。
 
 <a href="" id="property-name"></a>*property-name*  
-DEVPKEY_DrvPkg_ を識別する名前*Xxx*プロパティ。 たとえば、 **DeviceModel**、表す、 [ **DEVPKEY_DrvPkg_Model** ](https://msdn.microsoft.com/library/windows/hardware/ff543523)プロパティ、または**DeviceVendorWebSite**を表す、 [ **DEVPKEY_Device_FriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff542502)プロパティ。
+DEVPKEY_DrvPkg_ を識別する名前*Xxx*プロパティ。 たとえば、 **DeviceModel**、表す、 [ **DEVPKEY_DrvPkg_Model** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-drvpkg-model)プロパティ、または**DeviceVendorWebSite**を表す、 [ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)プロパティ。
 
 <a href="" id="property-category-guid"></a>*property-category-guid*  
-プロパティが所属するプロパティのカテゴリの GUID 値。 など、システム定義[ **DEVPKEY_Device_FriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff542502)プロパティ。 GUID 値には、カスタム デバイス カテゴリも指定できます。
+プロパティが所属するプロパティのカテゴリの GUID 値。 など、システム定義[ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)プロパティ。 GUID 値には、カスタム デバイス カテゴリも指定できます。
 
 <a href="" id="property-pid"></a>*プロパティの pid*  
 プロパティのカテゴリ内のプロパティを識別するプロパティの識別子。 たとえば、DEVPKEY_Device_FriendlyName プロパティの識別子のプロパティの値には 14 です。
 
 <a href="" id="flags"></a>*フラグ*  
-データ型がプロパティでのみ使用するために有効なオプションのフラグ[ **DEVPROP_TYPE_STRING_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff543614)します。 削除操作がで指定された文字列を削除フラグが設定されている場合*値*プロパティ文字列のリストから。
+データ型がプロパティでのみ使用するために有効なオプションのフラグ[ **DEVPROP_TYPE_STRING_LIST**](https://docs.microsoft.com/windows-hardware/drivers/install/devprop-type-string-list)します。 削除操作がで指定された文字列を削除フラグが設定されている場合*値*プロパティ文字列のリストから。
 
 <a href="" id="value"></a>*値*  
 プロパティ文字列の一覧から削除する文字列。

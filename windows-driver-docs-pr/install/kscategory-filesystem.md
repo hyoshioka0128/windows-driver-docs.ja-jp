@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 114b8a70fb5b34431ebeaeae58c28d0ba2c38e2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd79927454afa0c2791c1a68a06b3aa305427064
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366752"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387027"
 ---
 # <a name="kscategoryfilesystem"></a>KSCATEGORY_FILESYSTEM
 
 
-KSCATEGORY_FILESYSTEM[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)データ ストリームをファイル システムの内外に移動します (KS) 機能のカテゴリ。
+KSCATEGORY_FILESYSTEM[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)データ ストリームをファイル システムの内外に移動します (KS) 機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ KSCATEGORY_FILESYSTEM[デバイス インターフェイス クラス](https://m
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_FILESYSTEM 機能カテゴリをサポートすることを示す KSCATEGORY_FILESYSTEM のインスタンスを登録します。
 
-KSCATEGORY_FILESYSTEM 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799)機能別に分類します。
+KSCATEGORY_FILESYSTEM 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)機能別に分類します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ KSCATEGORY_FILESYSTEM 機能のカテゴリは、のいずれか、 [ **KSPROPER
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

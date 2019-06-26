@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUni2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74e516601e7f23e96042b143db50d73d79c6e200
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 052f9a04ccd610cbc7c9e5f18abf4a149597ba93
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386501"
 ---
 # <a name="iprintoemuni2-com-interface"></a>IPrintOemUni2 COM インターフェイス
 
@@ -36,7 +36,7 @@ ms.locfileid: "63354050"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554196" data-raw-source="[&lt;strong&gt;IPrintOemUni2::WritePrinter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554196)"><strong>IPrintOemUni2::WritePrinter</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter" data-raw-source="[&lt;strong&gt;IPrintOemUni2::WritePrinter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter)"><strong>IPrintOemUni2::WritePrinter</strong></a></p></td>
 <td><p>Unidrv ドライバーによって生成されたすべての出力データをキャプチャするプラグインを使用できます。</p></td>
 </tr>
 </tbody>

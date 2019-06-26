@@ -4,17 +4,17 @@ description: センサー デバイス ドライバーを作成
 ms.assetid: f876bbfb-6595-484e-a917-0b3f5932b3c8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da3bc50a9e5dbb84b131cf23cf73605b2e2cc2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e57d8f0cc5094e3ce3f0c5c407d5faf8ebd13b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384175"
 ---
 # <a name="writing-a-sensor-device-driver"></a>センサー デバイス ドライバーを作成
 
 
-ユーザー モード ドライバー フレームワーク (UMDF) のセンサー デバイス ドライバーをビルドするため、まずこのフレームワークについて理解しておく必要があります。 UMDF の詳細については、次を参照してください。 [UMDF 概要](https://msdn.microsoft.com/library/windows/hardware/ff554928)します。
+ユーザー モード ドライバー フレームワーク (UMDF) のセンサー デバイス ドライバーをビルドするため、まずこのフレームワークについて理解しておく必要があります。 UMDF の詳細については、次を参照してください。 [UMDF 概要](https://docs.microsoft.com/previous-versions/ff554928(v=vs.85))します。
 
 このセクションの内容
 

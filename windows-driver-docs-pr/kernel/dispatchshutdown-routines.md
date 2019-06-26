@@ -9,12 +9,12 @@ keywords:
 - シャット ダウン ディスパッチ ルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba42a3be1d4e7c9d8005e75f0843dbe4c4227d65
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f93fd8a4c832dd88ead14d9ffdd82d44e0556f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387187"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384967"
 ---
 # <a name="dispatchshutdown-routines"></a>DispatchShutdown ルーチン
 
@@ -22,7 +22,7 @@ ms.locfileid: "63387187"
 
 
 
-ドライバーの[ *DispatchShutdown* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_シャット ダウン**](https://msdn.microsoft.com/library/windows/hardware/ff550807) I/O関数のコードです。 データの内部キャッシュがある大容量記憶装置のドライバーでは、この要求を処理する必要があります。 大容量記憶装置のドライバーと上層にあるそれらの中間ドライバーを基になるドライバーには、データの内部バッファーが保持している場合この要求処理する必要がありますもします。
+ドライバーの[ *DispatchShutdown* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンの Irp の処理、 [ **IRP\_MJ\_シャット ダウン**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown) I/O関数のコードです。 データの内部キャッシュがある大容量記憶装置のドライバーでは、この要求を処理する必要があります。 大容量記憶装置のドライバーと上層にあるそれらの中間ドライバーを基になるドライバーには、データの内部バッファーが保持している場合この要求処理する必要がありますもします。
 
  
 

@@ -4,12 +4,12 @@ description: テスト コンピューターへのテスト署名されたドラ
 ms.assetid: d825acb6-d1de-4fc5-bde2-ea27bd706f61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 500a7f993c3b978e0d9b979ba079d803ecf831e9
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: 2692e4e6078731430dba343d441fb6401f9a4999
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815092"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383740"
 ---
 # <a name="installing-a-test-signed-driver-package-on-the-test-computer"></a>テスト コンピューターへのテスト署名されたドライバー パッケージのインストール
 
@@ -22,7 +22,7 @@ ms.locfileid: "66815092"
 
 テスト署名されたをインストールする[ドライバー パッケージ](driver-packages.md)によりコンピューターに。
 
--   [DevCon](https://msdn.microsoft.com/library/windows/hardware/ff544707)ツールで、ドライバーをインストールするための WDK コマンド ライン ツールです。
+-   [DevCon](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon)ツールで、ドライバーをインストールするための WDK コマンド ライン ツールです。
 
 このトピックでは、ドライバー パッケージのテスト署名のプロセスをまず確認し、テスト コンピューターでドライバー パッケージをインストールする方法を説明します。 このトピックでは、 *ToastPkg*サンプル ドライバー パッケージ。 WDK のインストール ディレクトリ内で、パッケージのソース ファイル内にある、 *src\\全般\\トースター\\toastpkg*ディレクトリ。
 

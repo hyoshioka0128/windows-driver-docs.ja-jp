@@ -4,12 +4,12 @@ description: NDIS 6.30 では、NDIS 6.20 が動作し、NDIS 6.0 のドライ�
 ms.assetid: 71C2BBCF-206A-4C2D-BF9C-C4074FB9276D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73d185f4b116eb7b9a7eb66af2b7a5176664a67d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed4b494f483a621d731115c67f9b96a9ed61fa26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383606"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387275"
 ---
 # <a name="ndis-630-backward-compatibility"></a>NDIS 6.30 の下位互換性
 
@@ -26,7 +26,7 @@ Windows 8 以降、次の機能がサポートされていません。
 -   仮想マシンの場合は、TCP chimney オフロードがサポートされていません。 ただし、ネイティブの使用はまだことできます。
 -   [IPsec タスク オフロード バージョン 1](ipsec-offload-version-1.md)します。 IPsec タスク オフロードをサポートするすべてのドライバーをサポートするために更新する必要があります[IPsec タスク オフロード バージョン 2](ipsec-offload-version-2.md)します。
 -   中間ドライバーをフィルター処理します。 代わりに、NDIS 6 を使用します。*x*フィルター ドライバー インターフェイス。 フィルター ドライバーの詳細については、次を参照してください。 [NDIS フィルター ドライバー](ndis-filter-drivers.md)します。
--   802.3 をエミュレートする 802.11 ドライバーです。 NDIS 802.11 ドライバーでは、ネイティブの 802.11 インターフェイスをサポートする必要があります。 ネイティブの 802.11 の詳細については、次を参照してください。[ネイティブ 802.11 ワイヤレス LAN](https://msdn.microsoft.com/library/windows/hardware/ff560689)します。
+-   802.3 をエミュレートする 802.11 ドライバーです。 NDIS 802.11 ドライバーでは、ネイティブの 802.11 インターフェイスをサポートする必要があります。 ネイティブの 802.11 の詳細については、次を参照してください。[ネイティブ 802.11 ワイヤレス LAN](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff560689(v=vs.85))します。
 -   NDIS WAN ドライバーです。 NDIS 6.0 いる CoNDIS WAN ドライバー モデルには、NDIS WAN のドライバーを移植する必要があります。 いる CoNDIS WAN の詳細については、次を参照してください。 [WAN ミニポート ドライバー](wan-miniport-drivers.md)します。
 
 ## <a name="features-that-have-been-removed"></a>削除された機能

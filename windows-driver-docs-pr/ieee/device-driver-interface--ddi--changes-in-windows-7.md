@@ -4,12 +4,12 @@ description: このトピックでは、新しい 1394 バス ドライバーを
 ms.assetid: 5473C6AC-284C-41B1-AA67-75696BE96C24
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 890f70f01b1d2950d256b67585cd14d00f376938
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a13152caf8d7e79e729df0efcfcefcea9eb9f29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376690"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385780"
 ---
 # <a name="device-driver-interface-ddi-changes-in-windows-7"></a>Windows 7 のデバイス ドライバー インターフェイス (DDI) の変更点
 
@@ -29,7 +29,7 @@ Windows 7 には、1394ohci.sys、カーネル モード ドライバー フレ�
 
 1394ohci.sys バス ドライバーでは、拡張のバスのリセット通知をサポートします。 この通知は、バスのリセット通知のコンテキストで 1394 クライアント ドライバー (世代の数とノード id) などのバスの現在の生成に関する情報を返します。 この情報には、1394 クライアント ドライバー生成数、ノード id、およびその他の情報の取得の同期、使用すると、バスには、通知ハンドラーをリセットする必要があります。
 
-クライアント ドライバーが、既存を使用するには拡張のバスのリセット通知の登録、 [**要求\_BUS\_リセット\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537638) I/O 要求を指定します新しい拡張\_通知\_ルーチン フラグ、 **u.BusResetNotification.fulFlags**パラメーター。 ときに拡張された\_通知\_ルーチン フラグが指定されて、 **u.BusResetNotification.ResetContext**パラメーターが指す、 [ **BUS\_のリセット\_データ**](https://msdn.microsoft.com/library/windows/hardware/gg266399)構造体。
+クライアント ドライバーが、既存を使用するには拡張のバスのリセット通知の登録、 [**要求\_BUS\_リセット\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537638) I/O 要求を指定します新しい拡張\_通知\_ルーチン フラグ、 **u.BusResetNotification.fulFlags**パラメーター。 ときに拡張された\_通知\_ルーチン フラグが指定されて、 **u.BusResetNotification.ResetContext**パラメーターが指す、 [ **BUS\_のリセット\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_bus_reset_data)構造体。
 
 ## <a name="new-ioctls-for-phy-packet-support"></a>新しい Ioctl PHY パケットのサポート
 
@@ -95,7 +95,7 @@ Windows 7 には、1394ohci.sys、カーネル モード ドライバー フレ�
 
 クライアント ドライバーを設定する必要があります、raw モードのアドレス指定を使用する場合、 **nBlockSize**メンバー接続の速度でのデバイスでサポートされている非同期ペイロードの最大サイズにします。
 
-Raw モードのアドレス指定の詳細については、次を参照してください。[を送信する非同期 I/O 要求パケットの IEEE 1394 バス](https://msdn.microsoft.com/library/windows/hardware/ff538087)します。
+Raw モードのアドレス指定の詳細については、次を参照してください。[を送信する非同期 I/O 要求パケットの IEEE 1394 バス](https://docs.microsoft.com/windows-hardware/drivers/ieee/sending-asynchronous-i-o-request-packets-on-the-ieee-1394-bus)します。
 
 [**要求\_ASYNC\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff537636)  
 
@@ -167,5 +167,5 @@ Raw モードのアドレス指定の詳細については、次を参照して�
 
 ## <a name="related-topics"></a>関連トピック
 
-[IEEE 1394 ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/ff538867)  
-[Windows 7 での IEEE 1394 バス ドライバー](https://msdn.microsoft.com/library/windows/hardware/gg266402)  
+[IEEE 1394 ドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)  
+[Windows 7 での IEEE 1394 バス ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/IEEE-1394-Bus-Driver-in-Windows-7)  

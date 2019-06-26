@@ -4,12 +4,12 @@ description: MPIO\_DSM\_パス WMI クラス
 ms.assetid: 4f8d7fb0-2b9a-44dc-bb87-f70285f1b47c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1a861a667cc0c73ec437c4d54aa977bb67b18f7e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7df5c8c9de117e5b2c0aab6e1c5c89fc4a502265
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386159"
 ---
 # <a name="mpiodsmpath-wmi-class"></a>MPIO\_DSM\_パス WMI クラス
 
@@ -56,7 +56,7 @@ class MPIO_DSM_Path
 };
 ```
 
-このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_DSM\_パス**](https://msdn.microsoft.com/library/windows/hardware/ff562382)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+このクラスの定義が WMI ツール スイートによってコンパイルされると、生成、 [ **MPIO\_DSM\_パス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_mpio_dsm_path)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

@@ -17,12 +17,12 @@ keywords:
 - ファイルの WDK ネットワーク コンポーネントがインストールされます。
 ms.date: 01/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b3c4163ad8b7bb88193f737b08bd499225b1a37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8afc447883bb2953874275c57d7db0a1c31089ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344240"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379264"
 ---
 # <a name="components-and-files-used-for-network-component-installation"></a>ネットワーク コンポーネントのインストールに使用されるコンポーネントとファイル
 
@@ -46,13 +46,13 @@ ms.locfileid: "63344240"
 
 ## <a name="inf-files"></a>INF ファイル
 
-各ネットワーク コンポーネント、コンポーネントをインストールするネットワーク クラスのインストーラーを使用する情報 (INF) ファイルが必要です。 ネットワークの INF ファイルは、共通の INF ファイル形式に基づいています。 INF ファイルの形式に関する詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+各ネットワーク コンポーネント、コンポーネントをインストールするネットワーク クラスのインストーラーを使用する情報 (INF) ファイルが必要です。 ネットワークの INF ファイルは、共通の INF ファイル形式に基づいています。 INF ファイルの形式に関する詳細については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
 ネットワーク コンポーネントの INF ファイルの作成の詳細については、次を参照してください。[ネットワーク INF ファイルの作成](creating-network-inf-files.md)です。
 
 ## <a name="inetcfg"></a>INetCfg
 
-呼び出すことによってこれらの NDIS プロトコルとフィルター ドライバーがインストールされている現在、`INetCfg`ファミリの[構成のネットワーク インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v%3dvs.85))します。 たとえば、ネットワークのコンポーネントをインストールまたは削除、ドライバー ライターを呼び出すには[INetCfgClassSetup](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547709%28v%3dvs.85%29)インターフェイス。 
+呼び出すことによってこれらの NDIS プロトコルとフィルター ドライバーがインストールされている現在、`INetCfg`ファミリの[構成のネットワーク インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v=vs.85))します。 たとえば、ネットワークのコンポーネントをインストールまたは削除、ドライバー ライターを呼び出すには[INetCfgClassSetup](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547709(v=vs.85))インターフェイス。 
 
 ドライバー作成者がこのインターフェイスのいずれかの呼び出しをプログラムでできますか、使用できる[netcfg.exe](https://docs.microsoft.com/windows-server/administration/windows-commands/netcfg)、呼び出す`INetCfg`代わりにします。
 
@@ -64,7 +64,7 @@ ms.locfileid: "63344240"
 
 ネットワーク プロトコル、クライアント、またはサービスなどのソフトウェア コンポーネントを持つことができます、*通知オブジェクト*します。 通知オブジェクトは、ユーザー インターフェイスを表示、イベントをバインドできるように、コンポーネント、バインディング プロセスをいくつかの制御し条件付きでインストールまたは削除できるソフトウェア コンポーネントのコンポーネントに通知できます。 詳細については、オブジェクトに通知を参照してください[ネットワーク コンポーネントの通知オブジェクト](notify-objects-for-network-components.md)します。
 
-ネットワーク アダプターには、通知オブジェクトを含めることはできません。 共同インストーラーことができます。 共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)です。
+ネットワーク アダプターには、通知オブジェクトを含めることはできません。 共同インストーラーことができます。 共同インストーラーの詳細については、次を参照してください。[共同インストーラーの作成](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-co-installer)です。
 
 ## <a name="vendor-supplied-files"></a>ベンダーから提供されたファイル
 

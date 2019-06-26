@@ -4,12 +4,12 @@ description: デバイス ステージの一般的な開発キット
 ms.assetid: 259b3ac8-b9d3-4cbd-a003-e2d59e76bc1f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bac509276ceafc15c938b85fac3bc662bfba128
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ae4b098d43ac55895ee23b37c6bb9933c43a3b6
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391995"
 ---
 # <a name="device-stage-general-development-kit"></a>デバイス ステージの一般的な開発キット
 
@@ -27,7 +27,7 @@ ms.locfileid: "63365351"
 -   **Windows 7 デバイス ステージ開発のサンプル**-サンプル グラフィックおよび Device Stage の開発を支援するためのツールのコレクションが発生します。
 
 ## <a name="related-topics"></a>関連トピック
-[Microsoft デバイス エクスペリエンス開発キット](https://msdn.microsoft.com/library/windows/hardware/gg463154)  
+[Microsoft デバイス エクスペリエンス開発キット](https://docs.microsoft.com/previous-versions/windows/hardware/device-stage/dn629504(v=vs.85))  
 
 
 

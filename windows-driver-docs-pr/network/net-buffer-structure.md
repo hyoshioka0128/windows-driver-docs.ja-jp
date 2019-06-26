@@ -10,12 +10,12 @@ keywords:
 - NDIS_PACKET
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2339a151b20ca6196d0b669b69ae63b37ddea0f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b406c8714fefcfdcb00ee132f8d7df84759ea817
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323311"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385852"
 ---
 # <a name="netbuffer-structure"></a>NET\_バッファーの構造体
 
@@ -23,15 +23,15 @@ ms.locfileid: "63323311"
 
 
 
-NDIS 6.0 以降[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体に似ていますが、 [ **NDIS\_パケット**](https://msdn.microsoft.com/library/windows/hardware/ff557086)NDIS 5 を使用する構造体。*x*と以前のドライバーです。 各ネット\_バッファーの構造がネットワークのデータのパケットをパッケージ化します。
+NDIS 6.0 以降[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体に似ていますが、 [ **NDIS\_パケット**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))NDIS 5 を使用する構造体。*x*と以前のドライバーです。 各ネット\_バッファーの構造がネットワークのデータのパケットをパッケージ化します。
 
 次の図は、NET でフィールドを示します\_バッファーの構造体。
 
 ![net のフィールドを示す図\-バッファーの構造](images/netbuffer.png)
 
-NET\_バッファーの構造が含まれています、 [ **NET\_バッファー\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff568387)構造体、 **NetBufferHeader**メンバー。 NET\_バッファー\_ヘッダー構造が含まれています、 [ **NET\_バッファー\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff568381)構造体、 **NetBufferData**メンバー。 NET のアクセスに NDIS マクロを使用する必要があります\_バッファー構造体のメンバー。 これらのマクロの完全な一覧を参照してください、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造のリファレンス ページです。
+NET\_バッファーの構造が含まれています、 [ **NET\_バッファー\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_header)構造体、 **NetBufferHeader**メンバー。 NET\_バッファー\_ヘッダー構造が含まれています、 [ **NET\_バッファー\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_data)構造体、 **NetBufferData**メンバー。 NET のアクセスに NDIS マクロを使用する必要があります\_バッファー構造体のメンバー。 これらのマクロの完全な一覧を参照してください、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造のリファレンス ページです。
 
-いくつかの[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体のメンバーは NDIS でのみ使用します。 ドライバーが通常使用されるメンバーは次のとおりです。
+いくつかの[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体のメンバーは NDIS でのみ使用します。 ドライバーが通常使用されるメンバーは次のとおりです。
 
 <a href="" id="protocolreserved"></a>**ProtocolReserved**  
 プロトコル ドライバーで使用するために予約されています。
@@ -65,7 +65,7 @@ NDIS は、MDL チェーン内のデータ領域を管理する機能を提供�
 
 ドライバーが撤退を実行し、進化を増減する操作、*使用データ領域*します。 撤退および高度な操作の詳細については、次を参照してください。[撤退と高度な操作](retreat-and-advance-operations.md)します。
 
-次の用語と定義の要素を記述、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)データ領域。
+次の用語と定義の要素を記述、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)データ領域。
 
 <a href="" id="used-data-space"></a>使用するデータ領域  
 *使用中のデータ領域*現在のところ、現在のドライバーを使用しているデータが含まれています。 ドライバーを増やす*データ領域を使用*で退却操作し、削減*使用データ領域*高度な操作をします。

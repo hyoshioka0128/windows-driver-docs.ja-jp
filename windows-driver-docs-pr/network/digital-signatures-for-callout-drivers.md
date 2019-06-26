@@ -11,12 +11,12 @@ keywords:
 - ドライバー WDK、コールアウト ドライバーの署名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b404a61d908839ad7787b55b72c42d6b74b7af02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb1ba021cd0a2f2974a1cd2f6e644918d62a6f07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386572"
 ---
 # <a name="digital-signatures-for-callout-drivers"></a>コールアウト ドライバーのデジタル署名
 
@@ -25,7 +25,7 @@ ms.locfileid: "63379576"
 
 詳しくは、次のトピックをご覧ください。
 
--   [ドライバーの署名](https://msdn.microsoft.com/library/windows/hardware/ff544865)
+-   [ドライバーの署名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)
 -   [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)
 
  

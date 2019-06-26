@@ -7,12 +7,12 @@ keywords:
 - グラフィックスの DLL の WDK プリンター、ビルド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e203066f09f027d734a131089edb42948f218eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f413bb9767bc47dae5cc205686fed6b5fb43c26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330384"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384191"
 ---
 # <a name="building-a-printer-graphics-dll"></a>プリンター グラフィックス DLL をビルドする
 
@@ -53,8 +53,8 @@ ms.locfileid: "63330384"
 <td><p>オブジェクトのモジュールは、win32k.lib インポート ライブラリとリンクする必要があります。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556261" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556261)"> <strong>DrvQueryDriverInfo</strong> </a>関数が返す必要があります<strong>TRUE</strong> DRVQUERY_USERMODE の。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556261" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556261)"> <strong>DrvQueryDriverInfo</strong> </a>関数が返す必要があります<strong>FALSE</strong> DRVQUERY_USERMODE の。 (または、関数は省略できます。)</p></td>
+<td><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo)"> <strong>DrvQueryDriverInfo</strong> </a>関数が返す必要があります<strong>TRUE</strong> DRVQUERY_USERMODE の。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo)"> <strong>DrvQueryDriverInfo</strong> </a>関数が返す必要があります<strong>FALSE</strong> DRVQUERY_USERMODE の。 (または、関数は省略できます。)</p></td>
 </tr>
 </tbody>
 </table>

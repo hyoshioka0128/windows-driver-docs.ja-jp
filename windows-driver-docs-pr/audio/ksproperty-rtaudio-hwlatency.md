@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94cc647ea4756d1a8607a469b125847e24d6433e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3ca0d30437c3e18173f253190f710f2687f0d84
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332670"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391654"
 ---
 # <a name="kspropertyrtaudiohwlatency"></a>KSPROPERTY\_RTAUDIO\_HWLATENCY
 
@@ -52,7 +52,7 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティは、オーディオ ハードウ
 <td align="left"><p>〇</p></td>
 <td align="left"><p>いいえ</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwlatency"><strong>KSRTAUDIO_HWLATENCY</strong></a></p></td>
 </tr>
 </tbody>
@@ -67,7 +67,7 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティ要求がステータスを返し�
 <a name="remarks"></a>注釈
 -------
 
-後に、 [WaveRT ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538845)循環バッファーの割り当てが (を参照してください[ **KSPROPERTY\_RTAUDIO\_バッファー**](ksproperty-rtaudio-buffer.md))、クライアントが送信できる、KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティ ドライバー ハードウェア待機時間情報を要求します。
+後に、 [WaveRT ミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/wavert-miniport-driver)循環バッファーの割り当てが (を参照してください[ **KSPROPERTY\_RTAUDIO\_バッファー**](ksproperty-rtaudio-buffer.md))、クライアントが送信できる、KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティ ドライバー ハードウェア待機時間情報を要求します。
 
 <a name="requirements"></a>要件
 ------------
@@ -92,13 +92,13 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY プロパティ要求がステータスを返し�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSRTAUDIO\_HWLATENCY**](https://msdn.microsoft.com/library/windows/hardware/ff537496)
+[**KSRTAUDIO\_HWLATENCY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_hwlatency)
 
 [**KSPROPERTY\_RTAUDIO\_バッファー**](ksproperty-rtaudio-buffer.md)
 
-[WaveRT ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538845)
+[WaveRT ミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/wavert-miniport-driver)
 
  
 

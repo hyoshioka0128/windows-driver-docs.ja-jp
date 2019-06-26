@@ -5,12 +5,12 @@ ms.assetid: 4e024951-a578-4f69-873d-879aecc96e68
 ms.date: 08/08/2017
 keywords: -OID_GEN_VLAN_ID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a772ef0159b3849c5de1b33ff82f2a74fdd022e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c72ace7609c2470cab589219d2fd10dcc943e606
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355953"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385732"
 ---
 # <a name="oidgenvlanid"></a>OID\_GEN\_VLAN\_ID
 
@@ -43,13 +43,13 @@ OID、セットとして\_GEN\_VLAN\_ミニポート ドライバーを処理す
 
 トランスポートが OID を使用する場合\_GEN\_VLAN\_ミニポート ドライバーのクエリの ID が nic に現在構成されている VLAN ID を返します セットで使用する場合、ミニポート ドライバーは、NIC の現在構成されている VLAN ID を指定した値に設定します。
 
-ミニポート ドライバーの中に[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)特定の NIC ドライバーの関数が最初に、NIC の VLAN ID を 0 に設定します。 ドライバーの*MiniportInitializeEx*関数し、レジストリから次の構成パラメーターを読み取るし、パラメーターが存在する場合は、NIC の VLAN ID をパラメーターの値に設定します。
+ミニポート ドライバーの中に[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)特定の NIC ドライバーの関数が最初に、NIC の VLAN ID を 0 に設定します。 ドライバーの*MiniportInitializeEx*関数し、レジストリから次の構成パラメーターを読み取るし、パラメーターが存在する場合は、NIC の VLAN ID をパラメーターの値に設定します。
 
 ```syntax
 VlanId, REG_DWORD
 ```
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -68,7 +68,7 @@ VlanId, REG_DWORD
 ## <a name="see-also"></a>関連項目
 
 
-[*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
 
  
 

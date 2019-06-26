@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_GET_AUTO_POWER_SAVE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: dc34e729070cc62dccb6fc3069b4767f8fc56c13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1224c8ac0454805ac7d574186155e044e49d521
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384625"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387267"
 ---
 # <a name="oidwdigetautopowersave"></a>OID\_WDI\_取得\_自動\_POWER\_保存
 
@@ -35,7 +35,7 @@ OID\_WDI\_取得\_自動\_POWER\_保存、省電力、ポートの状態を取�
 
 | TLV                                                                          | 許可されている複数の TLV インスタンス | 省略可能 | 説明                  |
 |------------------------------------------------------------------------------|--------------------------------|----------|------------------------------|
-| [**WDI\_TLV\_取得\_自動\_POWER\_保存**](https://msdn.microsoft.com/library/windows/hardware/dn926307) |                                |          | 自動電源は、情報を保存します。 |
+| [**WDI\_TLV\_取得\_自動\_POWER\_保存**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-get-auto-power-save) |                                |          | 自動電源は、情報を保存します。 |
 
  
 

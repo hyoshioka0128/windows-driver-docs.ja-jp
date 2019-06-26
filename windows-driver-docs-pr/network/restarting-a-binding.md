@@ -10,12 +10,12 @@ keywords:
 - プロトコル ドライバーのバインドを再起動します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a402c34d3e06fe85a89952d94487e4a771a8185d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc2ccb56fa55421fc27eaec1f6e7fb0b2cf39695
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391635"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384707"
 ---
 # <a name="restarting-a-binding"></a>バインドの再起動
 
@@ -25,19 +25,19 @@ ms.locfileid: "63391635"
 
 一時停止されているバインディングを再起動する NDIS 送信プロトコル ドライバー ネットワーク プラグしプレイ (PnP) イベント通知を再起動します。 プロトコル ドライバーでは、再起動の通知を受け取た後、影響を受けるバインドは再開中状態になります。
 
-NDIS を再起動通知を送信するには、呼び出しのプロトコル ドライバーの[ *ProtocolNetPnPEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff570263)関数。 [ **NET\_PNP\_イベント\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff568752) NDIS からに渡される構造*ProtocolNetPnPEvent* を指定します**NetEventRestart**で、 **NetEvent**メンバーおよび**バッファー**メンバーにはへのポインターが含まれています、 [ **NDIS\_プロトコル\_再起動\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566844)構造体。 NDIS へのポインターを提供する、 [ **NDIS\_再起動\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff567255)構造体、 **RestartAttributes**の NDISメンバー\_プロトコル\_再起動\_パラメーター構造体。
+NDIS を再起動通知を送信するには、呼び出しのプロトコル ドライバーの[ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)関数。 [ **NET\_PNP\_イベント\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification) NDIS からに渡される構造*ProtocolNetPnPEvent* を指定します**NetEventRestart**で、 **NetEvent**メンバーおよび**バッファー**メンバーにはへのポインターが含まれています、 [ **NDIS\_プロトコル\_再起動\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_protocol_restart_parameters)構造体。 NDIS へのポインターを提供する、 [ **NDIS\_再起動\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_restart_attributes)構造体、 **RestartAttributes**の NDISメンバー\_プロトコル\_再起動\_パラメーター構造体。
 
 **注**  NDIS ドライバー スタックの再構成が、バインドが一時停止中にします。 新しいスタック構成は、基になるアダプターに対して、異なる一連の機能をサポートできます。 これらの新機能、バインディング プロトコル ドライバーが通信する方法に影響を与えることができます。
 
  
 
-プロトコル ドライバーに情報を使用する必要があります、 [ **NDIS\_プロトコル\_再起動\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566844)不要な OID を回避するために構造体を要求します。
+プロトコル ドライバーに情報を使用する必要があります、 [ **NDIS\_プロトコル\_再起動\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_protocol_restart_parameters)不要な OID を回避するために構造体を要求します。
 
 再起動の状態にプロトコル ドライバーでは次のことができます。
 
--   クエリ ドライバー スタックへの要求の OID を使用します。 たとえば、ドライバーについて確認できますサポートの受信側のスケーリングを使用して[OID\_GEN\_受信\_スケール\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569636)します。
+-   クエリ ドライバー スタックへの要求の OID を使用します。 たとえば、ドライバーについて確認できますサポートの受信側のスケーリングを使用して[OID\_GEN\_受信\_スケール\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-capabilities)します。
 
--   再割り当て[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)と[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)プールのために必要な場合。
+-   再割り当て[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)と[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)プールのために必要な場合。
 
 -   基になるフィルター モジュールの一覧を列挙します。
 

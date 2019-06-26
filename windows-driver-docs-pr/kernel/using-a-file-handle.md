@@ -10,12 +10,12 @@ keywords:
 - ファイルの WDK カーネルへのハンドルします。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6898283ebcacc5c43631a0c6887ef396326c1a3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f05cba78865553d5c0f920479e1fc013ade69da4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383711"
 ---
 # <a name="using-a-file-handle"></a>ファイル ハンドルの使用
 
@@ -39,19 +39,19 @@ ms.locfileid: "63361135"
 <tbody>
 <tr class="odd">
 <td><p>ファイルからデータを読み取ります。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567072" data-raw-source="[&lt;strong&gt;ZwReadFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567072)"><strong>ZwReadFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile" data-raw-source="[&lt;strong&gt;ZwReadFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntreadfile)"><strong>ZwReadFile</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>データ ファイルを書き込みます。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567121" data-raw-source="[&lt;strong&gt;ZwWriteFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567121)"><strong>ZwWriteFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile" data-raw-source="[&lt;strong&gt;ZwWriteFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile)"><strong>ZwWriteFile</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>ファイルまたはファイル ハンドルのメタデータを読み取る。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567052" data-raw-source="[&lt;strong&gt;ZwQueryInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567052)"><strong>ZwQueryInformationFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile" data-raw-source="[&lt;strong&gt;ZwQueryInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)"><strong>ZwQueryInformationFile</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>ファイルまたはファイル ハンドルのメタデータを記述します。</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567096" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567096)"><strong>ZwSetInformationFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile)"><strong>ZwSetInformationFile</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "63361135"
 
 特定の条件下では、I/O マネージャーは、ファイルの現在のファイル位置ポインターを保持します。 読み取りを開始したり、その位置にある操作を指定することで書き込み**NULL**の*ByteOffset*します。 詳細については、現在のファイル位置のポインターが存在するときに、次を参照してください。[ファイルの現在位置を使用して](using-the-current-file-position.md)このセクションで後述します。
 
-調査または変更されたファイルに関する情報、呼び出す[ **ZwQueryInformationFile** ](https://msdn.microsoft.com/library/windows/hardware/ff567052)または[ **ZwSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567096)、それぞれします。 特定の種類の情報を指定する、 *FileInformationClass*各ルーチンへのパラメーター。 たとえば、設定*FileInformationClass*に**FileBasicInformation**を調査または変更することができます、 [**ファイル\_BASIC\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545762)構造体は、ファイル作成時刻と他のユーザーの間で最終アクセス日時のメンバーが含まれています。 すべての可能な値については*FileInformationClass*を参照してください[**ファイル\_情報\_クラス**](https://msdn.microsoft.com/library/windows/hardware/ff728840)します。
+調査または変更されたファイルに関する情報、呼び出す[ **ZwQueryInformationFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntqueryinformationfile)または[ **ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntsetinformationfile)、それぞれします。 特定の種類の情報を指定する、 *FileInformationClass*各ルーチンへのパラメーター。 たとえば、設定*FileInformationClass*に**FileBasicInformation**を調査または変更することができます、 [**ファイル\_BASIC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)構造体は、ファイル作成時刻と他のユーザーの間で最終アクセス日時のメンバーが含まれています。 すべての可能な値については*FileInformationClass*を参照してください[**ファイル\_情報\_クラス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_file_information_class)します。
 
  
 

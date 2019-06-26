@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ae24c874f722a0a03d9a0a2b33c80391768a83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f532dffb1fe49e53575459f2a19c71bfc0d3a07e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360818"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355919"
 ---
 # <a name="kspropertyvideocontrolactualframerate"></a>KSPROPERTY\_VIDEOCONTROL\_実際\_フレーム\_率
 
@@ -53,7 +53,7 @@ KSPROPERTY\_VIDEOCONTROL\_実際\_フレーム\_レート プロパティをデ�
 <td><p>〇</p></td>
 <td><p>X</p></td>
 <td><p>フィルター</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566031" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566031)"><strong>KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_actual_frame_rate_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_actual_frame_rate_s)"><strong>KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S</strong></a></p></td>
 <td><p>KSPROPERTY_VIDEOCONTROL</p>
 <p>_ACTUAL_FRAME_RATE_S</p></td>
 </tr>
@@ -64,7 +64,7 @@ KSPROPERTY\_VIDEOCONTROL\_実際\_フレーム\_レート プロパティをデ�
 
 プロパティの値 (データの操作) は、KSPROPERTY\_VIDEOCONTROL\_実際\_フレーム\_レート\_構造など、クエリ時に実際のフレーム レート情報を指定する、ディメンション (幅と高さ) のイメージ、現在の実際のフレーム レート、および現在の最大使用可能なフレーム レート
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -85,7 +85,7 @@ KSPROPERTY\_VIDEOCONTROL\_実際\_フレーム\_レート プロパティをデ�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOCONTROL\_実際\_フレーム\_レート\_S**](https://msdn.microsoft.com/library/windows/hardware/ff566031)
+[**KSPROPERTY\_VIDEOCONTROL\_実際\_フレーム\_レート\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videocontrol_actual_frame_rate_s)
 
  
 

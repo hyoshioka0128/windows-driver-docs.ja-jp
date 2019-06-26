@@ -4,12 +4,12 @@ description: デバイスとドライバー パッケージのアンインスト
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a634c3d6d47ca5a66da123bc38b606c15f0ae8
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: d5b38ca5dac8bd56d5b0b2eea096aa9d2475d664
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456428"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386406"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>デバイスとドライバー パッケージのアンインストール方法
 
@@ -18,7 +18,7 @@ ms.locfileid: "65456428"
 
 -   [デバイス マネージャー](using-device-manager.md)します。
 
--   デバイスのインストール アプリケーションを呼び出す、 [SetupAPI](setupapi.md)と[デバイスのインストール](https://msdn.microsoft.com/library/windows/hardware/ff541299)関数。
+-   デバイスのインストール アプリケーションを呼び出す、 [SetupAPI](setupapi.md)と[デバイスのインストール](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))関数。
 
 必要となる操作には、次のようなものがあります。
 
@@ -38,9 +38,9 @@ ms.locfileid: "65456428"
 
 -   デバイス マネージャー。 詳細については、次を参照してください。[デバイス マネージャーを使用して](using-device-manager.md)します。
 
--   デバイスのインストール アプリケーションを呼び出す、 [SetupAPI](setupapi.md) [**SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)関数の要求で[ **DIF_削除**](https://msdn.microsoft.com/library/windows/hardware/ff543717)します。 詳細については、次を参照してください。[セットアップ関数の一般的な使用](using-general-setup-functions.md)します。
+-   デバイスのインストール アプリケーションを呼び出す、 [SetupAPI](setupapi.md) [**SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)関数の要求で[ **DIF_削除**](https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove)します。 詳細については、次を参照してください。[セットアップ関数の一般的な使用](using-general-setup-functions.md)します。
 
--   デバイスのインストール アプリケーションを呼び出す、SetupAPI [ **DiUninstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544754)関数 (Windows 7 および Windows の以降のバージョン)。 詳細については、次を参照してください。[デバイス インストールの機能を使用して](using-device-installation-functions.md)します。
+-   デバイスのインストール アプリケーションを呼び出す、SetupAPI [ **DiUninstallDevice** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diuninstalldevice)関数 (Windows 7 および Windows の以降のバージョン)。 詳細については、次を参照してください。[デバイス インストールの機能を使用して](using-device-installation-functions.md)します。
 
 これらのメソッドのいずれかを使用して、デバイスがアンインストールされると、プラグ アンド プレイ (PnP) マネージャーは、デバイスのインストール中に作成されたシステム状態のサブセットを削除します。 たとえば、ドライバーのバイナリ ファイルとデバイス間の関連付けを削除します。 この関連付けは、サービス コントロール マネージャー (SCM) によってをデバイスの適切なドライバーの読み込みに使用されます。
 

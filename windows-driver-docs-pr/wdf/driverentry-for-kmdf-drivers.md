@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 57c4979c6e7c9d2354b040346adcdc0d665404e8
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 040b39eca665245bd2080cea14a801550b7a7365
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161537"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368746"
 ---
 # <a name="driverentry-for-wdf-drivers-routine"></a>WDF ドライバー用 DriverEntry ルーチン
 
@@ -40,10 +40,10 @@ NTSTATUS DriverEntry(
 ----------
 
 *DriverObject* \[in\]  
-ポインターを[**ドライバー\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff544174)ドライバーの WDM ドライバー オブジェクトを表す構造体です。
+ポインターを[**ドライバー\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)ドライバーの WDM ドライバー オブジェクトを表す構造体です。
 
 *RegistryPath* \[で\]  
-ポインターを[ **UNICODE\_文字列**](https://msdn.microsoft.com/library/windows/hardware/ff564879)ドライバーのパスを指定する構造体[パラメーター キー](https://msdn.microsoft.com/library/windows/hardware/ff544262)レジストリにします。
+ポインターを[ **UNICODE\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)ドライバーのパスを指定する構造体[パラメーター キー](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-registry-keys-for-drivers)レジストリにします。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -55,25 +55,25 @@ NTSTATUS DriverEntry(
 
 WDM ドライバーをすべてのように、フレームワーク ベースのドライバーが必要、 **DriverEntry**ルーチンは、ドライバーが読み込まれた後に呼び出されます。 フレームワーク ベースのドライバーの**DriverEntry**ルーチンにする必要があります。
 
--   アクティブ化[WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/dn940485)します。
+-   アクティブ化[WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers)します。
 
-    **DriverEntry**含める必要があります、 [WPP\_INIT\_トレース](https://msdn.microsoft.com/library/windows/hardware/ff556191)ソフトウェア トレースをアクティブ化するマクロ。
+    **DriverEntry**含める必要があります、 [WPP\_INIT\_トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))ソフトウェア トレースをアクティブ化するマクロ。
 
--   呼び出す[ **WdfDriverCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547175)します。
+-   呼び出す[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)します。
 
-    呼び出し[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175) Windows Driver Framework インターフェイスを使用するドライバーを使用します。 (ドライバーは、呼び出す前にその他のフレームワークのルーチンを呼び出すことはできません**WdfDriverCreate**)。
+    呼び出し[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate) Windows Driver Framework インターフェイスを使用するドライバーを使用します。 (ドライバーは、呼び出す前にその他のフレームワークのルーチンを呼び出すことはできません**WdfDriverCreate**)。
 
 -   任意のデバイスに固有のシステム リソースとが必要とされるグローバル変数を割り当てます。
 
-    通常、ドライバーは、個々 のデバイスでシステム リソースを関連付けます。 そのため、framework ベースのドライバーがほとんどのリソースを割り当てる、 [ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693) 、個々 のデバイスが検出されたときに呼び出されるコールバック。
+    通常、ドライバーは、個々 のデバイスでシステム リソースを関連付けます。 そのため、framework ベースのドライバーがほとんどのリソースを割り当てる、 [ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 、個々 のデバイスが検出されたときに呼び出されるコールバック。
 
     UMDF ドライバーの複数のインスタンスは、Wudfhost の個別のインスタンスでホストされる場合があります、ため、グローバル変数できない可能性があります UMDF ドライバーのすべてのインスタンス。
 
 -   ドライバー固有のパラメーターをレジストリから取得します。
 
-    一部のドライバーでは、レジストリからパラメーターを取得します。 これらのドライバーが呼び出せる[ **WdfDriverOpenParametersRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547202)をこれらのパラメーターを格納するレジストリ キーを開きます。
+    一部のドライバーでは、レジストリからパラメーターを取得します。 これらのドライバーが呼び出せる[ **WdfDriverOpenParametersRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey)をこれらのパラメーターを格納するレジストリ キーを開きます。
 
--   提供、 [DriverEntry 戻り値](https://msdn.microsoft.com/library/windows/hardware/ff544119)します。
+-   提供、 [DriverEntry 戻り値](https://docs.microsoft.com/windows-hardware/drivers/kernel/driverentry-return-values)します。
 
 **注**  A UMDF ドライバーは、KMDF ドライバーがシステム プロセスのカーネル モードで実行中に、ユーザー モードのホスト プロセスで実行します。 フレームワークは、ホスト プロセスのインスタンスを個別に UMDF ドライバーの複数のインスタンスを読み込む可能性があります。 その結果：
 
@@ -82,7 +82,7 @@ WDM ドライバーをすべてのように、フレームワーク ベースの
 -   フレームワークが UMDF ドライバーの DriverEntry ルーチンを複数回呼び出す別のホスト プロセス内のドライバーのインスタンスを読み込む場合。 これに対し、フレームワークは、KMDF ドライバーの DriverEntry ルーチンを 1 回だけ呼び出します。
 -   UMDF ドライバーでは、その DriverEntry ルーチンでグローバル変数を作成する場合、変数できない可能性がありますが、ドライバーのすべてのインスタンスに。 ただし、その DriverEntry ルーチンで KMDF ドライバーを作成するグローバル変数は、ドライバーのすべてのインスタンスを使用できます。
 
-タイミングの詳細については framework ベースのドライバーの**DriverEntry**ルーチンを呼び出すを参照してください[WDF ドライバーの読み込みのビルドと](https://msdn.microsoft.com/library/windows/hardware/ff540730)します。
+タイミングの詳細については framework ベースのドライバーの**DriverEntry**ルーチンを呼び出すを参照してください[WDF ドライバーの読み込みのビルドと](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-and-loading-a-kmdf-driver)します。
 
 **DriverEntry**ルーチンが WDK ヘッダーで宣言されていません。 Static Driver Verifier (SDV) とその他の検証ツールには、次のような宣言が必要とする可能性があります。
 
@@ -189,9 +189,9 @@ DriverEntry(
 ## <a name="see-also"></a>関連項目
 
 
-[**WdfDriverCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547175)
+[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)
 
-[*EvtDriverDeviceAdd*](https://msdn.microsoft.com/library/windows/hardware/ff541693)
+[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)
 
  
 

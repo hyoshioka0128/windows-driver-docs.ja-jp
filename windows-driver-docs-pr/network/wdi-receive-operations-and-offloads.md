@@ -4,12 +4,12 @@ description: 操作のオフロードのこれらの主なカテゴリは、構�
 ms.assetid: 7D2648BC-05F2-4F75-BA01-E0385C83E0E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46e307638dcbfdd6648a801560c2eb1b3f86d62f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39d7a312b7915913cac6b926ce2625bf28e3e65d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340926"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381133"
 ---
 # <a name="wdi-receive-operations-and-offloads"></a>WDI 受信操作とオフロード
 
@@ -130,7 +130,7 @@ ms.locfileid: "63340926"
 <td align="left"><p>高度なプロトコル (タスク) の負荷を軽減します。</p></td>
 <td align="left"><p>チェックサム</p></td>
 <td align="left"><p>チェックサム。起動時に必要な場合にオフロードを構成できます。</p></td>
-<td align="left"><p>チェックサム。ターゲットそのチェックサム オフロード機能の一部として渡すデバイス キャップ WDI に持ち込むアップ時にします。 機能の詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567878" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567878)"> <strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>します。</p></td>
+<td align="left"><p>チェックサム。ターゲットそのチェックサム オフロード機能の一部として渡すデバイス キャップ WDI に持ち込むアップ時にします。 機能の詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"> <strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -159,13 +159,13 @@ ms.locfileid: "63340926"
 ## <a name="related-topics"></a>関連トピック
 
 
-[**NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff567878)
+[**NDIS\_TCP\_IP\_チェックサム\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)
 
 [WDI データ転送](wdi-data-transfer.md)
 
-[**WDI\_除外\_アクション\_型**](https://msdn.microsoft.com/library/windows/hardware/dn897820)
+[**WDI\_除外\_アクション\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_exemption_action_type)
 
-[**WDI\_フレーム\_ペイロード\_型**](https://msdn.microsoft.com/library/windows/hardware/dn897831)
+[**WDI\_フレーム\_ペイロード\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_frame_payload_type)
 
  
 

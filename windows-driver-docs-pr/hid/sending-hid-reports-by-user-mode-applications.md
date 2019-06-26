@@ -4,12 +4,12 @@ description: ユーザー モード アプリケーションでの HID レポー
 ms.assetid: 265d7393-62be-41ad-8f87-efcfa462de1f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fc130997ee844e70ab5e11268820ed60b649c6ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 136703f82685ac020aafb45a27adea8e7e4ae257
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385805"
 ---
 # <a name="sending-hid-reports-by-user-mode-applications"></a>ユーザー モード アプリケーションでの HID レポートを送信します。
 
@@ -24,12 +24,12 @@ ms.locfileid: "63384453"
 
 ### <a href="" id="using-hidd-setxxx-routines"></a>HidD を使用して\_SetXxx ルーチン
 
-アプリケーションは、次を使用できます[HIDClass サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff538865)HID レポート HID コレクションを送信します。
+アプリケーションは、次を使用できます[HIDClass サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)HID レポート HID コレクションを送信します。
 
-<a href="" id="hidd-setoutputreport"></a>[**HidD\_SetOutputReport**](https://msdn.microsoft.com/library/windows/hardware/ff539690)  
+<a href="" id="hidd-setoutputreport"></a>[**HidD\_SetOutputReport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setoutputreport)  
 HID のコレクション (Windows XP およびそれ以降のバージョン) を出力レポートを送信します。
 
-<a href="" id="hidd-setfeature"></a>[**HidD\_SetFeature**](https://msdn.microsoft.com/library/windows/hardware/ff539684)  
+<a href="" id="hidd-setfeature"></a>[**HidD\_SetFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_setfeature)  
 HID コレクションには、機能のレポートを送信します。
 
  

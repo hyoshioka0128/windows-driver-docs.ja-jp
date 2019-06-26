@@ -7,12 +7,12 @@ keywords:
 - ユーザー インターフェイスのプラグインの詳細については、印刷 UI プラグインの WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ae0feca471cbaab42b958a8ae98e65918859654
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c15f0e42ee57d5af6e3d5a66750f8a20822b87dd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385391"
 ---
 # <a name="introduction-to-user-interface-plug-ins"></a>ユーザー インターフェイス プラグインの概要
 
@@ -26,7 +26,7 @@ ms.locfileid: "63376918"
 
 プラグイン UI は、追加、削除、またはプロパティ シートの内のオプションを置換してプリンターのプロパティ シートを変更できます**デバイス設定**ページ。 新しいページを追加することもできます。 同様に、プラグインを変更できますドキュメントのプロパティ シートの追加、削除、またはプロパティ シートの内のオプションを置換して**レイアウト**、**用紙/品質**、および**詳細**ページ、またはそれには、新しいページを追加できます。
 
-Windows Vista から Unidrv を使用している場合を実装できます、 [ **IPrintOemUI2::HideStandardUI** ](https://msdn.microsoft.com/library/windows/hardware/ff554142)メソッドですべてのプリンターの構成プロパティを非表示にするには、プラグインをページには、標準のドライバー提供します。 プリンターの完全なカスタムのプリンター構成ユーザー インターフェイスを提供する場合、このメソッドを使用することができます。
+Windows Vista から Unidrv を使用している場合を実装できます、 [ **IPrintOemUI2::HideStandardUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui)メソッドですべてのプリンターの構成プロパティを非表示にするには、プラグインをページには、標準のドライバー提供します。 プリンターの完全なカスタムのプリンター構成ユーザー インターフェイスを提供する場合、このメソッドを使用することができます。
 
 **重要な**  ユーザー .hlp ファイルを表示できるアプリケーションは、Windows ヘルプ (WinHlp32.exe)。 Windows Vista 以降、Windows ヘルプ アプリケーションが Windows オペレーティング システムの一部として含まれています。 、.Hlp ファイルに依存するアプリケーションを開発するソフトウェア開発者は、.chm、.hxs、.html、.xml ファイルなどの別のヘルプ形式のファイルを移行する必要があります。 詳細については、次を参照してください。、 [Windows ヘルプ プログラム (WinHlp32.exe) は Windows に付属しなく](https://go.microsoft.com/fwlink/p/?linkid=80917)サポート技術情報記事。
 

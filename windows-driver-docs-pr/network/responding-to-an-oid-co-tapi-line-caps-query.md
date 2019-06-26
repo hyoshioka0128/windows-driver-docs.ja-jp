@@ -11,12 +11,12 @@ keywords:
 - UlMonitorDigitModes
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 026f3cdc988bd6fdcbb7ea1e5ae71eecca36bcd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ef500476811f8950e8c03f40de3c5b9fe8e85fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347281"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384701"
 ---
 # <a name="responding-to-an-oidcotapilinecaps-query"></a>OID に応答して\_CO\_TAPI\_行\_CAP クエリ
 
@@ -24,7 +24,7 @@ ms.locfileid: "63347281"
 
 
 
-応答、 [OID\_CO\_TAPI\_行\_CAP](https://msdn.microsoft.com/library/windows/hardware/ff569098)クエリ、コール マネージャーまたは MCM 返します CO\_TAPI\_行\_CAPS 構造体行を格納している\_DEV\_CAPS 構造体。 音声のストリーミングをサポートするコール マネージャーまたは MCM する必要があります、次の値で指定します線\_DEV\_CAPS 構造体。
+応答、 [OID\_CO\_TAPI\_行\_CAP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-line-caps)クエリ、コール マネージャーまたは MCM 返します CO\_TAPI\_行\_CAPS 構造体行を格納している\_DEV\_CAPS 構造体。 音声のストリーミングをサポートするコール マネージャーまたは MCM する必要があります、次の値で指定します線\_DEV\_CAPS 構造体。
 
 -   **ulMediaModes**
 

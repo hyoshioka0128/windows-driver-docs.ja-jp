@@ -6,12 +6,12 @@ keywords:
 - 従来の COM ポートの WDK シリアル デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ee95dae7ef8ce9ce1215f279de17a017c1f641
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 6aff01e1f79f2e82c1e67795a98e2d71602600b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836363"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383516"
 ---
 # <a name="installing-legacy-com-ports"></a>レガシ COM ポートをインストールする
 
@@ -21,7 +21,7 @@ ms.locfileid: "65836363"
 
 レガシ ポートが、以前チェックでは検出されない決定シリアルが読み込まれるときに、 **LegacyDiscovered**レガシ ポートのエントリの値。 このエントリの値が存在しないか、ゼロ場合、シリアルは、次のタスクを実行します。
 
-1. 呼び出し[ **IoReportDetectedDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549597)プラグ アンド プレイのマネージャーにデバイスを報告します。
+1. 呼び出し[ **IoReportDetectedDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioreportdetecteddevice)プラグ アンド プレイのマネージャーにデバイスを報告します。
 
 2. セット、 **LegacyDiscovered**ポート、ポートが報告されていることを示します 0x00000001 のエントリの値。
 
@@ -31,5 +31,5 @@ ms.locfileid: "65836363"
 
 **IoReportDetectedDevice**呼び出しは、ルート列挙のデバイスとポートをマークします。 後続のシステムの起動時に、プラグ アンド プレイ マネージャでは、その INF ファイルの情報に基づいて、デバイスが自動的に構成されます。
 
-プラグ アンド プレイ マネージャーは、次を作成します。[互換性 Id](https://msdn.microsoft.com/library/windows/hardware/ff539950)従来の COM ポート。DETECTEDInternal\\シリアルと検出された\\シリアルです。
+プラグ アンド プレイ マネージャーは、次を作成します。[互換性 Id](https://docs.microsoft.com/windows-hardware/drivers/install/compatible-ids)従来の COM ポート。DETECTEDInternal\\シリアルと検出された\\シリアルです。
 

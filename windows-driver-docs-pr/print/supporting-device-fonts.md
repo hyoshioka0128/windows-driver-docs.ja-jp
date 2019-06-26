@@ -9,12 +9,12 @@ keywords:
 - フォント WDK プリンター グラフィックス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c07cfd3b1f1ace4b9d728e014a6ff182fc4783
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2430cd8a55c3121140bec15d20accc253552200f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354462"
 ---
 # <a name="supporting-device-fonts"></a>デバイス フォントのサポート
 
@@ -22,12 +22,12 @@ ms.locfileid: "63331760"
 
 
 
-デバイス フォントをプリンターに提供する場合、プリンター グラフィックス DLL する必要がありますを定義、 [ **DrvTextOut** ](https://msdn.microsoft.com/library/windows/hardware/ff557277)コマンドの出力テキストを生成する関数。 グラフィックス DLL には、次の関数を定義もする必要があります。
+デバイス フォントをプリンターに提供する場合、プリンター グラフィックス DLL する必要がありますを定義、 [ **DrvTextOut** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtextout)コマンドの出力テキストを生成する関数。 グラフィックス DLL には、次の関数を定義もする必要があります。
 
-[**DrvQueryAdvanceWidths**](https://msdn.microsoft.com/library/windows/hardware/ff556259)
-[**DrvQueryFont**](https://msdn.microsoft.com/library/windows/hardware/ff556262)
-[**DrvQueryFontData**](https://msdn.microsoft.com/library/windows/hardware/ff556264) 
- [ **DrvQueryFontTree** ](https://msdn.microsoft.com/library/windows/hardware/ff556266)デバイス フォントのサポートに関する詳細については、次を参照してください[をサポートしているグラフィックス DDI フォントとテキスト関数。](https://msdn.microsoft.com/library/windows/hardware/ff569868).
+[**DrvQueryAdvanceWidths**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryadvancewidths)
+[**DrvQueryFont**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfont)
+[**DrvQueryFontData**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfontdata) 
+ [ **DrvQueryFontTree** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfonttree)デバイス フォントのサポートに関する詳細については、次を参照してください[をサポートしているグラフィックス DDI フォントとテキスト関数。](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-graphics-ddi-font-and-text-functions)
 
  
 

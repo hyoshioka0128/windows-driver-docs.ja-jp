@@ -16,12 +16,12 @@ keywords:
 - ウェイク アップ機能 WDK ネットワーク、電源の状態遷移
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 345e0e4347b464e29a2edfc6162019ded06dbc4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fffc18ddc49631b2fd491bf8adbbfa138e68803
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342941"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383172"
 ---
 # <a name="power-management-considerations-for-gigabit-ethernet-network-adapters"></a>ギガビット イーサネット ネットワーク アダプターの電源管理に関する考慮事項
 
@@ -30,7 +30,7 @@ ms.locfileid: "63342941"
 
 逆に、ギガビット イーサネット ネットワーク アダプターは、低電力状態から完全にオン状態に遷移、ときに、ネットワーク アダプターのリンク速度が完全に operational 速度に向上します。 この移行中にネットワーク アダプターもしばらくの間の接続を失う可能性があります。
 
-あるいは低電力状態からミニポート ドライバーの基になるネットワーク アダプターが移行されて、中にする必要がありますリンク速度を変更または接続の状態の変更もミニポートは示しません。 リンクの速度での変更を示す詳細については、次を参照してください。 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391)します。 接続の状態の変更を示す詳細については、次を参照してください。[接続の状態を示す](indicating-connection-status.md)します。
+あるいは低電力状態からミニポート ドライバーの基になるネットワーク アダプターが移行されて、中にする必要がありますリンク速度を変更または接続の状態の変更もミニポートは示しません。 リンクの速度での変更を示す詳細については、次を参照してください。 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)します。 接続の状態の変更を示す詳細については、次を参照してください。[接続の状態を示す](indicating-connection-status.md)します。
 
  
 

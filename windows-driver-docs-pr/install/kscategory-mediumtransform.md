@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: efbffb7af1d7f3e4370b0f81d3370b3428d6ba68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6a451ecb060ef3be5388f51d3ccc0a6948f2ec7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387023"
 ---
 # <a name="kscategorymediumtransform"></a>KSCATEGORY_MEDIUMTRANSFORM
 
 
-KSCATEGORY_MEDIUMTRANSFORM[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 機能のカテゴリが使用されているメディアの種類を変換します。
+KSCATEGORY_MEDIUMTRANSFORM[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 機能のカテゴリが使用されているメディアの種類を変換します。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ KSCATEGORY_MEDIUMTRANSFORM[デバイス インターフェイス クラス](http
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_MEDIUMTRANSFORM 機能カテゴリをサポートすることを示す KSCATEGORY_MEDIUMTRANSFORM のインスタンスを登録します。
 
-KSCATEGORY_MEDIUMTRANSFORM 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799)機能別に分類します。
+KSCATEGORY_MEDIUMTRANSFORM 機能のカテゴリは、のいずれか、 [ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)機能別に分類します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -77,7 +77,7 @@ KSCATEGORY_MEDIUMTRANSFORM 機能のカテゴリは、のいずれか、 [ **KSP
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

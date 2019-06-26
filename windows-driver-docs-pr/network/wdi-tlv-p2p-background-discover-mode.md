@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 65e0f53561d89462b4da11b69e4268b1a0f1552b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c0323cf72f029ab425147667b64d63c3492fd66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362912"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386823"
 ---
 # <a name="wditlvp2pbackgrounddiscovermode"></a>WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モード
 
@@ -44,11 +44,11 @@ WDI\_TLV\_P2P\_バック グラウンド\_DISCOVER\_モードは、Wi-Fi Direct 
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926093" data-raw-source="[&lt;strong&gt;WDI_P2P_DISCOVER_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926093)"><strong>WDI_P2P_DISCOVER_TYPE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_discover_type" data-raw-source="[&lt;strong&gt;WDI_P2P_DISCOVER_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_discover_type)"><strong>WDI_P2P_DISCOVER_TYPE</strong></a></td>
 <td>ポートで実行する探索の種類。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926101" data-raw-source="[&lt;strong&gt;WDI_P2P_SERVICE_DISCOVERY_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926101)"><strong>WDI_P2P_SERVICE_DISCOVERY_TYPE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type" data-raw-source="[&lt;strong&gt;WDI_P2P_SERVICE_DISCOVERY_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type)"><strong>WDI_P2P_SERVICE_DISCOVERY_TYPE</strong></a></td>
 <td>ポートで実行されるサービスの検出の種類。
 <p>唯一の有効な値は WDI_P2P_SERVICE_DISCOVERY_TYPE_NO_SERVICE_DISCOVERY および WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_NAME_ONLY です。</p></td>
 </tr>

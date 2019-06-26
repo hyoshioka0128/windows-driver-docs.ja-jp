@@ -4,12 +4,12 @@ description: これらの規則を使用すると、ドライバーが必要な 
 ms.assetid: 3322200A-2073-4568-B1FC-481B216D8F61
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 222c87a7112787356607649b09776abc47ef1bac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17d6c8f838e8662ed7963477468cad197072e0ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373670"
 ---
 # <a name="irql-rule-set-storport"></a>Irql の規則セット (Storport)
 
@@ -70,7 +70,7 @@ IRQL の規則に従っていないドライバーは、デッドロック状態
     msbuild /t:sdv /p:Inputs="/check:Irql.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

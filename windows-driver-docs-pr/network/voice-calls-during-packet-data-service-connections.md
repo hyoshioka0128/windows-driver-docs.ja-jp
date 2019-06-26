@@ -4,12 +4,12 @@ description: パケット データ サービス接続時の音声通話
 ms.assetid: 441d2fea-eb39-4af5-a8de-c288c81be99a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b60c20acd9c88d3119c6df8e07f742a93598848c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8fc080093a852a7a6c14c0b78e2b0eb06fd2c274
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327592"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384363"
 ---
 # <a name="voice-calls-during-packet-data-service-connections"></a>パケット データ サービス接続時の音声通話
 
@@ -24,15 +24,15 @@ ms.locfileid: "63327592"
 
 パケット データ サービスへの接続中に音声通話を処理するには、次の手順を使用します。
 
-1.  成功したパケット データ サービスの接続のミニポート ドライバーを送信する必要があります、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567910)現在の DataClass を示す MB サービスに通知が続く、 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391) MB に通知メディア接続として状態を示すためにサービス**MediaConnectStateConnected**します。
+1.  成功したパケット データ サービスの接続のミニポート ドライバーを送信する必要があります、 [ **NDIS\_WWAN\_パケット\_サービス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)現在の DataClass を示す MB サービスに通知が続く、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state) MB に通知メディア接続として状態を示すためにサービス**MediaConnectStateConnected**します。
 
-2.  音声通話が配置または回答、ミニポート ドライバーを送信する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391) MB サービスへの通知を示すために、メディア接続の状態として**MediaConnectStateDisconnected**します。
+2.  音声通話が配置または回答、ミニポート ドライバーを送信する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state) MB サービスへの通知を示すために、メディア接続の状態として**MediaConnectStateDisconnected**します。
 
-3.  ミニポート ドライバーに送信する必要がありますし、 [ **NDIS\_状態\_WWAN\_コンテキスト\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567843) を示すMBサービスへの通知*VoiceCall*としてデバイスの状態**WwanVoiceCallStateInProgress**します。
+3.  ミニポート ドライバーに送信する必要がありますし、 [ **NDIS\_状態\_WWAN\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-context-state) を示すMBサービスへの通知*VoiceCall*としてデバイスの状態**WwanVoiceCallStateInProgress**します。
 
 4.  切断、ミニポート ドライバーが、NDIS を送信する必要があります\_状態\_WWAN\_コンテキスト\_を示す MB サービスに状態の通知、 *VoiceCall* としてデバイスの状態**WwanVoiceCallStateHangup**します。
 
-5.  デバイスでは、音声通話が完了した後、パケットの接続が再開します。 ミニポート ドライバーに送信する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567391)メディアを示す MB サービスへの通知と状態の接続**MediaConnectStateConnected**します。
+5.  デバイスでは、音声通話が完了した後、パケットの接続が再開します。 ミニポート ドライバーに送信する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)メディアを示す MB サービスへの通知と状態の接続**MediaConnectStateConnected**します。
 
 6.  ミニポート ドライバーは、NDIS を送信する必要があります\_WWAN\_パケット\_サービス\_現在 DataClass を示す MB サービスに状態の通知。
 

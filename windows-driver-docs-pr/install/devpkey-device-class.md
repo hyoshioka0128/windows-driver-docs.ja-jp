@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ce2b8e539c4c8f1fc6eace35a0b597a7d1ce8b57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1df48917dd22ad82438f6d7d1be52ead37db47af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362351"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387091"
 ---
 # <a name="devpkeydeviceclass"></a>DEVPKEY_Device_Class
 
 
-DEVPKEY_Device_Class デバイス プロパティの名前を表す、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)デバイス インスタンスが属しています。
+DEVPKEY_Device_Class デバイス プロパティの名前を表す、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)デバイス インスタンスが属しています。
 
 <table>
 <colgroup>
@@ -60,11 +60,11 @@ DEVPKEY_Device_Class デバイス プロパティの名前を表す、[デバイ
 <a name="remarks"></a>注釈
 -------
 
-DEVPKEY_Device_Class プロパティの値の設定、*クラス名*クラスのディレクティブによって指定された値、 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546326) INF ファイルをデバイスをインストールします。
+DEVPKEY_Device_Class プロパティの値の設定、*クラス名*クラスのディレクティブによって指定された値、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive) INF ファイルをデバイスをインストールします。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_Class の値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_Class の値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Class プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_CLASS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537737)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_Class プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_CLASS 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -89,9 +89,9 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**バージョンの INF セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546326)
+[**バージョンの INF セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

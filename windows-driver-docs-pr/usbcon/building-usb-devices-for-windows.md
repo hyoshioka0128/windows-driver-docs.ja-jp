@@ -3,12 +3,12 @@ Description: このセクションでは、USB 周辺機器の製造元からの
 title: Windows 用 USB デバイスの構築
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb488088da80399a6d7d1e3d82fa1a978a70f5c2
-ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
+ms.openlocfilehash: 90da4770af8bfd5b97524870ee50b8b636d8b82d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384481"
 ---
 # <a name="building-usb-devices-for-windows"></a>Windows 用 USB デバイスの構築
 
@@ -43,7 +43,7 @@ IHV は、"WINUSB"として特定の Microsoft オペレーティング シス�
 
 ## <a name="setting-a-container-id"></a>コンテナー ID を設定
 
-[USB デバイス用のコンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540084)  
+[USB デバイス用のコンテナー Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids-for-usb-devices)  
 ユニバーサル シリアル バス (USB) デバイス用のコンテナーの Id を生成する方法について説明します。
 
 [Windows での USB ContainerIDs](usb-containerids-in-windows.md)  
@@ -65,15 +65,15 @@ Windows で正しく検出されるように、多機能の USB デバイスを�
 [Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  
 Event Tracing for Windows (ETW) は、オペレーティング システムによって提供される高速な汎用トレース機能です。 ツールをインストールし、トレース ファイルを作成し、USB のトレース ファイル内のイベントを分析する方法に関する情報が含まれます。
 
-[WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)  
+[WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)  
 Windows ソフトウェア トレース プリプロセッサ (WPP) の既定の操作を使用して、ソフトウェア コンポーネント (トレース プロバイダー) の操作を追跡する方法。
 
-[USB 3.0 の拡張機能](https://msdn.microsoft.com/library/windows/hardware/hh869258)(usb3kd.dll)  
+[USB 3.0 の拡張機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/usb-3-extensions)(usb3kd.dll)  
 これらのコマンドは、USB 3.0 スタック内の 3 つのドライバーによって維持されるデータ構造から情報を表示します。 USB 3.0 ハブのドライバー、USB ホスト コント ローラーの拡張機能ドライバーと、USB 3.0 ホスト コント ローラー ドライバー。
 
-[USB 2.0 の拡張機能](https://msdn.microsoft.com/library/windows/hardware/dn367056)(usb2kd.dll)  
+[USB 2.0 の拡張機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/usb-2-0-extensions)(usb2kd.dll)  
 これらのコマンドは、USB 2.0 スタックのドライバーによって管理されるデータ構造から情報を表示します。 USB 2.0 ハブのドライバーと USB 2.0 ホスト コント ローラー ドライバー。
 
 ## <a name="related-topics"></a>関連トピック
 
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  

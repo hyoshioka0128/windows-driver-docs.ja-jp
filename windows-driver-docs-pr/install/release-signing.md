@@ -4,12 +4,12 @@ description: 署名とドライバーのリリースできる可能性の確認�
 ms.assetid: 71499A0A-95D0-411C-84D1-C4B91FA4E6B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccf11cd9c23287cef6b1bdd7a7e130420d21665f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84bc3d2439fbc48fe552372fa6928da5128389b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379358"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387315"
 ---
 # <a name="release-signing"></a>リリース署名
 
@@ -20,7 +20,7 @@ Windows Vista に読み込まれるカーネル モードまたはユーザー �
 
 カーネル モード バイナリは、いずれかでリリース署名です。
 
-1.  Windows ハードウェア品質 Lab (WHQL Winqual とも呼ばれます) を解放するドライバー パッケージに署名します。 WHQL リリース署名は、Windows 認定プログラムを通じて取得されます。 次のリンクでは、最初から Windows 認定プログラムの最後の 5 つの手順について説明します。 参照してください[Windows ハードウェア認定: ここから始めて](https://msdn.microsoft.com/windows/hardware/hh833792)このオプションの詳細についてはします。 上記のリンクの手順の質問に回答に送られる<sysdev@microsft.com>エイリアス。
+1.  Windows ハードウェア品質 Lab (WHQL Winqual とも呼ばれます) を解放するドライバー パッケージに署名します。 WHQL リリース署名は、Windows 認定プログラムを通じて取得されます。 次のリンクでは、最初から Windows 認定プログラムの最後の 5 つの手順について説明します。 参照してください[Windows ハードウェア認定: ここから始めて](https://docs.microsoft.com/previous-versions/hh833792(v=msdn.10))このオプションの詳細についてはします。 上記のリンクの手順の質問に回答に送られる<sysdev@microsft.com>エイリアス。
 2.  WHQL プログラムを使用する代わりに、ドライバー パッケージはドライバー開発者やベンダーによって署名されたリリースを指定できます。 このプログラムは、Vista OS のリリースから開始しました。 ソフトウェア発行元証明書 (SPC) を介してリリース署名が作成されます。 SPC は、マイクロソフトがこのような証明書を発行する権限を持つサード パーティ証明機関 (CA) から取得されます。 SPC のこの種類で生成された署名は、64 ビットおよび 32 ビットのバージョンの Windows Vista と Windows の以降のバージョンの PnP ドライバー署名要件にも準拠します。
 
 サインインの方法 2 のドライバー パッケージのリリースに必要な手順について説明します。
@@ -63,7 +63,7 @@ Microsoft では、カーネル モード コードのコード署名の SPCs �
 
 *抜粋をさらに*[ソフトウェア発行元証明書](software-publisher-certificate.md):
 
-準拠している方法でドライバーの署名に、SPC を使用するために、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)、Personal Information Exchange 証明書の情報を含める必要がありますはまず (*.pfx*)ファイルです。 含まれている情報、 *.pfx*ドライバーに署名するローカル コンピューターの個人証明書ストアにファイルを追加し、必要があります。
+準拠している方法でドライバーの署名に、SPC を使用するために、[カーネル モード コードの署名ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)、Personal Information Exchange 証明書の情報を含める必要がありますはまず ( *.pfx*)ファイルです。 含まれている情報、 *.pfx*ドライバーに署名するローカル コンピューターの個人証明書ストアにファイルを追加し、必要があります。
 
 CA が発行する可能性があります、 *.pfx*必要な証明書情報を含むファイル。 そのため、追加できる場合、します。*pfx*ファイルで説明されている手順に従って個人証明書ストアを[個人用証明書ストアに .pfx ファイルをインストールする](software-publisher-certificate.md#installing-a-pfx-file-in-the-personal-certificate-store)します。
 
@@ -77,7 +77,7 @@ CA が発行する可能性があります、 *.pfx*必要な証明書情報を�
 
 作成します。*pfx* CA によって発行されたファイルのペアからファイルを次の手順に従います。
 
--   変換する、 *.pvk*ファイルと *.spc*ファイルを *.pfx*ファイルで、次を使用して、 [ **Pvk2Pfx** ](https://msdn.microsoft.com/library/windows/hardware/ff550672)コマンド プロンプトでコマンド:
+-   変換する、 *.pvk*ファイルと *.spc*ファイルを *.pfx*ファイルで、次を使用して、 [ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)コマンド プロンプトでコマンド:
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc myspcfile.spc -pfx mypfxfile.pfx -po pfxpassword -f
@@ -89,7 +89,7 @@ CA が発行する可能性があります、 *.pfx*必要な証明書情報を�
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc mycerfile.cer -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
-使用されるパラメーターを以下に示します、 [ **Pvk2Pfx** ](https://msdn.microsoft.com/library/windows/hardware/ff550672)コマンド。
+使用されるパラメーターを以下に示します、 [ **Pvk2Pfx** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx)コマンド。
 
 -   **- Pvk**  *mypvkfile.pvk*パラメーターを指定します、 *.pvk*ファイル。
 

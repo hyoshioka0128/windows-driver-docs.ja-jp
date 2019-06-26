@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59be4664d676cc425e7cc64a2efad79ddcf3c3ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f184227b92360ce1175270ad0b1f2bd2370dfe84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386485"
 ---
 # <a name="kspropertybdatablesection"></a>KSPROPERTY\_BDA\_テーブル\_セクション
 
@@ -68,7 +68,7 @@ ms.locfileid: "56560212"
 
 BDA\_テーブル\_セクションの構造体には、テーブルのセクションがについて説明します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -87,9 +87,9 @@ BDA\_テーブル\_セクションの構造体には、テーブルのセクシ�
 ## <a name="see-also"></a>関連項目
 
 
-[**BDA\_テーブル\_セクション**](https://msdn.microsoft.com/library/windows/hardware/ff556553)
+[**BDA\_テーブル\_セクション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_table_section)
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

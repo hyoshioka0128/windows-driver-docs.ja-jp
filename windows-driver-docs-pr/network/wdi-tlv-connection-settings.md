@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CONNECTION_SETTINGS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 99d814d05a4e8569e2a99d86ae1021f4a24ff8b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 287246ab51fc791915dba41cd492f03ff262702a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384526"
 ---
 # <a name="wditlvconnectionsettings"></a>WDI\_TLV\_接続\_設定
 
 
-WDI\_TLV\_接続\_設定は、の接続設定を含む TLV [OID\_WDI\_タスク\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/dn925948)します。
+WDI\_TLV\_接続\_設定は、の接続設定を含む TLV [OID\_WDI\_タスク\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-connect)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -38,13 +38,13 @@ WDI\_TLV\_接続\_設定は、の接続設定を含む TLV [OID\_WDI\_タスク\
 | UINT8                                                        | これには、dot11ExcludeUnencrypted MIB を設定します。 この値が false (0) と、暗号アルゴリズムは、WEP、ポートは、管理フレームで、[プライバシー] フィールドを設定しないでください Ap に接続する必要があります。                             |
 | UINT8                                                        | MFP が有効になっている (1) か無効 (0) を指定します。 ステーションは、その 802.11w をアドバタイズする必要があります、アソシエーションに機能がこの設定は 1 (有効) 場合にのみを要求します。                                          |
 | UINT8                                                        | ホスト FIPS モードが有効になっている (1) か無効 (0) を指定します。                                                                                                                                                               |
-| [**WDI\_ASSOC\_状態**](https://msdn.microsoft.com/library/windows/hardware/dn897725) (UINT32) | ローミングの必要な理由を指定します。 ためにこれがトリガーされる場合[NDIS\_状態\_WDI\_を示す値\_ローミング\_必要](https://msdn.microsoft.com/library/windows/hardware/dn925648)、ローミング indication から理由が含まれます。 |
-| [**WDI\_ローミング\_トリガー** ](https://msdn.microsoft.com/library/windows/hardware/mt269103) (UINT32) | AP BSS 切り替え要求アクション フレームの関連付けの解除が迫っていないかのビットを設定されているために、このローミングが重要なローミングがかどうかを指定します。                                                                         |
+| [**WDI\_ASSOC\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_assoc_status) (UINT32) | ローミングの必要な理由を指定します。 ためにこれがトリガーされる場合[NDIS\_状態\_WDI\_を示す値\_ローミング\_必要](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)、ローミング indication から理由が含まれます。 |
+| [**WDI\_ローミング\_トリガー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_roam_trigger) (UINT32) | AP BSS 切り替え要求アクション フレームの関連付けの解除が迫っていないかのビットを設定されているために、このローミングが重要なローミングがかどうかを指定します。                                                                         |
 | UINT8                                                        | 指定する場合 802.11v BSS 移行がサポートされています。 このビットが 1 に設定されている場合、ステーションは、関連の要求で 1 に拡張機能要素 (ビット 19) の BSS 遷移フィールドを設定する必要があります。                   |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

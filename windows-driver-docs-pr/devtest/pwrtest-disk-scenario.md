@@ -4,12 +4,12 @@ description: PwrTest のディスクのシナリオでは、ディスクのア�
 ms.assetid: E54AA721-27C6-4E42-B42A-77AC70711A26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 671cee3e73d0a0a64a8efbf4a4c2cea17cd1d265
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da12a7c265694dd3d4bfd73525088ba8f2d2af2e
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345792"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393500"
 ---
 # <a name="pwrtest-disk-scenario"></a>PwrTest のディスク シナリオ
 
@@ -18,7 +18,7 @@ PwrTest のディスクのシナリオでは、ディスクのアイドル状態
 
 このシナリオは、主に Windows 7 のハード_ディスクの電源の動作の使用、Windows の今後のバージョンが Pwrtest で現在サポートされていないディスクをアイドル状態を追跡するため、別のメカニズムを使用します。 Windows 7 よりも新しい Windows のバージョン、使用、 [Windows パフォーマンス ツールキット (WPT)](https://go.microsoft.com/fwlink/p/?linkid=294280)します。 WPT には、カーネル モードの電源プロバイダーをトレースするために使用できる Windows Performance Recorder (WPR) と Windows パフォーマンス アナライザー (WPA) フレームワーク (PoFx) デバイスの電源の統計を表示することができますし、その後、遷移グラフ化できますが含まれています。
 
-**注**  このシナリオでは、アイドル状態検出のすべての記憶装置ドライバーを登録するため、すべての種類のディスクまたはコント ローラー機能しません。 参照してください[、記憶域クラス ドライバーの PnP 開始を処理](https://msdn.microsoft.com/library/windows/hardware/ff554995)詳細についてはします。
+**注**  このシナリオでは、アイドル状態検出のすべての記憶装置ドライバーを登録するため、すべての種類のディスクまたはコント ローラー機能しません。 参照してください[、記憶域クラス ドライバーの PnP 開始を処理](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-pnp-start-in-a-storage-class-driver)詳細についてはします。
 
  
 
@@ -29,7 +29,7 @@ PwrTest のディスクのシナリオでは、ディスクのアイドル状態
 pwrtest /disk  [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
+<span id="_t_n"></span><span id="_T_N"></span>**t:** <em>n</em>  
 シナリオの実行を合計時間 (分) を指定します (既定値の*n*は 30 分です)。
 
 **使用例**
@@ -140,11 +140,11 @@ pwrtest /disk
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;BusyCount&gt;</strong></td>
-<td align="left"><p>デバイス ドライバーが呼び出された回数<a href="https://msdn.microsoft.com/library/windows/hardware/ff559755" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559755)"> <strong>PoSetDeviceBusy</strong> </a>期間中にします。</p></td>
+<td align="left"><p>デバイス ドライバーが呼び出された回数<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PoSetDeviceBusy</strong> </a>期間中にします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AccruedBusyCount&gt;</strong></td>
-<td align="left"><p>デバイス ドライバーの呼び出しがタイムアウト数<a href="https://msdn.microsoft.com/library/windows/hardware/ff559755" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559755)"> <strong>PoSetDeviceBusy</strong> </a>合計します。</p></td>
+<td align="left"><p>デバイス ドライバーの呼び出しがタイムアウト数<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PoSetDeviceBusy</strong> </a>合計します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;IdlePowerState&gt;</strong></td>

@@ -10,12 +10,12 @@ keywords:
 - ローカル クロック WDK いる CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47ac08445814538a95675b783e2926b0fb9fc9e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c3548eedcf292016591251735b19fcc6dd1560c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357404"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374947"
 ---
 # <a name="connection-oriented-timing-features"></a>接続指向タイミング機能
 
@@ -29,7 +29,7 @@ ms.locfileid: "63357404"
 
  
 
-接続指向プロトコル ドライバーに呼び出せる[ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)で MCM、接続指向のミニポート ドライバーのローカルのタイミングの機能を照会する[OID\_GEN\_CO\_取得\_時間\_CAP](https://msdn.microsoft.com/library/windows/hardware/ff569451)します。 このようなクエリに応答してでミニポート ドライバーまたは MCM ドライバーはに関する情報を返します。
+接続指向プロトコル ドライバーに呼び出せる[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)で MCM、接続指向のミニポート ドライバーのローカルのタイミングの機能を照会する[OID\_GEN\_CO\_取得\_時間\_CAP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-get-time-caps)します。 このようなクエリに応答してでミニポート ドライバーまたは MCM ドライバーはに関する情報を返します。
 
 -   NIC で読み取り可能なクロックがあるかどうか
 
@@ -43,9 +43,9 @@ ms.locfileid: "63357404"
 
 -   NIC にタイムスタンプができるかどうかと、そのローカル時刻を持つパケットが送信されます。
 
-NIC のローカル時刻を取得する接続指向プロトコルを呼び出すことができます**NdisCoOidRequest**接続指向のミニポート ドライバーまたは MCM のドライバーの照会に[OID\_GEN\_CO\_取得\_ネットワーク カード\_時間](https://msdn.microsoft.com/library/windows/hardware/ff569450)します。 接続指向のミニポート ドライバーまたは MCM ドライバーは同期的にパケットの転送をスケジュールする接続指向プロトコルを使用できますし、ローカル時刻を取得するを返します。
+NIC のローカル時刻を取得する接続指向プロトコルを呼び出すことができます**NdisCoOidRequest**接続指向のミニポート ドライバーまたは MCM のドライバーの照会に[OID\_GEN\_CO\_取得\_ネットワーク カード\_時間](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-get-netcard-time)します。 接続指向のミニポート ドライバーまたは MCM ドライバーは同期的にパケットの転送をスケジュールする接続指向プロトコルを使用できますし、ローカル時刻を取得するを返します。
 
-タイミング情報を送信または受信パケットが、パケットのアウト オブ バンド (OOB) データに含まれています。 詳細については、次を参照してください。 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)します。
+タイミング情報を送信または受信パケットが、パケットのアウト オブ バンド (OOB) データに含まれています。 詳細については、次を参照してください。 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)します。
 
  
 

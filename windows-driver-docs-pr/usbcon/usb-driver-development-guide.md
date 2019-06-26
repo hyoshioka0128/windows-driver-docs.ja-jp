@@ -3,12 +3,12 @@ Description: PurposeThis セクションでは Windows と相互運用可能な 
 title: USB デバイス用 Windows クライアント ドライバーの開発
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b0c34a7025bbf4e43d1fec7b77ab8b3122444baa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5e1e0b0e3663bf166becbb658f636dacce4035e
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373459"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394134"
 ---
 # <a name="developing-windows-client-drivers-for-usb-devices"></a>USB デバイス用 Windows クライアント ドライバーの開発
 
@@ -24,9 +24,9 @@ ms.locfileid: "63373459"
 <p>このセクションでは Windows と相互運用可能な USB デバイス ドライバーを開発するように、Windows オペレーティング システムでのユニバーサル シリアル バス (USB) のサポートについて説明します。</p>
 <p><strong>該当する場合</strong></p>
 <p>USB デバイスは、1 つのポート経由でコンピューターに接続されているキーボード、マウス デバイスなどの周辺機器です。 USB クライアント ドライバーは、デバイスの機能を作成するためのハードウェアと通信するコンピューターにインストールされているソフトウェアです。 Windows ロードのいずれかの場合は、デバイスは、Microsoft でサポートされているデバイス クラスに属している、 <a href="system-supplied-usb-drivers.md" data-raw-source="[Microsoft-provided USB drivers](system-supplied-usb-drivers.md)">Microsoft 提供の USB ドライバー</a> (インボックス クラス ドライバー) デバイス。 それ以外の場合、カスタムのクライアント ドライバーは、ハードウェアの製造元によって提供される必要があります。 またはサード パーティ ベンダー。 デバイスが最初に Windows によって検出されたときに、ユーザーは、デバイスのクライアント ドライバーをインストールします。 インストールの成功後、デバイスが接続されているし、デバイスが、ホスト コンピューターからデタッチされると、ドライバーをアンロードするたびに、Windows は、クライアント ドライバーを読み込みます。</p>
-<p>使用して、USB デバイス用のカスタム クライアント ドライバーを開発することができます、 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/" data-raw-source="[Windows Driver Frameworks](https://docs.microsoft.com/windows-hardware/drivers/wdf/)">Windows Driver Frameworks</a> (WDF) または<a href="https://msdn.microsoft.com/library/windows/hardware/ff565698" data-raw-source="[Windows Driver Model](https://msdn.microsoft.com/library/windows/hardware/ff565698)">Windows Driver Model</a> (WDM)。 ハードウェアと直接通信しているのではなくは、ほとんどのクライアント ドライバーは、ハードウェアに、クライアント ドライバーの要求を送信するハードウェア アブストラクション レイヤー (HAL) 関数呼び出しを実行する Microsoft 提供の USB ドライバー スタックに、要求を送信します。 このセクションのトピックでは、クライアント ドライバーを送信できる一般的な要求とそれらの要求を作成するクライアント ドライバーを呼び出す必要のあるデバイス ドライバー インターフェイス (Ddi) について説明します。</p>
+<p>使用して、USB デバイス用のカスタム クライアント ドライバーを開発することができます、 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/" data-raw-source="[Windows Driver Frameworks](https://docs.microsoft.com/windows-hardware/drivers/wdf/)">Windows Driver Frameworks</a> (WDF) または<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model" data-raw-source="[Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)">Windows Driver Model</a> (WDM)。 ハードウェアと直接通信しているのではなくは、ほとんどのクライアント ドライバーは、ハードウェアに、クライアント ドライバーの要求を送信するハードウェア アブストラクション レイヤー (HAL) 関数呼び出しを実行する Microsoft 提供の USB ドライバー スタックに、要求を送信します。 このセクションのトピックでは、クライアント ドライバーを送信できる一般的な要求とそれらの要求を作成するクライアント ドライバーを呼び出す必要のあるデバイス ドライバー インターフェイス (Ddi) について説明します。</p>
 <p><strong>対象となる開発者</strong></p>
-<p>USB デバイスのクライアント ドライバーは、USB ドライバー スタックによって公開される Ddi を使用して、デバイスと通信する WDF または WDM ドライバーです。 このセクションでは、WDM に慣れている C/C++ プログラマ用ものです。 このセクションを使用する前に、基本的なドライバーの開発を理解する必要があります。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554690" data-raw-source="[Getting Started with Windows Drivers](https://msdn.microsoft.com/library/windows/hardware/ff554690)">Windows ドライバーの概要</a>します。 WDF ドライバーでは、クライアント ドライバーを使用できます<a href="https://msdn.microsoft.com/library/windows/hardware/ff551869" data-raw-source="[Kernel-Mode Driver Framework](https://msdn.microsoft.com/library/windows/hardware/ff551869)">カーネル モード ドライバー フレームワーク</a>(KMDF) または<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/" data-raw-source="[User-Mode Driver Framework](https://docs.microsoft.com/windows-hardware/drivers/wdf/)">ユーザー モード ドライバー フレームワーク</a>(UMDF) インターフェイスが USB ターゲットを持つ操作専用に設計されています。 USB に固有のインターフェイスの詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/dn265671" data-raw-source="[WDF USB Reference](https://msdn.microsoft.com/library/windows/hardware/dn265671)">WDF USB 参照</a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff561332" data-raw-source="[UMDF USB I/O Target Interfaces](https://msdn.microsoft.com/library/windows/hardware/ff561332)">UMDF USB I/O ターゲット インターフェイス</a>します。</p>
+<p>USB デバイスのクライアント ドライバーは、USB ドライバー スタックによって公開される Ddi を使用して、デバイスと通信する WDF または WDM ドライバーです。 このセクションでは、WDM に慣れている C/C++ プログラマ用ものです。 このセクションを使用する前に、基本的なドライバーの開発を理解する必要があります。 詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/index" data-raw-source="[Getting Started with Windows Drivers](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/index)">Windows ドライバーの概要</a>します。 WDF ドライバーでは、クライアント ドライバーを使用できます<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-debugging" data-raw-source="[Kernel-Mode Driver Framework](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-debugging)">カーネル モード ドライバー フレームワーク</a>(KMDF) または<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/" data-raw-source="[User-Mode Driver Framework](https://docs.microsoft.com/windows-hardware/drivers/wdf/)">ユーザー モード ドライバー フレームワーク</a>(UMDF) インターフェイスが USB ターゲットを持つ操作専用に設計されています。 USB に固有のインターフェイスの詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/" data-raw-source="[WDF USB Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/)">WDF USB 参照</a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/" data-raw-source="[UMDF USB I/O Target Interfaces](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/)">UMDF USB I/O ターゲット インターフェイス</a>します。</p>
 <p><strong>開発ツール</strong></p>
 <p>Windows Driver Kit (WDK) には、ヘッダー、ライブラリ、ツール、およびサンプルなど、ドライバーの開発に必要なリソースが含まれています。</p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=617155" data-raw-source="[Download kits and tools for Windows](https://go.microsoft.com/fwlink/p/?linkid=617155)">Windows 用のキットとツールのダウンロード</a></p>
@@ -65,7 +65,7 @@ USB パイプ、I/O 要求の場合の翻訳、およびクライアント ド�
  
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

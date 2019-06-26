@@ -13,12 +13,12 @@ keywords:
 - ストリーム コンテキスト WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ac1bd55b1d13e4f263cdbf8cce0653c91f6ee76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5ca0a1fd9b90ec12a3e0f5e1e66de94507225da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383835"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385555"
 ---
 # <a name="file-streams-stream-contexts-and-per-stream-contexts"></a>ファイル ストリーム、ストリーム コンテキスト、ストリーム別コンテキスト
 
@@ -38,13 +38,13 @@ A*のストリーム コンテキスト*フィルター定義の構造体であ�
 
 ### <a name="span-idfilesystemsupportforper-streamcontextsspanspan-idfilesystemsupportforper-streamcontextsspanspan-idfilesystemsupportforper-streamcontextsspanfile-system-support-for-per-stream-contexts"></a><span id="File_System_Support_for_Per-Stream_Contexts"></span><span id="file_system_support_for_per-stream_contexts"></span><span id="FILE_SYSTEM_SUPPORT_FOR_PER-STREAM_CONTEXTS"></span>Stream あたりのコンテキストのファイル システムのサポート
 
-Microsoft Windows XP で以降のストリーム コンテキストをサポートするファイル システムが含まれているストリームのコンテキストの構造を使用する必要があります、 [ **FSRTL\_詳細\_FCB\_ヘッダー** ](https://msdn.microsoft.com/library/windows/hardware/ff547334)構造体。
+Microsoft Windows XP で以降のストリーム コンテキストをサポートするファイル システムが含まれているストリームのコンテキストの構造を使用する必要があります、 [ **FSRTL\_詳細\_FCB\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)構造体。
 
 関連付けられた特定のファイル ストリームのストリーム コンテキストのグローバル リストは、ファイル システムが所有します。 ファイル システムが新しいストリーム コンテキストを作成します (FSRTL\_[詳細設定]\_FCB\_ヘッダー オブジェクト)、ファイル ストリーム呼び出し[ **FsRtlSetupAdvancedHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff547257)にこのリストを初期化します。 ファイル システム フィルター ドライバーを呼び出すと[ **FsRtlInsertPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546194)、フィルターによって作成された、ストリームのコンテキストは、グローバル リストに追加されます。
 
 ファイル ストリームの場合は、そのストリーム コンテキストを削除すると、ファイル システムを呼び出します[ **FsRtlTeardownPerStreamContexts** ](https://msdn.microsoft.com/library/windows/hardware/ff547295)フィルターは、ファイル ストリームに関連付けられているすべてのストリーム コンテキストを解放します。 このルーチンを呼び出す、 [ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)グローバル リストの各ストリームごとのコンテキストのルーチンです。 なお、 **FreeCallback**ルーチンでは、ファイル ストリームのファイル オブジェクトが既に解放されていると仮定する必要があります。
 
-クエリを実行するかどうか、ファイル システムのストリーム コンテキストの指定されたファイル オブジェクトによって表されるファイル ストリームのサポートを呼び出す[ **FsRtlSupportsPerStreamContexts** ](https://msdn.microsoft.com/library/windows/hardware/ff547285)ファイル オブジェクト。 ファイルの種類によっては、他のユーザーではなく、ファイル システムのストリーム コンテキストをサポート可能性がありますに注意してください。 たとえば、NTFS および FAT は現在できませんのストリーム コンテキスト ページング ファイルの。 そのため場合**FsRtlSupportsPerStreamContexts**返します**TRUE** 、1 つのファイル ストリーム用わけではありませんが返される**TRUE**すべてのファイル ストリーム。
+クエリを実行するかどうか、ファイル システムのストリーム コンテキストの指定されたファイル オブジェクトによって表されるファイル ストリームのサポートを呼び出す[ **FsRtlSupportsPerStreamContexts** ](https://docs.microsoft.com/previous-versions/ff547285(v=vs.85))ファイル オブジェクト。 ファイルの種類によっては、他のユーザーではなく、ファイル システムのストリーム コンテキストをサポート可能性がありますに注意してください。 たとえば、NTFS および FAT は現在できませんのストリーム コンテキスト ページング ファイルの。 そのため場合**FsRtlSupportsPerStreamContexts**返します**TRUE** 、1 つのファイル ストリーム用わけではありませんが返される**TRUE**すべてのファイル ストリーム。
 
  
 

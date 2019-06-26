@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f4dfcd79e4206bdaa55b569a6df7fd2f7999b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a8134711ba56c98b4fb2bf7af5aca6161cd3378
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333042"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391487"
 ---
 # <a name="kspropertyaudiofilterstate"></a>KSPROPERTY\_オーディオ\_フィルター\_状態
 
@@ -53,7 +53,7 @@ KSPROPERTY\_オーディオ\_フィルター\_状態プロパティを使用し�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>Guid の配列</p></td>
 </tr>
 </tbody>
@@ -70,9 +70,9 @@ KSPROPERTY\_オーディオ\_フィルター\_プロパティ要求の状態が�
 <a name="remarks"></a>注釈
 -------
 
-このプロパティを表す Guid の配列のサイズは、フィルターをサポートするプロパティ セットの数によって異なります。 配列を取得する前にクライアント最初に照会するプロパティの GUID の配列のサイズ、KSPROPERTY ミニポート ドライバーのプロパティのハンドラーを送信することによって\_オーディオ\_フィルター\_長さ 0 のプロパティの get 要求の状態プロパティ値のバッファー。 ハンドラーが必要なバッファー サイズと状態コードの状態を返すことによって応答\_バッファー\_オーバーフローが発生します。 詳細については、次を参照してください。[オーディオ プロパティ ハンドラー](https://msdn.microsoft.com/library/windows/hardware/ff536214)します。
+このプロパティを表す Guid の配列のサイズは、フィルターをサポートするプロパティ セットの数によって異なります。 配列を取得する前にクライアント最初に照会するプロパティの GUID の配列のサイズ、KSPROPERTY ミニポート ドライバーのプロパティのハンドラーを送信することによって\_オーディオ\_フィルター\_長さ 0 のプロパティの get 要求の状態プロパティ値のバッファー。 ハンドラーが必要なバッファー サイズと状態コードの状態を返すことによって応答\_バッファー\_オーバーフローが発生します。 詳細については、次を参照してください。[オーディオ プロパティ ハンドラー](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-property-handlers)します。
 
-KSPROPERTY から Guid の配列を持つ\_オーディオ\_フィルター\_状態プロパティ get 要求と、オペレーティング システムは、各プロパティ セット内のプロパティを問い合わせること逐次的に。 この情報は、オペレーティング システム、フィルターをインスタンス化時に GFX フィルター オブジェクトの状態を復元し、フィルターが破棄される時点で GFX フィルター オブジェクトの状態を保存できます。 オペレーティング システムにその要求の各プロパティ セット内のプロパティがシリアル化」の説明に従って保存または GFX フィルターの状態を復元する、 [KS プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff567671)します。 保存と GFX フィルターの状態の復元の目的は、フィルターの設定、ユーザーが行った変更を保持するために、フィルターの連続するインスタンスの間で永続的な設定を行うことです。 .
+KSPROPERTY から Guid の配列を持つ\_オーディオ\_フィルター\_状態プロパティ get 要求と、オペレーティング システムは、各プロパティ セット内のプロパティを問い合わせること逐次的に。 この情報は、オペレーティング システム、フィルターをインスタンス化時に GFX フィルター オブジェクトの状態を復元し、フィルターが破棄される時点で GFX フィルター オブジェクトの状態を保存できます。 オペレーティング システムにその要求の各プロパティ セット内のプロパティがシリアル化」の説明に従って保存または GFX フィルターの状態を復元する、 [KS プロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)します。 保存と GFX フィルターの状態の復元の目的は、フィルターの設定、ユーザーが行った変更を保持するために、フィルターの連続するインスタンスの間で永続的な設定を行うことです。 .
 
 <a name="requirements"></a>要件
 ------------
@@ -93,7 +93,7 @@ KSPROPERTY から Guid の配列を持つ\_オーディオ\_フィルター\_状
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
  
 

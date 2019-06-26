@@ -4,12 +4,12 @@ description: これらの規則を使用すると、ドライバー、正しく�
 ms.assetid: B958191C-8E14-4D4D-9D0F-AD5D29599E53
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bcd9d30290931adf48098bd49489f092e7fe1e12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f4edc735ef8db4ffe04fbf37b966d573ece0e0cf
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327116"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394107"
 ---
 # <a name="ddi-usage-rule-set-wdm"></a>DDI 使用の規則セット (WDM)
 
@@ -33,7 +33,7 @@ ms.locfileid: "63327116"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="wdm-debugbreakusage.md" data-raw-source="[&lt;strong&gt;DebugBreakUsage&lt;/strong&gt;](wdm-debugbreakusage.md)"><strong>DebugBreakUsage</strong></a></p></td>
-<td align="left"><p><a href="wdm-debugbreakusage.md" data-raw-source="[&lt;strong&gt;DebugBreakUsage&lt;/strong&gt;](wdm-debugbreakusage.md)"> <strong>DebugBreakUsage</strong> </a>ルールでは、ドライバーを呼び出してはならないことを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff543626" data-raw-source="[&lt;strong&gt;DbgBreakPoint&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543626)"> <strong>DbgBreakPoint</strong> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/ff543629" data-raw-source="[&lt;strong&gt;DbgBreakPointWithStatus&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543629)"> <strong>DbgBreakPointWithStatus</strong></a>します。 このルールは、非デバッグ バージョンのドライバーをビルドする場合にのみ適用されます。</p></td>
+<td align="left"><p><a href="wdm-debugbreakusage.md" data-raw-source="[&lt;strong&gt;DebugBreakUsage&lt;/strong&gt;](wdm-debugbreakusage.md)"> <strong>DebugBreakUsage</strong> </a>ルールでは、ドライバーを呼び出してはならないことを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpoint" data-raw-source="[&lt;strong&gt;DbgBreakPoint&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpoint)"> <strong>DbgBreakPoint</strong> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpointwithstatus" data-raw-source="[&lt;strong&gt;DbgBreakPointWithStatus&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpointwithstatus)"> <strong>DbgBreakPointWithStatus</strong></a>します。 このルールは、非デバッグ バージョンのドライバーをビルドする場合にのみ適用されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="nullcheckw.md" data-raw-source="[&lt;strong&gt;NullCheck&lt;/strong&gt;](nullcheckw.md)"><strong>NullCheck</strong></a></p></td>
@@ -42,7 +42,7 @@ ms.locfileid: "63327116"
 <li>以降は逆参照が NULL の代入です。</li>
 <li>ドライバーでは、後で逆参照が NULL の可能性があるプロシージャにグローバル/パラメーターがあるし、ポインターの初期値は NULL である可能性がありますの候補を示す、ドライバーでの明示的なチェックがあります。</li>
 </ul>
-<p>NullCheck ルール違反では、最も関連のコード ステートメントは、トレースのツリー ペインで強調表示されます。 レポートの出力の使用方法の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff552834" data-raw-source="[Static Driver Verifier Report](https://msdn.microsoft.com/library/windows/hardware/ff552834)">静的ドライバー検証ツールのレポート</a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff554020" data-raw-source="[Understanding the Trace Viewer](https://msdn.microsoft.com/library/windows/hardware/ff554020)">トレース ビューアーを理解する</a>します。</p>
+<p>NullCheck ルール違反では、最も関連のコード ステートメントは、トレースのツリー ペインで強調表示されます。 レポートの出力の使用方法の詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report" data-raw-source="[Static Driver Verifier Report](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report)">静的ドライバー検証ツールのレポート</a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/understanding-the-defect-viewer" data-raw-source="[Understanding the Trace Viewer](https://docs.microsoft.com/windows-hardware/drivers/devtest/understanding-the-defect-viewer)">トレース ビューアーを理解する</a>します。</p>
 <p></p></td>
 </tr>
 <tr class="odd">
@@ -51,7 +51,7 @@ ms.locfileid: "63327116"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="wdm-obsoleteddis.md" data-raw-source="[&lt;strong&gt;ObsoleteDDIs&lt;/strong&gt;](wdm-obsoleteddis.md)"><strong>ObsoleteDDIs</strong></a></p></td>
-<td align="left"><p><a href="wdm-obsoleteddis.md" data-raw-source="[&lt;strong&gt;ObsoleteDDIs&lt;/strong&gt;](wdm-obsoleteddis.md)"> <strong>ObsoleteDDIs</strong> </a>ルールでは、ドライバーを呼び出さないことを指定します<a href="https://msdn.microsoft.com/library/windows/hardware/ff547164" data-raw-source="[&lt;strong&gt;FsRtlPrivateLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547164)"> <strong>FsRtlPrivateLock</strong></a>します。 この機能は廃止されています。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff545940" data-raw-source="[&lt;strong&gt;FsRtlFastLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545940)"> <strong>FsRtlFastLock</strong> </a>代わりにします。</p></td>
+<td align="left"><p><a href="wdm-obsoleteddis.md" data-raw-source="[&lt;strong&gt;ObsoleteDDIs&lt;/strong&gt;](wdm-obsoleteddis.md)"> <strong>ObsoleteDDIs</strong> </a>ルールでは、ドライバーを呼び出さないことを指定します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprivatelock" data-raw-source="[&lt;strong&gt;FsRtlPrivateLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprivatelock)"> <strong>FsRtlPrivateLock</strong></a>します。 この機能は廃止されています。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlfastlock" data-raw-source="[&lt;strong&gt;FsRtlFastLock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlfastlock)"> <strong>FsRtlFastLock</strong> </a>代わりにします。</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ ms.locfileid: "63327116"
     msbuild /t:sdv /p:Inputs="/check:DDIUsage.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

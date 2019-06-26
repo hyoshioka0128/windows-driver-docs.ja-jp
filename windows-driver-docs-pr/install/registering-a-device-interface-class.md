@@ -8,12 +8,12 @@ keywords:
 - デバイスのインターフェイス クラス WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5fd58a579fbdbc46dbfc82f87ef8d88953397c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2172cd3d53b20f0442d01e41175bbad248ee8dad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348180"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386894"
 ---
 # <a name="registering-a-device-interface-class"></a>デバイス インターフェイス クラスの登録
 
@@ -29,15 +29,15 @@ ms.locfileid: "63348180"
 
 -   INF ファイルに含めることができます[ **INF DDInstall.Interfaces セクション**](inf-ddinstall-interfaces-section.md)します。
 
-WDM ドライバーでは、そのデバイス オブジェクトを指定しない場合。 代わりに、ドライバーを呼び出すと[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)デバイス オブジェクトを作成するには、デバイス名は null 文字列を指定にする必要があります。 詳細については、次を参照してください。[デバイス オブジェクトを作成する](https://msdn.microsoft.com/library/windows/hardware/ff542862)します。
+WDM ドライバーでは、そのデバイス オブジェクトを指定しない場合。 代わりに、ドライバーを呼び出すと[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)デバイス オブジェクトを作成するには、デバイス名は null 文字列を指定にする必要があります。 詳細については、次を参照してください。[デバイス オブジェクトを作成する](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-a-device-object)します。
 
-デバイス オブジェクトを作成し、デバイス スタックに接続し後、1 つのドライバーを呼び出して[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)デバイス インターフェイス クラスを登録して、インターフェイスのインスタンスを作成します。 関数のドライバーからのこの呼び出しは、通常、その[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチンが、フィルター ドライバーは、インターフェイスを登録します。
+デバイス オブジェクトを作成し、デバイス スタックに接続し後、1 つのドライバーを呼び出して[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)デバイス インターフェイス クラスを登録して、インターフェイスのインスタンスを作成します。 関数のドライバーからのこの呼び出しは、通常、その[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンが、フィルター ドライバーは、インターフェイスを登録します。
 
 ルーチンは、シンボリック リンクの名前を返します。 ドライバーは、有効、または、デバイス インターフェイスのインスタンスを無効にするときに、リンク名を渡します。 他のシステム コンポーネントは、ドライバーが有効になるまで、デバイス インターフェイスのインスタンスを使用できません。 参照してください[を有効にして、デバイス インターフェイスのインスタンスを無効化](enabling-and-disabling-a-device-interface-instance.md)詳細についてはします。
 
-ドライバーでは、デバイス インターフェイスに固有の情報を格納できる、レジストリ キーにアクセスするのにリンクをシンボリック名も使用します。 (を参照してください[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)詳細についてはします)。アプリケーションでは、リンクの名前を使用して、デバイスを開きます。
+ドライバーでは、デバイス インターフェイスに固有の情報を格納できる、レジストリ キーにアクセスするのにリンクをシンボリック名も使用します。 (を参照してください[ **IoOpenDeviceInterfaceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)詳細についてはします)。アプリケーションでは、リンクの名前を使用して、デバイスを開きます。
 
-ドライバーを呼び出すことができます[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)インターフェイスの追加のデバイス クラスのインスタンスを登録するために必要な回数だけです。
+ドライバーを呼び出すことができます[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)インターフェイスの追加のデバイス クラスのインスタンスを登録するために必要な回数だけです。
 
  
 

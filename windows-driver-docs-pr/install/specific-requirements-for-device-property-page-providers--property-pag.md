@@ -4,12 +4,12 @@ description: デバイスのプロパティ ページのプロバイダーの一
 ms.assetid: bc48d848-a216-442e-97ca-f990f8d243ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d09863264bb4d0ba64ef1b562efa31cea9eb094
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: a2bb049acf85ad490d152ea43e38f750cadd6f2b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456422"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385889"
 ---
 # <a name="specific-requirements-for-device-property-page-providers-property-page-extension-dlls"></a>デバイスのプロパティ ページのプロバイダーの一般的な要件 (プロパティ ページの拡張 DLL)
 
@@ -47,7 +47,7 @@ ms.locfileid: "65456422"
 
 3.  デバイスがネットワーク アダプターの場合は、いずれかとして NCF_HAS_UI を指定する必要があります、**特性**値、 [ **INF DDInstall セクション**](inf-ddinstall-section.md)します。 この値は、アダプターがユーザー インターフェイスをサポートしていることを示します。
 
-    詳細については、次を参照してください。[ネットワーク アダプターのカスタム プロパティ ページを指定する](https://msdn.microsoft.com/library/windows/hardware/ff570843)します。
+    詳細については、次を参照してください。[ネットワーク アダプターのカスタム プロパティ ページを指定する](https://docs.microsoft.com/windows-hardware/drivers/network/specifying-custom-property-pages-for-network-adapters)します。
 
  
 

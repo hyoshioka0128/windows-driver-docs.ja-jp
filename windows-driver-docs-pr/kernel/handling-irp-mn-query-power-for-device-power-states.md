@@ -13,12 +13,12 @@ keywords:
 - ディスパッチ ルーチン WDK の電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c202c7091cc98c0371de81c49328e98d452f4d90
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 027471da0c2e4b7889cc895ac97b1a03ce20ea88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392465"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383329"
 ---
 # <a name="handling-irpmnquerypower-for-device-power-states"></a>IRP の処理\_MN\_クエリ\_電源状態のデバイスの電源
 
@@ -30,17 +30,17 @@ ms.locfileid: "63392465"
 
 下位のスタックを移動する、ドライバーは Irp のクエリ機能を処理します。
 
-関数またはフィルター ドライバーが失敗することが、 [ **IRP\_MN\_クエリ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551699)要求、次のいずれかが true のかどうか。
+関数またはフィルター ドライバーが失敗することが、 [ **IRP\_MN\_クエリ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)要求、次のいずれかが true のかどうか。
 
 -   ウェイク アップのデバイスが有効にし、要求された電源の状態が、デバイスが、システムを起動状態下回る。 たとえば、D3 からではなく、D2 からのシステムをスリープ解除できるデバイス D3 のクエリが失敗するが、D2 のクエリが成功します。
 
 -   要求された状態を入力することにより、開いているモデム接続などのデータが失われます操作を破棄するドライバー。 ドライバーことはほとんどありませんが失敗をクエリします。 このためほとんどの状況では、アプリケーションは、このような場合を処理します。
 
-失敗する、 [ **IRP\_MN\_クエリ\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551699)要求と、ドライバーは、次の手順。
+失敗する、 [ **IRP\_MN\_クエリ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)要求と、ドライバーは、次の手順。
 
-1.  呼び出す[ **PoStartNextPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559776)をドライバーが IRP の [次へ] のパワーを処理する準備が整っているかを示します。 (Windows Server 2003、Windows XP、および Windows 2000 のみ。)
+1.  呼び出す[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)をドライバーが IRP の [次へ] のパワーを処理する準備が整っているかを示します。 (Windows Server 2003、Windows XP、および Windows 2000 のみ。)
 
-2.  設定**Irp -&gt;IoStatus.Status**障害状態と呼び出しに[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)、IO を指定する\_いいえ\_インクリメントします。 ドライバーは IRP デバイス スタックをさらに渡しません。
+2.  設定**Irp -&gt;IoStatus.Status**障害状態と呼び出しに[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)、IO を指定する\_いいえ\_インクリメントします。 ドライバーは IRP デバイス スタックをさらに渡しません。
 
 3.  エラー状態を返す、 [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
 
@@ -56,9 +56,9 @@ IRP が成功したドライバーの状態の照会や IRP、クエリを通過
 
 4.  呼び出す**IoCopyCurrentIrpStackLocationToNext**を次の下位のドライバーの IRP スタックの場所を設定します。
 
-5.  設定、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。 *IoCompletion* 、ルーチンの呼び出し**PoStartNextPowerIrp** (Windows Server 2003、Windows XP、および Windows 2000 のみ) [次へ] のパワー IRP を処理するために、ドライバーの表明します。
+5.  設定、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。 *IoCompletion* 、ルーチンの呼び出し**PoStartNextPowerIrp** (Windows Server 2003、Windows XP、および Windows 2000 のみ) [次へ] のパワー IRP を処理するために、ドライバーの表明します。
 
-6.  呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) (で Windows 7 および Windows Vista の場合) または[ **PoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff559654) (Windows Server 2003、Windows XP、Windows 2000 で)次の下位ドライバーには、クエリ IRP を渡す。 IRP を実行しないでください。
+6.  呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (で Windows 7 および Windows Vista の場合) または[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) (Windows Server 2003、Windows XP、Windows 2000 で)次の下位ドライバーには、クエリ IRP を渡す。 IRP を実行しないでください。
 
 7.  状態を返す\_保留します。 ドライバーで値を変更する必要があります**Irp -&gt;IoStatus.Status**します。
 
@@ -70,7 +70,7 @@ IRP が成功したドライバーの状態の照会や IRP、クエリを通過
 
 -   関数のドライバーは、(など、完了する保留中の I/O 要求では、キューの受信 I/O 要求すると、デバイス コンテキストを保存またはデバイスの電源を変更する) デバイスに固有のタスクを実行します設定、 *IoCompletion*ルーチン、デバイスを渡します。次の下位のドライバーに IRP の電源 (を参照してください[Power Irp を渡して](passing-power-irps.md))。 ステータスを返す\_PENDING からその*DispatchPower*ルーチン。
 
--   バス ドライバー呼び出し[ **PoStartNextPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559776) (Windows Server 2003、Windows XP、および Windows 2000 のみ) [次へ] のパワー IRP を開始します。 IRP、IO を指定し、完了\_いいえ\_インクリメントします。 呼び出す場合は、ドライバーは IRP をすぐに完了できず、 [ **IoMarkIrpPending**](https://msdn.microsoft.com/library/windows/hardware/ff549422)、ステータスを返します\_から PENDING その*DispatchPower*ルーチンとIRP を後で完了します。
+-   バス ドライバー呼び出し[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp) (Windows Server 2003、Windows XP、および Windows 2000 のみ) [次へ] のパワー IRP を開始します。 IRP、IO を指定し、完了\_いいえ\_インクリメントします。 呼び出す場合は、ドライバーは IRP をすぐに完了できず、 [ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)、ステータスを返します\_から PENDING その*DispatchPower*ルーチンとIRP を後で完了します。
 
 場合でも、ターゲット デバイスは、クエリ対象の電源状態では既に、関数またはフィルター ドライバーごとが I/O をキューし、下ドライバー IRP を渡す必要があります。 IRP は、これが完了すると、バス ドライバーにデバイス スタックの一番下出張する必要があります。
 

@@ -14,12 +14,12 @@ keywords:
 - PSN_APPLY
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7648e76a22ea1e88b9eb28caa73b0173d5e692c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19dc601511c5af93687c1cb7d8d7cb08532c5b97
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357038"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383827"
 ---
 # <a name="handling-windows-messages-for-property-pages"></a>プロパティ ページ用の Windows メッセージの処理
 
@@ -31,7 +31,7 @@ ms.locfileid: "63357038"
 
 WM_INITDIALOG メッセージに応答してでは、ダイアログ ボックス プロシージャは、プロパティ ページの情報を初期化します。 このような情報は、デバイス、その PnP デバイスの説明と、デバイスのフレンドリ名を表すアイコンを含めることができます。
 
-[**SetupDiLoadClassIcon** ](https://msdn.microsoft.com/library/windows/hardware/ff552053)クラスを指定したデバイスのアイコンの読み込みし、アンロードの大きいアイコンを後続の呼び出しで使用できるハンドルを返します**SendDlgItemMessage**します。 次に、例を示します。
+[**SetupDiLoadClassIcon** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiloadclassicon)クラスを指定したデバイスのアイコンの読み込みし、アンロードの大きいアイコンを後続の呼び出しで使用できるハンドルを返します**SendDlgItemMessage**します。 次に、例を示します。
 
 ```cpp
 if (SetupDiLoadClassIcon(
@@ -47,9 +47,9 @@ if (SetupDiLoadClassIcon(
 }
 ```
 
-ClassIcon で返されたハンドルは、SendDlgItemMessage 関数で必要とされる WPARAM にキャストすることができます。 例では、IDC_TEST_ICON は STM_SETICON メッセージを受信する ダイアログ ボックス コントロールを識別します。 IDC_TEST_ICON の値は、プロバイダーで定義する必要があります。 アイコンとビットマップを操作するその他の関数を参照してください[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)します。 詳細については**SendDlgItemMessage**、 **DestroyIcon**、およびアイコンを使用して、ダイアログ ボックスで、Windows SDK のドキュメントを参照してください。
+ClassIcon で返されたハンドルは、SendDlgItemMessage 関数で必要とされる WPARAM にキャストすることができます。 例では、IDC_TEST_ICON は STM_SETICON メッセージを受信する ダイアログ ボックス コントロールを識別します。 IDC_TEST_ICON の値は、プロバイダーで定義する必要があります。 アイコンとビットマップを操作するその他の関数を参照してください[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))します。 詳細については**SendDlgItemMessage**、 **DestroyIcon**、およびアイコンを使用して、ダイアログ ボックスで、Windows SDK のドキュメントを参照してください。
 
-だけでなく、デバイスを表すアイコン、一般的なデバイスのプロパティ ページは、説明またはデバイスの「表示名」が含まれています、デバイスのプロパティの現在の設定を示しています。 プラグ アンド プレイ (PnP) マネージャーでは、レジストリ内の各デバイスの PnP のプロパティを格納します。 プロパティ ページのプロバイダーを呼び出すことができます[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551967)このような任意のプロパティの値を取得します。 デバイスまたはクラス固有の構成情報が、インストール プロセスの一部として、レジストリに格納されているもの場合、プロパティ ページ プロバイダーを使用して他の**SetupDiXxx**表示用には、その情報を抽出する関数。 詳細については、次を参照してください。[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)します。
+だけでなく、デバイスを表すアイコン、一般的なデバイスのプロパティ ページは、説明またはデバイスの「表示名」が含まれています、デバイスのプロパティの現在の設定を示しています。 プラグ アンド プレイ (PnP) マネージャーでは、レジストリ内の各デバイスの PnP のプロパティを格納します。 プロパティ ページのプロバイダーを呼び出すことができます[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)このような任意のプロパティの値を取得します。 デバイスまたはクラス固有の構成情報が、インストール プロセスの一部として、レジストリに格納されているもの場合、プロパティ ページ プロバイダーを使用して他の**SetupDiXxx**表示用には、その情報を抽出する関数。 詳細については、次を参照してください。[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))します。
 
 ページで特定の種類の変更が発生すると、プロパティ シートの送信、 [WM_NOTIFY](https://go.microsoft.com/fwlink/p/?linkid=181554)メッセージ、ダイアログ ボックス プロシージャをします。 メッセージ パラメーターから通知コードを抽出し、適切に応答するには、ダイアログ ボックス プロシージャを準備する必要があります。
 
@@ -61,7 +61,7 @@ ClassIcon で返されたハンドルは、SendDlgItemMessage 関数で必要と
 
 PSN_APPLY 通知を受信した場合、プロバイダー、次の操作する必要があります。
 
-1.  これが既に実行していない場合は、デバイスのインストール パラメーターをポインターを取得 ([**SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346)構造) デバイス。 呼び出してこの構造体が使用可能な[ **SetupDiGetDeviceInstallParams**](https://msdn.microsoft.com/library/windows/hardware/ff551104)を渡して、保存された*DeviceInfoSet*と*DeviceInfoData*によって参照される領域内で渡されたが、 **lParam** PROPSHEETPAGE 構造体のメンバー。
+1.  これが既に実行していない場合は、デバイスのインストール パラメーターをポインターを取得 ([**SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)構造) デバイス。 呼び出してこの構造体が使用可能な[ **SetupDiGetDeviceInstallParams**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)を渡して、保存された*DeviceInfoSet*と*DeviceInfoData*によって参照される領域内で渡されたが、 **lParam** PROPSHEETPAGE 構造体のメンバー。
 
 2.  ユーザーの変更が有効であることを確認します。
 
@@ -69,7 +69,7 @@ PSN_APPLY 通知を受信した場合、プロバイダー、次の操作する�
 
     ただし場合、プロバイダーは、変更には、デバイスのドライバーを停止して再起動が必要としないことを確認できますがないこのフラグを設定します。
 
-4.  呼び出す[ **SetupDiSetDeviceInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff552141)で、変更された[ **SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346)構造に新しいパラメーターを設定します。
+4.  呼び出す[ **SetupDiSetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)で、変更された[ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)構造に新しいパラメーターを設定します。
 
 ### <a href="" id="psn-reset-notifications"></a>PSN_RESET 通知
 

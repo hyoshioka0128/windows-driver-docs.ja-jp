@@ -9,12 +9,12 @@ keywords:
 - エラー WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97d48e53198895471f1dd06b011f885ad5682c3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9994e181f8cc7369fbc6845dcbd968603012c9f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351142"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365643"
 ---
 # <a name="return-values-for-directdraw"></a>DirectDraw の値を返す
 
@@ -22,7 +22,7 @@ ms.locfileid: "63351142"
 ## <span id="ddk_return_values_for_directdraw_gg"></span><span id="DDK_RETURN_VALUES_FOR_DIRECTDRAW_GG"></span>
 
 
-によって返されるリストの値を以下に、 [DirectDraw ドライバーによって提供される関数](https://msdn.microsoft.com/library/windows/hardware/ff553833)します。 DDHAL\_ドライバー\_*Xxx*実際に値が DWORD の戻り値で返されます。 DD\_[ok] の値と DDERR\_*Xxx*で返されるエラー コード、 **ddRVal**特定の関数のパラメーターが指す構造体のメンバー。
+によって返されるリストの値を以下に、 [DirectDraw ドライバーによって提供される関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 DDHAL\_ドライバー\_*Xxx*実際に値が DWORD の戻り値で返されます。 DD\_[ok] の値と DDERR\_*Xxx*で返されるエラー コード、 **ddRVal**特定の関数のパラメーターが指す構造体のメンバー。
 
 各関数が返すことができる特定のエラー コード、リファレンス セクションでは、関数の説明を参照してください。 DirectDraw ヘッダー ファイルを参照してください*ddraw.h*と*dxmini.h*エラー コードと戻り値の完全な一覧についてはします。 エラー コードは負の値で表され、組み合わせることはできませんに注意してください。
 
@@ -73,7 +73,7 @@ DirectDraw ドライバー内の関数は、2 つのリターン コードのい
 
  
 
-A [DxApi 関数](https://msdn.microsoft.com/library/windows/hardware/ff557387)で実装される、[ビデオのミニポート ドライバー](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)次の表に、コードのいずれかを返します。 これらのコードが定義されている*dxmini.h*します。
+A [DxApi 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)で実装される、[ビデオのミニポート ドライバー](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)次の表に、コードのいずれかを返します。 これらのコードが定義されている*dxmini.h*します。
 
 <table>
 <colgroup>

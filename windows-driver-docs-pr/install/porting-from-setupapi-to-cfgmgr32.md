@@ -4,19 +4,19 @@ description: このトピックでは、Cfgmgr32.dll を代わりに使用する
 ms.assetid: 36668A17-EA56-464C-A38B-C75BE2359412
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f7b63e9fccf0ae0c00c01f1c2fe5cecdfbe429f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 349a5675d3ad904338599745032041a5f0f0675c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369446"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385019"
 ---
 # <a name="porting-code-from-setupapi-to-cfgmgr32"></a>SetupApi から CfgMgr32 へのコードの移植
 
 
 このトピックでは、Cfgmgr32.dll を代わりに使用する Setupapi.dll 機能を使用するコードを移植する方法を示すコード例を提供します。 コードの移植で、ユニバーサル Windows プラットフォーム (UWP)、SetupApi をサポートしていないコードを実行することができます。 UWP の CfgMgr32 のサブセットがサポートされている、を通じて公開される機能では具体的には、 `api-ms-win-devices-config-l1-1-0.dll` API (Windows 8 以降) を設定または`api-ms-win-devices-config-l1-1-1.dll`API (Windows 8.1 以降) を設定します。 Windows 10 以降では、単にリンクする`onecore.lib`します。
 
-上記の API のセット内の関数の一覧についてを参照してください[Windows API のセット](https://msdn.microsoft.com/library/windows/desktop/hh802935)または[Onecore.lib:Api api-ms-win-devices-config-l1-1-1.dll から](https://msdn.microsoft.com/library/windows/desktop/mt654039#_api-ms-win-devices-config-l1-1-1.dll)します。
+上記の API のセット内の関数の一覧についてを参照してください[Windows API のセット](https://docs.microsoft.com/windows/desktop/apiindex/windows-apisets)または[Onecore.lib:Api api-ms-win-devices-config-l1-1-1.dll から](https://docs.microsoft.com/windows/desktop/apiindex/umbrella-lib-onecore#_api-ms-win-devices-config-l1-1-1.dll)します。
 
 次のセクションでには、通常、アプリケーションを使用したコード例が含まれます。
 
@@ -30,7 +30,7 @@ ms.locfileid: "63369446"
 ## <a name="get-a-list-of-present-devices-and-retrieve-a-property-for-each-device"></a>存在するデバイスの一覧を取得し、各デバイスのプロパティを取得
 
 
-この例を使用して存在するすべてのデバイスの一覧を取得します。 [ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)反復を各デバイスのデバイスの説明を取得できます。
+この例を使用して存在するすべてのデバイスの一覧を取得します。 [ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)反復を各デバイスのデバイスの説明を取得できます。
 
 ```ManagedCPlusPlus
 VOID
@@ -99,7 +99,7 @@ GetDevicePropertiesSetupapi(
 }
 ```
 
-この例を使用して存在するすべてのデバイスの一覧を取得します。 [ **CM_Get_Device_ID_List** ](https://msdn.microsoft.com/library/windows/hardware/ff538415)反復を各デバイスのデバイスの説明を取得できます。
+この例を使用して存在するすべてのデバイスの一覧を取得します。 [ **CM_Get_Device_ID_List** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista)反復を各デバイスのデバイスの説明を取得できます。
 
 ```ManagedCPlusPlus
 VOID
@@ -201,7 +201,7 @@ GetDevicePropertiesCfgmgr32(
 ## <a name="get-a-list-of-interfaces-get-the-device-exposing-each-interface-and-get-a-property-from-the-device"></a>インターフェイスの一覧を取得、デバイスが、各インターフェイスを公開して、デバイスからプロパティを取得します。
 
 
-この例は、GUID_DEVINTERFACE_VOLUME を使用してクラスのすべてのインターフェイスの一覧を取得します。 [ **SetupDiGetClassDevs**](https://msdn.microsoft.com/library/windows/hardware/ff551069)します。 インターフェイスごとには、インターフェイスを公開するデバイスを取得し、そのデバイスのプロパティを取得します。
+この例は、GUID_DEVINTERFACE_VOLUME を使用してクラスのすべてのインターフェイスの一覧を取得します。 [ **SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)します。 インターフェイスごとには、インターフェイスを公開するデバイスを取得し、そのデバイスのプロパティを取得します。
 
 ```ManagedCPlusPlus
 VOID
@@ -289,7 +289,7 @@ GetInterfacesAndDevicePropertySetupapi(
 }
 ```
 
-この例は、GUID_DEVINTERFACE_VOLUME を使用してクラスのすべてのインターフェイスの一覧を取得します。 [ **CM_Get_Device_Interface_List**](https://msdn.microsoft.com/library/windows/hardware/ff538463)します。 インターフェイスごとには、インターフェイスを公開するデバイスを取得し、そのデバイスのプロパティを取得します。
+この例は、GUID_DEVINTERFACE_VOLUME を使用してクラスのすべてのインターフェイスの一覧を取得します。 [ **CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista)します。 インターフェイスごとには、インターフェイスを公開するデバイスを取得し、そのデバイスのプロパティを取得します。
 
 ```ManagedCPlusPlus
 VOID
@@ -420,7 +420,7 @@ GetInterfacesAndDevicePropertyCfgmgr32(
 ## <a name="get-a-property-from-a-specific-device"></a>特定のデバイスからプロパティを取得します。
 
 
-この例では、特定のデバイスのデバイス インスタンス パスを受け取り、を使用してから、プロパティを取得[ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)します。
+この例では、特定のデバイスのデバイス インスタンス パスを受け取り、を使用してから、プロパティを取得[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)します。
 
 ```ManagedCPlusPlus
 VOID
@@ -482,7 +482,7 @@ GetDevicePropertySpecificDeviceSetupapi(
 }
 ```
 
-この例では、特定のデバイスのデバイス インスタンス パスを受け取り、を使用してから、プロパティを取得[ **CM_Get_DevNode_Property**](https://msdn.microsoft.com/library/windows/hardware/hh780220)します。
+この例では、特定のデバイスのデバイス インスタンス パスを受け取り、を使用してから、プロパティを取得[ **CM_Get_DevNode_Property**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_propertyw)します。
 
 ```ManagedCPlusPlus
 void
@@ -535,9 +535,9 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="disable-device"></a>デバイスを無効にします。
 
 
-この例では、CfgMgr32 を使用してデバイスを無効にする方法を示します。 これには、SetupApi には使用[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)で*InstallFunction*の**DIF_PROPERTYCHANGE**、指定する**DICS_DISABLE**します。
+この例では、CfgMgr32 を使用してデバイスを無効にする方法を示します。 これには、SetupApi には使用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)で*InstallFunction*の**DIF_PROPERTYCHANGE**、指定する**DICS_DISABLE**します。
 
-**注**既定では、呼び出す[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)再起動後に無効になっているデバイスの状態になります。 呼び出すときに、再起動後にデバイスを無効にする[ **CM_Disable_DevNode**](https://msdn.microsoft.com/library/windows/hardware/ff537996)を指定する必要があります、 **CM_DISABLE_PERSIST**フラグ。
+**注**既定では、呼び出す[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)再起動後に無効になっているデバイスの状態になります。 呼び出すときに、再起動後にデバイスを無効にする[ **CM_Disable_DevNode**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_disable_devnode)を指定する必要があります、 **CM_DISABLE_PERSIST**フラグ。
 
 
 
@@ -560,7 +560,7 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="enable-device"></a>デバイスを有効にします。
 
 
-この例では、CfgMgr32 を使用してデバイスを有効にする方法を示します。 これには、SetupApi には使用[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)で*InstallFunction*の**DIF_PROPERTYCHANGE**、指定する**DICS_ENABLE**します。
+この例では、CfgMgr32 を使用してデバイスを有効にする方法を示します。 これには、SetupApi には使用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)で*InstallFunction*の**DIF_PROPERTYCHANGE**、指定する**DICS_ENABLE**します。
 
 ```ManagedCPlusPlus
     cr = CM_Locate_DevNode(&devinst,
@@ -581,7 +581,7 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="restart-device"></a>デバイスを再起動します。
 
 
-この例では、CfgMgr32 を使用してデバイスを再起動する方法を示します。 これには、SetupApi には使用[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)で*InstallFunction*の**DIF_PROPERTYCHANGE**、指定する**DICS_PROPCHANGE**します。
+この例では、CfgMgr32 を使用してデバイスを再起動する方法を示します。 これには、SetupApi には使用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)で*InstallFunction*の**DIF_PROPERTYCHANGE**、指定する**DICS_PROPCHANGE**します。
 
 ```ManagedCPlusPlus
     cr = CM_Locate_DevNode(&devinst,

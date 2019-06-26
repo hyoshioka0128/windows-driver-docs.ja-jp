@@ -6,12 +6,12 @@ keywords:
 - DeviceWake
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0324877a14b1b560aa01d5e113740bad398c330
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32e8d2f2a049a7503cc9c0832f72925168fe43e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342731"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384995"
 ---
 # <a name="devicewake"></a>DeviceWake
 
@@ -19,7 +19,7 @@ ms.locfileid: "63342731"
 
 
 
-**DeviceWake**のメンバー [**デバイス\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff543095)最低 (最小電力) デバイス電源の状態、デバイスが、ウェイクを通知が含まれていますイベント、または**PowerDeviceUnspecified**デバイスは、外部からの信号に対してスリープ解除できない場合。
+**DeviceWake**のメンバー [**デバイス\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)最低 (最小電力) デバイス電源の状態、デバイスが、ウェイクを通知が含まれていますイベント、または**PowerDeviceUnspecified**デバイスは、外部からの信号に対してスリープ解除できない場合。
 
 バス ドライバーでは、この値を設定します。 高度なドライバーは、パワー状態に値を変更できます。 たとえば、バス ドライバー設定**DeviceWake** D3 には、デバイス スタック サポート ウェイク アップのみ D2 からのドライバーをさらより高度なドライバーは、D2 に値を変更できます。
 

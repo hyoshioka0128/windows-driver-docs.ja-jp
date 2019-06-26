@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e0675ae9ce016ff05809cd45102e4b77665827af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8b835c7274b31514326abc311284ebf12911ca9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346812"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385539"
 ---
 # <a name="kscategoryvpmux"></a>KSCATEGORY_VPMUX
 
 
-KSCATEGORY_VPMUX[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)ビデオを多重化をサポートしています (KS) 機能のカテゴリ。
+KSCATEGORY_VPMUX[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)ビデオを多重化をサポートしています (KS) 機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_VPMUX[デバイス インターフェイス クラス](https://msdn.m
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_VPMUX 機能カテゴリをサポートすることを示す KSCATEGORY_VPMUX のインスタンスを登録します。
 
-概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)します。
+概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)します。
 
 ビデオ デバイスのデバイスのインターフェイス クラスについては、次を参照してください。 [ **KSCATEGORY_VIDEO**](kscategory-video.md)します。
 

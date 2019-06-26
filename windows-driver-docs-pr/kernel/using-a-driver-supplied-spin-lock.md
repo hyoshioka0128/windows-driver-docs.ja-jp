@@ -8,12 +8,12 @@ keywords:
 - グローバル キャンセル スピン ロック WDK カーネル
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 04faab726c2c712184737fbc602030a3405d41ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 226e3c6245b2a337167b1fc36ab8cc0fc16298ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383717"
 ---
 # <a name="using-a-driver-supplied-spin-lock"></a>ドライバーによって提供されるスピン ロックの使用
 
@@ -21,9 +21,9 @@ ms.locfileid: "63355252"
 
 
 
-Irp の独自のキューを管理するドライバーはドライバーによって提供されるスピン ロックを使用して、システムではなく、キューへのアクセスを同期する、スピン ロックをキャンセルできます。 どうしても必要な場合を除くキャンセル スピン ロックの使用を回避することでパフォーマンスを向上できます。 システムが 1 つだけのキャンセル スピン ロックしているため、ドライバーが使用可能になる場合は、そのスピン ロックを待機する必要がある場合があります。 ドライバーによって提供されるスピン ロックを使用して、この潜在的な遅延を排除し、I/O マネージャーとその他のドライバーのキャンセル スピン ロックを使用します。 システムは、ドライバーを呼び出すときにもキャンセル スピン ロックを獲得が[*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742) 、日常的なドライバーを使用して、独自のスピン ロック、Irp のキューを保護します。
+Irp の独自のキューを管理するドライバーはドライバーによって提供されるスピン ロックを使用して、システムではなく、キューへのアクセスを同期する、スピン ロックをキャンセルできます。 どうしても必要な場合を除くキャンセル スピン ロックの使用を回避することでパフォーマンスを向上できます。 システムが 1 つだけのキャンセル スピン ロックしているため、ドライバーが使用可能になる場合は、そのスピン ロックを待機する必要がある場合があります。 ドライバーによって提供されるスピン ロックを使用して、この潜在的な遅延を排除し、I/O マネージャーとその他のドライバーのキャンセル スピン ロックを使用します。 システムは、ドライバーを呼び出すときにもキャンセル スピン ロックを獲得が[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel) 、日常的なドライバーを使用して、独自のスピン ロック、Irp のキューを保護します。
 
-ドライバーは Irp、保留キューに登録しませんが、他の方法で所有権を保持、場合でも、そのドライバーが設定する必要があります、*キャンセル*IRP の日常的な IRP のポインターを保護するために、スピン ロックを使用する必要があります。 たとえば、ドライバーは保留中、IRP をマークし、コンテキストとして IRP のポインターを渡します、 [ *IoTimer* ](https://msdn.microsoft.com/library/windows/hardware/ff550381)ルーチン。 ドライバーを設定する必要があります、*キャンセル*ルーチンをタイマーをキャンセルし、両方で同じスピン ロックを使用する必要があります、*キャンセル*ルーチンと IRP にアクセスするときは、タイマー コールバック。
+ドライバーは Irp、保留キューに登録しませんが、他の方法で所有権を保持、場合でも、そのドライバーが設定する必要があります、*キャンセル*IRP の日常的な IRP のポインターを保護するために、スピン ロックを使用する必要があります。 たとえば、ドライバーは保留中、IRP をマークし、コンテキストとして IRP のポインターを渡します、 [ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチン。 ドライバーを設定する必要があります、*キャンセル*ルーチンをタイマーをキャンセルし、両方で同じスピン ロックを使用する必要があります、*キャンセル*ルーチンと IRP にアクセスするときは、タイマー コールバック。
 
 独自の Irp のキュー、スピン ロックを使用して、任意のドライバーは、次の方法する必要があります。
 
@@ -35,7 +35,7 @@ Irp の独自のキューを管理するドライバーはドライバーによ�
 
 -   キューを保護するロックの取得、*キャンセル*ルーチン。
 
-ドライバーの呼び出し、スピン ロックを作成する[ **KeInitializeSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff552160)します。 次の例では、ドライバーがでスピン ロックを保存、**デバイス\_コンテキスト**構造が作成されたキューと共に。
+ドライバーの呼び出し、スピン ロックを作成する[ **KeInitializeSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)します。 次の例では、ドライバーがでスピン ロックを保存、**デバイス\_コンテキスト**構造が作成されたキューと共に。
 
 ```cpp
 typedef struct {
@@ -51,7 +51,7 @@ VOID InitDeviceContext(DEVICE_CONTEXT *deviceContext)
 }
 ```
 
-スピン ロック、呼び出しを取得するドライバーは IRP をキューに[ **InsertTailList**](https://msdn.microsoft.com/library/windows/hardware/ff547823)、次の例のように、保留中、IRP をマークします。
+スピン ロック、呼び出しを取得するドライバーは IRP をキューに[ **InsertTailList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-inserttaillist)、次の例のように、保留中、IRP をマークします。
 
 ```cpp
 NTSTATUS QueueIrp(DEVICE_CONTEXT *deviceContext, PIRP Irp)
@@ -104,7 +104,7 @@ NTSTATUS QueueIrp(DEVICE_CONTEXT *deviceContext, PIRP Irp)
 }
 ```
 
-ドライバーでは、設定し、クリア中に、スピン ロックが保持している、例に示すように、*キャンセル*ルーチン。 キューのルーチン例にはには、2 つの呼び出しが含まれています。 [ **IoSetCancelRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549674)します。
+ドライバーでは、設定し、クリア中に、スピン ロックが保持している、例に示すように、*キャンセル*ルーチン。 キューのルーチン例にはには、2 つの呼び出しが含まれています。 [ **IoSetCancelRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)します。
 
 最初の呼び出しのセット、*キャンセル*IRP のルーチンです。 ただし、キューのルーチンの実行中に IRP が取り消された可能性がありますが、ので、ドライバー チェックする必要があります、**キャンセル**IRP のメンバー。
 
@@ -161,7 +161,7 @@ PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
 
 例では、キューにアクセスする前に、ドライバーが関連付けられているスピン ロックを取得します。 スピン ロックを保持しているときにキューが空でないし、キューから [次へ] の IRP の取得を確認します。 呼び出して**IoSetCancelRoutine**をリセットする、*キャンセル*IRP のルーチンです。 ドライバーは IRP をデキューし、リセット中に、IRP を取り消すことができたので、*キャンセル*、日常的なドライバーはによって返される値を確認する必要があります**IoSetCancelRoutine**します。 場合**IoSetCancelRoutine**返します**NULL**、ことを示します、*キャンセル*デキュー ルーチンにより、しルーチンがされているか、すぐに呼び出されます*キャンセル*ルーチンが IRP を完了します。 キューを保護し、返すロックを解放します。
 
-使用に注意してください[ **InitializeListHead** ](https://msdn.microsoft.com/library/windows/hardware/ff547799)前のルーチンでします。 ドライバーは IRP を入れるでしたように、*キャンセル*ルーチンによってデキューできますが、呼び出す方が簡単です**InitializeListHead**、IRP の再初期化する**ListEntry**フィールドが IRP 自体を指すようにします。 前に、リストの構造を変更する可能性がありますので、重要なは自己参照型のポインターを使用して、*キャンセル*ルーチンは、スピン ロックを取得します。 リスト構造が変更された場合の元の値を行う可能性があると**ListEntry** 、無効な*キャンセル*IRP をデキューするときは、ルーチンに一覧が壊れている可能性があります。 場合**ListEntry**自体、IRP を指す、*キャンセル*ルーチンは、常に正しい IRP を使用します。
+使用に注意してください[ **InitializeListHead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-initializelisthead)前のルーチンでします。 ドライバーは IRP を入れるでしたように、*キャンセル*ルーチンによってデキューできますが、呼び出す方が簡単です**InitializeListHead**、IRP の再初期化する**ListEntry**フィールドが IRP 自体を指すようにします。 前に、リストの構造を変更する可能性がありますので、重要なは自己参照型のポインターを使用して、*キャンセル*ルーチンは、スピン ロックを取得します。 リスト構造が変更された場合の元の値を行う可能性があると**ListEntry** 、無効な*キャンセル*IRP をデキューするときは、ルーチンに一覧が壊れている可能性があります。 場合**ListEntry**自体、IRP を指す、*キャンセル*ルーチンは、常に正しい IRP を使用します。
 
 *キャンセル*ルーチン、さらに、単には次の処理します。
 

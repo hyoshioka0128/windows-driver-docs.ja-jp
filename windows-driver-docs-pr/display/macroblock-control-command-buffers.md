@@ -7,12 +7,12 @@ keywords:
 - コマンド バッファー WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8674be88550a4d13cc8559e44f9f2137634410a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: afa3a7e32347105f30dee80d67d3e642d1573697
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375394"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385605"
 ---
 # <a name="macroblock-control-command-buffers"></a>マクロブロック制御コマンド バッファー
 
@@ -32,7 +32,7 @@ ms.locfileid: "63375394"
 
 マクロ ブロック コントロール コマンドおよびデータは、各マクロ ブロックの残存の相違は、そのマクロ ブロック内で四角形の領域のみに影響します。
 
-マクロ ブロック コントロール コマンド バッファーで管理コマンドをマクロ ブロックの合計数がで指定された、 **dwNumMBsInBuffer**の対応するメンバー [ **DXVA\_BufferDescription** ](https://msdn.microsoft.com/library/windows/hardware/ff563122)構造体。
+マクロ ブロック コントロール コマンド バッファーで管理コマンドをマクロ ブロックの合計数がで指定された、 **dwNumMBsInBuffer**の対応するメンバー [ **DXVA\_BufferDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_bufferdescription)構造体。
 
 量と残存違いデータ バッファー内のデータの種類によって決まりますが、 **wPatternCode**、 **wPC\_Overflow**、および**bNumCoef**のメンバー対応するマクロ ブロック コントロール コマンド。
 
@@ -40,7 +40,7 @@ ms.locfileid: "63375394"
 
 ![マクロ ブロック コントロール コマンド バッファーと残存の違いのデータ バッファーの間の関係を示す図](images/residdiffdata.png)
 
-場合、 **bConfigMBcontrolRasterOrder**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)構造体が 1 に、その後に次の式が適用されます前の図で*は*マクロ ブロック コントロール コマンド バッファー内のマクロ ブロックのインデックスです。
+場合、 **bConfigMBcontrolRasterOrder**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体が 1 に、その後に次の式が適用されます前の図で*は*マクロ ブロック コントロール コマンド バッファー内のマクロ ブロックのインデックスです。
 
 ![mb コントロール コマンド バッファーと残存違いデータ バッファーの間の関係を示す図](images/formula3.png)
 

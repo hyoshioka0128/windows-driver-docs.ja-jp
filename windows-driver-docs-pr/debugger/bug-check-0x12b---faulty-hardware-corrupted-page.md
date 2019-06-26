@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 02cd8f6a04923fb0da6d64e7f2bb8e77fee732fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 884adbc7beea8021972e080c7a8a5f333123df22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358969"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367866"
 ---
 # <a name="bug-check-0x12b-faultyhardwarecorruptedpage"></a>バグ チェック 0x12B:障害のある\_ハードウェア\_破損した\_ページ
 
 不良\_ハードウェア\_破損した\_ページのバグ チェックが 0x0000012B の値を持ちます。 このバグ チェックでは、Windows メモリ マネージャーには、破損が検出されたことと、破損でしたのみが原因である物理アドレス指定を使用してメモリにアクセスするコンポーネントを示します。  
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="faultyhardwarecorruptedpage-parameters"></a>障害のある\_ハードウェア\_破損した\_ページ パラメーター

@@ -5,12 +5,12 @@ ms.assetid: 737ac1a5-9f7a-422b-9ccf-42a3176639bc
 ms.date: 08/08/2017
 keywords: -OID_GEN_RCV_OK ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ad86f3b513cbf91574e31ba000a721f95ac1646
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f855bfbae625e0ceb6a8e70c9fc1da79ae931851
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386215"
 ---
 # <a name="oidgenrcvok"></a>OID\_GEN\_受信\_OK
 
@@ -39,7 +39,7 @@ ms.locfileid: "63367539"
 
 OID\_GEN\_受信\_[ok] をエラーなしで受信したフレームの数を指定します。 ただし、 [OID\_GEN\_統計](oid-gen-statistics.md)この情報は含まれません。
 
-注: 統計の Oid は NDIS は、それを処理しない限り、NDIS 6.0 とそれ以降のミニポート ドライバーの必須です。 Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://msdn.microsoft.com/library/windows/hardware/ff552485)します。
+注: 統計の Oid は NDIS は、それを処理しない限り、NDIS 6.0 とそれ以降のミニポート ドライバーの必須です。 Oid の統計に関する概要については、次を参照してください。 [General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)します。
 
 <a name="requirements"></a>要件
 ------------

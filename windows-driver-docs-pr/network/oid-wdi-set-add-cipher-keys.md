@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_ADD_CIPHER_KEYS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 31e580b6e77cf8d353184c625690ec9782b7cc2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e86053bca1e6e46e6f982a24ffcabfa8105decf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387256"
 ---
 # <a name="oidwdisetaddcipherkeys"></a>OID\_WDI\_設定\_追加\_暗号\_キー
 
@@ -32,7 +32,7 @@ OID\_WDI\_設定\_追加\_暗号\_キーを追加またはポートのキー テ
 
 | TLV                                                                          | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                              |
 |------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------|
-| [**WDI\_TLV\_設定\_暗号\_キー\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn898056) | x                              |          | 追加またはポートのキーのテーブルを上書きする暗号キー。 |
+| [**WDI\_TLV\_設定\_暗号\_キー\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-cipher-key-info) | x                              |          | 追加またはポートのキーのテーブルを上書きする暗号キー。 |
 
  
 
@@ -41,7 +41,7 @@ OID\_WDI\_設定\_追加\_暗号\_キーを追加またはポートのキー テ
 
 追加データがありません。 ヘッダー内のデータで十分です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

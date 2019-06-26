@@ -4,12 +4,12 @@ description: 自動項目
 ms.assetid: 59f9b71b-e4bd-44a3-a4f2-dfea9f1045e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 289f90f3a34325df8a1d6f2942189639be609bf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 427d3a97509dcfe0f33eab186d234c32bf5c076a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373370"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366756"
 ---
 # <a name="auto-item"></a>自動項目
 
@@ -26,7 +26,7 @@ WIA スキャナーのデバイスでは、スキャンの自動構成をサポ�
 
 WIA アーキテクチャは、自動的に入力ソースから取得したイメージ データを転送するために使用するファイル形式を選択するスキャン モードを自動構成で動作しているスキャナーのデバイスを許可されていません。 代わりに、形式を明示的に選択するか、単に既定の形式をそのまま使用して、アプリケーションは、ファイルのフォーマットを決定します。 この制限は、デバイスが、アプリケーションが使用できない形式にスキャンした画像データを転送することを防ぎます。
 
-スキャンの自動構成をサポートするスキャナー デバイス WIA ミニドライバーが自動に設定する必要があります\_ソース フラグ ビット、 [ **WIA\_DPS\_ドキュメント\_処理\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff551379) WIA ツリーで、ルート項目によって実装されるプロパティの値。 WIA アプリケーションでは、デバイスの WIA 項目のツリーに自動の項目が含まれるかどうかを確認するには、このプロパティを照会できます。
+スキャンの自動構成をサポートするスキャナー デバイス WIA ミニドライバーが自動に設定する必要があります\_ソース フラグ ビット、 [ **WIA\_DPS\_ドキュメント\_処理\_機能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-capabilities) WIA ツリーで、ルート項目によって実装されるプロパティの値。 WIA アプリケーションでは、デバイスの WIA 項目のツリーに自動の項目が含まれるかどうかを確認するには、このプロパティを照会できます。
 
  
 

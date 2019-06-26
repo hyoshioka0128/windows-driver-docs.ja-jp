@@ -4,19 +4,19 @@ description: V4 印刷ドライバー モデルは、さまざまなレンダリ
 ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6c12ec567d99dc8d96b1fc2dbae21352e0f41d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ccaafefa4e5716fd08b9813b82128c7cd2b7eaff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358565"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362696"
 ---
 # <a name="v4-printer-driver-property-bags"></a>V4 プリンター ドライバー プロパティ バッグ
 
 
 V4 印刷ドライバー モデルは、さまざまなレンダリング プロセスをカスタマイズした UI アプリケーションからのデータ フローを容易にするプロパティ バッグを提供します。
 
-これらのプロパティ バッグは、カスタム プロパティをカスタマイズした UI で作成してレンダリング プロセスによって消費されるフィーチャーの定義を許可します。 使用して公開されるすべてのプロパティ バッグ、 [ **IPrinterScriptablePropertyBag** ](https://msdn.microsoft.com/library/windows/hardware/hh973217)インターフェイスを JavaScript でまたはを使用して、 [ **IPrinterPropertyBag** ](https://msdn.microsoft.com/library/windows/hardware/hh439547)他の環境でのインターフェイス。
+これらのプロパティ バッグは、カスタム プロパティをカスタマイズした UI で作成してレンダリング プロセスによって消費されるフィーチャーの定義を許可します。 使用して公開されるすべてのプロパティ バッグ、 [ **IPrinterScriptablePropertyBag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablepropertybag)インターフェイスを JavaScript でまたはを使用して、 [ **IPrinterPropertyBag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterpropertybag)他の環境でのインターフェイス。
 
 次の表では、さまざまなコンポーネントを使用して、v4 印刷ドライバーのさまざまな部分からプロパティ バッグ オブジェクトを取得する方法の概要を示します。
 
@@ -34,7 +34,7 @@ V4 印刷ドライバー モデルは、さまざまなレンダリング プロ
 <tbody>
 <tr class="odd">
 <td>JavaScript の制約のスクリプト</td>
-<td>ドライバーとキューのプロパティ バッグは、scriptContext のパラメーターを使用して JavaScript 制約のスクリプトに渡されます。 このパラメーターは型<a href="https://msdn.microsoft.com/library/windows/hardware/hh768279" data-raw-source="[&lt;strong&gt;IPrinterScriptContext&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh768279)"> <strong>IPrinterScriptContext</strong> </a>子が含まれています。DriverProperties – は、ドライバーのプロパティ バッグを指します。
+<td>ドライバーとキューのプロパティ バッグは、scriptContext のパラメーターを使用して JavaScript 制約のスクリプトに渡されます。 このパラメーターは型<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext" data-raw-source="[&lt;strong&gt;IPrinterScriptContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)"> <strong>IPrinterScriptContext</strong> </a>子が含まれています。DriverProperties – は、ドライバーのプロパティ バッグを指します。
 QueueProperties – は、キューのプロパティ バッグを指します。
 ユーザーのプロパティ-ユーザーのプロパティ バッグ。
 DEVMODE プロパティ バッグは、対象の DEVMODE に渡される&lt; - &gt; PrintTicket 変換の方法として、 <em>devModeProperties</em>パラメーター (型の<strong>IPrinterScriptablePropertyBag</strong>)。 他の方法でご利用いただけません。</td>
@@ -46,19 +46,19 @@ QueueProperties – は、キューのプロパティ バッグを指します�
 </tr>
 <tr class="odd">
 <td>プリンター拡張アプリ</td>
-<td>すべてのプロパティ バッグの一部として渡されます、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh973207" data-raw-source="[&lt;strong&gt;IPrinterExtensionEventArgs&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh973207)"> <strong>IPrinterExtensionEventArgs</strong> </a> OnDriverEvent ハンドラーのパラメーター。 これらはすべて型<strong>IPrinterPropertyBag</strong>します。 これらは、次のよう指定します。DriverProperties – は、ドライバーのプロパティ バッグを指します。
+<td>すべてのプロパティ バッグの一部として渡されます、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs" data-raw-source="[&lt;strong&gt;IPrinterExtensionEventArgs&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)"> <strong>IPrinterExtensionEventArgs</strong> </a> OnDriverEvent ハンドラーのパラメーター。 これらはすべて型<strong>IPrinterPropertyBag</strong>します。 これらは、次のよう指定します。DriverProperties – は、ドライバーのプロパティ バッグを指します。
 ユーザーのプロパティ-ユーザーのプロパティ バッグ。
 PrinterQueue.GetProperties() – キューのプロパティ バッグを参照します。</td>
 </tr>
 <tr class="even">
 <td>UWP デバイス アプリ</td>
-<td>すべてのプロパティ バッグは、ライセンス認証を使用して中にで渡される、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh406649" data-raw-source="[&lt;strong&gt;IPrinterExtensionContext&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406649)"> <strong>IPrinterExtensionContext</strong> </a>オブジェクト。 として指定されています。DriverProperties – は、ドライバーのプロパティ バッグを指します。
+<td>すべてのプロパティ バッグは、ライセンス認証を使用して中にで渡される、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext" data-raw-source="[&lt;strong&gt;IPrinterExtensionContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext)"> <strong>IPrinterExtensionContext</strong> </a>オブジェクト。 として指定されています。DriverProperties – は、ドライバーのプロパティ バッグを指します。
 ユーザーのプロパティ-ユーザーのプロパティ バッグ。
 PrinterQueue.GetProperties() – キューのプロパティ バッグを参照します。</td>
 </tr>
 <tr class="odd">
 <td>XPS 表示フィルター</td>
-<td><p>XPS フィルター内からドライバーのプロパティ バッグにアクセスできる、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff561066" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561066)"><strong>印刷フィルター パイプラインのプロパティ バッグ</strong></a> "DriverPropertyBag"またはから定義されている値XPS_FP_PROPERTY_BAG名前プロパティを使用します。<em>filterpipeline.h</em>します。 DriverPropertyBag に関する情報を次に示します。</p>
+<td><p>XPS フィルター内からドライバーのプロパティ バッグにアクセスできる、 <a href="https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)"><strong>印刷フィルター パイプラインのプロパティ バッグ</strong></a> "DriverPropertyBag"またはから定義されている値XPS_FP_PROPERTY_BAG名前プロパティを使用します。<em>filterpipeline.h</em>します。 DriverPropertyBag に関する情報を次に示します。</p>
 <strong>プロパティの種類:</strong>VT_UNKNOWN<strong>説明。</strong>IUnknown インターフェイスへのポインター。 ドライバーのプロパティ バッグに IPrinterPropertyBag インターフェイスへのポインターを取得する QueryInterface を呼び出してください。
 <p>XPS フィルター キューのプロパティ バッグ内からアクセスできますプロパティ名"QueuePropertyBag"、または、定義を使用して印刷フィルター パイプラインのプロパティ バッグと値から XPS_FP_QUEUE_PROPERTY_BAG <em>filterpipeline.h</em>します。 QueuePropertyBag に関する情報を次に示します。</p>
 <strong>プロパティの種類:</strong>VT_UNKNOWN<strong>説明。</strong>IUnknown インターフェイスへのポインター。 キューのプロパティ バッグに IPrinterPropertyBag インターフェイスへのポインターを取得する QueryInterface を呼び出してください。</td>
@@ -197,12 +197,12 @@ Config:&lt;名&gt;
 ![キューのプロパティ バッグの xml スキーマ](images/queuepropbagschem.png)
 
 ## <a name="related-topics"></a>関連トピック
-[**IPrinterExtensionContext**](https://msdn.microsoft.com/library/windows/hardware/hh406649)  
-[**IPrinterExtensionEventArgs**](https://msdn.microsoft.com/library/windows/hardware/hh973207)  
-[**IPrinterPropertyBag**](https://msdn.microsoft.com/library/windows/hardware/hh439547)  
-[**IPrinterScriptablePropertyBag**](https://msdn.microsoft.com/library/windows/hardware/hh973217)  
-[**IPrinterScriptContext**](https://msdn.microsoft.com/library/windows/hardware/hh768279)  
-[**印刷フィルター パイプラインのプロパティ バッグ**](https://msdn.microsoft.com/library/windows/hardware/ff561066)  
+[**IPrinterExtensionContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext)  
+[**IPrinterExtensionEventArgs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)  
+[**IPrinterPropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterpropertybag)  
+[**IPrinterScriptablePropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablepropertybag)  
+[**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)  
+[**印刷フィルター パイプラインのプロパティ バッグ**](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)  
 
 
 

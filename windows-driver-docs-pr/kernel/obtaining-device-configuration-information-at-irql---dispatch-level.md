@@ -12,12 +12,12 @@ keywords:
 - ドライバー スタック WDK 構成情報
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd20100a3270ec30fb38b8fb91a4332f4dbbf8fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c6001a6fbba75975a9d1528abf7e530b67898c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382901"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384939"
 ---
 # <a name="obtaining-device-configuration-information-at-irql--dispatchlevel"></a>IRQL でデバイスの構成情報を取得するディスパッチ =\_レベル
 
@@ -40,9 +40,9 @@ GUID_BUS_INTERFACE_STANDARD インターフェイス (で定義されている`w
 
 IRQL で PCI デバイスの構成領域にアクセスするときに、3 つの手順が必要なディスパッチを =\_レベル。
 
-1.  送信、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687) IRQL で要求 = パッシブ\_ダイレクト呼び出しインターフェイス構造体を取得するレベル (**BUS\_インターフェイス\_標準**)、PCI バス ドライバーから。 この操作を (通常はデバイスの拡張機能) での非ページ プール メモリに格納します。
+1.  送信、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface) IRQL で要求 = パッシブ\_ダイレクト呼び出しインターフェイス構造体を取得するレベル (**BUS\_インターフェイス\_標準**)、PCI バス ドライバーから。 この操作を (通常はデバイスの拡張機能) での非ページ プール メモリに格納します。
 
-2.  呼び出す、 **BUS\_インターフェイス\_標準**インターフェイスのルーチン、 [ *SetBusData* ](https://msdn.microsoft.com/library/windows/hardware/gg604856)と[ *GetBusData* ](https://msdn.microsoft.com/library/windows/hardware/gg604850)IRQL で PCI 構成領域にアクセスするには、ディスパッチ =\_レベル。
+2.  呼び出す、 **BUS\_インターフェイス\_標準**インターフェイスのルーチン、 [ *SetBusData* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/gg604856(v=vs.85))と[ *GetBusData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)IRQL で PCI 構成領域にアクセスするには、ディスパッチ =\_レベル。
 
 3.  インターフェイスを逆参照します。 PCI バス ドライバーは、参照カウントをインターフェイスに返す前に、ドライバー、インターフェイスにアクセスする必要がありますそれを逆参照、不要になった後、されます。
 
@@ -108,7 +108,7 @@ End:
 }
 ```
 
-次のコード スニペットを使用する方法を示しています、 [ *GetBusData* ](https://msdn.microsoft.com/library/windows/hardware/gg604850)インターフェイスの構成の空間データ (ステップ 2) を取得するルーチン。
+次のコード スニペットを使用する方法を示しています、 [ *GetBusData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-get_set_device_data)インターフェイスの構成の空間データ (ステップ 2) を取得するルーチン。
 
 ```cpp
  bytes = busInterfaceStandard.GetBusData(
@@ -128,7 +128,7 @@ End:
 
 インターフェイスは、PCI バス ドライバーのアクセス権を持つバス ハードウェアへの呼び出し元のアクセスを同期します。 ドライバーのライターにバス ハードウェアにアクセスするため、PCI バス ドライバーを使用した競合を回避するために、スピン ロックの作成について入力する必要はありません。
 
-バス、関数、およびデバイスの番号をすべての必要な場合必要はありません、通常、この情報を取得するバスのインターフェイスに頼るに注意してください。 このデータを取得できるない直接にターゲット デバイスの PDO を渡すことによって、 [ **IoGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff549203)次のように機能します。
+バス、関数、およびデバイスの番号をすべての必要な場合必要はありません、通常、この情報を取得するバスのインターフェイスに頼るに注意してください。 このデータを取得できるない直接にターゲット デバイスの PDO を渡すことによって、 [ **IoGetDeviceProperty** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceproperty)次のように機能します。
 
 ```cpp
     ULONG   propertyAddress, length;

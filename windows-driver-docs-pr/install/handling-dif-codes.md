@@ -9,12 +9,12 @@ keywords:
 - 関数コードの WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 546430989db1e5f3f6389a3a17faf55aa776869b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45ec8f1f7e3d9a97af11f835102d0b614149263f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386289"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383847"
 ---
 # <a name="handling-dif-codes"></a>DIF コードの処理
 
@@ -22,7 +22,7 @@ ms.locfileid: "63386289"
 
 
 
-*デバイスのインストール アプリケーション*送信[デバイス インストールの関数コード](https://msdn.microsoft.com/library/windows/hardware/ff541307)(差分コード) を呼び出すことによってインストーラー [ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922). この関数は、インストーラーのエントリ ポイント関数を呼び出します。 インストーラーのエントリ ポイントの説明を参照してください。
+*デバイスのインストール アプリケーション*送信[デバイス インストールの関数コード](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))(差分コード) を呼び出すことによってインストーラー [ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller). この関数は、インストーラーのエントリ ポイント関数を呼び出します。 インストーラーのエントリ ポイントの説明を参照してください。
 
 [共同インストーラー インターフェイス](co-installer-interface.md)
 
@@ -35,29 +35,29 @@ ms.locfileid: "63386289"
 この要求を処理するためにどのインストーラーが許可されているを指定します。 インストーラーには、クラスのインストーラー、クラスの共同インストーラー (セットアップ クラス全体の共同インストーラー)、およびデバイスの共同インストーラーが含まれます (共同インストーラーをデバイスに固有)。
 
 <a href="" id="installer-input"></a>**インストーラーの入力**  
-差分のコードだけでなく**SetupDiCallClassInstaller**特定の要求に関連する追加の情報を提供します。 各要求で提供される情報の詳細については、各差分コードのリファレンス ページを参照してください。 次の一覧は、追加の入力パラメーターの一般的な説明が含まれていて、一覧表示、[デバイスのインストール機能](https://msdn.microsoft.com/library/windows/hardware/ff541299)(**SetupDi * Xxx*** 関数) インストーラーは、処理するために呼び出すことができます、パラメーター:
+差分のコードだけでなく**SetupDiCallClassInstaller**特定の要求に関連する追加の情報を提供します。 各要求で提供される情報の詳細については、各差分コードのリファレンス ページを参照してください。 次の一覧は、追加の入力パラメーターの一般的な説明が含まれていて、一覧表示、[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))(**SetupDi * Xxx*** 関数) インストーラーは、処理するために呼び出すことができます、パラメーター:
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
 装置のデバイス情報へのハンドルを設定します。
 
 ハンドルが非透過的です。 ハンドルを使用して、たとえば、デバイス情報を識別する呼び出しで設定**SetupDi * Xxx*** 関数。
 
-*DeviceInfoSet* 、関連付けられている必要があります[デバイス セットアップ クラス](device-setup-classes.md)します。 そうである場合は、呼び出す[ **SetupDiGetDeviceInfoListClass** ](https://msdn.microsoft.com/library/windows/hardware/ff551101)クラス GUID を取得します。
+*DeviceInfoSet* 、関連付けられている必要があります[デバイス セットアップ クラス](device-setup-classes.md)します。 そうである場合は、呼び出す[ **SetupDiGetDeviceInfoListClass** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinfolistclass)クラス GUID を取得します。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-必要に応じてへのポインターを提供、 [ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを識別する構造体。
+必要に応じてへのポインターを提供、 [ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを識別する構造体。
 
 <a href="" id="device-installation-parameters-"></a>*デバイスのインストール パラメーター*   
-これらの間接的なパラメーターは、デバイスのインストールでの情報を提供する[ **SP_DEVINSTALL_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552346)構造体。 場合*DeviceInfoData*ない**NULL**、インストールのパラメーターに関連付けられているデバイスがある、 *DeviceInfoData*します。 場合*DeviceInfoData*は**NULL**、関連付けられているデバイスのインストール パラメーター、 *DeviceInfoSet*します。
+これらの間接的なパラメーターは、デバイスのインストールでの情報を提供する[ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)構造体。 場合*DeviceInfoData*ない**NULL**、インストールのパラメーターに関連付けられているデバイスがある、 *DeviceInfoData*します。 場合*DeviceInfoData*は**NULL**、関連付けられているデバイスのインストール パラメーター、 *DeviceInfoSet*します。
 
-呼び出す[ **SetupDiGetDeviceInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff551104)デバイスのインストール パラメーターを取得します。
+呼び出す[ **SetupDiGetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)デバイスのインストール パラメーターを取得します。
 
 <a href="" id="class-installation-parameters"></a>*インストール パラメーターをクラスします。*  
 省略可能な間接的なパラメーターは、特定の差分要求に固有です。 これらは基本的に「差分要求パラメーターです」 たとえば、DIF_REMOVE インストール要求のクラスのインストール パラメーターは、SP_REMOVEDEVICE_PARAMS 構造体に格納されます。
 
 各 sp _*XXX*_PARAMS 構造 SP_CLASSINSTALL_HEADER 固定サイズ構造体から始まります。
 
-呼び出す[ **SetupDiGetClassInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff551083)クラス インストール パラメーターを取得します。
+呼び出す[ **SetupDiGetClassInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa)クラス インストール パラメーターを取得します。
 
 差分要求がクラスのインストール パラメーターを持つ場合は、一連のパラメーターに関連付けられている、 *DeviceInfoSet*と別のセットに関連付けられているパラメーターの*DeviceInfoData* (差分を要求した場合指定します*DeviceInfoData*)。 **SetupDiGetClassInstallParams**使用可能な最も固有のパラメーターを返します。
 
@@ -67,7 +67,7 @@ ms.locfileid: "63386289"
 <a href="" id="installer-output"></a>**インストーラーの出力**  
 この差分コードに必要な出力をについて説明します。
 
-インストーラーでは、デバイスのインストール パラメーターを変更する場合、インストーラーを呼び出す必要があります[ **SetupDiSetDeviceInstallParams** ](https://msdn.microsoft.com/library/windows/hardware/ff552141)を返す前に、変更を適用します。 同様に、インストーラーが差分コードのクラスのインストール パラメーターを変更した場合、インストーラー呼び出す必要があります[ **SetupDiSetClassInstallParams**](https://msdn.microsoft.com/library/windows/hardware/ff552122)します。
+インストーラーでは、デバイスのインストール パラメーターを変更する場合、インストーラーを呼び出す必要があります[ **SetupDiSetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)を返す前に、変更を適用します。 同様に、インストーラーが差分コードのクラスのインストール パラメーターを変更した場合、インストーラー呼び出す必要があります[ **SetupDiSetClassInstallParams**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa)します。
 
 <a href="" id="installer-return-value"></a>**インストーラーの戻り値**  
 適切なリターン DIF コードの値を指定します。 戻り値の詳細については、次の図を参照してください。

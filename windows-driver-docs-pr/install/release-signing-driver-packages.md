@@ -14,21 +14,21 @@ keywords:
 - リリースのリリースの署名について、WDK を署名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da5af0cfc1d32625baa6a14654a209fbde2ba8c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fdac7632ebb4ca2a2ce85a8deaa501051d56abbf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387312"
 ---
 # <a name="release-signing-driver-packages"></a>ドライバー パッケージのリリース署名
 
 
 このセクションに Windows Vista および Windows の以降のバージョンのリリース用のドライバーに署名するコンピューターを参照として、*コンピューターを署名*します。 署名のコンピューターでは、Windows XP SP2 または Windows オペレーティング システムの以降のバージョンが実行されている必要があります。 など、ドライバーを Windows 7 のリリースのためのものでは、Windows Vista を実行しているコンピューターで署名できます。
 
-さらに、署名のコンピューターが必要、[ドライバーの署名ツール](https://msdn.microsoft.com/library/windows/hardware/ff552958)をインストールします。
+さらに、署名のコンピューターが必要、[ドライバーの署名ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)をインストールします。
 
-**注**  のバージョンを使用する必要があります、 [ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778) Windows Vista およびそれ以降のバージョンの Windows Driver Kit (WDK) で提供されるツールです。 このツールの以前のバージョンでは、署名ポリシーを Windows Vista 以降のバージョンの Windows カーネル モード コードはサポートされません。
+**注**  のバージョンを使用する必要があります、 [ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) Windows Vista およびそれ以降のバージョンの Windows Driver Kit (WDK) で提供されるツールです。 このツールの以前のバージョンでは、署名ポリシーを Windows Vista 以降のバージョンの Windows カーネル モード コードはサポートされません。
 
  
 

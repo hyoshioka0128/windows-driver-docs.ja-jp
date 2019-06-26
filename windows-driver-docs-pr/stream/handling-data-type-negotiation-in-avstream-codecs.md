@@ -8,12 +8,12 @@ keywords:
 - AVStream ハードウェア コーデック WDK、データの種類のネゴシエーションを処理のサポートします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd97a63202e9d56b6d62228536be2a99a3e80da2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5edacb66f45537baf480a3ac2c86f40e9227fc8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363532"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384053"
 ---
 # <a name="handling-data-type-negotiation-in-avstream-codecs"></a>AVStream コーデックのデータ型ネゴシエーションの処理
 
@@ -31,11 +31,11 @@ ms.locfileid: "63363532"
 
 4.  MF トポロジ ビルダー (DirectShow グラフ ビルダーの MF に相当) は、ストリーミング トポロジを構築します。
 
-5.  ミニドライバーを呼び出すことによって、暗証番号 (pin) のデータ型が設定、MF トポロジ ビルダーが Devproxy 入力/出力ピンのデータ型を終了後[ *AVStrMiniPinSetDataFormat* ](https://msdn.microsoft.com/library/windows/hardware/ff556355)コールバック関数。 Devproxy を呼び出す KS 暗証番号 (pin) が存在しない場合[ **KsCreatePin**](https://msdn.microsoft.com/library/windows/hardware/ff561652)します。
+5.  ミニドライバーを呼び出すことによって、暗証番号 (pin) のデータ型が設定、MF トポロジ ビルダーが Devproxy 入力/出力ピンのデータ型を終了後[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)コールバック関数。 Devproxy を呼び出す KS 暗証番号 (pin) が存在しない場合[ **KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)します。
 
 成功したデータの種類のネゴシエーションを有効にするには、ミニドライバーは以下の手順を実行する必要があります。
 
-1.  サポートされているデータの範囲の一覧を指定、 **DataRanges**のメンバー [ **KSPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563533)ハードウェア コーデックのフィルターに含まれる公開されている各ピンにします。 例:
+1.  サポートされているデータの範囲の一覧を指定、 **DataRanges**のメンバー [ **KSPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)ハードウェア コーデックのフィルターに含まれる公開されている各ピンにします。 次に、例を示します。
 
     ```cpp
     const PKSDATARANGE VideoDecoderInputPinDataRanges[8] = {
@@ -50,7 +50,7 @@ ms.locfileid: "63363532"
     };
     ```
 
-    ラッパー型で指定した範囲をここではなど[ **KS\_DATARANGE\_MPEG2\_ビデオ**](https://msdn.microsoft.com/library/windows/hardware/ff567362)、 [ **KS\_DATARANGE\_ビデオ**](https://msdn.microsoft.com/library/windows/hardware/ff567628)、および[ **KS\_DATARANGE\_VIDEO2**](https://msdn.microsoft.com/library/windows/hardware/ff567629)します。 前述のコード例で、各範囲に型キャスト[ **KSDATARANGE**](https://msdn.microsoft.com/library/windows/hardware/ff561658)します。
+    ラッパー型で指定した範囲をここではなど[ **KS\_DATARANGE\_MPEG2\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)、 [ **KS\_DATARANGE\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)、および[ **KS\_DATARANGE\_VIDEO2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2)します。 前述のコード例で、各範囲に型キャスト[ **KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))します。
 
     ラッパーの構造体の最後のメンバーと呼ばれる形式のブロック構造体など、KS\_DATARANGE\_MPEG2\_ビデオ **。VideoInfoHeader**します。
 
@@ -60,9 +60,9 @@ ms.locfileid: "63363532"
 
 2.  ドライバーは KSSTATE 中に暗証番号 (pin) に設定するメディアの種類を許可する必要があります\_停止/KSSTATE\_を実行します。 アクションは必要ありませんは、ここ以外のこと、ドライバーは拒否する場合これを確認します。
 
-3.  ドライバーに intersect ハンドラーを指定する必要があります[ **KSPIN\_記述子\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff563534).**IntersectHandler**各ピンにします。
+3.  ドライバーに intersect ハンドラーを指定する必要があります[ **KSPIN\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex).**IntersectHandler**各ピンにします。
 
-4.  ミニドライバーのハンドラーを指定する必要があります、 [ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff565107)プロパティ。
+4.  ミニドライバーのハンドラーを指定する必要があります、 [ **KSPROPERTY\_接続\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)プロパティ。
 
 5.  出力メディアの種類を設定すると、エンコーダーがメディアの種類の指定された出力に基づいて (暗証番号 (pin) の記述子を使用) して可能な入力の種類を報告する必要があります。 出力メディアの種類が設定されていない場合エンコーダーは任意の入力メディアの種類を報告する必要があります。
 

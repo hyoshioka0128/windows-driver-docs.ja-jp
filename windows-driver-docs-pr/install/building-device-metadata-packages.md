@@ -1,19 +1,19 @@
 ---
-title: デバイス メタデータ パッケージのビルド
-description: デバイス メタデータ パッケージのビルド
+title: デバイス メタデータ パッケージの構築
+description: デバイス メタデータ パッケージの構築
 ms.assetid: 8b95a88e-430c-4250-959f-43536fdc1824
 keywords:
 - デバイス メタデータ パッケージ WDK では、ビルド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb342da01dca7cfe5a1fcb6e2a5eb2e5da73ee8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1b31847458599f3bfc7a617f3c5400bfb49ce790
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56559735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385291"
 ---
-# <a name="building-device-metadata-packages"></a>デバイス メタデータ パッケージのビルド
+# <a name="building-device-metadata-packages"></a>デバイス メタデータ パッケージの構築
 
 
 このトピックでは、デバイス メタデータ パッケージを構築する方法のガイドラインを提供します。
@@ -42,9 +42,9 @@ ms.locfileid: "56559735"
 
 -   各メタデータ パッケージのファイル名の GUID は一意である必要があります。 新規または変更されたメタデータ パッケージを作成するときに、変更はわずか場合でも、新しい GUID を作成する必要があります。
 
--   各メタデータ パッケージは、1 つだけのロケールをサポートできます。 デバイスの 1 つ以上のロケールをサポートする場合は、独自の GUID を持つ各メタデータ パッケージと、ロケールごとに別のメタデータ パッケージを作成する必要があります。 詳細については、[**ロケール XML 要素**](https://msdn.microsoft.com/library/windows/hardware/ff548647)を参照してください。
+-   各メタデータ パッケージは、1 つだけのロケールをサポートできます。 デバイスの 1 つ以上のロケールをサポートする場合は、独自の GUID を持つ各メタデータ パッケージと、ロケールごとに別のメタデータ パッケージを作成する必要があります。 詳細については、次を参照してください。 [**ロケール XML 要素**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548647(v=vs.85))します。
 
-    **注**  デバイスのロケールに固有のデバイス メタデータ パッケージの複数のファイルが必要な場合、言語に依存しない識別子を作成してでのすべてのファイルをグループ化できます。 この識別子は、GUID とで同じ GUID を指定できます、 [ **LanguageNeutralIdentifier** ](https://msdn.microsoft.com/library/windows/hardware/ff548617)同じデバイスのすべてのメタデータ パッケージ内の XML 要素。
+    **注**  デバイスのロケールに固有のデバイス メタデータ パッケージの複数のファイルが必要な場合、言語に依存しない識別子を作成してでのすべてのファイルをグループ化できます。 この識別子は、GUID とで同じ GUID を指定できます、 [ **LanguageNeutralIdentifier** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548617(v=vs.85))同じデバイスのすべてのメタデータ パッケージ内の XML 要素。
 
      
 

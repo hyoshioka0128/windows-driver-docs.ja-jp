@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 236fc2fe7e9d81780665dbcc0683c6b60adbb6f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5edd84eea76ed5046018b2a693ed17980e7cee81
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332616"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391626"
 ---
 # <a name="kspropertysysaudiodevicecount"></a>KSPROPERTY\_SYSAUDIO\_デバイス\_数
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_デバイス\_COUNT プロパティが、DirectSound ア�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_SYSAUDIO\_デバイス\_プロパティ要求の数が状態を返�
 <a name="remarks"></a>注釈
 -------
 
-SysAudio は、wave レンダリングを実行するシステムで有効になっているハードウェア デバイスごとに一意仮想オーディオ デバイスを列挙します。 ハードウェア デバイスの各インスタンスで仮想のオーディオ デバイスがで構成される、 [KMixer システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#kmixer-system-driver)、およびその他のオーディオのコンポーネント。 DirectSound アプリケーション プログラムは、ハードウェア デバイスが組み込まれた仮想のオーディオ デバイスを選択して、特定のハードウェア デバイスを選択します。
+SysAudio は、wave レンダリングを実行するシステムで有効になっているハードウェア デバイスごとに一意仮想オーディオ デバイスを列挙します。 ハードウェア デバイスの各インスタンスで仮想のオーディオ デバイスがで構成される、 [KMixer システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#kmixer-system-driver)、およびその他のオーディオのコンポーネント。 DirectSound アプリケーション プログラムは、ハードウェア デバイスが組み込まれた仮想のオーディオ デバイスを選択して、特定のハードウェア デバイスを選択します。
 
 たとえば、3 つのオーディオ カードが、システム バスに接続されている各に WaveCyclic または WavePci ミニポート ドライバーを使用して wave レンダリング デバイスが含まれている場合は、SysAudio デバイス Id が 0、1、および 2 と 3 つの仮想オーディオ デバイスを列挙します。
 
@@ -95,7 +95,7 @@ SysAudio KSCATEGORY カテゴリの下のシステム レジストリ内の仮�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
  
 

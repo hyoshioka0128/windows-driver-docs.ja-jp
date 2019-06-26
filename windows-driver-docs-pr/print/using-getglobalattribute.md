@@ -6,12 +6,12 @@ keywords:
 - GetGlobalAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72024925395119dc0d54843b09a0d09d88c93b5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 271bf32129c906728387a0ded92e641ebe4e2cda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362729"
 ---
 # <a name="using-getglobalattribute"></a>GetGlobalAttribute の使用
 
@@ -21,7 +21,7 @@ ms.locfileid: "63373460"
 
 キーワード名が定義されているすべてのグローバル属性名が同じ*PostScript プリンター説明ファイル形式の仕様、v4.3*します。 自分のセマンティクスのためには、この仕様を参照してください。 (このリソースできない場合がありますのいくつかの言語および国。)
 
-次の表に、 *pdwDataType*パラメーターの値には、 [ **EATTRIBUTE\_DATATYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff548692)列挙型。
+次の表に、 *pdwDataType*パラメーターの値には、 [ **EATTRIBUTE\_DATATYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ne-printoem-_eattribute_datatype)列挙型。
 
 <table>
 <colgroup>

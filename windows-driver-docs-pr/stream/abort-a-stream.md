@@ -10,12 +10,12 @@ keywords:
 - ストリームのキャンセル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48ec5181a900d67261bb34f235729d5d1f2bee4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe10de891ab4c5c18429655c53a93ad440d82d4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357222"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386781"
 ---
 # <a name="abort-a-stream"></a>ストリームの中止
 
@@ -23,7 +23,7 @@ ms.locfileid: "63357222"
 
 
 
-サブユニットは、ストリーム データ IOCTL キャンセルの場合は、デバイスの削除などの特別な条件を検出すると、ストリーミングの操作が中断されます。 中止操作*要求*は、同期ですが中止完了ではありません。 最初の中止のストリーム要求のみが受け入れられたり、処理されます。重複する要求が無視されますが、状態と共に返される\_成功します。 AV/C ストリーミング フィルター ドライバー、 *Avcstrm.sys、* ストリーミングを中止する作業項目のスケジュールを設定します。 完了する開始ストリームが中止されたときに、 [ **AVCSTRM\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff554130)/[**AVCSTRM\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff554135)状態要求\_キャンセルします。 中止要求では、ストリームの状態は変更されませんし、データ ストリームも閉じる必要がありますをクリーンアップして、リソースを解放します。
+サブユニットは、ストリーム データ IOCTL キャンセルの場合は、デバイスの削除などの特別な条件を検出すると、ストリーミングの操作が中断されます。 中止操作*要求*は、同期ですが中止完了ではありません。 最初の中止のストリーム要求のみが受け入れられたり、処理されます。重複する要求が無視されますが、状態と共に返される\_成功します。 AV/C ストリーミング フィルター ドライバー、 *Avcstrm.sys、* ストリーミングを中止する作業項目のスケジュールを設定します。 完了する開始ストリームが中止されたときに、 [ **AVCSTRM\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/stream/avcstrm-read)/[**AVCSTRM\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/stream/avcstrm-write)状態要求\_キャンセルします。 中止要求では、ストリームの状態は変更されませんし、データ ストリームも閉じる必要がありますをクリーンアップして、リソースを解放します。
 
 中止作業項目のルーチンで AV/C ストリーミング isochronous データ転送を停止最初しますが、ストリームの状態は影響しません。 接続されているストリームのデータ キューをストリーム バッファーをデタッチ状態に戻すを通過 AV/C をストリーミングし\_キャンセルします。
 

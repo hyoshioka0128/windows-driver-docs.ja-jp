@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003edbcd3b87b06cffecaaa566befc096e2878b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a203ac43821c62122e35f410b330f8e9b3c6e7ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393021"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384576"
 ---
 # <a name="fltreleaseresource-routine"></a>FltReleaseResource ルーチン
 
@@ -51,19 +51,19 @@ VOID FltReleaseResource(
 
 **FltReleaseResource**が前に呼び出すことによって取得したリソースが解放[ **FltAcquireResourceExclusive** ](fltacquireresourceexclusive.md)または[ **FltAcquireResourceShared**](fltacquireresourceshared.md)します。
 
-**FltReleaseResource**用のラッパーです[ **ExReleaseResourceLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545597)通常カーネル APC 配信を再び有効にします。
+**FltReleaseResource**用のラッパーです[ **ExReleaseResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)通常カーネル APC 配信を再び有効にします。
 
-**FltReleaseResource**通常カーネル APC の配信を再有効化を呼び出す必要はありません[ **KeLeaveCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552964)または[ **FsRtlExitFileSystem** ](fsrtlexitfilesystem.md)呼び出した後**FltReleaseResource**します。
+**FltReleaseResource**通常カーネル APC の配信を再有効化を呼び出す必要はありません[ **KeLeaveCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)または[ **FsRtlExitFileSystem** ](fsrtlexitfilesystem.md)呼び出した後**FltReleaseResource**します。
 
 リソースへの排他アクセスを取得するために呼び出す[ **FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)します。
 
 共有アクセス用のリソースを取得するために呼び出す[ **FltAcquireResourceShared**](fltacquireresourceshared.md)します。
 
-システムのリソースの一覧からリソースを削除する[ **ExDeleteResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff544578)します。
+システムのリソースの一覧からリソースを削除する[ **ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)します。
 
-再利用するためのリソースを初期化するために呼び出す[ **ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)します。
+再利用するためのリソースを初期化するために呼び出す[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)します。
 
-次の構造体の詳細については、次を参照してください。 [÷ リソース ルーチンの概要](https://msdn.microsoft.com/library/windows/hardware/ff548046)でカーネルのアーキテクチャの設計ガイド。
+次の構造体の詳細については、次を参照してください。 [÷ リソース ルーチンの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)でカーネルのアーキテクチャの設計ガイド。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -104,13 +104,13 @@ VOID FltReleaseResource(
 ## <a name="see-also"></a>関連項目
 
 
-[**ExDeleteResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff544578)
+[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)
 
-[**ExInitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545317)
+[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)
 
-[**ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)
+[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)
 
-[**ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)
+[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)
 
 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)
 
@@ -118,7 +118,7 @@ VOID FltReleaseResource(
 
 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)
 
-[**KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)
+[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)
 
  
 

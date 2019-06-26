@@ -4,12 +4,12 @@ description: MS\_SM\_AdapterInformationQuery WMI クラス
 ms.assetid: 3a396a73-6ade-455a-ac3f-fd0175cc704e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 477d586dd58ec6e769368cd679c78b757d6940fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c8b53293aeb4921431e742a25e4752efe00eafb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377464"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386144"
 ---
 # <a name="mssmadapterinformationquery-wmi-class"></a>MS\_SM\_AdapterInformationQuery WMI クラス
 
@@ -104,7 +104,7 @@ class MS_SM_AdapterInformationQuery
 
 このクラスの定義が WMI ツール スイートによってコンパイルされると、次のデータ構造が生成されます。
 
-[**MS\_SM\_AdapterInformationQuery**](https://msdn.microsoft.com/library/windows/hardware/ff563194)
+[**MS\_SM\_AdapterInformationQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_sm_adapterinformationquery)
 
 この WMI クラスに関連付けられているメソッドはありません。
 

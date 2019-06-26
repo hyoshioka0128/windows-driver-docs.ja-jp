@@ -4,12 +4,12 @@ description: ミット ソフトウェア パッケージに含まれている G
 ms.assetid: D50C371B-4A03-4BDD-8EC2-6E7A4A4DF3C5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 327d545f5a1704d0e90b245d5b263fff76fab6b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b0bc3c5ac0c6a2687c096a9edf5f6423a69bfd9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373776"
 ---
 # <a name="gpio-tests-in-mitt"></a>MITT の GPIO テスト
 
@@ -27,9 +27,9 @@ ms.locfileid: "63356807"
 ## <a name="before-you-begin"></a>開始する前にしています.
 
 
--   ミット ボードと GPIO アダプターのボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://msdn.microsoft.com/library/windows/hardware/dn919811)します。
--   [ミット ソフトウェア パッケージをダウンロード](https://msdn.microsoft.com/library/windows/hardware/dn919810)します。 テスト対象のシステムにインストールします。
--   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://msdn.microsoft.com/library/windows/hardware/dn919779)します。
+-   ミット ボードと GPIO アダプターのボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)します。
+-   [ミット ソフトウェア パッケージをダウンロード](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))します。 テスト対象のシステムにインストールします。
+-   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)します。
 
 ## <a name="hardware-setup"></a>ハードウェアのセットアップ
 
@@ -93,7 +93,7 @@ ms.locfileid: "63356807"
 
     ![gpio output pin on mitt](images/gpiooutputpin.png)
 
-6.  任意。 ボリュームまたはインジケーターが、両方でミット GPIO テストを実行する場合は、これらのレジストリ エントリを設定して GPIO オートメーションに関連するテストをスキップできます。 各エントリは、DWORD と 1 の値により、テストします。0 は、それを無効にします。
+6.  (省略可能)。 ボリュームまたはインジケーターが、両方でミット GPIO テストを実行する場合は、これらのレジストリ エントリを設定して GPIO オートメーションに関連するテストをスキップできます。 各エントリは、DWORD と 1 の値により、テストします。0 は、それを無効にします。
     -   [ボリューム]
 
         **HKEY\_CURRENT\_USER\\Software\\Microsoft\\MITT\\GPIO\\RunVolumeTest**
@@ -191,7 +191,7 @@ WDTF を使用して手動で GPIO テストを実行するには、これらの
 ![gpio 概略図](images/gpioschematic.png)
 
 ## <a name="related-topics"></a>関連トピック
-[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

@@ -7,12 +7,12 @@ keywords:
 - WDK Direct3D バッファー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e2d924a3bfcafabe0c15f9294a814012af08d8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd3fb0f0deafb1f2de38665a072e927d7e182e1a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384853"
 ---
 # <a name="direct3d-vertex-buffers"></a>Direct3D 頂点バッファー
 
@@ -20,7 +20,7 @@ ms.locfileid: "63357960"
 ## <span id="ddk_direct3d_vertex_buffers_gg"></span><span id="DDK_DIRECT3D_VERTEX_BUFFERS_GG"></span>
 
 
-頂点バッファーへの呼び出しで、コマンド バッファーのプリミティブに関連付けられている頂点データを格納して[ **D3dDrawPrimitives2**](https://msdn.microsoft.com/library/windows/hardware/ff544704)します。 頂点は、柔軟な頂点の形式を使用して表されます ([FVF](fvf--flexible-vertex-format-.md))、各頂点が関連付けられている次のデータがあることができます。
+頂点バッファーへの呼び出しで、コマンド バッファーのプリミティブに関連付けられている頂点データを格納して[ **D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)します。 頂点は、柔軟な頂点の形式を使用して表されます ([FVF](fvf--flexible-vertex-format-.md))、各頂点が関連付けられている次のデータがあることができます。
 
 -   位置 (*x、y、z、および省略可能な w*) (必須)
 

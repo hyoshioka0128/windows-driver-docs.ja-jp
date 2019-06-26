@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a1faffa08cb47dba596f0e6cb1fbdb34b2381689
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 130a61c45e1adc3a0e420417091e2b0145956829
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349146"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368908"
 ---
 # <a name="removetarget-function"></a>RemoveTarget 関数
 
@@ -51,7 +51,7 @@ void RemoveTarget(
 レポートを停止するイベントです。 このメンバーが 0 の場合は、WMI プロバイダーのクライアントはレポートで示されたポートに関連付けられたイベントに停止*DiscoveredPortWWN*します。 このメンバーが 0 以外の場合は、WMI プロバイダーは任意のターゲットがすべてのイベントに関連付けられているレポートを停止します。
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemoveTarget\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564039)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemoveTarget\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -86,9 +86,9 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**RemoveTarget\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff564033)
+[**RemoveTarget\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_in)
 
-[**RemoveTarget\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff564039)
+[**RemoveTarget\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_out)
 
  
 

@@ -5,12 +5,12 @@ ms.assetid: 2310a341-6899-44ad-8dfb-a13fd0c42dcb
 ms.date: 08/08/2017
 keywords: -OID_WWAN_DRIVER_CAPS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: fed4cfc9ac5595cacbe6ba3b145fc585a9b03c61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14b378f5d8b4518b315bc865c826fe9bcc650d2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385495"
 ---
 # <a name="oidwwandrivercaps"></a>OID\_WWAN\_ドライバー\_キャップ
 
@@ -19,12 +19,12 @@ OID\_WWAN\_ドライバー\_キャップは、ミニポート ドライバーで
 
 要求のセットがサポートされていません。
 
-ミニポート ドライバー処理 OID\_WWAN\_ドライバー\_同期的に上限を設定して、含まれた応答バッファーをすぐに完了する必要があります、 [ **NDIS\_WWAN\_ドライバー\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567908)クエリ要求を完了するときに、ミニポート ドライバーによって実装される MB ドライバー モデルのバージョンを記述する構造体。
+ミニポート ドライバー処理 OID\_WWAN\_ドライバー\_同期的に上限を設定して、含まれた応答バッファーをすぐに完了する必要があります、 [ **NDIS\_WWAN\_ドライバー\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps)クエリ要求を完了するときに、ミニポート ドライバーによって実装される MB ドライバー モデルのバージョンを記述する構造体。
 
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [MB ミニポート ドライバーの初期化](https://msdn.microsoft.com/library/windows/hardware/ff557186)します。
+詳細については、この OID を使用して、次を参照してください。 [MB ミニポート ドライバーの初期化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)します。
 
 ミニポート ドライバーが、プロバイダーのネットワークまたは Subscriber Identity Module (SIM カード) にアクセスしないでくださいクエリ操作を処理するときにします。
 
@@ -57,9 +57,9 @@ MB サービスを初期化または再起動すると、ミニポート ドラ�
 ## <a name="see-also"></a>関連項目
 
 
-[MB ミニポート ドライバーの初期化](https://msdn.microsoft.com/library/windows/hardware/ff557186)
+[MB ミニポート ドライバーの初期化](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
 
-[**NDIS\_WWAN\_ドライバー\_キャップ**](https://msdn.microsoft.com/library/windows/hardware/ff567908)
+[**NDIS\_WWAN\_ドライバー\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - SRB 変更 WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 853217ec25fc53b1def2901a1193c9b2082cd392
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd1299201e7d58474f4096c55e5246d2e8302b44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355560"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386187"
 ---
 # <a name="modifying-srbs"></a>SRB の変更
 
@@ -21,7 +21,7 @@ ms.locfileid: "63355560"
 ## <span id="ddk_modifying_srbs_kg"></span><span id="DDK_MODIFYING_SRBS_KG"></span>
 
 
-SCSI ミニポート ドライバーの前のセクションで説明したように[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff552654)ルーチンが、ミニポート ドライバーが、要求を保持する場合、ポートのドライバーが SRB の拡張機能のメモリを割り当てることを要求する必要があります状態情報。
+SCSI ミニポート ドライバーの前のセクションで説明したように[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ルーチンが、ミニポート ドライバーが、要求を保持する場合、ポートのドライバーが SRB の拡張機能のメモリを割り当てることを要求する必要があります状態情報。
 
 SCSI ミニポート ドライバーがされる Srb に値を記述する場合は、*のみ*、次の目的と*のみ*で、次のメンバー。
 
@@ -35,7 +35,7 @@ SCSI ミニポート ドライバーがされる Srb に値を記述する場合
 
 -   ミニポート ドライバーが設定する、8 つ以上の論理ユニットをサポートしているかどうか、 **Lun**論理ユニット番号へのメンバー
 
-HBA が 8 個を超えるの論理ユニットを処理できる場合というよう*HwScsiFindAdapter*設定、 [**ポート\_構成\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff563900)、ポート、ドライバーは LUN の情報を解釈しません。 ミニポート ドライバーは、必要な場合は、scsi-3 アドレスに、SRB から 8 ビットの LUN をマッピングします。
+HBA が 8 個を超えるの論理ユニットを処理できる場合というよう*HwScsiFindAdapter*設定、 [**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)、ポート、ドライバーは LUN の情報を解釈しません。 ミニポート ドライバーは、必要な場合は、scsi-3 アドレスに、SRB から 8 ビットの LUN をマッピングします。
 
 8 ビット LUN から scsi-3 アドレスへのマッピングは、ミニポート ドライバーに固有です。 次の表は、推奨されるマッピングを示します、 *P* 、物理アドレス指定モードは、 *B* 、バスと*T*はターゲットです。
 

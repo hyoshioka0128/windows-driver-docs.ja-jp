@@ -4,12 +4,12 @@ description: Windows 7 ディスプレイ ドライバー用の SKU の差別化
 ms.assetid: 3cf72bd5-21bc-4a7f-8c2f-98f8e70d8248
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1222b8231372d251dabb72d6e010dd8aa483b216
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa412ea125638890958361c3e1c0e22fe3a232e4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342405"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384878"
 ---
 # <a name="differentiating-the-sku-for-windows-7-display-drivers"></a>Windows 7 ディスプレイ ドライバー用の SKU の差別化
 
@@ -42,7 +42,7 @@ NT<platform>...1
 [ATI.Mfg.NTamd64...1]
 ```
 
-詳細については、**製造元**セクションを参照してください[ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)します。
+詳細については、**製造元**セクションを参照してください[ **INF 製造元セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)します。
 
  
 

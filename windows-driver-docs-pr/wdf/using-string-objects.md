@@ -8,12 +8,12 @@ keywords:
 - WDK KMDF の Unicode 文字列します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb8a6cf1d5664e421e47d491e09af7b26bb4eca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c84f1261ac9b812ef5e4aee8d33c15aa15a83f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391835"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372212"
 ---
 # <a name="using-string-objects"></a>文字列オブジェクトの使用
 
@@ -27,11 +27,11 @@ WDF では、Unicode 文字列のみを使用します。 すべての framework
 
 フレームワークの定義、 *framework の string オブジェクト*KMDF および UMDF ドライバーを使用して Unicode 文字列を表現します。
 
-ドライバーが呼び出せる[ **WdfStringCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff550046)文字列オブジェクトを作成し、必要に応じて Unicode 文字列をオブジェクトに割り当てます。
+ドライバーが呼び出せる[ **WdfStringCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfstring/nf-wdfstring-wdfstringcreate)文字列オブジェクトを作成し、必要に応じて Unicode 文字列をオブジェクトに割り当てます。
 
-フレームワークのいくつかのオブジェクト メソッド、 [ **WdfRegistryQueryString**](https://msdn.microsoft.com/library/windows/hardware/ff549923)で入力として文字列オブジェクトのハンドルに同意し、文字列、文字列オブジェクトを割り当てます。
+フレームワークのいくつかのオブジェクト メソッド、 [ **WdfRegistryQueryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfregistry/nf-wdfregistry-wdfregistryquerystring)で入力として文字列オブジェクトのハンドルに同意し、文字列、文字列オブジェクトを割り当てます。
 
-文字列オブジェクトに割り当てられている文字列にアクセスするには、ドライバーを呼び出すことができます[ **WdfStringGetUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff550049)します。
+文字列オブジェクトに割り当てられている文字列にアクセスするには、ドライバーを呼び出すことができます[ **WdfStringGetUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfstring/nf-wdfstring-wdfstringgetunicodestring)します。
 
  
 

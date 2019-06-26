@@ -4,12 +4,12 @@ description: MSiSCSI\_NICPerformance WMI クラス
 ms.assetid: e5894b20-8ea7-46ec-9960-3d9891b06ac4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9eb630d3ae93d32e7695ab5bdc65d5df0735b324
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca5e3f078daf9ea59bcb4bccf0a1a7df2d949174
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387455"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385832"
 ---
 # <a name="msiscsinicperformance-wmi-class"></a>MSiSCSI\_NICPerformance WMI クラス
 
@@ -56,7 +56,7 @@ class MSiSCSI_NICPerformance : Win32_PerfRawData {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_NICPerformance** ](https://msdn.microsoft.com/library/windows/hardware/ff563087)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_NICPerformance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_nicperformance)データ構造体。
 
  
 

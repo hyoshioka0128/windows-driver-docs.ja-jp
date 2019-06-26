@@ -4,12 +4,12 @@ description: Web Services for Devices 印刷サービス スキーマ
 ms.assetid: 6a629b69-73a9-4d78-ace1-4cb2c807db14
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd5bf908be13a75ac5f4e385f5a973a20e872456
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70a5f99463d064b42545880c26cddbd29c5af4be
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360944"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393146"
 ---
 # <a name="web-services-for-devices-print-service-schema"></a>Web Services for Devices 印刷サービス スキーマ
 
@@ -20,7 +20,7 @@ Web サービス テクノロジには、記述すると、情報を共有する
 
 印刷およびスキャン、デバイスの製造元を接続する、インストール、および Windows のデバイスを使用して強化されたカスタマー エクスペリエンスを活用する 4 つの Web サービス仕様が存在します。
 
-4 つの Web サービスの仕様の詳細については、次を参照してください。[を実装する Web Services on Devices 印刷およびスキャン用](https://msdn.microsoft.com/library/windows/hardware/gg463146.aspx)します。
+4 つの Web サービスの仕様の詳細については、次を参照してください。[を実装する Web Services on Devices 印刷およびスキャン用](https://docs.microsoft.com/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing)します。
 
 WSD 印刷サービス スキーマでは、プリンター、ジョブ、およびドキュメントの要素の説明を提供します。 プリンターの操作グループ (PWG) Semantic Model の WSD サブセットに準拠しています。
 

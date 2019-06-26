@@ -4,23 +4,23 @@ description: カスタムおよび自動のページ サイズ
 ms.assetid: a1f5f78d-fc05-4a7e-9d19-c7f40302b85f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb0cd46e813e9ec615b51805ee36316a5cb7ef2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b5814f99733ab2e87c6588e29258921ef9fb39f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386305"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360863"
 ---
 # <a name="custom-and-auto-page-sizes"></a>カスタムおよび自動のページ サイズ
 
 
-アプリケーションで設定できページ サイズの自動検出を使用するか、スキャナーまたはカスタム値を。 アプリケーションで使用されるアプローチはによって決定されます、 [ **WIA\_IP\_ページ\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff552634)プロパティで、WIA の値を取ります\_]ページ\_自動または WIA\_ページ\_カスタム。
+アプリケーションで設定できページ サイズの自動検出を使用するか、スキャナーまたはカスタム値を。 アプリケーションで使用されるアプローチはによって決定されます、 [ **WIA\_IP\_ページ\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-size)プロパティで、WIA の値を取ります\_ページ\_自動または WIA\_ページ\_カスタム。
 
 アプリケーションは、WIA を設定する場合\_IP\_ページ\_サイズ WIA 以外の値を\_ページ\_カスタム、WIA ミニドライバーは、WIA の値を調整する必要があります\_IP\_ページ\_幅と WIA\_IP\_ページ\_の高さをインチの後続のページの寸法 (. 001)。 ミニドライバーは、WIA の値を調整する必要がありますも\_IP\_XEXTENT と WIA\_IP\_YEXTENT をページの寸法をピクセル単位で。
 
 場合、エクステントの設定 (WIA\_IP\_XEXTENT または WIA\_IP\_YEXTENT) が値に変更が*いない*現在のページ サイズ設定と一致、ミニドライバーを変更する必要があります、値、WIA の\_IP\_ページ\_サイズ プロパティは、WIA を\_ページ\_カスタム。 ミニドライバーは、WIA を変更する必要がありますも\_IP\_ページ\_幅または WIA\_IP\_ページ\_の高さを新しいエクステントの設定と一致します。
 
-アプリケーション設定、WIA 場合\_IP\_ページ\_サイズ プロパティは、WIA を\_ページ\_カスタムでは、現在の選択領域が影響を受けません。 WIA ミニドライバーは、現在のイメージのレイアウトを取得する必要がありますの現在の設定から、 [ **WIA\_IP\_XPOS** ](https://msdn.microsoft.com/library/windows/hardware/ff552663)と[ **WIA\_IP\_YPOS** ](https://msdn.microsoft.com/library/windows/hardware/ff552671)プロパティ。 ページ サイズの設定は、スキャナーの外側にある選択領域を引き起こす場合、ミニドライバー、WIA の値に自動的に調整する必要があります\_IP\_XPOS と WIA\_IP\_YPOS プロパティ設定を有効にします。 場合、WIA\_IP\_ページ\_サイズと WIA\_IP\_向きプロパティは同時に設定し無効な組み合わせに適用されると、ミニドライバーが失敗する必要があります、アプリケーションの設定でエラーを返すことによって、 [ **IWiaMiniDrv::drvValidateItemProperties** ](https://msdn.microsoft.com/library/windows/hardware/ff545017)メソッド。
+アプリケーション設定、WIA 場合\_IP\_ページ\_サイズ プロパティは、WIA を\_ページ\_カスタムでは、現在の選択領域が影響を受けません。 WIA ミニドライバーは、現在のイメージのレイアウトを取得する必要がありますの現在の設定から、 [ **WIA\_IP\_XPOS** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)と[ **WIA\_IP\_YPOS** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)プロパティ。 ページ サイズの設定は、スキャナーの外側にある選択領域を引き起こす場合、ミニドライバー、WIA の値に自動的に調整する必要があります\_IP\_XPOS と WIA\_IP\_YPOS プロパティ設定を有効にします。 場合、WIA\_IP\_ページ\_サイズと WIA\_IP\_向きプロパティは同時に設定し無効な組み合わせに適用されると、ミニドライバーが失敗する必要があります、アプリケーションの設定でエラーを返すことによって、 [ **IWiaMiniDrv::drvValidateItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)メソッド。
 
 ページの自動サイズの検出が有効にすると、ドライバーはイメージ データの転送の完了後にのみ正確なイメージ ディメンションの情報を提供する必要があります。 ストリーム ベースの転送には、転送の最後にイメージ ヘッダーにイメージのサイズを更新するドライバーが必要です。 新しいセッションで、WIA の値の先頭に\_IP\_ページ\_サイズ プロパティは常に WIA 以外の値に設定する必要があります\_ページ\_自動。
 

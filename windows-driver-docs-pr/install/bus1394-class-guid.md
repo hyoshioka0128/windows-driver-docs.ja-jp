@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a1a0655553e33af83f35f10fb583f071ee0cd219
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36bfe1ceb2ac5e162e4bebfb24bb6002ad0caae2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378464"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386039"
 ---
 # <a name="bus1394classguid"></a>BUS1394_CLASS_GUID
 
 
-BUS1394_CLASS_GUID[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[1394 バス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537209)します。
+BUS1394_CLASS_GUID[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[1394 バス デバイス](https://docs.microsoft.com/windows-hardware/drivers/ieee)します。
 
 <table>
 <colgroup>
@@ -56,11 +56,11 @@ BUS1394_CLASS_GUID[デバイス インターフェイス クラス](https://msdn
 
 1394 のバスのバス ドライバーでは、オペレーティング システムと 1394 bus デバイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-1394 バスについては、次を参照してください。 [1394 バス デバイス](https://msdn.microsoft.com/library/windows/hardware/ff537209)します。
+1394 バスについては、次を参照してください。 [1394 バス デバイス](https://docs.microsoft.com/windows-hardware/drivers/ieee)します。
 
-WDK サンプルに含まれて、 [1394api サンプル](https://msdn.microsoft.com/library/windows/hardware/ff536887)アプリケーション。 このアプリケーションでは、BUS1394_CLASS_GUID を使用して、このデバイスのインターフェイス クラスのインスタンスの存在の通知に登録します。
+WDK サンプルに含まれて、 [1394api サンプル](https://docs.microsoft.com/windows-hardware/drivers/ieee/1394-samples-and-diagnostic-tools)アプリケーション。 このアプリケーションでは、BUS1394_CLASS_GUID を使用して、このデバイスのインターフェイス クラスのインスタンスの存在の通知に登録します。
 
-IEEE 1394 デバイスに対するデバイスのインターフェイス クラスについては、61883[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)IEC 61883 プロトコルをサポートするを参照してください[ **GUID_61883_CLASS**](guid-61883-class.md)します。
+IEEE 1394 デバイスに対するデバイスのインターフェイス クラスについては、61883[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)IEC 61883 プロトコルをサポートするを参照してください[ **GUID_61883_CLASS**](guid-61883-class.md)します。
 
 <a name="requirements"></a>必要条件
 ------------

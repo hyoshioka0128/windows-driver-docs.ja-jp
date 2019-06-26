@@ -11,19 +11,19 @@ keywords:
 - WDK のミニ リダイレクター オブジェクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 432abfc4b4636c2ad4f4cae1b26062e6218f03c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fa0c5092cb7bf27ad4ba384bbdfe2bff4976960
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383830"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369264"
 ---
 # <a name="file-system-object-io-routines"></a>ファイル システム オブジェクトの I/O ルーチン
 
 
 ファイル システム オブジェクト I/O ルーチンでは、従来のファイル I/O を読み取り、書き込み、およびその他のファイル操作の呼び出しを表します。 これらのルーチンは、ネットワークのミニ リダイレクターの「低い I/O ルーチン」を多くの場合、呼び出されます。 RDBSS が特定の IRP を受信したときにこれらのルーチンを呼び出す
 
-低い I/O ルーチンは、日常的なポインターの配列としての MINIRDR の一部としてに渡されるで\_にディスパッチ構造体が渡される、 [ **RxRegisterMinirdr** ](https://msdn.microsoft.com/library/windows/hardware/ff554693)ネットワークに登録するために使用するルーチンスタートアップ時に、ミニリダイレクター (で、 **DriverEntry**ルーチン)。 配列エントリの値は、低の I/O 操作を実行します。
+低い I/O ルーチンは、日常的なポインターの配列としての MINIRDR の一部としてに渡されるで\_にディスパッチ構造体が渡される、 [ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)ネットワークに登録するために使用するルーチンスタートアップ時に、ミニリダイレクター (で、 **DriverEntry**ルーチン)。 配列エントリの値は、低の I/O 操作を実行します。
 
 これらの低い I/O またはファイル システム オブジェクトの入出力ルーチンは通常によって非同期に呼び出さ RDBSS します。 ようにネットワーク ミニリダイレクターする必要がありますを特定、低い I/O ルーチン実装されていることができますが安全に非同期に呼び出されます。 非同期呼び出しの要求を無視し、同期的にのみ動作するルーチンを実装する、ネットワーク ミニ リダイレクターのこともできます。 ただし、(読み取りし、書き込みなど) は、完了するまで時間がかかる特定の呼び出し、これらの同期と操作を実装する大幅に短縮できます全体のオペレーティング システムの I/O パフォーマンス。
 
@@ -33,7 +33,7 @@ ms.locfileid: "63383830"
 
 LowIo パスの中に、 **LowIoContext.ResourceThreadId** 、RX のメンバー\_コンテキスト RDBSS で操作を開始した所有元のスレッドを示すことが保証されます。 **LowIoContext.ResourceThreadId**メンバーは、別のスレッドの代わりに FCB リソースを解放するために使用できます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB リソースを解放できます。
 
-場合、 **MrxLowIoSubmit\[LOWIO\_OP\_XXX\]** ルーチンの完了に長時間かかる可能性がありますが、ネットワークのミニ リダイレクター ドライバーは、前に FCB リソースを解放する必要がありますネットワーク通信を開始しています。 FCB のリソースを呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)します。
+場合、 **MrxLowIoSubmit\[LOWIO\_OP\_XXX\]** ルーチンの完了に長時間かかる可能性がありますが、ネットワークのミニ リダイレクター ドライバーは、前に FCB リソースを解放する必要がありますネットワーク通信を開始しています。 FCB のリソースを呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)します。
 
 次の表では、ファイル システム オブジェクトの I/O (低い I/O) 操作のため、ネットワーク ミニ リダイレクターで実装できるルーチンを示します。
 
@@ -50,39 +50,39 @@ LowIo パスの中に、 **LowIoContext.ResourceThreadId** 、RX のメンバー
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550703" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_EXCLUSIVELOCK]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550703)"><strong>MRxLowIOSubmit[LOWIO_OP_EXCLUSIVELOCK]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-exclusivelock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_EXCLUSIVELOCK]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-exclusivelock-)"><strong>MRxLowIOSubmit[LOWIO_OP_EXCLUSIVELOCK]</strong></a></td>
 <td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターが、ファイル オブジェクトの排他ロックを開くことを要求するには、このルーチンを呼び出します。 RDBSS、IRP_MJ_LOCK_CONTROL IRP_MN_LOCK と IrpSp - マイナー コードを受信したときにこの呼び出しを発行する&gt;フラグは SL_EXCLUSIVE_LOCK ビットが設定されています。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550709" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_FSCTL]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550709)"><strong>MRxLowIOSubmit[LOWIO_OP_FSCTL]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-fsctl-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_FSCTL]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-fsctl-)"><strong>MRxLowIOSubmit[LOWIO_OP_FSCTL]</strong></a></td>
 <td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターにファイル システムのコントロール要求を渡すには、このルーチンを呼び出します。 RDBSS では、受信、IRP_MJ_FILE_SYSTEM_CONTROL への応答には、この呼び出しを発行します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550715" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_IOCTL]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550715)"><strong>MRxLowIOSubmit[LOWIO_OP_IOCTL]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-ioctl-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_IOCTL]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-ioctl-)"><strong>MRxLowIOSubmit[LOWIO_OP_IOCTL]</strong></a></td>
 <td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターに I/O システムのコントロール要求を渡すには、このルーチンを呼び出します。 RDBSS では、受信、IRP_MJ_DEVICE_CONTROL または IRP_MJ_INTERNAL_DEVICE_CONTROL への応答には、この呼び出しを発行.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550721" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550721)"><strong>MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-notify-change-directory-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-notify-change-directory-)"><strong>MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY]</strong></a></td>
 <td align="left"><p>RDBSS は、ディレクトリ変更通知操作のネットワークのミニ リダイレクターに要求を発行するには、このルーチンを呼び出します。 RDBSS では、受信、IRP_MJ_DIRECTORY_CONTROL への応答には、この呼び出しを発行します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550724" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_READ]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550724)"><strong>MRxLowIOSubmit[LOWIO_OP_READ]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-read-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_READ]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-read-)"><strong>MRxLowIOSubmit[LOWIO_OP_READ]</strong></a></td>
 <td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターに読み取り要求を発行するには、このルーチンを呼び出します。 RDBSS では、受信、IRP_MJ_READ への応答には、この呼び出しを発行します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550734" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_SHAREDLOCK]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550734)"><strong>MRxLowIOSubmit[LOWIO_OP_SHAREDLOCK]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-sharedlock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_SHAREDLOCK]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-sharedlock-)"><strong>MRxLowIOSubmit[LOWIO_OP_SHAREDLOCK]</strong></a></td>
 <td align="left"><p>RDBSS は、ネットワーク リダイレクターが、ファイル オブジェクトの共有ロックを開くことを要求するには、このルーチンを呼び出します。 RDBSS、IRP_MJ_LOCK_CONTROL IRP_MN_LOCK と IrpSp - マイナー コードを受信したときにこの呼び出しを発行する&gt;フラグのビット SL_EXCLUSIVE_LOCK セットはありません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550740" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_UNLOCK]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550740)"><strong>MRxLowIOSubmit[LOWIO_OP_UNLOCK]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_UNLOCK]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-)"><strong>MRxLowIOSubmit[LOWIO_OP_UNLOCK]</strong></a></td>
 <td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターが 1 つのファイル オブジェクトのロックを削除することを要求するには、このルーチンを呼び出します。 RDBSS、IRP_MJ_LOCK_CONTROL IRP_MN_UNLOCK_SINGLE の小さなコードを受信したときにこの呼び出しを発行します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550745" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550745)"><strong>MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-multiple-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-multiple-)"><strong>MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE]</strong></a></td>
 <td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターが、ファイル オブジェクトに保持されている複数のロックを削除することを要求するには、このルーチンを呼び出します。 RDBSS、IRP_MJ_LOCK_CONTROL IRP_MN_UNLOCK_ALL または IRP_MN_UNLOCK_ALL_BY_KEY の小さなコードを受信したときにこの呼び出しを発行します。 バイト範囲は、ロックを解除するがで指定された、 <strong>LowIoContext.ParamsFor.Locks.LockList</strong> RX_CONTEXT のメンバー。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550746" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_WRITE]&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550746)"><strong>MRxLowIOSubmit[LOWIO_OP_WRITE]</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-write-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_WRITE]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-write-)"><strong>MRxLowIOSubmit[LOWIO_OP_WRITE]</strong></a></td>
 <td align="left"><p>RDBSS では、ネットワークのミニ リダイレクターに書き込み要求を発行するには、このルーチンを呼び出します。 RDBSS では、受信、IRP_MJ_WRITE への応答には、この呼び出しを発行します。</p></td>
 </tr>
 </tbody>

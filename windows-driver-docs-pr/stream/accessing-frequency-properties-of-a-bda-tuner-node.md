@@ -10,12 +10,12 @@ keywords:
 - WDK BDA 周波数のプロパティ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de6548a892f7429f6e0eaa4124c2394ebde2ed5b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cc168e3567960eb95d0584d19545e399b059971
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357184"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386777"
 ---
 # <a name="accessing-frequency-properties-of-a-bda-tuner-node"></a>BDA チューナー ノードの周波数プロパティへのアクセス
 
@@ -23,7 +23,7 @@ ms.locfileid: "63357184"
 
 
 
-ネットワーク プロバイダーを使用して、 [KSPROPSETID\_BdaFrequencyFilter](https://msdn.microsoft.com/library/windows/hardware/ff566542) BDA フィルター トポロジでは、RF チューナーのノードを制御するプロパティを設定します。 たとえば、ネットワーク プロバイダーは、RF 信号をチューニングする方法をチューナーのノードに通知するためにこのプロパティを使用します。
+ネットワーク プロバイダーを使用して、 [KSPROPSETID\_BdaFrequencyFilter](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdafrequencyfilter) BDA フィルター トポロジでは、RF チューナーのノードを制御するプロパティを設定します。 たとえば、ネットワーク プロバイダーは、RF 信号をチューニングする方法をチューナーのノードに通知するためにこのプロパティを使用します。
 
 次のコード スニペットで BDA ミニドライバーのチューナー ノードの制御の暗証番号 (pin) をインターセプトし、KSPROPSETID のプロパティのメソッドを提供\_BdaFrequencyFilter プロパティ セット。 なお一部 KSPROPSETID\_BdaFrequencyFilter プロパティは、チューナーの特定の種類に該当するのみです。
 

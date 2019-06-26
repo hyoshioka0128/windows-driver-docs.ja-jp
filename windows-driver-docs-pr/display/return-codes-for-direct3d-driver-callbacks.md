@@ -9,12 +9,12 @@ keywords:
 - WDK Direct3D のコールバック関数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecbec2faa083aefec43c830027915d2a5ddcbbdd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5060a3aa72463d16596aa13c91b6e71dd358a443
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331284"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365650"
 ---
 # <a name="return-codes-for-direct3d-driver-callbacks"></a>Direct3D ドライバー コールバックのリターン コード
 
@@ -22,7 +22,7 @@ ms.locfileid: "63331284"
 ## <span id="ddk_return_codes_for_direct3d_driver_callbacks_gg"></span><span id="DDK_RETURN_CODES_FOR_DIRECT3D_DRIVER_CALLBACKS_GG"></span>
 
 
-次の表に、によって返される値、 [Direct3D Driver-Supplied 関数](https://msdn.microsoft.com/library/windows/hardware/ff552859)します。 DDHAL\_ドライバー\_*Xxx*実際に値が DWORD の戻り値で返されます。 D3D\_[ok] の値、D3DHAL\_*Xxx*値、および D3DERR\_*Xxx*で返されるエラー コード、 **ddrval**のメンバー、特定の関数のパラメーターが指す構造体。
+次の表に、によって返される値、 [Direct3D Driver-Supplied 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 DDHAL\_ドライバー\_*Xxx*実際に値が DWORD の戻り値で返されます。 D3D\_[ok] の値、D3DHAL\_*Xxx*値、および D3DERR\_*Xxx*で返されるエラー コード、 **ddrval**のメンバー、特定の関数のパラメーターが指す構造体。
 
 各関数が返すことができる特定のエラー コード、リファレンス セクションでは関数と構造体の説明を参照してください。 Direct3D のヘッダー ファイルを参照してください*d3d.h*と*d3dhal.h*エラー コードと戻り値の完全な一覧について (また、 *d3d8.h*と*d3d9.h*8.0、9.0、DirectX のバージョン)。 エラー コードは負の値で表され、組み合わせることはできませんに注意してください。
 
@@ -35,7 +35,7 @@ Direct3D ドライバー内の関数は、2 つのリターン コードのい�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>

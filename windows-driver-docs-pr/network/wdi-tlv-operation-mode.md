@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_OPERATION_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f0cfdd77103cc9137eb5a83c68422634b8674b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bb1057b2568575683c7f8f63d84c712d023ed8d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385715"
 ---
 # <a name="wditlvoperationmode"></a>WDI\_TLV\_操作\_モード
 
@@ -33,7 +33,7 @@ Uint32 型のサイズをバイト単位で。
 
 | 型   | 説明                                                                                        |
 |--------|----------------------------------------------------------------------------------------------------|
-| UINT32 | 定義されている、目的の操作モード[ **WDI\_操作\_モード**](https://msdn.microsoft.com/library/windows/hardware/dn926085)します。 |
+| UINT32 | 定義されている、目的の操作モード[ **WDI\_操作\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ne-dot11wdi-_wdi_operation_mode)します。 |
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - デバイス セットアップ クラス WDK デバイスのインストール、レジストリ キーを開く
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ff3cb7321ee1a0a15f164e8d47f9fa1ce3cb88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d6e67a92cc35506af4868f7477f07a9fe0156dd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366646"
 ---
 # <a name="opening-registry-keys-for-a-device-setup-class"></a>デバイス セットアップ クラス用のレジストリ キーを開く
 
@@ -21,8 +21,8 @@ ms.locfileid: "63330238"
 
 安全のレジストリ キーを開くには、[デバイス セットアップ クラス](device-setup-classes.md)、次のいずれかを使用して、 [SetupAPI](setupapi.md)関数。
 
--   [**SetupDiOpenClassRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552065)
--   [**SetupDiOpenClassRegKeyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552067)で、*フラグ*パラメーター DIOCR_INSTALLER に設定
+-   [**SetupDiOpenClassRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)
+-   [**SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)で、*フラグ*パラメーター DIOCR_INSTALLER に設定
 
  
 

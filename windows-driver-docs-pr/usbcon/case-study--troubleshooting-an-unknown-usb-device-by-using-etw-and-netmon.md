@@ -3,12 +3,12 @@ Description: USB ETW と Netmon を使用して、Windows で認識されない 
 title: 導入事例 - 不明な USB デバイスのトラブルシューティング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10374abe124fa0748c22b7e20f5710b0ef988b15
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: 298c77c0730634cfb9f753fdbf976d9609bb3c81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711974"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368118"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>ケース スタディ:ETW と Netmon を使用した不明な USB デバイスのトラブルシューティング
 
@@ -87,7 +87,7 @@ USB ハブのドライバーを使用して、 **fid\_USBHUB\_ハブ**USB ハブ
 
 ![microsoft ネットワーク モニター - フレームの詳細](images/framedetails.png)
 
-ハブの構造は USB ETW イベントで頻繁に表示されるその他の 2 つの構造によく似ています**fid\_USBHUB\_デバイス**と**fid\_し、USBPORT\_デバイス**。 次の重要なフィールドは、次の 3 つのすべての構造に共通です。
+ハブの構造は USB ETW イベントで頻繁に表示されるその他の 2 つの構造によく似ています**fid\_USBHUB\_デバイス**と**fid\_し、USBPORT\_デバイス。** . 次の重要なフィールドは、次の 3 つのすべての構造に共通です。
 
 |フィールド|説明|
 |----|----|
@@ -113,7 +113,7 @@ USB ハブのドライバーを使用して、 **fid\_USBHUB\_ハブ**USB ハブ
 
 ### <a name="the-usb-error-filter"></a>USB のエラー フィルター
 
-Netmon での USB エラー フィルターを有効にするには、クリックして**フィルター表示フィルター]-> [フィルターの読み込み]->-> [-> USB の標準フィルター USB ハブ エラー]-> [**、順にクリックします**適用**で、**表示フィルター**ウィンドウ。
+Netmon での USB エラー フィルターを有効にするには、クリックして**フィルター表示フィルター]-> [フィルターの読み込み]->-> [-> USB の標準フィルター USB ハブ エラー]-> [** 、順にクリックします**適用**で、**表示フィルター**ウィンドウ。
 
 USB のエラー フィルターは、次の表に示すように条件を満たすものだけにイベントの一覧を絞り込みます。
 
@@ -148,7 +148,7 @@ USB のエラー イベント、およびその他のイベントの問題に関
 |ステータスの種類|リソース|
 |----|----|
 |**fid_NtStatus**|参照してください[NTSTATUS 値](https://go.microsoft.com/fwlink/p/?linkid=617532)します。|
-|USB 要求ブロック (URB) の状態フィールドまたは**fid_UsbdStatus**|Inc\api\usb.h Windows Driver Kit (WDK) での USBD_STATUS として値を検索します。 使用することも、 [USBD\_状態](https://msdn.microsoft.com/library/windows/hardware/ff539136)します。 このトピックでは、シンボリック名と、USBD の意味を示します\_状態の値。|
+|USB 要求ブロック (URB) の状態フィールドまたは**fid_UsbdStatus**|Inc\api\usb.h Windows Driver Kit (WDK) での USBD_STATUS として値を検索します。 使用することも、 [USBD\_状態](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))します。 このトピックでは、シンボリック名と、USBD の意味を示します\_状態の値。|
 
 ## <a name="reading-backwards-from-problem-events"></a>問題のイベントから下位の読み取り
 

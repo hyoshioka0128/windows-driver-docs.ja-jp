@@ -9,12 +9,12 @@ keywords:
 - PINNAME_VIDEO_VIDEOPORT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 576172ab7732d2c7fa488fbd4b72d33e481ae546
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6765c37b0a6172dab192afde45a3e8c66d31d6f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329951"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385366"
 ---
 # <a name="videoport-category"></a>ビデオポート カテゴリ
 
@@ -69,7 +69,7 @@ ms.locfileid: "63329951"
 </tr>
 <tr class="even">
 <td><p><strong>必要なイベントのセット</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561780" data-raw-source="[KSEVENTSETID_VPNotify](https://msdn.microsoft.com/library/windows/hardware/ff561780)">KSEVENTSETID_VPNotify</a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vpnotify" data-raw-source="[KSEVENTSETID_VPNotify](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vpnotify)">KSEVENTSETID_VPNotify</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DirectShow majortype</strong></p></td>

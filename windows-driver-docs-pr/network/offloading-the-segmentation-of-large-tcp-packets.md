@@ -8,12 +8,12 @@ keywords:
 - 大きな TCP パケットの WDK ネットワー キングのセグメント化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 414d19e080ea4eaa979697d9041109ec0745776b
-ms.sourcegitcommit: e6ce5358b12818e0bfad6f202e63bfc887d9d224
+ms.openlocfilehash: 7e01721495cdd37273417d42fe2a0d51df11dc09
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66482765"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360829"
 ---
 # <a name="offloading-the-segmentation-of-large-tcp-packets"></a>大きな TCP パケットのセグメント化のオフロード
 
@@ -29,9 +29,9 @@ NDIS ミニポート ドライバーでは、ネットワークの中の最大�
 
 バージョンの NDIS 6.0 とそれ以降のサポートの大量送信オフロードを多数の送信のような 1 (LSOV1) オフロード、NDIS 5 (LSO) バージョンです。*x*します。 NDIS 6.0 以降のバージョンも多数の送信をサポートしてオフロード バージョン 2 (LSOV2) を提供するには、IPv6 のサポートなど、大きなパケットのセグメント化サービスが強化されています。
 
-LSOV2 と LSOV1 をサポートしているミニポート ドライバーからオフロード型を決定する必要があります、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388) OOB 情報構造体します。 ドライバーを使用して、**型**のメンバー、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_リスト\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882) LSOV2 または LSOV1 ドライバー スタックを使用するかどうかを確認して、適切なを実行する構造体サービスの負荷を軽減します。 任意の NET\_バッファー\_LSOv1 または LSOv2 OOB データを含むリスト構造は、1 つも含まれています。 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 NDIS の詳細については\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_についてを参照してください[TCP/IP へのアクセスNET のオフロード\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。
+LSOV2 と LSOV1 をサポートしているミニポート ドライバーからオフロード型を決定する必要があります、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) OOB 情報構造体します。 ドライバーを使用して、**型**のメンバー、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_リスト\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info) LSOV2 または LSOV1 ドライバー スタックを使用するかどうかを確認して、適切なを実行する構造体サービスの負荷を軽減します。 任意の NET\_バッファー\_LSOv1 または LSOv2 OOB データを含むリスト構造は、1 つも含まれています。 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 NDIS の詳細については\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_についてを参照してください[TCP/IP へのアクセスNET のオフロード\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。
 
-ただし、ミニポートを受け取った場合に[ **OID\_TCP\_オフロード\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff569807)ミニポート上およびミニポートが LSO 機能を無効にするにはOID が正常に完了、ミニポートはすべて削除されます[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388) 0 ではない LSOv1 または LSOv2 OOB データが含まれている ([ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882)). 
+ただし、ミニポートを受け取った場合に[ **OID\_TCP\_オフロード\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)ミニポート上およびミニポートが LSO 機能を無効にするにはOID が正常に完了、ミニポートはすべて削除されます[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) 0 ではない LSOv1 または LSOv2 OOB データが含まれている ([ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)). 
 
 TCP/IP トランスポートは、次の条件を満たす大きな TCP パケットのみをオフロードします。
 
@@ -45,7 +45,7 @@ TCP/IP トランスポートは、次の条件を満たす大きな TCP パケ�
 
 前のセグメント化、TCP/IP トランスポート大きな TCP パケットをオフロードします。
 
--   関連付けられている大きなパケットのセグメント化情報を更新、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 この情報は、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882)構造の一部である、 **NET\_バッファー\_一覧**に関連付けられている情報、 **NET\_バッファー\_リスト**構造体。 詳細については**NET\_バッファー\_一覧**についてを参照してください[TCP/IP Offload NET へのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。 TCP/IP トランスポートの設定、 **MSS**最大セグメント サイズ (MSS) する値。
+-   関連付けられている大きなパケットのセグメント化情報を更新、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 この情報は、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)構造の一部である、 **NET\_バッファー\_一覧**に関連付けられている情報、 **NET\_バッファー\_リスト**構造体。 詳細については**NET\_バッファー\_一覧**についてを参照してください[TCP/IP Offload NET へのアクセス\_バッファー\_情報を一覧表示](accessing-tcp-ip-offload-net-buffer-list-information.md)します。 TCP/IP トランスポートの設定、 **MSS**最大セグメント サイズ (MSS) する値。
 
 - LSOv1、大きな TCP パケットの合計の長さをパケットの IP ヘッダーの長さの合計フィールドに書き込みます。 長さ合計にはには、IP ヘッダーの長さ、IP のオプションが存在する場合の長さ、TCP ヘッダーの長さ、TCP オプションが、存在する場合の長さ、および TCP ペイロードの長さが含まれています。 LSOv2、パケットの IP ヘッダーの長さの合計フィールドを 0 に設定します。 ミニポート ドライバーでは、NET_BUFFER_LIST 構造内の最初の NET_BUFFER 構造体の長さからのパケットの長さを判断する必要があります。
 
@@ -53,7 +53,7 @@ TCP/IP トランスポートは、次の条件を満たす大きな TCP パケ�
 
 -   TCP ヘッダーのシーケンス番号のフィールドに適切なシーケンス番号を書き込みます。 シーケンス番号は、TCP ペイロードの最初のバイトを識別します。
 
-後、ミニポート ドライバーを取得、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体の[ *MiniportSendNetBufferLists*](https://msdn.microsoft.com/library/windows/hardware/ff559440)または[ **MiniportCoSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff559365)関数を呼び出すことが、 [ **NET\_バッファー\_ボックスの一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff568401)マクロが、  *\_Id*の**TcpLargeSendNetBufferListInfo** TCP/IP トランスポートによって書き込まれた MSS 値を取得します。
+後、ミニポート ドライバーを取得、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体の[ *MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)または[ **MiniportCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_send_net_buffer_lists)関数を呼び出すことが、 [ **NET\_バッファー\_ボックスの一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)マクロが、  *\_Id*の**TcpLargeSendNetBufferListInfo** TCP/IP トランスポートによって書き込まれた MSS 値を取得します。
 
 ミニポート ドライバーでは、パケットの IP ヘッダーから大きなパケットの合計の長さを取得し、MSS 値を使用して、小さなパケットに大きな TCP パケットを分割します。 各小さいパケットには、MSS または少ないユーザー データのバイトが含まれます。 MSS ユーザー データのバイト数より小さいセグメント化された大きなパケットから作成された最後のパケットのみを含める必要がありますに注意してください。 セグメント化されたパケットから作成されたその他のすべてのパケットは、MSS ユーザー データのバイト数を含める必要があります。 このルールを実行しない場合は、作成し、不要な余分なパケットの送信とパフォーマンスが低下でしたします。
 
@@ -69,9 +69,9 @@ TCP/IP トランスポートは、次の条件を満たす大きな TCP パケ�
 
 変更を報告する状態インジケーターを個別に発行する中間のドライバー、 **MaxOffLoadSize**は状態を示す値を発行していませんが、基になるミニポート アダプターには、すべてのパケットは取得しません値を確認する必要がありますサイズの大きい、 **MaxOffLoadSize**ミニポート アダプターが報告される値。
 
-応答するミニポート中間ドライバー [OID\_TCP\_オフロード\_パラメーター](https://msdn.microsoft.com/library/windows/hardware/ff569807) LSO が要求を送信時間の小さいウィンドウにまだ到達の LSO をオフにするサービスを準備する必要がありますミニポート ドライバー。
+応答するミニポート中間ドライバー [OID\_TCP\_オフロード\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters) LSO が要求を送信時間の小さいウィンドウにまだ到達の LSO をオフにするサービスを準備する必要がありますミニポート ドライバー。
 
-セグメントのパケットで TCP ユーザー データの長さは、MSS 以下である必要があります。 MSS は TCP トランスポート LSO NET を使用して渡します ULONG 値\_バッファー\_リストの情報に関連付けられている、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 MSS ユーザー データのバイト数より小さいセグメント化された大きなパケットから作成された最後のパケットのみを含める必要がありますに注意してください。 セグメント化されたパケットから作成されたその他のすべてのパケットは、MSS ユーザー データのバイト数を含める必要があります。 このルールを実行しない場合は、作成し、不要な余分なパケットの送信とパフォーマンスが低下でしたします。
+セグメントのパケットで TCP ユーザー データの長さは、MSS 以下である必要があります。 MSS は TCP トランスポート LSO NET を使用して渡します ULONG 値\_バッファー\_リストの情報に関連付けられている、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 MSS ユーザー データのバイト数より小さいセグメント化された大きなパケットから作成された最後のパケットのみを含める必要がありますに注意してください。 セグメント化されたパケットから作成されたその他のすべてのパケットは、MSS ユーザー データのバイト数を含める必要があります。 このルールを実行しない場合は、作成し、不要な余分なパケットの送信とパフォーマンスが低下でしたします。
 
 以上になる大きな TCP パケットから派生されたセグメントのパケットの数がある必要があります、 **MinSegmentCount**ミニポート ドライバーで指定されている値。 詳細については、 **MinSegmentCount**値を参照してください[レポート NIC の LSOV1 TCP パケットのセグメンテーション機能](reporting-a-nic-s-lsov1-tcp-packet-segmentation-capabilities.md)と[NIC の LSOV2 TCP のパケットのセグメンテーションを報告機能](reporting-a-nic-s-lsov2-tcp-packet-segmentation-capabilities.md)します。
 
@@ -92,11 +92,11 @@ Ip アドレスと TCP ヘッダーの処理には、次の前提条件と制限
     > この想定は、LSO を有効にすると有効です。 それ以外の場合、LSO が有効でない場合のミニポート ドライバーとは限りませんイーサネット ヘッダーとして同じ MDL に IP ヘッダーのあります。
 
 
-ミニポート ドライバーでパケットを送信する必要があります[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)ネットを受信した順序で構造\_バッファー\_一覧TCP/IP トランスポートからの構造体。
+ミニポート ドライバーでパケットを送信する必要があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)ネットを受信した順序で構造\_バッファー\_一覧TCP/IP トランスポートからの構造体。
 
 大きな TCP パケットを処理するときに、パケットをセグメント化して大きな TCP パケットから派生したパケットの MAC、IP、および TCP ヘッダーを付加することのみをミニポート アダプターが担当します。 TCP/IP トランスポートは、その他のすべてのタスクを実行します (送信を調整するなど、リモート ホストのに基づいてウィンドウ サイズ受信ウィンドウ サイズ)。
 
-大きなパケットの送信操作を完了する前に (などで[ **NdisMSendNetBufferListsComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563668)または[ **NdisMCoSendNetBufferListsComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff563570))、ミニポート ドライバーの書き込み、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_リスト\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882)値 (NET\_バッファー\_大量送信の一覧情報の負荷を軽減) されたすべてのパケットで正常に送信される TCP ユーザー データのバイト数の合計大きな TCP パケットから作成されます。
+大きなパケットの送信操作を完了する前に (などで[ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)または[ **NdisMCoSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcosendnetbufferlistscomplete))、ミニポート ドライバーの書き込み、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_リスト\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)値 (NET\_バッファー\_大量送信の一覧情報の負荷を軽減) されたすべてのパケットで正常に送信される TCP ユーザー データのバイト数の合計大きな TCP パケットから作成されます。
 
 前の LSO 要件だけでなく LSOV2 対応のミニポート ドライバー必要があります。
 
@@ -108,19 +108,19 @@ Ip アドレスと TCP ヘッダーの処理には、次の前提条件と制限
 
 -   各 TCP セグメント パケット ミニポート ドライバーを生成するには、TCP オプションのレプリケーションをサポートします。
 
--   Ip アドレスと TCP ヘッダーを使用して、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388) TCP/IP ヘッダー各パケットのセグメントを生成するテンプレートとして構造体。
+-   Ip アドレスと TCP ヘッダーを使用して、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) TCP/IP ヘッダー各パケットのセグメントを生成するテンプレートとして構造体。
 
 -   0x0000 ~ 0x7FFF の範囲で IP (IP ID) の id 値を使用します。 (0x8000 ~ 0 xffff の範囲は、TCP chimney オフロード対応デバイス用に予約されて) います。たとえば、テンプレートの IP ヘッダーが、識別フィールドの値の数が 0x7FFE で始まる場合最初 TCP セグメントのパケットは IP ID 値の数が 0x7FFE、0x7FFF、0x0000、0x0001 の後にが必要です。
 
--   内のバイト オフセットを使用して、 **TcpHeaderOffset**のメンバー [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882)パケットの最初のバイトから、TCP ヘッダーの場所を特定します。
+-   内のバイト オフセットを使用して、 **TcpHeaderOffset**のメンバー [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)パケットの最初のバイトから、TCP ヘッダーの場所を特定します。
 
--   数を制限[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造に関連付けられた各 LSOV2 [ **NET\_バッファー\_ボックスの一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
+-   数を制限[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造に関連付けられた各 LSOV2 [ **NET\_バッファー\_ボックスの一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
 
 -   最初の NET の長さからのパケットの合計の長さを決定\_ネット バッファー構造\_バッファー\_リスト構造体。
 
 -   TCP、IP、および拡張機能の IP ヘッダーをサポートします。
 
--   送信操作が完了したら、ミニポート ドライバーを設定する必要があります、 **LsoV2TransmitComplete.Reserved**のメンバー、 [ **NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO** ](https://msdn.microsoft.com/library/windows/hardware/ff567882)をゼロに構造体と**LsoV2TransmitComplete.Type** NDIS_TCP_LARGE_SEND_OFFLOAD_V2_TYPE するメンバー。 
+-   送信操作が完了したら、ミニポート ドライバーを設定する必要があります、 **LsoV2TransmitComplete.Reserved**のメンバー、 [ **NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)をゼロに構造体と**LsoV2TransmitComplete.Type** NDIS_TCP_LARGE_SEND_OFFLOAD_V2_TYPE するメンバー。 
  
 
  

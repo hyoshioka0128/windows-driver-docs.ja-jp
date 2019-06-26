@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9435b357d99f8b22a569a02709be512728b2a76b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 155872a2df6ddd59254239a5ead63afd4e85aff5
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393680"
 ---
 # <a name="pnpremove-rule-wdm"></a>PnpRemove ルール (wdm)
 
@@ -25,7 +25,7 @@ ms.locfileid: "63329919"
 **PnpRemove**ルールでは、ドライバーが IRP を完了できないことを指定します\_MN\_突然\_削除、IRP\_MN\_キャンセル\_削除\_デバイス、IRP\_MN\_キャンセル\_停止\_デバイス、または IRP\_MN\_削除\_デバイスの要求の失敗にします。
 
 > [!NOTE]
-> Windows 8.1 でテストすることができます、 **PnpRemove**ルールを[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)します。 ルールが現在の使用可能なない[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)します。
+> Windows 8.1 でテストすることができます、 **PnpRemove**ルールを[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。 ルールが現在の使用可能なない[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)します。
 
  
 
@@ -35,7 +35,7 @@ ms.locfileid: "63329919"
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://msdn.microsoft.com/library/windows/hardware/ff560187) (0x00043006) |
+| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00043006) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -51,7 +51,7 @@ ms.locfileid: "63329919"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://msdn.microsoft.com/library/windows/hardware/ff545448" data-raw-source="[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)">Driver Verifier</a>を選択し、 <a href="https://msdn.microsoft.com/library/windows/hardware/hh454208" data-raw-source="[DDI compliance checking](https://msdn.microsoft.com/library/windows/hardware/hh454208)">DDI 準拠の検査</a>オプション。</p></td>
+<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>を選択し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[DDI compliance checking](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">DDI 準拠の検査</a>オプション。</p></td>
 </tr>
 </tbody>
 </table>

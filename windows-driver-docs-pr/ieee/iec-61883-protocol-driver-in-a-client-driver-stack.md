@@ -7,12 +7,12 @@ keywords:
 - 61883 WDK IEEE 1394 バス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6e3d63d61c8c9d711d791f96670eaf321d70ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4375607a13af97ae75a87115a30d7c5604999072
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376688"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385786"
 ---
 # <a name="iec-61883-protocol-driver-in-a-client-driver-stack"></a>クライアント ドライバー スタックの IEC-61883 プロトコル ドライバー
 
@@ -28,15 +28,15 @@ IEC 61883 クライアント ドライバーが依存*61883.sys* IEC 61883 プ�
 
 図の上部から開始。
 
--   Stream クラス ドライバー, *stream.sys*DVD、ビデオのキャプチャ、および外部サウンド デバイスなどのデバイス ドライバーをストリーミングするカーネルをサポートしています。 ストリーム クラスのドライバーが記載されて、[ストリーミング ミニドライバー](https://msdn.microsoft.com/library/windows/hardware/ff568277)します。
+-   Stream クラス ドライバー, *stream.sys*DVD、ビデオのキャプチャ、および外部サウンド デバイスなどのデバイス ドライバーをストリーミングするカーネルをサポートしています。 ストリーム クラスのドライバーが記載されて、[ストリーミング ミニドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)します。
 
--   この例では、IEC 61883 クライアントは、ベンダーから提供された AV/C サブユニット ドライバーです。 これは、 [Stream ミニドライバーの書き込み](https://msdn.microsoft.com/library/windows/hardware/ff568794)AV/C のスタックの下位のドライバーによって提供される機能を使用して、そのデバイスを制御します。 (AV/C サブユニット ドライバーの詳細については、次を参照してください[AV/C クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556367)。)。
+-   この例では、IEC 61883 クライアントは、ベンダーから提供された AV/C サブユニット ドライバーです。 これは、 [Stream ミニドライバーの書き込み](https://docs.microsoft.com/windows-hardware/drivers/stream/writing-a-stream-minidriver)AV/C のスタックの下位のドライバーによって提供される機能を使用して、そのデバイスを制御します。 (AV/C サブユニット ドライバーの詳細については、次を参照してください[AV/C クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-client-drivers2)。)。
 
     AV/C サブユニット ドライバーのセットアップでは、接続およびストリームを接続し、サブユニット コントロール、状態、および通知を公開します。 ピン留めする汎用的なプロパティのセットとデバイス固有のプロパティとイベントのセットを公開するのに framework をストリーミングするカーネルを使用します。
 
 -   AV/C ストリーム フィルター ドライバー、 *avcstrm.sys*サブユニットのドライバーの処理をストリームに固有の書式を分離 WDM フィルター ドライバーします。 AV/C ストリーム フィルター ドライバーは、サード パーティ製の INF ファイルで下位のドライバーとして指定されます。 サブユニット ドライバーの DV および MPEG ストリームの形式をサポートし、CMP ヘルパー関数を組み合わせて提供*avc.sys*します。 また、カーネル ストリーミング データの構造とデータの積集合のハンドラーを提供します。
 
--   AV/C プロトコル ドライバー、 *avc.sys*、WDM Irp をマップ AV/C コマンドについては、(たとえば、サブユニットがビジー状態)、要求は Irp とにルート応答に保留中として中間の応答を処理する再試行の種類、ID、に基づいて正しいサブユニット ドライバーおよびオペレーション コード。 Microsoft Windows XP 以降、 *avc.sys*プラグ接続の管理も提供します。 (AV/C プロトコルの Microsoft が提供するサポートの詳細については、次を参照してください[AV/C クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556367)。)。
+-   AV/C プロトコル ドライバー、 *avc.sys*、WDM Irp をマップ AV/C コマンドについては、(たとえば、サブユニットがビジー状態)、要求は Irp とにルート応答に保留中として中間の応答を処理する再試行の種類、ID、に基づいて正しいサブユニット ドライバーおよびオペレーション コード。 Microsoft Windows XP 以降、 *avc.sys*プラグ接続の管理も提供します。 (AV/C プロトコルの Microsoft が提供するサポートの詳細については、次を参照してください[AV/C クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-client-drivers2)。)。
 
 -   IEC 61883 プロトコル ドライバー、 *61883.sys*、関数制御プロトコル (FCP)、共通 isochronous パケット (CIP) の形式、および接続管理の手順 (CMP) 処理要求の送信、AV/C ドライバー スタック。
 

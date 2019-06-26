@@ -6,12 +6,12 @@ keywords:
 - GetFeatureAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 934b53fe996ec01faf25c370684262efb6ac0f07
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68d4fb280d93fdc5115bf5af782a7471dd5a48fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362742"
 ---
 # <a name="using-getfeatureattribute"></a>GetFeatureAttribute の使用
 
@@ -21,7 +21,7 @@ ms.locfileid: "63339902"
 
 この関数は、PPD 機能のみサポートされます。 特定の属性が使用できない場合**GetFeatureAttribute**返します E\_INVALIDARG します。
 
-次の表に、 *pdwDataType*パラメーターの値には、 [ **EATTRIBUTE\_DATATYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff548692)列挙型。
+次の表に、 *pdwDataType*パラメーターの値には、 [ **EATTRIBUTE\_DATATYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ne-printoem-_eattribute_datatype)列挙型。
 
 <table>
 <colgroup>

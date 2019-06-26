@@ -8,12 +8,12 @@ keywords:
 - ボリューム テクスチャ WDK DirectX 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2c68658eb0e80da5da356bf2c073642a1f275ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 287348917bb8f931d902824dc0fa51450c8124df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383228"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384262"
 ---
 # <a name="reporting-support-for-volume-textures"></a>ボリューム テクスチャに対するサポートのレポート
 
@@ -31,7 +31,7 @@ D3DPTEXTURECAPS プリミティブ テクスチャ機能を設定して 2 の累
 
 ドライバーはボリューム テクスチャ フィルタ リングとテクスチャを設定して、ハードウェアでサポートされるモードをアドレス指定のランタイムを通知、 **VolumeTextureFilterCaps**と**VolumeTextureAddressCaps**に、フラグの適切な組み合わせです。
 
-最後に、ドライバーに通知についてどのような画面が書式設定、ランタイムは、設定、D3DFORMAT ボリューム テクスチャで使用できる\_OP\_で VOLUMETEXTURE、 **dwOperations**サーフェイス形式ののフィールド[**DDPIXELFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff550274)します。
+最後に、ドライバーに通知についてどのような画面が書式設定、ランタイムは、設定、D3DFORMAT ボリューム テクスチャで使用できる\_OP\_で VOLUMETEXTURE、 **dwOperations**サーフェイス形式ののフィールド[**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)します。
 
  
 

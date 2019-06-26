@@ -9,12 +9,12 @@ keywords:
 - Irp WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b658a41298600c8216500b8a8c8eeeb6b8e262
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6cf6e99cbd6bc861cb64b272e5026145e8272fdc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344588"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385131"
 ---
 # <a name="registering-irp-dispatch-routines"></a>IRP ディスパッチ ルーチンの登録
 
@@ -22,7 +22,7 @@ ms.locfileid: "63344588"
 ## <span id="ddk_registering_irp_dispatch_routines_if"></span><span id="DDK_REGISTERING_IRP_DISPATCH_ROUTINES_IF"></span>
 
 
-*DriverObject*パラメーター、フィルター ドライバーの[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンは、フィルター ドライバーへのポインターを提供[**ドライバーオブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff544174)します。 I/O 要求パケット (IRP) ディスパッチ ルーチンを登録するにこれらのルーチンのエントリ ポイントを格納する必要があります、 **MajorFunction**ドライバー オブジェクトのメンバー。 たとえば、仮定"MyLegacyFilter"ドライバーは次のように、ディスパッチ ルーチンのエントリ ポイントを設定できます。
+*DriverObject*パラメーター、フィルター ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンは、フィルター ドライバーへのポインターを提供[**ドライバーオブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)します。 I/O 要求パケット (IRP) ディスパッチ ルーチンを登録するにこれらのルーチンのエントリ ポイントを格納する必要があります、 **MajorFunction**ドライバー オブジェクトのメンバー。 たとえば、仮定"MyLegacyFilter"ドライバーは次のように、ディスパッチ ルーチンのエントリ ポイントを設定できます。
 
 ```cpp
 for (i = 0; i <= IRP_MJ_MAXIMUM_FUNCTION; i++) {

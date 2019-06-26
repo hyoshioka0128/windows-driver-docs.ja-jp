@@ -15,12 +15,12 @@ keywords:
 - WDK RDBSS の接続情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea8c7fd4a396b21a531003e8f6576b160302b4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5b502f794a7214028576d9cb2b45a694839f63f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573362"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383849"
 ---
 # <a name="the-vnetroot-structure"></a>V\_NET\_ルート構造体
 
@@ -35,7 +35,7 @@ V\_NET\_ルート構造体は、共有 (たとえば、ユーザー ドライブ
 \;m:\server\share\d1\d2
 ```
 
-名前の形式に依存この V に関連付けられているローカル デバイス (「x:」、たとえば) があるかどうか\_NET\_ルート構造体。 ローカル ドライブのマッピングの場合 (d1\\例については、d2)、ローカル ドライブ マッピングが各にプレフィックスを取得[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)この V の開いている\_NET\_ルート構造体。
+名前の形式に依存この V に関連付けられているローカル デバイス (「x:」、たとえば) があるかどうか\_NET\_ルート構造体。 ローカル ドライブのマッピングの場合 (d1\\例については、d2)、ローカル ドライブ マッピングが各にプレフィックスを取得[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)この V の開いている\_NET\_ルート構造体。
 
 V\_NET\_資格情報を指定するルート構造体にも使用します。 このような V の目的は、\_NET\_ルート構造体は、NET に代替の資格情報を伝達する\_ルートの既定値。 このため、必要がありますいないその他の参照。
 

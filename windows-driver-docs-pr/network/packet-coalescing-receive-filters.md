@@ -4,17 +4,17 @@ description: パケット結合受信フィルター
 ms.assetid: B5C17A9D-A495-4A3D-B53E-B10F53C732D4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e8d8aa3f72516fe5234a77a52b5e42a927ffd60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd9c4c66330163114f689af403550fab6a023039
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383178"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378662"
 ---
 #  <a name="packet-coalescing-receive-filters"></a>パケット結合受信フィルター
 
 
-NDIS 6.30、以降[NDIS 受信フィルター](https://msdn.microsoft.com/library/windows/hardware/hh205393)パケットの結合をサポートするために拡張されています。 パケットの結合の場合は、各受信フィルターでは、次の項目を定義します。
+NDIS 6.30、以降[NDIS 受信フィルター](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)パケットの結合をサポートするために拡張されています。 パケットの結合の場合は、各受信フィルターでは、次の項目を定義します。
 
 -   ユーザー データグラム プロトコル (UDP) ヘッダーのメディア アクセス制御 (MAC) のヘッダーまたは転送先ポートの送信先アドレスなどのパケットのさまざまなプロトコル ヘッダー内のフィールドのセット。
 
@@ -24,9 +24,9 @@ NDIS 6.30、以降[NDIS 受信フィルター](https://msdn.microsoft.com/librar
 
      
 
-ドライバーは、プロトコルとフィルター ドライバーなどの後続パケット結合ダウンロード受信ミニポート ドライバーにフィルターのオブジェクト識別子 (OID) のセット要求を発行して[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)します。 詳細については、次を参照してください。[パケット結合受信フィルターの設定](setting-packet-coalescing-receive-filters.md)します。
+ドライバーは、プロトコルとフィルター ドライバーなどの後続パケット結合ダウンロード受信ミニポート ドライバーにフィルターのオブジェクト識別子 (OID) のセット要求を発行して[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)します。 詳細については、次を参照してください。[パケット結合受信フィルターの設定](setting-packet-coalescing-receive-filters.md)します。
 
-ドライバーの後続パケット結合クエリを受け取ることもフィルター ミニポート ドライバーをダウンロードします。 上にあるドライバーでは、これを行うの OID メソッド要求を発行して[OID\_受信\_フィルター\_ENUM\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569787)ミニポート ドライバーにします。 詳細については、次を参照してください。[クエリを実行するパケット結合受信フィルター](querying-packet-coalescing-receive-filters.md)します。
+ドライバーの後続パケット結合クエリを受け取ることもフィルター ミニポート ドライバーをダウンロードします。 上にあるドライバーでは、これを行うの OID メソッド要求を発行して[OID\_受信\_フィルター\_ENUM\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)ミニポート ドライバーにします。 詳細については、次を参照してください。[クエリを実行するパケット結合受信フィルター](querying-packet-coalescing-receive-filters.md)します。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6de09fbd9bbd31a4242a411f26ddd2c54728ffa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9a53e89cdd5e1322f785be97ac644a6ee8db72a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374468"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386923"
 ---
 # <a name="kspropertyauddecoutcurmode"></a>KSPROPERTY\_AUDDECOUT\_CUR\_モード
 
@@ -81,7 +81,7 @@ KSPROPERTY\_AUDDECOUT\_CUR\_モード プロパティは、現在のオーディ
 
 KSPROPERTY の既定値を指定することをお勧めします。\_AUDDECOUT\_CUR\_、ミニドライバーの MODE プロパティ プロパティ、レジストリの設定をシリアル化します。
 
-詳細については、次を参照してください。[オーディオ ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff536206)します。
+詳細については、次を参照してください。[オーディオ ミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-drivers)します。
 
 <a name="requirements"></a>要件
 ------------

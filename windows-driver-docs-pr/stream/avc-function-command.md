@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 551b3d61fe01e73cb890033b0c053df2c459d211
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b897d5afd7ef8d6c3de5b660e85aa5079e00c452
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386757"
 ---
 # <a name="avcfunctioncommand"></a>AVC\_関数\_コマンド
 
@@ -93,7 +93,7 @@ typedef struct _AVC_COMMAND_IRB {
 } AVC_COMMAND_IRB, *PAVC_COMMAND_IRB;
 ```
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 **ヘッダー:** 宣言されている*avc.h*します。 含める*avc.h*します。
 
@@ -136,7 +136,7 @@ typedef struct _AVC_COMMAND_IRB {
 <span id="Retries"></span><span id="retries"></span><span id="RETRIES"></span>**再試行**  
 必要な回数を設定*avc.sys*応答なしには、各タイムアウト後に要求を再試行しようとする必要があります。 再試行回数が 0 では、要求が 1 回試行ということに注意してください。 応答を取得することがなく、コマンドを処理するのにかかる時間の合計量は、次の数式で計算されます。
 
-***タイムアウト***  *\* (* * *<em>再試行</em>** *+ 1)*
+***タイムアウト***  *\* (* * *<em>再試行</em>* *  *+ 1)*
 
 場合、このパラメーターは無視されます**RetryFlag**は 0 です。
 
@@ -165,7 +165,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 ### <a name="see-also"></a>関連項目
 
-[**AVC\_関数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)、 [ **AvcCommandType**](https://msdn.microsoft.com/library/windows/hardware/ff554099)、 [ **AvcResponseCode**](https://msdn.microsoft.com/library/windows/hardware/ff554105)、 [**AVC\_関数\_検索\_ピア\_は**](avc-function-find-peer-do.md)、 [ **AVC\_関数\_ピア\_は\_一覧**](avc-function-peer-do-list.md)、 [ **AVC\_関数\_取得\_サブユニット\_情報**](avc-function-get-subunit-info.md)
+[**AVC\_関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)、 [ **AvcCommandType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavccommandtype)、 [ **AvcResponseCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavcresponsecode)、 [**AVC\_関数\_検索\_ピア\_は**](avc-function-find-peer-do.md)、 [ **AVC\_関数\_ピア\_は\_一覧**](avc-function-peer-do-list.md)、 [ **AVC\_関数\_取得\_サブユニット\_情報**](avc-function-get-subunit-info.md)
 
  
 

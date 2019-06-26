@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WDI_INDICATION_CAN_SUSTAIN_AP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f63ca5d4382ee112fdb1af5197dca1d45a78dd1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c85f147bda630839523ab23a412755acc4270b74
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366416"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385235"
 ---
 # <a name="ndisstatuswdiindicationcansustainap"></a>NDIS\_状態\_WDI\_INDICATION\_できます\_サステイン\_アジア太平洋
 
@@ -29,7 +29,7 @@ ms.locfileid: "63366416"
 
 | 種類                                                                                     | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                     |
 |------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------|
-| [**WDI\_TLV\_INDICATION\_できます\_サステイン\_アジア太平洋**](https://msdn.microsoft.com/library/windows/hardware/dn926317) |                                |          | 理由、アダプターでは、802.11 AP 機能を維持できるようになりました。 |
+| [**WDI\_TLV\_INDICATION\_できます\_サステイン\_アジア太平洋**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-indication-can-sustain-ap) |                                |          | 理由、アダプターでは、802.11 AP 機能を維持できるようになりました。 |
 
  
 

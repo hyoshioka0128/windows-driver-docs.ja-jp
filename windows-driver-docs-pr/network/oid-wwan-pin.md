@@ -5,12 +5,12 @@ ms.assetid: 5c93ffe0-8067-4022-ba8e-e528e44692e6
 ms.date: 08/08/2017
 keywords: -OID_WWAN_PIN ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 42e58929faa293234ef314b713186a3b3eea820a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae2046e885bfd0cb1b013db10fae9f58a81ceff3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354540"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360772"
 ---
 # <a name="oidwwanpin"></a>OID\_WWAN\_暗証番号 (PIN)
 
@@ -19,14 +19,14 @@ OID\_WWAN\_暗証番号 (pin) が暗証番号 (Pin) に関連する情報を取�
 
 ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_PIN\_情報**](ndis-status-wwan-pin-info.md)セットまたはクエリの要求が完了しているときに、状態の通知。
 
-ミニポート ドライバーに送信する必要があります[ **NDIS\_状態\_WWAN\_PIN\_情報**](ndis-status-wwan-pin-info.md)を格納している状態の通知、 [ **NDIS\_WWAN\_PIN\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567911) MB デバイスまたはサブスクライバーのロックを解除する PIN が必要かどうかを示すために主に、暗証番号 (pin) 型と PIN の入力の状態情報を返す構造体Identity モジュール (SIM カード) クエリ要求を完了するとき。
+ミニポート ドライバーに送信する必要があります[ **NDIS\_状態\_WWAN\_PIN\_情報**](ndis-status-wwan-pin-info.md)を格納している状態の通知、 [ **NDIS\_WWAN\_PIN\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info) MB デバイスまたはサブスクライバーのロックを解除する PIN が必要かどうかを示すために主に、暗証番号 (pin) 型と PIN の入力の状態情報を返す構造体Identity モジュール (SIM カード) クエリ要求を完了するとき。
 
-呼び出し元がピンに関連する情報を設定する要求を提供、 [ **NDIS\_WWAN\_設定\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff567922) MB のデバイスに PIN を送信するミニポート ドライバーに構造体有効にするか、PIN の設定を無効にする、SIM で PIN を変更したりします。
+呼び出し元がピンに関連する情報を設定する要求を提供、 [ **NDIS\_WWAN\_設定\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_pin) MB のデバイスに PIN を送信するミニポート ドライバーに構造体有効にするか、PIN の設定を無効にする、SIM で PIN を変更したりします。
 
 <a name="remarks"></a>注釈
 -------
 
-参照してください[WWAN ピン留め操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)詳細については、この OID を使用します。
+参照してください[WWAN ピン留め操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)詳細については、この OID を使用します。
 
 Windows 7 のミニポート ドライバーは、OID を使用する必要があります\_WWAN\_ピン留めします。 Windows 8 のミニポート ドライバーを使用する必要があります[OID\_WWAN\_PIN\_EX](oid-wwan-pin-ex.md)します。
 
@@ -69,13 +69,13 @@ MB API には、PIN1 だけでなく他のピンがサポートされていま�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_PIN\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567911)
+[**NDIS\_WWAN\_PIN\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)
 
-[**NDIS\_WWAN\_設定\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff567922)
+[**NDIS\_WWAN\_設定\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_pin)
 
 [**NDIS\_状態\_WWAN\_PIN\_情報**](ndis-status-wwan-pin-info.md)
 
-[WWAN ピン留め操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)
+[WWAN ピン留め操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)
 
  
 

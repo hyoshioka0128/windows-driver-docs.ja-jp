@@ -50,7 +50,7 @@ OS を指定した場合を除く、 *KSSTREAM\_ヘッダー\_OPTIONSF\_ENDOFSTR
 
 ハードウェアの機能に応じて場合、 *KSSTREAM\_ヘッダー\_OPTIONSF\_ENDOFSTREAM*フラグを指定すると、ドライバーには、サイレント状態の塗りつぶし、EOS に続く WaveRT バッファーの一部が可能性があります場合は、ハードウェアのパケットは、EOS 位置を超えるデータを転送します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

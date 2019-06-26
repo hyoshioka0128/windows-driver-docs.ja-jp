@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 25191f350789a381a3c9d1b410d4e4e07d1a8278
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6bc593a2cc5d8acdec805c63c57df5fc992776f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384791"
 ---
 # <a name="guiddisplayadapterinterface"></a>GUID_DISPLAY_ADAPTER_INTERFACE
 
 
-GUID_DISPLAY_ADAPTER_INTERFACE は古い形式の識別子、[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)ディスプレイ アダプターのデバイスはこのクラスの新しいインスタンスを使用して、 [ **GUID_DEVINTERFACE_DISPLAY_ADAPTER** ](guid-devinterface-display-adapter.md)クラス識別子の代わりにします。
+GUID_DISPLAY_ADAPTER_INTERFACE は古い形式の識別子、[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)ディスプレイ アダプターのデバイスはこのクラスの新しいインスタンスを使用して、 [ **GUID_DEVINTERFACE_DISPLAY_ADAPTER** ](guid-devinterface-display-adapter.md)クラス識別子の代わりにします。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

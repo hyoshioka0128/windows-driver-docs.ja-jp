@@ -6,19 +6,19 @@ keywords:
 - '[全般] の運用 Oid 接続指向のミニポート ドライバー'
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3756d5b2ebd74d787342e585e516916dfd5e3680
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a19e70d59d8710a2ea3cd8b50a1bd209ef950226
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349922"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387297"
 ---
 # <a name="general-operational-oids-for-connection-oriented-miniport-drivers"></a>接続指向ミニポート ドライバーの一般操作 OID
 
 次の表は、接続指向のミニポート ドライバーの一般的な操作特性や、Nic 設定を取得または使用 Oid をまとめたものです。
 
 > [!TIP] 
-> 接続指向のミニポート ドライバーでは、このような要求を処理するその[MiniportCoOidRequest](https://msdn.microsoft.com/library/windows/hardware/ff559362)コールバック関数。
+> 接続指向のミニポート ドライバーでは、このような要求を処理するその[MiniportCoOidRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)コールバック関数。
 
 次の表では、M は、OID は必須では、O は、これは省略可能なことを示しますを示します。
 

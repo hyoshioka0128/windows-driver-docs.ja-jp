@@ -6,12 +6,12 @@ keywords:
 - プラグインを WDK の印刷、レンダリング プラグインに関するレンダリング
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cb9467f0a4797426f8a9707e1737df2775e92e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de9f3f3b8a1eaada94961329a2b9010eed22c646
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382608"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385397"
 ---
 # <a name="introduction-to-rendering-plug-ins"></a>レンダリング プラグインの概要
 
@@ -29,7 +29,7 @@ ms.locfileid: "63382608"
 
 -   表示されるイメージやスキャン ライン データ ストリームを変更またはデータ ストリームは、スプーラーに送信する前に、Postscript コードを特定の挿入ポイントに挿入する Unidrv 固有または Pscript に固有の COM インターフェイス メソッドを実装します。
 
-**注**  プラグインを表示する必要がありますしない生成ウィンドウを直接します。 Windows Vista 以降、非同期のユーザー通知の XML スキーマを使用してクライアント コンピューターに非同期のイベント通知メッセージを行うことができます asyncui.xsd します。 詳細については、次を参照してください[非同期のユーザー通知スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff545066)。
+**注**  プラグインを表示する必要がありますしない生成ウィンドウを直接します。 Windows Vista 以降、非同期のユーザー通知の XML スキーマを使用してクライアント コンピューターに非同期のイベント通知メッセージを行うことができます asyncui.xsd します。 詳細については、次を参照してください[非同期のユーザー通知スキーマ](https://docs.microsoft.com/windows-hardware/drivers/print/asynchronous-user-notification-schema)。
 
  
 

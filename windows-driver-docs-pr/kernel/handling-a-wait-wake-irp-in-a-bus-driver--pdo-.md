@@ -8,12 +8,12 @@ keywords:
 - バス ドライバー WDK 電源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9185f81649a2c637aa94ce65df560c96e5673662
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78189ea8fb8879618e6f36f8d36e22a04d8639c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359834"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384244"
 ---
 # <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>バス ドライバー (PDO) での待機/ウェイク IRP の処理
 
@@ -27,7 +27,7 @@ ms.locfileid: "63359834"
 
     -   状態を設定\_無効な\_デバイス\_で状態**Irp -&gt;IoStatus.Status**します。
 
-    -   IRP の完了 ([**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343))、IO の優先順位を指定する\_いいえ\_インクリメントします。
+    -   IRP の完了 ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest))、IO の優先順位を指定する\_いいえ\_インクリメントします。
 
     -   設定の状態を返す**Irp -&gt;IoStatus.Status**から、 [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
 
@@ -35,13 +35,13 @@ ms.locfileid: "63359834"
 
     1 つだけ待機/ウェイク IRP が保留されている PDO の。
 
-3.  指定したシステムの電源状態と待機/ウェイク IRP が既に保留中デバイスは、ウェイク アップをサポートしている場合は、呼び出す[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422) IRP が完了する I/O マネージャーに示すために、または後で取り消されました。 設定しないでください、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。
+3.  指定したシステムの電源状態と待機/ウェイク IRP が既に保留中デバイスは、ウェイク アップをサポートしている場合は、呼び出す[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending) IRP が完了する I/O マネージャーに示すために、または後で取り消されました。 設定しないでください、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
 
 4.  ウェイク アップを有効にする、デバイスのハードウェアを設定します。
 
     バス ドライバーにより、そのハードウェアのウェイク アップされる特定のメカニズムは、デバイスによって異なります。 PCI デバイス、Pci.sys はこのドライバーは、PME レジスタを所有しているため、PME の有効にするビットの設定を行います。 その他のデバイスでは、デバイス固有クラスのドキュメントを参照してください。
 
-5.  PDO FDO の子である場合[要求待機/ウェイク IRP](sending-a-wait-wake-irp.md) 、FDO のために設定してください、 [*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742)現在 IRP (保留中、保持している IRP) のルーチン。 渡すか、現在の IRP を再利用しないでください。
+5.  PDO FDO の子である場合[要求待機/ウェイク IRP](sending-a-wait-wake-irp.md) 、FDO のために設定してください、 [*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)現在 IRP (保留中、保持している IRP) のルーチン。 渡すか、現在の IRP を再利用しないでください。
 
 6.  状態を返す\_から PENDING、 *DispatchPower*ルーチン。
 

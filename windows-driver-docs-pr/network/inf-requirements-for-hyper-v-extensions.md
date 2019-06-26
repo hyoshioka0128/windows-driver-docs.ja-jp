@@ -4,12 +4,12 @@ description: Hyper-V 拡張可能スイッチ拡張機能の INF 要件
 ms.assetid: 378F619A-C799-4330-A388-9955A67251F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e67236218d221904c02b654f65bf766faaa46ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74230af31314fd6d9b3fd12f9959aaa80bab6b7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327704"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385097"
 ---
 # <a name="inf-requirements-for-hyper-v-extensible-switch-extensions"></a>Hyper-V 拡張可能スイッチ拡張機能の INF 要件
 
@@ -38,7 +38,7 @@ HYPER-V 拡張可能スイッチの拡張機能は、NDIS フィルター ドラ
 
   場合、 **FilterMediaTypes**エントリのみを指定します。、 **vmnetextension**値、拡張機能は、システム上のすべての拡張可能スイッチのドライバー スタックにバインドのみです。
 
-  場合、 **FilterMediaTypes**エントリを指定します**vmnetextension**拡張機能や他のメディアの種類としてを呼び出すことによって、拡張可能スイッチドライバースタック内でバインドされているかどうかを判断できます[ **NdisFGetOptionalSwitchHandlers**](https://msdn.microsoft.com/library/windows/hardware/hh598204)します。 関数は、NDIS を返す場合\_状態\_成功すると、拡張機能は、拡張機能ドライバー スタック内でバインドします。 関数は、NDIS を返す場合\_状態\_いない\_、サポートされている拡張機能が、別の物理ネットワーク インターフェイスのドライバー スタック内でバインドします。
+  場合、 **FilterMediaTypes**エントリを指定します**vmnetextension**拡張機能や他のメディアの種類としてを呼び出すことによって、拡張可能スイッチドライバースタック内でバインドされているかどうかを判断できます[ **NdisFGetOptionalSwitchHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfgetoptionalswitchhandlers)します。 関数は、NDIS を返す場合\_状態\_成功すると、拡張機能は、拡張機能ドライバー スタック内でバインドします。 関数は、NDIS を返す場合\_状態\_いない\_、サポートされている拡張機能が、別の物理ネットワーク インターフェイスのドライバー スタック内でバインドします。
 
   詳細については、 **FilterMediaTypes**エントリを参照してください[中間ドライバー UpperRange と LowerRange INF ファイルのエントリ](intermediate-driver-upperrange-and-lowerrange-inf-file-entries.md)します。
 

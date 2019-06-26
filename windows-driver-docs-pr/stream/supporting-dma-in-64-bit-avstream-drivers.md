@@ -11,12 +11,12 @@ keywords:
 - 32 ビットのアドレス指定可能なデバイス WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2e2b07c6051ca8e4cd30e56786edde5030dc500
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2279137fe23ca5aff81367ddfb71041d68b264d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382087"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377774"
 ---
 # <a name="supporting-dma-in-64-bit-avstream-drivers"></a>64 ビット AVStream ドライバーの DMA のサポート
 
@@ -26,7 +26,7 @@ ms.locfileid: "63382087"
 
 AVStream では、32 ビットおよび 64 ビットのアドレス指定可能なデバイスで DMA をサポートしています。
 
-Win64 プラットフォームを使用する必要があります用にコンパイルされたすべてのドライバー [ **IKsDeviceFunctions::RegisterAdapterObjectEx** ](https://msdn.microsoft.com/library/windows/hardware/ff559852)の代わりに[ **KsDeviceRegisterAdapterObject**](https://msdn.microsoft.com/library/windows/hardware/ff561687).
+Win64 プラットフォームを使用する必要があります用にコンパイルされたすべてのドライバー [ **IKsDeviceFunctions::RegisterAdapterObjectEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-iksdevicefunctions-registeradapterobjectex)の代わりに[ **KsDeviceRegisterAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksdeviceregisteradapterobject).
 
 **IKsDeviceFunctions::RegisterAdapterObjectEx**は Microsoft Windows Server 2003 SP1 で使用可能な以降のみです。
 

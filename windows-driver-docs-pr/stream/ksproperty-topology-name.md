@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e24e108230a506754bc8a2f53bba9a9e8634c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5ad8749c393243fc02c2702a00ac9cab13d4231
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376410"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383995"
 ---
 # <a name="kspropertytopologyname"></a>KSPROPERTY\_トポロジ\_名
 
@@ -53,7 +53,7 @@ KSPROPERTY\_トポロジ\_NAME プロパティは、ノードのローカライ�
 <td><p>〇</p></td>
 <td><p>X</p></td>
 <td><p>ノード</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566720" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566720)"><strong>KSP_NODE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)"><strong>KSP_NODE</strong></a></p></td>
 <td><p>文字列名を保持するバッファー。</p></td>
 </tr>
 </tbody>
@@ -85,7 +85,7 @@ KSPROPERTY\_トポロジ\_NAME プロパティは、ノードのローカライ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - WDK の RSS のプロセッサ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ef6dfe6e40cef6cbaeb001cb38a49aa614c1b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23fb0637dc6663d4e88821c2932d80f880550fc7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358304"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378654"
 ---
 # <a name="reserving-processors-for-applications"></a>アプリケーション用のプロセッサの予約
 
@@ -31,9 +31,9 @@ Windows Server 2008 では、管理者を設定できますベース CPU 番号�
 
 **注**以降 Windows 8 および Windows Server 2012 では、管理者は制御できますに多くのネットワーク アダプターの PowerShell コマンドレットを使用します。 レジストリを直接編集することは推奨されませんようになりました。
 
-RSS Cpu を予約するための PowerShell コマンドレットは[Set-netadapterrss](https://technet.microsoft.com/library/jj130863)します。 使用しての主な違い**Set-netadapterrss**を使用して、 **RssBaseCpu**中 - ネットワーク アダプターごとに PowerShell コマンドレットが動作するは**RssBaseCpu**つまり、すべてのネットワーク アダプターに適用される、グローバルです。 一般に、個別に各ネットワーク アダプターの使用はお勧め詳細の柔軟性、粒度と各ネットワーク アダプターを付与するには、独自の構成か。 ただし、管理者は、グローバルと使用も**RssBaseCpu**扱おうと同時にすべての現在および今後のすべてのネットワーク アダプターに構成を適用する場合のキーします。
+RSS Cpu を予約するための PowerShell コマンドレットは[Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)します。 使用しての主な違い**Set-netadapterrss**を使用して、 **RssBaseCpu**中 - ネットワーク アダプターごとに PowerShell コマンドレットが動作するは**RssBaseCpu**つまり、すべてのネットワーク アダプターに適用される、グローバルです。 一般に、個別に各ネットワーク アダプターの使用はお勧め詳細の柔軟性、粒度と各ネットワーク アダプターを付与するには、独自の構成か。 ただし、管理者は、グローバルと使用も**RssBaseCpu**扱おうと同時にすべての現在および今後のすべてのネットワーク アダプターに構成を適用する場合のキーします。
 
-ネットワーク アダプター コマンドレットの完全な一覧を参照してください。 [Windows PowerShell のネットワーク アダプター コマンドレット](https://technet.microsoft.com/library/jj134956)します。
+ネットワーク アダプター コマンドレットの完全な一覧を参照してください。 [Windows PowerShell のネットワーク アダプター コマンドレット](https://docs.microsoft.com/powershell/module/netadapter/)します。
 
  
 

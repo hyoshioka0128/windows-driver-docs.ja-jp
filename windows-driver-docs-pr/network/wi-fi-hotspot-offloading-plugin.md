@@ -3,12 +3,12 @@ title: Wi-Fi ホット スポット オフロード プラグイン
 description: Wi-Fi ホット スポット オフロード プラグイン
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f145063563487cdbef6fcd212c0761aa59ad7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a623890e8de324731d8d748e0288322bc0b0d0d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379164"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382610"
 ---
 # <a name="wi-fi-hotspot-offloading-plugin"></a>Wi-Fi ホット スポット オフロード プラグイン
 
@@ -49,13 +49,13 @@ Wi-fi のオフロードを有効にするには、作成し、ホット スポ�
 * プロバイダー名 (最大**HS_CONST_MAX_PROVIDER_NAME_LENGTH**長さ)
 * ネットワーク名 (最大**HS_CONST_MAX_NETWORK_DISPLAY_NAME_LENGTH**長さ)
 * メッセージの詳細 ページ (最大**HS_CONST_MAX_ADVANCED_PAGE_STRING_LENGTH**長さ)
-* HSHostSendUserMessage 関数を使用してユーザーに渡された追加の文字列 (最大**最大\_パス**長さ)。 詳細については、次を参照してください。 [HS_HOST_SEND_USER_MESSAGE](https://msdn.microsoft.com/library/windows/hardware/dn789353)します。
+* HSHostSendUserMessage 関数を使用してユーザーに渡された追加の文字列 (最大**最大\_パス**長さ)。 詳細については、次を参照してください。 [HS_HOST_SEND_USER_MESSAGE](https://docs.microsoft.com/previous-versions/dn789353(v=vs.85))します。
 
-**注:** Wi-fi ホット スポットのオフロード機能と定数の詳細については、次を参照してください。 [Wi-fi ホット スポットのオフロード定数](https://msdn.microsoft.com/library/windows/hardware/mt800328)します。
+**注:** Wi-fi ホット スポットのオフロード機能と定数の詳細については、次を参照してください。 [Wi-fi ホット スポットのオフロード定数](https://docs.microsoft.com/previous-versions/mt800328(v=vs.85))します。
 
 ## <a name="implementing-the-plugin"></a>プラグインを実装します。
 
-このプラグインは、DLL として実装されます。 関数は、 [HSPluginGetVersion](https://msdn.microsoft.com/library/windows/hardware/dn789345)と[HSPluginInitPlugin](https://msdn.microsoft.com/library/windows/hardware/dn789346)プラグイン DLL の .def ファイルで指定するかで「方式」を追加することで公開されている必要があります、関数の実装。
+このプラグインは、DLL として実装されます。 関数は、 [HSPluginGetVersion](https://docs.microsoft.com/previous-versions/dn789345(v=vs.85))と[HSPluginInitPlugin](https://docs.microsoft.com/previous-versions/dn789346(v=vs.85))プラグイン DLL の .def ファイルで指定するかで「方式」を追加することで公開されている必要があります、関数の実装。
 
 ## <a name="initialization"></a>初期化
 
@@ -77,18 +77,18 @@ Wi-fi のオフロードを有効にするには、作成し、ホット スポ�
 
 プラグインには、ホット スポットのプラグインのホストに、次の情報が返されます。
 
-* プラグインの Api の一覧を含む構造体へのポインター (**pHotspotPluginAPIs**)。 詳細については、次を参照してください。 [HOTSPOT_PLUGIN_APIS](https://msdn.microsoft.com/library/windows/hardware/dn789344)します。
-* プラグインのプロファイルを格納する構造体へのポインター (**pPluginProfile**)。 詳細については、次を参照してください。 [HS_PLUGIN_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789365)します。 
+* プラグインの Api の一覧を含む構造体へのポインター (**pHotspotPluginAPIs**)。 詳細については、次を参照してください。 [HOTSPOT_PLUGIN_APIS](https://docs.microsoft.com/previous-versions/dn789344(v=vs.85))します。
+* プラグインのプロファイルを格納する構造体へのポインター (**pPluginProfile**)。 詳細については、次を参照してください。 [HS_PLUGIN_PROFILE](https://docs.microsoft.com/previous-versions/dn789365(v=vs.85))します。 
 
 プロファイルには、すべてのプラグインが必要な機能が含まれます。 これは、該当する機能フラグの値を組み合わせることによって生成される 1 つの値によって表されます (HS_FLAG_CAPABILITY_NETWORK_\*)、ビットごとの OR 演算を使用しています。 場合は、プラグインの指定、HS\_フラグ\_機能\_ネットワーク\_AUTH\_HTTP 機能や、HS\_フラグ\_機能\_ネットワーク\_AUTH\_EAP\_ \* 、機能、 **dwSupportedSIMCount**のメンバー、 **HS_PLUGIN_PROFILE**構造体は、数に設定する必要がありますサポートされている Sim。 プラグインは、設定をサポートしているネットワークの合計数も指定する必要があります、 **dwNumNetworksSupported**のメンバー、 **HS_PLUGIN_PROFILE**構造体。
 
 ### <a name="hspluginqueryhiddennetwork-optional"></a>HsPluginQueryHiddenNetwork [省略可能]
 
-プラグインを指定する場合、 **HS_FLAG_CAPABILITY_NETWORK_TYPE_HIDDEN**機能と、デバイスが非表示のネットワークをサポートできますが、この関数は、ホット スポット プラグインのホストから非表示のネットワーク情報を取得しますプラグイン。 詳細については、次を参照してください。 [HS_PLUGIN_QUERY_HIDDEN_NETWORK](https://msdn.microsoft.com/library/windows/hardware/dn789367)します。
+プラグインを指定する場合、 **HS_FLAG_CAPABILITY_NETWORK_TYPE_HIDDEN**機能と、デバイスが非表示のネットワークをサポートできますが、この関数は、ホット スポット プラグインのホストから非表示のネットワーク情報を取得しますプラグイン。 詳細については、次を参照してください。 [HS_PLUGIN_QUERY_HIDDEN_NETWORK](https://docs.microsoft.com/previous-versions/dn789367(v=vs.85))します。
 
 ### <a name="hspluginquerysupportedsims-optional"></a>HsPluginQuerySupportedSIMs [省略可能]
 
-ホット スポットのプラグインのホストが、プラグインが 0 以外の値を指定する場合、この関数を呼び出す**dwSupportedSIMCount**します。 が呼び出されると、 **pNetworkIdentity**引数が NULL にする必要があり、プラグインによってサポートされているすべての Sim の一覧を提供するプラグインが必要です。 この関数が各ホット スポット ネットワークに関連付けられている Sim を識別するために後で呼び出すことも可能性があります (その時点で、 **pNetworkIdentity**非 NULL になります)。 プラグインには、サポートされている Sim の一覧を指定する必要があります。 詳細については、次を参照してください。 [HS_PLUGIN_QUERY_SUPPORTED_SIMS](https://msdn.microsoft.com/library/windows/hardware/dn789368)します。
+ホット スポットのプラグインのホストが、プラグインが 0 以外の値を指定する場合、この関数を呼び出す**dwSupportedSIMCount**します。 が呼び出されると、 **pNetworkIdentity**引数が NULL にする必要があり、プラグインによってサポートされているすべての Sim の一覧を提供するプラグインが必要です。 この関数が各ホット スポット ネットワークに関連付けられている Sim を識別するために後で呼び出すことも可能性があります (その時点で、 **pNetworkIdentity**非 NULL になります)。 プラグインには、サポートされている Sim の一覧を指定する必要があります。 詳細については、次を参照してください。 [HS_PLUGIN_QUERY_SUPPORTED_SIMS](https://docs.microsoft.com/previous-versions/dn789368(v=vs.85))します。
 
 ## <a name="run-time"></a>実行時
 
@@ -96,15 +96,15 @@ Wi-fi のオフロードを有効にするには、作成し、ホット スポ�
 
 ### <a name="hspluginishotspotnetwork"></a>HSPluginIsHotspotNetwork
 
-ホット スポットのプラグインのホストでは、指定されたネットワークがホット スポット ネットワークを確認するには、この関数を呼び出します。 識別情報 (SSID、認証の種類、暗号) ネットワークを通過する[HS_NETWORK_IDENTITY](https://msdn.microsoft.com/library/windows/hardware/dn789356)構造体。 プラグインを返す必要があります、 [eHS_NETWORK_STATE](https://msdn.microsoft.com/library/windows/hardware/dn756756)ネットワークの種類を示す列挙値。 かどうかは、ホット スポット ネットワーク、ネットワークに関する情報がによって返される、 [HS_NETWORK_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789357)構造体。 詳細については、次を参照してください。 [HS_PLUGIN_IS_HOTSPOT_NETWORK](https://msdn.microsoft.com/library/windows/hardware/dn789363)します。
+ホット スポットのプラグインのホストでは、指定されたネットワークがホット スポット ネットワークを確認するには、この関数を呼び出します。 識別情報 (SSID、認証の種類、暗号) ネットワークを通過する[HS_NETWORK_IDENTITY](https://docs.microsoft.com/previous-versions/dn789356(v=vs.85))構造体。 プラグインを返す必要があります、 [eHS_NETWORK_STATE](https://docs.microsoft.com/previous-versions/dn756756(v=vs.85))ネットワークの種類を示す列挙値。 かどうかは、ホット スポット ネットワーク、ネットワークに関する情報がによって返される、 [HS_NETWORK_PROFILE](https://docs.microsoft.com/previous-versions/dn789357(v=vs.85))構造体。 詳細については、次を参照してください。 [HS_PLUGIN_IS_HOTSPOT_NETWORK](https://docs.microsoft.com/previous-versions/dn789363(v=vs.85))します。
 
 ### <a name="hspluginquerysupportedsims-optional"></a>HsPluginQuerySupportedSIMs [省略可能]
 
-ホット スポットのプラグインのホストが、プラグインが機能を指定する場合、この関数を呼び出す**HS\_フラグ\_機能\_ネットワーク\_AUTH\_HTTP**または**HS\_フラグ\_機能\_ネットワーク\_AUTH\_EAP**で、 *HS_NETWORK_PROFILE* への呼び出しの引数[HS_PLUGIN_IS_HOTSPOT_NETWORK](https://msdn.microsoft.com/library/windows/hardware/dn789363)します。 PNetworkIdentity 引数が NULL 以外である必要がありますこのインスタンスで呼び出されると、およびプラグインが pNetworkIdentity のみで指定したネットワークのサポートされている Sim の一覧を提供する必要があります。 詳細については、次を参照してください。 [HS_PLUGIN_QUERY_SUPPORTED_SIMS](https://msdn.microsoft.com/library/windows/hardware/dn789368)します。
+ホット スポットのプラグインのホストが、プラグインが機能を指定する場合、この関数を呼び出す**HS\_フラグ\_機能\_ネットワーク\_AUTH\_HTTP**または**HS\_フラグ\_機能\_ネットワーク\_AUTH\_EAP**で、 *HS_NETWORK_PROFILE* への呼び出しの引数[HS_PLUGIN_IS_HOTSPOT_NETWORK](https://docs.microsoft.com/previous-versions/dn789363(v=vs.85))します。 PNetworkIdentity 引数が NULL 以外である必要がありますこのインスタンスで呼び出されると、およびプラグインが pNetworkIdentity のみで指定したネットワークのサポートされている Sim の一覧を提供する必要があります。 詳細については、次を参照してください。 [HS_PLUGIN_QUERY_SUPPORTED_SIMS](https://docs.microsoft.com/previous-versions/dn789368(v=vs.85))します。
 
 ### <a name="hspluginquerycellularexceptionhosts-optional"></a>HSPluginQueryCellularExceptionHosts [省略可能]
 
-ホット スポットのプラグインのホストがこの関数を呼び出す場合、 **dwNumCellularExceptions**のフィールド、 [HS_NETWORK_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789357)プラグインによって返される構造は、0 以外の値に設定されます。 このプラグインは、呼び出されたときに、携帯電話のベアラー ホストの一覧を返す必要があります。 詳細については、次を参照してください。 [HS_PLUGIN_QUERY_CELLULAR_EXCEPTION_HOSTS](https://msdn.microsoft.com/library/windows/hardware/dn789366)します。
+ホット スポットのプラグインのホストがこの関数を呼び出す場合、 **dwNumCellularExceptions**のフィールド、 [HS_NETWORK_PROFILE](https://docs.microsoft.com/previous-versions/dn789357(v=vs.85))プラグインによって返される構造は、0 以外の値に設定されます。 このプラグインは、呼び出されたときに、携帯電話のベアラー ホストの一覧を返す必要があります。 詳細については、次を参照してください。 [HS_PLUGIN_QUERY_CELLULAR_EXCEPTION_HOSTS](https://docs.microsoft.com/previous-versions/dn789366(v=vs.85))します。
 
 ## <a name="connect-time"></a>接続時間
 
@@ -112,7 +112,7 @@ Wi-fi のオフロードを有効にするには、作成し、ホット スポ�
 
 ### <a name="hspluginpreconnectinit"></a>HSPluginPreConnectInit
 
-ホット スポットのプラグインのホストでホット スポット ネットワークへの接続が指定されているプラグインを通知するには、この関数を呼び出し、 [HS_NETWORK_IDENTITY](https://msdn.microsoft.com/library/windows/hardware/dn789356)プラグインによって返される構造が進行中です。 詳細については、次を参照してください。 [HS_PLUGIN_PRE_CONNECT_INIT](https://msdn.microsoft.com/library/windows/hardware/dn789364)します。
+ホット スポットのプラグインのホストでホット スポット ネットワークへの接続が指定されているプラグインを通知するには、この関数を呼び出し、 [HS_NETWORK_IDENTITY](https://docs.microsoft.com/previous-versions/dn789356(v=vs.85))プラグインによって返される構造が進行中です。 詳細については、次を参照してください。 [HS_PLUGIN_PRE_CONNECT_INIT](https://docs.microsoft.com/previous-versions/dn789364(v=vs.85))します。
 
 ### <a name="hspluginstartpostconnectauth"></a>HSPluginStartPostConnectAuth
 
@@ -124,15 +124,15 @@ L2 接続が完了したら、ホット スポットのプラグインのホス�
 
 ### <a name="hspluginstoppostconnectauth"></a>HSPluginStopPostConnectAuth
 
-ホット スポットのプラグインのホストでは、デバイスは、ネットワークから切断されるため、ネットワーク認証を終了するには、この関数を呼び出します。 詳細については、次を参照してください。 [HS_PLUGIN_STOP_POST_CONNECT_AUTH](https://msdn.microsoft.com/library/windows/hardware/dn789372)します。
+ホット スポットのプラグインのホストでは、デバイスは、ネットワークから切断されるため、ネットワーク認証を終了するには、この関数を呼び出します。 詳細については、次を参照してください。 [HS_PLUGIN_STOP_POST_CONNECT_AUTH](https://docs.microsoft.com/previous-versions/dn789372(v=vs.85))します。
 
 ### <a name="hsplugindisconnectfromnetwork"></a>HSPluginDisconnectFromNetwork
 
-ホット スポットのプラグインのホストでは、プラグイン、デバイスをネットワークから切断することを通知するためには、この関数を呼び出します。 詳細については、次を参照してください。 [HS_PLUGIN_DISCONNECT_FROM_NETWORK](https://msdn.microsoft.com/library/windows/hardware/dn789361)します。
+ホット スポットのプラグインのホストでは、プラグイン、デバイスをネットワークから切断することを通知するためには、この関数を呼び出します。 詳細については、次を参照してください。 [HS_PLUGIN_DISCONNECT_FROM_NETWORK](https://docs.microsoft.com/previous-versions/dn789361(v=vs.85))します。
 
 ### <a name="hspluginreset"></a>HSPluginReset
 
-ホット スポットのプラグインのホストでは、プラグインを初期 (読み込んだ) 状態にリセットするには、この関数を呼び出します。 詳細については、次を参照してください。 [HS_PLUGIN_RESET](https://msdn.microsoft.com/library/windows/hardware/dn789369)します。
+ホット スポットのプラグインのホストでは、プラグインを初期 (読み込んだ) 状態にリセットするには、この関数を呼び出します。 詳細については、次を参照してください。 [HS_PLUGIN_RESET](https://docs.microsoft.com/previous-versions/dn789369(v=vs.85))します。
 
 ## <a name="periodic-calls"></a>定期的な呼び出し
 
@@ -140,17 +140,17 @@ L2 接続が完了したら、ホット スポットのプラグインのホス�
 
 ### <a name="hspluginsendkeepalive-optional"></a>HSPluginSendKeepAlive [省略可能]
 
-ホット スポットのプラグインのホストで指定された頻度でこの関数を呼び出し、 **dwKeepAliveTimeMins**のメンバー、 [HS_NETWORK_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789357)プラグインによって返される構造体。 詳細については、次を参照してください。 [HS_PLUGIN_SEND_KEEP_ALIVE](https://msdn.microsoft.com/library/windows/hardware/dn789370)します。
+ホット スポットのプラグインのホストで指定された頻度でこの関数を呼び出し、 **dwKeepAliveTimeMins**のメンバー、 [HS_NETWORK_PROFILE](https://docs.microsoft.com/previous-versions/dn789357(v=vs.85))プラグインによって返される構造体。 詳細については、次を参照してください。 [HS_PLUGIN_SEND_KEEP_ALIVE](https://docs.microsoft.com/previous-versions/dn789370(v=vs.85))します。
 
 ### <a name="hsplugincheckforupdates-optional"></a>HSPluginCheckForUpdates [省略可能]
 
-ホット スポットのプラグインのホストで指定された頻度でこの関数を呼び出し、 **dwProfileUpdateTimeDays**のメンバー、 [HS_PLUGIN_PROFILE](https://msdn.microsoft.com/library/windows/hardware/dn789365)構造体。 
+ホット スポットのプラグインのホストで指定された頻度でこの関数を呼び出し、 **dwProfileUpdateTimeDays**のメンバー、 [HS_PLUGIN_PROFILE](https://docs.microsoft.com/previous-versions/dn789365(v=vs.85))構造体。 
 
 ## <a name="unloading-the-plugin"></a>プラグインのアンロード
 
 ### <a name="hsplugindeinit"></a>HSPluginDeinit
 
-ホット スポットのプラグインのホストでは、未保存のデータをフラッシュし、アンロードされる前に、開いているハンドルを終了するようにプラグインを有効にするには、この関数を呼び出します。 プラグインが理由でアンロードを指定する、 *UnloadReason*引数。 詳細については、次を参照してください。 [HS_PLUGIN_DEINIT](https://msdn.microsoft.com/library/windows/hardware/dn789360)します。
+ホット スポットのプラグインのホストでは、未保存のデータをフラッシュし、アンロードされる前に、開いているハンドルを終了するようにプラグインを有効にするには、この関数を呼び出します。 プラグインが理由でアンロードを指定する、 *UnloadReason*引数。 詳細については、次を参照してください。 [HS_PLUGIN_DEINIT](https://docs.microsoft.com/previous-versions/dn789360(v=vs.85))します。
 
 ## <a name="plugin-installation-package"></a>プラグインのインストール パッケージ
 
@@ -160,7 +160,7 @@ L2 接続が完了したら、ホット スポットのプラグインのホス�
 
 DLL ファイルの署名し、の下に配置する必要があります**Programs\HotspotHost\\** <*ProviderName*> ここで、<*ProviderName*> は、DLL のプロバイダーの名前。 
 
-DLL の署名については、次を参照してください。[バイナリとパッケージの署名](https://msdn.microsoft.com/library/windows/hardware/dn789217)します。 
+DLL の署名については、次を参照してください。[バイナリとパッケージの署名](https://docs.microsoft.com/previous-versions/windows/hardware/code-signing/dn789217(v=vs.85))します。 
 
 必要なは、レジストリ、ファイルへのパスが正しいことを確認するため、DLL ファイルの名前付け規則を特定することはありません。 たとえば、パッケージにレジストリ情報を指定できました。
 

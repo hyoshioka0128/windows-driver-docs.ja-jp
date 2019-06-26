@@ -4,12 +4,12 @@ description: このトピックでは、新機能と WindowsWindows 8.1 での�
 ms.assetid: F52BC6D1-DF67-4DE7-BEEC-D18C2A90B4CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec1985eaaeca713d1ea898fc2c8ebcef74a47cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1989e4e87f8a7b9a1fd0caf1b101210f3dfe352e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384688"
 ---
 # <a name="new-sensor-features-and-improvements-for-windows-81"></a>センサーの新機能と Windows 8.1 の機能強化
 
@@ -52,7 +52,7 @@ Windows 8.1 には、HID トランスポート上で実行されるすべての�
 
 地理的位置情報ドライバーのサンプルでは、グローバル配置 System (GPS) デバイスをエミュレートする最小限の UMDF ドライバーを示します。 このサンプル ドライバーは、新しいで詳しく説明[プログラミング ガイド](programming-guide.md)します。
 
-地理的位置情報ドライバーのサンプルには、ラジオの管理 API のサポートを追加で示すコードも含まれています。 「、[ラジオの管理をサポートしている](https://msdn.microsoft.com/library/windows/hardware/jj200337)トピック。
+地理的位置情報ドライバーのサンプルには、ラジオの管理 API のサポートを追加で示すコードも含まれています。 「、[ラジオの管理をサポートしている](https://docs.microsoft.com/windows-hardware/drivers/gnss/supporting-radio-management)トピック。
 
 ## <a name="related-topics"></a>関連トピック
 [プログラミング ガイド](programming-guide.md)  

@@ -10,17 +10,17 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 0d524ad18cc360797ba4978f76838121a521314e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bdcd1d595ed3e9d8c506aaac6a6fb7854593f2b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383861"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385053"
 ---
 # <a name="kernel-mode-support-to-the-opengl-installable-client-driver"></a>OpenGL のインストール可能なクライアント ドライバーに対するカーネル モードのサポート
 
 
-OpenGL インストール可能なクライアント ドライバー (ICD) は、同じレベルのとしてのカーネル モードのサービスを呼び出すためのサポートを取得できます[Direct3D ユーザー モードのディスプレイ ドライバー](initializing-communication-with-the-direct3d-user-mode-display-driver.md)します。 アクセスなど、マイクロソフトの Direct3D ランタイムのコールバック関数を使用してカーネル モードのサービスを介して提供ではなく、ただし、 **pAdapterCallbacks**のメンバー、 [ **D3DDDIARG\_OPENADAPTER** ](https://msdn.microsoft.com/library/windows/hardware/ff543226)構造と**pCallbacks**のメンバー、 [ **D3DDDIARG\_CREATEDEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff542931)構造体、OpenGL ICD が Gdi32.dll を読み込みの使用を初期化する必要があります、 [OpenGL カーネル-モード-アクセス関数](https://msdn.microsoft.com/library/windows/hardware/ff568606)次のコード例に示すようにします。 このコードを実装しません[OpenGL で Windows 8 の機能強化](supporting-opengl-enhancements.md)します。
+OpenGL インストール可能なクライアント ドライバー (ICD) は、同じレベルのとしてのカーネル モードのサービスを呼び出すためのサポートを取得できます[Direct3D ユーザー モードのディスプレイ ドライバー](initializing-communication-with-the-direct3d-user-mode-display-driver.md)します。 アクセスなど、マイクロソフトの Direct3D ランタイムのコールバック関数を使用してカーネル モードのサービスを介して提供ではなく、ただし、 **pAdapterCallbacks**のメンバー、 [ **D3DDDIARG\_OPENADAPTER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_openadapter)構造と**pCallbacks**のメンバー、 [ **D3DDDIARG\_CREATEDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_createdevice)構造体、OpenGL ICD が Gdi32.dll を読み込みの使用を初期化する必要があります、 [OpenGL カーネル-モード-アクセス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)次のコード例に示すようにします。 このコードを実装しません[OpenGL で Windows 8 の機能強化](supporting-opengl-enhancements.md)します。
 
 **注**   OpenGL ICD Development kit のライセンスを取得するには、 [OpenGL 問題](mailto:opengl@microsoft.com)チーム。
 

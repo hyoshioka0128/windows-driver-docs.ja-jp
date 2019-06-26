@@ -7,12 +7,12 @@ keywords:
 - ボックスの自動構成サポートの WDK プリンター、一連の手順
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04830129bf16f80c99f2ce5e2247f7252d5ee1dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc54fd9a9b856405abd1775f54c50f00f8aa355e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350746"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370474"
 ---
 # <a name="autoconfiguration-flow-for-gpd-in-windows-vista"></a>Windows Vista の GPD の自動構成フロー
 
@@ -21,7 +21,7 @@ ms.locfileid: "63350746"
 
 1.  ポート モニターは、スプーラーに以前ではなく、キャッシュまたは変更されたすべての値を含む通知を送信します。
 
-2.  スプーラーは通知に応答のポート モニターから呼び出すことによって[ **DrvPrinterEvent**](https://msdn.microsoft.com/library/windows/hardware/ff548564)します。
+2.  スプーラーは通知に応答のポート モニターから呼び出すことによって[ **DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)します。
 
 3.  プリンター\_イベント\_構成がすべての新しい値を含むドライバーに渡されます。 属性の値が変更されたことと、レジストリを更新しても、ドライバーに通知されます。
 

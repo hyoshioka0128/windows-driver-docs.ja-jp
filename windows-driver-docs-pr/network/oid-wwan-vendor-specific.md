@@ -5,12 +5,12 @@ ms.assetid: 7c1843bc-3d60-437c-a24d-6da82262a468
 ms.date: 08/08/2017
 keywords: -OID_WWAN_VENDOR_SPECIFIC ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a647fe74b14f5ca8c7ddaed8156046c0c7d4d31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b3042935a80dbd04e42fdec56145c45a79536c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384233"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366571"
 ---
 # <a name="oidwwanvendorspecific"></a>OID\_WWAN\_ベンダー\_特定
 
@@ -24,7 +24,7 @@ OID\_WWAN\_ベンダー\_により、特定のベンダー固有のオブジェ�
 <a name="remarks"></a>コメント
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN 仕入先の特定の操作](https://msdn.microsoft.com/library/windows/hardware/ff559138)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN 仕入先の特定の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-vendor-specific-operations)します。
 
 ミニポート ドライバーは、NDIS を返す必要があります\_状態\_いない\_ベンダー固有の操作をサポートしていない場合にサポートされています。
 
@@ -51,7 +51,7 @@ OID\_WWAN\_ベンダー\_により、特定のベンダー固有のオブジェ�
 ## <a name="see-also"></a>関連項目
 
 
-[WWAN 仕入先の特定の操作](https://msdn.microsoft.com/library/windows/hardware/ff559138)
+[WWAN 仕入先の特定の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-vendor-specific-operations)
 
 [**NDIS\_状態\_WWAN\_ベンダー\_特定**](ndis-status-wwan-vendor-specific.md)
 

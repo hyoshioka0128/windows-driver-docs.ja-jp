@@ -3,12 +3,12 @@ Description: このセクションでは、汎用 WinUSB ドライバー (Winusb
 title: WinUSB (Winusb.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c5d624fc901e7b8a587b123590fc58aa75b89c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 432ffe606066b576fcdb730b847b55a578b9959b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389114"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385346"
 ---
 # <a name="winusb-winusbsys"></a>WinUSB (Winusb.sys)
 
@@ -17,7 +17,7 @@ ms.locfileid: "63389114"
 
 Windows XP Service Pack 2 (SP2) より前のバージョンの Windows ですべての USB デバイス ドライバーはカーネル モードで動作する必要があります。 オペレーティング システムがネイティブ クラス ドライバーをいない USB デバイスを作成する場合は、デバイスのカーネル モード デバイス ドライバーを作成する必要があります。
 
-Windows USB (WinUSB) は、Windows XP SP2 の Windows Driver Frameworks (WDF) と同時に開発された USB デバイスの一般的なドライバーです。 WinUSB アーキテクチャは、カーネル モード ドライバー (Winusb.sys) および公開するユーザー モード ダイナミック リンク ライブラリ (Winusb.dll) [WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)します。 これらの関数を使用すると、ユーザー モード ソフトウェアでの USB デバイスを管理できます。
+Windows USB (WinUSB) は、Windows XP SP2 の Windows Driver Frameworks (WDF) と同時に開発された USB デバイスの一般的なドライバーです。 WinUSB アーキテクチャは、カーネル モード ドライバー (Winusb.sys) および公開するユーザー モード ダイナミック リンク ライブラリ (Winusb.dll) [WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)します。 これらの関数を使用すると、ユーザー モード ソフトウェアでの USB デバイスを管理できます。
 
 Winusb.sys が UMDF 関数のドライバーと関連付けられているデバイスの間のリンクの重要な部分もあります。 Winusb.sys は、デバイスのカーネル モード スタックの上位のフィルター ドライバーとしてインストールされます。 アプリケーションは、読み取り、書き込み、またはデバイスの I/O 制御要求を発行するため、デバイスの UMDF 関数ドライバーと通信します。 ドライバー、フレームワークは、Winusb.sys に要求を渡しますとやり取りします。 Winusb.sys は、要求を処理し、プロトコル ドライバーに渡され、最終的には、デバイスにします。 逆方向のパス、すべての応答を返します。 Winusb.sys は、デバイス スタックのプラグ アンド プレイと電源の所有者としても機能します。
 
@@ -68,11 +68,11 @@ WinUSB で異なるバージョンの Windows でサポートされている高�
 
 | 機能                                | Windows 8.1 以降 | Windows 7/Vista/XP |
 |----------------------------------------|-----------------------|--------------------|
-| デバイス I/O 制御要求            | サポートされている             | サポートされている          |
-| アイソクロナス転送                  | サポートされている             | サポートされない      |
-| 一括、制御、および割り込みの転送 | サポートされている             | サポートされている          |
-| セレクティブ サスペンドします。                      | サポートされている             | サポートされている          |
-| リモート ウェイク                            | サポートされている             | サポートされている          |
+| デバイス I/O 制御要求            | サポート対象             | サポート対象          |
+| アイソクロナス転送                  | サポート対象             | サポートされない      |
+| 一括、制御、および割り込みの転送 | サポート対象             | サポート対象          |
+| セレクティブ サスペンドします。                      | サポート対象             | サポート対象          |
+| リモート ウェイク                            | サポート対象             | サポート対象          |
 
  
 

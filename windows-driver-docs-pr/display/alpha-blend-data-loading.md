@@ -7,12 +7,12 @@ keywords:
 - ブレンド画像 WDK DirectX va なので、アルファ ブレンドのデータの読み込み
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5edf23d4319372fb9f76f989504c7571dea57250
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fccf18e298e57e79a4027f5503247d3c719e3489
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384638"
 ---
 # <a name="alpha-blend-data-loading"></a>アルファ ブレンド データの読み込み
 
@@ -28,7 +28,7 @@ ms.locfileid: "63344639"
 
 -   AYUV のグラフィック画面
 
-[ **DXVA\_ConfigAlphaLoad** ](https://msdn.microsoft.com/library/windows/hardware/ff563129)構造体を使用するどちらの方法を決定します。
+[ **DXVA\_ConfigAlphaLoad** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configalphaload)構造体を使用するどちらの方法を決定します。
 
  
 

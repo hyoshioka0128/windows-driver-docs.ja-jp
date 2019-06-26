@@ -9,17 +9,17 @@ keywords:
 - flowDeleteFn
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc130d5246f663238fd1a65aa94811b1b190c159
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36fa9f32eacb042d91c44ff8578f8af89011fcc8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327650"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385473"
 ---
 # <a name="processing-flow-delete-callouts"></a>フロー削除コールアウトの処理
 
 
-フィルター エンジンは吹き出しの呼び出しますコールアウトで処理されているデータ フローが停止したら、 [ *flowDeleteFn* ](https://msdn.microsoft.com/library/windows/hardware/ff550025)コールアウト ドライバーでは、データにコンテキストを以前が関連付けられている場合、引き出し関数フロー。 吹き出しの*flowDeleteFn*コールアウト関数のコールアウト ドライバーに関連付けられているデータ フロー、データ フローが停止する前にコンテキストをクリーンアップするのに必要なを実行します。
+フィルター エンジンは吹き出しの呼び出しますコールアウトで処理されているデータ フローが停止したら、 [ *flowDeleteFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_flow_delete_notify_fn0)コールアウト ドライバーでは、データにコンテキストを以前が関連付けられている場合、引き出し関数フロー。 吹き出しの*flowDeleteFn*コールアウト関数のコールアウト ドライバーに関連付けられているデータ フロー、データ フローが停止する前にコンテキストをクリーンアップするのに必要なを実行します。
 
 例:
 
@@ -55,7 +55,7 @@ VOID NTAPI
 }
 ```
 
-フィルター エンジンは、データ フローが停止したときに、データ フローに吹き出しが関連付けられたコンテキストを自動的に削除されます。 そのため、コールアウトを呼び出す必要はありません、 [ **FwpsFlowRemoveContext0** ](https://msdn.microsoft.com/library/windows/hardware/ff551169)関数からその[ *flowDeleteFn* ](https://msdn.microsoft.com/library/windows/hardware/ff550025)コールアウト関数データ フローからコンテキストを削除します。
+フィルター エンジンは、データ フローが停止したときに、データ フローに吹き出しが関連付けられたコンテキストを自動的に削除されます。 そのため、コールアウトを呼び出す必要はありません、 [ **FwpsFlowRemoveContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsflowremovecontext0)関数からその[ *flowDeleteFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_flow_delete_notify_fn0)コールアウト関数データ フローからコンテキストを削除します。
 
  
 

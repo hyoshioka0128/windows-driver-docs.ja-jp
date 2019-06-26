@@ -4,12 +4,12 @@ description: モバイル ブロードバンド アプリでブランドを設�
 ms.assetid: 0badd121-ce1d-4be2-a9f0-e062631c00c8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aabf396ccd21a73b8c0ae0ed4f47d89160e2b02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a431bb91333a0573518370484e62d66eadcc077
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383812"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378734"
 ---
 # <a name="design-branding-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリでブランドを設計する
 
@@ -58,7 +58,7 @@ UWP アプリでは、次の方法でブランド化がお勧めします。
 
     ![windows 接続マネージャー](images/mb-fig5-wcm.png)
 
-Windows 10 のガイダンスをブランド化に関する詳細については、次を参照してください。 [UWP アプリのガイドラインをマーケティング](https://msdn.microsoft.com/library/windows/apps/hh694084)します。
+Windows 10 のガイダンスをブランド化に関する詳細については、次を参照してください。 [UWP アプリのガイドラインをマーケティング](https://docs.microsoft.com/windows/uwp/publish/app-marketing-guidelines)します。
 
 ## <a name="span-idquicksummaryspanspan-idquicksummaryspanspan-idquicksummaryspanquick-summary"></a><span id="Quick_summary"></span><span id="quick_summary"></span><span id="QUICK_SUMMARY"></span>簡単な概要
 

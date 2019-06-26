@@ -1,6 +1,6 @@
 ---
-title: Framework ドライバー オブジェクト
-description: Framework ドライバー オブジェクト
+title: フレームワーク ドライバー オブジェクト
+description: フレームワーク ドライバー オブジェクト
 ms.assetid: 6e9e568c-7e4f-48bd-b351-4be0e12cc15b
 keywords:
 - UMDF オブジェクト WDK、ドライバー オブジェクト
@@ -9,19 +9,19 @@ keywords:
 - IWDFDriver
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 263c5b5005fbc9d99c28ffca6b179306a60c35ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8c9a5f69d1cefcf9c61f657fd3d6af14f9ab3c7e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551295"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368665"
 ---
-# <a name="framework-driver-object"></a>Framework ドライバー オブジェクト
+# <a name="framework-driver-object"></a>フレームワーク ドライバー オブジェクト
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-ドライバーによってフレームワーク ドライバー オブジェクトが公開されている、 [IWDFDriver](https://msdn.microsoft.com/library/windows/hardware/ff558893)インターフェイス。 ドライバーのホスト プロセスで読み込まれるドライバー イメージの framework 表現することをお勧めします。 フレームワークは、ドライバーのホスト プロセスに読み込まれた各ドライバーの新しいドライバー オブジェクトを作成します。 **IWDFDriver**インターフェイスは、ドライバーに渡される、 [ **IDriverEntry::OnInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554900)メソッドで、ユーザー モード ドライバーのメイン エントリ ポイントです。
+ドライバーによってフレームワーク ドライバー オブジェクトが公開されている、 [IWDFDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdriver)インターフェイス。 ドライバーのホスト プロセスで読み込まれるドライバー イメージの framework 表現することをお勧めします。 フレームワークは、ドライバーのホスト プロセスに読み込まれた各ドライバーの新しいドライバー オブジェクトを作成します。 **IWDFDriver**インターフェイスは、ドライバーに渡される、 [ **IDriverEntry::OnInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-oninitialize)メソッドで、ユーザー モード ドライバーのメイン エントリ ポイントです。
 
  
 

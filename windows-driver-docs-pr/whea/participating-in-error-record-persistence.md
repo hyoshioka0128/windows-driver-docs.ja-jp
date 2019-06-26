@@ -12,23 +12,23 @@ keywords:
 - WDK WHEA を永続化エラー レコード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28a312a03f6b93a9f5abc4de84251ff612d0eca1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5b431ca415b565bd505abac48b95dd8dad874cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340773"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386448"
 ---
 # <a name="participating-in-error-record-persistence"></a>エラー レコードの永続化への参加
 
 
 エラー レコードの永続化に参加するには、プラグイン PSHED は次のコールバック関数を実装する必要があります。
 
-[*WriteErrorRecord*](https://msdn.microsoft.com/library/windows/hardware/ff560678)
+[*WriteErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_write_error_record)
 
-[*ReadErrorRecord*](https://msdn.microsoft.com/library/windows/hardware/ff559476)
+[*ReadErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_read_error_record)
 
-[*ClearErrorRecord*](https://msdn.microsoft.com/library/windows/hardware/ff559269)
+[*ClearErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_clear_error_record)
 
 次のコード例では、これらのコールバック関数を実装する方法を示します。
 

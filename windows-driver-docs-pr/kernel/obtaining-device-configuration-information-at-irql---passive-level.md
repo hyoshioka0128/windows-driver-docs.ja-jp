@@ -11,12 +11,12 @@ keywords:
 - ドライバー スタック WDK 構成情報
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd7b651700e2d811a0ffe3437f45e1b9ed92ea68
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df25c490a2d5145a65ba8b5bab1a3d8ca134fb47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352062"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384931"
 ---
 # <a name="obtaining-device-configuration-information-at-irql--passivelevel"></a>IRQL でデバイスの構成情報を取得するパッシブ =\_レベル
 
@@ -24,7 +24,7 @@ ms.locfileid: "63352062"
 
 
 
-IRQL でアクセスのデバイス構成領域にパッシブ =\_レベルが使用する必要があります[ **IRP\_MN\_読み取り\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)と[ **IRP\_MN\_書き込み\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/ff551769)します。 IRP スタックの指定の構成領域にアクセスして、I/O バッファーがします。 説明を参照して、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)詳細については、構造体。
+IRQL でアクセスのデバイス構成領域にパッシブ =\_レベルが使用する必要があります[ **IRP\_MN\_読み取り\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)と[ **IRP\_MN\_書き込み\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)します。 IRP スタックの指定の構成領域にアクセスして、I/O バッファーがします。 説明を参照して、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)詳細については、構造体。
 
 次のコード サンプルでは、デバイスの構成の領域にアクセスする方法を示します。
 

@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bcee0636cb5c3141c812735c8c8cb4089044732e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 967902313e3bf1678105a58efc4e8c0e91c1bb00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341491"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358217"
 ---
 # <a name="deletebinaries-xml-element"></a>deleteBinaries XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
-**DeleteBinaries** XML 要素が空の要素を設定する、 **deleteBinaries** DPInst、ときに、システムにコピーされたシステムからバイナリファイルを削除するを構成するには、フラグ[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)がインストールされています。
+**DeleteBinaries** XML 要素が空の要素を設定する、 **deleteBinaries** DPInst、ときに、システムにコピーされたシステムからバイナリファイルを削除するを構成するには、フラグ[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)がインストールされています。
 
 **要素タグ**
 
@@ -79,7 +79,7 @@ ms.locfileid: "63341491"
 </dpinst>
 ```
 
-**注**   Windows 7 以降のオペレーティング システムは ON に設定は無視されます、 **deleteBinaries** XML 要素。 バイナリのファイルは、システムにコピーされたときに、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)がインストールされている、不要になった DPInst を使用して削除できます。
+**注**   Windows 7 以降のオペレーティング システムは ON に設定は無視されます、 **deleteBinaries** XML 要素。 バイナリのファイルは、システムにコピーされたときに、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)がインストールされている、不要になった DPInst を使用して削除できます。
 
  
 

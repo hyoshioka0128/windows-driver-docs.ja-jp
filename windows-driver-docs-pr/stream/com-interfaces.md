@@ -4,19 +4,19 @@ description: 次の COM インターフェイスは、WDK に含まれている�
 ms.assetid: 8443D16A-ACE5-4A34-9FB7-CBACA7230116
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74bca278d5f8b6b1a452f7fafcc3471e2d5c3fef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed2aa26cf3bcdb860c96ef2481282309b2da1257
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329647"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386646"
 ---
 # <a name="com-interfaces"></a>COM インターフェイス
 
 
 次の COM インターフェイスは、WDK に含まれているヘッダーで定義されます。
 
-**重要な**  SDK ヘッダーで提供される従来の COM の使用をお勧め可能であれば、します。 詳細については、次を参照してください。 [COM Fundamentals](https://msdn.microsoft.com/library/windows/desktop/ms694505)します。
+**重要な**  SDK ヘッダーで提供される従来の COM の使用をお勧め可能であれば、します。 詳細については、次を参照してください。 [COM Fundamentals](https://docs.microsoft.com/windows/desktop/com/com-fundamentals)します。
 
  
 

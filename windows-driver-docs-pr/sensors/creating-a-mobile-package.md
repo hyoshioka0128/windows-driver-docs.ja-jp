@@ -4,12 +4,12 @@ description: このトピックでは、モバイル デバイスのドライバ
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a5badee09435dfa13f974503b7f5f1946b4e1797
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e21c33ad075d64279643e85b292ff5056bc29fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349170"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382892"
 ---
 # <a name="creating-a-mobile-package"></a>モバイルのパッケージを作成します。
 
@@ -77,12 +77,12 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 既定の場所に WDK をインストールしたかどうかは、検索できる**pkggen.exe**の次の場所。
 
-*%Systemroot%\\Program Files (x86)\\Windows キット\\10\\ツール\\bin\\i386*を参照してください[pkggen.exe ツールを実行して](https://msdn.microsoft.com/windows/hardware/dn756642.aspx#run-pkg)のモバイル デバイス用のパッケージを作成する方法の手順です。 参照してくださいと[モバイル パッケージを作成する](https://msdn.microsoft.com/windows/hardware/dn756642.aspx)のより包括的な概要。
+*%Systemroot%\\Program Files (x86)\\Windows キット\\10\\ツール\\bin\\i386*を参照してください[pkggen.exe ツールを実行して](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)#run-pkg)のモバイル デバイス用のパッケージを作成する方法の手順です。 参照してくださいと[モバイル パッケージを作成する](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))のより包括的な概要。
 
 ## <a name="related-topics"></a>関連トピック
-[モバイルのパッケージを作成する](https://msdn.microsoft.com/windows/hardware/dn756642.aspx)
+[モバイルのパッケージを作成する](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))
 [INX ファイルを確認して](review-and-revise-the-inf-file.md)
-[pkggen.exe ツールを実行します。](https://msdn.microsoft.com/windows/hardware/dn756642.aspx#run-pkg)
+[pkggen.exe ツールを実行します。](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)#run-pkg)
 
 
 

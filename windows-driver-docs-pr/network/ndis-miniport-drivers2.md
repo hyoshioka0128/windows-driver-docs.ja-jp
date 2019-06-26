@@ -8,12 +8,12 @@ keywords:
 - コネクションレス ドライバー WDK ネットワーク
 ms.date: 11/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b215f5c34c376d90b9dbd3ae969e97a87ffdc192
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5e37ec0e9750ac55bba7a39b313c2b8b00a9ec7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385739"
 ---
 # <a name="miniport-drivers"></a>ミニポート ドライバー
 
@@ -58,4 +58,4 @@ NDIS ミニポート ドライバーは、NDIS 以外の下端を持つことが
 
 [NDIS ミニポート ドライバー](ndis-miniport-drivers.md)
 
-[NDIS ミニポート ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff565969)
+[NDIS ミニポート ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)

@@ -4,12 +4,12 @@ description: WIA 項目カテゴリ
 ms.assetid: b201e365-60d8-4c3b-a9cf-4bbaa318337f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a42aa3a5ddbe5ba30916fc12190a7d9bc18c7862
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3259bac51e56228b1f27bbe02e89ae14ea0ec70e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363048"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383077"
 ---
 # <a name="wia-item-categories"></a>WIA 項目カテゴリ
 
@@ -19,7 +19,7 @@ ms.locfileid: "63363048"
 
 このトピックには、Windows Vista 以降が適用されます。
 
-WIA 項目ツリー内のすべての項目をサポートする必要があります、 [ **WIA\_IPA\_項目\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff551581)プロパティ。 このプロパティは、項目が属する機能のカテゴリを識別します。 カテゴリは、WIA 項目のフラグと、項目に関連付けられている WIA プロパティのセットを決定します。
+WIA 項目ツリー内のすべての項目をサポートする必要があります、 [ **WIA\_IPA\_項目\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)プロパティ。 このプロパティは、項目が属する機能のカテゴリを識別します。 カテゴリは、WIA 項目のフラグと、項目に関連付けられている WIA プロパティのセットを決定します。
 
 WIA では、次の項目のカテゴリを定義します。
 
@@ -52,7 +52,7 @@ A*完成したファイルの項目*WIA スキャナーのデバイス上のフ�
 <a href="" id="wia-category-auto"></a>WIA\_カテゴリ\_自動  
 Windows 7 以降では、[自動項目](auto-item.md)WIA スキャナーのデバイスをサポートする自動構成設定を表す[スキャンの自動構成](auto-configured-scanning.md)します。 この種類のデバイスでは、デスクトップ コンピューターで実行されている WIA アプリケーションを構成する設定を必要とするのではなく、独自のスキャン設定を構成できます。 たとえば、デバイスがデバイスからスキャン操作を開始するユーザーを有効 (の代わりに、アプリケーションのユーザー インターフェイスから) およびデバイスから、操作の入力ソースを選択するアプリケーションは、オフロードを自動項目を使用して、デバイスを選択した入力ソースを構成するタスク。 自動アイテムは、ルート項目の子です。 次の 1 つ以上が、自動の項目を含む WIA ツリーに含めることも必要があります: ベッド項目、フィーダー項目、またはフィルム項目。 アプリケーションは、ルート項目と自動の項目を実装 WIA プロパティを介して、デバイスの自動構成済みのスキャン機能にアクセスできます。 詳細については、次を参照してください。 [WIA して自動アイテムのプロパティがサポートされている](wia-properties-supported-by-an-auto-item.md)します。
 
-各 WIA 項目のカテゴリには、WIA 項目の必要なフラグと、カテゴリ内の項目をサポートする必要があります、し、オプションとして、項目をサポートできるフラグとプロパティのセットをさらに、WIA プロパティのセットがあります。 フラグとさまざまな項目のカテゴリに関連付けられているプロパティの概要については、次を参照してください。 [ **WIA\_IPA\_項目\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff551581)します。 WIA 項目のフラグの完全な一覧を参照してください。 [ **WIA\_IPA\_項目\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff551585)します。
+各 WIA 項目のカテゴリには、WIA 項目の必要なフラグと、カテゴリ内の項目をサポートする必要があります、し、オプションとして、項目をサポートできるフラグとプロパティのセットをさらに、WIA プロパティのセットがあります。 フラグとさまざまな項目のカテゴリに関連付けられているプロパティの概要については、次を参照してください。 [ **WIA\_IPA\_項目\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)します。 WIA 項目のフラグの完全な一覧を参照してください。 [ **WIA\_IPA\_項目\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)します。
 
  
 

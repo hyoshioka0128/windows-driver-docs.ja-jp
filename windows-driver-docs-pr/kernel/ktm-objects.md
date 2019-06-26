@@ -8,12 +8,12 @@ keywords:
 - WDK の KTM オブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 153a1e71943b3ef96f0be3e4636554d003dec5b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 423dd7e3d79fc646751a433e663ef3a324b9c665
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381378"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384229"
 ---
 # <a name="ktm-objects"></a>KTM オブジェクト
 
@@ -36,11 +36,11 @@ ms.locfileid: "63381378"
 
 -   オブジェクトに関する情報を取得する TP コンポーネントを呼び出すことができます、*クエリ*ルーチン。
 
--   TP コンポーネントの呼び出し、オブジェクトのハンドルを閉じる[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)します。
+-   TP コンポーネントの呼び出し、オブジェクトのハンドルを閉じる[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。
 
 KTM では、各オブジェクトに識別子の GUID を割り当てます。 この識別子は GUID とも呼ばれますが、トランザクション オブジェクト、*作業 (UOW) 識別子の単位*クライアントを指定できます。 TP コンポーネントでは、オブジェクトを追跡するために、識別子の Guid を使用できます。 オブジェクトを作成する TP コンポーネントは、後者のコンポーネントが、オブジェクトを識別するハンドルを開けるように、別のコンポーネントに、オブジェクトの識別子 GUID を渡すことができます。
 
-KTM を使用する任意の TP コンポーネントを呼び出すことができます[ **ZwEnumerateTransactionObject** ](https://msdn.microsoft.com/library/windows/hardware/ff566450) KTM を列挙するオブジェクトが、ほとんどのコンポーネントは、このルーチンを呼び出す必要はありません。
+KTM を使用する任意の TP コンポーネントを呼び出すことができます[ **ZwEnumerateTransactionObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntenumeratetransactionobject) KTM を列挙するオブジェクトが、ほとんどのコンポーネントは、このルーチンを呼び出す必要はありません。
 
 このセクションでは、次のトピックについて説明します。
 

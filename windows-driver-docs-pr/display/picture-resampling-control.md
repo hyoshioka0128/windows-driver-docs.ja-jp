@@ -9,12 +9,12 @@ keywords:
 - WDK DirectX VA の画像を再サンプリングします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b2309eb3ae18e3c3654356e66f939ea62513b30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2911efa93b961e1b1f71e4db6dd3687f38e74323
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385567"
 ---
 # <a name="picture-resampling-control"></a>画像のリサンプリング制御
 
@@ -28,7 +28,7 @@ ms.locfileid: "63352219"
 
 再サンプリング コントロールの画像に注意してくださいでは、接続の構成は必要ありません。 その操作には、適切な制限付きモード GUID のサポートのみが必要です。 画像コントロールを再サンプリングは、接続の構成は必要ありません、ために、その操作の最小限の相互運用性のセットを定義する必要がありますはありません。
 
-1 つのバッファー型で定義されて、 [ **DXVA\_PicResample** ](https://msdn.microsoft.com/library/windows/hardware/ff564010)構造が再サンプリング プロセスを制御します。
+1 つのバッファー型で定義されて、 [ **DXVA\_PicResample** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_picresample)構造が再サンプリング プロセスを制御します。
 
  
 

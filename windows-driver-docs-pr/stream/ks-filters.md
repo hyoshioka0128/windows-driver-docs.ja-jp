@@ -9,12 +9,12 @@ keywords:
 - カーネル、WDK のストリームをフィルター処理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 014f22a144730dcfae711a5508f4b024cd5cb211
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 186b51cdbc0574b3fb4aefcac05b59d2eebe4507
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382521"
 ---
 # <a name="ks-filters"></a>KS のフィルター
 
@@ -34,9 +34,9 @@ ms.locfileid: "63370249"
 
 グラフには、フィルターのピンの間の内部の関係について説明します。 複雑なフィルターには、フィルターを流れるデータを変換するいくつかのノードがカプセル化する可能性があります。
 
-フィルターを使用してピンと内部のノード間の内部接続を指定する、 [KSPROPSETID\_トポロジ](https://msdn.microsoft.com/library/windows/hardware/ff566598)プロパティ セット。
+フィルターを使用してピンと内部のノード間の内部接続を指定する、 [KSPROPSETID\_トポロジ](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-topology)プロパティ セット。
 
-[ **KSPROPERTY\_トポロジ\_接続**](https://msdn.microsoft.com/library/windows/hardware/ff565802)プロパティは、KS フィルターのノード間のすべての接続を照会します。 このプロパティの配列を返します[ **KSTOPOLOGY\_接続**](https://msdn.microsoft.com/library/windows/hardware/ff567148)します。 各 KSTOPOLOGY\_接続構造は、フィルター内の接続を 1 つのデータ パスを表します。 上、一連の KSTOPOLOGY ミキサーの図で\_接続構造に次のようになります。
+[ **KSPROPERTY\_トポロジ\_接続**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-connections)プロパティは、KS フィルターのノード間のすべての接続を照会します。 このプロパティの配列を返します[ **KSTOPOLOGY\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection)します。 各 KSTOPOLOGY\_接続構造は、フィルター内の接続を 1 つのデータ パスを表します。 上、一連の KSTOPOLOGY ミキサーの図で\_接続構造に次のようになります。
 
 ```cpp
 //    FromNode,       FromNodePin,     ToNode,        ToNodePin,

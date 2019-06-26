@@ -4,17 +4,17 @@ description: Windows Driver Kit (WDK) には、MSBuild を使用してドライ�
 ms.assetid: DB457500-5BFF-4488-95EB-EEB3F63947C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8989e988f12be06b037ecc580c5352b78d201970
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 022400d6b0effce112f6e41bd18ebbf4135a6e03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356622"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360370"
 ---
 # <a name="ctrpp-task"></a>Ctrpp タスク
 
 
-Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、ctrpp.exe ツールを実行できるようにの Ctrpp タスクが用意されています。 Ctrpp.exe の使用方法の詳細については、次を参照してください。 [ **CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)します。
+Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、ctrpp.exe ツールを実行できるようにの Ctrpp タスクが用意されています。 Ctrpp.exe の使用方法の詳細については、次を参照してください。 [ **CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)します。
 
 MSBuild では、Ctrpp 項目を使用して、ctrpp.exe に Ctrpp タスクのパラメーターを送信します。 プロジェクト ファイルで Ctrpp 項目では、ctrpp.exe の項目メタデータにアクセスします。
 
@@ -145,4 +145,4 @@ MSBuild がで ctrpp.exe ファイル a.manifest でを呼び出す上記の例�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[**CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)
+[**CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)

@@ -10,12 +10,12 @@ keywords:
 - 描画 WDK GDI、DEVMODEW 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57a77730819f0c24fd22ed745871f129594e2f15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8f6b727fa18d1fd009a098686cd6056ca5a40ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389897"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384585"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 構造体
 
@@ -23,7 +23,7 @@ ms.locfileid: "63389897"
 ## <span id="ddk_the_devmodew_structure_gg"></span><span id="DDK_THE_DEVMODEW_STRUCTURE_GG"></span>
 
 
-[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)構造体は、Microsoft Windows SDK ドキュメントに記載されている DEVMODE 構造体の Unicode バージョンです。 (DEVMODEW で 'W' サフィックスは、「ワイド」、または Unicode 文字を表します)。アプリケーションは、いずれかの構造体を使用して、DEVMODE 構造体ではなく DEVMODEW 構造体を使用するドライバーが必要です。
+[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造体は、Microsoft Windows SDK ドキュメントに記載されている DEVMODE 構造体の Unicode バージョンです。 (DEVMODEW で 'W' サフィックスは、「ワイド」、または Unicode 文字を表します)。アプリケーションは、いずれかの構造体を使用して、DEVMODE 構造体ではなく DEVMODEW 構造体を使用するドライバーが必要です。
 
 ### <a name="span-idpublicandprivatemembersspanspan-idpublicandprivatemembersspanpublic-and-private-members"></a><span id="public_and_private_members"></span><span id="PUBLIC_AND_PRIVATE_MEMBERS"></span>パブリックおよびプライベート メンバー
 
@@ -41,15 +41,15 @@ ms.locfileid: "63389897"
 
 -   ディスプレイ ドライバー DEVMODEW 初期化
 
-    ディスプレイ ドライバーの[ **DrvGetModes** ](https://msdn.microsoft.com/library/windows/hardware/ff556233)エントリ ポイントを 0 に DEVMODEW 構造体のすべてのメンバーを初期化します。 *DrvGetModes* 、ディスプレイ ドライバー DLL の名前をコピーする、 **dmDeviceName** 、メンバーを設定、 **dmSpecVersion**と**dmDriverVersion**メンバーDEVMODEW 構造体とコピーのバージョンでは、適切なメンバーに属性情報を表示します。
+    ディスプレイ ドライバーの[ **DrvGetModes** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)エントリ ポイントを 0 に DEVMODEW 構造体のすべてのメンバーを初期化します。 *DrvGetModes* 、ディスプレイ ドライバー DLL の名前をコピーする、 **dmDeviceName** 、メンバーを設定、 **dmSpecVersion**と**dmDriverVersion**メンバーDEVMODEW 構造体とコピーのバージョンでは、適切なメンバーに属性情報を表示します。
 
 -   プリンター ドライバー DEVMODEW の初期化
 
-    アプリケーションがいずれかに呼び出しを実行するときに**DocumentProperties** (DLL 関数、Microsoft Windows SDK ドキュメントで説明されているプリンター インターフェイス) または[ **DrvDocumentPropertySheets**](https://msdn.microsoft.com/library/windows/hardware/ff548548) (、NT ベースのオペレーティング システム グラフィックス DDI)、既定値を持つ DEVMODEW 構造を作成します。 アプリケーションでは、自由に DEVMODEW のパブリック メンバーのいずれかを変更します。 すべての変更後、アプリケーションする必要があります、ドライバーの内部 DEVMODEW 構造の変更されたメンバーをマージするために、前に呼び出すことが、同じ関数の 2 番目の呼び出しを加えます。 2 番目の呼び出しが必要ないくつかの変更が正しく機能しないからプリンター ドライバーを呼び出す DEVMODEW 構造を修正する必要があります。 アプリケーションがマージされた DEVMODEW 構造に渡す、ドキュメントが印刷しようとしていますが、**フォーマット**(Microsoft Windows SDK のドキュメントで説明されている) 上に渡されますが、 [ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211) DDI します。 その時点で、ドライバーの DLL のレンダリング DEVMODEW 構造を検証し、印刷ジョブを実行する前に、修復は、必要に応じて、します。
+    アプリケーションがいずれかに呼び出しを実行するときに**DocumentProperties** (DLL 関数、Microsoft Windows SDK ドキュメントで説明されているプリンター インターフェイス) または[ **DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdocumentpropertysheets) (、NT ベースのオペレーティング システム グラフィックス DDI)、既定値を持つ DEVMODEW 構造を作成します。 アプリケーションでは、自由に DEVMODEW のパブリック メンバーのいずれかを変更します。 すべての変更後、アプリケーションする必要があります、ドライバーの内部 DEVMODEW 構造の変更されたメンバーをマージするために、前に呼び出すことが、同じ関数の 2 番目の呼び出しを加えます。 2 番目の呼び出しが必要ないくつかの変更が正しく機能しないからプリンター ドライバーを呼び出す DEVMODEW 構造を修正する必要があります。 アプリケーションがマージされた DEVMODEW 構造に渡す、ドキュメントが印刷しようとしていますが、**フォーマット**(Microsoft Windows SDK のドキュメントで説明されている) 上に渡されますが、 [ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev) DDI します。 その時点で、ドライバーの DLL のレンダリング DEVMODEW 構造を検証し、印刷ジョブを実行する前に、修復は、必要に応じて、します。
 
 ### <a name="span-idusingadevmodewstructurespanspan-idusingadevmodewstructurespanusing-a-devmodew-structure"></a><span id="using_a_devmodew_structure"></span><span id="USING_A_DEVMODEW_STRUCTURE"></span>DEVMODEW 構造体の使用
 
-いくつかの Api および Ddi グラフィックは、印刷、デバイス機能、表示されているユーザー インターフェイス、およびその他のユーザーのクエリを実行するために DEVMODEW 構造体の情報を使用します。 たとえば、 [ **DrvConvertDevMode** ](https://msdn.microsoft.com/library/windows/hardware/ff548532)印刷スプーラー グラフィックス DDI の 1 つのオペレーティング システムのバージョンから DEVMODEW 構造体を別の変換をします。 プリンター ドライバーを別のオペレーティング システムのバージョンで実行されている別のコンピューターから DEVMODEW 構造体を取得する場合は、必要があります。
+いくつかの Api および Ddi グラフィックは、印刷、デバイス機能、表示されているユーザー インターフェイス、およびその他のユーザーのクエリを実行するために DEVMODEW 構造体の情報を使用します。 たとえば、 [ **DrvConvertDevMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvconvertdevmode)印刷スプーラー グラフィックス DDI の 1 つのオペレーティング システムのバージョンから DEVMODEW 構造体を別の変換をします。 プリンター ドライバーを別のオペレーティング システムのバージョンで実行されている別のコンピューターから DEVMODEW 構造体を取得する場合は、必要があります。
 
 ### <a name="span-idmodifyingadevmodewstructurespanspan-idmodifyingadevmodewstructurespanmodifying-a-devmodew-structure"></a><span id="modifying_a_devmodew_structure"></span><span id="MODIFYING_A_DEVMODEW_STRUCTURE"></span>DEVMODEW 構造の変更
 

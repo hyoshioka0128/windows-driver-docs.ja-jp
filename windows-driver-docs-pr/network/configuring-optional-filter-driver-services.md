@@ -7,12 +7,12 @@ keywords:
 - NDIS フィルター ドライバー WDK、サービス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 843e20db3aa8ee01a3ba6105754273993fcb131c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad6ed28f3e075081fb37b6c3edd93a006fe998c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384213"
 ---
 # <a name="configuring-optional-filter-driver-services"></a>オプションのフィルター ドライバー サービスの構成
 
@@ -20,9 +20,9 @@ ms.locfileid: "63341414"
 
 
 
-NDIS フィルター ドライバーを呼び出す[ *FilterSetOptions* ](https://msdn.microsoft.com/library/windows/hardware/ff549972)オプションのフィルター ドライバー サービスを構成する関数。 NDIS 呼び出し*FilterSetOptions*フィルター ドライバーの呼び出しのコンテキスト内で、 [ **NdisFRegisterFilterDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff562608)関数
+NDIS フィルター ドライバーを呼び出す[ *FilterSetOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)オプションのフィルター ドライバー サービスを構成する関数。 NDIS 呼び出し*FilterSetOptions*フィルター ドライバーの呼び出しのコンテキスト内で、 [ **NdisFRegisterFilterDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfregisterfilterdriver)関数
 
-*FilterSetOptions*の既定のエントリ ポイントを登録します。 省略可能な*FilterXxx*関数をオプションのサービスに必要なその他のドライバー リソースを割り当てることができます。 省略可能なサービスをフィルター ドライバーの呼び出しを登録する、 [ **NdisSetOptionalHandlers** ](https://msdn.microsoft.com/library/windows/hardware/ff564550)関数をある特性構造体を渡します、 *OptionalHandlers*パラメーター。
+*FilterSetOptions*の既定のエントリ ポイントを登録します。 省略可能な*FilterXxx*関数をオプションのサービスに必要なその他のドライバー リソースを割り当てることができます。 省略可能なサービスをフィルター ドライバーの呼び出しを登録する、 [ **NdisSetOptionalHandlers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissetoptionalhandlers)関数をある特性構造体を渡します、 *OptionalHandlers*パラメーター。
 
 現在の Windows バージョンでは、オプションのフィルター ドライバーのサービスはありません。
 

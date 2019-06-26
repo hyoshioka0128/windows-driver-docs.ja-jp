@@ -4,12 +4,12 @@ description: Active-Both 割り込みの処理
 ms.assetid: CFA205B1-FDDD-4E27-8CF9-106C8D1CC4EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a72528f4cadb34bd9c91b75385dca8370bc0b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4994396d0e2937f9fea92838f88e17131b11672
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384441"
 ---
 # <a name="handling-active-both-interrupts"></a>Active-Both 割り込みの処理
 
@@ -28,11 +28,11 @@ SoC のハードウェア プラットフォームでアクティブ両方の割
 
 低-高と高から低の遷移を区別するために、ドライバーは、各割り込みの状態を追跡する必要があります。 これを行うには、ドライバーがブール割り込み状態の値であるを維持可能性があります**FALSE**割り込み回線の状態が低いときと**TRUE**行の状態が高い場合。
 
-たとえば、システムの起動時に低に回線の状態が既定値があるとします。 ドライバーの初期化に状態値**FALSE**でその[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数。 状態の変化のシグナル、ドライバーの ISR が呼び出されるたびに、ドライバーを反転その ISR. で状態の値
+たとえば、システムの起動時に低に回線の状態が既定値があるとします。 ドライバーの初期化に状態値**FALSE**でその[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数。 状態の変化のシグナル、ドライバーの ISR が呼び出されるたびに、ドライバーを反転その ISR. で状態の値
 
-回線の状態が高い場合、システムの起動時に有効にした後すぐに割り込みが発生します。 ドライバーを呼び出すため、 [ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)呼び出す代わりに直接、日常的な[ **WdfInterruptCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547345)は即時割り込みの受信のことを確認します。
+回線の状態が高い場合、システムの起動時に有効にした後すぐに割り込みが発生します。 ドライバーを呼び出すため、 [ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)呼び出す代わりに直接、日常的な[ **WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)は即時割り込みの受信のことを確認します。
 
-このソリューションでは、GPIO コント ローラーが、ハードウェアの割り込みのアクティブ両方をサポートすることや、GPIO コント ローラー用ドライバーがのソフトウェアのアクティブな両方の割り込みをエミュレートすることが必要です。 アクティブな両方の割り込みをエミュレートする方法の詳細については、の説明を参照して、 **EmulateActiveBoth**のメンバー、 [**コント ローラー\_属性\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/hh439449)構造体。
+このソリューションでは、GPIO コント ローラーが、ハードウェアの割り込みのアクティブ両方をサポートすることや、GPIO コント ローラー用ドライバーがのソフトウェアのアクティブな両方の割り込みをエミュレートすることが必要です。 アクティブな両方の割り込みをエミュレートする方法の詳細については、の説明を参照して、 **EmulateActiveBoth**のメンバー、 [**コント ローラー\_属性\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags)構造体。
 
 次のコード例では、周辺機器の KMDF ドライバーが割り込み極性を追跡する方法を示します。
 
@@ -171,11 +171,11 @@ EvtDeviceReleaseHardware(
 }
 ```
 
-上記のコードの例で、ドライバーの[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)コールバック関数は、デバイス コンテキストを構成しを呼び出して[ **IoInitializeDpcRequest**](https://msdn.microsoft.com/library/windows/hardware/ff549307)を登録する、 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン。
+上記のコードの例で、ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数は、デバイス コンテキストを構成しを呼び出して[ **IoInitializeDpcRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializedpcrequest)を登録する、 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン。
 
-ドライバーの[ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)ルーチンが割り込み状態の値を反転し、呼び出します[ **IoRequestDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff549657) DPC キューに登録します。
+ドライバーの[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)ルーチンが割り込み状態の値を反転し、呼び出します[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc) DPC キューに登録します。
 
-その[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数では、ドライバーを初期化する状態値**FALSE**号餧ェヒェマル[ **IoConnectInterruptEx**](https://msdn.microsoft.com/library/windows/hardware/ff548378)します。 その[ *EvtDeviceReleaseHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540890)コールバック関数では、ドライバー呼び出し[ **IoDisconnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549093)その ISR. の登録を解除するには
+その[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数では、ドライバーを初期化する状態値**FALSE**号餧ェヒェマル[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)します。 その[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック関数では、ドライバー呼び出し[ **IoDisconnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterruptex)その ISR. の登録を解除するには
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - トランスポート プロトコル ドライバー WDK ネットワーク
 ms.date: 11/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 407ec7bbab7c8c72979949578e3b6b782c8288da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f0859281eff075ca3757b8900e17319f71a59dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378270"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384923"
 ---
 # <a name="protocol-drivers"></a>プロトコル ドライバー
 
@@ -30,4 +30,4 @@ ms.locfileid: "63378270"
 
 [NDIS プロトコル ドライバー](ndis-protocol-drivers.md)
 
-[NDIS プロトコル ドライバー リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff566829)
+[NDIS プロトコル ドライバー リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)

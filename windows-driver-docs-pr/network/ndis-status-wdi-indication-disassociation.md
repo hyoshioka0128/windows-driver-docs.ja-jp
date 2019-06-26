@@ -7,12 +7,12 @@ keywords:
 - NDIS_STATUS_WDI_INDICATION_DISASSOCIATION ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6d0cd33ea71914854021d1f815f6cd58cd44f239
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f635804106a063959944ad2b18959ba78e001a13
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330588"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382896"
 ---
 # <a name="ndisstatuswdiindicationdisassociation"></a>NDIS\_状態\_WDI\_INDICATION\_関連付けの解除
 
@@ -34,9 +34,9 @@ ms.locfileid: "63330588"
 
 | 種類 | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
 | --- | --- | --- | --- |
-| [**WDI\_TLV\_戻せません\_INDICATION\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926292) |   |   | 関連付けの解除を示す値のパラメーターです。 |
-| [**WDI\_TLV\_DISCONNECT\_DEAUTH\_FRAME**](https://msdn.microsoft.com/library/windows/hardware/dn926296) |   | x | 受信した deauthentication フレーム。 これは、802.11 MAC ヘッダーには含まれません。 |
-| [**WDI\_TLV\_切断\_戻せません\_フレーム**](https://msdn.microsoft.com/library/windows/hardware/dn926298) |   | x | 受信した関連付けの解除フレーム。 これは、802.11 MAC ヘッダーには含まれません。 | 
+| [**WDI\_TLV\_戻せません\_INDICATION\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-disassociation-indication-parameters) |   |   | 関連付けの解除を示す値のパラメーターです。 |
+| [**WDI\_TLV\_DISCONNECT\_DEAUTH\_FRAME**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-disconnect-deauth-frame) |   | x | 受信した deauthentication フレーム。 これは、802.11 MAC ヘッダーには含まれません。 |
+| [**WDI\_TLV\_切断\_戻せません\_フレーム**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-disconnect-disassociation-frame) |   | x | 受信した関連付けの解除フレーム。 これは、802.11 MAC ヘッダーには含まれません。 | 
 
 <a name="requirements"></a>要件
 ------------

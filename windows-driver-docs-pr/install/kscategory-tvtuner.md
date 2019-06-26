@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 78e5b04ccb3a57b1566fc5a785218ca88e8cc553
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3374f175c2d5fe9e14222fd41ffd59a91e2f9d7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385543"
 ---
 # <a name="kscategorytvtuner"></a>KSCATEGORY_TVTUNER
 
 
-KSCATEGORY_TVTUNER[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)テレビ チューナー デバイスの機能のカテゴリ (KS)。
+KSCATEGORY_TVTUNER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)テレビ チューナー デバイスの機能のカテゴリ (KS)。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)、[フィルターのグラフ例](https://msdn.microsoft.com/library/windows/hardware/ff559605)、および[エンコーダー デバイス](https://msdn.microsoft.com/library/windows/hardware/ff559535)します。
+ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)、[フィルターのグラフ例](https://docs.microsoft.com/windows-hardware/drivers/stream/filter-graph-examples)、および[エンコーダー デバイス](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-devices)します。
 
 <a name="requirements"></a>要件
 ------------

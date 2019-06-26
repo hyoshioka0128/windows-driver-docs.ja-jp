@@ -12,12 +12,12 @@ keywords:
 - WMI の WDK カーネルでは、クラス
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4f60b9b54329682edccfbc81fea01b995d3fa48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96a19bfc82201c4c116e8098704bbad1a943e504
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387173"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384963"
 ---
 # <a name="driver-defined-wmi-data-items"></a>ドライバーによって定義される WMI データ項目
 
@@ -35,7 +35,7 @@ WMI データまたはイベントのブロックのクラス定義内のデー�
 
 Wmi データ ブロックを送信するときに、ドライバーは 8 バイト境界でブロックの先頭に従う必要があります。 ブロック内のすべての後続のデータ項目は、データ型の対応する配置に合わせて調整する必要があります。 A**ブール**または**uint8**を 1 バイト境界に合わせて調整する必要があります。 A **sint16**、 **uint16**、または**文字列**項目は、2 バイト境界、という具合に合わせて調整する必要があります。 配列は、配列の基本型に基づいて配置する必要があります。 バイトの配列は、バイト境界に合わせて調整する必要があります、uint64 型の配列は、8 バイト境界、という具合に合わせて調整する必要があります。 埋め込みクラスは、埋め込みのクラス内で最大の要素に定義されている埋め込みのクラスの自然なアラインメントに基づいて配置する必要があります。 たとえば、埋め込みクラスに、 **uint64**クラスは、8 バイト境界に合わせて調整する必要があります。 WMI データ項目の配置と同じ規則に依存して、 **、/zp8 です**Microsoft C コンパイラをオンにします。
 
-必要な項目以外のブロックでデータ項目を定義する必ずしも必要はありませんドライバー ライター **InstanceName**と**Active**します。 たとえば、空のイベント ブロックは、追加のデータのないイベントが発生したことを通知として使用できます。 またはデータ ブロックへの応答でインスタンス名を列挙だけですが、 [ **IRP\_MN\_クエリ\_すべて\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff551650)要求。
+必要な項目以外のブロックでデータ項目を定義する必ずしも必要はありませんドライバー ライター **InstanceName**と**Active**します。 たとえば、空のイベント ブロックは、追加のデータのないイベントが発生したことを通知として使用できます。 またはデータ ブロックへの応答でインスタンス名を列挙だけですが、 [ **IRP\_MN\_クエリ\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)要求。
 
 次の表では、WMI データまたはイベント ブロックで項目を定義するために使用する MOF データ型を示します。 MOF データの種類の詳細については、Microsoft Windows SDK を参照してください。
 

@@ -8,12 +8,12 @@ keywords:
 - SYSVAD
 ms.date: 02/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f080677e88433499d3a8ee3840d3810e8aa476b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c44da033442bc81d65d1ba5ec7e439454fb7308a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363303"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361446"
 ---
 # <a name="span-iddebuggerdebuguniversaldriverskernel-modespandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>ステップ バイ ステップのラボ (Sysvad カーネル モード) - ドライバのデバッグします。
 
@@ -39,7 +39,7 @@ WinDbg ステップにより、ブレークポイントの設定のソース コ
 -   Windows 10 用 Windows Driver Kit (WDK)
 -   Windows 10 用サンプル Sysvad オーディオ ドライバー
 
-ダウンロードして、WDK をインストールする方法については、次を参照してください。 [Windows Driver Kit (WDK) のダウンロード](https://developer.microsoft.com/windows/hardware/windows-driver-kit)します。
+ダウンロードして、WDK をインストールする方法については、次を参照してください。 [Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)します。
 
 ## <a name="span-idsysvaddebuggingwalkthroughoverviewspansysvad-debugging-walkthrough"></a><span id="sysvad_debugging_walkthrough_overview"></span>Sysvad デバッグ チュートリアル
 
@@ -79,7 +79,7 @@ WinDbg ステップにより、ブレークポイントの設定のソース コ
 
 ![二重矢印で接続されている 2 台の pc](images/debuglab-image-targethostdrawing1.png)
 
-カーネル モードのアプリケーションを使用し、WinDbg を使用して、イーサネット転送を KDNET を使用することをお勧めします。 イーサネット トランスポート プロトコルを使用する方法については、次を参照してください。 [WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)します。 ターゲット コンピューターの設定に関する詳細については、次を参照してください。[手動ドライバーの展開のコンピューターを準備する](https://msdn.microsoft.com/windows-drivers/develop/preparing_a_computer_for_manual_driver_deployment)と[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
+カーネル モードのアプリケーションを使用し、WinDbg を使用して、イーサネット転送を KDNET を使用することをお勧めします。 イーサネット トランスポート プロトコルを使用する方法については、次を参照してください。 [WinDbg (カーネル モード) の概要](getting-started-with-windbg--kernel-mode-.md)します。 ターゲット コンピューターの設定に関する詳細については、次を参照してください。[手動ドライバーの展開のコンピューターを準備する](https://docs.microsoft.com/windows-hardware/drivers)と[設定を KDNET ネットワーク カーネル デバッグを自動的に](setting-up-a-network-debugging-connection-automatically.md)します。
 
 ### <a name="span-idconfigurekernelmodedebuggingusingethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="configure__kernel_mode_debugging_using_ethernet"></span>イーサネットを使用してカーネル – モードのデバッグを構成します。
 
@@ -254,7 +254,7 @@ DML versions of commands on by default
 
 **ターゲット システム上の Windows のバージョンの表示**
 
-5. 」と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg] ウィンドウでコマンド。
+5. 」と入力して、ターゲット システムでバージョン情報の詳細を表示、 [ **vertarget (ターゲット コンピューター バージョンの表示)** ](vertarget--show-target-computer-version-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: kd> vertarget
@@ -269,7 +269,7 @@ System Uptime: 0 days 01:31:58.931
 
 **読み込まれたモジュールを一覧表示します。**
 
-6. 」と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg] ウィンドウでコマンド。
+6. 」と入力して、読み込まれたモジュールを表示することで、適切なカーネル モード プロセスを使用していることを確認することができます、 [ **lm (読み込まれたモジュールの一覧)** ](lm--list-loaded-modules-.md) WinDbg ウィンドウでコマンド。
 
 ```dbgcmd
 0: Kd> lm
@@ -312,11 +312,11 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     このラボでは、ユニバーサル ドライバー サンプルは、1 つの zip ファイルをダウンロードする方法を示します。
 
-    a.  Master.zip ファイルをローカル ハード ドライブにダウンロードします。
+    a. Master.zip ファイルをローカル ハード ドライブにダウンロードします。
 
     <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-    b.  右クリックして*Windows ドライバーのサンプル-master.zip*、選択**すべて展開**します。 新しいフォルダーを指定するか、抽出したファイルを保存する既存のサブスクリプションへの参照します。 たとえば、指定する*c:\\WDK\_サンプル\\*として新しいファイルが抽出先フォルダーです。
+    b. 右クリックして*Windows ドライバーのサンプル-master.zip*、選択**すべて展開**します。 新しいフォルダーを指定するか、抽出したファイルを保存する既存のサブスクリプションへの参照します。 たとえば、指定する*c:\\WDK\_サンプル\\* として新しいファイルが抽出先フォルダーです。
 
     c. ファイルが抽出されると、次のサブフォルダーに移動します。
 
@@ -332,7 +332,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
 3.  **サンプルの構成とプラットフォームを設定します。**
 
-    ソリューション エクスプ ローラーで右クリックして**ソリューション 'sysvad' (7 プロジェクト)**、選択**Configuration Manager**します。 構成とプラットフォームの設定は、4 つのプロジェクトの同じことを確認します。 既定では、構成が"Win10 Debug"に設定し、プラットフォームのすべてのプロジェクトの"Win64"に設定されています。 任意の構成または 1 つのプロジェクトのプラットフォームの変更を加えた場合は、残りの 3 つのプロジェクトに対しても同じ変更を行う必要があります。
+    ソリューション エクスプ ローラーで右クリックして**ソリューション 'sysvad' (7 プロジェクト)** 、選択**Configuration Manager**します。 構成とプラットフォームの設定は、4 つのプロジェクトの同じことを確認します。 既定では、構成が"Win10 Debug"に設定し、プラットフォームのすべてのプロジェクトの"Win64"に設定されています。 任意の構成または 1 つのプロジェクトのプラットフォームの変更を加えた場合は、残りの 3 つのプロジェクトに対しても同じ変更を行う必要があります。
 
     **注**  このラボでは、64 ビット Windows が使用されている前提としています。 32 ビット Windows を使用している場合は、32 ビットのドライバーをビルドします。
 
@@ -769,7 +769,7 @@ ENABLE_OPTIMIZER 設定 = 0
 
 ![約 20 のノードを持つデバイス ノード ツリー](images/debuglab-image-device-node-tree.png)
 
-**注**  より複雑なドライバー スタックの詳細については、次を参照してください。[ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/hh439632)と[デバイス ノードとデバイス スタック](https://msdn.microsoft.com/library/windows/hardware/ff554721)します。
+**注**  より複雑なドライバー スタックの詳細については、次を参照してください。[ドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)と[デバイス ノードとデバイス スタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)します。
 
  
 
@@ -1424,7 +1424,7 @@ MixerVolume でブレークポイントを設定するには、次の手順を�
 11 00000000`00000000 : 00000000`00000000 00000000`00000000 00000000`00000080 00000000`00000000 : 0x12e
 ```
 
-さらにコードを調べるには、DML を使用できます。 00 最初のエントリをクリックすると、 [ **.frame (ローカル コンテキストの設定)** ](-frame--set-local-context-.md)コンテキストを設定するコマンドを使用し、 [ **dv (ローカル変数の表示)**](dv--display-local-variables-.md)コマンドには、ローカル変数が表示されます。
+さらにコードを調べるには、DML を使用できます。 00 最初のエントリをクリックすると、 [ **.frame (ローカル コンテキストの設定)** ](-frame--set-local-context-.md)コンテキストを設定するコマンドを使用し、 [ **dv (ローカル変数の表示)** ](dv--display-local-variables-.md)コマンドには、ローカル変数が表示されます。
 
 ```dbgcmd
 0: kd> .frame 0n0;dv /t /v
@@ -1451,7 +1451,7 @@ ffffd001`c3098218 class CMiniportWaveRTStream * stream = 0x00000000`00000000
 
 -   使用して、`!process`サウンドの再生に関連する現在のプロセスを表示するコマンド。
 
-    詳細については、次を参照してください[ **! プロセス。**](-process.md)
+    詳細については、次を参照してください[ **! プロセス。** ](-process.md)
 
 プロセスが audiodg.exe に関連付けられている出力を示しています。 このトピックの前のセクションで説明されているブレークポイントでまだの場合は、現在のプロセスが audiodg.exe イメージに関連付けられて場合があります。
 
@@ -1800,7 +1800,7 @@ fffff803`bb757020 cc              int     3
 
 ![windbg は約 12 レジスタが表示されたウィンドウを登録します。](images/sysvad-lab-audio-display-registers.png)
 
-レジスタの内容の表示は、アセンブリ言語でコードが実行およびその他のシナリオでのステップするときに役立ちます。 詳細については、次を参照してください。 [ **r (レジスタ)**](r--registers-.md)します。
+レジスタの内容の表示は、アセンブリ言語でコードが実行およびその他のシナリオでのステップするときに役立ちます。 詳細については、次を参照してください。 [ **r (レジスタ)** ](r--registers-.md)します。
 
 レジスタの内容については、次を参照してください。 [x86 アーキテクチャ](x86-architecture.md)と[x64 アーキテクチャ](x64-architecture.md)します。
 

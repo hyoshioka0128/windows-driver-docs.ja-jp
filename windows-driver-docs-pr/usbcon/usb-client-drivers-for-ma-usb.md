@@ -3,12 +3,12 @@ Description: MA USB パケットを送信する USB デバイス ドライバー
 title: Media-Agnostic (MA-USB) 用 USB クライアント ドライバー
 ms.date: 09/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 572dcf688633987f3b14b9fae2da9cf889a8c82e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9bb01d052ea99f135e23811611bb71cc04385b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368749"
 ---
 # <a name="usb-client-drivers-for-media-agnostic-ma-usb"></a>Media-Agnostic (MA-USB) 用 USB クライアント ドライバー
 
@@ -30,7 +30,7 @@ Windows 10 バージョン 1709 で USB ドライバー スタック パケッ�
 この URB を構築するためのベスト プラクティスを次に示します。
 
 
--    呼び出すことによってこの URB を割り当てる必要がありますクライアント dirver [WdfUsbTargetDeviceCreateUrb](https://msdn.microsoft.com/library/windows/hardware/hh439423)または[USBD_UrbAllocate](https://msdn.microsoft.com/library/windows/hardware/hh406250)します。 
+-    呼び出すことによってこの URB を割り当てる必要がありますクライアント dirver [WdfUsbTargetDeviceCreateUrb](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)または[USBD_UrbAllocate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)します。 
 - URB に送信されることができます < = ディスパッチ レベル。
 - URB は非アイソクロナス エンドポイントを対象となる、USB ドライバー スタックでは、要求が失敗します。
 - クライアント ドライバーはこの URB がサード パーティ製の USB スタックでサポートされていると想定する必要があります。 すべて Microsoft によってサポートされる指定された受信トレイの USB クライアント ドライバーを = です。
@@ -45,29 +45,29 @@ Windows 10 バージョン 1709 で USB ドライバー スタック パケッ�
 ## <a name="getting-the-host-controller-transport-characteristics"></a>ホスト コント ローラーのトランスポート特性を取得します。
 クライアント ドライバーでは、これらの Ioctl 要求を送信することによってトランスポート特性を取得できます。
 
--    [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://msdn.microsoft.com/Library/Windows/Hardware/36CF2034-C816-421A-8B59-A4DC4EFFEB70)
--    [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/4192501F-5A30-463C-924D-CD4F2C8C3764)
--    [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/1B71794C-EBAD-4F6C-A71C-C0D419D486BE) 
--    [IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/A6D17761-4E5F-42FC-AB40-C2BCE7769243)
+-    [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)
+-    [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)
+-    [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change) 
+-    [IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)
 
 トランスポートの特性は、USB ドライバー スタックがそれらの値を公開する、基になるトランスポートに依存するために常に利用できない可能性があります。 そのため、クライアント ドライバーする必要があります情報を決定する、他のメカニズムを介して IOCTL 要求が失敗したときにします。 
 
 ### <a name="query-for-the-current-transport-characterisctics"></a>現在のトランスポート characterisctics のクエリ
 
-クライアント ドライバーは送信することによって特定の時点でのトランスポート特性をクエリすることができます、 [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://msdn.microsoft.com/Library/Windows/Hardware/36CF2034-C816-421A-8B59-A4DC4EFFEB70)要求。 要求を受信するには、USB ドライバー スタックがと共に直ちに完了 USB_TRANSPORT_CHARACTERISTICS 構造内の現在のトランスポート特性に関する情報。 情報は示しませんが常に、この要求での変更をアルゴリズムを決定する、またはストリームの開始のドライバーで使用できます。 
+クライアント ドライバーは送信することによって特定の時点でのトランスポート特性をクエリすることができます、 [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)要求。 要求を受信するには、USB ドライバー スタックがと共に直ちに完了 USB_TRANSPORT_CHARACTERISTICS 構造内の現在のトランスポート特性に関する情報。 情報は示しませんが常に、この要求での変更をアルゴリズムを決定する、またはストリームの開始のドライバーで使用できます。 
 
 ### <a name="receive-changes-in-trasport-characteristics"></a>Trasport 特性の変更を受信します。
 MA USB、基になるトランスポートがワイヤード (有線)、ワイヤレスで可能性があります。 これらのメディアのトランスポート特性は、時間の経過と共に大きく異なることができます。 クライアント ドライバーで継続的な変更通知を受け取ることができます。
 
-1.    送信、 [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/4192501F-5A30-463C-924D-CD4F2C8C3764)要求の通知を登録します。 登録が成功した場合、クライアント ドライバーは、ハンドルとトランスポート特性の初期値を受け取ります。
+1.    送信、 [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)要求の通知を登録します。 登録が成功した場合、クライアント ドライバーは、ハンドルとトランスポート特性の初期値を受け取ります。
 
-2.  送信、 [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/1B71794C-EBAD-4F6C-A71C-C0D419D486BE)手順 1. で登録ハンドルを要求します。 USB ドライバー スタックは、保留中の要求を保持します。 トランスポート特性の変更のたびに、トランスポートの特性の新しい値で保留中の要求が完了しました。
+2.  送信、 [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change)手順 1. で登録ハンドルを要求します。 USB ドライバー スタックは、保留中の要求を保持します。 トランスポート特性の変更のたびに、トランスポートの特性の新しい値で保留中の要求が完了しました。
 
-3.  クライアントが完了し、さらに通知の取得中に関心がない、そのことを確認しますが、スタック内の保留中の Ioctl がないと、IOCTL サブ コードを送信して[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/A6D17761-4E5F-42FC-AB40-C2BCE7769243)登録ハンドルを渡して、します。 クライアントは、保留中の変更要求の登録を解除場合、USB スタックは完了して IOCTL 登録解除を完了する前にします。
+3.  クライアントが完了し、さらに通知の取得中に関心がない、そのことを確認しますが、スタック内の保留中の Ioctl がないと、IOCTL サブ コードを送信して[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)登録ハンドルを渡して、します。 クライアントは、保留中の変更要求の登録を解除場合、USB スタックは完了して IOCTL 登録解除を完了する前にします。
 
 ### <a name="query-for-device-characteristics"></a>デバイスの特性のクエリ
 
-Determione に最大値などの USB デバイスに関する標準の特性が送信し、クライアント ドライバーを送信するすべての要求の遅延を受信、 [IOCTL_USB_GET_DEVICE_CHARACTERISTICS](https://msdn.microsoft.com/Library/Windows/Hardware/D4A8DE43-3E81-4A1C-B1C0-ABE6000D9F11)要求。
+Determione に最大値などの USB デバイスに関する標準の特性が送信し、クライアント ドライバーを送信するすべての要求の遅延を受信、 [IOCTL_USB_GET_DEVICE_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_device_characteristics)要求。
 
 ## <a name="setting-priority-for-a-bulk-endpoint"></a>一括エンドポイントの優先度の設定
 
@@ -100,13 +100,13 @@ REG_MULTI_SZ:"EndpointPriorities" =
 "2,1,0,BULK_OUT,1,INTERACTIVE"” // BULK OUT endpoint in configuration 2, interface 1, alt setting 1 has INTERACTIVE priority.
 ```
 ## <a name="see-also"></a>関連項目
-[WdfUsbTargetDeviceCreateUrb](https://msdn.microsoft.com/library/windows/hardware/hh439423)
+[WdfUsbTargetDeviceCreateUrb](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)
 
-[USBD_UrbAllocate](https://msdn.microsoft.com/library/windows/hardware/hh406250)
-[IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://msdn.microsoft.com/Library/Windows/Hardware/36CF2034-C816-421A-8B59-A4DC4EFFEB70)
+[USBD_UrbAllocate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)
+[IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)
 
-[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/4192501F-5A30-463C-924D-CD4F2C8C3764)
+[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)
 
-[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/1B71794C-EBAD-4F6C-A71C-C0D419D486BE)
+[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change)
 
-[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://msdn.microsoft.com/Library/Windows/Hardware/A6D17761-4E5F-42FC-AB40-C2BCE7769243)
+[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)

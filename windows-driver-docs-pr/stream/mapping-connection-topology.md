@@ -11,12 +11,12 @@ keywords:
 - BDA_TEMPLATE_CONNECTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd11de6cf3cbccd37b04b84ee44ab2ba2b87f472
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a929406b41c719dbf76f5b617f0906d39361691
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391382"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386639"
 ---
 # <a name="mapping-connection-topology"></a>接続トポロジのマッピング
 
@@ -24,15 +24,15 @@ ms.locfileid: "63391382"
 
 
 
-BDA サポート ライブラリ プロパティとメソッドに代わって BDA ミニドライバー リング 3 でのアプリケーションを提供するためには、BDA ミニドライバーは BDA サポート ライブラリへの接続トポロジのマッピングを指定する必要があります。 BDA ミニドライバーの配列では、このマッピングを提供する[ **BDA\_テンプレート\_接続**](https://msdn.microsoft.com/library/windows/hardware/ff556558)構造体。 BDA ミニドライバー渡しますこの BDA\_テンプレート\_接続配列の配列の[ **KSTOPOLOGY\_接続**](https://msdn.microsoft.com/library/windows/hardware/ff567148) を呼び出すときに構造体[ **BdaCreateFilterFactory** ](https://msdn.microsoft.com/library/windows/hardware/ff556438)関数をサポートします。 参照してください[開始 BDA ミニドライバー](starting-a-bda-minidriver.md)詳細についてはします。 この配列は、フィルターまたはフィルターおよび隣接するフィルターの間に作成できるノードと暗証番号 (pin) の型の間のすべての使用可能な接続の表現を提供します。
+BDA サポート ライブラリ プロパティとメソッドに代わって BDA ミニドライバー リング 3 でのアプリケーションを提供するためには、BDA ミニドライバーは BDA サポート ライブラリへの接続トポロジのマッピングを指定する必要があります。 BDA ミニドライバーの配列では、このマッピングを提供する[ **BDA\_テンプレート\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_template_connection)構造体。 BDA ミニドライバー渡しますこの BDA\_テンプレート\_接続配列の配列の[ **KSTOPOLOGY\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kstopology_connection) を呼び出すときに構造体[ **BdaCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatefilterfactory)関数をサポートします。 参照してください[開始 BDA ミニドライバー](starting-a-bda-minidriver.md)詳細についてはします。 この配列は、フィルターまたはフィルターおよび隣接するフィルターの間に作成できるノードと暗証番号 (pin) の型の間のすべての使用可能な接続の表現を提供します。
 
-ネットワーク プロバイダーのフィルターは、KSPROPERTY こと、その後\_BDA\_テンプレート\_の接続プロパティの要求、 [KSPROPSETID\_BdaTopology](https://msdn.microsoft.com/library/windows/hardware/ff566561)プロパティ フィルターの設定ミニドライバーの接続トポロジを取得する BDA ミニドライバーのインスタンス。 さらに BDA ミニドライバー、 [ **BdaPropertyTemplateConnections** ](https://msdn.microsoft.com/library/windows/hardware/ff556501)フィルターのテンプレートの接続の一覧を返す関数をサポート (BDA\_テンプレート\_接続の構造) KSTOPOLOGY の配列で\_接続構造体。 Bda メンバー\_テンプレート\_接続構造が次の接続の種類をノードと pin のペアを識別します。
+ネットワーク プロバイダーのフィルターは、KSPROPERTY こと、その後\_BDA\_テンプレート\_の接続プロパティの要求、 [KSPROPSETID\_BdaTopology](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdatopology)プロパティ フィルターの設定ミニドライバーの接続トポロジを取得する BDA ミニドライバーのインスタンス。 さらに BDA ミニドライバー、 [ **BdaPropertyTemplateConnections** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertytemplateconnections)フィルターのテンプレートの接続の一覧を返す関数をサポート (BDA\_テンプレート\_接続の構造) KSTOPOLOGY の配列で\_接続構造体。 Bda メンバー\_テンプレート\_接続構造が次の接続の種類をノードと pin のペアを識別します。
 
 -   接続の開始位置、ノードと暗証番号 (pin) の種類
 
 -   接続の終了位置となるノードと暗証番号 (pin) の種類
 
-− 1 の値に、ノードの種類を設定するには、接続を開始またはそれぞれ上流または下流のいずれかのフィルターの暗証番号 (pin) で終了することを示します。 それ以外の場合、ノード型の値は、内部ノード型の 0 から始まる配列内の要素のインデックスに対応します。 この配列の配列は、 [ **KSNODE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563473)構造体。 暗証番号 (pin) 型の値は、テンプレートのフィルター記述子 BDA ミニドライバーをで使用可能な暗証番号 (pin) 型の 0 から始まる配列内の要素のインデックスに対応します。 この配列の配列は、 [ **KSPIN\_記述子\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff563534)構造体。
+− 1 の値に、ノードの種類を設定するには、接続を開始またはそれぞれ上流または下流のいずれかのフィルターの暗証番号 (pin) で終了することを示します。 それ以外の場合、ノード型の値は、内部ノード型の 0 から始まる配列内の要素のインデックスに対応します。 この配列の配列は、 [ **KSNODE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksnode_descriptor)構造体。 暗証番号 (pin) 型の値は、テンプレートのフィルター記述子 BDA ミニドライバーをで使用可能な暗証番号 (pin) 型の 0 から始まる配列内の要素のインデックスに対応します。 この配列の配列は、 [ **KSPIN\_記述子\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)構造体。
 
 次のコード スニペットは、ノードの種類と BDA ミニドライバーのフィルター記述子をテンプレートで使用可能な暗証番号 (pin) 型の配列などを示しています。
 

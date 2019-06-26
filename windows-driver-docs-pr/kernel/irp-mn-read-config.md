@@ -6,12 +6,12 @@ ms.assetid: cbc5b959-0aae-4c86-b490-296965a7f158
 keywords:
 - IRP_MN_READ_CONFIG カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bb3a95a97e2de5a3c139b7485f9f930da15ec02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2609a1cb456b06e1fb47687d82551c6c7213852
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381412"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370840"
 ---
 # <a name="irpmnreadconfig"></a>IRP\_MN\_読み取り\_構成
 
@@ -31,7 +31,7 @@ ms.locfileid: "63381412"
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.ReadWriteConfig**のメンバー、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造自体は、次を含む構造体情報:
+**Parameters.ReadWriteConfig**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造自体は、次を含む構造体情報:
 
 ```cpp
 ULONG WhichSpace;
@@ -53,7 +53,7 @@ ULONG Length
 </colgroup>
 <thead>
 <tr class="header">
-<th>値</th>
+<th>Value</th>
 <th>Bus</th>
 <th>説明</th>
 </tr>
@@ -121,17 +121,17 @@ PCI\_*XXX*値 Wdm.h で定義されます。 Pc カード\_*XXX*値 Ntddpcm.h �
 
 バス ドライバーでは、その子デバイス (子 Pdo) の場合は、この IRP を処理します。
 
-関数とフィルター ドライバーは、この IRP; を処理しません[次へ] の下位のドライバーに変更を加えるに渡される**Irp -&gt;IoStatus**します。状態と、それらを設定しないでください、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。
+関数とフィルター ドライバーは、この IRP; を処理しません[次へ] の下位のドライバーに変更を加えるに渡される**Irp -&gt;IoStatus**します。状態と、それらを設定しないでください、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
 
 この要求を処理するバス ドライバーには、ドライバーがサポートする値が含まれていることを確認する WhichSpace パラメーターを確認する必要があります。
 
-参照してください[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
 
 **この IRP を送信します。**
 
 通常、関数のドライバーでは、先がアタッチされているし、IRP が親のバス ドライバーによって処理されるデバイス スタックの上位のドライバーをこの IRP を送信します。
 
-参照してください[Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
+参照してください[Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)Irp を送信する方法について。 この IRP に具体的には、次の手順が適用されます。
 
 -   ページ プールからバッファーを確保し、ゼロに初期化します。
 
@@ -145,9 +145,9 @@ PCI\_*XXX*値 Wdm.h で定義されます。 Pc カード\_*XXX*値 Ntddpcm.h �
 
 ドライバーがディスパッチにバスの構成の領域にアクセスできる\_親バス ドライバーは、このようなインターフェイスをサポートしている場合に、バス インターフェイス ルーチンを通じてレベルします。 バスのインターフェイスを取得するドライバーの送信、 [ **IRP\_MN\_クエリ\_インターフェイス**](irp-mn-query-interface.md)ドライバーが接続されているデバイス スタックを要求します。 ドライバーは、インターフェイスで返される適切なルーチンを呼び出します。
 
-ディスパッチから構成領域を読み取るなど\_レベル、ドライバーが呼び出せる**IRP\_MN\_クエリ\_インターフェイス**を取得するドライバーの初期化中に、 [**BUS\_インターフェイス\_標準**](https://msdn.microsoft.com/library/windows/hardware/ff540707)親バス ドライバーからのインターフェイス。 ドライバーは、IRQL パッシブから IRP のクエリを送信\_レベル。 以降、IRQL のディスパッチにコードから\_レベルなど、インターフェイスで返される適切なルーチンを呼び出すと、ドライバー、 **Interface.GetBusData**ルーチン。
+ディスパッチから構成領域を読み取るなど\_レベル、ドライバーが呼び出せる**IRP\_MN\_クエリ\_インターフェイス**を取得するドライバーの初期化中に、 [**BUS\_インターフェイス\_標準**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_bus_interface_standard)親バス ドライバーからのインターフェイス。 ドライバーは、IRQL パッシブから IRP のクエリを送信\_レベル。 以降、IRQL のディスパッチにコードから\_レベルなど、インターフェイスで返される適切なルーチンを呼び出すと、ドライバー、 **Interface.GetBusData**ルーチン。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

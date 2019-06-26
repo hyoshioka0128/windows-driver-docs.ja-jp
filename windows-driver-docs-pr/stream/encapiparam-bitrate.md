@@ -4,12 +4,12 @@ description: ENCAPIPARAM\_ビットレート
 ms.assetid: a0fba9b3-7ce3-407d-b53f-fd54a50cbdcb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ae8d8b65c7146bca14fda44ccf1b8374d1ea8c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd0909ed9eab9fc349eb1125117c5a56c4472f5a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363659"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384142"
 ---
 # <a name="encapiparambitrate"></a>ENCAPIPARAM\_ビットレート
 
@@ -49,11 +49,11 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスで
 
  
 
-プロパティの値 (データの操作) は、VT\_UI4 ステップで指定された、デバイスでサポートされているビット レートの範囲、 **PropertyItem.Values**のメンバー [ **KSPROPERTY\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff565617)構造体。
+プロパティの値 (データの操作) は、VT\_UI4 ステップで指定された、デバイスでサポートされているビット レートの範囲、 **PropertyItem.Values**のメンバー [ **KSPROPERTY\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_set)構造体。
 
 ### <a name="comments"></a>コメント
 
-このプロパティを使用する方法のサンプルでは、次を参照してください。[エンコーダーのコード例](https://msdn.microsoft.com/library/windows/hardware/ff559532)します。
+このプロパティを使用する方法のサンプルでは、次を参照してください。[エンコーダーのコード例](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-code-examples)します。
 
 ミニドライバーは、静的なを指定するかに必要な**PropertyItem.Values**プロパティ項目またはハンドルの基本的な説明がクエリをサポートし、値を入力します。 ミニドライバーは、このプロパティの既定値も指定する必要があります。
 
@@ -63,7 +63,7 @@ ENCAPIPARAM\_ビットレート プロパティを使用して、デバイスで
 
 ### <a name="see-also"></a>参照
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)、 [ **VIDEOENCODER\_ビットレート\_モード**](https://msdn.microsoft.com/library/windows/hardware/ff568695)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)、 [ **VIDEOENCODER\_ビットレート\_モード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-videoencoder_bitrate_mode)
 
  
 

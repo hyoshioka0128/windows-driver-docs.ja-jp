@@ -8,12 +8,12 @@ keywords:
 - WDK Pscript のエスケープ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b5cb6b6cb2f0bb6e26622921a34fa492e64ca9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73afe4ef884e34ead82850ea2be842a9b8eb52fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373468"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384695"
 ---
 # <a name="pscript-supported-escapes"></a>Pscript でサポートされているエスケープ
 
@@ -42,12 +42,12 @@ Pscript5 のプリンター ドライバーでは、以下のエスケープを�
 <tr class="even">
 <td><p>CHECKJPEGFORMAT</p></td>
 <td><p>JPEG イメージをプリンターが処理できるかどうかを決定します。 このエスケープの詳細については、Microsoft Windows sdk で CHECKJPEGFORMAT を参照してください。</p>
-<p>このエスケープへの呼び出しの生成、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556260" data-raw-source="[&lt;strong&gt;DrvQueryDeviceSupport&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556260)"> <strong>DrvQueryDeviceSupport</strong> </a>関数。</p></td>
+<p>このエスケープへの呼び出しの生成、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydevicesupport" data-raw-source="[&lt;strong&gt;DrvQueryDeviceSupport&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydevicesupport)"> <strong>DrvQueryDeviceSupport</strong> </a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>CHECKPNGFORMAT</p></td>
 <td><p>プリンターが PNG イメージを処理できるかどうかを決定します。 このエスケープの詳細については、Windows sdk で CHECKPNGFORMAT を参照してください。</p>
-<p>このエスケープへの呼び出しの生成、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556260" data-raw-source="[&lt;strong&gt;DrvQueryDeviceSupport&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556260)"> <strong>DrvQueryDeviceSupport</strong> </a>関数。</p></td>
+<p>このエスケープへの呼び出しの生成、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydevicesupport" data-raw-source="[&lt;strong&gt;DrvQueryDeviceSupport&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydevicesupport)"> <strong>DrvQueryDeviceSupport</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>CLIP_TO_PATH</p></td>
@@ -60,13 +60,13 @@ Pscript5 のプリンター ドライバーでは、以下のエスケープを�
 <tr class="even">
 <td><p>DRAWPATTERNRECT</p></td>
 <td><p>Hewlett Packard LaserJet または LaserJet と互換性のあるプリンターでページ制御言語 (PCL) のパターンとルールの機能を使用して、白、グレースケール、または黒い実線の四角形を作成します。 グレースケールは、白と黒のピクセルの特定の組み合わせを含む灰色パターンです。 このエスケープの詳細については、Windows sdk で DRAWPATTERNRECT を参照してください。</p>
-<p>このエスケープは、ドライバーの関連付け<a href="https://msdn.microsoft.com/library/windows/hardware/ff556217" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556217)"> <strong>DrvEscape</strong> </a>関数。</p></td>
+<p>このエスケープは、ドライバーの関連付け<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)"> <strong>DrvEscape</strong> </a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ENCAPSULATED_POSTSCRIPT</p></td>
 <td><p>Encapsulated PostScript (EPS) のデータをプリンターに送信します。</p>
 <p>Microsoft Windows NT 4.0 のプリンター ドライバーでは、このエスケープはサポートされていません。</p>
-<p>このエスケープは、ドライバーの関連付け<a href="https://msdn.microsoft.com/library/windows/hardware/ff556203" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556203)"> <strong>DrvDrawEscape</strong> </a>関数。</p></td>
+<p>このエスケープは、ドライバーの関連付け<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"> <strong>DrvDrawEscape</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td><p>END_PATH</p></td>

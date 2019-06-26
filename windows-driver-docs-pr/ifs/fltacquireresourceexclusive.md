@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca534dd7983147fe3ea971d3bf86bc5a8eee7815
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a5ad45adb6e24db8643026cc3402dc809c545c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393024"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384577"
 ---
 # <a name="fltacquireresourceexclusive-routine"></a>FltAcquireResourceExclusive ルーチン
 
@@ -40,7 +40,7 @@ VOID FltAcquireResourceExclusive(
 ----------
 
 *リソース*\[入力、出力\]  
-非透過のスケジュール作成構造体へのポインター。 この構造体の非ページ プールから呼び出し元が割り当てたを呼び出すことによって初期化する必要があります[ **ExInitializeResourceLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545317)または[ **ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542).
+非透過のスケジュール作成構造体へのポインター。 この構造体の非ページ プールから呼び出し元が割り当てたを呼び出すことによって初期化する必要があります[ **ExInitializeResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)または[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite).
 
 <a name="return-value"></a>戻り値
 ------------
@@ -70,19 +70,19 @@ VOID FltAcquireResourceExclusive(
 
 **FltAcquireResourceExclusive**用のラッパーです[ **ExAcquireResourceExclusiveLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544351)通常カーネル APC 配信を無効にします。
 
-**FltAcquireResourceExclusive**通常カーネル APC の配信を無効にしますを呼び出す必要はありません[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)または[ 。**FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)呼び出す前に**FltAcquireResourceExclusive**します。
+**FltAcquireResourceExclusive**通常カーネル APC の配信を無効にしますを呼び出す必要はありません[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)または[ 。**FsRtlEnterFileSystem** ](fsrtlenterfilesystem.md)呼び出す前に**FltAcquireResourceExclusive**します。
 
 呼び出すには、取得した後は、リソースを解放、 [ **FltReleaseResource**](fltreleaseresource.md)します。 すべての成功した呼び出し**FltAcquireResourceExclusive**後続の呼び出しによって照合される必要があります**FltReleaseResource**します。
 
 共有アクセス用のリソースを取得するために呼び出す[ **FltAcquireResourceShared**](fltacquireresourceshared.md)します。
 
-システムのリソースの一覧からリソースを削除する[ **ExDeleteResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff544578)します。
+システムのリソースの一覧からリソースを削除する[ **ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)します。
 
-再利用するためのリソースを初期化するために呼び出す[ **ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)します。
+再利用するためのリソースを初期化するために呼び出す[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)します。
 
-次の構造体の詳細については、次を参照してください。 [÷ リソース ルーチンの概要](https://msdn.microsoft.com/library/windows/hardware/ff548046)でカーネルのアーキテクチャの設計ガイド。
+次の構造体の詳細については、次を参照してください。 [÷ リソース ルーチンの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)でカーネルのアーキテクチャの設計ガイド。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -119,11 +119,11 @@ VOID FltAcquireResourceExclusive(
 
 [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
 
-[**ExDeleteResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff544578)
+[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)
 
-[**ExInitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545317)
+[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)
 
-[**ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)
+[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)
 
 [**FltAcquireResourceShared**](fltacquireresourceshared.md)
 
@@ -131,7 +131,7 @@ VOID FltAcquireResourceExclusive(
 
 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)
 
-[**KeEnterCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552021)
+[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)
 
  
 

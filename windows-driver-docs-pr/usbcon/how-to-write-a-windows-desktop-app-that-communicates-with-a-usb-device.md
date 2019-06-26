@@ -3,20 +3,20 @@ Description: C と C++ WinUSB テンプレートを使用、USB デバイスと�
 title: WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5bbc2185d1e38b494f6e55315339480b7159af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 131dfe9091b70673b7eedaed314397bc52afb6de
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393414"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 
 
 **重要な API**
 
--   [SetupAPI 関数](https://msdn.microsoft.com/library/windows/hardware/ff550855)
--   [WinUSB 関数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)
+-   [SetupAPI 関数](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)
+-   [WinUSB 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)
 
 C と C++ WinUSB テンプレートを使用、USB デバイスと通信する Windows デスクトップ アプリを作成する最も簡単な方法です。 このテンプレートでは、Windows Driver Kit (WDK) (デバッグ ツールの Windows) で、Microsoft Visual Studio (Professional または Ultimate) との統合環境が必要です。 開始点としては、テンプレートを使用することができます。
 
@@ -40,7 +40,7 @@ C と C++ WinUSB テンプレートを使用、USB デバイスと通信する W
 
     ![visual studio で winusb テンプレート](images/winusb-template.png)
 
-    Visual Studio では、2 つのプロジェクトとソリューションを作成します。 ソリューション、2 つのプロジェクト内の各プロジェクトに属するファイルを確認できます、**ソリューション エクスプ ローラー**ウィンドウで、次のスクリーン ショットに示すようにします。 (**[ソリューション エクスプローラー]** ウィンドウが表示されない場合は、**[表示]** メニューの **[ソリューション エクスプローラー]** を選びます)。ソリューションには、USB Application1 および USB Application1 パッケージをという名前のドライバー パッケージ プロジェクトをという名前の C++ アプリケーション プロジェクトが含まれています。 アプリケーション ソース コードを確認する場合は、下に表示されるファイルのいずれかを開くことができます**ソースファイル**します。
+    Visual Studio では、2 つのプロジェクトとソリューションを作成します。 ソリューション、2 つのプロジェクト内の各プロジェクトに属するファイルを確認できます、**ソリューション エクスプ ローラー**ウィンドウで、次のスクリーン ショットに示すようにします。 ( **[ソリューション エクスプローラー]** ウィンドウが表示されない場合は、 **[表示]** メニューの **[ソリューション エクスプローラー]** を選びます)。ソリューションには、USB Application1 および USB Application1 パッケージをという名前のドライバー パッケージ プロジェクトをという名前の C++ アプリケーション プロジェクトが含まれています。 アプリケーション ソース コードを確認する場合は、下に表示されるファイルのいずれかを開くことができます**ソースファイル**します。
 
     ![winusb テンプレート ソリューション エクスプ ローラー](images/winusb-template1.png)
 
@@ -53,7 +53,7 @@ C と C++ WinUSB テンプレートを使用、USB デバイスと通信する W
     `%DeviceName% =USB_Install, USB\VID_vvvv&PID_pppp`
 
 8.  VID を置き換える\_vvvv & PID\_pppp デバイスのハードウェア ID を使用します。 デバイス マネージャーから、ハードウェア ID を取得します。 デバイス マネージャーでは、デバイスのプロパティを表示します。 **詳細** タブで、表示、**ハードウェア Id**プロパティの値。
-9.  **ソリューション エクスプ ローラー**ウィンドウで、右クリックして**ソリューション ' USB Application1' (2 プロジェクト)**、選択**Configuration Manager**します。 構成と、アプリケーション プロジェクトとパッケージのプロジェクトの両方のプラットフォームを選択します。 この演習で選択 Win8.1 デバッグおよび x64 では、次のスクリーン ショットに示すようにします。
+9.  **ソリューション エクスプ ローラー**ウィンドウで、右クリックして**ソリューション ' USB Application1' (2 プロジェクト)** 、選択**Configuration Manager**します。 構成と、アプリケーション プロジェクトとパッケージのプロジェクトの両方のプラットフォームを選択します。 この演習で選択 Win8.1 デバッグおよび x64 では、次のスクリーン ショットに示すようにします。
 
     ![winusb アプリケーション テンプレート](images/winusb-template2.png)
 
@@ -72,7 +72,7 @@ C と C++ WinUSB テンプレートを使用、USB デバイスと通信する W
 
 -   **2 つのコンピューターのセットアップ**
 
-    1.  次の手順で、対象のコンピュータをプロビジョニング[ドライバーの展開とテスト用にプロビジョニング](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+    1.  次の手順で、対象のコンピュータをプロビジョニング[ドライバーの展開とテスト用にプロビジョニング](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
         **注:**  
         プロビジョニングすると、WDKRemoteUser という名前のターゲット コンピューターで、ユーザーが作成されます。 プロビジョニングが完了したら、WDKRemoteUser に切り替え、ユーザーが表示されます。 
     2.  ホスト コンピューター上で、Visual Studio でソリューションを開きます。
@@ -100,7 +100,7 @@ C と C++ WinUSB テンプレートを使用、USB デバイスと通信する W
 
         ![winusb テンプレートのデバッグ設定](images/winusb-template5.png)
 
-    11. 選択**ソリューションのビルド**から、**ビルド**メニュー。 Visual Studio に表示されるビルドの進行状況、**出力**ウィンドウ。 (**[出力]** ウィンドウが表示されていない場合は、**[表示]** メニューの **[出力]** をクリックします)。この演習では、x-64 Windows 8.1 を実行しているシステムのプロジェクトをビルドしましたしました。
+    11. 選択**ソリューションのビルド**から、**ビルド**メニュー。 Visual Studio に表示されるビルドの進行状況、**出力**ウィンドウ。 ( **[出力]** ウィンドウが表示されていない場合は、 **[表示]** メニューの **[出力]** をクリックします)。この演習では、x-64 Windows 8.1 を実行しているシステムのプロジェクトをビルドしましたしました。
 
 ターゲット コンピューターで実行されているドライバーのインストール スクリプトが表示されます。 %Systemdrive% に、ドライバー ファイルがコピーされます\\drivertest\\ターゲット コンピューター上のドライバー フォルダー。 .inf、.cat、test cert、.sys など、必要なファイルがすべて %systemdrive%\\drivertest\\drivers フォルダーに存在することを確認します。 デバイスは、エラーなしでデバイス マネージャーを表示する必要があります。
 
@@ -134,12 +134,12 @@ Deployment may take a few minutes...
 5.  Visual Studio で、ホスト コンピューターでを右クリックし、 **USB Application1 パッケージ**順に選択して、**プロジェクトのアンロード**します。
 6.  右クリックし、 **USB Application1**プロジェクトで、プロジェクトのプロパティで、展開、**構成プロパティ**ノードをクリックします**デバッグ**します。
 7.  変更**起動するデバッガー**に**リモート Windows デバッガー**します。
-8.  記載されている手順に従って、リモート コンピューターで実行可能ファイルを実行するプロジェクト設定を変更[、プロジェクト ビルドのローカルのリモート デバッグ](https://msdn.microsoft.com/library/vstudio/8x6by8d2.aspx)します。 確認します**作業ディレクトリ**と**リモート コマンド**プロパティには、ターゲット コンピューターのフォルダーが反映されます。
-9.  アプリケーションのデバッグ、**ビルド**メニューの [**デバッグの開始]**、またはキーを押します**f5 キー。**
+8.  記載されている手順に従って、リモート コンピューターで実行可能ファイルを実行するプロジェクト設定を変更[、プロジェクト ビルドのローカルのリモート デバッグ](https://docs.microsoft.com/visualstudio/debugger/remote-debugging?view=vs-2015)します。 確認します**作業ディレクトリ**と**リモート コマンド**プロパティには、ターゲット コンピューターのフォルダーが反映されます。
+9.  アプリケーションのデバッグ、**ビルド**メニューの [**デバッグの開始]** 、またはキーを押します**f5 キー。**
 
 -   **1 台のコンピューターのセットアップ:**
 
-    1.  アプリケーションとドライバーのインストール パッケージをビルドするには、選択**ソリューションのビルド**から、**ビルド**メニュー。 Visual Studio に表示されるビルドの進行状況、**出力**ウィンドウで、次のスクリーン ショットに示すようにします。 (**[出力]** ウィンドウが表示されていない場合は、**[表示]** メニューの **[出力]** をクリックします)。この演習では、x-64 Windows 8.1 を実行しているシステムのプロジェクトをビルドしましたしました。
+    1.  アプリケーションとドライバーのインストール パッケージをビルドするには、選択**ソリューションのビルド**から、**ビルド**メニュー。 Visual Studio に表示されるビルドの進行状況、**出力**ウィンドウで、次のスクリーン ショットに示すようにします。 ( **[出力]** ウィンドウが表示されていない場合は、 **[表示]** メニューの **[出力]** をクリックします)。この演習では、x-64 Windows 8.1 を実行しているシステムのプロジェクトをビルドしましたしました。
     2.  パッケージ化、Windows エクスプ ローラーで、USB Application1 フォルダーに移動しますおよびに移動し、構築されたドライバーを表示する**x64 &gt; Win8.1Debug &gt; USB Application1 パッケージ**します。 ドライバー パッケージには、いくつかのファイルが含まれています。USBApplication1.inf はドライバーをインストールするときに、Windows が使用する情報ファイルで、usbapplication1.cat はインストーラーを使用してドライバー パッケージのテスト署名を検証するカタログ ファイルです。 その他のファイルは、Windows Driver Frameworks (WDF) の共同インストーラーです。 これらのファイルは、次のスクリーン ショットに表示されます。
 
         ![winusb アプリケーション テンプレート](images/winusb-template3.png)
@@ -149,7 +149,7 @@ Deployment may take a few minutes...
     4.  右クリックし、 **USB Application1**プロジェクトで、プロジェクトのプロパティで、展開、**構成プロパティ**ノードをクリックします**デバッグ**します。
     5.  変更**起動するデバッガー**に**ローカル Windows デバッガー**します。
     6.  7.  USB Application1 パッケージ プロジェクトを右クリックして**プロジェクトのアンロード**します。
-    8.  アプリケーションのデバッグ、**ビルド**メニューの [**デバッグの開始]**、またはキーを押します**f5 キーを押して**します。
+    8.  アプリケーションのデバッグ、**ビルド**メニューの [**デバッグの開始]** 、またはキーを押します**f5 キーを押して**します。
 
 ## <a name="template-code-discussion"></a>テンプレート コードの説明
 
@@ -173,7 +173,7 @@ typedef struct _DEVICE_DATA {
 
 ### <a href="" id="deviceinstance"></a>インスタンス パスを取得する - デバイスの device.cpp で RetrieveDevicePath を参照してください。
 
-USB デバイスへのアクセス、アプリケーションでは、呼び出すことによって、デバイスの有効なファイル ハンドルを作成**CreateFile**します。 その呼び出しでは、アプリケーションがデバイス パスのインスタンスを取得する必要があります。 アプリでは、デバイス パスを取得する[SetupAPI](https://msdn.microsoft.com/library/windows/hardware/ff550855)ルーチンを Winusb.sys のインストールに使用された INF ファイルで、デバイス インターフェイスの GUID を指定します。 GUID を名前付き GUID 定数を宣言する Device.h\_DEVINTERFACE\_USBApplication1 します。 これらのルーチンを使用するは、アプリケーションは、指定したデバイスのインターフェイス クラスのすべてのデバイスを列挙し、デバイスのデバイス パスを取得します。
+USB デバイスへのアクセス、アプリケーションでは、呼び出すことによって、デバイスの有効なファイル ハンドルを作成**CreateFile**します。 その呼び出しでは、アプリケーションがデバイス パスのインスタンスを取得する必要があります。 アプリでは、デバイス パスを取得する[SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)ルーチンを Winusb.sys のインストールに使用された INF ファイルで、デバイス インターフェイスの GUID を指定します。 GUID を名前付き GUID 定数を宣言する Device.h\_DEVINTERFACE\_USBApplication1 します。 これらのルーチンを使用するは、アプリケーションは、指定したデバイスのインターフェイス クラスのすべてのデバイスを列挙し、デバイスのデバイス パスを取得します。
 
 ```cpp
 HRESULT
@@ -331,25 +331,25 @@ Return value:
 
 前の関数では、アプリケーションは、これらのルーチンを呼び出すことによって、デバイス パスを取得します。
 
-1.  [**SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551072)を識別するハンドルを取得する、*デバイス情報設定されている*、指定したデバイスのインターフェイス クラス GUIDに一致するすべてのインストールされているデバイスに関する情報を格納する配列\_DEVINTERFACE\_USBApplication1 します。 配列内の各要素と呼ばれる、*デバイス インターフェイス*がインストールされ、システムに登録されているデバイスに対応しています。 デバイスのインターフェイス クラスは、デバイス インターフェイス INF ファイルで定義した GUID を渡すことによって識別されます。 関数は、デバイス情報のセットに HDEVINFO ハンドルを返します。
-2.  [**SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)デバイスを列挙するインターフェイスでデバイス情報設定し、デバイス インターフェイスに関する情報を取得します。
+1.  [**SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa)を識別するハンドルを取得する、*デバイス情報設定されている*、指定したデバイスのインターフェイス クラス GUIDに一致するすべてのインストールされているデバイスに関する情報を格納する配列\_DEVINTERFACE\_USBApplication1 します。 配列内の各要素と呼ばれる、*デバイス インターフェイス*がインストールされ、システムに登録されているデバイスに対応しています。 デバイスのインターフェイス クラスは、デバイス インターフェイス INF ファイルで定義した GUID を渡すことによって識別されます。 関数は、デバイス情報のセットに HDEVINFO ハンドルを返します。
+2.  [**SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)デバイスを列挙するインターフェイスでデバイス情報設定し、デバイス インターフェイスに関する情報を取得します。
 
     この呼び出しでは、次のものが必要です。
 
-    -   初期化された呼び出し元が割り当てた[ **SP\_デバイス\_インターフェイス\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff552342)構造を持つその**cbSize**メンバーに設定構造体のサイズ。
+    -   初期化された呼び出し元が割り当てた[ **SP\_デバイス\_インターフェイス\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)構造を持つその**cbSize**メンバーに設定構造体のサイズ。
     -   手順 1 から HDEVINFO ハンドル。
     -   デバイスのインターフェイスの INF ファイルで定義した GUID です。
 
-    [**SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)デバイス インターフェイスの指定したインデックスのデバイス情報設定の配列を検索し、初期化された入力[ **SP\_デバイス\_インターフェイス\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff552342)インターフェイスに関する基本的なデータを含む構造体。
+    [**SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)デバイス インターフェイスの指定したインデックスのデバイス情報設定の配列を検索し、初期化された入力[ **SP\_デバイス\_インターフェイス\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)インターフェイスに関する基本的なデータを含む構造体。
 
-    **注**デバイス情報のセット内のすべてのデバイス インターフェイスを列挙するために呼び出す[ **SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)関数が戻るまでループで**FALSE**障害のエラー コードはエラーと\_いいえ\_詳細\_項目。 エラー\_いいえ\_詳細\_項目のエラー コードを呼び出すことによって取得できる**GetLastError**します。 反復処理ごとに、メンバーのインデックスをインクリメントします。
+    **注**デバイス情報のセット内のすべてのデバイス インターフェイスを列挙するために呼び出す[ **SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)関数が戻るまでループで**FALSE**障害のエラー コードはエラーと\_いいえ\_詳細\_項目。 エラー\_いいえ\_詳細\_項目のエラー コードを呼び出すことによって取得できる**GetLastError**します。 反復処理ごとに、メンバーのインデックスをインクリメントします。
 
-    または、呼び出せる[ **SetupDiEnumDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff551010)するデバイス情報のセットを列挙し、呼び出し元が割り当てた内でのインデックスで指定された、デバイスのインターフェイス要素に関する情報を返します[ **SP\_DEVINFO\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff552344)構造体。 この構造体への参照を渡すことができますし、 *DeviceInfoData*のパラメーター、 [ **SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)関数。
+    または、呼び出せる[ **SetupDiEnumDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)するデバイス情報のセットを列挙し、呼び出し元が割り当てた内でのインデックスで指定された、デバイスのインターフェイス要素に関する情報を返します[ **SP\_DEVINFO\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)構造体。 この構造体への参照を渡すことができますし、 *DeviceInfoData*のパラメーター、 [ **SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)関数。
 
-3.  [**SetupDiGetDeviceInterfaceDetail** ](https://msdn.microsoft.com/library/windows/hardware/ff551120)デバイス インターフェイスの詳細なデータを取得します。 情報が返されます、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff552343)構造体。 のサイズ、 **SP\_デバイス\_インターフェイス\_詳細\_データ**構造の変化に合わせて、 **SetupDiGetDeviceInterfaceDetail**が呼び出されます2 回クリックします。 最初の呼び出しが用に割り当てるバッファーのサイズを取得、 **SP\_デバイス\_インターフェイス\_詳細\_データ**構造体。 2 番目の呼び出しでは、インターフェイスに関する詳しい情報を割り当てられたバッファーを設定します。
-    1.  呼び出し[ **SetupDiGetDeviceInterfaceDetail** ](https://msdn.microsoft.com/library/windows/hardware/ff551120)で*DeviceInterfaceDetailData*パラメーターに設定**NULL**します。 関数が適切なバッファー サイズを返します、 *requiredlength*パラメーター。 この呼び出しがエラーで失敗\_不十分\_バッファーのエラー コード。 このエラー コードが必要です。
-    2.  メモリを割り当て、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff552343)構造が取得される適切なバッファー サイズに基づいて、*requiredlength*パラメーター。
-    3.  呼び出し[ **SetupDiGetDeviceInterfaceDetail** ](https://msdn.microsoft.com/library/windows/hardware/ff551120)もう一度で初期化された構造体への参照を渡すと、 *DeviceInterfaceDetailData*パラメーター。 関数から制御が戻るときに、構造体はインターフェイスに関する詳しい情報を入力されます。 デバイスのパスが、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff552343)構造体の**DevicePath**メンバー。
+3.  [**SetupDiGetDeviceInterfaceDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)デバイス インターフェイスの詳細なデータを取得します。 情報が返されます、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造体。 のサイズ、 **SP\_デバイス\_インターフェイス\_詳細\_データ**構造の変化に合わせて、 **SetupDiGetDeviceInterfaceDetail**が呼び出されます2 回クリックします。 最初の呼び出しが用に割り当てるバッファーのサイズを取得、 **SP\_デバイス\_インターフェイス\_詳細\_データ**構造体。 2 番目の呼び出しでは、インターフェイスに関する詳しい情報を割り当てられたバッファーを設定します。
+    1.  呼び出し[ **SetupDiGetDeviceInterfaceDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)で*DeviceInterfaceDetailData*パラメーターに設定**NULL**します。 関数が適切なバッファー サイズを返します、 *requiredlength*パラメーター。 この呼び出しがエラーで失敗\_不十分\_バッファーのエラー コード。 このエラー コードが必要です。
+    2.  メモリを割り当て、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造が取得される適切なバッファー サイズに基づいて、*requiredlength*パラメーター。
+    3.  呼び出し[ **SetupDiGetDeviceInterfaceDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)もう一度で初期化された構造体への参照を渡すと、 *DeviceInterfaceDetailData*パラメーター。 関数から制御が戻るときに、構造体はインターフェイスに関する詳しい情報を入力されます。 デバイスのパスが、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造体の**DevicePath**メンバー。
 
 ### <a href="" id="filehandle"></a>ファイルを作成するデバイスの処理 - device.cpp OpenDevice を参照してください。
 
@@ -434,14 +434,14 @@ Return value:
 ```
 
 1.  アプリによる呼び出し**CreateFile**先ほど取得したデバイスのパスを指定することで、デバイスのファイル ハンドルを作成します。 ファイルを使用して\_フラグ\_OVERLAPPED WinUSB がこの設定に依存するためのフラグします。
-2.  ファイル ハンドルを使用すると、デバイス、アプリは WinUSB インターフェイスのハンドルを作成します。 [WinUSB Functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)ファイル ハンドルが、代わりに、ターゲット デバイスを識別するために、このハンドルを使用します。 WinUSB インターフェイス ハンドルをアプリの呼び出しを取得する[ **WinUsb\_初期化**](https://msdn.microsoft.com/library/windows/hardware/ff540277)ファイル ハンドルを渡すことによって。 I/O 要求をデバイスに送信して、デバイスから情報を取得、後続の呼び出しで受信したハンドルを使用します。
+2.  ファイル ハンドルを使用すると、デバイス、アプリは WinUSB インターフェイスのハンドルを作成します。 [WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)ファイル ハンドルが、代わりに、ターゲット デバイスを識別するために、このハンドルを使用します。 WinUSB インターフェイス ハンドルをアプリの呼び出しを取得する[ **WinUsb\_初期化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)ファイル ハンドルを渡すことによって。 I/O 要求をデバイスに送信して、デバイスから情報を取得、後続の呼び出しで受信したハンドルを使用します。
 
 ### <a name="release-the-device-handles---see-closedevice-in-devicecpp"></a>デバイス ハンドルのリリース - device.cpp CloseDevice を参照してください。
 
 テンプレート コードでは、ファイル ハンドルとデバイスの WinUSB インターフェイスのハンドルを解放するコードを実装します。
 
 -   **CloseHandle**によって作成されたハンドルを解放する**CreateFile**」の説明に従って、[ファイル ハンドルを作成、デバイスの](#filehandle)このチュートリアルの「します。
--   [**WinUsb\_Free** ](https://msdn.microsoft.com/library/windows/hardware/ff540233)によって返されると、デバイスの WinUSB インターフェイスのハンドルを解放する[ **WinUsb\_初期化**](https://msdn.microsoft.com/library/windows/hardware/ff540277)します。
+-   [**WinUsb\_Free** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_free)によって返されると、デバイスの WinUSB インターフェイスのハンドルを解放する[ **WinUsb\_初期化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)します。
 
 ```cpp
 VOID
@@ -497,7 +497,7 @@ Return value:
 
 ## <a name="related-topics"></a>関連トピック
 [USB デバイスの Windows デスクトップ アプリ](windows-desktop-app-for-a-usb-device.md)  
-[ドライバーの展開およびテスト用のコンピューターをプロビジョニングします。](https://msdn.microsoft.com/library/windows/hardware/dn745909)  
+[ドライバーの展開およびテスト用のコンピューターをプロビジョニングします。](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)  
 
 
 

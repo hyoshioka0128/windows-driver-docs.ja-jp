@@ -7,12 +7,12 @@ keywords:
 - プラグインを WDK を印刷するインターフェイスへのアクセス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd903fec5c4e4c8d8f5e90686adaac7e9152b64
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 355a168f9e9b5ad377c31875ff2d5f44d544c1df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385412"
 ---
 # <a name="accessing-printer-driver-interfaces-from-plug-ins"></a>プラグインからプリンター ドライバー インターフェイスにアクセスする
 
@@ -20,7 +20,7 @@ ms.locfileid: "63381193"
 
 
 
-場合、ドライバーによって提供されるに属しているプラグイン呼び出しメソッド[IPrintOemDriverUI](iprintoemdriverui-com-interface.md)、 [IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)、 [IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)、 [IPrintCoreUI2](iprintcoreui2-com-interface.md)、 [IPrintOemDriverUni](iprintoemdriveruni-com-interface.md)、 [IPrintOemDriverPS](iprintoemdriverps-com-interface.md)、または[IPrintCorePS2](iprintcoreps2-com-interface.md)の COM インターフェイスをそのインターフェイスを取得する必要があります次のように、ドライバーからのポインター。
+場合、ドライバーによって提供されるに属しているプラグイン呼び出しメソッド[IPrintOemDriverUI](iprintoemdriverui-com-interface.md)、 [IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)、 [IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)、 [IPrintCoreUI2](iprintcoreui2-com-interface.md)、 [IPrintOemDriverUni](iprintoemdriveruni-com-interface.md)、 [IPrintOemDriverPS](iprintoemdriverps-com-interface.md)、または[IPrintCorePS2](iprintcoreps2-com-interface.md)の COM インターフェイスをそのインターフェイスを取得する必要があります次のように、ドライバーからのポインター。
 
 1.  IPrintOemUI、IPrintOemUI2、IPrintOemUni、IPrintOemUni2、IPrintOemPS、または IPrintOemPS2 インターフェイスの PublishDriverInterface メソッドは、プラグインの場合に実装する必要があります。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63381193"
 
 5.  ときに、 [IPrintOemDriverUI](iprintoemdriverui-com-interface.md)、 [IPrintCoreUI2](iprintcoreui2-com-interface.md)、 [IPrintOemDriverUni](iprintoemdriveruni-com-interface.md)、 [IPrintOemDriverPS](iprintoemdriverps-com-interface.md)、または[IPrintCorePS2](iprintcoreps2-com-interface.md)インターフェイス ポインターが不要になった、プラグインは、インターフェイスのメソッド (Windows SDK のドキュメントで説明) を呼び出す必要があります。
 
-新しい Windows Vista を使用するには、プラグインの[IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)または[IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)インターフェイスのサポートを追加するプラグインに合わせて**OEMGI\_GETREQUESTEDHELPERINTERFACES**でその[ **IPrintOemUI::GetInfo**](https://msdn.microsoft.com/library/windows/hardware/ff554178)、 [ **IPrintOemPS::GetInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff553221)、または[ **IPrintOemUni::GetInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff554256)メソッド。
+新しい Windows Vista を使用するには、プラグインの[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)または[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)インターフェイスのサポートを追加するプラグインに合わせて**OEMGI\_GETREQUESTEDHELPERINTERFACES**でその[ **IPrintOemUI::GetInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemui-getinfo)、 [ **IPrintOemPS::GetInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemps-getinfo)、または[ **IPrintOemUni::GetInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-getinfo)メソッド。
 
  
 

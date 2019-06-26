@@ -6,12 +6,12 @@ keywords:
 - FilterUnloadCallback
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e26f9b8ad3b08012defb2d12c27ffa95af7d744f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4f51a4030d43efaaa88bf76e3ba4c57e861666e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385654"
 ---
 # <a name="writing-a-filterunloadcallback-routine"></a>FilterUnloadCallback ルーチンの記述
 
@@ -28,13 +28,13 @@ typedef NTSTATUS
     );
 ```
 
-*FilterUnloadCallback*ルーチンが 1 つの入力パラメーター*フラグ*、される**NULL**または FLTFL\_フィルター\_アンロード\_必須。 フィルター マネージャーでは、このパラメーターを設定する FLTFL\_フィルター\_アンロード\_必須アンロード操作が必須であることを示します。 このパラメーターの詳細については、次を参照してください。 [ **PFLT\_フィルター\_アンロード\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff551085)します。
+*FilterUnloadCallback*ルーチンが 1 つの入力パラメーター*フラグ*、される**NULL**または FLTFL\_フィルター\_アンロード\_必須。 フィルター マネージャーでは、このパラメーターを設定する FLTFL\_フィルター\_アンロード\_必須アンロード操作が必須であることを示します。 このパラメーターの詳細については、次を参照してください。 [ **PFLT\_フィルター\_アンロード\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_filter_unload_callback)します。
 
 ミニフィルター ドライバーの*FilterUnloadCallback*ルーチンは、次の手順を実行する必要があります。
 
 -   開いているカーネル モードの通信サーバー ポートで処理をすべて閉じます。
 
--   呼び出す[ **FltUnregisterFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff544606)ミニフィルター ドライバーの登録を解除します。
+-   呼び出す[ **FltUnregisterFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltunregisterfilter)ミニフィルター ドライバーの登録を解除します。
 
 -   必要なグローバル クリーンアップを実行します。
 

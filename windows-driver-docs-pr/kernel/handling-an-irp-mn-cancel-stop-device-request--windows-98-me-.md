@@ -6,12 +6,12 @@ keywords:
 - IRP_MN_CANCEL_STOP_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38793feb6e7d643aef4fe9ed36db2123cdb04952
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d35c35dbedfaacc8c20a05b2fc1ffb3b458ec2e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384234"
 ---
 # <a name="handling-an-irpmncancelstopdevice-request-windows-98me"></a>IRP の処理\_MN\_キャンセル\_停止\_デバイス要求 (Windows 98/Me)
 
@@ -19,7 +19,7 @@ ms.locfileid: "63359802"
 
 
 
-[ **IRP\_MN\_キャンセル\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff550826)デバイスの親のバス ドライバー、続いて各次に要求を最初に処理する必要があります高いデバイス スタックのドライバーです。 ドライバーのハンドルに Irp の停止、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+[ **IRP\_MN\_キャンセル\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)デバイスの親のバス ドライバー、続いて各次に要求を最初に処理する必要があります高いデバイス スタックのドライバーです。 ドライバーのハンドルに Irp の停止、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
 
 応答、 **IRP\_MN\_キャンセル\_停止\_デバイス**要求、ドライバーは、デバイスを開始状態に戻すし、通常の操作を再開する必要があります。 ドライバーは、キャンセル停止 IRP を成功する必要があります。
 
@@ -33,7 +33,7 @@ ms.locfileid: "63359802"
 
 3.  I/O を再起動します。
 
-4.  完了の IRP [ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)します。
+4.  完了の IRP [ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)します。
 
     -   関数またはフィルター ドライバーでは。
 
@@ -49,7 +49,7 @@ ms.locfileid: "63359802"
 
         バス ドライバーでは、この操作は失敗する必要があります。 ドライバーが IRP の再起動に失敗した場合、デバイスは不整合な状態でありは正しく動作しません。
 
-ドライバーは、デバイスが開始され、アクティブなときに、誤ったキャンセル停止要求にすることがあります。 これが行われる、たとえば、ドライバー (またはデバイス履歴の上位にドライバー) が失敗した場合、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551725)要求。 デバイスが開始され、アクティブなとき、ドライバーは、デバイスの誤ったキャンセル停止要求に成功安全になります。
+ドライバーは、デバイスが開始され、アクティブなときに、誤ったキャンセル停止要求にすることがあります。 これが行われる、たとえば、ドライバー (またはデバイス履歴の上位にドライバー) が失敗した場合、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)要求。 デバイスが開始され、アクティブなとき、ドライバーは、デバイスの誤ったキャンセル停止要求に成功安全になります。
 
  
 

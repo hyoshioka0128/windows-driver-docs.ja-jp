@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9763e582e0470c8f40eb09d7d4401052cf351158
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0aab21c6ea477cf23cec61dfc352a688a44117a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377622"
 ---
 # <a name="ndisstatuswwanmodemconfiginfo"></a>NDIS_STATUS_WWAN_MODEM_CONFIG_INFO
 
@@ -28,7 +28,7 @@ MBB ドライバーを使用して、 **NDIS_STATUS_WWAN_MODEM_CONFIG_INFO** MB 
 
 MBB ドライバーが、要請していないに送信する必要がありますのみ**NDIS_STATUS_WWAN_MODEM_CONFIG_INFO**モデムの構成の状態が変更されたとき。
 
-この通知を使用して、 [ **NDIS_WWAN_MODEM_CONFIG_INFO** ](https://msdn.microsoft.com/library/windows/hardware/07C2BAED-157A-459C-B558-115C0091ECE5)構造体。
+この通知を使用して、 [ **NDIS_WWAN_MODEM_CONFIG_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)構造体。
 
 <a name="requirements"></a>要件
 ------------
@@ -55,6 +55,6 @@ MBB ドライバーが、要請していないに送信する必要がありま�
 
 [OID_WWAN_MODEM_CONFIG_INFO](oid-wwan-modem-config-info.md)
 
-[**NDIS_WWAN_MODEM_CONFIG_INFO**](https://msdn.microsoft.com/library/windows/hardware/07C2BAED-157A-459C-B558-115C0091ECE5)
+[**NDIS_WWAN_MODEM_CONFIG_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)
  
 

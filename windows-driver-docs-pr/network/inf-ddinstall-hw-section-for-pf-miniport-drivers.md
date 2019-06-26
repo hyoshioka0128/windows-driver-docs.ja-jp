@@ -4,12 +4,12 @@ description: PF ミニポート ドライバーの INF DDInstall.HW セクショ
 ms.assetid: 65399462-4AF1-401C-87CB-BF387CA0B053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48849e69ccaf708fc9b31340cd023ec5018a9080
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b29a7c827b68e0bc6726d6a94693e682c2ab951
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380898"
 ---
 # <a name="inf-ddinstallhw-section-for-pf-miniport-drivers"></a>PF ミニポート ドライバーの INF DDInstall.HW セクション
 
@@ -33,7 +33,7 @@ Needs=PciSriovSupported.HW
 
 詳細については、 *DDInstall*セクションを参照してください[ネットワーク INF ファイルで DDInstall セクション](ddinstall-section-in-a-network-inf-file.md)します。
 
-詳細については、 *DDInstall*します。ハードウェアのセクションを参照してください[ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)します。
+詳細については、 *DDInstall*します。ハードウェアのセクションを参照してください[ **INF DDInstall.HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)します。
 
  
 

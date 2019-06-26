@@ -8,12 +8,12 @@ keywords:
 - mf.sys
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4100642afab95d695ea67b8560d59fa90925d2ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27326a54cb459dbee9eccbd81dcd5bf0e8d04465
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324538"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386379"
 ---
 # <a name="pc-cards-with-incomplete-configuration-register-addresses"></a>PC カード構成が不完全とアドレスを登録します。
 
@@ -40,11 +40,11 @@ NT ベースのプラットフォーム上のようなデバイスの製造元�
 
     INF ファイルには、関数が個々 のデバイスとしてパッケージ化するときに使用される同じファイルを指定できます。 INF ファイルでは、多機能の特殊なセマンティクスは必要ありません。
 
-多機能デバイスのようなカスタムの INF には、少なくとも 1 つ含める必要があります[ **INF DDInstall.LogConfigOverride セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547339)します。 Override セクションを含める必要があります、 **MfCardConfig**レジスタの各セットの場所の特定の各関数のエントリ。
+多機能デバイスのようなカスタムの INF には、少なくとも 1 つ含める必要があります[ **INF DDInstall.LogConfigOverride セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)します。 Override セクションを含める必要があります、 **MfCardConfig**レジスタの各セットの場所の特定の各関数のエントリ。
 
 INF では、上書きの構成、INF に存在する場合は、PnP マネージャーは、デバイスから、デバイスのリソース要件を使用しないために、デバイスで指定されたすべてのリソース要件を再確認する必要があります。
 
-指定、 **MfCardConfig**で説明する構文を使用してエントリ[ **INF LogConfig ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547448)します。
+指定、 **MfCardConfig**で説明する構文を使用してエントリ[ **INF LogConfig ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive)します。
 
 たとえば、多機能 PC カード デバイスのモデムとネットワーク アダプターを含むカスタム INF から次の抜粋を考えてみます。
 

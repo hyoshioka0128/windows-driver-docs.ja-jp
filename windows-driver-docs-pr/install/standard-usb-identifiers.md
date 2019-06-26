@@ -8,12 +8,12 @@ keywords:
 - 複数インターフェイス デバイス WDK USB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 278434ff8936d3ecd3067defc3d817ffd5aac922
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc4bdfcdfa0d373d8012ad0149db482c261c574b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369406"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385886"
 ---
 # <a name="standard-usb-identifiers"></a>標準の USB 識別子
 
@@ -63,7 +63,7 @@ USB\\CLASS_c(2)
 
 ### <a name="multiple-interface-usb-devices"></a>複数のインターフェイスの USB デバイス
 
-複数のインターフェイスを持つデバイスと呼ばれる*複合*デバイス。 以降では、Windows 2000 では、新しい[複合デバイスを USB](https://msdn.microsoft.com/library/windows/hardware/ff537109)が接続されているコンピューターに USB ハブのドライバーが物理デバイス オブジェクト (PDO) を作成し、オペレーティング システム、デバイスの子のセットが変更されたことを通知します。 新しい PDO に関連付けられているハードウェア識別子のハブのドライバーのクエリを実行するには後、は、オペレーティング システムは、識別子と一致するものを該当する INF ファイルを検索します。 他にも一致が見つかった場合*USB\\複合*、INF ファイルに示されているドライバーが読み込まれます。 ただし、他の一致が見つからない場合、オペレーティング システムを使用、互換性のある ID *USB\\複合*、どの it の一般的な親の USB ドライバーを読み込みます。 一般的な親ドライバーに、個別の PDO を作成し、複合デバイスの各インターフェイスのハードウェア識別子の別のセットを生成します。
+複数のインターフェイスを持つデバイスと呼ばれる*複合*デバイス。 以降では、Windows 2000 では、新しい[複合デバイスを USB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)が接続されているコンピューターに USB ハブのドライバーが物理デバイス オブジェクト (PDO) を作成し、オペレーティング システム、デバイスの子のセットが変更されたことを通知します。 新しい PDO に関連付けられているハードウェア識別子のハブのドライバーのクエリを実行するには後、は、オペレーティング システムは、識別子と一致するものを該当する INF ファイルを検索します。 他にも一致が見つかった場合*USB\\複合*、INF ファイルに示されているドライバーが読み込まれます。 ただし、他の一致が見つからない場合、オペレーティング システムを使用、互換性のある ID *USB\\複合*、どの it の一般的な親の USB ドライバーを読み込みます。 一般的な親ドライバーに、個別の PDO を作成し、複合デバイスの各インターフェイスのハードウェア識別子の別のセットを生成します。
 
 各インターフェイスには、次の形式のデバイス ID があります。
 

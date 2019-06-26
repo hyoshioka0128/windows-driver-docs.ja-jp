@@ -4,12 +4,12 @@ description: シリアル バス ドライバーは現在が読み込まれて�
 ms.assetid: E6A3E1CF-C25B-429B-946D-B300BAF3CF9B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de4b7a842b8f49498a353ffe949fd36a6d8ea264
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 996631936f14fa737efa8d5716a6e316fc4c3ac8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328192"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364618"
 ---
 # <a name="serial-bus-driver-layer"></a>シリアル バス ドライバー レイヤー
 
@@ -124,14 +124,14 @@ WdfPdoInitSetEventCallbacks(DeviceInit, &Callbacks);
 ## <a name="span-idarmforwakespanspan-idarmforwakespanspan-idarmforwakespanarm-for-wake"></a><span id="Arm_for_Wake"></span><span id="arm_for_wake"></span><span id="ARM_FOR_WAKE"></span>ウェイク アップの arm
 
 
-アイドル状態を入力する前に、シリアル バス ドライバーのコールバックの受信は[ **EvtDeviceEnableWakeAtBus** ](https://msdn.microsoft.com/library/windows/hardware/ff540866) wake の arm にします。
+アイドル状態を入力する前に、シリアル バス ドライバーのコールバックの受信は[ **EvtDeviceEnableWakeAtBus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_enable_wake_at_bus) wake の arm にします。
 
 ウェイク アップの arm へのメカニズムでは、ベンダー固有の SoC プラットフォームと、このセクションの範囲外のためです。 ただし、Windows には、このようなシグナルを処理するコールバック関数 (例: ISR) があります、バス ドライバーは、ウェイク信号を受信する準備が期待しています。
 
 ## <a name="span-identeridlespanspan-identeridlespanspan-identeridlespanenter-idle"></a><span id="Enter_Idle"></span><span id="enter_idle"></span><span id="ENTER_IDLE"></span>アイドル状態を入力します
 
 
-Bluetooth core ドライバーにより、アイドル状態検出の時間ベースのメカニズムです。 アイドル状態の要件を満たす、時にアイドル状態にスタックを開始するコア ドライバーを開始します。 呼び出す[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)完了関数 D2 に付随する電力を設定します。 バス ドライバーは IRP を完了したら、この完了関数が呼び出されます。 この時点では、D2 への移行の完了を取得します。
+Bluetooth core ドライバーにより、アイドル状態検出の時間ベースのメカニズムです。 アイドル状態の要件を満たす、時にアイドル状態にスタックを開始するコア ドライバーを開始します。 呼び出す[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)完了関数 D2 に付随する電力を設定します。 バス ドライバーは IRP を完了したら、この完了関数が呼び出されます。 この時点では、D2 への移行の完了を取得します。
 
 アイドル状態への移行、中に Bluetooth core ドライバーは保留中のすべての読み取り要求をキャンセルし、アクティブに再開するときに、それらを再起動します。 空の電源管理対象のキューは、シリアル バス ドライバー自体のアイドル状態を入力するために必要です。
 
@@ -147,11 +147,11 @@ Bluetooth core ドライバーにより、アイドル状態検出の時間ベ�
 
 Bluetooth 関数は、1 つまたは複数のデバイスとペアリングされているが、スリープ状態では、そのラジオは定期的に、ペアリングされたデバイスからの要求をスキャンします。 ペアになっているデバイスでは、要求を開始するし、Bluetooth 無線が受信した取得、アクティブな状態を再開するプロセスを開始します。 アクティブ (D0) には、デバイス スタックを再開しました、ドライバーは、このリモート要求のサービス開始できます。
 
-このリモート要求は、最後のセクションで説明したように、バス ドライバー ウェイク信号処理関数によって処理されます。 このウェイク信号処理関数がいることを確認 PDO のデバイスの状態 D2 の状態が実際を呼び出して[ **WdfDeviceIndicateWakeStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff546025) (PDO、成功の状態) を完了する KMDF に通知する、IRP の W/W (待機ウェイク)。 この W/W IRP の完了関数が呼び出すことができ、Bluetooth core ドライバーと電源ポリシー所有者 - のイニシエーターによって処理され、この時点では。
+このリモート要求は、最後のセクションで説明したように、バス ドライバー ウェイク信号処理関数によって処理されます。 このウェイク信号処理関数がいることを確認 PDO のデバイスの状態 D2 の状態が実際を呼び出して[ **WdfDeviceIndicateWakeStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceindicatewakestatus) (PDO、成功の状態) を完了する KMDF に通知する、IRP の W/W (待機ウェイク)。 この W/W IRP の完了関数が呼び出すことができ、Bluetooth core ドライバーと電源ポリシー所有者 - のイニシエーターによって処理され、この時点では。
 
-W/W IRP の完了には、D0 への移行を開始する Bluetooth core ドライバーがトリガーされます。 要求を[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734) D0 にデバイスの電源状態を設定する入力候補の関数を使用します。
+W/W IRP の完了には、D0 への移行を開始する Bluetooth core ドライバーがトリガーされます。 要求を[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp) D0 にデバイスの電源状態を設定する入力候補の関数を使用します。
 
-シリアル バス ドライバー active d0 へを再開する前に通知を受け取ることがあります[ **EvtDeviceDisableWakeAtBus** ](https://msdn.microsoft.com/library/windows/hardware/ff540858)ウェイク – を無効にするものを反転させるプロセスを完了[ **EvtDeviceEnableWakeAtBus** ](https://msdn.microsoft.com/library/windows/hardware/ff540866)前でした。
+シリアル バス ドライバー active d0 へを再開する前に通知を受け取ることがあります[ **EvtDeviceDisableWakeAtBus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_disable_wake_at_bus)ウェイク – を無効にするものを反転させるプロセスを完了[ **EvtDeviceEnableWakeAtBus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nc-wdfpdo-evt_wdf_device_enable_wake_at_bus)前でした。
 
 Bluetooth ドライバー スタックの D0 を再開した後、シリアル バス ドライバーをリモート デバイス要求完了できます。
 

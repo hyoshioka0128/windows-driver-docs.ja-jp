@@ -4,17 +4,17 @@ description: Microsoft ASL コンパイラのバージョン 5.0 では、ACPI 5
 ms.assetid: E6EC168F-DB4B-461A-874A-F5278E8F9200
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 307ced356e9347b38cd320038465ba5ebff79e6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3a148931bc655d706449059289dff6b1a0ed69b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364519"
 ---
 # <a name="microsoft-asl-compiler"></a>Microsoft ASL コンパイラ
 
 
-Microsoft ACPI のソース言語 (ASL) コンパイラ サポートでは、Advanced Configuration and Power Interface Specification、バージョン 5.0 の機能のバージョン 5.0 ([ACPI 5.0 仕様](https://www.uefi.org/specifications))。 ASL コンパイラは、Windows Driver Kit (WDK) で配布されます。 ツールの実行可能ファイルを Asl.exe\\arm\\ACPIVerify、ツール\\arm64\\ACPIVerify、ツール\\x86\\ACPIVerify、またはツール\\x64\\インストールされている、WDK の ACPIVerify ディレクトリ。
+Microsoft ACPI のソース言語 (ASL) コンパイラ サポートでは、Advanced Configuration and Power Interface Specification、バージョン 5.0 の機能のバージョン 5.0 ([ACPI 5.0 仕様](https://uefi.org/specifications))。 ASL コンパイラは、Windows Driver Kit (WDK) で配布されます。 ツールの実行可能ファイルを Asl.exe\\arm\\ACPIVerify、ツール\\arm64\\ACPIVerify、ツール\\x86\\ACPIVerify、またはツール\\x64\\インストールされている、WDK の ACPIVerify ディレクトリ。
 
 ## <a name="command-line-options"></a>コマンド ライン オプション
 
@@ -80,8 +80,8 @@ AMLFile は、レジストリにロードするテーブルを含むコンパイ
 ## <a name="additional-resources"></a>その他の資料
 
 -   [ACPICA ドキュメント](https://acpica.org/documentation/)
--   [ACPI の web サイト](https://www.uefi.org/specifications/)
--   [ACPI のデバッグ](https://msdn.microsoft.com/library/windows/hardware/ff537808)
--   [Acpi.sys:Windows の ACPI ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540493)
--   [電源管理と ACPI](https://msdn.microsoft.com/library/windows/hardware/dn614610)
+-   [ACPI の web サイト](https://uefi.org/specifications/)
+-   [ACPI のデバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/acpi-debugging)
+-   [Acpi.sys:Windows の ACPI ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)
+-   [電源管理と ACPI](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614610(v=vs.85))
 

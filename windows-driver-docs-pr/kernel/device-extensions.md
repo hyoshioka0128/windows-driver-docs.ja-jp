@@ -11,12 +11,12 @@ keywords:
 - 中間ドライバー拡張機能の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8730b711b3a831ac7bcc947f591653a71e47ffa5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 230f5c3e2f96d3ef8ed0a5fd236a92fa365a0fe7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388152"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385015"
 ---
 # <a name="device-extensions"></a>デバイス拡張
 
@@ -32,15 +32,15 @@ ms.locfileid: "63388152"
 
 -   常駐しており、その I/O 操作を実行するシステムの領域で、ドライバーのデータがありますを保持します。
 
-実行されるため、ほとんどのバス、関数、およびフィルター ドライバー (最下位レベルおよび中間ドライバー) (ことのどのスレッドがある現在) 任意のスレッド コンテキストでは、デバイスの拡張機能は、状態、および他のすべてのデバイスを維持するために各ドライバーのプライマリの場所デバイスに固有のデータ、ドライバーが必要です。 たとえば、実装するドライバー、 [ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)または[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)ルーチンは通常、必要なのストレージを提供タイマーのカーネル定義やデバイスの拡張機能で DPC オブジェクト。
+実行されるため、ほとんどのバス、関数、およびフィルター ドライバー (最下位レベルおよび中間ドライバー) (ことのどのスレッドがある現在) 任意のスレッド コンテキストでは、デバイスの拡張機能は、状態、および他のすべてのデバイスを維持するために各ドライバーのプライマリの場所デバイスに固有のデータ、ドライバーが必要です。 たとえば、実装するドライバー、 [ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)または[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチンは通常、必要なのストレージを提供タイマーのカーネル定義やデバイスの拡張機能で DPC オブジェクト。
 
 ISR のあるすべてのドライバーは、一連の割り込みのカーネル定義のオブジェクトへのポインターの記憶域を提供する必要があり、ほとんどのデバイス ドライバーは、デバイスの拡張機能でこのポインターを格納します。 各ドライバーは、デバイス オブジェクトを作成し、各ドライバーは、内容と、独自のデバイスの拡張機能の構造を定義するときに、デバイスの拡張機能のサイズを決定します。
 
-I/O マネージャーの[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)と[ **IoCreateDeviceSecure** ](https://msdn.microsoft.com/library/windows/hardware/ff548407)ルーチンでは、デバイス オブジェクトと拡張機能のメモリを割り当てる非ページ メモリ プール。
+I/O マネージャーの[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)と[ **IoCreateDeviceSecure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)ルーチンでは、デバイス オブジェクトと拡張機能のメモリを割り当てる非ページ メモリ プール。
 
 IRP を受信するすべての標準のドライバー ルーチンでは、要求された I/O 操作のターゲット デバイスを表すデバイス オブジェクトへのポインターも受信します。 これらのドライバーのルーチンは、このポインターを通じて、対応するデバイスの拡張機能にアクセスできます。 通常、*デバイス オブジェクト*ポインターは、最下位レベルのドライバーの ISR. への入力パラメーターでも
 
-次の図は、デバイスの拡張機能のデバイス オブジェクトの最下位レベル ドライバーのドライバーの定義済みのデータの代表的なセットを示します。 高度なドライバーがによって返される割り込みオブジェクト ポインターの記憶域を提供しない[ **IoConnectInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/ff548371)に渡されると[ **KeSynchronizeExecution**](https://msdn.microsoft.com/library/windows/hardware/ff553302)と[ **IoDisconnectInterrupt**](https://msdn.microsoft.com/library/windows/hardware/ff549089)します。 ただしより高度なドライバーはタイマーと、ドライバーがある場合は、次の図に示す DPC オブジェクト ストレージを提供する*CustomTimerDpc*ルーチン。 高度なドライバーはまた executive スピンロックの記憶域を提供する可能性があり、作業キューをインター ロックします。
+次の図は、デバイスの拡張機能のデバイス オブジェクトの最下位レベル ドライバーのドライバーの定義済みのデータの代表的なセットを示します。 高度なドライバーがによって返される割り込みオブジェクト ポインターの記憶域を提供しない[ **IoConnectInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterrupt)に渡されると[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)と[ **IoDisconnectInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterrupt)します。 ただしより高度なドライバーはタイマーと、ドライバーがある場合は、次の図に示す DPC オブジェクト ストレージを提供する*CustomTimerDpc*ルーチン。 高度なドライバーはまた executive スピンロックの記憶域を提供する可能性があり、作業キューをインター ロックします。
 
 ![最下位レベルのドライバーの拡張機能をデバイスの使用例を示す図](images/3devext.png)
 
@@ -48,11 +48,11 @@ IRP を受信するすべての標準のドライバー ルーチンでは、要
 
 通常、ドライバーは、図に示すように、そのデバイスの拡張機能で、デバイス オブジェクトへのポインターを格納します。 ドライバーは、拡張機能にデバイスのリソースの一覧のコピーを保持も可能性があります。
 
-高度なドライバーは通常、そのデバイスの拡張機能で、次の下位ドライバーのデバイス オブジェクトへのポインターを格納します。 高度なドライバーが、次の下位ドライバーのデバイス オブジェクトへのポインターを渡す必要があります[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)で説明したように、IRPで、次の下位ドライバーのI/Oスタックの場所の設定が後に、[Irp の処理](handling-irps.md)します。
+高度なドライバーは通常、そのデバイスの拡張機能で、次の下位ドライバーのデバイス オブジェクトへのポインターを格納します。 高度なドライバーが、次の下位ドライバーのデバイス オブジェクトへのポインターを渡す必要があります[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)で説明したように、IRPで、次の下位ドライバーのI/Oスタックの場所の設定が後に、[Irp の処理](handling-irps.md)します。
 
-また、Irp を下位レベルのドライバーによって割り当てられる任意の高度なドライバーが新しい Irp が必要数のスタックの場所を指定する必要があります。 特により高度なドライバーを呼び出す場合[ **IoMakeAssociatedIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549397)、 [ **IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)、または[ **IoInitializeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549315)、読み取る次下位ドライバーの対象のデバイス オブジェクトにアクセスする必要があります、 **StackSize** 、適切なを指定するには、値*StackSize*これらへの引数としてルーチンをサポートします。
+また、Irp を下位レベルのドライバーによって割り当てられる任意の高度なドライバーが新しい Irp が必要数のスタックの場所を指定する必要があります。 特により高度なドライバーを呼び出す場合[ **IoMakeAssociatedIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iomakeassociatedirp)、 [ **IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)、または[ **IoInitializeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeirp)、読み取る次下位ドライバーの対象のデバイス オブジェクトにアクセスする必要があります、 **StackSize** 、適切なを指定するには、値*StackSize*これらへの引数としてルーチンをサポートします。
 
-によって返されるポインターを通じて、次の下位レベルのドライバーのデバイス オブジェクトより高度なドライバーがデータの読み取り中に[ **IoAttachDeviceToDeviceStack**](https://msdn.microsoft.com/library/windows/hardware/ff548300)、このようなドライバーがこれらに従う必要があります実装のガイドライン:
+によって返されるポインターを通じて、次の下位レベルのドライバーのデバイス オブジェクトより高度なドライバーがデータの読み取り中に[ **IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)、このようなドライバーがこれらに従う必要があります実装のガイドライン:
 
 -   下位のドライバーのデバイス オブジェクトにデータを書き込みを試みることはありません。
 
@@ -63,7 +63,7 @@ IRP を受信するすべての標準のドライバー ルーチンでは、要
     -   2 つのドライバーの間、1 つのデバイスの拡張機能へのアクセスを同期する安全な方法はありません。
     -   バックドアの通信のスキームを実装しているドライバーのペアを個別にアップグレードすることはできません、既存のドライバー ソースを変更することがなくそれらの間に挿入された中間のドライバーを含めることはできませんできません再コンパイルおよび 1 つの Windows から簡単に移動次のプラットフォームです。
 
-次から 1 つの Windows プラットフォームまたはバージョンより低いレベル ドライバーとの相互運用性を維持するより高度なドライバーいずれかに許可する Irp を再利用する必要がありますまたは新しい Irp を作成する必要があり、それらを使用する必要があります[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)下位レベルのドライバーに要求を伝達します。
+次から 1 つの Windows プラットフォームまたはバージョンより低いレベル ドライバーとの相互運用性を維持するより高度なドライバーいずれかに許可する Irp を再利用する必要がありますまたは新しい Irp を作成する必要があり、それらを使用する必要があります[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)下位レベルのドライバーに要求を伝達します。
 
  
 

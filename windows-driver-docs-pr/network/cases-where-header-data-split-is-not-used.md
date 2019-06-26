@@ -7,12 +7,12 @@ keywords:
 - 使用しない場合は、WDK のネットワークを分割するイーサネット フレーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c09a64994118e165413f086281dd0250655638a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 082039603369df6496062444d400a2ca5b766d7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368334"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382791"
 ---
 # <a name="cases-where-header-data-split-is-not-used"></a>ヘッダー データの分割が使用されないケース
 
@@ -26,7 +26,7 @@ ms.locfileid: "63368334"
 
  
 
-分割されないすべてのイーサネット フレームは、NDIS の一般的な規則と要件に従う必要があります。 受信した MDLs のチェーン内の最初の MDL など[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体は、フレームの先読みの一部または全体のイーサネット フレーム (小さい方です) のいずれかを含める必要がありますで仮想的に連続するバッファー。 NDIS の先読みのサイズを設定する、 [OID\_GEN\_現在\_先読み](https://msdn.microsoft.com/library/windows/hardware/ff569574)OID。
+分割されないすべてのイーサネット フレームは、NDIS の一般的な規則と要件に従う必要があります。 受信した MDLs のチェーン内の最初の MDL など[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体は、フレームの先読みの一部または全体のイーサネット フレーム (小さい方です) のいずれかを含める必要がありますで仮想的に連続するバッファー。 NDIS の先読みのサイズを設定する、 [OID\_GEN\_現在\_先読み](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-lookahead)OID。
 
 ヘッダー データ プロバイダーを分割します。
 

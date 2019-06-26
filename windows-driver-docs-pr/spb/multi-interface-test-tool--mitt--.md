@@ -4,12 +4,12 @@ description: 複数インタ フェース テスト ツール (ミット) を使
 ms.assetid: 268217FF-0F0B-4175-B2DE-A45FAF94EA79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dde67b15c83688ad3eaa57bd41edad6954060a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 686ea47ffc0fb94c0971a5705610c931698288fe
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361992"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394123"
 ---
 # <a name="buy-hardware-for-using-mitt"></a>MITT を使用するためのハードウェアの購入
 
@@ -18,7 +18,7 @@ ms.locfileid: "63361992"
 
 -   **ミット ボード**
 
-    たとえば、FPGA 開発ボード (Nexys2)。 参照してください[Digilent から FPGA ボード](http://www.digilentinc.com/nexys2)します。
+    たとえば、FPGA 開発ボード (Nexys2)。 参照してください[Digilent から FPGA ボード](https://store.digilentinc.com/nexys-2-spartan-3e-fpga-trainer-board-retired-see-nexys-4-ddr/)します。
 
     ![ミット ボード](images/g73a5707.jpg)
 
@@ -59,7 +59,7 @@ ms.locfileid: "63361992"
     -   タッチ ポイント間の距離
 
 ## <a name="related-topics"></a>関連トピック
-[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 
