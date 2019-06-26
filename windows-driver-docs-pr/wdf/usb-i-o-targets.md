@@ -10,12 +10,12 @@ keywords:
 - USB I/O WDK KMDF をターゲットと USB I/O ターゲットの詳細について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29069f3c74bf38b656045d9c00a621e92881fa4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11f38ac962ab7c0cdbfd55080ca7c06107c9ec4d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372300"
 ---
 # <a name="usb-io-targets"></a>USB I/O ターゲット
 
@@ -27,9 +27,9 @@ ms.locfileid: "63378494"
 
 各 USB デバイス、USB デバイスのインターフェイスをサポートする各パイプは、別の I/O ターゲットにあります。 コントロールでは、USB デバイス ハンドルが、デバイスの I/O のターゲットに送信されることを転送します。 特定のパイプ処理する I/O の転送は、そのパイプの I/O のターゲットに送信されます。
 
-USB デバイスの I/O ターゲット USB 要求のブロックを送信することによって通信フレームワーク ([**翻訳**](https://msdn.microsoft.com/library/windows/hardware/ff538923))。 フレームワークは、構築自体を送信して、ドライバーがないように、ドライバーからの翻訳を非表示にするオブジェクトのメソッドを提供します。 ドライバーが翻訳を構築することをお望み、KMDF ドライバーは追加作成し、翻訳を送信するオブジェクトのメソッドのセットを使用できます。
+USB デバイスの I/O ターゲット USB 要求のブロックを送信することによって通信フレームワーク ([**翻訳**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb))。 フレームワークは、構築自体を送信して、ドライバーがないように、ドライバーからの翻訳を非表示にするオブジェクトのメソッドを提供します。 ドライバーが翻訳を構築することをお望み、KMDF ドライバーは追加作成し、翻訳を送信するオブジェクトのメソッドのセットを使用できます。
 
-USB デバイスの必要なドライバーの種類を確認する方法については、次を参照してください。 [USB クライアント ドライバーを開発するためのドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff540215)します。
+USB デバイスの必要なドライバーの種類を確認する方法については、次を参照してください。 [USB クライアント ドライバーを開発するためのドライバー モデルを選択する](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 このセクションの内容:
 

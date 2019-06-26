@@ -8,12 +8,12 @@ keywords:
 - NDIS フィルター ドライバー WDK ネットワークをインストールします。
 ms.date: 01/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 206e50dfadcfb936da190176949e61505d3182b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af7bf0f647c69d844e767124001d4d92db176574
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392923"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369626"
 ---
 # <a name="ndis-filter-driver-installation"></a>NDIS フィルター ドライバーのインストール
 
@@ -23,7 +23,7 @@ ms.locfileid: "63392923"
 
 フィルター ドライバーの INF ファイルでは、ネットワーク サービスを定義します。 フィルター ドライバーのミニポート INF ファイルではありません。 例フィルター ドライバーの INF ファイルでは、次を参照してください。、 [ndislwf](https://github.com/Microsoft/Windows-driver-samples/tree/master/network/ndis/filter)サンプル ドライバー。
 
-フィルター ドライバーをインストールまたはアンインストールする必要がありますを使用して、フィルター ドライバーの INF ファイルを指定すると、`INetCfg`ファミリの[構成のネットワーク インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v%3dvs.85))します。 たとえば、ネットワークのコンポーネントをインストールまたは削除を呼び出す、 [INetCfgClassSetup](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547709%28v%3dvs.85%29)インターフェイス。 プログラムによってこれらのインターフェイスを呼び出すことができますか、または直接いないで[netcfg.exe](https://docs.microsoft.com/windows-server/administration/windows-commands/netcfg)、呼び出す`INetCfg`できます。 使用することはできません[SetupAPI](../install/setupapi.md)をインストールまたは NDIS フィルター ドライバーをアンインストールします。
+フィルター ドライバーをインストールまたはアンインストールする必要がありますを使用して、フィルター ドライバーの INF ファイルを指定すると、`INetCfg`ファミリの[構成のネットワーク インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v=vs.85))します。 たとえば、ネットワークのコンポーネントをインストールまたは削除を呼び出す、 [INetCfgClassSetup](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547709(v=vs.85))インターフェイス。 プログラムによってこれらのインターフェイスを呼び出すことができますか、または直接いないで[netcfg.exe](https://docs.microsoft.com/windows-server/administration/windows-commands/netcfg)、呼び出す`INetCfg`できます。 使用することはできません[SetupAPI](../install/setupapi.md)をインストールまたは NDIS フィルター ドライバーをアンインストールします。
 
 呼び出すことの例については`INetCfg`、コードを参照してください、 [Bindview ネットワーク構成ユーティリティ サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/network/config/bindview)します。
 

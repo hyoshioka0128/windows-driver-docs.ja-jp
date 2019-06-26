@@ -10,12 +10,12 @@ keywords:
 - プロセッサ アフィニティ WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db9bf41015d10da67a46ae7c2e7c3f81bf731011
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0993e0338afb3d191a755f6b642c4f8cb4762d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341070"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369772"
 ---
 # <a name="interrupt-affinity"></a>割り込みアフィニティ
 
@@ -26,12 +26,12 @@ Windows Vista 以降、管理者は、割り込みのアフィニティ ポリ�
 
 管理者は、下にある次のエントリを設定できます、 **\\管理の割り込み\\アフィニティ ポリシー**レジストリ キー。
 
--   **DevicePolicy** 21\_アフィニティのポリシーを指定する DWORD の値。 考えられる各設定に対応する[ **IRQ\_デバイス\_ポリシー** ](https://msdn.microsoft.com/library/windows/hardware/ff551783)値。
+-   **DevicePolicy** 21\_アフィニティのポリシーを指定する DWORD の値。 考えられる各設定に対応する[ **IRQ\_デバイス\_ポリシー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)値。
 
 
 -   **AssignmentSetOverride** 21\_バイナリ値を指定する、 [ **KAFFINITY** ](#about-kaffinity)マスク。 場合**DevicePolicy** 0x04 です (**IrqPolicySpecifiedProcessors**)、このマスクを割り当てるデバイスの割り込みをプロセッサのセットを指定します。
 
-次の表、 [ **IRQ\_デバイス\_ポリシー** ](https://msdn.microsoft.com/library/windows/hardware/ff551783)値、および対応するレジストリの設定**DevicePolicy**します。 各値の意味の詳細については、次を参照してください。 [ **IRQ\_デバイス\_ポリシー**](https://msdn.microsoft.com/library/windows/hardware/ff551783)します。
+次の表、 [ **IRQ\_デバイス\_ポリシー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)値、および対応するレジストリの設定**DevicePolicy**します。 各値の意味の詳細については、次を参照してください。 [ **IRQ\_デバイス\_ポリシー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_irq_device_policy)します。
 
 <table>
 <colgroup>
@@ -74,7 +74,7 @@ Windows Vista 以降、管理者は、割り込みのアフィニティ ポリ�
 
  
 
-ドライバーの INF ファイルには、レジストリ値の既定の設定を指定できます。 設定する方法の例を次に示します、 **DevicePolicy**値を**IrqPolicyOneCloseProcessor** INF ファイルにします。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)します。
+ドライバーの INF ファイルには、レジストリ値の既定の設定を指定できます。 設定する方法の例を次に示します、 **DevicePolicy**値を**IrqPolicyOneCloseProcessor** INF ファイルにします。 詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
 
 ```cpp
 [install-section-name.HW]
@@ -84,7 +84,7 @@ AddReg=add-registry-section
 HKR, "Interrupt Management\Affinity Policy", DevicePolicy, 0x00010001, 2
 ```
 
-システム レジストリ設定を使用できるように、デバイスのドライバーを送信するとき、 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://msdn.microsoft.com/library/windows/hardware/ff550874)IRP がドライバーにします。 オペレーティング システムが提供、 [ **IO\_リソース\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff550598)で各割り込みの構造、**型**メンバーに設定**CmResourceTypeInterrupt**します。 メッセージ シグナル割り込みなど、CM の\_リソース\_割り込み\_のビットのメッセージ、**フラグ**メンバーの設定は明確では、それ以外の場合。 **U.Interrupt**メンバーは、割り込みの設定を示します。
+システム レジストリ設定を使用できるように、デバイスのドライバーを送信するとき、 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)IRP がドライバーにします。 オペレーティング システムが提供、 [ **IO\_リソース\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_descriptor)で各割り込みの構造、**型**メンバーに設定**CmResourceTypeInterrupt**します。 メッセージ シグナル割り込みなど、CM の\_リソース\_割り込み\_のビットのメッセージ、**フラグ**メンバーの設定は明確では、それ以外の場合。 **U.Interrupt**メンバーは、割り込みの設定を示します。
 
 次の表は、レジストリ設定とメンバーの間の通信**u.Interrupt**します。
 

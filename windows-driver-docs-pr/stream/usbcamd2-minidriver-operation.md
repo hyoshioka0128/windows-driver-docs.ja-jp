@@ -12,12 +12,12 @@ keywords:
 - される Srb WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f94f562f0c91c5d50fe3eb2847fa7a9717637bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d415a029703081bc2c60c3241666cac41ba9dbf9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384143"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373046"
 ---
 # <a name="usbcamd2-minidriver-operation"></a>USBCAMD2 ミニドライバーの操作
 
@@ -94,7 +94,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 
 | Component | アクション |
 | --- | --- |
-| カメラのミニドライバー | 返す、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)から構造体、 [ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions//ff561658(v=vs.85))構造体。 |
+| カメラのミニドライバー | 返す、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)から構造体、 [ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))構造体。 |
 | カメラのミニドライバー | フレーム レートが要求されたことを確認する (**VideoInfoHeader.AvgTimePerFrame**) が要求されるビデオ形式の上限と下限の範囲内で。 制限を超えた場合、ミニドライバー必要があります ->-> pSrb で次の値が正しい CommandData.IntersectInfo Datarange:VideoInfoHeader.AvgTimePerFrame、VideoInfoHeader.dwBitRate します。 |
 
 ## <a name="minidrivers-srbopenstream-handler"></a>ミニドライバーの SRB\_オープン\_ストリーム ハンドラー
@@ -131,7 +131,7 @@ USBCAMD2 カメラのミニドライバーは、一般には、次のように�
 | --- | --- |
 | カメラのミニドライバー | 呼び出す[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)します。 |
 | USBCAMD2 | 任意のストリームが開いている場合は、呼び出すようにミニドライバーのして閉じます[ **CamStopCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_stop_capture_routine_ex)と[ **CamFreeBandwidthEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_free_bw_routine_ex)コールバック各ストリームの機能です。 |
-| USBCAMD2 | 呼び出すようにミニドライバーの[ **CamUnInitialize** ](https://docs.microsoft.com/previous-versions//ff557646(v=vs.85))コールバック関数。 |
+| USBCAMD2 | 呼び出すようにミニドライバーの[ **CamUnInitialize** ](https://docs.microsoft.com/previous-versions/ff557646(v=vs.85))コールバック関数。 |
 | カメラのミニドライバー | リソースを解放してクリーンアップします。 |
 
 ## <a name="minidrivers-srbsurpriseremoval-handler"></a>ミニドライバーの SRB\_突然\_削除ハンドラー

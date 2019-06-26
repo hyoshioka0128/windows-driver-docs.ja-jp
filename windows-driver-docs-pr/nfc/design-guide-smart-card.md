@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 714800ce1d24b0394c98210eeb817752ef54d23e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 202a3cf25f39e6a3cd15059f212c1e7e9d3c674d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370543"
 ---
 # <a name="smart-card-design-guide"></a>スマート カード設計ガイド
 
@@ -51,6 +51,6 @@ Windows スマート カード DDI には、Get と Set の属性の IOCTL 要�
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[スマート カード DDI とコマンドのリファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905601)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[スマート カード DDI とコマンドのリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  
 

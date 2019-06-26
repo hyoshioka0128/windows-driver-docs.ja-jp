@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 85524f42e57c15a7aa08c38ce0ae0878b9f56ce1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb1580b7fad983a81560716ed3e3ad4bf89cb1d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356052"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375299"
 ---
 # <a name="dpinst-xml-element"></a>dpinst XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **Dpinst** XML 要素は、ドライバーのインストールをカスタマイズする子要素を含む DPInst 記述子ファイルの XML ルート要素。
 

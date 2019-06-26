@@ -11,12 +11,12 @@ keywords:
 - 受信側のデータの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c92a3629e8be996726811e4479b4fab22098d58a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abbc1ae089524f5aad0b25872bbcff60e1667a31
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357256"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373934"
 ---
 # <a name="miniport-driver-send-and-receive-operations"></a>ミニポート ドライバーの送信および受信操作
 
@@ -24,7 +24,7 @@ ms.locfileid: "63357256"
 
 
 
-ハンドルが重なってドライバーから要求を送信および発信のミニポート ドライバーでは、インジケーターが表示されます。 1 つの関数の呼び出しで NDIS ミニポート ドライバーは、受信した複数のリンクされたリストを指定できます[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 ミニポート ドライバーが複数のネットワークの一覧については、送信要求を処理できる\_バッファー\_複数のリストの構造体[ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)各ネットワーク上の構造\_バッファー\_リスト構造体。
+ハンドルが重なってドライバーから要求を送信および発信のミニポート ドライバーでは、インジケーターが表示されます。 1 つの関数の呼び出しで NDIS ミニポート ドライバーは、受信した複数のリンクされたリストを指定できます[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 ミニポート ドライバーが複数のネットワークの一覧については、送信要求を処理できる\_バッファー\_複数のリストの構造体[ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)各ネットワーク上の構造\_バッファー\_リスト構造体。
 
 ミニポート ドライバーを管理する必要があるバッファー プールを受信します。 ほとんどのミニポート ドライバーが事前に割り当てる 1 つの NET するプールを作成\_各 NET でバッファー構造\_バッファー\_リスト構造体。
 

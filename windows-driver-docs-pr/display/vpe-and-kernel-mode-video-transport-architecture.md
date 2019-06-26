@@ -10,12 +10,12 @@ keywords:
 - ビデオ キャプチャ WDK ビデオ トランスポート カーネル モード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cd23ec90f61319e2cf5a6df301f6d9ccf610685
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1784c5efde83a084c94be0d56509efde0831ca1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391222"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376024"
 ---
 # <a name="vpe-and-kernel-mode-video-transport-architecture"></a>VPE とカーネル モード ビデオ トランスポートのアーキテクチャ
 
@@ -23,7 +23,7 @@ ms.locfileid: "63391222"
 ## <span id="ddk_vpe_and_kernel_mode_video_transport_architecture_gg"></span><span id="DDK_VPE_AND_KERNEL_MODE_VIDEO_TRANSPORT_ARCHITECTURE_GG"></span>
 
 
-このセクションでは、Windows 2000 およびビデオ ポートの拡張機能 (VPE) とカーネル モードのビデオ トランスポート DirectX 5.0 およびそれ以降のバージョンでの以降のアーキテクチャについての詳細を提供します。 カーネル モードのビデオ トランスポートのアーキテクチャは、Microsoft がデバイスに依存しないコードとして追加する新しい関数に基づきます。 カーネル モードのビデオ トランスポートから成る、 [ **DxApi** ](https://msdn.microsoft.com/library/windows/hardware/ff557364) DirectDraw の一部として提供されている機能、[ビデオのミニポート ドライバー](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)、および提供する COM インターフェイス メソッドDirectDraw の一部として。
+このセクションでは、Windows 2000 およびビデオ ポートの拡張機能 (VPE) とカーネル モードのビデオ トランスポート DirectX 5.0 およびそれ以降のバージョンでの以降のアーキテクチャについての詳細を提供します。 カーネル モードのビデオ トランスポートのアーキテクチャは、Microsoft がデバイスに依存しないコードとして追加する新しい関数に基づきます。 カーネル モードのビデオ トランスポートから成る、 [ **DxApi** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxapi/nf-dxapi-dxapi) DirectDraw の一部として提供されている機能、[ビデオのミニポート ドライバー](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)、および提供する COM インターフェイス メソッドDirectDraw の一部として。
 
 ### <a name="span-idwindows2000andlaterspanspan-idwindows2000andlaterspanwindows-2000-and-later"></a><span id="windows_2000_and_later"></span><span id="WINDOWS_2000_AND_LATER"></span>Windows 2000 以降
 
@@ -33,7 +33,7 @@ Windows 2000 以降では、次の図に示すように、DxApi コールバッ�
 
 DxApi コールバックの詳細については、次を参照してください。 [DxApi ミニポート ドライバーの機能の Windows 2000 以降](dxapi-miniport-driver-functions-for-windows-2000-and-later.md)します。
 
-上記の図は、その他のカーネル モードとユーザー モード コンポーネント (点線は、カーネル遷移を表します) との関連カーネル モードのビデオ トランスポート アーキテクチャを示します。 DirectShow (または別のユーザー モードのクライアント) を呼び出す、このアーキテクチャでは、 [IDirectDrawKernel](https://msdn.microsoft.com/library/windows/hardware/ff567398)と[IDirectDrawSurfaceKernel](https://msdn.microsoft.com/library/windows/hardware/ff567409) DirectDraw COM インターフェイスの DirectDraw オブジェクトへのハンドルを取得し、画面のオブジェクト。
+上記の図は、その他のカーネル モードとユーザー モード コンポーネント (点線は、カーネル遷移を表します) との関連カーネル モードのビデオ トランスポート アーキテクチャを示します。 DirectShow (または別のユーザー モードのクライアント) を呼び出す、このアーキテクチャでは、 [IDirectDrawKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)と[IDirectDrawSurfaceKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) DirectDraw COM インターフェイスの DirectDraw オブジェクトへのハンドルを取得し、画面のオブジェクト。
 
 **注**   MPEG と VGA デバイス間のデータ フローの PCI バスを使用してこのアーキテクチャもサポートします。
 

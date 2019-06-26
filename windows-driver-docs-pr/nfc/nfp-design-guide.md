@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ed01d9592cf0cb358c60da604dd79af89a6d72c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 333199d7540ca307d8fa8d7e70ebb66824a7f67d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378637"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373838"
 ---
 # <a name="near-field-proximity-design-guide"></a>ほぼフィールド近接設計ガイド
 
@@ -57,6 +57,6 @@ ms.locfileid: "63378637"
 
  
 ## <a name="related-topics"></a>関連トピック
- [NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[フィールドの近接 DDI 参照の近く](https://msdn.microsoft.com/library/windows/hardware/jj866056)  
+ [NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[フィールドの近接 DDI 参照の近く](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

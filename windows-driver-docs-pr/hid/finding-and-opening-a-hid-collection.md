@@ -11,12 +11,12 @@ keywords:
 - HID のコレクションを開く
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaba2c5dfbfac7b488103a5e1388cf424b2ecb23
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 074582dffe13272a2f7e20f734b093078016cfbb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374331"
 ---
 # <a name="finding-and-opening-a-hid-collection"></a>HID コレクションを検索して開く
 
@@ -32,21 +32,21 @@ Microsoft Windows デバイスのインストール ルーチンを提供しま�
 
 ユーザー モード アプリケーションが読み込まれた後に次の一連の操作を行います。
 
--   呼び出し[ **HidD\_GetHidGuid** ](https://msdn.microsoft.com/library/windows/hardware/ff538924) HIDClass デバイスのシステム定義の GUID を取得します。
+-   呼び出し[ **HidD\_GetHidGuid** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidsdi/nf-hidsdi-hidd_gethidguid) HIDClass デバイスのシステム定義の GUID を取得します。
 
--   呼び出し[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)すべてでサポートされているデバイスのインターフェイスを記述する非透過的なデバイス情報のセットを識別するハンドルを取得する、 [HID コレクション](hid-collections.md)現在システムにインストールされています。 アプリケーションが DIGCF を指定する必要があります\_存在し、DIGCF\_で DEVICEINTERFACE、*フラグ*パラメーターに渡される**SetupDiGetClassDevs**します。
+-   呼び出し[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)すべてでサポートされているデバイスのインターフェイスを記述する非透過的なデバイス情報のセットを識別するハンドルを取得する、 [HID コレクション](hid-collections.md)現在システムにインストールされています。 アプリケーションが DIGCF を指定する必要があります\_存在し、DIGCF\_で DEVICEINTERFACE、*フラグ*パラメーターに渡される**SetupDiGetClassDevs**します。
 
--   呼び出し[ **SetupDiEnumDeviceInterfaces** ](https://msdn.microsoft.com/library/windows/hardware/ff551015)繰り返しを利用可能なインターフェイスのすべての情報を取得します。
+-   呼び出し[ **SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)繰り返しを利用可能なインターフェイスのすべての情報を取得します。
 
--   呼び出し[ **SetupDiGetDeviceInterfaceDetail** ](https://msdn.microsoft.com/library/windows/hardware/ff551120)形式インターフェイスについては、SP とコレクションごとに\_インターフェイス\_デバイス\_詳細\_データ構造体。 **DevicePath**この構造体のメンバーには、Win32 関数を使用したアプリケーションを使用してユーザー モードの名前が含まれています[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858) 、HID ファイル ハンドルを取得するには。コレクションです。
+-   呼び出し[ **SetupDiGetDeviceInterfaceDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)形式インターフェイスについては、SP とコレクションごとに\_インターフェイス\_デバイス\_詳細\_データ構造体。 **DevicePath**この構造体のメンバーには、Win32 関数を使用したアプリケーションを使用してユーザー モードの名前が含まれています[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea) 、HID ファイル ハンドルを取得するには。コレクションです。
 
--   呼び出し[ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858) HID コレクションにファイル ハンドルを取得します。
+-   呼び出し[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea) HID コレクションにファイル ハンドルを取得します。
 
 ### <a name="kernel-mode-driver"></a>カーネル モード ドライバー
 
 カーネル モード ドライバーが関数またはフィルター ドライバーの場合は、デバイス オブジェクトを HID コレクションのデバイス スタックにアタッチします。 ドライバーは、のみ、要求の作成を使用して、デバイスを開く必要があります。
 
-通常使用して、ドライバーでない場合、関数またはフィルター ドライバー[プラグ アンド プレイ通知](https://msdn.microsoft.com/library/windows/hardware/ff559640)コレクションが見つかりません。 コレクションを検索した後、ドライバーは、コレクションを開く要求の作成を使用します。
+通常使用して、ドライバーでない場合、関数またはフィルター ドライバー[プラグ アンド プレイ通知](https://docs.microsoft.com/windows-hardware/drivers/kernel/pnp-notification-overview)コレクションが見つかりません。 コレクションを検索した後、ドライバーは、コレクションを開く要求の作成を使用します。
 
  
 

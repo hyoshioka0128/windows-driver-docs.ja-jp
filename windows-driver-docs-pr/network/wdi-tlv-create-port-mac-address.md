@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CREATE_PORT_MAC_ADDRESS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 06e99e197ea7d8733bea3db77feb7f65a6948d6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71e980c4d0e963c06115f182c5ea258deb8cdb8c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348196"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374708"
 ---
 # <a name="wditlvcreateportmacaddress"></a>WDI\_TLV\_作成\_ポート\_MAC\_アドレス
 
 
-WDI\_TLV\_作成\_ポート\_MAC\_アドレスは、MAC アドレスを含む TLV [OID\_WDI\_タスク\_作成\_ポート](https://msdn.microsoft.com/library/windows/hardware/dn925949)します。
+WDI\_TLV\_作成\_ポート\_MAC\_アドレスは、MAC アドレスを含む TLV [OID\_WDI\_タスク\_作成\_ポート](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-create-port)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,14 +26,14 @@ WDI\_TLV\_作成\_ポート\_MAC\_アドレスは、MAC アドレスを含む TL
 ## <a name="length"></a>長さ
 
 
-サイズ (バイト単位) で、 [ **WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)構造体。
+サイズ (バイト単位) で、 [ **WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)構造体。
 
 ## <a name="values"></a>値
 
 
 | 型                                              | 説明                                   |
 |---------------------------------------------------|-----------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | ポートの作成に使用する MAC アドレスです。 |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | ポートの作成に使用する MAC アドレスです。 |
 
  
 

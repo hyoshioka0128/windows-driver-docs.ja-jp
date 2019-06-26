@@ -9,12 +9,12 @@ keywords:
 - デバイスの拡張機能の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fcde47110d5d072391ecfa09294903e546c2319
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e052ae2b6f23cef6817de9c97d17438ea130bf0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341057"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369762"
 ---
 # <a name="introduction-to-device-objects"></a>デバイス オブジェクトの概要
 
@@ -36,9 +36,9 @@ ms.locfileid: "63341057"
 
 ドライバーがデバイス オブジェクトを作成する方法の詳細については、次を参照してください。[デバイス オブジェクトを作成する](creating-a-device-object.md)します。
 
-デバイスは通常、各ドライバーはドライバー スタック、デバイスの I/O 要求を処理するのに複数のデバイス オブジェクトによって表されます。 デバイスのデバイス オブジェクトの編成、*デバイス スタック*します。 デバイスで操作を実行すると、たびに、システムに渡します、 [ **IRP** ](https://msdn.microsoft.com/library/windows/hardware/ff550694)デバイス スタックの一番上のデバイス オブジェクトのドライバーのデータ構造体。 各ドライバーは IRP を処理するか、またはデバイス スタック内の次の下位のデバイス オブジェクトに関連付けられているドライバーに渡します。 デバイス履歴の詳細については、次を参照してください。 [WDM デバイス オブジェクトとデバイス スタック](wdm-device-objects-and-device-stacks.md)します。 Irp の詳細については、次を参照してください。 [Irp の処理](handling-irps.md)します。
+デバイスは通常、各ドライバーはドライバー スタック、デバイスの I/O 要求を処理するのに複数のデバイス オブジェクトによって表されます。 デバイスのデバイス オブジェクトの編成、*デバイス スタック*します。 デバイスで操作を実行すると、たびに、システムに渡します、 [ **IRP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)デバイス スタックの一番上のデバイス オブジェクトのドライバーのデータ構造体。 各ドライバーは IRP を処理するか、またはデバイス スタック内の次の下位のデバイス オブジェクトに関連付けられているドライバーに渡します。 デバイス履歴の詳細については、次を参照してください。 [WDM デバイス オブジェクトとデバイス スタック](wdm-device-objects-and-device-stacks.md)します。 Irp の詳細については、次を参照してください。 [Irp の処理](handling-irps.md)します。
 
-によって表されるデバイス[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体は、オブジェクト マネージャーによって管理されます。 オブジェクト マネージャーは、他のシステム オブジェクトのデバイス オブジェクトと同じ機能を提供します。 具体的には、デバイス オブジェクトの名前を指定できます、および名前付きのデバイス オブジェクトを開いたハンドルを持つことができます。 名前付きのデバイス オブジェクトの詳細については、次を参照してください。[という名前のデバイス オブジェクト](named-device-objects.md)します。
+によって表されるデバイス[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体は、オブジェクト マネージャーによって管理されます。 オブジェクト マネージャーは、他のシステム オブジェクトのデバイス オブジェクトと同じ機能を提供します。 具体的には、デバイス オブジェクトの名前を指定できます、および名前付きのデバイス オブジェクトを開いたハンドルを持つことができます。 名前付きのデバイス オブジェクトの詳細については、次を参照してください。[という名前のデバイス オブジェクト](named-device-objects.md)します。
 
 システムでは、デバイスの拡張機能は、デバイスに固有の記憶域のドライバーを使用できますと呼ばれるデバイス オブジェクトごとに専用のストレージを提供します。 デバイスの拡張機能が作成され、デバイス オブジェクトと共に、システムによって解放されます。 詳細については、次を参照してください。[デバイス拡張機能](device-extensions.md)します。
 

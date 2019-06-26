@@ -13,12 +13,12 @@ keywords:
 - デカール WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 609da6c6156e023b9350bac80dae361dfea11679
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: ac8697b312d09d160084ae8aa38761c5c5ad1907
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376030"
 ---
 # <a name="stencil-planes"></a>ステンシル平面
 
@@ -32,7 +32,7 @@ ms.locfileid: "67161581"
 
 ステンシル平面は、z バッファーのデータに埋め込まれると見なされます。
 
-DirectX 5.0 では、アプリケーションが、DDBD を使用して利用可能な z バッファー ビット深度\_*Xx*フラグ設定、 **dwDeviceZBufferBitDepth**のメンバー、 [ **D3DDEVICEDESC\_V1** ](https://msdn.microsoft.com/library/windows/hardware/ff544689)構造体。 ステンシルと z バッファーで z バッファーをサポートするためにビット深度既存 DDBD で表現できない\_*Xx*フラグ、DirectX 6.0 およびそれ以降のバージョン、新しい API のエントリ ポイントがある**IDirect3D7:。EnumZBufferFormats** (Direct3D SDK のドキュメントで説明)、可能な z バッファー/ステンシル ピクセル形式を記述する DDPIXELFORMAT 構造体の配列が返されます。 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)構造体には、次の新しい z バッファー関連メンバーが含まれています。
+DirectX 5.0 では、アプリケーションが、DDBD を使用して利用可能な z バッファー ビット深度\_*Xx*フラグ設定、 **dwDeviceZBufferBitDepth**のメンバー、 [ **D3DDEVICEDESC\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)構造体。 ステンシルと z バッファーで z バッファーをサポートするためにビット深度既存 DDBD で表現できない\_*Xx*フラグ、DirectX 6.0 およびそれ以降のバージョン、新しい API のエントリ ポイントがある**IDirect3D7:。EnumZBufferFormats** (Direct3D SDK のドキュメントで説明)、可能な z バッファー/ステンシル ピクセル形式を記述する DDPIXELFORMAT 構造体の配列が返されます。 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)構造体には、次の新しい z バッファー関連メンバーが含まれています。
 
 <span id="dwStencilBitDepth"></span><span id="dwstencilbitdepth"></span><span id="DWSTENCILBITDEPTH"></span>**dwStencilBitDepth**  
 ステンシルのビット数を指定します (、DDBD としてではなく、整数として\_*Xx*フラグ値)。
@@ -45,7 +45,7 @@ Z 値を占有するビットを指定します。 ゼロ以外の場合、こ�
 
 新しいフラグを DDPF\_STENCILBUFFER、ステンシル ビット z バッファー内の存在を示します。 **DwZBufferBitDepth** 、以前に存在していた場合は、メンバーなど、ステンシル ビット z バッファー ビットの合計数がわかります。
 
-DirectX 6.0 以降のバージョンのドライバーでは、適切な DDBD を設定する必要がありますも\_*Xx*のフラグ**dwDeviceZBufferBitDepth** z のみ z バッファー形式のサポートします。 ステンシルの平面がサポートされていない場合と、DDBD\_*Xx*フラグは、すべての利用可能な z バッファー形式で表すことができます、によって DDPIXELFORMAT に変換されるため、十分ではこれらのフラグを設定し、 **IDirect3D7::EnumZBufferFormats**します。 それ以外の場合、Direct3D ドライバーに応答する必要があります、 [ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404) GUID を使用するクエリ\_最初 DWORD がの数を示しますバッファーを返すことによって ZPixelFormats GUIDDDPIXELFORMAT 構造自体で後に、有効な z バッファー DDPIXELFORMAT 構造。
+DirectX 6.0 以降のバージョンのドライバーでは、適切な DDBD を設定する必要がありますも\_*Xx*のフラグ**dwDeviceZBufferBitDepth** z のみ z バッファー形式のサポートします。 ステンシルの平面がサポートされていない場合と、DDBD\_*Xx*フラグは、すべての利用可能な z バッファー形式で表すことができます、によって DDPIXELFORMAT に変換されるため、十分ではこれらのフラグを設定し、 **IDirect3D7::EnumZBufferFormats**します。 それ以外の場合、Direct3D ドライバーに応答する必要があります、 [ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) GUID を使用するクエリ\_最初 DWORD がの数を示しますバッファーを返すことによって ZPixelFormats GUIDDDPIXELFORMAT 構造自体で後に、有効な z バッファー DDPIXELFORMAT 構造。
 
 ステンシル平面に関連付けられている描画状態の新しいレンダリング状態、レンダリング状態の値、および説明に関連付けられている型を一覧表示、次の表に表示されます。 詳細については、この状態の表示、DirectX SDK のマニュアルを参照してください。
 

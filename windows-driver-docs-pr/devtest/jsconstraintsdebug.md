@@ -4,17 +4,17 @@ description: JSConstraintsDebug (JSConstraintsDebug.exe) は、V4 プリンタ�
 ms.assetid: 48C39A2C-7EA6-4BAA-B5E8-3B426C9697B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d276834e26f7c1fd35d380e3d89f5c990f5e06a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fe2a51979dd2ab3a69eeb553582b1b1a24bd6b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340434"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373658"
 ---
 # <a name="jsconstraintsdebug"></a>JSConstraintsDebug
 
 
-JSConstraintsDebug (JSConstraintsDebug.exe) に対するデバッグのサポートを提供するコマンド ライン ツールは、 [JavaScript 制約](https://msdn.microsoft.com/library/windows/hardware/jj218731)開発中に、 [V4 プリンター ドライバー](https://msdn.microsoft.com/library/windows/hardware/hh706306)します。
+JSConstraintsDebug (JSConstraintsDebug.exe) に対するデバッグのサポートを提供するコマンド ライン ツールは、 [JavaScript 制約](https://docs.microsoft.com/windows-hardware/drivers/print/javascript-constraints)開発中に、 [V4 プリンター ドライバー](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver)します。
 
 <table>
 <colgroup>
@@ -36,13 +36,13 @@ JSConstraintsDebug (JSConstraintsDebug.exe) に対するデバッグのサポー
 
 ツールは、印刷チケットが提供されているユーザーに対して、対象となるドライバーの JavaScript の制約に対して、次の関連するエントリ ポイントの Api の各を実行します。
 
-[**PTGetPrintCapabilities**](https://msdn.microsoft.com/library/windows/desktop/dd162881)
+[**PTGetPrintCapabilities**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptgetprintcapabilities)
 
-[**PTConvertDevModeToPrintTicket**](https://msdn.microsoft.com/library/windows/desktop/dd162879)
+[**PTConvertDevModeToPrintTicket**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptconvertdevmodetoprintticket)
 
-[**TConvertPrintTicketToDevMode**](https://msdn.microsoft.com/library/windows/desktop/dd162880)
+[**TConvertPrintTicketToDevMode**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptconvertprinttickettodevmode)
 
-[**PTMergeAndValidatePrintTicket**](https://msdn.microsoft.com/library/windows/desktop/dd162884)
+[**PTMergeAndValidatePrintTicket**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)
 
 実行中に、ツールは Visual Studio など、適切な IDE デバッガー求められます。 選択、制約のソース コードを開くし、する JavaScript デバッガー ステートメントで停止します。
 

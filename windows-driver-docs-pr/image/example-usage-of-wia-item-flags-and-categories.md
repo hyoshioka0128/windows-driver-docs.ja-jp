@@ -4,12 +4,12 @@ description: WIA 項目のフラグおよびカテゴリの使用例
 ms.assetid: 8c9f7d85-6c84-4df9-9db3-6554d7eddf93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9ca6a4825773e4be9998ee3cef7554b6f012207
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dab70a556e0001eb548dea2477a39febfce77a62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373160"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375046"
 ---
 # <a name="example-usage-of-wia-item-flags-and-categories"></a>WIA 項目のフラグおよびカテゴリの使用例
 
@@ -45,9 +45,9 @@ ms.locfileid: "63373160"
 
 上記の図では、左側のツリーは、スキャナーの項目のツリーを表します。 右側の吹き出しは、WIA 内のカテゴリを含む\_IPA\_項目\_CATEGORY プロパティをこのようなデバイスを設定する必要があります。
 
-WIA とカテゴリごとの有効な WIA 項目フラグについては、定義されたすべてのカテゴリの完全な一覧を参照してください。 [ **WIA\_IPA\_項目\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff551581)します。
+WIA とカテゴリごとの有効な WIA 項目フラグについては、定義されたすべてのカテゴリの完全な一覧を参照してください。 [ **WIA\_IPA\_項目\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)します。
 
-WIA がすべての完全なリスト項目のフラグを参照してください[ **WIA\_IPA\_項目\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff551585)します。
+WIA がすべての完全なリスト項目のフラグを参照してください[ **WIA\_IPA\_項目\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)します。
 
 次のコード例は、アプリケーションが、WIA の組み合わせを使用する方法を示します\_IPA\_項目\_フラグと WIA\_IPA\_項目\_を分類するカテゴリのプロパティWIA 項目のツリー内で見つかった項目 WIA します。
 

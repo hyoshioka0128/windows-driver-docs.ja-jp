@@ -10,12 +10,12 @@ keywords:
 - 注文グループ WDK ファイル システムを読み込む
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4ff7a0852955c73cb1df4018a744f853b7fa700
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10c02f618e08d7bb3fb83aa6c53ec4fbffd6b319
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375666"
 ---
 # <a name="load-order-groups-for-file-system-filter-drivers"></a>ファイル システム フィルター ドライバー用のロード順序グループ
 
@@ -35,7 +35,7 @@ Microsoft Windows XP およびそれ以降のオペレーティング システ�
 
 -   ファイル システム フィルター ドライバーがロード順序グループを指定しない場合は、ロード順序グループを指定して型をすべて同じの他のドライバーの開始後に読み込まれます。
 
-次の表は、ファイル システム フィルター ドライバーのシステム定義のロード順序グループを一覧表示します。 ロード順序グループごとに、ロード順序グループ列には、そのグループを指定する値が含まれています、 **LoadOrderGroup**内のエントリ、 [**バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)フィルターの INF ファイルです。
+次の表は、ファイル システム フィルター ドライバーのシステム定義のロード順序グループを一覧表示します。 ロード順序グループごとに、ロード順序グループ列には、そのグループを指定する値が含まれています、 **LoadOrderGroup**内のエントリ、 [**バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)フィルターの INF ファイルです。
 
 読み込まれた順の逆であると、スタックに表示されると、ロード順序グループが表示されることに注意してください。
 

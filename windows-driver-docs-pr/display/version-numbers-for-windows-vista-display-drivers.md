@@ -8,19 +8,19 @@ keywords:
 - バージョン番号 WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 658900f0a2614e096a854bac49d0871ed5bb1bc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: daa2139196eb6fa7da6413b12a8adb8a4e3627cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390781"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376119"
 ---
 # <a name="version-numbers-for-wddm-drivers"></a>WDDM ドライバーのバージョン番号
 
 
 ディスプレイ ドライバー Windows 表示 Driver Model (WDDM) に準拠していることを確認するまたは[Windows 2000 display driver model (XDDM)](windows-2000-display-driver-model-design-guide.md) Microsoft Windows で Microsoft DirectX の特定のバージョンで実行する を適用する必要がある、ドライバーを適切なバージョン番号です。 任意の DirectX アプリケーションをインストールするときに、ベンダーは、正しくない形式を使用するバージョン番号または不適切なバージョン番号にディスプレイ ドライバーを配布する場合に、エンドユーザーで問題が発生します。
 
-**注**   、 **DriverVer**ディレクティブは、ドライバー パッケージをドライバー ファイル、INF ファイル自体には、INF ファイルなどのバージョン情報を追加する方法を提供します。 使用して、 **DriverVer**ディレクティブ、安全かつ明確を置換できますドライバー パッケージを同じパッケージの将来のバージョン。 このディレクティブの詳細については、次を参照してください。 [ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)します。
+**注**   、 **DriverVer**ディレクティブは、ドライバー パッケージをドライバー ファイル、INF ファイル自体には、INF ファイルなどのバージョン情報を追加する方法を提供します。 使用して、 **DriverVer**ディレクティブ、安全かつ明確を置換できますドライバー パッケージを同じパッケージの将来のバージョン。 このディレクティブの詳細については、次を参照してください。 [ **INF DriverVer ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)します。
 
  
 

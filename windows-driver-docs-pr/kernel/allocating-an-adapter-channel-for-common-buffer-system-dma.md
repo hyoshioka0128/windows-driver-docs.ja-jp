@@ -11,12 +11,12 @@ keywords:
 - DMA は、WDK カーネルでは、一般的なバッファーを転送します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5efb04bf7a49f1c2b10e02069f860222b491bd43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54316278eb1187aa4b9dd9b484a94a957a020de8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386262"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369974"
 ---
 # <a name="allocating-an-adapter-channel-for-common-buffer-system-dma"></a>共通バッファー システム DMA 用のアダプター チャネルの割り当て
 
@@ -24,15 +24,15 @@ ms.locfileid: "63386262"
 
 
 
-ドライバーを呼び出す[ **AllocateAdapterChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff540573)後その[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)または[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン (または DMA の転送を処理するその他の任意のディスパッチ ルーチン) に IRP のパラメーターの有効性をチェック、場合によってさらに処理する、別のドライバーのルーチンを 1 つまたは複数の Irp キューに登録され読み込まれる可能性があります、該当する場合は、転送されるデータと共通のバッファー。
+ドライバーを呼び出す[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)後その[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)または[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン (または DMA の転送を処理するその他の任意のディスパッチ ルーチン) に IRP のパラメーターの有効性をチェック、場合によってさらに処理する、別のドライバーのルーチンを 1 つまたは複数の Irp キューに登録され読み込まれる可能性があります、該当する場合は、転送されるデータと共通のバッファー。
 
-ドライバーのルーチンを呼び出す**AllocateAdapterChannel** IRQL で実行する必要があります = ディスパッチ\_レベル。 **AllocateAdapterChannel**ルーチンのキュー、ドライバーの[ *AdapterControl* ](https://msdn.microsoft.com/library/windows/hardware/ff540504)ルーチンで、システムの DMA コント ローラーがこのドライバーに割り当てられた後に実行し、設定の[レジスタにマップ](map-registers.md)がドライバーの DMA 操作に割り当てられました。
+ドライバーのルーチンを呼び出す**AllocateAdapterChannel** IRQL で実行する必要があります = ディスパッチ\_レベル。 **AllocateAdapterChannel**ルーチンのキュー、ドライバーの[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)ルーチンで、システムの DMA コント ローラーがこのドライバーに割り当てられた後に実行し、設定の[レジスタにマップ](map-registers.md)がドライバーの DMA 操作に割り当てられました。
 
-エントリの*AdapterControl*ルーチンをデバイス オブジェクトと呼び出しで渡されるコンテキスト ポインターが与えられます**AllocateAdapterChannel**とともに、割り当てられたマップへのハンドルとして登録します。 *AdapterControl*ルーチンもへのポインターを指定は、**デバイス オブジェクト -&gt;CurrentIrp**ドライバーがある場合、 [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチン。 かどうか、ドライバー管理の Irp の専用キューではなく、 *StartIo* 、日常的なドライバー含める必要があります現在 IRP へのポインターを呼び出すときに渡すコンテキスト データの一部として**AllocateAdapterChannel**.
+エントリの*AdapterControl*ルーチンをデバイス オブジェクトと呼び出しで渡されるコンテキスト ポインターが与えられます**AllocateAdapterChannel**とともに、割り当てられたマップへのハンドルとして登録します。 *AdapterControl*ルーチンもへのポインターを指定は、**デバイス オブジェクト -&gt;CurrentIrp**ドライバーがある場合、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチン。 かどうか、ドライバー管理の Irp の専用キューではなく、 *StartIo* 、日常的なドライバー含める必要があります現在 IRP へのポインターを呼び出すときに渡すコンテキスト データの一部として**AllocateAdapterChannel**.
 
 *AdapterControl*ルーチンは、次を通常は。
 
-1.  保存または DMA 操作に関するこのドライバーは、どのようなコンテキストを初期化します。 コンテキストは、入力を含めることがあります*MapRegisterBase*ハンドルを渡す必要があります、ドライバー [ **MapTransfer** ](https://msdn.microsoft.com/library/windows/hardware/ff554402)と[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)と、おそらく、**長さ**I/O から要求された転送の IRP 内の場所をスタックします。
+1.  保存または DMA 操作に関するこのドライバーは、どのようなコンテキストを初期化します。 コンテキストは、入力を含めることがあります*MapRegisterBase*ハンドルを渡す必要があります、ドライバー [ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)と[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)と、おそらく、**長さ**I/O から要求された転送の IRP 内の場所をスタックします。
 
 2.  転送操作を開始する下位のデバイスを設定します。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63386262"
 
 2.  返す**KeepObject**します。
 
-他のドライバー ルーチン (おそらく、 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン) 呼び出す必要があります[ **FlushAdapterBuffers** ](https://msdn.microsoft.com/library/windows/hardware/ff545917)と[ **FreeAdapterChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff546507) DMA 転送操作が完了するとします。
+他のドライバー ルーチン (おそらく、 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン) 呼び出す必要があります[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)と[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel) DMA 転送操作が完了するとします。
 
  
 

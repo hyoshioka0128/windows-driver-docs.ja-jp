@@ -7,12 +7,12 @@ keywords:
 ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ba3d6259dd36ac31e7b2d930c11fe2581063966b
-ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
+ms.openlocfilehash: a77f816a6eaebb1a11c9558509f95b61fe9279b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501569"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374806"
 ---
 # <a name="mb-5g-data-class-support"></a>MB 5G データ クラスのサポート
 
@@ -34,7 +34,7 @@ ms.locfileid: "65501569"
 
 ## <a name="overview"></a>概要
 
-Windows 10、バージョンが 1903 は IHV パートナーの 5 G モバイル ブロード バンドのドライバーをサポートするために最初の Windows リリースです。 名前*5 G*フレンドリ名の新しいオプション (NR) で導入されたは、 [3 gpp リリース 15 仕様](http://www.3gpp.org/release-15)します。 NR は包括的な設定が想定する真の長期的な進化を提供する標準の既存の第 4 世代 LTE テクノロジ、超ブロード バンドをナローバンドおよびに公称からすべての携帯電話の通信ニーズをカバーする可能性があります。ミッション クリティカルな待機時間の要件。 、、のテクノロジとして 10 年間-時間の長い期間が経過する 5 G が必要です。 
+Windows 10、バージョンが 1903 は IHV パートナーの 5 G モバイル ブロード バンドのドライバーをサポートするために最初の Windows リリースです。 名前*5 G*フレンドリ名の新しいオプション (NR) で導入されたは、 [3 gpp リリース 15 仕様](https://www.3gpp.org/release-15)します。 NR は包括的な設定が想定する真の長期的な進化を提供する標準の既存の第 4 世代 LTE テクノロジ、超ブロード バンドをナローバンドおよびに公称からすべての携帯電話の通信ニーズをカバーする可能性があります。ミッション クリティカルな待機時間の要件。 、、のテクノロジとして 10 年間-時間の長い期間が経過する 5 G が必要です。 
 
 このトピックでは、強化されたモバイル ブロード バンド (eMBB) 5 G を超える「以外のスタンドアロン」EPC ベース NR ネットワークでデータ クラスを使用して、MBB ドライバーの開発に有効にするハードウェア パートナー サポート Windows 10 のバージョンが 1903 年に初めてリリース MBIM 拡張を示します。 データ プレーンのサポートと 5 G のスループットと商用の要件の有効化は、この Windows リリースの一部ではないと、このトピックでは説明しません。 
 

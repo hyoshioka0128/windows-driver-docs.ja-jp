@@ -4,12 +4,12 @@ description: Windows Inbox スマート カード ミニドライバー
 ms.assetid: 4B61607E-090A-4935-B944-110ACE9A4D83
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6711bb48a2a0e4b81067fa734c26fcbd2c8ca5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e80abba0d39b8dc0e61905f647d11b17af8f08f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348123"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369591"
 ---
 # <a name="windows-inbox-smart-card-minidriver"></a>Windows Inbox スマート カード ミニドライバー
 
@@ -20,7 +20,7 @@ PIV 準拠のスマート カードとカード、GID を実装するカード�
 
 GID の詳細については、次を参照してください。、[ジェネリック Identity Device Specification](https://msdn.microsoft.com/windows/hardware/gg487496) web ページ。
 
-スマート カードをリーダーと Base CSP または KSP に挿入するときに呼び出す[ **CardAcquireContext**](https://msdn.microsoft.com/library/windows/hardware/dn468701)、クラス ミニドライバー PIV-いずれかとして関連付けられているカードをマークする次の検出プロセスを実行しますかGID に準拠していません。
+スマート カードをリーダーと Base CSP または KSP に挿入するときに呼び出す[ **CardAcquireContext**](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))、クラス ミニドライバー PIV-いずれかとして関連付けられているカードをマークする次の検出プロセスを実行しますかGID に準拠していません。
 
 1.  SELECT コマンドが発行すると、PIV AID を見つけます。 Windows が、PIV するカードを考慮して、コマンドが成功すると、デバイスと、検出処理が終了します。
 2.  コマンドが失敗した場合、SELECT コマンドは、GID AID を検索に発行されます。 Windows が、GID デバイスと、検出するカードを考慮して、コマンドが成功すると、処理が終了します。
@@ -602,7 +602,7 @@ SmartCardCardModule="msclmd.dll"
     -   Windows サービス パックの更新プログラムとの競合を防ぐために将来に十分である日付の値を指定します。
     -   4 桁のバージョン番号は省略可能ですが、受信トレイのドライバーの INF ファイルで指定されている現在のバージョンよりも大幅に高くなっているバージョンを指定する必要があります。
 
-INF ファイルと構文の詳細については、次を参照してください。[デバイスとドライバーのインストールの設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+INF ファイルと構文の詳細については、次を参照してください。[デバイスとドライバーのインストールの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)します。
 
  
 

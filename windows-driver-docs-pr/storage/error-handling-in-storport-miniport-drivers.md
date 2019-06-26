@@ -4,12 +4,12 @@ description: Storport ミニポート ドライバーでのエラー処理
 ms.assetid: 23ea8c36-56cf-45ae-a066-765d3a91b542
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d45ccefde367738be798f4f1965076baccf78623
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66c33442cf327b37573a94c10198fcf60bc96bb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360920"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369576"
 ---
 # <a name="error-handling-in-storport-miniport-drivers"></a>Storport ミニポート ドライバーでのエラー処理
 
@@ -40,7 +40,7 @@ ms.locfileid: "63360920"
 
 データの不足、ミニポート ドライバーを SRB の更新する必要があります**DataTransferLength**を実際にどのくらいのデータは転送されたかを示します。
 
-さらに、ミニポート ドライバーに SRB を渡すことによって、上記のエラーの一部を記録する、次のガイドラインを使用する必要があります[ **StorPortLogError**](https://msdn.microsoft.com/library/windows/hardware/ff567426):
+さらに、ミニポート ドライバーに SRB を渡すことによって、上記のエラーの一部を記録する、次のガイドラインを使用する必要があります[ **StorPortLogError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportlogerror):
 
 SRB のドライバーの作成者の判断でエラー ログに記録\_状態\_エラー。
 
@@ -58,7 +58,7 @@ SRB のエラー ログを常に\_状態\_フェーズ\_シーケンス\_失敗�
 
 SRB のエラー ログを常に\_状態\_でハードウェア エラー ビジーです。
 
-ミニポート ドライバーの呼び出しエラーをログに記録する[ **StorPortLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff567426)次のシステム定義のエラーまたは警告コードのいずれかを使用します。
+ミニポート ドライバーの呼び出しエラーをログに記録する[ **StorPortLogError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportlogerror)次のシステム定義のエラーまたは警告コードのいずれかを使用します。
 
 SP\_BUS\_パリティ\_エラーにマップ SRB\_状態\_パリティ\_エラー
 
@@ -80,7 +80,7 @@ SP\_不良\_FW\_FW があるエラー*ファームウェア*)
 
 SP\_不良\_FW\_警告
 
-[**StorPortLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff567426)エラー ログのパケットを割り当てます、設定、およびミニポート ドライバーに代わってイベント ログに I/O エラーを記録します。 システム管理者またはユーザーの場合は、システム イベント ログを確認し、必要に応じて、再構成、修復、または失敗する前に、HBA を交換して HBA の状態を監視できます。
+[**StorPortLogError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportlogerror)エラー ログのパケットを割り当てます、設定、およびミニポート ドライバーに代わってイベント ログに I/O エラーを記録します。 システム管理者またはユーザーの場合は、システム イベント ログを確認し、必要に応じて、再構成、修復、または失敗する前に、HBA を交換して HBA の状態を監視できます。
 
  
 

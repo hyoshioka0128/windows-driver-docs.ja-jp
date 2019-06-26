@@ -6,12 +6,12 @@ keywords:
 - StartIo ルーチンについての StartIo ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20d3f2c89c84fa1fcef0289b5337a92c0c447bba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d322a35b05940750354b33b42b2970c9e76c066
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369225"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369705"
 ---
 # <a name="points-to-consider-for-startio-routines"></a>StartIo ルーチンの考慮すべき点
 
@@ -19,11 +19,11 @@ ms.locfileid: "63369225"
 
 
 
-実装する場合、次の点を留意してください、 [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)ルーチン。
+実装する場合、次の点を留意してください、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)ルーチン。
 
 -   A *StartIo*ルーチンは、物理デバイスへのアクセスを同期する必要があり、状態情報を共有するのにはいずれかまたはドライバーを使用したデバイスの拡張機能で、ドライバーを保持するリソースの同じデバイス、メモリにアクセスするその他のルーチン場所、またはリソースします。
 
-    場合、 *StartIo*ルーチン ISR と、デバイスや状態を共有する、それを使用する必要があります[ **KeSynchronizeExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff553302)を呼び出すドライバーによって提供される[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンまたは共有の状態にアクセスするデバイスをプログラミングします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
+    場合、 *StartIo*ルーチン ISR と、デバイスや状態を共有する、それを使用する必要があります[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)を呼び出すドライバーによって提供される[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンまたは共有の状態にアクセスするデバイスをプログラミングします。 詳細については、次を参照してください。[クリティカル セクションを使用して](using-critical-sections.md)します。
 
     場合、 *StartIo*日常的な共有状態または ISR 以外のルーチンでリソースの場合は、共有状態またはドライバーが、記憶域を提供するドライバー初期化 executive スピン ロックでのリソースを保護にする必要があります。 詳細については、次を参照してください。[スピン ロック](spin-locks.md)します。
 
@@ -39,7 +39,7 @@ ms.locfileid: "63369225"
 
 -   A *StartIo* IRQL でルーチンを実行 = ディスパッチ\_レベルで、呼び出すことができますサポート ルーチンのセットを制限します。
 
-    たとえば、 *StartIo*ルーチンはアクセスも、ページング可能なメモリの割り当てし、シグナル状態に設定するディスパッチャー オブジェクトを待つことはできません。 一方で、 *StartIo*ルーチンを取得しをドライバーに割り当てられた executive スピン ロックの解放[ **KeAcquireSpinLockAtDpcLevel** ](https://msdn.microsoft.com/library/windows/hardware/ff551921)と[**KeReleaseSpinLockFromDpcLevel**](https://msdn.microsoft.com/library/windows/hardware/ff553150)これよりも高速実行[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)と[ **KeReleaseSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553145)します。
+    たとえば、 *StartIo*ルーチンはアクセスも、ページング可能なメモリの割り当てし、シグナル状態に設定するディスパッチャー オブジェクトを待つことはできません。 一方で、 *StartIo*ルーチンを取得しをドライバーに割り当てられた executive スピン ロックの解放[ **KeAcquireSpinLockAtDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)と[**KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel)これよりも高速実行[ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)と[ **KeReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)します。
 
     参照してください[を管理するハードウェアの優先順位](managing-hardware-priorities.md)と[スピン ロック](spin-locks.md)詳細についてはします。
 

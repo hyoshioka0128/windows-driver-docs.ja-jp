@@ -7,12 +7,12 @@ keywords:
 - インターフェイスの WDK 共同インストーラー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b82a56a3952f71ef8ff024cb81f22034521525b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1eafe9d061dbffd91c29910e7f6ea3bf3db547c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357047"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375328"
 ---
 # <a name="co-installer-interface"></a>共同インストーラーのインターフェイス
 
@@ -34,13 +34,13 @@ typedef DWORD
 ```
 
 <a href="" id="installfunction"></a>*InstallFunction*  
-共同インストーラーが参加しているのオプションを含むで処理されているデバイスのインストール要求を指定します。 これらの要求は DIF_INSTALLDEVICE などの差分のコードを使用して指定します。 詳細については、次を参照してください。[デバイス インストールの関数コード](https://msdn.microsoft.com/library/windows/hardware/ff541307)します。
+共同インストーラーが参加しているのオプションを含むで処理されているデバイスのインストール要求を指定します。 これらの要求は DIF_INSTALLDEVICE などの差分のコードを使用して指定します。 詳細については、次を参照してください。[デバイス インストールの関数コード](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))します。
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
 識別するハンドルを提供する[デバイス情報設定されている](device-information-sets.md)します。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-必要に応じて、デバイスのインストール要求の対象となっているデバイスを識別します。 このパラメーターがない場合、**NULL**デバイスの情報セット内のデバイス情報要素を識別します。 *DeviceInfoData*以外**NULL**とき[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)デバイスに固有の共同インストーラーを呼び出します。 クラスに固有の共同インストーラーを持つ差分要求で呼び出すことができます、**NULL * * * DeviceInfoData*DIF_DETECT や DIF_FIRSTTIMESETUP など。
+必要に応じて、デバイスのインストール要求の対象となっているデバイスを識別します。 このパラメーターがない場合、**NULL**デバイスの情報セット内のデバイス情報要素を識別します。 *DeviceInfoData*以外**NULL**とき[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)デバイスに固有の共同インストーラーを呼び出します。 クラスに固有の共同インストーラーを持つ差分要求で呼び出すことができます、**NULL * * * DeviceInfoData*DIF_DETECT や DIF_FIRSTTIMESETUP など。
 
 <a href="" id="context"></a>*コンテキスト*  
 指す、 [ **COINSTALLER_CONTEXT_DATA** ](#coinstaller-context-data)構造体。

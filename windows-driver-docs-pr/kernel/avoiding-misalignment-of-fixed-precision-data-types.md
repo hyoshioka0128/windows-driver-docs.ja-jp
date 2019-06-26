@@ -13,12 +13,12 @@ keywords:
 - 不整合の固定精度のデータ型
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 384f999800faef2e74e0252c0fdd3c6100cdd2f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96ede0f9383951c48f9979084767c203f7f6cd8e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326048"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369939"
 ---
 # <a name="avoiding-misalignment-of-fixed-precision-data-types"></a>精度が固定されているデータ型の不整合回避
 
@@ -38,7 +38,7 @@ ms.locfileid: "63326048"
 
 ### <a name="how-to-fix-the-problem"></a>問題を解決するには、方法
 
-IOCTL はメソッドを次の例で\_どちらの IOCTL のため、 **Irp -&gt;UserBuffer**カーネル モード ドライバーにユーザー モード アプリケーションから直接ポインターが渡されます。 Ioctl および FSCTLs で使用されるバッファーでは、検証は実行されません。 呼び出すための[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)または[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)バッファー ポインターは、安全に逆参照が必要です。
+IOCTL はメソッドを次の例で\_どちらの IOCTL のため、 **Irp -&gt;UserBuffer**カーネル モード ドライバーにユーザー モード アプリケーションから直接ポインターが渡されます。 Ioctl および FSCTLs で使用されるバッファーでは、検証は実行されません。 呼び出すための[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)または[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)バッファー ポインターは、安全に逆参照が必要です。
 
 いると仮定すると、32 ビット アプリケーション有効な値に渡すことが**Irp -&gt;UserBuffer**、LARGE\_によって示される整数構造**p -&gt;DeviceTime**されます4 バイト境界上にアラインされます。 **ProbeForRead**で渡される値に対しては、この配置を確認します。 その*配置*パラメーターで、ここでは**型\_配置**(LARGE\_整数)。 X86 プラットフォームでは、このマクロの式は、4 (バイト単位) を返します。 ただし、Itanium ベースのマシンでは、上に 8 が返されます、原因**ProbeForRead**状態を発生させる\_DATATYPE\_の不整合例外。
 
@@ -139,7 +139,7 @@ typedef struct _IOCTL_PARAMETERS3 {
             COUNT_FUNCTION, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-メソッドのような\_も IOCTL と FSCTL バッファー ポインターの前に説明した、カーネル モード ドライバーにユーザー モード アプリケーションから直接 I/O 要求をバッファー内に埋め込まれているポインターが渡されるもします。 これらのポインターでは、検証は実行されません。 呼び出すための[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)または[ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)で囲まれている、**試用/を除く**ブロック、埋め込みポインターを安全に逆参照する前に必要です。
+メソッドのような\_も IOCTL と FSCTL バッファー ポインターの前に説明した、カーネル モード ドライバーにユーザー モード アプリケーションから直接 I/O 要求をバッファー内に埋め込まれているポインターが渡されるもします。 これらのポインターでは、検証は実行されません。 呼び出すための[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)または[ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)で囲まれている、**試用/を除く**ブロック、埋め込みポインターを安全に逆参照する前に必要です。
 
 32 ビット アプリケーションが有効な値に成功したと仮定すると、前の例のように**pDeviceCount**、LARGE、\_によって示される整数構造**pDeviceCount** 4 - 上に配置されバイトの境界。 **ProbeForRead**と**ProbeForWrite**の値に対しては、この配置の確認、*配置*型をここでは、パラメーター\_配置 (LARGE\_整数)。 X86 プラットフォームでは、このマクロの式は、4 (バイト単位) を返します。 ただし、Itanium ベースのマシンでは、上に 8 が返されます、原因**ProbeForRead**または**ProbeForWrite**状態を発生させる\_DATATYPE\_の不整合例外。
 

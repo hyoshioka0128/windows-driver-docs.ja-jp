@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09d3b8389f85c7f140adc2ab86bf9d9e41386b89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21987a9a1ff4cd7c6d3191c7ff9073df4b878ae6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379689"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375661"
 ---
 # <a name="mrxqueryvolumeinfo-routine"></a>MRxQueryVolumeInfo routine
 
 
-*MRxQueryVolumeInfo*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニ リダイレクターがボリューム情報を照会することを要求します。
+*MRxQueryVolumeInfo*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニ リダイレクターがボリューム情報を照会することを要求します。
 
 <a name="syntax"></a>構文
 ------
@@ -118,7 +118,7 @@ RDBSS への呼び出しを発行する*MRxQueryVolumeInfo*場合は、次のい
 
 **Info.LengthRemaining**に設定されているメンバー **IrpSp -&gt;Parameters.QueryVolume.Length**します。
 
-IRP の\_MJ\_クエリ\_ボリューム\_場合、情報を要求、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**TRUE**戻り時にから*MRxQueryVolumeInfo*、RDBSS が呼び出す[ **RxFsdPostRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff554472)要求を投稿します。 この場合、IRP\_MJ\_クエリ\_ボリューム\_情報の要求は、RX を渡す\_キュー RX に CONTEXT 構造\_ワーカー キュー、ファイル システムで処理するためにコンテキストプロセス (FSP)。
+IRP の\_MJ\_クエリ\_ボリューム\_場合、情報を要求、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**TRUE**戻り時にから*MRxQueryVolumeInfo*、RDBSS が呼び出す[ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)要求を投稿します。 この場合、IRP\_MJ\_クエリ\_ボリューム\_情報の要求は、RX を渡す\_キュー RX に CONTEXT 構造\_ワーカー キュー、ファイル システムで処理するためにコンテキストプロセス (FSP)。
 
 場合、 **PostRequest** 、RX のメンバー\_CONTEXT 構造は**FALSE**戻り時にから*MRxQueryVolumeInfo*ネットワークのミニ リダイレクターを設定する必要があります、**Info.LengthRemaining** 、RX のメンバー\_ボリューム情報の長さの CONTEXT 構造体が返されます。 RDBSS セット、 **IoStatus.Information**に IRP のメンバー **IrpSp -&gt;Parameters.QueryVolume.Length**マイナス、 **Info.LengthRemaining**のメンバーRX\_CONTEXT 構造体。
 
@@ -152,7 +152,7 @@ IRP の\_MJ\_クエリ\_ボリューム\_情報要求、 **Info.FsInformationCla
 
 IRP として要求が開始された場合\_MJ\_ファイル\_システム\_に制御を*MRxQueryVolumeInfo*状態の戻り値を持つ\_成功または状態\_バッファー\_オーバーフロー、RDBSS コピー、 **ObjectId**ファイルのメンバー\_FS\_OBJECTID\_情報構造体が渡された、 **Info.Buffer** RX のメンバー\_ための構造体、 **NetRoot -&gt;DiskParameters.VolumeId** FCB 構造とメンバー、 **AssociatedIrp.SystemBuffer.VolumeId** IRP のメンバー。 場合に呼び出し*MRxQueryVolumeInfo*が成功した場合は、RDBSS セット、**型**リンクのメンバー\_追跡\_情報構造体。 場合、 **NetRoot -&gt;フラグ**FCB 構造体のメンバーが、NETROOT\_フラグ\_DFS\_AWARE\_NETROOT ビットが設定、**型**RDBSS によってメンバーが設定される**DfsLinkTrackingInformation**します。 場合、 **NetRoot -&gt;フラグ**FCB 構造体のメンバーには、NETROOT はありません\_フラグ\_DFS\_AWARE\_NETROOT ビットが設定、 **の種類。** に RDBSS によってメンバーが設定される**NtfsLinkTrackingInformation**します。 成功した場合、RDBSS の設定、 **IoStatus.Information**リンクのサイズに IRP のメンバー\_追跡\_情報構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -175,7 +175,7 @@ IRP として要求が開始された場合\_MJ\_ファイル\_システム\_に
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -199,7 +199,7 @@ IRP として要求が開始された場合\_MJ\_ファイル\_システム\_に
 
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
-[**RxFsdPostRequest**](https://msdn.microsoft.com/library/windows/hardware/ff554472)
+[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)
 
  
 

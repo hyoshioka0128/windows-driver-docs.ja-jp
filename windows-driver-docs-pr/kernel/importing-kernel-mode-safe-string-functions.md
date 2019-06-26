@@ -11,12 +11,12 @@ keywords:
 - WDK の安全な文字列関数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e11c0e1275bb629dba89a6ddc32622f53ee0b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3aeddeea0d159ece37d624c28af2966ca1c4fb0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384258"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369801"
 ---
 # <a name="importing-kernel-mode-safe-string-functions"></a>カーネルモード セーフ文字列関数のインポート
 
@@ -54,7 +54,7 @@ Ntstrsafe.h ヘッダー ファイルをインクルードする前に、コー�
 
 NTSTRSAFE いずれかを定義することができます\_いいえ\_CB\_関数または NTSTRSAFE\_いいえ\_CCH\_両方ではなく、機能します。
 
-行うことができます、 [ **UNICODE\_文字列**](https://msdn.microsoft.com/library/windows/hardware/ff564879)関数を使用できない構造体します。
+行うことができます、 [ **UNICODE\_文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)関数を使用できない構造体します。
 
 ### <a href="" id="to-make-unicode-string-structure-functions-unavailable"></a>UNICODE に\_文字列構造体の関数が使用できません。
 

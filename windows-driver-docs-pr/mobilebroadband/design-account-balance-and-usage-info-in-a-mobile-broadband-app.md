@@ -4,12 +4,12 @@ description: モバイル ブロードバンド アプリで残高と利用状�
 ms.assetid: aec4e4b3-d207-4319-a134-29b4a773c3a6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b637f489d35a4e62032a6150fcffe358fac2cc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2416293e778f76366cc764d04763c942fcf1cde
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383793"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369675"
 ---
 # <a name="design-account-balance-and-usage-info-in-a-mobile-broadband-app"></a>モバイル ブロードバンド アプリで残高と利用状況の情報を設計する
 
@@ -55,7 +55,7 @@ ms.locfileid: "63383793"
 
 -   図は、チャートやグラフなどを使用してデータを視覚化するには
 
-    **ヒント:**   で説明したように、確定した進行状況バー コントロールを使用して横棒グラフを実装することができます[進行状況コントロールを追加する](https://msdn.microsoft.com/library/windows/apps/hh465428)します。
+    **ヒント:**   で説明したように、確定した進行状況バー コントロールを使用して横棒グラフを実装することができます[進行状況コントロールを追加する](https://docs.microsoft.com/previous-versions/windows/apps/hh465428(v=win.10))します。
 
      
 

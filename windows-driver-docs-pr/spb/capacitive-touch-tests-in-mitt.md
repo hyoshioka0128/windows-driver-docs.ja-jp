@@ -4,12 +4,12 @@ description: ミット ソフトウェア パッケージの静電容量方式�
 ms.assetid: 86E4D489-7DC3-4765-85BE-3706B3CA6C0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e98f80fa90859a2ca62803a0611608c4d0d95c2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c42687c2162a9457088ea80d6261111a2bb0532
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348154"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369596"
 ---
 # <a name="capacitive-touch-tests-in-mitt"></a>MITT の静電容量式タッチ テスト
 
@@ -33,11 +33,11 @@ MCATT は、これらのテスト_ケースを使用できます。
 ## <a name="before-you-begin"></a>開始する前にしています.
 
 
--   ミット ボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://msdn.microsoft.com/library/windows/hardware/dn919811)します。
+-   ミット ボードを取得します。 参照してください[ミットを使用するためのハードウェアを購入](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)します。
 -   タッチパッド シミュレーターと、アダプターに接続するバンド ケーブルを取得します。
 -   タッチ シミュレーターのパッドにミット ボードを接続する 40 ピン アダプターがある MCATT 拡張ボードを取得します。
--   [ミット ソフトウェア パッケージをダウンロード](https://msdn.microsoft.com/library/windows/hardware/dn919810)します。
--   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://msdn.microsoft.com/library/windows/hardware/dn919779)します。
+-   [ミット ソフトウェア パッケージをダウンロード](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))します。
+-   ミット ボード ミット ファームウェアをインストールします。 参照してください[ミット概要](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)します。
 
 ## <a name="hardware-setup"></a>ハードウェアのセットアップ
 
@@ -114,10 +114,10 @@ MCATT テストを手動で実行するには、これらのタスクを実行�
 'b0000000000000000000000000000000000000000
 ```
 
-前の例では、最初の行は、パターン レート 0x00028480、または 1 行につき 164,992 (マイクロ秒) を設定します。 残りの行を使用して、最初に接続されているパッドや縦棒は浮動パッドを指定します。 40 のパッドがあるため、40 ビットは、各行が長い時間 39 を行の左側にあるビットし、ビットが 0 の行の右側にあります。 このパターンは、キーを押してダウン パッドに 26、27、38、39、およびを「1」にこれらのビットを設定し、ボードの左端から、キーを押してをパターンの使用を開始点としてパターンのサンプルを作成するボードの右に移動して開始します。 作成してファイルを編集 MCATT パターンを使用して、 [MCATT パターン エディター](https://msdn.microsoft.com/library/windows/hardware/dn919809)します。
+前の例では、最初の行は、パターン レート 0x00028480、または 1 行につき 164,992 (マイクロ秒) を設定します。 残りの行を使用して、最初に接続されているパッドや縦棒は浮動パッドを指定します。 40 のパッドがあるため、40 ビットは、各行が長い時間 39 を行の左側にあるビットし、ビットが 0 の行の右側にあります。 このパターンは、キーを押してダウン パッドに 26、27、38、39、およびを「1」にこれらのビットを設定し、ボードの左端から、キーを押してをパターンの使用を開始点としてパターンのサンプルを作成するボードの右に移動して開始します。 作成してファイルを編集 MCATT パターンを使用して、 [MCATT パターン エディター](https://docs.microsoft.com/previous-versions/dn919809(v=vs.85))します。
 
 ## <a name="related-topics"></a>関連トピック
-[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[複数のインターフェイスのテスト ツール (ミット) でのテスト](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

@@ -16,12 +16,12 @@ keywords:
 - WDK KMDF キー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0eb09c81628c1e9072f1e062dc1dfb30f882af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a073a037054dbff3642f8105c54a3a3112b75599
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388685"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371112"
 ---
 # <a name="introduction-to-registry-keys-for-drivers"></a>ドライバーのレジストリ キーの概要
 
@@ -30,37 +30,37 @@ ms.locfileid: "63388685"
 
 -   **パラメーター**キー
 
-    ドライバーの**パラメーター**キーは、ドライバーの構成情報を含めることができます。 カーネル モード ドライバー フレームワーク (KMDF) ドライバーは、このキーにある、 [ **HKLM\\システム\\CurrentControlSet\\サービス**](https://msdn.microsoft.com/library/windows/hardware/ff546188)ドライバーの下のツリーサービスの名前。 ユーザー モード ドライバー フレームワーク (UMDF) ドライバーは、このキーにある、 **HKLM\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\サービス**ドライバーのサービス名の下のツリーです。 ドライバーのサブキーは、ドライバーのバイナリ ファイルのファイル名は、サービス名と異なる場合でも常に、ドライバーのサービスの名前を使用します。
+    ドライバーの**パラメーター**キーは、ドライバーの構成情報を含めることができます。 カーネル モード ドライバー フレームワーク (KMDF) ドライバーは、このキーにある、 [ **HKLM\\システム\\CurrentControlSet\\サービス**](https://docs.microsoft.com/windows-hardware/drivers/install/hklm-system-currentcontrolset-services-registry-tree)ドライバーの下のツリーサービスの名前。 ユーザー モード ドライバー フレームワーク (UMDF) ドライバーは、このキーにある、 **HKLM\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\サービス**ドライバーのサービス名の下のツリーです。 ドライバーのサブキーは、ドライバーのバイナリ ファイルのファイル名は、サービス名と異なる場合でも常に、ドライバーのサービスの名前を使用します。
 
-    システムのドライバーの呼び出すと[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807) 、日常的なドライバーのパスに渡す、ドライバーの**サービス**ツリー。 ドライバーはこのパスを渡す必要があります[ **WdfDriverCreate**](https://msdn.microsoft.com/library/windows/hardware/ff547175)します。 ドライバーが呼び出すことで、パスを取得するその後、 [ **WdfDriverGetRegistryPath**](https://msdn.microsoft.com/library/windows/hardware/ff547187)、ドライバーを開くことがその**パラメーター**呼び出してキー [ **WdfDriverOpenParametersRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff547202)します。
+    システムのドライバーの呼び出すと[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers) 、日常的なドライバーのパスに渡す、ドライバーの**サービス**ツリー。 ドライバーはこのパスを渡す必要があります[ **WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)します。 ドライバーが呼び出すことで、パスを取得するその後、 [ **WdfDriverGetRegistryPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivergetregistrypath)、ドライバーを開くことがその**パラメーター**呼び出してキー [ **WdfDriverOpenParametersRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey)します。
 
-    詳細については、**パラメーター**キーを参照してください[、HKLM\\システム\\CurrentControlSet\\サービス ツリー](https://msdn.microsoft.com/library/windows/hardware/ff546188)します。
+    詳細については、**パラメーター**キーを参照してください[、HKLM\\システム\\CurrentControlSet\\サービス ツリー](https://docs.microsoft.com/windows-hardware/drivers/install/hklm-system-currentcontrolset-services-registry-tree)します。
 
 -   ソフトウェア キー
 
     ドライバーのソフトウェア キーとも呼ばれますが、*ドライバー キー*レジストリには、各ドライバー ソフトウェア キーが含まれています。 レジストリにデバイスのクラスのすべての一覧が含まれていますされ、そのデバイス クラスのエントリの下に各ドライバーのソフトウェアのキーが存在します。 システムでは、そのソフトウェア キーの下には、各ドライバーに関する情報を格納します。
 
-    ドライバーを呼び出すことができます[ **WdfFdoInitOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547249)と[ **WdfDeviceOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff546804)そのソフトウェア キーを開けません。
+    ドライバーを呼び出すことができます[ **WdfFdoInitOpenRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey)と[ **WdfDeviceOpenRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)そのソフトウェア キーを開けません。
 
-    ソフトウェア キーの詳細については、次を参照してください。 [、HKLM\\システム\\CurrentControlSet\\コントロール ツリー](https://msdn.microsoft.com/library/windows/hardware/ff546165)します。
+    ソフトウェア キーの詳細については、次を参照してください。 [、HKLM\\システム\\CurrentControlSet\\コントロール ツリー](https://docs.microsoft.com/windows-hardware/drivers/install/hklm-system-currentcontrolset-control-registry-tree)します。
 
 -   ハードウェア キー
 
     ドライバー スタックは、プラグ アンド プレイ (PnP) マネージャーを通知し、デバイスがシステムに接続されていること、PnP マネージャーは、デバイスのハードウェア キーを作成します。 このキーとも呼ばれますが、*デバイス キー*します。 PnP マネージャーでは、デバイスのハードウェア キーの下の各デバイスの一意な識別情報を格納します。
 
-    ドライバーを呼び出すことができます[ **WdfFdoInitOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff547249)と[ **WdfDeviceOpenRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff546804)デバイスのハードウェア キーを開けません。
+    ドライバーを呼び出すことができます[ **WdfFdoInitOpenRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey)と[ **WdfDeviceOpenRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)デバイスのハードウェア キーを開けません。
 
-    ハードウェア キーの詳細については、次を参照してください。 [、HKLM\\システム\\CurrentControlSet\\列挙ツリー](https://msdn.microsoft.com/library/windows/hardware/ff546173)します。
+    ハードウェア キーの詳細については、次を参照してください。 [、HKLM\\システム\\CurrentControlSet\\列挙ツリー](https://docs.microsoft.com/windows-hardware/drivers/install/hklm-system-currentcontrolset-enum-registry-tree)します。
 
-ドライバーの INF ファイルに含めることができます[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)レジストリ値を設定します。 INF ファイルを使用して、通常[ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)デバイスのハードウェア キーの下の情報を設定します。
+ドライバーの INF ファイルに含めることができます[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)レジストリ値を設定します。 INF ファイルを使用して、通常[ **INF DDInstall.HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)デバイスのハードウェア キーの下の情報を設定します。
 
 ドライバーの種類によって、特定のレジストリ キーの下の情報を格納することが必要かどうかを確認するのには、このドキュメントの目次を使用して、ドライバーのデバイスの種類を説明するセクションを参照してください。
 
 ドライバーのレジストリ キーの詳細についてを参照してください。
 
--   [レジストリ ツリーとキーの概要](https://msdn.microsoft.com/library/windows/hardware/ff549538)
+-   [レジストリ ツリーとキーの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)
 
--   [ドライバーでは、レジストリを使用します。](https://msdn.microsoft.com/library/windows/hardware/ff565537)
+-   [ドライバーでは、レジストリを使用します。](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-the-registry-in-a-driver)
 
  
 

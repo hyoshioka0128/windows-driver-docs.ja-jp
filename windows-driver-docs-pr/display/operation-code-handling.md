@@ -8,12 +8,12 @@ keywords:
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42a7aaadd3f2dbeaf196e000e08d88538a9f9409
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 957821ee5d85e1ad0f191daac26066b8b87beea1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379860"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370636"
 ---
 # <a name="operation-code-handling"></a>操作コードの処理
 
@@ -21,13 +21,13 @@ ms.locfileid: "63379860"
 ## <span id="ddk_opcode_handling_gg"></span><span id="DDK_OPCODE_HANDLING_GG"></span>
 
 
-ディスプレイ ドライバーはグラフィックスのプリミティブとプロセスの状態の変化を表示するために要求を処理、 [ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)関数。 ドライバーがこれらの要求を受信[ **D3DHAL\_DP2OPERATION** ](https://msdn.microsoft.com/library/windows/hardware/ff545678)オペレーション コード。 次のトピックでは、ドライバーが操作のコードを処理する方法と、このような処理中に、パフォーマンスを向上する方法について説明します。
+ディスプレイ ドライバーはグラフィックスのプリミティブとプロセスの状態の変化を表示するために要求を処理、 [ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数。 ドライバーがこれらの要求を受信[ **D3DHAL\_DP2OPERATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ne-d3dhal-_d3dhal_dp2operation)オペレーション コード。 次のトピックでは、ドライバーが操作のコードを処理する方法と、このような処理中に、パフォーマンスを向上する方法について説明します。
 
 [コマンド Stream](command-stream.md)
 
 [操作の処理のパフォーマンスを向上させる](improving-performance-of-operation-handling.md)
 
-ドライバー作成者を Microsoft DirectX 7.0 およびそれ以降の Direct3D ドライバー モデルをサポートするためには、そのドライバーの実装で、新しい操作コードの数値に対応させる必要があります[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704). これらの操作コードの一部の置換コールバック関数、および他のユーザーが新しい機能を提供します。 最も重要な新しいオペレーション コードは、以降のコールバックを置き換えるものでは、次の表にまとめたものです。
+ドライバー作成者を Microsoft DirectX 7.0 およびそれ以降の Direct3D ドライバー モデルをサポートするためには、そのドライバーの実装で、新しい操作コードの数値に対応させる必要があります[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb). これらの操作コードの一部の置換コールバック関数、および他のユーザーが新しい機能を提供します。 最も重要な新しいオペレーション コードは、以降のコールバックを置き換えるものでは、次の表にまとめたものです。
 
 <table>
 <colgroup>

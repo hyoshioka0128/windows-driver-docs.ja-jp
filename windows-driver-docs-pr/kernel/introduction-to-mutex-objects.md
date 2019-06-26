@@ -10,12 +10,12 @@ keywords:
 - ミュー テックス オブジェクトで待機しています。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff495e947018a6689b4e85e75f8518e5d3710d5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 703ec6d3250a70826dfc09797d7b2b05d6d0413c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341451"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369921"
 ---
 # <a name="introduction-to-mutex-objects"></a>ミューテックス オブジェクトの概要
 
@@ -32,23 +32,23 @@ ms.locfileid: "63341451"
 
 カーネルには、最初、ミュー テックスを解放してシグナルされた状態に設定することがなくユーザー モードへの遷移が発生するためのミュー テックスを所有するスレッドは決してが許可されます。 場合は、ミュー テックスを所有する FSD 作成またはドライバーが作成したスレッドがミュー テックスの所有権を解放する前に、I/O マネージャーに制御を返すしようとすると、カーネル、システムがダウンします。
 
-ミュー テックス オブジェクトを使用する任意のドライバーを呼び出す必要があります[ **KeInitializeMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff552147)上で待機またはそのミュー テックス オブジェクトの解放前に 1 回です。 次の図は、2 つのシステム スレッドがミュー テックス オブジェクトを使用して可能性があります。
+ミュー テックス オブジェクトを使用する任意のドライバーを呼び出す必要があります[ **KeInitializeMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializemutex)上で待機またはそのミュー テックス オブジェクトの解放前に 1 回です。 次の図は、2 つのシステム スレッドがミュー テックス オブジェクトを使用して可能性があります。
 
 ![ミュー テックス オブジェクトの待機を示す図](images/3mutxobj.png)
 
 前の図に示すように、ミュー テックス オブジェクトを使用するドライバーは、常駐である必要があります、ミュー テックス オブジェクトのストレージを提供する必要があります。 ドライバーを使用して、[デバイス拡張機能](device-extensions.md)コント ローラーの拡張機能を使用する場合、デバイスのドライバーが作成したオブジェクトの[コント ローラー オブジェクト](using-controller-objects.md)、またはドライバーが割り当てられる非ページ プール。
 
-ドライバーを呼び出すと**KeInitializeMutex** (通常からその[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン)、ミュー テックス オブジェクトのドライバーのストレージへのポインターを渡す必要がありますカーネルシグナルされた状態を初期化します。
+ドライバーを呼び出すと**KeInitializeMutex** (通常からその[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン)、ミュー テックス オブジェクトのドライバーのストレージへのポインターを渡す必要がありますカーネルシグナルされた状態を初期化します。
 
 このような最上位レベルのドライバーが初期化されると後は、前の図に示すように、共有リソースに排他アクセスを管理できます。 たとえば、本質的に同期操作とスレッドのドライバーのディスパッチ ルーチンでは、Irp のドライバーが作成したキューを保護するのに、ミュー テックスを使用する可能性があります。
 
 **KeInitializeMutex**(として、前の図に示す)、ミュー テックス オブジェクトの初期状態をシグナルされた常に設定します。
 
-1.  ディスパッチ ルーチンの最初の呼び出し[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)で、*ミュー テックス*ポインターは、現在のスレッドでは、準備完了状態をすぐに、スレッドは、ミュー テックスの所有権を非シグナル状態にミュー テックスの状態をリセットします。 ディスパッチ ルーチンとしてすぐに実行を再開するには、そのことができます安全に IRP をキューに挿入ミュー テックスで保護されています。
+1.  ディスパッチ ルーチンの最初の呼び出し[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)で、*ミュー テックス*ポインターは、現在のスレッドでは、準備完了状態をすぐに、スレッドは、ミュー テックスの所有権を非シグナル状態にミュー テックスの状態をリセットします。 ディスパッチ ルーチンとしてすぐに実行を再開するには、そのことができます安全に IRP をキューに挿入ミュー テックスで保護されています。
 
 2.  2 番目のスレッドのときに (別のディスパッチ、ドライバーが提供する日常的なワーカー スレッド コールバック ルーチン、またはドライバーが作成したスレッド) の呼び出し**kewaitforsingleobject の 1**で、*ミュー テックス*ポインター、2 番目のスレッド待機状態に配置されます。
 
-3.  呼び出すディスパッチ ルーチンは、「ステップ 1 として IRP キューが完了したら、 [ **KeReleaseMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff553140)で、*ミュー テックス*ポインターとブール値*待機*を呼び出す予定かどうかを示す値、 **kewaitforsingleobject の 1** (または[ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)) で、 *ミュー テックス*すぐ**KeReleaseMutex**コントロールを返します。
+3.  呼び出すディスパッチ ルーチンは、「ステップ 1 として IRP キューが完了したら、 [ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)で、*ミュー テックス*ポインターとブール値*待機*を呼び出す予定かどうかを示す値、 **kewaitforsingleobject の 1** (または[ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)) で、 *ミュー テックス*すぐ**KeReleaseMutex**コントロールを返します。
 
 4.  手順 3. でミュー テックスの所有権がリリースされたと仮定すると、ディスパッチ ルーチン (*待機*に設定**FALSE**)、によってシグナルされた状態に設定されている、ミュー テックス**KeReleaseMutex**します。 ミュー テックス現在が所有者は、カーネルが別のスレッドがそのミュー テックスを待機しているかどうかを判断します。 そのため、カーネルが 2 番目のスレッドを行った場合 (手順 2 参照)、ミュー テックスの所有者では、可能性があります最小のリアルタイムの優先度の値をスレッドの優先順位を推し進め準備完了状態が変化します。
 

@@ -12,19 +12,19 @@ keywords:
 - レンダー ターゲット WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19c3b2e71211f1c06865ac7ffe5a585c635a7081
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b274e4a483834275bdc8b4030ec1e8224fff5f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346866"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370202"
 ---
 # <a name="creating-compressed-buffers-and-decode-render-targets"></a>圧縮バッファーおよびデコード レンダー ターゲットの作成
 
 
-マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateResource** ](https://msdn.microsoft.com/library/windows/hardware/ff540688)を圧縮されたバッファーを作成し、レンダー ターゲットをデコードします。
+マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)を圧縮されたバッファーを作成し、レンダー ターゲットをデコードします。
 
-各種の圧縮されたバッファーは、ランタイムを作成する画面では、高速のビデオをデコードするために、圧縮されたバッファー情報が含まれることを示す特別なフラグと同様に、独自のサーフェイスの形式があります。 圧縮されたバッファーを作成する場合に、ユーザー モードのディスプレイ ドライバーを決定します、 **DecodeCompressedBuffer**でフラグをビット フィールド、**フラグ**のメンバー、 [ **D3DDDIARG\_CREATERESOURCE** ](https://msdn.microsoft.com/library/windows/hardware/ff542963)構造体、 *pResource*パラメーターの[ **CreateResource** ](https://msdn.microsoft.com/library/windows/hardware/ff540688)へのポインターを設定します。 ユーザー モードのディスプレイ ドライバーの形式の値で作成するための圧縮のバッファーの種類を決定する、**形式**D3DDDIARG のメンバー\_CREATERESOURCE します。 次の形式が定義されています。
+各種の圧縮されたバッファーは、ランタイムを作成する画面では、高速のビデオをデコードするために、圧縮されたバッファー情報が含まれることを示す特別なフラグと同様に、独自のサーフェイスの形式があります。 圧縮されたバッファーを作成する場合に、ユーザー モードのディスプレイ ドライバーを決定します、 **DecodeCompressedBuffer**でフラグをビット フィールド、**フラグ**のメンバー、 [ **D3DDDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)構造体、 *pResource*パラメーターの[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)へのポインターを設定します。 ユーザー モードのディスプレイ ドライバーの形式の値で作成するための圧縮のバッファーの種類を決定する、**形式**D3DDDIARG のメンバー\_CREATERESOURCE します。 次の形式が定義されています。
 
 ```cpp
 D3DDDIFMT_PICTUREPARAMSDATA       = 150
@@ -36,7 +36,7 @@ D3DDDIFMT_SLICECONTROLDATA        = 155
 D3DDDIFMT_BITSTREAMDATA           = 156
 ```
 
-Direct3D ランタイムを作成しない各デコード レンダー ターゲット個別に、ユーザー モードのディスプレイ ドライバーの呼び出しで[ **CreateResource** ](https://msdn.microsoft.com/library/windows/hardware/ff540688)関数。 各ターゲットは、1 つのリソースの subresource インデックスとして参照されます。 デコードのレンダー ターゲットを作成する場合に、ユーザー モードのディスプレイ ドライバーを決定します、 **DecodeRenderTarget**でフラグをビット フィールド、**フラグ**D3DDDIARG のメンバー\_CREATERESOURCE を設定します。
+Direct3D ランタイムを作成しない各デコード レンダー ターゲット個別に、ユーザー モードのディスプレイ ドライバーの呼び出しで[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)関数。 各ターゲットは、1 つのリソースの subresource インデックスとして参照されます。 デコードのレンダー ターゲットを作成する場合に、ユーザー モードのディスプレイ ドライバーを決定します、 **DecodeRenderTarget**でフラグをビット フィールド、**フラグ**D3DDDIARG のメンバー\_CREATERESOURCE を設定します。
 
  
 

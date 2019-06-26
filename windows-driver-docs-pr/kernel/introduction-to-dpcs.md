@@ -7,12 +7,12 @@ keywords:
 - Dpc WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 990e4151becb3d9a7bbee1b9ef303a542bd5795b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0461fc51f4cc7498a87c8ae85567ac61f2d3e383
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341029"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369769"
 ---
 # <a name="introduction-to-dpcs"></a>DPC の概要
 
@@ -20,7 +20,7 @@ ms.locfileid: "63341029"
 
 
 
-通常 ISR を持つ任意のドライバーもに 1 つ以上[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)または[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)の処理を完了させるルーチン割り込み駆動の I/O 操作。 一般的な最下位レベル ドライバーの*DpcForIsr*または*CustomDpc*ルーチンは、次を実行します。
+通常 ISR を持つ任意のドライバーもに 1 つ以上[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)または[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)の処理を完了させるルーチン割り込み駆動の I/O 操作。 一般的な最下位レベル ドライバーの*DpcForIsr*または*CustomDpc*ルーチンは、次を実行します。
 
 -   ISR が処理を開始したこと、I/O 操作の処理を終了します。
 

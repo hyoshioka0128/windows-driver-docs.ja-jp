@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dfd01a7cb7c1768eef553b4137c3ddf763ee1fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 085147139c1bd285b0c142ea978184323f0d3eb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344472"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371314"
 ---
 # <a name="sestopimpersonatingclient-routine"></a>SeStopImpersonatingClient ルーチン
 
@@ -46,9 +46,9 @@ VOID SeStopImpersonatingClient(void);
 <a name="remarks"></a>注釈
 -------
 
-サーバーのスレッドは呼び出すことによってユーザーを偽装することができます、 [ **SeImpersonateClientEx** ](https://msdn.microsoft.com/library/windows/hardware/ff556659)ルーチン。 スレッドが終了すると、ユーザーの偽装を呼び出し、 **SeStopImpersonatingClient**権限借用の終了ルーチン。
+サーバーのスレッドは呼び出すことによってユーザーを偽装することができます、 [ **SeImpersonateClientEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seimpersonateclientex)ルーチン。 スレッドが終了すると、ユーザーの偽装を呼び出し、 **SeStopImpersonatingClient**権限借用の終了ルーチン。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -79,7 +79,7 @@ VOID SeStopImpersonatingClient(void);
 ## <a name="see-also"></a>関連項目
 
 
-[**SeImpersonateClientEx**](https://msdn.microsoft.com/library/windows/hardware/ff556659)
+[**SeImpersonateClientEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seimpersonateclientex)
 
  
 
