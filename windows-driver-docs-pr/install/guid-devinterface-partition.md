@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ae3d375364af04c44885430f53ea11c30213b9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77d7b4c575ed8d69940dddeb77f24fe2eb615539
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363896"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386426"
 ---
 # <a name="guiddevinterfacepartition"></a>GUID_DEVINTERFACE_PARTITION
 
 
-GUID_DEVINTERFACE_PARTITION[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)パーティション デバイス用に定義されます。
+GUID_DEVINTERFACE_PARTITION[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)パーティション デバイス用に定義されます。
 
 <table>
 <colgroup>
@@ -54,11 +54,11 @@ GUID_DEVINTERFACE_PARTITION[デバイス インターフェイス クラス](htt
 <a name="remarks"></a>注釈
 -------
 
-システム提供[記憶装置ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566976) GUID_DEVINTERFACE_PARTITION の子デバイスではパーティションのインスタンスを登録、[記憶装置](https://msdn.microsoft.com/library/windows/hardware/ff566969)します。
+システム提供[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers) GUID_DEVINTERFACE_PARTITION の子デバイスではパーティションのインスタンスを登録、[記憶装置](https://docs.microsoft.com/windows-hardware/drivers/storage/index)します。
 
 [**PartitionClassGuid** ](partitionclassguid.md) GUID_DEVINTERFACE_PARTITION デバイス インターフェイスのクラスの古い識別子です。 このクラスの新しいインスタンスは、代わりに GUID_DEVINTERFACE_PARTITION を使用します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

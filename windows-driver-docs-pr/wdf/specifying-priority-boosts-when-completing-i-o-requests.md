@@ -7,19 +7,19 @@ keywords:
 - 優先順位の WDK KMDF ブーストします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c04f7acf369affb090a23d011a9c27611e88ae12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2a30d15f8209943c94f0fb4ac89b2cbe3887491
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325124"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382361"
 ---
 # <a name="specifying-priority-boosts-when-completing-io-requests"></a>I/O 要求完了時の優先度引き上げの指定
 
 
-呼び出すことができます、ドライバーでは、I/O 要求が完了したら、 [ **WdfRequestCompleteWithPriorityBoost** ](https://msdn.microsoft.com/library/windows/hardware/ff549949)システムは、I/O を要求したスレッドの実行時の優先度を上げるを使用して値を指定するには操作です。
+呼び出すことができます、ドライバーでは、I/O 要求が完了したら、 [ **WdfRequestCompleteWithPriorityBoost** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)システムは、I/O を要求したスレッドの実行時の優先度を上げるを使用して値を指定するには操作です。
 
-ドライバーを呼び出す場合[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945)または[ **WdfRequestCompleteWithInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff549948)の代わりに[ **WdfRequestCompleteWithPriorityBoost**](https://msdn.microsoft.com/library/windows/hardware/ff549949)フレームワークは、デバイスの種類に基づく既定の優先度のブースト値を使用します。 次の表では、フレームワークを使用して既定の優先度のブースト値を示します。 デバイスの種類および優先順位 boost 定数で定義されて*Wdm.h*します。
+ドライバーを呼び出す場合[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)または[ **WdfRequestCompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)の代わりに[ **WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)フレームワークは、デバイスの種類に基づく既定の優先度のブースト値を使用します。 次の表では、フレームワークを使用して既定の優先度のブースト値を示します。 デバイスの種類および優先順位 boost 定数で定義されて*Wdm.h*します。
 
 <table>
 <colgroup>

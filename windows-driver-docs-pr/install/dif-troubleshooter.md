@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a8e26cffb01fc59273548eaf3f455b4b0e8fd368
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a09e656cce89d71e73bc929afb1379a74554fb4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365855"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380984"
 ---
 # <a name="diftroubleshooter"></a>DIF_TROUBLESHOOTER
 
@@ -62,21 +62,21 @@ DIF_TROUBLESHOOTER 要求は、インストーラーまたはを返す CHM フ�
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)デバイスを格納しています。
+識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)デバイスを格納しています。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-ポインターを提供する[ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを識別する構造体。
+ポインターを提供する[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを識別する構造体。
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、 *DeviceInfoData*します。
+デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*します。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-[ **SP_TROUBLESHOOTER_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff553341)構造が関連付けられている、 *DeviceInfoData*します。
+[ **SP_TROUBLESHOOTER_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)構造が関連付けられている、 *DeviceInfoData*します。
 
 ### <a name="installer-output"></a>インストーラーの出力
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-インストーラーによって変更、 [ **SP_TROUBLESHOOTER_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553341)、CHM または HTML ファイルを設定します。
+インストーラーによって変更、 [ **SP_TROUBLESHOOTER_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)、CHM または HTML ファイルを設定します。
 
 ### <a name="installer-return-value"></a>インストーラーの戻り値
 
@@ -98,13 +98,13 @@ DIF_TROUBLESHOOTER の既定のハンドラーはありませんが、オペレ�
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
-インストーラーを呼び出す[ **CM_Get_DevNode_Status** ](https://msdn.microsoft.com/library/windows/hardware/ff538514)デバイスの状態と CM 問題のコードを取得します。 問題によってインストーラーは、トラブルシューティング、ヘルプ ファイル、または何も提供可能性があります。 トラブルシューティングでは、デバイスに問題を解決できる可能性があります。 トラブルシューティングで問題が解決される場合を呼び出す必要が**SetupDiCallClassInstaller**型 DICS_PROPCHANGE の DIF_PROPERTYCHANGE 要求を送信します。 問題解決のヘルプ ファイルを指定のインストーラーがデバイスのトラブルシューティング ツールを指定しない場合、ユーザーのための推奨事項。
+インストーラーを呼び出す[ **CM_Get_DevNode_Status** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)デバイスの状態と CM 問題のコードを取得します。 問題によってインストーラーは、トラブルシューティング、ヘルプ ファイル、または何も提供可能性があります。 トラブルシューティングでは、デバイスに問題を解決できる可能性があります。 トラブルシューティングで問題が解決される場合を呼び出す必要が**SetupDiCallClassInstaller**型 DICS_PROPCHANGE の DIF_PROPERTYCHANGE 要求を送信します。 問題解決のヘルプ ファイルを指定のインストーラーがデバイスのトラブルシューティング ツールを指定しない場合、ユーザーのための推奨事項。
 
 インストーラーがない独自のトラブルシューティング ツールを実行する場合、Windows はユーザーに情報を表示する HTML ヘルプを実行します。 インストーラーには、クラスのインストール パラメーターで CHM ファイルが提供されている、Windows はそのファイルを表示します。 それ以外の場合、Windows では、システム提供のトラブルシューティング情報が表示されます。
 
 クラスのインストール パラメーターでは、1 つだけ含めることが**ChmFile**と**HtmlTroubleShooter**ペア。 1 つ以上のインストーラーは、これらの値を指定する場合、Windows は、差分の要求を処理した最後のインストーラーによって設定された値を使用します。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -129,13 +129,13 @@ DIF_TROUBLESHOOTER の既定のハンドラーはありませんが、オペレ�
 ## <a name="see-also"></a>関連項目
 
 
-[**CM_Get_DevNode_Status**](https://msdn.microsoft.com/library/windows/hardware/ff538514)
+[**CM_Get_DevNode_Status**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_TROUBLESHOOTER_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff553341)
+[**SP_TROUBLESHOOTER_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)
 
  
 

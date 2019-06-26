@@ -6,12 +6,12 @@ keywords:
 - 標準的なリソースは、WDK 多機能デバイスをマップします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0610e483cd324a8a16b76442e4213599489cc656
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d17c69a1fe374023d1d9ab2a2107e37d04c1b20f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323534"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386383"
 ---
 # <a name="creating-standard-resource-maps"></a>標準リソース マップの作成
 
@@ -19,7 +19,7 @@ ms.locfileid: "63323534"
 
 
 
-多機能デバイスの INF に含まれている場合、 [ **INF DDInstall.LogConfigOverride セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547339)、親リソースが暗黙的に番号が 00 ~ *nn*表示されます。INF ので*ログの構成] セクションで*セクション (を参照してください[ **INF LogConfig ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547448))。 たとえば、次の INF に多機能 PC カード*DDInstall*.**LogConfigOverride**セクション。
+多機能デバイスの INF に含まれている場合、 [ **INF DDInstall.LogConfigOverride セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)、親リソースが暗黙的に番号が 00 ~ *nn*表示されます。INF ので*ログの構成 セクションで*セクション (を参照してください[ **INF LogConfig ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive))。 たとえば、次の INF に多機能 PC カード*DDInstall*.**LogConfigOverride**セクション。
 
 ```cpp
 [DDInstall.LogConfigOverride]
@@ -35,7 +35,7 @@ PcCardConfig=41:100000(W)             ; resource 04
 
 この例ではデバイスには、04 から番号が 00 である 5 つのリソースがあります。 1 つ以上を使用する必要がある場合*DDInstall*.**LogConfigOverride**  セクションで、各セクションでは、同じ順序でリソースを一覧表示する必要があります。
 
-1 つの子関数 (Child0000) は、上に示した最初と 3 番目のリソースを必要とする場合、この子リソース マップは次のようになります。00,02. もう 1 つの子関数 (Child00001) は、5 つすべてのリソースを必要とする場合、リソース マップがなります。00,01,02,03,04. この例では、リソース 00 (**IoConfig 2f8 2ff =**) 02 と (**IRQConfig = 3、4、5、7、9、10、11**) 共有されます。 これらのリソース マップは、INF でよう指定するとします。
+1 つの子関数 (Child0000) は、上に示した最初と 3 番目のリソースを必要とする場合、この子リソース マップは次のようになります。00,02. もう 1 つの子関数 (Child00001) は、5 つすべてのリソースを必要とする場合、リソース マップがなります。00,01,02,03,04. この例では、リソース 00 (**IoConfig 2f8 2ff =** ) 02 と (**IRQConfig = 3、4、5、7、9、10、11**) 共有されます。 これらのリソース マップは、INF でよう指定するとします。
 
 ```cpp
 [DDInstall.RegHW]

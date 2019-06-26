@@ -4,12 +4,12 @@ description: 優先順位ベースのフロー制御 (PFC)
 ms.assetid: 9DD8A66F-273F-4E5A-99EF-33C2EDF3240C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6eca784b20a3ab4eb370449e8156a6ffca3022
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b319526c9c8c7fd1ca29d7169ad557c98330575a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328026"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385477"
 ---
 # <a name="priority-based-flow-control-pfc"></a>優先順位ベースのフロー制御 (PFC)
 
@@ -28,7 +28,7 @@ PFC は、802.3 PAUSE フレームを使用して、以下の PFC フィール�
 
 受信側は、802.3 PAUSE フレーム PFC データを送信するとき、スイッチは、受信側が接続されているポートに指定された優先順位のフレームの送信をブロックします。 タイマー値が経過すると、スイッチには、ポート上の一時停止したフレームの送信が再開します。
 
-NDIS のサービス品質 (QoS) パラメーターを使用して指定、 [ **NDIS\_QOS\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451640)構造体。 **PfcEnable**メンバーには、各ビットが PFC 802.1p の優先度レベルが有効かどうかを指定し、ビットマップが含まれています。
+NDIS のサービス品質 (QoS) パラメーターを使用して指定、 [ **NDIS\_QOS\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)構造体。 **PfcEnable**メンバーには、各ビットが PFC 802.1p の優先度レベルが有効かどうかを指定し、ビットマップが含まれています。
 
 優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
 

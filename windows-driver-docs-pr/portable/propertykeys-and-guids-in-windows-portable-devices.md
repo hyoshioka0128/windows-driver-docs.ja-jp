@@ -3,12 +3,12 @@ Description: Windows ポータブル デバイスの PROPERTYKEY と GUID
 title: Windows ポータブル デバイスの PROPERTYKEY と GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba408fa498b0e543d8de61c16571e77d86ee9c69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78552a703e83665dfb29b7b54a81a7b773ac04d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376230"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387181"
 ---
 # <a name="propertykeys-and-guids-in-windows-portable-devices"></a>Windows ポータブル デバイスの PROPERTYKEY と GUID
 
@@ -20,17 +20,17 @@ ms.locfileid: "63376230"
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[**WPD\_コンテンツ\_型\_機能\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff597845)
+[**WPD\_コンテンツ\_型\_機能\_オブジェクト**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597845(v=vs.85))
 
 [**オブジェクトの要件**](requirements-for-objects.md)
 
-[**オブジェクトの形式の Guid**](https://msdn.microsoft.com/library/windows/hardware/ff597651)
+[**オブジェクトの形式の Guid**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597651(v=vs.85))
 
-[**リソースの要件**](https://msdn.microsoft.com/library/windows/hardware/ff597663)
+[**リソースの要件**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597663(v=vs.85))
 
-[**コマンド**](https://msdn.microsoft.com/library/windows/hardware/ff597554)
+[**コマンド**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597554(v=vs.85))
 
-[**プロパティと属性**](https://msdn.microsoft.com/library/windows/hardware/ff597900)
+[**プロパティと属性**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff597900(v=vs.85))
 
 [**WPD ドライバーの概要**](wpd-drivers-overview.md)
 

@@ -13,12 +13,12 @@ keywords:
 - DrvQueryPerBandInfo
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bc64d2921a72837475655b58c26bb5815e736fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f0064a37baaaf7c7f57cfa0cd68677eb6afc13d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373798"
 ---
 # <a name="preanalysis-infrastructure"></a>事前分析インフラストラクチャ
 
@@ -28,7 +28,7 @@ ms.locfileid: "63389545"
 
 Preanalysis インフラストラクチャは、各ページの最初のバンドの再生がバンド全体のページが含まれているように、印刷ジョブの縞模様を Unidrv が強制するメカニズムです。 Preanalysis パスは、レンダリングを許可しないと、オブジェクトがレンダリングされる前に、ページ上のオブジェクトの分析を有効にする場合にのみ実行されます。
 
-ページ全体の preanalysis できるように、Unidrv 最初を指定します内でページ全体のデバイスの画面、 [ **DrvEnableSurface** ](https://msdn.microsoft.com/library/windows/hardware/ff556214)関数とし、最初のバンドの方法でページ全体のサイズであることを示します[ *DrvQueryPerBandInfo*](https://msdn.microsoft.com/library/windows/hardware/ff556268)します。 Preanalysis 後が完了すると、Unidrv 使用*DrvQueryPerBandInfo* preanalysis が有効にします前に、そのサイズに戻す、クリッピング領域を復元するには。Unidrv を後でその画面に表示します。 N-up モードである場合にのみ GDI の実装の制限事項、ため preanalysis を有効にできます\_UP、またはページ全体がレンダリング バンド。
+ページ全体の preanalysis できるように、Unidrv 最初を指定します内でページ全体のデバイスの画面、 [ **DrvEnableSurface** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablesurface)関数とし、最初のバンドの方法でページ全体のサイズであることを示します[ *DrvQueryPerBandInfo*](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryperbandinfo)します。 Preanalysis 後が完了すると、Unidrv 使用*DrvQueryPerBandInfo* preanalysis が有効にします前に、そのサイズに戻す、クリッピング領域を復元するには。Unidrv を後でその画面に表示します。 N-up モードである場合にのみ GDI の実装の制限事項、ため preanalysis を有効にできます\_UP、またはページ全体がレンダリング バンド。
 
 次の疑似コードは、preanalysis のためのロジックを示しています。
 
@@ -68,7 +68,7 @@ For each physical page
 DrvEndDoc
 ```
 
-Preanalysis 機能は、現在のジェネリックのプリンターの説明 (GPD) を使用する必要がありますので、ファイルとプラグイン、テキストの z オーダー、空白のバンドの検出、およびその他の操作が実装されなかった見えない、ミニドライバーの観点から。 フックできる、ミニドライバー [ **DrvStartBanding** ](https://msdn.microsoft.com/library/windows/hardware/ff556292)と[ **DrvNextBand**](https://msdn.microsoft.com/library/windows/hardware/ff556250)、最初の呼び出しを受け取ることはありませんが、 **DrvNextBand**ため、最初の呼び出しは**DrvNextBand**レンダリングには含まれません。 最初の受信、プラグイン**DrvNextBand** OEM オブジェクト レベル preanalysis できる GPD でフラグに設定する場合にのみ呼び出します (\***PreAnalysisOptions**:8). ここで、プラグインする必要がありますをフック**DrvStartBanding**と**DrvNextBand**、プラグインを確認する必要があります、 *pptl*のパラメーター、 **DrvStartBanding**関数。 場合、 *pptl*パラメーターは非**NULL**preanalysis が無効になっています。 場合、 *pptl*パラメーターが**NULL**、preanalysis パスの先頭を示します。 この場合、プラグインを想定してください preanalysis パスから結果をすべてのプラグインがフック Ddi の描画呼び出し。 Preanalysis パスは、最初の呼び出しで終わる、 **DrvNextBand**関数、およびレンダリング パスの開始を最初に呼び出した後、 **DrvNextBand**関数。 この関数への後続の呼び出しは、レンダリング データが格納されます。
+Preanalysis 機能は、現在のジェネリックのプリンターの説明 (GPD) を使用する必要がありますので、ファイルとプラグイン、テキストの z オーダー、空白のバンドの検出、およびその他の操作が実装されなかった見えない、ミニドライバーの観点から。 フックできる、ミニドライバー [ **DrvStartBanding** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartbanding)と[ **DrvNextBand**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvnextband)、最初の呼び出しを受け取ることはありませんが、 **DrvNextBand**ため、最初の呼び出しは**DrvNextBand**レンダリングには含まれません。 最初の受信、プラグイン**DrvNextBand** OEM オブジェクト レベル preanalysis できる GPD でフラグに設定する場合にのみ呼び出します (\***PreAnalysisOptions**:8). ここで、プラグインする必要がありますをフック**DrvStartBanding**と**DrvNextBand**、プラグインを確認する必要があります、 *pptl*のパラメーター、 **DrvStartBanding**関数。 場合、 *pptl*パラメーターは非**NULL**preanalysis が無効になっています。 場合、 *pptl*パラメーターが**NULL**、preanalysis パスの先頭を示します。 この場合、プラグインを想定してください preanalysis パスから結果をすべてのプラグインがフック Ddi の描画呼び出し。 Preanalysis パスは、最初の呼び出しで終わる、 **DrvNextBand**関数、およびレンダリング パスの開始を最初に呼び出した後、 **DrvNextBand**関数。 この関数への後続の呼び出しは、レンダリング データが格納されます。
 
 ### <a href="" id="-preanalysisoptions-modes"></a>\*PreAnalysisOptions モード
 
@@ -84,7 +84,7 @@ Preanalysis モードによって GPD ファイル内で制御する、 \* **Pre
 
 2
 
-24 ビット/ピクセルの 1 ビット/ピクセルの最適化を有効にする[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)コールバック。
+24 ビット/ピクセルの 1 ビット/ピクセルの最適化を有効にする[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)コールバック。
 
 4
 
@@ -116,13 +116,13 @@ Unidrv では、レンダリング パスを与えて前に、各ページに pr
 
 次の描画コマンドは、後続 blt によってオーバーレイがテキストに対してテストされます。
 
--   [**DrvBitBlt**](https://msdn.microsoft.com/library/windows/hardware/ff556180)
+-   [**DrvBitBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvbitblt)
 
--   [**DrvStretchBlt**](https://msdn.microsoft.com/library/windows/hardware/ff556302)
+-   [**DrvStretchBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstretchblt)
 
--   [**DrvStretchBltROP**](https://msdn.microsoft.com/library/windows/hardware/ff556306)
+-   [**DrvStretchBltROP**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstretchbltrop)
 
--   [**DrvStrokeAndFillPath**](https://msdn.microsoft.com/library/windows/hardware/ff556311)
+-   [**DrvStrokeAndFillPath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokeandfillpath)
 
 そのため、このモードでは、テキスト入力領域オブジェクトの間のすべての z オーダーの問題を修正する必要があります。 まだ問題があるテキストと線をオーバーレイに注意してください。 このようなソリューションがほぼすべてのテキストが描画されているのではなくダウンロード中のため、このような状況は含まれません。
 
@@ -140,7 +140,7 @@ Preanalysis のパスの間に、ページの描画が行われる Unidrv を決
 
 設定、 \* **PreAnalysisOptions**パラメーターを 2 には、Unidrv 大きい 1 BPP 24 ビット/ピクセルにページ全体を表示するのではなく、オブジェクトを含むのみ solid 黒、リージョンを表示するために画面を縞模様を使用します。 このモードは、空白のバンドの最適化をページ上の (色の領域) ではなく黒い領域を純をも決定例外に似ています。 黒一色 (灰色の濃淡がありません) であるだけのオブジェクトは、1 ビット/ピクセルの白黒のハーフトーン 24 ビット/ピクセルの色に設定が正しく表示されないため、画面を縞模様 1 のビット/ピクセルで表示できます。
 
-Unidrv 内の 2 つのサーフェスを作成し、 [ **DrvEnableSurface** ](https://msdn.microsoft.com/library/windows/hardware/ff556214)関数: 1 のビット/ピクセルの白黒の他の色を 1 つ。 Unidrv ごとに、同じメモリを使用して追加のメモリは必要ありません。 ページ preanalysis は、ページには拡大バンドできます使われるよりも色が含まれているリージョンのソリッド黒または空白領域が含まれて かどうかを判断します。 色のリージョンのみでは、小さい色バンド画面を使用して必要があります。
+Unidrv 内の 2 つのサーフェスを作成し、 [ **DrvEnableSurface** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablesurface)関数: 1 のビット/ピクセルの白黒の他の色を 1 つ。 Unidrv ごとに、同じメモリを使用して追加のメモリは必要ありません。 ページ preanalysis は、ページには拡大バンドできます使われるよりも色が含まれているリージョンのソリッド黒または空白領域が含まれて かどうかを判断します。 色のリージョンのみでは、小さい色バンド画面を使用して必要があります。
 
 同量のメモリを使用するには、1 ビット/ピクセルの白黒画面は 24 ビット/ピクセルの色の画面の 24 時間の大きなできます。 ページの中央のみの色を含むイメージを分割して、3 つのリージョンにそのため、: 最上位のリージョンや、色を含む領域下の領域。 これら 3 つのリージョンは次のように縞模様ことができます。 上のリージョンは、モノクロのバンドを 1 つに配置できます、色が格納されているリージョンは、多くの色のバンドをカバーするために必要なように分けることが、および下の領域は、モノクロのバンドを 1 つに配置することができます。
 
@@ -152,11 +152,11 @@ Unidrv 内の 2 つのサーフェスを作成し、 [ **DrvEnableSurface** ](ht
 *PreAnalysisOptions: 4
 ```
 
-設定、 \* **PreAnalysisOptions**パラメーターを 4 により、ダウンロードする Unidrv [ **DrvStretchBlt** ](https://msdn.microsoft.com/library/windows/hardware/ff556302)デバイスを直接呼び出してはそのサポート stretchblt操作です。
+設定、 \* **PreAnalysisOptions**パラメーターを 4 により、ダウンロードする Unidrv [ **DrvStretchBlt** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstretchblt)デバイスを直接呼び出してはそのサポート stretchblt操作です。
 
 Unidrv では、24 ビット/ピクセル カラー データを生成するときは、stretchblt のすべてのイメージを拡大して非常に大量のラスター データをダウンロードする必要がありますデバイスの解像度します。 これは、結果、東アジア言語のプリンターの多くのメモリ不足の条件に加え、パフォーマンスの低下。
 
-プラグイン ミニドライバー レンダリングがそれをフックする必要がありますので、stretchblt モードの利用に必要な[ **OEMStretchBlt** ](https://msdn.microsoft.com/library/windows/hardware/ff559536)し、独自のイメージのダウンロード コマンドを指定します。 Unidrv では、直接ダウンロード可能な呼び出しでのみ OEMStretchBlt フックを使用できます。 したがって、プラグインはありませんを z オーダーの問題を処理します。 受信した OEMStretchBlt 呼び出しに含まれるソース イメージ データを直接ダウンロードのみにプラグインの必要があります。 プラグインは、イメージが、プラグインはサポートしていませんまたはダウンロードできない形式の場合、Unidrv にイメージを punting のオプションが。
+プラグイン ミニドライバー レンダリングがそれをフックする必要がありますので、stretchblt モードの利用に必要な[ **OEMStretchBlt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/nf-printoem-oemstretchblt)し、独自のイメージのダウンロード コマンドを指定します。 Unidrv では、直接ダウンロード可能な呼び出しでのみ OEMStretchBlt フックを使用できます。 したがって、プラグインはありませんを z オーダーの問題を処理します。 受信した OEMStretchBlt 呼び出しに含まれるソース イメージ データを直接ダウンロードのみにプラグインの必要があります。 プラグインは、イメージが、プラグインはサポートしていませんまたはダウンロードできない形式の場合、Unidrv にイメージを punting のオプションが。
 
 オブジェクトは、システムの他のデータを表示中にデバイスにダウンロード直接、たびにあります z オーダーの問題またはハーフトーン不整合。 このモードでは、preanalysis を使用して、どの stretchblts を直接ダウンロードを調べます。 直接ダウンロードをマスクまたは複雑なクリッピングを含まない stretchblts のみが検討されます。 場合、後でオブジェクトのオーバーレイ、直接ダウンロードは後でないオブジェクトを検討している stretchblts のいずれかが直接ダウンロードされます。 この原則は、パフォーマンスが向上する必要があり、イメージが含まれているなし、両方のシステムと、デバイスは、非常に低品質の印刷出力の結果からハーフトーンにはことを確認する必要があります。
 
@@ -166,13 +166,13 @@ Unidrv では、24 ビット/ピクセル カラー データを生成すると�
 *PreAnalysisOptions: 8
 ```
 
-設定、 \* **PreAnalysisOptions** 8 へのパラメーターにより、後に再生がすべてのページ全体でオブジェクトように preanalysis パスを開始する OEM、 [ **DrvStartBanding**](https://msdn.microsoft.com/library/windows/hardware/ff556292)バンドのサイズに関係なく呼び出します。 Preanalysis のパスの間に Unidrv 内で許可されている描画はありませんが、Oem は、すべての描画呼び出し、ページ上のオブジェクトを分析する DrvXxx をフックできます。
+設定、 \* **PreAnalysisOptions** 8 へのパラメーターにより、後に再生がすべてのページ全体でオブジェクトように preanalysis パスを開始する OEM、 [ **DrvStartBanding**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartbanding)バンドのサイズに関係なく呼び出します。 Preanalysis のパスの間に Unidrv 内で許可されている描画はありませんが、Oem は、すべての描画呼び出し、ページ上のオブジェクトを分析する DrvXxx をフックできます。
 
 カラー インク ジェット プリンターにはこのモードで機能がフォーカスがある Oem がオブジェクトに基づく色補正やレンダリングに使用できるようにします。 たとえば、特定のプリンターでは、単独で表示される黒いオブジェクトではなく、色のオブジェクトと交差する場合は、黒のオブジェクトを異なる方法で処理する必要があります。 その他の Oem は、bitblt 関数オブジェクトとは異なる stretchblt オブジェクトのハーフトーンを必要があります。 Stretchblt オブジェクトは、.png または .jpg など、Windows をサポートする任意のグラフィック ファイル形式にできます。 Bitblt 関数オブジェクトは、ビットマップのみです。
 
 このモードは、GPD で有効な場合、Unidrv は縞模様のサーフェイスとして、画面を定義しますが、によりページ全体の最初の再生。 これを行うには、Unidrv は GDI クリップのウィンドウをページ全体に設定します。 Unidrv により、すべての描画コマンドをフックするが、描画前に取得を実行することができます。 次のパスで Unidrv リセット クリップ ウィンドウ バンドと通常のバンドのサイズに通常どおりします。
 
-Oem は両方をフックする必要があります**DrvStartBanding**と[ **DrvNextBand** ](https://msdn.microsoft.com/library/windows/hardware/ff556250) GPD でこのモードを有効にするとします。 また、テストする必要があります、 *pptl*のパラメーター、 **DrvStartBanding** Unidrv preanalysis 指定ページには、このモードでを有効にすることができるかどうかを判断する関数。 場合、 *pptl*パラメーターが**NULL**Unidrv が preanalysis を有効にします。 Unidrv を使用して、 *pptl*パラメーター (これが更新されていないバンドの位置この時点では意味があるないため。 Preanalysis のバンドの位置は常に設定 (0, 0))。 場合、 *pptl*パラメーターが**NULL**、OEM は、1 つ目の前にすべての描画呼び出しを検討**DrvNextBand** preanalysis の一部であるとする必要がありますの描画を許可しませんサーフェイス。
+Oem は両方をフックする必要があります**DrvStartBanding**と[ **DrvNextBand** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvnextband) GPD でこのモードを有効にするとします。 また、テストする必要があります、 *pptl*のパラメーター、 **DrvStartBanding** Unidrv preanalysis 指定ページには、このモードでを有効にすることができるかどうかを判断する関数。 場合、 *pptl*パラメーターが**NULL**Unidrv が preanalysis を有効にします。 Unidrv を使用して、 *pptl*パラメーター (これが更新されていないバンドの位置この時点では意味があるないため。 Preanalysis のバンドの位置は常に設定 (0, 0))。 場合、 *pptl*パラメーターが**NULL**、OEM は、1 つ目の前にすべての描画呼び出しを検討**DrvNextBand** preanalysis の一部であるとする必要がありますの描画を許可しませんサーフェイス。
 
 呼び出しによって通知される preanalysis の末尾、 **OEMNextBand**関数。 *Pptl*パラメーターに渡される**OEMNextBand**ない**NULL**します。 この呼び出しは、適切なを返す場合にのみ使用*pptl* Unidrv する値。 プラグインを設定できる、 *pptl*自体を値またはにコールバックする Unidrv (など、このトピックの先頭の前の疑似コード例では、)。 画面の縞模様のため、 *pso*パラメーターの**OEMNextBand**最初の呼び出しで指定された**OEMNextBand**はレンダリングされません、プラグインを送信しないでください、デバイスにコンテンツ。
 

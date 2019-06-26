@@ -16,12 +16,12 @@ keywords:
 - ストリーム WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 144fe5b98a359c4e6ee01c50674c8b9d7e6e2950
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41b8d8361c9d80e46bcd60c7aea093695c98a8f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343743"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383374"
 ---
 # <a name="clfs-log-sequence-numbers"></a>CLFS ログ シーケンス番号
 
@@ -33,13 +33,13 @@ Common Log File System (CLFS) では、指定されたストリーム内の各�
 
 厳密に増加するシーケンスが、特定のストリームのフォームの作成 Lsn。 つまり、指定されたストリーム内のログ レコードに割り当てられている LSN では、以前同じストリームに書き込まれたログ レコードに割り当てられている Lsn よりも大きいは常にします。 次の関数は、指定されたストリーム内のログ レコードの Lsn を比較するために使用できます。
 
-[**ClfsLsnNull**](https://msdn.microsoft.com/library/windows/hardware/ff541609)
+[**ClfsLsnNull**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnnull)
 
-[**ClfsLsnEqual**](https://msdn.microsoft.com/library/windows/hardware/ff541590)
+[**ClfsLsnEqual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnequal)
 
-[**ClfsLsnGreater**](https://msdn.microsoft.com/library/windows/hardware/ff541595)
+[**ClfsLsnGreater**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsngreater)
 
-[**ClfsLsnLess**](https://msdn.microsoft.com/library/windows/hardware/ff541608)
+[**ClfsLsnLess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnless)
 
 定数 CLFS\_LSN\_NULL と CLFS\_LSN\_無効なすべての有効な Lsn の下限と上限の境界。 任意の有効な LSN は CLFS 以上\_LSN\_NULL。 また、任意の有効な LSN は CLFS より厳密に小さい\_LSN\_が無効です。 注その CLFS\_LSN\_一方、NULL は有効な LSN では、CLFS\_LSN\_有効な LSN が無効です。 CLFS を比較するため、\_LSN\_を前の一覧に関数を使用して他の Lsn が無効です。
 
@@ -47,11 +47,11 @@ Common Log File System (CLFS) では、指定されたストリーム内の各�
 
 ### <a name="base-lsn"></a>ベースの LSN
 
-クライアントは、ストリームの最初のレコードを書き込む、CLFS は、その最初のレコードの lsn ベースの LSN を設定します。 ベースの LSN は、クライアントに変更しない限り変更されません。 ストリームのクライアントには、特定の時点でストリームする前にレコードが不要になった、ときに呼び出すことによってベースの LSN を更新できる[ **ClfsAdvanceLogBase** ](https://msdn.microsoft.com/library/windows/hardware/ff540773)または[ **ClfsWriteRestartArea**](https://msdn.microsoft.com/library/windows/hardware/ff541770)します。 たとえば、クライアントには、最初の 5 つのログ レコードが不要になった場合、は、6 番目のレコードの LSN をベースの LSN を設定ができます。
+クライアントは、ストリームの最初のレコードを書き込む、CLFS は、その最初のレコードの lsn ベースの LSN を設定します。 ベースの LSN は、クライアントに変更しない限り変更されません。 ストリームのクライアントには、特定の時点でストリームする前にレコードが不要になった、ときに呼び出すことによってベースの LSN を更新できる[ **ClfsAdvanceLogBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsadvancelogbase)または[ **ClfsWriteRestartArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfswriterestartarea)します。 たとえば、クライアントには、最初の 5 つのログ レコードが不要になった場合、は、6 番目のレコードの LSN をベースの LSN を設定ができます。
 
 ### <a name="last-lsn"></a>最後の LSN
 
-クライアントは、レコードをストリームに書き込み、CLFS は最後に書き込まれたレコードの LSN では常にように最後の LSN を調整します。 クライアントには、レコードが不要になった場合、ストリームで特定の時点以降後、最後の LSN を呼び出すことで更新できる[ **ClfsSetEndOfLog**](https://msdn.microsoft.com/library/windows/hardware/ff541753)します。 たとえば、クライアントには、10 番目のレコードの後に書き込まれたすべてのレコードが不要になった、10 番目のレコードの LSN を最後の LSN を設定して、ストリームを切り捨てることができます。
+クライアントは、レコードをストリームに書き込み、CLFS は最後に書き込まれたレコードの LSN では常にように最後の LSN を調整します。 クライアントには、レコードが不要になった場合、ストリームで特定の時点以降後、最後の LSN を呼び出すことで更新できる[ **ClfsSetEndOfLog**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfssetendoflog)します。 たとえば、クライアントには、10 番目のレコードの後に書き込まれたすべてのレコードが不要になった、10 番目のレコードの LSN を最後の LSN を設定して、ストリームを切り捨てることができます。
 
 ### <a name="active-portion-of-a-stream"></a>ストリームのアクティブな部分
 

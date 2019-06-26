@@ -10,12 +10,12 @@ keywords:
 - テープ ドライバーに関するテープ ドライバー WDK、ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b559bb3fa2a7804b1baf392d49ff3ac4aa9f23d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 675b243123df0199db857a1291f9a3d975befe84
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383558"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386807"
 ---
 # <a name="tape-drivers"></a>テープ ドライバー
 
@@ -39,7 +39,7 @@ NT ベースのオペレーティング システムでは、オペレーティ�
 
 既存のテープ miniclass ドライバーは、1 つ新しい入口を作成し、Windows 2000 と以降のオペレーティング システムで実行するために、TapeMiniGetMediaTypes をサポートするために変更する必要があります。 その他の変更は必要ありません。 システム提供のテープ クラス ドライバー、およびシステムが指定したストレージ ポート ドライバー、プラグ アンド プレイのハンドルとテープ miniclass ドライバーの代わりに電源管理要求。
 
-このセクションでは、オペレーティング システムに固有のテープのクラス ドライバーによって提供されるサポートについて説明し、新しいテープ miniclass ドライバーを記述するためのガイドラインを提供します。 参照してください[テープ クラス ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff567959)と[テープ Miniclass ドライバー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff567970)のテープのルーチンの詳細については、クラスし、テープの miniclass ドライバー。 参照してください[デバイスの構成とドライバー](https://msdn.microsoft.com/library/windows/hardware/ff543100)ストレージ デバイス ドライバーのレイヤーの説明についてはします。
+このセクションでは、オペレーティング システムに固有のテープのクラス ドライバーによって提供されるサポートについて説明し、新しいテープ miniclass ドライバーを記述するためのガイドラインを提供します。 参照してください[テープ クラス ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)と[テープ Miniclass ドライバー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)のテープのルーチンの詳細については、クラスし、テープの miniclass ドライバー。 参照してください[デバイスの構成とドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-configurations-and-layered-drivers)ストレージ デバイス ドライバーのレイヤーの説明についてはします。
 
  
 

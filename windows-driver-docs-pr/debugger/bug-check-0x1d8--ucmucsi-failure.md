@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 81a4036f65d8fb92ec7ea565639aac2afe18d06a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 106e13f0c0a67a2da96658fc8eac7c8dc83871ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361598"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367566"
 ---
 # <a name="bug-check-0x1d8-ucmucsifailure"></a>バグ チェック 0x1D8:UCMUCSI\_エラー
 
 UCMUCSI\_エラーのバグ チェックが 0x000001D8 の値を持ちます。 UCSI クラスの拡張機能でエラーが発生することを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
  
 ## <a name="ucmucsifailure-parameters"></a>UCMUCSI\_エラー パラメーター

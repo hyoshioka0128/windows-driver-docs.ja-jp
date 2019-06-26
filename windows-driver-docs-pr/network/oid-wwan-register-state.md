@@ -6,32 +6,32 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_REGISTER_STATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a4eb8530c35d537061fd8e7b138efd5f6bec4127
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06b2c7ed06a529d0a7fd98b9c324c6bed30536ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368534"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383211"
 ---
 # <a name="oidwwanregisterstate"></a>OID\_WWAN\_登録\_状態
 
 
 OID\_WWAN\_登録\_状態を登録するネットワーク プロバイダーを選択します。
 
-ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_登録\_状態**](ndis-status-wwan-register-state.md)状態通知を含む、 [ **NDIS\_WWAN\_登録\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567917)セットの完了に関係なく、登録されているネットワーク プロバイダーに関する情報を提供または要求をクエリする構造体。
+ミニポート ドライバー セットを処理する必要があり、クエリ要求が最初に、非同期に返す NDIS\_状態\_を示す値\_元の要求とそれ以降の送信に必要な[ **NDIS\_ステータス\_WWAN\_登録\_状態**](ndis-status-wwan-register-state.md)状態通知を含む、 [ **NDIS\_WWAN\_登録\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_registration_state)セットの完了に関係なく、登録されているネットワーク プロバイダーに関する情報を提供または要求をクエリする構造体。
 
-ネットワーク プロバイダーに登録を設定するように要求して呼び出し元に提供する[ **NDIS\_WWAN\_設定\_登録\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567926)構造体を適切な情報のミニポート ドライバー。
+ネットワーク プロバイダーに登録を設定するように要求して呼び出し元に提供する[ **NDIS\_WWAN\_設定\_登録\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_register_state)構造体を適切な情報のミニポート ドライバー。
 
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN 登録操作](https://msdn.microsoft.com/library/windows/hardware/ff559116)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN 登録操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-registration-operations)します。
 
 ミニポート ドライバーは、処理するときに、プロバイダーのネットワークにアクセスできるクエリまたはの集合演算、Subscriber Identity Module (SIM カード) にアクセスしないでください。
 
 MB ドライバー モデルは、-自動および手動の 2 つの登録メソッドをサポートします。 CDMA ベースのネットワークでは、MB ドライバー モデルでは、自動登録のみをサポートしています。
 
-手動で登録をサポートしているデバイスを設定する必要があります、 **WwanControlCaps**メンバー [ **WWAN\_デバイス\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff571204) WWAN構造体\_Ctrl キーを押し\_CAP\_REG\_手動です。 GSM ベースのデバイスが手動で登録をサポートする必要がありますに注意します。
+手動で登録をサポートしているデバイスを設定する必要があります、 **WwanControlCaps**メンバー [ **WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps) WWAN構造体\_Ctrl キーを押し\_CAP\_REG\_手動です。 GSM ベースのデバイスが手動で登録をサポートする必要がありますに注意します。
 
 登録の状態が自動の場合は、ミニポート ドライバーには、デバイスを携帯電話テクノロジに固有の選択アルゴリズムに基づくネットワーク プロバイダーを選択し、登録を続行する必要がありますように指示します。
 
@@ -55,7 +55,7 @@ RegisterAction 値のセマンティクスの定義は次のとおりです。
 
 5 G データ クラスのサポートに関する詳細については、次を参照してください。 [MB 5 G データ クラスのサポート](mb-5g-data-class-support.md)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -78,11 +78,11 @@ RegisterAction 値のセマンティクスの定義は次のとおりです。
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_設定\_登録\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567926)
+[**NDIS\_WWAN\_設定\_登録\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_register_state)
 
 [**NDIS\_状態\_WWAN\_登録\_状態**](ndis-status-wwan-register-state.md)
 
-[WWAN 登録操作](https://msdn.microsoft.com/library/windows/hardware/ff559116)
+[WWAN 登録操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-registration-operations)
 
  
 

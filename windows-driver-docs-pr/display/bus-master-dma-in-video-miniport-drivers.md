@@ -12,12 +12,12 @@ keywords:
 - パケットに基づく DMA WDK ビデオのミニポート, 概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40297b11d5225031b27f20f20ea64e3d56532154
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 949e75163c24cab7cc5147499bb018f82c85f34b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341594"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384613"
 ---
 # <a name="bus-master-dma-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーのバス マスター DMA
 
@@ -39,7 +39,7 @@ Windows XP 以降では、オペレーティング システムのグラフィ�
 
 、バス マスター アダプターの性質に応じてミニポート ドライバーによってパケットに基づく DMA を排他的に使用して、排他的に一般的なバッファー DMA を使用して他のユーザー両方を使用していくつか。
 
-DMA の種類を使用するに関係なく、ミニポート ドライバーを呼び出す必要があります[ **VideoPortGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff570312)へのポインターを取得する、 [**担当副社長\_DMA\_アダプター** ](https://msdn.microsoft.com/library/windows/hardware/ff570570)構造体し、後続の DMA 関数の呼び出しに対して使用します。 ミニポート ドライバーを呼び出す必要がありますの DMA 操作を継続的な必要がなくなったとき[ **VideoPortPutDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff570335)をそのアダプタ オブジェクトを破棄します。
+DMA の種類を使用するに関係なく、ミニポート ドライバーを呼び出す必要があります[ **VideoPortGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetdmaadapter)へのポインターを取得する、 [**担当副社長\_DMA\_アダプター** ](https://docs.microsoft.com/previous-versions/ff570570(v=vs.85))構造体し、後続の DMA 関数の呼び出しに対して使用します。 ミニポート ドライバーを呼び出す必要がありますの DMA 操作を継続的な必要がなくなったとき[ **VideoPortPutDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportputdmaadapter)をそのアダプタ オブジェクトを破棄します。
 
 次のサブセクションでは、ビデオ ポート ドライバーによって提供されるパケットに基づくと、一般的なバッファーの DMA サポートを使用する方法について説明します。
 

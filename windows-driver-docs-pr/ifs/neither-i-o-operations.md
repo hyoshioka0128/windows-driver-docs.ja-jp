@@ -9,12 +9,12 @@ keywords:
 - どちらの I/O 操作の WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a58f9e6cae93e83d48a09c282cd7c003216800f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3f6a0c14551cd2232327dd67e42d2c24a678ca7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384809"
 ---
 # <a name="neither-io-operations"></a>I/O のどちらでもない操作
 
@@ -24,25 +24,25 @@ ms.locfileid: "63379460"
 
 ファイル システムでは、通常ユーザー バッファーを直接操作に関連する操作を処理する必要があります。 このような操作は、ユーザーのアドレスが無効になるため、本質的に危険です。 ファイル システムは、このような操作を特に意識し、適切に保護することを確認する必要があります。 次の操作に依存して、**フラグ**I/O マネージャーのユーザーとカーネル アドレス スペース間でデータを転送する方法を指定するファイル システムのデバイス オブジェクトのメンバー。
 
--   [**IRP\_MJ\_ディレクトリ\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff548658)
+-   [**IRP\_MJ\_ディレクトリ\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-directory-control)
 
--   [**IRP\_MJ\_クエリ\_EA**](https://msdn.microsoft.com/library/windows/hardware/ff549279)
+-   [**IRP\_MJ\_クエリ\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-ea)
 
--   [**IRP\_MJ\_クエリ\_クォータ**](https://msdn.microsoft.com/library/windows/hardware/ff549293)
+-   [**IRP\_MJ\_クエリ\_クォータ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-quota)
 
--   [**IRP\_MJ\_READ**](https://msdn.microsoft.com/library/windows/hardware/ff549327)
+-   [**IRP\_MJ\_READ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)
 
--   [**IRP\_MJ\_SET\_EA**](https://msdn.microsoft.com/library/windows/hardware/ff549346)
+-   [**IRP\_MJ\_SET\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-ea)
 
--   [**IRP\_MJ\_SET\_QUOTA**](https://msdn.microsoft.com/library/windows/hardware/ff549401)
+-   [**IRP\_MJ\_SET\_QUOTA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-quota)
 
--   [**IRP\_MJ\_WRITE**](https://msdn.microsoft.com/library/windows/hardware/ff549427)
+-   [**IRP\_MJ\_WRITE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-write)
 
 通常、ファイル システムがどちらの I/O に暗黙的にどちらの操作を設定して\_直接\_IO も DO\_バッファーに格納された\_で IO、**フラグ**ボリューム デバイスのメンバー オブジェクトを作成します。
 
 次の操作は、無視、**フラグ**ファイル システムのメンバーのデバイス オブジェクトと、どちらの I/O を使用して、ユーザーとカーネル アドレス スペース間でデータを転送します。
 
--   [**IRP\_MJ\_QUERY\_SECURITY**](https://msdn.microsoft.com/library/windows/hardware/ff549298)
+-   [**IRP\_MJ\_QUERY\_SECURITY**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-security)
 
 どちらの I/O を使用して、ファイル システムは、独自のデータ転送操作を処理します。 これにより、アプリケーションのユーザー スペースのバッファーにデータを直接配置することで、操作を満たすためにファイル システムです。 ファイル システムは、操作が開始され、操作が進行中に無効になるバッファーを適切に処理、ユーザーのバッファーが有効であることを確認したがって必要があります。 また、高速の I/O には、生のポインターが渡されます。 開発者が認識操作の開始位置のバッファーの有効性のチェックが不十分であることが、操作全体で有効にすることを確認する必要があります。 たとえば、悪意のあるアプリケーションでした (たとえばセクション) から、メモリ ブロックにマップ、発行、I/O 操作および I/O 操作が進行中にメモリ ブロックを解除します。
 

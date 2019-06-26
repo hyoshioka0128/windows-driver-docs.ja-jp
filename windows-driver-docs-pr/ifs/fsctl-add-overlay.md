@@ -14,27 +14,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53b4ceecfa7e9a541a53d8fd28febc1bd1bcb114
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11c427fb17ad0a301307ba9bb7227343e2942acc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327890"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384571"
 ---
 # <a name="fsctladdoverlay-control-code"></a>FSCTL\_追加\_オーバーレイ コントロール コード
 
 
 **FSCTL\_追加\_オーバーレイ**制御コードは、ボリュームの名前空間に新しいバックアップを外部ソースを追加します。 このバックアップ ソースでは、Windows Image Format (WIM) ファイルを指定できます。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 **Parameters**
 
 <a href="" id="instance--in-"></a>*インスタンス\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
 
 <a href="" id="fileobject--in-"></a>*FileObject\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 オーバーレイを追加するボリュームのファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 オーバーレイを追加するボリュームのファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
 
 <a href="" id="filehandle--in-"></a>*FileHandle\[で\]*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 オーバーレイが追加されます、ボリュームのハンドル。 このパラメーターは、必要なは、NULL にすることはできません。
@@ -43,10 +43,10 @@ ms.locfileid: "63327890"
 操作の制御コード。 使用**FSCTL\_追加\_オーバーレイ**この操作にします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-含める必要がありますが、入力バッファーへのポインターを[ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造体。 追加のプロバイダー固有のデータは後すぐに、必要な場合に**WOF\_外部\_情報**します。
+含める必要がありますが、入力バッファーへのポインターを[ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造体。 追加のプロバイダー固有のデータは後すぐに、必要な場合に**WOF\_外部\_情報**します。
 
 <a href="" id="inputbufferlength--in-"></a>*InputBufferLength\[で\]*  
-設定**sizeof**([**WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)) さらに、追加のプロバイダーの入力データのサイズ。
+設定**sizeof**([**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)) さらに、追加のプロバイダーの入力データのサイズ。
 
 <a href="" id="outputbuffer--out-"></a>*OutputBuffer\[アウト\]*  
 追加操作の結果情報を含む出力バッファーへのポインター。
@@ -57,7 +57,7 @@ ms.locfileid: "63327890"
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
 
 <table>
 <colgroup>
@@ -66,7 +66,7 @@ ms.locfileid: "63327890"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">項目</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -95,11 +95,11 @@ ms.locfileid: "63327890"
 <a name="remarks"></a>注釈
 -------
 
-追加のバックアップ ソースは、Windows Imaging Format (WIM) ファイルが、入力バッファーに格納されます、 [ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造が続く、 [**WIM\_プロバイダー\_追加\_オーバーレイ\_入力**](https://msdn.microsoft.com/library/windows/hardware/dn632447)構造体。 *InputBufferLength*ここでは、 **sizeof**(**WOF\_外部\_情報**) + **sizeof**(**WIM\_プロバイダー\_追加\_オーバーレイ\_入力**)。 要求の完了時に、データによって示される*OutputBuffer*含む 1 つの大きな\_WIM ファイルの新しいデータ ソース識別子を指定する整数値。
+追加のバックアップ ソースは、Windows Imaging Format (WIM) ファイルが、入力バッファーに格納されます、 [ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造が続く、 [**WIM\_プロバイダー\_追加\_オーバーレイ\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_add_overlay_input)構造体。 *InputBufferLength*ここでは、 **sizeof**(**WOF\_外部\_情報**) + **sizeof**(**WIM\_プロバイダー\_追加\_オーバーレイ\_入力**)。 要求の完了時に、データによって示される*OutputBuffer*含む 1 つの大きな\_WIM ファイルの新しいデータ ソース識別子を指定する整数値。
 
 その他のバックアップ プロバイダーでは、独自の特定の入力パラメーターの構造を定義し、データ型を出力します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

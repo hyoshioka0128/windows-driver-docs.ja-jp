@@ -12,19 +12,19 @@ keywords:
 - WskRegister
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d67b641949397063071d8f4e49faeb28f67abc04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c573bffb046ceb944932042d34217deff52b2f72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391963"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385415"
 ---
 # <a name="registering-a-winsock-kernel-application"></a>Winsock カーネル アプリケーションの登録
 
 
 ### <a name="wsk-client-object-registration"></a>WSK クライアント オブジェクトの登録
 
-Winsock カーネル (WSK) アプリケーションを呼び出すことによって WSK クライアントとして登録する必要があります、 [ **WskRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff571143)関数。 **WskRegister** WSK アプリケーションを初期化し、その WSK クライアントのポインターを渡す必要があります[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)(、 [ **WSK\_クライアント\_NPI** ](https://msdn.microsoft.com/library/windows/hardware/ff571163)構造) と WSK 登録オブジェクト (、 [ **WSK\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff571178)構造)で初期化する**WskRegister**成功時にします。
+Winsock カーネル (WSK) アプリケーションを呼び出すことによって WSK クライアントとして登録する必要があります、 [ **WskRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)関数。 **WskRegister** WSK アプリケーションを初期化し、その WSK クライアントのポインターを渡す必要があります[ネットワーク プログラミング インターフェイス (NPI)](network-programming-interface.md)(、 [ **WSK\_クライアント\_NPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_npi)構造) と WSK 登録オブジェクト (、 [ **WSK\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_registration)構造)で初期化する**WskRegister**成功時にします。
 
 次のコード例では、WSK クライアントとして WSK アプリケーションを登録する方法を示します。
 
@@ -76,13 +76,13 @@ NTSTATUS
 }
 ```
 
-WSK アプリケーションを呼び出す必要はありません[ **WskRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff571143)内からその**DriverEntry**関数。 たとえば、WSK アプリケーションが複雑なドライバーのサブコンポーネントの場合は、WSK アプリケーションのサブコンポーネントがアクティブな場合にのみが、アプリケーションの登録することがあります。
+WSK アプリケーションを呼び出す必要はありません[ **WskRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)内からその**DriverEntry**関数。 たとえば、WSK アプリケーションが複雑なドライバーのサブコンポーネントの場合は、WSK アプリケーションのサブコンポーネントがアクティブな場合にのみが、アプリケーションの登録することがあります。
 
-WSK アプリケーションを保持する必要があります、 [ **WSK\_クライアント\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff571159)に構造体が渡される**WskRegister**有効となるまで、メモリに常駐しています。[ **WskDeregister** ](https://msdn.microsoft.com/library/windows/hardware/ff571128)と呼ばれますが、登録が無効になっているとします。 [ **WSK\_登録**](https://msdn.microsoft.com/library/windows/hardware/ff571178)構造も保持する必要が有効であり、メモリに常駐 WSK アプリケーションは、他の呼び出しが停止するまで[WSK 登録関数](https://msdn.microsoft.com/library/windows/hardware/ff571179). 上記のコード例では、確保されるため、構造データ メモリに常駐しているドライバーがロードされるまで、ドライバーのグローバル データ セクションにこれら 2 つの構造を保持します。
+WSK アプリケーションを保持する必要があります、 [ **WSK\_クライアント\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_dispatch)に構造体が渡される**WskRegister**有効となるまで、メモリに常駐しています。[ **WskDeregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister)と呼ばれますが、登録が無効になっているとします。 [ **WSK\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_registration)構造も保持する必要が有効であり、メモリに常駐 WSK アプリケーションは、他の呼び出しが停止するまで[WSK 登録関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/). 上記のコード例では、確保されるため、構造データ メモリに常駐しているドライバーがロードされるまで、ドライバーのグローバル データ セクションにこれら 2 つの構造を保持します。
 
 ### <a name="wsk-provider-npi-capture"></a>WSK プロバイダー NPI キャプチャ
 
-持つ WSK クライアントとしてアプリケーションが登録されて、WSK 後[ **WskRegister**](https://msdn.microsoft.com/library/windows/hardware/ff571143)、それを使用する必要があります、 [ **WskCaptureProviderNPI** ](https://msdn.microsoft.com/library/windows/hardware/ff571122)関数WSK インターフェイスの使用を開始するには、WSK サブシステムから WSK プロバイダー NPI をキャプチャします。
+持つ WSK クライアントとしてアプリケーションが登録されて、WSK 後[ **WskRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)、それを使用する必要があります、 [ **WskCaptureProviderNPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskcaptureprovidernpi)関数WSK インターフェイスの使用を開始するには、WSK サブシステムから WSK プロバイダー NPI をキャプチャします。
 
 WSK サブシステムまだ準備が整っていない WSK アプリケーションが NPI、WSK プロバイダーをキャプチャしようとしたときのため、 **WskCaptureProviderNPI**関数により、WSK アプリケーションとして準備を整えるために、WSK サブシステムのポーリング、待機するには次に示します。
 
@@ -96,9 +96,9 @@ WSK サブシステムまだ準備が整っていない WSK アプリケーシ�
 
  
 
-場合に呼び出し**WskCaptureProviderNPI**状態で失敗\_NOINTERFACE、WSK アプリケーションを使用できる、 [ **WskQueryProviderCharacteristics** ](https://msdn.microsoft.com/library/windows/hardware/ff571138)WSK サブシステムでサポートされる範囲の WSK NPI バージョンを検出する関数。 WSK アプリケーションを呼び出して**WskDeregister**登録の現在のインスタンスの登録を解除し、さまざまなを使用してもう一度登録[ **WSK\_クライアント\_ディスパッチ** ](https://msdn.microsoft.com/library/windows/hardware/ff571159)はサポートされている WSK NPI バージョンを使用するインスタンス。
+場合に呼び出し**WskCaptureProviderNPI**状態で失敗\_NOINTERFACE、WSK アプリケーションを使用できる、 [ **WskQueryProviderCharacteristics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskqueryprovidercharacteristics)WSK サブシステムでサポートされる範囲の WSK NPI バージョンを検出する関数。 WSK アプリケーションを呼び出して**WskDeregister**登録の現在のインスタンスの登録を解除し、さまざまなを使用してもう一度登録[ **WSK\_クライアント\_ディスパッチ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_dispatch)はサポートされている WSK NPI バージョンを使用するインスタンス。
 
-ときに**WskCaptureProviderNPI** 、正常に返されますその*WskProviderNpi*パラメーターが指す WSK プロバイダー NPI ( [ **WSK\_プロバイダー\_NPI**](https://msdn.microsoft.com/library/windows/hardware/ff571177)) WSK アプリケーションで使用できるようにします。 WSK\_プロバイダー\_NPI 構造体には、WSK クライアント オブジェクトへのポインターが含まれています ( [ **WSK\_クライアント**](https://msdn.microsoft.com/library/windows/hardware/ff571155)) および[ **WSK\_プロバイダー\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff571175) WSK アプリケーションは、WSK ソケットを作成し、WSK クライアント オブジェクトでは、その他の操作の実行に使用できる WSK 関数のディスパッチ テーブル。 WSK 適用された後は、WSK を使用して完成した\_プロバイダー\_ディスパッチ関数、WSK プロバイダー NPI を呼び出すことによって解放が必要があります[ **WskReleaseProviderNPI**](https://msdn.microsoft.com/library/windows/hardware/ff571145)します。
+ときに**WskCaptureProviderNPI** 、正常に返されますその*WskProviderNpi*パラメーターが指す WSK プロバイダー NPI ( [ **WSK\_プロバイダー\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_npi)) WSK アプリケーションで使用できるようにします。 WSK\_プロバイダー\_NPI 構造体には、WSK クライアント オブジェクトへのポインターが含まれています ( [ **WSK\_クライアント**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)) および[ **WSK\_プロバイダー\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch) WSK アプリケーションは、WSK ソケットを作成し、WSK クライアント オブジェクトでは、その他の操作の実行に使用できる WSK 関数のディスパッチ テーブル。 WSK 適用された後は、WSK を使用して完成した\_プロバイダー\_ディスパッチ関数、WSK プロバイダー NPI を呼び出すことによって解放が必要があります[ **WskReleaseProviderNPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskreleaseprovidernpi)します。
 
 次のコード例では、WSK アプリケーションでキャプチャ WSK プロバイダー NPI、ソケットの作成に使用し、元の方法を示します。
 
@@ -152,7 +152,7 @@ NTSTATUS
 }
 ```
 
-WSK アプリケーションが呼び出すことができます[ **WskCaptureProviderNPI** ](https://msdn.microsoft.com/library/windows/hardware/ff571122) 2 回以上。 呼び出しごとに**WskCaptureProviderNPI**正常に返されますが、対応する呼び出しが必要があります[ **WskReleaseProviderNPI**](https://msdn.microsoft.com/library/windows/hardware/ff571145)します。 WSK アプリケーションが内の関数に対する呼び出しを行う必要がありますいない[ **WSK\_プロバイダー\_ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff571175)呼び出した後**WskReleaseProviderNPI**.
+WSK アプリケーションが呼び出すことができます[ **WskCaptureProviderNPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskcaptureprovidernpi) 2 回以上。 呼び出しごとに**WskCaptureProviderNPI**正常に返されますが、対応する呼び出しが必要があります[ **WskReleaseProviderNPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskreleaseprovidernpi)します。 WSK アプリケーションが内の関数に対する呼び出しを行う必要がありますいない[ **WSK\_プロバイダー\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)呼び出した後**WskReleaseProviderNPI**.
 
  
 

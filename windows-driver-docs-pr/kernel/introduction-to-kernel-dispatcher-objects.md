@@ -10,12 +10,12 @@ keywords:
 - 非シグナル状態の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a6530955b26e9da466c813312d67cd65d3e0c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d47107a24e2f59dead155879f78fd93bcf47fcb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340971"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369726"
 ---
 # <a name="introduction-to-kernel-dispatcher-objects"></a>カーネル ディスパッチャー オブジェクトの概要
 
@@ -31,7 +31,7 @@ ms.locfileid: "63340971"
 
 すべてのカーネル定義のディスパッチャー オブジェクト型では、シグナルされたに設定、または Not シグナルされたに設定される状態が。
 
-スレッドのグループがその操作を同期できるは、1 つまたは複数のスレッド呼び出し場合[ **kewaitforsingleobject の 1**](https://msdn.microsoft.com/library/windows/hardware/ff553350)、 [ **KeWaitForMutexObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553344)、または[ **KeWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff553324)します。 これらの関数は、別のルーチンまたはスレッドは、1 つまたは複数のディスパッチャー オブジェクトをシグナルされた状態に設定されるまでに、ディスパッチャーとして入力し、待機オブジェクト ポインターを受け取ります。
+スレッドのグループがその操作を同期できるは、1 つまたは複数のスレッド呼び出し場合[ **kewaitforsingleobject の 1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)、 [ **KeWaitForMutexObject** ](https://msdn.microsoft.com/library/windows/hardware/ff553344)、または[ **KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)します。 これらの関数は、別のルーチンまたはスレッドは、1 つまたは複数のディスパッチャー オブジェクトをシグナルされた状態に設定されるまでに、ディスパッチャーとして入力し、待機オブジェクト ポインターを受け取ります。
 
 スレッドを呼び出すと、 **kewaitforsingleobject の 1**ディスパッチャー オブジェクトを待機する (または**KeWaitForMutexObject**ミュー テックスを)、スレッドを入れる、*待機*状態まで、ディスパッチャー オブジェクトは、シグナルされた状態に設定されます。 スレッドを呼び出すことができます**KeWaitForMultipleObjects** 、いずれかのいずれかまたはすべてを待機する、一連のディスパッチャー オブジェクトに設定シグナルされました。
 
@@ -43,7 +43,7 @@ ms.locfileid: "63340971"
 
 -   ドライバーは、nonarbitrary スレッド コンテキストで実行しています。
 
-    つまり、待機状態を入力したスレッドを識別できます。 Nonarbitrary スレッド コンテキストで実行する唯一のドライバーのルーチンは、実際には、 [ **DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff544113)、 [ *AddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff540521)、 [*を再初期化*](https://msdn.microsoft.com/library/windows/hardware/ff561022)、および[*アンロード*](https://msdn.microsoft.com/library/windows/hardware/ff564886)ルーチンの任意のドライバーとドライバーの最上位レベルのディスパッチ ルーチン。 これらすべてのルーチンは、システムによって直接呼び出されます。
+    つまり、待機状態を入力したスレッドを識別できます。 Nonarbitrary スレッド コンテキストで実行する唯一のドライバーのルーチンは、実際には、 [ **DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)、 [ *AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)、 [*を再初期化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)、および[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチンの任意のドライバーとドライバーの最上位レベルのディスパッチ ルーチン。 これらすべてのルーチンは、システムによって直接呼び出されます。
 
 -   ドライバーでは、完全に同期 I/O 要求を実行します。
 
@@ -69,13 +69,13 @@ ms.locfileid: "63340971"
 
 -   デバイス I/O 制御要求のディスパッチ ルーチンに設定するシグナルされた状態場合にのみ、転送の種類の I/O 制御コードはメソッドのディスパッチャー オブジェクトを待機できる\_バッファーに格納されました。
 
--   SCSI ミニポート ドライバーでは、カーネルのディスパッチャー オブジェクトは使用しないでください。 SCSI ミニポート ドライバーはのみ呼び出す必要があります[SCSI ポート ライブラリ ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff565375)します。
+-   SCSI ミニポート ドライバーでは、カーネルのディスパッチャー オブジェクトは使用しないでください。 SCSI ミニポート ドライバーはのみ呼び出す必要があります[SCSI ポート ライブラリ ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 任意のスレッド コンテキストでその他のすべての標準のドライバー ルーチンを実行します。 どのスレッドがキューに置かれた操作を処理する、またはデバイスの割り込みを処理するために、ドライバーのルーチンが呼び出されたときには、現在の。 発生した IRQL のいずれかでディスパッチで最も標準的なドライバーのルーチンを実行するさらに、\_レベル、または DIRQL でのデバイス ドライバー。
 
-必要に応じてのかどうか、ドライバーことができます、ドライバーの他のルーチンが待機できるデバイス専用のスレッドを作成 (ISR を除くまたは[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチン) シグナルされた状態にディスパッチャー オブジェクトを設定するには非シグナル状態にリセットします。
+必要に応じてのかどうか、ドライバーことができます、ドライバーの他のルーチンが待機できるデバイス専用のスレッドを作成 (ISR を除くまたは[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチン) シグナルされた状態にディスパッチャー オブジェクトを設定するには非シグナル状態にリセットします。
 
-一般的なガイドラインとして、新しいデバイス ドライバが I/O 操作中にデバイス状態の変更を待っている間、50 マイクロ秒よりも長い遅延する必要がありますする場合は、デバイス専用のスレッドにドライバーを実装する検討してください。 デバイス ドライバーが最上位レベルのドライバーもある場合は、使用を検討して[システム ワーカー スレッド](system-worker-threads.md)と 1 つまたは複数のワーカー スレッド コールバック ルーチンを実装します。 参照してください[ **PsCreateSystemThread** ](https://msdn.microsoft.com/library/windows/hardware/ff559932)と[ドライバーが作成したスレッドにインタロックされたキューを管理する](managing-interlocked-queues-with-a-driver-created-thread.md)します。
+一般的なガイドラインとして、新しいデバイス ドライバが I/O 操作中にデバイス状態の変更を待っている間、50 マイクロ秒よりも長い遅延する必要がありますする場合は、デバイス専用のスレッドにドライバーを実装する検討してください。 デバイス ドライバーが最上位レベルのドライバーもある場合は、使用を検討して[システム ワーカー スレッド](system-worker-threads.md)と 1 つまたは複数のワーカー スレッド コールバック ルーチンを実装します。 参照してください[ **PsCreateSystemThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread)と[ドライバーが作成したスレッドにインタロックされたキューを管理する](managing-interlocked-queues-with-a-driver-created-thread.md)します。
 
  
 

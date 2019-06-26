@@ -10,12 +10,12 @@ keywords:
 - MiniportInitializeEx
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed6f3b78ca606b6c6353adc0b876b9e79d701aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3433a48f2db627b6fe8fa5ce0392edb4679927ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383691"
 ---
 # <a name="initializing-a-miniport-adapter"></a>ミニポート アダプターの初期化
 
@@ -23,31 +23,31 @@ ms.locfileid: "63379814"
 
 
 
-ネットワーク デバイスが使用可能になるときに、システムは、既に読み込まれていない場合、必要なの NDIS ミニポート ドライバーを読み込みます。 その後、プラグ アンド プレイ (PnP) マネージャーは、プラグ アンド プレイ デバイスを起動する IRP NDIS 送信します。 NDIS ミニポート ドライバーを呼び出す[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)ネットワーク I/O 操作用のアダプターを初期化します。 NDIS を呼び出すことができます*MiniportInitializeEx*ドライバーが初期化された後、いつでもできます。 ミニポート ドライバーの初期化の詳細については、次を参照してください。[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
+ネットワーク デバイスが使用可能になるときに、システムは、既に読み込まれていない場合、必要なの NDIS ミニポート ドライバーを読み込みます。 その後、プラグ アンド プレイ (PnP) マネージャーは、プラグ アンド プレイ デバイスを起動する IRP NDIS 送信します。 NDIS ミニポート ドライバーを呼び出す[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)ネットワーク I/O 操作用のアダプターを初期化します。 NDIS を呼び出すことができます*MiniportInitializeEx*ドライバーが初期化された後、いつでもできます。 ミニポート ドライバーの初期化の詳細については、次を参照してください。[ミニポート ドライバーの初期化](initializing-a-miniport-driver.md)します。
 
-まで[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389) NDIS が初期化されているアダプターの要求を送信しないを返します。 アダプターは、初期化状態です。
+まで[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) NDIS が初期化されているアダプターの要求を送信しないを返します。 アダプターは、初期化状態です。
 
-ミニポート ドライバーが通常では、次のタスクを実行します[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389):
+ミニポート ドライバーが通常では、次のタスクを実行します[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize):
 
 1.  アダプターの構成情報を取得します。
 
 2.  アダプターのハードウェア リソースについての情報を取得します。
 
-3.  呼び出し、 [ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)し、アダプターに関連付けられている次の属性を提供します。
+3.  呼び出し、 [ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)し、アダプターに関連付けられている次の属性を提供します。
     -   コンテキストのドライバーに割り当てられた領域へのポインター。
     -   適切な属性フラグ。
-    -   呼び出し元のタイムアウト間隔、 [ *MiniportCheckForHangEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559346)関数。
+    -   呼び出し元のタイムアウト間隔、 [ *MiniportCheckForHangEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_check_for_hang)関数。
     -   インターフェイスの型。
 
 4.  アダプターに固有のリソースを初期化します。
 
-ミニポート ドライバーはアダプターの属性を指定します、 [ **NDIS\_ミニポート\_アダプター\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565920)構造体[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)に渡す[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)します。
+ミニポート ドライバーはアダプターの属性を指定します、 [ **NDIS\_ミニポート\_アダプター\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_attributes)構造体[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)に渡す[ **NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)します。
 
-通常、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)次の順序でアダプターに固有のリソースを割り当てます。
+通常、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)次の順序でアダプターに固有のリソースを割り当てます。
 
 1.  非ページ プール メモリ。
 
-2.  [**NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376)と[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)プール (を参照してください[ミニポート ドライバーの送信と受信操作](miniport-driver-send-and-receive-operations.md))。
+2.  [**NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)と[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)プール (を参照してください[ミニポート ドライバーの送信と受信操作](miniport-driver-send-and-receive-operations.md))。
 
 3.  ロックをスピンします。
 
@@ -61,11 +61,11 @@ ms.locfileid: "63379814"
 
 8.  中断 (を参照してください[管理の割り込み](managing-interrupts.md))。
 
-後[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)アダプターが一時停止状態に正常に返されます。 NDIS を呼び出すことができます、 [ **MiniportRestart** ](https://msdn.microsoft.com/library/windows/hardware/ff559435)アダプターは実行中の状態を遷移する関数。 詳細については、次を参照してください。[ミニポート アダプター開始](starting-an-adapter.md)します。
+後[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)アダプターが一時停止状態に正常に返されます。 NDIS を呼び出すことができます、 [ **MiniportRestart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_restart)アダプターは実行中の状態を遷移する関数。 詳細については、次を参照してください。[ミニポート アダプター開始](starting-an-adapter.md)します。
 
-場合[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)返します NDIS\_状態\_成功すると、ドライバーは、アダプターでのすべてのリソースを解放する必要があります、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)関数。 詳細については、次を参照してください。[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)します。
+場合[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)返します NDIS\_状態\_成功すると、ドライバーは、アダプターでのすべてのリソースを解放する必要があります、 [ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)関数。 詳細については、次を参照してください。[ミニポート アダプターを停止する](halting-a-miniport-adapter.md)します。
 
-場合[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)失敗、 *MiniportInitializeEx*と返されますアダプターは、中止の状態を返します前に、割り当てられているすべてのリソースを解放する必要があります.
+場合[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)失敗、 *MiniportInitializeEx*と返されますアダプターは、中止の状態を返します前に、割り当てられているすべてのリソースを解放する必要があります.
 
 ## <a name="related-topics"></a>関連トピック
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 517b16e9688f60fc8950b907410243dc6a09e879
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e3f12cdd81e3b6348db16a6d10c282bfeec4dd6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354840"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385908"
 ---
 # <a name="inf-ddinstalllogconfigoverride-section"></a>INF DDInstall.LogConfigOverride セクション
 
@@ -26,7 +26,7 @@ ms.locfileid: "63354840"
 
  
 
-<em>DDInstall</em>**します。LogConfigOverride**セクションを使用して作成、[構成をオーバーライドする](https://msdn.microsoft.com/library/windows/hardware/ff547012#logical-configuration-types-for-resource-requirements-lists)、バス ドライバーのプラグ アンド プレイ デバイスの報告されたハードウェア リソース要件をオーバーライドします。
+<em>DDInstall</em>**します。LogConfigOverride**セクションを使用して作成、[構成をオーバーライドする](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#logical-configuration-types-for-resource-requirements-lists)、バス ドライバーのプラグ アンド プレイ デバイスの報告されたハードウェア リソース要件をオーバーライドします。
 
 ```ini
 [install-section-name.LogConfigOverride] |

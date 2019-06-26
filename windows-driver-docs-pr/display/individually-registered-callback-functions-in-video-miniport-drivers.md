@@ -11,12 +11,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: e3c58de521eb796107d9e6fa714bb124d6008435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 263f4321db3524750611cc2ac9e887d9b8b5e7e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325052"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385813"
 ---
 # <a name="registering-callback-functions-in-video-miniport-drivers"></a>ビデオ ミニポート ドライバーへのコールバック関数の登録
 
@@ -26,10 +26,10 @@ ms.locfileid: "63325052"
 
 2.  ビデオ ポート ドライバー関数が完了する前に、コールバック、ビデオのミニポート ドライバーにアシスタンスをします。
 
-ビデオのミニポート ドライバー、ビデオ ポート ドライバー関数を呼び出すと、コールバック関数へのポインターを渡します。 たとえば、ビデオのミニポート ドライバーを呼び出すと[ **VideoPortStartDma**](https://msdn.microsoft.com/library/windows/hardware/ff570369)へのポインターを渡す、 *HwVidExecuteDma* (ビデオによって実装されるコールバック関数ミニポート ドライバーの場合)。
+ビデオのミニポート ドライバー、ビデオ ポート ドライバー関数を呼び出すと、コールバック関数へのポインターを渡します。 たとえば、ビデオのミニポート ドライバーを呼び出すと[ **VideoPortStartDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportstartdma)へのポインターを渡す、 *HwVidExecuteDma* (ビデオによって実装されるコールバック関数ミニポート ドライバーの場合)。
 
 ビデオのミニポート ドライバーがビデオ ポート ドライバー関数では、コールバック関数のアドレスを渡すときに、*登録*ビデオ ポート ドライバーを使用して、コールバック関数。 登録は、ビデオ ポート ドライバーがコールバック関数のポインターを完全に保存していないことの意味では一時的です。 代わりに、ビデオ ポート ドライバーは、コールバック関数の実行時にのみ、関数ポインターを保持します。 この種の一時的な登録では、ビデオのミニポート ドライバー関数の多くの永続的な登録とは対照的です。 たとえば、ビデオのミニポート ドライバーは登録中に関数のセットを**DriverEntry**、し、ビデオ ポート ドライバー格納これらの関数ポインター永続的にデバイスの拡張機能。
 
-場合によっては、それぞれが特定のビデオ ポート ドライバーの関数のコールバック関数として使用できるいくつかの関数を実装するビデオのミニポート ドライバーの意味をほうです。 たとえば、ビデオのミニポート ドライバーを実装のいくつかのバリエーション、 *HwVidQueryDeviceCallback*関数を任意のバリエーションを特定の呼び出しに渡す[ **VideoPortGetDeviceData**](https://msdn.microsoft.com/library/windows/hardware/ff570311).
+場合によっては、それぞれが特定のビデオ ポート ドライバーの関数のコールバック関数として使用できるいくつかの関数を実装するビデオのミニポート ドライバーの意味をほうです。 たとえば、ビデオのミニポート ドライバーを実装のいくつかのバリエーション、 *HwVidQueryDeviceCallback*関数を任意のバリエーションを特定の呼び出しに渡す[ **VideoPortGetDeviceData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetdevicedata).
 
-ビデオのミニポート ドライバーで実装できるコールバック関数の一覧とそれらのコールバック関数を登録する方法についてを参照して[個別に登録されているビデオ ミニポート ドライバー機能](https://msdn.microsoft.com/library/windows/hardware/ff567672)します。
+ビデオのミニポート ドライバーで実装できるコールバック関数の一覧とそれらのコールバック関数を登録する方法についてを参照して[個別に登録されているビデオ ミニポート ドライバー機能](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。

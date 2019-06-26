@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: de1cf995ad3c8b3ea99057ef398afaa6beab18b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6477b7e7c12fbcd1a5f1f16840d46ec386935358
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386264"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385542"
 ---
 # <a name="kscategoryvbicodec"></a>KSCATEGORY_VBICODEC
 
 
-KSCATEGORY_VBICODEC[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)帰線消去期間 (VBI) のビデオ コーデックのデバイスの機能のカテゴリ (KS)。
+KSCATEGORY_VBICODEC[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)帰線消去期間 (VBI) のビデオ コーデックのデバイスの機能のカテゴリ (KS)。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ KSCATEGORY_VBICODEC[デバイス インターフェイス クラス](https://msd
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_VBICODEC 機能カテゴリをサポートすることを示す KSCATEGORY_VBICODEC のインスタンスを登録します。
 
-概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568699)します。
+概要ビデオ デバイスについては、次を参照してください。[ビデオ キャプチャ デバイス](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)します。
 
-ビデオの非表示の詳細については、次を参照してください。[ビデオ キャプチャ デバイスからのデータのストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568268)と[VBI カテゴリ](https://msdn.microsoft.com/library/windows/hardware/ff568691)します。
+ビデオの非表示の詳細については、次を参照してください。[ビデオ キャプチャ デバイスからのデータのストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-data-from-a-video-capture-device)と[VBI カテゴリ](https://docs.microsoft.com/windows-hardware/drivers/stream/vbi-category)します。
 
 <a name="requirements"></a>要件
 ------------

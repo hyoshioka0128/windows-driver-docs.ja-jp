@@ -9,12 +9,12 @@ keywords:
 - WDK ネットワーク、処理を中断します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c412d56e597e0c2c8b0391d471c0ac42169f7572
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f813f43e7a715d1d76b89b4d14c576499169e1fe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349725"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384400"
 ---
 # <a name="handling-an-msi-interrupt"></a>MSI 割り込みの処理
 
@@ -22,13 +22,13 @@ ms.locfileid: "63349725"
 
 
 
-NDIS 呼び出し、 [ *MiniportMessageInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559407)ネットワーク インターフェイス カード (NIC) は、割り込みを生成するときに機能します。 *MessageId* MSI X メッセージがこの関数のパラメーターを識別します。
+NDIS 呼び出し、 [ *MiniportMessageInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt)ネットワーク インターフェイス カード (NIC) は、割り込みを生成するときに機能します。 *MessageId* MSI X メッセージがこの関数のパラメーターを識別します。
 
 *MiniportMessageInterrupt*常に返す必要があります**TRUE**メッセージ割り込みが共有されていないため、割り込みを処理した後。
 
-ミニポート ドライバーで可能な限り少量の作業を行う必要があります、 *MiniportMessageInterrupt*関数。 ドライバーは、I/O 操作を延期する必要があります、 [ *MiniportMessageInterruptDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff559411) NDIS は、割り込みの遅延の処理を完了するために呼び出す関数。
+ミニポート ドライバーで可能な限り少量の作業を行う必要があります、 *MiniportMessageInterrupt*関数。 ドライバーは、I/O 操作を延期する必要があります、 [ *MiniportMessageInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt_dpc) NDIS は、割り込みの遅延の処理を完了するために呼び出す関数。
 
-その他のキューに遅延プロシージャ呼び出し (Dpc) の後[ *MiniportMessageInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/ff559407) 、ミニポート ドライバーのビットのセットを返します、 *TargetProcessors*パラメーター、 *MiniportMessageInterrupt*関数。 要求から追加 Dpc *MiniportMessageInterrupt*または*MiniportMessageInterruptDPC*、ミニポート ドライバーを呼び出すことができます、 [ **NdisMQueueDpc**](https://msdn.microsoft.com/library/windows/hardware/ff563637)関数。
+その他のキューに遅延プロシージャ呼び出し (Dpc) の後[ *MiniportMessageInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt) 、ミニポート ドライバーのビットのセットを返します、 *TargetProcessors*パラメーター、 *MiniportMessageInterrupt*関数。 要求から追加 Dpc *MiniportMessageInterrupt*または*MiniportMessageInterruptDPC*、ミニポート ドライバーを呼び出すことができます、 [ **NdisMQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismqueuedpc)関数。
 
 ミニポート ドライバーを呼び出すことができます**NdisMQueueDpc**を他のプロセッサの Dpc が追加を要求します。
 

@@ -10,17 +10,17 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7870bf343ed2870f3330124c5a4721727690426c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2fcc985af7c85045179225b7ae58c39ee9b4f249
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348521"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386534"
 ---
 # <a name="power-states"></a>電源の状態
 
 
-呼び出すために、NFC クラスの拡張機能ドライバーが、デバイスの電源ポリシーの所有者として機能[ **WdfDeviceInitSetPowerPolicyOwnership**](https://msdn.microsoft.com/library/windows/hardware/ff546776)(TRUE)、デバイスの初期化ルーチンの中にします。
+呼び出すために、NFC クラスの拡張機能ドライバーが、デバイスの電源ポリシーの所有者として機能[ **WdfDeviceInitSetPowerPolicyOwnership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)(TRUE)、デバイスの初期化ルーチンの中にします。
 
 NFC CX ドライバーには、D0 と D3 のデバイスの電源状態がサポートしています。 次の状態図は、2 つの電源状態の間の移行を示します。 アイドル状態のデバイスは、NFCC と電源が入っていません D3 電源の状態です。 ラジオ モードがアクティブなすべてのモジュール NFP (アクティブなパブリケーションまたはサブスクリプション NFP DDI から)、SE (NFCSE DDI からエミュレーション モードでのアクティブなセキュリティで保護された要素) またはスマート カードがアクティブななど、状態は、D0 に移行します。 この移行中にアクティブなすべてのモジュールの要件を満たすデバイスのポーリングの状態が更新されます。
 
@@ -38,9 +38,9 @@ WdfDeviceAssignS0IdleSettings(
 );
 ```
 
-1 秒間にアイドル タイムアウトの既定値です。 この設定を使用して構成可能な*PowerIdleTimeout*パラメーター [ **NFC\_CX\_クライアント\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn905540)します。 次の状態図は、WDF のアイドル状態の検出方法を使用して暗黙的に指定されたさまざまな電源切り替え効果を示します。
+1 秒間にアイドル タイムアウトの既定値です。 この設定を使用して構成可能な*PowerIdleTimeout*パラメーター [ **NFC\_CX\_クライアント\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/ns-nfccx-_nfc_cx_client_config)します。 次の状態図は、WDF のアイドル状態の検出方法を使用して暗黙的に指定されたさまざまな電源切り替え効果を示します。
 
-上のスタックの電源ポリシー所有者にするクライアント ドライバーを選択できます、 **IsPowerPolicyOwner**のメンバー、 [ **NFC\_CX\_クライアント\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn905540)構造体。 これは、追加のデバイスの電源状態を構成する必要があります USB などのトランスポートの便利なことがあります。
+上のスタックの電源ポリシー所有者にするクライアント ドライバーを選択できます、 **IsPowerPolicyOwner**のメンバー、 [ **NFC\_CX\_クライアント\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/ns-nfccx-_nfc_cx_client_config)構造体。 これは、追加のデバイスの電源状態を構成する必要があります USB などのトランスポートの便利なことがあります。
 
 ![電源管理操作](images/powermanagementoperations.png)
 
@@ -48,6 +48,6 @@ WdfDeviceAssignS0IdleSettings(
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

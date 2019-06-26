@@ -4,12 +4,12 @@ description: カーネル デバッガー (KD) でのデバイスのインスト
 ms.assetid: 0967d375-2602-44d2-b4ac-8d1e112afc3f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a236e3391cae97bd201fe6f6d8790b2a4a4923
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd8fd588a8da3409fc6b6412c26c5d3f984f80aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352086"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386621"
 ---
 # <a name="debugging-device-installations-with-the-kernel-debugger-kd"></a>カーネル デバッガー (KD) でのデバイスのインストールのデバッグ
 
@@ -24,7 +24,7 @@ ms.locfileid: "63352086"
 
 -   KD 拡張機能を使用して複数のデバッガーを管理することがなく他のユーザー モード プロセスを監視します。 プロセスまたは .process/p です。
 
-KD と他のデバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+KD と他のデバッグ ツールの詳細については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 **DebugInstall**レジストリ値がデバッグのサポート システムで有効になっているデバイスのインストールの種類を指定します。 このレジストリ値の詳細については、次を参照してください。[デバイス インストールのデバッグのサポートを有効にする](enabling-support-for-debugging-device-installations.md)します。
 
@@ -74,7 +74,7 @@ kd> .reload
 kd> bp[0x10] /p @$proc kernel32!LoadLibraryExW "gu;$$><Z:\\bpcoinst.txt;g"
 ```
 
-プロセス内で LoadLibraryEx 呼び出しごとにプログラムを実行するのではなく (bp\[0x10\])、開発者には、class インストーラーのみと共同インストーラー Dll がプロセスに読み込まれるを実行するように制限できます。 [ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)ルーチンをクラスのインストーラーを呼び出すと、デバイスの登録されている共同インストーラーには、これらの Dll は、その呼び出し中に、プロセスに読み込まれます。
+プロセス内で LoadLibraryEx 呼び出しごとにプログラムを実行するのではなく (bp\[0x10\])、開発者には、class インストーラーのみと共同インストーラー Dll がプロセスに読み込まれるを実行するように制限できます。 [ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)ルーチンをクラスのインストーラーを呼び出すと、デバイスの登録されている共同インストーラーには、これらの Dll は、その呼び出し中に、プロセスに読み込まれます。
 
 仮定は行われませんについてからこれらの Dll がアンロードされるときにあるため、 *DrvInst.exe*ホスト プロセスを行う必要がありますに加えられたすべての呼び出し中にDLLのエントリポイントを検索するブレークポイントを処理できることを確認して**SetupDiCallClassInstaller**から、 *DrvInst.exe*プロセスをホストします。
 
@@ -84,9 +84,9 @@ kd> bp[0x11] /p @$proc setupapi!SetupDiCallClassInstaller "be[0x10];bp[0x12] /p 
 kd> g
 ```
 
-デバッガー コマンド プログラムの実行をブレークポイント (bp\[0x10\]) は、最初に無効になります。 有効になってたびに[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)が呼び出されます (bp\[パターン\])、および実行が続行されます。 デバッガー コマンド プログラム (bp\[0x10\]) ときに無効になって再度**SetupDiCallClassInstaller**自体ルーチンの戻り値のアドレスにブレークポイントを設定して返します (bp\[0x12\]).
+デバッガー コマンド プログラムの実行をブレークポイント (bp\[0x10\]) は、最初に無効になります。 有効になってたびに[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)が呼び出されます (bp\[パターン\])、および実行が続行されます。 デバッガー コマンド プログラム (bp\[0x10\]) ときに無効になって再度**SetupDiCallClassInstaller**自体ルーチンの戻り値のアドレスにブレークポイントを設定して返します (bp\[0x12\]).
 
-デバッガー コマンド プログラムを無効にするブレークポイントもが自動的に消去となるまで実行を継続[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)もう一度、またはインストールされるまで呼び出されますプログラムが完了して、すべてのブレークポイントをクリア (bp\[0x13\])。
+デバッガー コマンド プログラムを無効にするブレークポイントもが自動的に消去となるまで実行を継続[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)もう一度、またはインストールされるまで呼び出されますプログラムが完了して、すべてのブレークポイントをクリア (bp\[0x13\])。
 
 上記のブレークポイントを設定した後の実行開始時に mycoinst に対する各呼び出しプロセスが中断されます。CoInstallerProc します。 これにより、中核となるデバイスのインストール中に、クラスのインストーラーまたは共同インストーラー DLL の実行をデバッグすることができます。
 

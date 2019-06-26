@@ -4,12 +4,12 @@ description: データ センター ブリッジングの概要
 ms.assetid: FEB3FDBB-8A3C-4907-A6D0-CB5E94BCFEFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d945df6ce4df8239e7174ab70116953e2611b8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27359c78c088412397a212e696d2e2af73406530
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385723"
 ---
 # <a name="overview-of-data-center-bridging"></a>データ センター ブリッジングの概要
 
@@ -45,7 +45,7 @@ DCBX はネットワーク アダプター間の競合している QoS パラメ
 
  
 
-各トラフィック クラスの ETS と PFC 構成設定は、IEEE 802.1p の優先度レベルに関連付けられます。 優先度レベルは、パケットの内の 3 ビット値として指定 802.1 q タグ。 NDIS パケットの場合、802.1 p の優先度レベルがで指定された、 **UserPriority**のメンバー、 [ **NDIS\_NET\_バッファー\_一覧\_8021Q\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff566565)構造に関連付けられたパケットの[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
+各トラフィック クラスの ETS と PFC 構成設定は、IEEE 802.1p の優先度レベルに関連付けられます。 優先度レベルは、パケットの内の 3 ビット値として指定 802.1 q タグ。 NDIS パケットの場合、802.1 p の優先度レベルがで指定された、 **UserPriority**のメンバー、 [ **NDIS\_NET\_バッファー\_一覧\_8021Q\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)構造に関連付けられたパケットの[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
 
 優先度レベルの詳細については、次を参照してください。 [IEEE 802.1p の優先度レベル](ieee-802-1p-priority-levels.md)します。
 

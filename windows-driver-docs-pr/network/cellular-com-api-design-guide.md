@@ -6,12 +6,12 @@ keywords:
 - 携帯電話の COM API の設計ガイド ネットワーク ドライバー
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8da7aa11d0d6e2b5d35a87d593cdd8aa3ba965f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c040c4c4534903a41aac6eea5f183f78ab7db4c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353354"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382789"
 ---
 # <a name="cellular-com-api-design-guide"></a>携帯ネットワーク COM API 設計ガイド
 
@@ -25,7 +25,7 @@ Microsoft インターフェイス定義言語 (MIDL) の 2 つのファイル�
 - cellularapi_oem.idl
 - rilapitypes.idl
 
-ヘッダー ファイルを生成するのにには、MIDL コンパイラを使用します。 詳細については、次を参照してください。 [Microsoft インターフェイス定義言語](https://msdn.microsoft.com/library/windows/desktop/aa367091)、Windows デベロッパー センターでします。
+ヘッダー ファイルを生成するのにには、MIDL コンパイラを使用します。 詳細については、次を参照してください。 [Microsoft インターフェイス定義言語](https://docs.microsoft.com/windows/desktop/Midl/midl-start-page)、Windows デベロッパー センターでします。
 
 携帯電話アプリケーションを含むパッケージ内の適切な機能を宣言する必要があります。 詳細については、次を参照してください。[携帯電話の COM API 機能](cellular-com-api-capabilities.md)します。
 
@@ -37,5 +37,5 @@ Microsoft インターフェイス定義言語 (MIDL) の 2 つのファイル�
 
 ## <a name="related-topics"></a>関連トピック
 
-[携帯電話の COM API リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn946508)
+[携帯電話の COM API リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/cellular/dn946508(v=vs.85))
 

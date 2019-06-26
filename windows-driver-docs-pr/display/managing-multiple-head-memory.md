@@ -6,12 +6,12 @@ keywords:
 - 複数ヘッド ハードウェア WDK DirectX 9.0、メモリ管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d2aec2bdc0b50e048b4bcfc038b44cde400241
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2e661604f114cd062731329072f1e720cac96c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383437"
 ---
 # <a name="managing-multiple-head-memory"></a>複数ヘッド メモリの管理
 
@@ -19,11 +19,11 @@ ms.locfileid: "63342960"
 ## <span id="ddk_managing_multiple_head_memory_gg"></span><span id="DDK_MANAGING_MULTIPLE_HEAD_MEMORY_GG"></span>
 
 
-設定、DDSCAPS2\_ADDITIONALPRIMARY 機能ビット、 **dwCaps2**のメンバー、 [ **DDSCAPS2** ](https://msdn.microsoft.com/library/windows/hardware/ff550292)それぞれの面では従属要素の構造ヘッドは、そのようなサーフェイスがその先頭に割り当てられているビデオ メモリから割り当てられている最後のサーフェスをヘッドを通知します。 下位の head が保証されるため受信しなかったこと以降、下位の head は master head ビデオ メモリの割り当ての制御を放棄しする必要があります[ *DdCreateSurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549263)、アプリケーションの有効期間を呼び出します。
+設定、DDSCAPS2\_ADDITIONALPRIMARY 機能ビット、 **dwCaps2**のメンバー、 [ **DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))それぞれの面では従属要素の構造ヘッドは、そのようなサーフェイスがその先頭に割り当てられているビデオ メモリから割り当てられている最後のサーフェスをヘッドを通知します。 下位の head が保証されるため受信しなかったこと以降、下位の head は master head ビデオ メモリの割り当ての制御を放棄しする必要があります[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))、アプリケーションの有効期間を呼び出します。
 
 ドライバーでは、master head が下位ヘッドに関連付けられているメモリを割り当てることができませんでことを確認する必要があります。
 
-共通言語ランタイムは、ドライバーの[ *DdDestroySurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549281)を下位の頭のサーフェスを破棄する関数、DDSCAPS2\_ADDITIONALPRIMARY 機能ビットが設定、ドライバー下位の先頭が、もう一度は、ビデオ メモリ管理の管理に通知されます。
+共通言語ランタイムは、ドライバーの[ *DdDestroySurface* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)を下位の頭のサーフェスを破棄する関数、DDSCAPS2\_ADDITIONALPRIMARY 機能ビットが設定、ドライバー下位の先頭が、もう一度は、ビデオ メモリ管理の管理に通知されます。
 
 ほとんどの場合、ビデオ メモリは既存の DirectDraw プロセスに固有の head この選択を所有します。 具体的には、次のとおりです。
 

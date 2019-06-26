@@ -14,12 +14,12 @@ keywords:
 - バッファーの I/O の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4d031a1d9a4b8dcaa405de4fde95a3e933ed550
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18d501237309b86db5779d690dd82bbbe0f96c6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387193"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384973"
 ---
 # <a name="dispatchreadwrite-using-buffered-io"></a>バッファー付き I/O を使用した DispatchReadWrite
 
@@ -31,7 +31,7 @@ ms.locfileid: "63387193"
 
 その結果、 *DispatchReadWrite*このようなデバイス ドライバーのルーチンが譲渡要求の受信時に、次を通常は。
 
-1.  呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)転送要求の方向を決定します。
+1.  呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)転送要求の方向を決定します。
 
 2.  要求のパラメーターの有効性を確認します。
 
@@ -45,7 +45,7 @@ ms.locfileid: "63387193"
 
 最下位レベルのデバイスが、通常、バッファー内の I/O を使用するドライバーが要求の発信元がで指定された読み取りまたは書き込みのサイズのデータの転送要求を満たす必要があります。 このようなドライバーがデータの構造を定義する可能性が高いから、そのデバイスに送信されるやシステム キーボード クラス ドライバーは、内部的には、構造化データをバッファーに書き込む可能性があります。
 
-データをバッファーに内部的にドライバーをサポートする必要があります[ **IRP\_MJ\_フラッシュ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff550760)を要求して、サポートも[ **IRP\_MJ\_シャット ダウン**](https://msdn.microsoft.com/library/windows/hardware/ff550807)要求。
+データをバッファーに内部的にドライバーをサポートする必要があります[ **IRP\_MJ\_フラッシュ\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)を要求して、サポートも[ **IRP\_MJ\_シャット ダウン**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)要求。
 
 チェーンの最上位レベルのドライバーは、通常の読み取り/書き込み要求を下位のドライバーに渡される前に入力 IRP のパラメーターをチェックします。 その結果、多くの低レベルのドライバーは、読み取り/書き込み IRP では、I/O スタックの場所は、有効なパラメーターであると想定できます。 チェーンの最下位レベルのドライバーがデータ転送のデバイス固有の制約の対応の場合は、そのドライバーが必要です、I/O スタックの場所では、パラメーターの有効性を確認します。
 

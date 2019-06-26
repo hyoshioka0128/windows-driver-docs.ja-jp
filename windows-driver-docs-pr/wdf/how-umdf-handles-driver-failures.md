@@ -9,12 +9,12 @@ keywords:
 - 失敗したドライバー WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89084e7b74639d56629afc521a6ed1a4c8b2a0eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37a7ea0e4fcb927bdb8d1e77f1bcd5bdc638f9eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325932"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382835"
 ---
 # <a name="how-umdf-handles-driver-failures"></a>UMDF によるドライバー エラーの処理方法
 
@@ -29,7 +29,7 @@ ms.locfileid: "63325932"
     -   ステータスが未処理の I/O の完了、reflector\_ドライバー\_プロセス\_終了エラー コード。
     -   Microsoft Win32 アプリケーションのエラー\_ドライバー\_プロセス\_未処理の I/O の終了エラー コード。
 
-    **注**   reflector Microsoft Windows XP で実行されている状態で未処理の I/O が完了すると\_ドライバー\_内部\_エラーあり、Win32 アプリケーション、さらに、エラー\_IO\_未処理の i/o デバイス エラー コード。 したがって、Windows XP で実行されるアプリケーションがエラーを使用する必要があります\_IO\_一般的な I/O 要求 (たとえば、状態から返される状態の違いに影響することはできませんので、ドライバーの障害を検出するデバイスWin32 への呼び出しから返された[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)関数)。
+    **注**   reflector Microsoft Windows XP で実行されている状態で未処理の I/O が完了すると\_ドライバー\_内部\_エラーあり、Win32 アプリケーション、さらに、エラー\_IO\_未処理の i/o デバイス エラー コード。 したがって、Windows XP で実行されるアプリケーションがエラーを使用する必要があります\_IO\_一般的な I/O 要求 (たとえば、状態から返される状態の違いに影響することはできませんので、ドライバーの障害を検出するデバイスWin32 への呼び出しから返された[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数)。
 
      
 

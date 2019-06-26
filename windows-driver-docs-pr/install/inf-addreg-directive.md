@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 984d3f8101b2f6f00c3a7a42013f62cce5407e22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88c7e40ac8401e490da57a30dee3f526c1ea938a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357517"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385927"
 ---
 # <a name="inf-addreg-directive"></a>INF AddReg ディレクティブ
 
@@ -60,7 +60,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 "security-descriptor-string"]
 ```
 
-*追加レジストリ セクション*それぞれ別々 の行に任意の数のエントリを持つことができます。 INF を含めることも 1 つまたは複数のオプション<em>追加レジストリ セクション</em>**.security**セクションで、名前付き内で説明されているすべてのレジストリ値に適用されるセキュリティ記述子を指定する各*追加レジストリ セクション*します。
+*追加レジストリ セクション*それぞれ別々 の行に任意の数のエントリを持つことができます。 INF を含めることも 1 つまたは複数のオプション<em>追加レジストリ セクション</em> **.security**セクションで、名前付き内で説明されているすべてのレジストリ値に適用されるセキュリティ記述子を指定する各*追加レジストリ セクション*します。
 
 ## <a name="entries"></a>エントリ
 
@@ -99,14 +99,14 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 下に格納されているドライバー情報の詳細については、 **HKEY_LOCAL_MACHINE**ルートは、「[レジストリ ツリーとデバイスとドライバーのキー](registry-trees-and-keys.md)します。
 
 <a href="" id="subkey"></a>*サブキー*  
-このオプションの値の形式を % として*strkey*% のトークンで定義されている、 [**文字列**](inf-strings-section.md)セクション、INF または下のレジストリ パスとして、指定された*reg ルート*(<em>key1</em>**\\**<em>key2</em>**\\**<em>key3</em>...)、次のいずれかを指定します。
+このオプションの値の形式を % として*strkey*% のトークンで定義されている、 [**文字列**](inf-strings-section.md)セクション、INF または下のレジストリ パスとして、指定された*reg ルート*(<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...)、次のいずれかを指定します。
 
 -   指定されたレジストリ パスの最後に、レジストリに追加する新しいサブキー。
 -   既存のサブキーを (指定したサブキーの既存の名前付きの値のエントリの値を置き換える可能性があります)、このエントリで指定された追加の値を記述します。
 -   両方の新しいサブキーの初期値エントリと共にレジストリに追加します。
 
 <a href="" id="value-entry-name"></a>*value-entry-name*  
-この省略可能な値か、指定された (既存) で既存の値のエントリの名前*サブキー*を追加する新しい値のエントリの名前を作成しますまたは、指定した*サブキー*それが既に存在するか、新しいキーがあるかどうか、。レジストリに追加します。 この値を表現できるとして **"**<em>文字列を引用符で囲まれた</em>**"** または % として*strkey*INF ので定義されている % トークン[**文字列**](inf-strings-section.md)セクション。 (これを文字列型の値を省略した場合、*値のエントリ名*このキーの値のエントリを「名前」既定値です)。
+この省略可能な値か、指定された (既存) で既存の値のエントリの名前*サブキー*を追加する新しい値のエントリの名前を作成しますまたは、指定した*サブキー*それが既に存在するか、新しいキーがあるかどうか、。レジストリに追加します。 この値を表現できるとして **"** <em>文字列を引用符で囲まれた</em> **"** または % として*strkey*INF ので定義されている % トークン[**文字列**](inf-strings-section.md)セクション。 (これを文字列型の値を省略した場合、*値のエントリ名*このキーの値のエントリを「名前」既定値です)。
 
 オペレーティング システム サポートの一部のシステム定義された特別な*値のエントリ名*キーワード。 末尾を参照してください。**解説**詳細についてはします。
 
@@ -170,18 +170,18 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 -   数値型のレジストリ値は、(0 x 表記を使用して) によって 16 進数または 10 進数として表現できます。
 
 <a href="" id="security-descriptor-string"></a>*セキュリティ記述子の文字列*  
-名前付きによって作成されたすべてのレジストリ エントリに適用する、セキュリティ記述子を指定*追加レジストリ セクション*します。 *セキュリティ記述子の文字列*DACL を指定するトークンを含む文字列です (**d:**) セキュリティ コンポーネント。
+名前付きによって作成されたすべてのレジストリ エントリに適用する、セキュリティ記述子を指定*追加レジストリ セクション*します。 *セキュリティ記述子の文字列*DACL を指定するトークンを含む文字列です (**d:** ) セキュリティ コンポーネント。
 
-場合、<em>追加レジストリ セクション</em>**.security**セクションが指定されていない、レジストリ エントリが親のキーのセキュリティ設定を継承します。
+場合、<em>追加レジストリ セクション</em> **.security**セクションが指定されていない、レジストリ エントリが親のキーのセキュリティ設定を継承します。
 
-場合、<em>追加レジストリ セクション</em>**.security**セクションを指定すると、デバイスおよびシステム サービス パックのインストールとアップグレードが発生することができるように、次の ACE を含める必要があります。
+場合、<em>追加レジストリ セクション</em> **.security**セクションを指定すると、デバイスおよびシステム サービス パックのインストールとアップグレードが発生することができるように、次の ACE を含める必要があります。
 
 -   (A;GA;;この SY) は、ローカル システムにすべてのアクセスを付与します。
 -   (A;GA;;この BA) は、組み込みの管理者のすべてのアクセスを付与します。
 
 *いない*特権を持たないユーザーに書き込みアクセスを許可する ACE 文字列を指定します。
 
-セキュリティ記述子文字列については、次を参照してください。[セキュリティ記述子定義言語 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379567)します。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
+セキュリティ記述子文字列については、次を参照してください。[セキュリティ記述子定義言語 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)します。 セキュリティ記述子文字列の形式の詳細については、セキュリティ記述子定義言語 (Windows) を参照してください。
 
 セキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
 
@@ -240,21 +240,21 @@ INF では、次の値のみを指定できます。
 #define FILE_DEVICE_SECURE_OPEN         0x00000100
 ```
 
-これらの値については、次を参照してください。 [ **IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)します。
+これらの値については、次を参照してください。 [ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)します。
 
 使用して指定されている特徴値を**DeviceCharacteristics**エントリへの各呼び出しで指定されているものは論理和**IoCreateDevice**デバイス スタックでデバイス オブジェクトを作成します。 OR 演算は、すべてのデバイス オブジェクトが追加された後、デバイスを開始する前に発生します。
 
 *特性*値 (ゼロの値を含む) には、クラスが関連付けられているインストーラー INF で指定された任意のクラス全体のデバイスの特性がよりも優先されます。
 
-デバイスの特性の詳細については、次を参照してください。[デバイスの特性を指定する](https://msdn.microsoft.com/library/windows/hardware/ff563818)します。
+デバイスの特性の詳細については、次を参照してください。[デバイスの特性を指定する](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)します。
 
 <a href="" id="devicetype"></a>**DeviceType**  
-A **DeviceType** HKR **AddReg**エントリは、デバイスのデバイスの種類を指定します。 デバイスの種類には、FILE_DEVICE_ の数値*XXX*で定義された定数*Wdm.h*または*Ntddk.h*します。 0x10001 のフラグの値は、デバイスの種類の値があるを指定します、 [REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。 詳細については、次を参照してください。[デバイスの種類の指定](https://msdn.microsoft.com/library/windows/hardware/ff563821)します。
+A **DeviceType** HKR **AddReg**エントリは、デバイスのデバイスの種類を指定します。 デバイスの種類には、FILE_DEVICE_ の数値*XXX*で定義された定数*Wdm.h*または*Ntddk.h*します。 0x10001 のフラグの値は、デバイスの種類の値があるを指定します、 [REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)します。 詳細については、次を参照してください。[デバイスの種類の指定](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-types)します。
 
 クラス インストーラー INF はすべて、またはすべてのデバイス クラスのほとんどに適用されるデバイスの種類を指定する必要があります。 たとえば、FILE_DEVICE_CD_ROM 型の場合、クラス内のデバイスは、指定、*デバイスの種類*0x02 になります。 デバイスの INF の値を指定する場合**DeviceType**、存在する場合は、クラスのインストーラーによって設定された値をオーバーライドします。 クラスまたはデバイスの INF が指定されている場合、 **DeviceType**値、PnP マネージャーを適用するには、その型、*物理デバイス オブジェクト (PDO)* バス ドライバーによって作成します。
 
 <a href="" id="security"></a>**セキュリティ**  
-A**セキュリティ**HKR **AddReg**エントリは、デバイスのセキュリティ記述子を指定します。 *セキュリティ記述子の文字列*DACL を指定するトークンを含む文字列です (**d:**) セキュリティ コンポーネント。
+A**セキュリティ**HKR **AddReg**エントリは、デバイスのセキュリティ記述子を指定します。 *セキュリティ記述子の文字列*DACL を指定するトークンを含む文字列です (**d:** ) セキュリティ コンポーネント。
 
 クラス インストーラー INF では、デバイス クラスのセキュリティ記述子を指定できます。 デバイスの INF には、クラスのセキュリティをオーバーライドする個々 のデバイスのセキュリティ記述子を指定できます。 クラスまたはデバイスの INF が指定されている場合、*セキュリティ記述子の文字列*、PnP マネージャー デバイスのすべてのオブジェクトに、記述子の伝達 ( *DOs*) デバイス。 関数のデバイス オブジェクトが含まれます (*FDO*) 省略可能な*DOs をフィルター処理*、および PDO します。
 
@@ -263,13 +263,13 @@ A**セキュリティ**HKR **AddReg**エントリは、デバイスのセキュ�
 セキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
 
 <a href="" id="upperfilters"></a>**再**  
-**再**HKR **AddReg** PnP 上フィルター ドライバーを指定します。 このエントリで、 [ * **DDInstall *。HW** ](inf-ddinstall-hw-section.md)セクションが 1 つまたは複数のデバイス固有の上位フィルター ドライバーを定義します。 [ **ClassInstall32** ](inf-classinstall32-section.md) ] セクションで、このエントリが 1 つまたは複数のクラス全体にわたる上フィルター ドライバーを定義します。
+**再**HKR **AddReg** PnP 上フィルター ドライバーを指定します。 このエントリで、 [ * **DDInstall *。HW** ](inf-ddinstall-hw-section.md)セクションが 1 つまたは複数のデバイス固有の上位フィルター ドライバーを定義します。 [ **ClassInstall32** ](inf-classinstall32-section.md) セクションで、このエントリが 1 つまたは複数のクラス全体にわたる上フィルター ドライバーを定義します。
 
 <a href="" id="lowerfilters"></a>**LowerFilters**  
 A **LowerFilters** HKR **AddReg** PnP 低いフィルター ドライバーを指定します。 このエントリで、 <em>DDInstall</em>**します。ハードウェア セクション**1 つまたは複数のデバイスに固有の低いフィルター ドライバーを定義します。 **ClassInstall32**  セクションで、このエントリが 1 つまたは複数のクラス全体にわたる低いフィルター ドライバーを定義します。
 
 <a href="" id="exclusive"></a>**排他的**  
-**排他**HKR **AddReg**エントリが存在し、「1」に設定されている場合を指定します、デバイスがある、*排他デバイス*します。 それ以外の場合、デバイスは扱われませんに排他的です。 詳細については、次を参照してください。[デバイス オブジェクトに排他アクセスを指定する](https://msdn.microsoft.com/library/windows/hardware/ff563827)します。
+**排他**HKR **AddReg**エントリが存在し、「1」に設定されている場合を指定します、デバイスがある、*排他デバイス*します。 それ以外の場合、デバイスは扱われませんに排他的です。 詳細については、次を参照してください。[デバイス オブジェクトに排他アクセスを指定する](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-exclusive-access-to-device-objects)します。
 
 <a href="" id="enumproppages32"></a>**EnumPropPages32**  
 **EnumPropPages32** HKR **AddReg**エントリは、ダイナミック リンク ライブラリの名前を指定します (*DLL*) ファイルをデバイス固有のプロパティ ページのプロバイダー。 名前も指定します、 **ExtensionPropSheetPageProc** DLL によって実装されるコールバック関数。 プロパティ ページと機能の詳細については、Windows 7 および .NET Framework 4.0 用 Microsoft Windows ソフトウェア開発キット (SDK) を参照してください。
@@ -279,7 +279,7 @@ A **LowerFilters** HKR **AddReg** PnP 低いフィルター ドライバーを�
  
 
 <a href="" id="locationinformationoverride"></a>**LocationInformationOverride**  
-(Windows XP および Windows の以降のバージョン)A **LocationInformationOverride** HKR **AddReg**エントリは、デバイスの物理的な場所を説明するテキスト文字列を指定するために使用できます。 これは、上書き、 **LocationInformation**への応答で、デバイスのバス ドライバーを提供する文字列、 [ **IRP_MN_QUERY_DEVICE_TEXT** ](https://msdn.microsoft.com/library/windows/hardware/ff551674)要求。
+(Windows XP および Windows の以降のバージョン)A **LocationInformationOverride** HKR **AddReg**エントリは、デバイスの物理的な場所を説明するテキスト文字列を指定するために使用できます。 これは、上書き、 **LocationInformation**への応答で、デバイスのバス ドライバーを提供する文字列、 [ **IRP_MN_QUERY_DEVICE_TEXT** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)要求。
 
 <a href="" id="resourcepickertags"></a>**ResourcePickerTags**  
 A **ResourcePickerTags** HKR **AddReg**エントリは、デバイスのリソース ピッカーのタグを指定します。

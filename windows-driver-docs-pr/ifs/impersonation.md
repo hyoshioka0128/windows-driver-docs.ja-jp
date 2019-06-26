@@ -8,12 +8,12 @@ keywords:
 - 権限借用 WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d079c4fc907a57e2c8825edc1c0cca9cd0386187
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c01fda410e546f57488f0effc9c614e5acd1ce0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392021"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375689"
 ---
 # <a name="impersonation"></a>偽装
 
@@ -25,17 +25,17 @@ ms.locfileid: "63392021"
 
 キーのルーチンに必要な権限の借用が含まれます。
 
--   [**PsImpersonateClient**](https://msdn.microsoft.com/library/windows/hardware/ff551907) [**SeImpersonateClientEx**](https://msdn.microsoft.com/library/windows/hardware/ff556659)--偽装を開始します。 特定のスレッドは、指定した場合を除き、権限の借用は、現在のスレッド コンテキストで行われます。
+-   [**PsImpersonateClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seimpersonateclientex)--偽装を開始します。 特定のスレッドは、指定した場合を除き、権限の借用は、現在のスレッド コンテキストで行われます。
 
 -   **PsRevertToSelf**--現在のスレッド コンテキスト内で権限借用を終了します。
 
--   [**PsReferencePrimaryToken**](https://msdn.microsoft.com/library/windows/hardware/ff551930)--指定されたプロセスのプライマリ (プロセス) トークンの参照を保持します。 この関数は、システム上のどのプロセスのトークンをキャプチャを使用できます。
+-   [**PsReferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psreferenceprimarytoken)--指定されたプロセスのプライマリ (プロセス) トークンの参照を保持します。 この関数は、システム上のどのプロセスのトークンをキャプチャを使用できます。
 
--   [**PsDereferencePrimaryToken**](https://msdn.microsoft.com/library/windows/hardware/ff551896)-参照されている以前のプライマリ トークンの参照を解放します。
+-   [**PsDereferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psdereferenceprimarytoken)-参照されている以前のプライマリ トークンの参照を解放します。
 
--   [**SeCreateClientSecurityFromSubjectContext**](https://msdn.microsoft.com/library/windows/hardware/ff556598)--クライアントに返しますサブジェクト コンテキストからの権限借用のための便利なセキュリティ コンテキスト (中に、FSD に提供される、 **IRP\_MJ\_を作成します。** 処理など)。
+-   [**SeCreateClientSecurityFromSubjectContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-secreateclientsecurityfromsubjectcontext)--クライアントに返しますサブジェクト コンテキストからの権限借用のための便利なセキュリティ コンテキスト (中に、FSD に提供される、 **IRP\_MJ\_を作成します。** 処理など)。
 
--   [**SeCreateClientSecurity**](https://msdn.microsoft.com/library/windows/hardware/ff556595)--システム上の既存のスレッドのセキュリティ資格情報に基づいたクライアントのセキュリティ コンテキストを作成します。
+-   [**SeCreateClientSecurity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-secreateclientsecurity)--システム上の既存のスレッドのセキュリティ資格情報に基づいたクライアントのセキュリティ コンテキストを作成します。
 
 -   **ImpersonateSecurityContext**--ksecdd.sys、カーネルのセキュリティ サービス内でのセキュリティ コンテキストの権限を借用します。
 

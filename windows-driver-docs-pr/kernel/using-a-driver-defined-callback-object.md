@@ -7,12 +7,12 @@ keywords:
 - ドライバー定義のコールバック オブジェクトの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a28711ec8958f9dc14e8884e946f153de2dd6ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17f3c0d64f1ca8dcc31b7ba5109f81dab1dd2724
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355288"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382925"
 ---
 # <a name="using-a-driver-defined-callback-object"></a>ドライバーによって定義されたコールバック オブジェクトの使用
 
@@ -24,9 +24,9 @@ ms.locfileid: "63355288"
 
 ![通知のコールバックの登録を示す図](images/3reg-cbk.png)
 
-オブジェクトを開くことには、前に、ドライバーを呼び出す必要があります[ **InitializeObjectAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff547804)オブジェクトの名前を指定する、属性ブロックを作成します。 属性ブロックへのポインターがある、後に呼び出して[ **ExCreateCallback**](https://msdn.microsoft.com/library/windows/hardware/ff544560)、属性、ポインター、コールバックを識別するハンドルを受信する場所を渡すと**FALSE**の*作成*パラメーター、コールバックの既存のオブジェクトが必要であることを示します。
+オブジェクトを開くことには、前に、ドライバーを呼び出す必要があります[ **InitializeObjectAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)オブジェクトの名前を指定する、属性ブロックを作成します。 属性ブロックへのポインターがある、後に呼び出して[ **ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excreatecallback)、属性、ポインター、コールバックを識別するハンドルを受信する場所を渡すと**FALSE**の*作成*パラメーター、コールバックの既存のオブジェクトが必要であることを示します。
 
-ドライバーを呼び出して[ **ExRegisterCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff545534)コールバック ルーチンを登録する、返されたハンドルを使用します。
+ドライバーを呼び出して[ **ExRegisterCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exregistercallback)コールバック ルーチンを登録する、返されたハンドルを使用します。
 
 コールバック ルーチンでは、次のプロトタイプがあります。
 
@@ -44,7 +44,7 @@ typedef VOID (*PCALLBACK_FUNCTION ) (
 
 そのコールバック ルーチンでは、ドライバーがの現在の条件が必要にどのようなタスクを実行できます。
 
-呼び出す必要がありますが、ドライバーでは、通知が必要なくなる、 [ **ExUnregisterCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff545649)登録されたコールバックの一覧からそのルーチンを削除して、コールバック オブジェクトへの参照を削除します。
+呼び出す必要がありますが、ドライバーでは、通知が必要なくなる、 [ **ExUnregisterCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exunregistercallback)登録されたコールバックの一覧からそのルーチンを削除して、コールバック オブジェクトへの参照を削除します。
 
  
 

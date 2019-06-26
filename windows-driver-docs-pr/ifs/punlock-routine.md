@@ -14,12 +14,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed4463eae98b835194329754512cab784cb81601
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6b2a17e00b62e20983b31336667888de6bd25cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352740"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385145"
 ---
 # <a name="punlockroutine-function-pointer"></a>PUNLOCK\_ルーチンの関数ポインター
 
@@ -40,7 +40,7 @@ typedef VOID ( *UnlockRoutine)(
 ----------
 
 *コンテキスト*\[で\]  
-渡されたコンテキスト ポインター [ **FltProcessFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff543427)または[ **FsRtlProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547166)します。
+渡されたコンテキスト ポインター [ **FltProcessFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltprocessfilelock)または[ **FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)します。
 
 *FileLockInfo* \[in\]  
 ファイルへのポインターを非透過\_ロック\_バイト範囲ロックの情報の構造体。
@@ -57,11 +57,11 @@ typedef VOID ( *UnlockRoutine)(
 
 フィルターが指定されている場合、 *UnlockRoutine*ファイルの日常的な\_ロック構造では、ファイルにロックされているバイトの範囲から、ロックが削除されたときにこのルーチンは呼び出されます。
 
-ミニフィルターとしてルーチンへのポインターを渡すことによってこのルーチンを指定します、 *UnlockRoutine*パラメーター [ **FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)します。
+ミニフィルターとしてルーチンへのポインターを渡すことによってこのルーチンを指定します、 *UnlockRoutine*パラメーター [ **FltAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock)します。
 
-レガシ フィルターとしてルーチンへのポインターを渡すことによってこのルーチンを指定します、 *UnlockRoutine*パラメーター [ **FsRtlAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff545640)または[ **FsRtlInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546122)します。
+レガシ フィルターとしてルーチンへのポインターを渡すことによってこのルーチンを指定します、 *UnlockRoutine*パラメーター [ **FsRtlAllocateFileLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)または[ **FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -88,39 +88,39 @@ typedef VOID ( *UnlockRoutine)(
 ## <a name="see-also"></a>関連項目
 
 
-[**FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)
+[**FltAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocatefilelock)
 
-[**FltCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541834)
+[**FltCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforreadaccess)
 
-[**FltCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff541837)
+[**FltCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltchecklockforwriteaccess)
 
-[**FltFreeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff542969)
+[**FltFreeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfreefilelock)
 
-[**FltInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff543273)
+[**FltInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltinitializefilelock)
 
-[**FltProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff543427)
+[**FltProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltprocessfilelock)
 
-[**FltUninitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff544595)
+[**FltUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuninitializefilelock)
 
-[**FsRtlAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff545640)
+[**FsRtlAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)
 
-[**FsRtlCheckLockForReadAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545758)
+[**FsRtlCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforreadaccess)
 
-[**FsRtlCheckLockForWriteAccess**](https://msdn.microsoft.com/library/windows/hardware/ff545760)
+[**FsRtlCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforwriteaccess)
 
-[**FsRtlFreeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546011)
+[**FsRtlFreeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfreefilelock)
 
-[**FsRtlInitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff546122)
+[**FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)
 
-[**FsRtlProcessFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547166)
+[**FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)
 
-[**FsRtlUninitializeFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff547313)
+[**FsRtlUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtluninitializefilelock)
 
 [**IRP\_MJ\_ロック\_コントロール**](irp-mj-lock-control.md)
 
 [**PCOMPLETE\_ロック\_IRP\_ルーチン**](pcomplete-lock-irp-routine.md)
 
-[**PFLT\_完了\_ロック\_コールバック\_データ\_ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff551073)
+[**PFLT\_完了\_ロック\_コールバック\_データ\_ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_complete_lock_callback_data_routine)
 
  
 

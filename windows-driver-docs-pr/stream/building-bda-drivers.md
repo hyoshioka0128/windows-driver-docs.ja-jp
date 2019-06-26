@@ -10,12 +10,12 @@ keywords:
 - WDK BDA マクロ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0910e912280f1518422048e2afbd19d4682d8323
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: aeb7dca13d40a74f03c75b4056a959a06070f1be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56580597"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386675"
 ---
 # <a name="building-bda-drivers"></a>BDA ドライバーの構築
 
@@ -23,7 +23,7 @@ ms.locfileid: "56580597"
 
 
 
-**注**  以降 Windows 8 では、WDK ビルド環境は使用しなくなりました Build.exe します。 参照してください[WDK と Visual Studio ビルド環境](https://msdn.microsoft.com/library/windows/hardware/hh454286)します。 次の説明には、Windows 7 の WDK バージョンを使用して、ドライバーをビルドする場合にのみが適用されます。 以前のバージョン。
+**注**  以降 Windows 8 では、WDK ビルド環境は使用しなくなりました Build.exe します。 参照してください[WDK と Visual Studio ビルド環境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)します。 次の説明には、Windows 7 の WDK バージョンを使用して、ドライバーをビルドする場合にのみが適用されます。 以前のバージョン。
 
  
 

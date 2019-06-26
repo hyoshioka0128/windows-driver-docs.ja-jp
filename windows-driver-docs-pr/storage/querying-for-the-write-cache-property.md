@@ -14,12 +14,12 @@ keywords:
 - ライト スルー要求 WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8719997cc86e24bf4560c5d97287264249fa1e2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a5052b603544e1374d7329aede8b78052dcee27
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366265"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383150"
 ---
 # <a name="querying-for-the-write-cache-property"></a>書き込みキャッシュのプロパティのクエリ
 
@@ -32,7 +32,7 @@ ms.locfileid: "63366265"
 
 ただし、書き込みキャッシュがあるすべての記憶装置がサポート要求ライト スルーまたはキャッシュの同期します。一部のデバイスは、バイパスまたはバッテリ バックアップ システム電源障害時にデータが破損しないようにしているために、念のためキャッシュ データをフラッシュする必要はありません。 効果的な使用を行えるようにする前に、アプリケーションやドライバーによって、デバイスの書き込みキャッシュのプロパティに関する情報する必要があります。
 
-Windows Vista で使用することができます、 [ **IOCTL\_ストレージ\_クエリ\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff560590)の要求、 **StorageDeviceWriteCacheProperty**書き込みキャッシュのプロパティのデバイスの特性の書き込みキャッシュを指定するための記憶域クラス ドライバーを照会するプロパティの識別子。 書き込みキャッシュのプロパティには、デバイスのキャッシュの機能に関する次の情報が含まれています。
+Windows Vista で使用することができます、 [ **IOCTL\_ストレージ\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property)の要求、 **StorageDeviceWriteCacheProperty**書き込みキャッシュのプロパティのデバイスの特性の書き込みキャッシュを指定するための記憶域クラス ドライバーを照会するプロパティの識別子。 書き込みキャッシュのプロパティには、デバイスのキャッシュの機能に関する次の情報が含まれています。
 
 -   *書き込みキャッシュのプレゼンス*します。 書き込みキャッシュのプロパティは、デバイスで書き込みキャッシュを持つかどうかを指定します。
 
@@ -44,7 +44,7 @@ Windows Vista で使用することができます、 [ **IOCTL\_ストレージ
 
 -   *バッテリ バックアップ*します。 書き込みキャッシュのプロパティは、デバイスに電源障害時にキャッシュ データの整合性を保護するバッテリ バックアップがあるかどうかを示します。
 
-書き込みキャッシュのプロパティを報告する情報の詳細については、次を参照してください。 [**ストレージ\_書き込み\_キャッシュ\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff567017)します。
+書き込みキャッシュのプロパティを報告する情報の詳細については、次を参照してください。 [**ストレージ\_書き込み\_キャッシュ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_write_cache_property)します。
 
 書き込みキャッシュのプロパティのメカニズムがなければ (つまり、IOCTL を使用して\_ストレージ\_クエリ\_プロパティ要求と**StorageDeviceWriteCacheProperty**プロパティの識別子)、アプリケーションドライバーが別の一連のすべてのバスのコマンドによるデバイスの書き込みキャッシュの特性を照会する必要があります。 たとえば、ターゲット デバイスは、IEEE 1394 バスに接続し、削減ブロックのコマンド (RBC) プロトコルを使用して場合に、イニシエーターは、書き込みキャッシュが有効になっているかどうかを決定する、デバイスのモード データのページ 6 を取得する必要があります。 ターゲット デバイスが SCSI 準拠の場合は、イニシエーターがモード データの 8 ページを取得する必要があります。 プロパティの書き込みキャッシュ メカニズムでは、イニシエーターからこれらの操作の詳細を非表示にし、異なるバスでは、同じストレージ デバイスの書き込みキャッシュの特性をクエリする方法とを提供します。
 

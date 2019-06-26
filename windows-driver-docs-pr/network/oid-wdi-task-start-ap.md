@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_START_AP ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1631e42945f5e4e73177003dbcbe45b50cc764fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fefb38ecab0a78d4d84766a2bca142cc68ed4f37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365737"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387218"
 ---
 # <a name="oidwditaskstartap"></a>OID\_WDI\_タスク\_開始\_アジア太平洋
 
@@ -25,11 +25,11 @@ OID\_WDI\_タスク\_開始\_AP 要求 IHV コンポーネントが、Wi-Fi Dire
 
  
 
-初期化中に、ドライバーは 5 GHz 帯域の機能の移動を設定[ **WDI\_TLV\_P2P\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn897865)アクセスを開始できるかどうかを示す5 GHz 帯域のポイントします。
+初期化中に、ドライバーは 5 GHz 帯域の機能の移動を設定[ **WDI\_TLV\_P2P\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-capabilities)アクセスを開始できるかどうかを示す5 GHz 帯域のポイントします。
 
-アダプターが、運用提供チャネルの AP を開始する必要があります 5 GHz 帯域のサポートでの GO が設定されている場合と、AP バンド チャネル リスト パラメーターで指定されたリストを試す必要があります、失敗した場合。 オペレーティング システムでこの AP が設定してインターネット接続を提供がかどうかについて、ドライバーにヒントを提供すること、 **DOT11\_WFD\_グループ\_機能\_クロス\_接続\_サポートされている**フラグ[ **WDI\_TLV\_P2P\_グループ\_所有者\_機能**](https://msdn.microsoft.com/library/windows/hardware/dn897954).
+アダプターが、運用提供チャネルの AP を開始する必要があります 5 GHz 帯域のサポートでの GO が設定されている場合と、AP バンド チャネル リスト パラメーターで指定されたリストを試す必要があります、失敗した場合。 オペレーティング システムでこの AP が設定してインターネット接続を提供がかどうかについて、ドライバーにヒントを提供すること、 **DOT11\_WFD\_グループ\_機能\_クロス\_接続\_サポートされている**フラグ[ **WDI\_TLV\_P2P\_グループ\_所有者\_機能**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-group-owner-capability).
 
-場合**MustUseSpecifiedChannel**で[ **WDI\_TLV\_開始\_AP\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/dn898065)を指定すると、AP 可能性があります指定のバンドの AP を開始できることがない場合は、次のエラーのいずれかを返す/チャネル。
+場合**MustUseSpecifiedChannel**で[ **WDI\_TLV\_開始\_AP\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-start-ap-parameters)を指定すると、AP 可能性があります指定のバンドの AP を開始できることがない場合は、次のエラーのいずれかを返す/チャネル。
 
 |                                                                 |                                                                                                         |
 |-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -60,43 +60,43 @@ OID\_WDI\_タスク\_開始\_AP 要求 IHV コンポーネントが、Wi-Fi Dire
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898062" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898062)"><strong>WDI_TLV_SSID</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid-list" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid-list)"><strong>WDI_TLV_SSID</strong></a></td>
 <td></td>
 <td></td>
 <td>AP で使用する SSID です。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898065" data-raw-source="[&lt;strong&gt;WDI_TLV_START_AP_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898065)"><strong>WDI_TLV_START_AP_PARAMETERS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-start-ap-parameters" data-raw-source="[&lt;strong&gt;WDI_TLV_START_AP_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-start-ap-parameters)"><strong>WDI_TLV_START_AP_PARAMETERS</strong></a></td>
 <td></td>
 <td></td>
 <td>このタスクのパラメーターです。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn926141" data-raw-source="[&lt;strong&gt;WDI_TLV_AUTH_ALGO_LIST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926141)"><strong>WDI_TLV_AUTH_ALGO_LIST</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-auth-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_AUTH_ALGO_LIST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-auth-algo-list)"><strong>WDI_TLV_AUTH_ALGO_LIST</strong></a></td>
 <td></td>
 <td></td>
 <td>接続に使用できる認証アルゴリズムの一覧。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897847" data-raw-source="[&lt;strong&gt;WDI_TLV_MULTICAST_CIPHER_ALGO_LIST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897847)"><strong>WDI_TLV_MULTICAST_CIPHER_ALGO_LIST</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-multicast-cipher-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_MULTICAST_CIPHER_ALGO_LIST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-multicast-cipher-algo-list)"><strong>WDI_TLV_MULTICAST_CIPHER_ALGO_LIST</strong></a></td>
 <td></td>
 <td></td>
 <td>接続を使用するマルチキャストの暗号アルゴリズムの一覧。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn898074" data-raw-source="[&lt;strong&gt;WDI_TLV_UNICAST_CIPHER_ALGO_LIST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898074)"><strong>WDI_TLV_UNICAST_CIPHER_ALGO_LIST</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unicast-cipher-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_UNICAST_CIPHER_ALGO_LIST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unicast-cipher-algo-list)"><strong>WDI_TLV_UNICAST_CIPHER_ALGO_LIST</strong></a></td>
 <td></td>
 <td></td>
 <td>接続を使用するマルチキャストの暗号アルゴリズムの一覧。</td>
 </tr>
 <tr class="even">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/dn897869" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_CHANNEL_NUMBER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn897869)"><strong>WDI_TLV_P2P_CHANNEL_NUMBER</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_CHANNEL_NUMBER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number)"><strong>WDI_TLV_P2P_CHANNEL_NUMBER</strong></a></td>
 <td></td>
 <td>x</td>
 <td>指定すると、これとグループの構成で決定された運用チャネルを定義します。 これはのみ、動作モードが Wi-Fi Direct の移動時に指定可能性があります。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/mt593242" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt593242)"><strong>WDI_TLV_AP_BAND_CHANNEL</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-band-channel" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-band-channel)"><strong>WDI_TLV_AP_BAND_CHANNEL</strong></a></td>
 <td>x</td>
 <td>x</td>
 <td>Windows 10 バージョン 1511、WDI バージョン 1.0.10 に追加されます。

@@ -14,12 +14,12 @@ keywords:
 - ソフトウェア バスの WDK SD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4a041bbfe09be7f489c8a1e938fd1e2c800466
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de4452bf7f8a8a6a6f0291557f1f22485d2bb2be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384509"
 ---
 # <a name="sd-card-driver-stack"></a>SD カードのドライバー スタック
 
@@ -30,7 +30,7 @@ ms.locfileid: "63325967"
 
 ![初期の sd 記憶域デバイスに対するデバイス スタックを示す図](images/sdio-usb.png)
 
-Windows がメモリ カード、USB バスに接続するために作成するデバイス スタックの詳細については、次を参照してください。 [USB 大容量記憶装置のデバイス オブジェクトの例](https://msdn.microsoft.com/library/windows/hardware/ff552547)します。
+Windows がメモリ カード、USB バスに接続するために作成するデバイス スタックの詳細については、次を参照してください。 [USB 大容量記憶装置のデバイス オブジェクトの例](https://docs.microsoft.com/windows-hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device)します。
 
 まず、オペレーティング システムにより、PCI バスに直接接続する SD ホスト コントローラーのサポートが提供されます。 システムでは、SD のホスト コント ローラーを列挙するネイティブ SD バス ドライバーが読み込まれます (*sdbus.sys*)。 SD メモリ カードを挿入すると、Windows はネイティブ SD 記憶域クラス ドライバーを読み込みます (*sffdisk.sys*) と記憶域ミニポート ドライバー (*sffp\_sd.sys*) バス ドライバーの上にします。 GPS やワイヤレス LAN など、機能の異なる SD カードが挿入された場合は、そのデバイス用にベンダーから提供されているドライバーが読み込まれます。
 
@@ -40,9 +40,9 @@ SD スタック内のすべてのデバイス ドライバー ネイティブま
 
 SD デバイス ドライバーは、ホスト コント ローラーのレジスタ セットに直接アクセスできません。 また I/O 要求パケット (Irp) でホスト コント ローラーにパススルー コマンドを埋め込むことができます。 SD デバイス ドライバーは、SD バス ライブラリのルーチンを呼び出すことによって、ホスト コント ローラーにコマンドを発行し、ライブラリ ホスト コント ローラーに対する適切な SD コマンドが生成されます。
 
-SD デバイス ドライバーが標準の PnP と電力の Irp を処理する必要がありますが、要求またはポート、メモリなどのハードウェア リソースを管理したりしないでベクトルの割り込み。 その結果、SD デバイス ドライバーは、処理するときに、すべてのハードウェア リソースをマップする必要はありません、 [ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)要求。 ただし、SD のデバイス ドライバーを受け取ると、 [ **IRP\_MN\_停止\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551755)要求と、すべての I/O 操作を停止する必要があります。 さらに、ドライバーは SD バス ドライバーへの応答には、そのインターフェイスを閉じる必要があります、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551705)要求。
+SD デバイス ドライバーが標準の PnP と電力の Irp を処理する必要がありますが、要求またはポート、メモリなどのハードウェア リソースを管理したりしないでベクトルの割り込み。 その結果、SD デバイス ドライバーは、処理するときに、すべてのハードウェア リソースをマップする必要はありません、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。 ただし、SD のデバイス ドライバーを受け取ると、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求と、すべての I/O 操作を停止する必要があります。 さらに、ドライバーは SD バス ドライバーへの応答には、そのインターフェイスを閉じる必要があります、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)要求。
 
-ハードウェアの割り込みが発生したときに SD バス ライブラリは、割り込みをインターセプト、さらに割り込み、マスクし、ハードウェアの割り込みが発生するコールバック ルーチンを使用して SD デバイス ドライバーを通知します。 バス ドライバーを使用して、SD のデバイス ドライバーのハードウェアの割り込みを通知するコールバック ルーチンの説明は、次を参照してください。 [ **PSDBUS\_コールバック\_ルーチン**](https://msdn.microsoft.com/library/windows/hardware/ff537617)します。 SD ドライバー スタックとライブラリがハードウェア割り込みを管理する方法の一般情報については、次を参照してください。[処理セキュア デジタル (SD) ハードウェアの割り込み](https://msdn.microsoft.com/library/windows/hardware/ff537177)します。
+ハードウェアの割り込みが発生したときに SD バス ライブラリは、割り込みをインターセプト、さらに割り込み、マスクし、ハードウェアの割り込みが発生するコールバック ルーチンを使用して SD デバイス ドライバーを通知します。 バス ドライバーを使用して、SD のデバイス ドライバーのハードウェアの割り込みを通知するコールバック ルーチンの説明は、次を参照してください。 [ **PSDBUS\_コールバック\_ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddsd/nc-ntddsd-sdbus_callback_routine)します。 SD ドライバー スタックとライブラリがハードウェア割り込みを管理する方法の一般情報については、次を参照してください。[処理セキュア デジタル (SD) ハードウェアの割り込み](https://docs.microsoft.com/windows-hardware/drivers/sd/handling-sd-card-interrupts)します。
 
 *Ntddsd.h*ヘッダー ファイルは、Windows Driver Kit (WDK) で指定すると、SD のバス ライブラリによって公開されるルーチンのプロトタイプを宣言します。
 

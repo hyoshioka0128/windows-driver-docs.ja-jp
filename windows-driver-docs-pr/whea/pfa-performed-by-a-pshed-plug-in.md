@@ -11,12 +11,12 @@ keywords:
 - PSHED プラグイン WDK WHEA、予測的な失敗の分析
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5af8d68b752f26498610979d2eae8237a216ef7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c7c32ed8ba9ddbae690702177aabd298a106f8f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340759"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387157"
 ---
 # <a name="pfa-performed-by-a-pshed-plug-in"></a>PSHED プラグインによって実行される PFA
 
@@ -31,7 +31,7 @@ ECC メモリ エラーが発生したときに WHEA およびプラグインは
 
 1.  *低レベル ハードウェア エラー ハンドラー* (*LLHEH*) メモリ エラーの状態の有無について通知されます。
 
-2.  LLHEH では、エラーのソースからメモリ エラーに関する情報を取得し、エラー データを使用して、ハードウェアのエラー パケットを完了します。 このパケットとして書式設定、 [WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)構造体。
+2.  LLHEH では、エラーのソースからメモリ エラーに関する情報を取得し、エラー データを使用して、ハードウェアのエラー パケットを完了します。 このパケットとして書式設定、 [WHEA\_エラー\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))構造体。
 
 3.  任意のプラットフォーム固有のハードウェア エラー情報を取得、PSHED に LLHEH 呼び出し。 PSHED でプラグインがインストールされ、エラーに関する情報を取得するが登録されている場合、PSHED は呼び出します、PSHED にプラグインできるように、プラグインは、LLHEH に返されるエラーに関する情報を変更できます。
 
@@ -45,10 +45,10 @@ ECC メモリ エラーが発生したときに WHEA およびプラグインは
 
 8.  プラグインの PSHED が ECC メモリ ページで PFA に実行している場合は、以下を行うこと必要があります。
 
-    -   設定、 **PlatformPfaControl**ビット、 [ **WHEA\_エラー\_パケット\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff560472)のメンバー、 [WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)構造体。 このビットが設定されている場合、WHEA は不要になったに PFA メモリ ページに責任を負います。
-    -   プラグイン、認識された場合、エラーが発生した ECC メモリ ページが取得されることオフライン設定、 **PlatformDirectedOffline**ビット、 [ **WHEA\_エラー\_パケット\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff560472)メンバー。 このビットが設定されている場合、WHEA はメモリのページをオフラインにしようとします。
+    -   設定、 **PlatformPfaControl**ビット、 [ **WHEA\_エラー\_パケット\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_packet_flags)のメンバー、 [WHEA\_エラー\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))構造体。 このビットが設定されている場合、WHEA は不要になったに PFA メモリ ページに責任を負います。
+    -   プラグイン、認識された場合、エラーが発生した ECC メモリ ページが取得されることオフライン設定、 **PlatformDirectedOffline**ビット、 [ **WHEA\_エラー\_パケット\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_packet_flags)メンバー。 このビットが設定されている場合、WHEA はメモリのページをオフラインにしようとします。
 
-    それ以外の場合、プラグインの PSHED をオフにする必要があります、 **PlatformPfaControl**と**PlatformDirectedOffline**ビットで、 [ **WHEA\_エラー\_パケット\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff560472)のメンバー、 [WHEA\_エラー\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff560465)構造体。
+    それ以外の場合、プラグインの PSHED をオフにする必要があります、 **PlatformPfaControl**と**PlatformDirectedOffline**ビットで、 [ **WHEA\_エラー\_パケット\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_packet_flags)のメンバー、 [WHEA\_エラー\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))構造体。
 
     **注**場合、 **PlatformPfaControl**ビットがクリアされて、そのように構成、およびオフライン ECC メモリ ページのエラーが発生する必要があるかどうかを決定する場合、WHEA が PFA を実行します。 このプロセスの詳細については、次を参照してください。 [PFA が WHEA によって実行される](pfa-performed-by-whea.md)します。
 

@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd0e8b9a940b463fc0a33c30b741232618209ae0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba06c8719462c3e5c5972c8473c5d65c82efcdca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346556"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385958"
 ---
 # <a name="unidrvpscript5-plug-in-configuration-modules"></a>Unidrv/PScript5 プラグイン構成モジュール
 
@@ -25,7 +25,7 @@ XPSDrv プリンター ドライバーの構成のモジュールには、Window
 
 -   PrintTicket と PrintCapabilities 機能
 
--   [IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960) Unidrv と PScript5 の設定を操作するためのインターフェイス
+-   [IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper) Unidrv と PScript5 の設定を操作するためのインターフェイス
 
 -   XPSDrv ドキュメント イベント
 
@@ -33,9 +33,9 @@ XPSDrv プリンター ドライバーの構成のモジュールには、Window
 
 ### <a name="printticket-and-printcapabilities-interface-support"></a>PrintTicket と PrintCapabilities インターフェイスのサポート
 
-Unidrv および PScript5 の印刷ドライバー プラグインを実装、 [IPrintOemPrintTicketProvider](https://msdn.microsoft.com/library/windows/hardware/ff553174) PrintTicket と PrintCapabilities データをカスタマイズするインターフェイス。 このインターフェイスでメソッドを使用するプラグイン PrintTicket と PrintCapabilities プラグインでは、カスタムの機能の処理をカスタマイズします。
+Unidrv および PScript5 の印刷ドライバー プラグインを実装、 [IPrintOemPrintTicketProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintoemprintticketprovider) PrintTicket と PrintCapabilities データをカスタマイズするインターフェイス。 このインターフェイスでメソッドを使用するプラグイン PrintTicket と PrintCapabilities プラグインでは、カスタムの機能の処理をカスタマイズします。
 
-Unidrv と PScript5 印刷ドライバーの実装、 [IPrintTicketProvider](https://msdn.microsoft.com/library/windows/hardware/ff554375)インターフェイスし、PrintTicket と PrintCapabilities GPD または PPD ファイルに基づいているデータの初期のバージョンを生成します。 初期の処理後 Unidrv または PScript5 印刷ドライバーを呼び出して、プラグインの**IPrintOemPrintTicketProvider**インターフェイスように、プラグインは印刷ドライバーが、呼び出し元に返す前に、このデータを変更アプリケーション。
+Unidrv と PScript5 印刷ドライバーの実装、 [IPrintTicketProvider](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))インターフェイスし、PrintTicket と PrintCapabilities GPD または PPD ファイルに基づいているデータの初期のバージョンを生成します。 初期の処理後 Unidrv または PScript5 印刷ドライバーを呼び出して、プラグインの**IPrintOemPrintTicketProvider**インターフェイスように、プラグインは印刷ドライバーが、呼び出し元に返す前に、このデータを変更アプリケーション。
 
 ### <a name="iprintcorehelper-interface"></a>IPrintCoreHelper インターフェイス
 
@@ -62,7 +62,7 @@ DECLARE_INTERFACE_(IPrintCoreHelper, IUnknown) {
 };
 ```
 
-次の 2 つ追加インターフェイス[IPrintCoreHelperUni](https://msdn.microsoft.com/library/windows/hardware/ff552940)と[IPrintCoreHelperPS](https://msdn.microsoft.com/library/windows/hardware/ff552906)から派生、 **IPrintCoreHelper**インターフェイス。 これらのインターフェイスは Unidrv に固有であり、PScript5 印刷ドライバーをそれぞれ、およびドライバーごとに固有の他のメソッドが含まれます。
+次の 2 つ追加インターフェイス[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)と[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)から派生、 **IPrintCoreHelper**インターフェイス。 これらのインターフェイスは Unidrv に固有であり、PScript5 印刷ドライバーをそれぞれ、およびドライバーごとに固有の他のメソッドが含まれます。
 
 ```cpp
 DECLARE_INTERFACE_(IPrintCoreHelperUni, IUnknown) {

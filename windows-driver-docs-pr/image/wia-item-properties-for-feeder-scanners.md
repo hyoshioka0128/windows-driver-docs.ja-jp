@@ -4,12 +4,12 @@ description: フィーダー スキャナーの WIA 項目のプロパティ
 ms.assetid: 92b5f435-d34a-4a31-85e3-53a6d0ed8f16
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e23f8809f4e34aa77cb82626bee941f948a3317
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8e1560df871e9815485462fe0e420a3d23fbf94
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352722"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383064"
 ---
 # <a name="wia-item-properties-for-feeder-scanners"></a>フィーダー スキャナーの WIA 項目のプロパティ
 
@@ -17,7 +17,7 @@ ms.locfileid: "63352722"
 
 
 
-このセクションでは、スキャナーのフィーダー項目とスキャナー フィーダー子項目 (フロントとバック ページ項目) の必須および省略可能な WIA 項目プロパティを示します。 WIA の一般的なカメラに固有とスキャナーに固有のプロパティの完全な一覧を参照してください。 [WIA プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff552739)します。
+このセクションでは、スキャナーのフィーダー項目とスキャナー フィーダー子項目 (フロントとバック ページ項目) の必須および省略可能な WIA 項目プロパティを示します。 WIA の一般的なカメラに固有とスキャナーに固有のプロパティの完全な一覧を参照してください。 [WIA プロパティ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties)します。
 
 このセクションの内容:
 

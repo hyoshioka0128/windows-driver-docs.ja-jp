@@ -4,12 +4,12 @@ description: 通信事業者のハードウェアの概要
 ms.assetid: b2322972-16be-443f-b46a-7834b4d7ead0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d289b6c88db6b2b3d276978c763dc891b7fc62b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4214393f781662e11d8ace8fdb07567be94fd9e
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386259"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393422"
 ---
 # <a name="mobile-operator-hardware-overview"></a>通信事業者のハードウェアの概要
 
@@ -74,9 +74,9 @@ ms.locfileid: "63386259"
 
 ### <a name="span-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanspan-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanspan-idwindows8windows81orwindows10certifiedmobilebroadbanddevicesspanwindows8-windows81-or-windows10-certified-mobile-broadband-devices"></a><span id="Windows_8__Windows_8.1__or_Windows_10_certified_mobile_broadband_devices"></span><span id="windows_8__windows_8.1__or_windows_10_certified_mobile_broadband_devices"></span><span id="WINDOWS_8__WINDOWS_8.1__OR_WINDOWS_10_CERTIFIED_MOBILE_BROADBAND_DEVICES"></span>Windows 8、Windows 8.1、または Windows 10 モバイル ブロード バンド デバイスを認定
 
-Windows モバイル ブロード バンド プラットフォームを最大限に活用するには、モバイル ブロード バンド デバイスは、Windows 8、Windows 8.1、または Windows 10 のハードウェア認定要件を満たす必要があります。 ハードウェア認定の要件の包括的な説明は、次を参照してください。 [Windows ハードウェア認定要件](https://msdn.microsoft.com/library/windows/hardware/hh748188)します。
+Windows モバイル ブロード バンド プラットフォームを最大限に活用するには、モバイル ブロード バンド デバイスは、Windows 8、Windows 8.1、または Windows 10 のハードウェア認定要件を満たす必要があります。 ハードウェア認定の要件の包括的な説明は、次を参照してください。 [Windows ハードウェア認定要件](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/)します。
 
-エンドユーザーの最も単純な接続エクスペリエンスは USB ベースのモバイル ブロード バンド デバイスに配信されます。 ハードウェア認定の要件の一部として、USB デバイスとしてマニフェストのすべてのモバイル ブロード バンド デバイスが準拠する必要があります、[モバイル ブロード バンド インターフェイス モデル (MBIM) 仕様](https://msdn.microsoft.com/library/windows/hardware/dn265427)MBIM v1.0 の正誤表とします。 これには、外部 USB ドングルと USB インターフェイスを提供する組み込みのモジュールの両方が含まれます。 このクラス デバイスでは、には Windows 8、Windows 8.1、または Windows 10 には、IHV から追加のドライバーが不要し、ユーザーの接続エクスペリエンスを簡略化モバイル ブロード バンド クラス ドライバーが含まれます。 USB ドライバー モデルではないその他のハードウェアが Windows 8、Windows 8.1、および Windows 10 の証明書を受信できるし、Microsoft Store モバイル ブロード バンド アプリ エクスペリエンスを提供しますが、モバイル ブロード バンド クラス ドライバーではサポートされていません。
+エンドユーザーの最も単純な接続エクスペリエンスは USB ベースのモバイル ブロード バンド デバイスに配信されます。 ハードウェア認定の要件の一部として、USB デバイスとしてマニフェストのすべてのモバイル ブロード バンド デバイスが準拠する必要があります、[モバイル ブロード バンド インターフェイス モデル (MBIM) 仕様](https://docs.microsoft.com/windows-hardware/drivers/network/mb-interface-model)MBIM v1.0 の正誤表とします。 これには、外部 USB ドングルと USB インターフェイスを提供する組み込みのモジュールの両方が含まれます。 このクラス デバイスでは、には Windows 8、Windows 8.1、または Windows 10 には、IHV から追加のドライバーが不要し、ユーザーの接続エクスペリエンスを簡略化モバイル ブロード バンド クラス ドライバーが含まれます。 USB ドライバー モデルではないその他のハードウェアが Windows 8、Windows 8.1、および Windows 10 の証明書を受信できるし、Microsoft Store モバイル ブロード バンド アプリ エクスペリエンスを提供しますが、モバイル ブロード バンド クラス ドライバーではサポートされていません。
 
 ### <a name="span-idmobilebroadbandclassdriverspanspan-idmobilebroadbandclassdriverspanspan-idmobilebroadbandclassdriverspanmobile-broadband-class-driver"></a><span id="Mobile_broadband_class_driver"></span><span id="mobile_broadband_class_driver"></span><span id="MOBILE_BROADBAND_CLASS_DRIVER"></span>モバイル ブロード バンド クラス ドライバー
 
@@ -88,13 +88,13 @@ Windows モバイル ブロード バンド プラットフォームを最大限
 
 WinRT デバイスのサービス API を使用してモバイル ブロード バンド アプリに直接公開されるカスタムのデバイス サービス拡張機能を使用して、追加のデバイスの機能を実装できます。
 
-モバイル ブロード バンド クラス ドライバーの詳細については、次を参照してください。[モバイル ブロード バンド (MB) の参照を](https://msdn.microsoft.com/library/windows/hardware/ff560545)します。
+モバイル ブロード バンド クラス ドライバーの詳細については、次を参照してください。[モバイル ブロード バンド (MB) の参照を](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
 ### <a name="span-iddeviceserviceextensionapispanspan-iddeviceserviceextensionapispanspan-iddeviceserviceextensionapispandevice-service-extension-api"></a><span id="Device_service_extension_API"></span><span id="device_service_extension_api"></span><span id="DEVICE_SERVICE_EXTENSION_API"></span>デバイス サービス拡張機能 API
 
 Windows プラットフォームを使用する個別の利点の 1 つは、演算子の差別化をサポートするハードウェアの新しいシナリオを提供する機能です。 Windows モバイル ブロード バンド プラットフォームは、上位の顧客ロイヤルティをブランド価値に頼れるコマンドできます演算子を差別化を有効にすると想定されます。 プラットフォームは、一意のエクスペリエンスに組み込むことができます拡張点のセットを提供します。
 
-Windows では、モバイル ブロード バンド デバイス"device service"としてサポートされている拡張機能の各点の宣言が認定されています。 このようなサービスの例には、電話帳、SIM Toolkit または GPS 機能が含まれます。 Windows モバイル ブロード バンド プラットフォームでネイティブに実装されていないすべてのデバイス サービスは、デバイス サービス拡張機能 API を使用してアクセスできます。 IHV は、実装する必要があるデバイスのサービスを定義します。 IHV のファームウェアとモバイル ブロード バンド アプリは、目的のデバイスのサービスを有効に同時に設計する必要があります。 Ihv で使用できるデバイスのサービスのレジストリの確立は、USB Implementers Forum [MBIMRegistry](http://www.usb.org)とするおよび使用している Ihv が一貫性を保つために調整するこのレジストリを使用していることをお勧めします。一般的なデバイス サービス拡張機能。
+Windows では、モバイル ブロード バンド デバイス"device service"としてサポートされている拡張機能の各点の宣言が認定されています。 このようなサービスの例には、電話帳、SIM Toolkit または GPS 機能が含まれます。 Windows モバイル ブロード バンド プラットフォームでネイティブに実装されていないすべてのデバイス サービスは、デバイス サービス拡張機能 API を使用してアクセスできます。 IHV は、実装する必要があるデバイスのサービスを定義します。 IHV のファームウェアとモバイル ブロード バンド アプリは、目的のデバイスのサービスを有効に同時に設計する必要があります。 Ihv で使用できるデバイスのサービスのレジストリの確立は、USB Implementers Forum [MBIMRegistry](https://www.usb.org/)とするおよび使用している Ihv が一貫性を保つために調整するこのレジストリを使用していることをお勧めします。一般的なデバイス サービス拡張機能。
 
 デバイス サービス拡張機能 API では、モバイル ブロード バンド デバイス機能にアクセスする場合は、モバイル ブロード バンド アプリの直接的な方法を提供します。 次の図に示すようにこれ WWAN サービスと、デバイスにモバイル ブロード バンド クラス ドライバーのコンジットを提供します。
 
@@ -118,7 +118,7 @@ Windows のワイヤレス プラットフォームには、アプリで使用�
 
 -   特定のデバイスからイベントを要請していないデバイスの登録します。
 
-詳細については、次を参照してください。 [ **IMbnDeviceService インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/hh780509)します。
+詳細については、次を参照してください。 [ **IMbnDeviceService インターフェイス**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbndeviceservice)します。
 
 ### <a name="span-idlegacysupportandidentitymorphingspanspan-idlegacysupportandidentitymorphingspanspan-idlegacysupportandidentitymorphingspanlegacy-support-and-identity-morphing"></a><span id="Legacy_support_and_identity_morphing"></span><span id="legacy_support_and_identity_morphing"></span><span id="LEGACY_SUPPORT_AND_IDENTITY_MORPHING"></span>レガシ サポートし、id モーフィング
 
@@ -148,11 +148,11 @@ Windows 8 および Windows 8.1 の認定デバイスが古いプラットフォ
 
 ネイティブの Windows 8、Windows 8.1、および Windows 10 のクラス ドライバーをドライバーのインストールは必要ありませんので、大容量記憶装置のデバイスとして最初に公開自体の外部の USB デバイスの必要はありません。 Windows 8、Windows 8.1、および Windows 10 デバイスの id モーフィング、すぐにモバイル ブロード バンド デバイスとして表示するデバイスをトリガーする機能が含まれます。
 
-Id モーフィング ソリューションを開発する方法については、次を参照してください。 [ **IMbnDeviceService インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/hh780509)します。\]
+Id モーフィング ソリューションを開発する方法については、次を参照してください。 [ **IMbnDeviceService インターフェイス**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbndeviceservice)します。\]
 
 ### <a name="span-idfirmwareupdatesupportspanspan-idfirmwareupdatesupportspanspan-idfirmwareupdatesupportspanfirmware-update-support"></a><span id="Firmware_update_support"></span><span id="firmware_update_support"></span><span id="FIRMWARE_UPDATE_SUPPORT"></span>ファームウェア更新プログラムのサポート
 
-Windows Update を使用して、モバイル ブロード バンド デバイス ファームウェアを更新する必要があります。 これを実行する方法については、次を参照してください。[モバイル ブロード バンド デバイス ファームウェアの更新を Windows 8 で](https://msdn.microsoft.com/library/windows/hardware/dn423926)します。 お客様のエクスペリエンスに固有の構成は、モバイル ブロード バンド アプリを使用してプロビジョニングできます。
+Windows Update を使用して、モバイル ブロード バンド デバイス ファームウェアを更新する必要があります。 これを実行する方法については、次を参照してください。[モバイル ブロード バンド デバイス ファームウェアの更新を Windows 8 で](https://docs.microsoft.com/windows-hardware/drivers/network/mobile-broadband-device-firmware-update)します。 お客様のエクスペリエンスに固有の構成は、モバイル ブロード バンド アプリを使用してプロビジョニングできます。
 
 ### <a name="span-idoma-dmclientsupportspanspan-idoma-dmclientsupportspanspan-idoma-dmclientsupportspanoma-dm-client-support"></a><span id="OMA-DM_client_support"></span><span id="oma-dm_client_support"></span><span id="OMA-DM_CLIENT_SUPPORT"></span>OMA DM クライアントのサポート
 
@@ -168,7 +168,7 @@ Windows では、enterprise が BYOD のサポートからのモバイルのネ�
 
     -   モバイル ブロード バンド デバイスの製造元は、ネイティブにサポートされているソリューションが存在しない場合、そのネットワーク アダプターのファームウェアで統合するためのサード パーティ製の OMA DM クライアント ソリューションを提供することができます。
 
-    -   モバイル ブロード バンドのアプリを引き続き使用する必要があります[プロビジョニング メタデータ](https://msdn.microsoft.com/library/windows/apps/windows.networking.networkoperators.provisioningagent)オペレーティング システム固有のパラメーターを構成するときにします。
+    -   モバイル ブロード バンドのアプリを引き続き使用する必要があります[プロビジョニング メタデータ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)オペレーティング システム固有のパラメーターを構成するときにします。
 
 -   モバイル ブロード バンド アプリでの OMA DM クライアント:
 
@@ -176,7 +176,7 @@ Windows では、enterprise が BYOD のサポートからのモバイルのネ�
 
     -   このソリューションでは、モバイル ブロード バンド アプリによってデバイス固有のパラメーターを構成するために固有の演算子またはデバイスの製造元に固有のカスタム デバイス サービス サポートが必要です。
 
-    -   モバイル ブロード バンド アプリを含む、OMA DM クライアントを使用する必要があります[**プロビジョニング メタデータ**](https://msdn.microsoft.com/library/windows/apps/br207397)オペレーティング システム固有のパラメーターを構成するときにします。
+    -   モバイル ブロード バンド アプリを含む、OMA DM クライアントを使用する必要があります[**プロビジョニング メタデータ**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)オペレーティング システム固有のパラメーターを構成するときにします。
 
 ### <a name="span-idapnmanagementspanspan-idapnmanagementspanspan-idapnmanagementspanapn-management"></a><span id="APN_Management"></span><span id="apn_management"></span><span id="APN_MANAGEMENT"></span>APN の管理
 
@@ -198,7 +198,7 @@ APN データベースに関する詳細については、次を参照してく�
 
 特定の演算子は、モバイル ブロード バンド対応のシステムは、そのネットワークにロックする必要がありますまたはサービスの移植性のためにロックされているデバイスのロックを解除する要件があります。 このシナリオを有効にする OEM のですがとデバイスのベンダーを使用して、MBIM\_PIN\_Subsidy ロック MBIM 仕様の型のガイダンス。
 
-デバイスを報告する必要があります[ **WWAN\_準備\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff571226):。[**ReadyState**](https://msdn.microsoft.com/library/windows/hardware/ff571227)=**WwanReadyStateInitialized**このロックの状態とを報告しない**WwanReadyStateDeviceLocked**します。
+デバイスを報告する必要があります[ **WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_ready_info):。[**ReadyState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ne-wwan-_wwan_ready_state)=**WwanReadyStateInitialized**このロックの状態とを報告しない**WwanReadyStateDeviceLocked**します。
 
 **注**  デバイスでこの機能が実装されているかを検証する HCK テスト ケースがないか、システムは Windows で動作します。 MBOT 内の特定のフィルターを使用して最終製品をテストできることを確認するには、OEM と演算子に注目します。
 

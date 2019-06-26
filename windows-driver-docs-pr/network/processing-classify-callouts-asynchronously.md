@@ -9,26 +9,26 @@ keywords:
 - コールアウト WDK Windows フィルタ リング プラットフォームを分類する非同期処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17932ca1577d5817bc23c46c5f7359424751429b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98e6514bf71d95ab505cb073261c70d036c39647
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385483"
 ---
 # <a name="processing-classify-callouts-asynchronously"></a>分類コールアウトの非同期の処理
 
 
-WFP コールアウト ドライバーを承認または拒否のネットワーク操作または認めざるを得ませんまたはアクションの種類を返すことによって、ネットワーク パケットを破棄**FWP\_アクション\_許可**、 **FWP\_アクション\_続行**、または**FWP\_アクション\_ブロック**から、 [ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウト関数。 頻繁にコールアウト ドライバーが検査決定を返すことはできません、 *classifyFn*別に処理関数まで分類可能なフィールド、メタデータ、またはパケットをなど、指定された情報を転送できますユーザー モード アプリケーションなどのコンポーネント。 このような場合、意思決定が後で非同期に実行する必要があります。
+WFP コールアウト ドライバーを承認または拒否のネットワーク操作または認めざるを得ませんまたはアクションの種類を返すことによって、ネットワーク パケットを破棄**FWP\_アクション\_許可**、 **FWP\_アクション\_続行**、または**FWP\_アクション\_ブロック**から、 [ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数。 頻繁にコールアウト ドライバーが検査決定を返すことはできません、 *classifyFn*別に処理関数まで分類可能なフィールド、メタデータ、またはパケットをなど、指定された情報を転送できますユーザー モード アプリケーションなどのコンポーネント。 このような場合、意思決定が後で非同期に実行する必要があります。
 
 ### <a name="general-rules-for-asynchronous-processing"></a>非同期処理のための一般的な規則
 
 WFP の非同期処理をサポートしている、 *classifyFn*コールアウト関数。 ただし、これを行うためのメカニズムは、さまざまな層によって異なります。
 
-<a href="" id="asynchronous-ale-classify-------"></a>**非同期 ALE を分類します。**   
-コールアウト ドライバーを呼び出す必要があります、 [ **FwpsPendOperation0** ](https://msdn.microsoft.com/library/windows/hardware/ff551199)関数*classifyFn*します。 呼び出して、非同期操作を完了する必要があります、 [ **FwpsCompleteOperation0** ](https://msdn.microsoft.com/library/windows/hardware/ff551152)関数。
+<a href="" id="asynchronous-ale-classify-------"></a>**非同期 ALE を分類します。**    
+コールアウト ドライバーを呼び出す必要があります、 [ **FwpsPendOperation0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpspendoperation0)関数*classifyFn*します。 呼び出して、非同期操作を完了する必要があります、 [ **FwpsCompleteOperation0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscompleteoperation0)関数。
 
-<a href="" id="asynchronous-packet-classify-------"></a>**非同期のパケットを分類します。**   
+<a href="" id="asynchronous-packet-classify-------"></a>**非同期のパケットを分類します。**    
 コールアウト ドライバーを返す必要があります**FWP\_アクション\_ブロック**から、 *classifyFn*関数で、 **FWPS\_分類\_OUT\_フラグ\_吸収**フラグを設定します。 ネットワーク パケットは、複製または参照する必要があります。 複製または変更されたパケットを reinjecting いずれかまたはサイレント モードで、パケット破棄することによって、非同期操作が完了します。
 
 <a href="" id="asynchronous-ale-classify-that-includes-packets-------"></a>**非同期 ALE を分類するパケットが含まれます**   
@@ -36,7 +36,7 @@ WFP の非同期処理をサポートしている、 *classifyFn*コールアウ
 
 ### <a name="special-cases-and-considerations"></a>特殊なケースと考慮事項
 
-<a href="" id="ale-connect-vs--receive-accept-layers-------"></a>**ALE Connect vs します。レイヤーの表示と同意します。**   
+<a href="" id="ale-connect-vs--receive-accept-layers-------"></a>**ALE Connect vs します。レイヤーの表示と同意します。**    
 ときに**FwpsCompleteOperation0** 、保留を完了するために呼び出される、ALE での操作の分類層の接続 (**FWPS\_レイヤー\_ALE\_AUTH\_の接続\_V4**または**FWPS\_レイヤー\_ALE\_AUTH\_CONNECT\_V6**)、ALE の再認証操作の分類にトリガーされる、それぞれの ALE では、レイヤーを接続します。 コールアウト ドライバーは、検査を返す必要がありますこの再認証から意思決定は、操作を分類します。 エールを検出する再認証を確認して操作を分類するかどうか、 **FWP\_条件\_フラグ\_IS\_再認証**フラグを設定します。
 
 コールアウト ドライバーは、各保留 ALE の一意の状態を維持する必要があります\_AUTH\_接続などの操作の分類の各を決定する検査が操作を分類方法を中に検索することができます、 **FwpsCompleteOperation0**-再認証をトリガーします。 パケットが参照されているまたは保留 ALE 中にクローンかどうか\_AUTH\_接続 (たとえば、非 TCP 接続の場合)、操作の分類、再認証が行われた後、れることができます。
@@ -55,7 +55,7 @@ ALE でその受信と送信パケットを再承認することができます�
 コールアウト ドライバーでは、ALE 分類で、受信処理を必要とするパケットの非同期処理は実行する必要があります (受信) のトランスポート層 (**FWPS\_レイヤー\_受信\_トランスポート\_V4**または**FWPS\_レイヤー\_受信\_トランスポート\_V6**)。 これを行うと干渉フローを作成できます。 WFP を呼び出すと、 *classifyFn*コールアウト関数に設定する受信トランスポート層で、 **FWPS\_メタデータ\_フィールド\_ALE\_分類\_必要な**ALE を必要とするこれらのパケット処理の分類のフラグを設定します。 コールアウト ドライバーは、受信からこのようなパケットを許可する必要があります\_トランスポート層とエールに到達するまで処理を延期する必要があります\_RECV\_ACCEPT レイヤー。
 
 <a href="" id="stream-layers-------"></a>**ストリーム レイヤー**   
-ストリーム レイヤーで (**FWPS\_レイヤー\_ストリーム\_V4**または**FWPS\_レイヤー\_ストリーム\_V6**)、TCP データ セグメントIP アドレスまたは TCP ヘッダーの代わりに示されます。 ストリーム レイヤーは 1 回の呼び出しで net バッファー リストのチェーンを示すことができますも、 *classifyFn*コールアウト関数。 WFP は、使用可能な特殊化された複製および挿入関数、 [ **FwpsCloneStreamData0** ](https://msdn.microsoft.com/library/windows/hardware/ff551149)と[ **FwpsStreamInjectAsync0**](https://msdn.microsoft.com/library/windows/hardware/ff551213)の使用するレイヤーの吹き出しをストリームします。
+ストリーム レイヤーで (**FWPS\_レイヤー\_ストリーム\_V4**または**FWPS\_レイヤー\_ストリーム\_V6**)、TCP データ セグメントIP アドレスまたは TCP ヘッダーの代わりに示されます。 ストリーム レイヤーは 1 回の呼び出しで net バッファー リストのチェーンを示すことができますも、 *classifyFn*コールアウト関数。 WFP は、使用可能な特殊化された複製および挿入関数、 [ **FwpsCloneStreamData0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsclonestreamdata0)と[ **FwpsStreamInjectAsync0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)の使用するレイヤーの吹き出しをストリームします。
 
 ストリーム レイヤーのデータの順次配送性質上、コールアウト ドライバー引き続きクローンを作成し、時間の長い、ストリーム データは引き続きデータを吸収する必要が保留中です。 指定したストリームのフローの操作を非同期と同期を混在させると、未定義の動作が発生することができます。
 

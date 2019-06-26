@@ -10,12 +10,12 @@ keywords:
 - SCSI ミニポート ドライバー WDK のストレージの初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92c3eac06cffafee1101168a74eb86a21c053e02
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17604ae71fda2cf03e48acad0d344b8e31b5e6c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368724"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386491"
 ---
 # <a name="scsi-miniport-initialization-under-plug-and-play"></a>プラグ アンド プレイでの SCSI ミニポートの初期化
 
@@ -23,7 +23,7 @@ ms.locfileid: "63368724"
 ## <span id="ddk_scsi_miniport_initialization_under_plug_and_play_kg"></span><span id="DDK_SCSI_MINIPORT_INITIALIZATION_UNDER_PLUG_AND_PLAY_KG"></span>
 
 
-Windows 2000 以降では、従来のミニポート ドライバーが Microsoft Windows NT 4.0 の場合とまったく同じ方法で初期化されます。 従来のミニポート ドライバーを呼び出すと[ **ScsiPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff564645)、ポート ドライバー呼び出しミニポート ドライバーを見つけてその HBA を初期化します。 これは、各 hba (、HBA が列挙可能なバス上にある場合) が見つかるまたは繰り返しミニポート ドライバーは、他のデバイスが見つからないことを報告するまでに実行されます。 ミニポート ドライバーの返しますの制御[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff552654)ミニポート ドライバーを呼び出すことができます、ルーチン**ScsiPortInitialize**別の種類 (の HBA の用にもう一度別のインターフェイスまたはなど、さまざまなベンダーと製品 ID)。 ミニポート ドライバーのコンテキストで行われるすべての初期化呼び出し**DriverEntry**ルーチンとは、順序で作成する**ScsiPortInitialize**が呼び出されました。 従来のドライバーの初期化には、システムの起動時とその他のことはありませんが発生します。
+Windows 2000 以降では、従来のミニポート ドライバーが Microsoft Windows NT 4.0 の場合とまったく同じ方法で初期化されます。 従来のミニポート ドライバーを呼び出すと[ **ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)、ポート ドライバー呼び出しミニポート ドライバーを見つけてその HBA を初期化します。 これは、各 hba (、HBA が列挙可能なバス上にある場合) が見つかるまたは繰り返しミニポート ドライバーは、他のデバイスが見つからないことを報告するまでに実行されます。 ミニポート ドライバーの返しますの制御[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ミニポート ドライバーを呼び出すことができます、ルーチン**ScsiPortInitialize**別の種類 (の HBA の用にもう一度別のインターフェイスまたはなど、さまざまなベンダーと製品 ID)。 ミニポート ドライバーのコンテキストで行われるすべての初期化呼び出し**DriverEntry**ルーチンとは、順序で作成する**ScsiPortInitialize**が呼び出されました。 従来のドライバーの初期化には、システムの起動時とその他のことはありませんが発生します。
 
 プラグ アンド プレイでは、初期化の順序を保持することはできません。 プラグ アンド プレイの呼び出しが有効になっているミニポート ドライバーと**ScsiPortInitialize**、ポート ドライバーは、今後の参考として初期化データを保存し、ステータスを返します\_成功します。 ミニポート ドライバーの記載されているインターフェイスの種類ごとにこれは、 **PnPInterface** --すべてのインターフェイスのレジストリ キー*いない*そのキーに示されてはすぐに初期化もします。
 
@@ -33,7 +33,7 @@ Windows 2000 以降では、従来のミニポート ドライバーが Microsof
 
 プラグ アンド プレイ ドライバーが nonenumerable バス上にあるデバイスを検出するために求められる場合が、開始されたミニポート ドライバー。 これには、ミニポート ドライバーの問題の HBA を検索するバスにコマンドを必要とするバス ISA などが含まれます。 このような検出中にあるデバイスはレジストリに記録し、次回システムを起動するときにプラグ アンド プレイ デバイスとして初期化します。
 
-プラグ アンド プレイの詳細については、次を参照してください。[プラグ アンド プレイ](https://msdn.microsoft.com/library/windows/hardware/ff547125)します。
+プラグ アンド プレイの詳細については、次を参照してください。[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)します。
 
  
 

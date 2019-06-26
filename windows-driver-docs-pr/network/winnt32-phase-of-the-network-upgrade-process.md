@@ -8,12 +8,12 @@ keywords:
 - Winnt32 フェーズ WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0298b9c63779032a3d3fb80fd2fbef8c3d850aea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 583135f196a4e8adb3179a3e7660e423f5ae0322
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384699"
 ---
 # <a name="winnt32-phase-of-the-network-upgrade-process"></a>ネットワーク アップグレード プロセスの Winnt32 フェーズ
 
@@ -53,9 +53,9 @@ NetSetup には、次のように、応答ファイルが生成されます。
 
 2.  組み込みのアップグレードのサポートがない各ネットワーク コンポーネント NetSetup はコンポーネントの netmap.inf ファイルのファイルを読み取ります。 Netmap.inf ファイルのファイルは、アップグレードされたオペレーティング システムに対応する ID に、アップグレード前のデバイス、ハードウェア、またはネットワーク コンポーネントの互換性のある ID をマップします。 NetSetup がアップグレード前の id レジストリから読み取ることがネットワーク コンポーネントのアップグレード前の ID と一致するかどうか、 **OemNetAdapters**、 **OemNetProtocols**、 **OemNetServices**、または**OemAsyncAdapters** NetSetup、netmap.inf ファイルのファイルのセクションは、応答ファイルをコンポーネントのベンダーが提供情報を書き込みます。
 
-3.  コンポーネントのデバイスのオペレーティング システム、ハードウェア、または互換性 ID を使用して、NetSetup を読み取り、 **OemUpgradeSupport**ネットワーク移行を DLL の読み込みを決定する netmap.inf ファイルのファイルのセクション。 NetSetup を読み込みネットワーク移行 DLL、DLL の呼び出す[ **PreUpgradeInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff562439)関数。 **PreUpgradeInitialize**関数が DLL に自体を初期化するために使用する情報を提供します。
+3.  コンポーネントのデバイスのオペレーティング システム、ハードウェア、または互換性 ID を使用して、NetSetup を読み取り、 **OemUpgradeSupport**ネットワーク移行を DLL の読み込みを決定する netmap.inf ファイルのファイルのセクション。 NetSetup を読み込みネットワーク移行 DLL、DLL の呼び出す[ **PreUpgradeInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562439(v=vs.85))関数。 **PreUpgradeInitialize**関数が DLL に自体を初期化するために使用する情報を提供します。
 
-4.  NetSetup 呼び出し、DLL の[ **DoPreUpgradeProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff545634) DLL のネットワークの移行でサポートされている各ネットワーク コンポーネントに対して 1 回の関数。 **DoPreUpgradeProcessing**レジストリおよび呼び出しから、ネットワーク コンポーネントのアップグレード前のパラメーターの値を読み取り、 [ **NetUpgradeAddSection** ](https://msdn.microsoft.com/library/windows/hardware/ff559063)と[ **NetUpgradeAddLineToSection** ](https://msdn.microsoft.com/library/windows/hardware/ff559059)関数には他のコンポーネントに固有の情報と共に、これらのパラメーターを応答ファイルに書き込めません。 **DoPreUpgradeProcessing**応答ファイルに適切なエントリを加えることによって、preupgraded コンポーネントに関連付けられているバイナリ データを移行することができます。
+4.  NetSetup 呼び出し、DLL の[ **DoPreUpgradeProcessing** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545634(v=vs.85)) DLL のネットワークの移行でサポートされている各ネットワーク コンポーネントに対して 1 回の関数。 **DoPreUpgradeProcessing**レジストリおよび呼び出しから、ネットワーク コンポーネントのアップグレード前のパラメーターの値を読み取り、 [ **NetUpgradeAddSection** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559063(v=vs.85))と[ **NetUpgradeAddLineToSection** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559059(v=vs.85))関数には他のコンポーネントに固有の情報と共に、これらのパラメーターを応答ファイルに書き込めません。 **DoPreUpgradeProcessing**応答ファイルに適切なエントリを加えることによって、preupgraded コンポーネントに関連付けられているバイナリ データを移行することができます。
 
 5.  応答ファイルが完全に生成されると、NetSetup は適切なディレクトリにベンダーから提供されたアップグレード ファイルをコピーし、アップグレード プロセスのテキスト モードのフェーズにブートされます。
 

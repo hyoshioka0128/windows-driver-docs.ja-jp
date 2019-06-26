@@ -4,12 +4,12 @@ description: このセクションでは、NVGRE で Large Send Offload (LSO) �
 ms.assetid: 1EB1B8C2-85C1-4256-BE96-C8B9F1D222B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 833c4ca772178774ad31b040effd5e41183400fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11639cc8b14819bc90107f57fe8e664b433d4a86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381164"
 ---
 # <a name="supporting-nvgre-in-large-send-offload-lso"></a>Large Send Offload (LSO) での NVGRE のサポート
 
@@ -20,22 +20,22 @@ NDIS 6.30 (Windows Server 2012) が導入されています[Network Virtualizati
 
  
 
-場合[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957).**IsEncapsulatedPacket**は**TRUE**と**TcpIpChecksumNetBufferListInfo**アウト オブ バンド (OOB) の情報が有効でこれを示すその NVGREサポートが必要ですし、NIC は、次の条件と、NVGRE でフォーマットされたパケットの LSOV2 オフロードを実行する必要があります。
+場合[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**IsEncapsulatedPacket**は**TRUE**と**TcpIpChecksumNetBufferListInfo**アウト オブ バンド (OOB) の情報が有効でこれを示すその NVGREサポートが必要ですし、NIC は、次の条件と、NVGRE でフォーマットされたパケットの LSOV2 オフロードを実行する必要があります。
 
--   値のみ、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882).**LsoV2Transmit**構造が無効です。 NIC とミニポート ドライバーが必要があります内の値を参照していません、 **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**.**LsoV1Transmit**構造体。
--   [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882).**LsoV2Transmit**.**TcpHeaderOffset**メンバーに適切なオフセット値がないと、NIC またはミニポート ドライバーでは使用しないでください。
+-   値のみ、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**構造が無効です。 NIC とミニポート ドライバーが必要があります内の値を参照していません、 **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**.**LsoV1Transmit**構造体。
+-   [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**.**TcpHeaderOffset**メンバーに適切なオフセット値がないと、NIC またはミニポート ドライバーでは使用しないでください。
 
 LSOV2 で NVGRE をサポートするには、プロトコルとフィルター ドライバーは、次の変更を加える必要があります。
 
--   削減、 **MSS**値、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882).**LsoV2Transmit**新しい GRE ヘッダーに対応する構造体。
+-   削減、 **MSS**値、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit**新しい GRE ヘッダーに対応する構造体。
 -   送信 TCP ペイロードの長さの短縮ができない可能性があるダウン**MSS**値。
--   調整、 **InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset**値、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957) GRE に対応する構造体ヘッダー。
+-   調整、 **InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset**値、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info) GRE に対応する構造体ヘッダー。
 
-Nic とミニポート ドライバーを使用して、可能性があります、 **InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset** で提供される値[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957)構造体。 NIC またはミニポート ドライバーでは、トンネル (外部) の IP ヘッダーまたはこれらのオフセットを検証する後続のヘッダーで、必要なヘッダーのチェックを実行できます。
+Nic とミニポート ドライバーを使用して、可能性があります、 **InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**、および**TcpHeaderRelativeOffset** で提供される値[ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)構造体。 NIC またはミニポート ドライバーでは、トンネル (外部) の IP ヘッダーまたはこれらのオフセットを検証する後続のヘッダーで、必要なヘッダーのチェックを実行できます。
 
-ミニポート ドライバーは、ケースを処理する必要があります、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_]ボックスの一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj991957).**InnerFrameOffset**パケットの先頭よりも、別のスキャッター/ギャザー リストがあります。 すべてのカプセル化の先頭に追加されたヘッダー (ETH、IP、GRE) が物理的に連続できるようになり、パケットの最初の MDL になります、プロトコルのドライバーが保証されます。
+ミニポート ドライバーは、ケースを処理する必要があります、 [ **NDIS\_TCP\_送信\_オフロード\_補助的な\_NET\_バッファー\_ボックスの一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info).**InnerFrameOffset**パケットの先頭よりも、別のスキャッター/ギャザー リストがあります。 すべてのカプセル化の先頭に追加されたヘッダー (ETH、IP、GRE) が物理的に連続できるようになり、パケットの最初の MDL になります、プロトコルのドライバーが保証されます。
 
-プロトコルとフィルター ドライバーは、TCP ペイロード長さの合計が、制限の倍数であることを確認しない**MSS**値。 このため、ミニポート ドライバーと Nic は、トンネル (外部) の IP ヘッダーを更新する必要があります。 Nic がに基づいて、削減できるだけ多くのフル サイズのセグメントを生成する必要が**MSS**値、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567882).**LsoV2Transmit** OOB 情報。 1 つだけ sub -**MSS**セグメントを生成することが LSOv2 送信ごと。
+プロトコルとフィルター ドライバーは、TCP ペイロード長さの合計が、制限の倍数であることを確認しない**MSS**値。 このため、ミニポート ドライバーと Nic は、トンネル (外部) の IP ヘッダーを更新する必要があります。 Nic がに基づいて、削減できるだけ多くのフル サイズのセグメントを生成する必要が**MSS**値、 [ **NDIS\_TCP\_LARGE\_送信\_オフロード\_NET\_バッファー\_一覧\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info).**LsoV2Transmit** OOB 情報。 1 つだけ sub -**MSS**セグメントを生成することが LSOv2 送信ごと。
 
 ミニポート ドライバーでは、次の操作を行う必要があります。
 

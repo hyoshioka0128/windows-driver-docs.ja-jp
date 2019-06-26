@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 37188d6581a3cd62249f55d2f9473577c42c09df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b98c362419475bc1f3b886e2da75f8bf88f0546
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387019"
 ---
 # <a name="kscategorymicrophonearrayprocessor"></a>KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
 
 
-KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 機能のカテゴリを処理するマイク配列から入力します。
+KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 機能のカテゴリを処理するマイク配列から入力します。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR[デバイス インターフェイス ク�
 
 KS デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 機能カテゴリをサポートすることを示す KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR のインスタンスを登録します。
 
-オーディオ デバイスの機能のカテゴリの詳細については、次を参照してください[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)と[ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://msdn.microsoft.com/library/windows/hardware/ff565799) .
+オーディオ デバイスの機能のカテゴリの詳細については、次を参照してください[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)と[ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories) .
 
 Windows Vista のマイク配列を処理する方法の詳細についてを参照してください、 [Windows Vista でのマイク配列サポート](https://go.microsoft.com/fwlink/p/?linkid=120592)と[方法の構築および Windows Vista のマイク配列を使用して](https://go.microsoft.com/fwlink/p/?linkid=120593)ホワイト ペーパー。
 
@@ -83,7 +83,7 @@ Windows Vista のマイク配列を処理する方法の詳細についてを参
 ## <a name="see-also"></a>関連項目
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://msdn.microsoft.com/library/windows/hardware/ff565799)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
 
  
 

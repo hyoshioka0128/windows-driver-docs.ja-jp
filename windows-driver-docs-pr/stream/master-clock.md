@@ -12,12 +12,12 @@ keywords:
 - 時間の WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d23dc4318f5cbebb44d6009b17581009cbb368
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d46beaa0a86bab16a8cce854408dc1ea6af18fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375592"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386638"
 ---
 # <a name="master-clock"></a>マスター クロック
 
@@ -29,7 +29,7 @@ DVD デコーダーのミニドライバーは、指定したストリームが�
 
 *HwClockFunction*メンバー時計の情報への呼び出しを処理する DVD デコーダー ミニドライバー ルーチンへのポインターに設定されます。 ときに、ルーチンが設定、SRB\_オープン\_マスター クロック ストリームのストリームの呼び出しを受信します。 これは、ストリームがシステムのマスター クロックをすることのできることを示します。
 
-*ClockSupportFlags*のメンバー、 [ **HW\_クロック\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff559671)構造体は、次の値のいずれかに設定します。
+*ClockSupportFlags*のメンバー、 [ **HW\_クロック\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_clock_object)構造体は、次の値のいずれかに設定します。
 
 <a href="" id="clock-support-can-set-onboard-clock"></a>クロック\_サポート\_できます\_設定\_オペレーション インサイト理解\_クロック  
 デバイスは任意の値をオンボードのクロック時間を変更することができますを示します。

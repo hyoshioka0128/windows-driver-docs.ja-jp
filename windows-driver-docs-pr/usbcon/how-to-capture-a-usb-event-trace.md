@@ -3,12 +3,12 @@ Description: このトピックでは、イベント トレース、Logman ツ�
 title: Logman を使用して USB イベント トレースをキャプチャする方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cb23adec030ad43785acdc47776ef3d0eb6e182
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25423709e7baf468dd4a410dd4ace31cdeb60ef8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381039"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386259"
 ---
 # <a name="how-to-capture-a-usb-event-trace-with-logman"></a>Logman を使用して USB イベント トレースをキャプチャする方法
 
@@ -115,7 +115,7 @@ ETW のキーワードをなどに注意してください**既定**と**Partial
 </tr>
 <tr class="even">
 <td><p><strong>FullDataBusTrace</strong></p></td>
-<td><p>すべての USB 転送イベントを表示し、最大 4 KB の一括、割り込み、およびコントロールの転送のバスのデータを保存します。 最初のチェーンの MDL バッファーのみがログに記録されるに注意してください。 アイソクロナス bus データがログに記録されません (ただし、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff540414" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540414)"> <strong>URB_ISOCH_TRANSFER</strong> </a>要求の構造を保存) します。 詳細については、次を参照してください。<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">を送信する方法のチェーン MDLs</a>と<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">USB アイソクロナス エンドポイントにデータを転送する方法</a>します。</p></td>
+<td><p>すべての USB 転送イベントを表示し、最大 4 KB の一括、割り込み、およびコントロールの転送のバスのデータを保存します。 最初のチェーンの MDL バッファーのみがログに記録されるに注意してください。 アイソクロナス bus データがログに記録されません (ただし、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer)"> <strong>URB_ISOCH_TRANSFER</strong> </a>要求の構造を保存) します。 詳細については、次を参照してください。<a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">を送信する方法のチェーン MDLs</a>と<a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">USB アイソクロナス エンドポイントにデータを転送する方法</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>HWVerifyHost</strong></p></td>
@@ -169,7 +169,7 @@ Netmon フィルターの詳細については、「USB Netmon フィルター�
 ## <a name="related-topics"></a>関連トピック
 [USB の ETW を使用してください。](using-usb-etw.md)  
 [Windows のイベント トレースは USB](usb-event-tracing-for-windows.md)  
-[イベントの種類を分類に使用されるキーワードを定義します。](https://msdn.microsoft.com/library/windows/desktop/dd996915)  
+[イベントの種類を分類に使用されるキーワードを定義します。](https://docs.microsoft.com/windows/desktop/WES/defining-keywords-used-to-classify-types-of-events)  
 
 
 

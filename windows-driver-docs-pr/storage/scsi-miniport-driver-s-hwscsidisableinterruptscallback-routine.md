@@ -8,12 +8,12 @@ keywords:
 - WDK SCSI を中断します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6713a8cf8932467aec5c612c9f6b826a9520fb0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c1c13987a6f392e94bc0ea22ec212ef4289a05e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339897"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384323"
 ---
 # <a name="scsi-miniport-drivers-hwscsidisableinterruptscallback-routine"></a>SCSI ミニポート ドライバーの HwScsiDisableInterruptsCallback ルーチン
 
@@ -21,7 +21,7 @@ ms.locfileid: "63339897"
 ## <span id="ddk_scsi_miniport_drivers_hwscsidisableinterruptscallback_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIDISABLEINTERRUPTSCALLBACK_ROUTINE_KG"></span>
 
 
-[ **HwScsiDisableInterruptsCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff557288)ルーチンは、次を行う必要があります。
+[ **HwScsiDisableInterruptsCallback** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557288(v=vs.85))ルーチンは、次を行う必要があります。
 
 -   HBA からの割り込みを再度有効にします。
 

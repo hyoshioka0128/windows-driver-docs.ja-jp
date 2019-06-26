@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 88003a671cda4c63eb9f076d50cd068fdb2990a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 601fcc7aafa24d14c16a14beeaaeccbc9e94f20f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377330"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384259"
 ---
 # <a name="kscategorybdareceivercomponent"></a>KSCATEGORY_BDA_RECEIVER_COMPONENT
 
 
-KSCATEGORY_BDA_RECEIVER_COMPONENT[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) で受信側の機能のカテゴリ、[ブロードキャストのドライバーのアーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff556573) (性 BDA)。
+KSCATEGORY_BDA_RECEIVER_COMPONENT[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) で受信側の機能のカテゴリ、[ブロードキャストのドライバーのアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index) (性 BDA)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_BDA_RECEIVER_COMPONENT[デバイス インターフェイス クラ�
 
 BDA デバイス用のドライバーでは、オペレーティング システムに、デバイスが BDA 受信者フィルターをサポートすることを示す KSCATEGORY_BDA_RECEIVER_COMPONENT のインスタンスを登録します。
 
-KS 機能のカテゴリの詳細についての BDA 受信者フィルターを参照してください[一般的なコントロールのノードとフィルター](https://msdn.microsoft.com/library/windows/hardware/ff557718)、 [BDA ミニドライバーを開始](https://msdn.microsoft.com/library/windows/hardware/ff568223)、および[BDA フィルター カテゴリ Guid。](https://msdn.microsoft.com/library/windows/hardware/ff556521).
+KS 機能のカテゴリの詳細についての BDA 受信者フィルターを参照してください[一般的なコントロールのノードとフィルター](https://docs.microsoft.com/windows-hardware/drivers/stream/common-control-nodes-and-filters)、 [BDA ミニドライバーを開始](https://docs.microsoft.com/windows-hardware/drivers/stream/starting-a-bda-minidriver)、および[BDA フィルター カテゴリ Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
 
 <a name="requirements"></a>要件
 ------------

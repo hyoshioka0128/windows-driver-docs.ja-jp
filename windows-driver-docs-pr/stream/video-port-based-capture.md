@@ -10,17 +10,17 @@ keywords:
 - 拡張機能のビデオ ポート WDK ビデオのキャプチャします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bec787061ae76a6434423eb1920d46509135102
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 839f5f95264526de19bdf4e593d417a066af3dea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359637"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385376"
 ---
 # <a name="video-port-based-capture"></a>ビデオ ポートベースのキャプチャ
 
 
-ビデオ ポートに基づいてキャプチャ デバイスには、ビデオ ポート マネージャーに接続するビデオ ポート pin を提供する必要があります。 ビデオ ポートの暗証番号 (pin) は、CPU や周辺機器のコンポーネントの相互接続 (PCI) バスのオーバーヘッドなし、プレビュー ストリームを表示する、ハードウェア ベースのトランスポートを使用できます。 別々 の pin がキャプチャ機能を提供します (たとえば、ときにキャプチャされたビデオ書き込む必要があるディスクに)。 キャプチャ中に、キャプチャ バッファーは、ディスプレイ ドライバー、バス マスターによってバッファーに設定するに提供されます。 このセクションで後で、さらに詳細にキャプチャ ミニドライバーとディスプレイ ドライバー間のやり取りが説明されている[カーネル モードのビデオ トランスポート](https://msdn.microsoft.com/library/windows/hardware/ff568180)します。
+ビデオ ポートに基づいてキャプチャ デバイスには、ビデオ ポート マネージャーに接続するビデオ ポート pin を提供する必要があります。 ビデオ ポートの暗証番号 (pin) は、CPU や周辺機器のコンポーネントの相互接続 (PCI) バスのオーバーヘッドなし、プレビュー ストリームを表示する、ハードウェア ベースのトランスポートを使用できます。 別々 の pin がキャプチャ機能を提供します (たとえば、ときにキャプチャされたビデオ書き込む必要があるディスクに)。 キャプチャ中に、キャプチャ バッファーは、ディスプレイ ドライバー、バス マスターによってバッファーに設定するに提供されます。 このセクションで後で、さらに詳細にキャプチャ ミニドライバーとディスプレイ ドライバー間のやり取りが説明されている[カーネル モードのビデオ トランスポート](https://docs.microsoft.com/windows-hardware/drivers/display/kernel-mode-video-transport)します。
 
 Microsoft Windows 98 SE または Windows 2000 を実行するシステムで、オーバーレイ Mixer フィルター (以降のオペレーティング システムでのビデオ ポート マネージャー フィルターの一部) は、セカンダリのモニターでビデオ ポートの接続をサポートしません。 この場合、暗証番号 (pin) の接続は失敗します。 セカンダリのモニターでビデオ ポート接続は、Windows Millennium Edition (Windows Me) および Windows XP を実行するシステムでサポートされます。
 
@@ -30,19 +30,19 @@ Microsoft Windows 98 SE または Windows 2000 を実行するシステムで、
 
 ![vpvbi と vbi キャプチャの別々 のパスを示す図](images/video-port-capture.gif)
 
-この種類のフィルターのグラフに固有のプロパティ セットは[KSPROPSETID\_VPConfig と KSPROPSETID\_VPVBIConfig](https://msdn.microsoft.com/library/windows/hardware/ff566703)と[PROPSETID\_アロケーター\_コントロール](https://msdn.microsoft.com/library/windows/hardware/ff567792)します。
+この種類のフィルターのグラフに固有のプロパティ セットは[KSPROPSETID\_VPConfig と KSPROPSETID\_VPVBIConfig](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-vpconfig-and-kspropsetid-vpvbiconfig)と[PROPSETID\_アロケーター\_コントロール](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-allocator-control)します。
 
 ### <a name="using-the-video-port-extensions-vpes"></a>ビデオ ポート拡張 (VPEs) を使用します。
 
 **注:** 次の段落の前に次のバージョンの Windows Vista オペレーティング システムにのみ適用されます。 ディスプレイ ドライバーが、新しい Windows Vista ドライバー表示 Model (LDDM) を使用している場合、Windows Vista で VPE が無効です。
 
-ビデオ キャプチャ ミニドライバーが使用できる、 [ **DxApi** ](https://msdn.microsoft.com/library/windows/hardware/ff557364)キャプチャをキャプチャ間のビデオ ポート バス間で転送するビデオのストリーミング ビデオのミニポート ドライバーとの通信に関数ハードウェアとディスプレイ ハードウェア。 ストリームは、NTSC、PAL、SECAM、ビデオの連続したフィールドで構成され、帰線消去 (VBI) とタイムコード (水平方向の同期と垂直方向の同期) のデータを含めることができます。 ビデオ ストリーム特性を含むディメンション、色の書式、頻度、スケーリング、および、トリミングが VPE DirectDraw インターフェイスからユーザー モードで構成されます。 ストリーミングが開始した後**DxApi**が個々 のフレームをキャプチャするカーネル モードで呼び出されます。 解像度または全画面表示のコマンド プロンプトとの間の切り替えの変更など、表示の変更をサポートするためには、ビデオのキャプチャがこのような表示に対応するため、ミニドライバーはビデオのミニポート ドライバーを使用した登録もする必要がありますは、イベントを変更します。
+ビデオ キャプチャ ミニドライバーが使用できる、 [ **DxApi** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxapi/nf-dxapi-dxapi)キャプチャをキャプチャ間のビデオ ポート バス間で転送するビデオのストリーミング ビデオのミニポート ドライバーとの通信に関数ハードウェアとディスプレイ ハードウェア。 ストリームは、NTSC、PAL、SECAM、ビデオの連続したフィールドで構成され、帰線消去 (VBI) とタイムコード (水平方向の同期と垂直方向の同期) のデータを含めることができます。 ビデオ ストリーム特性を含むディメンション、色の書式、頻度、スケーリング、および、トリミングが VPE DirectDraw インターフェイスからユーザー モードで構成されます。 ストリーミングが開始した後**DxApi**が個々 のフレームをキャプチャするカーネル モードで呼び出されます。 解像度または全画面表示のコマンド プロンプトとの間の切り替えの変更など、表示の変更をサポートするためには、ビデオのキャプチャがこのような表示に対応するため、ミニドライバーはビデオのミニポート ドライバーを使用した登録もする必要がありますは、イベントを変更します。
 
 VPEs と**DxApi** DirectDraw DDI DirectX 5.0 に導入された関数。 **DxApi** Windows 2000 以降のオペレーティング システムでビデオのミニポート ドライバーでサポートされています。 仮想表示ミニポート ドライバー (miniVDD) サポート**DxApi** Windows 98 と Windows Me オペレーティング システム。 使用して有効にするカーネル モードのビデオ トランスポート**DxApi**、WDM ビデオ キャプチャのミニドライバーを含める必要があります、 *ddkmapi.h* (DirectDraw カーネル モードの API) のヘッダー ファイルとリンク、 *dxapi.lib*ライブラリ。 **DxApi**ライブラリによってエクスポートされた機能を使用して*dxapi.sys*します。 *DxApi.sys*のみ DirectDraw が読み込まれるときにためには**DxApi** DirectDraw DDI に VPEs の一部です。
 
 **DxApi**によって公開される 1 つのカーネル モード API は、 *DxApi.sys*します。 ビデオ ポート拡張機能は、ユーザー モード API によって公開される*DDraw.dll*します。 ビデオ キャプチャ ミニドライバーをいくつかの別の呼び出しを行う必要があります**DxApi**セットアップを正しくストリームするビデオ ポート ハードウェアを構成します。
 
-**DxApi**は 1 つの関数を複数の関数の識別子をカプセル化します。 ミニドライバーは、最初の引数に必要な関数の識別子を渡す**DxApi**します。 残りの引数**DxApi**は、関数識別子およびバッファーの長さに対応する構造体のミニドライバーに割り当てられたバッファー。 関数は、入力と出力バッファーの形式とサイズの動作は、指定された関数の識別子に依存します。 この動作が記載されて[DxApi 関数と識別子](https://msdn.microsoft.com/library/windows/hardware/ff557393)します。
+**DxApi**は 1 つの関数を複数の関数の識別子をカプセル化します。 ミニドライバーは、最初の引数に必要な関数の識別子を渡す**DxApi**します。 残りの引数**DxApi**は、関数識別子およびバッファーの長さに対応する構造体のミニドライバーに割り当てられたバッファー。 関数は、入力と出力バッファーの形式とサイズの動作は、指定された関数の識別子に依存します。 この動作が記載されて[DxApi 関数と識別子](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 WDK を実装する方法を示す 2 つのサンプル ドライバーを提供する、 **DxApi**機能します。 ATIWDM サンプルには、動作に存在する特定のハードウェアが必要です。 TestCap サンプルは、ハードウェアとすべてのプラットフォームの動作には必要ありません。 GraphEdt ツールを使用して、いずれかのサンプルと対話することができます。
 

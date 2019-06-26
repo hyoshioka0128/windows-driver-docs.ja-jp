@@ -4,45 +4,45 @@ description: 自動項目でサポートされる WIA のプロパティ
 ms.assetid: 71b3a9ea-e402-4be8-9c62-9463e2a10f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 995920193026fc1f5702cb4fe42ba27da6c2697b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a2d45a16ba6038bd941c7070c867782b11eca6e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352682"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355172"
 ---
 # <a name="wia-properties-supported-by-an-auto-item"></a>自動項目でサポートされる WIA のプロパティ
 
 
-[自動項目](auto-item.md)を表す、[スキャンの自動構成](auto-configured-scanning.md)WIA デバイス WIA アプリケーションでスキャン ジョブの介入なしにその設定のほとんどは自動的に構成での関数。 自動アイテムの詳細については、WIA の説明を参照してください。\_カテゴリ\_] の [自動] [WIA 項目カテゴリ](wia-item-categories.md)します。
+[自動項目](auto-item.md)を表す、[スキャンの自動構成](auto-configured-scanning.md)WIA デバイス WIA アプリケーションでスキャン ジョブの介入なしにその設定のほとんどは自動的に構成での関数。 自動アイテムの詳細については、WIA の説明を参照してください。\_カテゴリ\_ の [自動] [WIA 項目カテゴリ](wia-item-categories.md)します。
 
 WIA サービスは、自動項目では、次の WIA プロパティを管理します。
 
-[**WIA\_IPA\_項目\_名**](https://msdn.microsoft.com/library/windows/hardware/ff551590)
+[**WIA\_IPA\_項目\_名**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-name)
 
-[**WIA\_IPA\_完全\_項目\_名**](https://msdn.microsoft.com/library/windows/hardware/ff551561)
+[**WIA\_IPA\_完全\_項目\_名**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-full-item-name)
 
-[**WIA\_IPA\_項目\_フラグ**](https://msdn.microsoft.com/library/windows/hardware/ff551585)
+[**WIA\_IPA\_項目\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)
 
-[**WIA\_IPA\_アクセス\_権限**](https://msdn.microsoft.com/library/windows/hardware/ff551518)
+[**WIA\_IPA\_アクセス\_権限**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-access-rights)
 
-[**WIA\_IPA\_色\_プロファイル**](https://msdn.microsoft.com/library/windows/hardware/ff551536)
+[**WIA\_IPA\_色\_プロファイル**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-color-profile)
 
 WIA サービスが初期化、WIA\_IPA\_項目\_ミニドライバーによって送信された項目の名前に、プロパティ値を設定してミニドライバーの代わりに NAME プロパティです。 同様に、WIA サービスが、WIA を初期化します\_IPA\_項目\_ミニドライバーによって送信されたフラグ値にプロパティを設定してミニドライバーに代わって FLAGS プロパティ。
 
 WIA ミニドライバーは、自動項目で、次のプロパティを実装できます。
 
-[**WIA\_IPA\_項目\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff551581)
+[**WIA\_IPA\_項目\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)
 
-[**WIA\_IPA\_圧縮**](https://msdn.microsoft.com/library/windows/hardware/ff551540)
+[**WIA\_IPA\_圧縮**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-compression)
 
-[**WIA\_IPA\_FILENAME\_拡張機能**](https://msdn.microsoft.com/library/windows/hardware/ff551549)
+[**WIA\_IPA\_FILENAME\_拡張機能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-filename-extension)
 
-[**WIA\_IPA\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff551553)
+[**WIA\_IPA\_形式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)
 
-[**WIA\_IPA\_優先\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff551623)
+[**WIA\_IPA\_優先\_形式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-preferred-format)
 
-[**WIA\_IPA\_TYMED**](https://msdn.microsoft.com/library/windows/hardware/ff551656)
+[**WIA\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)
 
 自動項目、WIA アーキテクチャが必要です WIA を除く、上記のすべてのプロパティをサポートするミニドライバー\_IPA\_FILENAME\_拡張機能。 サポート、WIA\_IPA\_FILENAME\_拡張機能プロパティは省略可、ただし推奨します。
 

@@ -5,12 +5,12 @@ ms.assetid: 6985727e-50f8-4dbf-b8cd-ce31d49e8294
 ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_GUIDS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5019d616ab3821d511e391d8d2e5e510d8419084
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b64730adc113af58773878669f0c36e1189bbff9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387883"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386993"
 ---
 # <a name="oidgensupportedguids"></a>OID\_GEN\_サポートされている\_GUID
 
@@ -23,7 +23,7 @@ ms.locfileid: "63387883"
 サポートされています。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 とそれ以降のミニポート ドライバー  
-任意。
+(省略可能)。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
 任意。
@@ -37,7 +37,7 @@ ms.locfileid: "63387883"
 <a name="remarks"></a>注釈
 -------
 
-配列内の各構造は、カスタム GUID (グローバル一意識別子) のいずれかのカスタム OID または、NDIS のマッピングを指定します\_ミニポート ドライバー経由で送信の状態、 [ **NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)関数。
+配列内の各構造は、カスタム GUID (グローバル一意識別子) のいずれかのカスタム OID または、NDIS のマッピングを指定します\_ミニポート ドライバー経由で送信の状態、 [ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)関数。
 
 NDIS\_GUID 構造は次のように定義されます。
 
@@ -110,7 +110,7 @@ NDIS_GUID    NdisGuid = {{0x44795701, 0xa61b, 0x11d0, 0x8d, 0xd4,
 
 GUID は、Windows Management Instrumentation (WMI) で入手するか、情報を設定するために使用する識別子です。 NDIS は、NDIS ドライバーに WMI によって送信された GUID をインターセプト、OID、GUID にマップし、OID をドライバーに送信します。 ドライバーは、NDIS で、WMI にデータを取得するデータ項目を返します。
 
-NDIS は、NIC の状態の変化を WMI で認識される Guid も変換します。 ミニポート ドライバーが NIC の状態を使用して変更を報告すると、 [ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)関数、NDIS 変換、NDIS\_に GUID を NDIS ミニポート ドライバーによって示される状態WMI を送信します。
+NDIS は、NIC の状態の変化を WMI で認識される Guid も変換します。 ミニポート ドライバーが NIC の状態を使用して変更を報告すると、 [ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)関数、NDIS 変換、NDIS\_に GUID を NDIS ミニポート ドライバーによって示される状態WMI を送信します。
 
 OID をサポートする必要があります、ミニポート ドライバーでは、関税 Guid をサポートする場合\_GEN\_サポートされている\_GUID。 この OID の NDIS にカスタム Oid または NDIS するカスタムの Guid のマッピングを返します\_状態を示す文字列。 OID を使用して、ミニポート ドライバーを照会した\_GEN\_サポートされている\_wmi の GUID、NDIS 登録、ミニポート ドライバーのカスタムの Guid。
 
@@ -133,7 +133,7 @@ OID をサポートする必要があります、ミニポート ドライバー
 ## <a name="see-also"></a>関連項目
 
 
-[**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
 
  
 

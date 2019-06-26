@@ -9,12 +9,12 @@ keywords:
 - WDK のページング可能なまたは nonpageable 属性をオーバーライドします。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 077c8971e68ad710c47438f5b4ad9338c8e4f433
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30de997a680a554ed1d3b920bfd76c5b00d30c3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383812"
 ---
 # <a name="paging-an-entire-driver"></a>ドライバー全体のページング
 
@@ -26,7 +26,7 @@ ms.locfileid: "63378050"
 
 デバイス ドライバーが、管理対象デバイスの割り込みを接続した後、ドライバーの割り込みがパスの処理がシステムの領域に常駐している場合があります。 割り込み処理コードは、割り込みが発生した場合に、ページ、アウトできません。 ドライバーのセクションの一部にすることがあります。
 
-2 つの追加のメモリ マネージャーのルーチンでは、 [ **MmPageEntireDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff554650)と[ **MmResetDriverPaging**](https://msdn.microsoft.com/library/windows/hardware/ff554680)、オーバーライドに使用できる、ドライバーのイメージを構成するすべてのセクションのページング可能なまたは nonpageable 属性。 これらのルーチンは、ページ アウト全体を管理するデバイスが使用されていないと、割り込みを生成することはできませんとするためのドライバーを有効にします。
+2 つの追加のメモリ マネージャーのルーチンでは、 [ **MmPageEntireDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmpageentiredriver)と[ **MmResetDriverPaging**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmresetdriverpaging)、オーバーライドに使用できる、ドライバーのイメージを構成するすべてのセクションのページング可能なまたは nonpageable 属性。 これらのルーチンは、ページ アウト全体を管理するデバイスが使用されていないと、割り込みを生成することはできませんとするためのドライバーを有効にします。
 
 完全にページング可能なシステム ドライバーには、win32k.sys ドライバー、シリアル ドライバー、"メール スロット"ドライバー、ビープ音を鳴らすドライバーおよび null のドライバーがあります。
 
@@ -34,7 +34,7 @@ ms.locfileid: "63378050"
 
 完全にページングされたドライバーを呼び出す必要があります**MmPageEntireDriver**割り込みを接続する前に、ドライバーの初期化中にします。
 
-ページアウト ドライバーによって管理されるデバイスは、オープンの要求を受信時に、ドライバーにページします。 次に、ドライバーを呼び出す必要があります[ **MmResetDriverPaging** ](https://msdn.microsoft.com/library/windows/hardware/ff554680)割り込みに接続する前にします。 呼び出す**MmResetDriverPaging**が原因で扱うに従ってコンパイルとリンク中に取得する属性のセクションでは、ドライバーのメモリ マネージャー。 ページングされないシステム メモリへページングされるテキストのセクションなどの非ページは、任意のセクション参照されるページング可能なセクションにページングされます。
+ページアウト ドライバーによって管理されるデバイスは、オープンの要求を受信時に、ドライバーにページします。 次に、ドライバーを呼び出す必要があります[ **MmResetDriverPaging** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmresetdriverpaging)割り込みに接続する前にします。 呼び出す**MmResetDriverPaging**が原因で扱うに従ってコンパイルとリンク中に取得する属性のセクションでは、ドライバーのメモリ マネージャー。 ページングされないシステム メモリへページングされるテキストのセクションなどの非ページは、任意のセクション参照されるページング可能なセクションにページングされます。
 
 このようなドライバーは、そのデバイスに開いているハンドルの参照カウントを保持する必要があります。 ドライバーは、任意のデバイスやデクリメントの開いている各要求にカウント閉じる要求ごとにカウントをインクリメントします。 ドライバーが割り込みを切断する必要がありますを呼び出して、カウントがゼロに達すると**MmPageEntireDriver**します。 ドライバーが 1 つ以上のデバイスを管理場合、カウントこのようなデバイスはすべて 0 にあります、ドライバーを呼び出すことができます**MmPageEntireDriver**します。
 

@@ -20,12 +20,12 @@ keywords:
 - UmdfDispatcher INF ディレクティブ WDK UMDF、構文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 265a68ae5e2139051e497fbd32321215bac2a70c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1aaa3ded78c399ea9d5291fd1c337b023a6660e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325126"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384438"
 ---
 # <a name="specifying-wdf-directives-in-inf-files"></a>INF ファイルでの WDF ディレクティブの指定
 
@@ -34,7 +34,7 @@ ms.locfileid: "63325126"
 
 UMDF ドライバーをインストールする INF ファイルは、Microsoft Windows Driver Frameworks (WDF) を含める必要があります-特定*DDInstall*セクション。 WDF に固有の 1 つ以上を含めることができます、INF ファイル*DDInstall*セクションの場合は、INF ファイルには、1 つ以上の WDF ドライバーがインストールされます。 各 WDF 固有*DDInstall*セクション。
 
--   対応する、 [ **DDInstall** ](https://msdn.microsoft.com/library/windows/hardware/ff547344)と[ **DDInstall.Services** ](https://msdn.microsoft.com/library/windows/hardware/ff547349)セクションでは特定の WDF ドライバーに関連付けられています。
+-   対応する、 [ **DDInstall** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)と[ **DDInstall.Services** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)セクションでは特定の WDF ドライバーに関連付けられています。
 
 -   すべての読み込まれた WDF co-installer、任意の順序で実行されるによって処理されます。
 
@@ -65,20 +65,20 @@ UMDF バージョン 1.11 以降をサポート、 **UmdfHostProcessSharing**デ
 
 場合**UmdfDirectHardwareAccess**に設定されている**AllowDirectHardwareAccess**、フレームワークにより、ハードウェアに直接アクセスを実行する UMDF インターフェイスを使用するドライバー。
 
-指定する必要があります**AllowDirectHardwareAccess** UMDF ドライバー レジスタまたはポート、割り込みなどのハードウェア リソースにアクセスする場合[汎用 I/O](https://msdn.microsoft.com/library/windows/hardware/hh439512) (GPIO) ピン、またはこのようなシリアル バス接続I2C、SPI、およびシリアル ポート。 ドライバーをすべてを通じてこれらのリソース受信、 *ResourcesRaw*と*ResourcesTranslated*のパラメーターの[ *EvtDevicePrepareHardware*](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック関数。
+指定する必要があります**AllowDirectHardwareAccess** UMDF ドライバー レジスタまたはポート、割り込みなどのハードウェア リソースにアクセスする場合[汎用 I/O](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-driver-support-overview) (GPIO) ピン、またはこのようなシリアル バス接続I2C、SPI、およびシリアル ポート。 ドライバーをすべてを通じてこれらのリソース受信、 *ResourcesRaw*と*ResourcesTranslated*のパラメーターの[ *EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数。
 
-**注**   UMDF 2.15 バージョン以降、UMDF ドライバーは指定する必要ありません**AllowDirectHardwareAccess**でリストするハードウェア リソースを受信するためにその[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック ルーチン。 指定しない場合、ドライバーには、これらのリソースを使用して、1 つの例外へのアクセス権がありません。
+**注**   UMDF 2.15 バージョン以降、UMDF ドライバーは指定する必要ありません**AllowDirectHardwareAccess**でリストするハードウェア リソースを受信するためにその[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック ルーチン。 指定しない場合、ドライバーには、これらのリソースを使用して、1 つの例外へのアクセス権がありません。
 
-デバイスが 1 つまたは複数の接続リソースを割り当てられている場合 (**CmResourceTypeConnection**) と 1 つまたは複数の割り込みリソース (**CmResourceTypeInterrupt**)、ドライバーを呼び出すことができます[ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)からその[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)コールバック ルーチン (がからではなく[ *EvtDriverDeviceAdd*](https://msdn.microsoft.com/library/windows/hardware/ff541693))。
+デバイスが 1 つまたは複数の接続リソースを割り当てられている場合 (**CmResourceTypeConnection**) と 1 つまたは複数の割り込みリソース (**CmResourceTypeInterrupt**)、ドライバーを呼び出すことができます[ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)からその[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック ルーチン (がからではなく[ *EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add))。
 
  
 
 UMDF ドライバーを特定の種類のリソースに接続する方法についてを参照してください。
 
--   [UMDF ドライバーを GPIO I/O ピンに接続します。](https://msdn.microsoft.com/library/windows/hardware/hh698244)
--   [ユーザー モード SPB の周辺機器のドライバーのハードウェア リソース](https://msdn.microsoft.com/library/windows/hardware/hh450837)
--   [Sp B に接続されている周辺機器の接続 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)
--   [周辺機器の UMDF ドライバーをシリアル ポートに接続します。](https://msdn.microsoft.com/library/windows/hardware/hh406559)
+-   [UMDF ドライバーを GPIO I/O ピンに接続します。](https://docs.microsoft.com/windows-hardware/drivers/gpio/connecting-a-umdf-driver-to-gpio-i-o-pins)
+-   [ユーザー モード SPB の周辺機器のドライバーのハードウェア リソース](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers)
+-   [Sp B に接続されている周辺機器の接続 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)
+-   [周辺機器の UMDF ドライバーをシリアル ポートに接続します。](https://docs.microsoft.com/previous-versions/hh406559(v=vs.85))
 
 場合**UmdfDirectHardwareAccess**に設定されている**RejectDirectHardwareAccess**フレームワークでは、ドライバーを直接ハードウェア アクセス機能を使用することはできません。 既定値は**RejectDirectHardwareAccess**します。
 
@@ -104,7 +104,7 @@ UMDF バージョン 1.11 以降をサポート、 **UmdfRegisterAccessMode**デ
 UMDF 共同インストーラーが、デバイスは、1 つだけがインストールされることを確認する**UmdfServiceOrder**ディレクティブが必要である、特定の WDF 特定*DDInstall*セクション。 つまり、 **UmdfServiceOrder**ディレクティブを使用してインポートすることはできません、 **Include**と**必要がある**ディレクティブ。
 
 <a href="" id="umdfimpersonationlevel----level-"></a>**UmdfImpersonationLevel** = &lt;*レベル*&gt;  
-フレームワークを UMDF ドライバーができる最大の偽装レベルを通知します。 A **UmdfImpersonationLevel**ディレクティブは省略可能です。 偽装レベルが指定されていない場合、既定値は**識別**します。 アプリケーションでは、ファイル ハンドルが開いたら、アプリケーションは、ドライバーに大きい偽装レベルを付与できます。 ただし、ドライバーを呼び出すことはできません、 [ **IWDFIoRequest::Impersonate** ](https://msdn.microsoft.com/library/windows/hardware/ff559136)レベルの権限の借用を要求するメソッドが、レベルよりも大きいを**UmdfImpersonationLevel**を指定します。 このディレクティブを指定できる値は次のとおりです。
+フレームワークを UMDF ドライバーができる最大の偽装レベルを通知します。 A **UmdfImpersonationLevel**ディレクティブは省略可能です。 偽装レベルが指定されていない場合、既定値は**識別**します。 アプリケーションでは、ファイル ハンドルが開いたら、アプリケーションは、ドライバーに大きい偽装レベルを付与できます。 ただし、ドライバーを呼び出すことはできません、 [ **IWDFIoRequest::Impersonate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-impersonate)レベルの権限の借用を要求するメソッドが、レベルよりも大きいを**UmdfImpersonationLevel**を指定します。 このディレクティブを指定できる値は次のとおりです。
 
 -   **匿名**
 
@@ -114,12 +114,12 @@ UMDF 共同インストーラーが、デバイスは、1 つだけがインス�
 
 -   **委任**
 
-これらの値で指定されている値に対応、 [**セキュリティ\_偽装\_レベル**](https://msdn.microsoft.com/library/windows/hardware/ff560499)列挙体。
+これらの値で指定されている値に対応、 [**セキュリティ\_偽装\_レベル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/ne-wudfddi-_security_impersonation_level)列挙体。
 
 <a href="" id="umdfmethodneitheraction------------copy---reject-"></a>**UmdfMethodNeitherAction** = &lt;**コピー** | **拒否**&gt;  
-フレームワークはそのまま使用するかどうかを示します (**コピー**) または拒否 (**拒否**) デバイスの I/O を要求する場合は、要求オブジェクトを指定する I/O 制御コードを含む、[メソッド\_NEITHER](https://msdn.microsoft.com/library/windows/hardware/ff540663)アクセス メソッドをバッファーします。 A **UmdfMethodNeitherAction**ディレクティブは省略可能です。 ディレクティブが指定されていない場合、既定値は**拒否**します。
+フレームワークはそのまま使用するかどうかを示します (**コピー**) または拒否 (**拒否**) デバイスの I/O を要求する場合は、要求オブジェクトを指定する I/O 制御コードを含む、[メソッド\_NEITHER](https://docs.microsoft.com/windows-hardware/drivers/kernel/buffer-descriptions-for-i-o-control-codes)アクセス メソッドをバッファーします。 A **UmdfMethodNeitherAction**ディレクティブは省略可能です。 ディレクティブが指定されていない場合、既定値は**拒否**します。
 
-メソッドのサポートの詳細については\_UMDF ベースのドライバーでどちらバッファーへのアクセス方法を確認する[I/O を使用していないバッファーも UMDF ドライバーでのダイレクト I/O](https://msdn.microsoft.com/library/windows/hardware/ff554413#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)します。
+メソッドのサポートの詳細については\_UMDF ベースのドライバーでどちらバッファーへのアクセス方法を確認する[I/O を使用していないバッファーも UMDF ドライバーでのダイレクト I/O](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-umdf-1-x-drivers#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)します。
 
 <a href="" id="umdfdispatcher----filehandle---winusb---nativeusb-"></a>**UmdfDispatcher** = &lt;**FileHandle** | **WinUsb** | **NativeUSB**&gt;  
 I/O デバイス スタックのユーザー モードの部分を通過した後に、I/O を送信する場所をフレームワークに通知します。 既定では、I/O は、reflector (WUDFRd.sys) に送信されます。 設定して**UmdfDispatcher**に**WinUsb**ドライバーが UMDF WinUsb アーキテクチャに I/O を送信するように指示します。 UMDF 2.15 で始まる、指定する**NativeUSB** USB I/O を処理するために、reflector をによりします。
@@ -142,12 +142,12 @@ UmdfDispatcher=NativeUSB
 
 場合**UmdfKernelModeClientPolicy**に設定されている**AllowKernelModeClients**フレームワークにより、ユーザー モード ドライバーでは、上記の読み込みにカーネル モード ドライバーやカーネル モード ドライバーからの I/O 要求を配信ユーザー モード ドライバー。
 
-場合**UmdfKernelModeClientPolicy**に設定されている**RejectKernelModeClients**フレームワークでは、カーネル モード ドライバー ユーザー モード ドライバーでは、上記の読み込みにすることはできません、いずれかからの I/O 要求が含まれていませんユーザー モード ドライバーにカーネル モード ドライバーです。 ドライバーの INF ファイルにこのディレクティブが含まれていない場合、既定値は、 **RejectKernelModeClients**します。 詳細については、次を参照してください。[サポート カーネル モードのクライアント](https://msdn.microsoft.com/library/windows/hardware/ff561214)します。
+場合**UmdfKernelModeClientPolicy**に設定されている**RejectKernelModeClients**フレームワークでは、カーネル モード ドライバー ユーザー モード ドライバーでは、上記の読み込みにすることはできません、いずれかからの I/O 要求が含まれていませんユーザー モード ドライバーにカーネル モード ドライバーです。 ドライバーの INF ファイルにこのディレクティブが含まれていない場合、既定値は、 **RejectKernelModeClients**します。 詳細については、次を参照してください。[サポート カーネル モードのクライアント](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-kernel-mode-clients-in-umdf-1-x-drivers)します。
 
-UMDF バージョン 1.9 以降のサポート、 **UmdfKernelModeClientPolicy**ディレクティブ。 カーネル モード ドライバーを読み込む UMDF の以前のバージョンでのユーザー モード ドライバーの上位を許可するのを参照してください。 [UMDF の以前のバージョンのカーネル モードのクライアント サポート](https://msdn.microsoft.com/library/windows/hardware/ff561214#kernel-mode-client-support-in-earlier-umdf-versions)します。
+UMDF バージョン 1.9 以降のサポート、 **UmdfKernelModeClientPolicy**ディレクティブ。 カーネル モード ドライバーを読み込む UMDF の以前のバージョンでのユーザー モード ドライバーの上位を許可するのを参照してください。 [UMDF の以前のバージョンのカーネル モードのクライアント サポート](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-kernel-mode-clients-in-umdf-1-x-drivers#kernel-mode-client-support-in-earlier-umdf-versions)します。
 
 <a href="" id="umdffileobjectpolicy----rejectnullandunknownfileobjects---allownullandunknownfileobjects--"></a>**UmdfFileObjectPolicy** = &lt;**RejectNullAndUnknownFileObjects** | **AllowNullAndUnknownFileObjects**&gt;   
-フレームワークが I/O 要求の処理を許可するかどうかを指定 ([IWDFIoRequest](https://msdn.microsoft.com/library/windows/hardware/ff558985)) ことがいずれかに関連付けられていないファイル オブジェクト ([IWDFFile](https://msdn.microsoft.com/library/windows/hardware/ff558912)) に関連付けられた (未知のファイル オブジェクトまたはファイル オブジェクトをドライバーが以前は存在しなかった要求の作成) します。
+フレームワークが I/O 要求の処理を許可するかどうかを指定 ([IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest)) ことがいずれかに関連付けられていないファイル オブジェクト ([IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)) に関連付けられた (未知のファイル オブジェクトまたはファイル オブジェクトをドライバーが以前は存在しなかった要求の作成) します。
 
 場合**UmdfFileObjectPolicy**に設定されている**RejectNullAndUnknownFileObjects**フレームワークでは、NULL または不明なファイルのオブジェクトに関連付けられている要求の処理をすることはできません。
 
@@ -197,13 +197,13 @@ UMDF ドライバーのコピー先と、そこから起動する必要があり
 <a href="" id="driverclsid-----clsid--"></a>**DriverCLSID** = &lt;{*CLSID*}&gt;  
 **注**  このディレクティブは、UMDF バージョン 1.11 以降。
 
-UMDF は、UMDF ドライバーのクラス id (CLSID) を通知します。 UMDF ホストが、UMDF ドライバーの CLSID を使用して、UMDF のインスタンスを作成する UMDF ドライバーが読み込まれる UMDF ドライバーの[IDriverEntry](https://msdn.microsoft.com/library/windows/hardware/ff554885)インターフェイス。
+UMDF は、UMDF ドライバーのクラス id (CLSID) を通知します。 UMDF ホストが、UMDF ドライバーの CLSID を使用して、UMDF のインスタンスを作成する UMDF ドライバーが読み込まれる UMDF ドライバーの[IDriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-idriverentry)インターフェイス。
 
 <a href="" id=" umdfextensions-----cxservicename--"></a>**UmdfExtensions** = &lt;cxServiceName&gt; Microsoft によって提供されるクラスの拡張機能ドライバーをドライバーと通信するために必要です。  CxServiceName パラメーターは、クラスの拡張機能ドライバーをバイナリに関連付けられているサービスに対応します。
 
 クラスの拡張機能ドライバーのサービス名は、次のレジストリ キーの下のサブキーとして見つかりませんでした。**Hkey_local_machine \software\microsoft\windows NT\CurrentVersion\WUDF\Services**
 
-Windows 8.1 以前で必要な再起動を避けるためには、UMDF ドライバーを更新するときに、指定、 **COPYFLG\_IN\_使用\_の名前を変更**フラグ、 [ **CopyFilesディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546346)でこの例で示すように、ドライバーの INF ファイル。
+Windows 8.1 以前で必要な再起動を避けるためには、UMDF ドライバーを更新するときに、指定、 **COPYFLG\_IN\_使用\_の名前を変更**フラグ、 [ **CopyFilesディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)でこの例で示すように、ドライバーの INF ファイル。
 
 ```cpp
 [VirtualSerial_Install.NT]

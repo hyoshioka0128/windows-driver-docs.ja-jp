@@ -4,12 +4,12 @@ description: リムーバブル デバイス機能のオーバーライドで生
 ms.assetid: 8b1bf9d4-1aea-4d82-b783-f6dc62b9f8f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f76526d1a75834facd711b09636b5547b82fc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4edd1e96631a8a57b2972dc8351c74e686141009
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378857"
 ---
 # <a name="container-ids-generated-from-a-removable-device-capability-override"></a>リムーバブル デバイス機能のオーバーライドで生成されるコンテナー ID
 
@@ -60,7 +60,7 @@ Windows 7 および Windows の以降のバージョンは、報告されたリ�
 <tr class="even">
 <td align="left"><p>3</p></td>
 <td align="left"><p><a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a></p></td>
-<td align="left"><p>デバイスの親デバイス ノードの場所のパスのみを指定します (<a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-devnode" data-raw-source="&lt;em&gt;devnode&lt;/em&gt;"><em>devnode</em></a>)、リムーバブル デバイスの機能上書きを適用する必要があります。</p></td>
+<td align="left"><p>デバイスの親デバイス ノードの場所のパスのみを指定します (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-devnode" data-raw-source="&lt;em&gt;devnode&lt;/em&gt;"><em>devnode</em></a>)、リムーバブル デバイスの機能上書きを適用する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>

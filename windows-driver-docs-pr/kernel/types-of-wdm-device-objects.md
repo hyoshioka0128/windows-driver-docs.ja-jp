@@ -11,12 +11,12 @@ keywords:
 - フィルター DOs WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed5f771e5eff6ac60f6c2b313888d7484fb4ea26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1f8bc429fc7b3b48594dd161e4fc5648216ab6a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377014"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382945"
 ---
 # <a name="types-of-wdm-device-objects"></a>WDM デバイス オブジェクトの種類
 
@@ -32,9 +32,9 @@ WDM デバイス オブジェクトの 3 つの種類があります。
 
 3.  デバイス オブジェクトのフィルター (フィルター操作を行います) – デバイスを表します、[フィルター ドライバー](filter-drivers.md)します。
 
-次の 3 つの種類のデバイス オブジェクトは、型のすべて[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)が、異なる方法で使用され、別のデバイスの拡張機能を持つことができます。
+次の 3 つの種類のデバイス オブジェクトは、型のすべて[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)が、異なる方法で使用され、別のデバイスの拡張機能を持つことができます。
 
-ドライバーは、デバイス オブジェクトを作成してデバイスの I/O を処理するドライバーのスタックに追加します ([**IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)) と、デバイス スタックへの追加 ([ **IoAttachDeviceToDeviceStack**](https://msdn.microsoft.com/library/windows/hardware/ff548300))。 **IoAttachDeviceToDeviceStack**デバイス スタックの現在の先頭を決定し、デバイス スタックの一番上に新しいデバイス オブジェクトをアタッチします。
+ドライバーは、デバイス オブジェクトを作成してデバイスの I/O を処理するドライバーのスタックに追加します ([**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)) と、デバイス スタックへの追加 ([ **IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack))。 **IoAttachDeviceToDeviceStack**デバイス スタックの現在の先頭を決定し、デバイス スタックの一番上に新しいデバイス オブジェクトをアタッチします。
 
  
 

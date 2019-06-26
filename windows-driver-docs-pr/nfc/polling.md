@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d099d6b189ef9cdc618df03eab1fdf48da3798ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c260bb9a7f4fe3f00cca8898d81da270757e0f3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373710"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386522"
 ---
 # <a name="nfc-polling"></a>NFC のポーリング
 
@@ -30,6 +30,6 @@ NFP テクノロジをポーリングする必要がある場合、は、近接�
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
  
 

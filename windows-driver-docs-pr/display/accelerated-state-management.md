@@ -7,12 +7,12 @@ keywords:
 - WDK Direct3D を状態します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bbd56a4f0ba43041f95a4e0dc1508ba3ab2756
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e30ac6546432d91c9327442b468bcedea0ec161
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384433"
 ---
 # <a name="accelerated-state-management"></a>高速化状態管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323803"
 
 ほとんどのアプリケーションは、詳細な状態遷移のことが重要めったにありませんごく少数の状態で表示します。 さらに重要な新機能は、レンダリングの一般的なシナリオ間 driver スイッチと入れ替えることが状態のブロックを定義できることです。 これは、全体の高速化された状態の管理ポイントです。
 
-状態セット トークンを使用して、ドライバーの状態を記録します。 ハンドルは、状態のコレクションを表します。 [ **D3DHAL\_DP2STATESET** ](https://msdn.microsoft.com/library/windows/hardware/ff545844)構造体を実行するには、どのような状態セット操作に関するドライバーに通知します。
+状態セット トークンを使用して、ドライバーの状態を記録します。 ハンドルは、状態のコレクションを表します。 [ **D3DHAL\_DP2STATESET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2stateset)構造体を実行するには、どのような状態セット操作に関するドライバーに通知します。
 
 場合、 **dwOperation** 、D3DHAL のメンバー\_DP2STATESET 構造が D3DHAL に設定されている\_に含まれているハンドルの状態の記録が開始 STATESETBEGIN、ドライバー、**について**メンバー。 ドライバーが受信すると、 **dwOperation** D3DHAL の\_STATESETEND、状態の記録を停止します。
 

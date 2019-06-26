@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 5511f971d1d2d7074b4c1879750adfcea96e0997
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08ec77366e9ca507cede911b500594b8e9a628dd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390670"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382657"
 ---
 # <a name="ndisstatuswdiindicationp2pgroupoperatingchannel"></a>NDIS\_状態\_WDI\_INDICATION\_P2P\_グループ\_オペレーティング\_チャネル
 
@@ -27,8 +27,8 @@ Wi-Fi Direct クライアント ポートには、これは (接続完了) の�
 
 | 種類                                                                                         | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                        |
 |----------------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_チャネル\_数**](https://msdn.microsoft.com/library/windows/hardware/dn897869)                    |                                |          | 指定された Wi-Fi Direct ポートが動作している運用チャネル。 |
-| [**WDI\_TLV\_P2P\_チャネル\_を示す\_理由**](https://msdn.microsoft.com/library/windows/hardware/dn897867) |                                |          | 示す値を送信する理由です。                             |
+| [**WDI\_TLV\_P2P\_チャネル\_数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number)                    |                                |          | 指定された Wi-Fi Direct ポートが動作している運用チャネル。 |
+| [**WDI\_TLV\_P2P\_チャネル\_を示す\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-indicate-reason) |                                |          | 示す値を送信する理由です。                             |
 
  
 

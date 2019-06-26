@@ -6,12 +6,12 @@ keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eeea56bd2286af9295c33655a3d4bb54ed1cb82b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d55c8f7824de90007579792eb04254b78fe3a5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389887"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384581"
 ---
 # <a name="third-part-of-macroblock-control-command-structure"></a>マクロブロック制御コマンド構造の 3 番目の部分
 
@@ -19,7 +19,7 @@ ms.locfileid: "63389887"
 ## <span id="ddk_third_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_THIRD_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>
 
 
-場合、 **bPicIntra**のメンバー [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)は 1、で説明されているデータをマクロブロックコントロールコマンドの構造体の終了です。[2 番目のコマンドの構造体をマクロ ブロック コントロールの部分](second-part-of-macroblock-control-command-structure.md)します。 場合**bPicIntra**がゼロにすると、次の追加データ モーションの補正プロセスを制御するマクロ ブロック コントロール コマンド要素が含まれています。 その後のデータの配列は、 [ **DXVA\_MVvalue** ](https://msdn.microsoft.com/library/windows/hardware/ff564004)構造体に含まれている、 **MVector**マクロ ブロック コントロール コマンド構造体のメンバー。 要素数**MVector** DXVA のメンバーで指定された画像の種類によって異なります\_PictureParameters 次の表にします。
+場合、 **bPicIntra**のメンバー [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)は 1、で説明されているデータをマクロブロックコントロールコマンドの構造体の終了です。[2 番目のコマンドの構造体をマクロ ブロック コントロールの部分](second-part-of-macroblock-control-command-structure.md)します。 場合**bPicIntra**がゼロにすると、次の追加データ モーションの補正プロセスを制御するマクロ ブロック コントロール コマンド要素が含まれています。 その後のデータの配列は、 [ **DXVA\_MVvalue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mvvalue)構造体に含まれている、 **MVector**マクロ ブロック コントロール コマンド構造体のメンバー。 要素数**MVector** DXVA のメンバーで指定された画像の種類によって異なります\_PictureParameters 次の表にします。
 
 <table>
 <colgroup>

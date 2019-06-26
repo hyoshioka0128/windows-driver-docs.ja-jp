@@ -1,6 +1,6 @@
 ---
-title: INF ファイルのセクションではモニター
-description: INF ファイルのセクションではモニター
+title: モニター INF ファイルのセクション
+description: モニター INF ファイルのセクション
 ms.assetid: f5208b6a-00b0-446e-82f7-eb26082ed9a5
 keywords:
 - 表示されるセクションでは Windows 2000 の WDK INF ファイルを監視します。
@@ -11,14 +11,14 @@ keywords:
 - SourceDisksFiles WDK Windows 2000 セクションを表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be80268e6a106f6e9118d3d1274137288d6c8c10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cf7d9179dbfccab44e2d94d6ae639688c3abd303
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56550848"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379856"
 ---
-# <a name="monitor-inf-file-sections"></a>INF ファイルのセクションではモニター
+# <a name="monitor-inf-file-sections"></a>モニター INF ファイルのセクション
 
 
 ## <span id="ddk_monitor_inf_file_sections_gg"></span><span id="DDK_MONITOR_INF_FILE_SECTIONS_GG"></span>
@@ -26,7 +26,7 @@ ms.locfileid: "56550848"
 
 モニターは、INF ファイルを使用して NT ベースのオペレーティング システムにインストールする必要があります。 INF ファイル、サンプルの監視を提供する Windows Driver Kit (WDK) *monsamp.inf*モニターの INF ファイルを生成するテンプレートとして使用する必要があります。 使用することはできません、 *geninf.exe*で説明されているツール[グラフィックス INF ファイルの作成](creating-graphics-inf-files.md)モニター INF を生成します。
 
-このトピックの残りの部分のコメントのセクションの一部を*monsamp.inf*モニター INF ライターに特定の関心のあります。 INF ファイルの概要については、[INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)を参照してください。
+このトピックの残りの部分のコメントのセクションの一部を*monsamp.inf*モニター INF ライターに特定の関心のあります。 INF ファイルの概要については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
 Extended Display Identification Data (EDID) のモニターを上書きするのに、INF ファイルを使用することもできます。 参照してください[オーバーライド、INF でモニター EDIDs](overriding-monitor-edids.md)します。
 
@@ -39,7 +39,7 @@ Extended Display Identification Data (EDID) のモニターを上書きするの
 profile1.icm=1
 ```
 
-詳細については、[ **INF SourceDisksFiles セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547472)を参照してください。 参照してください[プロファイルを監視する](monitor-profiles.md)色の管理とプロファイルの詳細についてはします。
+詳細については、次を参照してください。 [ **INF SourceDisksFiles セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)します。 参照してください[プロファイルを監視する](monitor-profiles.md)色の管理とプロファイルの詳細についてはします。
 
 ### <a name="span-idmodelssectionspanspan-idmodelssectionspanspan-idmodelssectionspanmodels-section"></a><span id="Models_Section"></span><span id="models_section"></span><span id="MODELS_SECTION"></span>モデルのセクション
 
@@ -59,7 +59,7 @@ profile1.icm=1
 
 -   ハードウェア id - たとえば、式**モニター\\MON12AB**デバイスのようにデバイス クラス (モニター) とデバイスの識別 (MON12AB) を組み合わせた*EDID*.
 
-詳細については、[ **INF モデル セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547456)を参照してください。
+詳細については、次を参照してください。 [ **INF モデル セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)します。
 
 ### <a name="span-idddinstallsectionspanspan-idddinstallsectionspanspan-idddinstallsectionspanddinstall-section"></a><span id="DDInstall_Section"></span><span id="ddinstall_section"></span><span id="DDINSTALL_SECTION"></span>DDInstall セクション
 
@@ -72,13 +72,13 @@ AddReg=ACME-1234.AddReg, 1280, DPMS
 CopyFiles=ACME-1234.CopyFiles
 ```
 
--   [**** ](https://msdn.microsoft.com/library/windows/hardware/ff547374)ディレクティブ--へのリンクを提供する、 **DEL\_現在\_REG**セクションで、削除するレジストリ キーの詳細。
+-   [**DelReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)ディレクティブ--へのリンクを提供する、 **DEL\_現在\_REG**セクションで、削除するレジストリ キーの詳細。
 
--   [**AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320) --ディレクティブは、3 つのセクションへのリンクを提供します。 レジストリ キーを追加するは詳細に説明します。 これらのセクションは**ACME 1234 します。AddReg**、 **1280**、および**ラインナップ**します。
+-   [**AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) --ディレクティブは、3 つのセクションへのリンクを提供します。 レジストリ キーを追加するは詳細に説明します。 これらのセクションは**ACME 1234 します。AddReg**、 **1280**、および**ラインナップ**します。
 
--   [**CopyFiles** ](https://msdn.microsoft.com/library/windows/hardware/ff546346)ディレクティブ--へのリンクを提供する、 **ACME 1234 します。CopyFiles**セクションで、配布のディスクまたはディスクからコピーされるファイルを指定します。
+-   [**CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブ--へのリンクを提供する、 **ACME 1234 します。CopyFiles**セクションで、配布のディスクまたはディスクからコピーされるファイルを指定します。
 
-詳細については、[ **INF DDInstall セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)を参照してください。
+詳細については、次を参照してください。 [ **INF DDInstall セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)します。
 
 ### <a name="span-idinfwriter-definedsectionsspanspan-idinfwriter-definedsectionsspanspan-idinfwriter-definedsectionsspaninf-writer-defined-sections"></a><span id="INF_Writer-Defined_Sections"></span><span id="inf_writer-defined_sections"></span><span id="INF_WRITER-DEFINED_SECTIONS"></span>ライター定義のセクションでは INF
 

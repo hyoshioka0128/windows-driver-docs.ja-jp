@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 752c7730ee7e47ca39e2e316bdaa1a99ee96498a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76360ef2452813339973d228550eeb37f7f0ffff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375842"
 ---
 # <a name="dxvadeinterlacebobdeviceclassdeinterlaceclosestream-method"></a>DXVA\_DeinterlaceBobDeviceClass::DeinterlaceCloseStream メソッド
 
@@ -47,12 +47,12 @@ HRESULT DeinterlaceCloseStream();
 <a name="remarks"></a>注釈
 -------
 
-*DeinterlaceCloseStream*関数のマップに直接、 **DestroyMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)ドライバーによって提供されるを指す構造体*DdMoCompDestroy*コールバック。
+*DeinterlaceCloseStream*関数のマップに直接、 **DestroyMoComp**のメンバー、 [ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)ドライバーによって提供されるを指す構造体*DdMoCompDestroy*コールバック。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)
+[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
 [**DeinterlaceOpenStream**](dxva-deinterlacebobdeviceclass-deinterlaceopenstream.md)
 

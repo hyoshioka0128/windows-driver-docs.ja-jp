@@ -19,12 +19,12 @@ keywords:
 - 順序付けられていないアクセス リソース ビューの WDK Windows Server 2008 R2 の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 788c3c5ee9f1ad42fc9855044ca71bb4fb497c60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2597e2e73e3330a2109e731fabc9bb6b2877107
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366308"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385573"
 ---
 # <a name="pipelines-for-direct3d-version-11"></a>Direct3D バージョン 11 のパイプライン
 
@@ -51,29 +51,29 @@ Direct3D のバージョン 11 が実際には 2 つの異なるパイプライ�
 
 Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、ハル シェーダーを破棄します。
 
-[**CalcPrivateShaderSize**](https://msdn.microsoft.com/library/windows/hardware/ff538315)
+[**CalcPrivateShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
 
-[**CalcPrivateTessellationShaderSize**](https://msdn.microsoft.com/library/windows/hardware/ff538318)
+[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)
 
-[*CreateHullShader*](https://msdn.microsoft.com/library/windows/hardware/ff540655)
+[*CreateHullShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createhullshader)
 
-[**DestroyShader**](https://msdn.microsoft.com/library/windows/hardware/ff552805)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**HsSetShaderResources**](https://msdn.microsoft.com/library/windows/hardware/ff567300)
+[**HsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**HsSetShader**](https://msdn.microsoft.com/library/windows/hardware/ff567294)
+[**HsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**HsSetSamplers**](https://msdn.microsoft.com/library/windows/hardware/ff567290)
+[**HsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**HsSetConstantBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff567286)
+[**HsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**HsSetShaderWithIfaces**](https://msdn.microsoft.com/library/windows/hardware/ff567306)
+[**HsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
 ### <a name="span-idtessellatorspanspan-idtessellatorspantessellator"></a><span id="tessellator"></span><span id="TESSELLATOR"></span>テッセレータ
 
 テッセレータは、ある操作が、ハル シェーダー内の宣言によって定義されている固定機能単位です。 テッセレータは、ハル シェーダーによって出力が更新プログラムごとに動作します。 ハル シェーダー tess 要因は、テセレーションにどの程度、テッセレータを通知する数字が生成されます (geometry と接続の生成)、修正プログラムのドメイン。
 
-Direct3D ランタイムが呼び出す、ドライバーの[ **CalcPrivateTessellationShaderSize** ](https://msdn.microsoft.com/library/windows/hardware/ff538318)包またはドメイン シェーダーのメモリ領域のサイズを計算する関数。
+Direct3D ランタイムが呼び出す、ドライバーの[ **CalcPrivateTessellationShaderSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)包またはドメイン シェーダーのメモリ領域のサイズを計算する関数。
 
 ### <a name="span-iddomainshaderspanspan-iddomainshaderspandomain-shader"></a><span id="domain_shader"></span><span id="DOMAIN_SHADER"></span>ドメイン シェーダー
 
@@ -81,21 +81,21 @@ Direct3D ランタイムが呼び出す、ドライバーの[ **CalcPrivateTesse
 
 Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、ドメイン シェーダーを破棄します。
 
-[**CalcPrivateTessellationShaderSize**](https://msdn.microsoft.com/library/windows/hardware/ff538318)
+[**CalcPrivateTessellationShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivatetessellationshadersize)
 
-[*CreateDomainShader*](https://msdn.microsoft.com/library/windows/hardware/ff540637)
+[*CreateDomainShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdomainshader)
 
-[**DestroyShader**](https://msdn.microsoft.com/library/windows/hardware/ff552805)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**DsSetShaderResources**](https://msdn.microsoft.com/library/windows/hardware/ff557306)
+[**DsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**DsSetShader**](https://msdn.microsoft.com/library/windows/hardware/ff557305)
+[**DsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**DsSetSamplers**](https://msdn.microsoft.com/library/windows/hardware/ff557298)
+[**DsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**DsSetConstantBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff557289)
+[**DsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**DsSetShaderWithIfaces**](https://msdn.microsoft.com/library/windows/hardware/ff557316)
+[**DsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
 ### <a name="span-idcomputeshaderspanspan-idcomputeshaderspancompute-shader"></a><span id="compute_shader"></span><span id="COMPUTE_SHADER"></span>計算シェーダー
 
@@ -103,25 +103,25 @@ Direct3D のランタイムは、設定を作成する次のドライバー関�
 
 Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、計算シェーダーを破棄します。
 
-[*CreateComputeShader*](https://msdn.microsoft.com/library/windows/hardware/ff540606)
+[*CreateComputeShader*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createcomputeshader)
 
-[**DestroyShader**](https://msdn.microsoft.com/library/windows/hardware/ff552805)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**CsSetShaderResources**](https://msdn.microsoft.com/library/windows/hardware/ff540802)
+[**CsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
-[**CsSetShader**](https://msdn.microsoft.com/library/windows/hardware/ff540799)
+[**CsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**CsSetSamplers**](https://msdn.microsoft.com/library/windows/hardware/ff540795)
+[**CsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**CsSetConstantBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff540794)
+[**CsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**CsSetShaderWithIfaces**](https://msdn.microsoft.com/library/windows/hardware/ff540805)
+[**CsSetShaderWithIfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setshader_with_ifaces)
 
-[**CsSetUnorderedAccessViews**](https://msdn.microsoft.com/library/windows/hardware/ff540808)
+[**CsSetUnorderedAccessViews**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setunorderedaccessviews)
 
-[**ディスパッチ**](https://msdn.microsoft.com/library/windows/hardware/ff553896)
+[**Dispatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_dispatch)
 
-[**DispatchIndirect**](https://msdn.microsoft.com/library/windows/hardware/ff553899)
+[**DispatchIndirect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_dispatchindirect)
 
 ### <a name="span-idunorderedaccessresourceviewsspanspan-idunorderedaccessresourceviewsspanunordered-access-resource-views"></a><span id="unordered_access_resource_views"></span><span id="UNORDERED_ACCESS_RESOURCE_VIEWS"></span>順序付けられていないアクセス リソース ビュー
 
@@ -129,19 +129,19 @@ Direct3D のランタイムは、設定を作成する次のドライバー関�
 
 Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、順序付けられていないアクセス リソース ビューを破棄します。
 
-[**CalcPrivateUnorderedAccessViewSize**](https://msdn.microsoft.com/library/windows/hardware/ff538320)
+[**CalcPrivateUnorderedAccessViewSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcprivateunorderedaccessviewsize)
 
-[**CreateUnorderedAccessView**](https://msdn.microsoft.com/library/windows/hardware/ff540711)
+[**CreateUnorderedAccessView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createunorderedaccessview)
 
-[**DestroyUnorderedAccessView**](https://msdn.microsoft.com/library/windows/hardware/ff552812)
+[**DestroyUnorderedAccessView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_destroyunorderedaccessview)
 
-[**ClearUnorderedAccessViewFLOAT**](https://msdn.microsoft.com/library/windows/hardware/ff539412)
+[**ClearUnorderedAccessViewFLOAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_clearunorderedaccessviewfloat)
 
-[**ClearUnorderedAccessViewUINT**](https://msdn.microsoft.com/library/windows/hardware/ff539414)
+[**ClearUnorderedAccessViewUINT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_clearunorderedaccessviewuint)
 
-[**CopyStructureCount**](https://msdn.microsoft.com/library/windows/hardware/ff540544)
+[**CopyStructureCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_copystructurecount)
 
-[**SetRenderTargets(D3D11)**](https://msdn.microsoft.com/library/windows/hardware/ff569554)
+[**SetRenderTargets(D3D11)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_setrendertargets)
 
  
 

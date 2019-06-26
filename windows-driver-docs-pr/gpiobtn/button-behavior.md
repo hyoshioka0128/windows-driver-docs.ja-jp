@@ -4,12 +4,12 @@ description: このトピックでは、ハードウェア ボタンの想定さ
 ms.assetid: 057A4F21-3514-4CCA-BCE2-279E8228B5A9
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: db3152b8a63d774b5220ab35b66265586f84f1a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e230e9d2f673fee3c6645d7a06898124b321b215
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326113"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393484"
 ---
 # <a name="button-behavior"></a>ボタンの動作
 
@@ -75,8 +75,8 @@ ms.locfileid: "63326113"
 
 ボタンの要件の詳細については。
 
--   Windows 10 Mobile、2.6 のセクションを参照してください、[ハードウェアの最小要件](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx)します。
--   Windows 10 デスクトップ エディションの場合、セクション 3.6 を参照して、[ハードウェアの最小要件](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx)します。
+-   Windows 10 Mobile、2.6 のセクションを参照してください、[ハードウェアの最小要件](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)します。
+-   Windows 10 デスクトップ エディションの場合、セクション 3.6 を参照して、[ハードウェアの最小要件](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)します。
 
 ## <a name="span-idbuttonbehaviorinwindows10spanspan-idbuttonbehaviorinwindows10spanspan-idbuttonbehaviorinwindows10spanbutton-behavior-in-windows10"></a><span id="Button_behavior_in_Windows_10"></span><span id="button_behavior_in_windows_10"></span><span id="BUTTON_BEHAVIOR_IN_WINDOWS_10"></span>Windows 10 でボタンの動作
 
@@ -88,7 +88,7 @@ Windows 10 デスクトップ エディションの Windows 10 Mobile の電源�
 
 ### <a name="span-idbuttoncombinationbehaviorinwindows10spanspan-idbuttoncombinationbehaviorinwindows10spanspan-idbuttoncombinationbehaviorinwindows10spanbutton-combination-behavior-in-windows10"></a><span id="Button_combination_behavior_in_Windows_10"></span><span id="button_combination_behavior_in_windows_10"></span><span id="BUTTON_COMBINATION_BEHAVIOR_IN_WINDOWS_10"></span>Windows 10 でボタンの組み合わせの動作
 
-述べたように、Windows 10 でいくつかボタンの組み合わせが適用されます、[ボタン アーキテクチャの Windows 10](https://msdn.microsoft.com/library/windows/hardware/dn957423%28v=vs.85%29.aspx)または Windows 8.1 のボタンのアーキテクチャ。 Windows 10 では他のボタンの組み合わせをすべては、いずれかのボタンのアーキテクチャに適用されます。 Windows 10 のアーキテクチャを使用して、ハードウェア ボタンを記述することをお勧めします。
+述べたように、Windows 10 でいくつかボタンの組み合わせが適用されます、[ボタン アーキテクチャの Windows 10](https://docs.microsoft.com/windows-hardware/drivers/hid/buttons)または Windows 8.1 のボタンのアーキテクチャ。 Windows 10 では他のボタンの組み合わせをすべては、いずれかのボタンのアーキテクチャに適用されます。 Windows 10 のアーキテクチャを使用して、ハードウェア ボタンを記述することをお勧めします。
 
 <table>
 <colgroup>
@@ -155,8 +155,8 @@ Windows 8.1 の Windows 8.1 Phone Power キーを押してボタンしリリー�
  
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-[Windows 10 のボタンのアーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/dn957423%28v=vs.85%29.aspx)  
-[最小ハードウェア要件](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx)  
+[Windows 10 のボタンのアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/hid/buttons)  
+[最小ハードウェア要件](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)  
 
 
 

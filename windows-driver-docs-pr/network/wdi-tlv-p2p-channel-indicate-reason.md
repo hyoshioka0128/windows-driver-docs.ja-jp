@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_CHANNEL_INDICATE_REASON ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ecbc2eab9601e56316fa4d58749ec461fe11c1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54a541a7741c529a2844c41b1189df8dfef3b519
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385705"
 ---
 # <a name="wditlvp2pchannelindicatereason"></a>WDI\_TLV\_P2P\_チャネル\_を示す\_理由
 
@@ -33,7 +33,7 @@ Uint32 型のサイズをバイト単位で。
 
 | 型   | 説明                                                                                                                                         |
 |--------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | 示す値を送信する理由です。 参照してください[ **WDI\_P2P\_チャネル\_を示す\_理由**](https://msdn.microsoft.com/library/windows/hardware/dn926090)の考えられる理由。 |
+| UINT32 | 示す値を送信する理由です。 参照してください[ **WDI\_P2P\_チャネル\_を示す\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_channel_indicate_reason)の考えられる理由。 |
 
  
 

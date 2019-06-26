@@ -4,12 +4,12 @@ description: COSA の概要
 ms.assetid: 45D69B8D-69C1-488B-AC52-D8DEB337F878
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e852750541d155843bbd6651a53974301f70f191
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8346c745125527bf4b005dd8ff8f22fbd2ca6434
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387875"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383783"
 ---
 # <a name="cosa-overview"></a>COSA の概要
 
@@ -52,7 +52,7 @@ Windows 10 バージョン 1703 では、前に Windows のバージョンで MO
 
 COSA は Windows 10 のプロビジョニング パッケージ (.ppkg) の形式です。 Windows\Provisioning\COSA\Microsoft フォルダーになります。 7 Zip ファイル マネージャーなどのサード パーティ製ツールを使用することができます ([www.7-Zip.org](https://go.microsoft.com/fwlink/p/?linkid=844795))、視覚的にその内容を検査します。
 
-注意 COSA、OEM の拡張機能、デバイスのイメージで指定されている場合 COSA\OEM フォルダーにします。 詳細については、次を参照してください。[国と演算子の設定の資産をカスタマイズ](https://msdn.microsoft.com/windows/hardware/commercialize/customize/desktop/customize-cosa)します。
+注意 COSA、OEM の拡張機能、デバイスのイメージで指定されている場合 COSA\OEM フォルダーにします。 詳細については、次を参照してください。[国と演算子の設定の資産をカスタマイズ](https://docs.microsoft.com/windows-hardware/customize/desktop/customize-cosa)します。
 
 ### <a href="" id="update"></a> Windows 10 バージョン 1607 または Windows 10 バージョン 1703 以降に以前から、デバイスを更新すると起こりますか。 カスタムまたは手動で作成した APNs は移行されますか。 まだが優先度、データベースからの既定値をでしょうか。
 

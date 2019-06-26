@@ -4,12 +4,12 @@ description: Windows 8 と Windows の以前のバージョンの両方を実行
 ms.assetid: BE9D3C85-0212-4206-A59B-4D53FB842C39
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 00366b375a953a585acadf52f8cca8331f6ad943
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 102f973fe206540f3c15b9a6d3bff78d238bd031
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367938"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383027"
 ---
 # <a name="single-binary-opt-in-poolnxoptin"></a>単一バイナリ オプトイン: プール\_NX\_OPTIN
 
@@ -22,23 +22,23 @@ Windows 8 と Windows の以前のバージョンの両方を実行している 
 
     `C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN=1`
 
--   [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113) (または同等) ルーチンでは、次の関数呼び出しが含まれます。
+-   [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize) (または同等) ルーチンでは、次の関数呼び出しが含まれます。
 
     `ExInitializeDriverRuntime(DrvRtPoolNxOptIn);`
 
-    この呼び出しは、ドライバーは、割り当てを使用する前に行う必要があります、 **NonPagedPool**プール型またはいずれかの呼び出しにより、 [ **ExInitializeNPagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545301)ルーチンです。 **ExInitializeDriverRuntime** force インライン関数は、Windows 8 または Windows の以降のバージョンを呼び出すことができます。
+    この呼び出しは、ドライバーは、割り当てを使用する前に行う必要があります、 **NonPagedPool**プール型またはいずれかの呼び出しにより、 [ **ExInitializeNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)ルーチンです。 **ExInitializeDriverRuntime** force インライン関数は、Windows 8 または Windows の以降のバージョンを呼び出すことができます。
 
 ほとんどのドライバーでは、これら 2 つのタスクはバイナリの 1 つのドライバーのオプトイン メカニズムを有効にするための十分です。
 
 ## <a name="implementation-details"></a>実装の詳細
 
 
-プール\_NX\_OPTIN に置き換えることで、動作**NonPagedPool** 、グローバルな[**プール\_型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)変数`ExDefaultNonPagedPoolType`、いずれかに初期化される**NonPagedPoolNx** (Windows 8 以降のバージョンの Windows 用) または**NonPagedPoolExecute** (の Windows の以前のバージョン)。 NX のプールの強化された保護と、Windows 8 と NX プールがサポートされていない、Windows の以前のバージョンの両方を実行する、カーネル モード ドライバーをこのオプトイン メカニズムにできます。 インスタンスに変換するマクロ、 **NonPagedPool**定数名に**NonPagedPoolNx**のインスタンスの変換も行います**NonPagedPoolCacheAligned** に**NonPagedPoolNxCacheAligned**します。
+プール\_NX\_OPTIN に置き換えることで、動作**NonPagedPool** 、グローバルな[**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)変数`ExDefaultNonPagedPoolType`、いずれかに初期化される**NonPagedPoolNx** (Windows 8 以降のバージョンの Windows 用) または**NonPagedPoolExecute** (の Windows の以前のバージョン)。 NX のプールの強化された保護と、Windows 8 と NX プールがサポートされていない、Windows の以前のバージョンの両方を実行する、カーネル モード ドライバーをこのオプトイン メカニズムにできます。 インスタンスに変換するマクロ、 **NonPagedPool**定数名に**NonPagedPoolNx**のインスタンスの変換も行います**NonPagedPoolCacheAligned** に**NonPagedPoolNxCacheAligned**します。
 
 ## <a name="support-for-static-libraries-lib-projects"></a>スタティック ライブラリ (.lib プロジェクト) のサポート
 
 
-プールを使用する\_NX\_OPTIN オプトイン メカニズム .lib プロジェクトは通常、.lib にリンクしているプロジェクトは、プールを使用する必要がありますも\_NX\_OPTIN します。 少なくとも、プロジェクトを実装する、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチンは、次の関数呼び出しを含める必要があります。
+プールを使用する\_NX\_OPTIN オプトイン メカニズム .lib プロジェクトは通常、.lib にリンクしているプロジェクトは、プールを使用する必要がありますも\_NX\_OPTIN します。 少なくとも、プロジェクトを実装する、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチンは、次の関数呼び出しを含める必要があります。
 
 `ExInitializeDriverRuntime(DrvRtPoolNxOptIn);`
 

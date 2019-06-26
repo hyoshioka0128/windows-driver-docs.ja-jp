@@ -4,12 +4,12 @@ description: 成功の磁気ストライプ リーダー (MSR) がイベント�
 ms.assetid: 5074669c-3914-4d15-983b-d979c7f88b21
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: eab2897ea3ef584edc4224118d951e8fa23fd915
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2bc54dbb622efcc825566822ad88687b07a423d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349324"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363382"
 ---
 # <a name="magneticstripereaderdatareceived"></a>MagneticStripeReaderDataReceived
 
@@ -54,11 +54,11 @@ typedef struct _MSR_DATA_RECEIVED {
 |---|---|
 | 0x00000008                                                          | **EventType = PosEventType:。MagneticStripeReaderDataReceived**                                                                       |
 | UINT32                                                              | **DataLength** = sizeof(**PosEventDataHeader**) + sizeof(**MSR\_DATA\_RECEIVED**)                                                     |
-| 32 ビット MsrCardType                                                  | [MsrCardType](https://msdn.microsoft.com/library/windows/hardware/dn772167)                                                                                                        |
-| unsigned char                                                       | **Track1EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://msdn.microsoft.com/library/windows/hardware/dn772169)は**MsrDataEncryption\_None**します。 |
-| unsigned char                                                       | **Track2EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://msdn.microsoft.com/library/windows/hardware/dn772169)は**MsrDataEncryption\_None**します。 |
-| unsigned char                                                       | **Track3EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://msdn.microsoft.com/library/windows/hardware/dn772169)は**MsrDataEncryption\_None**します。 |
-| unsigned char                                                       | **Track4EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://msdn.microsoft.com/library/windows/hardware/dn772169)は**MsrDataEncryption\_None**します。 |
+| 32 ビット MsrCardType                                                  | [MsrCardType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrcardtype)                                                                                                        |
+| unsigned char                                                       | **Track1EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)は**MsrDataEncryption\_None**します。 |
+| unsigned char                                                       | **Track2EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)は**MsrDataEncryption\_None**します。 |
+| unsigned char                                                       | **Track3EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)は**MsrDataEncryption\_None**します。 |
+| unsigned char                                                       | **Track4EncryptedDataLength**の場合、ゼロ (0) を必ずは[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)は**MsrDataEncryption\_None**します。 |
 | unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track1EncryptedDataLength**トラック 1 の暗号化されたデータのバイト数                                                                         |
 | unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track2EncryptedDataLength**トラック 2 の暗号化されたデータのバイト数                                                                         |
 | unsigned char \[MSR\_トラック\_サイズ\]                                  | **Track3EncryptedDataLength** 3 の暗号化された追跡データのバイト数                                                                         |

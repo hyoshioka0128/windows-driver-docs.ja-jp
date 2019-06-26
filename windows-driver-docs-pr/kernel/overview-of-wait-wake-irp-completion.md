@@ -12,12 +12,12 @@ keywords:
 - Irp WDK の電源管理のウェイク/待機の完了
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 936b23454102a8fe20fffc79f4a0e279fe65cb50
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 141aa21f05f788181a878742f1338ef09cb8ab01
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384928"
 ---
 # <a name="overview-of-waitwake-irp-completion"></a>待機/ウェイク IRP 完了の概要
 
@@ -31,9 +31,9 @@ ms.locfileid: "63352000"
 
 ![待機/ウェイク irp を完了するための手順](images/comp-waitwake.png)
 
-シグナルが発生したときにコントロールをバス ドライバー、バスが、デバイスが起こさになっていることを検出する時点で再入力します。 バス ドライバー サービスの必要なイベントと呼び出し[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)を完了する、 [ **IRP\_MN\_待機\_WAKE** ](https://msdn.microsoft.com/library/windows/hardware/ff551766) IRP の PDO をします。
+シグナルが発生したときにコントロールをバス ドライバー、バスが、デバイスが起こさになっていることを検出する時点で再入力します。 バス ドライバー サービスの必要なイベントと呼び出し[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)を完了する、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) IRP の PDO をします。
 
-I/O マネージャーを呼び出して、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン デバイス スタックの上位のドライバーによって設定します。 *IoCompletion*日常的なそのドライバー サービス、必要に応じてウェイク アップのシグナルと呼び出し**IoCompleteRequest** IRP を完了します。 I/O マネージャーを呼び出し続けます*IoCompletion*操作ルーチンは、すべてのドライバーが IRP を完了するまで、デバイス スタックをバックアップします。
+I/O マネージャーを呼び出して、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン デバイス スタックの上位のドライバーによって設定します。 *IoCompletion*日常的なそのドライバー サービス、必要に応じてウェイク アップのシグナルと呼び出し**IoCompleteRequest** IRP を完了します。 I/O マネージャーを呼び出し続けます*IoCompletion*操作ルーチンは、すべてのドライバーが IRP を完了するまで、デバイス スタックをバックアップします。
 
 その*IoCompletion* 、日常的な (1 つ以上の PDO を作成します)、1 つ以上の子デバイスを列挙し、このような 1 つ以上のデバイスからの待機またはスリープ解除要求を受け取ったドライバー送信する必要が自体待機/ウェイク再待機自体を arm に IRP/別の子でスリープを解除します。 詳細については、次を参照してください。[デバイス ツリーを通じて待機/ウェイク Irp のパスを理解する](understanding-the-path-of-wait-wake-irps-through-a-device-tree.md)します。
 

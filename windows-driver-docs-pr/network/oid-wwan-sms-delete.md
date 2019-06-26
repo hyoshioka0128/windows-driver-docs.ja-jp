@@ -5,12 +5,12 @@ ms.assetid: b80fae94-35cc-4709-8346-d5a500d3fd49
 ms.date: 08/08/2017
 keywords: -OID_WWAN_SMS_DELETE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d2d971f74bc8996fe7f02e41204eae9f94f26ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fc2581bd6333724f5b0a618719c12f8d585a3cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387364"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383176"
 ---
 # <a name="oidwwansmsdelete"></a>OID\_WWAN\_SMS\_削除
 
@@ -19,14 +19,14 @@ OID\_WWAN\_SMS\_MB デバイス、または Subscriber Identity Module (SIM カ�
 
 クエリ要求はサポートされていません。
 
-セットの使用を要求する、 [ **NDIS\_WWAN\_SMS\_削除**](https://msdn.microsoft.com/library/windows/hardware/ff567938)構造体。
+セットの使用を要求する、 [ **NDIS\_WWAN\_SMS\_削除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete)構造体。
 
 ミニポート ドライバーは、この OID を非同期に処理し、NDIS を返す必要があります\_状態\_INDICATION\_セットの要求に必要な作業 provisional 応答。 ミニポート ドライバーに送信する必要があります、 [ **NDIS\_状態\_WWAN\_SMS\_削除**](ndis-status-wwan-sms-delete.md)トランザクションが完了しているときを示す値。
 
 <a name="remarks"></a>注釈
 -------
 
-詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)します。
+詳細については、この OID を使用して、次を参照してください。 [WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)します。
 
 この OID を処理するときに、ミニポート ドライバーは Subscriber Identity Module (SIM カード) にアクセスできますが、プロバイダーのネットワークにアクセスしないでください。
 
@@ -57,9 +57,9 @@ OID\_WWAN\_SMS\_MB デバイス、または Subscriber Identity Module (SIM カ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_WWAN\_SMS\_削除**](https://msdn.microsoft.com/library/windows/hardware/ff567938)
+[**NDIS\_WWAN\_SMS\_削除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete)
 
-[WWAN SMS の操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)
+[WWAN SMS の操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
 
  
 

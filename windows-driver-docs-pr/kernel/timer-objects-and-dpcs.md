@@ -22,22 +22,22 @@ keywords:
 - タイムアウト間隔の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d53ae173b646788694372d70da1190a4bf6076b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6129d2abd868a0be01b638fabc3cf4ed8320a39
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383660"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382955"
 ---
 # <a name="kexxxtimer-routines-ktimer-objects-and-dpcs"></a>KeXxxTimer ルーチン、KTIMER オブジェクト、DPC
 
 
-以降では、Windows 2000 では、一連の**Ke*Xxx*タイマー**ルーチンがタイマーの管理に使用します。 これらのルーチンを使用して、タイマー オブジェクトに基づく、 [ **KTIMER** ](https://msdn.microsoft.com/library/windows/hardware/ff554250)構造体。 タイマー オブジェクトを作成するドライバーを最初にストレージを割り当てるを**KTIMER**構造体。 ドライバーなどのルーチンの呼び出し、 [ **KeInitializeTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff552168)または[ **KeInitializeTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552173)この構造体を初期化します。
+以降では、Windows 2000 では、一連の**Ke*Xxx*タイマー**ルーチンがタイマーの管理に使用します。 これらのルーチンを使用して、タイマー オブジェクトに基づく、 [ **KTIMER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。 タイマー オブジェクトを作成するドライバーを最初にストレージを割り当てるを**KTIMER**構造体。 ドライバーなどのルーチンの呼び出し、 [ **KeInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimer)または[ **KeInitializeTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimerex)この構造体を初期化します。
 
 
 
 
-1 回だけは、有効期限が切れるか、繰り返し一定期間切れになるよう、タイマーを設定できます。 [**KeSetTimer** ](https://msdn.microsoft.com/library/windows/hardware/ff553286)常に 1 回だけの有効期限をタイマーを設定します。 [**KeSetTimerEx** ](https://msdn.microsoft.com/library/windows/hardware/ff553292)受け取る省略可能な*期間*パラメーターで、定期的なタイマーの間隔を指定します。
+1 回だけは、有効期限が切れるか、繰り返し一定期間切れになるよう、タイマーを設定できます。 [**KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)常に 1 回だけの有効期限をタイマーを設定します。 [**KeSetTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)受け取る省略可能な*期間*パラメーターで、定期的なタイマーの間隔を指定します。
 
 省略可能な[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチン (遅延プロシージャ呼び出しの種類) と関連付けができる通知タイマーまたは同期タイマーのいずれか。 このルーチンは、指定した期間、有効期限が切れるときに実行されます。 詳細については、次を参照してください。[タイマー オブジェクトを使用する](using-timer-objects.md)します。
 

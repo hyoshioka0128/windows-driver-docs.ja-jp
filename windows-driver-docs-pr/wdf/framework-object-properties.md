@@ -9,12 +9,12 @@ keywords:
 - WDK KMDF の set メソッド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf8e9879929a8f08325ce6dbaa688c3c9920fd5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0903785c1f69c7e1bcfd97369c2802538bff96c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370909"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384447"
 ---
 # <a name="framework-object-properties"></a>フレームワーク オブジェクトのプロパティ
 
@@ -28,7 +28,7 @@ ms.locfileid: "63370909"
 
 書き込み可能の各プロパティは、フレームワークは、ドライバーを呼び出すことができるプロパティの値を変更する「設定」のメソッドを定義します。 ドライバーは、"set"メソッドへの入力パラメーターとして、プロパティの新しい値を提供します。
 
-たとえば、フレームワークのデバイス オブジェクトは 2 つのメソッドを定義します[ **WdfDeviceGetDeviceState** ](https://msdn.microsoft.com/library/windows/hardware/ff545994)と[ **WdfDeviceSetDeviceState**](https://msdn.microsoft.com/library/windows/hardware/ff546884)、。プラグ アンド プレイ (PnP) の状態のドライバーは、デバイスの設定を取得または呼び出すことができます。
+たとえば、フレームワークのデバイス オブジェクトは 2 つのメソッドを定義します[ **WdfDeviceGetDeviceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestate)と[ **WdfDeviceSetDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)、。プラグ アンド プレイ (PnP) の状態のドライバーは、デバイスの設定を取得または呼び出すことができます。
 
  
 

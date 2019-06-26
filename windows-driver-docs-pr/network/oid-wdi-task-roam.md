@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_ROAM ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9fd8df71f13c7a02327bb54339b74b8af466553c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e72a78d92e4bece93c9ad26a7287667c4c13d27a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339998"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387229"
 ---
 # <a name="oidwditaskroam"></a>OID\_WDI\_タスク\_ローミング
 
@@ -38,8 +38,8 @@ Microsoft コンポーネントは、アダプターは、移動の検討して�
 
 | TLV  | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
 | --- | --- | --- | --- |
-| [**WDI\_TLV\_CONNECT\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926266) |   |   | 接続パラメーター。 |  
-| [**WDI\_TLV\_CONNECT\_BSS\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn926264)  | x  |   | 優先される候補の一覧は、BSS エントリを接続します。 ポートは、これら BSS エントリの一覧を使い果たすまでまたは接続が正常に完了しましたに接続しようとする必要があります。 ポートは、必要な場合、エントリを優先できます。 アダプターが接続 BSS 選択をオーバーライド ビットを設定した場合、許可/拒否リストの要件に従っている限り、この一覧にない BSS を選択できます。 | 
+| [**WDI\_TLV\_CONNECT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-parameters) |   |   | 接続パラメーター。 |  
+| [**WDI\_TLV\_CONNECT\_BSS\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-bss-entry)  | x  |   | 優先される候補の一覧は、BSS エントリを接続します。 ポートは、これら BSS エントリの一覧を使い果たすまでまたは接続が正常に完了しましたに接続しようとする必要があります。 ポートは、必要な場合、エントリを優先できます。 アダプターが接続 BSS 選択をオーバーライド ビットを設定した場合、許可/拒否リストの要件に従っている限り、この一覧にない BSS を選択できます。 | 
 
 ## <a name="task-completion-indication"></a>タスクの完了を示す値
 
@@ -55,7 +55,7 @@ Microsoft コンポーネントは、アダプターは、移動の検討して�
 
 [NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

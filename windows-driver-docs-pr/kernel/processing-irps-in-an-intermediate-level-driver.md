@@ -11,12 +11,12 @@ keywords:
 - 保留
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 507c38243eb92aabc1d81daa423eaafa0e52e361
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 321187a8ef0056776c6c3a46bb9733970c061a88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369108"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378802"
 ---
 # <a name="processing-irps-in-an-intermediate-level-driver"></a>中間レベル ドライバーでの IRP の処理
 
@@ -48,37 +48,37 @@ ms.locfileid: "63369108"
 
 ![中間ドライバー ルーチン経路は irp を示す図](images/4hiddirp.png)
 
-図に示すように、I/O マネージャーは IRP を作成し、特定の主要な関数のコード用のドライバーのディスパッチ ルーチンに送信します。 関数のコードと仮定した場合は、 [ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)、ディスパッチ ルーチンは**DDDispatchWrite**します。 中間のドライバーの I/O スタックの場所は、不特定数の網掛け表示より高いレベルと下位レベルのドライバーの I/O スタックの場所で、中央に表示されます。
+図に示すように、I/O マネージャーは IRP を作成し、特定の主要な関数のコード用のドライバーのディスパッチ ルーチンに送信します。 関数のコードと仮定した場合は、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)、ディスパッチ ルーチンは**DDDispatchWrite**します。 中間のドライバーの I/O スタックの場所は、不特定数の網掛け表示より高いレベルと下位レベルのドライバーの I/O スタックの場所で、中央に表示されます。
 
 ### <a href="" id="allocating-irps-"></a>Irp の割り当てください。
 
 ミラー ドライバーの目的は、いくつかの物理デバイスに書き込み要求を送信して、これらのデバイス ドライバーを代わりに読み取り要求を送信するにです。 書き込み要求の場合は、ドライバーは、IRP の入力パラメーターが有効であると仮定しているデータが書き込まれるデバイスごとに重複する Irp で作成します。
 
-前の図への呼び出しを示しています。 [ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)がより高度なドライバーは Irp を下位レベルのドライバーを割り当てることは、その他のサポート ルーチンを呼び出すことができます。 参照してください[Irp を作成する下位レベルのドライバーの](creating-irps-for-lower-level-drivers.md)します。
+前の図への呼び出しを示しています。 [ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)がより高度なドライバーは Irp を下位レベルのドライバーを割り当てることは、その他のサポート ルーチンを呼び出すことができます。 参照してください[Irp を作成する下位レベルのドライバーの](creating-irps-for-lower-level-drivers.md)します。
 
 ディスパッチ ルーチンを呼び出すと**IoAllocateIrp**IRP の必要な I/O スタックの場所の数を指定します。 ドライバーは、ミラー ドライバーのすぐ下には、各ドライバーのデバイス オブジェクトから適切な値を取得する、一連の各下位のドライバーのスタックの場所を指定する必要があります。 必要に応じて、ドライバーを追加できますこの値を 1 つを呼び出すときに**IoAllocateIrp**前の図に、ドライバーは、割り当てる各の独自の IRP のスタックの場所を取得します。
 
-この中間ドライバーのディスパッチ ルーチンの呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174) (非表示) パラメーターをチェックする、元の IRP にします。
+この中間ドライバーのディスパッチ ルーチンの呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation) (非表示) パラメーターをチェックする、元の IRP にします。
 
-呼び出す[ **IoSetNextIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550321)それぞれに独自スタックの場所を新しく割り当てられたため、IRP を作成し、 [ **IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)自体で後で使用されるコンテキストを作成する、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチン。
+呼び出す[ **IoSetNextIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetnextirpstacklocation)それぞれに独自スタックの場所を新しく割り当てられたため、IRP を作成し、 [ **IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)自体で後で使用されるコンテキストを作成する、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチン。
 
-次に、呼び出す[ **IoGetNextIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549266)各に新しく作成された IRP が割り当てた Irp では [次へ] の下位のドライバーの I/O スタックの場所を設定できるようにします。 ミラー ドライバーのディスパッチ ルーチン IRP 関数のコードとパラメーターのコピー (転送バッファーへのポインターの転送をバイト単位で長さ**IRP\_MJ\_書き込み**) に、I/O スタックの場所次の下位のドライバーです。 これらのドライバーでは、さらは設定のすぐ下に、ドライバー、I/O スタックの場所を存在する場合。
+次に、呼び出す[ **IoGetNextIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)各に新しく作成された IRP が割り当てた Irp では [次へ] の下位のドライバーの I/O スタックの場所を設定できるようにします。 ミラー ドライバーのディスパッチ ルーチン IRP 関数のコードとパラメーターのコピー (転送バッファーへのポインターの転送をバイト単位で長さ**IRP\_MJ\_書き込み**) に、I/O スタックの場所次の下位のドライバーです。 これらのドライバーでは、さらは設定のすぐ下に、ドライバー、I/O スタックの場所を存在する場合。
 
 ### <a name="calling-iosetcompletionroutine-and-iocalldriver"></a>呼び出し IoSetCompletionRoutine および保留
 
-前の図の呼び出しのディスパッチ ルーチン[ **IoSetCompletionRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549679)が割り当てた各 IRP の。 このドライバーの設定が割り当てた Irp の前の図に、ドライバーを破棄する必要があります、ため、その*IoCompletion*が正常に完了した I/O 操作に失敗するかどうか、下位のドライバーの Irp では、完了時に呼び出されるルーチンか、取り消されました。
+前の図の呼び出しのディスパッチ ルーチン[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)が割り当てた各 IRP の。 このドライバーの設定が割り当てた Irp の前の図に、ドライバーを破棄する必要があります、ため、その*IoCompletion*が正常に完了した I/O 操作に失敗するかどうか、下位のドライバーの Irp では、完了時に呼び出されるルーチンか、取り消されました。
 
-[次へ] の下位レベルのドライバーに呼び出すことによって割り当てられた両方の Irp を渡すため、前の図に、ドライバーは、並列でミラー化[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) 2 回、各ターゲット デバイスに 1 回ミラー化されたパーティションを表すオブジェクト。
+[次へ] の下位レベルのドライバーに呼び出すことによって割り当てられた両方の Irp を渡すため、前の図に、ドライバーは、並列でミラー化[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) 2 回、各ターゲット デバイスに 1 回ミラー化されたパーティションを表すオブジェクト。
 
 ### <a name="processing-irps-in-the-drivers-iocompletion-routine"></a>ドライバーの IoCompletion ルーチンに Irp の処理
 
 I/O マネージャーが、中間のミラー ドライバーを呼び出してドライバーの下位レベルの両方のセットには、要求された操作が完了すると、 *IoCompletion*ルーチン。 ミラー ドライバーは下位のドライバーには、すべての重複する Irp が完了した時点を追跡するために、元の IRP の独自 I/O スタックの場所でカウントを保持します。
 
-状態の I/O ブロックでは、1 つ下位のドライバーのセットでに示すように重複する IRP が完了したことを示します、[前の図](#irp-path-through-intermediate-driver-routines)、ミラー ドライバーの*IoCompletion*日常的なデクリメントのカウント完了できません。 元の IRP までデクリメントが、カウントがゼロにします。 減少数がまだ 0 でない場合、 *IoCompletion*ルーチンの呼び出し[ **IoFreeIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549113)最初に返された IRP に (前の図の DupIRP1) をドライバー割り当てられているし、ステータスを返します\_詳細\_処理\_必要な作業です。
+状態の I/O ブロックでは、1 つ下位のドライバーのセットでに示すように重複する IRP が完了したことを示します、[前の図](#irp-path-through-intermediate-driver-routines)、ミラー ドライバーの*IoCompletion*日常的なデクリメントのカウント完了できません。 元の IRP までデクリメントが、カウントがゼロにします。 減少数がまだ 0 でない場合、 *IoCompletion*ルーチンの呼び出し[ **IoFreeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)最初に返された IRP に (前の図の DupIRP1) をドライバー割り当てられているし、ステータスを返します\_詳細\_処理\_必要な作業です。
 
 ときに、ミラー ドライバーの*IoCompletion*ルーチンは、前の図に示す DupIRP2 でもう一度呼び出されます、 *IoCompletion*日常的なデクリメント IRP が元の数が判断したと両方要求された操作の下位レベルのドライバー セットが実行されます。
 
-ステータスの設定も DupIRP2 で I/O のステータスのブロックと仮定すると\_成功した場合、 *IoCompletion*ルーチンが DupIRP2 から元の IRP に状態の I/O ブロックをコピーし、DupIRP2 を解放します。 呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)元 IRP と状態を返します。\_詳細\_処理\_必須。 この状態を返すしないように I/O マネージャー DupIRP2; で処理をさらに補完IRP はスレッドに関連付けられていないため、それを作成したドライバーを使用した完了処理を終了する必要があります。
+ステータスの設定も DupIRP2 で I/O のステータスのブロックと仮定すると\_成功した場合、 *IoCompletion*ルーチンが DupIRP2 から元の IRP に状態の I/O ブロックをコピーし、DupIRP2 を解放します。 呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)元 IRP と状態を返します。\_詳細\_処理\_必須。 この状態を返すしないように I/O マネージャー DupIRP2; で処理をさらに補完IRP はスレッドに関連付けられていないため、それを作成したドライバーを使用した完了処理を終了する必要があります。
 
 下位レベルのドライバーの両方のセットがミラー ドライバーの Irp を正常に完了しない場合、ミラー ドライバーの*IoCompletion*ルーチンがエラーと試行の適切なのミラー化されたデータ回復にログインする必要があります。 詳細については、次を参照してください。[ログ エラー](logging-errors.md)します。
 

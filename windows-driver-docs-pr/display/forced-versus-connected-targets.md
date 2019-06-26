@@ -15,12 +15,12 @@ keywords:
 - 強制ターゲット WDK Windows Server 2008 R2 の表示と接続
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ddc82180342a83e267e4d2583e6fe55e8667916
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2122e8c67ac3b2f498d5995b83bb7cc540442dd2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325342"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385952"
 ---
 # <a name="forced-versus-connected-targets"></a>強制されたターゲットと接続されたターゲット
 
@@ -118,7 +118,7 @@ CCD Api では、接続されているモニタおよび forceable ターゲッ�
 </tr>
 <tr class="even">
 <td align="left"><p>パス-永続的です</p></td>
-<td align="left"><p>この状態の強制は、再起動後に失われます。 Microsoft Win32 <strong>ChangeDisplaySettingsEx</strong>関数はパスに永続化されたすべてのモニターを常に破棄のパスでこれらのモニターの対象となっている場合でも、 <strong>ChangeDisplaySettingsEx</strong>呼び出します。 呼び出し元が呼び出す場合、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff569533" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569533)"> <strong>SetDisplayConfig</strong> </a> CCD 関数で設定 SDC_USE_SUPPLIED_DISPLAY_CONFIG または SDC_TOPOLOGY_SUPPLIED フラグを使用して、<em>フラグ</em>パラメーター、 <strong>SetDisplayConfig</strong>新しいトポロジには、モニターされているパスが含まれていない場合は、パスに永続化されたモニターを削除します。 呼び出し元を指定するフラグを他のすべての SDC_TOPOLOGY_XXX の<em>フラグ</em>パラメーター、 <strong>SetDisplayConfig</strong>呼び出し元は、SDC_PATH_PERSIST_ も指定されていない限り、パスに永続化されたモニターを削除しますIF_REQUIRED フラグと、パスは新しいトポロジでアクティブです。</p></td>
+<td align="left"><p>この状態の強制は、再起動後に失われます。 Microsoft Win32 <strong>ChangeDisplaySettingsEx</strong>関数はパスに永続化されたすべてのモニターを常に破棄のパスでこれらのモニターの対象となっている場合でも、 <strong>ChangeDisplaySettingsEx</strong>呼び出します。 呼び出し元が呼び出す場合、 <a href="https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)"> <strong>SetDisplayConfig</strong> </a> CCD 関数で設定 SDC_USE_SUPPLIED_DISPLAY_CONFIG または SDC_TOPOLOGY_SUPPLIED フラグを使用して、<em>フラグ</em>パラメーター、 <strong>SetDisplayConfig</strong>新しいトポロジには、モニターされているパスが含まれていない場合は、パスに永続化されたモニターを削除します。 呼び出し元を指定するフラグを他のすべての SDC_TOPOLOGY_XXX の<em>フラグ</em>パラメーター、 <strong>SetDisplayConfig</strong>呼び出し元は、SDC_PATH_PERSIST_ も指定されていない限り、パスに永続化されたモニターを削除しますIF_REQUIRED フラグと、パスは新しいトポロジでアクティブです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>永続的なブート</p></td>

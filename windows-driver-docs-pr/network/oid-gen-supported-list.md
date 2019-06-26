@@ -5,12 +5,12 @@ ms.assetid: 4e663204-eee0-4732-83c9-ec1dacd41034
 ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_LIST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 263789fe3249bfd98b83a51fe1627351ed2d26ae
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 22935f04df1de75b97f6ea2762b2634fe0f1c503
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148528"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386996"
 ---
 # <a name="oidgensupportedlist"></a>OID\_GEN\_サポートされている\_一覧
 
@@ -26,13 +26,13 @@ ms.locfileid: "67148528"
 要求されません。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-必須。 参照してください[OID\_GEN\_サポートされている\_一覧 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff560258)します。
+必須。 参照してください[OID\_GEN\_サポートされている\_一覧 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560258(v=vs.85))します。
 
 <a href="" id="windows-xp"></a>Windows XP  
 サポートされています。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>5.1 の NDIS ミニポート ドライバー  
-必須。 参照してください[OID\_GEN\_サポートされている\_一覧 (NDIS 5.1)](https://msdn.microsoft.com/library/windows/hardware/ff560258)します。
+必須。 参照してください[OID\_GEN\_サポートされている\_一覧 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560258(v=vs.85))します。
 
 <a name="remarks"></a>注釈
 -------
@@ -47,7 +47,7 @@ NDIS は、このクエリを行うプロトコル ドライバーに指定さ�
 
 重複部分は、サポートされている Oid 一覧に表示可能性があります。 ドライバーは、一覧には、各 OID の 1 つのエントリがあることを保証する必要はありません。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>

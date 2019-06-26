@@ -19,12 +19,12 @@ keywords:
 - WDK のオブジェクトの参照をカウント
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ee77d2900138b800722496dd6c4cc3128f6f295
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08df0df5dd7ce393442a4bc1af60648c605b0fec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381366"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384225"
 ---
 # <a name="life-cycle-of-an-object"></a>オブジェクトのライフ サイクル
 
@@ -40,25 +40,25 @@ ms.locfileid: "63381366"
 
 ドライバーは、オブジェクト マネージャーが、正確な参照カウントのすべてのオブジェクトを操作することを確認する必要があります。 途中でリリースされているオブジェクトには、システムがクラッシュする可能性があります。 参照カウントが誤って高オブジェクトは解放されません。
 
-ハンドルまたはポインターのいずれかのオブジェクトを参照できます。 だけでなく、参照カウントは、オブジェクト マネージャーは、オブジェクトを開いているハンドルの数を保持します。 ルーチンはハンドルを開いて、それぞれは、オブジェクトの参照カウントとオブジェクトのハンドル数の両方を 1 つずつ増加します。 このようなルーチンを呼び出すたびに対応する呼び出しと照合する必要があります[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)します。 詳細については、次を参照してください。[オブジェクトは処理](object-handles.md)します。
+ハンドルまたはポインターのいずれかのオブジェクトを参照できます。 だけでなく、参照カウントは、オブジェクト マネージャーは、オブジェクトを開いているハンドルの数を保持します。 ルーチンはハンドルを開いて、それぞれは、オブジェクトの参照カウントとオブジェクトのハンドル数の両方を 1 つずつ増加します。 このようなルーチンを呼び出すたびに対応する呼び出しと照合する必要があります[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)します。 詳細については、次を参照してください。[オブジェクトは処理](object-handles.md)します。
 
-カーネル モードでは、オブジェクトへのポインターでオブジェクトを参照できます。 など、オブジェクトにポインターを返すルーチン[ **IoGetAttachedDeviceReference**](https://msdn.microsoft.com/library/windows/hardware/ff549145)、参照カウントを 1 ずつ増加します。 ドライバーが完了すると、ポインターを使用して呼び出す必要があります[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)をいずれかによって、参照カウントを減らします。
+カーネル モードでは、オブジェクトへのポインターでオブジェクトを参照できます。 など、オブジェクトにポインターを返すルーチン[ **IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference)、参照カウントを 1 ずつ増加します。 ドライバーが完了すると、ポインターを使用して呼び出す必要があります[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)をいずれかによって、参照カウントを減らします。
 
 次のすべてのルーチンは、オブジェクトの参照カウントを 1 ずつ増加します。
 
-[**ExCreateCallback**](https://msdn.microsoft.com/library/windows/hardware/ff544560)
+[**ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excreatecallback)
 
-[**IoGetAttachedDeviceReference**](https://msdn.microsoft.com/library/windows/hardware/ff549145)
+[**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference)
 
-[**IoGetDeviceObjectPointer**](https://msdn.microsoft.com/library/windows/hardware/ff549198)
+[**IoGetDeviceObjectPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)
 
-[**IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)
+[**IoWMIOpenBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiopenblock)
 
-[**ObReferenceObject**](https://msdn.microsoft.com/library/windows/hardware/ff558678)
+[**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)
 
-[**ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679)
+[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)
 
-[**ObReferenceObjectByPointer**](https://msdn.microsoft.com/library/windows/hardware/ff558686)
+[**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)
 
 前のルーチンのいずれかに実行される各呼び出しに対応する呼び出しと一致する必要があります**ObDereferenceObject**します。
 
@@ -72,9 +72,9 @@ ms.locfileid: "63381366"
 
 限りそのハンドルの数が 0 以外の場合、一時オブジェクトを名前でアクセスできます。 ハンドルの数をデクリメント 0、オブジェクトの名前には、オブジェクト マネージャーの名前空間から削除されるとします。 参照カウントが 0 より大きい限り、このようなオブジェクトはまだポインターによってアクセスできます。 存在する限り、永続的なオブジェクトを名前でアクセスできます。
 
-オブジェクトにできる永続的な作成時に、OBJ を指定することによって\_で永続的な属性、 [**オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff557749)オブジェクトの構造体。 詳細については、次を参照してください。 [ **InitializeObjectAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff547804)します。
+オブジェクトにできる永続的な作成時に、OBJ を指定することによって\_で永続的な属性、 [**オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_object_attributes)オブジェクトの構造体。 詳細については、次を参照してください。 [ **InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)します。
 
-永続的なオブジェクトを一時的にするために、使用、 [ **ZwMakeTemporaryObject** ](https://msdn.microsoft.com/library/windows/hardware/ff566477)ルーチン。 このルーチンは、オブジェクトを使用してが自動的に削除します。 (開いているハンドル オブジェクトがない場合は、オブジェクトの名前は直ちに削除オブジェクト マネージャーの名前空間。 オブジェクト自体は、参照カウントがゼロになるまでです。)
+永続的なオブジェクトを一時的にするために、使用、 [ **ZwMakeTemporaryObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmaketemporaryobject)ルーチン。 このルーチンは、オブジェクトを使用してが自動的に削除します。 (開いているハンドル オブジェクトがない場合は、オブジェクトの名前は直ちに削除オブジェクト マネージャーの名前空間。 オブジェクト自体は、参照カウントがゼロになるまでです。)
 
  
 

@@ -6,23 +6,23 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WWAN_DEVICE_SLOT_MAPPING_INFO ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 377091b9d384f111021c836f144c86816fffb241
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9dc108d11370ee5886afc8388abad464c1865fdd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357262"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366602"
 ---
 # <a name="ndisstatuswwandeviceslotmappinginfo"></a>NDIS\_状態\_WWAN\_デバイス\_スロット\_マッピング\_情報
 
 
-ミニポート ドライバーを使用して、 **NDIS\_状態\_WWAN\_デバイス\_スロット\_マッピング\_情報**MB サービスに通知する通知、前回の完了[OID\_WWAN\_デバイス\_スロット\_マッピング\_情報](https://msdn.microsoft.com/library/windows/hardware/mt799831)クエリまたは要求を設定します。
+ミニポート ドライバーを使用して、 **NDIS\_状態\_WWAN\_デバイス\_スロット\_マッピング\_情報**MB サービスに通知する通知、前回の完了[OID\_WWAN\_デバイス\_スロット\_マッピング\_情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-slot-mappings)クエリまたは要求を設定します。
 
 ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_スロット\_マッピング\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt782403)構造体。
+この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_スロット\_マッピング\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)構造体。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -45,9 +45,9 @@ ms.locfileid: "63357262"
 ## <a name="see-also"></a>関連項目
 
 
-[OID\_WWAN\_デバイス\_スロット\_マッピング\_情報](https://msdn.microsoft.com/library/windows/hardware/mt799831)
+[OID\_WWAN\_デバイス\_スロット\_マッピング\_情報](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-slot-mappings)
 
-[**NDIS\_WWAN\_デバイス\_スロット\_マッピング\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt782403)
+[**NDIS\_WWAN\_デバイス\_スロット\_マッピング\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_slot_mapping_info)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - 画面は、WDK Direct3D を処理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 369734515b7ff1c9c26144fc0768eb20501edff9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6de7eb01e57cbe98153f9c4708df9b32ab3cf2e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357993"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384863"
 ---
 # <a name="direct3d-surface-handles"></a>Direct3D サーフェイス ハンドル
 
@@ -24,13 +24,13 @@ Microsoft DirectX 7.0 デバイス ドライバー インターフェイス (DDI
 
 これらの目標に向かう 1 つの重要な変更は、所有する、更新、およびドライバーによって書式設定された構造体に、Direct3D/DirectDraw ランタイムによって所有されている中間構造からすべての画面に関連するデータの移動です。
 
-サーフェスは、コマンド ストリームに埋め込まれているハンドルによって参照されます。 これらの頻度の高い操作で、ドライバーから参照できる、サーフェイスの独自の表現、ハンドルなどのヘルパー関数を使用して、画面のロックを使用しなくても[ **EngLockDirectDrawSurface** ](https://msdn.microsoft.com/library/windows/hardware/ff564966).
+サーフェスは、コマンド ストリームに埋め込まれているハンドルによって参照されます。 これらの頻度の高い操作で、ドライバーから参照できる、サーフェイスの独自の表現、ハンドルなどのヘルパー関数を使用して、画面のロックを使用しなくても[ **EngLockDirectDrawSurface** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-englockdirectdrawsurface).
 
-これらのハンドルを割り当てるためのメカニズムが呼び出されるドライバーのエントリ ポイント[ **D3dCreateSurfaceEx**](https://msdn.microsoft.com/library/windows/hardware/ff542840)します。 このエントリ ポイントが、既存の呼び出しの直後と呼ばれる[ *DdCanCreateSurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549213)と[ *DdCreateSurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549263) 、エントリ ポイントと後、画面には、ビデオ メモリ アドレスをハンドルを割り当てられています。 **D3dCreateSurfaceEx**時間、ドライバーの表面の構造とサーフェスの構造に、DirectDraw ランタイムのコピーからすべての関連情報をコピーします。 ドライバー側コピーのサイズなどの画面のデータに必要な形式、および**fpVidMem** (のメンバー、 [ **DD\_画面\_GLOBAL** ](https://msdn.microsoft.com/library/windows/hardware/ff551726)構造体)。
+これらのハンドルを割り当てるためのメカニズムが呼び出されるドライバーのエントリ ポイント[ **D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)します。 このエントリ ポイントが、既存の呼び出しの直後と呼ばれる[ *DdCanCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))と[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 、エントリ ポイントと後、画面には、ビデオ メモリ アドレスをハンドルを割り当てられています。 **D3dCreateSurfaceEx**時間、ドライバーの表面の構造とサーフェスの構造に、DirectDraw ランタイムのコピーからすべての関連情報をコピーします。 ドライバー側コピーのサイズなどの画面のデータに必要な形式、および**fpVidMem** (のメンバー、 [ **DD\_画面\_GLOBAL** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global)構造体)。
 
 ハンドルは、デバイスごとに、プロセスごとに一意である、ランタイムが保証されます。 ハンドルは、それぞれのコンテキストで一意であるとは限りませんし、このドライバーでさらに詳しく説明されているいくつかの影響を与えます[ドライバー側画面構造の作成](creating-driver-side-surface-structures.md)です。
 
-対応がない**DestroySurfaceEx**でドライバー側サーフェスの構造が破棄されるため、呼び出す[ *DdDestroySurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549281)時間。
+対応がない**DestroySurfaceEx**でドライバー側サーフェスの構造が破棄されるため、呼び出す[ *DdDestroySurface* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)時間。
 
  
 

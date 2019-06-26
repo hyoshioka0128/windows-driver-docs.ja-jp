@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af574a8deeac086922eca11a811b8e717d1ca7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dba13879b6abf665e527858b34da41b5312d4273
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390749"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385931"
 ---
 # <a name="inf-addproperty-directive"></a>INF AddProperty ディレクティブ
 
@@ -90,7 +90,7 @@ GUID 値には、カスタム プロパティのカテゴリを識別する GUID
 プロパティの識別子で示されるプロパティのカテゴリ内の特定のプロパティを示す、*プロパティ カテゴリの guid*値。 内部システム上の理由から、プロパティの識別子が 2 つ以上である必要があります。
 
 <a href="" id="type"></a>型  
-数値、10 進数または 16 進数の形式での[プロパティ データ型識別子](https://msdn.microsoft.com/library/windows/hardware/ff541476)プロパティで指定されている、*プロパティ カテゴリの guid*値と*プロパティ pid*値。 次のオプションのみ[**基本データ型**](https://msdn.microsoft.com/library/windows/hardware/ff537793)はサポートされています。
+数値、10 進数または 16 進数の形式での[プロパティ データ型識別子](https://docs.microsoft.com/previous-versions/ff541476(v=vs.85))プロパティで指定されている、*プロパティ カテゴリの guid*値と*プロパティ pid*値。 次のオプションのみ[**基本データ型**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))はサポートされています。
 
 -   DEVPROP_TYPE_STRING
 -   DEVPROP_TYPE_STRING_LIST

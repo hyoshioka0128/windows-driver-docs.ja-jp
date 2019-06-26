@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da46cfe74a64752ecfbc4f6c4d828cd4acca991d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8a1e2147f725299063d4d11fefa18630a07745f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344507"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371357"
 ---
 # <a name="rxdbgbreakpoint-function"></a>RxDbgBreakPoint 関数
 
@@ -53,7 +53,7 @@ VOID RxDbgBreakPoint(
 
 このルーチンは、インストールされている場合は、カーネル デバッガーによって処理される例外を発生させます。それ以外の場合、デバッグ システムによって処理されます。 システムにデバッガーが接続されていない場合は、標準的な方法で、例外を処理することができます。
 
-カーネル モードでは、結果としてブルー スクリーン (バグ チェック) が処理されていない中断例外になります。 ただし、カーネル デバッグを有効にするターゲット コンピューターに、カーネル モードのデバッガーを接続ことができます。 詳細については、次を参照してください。 [Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。
+カーネル モードでは、結果としてブルー スクリーン (バグ チェック) が処理されていない中断例外になります。 ただし、カーネル デバッグを有効にするターゲット コンピューターに、カーネル モードのデバッガーを接続ことができます。 詳細については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -84,7 +84,7 @@ VOID RxDbgBreakPoint(
 
 [**RxAssert**](rxassert.md)
 
-[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
  
 

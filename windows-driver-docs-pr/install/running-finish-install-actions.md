@@ -4,12 +4,12 @@ description: インストールの完了アクションの実行
 ms.assetid: 9a5f8e7c-ba11-4a2a-82dd-32cd91c3cc39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a58a9d0632844ab29a684701175fce5845e3ac57
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c152108f561f4779b1a3d53ab9ca53931ca49175
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383662"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382276"
 ---
 # <a name="running-finish-install-actions"></a>インストールの完了アクションの実行
 
@@ -21,19 +21,19 @@ Windows 8 では、前に完了インストール アクションを実行する
 -   初めて Windows セットアップの完了後に、管理者が Windows にログオンするとき、Windows セットアップ中にインストールされているデバイス。
 
 -   デバイスをインストールまたは core デバイスのインストールの操作が完了したら、次のように、Windows のインストール後に再インストールします。
-    -   [ハードウェア最初インストール](hardware-first-installation.md)Windows デバイスの最初の [完了-インストール プロセスが実行されます。 現在のユーザーが管理者でない場合は、Windows はまず最初に 完了-インストール プロセスを実行する前に、管理者の資格情報を入力するユーザーを求められます。
+    -   [ハードウェア最初インストール](hardware-first-installation.md)Windows デバイスの最初の 完了-インストール プロセスが実行されます。 現在のユーザーが管理者でない場合は、Windows はまず最初に 完了-インストール プロセスを実行する前に、管理者の資格情報を入力するユーザーを求められます。
 
-    -   [ソフトウェア最初インストール](software-first-installation.md)デバイスの Windows がインストールまたは再インストールを開始した管理者のコンテキストで、最初に [完了-インストール プロセスを実行します。
+    -   [ソフトウェア最初インストール](software-first-installation.md)デバイスの Windows がインストールまたは再インストールを開始した管理者のコンテキストで、最初に 完了-インストール プロセスを実行します。
 
 Windows 8 では、以前に完了インストール アクションを実行する初回の試行が成功すると、完了-インストール プロセスは 完了 のインストール操作を実行するフラグが付けられると、デバイスをクリアします。 完了-インストール操作を完了する初回の試行に失敗した場合、完了-インストール プロセスとして、完了 のインストール アクションと終了を実行するフラグが設定されているデバイスをクリアしません。 その後、インストール操作が 完了 を実行するフラグが設定された、デバイスは、Windows は繰り返し、次のように、デバイスが列挙されるたびに、新しい 完了-インストール プロセスを実行して完了-インストール操作の完了を試みます。
 
 -   デバイスがインストールされている、次に、管理者ログオンします。
 
--   管理者のハードウェア変更のスキャンをクリックした場合、**アクション**デバイス マネージャーのメニューやインストール プログラムを呼び出す[ **CM_Reenumerate_DevNode** ](https://msdn.microsoft.com/library/windows/hardware/ff539763)コンテキストで管理者。
+-   管理者のハードウェア変更のスキャンをクリックした場合、**アクション**デバイス マネージャーのメニューやインストール プログラムを呼び出す[ **CM_Reenumerate_DevNode** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_reenumerate_devnode)コンテキストで管理者。
 
-完了-インストールが呼び出しを処理するデバイスのインストールが完了操作を実行する場合、 [ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)を送信する、 [ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)デバイス用のインストーラーを要求します。
+完了-インストールが呼び出しを処理するデバイスのインストールが完了操作を実行する場合、 [ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)を送信する、 [ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)デバイス用のインストーラーを要求します。
 
-インストーラーが完了-インストールの動作を実行しの適切なエラー コードを返しますインストーラーに 完了-インストール操作がある場合、 [ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)要求。 インストーラーでは、次の表に、エラー コードのいずれかを返します。
+インストーラーが完了-インストールの動作を実行しの適切なエラー コードを返しますインストーラーに 完了-インストール操作がある場合、 [ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)要求。 インストーラーでは、次の表に、エラー コードのいずれかを返します。
 
 <table>
 <colgroup>

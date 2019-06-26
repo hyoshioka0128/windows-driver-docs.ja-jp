@@ -3,12 +3,12 @@ Description: USB 機能コントローラー用 Windows ドライバーの開発
 title: USB 機能コントローラー用 Windows ドライバーの開発
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5faa24489846098974992a4bbbe906f11fbc063
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: HT
+ms.openlocfilehash: f4b59d338829ef2a1d1f2984ea7d05872b25756f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394029"
 ---
 # <a name="developing-windows-drivers-for-usb-function-controllers"></a>USB 機能コントローラー用 Windows ドライバーの開発
 
@@ -21,7 +21,7 @@ ms.locfileid: "63377438"
 <tbody>
 <tr class="odd">
 <td><p><strong>目的</strong></p>
-<p>このセクションでは、Windows オペレーティング システムの Microsoft 提供の USB 関数コント ローラー拡張機能 (UFX) と通信するユニバーサル シリアル バス (USB) 3.0 関数コント ローラーのドライバーを開発するためのサポートについて説明します。</p>
+<p>このセクションでは、Windows オペレーティング システムの Microsoft 提供の USB 関数コント ローラー拡張機能 (UFX) と通信するユニバーサル シリアル バス (USB) 関数のコント ローラー ドライバーを開発するためのサポートについて説明します。</p>
 <p><strong>開発ツールと Microsoft から提供されたバイナリ</strong></p>
 <p>Windows Driver Kit (WDK) には、ヘッダー、ライブラリ、ツール、およびサンプルなど、ドライバーの開発に必要なリソースが含まれています。</p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=617155" data-raw-source="[Download kits and tools for Windows](https://go.microsoft.com/fwlink/p/?linkid=617155)">Windows 用のキットとツールのダウンロード</a></p>
@@ -50,7 +50,7 @@ ms.locfileid: "63377438"
 <p>Microsoft 提供の USB ドライバー スタックを理解します。</p>
 <a href="usb-device-side-drivers-in-windows.md" data-raw-source="[USB device-side drivers in Windows](usb-device-side-drivers-in-windows.md)">Windows の USB デバイス側ドライバー</a>
 <p><strong>UFX オブジェクトおよびハンドルと理解します。</strong></p>
-<p>UFX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 WDF のオブジェクトの詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>します。</p>
+<p>UFX では、独自の特定の USB UCX オブジェクトを定義する WDF オブジェクトの機能を拡張します。 WDF のオブジェクトの詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects" data-raw-source="[Introduction to Framework Objects](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects)">Framework オブジェクトの概要</a>します。</p>
 <p>要求をキュー、UFX USB に固有のオブジェクトを使用します。 詳細については、 <a href="ufx-objects-and-handles-used-by-a-usb-function-controller.md" data-raw-source="[UFX objects and handles used by a USB function client driver](ufx-objects-and-handles-used-by-a-usb-function-controller.md)">UFX オブジェクトし、処理関数の USB クライアント ドライバーによって使用</a>します。</p>
 <p><strong>関数のコント ローラーのクライアント ドライバーの作成</strong></p>
 <p>動作を理解、UFX のクライアント ドライバーと、クライアント ドライバーである機能との対話方法を実装する必要があります。</p>
@@ -66,7 +66,7 @@ ms.locfileid: "63377438"
  
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

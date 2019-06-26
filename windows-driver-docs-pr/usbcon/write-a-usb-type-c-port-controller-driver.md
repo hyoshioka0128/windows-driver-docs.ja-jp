@@ -4,12 +4,12 @@ title: USB Type-C ポート コントローラー ドライバーを記述する
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b0a35e31f3640f788b69e7bee08d8a9137b96e37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2fcf5bef8d68b00ed78fcebfe858372d7425821
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385348"
 ---
 # <a name="write-a-usb-type-c-port-controller-driver"></a>USB Type-C ポート コントローラー ドライバーを記述する
 
@@ -211,4 +211,4 @@ UcmTcpciCx は、クライアント ドライバーから必要な取得/設定�
 クライアント ドライバーは、ハードウェアの操作を実行する別のドライバーに、I/O 要求を送信する必要があります。 たとえば、サンプルでは、ドライバー、要求を送信します SPB に<sup>2</sup>C に接続されているポートのコント ローラー。 その場合は、ドライバーは、要求オブジェクト WDM IRP スタックの場所の正しい番号があるないため、UcmTcpciCx から受け取った framework 要求オブジェクトを転送できません。 クライアント ドライバーは、別のフレームワーク要求オブジェクトを作成し、別のドライバーに転送する必要があります。 クライアント ドライバー UcmTcpciCx から要求を取得するたびに作成する代わりに、初期化中に必要な要求オブジェクトを事前に割り当てることができます。 UcmTcpciCx 保証がある 1 つだけ要求未処理任意の時点であるために、可能です。 
 
 ## <a name="see-also"></a>参照
-[USB タイプ C ポート コント ローラー インターフェイス ドライバー クラスの拡張機能のリファレンス](https://msdn.microsoft.com/library/windows/hardware/mt805826)
+[USB タイプ C ポート コント ローラー インターフェイス ドライバー クラスの拡張機能のリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))

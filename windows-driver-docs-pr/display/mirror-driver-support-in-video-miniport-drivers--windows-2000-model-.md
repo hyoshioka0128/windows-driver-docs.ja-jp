@@ -8,24 +8,24 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: a14f99bcd3e360fe494f27ff2264b3c67d1d205a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 381680b4d007517a71a5bdfca2a4683c5c57e57a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358404"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382323"
 ---
 # <a name="mirror-driver-support-in-video-miniport-drivers-windows-2000-model"></a>ビデオ ミニポート ドライバーでのミラー ドライバー サポート (Windows 2000 モデル)
 
 *ミラー ドライバー*ミニポート ドライバーには、このようなサポートを試行する特別なコードが持つことはできませんので、Windows 2000 以降、ビデオのミニポート ドライバーが提供されますをサポートします。 参照してください[ミラー ドライバー](mirror-drivers.md)ミラーリング システムでのディスプレイ ドライバーの詳細についてはします。
 
-ミラー ドライバーのミニポート ドライバーの要件はわずかです。 これを実装する必要がありますのみ関数は[ **DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff556159)、ミニポート ドライバー、および次によってエクスポートされます。
+ミラー ドライバーのミニポート ドライバーの要件はわずかです。 これを実装する必要がありますのみ関数は[ **DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)、ミニポート ドライバー、および次によってエクスポートされます。
 
-[*HwVidFindAdapter*](https://msdn.microsoft.com/library/windows/hardware/ff567332)
+[*HwVidFindAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)
 
-[*HwVidInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff567345)
+[*HwVidInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_initialize)
 
-[*HwVidStartIO*](https://msdn.microsoft.com/library/windows/hardware/ff567367)
+[*HwVidStartIO*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)
 
 ミラー化されたサーフェイスに関連付けられた物理ディスプレイ デバイスがないため、上記の一覧に表示される関数の 3 つすべてを常に成功を返すための空の実装を使用できます。
 

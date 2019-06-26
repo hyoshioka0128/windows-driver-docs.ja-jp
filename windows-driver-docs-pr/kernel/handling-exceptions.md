@@ -13,12 +13,12 @@ keywords:
 - ページの読み込みエラー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a3fc196616a9d610349f7f3660d2f70576ad135
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 466ea89782b7b795fb0a81e3d995f43ac72fe9f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359468"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386882"
 ---
 # <a name="handling-exceptions"></a>例外処理
 
@@ -53,7 +53,7 @@ ms.locfileid: "63359468"
 
 -   現在常駐しているが、システムのコンポーネントを使用する専用ページにアクセスします。 たとえば、ユーザー モード コードが、カーネルを使用しているページへのアクセスを許可します。
 
-操作は、例外を引き起こす可能性がある場合、ドライバーがで操作を囲む必要があります、**試用/を除く**ブロックします。 ユーザー モードでの場所のアクセスには、例外の一般的な原因です。 たとえば、 [ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)ルーチンは、ドライバーがユーザー モード バッファーに書き込むことが実際にことを確認します。 ルーチンが状態を生成できない場合は、\_アクセス\_違反例外が発生します。 ドライバーの呼び出しでは、次のコード例では、 **ProbeForWrite**で、**試用/を除く**いずれかが発生した場合、結果の例外を処理できるようにします。
+操作は、例外を引き起こす可能性がある場合、ドライバーがで操作を囲む必要があります、**試用/を除く**ブロックします。 ユーザー モードでの場所のアクセスには、例外の一般的な原因です。 たとえば、 [ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)ルーチンは、ドライバーがユーザー モード バッファーに書き込むことが実際にことを確認します。 ルーチンが状態を生成できない場合は、\_アクセス\_違反例外が発生します。 ドライバーの呼び出しでは、次のコード例では、 **ProbeForWrite**で、**試用/を除く**いずれかが発生した場合、結果の例外を処理できるようにします。
 
 ```cpp
 try {
@@ -72,17 +72,17 @@ try {
 
 ドライバーが発生した例外を処理する必要があります。 処理されない例外はにより、システムのバグ チェックです。 発生する例外が発生したドライバーが処理する必要があります: 下位レベルのドライバーが例外を処理するより高度なドライバーに依存できません。
 
-ドライバーを使用して、例外を発生できる直接、 [ **ExRaiseAccessViolation**](https://msdn.microsoft.com/library/windows/hardware/ff545509)、 [ **ExRaiseDatatypeMisalignment**](https://msdn.microsoft.com/library/windows/hardware/ff545524)、または[**ExRaiseStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff545529)ルーチン。 ドライバーは、これらのルーチンを発生させる例外を処理する必要があります。
+ドライバーを使用して、例外を発生できる直接、 [ **ExRaiseAccessViolation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exraiseaccessviolation)、 [ **ExRaiseDatatypeMisalignment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exraisedatatypemisalignment)、または[**ExRaiseStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exraisestatus)ルーチン。 ドライバーは、これらのルーチンを発生させる例外を処理する必要があります。
 
 次は、少なくとも特定の状況で例外が生成するルーチンの部分的な一覧です。
 
--   [**MmMapLockedPages**](https://msdn.microsoft.com/library/windows/hardware/ff554622)
+-   [**MmMapLockedPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpages)
 
--   [**MmProbeAndLockPages**](https://msdn.microsoft.com/library/windows/hardware/ff554664)
+-   [**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)
 
--   [**ProbeForRead**](https://msdn.microsoft.com/library/windows/hardware/ff559876)
+-   [**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)
 
--   [**ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)
+-   [**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)
 
 メモリ アクセスをユーザー モードのバッファーにもアクセス違反があります。 詳細については、次を参照してください。[ユーザー スペースのアドレスを参照するエラー](errors-in-referencing-user-space-addresses.md)します。
 

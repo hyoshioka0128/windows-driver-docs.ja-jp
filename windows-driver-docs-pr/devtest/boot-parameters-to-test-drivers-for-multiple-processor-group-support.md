@@ -4,12 +4,12 @@ description: ドライバーの複数プロセッサ グループのサポート
 ms.assetid: 8ce311d6-a182-4d04-a453-81f6abe2043b
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c8b605a0430e60956392ffbcea88bd3d58300293
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2afd170e4fcd5cd644e9f7a2b877b14f6ee166a0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371637"
 ---
 # <a name="boot-parameters-to-test-drivers-for-multiple-processor-group-support"></a>ドライバーの複数プロセッサ グループのサポートをテストするためのブート パラメーター
 
@@ -19,13 +19,13 @@ Windows 7 および Windows Server 2008 R2、64 を超えるプロセッサを�
 **注**  の概念*プロセッサ グループ*Windows 7 で導入された、64 を超える論理プロセッサを搭載したコンピューターで作業を続行するには、既存の Api および Ddi できます。 通常、グループのプロセッサは、64 ビット長である、関係マスクで表されます。 64 を超える論理プロセッサを持つ任意のコンピューターは、1 つ以上のグループを必ずしもがあります。
 プロセスが作成されたときに、プロセスが特定のグループに割り当てられます。 既定では、このプロセスのスレッドは、スレッドの関係を明示的に変更できますが、同じグループのすべての論理プロセッサで実行できます。 任意の API または取るアフィニティ マスクまたはプロセッサ番号を引数としてグループ数ではなく、DDI への呼び出しは、影響を与えたり、呼び出し元スレッドのグループにそれらのプロセッサでレポートに制限されます。 Api または Ddi のようなアフィニティ マスクまたはプロセッサ数を返すことの方も**GetSystemInfo**します。
 
-Windows 7 以降、アプリケーション、ドライバーと、従来の Api を拡張する関数を使用します。 これらの新しいグループ対応関数は、プロセッサ数またはアフィニティ マスクを明確に修飾するために、グループの数値引数を受け取り、呼び出し元スレッドのグループの外部でプロセッサを操作できます。 ドライバーと、コンピューター内の各グループで実行されるコンポーネント間の相互作用には、従来の Api または Ddi が関係するバグが発生する可能性が導入されています。 Windows 7 および Windows Server 2008 R2 では、従来のグループに対応していない Api を使用できます。 ただし、ドライバーの要件より厳格なは。 1 つ以上のプロセッサ グループがあるコンピューター上のドライバーの機能の正確性は、プロセッサ数またはマスクを付属のプロセッサ グループのないパラメーターとして受け入れるか、プロセッサ数またはせずマスクを返します、DDI を置き換える必要があります、プロセッサ グループに付属します。 これらのレガシ グループ対応 Ddi は、推論されたグループのためのもので、どのような呼び出し元スレッドと異なる可能性があるために、複数のプロセス グループをされているコンピューターでが不安定になる実行できます。 したがって、ドライバーを使用して、これらのレガシ Ddi とが Windows Server 2008 R2 の対象には、インターフェイスの新しい拡張バージョンを使用して更新する必要があります。 呼び出さない任意の関数をドライバーを使用して、プロセッサ関係マスクまたはプロセッサ番号は、プロセッサの数に関係なく正しく動作します。 呼び出す新しい Ddi ドライバーは、procgrp.h ヘッダーを含めることで以前のバージョンの Windows で実行できる呼び出し[ **WdmlibProcgrpInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff565629)、に対してリンク、[プロセッサ グループCompatibility Library](https://msdn.microsoft.com/library/windows/hardware/ff559909) (procgrp.lib)。
+Windows 7 以降、アプリケーション、ドライバーと、従来の Api を拡張する関数を使用します。 これらの新しいグループ対応関数は、プロセッサ数またはアフィニティ マスクを明確に修飾するために、グループの数値引数を受け取り、呼び出し元スレッドのグループの外部でプロセッサを操作できます。 ドライバーと、コンピューター内の各グループで実行されるコンポーネント間の相互作用には、従来の Api または Ddi が関係するバグが発生する可能性が導入されています。 Windows 7 および Windows Server 2008 R2 では、従来のグループに対応していない Api を使用できます。 ただし、ドライバーの要件より厳格なは。 1 つ以上のプロセッサ グループがあるコンピューター上のドライバーの機能の正確性は、プロセッサ数またはマスクを付属のプロセッサ グループのないパラメーターとして受け入れるか、プロセッサ数またはせずマスクを返します、DDI を置き換える必要があります、プロセッサ グループに付属します。 これらのレガシ グループ対応 Ddi は、推論されたグループのためのもので、どのような呼び出し元スレッドと異なる可能性があるために、複数のプロセス グループをされているコンピューターでが不安定になる実行できます。 したがって、ドライバーを使用して、これらのレガシ Ddi とが Windows Server 2008 R2 の対象には、インターフェイスの新しい拡張バージョンを使用して更新する必要があります。 呼び出さない任意の関数をドライバーを使用して、プロセッサ関係マスクまたはプロセッサ番号は、プロセッサの数に関係なく正しく動作します。 呼び出す新しい Ddi ドライバーは、procgrp.h ヘッダーを含めることで以前のバージョンの Windows で実行できる呼び出し[ **WdmlibProcgrpInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/procgrp/nf-procgrp-wdmlibprocgrpinitialize)、に対してリンク、[プロセッサ グループCompatibility Library](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) (procgrp.lib)。
 
 グループに対応の新しい Api と Ddi の詳細については、ホワイト ペーパーのダウンロード[64 を超える論理プロセッサを搭載したシステムのサポートします。開発者向けガイドライン](https://go.microsoft.com/fwlink/p/?linkid=147914)します。
 
  
 
-潜在的なプロセッサ グループに関連する問題のドライバーとコンポーネントを識別するには、使用することができます、 [ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)オプション。 2 つの BCD ブートの構成設定、**サイズ**と**maxgroup**、複数のプロセッサ グループをサポートするために複数の論理プロセッサを搭載した任意のコンピューターを構成することができます。 **Groupaware**オプション Ddi 特定の動作を変更し、テスト目的でグループ環境を操作します。
+潜在的なプロセッサ グループに関連する問題のドライバーとコンポーネントを識別するには、使用することができます、 [ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)オプション。 2 つの BCD ブートの構成設定、**サイズ**と**maxgroup**、複数のプロセッサ グループをサポートするために複数の論理プロセッサを搭載した任意のコンピューターを構成することができます。 **Groupaware**オプション Ddi 特定の動作を変更し、テスト目的でグループ環境を操作します。
 
 ### <a name="span-idcreatemultipleprocessorgroupsbychangingthegroupsizespanspan-idcreatemultipleprocessorgroupsbychangingthegroupsizespancreate-multiple-processor-groups-by-changing-the-group-size"></a><span id="create_multiple_processor_groups_by_changing_the_group_size"></span><span id="CREATE_MULTIPLE_PROCESSOR_GROUPS_BY_CHANGING_THE_GROUP_SIZE"></span>グループのサイズを変更することで複数のプロセッサ グループを作成します。
 
@@ -35,7 +35,7 @@ Windows 7 以降、アプリケーション、ドライバーと、従来の Api
 
  
 
-複数のプロセッサ グループを作成するには、実行[ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)で管理者特権のコマンド プロンプト] ウィンドウと、新しい指定*maxsize*値**サイズ**論理プロセッサの合計数より小さいされています。 グループ サイズの設定はテストをこの設定で配布システムを構成する必要がありますに注意してください。 *Maxsize*値は 1 ~ 64 の範囲での 2 の累乗に設定することができます。 コマンドは、次の構文を使用します。
+複数のプロセッサ グループを作成するには、実行[ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)で管理者特権のコマンド プロンプト ウィンドウと、新しい指定*maxsize*値**サイズ**論理プロセッサの合計数より小さいされています。 グループ サイズの設定はテストをこの設定で配布システムを構成する必要がありますに注意してください。 *Maxsize*値は 1 ~ 64 の範囲での 2 の累乗に設定することができます。 コマンドは、次の構文を使用します。
 
 ```
 bcdedit.exe /set groupsize maxsize
@@ -77,7 +77,7 @@ bcdedit.exe /deletevalue groupsize
 
 **Maxgroup**オプションは、複数の論理プロセッサと NUMA ノードを使用しているコンピューターのプロセッサ グループを作成することもできます。 **Maxgroup**ブート オプションが非 NUMA コンピューターに影響を与えません。
 
-グループの数を最大化するには、実行、 [ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)管理者特権のコマンド プロンプト ウィンドウでコマンド。 コマンドは、次の構文を使用します。
+グループの数を最大化するには、実行、 [ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)管理者特権のコマンド プロンプト ウィンドウでコマンド。 コマンドは、次の構文を使用します。
 
 ```
 bcdedit.exe /set maxgroup on
@@ -109,7 +109,7 @@ Windows 7 および Windows Server 2008 R2 には、新しい BCD オプショ�
 
 ときに、 **groupaware**ブート オプションが設定されている、オペレーティング システムによりグループ 0 以外のプロセスが開始されているようになります。 これにより、ドライバーとコンポーネント間のグループ間の相互作用の機会が増えます。 オプションでは、グループに対応していない従来の関数の動作も変更されます**KeSetTargetProcessorDpc**、 **KeSetSystemAffinityThreadEx**、および**KeRevertToUserAffinityThreadEx**常にアクティブな論理プロセッサを含む最上位の番号付きグループで動作するようにします。 呼び出すグループ対応、対応する従来これらの関数のいずれかを呼び出すドライバーを変更する必要があります (**KeSetTargetProcessorDpcEx**、 **KeSetSystemGroupAffinityThread**、および**KeRevertToUserGroupAffinityThread**)、
 
-次を使用して互換性をテストする[ **BCDEdit/set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)コマンド。
+次を使用して互換性をテストする[ **BCDEdit/set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)コマンド。
 
 ```
 bcdedit.exe /set groupaware on

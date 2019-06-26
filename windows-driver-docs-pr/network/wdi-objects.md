@@ -4,12 +4,12 @@ description: Wi-fi デバイスは、オブジェクトのアダプターとポ�
 ms.assetid: 0F375ED7-CB20-4F32-8ECE-4822D7787327
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6464ee4e0c5a2f7820382b710cd230b1a1caa990
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c446c860f0a0b98bf8cc5dba48ca3c9bbbc3ba6e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381145"
 ---
 # <a name="wi-fi-device-model-and-objects"></a>Wi-fi デバイス モデルとオブジェクト
 
@@ -30,7 +30,7 @@ Wi-fi デバイスは、2 種類のオブジェクトのコンテキストでは
 
 アダプターで複数のポートがあります。 ポートで発行されたコマンドには、そのポートの管理状態のみに影響します。
 
-オペレーティング システムでは、802.11 のステーション、Wi-Fi Direct クライアント、または Wi-Fi Direct グループの所有者などの操作モードと各ポートを構成します。 指定されたポートで処理するために、ファームウェアを準備する必要があります set コマンドは、操作モードとポートの状態によって決定されます。 2 つの状態のいずれかで、ポートを指定できます。INIT と場合 最初に INIT 状態と、オペレーティング システム (クライアントのインフラストラクチャ) の場合に接続する、またはアジア太平洋/移動を開始するコマンドを発行する場合にのみ OP 状態に移行するポート。 ポートを INIT に返します状態[OID\_WDI\_タスク\_DOT11\_リセット](https://msdn.microsoft.com/library/windows/hardware/dn925952)IHV コンポーネントに送信されます。
+オペレーティング システムでは、802.11 のステーション、Wi-Fi Direct クライアント、または Wi-Fi Direct グループの所有者などの操作モードと各ポートを構成します。 指定されたポートで処理するために、ファームウェアを準備する必要があります set コマンドは、操作モードとポートの状態によって決定されます。 2 つの状態のいずれかで、ポートを指定できます。INIT と場合 最初に INIT 状態と、オペレーティング システム (クライアントのインフラストラクチャ) の場合に接続する、またはアジア太平洋/移動を開始するコマンドを発行する場合にのみ OP 状態に移行するポート。 ポートを INIT に返します状態[OID\_WDI\_タスク\_DOT11\_リセット](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-dot11-reset)IHV コンポーネントに送信されます。
 
 ## <a name="port-availability-requirements"></a>ポートの可用性の要件
 

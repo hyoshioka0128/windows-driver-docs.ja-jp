@@ -11,12 +11,12 @@ keywords:
 - アダプター オブジェクトの WDK カーネル、バス マスター DMA
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eee81671cc1e0125112803c23cfc76109a2377ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ca67ef7c2a228369649e3224106cb214db00bbd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361100"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382237"
 ---
 # <a name="using-common-buffer-bus-master-dma"></a>共通バッファー バス マスター DMA の使用
 
@@ -30,11 +30,11 @@ ms.locfileid: "63361100"
 
 経済的な一般的なバッファー領域の設定などを使用して**ページ\_サイズ**のチャンク単位または 1 回の割り当て、パケットに基づく DMA 操作に使用できる複数のマップのレジスタのままです。 外に出て空きシステム メモリ、他の目的をより適切な全体的なドライバーとシステムのパフォーマンスを生成します。
 
-バス マスター DMA の一般的なバッファーを設定するバス マスター DMA のデバイス ドライバーを呼び出す必要があります[ **AllocateCommonBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff540575)によって返されるアダプター オブジェクト ポインターと[ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)します。 ドライバーからのこの呼び出しは、通常、その[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)の日常的な[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)要求。 ドライバーは、使用するバッファー繰り返し DMA 操作、ドライバーが読み込まれたまま場合にのみ共通のバッファーを割り当てる必要があります。 次の図は、このような呼び出し**AllocateCommonBuffer**します。
+バス マスター DMA の一般的なバッファーを設定するバス マスター DMA のデバイス ドライバーを呼び出す必要があります[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)によって返されるアダプター オブジェクト ポインターと[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)します。 ドライバーからのこの呼び出しは、通常、その[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)の日常的な[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。 ドライバーは、使用するバッファー繰り返し DMA 操作、ドライバーが読み込まれたまま場合にのみ共通のバッファーを割り当てる必要があります。 次の図は、このような呼び出し**AllocateCommonBuffer**します。
 
 ![バス マスター dma の一般的なバッファーの割り当てを示す図](images/3halcbff.png)
 
-マップの数、要求された LengthForBuffer、としては、前の図に示すように、バッファーのサイズを決定しますレジスタを使用して、一般的なバッファーの仮想の論理的なマッピングを提供する必要があります。 使用して、 [**バイト\_TO\_ページ**](https://msdn.microsoft.com/library/windows/hardware/ff540709)必要なページの最大数を決定するマクロ (**バイト\_TO\_ページ**(*LengthForBuffer*))。 この値より大きくすることはできません、 *NumberOfMapRegisters*によって返される[ **IoGetDmaAdapter**](https://msdn.microsoft.com/library/windows/hardware/ff549220)します。
+マップの数、要求された LengthForBuffer、としては、前の図に示すように、バッファーのサイズを決定しますレジスタを使用して、一般的なバッファーの仮想の論理的なマッピングを提供する必要があります。 使用して、 [**バイト\_TO\_ページ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)必要なページの最大数を決定するマクロ (**バイト\_TO\_ページ**(*LengthForBuffer*))。 この値より大きくすることはできません、 *NumberOfMapRegisters*によって返される[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)します。
 
 さらに、呼び出し元は、次に指定する必要があります。
 
@@ -54,7 +54,7 @@ ms.locfileid: "63361100"
 
 それ以外の場合、ドライバーは、DMA 転送、ドライバー、およびアダプター アクセスできる記憶域として割り当てられている一般的なバッファーを使用できます。
 
-PnP マネージャーでは、停止するか、デバイスを削除する IRP を送信するとき、ドライバーを呼び出す必要があります[ **FreeCommonBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff546511)割り当て済みがある一般的な各バッファーを解放します。
+PnP マネージャーでは、停止するか、デバイスを削除する IRP を送信するとき、ドライバーを呼び出す必要があります[ **FreeCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_common_buffer)割り当て済みがある一般的な各バッファーを解放します。
 
  
 

@@ -13,23 +13,23 @@ keywords:
 - QueryDisplayConfig WDK Windows Server 2008 R2 の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8508853ad0d09c3aec79f8f16f853f96a6114d75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8277fbb50d5ea0177fa7b8e93bc7a175280dbbf2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56537249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385049"
 ---
 # <a name="querydisplayconfig-summary-and-scenarios"></a>QueryDisplayConfig の概要とシナリオ
 
 
 このセクションでは、Windows 7 以降および Windows Server 2008 R2 以降のバージョンの Windows オペレーティング システムにのみ適用されます。
 
-次のセクションでは、呼び出し元が使用する方法をまとめると、 [ **QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215) CCD 関数を使用するためのシナリオを提供**QueryDisplayConfig**します。
+次のセクションでは、呼び出し元が使用する方法をまとめると、 [ **QueryDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) CCD 関数を使用するためのシナリオを提供**QueryDisplayConfig**します。
 
 ### <a name="span-idquerydisplayconfigsummaryspanspan-idquerydisplayconfigsummaryspanquerydisplayconfig-summary"></a><span id="querydisplayconfig_summary"></span><span id="QUERYDISPLAYCONFIG_SUMMARY"></span>QueryDisplayConfig の概要
 
-呼び出し元が使用できる[ **QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215)の次の情報を列挙します。
+呼び出し元が使用できる[ **QueryDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-querydisplayconfig)の次の情報を列挙します。
 
 -   すべての現在の一連の可能な個々 のパスには、モニターが接続されています。 呼び出し元では、可能なトポロジを構築するパスを組み合わせることができます、します。
 
@@ -43,15 +43,15 @@ ms.locfileid: "56537249"
 
 ### <a name="span-idquerydisplayconfigscenariosspanspan-idquerydisplayconfigscenariosspanquerydisplayconfig-scenarios"></a><span id="querydisplayconfig_scenarios"></span><span id="QUERYDISPLAYCONFIG_SCENARIOS"></span>QueryDisplayConfig シナリオ
 
-[**QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215)は、次のシナリオで呼び出されます。
+[**QueryDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-querydisplayconfig)は、次のシナリオで呼び出されます。
 
--   表示のコントロール パネル アプレット呼び出し[ **QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215)を初回起動時に、コントロール パネルに現在適用されているトポロジを使用した、コントロール パネルのユーザー インターフェイスを設定します。 現在適用されているトポロジには、強制の投影を有効にするこれらの表示が含まれています。
+-   表示のコントロール パネル アプレット呼び出し[ **QueryDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-querydisplayconfig)を初回起動時に、コントロール パネルに現在適用されているトポロジを使用した、コントロール パネルのユーザー インターフェイスを設定します。 現在適用されているトポロジには、強制の投影を有効にするこれらの表示が含まれています。
 
--   表示のコントロール パネル アプレット呼び出し[ **QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215)のすべての設定可能なパスを列挙するために、 **multimon** ] ボックスの一覧。
+-   表示のコントロール パネル アプレット呼び出し[ **QueryDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-querydisplayconfig)のすべての設定可能なパスを列挙するために、 **multimon** ボックスの一覧。
 
--   表示がホット キーの呼び出しで、コントロール パネルのユーザー インターフェイスが開始する前に[ **QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215)現在設定されている (つまりは、複製、内部、外部、または拡張) の表示オプションを取得します。
+-   表示がホット キーの呼び出しで、コントロール パネルのユーザー インターフェイスが開始する前に[ **QueryDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-querydisplayconfig)現在設定されている (つまりは、複製、内部、外部、または拡張) の表示オプションを取得します。
 
--   サード パーティ製アプリケーションが呼び出す可能性があります[ **QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215)接続されるディスプレイ一連のデータベースに格納されている現在の設定をクエリします。
+-   サード パーティ製アプリケーションが呼び出す可能性があります[ **QueryDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-querydisplayconfig)接続されるディスプレイ一連のデータベースに格納されている現在の設定をクエリします。
 
  
 

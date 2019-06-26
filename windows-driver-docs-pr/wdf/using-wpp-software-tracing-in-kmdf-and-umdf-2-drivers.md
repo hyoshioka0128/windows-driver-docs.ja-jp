@@ -4,19 +4,19 @@ description: Windows 10 以降、Windows ソフトウェア トレース前処�
 ms.assetid: CA2A7ED3-4372-4EE9-8B04-042A8C864BD5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8deb7a4491b22e674fb1329dc7b5b8c42e17b59b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb9d3c4b7f4d8994ff06225bc184666295e724ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391831"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372161"
 ---
 # <a name="using-inflight-trace-recorder-ifr-in-kmdf-and-umdf-2-drivers"></a>KMDF および UMDF 2 ドライバーでのインフライト トレース レコーダー (IFR) の使用
 
 
 Windows 10 以降、Windows ソフトウェア トレース前処理を使用して情報をデバッグする追加のドライバーを取得できるように、KMDF ドライバーまたは UMDF ドライバーを構築できます。 この機能は、転送トレース レコーダー (), 違いますと呼ばれる、KMDF バージョン 1.15 および UMDF 2.15 バージョン以降があります。
 
-実行中のトレース記録ツールの拡張機能は、 [WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)します。 WPP トレースとは異なり、実行中のトレース レコーダーはなくても、接続されているトレース コンシューマーが続行されます。 フレームワークが、循環バッファーにメッセージを書き込むし、ドライバーでは、独自のメッセージは追加もできます。 各ドライバーでは、独自のログを持つため、1 つのログのドライバーの共有に関連付けられた複数のデバイス。
+実行中のトレース記録ツールの拡張機能は、 [WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)します。 WPP トレースとは異なり、実行中のトレース レコーダーはなくても、接続されているトレース コンシューマーが続行されます。 フレームワークが、循環バッファーにメッセージを書き込むし、ドライバーでは、独自のメッセージは追加もできます。 各ドライバーでは、独自のログを持つため、1 つのログのドライバーの共有に関連付けられた複数のデバイス。
 
 ログは、システムのクラッシュの後に回復されるため、非ページング メモリに格納されます。 さらに、実行中のトレース記録ログは、ミニダンプ ファイルに含まれます。
 
@@ -24,13 +24,13 @@ Windows 10 以降、Windows ソフトウェア トレース前処理を使用し
 
 1.  Microsoft Visual studio で、次の手順を実行します。
 
-    -   ドライバー プロジェクトのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー プロジェクトを右クリックして、**[プロパティ]** をクリックします。 ドライバーのプロパティ ページで次のようにクリックします。**構成プロパティ**、し**Wpp トレース**します。 **全般**] メニューの [設定**WPP トレースの実行**に**はい**します。
+    -   ドライバー プロジェクトのプロパティ ページを開きます。 ソリューション エクスプローラーでドライバー プロジェクトを右クリックして、 **[プロパティ]** をクリックします。 ドライバーのプロパティ ページで次のようにクリックします。**構成プロパティ**、し**Wpp トレース**します。 **全般**] メニューの [設定**WPP トレースの実行**に**はい**します。
 
     -   移動します**プロパティ -&gt;Wpp トレース -&gt;関数とマクロ オプション**選択**WPP レコーダーを有効にする**します。
 
     -   [同じ] メニューで、次のように設定します。**構成データのスキャン**Trace.h など、トレース情報を含むファイル。
 
-2.  WPP マクロを呼び出して各ソース ファイルに追加、 **\#含める**を識別するディレクティブ、[トレース メッセージのヘッダー (TMH) ファイル](https://msdn.microsoft.com/library/windows/hardware/ff553926)します。 ファイル名の形式である必要があります&lt;*ドライバー ソース ファイル名*&gt;**.tmh**します。
+2.  WPP マクロを呼び出して各ソース ファイルに追加、 **\#含める**を識別するディレクティブ、[トレース メッセージのヘッダー (TMH) ファイル](https://docs.microsoft.com/windows-hardware/drivers/devtest/trace-message-header-file)します。 ファイル名の形式である必要があります&lt;*ドライバー ソース ファイル名*&gt; **.tmh**します。
 
     たとえば、ドライバーが 2 つのソース ファイルで構成される場合が呼び出されます*MyDriver1.c*と*MyDriver2.c*、し*MyDriver1.c*含める必要があります。
 
@@ -42,7 +42,7 @@ Windows 10 以降、Windows ソフトウェア トレース前処理を使用し
 
     Visual Studio で、ドライバーをビルドすると、WPP プリプロセッサを生成します。*tmh*ファイル。
 
-3.  定義、 [WPP\_コントロール\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)ヘッダー ファイルでマクロ。 このマクロは定義 GUID と[トレース フラグ](https://msdn.microsoft.com/library/windows/hardware/ff553904)ドライバーのトレース メッセージ。
+3.  定義、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))ヘッダー ファイルでマクロ。 このマクロは定義 GUID と[トレース フラグ](https://docs.microsoft.com/windows-hardware/drivers/devtest/trace-flags)ドライバーのトレース メッセージ。
 
     Osrusbfx2 ドライバーのサンプルを定義 1 つのコントロールの GUID と 7 つのトレース フラグ Trace.h ヘッダー ファイルで次の例に示すようにします。
 
@@ -66,23 +66,23 @@ Windows 10 以降、Windows ソフトウェア トレース前処理を使用し
     -   **OsrUsbFxTraceGuid** {d23a0c5a-d307-4f0e-ae8e-E2A355AD5DAB} GUID のわかりやすい名前を指定します。
     -   トレース フラグは、ドライバーのハンドルをさまざまな種類の I/O 要求として生成されるトレース メッセージを区別するために使用されます。
 
-4.  ドライバー (KMDF および UMDF 2 の両方) を呼び出す必要があります[ **WPP\_INIT\_カーネル モード ドライバー用トレース**](https://msdn.microsoft.com/library/windows/hardware/ff556193)ドライバー オブジェクトと、レジストリ パスから通常[**DriverEntry**](https://msdn.microsoft.com/library/windows/hardware/ff540807):
+4.  ドライバー (KMDF および UMDF 2 の両方) を呼び出す必要があります[ **WPP\_INIT\_カーネル モード ドライバー用トレース**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556193(v=vs.85))ドライバー オブジェクトと、レジストリ パスから通常[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers):
 
     ```cpp
     WPP_INIT_TRACING( DriverObject, RegistryPath );
     ```
 
-    KMDF と UMDF 2 の両方のドライバーの呼び出しのトレースを非アクティブ化する[ **WPP\_カーネル モード ドライバーのクリーンアップを**](https://msdn.microsoft.com/library/windows/hardware/ff556183)から[ *EvtCleanupCallback*](https://msdn.microsoft.com/library/windows/hardware/ff540840)または[ *EvtDriverUnload*](https://msdn.microsoft.com/library/windows/hardware/ff541694):
+    KMDF と UMDF 2 の両方のドライバーの呼び出しのトレースを非アクティブ化する[ **WPP\_カーネル モード ドライバーのクリーンアップを**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556183(v=vs.85))から[ *EvtCleanupCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)または[ *EvtDriverUnload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload):
 
     ```cpp
     WPP_CLEANUP( WdfDriverWdmGetDriverObject( Driver ));
     ```
 
-    [ **WPP\_クリーンアップ**](https://msdn.microsoft.com/library/windows/hardware/ff556183)マクロが PDRIVER 型のパラメーターを受け取る\_オブジェクト、その場合、ドライバーの[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)が失敗した呼び出しスキップできます[ **WdfDriverWdmGetDriverObject** ](https://msdn.microsoft.com/library/windows/hardware/ff547218)代わりに、 **WPP\_クリーンアップ**WDM へのポインタードライバーのオブジェクト。
+    [ **WPP\_クリーンアップ**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556183(v=vs.85))マクロが PDRIVER 型のパラメーターを受け取る\_オブジェクト、その場合、ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)が失敗した呼び出しスキップできます[ **WdfDriverWdmGetDriverObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject)代わりに、 **WPP\_クリーンアップ**WDM へのポインタードライバーのオブジェクト。
 
     UMDF 2.15 バージョン以降、UMDF ドライバーは、トレースの初期化と後処理のこれらのマクロのカーネル モードの署名を使用します。 これは、KMDF および UMDF 呼び出しが似てことを意味します。
 
-5.  使用して、 [ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)マクロ、または[カスタマイズされたバージョン](https://msdn.microsoft.com/library/windows/hardware/ff542492)トレース メッセージを作成するのには、ドライバー、マクロの。
+5.  使用して、 [ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))マクロ、または[カスタマイズされたバージョン](https://docs.microsoft.com/windows-hardware/drivers/devtest/can-i-customize-dotracemessage-)トレース メッセージを作成するのには、ドライバー、マクロの。
 
     次の例は、Osrusbfx2 ドライバーの使用方法を示しています。 その**TraceEvents**関数コードの部分では、読み取り要求の処理に当て。
 
@@ -114,13 +114,13 @@ Windows 10 以降、Windows ソフトウェア トレース前処理を使用し
 **KMDF ドライバー**
 
 1.  」と入力して RCDRKD コマンドを読み込む **.load rcdrkd.dll**デバッガーでします。
-2.  使用して、 [ **! wdfkd.wdfldr** ](https://msdn.microsoft.com/library/windows/hardware/ff565803)拡張機能には、Windows Driver Frameworks (WDF) を動的に現在バインドされているドライバーに関する情報を表示します。
-3.  使用[ **! rcdrkd.rcdrlogdump** ](https://msdn.microsoft.com/library/windows/hardware/hh920382)と[ **! rcdrkd.rcdrcrashdump** ](https://msdn.microsoft.com/library/windows/hardware/hh920380)するドライバーを提供するメッセージを表示します。
-4.  使用[ **! wdfkd.wdflogdump** ](https://msdn.microsoft.com/library/windows/hardware/ff565805)または[ **! wdfkd.wdfcrashdump** ](https://msdn.microsoft.com/library/windows/hardware/ff565682)にフレームワークを提供するメッセージを参照してください。
+2.  使用して、 [ **! wdfkd.wdfldr** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfldr)拡張機能には、Windows Driver Frameworks (WDF) を動的に現在バインドされているドライバーに関する情報を表示します。
+3.  使用[ **! rcdrkd.rcdrlogdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-rcdrkd-rcdrlogdump)と[ **! rcdrkd.rcdrcrashdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-rcdrkd-rcdrcrashdump)するドライバーを提供するメッセージを表示します。
+4.  使用[ **! wdfkd.wdflogdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)または[ **! wdfkd.wdfcrashdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcrashdump)にフレームワークを提供するメッセージを参照してください。
 
 **ライブ UMDF ドライバーのデバッグ**
 
-1.  使用して、 [ **! wdfkd.wdfldr** ](https://msdn.microsoft.com/library/windows/hardware/ff565803) WDF に動的に現在バインドされているドライバーに関する情報を表示拡張機能。 ユーザー モード ドライバーを検索します。 関連付けられているホスト プロセスを入力します。
+1.  使用して、 [ **! wdfkd.wdfldr** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfldr) WDF に動的に現在バインドされているドライバーに関する情報を表示拡張機能。 ユーザー モード ドライバーを検索します。 関連付けられているホスト プロセスを入力します。
 2.  型 **! wdfkd.wdflogdump**  *&lt;YourDriverName.dll&gt; &lt;フラグ&gt;* ここで、 *&lt;フラグ&gt;* は。
 
     -   0x1-framework とドライバーのログをマージ
@@ -132,24 +132,24 @@ Windows 10 以降、Windows ソフトウェア トレース前処理を使用し
 **UMDF ドライバー クラッシュ後に実行中のトレース記録ログの表示**
 
 1. WinDbg から次のように選択します。**ファイル -&gt;オープン クラッシュ ダンプ**、デバッグするには、ミニダンプ ファイルを指定します。
-2. 型[ **! wdfkd.wdfcrashdump  *&lt;YourDriverName.dll&gt; &lt;ドライバー ホストのプロセス ID&gt; &lt;オプション&gt;***](https://msdn.microsoft.com/library/windows/hardware/ff565682)ここで、 *&lt;オプション&gt;* は。
+2. 型[ **! wdfkd.wdfcrashdump  *&lt;YourDriverName.dll&gt; &lt;ドライバー ホストのプロセス ID&gt; &lt;オプション&gt;* ** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcrashdump)ここで、 *&lt;オプション&gt;* は。
 
    -   0x1-framework とドライバーのログをマージ
    -   0x2-ドライバーのログ
    -   0x3-フレームワークのログ
 
-   ドライバーを指定しない場合は[ **! wdfcrashdump** ](https://msdn.microsoft.com/library/windows/hardware/ff565682)すべてのドライバーの情報が表示されます。 ホスト プロセスを指定しない 1 つしかない場合は、拡張機能は、1 つのホスト プロセスを使用します。 ホスト プロセスを指定しない 1 つ以上を使用する必要がある場合は、拡張機能には、アクティブなホスト プロセスが一覧表示します。
+   ドライバーを指定しない場合は[ **! wdfcrashdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcrashdump)すべてのドライバーの情報が表示されます。 ホスト プロセスを指定しない 1 つしかない場合は、拡張機能は、1 つのホスト プロセスを使用します。 ホスト プロセスを指定しない 1 つ以上を使用する必要がある場合は、拡張機能には、アクティブなホスト プロセスが一覧表示します。
 
    ミニダンプに格納されたログ情報が入力した名前が一致しない場合は、ミニダンプには、ドライバーのログが含まれていません。
 
-トレース メッセージをドライバーを追加する方法の詳細については、次を参照してください。[ドライバーに WPP マクロを追加する](https://msdn.microsoft.com/library/windows/hardware/ff541243)します。
+トレース メッセージをドライバーを追加する方法の詳細については、次を参照してください。[ドライバーに WPP マクロを追加する](https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-wpp-macros-to-a-trace-provider)します。
 
 ## <a name="related-topics"></a>関連トピック
 
 
 [UMDF ドライバーのデバッグを有効にする方法](enabling-a-debugger.md)
 
-[RCDRKD 拡張機能](https://msdn.microsoft.com/library/windows/hardware/hh920376)
+[RCDRKD 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/debugger/rcdrkd-extensions)
 
 [フレームワークのイベントのロガーを使用します。](using-the-framework-s-event-logger.md)
 

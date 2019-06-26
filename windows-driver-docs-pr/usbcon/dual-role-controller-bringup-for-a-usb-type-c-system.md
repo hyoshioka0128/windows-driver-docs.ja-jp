@@ -3,17 +3,17 @@ Description: USB の役割の切り替えドライバーとそのクライアン
 title: USB Type-C Windows システムにおけるデュアルロール コントローラーの起動
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f71dd96b1c325a0f8427b34ec930b0d9267831e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0039d54bd03783e346e6edad5df23a78e703e3bf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383038"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384471"
 ---
 # <a name="bring-up-the-dual-role-controller-for-a-usb-type-c-windows-system"></a>USB Type-C Windows システムにおけるデュアルロール コントローラーの起動
 
 
-**要約**
+**概要**
 
 -   OEM は、USB 型-c コネクタがあるデュアル ロール コント ローラーのタスクを表示します。
 
@@ -27,7 +27,7 @@ ms.locfileid: "63383038"
 
 **重要な API**
 
--   [USB デュアルロール コントローラー ドライバーのプログラミング参照](https://msdn.microsoft.com/library/windows/hardware/mt628026)
+-   [USB デュアルロール コントローラー ドライバーのプログラミング参照](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))
 
 役割の交代の USB ドライバー (URS) は、WDF クラスの拡張機能とそのデュアル ロール コント ローラーの役割の交代機能を処理できるクライアント ドライバーのセットです。 システムの役割のデュアル コント ローラーの場合は、システムの USB 型-c コネクタのパートナーのポートに接続されているデバイスによってシステムの役割を切り替えることができます。 これにより、ワイヤード (有線) のドッキングなど、興味深いシナリオができます。
 
@@ -61,7 +61,7 @@ URS を使用するには、ACPI の変更を行う必要があります。 こ�
 
 -   システムは、カスタムのコント ローラーを使用している場合は、役割の交代クライアント ドライバーを作成します。 詳しくは、次のトピックをご覧ください。
 
-    [USB デュアルロール コントローラー ドライバーのプログラミング参照](https://msdn.microsoft.com/library/windows/hardware/mt628026)
+    [USB デュアルロール コントローラー ドライバーのプログラミング参照](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))
 
 ## <a name="related-topics"></a>関連トピック
 [USB デュアル ロール ドライバー スタック アーキテクチャ](usb-dual-role-driver-stack-architecture.md)  

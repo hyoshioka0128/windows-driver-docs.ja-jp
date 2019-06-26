@@ -10,12 +10,12 @@ keywords:
 - ユーザー モード コールアウト ドライバー WDK Windows フィルタ リング プラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b71ca15eb81e6704484a734f9e42e159282587c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 86792ea5eef9618ddbb8bfb3520342b02865d55b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369074"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382814"
 ---
 # <a name="callout-driver-programming-considerations"></a>コールアウト ドライバーのプログラミングに関する考慮事項
 
@@ -32,9 +32,9 @@ Windows フィルタ リング プラットフォームのコールアウト ド
 
 ### <a href="" id="blocking-at-the-application-layer-enforcement--ale--flow-established-l"></a>レイヤーが確立されている、アプリケーション レイヤーの強制 (ALE) フローでブロック
 
-通常のいずれかのフィルター エンジンに吹き出しが追加されたかどうか、 *ALE フローが確立されている*レイヤーをフィルター処理 (FWPM\_レイヤー\_ALE\_フロー\_確立した\_V4または FWPM\_レイヤー\_ALE\_フロー\_確立した\_V6)、その[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウト関数しないでください。返す FWP\_アクション\_のアクションをブロックします。 フィルター レイヤーを確立するは、意思決定を承認または却下 ALE フローのいずれかの接続を確立できません必要があります。 このような意思決定は、常に、その他の ALE フィルタ リング層のいずれかで行われます。
+通常のいずれかのフィルター エンジンに吹き出しが追加されたかどうか、 *ALE フローが確立されている*レイヤーをフィルター処理 (FWPM\_レイヤー\_ALE\_フロー\_確立した\_V4または FWPM\_レイヤー\_ALE\_フロー\_確立した\_V6)、その[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数しないでください。返す FWP\_アクション\_のアクションをブロックします。 フィルター レイヤーを確立するは、意思決定を承認または却下 ALE フローのいずれかの接続を確立できません必要があります。 このような意思決定は、常に、その他の ALE フィルタ リング層のいずれかで行われます。
 
-このような唯一の有効な理由、 [ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウト FWP を返す関数\_アクション\_ブロック アクションは、エラーが発生した場合、潜在的なセキュリティ リスクをもたらす可能性があります確立された接続は終了しません。 場合、 この場合は、FWP を返す\_アクション\_ブロック アクションは、潜在的なセキュリティ リスクが悪用されることを防ぐために接続を閉じます。
+このような唯一の有効な理由、 [ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト FWP を返す関数\_アクション\_ブロック アクションは、エラーが発生した場合、潜在的なセキュリティ リスクをもたらす可能性があります確立された接続は終了しません。 場合、 この場合は、FWP を返す\_アクション\_ブロック アクションは、潜在的なセキュリティ リスクが悪用されることを防ぐために接続を閉じます。
 
 ### <a name="callout-function-execution-time"></a>引き出し線の関数の実行時間
 
@@ -46,11 +46,11 @@ Windows フィルタ リング プラットフォームのコールアウト ド
 
 ### <a name="inline-injection-of-tcp-packet-from-transport-layers"></a>トランスポート層から TCP パケットのインラインの挿入
 
-動作のロックのため、TCP スタック、トランスポート層でのコールアウトがから新規または複製された TCP パケットを挿入できません、 [classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)コールアウト関数。 インラインの挿入を使用する場合は、引き出し線は、DPC、挿入を実行するをキューする必要があります。
+動作のロックのため、TCP スタック、トランスポート層でのコールアウトがから新規または複製された TCP パケットを挿入できません、 [classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)コールアウト関数。 インラインの挿入を使用する場合は、引き出し線は、DPC、挿入を実行するをキューする必要があります。
 
 ### <a name="outgoing-ip-header-alignment"></a>送信 IP ヘッダーの配置
 
-Net のバッファーの一覧で IP ヘッダーを表す MDL ([**NET\_バッファー\_現在\_MDL**](https://msdn.microsoft.com/library/windows/hardware/ff568379)([**NET\_バッファー\_一覧\_最初\_NB**](https://msdn.microsoft.com/library/windows/hardware/ff568394)(*netBufferList*))) する必要がありますがポインターで固定されたときのいずれか、[パケットの挿入関数](packet-injection-functions.md)出力方向のパスにパケット データを挿入するために使用します。 着信パケットの IP ヘッダー MDL には、ポインターで固定された可能性があります、ため、コールアウトする必要がありますを再構築 IP ヘッダー (整列されていない) 場合、送信パスに、着信パケットを挿入するときに。
+Net のバッファーの一覧で IP ヘッダーを表す MDL ([**NET\_バッファー\_現在\_MDL**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-current-mdl)([**NET\_バッファー\_一覧\_最初\_NB**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-first-nb)(*netBufferList*))) する必要がありますがポインターで固定されたときのいずれか、[パケットの挿入関数](packet-injection-functions.md)出力方向のパスにパケット データを挿入するために使用します。 着信パケットの IP ヘッダー MDL には、ポインターで固定された可能性があります、ため、コールアウトする必要がありますを再構築 IP ヘッダー (整列されていない) 場合、送信パスに、着信パケットを挿入するときに。
 
 ## <a name="related-topics"></a>関連トピック
 

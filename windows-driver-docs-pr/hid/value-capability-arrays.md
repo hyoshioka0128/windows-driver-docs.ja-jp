@@ -9,12 +9,12 @@ keywords:
 - WDK の HID 使用法の値を配列します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc87ae12413ba4545251117fba3db7a832061d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9ed2b21572e0beae894dd22b084be1c6593098d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376734"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385791"
 ---
 # <a name="value-capability-arrays"></a>値機能配列
 
@@ -22,15 +22,15 @@ ms.locfileid: "63376734"
 
 
 
-A*値機能配列*でサポートされている値の使用状況に関する情報を格納、[最上位のコレクション](top-level-collections.md)HID レポートの特定の種類。 コレクションの配列の機能に関する情報が含まれているその[ **HIDP\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff539697)構造体。
+A*値機能配列*でサポートされている値の使用状況に関する情報を格納、[最上位のコレクション](top-level-collections.md)HID レポートの特定の種類。 コレクションの配列の機能に関する情報が含まれているその[ **HIDP\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_caps)構造体。
 
-ユーザー モード アプリケーションまたはカーネル モード ドライバーは、次のいずれかを使用して[HIDClass サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff538865)ボタンの機能情報を取得します。
+ユーザー モード アプリケーションまたはカーネル モード ドライバーは、次のいずれかを使用して[HIDClass サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ボタンの機能情報を取得します。
 
--   [**HidP\_GetValueCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff539754)呼び出し元が指定したレポートの種類に含まれているすべての値を表す値機能の配列を返します。
+-   [**HidP\_GetValueCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getvaluecaps)呼び出し元が指定したレポートの種類に含まれているすべての値を表す値機能の配列を返します。
 
--   [**HidP\_GetSpecificValueCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff539737)ことによって、呼び出し元が指定した使用状況] ページ、使用状況、リンクのコレクション、およびレポートの種類、返す値機能の情報をフィルターします。
+-   [**HidP\_GetSpecificValueCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getspecificvaluecaps)ことによって、呼び出し元が指定した使用状況 ページ、使用状況、リンクのコレクション、およびレポートの種類、返す値機能の情報をフィルターします。
 
-値機能の配列に含まれる[ **HIDP\_値\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff539832)構造体、うちそれぞれについて、次の情報を説明します、 [するHID使用法](hid-usages.md)または[使用範囲](hid-usages.md#usage-range):
+値機能の配列に含まれる[ **HIDP\_値\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/ns-hidpi-_hidp_value_caps)構造体、うちそれぞれについて、次の情報を説明します、 [するHID使用法](hid-usages.md)または[使用範囲](hid-usages.md#usage-range):
 
 -   [使用状況 ページ](hid-usages.md#usage-page)使用または使用状況の範囲
 
@@ -72,7 +72,7 @@ A*値配列の使用状況*は連続する同じ使用量が割り当てられ�
 
 使用法値配列、構造体の値の機能が、前の例では、その**IsRange**メンバーに設定**FALSE**その**NotRange.Usage** 17、設定メンバーその**ReportCount**メンバーが 5 に設定し、その**BitSize**メンバーが 6 に設定します。
 
-使用状況レポートの数が 1 の場合を使用して、 **HidP\_GetUsageValue**使用法の値を抽出します。 使用状況のレポートの数が 1 より大きい場合**HidP\_GetUsageValue**使用状況の値の配列の最初のデータ項目のみが返されます。 使用状況の値の配列内のすべてのデータ項目を抽出するには使用[ **HidP\_GetUsageValueArray**](https://msdn.microsoft.com/library/windows/hardware/ff539750)します。
+使用状況レポートの数が 1 の場合を使用して、 **HidP\_GetUsageValue**使用法の値を抽出します。 使用状況のレポートの数が 1 より大きい場合**HidP\_GetUsageValue**使用状況の値の配列の最初のデータ項目のみが返されます。 使用状況の値の配列内のすべてのデータ項目を抽出するには使用[ **HidP\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidpi/nf-hidpi-hidp_getusagevaluearray)します。
 
  
 

@@ -12,12 +12,12 @@ keywords:
 - プロセッサごとのデータは、WDK の動的なハードウェア パーティショニング構造体します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b0b7129de668eabdfd2e7d711d1ed8dfb26c907
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6d6e6821e2db99cedeede35a53869f1f45c5323
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343732"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383362"
 ---
 # <a name="changes-to-the-number-of-processors"></a>プロセッサ数の変更
 
@@ -44,9 +44,9 @@ ms.locfileid: "63343732"
 
 デバイス ドライバーがアクティブなプロセッサの数の変更によって影響を受ける場合自体、ハードウェアのパーティションにプロセッサを追加するときに通知するオペレーティング システムが登録する必要があります。 デバイス ドライバーが通知されたときに、安全で最適な操作に必要な応答できます。 デバイス ドライバーを登録する方法自体、オペレーティング システムの詳細については、次を参照してください。[ドライバー通知](driver-notification.md)します。
 
-現在のアクティブなプロセッサがハードウェア パーティションの数を取得するデバイス ドライバーを呼び出す必要があります、 [ **KeQueryActiveProcessorCount** ](https://msdn.microsoft.com/library/windows/hardware/ff552985)関数。 現在のプロセッサ アフィニティ値を取得するデバイス ドライバー呼び出すことができます、 [ **KeQueryActiveProcessors** ](https://msdn.microsoft.com/library/windows/hardware/ff553001)関数または**KeQueryActiveProcessorCount**関数。
+現在のアクティブなプロセッサがハードウェア パーティションの数を取得するデバイス ドライバーを呼び出す必要があります、 [ **KeQueryActiveProcessorCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequeryactiveprocessorcount)関数。 現在のプロセッサ アフィニティ値を取得するデバイス ドライバー呼び出すことができます、 [ **KeQueryActiveProcessors** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequeryactiveprocessors)関数または**KeQueryActiveProcessorCount**関数。
 
-**注**  デバイス ドライバーは、ハードウェア パーティション内のアクティブな各プロセッサのデータ構造体を割り当て、デバイス ドライバーは、データのメモリ割り当ての構造体の場合は失敗、新しいプロセッサが失敗した場合、デバイスのドライバーをオペレーティング システムをサポートするプロセッサの最大数を処理するために、ドライバーの初期化中には、これらのデータ構造の十分なを割り当てます。 このような状況で、デバイス ドライバーがハードウェア パーティションに新しいプロセッサを追加すると、新しいデータ構造を割り当てる必要はありません。 ただし、これらのデータ構造のサイズが非常に小さくしない限り、これに、メモリ リソースを効率的に使用があります。 デバイス ドライバーが呼び出すことによって、オペレーティング システムをサポートするプロセッサの最大数を照会、 [ **KeQueryMaximumProcessorCount** ](https://msdn.microsoft.com/library/windows/hardware/ff553042)関数。
+**注**  デバイス ドライバーは、ハードウェア パーティション内のアクティブな各プロセッサのデータ構造体を割り当て、デバイス ドライバーは、データのメモリ割り当ての構造体の場合は失敗、新しいプロセッサが失敗した場合、デバイスのドライバーをオペレーティング システムをサポートするプロセッサの最大数を処理するために、ドライバーの初期化中には、これらのデータ構造の十分なを割り当てます。 このような状況で、デバイス ドライバーがハードウェア パーティションに新しいプロセッサを追加すると、新しいデータ構造を割り当てる必要はありません。 ただし、これらのデータ構造のサイズが非常に小さくしない限り、これに、メモリ リソースを効率的に使用があります。 デバイス ドライバーが呼び出すことによって、オペレーティング システムをサポートするプロセッサの最大数を照会、 [ **KeQueryMaximumProcessorCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerymaximumprocessorcount)関数。
 
  
 
@@ -58,7 +58,7 @@ ms.locfileid: "63343732"
 
  
 
-**重要な**  Windows Vista、Windows Server 2008 および Windows の以降のバージョンが使用する必要がありますに組み込まれているデバイス ドライバー、 [ **KeNumberProcessors** ](https://msdn.microsoft.com/library/windows/hardware/ff552975)カーネル変数ハードウェア パーティション内のアクティブなプロセッサの数を確認します。 **KeNumberProcessors**カーネル変数は Windows Vista Service Pack 1 (SP1)、Windows Server 2008、および以降のバージョンの Windows で廃止されています。
+**重要な**  Windows Vista、Windows Server 2008 および Windows の以降のバージョンが使用する必要がありますに組み込まれているデバイス ドライバー、 [ **KeNumberProcessors** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequeryactiveprocessors)カーネル変数ハードウェア パーティション内のアクティブなプロセッサの数を確認します。 **KeNumberProcessors**カーネル変数は Windows Vista Service Pack 1 (SP1)、Windows Server 2008、および以降のバージョンの Windows で廃止されています。
 
  
 

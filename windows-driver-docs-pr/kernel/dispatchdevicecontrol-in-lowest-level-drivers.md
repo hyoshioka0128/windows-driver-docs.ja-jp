@@ -9,12 +9,12 @@ keywords:
 - デバイス制御ディスパッチ ルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e215dccc837f5b32a228ed6dd3b7762c37204260
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ad687bc8357e6f66806fe260bcd9225cc2eacef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350034"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382819"
 ---
 # <a name="dispatchdevicecontrol-in-lowest-level-drivers"></a>最下位レベル ドライバーの DispatchDeviceControl
 
@@ -22,7 +22,7 @@ ms.locfileid: "63350034"
 
 
 
-[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)要求すること、ドライバーがそのデバイスの状態を変更または情報を提供する最下位レベルのドライバーが必要ですについては、そのデバイスの状態。 ほとんどの種類のドライバーがさまざまな I/O 制御コードを処理するために必要なため、 [ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが通常含まれて、**切り替える**ステートメント次のようなやや:
+[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求すること、ドライバーがそのデバイスの状態を変更または情報を提供する最下位レベルのドライバーが必要ですについては、そのデバイスの状態。 ほとんどの種類のドライバーがさまざまな I/O 制御コードを処理するために必要なため、 [ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンが通常含まれて、**切り替える**ステートメント次のようなやや:
 
 ```cpp
     :    : 
@@ -56,7 +56,7 @@ switch (irpSp->Parameters.DeviceIoControl.IoControlCode)
 
 -   パフォーマンス向上のため、すべての最下位レベルのデバイス ドライバーの*DispatchDeviceControl*ルーチンは IRP がドライバーの他のルーチンをキューに登録せず、可能なすべてのデバイス制御要求を満たす必要があります。
 
-場合、 *DispatchDeviceControl*ルーチンは IRP を完了することができますを呼び出す必要が[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)で、 *PriorityBoost* IO の\_いいえ\_インクリメントします。 場合、 *DispatchDeviceControl*ルーチンがキューに IRP がさらに処理するため、呼び出す必要があります[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)状態を返すと\_保留します。
+場合、 *DispatchDeviceControl*ルーチンは IRP を完了することができますを呼び出す必要が[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)で、 *PriorityBoost* IO の\_いいえ\_インクリメントします。 場合、 *DispatchDeviceControl*ルーチンがキューに IRP がさらに処理するため、呼び出す必要があります[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)状態を返すと\_保留します。
 
  
 

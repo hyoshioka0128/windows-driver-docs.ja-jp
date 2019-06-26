@@ -4,12 +4,12 @@ description: オーディオ エンドポイント デバイスのフレンド�
 ms.assetid: e0937d20-dd5b-453f-99f6-4e501f0f0e5b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c52fad97a1ada2d3c07f58f67616dcf2d64dfc61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f9a4e6cc0bae863fd226ae975e1729d6f189c78
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333633"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360020"
 ---
 # <a name="friendly-names-for-audio-endpoint-devices"></a>オーディオ エンドポイント デバイスのフレンドリ名
 
@@ -18,15 +18,15 @@ Windows Vista、Windows Server 2008 以降のバージョンの Windows では�
 
 オーディオのサブシステムは、KS フィルターとして、オーディオのアダプターでプラグ アンド プレイ (PnP) デバイスをモデル化します。 データ ストリーム入力し、KS ピンを使用して、フィルターを終了します。 ブリッジの暗証番号 (pin) は、KS フィルターににより、エンドポイントのオーディオ デバイスが接続する KS pin です。 ブリッジの pin の詳細については、次を参照してください。[オーディオ フィルター グラフ](audio-filter-graphs.md)します。
 
-オーディオのサブシステムは、エンドポイント デバイスに接続するブリッジの暗証番号 (pin) のプロパティを調べることによって、エンドポイントのオーディオ デバイスに関する情報を取得します。 このような 1 つのプロパティが、 [category プロパティをピン留め](pin-category-property.md)([**KSPROPERTY\_PIN\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff565192))。 
+オーディオのサブシステムは、エンドポイント デバイスに接続するブリッジの暗証番号 (pin) のプロパティを調べることによって、エンドポイントのオーディオ デバイスに関する情報を取得します。 このような 1 つのプロパティが、 [category プロパティをピン留め](pin-category-property.md)([**KSPROPERTY\_PIN\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category))。 
 
-アダプターのドライバーがのテーブルを提供する各 KS フィルター [ **PCPIN\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537721) KS ピンのプロパティをフィルターを記述する構造体。 暗証番号 (pin) カテゴリに GUID が格納されている、 **KsPinDescriptor.Category** 、PCPIN のメンバー\_記述子構造体。 ブリッジ暗証番号 (pin) の暗証番号 (pin) カテゴリの値の GUID を示しますブリッジの暗証番号 (pin) に接続するエンドポイントの種類。 暗証番号 (pin) カテゴリの GUID KSNODETYPE など\_マイクは、ブリッジの暗証番号 (pin) が、マイク、GUID KSNODETYPE に接続することを示します\_スピーカーでは、ブリッジの暗証番号 (pin) がスピーカー、という具合に接続することを示します。 KSNODETYPE\_*XXX* Guid が Ksmedia.h ヘッダー ファイルで定義されます。
+アダプターのドライバーがのテーブルを提供する各 KS フィルター [ **PCPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcpin_descriptor) KS ピンのプロパティをフィルターを記述する構造体。 暗証番号 (pin) カテゴリに GUID が格納されている、 **KsPinDescriptor.Category** 、PCPIN のメンバー\_記述子構造体。 ブリッジ暗証番号 (pin) の暗証番号 (pin) カテゴリの値の GUID を示しますブリッジの暗証番号 (pin) に接続するエンドポイントの種類。 暗証番号 (pin) カテゴリの GUID KSNODETYPE など\_マイクは、ブリッジの暗証番号 (pin) が、マイク、GUID KSNODETYPE に接続することを示します\_スピーカーでは、ブリッジの暗証番号 (pin) がスピーカー、という具合に接続することを示します。 KSNODETYPE\_*XXX* Guid が Ksmedia.h ヘッダー ファイルで定義されます。
 
 さらに、 **PCPIN\_記述子**一意の名前によって、暗証番号 (pin) を識別するために使用できる GUID が含まれています。  この暗証番号 (pin) の名前に GUID が格納されている、 **KsPinDescriptor.Name** 、PCPIN のメンバー\_記述子構造体。 この名前を使用する GUID が、([**KSPROPERTY\_PIN\_名前**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-name))、pin でレジストリにフレンドリ名を関連付けるプロパティが見つかりました。 
 
 オーディオのサブシステムを呼び出す、 **KSPROPERTY\_PIN\_名前**にフレンドリ名をオーディオのエンドポイントに関連付けるプロパティ。 KS レジストリの説明で unicode 文字列の最初に検索してこの要求を処理する、 **KsPinDescriptor.Name** GUID。  KS にエントリが見つからない場合、レジストリを記述する unicode 文字列を検索、 **KsPinDescriptor.Category** GUID。  
 
-以降で**Windows 10 REDSTONE 5** KS がデバイスのソフトウェアのキー内のエントリを最初に、レジストリを検索するときにします。  これは、デバイス ドライバーの INF の [モデル] セクションで参照されている、AddReg] セクションで INF によって作成されます。  AddReg セクションは、HKR を使用してこれらのエントリを構築します\\MediaCategories キー。 これにより、GUID がデバイスに一意かどうか、ドライバー開発者は、デバイスに固有のフレンドリ名の名前とカテゴリの Guid の両方を作成できます。
+以降で**Windows 10 REDSTONE 5** KS がデバイスのソフトウェアのキー内のエントリを最初に、レジストリを検索するときにします。  これは、デバイス ドライバーの INF の [モデル] セクションで参照されている、AddReg セクションで INF によって作成されます。  AddReg セクションは、HKR を使用してこれらのエントリを構築します\\MediaCategories キー。 これにより、GUID がデバイスに一意かどうか、ドライバー開発者は、デバイスに固有のフレンドリ名の名前とカテゴリの Guid の両方を作成できます。
 
 デバイスのソフトウェアのキーのエントリがインストールされていないか、ドライバーがより前のバージョンのオペレーティング システムで実行されている**Windows 10 REDSTONE 5**、KS では HKLM\\システム\\CurrentControlSet\\コントロール\\MediaCategories レジストリ キー。 この 2 番目のキーは、グローバル名前空間として扱われます。  以降で**Windows 10 REDSTONE 5**この領域は、グローバル定義の予約されており、新しいドライバーでは変更しないでください。  このキーのエントリの変更は将来の OS ではサポートされないリリースします。
 

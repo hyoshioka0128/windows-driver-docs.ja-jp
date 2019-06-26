@@ -10,12 +10,12 @@ keywords:
 - サブシステムの WDK ネットワークの構成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 651e61b0c18fe7cee505042249248d41357d36d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 211cc1debea3d885f46bdd428142a8b791c70781
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367911"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386579"
 ---
 # <a name="about-notify-objects"></a>通知オブジェクトについて
 
@@ -32,7 +32,7 @@ ms.locfileid: "63367911"
 -   Microsoft ネットワーク用クライアントなどのクライアント
 
 **注**  ネットワーク カードをサポートしておらず、所有できないオブジェクトに通知します。 ネットワークを構成するか、またはのインストールとアンインストールに参加している物理または仮想ネットワーク カードには、INF ファイルまたはデバイスの共同インストーラー機構を使用する必要があります。
-詳細については、次を参照してください。[共同インストーラーの作成](https://msdn.microsoft.com/library/windows/hardware/ff554011)です。
+詳細については、次を参照してください。[共同インストーラーの作成](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-co-installer)です。
 
  
 
@@ -40,7 +40,7 @@ ms.locfileid: "63367911"
 
 -   ネットワーク構成のサブシステム通知オブジェクトが通知を要求されたイベントの発生について通知オブジェクトに通知できるように、インターフェイスのネットワーク構成のサブシステムにメソッドを公開します。
 
--   サブシステムの構成のパブリック インターフェイスが含まれますが、インストールおよびネットワーク デバイスを削除するのに限定されないアクションを実行するネットワークのメソッドを呼び出します。 詳細については、次を参照してください。[構成のネットワーク インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff559080)します。
+-   サブシステムの構成のパブリック インターフェイスが含まれますが、インストールおよびネットワーク デバイスを削除するのに限定されないアクションを実行するネットワークのメソッドを呼び出します。 詳細については、次を参照してください。[構成のネットワーク インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559080(v=vs.85))します。
 
 要求および通知を受信して、相互の通知との通信にオブジェクトと、ネットワーク構成のサブシステムは、コンポーネント オブジェクト モデル (COM) インターフェイスを実装します。
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - Windows Vista 以降のドライバーをネットワーク NDIS_MDL_LINKAGE マクロ
 ms.localizationpriority: medium
-ms.openlocfilehash: b47a283b39ff3a2cfd17b8acd76e87634cbfeb47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 58f91c90d0927c9780d4dde8c742b7d936987bd0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551032"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385748"
 ---
 # <a name="ndismdllinkage-macro"></a>NDIS\_MDL\_リンケージ マクロ
 
@@ -41,7 +41,7 @@ MDL へのポインター。
 <a name="remarks"></a>注釈
 -------
 
-**NDIS\_MDL\_リンケージ**マクロの MDL ベースのバージョンの提供、 [ **NDIS\_バッファー\_リンケージ**](https://msdn.microsoft.com/library/windows/hardware/ff556919)関数。
+**NDIS\_MDL\_リンケージ**マクロの MDL ベースのバージョンの提供、 [ **NDIS\_バッファー\_リンケージ**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556919(v=vs.85))関数。
 
 <a name="requirements"></a>要件
 ------------
@@ -74,7 +74,7 @@ MDL へのポインター。
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_バッファー\_リンケージ**](https://msdn.microsoft.com/library/windows/hardware/ff556919)
+[**NDIS\_バッファー\_リンケージ**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556919(v=vs.85))
 
  
 

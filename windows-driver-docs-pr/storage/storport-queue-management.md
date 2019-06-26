@@ -7,12 +7,12 @@ keywords:
 - WDK Storport のキュー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56729d234463c19a3be01c9503e34bd8e7e66fa4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f84c0dd1a69eab9e97f7150c9030eb0708d6c8b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344975"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386118"
 ---
 # <a name="storport-queue-management"></a>Storport のキュー管理
 
@@ -32,7 +32,7 @@ Storport キュー モデルですべての要求は lun ごとのキューで�
 
 ドライバーのキューのモデルをポートします。
 
-システムに、ミニポート ドライバーの呼び出し、アダプターと論理ユニットが両方の要求を受信できる状態にある場合、 [ **HwStorBuildIo** ](https://msdn.microsoft.com/library/windows/hardware/ff557369)と[ **HwStorStartIo**](https://msdn.microsoft.com/library/windows/hardware/ff557423)ルーチンをこの順序で。
+システムに、ミニポート ドライバーの呼び出し、アダプターと論理ユニットが両方の要求を受信できる状態にある場合、 [ **HwStorBuildIo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_buildio)と[ **HwStorStartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio)ルーチンをこの順序で。
 
 SCSI ポートとは異なりは、Storport は、ビジー状態のポート ドライバーに通知するミニポート ドライバーを許可します。 これらの通信は、論理ユニットまたはアダプターのいずれかの一時停止またはビジー状態のシグナルのミニポート ドライバーを許可する次の 8 つルーチンによって処理されます。
 
@@ -49,35 +49,35 @@ SCSI ポートとは異なりは、Storport は、ビジー状態のポート �
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567461" data-raw-source="[&lt;strong&gt;StorPortPauseDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567461)"><strong>StorPortPauseDevice</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportpausedevice" data-raw-source="[&lt;strong&gt;StorPortPauseDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportpausedevice)"><strong>StorPortPauseDevice</strong></a></p></td>
 <td align="left"><p>一定の時間には、デバイスを停止します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567501" data-raw-source="[&lt;strong&gt;StorPortResumeDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567501)"><strong>StorPortResumeDevice</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportresumedevice" data-raw-source="[&lt;strong&gt;StorPortResumeDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportresumedevice)"><strong>StorPortResumeDevice</strong></a></p></td>
 <td align="left"><p>一時停止しているデバイスを再開します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567459" data-raw-source="[&lt;strong&gt;StorPortPause&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567459)"><strong>StorPortPause</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportpause" data-raw-source="[&lt;strong&gt;StorPortPause&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportpause)"><strong>StorPortPause</strong></a></p></td>
 <td align="left"><p>アダプターを一定の時間に停止します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567499" data-raw-source="[&lt;strong&gt;StorPortResume&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567499)"><strong>StorPortResume</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportresume" data-raw-source="[&lt;strong&gt;StorPortResume&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportresume)"><strong>StorPortResume</strong></a></p></td>
 <td align="left"><p>一時停止中のアダプターを再開します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567050" data-raw-source="[&lt;strong&gt;StorPortDeviceBusy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567050)"><strong>StorPortDeviceBusy</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdevicebusy" data-raw-source="[&lt;strong&gt;StorPortDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdevicebusy)"><strong>StorPortDeviceBusy</strong></a></p></td>
 <td align="left"><p>いることをデバイス ビジー デバイスのキューが指定された数の I/O 要求を完了するまで。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567053" data-raw-source="[&lt;strong&gt;StorPortDeviceReady&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567053)"><strong>StorPortDeviceReady</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdeviceready" data-raw-source="[&lt;strong&gt;StorPortDeviceReady&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdeviceready)"><strong>StorPortDeviceReady</strong></a></p></td>
 <td align="left"><p>もう一度要求を受信する準備がビジー状態のデバイスを確認します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567041" data-raw-source="[&lt;strong&gt;StorPortBusy&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567041)"><strong>StorPortBusy</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportbusy" data-raw-source="[&lt;strong&gt;StorPortBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportbusy)"><strong>StorPortBusy</strong></a></p></td>
 <td align="left"><p>アダプター ビジー状態までように指定された数の I/O 要求が完了します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567489" data-raw-source="[&lt;strong&gt;StorPortReady&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567489)"><strong>StorPortReady</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportready" data-raw-source="[&lt;strong&gt;StorPortReady&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportready)"><strong>StorPortReady</strong></a></p></td>
 <td align="left"><p>もう一度要求を受信する準備がビジー状態のアダプターを確認します。</p></td>
 </tr>
 </tbody>

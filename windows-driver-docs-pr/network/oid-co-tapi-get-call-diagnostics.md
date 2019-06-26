@@ -6,12 +6,12 @@ keywords:
 - OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3bd7effbbe9fc5f1b5bff2da30037b8fec31954
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9a2aba33822e587782642eb0e58308b57c1d1f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383259"
 ---
 # <a name="oidcotapigetcalldiagnostics"></a>OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 
@@ -87,9 +87,9 @@ LINECALLREASON_ 定数は、次の 1 つとして、呼び出しの理由を指�
 呼び出しの理由では、ご利用いただけません、後で知られることはできません。
 
 **DiagInfo**  
-指定します、 [NDIS_VAR_DATA_DESC](https://msdn.microsoft.com/library/windows/hardware/ff559020)コール マネージャーまたは MCM ドライバーによって提供されるオプションの診断情報の長さとする、オフセットを含む構造体。 コンテンツと形式の診断情報は、ドライバーが決定します。
+指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))コール マネージャーまたは MCM ドライバーによって提供されるオプションの診断情報の長さとする、オフセットを含む構造体。 コンテンツと形式の診断情報は、ドライバーが決定します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

@@ -8,12 +8,12 @@ keywords:
 - PnP WDK PCMCIA バス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be854b7d1eaa69ea3e086dcb93ea6d8e1ce8970
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a59e862d6b311de6174417a7a930fcf5d82b82ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573189"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382603"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-plug-and-play-io-request"></a>プラグ アンド プレイの I/O 要求を使用して PCMCIA 属性メモリにアクセスする
 
@@ -31,7 +31,7 @@ ms.locfileid: "56573189"
 
 -   作成し、新しい IRP の初期化\_MJ\_PNP 要求。
 
-    ドライバーでは、いずれかを指定します、 [ **IRP\_MN\_読み取り\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)または[ **IRP\_MN\_書き込み\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551769)マイナー関数。
+    ドライバーでは、いずれかを指定します、 [ **IRP\_MN\_読み取り\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)または[ **IRP\_MN\_書き込み\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)マイナー関数。
 
 -   スタックの次の位置を取得します。
 

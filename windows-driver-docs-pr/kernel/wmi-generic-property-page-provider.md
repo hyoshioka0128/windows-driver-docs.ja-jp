@@ -11,12 +11,12 @@ keywords:
 - デバイスのプロパティ シートの WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eab65252dafb71934012a8abc7a7ac397c234249
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd7de792ebbbae30f6327763944a09655d2e0698
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392987"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386998"
 ---
 # <a name="wmi-generic-property-page-provider"></a>WMI の汎用プロパティ ページ プロバイダー
 
@@ -68,7 +68,7 @@ HKLM, System\CurrentControlSet\Control\CoDeviceInstallers, ClassGUID,
     0x00010000, "WmiProp.dll, WmiPropCoInstaller"
 ```
 
-*ClassGUID*は WMI クラスの GUID です。 参照してください[クラス共同インストーラーを登録する](https://msdn.microsoft.com/library/windows/hardware/ff549801)詳細についてはします。
+*ClassGUID*は WMI クラスの GUID です。 参照してください[クラス共同インストーラーを登録する](https://docs.microsoft.com/windows-hardware/drivers/install/registering-a-class-co-installer)詳細についてはします。
 
 汎用プロパティ プロバイダーを介して公開する特定の WMI クラスを指定することも必要があります。 これを行うには、次のように設定します。、 **WmiConfigClasses**クラス、WMI のコンマ区切りの一覧を示す値、*追加レジストリ セクション*のデバイス クラスまたはデバイスのハードウェアのインスタンス。
 
@@ -82,7 +82,7 @@ HKR,,"WmiConfigClasses",0x00000000,"class1,class2"
 HKR,,"WmiConfigClasses",0x00000000,"class3"
 ```
 
-参照してください[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)の説明については、*追加レジストリ セクション*INF ファイルでします。
+参照してください[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)の説明については、*追加レジストリ セクション*INF ファイルでします。
 
 Wmiprop.dll は、各クラスのインスタンスを 1 つだけを想定しています。 各クラスは、プロパティ シートのタブで表されます。 使用して、 **DisplayName**プロパティ修飾子 タブのタイトル テキストを設定します。クラスのプロパティ ページは、現在、クラスのインスタンスがある場合にのみ表示されます。 そのため、デバイスが削除または開始されていない場合、ページは表示されません。
 

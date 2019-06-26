@@ -8,12 +8,12 @@ keywords:
 - D3DFORMAT_OP_ZSTENCIL_WITH_ARBITRARY_COLOR_DEPTH
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4924724a84da6506aa7cd08bbbd4abb2148e18b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f986a686c60a7754cb36691b87f6b6fac0e228ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383903"
 ---
 # <a name="promoting-z-buffers-to-32-bits-per-pixel"></a>Z バッファーを 32 ビット/ピクセルに昇格
 
@@ -25,7 +25,7 @@ ms.locfileid: "63370350"
 
 ディスプレイ ドライバーが持つ表示デバイスが異なるピクセルの深度で z 値およびカラーのバッファーにレンダリングをサポートしていない z バッファーと 32 ビット/ピクセルの色のバッファーの両方を同時に表示するために z バッファーのピクセル (bpp) 32 ビット/ピクセルあたり 16 ビットに昇格透過的にする必要があります。 ただし、z バッファーがステンシル ビットもはできないことに注意してください。 そのため、アプリケーションでは、バッファーのピクセルの深度では、この不一致を修正する必要はありません。
 
-ドライバー、ドライバーのディスプレイ デバイスは、異なるピクセルの深度の z 値およびカラーのバッファーにレンダリングできますが、設定、D3DFORMAT\_OP\_ZSTENCIL\_WITH\_任意\_色\_深さフラグ**dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274) z バッファー形式の構造体。 Direct3D の実行時に、アプリケーションのレンダリングに z と色ピクセルの深度の不一致がしことができます。
+ドライバー、ドライバーのディスプレイ デバイスは、異なるピクセルの深度の z 値およびカラーのバッファーにレンダリングできますが、設定、D3DFORMAT\_OP\_ZSTENCIL\_WITH\_任意\_色\_深さフラグ**dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat) z バッファー形式の構造体。 Direct3D の実行時に、アプリケーションのレンダリングに z と色ピクセルの深度の不一致がしことができます。
 
 ドライバーは D3DFORMAT を設定していない場合\_OP\_ZSTENCIL\_WITH\_任意\_色\_z バッファー形式の深さ、ランタイムはのみ 32 bpp の不一致をレンダリングするアプリケーションを導入の段落で説明されているバッファーとありませんステンシル ビットの 16 bpp z バッファーを色します。 この場合、ドライバーは、要求された 16 bpp z バッファーの代わりに 32 bpp z バッファーを割り当てます。
 

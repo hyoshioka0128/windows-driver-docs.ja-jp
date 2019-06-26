@@ -4,12 +4,12 @@ description: ファイル システムの要件
 ms.assetid: 2C363978-3C98-4838-8C55-F804D2C75BEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bec3acad4a88463a2cc1c85cd2cd7f84a41579e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03efaeed2229c80639bd0f1b9b21328486c541a9
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360142"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393093"
 ---
 # <a name="file-system-requirements"></a>ファイル システムの要件
 
@@ -305,15 +305,15 @@ typedef struct _CONTAINER_MAP_RECORD
 <tbody>
 <tr class="odd">
 <td align="left">UserCreateDeleteDirAc</td>
-<td align="left"><p>ユーザーと管理者にファイルを作成できます、ディレクトリを使用して<a href="https://msdn.microsoft.com/library/windows/hardware/dn468711" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468711)"> <strong>CardCreateFile</strong></a>します。</p>
-<p>ユーザーと管理者は、呼び出すことで (空ではない) 場合は、ディレクトリを削除できます<a href="https://msdn.microsoft.com/library/windows/hardware/dn468716" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468716)"> <strong>CardDeleteDirectory</strong></a>します。</p>
-<p>使用して、ディレクトリの内容を一覧のすべてのユーザー <a href="https://msdn.microsoft.com/library/windows/hardware/dn468721" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468721)"> <strong>CardEnumFiles</strong></a>します。</p></td>
+<td align="left"><p>ユーザーと管理者にファイルを作成できます、ディレクトリを使用して<a href="https://docs.microsoft.com/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468711(v=vs.85))"> <strong>CardCreateFile</strong></a>します。</p>
+<p>ユーザーと管理者は、呼び出すことで (空ではない) 場合は、ディレクトリを削除できます<a href="https://docs.microsoft.com/previous-versions/dn468716(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468716(v=vs.85))"> <strong>CardDeleteDirectory</strong></a>します。</p>
+<p>使用して、ディレクトリの内容を一覧のすべてのユーザー <a href="https://docs.microsoft.com/previous-versions/dn468721(v=vs.85)" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468721(v=vs.85))"> <strong>CardEnumFiles</strong></a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">AdminCreateDeleteDirAc</td>
-<td align="left"><p>管理者は、ディレクトリにファイルを使用して作成できます<a href="https://msdn.microsoft.com/library/windows/hardware/dn468711" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468711)"> <strong>CardCreateFile</strong></a>します。</p>
-<p>管理者を使用して、ディレクトリを削除できます<a href="https://msdn.microsoft.com/library/windows/hardware/dn468716" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468716)"> <strong>CardDeleteDirectory</strong></a>します。</p>
-<p>使用して、ディレクトリの内容を一覧のすべてのユーザー <a href="https://msdn.microsoft.com/library/windows/hardware/dn468721" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468721)"> <strong>CardEnumFiles</strong></a>します。</p>
+<td align="left"><p>管理者は、ディレクトリにファイルを使用して作成できます<a href="https://docs.microsoft.com/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468711(v=vs.85))"> <strong>CardCreateFile</strong></a>します。</p>
+<p>管理者を使用して、ディレクトリを削除できます<a href="https://docs.microsoft.com/previous-versions/dn468716(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468716(v=vs.85))"> <strong>CardDeleteDirectory</strong></a>します。</p>
+<p>使用して、ディレクトリの内容を一覧のすべてのユーザー <a href="https://docs.microsoft.com/previous-versions/dn468721(v=vs.85)" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468721(v=vs.85))"> <strong>CardEnumFiles</strong></a>します。</p>
 <div class="alert">
 <strong>注</strong>  この ACL は省略可能です。 スマート カード ミニドライバーの仕様の将来のリビジョンから削除することがあります。
 </div>
@@ -372,7 +372,7 @@ typedef struct _CONTAINER_MAP_RECORD
 
 アクセス条件は、Acl に似ています。 特定のファイルとどのようなどのプリンシパルがアクセスできる条件コントロールへのアクセスを実行できる操作。 カード上の各ファイルには、プリンシパルとアクセス権限の一覧で説明されていることができるアクセス条件があります。 説明には、プリンシパルまたは特権が含まれていない場合を拒否すると見なされます。 一般に、アクセス条件は、カードに適用されます。
 
-次の表に、アクセス条件で使用できる[ **CardCreateFile** ](https://msdn.microsoft.com/library/windows/hardware/dn468711)し、適切なアクセス条件ニーモニックにマッピングします。
+次の表に、アクセス条件で使用できる[ **CardCreateFile** ](https://docs.microsoft.com/previous-versions/dn468711(v=vs.85))し、適切なアクセス条件ニーモニックにマッピングします。
 
 <table>
 <colgroup>
@@ -395,7 +395,7 @@ typedef struct _CONTAINER_MAP_RECORD
 </tr>
 <tr class="even">
 <td align="left">EveryoneReadUserWriteAc</td>
-<td align="left"><p>つまり、すべてのユーザー ファイルの読み取りまたは、ファイル情報を取得 (<a href="https://msdn.microsoft.com/library/windows/hardware/dn468727" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468727)"><strong>CardReadFile</strong> </a>または<strong>CardGetFileInfo</strong>)、それぞれ、およびユーザーと管理者のことができますファイルを読み取って、ファイルを書き込むファイルを削除します。</p></td>
+<td align="left"><p>つまり、すべてのユーザー ファイルの読み取りまたは、ファイル情報を取得 (<a href="https://docs.microsoft.com/previous-versions/dn468727(v=vs.85)" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468727(v=vs.85))"><strong>CardReadFile</strong> </a>または<strong>CardGetFileInfo</strong>)、それぞれ、およびユーザーと管理者のことができますファイルを読み取って、ファイルを書き込むファイルを削除します。</p></td>
 <td align="left">E(R)、U(RW)、A(RW)</td>
 </tr>
 <tr class="odd">
@@ -405,7 +405,7 @@ typedef struct _CONTAINER_MAP_RECORD
 </tr>
 <tr class="even">
 <td align="left">EveryoneReadAdminWriteAc</td>
-<td align="left"><p>つまり、すべてのユーザー ファイルの読み取りまたは、ファイル情報を取得 (<a href="https://msdn.microsoft.com/library/windows/hardware/dn468727" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn468727)"><strong>CardReadFile</strong> </a>または<strong>CardGetFileInfo</strong>) をそれぞれが、その管理者だけが書き込むことができますファイルとファイルを削除します。</p></td>
+<td align="left"><p>つまり、すべてのユーザー ファイルの読み取りまたは、ファイル情報を取得 (<a href="https://docs.microsoft.com/previous-versions/dn468727(v=vs.85)" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/dn468727(v=vs.85))"><strong>CardReadFile</strong> </a>または<strong>CardGetFileInfo</strong>) をそれぞれが、その管理者だけが書き込むことができますファイルとファイルを削除します。</p></td>
 <td align="left">E(R)、U(R)、A(RW)</td>
 </tr>
 <tr class="odd">
@@ -464,7 +464,7 @@ typedef struct _CONTAINER_MAP_RECORD
 
 ### <a name="span-idnotesonthedirectoryandfileaccessconditionsspanspan-idnotesonthedirectoryandfileaccessconditionsspanspan-idnotesonthedirectoryandfileaccessconditionsspannotes-on-the-directory-and-file-access-conditions"></a><span id="Notes_on_the_Directory_and_File_Access_Conditions"></span><span id="notes_on_the_directory_and_file_access_conditions"></span><span id="NOTES_ON_THE_DIRECTORY_AND_FILE_ACCESS_CONDITIONS"></span>ディレクトリおよびファイル アクセスの条件に関する注意事項
 
--   プリンシパルには、ファイルに対して読み取りアクセス権が必要がある[ **CardGetFileInfo** ](https://msdn.microsoft.com/library/windows/hardware/dn468727)が成功します。
+-   プリンシパルには、ファイルに対して読み取りアクセス権が必要がある[ **CardGetFileInfo** ](https://docs.microsoft.com/previous-versions/dn468727(v=vs.85))が成功します。
 -   ディレクトリの内容を一覧表示するための独立したリストの権限はありません。
 -   ディレクトリへのアクセスを「ディレクトリのアクセスを作成する」の意味は、ディレクトリにファイルを作成するための権限を持つ"delete"は、ディレクトリ自体を削除する権限を持つを意味します。 ファイルを削除するには、プリンシパルのカードは書き込みアクセス権をファイル自体が必要です。
 -   E(W) アクセス許可を持つディレクトリを作成するスマート カード ミニドライバー インターフェイスを通じてことはできません。

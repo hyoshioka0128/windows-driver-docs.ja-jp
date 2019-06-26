@@ -7,12 +7,12 @@ keywords:
 - 一般的なプリンター WDK Unidrv、ルート レベルのみの属性します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 396b844eecb6d4747d200856fa63ee0833bdac73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9be9818337085ee2f556040fc2e90978c63844c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355898"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384521"
 ---
 # <a name="new-root-level-only-gpd-attributes-for-windows-vista"></a>Windows Vista の新しいルート レベル専用 GPD 属性
 
@@ -201,7 +201,7 @@ Win32 GDI ドライバー Unidrv 構成モジュールを使用するには、�
 *Endif: WINNT_60 
 ```
 
-Microsoft Windows Server 2003 または Windows XP、ハッチ ブラシがで受信した場合に、Unidrv が HP-GL/2 のモードで印刷するときに、 [ **DrvRealizeBrush** ](https://msdn.microsoft.com/library/windows/hardware/ff556273)関数、Unidrv コマンドを送信、プリンターを選択できるように、適切なハッチ ブラシ。 Unidrv は、ハッチ ブラシをレンダリングする方法を制御しません。 たとえば、します線の間隔は通常、解像度によって制御します。 以上の解像度より低い解像度の小規模、中に、間隔を取得、間隔が大きくなります。 そのため、ドキュメントは可能性があります別の解像度を使用する場合、異なる方法で印刷します。
+Microsoft Windows Server 2003 または Windows XP、ハッチ ブラシがで受信した場合に、Unidrv が HP-GL/2 のモードで印刷するときに、 [ **DrvRealizeBrush** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvrealizebrush)関数、Unidrv コマンドを送信、プリンターを選択できるように、適切なハッチ ブラシ。 Unidrv は、ハッチ ブラシをレンダリングする方法を制御しません。 たとえば、します線の間隔は通常、解像度によって制御します。 以上の解像度より低い解像度の小規模、中に、間隔を取得、間隔が大きくなります。 そのため、ドキュメントは可能性があります別の解像度を使用する場合、異なる方法で印刷します。
 
 GPD が指定されている場合、Windows Vista では、 **UseImageForHatchBrush でしょうか。** 属性、Unidrv はビットマップのサーフェイスにハッチ ブラシをレンダリングし、デバイスにそのビットマップを送信します。 したがって、Unidrv には、ハッチ ブラシをレンダリングする方法のいくつかのコントロールがあります。
 

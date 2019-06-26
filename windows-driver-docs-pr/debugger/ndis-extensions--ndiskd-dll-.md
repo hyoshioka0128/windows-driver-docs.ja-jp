@@ -8,12 +8,12 @@ keywords:
 - 拡張機能、NDIS
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed9d9c53e7edbfebf651ac740136088808a93444
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70b8ff4added860de71ced21c2e63ec9de2fcb77
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366464"
 ---
 # <a name="ndis-extensions-ndiskddll"></a>NDIS 拡張機能 (Ndiskd.dll)
 
@@ -21,7 +21,7 @@ ms.locfileid: "63363921"
 ## <span id="ddk_ndis_extensions_ndiskd_dll__dbg"></span><span id="DDK_NDIS_EXTENSIONS_NDISKD_DLL__DBG"></span>
 
 
-このセクションで使用できるコマンドを説明します。 ndiskd、NDIS (Network Device Interface Specification) ドライバーのデバッグに役立つデバッガー拡張機能。 これらのコマンドでは、ネットワーク ドライバー開発者はネットワーク スタックと対話する方法、ドライバーが Windows の全体像を参照してください。 有効にします。 ! Ndiskd、すべてのネットワーク アダプターの状態を確認できます ([**! ndiskd.netadapter**](-ndiskd-netadapter.md))、コンピューターのネットワーク スタックのビジュアル ダイアグラム ([**! ndiskd.netreport**](-ndiskd-netreport.md))、ネットワーク アダプター上のトラフィックのログ ([**! ndiskd.nbllog**](-ndiskd-nbllog.md))、または OID 要求の保留中のすべてのリスト ([**! ndiskd.oid**](-ndiskd-oid.md)).
+このセクションで使用できるコマンドを説明します。 ndiskd、NDIS (Network Device Interface Specification) ドライバーのデバッグに役立つデバッガー拡張機能。 これらのコマンドでは、ネットワーク ドライバー開発者はネットワーク スタックと対話する方法、ドライバーが Windows の全体像を参照してください。 有効にします。 ! Ndiskd、すべてのネットワーク アダプターの状態を確認できます ([ **! ndiskd.netadapter**](-ndiskd-netadapter.md))、コンピューターのネットワーク スタックのビジュアル ダイアグラム ([ **! ndiskd.netreport**](-ndiskd-netreport.md))、ネットワーク アダプター上のトラフィックのログ ([ **! ndiskd.nbllog**](-ndiskd-nbllog.md))、または OID 要求の保留中のすべてのリスト ([ **! ndiskd.oid**](-ndiskd-oid.md)).
 
 コマンドは、Ndiskd.dll で確認できます。 シンボルを読み込むには、次のように入力します。 **.reload/f ndis.sys**デバッガー コマンド ウィンドウにします。 シンボルが正常に読み込まれたことを確認するを使用して、 [ **! lmi ndis** ](-lmi.md)拡張機能と語句の「シンボルを正常に読み込む」下部の方に参照してください。 出力の次の例によう必要があります。
 
@@ -87,106 +87,106 @@ Unicode 文字の出力が許可されているかどうかを制御します。
 
 次のコマンドは、マシンのネットワーク アダプター、ネットワーク ドライバー、および一般的なコマンドを (rcvqueues が開き、フィルター、Oid、および RW ロック) と、ネットワーク スタックに関連付けられているに関する情報を表示します。
 
--   [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
--   [**!ndiskd.minidriver**](-ndiskd-minidriver.md)
--   [**!ndiskd.rcvqueue**](-ndiskd-rcvqueue.md)
--   [**!ndiskd.protocol**](-ndiskd-protocol.md)
--   [**!ndiskd.mopen**](-ndiskd-mopen.md)
--   [**!ndiskd.filter**](-ndiskd-filter.md)
--   [**!ndiskd.filterdriver**](-ndiskd-filterdriver.md)
--   [**!ndiskd.oid**](-ndiskd-oid.md)
--   [**!ndiskd.ndisrwlock**](-ndiskd-ndisrwlock.md)
--   [**!ndiskd.netreport**](-ndiskd-netreport.md)
+-   [ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
+-   [ **!ndiskd.minidriver**](-ndiskd-minidriver.md)
+-   [ **!ndiskd.rcvqueue**](-ndiskd-rcvqueue.md)
+-   [ **!ndiskd.protocol**](-ndiskd-protocol.md)
+-   [ **!ndiskd.mopen**](-ndiskd-mopen.md)
+-   [ **!ndiskd.filter**](-ndiskd-filter.md)
+-   [ **!ndiskd.filterdriver**](-ndiskd-filterdriver.md)
+-   [ **!ndiskd.oid**](-ndiskd-oid.md)
+-   [ **!ndiskd.ndisrwlock**](-ndiskd-ndisrwlock.md)
+-   [ **!ndiskd.netreport**](-ndiskd-netreport.md)
 
 ## <a name="span-idnetbufferlistandnetbuffercommandsspanspan-idnetbufferlistandnetbuffercommandsspanspan-idnetbufferlistandnetbuffercommandsspannetbufferlist-and-netbuffer-commands"></a><span id="NET_BUFFER_LIST_and_NET_BUFFER_Commands"></span><span id="net_buffer_list_and_net_buffer_commands"></span><span id="NET_BUFFER_LIST_AND_NET_BUFFER_COMMANDS"></span>NET\_バッファー\_一覧と NET\_バッファー コマンド
 
 
-次のコマンドに関連する情報を表示する[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)と[ **NET\_バッファー**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-structure)構造体。
+次のコマンドに関連する情報を表示する[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)と[ **NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)構造体。
 
--   [**!ndiskd.nbl**](-ndiskd-nbl.md)
--   [**!ndiskd.nb**](-ndiskd-nb.md)
--   [**!ndiskd.nblpool**](-ndiskd-nblpool.md)
--   [**!ndiskd.nbpool**](-ndiskd-nbpool.md)
--   [**!ndiskd.pendingnbls**](-ndiskd-pendingnbls.md)
--   [**!ndiskd.nbllog**](-ndiskd-nbllog.md)
+-   [ **!ndiskd.nbl**](-ndiskd-nbl.md)
+-   [ **!ndiskd.nb**](-ndiskd-nb.md)
+-   [ **!ndiskd.nblpool**](-ndiskd-nblpool.md)
+-   [ **!ndiskd.nbpool**](-ndiskd-nbpool.md)
+-   [ **!ndiskd.pendingnbls**](-ndiskd-pendingnbls.md)
+-   [ **!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
 ## <a name="span-idnetadaptercxcommandsspanspan-idnetadaptercxcommandsspanspan-idnetadaptercxcommandsspannetadaptercx-commands"></a><span id="NetAdapterCx_Commands"></span><span id="netadaptercx_commands"></span><span id="NETADAPTERCX_COMMANDS"></span>NetAdapterCx コマンド
 
 
 次のコマンドは、ネットワーク アダプター WDF クラス拡張機能 (NetAdapterCx) に関連する情報を表示\[LINK TBD\]および関連付けられている構造体、NET\_リング\_バッファー \[LINK TBD\] net\_パケット\[LINK TBD\]します。
 
--   [**!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
--   [**!ndiskd.netqueue**](-ndiskd-netqueue.md)
--   [**!ndiskd.netrb**](-ndiskd-netrb.md)
--   [**!ndiskd.netpacket**](-ndiskd-netpacket.md)
--   [**!ndiskd.netpacketfragment**](-ndiskd-netpacketfragment.md)
+-   [ **!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
+-   [ **!ndiskd.netqueue**](-ndiskd-netqueue.md)
+-   [ **!ndiskd.netrb**](-ndiskd-netrb.md)
+-   [ **!ndiskd.netpacket**](-ndiskd-netpacket.md)
+-   [ **!ndiskd.netpacketfragment**](-ndiskd-netpacketfragment.md)
 
 ## <a name="span-idnetworkinterfacecommandsspanspan-idnetworkinterfacecommandsspanspan-idnetworkinterfacecommandsspannetwork-interface-commands"></a><span id="Network_Interface_Commands"></span><span id="network_interface_commands"></span><span id="NETWORK_INTERFACE_COMMANDS"></span>ネットワーク インターフェイスのコマンド
 
 
 次のコマンドは、ネットワーク インターフェイスに関連する情報を表示します。
 
--   [**!ndiskd.interfaces**](-ndiskd-interfaces.md)
--   [**!ndiskd.ifprovider**](-ndiskd-ifprovider.md)
+-   [ **!ndiskd.interfaces**](-ndiskd-interfaces.md)
+-   [ **!ndiskd.ifprovider**](-ndiskd-ifprovider.md)
 
 ## <a name="span-idndispacketcommandsspanspan-idndispacketcommandsspanspan-idndispacketcommandsspanndispacket-commands"></a><span id="NDIS_PACKET_Commands"></span><span id="ndis_packet_commands"></span><span id="NDIS_PACKET_COMMANDS"></span>NDIS\_パケット コマンド
 
 
-次のコマンドに関する情報を表示する[NDIS\_パケット](https://msdn.microsoft.com/library/windows/hardware/ff557086)構造体。 これらの拡張機能では、従来の NDIS 5.x ドライバーです。 NDIS\_パケットの構造とその関連付けられているアーキテクチャが使用されなくなりました。
+次のコマンドに関する情報を表示する[NDIS\_パケット](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))構造体。 これらの拡張機能では、従来の NDIS 5.x ドライバーです。 NDIS\_パケットの構造とその関連付けられているアーキテクチャが使用されなくなりました。
 
--   [**!ndiskd.pkt**](-ndiskd-pkt.md)
--   [**!ndiskd.pktpools**](-ndiskd-pktpools.md)
--   [**!ndiskd.findpacket**](-ndiskd-findpacket.md)
+-   [ **!ndiskd.pkt**](-ndiskd-pkt.md)
+-   [ **!ndiskd.pktpools**](-ndiskd-pktpools.md)
+-   [ **!ndiskd.findpacket**](-ndiskd-findpacket.md)
 
 ## <a name="span-idcondiscommandsspanspan-idcondiscommandsspanspan-idcondiscommandsspancondis-commands"></a><span id="CoNDIS_Commands"></span><span id="condis_commands"></span><span id="CONDIS_COMMANDS"></span>いる CoNDIS コマンド
 
 
-次のコマンドに関する情報を表示する[Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)接続します。
+次のコマンドに関する情報を表示する[Connection-Oriented NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)接続します。
 
--   [**!ndiskd.vc**](-ndiskd-vc.md)
--   [**!ndiskd.af**](-ndiskd-af.md)
+-   [ **!ndiskd.vc**](-ndiskd-vc.md)
+-   [ **!ndiskd.af**](-ndiskd-af.md)
 
 ## <a name="span-idndisdebuggingcommandsspanspan-idndisdebuggingcommandsspanspan-idndisdebuggingcommandsspanndis-debugging-commands"></a><span id="NDIS_Debugging_Commands"></span><span id="ndis_debugging_commands"></span><span id="NDIS_DEBUGGING_COMMANDS"></span>NDIS デバッグ コマンド
 
 
 次のコマンドは、NDIS refcounts、イベント ログ、スタック トレース、およびデバッグ トレースに関連する情報を表示します。
 
--   [**!ndiskd.ndisref**](-ndiskd-ndisref.md)
--   [**!ndiskd.ndisevent**](-ndiskd-ndisevent.md)
--   [**!ndiskd.ndisstack**](-ndiskd-ndisstack.md)
--   [**!ndiskd.dbglevel**](-ndiskd-dbglevel.md)
--   [**!ndiskd.dbgsystems**](-ndiskd-dbgsystems.md)
+-   [ **!ndiskd.ndisref**](-ndiskd-ndisref.md)
+-   [ **!ndiskd.ndisevent**](-ndiskd-ndisevent.md)
+-   [ **!ndiskd.ndisstack**](-ndiskd-ndisstack.md)
+-   [ **!ndiskd.dbglevel**](-ndiskd-dbglevel.md)
+-   [ **!ndiskd.dbgsystems**](-ndiskd-dbgsystems.md)
 
 ## <a name="span-idwdicommandsspanspan-idwdicommandsspanspan-idwdicommandsspanwdi-commands"></a><span id="WDI_Commands"></span><span id="wdi_commands"></span><span id="WDI_COMMANDS"></span>WDI コマンド
 
 
-次のコマンドに関する情報を表示する[WDI ミニポート ドライバー](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)します。
+次のコマンドに関する情報を表示する[WDI ミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)します。
 
--   [**!ndiskd.wdiadapter**](-ndiskd-wdiadapter.md)
--   [**!ndiskd.wdiminidriver**](-ndiskd-wdiminidriver.md)
--   [**!ndiskd.nwadapter**](-ndiskd-nwadapter.md)
+-   [ **!ndiskd.wdiadapter**](-ndiskd-wdiadapter.md)
+-   [ **!ndiskd.wdiminidriver**](-ndiskd-wdiminidriver.md)
+-   [ **!ndiskd.nwadapter**](-ndiskd-nwadapter.md)
 
 ## <a name="span-idndisandndiskdinformationcommandsspanspan-idndisandndiskdinformationcommandsspanspan-idndisandndiskdinformationcommandsspanndis-and-ndiskd-information-commands"></a><span id="NDIS_and__ndiskd_Information_Commands"></span><span id="ndis_and__ndiskd_information_commands"></span><span id="NDIS_AND__NDISKD_INFORMATION_COMMANDS"></span>NDIS および! ndiskd 情報コマンド
 
 
 次のコマンドは、NDIS.sys と ndiskd.dll に関する情報を表示します。
 
--   [**!ndiskd.ndis**](-ndiskd-ndis.md)
--   [**!ndiskd.ndiskdversion**](-ndiskd-ndiskdversion.md)
+-   [ **!ndiskd.ndis**](-ndiskd-ndis.md)
+-   [ **!ndiskd.ndiskdversion**](-ndiskd-ndiskdversion.md)
 
 ## <a name="span-idmiscellaneouscommandsspanspan-idmiscellaneouscommandsspanspan-idmiscellaneouscommandsspanmiscellaneous-commands"></a><span id="Miscellaneous_Commands"></span><span id="miscellaneous_commands"></span><span id="MISCELLANEOUS_COMMANDS"></span>その他のコマンド
 
 
--   [**! ndiskd.ifstacktable**](-ndiskd-ifstacktable.md)
--   [**!ndiskd.compartments**](-ndiskd-compartments.md)
--   [**!ndiskd.ndisslot**](-ndiskd-ndisslot.md)
+-   [ **! ndiskd.ifstacktable**](-ndiskd-ifstacktable.md)
+-   [ **!ndiskd.compartments**](-ndiskd-compartments.md)
+-   [ **!ndiskd.ndisslot**](-ndiskd-ndisslot.md)
 
 ## <a name="span-idrelatedtopicsspanspan-idrelatedtopicsspanspan-idrelatedtopicsspanrelated-topics"></a><span id="Related_Topics"></span><span id="related_topics"></span><span id="RELATED_TOPICS"></span>関連トピック
 
 
-参照の Windows Vista 以降、ドライバー NDIS の設計の詳細については、[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)します。
+参照の Windows Vista 以降、ドライバー NDIS の設計の詳細については、[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)します。
 
-Windows Vista 以降の NDIS ドライバーへの参照の詳細については、次を参照してください。 [Windows Vista との参照を後でネットワーク](https://msdn.microsoft.com/library/windows/hardware/ff571081)します。
+Windows Vista 以降の NDIS ドライバーへの参照の詳細については、次を参照してください。 [Windows Vista との参照を後でネットワーク](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)します。
 
 使用しての例については、!、ネットワーク スタックをデバッグする ndiskd デバッガー コマンドを参照してください[ネットワーク スタックをデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)します。
 

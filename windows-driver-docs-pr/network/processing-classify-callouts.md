@@ -10,17 +10,17 @@ keywords:
 - WDK Windows フィルタ リング プラットフォームのコールアウトの分類、コールアウトを約分類する.
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5c7d973e7099df39b372a64286a043fd191338d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dda31876f745df486aee716a996b5ecf2c4b46d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327638"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385482"
 ---
 # <a name="processing-classify-callouts"></a>分類コールアウトの処理
 
 
-フィルター エンジン呼び出し吹き出しの[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)引き出し線によって処理されるネットワーク データがある場合は吹き出し関数。 これは、フィルターのアクションの引き出し線を指定するフィルターのフィルター処理のすべての条件が当てはまる場合に発生します。 このようなフィルターがフィルター条件を持たない場合、フィルター エンジンを常に呼び出します吹き出しの*classifyFn*コールアウト関数。
+フィルター エンジン呼び出し吹き出しの[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)引き出し線によって処理されるネットワーク データがある場合は吹き出し関数。 これは、フィルターのアクションの引き出し線を指定するフィルターのフィルター処理のすべての条件が当てはまる場合に発生します。 このようなフィルターがフィルター条件を持たない場合、フィルター エンジンを常に呼び出します吹き出しの*classifyFn*コールアウト関数。
 
 フィルター エンジンでは、いくつかの異なるデータ アイテムを渡すには、吹き出しの*classifyFn*コールアウト関数。 これらのデータ項目には、固定のデータ値、メタデータの値、未加工のネットワーク データ、フィルターについては、および任意のコンテキストのフローが含まれます。 フィルター エンジンは吹き出しに渡される特定のデータ項目は、特定のフィルタ リング層とする条件によって異なります。 *classifyFn*が呼び出されます。 A *classifyFn*関数は、これらのデータ項目の任意の組み合わせを使用して、そのフィルターの決定を行います。
 

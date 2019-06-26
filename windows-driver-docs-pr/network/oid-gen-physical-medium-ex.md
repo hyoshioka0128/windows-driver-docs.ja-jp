@@ -5,12 +5,12 @@ ms.assetid: cbac8c9b-d7fe-4588-8a64-599d04a77a72
 ms.date: 08/08/2017
 keywords: -OID_GEN_PHYSICAL_MEDIUM_EX ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0f0b934035cbe6cfac6e9f2cb82f6ee5efb277
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 614c3f3b6b761267e060bd68053a47862d7865d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324462"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382641"
 ---
 # <a name="oidgenphysicalmediumex"></a>OID\_GEN\_物理\_MEDIUM\_例
 
@@ -22,9 +22,9 @@ ms.locfileid: "63324462"
 
 NDIS は、NDIS 6.0 とそれ以降のミニポート ドライバーのこの OID を処理します。 ミニポート ドライバーでは、初期化中に物理中程度の値を提供します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造に含まれる、NDIS\_物理\_中程度の列挙値。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造に含まれる、NDIS\_物理\_中程度の列挙値。
 
-**注**  OID の違い\_GEN\_物理\_MEDIUM\_EX と[OID\_GEN\_物理\_中](oid-gen-physical-medium.md) OID は\_GEN\_物理\_MEDIUM\_EX バージョンがオーバーライドしません、 **NdisPhysicalMedium802\_3** と型**NdisPhysicalMediumUnspecified**は OID\_GEN\_物理\_中は引き続きは。 6.x のすべてのドライバーが、EX バージョンを使用することをお勧めします。 OID\_GEN\_物理\_MEDIUM\_EX が WMI GUID を介して公開されます。
+**注**  OID の違い\_GEN\_物理\_MEDIUM\_EX と[OID\_GEN\_物理\_中](oid-gen-physical-medium.md) OID は\_GEN\_物理\_MEDIUM\_EX バージョンがオーバーライドしません、 **NdisPhysicalMedium802\_3** と型**NdisPhysicalMediumUnspecified**は OID\_GEN\_物理\_中は引き続きは。 6\.x のすべてのドライバーが、EX バージョンを使用することをお勧めします。 OID\_GEN\_物理\_MEDIUM\_EX が WMI GUID を介して公開されます。
 
  
 
@@ -59,7 +59,7 @@ NDIS サポート、OID\_GEN\_物理\_MEDIUM\_ミニポート アダプターが
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
 [OID\_GEN\_メディア\_サポートされています。](oid-gen-media-supported.md)
 

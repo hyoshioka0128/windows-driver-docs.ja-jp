@@ -4,19 +4,19 @@ description: 書式指定文字列を拡張、WPP とは
 ms.assetid: f05117c0-cb4b-483a-a141-08423555170a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b4ee86a2d9ac5c93c9df135032aa5f19b59856
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb74648fffb386f818651f74b102fd130ed111e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385030"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371370"
 ---
 # <a name="what-are-the-wpp-extended-format-specification-strings"></a>WPP 拡張書式指定文字列とは
 
 
 WPP にはトレース メッセージに対して定義されている標準書式指定文字列のほかに使用できる定義済みの書式指定文字列が含まれます**printf**します。
 
-使用することができます、 **% です。フラグ。**, **%!FUNC!** **% です。レベル。** 文字列を[トレース メッセージのプレフィックス](trace-message-prefix.md)、および任意のトレース関数またはマクロでなど[ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)します。
+使用することができます、 **% です。フラグ。** , **%!FUNC!** **% です。レベル。** 文字列を[トレース メッセージのプレフィックス](trace-message-prefix.md)、および任意のトレース関数またはマクロでなど[ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))します。
 
 すべてのトレース関数では、その他の拡張文字列を使用できます。
 
@@ -116,7 +116,7 @@ WPP にはトレース メッセージに対して定義されている標準書
 <tr class="odd">
 <td align="left"><p>%! 期限。</p></td>
 <td align="left"><p>時間 (ミリ秒単位)、完了する予定は何かを表示します。 表示される LONGLONG 値<strong>日 ~ h<span class="emoji" shortCode="m">Ⓜ️</span>s</strong>形式。</p>
-<p>使用するように設計<strong>% です。待機時間。</strong>.</p></td>
+<p>使用するように設計<strong>% です。待機時間</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%!タイムスタンプ。</p>

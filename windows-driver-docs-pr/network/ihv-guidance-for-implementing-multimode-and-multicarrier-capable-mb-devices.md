@@ -4,12 +4,12 @@ description: このトピックでは、Windows の複数の無線アクセス �
 ms.assetid: 17BB2478-F98D-4AE6-A62D-F65E2E1DCDFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a53128bdde33dc24ccefd68f9fa611fc891680b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca47c1e4342b47541140f5c908f8226ee33097f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386541"
 ---
 # <a name="ihv-guidance-for-implementing-multimode-and-multicarrier-capable-mb-devices"></a>マルチモードおよびマルチキャリア対応 MB デバイスの実装に関する IHV ガイダンス
 
@@ -183,7 +183,7 @@ UUID の次の Cid を定義する具体的には、\_および MULTICARRIER デ
 <tr class="header">
 <th align="left">MBIM_MC_FLAGS_NONE</th>
 <th align="left">0 h</th>
-<th align="left">フラグが設定されていません</th>
+<th align="left">フラグの設定なし</th>
 </tr>
 </thead>
 <tbody>
@@ -240,7 +240,7 @@ UUID の次の Cid を定義する具体的には、\_および MULTICARRIER デ
 
 要請されていないイベント =**サポートされていません。**
 
-ホストで指定された国コードは Windows で使用可能な地理的場所 GEOID に基づいて構築します。 詳細については、次を参照してください。[テーブルの地理的な場所 (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd374073)します。
+ホストで指定された国コードは Windows で使用可能な地理的場所 GEOID に基づいて構築します。 詳細については、次を参照してください。[テーブルの地理的な場所 (Windows)](https://docs.microsoft.com/windows/desktop/Intl/table-of-geographical-locations)します。
 
 <table>
 <colgroup>

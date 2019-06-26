@@ -3,12 +3,12 @@ Description: このセクションでは、このトピックでは、クラス 
 title: Microsoft が提供する USB ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 572b867501af1658d4ef7d89c5880743bdfefaf5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04cb5e5ba904b5c738b7bffbec6e30e2c6a2a79c
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355189"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393120"
 ---
 # <a name="microsoft-provided-usb-drivers"></a>Microsoft が提供する USB ドライバー
 
@@ -22,7 +22,7 @@ ms.locfileid: "63355189"
 
 -   USB ホスト コント ローラーとハブ。 詳細については、次を参照してください。 [Windows での USB ホスト側ドライバー](usb-3-0-driver-stack-architecture.md)します。 USB ホスト コント ローラーの拡張機能 (UCX) ドライバーを使用した通信を行うカスタム ホスト コント ローラー ドライバーを開発することができます。 詳細については、次を参照してください。[開発 Windows ドライバーの USB ホスト コント ローラー](developing-windows-drivers-for-usb-host-controllers.md)します。
 -   USB デバイスの共通の関数ロジックを処理します。 詳細については、次を参照してください。 [Windows での USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)します。
--   型 C コネクタをサポートします。 詳細については、次を参照してください。 [USB コネクタ マネージャー クラスの拡張機能 (UcmCx)](https://msdn.microsoft.com/library/windows/hardware/mt188011)します。
+-   型 C コネクタをサポートします。 詳細については、次を参照してください。 [USB コネクタ マネージャー クラスの拡張機能 (UcmCx)](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))します。
 
 ## <a name="other-microsoft-provided-usb-drivers"></a>その他の Microsoft 提供の USB ドライバー
 
@@ -60,7 +60,7 @@ ms.locfileid: "63355189"
 <p>WudfUsbBIDAdvanced.inf</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p></td>
-<td><p>マイクロソフトは、Windows 生体認証フレームワークを提供することで、USB 生体認証デバイス (指紋リーダー) をサポートします。 参照してください、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff536448" data-raw-source="[Windows Biometric Framework](https://msdn.microsoft.com/library/windows/hardware/ff536448)">Windows 生体認証フレームワーク</a>します。</p></td>
+<td><p>マイクロソフトは、Windows 生体認証フレームワークを提供することで、USB 生体認証デバイス (指紋リーダー) をサポートします。 参照してください、 <a href="https://docs.microsoft.com/previous-versions/ff536448(v=vs.85)" data-raw-source="[Windows Biometric Framework](https://docs.microsoft.com/previous-versions/ff536448(v=vs.85))">Windows 生体認証フレームワーク</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td>メディア転送プロトコル デバイス</td>
@@ -75,7 +75,7 @@ ms.locfileid: "63355189"
 <div>
 
 </div>
-<p>Microsoft では、メディア転送プロトコルをサポートするポータブル デバイスを管理する Wpdusb.sys ドライバーを提供します。 参照してください<a href="https://msdn.microsoft.com/library/windows/hardware/ff597864" data-raw-source="[WPD Design Guide](https://msdn.microsoft.com/library/windows/hardware/ff597864)">WPD 設計ガイド</a>します。</p></td>
+<p>Microsoft では、メディア転送プロトコルをサポートするポータブル デバイスを管理する Wpdusb.sys ドライバーを提供します。 参照してください<a href="https://docs.microsoft.com/previous-versions/ff597864(v=vs.85)" data-raw-source="[WPD Design Guide](https://docs.microsoft.com/previous-versions/ff597864(v=vs.85))">WPD 設計ガイド</a>します。</p></td>
 </tr>
 <tr class="even">
 <td>USBDevice</td>
@@ -101,7 +101,7 @@ ms.locfileid: "63355189"
 参照してください、 [USB デバイス クラス ドライバーが Windows に含まれる](supported-usb-classes.md)します。
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 [USB ドライバー開発ガイド](usb-driver-development-guide.md)  
 
 
