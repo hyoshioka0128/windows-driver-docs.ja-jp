@@ -10,12 +10,12 @@ keywords:
 - CDROM_EXCLUSIVE_LOCK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35a3afa58868488480354ec6dbf066bea51a14c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d0bb6dea4075890839ed5fb7da243e52f8eb3ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338323"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368339"
 ---
 # <a name="cd-rom-exclusive-access-mode"></a>CD-ROM 排他アクセス モード
 
@@ -30,7 +30,7 @@ CD-ROM*排他アクセス*メカニズム (とも呼ばれます*排他アクセ
 
 排他アクセス メカニズムがなければこれら 2 種類のアプリケーション排他アクセスを提供するベンダーの唯一の方法は、その他のアプリケーションやコンポーネントからの I/O 要求が失敗したカスタム フィルター ドライバーをインストールすることは、この方法によりシステム不安定になります。 CD-ROM デバイスへの排他アクセスを取得するのには、フィルター ドライバーを使用する必要があります。
 
-排他アクセス メカニズムを使用するアプリケーションを送信する必要があります、 [ **IOCTL\_CDROM\_排他\_アクセス**](https://msdn.microsoft.com/library/windows/hardware/ff559327)パッシブに CD-ROM クラス ドライバーへの要求\_IRQL レベル。 呼び出し元がこの要求を行うと、呼び出し元がで識別文字列を提供する必要があります、 **CallerName**のメンバー [ **CDROM\_排他\_ロック**](https://msdn.microsoft.com/library/windows/hardware/ff551363). クラス ドライバーは、排他アクセス権を持つアプリケーションを識別するためにこの文字列を使用します。
+排他アクセス メカニズムを使用するアプリケーションを送信する必要があります、 [ **IOCTL\_CDROM\_排他\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)パッシブに CD-ROM クラス ドライバーへの要求\_IRQL レベル。 呼び出し元がこの要求を行うと、呼び出し元がで識別文字列を提供する必要があります、 **CallerName**のメンバー [ **CDROM\_排他\_ロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_lock). クラス ドライバーは、排他アクセス権を持つアプリケーションを識別するためにこの文字列を使用します。
 
 アプリケーションは、ロックを試行する前に、デバイスの現在の状態を照会する必要があります。 デバイスが既にロックされている場合、クラス ドライバーは、デバイスの現在の所有者の識別文字列を返します。 デバイスをロックする前に、呼び出し元開く必要があります、読み取り/書き込みアクセス モード。 そのため、呼び出し元は、管理者特権または書き込みのアクセス モードで CD-ROM デバイスを開くアクセス許可が必要です。
 
@@ -50,13 +50,13 @@ CD-ROM クラス ドライバーが、要求を受信することの保証がな
 
 -   システムでは、ロックされているデバイスのオープン要求が失敗します。
 
--   送信する他のアプリケーション、 [ **IOCTL\_ストレージ\_クエリ\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/ff560590) CD-ROM クラス ドライバーへの要求からキャッシュされた情報が表示されます、デバイスがロックされています。 具体的には場合、 [**ストレージ\_クエリ\_型**](https://msdn.microsoft.com/library/windows/hardware/ff566998)は**PropertyExistsQuery**IOCTL、デバイスの場合は動作は同じになりますロックされていません。 また場合、**ストレージ\_クエリ\_型**は**PropertyStandardQuery**と[**ストレージ\_プロパティ\_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff566996)は**StorageDeviceProperty**または**StorageAdapterProperty**IOCTL が CD-ROM クラス ドライバーにキャッシュされている情報を返します。 他の組み合わせの**ストレージ\_クエリ\_型**と**ストレージ\_プロパティ\_ID**、ステータスステータス値を持つ、IOCTLが失敗しました。\_アクセス\_が拒否されました。
+-   送信する他のアプリケーション、 [ **IOCTL\_ストレージ\_クエリ\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property) CD-ROM クラス ドライバーへの要求からキャッシュされた情報が表示されます、デバイスがロックされています。 具体的には場合、 [**ストレージ\_クエリ\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ne-ntddstor-_storage_query_type)は**PropertyExistsQuery**IOCTL、デバイスの場合は動作は同じになりますロックされていません。 また場合、**ストレージ\_クエリ\_型**は**PropertyStandardQuery**と[**ストレージ\_プロパティ\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ne-ntddstor-storage_property_id)は**StorageDeviceProperty**または**StorageAdapterProperty**IOCTL が CD-ROM クラス ドライバーにキャッシュされている情報を返します。 他の組み合わせの**ストレージ\_クエリ\_型**と**ストレージ\_プロパティ\_ID**、ステータスステータス値を持つ、IOCTLが失敗しました。\_アクセス\_が拒否されました。
 
--   送信する他のアプリケーション、 [ **IOCTL\_CDROM\_取得\_照会\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff559345) CD-ROM クラス ドライバーへの要求には、キャッシュされた情報が表示されます。中にデバイスがロックされているし、もできないことがロックされています。
+-   送信する他のアプリケーション、 [ **IOCTL\_CDROM\_取得\_照会\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_get_inquiry_data) CD-ROM クラス ドライバーへの要求には、キャッシュされた情報が表示されます。中にデバイスがロックされているし、もできないことがロックされています。
 
 システムでは、次のいずれかが発生した場合、CD-ROM デバイスへの排他アクセスが削除されます。
 
--   排他ロックの所有者に送信、 [ **IOCTL\_CDROM\_排他\_アクセス**](https://msdn.microsoft.com/library/windows/hardware/ff559327)と CD-ROM クラス ドライバーへの要求、 **RequestType**のメンバー [ **CDROM\_排他\_アクセス**](https://msdn.microsoft.com/library/windows/hardware/ff551362)設定**ExclusiveAccessUnlockDevice**します。
+-   排他ロックの所有者に送信、 [ **IOCTL\_CDROM\_排他\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_exclusive_access)と CD-ROM クラス ドライバーへの要求、 **RequestType**のメンバー [ **CDROM\_排他\_アクセス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_exclusive_access)設定**ExclusiveAccessUnlockDevice**します。
 
 -   排他ロックの所有者では、デバイス ハンドルを閉じます。
 

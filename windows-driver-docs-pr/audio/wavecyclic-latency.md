@@ -7,12 +7,12 @@ keywords:
 - サイレント状態の間隔の WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0642b2ce576a7b98432dd28466d2b4a20536077e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 772c43dd39488d1a02d00bac3b6b785b1d81f156
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328498"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364796"
 ---
 # <a name="wavecyclic-latency"></a>WaveCyclic 遅延
 
@@ -26,7 +26,7 @@ WaveCyclic ポート ドライバーが循環バッファー内のデータを�
 
 ほぼスタベーションの期間の後に、サイレント状態の間隔が KMixer ストリームに含めることができます。 WaveCyclic は DMA バッファー内の余分なデータの 40 個ではなく 30 ミリ秒を維持するために KMixer から wave データだけを受信した、WaveCyclic は KMixer から有効なデータの最後に続く DMA バッファーへのサイレント状態の書き込みを開始します。 このポリシーによりスタベーションが発生し、デバイスが有効なデータの末尾を越えて読み取り、オーディオ デバイスが古い場合または初期化されていないデータではなくサイレント状態をレンダリングするようになります。
 
-DMA バッファーに書き込まれた無音状態の量が非常に小さく、保持し、そのデータがバッファー内のサイレント状態を上書き KMixer silence 音声ガイダンスが再生された前に追加のデータと WaveCyclic ポート ドライバーを提供し、成功しますが場合、します。 不足がない場合は、オーディオ デバイスは、強制無音状態の間隔なしの混在のデータの連続ストリームを受信します。 ドライバーをデバッグするときにただし、表示もありますミニポート ドライバーの[ **IMiniportWaveCyclicStream::Silence** ](https://msdn.microsoft.com/library/windows/hardware/ff536721)場合でも、オーディオ、レンダラーの不足が呼び出されるメソッド。
+DMA バッファーに書き込まれた無音状態の量が非常に小さく、保持し、そのデータがバッファー内のサイレント状態を上書き KMixer silence 音声ガイダンスが再生された前に追加のデータと WaveCyclic ポート ドライバーを提供し、成功しますが場合、します。 不足がない場合は、オーディオ デバイスは、強制無音状態の間隔なしの混在のデータの連続ストリームを受信します。 ドライバーをデバッグするときにただし、表示もありますミニポート ドライバーの[ **IMiniportWaveCyclicStream::Silence** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-silence)場合でも、オーディオ、レンダラーの不足が呼び出されるメソッド。
 
  
 

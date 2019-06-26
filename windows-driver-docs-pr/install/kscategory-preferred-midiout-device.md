@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cf5f52954b2c6ab4238743ecda60728b98a5def3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02fc3cc064b48d6772c58743b690fa644655c048
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390746"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374219"
 ---
 # <a name="kscategorypreferredmidioutdevice"></a>KSCATEGORY_PREFERRED_MIDIOUT_DEVICE
 
 
-KSCATEGORY_PREFERRED_MIDIOUT_DEVICE[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)優先 MIDI の機能のカテゴリ (KS) は、デバイスを出力します。
+KSCATEGORY_PREFERRED_MIDIOUT_DEVICE[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)優先 MIDI の機能のカテゴリ (KS) は、デバイスを出力します。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ KSCATEGORY_PREFERRED_MIDIOUT_DEVICE[デバイス インターフェイス クラ
 
 ユーザーは、マルチ メディアのプロパティ ページ、コントロール パネルで、優先する MIDI 出力デバイスを選択します。
 
-この機能のカテゴリは、システムが提供して排他的に使用用に予約された[WDM オーディオ コンポーネント](https://msdn.microsoft.com/library/windows/hardware/ff538905)します。
+この機能のカテゴリは、システムが提供して排他的に使用用に予約された[WDM オーディオ コンポーネント](https://docs.microsoft.com/windows-hardware/drivers/audio/wdm-audio-components)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

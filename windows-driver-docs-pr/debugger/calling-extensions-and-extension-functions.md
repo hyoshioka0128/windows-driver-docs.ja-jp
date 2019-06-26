@@ -6,19 +6,19 @@ keywords:
 - デバッガー エンジン API、拡張機能を呼び出す
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d13410c18b4fcb259c811f05611a1e370485fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e46d3c5b1e9a244558d6c9a97d176d48c0aec63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374451"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367042"
 ---
 # <a name="calling-extensions-and-extension-functions"></a>拡張機能と拡張機能関数の呼び出し
 
 
-拡張機能ライブラリを読み込む (または、既に読み込まれた拡張機能ライブラリのハンドルを取得する) を使用して[ **AddExtension**](https://msdn.microsoft.com/library/windows/hardware/ff537892)します。 拡張機能ライブラリをアンロードできるようにする[ **RemoveExtension**](https://msdn.microsoft.com/library/windows/hardware/ff554497)します。
+拡張機能ライブラリを読み込む (または、既に読み込まれた拡張機能ライブラリのハンドルを取得する) を使用して[ **AddExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-addextension)します。 拡張機能ライブラリをアンロードできるようにする[ **RemoveExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-removeextension)します。
 
-使用して拡張機能のコマンドを呼び出すことができます[ **CallExtension**](https://msdn.microsoft.com/library/windows/hardware/ff539023)します。
+使用して拡張機能のコマンドを呼び出すことができます[ **CallExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-callextension)します。
 
 ### <a name="span-idextensionfunctionsspanspan-idextensionfunctionsspanextension-functions"></a><span id="extension_functions"></span><span id="EXTENSION_FUNCTIONS"></span>拡張関数
 
@@ -28,7 +28,7 @@ ms.locfileid: "63374451"
 
 拡張関数が、拡張機能ライブラリ内で識別される、"\_EFN\_"名には、先頭に付加します。
 
-拡張関数へのポインターを取得する[ **GetExtensionFunction**](https://msdn.microsoft.com/library/windows/hardware/ff546733)します。 この関数ポインターの型は、拡張関数のプロトタイプと一致する必要があります。 C 言語で他の関数ポインターと同じように、拡張関数を呼び出すようになりましたことが
+拡張関数へのポインターを取得する[ **GetExtensionFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getextensionfunction)します。 この関数ポインターの型は、拡張関数のプロトタイプと一致する必要があります。 C 言語で他の関数ポインターと同じように、拡張関数を呼び出すようになりましたことが
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
 

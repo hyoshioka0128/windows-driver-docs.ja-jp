@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f07588dfaff5a83093b160d3884056a7a8c0f92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e062175db2c00dea88c857455d468755bceb9c4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353644"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367810"
 ---
 # <a name="bug-check-0x14-createdeletelocknotlocked"></a>バグ チェック 0x14:作成\_削除\_ロック\_いない\_ロック
 
@@ -28,7 +28,7 @@ ms.locfileid: "63353644"
 このバグ チェックが非常に少ない回数が表示されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
  

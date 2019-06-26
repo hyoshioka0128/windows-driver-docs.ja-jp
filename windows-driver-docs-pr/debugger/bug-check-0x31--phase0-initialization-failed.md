@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bd30b12f6aabeac39e96b09ecb766233b3196217
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8563c60b6333b26de9bc3814919cb429567785c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367510"
 ---
 # <a name="bug-check-0x31-phase0initializationfailed"></a>バグ チェック 0x31:PHASE0\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361760"
 PHASE0\_初期化\_失敗のバグ チェックが 0x00000031 の値を持ちます。 これは、そのシステムの初期化の失敗を示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="phase0initializationfailed-parameters"></a>PHASE0\_初期化\_FAILED パラメーター

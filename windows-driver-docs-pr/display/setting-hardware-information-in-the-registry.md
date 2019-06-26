@@ -9,12 +9,12 @@ keywords:
 - VideoPortGetRegistryParameters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9433dc4aec4fe869b674e1531b4094827f63f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c454e4972e1174bfe80175bb562e20ae7bf60f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390449"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365586"
 ---
 # <a name="setting-hardware-information-in-the-registry"></a>レジストリ内のハードウェア情報の設定
 
@@ -22,7 +22,7 @@ ms.locfileid: "63390449"
 ## <span id="ddk_setting_hardware_information_in_the_registry_gg"></span><span id="DDK_SETTING_HARDWARE_INFORMATION_IN_THE_REGISTRY_GG"></span>
 
 
-[*HwVidFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff567332)呼び出すことができます、 [ **VideoPortGetRegistryParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff570316)と[ **VideoPortSetRegistryParameters**](https://msdn.microsoft.com/library/windows/hardware/ff570365)関数を取得および構成情報をレジストリに設定します。 たとえば、 *HwVidFindAdapter*呼び出すことができます**VideoPortSetRegistryParameters**次回のブート レジストリの不揮発性の構成情報を設定します。 呼び出すことがあります**VideoPortGetRegistryParameters**インストール プログラムによってレジストリに書き込む、バス相対、アダプターに固有の構成パラメーターを取得します。
+[*HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)呼び出すことができます、 [ **VideoPortGetRegistryParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetregistryparameters)と[ **VideoPortSetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsetregistryparameters)関数を取得および構成情報をレジストリに設定します。 たとえば、 *HwVidFindAdapter*呼び出すことができます**VideoPortSetRegistryParameters**次回のブート レジストリの不揮発性の構成情報を設定します。 呼び出すことがあります**VideoPortGetRegistryParameters**インストール プログラムによってレジストリに書き込む、バス相対、アダプターに固有の構成パラメーターを取得します。
 
 ミニポート ドライバーが、ユーザーとデバッグについての支援に有用な情報を表示するレジストリの特定のハードウェア情報を設定することをお勧めします。 ミニポート ドライバーには、チップの種類、DAC 型、(アダプター) のメモリ サイズおよびアダプターを識別する文字列を設定できます。 この情報は、コントロール パネルの 表示プログラムで表示されます。
 

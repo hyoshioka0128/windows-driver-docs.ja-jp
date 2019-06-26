@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b4a7bec0ca877fccee7e50895a5409b83cc3a49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dadf8d1b8876353f9943706f13c5b49d9a23ae49
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370160"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366220"
 ---
 # <a name="fsrtlallocatepool"></a>FsRtlAllocatePool
 
@@ -25,7 +25,7 @@ ms.locfileid: "63370160"
 
 
 
-**FsRtlAllocatePool**ルーチンは、廃止されていますが、既存のドライバー バイナリをサポートするためにエクスポートされます。 使用[ **FsRtlAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff545675)代わりにします。
+**FsRtlAllocatePool**ルーチンは、廃止されていますが、既存のドライバー バイナリをサポートするためにエクスポートされます。 使用[ **FsRtlAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlallocatepoolwithtag)代わりにします。
 
  
 

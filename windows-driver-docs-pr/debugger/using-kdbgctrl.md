@@ -9,12 +9,12 @@ keywords:
 - バッファーによる DbgPrint KDbgCtrl ユーティリティ
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ee250977198e420ec2a818d18e9953f4efcf9193
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa5f793c64e310947253c91ae7b8043c978dc719
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390025"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368619"
 ---
 # <a name="using-kdbgctrl"></a>KDbgCtrl の使用
 
@@ -25,7 +25,7 @@ ms.locfileid: "63390025"
 
 KDbgCtrl には、5 つの設定を制御できます。完全なカーネル デバッグ、自動のカーネル デバッグ、ユーザー モード エラーの処理、ブロックのカーネル デバッグ、およびによる DbgPrint バッファーのサイズ。
 
-KDbgCtrl を使用するには、必要がありますが既に有効にするカーネルの最後の起動前に、ターゲット コンピューターのブート設定でのデバッグします。 KDbgCtrl は、これが行われていない場合のカーネル デバッグを有効にするのには使用できません。 参照してください[ブート デバッグを有効にするパラメーター](https://msdn.microsoft.com/library/windows/hardware/ff542279)のこれらの詳細については、設定を起動します。
+KDbgCtrl を使用するには、必要がありますが既に有効にするカーネルの最後の起動前に、ターゲット コンピューターのブート設定でのデバッグします。 KDbgCtrl は、これが行われていない場合のカーネル デバッグを有効にするのには使用できません。 参照してください[ブート デバッグを有効にするパラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-debugging)のこれらの詳細については、設定を起動します。
 
 ### <a name="span-idfullkerneldebuggingspanspan-idfullkerneldebuggingspanfull-kernel-debugging"></a><span id="full_kernel_debugging"></span><span id="FULL_KERNEL_DEBUGGING"></span>完全なカーネル デバッグ
 

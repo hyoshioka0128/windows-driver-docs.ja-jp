@@ -4,12 +4,12 @@ description: Direct3D シェーダーのコード
 ms.assetid: 30d14bbe-10fe-46fc-99b3-ab2f989abb29
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dfb86c7b4a6547116f4a4df2a8013b75448279f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d90b33671733db94651b20d5e15e38230111c572
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358004"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384868"
 ---
 # <a name="direct3d-shader-codes"></a>Direct3D シェーダーのコード
 
@@ -22,9 +22,9 @@ ms.locfileid: "63358004"
 
 [シェーダー コードのトークン](shader-code-tokens.md)
 
-[シェーダーの操作コード](https://msdn.microsoft.com/library/windows/hardware/ff569706)
+[シェーダーの操作コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)
 
-[シェーダー レジスタの種類](https://msdn.microsoft.com/library/windows/hardware/ff569707)
+[シェーダー レジスタの種類](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)
 
 [シェーダーの相対アドレス指定](shader-relative-addressing.md)
 

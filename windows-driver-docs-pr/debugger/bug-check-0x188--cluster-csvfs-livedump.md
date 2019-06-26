@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 275a82e582bb5cc2081b86a10690eefd026f646c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5cc8d46050370f19fe257a3c0dcc43449b5f9d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367677"
 ---
 # <a name="bug-check-0x188-clustercsvfslivedump"></a>バグ チェック 0x188:クラスター\_CSVFS\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352492"
 クラスター\_CSVFS\_LIVEDUMP バグ チェックが 0x00000188 の値を持ちます。 これは、CSVFS に一貫性のない状態をデバッグする際にこの livedump が開始されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="clustercsvfslivedump-parameters"></a>クラスター\_CSVFS\_LIVEDUMP パラメーター

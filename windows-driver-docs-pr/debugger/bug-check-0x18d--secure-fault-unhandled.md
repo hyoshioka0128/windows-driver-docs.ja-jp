@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea629f806fcf4316d9a790344160447baedef213
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd5f32c0abebe0f084c8a3cf9b90eb8eba968a6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352455"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367679"
 ---
 # <a name="bug-check-0x18d-securefaultunhandled"></a>バグ チェック 0x18D:セキュリティで保護された\_フォールト\_未処理
 
@@ -26,7 +26,7 @@ SECURE\_フォールト\_未処理のバグ チェックが 0x0000018D の値を
 このセキュリティで保護されたカーネルによって、セキュリティで保護されたエラーが発生したバグ チェック indidates を処理できませんでした。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
  ## <a name="securefaultunhandled-parameters"></a>セキュリティで保護された\_フォールト\_ハンドルされていないパラメーター

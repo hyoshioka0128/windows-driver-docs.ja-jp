@@ -4,12 +4,12 @@ description: 事前に決められた方法で指定された例外とイベン�
 ms.assetid: 531CFE28-B0DA-4B6D-896F-C8F678C7FE00
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd1150ec033d3f5b075b8a96fddc71f6b112a89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f02524a52c849b5586ea8f9c2e4735d759df060
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367001"
 ---
 # <a name="configuring-exceptions-and-events-in-visual-studio"></a>Visual Studio での例外とイベントの構成
 
@@ -20,7 +20,7 @@ ms.locfileid: "63375067"
 
 事前に決められた方法で指定された例外とイベントに対応する Windows デバッガーを構成することができます。 例外ごとに、中断状態と処理の状態を設定できます。 各イベントに対して、中断状態を設定できます。
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows ドライバー開発](https://msdn.microsoft.com/library/windows/hardware/ff557573)します。
+このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows ドライバー開発](https://docs.microsoft.com/windows-hardware/drivers/)します。
 
 デバッガーのイミディ エイト ウィンドウで、次のコマンドを入力して、中断状態または処理のステータスを構成できます。 デバッガーのイミディ エイト ウィンドウが開いてからない場合、**デバッグ** メニューの 選択**Windows&gt;イミディ エイト**します。
 

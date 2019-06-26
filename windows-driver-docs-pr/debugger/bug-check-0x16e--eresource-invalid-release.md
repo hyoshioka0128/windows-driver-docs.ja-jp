@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b48b1f65ea54037489a5c8d99f3e234eb1f68f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c077d3b0e5955545889c7a558cab25b4402fb2a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367717"
 ---
 # <a name="bug-check-0x16e-eresourceinvalidrelease"></a>バグ チェック 0x16E:スケジュール作成\_無効な\_リリース
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352585"
 スケジュール作成\_無効な\_リリースのバグ チェックが 0x0000016E の値を持ちます。 これは、ExReleaseResourceForThreadLite に指定されたターゲット スレッド ポインターが有効でないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="eresourceinvalidrelease-parameters"></a>スケジュール作成\_無効な\_リリース パラメーター

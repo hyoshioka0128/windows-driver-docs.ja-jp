@@ -11,12 +11,12 @@ keywords:
 - INF ファイルのセクションでは Windows 2000 の WDK を表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dad82914b5609af854bdf82d05f037219a045681
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37cad16e0acf7f77a5c116454b6260b20dccb7a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382934"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365754"
 ---
 # <a name="display-inf-file-sections"></a>ディスプレイ INF ファイルのセクション
 
@@ -24,11 +24,11 @@ ms.locfileid: "63382934"
 ## <span id="ddk_display_inf_file_sections_gg"></span><span id="DDK_DISPLAY_INF_FILE_SECTIONS_GG"></span>
 
 
-このセクションでは、具体的には、グラフィックス アダプターのインストールに適用されます (INF) のセクションで、セットアップ情報ファイルを記述する方法を指示します。 INF ファイルの概要については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://msdn.microsoft.com/library/windows/hardware/ff547433)します。
+このセクションでは、具体的には、グラフィックス アダプターのインストールに適用されます (INF) のセクションで、セットアップ情報ファイルを記述する方法を指示します。 INF ファイルの概要については、次を参照してください。 [INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
 
 ### <a name="span-idddinstallsoftwaresettingssectionspanspan-idddinstallsoftwaresettingssectionspanspan-idddinstallsoftwaresettingssectionspanddinstallsoftwaresettings-section"></a><span id="DDInstall.SoftwareSettings_Section"></span><span id="ddinstall.softwaresettings_section"></span><span id="DDINSTALL.SOFTWARESETTINGS_SECTION"></span>DDInstall.SoftwareSettings セクション
 
-A *DDInstall*.**SoftwareSettings**セクションが含まれています、 [ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)ディレクティブや、 [**して**](https://msdn.microsoft.com/library/windows/hardware/ff547374)ディレクティブ。 各ディレクティブは、レジストリ エントリを追加または削除するためにインストーラーを含む別のライター定義の INF セクションを指します。
+A *DDInstall*.**SoftwareSettings**セクションが含まれています、 [ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)ディレクティブや、 [**して**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)ディレクティブ。 各ディレクティブは、レジストリ エントリを追加または削除するためにインストーラーを含む別のライター定義の INF セクションを指します。
 
 たとえば、次のコードは、 **AddReg**という名前のライター定義のレジストリの追加セクションを指すディレクティブ**ACME 1234\_SoftwareDeviceSettings**します。 **して**ディレクティブがという名前の削除レジストリ セクションを指す**ACME 1234\_DeleteSWSettings**します。
 
@@ -50,7 +50,7 @@ HKR,, VideoDebugLevel, %REG_DWORD%, 2
 
 上記のコードは最初の値を設定、 **InstalledDisplayDrivers**ディスプレイ ドライバーの名前を入力します。 コードの値を設定し、 **OverRideMonitorPower**エントリを 0 に (つまり、 **FALSE**)。 このエントリは、OEM システム ベンダーによってのみ使用する必要があります (たとえば、LCD、CRT、またはテレビ) モニター デバイスの電源の動作を制御します。 1 に設定すると**OverRideMonitorPower** D0 を D3 モニターのデバイスの電力状態を制限します。
 
-3 番目に、コードがの値を設定、 **MultiFunctionSupported**エントリを 1 に (つまり、 **TRUE**)、これは、必要な値は複数の PCI 関数をサポートするアダプターの。 最後の値の設定、コード、 **VideoDebugLevel**エントリで、デバッグ メッセージのビルドの使用をチェックするグローバル デバッグ レベルを制御します。 この値の範囲は 0 (デバッグ メッセージはありません) 3 (最も詳細なメッセージ) ~ です。 グローバル デバッグ レベルの詳細については、次を参照してください。 [ **VideoDebugPrint**](https://msdn.microsoft.com/library/windows/hardware/ff570170)します。
+3 番目に、コードがの値を設定、 **MultiFunctionSupported**エントリを 1 に (つまり、 **TRUE**)、これは、必要な値は複数の PCI 関数をサポートするアダプターの。 最後の値の設定、コード、 **VideoDebugLevel**エントリで、デバッグ メッセージのビルドの使用をチェックするグローバル デバッグ レベルを制御します。 この値の範囲は 0 (デバッグ メッセージはありません) 3 (最も詳細なメッセージ) ~ です。 グローバル デバッグ レベルの詳細については、次を参照してください。 [ **VideoDebugPrint**](https://docs.microsoft.com/previous-versions/ff570170(v=vs.85))します。
 
 ほとんどのビデオのミニポート ドライバー VGA と互換性がないと、no を必要と**VgaCompatible**レジストリのエントリ。 ビデオのミニポート ドライバーが VGA と互換性のある場合は追加、 **VgaCompatible**エントリをレジストリにその値を 1 に設定 (**TRUE**) 追加レジストリ セクションが表示され、次に示すように。
 
@@ -70,7 +70,7 @@ HKR,, MemClocking
 HKR,, CapabilityOverride
 ```
 
-**CapabilityOverride**エントリをシステムは、ディスプレイ ドライバーを無効にする機能を指定します。 たとえば、ディスプレイ ドライバーが実装されている場合でも、 [ **DrvEscape** ](https://msdn.microsoft.com/library/windows/hardware/ff556217)関数 0x10 フラグが設定されている場合に機能を使用できないこと、 **CapabilityOverride**エントリ。
+**CapabilityOverride**エントリをシステムは、ディスプレイ ドライバーを無効にする機能を指定します。 たとえば、ディスプレイ ドライバーが実装されている場合でも、 [ **DrvEscape** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)関数 0x10 フラグが設定されている場合に機能を使用できないこと、 **CapabilityOverride**エントリ。
 
 値、 **CapabilityOverride**レジストリ エントリは、次の表に記載されているフラグの 1 つ以上のビット演算 OR。
 
@@ -96,15 +96,15 @@ HKR,, CapabilityOverride
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>Direct3D ハードウェア アクセラレータのサポートを無効にします。 呼び出しを防止<a href="https://msdn.microsoft.com/library/windows/hardware/ff549404" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549404)"> <strong>DdGetDriverInfo</strong></a><em>、</em>ドライバーに到達できない Direct3D とコールバックの機能については、どの要求。</p></td>
+<td align="left"><p>Direct3D ハードウェア アクセラレータのサポートを無効にします。 呼び出しを防止<a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)"> <strong>DdGetDriverInfo</strong></a><em>、</em>ドライバーに到達できない Direct3D とコールバックの機能については、どの要求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>OpenGL インストール可能なクライアント ドライバー (ICD) と miniclient ドライバー (MCD) のすべてのサポートを無効にします。 呼び出しを防止<a href="https://msdn.microsoft.com/library/windows/hardware/ff556285" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556285)"> <strong>DrvSetPixelFormat</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556190" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556190)"> <strong>DrvDescribePixelFormat</strong></a>、および<a href="https://msdn.microsoft.com/library/windows/hardware/ff556322" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556322)"> <strong>DrvSwapBuffers</strong> </a>ドライバーに到達します。 また、ドライバーに到達できない OPENGL_GETINFO、OPENGL_CMD および MCDFUNCS のエスケープを防止します。</p></td>
+<td align="left"><p>OpenGL インストール可能なクライアント ドライバー (ICD) と miniclient ドライバー (MCD) のすべてのサポートを無効にします。 呼び出しを防止<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"> <strong>DrvSetPixelFormat</strong></a>、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"> <strong>DrvDescribePixelFormat</strong></a>、および<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"> <strong>DrvSwapBuffers</strong> </a>ドライバーに到達します。 また、ドライバーに到達できない OPENGL_GETINFO、OPENGL_CMD および MCDFUNCS のエスケープを防止します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10</p></td>
-<td align="left"><p>ドライバーのすべてのエスケープのサポートを無効にします。 呼び出しを防止<a href="https://msdn.microsoft.com/library/windows/hardware/ff556217" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556217)"> <strong>DrvEscape</strong> </a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff556203" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556203)"> <strong>DrvDrawEscape</strong> </a>ドライバーに到達します。</p></td>
+<td align="left"><p>ドライバーのすべてのエスケープのサポートを無効にします。 呼び出しを防止<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)"> <strong>DrvEscape</strong> </a>と<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"> <strong>DrvDrawEscape</strong> </a>ドライバーに到達します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -117,7 +117,7 @@ Microsoft Windows XP およびそれ以前のオペレーティング システ�
 
 ### <a name="span-iddisablingagptransferratesandsidebandaddressingspanspan-iddisablingagptransferratesandsidebandaddressingspanspan-iddisablingagptransferratesandsidebandaddressingspandisabling-agp-transfer-rates-and-sideband-addressing"></a><span id="Disabling_AGP_Transfer_Rates_and_Sideband_Addressing"></span><span id="disabling_agp_transfer_rates_and_sideband_addressing"></span><span id="DISABLING_AGP_TRANSFER_RATES_AND_SIDEBAND_ADDRESSING"></span>AGP 転送の料金と側波帯がアドレス指定を無効にします。
 
-必要に応じて、特定の転送率を AGP または側波帯がアドレス指定を無効にするディスプレイ アダプターの INF ファイルを変更できます。 呼び出すときに、ミニポート ドライバーが AGP 転送速度を変更できることに注意してください[ **AgpSetRate**](https://msdn.microsoft.com/library/windows/hardware/ff538226)がこのような呼び出しは、INF ファイルで無効になっている転送速度を変更するのには使用できません。
+必要に応じて、特定の転送率を AGP または側波帯がアドレス指定を無効にするディスプレイ アダプターの INF ファイルを変更できます。 呼び出すときに、ミニポート ドライバーが AGP 転送速度を変更できることに注意してください[ **AgpSetRate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/videoagp/nc-videoagp-pagp_set_rate)がこのような呼び出しは、INF ファイルで無効になっている転送速度を変更するのには使用できません。
 
 *Regstr.h*ヘッダー ファイルは、Windows Driver Kit (WDK) に付属している、次のフラグのセットを定義します。
 
@@ -177,7 +177,7 @@ HKLM,"SYSTEM\CurrentControlSet\Control\AGP"
 HKLM,"SYSTEM\CurrentControlSet\Services\AcmeAGP\Parameters"
 ```
 
-持つ 0x012A (Nuclear3D) の DeviceID、VendorID 0x1AD0 のテクノロジを使用してプラットフォームでデバイスのアドレス指定側波帯を無効にするには追加、 **Nuclear3D\_Install.HW** INF ファイルにセクション。 (この種類のインストールの INF セクションの詳細については、次を参照してください[ **INF DDInstall.HW セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547330)。)。このセクションでは、 [ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)ディレクティブは、次のようにします。
+持つ 0x012A (Nuclear3D) の DeviceID、VendorID 0x1AD0 のテクノロジを使用してプラットフォームでデバイスのアドレス指定側波帯を無効にするには追加、 **Nuclear3D\_Install.HW** INF ファイルにセクション。 (この種類のインストールの INF セクションの詳細については、次を参照してください[ **INF DDInstall.HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)。)。このセクションでは、 [ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)ディレクティブは、次のようにします。
 
 ```inf
 [Nuclear3D_Install.HW] 

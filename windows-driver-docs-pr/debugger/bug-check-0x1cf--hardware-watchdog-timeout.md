@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 52cc555d8c8384994a70b66377dca57cbd2dcd0e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e53d5ff809cd86c40726c4f1488416a5787f37af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361762"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367588"
 ---
 # <a name="bug-check-bug-check-0x1cf-hardwarewatchdogtimeout"></a>チェックのバグ チェック 0x1CF をバグします。ハードウェア\_ウォッチドッグ\_タイムアウト 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 HARDWARE_WATCHDOG_TIMEOUT のバグ チェックでは、0x000001CF の値を持ちます。 これは、システムがハングし処理していなかったのタイマー刻みであることを示します。

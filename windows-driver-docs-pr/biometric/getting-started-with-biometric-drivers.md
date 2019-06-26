@@ -6,12 +6,12 @@ keywords:
 - 生体認証ドライバー WDK、生体認証ドライバーについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b661f71a1c9c1e2568395d342975c47844f3797f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15baea7067fd0e062f538b2611d899657e168ac3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364711"
 ---
 # <a name="getting-started-with-biometric-drivers"></a>生体認証ドライバーの概要
 
@@ -26,7 +26,7 @@ WBF には、Windows 生体認証ドライバー インターフェイス (WBDI)
 
 Windows 生体認証ドライバー インターフェイス (WBDI) で動作するためのドライバーを開発する際に、最初の選択肢は、どのドライバー モデルを使用します。
 
-Ihv が Windows ユーザー モード ドライバー フレームワークを使用して、生体認証デバイス ドライバーを開発することをお勧めします (とも呼ば WUDF [UMDF](https://msdn.microsoft.com/library/windows/hardware/ff554928)) と WinUSB I/O ターゲット。
+Ihv が Windows ユーザー モード ドライバー フレームワークを使用して、生体認証デバイス ドライバーを開発することをお勧めします (とも呼ば WUDF [UMDF](https://docs.microsoft.com/previous-versions/ff554928(v=vs.85))) と WinUSB I/O ターゲット。
 
 次の図は、UMDF に基づく Windows 生体認証ドライバー インターフェイス (WBDI) ドライバーを Windows 7、Windows 生体認証フレームワーク (WBF) 生体認証のサポートに収める方法を示します。 生体認証のすべての操作については、Windows 生体認証サービス (WBS) へのクライアント アプリケーションによって決まります。 WBS は、WBDI インターフェイスを公開する生体認証デバイス ドライバーへの要求を送信します。
 

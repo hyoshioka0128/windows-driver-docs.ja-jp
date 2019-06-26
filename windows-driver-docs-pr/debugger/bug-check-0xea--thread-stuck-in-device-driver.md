@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 402c9d102e9f80e0ed4165d4711d4ebd38d9fe83
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 666484b7c2230c146160d898c349377f9cf4f63f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373078"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367100"
 ---
 # <a name="bug-check-0xea-threadstuckindevicedriver"></a>バグ チェック 0xEA:スレッド\_STUCK\_IN\_デバイス\_ドライバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63373078"
 スレッド\_STUCK\_IN\_デバイス\_ドライバーのバグ チェックが 0x000000EA の値を持ちます。 これは、デバイス ドライバーのスレッドが際限なく回転していることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="threadstuckindevicedriver-parameters"></a>スレッド\_STUCK\_IN\_デバイス\_ドライバーのパラメーター

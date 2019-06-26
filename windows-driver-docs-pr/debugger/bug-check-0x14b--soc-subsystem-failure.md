@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 64388ae3a95bb6aa67b225545637290bbf023457
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2e434a0297d380e27116d604efd58f79d1b5ad3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367794"
 ---
 # <a name="bug-check-0x14b-socsubsystemfailure"></a>バグ チェック 0x14B:SOC\_サブシステム\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63335581"
 SOC\_サブシステム\_エラーのバグ チェックが 0x0000014B の値を持ちます。 これは、チップ (SoC) サブシステム上のシステムに回復不能なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>バグ チェック 0x14B SOC\_サブシステム\_エラー パラメーター
@@ -46,7 +46,7 @@ SOC\_サブシステム\_エラーのバグ チェックが 0x0000014B の値を
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>アドレス、 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/dn376404" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://msdn.microsoft.com/library/windows/hardware/dn376404)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>構造体。</p></td>
+<td align="left"><p>アドレス、 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>構造体。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -118,7 +118,7 @@ Windows デバッガーを使用してこの問題に取り組むを備えてい
 
 -   その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

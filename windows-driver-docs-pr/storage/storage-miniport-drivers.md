@@ -8,12 +8,12 @@ keywords:
 - ストレージ ドライバー WDK、ミニポート ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f9c1e02583436ac3af9d0feaca0a121455c93c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 990d1ca49e6082613eb196b9db64d986bda92072
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368200"
 ---
 # <a name="storage-miniport-drivers"></a>記憶域ミニポート ドライバー
 
@@ -31,9 +31,9 @@ ms.locfileid: "63354539"
 
 [ATA のミニポート ドライバー](ata-miniport-drivers.md)
 
-ストレージ ミニポート ドライバーのベスト プラクティスは、ポートのドライバー サポート ライブラリを提供するルーチン以外のオペレーティング システムのルーチンを呼び出すことを回避するためにです。 たとえば、記憶域ミニポート ドライバー呼び出さないでください[ **KeQuerySystemTime**](https://msdn.microsoft.com/library/windows/hardware/ff553068)します。 代わりに、ミニポート ドライバーはのようなルーチンを呼び出す必要があります[ **ScsiPortQuerySystemTime** ](https://msdn.microsoft.com/library/windows/hardware/ff564708)または[ **StorPortQuerySystemTime**](https://msdn.microsoft.com/library/windows/hardware/ff567465)します。 ストレージ ミニポート ドライバーは呼び出さないでください[ **MmGetPhysicalAddress**](https://msdn.microsoft.com/library/windows/hardware/ff554547)します。 代わりに、ミニポート ドライバーはのようなルーチンを呼び出す必要があります[ **ScsiPortGetPhysicalAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff564636)と[ **StorPortGetPhysicalAddress**](https://msdn.microsoft.com/library/windows/hardware/ff567095)します。
+ストレージ ミニポート ドライバーのベスト プラクティスは、ポートのドライバー サポート ライブラリを提供するルーチン以外のオペレーティング システムのルーチンを呼び出すことを回避するためにです。 たとえば、記憶域ミニポート ドライバー呼び出さないでください[ **KeQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)します。 代わりに、ミニポート ドライバーはのようなルーチンを呼び出す必要があります[ **ScsiPortQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportquerysystemtime)または[ **StorPortQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportquerysystemtime)します。 ストレージ ミニポート ドライバーは呼び出さないでください[ **MmGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmgetphysicaladdress)します。 代わりに、ミニポート ドライバーはのようなルーチンを呼び出す必要があります[ **ScsiPortGetPhysicalAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetphysicaladdress)と[ **StorPortGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetphysicaladdress)します。
 
-使用しない[ハードウェア アブストラクション レイヤー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff546644)ミニポート ドライバーでします。
+使用しない[ハードウェア アブストラクション レイヤー ルーチン](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))ミニポート ドライバーでします。
 
 次の一覧では、記憶域ミニポート ドライバーの種類ごとに使用するポートのドライバー サポート ライブラリを示します。
 

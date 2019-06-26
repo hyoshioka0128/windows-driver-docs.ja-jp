@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cb17e0ddfa8d3d12f92a5045046120fbc8386729
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b1b56de26751a650ca3f1ca69b9c0c51f85d901
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361514"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367491"
 ---
 # <a name="bug-check-0x35-nomoreirpstacklocations"></a>バグ チェック 0x35:いいえ\_詳細\_IRP\_スタック\_場所
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361514"
 いいえ、\_詳細\_IRP\_スタック\_場所のバグ チェックが 0x00000035 の値を持ちます。 このバグ チェックが発生したときに、**保留**パケットが残りのスタックの場所がなくなります。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="nomoreirpstacklocations-parameters"></a>いいえ\_詳細\_IRP\_スタック\_場所パラメーター

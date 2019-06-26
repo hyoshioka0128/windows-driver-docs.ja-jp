@@ -9,12 +9,12 @@ keywords:
 - ソースの WDK MRU 一覧します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 119a8ce44075f8146fe3654c60c40865bf08ad5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bc98834f1d552ca3bd37399747fdf62ba1b2b0f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366682"
 ---
 # <a name="mru-source-list-functions"></a>MRU ソースの取得関数
 
@@ -41,27 +41,27 @@ ms.locfileid: "63383815"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa376981" data-raw-source="[&lt;strong&gt;SetupAddToSourceList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa376981)"><strong>SetupAddToSourceList</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupaddtosourcelista" data-raw-source="[&lt;strong&gt;SetupAddToSourceList&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupaddtosourcelista)"><strong>SetupAddToSourceList</strong></a></p></td>
 <td align="left"><p>ソースの一覧にエントリを追加します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa376983" data-raw-source="[&lt;strong&gt;SetupCancelTemporarySourceList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa376983)"><strong>SetupCancelTemporarySourceList</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcanceltemporarysourcelist" data-raw-source="[&lt;strong&gt;SetupCancelTemporarySourceList&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcanceltemporarysourcelist)"><strong>SetupCancelTemporarySourceList</strong></a></p></td>
 <td align="left"><p>一時的なリストのキャンセルを使用します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377241" data-raw-source="[&lt;strong&gt;SetupFreeSourceList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377241)"><strong>SetupFreeSourceList</strong></a></p></td>
-<td align="left"><p>以前の呼び出しによって割り当てられたリソースを解放<a href="https://msdn.microsoft.com/library/windows/desktop/aa377441" data-raw-source="[&lt;strong&gt;SetupSetSourceList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377441)"> <strong>SetupSetSourceList</strong></a>します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupfreesourcelista" data-raw-source="[&lt;strong&gt;SetupFreeSourceList&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupfreesourcelista)"><strong>SetupFreeSourceList</strong></a></p></td>
+<td align="left"><p>以前の呼び出しによって割り当てられたリソースを解放<a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetsourcelista" data-raw-source="[&lt;strong&gt;SetupSetSourceList&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetsourcelista)"> <strong>SetupSetSourceList</strong></a>します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377419" data-raw-source="[&lt;strong&gt;SetupQuerySourceList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377419)"><strong>SetupQuerySourceList</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupquerysourcelista" data-raw-source="[&lt;strong&gt;SetupQuerySourceList&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupquerysourcelista)"><strong>SetupQuerySourceList</strong></a></p></td>
 <td align="left"><p>現在のインストール ソースの一覧を照会します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377431" data-raw-source="[&lt;strong&gt;SetupRemoveFromSourceList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377431)"><strong>SetupRemoveFromSourceList</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupremovefromsourcelista" data-raw-source="[&lt;strong&gt;SetupRemoveFromSourceList&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupremovefromsourcelista)"><strong>SetupRemoveFromSourceList</strong></a></p></td>
 <td align="left"><p>インストール元の一覧からエントリを削除します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377441" data-raw-source="[&lt;strong&gt;SetupSetSourceList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377441)"><strong>SetupSetSourceList</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetsourcelista" data-raw-source="[&lt;strong&gt;SetupSetSourceList&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetsourcelista)"><strong>SetupSetSourceList</strong></a></p></td>
 <td align="left"><p>システムの MRU 一覧、ユーザーの MRU 一覧または一時的なリストには、インストール ソースの一覧を設定します。</p></td>
 </tr>
 </tbody>

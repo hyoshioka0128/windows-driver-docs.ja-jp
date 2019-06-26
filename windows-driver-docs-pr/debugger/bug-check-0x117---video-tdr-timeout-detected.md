@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da4bdadf296005f496d0957899df646e755e489
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: adffccf3bd0bf8ad41da830a8b55402d322c8ac8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358167"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367911"
 ---
 # <a name="bug-check-0x117-videotdrtimeoutdetected"></a>バグ チェック 0x117:ビデオ\_TDR\_タイムアウト\_検出
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358167"
 ビデオ\_TDR\_タイムアウト\_検出されたバグ チェックが 0x00000117 の値を持ちます。 これは、ディスプレイ ドライバーが適切な時間内に応答が失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="videotdrtimeoutdetected-parameters"></a>ビデオ\_TDR\_タイムアウト\_検出パラメーター
@@ -70,11 +70,11 @@ ms.locfileid: "63358167"
 
 一般的な安定性問題をグラフィックスでは、システムが完全にフリーズやハングした、エンドユーザーのコマンドまたは操作の処理中に表示されたらに発生します。 通常、GPU は、ゲーム プレイ中に、負荷の高いグラフィックスの操作を通常処理でビジー状態です。 画面の更新が発生しないと、ユーザーは、システムが固定されていることを想定します。 ユーザーは、通常は数秒待ってからして、電源ボタンを押して、システムを再起動します。 Windows は、この問題のある状況がハングし、応答性の高いデスクトップを動的に回復を検出しようとします。
 
-この検出と回復のプロセスは、タイムアウト検出と復旧 (TDR) と呼びます。 既定のタイムアウトは 2 秒です。 ビデオ カードの TDR プロセスで、オペレーティング システムの GPU のスケジューラを呼び出すディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)ドライバーを再初期化し、GPU をリセットする関数。
+この検出と回復のプロセスは、タイムアウト検出と復旧 (TDR) と呼びます。 既定のタイムアウトは 2 秒です。 ビデオ カードの TDR プロセスで、オペレーティング システムの GPU のスケジューラを呼び出すディスプレイ ミニポート ドライバーの[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)ドライバーを再初期化し、GPU をリセットする関数。
 
 回復プロセスが成功した場合、メッセージが表示されます、ことを示す、「ディスプレイ ドライバー応答を停止したし、が回復します」。
 
-詳細については、タイムアウト検出と復旧 (TDR) を参照してください[TDR レジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff569918)と[Windows 8 での TDR 変更](https://msdn.microsoft.com/library/windows/hardware/jj676805)に存在する[Windows Display Driver Model (のデバッグのヒントWDDM)](https://msdn.microsoft.com/library/windows/hardware/ff551790)します。
+詳細については、タイムアウト検出と復旧 (TDR) を参照してください[TDR レジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-registry-keys)と[Windows 8 での TDR 変更](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-changes-in-windows-8)に存在する[Windows Display Driver Model (のデバッグのヒントWDDM)](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)します。
 
 <a name="resolution"></a>解決方法
 ----------

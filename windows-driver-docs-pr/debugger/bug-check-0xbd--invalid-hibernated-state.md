@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d480226a052f2d689f1fdf032d1f554a0090106
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29ab99549ee3b167e0c0b06bfae4a36382343793
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347117"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367212"
 ---
 # <a name="bug-check-0xbd-invalidhibernatedstate"></a>バグ チェック 0xBD:無効な\_HIBERNATED\_状態
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347117"
 無効な\_HIBERNATED\_状態のバグ チェックが 0x000000BD の値を持ちます。 これは、休止状態のメモリのイメージが現在のハードウェア構成と一致しないことを示します。 このバグチェックが行われるは、システムが休止状態から再開し、は、システムの休止中に、ハードウェアが変更されたことを検出します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="invalidhibernatedstate-parameters"></a>無効な\_HIBERNATED\_状態パラメーター

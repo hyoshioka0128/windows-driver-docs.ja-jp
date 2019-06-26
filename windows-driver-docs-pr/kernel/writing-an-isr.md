@@ -10,12 +10,12 @@ keywords:
 - I/O WDK カーネル、割り込み
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3ec61d40e98171f5b0b173404b40d03dfec79e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10270eea0da44c2fbded88df114ceb50d249cf12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374136"
 ---
 # <a name="writing-an-isr"></a>ISR の記述
 
@@ -25,7 +25,7 @@ ms.locfileid: "63355994"
 
 割り込みを発生の物理デバイスのドライバーには、少なくとも 1 つの割り込みサービス ルーチン (ISR) 必要があります。 中断することからデバイスの停止を含めることも、割り込みを消去するデバイスに適した ISR が行う必要があります。 次に、状態を保存し、キュー、DPC ISR が実行されるよりも低い優先順位 (IRQL) での I/O 操作を完了に必要なだけが行う必要があります。
 
-ドライバーの ISR が割り込みコンテキストでは、システムによって割り当てられたいくつか実行*DIRQL*で指定されたとおり、 *SynchronizeIrql*パラメーターを[ **IoConnectInterruptEx**](https://msdn.microsoft.com/library/windows/hardware/ff548378).
+ドライバーの ISR が割り込みコンテキストでは、システムによって割り当てられたいくつか実行*DIRQL*で指定されたとおり、 *SynchronizeIrql*パラメーターを[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex).
 
 Isr は、中断可能です。 以上のシステムによって割り当てられた DIRQL で別のデバイスを中断できる、または、いつでも高 IRQL システムの割り込みが発生します。
 
@@ -45,15 +45,15 @@ ISR が比較的高い IRQL、現在のプロセッサ上のと同じまたは�
 
 2.  必要な場合は、中断して、デバイスを停止します。
 
-3.  どのようなコンテキスト情報を収集、 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079) (または[ *CustomDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542972)) ルーチンが I/O の処理を完了する必要があります、現在の操作。
+3.  どのようなコンテキスト情報を収集、 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine) (または[ *CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)) ルーチンが I/O の処理を完了する必要があります、現在の操作。
 
 4.  このコンテキストを格納領域にアクセスできる、 *DpcForIsr*または*CustomDpc*の原因と現在の I/O 要求を処理する対象のデバイス オブジェクトのデバイスの拡張機能では、通常、日常的な中断します。
 
     ドライバーには、I/O 操作が重なっている場合、コンテキスト情報は、DPC ルーチンがどのようなコンテキストと共に、各要求を完了する DPC ルーチンのニーズを完了するために必要な未処理の要求の数を含める必要があります。 ISR は、DPC が実行する前に、別の割り込みを処理するために呼び出されると、DPC が完了されていない要求の保存されたコンテキストを上書きする必要があります。
 
-5.  ドライバーがある場合、 *DpcForIsr* 、ルーチンの呼び出し[ **IoRequestDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff549657) IRP が現在、ターゲット デバイス オブジェクト、および保存されたコンテキストへのポインター。 **IoRequestDpc**キュー、 *DpcForIsr*ディスパッチ IRQL を下回ると、すぐに実行するルーチン\_プロセッサのレベル。
+5.  ドライバーがある場合、 *DpcForIsr* 、ルーチンの呼び出し[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc) IRP が現在、ターゲット デバイス オブジェクト、および保存されたコンテキストへのポインター。 **IoRequestDpc**キュー、 *DpcForIsr*ディスパッチ IRQL を下回ると、すぐに実行するルーチン\_プロセッサのレベル。
 
-    ドライバーがある場合、 *CustomDpc* 、ルーチンの呼び出し[ **KeInsertQueueDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff552185) DPC オブジェクトへのポインターを (に関連付けられている、 *CustomDpc*ルーチン) と int、保存されたコンテキストへのポインター、 *CustomDpc*ルーチンは、操作を完了する必要があります。 通常、この ISR はまた、ポインターを現在の IRP と対象のデバイス オブジェクトを渡します。 *CustomDpc*ディスパッチ IRQL を下回ると、すぐルーチンが実行\_プロセッサのレベル。
+    ドライバーがある場合、 *CustomDpc* 、ルーチンの呼び出し[ **KeInsertQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc) DPC オブジェクトへのポインターを (に関連付けられている、 *CustomDpc*ルーチン) と int、保存されたコンテキストへのポインター、 *CustomDpc*ルーチンは、操作を完了する必要があります。 通常、この ISR はまた、ポインターを現在の IRP と対象のデバイス オブジェクトを渡します。 *CustomDpc*ディスパッチ IRQL を下回ると、すぐルーチンが実行\_プロセッサのレベル。
 
 6.  返す**TRUE**をそのデバイスに割り込みが生成されることを示します。
 

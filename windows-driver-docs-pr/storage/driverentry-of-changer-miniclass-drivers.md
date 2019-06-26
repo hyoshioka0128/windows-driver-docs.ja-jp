@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 880f7590436f8d9ea448ee5488cf2e324b00c0bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcd9adc72a8a19d5d29d4a4a8efed931a302b062
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384839"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368273"
 ---
 # <a name="driverentry-of-changer-miniclass-drivers-routine"></a>チェンジャー Miniclass ドライバーの DriverEntry ルーチン
 
@@ -48,14 +48,14 @@ NTSTATUS DriverEntry(
 <a name="return-value"></a>戻り値
 ------------
 
-Miniclass ドライバーの**DriverEntry**ルーチンによって返される値を返す必要があります、 [ **ChangerClassInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff551413)ルーチン。
+Miniclass ドライバーの**DriverEntry**ルーチンによって返される値を返す必要があります、 [ **ChangerClassInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize)ルーチン。
 
 <a name="remarks"></a>注釈
 -------
 
 パラメーター **[引数 1]** と **[引数 2]** オペレーティング システムに固有の情報をポイントします。 Miniclass ドライバーにする必要があります*いない*これらのパラメーターを解釈しようとしています。 代わりに、これらのパラメーターを渡すか、 **ChangerClassInitialize**ルーチン。
 
-**ChangerClassInitialize** miniclass ドライバーで必要な初期化の大部分を実行します。 主なタスクのミニドライバーの**DriverEntry**ルーチンは、そのコマンドの処理ルーチンのエントリ ポイントを読み込むには、 [ **MCD\_INIT\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff562210)構造体し、この構造体のアドレスを渡す、 **ChangerClassInitialize**ルーチン。
+**ChangerClassInitialize** miniclass ドライバーで必要な初期化の大部分を実行します。 主なタスクのミニドライバーの**DriverEntry**ルーチンは、そのコマンドの処理ルーチンのエントリ ポイントを読み込むには、 [ **MCD\_INIT\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/ns-mcd-_mcd_init_data)構造体し、この構造体のアドレスを渡す、 **ChangerClassInitialize**ルーチン。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -88,9 +88,9 @@ Miniclass ドライバーの**DriverEntry**ルーチンによって返される�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**ChangerClassInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff551413)
+[**ChangerClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize)
 
-[**MCD\_INIT\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff562210)
+[**MCD\_INIT\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/ns-mcd-_mcd_init_data)
 
  
 

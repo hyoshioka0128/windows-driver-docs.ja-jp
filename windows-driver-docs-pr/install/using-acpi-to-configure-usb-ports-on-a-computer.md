@@ -4,19 +4,19 @@ description: ACPI を使用したコンピューターへの USB ポートの構
 ms.assetid: 999f9fef-512c-415a-abc6-d64560c5c2f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1eaaee115eb76b3652dd335ecff7d56145bdbeb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbd345a5df2f81808f2b547bd785207c48fb2639
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339461"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384773"
 ---
 # <a name="using-acpi-to-configure-usb-ports-on-a-computer"></a>ACPI を使用したコンピューターへの USB ポートの構成
 
 
 システムでは、USB ポートの構成を正確に反映するように、ACPI BIOS の変更が必要とする場合は、ポート、ポートを構成するときにデバイスを接続するユーザーの機能を検討してください。
 
-ACPI を使用して、USB ポートの構成を指定する場合は、USB ポート機能を定義する必要があります (**_UPC**) と物理的な場所の説明 (**_PLD**) オブジェクト。 具体的には、ACPI 6.0 仕様にのみの使用が禁止されていませんが、 **_UPC**オブジェクト、正確なことを示します、ポートにデバイスを接続するユーザーの権限の詳細の両方のオブジェクトを使用します。 のみを使用して、 **_UPC**オブジェクトが正しく、または期待どおりにグループ化するデバイスのコンテナーを設定します。
+ACPI を使用して、USB ポートの構成を指定する場合は、USB ポート機能を定義する必要があります ( **_UPC**) と物理的な場所の説明 ( **_PLD**) オブジェクト。 具体的には、ACPI 6.0 仕様にのみの使用が禁止されていませんが、 **_UPC**オブジェクト、正確なことを示します、ポートにデバイスを接続するユーザーの権限の詳細の両方のオブジェクトを使用します。 のみを使用して、 **_UPC**オブジェクトが正しく、または期待どおりにグループ化するデバイスのコンテナーを設定します。
 
 ポートに接続されているデバイスがハブからリムーバブル場合、 **DeviceRemovable**ビットが設定されます。 次の表は、特定のポートの ACPI オブジェクトの値は、USB ハブ既述子の値に与える影響**DeviceRemovable**ビット Windows がデバイスのレポートです。
 
@@ -102,7 +102,7 @@ ACPI を使用して、USB ポートの構成を指定する場合は、USB ポ�
         0x31, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00})
     ```
     
-USB 型-C# のコネクタを記述する必要が正しく ACPI に渡すために、 [USB 型 C ACPI 検証](https://msdn.microsoft.com/library/windows/hardware/mt770585(v=vs.85).aspx)ハードウェア ラボ キット テストします。
+USB 型-C# のコネクタを記述する必要が正しく ACPI に渡すために、 [USB 型 C ACPI 検証](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b3c41a3f-b844-4c2d-b115-dad51a37f123)ハードウェア ラボ キット テストします。
 
 例 _UPC USB 型-C# のコネクタの場合。
 ```cpp

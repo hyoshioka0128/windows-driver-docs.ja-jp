@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cbbe5a27df8f4c09ae27f44ee7ac16c5fb616f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2919734345d150adf43193062a182d29fa575fec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353658"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367828"
 ---
 # <a name="bug-check-0x13c-invalidiobooststate"></a>バグ チェック 0x13C:無効な\_IO\_BOOST\_状態
 
@@ -26,7 +26,7 @@ ms.locfileid: "63353658"
 無効な\_IO\_BOOST\_状態のバグ チェックが 0x0000013C の値を持ちます。 これは、無効な I/O boost 状態、スレッドが終了していることを示します。 スレッドの終了時にゼロがあります。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="invalidiobooststate-parameters"></a>無効な\_IO\_BOOST\_状態パラメーター

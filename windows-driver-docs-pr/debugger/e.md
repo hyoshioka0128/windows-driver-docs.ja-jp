@@ -5,12 +5,12 @@ Robots: noindex, nofollow
 ms.assetid: 1e32bd40-8c77-4c6b-913c-6ec26707ed36
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb7fe4c28beb6985435d191da4eb8370843d77c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c2830a5993f99302faded714c495df346f1e352
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378480"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366898"
 ---
 # <a name="e"></a>E
 
@@ -28,7 +28,7 @@ ms.locfileid: "63378480"
 デバッガー エンジンがターゲットのイベントが発生した後に続行方法に影響する規則のコレクション。 イベント フィルターの 3 つの種類があります。 特定のイベントのフィルター、特定の例外フィルター、および任意の例外フィルター。
 
 <span id="event_callback_objects"></span><span id="EVENT_CALLBACK_OBJECTS"></span>**イベントのコールバック オブジェクト**  
-インスタンス、 [IDebugEventCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550550)クライアントに登録されているインターフェイス。 エンジンは、イベントが発生するイベントのコールバックを通知します。
+インスタンス、 [IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)クライアントに登録されているインターフェイス。 エンジンは、イベントが発生するイベントのコールバックを通知します。
 
 <span id="event_callbacks"></span><span id="EVENT_CALLBACKS"></span>**イベントのコールバック**  
 イベントのコールバック オブジェクトを参照してください。

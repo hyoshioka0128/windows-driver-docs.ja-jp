@@ -4,12 +4,12 @@ description: Microsoft Visual Studio を使用して、設定し、ヌル モデ
 ms.assetid: 9E50AA5F-92A2-4360-BB21-A9D4F3E9CA83
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 368ebc2681fce48dc5ef26a11538515be7fda63f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26b071406763cc5cd65374fc3a1af26da9889d39
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381933"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366378"
 ---
 # <a name="span-iddebuggersettingupanull-modemcableconnectioninvisualstudiospansetting-up-kernel-mode-debugging-over-a-serial-cable-in-visual-studio"></a><span id="debugger.setting_up_a_null-modem_cable_connection_in_visual_studio"></span>Visual Studio でのシリアル ケーブル経由でのカーネル モードのデバッグのセットアップ
 
@@ -28,7 +28,7 @@ Visual Studio を使用してシリアル デバッグを設定する代わり�
 ## <a name="span-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>ホストおよびターゲット コンピュータの構成
 
 
-1.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+1.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
 2.  Visual Studio で、ホスト コンピューターで、コンピューターの構成 ダイアログ ボックスのような場合が選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。
 3.  **接続の種類**、選択**シリアル**します。
 
@@ -54,7 +54,7 @@ Visual Studio を使用してシリアル デバッグを設定する代わり�
 
 ホストとターゲットのコンピューターでデバッグを使用する COM ポートの数を決定します。 たとえば、ターゲット コンピューター上にホスト コンピューターと COM2 で COM1 に接続されて、ヌル モデム ケーブルがあるとします。 また、115200 のボー レートを選択したとします。
 
-1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、**[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
+1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、 **[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
 2.  テスト用コンピューターの名前を選択し、クリックして**次**します。
 3.  選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。 **[次へ]** をクリックします。
 4.  使用するかどうか COM1、ホスト コンピューター上の**ポート**com1 を入力します。 使用するかどうか COM2 対象のコンピューターの**ターゲット ポート**com2 を入力します。
@@ -97,7 +97,7 @@ Visual Studio を使用してシリアル デバッグを設定する代わり�
 
 ### <a name="span-idsignalabbreviationsspanspan-idsignalabbreviationsspanspan-idsignalabbreviationsspansignal-abbreviations"></a><span id="Signal_Abbreviations"></span><span id="signal_abbreviations"></span><span id="SIGNAL_ABBREVIATIONS"></span>シグナルの省略形
 
-| 省略形 | シグナル              |
+| 省略形 | Signal              |
 |--------------|---------------------|
 | テキサス州           | データを送信します。       |
 | Rx           | データの受信        |

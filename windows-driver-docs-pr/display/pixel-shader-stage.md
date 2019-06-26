@@ -4,12 +4,12 @@ description: ピクセル シェーダー ステージ
 ms.assetid: 969b6cb9-7b03-4c9f-bf4a-e8d9b442c847
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec1c0e0bdda7e7a246b332bf2075af41caf72b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ccf451d41eedd0901cc2a9474eb927fb31d7007e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352279"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365707"
 ---
 # <a name="pixel-shader-stage"></a>ピクセル シェーダー ステージ
 
@@ -20,19 +20,19 @@ ms.locfileid: "63352279"
 
 Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、ピクセル シェーダーを破棄します。
 
-[**CalcPrivateShaderSize**](https://msdn.microsoft.com/library/windows/hardware/ff538315)
+[**CalcPrivateShaderSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
 
-[**CreatePixelShader(D3D10)**](https://msdn.microsoft.com/library/windows/hardware/ff540670)
+[**CreatePixelShader(D3D10)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createpixelshader)
 
-[**DestroyShader**](https://msdn.microsoft.com/library/windows/hardware/ff552805)
+[**DestroyShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 
-[**PsSetConstantBuffers**](https://msdn.microsoft.com/library/windows/hardware/ff569207)
+[**PsSetConstantBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setconstantbuffers)
 
-[**PsSetSamplers**](https://msdn.microsoft.com/library/windows/hardware/ff569208)
+[**PsSetSamplers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setsamplers)
 
-[**PsSetShader**](https://msdn.microsoft.com/library/windows/hardware/ff569209)
+[**PsSetShader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshader)
 
-[**PsSetShaderResources**](https://msdn.microsoft.com/library/windows/hardware/ff569210)
+[**PsSetShaderResources**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setshaderresources)
 
  
 

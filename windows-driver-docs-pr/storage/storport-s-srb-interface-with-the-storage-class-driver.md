@@ -4,17 +4,17 @@ description: Storport の SRB と記憶域クラス ドライバーとのイン�
 ms.assetid: c7e55516-0ba9-48bc-9b68-e6344552f070
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4020cba407f002f60b92aa2b62b0757ffd3dff78
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3aefff7bed42f0572936eb18e8ed2d1b1511912e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342836"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368182"
 ---
 # <a name="storports-srb-interface-with-the-storage-class-driver"></a>Storport の SRB と記憶域クラス ドライバーとのインターフェイス
 
 
-ストレージ クラス ドライバーおよびその他の上位レベルのコンポーネントは、SCSI 要求のブロック (される Srb) を構築することにより、Storport ドライバーと通信します。 SRB には、SCSI コマンド記述子ブロック (CDB) および (存在する場合)、デバイス間でデータの転送に使用するデータ バッファーへのポインターが含まれています。 条件の確認の状態で SCSI コマンドが失敗したイベントには、SCSI センス データを保持するために使用される意味バッファーへのポインターに含めることができます。 される Srb の詳細については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff565393)します。 記憶域クラス ドライバーが Storport の IRP でに自分で作成される Srb を渡す、 **MajorFunction**メンバー IRP に設定\_MJ\_SCSI です。 ストレージ クラス ドライバーが行う必要のある手順の説明についてはポート ドライバーに渡す前に、SRB をビルドする参照[記憶域クラス ドライバー BuildRequest ルーチン](storage-class-driver-s-buildrequest-routine.md)します。
+ストレージ クラス ドライバーおよびその他の上位レベルのコンポーネントは、SCSI 要求のブロック (される Srb) を構築することにより、Storport ドライバーと通信します。 SRB には、SCSI コマンド記述子ブロック (CDB) および (存在する場合)、デバイス間でデータの転送に使用するデータ バッファーへのポインターが含まれています。 条件の確認の状態で SCSI コマンドが失敗したイベントには、SCSI センス データを保持するために使用される意味バッファーへのポインターに含めることができます。 される Srb の詳細については、次を参照してください。 [ **SCSI\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_scsi_request_block)します。 記憶域クラス ドライバーが Storport の IRP でに自分で作成される Srb を渡す、 **MajorFunction**メンバー IRP に設定\_MJ\_SCSI です。 ストレージ クラス ドライバーが行う必要のある手順の説明についてはポート ドライバーに渡す前に、SRB をビルドする参照[記憶域クラス ドライバー BuildRequest ルーチン](storage-class-driver-s-buildrequest-routine.md)します。
 
 下位のスタック、SRB を転送する前に、Storport は、パス、目標の数、ターゲット デバイスの論理ユニット番号など、SRB の特定の値を設定します。
 

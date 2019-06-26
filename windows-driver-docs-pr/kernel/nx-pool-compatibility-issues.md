@@ -4,12 +4,12 @@ description: NX を使用すると Windows 8 用のドライバー バイナリ�
 ms.assetid: 652AE9A2-D733-4EC2-9D49-B95DDABE42B1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 65fb075f7cf89fc0197c8c2b60023cd514bb4d9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67a23d8b593d0bcd944e187980ef25e7f021cc07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341932"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365420"
 ---
 # <a name="nx-pool-compatibility-issues"></a>NX プールの互換性の問題
 
@@ -21,7 +21,7 @@ Windows 8、NX をサポートするために Windows の最初のバージョ�
 ## <a name="running-existing-driver-binaries-on-windows8"></a>Windows 8 上の既存のドライバー バイナリが実行中
 
 
-ドライバーのバイナリは、Windows 7 (または可能性があります、Windows の以前のバージョン) をビルドしたし、使用する、 **NonPagedPool**プールの種類、Windows 8 での実行が妨げられていません。 旧バージョンとの互換性を有効にする、 **NonPagedPoolExecute**として同じ値を持つ定数が定義されている、 **NonPagedPool**の定数、 [**プール\_型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)列挙体。 したがって、このドライバーを実行する Windows のすべてのバージョンでは、非ページ プールから、ドライバーによって割り当てられるメモリは常に実行可能ファイル。
+ドライバーのバイナリは、Windows 7 (または可能性があります、Windows の以前のバージョン) をビルドしたし、使用する、 **NonPagedPool**プールの種類、Windows 8 での実行が妨げられていません。 旧バージョンとの互換性を有効にする、 **NonPagedPoolExecute**として同じ値を持つ定数が定義されている、 **NonPagedPool**の定数、 [**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)列挙体。 したがって、このドライバーを実行する Windows のすべてのバージョンでは、非ページ プールから、ドライバーによって割り当てられるメモリは常に実行可能ファイル。
 
 Windows 8 は、ARM アーキテクチャをサポートするために Windows の最初のバージョンです。 したがって、用のドライバー バイナリ ARM Windows の以前のバージョンに組み込まれているし、旧バージョンと互換性が必要なはありません。 指定する ARM で Windows 用に作成されたすべてのドライバーが代わりに、予想される**NonPagedPoolNx**の代わりに**NonPagedPoolExecute**での非ページ プールの割り当ての実行可能ファイルを明示的に要求しない限りメモリ。
 
@@ -32,7 +32,7 @@ Windows 8 は、ARM アーキテクチャをサポートするために Windows 
 
 **NonPagedPoolNx**プールの種類が Windows 8 以降でサポートされています。 Windows の以前のバージョンのドライバーでこのプールの種類を使用しないでください。 プール アロケーターは、Windows の以前のバージョンで正常に動作しないドライバーを使用し、割り当てが要求したとき、 **NonPagedPoolNx**プールの種類。
 
-Windows 8 では、前に Windows のバージョンでは、 **NonPagedPoolExecute**の代わりに、プールの種類を自由に使用できる、 **NonPagedPool**プールの種類。 [**プール\_型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)列挙体を定義**NonPagedPool**と**NonPagedPoolExecute**に同じ値を指定します。
+Windows 8 では、前に Windows のバージョンでは、 **NonPagedPoolExecute**の代わりに、プールの種類を自由に使用できる、 **NonPagedPool**プールの種類。 [**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)列挙体を定義**NonPagedPool**と**NonPagedPoolExecute**に同じ値を指定します。
 
 ## <a name="nx-pool-type-porting-guidelines"></a>NX プール型の移植のガイドライン
 

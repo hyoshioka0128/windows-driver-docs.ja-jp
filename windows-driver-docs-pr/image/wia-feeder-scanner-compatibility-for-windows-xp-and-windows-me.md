@@ -4,12 +4,12 @@ description: Windows XP および Windows Me の WIA フィーダー スキャ�
 ms.assetid: 7877943e-ee61-455d-b489-db223e1ddbe1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd54ce7772b237476bbb60450dbfea5f4aad6435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f72ce533f971f5357c63ef192068363aefadcfc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365026"
 ---
 # <a name="wia-feeder-scanner-compatibility-for-windows-xp-and-windows-me"></a>Windows XP および Windows Me の WIA フィーダー スキャナー互換性
 
@@ -21,7 +21,7 @@ ms.locfileid: "63388642"
 
 ### <a name="changes-from-windows-xp-to-windows-vista"></a>Windows XP から Windows Vista への変更
 
-さまざまな Windows XP と Windows Vista のスキャンを処理する方法の変更が発生しました。 たとえば、Windows Vista では、機能ユニットごとは別のカテゴリに属しています。 これらのカテゴリの表現、 [ **WIA\_IPA\_項目\_カテゴリ**](https://msdn.microsoft.com/library/windows/hardware/ff551581)プロパティとして WIA\_カテゴリ\_を送り、フィーダーと WIA\_カテゴリ\_ベッドのフラット ベッドします。 これらの項目の両方がある場合、スキャナーで Windows Vista では、どちらも項目のツリーで表されます。 Windows xp の場合、すべてのスキャナーの機能単位を表す項目のツリーで、項目を単一のスキャンが発生しました。
+さまざまな Windows XP と Windows Vista のスキャンを処理する方法の変更が発生しました。 たとえば、Windows Vista では、機能ユニットごとは別のカテゴリに属しています。 これらのカテゴリの表現、 [ **WIA\_IPA\_項目\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)プロパティとして WIA\_カテゴリ\_を送り、フィーダーと WIA\_カテゴリ\_ベッドのフラット ベッドします。 これらの項目の両方がある場合、スキャナーで Windows Vista では、どちらも項目のツリーで表されます。 Windows xp の場合、すべてのスキャナーの機能単位を表す項目のツリーで、項目を単一のスキャンが発生しました。
 
 次の図では、Windows XP では、スキャナーの項目のツリーが表示されます。
 

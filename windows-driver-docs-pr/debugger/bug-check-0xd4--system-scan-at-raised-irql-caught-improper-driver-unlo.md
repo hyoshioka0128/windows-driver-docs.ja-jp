@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf8d3e9137ccef55a9aad81a237f2bfbc6aa1295
-ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
+ms.openlocfilehash: e0d90a5594999d42b10169ff7d781d090dda2ab4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67266387"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367144"
 ---
 # <a name="bug-check-0xd4-systemscanatraisedirqlcaughtimproperdriverunload"></a>バグ チェック 0xD4:システム\_スキャン\_で\_発生\_IRQL\_例外が発生しました\_不適切な\_ドライバー\_アンロード
 
@@ -26,7 +26,7 @@ ms.locfileid: "67266387"
 システム\_スキャン\_で\_発生\_IRQL\_例外が発生しました\_不適切な\_ドライバー\_アンロードのバグ チェックが 0x000000D4 の値を持ちます。 これは、ドライバーがアンロードの前の保留中の操作キャンセルしなかったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="systemscanatraisedirqlcaughtimproperdriverunload-parameters"></a>システム\_スキャン\_で\_発生\_IRQL\_例外が発生しました\_不適切な\_ドライバー\_アンロード パラメーター
