@@ -10,12 +10,12 @@ keywords:
 - プロトコルの WDK メモリ セクション
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 818231039bb7ca11c95e473fc9d4baf21d1cc53b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b2c602a858054e49ce58dd43c79097514465d7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373362"
 ---
 # <a name="security-issues-for-section-objects-and-views"></a>セクション オブジェクトとビューに関するセキュリティの問題
 
@@ -45,9 +45,9 @@ ms.locfileid: "63342698"
 
 -   ユーザー モード プロセスではなく、ドライバーは、セクション オブジェクトを作成する必要があります。 ドライバーでは、ユーザー モードから渡されたハンドルは使用しないでください必要があります。
 
--   ユーザー モードにハンドルを渡す前に、ドライバーを呼び出す必要があります[ **ObReferenceObjectByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff558679)セクション オブジェクトへの参照を取得します。 こうと、悪意のあるアプリケーションからのハンドルを閉じることで、セクション オブジェクトを削除します。 ドライバーのデバイスの拡張機能には、オブジェクト参照を格納する必要があります。
+-   ユーザー モードにハンドルを渡す前に、ドライバーを呼び出す必要があります[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)セクション オブジェクトへの参照を取得します。 こうと、悪意のあるアプリケーションからのハンドルを閉じることで、セクション オブジェクトを削除します。 ドライバーのデバイスの拡張機能には、オブジェクト参照を格納する必要があります。
 
--   呼び出す必要がありますが、ドライバーがセクション オブジェクトを使用して不要になった後[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)オブジェクト参照を解放します。
+-   呼び出す必要がありますが、ドライバーがセクション オブジェクトを使用して不要になった後[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)オブジェクト参照を解放します。
 
 Service Pack 1 (SP1) 以降のバージョンと Microsoft Windows Server 2003 を実行するシステムで、カーネル モード ドライバーのみが開くことができます\\**デバイス**\\**PhysicalMemory**します。 ただし、ユーザーのアプリケーションへのハンドルを付与するドライバーを決定できます。 セキュリティの問題を防ぐためには、ドライバーの信頼関係を指定する必要がありますユーザー アプリケーションのみにアクセスする\\**デバイス**\\**PhysicalMemory**します。
 

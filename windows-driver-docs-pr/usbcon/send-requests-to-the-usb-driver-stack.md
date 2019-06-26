@@ -3,39 +3,39 @@ Description: このトピックでは、USB ドライバー スタックに特�
 title: URB の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ada89a24eddfc269748427e0276e129799269a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad3fb4d37b57997fcf3897307a046aca624fe456
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331072"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358339"
 ---
 # <a name="how-to-submit-an-urb"></a>URB の送信方法
 
 
 このトピックでは、USB ドライバー スタックに特定の要求を処理するのに初期化された URB を送信するために必要な手順について説明します。
 
-クライアント ドライバーは、型の I/O 要求パケット (Irp) のデバイスに配信される I/O 制御コード (IOCTL) 要求を使用して、そのデバイスと通信する[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)します。 など、選択構成要求をデバイス固有の要求の要求で、USB 要求ブロック (URB) に関連付けられた IRP を説明します。 IRP、URB を関連付けると、USB ドライバー スタックに要求を送信するプロセスを URB の送信と呼びます。 クライアント ドライバーを使用する必要があります、URB を送信する[ **IOCTL\_内部\_USB\_送信\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271)デバイス制御コードとします。 IOCTL では、クライアント ドライバーを使用して、デバイスが接続されているポートとそのデバイスを管理する I/O インターフェイスを提供する「内部」の制御コードの 1 つです。 ユーザー モード アプリケーションには、その内部の I/O インターフェイスにアクセスがありません。 カーネル モード ドライバーの詳細の制御コードを参照してください。 [USB クライアント ドライバーのカーネル モードの Ioctl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#km-ioctl)します。
+クライアント ドライバーは、型の I/O 要求パケット (Irp) のデバイスに配信される I/O 制御コード (IOCTL) 要求を使用して、そのデバイスと通信する[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)します。 など、選択構成要求をデバイス固有の要求の要求で、USB 要求ブロック (URB) に関連付けられた IRP を説明します。 IRP、URB を関連付けると、USB ドライバー スタックに要求を送信するプロセスを URB の送信と呼びます。 クライアント ドライバーを使用する必要があります、URB を送信する[ **IOCTL\_内部\_USB\_送信\_URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)デバイス制御コードとします。 IOCTL では、クライアント ドライバーを使用して、デバイスが接続されているポートとそのデバイスを管理する I/O インターフェイスを提供する「内部」の制御コードの 1 つです。 ユーザー モード アプリケーションには、その内部の I/O インターフェイスにアクセスがありません。 カーネル モード ドライバーの詳細の制御コードを参照してください。 [USB クライアント ドライバーのカーネル モードの Ioctl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#km-ioctl)します。
 
 ### <a name="prerequisites"></a>前提条件
 
-ユニバーサル シリアル バス (USB) ドライバー スタックに要求を送信する前に、クライアント ドライバーを割り当てる必要があります、 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体し、要求の種類によっては、その構造の書式を設定します。 詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)と[ベスト プラクティス。翻訳を使用して](usb-client-driver-contract-in-windows-8.md)します。
+ユニバーサル シリアル バス (USB) ドライバー スタックに要求を送信する前に、クライアント ドライバーを割り当てる必要があります、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体し、要求の種類によっては、その構造の書式を設定します。 詳細については、次を参照してください。[割り当てと構成の翻訳](how-to-add-xrb-support-for-client-drivers.md)と[ベスト プラクティス。翻訳を使用して](usb-client-driver-contract-in-windows-8.md)します。
 
 <a name="instructions"></a>手順
 ------------
 
-1.  URB を呼び出すことによって、IRP を割り当て、 [ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)ルーチン。 IRP を受信するデバイス オブジェクトのスタック サイズを指定する必要があります。 以前の呼び出しでそのデバイス オブジェクトへのポインターを受け取った、 [ **IoAttachDeviceToDeviceStack** ](https://msdn.microsoft.com/library/windows/hardware/ff548300)ルーチン。 スタック サイズが格納されている、 **StackSize**のメンバー、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。
-2.  IRP の最初のスタックの場所へのポインターを取得 ([**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)) を呼び出して[ **IoGetNextIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549266).
-3.  設定、 **MajorFunction**のメンバー、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造体を[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)します。
-4.  設定、 **Parameters.DeviceIoControl.IoControlCode**のメンバー、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造体を[**IOCTL\_内部\_USB\_送信\_URB**](https://msdn.microsoft.com/library/windows/hardware/ff537271)します。
-5.  設定、 **Parameters.Others.Argument1**のメンバー、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)初期化のアドレスに構造体[**URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)構造体。 IRP URB を関連付けるを呼び出すことができますまた[ **USBD\_AssignUrbToIoStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/hh406228) URB がによって割り当てられた場合にのみ[ **USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)、 [ **USBD\_SelectConfigUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406243)、または[ **USBD\_SelectInterfaceUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406245)します。
-6.  完了ルーチンを呼び出すことによって設定[ **IoSetCompletionRoutineEx**](https://msdn.microsoft.com/library/windows/hardware/ff549686)します。
+1.  URB を呼び出すことによって、IRP を割り当て、 [ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)ルーチン。 IRP を受信するデバイス オブジェクトのスタック サイズを指定する必要があります。 以前の呼び出しでそのデバイス オブジェクトへのポインターを受け取った、 [ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)ルーチン。 スタック サイズが格納されている、 **StackSize**のメンバー、 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。
+2.  IRP の最初のスタックの場所へのポインターを取得 ([**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)) を呼び出して[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation).
+3.  設定、 **MajorFunction**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造体を[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)します。
+4.  設定、 **Parameters.DeviceIoControl.IoControlCode**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造体を[**IOCTL\_内部\_USB\_送信\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)します。
+5.  設定、 **Parameters.Others.Argument1**のメンバー、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)初期化のアドレスに構造体[**URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造体。 IRP URB を関連付けるを呼び出すことができますまた[ **USBD\_AssignUrbToIoStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation) URB がによって割り当てられた場合にのみ[ **USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)、 [ **USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)、または[ **USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)します。
+6.  完了ルーチンを呼び出すことによって設定[ **IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)します。
 
     URB を非同期的に送信する場合、呼び出し元実装完了ルーチンとそのコンテキストへのポインターを渡します。 呼び出し元は、その完了ルーチンの IRP を解放します。
 
-    IRP を同期的に送信する場合は、完了ルーチンを実装してへの呼び出しでは、そのルーチンへのポインターを渡す[ **IoSetCompletionRoutineEx**](https://msdn.microsoft.com/library/windows/hardware/ff549686)します。 呼び出しでは、初期化された KEVENT オブジェクトも必要です、*コンテキスト*パラメーター。 完了ルーチンのイベントをシグナル状態に設定します。
+    IRP を同期的に送信する場合は、完了ルーチンを実装してへの呼び出しでは、そのルーチンへのポインターを渡す[ **IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)します。 呼び出しでは、初期化された KEVENT オブジェクトも必要です、*コンテキスト*パラメーター。 完了ルーチンのイベントをシグナル状態に設定します。
 
-7.  呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)デバイス スタックの次のような低いデバイス オブジェクトに設定されている IRP を転送します。 呼び出した後、同期呼び出しの**保留**、呼び出すことによって、イベント オブジェクトの待機[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)イベント通知を取得します。
+7.  呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)デバイス スタックの次のような低いデバイス オブジェクトに設定されている IRP を転送します。 呼び出した後、同期呼び出しの**保留**、呼び出すことによって、イベント オブジェクトの待機[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)イベント通知を取得します。
 8.  IRP の完了したら、チェック、 **IoStatus.Status** IRP のメンバーと、結果を評価します。 場合、 **IoStatus.Status**ステータス\_成功すると、要求が成功します。
 
 ## <a name="complete-example"></a>完全な例

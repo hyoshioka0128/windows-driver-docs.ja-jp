@@ -10,12 +10,12 @@ keywords:
 - I/O WDK ビデオのミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fcd563a2b3529fb78ecfd7d70e18602769b7cc4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b9ae27c740f26e72a28d9a0f772dd0cb27cee0d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353909"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369828"
 ---
 # <a name="handling-unsupported-ioctlvideoxxx-requests"></a>処理のサポートされていない IOCTL\_ビデオ\_XXX 要求
 
@@ -23,7 +23,7 @@ ms.locfileid: "63353909"
 ## <span id="ddk_handling_unsupported_ioctl_video_xxx_requests_gg"></span><span id="DDK_HANDLING_UNSUPPORTED_IOCTL_VIDEO_XXX_REQUESTS_GG"></span>
 
 
-すべて[ *HwVidStartIO* ](https://msdn.microsoft.com/library/windows/hardware/ff567367)関数もサポートされていない IOCTL の確認メッセージを処理する必要があります\_ビデオ\_*XXX*、次のようにします。
+すべて[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)関数もサポートされていない IOCTL の確認メッセージを処理する必要があります\_ビデオ\_*XXX*、次のようにします。
 
 1.  セットの入力 VRP の**状態**エラー フィールド\_無効な\_関数。
 
@@ -31,7 +31,7 @@ ms.locfileid: "63353909"
 
 3.  返す**TRUE**を要求の処理を示します。
 
-参照してください、 [**ビデオ\_要求\_パケット**](https://msdn.microsoft.com/library/windows/hardware/ff570547)と[**状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff569732)の構造体詳細についてはします。
+参照してください、 [**ビデオ\_要求\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)と[**状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_status_block)の構造体詳細についてはします。
 
  
 

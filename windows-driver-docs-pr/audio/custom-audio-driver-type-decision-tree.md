@@ -4,12 +4,12 @@ description: カスタム オーディオ ドライバーの種類のデシジ�
 ms.assetid: 7b055baa-1843-4e31-a98e-48b05de94e70
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 979c3247d087ce45384c98a91914595974f82383
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9302fd8481b5ff7060dea4523a6779353ad39fee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333851"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359110"
 ---
 # <a name="custom-audio-driver-type-decision-tree"></a>カスタム オーディオ ドライバーの種類のデシジョン ツリー
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333851"
 <span id="Custom_Audio_Drivers"></span><span id="custom_audio_drivers"></span><span id="CUSTOM_AUDIO_DRIVERS"></span>[カスタム オーディオ ドライバー](custom-audio-drivers.md)  
 PortCls と AVStream のオーディオ ドライバーの概要を説明し、長所と短所の各種類について説明します。
 
-<span id="AVStream_Overview"></span><span id="avstream_overview"></span><span id="AVSTREAM_OVERVIEW"></span>[AVStream の概要](https://msdn.microsoft.com/library/windows/hardware/ff554240)  
+<span id="AVStream_Overview"></span><span id="avstream_overview"></span><span id="AVSTREAM_OVERVIEW"></span>[AVStream の概要](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)  
 AVStream ベースのドライバーのアーキテクチャの概要を提供し、この種類のドライバーが最適な選択肢をケースを強調表示します。
 
 について、オーディオ ドライバーを使用するデータ形式と、さまざまな形式をサポートする必要もあります。 データ形式と範囲の詳細については、次を参照してください。[オーディオ データ形式とデータ範囲](audio-data-formats-and-data-ranges.md)します。

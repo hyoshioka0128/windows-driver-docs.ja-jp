@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3de630d5da533fa661c0b927b3c00535cf8424bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6901d4a57865c3f073805affe790bb0a40ea769a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333174"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359009"
 ---
 # <a name="ksnodetypesynthesizer"></a>KSNODETYPE\_シンセサイザー
 
@@ -37,39 +37,39 @@ Microsoft Windows Driver Kit (WDK) でのドライバーの DMusUART オーデ�
 
 シンセサイザー ノードには、次の必須プロパティをサポートする必要があります。
 
-[**KSPROPERTY\_シンセサイザー\_キャップ**](https://msdn.microsoft.com/library/windows/hardware/ff537389)
+[**KSPROPERTY\_シンセサイザー\_キャップ**](https://docs.microsoft.com/previous-versions/ff537389(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_PORTPARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff537405)
+[**KSPROPERTY\_シンセサイザー\_PORTPARAMETERS**](https://docs.microsoft.com/previous-versions/ff537405(v=vs.85))
 
 チャネルの複数のグループをサポートするシンセサイザー ノードには、次のプロパティもサポートする必要があります。
 
-[**KSPROPERTY\_シンセサイザー\_CHANNELGROUPS**](https://msdn.microsoft.com/library/windows/hardware/ff537390)
+[**KSPROPERTY\_シンセサイザー\_CHANNELGROUPS**](https://docs.microsoft.com/previous-versions/ff537390(v=vs.85))
 
 ノードがこのプロパティをサポートしていない場合は、チャネルのグループの数の既定値は 1 にします。
 
 シンセサイザー ノードは、次のオプションもサポートできます[KSPROPSETID\_シンセサイザー](kspropsetid-synth.md)と[KSPROPSETID\_シンセサイザー\_Dls](kspropsetid-synth-dls.md)プロパティ。
 
-[**KSPROPERTY\_シンセサイザー\_LATENCYCLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff537402)
+[**KSPROPERTY\_シンセサイザー\_LATENCYCLOCK**](https://docs.microsoft.com/previous-versions/ff537402(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_MASTERCLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff537403)
+[**KSPROPERTY\_シンセサイザー\_MASTERCLOCK**](https://docs.microsoft.com/previous-versions/ff537403(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_RUNNINGSTATS**](https://msdn.microsoft.com/library/windows/hardware/ff537406)
+[**KSPROPERTY\_シンセサイザー\_RUNNINGSTATS**](https://docs.microsoft.com/previous-versions/ff537406(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_VOICEPRIORITY**](https://msdn.microsoft.com/library/windows/hardware/ff537407)
+[**KSPROPERTY\_シンセサイザー\_VOICEPRIORITY**](https://docs.microsoft.com/previous-versions/ff537407(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_ボリューム**](https://msdn.microsoft.com/library/windows/hardware/ff537409)
+[**KSPROPERTY\_シンセサイザー\_ボリューム**](https://docs.microsoft.com/previous-versions/ff537409(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_VOLUMEBOOST**](https://msdn.microsoft.com/library/windows/hardware/ff537410)
+[**KSPROPERTY\_シンセサイザー\_VOLUMEBOOST**](https://docs.microsoft.com/previous-versions/ff537410(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_DLS\_追加**](https://msdn.microsoft.com/library/windows/hardware/ff537392)
+[**KSPROPERTY\_シンセサイザー\_DLS\_追加**](https://docs.microsoft.com/previous-versions/ff537392(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_DLS\_COMPACT**](https://msdn.microsoft.com/library/windows/hardware/ff537394)
+[**KSPROPERTY\_シンセサイザー\_DLS\_COMPACT**](https://docs.microsoft.com/previous-versions/ff537394(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_DLS\_ダウンロード**](https://msdn.microsoft.com/library/windows/hardware/ff537396)
+[**KSPROPERTY\_シンセサイザー\_DLS\_ダウンロード**](https://docs.microsoft.com/previous-versions/ff537396(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_DLS\_アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff537398)
+[**KSPROPERTY\_シンセサイザー\_DLS\_アンロード**](https://docs.microsoft.com/previous-versions/ff537398(v=vs.85))
 
-[**KSPROPERTY\_シンセサイザー\_DLS\_WAVEFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff537400)
+[**KSPROPERTY\_シンセサイザー\_DLS\_WAVEFORMAT**](https://docs.microsoft.com/previous-versions/ff537400(v=vs.85))
 
  
 

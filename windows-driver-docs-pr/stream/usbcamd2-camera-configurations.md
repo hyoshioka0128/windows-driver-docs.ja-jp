@@ -11,12 +11,12 @@ keywords:
 - カメラ WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38295f636423026536ce2a3df749dd7339b217c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e050ac3c67db708feff3c1ba0983026644d9449a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378893"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373058"
 ---
 # <a name="usbcamd2-camera-configurations"></a>USBCAMD2 カメラの構成
 
@@ -31,7 +31,7 @@ USBCAMD2 と連動するが、 *stream.sys*クラス ドライバーは、現在
 
 USBCAMD2 の主な目的は、web カメラなどのストリーミング ビデオのカメラをサポートします。 ただし、USBCAMD2 USB 一括を使用して、静止カメラから送信されたイメージをキャプチャする転送パイプの割り込みのサポートも提供します。 この機能は、まだフレームをキャプチャするスナップショット機能を備えた USB カメラをサポートします。
 
-場合は、カメラでは、主にビデオをストリーミングし、必要に応じてスナップショット機能を提供しますは USBCAMD2 ミニドライバーのみ書き込む必要があります。 ハイブリッド cameras (カメラを主に静止画像を撮影しますが、ビデオをストリーミングすることもできます) のベンダーは、まだイメージの保存をサポートするには、ストリーミングの機能と、個別の Windows Image Acquisition (WIA) 静止カメラ ドライバーをサポートするために USBCAMD2 ミニドライバーを作成します。管理。 WIA と静止画像をキャプチャするデジタル カメラのサポートの詳細については、次を参照してください。 [Windows Image Acquisition ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff553346)します。
+場合は、カメラでは、主にビデオをストリーミングし、必要に応じてスナップショット機能を提供しますは USBCAMD2 ミニドライバーのみ書き込む必要があります。 ハイブリッド cameras (カメラを主に静止画像を撮影しますが、ビデオをストリーミングすることもできます) のベンダーは、まだイメージの保存をサポートするには、ストリーミングの機能と、個別の Windows Image Acquisition (WIA) 静止カメラ ドライバーをサポートするために USBCAMD2 ミニドライバーを作成します。管理。 WIA と静止画像をキャプチャするデジタル カメラのサポートの詳細については、次を参照してください。 [Windows Image Acquisition ドライバー](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)します。
 
 USBCAMD2 ライブラリには、アイソクロナス pipe(s)、一括 I/O pipe(s) や、割り込みパイプの組み合わせを使用してデータ ストリームを転送し、設定を制御するカメラがサポートしています。 USBCAMD2 には、次の USB パイプの構成を実装するカメラがサポートされています。
 
@@ -45,7 +45,7 @@ USBCAMD2 ライブラリには、アイソクロナス pipe(s)、一括 I/O pipe
 
 -   2 つの一括 I/O パイプし、省略可能な割り込みパイプ。 ビデオ 1 つの一括パイプ ストリームとその他の一括パイプ イメージを転送もします。 省略可能な割り込みパイプは、登録済みのアプリケーションに対する外部トリガ イベントの通知を通知します。
 
-**注**   USBCAMD2 カメラを複数の代替設定を持つ 1 つの USB インターフェイスをサポートしています。 すべての代替設定は、同じ種類とパイプの数が必要です。 この情報を指定した型の配列で[ **USBCAMD\_パイプ\_Config\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff568623)に渡す[ *CamConfigureEx* ](https://msdn.microsoft.com/library/windows/hardware/ff557605)を初期化し、カメラを構成します。
+**注**   USBCAMD2 カメラを複数の代替設定を持つ 1 つの USB インターフェイスをサポートしています。 すべての代替設定は、同じ種類とパイプの数が必要です。 この情報を指定した型の配列で[ **USBCAMD\_パイプ\_Config\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-_pipe_config_descriptor)に渡す[ *CamConfigureEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_configure_routine_ex)を初期化し、カメラを構成します。
 
  
 

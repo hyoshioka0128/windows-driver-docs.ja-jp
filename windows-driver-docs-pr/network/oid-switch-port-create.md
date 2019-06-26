@@ -5,28 +5,28 @@ ms.assetid: 579D51CD-0594-4A06-998E-3886E7325D97
 ms.date: 08/08/2017
 keywords: -OID_SWITCH_PORT_CREATE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: b785498f3c487260514f9d82f025d203f9cae1cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60ecb89e17e9df2bb7fa39a1cf0256c1cc795b81
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386873"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356109"
 ---
 # <a name="oidswitchportcreate"></a>OID\_スイッチ\_ポート\_を作成します。
 
 
 HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジェクト識別子 (OID) セット要求を発行する\_切り替える\_ポート\_拡張可能スイッチの拡張機能で拡張可能スイッチ ポートの作成についての通知を作成します。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598229)構造体。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)構造体。
 
 <a name="remarks"></a>コメント
 -------
 
-**PortId**のメンバー、 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598229)構造体は、対象のポートを指定します、作成の通知が行わします。
+**PortId**のメンバー、 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)構造体は、対象のポートを指定します、作成の通知が行わします。
 
 拡張可能スイッチ拡張機能は、OID の要求を設定する OID の処理の次のガイドラインに従う必要があります\_切り替える\_ポート\_作成。
 
--   拡張機能は変更しないで、 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598229) OID 要求に関連付けられている構造体。
+-   拡張機能は変更しないで、 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters) OID 要求に関連付けられている構造体。
 
 -   拡張機能は、NDIS を返すことによって作成の通知を拒否できます\_状態\_データ\_いない\_OID 要求に使用できます。 たとえば、拡張機能は、その構成済みポリシー、ポートを強制するリソースを割り当てることができません、ドライバーは作成の通知を拒否する必要があります。
 
@@ -34,19 +34,19 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
     場合は、拡張機能が、OID 要求を拒否しては、要求が完了したときに、状態を監視する必要があります。 拡張機能は、拡張可能スイッチ コントロール パスの拡張機能を基になるか、拡張可能スイッチのインターフェイスに OID 要求が拒否されたかどうかを決定するこれを行う必要があります。
 
-    ポートのポリシーの詳細については、次を参照してください。[管理の Hyper-v 拡張可能なスイッチのポリシー](https://msdn.microsoft.com/library/windows/hardware/hh598195)します。
+    ポートのポリシーの詳細については、次を参照してください。[管理の Hyper-v 拡張可能なスイッチのポリシー](https://docs.microsoft.com/windows-hardware/drivers/network/managing-hyper-v-extensible-switch-extensibility-policies)します。
 
--   拡張機能を呼び出す場合[ **NdisFOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561830)この OID セット要求を転送するように、拡張機能がこの OID 要求の完了状態を監視する必要があります。 拡張機能は、拡張可能スイッチ ドライバー スタック内の基になる拡張機能があるポートの作成の通知を拒否したかどうかを検出するためにします。
+-   拡張機能を呼び出す場合[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)この OID セット要求を転送するように、拡張機能がこの OID 要求の完了状態を監視する必要があります。 拡張機能は、拡張可能スイッチ ドライバー スタック内の基になる拡張機能があるポートの作成の通知を拒否したかどうかを検出するためにします。
 
 -   など、ポートの Oid 要求を発行できる、拡張機能に OID 要求が転送されが正常に完了すると、 [OID\_スイッチ\_ポート\_プロパティ\_ENUM](oid-switch-port-property-enum.md)、まで、OID 要求[OID\_スイッチ\_ポート\_破棄](oid-switch-port-teardown.md)が発行されます。 この OID 要求は、ポートが拡張可能スイッチから削除プロセスを開始する、拡張機能を通知します。
 
--   拡張機能で指定されたポートにパケットを転送できません、 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh598229) OIDの要求が設定されるまで構造体[OID\_スイッチ\_NIC\_CONNECT](oid-switch-nic-connect.md)が発行されが正常に完了します。
+-   拡張機能で指定されたポートにパケットを転送できません、 [ **NDIS\_スイッチ\_ポート\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters) OIDの要求が設定されるまで構造体[OID\_スイッチ\_NIC\_CONNECT](oid-switch-nic-connect.md)が発行されが正常に完了します。
 
 **注**  拡張機能は OID の OID のセット要求を発行する必要があります\_スイッチ\_ポート\_作成します。
 
  
 
-拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://msdn.microsoft.com/library/windows/hardware/hh598182)します。
+拡張可能スイッチ ポートとネットワーク アダプターの接続の状態の詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチのポートおよびネットワーク アダプターの状態](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-port-and-network-adapter-states)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -132,11 +132,11 @@ HYPER-V 拡張可能スイッチのプロトコルのエッジの OID オブジ�
 
 
 ****
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_スイッチ\_ポート\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh598229)
+[**NDIS\_スイッチ\_ポート\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)
 
-[**NdisFOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561830)
+[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)
 
 [OID\_スイッチ\_NIC\_接続](oid-switch-nic-connect.md)
 

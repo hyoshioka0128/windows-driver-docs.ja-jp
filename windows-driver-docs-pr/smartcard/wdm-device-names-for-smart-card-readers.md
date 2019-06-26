@@ -11,12 +11,12 @@ keywords:
 - WDM デバイス名の WDK スマート カード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d6ceba9efb6422a631671bb2e65b7b7d6788fa5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 72f1c2047a591f714daaebf00c7b11760d7ad895
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548569"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369610"
 ---
 # <a name="wdm-device-names-for-smart-card-readers"></a>スマート カード リーダーの WDM デバイス名
 
@@ -36,7 +36,7 @@ WDM デバイス ドライバー、カーネルのデバイス名は、カーネ
 
 *\\\Dosdevices\z\\SCReader\[単位\]*
 
-Win32 名前空間内のデバイスのユニット数を同じカーネル デバイスの名前を形成するために使用する 1 つである必要はありません。 最初の使用可能なユニット数である必要があります。 使用[ **SmartcardCreateLink (WDM)** ](https://msdn.microsoft.com/library/windows/hardware/ff548935)を自動的にシンボリック リンクの名前を生成します。
+Win32 名前空間内のデバイスのユニット数を同じカーネル デバイスの名前を形成するために使用する 1 つである必要はありません。 最初の使用可能なユニット数である必要があります。 使用[ **SmartcardCreateLink (WDM)** ](https://docs.microsoft.com/previous-versions/ff548935(v=vs.85))を自動的にシンボリック リンクの名前を生成します。
 
  
 

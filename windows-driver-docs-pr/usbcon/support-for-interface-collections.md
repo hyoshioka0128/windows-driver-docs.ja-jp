@@ -3,12 +3,12 @@ Description: 複合 USB デバイス上のインターフェイスは、コレ�
 title: USB 複合デバイス上のインターフェイス コレクションの列挙
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: af034c0f2c593207a7dc926eeb99c3519b02e322
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 41055a870798467ce78ad35d780ea70e33832451
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161370"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358335"
 ---
 # <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>USB 複合デバイス上のインターフェイス コレクションの列挙
 
@@ -40,18 +40,18 @@ ms.locfileid: "67161370"
 
 カスタム インターフェイスのコレクションを定義する一般的な親ドライバーの場合、複合デバイスのベンダー必要があります。
 
-1.  列挙体のコールバック ルーチンを実装 ([**USBC\_開始\_デバイス\_コールバック**](https://msdn.microsoft.com/library/windows/hardware/ff539007))。
-2.  コールバック ルーチンへのポインターを指定、 *USB デバイスの構成インターフェイス*(**StartDeviceCallback**のメンバー [ **USBC\_デバイス\_構成\_インターフェイス\_V1**](https://msdn.microsoft.com/library/windows/hardware/ff538990))。
+1.  列挙体のコールバック ルーチンを実装 ([**USBC\_開始\_デバイス\_コールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbbusif/nc-usbbusif-usbc_start_device_callback))。
+2.  コールバック ルーチンへのポインターを指定、 *USB デバイスの構成インターフェイス*(**StartDeviceCallback**のメンバー [ **USBC\_デバイス\_構成\_インターフェイス\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbbusif/ns-usbbusif-_usbc_device_configuration_interface_v1))。
 3.  複合デバイスと明示的には、デバイス ID と一致する INF ファイルを読み込みます一般的な親の USB ドライバーと、フィルター ドライバーの両方を提供します。
 
 ### <a name="implementation-considerations"></a>実装に関する注意点
 
 
-列挙体のコールバック ルーチンを含むフィルター ドライバーには、上限または下限フィルター ドライバーのいずれかを指定できます。 一般的な親の USB ドライバーを受信すると、 [ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)複合デバイスを開始するには、USB デバイスの照会送信することによって構成インターフェイス、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687)ドライバー スタックの一番上に要求します。
+列挙体のコールバック ルーチンを含むフィルター ドライバーには、上限または下限フィルター ドライバーのいずれかを指定できます。 一般的な親の USB ドライバーを受信すると、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)複合デバイスを開始するには、USB デバイスの照会送信することによって構成インターフェイス、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)ドライバー スタックの一番上に要求します。
 
-受信時、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687)要求、フィルター ドライバーする必要がありますチェックイン GUID 型、 **InterfaceType**メンバーが要求されているインターフェイス型 USB のことを確認する要求の\_BUS\_インターフェイス\_USBC\_構成\_GUID。 場合は、フィルター ドライバーのインターフェイス ポインターを返します、**インターフェイス**IRP のメンバー。
+受信時、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)要求、フィルター ドライバーする必要がありますチェックイン GUID 型、 **InterfaceType**メンバーが要求されているインターフェイス型 USB のことを確認する要求の\_BUS\_インターフェイス\_USBC\_構成\_GUID。 場合は、フィルター ドライバーのインターフェイス ポインターを返します、**インターフェイス**IRP のメンバー。
 
-列挙体のコールバック ルーチンは、配列へのポインターを返す必要があります*関数記述子*([**USBC\_関数\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539001))インターフェイスのコレクションを記述するとします。 各関数の記述子には、インターフェイスの記述子の配列が含まれています ([**USB\_インターフェイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff540065)) インターフェイスのコレクションを記述します。 コールバック ルーチンでは、非ページ プールから関数記述子とインターフェイスの記述子の両方を割り当てる必要があります。 一般的な親ドライバーでは、このメモリを解放します。 コールバック ルーチンを確認する必要があります、 **NumberOfInterfaces**のそれぞれに所属**USB\_インターフェイス\_記述子**でインターフェイスの数が正確に報告しますインターフェイスのコレクション。
+列挙体のコールバック ルーチンは、配列へのポインターを返す必要があります*関数記述子*([**USBC\_関数\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbbusif/ns-usbbusif-_usbc_function_descriptor))インターフェイスのコレクションを記述するとします。 各関数の記述子には、インターフェイスの記述子の配列が含まれています ([**USB\_インターフェイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor)) インターフェイスのコレクションを記述します。 コールバック ルーチンでは、非ページ プールから関数記述子とインターフェイスの記述子の両方を割り当てる必要があります。 一般的な親ドライバーでは、このメモリを解放します。 コールバック ルーチンを確認する必要があります、 **NumberOfInterfaces**のそれぞれに所属**USB\_インターフェイス\_記述子**でインターフェイスの数が正確に報告しますインターフェイスのコレクション。
 
 一般的な親ドライバーは、各関数の記述子の物理デバイス オブジェクト (PDO) を作成します。
 
@@ -80,7 +80,7 @@ Windows WMCDC アーキテクチャでは、ネイティブの Windows ドライ
 
 ![デバイスの構成とドライバー スタックのサンプル](images/wmcdc-architecture.png)
 
-WMCDC デバイスには上の図には 1 つの論理ハンドセットが含まれています。 OBEX 関数およびモデム関数。 ベンダーから提供された INF ファイルでは、モデムを管理するネイティブの Windows ドライバーを読み込みます。 OBEX 関数がマネージ関数で実行されているベンダーから提供されたユーザー モード ドライバーによって、[ユーザー モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff561365)(UMDF)。 ユーザー モード ドライバーでは、Windows ポータブル デバイス (WPD) プロトコルを使用してユーザーのアプリケーションとのインターフェイスと通信する、 [WinUSB](winusb.md) USB スタックとの通信にエクスポートします。 一般に、ベンダーから提供された INF ファイル Winusb.sys の Winusb.sys を使用するインターフェイスのコレクションごとに個別のインスタンスが読み込まれます。
+WMCDC デバイスには上の図には 1 つの論理ハンドセットが含まれています。 OBEX 関数およびモデム関数。 ベンダーから提供された INF ファイルでは、モデムを管理するネイティブの Windows ドライバーを読み込みます。 OBEX 関数がマネージ関数で実行されているベンダーから提供されたユーザー モード ドライバーによって、[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/user-mode-driver-framework-design-guide)(UMDF)。 ユーザー モード ドライバーでは、Windows ポータブル デバイス (WPD) プロトコルを使用してユーザーのアプリケーションとのインターフェイスと通信する、 [WinUSB](winusb.md) USB スタックとの通信にエクスポートします。 一般に、ベンダーから提供された INF ファイル Winusb.sys の Winusb.sys を使用するインターフェイスのコレクションごとに個別のインスタンスが読み込まれます。
 
 ### <a name="registry-settings"></a>レジストリの設定
 
@@ -111,7 +111,7 @@ HKR,,EnumeratorClass, 0x00000001,02,00,00
 
 USB ワイヤレス モバイル通信デバイス クラス (WMCDC) は、USB 通信デバイス クラス (CDC) のサブクラスです。 WMCDC 仕様では、拡張は、インターフェイスのコレクションを定義するための CDC ガイドラインを大幅に変更されません。 具体的には、WMCDC デバイスは、インターフェイスのコレクションを定義するための CDC ガイドラインに準拠する必要があります。
 
-CDC インターフェイスのコレクションには、マスターのインターフェイスが含まれます ([**USB\_インターフェイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff540065)) 通信インターフェイスのクラスに属している (`bInterfaceClass = 0x02`) またはデータインターフェイス クラス (`bInterfaceClass = 0x0A`)。 マスターのインターフェイスで (つまり、通常の状況) の通信インターフェイス クラスに、マスターのインターフェイスのサブクラスが属している場合 (**bInterfaceSubClass**) な CDC の指定*コントロール モデル*します。 コントロール モデルでは、インターフェイスのコレクションに含まれるインターフェイスの種類を示します。 USB Implementers Forum を定義するコントロール モデルの説明は、CDC 仕様と WMCDC 仕様を参照してください。
+CDC インターフェイスのコレクションには、マスターのインターフェイスが含まれます ([**USB\_インターフェイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor)) 通信インターフェイスのクラスに属している (`bInterfaceClass = 0x02`) またはデータインターフェイス クラス (`bInterfaceClass = 0x0A`)。 マスターのインターフェイスで (つまり、通常の状況) の通信インターフェイス クラスに、マスターのインターフェイスのサブクラスが属している場合 (**bInterfaceSubClass**) な CDC の指定*コントロール モデル*します。 コントロール モデルでは、インターフェイスのコレクションに含まれるインターフェイスの種類を示します。 USB Implementers Forum を定義するコントロール モデルの説明は、CDC 仕様と WMCDC 仕様を参照してください。
 
 インターフェイスのコレクションのマスター インターフェイスには、共用体機能記述子 (UFD) を含むクラス固有機能記述子、必須のセットが続きます。 UFD は、コレクションに属しているインターフェイスの数を示します。 **BMasterInterface** UFD のフィールドにマスター インターフェイスの数が含まれています。 0 個以上**bSubordinateInterface**フィールドには、コレクション内の他の (下位) インターフェイスの数字です。
 
@@ -232,7 +232,7 @@ COMPANYNAME.DeviceDesc="USB Phone Parent"
 -   OBEX コントロール モデル インターフェイスのコレクション、またはすべての OBEX コントロール モデル インターフェイス コレクションの 1 つの PDO を作成するには、別の物理デバイス オブジェクト (Pdo) を作成する USB 一般的な親ドライバーを構成することができます。
 -   UFD のインターフェイスの番号の一覧には、ギャップを持つことができます。 つまり、UFD のインターフェイスの番号は連続していないインターフェイスを参照できます。 この種類の番号が無効です、たとえば、 [USB インターフェイスの関連付け記述子 (IAD)](usb-interface-association-descriptor.md)シーケンシャル番号を持つ、インターフェイスが連続する必要があります。
 -   Ufd はオーディオ関連のインターフェイスのコレクションを含めることができます。
--   CDC と WMCDC インターフェイスのコレクションのハードウェア識別子 (Id) は、インターフェイス サブクラスを含める必要があります。 ハードウェア Id 持つには、MI が含まれて、他の USB インターフェイス\_%02 X サフィックス インターフェイスの番号を指定するインターフェイス サブクラスをに関する情報は含まれません。 ベンダーとのインターフェイスをロードするドライバーを確認する記述子レイアウト内の位置ではなく、特定のインターフェイスのコレクションに一致するハードウェア ID の INF ファイルを提供できるようにするハードウェア ID に含まれるサブクラス情報コレクションです。 ハードウェア ID のサブクラスの情報は、ユーザー モード ドライバーなどの代替手段を WMCDC インターフェイスのコレクションを管理する現在のベンダーから提供されたドライバーから段階的な移行パスができます。 CDC と WMCDC ハードウェア Id の例については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。 USB インターフェイスのハードウェアの概要については、Id が書式設定は、「 [USB デバイスの識別子](https://msdn.microsoft.com/library/windows/hardware/ff546284)します。
+-   CDC と WMCDC インターフェイスのコレクションのハードウェア識別子 (Id) は、インターフェイス サブクラスを含める必要があります。 ハードウェア Id 持つには、MI が含まれて、他の USB インターフェイス\_%02 X サフィックス インターフェイスの番号を指定するインターフェイス サブクラスをに関する情報は含まれません。 ベンダーとのインターフェイスをロードするドライバーを確認する記述子レイアウト内の位置ではなく、特定のインターフェイスのコレクションに一致するハードウェア ID の INF ファイルを提供できるようにするハードウェア ID に含まれるサブクラス情報コレクションです。 ハードウェア ID のサブクラスの情報は、ユーザー モード ドライバーなどの代替手段を WMCDC インターフェイスのコレクションを管理する現在のベンダーから提供されたドライバーから段階的な移行パスができます。 CDC と WMCDC ハードウェア Id の例については、次を参照してください。[ワイヤレス モバイル通信デバイス クラスに対するサポート](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)します。 USB インターフェイスのハードウェアの概要については、Id が書式設定は、「 [USB デバイスの識別子](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-usb-devices)します。
 
 ### <a name="cdc-and-wmcdc-control-models"></a>CDC と WMCDC コントロール モデル
 

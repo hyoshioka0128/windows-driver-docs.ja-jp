@@ -4,12 +4,12 @@ description: このトピックでは、Windows 10 でのオーディオの待�
 ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e732a2310e8461d0e120ce7b7dcbfe924abaaec0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7eaba9c3798c396e8198024f9a4b0368130e7d35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332421"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358707"
 ---
 # <a name="low-latency-audio"></a>低遅延オーディオ
 
@@ -46,7 +46,7 @@ Windows 10 には、オーディオの待機時間を短縮する変更が含ま
 1. Windows でのオーディオの待機時間のソースについて説明します。
 2. Windows 10 のオーディオ スタックでオーディオの待機時間を短縮する変更について説明します。
 3. どのアプリケーションの開発者およびハードウェアの製造元利用に関する、新しいインフラストラクチャのオーディオの待ち時間を使用したアプリケーションやドライバーを開発するために参照を提供します。 このトピックでは、これらの項目について説明します。
-4. 新しい[ **AudioGraph** ](https://msdn.microsoft.com/library/windows/apps/dn914176) API の対話型とメディアの作成シナリオ。
+4. 新しい[ **AudioGraph** ](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) API の対話型とメディアの作成シナリオ。
 5. 低待機時間をサポートするために WASAPI で変更します。
 6. Ddi ドライバーでの機能強化。
 
@@ -144,15 +144,15 @@ Windows 10 は、待機時間を短縮するために 3 つの領域で強化さ
    b. すべてのスレッドと割り込み (ドライバー リソースの登録に関するセクションで説明されている新しい Ddi を使用して)、ドライバーによって登録されています。
    c. 一部またはすべてのオーディオのスレッドだけでなく小さなバッファーを要求するすべてのアプリケーションと同じのオーディオ デバイス グラフ (例: 同じ信号処理モード) を共有するすべてのアプリケーションからの小さなバッファーを要求するアプリケーションから:
 4. ストリーミングのパスに AudioGraph コールバック。
-5. アプリケーションが WASAPI、しに送信された作業項目のみを使用している場合、[リアルタイムの作業キュー API](https://msdn.microsoft.com/library/windows/desktop/dn271897)または[ **MFCreateMFByteStreamOnStreamEx** ](https://msdn.microsoft.com/library/windows/desktop/hh162754)としてタグ付けされたと"Audio"または"ProAudio"します。
+5. アプリケーションが WASAPI、しに送信された作業項目のみを使用している場合、[リアルタイムの作業キュー API](https://docs.microsoft.com/windows/desktop/ProcThread/platform-work-queue-api)または[ **MFCreateMFByteStreamOnStreamEx** ](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex)としてタグ付けされたと"Audio"または"ProAudio"します。
 
 ## <a name="span-idapiimprovementsspanspan-idapiimprovementsspanspan-idapiimprovementsspanapi-improvements"></a><span id="API_Improvements"></span><span id="api_improvements"></span><span id="API_IMPROVEMENTS"></span>API の強化
 
 
 次の 2 つの Windows 10 Api では、低待機時間機能を提供します。
 
--   [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176)
--   [Windows の音声セッション API (WASAPI)](https://msdn.microsoft.com/library/windows/desktop/dd371455.aspx)
+-   [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph)
+-   [Windows の音声セッション API (WASAPI)](https://docs.microsoft.com/windows/desktop/CoreAudio/wasapi)
 
 これは、アプリケーション開発者が特定の 2 つの Api を使用する方法です。
 
@@ -169,7 +169,7 @@ Windows 10 は、待機時間を短縮するために 3 つの領域で強化さ
 
 AudioGraph は対象として対話型の実現と音楽作成シナリオを簡単に Windows 10 のユニバーサル Windows プラットフォームの新しい API です。 AudioGraph がいくつかのプログラミング言語で利用できます (C++ では、 C#、JavaScript) あり、シンプルかつ機能豊富なプログラミング モデル。
 
-AudioGraph は、低待機時間シナリオを対象にするため、 [AudioGraphSettings::QuantumSizeSelectionMode プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiographsettings.quantumsizeselectionmode.aspx)します。 このプロパティでは、次の表に示すように、次の値のいずれかのことができます。
+AudioGraph は、低待機時間シナリオを対象にするため、 [AudioGraphSettings::QuantumSizeSelectionMode プロパティ](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings#Windows_Media_Audio_AudioGraphSettings_QuantumSizeSelectionMode)します。 このプロパティでは、次の表に示すように、次の値のいずれかのことができます。
 
 <table>
 <colgroup>
@@ -216,9 +216,9 @@ Windows 10 以降、WASAPI に強化されています。
 
 上記の機能は、すべての Windows デバイスで利用可能になります。 ただし、十分なリソースと更新されたドライバーの特定のデバイスでは、他よりも優れたユーザー エクスペリエンスが提供されます。
 
-上記の機能と呼ばれる、新しいインターフェイスによって提供されます[ **IAudioClient3**](https://msdn.microsoft.com/library/windows/desktop/dn911487)から派生した[ **IAudioClient2**](https://msdn.microsoft.com/library/windows/desktop/hh404179)します。
+上記の機能と呼ばれる、新しいインターフェイスによって提供されます[ **IAudioClient3**](https://docs.microsoft.com/windows/desktop/api/audioclient/nn-audioclient-iaudioclient3)から派生した[ **IAudioClient2**](https://docs.microsoft.com/windows/desktop/api/audioclient/nn-audioclient-iaudioclient2)します。
 
-[**IAudioClient3** ](https://msdn.microsoft.com/library/windows/desktop/dn911487)次の 3 つの方法を定義します。
+[**IAudioClient3** ](https://docs.microsoft.com/windows/desktop/api/audioclient/nn-audioclient-iaudioclient3)次の 3 つの方法を定義します。
 
 <table>
 <colgroup>
@@ -332,7 +332,7 @@ if (AUDCLNT_E_ENGINE_FORMAT_LOCKED == hr) {
 }
 ```
 
-WASAPI を使用しても使用するアプリケーションの推奨されるさらに、[リアルタイムの作業キュー API](https://msdn.microsoft.com/library/windows/desktop/dn271897)または[ **MFCreateMFByteStreamOnStreamEx** ](https://msdn.microsoft.com/library/windows/desktop/hh162754)作業項目を作成し、独自のスレッドではなくオーディオまたはオーディオ Pro としてタグします。 これは、ようにするには干渉オーディオ以外のサブシステムを回避する方法を管理します。 これに対し、AudioGraph のすべてのスレッドは自動的に適切に管理 OS によって。 WASAPIAudio サンプルから次のコード スニペットでは、MF 作業キュー Api を使用する方法を示します。
+WASAPI を使用しても使用するアプリケーションの推奨されるさらに、[リアルタイムの作業キュー API](https://docs.microsoft.com/windows/desktop/ProcThread/platform-work-queue-api)または[ **MFCreateMFByteStreamOnStreamEx** ](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex)作業項目を作成し、独自のスレッドではなくオーディオまたはオーディオ Pro としてタグします。 これは、ようにするには干渉オーディオ以外のサブシステムを回避する方法を管理します。 これに対し、AudioGraph のすべてのスレッドは自動的に適切に管理 OS によって。 WASAPIAudio サンプルから次のコード スニペットでは、MF 作業キュー Api を使用する方法を示します。
 
 ```cpp
 // Specify Source Reader Attributes 
@@ -529,8 +529,8 @@ static struct
 
 これらの構造に関する詳細については、次のトピックを参照してください。
 
--   [**KSAUDIO\_PACKETSIZE\_制約構造体**](https://msdn.microsoft.com/library/windows/hardware/dn965561)
--   [**KSAUDIO\_PACKETSIZE\_PROCESSINGMODE\_制約構造体**](https://msdn.microsoft.com/library/windows/hardware/dn965562)
+-   [**KSAUDIO\_PACKETSIZE\_制約構造体**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)
+-   [**KSAUDIO\_PACKETSIZE\_PROCESSINGMODE\_制約構造体**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)
 
 Sysvad サンプルではまた、(<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>) 各モードの最小バッファーを宣言するためのドライバーの順序でこれらのプロパティを使用する方法を示しています。
 
@@ -545,8 +545,8 @@ Sysvad サンプルではまた、(<https://github.com/Microsoft/Windows-driver-
 
 この DDI は、DSP が使用されている場合は、非常に便利です。 ただし、標準の HD オーディオ ドライバーやその他の単純な循環 DMA バッファー デザイン可能性がありますが見つかりませんこれら新しい Ddi でメリットがここに表示します。
 
--   [IMiniportWaveRTInputStream](https://msdn.microsoft.com/library/windows/hardware/dn946532)
--   [IMiniportWaveRTOutputStream](https://msdn.microsoft.com/library/windows/hardware/dn946534)
+-   [IMiniportWaveRTInputStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertinputstream)
+-   [IMiniportWaveRTOutputStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertoutputstream)
 
 ドライバーのルーチンのいくつかは、Windows パフォーマンス カウンターのタイムスタンプをサンプルのキャプチャまたはデバイスによって提示される時間を反映したを返します。
 
@@ -583,15 +583,15 @@ Stream のリソースとは、オーディオ ストリームを処理するか
 -   受信トレイ HDAudio バス ドライバー hdaudbus.sys によって列挙される HDAudio ミニポート関数ドライバーは、hdaudbus.sys によってこれは、既にとして HDAudio 割り込みを登録する必要はありません。 ただし、ミニポート ドライバーでは、独自のスレッドを作成する場合、その必要がありますに登録します。
 -   ドライバー Portcls とストリーミングのリソースを登録するためだけのリンクを wdmaudio.inf とコピー portcls.sys (および依存ファイル) の含める/ニーズに合わせて、Inf を更新する必要があります。 新しい INF コピー セクションは、のみそれらのファイルをコピーする wdmaudio.inf で定義されます。
 -   Windows 10 でのみ実行されるオーディオ ドライバーへのハード リンクことができます。
-    -   [**PcAddStreamResource**](https://msdn.microsoft.com/library/windows/hardware/mt298188)
-    -   [**PcRemoveStreamResource**](https://msdn.microsoft.com/library/windows/hardware/mt298189)
+    -   [**PcAddStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcaddstreamresource)
+    -   [**PcRemoveStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcremovestreamresource)
 -   ダウンレベルの OS で実行する必要がありますオーディオ ドライバーは、次のインターフェイスを使用できます (IID の QueryInterface を呼び出すことができます、ミニポート\_IPortClsStreamResourceManager インターフェイスし、PortCls インターフェイスをサポートする場合にのみ、リソースの登録)。
-    -   [IPortClsStreamResourceManager](https://msdn.microsoft.com/library/windows/hardware/mt270106)
-        -   [**AddStreamResource**](https://msdn.microsoft.com/library/windows/hardware/mt270107)
-        -   [**RemoveStreamResource**](https://msdn.microsoft.com/library/windows/hardware/mt270108)
+    -   [IPortClsStreamResourceManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclsstreamresourcemanager)
+        -   [**AddStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsstreamresourcemanager-addstreamresource)
+        -   [**RemoveStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsstreamresourcemanager-removestreamresource)
 -   これらの Ddi は、この列挙体と構造体を使用します。
-    -   [**PcStreamResourceType**](https://msdn.microsoft.com/library/windows/hardware/mt298190)
-    -   [**PCSTREAMRESOURCE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/mt298191)
+    -   [**PcStreamResourceType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ne-portcls-_pcstreamresourcetype)
+    -   [**PCSTREAMRESOURCE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-_pcstreamresource_descriptor)
 
 最後に、ドライバーをリンク PortCls 用のリソースを登録するための唯一の目的は、inf の DDInstall セクションで次の 2 つの行を追加する必要があります。 オーディオのミニポート ドライバー不要この wdmaudio.inf で含める/ニーズが既にあるためです。
 

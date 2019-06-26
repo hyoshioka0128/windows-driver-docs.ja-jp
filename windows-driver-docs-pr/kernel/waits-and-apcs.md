@@ -15,12 +15,12 @@ keywords:
 - ディスパッチャー オブジェクト WDK カーネルは、を待つ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5536a081e269ab3905e3f080030f4ae77d20d2a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3dba997a7aee7f059cee4922dde94a5a5830635e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358122"
 ---
 # <a name="waits-and-apcs"></a>待機と APC
 
@@ -28,7 +28,7 @@ ms.locfileid: "63391445"
 
 
 
-その待機を中断させるユーザー APC またはスレッドの終了のいずれかのユーザー モードの呼び出し元に代わってディスパッチャー オブジェクトを待っているスレッドを準備する必要があります。 スレッドを呼び出すと[ **kewaitforsingleobject の 1**](https://msdn.microsoft.com/library/windows/hardware/ff553350)、 [ **KeWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/hardware/ff553324)、 [ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)、または[ **KeDelayExecutionThread**](https://msdn.microsoft.com/library/windows/hardware/ff551986)、オペレーティング システムが待機状態でスレッドを配置できます。 通常、オペレーティング システムには、呼び出し元を要求する操作が完了するまで、スレッドは待機状態に残ります。 ただし、呼び出し元が指定されている場合*WaitMode* = ユーザー モードでは、オペレーティング システムは、待機を中断可能性があります。 状態の NTSTATUS 値を持つルーチンが終了する場合、\_ユーザー\_APC します。
+その待機を中断させるユーザー APC またはスレッドの終了のいずれかのユーザー モードの呼び出し元に代わってディスパッチャー オブジェクトを待っているスレッドを準備する必要があります。 スレッドを呼び出すと[ **kewaitforsingleobject の 1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)、 [ **KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)、 [ **KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)、または[ **KeDelayExecutionThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kedelayexecutionthread)、オペレーティング システムが待機状態でスレッドを配置できます。 通常、オペレーティング システムには、呼び出し元を要求する操作が完了するまで、スレッドは待機状態に残ります。 ただし、呼び出し元が指定されている場合*WaitMode* = ユーザー モードでは、オペレーティング システムは、待機を中断可能性があります。 状態の NTSTATUS 値を持つルーチンが終了する場合、\_ユーザー\_APC します。
 
 ドライバーで上記の 4 つのルーチンの 1 つを呼び出す*WaitMode* = UserMode 状態の戻り値を受け取る準備をする必要があります\_ユーザー\_APC します。 ドライバーは、状態とその現在の操作を完了する必要があります\_ユーザー\_APC をユーザー モードに制御を戻します。
 
@@ -83,7 +83,7 @@ ms.locfileid: "63391445"
 
 アラート、使用頻度の低いのメカニズムは、オペレーティング システムの内部では、アラートの待機状態は中断もできます。 アラートは、待機を中断できる場合に*Alertable* = **TRUE**の値に関係なく、 *WaitMode*パラメーター。 待機中のルーチンは、状態の値を返します\_ALERTED します。
 
-カーネル Apc が事前に、実行し、発生しないことを確認**KeWaitFor * Xxx*** または**KeDelayExecutionThread**を返します。 システムが中断し、内部的には、待機を再開します。 ドライバーは通常、このプロセスによって影響を受けませんが、ドライバーへの呼び出しなどの一時的な状態のディスパッチャー オブジェクト信号を見逃す可能性があります[ **KePulseEvent**](https://msdn.microsoft.com/library/windows/hardware/ff552979)します。
+カーネル Apc が事前に、実行し、発生しないことを確認**KeWaitFor * Xxx*** または**KeDelayExecutionThread**を返します。 システムが中断し、内部的には、待機を再開します。 ドライバーは通常、このプロセスによって影響を受けませんが、ドライバーへの呼び出しなどの一時的な状態のディスパッチャー オブジェクト信号を見逃す可能性があります[ **KePulseEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kepulseevent)します。
 
  
 

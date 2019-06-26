@@ -4,12 +4,12 @@ description: ESC_TWAIN_CAPABILITY エスケープ コード
 ms.assetid: 3fd3f03b-ea72-4151-a19c-3e71cf3193fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e605ff3590a18740d1f86e7417f9126e095f3f27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec47185bc0a9332b9662f900a0197e8661d919f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364429"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370046"
 ---
 # <a name="esctwaincapability-escape-code"></a>ESC\_TWAIN\_機能エスケープ コード
 
@@ -17,7 +17,7 @@ ms.locfileid: "63364429"
 
 
 
-TWAIN アプリケーションをプライベート TWAIN 機能、機能の操作を実行するには、WIA ドライバーを呼び出して、TWAIN 互換性レイヤーを通知します[ **IStiUSD::Escape** ](https://msdn.microsoft.com/library/windows/hardware/ff543815)渡して、メソッド、ESC\_TWAIN\_機能エスケープ コード。 次の例の擬似コードに示しますが、どのように**エスケープ**メソッドを実装する必要があります、およびエスケープ コードに反応する必要があります。
+TWAIN アプリケーションをプライベート TWAIN 機能、機能の操作を実行するには、WIA ドライバーを呼び出して、TWAIN 互換性レイヤーを通知します[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)渡して、メソッド、ESC\_TWAIN\_機能エスケープ コード。 次の例の擬似コードに示しますが、どのように**エスケープ**メソッドを実装する必要があります、およびエスケープ コードに反応する必要があります。
 
 ```cpp
 STDMETHODIMP CWIADevice::Escape(STI_RAW_CONTROL_CODE EscapeFunction,

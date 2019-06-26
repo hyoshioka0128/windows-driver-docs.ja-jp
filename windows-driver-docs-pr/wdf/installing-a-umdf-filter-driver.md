@@ -4,12 +4,12 @@ description: フィルター ドライバーでは、セットアップ クラ�
 ms.assetid: AE6D4E36-B758-451A-983E-6F0D7ADFD7A7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 009e718c2a1b1f2b0f58358960f0f4f926eb0c95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27c172a681a2cc9b8427487a8b6ba3bb19f96588
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378066"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371135"
 ---
 # <a name="installing-a-umdf-filter-driver"></a>UMDF フィルター ドライバーのインストール
 
@@ -22,7 +22,7 @@ ms.locfileid: "63378066"
 
 **インストールして、ドライバーを構成する方法**
 
-1.  UMDF 1 フィルター ドライバーを呼び出す必要があります[ **IWDFDeviceInitialize::SetFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff556985)から、その[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)コールバック関数。 UMDF バージョン 2 以降、ドライバーはその代わりに呼び出す[ **WdfFdoInitSetFilter**](https://msdn.microsoft.com/library/windows/hardware/ff547273)します。
+1.  UMDF 1 フィルター ドライバーを呼び出す必要があります[ **IWDFDeviceInitialize::SetFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter)から、その[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)コールバック関数。 UMDF バージョン 2 以降、ドライバーはその代わりに呼び出す[ **WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitsetfilter)します。
 
 2.  指定する必要がありますには、ドライバーを指定できます、UMDF 固有ディレクティブだけでなく、 **UmdfService**と**UmdfServiceOrder**ディレクティブ。 このトピックでは、上位のフィルター ドライバーを指定します。
 

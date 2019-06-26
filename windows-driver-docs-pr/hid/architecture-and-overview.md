@@ -4,12 +4,12 @@ description: このセクションでは、HID を I²C トランスポート経
 ms.assetid: 99384729-552C-4847-AA35-E0D413018104
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4813e9d83300861618d293a0ef9b4295b2a1998f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d22cf5684dbb295f292c8b009041f64caae77f3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390425"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375789"
 ---
 # <a name="architecture-and-overview-for-hid-over-the-ic-transport"></a>アーキテクチャと I²C トランスポート経由で HID の概要
 
@@ -50,7 +50,7 @@ I²C コント ローラーのドライバーでは、読み取りおよび実�
 
 SoC のプラットフォームでの接続は、SoC. で使用されているバス上のデバイス列挙の標準がないために、通常検出不可能です、します。 その結果、Advanced Configuration and Power Interface (ACPI) でこれらのデバイスを静的に定義する必要があります。 さらに、コンポーネントでは、多くの場合、厳密な分岐ツリー構造ではなく、複数のバスにまたがる複数の依存関係があります。
 
-リソースのハブは、すべてのデバイスとコント ローラー間の接続を管理するプロキシです。 HIDI²C ドライバーでは、リソース ハブを使用して、適切なコント ローラー ドライバーへのデバイスを開く要求を再ルーティングします。 リソースのハブの詳細についてを参照してください、 [SPB 接続デバイス用の接続 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)トピック。
+リソースのハブは、すべてのデバイスとコント ローラー間の接続を管理するプロキシです。 HIDI²C ドライバーでは、リソース ハブを使用して、適切なコント ローラー ドライバーへのデバイスを開く要求を再ルーティングします。 リソースのハブの詳細についてを参照してください、 [SPB 接続デバイス用の接続 Id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)トピック。
 
  
 

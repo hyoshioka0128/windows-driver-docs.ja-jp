@@ -4,12 +4,12 @@ description: モバイル ブロードバンドの概要
 ms.assetid: 5193927b-7367-468e-8012-c41f6bd743a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e86b91d4f39eac187b8a7a77550f4848d7af16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff34b8902d9f2119f9f5ceabfefa8e19266cb586
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357976"
 ---
 # <a name="overview-of-mobile-broadband"></a>モバイル ブロードバンドの概要
 
@@ -123,7 +123,7 @@ Windows 8、Windows 8.1、および Windows 10 再考し、既存のモバイル
 
 4.  SIM またはモバイル ブロード バンド デバイスから計算される HWIDs は WMIS に送信されます。 WMIS では、演算子を識別し、適切なサービス メタデータ パッケージを返します。
 
-5.  Windows では、サービス メタデータを使用して識別し、関連付けられているモバイル ブロード バンドのアプリを Microsoft Store から取得します。 アプリが自動的にインストールし、バック グラウンド イベントの登録します。 Windows 8.1 および Windows 10 で、アプリはスタート画面に自動的にピン留めできません。 ローカル データの使用率カウンターへの対応、演算子の SMS メッセージの受信、Wi-fi ホット スポットに接続する権利チェックの処理などの作業を行うアプリをバック グラウンド イベントを登録できます。 バック グラウンド タスクの詳細が記載されて[バック グラウンド タスクの概要](http://www.microsoft.com/download/details.aspx?id=27411)します。
+5.  Windows では、サービス メタデータを使用して識別し、関連付けられているモバイル ブロード バンドのアプリを Microsoft Store から取得します。 アプリが自動的にインストールし、バック グラウンド イベントの登録します。 Windows 8.1 および Windows 10 で、アプリはスタート画面に自動的にピン留めできません。 ローカル データの使用率カウンターへの対応、演算子の SMS メッセージの受信、Wi-fi ホット スポットに接続する権利チェックの処理などの作業を行うアプリをバック グラウンド イベントを登録できます。 バック グラウンド タスクの詳細が記載されて[バック グラウンド タスクの概要](https://www.microsoft.com/download/details.aspx?id=27411)します。
 
 6.  バック グラウンドのイベントが発生して、アプリが必要な場合より詳細なプロビジョニング ファイルが生成されますプロビジョニング エージェントに渡されます。 これにより、Windows が、ユーザーが購入したプランに関する情報を構成します。
 
@@ -181,7 +181,7 @@ SMS、USSD またはメッセージの受信、時に、モバイル ブロー�
 
 Windows では、データ使用量と、モバイル ブロード バンド アプリがユーザーのデータ プランの説明に使用できるサブスクリプション マネージャー Api を提供します。 モバイル ブロード バンド アプリは、従量制以外のプランでは、およびオペレーターのネットワークから、更新されたデータ使用量の値と従量制課金データ プランのサイズに関する情報をこの API を更新できます。
 
-Windows はこれらの Api を使用して、ユーザーが設定されているデータの使用状況情報を確認し、コア機能の動作を変更します。 たとえば、Windows Update がのみの自動ダウンロード重要な更新プログラム、ユーザーが従量制課金接続を使用する場合。 使用状況に関する情報も、データ使用量とサブスクリプション マネージャー Api を使用してサード パーティ製アプリからアクセスできます。詳細な使用方法のガイドラインについては、「[ネットワークが従量制課金接続の管理に](https://msdn.microsoft.com/library/windows/apps/hh750310)します。
+Windows はこれらの Api を使用して、ユーザーが設定されているデータの使用状況情報を確認し、コア機能の動作を変更します。 たとえば、Windows Update がのみの自動ダウンロード重要な更新プログラム、ユーザーが従量制課金接続を使用する場合。 使用状況に関する情報も、データ使用量とサブスクリプション マネージャー Api を使用してサード パーティ製アプリからアクセスできます。詳細な使用方法のガイドラインについては、「[ネットワークが従量制課金接続の管理に](https://docs.microsoft.com/previous-versions/windows/apps/hh750310(v=win.10))します。
 
 モバイル ブロード バンド アプリがユーザーへのデータの使用量の通知を維持するために使用する選択できるさまざまな機能のチュートリアルを次に示します。
 
@@ -197,7 +197,7 @@ Windows はこれらの Api を使用して、ユーザーが設定されてい�
 
 6.  アプリでは、データの使用状況およびサブスクリプション マネージャー Api で更新された情報を発行します。
 
-7.  Windows コンポーネントと、PC でのサード パーティ製アプリを使用してこの使用状況情報にアクセスできる、 [ **Windows.Networking.Connectivity.ConnectionProfile** ](https://msdn.microsoft.com/library/windows/apps/br207249)クラス。 アプリでは、必要に応じてその動作を調整できます。 たとえば、アプリでは、従量制課金接続で低品質のビデオ ストリームを使用できます。
+7.  Windows コンポーネントと、PC でのサード パーティ製アプリを使用してこの使用状況情報にアクセスできる、 [ **Windows.Networking.Connectivity.ConnectionProfile** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile)クラス。 アプリでは、必要に応じてその動作を調整できます。 たとえば、アプリでは、従量制課金接続で低品質のビデオ ストリームを使用できます。
 
 ### <a name="internet-sharing"></a>インターネット共有
 
@@ -334,9 +334,9 @@ Windows 8、Windows 8.1、および Windows 10 の一部を次のコンポーネ
 
 次の方法のいずれかでは、XML ファイルを提供できます。
 
--   署名付き XML ファイルに web サイトによって提供される、 [ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/hh848316)関数以降を実行して、Windows 8、Windows 8.1、または Windows 10 コンピューターで Internet Explorer 10 (または別ブラウザーのサポート)。
+-   署名付き XML ファイルに web サイトによって提供される、 [ **window.external.msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85))関数以降を実行して、Windows 8、Windows 8.1、または Windows 10 コンピューターで Internet Explorer 10 (または別ブラウザーのサポート)。
 
--   XML ファイル (符号付きまたは符号なしか) がするアプリによって提供される、 [ **Windows.Networking.NetworkOperators.ProvisioningAgent.ProvisionFromXmlDocumentAsync** ](https://msdn.microsoft.com/library/windows/apps/br207400)関数。
+-   XML ファイル (符号付きまたは符号なしか) がするアプリによって提供される、 [ **Windows.Networking.NetworkOperators.ProvisioningAgent.ProvisionFromXmlDocumentAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)関数。
 
 形式とプロビジョニング ファイルの内容に関する詳細については、次を参照してください。[メタデータを使用して、モバイル ブロード バンド エクスペリエンスを構成する](using-metadata-to-configure-mobile-broadband-experiences.md)します。
 
@@ -362,9 +362,9 @@ Windows 接続マネージャーも管理 WISPr 1.0 をサポートする、Wi-f
 
 ローカル データ カウンターも使用できるプログラムで、次の Api を使用しています。
 
--   [ **Windows.Networking.Connectivity.ConnectionProfile.GetNetworkUsageAsync** ](https://msdn.microsoft.com/library/windows/apps/dn266073)関数は、指定した期間データの使用状況を提供します。
+-   [ **Windows.Networking.Connectivity.ConnectionProfile.GetNetworkUsageAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile#Windows_Networking_Connectivity_ConnectionProfile_GetNetworkUsageAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_DataUsageGranularity_Windows_Networking_Connectivity_NetworkUsageStates_)関数は、指定した期間データの使用状況を提供します。
 
--   [ **Windows.Networking.Connectivity.ConnectionProfile.GetConnectivityIntervalsAsync** ](https://msdn.microsoft.com/library/windows/apps/dn266071) connect タイムスタンプと期間、ネットワーク インターフェイスを使用する場合、関数が提供します。
+-   [ **Windows.Networking.Connectivity.ConnectionProfile.GetConnectivityIntervalsAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile#Windows_Networking_Connectivity_ConnectionProfile_GetConnectivityIntervalsAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_NetworkUsageStates_) connect タイムスタンプと期間、ネットワーク インターフェイスを使用する場合、関数が提供します。
 
 ローカル データの使用状況情報は、推定値と、ユーザーのためのガイドとして機能します。 Windows では、同じデータの制限を共有する他のデバイスに対して未請求のトラフィックや使用状況をアカウントことはできません。 たとえば、ファミリは、さまざまなデバイスで同じ SIM を使用してを計画しています。 モバイル ブロード バンド アプリは、およそ使用量の課金システムとの前回の同期以降にのみ、ローカル データのカウンターを使用してください。 既に処理されたデータ使用量の課金システムに従ってください。
 
@@ -406,7 +406,7 @@ Windows メタデータとインターネット サービス (WMIS) は、Window
 
 Microsoft Store は、UWP アプリは、Windows 8、Windows 8.1、および Windows 10 Pc に配信される主な方法です。 モバイル ブロード バンド アプリでは、アプリ パッケージは、デバイスが接続された後、インターネット接続が使用可能な場合に Microsoft Store から取得されます。 アプリ パッケージはその時点で自動的にインストールされていると、ユーザーが使用可能です。 Windows 8.1 および Windows 10 では、アプリがで使用できる**すべてのアプリ**がスタート画面に自動的にピン留めできません。
 
-UWP デバイス アプリの詳細については、次を参照してください。 [UWP デバイス アプリ](https://msdn.microsoft.com/library/windows/hardware/dn265154)します。
+UWP デバイス アプリの詳細については、次を参照してください。 [UWP デバイス アプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/index)します。
 
 **注**  企業が特定の条件下で UWP アプリの負荷を側はこれらはいないこのドキュメントで説明します。
 

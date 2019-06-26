@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4ba0806bd159e35cb6e7f9af3bc25eafd339a0a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00435311f4ee55af17d7a5d7c6f342d9c72796b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356092"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372734"
 ---
 # <a name="devpropkey-structure"></a>DEVPROPKEY 構造体
 
 
-Windows Vista および以降のバージョンの Windows では、DEVPROPKEY 構造が内のデバイス プロパティのデバイス プロパティのキーを表します、[統一されたデバイス プロパティのモデル](https://msdn.microsoft.com/library/windows/hardware/ff553515)します。
+Windows Vista および以降のバージョンの Windows では、DEVPROPKEY 構造が内のデバイス プロパティのデバイス プロパティのキーを表します、[統一されたデバイス プロパティのモデル](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)します。
 
 <a name="syntax"></a>構文
 ------
@@ -36,7 +36,7 @@ struct DEVPROPKEY {
 };
 ```
 
-<a name="members"></a>メンバー
+<a name="members"></a>Members
 -------
 
 **fmtid**  
@@ -60,13 +60,13 @@ typedef ULONG DEVPROPID, *PDEVPROPID;
 <a name="remarks"></a>注釈
 -------
 
-DEVPROPKEY 構造がの一部、[統一されたデバイス プロパティのモデル](https://msdn.microsoft.com/library/windows/hardware/ff553515)します。
+DEVPROPKEY 構造がの一部、[統一されたデバイス プロパティのモデル](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)します。
 
 システム提供のデバイス プロパティのキーの基本セットが定義されている*Devpkey.h*します。
 
-[**定義\_DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff541072)マクロは、デバイス プロパティのキーを表す DEVPROPKEY 構造体のインスタンスを作成します。
+[**定義\_DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/define-devpropkey)マクロは、デバイス プロパティのキーを表す DEVPROPKEY 構造体のインスタンスを作成します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -85,7 +85,7 @@ DEVPROPKEY 構造がの一部、[統一されたデバイス プロパティの�
 ## <a name="see-also"></a>関連項目
 
 
-[**DEFINE\_DEVPROPKEY**](https://msdn.microsoft.com/library/windows/hardware/ff541072)
+[**DEFINE\_DEVPROPKEY**](https://docs.microsoft.com/windows-hardware/drivers/install/define-devpropkey)
 
  
 

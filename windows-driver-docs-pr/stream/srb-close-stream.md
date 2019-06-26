@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e840154b8819fbd5fd2adf4cd69476ce65d551c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 993d6d26d733b49dc31e116d0653232b25d069fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331088"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358381"
 ---
 # <a name="srbclosestream"></a>SRB\_閉じる\_ストリーム
 
@@ -42,7 +42,7 @@ ms.locfileid: "63331088"
 
 ### <a name="comments"></a>コメント
 
-クラス ドライバーを提供する[ **HW\_ストリーム\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff559697)内でバッファー *pSrb* - &gt; **StreamObject**で*pSrb*-&gt;**StreamObject**-&gt;**StreamNumber**閉じるストリームの数に設定します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。 **StreamNumber**内のストリームのオフセットに対応する、 [ **HW\_ストリーム\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff559686)構造体への応答で、ミニドライバーを提供する、[ **SRB\_取得\_ストリーム\_情報**](srb-get-stream-info.md)要求。
+クラス ドライバーを提供する[ **HW\_ストリーム\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)内でバッファー *pSrb* - &gt; **StreamObject**で*pSrb*-&gt;**StreamObject**-&gt;**StreamNumber**閉じるストリームの数に設定します。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。 **StreamNumber**内のストリームのオフセットに対応する、 [ **HW\_ストリーム\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor)構造体への応答で、ミニドライバーを提供する、[ **SRB\_取得\_ストリーム\_情報**](srb-get-stream-info.md)要求。
 
 ミニドライバーに状態が返されます場合、ミニドライバーは、正常にストリームを閉じ、\_成功します。 それ以外の場合、適切なエラー状態を返します。
 

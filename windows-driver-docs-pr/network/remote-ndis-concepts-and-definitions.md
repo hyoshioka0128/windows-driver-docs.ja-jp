@@ -22,12 +22,12 @@ keywords:
 - リモートの NDIS WDK のネットワーク接続、メッセージのカプセル化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10377ce25890a86721f9f3e52e8af631c991c8a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aea83b5b538acdb58d54b67d91160831a8f98c90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373796"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359133"
 ---
 # <a name="remote-ndis-concepts-and-definitions"></a>リモート NDIS の概念と定義
 
@@ -39,7 +39,7 @@ ms.locfileid: "63373796"
 
 -   **コントロール チャネル**
 
-    コントロール チャネルは、信頼できるし、シーケンス番号付きの配信を確認する必要があります。 ネットワークのデータ パケットの転送を除くすべての通信に使用されます。 除く、コントロール メッセージが必要なすべて[リモート\_NDIS\_HALT\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570613)と[リモート\_NDIS\_を示す\_の状態\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570617)は、ホストによって開始された要求と応答の交換します。 デバイスは、各バスの指定されたタイムアウト期間内に応答する必要があります。
+    コントロール チャネルは、信頼できるし、シーケンス番号付きの配信を確認する必要があります。 ネットワークのデータ パケットの転送を除くすべての通信に使用されます。 除く、コントロール メッセージが必要なすべて[リモート\_NDIS\_HALT\_MSG](https://docs.microsoft.com/previous-versions/ff570613(v=vs.85))と[リモート\_NDIS\_を示す\_の状態\_MSG](https://docs.microsoft.com/previous-versions/ff570617(v=vs.85))は、ホストによって開始された要求と応答の交換します。 デバイスは、各バスの指定されたタイムアウト期間内に応答する必要があります。
 
 -   **データ チャネル**
 
@@ -47,13 +47,13 @@ ms.locfileid: "63373796"
 
 -   **初期化と破棄**
 
-    コントロールとデータ チャネルが初期化され、設定する適切なバスに対して指定されました。 ホストの送信、[リモート\_NDIS\_初期化\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570624) NDIS リモート デバイスへのメッセージ。 コネクションレス (接続指向)、その型に関する情報がサポートされているメディア、および応答メッセージのバージョンを提供するリモート NDIS デバイス[リモート\_NDIS\_初期化\_CMPLT](https://msdn.microsoft.com/library/windows/hardware/ff570621).
+    コントロールとデータ チャネルが初期化され、設定する適切なバスに対して指定されました。 ホストの送信、[リモート\_NDIS\_初期化\_MSG](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85)) NDIS リモート デバイスへのメッセージ。 コネクションレス (接続指向)、その型に関する情報がサポートされているメディア、および応答メッセージのバージョンを提供するリモート NDIS デバイス[リモート\_NDIS\_初期化\_CMPLT](https://docs.microsoft.com/previous-versions/ff570621(v=vs.85)).
 
-    ホストまたはリモートの NDIS デバイスのいずれかが経由する通信チャネルの破棄できます、[リモート\_NDIS\_HALT\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570613)メッセージ。 このメッセージの受信時に、すべての未処理の要求およびパケットが破棄されます。
+    ホストまたはリモートの NDIS デバイスのいずれかが経由する通信チャネルの破棄できます、[リモート\_NDIS\_HALT\_MSG](https://docs.microsoft.com/previous-versions/ff570613(v=vs.85))メッセージ。 このメッセージの受信時に、すべての未処理の要求およびパケットが破棄されます。
 
 -   **デバイスの状態の定義**
 
-    Bus レベルの初期化後に、デバイスは RNDIS 初期化されていない状態であると言います。 受信すると、[リモート\_NDIS\_初期化\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570624)と対応するリモート\_NDIS\_初期化\_CMPLT RNDISの状態\_ステータス\_成功すると、デバイスは RNDIS 初期化状態になります。
+    Bus レベルの初期化後に、デバイスは RNDIS 初期化されていない状態であると言います。 受信すると、[リモート\_NDIS\_初期化\_MSG](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85))と対応するリモート\_NDIS\_初期化\_CMPLT RNDISの状態\_ステータス\_成功すると、デバイスは RNDIS 初期化状態になります。
 
     リモートを受け取ると\_NDIS\_設定\_OID の 0 以外のフィルター値を指定する MSG\_GEN\_現在\_パケット\_フィルター、デバイスが、RNDIS データ初期化状態です。
 
@@ -67,7 +67,7 @@ ms.locfileid: "63373796"
 
 -   **通信チャネルをリセットします。**
 
-    メッセージのタイムアウトなどのエラーが発生したときに、通信チャネルがリセットされます。 ホストは、メッセージを送信して RNDIS 初期化状態で、デバイスがときにいつでもリセットを開始できます[リモート\_NDIS\_リセット\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570648)デバイスと、デバイスには、応答を送信する必要がありますメッセージのリセットが完了したことです。 たとえば、ホストはメッセージのタイムアウトなど、エラーが発生したときにリセットを開始できます。
+    メッセージのタイムアウトなどのエラーが発生したときに、通信チャネルがリセットされます。 ホストは、メッセージを送信して RNDIS 初期化状態で、デバイスがときにいつでもリセットを開始できます[リモート\_NDIS\_リセット\_MSG](https://docs.microsoft.com/previous-versions/ff570648(v=vs.85))デバイスと、デバイスには、応答を送信する必要がありますメッセージのリセットが完了したことです。 たとえば、ホストはメッセージのタイムアウトなど、エラーが発生したときにリセットを開始できます。
 
     ソフト リセット リセット後に有効であるすべてのハンドル (たとえば、デバイスの接続指向の VCs) を続けることの意味であるに注意してください。 NDIS リモート デバイスでは、リセット プロセスの一部としてすべての未処理の要求やパケットを破棄します。 リモート デバイスのハードウェア コンポーネントの一部をリセットする場合がありますが、通信チャネルの状態は保持します。
 

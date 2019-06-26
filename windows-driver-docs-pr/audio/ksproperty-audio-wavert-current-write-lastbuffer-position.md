@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22776d03ddc3ebe099d63b98d607f58cdacdd04c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2dcd5e64408dc015b12e7d5f7f4076689b0757f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332919"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358876"
 ---
 # <a name="kspropertyaudiowavertcurrentwritelastbufferposition"></a>KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置
 
@@ -69,7 +69,7 @@ KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プ
 
 クライアント アプリが、KSPROPERTY を使用している場合\_型\_、KSPROPERTY を送信するときに、BASICSUPPORT フラグ\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_オーディオ ドライバーとステータスに位置プロパティ要求\_成功が返され、ドライバーが新しく追加された KSPROPERTY をサポートすることが確認されます\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_POSITION プロパティ。
 
-オーディオ ドライバーを呼び出すクライアント アプリでは、オフロードされたストリームのオーディオ ドライバーによって処理されるオーディオのバッファーに非常に最後の書き込み操作を実行するときに、 [ **SetStreamCurrentWritePositionForLastBuffer** ](https://msdn.microsoft.com/library/windows/hardware/dn338128)メソッド。 **SetStreamCurrentWritePositionForLastBuffer**メソッドは、"書き込み"の最後のバッファー ストリーム内の位置を示します。 この最後のバッファーを部分的にのみ満たさことに注意してください。
+オーディオ ドライバーを呼び出すクライアント アプリでは、オフロードされたストリームのオーディオ ドライバーによって処理されるオーディオのバッファーに非常に最後の書き込み操作を実行するときに、 [ **SetStreamCurrentWritePositionForLastBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportstreamaudioenginenode2-setstreamcurrentwritepositionforlastbuffer)メソッド。 **SetStreamCurrentWritePositionForLastBuffer**メソッドは、"書き込み"の最後のバッファー ストリーム内の位置を示します。 この最後のバッファーを部分的にのみ満たさことに注意してください。
 
 オーディオ ポート クラス ドライバー (Portcls) で動作するようになっていないオーディオ ドライバーを開発するかどうかは、このプロパティのハンドラーを実装する必要がある新しい KS プロパティ。
 
@@ -100,7 +100,7 @@ KSPROPERTY\_オーディオ\_WAVERT\_現在\_書き込み\_LASTBUFFER\_位置プ
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**SetStreamCurrentWritePositionForLastBuffer**](https://msdn.microsoft.com/library/windows/hardware/dn338128)
+[**SetStreamCurrentWritePositionForLastBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportstreamaudioenginenode2-setstreamcurrentwritepositionforlastbuffer)
 
  
 

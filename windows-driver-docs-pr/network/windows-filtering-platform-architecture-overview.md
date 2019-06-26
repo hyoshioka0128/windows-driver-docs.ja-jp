@@ -9,12 +9,12 @@ keywords:
 - コールアウト ドライバー WDK Windows フィルタ リング プラットフォーム、プラットフォームのアーキテクチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32a7a3021c4137b763a524df7c5601ec69aa5ced
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e203b72114861da712eafcbd45ca66520221a6e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378735"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370580"
 ---
 # <a name="windows-filtering-platform-architecture-overview"></a>Windows フィルタリング プラットフォーム アーキテクチャの概要
 
@@ -29,7 +29,7 @@ ms.locfileid: "63378735"
 
 [コールアウト ドライバー](callout-driver.md) 1 つまたは複数を登録することによって追加のフィルター処理機能を提供[コールアウト](callout.md)フィルター エンジン。 [フィルター](filter.md)フィルターでは、エンジンがフィルターのアクションの引き出し線を指定できます。 この場合、フィルター エンジンは、追加の処理の指定した吹き出しをネットワーク データを渡します。
 
-Windows フィルタ リング プラットフォームには、いくつかの組み込みのコールアウトが含まれています。 参照してください[組み込みコールアウト識別子](https://msdn.microsoft.com/library/windows/hardware/ff543857)のこれらのコールアウトのそれぞれの説明。
+Windows フィルタ リング プラットフォームには、いくつかの組み込みのコールアウトが含まれています。 参照してください[組み込みコールアウト識別子](https://docs.microsoft.com/windows-hardware/drivers/network/built-in-callout-identifiers)のこれらのコールアウトのそれぞれの説明。
 
  
 

@@ -17,12 +17,12 @@ keywords:
 - WDK RDBSS の接続情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab55ede13f1e6ae15954af87adc9ae36156c61d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bd23be595f067a95b7389e90d132ca9bc028bdf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344899"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371296"
 ---
 # <a name="the-fobx-structure"></a>FOBX 構造
 
@@ -30,7 +30,7 @@ ms.locfileid: "63344899"
 ## <span id="ddk_the_fobx_structure_if"></span><span id="DDK_THE_FOBX_STRUCTURE_IF"></span>
 
 
-ファイル オブジェクトの拡張機能 (FOBX) 構造体は RDBSS の拡張機能、 [**ファイル\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff545834)構造体。 FOBX 構造体を指す、 **FileObjectExtension**フィールドに、ファイル オブジェクト。 FOBX 構造体には、次のものが含まれています。
+ファイル オブジェクトの拡張機能 (FOBX) 構造体は RDBSS の拡張機能、 [**ファイル\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_object)構造体。 FOBX 構造体を指す、 **FileObjectExtension**フィールドに、ファイル オブジェクト。 FOBX 構造体には、次のものが含まれています。
 
 -   署名と参照カウント
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 09215fa94fb7d05caf7c0dd393b3679a42fb05c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e30190d6f4ed7db63f6c303d8faec4379c6a397
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331268"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372736"
 ---
 # <a name="devproptypemodlist"></a>DEVPROP_TYPEMOD_LIST
 
 
-Windows Vista および Windows の以降のバージョンでは、DEVPROP_TYPEMOD_LIST 識別子とのみ組み合わせることができますをプロパティ データ型修飾子を表します、 [**基本データ型識別子**](https://msdn.microsoft.com/library/windows/hardware/ff537793) 。 [**DEVPROP_TYPE_STRING** ](devprop-type-string.md)と[ **DEVPROP_TYPE_SECURITY_DESCRIPTOR_STRING** ](devprop-type-security-descriptor-string.md)にプロパティ データ型識別子の作成表す、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) NULL で終わる Unicode 文字列のリスト。
+Windows Vista および Windows の以降のバージョンでは、DEVPROP_TYPEMOD_LIST 識別子とのみ組み合わせることができますをプロパティ データ型修飾子を表します、 [**基本データ型識別子**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85)) 。 [**DEVPROP_TYPE_STRING** ](devprop-type-string.md)と[ **DEVPROP_TYPE_SECURITY_DESCRIPTOR_STRING** ](devprop-type-security-descriptor-string.md)にプロパティ データ型識別子の作成表す、 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) NULL で終わる Unicode 文字列のリスト。
 
 <a name="remarks"></a>注釈
 -------

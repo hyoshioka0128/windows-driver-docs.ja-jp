@@ -6,12 +6,12 @@ keywords:
 - 送信操作 WDK ネイティブ 802.11 IHV 拡張 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b2840ade07e8e9f7531afdc4fe3bf329c1aadae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6c51974297a278f64d039ddbe29eedd60df2553
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365762"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373862"
 ---
 # <a name="send-operations"></a>送信操作
 
@@ -20,9 +20,9 @@ ms.locfileid: "63365762"
 
  
 
-呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://msdn.microsoft.com/library/windows/hardware/ff547492)、IHV 拡張機能の DLL は、ワイヤレス LAN (WLAN) アダプターを介してパケットを送信できます。 詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
+呼び出すことによって開始された後の関連付け操作を実行するときに[ *Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)、IHV 拡張機能の DLL は、ワイヤレス LAN (WLAN) アダプターを介してパケットを送信できます。 詳細については、後の関連付け操作は、次を参照してください。[後関連付け操作](post-association-operations.md)します。
 
-通常、DLL のセキュリティにパケットを送信データ ポートの認証のためのアクセス ポイント (AP) を介して有効になっているアルゴリズムを使用して[ **Dot11ExtSetAuthAlgorithm**](https://msdn.microsoft.com/library/windows/hardware/ff547571)します。 拡張 DLL の IHV 呼び出し**Dot11ExtSetAuthAlgorithm**関連付け前の操作中にします。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
+通常、DLL のセキュリティにパケットを送信データ ポートの認証のためのアクセス ポイント (AP) を介して有効になっているアルゴリズムを使用して[ **Dot11ExtSetAuthAlgorithm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_auth_algorithm)します。 拡張 DLL の IHV 呼び出し**Dot11ExtSetAuthAlgorithm**関連付け前の操作中にします。 この操作の詳細については、次を参照してください。[関連付け前操作](pre-association-operations.md)します。
 
 **注**  Windows Vista の IHV 拡張機能の DLL は、基本的なサービスのインフラストラクチャ (BSS) ネットワークの設定のみをサポートします。
 
@@ -157,16 +157,16 @@ ms.locfileid: "63365762"
 
      
 
--   IHV 拡張 DLL の呼び出し、 [ **Dot11ExtSendPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff547563)ワイヤレス LAN (WLAN) アダプターを介してパケットを送信する関数。 DLL は、関数のパケットを識別する一意のハンドル値を渡します*hSendCompletion*パラメーター。 通常、DLL がパケットを含む、割り当てられたバッファーのアドレスを渡します、 *hSendCompletion*パラメーター。
-    **注**  呼び出しを通じて、ユニキャスト パケットのみを送信できる、 [ **Dot11ExtSendPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff547563)関数。
+-   IHV 拡張 DLL の呼び出し、 [ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)ワイヤレス LAN (WLAN) アダプターを介してパケットを送信する関数。 DLL は、関数のパケットを識別する一意のハンドル値を渡します*hSendCompletion*パラメーター。 通常、DLL がパケットを含む、割り当てられたバッファーのアドレスを渡します、 *hSendCompletion*パラメーター。
+    **注**  呼び出しを通じて、ユニキャスト パケットのみを送信できる、 [ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)関数。
 
      
 
--   オペレーティング システムを呼び出す WLAN アダプターには、パケットが送信、ときに、 [ *Dot11ExtIhvSendPacketCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff547516)関数。 オペレーティング システムは、パケットのハンドル値を渡します、 *hSendCompletion*関数のパラメーター。 このハンドルの値は呼び出しで IHV 拡張 DLL で使用される同じ値になります[ **Dot11ExtSendPacket**](https://msdn.microsoft.com/library/windows/hardware/ff547563)します。
+-   オペレーティング システムを呼び出す WLAN アダプターには、パケットが送信、ときに、 [ *Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)関数。 オペレーティング システムは、パケットのハンドル値を渡します、 *hSendCompletion*関数のパラメーター。 このハンドルの値は呼び出しで IHV 拡張 DLL で使用される同じ値になります[ **Dot11ExtSendPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)します。
 
-    ときに[ *Dot11ExtIhvSendPacketCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff547516)が呼び出されると、IHV 拡張機能の DLL は、パケットを割り当てられたメモリを解放する必要があります。
+    ときに[ *Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)が呼び出されると、IHV 拡張機能の DLL は、パケットを割り当てられたメモリを解放する必要があります。
 
-    **注**  IHV 拡張 DLL を経由して送信パケットに割り当てられたリソースを解放する必要があります[ **Dot11ExtSendPacket** ](https://msdn.microsoft.com/library/windows/hardware/ff547563)に対応する呼び出しまで[*Dot11ExtIhvSendPacketCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff547516)されます。
+    **注**  IHV 拡張 DLL を経由して送信パケットに割り当てられたリソースを解放する必要があります[ **Dot11ExtSendPacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_packet)に対応する呼び出しまで[*Dot11ExtIhvSendPacketCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_send_packet_completion)されます。
 
      
 

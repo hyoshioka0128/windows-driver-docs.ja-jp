@@ -4,17 +4,16 @@ description: 単純な I/O プラグインは、デバイス固有の汎用の I
 ms.assetid: 948E8CF5-24A1-4A7C-BD18-374F989AD053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a21b6854177caada0cd72e669aa2eff6ad6c3267
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: HT
+ms.openlocfilehash: 2c56049d8e203018f80c9531897d9b477c823532
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382082"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369488"
 ---
 # <a name="provided-wdtf-simple-io-plug-ins"></a>提供されている WDTF シンプル I/O プラグイン
 
-
-単純な I/O プラグインは、デバイス固有の汎用の I/O 機能を実装する Windows ドライバー テスト フレームワーク (WDTF) に拡張機能です。 テスト対象のデバイスの種類のプラグインが存在する場合、[デバイス基本テスト](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)I/O のテストに WDTF 単純な I/O インターフェイスを使用します。
+単純な I/O プラグインは、デバイス固有の汎用の I/O 機能を実装する Windows ドライバー テスト フレームワーク (WDTF) に拡張機能です。 テスト対象のデバイスの種類のプラグインが存在する場合、[デバイス基本テスト](https://docs.microsoft.com/windows-hardware/drivers)I/O のテストに WDTF 単純な I/O インターフェイスを使用します。
 
 次の表では、単純な I/O プラグインがあるデバイスの種類を示します。また、デバイスをテストするための特定の要件があるかどうかも示します。 これらは、同じ要件を使用するときに実行する必要があります、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)します。
 
@@ -22,355 +21,288 @@ ms.locfileid: "63382082"
 
 ## <a name="provided-simple-io-plugins-and-device-requirements-for-testing-and-tips-for-troubleshooting"></a>指定された単純な I/O プラグインとデバイスの要件のテストとトラブルシューティングのヒント
 
-
 次のセクションでは、単純な I/O プラグインがあるデバイスの種類を示します。セクションでは、デバイスをテストするための特定の要件があるかどうかについても示します。 これらは、同じ要件を使用するときに実行する必要があります、 [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)します。 セクションでは、テスト エラーのトラブルシューティングを行うし、優先順位を決定する際のヒントも示します。
 
--   [オーディオ デバイス](#-audio)
--   [Bluetooth デバイス](#-bluetooth)
--   [CD-ROM デバイス](#-cdrom)
--   [ディスク デバイス](#-disk)
--   [デバイスを表示します。](#-display)
--   [GPS デバイス](#-gps)
--   [LAN デバイス](#-lan)
--   [モバイル ブロード バンド デバイス](#-mobile-broadband)
--   [ポータブル デバイス](#-portable-devices)
--   [スマート カード リーダー](#-smartcard)
--   [センサー デバイス](#-sensors)
--   [ボリューム](#-volume)
--   [Web カメラ](#-webcam)
--   [WLAN](#-wlan)
--   [USB コント ローラーと mutt ハブ](#-usb-mutt)
+* [オーディオ デバイス](#audio)
+* [Bluetooth デバイス](#bluetooth)
+* [CD-ROM デバイス](#cdrom)
+* [ディスク デバイス](#disk)
+* [デバイスを表示します。](#display)
+* [GPS デバイス](#gps-devices-and-gps-devices-in-systems)
+* [LAN デバイス](#lan)
+* [モバイル ブロード バンド デバイス](#mobile-broadband)
+* [ポータブル デバイス](#portable-devices)
+* [スマート カード リーダー](#smart-card-readers)
+* [センサー デバイス](#sensors)
+* [ボリューム](#volume)
+* [Web カメラ](#webcam)
+* [WLAN](#wlan)
+* [USB コント ローラーと mutt ハブ](#usb-controller-and-hub-with-mutt)
 
-特定の要件であるデバイスの基本的なテストの一覧は、次を参照してください[特定のデバイスの構成要件があるデバイスの基本的なテスト。](#-devfund-test-req)
+特定の要件であるデバイスの基本的なテストの一覧は、次を参照してください[特定のデバイスの構成要件があるデバイスの基本的なテスト。](#device-fundamental-tests-that-have-specific-device-configuration-requirements)
 
-### <a href="" id="-audio"></a>
+### <a name="audio"></a>オーディオ
 
-| オーディオ |
-|-------|
-|       |
+#### <a name="requirements"></a>必要条件
 
-**要件:**
+* デバイスに少なくとも 1 つレンダリング型のエンドポイント接続 (スピーカー、ヘッドホンなど) が必要です。
 
--   デバイスに少なくとも 1 つレンダリング型のエンドポイント接続 (スピーカー、ヘッドホンなど) が必要です。
+* HDMI オーディオ対応デバイス、HDMI モニターや A などに、デバイスを接続する必要があります対象となるオーディオ デバイスは、HDMI ビデオとオーディオのテストを実行し、オーディオ出力の機能を持つ場合/V レシーバー。
 
--   HDMI オーディオ対応デバイス、HDMI モニターや A などに、デバイスを接続する必要があります対象となるオーディオ デバイスは、HDMI ビデオとオーディオのテストを実行し、オーディオ出力の機能を持つ場合/V レシーバー。
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
-**プラグインの I/O の種類を実行します。**
+* サインにあるチューニング アプローチでは、種類のエンドポイントをレンダリングします。 キャプチャの種類のエンドポイント上のオーディオをキャプチャします。
 
--   サインにあるチューニング アプローチでは、種類のエンドポイントをレンダリングします。 キャプチャの種類のエンドポイント上のオーディオをキャプチャします。
+#### <a name="how-to-triage-test-failures"></a>テストの失敗をトリアージする方法
 
-**テストの失敗をトリアージする方法。**
+* 初期のトリアージを実行する HRESULT が失敗していることを確認します。
+* テストが応答していない場合は、根本原因を絞り込むためにターゲット コンピューターのカーネル デバッガーを使用します。
+* トレースを実行します。
+  * カーネル トレースを開始します。
 
--   初期のトリアージを実行する HRESULT が失敗していることを確認します。
--   テストが応答していない場合は、根本原因を絞り込むためにターゲット コンピューターのカーネル デバッガーを使用します。
--   トレースを実行します。
-
-    -   カーネル トレースを開始します。
-
-        ``` syntax
+        ```syntax
         xperf.exe -on LOADER+PROC_THREAD+CSWITCH+DISK_IO+HARD_FAULTS+PROFILE+INTERRUPT+NETWORKTRACE+DPC+Latency+POWER -stackwalk ProcessCreate+ProcessDelete+ImageLoad+ImageUnload+ThreadCreate+ThreadDelete+CSwitch+ReadyThread+Profile+DiskFlushInit+FileFlush+RegFlush+HardFault+VirtualAlloc+VirtualFree -BufferSize 1024 -MinBuffers 512 -MaxBuffers 1024 -f Audio_SimpleIo_Kernel.etl
         ```
 
-    -   オーディオのトレースを開始します。
+  * オーディオのトレースを開始します。
 
-        ``` syntax
+        ```syntax
         xperf.exe -start AudioSimpleIo -on Microsoft-Windows-Audio+a6a00efd-21f2-4a99-807e-9b3bf1d90285:0xffff:0x3 -BufferSize 1024 -MinBuffers 512 -MaxBuffers 1024 -f Audio_SimpleIo.etl
         ```
 
-    -   テストを実行します。
-    -   トレースを停止します。
+  * テストを実行します。
+  * トレースを停止します。
 
-        ``` syntax
+        ```syntax
         xperf.exe -stop "NT Kernel Logger" Audio_SimpleIo
         ```
 
-    -   トレースをマージします。
+  * トレースをマージします。
 
-        ``` syntax
+        ```syntax
         xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Merged.etl
         ```
 
-    -   Xperf でマージされたトレース ファイルの表示 (**xperfview**)。
+  * Xperf でマージされたトレース ファイルの表示 (**xperfview**)。
 
-### <a href="" id="-bluetooth"></a>
+### <a name="bluetooth"></a>Bluetooth
 
-| Bluetooth |
-|-----------|
-|           |
+#### <a name="requirements"></a>必要条件
 
-**要件:**
+* 特別な要件はありません。
 
--   特別な要件はありません。
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
-**プラグインの I/O の種類を実行します。**
+* 使用して[ **BluetoothFindFirstDevice 関数**](https://docs.microsoft.com/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothfindfirstdevice) Bluetooth デバイスが見つかりません。
 
--   使用して[ **BluetoothFindFirstDevice 関数**](https://msdn.microsoft.com/library/windows/desktop/aa362784) Bluetooth デバイスが見つかりません。
+### <a name="cdrom"></a>CD-ROM ドライブ
 
-### <a href="" id="-cdrom"></a>
+#### <a name="requirements"></a>必要条件
 
-| CD-ROM ドライブ |
-|-------|
-|       |
+* ドライブ文字が割り当てられます。
+* メディアでは、デバイスに存在します。
+* ファイルは、挿入、メディア上に存在します。
 
-**要件:**
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
--   ドライブ文字が割り当てられます。
--   メディアでは、デバイスに存在します。
--   ファイルは、挿入、メディア上に存在します。
+* CD-ROM 上のファイルを検索して、Win32 を使用して読み取り操作を実行します。 [ **ReadFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile) API。
 
-**プラグインの I/O の種類を実行します。**
+#### <a name="how-to-triage-test-failures"></a>テストの失敗をトリアージする方法
 
--   CD-ROM 上のファイルを検索して、Win32 を使用して読み取り操作を実行します。 [ **ReadFile** ](https://msdn.microsoft.com/library/windows/desktop/aa365467) API。
+* テスト コンピューターに CD または DVD ドライブに移動し、ドライブの内容にアクセスできることを確認します。
+* 使用してからの読み取りを実行するには、CD または DVD 上のファイルを CD-Rom の単純な I/O プラグイン検索します。 CD または DVD ディスク上でエンコードされたファイルが含まれることを確認します。
+* この単純な I/O プラグインは、Win32 を使用して[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 [ **WriteFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-writefile)、 [ **ReadFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)関数。 返されたエラーは、これらの Api からの最も可能性の高い Win32 エラー コードです。
 
-**テストの失敗をトリアージする方法。**
+### <a name="disk"></a>Disk
 
--   テスト コンピューターに CD または DVD ドライブに移動し、ドライブの内容にアクセスできることを確認します。
--   使用してからの読み取りを実行するには、CD または DVD 上のファイルを CD-Rom の単純な I/O プラグイン検索します。 CD または DVD ディスク上でエンコードされたファイルが含まれることを確認します。
--   この単純な I/O プラグインは、Win32 を使用して[ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)、 [ **WriteFile**](https://msdn.microsoft.com/library/windows/desktop/aa365747)、 [ **ReadFile**](https://msdn.microsoft.com/library/windows/desktop/aa365467)関数。 返されたエラーは、これらの Api からの最も可能性の高い Win32 エラー コードです。
+#### <a name="requirements"></a>要件
 
-### <a href="" id="-disk"></a>
+* ディスクでは、少なくとも 1 つ関連付けられているボリューム文字が割り当てられているドライブがあります。
 
-| Disk |
-|------|
-|      |
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
-**要件:**
+* 単純な I/O のためのプラグインを使用して[ボリューム](#volume)します。
 
--   ディスクでは、少なくとも 1 つ関連付けられているボリューム文字が割り当てられているドライブがあります。
+### <a name="display"></a>ディスプレイ
 
-**プラグインの I/O の種類を実行します。**
+#### <a name="requirements"></a>必要条件
 
--   単純な I/O のためのプラグインを使用して[ボリューム](#-volume)します。
+* テスト用の特別な要件はありません。
 
-### <a href="" id="-display"></a>
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
-**要件:**
+* D3DX Api を使用して、グラフィックス アダプターを実行します。
 
+#### <a name="how-to-triage-test-failures"></a>テストの失敗をトリアージする方法
 
-| デバイスを表示します。 |
-|-----------------|
-|                 |
+* 使用される Api からエラーを報告するテスト ログを参照します。
 
--   テスト用の特別な要件はありません。
+### <a name="gps-devices-and-gps-devices-in-systems"></a>GPS デバイス (とシステム内の GPS デバイス)
 
-**プラグインの I/O の種類を実行します。**
+#### <a name="requirements"></a>必要条件
 
--   D3DX Api を使用して、グラフィックス アダプターを実行します。
+* デバイスは、GPS 信号が適切な場所でテストする必要があります。
 
-**テストの失敗をトリアージする方法。**
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
--   使用される Api からエラーを報告するテスト ログを参照します。
+* I/O のプラグインを使用して[センサー](#sensors)します。
 
-### <a href="" id="-gps"></a>
+### <a name="lan"></a>LAN
 
-| GPS デバイス (とシステム内の GPS デバイス) |
-|------------------------------------------|
-|                                          |
+#### <a name="requirements"></a>必要条件
 
-**要件:**
+* デバイスでは、IPv6 アドレスがあります。
 
--   デバイスは、GPS 信号が適切な場所でテストする必要があります。
+* デバイスが IPv6 ゲートウェイ アドレス (それ以外の場合 WDTFREMOTESYSTEM パラメーターを IPv6 アドレスの ping を実行できる NIC のテストとテストに渡す必要があります)。
 
-**プラグインの I/O の種類を実行します。**
+* デバイスのネットワーク操作の状態は、ifoperstatusup であります。
 
--   I/O のプラグインを使用して[センサー](#-sensors)します。
+* ネットワーク デバイスは、WWAN または WLAN デバイスではありません。
 
-### <a href="" id="-lan"></a>
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
-| LAN |
-|-----|
-|     |
+* Ping の IPv6 ネットワーク ゲートウェイのアドレス。
 
-**要件:**
+#### <a name="how-to-triage-test-failures"></a>テストの失敗をトリアージする方法
 
--   デバイスでは、IPv6 アドレスがあります。
+* 既存の IP アドレスがあることを確認します。
+* ゲートウェイの IPv6 IP アドレスがあることを確認します。
+* ゲートウェイの IP アドレスを手動で確認します (ping.exe を使用します)。
 
--   デバイスが IPv6 ゲートウェイ アドレス (それ以外の場合 WDTFREMOTESYSTEM パラメーターを IPv6 アドレスの ping を実行できる NIC のテストとテストに渡す必要があります)。
+### <a name="mobile-broadband"></a>モバイル ブロードバンド
 
--   デバイスのネットワーク操作の状態は、ifoperstatusup であります。
+#### <a name="requirements"></a>必要条件
 
--   ネットワーク デバイスは、WWAN または WLAN デバイスではありません。
+* テスト用の特別な要件はありません。
 
-**プラグインの I/O の種類を実行します。**
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
--   Ping の IPv6 ネットワーク ゲートウェイのアドレス。
+* 使用して[ **IMbnInterface インターフェイス**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbninterface) GetHomeProvider を呼び出すと[ **IMbnInterface::GetInterfaceCapability メソッド**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbninterface-getinterfacecapability)、および[**IMbnInterface::GetReadyState メソッド**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbninterface-getreadystate) Api デバイスの実行にします。
 
-**テストの失敗をトリアージする方法。**
+#### <a name="how-to-triage-test-failures"></a>テストの失敗をトリアージする方法
 
--   既存の IP アドレスがあることを確認します。
--   ゲートウェイの IPv6 IP アドレスがあることを確認します。
--   ゲートウェイの IP アドレスを手動で確認します (ping.exe を使用します)。
+* MobileBroadbandPlugin は領域を停止する可能性が制限されています。
 
-### <a href="" id="-mobile-broadband"></a>
+  * "MobileBroadbandPlugin:すべてのモバイル ブロード バンド インターフェイスの取得に失敗をしました。"
+  * "MobileBroadbandPlugin:エラーが返されるインターフェイスを取得します。"
+  * "MobileBroadbandPlugin:返される DeviceId を取得します。"
+  * "MobileBroadbandPlugin:インターフェイスの機能を取得するには、エラーが返される"
+  * "MobileBroadbandPlugin:エラーを返しました ReadyState を取得します。"
 
-| モバイル ブロードバンド |
-|------------------|
-|                  |
+* 失敗を調査する最適な場所では、デバイスから開始し、準備完了の情報またはデバイスの機能を示すできなかったかどうかを決定します。 OS のトレース ファイルをさらにデバッグするには、収集する必要があります。
 
-**要件:**
+  * コマンドを実行します**netsh トレース開始 wwan\_dbg。**
+  * 問題を再現します。
+  * コマンドを実行します**netsh トレースの停止。**
 
--   テスト用の特別な要件はありません。
+### <a name="portable-devices"></a>ポータブル デバイス
+
+#### <a name="requirements"></a>要件
+
+* デバイスは、フォルダーとファイルを作成できる場所を記憶域コンポーネントにあります。
 
 **プラグインの I/O の種類を実行します。**
 
--   使用して[ **IMbnInterface インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/dd430406) GetHomeProvider を呼び出すと[ **IMbnInterface::GetInterfaceCapability メソッド**](https://msdn.microsoft.com/library/windows/desktop/dd323100)、および[**IMbnInterface::GetReadyState メソッド**](https://msdn.microsoft.com/library/windows/desktop/dd323102) Api デバイスの実行にします。
+* 読み取り、WPD Api を使用して WPD デバイスで記憶域コンポーネントにファイルを書き込みます。
 
-**テストの失敗をトリアージする方法。**
+### <a name="smart-card-readers"></a>スマート カード リーダー
 
--   MobileBroadbandPlugin は領域を停止する可能性が制限されています。
+#### <a name="requirements"></a>必要条件
 
-    -   "MobileBroadbandPlugin:すべてのモバイル ブロード バンド インターフェイスの取得に失敗をしました。"
-    -   "MobileBroadbandPlugin:エラーが返されるインターフェイスを取得します。"
-    -   "MobileBroadbandPlugin:返される DeviceId を取得します。"
-    -   "MobileBroadbandPlugin:インターフェイスの機能を取得するには、エラーが返される"
-    -   "MobileBroadbandPlugin:エラーを返しました ReadyState を取得します。"
+* デバイスが、Athena T0 テスト カードが挿入されます。
 
--   失敗を調査する最適な場所では、デバイスから開始し、準備完了の情報またはデバイスの機能を示すできなかったかどうかを決定します。 OS のトレース ファイルをさらにデバッグするには、収集する必要があります。
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
-    -   コマンドを実行します**netsh トレース開始 wwan\_dbg。**
-    -   問題を再現します。
-    -   コマンドを実行します**netsh トレースの停止。**
+* カード リーダーに挿入された Athena T0 カードにデータを読み書きします。
 
-### <a href="" id="-portable-devices"></a>
+### <a name="sensors"></a>センサー
 
-| ポータブル デバイス |
-|------------------|
-|                  |
+#### <a name="requirements"></a>要件
 
-**要件:**
+* GPS デバイスは、GPS 信号が適切な場所でテストする必要があります。
 
--   デバイスは、フォルダーとファイルを作成できる場所を記憶域コンポーネントにあります。
+### <a name="volume"></a>[ボリューム]
 
-**プラグインの I/O の種類を実行します。**
+#### <a name="requirements"></a>必要条件
 
--   読み取り、WPD Api を使用して WPD デバイスで記憶域コンポーネントにファイルを書き込みます。
+* ボリュームには、割り当てられたドライブ文字があります。
+* ボリュームには、5 MB の空き領域があります。
+* ボリュームが書き込み-保護されていません。
+* メディアでは、デバイスに存在します。
 
-### <a href="" id="-smartcard"></a>
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
-| スマート カード リーダー |
-|--------------------|
-|                    |
+* WDTF というディレクトリを作成します。\_ボリューム\_IO SimpleIO.tmp と呼ばれるファイルを作成します。 呼び出して、I/O が実行される[ **ReadFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)と[ **WriteFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-writefile)このファイルへの Api。
 
-**要件:**
+#### <a name="how-to-triage-test-failures"></a>テストの失敗をトリアージする方法
 
--   デバイスが、Athena T0 テスト カードが挿入されます。
+* テスト コンピューター上のドライブに移動し、ドライブの内容にアクセスできることを確認します。
+* ドライブにファイルを保存しようとしてください。 保存して簡単にアクセスできることを確認します。
+* この単純な I/O プラグインは、Win32 を使用して[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 [ **WriteFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-writefile)、 [ **ReadFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)関数。 返されたエラーは、これらの Api からの最も可能性の高い Win32 エラー コードです。
 
-**プラグインの I/O の種類を実行します。**
+### <a name="webcam"></a>Web カメラ
 
--   カード リーダーに挿入された Athena T0 カードにデータを読み書きします。
+#### <a name="requirements"></a>必要条件
 
-### <a href="" id="-sensors"></a>
+* テスト用の特別な要件はありません。
 
-| センサー |
-|---------|
-|         |
-
-**要件:**
-
--   GPS デバイスは、GPS 信号が適切な場所でテストする必要があります。
-
-### <a href="" id="-volume"></a>
-
-| [ボリューム] |
-|--------|
-|        |
-
-**要件:**
-
--   ボリュームには、割り当てられたドライブ文字があります。
--   ボリュームには、5 MB の空き領域があります。
--   ボリュームが書き込み-保護されていません。
--   メディアでは、デバイスに存在します。
+    > [!NOTE]
+    > Web カメラ デバイス用のプラグインの単純な I/O では、依存関係を持つ MFPlat.dll ファイルでは、Media Player と関連テクノロジ、Windows 7 の N または Windows 7 KN などが含まれていない Windows のバージョンでは使用できません。 これらのバージョンの Windows で、Media Feature Pack をインストールする必要があります。 Media Feature Pack は、ダウンロードできます。 詳細については、次を参照してください。 [KB 記事 968211](https://go.microsoft.com/fwlink/p/?linkid=266437)します。
 
 **プラグインの I/O の種類を実行します。**
 
--   WDTF というディレクトリを作成します。\_ボリューム\_IO SimpleIO.tmp と呼ばれるファイルを作成します。 呼び出して、I/O が実行される[ **ReadFile** ](https://msdn.microsoft.com/library/windows/desktop/aa365467)と[ **WriteFile** ](https://msdn.microsoft.com/library/aa365747)このファイルへの Api。
+* ビデオをキャプチャするのにには、メディア ファンデーション インターフェイスを使用します。
 
-**テストの失敗をトリアージする方法。**
+### <a name="wlan"></a>WLAN
 
--   テスト コンピューター上のドライブに移動し、ドライブの内容にアクセスできることを確認します。
--   ドライブにファイルを保存しようとしてください。 保存して簡単にアクセスできることを確認します。
--   この単純な I/O プラグインは、Win32 を使用して[ **CreateFile**](https://msdn.microsoft.com/library/windows/desktop/aa363858)、 [ **WriteFile**](https://msdn.microsoft.com/library/windows/desktop/aa365747)、 [ **ReadFile**](https://msdn.microsoft.com/library/windows/desktop/aa365467)関数。 返されたエラーは、これらの Api からの最も可能性の高い Win32 エラー コードです。
+#### <a name="requirements"></a>必要条件
 
-### <a href="" id="-webcam"></a>
+* 参照してください[デバイス基本テストによってログに記録されるトラブルシューティング WLAN SimpleIO プラグイン エラー](https://go.microsoft.com/fwlink/p/?linkid=309556) HCK ドキュメント。
 
-| Web カメラ |
-|--------|
-|        |
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
-**要件:**
+* 参照してください[デバイス基本テストによってログに記録されるトラブルシューティング WLAN SimpleIO プラグイン エラー](https://go.microsoft.com/fwlink/p/?linkid=309556) HCK ドキュメント。
 
--   テスト用の特別な要件はありません。
+#### <a name="how-to-triage-test-failures"></a>テストの失敗をトリアージする方法
 
-    **注**web カメラ デバイス用のプラグイン単純な I/O では、依存関係を持つ MFPlat.dll ファイルでは、Media Player と関連テクノロジ、Windows 7 の N または Windows 7 KN などが含まれていない Windows のバージョンでは使用できません。 これらのバージョンの Windows で、Media Feature Pack をインストールする必要があります。 Media Feature Pack は、ダウンロードできます。 詳細については、次を参照してください。 [KB 記事 968211](https://go.microsoft.com/fwlink/p/?linkid=266437)します。
+* 参照してください[デバイス基本テストによってログに記録されるトラブルシューティング WLAN SimpleIO プラグイン エラー](https://go.microsoft.com/fwlink/p/?linkid=309556) HCK ドキュメント。
 
+### <a name="usb-controller-and-hub-with-mutt"></a>USB コント ローラーと mutt ハブ
 
+#### <a name="requirements"></a>必要条件
 
-**プラグインの I/O の種類を実行します。**
-
--   ビデオをキャプチャするのにには、メディア ファンデーション インターフェイスを使用します。
-
-### <a href="" id="-wlan"></a>
-
-| WLAN |
-|------|
-|      |
-
-**要件:**
-
--   参照してください[デバイス基本テストによってログに記録されるトラブルシューティング WLAN SimpleIO プラグイン エラー](https://go.microsoft.com/fwlink/p/?linkid=309556) HCK ドキュメント。
-
-**プラグインの I/O の種類を実行します。**
-
--   参照してください[デバイス基本テストによってログに記録されるトラブルシューティング WLAN SimpleIO プラグイン エラー](https://go.microsoft.com/fwlink/p/?linkid=309556) HCK ドキュメント。
-
-**テストの失敗をトリアージする方法。**
-
--   参照してください[デバイス基本テストによってログに記録されるトラブルシューティング WLAN SimpleIO プラグイン エラー](https://go.microsoft.com/fwlink/p/?linkid=309556) HCK ドキュメント。
-
-### <a href="" id="-usb-mutt"></a>
-
-| USB コント ローラーと mutt ハブ |
-|----------------------------------|
-|                                  |
-
-**要件:**
-
--   テスト用の特別な要件はありません。
+* テスト用の特別な要件はありません。
 
     デバイスでは、シンボリック リンクがあります。
 
-**プラグインの I/O の種類を実行します。**
+#### <a name="type-of-io-plug-in-performs"></a>プラグインの I/O の種類を実行します
 
--   USB 転送は、Microsoft USB Test Tool (MUTT) デバイスを使用してテストします。 転送の種類の説明は、コントロール、一括でアイソクロナス、割り込み、ストリーム (SuperMUTT は、USB 3.0 コント ローラーに接続されている) 場合のみ
+* USB 転送は、Microsoft USB Test Tool (MUTT) デバイスを使用してテストします。 転送の種類の説明は、コントロール、一括でアイソクロナス、割り込み、ストリーム (SuperMUTT は、USB 3.0 コント ローラーに接続されている) 場合のみ
 
-**テストの失敗をトリアージする方法。**
+#### <a name="how-to-triage-test-failures"></a>テストの失敗をトリアージする方法
 
--   テストのログ ファイル内のメッセージを調べることで開始します。
--   さらに、USB 2.0 および 3.0 の USB スタックで Event Tracing for Windows (ETW) を有効にして調査します。
-    -   USB 2.0 では、Microsoft Windows USB コア チーム ブログ - を参照してください[、Windows 7 の USB core スタックでの ETW。](https://go.microsoft.com/fwlink/p/?linkid=266442)
-    -   USB 3.0 では、Microsoft Windows USB コア チーム ブログ - を参照してください[をキャプチャし、Windows 8 の USB の ETW トレースを読み取る方法。]( https://go.microsoft.com/fwlink/p/?linkid=266443)
+* テストのログ ファイル内のメッセージを調べることで開始します。
+* さらに、USB 2.0 および 3.0 の USB スタックで Event Tracing for Windows (ETW) を有効にして調査します。
+  * USB 2.0 では、Microsoft Windows USB コア チーム ブログ - を参照してください[、Windows 7 の USB core スタックでの ETW。](https://go.microsoft.com/fwlink/p/?linkid=266442)
+  * USB 3.0 では、Microsoft Windows USB コア チーム ブログ - を参照してください[をキャプチャし、Windows 8 の USB の ETW トレースを読み取る方法。]( https://go.microsoft.com/fwlink/p/?linkid=266443)
 
 ## <a name="device-fundamental-tests-that-have-specific-device-configuration-requirements"></a>特定のデバイスの構成要件がある基本的なデバイス テスト
 
+次を実行する前に[デバイス基本テスト](https://docs.microsoft.com/windows-hardware/drivers)要件、特定のデバイスの種類の説明に従って、テスト コンピューター上のデバイスを構成する必要があります。 一覧を参照してください。 [、指定された単純な I/O プラグインとデバイスの要件。](#provided-simple-io-plugins-and-device-requirements-for-testing-and-tips-for-troubleshooting)
 
-次を実行する前に[デバイス基本テスト](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)要件、特定のデバイスの種類の説明に従って、テスト コンピューター上のデバイスを構成する必要があります。 一覧を参照してください。 [、指定された単純な I/O プラグインとデバイスの要件。](#-provided-io-plugin-list)
-
--   PCI ルート ポート突然削除を行うテスト (PCI デバイスのみ)
--   Device Path Exerciser テスト (認定)
--   スリープと PNP (無効および有効にする) (認定) の前後に IO の前に
--   プラグ アンド プレイ ドライバーのテスト (認定)
--   同時実行ハードウェアおよびオペレーティング システム (CHAOS) のテスト (認定)
--   (認定) の前後に IO を再インストールします。
--   Device install Check ファイル システムの整合性 (認定) のインストールします。
--   Device install Check 他のデバイスの安定性 (認定) のインストールします。
+* PCI ルート ポート突然削除を行うテスト (PCI デバイスのみ)
+* Device Path Exerciser テスト (認定)
+* スリープと PNP (無効および有効にする) (認定) の前後に IO の前に
+* プラグ アンド プレイ ドライバーのテスト (認定)
+* 同時実行ハードウェアおよびオペレーティング システム (CHAOS) のテスト (認定)
+* (認定) の前後に IO を再インストールします。
+* Device install Check ファイル システムの整合性 (認定) のインストールします。
+* Device install Check 他のデバイスの安定性 (認定) のインストールします。
 
 ## <a name="related-topics"></a>関連トピック
-[Device Fundamental のテスト](https://msdn.microsoft.com/library/windows/hardware/jj673011)  
-[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)  
-[コマンド プロンプトから実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)  
-[テストを選択し、デバイスの基本を構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)  
-[デバイス基礎テストのトラブルシューティング](https://msdn.microsoft.com/windows-drivers/develop/troubleshooting_the_device_fundamental_tests)  
 
-
-
+[Device Fundamental のテスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-fundamentals-tests)  
+[Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)  
+[コマンド プロンプトから実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)  
+[テストを選択し、デバイスの基本を構成する方法](https://docs.microsoft.com/windows-hardware/drivers)  
+[デバイス基礎テストのトラブルシューティング](https://docs.microsoft.com/windows-hardware/drivers)  

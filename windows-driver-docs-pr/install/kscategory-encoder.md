@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1c46404759531fd809ee04b6625891b2b611debe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc49bb97a74d836df57a69d85740c29f29956cfc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365839"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374218"
 ---
 # <a name="kscategoryencoder"></a>KSCATEGORY_ENCODER
 
 
-KSCATEGORY_ENCODER[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)データ エンコード (KS) 機能のカテゴリ。
+KSCATEGORY_ENCODER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)データ エンコード (KS) 機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ KS デバイス用のドライバーでは、オペレーティング システ�
 
 INF ファイルでこの機能のカテゴリを登録する方法の例は、次を参照してください。、 *Bdan.inf* INF ファイルでのソフトウェアのチューナー サンプルに含まれている、 *src/swtuner/algtuner* WDK のディレクトリ。
 
-エンコーダーの詳細については、次を参照してください。[エンコーダー デバイス](https://msdn.microsoft.com/library/windows/hardware/ff559535)と[エンコーダーのインストールと登録](https://msdn.microsoft.com/library/windows/hardware/ff559551)します。
+エンコーダーの詳細については、次を参照してください。[エンコーダー デバイス](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-devices)と[エンコーダーのインストールと登録](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-installation-and-registration)します。
 
 <a name="requirements"></a>必要条件
 ------------

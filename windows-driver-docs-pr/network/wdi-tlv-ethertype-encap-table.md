@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_ETHERTYPE_ENCAP_TABLE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 09984b650f05b0c6b455ac3a308f1bc7a8cc1e5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10a5c91693127604ab26407550b6ffdc03110564
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358551"
 ---
 # <a name="wditlvethertypeencaptable"></a>WDI\_TLV\_ETHERTYPE\_全て\_テーブル
 
@@ -33,11 +33,11 @@ WDI\_TLV\_ETHERTYPE\_全て\_テーブルは、アソシエーションの Ether
 
 | 型                                                                                       | 説明                                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_ETHERTYPE\_カプセル化\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn897818)\[\] | 配列の[ **WDI\_ETHERTYPE\_カプセル化\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/dn897818)関連付け Ethertype カプセル化を指定する要素。 |
+| [**WDI\_ETHERTYPE\_カプセル化\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_ethertype_encapsulation_entry)\[\] | 配列の[ **WDI\_ETHERTYPE\_カプセル化\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_ethertype_encapsulation_entry)関連付け Ethertype カプセル化を指定する要素。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

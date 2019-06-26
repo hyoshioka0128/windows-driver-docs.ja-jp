@@ -6,12 +6,12 @@ keywords:
 - 出力ストリームの WDK DVD デコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7b2ade7a2ee476a87b46944adc8fe03f56d1fa5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 732f192f3ff95a972cd9ca6941162a64a1f6585c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372336"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370396"
 ---
 # <a name="output-streams"></a>出力ストリーム
 
@@ -54,7 +54,7 @@ ms.locfileid: "63372336"
 
  
 
-カーネル モード インターフェイスでは、ビデオ ポート (VPE) の拡張機能設定の制御を提供します。 詳細については、次を参照してください。[ビデオ ポート拡張機能のバック グラウンド](https://msdn.microsoft.com/library/windows/hardware/ff570536)します。
+カーネル モード インターフェイスでは、ビデオ ポート (VPE) の拡張機能設定の制御を提供します。 詳細については、次を参照してください。[ビデオ ポート拡張機能のバック グラウンド](https://docs.microsoft.com/windows-hardware/drivers/display/video-port-extensions-background)します。
 
 次の表では、クローズド キャプション (CC) 出力ストリーム メディアを Dvd で使用される型について説明します。
 
@@ -91,7 +91,7 @@ ms.locfileid: "63372336"
 
  
 
-200 (小数) でのフレーム サイズ、 **SampleSize**のメンバー、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)構造を指定する必要があります。 詳細については、次を参照してください。[クローズド キャプション ストリーム](closed-captioning-streams.md)します。
+200 (小数) でのフレーム サイズ、 **SampleSize**のメンバー、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)構造を指定する必要があります。 詳細については、次を参照してください。[クローズド キャプション ストリーム](closed-captioning-streams.md)します。
 
  
 

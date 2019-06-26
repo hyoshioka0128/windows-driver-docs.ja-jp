@@ -14,12 +14,12 @@ keywords:
 - 状態値 WDK テープ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06195bcdc418417fb497bdbacb6d9313d8af51b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a24ef7f36076e3816e4d1826fb6232f8cfff6af5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366274"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369580"
 ---
 # <a name="processing-tape-device-control-requests"></a>テープ デバイス制御要求の処理
 
@@ -27,7 +27,7 @@ ms.locfileid: "63366274"
 ## <span id="ddk_processing_tape_device_control_requests_kg"></span><span id="DDK_PROCESSING_TAPE_DEVICE_CONTROL_REQUESTS_KG"></span>
 
 
-すべてのテープ miniclass ドライバーに記載した値を使用して状態を報告する必要があります、 [**テープ\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567975)列挙子。 ただし、テープのクラス ドライバーには、I/O のコントロール要求が完了するは、対応する NT ステータス値を使用して状態を報告します。 次の表に、テープの間のマッピング\_状態の値とその同等 NT 状態の値。
+すべてのテープ miniclass ドライバーに記載した値を使用して状態を報告する必要があります、 [**テープ\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/minitape/ne-minitape-_tape_status)列挙子。 ただし、テープのクラス ドライバーには、I/O のコントロール要求が完了するは、対応する NT ステータス値を使用して状態を報告します。 次の表に、テープの間のマッピング\_状態の値とその同等 NT 状態の値。
 
 <table>
 <colgroup>

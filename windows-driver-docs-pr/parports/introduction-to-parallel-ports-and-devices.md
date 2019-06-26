@@ -9,12 +9,12 @@ keywords:
 - 並列デバイス WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83915f7f1db60def28425c00ecaff99708889b3e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a69bf5e6712fead3dfbab391dcffdfd5951a85d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373534"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358531"
 ---
 # <a name="introduction-to-parallel-ports-and-devices"></a>パラレル ポートとデバイスの概要
 
@@ -50,7 +50,7 @@ ms.locfileid: "63373534"
 
 [ベンダー提供のパラレル ドライバー](vendor-supplied-parallel-drivers.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

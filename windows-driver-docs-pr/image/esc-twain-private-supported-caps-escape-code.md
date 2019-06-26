@@ -4,12 +4,12 @@ description: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS エスケープ コード
 ms.assetid: 99b9f180-018b-47c4-ab8d-dc037e3f637a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e250621e82cef9d7ae5362c2d9db530c15816c40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eee0578916952fdc980935a9ced62dfbfcbf0108
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373184"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370044"
 ---
 # <a name="esctwainprivatesupportedcaps-escape-code"></a>ESC\_TWAIN\_プライベート\_サポートされている\_CAP エスケープ コード
 
@@ -17,7 +17,7 @@ ms.locfileid: "63373184"
 
 
 
-プライベート TWAIN でサポートされている機能を決定するために TWAIN アプリケーションに通知し、esc キーを送信する TWAIN 互換性レイヤー\_TWAIN\_プライベート\_サポートされている\_CAP、WIA にコードをエスケープします。ドライバーの[ **IStiUSD::Escape** ](https://msdn.microsoft.com/library/windows/hardware/ff543815)メソッド。 次の擬似コードの実装、**エスケープ**メソッドは、ESC に反応する必要があります\_TWAIN\_プライベート\_サポートされている\_CAP エスケープ コードをレポートするプライベート TWAIN サポート機能。
+プライベート TWAIN でサポートされている機能を決定するために TWAIN アプリケーションに通知し、esc キーを送信する TWAIN 互換性レイヤー\_TWAIN\_プライベート\_サポートされている\_CAP、WIA にコードをエスケープします。ドライバーの[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)メソッド。 次の擬似コードの実装、**エスケープ**メソッドは、ESC に反応する必要があります\_TWAIN\_プライベート\_サポートされている\_CAP エスケープ コードをレポートするプライベート TWAIN サポート機能。
 
 **注**   、**エスケープ**この例で示したものと同じ[ESC\_TWAIN\_機能エスケープ コード](esc-twain-capability-escape-code.md)ですのフォーカス各サンプルは、別のエスケープ コードです。
 

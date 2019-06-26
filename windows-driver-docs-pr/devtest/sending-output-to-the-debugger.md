@@ -11,12 +11,12 @@ keywords:
 - ルーチンのデバッグは、WDK の出力
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f08e07d8a7cacbcc9ed7ff7f69e862b497867fb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca4cd449ab950ca82c8a4c9719c076525cc020a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352412"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374426"
 ---
 # <a name="sending-output-to-the-debugger"></a>デバッガーへの出力の送信
 
@@ -42,15 +42,15 @@ VOID OutputDebugString(
 
 ### <a name="span-idkernelmodeoutputroutinesspanspan-idkernelmodeoutputroutinesspankernel-mode-output-routines"></a><span id="kernel_mode_output_routines"></span><span id="KERNEL_MODE_OUTPUT_ROUTINES"></span>カーネル モード出力ルーチン
 
-[**による DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)ルーチンでは、デバッガー ウィンドウに出力が表示されます。 このルーチンには、basic がサポートしている**printf**パラメーターの書式を設定します。 カーネル モード ドライバーのみが呼び出せる**による DbgPrint**します。
+[**による DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)ルーチンでは、デバッガー ウィンドウに出力が表示されます。 このルーチンには、basic がサポートしている**printf**パラメーターの書式を設定します。 カーネル モード ドライバーのみが呼び出せる**による DbgPrint**します。
 
-[ **DbgPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff543634)ルーチンはのような**による DbgPrint**に、メッセージの「タグ」ことができます。 デバッガーを実行するときに送信する特定のタグを持つメッセージのみを許可することができます。 これにより、興味のあるメッセージだけを表示することができます。 詳細については、次を参照してください。[読み取りとデバッグ メッセージをフィルター処理](reading-and-filtering-debugging-messages.md)します。
+[ **DbgPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprintex)ルーチンはのような**による DbgPrint**に、メッセージの「タグ」ことができます。 デバッガーを実行するときに送信する特定のタグを持つメッセージのみを許可することができます。 これにより、興味のあるメッセージだけを表示することができます。 詳細については、次を参照してください。[読み取りとデバッグ メッセージをフィルター処理](reading-and-filtering-debugging-messages.md)します。
 
 **注**  で Windows Vista と以降のバージョンの Windows、**による DbgPrint**が生成されますがメッセージにもタグ付けします。 以前のバージョンの Windows、**による DbgPrint**タグなしのメッセージを生成します。
 
  
 
-[ **KdPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff548092)と[ **KdPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548100)マクロと同じ**による DbgPrint**と**DbgPrintEx**それぞれチェック ビルド環境でコンパイルされた場合。 無料のビルド環境でコンパイルすると、影響ありません。
+[ **KdPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)と[ **KdPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)マクロと同じ**による DbgPrint**と**DbgPrintEx**それぞれチェック ビルド環境でコンパイルされた場合。 無料のビルド環境でコンパイルすると、影響ありません。
 
  
 

@@ -4,12 +4,12 @@ description: オーディオ ポート オブジェクトのインターフェ�
 ms.assetid: 16026a03-4859-4fe8-a106-0d8a2b2a7f14
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40abbf4a9f00d2492da8106a2b40d0c5b9ee17f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df7b91e6fafc30108846aab2a161572a61f89d45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355683"
 ---
 # <a name="audio-port-object-interfaces"></a>オーディオ ポート オブジェクトのインターフェイス
 
@@ -21,29 +21,29 @@ ms.locfileid: "63331424"
 
 -   **IPort**、他のすべてのオーディオ ポート オブジェクト インターフェイスの派生元の基本型であります。
 
--   オーディオ ポート オブジェクトの Dmu、MIDI、トポロジ、WaveCyclic、WavePci および WaveRT ポート ドライバー インターフェイスを提供します (を参照してください[デバイスをサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff538398)) から派生する**IPort**
+-   オーディオ ポート オブジェクトの Dmu、MIDI、トポロジ、WaveCyclic、WavePci および WaveRT ポート ドライバー インターフェイスを提供します (を参照してください[デバイスをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/audio/supporting-a-device)) から派生する**IPort**
 
-オーディオ ポート オブジェクトのインターフェイスは、ポート ドライバーは、ミニポート ドライバーに提示する主なインターフェイスです。 アダプターのドライバーでは、そのデバイスのポートおよびミニポートのドライバーをまとめてバインドすることによって、オーディオ デバイスの KS フィルターを形成します。 オーディオ ポート オブジェクトの呼び出し、割り当てを行う[ **iport::init** ](https://msdn.microsoft.com/library/windows/hardware/ff536943)メソッドとオーディオ ミニポート オブジェクトへの参照を呼び出しのパラメーターとして渡します。 コード例で[サブデバイス作成](https://msdn.microsoft.com/library/windows/hardware/ff538390)このプロセスを示しています。
+オーディオ ポート オブジェクトのインターフェイスは、ポート ドライバーは、ミニポート ドライバーに提示する主なインターフェイスです。 アダプターのドライバーでは、そのデバイスのポートおよびミニポートのドライバーをまとめてバインドすることによって、オーディオ デバイスの KS フィルターを形成します。 オーディオ ポート オブジェクトの呼び出し、割り当てを行う[ **iport::init** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iport-init)メソッドとオーディオ ミニポート オブジェクトへの参照を呼び出しのパラメーターとして渡します。 コード例で[サブデバイス作成](https://docs.microsoft.com/windows-hardware/drivers/audio/subdevice-creation)このプロセスを示しています。
 
 このセクションでは、次のオーディオ ポート オブジェクトのインターフェイスについて説明します。
 
-[IPort](https://msdn.microsoft.com/library/windows/hardware/ff536842)
+[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iport)
 
-[IPortClsPower](https://msdn.microsoft.com/library/windows/hardware/ff536844)
+[IPortClsPower](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclspower)
 
-[IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)
+[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)
 
-[IPortMidi](https://msdn.microsoft.com/library/windows/hardware/ff536891)
+[IPortMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportmidi)
 
-[IPortTopology](https://msdn.microsoft.com/library/windows/hardware/ff536896)
+[IPortTopology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iporttopology)
 
-[IPortWaveCyclic](https://msdn.microsoft.com/library/windows/hardware/ff536899)
+[IPortWaveCyclic](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportwavecyclic)
 
-[IPortWavePci](https://msdn.microsoft.com/library/windows/hardware/ff536905)
+[IPortWavePci](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536905(v=vs.85))
 
-[IPortWaveRT](https://msdn.microsoft.com/library/windows/hardware/ff536920)
+[IPortWaveRT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportwavert)
 
-[IPortWMIRegistration](https://msdn.microsoft.com/library/windows/hardware/ff536935)
+[IPortWMIRegistration](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportwmiregistration)
 
  
 

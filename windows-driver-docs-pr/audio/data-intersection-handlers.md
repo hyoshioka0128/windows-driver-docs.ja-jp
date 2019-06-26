@@ -20,12 +20,12 @@ keywords:
 - ポート ドライバー WDK オーディオ、積集合のデータ ハンドラー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c35d9e78a4049ab989b137ac5600005b0829528
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc0b8c35dc0eff3c941ce1665f1240148aa54613
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333823"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359093"
 ---
 # <a name="data-intersection-handlers"></a>データ交差ハンドラー
 
@@ -33,7 +33,7 @@ ms.locfileid: "63333823"
 ## <span id="data_intersection_handlers"></span><span id="DATA_INTERSECTION_HANDLERS"></span>
 
 
-このセクションでは、Microsoft Windows Driver Model (WDM) オーディオ ドライバーの交差部分のデータ ハンドラーについて説明します。 データ交差 KS の処理に関する幅広い議論については、一般にフィルターを参照してください[AVStream の交差部分を DataRange](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
+このセクションでは、Microsoft Windows Driver Model (WDM) オーディオ ドライバーの交差部分のデータ ハンドラーについて説明します。 データ交差 KS の処理に関する幅広い議論については、一般にフィルターを参照してください[AVStream の交差部分を DataRange](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)します。
 
 Windows XP などの Windows の旧バージョンで、 [SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)を構築します、[仮想のオーディオ デバイス](virtual-audio-devices.md)オーディオ フィルター ピンのペアをフォームに組み合わせることで、[オーディオ フィルターグラフ](audio-filter-graphs.md)します。 1 つのフィルターでソース pin は、別のシンクのピンに接続する、前に、SysAudio は 2 つの pin を使用してデータを交換する一般的な形式をネゴシエートする必要があります。 このネゴシエーションの詳細については、個別のフィルターで実装されているデータ交差ハンドラーに委任されます大きくします。
 

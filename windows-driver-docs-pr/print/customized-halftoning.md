@@ -9,12 +9,12 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffa9b44578ae34ecba3124c2af4232ab8d32497a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b7d62bd8542cf4caea7570e5d643d40ef294a06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369826"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372398"
 ---
 # <a name="customized-halftoning"></a>カスタマイズされたハーフトーン
 
@@ -32,15 +32,15 @@ Unidrv は GDI や、プリンター デバイスを使ってハーフトーン�
 
 ### <a href="" id="ddk-customized-halftone-patterns-gg"></a>カスタマイズされたハーフトーン パターン
 
-ハーフトーン パターンを指定するにはリソース DLL を生成したりできますにプラグインを表示して実装する、 [ **IPrintOemUni::HalftonePattern** ](https://msdn.microsoft.com/library/windows/hardware/ff554258)メソッド。 このメソッドのリファレンス ページは、ハーフトーン パターンを生成する方法の例を示します。
+ハーフトーン パターンを指定するにはリソース DLL を生成したりできますにプラグインを表示して実装する、 [ **IPrintOemUni::HalftonePattern** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)メソッド。 このメソッドのリファレンス ページは、ハーフトーン パターンを生成する方法の例を示します。
 
-[**IPrintOemUni::HalftonePattern** ](https://msdn.microsoft.com/library/windows/hardware/ff554258)次のいずれかが true の場合に実装する必要があります。
+[**IPrintOemUni::HalftonePattern** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)次のいずれかが true の場合に実装する必要があります。
 
 -   カスタマイズされたパターンがリソース DLL で提供されており、パターンが暗号化されます。
 
--   カスタマイズしたパターンは、リソース DLL では提供されません。 によって生成される代わりに、 [ **IPrintOemUni::HalftonePattern**](https://msdn.microsoft.com/library/windows/hardware/ff554258)します。
+-   カスタマイズしたパターンは、リソース DLL では提供されません。 によって生成される代わりに、 [ **IPrintOemUni::HalftonePattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)します。
 
-[ **IPrintOemUni::HalftonePattern** ](https://msdn.microsoft.com/library/windows/hardware/ff554258)メソッドの目的を GDI に渡されます Unidrv に使用可能なハーフトーン パターンを返します。 メソッドは、暗号化された形式でのリソース DLL に格納されているパターンをデコードできるか、または実行中に、パターンを生成できます。
+[ **IPrintOemUni::HalftonePattern** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)メソッドの目的を GDI に渡されます Unidrv に使用可能なハーフトーン パターンを返します。 メソッドは、暗号化された形式でのリソース DLL に格納されているパターンをデコードできるか、または実行中に、パターンを生成できます。
 
 実装する場合、 **IPrintOemUni::HalftonePattern**ファイルを含める必要があります、\*各ハーフトーン HTCallbackID 属性\*なカスタマイズされたパターンのハーフトーン メソッドを指定したエントリのオプションこのオプションを使用するとします。
 
@@ -50,13 +50,13 @@ Unidrv は GDI や、プリンター デバイスを使ってハーフトーン�
 
 Unidrv を使用するプリンター、カスタマイズしたハーフトーン メソッドを実装するコードを提供する手順は次のとおりです。
 
-1.  実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)メソッド。
+1.  実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッド。
 
 2.  含めるハーフトーン\*に含まれている各プリンターの GPD ファイル内のエントリを機能\*ハーフトーン メソッドを表すエントリのオプションします。 (Standard、およびカスタマイズされたハーフトーン メソッド両方に指定できます。)
 
-[ **IPrintOemUni::ImageProcessing** ](https://msdn.microsoft.com/library/windows/hardware/ff554261)メソッドは入力として GDI ビットマップを受け取ります。 メソッドは、現在選択されているハーフトーン メソッドに基づいて、ハーフトーン操作を実行し、Unidrv に、結果のビットマップを返す必要があります。
+[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)メソッドは入力として GDI ビットマップを受け取ります。 メソッドは、現在選択されているハーフトーン メソッドに基づいて、ハーフトーン操作を実行し、Unidrv に、結果のビットマップを返す必要があります。
 
-レンダリングのプラグインを実装する場合[ **IPrintOemUni::ImageProcessing**](https://msdn.microsoft.com/library/windows/hardware/ff554261)も実装できます、 [ **IPrintOemUni::MemoryUsage** ](https://msdn.microsoft.com/library/windows/hardware/ff554264).
+レンダリングのプラグインを実装する場合[ **IPrintOemUni::ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)も実装できます、 [ **IPrintOemUni::MemoryUsage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-memoryusage).
 
 ハーフトーンの詳細については、次を参照してください。 [Unidrv のハーフトーン](halftoning-with-unidrv.md)します。
 

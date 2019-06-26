@@ -4,12 +4,12 @@ description: MSiSCSI\_InitiatorLoginStatistics WMI クラス
 ms.assetid: cbbfdc11-2c8a-4afa-b62f-187f8c959750
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 32e040c50bee6f3a12c8e2209f961788a5f1a6e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 059387eb0d3cee259ff723582dbcabff61634da6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365252"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370456"
 ---
 # <a name="msiscsiinitiatorloginstatistics-wmi-class"></a>MSiSCSI\_InitiatorLoginStatistics WMI クラス
 
@@ -100,7 +100,7 @@ class MSiSCSI_InitiatorLoginStatistics : Win32_PerfRawData {
 };
 ```
 
-WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_InitiatorLoginStatistics** ](https://msdn.microsoft.com/library/windows/hardware/ff563040)データ構造体。
+WMI ツールのスイートでは、上記のクラス定義をコンパイルするときに生成、 [ **MSiSCSI\_InitiatorLoginStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_initiatorloginstatistics)データ構造体。
 
  
 

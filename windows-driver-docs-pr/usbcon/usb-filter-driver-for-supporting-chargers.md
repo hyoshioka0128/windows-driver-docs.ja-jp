@@ -3,12 +3,12 @@ Description: 関数のコント ローラーの USB 充電器をサポートし�
 title: USB 充電器をサポートする USB フィルター ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c7b689d5ea194b1464fe8092e56d9548669f863
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fea9c84554a959cfd0734a9fcf5d66916521cfd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354084"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356591"
 ---
 # <a name="usb-filter-driver-for-supporting-usb-chargers"></a>USB 充電器をサポートする USB フィルター ドライバー
 
@@ -16,7 +16,7 @@ ms.locfileid: "63354084"
 
 USB 関数呼び出し履歴は、スマート フォンまたはタブレットでは、ホストと USB バッテリの充電 (BC) 1.2 仕様で定義された、USB 充電器に接続すると請求をなど、デバイスを使用します。 
 
-- 2 つの種類のデバイスが充電中に使用できるポートがあります。 デバイスは、使用、デバイスに付属する充電器で専用充電ポート (DCP) から請求できます。 または、デバイスは、ダウン ストリームの標準のポートまたは PC にデバイスが接続されている場合は、下流のポートを充電からことができます。 そのような場合の両方が準拠して、 [USB BC 1.2 仕様](http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf)します。 
+- 2 つの種類のデバイスが充電中に使用できるポートがあります。 デバイスは、使用、デバイスに付属する充電器で専用充電ポート (DCP) から請求できます。 または、デバイスは、ダウン ストリームの標準のポートまたは PC にデバイスが接続されている場合は、下流のポートを充電からことができます。 そのような場合の両方が準拠して、 [USB BC 1.2 仕様](https://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf)します。 
 - 特定の充電器は、仕様に従っていません。 その独自の USB 充電器から請求するデバイスを USB 関数スタックにできます。 
 
 仕様に準拠していませんし、独自の充電器をサポートするには、これらの操作が必要です。 

@@ -12,12 +12,12 @@ keywords:
 - 検証結果の WDK Static Driver Verifier
 ms.date: 04/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 922e804db8e60443d6df75a230d4d199677bd495
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f85f9192aefb7d79f4eed1a29923d4a7a37685bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356576"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373704"
 ---
 # <a name="interpreting-static-driver-verifier-results"></a>静的ドライバー検証ツールの結果の解釈
 
@@ -55,7 +55,7 @@ SDV は、規則違反のドライバーをテストまたはドライバーで�
 
 ドライバーは、エントリ ポイントを指定するルール モニターでは、この結果ことを示しています、SDV が見つかりませんでしたエントリ ポイントが正しく解釈されませんでした関数を呼び出すことが場合。 このような状況が発生したことを確認するを調べ、必要に応じて、修正、 [Sdv map.h](sdv-map-h.md)ファイル。 この手順については、次を参照してください。[ドライバーをスキャン](scanning-the-driver.md)します。
 
-各ルールの詳細については、次を参照してください。、[静的ドライバー検証規則](https://msdn.microsoft.com/library/windows/hardware/ff551714)参照。
+各ルールの詳細については、次を参照してください。、[静的ドライバー検証規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)参照。
 
 さらに、ドライバーを確認するには、さまざまな規則を使用して検証を実行します。
 
@@ -65,10 +65,10 @@ SDV は、各ルールの検証の制限時間を超えたため、ルールの�
 タイムアウトは、結果が不確定の結果と見なされます。 ドライバーのエラーは示されません。 SDV は、タイムアウトを報告する場合は、検証が許可された期間を拡張 (、 **SDV\_SlamConfig\_タイムアウト**sdv default.xmlfile 内の値) もう一度検証を実行します。
 
 <span id="Completed__Property_"></span><span id="completed__property_"></span><span id="COMPLETED__PROPERTY_"></span>**完了した (プロパティ)**  
-SDV は、指定されたドライバーのドライバーのプロパティ規則を実行します。 ドライバーのプロパティ規則は、ドライバーの機能を確認しますまたはサポートされる機能、さらに詳しい分析の準備をいます。 ドライバーのプロパティ規則など**CancelRoutine**、WDM ドライバーが登録されているかどうかにチェックを[*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742)ルーチン。 場合、*キャンセル*ルーチンが検出されない、特定の WDM ルールは適用されません。 これは、ドライバーのプロパティが満たされていないことを意味します。
+SDV は、指定されたドライバーのドライバーのプロパティ規則を実行します。 ドライバーのプロパティ規則は、ドライバーの機能を確認しますまたはサポートされる機能、さらに詳しい分析の準備をいます。 ドライバーのプロパティ規則など**CancelRoutine**、WDM ドライバーが登録されているかどうかにチェックを[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチン。 場合、*キャンセル*ルーチンが検出されない、特定の WDM ルールは適用されません。 これは、ドライバーのプロパティが満たされていないことを意味します。
 
 <span id="Satisfied__Property_"></span><span id="satisfied__property_"></span><span id="SATISFIED__PROPERTY_"></span>**満足 (プロパティ)**  
-SDV は、指定されたドライバーのドライバーのプロパティ規則を実行します。 ドライバーのプロパティ規則は、ドライバーの機能を確認しますまたはサポートされる機能、さらに詳しい分析の準備をいます。 ドライバーのプロパティ規則など**CancelRoutine**、WDM ドライバーが登録されているかどうかにチェックを[*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742)ルーチン。 場合、*キャンセル*ルーチンが検出されると、特定の WDM 規則が適用されます。 つまり、ドライバーのプロパティが満たされていること
+SDV は、指定されたドライバーのドライバーのプロパティ規則を実行します。 ドライバーのプロパティ規則は、ドライバーの機能を確認しますまたはサポートされる機能、さらに詳しい分析の準備をいます。 ドライバーのプロパティ規則など**CancelRoutine**、WDM ドライバーが登録されているかどうかにチェックを[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチン。 場合、*キャンセル*ルーチンが検出されると、特定の WDM 規則が適用されます。 つまり、ドライバーのプロパティが満たされていること
 
 <span id="Spaceouts"></span><span id="spaceouts"></span><span id="SPACEOUTS"></span>**Spaceouts**  
 SDV は、検証ルールを検証するためのメモリ制限を超えたために停止ルールの数。 メモリの制限が設定されて、[静的ドライバー検証ツールのオプション ファイル](static-driver-verifier-options-file.md)、sdv default.xml します。

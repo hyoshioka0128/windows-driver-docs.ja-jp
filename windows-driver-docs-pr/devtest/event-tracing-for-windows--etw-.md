@@ -9,12 +9,12 @@ keywords:
 - ソフトウェアの WDK、ETW トレース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d4aa30ba0d5de6f656fbf656381936be4e15b19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d256e7f7af602b70d003053ebc4fc48c97c38b94
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344805"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371372"
 ---
 # <a name="event-tracing-for-windows-etw"></a>Windows イベント トレーシング (ETW)
 
@@ -27,7 +27,7 @@ Event Tracing for Windows (ETW) は、ユーザー モード アプリケーシ�
 
 [カーネル モード ドライバーのトレース イベントを追加します。](adding-event-tracing-to-kernel-mode-drivers.md)
 
-[ETW カーネル モードの参照](https://msdn.microsoft.com/library/windows/hardware/ff545650)
+[ETW カーネル モードの参照](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff545650(v=vs.85))
 
  
 

@@ -3,21 +3,21 @@ Description: このトピックでは、KMDF 関数ドライバー サポート 
 title: USB KMDF 機能ドライバーにおけるセレクティブ サスペンド
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 04fc0d1cce9a9609e846c4fcbe2729b5c529f212
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf0c54bb18bf38cd52966274b68e335b729c0199
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379512"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358341"
 ---
 # <a name="selective-suspend-in-usb-kmdf-function-drivers"></a>USB KMDF 機能ドライバーにおけるセレクティブ サスペンド
 
 
 **重要な API**
 
--   [**WdfDeviceAssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545903)
--   [**WdfDeviceAssignSxWakeSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545909)
--   [**WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)
+-   [**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)
+-   [**WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)
+-   [**WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)
 
 このトピックでは、KMDF 関数ドライバー サポート USB のセレクティブを中断する方法について説明します。
 
@@ -50,7 +50,7 @@ KMDF 関数のドライバー サポート オプションを選択する場合�
 
 アイドル タイムアウト期間が切れる前に、デバイス オブジェクトに属している電源管理対象のキューに、I/O 要求が到着すると、フレームワークはアイドル タイマーをキャンセルし、デバイスを一時停止しません。
 
-アイドル タイマーの期限が切れると、KMDF は中断状態に USB デバイスを配置するために必要な要求を発行します。 関数のドライバーでは、USB エンドポイントで継続的なリーダーを使用している場合、リーダーの繰り返されるポーリングは方向 KMDF アイドル タイマー アクティビティとしてはカウントされません。 ただしでは、 [ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)コールバック関数では、USB ドライバーを手動で停止、継続的なリーダーおよび電源管理のことを確認する対象でないキューによって供給される他の I/O ターゲット、ドライバーは、デバイスが稼働状態にないときに、I/O 要求を送信しません。 ターゲットをドライバーの呼び出しを停止する[ **WdfIoTargetStop** ](https://msdn.microsoft.com/library/windows/hardware/ff548680)指定と**WdfIoTargetWaitForSentIoToComplete**対象となるアクションとして。 応答では、フレームワークは、ターゲットの I/O キュー内にあるすべての I/O 要求が完了し、関連するすべてのコールバックが実行された I/O の完了後にのみに I/O ターゲットを停止します。
+アイドル タイマーの期限が切れると、KMDF は中断状態に USB デバイスを配置するために必要な要求を発行します。 関数のドライバーでは、USB エンドポイントで継続的なリーダーを使用している場合、リーダーの繰り返されるポーリングは方向 KMDF アイドル タイマー アクティビティとしてはカウントされません。 ただしでは、 [ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)コールバック関数では、USB ドライバーを手動で停止、継続的なリーダーおよび電源管理のことを確認する対象でないキューによって供給される他の I/O ターゲット、ドライバーは、デバイスが稼働状態にないときに、I/O 要求を送信しません。 ターゲットをドライバーの呼び出しを停止する[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)指定と**WdfIoTargetWaitForSentIoToComplete**対象となるアクションとして。 応答では、フレームワークは、ターゲットの I/O キュー内にあるすべての I/O 要求が完了し、関連するすべてのコールバックが実行された I/O の完了後にのみに I/O ターゲットを停止します。
 
 既定では、KMDF は D0 からデバイスがアイドル状態の設定で、ドライバーが指定されているデバイスの電源状態に遷移します。 移行の一環として、KMDF が別の電源切断シーケンスの場合と同様に、ドライバーの電源のコールバック関数を呼び出します。
 
@@ -58,7 +58,7 @@ KMDF 関数のドライバー サポート オプションを選択する場合�
 
 -   ドライバーの電源管理対象のキューのいずれかの I/O 要求が到着します。
 -   ユーザーが USB のセレクティブを無効にしますが、デバイス マネージャーを使用して中断します。
--   ドライバー呼び出し[ **WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)」の説明に従って、[デバイス中断の防止](#preventsusp)します。
+-   ドライバー呼び出し[ **WdfDeviceStopIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)」の説明に従って、[デバイス中断の防止](#preventsusp)します。
 
 デバイスを再開するには、KMDF はデバイス スタックの電源投入要求を送信し、別の電源投入シーケンスの場合と同様に、ドライバーのコールバック関数を呼び出します。
 
@@ -75,13 +75,13 @@ KMDF 関数のドライバー サポート オプションを選択する場合�
 
 **KMDF ドライバーでは関数の電源ポリシー設定を初期化しています**
 
-USB のセレクティブ サスペンドのサポートを構成する KMDF ドライバーを使用して、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff551270)構造体。 ドライバーは、まず、構造体を初期化する必要があり、ドライバーとそのデバイスの機能の詳細を提供するフィールドを設定できます。 この構造体でのドライバーが通常は、その*EvtDriverDeviceAdd*または*EvtDevicePrepareHardware*関数。
+USB のセレクティブ サスペンドのサポートを構成する KMDF ドライバーを使用して、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)構造体。 ドライバーは、まず、構造体を初期化する必要があり、ドライバーとそのデバイスの機能の詳細を提供するフィールドを設定できます。 この構造体でのドライバーが通常は、その*EvtDriverDeviceAdd*または*EvtDevicePrepareHardware*関数。
 
 **WDF を初期化するために\_デバイス\_POWER\_ポリシー\_IDLE\_設定の構造体**
 
-ドライバーを使用して、ドライバーでは、デバイス オブジェクトが作成された後、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff551271)関数、構造体を初期化します。 この関数は、2 つの引数を受け取ります。
+ドライバーを使用して、ドライバーでは、デバイス オブジェクトが作成された後、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)関数、構造体を初期化します。 この関数は、2 つの引数を受け取ります。
 
--   ポインター、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff551270)構造体を初期化します。
+-   ポインター、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)構造体を初期化します。
 -   サポートを示す列挙値を選択的な中断します。 ドライバーを指定する必要があります**IdleUsbSelectiveSuspend**します。
 
 ドライバーが指定されている場合**IdleUsbSelectiveSuspend**関数は次のように、構造体のメンバーを初期化します。
@@ -93,13 +93,13 @@ USB のセレクティブ サスペンドのサポートを構成する KMDF ド
 
 **USB のセレクティブの中断を構成するには**
 
-ドライバーが初期化された後、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff551270)構造、ドライバーを設定できます他のフィールドの構造と、呼び出しに**WdfDeviceAssignS0IdleSettings**フレームワークにこれらの設定を渡す。 次のフィールドは、USB ドライバーが関数に適用されます。
+ドライバーが初期化された後、 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)構造、ドライバーを設定できます他のフィールドの構造と、呼び出しに**WdfDeviceAssignS0IdleSettings**フレームワークにこれらの設定を渡す。 次のフィールドは、USB ドライバーが関数に適用されます。
 
 -   IdleTimeout: 間隔 (ミリ秒) フレームワークでは、アイドル状態のデバイスが考慮する前に、I/O 要求を受け取らずに経過する必要があります。 ドライバーは ULONG 値を指定できますか、既定値を確認できます。
 -   UserControlOfIdleSettings-ユーザーがデバイスのアイドル状態の設定を変更するかどうか。 使用可能な値には、IdleDoNotAllowUserControl および IdleAllowUserControl です。
 -   DxState-デバイスの電源状態をフレームワークには、デバイスが中断します。 指定できる値は、PowerDeviceD1、PowerDeviceD2、および PowerDeviceD3 は。
 
-    USB ドライバーでは、この値の初期設定は変更しないでください。 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff551271)関数では、この値を設定するにはPowerDeviceMaximum により、フレームワークがデバイスの機能に基づく適切な値を選択します。
+    USB ドライバーでは、この値の初期設定は変更しないでください。 [ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)関数では、この値を設定するにはPowerDeviceMaximum により、フレームワークがデバイスの機能に基づく適切な値を選択します。
 
 次のコード スニペットでは、Osrusbfx2 サンプル ドライバーの Device.c ファイルからです。
 
@@ -122,17 +122,17 @@ if ( !NT_SUCCESS(status)) {
 }
 ```
 
-例では、ドライバーが呼び出す[ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff551271)、指定する**IdleUsbSelectiveSuspend**します。 ドライバー セット**IdleTimeout** 10,000 ミリ秒 (10 秒) に、フレームワークの既定値を受け入れる**DxState**と**UserControlOfIdleSettings**します。 その結果がアイドル状態に管理者特権を持つユーザーを有効にするか、デバイスのアイドル状態のサポートを無効にできるようにする、デバイス マネージャーのプロパティ ページが作成されると、フレームワークは D3 の状態にデバイスを移行します。 ドライバーを呼び出して[ **WdfDeviceAssignS0IdleSettings** ](https://msdn.microsoft.com/library/windows/hardware/ff545903)をアイドル状態のサポートを有効にし、これらの設定をフレームワークに登録します。
+例では、ドライバーが呼び出す[ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdf_device_power_policy_idle_settings_init)、指定する**IdleUsbSelectiveSuspend**します。 ドライバー セット**IdleTimeout** 10,000 ミリ秒 (10 秒) に、フレームワークの既定値を受け入れる**DxState**と**UserControlOfIdleSettings**します。 その結果がアイドル状態に管理者特権を持つユーザーを有効にするか、デバイスのアイドル状態のサポートを無効にできるようにする、デバイス マネージャーのプロパティ ページが作成されると、フレームワークは D3 の状態にデバイスを移行します。 ドライバーを呼び出して[ **WdfDeviceAssignS0IdleSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)をアイドル状態のサポートを有効にし、これらの設定をフレームワークに登録します。
 
-ドライバーを呼び出すことができます[ **WdfDeviceAssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545903)のどの時点後、デバイス オブジェクトを作成します。 ほとんどのドライバーから最初にこのメソッドの呼び出しは、 *EvtDriverDeviceAdd*コールバック、これが必ずしも不可能または不適切もします。 ドライバーは、複数のデバイスまたはデバイスのバージョンをサポートする場合、ドライバー知らないことがありますすべてのデバイス機能、ハードウェアのクエリを実行するまでです。 呼び出し元を延期できるは、このようなドライバー **WdfDeviceAssignS0IdleSettings**まで、 *EvtDevicePrepareHardware*コールバック。
+ドライバーを呼び出すことができます[ **WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)のどの時点後、デバイス オブジェクトを作成します。 ほとんどのドライバーから最初にこのメソッドの呼び出しは、 *EvtDriverDeviceAdd*コールバック、これが必ずしも不可能または不適切もします。 ドライバーは、複数のデバイスまたはデバイスのバージョンをサポートする場合、ドライバー知らないことがありますすべてのデバイス機能、ハードウェアのクエリを実行するまでです。 呼び出し元を延期できるは、このようなドライバー **WdfDeviceAssignS0IdleSettings**まで、 *EvtDevicePrepareHardware*コールバック。
 
-呼び出し後、最初に、いつでも[ **WdfDeviceAssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545903)ドライバーは、アイドル タイムアウト値と、デバイスがアイドル状態、デバイスの状態を変更できます。 1 つまたは複数の設定を変更するドライバーだけを初期化します別[ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff551270)前述のように構造と呼び出し**WdfDeviceAssignS0IdleSettings**もう一度です。
+呼び出し後、最初に、いつでも[ **WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)ドライバーは、アイドル タイムアウト値と、デバイスがアイドル状態、デバイスの状態を変更できます。 1 つまたは複数の設定を変更するドライバーだけを初期化します別[ **WDF\_デバイス\_POWER\_ポリシー\_IDLE\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)前述のように構造と呼び出し**WdfDeviceAssignS0IdleSettings**もう一度です。
 
 ### <a href="" id="preventsusp"></a>USB デバイスの中断の防止
 
-場合によっては、USB デバイスがないの電源を切断 I/O 要求がタイムアウト期間内に存在しない場合でも、通常ときにハンドルが開いて、デバイスにかデバイスが充電中です。 USB ドライバーがから呼び出すことによって、このような状況でアイドル状態のデバイスを中断するフレームワークを防ぐため[ **WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)を呼び出すと[ **WdfDeviceResumeIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546838)もう一度もかまわない場合、デバイスが中断されます。
+場合によっては、USB デバイスがないの電源を切断 I/O 要求がタイムアウト期間内に存在しない場合でも、通常ときにハンドルが開いて、デバイスにかデバイスが充電中です。 USB ドライバーがから呼び出すことによって、このような状況でアイドル状態のデバイスを中断するフレームワークを防ぐため[ **WdfDeviceStopIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)を呼び出すと[ **WdfDeviceResumeIdle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)もう一度もかまわない場合、デバイスが中断されます。
 
-[**WdfDeviceStopIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546921)アイドル タイマーを停止します。 場合、 **IdleTimeout**期間の有効期限が切れていない、デバイスが中断されていないと、フレームワークは、アイドル タイマーをキャンセルし、デバイスを一時停止しません。 デバイスがまだ中断されている場合、フレームワークは稼働状態にデバイスを返します。 **WdfDeviceStopIdle**Sx スリープ状態にシステムが変更されたときに、デバイスを中断してから、フレームワークができません。 その唯一の影響は、システムの S0 作業状態のときに、デバイスの中断を防ぐためには。 [**WdfDeviceResumeIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546838)アイドル タイマーを再起動します。 これら 2 つのメソッド、デバイス上の参照カウントを管理するため、ドライバーは呼び出しが**WdfDeviceStopIdle**を複数回フレームワークを一時停止しません、デバイス ドライバーが呼び出されるまで**WdfDeviceResumeIdle**同じ回数。 ドライバーを呼び出してはならない**WdfDeviceResumeIdle**最初に呼び出さず**WdfDeviceStopIdle**します。
+[**WdfDeviceStopIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicestopidle)アイドル タイマーを停止します。 場合、 **IdleTimeout**期間の有効期限が切れていない、デバイスが中断されていないと、フレームワークは、アイドル タイマーをキャンセルし、デバイスを一時停止しません。 デバイスがまだ中断されている場合、フレームワークは稼働状態にデバイスを返します。 **WdfDeviceStopIdle**Sx スリープ状態にシステムが変更されたときに、デバイスを中断してから、フレームワークができません。 その唯一の影響は、システムの S0 作業状態のときに、デバイスの中断を防ぐためには。 [**WdfDeviceResumeIdle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceresumeidle)アイドル タイマーを再起動します。 これら 2 つのメソッド、デバイス上の参照カウントを管理するため、ドライバーは呼び出しが**WdfDeviceStopIdle**を複数回フレームワークを一時停止しません、デバイス ドライバーが呼び出されるまで**WdfDeviceResumeIdle**同じ回数。 ドライバーを呼び出してはならない**WdfDeviceResumeIdle**最初に呼び出さず**WdfDeviceStopIdle**します。
 
 ### <a name="including-a-registry-key-hid-drivers-only"></a>レジストリ キー (HID ドライバーのみ) を含む
 
@@ -153,16 +153,16 @@ USB デバイスの場合、デバイス自体が低電力状態から作業状�
 
 KMDF の USB 機能ドライバーでは、KMDF が機構を中断する、選択的の一部として、この機能を提供するために S0 からのスリープ解除をサポートするためのコードは必要ありません。 ただし、システムが Sx ときをリモート ウェイク アップをサポートする関数のドライバーが必要です。
 
--   呼び出すことによって、デバイスがリモート ウェイク アップをサポートしているかどうか確認[ **WdfUsbTargetDeviceRetrieveInformation**](https://msdn.microsoft.com/library/windows/hardware/ff550100)します。
--   ウェイク アップの設定の初期化と呼び出し元によってリモート ウェイクを有効にする[ **WdfDeviceAssignSxWakeSettings**](https://msdn.microsoft.com/library/windows/hardware/ff545909)します。
+-   呼び出すことによって、デバイスがリモート ウェイク アップをサポートしているかどうか確認[ **WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)します。
+-   ウェイク アップの設定の初期化と呼び出し元によってリモート ウェイクを有効にする[ **WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)します。
 
 KMDF ドライバーでの USB のセレクティブ サスペンドのサポートを構成すると同時にスリープ解除のサポートを構成する通常の*EvtDriverDeviceAdd*または*EvtDevicePrepareHardware*関数。
 
 ### <a name="checking-device-capabilities"></a>デバイスの機能のチェック
 
-KMDF の USB 機能ドライバーを初期化します、電源ポリシーの設定のアイドル状態しスリープ解除、デバイスがリモート ウェイク アップをサポートしていることを確認する必要があります。 デバイスのハードウェア機能に関する情報を取得するには、ドライバーを初期化します、 [ **WDF\_USB\_デバイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552592)構造と呼び出し[ **WdfUsbTargetDeviceRetrieveInformation**](https://msdn.microsoft.com/library/windows/hardware/ff550100)では通常、その*EvtDriverDeviceAdd*または*EvtDevicePrepareHardware*コールバック。
+KMDF の USB 機能ドライバーを初期化します、電源ポリシーの設定のアイドル状態しスリープ解除、デバイスがリモート ウェイク アップをサポートしていることを確認する必要があります。 デバイスのハードウェア機能に関する情報を取得するには、ドライバーを初期化します、 [ **WDF\_USB\_デバイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_device_information)構造と呼び出し[ **WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)では通常、その*EvtDriverDeviceAdd*または*EvtDevicePrepareHardware*コールバック。
 
-呼び出しで[ **WdfUsbTargetDeviceRetrieveInformation**](https://msdn.microsoft.com/library/windows/hardware/ff550100)、ドライバーがデバイス オブジェクトを初期化されたへのポインター、ハンドルを渡します[ **WDF\_USB\_デバイス\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff552592)構造体。 関数の成功時に、構造体の特徴のフィールドは、デバイスが自己供給型かどうかを示すフラグが含まれています、高速、およびサポートするリモート ウェイクで動作できます。
+呼び出しで[ **WdfUsbTargetDeviceRetrieveInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveinformation)、ドライバーがデバイス オブジェクトを初期化されたへのポインター、ハンドルを渡します[ **WDF\_USB\_デバイス\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_device_information)構造体。 関数の成功時に、構造体の特徴のフィールドは、デバイスが自己供給型かどうかを示すフラグが含まれています、高速、およびサポートするリモート ウェイクで動作できます。
 
 Osrusbfx2 KMDF サンプルから次の例では、デバイスがリモート ウェイク アップをサポートするかどうかを確認するには、このメソッドを呼び出す方法を示します。 これらの行のコードを実行すると、waitWakeEnable 変数には、デバイスをサポートしない場合はリモート ウェイクと FALSE の場合に、TRUE が含まれています。
 
@@ -186,8 +186,8 @@ waitWakeEnable = deviceInfo.Traits & WDF_USB_DEVICE_TRAIT_REMOTE_WAKE_CAPABLE;
 
 **ウェイク アップの設定を初期化するには**
 
-1.  呼び出す[ **WDF\_デバイス\_POWER\_ポリシー\_WAKE\_設定\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff551279)初期化するために、 [**WDF\_デバイス\_POWER\_ポリシー\_WAKE\_設定**](https://msdn.microsoft.com/library/windows/hardware/ff551277)構造体。 この関数の設定、構造体の**有効**メンバー **WdfUseDefault**、設定、 **DxState**メンバー **PowerDeviceMaximum**と設定、 **UserControlOfWakeSettings**メンバー **WakeAllowUserControl**します。
-2.  呼び出す[ **WdfDeviceAssignSxWakeSettings** ](https://msdn.microsoft.com/library/windows/hardware/ff545909)初期化された構造体。 その結果、D3 状態からスリープ解除するデバイスが有効になっていると、ユーザーが有効にするまたはデバイス マネージャーでのデバイス プロパティ ページからウェイク信号を無効にできます。
+1.  呼び出す[ **WDF\_デバイス\_POWER\_ポリシー\_WAKE\_設定\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdf_device_power_policy_wake_settings_init)初期化するために、 [**WDF\_デバイス\_POWER\_ポリシー\_WAKE\_設定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_wake_settings)構造体。 この関数の設定、構造体の**有効**メンバー **WdfUseDefault**、設定、 **DxState**メンバー **PowerDeviceMaximum**と設定、 **UserControlOfWakeSettings**メンバー **WakeAllowUserControl**します。
+2.  呼び出す[ **WdfDeviceAssignSxWakeSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)初期化された構造体。 その結果、D3 状態からスリープ解除するデバイスが有効になっていると、ユーザーが有効にするまたはデバイス マネージャーでのデバイス プロパティ ページからウェイク信号を無効にできます。
 
 サンプルは、初期化する方法を示します Osrusbfx2 から次のコード スニペットは、既定値に設定をスリープ解除します。
 

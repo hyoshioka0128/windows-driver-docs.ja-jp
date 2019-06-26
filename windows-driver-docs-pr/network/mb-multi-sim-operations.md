@@ -3,12 +3,12 @@ title: MB マルチ SIM 操作
 description: MB マルチ SIM 操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed574ad545900fa22d779253824d49c32d4205c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2aed856a93390f8810106e9b049fa43657d8397
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357812"
 ---
 # <a name="mb-multi-sim-operations"></a>MB のマルチ SIM 操作
 
@@ -138,7 +138,7 @@ Executor の概念を Windows 10 バージョン 1703 以降で非 Windows モ�
 |  | OID_WWAN_SLOT_INFO_STATUS |
 
 > [!NOTE]
-> [OID_WWAN_RADIO_STATE](https://msdn.microsoft.com/library/windows/hardware/ff569832)の Windows 10 バージョン 1703 も更新されました。 詳細については、OID_WWAN_RADIO_STATE を参照してください。
+> [OID_WWAN_RADIO_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-radio-state)の Windows 10 バージョン 1703 も更新されました。 詳細については、OID_WWAN_RADIO_STATE を参照してください。
 
 ## <a name="mbim-interface-update-for-multi-sim-operations"></a>MBIM インターフェイスの更新プログラムのマルチ SIM 操作
 
@@ -391,7 +391,7 @@ MBIM_COMMAND_MSG InformationBuffer には MBIM_MS_SLOT_INFO_REQ 構造体が含�
 
 次の MBIM_MS_UICCSLOT_STATE 構造では、スロットの可能な状態について説明します。
 
-| 状態 | 値 | 説明 |
+| 状態 | Value | 説明 |
 | --- | --- | --- |
 | UICCSlotStateUnknown | 0 | モデムは、SIM スロットの状態が明確ではありませんのでを初期化中には、まだです。 |
 | UICCSlotStateOffEmpty | 1 | UICC スロットは電源がオフとカードが存在しません。 電源がオフのスロットでカードの有無を確認することはない実装 UICCSlotStateOff の状態を報告します。 |

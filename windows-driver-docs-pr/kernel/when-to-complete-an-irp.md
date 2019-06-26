@@ -6,12 +6,12 @@ keywords:
 - Irp WDK のカーネルの完了を完了するタイミング
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3e3bbebf8e060682703a66bf61b8d63163a80bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0174051868ff1bf4c5bdeb1a3b775cd39cfb951
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335365"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358075"
 ---
 # <a name="when-to-complete-an-irp"></a>IRP を完了するタイミング
 
@@ -27,11 +27,11 @@ ms.locfileid: "63335365"
 
 -   IRP が取り消されます。 (を参照してください[Irp のキャンセル](canceling-irps.md))。
 
-これらの条件が満たされない場合は、ドライバーのディスパッチ ルーチンは、次の下位ドライバーに IRP を渡す必要があります。 または I/O 要求の処理、処理する必要があります。 いずれかの条件が満たされる場合、ドライバーを呼び出す必要があります[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)します。
+これらの条件が満たされない場合は、ドライバーのディスパッチ ルーチンは、次の下位ドライバーに IRP を渡す必要があります。 または I/O 要求の処理、処理する必要があります。 いずれかの条件が満たされる場合、ドライバーを呼び出す必要があります[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)します。
 
 ドライバーが処理を進行できない、または通常呼び出して実際には、デバイスにアクセスしなくても、要求された操作を処理することによって、要求が完了すると、ため、要求を完了すると**IoCompleteRequest**のいずれかから、ルーチンをディスパッチします。 詳細については、次を参照してください。[ディスパッチ ルーチン内での Irp の完了](completing-irps-in-dispatch-routines.md)します。
 
-通常、呼び出す場合、ドライバーは、要求を満たすためにデバイスにアクセスする必要があります、 **IoCompleteRequest**から、 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン。 これらのルーチンが広範に説明した[割り込みサービス](servicing-interrupts.md)します。
+通常、呼び出す場合、ドライバーは、要求を満たすためにデバイスにアクセスする必要があります、 **IoCompleteRequest**から、 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン。 これらのルーチンが広範に説明した[割り込みサービス](servicing-interrupts.md)します。
 
  
 

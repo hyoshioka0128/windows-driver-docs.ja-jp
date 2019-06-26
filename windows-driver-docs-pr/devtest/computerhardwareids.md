@@ -4,12 +4,12 @@ description: ComputerHardwareIds
 ms.assetid: ee2c53d3-680d-4988-8eb9-a3713ea47ca4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00c87cbd45c34457d066ffdc2a1b59a21326f5b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e127d128549a37f86ff43ef401a8d191d2ce593a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343120"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371600"
 ---
 # <a name="computerhardwareids"></a>ComputerHardwareIds
 
@@ -24,7 +24,7 @@ ComputerHardwareIds ツールは、Windows 7 または Windows オペレーテ�
 
 [ComputerHardwareIds 出力](computerhardwareids-output.md)
 
-デバイス メタデータ パッケージの詳細については、次を参照してください。[デバイス メタデータ パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff541439)します。
+デバイス メタデータ パッケージの詳細については、次を参照してください。[デバイス メタデータ パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)します。
 
  
 

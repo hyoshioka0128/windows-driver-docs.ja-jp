@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 129d60dc933d6053dad78ebfab2507af408e0edb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 174336a880c86fe87585ed525ad1e0d071b011dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333030"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358919"
 ---
 # <a name="kspropertyaudiomicarraygeometry"></a>KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY
 
@@ -50,25 +50,25 @@ KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY プロパティがマイク�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537087" data-raw-source="[&lt;strong&gt;KSAUDIO_MIC_ARRAY_GEOMETRY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537087)"><strong>KSAUDIO_MIC_ARRAY_GEOMETRY</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry" data-raw-source="[&lt;strong&gt;KSAUDIO_MIC_ARRAY_GEOMETRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)"><strong>KSAUDIO_MIC_ARRAY_GEOMETRY</strong></a></td>
 </tr>
 </tbody>
 </table>
 
  
 
-プロパティ値 (データの操作) が型 KSAUDIO\_MIC\_配列\_ジオメトリ。 定義を参照してください、 [ **KSAUDIO\_MIC\_配列\_GEOMETRY** ](https://msdn.microsoft.com/library/windows/hardware/ff537087)詳細については、構造体。
+プロパティ値 (データの操作) が型 KSAUDIO\_MIC\_配列\_ジオメトリ。 定義を参照してください、 [ **KSAUDIO\_MIC\_配列\_GEOMETRY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)詳細については、構造体。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
 KSPROPERTY\_オーディオ\_MIC\_配列\_GEOMETRY プロパティ要求がステータスを返す\_要求が正常に完了すると成功します。
 
-PinId メンバーによって、暗証番号 (pin) が示される場合、 [ **KSP\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff566722)構造体は、mic の配列の要求をサポートしていません、プロパティの要求が状態を返す\_いない\_サポートされています。
+PinId メンバーによって、暗証番号 (pin) が示される場合、 [ **KSP\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)構造体は、mic の配列の要求をサポートしていません、プロパティの要求が状態を返す\_いない\_サポートされています。
 
 プロパティ要求が状態を返す要求のバッファー サイズがゼロに設定されている場合\_バッファー\_オーバーフロー状態。 さらに、要求がブロックを使用して、状態の戻り値、KSAUDIO のサイズを示す\_MIC\_配列\_暗証番号 (pin) でサポートされている GEOMETRY 構造体。
 
-要求のバッファー サイズが小さすぎて返された構造体に対応するバッファーのサイズに設定されている場合、要求がのステータスを返します\_バッファー\_すぎます\_小さい。 要求のサイズを示すために状態の戻り値のブロックを使用して、 [ **KSAUDIO\_MIC\_配列\_GEOMETRY** ](https://msdn.microsoft.com/library/windows/hardware/ff537087)暗証番号 (pin) でサポートされている構造体。
+要求のバッファー サイズが小さすぎて返された構造体に対応するバッファーのサイズに設定されている場合、要求がのステータスを返します\_バッファー\_すぎます\_小さい。 要求のサイズを示すために状態の戻り値のブロックを使用して、 [ **KSAUDIO\_MIC\_配列\_GEOMETRY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)暗証番号 (pin) でサポートされている構造体。
 
 <a name="remarks"></a>注釈
 -------
@@ -79,9 +79,9 @@ Windows でのマイク配列を処理する方法の詳細については、次
 
 [Windows (ホワイト ペーパー) でのマイク配列のサポート](https://go.microsoft.com/fwlink/p/?linkid=120592)
 
-[マイク配列 Geometry プロパティ](https://msdn.microsoft.com/library/windows/hardware/ff537516.aspx)
+[マイク配列 Geometry プロパティ](https://docs.microsoft.com/windows-hardware/drivers/audio/microphone-array-geometry-property)
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -100,9 +100,9 @@ Windows でのマイク配列を処理する方法の詳細については、次
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSAUDIO\_MIC\_配列\_GEOMETRY**](https://msdn.microsoft.com/library/windows/hardware/ff537087)
+[**KSAUDIO\_MIC\_配列\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)
 
-[**KSP\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
  
 

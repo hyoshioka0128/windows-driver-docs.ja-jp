@@ -6,12 +6,12 @@ ms.assetid: 5ae4c6c5-d8f2-4dc5-8cfd-ecb751fc88be
 keywords:
 - IRP_MJ_READ カーネル モード ドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: fee47dc083df75a8e15a89a55e9563c2274c4f9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0be7c5512778f006f6399b747b14558095a66cfe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370898"
 ---
 # <a name="irpmjread"></a>IRP\_MJ\_READ
 
@@ -32,7 +32,7 @@ IRP のドライバーの I/O スタックの場所に転送するバイト数�
 
 一部のドライバーにある値を使用して、 **Parameters.Read.Key**デバイスのキューまたは Irp のドライバー管理の内部キューでは、ドライバーにより決定された順序に受信した読み取り要求を分類します。
 
-ドライバーの特定の種類がある値を使用しても**Parameters.Read.ByteOffset**、転送操作の開始オフセットを示します。 たとえばを参照してください、 [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff549327)インストール可能なファイル システム (IFS) ドキュメントのトピックです。
+ドライバーの特定の種類がある値を使用しても**Parameters.Read.ByteOffset**、転送操作の開始オフセットを示します。 たとえばを参照してください、 [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)インストール可能なファイル システム (IFS) ドキュメントのトピックです。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -46,11 +46,11 @@ IRP のドライバーの I/O スタックの場所に転送するバイト数�
 <a name="operation"></a>操作
 ---------
 
-読み取り要求の受信後より高度なドライバーは、次の下位ドライバー用の IRP で I/O スタックの場所を設定または作成し、1 つまたは複数の下位のドライバーの追加の Irp を設定します。 これを設定することができます、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) 、日常的なは入力 IRP の省略可能ですが Irp のドライバーが作成に必要な呼び出して[ **IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679). 次に、ドライバーが要求を使用してドライバーを次の下位を渡します[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+読み取り要求の受信後より高度なドライバーは、次の下位ドライバー用の IRP で I/O スタックの場所を設定または作成し、1 つまたは複数の下位のドライバーの追加の Irp を設定します。 これを設定することができます、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) 、日常的なは入力 IRP の省略可能ですが Irp のドライバーが作成に必要な呼び出して[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine). 次に、ドライバーが要求を使用してドライバーを次の下位を渡します[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
 
 読み取り要求の受信後は、デバイス ドライバーは、システム メモリをそのデバイスからデータを転送します。 デバイス ドライバーのセット、**情報**IRP の完了時に I/O 状態ブロックのバイト数のフィールドが転送されます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -73,9 +73,9 @@ IRP のドライバーの I/O スタックの場所に転送するバイト数�
 
 [*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)
+[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
 
-[**IoSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff549679)
+[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)
 
  
 

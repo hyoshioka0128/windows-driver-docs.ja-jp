@@ -8,21 +8,21 @@ keywords:
 - プリンターの自動構成の WDK プリンター、IHV ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb13bbf726003ee037c4cf392f4fc90826e2539d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 718f7f1a1857e7e59f4cc219498e2debc993c79a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350762"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370472"
 ---
 # <a name="autoconfiguration-in-an-ihv-driver"></a>IHV ドライバーの自動構成
 
 
 自動構成をサポートしているスタンドアロン IHV ドライバーでは、次の要件を満たす必要があります。
 
-1.  次の Microsoft[双方向通信スキーマ](https://msdn.microsoft.com/library/windows/hardware/ff545175)と[双方向の通信インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545163)Windows SDK のドキュメントで説明されています。
+1.  次の Microsoft[双方向通信スキーマ](https://docs.microsoft.com/windows-hardware/drivers/print/bidi-communications-schema-reference)と[双方向の通信インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)Windows SDK のドキュメントで説明されています。
 
-2.  プリンターのサポート\_イベント\_構成\_で更新プリンター イベント、 [ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)関数。
+2.  プリンターのサポート\_イベント\_構成\_で更新プリンター イベント、 [ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)関数。
 
 3.  受信した通知を理解する bidi 通知スキーマの機能を把握します。 参照してください[双方向通信スキーマ](bidirectional-communication-schema.md)します。
 

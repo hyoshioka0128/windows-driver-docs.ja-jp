@@ -6,26 +6,26 @@ keywords:
 - OID_CO_AF_CLOSE
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84abaf17253ba96ef7f43a410674a371520b0cd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f721fe5a63f4859ded6bf76744a6f3c605569dfa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357667"
 ---
 # <a name="oidcoafclose"></a>OID_CO_AF_CLOSE
 
 OID_CO_AF_CLOSE OID は、基になるミニポート ドライバーからの自体をバインド解除する必要がありますをコール マネージャーによって送信されます。 自体をバインド解除、ミニポート ドライバーから、前に、コール マネージャーは、この OID をコール マネージャーで開き、アドレス ファミリを持つ各クライアントに送信します。 応答、クライアントは、以下を実行します。
 
-1. クライアントに multipoint のアクティブな接続がある場合は、呼び出す[NdisClDropParty](https://msdn.microsoft.com/library/windows/hardware/ff561629)として 1 つのパーティのみが、各 multipoint VC のアクティブなままになるまでに必要な回数
+1. クライアントに multipoint のアクティブな接続がある場合は、呼び出す[NdisClDropParty](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscldropparty)として 1 つのパーティのみが、各 multipoint VC のアクティブなままになるまでに必要な回数
 
-2. 呼び出す[NdisClCloseCall](https://msdn.microsoft.com/library/windows/hardware/ff561627)を閉じる必要な回数呼び出しはすべてまだ開いての呼び出しでマネージャー
+2. 呼び出す[NdisClCloseCall](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)を閉じる必要な回数呼び出しはすべてまだ開いての呼び出しでマネージャー
 
-3. 呼び出す[NdisClDeregisterSap](https://msdn.microsoft.com/library/windows/hardware/ff561628)コール マネージャーで、クライアントが登録されているすべての Sap の登録を解除するために必要なだけ多くの回数
+3. 呼び出す[NdisClDeregisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclderegistersap)コール マネージャーで、クライアントが登録されているすべての Sap の登録を解除するために必要なだけ多くの回数
 
-4. 呼び出す[NdisClCloseAddressFamily](https://msdn.microsoft.com/library/windows/hardware/ff561626) OID_CO_AF_CLOSE に含まれている要求で NdisAfHandle によって参照されるアドレス ファミリを閉じる
+4. 呼び出す[NdisClCloseAddressFamily](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclcloseaddressfamily) OID_CO_AF_CLOSE に含まれている要求で NdisAfHandle によって参照されるアドレス ファミリを閉じる
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |

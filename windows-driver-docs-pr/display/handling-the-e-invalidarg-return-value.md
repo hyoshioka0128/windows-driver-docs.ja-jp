@@ -7,17 +7,17 @@ keywords:
 - E_INVALIDARG は、WDK 表示の値を返す
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dff82dc5e2b1c1b44e8bc8807d9b2e9b1121e23b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54da26c839c6d003106f8fa97c1f0aa7ee3fe992
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369843"
 ---
 # <a name="handling-the-einvalidarg-return-value"></a>E を処理\_INVALIDARG 戻り値
 
 
-通常、ユーザー モードのディスプレイ ドライバーはフェールバックできませんのいずれかの[関数](https://msdn.microsoft.com/library/windows/hardware/ff570118)を返すことによって E\_INVALIDARG します。 ただし、ユーザー モード ドライバーを表示する場合は、受信、E\_INVALIDARG は呼び出しのいずれかの値を返す、[ランタイムが指定した関数のマイクロソフトの Direct3D](https://msdn.microsoft.com/library/windows/hardware/ff552862) (ドライバーまたは悪意のあるコードでプログラミング エラーのためオペレーティング システムで実行される)、ドライバーが返す必要があります E\_INVALIDARG ランタイム後 Direct3D ランタイムに戻さがドライバーの関数のいずれかを呼び出します。 それ以外の場合、ユーザー モードのディスプレイ ドライバーが返さない E\_INVALIDARG Direct3D ランタイムにします。
+通常、ユーザー モードのディスプレイ ドライバーはフェールバックできませんのいずれかの[関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)を返すことによって E\_INVALIDARG します。 ただし、ユーザー モード ドライバーを表示する場合は、受信、E\_INVALIDARG は呼び出しのいずれかの値を返す、[ランタイムが指定した関数のマイクロソフトの Direct3D](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) (ドライバーまたは悪意のあるコードでプログラミング エラーのためオペレーティング システムで実行される)、ドライバーが返す必要があります E\_INVALIDARG ランタイム後 Direct3D ランタイムに戻さがドライバーの関数のいずれかを呼び出します。 それ以外の場合、ユーザー モードのディスプレイ ドライバーが返さない E\_INVALIDARG Direct3D ランタイムにします。
 
  
 

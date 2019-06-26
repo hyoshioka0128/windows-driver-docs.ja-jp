@@ -11,12 +11,12 @@ keywords:
 - AVStream カーネル ストリーミング プロキシ WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a99a391a0b448b68f2d1f86c0b4130776572b9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ae1e79005109f8968d8c52b431e608b42485399
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373031"
 ---
 # <a name="using-avstream-with-the-kernel-streaming-proxy-module"></a>カーネル ストリーミング プロキシ モジュールでの AVStream の使用
 
@@ -24,7 +24,7 @@ ms.locfileid: "63367460"
 
 
 
-多くの場合、カーネル モードのフィルターがユーザー モードで接続されて、[カーネル ストリーミング プロキシ](https://msdn.microsoft.com/library/windows/hardware/ff560877)します。 このプロキシは、DirectShow フィルター モードをユーザーに表示されるカーネル モードのフィルターを使用します。
+多くの場合、カーネル モードのフィルターがユーザー モードで接続されて、[カーネル ストリーミング プロキシ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)します。 このプロキシは、DirectShow フィルター モードをユーザーに表示されるカーネル モードのフィルターを使用します。
 
 DirectShow が交差してフィルターを接続モードの接続を使用する場合、*メディアの種類*します。 これらのメディア タイプは、カーネル モードでのデータ形式に DirectShow 対応です。
 
@@ -32,7 +32,7 @@ DirectShow では、カーネル モードの暗証番号 (pin) のメディア�
 
 カーネル モードのように、プロキシはメディアの種類が、許容されるか、メディアの種類が、pin でのデータ範囲の部分的な一致であるかどうかを判断するかどうかを判断するデータ ハンドラーかを確認します。 指定するには、カーネル モードのセマンティクス、主要な型、サブフォーマット、指定子のコンテキストでの部分的に一致することを示し、必要な属性と一致します。 メディアの種類が部分的に一致する場合は、接続が行われます。
 
-AVStream にミニドライバーの呼び出し、接続が完了する前に、 [ *AVStrMiniPinSetDataFormat* ](https://msdn.microsoft.com/library/windows/hardware/ff556355)設定されているデータ形式のミニドライバーを通知するためにディスパッチします。 この形式は、プロキシのピン留めするための提案がユーザー モードのメディアの種類に対応します。 AVStream には、形式については、部分的な一致するために決定されたデータ範囲も用意されています。
+AVStream にミニドライバーの呼び出し、接続が完了する前に、 [ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)設定されているデータ形式のミニドライバーを通知するためにディスパッチします。 この形式は、プロキシのピン留めするための提案がユーザー モードのメディアの種類に対応します。 AVStream には、形式については、部分的な一致するために決定されたデータ範囲も用意されています。
 
  
 

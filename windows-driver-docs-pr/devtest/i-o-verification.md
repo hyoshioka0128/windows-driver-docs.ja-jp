@@ -8,12 +8,12 @@ keywords:
 - レベル 2 I/O 検証 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f13e54f873ecdc89622a0298bc258f6709a994b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4235a98c84aade321da760c374e6d1985e5ba49
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330647"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358265"
 ---
 # <a name="io-verification"></a>I/O の検証
 
@@ -55,7 +55,7 @@ Driver Verifier では、I/O の検証の 2 つのレベルがあります。
 
 特別なプールの IRP では、サイズの制限であるため、一度に 1 つのドライバーの使用のみ I/O の検証は最も効果的なです。
 
-検証レベル 1 の I/O エラーが発生するバグ チェック 0xC9 が発行されます。 このバグ チェックの最初のパラメーターでは、どのような違反が発生したことを示します。 参照してください[**バグ チェック 0xC9** ](https://msdn.microsoft.com/library/windows/hardware/ff560205) (ドライバー\_VERIFIER\_IOMANAGER\_違反) 完全なパラメーターの一覧についてはします。
+検証レベル 1 の I/O エラーが発生するバグ チェック 0xC9 が発行されます。 このバグ チェックの最初のパラメーターでは、どのような違反が発生したことを示します。 参照してください[**バグ チェック 0xC9** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation) (ドライバー\_VERIFIER\_IOMANAGER\_違反) 完全なパラメーターの一覧についてはします。
 
 ### <a name="span-idlevel2ioverificationspanspan-idlevel2ioverificationspanlevel-2-io-verification"></a><span id="level_2_i_o_verification"></span><span id="LEVEL_2_I_O_VERIFICATION"></span>第 2 レベルの I/O の検証
 
@@ -67,7 +67,7 @@ Driver Verifier では、I/O の検証の 2 つのレベルがあります。
 
 カーネル デバッガー (KD または WinDbg) でこれらのエラーは、メッセージによって記録されます**WDM ドライバー エラー**と説明のテキスト文字列。 カーネル デバッガーがアクティブな場合は、レベル 2 のエラーを無視し、システムの操作を再開することです。 (これが、その他のバグ チェックで可能です)
 
-ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 ほとんどの I/O の検証レベル 2 のエラー メッセージの詳細については、次を参照してください。 [**バグ チェック 0xC9**](https://msdn.microsoft.com/library/windows/hardware/ff560205)します。 残りの部分は、次を参照してください。 [**バグ チェック 0xC4**](https://msdn.microsoft.com/library/windows/hardware/ff560187)します。
+ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 ほとんどの I/O の検証レベル 2 のエラー メッセージの詳細については、次を参照してください。 [**バグ チェック 0xC9**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation)します。 残りの部分は、次を参照してください。 [**バグ チェック 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)します。
 
 次のドライバー エラー以降 Window Vista では、I/O の検証オプションを確認します。
 
@@ -75,27 +75,27 @@ Driver Verifier では、I/O の検証の 2 つのレベルがあります。
 
 -   まだ取得されていないを削除ロックを解除します。
 
--   呼び出す[ **IoReleaseRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549560)または[ **IoReleaseRemoveLockAndWait** ](https://msdn.microsoft.com/library/windows/hardware/ff549567)タグ パラメーターとは異なるタグ パラメーター対応するために使用[ **IoAcquireRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff548204)呼び出します。
+-   呼び出す[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)または[ **IoReleaseRemoveLockAndWait** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelockandwait)タグ パラメーターとは異なるタグ パラメーター対応するために使用[ **IoAcquireRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)呼び出します。
 
--   呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)に割り込みを無効になっています。
+-   呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)に割り込みを無効になっています。
 
--   呼び出す[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)ディスパッチより大きい IRQL で\_レベル。
+-   呼び出す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)ディスパッチより大きい IRQL で\_レベル。
 
 -   割り込みを無効になっているドライバーのディスパッチ ルーチンから返します。
 
 -   変更された IRQL とドライバーのディスパッチ ルーチンから返すことです。
 
--   Apc を無効になっているのでドライバーのディスパッチ ルーチンから返します。 この場合、ドライバーを呼び出したことがある[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)回よりも[ **KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)、これは、主な原因[**バグ チェック 0x20** ](https://msdn.microsoft.com/library/windows/hardware/ff557421) (カーネル\_APC\_PENDING\_に\_終了) と[ **バグ チェック 0x1** ](https://msdn.microsoft.com/library/windows/hardware/ff557419) (APC\_インデックス\_が一致しません)。
+-   Apc を無効になっているのでドライバーのディスパッチ ルーチンから返します。 この場合、ドライバーを呼び出したことがある[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)回よりも[ **KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)、これは、主な原因[**バグ チェック 0x20** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x20--kernel-apc-pending-during-exit) (カーネル\_APC\_PENDING\_に\_終了) と[ **バグ チェック 0x1** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1--apc-index-mismatch) (APC\_インデックス\_が一致しません)。
 
 次のドライバー エラーの Windows 7 以降、I/O の検証オプションを確認します。
 
--   Irp を呼び出すことによって解放しようとしています。 [ **ExFreePool**](https://msdn.microsoft.com/library/windows/hardware/ff544590)します。 Irp を使用して解放する必要があります[ **IoFreeIrp**](https://msdn.microsoft.com/library/windows/hardware/ff549113)します。
+-   Irp を呼び出すことによって解放しようとしています。 [ **ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)します。 Irp を使用して解放する必要があります[ **IoFreeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)します。
 
 さらに、もう 1 つの一般的なドライバーのバグを検出するためにこのオプションを使用できます: ロックを削除して再初期化します。 デバイスの拡張機能の内部データ構造を割り当てる必要があるロックを削除します。 これにより、I/O マネージャーが、IO を保持するメモリを解放する\_削除\_デバイス オブジェクトが削除された場合にのみ、ロック構造体。 ドライバーは、次の 3 つの手順を実行する場合、手順 2 の後にアプリケーションやドライバーも保持している Device1 への参照をことができます。
 
 -   IO を割り当てます\_削除\_Device1 に対応していますが、Device1 の拡張機能の外部で割り当てのロック構造体。
--   呼び出し[ **IoReleaseRemoveLockAndWait** ](https://msdn.microsoft.com/library/windows/hardware/ff549567) Device1 が削除されるときにします。
--   呼び出し[ **IoInitializeRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549324) Device2 の削除ロックとして再利用する同じロックします。
+-   呼び出し[ **IoReleaseRemoveLockAndWait** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelockandwait) Device1 が削除されるときにします。
+-   呼び出し[ **IoInitializeRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeremovelock) Device2 の削除ロックとして再利用する同じロックします。
 
 後に手順 2. アプリケーションがいる可能性があります。 またはドライバーが引き続き Device1 への参照を保持します。 アプリケーションまたはドライバーが要求を送信できます Device1、場合でも、このデバイスが削除されました。 そのため、I/O マネージャー Device1 の削除されるまで、新しい削除ロックと同じメモリを再利用する安全ではありません。 別のスレッドがそれを取得しようとしたときに、同じロックを再初期化すると、ドライバーとシステム全体の予期しない結果に、ロックの破損可能性があります。
 

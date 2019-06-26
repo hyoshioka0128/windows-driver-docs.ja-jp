@@ -10,12 +10,12 @@ keywords:
 - 失われた COPP デバイス WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 106d12ef7ff8282e24046a6b09f92a41e30483fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eccd54f38b813751c2438c4a25a97ba94ab172de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363768"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369840"
 ---
 # <a name="handling-the-loss-of-a-copp-device"></a>COPP デバイスの喪失の処理
 
@@ -25,7 +25,7 @@ ms.locfileid: "63363768"
 
 **このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。**
 
-保護モードに設定されているビデオ セッションでは、ビデオのセッションに関連付けられている DirectX VA COPP デバイスの破棄を引き起こすシナリオを処理する必要があります。 次のシナリオは、ディスプレイ ドライバーの呼び出しを開始する[ *DdMoCompDestroy* ](https://msdn.microsoft.com/library/windows/hardware/ff549664)ビデオ セッションの認定出力コネクタでのコンテンツの保護が可能性がありますが、コールバック関数有効になります。
+保護モードに設定されているビデオ セッションでは、ビデオのセッションに関連付けられている DirectX VA COPP デバイスの破棄を引き起こすシナリオを処理する必要があります。 次のシナリオは、ディスプレイ ドライバーの呼び出しを開始する[ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)ビデオ セッションの認定出力コネクタでのコンテンツの保護が可能性がありますが、コールバック関数有効になります。
 
 -   表示モードの変更
 
@@ -45,7 +45,7 @@ ms.locfileid: "63363768"
 
 -   アプリケーション予期せずに終了 - たとえば、ページ フォールトを
 
-ビデオのセッションが有効になっていると、出力コンテンツの保護中に前に示したシナリオのいずれかが発生した場合、ディスプレイ ドライバーの*DdMoCompDestroy*関数は、ビデオのミニポート ドライバーへの呼び出しを開始する必要があります[ *COPPCloseVideoSession* ](https://msdn.microsoft.com/library/windows/hardware/ff539638) COPP デバイスの現在のローカルの保護のレベル数によって、グローバルな保護レベル数をデクリメントする関数。 ビデオのミニポート ドライバーはする必要がありますし、変更されたグローバルな保護レベルを確認し、それに応じて出力コネクタに適用される保護レベルを調整します。
+ビデオのセッションが有効になっていると、出力コンテンツの保護中に前に示したシナリオのいずれかが発生した場合、ディスプレイ ドライバーの*DdMoCompDestroy*関数は、ビデオのミニポート ドライバーへの呼び出しを開始する必要があります[ *COPPCloseVideoSession* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppclosevideosession) COPP デバイスの現在のローカルの保護のレベル数によって、グローバルな保護レベル数をデクリメントする関数。 ビデオのミニポート ドライバーはする必要がありますし、変更されたグローバルな保護レベルを確認し、それに応じて出力コネクタに適用される保護レベルを調整します。
 
  
 

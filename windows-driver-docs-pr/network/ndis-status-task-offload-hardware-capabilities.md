@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f77ee6c3844009a7f23c31dc1bbd97946a17a07
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ecbdd576b12ae9c111945905f1b5ce70a7788312
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361051"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372572"
 ---
 # <a name="ndisstatustaskoffloadhardwarecapabilities"></a>NDIS\_状態\_タスク\_オフロード\_ハードウェア\_機能
 
@@ -23,9 +23,9 @@ NDIS ミニポート ドライバーと MUX 中間ドライバーの使用、 **
 
 基になる NIC を追加したり削除したり、ミニポート ドライバーまたは MUX 中間ドライバーに関連付けられているハードウェア機能の全体的なセットを変更できます。 たとえば、ミニポート ドライバーの問題、 **NDIS\_状態\_タスク\_オフロード\_ハードウェア\_機能**状態を示す値、できないことを指定します。Large Send Offload (LSO)、NIC のサポートは、LSO をサポートするために不要になった構成できます。
 
-**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造に含まれる、 [ **NDIS\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566599)構造体。 この構造体は、タスクのオフロード ハードウェア機能を指定します。
+**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造に含まれる、 [ **NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)構造体。 この構造体は、タスクのオフロード ハードウェア機能を指定します。
 
-タスクのオフロード ハードウェア機能の詳細については、次を参照してください。 [OID\_TCP\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569806)します。
+タスクのオフロード ハードウェア機能の詳細については、次を参照してください。 [OID\_TCP\_オフロード\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -50,13 +50,13 @@ NDIS ミニポート ドライバーと MUX 中間ドライバーの使用、 **
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_オフロード**](https://msdn.microsoft.com/library/windows/hardware/ff566599)
+[**NDIS\_オフロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
 [**NDIS\_状態\_タスク\_オフロード\_現在\_構成**](ndis-status-task-offload-current-config.md)
 
-[OID\_TCP\_オフロード\_ハードウェア\_機能](https://msdn.microsoft.com/library/windows/hardware/ff569806)
+[OID\_TCP\_オフロード\_ハードウェア\_機能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)
 
  
 

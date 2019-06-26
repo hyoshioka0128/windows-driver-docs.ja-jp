@@ -8,12 +8,12 @@ keywords:
 - 線形変換 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5939fbadf9cb4ea6ff5ab5fb22ca4b0257dbff6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cac89e378e242eced2686a5582d5004c7248e08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347523"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370114"
 ---
 # <a name="marking-formats-for-gamma-and-linear-conversion"></a>ガンマ変換と線形変換の形式のマークキング
 
@@ -25,7 +25,7 @@ DirectX 9.0 のバージョンのドライバーが線形のテクスチャ形�
 
 テクスチャのコンテンツは通常、ガンマ補正がの sRGB 形式で格納されます。 ただし、ピクセル パイプラインのテクスチャの sRGB 形式での正確な描画操作を実行する場合、ドライバーする必要があります、テクスチャ形式に変換線形読み取る前にそこから。 ピクセルのパイプラインにそれらのテクスチャをレンダー ターゲットに書き込む準備ができたら、ドライバーは、sRGB 形式に戻す、テクスチャを変換する必要があります。 この方法では、ピクセルのパイプラインは、線形の領域のすべての操作を実行します。
 
-ドライバーでは、次のフラグを指定します、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)の形式をマークするテクスチャ サーフェスの形式の構造変換:
+ドライバーでは、次のフラグを指定します、 **dwOperations**のメンバー、 [ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)の形式をマークするテクスチャ サーフェスの形式の構造変換:
 
 -   D3DFORMAT\_OP\_テクスチャは、ガンマ値 2.2 かどうかを修正するかどうかを示す SRGBREAD (sRGB かどうか) とにする必要があります形式に変換を線形ブレンド操作またはサンプラーのために、ドライバーによって参照時にします。
 

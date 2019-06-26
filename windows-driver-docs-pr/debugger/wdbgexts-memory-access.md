@@ -4,12 +4,12 @@ description: WdbgExts のメモリ アクセス
 ms.assetid: 7b600d18-343e-4c22-b1e9-5dcc83d88695
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c51b1297822e443bd1b93ae9f00f62a591194f20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1d934e1916f032bd3186a18a9275163e53dfe7c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325834"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369438"
 ---
 # <a name="wdbgexts-memory-access"></a>WdbgExts のメモリ アクセス
 
@@ -18,39 +18,39 @@ ms.locfileid: "63325834"
 
 ### <a name="span-idvirtualmemoryspanspan-idvirtualmemoryspanvirtual-memory"></a><span id="virtual_memory"></span><span id="VIRTUAL_MEMORY"></span>仮想メモリ
 
-使用して、ターゲットの仮想メモリを読み取ることができます、 [ **ReadMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff554287)関数とを使用して、 [ **WriteMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff561420)関数。 ターゲットのメモリ内のポインターを読み取りを使用して書き込むことができます、 [ **ReadPointer**](https://msdn.microsoft.com/library/windows/hardware/ff554318)、 [ **ReadPtr**](https://msdn.microsoft.com/library/windows/hardware/ff554330)、および[ **WritePointer** ](https://msdn.microsoft.com/library/windows/hardware/ff561450)関数。
+使用して、ターゲットの仮想メモリを読み取ることができます、 [ **ReadMemory** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff554287(v=vs.85))関数とを使用して、 [ **WriteMemory** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff561420(v=vs.85))関数。 ターゲットのメモリ内のポインターを読み取りを使用して書き込むことができます、 [ **ReadPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readpointer)、 [ **ReadPtr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readptr)、および[ **WritePointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writepointer)関数。
 
-仮想メモリのバイトのパターンを検索するには、使用、 [ **SearchMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff554742)関数。
+仮想メモリのバイトのパターンを検索するには、使用、 [ **SearchMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-searchmemory)関数。
 
-[ **TranslateVirtualToPhysical** ](https://msdn.microsoft.com/library/windows/hardware/ff558914)仮想メモリ アドレスを物理メモリ アドレスに変換する関数を使用できます。
+[ **TranslateVirtualToPhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-translatevirtualtophysical)仮想メモリ アドレスを物理メモリ アドレスに変換する関数を使用できます。
 
-[ **Disasm** ](https://msdn.microsoft.com/library/windows/hardware/ff541945)ターゲット上の 1 つのアセンブリ命令を逆アセンブルする関数を使用できます。
+[ **Disasm** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_disasm)ターゲット上の 1 つのアセンブリ命令を逆アセンブルする関数を使用できます。
 
-物理アドレス拡張 (PAE) を使用する場合は、低の 4 GB のメモリの破損を確認するには、使用、 [ **Ioctl** ](https://msdn.microsoft.com/library/windows/hardware/ff551084)操作[ **IG\_LOWMEM\_確認**](https://msdn.microsoft.com/library/windows/hardware/ff550931)します。
+物理アドレス拡張 (PAE) を使用する場合は、低の 4 GB のメモリの破損を確認するには、使用、 [ **Ioctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作[ **IG\_LOWMEM\_確認**](https://docs.microsoft.com/previous-versions/ff550931(v=vs.85))します。
 
 ### <a name="span-idphysicalmemoryspanspan-idphysicalmemoryspanphysical-memory"></a><span id="physical_memory"></span><span id="PHYSICAL_MEMORY"></span>物理メモリ
 
 カーネル モードのデバッグで物理メモリに直接アクセスのみできます。
 
-使用して、ターゲット上の物理メモリを読み取ることができます、 [ **ReadPhysical** ](https://msdn.microsoft.com/library/windows/hardware/ff554310)と[ **ReadPhysicalWithFlags** ](https://msdn.microsoft.com/library/windows/hardware/ff554315)関数、と書き込み使用して、 [ **WritePhysical** ](https://msdn.microsoft.com/library/windows/hardware/ff561432)と[ **WritePhysicalWithFlags** ](https://msdn.microsoft.com/library/windows/hardware/ff561448)関数。
+使用して、ターゲット上の物理メモリを読み取ることができます、 [ **ReadPhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readphysical)と[ **ReadPhysicalWithFlags** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readphysicalwithflags)関数、と書き込み使用して、 [ **WritePhysical** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writephysical)と[ **WritePhysicalWithFlags** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writephysicalwithflags)関数。
 
-指定した範囲内の場所へのポインターの物理メモリを検索するには、使用、 [ **Ioctl** ](https://msdn.microsoft.com/library/windows/hardware/ff551084)操作[ **IG\_ポインター\_検索\_物理**](https://msdn.microsoft.com/library/windows/hardware/ff550935)します。
+指定した範囲内の場所へのポインターの物理メモリを検索するには、使用、 [ **Ioctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作[ **IG\_ポインター\_検索\_物理**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_pointer_search_physical)します。
 
 ### <a name="span-idotherdataspacesspanspan-idotherdataspacesspanother-data-spaces"></a><span id="other_data_spaces"></span><span id="OTHER_DATA_SPACES"></span>その他のデータ領域
 
 カーネル モードのデバッグは、さまざまなメイン メモリだけでなくデータ領域にデータを読み書きすることです。 次のデータ領域にアクセスできます。
 
 <span id="Control-Space_Memory"></span><span id="control-space_memory"></span><span id="CONTROL-SPACE_MEMORY"></span>コントロールの領域のメモリ  
-関数は、 [ **ReadControlSpace**](https://msdn.microsoft.com/library/windows/hardware/ff553527)、 [ **ReadControlSpace64**](https://msdn.microsoft.com/library/windows/hardware/ff553532)、 [ **ReadTypedControlSpace32**](https://msdn.microsoft.com/library/windows/hardware/ff554339)、および[ **ReadTypedControlSpace64** ](https://msdn.microsoft.com/library/windows/hardware/ff554341)コントロール領域からデータを読み取ります。 [ **WriteControlSpace** ](https://msdn.microsoft.com/library/windows/hardware/ff561375)関数は、コントロールの領域にデータを書き込みます。
+関数は、 [ **ReadControlSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readcontrolspace)、 [ **ReadControlSpace64**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readcontrolspace64)、 [ **ReadTypedControlSpace32**](https://docs.microsoft.com/previous-versions/ff554339(v=vs.85))、および[ **ReadTypedControlSpace64** ](https://docs.microsoft.com/previous-versions/ff554341(v=vs.85))コントロール領域からデータを読み取ります。 [ **WriteControlSpace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writecontrolspace)関数は、コントロールの領域にデータを書き込みます。
 
 <span id="I_O_Memory"></span><span id="i_o_memory"></span><span id="I_O_MEMORY"></span>I/O メモリ  
-関数は、 [ **ReadIoSpace**](https://msdn.microsoft.com/library/windows/hardware/ff553574)、 [ **ReadIoSpace64**](https://msdn.microsoft.com/library/windows/hardware/ff553577)、 **ReadIoSpace64**、 [**ReadIoSpaceEx64** ](https://msdn.microsoft.com/library/windows/hardware/ff553583)は、システム I/O メモリからデータを読み取り、I/O メモリ バスします。 関数は、 [ **WriteIoSpace**](https://msdn.microsoft.com/library/windows/hardware/ff561406)、 [ **WriteIoSpace64**](https://msdn.microsoft.com/library/windows/hardware/ff561408)、 [ **WriteIoSpaceEx** ](https://msdn.microsoft.com/library/windows/hardware/ff561413)、および[ **WriteIoSpaceEx64** ](https://msdn.microsoft.com/library/windows/hardware/ff561414)はシステム I/O メモリにデータを記述し、I/O メモリ バスします。
+関数は、 [ **ReadIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readiospace)、 [ **ReadIoSpace64**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readiospace64)、 **ReadIoSpace64**、 [**ReadIoSpaceEx64** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readiospaceex64)は、システム I/O メモリからデータを読み取り、I/O メモリ バスします。 関数は、 [ **WriteIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writeiospace)、 [ **WriteIoSpace64**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writeiospace64)、 [ **WriteIoSpaceEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writeiospaceex)、および[ **WriteIoSpaceEx64** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writeiospaceex64)はシステム I/O メモリにデータを記述し、I/O メモリ バスします。
 
 <span id="Model_Specific_Register__MSR_"></span><span id="model_specific_register__msr_"></span><span id="MODEL_SPECIFIC_REGISTER__MSR_"></span>モデル専用レジスタ (MSR)  
-関数は、 [ **ReadMsr** ](https://msdn.microsoft.com/library/windows/hardware/ff554289)と[ **WriteMsr** ](https://msdn.microsoft.com/library/windows/hardware/ff561424) MSRs を読み書きします。
+関数は、 [ **ReadMsr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-readmsr)と[ **WriteMsr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nf-wdbgexts-writemsr) MSRs を読み書きします。
 
 <span id="System_Bus"></span><span id="system_bus"></span><span id="SYSTEM_BUS"></span>システム バス  
-[ **Ioctl** ](https://msdn.microsoft.com/library/windows/hardware/ff551084)操作[ **IG\_取得\_BUS\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff550913)と**IG\_設定\_BUS\_データ**システム バス データを読み書きします。
+[ **Ioctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作[ **IG\_取得\_BUS\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_getsetbusdata)と**IG\_設定\_BUS\_データ**システム バス データを読み書きします。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 

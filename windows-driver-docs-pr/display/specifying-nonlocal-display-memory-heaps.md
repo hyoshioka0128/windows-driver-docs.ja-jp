@@ -14,12 +14,12 @@ keywords:
 - 物理的なヒープ WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d76dad4381703ce654ae57316690131a12338cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa375ab4049eacf90dfb1a9ac171bc7dcaf19ba4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376032"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356347"
 ---
 # <a name="specifying-nonlocal-display-memory-heaps"></a>非ローカルの表示メモリ ヒープの指定
 
@@ -27,7 +27,7 @@ ms.locfileid: "63376032"
 ## <span id="ddk_specifying_nonlocal_display_memory_heaps_gg"></span><span id="DDK_SPECIFYING_NONLOCAL_DISPLAY_MEMORY_HEAPS_GG"></span>
 
 
-DirectDraw ドライバー制御 AGP メモリの量利用可能で、どの画面でヒープを返すことによって、 [ **DD\_HALINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff551627)つまり DirectDraw に渡されたバックを構造体します。 ドライバーの識別、VIDMEM を指定することで、非ローカル ヒープ\_ISNONLOCAL フラグ、 **dwFlags**のメンバー、 [**グラフィックスアクセラレータ**](https://msdn.microsoft.com/library/windows/hardware/ff570171)データ構造体ヒープをについて説明します。 さらに、ドライバーが、VIDMEM を指定することで、非ローカル ヒープ上のメモリの書き込みの結合を有効にできます。\_VIDMEM に加えて ISWC フラグ\_ISNONLOCAL します。
+DirectDraw ドライバー制御 AGP メモリの量利用可能で、どの画面でヒープを返すことによって、 [ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)つまり DirectDraw に渡されたバックを構造体します。 ドライバーの識別、VIDMEM を指定することで、非ローカル ヒープ\_ISNONLOCAL フラグ、 **dwFlags**のメンバー、 [**グラフィックスアクセラレータ**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)データ構造体ヒープをについて説明します。 さらに、ドライバーが、VIDMEM を指定することで、非ローカル ヒープ上のメモリの書き込みの結合を有効にできます。\_VIDMEM に加えて ISWC フラグ\_ISNONLOCAL します。
 
 サイズ (線形または四角形)、(結合書き込み) 属性、およびサーフェイスのタイプ、ヒープしないでし、使用することはできません、DirectDraw を記述する AGP と互換性のある DirectDraw ドライバーの役目です。 ただし、実際にしてヒープまたはコミット メモリのアドレス空間を予約するドライバーの責任ではありません。 これは、ドライバーの代わりに DirectDraw によって処理されます。 DirectDraw、ドライバーから AGP メモリの管理の詳細を非表示にします。
 
@@ -41,7 +41,7 @@ DirectDraw と Windows オペレーティング システムが特定の時点�
 
 DirectDraw、ヒープの正しいアドレス (線形、および物理) を特定したときにそのヒープ記述子でそれらを保存します。 DirectDraw には、これらのアドレスの初期化時に、ドライバーに通知するためのメカニズムも提供します。 これを行う方法は、特定のプラットフォームです。
 
--   Microsoft Windows 2000 以降、これは、 [ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404) GUID を使用して呼び出す\_UpdateNonLocalHeap GUID。 この GUID に渡された場合*DDGetDriverInfo*、ヒープ データが渡された、 [ **DD\_UPDATENONLOCALHEAPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff551748)データ構造体。
+-   Microsoft Windows 2000 以降、これは、 [ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) GUID を使用して呼び出す\_UpdateNonLocalHeap GUID。 この GUID に渡された場合*DDGetDriverInfo*、ヒープ データが渡された、 [ **DD\_UPDATENONLOCALHEAPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_updatenonlocalheapdata)データ構造体。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - テキスト ログの WDK SetupAPI、セクションの本文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17264b2db9d8bd40913b3a6b02e58eca16097874
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75b0ce132f07a6bf22f2d9e7da232df3f9a7d187
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377077"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359249"
 ---
 # <a name="format-of-a-text-log-section-body"></a>テキスト ログ セクション本文の書式
 
@@ -57,7 +57,7 @@ A*テキスト ログ セクション本文*テキスト ログのセクショ�
  
 
 <a href="" id="time-stamp-field"></a>*time_stamp*フィールド  
-ログに記録されたイベントが発生したときのシステム時刻を示します。 *Time_stamp*フィールドは省略可能と SetupAPI では、既定では、タイムスタンプが含まれません。 ただし、 [ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)ログ エントリの時刻スタンプを含むをサポートしています。 形式、 *time_stamp*フィールドは、の形式と同じ、 *time_stamp*で説明されているフィールド[テキスト ログ セクション ヘッダーの形式](format-of-a-text-log-section-header.md)します。
+ログに記録されたイベントが発生したときのシステム時刻を示します。 *Time_stamp*フィールドは省略可能と SetupAPI では、既定では、タイムスタンプが含まれません。 ただし、 [ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)ログ エントリの時刻スタンプを含むをサポートしています。 形式、 *time_stamp*フィールドは、の形式と同じ、 *time_stamp*で説明されているフィールド[テキスト ログ セクション ヘッダーの形式](format-of-a-text-log-section-header.md)します。
 
 <a href="" id="event-category-field"></a>*event_category*フィールド  
 ログ エントリを作成した SetupAPI 操作のカテゴリを示します。 *Event_category*フィールドは、通常はあるは必要ありません。 場合、 *event_category*フィールドが存在する、次の表に記載されている文字列のいずれかが含まれます。

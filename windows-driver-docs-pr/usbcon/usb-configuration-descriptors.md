@@ -3,19 +3,19 @@ Description: USB デバイスは、一連の USB 構成と呼ばれるインタ�
 title: USB 構成記述子
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b445f88f648983cdcc20bba5f52cd317d8806c8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 056bc5f058b8da64fe43246f988a5d06489a0d1a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369514"
 ---
 # <a name="usb-configuration-descriptors"></a>USB 構成記述子
 
 
 USB デバイスは、一連の USB 構成と呼ばれるインターフェイスの形式でその機能を公開します。 各インターフェイスは 1 つまたは複数の代替設定と各代替の設定は、一連のエンドポイントの構成されます。 このトピックでは、USB 構成に関連付けられたさまざまな記述子について説明します。
 
-USB の構成については、「構成記述子 (を参照してください[ **USB\_構成\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539241)構造). 構成記述子には、構成し、そのインターフェイス、代替の設定とそのエンドポイントに関する情報が含まれています。 各インターフェイス記述子または代替の設定に記載されて、 [ **USB\_インターフェイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff540065)構造体。 構成では、各インターフェイスの記述子の後にメモリ内ですべてのインターフェイスと設定の代替のエンドポイント記述子。 各エンドポイント記述子に格納されている、 [ **USB\_エンドポイント\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539317)構造体。
+USB の構成については、「構成記述子 (を参照してください[ **USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_configuration_descriptor)構造). 構成記述子には、構成し、そのインターフェイス、代替の設定とそのエンドポイントに関する情報が含まれています。 各インターフェイス記述子または代替の設定に記載されて、 [ **USB\_インターフェイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor)構造体。 構成では、各インターフェイスの記述子の後にメモリ内ですべてのインターフェイスと設定の代替のエンドポイント記述子。 各エンドポイント記述子に格納されている、 [ **USB\_エンドポイント\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_endpoint_descriptor)構造体。
 
 たとえばで説明されている USB web カメラ デバイス[USB デバイス レイアウト](usb-device-layout.md)します。 デバイスでサポートする 2 つのインターフェイスの構成 (インデックス 0) の最初のインターフェイスが 2 つの代替設定をサポートしています。
 
@@ -71,14 +71,14 @@ bInterval:          0x01
 
 構成記述子は、標準のデバイス要求を使用してデバイスから取得されます (入手\_記述子)、USB ドライバー スタックによってコントロール転送として送信します。 USB クライアント ドライバーでは、次の方法のいずれかで、要求を開始できます。
 
-- 呼び出して、フレームワークが提供最も簡単な方法は、デバイスは、1 つのみの構成をサポートする場合[ **WdfUsbTargetDeviceRetrieveConfigDescriptor** ](https://msdn.microsoft.com/library/windows/hardware/ff550098)メソッド。
+- 呼び出して、フレームワークが提供最も簡単な方法は、デバイスは、1 つのみの構成をサポートする場合[ **WdfUsbTargetDeviceRetrieveConfigDescriptor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor)メソッド。
 - 複数の構成をサポートするデバイス、クライアント ドライバーでの記述子を取得する必要がある場合、1 つ目のドライバー以外の構成は、URB にする必要があります送信します。 ドライバーを割り当てる必要があります、URB を送信するには、書式設定、および、USB ドライバー スタックに URB を送信します。
 
-  URB を割り当てるには、クライアント ドライバーを呼び出す必要があります、 [ **WdfUsbTargetDeviceCreateUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439423)メソッド。 メソッドは、USB ドライバー スタックによって割り当てられた、URB へのポインターを受け取ります。
+  URB を割り当てるには、クライアント ドライバーを呼び出す必要があります、 [ **WdfUsbTargetDeviceCreateUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)メソッド。 メソッドは、USB ドライバー スタックによって割り当てられた、URB へのポインターを受け取ります。
 
-  URB、書式設定、クライアント ドライバーを使用して、 [ **UsbBuildGetDescriptorRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538943)マクロ。 マクロは、記述子を取得する対象のデバイス定義の構成の数など、URB で必要なすべての情報を設定します。 URB に URB 関数が設定されている\_関数\_取得\_記述子\_FROM\_デバイス (を参照してください[  **\_URB\_コントロール\_記述子\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff540357))、記述子の型が usb\_構成\_記述子\_型。 URB に含まれる情報を使用すると、USB ドライバー スタックは標準のコントロール要求を作成し、デバイスに送信します。
+  URB、書式設定、クライアント ドライバーを使用して、 [ **UsbBuildGetDescriptorRequest** ](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))マクロ。 マクロは、記述子を取得する対象のデバイス定義の構成の数など、URB で必要なすべての情報を設定します。 URB に URB 関数が設定されている\_関数\_取得\_記述子\_FROM\_デバイス (を参照してください[  **\_URB\_コントロール\_記述子\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_control_descriptor_request))、記述子の型が usb\_構成\_記述子\_型。 URB に含まれる情報を使用すると、USB ドライバー スタックは標準のコントロール要求を作成し、デバイスに送信します。
 
-  URB を送信するには、クライアント ドライバーは WDF 要求オブジェクトを使用する必要があります。 USB ドライバー スタックに要求オブジェクトを非同期的に送信するドライバーを呼び出す必要があります、 [ **WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)メソッド。 同期的に送信する呼び出し、 [ **WdfUsbTargetDeviceSendUrbSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff550105)メソッド。
+  URB を送信するには、クライアント ドライバーは WDF 要求オブジェクトを使用する必要があります。 USB ドライバー スタックに要求オブジェクトを非同期的に送信するドライバーを呼び出す必要があります、 [ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)メソッド。 同期的に送信する呼び出し、 [ **WdfUsbTargetDeviceSendUrbSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)メソッド。
 
   <strong>WDM ドライバー: * * A Windows Driver Model (WDM) クライアント ドライバーでは構成記述子を URB を送信することでのみ取得できます。URB を割り当てることで、ドライバーを呼び出す必要があります、 [ </strong>USBD\_UrbAllocate<strong> ](<https://msdn.microsoft.com/library/windows/hardware/hh406250>)ルーチン。URB の書式を設定するドライバーを呼び出す必要があります、 [ </strong>UsbBuildGetDescriptorRequest * *](<https://msdn.microsoft.com/library/windows/hardware/ff538943>)マクロ。 URB を送信するには、ドライバーは IRP、URB を関連付けるし、USB ドライバー スタックに IRP を送信する必要があります。 詳細については、次を参照してください。 [、URB を送信する方法](send-requests-to-the-usb-driver-stack.md)します。
 
@@ -86,9 +86,9 @@ USB 構成では、変数はインターフェイスとその代替の設定の�
 
 **を呼び出して WdfUsbTargetDeviceRetrieveConfigDescriptor 構成記述子を取得するには、次の手順を実行します。**
 
-1.  呼び出すことによってすべての構成情報を保持するために必要なバッファーのサイズを取得[ **WdfUsbTargetDeviceRetrieveConfigDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff550098)します。 ドライバーは、バッファーおよびバッファーのサイズを保持する変数で NULL を渡す必要があります。
-2.  以前から受信したサイズに基づくより大きなバッファーを割り当てる[ **WdfUsbTargetDeviceRetrieveConfigDescriptor** ](https://msdn.microsoft.com/library/windows/hardware/ff550098)呼び出します。
-3.  呼び出す[ **WdfUsbTargetDeviceRetrieveConfigDescriptor** ](https://msdn.microsoft.com/library/windows/hardware/ff550098)もう一度手順 2 で割り当てられた新しいバッファーへのポインターを指定します。
+1.  呼び出すことによってすべての構成情報を保持するために必要なバッファーのサイズを取得[ **WdfUsbTargetDeviceRetrieveConfigDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor)します。 ドライバーは、バッファーおよびバッファーのサイズを保持する変数で NULL を渡す必要があります。
+2.  以前から受信したサイズに基づくより大きなバッファーを割り当てる[ **WdfUsbTargetDeviceRetrieveConfigDescriptor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor)呼び出します。
+3.  呼び出す[ **WdfUsbTargetDeviceRetrieveConfigDescriptor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor)もう一度手順 2 で割り当てられた新しいバッファーへのポインターを指定します。
 
 ```cpp
  NTSTATUS RetrieveDefaultConfigurationDescriptor (
@@ -157,14 +157,14 @@ Exit:
 
 **構成記述子を URB を送信することで取得するには、次の手順を実行します。**
 
-1.  呼び出すことによって、URB を割り当て、 [ **WdfUsbTargetDeviceCreateUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439423)メソッド。
-2.  呼び出すことによって、URB を書式設定、 [ **UsbBuildGetDescriptorRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538943)マクロ。 URB の転送のバッファーが保持するために十分な大きさのバッファーを指す必要があります、 [ **USB\_構成\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539241)構造体。
-3.  WDF の要求オブジェクトとして呼び出すことによって、URB を送信[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)または[ **WdfUsbTargetDeviceSendUrbSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff550105)します。
-4.  要求が完了すると、確認、 **wTotalLength**のメンバー [ **USB\_構成\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539241)します。 その値は、完全な構成記述子を格納するために必要なバッファーのサイズを示します。
+1.  呼び出すことによって、URB を割り当て、 [ **WdfUsbTargetDeviceCreateUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)メソッド。
+2.  呼び出すことによって、URB を書式設定、 [ **UsbBuildGetDescriptorRequest** ](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))マクロ。 URB の転送のバッファーが保持するために十分な大きさのバッファーを指す必要があります、 [ **USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_configuration_descriptor)構造体。
+3.  WDF の要求オブジェクトとして呼び出すことによって、URB を送信[ **WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)または[ **WdfUsbTargetDeviceSendUrbSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)します。
+4.  要求が完了すると、確認、 **wTotalLength**のメンバー [ **USB\_構成\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_configuration_descriptor)します。 その値は、完全な構成記述子を格納するために必要なバッファーのサイズを示します。
 5.  取得したサイズに基づいてより大きなバッファーを割り当てる**wTotalLength**します。
 6.  大きなバッファーでは、同じ要求を発行します。
 
-次の例のコードは、 [ **UsbBuildGetDescriptorRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538943) i 番目の構成の構成情報を取得する要求を呼び出します。
+次の例のコードは、 [ **UsbBuildGetDescriptorRequest** ](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85)) i 番目の構成の構成情報を取得する要求を呼び出します。
 
 ```cpp
 NTSTATUS FX3_RetrieveConfigurationDescriptor (
@@ -300,11 +300,11 @@ Exit:
 
 ![構成記述子のレイアウトを示す図](images/usbconfig.png)
 
-0 から始まる**bInterfaceNumber**のメンバー [ **USB\_インターフェイス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff540065)インターフェイス、構成内で区別されます。 指定したインターフェイスでは、0 から始まる**bAlternateSetting**メンバーがインターフェイスの代替設定を区別します。 デバイスでは、インターフェイスの記述子を返しますの順序で**bInterfaceNumber**値と、次の順序で**bAlternateSetting**値。
+0 から始まる**bInterfaceNumber**のメンバー [ **USB\_インターフェイス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor)インターフェイス、構成内で区別されます。 指定したインターフェイスでは、0 から始まる**bAlternateSetting**メンバーがインターフェイスの代替設定を区別します。 デバイスでは、インターフェイスの記述子を返しますの順序で**bInterfaceNumber**値と、次の順序で**bAlternateSetting**値。
 
-クライアント ドライバーを呼び出すことができます、構成内で指定されたインターフェイスの記述子を検索する[ **USBD\_ParseConfigurationDescriptorEx**](https://msdn.microsoft.com/library/windows/hardware/ff539102)します。 呼び出しでは、クライアント ドライバーは、構成内の開始位置を提供します。 必要に応じて、ドライバーでは、インターフェイスの番号、代替の設定、クラス、サブクラスでは、またはプロトコルを指定できます。 ルーチンは、次の一致するインターフェイス記述子へのポインターを返します。
+クライアント ドライバーを呼び出すことができます、構成内で指定されたインターフェイスの記述子を検索する[ **USBD\_ParseConfigurationDescriptorEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex)します。 呼び出しでは、クライアント ドライバーは、構成内の開始位置を提供します。 必要に応じて、ドライバーでは、インターフェイスの番号、代替の設定、クラス、サブクラスでは、またはプロトコルを指定できます。 ルーチンは、次の一致するインターフェイス記述子へのポインターを返します。
 
-使用して、エンドポイント、または文字列記述子の構成記述子を確認する、 [ **USBD\_ParseDescriptors** ](https://msdn.microsoft.com/library/windows/hardware/ff539109)ルーチン。 呼び出し元は、構成と USB など、記述子の種類内の開始位置\_文字列\_記述子\_型または USB\_エンドポイント\_記述子\_型。 ルーチンは、次の一致する記述子へのポインターを返します。
+使用して、エンドポイント、または文字列記述子の構成記述子を確認する、 [ **USBD\_ParseDescriptors** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_parsedescriptors)ルーチン。 呼び出し元は、構成と USB など、記述子の種類内の開始位置\_文字列\_記述子\_型または USB\_エンドポイント\_記述子\_型。 ルーチンは、次の一致する記述子へのポインターを返します。
 
 ## <a name="related-topics"></a>関連トピック
 [USB デバイスの構成を選択する方法](how-to-select-a-configuration-for-a-usb-device.md)  

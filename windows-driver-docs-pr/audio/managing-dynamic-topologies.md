@@ -9,12 +9,12 @@ keywords:
 - 動的サブデバイス WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d2d15b75ea0368eaae4f07acb10bbcd31d6488b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bb7778874e402487f6c3990fc40c138385c45fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358677"
 ---
 # <a name="managing-dynamic-topologies"></a>動的なトポロジの管理
 
@@ -23,7 +23,7 @@ ms.locfileid: "63332392"
 
 オーディオ ドライバーには、内部接続のマップでは基本的には、トポロジを表示して、サブデバイス内の要素の処理で各サブデバイスがについて説明します。 システム提供の Windows API モジュールとベンダーから提供されたコントロール パネル アプリケーション、サブデバイスの機能を決定し、コントロールの内部のポイントを識別するために、トポロジ情報を使用します。 詳細については、次を参照してください。[フィルター トポロジを公開する](exposing-filter-topology.md)します。
 
-前に開発された WDM オーディオ ドライバー、 [IUnregisterSubdevice](https://msdn.microsoft.com/library/windows/hardware/ff537030)と[IUnregisterPhysicalConnection](https://msdn.microsoft.com/library/windows/hardware/ff537022)インターフェイスが利用可能になったほぼ静的なトポロジを持ちます。 これらのドライバーのアダプター ドライバー、サブデバイスを管理するためのミニポート ドライバー オブジェクトが作成された後オブジェクトとその関連付けられているサブデバイス永続化アダプターのドライバー オブジェクトの有効期間。
+前に開発された WDM オーディオ ドライバー、 [IUnregisterSubdevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iunregistersubdevice)と[IUnregisterPhysicalConnection](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iunregisterphysicalconnection)インターフェイスが利用可能になったほぼ静的なトポロジを持ちます。 これらのドライバーのアダプター ドライバー、サブデバイスを管理するためのミニポート ドライバー オブジェクトが作成された後オブジェクトとその関連付けられているサブデバイス永続化アダプターのドライバー オブジェクトの有効期間。
 
 ただしでオーディオ アダプターを動的に構成可能なアダプターのドライバーを作成し、サブデバイスのように、ユーザーがオーディオ ジャックに外部デバイスを差し込むし、それらを削除しますハードウェア構成の変更を反映するように実行時に削除します。 この動作により、ハードウェアの論理的に独立した機能として動作するサブデバイスです。 つまり、各サブデバイスできます電源がオンに、構成、および他サブデバイスとは無関係にシャット ダウンします。
 
@@ -37,9 +37,9 @@ ms.locfileid: "63332392"
 
 アダプターのドライバーは、サブデバイスを動的に削除するときに、サブデバイスの内部のトポロジにバインドされているハードウェア リソースを解放します。 アダプターのドライバーは、おそらくさまざまなトポロジを使用した新しいサブデバイスを作成するのにこれらのリソースを使用できます。
 
-アダプターのドライバーが 1 つまたは複数のインスタンスとしてサブデバイスのドライバー インターフェイスを登録する新しいオーディオ サブデバイスを構成するときに[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)、I/O マネージャーは、シンボルが含まれている 1 つまたは複数のレジストリ エントリを追加しますインターフェイス クラスとインターフェイスのインスタンスの関連付けリンク。 サブデバイスにアクセスするに、ユーザー モードのクライアントがレジストリからシンボリック リンクを取得し、呼び出しのパラメーターとして渡します、 [ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)関数。 通常、クライアントは、Dsound.dll または Wdmaud.drv、またはベンダーから提供されたコントロール パネルまたはオーディオ ユーティリティ プログラムなどの Windows API モジュールです。 詳細については**CreateFile**、Microsoft Windows SDK のドキュメントを参照してください。
+アダプターのドライバーが 1 つまたは複数のインスタンスとしてサブデバイスのドライバー インターフェイスを登録する新しいオーディオ サブデバイスを構成するときに[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)、I/O マネージャーは、シンボルが含まれている 1 つまたは複数のレジストリ エントリを追加しますインターフェイス クラスとインターフェイスのインスタンスの関連付けリンク。 サブデバイスにアクセスするに、ユーザー モードのクライアントがレジストリからシンボリック リンクを取得し、呼び出しのパラメーターとして渡します、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数。 通常、クライアントは、Dsound.dll または Wdmaud.drv、またはベンダーから提供されたコントロール パネルまたはオーディオ ユーティリティ プログラムなどの Windows API モジュールです。 詳細については**CreateFile**、Microsoft Windows SDK のドキュメントを参照してください。
 
-ミニポート ドライバーを呼び出すと、 [ **IUnregisterSubdevice::UnregisterSubdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff537032)を削除するメソッド、サブデバイス、PortCls システム ドライバー (Portcls.sys) I/O マネージャーに通知シンボリック リンクを削除するにはレジストリからデバイスの関連付けられているインターフェイスのリンク。 インターフェイスの削除イベントをデバイスに登録されているコンポーネントは、インターフェイスが削除されたときに通知を受け取ります。
+ミニポート ドライバーを呼び出すと、 [ **IUnregisterSubdevice::UnregisterSubdevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iunregistersubdevice-unregistersubdevice)を削除するメソッド、サブデバイス、PortCls システム ドライバー (Portcls.sys) I/O マネージャーに通知シンボリック リンクを削除するにはレジストリからデバイスの関連付けられているインターフェイスのリンク。 インターフェイスの削除イベントをデバイスに登録されているコンポーネントは、インターフェイスが削除されたときに通知を受け取ります。
 
 オーディオのアダプターは、プラグが挿入またはオーディオ ジャックから削除されたときに、ミニポート ドライバーに通知する回線のモジュラー ジャック プレゼンス回路を含めることができます。 ユーザーは、のオーディオ ジャックにプラグを挿入するときにアダプター ドライバーは、レジストリに関連付けられているサブデバイスのデバイスのインターフェイスを追加します。 ユーザーは、のオーディオ ジャックからプラグを削除するとき、レジストリから、対応するデバイス インターフェイス アダプターのドライバーを削除します。
 

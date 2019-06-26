@@ -12,17 +12,17 @@ keywords:
 - ACL の WDK オブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d2e9fc52a04ba5c3d3363750fb3e0964249e74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfe6669c7d315c4a105d449a9bcb670e9733ff08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377290"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373365"
 ---
 # <a name="security-descriptors"></a>セキュリティ記述子
 
 
-すべてのオブジェクトが、*セキュリティ記述子*オブジェクトのセキュリティ設定が含まれています。 カーネル モード、不透明で[**セキュリティ\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff563689)データ型は、セキュリティ記述子を表します。
+すべてのオブジェクトが、*セキュリティ記述子*オブジェクトのセキュリティ設定が含まれています。 カーネル モード、不透明で[**セキュリティ\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_security_descriptor)データ型は、セキュリティ記述子を表します。
 
 セキュリティ記述子の情報が格納されている*アクセス制御リスト*(Acl)。 一連のアクセス制御リストから成る*アクセス制御エントリ*(Ace)。
 

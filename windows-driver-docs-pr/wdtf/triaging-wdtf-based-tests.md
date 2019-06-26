@@ -4,21 +4,21 @@ description: WDTF ベースのテストで起こっているかを理解する�
 ms.assetid: C2F7AA74-7A74-4EA4-AD2D-8143252380C8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c026384159c004d68b28952d973f61f039cd1bb0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31ec77d4107ae7b568bd1d799a82c60b1c03ca2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365516"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369458"
 ---
 # <a name="triaging-wdtf-based-tests"></a>WDTF ベース テストのトリアージ
 
 
-WDTF ベースのテストで行われる内容についての理解を深めるために、[WDTF オブジェクト ログ](logging-and-tracing.md)および [WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)の組み込みのサポートを使用できます。
+WDTF ベースのテストで行われる内容についての理解を深めるために、[WDTF オブジェクト ログ](logging-and-tracing.md)および [WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)の組み込みのサポートを使用できます。
 
-Automatcially WDTF オブジェクト記述を簡略化できます共通のログ ファイルにログ メッセージがテスト作成と役立つことができます WDTF オブジェクトのログ記録の原因は、テストの問題を診断します。 デバイスの基本的なテストと WDK に含まれているその他のテストは、WDTF ベースのテストの例を示します。 これらのテストについては、次を参照してください。[を選択し、デバイスの基本的なテストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)します。
+Automatcially WDTF オブジェクト記述を簡略化できます共通のログ ファイルにログ メッセージがテスト作成と役立つことができます WDTF オブジェクトのログ記録の原因は、テストの問題を診断します。 デバイスの基本的なテストと WDK に含まれているその他のテストは、WDTF ベースのテストの例を示します。 これらのテストについては、次を参照してください。[を選択し、デバイスの基本的なテストを構成する方法](https://docs.microsoft.com/windows-hardware/drivers)します。
 
-サポートを提供する WDTF [WPP ソフトウェア トレース](https://msdn.microsoft.com/library/windows/hardware/ff556204)します。 WDTF のすべてのオブジェクトは、実行中にトレース情報を生成します。 など、WDK のツールを使用して、トレース情報を読み取れる[traceview で](https://msdn.microsoft.com/library/windows/hardware/ff556063)します。
+サポートを提供する WDTF [WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)します。 WDTF のすべてのオブジェクトは、実行中にトレース情報を生成します。 など、WDK のツールを使用して、トレース情報を読み取れる[traceview で](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-traceview)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

@@ -9,17 +9,17 @@ keywords:
 - 割り込みを自動検出の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e6492af31d6485d56810df9f51b18014de61ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11ed0fa2d386c3c9d30f8f6e0ceb28d4c4d4ace4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358185"
 ---
 # <a name="using-the-connectlinebased-version-of-ioconnectinterruptex"></a>接続を使用して\_行\_IoConnectInterruptEx のベース バージョン
 
 
-Windows Vista 以降のオペレーティング システム、ドライバーが接続を使用できます\_行\_ベース バージョンの[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)を登録する、 [ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)行ベースのドライバーの割り込みのルーチンです。 (以前のオペレーティング システム用のドライバーの接続を使用できる\_完全\_の指定されたバージョン**IoConnectInterruptEx**)。
+Windows Vista 以降のオペレーティング システム、ドライバーが接続を使用できます\_行\_ベース バージョンの[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)を登録する、 [ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)行ベースのドライバーの割り込みのルーチンです。 (以前のオペレーティング システム用のドライバーの接続を使用できる\_完全\_の指定されたバージョン**IoConnectInterruptEx**)。
 
 **注**  すべての行ベースの割り込みの 1 つの割り込みサービス ルーチン (ISR) を登録するドライバーに対してだけ、このメソッドを使用することができます。 接続を使用する必要があります、ドライバーは、複数の割り込みを受け取ることが場合、\_完全\_の指定されたバージョン**IoConnectInterruptEx**します。
 
@@ -31,7 +31,7 @@ Windows Vista 以降のオペレーティング システム、ドライバー�
 
 -   *パラメーター*-&gt;**LineBased.ServiceRoutine**を指す、 *InterruptService*中に、日常的な*パラメーター*- &gt; **LineBased**.**ServiceContext**として、システムが渡される値を指定します、 *ServiceContext*パラメーターを*InterruptService*します。 ドライバーは、コンテキスト情報を渡すためこれを使用できます。 コンテキスト情報を渡す方法についての詳細については、次を参照してください。 [ISR コンテキスト情報の提供](providing-isr-context-information.md)します。
 
--   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター ***-&gt;LineBased.InterruptObject**します。 **IoConnectInterruptEx** ISR を削除するときに使用できると、割り込みの割り込みのオブジェクト をポイントするには、この変数を設定 詳細については、次を参照してください。 [ISR を削除する](removing-an-isr.md)します。
+-   ドライバーで PKINTERRUPT 変数へのポインターを提供します。 * パラメーター * **-&gt;LineBased.InterruptObject**します。 **IoConnectInterruptEx** ISR を削除するときに使用できると、割り込みの割り込みのオブジェクト をポイントするには、この変数を設定 詳細については、次を参照してください。 [ISR を削除する](removing-an-isr.md)します。
 
 -   ドライバーがでスピン ロックを必要に応じて指定*パラメーター * * *-&gt;LineBased.SpinLock** ISR との同期時に使用するシステム ほとんどのドライバーを指定するだけ**NULL**ドライバーに代わってスピン ロックの割り当てをシステムを有効にします。 ISR との同期の詳細については、次を参照してください。[デバイス データへのアクセスの同期](synchronizing-access-to-device-data.md)します。
 

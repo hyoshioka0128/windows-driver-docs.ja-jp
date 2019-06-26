@@ -10,12 +10,12 @@ keywords:
 - 常駐コード WDK ページング可能なドライバー
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e91814a53983a408d72500fc1cc2311deeb2de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c41d361a954448245edf8baff44c07b8cd42291
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335257"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358104"
 ---
 # <a name="when-should-code-and-data-be-pageable"></a>コードとデータをページング可能にすべき場合
 
@@ -31,7 +31,7 @@ ms.locfileid: "63335257"
 
 -   スピン ロックを取得します。
 
--   などのルーチンのサポート、カーネルのオブジェクトのいずれかの呼び出し[ **KeReleaseMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff553140)または[ **KeReleaseSemaphore**](https://msdn.microsoft.com/library/windows/hardware/ff553143)、これで、 *待機*にパラメーターが設定されている**TRUE**します。 カーネルが呼び出された場合*待機*に設定**TRUE**、呼び出しをディスパッチで IRQL で返します\_レベル。
+-   などのルーチンのサポート、カーネルのオブジェクトのいずれかの呼び出し[ **KeReleaseMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasemutex)または[ **KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasesemaphore)、これで、 *待機*にパラメーターが設定されている**TRUE**します。 カーネルが呼び出された場合*待機*に設定**TRUE**、呼び出しをディスパッチで IRQL で返します\_レベル。
 
 IRQL でドライバーのコードを実行する必要があります&lt;ディスパッチ\_レベル、ページ フォールトを発生コードで何もすることがあります。 場合は、次のいずれかのコード ページ フォールトが発生することができます。
 

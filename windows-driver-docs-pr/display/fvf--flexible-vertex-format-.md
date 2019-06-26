@@ -9,12 +9,12 @@ keywords:
 - Direct3D WDK Windows 2000 の表示、柔軟な頂点の書式設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c94d4dda73a0bbb950ac4ce96257c4595fbc575
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e91bc5b1f10273f84d4af60b6fc932cc8c842092
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377990"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356359"
 ---
 # <a name="fvf-flexible-vertex-format"></a>FVF (柔軟な頂点形式)
 
@@ -22,7 +22,7 @@ ms.locfileid: "63377990"
 ## <span id="ddk_fvf_gg"></span><span id="DDK_FVF_GG"></span>
 
 
-ドライバーの[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)コールバックは、柔軟な頂点の形式 (FVF) で頂点データを受信します。 頂点の形式は、柔軟であるために、このデータに対して定義された包括的なデータ構造はありません。 ドライバーは、FVF のすべての機能を実装する必要があります。
+ドライバーの[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コールバックは、柔軟な頂点の形式 (FVF) で頂点データを受信します。 頂点の形式は、柔軟であるために、このデータに対して定義された包括的なデータ構造はありません。 ドライバーは、FVF のすべての機能を実装する必要があります。
 
 Microsoft DirectX 7.0 を含む 1 D、3 D、および通常の 2D テクスチャだけでなく 4 D テクスチャ FVF 更新プログラムがあります。 この更新プログラムの詳細については、次を参照してください。 [FVF 更新](fvf-update.md)します。 参照してください、 *Perm3*ドライバーとこれらのトピックの詳細については、DirectX SDK ドキュメントのサンプルです。
 

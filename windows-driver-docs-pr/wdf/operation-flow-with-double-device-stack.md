@@ -9,12 +9,12 @@ keywords:
 - 二重デバイス スタック フロー WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef4cb237dbc35d99d7111c8b7ba40f9f66eeda7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 04bfb9e87e2df17ffaa938e7c666e580d63179d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573112"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375073"
 ---
 # <a name="operation-flow-with-double-device-stack"></a>ダブル デバイス スタックでの操作フロー
 
@@ -25,13 +25,13 @@ ms.locfileid: "56573112"
 
 ![umdf フィルター ドライバーおよび umdf function ドライバーの umdf i/o 呼び出しシーケンス](images/umdfflow2.gif)
 
-**注**  の図に示すように、カーネル モードでアプリケーションによって開始されるすべての I/O がルーティングされます、 [、UMDF のアーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff554461)セクションで、上記の図にこのような状況が表示されない場合でも.
+**注**  の図に示すように、カーネル モードでアプリケーションによって開始されるすべての I/O がルーティングされます、 [、UMDF のアーキテクチャ](https://docs.microsoft.com/previous-versions/ff554461(v=vs.85))セクションで、上記の図にこのような状況が表示されない場合でも.
 
  
 
-UMDF フィルターと関数のドライバーが呼び出すことも、 [ **IWDFIoRequest::GetCreateParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff559088)メソッドの場合は、読み取り要求に関連付けられているファイルに関する情報が必要です。 UMDF フィルターと関数のドライバーが呼び出すことも、 [ **IWDFIoRequest::GetReadParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff559113)メソッドの詳細については、読み取り要求は必要がある場合。
+UMDF フィルターと関数のドライバーが呼び出すことも、 [ **IWDFIoRequest::GetCreateParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getcreateparameters)メソッドの場合は、読み取り要求に関連付けられているファイルに関する情報が必要です。 UMDF フィルターと関数のドライバーが呼び出すことも、 [ **IWDFIoRequest::GetReadParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-getreadparameters)メソッドの詳細については、読み取り要求は必要がある場合。
 
-UMDF ドライバーの機能の呼び出し、 [ **IWDFIoRequest::Complete** ](https://msdn.microsoft.com/library/windows/hardware/ff559070)または[ **IWDFIoRequest::CompleteWithInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559074)メソッド読み取り操作が終了するフィルター ドライバーに通知します。 UMDF フィルター ドライバーがのメソッドを呼び出すことも、 [IWDFIoRequestCompletionParams](https://msdn.microsoft.com/library/windows/hardware/ff559055)インターフェイスの詳細については、読み取り要求を完了する必要がある場合。 UMDF ドライバー呼び出しをフィルター処理**完了**または**CompleteWithInformation**読み取り操作が完了したシグナルは、アプリケーションは、読み取りデータへのアクセスにします。
+UMDF ドライバーの機能の呼び出し、 [ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[ **IWDFIoRequest::CompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッド読み取り操作が終了するフィルター ドライバーに通知します。 UMDF フィルター ドライバーがのメソッドを呼び出すことも、 [IWDFIoRequestCompletionParams](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequestcompletionparams)インターフェイスの詳細については、読み取り要求を完了する必要がある場合。 UMDF ドライバー呼び出しをフィルター処理**完了**または**CompleteWithInformation**読み取り操作が完了したシグナルは、アプリケーションは、読み取りデータへのアクセスにします。
 
  
 

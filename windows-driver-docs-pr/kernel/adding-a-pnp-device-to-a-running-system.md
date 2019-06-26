@@ -17,12 +17,12 @@ keywords:
 - I/O 要求パケット PnP WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dab5a0072d9ef9b00423135984e745a9808d93e0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bc9ae4fe91b5ccd2b10496c5e367bfee0376cecc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365875"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369996"
 ---
 # <a name="adding-a-pnp-device-to-a-running-system"></a>実行中システムへの PnP デバイスの追加
 
@@ -52,21 +52,21 @@ ms.locfileid: "63365875"
 
 3.  バス デバイスの機能のドライバーは、一連の子デバイスが変更されたことを PnP マネージャーに通知します。
 
-    関数のドライバーを呼び出して PnP マネージャーに通知[ **IoInvalidateDeviceRelations** ](https://msdn.microsoft.com/library/windows/hardware/ff549353)で、*型*の**BusRelations**します。
+    関数のドライバーを呼び出して PnP マネージャーに通知[ **IoInvalidateDeviceRelations** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)で、*型*の**BusRelations**します。
 
 4.  PnP マネージャーでは、バス上のデバイスの現在の一覧については、バスのドライバーを照会します。
 
-    PnP マネージャーに送信、 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)バスのデバイス スタックを要求します。 **Parameters.QueryDeviceRelations.Type**値は**BusRelations**、バス上に存在するデバイスの現在の一覧については、PnP マネージャーが確認することを示します (*バス関係*).
+    PnP マネージャーに送信、 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)バスのデバイス スタックを要求します。 **Parameters.QueryDeviceRelations.Type**値は**BusRelations**、バス上に存在するデバイスの現在の一覧については、PnP マネージャーが確認することを示します (*バス関係*).
 
     PnP マネージャーでは、バスのデバイス スタックの最上位のドライバーを IRP を送信します。 PnP Irp の規則に従っては、スタック内の各ドライバーは、必要に応じて、IRP を処理し、次のドライバーに IRP を渡します。
 
 5.  関数のドライバー、バスのデバイスを IRP を処理します。
 
-    リファレンス ページを参照してください。 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)この IRP の処理の詳細について。
+    リファレンス ページを参照してください。 [ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)この IRP の処理の詳細について。
 
     この例では、USB ハブのドライバーを処理のハブには、この IRP *FDO*します。 ハブのドライバーを作成、 *PDO*ジョイスティック デバイスの IRP に返される子デバイスの一覧に含めず、ジョイスティック PDO への参照先のポインターが含まれています。
 
-    IRP のいずれかを使用してバックアップ デバイス スタックを移動、USB ハブの親バス ドライバー (USB ホスト コント ローラー クラス/miniclass ドライバー ペア) には、IRP が完了すると、 [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)登録されたルーチンハブのドライバーです。
+    IRP のいずれかを使用してバックアップ デバイス スタックを移動、USB ハブの親バス ドライバー (USB ホスト コント ローラー クラス/miniclass ドライバー ペア) には、IRP が完了すると、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)登録されたルーチンハブのドライバーです。
 
 バス関数のドライバーが要求 PnP マネージャーが子デバイスの一覧のクエリを実行して子の一覧の変更を報告することに注意してください。 結果の**IRP\_MN\_クエリ\_デバイス\_リレーション**bus デバイスのすべてのドライバーが要求を表示します。 通常、バス関数ドライバーは IRP とレポートの子を処理するためにのみ、ドライバーです。 一部のデバイス スタックでは、bus フィルター ドライバーが存在し、バス関係のリストの作成に参加しています。 1 つの例は、ACPI で、デバイスを ACPI bus フィルター ドライバーとしてアタッチします。 一部のデバイス スタックで nonbus フィルター ドライバーの処理、 **IRP\_MN\_クエリ\_デバイス\_リレーション**要求が、これは一般的ではありません。
 
@@ -90,7 +90,7 @@ ms.locfileid: "63365875"
 
     PnP マネージャーは、デバイス スタックに Irp を送信することによって、新しいデバイスに関する情報を収集します。 これらの Irp を以下に示します。
 
-    -   [**IRP\_MN\_クエリ\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff551679)のハードウェア Id の次の種類ごとの個別の IRP:
+    -   [**IRP\_MN\_クエリ\_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)のハードウェア Id の次の種類ごとの個別の IRP:
 
         **BusQueryDeviceID**
 
@@ -102,17 +102,17 @@ ms.locfileid: "63365875"
 
         **BusQueryContainerID**
 
-    -   [**IRP\_MN\_クエリ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff551664)
+    -   [**IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)
 
-    -   [**IRP\_MN\_クエリ\_デバイス\_テキスト**](https://msdn.microsoft.com/library/windows/hardware/ff551674)、次の項目ごとの個別の IRP:
+    -   [**IRP\_MN\_クエリ\_デバイス\_テキスト**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)、次の項目ごとの個別の IRP:
 
         **DeviceTextDescription**
 
         **DeviceTextLocationInformation**
 
-    -   [**IRP\_MN\_クエリ\_BUS\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff551654)
-    -   [**IRP\_MN\_クエリ\_リソース**](https://msdn.microsoft.com/library/windows/hardware/ff551710)
-    -   [**IRP\_MN\_クエリ\_リソース\_要件**](https://msdn.microsoft.com/library/windows/hardware/ff551715)
+    -   [**IRP\_MN\_クエリ\_BUS\_情報**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-bus-information)
+    -   [**IRP\_MN\_クエリ\_リソース**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resources)
+    -   [**IRP\_MN\_クエリ\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)
 
     PnP マネージャーが、新しい PnP デバイスの処理のこの段階で上に示した Irp を送信しますが、必ずしも表示されている順番で、そのためことは避けてください Irp が送信される注文に関する前提条件。 また、ことを想定しないでください PnP マネージャーから上に示した Irp のみを送信することです。
 
@@ -124,7 +124,7 @@ ms.locfileid: "63365875"
 
     -   PnP マネージャーでは、デバイスの列挙子のデバイス キーの下のサブキーを作成します。
 
-        PnP マネージャーという名前のサブキーを作成する**HKLM\\システム\\CurrentControlSet\\Enum\\**&lt;*列挙子*&gt; **\\** &lt; *deviceID*&gt;します。 作成、 &lt;*列挙子*&gt;サブキーが既に存在しない場合。
+        PnP マネージャーという名前のサブキーを作成する**HKLM\\システム\\CurrentControlSet\\Enum\\** &lt;*列挙子*&gt; **\\** &lt; *deviceID*&gt;します。 作成、 &lt;*列挙子*&gt;サブキーが既に存在しない場合。
 
         *列挙子*は PnP デバイスを検出するコンポーネントを標準のプラグ アンド プレイ ハードウェアに基づいています。 列挙子のタスクは、PnP マネージャーとのパートナーシップでの PnP バス ドライバーによって実行されます。 デバイスは通常、PCI や PCMCIA など、その親バス ドライバーによって列挙されます。 ACPI などの bus フィルター ドライバーでは、一部のデバイスが列挙されます。
 
@@ -132,29 +132,29 @@ ms.locfileid: "63365875"
 
         場合**Capabilities.UniqueID**として返される**TRUE**の**IRP\_MN\_クエリ\_機能**デバイスの一意の ID はシステム全体で一意です。 それ以外の場合は、一意なシステム全体をあるように、PnP マネージャーが、ID を変更します。
 
-        PnP マネージャーという名前のサブキーを作成する**HKLM\\システム\\CurrentControlSet\\Enum\\**&lt;*列挙子*&gt; **\\** &lt; *deviceID* &gt; **\\** &lt; *instanceID*&gt;します。
+        PnP マネージャーという名前のサブキーを作成する**HKLM\\システム\\CurrentControlSet\\Enum\\** &lt;*列挙子*&gt; **\\** &lt; *deviceID* &gt; **\\** &lt; *instanceID*&gt;します。
 
     -   PnP マネージャーでは、デバイスのインスタンスのサブキーに、デバイスに関する情報を書き込みます。
 
         PnP マネージャーでは、場合は、デバイスの提供されたときに、次を含む情報を格納します。
 
-        **DeviceDesc** — から[ **IRP\_MN\_クエリ\_デバイス\_テキスト**](https://msdn.microsoft.com/library/windows/hardware/ff551674)
+        **DeviceDesc** — から[ **IRP\_MN\_クエリ\_デバイス\_テキスト**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)
 
         **場所** — から**IRP\_MN\_クエリ\_デバイス\_テキスト**
 
-        **機能** — からフラグ[ **IRP\_MN\_クエリ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff551664)
+        **機能** — からフラグ[ **IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)
 
         **UINumber** — から**IRP\_MN\_クエリ\_機能**
 
-        **HardwareID** — から[ **IRP\_MN\_クエリ\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff551679)
+        **HardwareID** — から[ **IRP\_MN\_クエリ\_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)
 
         **CompatibleIDs** — から**IRP\_MN\_クエリ\_ID**
 
         **ContainerID** — から**IRP\_MN\_クエリ\_ID**
 
-        **LogConf\\BootConfig** — from [**IRP\_MN\_QUERY\_RESOURCES**](https://msdn.microsoft.com/library/windows/hardware/ff551710)
+        **LogConf\\BootConfig** — from [**IRP\_MN\_QUERY\_RESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resources)
 
-        **LogConf\\BasicConfigVector** — from [**IRP\_MN\_QUERY\_RESOURCE\_REQUIREMENTS**](https://msdn.microsoft.com/library/windows/hardware/ff551715)
+        **LogConf\\BasicConfigVector** — from [**IRP\_MN\_QUERY\_RESOURCE\_REQUIREMENTS**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-resource-requirements)
 
 この時点では、PnP マネージャーは、関数のドライバーを見つけて、デバイスのドライバーをフィルター処理する準備が存在する場合です。 (詳しくは、次の図を参照してください)。
 
@@ -164,11 +164,11 @@ ms.locfileid: "63365875"
 
 1.  カーネル モードの PnP マネージャーは、いずれかを使用する必要がある場合、デバイスの場合、関数とフィルター ドライバーを検索するには、ユーザー モードの PnP マネージャーとユーザー モードのセットアップ コンポーネントと連携します。
 
-    カーネル モードの PnP マネージャーはキューにイベントをインストールする必要があるデバイスを識別する、ユーザー モードの PnP マネージャーです。 特権を持つユーザーがログインすると、ユーザー モード コンポーネントは、ドライバーの検索を続行します。 参照してください、[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)セットアップ コンポーネントと、デバイスのインストールでのロールについて。
+    カーネル モードの PnP マネージャーはキューにイベントをインストールする必要があるデバイスを識別する、ユーザー モードの PnP マネージャーです。 特権を持つユーザーがログインすると、ユーザー モード コンポーネントは、ドライバーの検索を続行します。 参照してください、[デバイス インストールの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)セットアップ コンポーネントと、デバイスのインストールでのロールについて。
 
 2.  ユーザー モードのセットアップ コンポーネントは、関数とフィルター ドライバーが読み込まれるカーネル モードの PnP マネージャーを指示します。
 
-    ユーザー モード コンポーネントが原因で読み込まれると、ドライバーを取得するカーネル モードにコールバックして、 [ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)呼び出されるルーチンをします。
+    ユーザー モード コンポーネントが原因で読み込まれると、ドライバーを取得するカーネル モードにコールバックして、 [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)呼び出されるルーチンをします。
 
 次の図は、PnP マネージャー (適切な) 場合、ドライバーの読み込みを呼び出す、 *AddDevice*ルーチン、およびデバイスを起動するドライバーを指定します。
 
@@ -178,7 +178,7 @@ ms.locfileid: "63365875"
 
 1.  低いフィルター ドライバー
 
-    関数のドライバーは、デバイス スタックをアタッチ、前に、PnP マネージャーは、低いフィルター ドライバーを処理します。 各下位フィルター ドライバー、PnP マネージャーの呼び出し、ドライバーの[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン、ドライバーがまだ読み込まれていない場合。 ドライバーの PnP マネージャーし*AddDevice*ルーチン。 その*AddDevice* 、日常的なフィルター ドライバー (フィルター操作を行います) フィルター デバイス オブジェクトを作成し、デバイス スタックにアタッチします ([**IoAttachDeviceToDeviceStack**](https://msdn.microsoft.com/library/windows/hardware/ff548300))。 そのデバイス オブジェクトをアタッチしますデバイス スタックをドライバーがデバイスのドライバーとして進行中です。
+    関数のドライバーは、デバイス スタックをアタッチ、前に、PnP マネージャーは、低いフィルター ドライバーを処理します。 各下位フィルター ドライバー、PnP マネージャーの呼び出し、ドライバーの[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン、ドライバーがまだ読み込まれていない場合。 ドライバーの PnP マネージャーし*AddDevice*ルーチン。 その*AddDevice* 、日常的なフィルター ドライバー (フィルター操作を行います) フィルター デバイス オブジェクトを作成し、デバイス スタックにアタッチします ([**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack))。 そのデバイス オブジェクトをアタッチしますデバイス スタックをドライバーがデバイスのドライバーとして進行中です。
 
     USB ジョイスティックの例では、デバイスの 1 つの下位フィルター ドライバーです。
 
@@ -200,7 +200,7 @@ ms.locfileid: "63365875"
 
     -   リソースの割り当て
 
-        、構成プロセスの前半では、PnP マネージャーは、デバイスの親のバス ドライバーから、デバイスのハードウェア リソース要件を収集します。 PnP マネージャーが送信するデバイスのドライバーの完全なセットが読み込まれた後、 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://msdn.microsoft.com/library/windows/hardware/ff550874)要求デバイス スタック。 スタック内のすべてのドライバーでは、この IRP を処理し、必要に応じて、デバイスのリソース要件のリストを変更する機会があります。
+        、構成プロセスの前半では、PnP マネージャーは、デバイスの親のバス ドライバーから、デバイスのハードウェア リソース要件を収集します。 PnP マネージャーが送信するデバイスのドライバーの完全なセットが読み込まれた後、 [ **IRP\_MN\_フィルター\_リソース\_要件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-filter-resource-requirements)要求デバイス スタック。 スタック内のすべてのドライバーでは、この IRP を処理し、必要に応じて、デバイスのリソース要件のリストを変更する機会があります。
 
         PnP マネージャーでは、リソースを割り当てます、デバイスをデバイスには、いずれかが必要とする場合、デバイスの要件と現在使用可能なリソースに基づきます。
 
@@ -210,19 +210,19 @@ ms.locfileid: "63365875"
 
     -   デバイスを起動 (**IRP\_MN\_開始\_デバイス**)
 
-        PnP マネージャーでは、デバイスにリソースを割り当てます、その送信を[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749) IRP デバイス スタックを開始するドライバーに出力するため、デバイスです。
+        PnP マネージャーでは、デバイスにリソースを割り当てます、その送信を[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) IRP デバイス スタックを開始するドライバーに出力するため、デバイスです。
 
     デバイスが開始されると、PnP マネージャーは、次の 3 つ以上の Irp をデバイスのドライバーに送信します。
 
-    -   [**IRP\_MN\_クエリ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff551664)
+    -   [**IRP\_MN\_クエリ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)
 
         PnP マネージャーでは IRP が正常に完了すると、開始後に送信別**IRP\_MN\_クエリ\_機能**IRP デバイス スタックをします。 デバイスのすべてのドライバーでは、IRP の処理のオプションがあります。 PnP マネージャーは、関数またはフィルター ドライバーは、機能の情報を収集するデバイスにアクセスする必要がありますので、すべてのドライバーが接続されているし、デバイスが起動した後、この時点でこの IRP を送信します。
 
-    -   [**IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff551698)
+    -   [**IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state)
 
         この IRP では、たとえば、レポートなど、デバイスを Device Manager とホットプラグ プログラムなどのユーザー インターフェイスに表示されないことに、ドライバー、営業案件を示します。 これは、システム上に存在するが、ラップトップがドッキングされていないときに、使用できないラップトップのゲーム ポートなど、現在の構成では使用できないデバイスの場合に役立ちます。
 
-    -   [**IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)のバスの関係
+    -   [**IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)のバスの関係
 
         PnP マネージャーは、デバイスのすべての子デバイスがあるかどうかを判断するには、この IRP を送信します。 そうである場合、PnP マネージャーは、それぞれの子デバイスを構成します。
 
@@ -231,7 +231,7 @@ ms.locfileid: "63365875"
 
 GUID_PNP_LOCATION_INTERFACE インターフェイスには、SPDRP_LOCATION_PATHS プラグ アンド プレイ (PnP) デバイスのデバイスのプロパティが用意されています。
 
-ドライバーをこのインターフェイスを実装する処理に InterfaceType IRP_MN_QUERY_INTERFACE IRP GUID_PNP_LOCATION_INTERFACE を = です。 ドライバーは、インターフェイスの個々 のルーチンへのポインターを格納する PNP_LOCATION_INTERFACE 構造体へのポインターを提供します。 [PnpGetLocationString ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff558811)SPDRP_LOCATION_PATHS のデバイスのプロパティのデバイスに固有の一部を提供します。
+ドライバーをこのインターフェイスを実装する処理に InterfaceType IRP_MN_QUERY_INTERFACE IRP GUID_PNP_LOCATION_INTERFACE を = です。 ドライバーは、インターフェイスの個々 のルーチンへのポインターを格納する PNP_LOCATION_INTERFACE 構造体へのポインターを提供します。 [PnpGetLocationString ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pget_location_string)SPDRP_LOCATION_PATHS のデバイスのプロパティのデバイスに固有の一部を提供します。
 
 
 

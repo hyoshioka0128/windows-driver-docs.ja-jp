@@ -7,12 +7,12 @@ keywords:
 - Ioctl WDK Windows 2000 の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2069d020a909c5a40f055b404fc87961b11fadb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0f4f95a39ff6d1f470a74a75fac5a763f827a6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343040"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370658"
 ---
 # <a name="communicating-ioctls-to-the-video-miniport-driver"></a>IOCTL とビデオ ミニポート ドライバーの通信
 
@@ -24,13 +24,13 @@ ms.locfileid: "63343040"
 
 ![ディスプレイ ドライバー/ビデオのミニポート ドライバーの通信を示す図](images/dpy2.png)
 
-ディスプレイ ドライバー呼び出し[ **EngDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff564838) IOCTL、ビデオのミニポート ドライバーを同期要求を送信するとします。 GDI では、入力と出力の両方に 1 つのバッファーを使用して、I/O サブシステムに要求を渡します。 I/O サブシステムは、ビデオのポートは、ビデオのミニポート ドライバーを使用した要求を処理する要求をルーティングします。
+ディスプレイ ドライバー呼び出し[ **EngDeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) IOCTL、ビデオのミニポート ドライバーを同期要求を送信するとします。 GDI では、入力と出力の両方に 1 つのバッファーを使用して、I/O サブシステムに要求を渡します。 I/O サブシステムは、ビデオのポートは、ビデオのミニポート ドライバーを使用した要求を処理する要求をルーティングします。
 
 一部の IOCTL 要求がビデオのレジスタにアクセスするミニポート ドライバーを必要とし、他のユーザー ストアまたはミニポート ドライバーのデータ構造から情報を取得します。 一般に、要求には、実際の描画操作を実行するビデオのミニポート ドライバーは必要ありません。
 
 一般に、ディスプレイ ドライバーが描画、およびその他の時間が重要な操作を処理しない限り、それ以外の場合モジュール性を決定する。 タイム クリティカルな機能を実行するミニポート ドライバーに IOCTL を送信すると、システムのパフォーマンスが低下します。
 
-参照してください[ビデオのミニポート ドライバー I/O 制御コード](https://msdn.microsoft.com/library/windows/hardware/ff570515)ビデオ Ioctl のシステム定義の説明についてはします。 追加することで、ディスプレイ ドライバーとビデオのミニポート ドライバーの間のインターフェイスを拡張することができます、*プライベート IOCTL*、」の説明に従っては書式設定する必要があります[I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)します。 新しい IOCTL を記述する必要がある場合は、Microsoft テクニカル サポートを最初に問い合わせてください。
+参照してください[ビデオのミニポート ドライバー I/O 制御コード](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ビデオ Ioctl のシステム定義の説明についてはします。 追加することで、ディスプレイ ドライバーとビデオのミニポート ドライバーの間のインターフェイスを拡張することができます、*プライベート IOCTL*、」の説明に従っては書式設定する必要があります[I/O 制御コードを定義する](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)します。 新しい IOCTL を記述する必要がある場合は、Microsoft テクニカル サポートを最初に問い合わせてください。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - SRB_FUNCTION_EXECUTE_SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87da85d7f9a496f29d86c7ef2b34ba25f06f276e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8776ccc27ec9dc0f476b2f29850a54f6bd27376
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325986"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372337"
 ---
 # <a name="handling-srbfunctionexecutescsi"></a>処理 SRB\_関数\_EXECUTE\_SCSI
 
@@ -21,7 +21,7 @@ ms.locfileid: "63325986"
 ## <span id="ddk_handling_srb_function_execute_scsi_kg"></span><span id="DDK_HANDLING_SRB_FUNCTION_EXECUTE_SCSI_KG"></span>
 
 
-高度な記憶域クラス ドライバーが読み込まれた後、される Srb のほとんどに送信、 [ **HwScsiStartIo** ](https://msdn.microsoft.com/library/windows/hardware/ff557323)ルーチンが、**関数**メンバー設定される SRB\_関数\_EXECUTE\_SCSI です。
+高度な記憶域クラス ドライバーが読み込まれた後、される Srb のほとんどに送信、 [ **HwScsiStartIo** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))ルーチンが、**関数**メンバー設定される SRB\_関数\_EXECUTE\_SCSI です。
 
 SRB の受信時に\_関数\_EXECUTE\_SCSI 要求、ミニポート ドライバーの*HwScsiStartIo*ルーチンは次の処理します。
 
@@ -33,7 +33,7 @@ SRB の受信時に\_関数\_EXECUTE\_SCSI 要求、ミニポート ドライバ
 
     デバイス I/O 操作は、内部ルーチンは一般にターゲット デバイスを選択し、ターゲット論理ユニットに、バス経由で CDB を送信します。
 
-呼び出す必要がありますが、ミニポート ドライバーでは、システム DMA を使用する場合[ **ScsiPortIoMapTransfer**](https://msdn.microsoft.com/library/windows/hardware/ff564649)*する前に*データを転送する HBA をプログラミングします。 **ScsiPortIoMapTransfer**システム DMA コント ローラーを設定し、ミニポート ドライバーの*HwScsiDmaStarted*ルーチンを後で説明されている[SCSI ミニポート ドライバーの HwScsiDmaStarted ルーチン](scsi-miniport-driver-s-hwscsidmastarted-routine.md).
+呼び出す必要がありますが、ミニポート ドライバーでは、システム DMA を使用する場合[ **ScsiPortIoMapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportiomaptransfer)*する前に*データを転送する HBA をプログラミングします。 **ScsiPortIoMapTransfer**システム DMA コント ローラーを設定し、ミニポート ドライバーの*HwScsiDmaStarted*ルーチンを後で説明されている[SCSI ミニポート ドライバーの HwScsiDmaStarted ルーチン](scsi-miniport-driver-s-hwscsidmastarted-routine.md).
 
 NT ベースのオペレーティング システムの記憶域クラス ドライバーに送信されたすべてのシステム定義、必要なデバイス I/O 制御要求が使用される Srb にマップされて、**関数**メンバー設定される SRB\_関数\_EXECUTE\_SCSI です。
 

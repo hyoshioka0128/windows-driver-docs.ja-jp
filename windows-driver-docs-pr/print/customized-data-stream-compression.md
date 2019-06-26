@@ -10,12 +10,12 @@ keywords:
 - Unidrv WDK の印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c21b363a5e646e21b429f55a9eaf07ed828b4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8390c9690a2a1a8c314f47a257f1c21128640370
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372426"
 ---
 # <a name="customized-data-stream-compression"></a>カスタマイズされたデータ ストリーム圧縮
 
@@ -25,7 +25,7 @@ ms.locfileid: "63365536"
 
 Unidrv カスタマイズ コードを使用してデータの圧縮操作を実行することができます。 カスタマイズされた圧縮操作を実行するには、次の手順を実行します。
 
-1.  実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::Compression** ](https://msdn.microsoft.com/library/windows/hardware/ff554224)メソッド。
+1.  実装するプラグインのレンダリングを提供、 [ **IPrintOemUni::Compression** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-compression)メソッド。
 
 2.  プリンターの CmdEnableOEMComp コマンドの入力を含める*GPD*ファイル。
 

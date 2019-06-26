@@ -4,17 +4,17 @@ description: NDIS ドライバーの規則
 ms.assetid: fd31b797-1175-4f65-8fa0-a50acd01f446
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 18051a880e7f048efc37ece0e81e62f36cb50362
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9927489bc393dea7da359087b10ad3b9c577322
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340126"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373610"
 ---
 # <a name="rules-for-ndis-drivers"></a>NDIS ドライバーの規則
 
 
-ここでは、について説明します、 [Static Driver Verifier ルール](https://msdn.microsoft.com/library/windows/hardware/ff552839)NDIS ドライバー、ドライバーの検証に含めることができます。
+ここでは、について説明します、 [Static Driver Verifier ルール](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-rule)NDIS ドライバー、ドライバーの検証に含めることができます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

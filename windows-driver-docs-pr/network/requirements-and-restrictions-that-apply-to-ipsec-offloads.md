@@ -7,12 +7,12 @@ keywords:
 - AH で保護されたパケット WDK IPsec オフロード、要件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d739bf72342434c1b6e8e2cd97273f191d5b97e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92957fa1c1ecffb38caea3ba62f54d153f7239cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373236"
 ---
 # <a name="requirements-and-restrictions-that-apply-to-ipsec-offloads"></a>IPsec オフロードに適用される要件と制限
 
@@ -80,7 +80,7 @@ ms.locfileid: "63376967"
 
 -   IPsec タスクは、IP 断片化を必要とするパケットの送信またはオフロードされず IP 断片化から再構築を必要とするパケットを受信します。
 
--   IPsec タスクでは、送信はオフロードされずと、負荷分散のミニポート ドライバーに渡されるパケットを受信します。 負荷分散の詳細については、次を参照してください。[負荷分散とフェールオーバー](https://msdn.microsoft.com/library/windows/hardware/ff549197)します。
+-   IPsec タスクでは、送信はオフロードされずと、負荷分散のミニポート ドライバーに渡されるパケットを受信します。 負荷分散の詳細については、次を参照してください。[負荷分散とフェールオーバー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549197(v=vs.85))します。
 
  
 

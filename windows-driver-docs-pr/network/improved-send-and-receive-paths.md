@@ -8,12 +8,12 @@ keywords:
 - 受信側のデータの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3abde686105c8f92a86c9068e75647d1ad58e86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4be7251148867cdeea5a3aee0d158a6c0a1bc94
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363156"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374846"
 ---
 # <a name="improved-send-and-receive-paths"></a>送信および受信パスの改善
 
@@ -23,7 +23,7 @@ ms.locfileid: "63363156"
 
 NDIS 6.0 の送信し、受信パス パフォーマンスを向上させるのには次のように改良されています。
 
--   NDIS 6.0 とそれ以降のドライバーのすべての送信し、受信機能のリンク リストを転送できる[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造とそれに関連付けられた[**NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376) 1 つの関数呼び出しを含む構造体。 このサポートは true。 multipacket 送信および受信操作を大幅には、ドライバーが行う必要があります関数呼び出しの数を減らします。
+-   NDIS 6.0 とそれ以降のドライバーのすべての送信し、受信機能のリンク リストを転送できる[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造とそれに関連付けられた[**NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) 1 つの関数呼び出しを含む構造体。 このサポートは true。 multipacket 送信および受信操作を大幅には、ドライバーが行う必要があります関数呼び出しの数を減らします。
 
 -   送信を呼び出すときに、関数のディスパッチで実行されているドライバーの受信または\_レベルの IRQL NDIS を示すことができます。 これらのドライバーの IRQL をテストまたはディスパッチに設定する必要はありません NDIS には、スタック内の他のドライバーへの呼び出し、その後が行うと、\_レベル。 これには、テスト、および critical コードのセクションで、IRQL の設定に関連付けられたオーバーヘッドが削減されます。
 

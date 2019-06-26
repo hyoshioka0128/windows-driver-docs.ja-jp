@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73dc3150b48ed350168e619a99e52ffa8f28f08f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0c075b4e2a290f1c04341e4100fee50cb9759fc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324609"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369831"
 ---
 # <a name="fsctlgetwofversion-control-code"></a>FSCTL\_取得\_WOF\_バージョン制御コード
 
 
 **FSCTL\_取得\_WOF\_バージョン**I/O 制御コード (IOCTL) は、特定のプロバイダーをサポートするために使用されているドライバーのバージョンをクエリに使用されます。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 ``` syntax
 BOOL 
@@ -44,53 +44,53 @@ BOOL
 **Parameters**
 
 <a href="" id="hdevice--in-"></a>*hDevice\[で\]*  
-デバイスへのハンドル。 デバイス ハンドルを取得する呼び出し、 [ **CreateFile** ](https://msdn.microsoft.com/library/windows/desktop/aa363858)関数または同様の API。
+デバイスへのハンドル。 デバイス ハンドルを取得する呼び出し、 [ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数または同様の API。
 
 <a href="" id="dwiocontrolcode--in-"></a>*dwIoControlCode\[で\]*  
 操作の制御コード。 使用**FSCTL\_取得\_WOF\_バージョン**この操作にします。
 
 <a href="" id="lpinbuffer"></a>*lpInBuffer*  
-操作の入力バッファー。 これへのポインターを[ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造体。
+操作の入力バッファー。 これへのポインターを[ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造体。
 
 <a href="" id="ninbuffersize--in-"></a>*nInBufferSize\[で\]*  
-入力バッファーのバイト単位のサイズ。 これは、アカウントは**sizeof**([**WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452))。
+入力バッファーのバイト単位のサイズ。 これは、アカウントは**sizeof**([**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info))。
 
 <a href="" id="lpoutbuffer--out-"></a>*lpOutBuffer\[アウト\]*  
-操作の出力バッファー。 これへのポインターを[ **WOF\_バージョン\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt426742)構造体。
+操作の出力バッファー。 これへのポインターを[ **WOF\_バージョン\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_version_info)構造体。
 
 <a href="" id="noutbuffersize--in-"></a>*nOutBufferSize\[で\]*  
-出力バッファーのバイト単位のサイズ。 これは、アカウントは**sizeof**([**WOF\_バージョン\_情報**](https://msdn.microsoft.com/library/windows/hardware/mt426742))。
+出力バッファーのバイト単位のサイズ。 これは、アカウントは**sizeof**([**WOF\_バージョン\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_version_info))。
 
 <a href="" id="lpbytesreturned--out-"></a>*lpBytesReturned\[アウト\]*  
 **LPDWORD**
 
 (バイト単位)、出力バッファーに格納されているデータのサイズを受け取る変数へのポインター。
 
-出力バッファーが小さすぎる場合は、呼び出しが失敗した、 [ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360)返します**エラー\_不十分\_バッファー**、および*lpBytesReturned*は 0 です。
+出力バッファーが小さすぎる場合は、呼び出しが失敗した、 [ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)返します**エラー\_不十分\_バッファー**、および*lpBytesReturned*は 0 です。
 
-場合*lpOverlapped*は**NULL**、 *lpBytesReturned*することはできません**NULL**します。 でもときに操作を返しません出力データと*lpOutBuffer*は**NULL**、 [ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)活用*lpBytesReturned*します。 このような操作の値の後に*lpBytesReturned*は意味がありません。
+場合*lpOverlapped*は**NULL**、 *lpBytesReturned*することはできません**NULL**します。 でもときに操作を返しません出力データと*lpOutBuffer*は**NULL**、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)活用*lpBytesReturned*します。 このような操作の値の後に*lpBytesReturned*は意味がありません。
 
-場合*lpOverlapped*ない**NULL**、 *lpBytesReturned*できる**NULL**します。 このパラメーターがない場合**NULL**操作は、そのデータを返します*lpBytesReturned*オーバー ラップ処理が完了するまでは無意味です。 返されるバイト数を取得する[ **GetOverlappedResult**](https://msdn.microsoft.com/library/windows/desktop/ms683209)します。 場合、 *hDevice*パラメーターは、I/O 完了ポートに関連付け、呼び出すことによって返されるバイト数を取得する[ **GetQueuedCompletionStatus**](https://msdn.microsoft.com/library/windows/desktop/aa364986)します。
+場合*lpOverlapped*ない**NULL**、 *lpBytesReturned*できる**NULL**します。 このパラメーターがない場合**NULL**操作は、そのデータを返します*lpBytesReturned*オーバー ラップ処理が完了するまでは無意味です。 返されるバイト数を取得する[ **GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getoverlappedresult)します。 場合、 *hDevice*パラメーターは、I/O 完了ポートに関連付け、呼び出すことによって返されるバイト数を取得する[ **GetQueuedCompletionStatus**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)します。
 
 <a href="" id="lpoverlapped--in-"></a>*lpOverlapped\[で\]*  
 **LPOVERLAPPED**
 
-ポインター、 [ **OVERLAPPED** ](https://msdn.microsoft.com/library/windows/desktop/ms684342)構造体。
+ポインター、 [ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)構造体。
 
 場合*hDevice*を指定せずに開かれた**ファイル\_フラグ\_OVERLAPPED**、 *lpOverlapped*は無視されます。
 
-場合*hDevice*で開かれた、**ファイル\_フラグ\_OVERLAPPED**フラグは、操作がオーバー ラップ (非同期) 操作として実行します。 この場合、 *lpOverlapped*有効 をポイントする必要があります[ **OVERLAPPED** ](https://msdn.microsoft.com/library/windows/desktop/ms684342)イベント オブジェクトへのハンドルを含む構造体。 それ以外の場合、関数は、予測できない方法で失敗します。
+場合*hDevice*で開かれた、**ファイル\_フラグ\_OVERLAPPED**フラグは、操作がオーバー ラップ (非同期) 操作として実行します。 この場合、 *lpOverlapped*有効 をポイントする必要があります[ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)イベント オブジェクトへのハンドルを含む構造体。 それ以外の場合、関数は、予測できない方法で失敗します。
 
-重複した操作は、 [ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)を即座に返します、操作が完了したときに、イベント オブジェクトがシグナル状態とします。 それ以外の場合、操作が完了したか、エラーが発生するまでには、この関数は返されません。
+重複した操作は、 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)を即座に返します、操作が完了したときに、イベント オブジェクトがシグナル状態とします。 それ以外の場合、操作が完了したか、エラーが発生するまでには、この関数は返されません。
 
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-操作が正常に完了した場合[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216) 0 以外の値を返します。
+操作が正常に完了した場合[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 0 以外の値を返します。
 
-操作は、障害が発生したり、保留中で[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)は 0 を返します。 拡張エラー情報を取得するには呼び出します[ **GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)します。
+操作は、障害が発生したり、保留中で[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)は 0 を返します。 拡張エラー情報を取得するには呼び出します[ **GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

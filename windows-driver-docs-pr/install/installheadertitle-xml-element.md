@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7a87d1114a158441732120c5bbab12426588f480
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd3d1fa07d9182f26addda55e6e3f5ff02315fe4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325746"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370006"
 ---
 # <a name="installheadertitle-xml-element"></a>installHeaderTitle XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **InstallHeaderTitle** XML 要素が DPInst のインストール ページに表示されるインストール ヘッダー タイトルの太字のテキストをカスタマイズします。
 

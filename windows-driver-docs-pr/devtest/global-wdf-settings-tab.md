@@ -7,14 +7,14 @@ keywords:
 - WDK WDF の UMDF 検証設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 008c76a8110b975e25f4423b3dd3327e091d8624
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbda0fa0b8e75c332ed3c5f0d92c4349d8405e02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372797"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358304"
 ---
-# <a name="global-wdf-settings-tab"></a>[Global WDF Settings]\(グローバル WDF 設定\) タブ
+# <a name="global-wdf-settings-tab"></a>Global WDF Settings (グローバル WDF 設定) タブ
 
 
 このトピックでは、WDF Verifier のについて詳細な情報を提供します。 **WDF のグローバル設定**ページ。 このページは、グローバル (システム全体) WDF の検証のオプションを表示し、UMDF ドライバーがホストされているホスト プロセスを表示します。
@@ -29,7 +29,7 @@ ms.locfileid: "63372797"
 
 **ホスト プロセス**ボックスにすべてのホスト プロセスとそのプロセス Id は Application Verifier は各プロセスに対して有効かどうかも表示します。 展開したり、各プロセスでホストされているドライバーの一覧を折りたたんだりできます。 ユーザー モードのデバッガーで指定した場合、[個人設定](my-preferences-tab.md) ページで、ドライバーまたはプロセスにも強調表示をクリックしたことができます、**このプロセスにユーザー モードのデバッガーをアタッチ**ボタンをクリックします。
 
-最後に、**グローバル ユーザー モードの検証設定**ボックスに、システム上のすべての UMDF ドライバーに影響するデバッグ オプションが含まれています。 これらの設定の詳細については、次を参照してください。 [UMDF Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/dn265597)します。
+最後に、**グローバル ユーザー モードの検証設定**ボックスに、システム上のすべての UMDF ドライバーに影響するデバッグ オプションが含まれています。 これらの設定の詳細については、次を参照してください。 [UMDF Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-umdf-verifier)します。
 
 UMDF 検証設定を変更するときにこれらの変更は、その後にロードされているデバイスに影響します。 デバイスが既に実行されている場合は、無効にし、再度有効にする必要があります。 WDF Verifier を無効にし、レベルまたは選択をトレースする場合は、UMDF を変更するため、デバイスを再度有効に、**カーネル デバッガーにログ出力を送信**オプション。 選択した場合、このオプションは機能しない**操作は不要.** で、**ときに、マシンを再起動する必要があります.** ドロップダウン リストでは、[個人設定](my-preferences-tab.md)ページ。
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52c6bf7350cd61659df8128986067d5d04029dfb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee8d4f69c37602d9b150979645ad9a209c2ba063
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332767"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358825"
 ---
 # <a name="kspropertyaudiomodulecommand"></a>KSPROPERTY\_AUDIOMODULE\_コマンド
 
@@ -50,7 +50,7 @@ ms.locfileid: "63332767"
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルターまたはピン留めします。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt808139" data-raw-source="[&lt;strong&gt;KSAUDIOMODULE_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt808139)"><strong>KSAUDIOMODULE_PROPERTY</strong> </a> + [省略可能なカスタム モジュールの引数]</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property" data-raw-source="[&lt;strong&gt;KSAUDIOMODULE_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)"><strong>KSAUDIOMODULE_PROPERTY</strong> </a> + [省略可能なカスタム モジュールの引数]</p></td>
 <td align="left"><p>未定義</p></td>
 </tr>
 </tbody>
@@ -67,9 +67,9 @@ ms.locfileid: "63332767"
 <a name="remarks"></a>注釈
 -------
 
-サポート、 **KSPROPERTY\_AUDIOMODULE\_コマンド**プロパティは、クエリを実行して、オーディオのモジュールのパラメーターを設定するカスタム コマンドを送信するオーディオ モジュールのクライアントを使用します。 プロパティは、フィルターまたは暗証番号 (pin) のハンドルを使用して送信できる、 [ **KSAUDIOMODULE\_プロパティ**](https://msdn.microsoft.com/library/windows/hardware/mt808139) DeviceIoControl の呼び出しの入力バッファーとして渡されます。 クライアントできます必要に応じて追加情報を送信する隣接、 **KSAUDIOMODULE\_プロパティ**カスタム コマンドを送信する入力バッファーにします。
+サポート、 **KSPROPERTY\_AUDIOMODULE\_コマンド**プロパティは、クエリを実行して、オーディオのモジュールのパラメーターを設定するカスタム コマンドを送信するオーディオ モジュールのクライアントを使用します。 プロパティは、フィルターまたは暗証番号 (pin) のハンドルを使用して送信できる、 [ **KSAUDIOMODULE\_プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property) DeviceIoControl の呼び出しの入力バッファーとして渡されます。 クライアントできます必要に応じて追加情報を送信する隣接、 **KSAUDIOMODULE\_プロパティ**カスタム コマンドを送信する入力バッファーにします。
 
-オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
+オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f973c775a6f415838ec919d77e210c8ddafe1cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ca23d0fc21e3ab18175ab5cb82a7ca293314609
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372905"
 ---
 # <a name="ioctlcoppstatus-control-code"></a>IOCTL\_COPP\_状態制御コード
 
@@ -29,7 +29,7 @@ ms.locfileid: "63362097"
 
 ### <a name="span-idinputparametersspanspan-idinputparametersspanspan-idinputparametersspaninput-parameters"></a><span id="Input_Parameters"></span><span id="input_parameters"></span><span id="INPUT_PARAMETERS"></span>入力パラメーター
 
-[**ビデオ\_要求\_パケット**](https://msdn.microsoft.com/library/windows/hardware/ff570547) (VRP) **InputBuffer**ディスプレイ ドライバーから渡された情報が含まれています。 ディスプレイ ドライバーが、COPP にポインターを渡すことができます、\_IO\_InputBuffer 構造体の次のように定義されています。
+[**ビデオ\_要求\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet) (VRP) **InputBuffer**ディスプレイ ドライバーから渡された情報が含まれています。 ディスプレイ ドライバーが、COPP にポインターを渡すことができます、\_IO\_InputBuffer 構造体の次のように定義されています。
 
 ```cpp
 typedef struct {
@@ -39,15 +39,15 @@ typedef struct {
 } COPP_IO_InputBuffer;
 ```
 
-**PpThis** COPP DirectX VA デバイス オブジェクトの状態を取得するへのポインターへのポインターします。 **InputBuffer**メンバーへのポインターに設定されます、 [ **DXVA\_COPPStatusInput** ](https://msdn.microsoft.com/library/windows/hardware/ff563899) COPP 状態要求に関する情報を含む構造体。 **Phr**メンバーから返される値に設定する必要があります、 [ *COPPQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff539652)関数。
+**PpThis** COPP DirectX VA デバイス オブジェクトの状態を取得するへのポインターへのポインターします。 **InputBuffer**メンバーへのポインターに設定されます、 [ **DXVA\_COPPStatusInput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusinput) COPP 状態要求に関する情報を含む構造体。 **Phr**メンバーから返される値に設定する必要があります、 [ *COPPQueryStatus* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppquerystatus)関数。
 
 ### <a name="span-idoutputparametersspanspan-idoutputparametersspanspan-idoutputparametersspanoutput-parameters"></a><span id="Output_Parameters"></span><span id="output_parameters"></span><span id="OUTPUT_PARAMETERS"></span>出力パラメーター
 
-ミニポート ドライバーへのポインターを返します、 [ **DXVA\_COPPStatusOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff563903)構造、VRP **OutputBuffer**します。 DXVA\_COPPStatusOutput 構造体には、状態が含まれています。
+ミニポート ドライバーへのポインターを返します、 [ **DXVA\_COPPStatusOutput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusoutput)構造、VRP **OutputBuffer**します。 DXVA\_COPPStatusOutput 構造体には、状態が含まれています。
 
 ### <a name="span-idiostatusblockspanspan-idiostatusblockspanspan-idiostatusblockspanio-status-block"></a><span id="I_O_Status_Block"></span><span id="i_o_status_block"></span><span id="I_O_STATUS_BLOCK"></span>状態の I/O ブロック
 
-ミニポート ドライバーのセット、**情報**のメンバー、 [**状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff569732) sizeof 構造体 (DXVA\_COPPStatusOutput)。
+ミニポート ドライバーのセット、**情報**のメンバー、 [**状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_status_block) sizeof 構造体 (DXVA\_COPPStatusOutput)。
 
 <a name="requirements"></a>要件
 ------------
@@ -68,11 +68,11 @@ typedef struct {
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[*COPPQueryStatus*](https://msdn.microsoft.com/library/windows/hardware/ff539652)
+[*COPPQueryStatus*](https://docs.microsoft.com/windows-hardware/drivers/display/coppquerystatus)
 
-[**DXVA\_COPPStatusInput**](https://msdn.microsoft.com/library/windows/hardware/ff563899)
+[**DXVA\_COPPStatusInput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusinput)
 
-[**DXVA\_COPPStatusOutput**](https://msdn.microsoft.com/library/windows/hardware/ff563903)
+[**DXVA\_COPPStatusOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusoutput)
 
  
 

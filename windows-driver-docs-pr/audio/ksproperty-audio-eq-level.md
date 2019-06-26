@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5eab82a27885f5f1358b96ebade163399bff7b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da75ddf62f6c75e95a56ff33cd6972381f49e611
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333047"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358925"
 ---
 # <a name="kspropertyaudioeqlevel"></a>KSPROPERTY\_オーディオ\_EQ\_レベル
 
@@ -53,7 +53,7 @@ KSPROPERTY\_オーディオ\_EQ\_レベル プロパティのエントリを含�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537145" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537145)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
 <td align="left"><p>Long 型の配列</p></td>
 </tr>
 </tbody>
@@ -91,7 +91,7 @@ KSPROPERTY\_オーディオ\_EQ\_レベル プロパティのエントリを含�
 
 -2147483647 は-32767.99998474 デシベル (減衰) と
 
-+ 2147483647 までは、+32767.99998474 デシベル (向上です)。
+\+ 2147483647 までは、+32767.99998474 デシベル (向上です)。
 
 整数値、比較的によって表されるデシベル範囲場所
 
@@ -110,7 +110,7 @@ KSPROPERTY\_オーディオ\_EQ\_レベル プロパティ要求がステータ�
 
 イコライゼーションのバンドの中心周波数がで指定された、 [ **KSPROPERTY\_オーディオ\_EQ\_バンド**](ksproperty-audio-eq-bands.md)プロパティ。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -129,7 +129,7 @@ KSPROPERTY\_オーディオ\_EQ\_レベル プロパティ要求がステータ�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://msdn.microsoft.com/library/windows/hardware/ff537145)
+[**KSNODEPROPERTY\_オーディオ\_チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
 [**KSNODETYPE\_イコライザー**](ksnodetype-equalizer.md)
 

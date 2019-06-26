@@ -6,12 +6,12 @@ keywords:
 - OID_CO_ADD_PVC
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 149fe8425be3eef925c9d6b4e75e1eb0d1b23f05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aea642db33b32baed46a003986407657851713d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351946"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357691"
 ---
 # <a name="oidcoaddpvc"></a>OID_CO_ADD_PVC
 
@@ -27,14 +27,14 @@ typedef struct _CO_PVC {
 この構造体のメンバーには、次の情報が含まれます。
 
 **NdisAfHandle**  
-によって返される NDIS が指定したハンドルを指定します[NdisClOpenAddressFamilyEx](https://msdn.microsoft.com/library/windows/hardware/ff561639)します。
+によって返される NDIS が指定したハンドルを指定します[NdisClOpenAddressFamilyEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclopenaddressfamilyex)します。
 
 **PvcParameters**  
-書式設定された[CO_SPECIFIC_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff545396)構造体。 この構造体には、PVC を記述するプロトコル固有のパラメーターが含まれています。
+書式設定された[CO_SPECIFIC_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85))構造体。 この構造体には、PVC を記述するプロトコル固有のパラメーターが含まれています。
 
 PVC は、管理者によって手動で構成されます。 このようなアクティビティを監視するクライアントでは、この OID をコール マネージャーに送信することによって、新しく構成した PVC のコール マネージャーに通知します。 その他のクライアントは、新しく構成された PVC を使用できます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 | | |
 | --- | --- |

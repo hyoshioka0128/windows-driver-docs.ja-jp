@@ -4,12 +4,12 @@ description: Windows 8 では、Bluetooth バイパス オーディオ接続の�
 ms.assetid: 94B6F113-5130-4772-B8A0-5C9992501824
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae729e5e7f8ef4ab4372f66b342eb85ad065957f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6fd9c072aa55f89a74baa2f46bcc7d96fc03de9d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333891"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355612"
 ---
 # <a name="bluetooth-hfp-ddi-ioctls"></a>Bluetooth HFP DDI IOCTLs
 
@@ -30,43 +30,43 @@ IOCTL 関数コードのほとんどは、オーディオ ドライバーが、i
 
 これらの Windows 8 Ioctl の詳細については、以下のトピックです。
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/hardware/dn265108)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_VOLUMEPROPERTYVALUES**](https://msdn.microsoft.com/library/windows/hardware/dn265113)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_VOLUMEPROPERTYVALUES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_volumepropertyvalues)
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_KSNODETYPES**](https://msdn.microsoft.com/library/windows/hardware/dn265110)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_KSNODETYPES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_ksnodetypes)
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_CONTAINERID**](https://msdn.microsoft.com/library/windows/hardware/dn265107)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_CONTAINERID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_containerid)
 
-[**IOCTL\_BTHHFP\_DEVICE\_REQUEST\_CONNECT**](https://msdn.microsoft.com/library/windows/hardware/dn265114)
+[**IOCTL\_BTHHFP\_DEVICE\_REQUEST\_CONNECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_request_connect)
 
-[**IOCTL\_BTHHFP\_デバイス\_要求\_切断**](https://msdn.microsoft.com/library/windows/hardware/dn265115)
+[**IOCTL\_BTHHFP\_デバイス\_要求\_切断**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_request_disconnect)
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_CONNECTION\_STATUS\_UPDATE**](https://msdn.microsoft.com/library/windows/hardware/dn265106)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_CONNECTION\_STATUS\_UPDATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_connection_status_update)
 
-[**IOCTL\_BTHHFP\_スピーカー\_設定\_ボリューム**](https://msdn.microsoft.com/library/windows/hardware/dn265119)
+[**IOCTL\_BTHHFP\_スピーカー\_設定\_ボリューム**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_speaker_set_volume)
 
-[**IOCTL\_BTHHFP\_SPEAKER\_GET\_VOLUME\_STATUS\_UPDATE**](https://msdn.microsoft.com/library/windows/hardware/dn265118)
+[**IOCTL\_BTHHFP\_SPEAKER\_GET\_VOLUME\_STATUS\_UPDATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_speaker_get_volume_status_update)
 
-[**IOCTL\_BTHHFP\_MIC\_SET\_VOLUME**](https://msdn.microsoft.com/library/windows/hardware/dn265117)
+[**IOCTL\_BTHHFP\_MIC\_SET\_VOLUME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_mic_set_volume)
 
-[**IOCTL\_BTHHFP\_MIC\_GET\_VOLUME\_STATUS\_UPDATE**](https://msdn.microsoft.com/library/windows/hardware/dn265116)
+[**IOCTL\_BTHHFP\_MIC\_GET\_VOLUME\_STATUS\_UPDATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_mic_get_volume_status_update)
 
-[**IOCTL\_BTHHFP\_STREAM\_OPEN**](https://msdn.microsoft.com/library/windows/hardware/dn265122)
+[**IOCTL\_BTHHFP\_STREAM\_OPEN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_open)
 
-[**IOCTL\_BTHHFP\_STREAM\_CLOSE**](https://msdn.microsoft.com/library/windows/hardware/dn265120)
+[**IOCTL\_BTHHFP\_STREAM\_CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_close)
 
-[**IOCTL\_BTHHFP\_STREAM\_GET\_STATUS\_UPDATE**](https://msdn.microsoft.com/library/windows/hardware/dn265121)
+[**IOCTL\_BTHHFP\_STREAM\_GET\_STATUS\_UPDATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_stream_get_status_update)
 
 Windows 8.1 では、Ioctl のセットを次の新しいものを追加することで更新します。
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR2**](https://msdn.microsoft.com/library/windows/hardware/dn265109)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor2)
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_NRECDISABLE\_STATUS\_UPDATE**](https://msdn.microsoft.com/library/windows/hardware/dn265112)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_NRECDISABLE\_STATUS\_UPDATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_nrecdisable_status_update)
 
 Windows 10 では、次の新しいサブスクリプションを追加して Ioctl のセットが更新します。
 
-[**IOCTL\_BTHHFP\_DEVICE\_GET\_CODEC\_ID**](https://msdn.microsoft.com/library/windows/hardware/dn798965)
+[**IOCTL\_BTHHFP\_DEVICE\_GET\_CODEC\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_codec_id)
 
 これらの Ioctl で動作する構造については、次を参照してください。 [Bluetooth HFP DDI 構造](bluetooth-hfp-ddi-structures.md)します。
 

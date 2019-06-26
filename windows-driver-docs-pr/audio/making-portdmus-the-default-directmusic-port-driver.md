@@ -7,12 +7,12 @@ keywords:
 - 既定の Dmu ポート ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eb7d2a29a7589de2c217b9c8fe14cbeffdb018e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2228bdd862ed280284253e7063ab0fd9a00cbddd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332388"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358686"
 ---
 # <a name="making-portdmus-the-default-directmusic-port-driver"></a>PortDMus を既定の DirectMusic ポート ドライバーとする
 
@@ -20,7 +20,7 @@ ms.locfileid: "63332388"
 ## <span id="making_portdmus_the_default_directmusic_port_driver"></span><span id="MAKING_PORTDMUS_THE_DEFAULT_DIRECTMUSIC_PORT_DRIVER"></span>
 
 
-Dmu ポート ドライバーを DirectMusic のすべてのアプリケーションの既定値にするには、(uuidgen.exe または Microsoft Windows SDK に含まれている、guidgen.exe を使用) の GUID を生成、シンセサイザーを一意に識別します。 [ **KSPROPERTY\_シンセサイザー\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff537389)プロパティ ハンドラーには、この GUID をコピーする必要があります、 **Guid**のメンバー、 [ **SYNTHCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff538424)構造体。 また、次のレジストリ エントリを設定するドライバーの INF ファイルを変更します。
+Dmu ポート ドライバーを DirectMusic のすべてのアプリケーションの既定値にするには、(uuidgen.exe または Microsoft Windows SDK に含まれている、guidgen.exe を使用) の GUID を生成、シンセサイザーを一意に識別します。 [ **KSPROPERTY\_シンセサイザー\_CAP** ](https://docs.microsoft.com/previous-versions/ff537389(v=vs.85))プロパティ ハンドラーには、この GUID をコピーする必要があります、 **Guid**のメンバー、 [ **SYNTHCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthcaps)構造体。 また、次のレジストリ エントリを設定するドライバーの INF ファイルを変更します。
 
 ```inf
 Key:    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectMusic\Defaults

@@ -6,12 +6,12 @@ keywords:
 - MPEG1_A プロファイル WDK DirectX VA を制限します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f230f191c6b5383192f4366dab6940670ef9babd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4706faa8afb5de8b91f72abd0db0d683cad643bf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345641"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372856"
 ---
 # <a name="mpeg1a"></a>MPEG1\_A
 
@@ -23,7 +23,7 @@ ms.locfileid: "63345641"
 
 ### <a name="span-idrestrictionsondxvaconnectmodespanspan-idrestrictionsondxvaconnectmodespanspan-idrestrictionsondxvaconnectmodespanrestrictions-on-dxvaconnectmode"></a><span id="Restrictions_on_DXVA_ConnectMode"></span><span id="restrictions_on_dxva_connectmode"></span><span id="RESTRICTIONS_ON_DXVA_CONNECTMODE"></span>DXVA に関する制限事項\_ConnectMode
 
-に対して次の制限、 [ **DXVA\_ConnectMode** ](https://msdn.microsoft.com/library/windows/hardware/ff563138)構造体に適用されるときに、 *bDXVA\_Func* で定義された変数**dwFunction**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)構造体が 1 にします。
+に対して次の制限、 [ **DXVA\_ConnectMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_connectmode)構造体に適用されるときに、 *bDXVA\_Func* で定義された変数**dwFunction**のメンバー、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体が 1 にします。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ ms.locfileid: "63345641"
 <thead>
 <tr class="header">
 <th align="left">構造体のメンバー</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -56,7 +56,7 @@ ms.locfileid: "63345641"
 <thead>
 <tr class="header">
 <th align="left">構造体のメンバー</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -147,7 +147,7 @@ ms.locfileid: "63345641"
 <thead>
 <tr class="header">
 <th align="left">wMBtype ビット</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>

@@ -4,19 +4,19 @@ description: このセクションのトピックでは、カーネル モード
 ms.assetid: 3B4D677D-2FCC-45A1-95B4-DA9CA9D7B452
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abd404b5d06ce049d16fa0149db4a250e3cbd883
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f637734d3bd5a8902166bd6e36b0cc237d18eaa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372100"
 ---
 # <a name="porting-a-driver-from-wdm-to-wdf"></a>WDM から WDF へのドライバーの移植
 
 
 このセクションのトピックでは、カーネル モード ドライバー フレームワーク (KMDF) ドライバーまたはユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 のドライバーに既存の WDM ドライバーを変換する方法について説明します。
 
-アーキテクチャ上、Windows Driver Frameworks (WDF) ドライバーは WDM ドライバーに似ています。 WDM ドライバーから成る、 [ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)関数では、さまざまなディスパッチをオペレーティング システムがサービスの I/O 要求、およびその他のドライバー固有のユーティリティ関数を呼び出すルーチン。 WDF ドライバーから成る、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)関数、さまざまなサービスの I/O 要求にフレームワークから呼び出されるイベント コールバック関数、および追加のドライバー固有のユーティリティ関数。 ただし、この広範な構造内では、2 つのモデルと、重要な違いがあります。
+アーキテクチャ上、Windows Driver Frameworks (WDF) ドライバーは WDM ドライバーに似ています。 WDM ドライバーから成る、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数では、さまざまなディスパッチをオペレーティング システムがサービスの I/O 要求、およびその他のドライバー固有のユーティリティ関数を呼び出すルーチン。 WDF ドライバーから成る、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)関数、さまざまなサービスの I/O 要求にフレームワークから呼び出されるイベント コールバック関数、および追加のドライバー固有のユーティリティ関数。 ただし、この広範な構造内では、2 つのモデルと、重要な違いがあります。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

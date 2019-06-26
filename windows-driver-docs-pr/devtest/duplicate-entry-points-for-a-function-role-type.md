@@ -4,17 +4,17 @@ description: 関数役割型の重複エントリ ポイント
 ms.assetid: cf6604da-bd79-4adf-a08f-9b903aa91133
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d0c356561c2bae6c8dc73f097eac12b04e5f2f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e15e875670d67fe62ba60fab1c71ceaca52bc536
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344853"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371502"
 ---
 # <a name="duplicate-entry-points-for-a-function-role-type"></a>関数役割型の重複エントリ ポイント
 
 
-ほとんどの関数の役割の種類は、SDV は、ドライバーが、最大でエントリ ポイントごとに 1 つのコールバック関数と仮定します。 ただしは、複数のイベント コールバック関数が関連付けられていることのあるいくつかの関数ロールの種類があります。 たとえば、KMDF ドライバーが複数をある[ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)または[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683) (EVTを使用するコールバック関数\_WDF\_タイマーと EVT\_WDF\_DPC ロール型の注釈)。 この場合は、SDV は、Sdv map.h 関数の型に整数を追加します。 たとえばには、ドライバーに 2 つの DPC コールバック関数がある場合は、SDV にマップする**楽しい\_WDF\_DPC\_1**と**楽しい\_WDF\_DPC\_2**.
+ほとんどの関数の役割の種類は、SDV は、ドライバーが、最大でエントリ ポイントごとに 1 つのコールバック関数と仮定します。 ただしは、複数のイベント コールバック関数が関連付けられていることのあるいくつかの関数ロールの種類があります。 たとえば、KMDF ドライバーが複数をある[ *EvtTimerFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/nc-wdftimer-evt_wdf_timer)または[ *EvtDpcFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nc-wdfdpc-evt_wdf_dpc) (EVTを使用するコールバック関数\_WDF\_タイマーと EVT\_WDF\_DPC ロール型の注釈)。 この場合は、SDV は、Sdv map.h 関数の型に整数を追加します。 たとえばには、ドライバーに 2 つの DPC コールバック関数がある場合は、SDV にマップする**楽しい\_WDF\_DPC\_1**と**楽しい\_WDF\_DPC\_2**.
 
 ドライバーは、ロールの種類のコールバック関数の最大数を超えている場合、SDV には、次のメッセージが表示されます。
 
@@ -24,7 +24,7 @@ Static Driver Verifier found more than one entry point for '[role type]'
 
 関数のロールの種類に SDV をサポートしているエントリ ポイントがある場合は、必要はありません、ドライバーに何らかの問題です。 ただし、正確な検証結果を取得する必要がありますを編集する Sdv。-map.h ファイルに重複するエントリを削除します。
 
-次の Sdv map.h ファイルが 2 を示しています、 [ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745) 、EVT を使用して注釈が関数\_WDF\_要求\_完了\_ルーチン ロールの種類。 SDV では、Sdv map.h ファイルで定義両方**EvtRequestReadCompletionRoutine**と**EvtRequestWriteCompletionRoutine**楽しんで\_WDF\_要求\_完了\_ルーチン。
+次の Sdv map.h ファイルが 2 を示しています、 [ *CompletionRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 、EVT を使用して注釈が関数\_WDF\_要求\_完了\_ルーチン ロールの種類。 SDV では、Sdv map.h ファイルで定義両方**EvtRequestReadCompletionRoutine**と**EvtRequestWriteCompletionRoutine**楽しんで\_WDF\_要求\_完了\_ルーチン。
 
 ```
 //Approved=false
@@ -41,7 +41,7 @@ Static Driver Verifier found more than one entry point for '[role type]'
 #define fun_WDF_IO_QUEUE_IO_DEVICE_CONTROL OsrFxEvtIoDeviceControl
 ```
 
-重複を削除するには、2 つ目の完了ルーチンをコメント (置換、  **\#d**で\#コメントの区切り記号を 2 つの定義 (**//**)。 **承認済み = true**検証を実行します。
+重複を削除するには、2 つ目の完了ルーチンをコメント (置換、  **\#d**で\#コメントの区切り記号を 2 つの定義 ( **//** )。 **承認済み = true**検証を実行します。
 
 ```
 #define fun_WDF_REQUEST_COMPLETION_ROUTINE EvtRequestReadCompletionRoutine

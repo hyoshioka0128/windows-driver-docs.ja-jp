@@ -7,12 +7,12 @@ keywords:
 - ベンダーから提供されたドライバー WDK のスマート カードをインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e7ac7a11bca8f6712e4ffcdd872c30beace569d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1689b0e29d2cf805324d5631e8c417cb43ab5d8b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354758"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356702"
 ---
 # <a name="installing-smart-card-reader-drivers"></a>スマート カード リーダー ドライバーのインストール
 
@@ -22,7 +22,7 @@ ms.locfileid: "63354758"
 
 このセクションでは、Microsoft Windows 2000 およびそれ以降のバージョンのオペレーティング システムのスマート カード リーダーのドライバーに固有のインストール情報を提供します。
 
-リーダーのドライバーを供給するベンダーがのメンバーには各ドライバーのする必要があります、 **SmartCardReader**セットアップでクラス、 [ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)ドライバーの INF ファイル。 ベンダーは、スマート カード サービスを適切に構成するセクションを追加もする必要があります。 次に、例を示します。
+リーダーのドライバーを供給するベンダーがのメンバーには各ドライバーのする必要があります、 **SmartCardReader**セットアップでクラス、 [ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)ドライバーの INF ファイル。 ベンダーは、スマート カード サービスを適切に構成するセクションを追加もする必要があります。 次に、例を示します。
 
 ```cpp
 [Version]
@@ -47,7 +47,7 @@ UmdfKernelModeClientPolicy=AllowKernelModeClients
 
 スマート カード リーダーのドライバーのインストールに関連付けられているその他の特別な要件はありません。
 
-Windows 2000 およびそれ以降のバージョンのオペレーティング システムでのデバイス インストールの詳細については、次を参照してください。[デバイス インストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)します。
+Windows 2000 およびそれ以降のバージョンのオペレーティング システムでのデバイス インストールの詳細については、次を参照してください。[デバイス インストールの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)します。
 
 
 

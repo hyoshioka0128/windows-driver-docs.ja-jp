@@ -10,12 +10,12 @@ keywords:
 - 親オブジェクト WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30820eddd3ea14defa66c337c291ae044f8c3c34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e39e299c893e37221936f050a8e3f3fae771df3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378152"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371126"
 ---
 # <a name="introduction-to-framework-objects"></a>フレームワーク オブジェクトの概要
 
@@ -39,7 +39,7 @@ ms.locfileid: "63378152"
 ドライバーは、オブジェクトを削除するには、ときにフレームワークから呼び出されるコールバック関数を登録できます。 コールバック関数では、オブジェクト固有のメモリの割り当てなどのドライバーによって割り当てられたリソースを削除できます。 これらのコールバック関数の詳細については、次を参照してください。 [Framework オブジェクトのライフ サイクル](framework-object-life-cycle.md)します。
 
 <a href="" id="parent-object"></a>*親オブジェクト*  
-フレームワークのすべてのオブジェクトには、親オブジェクトを持つことができます。 フレームワークは、ほとんどのオブジェクトの既定の親オブジェクトを指定します。 ドライバーは、オブジェクトを作成するときに、オブジェクトの既定の親オブジェクトをオーバーライドする親オブジェクトを指定できます。 オブジェクトの親オブジェクトをドライバーのセットを指定する、 **ParentObject**オブジェクトのメンバー [ **WDF\_オブジェクト\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff552400)構造体。 (いくつかのオブジェクトの種類のドライバーを上書きできません既定の親オブジェクト。)フレームワークまたはドライバーは、親オブジェクトを削除したときに、フレームワークには、親オブジェクトの子も削除されます。
+フレームワークのすべてのオブジェクトには、親オブジェクトを持つことができます。 フレームワークは、ほとんどのオブジェクトの既定の親オブジェクトを指定します。 ドライバーは、オブジェクトを作成するときに、オブジェクトの既定の親オブジェクトをオーバーライドする親オブジェクトを指定できます。 オブジェクトの親オブジェクトをドライバーのセットを指定する、 **ParentObject**オブジェクトのメンバー [ **WDF\_オブジェクト\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/ns-wdfobject-_wdf_object_attributes)構造体。 (いくつかのオブジェクトの種類のドライバーを上書きできません既定の親オブジェクト。)フレームワークまたはドライバーは、親オブジェクトを削除したときに、フレームワークには、親オブジェクトの子も削除されます。
 
 すべての WDF で定義されているオブジェクトの概要については、次を参照してください。 [Framework オブジェクトの概要](summary-of-framework-objects.md)します。
 

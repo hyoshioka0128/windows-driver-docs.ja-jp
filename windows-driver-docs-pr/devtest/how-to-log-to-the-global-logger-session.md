@@ -8,19 +8,19 @@ keywords:
 - 起動中に WDK トレース ログに記録します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3586e9ac23a2c38be1067a0a8520b2ac91b88bfe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b127896711801de958df5ca0df758fec8bfe99b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330687"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372690"
 ---
 # <a name="how-to-log-to-the-global-logger-session"></a>グローバル ロガー セッションにログ記録する方法
 
 
 グローバル ロガーのトレース セッションにログインするのにためのドライバーを構成するのにには、次の手順を使用します。
 
-1. ドライバー コードには、次の定義を追加します。 挿入の間での定義、 [WPP\_コントロール\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)マクロ定義との include ステートメント、[トレース メッセージのヘッダー ファイル](trace-message-header-file.md)します。
+1. ドライバー コードには、次の定義を追加します。 挿入の間での定義、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロ定義との include ステートメント、[トレース メッセージのヘッダー ファイル](trace-message-header-file.md)します。
    ```
    #define WPP_GLOBALLOGGER
    ```

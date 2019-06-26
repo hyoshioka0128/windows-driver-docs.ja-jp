@@ -5,12 +5,12 @@ ms.assetid: 0D9866A6-A8C6-4B0A-8D17-A632E1AE37BF
 ms.date: 08/08/2017
 keywords: -OID_SRIOV_WRITE_VF_CONFIG_SPACE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: f8adaaef91ea9e86187a83cbb7fdabd249490845
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0607a4c4dee27724070377c28e17d0a296df9496
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351334"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372502"
 ---
 # <a name="oidsriovwritevfconfigspace"></a>OID\_SRIOV\_書き込み\_VF\_CONFIG\_領域
 
@@ -19,9 +19,9 @@ ms.locfileid: "63351334"
 
 上にあるドライバーは、ネットワーク アダプターの PCIe 物理機能 (PF)、ミニポート ドライバーをこの OID セット要求を発行します。 この OID メソッド要求は、PF ミニポート ドライバー シングル ルート I/O 仮想化 (SR-IOV) インターフェイスをサポートする必要があります。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体には、呼び出し元が割り当てたバッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体には、呼び出し元が割り当てたバッファーへのポインターが含まれています。 このバッファーは、以下を格納する形式です。
 
--   [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_領域\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451688)を含む構造体、VF の PCI 構成領域の書き込み操作のパラメーターです。
+-   [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_領域\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)を含む構造体、VF の PCI 構成領域の書き込み操作のパラメーターです。
 
 -   PCI の構成領域に書き込まれるデータを含む追加のバッファー領域。
 
@@ -30,23 +30,23 @@ ms.locfileid: "63351334"
 
 VF のミニポート ドライバーは、HYPER-V 子パーティションのゲスト オペレーティング システムで実行されます。 このため、VF のミニポート ドライバーは VF の PCI 構成領域などのハードウェア リソースを直接アクセスすることはできません。 PF ミニポート ドライバーのみ、HYPER-V 親パーティションの管理オペレーティング システムで実行されを VF の PCI 構成領域にアクセスできます。
 
-など、仮想化スタックの上にある、ドライバーは、OID の OID のセット要求を発行\_SRIOV\_書き込み\_VF\_CONFIG\_VF のミニポート ドライバーを呼び出すときに領域[ **NdisMSetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff563670) PCI 構成領域に書き込めません。
+など、仮想化スタックの上にある、ドライバーは、OID の OID のセット要求を発行\_SRIOV\_書き込み\_VF\_CONFIG\_VF のミニポート ドライバーを呼び出すときに領域[ **NdisMSetBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetbusdata) PCI 構成領域に書き込めません。
 
 OID の OID メソッド要求を処理するときに\_SRIOV\_書き込み\_VF\_CONFIG\_領域、PF ミニポート ドライバーには、次のガイドラインが従う必要があります。
 
--   PF のミニポート ドライバーは、VF がで指定されたを確認する必要があります、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_領域\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451688)構造体を以前に割り当てられているリソースします。 PF のミニポート ドライバーの OID メソッドの要求からの VF 用のリソースの割り当て[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。
+-   PF のミニポート ドライバーは、VF がで指定されたを確認する必要があります、 **VFId**のメンバー、 [ **NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_領域\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)構造体を以前に割り当てられているリソースします。 PF のミニポート ドライバーの OID メソッドの要求からの VF 用のリソースの割り当て[OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)します。
 
     指定した VF 用のリソースが割り当てられていない場合、ドライバーは OID 要求に失敗する必要があります。
 
--   PF のミニポート ドライバー呼び出し[ **NdisMSetVirtualFunctionBusData** ](https://msdn.microsoft.com/library/windows/hardware/hh451526)要求 PCI 構成領域に書き込めません。 ただし、VF ドライバーが前のキャッシュの PCI 構成領域のデータの読み取りや書き込み PCI 構成領域の操作、PF ミニポート ドライバーも返します。
+-   PF のミニポート ドライバー呼び出し[ **NdisMSetVirtualFunctionBusData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetvirtualfunctionbusdata)要求 PCI 構成領域に書き込めません。 ただし、VF ドライバーが前のキャッシュの PCI 構成領域のデータの読み取りや書き込み PCI 構成領域の操作、PF ミニポート ドライバーも返します。
 
-    **注**  独立系ハードウェア ベンダー (IHV) が SR-IOV 対応の一部としてバーチャル バス ドライバー (VBD) を提供する場合[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)、PF ミニポート ドライバーを呼び出してはならない[ **NdisMSetVirtualFunctionBusData**](https://msdn.microsoft.com/library/windows/hardware/hh451526)します。 代わりに、ドライバーをプライベートな通信チャネルを介して VBD とのインターフェイスし、VBD を呼び出すことを要求する必要があります[ *SetVirtualFunctionData*](https://msdn.microsoft.com/library/windows/hardware/hh451552)します。 この関数がから公開されている、 [GUID\_VPCI\_インターフェイス\_標準](https://msdn.microsoft.com/library/windows/hardware/hh451146)基になる仮想 PCI (VPCI) バス ドライバーによってサポートされているインターフェイス。
+    **注**  独立系ハードウェア ベンダー (IHV) が SR-IOV 対応の一部としてバーチャル バス ドライバー (VBD) を提供する場合[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)、PF ミニポート ドライバーを呼び出してはならない[ **NdisMSetVirtualFunctionBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetvirtualfunctionbusdata)します。 代わりに、ドライバーをプライベートな通信チャネルを介して VBD とのインターフェイスし、VBD を呼び出すことを要求する必要があります[ *SetVirtualFunctionData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_virtual_device_data)します。 この関数がから公開されている、 [GUID\_VPCI\_インターフェイス\_標準](https://msdn.microsoft.com/library/windows/hardware/hh451146)基になる仮想 PCI (VPCI) バス ドライバーによってサポートされているインターフェイス。
 
      
 
-PF のミニポート ドライバーでは、OID 要求を正常に完了する場合、ドライバーは要求された PCI 構成の領域データをによって参照されるバッファーにコピーする必要があります、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。 ドライバーで指定されたオフセットからバッファーにデータをコピーする**BufferOffset**のメンバー、 [ **NDIS\_SRIOV\_読み取り\_VF\_CONFIG\_領域\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/hh451681)構造体。
+PF のミニポート ドライバーでは、OID 要求を正常に完了する場合、ドライバーは要求された PCI 構成の領域データをによって参照されるバッファーにコピーする必要があります、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。 ドライバーで指定されたオフセットからバッファーにデータをコピーする**BufferOffset**のメンバー、 [ **NDIS\_SRIOV\_読み取り\_VF\_CONFIG\_領域\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)構造体。
 
-詳細については、次を参照してください。[仮想関数の PCI 構成データを設定](https://msdn.microsoft.com/library/windows/hardware/hh440229)します。
+詳細については、次を参照してください。[仮想関数の PCI 構成データを設定](https://docs.microsoft.com/windows-hardware/drivers/network/setting-the-pci-configuration-data-of-a-virtual-function)します。
 
 ### <a name="return-status-codes"></a>リターン状態コード
 
@@ -74,11 +74,11 @@ OID OID の要求の設定の次のステータス コードのいずれかの P
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>1 つ以上のメンバーの<a href="https://msdn.microsoft.com/library/windows/hardware/hh451688" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_WRITE_VF_CONFIG_SPACE_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451688)"> <strong>NDIS_SRIOV_WRITE_VF_CONFIG_SPACE_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
+<td><p>1 つ以上のメンバーの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_WRITE_VF_CONFIG_SPACE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)"> <strong>NDIS_SRIOV_WRITE_VF_CONFIG_SPACE_PARAMETERS</strong> </a>構造が無効な値を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 NDIS セット、<strong>データ。SET_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -115,19 +115,19 @@ OID OID の要求の設定の次のステータス コードのいずれかの P
 ****
 [GUID\_VPCI\_インターフェイス\_標準](https://msdn.microsoft.com/library/windows/hardware/hh451146)
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_領域\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/hh451688)
+[**NDIS\_SRIOV\_書き込み\_VF\_CONFIG\_領域\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)
 
-[**NdisMSetBusData**](https://msdn.microsoft.com/library/windows/hardware/ff563670)
+[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetbusdata)
 
-[**NdisMSetVirtualFunctionBusData**](https://msdn.microsoft.com/library/windows/hardware/hh451526)
+[**NdisMSetVirtualFunctionBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetvirtualfunctionbusdata)
 
 [OID\_NIC\_スイッチ\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
 
 [OID\_SRIOV\_読み取り\_VF\_CONFIG\_領域](oid-sriov-read-vf-config-space.md)
 
-[*SetVirtualFunctionData*](https://msdn.microsoft.com/library/windows/hardware/hh451552)
+[*SetVirtualFunctionData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-set_virtual_device_data)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_NEIGHBOR_REPORT_ENTRIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 583432f989fe79c2eacafc8bf486f4912ea5134a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 295b479b16b84213ee12192b39eaee1119879da6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330169"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359213"
 ---
 # <a name="oidwdisetneighborreportentries"></a>OID\_WDI\_設定\_近隣\_レポート\_エントリ
 
@@ -30,7 +30,7 @@ OID\_WDI\_設定\_近隣\_レポート\_エントリ、LE、AP から受信し�
 
 | TLV                                                                             | 許可されている複数の TLV インスタンス | 省略可能 | 説明                   |
 |---------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------|
-| [**WDI\_TLV\_近隣\_レポート\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/mt269133) | x                              |          | 近隣ノードのレポートの一覧。 |
+| [**WDI\_TLV\_近隣\_レポート\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-neighbor-report-entry) | x                              |          | 近隣ノードのレポートの一覧。 |
 
  
 

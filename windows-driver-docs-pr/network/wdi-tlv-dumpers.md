@@ -4,12 +4,12 @@ description: パーサーのジェネレーターのライブラリには、ト�
 ms.assetid: 4F8B53E5-1F51-4119-AC06-7A710340E4A4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cee50be2223923c03fa3ebcd1874dd9152f150a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc4158a0d1865763c55a67d0340844830e823324
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380871"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358565"
 ---
 # <a name="wdi-tlv-dumpers"></a>WDI TLV ダンパー
 
@@ -58,7 +58,7 @@ WPP トレースのみ必要がある場合は、コードのサイズとログ�
 
 などの解析 Api、 *pBuffer*ポインターと*BufferLength*パラメーター ヘッダーを除外し、最初の TLV を直接ポイントします。
 
-Api のメッセージのバリアントは、メッセージ ID を含めるし、メッセージの方向を強化、TLV あいまいさを解消します。 同じ TLV ID は、コンテキストに応じてさまざまな方法でデコードできますので便利です。 たとえば、 [ **WDI\_TLV\_BSSID** ](https://msdn.microsoft.com/library/windows/hardware/dn926153)直接含めることができます、 [ **WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)の一部に[OID\_WDI\_タスク\_スキャン](https://msdn.microsoft.com/library/windows/hardware/dn925959)の一覧を含めることができますか**WDI\_MAC\_アドレス**の一部に[ **WDI\_TLV\_P2P\_属性**](https://msdn.microsoft.com/library/windows/hardware/dn897863)します。
+Api のメッセージのバリアントは、メッセージ ID を含めるし、メッセージの方向を強化、TLV あいまいさを解消します。 同じ TLV ID は、コンテキストに応じてさまざまな方法でデコードできますので便利です。 たとえば、 [ **WDI\_TLV\_BSSID** ](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)直接含めることができます、 [ **WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)の一部に[OID\_WDI\_タスク\_スキャン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-scan)の一覧を含めることができますか**WDI\_MAC\_アドレス**の一部に[ **WDI\_TLV\_P2P\_属性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)します。
 
  
 

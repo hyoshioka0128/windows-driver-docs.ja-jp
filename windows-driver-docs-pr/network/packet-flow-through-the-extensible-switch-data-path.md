@@ -4,12 +4,12 @@ description: 拡張可能スイッチ データ パス経由のパケット フ�
 ms.assetid: 9236CE95-F959-445F-849F-14377EE91D19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e74665598e19624152a1cc72075e5c5a6c57dd53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a8de3599da7c63c18841be8d3c1809d26e693ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363816"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376446"
 ---
 # <a name="packet-flow-through-the-extensible-switch-data-path"></a>拡張可能スイッチ データ パス経由のパケット フロー
 
@@ -53,7 +53,7 @@ ms.locfileid: "63363816"
 
 2.  パケットが外部ネットワーク アダプターから、NVGRE パケットの場合は、拡張可能スイッチ NDIS 6.40 (Windows Server 2012 R2) 以降では、設定、 **NativeForwardingRequired**パケットのアウト オブ バンド (OOB) の情報のフラグ。 詳細については、次を参照してください。[ハイブリッド転送](hybrid-forwarding.md)します。
 
-3.  場合は、パケットが、トラフィックが仮想サブネットを持つポートに到着した、拡張可能スイッチの設定、 **VirtualSubnetId**のメンバー、 [ **NDIS\_NET\_バッファー\_一覧\_仮想\_サブネット\_情報**](https://msdn.microsoft.com/library/windows/hardware/jj614359)パケットの構造体。
+3.  場合は、パケットが、トラフィックが仮想サブネットを持つポートに到着した、拡張可能スイッチの設定、 **VirtualSubnetId**のメンバー、 [ **NDIS\_NET\_バッファー\_一覧\_仮想\_サブネット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_virtual_subnet_info)パケットの構造体。
 
     **注**仮想サブネットは、HNV のサブネットまたはサード パーティ製の仮想サブネットになります。
 
@@ -61,7 +61,7 @@ ms.locfileid: "63363816"
 
 ### <a name="ingress-data-path"></a>イングレス データのパス
 
-1.  イングレス データのパスからパケットを取得する拡張機能とその[ *FilterSendNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff549966)関数が呼び出されます。 拡張機能は、呼び出すことによって拡張機能を基になる、イングレス データ パスにパケットを転送[ **NdisFSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff562616)します。 フィルター処理および転送拡張機能も削除できますパケット イングレス データのパスから呼び出すことによって[ **NdisFSendNetBufferListsComplete**](https://msdn.microsoft.com/library/windows/hardware/ff562618)します。
+1.  イングレス データのパスからパケットを取得する拡張機能とその[ *FilterSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists)関数が呼び出されます。 拡張機能は、呼び出すことによって拡張機能を基になる、イングレス データ パスにパケットを転送[ **NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)します。 フィルター処理および転送拡張機能も削除できますパケット イングレス データのパスから呼び出すことによって[ **NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)します。
 
 2.  キャプチャ拡張機能は、パケットの受信データ パスを取得、ときに、パケット データを調べる。 ただし、拡張機能をキャプチャする必要がありますを完了できません、イングレス データ パス上のパケットの送信要求。 これらの拡張機能では、基になる拡張機能は拡張可能スイッチ ドライバー スタックのパケットを常に転送する必要があります。
 
@@ -138,11 +138,11 @@ ms.locfileid: "63363816"
 
 ### <a name="egress-data-path"></a>出口データ パス
 
-1.  出口データ パスからパケットを取得する拡張機能とその[ *FilterReceiveNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff549960)関数が呼び出されます。 拡張機能が出口のデータ パスでの拡張機能を呼び出すことによって関連するパケットを転送[ **NdisFIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff561820)します。 フィルター処理および転送拡張機能も削除できますパケット エグレス データのパスから呼び出すことによって[ **NdisFReturnNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff562613)します。
+1.  出口データ パスからパケットを取得する拡張機能とその[ *FilterReceiveNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_receive_net_buffer_lists)関数が呼び出されます。 拡張機能が出口のデータ パスでの拡張機能を呼び出すことによって関連するパケットを転送[ **NdisFIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatereceivenetbufferlists)します。 フィルター処理および転送拡張機能も削除できますパケット エグレス データのパスから呼び出すことによって[ **NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreturnnetbufferlists)します。
 
 2.  転送拡張機能は、送信データ パス上のパケットを取得するときに、OOB データ パケットの宛先ポート情報を検査できます。
 
-    **注**、拡張機能は、呼び出すことによって OOB データからこの情報を取得[ *GetNetBufferListDestinations*](https://msdn.microsoft.com/library/windows/hardware/hh598157)します。
+    **注**、拡張機能は、呼び出すことによって OOB データからこの情報を取得[ *GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)します。
 
 
 
@@ -158,10 +158,10 @@ ms.locfileid: "63363816"
 
     詳細については、次を参照してください。[複製またはパケット トラフィック](cloning-or-duplicating-packet-traffic.md)します。
 
-5.  出口データ パス上のパケットをキャプチャ拡張機能を取得時に、パケット データを調べる。 ただし、キャプチャ拡張機能をリモート監視アプリケーション トラフィックの状態を報告する順序でパケットを送信する場合、その送信される必要がこのパケット トラフィックを呼び出して[ **NdisFSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff562616)イングレス データ パス上の送信操作を開始します。
+5.  出口データ パス上のパケットをキャプチャ拡張機能を取得時に、パケット データを調べる。 ただし、キャプチャ拡張機能をリモート監視アプリケーション トラフィックの状態を報告する順序でパケットを送信する場合、その送信される必要がこのパケット トラフィックを呼び出して[ **NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)イングレス データ パス上の送信操作を開始します。
 
 6.  拡張可能スイッチの上にあるプロトコル エッジで、パケットが到着すると、拡張可能スイッチのインターフェイスは、すべての指定された宛先ポートにパケットを転送します。
 
-7.  パケットを転送すると後のインターフェイスは、逆の順序で同じパスを介してパケットを完了します。 インターフェイスが、拡張機能を呼び出す最初に、 [ *FilterReturnNetBufferLists* ](https://msdn.microsoft.com/library/windows/hardware/ff549964)エグレス データのパスに転送されたパケットを完了する関数。 インターフェイスの拡張機能の呼び出し、 [ *FilterSendNetBufferListsComplete* ](https://msdn.microsoft.com/library/windows/hardware/ff549967)イングレス データ パスに転送されたパケットを完了する関数。
+7.  パケットを転送すると後のインターフェイスは、逆の順序で同じパスを介してパケットを完了します。 インターフェイスが、拡張機能を呼び出す最初に、 [ *FilterReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_return_net_buffer_lists)エグレス データのパスに転送されたパケットを完了する関数。 インターフェイスの拡張機能の呼び出し、 [ *FilterSendNetBufferListsComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists_complete)イングレス データ パスに転送されたパケットを完了する関数。
 
     イングレスとエグレスの両方のデータ パスは、パケットが完了したら、拡張機能は、パケットが必要なクリーンアップを実行し、必要な後処理にあります。

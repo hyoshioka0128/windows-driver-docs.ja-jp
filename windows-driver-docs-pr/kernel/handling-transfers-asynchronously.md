@@ -19,12 +19,12 @@ keywords:
 - WDK カーネルでは、非同期のデータを転送します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5934d6193d87c05e44fdf7fed8a0609e5961650
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7386a7dc4edeb5384389bc6e21fc8f84aa18df9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364295"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371912"
 ---
 # <a name="handling-transfers-asynchronously"></a>転送の非同期処理
 
@@ -32,7 +32,7 @@ ms.locfileid: "63364295"
 
 
 
-最上位レベルのドライバーを除くすべてのドライバーが処理[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み** ](https://msdn.microsoft.com/library/windows/hardware/ff550819)非同期的に要求します。 *DispatchRead*と*DispatchWrite*最上位レベルのドライバーもルーチンは、下位レベルのドライバーまたは書き込み要求を非同期の読み取りの処理が完了するを待機できません; などを渡す必要がありますが、下位のドライバーに要求し、状態を返す\_保留します。
+最上位レベルのドライバーを除くすべてのドライバーが処理[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)非同期的に要求します。 *DispatchRead*と*DispatchWrite*最上位レベルのドライバーもルーチンは、下位レベルのドライバーまたは書き込み要求を非同期の読み取りの処理が完了するを待機できません; などを渡す必要がありますが、下位のドライバーに要求し、状態を返す\_保留します。
 
 同様に、最下位レベルのデバイス ドライバーの*DispatchReadWrite*ルーチンは、転送要求をデバイス I/O 要求を処理し、状態を返す他のドライバー ルーチンを渡す必要があります\_保留します。
 

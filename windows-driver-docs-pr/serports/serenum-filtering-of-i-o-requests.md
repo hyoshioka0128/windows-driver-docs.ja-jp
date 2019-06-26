@@ -8,12 +8,12 @@ keywords:
 - WDK シリアル デバイスを要求する I/O のフィルター処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05b019a81155d4ee90d5f18578441da896f6dc29
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 128f189dd6971d3645bc6562edd036a4b80d4c43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836325"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356763"
 ---
 # <a name="serenum-filtering-of-io-requests"></a>I/O 要求の Serenum によるフィルター処理
 
@@ -21,7 +21,7 @@ Serenum フィルター、フィルターに転送される I/O 要求の操作�
 
 - プラグ アンド プレイと電源の要求に関連付けられている bus 関連の操作を処理します。
     -   フィルター操作を行いますが削除されると、存在する場合、PDO を削除します。
-    -   Rs-232 ポートへの応答を列挙する[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)型の要求**BusRelations**.
+    -   Rs-232 ポートへの応答を列挙する[ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)型の要求**BusRelations**.
 - Rs-232 ポートに関する情報を返す Serenum に固有のデバイス制御リクエストを完了します。
 
 Serenum (PDO は rs-232 ポートに接続されている子デバイスを表します) PDO 宛ての I/O 要求をフィルター処理する方法を次に示します。

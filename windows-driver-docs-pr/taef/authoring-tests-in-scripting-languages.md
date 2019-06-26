@@ -4,12 +4,12 @@ description: スクリプト言語でテストを作成する
 ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 989f1f25825050e7115933e57bd2bd82f5ab90ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c40c7d17649f9cc3274d41b2b33ca766ee1c89a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385155"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373022"
 ---
 # <a name="authoring-tests-in-scripting-languages"></a>スクリプト言語でテストを作成する
 
@@ -26,7 +26,7 @@ Microsoft COM スクリプト インターフェイスをサポートする任�
 ## <a name="span-idscripttestfileformatspanspan-idscripttestfileformatspanspan-idscripttestfileformatspanscript-test-file-format"></a><span id="Script_Test_File_Format"></span><span id="script_test_file_format"></span><span id="SCRIPT_TEST_FILE_FORMAT"></span>スクリプトのテスト ファイルの形式
 
 
-スクリプト言語のテストでは、TAEF を少し変更した使用[Windows スクリプト コンポーネント](https://msdn.microsoft.com/library/07zhfkh8.aspx)ファイル形式。 次の例では、VBScript や JScript のテスト クラスが含まれたテスト ファイルを示します。
+スクリプト言語のテストでは、TAEF を少し変更した使用[Windows スクリプト コンポーネント](https://docs.microsoft.com/previous-versions/07zhfkh8(v=vs.85))ファイル形式。 次の例では、VBScript や JScript のテスト クラスが含まれたテスト ファイルを示します。
 
 ```cpp
 1   <?xml version="1.0" ?>
@@ -165,7 +165,7 @@ Microsoft COM スクリプト インターフェイスをサポートする任�
 
 後に、**コンポーネント**要素を使用してクラス レベルのメタデータを挿入することができます、 **TestClassProperty**要素。 同様、 **ModuleProperty**要素が必要、**名前**と**値**属性。
 
-この時点では、オブジェクトを作成し、オブジェクトへの参照を定義することができますも。 参照してください[その他のコンポーネント セクション](https://msdn.microsoft.com/library/ye6w00x4.aspx)詳細についてはします。 15、18、49、および XML の例では 52 行参照を初期化する方法を表示する、**かかえるします。Logger.Log**オブジェクト。
+この時点では、オブジェクトを作成し、オブジェクトへの参照を定義することができますも。 参照してください[その他のコンポーネント セクション](https://docs.microsoft.com/previous-versions/ye6w00x4(v=vs.85))詳細についてはします。 15、18、49、および XML の例では 52 行参照を初期化する方法を表示する、**かかえるします。Logger.Log**オブジェクト。
 
 **&lt;パブリック&gt;** 要素で、テスト スクリプト モジュールのテスト メソッドの宣言を囲みます。 テスト メソッドの名前を指定することによってテスト メソッドを宣言する、**名前**の属性を **&lt;メソッド&gt;** 要素。 内のテスト メソッドのプロパティを追加することも、 **&lt;メソッド&gt;** 要素。 他のレベルでプロパティと同様に、必要はありません。 ただし、これを追加する場合があります、**名前**と**値**属性。
 

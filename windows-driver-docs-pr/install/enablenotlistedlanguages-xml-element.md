@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9aeed2c3718fc679de8b72f52ce705a1dc914779
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0882c2449bf3fe070642464c548187653148ab14
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346151"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375010"
 ---
 # <a name="enablenotlistedlanguages-xml-element"></a>enableNotListedLanguages XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **EnableNotListedLanguages** XML 要素が空の要素を設定する、 **enableNotListedLanguages** DPInst はサポートされている言語のすべてを有効にするを構成するには、フラグ明示的に有効になって[**言語**](language-xml-element.md)内の XML 要素を*DPInst.xml*ファイル。
 

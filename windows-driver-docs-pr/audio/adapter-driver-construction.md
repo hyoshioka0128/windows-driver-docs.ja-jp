@@ -14,12 +14,12 @@ keywords:
 - アダプターのドライバー WDK オーディオを構築します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4490de29470544e1f15ddfca16af9849e6b2dae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43eb438e1a8ca2854e3b2dc6d316a9b2075de14d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355775"
 ---
 # <a name="adapter-driver-construction"></a>アダプター ドライバーの構築
 
@@ -37,7 +37,7 @@ ms.locfileid: "63325414"
 
 一般的なアダプター コードの例は、の実装を参照してください、 **CAdapterCommon** Sb16、Msvad、および Ac97 サンプル オーディオ ドライバー Microsoft Windows Driver Kit (WDK) でのインターフェイス。
 
-階層型アプローチを使用して仕入先は、アダプターのハードウェア機能に応じて、さまざまなレベルのいずれかで動作するアダプターのドライバーを記述できます。 仕入先を決定する必要がありますまず特定のハードウェア関数に必要なサポートのレベルを決定するときにかどうか、システム提供のミニポート ドライバーが既に存在する関数がサポート (を参照してください、 [ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)システム提供のミニポート ドライバーの関数の一覧)。 場合は、仕入先は独自のミニポート ドライバーを実装する必要がありますが、システム提供のポートのドライバーのいずれかを使用することがある可能性があります (を参照してください、 [ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715)システム提供のポートの関数の一覧ドライバーの場合)。
+階層型アプローチを使用して仕入先は、アダプターのハードウェア機能に応じて、さまざまなレベルのいずれかで動作するアダプターのドライバーを記述できます。 仕入先を決定する必要がありますまず特定のハードウェア関数に必要なサポートのレベルを決定するときにかどうか、システム提供のミニポート ドライバーが既に存在する関数がサポート (を参照してください、 [ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)システム提供のミニポート ドライバーの関数の一覧)。 場合は、仕入先は独自のミニポート ドライバーを実装する必要がありますが、システム提供のポートのドライバーのいずれかを使用することがある可能性があります (を参照してください、 [ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)システム提供のポートの関数の一覧ドライバーの場合)。
 
 WDM、デバイスのサポートを実装するには、次の手順を実行します。
 

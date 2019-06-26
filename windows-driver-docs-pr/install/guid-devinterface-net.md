@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5970f5a734e17a9b59c3a4db9b163b89aa71c68e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b09e35048d9a279a3afe43fc8a960d9408ed02d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363744"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375260"
 ---
 # <a name="guiddevinterfacenet"></a>GUID_DEVINTERFACE_NET
 
 
-GUID_DEVINTERFACE_NET[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている[ネットワーク デバイス](https://msdn.microsoft.com/library/windows/hardware/ff568356)します。
+GUID_DEVINTERFACE_NET[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている[ネットワーク デバイス](https://docs.microsoft.com/windows-hardware/drivers/network)します。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ GUID_DEVINTERFACE_NET[デバイス インターフェイス クラス](https://m
 
 NDIS は、NDIS ミニポート ドライバーの場合は、このインターフェイス クラスのインスタンスを登録します。
 
-ネットワーク デバイスとドライバーについては、次を参照してください。[ネットワーク設計ガイド](https://msdn.microsoft.com/library/windows/hardware/ff568356)します。
+ネットワーク デバイスとドライバーについては、次を参照してください。[ネットワーク設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network)します。
 
 <a name="requirements"></a>要件
 ------------

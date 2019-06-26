@@ -4,12 +4,12 @@ description: 仮想ポートでの受信フィルターの設定
 ms.assetid: F0137D59-1701-4DFC-BB30-27E477FC0706
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4a148d029ee513459de3a3cabf5f58d3625056f
-ms.sourcegitcommit: 2fcfb772bb7f5ee565c9512a79444f57d58de9e3
+ms.openlocfilehash: d02a3a4471cdb5bbced8815c64be57c14d80ac12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375159"
 ---
 # <a name="setting-a-receive-filter-on-a-virtual-port"></a>仮想ポートでの受信フィルターの設定
 
@@ -35,11 +35,11 @@ VPort を作成する方法の詳細については、次を参照してくだ�
 ## <a name="setting-a-receive-filter-on-a-vport"></a>に対して、VPort 受信フィルターを設定
 
 
-オブジェクト識別子 (OID) メソッド要求を発行している上位のドライバーを設定し、VPort でフィルターを構成、 [OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体は、初期状態へのポインターを含む、 [**NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)構造体。
+オブジェクト識別子 (OID) メソッド要求を発行している上位のドライバーを設定し、VPort でフィルターを構成、 [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)します。 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体は、初期状態へのポインターを含む、 [**NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体。
 
-上にあるドライバーはこの OID メソッド要求を発行前に初期化する必要があります、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)構造体。 ドライバーは、次のようにこの構造体のメンバーを設定する必要があります。
+上にあるドライバーはこの OID メソッド要求を発行前に初期化する必要があります、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体。 ドライバーは、次のようにこの構造体のメンバーを設定する必要があります。
 
--   **FilterType**にメンバーを設定する必要があります、 [ **NDIS\_受信\_フィルター\_型**](https://msdn.microsoft.com/library/windows/hardware/ff567186)列挙値。
+-   **FilterType**にメンバーを設定する必要があります、 [ **NDIS\_受信\_フィルター\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_receive_filter_type)列挙値。
 
     **注**  以降 NDIS 6.30 でのみ**NdisReceiveFilterTypeVMQueue**シングル ルート I/O 仮想化 (SR-IOV) インターフェイスのフィルターの種類がサポートされています。
 
@@ -49,9 +49,9 @@ VPort を作成する方法の詳細については、次を参照してくだ�
 
 -   **VPortId** VPort に関連付けられている識別子にメンバーを設定する必要があります。 上にあるドライバーは、次の方法のいずれかで VPort 識別子を取得します。
 
-    -   前の OID メソッド要求から[OID\_NIC\_スイッチ\_作成\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)します。
+    -   前の OID メソッド要求から[OID\_NIC\_スイッチ\_作成\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)します。
 
-    -   前の OID メソッド要求から[OID\_NIC\_スイッチ\_ENUM\_拡張](https://msdn.microsoft.com/library/windows/hardware/hh451821)します。
+    -   前の OID メソッド要求から[OID\_NIC\_スイッチ\_ENUM\_拡張](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)します。
 
 -   **FilterId** NDIS にメンバーを設定する必要があります\_既定\_受信\_フィルター\_id。
 
@@ -59,7 +59,7 @@ VPort を作成する方法の詳細については、次を参照してくだ�
 
      
 
--   **FieldParametersArrayOffset**、 **FieldParametersArrayNumElements**、および**FieldParametersArrayElementSize**のメンバー、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)の配列を定義する構造体を適切に設定する必要があります[ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)構造体。 各**NDIS\_受信\_フィルター\_フィールド\_パラメーター**配列内の構造は、ネットワーク ヘッダーで 1 つのフィールドのフィルターのテスト条件を設定します。
+-   **FieldParametersArrayOffset**、 **FieldParametersArrayNumElements**、および**FieldParametersArrayElementSize**のメンバー、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)の配列を定義する構造体を適切に設定する必要があります[ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)構造体。 各**NDIS\_受信\_フィルター\_フィールド\_パラメーター**配列内の構造は、ネットワーク ヘッダーで 1 つのフィールドのフィルターのテスト条件を設定します。
 
     SR-IOV のインターフェイスで、次のようなフィールド テスト パラメーターが定義されています。
 
@@ -67,12 +67,12 @@ VPort を作成する方法の詳細については、次を参照してくだ�
 
     -   パケット内の仮想 LAN (VLAN) 識別子では、指定した VLAN 識別子と同じです。
 
-OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)新しいフィルターの識別子を持つ構造体。
+OID メソッドの要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)新しいフィルターの識別子を持つ構造体。
 
 ## <a name="using-the-ndis_receive_filter_field_mac_header_vlan_untagged_or_zero-flag"></a>NDIS を使用して\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0 フラグ
 
 
-**フラグ**のメンバー、 [ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)構造体の指定受信フィルターに対して実行するアクション。 次の点を適用する、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0**フラグ。
+**フラグ**のメンバー、 [ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)構造体の指定受信フィルターに対して実行するアクション。 次の点を適用する、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0**フラグ。
 
 -   場合、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_ゼロ**フラグに設定されて、**フラグ**メンバー、ネットワーク アダプターは、次のテスト条件のすべてに一致する受信パケットのみを示す必要があります。
 
@@ -82,22 +82,22 @@ OID メソッドの要求から正常に戻った後、 **InformationBuffer**の
 
     場合、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_ゼロ**フラグが設定されて、ネットワーク アダプターが一致する MAC アドレスと 0 以外の場合、VLAN 識別子を持つパケットを示す必要がありますされません。
 
-    **注**  仮想化スタックが、MAC アドレス フィルターを設定し VLAN 識別子フィルターが構成されていない場合、 [OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)もセットの要求、スイッチの設定、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_タグのない\_または\_0**フラグ。
+    **注**  仮想化スタックが、MAC アドレス フィルターを設定し VLAN 識別子フィルターが構成されていない場合、 [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)もセットの要求、スイッチの設定、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_タグのない\_または\_0**フラグ。
 
      
 
--   場合は、NDIS 6.30、以降、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0**フラグが設定されていないとして構成されている VLAN 識別子フィルターがない、 [OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)メソッド要求、ミニポート ドライバーは、次のいずれかを行う必要があります。
+-   場合は、NDIS 6.30、以降、 **NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0**フラグが設定されていないとして構成されている VLAN 識別子フィルターがない、 [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)メソッド要求、ミニポート ドライバーは、次のいずれかを行う必要があります。
 
-    -   ミニポート ドライバーでの失敗した状態を返す必要があります、 [OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)メソッド要求。
+    -   ミニポート ドライバーでの失敗した状態を返す必要があります、 [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)メソッド要求。
 
-    -   ミニポート ドライバーでは、MAC アドレスの指定されたフィールドをフィルター処理を検査してネットワーク アダプタを構成する必要があります。 VLAN タグの受信パケットに存在する場合、ネットワーク アダプターする必要がありますから削除パケット データ。 ミニポート ドライバーに VLAN タグを配置する必要があります、 [ **NDIS\_NET\_バッファー\_一覧\_8021Q\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff566565)関連付けられている、パケットの[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
+    -   ミニポート ドライバーでは、MAC アドレスの指定されたフィールドをフィルター処理を検査してネットワーク アダプタを構成する必要があります。 VLAN タグの受信パケットに存在する場合、ネットワーク アダプターする必要がありますから削除パケット データ。 ミニポート ドライバーに VLAN タグを配置する必要があります、 [ **NDIS\_NET\_バッファー\_一覧\_8021Q\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)関連付けられている、パケットの[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
 
--   プロトコル ドライバーは、MAC アドレス フィルターと VLAN 識別子フィルターを設定する場合、 [OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)メソッドが要求、は設定しません**NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0**フィルター フィールドのいずれかのフラグを設定します。 この場合、ミニポート ドライバーでは、指定された MAC アドレスと VLAN 識別子の両方に一致するパケットを示す必要があります。 ミニポート ドライバーでは、0 の VLAN 識別子またはタグなしのパケットは MAC アドレスを一致するパケットが示されませんする必要があります。
+-   プロトコル ドライバーは、MAC アドレス フィルターと VLAN 識別子フィルターを設定する場合、 [OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)メソッドが要求、は設定しません**NDIS\_受信\_フィルター\_フィールド\_MAC\_ヘッダー\_VLAN\_UNTAGGED\_または\_0**フィルター フィールドのいずれかのフラグを設定します。 この場合、ミニポート ドライバーでは、指定された MAC アドレスと VLAN 識別子の両方に一致するパケットを示す必要があります。 ミニポート ドライバーでは、0 の VLAN 識別子またはタグなしのパケットは MAC アドレスを一致するパケットが示されませんする必要があります。
 
 ## <a name="using-the-filter-identifier"></a>フィルターの識別子を使用してください。
 
 
-NDIS フィルター識別子を割り当てます、 **FilterId**のメンバー、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567181)構造体し、の OID メソッド要求を渡します[OID\_受信\_フィルター\_設定\_フィルター](https://msdn.microsoft.com/library/windows/hardware/ff569795)基になるミニポート ドライバーにします。 VPort が設定されている各フィルターには、ネットワーク アダプターのフィルターの一意な識別子があります。 つまり、フィルターの識別子は、ネットワーク アダプターを管理する別のキューでは複製されません。
+NDIS フィルター識別子を割り当てます、 **FilterId**のメンバー、 [ **NDIS\_受信\_フィルター\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)構造体し、の OID メソッド要求を渡します[OID\_受信\_フィルター\_設定\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)基になるミニポート ドライバーにします。 VPort が設定されている各フィルターには、ネットワーク アダプターのフィルターの一意な識別子があります。 つまり、フィルターの識別子は、ネットワーク アダプターを管理する別のキューでは複製されません。
 
 上にあるドライバーは、フィルターを使用する必要があります以降 OID で NDIS を提供する識別子要求のフィルター パラメーターを変更するか、フィルターを解放します。
 
@@ -116,7 +116,7 @@ NDIS、VPort に対してフィルターを設定する OID 要求を受け取�
 
 -   フィルターのいずれかを渡す場合、パケットを VPort に割り当てられる必要があります。
 
-ネットワーク アダプターが論理フィールドのすべてのテストの結果をまとめて**AND**操作。 任意のフィールドをテストする場合は、配列に含まれる、 [ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff567169)失敗した場合、構造体、ネットワーク パケットが、指定したフィルター条件を満たしていません。
+ネットワーク アダプターが論理フィールドのすべてのテストの結果をまとめて**AND**操作。 任意のフィールドをテストする場合は、配列に含まれる、 [ **NDIS\_受信\_フィルター\_フィールド\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)失敗した場合、構造体、ネットワーク パケットが、指定したフィルター条件を満たしていません。
 
 ネットワーク アダプターでは、これらのフィルター条件に対して受信したパケットをテストは、パケットに指定されたテスト条件を持たないすべてのフィールドを無視する必要があります。
 

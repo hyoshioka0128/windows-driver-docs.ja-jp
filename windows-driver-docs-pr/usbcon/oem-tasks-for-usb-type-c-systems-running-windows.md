@@ -3,17 +3,17 @@ Description: この表は、使用の場合は、Windows 10 でサポートさ�
 title: USB Type-C システムの OEM タスク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c82a8d7a88289e19d547fa006ea07accabd08ee7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4c7216708328b352a6f67a35581f3ade370fd56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366633"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358363"
 ---
 # <a name="oem-tasks-for-usb-type-c-systems"></a>USB Type-C システムの OEM タスク
 
 
-\[いくつかの情報は、リリース版の発売までに著しく変更される可能性がありますが、リリース前の製品に関連します。 Microsoft では、一切の保証、明示または黙示にかかわらず、ここで提供される情報はありません。\]
+\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
 この表は、使用の場合は、Windows 10 でサポートされて、作業にこれらのユース ケースの Oem 追加のタスクを実行する必要があります。
 
@@ -64,7 +64,7 @@ ms.locfileid: "63366633"
 <p>低速の充電器がシステムに接続されている場合、システムが UcmCx または UCSI を通じて通知する必要があります。</p>
 <p>独自のレガシをサポートするために 高電圧または高現在メカニズム、充電中、追加のフィルター ドライバーを独自の充電器を検出し、レポートをインボックス ドライバーを Microsoft のインボックス USB 機能ドライバーの記述をする必要があります。</p>
 <p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">USB タイプ-c コネクタのドライバーを作成します。</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/mt188012" data-raw-source="[USB filter driver for supporting proprietary chargers](https://msdn.microsoft.com/library/windows/hardware/mt188012)">独自の充電器をサポートするための USB フィルター ドライバー</a></p>
+<p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85)" data-raw-source="[USB filter driver for supporting proprietary chargers](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))">独自の充電器をサポートするための USB フィルター ドライバー</a></p>
 <div class="alert">
 <strong>注</strong>  Windows はレガシ USB A と USB B USB microB コネクタの Power 配信をサポートしていません。
 </div>
@@ -79,7 +79,7 @@ ms.locfileid: "63366633"
 <p>Windows 10 Mobile を実行しているデバイスでは、接続でき、USB デバイス/周辺、一連のインボックス ドライバーと対話することができます。 オペレーティング システムでは、デバイス クラスのサブセットをサポートします。</p>
 <p>参照してください、 <a href="supported-usb-classes.md" data-raw-source="[USB device class drivers included in Windows](supported-usb-classes.md)">USB デバイス クラス ドライバーが Windows に含まれる</a>します。</p></td>
 <td><p>システムは、Windows がドライバーを含まないカスタム USB デバイスに接続する場合、汎用ドライバー (Winusb.sys) の読み込みまたはドライバーを作成することもできます。 ガイダンスについては、次を参照してください。 <a href="winusb-considerations.md" data-raw-source="[Choosing a driver model for developing a USB client driver](winusb-considerations.md)">USB クライアント ドライバーを開発するためのドライバー モデルを選択する</a>します。</p>
-<p>Windows 10 デスクトップ エディションと Windows 10 Mobile を実行する 1 つのドライバーを記述することをお勧めします。 詳しくは、「<a href="https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers" data-raw-source="[Getting Started with Universal Windows drivers](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)">ユニバーサル Windows ドライバーの概要</a>」をご覧ください。</p>
+<p>Windows 10 デスクトップ エディションと Windows 10 Mobile を実行する 1 つのドライバーを記述することをお勧めします。 詳しくは、「<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Getting Started with Universal Windows drivers](https://docs.microsoft.com/windows-hardware/drivers)">ユニバーサル Windows ドライバーの概要</a>」をご覧ください。</p>
 <p>デバイスと通信するアプリケーションを作成するには、Windows ランタイム Api を使用します。 詳細については、次を参照してください。 <a href="talking-to-usb-devices-start-to-finish.md" data-raw-source="[Talking to USB devices, start to finish (UWP app)](talking-to-usb-devices-start-to-finish.md)">(UWP アプリ) を終了する開始の USB デバイスとの対話、</a>します。</p></td>
 </tr>
 <tr class="odd">
@@ -121,7 +121,7 @@ ms.locfileid: "63366633"
 </div></td>
 <td><p>ロールのデュアル ポートは、適切なタイミングで適切なソフトウェア スタック (ホストまたは関数) が読み込まれるかどうかを確認するオペレーティング システムで動作する必要があります。</p>
 <p>デュアル ロールの USB ポートが Windows ホストまたは関数のいずれかのモードに構成する必要があるように、システムを設計できます。 これらの設計は、USB ロール スイッチのスタックを使用する必要があります。 システムが Synopsys または ChipIdea のロールのデュアル コント ローラーを使用しない場合は、システムの役割のデュアル コント ローラー用の USB ロール切り替えのクライアント ドライバーを記述する必要があります。</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/mt628026" data-raw-source="[USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)">USB デュアルロール コントローラー ドライバーのプログラミング参照</a></p>
+<p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85)" data-raw-source="[USB dual-role controller driver programming reference](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))">USB デュアルロール コントローラー ドライバーのプログラミング参照</a></p>
 <p>ファームウェアまたはドライバーの顧客が指定したポートに接続されているデバイスに応じて、ホストまたは関数のいずれかのポートとしてポートを構成するよう、システムを設計こともできます。 これらの設計では、必要があるか、このロジックで実装、ファームウェア、または USB コネクタ マネージャーのクライアント ドライバーで実装する必要があります。 これらのシステムで、Windows は、正しいソフトウェア スタックを自動的に読み込まれます。</p>
 <p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">USB タイプ-c コネクタのドライバーを作成します。</a></p></td>
 </tr>

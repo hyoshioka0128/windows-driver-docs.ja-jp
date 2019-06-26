@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_NETWORK_LIST_OFFLOAD ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 95a3de268503926aea4127d4547e48cb7b71457f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f2822b15577706b69f0fcc59ebedd567b4a716d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324874"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359196"
 ---
 # <a name="oidwdisetnetworklistoffload"></a>OID\_WDI\_設定\_ネットワーク\_一覧\_オフロード
 
@@ -43,7 +43,7 @@ OS は定期的なバック グラウンドが CS にスキャンを要求しま
 
 各スキャンの期間中、チャネルの一覧に制約は必要ありませんが、チャネルのリストの条件に一致する Ssid のファームウェアをスキャンします。 検出された AP 情報は、取得するホスト キャッシュする必要があります。 ファームウェアは、SSID、アルゴリズム、および暗号を少なくとも 1 つ BSSID が一致するが、一致するチャネルが必要でないときに、NLO 検出を示します。
 
-各 OID\_WDI\_設定\_ネットワーク\_一覧\_LE、UE 送信オフロードが新しい NLO スキャン要求を表します。 以前、このような要求または状態を更新します。 LE は NLO なスキャンされ、要求ごとに見つかった AP の 1 回のみを示します。 UE replumbs (12 回ですこれは変更される) では、Dx NLO 遷移見つかった AP が正常に接続されていない場合 (などの理由: AP が見つかりましたが、デバイスが移動、アジア太平洋の信号フェードし、接続は失敗します。 または、EAP 認証の失敗を長引かせる。途中まで)。 LE およびファームウェアには、遅延の構成に基づいて NLO スキャンのスケジュールを遅らせる必要があります[ **WDI\_TLV\_ネットワーク\_一覧\_オフロード\_CONFIG**](https://msdn.microsoft.com/library/windows/hardware/dn897851). これは、オペレーティング システムの元の NLO コマンドのスケジュールに準拠するように、UE を使用する番号です。
+各 OID\_WDI\_設定\_ネットワーク\_一覧\_LE、UE 送信オフロードが新しい NLO スキャン要求を表します。 以前、このような要求または状態を更新します。 LE は NLO なスキャンされ、要求ごとに見つかった AP の 1 回のみを示します。 UE replumbs (12 回ですこれは変更される) では、Dx NLO 遷移見つかった AP が正常に接続されていない場合 (などの理由: AP が見つかりましたが、デバイスが移動、アジア太平洋の信号フェードし、接続は失敗します。 または、EAP 認証の失敗を長引かせる。途中まで)。 LE およびファームウェアには、遅延の構成に基づいて NLO スキャンのスケジュールを遅らせる必要があります[ **WDI\_TLV\_ネットワーク\_一覧\_オフロード\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-network-list-offload-config). これは、オペレーティング システムの元の NLO コマンドのスケジュールに準拠するように、UE を使用する番号です。
 
 NLO の既定のスキャンの種類が WDI\_スキャン\_型\_自動。 チャネルを積極的にスキャンするには、ファームウェアがワイルドカードの SSID を使用する必要があります。 表示されているアクセス ポイントは、一致するものを決定するオフロード リストに Ssid と比較する必要があります。 これは、プライバシーに関するリスクを軽減します。
 
@@ -63,7 +63,7 @@ NLO を示す探索は、2 つのケースです。
 
 | TLV                                                                                                  | 許可されている複数の TLV インスタンス | 省略可能 | 説明         |
 |------------------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------|
-| [**WDI\_TLV\_ネットワーク\_一覧\_オフロード\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn897852) |                                |          | NLO パラメーター。 |
+| [**WDI\_TLV\_ネットワーク\_一覧\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-network-list-offload-parameters) |                                |          | NLO パラメーター。 |
 
  
 
@@ -72,7 +72,7 @@ NLO を示す探索は、2 つのケースです。
 
 追加データがありません。 ヘッダー内のデータで十分です。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

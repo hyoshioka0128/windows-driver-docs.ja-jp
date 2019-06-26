@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_DOT11_RESET_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: acafb7853668961d8e866f6c248d7faee80d9028
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4b318d8626a7e15672861f5a4009cb4496422ec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358561"
 ---
 # <a name="wditlvdot11resetparameters"></a>WDI\_TLV\_DOT11\_リセット\_パラメーター
 
 
-WDI\_TLV\_DOT11\_リセット\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_DOT11\_のリセット](https://msdn.microsoft.com/library/windows/hardware/dn925952).
+WDI\_TLV\_DOT11\_リセット\_パラメーターはパラメーターを含む TLV [OID\_WDI\_タスク\_DOT11\_のリセット](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-dot11-reset).
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -37,7 +37,7 @@ UINT8 のサイズをバイト単位で。
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

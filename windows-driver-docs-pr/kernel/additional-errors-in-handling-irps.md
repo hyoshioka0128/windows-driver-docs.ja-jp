@@ -11,12 +11,12 @@ keywords:
 - 信頼性 WDK カーネルでは、パブリックおよびプライベートの IOCTL パスを収束します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d092141c9b9099c41eea092b493dc1b46b73255c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7a5ab2ebffd9c0dd4b3a9d64f73fbf60e5cf47f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365835"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369994"
 ---
 # <a name="additional-errors-in-handling-irps"></a>IRP 処理に関するその他のエラー
 
@@ -28,7 +28,7 @@ ms.locfileid: "63365835"
 
 ### <a name="lost-or-double-completed-irps"></a>紛失したまたは double 完了 Irp
 
-I/O マネージャー ルーチンの呼び出しが失われるなどと共に、これらの問題[**います**](https://msdn.microsoft.com/library/windows/hardware/ff550358)、多くの場合、エラー処理パスで発生します。 ドライバーのパスのクイック レビューでは、このような問題を確認できます。
+I/O マネージャー ルーチンの呼び出しが失われるなどと共に、これらの問題[**います**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)、多くの場合、エラー処理パスで発生します。 ドライバーのパスのクイック レビューでは、このような問題を確認できます。
 
 ### <a name="converging-public-ioctl-and-private-ioctl-paths"></a>収束 IOCTL がパブリックとプライベートの IOCTL パス
 

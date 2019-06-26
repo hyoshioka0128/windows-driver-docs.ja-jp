@@ -10,12 +10,12 @@ keywords:
 - スピン ロック WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cb62577c53d3b6a4fbde51b76e38649f2b2029e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aed4e95e22e9105fe01b303f649e03fe3e9cca95
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369911"
 ---
 # <a name="introduction-to-spin-locks"></a>スピン ロックの概要
 
@@ -27,17 +27,17 @@ ms.locfileid: "63341436"
 
 多くのコンポーネントは、ドライバーを含めて、スピン ロックを使用します。 任意の種類のドライバーが 1 つ以上使用可能性があります*executive スピン ロック*します。 たとえば、ほとんどのファイル システムでは、Irp の処理が、ファイル システムのワーカー スレッド コールバック ルーチンと FSD の両方を格納するのに、インタロックされた作業のキュー、ファイル システム ドライバー (FSD) でデバイスの拡張機能を使用します。 インタロックされた作業をキューは、キューや Irp を削除しようとして同時にすべてのスレッドに Irp を挿入しようとしています。 FSD 間の競合を解決する、executive スピン ロックによって保護されます。 別の例としては、システムのフロッピー コント ローラー ドライバーは、2 つの executive スピン ロックを使用します。 Executive スピン ロックを 1 つは、インタロックされた作業キューがこのドライバーのデバイス専用のスレッドと共有を保護します。他は、次の 3 つのドライバー ルーチンによって共有されるタイマー オブジェクトを保護します。
 
-Microsoft Windows XP および Windows の以降のバージョンのドライバーを使用できる[ **KeAcquireInStackQueuedSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551899)と[ **KeReleaseInStackQueuedSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff553130)取得およびとしてスピン ロックを解放する、*スピン ロックをキューに置かれた*します。 キューに置かれたスピン ロックでは、マルチプロセッサ コンピューターで通常スピンロックの競合が増加のロックよりも優れたパフォーマンスを提供します。 詳細については、次を参照してください。[スピン ロックをキューに置かれた](queued-spin-locks.md)します。 Windows 2000 用のドライバーを使用できる[ **KeAcquireSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff551917)と[ **KeReleaseSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff553145)取得およびとして、通常、スピン ロックを解放するにはスピン ロックします。
+Microsoft Windows XP および Windows の以降のバージョンのドライバーを使用できる[ **KeAcquireInStackQueuedSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))と[ **KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseinstackqueuedspinlock)取得およびとしてスピン ロックを解放する、*スピン ロックをキューに置かれた*します。 キューに置かれたスピン ロックでは、マルチプロセッサ コンピューターで通常スピンロックの競合が増加のロックよりも優れたパフォーマンスを提供します。 詳細については、次を参照してください。[スピン ロックをキューに置かれた](queued-spin-locks.md)します。 Windows 2000 用のドライバーを使用できる[ **KeAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)と[ **KeReleaseSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlock)取得およびとして、通常、スピン ロックを解放するにはスピン ロックします。
 
 単純なデータ構造へのアクセスを同期するには、ドライバーはいずれかの使用、 **ExInterlocked * Xxx*** ルーチン データ構造をアトミックにアクセスできるようにします。 これらのルーチンを使用するドライバーは、取得するか、スピン ロックを明示的に解放する必要はありません。
 
-ISR のあるすべてのドライバーを使用して、*スピン ロックを中断*のデータやその ISR 間で共有されるハードウェアを保護してその[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)ルーチンは、通常呼び出される、 [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)と[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン。 割り込みのスピン ロックは、ドライバーを呼び出すときに作成される割り込みオブジェクトのセットに関連付けられて[ **IoConnectInterrupt**](https://msdn.microsoft.com/library/windows/hardware/ff548371)」の説明に従って、ISR. を登録します。
+ISR のあるすべてのドライバーを使用して、*スピン ロックを中断*のデータやその ISR 間で共有されるハードウェアを保護してその[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)ルーチンは、通常呼び出される、 [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)と[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン。 割り込みのスピン ロックは、ドライバーを呼び出すときに作成される割り込みオブジェクトのセットに関連付けられて[ **IoConnectInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterrupt)」の説明に従って、ISR. を登録します。
 
 **ドライバーでスピン ロックを使用して次のガイドラインに従います。**
 
 -   記憶域を使用して、任意のデータまたはスピン ロックで保護されたリソースと常駐システム容量のメモリ内の対応する、スピン ロック (ように、非ページ プール、[スペースの仮想メモリと物理メモリ](overview-of-windows-memory-space.md)図)。 ドライバーを使用して executive スピン ロックをストレージを提供する必要があります。 ただし、デバイス ドライバー必要がありますいない、記憶域を提供、割り込みスピン ロック multivector ISR または 1 つ以上の ISR がある場合を除き、ISR. を登録する」の説明に従って
 
--   呼び出す[ **KeInitializeSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff552160)ドライバーが、保護されるリソースまたは共有データへのアクセスを同期するために使用する前に記憶域を提供する各スピン ロックを初期化します。
+-   呼び出す[ **KeInitializeSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)ドライバーが、保護されるリソースまたは共有データへのアクセスを同期するために使用する前に記憶域を提供する各スピン ロックを初期化します。
 
 -   一般的に、適切な IRQL でスピン ロックを使用するすべてのサポート ルーチンを呼び出す&lt;= ディスパッチ\_executive スピン ロックのレベル&lt;ドライバーの割り込みのオブジェクトに関連付けられている割り込みスピンロックの DIRQL を = です。
 

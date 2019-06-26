@@ -7,12 +7,12 @@ keywords:
 - 中間ドライバー WDK の Irp のリムーバブル メディア
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc848103b57c6c6b52c96c89c88c452004c5375e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7813993310450bc1fb2947f5aa895e96eeac7bb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367867"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371238"
 ---
 # <a name="setting-up-irps-in-intermediate-drivers"></a>中間ドライバーでの IRP の設定
 
@@ -20,7 +20,7 @@ ms.locfileid: "63367867"
 
 
 
-ファイル システム ドライバーとリムーバブル メディア デバイス ドライバーの間に階層化された中間ドライバーは、Irp で、[次へ] の下位レベルのドライバーの I/O スタックの場所を設定する必要があります。 着信から[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)、 [ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)と[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)を要求する中間のドライバーが、自身の I/O スタックの場所にコピーする必要があります**フラグ** 、下位レベルの次のドライバーの I/O に下位のドライバーの I/O スタックの場所を設定するときに場所をスタックします。
+ファイル システム ドライバーとリムーバブル メディア デバイス ドライバーの間に階層化された中間ドライバーは、Irp で、[次へ] の下位レベルのドライバーの I/O スタックの場所を設定する必要があります。 着信から[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)、 [ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)と[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)を要求する中間のドライバーが、自身の I/O スタックの場所にコピーする必要があります**フラグ** 、下位レベルの次のドライバーの I/O に下位のドライバーの I/O スタックの場所を設定するときに場所をスタックします。
 
 中間のドライバーが下位のリムーバブル メディアのドライバーの新しい Irp を割り当てた場合、それらの Irp をよう設定する必要があります。
 

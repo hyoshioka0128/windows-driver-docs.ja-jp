@@ -6,17 +6,17 @@ ms.assetid: 695ed61b-7082-44be-ae82-ddc3e4a0b8d0
 keywords:
 - IRP_MJ_FILE_SYSTEM_CONTROL Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 19cc7c6acd67594e2c6137c50402099a6e18e049
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54150296964b6a7c14701add420d31501e66ba1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368508"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370908"
 ---
 # <a name="irpmjfilesystemcontrol"></a>IRP\_MJ\_ファイル\_システム\_コントロール
 
 
-ファイル システム ドライバー プロセスのみ**IRP\_MJ\_ファイル\_システム\_コントロール**要求。 ファイル システム ドライバーによってこの IRP の主な機能コードの使用に関する詳細については、次を参照してください。 [ **IRP\_MJ\_ファイル\_システム\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff548670)します。 ファイル システム ドライバーの詳細については、次を参照してください。[ファイル システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff540376)します。
+ファイル システム ドライバー プロセスのみ**IRP\_MJ\_ファイル\_システム\_コントロール**要求。 ファイル システム ドライバーによってこの IRP の主な機能コードの使用に関する詳細については、次を参照してください。 [ **IRP\_MJ\_ファイル\_システム\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-file-system-control)します。 ファイル システム ドライバーの詳細については、次を参照してください。[ファイル システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-system-drivers)します。
 
 <a name="requirements"></a>要件
 ------------

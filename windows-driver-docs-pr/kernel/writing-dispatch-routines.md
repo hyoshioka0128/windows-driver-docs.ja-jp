@@ -18,12 +18,12 @@ keywords:
 - 関数コードの WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88fc1eb1c4616afa4c0765d8e24601f922a7db54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09de7bb9b754ab73e264c7a1f0bafff75df7f076
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355989"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374114"
 ---
 # <a name="writing-dispatch-routines"></a>ディスパッチ ルーチンの記述
 
@@ -31,7 +31,7 @@ ms.locfileid: "63355989"
 
 
 
-ドライバーを処理するために登録するディスパッチ ルーチンの開始、I/O 要求パケット (IRP) を処理する[IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)(<strong>IRP\_MJ\_* XXX</strong><em>).ドライバーの[ </em> *DriverEntry* <em> ](<https://msdn.microsoft.com/library/windows/hardware/ff544113>)ルーチンがディスパッチ ルーチン内でのドライバーのディスパッチ テーブル内のエントリ ポイントをエクスポートします[ </em> *ドライバー\_オブジェクト** ](<https://msdn.microsoft.com/library/windows/hardware/ff544174>)構造体。
+ドライバーを処理するために登録するディスパッチ ルーチンの開始、I/O 要求パケット (IRP) を処理する[IRP の主な機能コード](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)(<strong>IRP\_MJ\_* XXX</strong><em>).ドライバーの[ </em> *DriverEntry* <em> ](<https://msdn.microsoft.com/library/windows/hardware/ff544113>)ルーチンがディスパッチ ルーチン内でのドライバーのディスパッチ テーブル内のエントリ ポイントをエクスポートします[ </em> *ドライバー\_オブジェクト** ](<https://msdn.microsoft.com/library/windows/hardware/ff544174>)構造体。
 
 ドライバーは、処理する主要な各 I/O 関数コードの別のディスパッチ ルーチンを提供できます。 または、複数の I/O 関数のコードを処理するディスパッチ ルーチンを記述できます。
 

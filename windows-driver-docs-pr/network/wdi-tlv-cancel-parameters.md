@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_CANCEL_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 904134a226fe0eccfa9d7d7cb29d586b35d91428
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd887ef59cb1105adf53e7ac3247110600b61593
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359731"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358589"
 ---
 # <a name="wditlvcancelparameters"></a>WDI\_TLV\_キャンセル\_パラメーター
 
 
-WDI\_TLV\_キャンセル\_パラメーターはパラメーターを含む TLV [OID\_WDI\_中止\_タスク](https://msdn.microsoft.com/library/windows/hardware/dn925835)します。
+WDI\_TLV\_キャンセル\_パラメーターはパラメーターを含む TLV [OID\_WDI\_中止\_タスク](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-abort-task)します。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -39,7 +39,7 @@ WDI\_TLV\_キャンセル\_パラメーターはパラメーターを含む TLV 
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -4,12 +4,12 @@ description: このトピックでは、Microsoft Visual Studio を使用して�
 ms.assetid: 4D8240AD-F589-4623-BC6E-47E304831250
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19bb9f718ff864ff2987950f9e4808bf7eda3416
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5cdfe2862dba9ec4fe60523d856edfabd1f1b960
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356646"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369360"
 ---
 # <a name="step-1-create-a-uwp-device-app"></a>手順 1:UWP デバイス アプリを作成する
 
@@ -42,7 +42,7 @@ UWP デバイスのアプリは、内部や周辺機器デバイスに対応す�
 | カメラ用の UWP デバイス アプリ   | カメラのドライバーは AvStream ドライバー モデルを使用する必要があります。 AvStream ドライバー モデルの詳細については、次を参照してください。、 [AVStream の概要](https://go.microsoft.com/fwlink/p/?LinkId=273032)、Windows Driver Kit でします。 A カメラのカスタム効果を提供するドライバーのインストール パッケージで、Driver MFT (media foundation 変換) と呼ばれる追加のコンポーネントを指定することができます。 詳細については、次を参照してください。 [Windows ストアのカメラ用のデバイス アプリ](uwp-device-apps-for-webcams.md)します。 |
 | プリンター用の UWP デバイス アプリ | プリンター、v4 プリンター ドライバーを使用する必要があります。 参照してください[v4 印刷ドライバーの開発](https://go.microsoft.com/fwlink/p/?LinkId=314231)の詳細。                                                                                                                                                                                                                                                                                                                                                         |
 | USB Api                               | Windows ランタイムを使用する[Windows.Devices.Usb](https://go.microsoft.com/fwlink/p/?LinkId=306694)Api では、デバイスは Winusb.sys ドライバーとの互換性である必要があります。                                                                                                                                                                                                                                                                                                                                      |
-| ヒューマン インターフェイス デバイス (HID) Api      | HID Api は USB、Bluetooth、Bluetooth Smart、および I2C トランスポート経由で使用するために設計されています。 Windows ランタイムを使用する[Windows.Devices.HumanInterfaceDevice](https://go.microsoft.com/fwlink/p/?LinkId=306697) Api では、デバイスは HIDClass.sys ドライバーとトランスポートによって必要なドライバーと互換性のあるである必要があります。 詳細については、次を参照してください。 [HID アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/jj126193)します。                                                                                                            |
+| ヒューマン インターフェイス デバイス (HID) Api      | HID Api は USB、Bluetooth、Bluetooth Smart、および I2C トランスポート経由で使用するために設計されています。 Windows ランタイムを使用する[Windows.Devices.HumanInterfaceDevice](https://go.microsoft.com/fwlink/p/?LinkId=306697) Api では、デバイスは HIDClass.sys ドライバーとトランスポートによって必要なドライバーと互換性のあるである必要があります。 詳細については、次を参照してください。 [HID アーキテクチャ](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))します。                                                                                                            |
 | Bluetooth GATT Api                    | Windows ランタイムの Bluetooth GATT Api を使用する[Windows.Devices.Bluetooth.GenericAttributeProfile](https://go.microsoft.com/fwlink/p/?LinkId=306698)デバイスを BthLEEnum.sys ドライバーとの互換性にする必要があります。                                                                                                                                                                                                                                                                                   |
 | Bluetooth RFCOMM Api                  | Windows ランタイムの Bluetooth RFCOMM Api を使用する[Windows.Devices.Bluetooth.Rfcomm](https://go.microsoft.com/fwlink/p/?LinkId=306699)デバイスは、Rfcomm.sys と BthEnum.sys ドライバーと互換性のあるである必要があります。                                                                                                                                                                                                                                                                                    |
 

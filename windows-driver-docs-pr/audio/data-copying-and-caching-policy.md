@@ -13,12 +13,12 @@ keywords:
 - データ コピーの WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3b30cd4100680fe5c63baead176a92dff530771
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39cd87a109a7bc51daf0aff7ba420fbd64181b15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333825"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359102"
 ---
 # <a name="data-copying-and-caching-policy"></a>データのコピーおよびキャッシュのポリシー
 
@@ -35,13 +35,13 @@ PCI コント ローラーのハードウェアが DMA バッファー転送ス�
 
 デバイスとスヌーピング (のぞき見) バスを実行しないシステムをサポートするには、カスタム関数のドライバーはこれらの規則に従う必要があります。
 
--   再生ストリーム、として、DMA バッファーのキャッシュの種類を指定**MmWriteCombined**します。 クライアント バッファーからデータのブロックを DMA バッファーにコピーした後、 [ **KeMemoryBarrier** ](https://msdn.microsoft.com/library/windows/hardware/ff552971) DMA エンジンにデータを見やすく関数。 **KeMemoryBarrier**プロセッサのデータ キャッシュを大きく耐性が効率的な方法でコピーしたデータをメモリにフラッシュします。
+-   再生ストリーム、として、DMA バッファーのキャッシュの種類を指定**MmWriteCombined**します。 クライアント バッファーからデータのブロックを DMA バッファーにコピーした後、 [ **KeMemoryBarrier** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kememorybarrier) DMA エンジンにデータを見やすく関数。 **KeMemoryBarrier**プロセッサのデータ キャッシュを大きく耐性が効率的な方法でコピーしたデータをメモリにフラッシュします。
 
 -   キャプチャ ストリームでは、いずれかとして、DMA バッファーのキャッシュの種類を指定**MmWriteCombined**または**MmNonCached**します。 さらに、関数のドライバーでは、DMA バッファーへの書き込みを避ける必要があります。 オーディオ サンプルの一括処理を実行する必要がある場合、最初にデータを別の場所をコピーする必要があります。
 
 関数ドライバーまたは DMA バッファーからコピーしたデータのブロックが開始または書き込み結合バッファーの境界で終了する必要はありませんし、そのサイズは書き込み結合バッファー サイズ (通常、32 ビットまたは 64 バイト) の倍数である必要はありません。
 
-使用するコーデック関数ドライバー、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416) DDI のバージョン、 [ **AllocateContiguousDmaBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536178) DMA バッファー メモリの割り当てと割り当てルーチンを実行します。 ルーチンが常に、バッファーのキャッシュの種類を設定**MmWriteCombined**します。
+使用するコーデック関数ドライバー、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl) DDI のバージョン、 [ **AllocateContiguousDmaBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_contiguous_dma_buffer) DMA バッファー メモリの割り当てと割り当てルーチンを実行します。 ルーチンが常に、バッファーのキャッシュの種類を設定**MmWriteCombined**します。
 
 書き込み結合の詳細についてで、ia-32 Intel アーキテクチャ ソフトウェア ・ デベロッパーズ マニュアルを参照してください、 [Intel](https://go.microsoft.com/fwlink/p/?linkid=38518) web サイト。
 

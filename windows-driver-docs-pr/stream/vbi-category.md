@@ -9,12 +9,12 @@ keywords:
 - PINNAME_VIDEO_VBI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c699c0a90aa83ae2405fc6afff50dbe1fe0a296c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0257f2c63a1d3c398b64e153eb20ac05d8c24ef4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373721"
 ---
 # <a name="vbi-category"></a>VBI カテゴリ
 
@@ -41,7 +41,7 @@ ms.locfileid: "63337815"
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 構造体</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567631" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567631)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video_vbi" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video_vbi)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 構造体</strong></p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "63337815"
 </tr>
 <tr class="even">
 <td><p><strong>拡張のヘッダーのサイズ</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567694" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567694)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>必要なプロパティ セット</strong></p></td>

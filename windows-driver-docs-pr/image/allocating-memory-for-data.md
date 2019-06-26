@@ -4,12 +4,12 @@ description: データのメモリの割り当て
 ms.assetid: 15df5616-ddce-44ec-bd10-65cae0d95cf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5179716df822729294bf7c35291eb63b3bd89fcc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8332db210589f68cd4514da118891800b0a2b10a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367078"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372608"
 ---
 # <a name="allocating-memory-for-data"></a>データのメモリの割り当て
 
@@ -17,7 +17,7 @@ ms.locfileid: "63367078"
 
 
 
-WIA サービスで提供される情報に依存、 [ **MINIDRV\_転送\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff545250)構造体を適切なデータ転送を実行します。 WIA ミニドライバーに関連するこの構造体のメンバーは次のとおりです。
+WIA サービスで提供される情報に依存、 [ **MINIDRV\_転送\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)構造体を適切なデータ転送を実行します。 WIA ミニドライバーに関連するこの構造体のメンバーは次のとおりです。
 
 **bClassDrvAllocBuf** − WIA サービス割り当てのブール値。
 
@@ -29,13 +29,13 @@ WIA サービスで提供される情報に依存、 [ **MINIDRV\_転送\_コン
 
 ミニドライバーは、使用してメモリを割り当てる必要があります、 **CoTaskMemAlloc**関数 (Microsoft Windows SDK のドキュメントで説明)。 ミニドライバーは内のメモリ位置へのポインターを格納する必要がありますし、 **pTransferBuffer**のメモリのサイズと**lBufferSize** (単位: バイト)。
 
-**BClassDrvAllocBuff**に設定されているメンバー **FALSE**場合にのみ、 [ **WIA\_IPA\_TYMED** ](https://msdn.microsoft.com/library/windows/hardware/ff551656)プロパティは、TYMED に設定\_ファイルまたは TYMED\_マルチページ\_ファイル、および[ **WIA\_IPA\_項目\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff551594)プロパティは、0 に設定されます。
+**BClassDrvAllocBuff**に設定されているメンバー **FALSE**場合にのみ、 [ **WIA\_IPA\_TYMED** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)プロパティは、TYMED に設定\_ファイルまたは TYMED\_マルチページ\_ファイル、および[ **WIA\_IPA\_項目\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)プロパティは、0 に設定されます。
 
 ミニドライバーは overfill が指すバッファーにしないように注意する必要があります、 **pTransferBuffer**メンバー。 格納されている値未満の金額にデータを記述することでこれを回避する、 **lBufferSize**メンバー。
 
 ### <a name="enhancing-data-transfer-performance-by-using-minimum-buffer-size"></a>最小バッファー サイズを使用してデータ転送パフォーマンスの強化
 
-WIA ミニドライバーは、設定によって、データ転送中に使用されるメモリの量を制御できます、 [ **WIA\_IPA\_項目\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff551594)と[ **WIA\_IPA\_バッファー\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff551527)プロパティ。
+WIA ミニドライバーは、設定によって、データ転送中に使用されるメモリの量を制御できます、 [ **WIA\_IPA\_項目\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)と[ **WIA\_IPA\_バッファー\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)プロパティ。
 
 WIA アプリケーションを使用、WIA\_IPA\_バッファー\_サイズ プロパティをメモリ転送中に要求する最小の転送のバッファー サイズを確認します。 この値が大きいほど、要求されたバンドのサイズは大きくなります。 WIA アプリケーションを WIA の値より小さいサイズのバッファーを要求した場合\_IPA\_バッファー\_サイズ プロパティ、WIA サービスは、この要求のサイズを無視し、WIA ミニドライバーを求めるプロンプトのバッファーを WIA\_IPA\_バッファー\_サイズのバイト サイズ。 WIA サービスは常に、以上のバッファーを WIA ミニドライバーを要求 WIA\_IPA\_バッファー\_サイズのバイト サイズ。
 
@@ -45,9 +45,9 @@ WIA アプリケーションを使用、WIA\_IPA\_バッファー\_サイズ プ
 
 WIA を設定することをお勧め\_IPA\_バッファー\_サイズ プロパティを効率的な速度でデータを転送するデバイスを許可する適切なサイズ。 これは、最適なパフォーマンスを確保するために分散要求 (バッファー サイズが小さすぎる) の数と時間のかかる要求 (バッファーは大きすぎます) デバイスの数。
 
-設定する必要があります、 [ **WIA\_IPA\_項目\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff551594) WIA ミニドライバーは、データを転送できる場合はゼロ プロパティ。 転送の種類が TYMED 場合\_ファイルまたは TYMED\_マルチページ\_ファイル、ミニドライバーの責任をファイルに書き込む WIA サービス関数に渡されるデータ バッファーのメモリを割り当てることができます。 これにより、一貫性の実装では、 [ **IWiaMiniDrv::drvAcquireItemData** ](https://msdn.microsoft.com/library/windows/hardware/ff543956)メソッド。
+設定する必要があります、 [ **WIA\_IPA\_項目\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size) WIA ミニドライバーは、データを転送できる場合はゼロ プロパティ。 転送の種類が TYMED 場合\_ファイルまたは TYMED\_マルチページ\_ファイル、ミニドライバーの責任をファイルに書き込む WIA サービス関数に渡されるデータ バッファーのメモリを割り当てることができます。 これにより、一貫性の実装では、 [ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッド。
 
-[ **IWiaMiniDrv::drvAcquireItemData** ](https://msdn.microsoft.com/library/windows/hardware/ff543956)メソッドは、デバイスからアプリケーションにデータを転送する予定の場合、WIA サービスによって呼び出されます。 WIA ドライバーは、アプリケーションが試みている (WIA サービス) 経由で転送の種類を参照して決定する必要があります、 **tymed**のメンバー、 [ **MINIDRV\_転送\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff545250):
+[ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)メソッドは、デバイスからアプリケーションにデータを転送する予定の場合、WIA サービスによって呼び出されます。 WIA ドライバーは、アプリケーションが試みている (WIA サービス) 経由で転送の種類を参照して決定する必要があります、 **tymed**のメンバー、 [ **MINIDRV\_転送\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context):
 
 **Tymed**アプリケーションで設定すると、メンバーには、次の 4 つの値のいずれかができます。
 
@@ -67,7 +67,7 @@ WIA を設定することをお勧め\_IPA\_バッファー\_サイズ プロパ
 
 ### <a href="" id="tymed-callback-and-tymed-multipage-callback"></a>TYMED\_コールバックと TYMED\_マルチページ\_コールバック
 
-メモリの転送では、発行、 [ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff543946)コールバック。
+メモリの転送では、発行、 [ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)コールバック。
 
 (*pmdtc -&gt;pIWiaMiniDrvCallBack -&gt;MiniDrvCallback*で次のサンプル ソース コード)
 
@@ -89,11 +89,11 @@ WIA を設定することをお勧め\_IPA\_バッファー\_サイズ プロパ
 アプリケーションに送信されるデータ チャンクのバイト数。
 
 <a href="" id="pmdtc"></a>*pmdtc*  
-ポインターを[ **MINIDRV\_転送\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff545250)データ転送の値を含む構造体。
+ポインターを[ **MINIDRV\_転送\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)データ転送の値を含む構造体。
 
 ### <a href="" id="tymed-file-and-tymed-multipage-file"></a>TYMED\_ファイルと TYMED\_マルチページ\_ファイル
 
-ファイル転送では、発行、 [ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff543946)コールバック。
+ファイル転送では、発行、 [ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)コールバック。
 
 (*pmdtc -&gt;pIWiaMiniDrvCallBack -&gt;MiniDrvCallback*で次のサンプル ソース コード)
 
@@ -108,11 +108,11 @@ WIA を設定することをお勧め\_IPA\_バッファー\_サイズ プロパ
 <a href="" id="lpercentcomplete"></a>*lPercentComplete*  
 完了している転送の割合。
 
-場合、 **ItemSize** 、MINIDRV のメンバー\_転送\_CONTEXT 構造体が 0 に設定されていることを WIA ドライバーは結果として得られるイメージのサイズがわからないし、その後割り当てます、独自アプリケーションを示しますデータ バッファー。 WIA ドライバーを読み込み、 [ **WIA\_IPA\_バッファー\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff551527)プロパティ データの 1 つのバンドのメモリを割り当てるとします。 WIA ドライバーは、ここでは、必要なメモリの量を割り当てることができますが、割り当てが小規模で保持されることをお勧めします。
+場合、 **ItemSize** 、MINIDRV のメンバー\_転送\_CONTEXT 構造体が 0 に設定されていることを WIA ドライバーは結果として得られるイメージのサイズがわからないし、その後割り当てます、独自アプリケーションを示しますデータ バッファー。 WIA ドライバーを読み込み、 [ **WIA\_IPA\_バッファー\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)プロパティ データの 1 つのバンドのメモリを割り当てるとします。 WIA ドライバーは、ここでは、必要なメモリの量を割り当てることができますが、割り当てが小規模で保持されることをお勧めします。
 
 WIA サービスが、ドライバーのメモリを割り当てられたかどうかについては、確認、 *pmdtc -&gt;bClassDrvAllocBuf*フラグ。 設定されている場合**TRUE**、WIA サービスが、ドライバーのメモリを割り当て、します。 割り当てられたメモリの量を確認する、値をチェック*pmdtc -&gt;lBufferSize*します。
 
-独自のメモリを割り当てるには、使用**CoTaskMemAlloc** (Microsoft Windows SDK のドキュメントで説明されている) にあるポインターを使用して、 *pmdtc -&gt;pTransferBuffer*します。 (ドライバーでは、ドライバーでは無料もする必要がありますので、このメモリが割り当てられていることに注意してください)。設定*pmdtc -&gt;lBufferSize*割り当てたサイズにします。 既に説明したとおり、この WIA サンプル ドライバーがバッファーのサイズ (バイト単位) に含まれている値と等しくを割り当てます[ **WIA\_IPA\_バッファー\_サイズ**](https://msdn.microsoft.com/library/windows/hardware/ff551527)します。 ドライバーは、そのメモリを使用します。
+独自のメモリを割り当てるには、使用**CoTaskMemAlloc** (Microsoft Windows SDK のドキュメントで説明されている) にあるポインターを使用して、 *pmdtc -&gt;pTransferBuffer*します。 (ドライバーでは、ドライバーでは無料もする必要がありますので、このメモリが割り当てられていることに注意してください)。設定*pmdtc -&gt;lBufferSize*割り当てたサイズにします。 既に説明したとおり、この WIA サンプル ドライバーがバッファーのサイズ (バイト単位) に含まれている値と等しくを割り当てます[ **WIA\_IPA\_バッファー\_サイズ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)します。 ドライバーは、そのメモリを使用します。
 
 次の例の実装を示しています、 **IWiaMiniDrv::drvAcquireItemData**メソッド。 この例では、両方のメモリ割り当てのケースを処理できます。
 

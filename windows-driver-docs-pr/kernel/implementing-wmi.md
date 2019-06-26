@@ -14,12 +14,12 @@ keywords:
 - カーネル モード ドライバー WDK、WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce8a27f9a1ae6b1f9aae042b76807355e01017a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04acc37c917bf9cea64911c945d1599da081c227
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331242"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369802"
 ---
 # <a name="implementing-wmi"></a>WMI の実装
 
@@ -29,9 +29,9 @@ ms.locfileid: "63331242"
 
 このセクションでは、カーネル モードでは、Windows Management Instrumentation (WMI) の WDM 拡張機能について説明します。 カーネル モード ドライバーにこれらの拡張機能を追加すると、ドライバーは、WMI プロバイダーになります。 WMI プロバイダーでは、ユーザー モード アプリケーションなどの WMI コンシューマーに使用可能な測定値とインストルメンテーション データをようにします。
 
-ユーザー モードの WMI API の詳細についてを参照してください[Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582(VS.85).aspx) Windows SDK に含まれています。
+ユーザー モードの WMI API の詳細についてを参照してください[Windows Management Instrumentation](https://docs.microsoft.com/windows/desktop/WmiSdk/wmi-start-page) Windows SDK に含まれています。
 
-KMDF ドライバーを実装する場合を参照してください[Framework ベースのドライバーでサポートしている WMI](https://msdn.microsoft.com/library/windows/hardware/ff544711)します。
+KMDF ドライバーを実装する場合を参照してください[Framework ベースのドライバーでサポートしている WMI](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-wmi-in-kmdf-drivers)します。
 
 このセクションには、カーネル モードの WMI の詳細については、次の情報が含まれています。
 

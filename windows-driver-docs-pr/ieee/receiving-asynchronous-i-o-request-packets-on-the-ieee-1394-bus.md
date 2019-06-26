@@ -9,12 +9,12 @@ keywords:
 - WDK の IEEE 1394 のバッキング ストア
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 695ba4688e41c73a1d2b21d3652912a3b9e7f8c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56dd931da8d85aa2079269d49d87970bb863e9d6
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370980"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394130"
 ---
 # <a name="receiving-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>IEEE 1394 バスでの非同期 I/O 要求パケットの受信
 
@@ -171,33 +171,33 @@ ms.locfileid: "63370980"
 
 クライアント ドライバーは、次を実行する必要があります、ドライバーの内の非同期タスクの受信通知ルーチン。
 
-* メンバーを確認する、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)クライアント ドライバーに渡される構造体。
+* メンバーを確認する、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)クライアント ドライバーに渡される構造体。
 * (応答パケットからのデータを返す場所)、読み取り/ロックの成功した要求のクライアント ドライバーである必要があります。
-  * 呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548706) ([**exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520) WDM ベースのクライアント ドライバー用) の応答パケット データ。
+  * 呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate) ([**exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag) WDM ベースのクライアント ドライバー用) の応答パケット データ。
   * 返されるデータには、そのバッファーを入力します。
-  * 初期化、 **ResponseMdl**メンバーと、バッファーの参照。 呼び出すことができます[ **MmInitializeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554568)と[ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)します。
+  * 初期化、 **ResponseMdl**メンバーと、バッファーの参照。 呼び出すことができます[ **MmInitializeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)と[ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)します。
   * 設定 **\*NotificationInfo -&gt;ResponsePacket**バッファーを指すようにします。
   * 設定 **\*NotificationInfo -&gt;ResponseLength** 、返される応答データのサイズには 4 の要求を読み取り、作成されます)。
-  * 呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548706) ([**exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520) WDM ベースのクライアント ドライバー用) の応答イベントです。
+  * 呼び出すことによってメモリを割り当てる[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate) ([**exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag) WDM ベースのクライアント ドライバー用) の応答イベントです。
   * 設定 **\*NotificationInfo -&gt;ResponseEvent**イベント バッファーを指すようにします。
   * イベントで待機する作業項目をスケジュールし、応答イベントが通知された後に、応答パケットとイベントのデータ バッファーを解放します。
   * 設定**NotificationInfo -&gt;ResponseCode** RCODE に\_応答\_完了します。
 
 ## <a name="asynchronous-receive-in-the-pre-notification-case"></a>非同期の受信の場合は事前の通知
 
-非同期を完了する、従来の 1394 バス ドライバーは失敗では、事前通知メカニズムを使用してトランザクションを受信します。 詳細については、次を参照してください。[ナレッジ ベース。未送信の事前通知 (2635883) を使用して、IEEE 1394 非同期受信応答](http://support.microsoft.com/kb/2635883)します。
+非同期を完了する、従来の 1394 バス ドライバーは失敗では、事前通知メカニズムを使用してトランザクションを受信します。 詳細については、次を参照してください。[ナレッジ ベース。未送信の事前通知 (2635883) を使用して、IEEE 1394 非同期受信応答](https://support.microsoft.com/help/2635883/ieee-1394-async-receive-response-not-sent-using-pre-notification)します。
 
 新しい 1394 バス ドライバーの場合は、事前の通知の場合は、クライアント ドライバーの通知コールバック ルーチンの想定される動作がとおりです。
 
-* 場合**Mdl**と**Fifo**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造体が null の場合、次の事前通知しています実行されます。
-* **ResponseMdl**、 **ResponsePacket**、 **ResponseLength**、および**ResponseEvent**のメンバー、 [ **通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造では、NULL は指定できません。
-* **FulNotificationOptions**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造がトリガーされたアクション (読み取り、書き込み、ロック) を示す必要があります、通知します。 1 つのみのフラグ (通知\_フラグ\_AFTER\_読み取り]、[通知\_フラグ\_AFTER\_書き込み、または通知\_フラグ\_AFTER\_ロック) を設定できます毎回、通知ルーチンが呼び出されます。
+* 場合**Mdl**と**Fifo**のメンバー、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)構造体が null の場合、次の事前通知しています実行されます。
+* **ResponseMdl**、 **ResponsePacket**、 **ResponseLength**、および**ResponseEvent**のメンバー、 [ **通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)構造では、NULL は指定できません。
+* **FulNotificationOptions**のメンバー、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)構造がトリガーされたアクション (読み取り、書き込み、ロック) を示す必要があります、通知します。 1 つのみのフラグ (通知\_フラグ\_AFTER\_読み取り]、[通知\_フラグ\_AFTER\_書き込み、または通知\_フラグ\_AFTER\_ロック) を設定できます毎回、通知ルーチンが呼び出されます。
 * 検査することによって、要求の種類を識別できます、 **RequestPacket -&gt;AP\_は**、非同期のメンバー\_パケットの構造体。 メンバーはブロックまたは作成されます読み取り/書き込み、ロック要求の種類など、要求の種類を指定することを示します。 ASYNC\_1394.h でパケットの構造体が宣言されています。
-* **ResponsePacket**と**ResponseEvent**のメンバー [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)ポインターへのポインターが含まれています。 したがって、応答パケットと応答イベントへのポインターを適切に参照する必要があります。
-* **ResponseLength**のメンバー [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437) ULONG 変数へのポインターです。 そのため、する必要があります設定するときに要求の応答データの長さなどの読み取りのために、メンバーを適切に逆参照 & ロック要求)。
+* **ResponsePacket**と**ResponseEvent**のメンバー [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)ポインターへのポインターが含まれています。 したがって、応答パケットと応答イベントへのポインターを適切に参照する必要があります。
+* **ResponseLength**のメンバー [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k) ULONG 変数へのポインターです。 そのため、する必要があります設定するときに要求の応答データの長さなどの読み取りのために、メンバーを適切に逆参照 & ロック要求)。
 * 1394 クライアント ドライバーは、(非ページ プールの場合) から、応答パケットと応答イベントのメモリの割り当てと、応答が配信された後、そのメモリを解放します。 作業項目がキューに登録され、作業項目は、応答イベントで待機する必要がありますのことをお勧めします。 応答が配信された後、1394 バス ドライバーによって、そのイベントがシグナル状態します。 クライアント ドライバーは、作業項目内のメモリを解放し、できます。
-* **ResponseCode**内のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437) 1394.h で定義されている \FLAGS 値の 1 つの構造を設定する必要があります。 場合**ResponseCode** RCODE 以外の値に設定されている\_応答\_完了、1394 バス ドライバーは、エラー応答パケットを送信します。 読み取りまたはロックの要求の場合、要求では、すべてのデータは返されません。 Windows 7 では、メモリ リークが発生、詳細については「[ナレッジ ベース。IEEE 1394 のバス ドライバー (2023232) の非同期の通知コールバックの実行中のメモリ リーク](http://support.microsoft.com/kb/2023232)します。
-* 読み取りとロックの要求に対して、 **ResponsePacket**のメンバー、 [**通知\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff537437)構造体で返されるデータを指す必要があります、非同期応答パケットです。
+* **ResponseCode**内のメンバー、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k) 1394.h で定義されている \FLAGS 値の 1 つの構造を設定する必要があります。 場合**ResponseCode** RCODE 以外の値に設定されている\_応答\_完了、1394 バス ドライバーは、エラー応答パケットを送信します。 読み取りまたはロックの要求の場合、要求では、すべてのデータは返されません。 Windows 7 では、メモリ リークが発生、詳細については「[ナレッジ ベース。IEEE 1394 のバス ドライバー (2023232) の非同期の通知コールバックの実行中のメモリ リーク](https://support.microsoft.com/help/2023232)します。
+* 読み取りとロックの要求に対して、 **ResponsePacket**のメンバー、 [**通知\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)構造体で返されるデータを指す必要があります、非同期応答パケットです。
 
 次のコード例では、作業項目の実装と、クライアント ドライバーの通知ルーチンを示します。
 

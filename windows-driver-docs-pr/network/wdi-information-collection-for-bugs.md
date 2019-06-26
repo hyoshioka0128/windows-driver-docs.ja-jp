@@ -4,12 +4,12 @@ description: すべての重要なソフトウェアのバグは避けられな�
 ms.assetid: 551CA7DD-EB1A-41FB-A3D7-472DA7020B51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f211168ac1d9db1b3b3f236b6174e4a2cfc81e0e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d29048e376f6c0faa5e8d5497125c327eb71c1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385445"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374714"
 ---
 # <a name="wdi-information-collection-for-bugs"></a>バグの WDI 情報の収集
 
@@ -29,7 +29,7 @@ ms.locfileid: "63385445"
 ## <a name="os-crash-with-kernel-debugger-attached"></a>カーネル デバッガーをアタッチの OS クラッシュ
 
 
-開発者や QA カーネル デバッガーがアタッチ可能な場合があります。 カーネル デバッガーでは、何か問題が、さらに詳しく調査する方向をすぐに確認できます。 Kd コマンド '[**! 分析**](https://msdn.microsoft.com/library/windows/hardware/ff562112) – v' バグ チェック後に実行する最初のコマンドとして役に立ちます。 このコマンドは、クラッシュが発生したモジュールと、クラッシュの原因 (バグの確認コード) 内の場所を指します。
+開発者や QA カーネル デバッガーがアタッチ可能な場合があります。 カーネル デバッガーでは、何か問題が、さらに詳しく調査する方向をすぐに確認できます。 Kd コマンド '[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) – v' バグ チェック後に実行する最初のコマンドとして役に立ちます。 このコマンドは、クラッシュが発生したモジュールと、クラッシュの原因 (バグの確認コード) 内の場所を指します。
 
 ## <a name="when-reset-recovery-is-invoked"></a>回復のリセットが呼び出されるとき
 

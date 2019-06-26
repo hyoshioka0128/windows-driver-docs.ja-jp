@@ -7,12 +7,12 @@ keywords:
 - デバイス、WDK の並列の共有
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ec96fea6c345c57e33f11bf3f34c207999160bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f3713c9975f9142e854da242305f6bc6dc276af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374548"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358505"
 ---
 # <a name="opening-and-using-a-parallel-device"></a>パラレル デバイスの開始と使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "63374548"
 
 
 
-パラレル ポートのシステム提供のバス ドライバーでは、パラレル ポートに接続されている並列デバイスへの排他アクセスを適用します。 並列デバイスが開いている場合は、パラレル ポート バス ドライバーがその後で失敗した[ **IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff544131)まで、デバイスが閉じられているデバイスを要求します。 デバイスまたは呼び出しに他の I/O 要求を送信する前に、クライアントは並列のデバイスを開く必要があります、[デバイス コールバック ルーチンを並列](https://msdn.microsoft.com/library/windows/hardware/ff544275)します。 クライアントは、クライアントがデバイスにそのファイルを閉じた後に、並列のデバイスと通信する必要があります試行しません。 クライアントは、デバイスにアクセスするには、他のクライアントを実行できるように、デバイスを閉じる必要があります。
+パラレル ポートのシステム提供のバス ドライバーでは、パラレル ポートに接続されている並列デバイスへの排他アクセスを適用します。 並列デバイスが開いている場合は、パラレル ポート バス ドライバーがその後で失敗した[ **IRP\_MJ\_作成**](https://docs.microsoft.com/previous-versions/ff544131(v=vs.85))まで、デバイスが閉じられているデバイスを要求します。 デバイスまたは呼び出しに他の I/O 要求を送信する前に、クライアントは並列のデバイスを開く必要があります、[デバイス コールバック ルーチンを並列](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。 クライアントは、クライアントがデバイスにそのファイルを閉じた後に、並列のデバイスと通信する必要があります試行しません。 クライアントは、デバイスにアクセスするには、他のクライアントを実行できるように、デバイスを閉じる必要があります。
 
 通常、クライアントは、次は。
 

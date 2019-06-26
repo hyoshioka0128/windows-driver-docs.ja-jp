@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 012135a9e435662b4a1de6b10abbf461f046942c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 543a8b6d729dc4caae6ccd6bfb4dccf0b2606e55
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332911"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358882"
 ---
 # <a name="kspropertyaudiostereospeakergeometry"></a>KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY
 
@@ -53,7 +53,7 @@ KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY プロパ�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>Pin/フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
@@ -94,7 +94,7 @@ KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY プロパ�
 
 DirectSound 扱います KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY で DAC のノードでは、filter プロパティと 3D のノードに暗証番号 (pin) のプロパティとして。
 
-詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)します。
+詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-speaker-configuration-settings)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -121,7 +121,7 @@ DirectSound 扱います KSPROPERTY\_オーディオ\_ステレオ\_スピーカ
 
 [**KSNODETYPE\_3D\_効果**](ksnodetype-3d-effects.md)
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

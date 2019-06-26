@@ -4,12 +4,12 @@ description: OpenXPS とは、ドキュメントの Open XML Paper Specification
 ms.assetid: 9BC9787E-A54D-4A11-B256-57BE5D206404
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15b3d16238e3ad8da131a4748e0487acc07006df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eacd891d04639d229463d97c4efda6990faa64ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379160"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356065"
 ---
 # <a name="driver-support-for-openxps"></a>OpenXPS のドライバー サポート
 
@@ -18,7 +18,7 @@ OpenXPS とは、ドキュメントの Open XML Paper Specification 形式と Ec
 
 この仕様に関する最新情報のほとんどで、次を参照してください。 [Open XML Paper Specification](http://www.ecma-international.org/publications/standards/Ecma-388.htm)します。
 
-Windows 8 では、OpenXPS では、既存の Microsoft XPS 形式の継続的なサポートと並行して完全にサポートを提供します。 このトピックでは、v4 ドライバー モデルを使用して OpenXPS サポートについて説明します。 Windows アプリケーション開発者に関連する OpenXPS サポートについては、次を参照してください。 [OpenXPS を印刷するためのアプリのサポート](https://msdn.microsoft.com/library/windows/desktop/dn495653.aspx)します。
+Windows 8 では、OpenXPS では、既存の Microsoft XPS 形式の継続的なサポートと並行して完全にサポートを提供します。 このトピックでは、v4 ドライバー モデルを使用して OpenXPS サポートについて説明します。 Windows アプリケーション開発者に関連する OpenXPS サポートについては、次を参照してください。 [OpenXPS を印刷するためのアプリのサポート](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)します。
 
 ## <a name="supported-openxps-scenarios"></a>サポートされている OpenXPS シナリオ
 
@@ -52,7 +52,7 @@ Windows 印刷パスでは、送信された XPS 形式、対象となる印刷�
 ## <a name="impact-on-app-developers"></a>アプリ開発者への影響
 
 
-OpenXPS for Windows 8 のサポートに関して、アプリ開発者の影響の詳細については、次を参照してください。 [OpenXPS を印刷するためのアプリのサポート](https://msdn.microsoft.com/library/windows/desktop/dn495653.aspx)します。
+OpenXPS for Windows 8 のサポートに関して、アプリ開発者の影響の詳細については、次を参照してください。 [OpenXPS を印刷するためのアプリのサポート](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)します。
 
 ## <a name="impact-on-driver-developers"></a>ドライバー開発者への影響
 

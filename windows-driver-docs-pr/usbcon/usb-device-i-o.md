@@ -3,12 +3,12 @@ Description: このセクションのトピックでは、翻訳 I/O 要求の�
 title: USB クライアント ドライバーでの USB データ転送の送信
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dd92cf4ac5eb08d2123c28fa604672ab74df39aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8837b45d8fe3df907abb13097f924a8371a800a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331608"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356624"
 ---
 # <a name="sending-usb-data-transfers-in-usb-client-drivers"></a>USB クライアント ドライバーでの USB データ転送の送信
 
@@ -67,7 +67,7 @@ ms.locfileid: "63331608"
 </tr>
 <tr class="odd">
 <td><p><a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">チェーンされた MDLs を送信する方法</a></p></td>
-<td><p>このトピックでは、USB ドライバー スタック、およびクライアント ドライバーがのチェーンとして転送バッファーを送信する方法では、チェーンの MDLs 機能について学習<a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[&lt;strong&gt;MDL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554414)"> <strong>MDL</strong> </a>構造体。</p></td>
+<td><p>このトピックでは、USB ドライバー スタック、およびクライアント ドライバーがのチェーンとして転送バッファーを送信する方法では、チェーンの MDLs 機能について学習<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl" data-raw-source="[&lt;strong&gt;MDL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)"> <strong>MDL</strong> </a>構造体。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="how-to-recover-from-usb-pipe-errors.md" data-raw-source="[How to recover from USB pipe errors](how-to-recover-from-usb-pipe-errors.md)">USB パイプ エラーから回復する方法</a></p></td>

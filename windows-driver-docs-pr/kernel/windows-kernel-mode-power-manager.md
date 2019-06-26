@@ -4,12 +4,12 @@ description: Windows カーネルモード電源マネージャー
 ms.assetid: 2d39e43a-63a6-4474-a1ed-c24b4526a3f5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 87760d4c79399b7807639c2a605cc90cf18a17a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ed9d501b4c486d8bb482bb8faf704524157d86d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357518"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374174"
 ---
 # <a name="windows-kernel-mode-power-manager"></a>Windows カーネルモード電源マネージャー
 
@@ -38,9 +38,9 @@ Windows カーネル モードの電源マネージャーは、電源の状態�
 
 電源マネージャーは、I/O マネージャーのサブコンポーネントと見なされます。 詳細については、次を参照してください。 [Windows I/O マネージャー](windows-kernel-mode-i-o-manager.md)します。
 
-電源マネージャーに直接インターフェイスを提供するルーチンが、通常は付いて"**Po**"。 たとえば、 **PoSetPowerState**します。 電源マネージャー ルーチンの一覧は、次を参照してください。[電源マネージャー ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff559835)します。
+電源マネージャーに直接インターフェイスを提供するルーチンが、通常は付いて"**Po**"。 たとえば、 **PoSetPowerState**します。 電源マネージャー ルーチンの一覧は、次を参照してください。[電源マネージャー ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
-Windows Driver Frameworks (WDF) は、電源管理を簡単にライブラリのセットを提供します。 WDF の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/ff544296)します。
+Windows Driver Frameworks (WDF) は、電源管理を簡単にライブラリのセットを提供します。 WDF の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークの概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)します。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8cd31fbb4ee42bf5b86e95866d12c38d66d85ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 54c8a666f86246a54559aa48b62667744835d370
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368672"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373115"
 ---
 # <a name="kspropertyconnectionproposedataformat"></a>KSPROPERTY\_接続\_PROPOSEDATAFORMAT
 
@@ -54,7 +54,7 @@ ms.locfileid: "63368672"
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,13 +64,13 @@ ms.locfileid: "63368672"
 <a name="remarks"></a>注釈
 -------
 
-このプロパティを返します、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)提案されたデータ形式を指定します。
+このプロパティを返します、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)提案されたデータ形式を指定します。
 
 KS フィルター ステータスを返します\_成功の場合は、暗証番号 (pin) をそれ以外の場合、提案されたデータの形式またはエラー コードにリセットできます。 このプロパティの要求では、データ形式が変更されないことに注意してください。 クライアントを使用して、 [ **KSPROPERTY\_接続\_DATAFORMAT** ](ksproperty-connection-dataformat.md)形式に変更します。
 
-参照してください[KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)します。
+参照してください[KS データ形式とデータ範囲](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -91,7 +91,7 @@ KS フィルター ステータスを返します\_成功の場合は、暗証�
 
 [**KSPROPERTY\_接続\_DATAFORMAT**](ksproperty-connection-dataformat.md)
 
-[*AVStrMiniPinSetDataFormat*](https://msdn.microsoft.com/library/windows/hardware/ff556355)
+[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)
 
  
 

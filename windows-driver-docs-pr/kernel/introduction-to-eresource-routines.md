@@ -11,12 +11,12 @@ keywords:
 - 待機処理の WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a595b09b02f7d49a32cfeeb938525f186a3823b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 609800a2fee6db3c167f973a2c3d28b003a7d94c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341003"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369736"
 ---
 # <a name="introduction-to-eresource-routines"></a>ERESOURCE 構造体の概要
 
@@ -38,7 +38,7 @@ ms.locfileid: "63341003"
 
 排他/共有の同期の一般的な用途では、読み取り/書き込みロックを実装します。 読み取り/書き込みロックは、読み取り操作を実行する複数のスレッドが 1 つのスレッドが同時に書き込むことができます。 これは、次の取得の観点から直接実装できます。
 
-ドライバーは、次に、記憶域を割り当てますで初期化して[ **ExInitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545317)します。 システムでは、使用中のすべてのスケジュール作成構造体のリストを保持します。 呼び出す必要がありますが、ドライバーでは、特定のスケジュール作成が必要なくなる、 [ **ExDeleteResourceLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544578)システムの一覧から削除します。 ドライバーが、呼び出すことによって、スケジュール作成再利用できるも[ **ExReinitializeResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545542)します。
+ドライバーは、次に、記憶域を割り当てますで初期化して[ **ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)します。 システムでは、使用中のすべてのスケジュール作成構造体のリストを保持します。 呼び出す必要がありますが、ドライバーでは、特定のスケジュール作成が必要なくなる、 [ **ExDeleteResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)システムの一覧から削除します。 ドライバーが、呼び出すことによって、スケジュール作成再利用できるも[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)します。
 
 ドライバーは、次に、次の基本的な操作を実行できます。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63341003"
 
 -   排他の取得をによる取得を共有する変換[ **ExConvertExclusiveToSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544558)します。
 
--   取得したリソースを解放[ **ExReleaseResourceLite**](https://msdn.microsoft.com/library/windows/hardware/ff545597)します。
+-   取得したリソースを解放[ **ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)します。
 
 *待機*パラメーターの[ **ExAcquireResourceSharedLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544363)と[ **ExAcquireResourceExclusiveLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544351)が獲得される次の現在のスレッドが待機するかどうかを決定します。 値を指定する場合**FALSE** 、÷ リソースを取得することはできませんし、ルーチンを返します**FALSE**します。 値を指定する場合**TRUE**、現在のスレッドは、次の適切な待機リストに配置します。
 
@@ -56,9 +56,9 @@ ms.locfileid: "63341003"
 
 ドライバーは、スケジュール作成の現在の状態を次のように特定もできます。
 
--   使用[ **ExIsResourceAcquiredLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545466)または[ **ExIsResourceAcquiredSharedLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545477)スケジュールの作成が既にかどうかを判断するには共有または排他として取得します。 使用[ **ExIsResourceAcquiredExclusiveLite** ](https://msdn.microsoft.com/library/windows/hardware/ff545458)かどうか、スケジュールの作成が取得されている具体的には排他的にチェックします。
+-   使用[ **ExIsResourceAcquiredLite** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545466(v=vs.85))または[ **ExIsResourceAcquiredSharedLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)スケジュールの作成が既にかどうかを判断するには共有または排他として取得します。 使用[ **ExIsResourceAcquiredExclusiveLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite)かどうか、スケジュールの作成が取得されている具体的には排他的にチェックします。
 
--   使用して、 [ **ExGetSharedWaiterCount** ](https://msdn.microsoft.com/library/windows/hardware/ff545290) 、次の共有の待機処理の数を決定して、使用する[ **ExGetExclusiveWaiterCount** ](https://msdn.microsoft.com/library/windows/hardware/ff544618)、次の排他待機処理の数を決定します。
+-   使用して、 [ **ExGetSharedWaiterCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exgetsharedwaitercount) 、次の共有の待機処理の数を決定して、使用する[ **ExGetExclusiveWaiterCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exgetexclusivewaitercount)、次の排他待機処理の数を決定します。
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - 割り込みの登録を解除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93fd829d70a7e9bf1699319262f6f94141ee8412
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29b1d747ae387270af0d73aeee2f339b2a6ab31b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330153"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359173"
 ---
 # <a name="registering-and-deregistering-interrupts"></a>割り込みの登録および登録解除
 
@@ -24,9 +24,9 @@ ms.locfileid: "63330153"
 
 
 
-ミニポート ドライバーは呼び出し[ **NdisMRegisterInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563649)割り込みを登録します。 ドライバーは、初期化、 [ **NDIS\_ミニポート\_割り込み\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff566465)割り込み特性を指定する構造体と関数のエントリ ポイント。 ドライバーは、構造体を渡します**NdisMRegisterInterruptEx**します。
+ミニポート ドライバーは呼び出し[ **NdisMRegisterInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterinterruptex)割り込みを登録します。 ドライバーは、初期化、 [ **NDIS\_ミニポート\_割り込み\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_interrupt_characteristics)割り込み特性を指定する構造体と関数のエントリ ポイント。 ドライバーは、構造体を渡します**NdisMRegisterInterruptEx**します。
 
-ドライバーの呼び出し、 [ **NdisMDeRegisterInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563575)関数で以前に割り当てられたリソースを解放する**NdisMRegisterInterruptEx**します。
+ドライバーの呼び出し、 [ **NdisMDeRegisterInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterinterruptex)関数で以前に割り当てられたリソースを解放する**NdisMRegisterInterruptEx**します。
 
  
 

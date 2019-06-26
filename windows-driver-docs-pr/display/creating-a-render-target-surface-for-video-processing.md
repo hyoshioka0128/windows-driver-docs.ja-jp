@@ -7,17 +7,17 @@ keywords:
 - レンダリング ターゲット サーフェス WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8680bff61779b8bfe5331e29a1698cabbb1eb566
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f8c3226e5f6c621ebfeaad5c0b65624b2df8f69
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346907"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370234"
 ---
 # <a name="creating-a-render-target-surface-for-video-processing"></a>ビデオ処理用のレンダー ターゲット サーフェスの作成
 
 
-マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateResource** ](https://msdn.microsoft.com/library/windows/hardware/ff540688)関数を作成するビデオの処理のターゲットのサーフェスをレンダリングします。 ユーザー モードのディスプレイ ドライバーが処理の有無によるビデオのレンダー ターゲットの画面を作成することを決定します、 **VideoProcessRenderTarget**でフラグをビット フィールド、**フラグ**のメンバー、[ **D3DDDIARG\_CREATERESOURCE** ](https://msdn.microsoft.com/library/windows/hardware/ff542963)構造体、 *pResource*パラメーターの**CreateResource**ポインター。 ユーザー モードのディスプレイ ドライバーは、ビデオの処理のため、必ずしも 3-D のこのレンダー ターゲットを使用できます。 ユーザー モードのディスプレイ ドライバーは、通常の RGB 3-D レンダリング ターゲットのサーフェスにビデオ処理を実行できます。 ただし、ユーザー モードのディスプレイ ドライバーでは、3-D のハードウェアがレンダー ターゲットとしてサポート YUV 形式に出力できる多くの場合。
+マイクロソフトの Direct3D ランタイムが呼び出すユーザー モードのディスプレイ ドライバーの[ **CreateResource** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)関数を作成するビデオの処理のターゲットのサーフェスをレンダリングします。 ユーザー モードのディスプレイ ドライバーが処理の有無によるビデオのレンダー ターゲットの画面を作成することを決定します、 **VideoProcessRenderTarget**でフラグをビット フィールド、**フラグ**のメンバー、[ **D3DDDIARG\_CREATERESOURCE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddiarg_createresource)構造体、 *pResource*パラメーターの**CreateResource**ポインター。 ユーザー モードのディスプレイ ドライバーは、ビデオの処理のため、必ずしも 3-D のこのレンダー ターゲットを使用できます。 ユーザー モードのディスプレイ ドライバーは、通常の RGB 3-D レンダリング ターゲットのサーフェスにビデオ処理を実行できます。 ただし、ユーザー モードのディスプレイ ドライバーでは、3-D のハードウェアがレンダー ターゲットとしてサポート YUV 形式に出力できる多くの場合。
 
 以下は、ドライバーは、ビデオの処理の有効なレンダー ターゲットとしてサポートする必要がありますのみサーフェスの種類です。
 

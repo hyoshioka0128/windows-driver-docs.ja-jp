@@ -10,17 +10,17 @@ keywords:
 - カーネル モード ドライバー フレームワーク WDK、INX ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 469dd5eb5d5d463b4296e2ba8c7d3ee4c2a46461
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cec8dd4eee644b0a5057d93f307735d6392e7073
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327126"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372245"
 ---
 # <a name="using-inx-files-to-create-inf-files"></a>INX ファイルを使用した INF ファイルの作成
 
 
-*INX ファイル*INF ファイル バージョン情報を表す文字列変数を含むです。 Microsoft Visual Studio を使用してドライバーをビルドすると、ビルド プロセスの実行、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786) INX で文字列変数を置換するためのツールが特定のハードウェア アーキテクチャまたはフレームワークのバージョンを表すテキスト文字列を持つファイルします。 ある Stampinf ツールも手動で実行することができます、 *bin* WDK のサブディレクトリ。
+*INX ファイル*INF ファイル バージョン情報を表す文字列変数を含むです。 Microsoft Visual Studio を使用してドライバーをビルドすると、ビルド プロセスの実行、 [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf) INX で文字列変数を置換するためのツールが特定のハードウェア アーキテクチャまたはフレームワークのバージョンを表すテキスト文字列を持つファイルします。 ある Stampinf ツールも手動で実行することができます、 *bin* WDK のサブディレクトリ。
 
 ドライバーの INX ファイルを作成する場合は、複数のバージョンに固有の INF ファイルを維持する必要はありません。 代わりに、1 つ INX ファイルを作成し、必要なときに、バージョン固有の INF ファイルを生成する Visual Studio または Stampinf を使用することができます。
 
@@ -33,7 +33,7 @@ WDK には、すべて、KMDF ドライバーおよび UMDF サンプル ドラ�
 INX ファイルは、次の文字列変数を含めることができます。
 
 <a href="" id="-arch-"></a>$ARCH$  
-Stampinf は、この変数をアーキテクチャ固有の文字列に置き換えます。 たとえば、x86 を使用しているビルド環境、ツールの後継 $ARCH$"x86"にします。 $ARCH$ の文字列を使用するには、内で、INF ファイル内の特定のアーキテクチャを指定する必要がある場合、 [ **INF 製造元セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547454)、次のように。
+Stampinf は、この変数をアーキテクチャ固有の文字列に置き換えます。 たとえば、x86 を使用しているビルド環境、ツールの後継 $ARCH$"x86"にします。 $ARCH$ の文字列を使用するには、内で、INF ファイル内の特定のアーキテクチャを指定する必要がある場合、 [ **INF 製造元セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)、次のように。
 
 ```cpp
 [Manufacturer]
@@ -41,7 +41,7 @@ Stampinf は、この変数をアーキテクチャ固有の文字列に置き�
 ```
 
 <a href="" id="-kmdfcoinstallerversion-"></a>$KMDFCOINSTALLERVERSION $  
-使用する場合、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツールの -*k*オプション、Stampinf で、KMDF 共同インストーラーの特定のバージョンを表す文字列でこの変数が置き換えられます。 内など、INF ファイル内のフレームワークの共同インストーラーを指定する場合は、$KMDFCOINSTALLERVERSION の $ 変数を使用することができます、 [ **INF DDInstall.CoInstallers セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547321)、次のようにします。
+使用する場合、 [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)ツールの -*k*オプション、Stampinf で、KMDF 共同インストーラーの特定のバージョンを表す文字列でこの変数が置き換えられます。 内など、INF ファイル内のフレームワークの共同インストーラーを指定する場合は、$KMDFCOINSTALLERVERSION の $ 変数を使用することができます、 [ **INF DDInstall.CoInstallers セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)、次のようにします。
 
 ```cpp
 [ECHO_Device.NT.CoInstallers]
@@ -56,7 +56,7 @@ WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
 ```
 
 <a href="" id="-kmdfversion-"></a>$KMDFVERSION$  
-設定した場合、 **KMDF バージョン番号**Visual Studio でのプロパティ (を使用して、または、 [Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)ツールの -*k*オプション)、Stampinf を表す文字列でこの変数が置き換えられます、KMDF の特定のバージョン。 $KMDFVERSION$ 変数を使用するには、指定した場合など、INF ファイル内のフレームワークのバージョンを指定すると、 [KmdfLibraryVersion](installing-the-framework-s-co-installer.md)ディレクティブを次のとおりです。
+設定した場合、 **KMDF バージョン番号**Visual Studio でのプロパティ (を使用して、または、 [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)ツールの -*k*オプション)、Stampinf を表す文字列でこの変数が置き換えられます、KMDF の特定のバージョン。 $KMDFVERSION$ 変数を使用するには、指定した場合など、INF ファイル内のフレームワークのバージョンを指定すると、 [KmdfLibraryVersion](installing-the-framework-s-co-installer.md)ディレクティブを次のとおりです。
 
 ```cpp
 KmdfLibraryVersion = $KMDFVERSION$
@@ -80,7 +80,7 @@ HKR,,CoInstallers32,0x00010000,"WUDFUpdate_$UMDFCOINSTALLERVERSION$.dll"
 UmdfLibraryVersion=$UMDFVERSION$
 ```
 
-[Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)もサポートしています-*u* INX ファイル UMDF 文字列変数を置換するオプション。 使用することができます、ドライバー パッケージには、UMDF ベースのドライバーと KMDF ベースのドライバーの両方が含まれている場合-*k*と -*u* Stampinf コマンドを 1 つと、1 つの INX ファイル オプション。
+[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)もサポートしています-*u* INX ファイル UMDF 文字列変数を置換するオプション。 使用することができます、ドライバー パッケージには、UMDF ベースのドライバーと KMDF ベースのドライバーの両方が含まれている場合-*k*と -*u* Stampinf コマンドを 1 つと、1 つの INX ファイル オプション。
 
  
 

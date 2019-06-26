@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 972b0931ca45510b64234f29d39141e95b406ea1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1be154fb762023e50902139712d9416ff233f9d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332620"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358717"
 ---
 # <a name="kspropertysysaudiocreatevirtualsource"></a>KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_作成\_仮想\_ソース プロパティは、新しい�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538485" data-raw-source="[&lt;strong&gt;SYSAUDIO_CREATE_VIRTUAL_SOURCE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538485)"><strong>SYSAUDIO_CREATE_VIRTUAL_SOURCE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source" data-raw-source="[&lt;strong&gt;SYSAUDIO_CREATE_VIRTUAL_SOURCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)"><strong>SYSAUDIO_CREATE_VIRTUAL_SOURCE</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -80,9 +80,9 @@ SysAudio が仮想のソースにインデックスを割り当てられた後�
 
 ユーザーは、SndVol32 アプリケーションを通じてさまざまなオーディオ ソースのボリューム レベルを制御します。 これらのソースには、wave 出力デバイス、MIDI シンセサイザー、CD プレーヤー、およびライン入力ジャックが含まれます。 SndVol32 Windows マルチ メディアを使用して **waveOut * * * Xxx*、**midiOut * * * Xxx*、および **aux * * * Xxx*これらのソース ボリューム レベルを制御する関数。 Windows のマルチ メディア機能の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-SysAudio では、これらのデバイスにボリュームの変更をインターセプトし、その仮想ソースに適用します。 たとえば、MIDI ファイルを wave データに変換するソフトウェア MIDI シンセサイザーが仮想のオーディオ デバイス wave レンダリング ピンのいずれかに接続されている場合、SysAudio は適用 midiOut*Xxx*ボリュームは、pin を変更 (の代わりに **waveOut * * * Xxx*ボリュームの変更)。 同様に場合、 [Redbook システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#redbook-system-driver)、CD プレーヤーからデジタル音楽、波形データを変換が仮想のオーディオ デバイス wave レンダリング ピンのいずれかに接続されている、SysAudio 適用 AUXCAPS\_オーディオのボリュームpin を変更します。 詳細については、AUXCAPS\_オーディオ構造体を Windows SDK のマニュアルを参照してください。
+SysAudio では、これらのデバイスにボリュームの変更をインターセプトし、その仮想ソースに適用します。 たとえば、MIDI ファイルを wave データに変換するソフトウェア MIDI シンセサイザーが仮想のオーディオ デバイス wave レンダリング ピンのいずれかに接続されている場合、SysAudio は適用 midiOut*Xxx*ボリュームは、pin を変更 (の代わりに **waveOut * * * Xxx*ボリュームの変更)。 同様に場合、 [Redbook システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#redbook-system-driver)、CD プレーヤーからデジタル音楽、波形データを変換が仮想のオーディオ デバイス wave レンダリング ピンのいずれかに接続されている、SysAudio 適用 AUXCAPS\_オーディオのボリュームpin を変更します。 詳細については、AUXCAPS\_オーディオ構造体を Windows SDK のマニュアルを参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -101,7 +101,7 @@ SysAudio では、これらのデバイスにボリュームの変更をイン�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**SYSAUDIO\_作成\_仮想\_ソース**](https://msdn.microsoft.com/library/windows/hardware/ff538485)
+[**SYSAUDIO\_作成\_仮想\_ソース**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)
 
 [**KSPROPERTY\_SYSAUDIO\_アタッチ\_仮想\_ソース**](ksproperty-sysaudio-attach-virtual-source.md)
 

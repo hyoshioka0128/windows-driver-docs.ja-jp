@@ -14,12 +14,12 @@ keywords:
 - WDK の先祖
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c035b398accb563efca4635424e0e0f8f690aba1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57564e95847558fd156ff0121e4850e4db71a5a7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358207"
 ---
 # <a name="determining-the-parent-of-a-nonpresent-device"></a>存在しないデバイスの親の判断
 
@@ -41,15 +41,15 @@ ms.locfileid: "63346172"
 
 ### <a href="" id="saving-the-parent-child-relationship"></a> 親/子リレーションシップを保存しています
 
-デバイスの親/子リレーションシップを保存するを指定する、*デバイスの共同インストーラー*デバイスのハードウェアのレジストリ キーの下のユーザーが作成したエントリの値で、デバイスの親のデバイス インスタンス ID を保存します。 デバイスのインスタンス ハンドルにはないシステムを再起動し、システムのプロセス間定数残っているために、デバイスのインスタンス ID を使用する必要があります。 処理する場合、 [ **DIF_INSTALLDEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff543692)共同インストーラーで要求、デバイス インスタンス ID を保存する次の手順
+デバイスの親/子リレーションシップを保存するを指定する、*デバイスの共同インストーラー*デバイスのハードウェアのレジストリ キーの下のユーザーが作成したエントリの値で、デバイスの親のデバイス インスタンス ID を保存します。 デバイスのインスタンス ハンドルにはないシステムを再起動し、システムのプロセス間定数残っているために、デバイスのインスタンス ID を使用する必要があります。 処理する場合、 [ **DIF_INSTALLDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-installdevice)共同インストーラーで要求、デバイス インスタンス ID を保存する次の手順
 
 ***<em>直接の親のデバイス インスタンス ID をレジストリに保存するには</em>***
 
-1.  呼び出す[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)デバイスの親のデバイスのインスタンス ハンドルを取得します。
+1.  呼び出す[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)デバイスの親のデバイスのインスタンス ハンドルを取得します。
 
-2.  親デバイスのデバイスのインスタンス ハンドルを使用して、呼び出す[ **CM_Get_Device_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff538405)親デバイスのデバイス インスタンス ID を取得します。
+2.  親デバイスのデバイスのインスタンス ハンドルを使用して、呼び出す[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)親デバイスのデバイス インスタンス ID を取得します。
 
-3.  呼び出す[ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079) DIREG_DEV フラグを使用して、デバイスのハードウェアのレジストリ キーを識別するハンドルを取得しています。
+3.  呼び出す[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) DIREG_DEV フラグを使用して、デバイスのハードウェアのレジストリ キーを識別するハンドルを取得しています。
 
 4.  呼び出す**RegSetValueEx**デバイスのハードウェアのレジストリ キーの下のユーザーが作成したエントリの値で、親デバイスのデバイス インスタンス ID を保存します。
 
@@ -63,7 +63,7 @@ ms.locfileid: "63346172"
 
 2.  呼び出す**RegQueryValueEx**をデバイスの共同インストーラーを設定するエントリの値で保存した親デバイスのデバイス インスタンス ID を取得します。
 
-親デバイスのデバイス インスタンス ID を取得した後に呼び出す[ **SetupDiOpenDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff552071)を取得する、 [ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)親デバイスの構造体。
+親デバイスのデバイス インスタンス ID を取得した後に呼び出す[ **SetupDiOpenDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)を取得する、 [ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)親デバイスの構造体。
 
 ### <a href="" id="handling-a-chain-of-ancestors-for-a-nonpresent-device"></a> 存在のデバイスの親のチェーンの処理
 

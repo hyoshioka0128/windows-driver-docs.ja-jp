@@ -4,18 +4,18 @@ description: NFC クラスの拡張機能ドライバーでは、NCI 仕様が�
 ms.assetid: 8CCCE7BF-595A-4F30-9924-B5BD45D6137F
 keywords:
 - NFC
-- 通信の近く
+- 近距離無線通信
 - proximity
-- フィールドの近接近く
+- 近距離近接通信
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 558e002b770362d7c9e2f96e5ca480905e476261
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9f3b2a5c47ed8be8f9066446ec7ff5acf231bbf2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561057"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370513"
 ---
 # <a name="nfc-class-extension-extensibility-model"></a>NFC クラスの拡張機能の拡張モデル
 
@@ -34,5 +34,5 @@ NFC クラスの拡張機能ドライバーでは、NFC のクライアント �
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC クラスの拡張機能 (CX) リファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC クラスの拡張機能 (CX) リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  

@@ -15,12 +15,12 @@ keywords:
 - カーネル モード ドライバー WDK、レジストリ
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 738699c9c45539aac64cd9b468c6826d6c78220b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfd2c4b76825a7ff36259e7f0a9a44644bfa4734
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372354"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358168"
 ---
 # <a name="using-the-registry-in-a-driver"></a>ドライバーでのレジストリの使用
 
@@ -40,9 +40,9 @@ Microsoft Windows の役員は、レジストリを操作する次の 2 つの�
 
 詳細については、レジストリを参照してください。
 
-[**INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[ドライバーのレジストリ キー](https://msdn.microsoft.com/library/windows/hardware/ff549538)
+[ドライバーのレジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)
 
  
 

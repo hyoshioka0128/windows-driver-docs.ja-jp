@@ -3,12 +3,12 @@ Description: ワイヤレス モバイル コミュニケーション デバイ�
 title: ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1402c9bbfafbba24753cf76539ee406b1c00bfb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11052be367ecbb430fc218dfa52916bdfd6475df
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379927"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358321"
 ---
 # <a name="support-for-the-wireless-mobile-communication-device-class"></a>ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
 
@@ -25,7 +25,7 @@ Windows WMCDC アーキテクチャでは、ネイティブの Windows ドライ
 
 ![デバイスの構成とドライバー スタックのサンプル](images/wmcdc-architecture.png)
 
-WMCDC デバイスには上の図には 1 つの論理ハンドセットが含まれています。 OBEX 関数およびモデム関数。 ベンダーから提供された INF ファイルでは、モデムを管理するネイティブの Windows ドライバーを読み込みます。 OBEX 関数がマネージ関数で実行されているベンダーから提供されたユーザー モード ドライバーによって、[ユーザー モード ドライバー フレームワーク](https://msdn.microsoft.com/library/windows/hardware/ff561365)(UMDF)。 ユーザー モード ドライバーでは、Windows ポータブル デバイス (WPD) プロトコルを使用してユーザーのアプリケーションとのインターフェイスと通信する、 [WinUSB](winusb.md) USB スタックとの通信にエクスポートします。 一般に、ベンダーから提供された INF ファイル Winusb.sys の Winusb.sys を使用するインターフェイスのコレクションごとに個別のインスタンスが読み込まれます。
+WMCDC デバイスには上の図には 1 つの論理ハンドセットが含まれています。 OBEX 関数およびモデム関数。 ベンダーから提供された INF ファイルでは、モデムを管理するネイティブの Windows ドライバーを読み込みます。 OBEX 関数がマネージ関数で実行されているベンダーから提供されたユーザー モード ドライバーによって、[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/user-mode-driver-framework-design-guide)(UMDF)。 ユーザー モード ドライバーでは、Windows ポータブル デバイス (WPD) プロトコルを使用してユーザーのアプリケーションとのインターフェイスと通信する、 [WinUSB](winusb.md) USB スタックとの通信にエクスポートします。 一般に、ベンダーから提供された INF ファイル Winusb.sys の Winusb.sys を使用するインターフェイスのコレクションごとに個別のインスタンスが読み込まれます。
 
 ### <a name="registry-settings"></a>レジストリの設定
 

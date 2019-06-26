@@ -10,12 +10,12 @@ keywords:
 - WDK の San のデータを転送します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46f6589723efba3e4100dd1e6904894a97b2595c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 816d8bd8a2d5969efcd0302169f03f332c1a81bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357362"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374902"
 ---
 # <a name="creating-components-for-using-a-san"></a>SAN を使用するためのコンポーネントの作成
 
@@ -31,7 +31,7 @@ SAN サービス プロバイダーの DLL とそのプロキシ ドライバー
 
 NDIS ミニポート ドライバー イーサネット、ATM、または別の SAN など、特定の SAN 以外のネットワーク経由で送信する必要がありますデータを転送する必要があります。 TCP/IP では、NDIS ミニポート ドライバーを使用して SAN の NIC にし、このようなネットワーク経由でデータを送信します。
 
-ドライバーのミニポートとトランスポートを実装する方法の詳細については、次を参照してください。*ミニポート ドライバー*と[TDI トランスポートとそのクライアント](https://msdn.microsoft.com/library/windows/hardware/ff565587)します。
+ドライバーのミニポートとトランスポートを実装する方法の詳細については、次を参照してください。*ミニポート ドライバー*と[TDI トランスポートとそのクライアント](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565587(v=vs.85))します。
 
  
 

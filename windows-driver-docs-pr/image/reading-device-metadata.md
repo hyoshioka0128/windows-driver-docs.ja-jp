@@ -4,12 +4,12 @@ description: デバイス メタデータの読み取り
 ms.assetid: 402de9de-8bfe-4cc2-9b8e-06e0ad925eb1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6b6a3e9a710c66073199cbd743df7325ccac19d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f159226170ede9a053dde1aa19d7f530fff1123
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379615"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374293"
 ---
 # <a name="reading-device-metadata"></a>デバイス メタデータの読み取り
 
@@ -17,20 +17,20 @@ ms.locfileid: "63379615"
 Web サービス スキャナーの WIA ミニドライバーは、実行時に、次のデバイス メタデータのプロパティを読み取る必要があります。
 
 <a href="" id="pkey-pnpx-serviceid"></a>**鍵\_PNPX\_ServiceId**  
-このプロパティが初期化に必要な[ **WIA\_DPS\_サービス\_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551428) WIA プロパティ。
+このプロパティが初期化に必要な[ **WIA\_DPS\_サービス\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-service-id) WIA プロパティ。
 
 <a href="" id="pkey-pnpx-globalidentity"></a>**鍵\_PNPX\_GlobalIdentity**  
-このプロパティを初期化します、 [ **WIA\_DPS\_GLOBAL\_IDENTITY** ](https://msdn.microsoft.com/library/windows/hardware/ff551395) WIA プロパティ。
+このプロパティを初期化します、 [ **WIA\_DPS\_GLOBAL\_IDENTITY** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-global-identity) WIA プロパティ。
 
-<a href="" id="pkey-pnpx-id--directly-or-indirectly-by-using-istidevicecontrol--getmydeviceportname-"></a>**鍵\_PNPX\_ID** (を使用して直接または間接的に[ **IStiDeviceControl::GetMyDevicePortName**](https://msdn.microsoft.com/library/windows/hardware/ff542944))  
-このプロパティを初期化します、 [ **WIA\_DPS\_デバイス\_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff551374)デバイス プロパティ。
+<a href="" id="pkey-pnpx-id--directly-or-indirectly-by-using-istidevicecontrol--getmydeviceportname-"></a>**鍵\_PNPX\_ID** (を使用して直接または間接的に[ **IStiDeviceControl::GetMyDevicePortName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname))  
+このプロパティを初期化します、 [ **WIA\_DPS\_デバイス\_ID** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-device-id)デバイス プロパティ。
 
 ミニドライバーは、次を含むその他のプロパティを読み取るも可能性があります。
 
 <a href="" id="pkey-pnpx-firmware-version"></a>**鍵\_PNPX\_ファームウェア\_バージョン**  
-このプロパティを初期化します、 [ **WIA\_DPA\_ファームウェア\_バージョン**](https://msdn.microsoft.com/library/windows/hardware/ff550309) WIA プロパティ。
+このプロパティを初期化します、 [ **WIA\_DPA\_ファームウェア\_バージョン**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dpa-firmware-version) WIA プロパティ。
 
-**注**  を使用して、ミニドライバー *WSDScan.sys*呼び出して PNPX ID 値を取得できますも[ **IStiDeviceControl::GetMyDevicePortName** ](https://msdn.microsoft.com/library/windows/hardware/ff542944);返されるデバイス パスは現在鍵\_PNPX\_id。
+**注**  を使用して、ミニドライバー *WSDScan.sys*呼び出して PNPX ID 値を取得できますも[ **IStiDeviceControl::GetMyDevicePortName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname);返されるデバイス パスは現在鍵\_PNPX\_id。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - WDM 低い edge WDK ネットワーク、デバイスの通信
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee10b3d74517a77976c452863253522c3918763
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7d1b1cbe0181c0e61765f5df91cca7f99371de1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356255"
 ---
 # <a name="issuing-commands-to-communicate-with-devices"></a>デバイスと通信するためのコマンドの発行
 
@@ -21,7 +21,7 @@ ms.locfileid: "63353780"
 
 
 
-バス上のデバイスを制御する WDM の下端とミニポート ドライバーでは、これらのデバイスと通信するバスのインターフェイスにコマンドを発行します。 詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)およびドキュメントについては、バス ドライバーの特定のインターフェイス。
+バス上のデバイスを制御する WDM の下端とミニポート ドライバーでは、これらのデバイスと通信するバスのインターフェイスにコマンドを発行します。 詳細については、次を参照してください。 [Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)およびドキュメントについては、バス ドライバーの特定のインターフェイス。
 
  
 

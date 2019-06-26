@@ -5,19 +5,19 @@ ms.assetid: c3431724-1b5f-4634-8b1e-27fed9031f01
 ms.date: 08/08/2017
 keywords: -OID_PM_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 883738803bbaa39c9facddb0016022ce87902953
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75fd60dbe2927ae0f0feb9518cfe7ffbb30df160
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383593"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373898"
 ---
 # <a name="oidpmparameters"></a>OID\_PM\_パラメーター
 
 
-プロトコル ドライバーとして、クエリでは、OID を使用できる\_PM\_ハードウェアの電源管理機能、ネットワーク アダプターの現在有効になっているクエリを実行するパラメーターの OID。 OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体ポインターが含まれています、 [ **NDIS\_PM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566759)構造体。
+プロトコル ドライバーとして、クエリでは、OID を使用できる\_PM\_ハードウェアの電源管理機能、ネットワーク アダプターの現在有効になっているクエリを実行するパラメーターの OID。 OID のクエリ要求から正常に戻った後、 **InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体ポインターが含まれています、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体。
 
-プロトコル ドライバーが、OID の使用時に、セットとして\_PM\_パラメーターの OID を有効にまたはネットワーク アダプターの現在のハードウェア機能を無効にします。 プロトコル ドライバーへのポインターを提供する、 [ **NDIS\_PM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566759)構造体、 **InformationBuffer** のメンバー[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体。
+プロトコル ドライバーが、OID の使用時に、セットとして\_PM\_パラメーターの OID を有効にまたはネットワーク アダプターの現在のハードウェア機能を無効にします。 プロトコル ドライバーへのポインターを提供する、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体、 **InformationBuffer** のメンバー[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体。
 
 <a name="remarks"></a>コメント
 -------
@@ -28,7 +28,7 @@ ms.locfileid: "63383593"
 
 現在有効になっている機能は、ハードウェアでサポートされる機能のサブセットであることができます。 ハードウェアでサポートされる機能の詳細については、次を参照してください。 [OID\_PM\_ハードウェア\_機能](oid-pm-hardware-capabilities.md)します。
 
-**注**  場合 NDIS 設定、NDIS\_PM\_セレクティブ\_中断\_有効フラグ、 **WakeUpFlags**のメンバー [ **NDIS\_PM\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff566759) OID の OID のセット要求を発行構造、\_PM\_ミニポート ドライバーに直接パラメーター。 これにより、NDIS フィルター ドライバー、ネットワーク ドライバー スタック内で処理をバイパスします。
+**注**  場合 NDIS 設定、NDIS\_PM\_セレクティブ\_中断\_有効フラグ、 **WakeUpFlags**のメンバー [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters) OID の OID のセット要求を発行構造、\_PM\_ミニポート ドライバーに直接パラメーター。 これにより、NDIS フィルター ドライバー、ネットワーク ドライバー スタック内で処理をバイパスします。
 
  
 
@@ -72,9 +72,9 @@ NDIS またはミニポート ドライバーは、要求の状態コードの�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/ff566759)
+[**NDIS\_PM\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)
 
 [OID\_PM\_ハードウェア\_機能](oid-pm-hardware-capabilities.md)
 

@@ -6,17 +6,17 @@ keywords:
 - ConvertPrintTicketToDevMode
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d3b3ce6e3e4fa0ac7392810fb31ef7e5942f9ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1be0b61b03044ff5e24f193f1844db38f4abdc6a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365729"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372474"
 ---
 # <a name="convertprinttickettodevmode-overview"></a>ConvertPrintTicketToDevMode 概要
 
 
-Unidrv と PScript5 印刷ドライバーをパブリックおよびプライベートな部分の入力、 [ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)から渡されたアプリケーションの印刷チケット情報を使用してサポートされる構造体ConvertPrintTicketToDevMode を呼び出します。 [ **IPrintOemPrintTicketProvider::ConvertPrintTicketToDevMode** ](https://msdn.microsoft.com/library/windows/hardware/ff553167)各印刷ドライバーのプラグインがインストールされているメソッドが呼び出されます。
+Unidrv と PScript5 印刷ドライバーをパブリックおよびプライベートな部分の入力、 [ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)から渡されたアプリケーションの印刷チケット情報を使用してサポートされる構造体ConvertPrintTicketToDevMode を呼び出します。 [ **IPrintOemPrintTicketProvider::ConvertPrintTicketToDevMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemprintticketprovider-convertprinttickettodevmode)各印刷ドライバーのプラグインがインストールされているメソッドが呼び出されます。
 
 次の図への呼び出しの順序**IPrintOemPrintTicketProvider::ConvertPrintTicketToDevMode**ドライバーを呼び出すと**ConvertPrintTicketToDevMode**します。
 

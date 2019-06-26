@@ -9,12 +9,12 @@ keywords:
 - ConfigInfo WDK SCSI のドライバーによって提供されるポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dd526ffb3bb0f295f0e42403508ee4e03958f2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58697e462a94a881caced31c40cfc4d373ee800f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358459"
 ---
 # <a name="port-driver-supplied-configinfo-for-hwscsifindadapter"></a>HwScsiFindAdapter に関するポート ドライバー提供の ConfigInfo
 
@@ -22,11 +22,11 @@ ms.locfileid: "63389414"
 ## <span id="ddk_port_driver_supplied_configinfo_for_hwscsifindadapter_kg"></span><span id="DDK_PORT_DRIVER_SUPPLIED_CONFIGINFO_FOR_HWSCSIFINDADAPTER_KG"></span>
 
 
-システムのポート ドライバーは、常に、次のよう設定[**ポート\_構成\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff563900)ミニポート ドライバーを呼び出す前に*HwScsiFindAdapter*ポートへのポインターとルーチン\_構成\_情報 (、 *ConfigInfo*バッファー)。
+システムのポート ドライバーは、常に、次のよう設定[**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)ミニポート ドライバーを呼び出す前に*HwScsiFindAdapter*ポートへのポインターとルーチン\_構成\_情報 (、 *ConfigInfo*バッファー)。
 
 -   **長さ**に**sizeof**(ポート\_構成\_情報)
 
--   **AdapterInterfaceType**ミニポート ドライバーの[ **HW\_初期化\_データ (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456)仕様
+-   **AdapterInterfaceType**ミニポート ドライバーの[ **HW\_初期化\_データ (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)仕様
 
 -   **InterruptMode**に**LevelSensitive** PCI バスまたは**Latched**他のすべてのバスの種類
 
@@ -44,7 +44,7 @@ ms.locfileid: "63389414"
 
 -   **SystemIoBusNumber** I/O バスのシステムによって割り当てられた値に設定
 
-    ミニポート ドライバーの[ *HwScsiFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff557300)の各バスのルーチンを呼び出すことが、指定された**AdapterInterfaceType**の更新された値を持つ**SystemIoBusNumber**、システムの特定のバス上の HBA を検出した場合、システムで決定された値に設定できますか、指定された**AdapterInterfaceType**します。
+    ミニポート ドライバーの[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))の各バスのルーチンを呼び出すことが、指定された**AdapterInterfaceType**の更新された値を持つ**SystemIoBusNumber**、システムの特定のバス上の HBA を検出した場合、システムで決定された値に設定できますか、指定された**AdapterInterfaceType**します。
 
 -   **AccessRanges**型へのアクセスの要素\_bus 相対で設定されている範囲 **%rangestart**アドレスと**RangeLength**、および各範囲のかどうかは、 **RangeInMemory**
 
@@ -52,13 +52,13 @@ ms.locfileid: "63389414"
 
     ポート ドライバーがいずれかのアクセスのすべての情報を提供\_または範囲の要素が 0 (既定値) に要素のすべてのメンバーを設定します。 通常、ポート、ドライバーは、アクセスの範囲の非ゼロ値を提供する場合、追加の構成情報を提供します。
 
-    ミニポート ドライバーでポート ドライバーによって提供される相対バスへのアクセス範囲値をマップする必要があります[ **ScsiPortGetDeviceBase** ](https://msdn.microsoft.com/library/windows/hardware/ff564629)論理アドレスが割り当てられた値を使用してを決定するかどうか、対応する HBA は、ドライバーをサポートしています。 *決して*マップし、バス上の HBA へのアクセス ポート ドライバー、ポート範囲要素に塗りつぶされたアクセスを提供する場合に、ミニポート ドライバーが指定した範囲を使用して\_構成\_に渡す情報、 *HwScsiFindAdapter*ルーチン。 ポート ドライバーには、範囲の構成情報が提供されているときに、ミニポート ドライバーが指定したアドレスを使用して、機能しなくなるので、既に構成されている HBA をリセットしたり、システムのブート プロセスが失敗するおそれもできます。
+    ミニポート ドライバーでポート ドライバーによって提供される相対バスへのアクセス範囲値をマップする必要があります[ **ScsiPortGetDeviceBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetdevicebase)論理アドレスが割り当てられた値を使用してを決定するかどうか、対応する HBA は、ドライバーをサポートしています。 *決して*マップし、バス上の HBA へのアクセス ポート ドライバー、ポート範囲要素に塗りつぶされたアクセスを提供する場合に、ミニポート ドライバーが指定した範囲を使用して\_構成\_に渡す情報、 *HwScsiFindAdapter*ルーチン。 ポート ドライバーには、範囲の構成情報が提供されているときに、ミニポート ドライバーが指定したアドレスを使用して、機能しなくなるので、既に構成されている HBA をリセットしたり、システムのブート プロセスが失敗するおそれもできます。
 
     詳細については、マップされた論理アクセスの範囲を使用して、次を参照してください。 [HwScsiFindAdapter で ConfigInfo セットアップ](setting-up-configinfo-in-hwscsifindadapter.md)します。
 
 -   **BusInterruptLevel**または**BusInterruptVector**
 
-    このメンバーは、ミニポート ドライバーがにない場合は、関連は[ **HwScsiInterrupt** ](https://msdn.microsoft.com/library/windows/hardware/ff557312)ルーチン。
+    このメンバーは、ミニポート ドライバーがにない場合は、関連は[ **HwScsiInterrupt** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557312(v=vs.85))ルーチン。
 
 -   **できます**または**DmaPort** HBA システム DMA コント ローラーを使用している場合
 

@@ -14,12 +14,12 @@ keywords:
 - WDK の表示状態を表示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eb742e9c11b271d408abd2f310936f62b5ebf22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e81ee6c1e2015712bd0eec43d254db60d7373f0b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346938"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370296"
 ---
 # <a name="converting-the-direct3d-fixed-function-state"></a>Direct3D の固定機能状態の変換
 
@@ -66,19 +66,19 @@ ms.locfileid: "63346938"
 
 ### <a name="span-idunusedusermodedisplaydriverfunctionsspanspan-idunusedusermodedisplaydriverfunctionsspanunused-user-mode-display-driver-functions"></a><span id="unused_user_mode_display_driver_functions"></span><span id="UNUSED_USER_MODE_DISPLAY_DRIVER_FUNCTIONS"></span>未使用のユーザー モードのディスプレイ ドライバー関数
 
-次[ユーザー モードのディスプレイ ドライバー関数](https://msdn.microsoft.com/library/windows/hardware/ff570118)固定関数頂点シェーダーのコンバーターが有効にすると、Direct3D ランタイムでは呼び出されません。
+次[ユーザー モードのディスプレイ ドライバー関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)固定関数頂点シェーダーのコンバーターが有効にすると、Direct3D ランタイムでは呼び出されません。
 
--   [**MultiplyTransform**](https://msdn.microsoft.com/library/windows/hardware/ff568516)
+-   [**MultiplyTransform**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_multiplytransform)
 
--   [**SetTransform**](https://msdn.microsoft.com/library/windows/hardware/ff569687)
+-   [**SetTransform**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_settransform)
 
--   [**SetMaterial**](https://msdn.microsoft.com/library/windows/hardware/ff569540)
+-   [**SetMaterial**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setmaterial)
 
--   [**SetLight**](https://msdn.microsoft.com/library/windows/hardware/ff569539)
+-   [**SetLight**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setlight)
 
--   [**CreateLight**](https://msdn.microsoft.com/library/windows/hardware/ff540658)
+-   [**CreateLight**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createlight)
 
--   [**DestroyLight**](https://msdn.microsoft.com/library/windows/hardware/ff552778)
+-   [**DestroyLight**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_destroylight)
 
 ### <a name="span-idunusedrenderstatesspanspan-idunusedrenderstatesspanunused-render-states"></a><span id="unused_render_states"></span><span id="UNUSED_RENDER_STATES"></span>未使用の描画状態
 

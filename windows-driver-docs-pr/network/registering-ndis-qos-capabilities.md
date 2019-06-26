@@ -4,12 +4,12 @@ description: NDIS QoS 機能の登録
 ms.assetid: 03D70079-37A4-4FAA-BF18-ACED3A9E8267
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50632ad1dfc185fa50afb961b97a10d672f5fc0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38d748c14265f38b9ed35da63dc68827e2811d9d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373856"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359149"
 ---
 # <a name="registering-ndis-qos-capabilities"></a>NDIS QoS 機能の登録
 
@@ -30,7 +30,7 @@ ms.locfileid: "63373856"
 
 NDIS QoS INF キーワードの設定の詳細については、次を参照してください。[の NDIS QoS の標準化された INF キーワード](standardized-inf-keywords-for-ndis-qos.md)します。
 
-ミニポート ドライバーを通じて基になるネットワーク アダプターのハードウェアの NDIS QoS 機能の報告、 [ **NDIS\_QOS\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451629)初期化されている構造体次のように
+ミニポート ドライバーを通じて基になるネットワーク アダプターのハードウェアの NDIS QoS 機能の報告、 [ **NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)初期化されている構造体次のように
 
 1.  ミニポート ドライバーを初期化します、**ヘッダー**メンバー。 ドライバーのセット、**型**のメンバー**ヘッダー** NDIS に\_オブジェクト\_型\_QOS\_機能します。
 
@@ -70,17 +70,17 @@ NDIS QoS INF キーワードの設定の詳細については、次を参照し�
 
      
 
-NDIS のミニポート ドライバーの呼び出したときに[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数の場合、ドライバーは次の手順に従って、ネットワーク アダプターの NDIS QoS 属性に登録します。
+NDIS のミニポート ドライバーの呼び出したときに[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数の場合、ドライバーは次の手順に従って、ネットワーク アダプターの NDIS QoS 属性に登録します。
 
-1.  ミニポート ドライバーを初期化します、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
+1.  ミニポート ドライバーを初期化します、 [ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
 
-    ミニポート ドライバーのセット、 **HardwareQOSCapabilities** 、previouslyinitialized へのポインターをメンバー [ **NDIS\_QOS\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451629)構造体。
+    ミニポート ドライバーのセット、 **HardwareQOSCapabilities** 、previouslyinitialized へのポインターをメンバー [ **NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)構造体。
 
-    場合のレジストリ設定、  **\*QOS** INF キーワードは、1 つの値を持つ、ネットワーク アダプターの NDIS QoS 機能が有効になっています。 ミニポート ドライバーのセット、 **CurrentQOSCapabilities**同じへのポインターをメンバー [ **NDIS\_QOS\_機能**](https://msdn.microsoft.com/library/windows/hardware/hh451629)構造体。
+    場合のレジストリ設定、  **\*QOS** INF キーワードは、1 つの値を持つ、ネットワーク アダプターの NDIS QoS 機能が有効になっています。 ミニポート ドライバーのセット、 **CurrentQOSCapabilities**同じへのポインターをメンバー [ **NDIS\_QOS\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)構造体。
 
     場合のレジストリ設定、  **\*QOS** INF キーワードが 0 の値を持つ、ネットワーク アダプターの NDIS QoS 機能が無効になっています。 ミニポート ドライバーを設定する必要があります、 **CurrentQOSCapabilities**メンバーを NULL にします。
 
-2.  ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)構造体。
+2.  ドライバー呼び出し[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)設定と、 *MiniportAttributes*パラメーターへのポインターを[ **NDIS\_ミニポート\_アダプター\_ハードウェア\_支援\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)構造体。
 
 アダプターの初期化プロセスの詳細については、次を参照してください。[ミニポート アダプターの初期化](initializing-a-miniport-adapter.md)します。
 

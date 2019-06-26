@@ -8,12 +8,12 @@ keywords:
 - ファイル情報処理 WDK ファイル システムを設定します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3cd1768adedd72e6df380902de5bfa3ca975c6e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf9d2fb2a3d3ba376c1b325c7b0266babc408c2c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344444"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359263"
 ---
 # <a name="set-file-information-processing"></a>ファイル情報設定処理
 
@@ -21,7 +21,7 @@ ms.locfileid: "63344444"
 ## <span id="ddk_set_file_information_processing_if"></span><span id="DDK_SET_FILE_INFORMATION_PROCESSING_IF"></span>
 
 
-サポートされている情報クラスのサブセットのいくつか追加のチェックを実行する I/O マネージャー [ **IRP\_MJ\_設定\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff549366)します。 具体的には、FileRenameInformation、FileLinkInformation および FileMoveClusterInformation、I/O マネージャー問題のオープン送信するには、その親の下に子を作成するアクセスをユーザーが持っていることを確認する対象の名前の親ディレクトリに、IRP\_MJ\_設定\_ファイル システムに情報の要求。
+サポートされている情報クラスのサブセットのいくつか追加のチェックを実行する I/O マネージャー [ **IRP\_MJ\_設定\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-information)します。 具体的には、FileRenameInformation、FileLinkInformation および FileMoveClusterInformation、I/O マネージャー問題のオープン送信するには、その親の下に子を作成するアクセスをユーザーが持っていることを確認する対象の名前の親ディレクトリに、IRP\_MJ\_設定\_ファイル システムに情報の要求。
 
  
 

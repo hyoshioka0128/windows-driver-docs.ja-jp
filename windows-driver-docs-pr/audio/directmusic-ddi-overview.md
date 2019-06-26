@@ -13,12 +13,12 @@ keywords:
 - Dmu ミニポート ドライバー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a58619bd7d4e2f7789888a519c48241854aa0275
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2194a22d2540aeac8d0c89890d879bb2a63ff2e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333793"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359051"
 ---
 # <a name="directmusic-ddi-overview"></a>DirectMusic DDI の概要
 
@@ -32,15 +32,15 @@ ms.locfileid: "63333793"
 
 DirectMusic は、次のユーザー モード インターフェイスをユーザー モードのシンセサイザーのコントロールを使用して、カーネル ストリーミング ドライバーの通信。
 
-[IDirectMusicSynth](https://msdn.microsoft.com/library/windows/hardware/ff536519)
+[IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)
 
 これは、カスタム ソフトウェア シンセサイザー機能を実装するため、ユーザー モード インターフェイスです。
 
-[IDirectMusicSynthSink](https://msdn.microsoft.com/library/windows/hardware/ff536520)
+[IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)
 
 これは、Microsoft DirectX 6.1 と DirectX 7 でカスタム wave シンクを実装するため、ユーザー モード インターフェイスです。 DirectX 8 以降では、DirectMusic は常に、ユーザー モード シンセサイザーでそのプライベート wave シンクを使用し、ユーザー モード wave シンクのパブリック インターフェイスはサポートされていません。
 
-[IKsControl](https://msdn.microsoft.com/library/windows/hardware/ff559766)
+[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol)
 
 DirectMusic では、このインターフェイスを使用して、DirectX 6.1 以降のユーザー モードからカーネル ストリーミング ドライバーのプロパティにアクセスします。
 
@@ -48,17 +48,17 @@ DirectMusic では、このインターフェイスを使用して、DirectX 6.1
 
 カスタムの Dmu ミニポート ドライバーでは、次のカーネル モード インターフェイスを使用します。
 
-[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491)
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)
 
-[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)
+[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)
 
-[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)
+[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-isynthsinkdmus)
 
-[IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)
+[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)
 
-[IMasterClock](https://msdn.microsoft.com/library/windows/hardware/ff536696)
+[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imasterclock)
 
-[IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)
+[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)
 
 Dmu ミニポート ドライバーを実装して、 **IMiniportDMus**、 **ISynthSinkDMus**、および**IMXF**インターフェイス。 Dmu ポート ドライバーの実装、 **IAllocatorMXF**、 **IMasterClock**、および**IPortDMus**インターフェイスおよびミニポート ドライバーを許すことにします。
 

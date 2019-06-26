@@ -9,12 +9,12 @@ keywords:
 - LayoutFile ディレクティブ WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e91cfb940c45135048c58fb346701b223b3051de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d635074fd5bcae4a3aba87b6e8db0801f7620225
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379865"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372770"
 ---
 # <a name="omitting-layoutfile-and-catalogfile-information"></a>LayoutFile および CatalogFile の情報の省略
 
@@ -30,7 +30,7 @@ Class=Display
 DriverVer=11/22/2004, 6.14.10.7000
 ```
 
-詳細については、**バージョン**セクションと関連付けられているディレクティブ**バージョン**を参照してください[ **INF バージョン セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547502)します。
+詳細については、**バージョン**セクションと関連付けられているディレクティブ**バージョン**を参照してください[ **INF バージョン セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)します。
 
  
 

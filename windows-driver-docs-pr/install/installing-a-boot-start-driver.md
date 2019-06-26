@@ -14,12 +14,12 @@ keywords:
 - ベンダーから提供された boot ドライバー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 492fb91aaa4ef4f2ef9958bfea720cfbffc29cd8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0484bb6ad133b80ff8438323b85b839e70e86f41
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357507"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370003"
 ---
 # <a name="installing-a-boot-start-driver"></a>ブート開始ドライバーのインストール
 
@@ -74,7 +74,7 @@ Windows では、開始に失敗した場合、表示される特定のエラー
 
 ### <a href="" id="boot-start-driver-distribution-disk"></a> ブート開始ドライバーの配布のディスク
 
-A*ブート開始ドライバー配布ディスク*されたメディアをフロッピー ディスクや USB フラッシュ ドライブを含むなど、 *TxtSetup.oem*ファイルと関連するドライバー ファイル。 *TxtSetup.oem*ファイルは、ハードウェア コンポーネントの一覧、システムにコピーされる配布ディスク上のファイルの一覧、およびレジストリ キーと作成される値の一覧を含むテキスト ファイル。 サンプル*TxtSetup.oem*ファイルを指定する Windows Driver Kit (WDK) の下、 \\WDK の src ディレクトリ。 詳細については、内容を*TxtSetup.oem*ファイルを参照してください[TxtSetup.oem ファイルの形式](https://msdn.microsoft.com/library/windows/hardware/ff553509)します。
+A*ブート開始ドライバー配布ディスク*されたメディアをフロッピー ディスクや USB フラッシュ ドライブを含むなど、 *TxtSetup.oem*ファイルと関連するドライバー ファイル。 *TxtSetup.oem*ファイルは、ハードウェア コンポーネントの一覧、システムにコピーされる配布ディスク上のファイルの一覧、およびレジストリ キーと作成される値の一覧を含むテキスト ファイル。 サンプル*TxtSetup.oem*ファイルを指定する Windows Driver Kit (WDK) の下、 \\WDK の src ディレクトリ。 詳細については、内容を*TxtSetup.oem*ファイルを参照してください[TxtSetup.oem ファイルの形式](https://docs.microsoft.com/previous-versions/ff553509(v=vs.85))します。
 
 プラットフォーム固有およびクロス プラットフォームのディストリビューションのディスクには、次の要件と推奨事項が適用されます。
 

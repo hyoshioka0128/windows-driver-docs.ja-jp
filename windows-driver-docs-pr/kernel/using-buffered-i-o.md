@@ -11,12 +11,12 @@ keywords:
 - I/O WDK カーネルでは、バッファー内の I/O
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 391f688f6c200ee9f922cd68388c81beeab0d181
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48e65b280741fac4a942f6f6f26e94634b38b492
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361105"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358195"
 ---
 # <a name="using-buffered-io"></a>バッファー付き I/O の使用
 
@@ -28,9 +28,9 @@ ms.locfileid: "63361105"
 
 I/O マネージャーは、I/O 操作がバッファー内の I/O を次のように使用しているかを決定します。
 
--   [ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)操作を要求します。\_バッファーに格納された\_IO が設定されている、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)構造体。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
+-   [ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)操作を要求します。\_バッファーに格納された\_IO が設定されている、**フラグ**のメンバー、 [**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)構造体。 詳細については、次を参照してください。[デバイス オブジェクトを初期化して](initializing-a-device-object.md)します。
 
--   [ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)要求、IOCTL コードの値には、メソッドが含まれています。\_としてバッファリングされている、 *TransferType* IOCTL 値の値。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
+-   [ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)と[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求、IOCTL コードの値には、メソッドが含まれています。\_としてバッファリングされている、 *TransferType* IOCTL 値の値。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
 
 次の図は、I/O マネージャーの設定方法を示しています、 **IRP\_MJ\_読み取り**バッファリングされる I/O を使用する転送操作の要求。
 
@@ -42,21 +42,21 @@ I/O マネージャーは、I/O 操作がバッファー内の I/O を次のよ�
 
 2.  I/O マネージャー サービスの現在のスレッドの読み取り要求、対象のスレッドに渡しますユーザー領域の範囲、バッファーを表す仮想アドレス。
 
-3.  I/O マネージャーは、ユーザーが指定したバッファーのアクセシビリティと呼び出しを確認します[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)非ページ システム領域バッファーを作成する (**SystemBuffer**)、。ユーザーが指定したバッファーのサイズ。
+3.  I/O マネージャーは、ユーザーが指定したバッファーのアクセシビリティと呼び出しを確認します[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)非ページ システム領域バッファーを作成する (**SystemBuffer**)、。ユーザーが指定したバッファーのサイズ。
 
 4.  I/O マネージャーは、新しく割り当てられたへのアクセスを提供します。 **SystemBuffer**で IRP がドライバーに送信します。
 
     場合は、図では、書き込み要求を表示、I/O マネージャーがデータ ユーザー バッファーからバッファーにコピー システム IRP がドライバーに送信する前にします。
 
-5.  前の図に示すように、読み取り要求には、ドライバーは、システム容量のバッファーに、デバイスからデータを読み取ります。 このバッファーのメモリが非ページと、ドライバーが初めてロックすることがなく、バッファーを安全にアクセスできます。 読み取り要求が満たされたときに、ドライバーが呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP にします。
+5.  前の図に示すように、読み取り要求には、ドライバーは、システム容量のバッファーに、デバイスからデータを読み取ります。 このバッファーのメモリが非ページと、ドライバーが初めてロックすることがなく、バッファーを安全にアクセスできます。 読み取り要求が満たされたときに、ドライバーが呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP にします。
 
-6.  元のスレッドが再びアクティブとは、I/O マネージャーは、ユーザー バッファーにシステムのバッファーから読み取りでデータをコピーします。 呼び出しも[ **ExFreePool** ](https://msdn.microsoft.com/library/windows/hardware/ff544590)システム バッファーを解放します。
+6.  元のスレッドが再びアクティブとは、I/O マネージャーは、ユーザー バッファーにシステムのバッファーから読み取りでデータをコピーします。 呼び出しも[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)システム バッファーを解放します。
 
-I/O マネージャーがドライバーのシステム領域バッファーを作成した後は、要求元のユーザー モード スレッドをスワップ アウトと可能性がある別のプロセスに属するスレッドによって、別のスレッドで物理メモリを再利用することができます。 ただし、IRP で指定したシステム領域仮想アドレスの範囲が有効なドライバー呼び出されるまで[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) IRP にします。
+I/O マネージャーがドライバーのシステム領域バッファーを作成した後は、要求元のユーザー モード スレッドをスワップ アウトと可能性がある別のプロセスに属するスレッドによって、別のスレッドで物理メモリを再利用することができます。 ただし、IRP で指定したシステム領域仮想アドレスの範囲が有効なドライバー呼び出されるまで[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IRP にします。
 
 大量のデータを同時に転送、具体的には、複数の転送を行うドライバーをドライバーが、バッファー内の I/O を使用しないようにします。 システムを実行すると非ページ プールは断片化するため、I/O マネージャーは、このようなドライバーの Irp で送信する、連続した大規模なシステム領域バッファーを割り当てることができません。
 
-通常、ドライバーを使用してバッファー内の I/O 一部の種類の Irp でなど[ **IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744)も使用している場合でも、要求[ダイレクト I/O](methods-for-accessing-data-buffers.md)します。 通常、ダイレクト I/O を使用するドライバーだけでこれを行う[ **IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794)と[ **IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819)を要求して、場合によってドライバー定義[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550766)ことを要求大量のデータ転送が必要です。
+通常、ドライバーを使用してバッファー内の I/O 一部の種類の Irp でなど[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)も使用している場合でも、要求[ダイレクト I/O](methods-for-accessing-data-buffers.md)します。 通常、ダイレクト I/O を使用するドライバーだけでこれを行う[ **IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)と[ **IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)を要求して、場合によってドライバー定義[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)ことを要求大量のデータ転送が必要です。
 
 すべて**IRP\_MJ\_デバイス\_コントロール**と**IRP\_MJ\_内部\_デバイス\_コントロール**要求には、I/O 制御コードが含まれます。 I/O 制御コードは、バッファー内の I/O を使用して、IRP をサポートする必要が示されている場合、I/O マネージャーは、ユーザー アプリケーションの入力を表し、出力バッファーに 1 つのシステムのバッファーを使用します。 ドライバー サポート、そのような I/O 制御コードする必要がありますバッファーから入力データを読み取る (ある場合) を指定し、出力データ (該当する場合)、入力データを上書きすることで。 詳細については、次を参照してください。 [I/O 制御コードを定義する](defining-i-o-control-codes.md)します。
 

@@ -8,12 +8,12 @@ keywords:
 - 関連付けられている IRP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9dfbe1ab41be51e44498c2c0ac5fa80b790920
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61d7998252a5806166a61ded20e1ee2e32f0497e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341055"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369766"
 ---
 # <a name="introduction-to-cancel-routines"></a>キャンセル ルーチンの概要
 
@@ -21,7 +21,7 @@ ms.locfileid: "63341055"
 
 
 
-すべてのドライバーを Irp に保持できる保留中の状態は不定値の間隔が 1 つまたは複数がある必要[*キャンセル*](https://msdn.microsoft.com/library/windows/hardware/ff540742)ルーチン。 たとえば、キーボード ドライバーは、キーを押すユーザーの無期限に待機可能性があります。 逆に場合、ドライバーには、5 分で完了できるよりも多くの Irp キューことはありませんが、おそらく必要はありません、*キャンセル*ルーチン。
+すべてのドライバーを Irp に保持できる保留中の状態は不定値の間隔が 1 つまたは複数がある必要[*キャンセル*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチン。 たとえば、キーボード ドライバーは、キーを押すユーザーの無期限に待機可能性があります。 逆に場合、ドライバーには、5 分で完了できるよりも多くの Irp キューことはありませんが、おそらく必要はありません、*キャンセル*ルーチン。
 
 ユーザー モード スレッドは、最上位レベルのデバイス ドライバーのディスパッチ ルーチンによってキューには、I/O 要求を IRP がキューに置かれたときに、要求元のスレッドが終了したとします。 Irp が終了したに代わってキューに置かれたスレッドをキャンセルする必要があります。 その結果、ドライバーがドライバーによって提供されるを設定する必要があります*キャンセル*キューに登録する各の IRP で日常的な。
 

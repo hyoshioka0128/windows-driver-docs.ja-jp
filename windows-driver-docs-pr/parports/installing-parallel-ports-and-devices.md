@@ -7,12 +7,12 @@ keywords:
 - パラレル ポート、WDK をインストールします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd482e101f68dcfe832754afe2bc0f312fb08aad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d222cf5597c55e3e94219f38e9aa216f5d76a76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373567"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358529"
 ---
 # <a name="installing-parallel-ports-and-devices"></a>パラレル ポートとデバイスのインストール
 
@@ -28,7 +28,7 @@ ms.locfileid: "63373567"
 
 [並列ドライバーのベンダーが提供するための要件](requirements-for-vendor-supplied-parallel-drivers.md)
 
-[デバイスのインストールの概要](https://msdn.microsoft.com/library/windows/hardware/ff549455)
+[デバイスのインストールの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)
 
 パラレル ポートおよびパラレル ポートに接続されたデバイスのシステムのサポートの詳細についてを参照してください。
 
@@ -36,7 +36,7 @@ ms.locfileid: "63373567"
 
 [システム提供のパラレル ドライバー](system-supplied-parallel-drivers.md)
 
-[システム提供平行ドライバーへのクライアント インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[システム提供平行ドライバーへのクライアント インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

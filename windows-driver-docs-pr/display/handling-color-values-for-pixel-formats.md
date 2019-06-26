@@ -7,12 +7,12 @@ keywords:
 - WDK DirectX 9.0 のピクセル形式のカラー値します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd4a844e8a7edcdd159d0425b5ae0e5300ebda3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1eeefd9fa06fa493ec6c431619f3f1aaa0c30ce4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323720"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372940"
 ---
 # <a name="handling-color-values-for-pixel-formats"></a>ピクセル形式の色の値の処理
 
@@ -24,7 +24,7 @@ ms.locfileid: "63323720"
 
 アプリケーションが一貫した方法で塗りつぶしの色とこれらの形式とサーフェスでクリア操作を要求できるため、ディスプレイ ドライバーは色形式の ARGB と YUV クラスの入力色の値を変換する必要があります。 ただし、ドライバーは、他のクラスの形式の色の値を直接使用する必要があります。 たとえば、アプリケーション A8R8G8B8、均一な色の値として使用を最大で 8 ビットのアルファ (A)、赤 (R)、緑 (G)、および青 (B) コンポーネントを持つすべての画面ドライバーは、最高の有意性をビットをコピーすることで、実際の ARGB 形式に固有の色の値に A8R8G8B8 色を変換する必要があります。
 
-ディスプレイ ドライバーが、D3DDP2OP を処理するときに、色の値を受け取る\_CLEAR および D3DDP2OP\_COLORFILL 操作のコードでその[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)関数。
+ディスプレイ ドライバーが、D3DDP2OP を処理するときに、色の値を受け取る\_CLEAR および D3DDP2OP\_COLORFILL 操作のコードでその[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数。
 
 ディスプレイ ドライバーは、ARGB と YUV クラス形式の色の値に変換するのに次のコードを使用できます。
 

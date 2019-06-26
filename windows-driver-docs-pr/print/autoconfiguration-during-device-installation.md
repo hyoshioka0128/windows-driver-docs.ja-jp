@@ -7,12 +7,12 @@ keywords:
 - デバイスのインストール中に、プリンターの自動構成の WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d048827d1228847228f5203fb0cb41cc4e90cdc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0f8c037304e99e45e7e7814b3acc196264d3778
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350781"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370487"
 ---
 # <a name="autoconfiguration-during-device-installation"></a>デバイスのインストール時の自動構成
 
@@ -23,7 +23,7 @@ ms.locfileid: "63350781"
 
 1.  プリンターがインストールされている、スプーラーを呼び出すことによって、ドライバーが初期化します`DrvPrinterEvent`プリンターを渡すと\_イベント\_呼び出しで初期化します。
 
-2.  ドライバーを使用して[双方向の通信インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545163)などのインストール可能なオプションの値を含む、関心のあるデータを取得する\\Printer.Configuration.DuplexUnit:Installed と\\Printer.Configuration.HardDisk:Installed します。
+2.  ドライバーを使用して[双方向の通信インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)などのインストール可能なオプションの値を含む、関心のあるデータを取得する\\Printer.Configuration.DuplexUnit:Installed と\\Printer.Configuration.HardDisk:Installed します。
 
 3.  双方向の通信インターフェイスは、これらの属性の値が、ポート モニターを照会します。 ポート モニターは、いくつかのキャッシュで要求されたデータのがあります。 例示を目的として、次の手順で、仮定の値は、 \\Printer.Configuration.HardDisk:Installed がの値が、ポート モニターのキャッシュ、 \\Printer.Configuration.DuplexUnit:Installed でないです。
 

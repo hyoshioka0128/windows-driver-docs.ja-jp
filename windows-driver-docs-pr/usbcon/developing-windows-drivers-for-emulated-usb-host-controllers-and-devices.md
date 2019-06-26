@@ -3,12 +3,12 @@ Description: 列挙された USB デバイス (UDE) 用 Windows ドライバー�
 title: 列挙された USB デバイス (UDE) 用 Windows ドライバーの開発
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b36a2057ea3a8ab84023ef2bfa96e830d28f5d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12b2aa2f380795f1abb2e69afca54b5573bcb730
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394038"
 ---
 # <a name="developing-windows-drivers-for-emulated-usb-devices-ude"></a>列挙された USB デバイス (UDE) 用 Windows ドライバーの開発
 
@@ -44,12 +44,12 @@ ms.locfileid: "63377414"
 <a href="usb-emulated-device--ude--architecture.md" data-raw-source="[Architecture: USB Device Emulation (UDE)](usb-emulated-device--ude--architecture.md)">アーキテクチャ:USB デバイスのエミュレーション (UDE)</a>
 <a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers](usb-3-0-driver-stack-architecture.md)">ホスト側の USB ドライバー</a> Windows で
 <p><strong>エミュレートされたホスト コント ローラーとデバイスのドライバーの記述</strong></p>
-<p>UDE オブジェクトとハンドルの把握します。 詳細については、WDF オブジェクトは、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework オブジェクトの概要</a>します。</p>
+<p>UDE オブジェクトとハンドルの把握します。 詳細については、WDF オブジェクトは、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects" data-raw-source="[Introduction to Framework Objects](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects)">Framework オブジェクトの概要</a>します。</p>
 <p>動作を理解、UDE のクライアント ドライバーと、クライアント ドライバーである機能との対話方法を実装する必要があります。</p>
 <p><a href="writing-a-ude-client-driver.md" data-raw-source="[Write a UDE client driver](writing-a-ude-client-driver.md)">UDE クライアント ドライバーを作成します。</a></p>
 <p><strong>プログラミング リファレンスのセクション</strong></p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#emulated-host-controller-driver-reference" data-raw-source="[Emulated USB host controller driver programming reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#emulated-host-controller-driver-reference)">エミュレートされた USB ホスト コントローラー ドライバーのプログラミング参照</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/dn265590" data-raw-source="[WDF Reference](https://msdn.microsoft.com/library/windows/hardware/dn265590)">WDF の参照</a></p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf/" data-raw-source="[WDF Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf/)">WDF の参照</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -57,7 +57,7 @@ ms.locfileid: "63377414"
  
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

@@ -7,12 +7,12 @@ keywords:
 - ミニポート ドライバー WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48e0ccbd2ee301100b75b3fc4428067c7e47e8ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e39ca269b03754af4270ab9f1ef2eb2f2c159c1a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373599"
 ---
 # <a name="scsi-verification"></a>SCSI 検証
 
@@ -46,11 +46,11 @@ SCSI ミニポート ドライバー コミットすると、次の違反のい�
 
 -   バスのリセットの保持期間の終了が、ミニポート ドライバーにはまだ未処理の要求。
 
-参照してください[**バグ チェック 0xF1** ](https://msdn.microsoft.com/library/windows/hardware/ff560365) (SCSI\_VERIFIER\_検出\_違反) バグの完全な一覧については、パラメーターを確認します。
+参照してください[**バグ チェック 0xF1** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xf1--scsi-verifier-detected-violation) (SCSI\_VERIFIER\_検出\_違反) バグの完全な一覧については、パラメーターを確認します。
 
 だけでなく、これらの違反、SCSI 検証は、不適切な使用のミニポート ドライバーのメモリへのアクセスを監視します。 ミニポート ドライバーによって行われた 2 つの一般的なメモリ違反が、要求が完了した後 SRB の拡張機能へのアクセスと SRB へのアクセス**DataBuffer**ミニポート ドライバーが指定されていない場合**MapBuffers**.
 
-この種のメモリの違反は通常のなる[ **0xD1 のバグ チェック**](https://msdn.microsoft.com/library/windows/hardware/ff560244) (ドライバー\_IRQL\_いない\_少ない\_または\_と等しい)発行されています。
+この種のメモリの違反は通常のなる[ **0xD1 のバグ チェック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xd1--driver-irql-not-less-or-equal) (ドライバー\_IRQL\_いない\_少ない\_または\_と等しい)発行されています。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 
@@ -79,7 +79,7 @@ SCSI の確認オプションをアクティブ化するための手順では、
 <thead>
 <tr class="header">
 <th align="left">ビット</th>
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">効果</th>
 </tr>
 </thead>

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0894f0b083b69895457cdf4ee36b384c8d880202
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99aebaa6f982d69670aa11172194fb2400e9c3eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332677"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358751"
 ---
 # <a name="kspropertyrtaudiogetreadpacket"></a>KSPROPERTY\_RTAUDIO\_GETREADPACKET
 
@@ -31,10 +31,10 @@ KSPROPERTY\_RTAUDIO\_GETREADPACKET がキャプチャされたオーディオ �
  
 |取得|設定|対象|プロパティ記述子の型|プロパティ値の型|
 |--- |--- |--- |--- |--- |
-|〇|いいえ|Pin|[KSPROPERTY](https://msdn.microsoft.com/library/windows/hardware/ff564262)|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
+|〇|いいえ|Pin|[KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
 
 
-プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)構造体。 要求を送信する前に、クライアントは、パケットの数、パケットの長さ、およびその他の情報を示す値を含む構造体を読み込みます。
+プロパティ記述子 (インスタンス データ) が、 [ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))構造体。 要求を送信する前に、クライアントは、パケットの数、パケットの長さ、およびその他の情報を示す値を含む構造体を読み込みます。
 
 プロパティの値は型の変数[ **KSRTAUDIO\_GETREADPACKET\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)します。
 

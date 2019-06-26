@@ -4,12 +4,12 @@ description: レガシ オーディオ デバイス メッセージ
 ms.assetid: d8b2807b-e72f-4f72-8a83-5700bc0239dc
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a229b443bbe79263e6d2f65fe87f27f87484662e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49f433e7008f90c9254eae21bab911f11caf5255
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358679"
 ---
 # <a name="legacy-audio-device-messages"></a>レガシ オーディオ デバイス メッセージ
 
@@ -33,23 +33,23 @@ ms.locfileid: "63332424"
 
 一部のデバイス メッセージは、デバイス ドライバーによって直接処理され、いくつかは、デバイスに代わって、システムによって処理されます。
 
-このセクションでは、システムによってインターセプトされ、これまで、デバイス ドライバーに渡されることがなく処理するメッセージのみについて説明します。 詳細については、次を参照してください。 [System-Intercepted デバイス メッセージ](https://msdn.microsoft.com/library/windows/hardware/ff538507)します。
+このセクションでは、システムによってインターセプトされ、これまで、デバイス ドライバーに渡されることがなく処理するメッセージのみについて説明します。 詳細については、次を参照してください。 [System-Intercepted デバイス メッセージ](https://docs.microsoft.com/windows-hardware/drivers/audio/system-intercepted-device-messages)します。
 
 このセクションで説明されている各メッセージは、6 つの 1 つ以上で使用するために有効な*xxx*メッセージは上記の関数。
 
 このセクションでは、次のメッセージについて説明します。
 
-[**DRV\_QUERYDEVICEINTERFACE**](https://msdn.microsoft.com/library/windows/hardware/ff536363)
+[**DRV\_QUERYDEVICEINTERFACE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536363(v=vs.85))
 
-[**DRV\_QUERYDEVICEINTERFACESIZE**](https://msdn.microsoft.com/library/windows/hardware/ff536364)
+[**DRV\_QUERYDEVICEINTERFACESIZE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536364(v=vs.85))
 
-[**DRV\_QUERYDEVNODE**](https://msdn.microsoft.com/library/windows/hardware/ff536365)
+[**DRV\_QUERYDEVNODE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536365(v=vs.85))
 
-[**DRV\_QUERYMAPPABLE**](https://msdn.microsoft.com/library/windows/hardware/ff536366)
+[**DRV\_QUERYMAPPABLE**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536366(v=vs.85))
 
-[**DRVM\_MAPPER\_CONSOLEVOICECOM\_GET**](https://msdn.microsoft.com/library/windows/hardware/ff536361)
+[**DRVM\_MAPPER\_CONSOLEVOICECOM\_GET**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536361(v=vs.85))
 
-[**DRVM\_マッパー\_優先\_取得**](https://msdn.microsoft.com/library/windows/hardware/ff536362)
+[**DRVM\_マッパー\_優先\_取得**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536362(v=vs.85))
 
  
 

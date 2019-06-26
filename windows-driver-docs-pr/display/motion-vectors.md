@@ -7,12 +7,12 @@ keywords:
 - 動きベクトル WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1692ceb4dff47464663f1ba8ae251c51a4e17ae4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f4f722edb0011a95371f842378052858787877e4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353106"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372866"
 ---
 # <a name="motion-vectors"></a>モーション ベクトル
 
@@ -22,9 +22,9 @@ ms.locfileid: "63353106"
 
 画像が、内の画像ではない場合 (、 **bPicIntra**のメンバー、 **DXVA\_PictureParameters**または*P 画像*)。 さらに、マクロ ブロック ベースの参照を画像の選択 (で定義されている H.263 Annex U) を使用している場合、各動きベクトルの参照画像の選択範囲のインデックスも含まれますマクロ ブロック コントロール コマンド構造体。
 
-各マクロ ブロック コントロール コマンドの構造に動きベクトルの予約済みの領域は、一般に、モーションの 4 つのベクトルに必要な量です。 使用して各動きベクトルを指定する[ **DXVA\_MVvalue** ](https://msdn.microsoft.com/library/windows/hardware/ff564004)構造体。 通常このような場合に、前の 2 つの nonintra ケースが含まれます。 残りのケース (で明示的に定義されている、 *dxva.h*ヘッダー ファイル) は次のようにします。
+各マクロ ブロック コントロール コマンドの構造に動きベクトルの予約済みの領域は、一般に、モーションの 4 つのベクトルに必要な量です。 使用して各動きベクトルを指定する[ **DXVA\_MVvalue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mvvalue)構造体。 通常このような場合に、前の 2 つの nonintra ケースが含まれます。 残りのケース (で明示的に定義されている、 *dxva.h*ヘッダー ファイル) は次のようにします。
 
--   場合*OBMC*使用されています (、 **bPicOBMC**のメンバー、 [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造体が 1) 画像PB 画像の B 部分ではありません (、 **bPicBinPB**この構造体のメンバーは 0 です)、10 個の動きベクトル + 16 バイト境界に合わせるために必要な追加領域をスペースが含まれています。
+-   場合*OBMC*使用されています (、 **bPicOBMC**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体が 1) 画像PB 画像の B 部分ではありません (、 **bPicBinPB**この構造体のメンバーは 0 です)、10 個の動きベクトル + 16 バイト境界に合わせるために必要な追加領域をスペースが含まれています。
 
 -   OBMC を使用している場合 (、 **bPicOBMC**メンバーは、DXVA の\_PictureParameters 構造は 1) PB 図の B の一部であり、画像 (、 **bPicBinPB**この構造体のメンバーは 1)、11 用の領域モーションのベクトルと、16 バイト境界に合わせるために必要な追加の領域が含まれます。
 

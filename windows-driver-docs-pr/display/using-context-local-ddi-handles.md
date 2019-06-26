@@ -11,12 +11,12 @@ keywords:
 - ローカル コンテキスト DDI WDK Windows Server 2008 R2 の表示を処理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eba46348708bb01572e3f9aa2a0b153052d622d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2374a507b896ddd8ea3eea8ea68f70b3da4eb37e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389738"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373577"
 ---
 # <a name="using-context-local-ddi-handles"></a>コンテキスト ローカル DDI ハンドルの使用
 
@@ -41,15 +41,15 @@ ms.locfileid: "63389738"
 
 Direct3D のランタイムは、ローカル処理の遅延のコンテキストの次の Direct3D 11 DDI を使用します。
 
--   [ **CheckDeferredContextHandleSizes** ](https://msdn.microsoft.com/library/windows/hardware/ff539388)関数遅延コンテキスト ハンドルのハンドルのデータを保持するドライバー プライベート メモリ空間のサイズを確認します。
+-   [ **CheckDeferredContextHandleSizes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_checkdeferredcontexthandlesizes)関数遅延コンテキスト ハンドルのハンドルのデータを保持するドライバー プライベート メモリ空間のサイズを確認します。
 
--   [ **CalcDeferredContextHandleSize** ](https://msdn.microsoft.com/library/windows/hardware/ff538272)関数は、遅延のコンテキストのメモリの領域のサイズを決定します。
+-   [ **CalcDeferredContextHandleSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcdeferredcontexthandlesize)関数は、遅延のコンテキストのメモリの領域のサイズを決定します。
 
-Direct3D、ランタイム、ドライバーで必要とされる遅延コンテキスト ハンドルのサイズを取得する場合は、上記の DDI 関数を使用する必要があります。 ランタイムが呼び出すイミディ エイト コンテキスト オブジェクトの作成後すぐに[ **CalcDeferredContextHandleSize** ](https://msdn.microsoft.com/library/windows/hardware/ff538272)ドライバーをドライバーが必要とするストレージ領域の量を照会するにはこのオブジェクトに遅延コンテキスト ハンドルを満たします。 ただし、Direct3D API は、一意のハンドルの数のサイズを決定することでその CLS メモリ アロケーターを調整する必要があり、その値がアクセスされます。ランタイムが呼び出す、ドライバーの[ **CheckDeferredContextHandleSizes** ](https://msdn.microsoft.com/library/windows/hardware/ff539388)この情報を取得します。 そのため、デバイスのインストール時に、API 遅延コンテキスト ハンドルのサイズの配列によって要求二重ポーリングします。 最初のポーリング要求数のサイズが返されるは、2 つ目のポーリング渡します配列の各サイズの値を取得中にすることです。 ドライバーは、どの程度メモリのために必要などのハンドル型と共に、ハンドルを満たすを示す必要があります。 ドライバーは、特定のハンドル型に関連付けられている複数のサイズを返すことができます。 ただし、これまでの値を返すドライバーの定義されていない**CalcDeferredContextHandleSize**でもそれに応じて返されたされません、 **CheckDeferredContextHandleSizes**配列。
+Direct3D、ランタイム、ドライバーで必要とされる遅延コンテキスト ハンドルのサイズを取得する場合は、上記の DDI 関数を使用する必要があります。 ランタイムが呼び出すイミディ エイト コンテキスト オブジェクトの作成後すぐに[ **CalcDeferredContextHandleSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_calcdeferredcontexthandlesize)ドライバーをドライバーが必要とするストレージ領域の量を照会するにはこのオブジェクトに遅延コンテキスト ハンドルを満たします。 ただし、Direct3D API は、一意のハンドルの数のサイズを決定することでその CLS メモリ アロケーターを調整する必要があり、その値がアクセスされます。ランタイムが呼び出す、ドライバーの[ **CheckDeferredContextHandleSizes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_checkdeferredcontexthandlesizes)この情報を取得します。 そのため、デバイスのインストール時に、API 遅延コンテキスト ハンドルのサイズの配列によって要求二重ポーリングします。 最初のポーリング要求数のサイズが返されるは、2 つ目のポーリング渡します配列の各サイズの値を取得中にすることです。 ドライバーは、どの程度メモリのために必要などのハンドル型と共に、ハンドルを満たすを示す必要があります。 ドライバーは、特定のハンドル型に関連付けられている複数のサイズを返すことができます。 ただし、これまでの値を返すドライバーの定義されていない**CalcDeferredContextHandleSize**でもそれに応じて返されたされません、 **CheckDeferredContextHandleSizes**配列。
 
-DDI ハンドルを作成する場合とは、遅延のコンテキストでの create メソッドが使用されます。 たとえば、確認、 [ **CreateBlendState (D3D10\_1)** ](https://msdn.microsoft.com/library/windows/hardware/ff540597)と[ **DestroyBlendState** ](https://msdn.microsoft.com/library/windows/hardware/ff552745)関数。 HDEVICE、必然的コンテキストを指して、適切な遅延 (従来は、イミディ エイト コンテキスト)。その他の構造体の CONST ポインターは**NULL** (オブジェクトと仮定すると依存関係を持たない); と、D3D10DDI\_HRT\*ハンドルが、D3D10DDI\_H\*対応するハンドルイミディ エイト コンテキスト オブジェクト。
+DDI ハンドルを作成する場合とは、遅延のコンテキストでの create メソッドが使用されます。 たとえば、確認、 [ **CreateBlendState (D3D10\_1)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10_1ddi_createblendstate)と[ **DestroyBlendState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyblendstate)関数。 HDEVICE、必然的コンテキストを指して、適切な遅延 (従来は、イミディ エイト コンテキスト)。その他の構造体の CONST ポインターは**NULL** (オブジェクトと仮定すると依存関係を持たない); と、D3D10DDI\_HRT\*ハンドルが、D3D10DDI\_H\*対応するハンドルイミディ エイト コンテキスト オブジェクト。
 
-依存関係のあるオブジェクト (たとえば、ビュー上にある依存関係を対応するリソース)、依存関係のハンドルを提供する構造体のポインターが**NULL**します。 ただし、構造体の唯一の有効なメンバーには、依存関係のハンドルです。一方、残りのメンバーがゼロで埋められます。 例として、 [ **D3D11DDIARG\_CREATESHADERRESOURCEVIEW** ](https://msdn.microsoft.com/library/windows/hardware/ff542073)ドライバーの呼び出しでポインター [ **CreateShaderResourceView(D3D11)**](https://msdn.microsoft.com/library/windows/hardware/ff540708)関数にすることはできません**NULL**遅延のコンテキストで、ランタイムがこの関数を呼び出すとします。 この CreateShaderResourceView(D3D11) 呼び出しで、ランタイムは、リソースが適切なローカル コンテキスト ハンドルを割り当てます、 **hDrvResource** D3D11DDIARG のメンバー\_CREATESHADERRESOURCEVIEW します。 D3D11DDIARG のメンバーの残りの部分\_CREATESHADERRESOURCEVIEW がゼロで埋められます。
+依存関係のあるオブジェクト (たとえば、ビュー上にある依存関係を対応するリソース)、依存関係のハンドルを提供する構造体のポインターが**NULL**します。 ただし、構造体の唯一の有効なメンバーには、依存関係のハンドルです。一方、残りのメンバーがゼロで埋められます。 例として、 [ **D3D11DDIARG\_CREATESHADERRESOURCEVIEW** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createshaderresourceview)ドライバーの呼び出しでポインター [ **CreateShaderResourceView(D3D11)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createshaderresourceview)関数にすることはできません**NULL**遅延のコンテキストで、ランタイムがこの関数を呼び出すとします。 この CreateShaderResourceView(D3D11) 呼び出しで、ランタイムは、リソースが適切なローカル コンテキスト ハンドルを割り当てます、 **hDrvResource** D3D11DDIARG のメンバー\_CREATESHADERRESOURCEVIEW します。 D3D11DDIARG のメンバーの残りの部分\_CREATESHADERRESOURCEVIEW がゼロで埋められます。
 
 次の例のコードは要求と即時と遅延のコンテキストを作成するユーザー モードのディスプレイ ドライバーへの呼び出しを遅延コンテキストの最初の使用を Direct3D ランタイム アプリケーションの変換方法作成します。 アプリケーションの呼び出しを**ID3D11Device::CreateTexture2D** 「リソースの作成」の次のセクションでは、ランタイム コードを開始します。 アプリケーションの呼び出しを**ID3D11Device::CopyResource** 「コンテキスト リソース使用量の遅延」の次のセクションでは、ランタイム コードを開始します。
 
@@ -72,9 +72,9 @@ pDCRHandle = malloc( s2 );
 
 ### <a name="span-idissueswithpfnseterrorcbspanspan-idissueswithpfnseterrorcbspanissues-with-pfnseterrorcb"></a><span id="issues_with_pfnseterrorcb"></span><span id="ISSUES_WITH_PFNSETERRORCB"></span>PfnSetErrorCb に関する問題
 
-どの作成関数は、エラー コードは、Direct3D のバージョン 11 スレッド処理モデルの理想的なされている場合を返します。 すべての作成関数を使用して[ **pfnSetErrorCb** ](https://msdn.microsoft.com/library/windows/hardware/ff568929)ドライバーからエラーを取得するコードを返します。 Direct3D のバージョン 10 ドライバー モデルとの互換性を最大化するには、新しい DDI はエラー コードが発生しないを返す関数を作成します。 代わりに、ドライバーが統一されたデバイス/イミディ エイト コンテキスト D3D10DDI を使用して続ける必要があります\_HRTCORELAYER 処理**pfnSetErrorCb**作成関数の中にします。 ドライバーは、コマンドのリストをサポートする、ドライバー、適切な使用する必要があります**pfnSetErrorCb**対応するコンテキストに関連付けられています。 遅延コンテキスト エラーを遅延コンテキストの特定の呼び出しに移動する必要があります、 **pfnSetErrorCb**と対応するハンドルを使用します。
+どの作成関数は、エラー コードは、Direct3D のバージョン 11 スレッド処理モデルの理想的なされている場合を返します。 すべての作成関数を使用して[ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)ドライバーからエラーを取得するコードを返します。 Direct3D のバージョン 10 ドライバー モデルとの互換性を最大化するには、新しい DDI はエラー コードが発生しないを返す関数を作成します。 代わりに、ドライバーが統一されたデバイス/イミディ エイト コンテキスト D3D10DDI を使用して続ける必要があります\_HRTCORELAYER 処理**pfnSetErrorCb**作成関数の中にします。 ドライバーは、コマンドのリストをサポートする、ドライバー、適切な使用する必要があります**pfnSetErrorCb**対応するコンテキストに関連付けられています。 遅延コンテキスト エラーを遅延コンテキストの特定の呼び出しに移動する必要があります、 **pfnSetErrorCb**と対応するハンドルを使用します。
 
-遅延コンテキストを返すことができます E\_呼び出しを通じて OUTOFMEMORY [ **pfnSetErrorCb** ](https://msdn.microsoft.com/library/windows/hardware/ff568929) D3DDDIERR を以前のみ許可されている DDI 関数から\_DEVICEREMOVED (など[**描画**](https://msdn.microsoft.com/library/windows/hardware/ff556120)、 [ **SetBlendState**](https://msdn.microsoft.com/library/windows/hardware/ff569527)など)、遅延コンテキスト メモリの需要の高まりにより DDI 関数を呼び出すごとに永続的であるためです。 Direct3D API では、このような失敗の場合、部分的に構築されたコマンドの一覧を効果的に解決されると、ドライバーを支援するために、ローカル コンテキストの削除をトリガーします。 アプリケーションは、コマンドの一覧を記録するかを判断を継続します。ただし、アプリケーション、最終的に呼び出すと、 **FinishCommandList**関数、 **FinishCommandList** E のエラー コードが返らない\_OUTOFMEMORY します。
+遅延コンテキストを返すことができます E\_呼び出しを通じて OUTOFMEMORY [ **pfnSetErrorCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb) D3DDDIERR を以前のみ許可されている DDI 関数から\_DEVICEREMOVED (など[**描画**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_draw)、 [ **SetBlendState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setblendstate)など)、遅延コンテキスト メモリの需要の高まりにより DDI 関数を呼び出すごとに永続的であるためです。 Direct3D API では、このような失敗の場合、部分的に構築されたコマンドの一覧を効果的に解決されると、ドライバーを支援するために、ローカル コンテキストの削除をトリガーします。 アプリケーションは、コマンドの一覧を記録するかを判断を継続します。ただし、アプリケーション、最終的に呼び出すと、 **FinishCommandList**関数、 **FinishCommandList** E のエラー コードが返らない\_OUTOFMEMORY します。
 
  
 

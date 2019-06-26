@@ -3,21 +3,21 @@ Description: このトピックでは、UMDF 関数のドライバー サポー�
 title: USB UMDF ドライバーでのセレクティブ サスペンドします。
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 228dd12f2e7a2b5fe70a3924ef07d9ed2cddf9e5
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 4a0cd34fcb005fca796c691f0f7eff829c5ec6a4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405078"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358343"
 ---
 # <a name="selective-suspend-in-usb-umdf-drivers"></a>USB UMDF ドライバーでのセレクティブ サスペンドします。
 
 
 **重要な API**
 
--   [**IWDFUsbTargetDevice::SetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff560385)
--   [**IWDFDevice2::AssignSxWakeSettings**](https://msdn.microsoft.com/library/windows/hardware/ff556923)
--   [**IWDFDevice2::AssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff556920)
+-   [**IWDFUsbTargetDevice::SetPowerPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-setpowerpolicy)
+-   [**IWDFDevice2::AssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assignsxwakesettings)
+-   [**IWDFDevice2::AssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assigns0idlesettings)
 
 このトピックでは、UMDF 関数のドライバー サポート USB のセレクティブを中断する方法について説明します。
 
@@ -63,7 +63,7 @@ UMDF 関数ドライバーは、USB のセレクティブをサポートでき�
 
 選択的にサポートする UMDF ドライバーの中断、UMDF ドライバーでは、そのデバイスの電源ポリシーは、使用可能な I/O キューの種類を決定します。 所有しているかどうか。 選択的にサポートする UMDF ドライバーを中断しは PPOs は電源管理の対象または電源管理の対象ではないキューを使用できます。 サポート オプションを選択する UMDF USB ドライバーでは、中断が、電源管理対象の I/O キューを使用しないでください、PPO ではありません。
 
-デバイスが中断されている間は、電源管理対象のキューの I/O 要求が到着した、フレームワークが存在しない場合、要求、ドライバーは PPO、しない限りで図のように、 [USB ドライバーでのセレクティブ サスペンド](https://msdn.microsoft.com/library/windows/hardware/dn449739)します。 UMDF ドライバーでない場合、デバイスの PPO フレームワークは、自身のためにデバイスを電源ことはできません。 その結果、要求は、電源管理対象のキューにとどまります。 要求には、デバイスに電源を WinUSB できませんので、WinUSB に到達しません。 その結果、デバイス スタックが停止することができます。
+デバイスが中断されている間は、電源管理対象のキューの I/O 要求が到着した、フレームワークが存在しない場合、要求、ドライバーは PPO、しない限りで図のように、 [USB ドライバーでのセレクティブ サスペンド](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)します。 UMDF ドライバーでない場合、デバイスの PPO フレームワークは、自身のためにデバイスを電源ことはできません。 その結果、要求は、電源管理対象のキューにとどまります。 要求には、デバイスに電源を WinUSB できませんので、WinUSB に到達しません。 その結果、デバイス スタックが停止することができます。
 
 キューが電源管理の対象でない場合、デバイスの電源を切るときでも、framework I/O 要求 UMDF ドライバーを表示します。 UMDF ドライバーでは、要求をフォーマットして、通常の方法でデバイス スタックを既定の I/O ターゲットに転送します。 特別なコードは必要ありません。 要求には、PPO (WinUSB.sys) に達すると、WinUSB.sys はデバイスを補強し、必要な I/O 操作を実行します。
 
@@ -89,7 +89,7 @@ hr = __super::Initialize(WdfIoQueueDispatchParallel,
                          );
 ```
 
-**CMyQueue::Initialize**呼び出して[ **IWDFDevice::CreateIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff557020)次のようにキューを作成します。
+**CMyQueue::Initialize**呼び出して[ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)次のようにキューを作成します。
 
 ```cpp
 hr = m_FxDevice->CreateIoQueue(
@@ -109,12 +109,12 @@ hr = m_FxDevice->CreateIoQueue(
 
 選択的なサポートの中断、そのデバイス スタックは、次を実行する必要があります、PPO になっている UMDF USB ドライバー。
 
-1.  通常、デバイス スタックの電源ポリシーの所有権を要求で、 [ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)そのドライバー コールバック オブジェクト、前述のメソッド。
-2.  有効にするオプションを選択を呼び出すことによって中断、 [ **IWDFDevice2::AssignS0IdleSettings** ](https://msdn.microsoft.com/library/windows/hardware/ff556920) framework デバイス オブジェクトのメソッド。
+1.  通常、デバイス スタックの電源ポリシーの所有権を要求で、 [ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)そのドライバー コールバック オブジェクト、前述のメソッド。
+2.  有効にするオプションを選択を呼び出すことによって中断、 [ **IWDFDevice2::AssignS0IdleSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assigns0idlesettings) framework デバイス オブジェクトのメソッド。
 
 **PPO USB のセレクティブ サスペンドを有効にするには**
 
--   呼び出す[ **IWDFDevice2::AssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff556920)、通常、 **OnPrepareHardware**デバイス コールバック オブジェクトのメソッド。 パラメーターを AssignS0IdleSettings よう設定します。
+-   呼び出す[ **IWDFDevice2::AssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assigns0idlesettings)、通常、 **OnPrepareHardware**デバイス コールバック オブジェクトのメソッド。 パラメーターを AssignS0IdleSettings よう設定します。
     -   *IdleCaps*に**IdleUsbSelectiveSuspend**します。
     -   *DxState*フレームワークがアイドル状態のデバイスを移行するデバイスのスリープ状態にします。 USB のセレクティブ サスペンドは、指定**PowerDeviceMaximum**フレームワークがバス ドライバーが指定されている値を使用することを示します。
     -   *IdleTimeout*をミリ秒数に、framework の前にアイドル状態、デバイスである必要があります遷移に*DxState*します。
@@ -170,7 +170,7 @@ HKR,,"DeviceIdleEnabled",0x00010001,1
 
 UMDF USB ドライバーには、USB のセレクティブが有効にすることができますか、実行時に、または、INF でのインストール中に中断します。
 
--   関数のドライバーの呼び出し時のサポートを有効にする[ **IWDFUsbTargetDevice::SetPowerPolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff560385) PolicyType パラメーターを AUTO に設定し、\_中断し、値のパラメーターを TRUE または 1 をします。 次の例はどの、Fx2\_DeviceNonPpo.cpp ファイルでドライバーのサンプルにより選択的なが中断します。
+-   関数のドライバーの呼び出し時のサポートを有効にする[ **IWDFUsbTargetDevice::SetPowerPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-setpowerpolicy) PolicyType パラメーターを AUTO に設定し、\_中断し、値のパラメーターを TRUE または 1 をします。 次の例はどの、Fx2\_DeviceNonPpo.cpp ファイルでドライバーのサンプルにより選択的なが中断します。
     ```cpp
     BOOL AutoSuspend = TRUE;
     hr = m_pIUsbTargetDevice->SetPowerPolicy( AUTO_SUSPEND,
@@ -223,7 +223,7 @@ USB PPO 以外のドライバーが WinUSB.sys のドライバーを実装する
 
 **UMDF USB ドライバーのサポート システムのスリープ解除するには、PPO です。**
 
-呼び出す、 [ **IWDFDevice2::AssignSxWakeSettings** ](https://msdn.microsoft.com/library/windows/hardware/ff556923)次のパラメーターを framework のデバイス オブジェクトのメソッド。
+呼び出す、 [ **IWDFDevice2::AssignSxWakeSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assignsxwakesettings)次のパラメーターを framework のデバイス オブジェクトのメソッド。
 
 -   *DxState*するデバイスは遷移ときに電源状態をシステムはウェイク アップ可能 Sx 状態になります。 USB デバイスの場合は、指定**PowerDeviceMaximum**バス ドライバーが指定されている値を使用します。
 -   *UserControlOfWakeSettings*に**WakeAllowUserControl**かどうかには、ドライバーが、ウェイク アップの設定を管理するユーザーにそれ以外の場合、または**WakeDoNotAllowUserControl します。**

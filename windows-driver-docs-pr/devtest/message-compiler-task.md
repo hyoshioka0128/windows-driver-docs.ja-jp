@@ -4,17 +4,17 @@ description: Windows Driver Kit (WDK) には、MSBuild を使用してドライ�
 ms.assetid: 77B2DBF4-64EB-4396-BAA5-80F23C9899CC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9ff8bbe41ff03e3392bf439c989ec07b00782cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd96e717e8c7662abd8284e6b0f87e1905b262ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375650"
 ---
 # <a name="message-compiler-task"></a>メッセージ コンパイラ タスク
 
 
-Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、MC.exe ツールを実行できるようにの MessageCompiler タスクが用意されています。 MC.exe を使用する方法の詳細については、次を参照してください。 [**メッセージ コンパイラ (MC.exe)**](https://msdn.microsoft.com/library/windows/desktop/aa385638)します。
+Windows Driver Kit (WDK) には、MSBuild を使用してドライバーをビルドするときに、MC.exe ツールを実行できるようにの MessageCompiler タスクが用意されています。 MC.exe を使用する方法の詳細については、次を参照してください。 [**メッセージ コンパイラ (MC.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)します。
 
 MSBuild では、MessageCompile 項目を使用して、MessageCompiler タスクのパラメーターを送信します。 MessageCompile 項目では、プロジェクト ファイルで mc.exe の項目メタデータにアクセスします。
 
@@ -264,7 +264,7 @@ MSBuild がメタデータ GenerateBaselineResource が設定されているた�
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[**メッセージ コンパイラ (MC.exe)**](https://msdn.microsoft.com/library/windows/desktop/aa385638)
+[**メッセージ コンパイラ (MC.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)
 
  
 

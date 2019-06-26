@@ -11,12 +11,12 @@ keywords:
 description: スマート カード リソース マネージャーで、起動、接続、切断などの Ioctl のシーケンスの例を示します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d1f41aa55de7081873932d581dc6532a060c37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6d85138dfb1fe9ee298d72c85d8788709ac55888
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370524"
 ---
 # <a name="example-sequence"></a>シーケンスの例
 
@@ -84,5 +84,5 @@ ms.locfileid: "56575064"
 
  
 ## <a name="related-topics"></a>関連トピック
-[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[スマート カード DDI とコマンドのリファレンス](https://msdn.microsoft.com/library/windows/hardware/dn905601)  
+[NFC のデバイス ドライバー インターフェイス (DDI) の概要](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[スマート カード DDI とコマンドのリファレンス](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  

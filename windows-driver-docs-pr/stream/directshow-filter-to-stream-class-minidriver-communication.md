@@ -7,12 +7,12 @@ keywords:
 - DirectShow の WDK ビデオのキャプチャ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c79b4b9634630f6a4972f8733373989808512576
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f90277bb9cd13e2fec097046492d29acb7367d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384744"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358449"
 ---
 # <a name="directshow-filter-to-stream-class-minidriver-communication"></a>ストリーム クラス ミニドライバー通信への DirectShow フィルター
 
@@ -39,8 +39,8 @@ Win32 API を使用してビデオ キャプチャ ミニドライバー対話�
  
 </div>
 書き込み</td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568204" data-raw-source="[&lt;strong&gt;SRB_SET_DEVICE_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568204)"><strong>SRB_SET_DEVICE_PROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568207" data-raw-source="[&lt;strong&gt;SRB_SET_STREAM_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568207)"><strong>SRB_SET_STREAM_PROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-device-property" data-raw-source="[&lt;strong&gt;SRB_SET_DEVICE_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-device-property)"><strong>SRB_SET_DEVICE_PROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-stream-property" data-raw-source="[&lt;strong&gt;SRB_SET_STREAM_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-stream-property)"><strong>SRB_SET_STREAM_PROPERTY</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>プロパティ</p>
@@ -48,8 +48,8 @@ Win32 API を使用してビデオ キャプチャ ミニドライバー対話�
  
 </div>
 Read</td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568170" data-raw-source="[&lt;strong&gt;SRB_GET_DEVICE_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568170)"><strong>SRB_GET_DEVICE_PROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568175" data-raw-source="[&lt;strong&gt;SRB_GET_STREAM_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568175)"><strong>SRB_GET_STREAM_PROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-device-property" data-raw-source="[&lt;strong&gt;SRB_GET_DEVICE_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-device-property)"><strong>SRB_GET_DEVICE_PROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-stream-property" data-raw-source="[&lt;strong&gt;SRB_GET_STREAM_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-stream-property)"><strong>SRB_GET_STREAM_PROPERTY</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[ストリーミング]</p>
@@ -58,7 +58,7 @@ Read</td>
 </div>
 書き込み</td>
 <td><p>なし</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568220" data-raw-source="[&lt;strong&gt;SRB_WRITE_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568220)"><strong>SRB_WRITE_DATA</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data" data-raw-source="[&lt;strong&gt;SRB_WRITE_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data)"><strong>SRB_WRITE_DATA</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>[ストリーミング]</p>
@@ -67,7 +67,7 @@ Read</td>
 </div>
 Read</td>
 <td><p>なし</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568200" data-raw-source="[&lt;strong&gt;SRB_READ_DATA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568200)"><strong>SRB_READ_DATA</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-read-data" data-raw-source="[&lt;strong&gt;SRB_READ_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-read-data)"><strong>SRB_READ_DATA</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[ファイル]</p>
@@ -75,7 +75,7 @@ Read</td>
  
 </div>
 [ストリーミング]</td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568191" data-raw-source="[&lt;strong&gt;SRB_OPEN_STREAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568191)"><strong>SRB_OPEN_STREAM</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-open-stream" data-raw-source="[&lt;strong&gt;SRB_OPEN_STREAM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-open-stream)"><strong>SRB_OPEN_STREAM</strong></a></p></td>
 <td><p>なし</p></td>
 </tr>
 <tr class="even">
@@ -84,7 +84,7 @@ Read</td>
  
 </div>
 [ストリーミング]</td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568165" data-raw-source="[&lt;strong&gt;SRB_CLOSE_STREAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568165)"><strong>SRB_CLOSE_STREAM</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-close-stream" data-raw-source="[&lt;strong&gt;SRB_CLOSE_STREAM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-close-stream)"><strong>SRB_CLOSE_STREAM</strong></a></p></td>
 <td><p>なし</p></td>
 </tr>
 <tr class="odd">
@@ -93,7 +93,7 @@ Read</td>
  
 </div>
 表記</td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568168" data-raw-source="[&lt;strong&gt;SRB_GET_DATA_INTERSECTION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568168)"><strong>SRB_GET_DATA_INTERSECTION</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-data-intersection" data-raw-source="[&lt;strong&gt;SRB_GET_DATA_INTERSECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-data-intersection)"><strong>SRB_GET_DATA_INTERSECTION</strong></a></p></td>
 <td><p>なし</p></td>
 </tr>
 <tr class="even">
@@ -107,7 +107,7 @@ Read</td>
 </div>
 状態</td>
 <td><p>なし</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568210" data-raw-source="[&lt;strong&gt;SRB_SET_STREAM_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568210)"><strong>SRB_SET_STREAM_STATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-stream-state" data-raw-source="[&lt;strong&gt;SRB_SET_STREAM_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-stream-state)"><strong>SRB_SET_STREAM_STATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>

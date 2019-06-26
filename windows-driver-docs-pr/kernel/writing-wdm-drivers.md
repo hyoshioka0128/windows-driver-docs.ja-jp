@@ -4,12 +4,12 @@ description: WDM ドライバーの記述
 ms.assetid: 379305f0-3caa-4c8d-add5-17e8c83f2429
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2b894bcff2e80d3fa24cb2168164efe883632349
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 299fecf0640617a4467adfc5adba004158a47152
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374097"
 ---
 # <a name="writing-wdm-drivers"></a>WDM ドライバーの記述
 
@@ -30,7 +30,7 @@ ms.locfileid: "63370566"
 
     A*デバイス ドライバー*オペレーティング システムに統合する必要があるソフトウェアのコードのセットです。 この統合を完了するには、必要があります、ハンドラー ルーチンのセットをドライバーで記述するプロセスが、オペレーティング システムから呼び出すことです。 これらのルーチンは、単純な関数呼び出しを指定できますが、それらの多くの処理を実装*I/O 要求パケット*(Irp) ドライバーとオペレーティング システム間の通信を容易にします。
 
-**注**  WDM ドライバーでは Windows Driver Frameworks (WDF) ライブラリを記述するデバイス ドライバーの一部を簡単にも使用できます。 具体的には、カーネル モード ドライバーでは、カーネル モード ドライバー フレームワーク (KMDF) WDF の一部であるを使用できます。 カーネル モード ドライバー用 KMDF の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/ff544296)します。 KMDF に WDM が置き換えられることに注意してください。 まだ WDM、KMDF ドライバーを作成するの多くの部分を理解しておく必要があります。
+**注**  WDM ドライバーでは Windows Driver Frameworks (WDF) ライブラリを記述するデバイス ドライバーの一部を簡単にも使用できます。 具体的には、カーネル モード ドライバーでは、カーネル モード ドライバー フレームワーク (KMDF) WDF の一部であるを使用できます。 カーネル モード ドライバー用 KMDF の詳細については、次を参照してください。[カーネル モード ドライバー フレームワークの概要](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)します。 KMDF に WDM が置き換えられることに注意してください。 まだ WDM、KMDF ドライバーを作成するの多くの部分を理解しておく必要があります。
 
  
 

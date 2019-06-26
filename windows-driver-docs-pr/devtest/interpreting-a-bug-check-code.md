@@ -7,12 +7,12 @@ keywords:
 - ドライバーの開発ツールを WDK、バグの確認コード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ad601c2da8e67a4ae181e9f03e7bc2adad2ebf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5c88c6d6373ac6084e88d05012a1cdaee596c9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373716"
 ---
 # <a name="interpreting-a-bug-check-code"></a>バグ チェック コードの解釈
 
@@ -62,24 +62,24 @@ Windows では、いくつかの条件下でブルー スクリーンの最初�
 
 ### <a name="span-idbugchecksymbolicnamesspanspan-idbugchecksymbolicnamesspanbug-check-symbolic-names"></a><span id="bug_check_symbolic_names"></span><span id="BUG_CHECK_SYMBOLIC_NAMES"></span>バグ チェックのシンボル名
 
-各バグ チェックのコードでは、関連付けられているシンボリック名もあります。 これらの名前は、通常、ブルー スクリーンには表示されません。 これらの例では、最初の画面が表示されます[**バグ チェック 0x79** ](https://msdn.microsoft.com/library/windows/hardware/ff559209) (不一致\_HAL)、2 つ目が表示されますが、 [**バグ チェック 0xC000021A**](https://msdn.microsoft.com/library/windows/hardware/ff560177) (ステータス\_システム\_プロセス\_終了)。
+各バグ チェックのコードでは、関連付けられているシンボリック名もあります。 これらの名前は、通常、ブルー スクリーンには表示されません。 これらの例では、最初の画面が表示されます[**バグ チェック 0x79** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x79--mismatched-hal) (不一致\_HAL)、2 つ目が表示されますが、 [**バグ チェック 0xC000021A**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc000021a--status-system-process-terminated) (ステータス\_システム\_プロセス\_終了)。
 
-バグ チェックのシンボリック名を渡すことによってカーネル モード ドライバーからのバグ チェックが発生することが意図的に[ **KeBugCheck** ](https://msdn.microsoft.com/library/windows/hardware/ff551948)または[ **KeBugCheckEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551961). これは、その他のオプションが使用可能な状況でのみ実行する必要があります。
+バグ チェックのシンボリック名を渡すことによってカーネル モード ドライバーからのバグ チェックが発生することが意図的に[ **KeBugCheck** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kebugcheck)または[ **KeBugCheckEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kebugcheckex). これは、その他のオプションが使用可能な状況でのみ実行する必要があります。
 
 ### <a name="span-idreadingbugcheckinformationfromthedebuggerspanspan-idreadingbugcheckinformationfromthedebuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>デバッガーからのバグ チェック情報の読み取り
 
 デバッガーがアタッチされているバグ チェックが、デバッガーを中断する対象のコンピュータに発生します。 ブルー スクリーンが表示されない、またはで以下のテキストが表示されるこの場合、このクラッシュの完全な詳細情報は、デバッガーに送信され、デバッガー ウィンドウに表示されます。 詳細については、次を参照してください。[デバッガーを使用して](using-a-debugger.md)します。
 
-バグ チェックのコードの場合は、このリファレンス セクションの一部として存在[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)します。 参照してください[バグ チェック コード参照](https://msdn.microsoft.com/library/windows/hardware/hh994433)のバグ チェックおよびパラメーターの説明。 各リファレンス ページには、バグ チェックのコード、文字列、および 4 つの追加のパラメーターに表示される各バグ チェックが一覧表示します。 バグ チェック、およびエラーを処理する方法を引き起こしたエラーを診断する方法も説明します。
+バグ チェックのコードの場合は、このリファレンス セクションの一部として存在[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。 参照してください[バグ チェック コード参照](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)のバグ チェックおよびパラメーターの説明。 各リファレンス ページには、バグ チェックのコード、文字列、および 4 つの追加のパラメーターに表示される各バグ チェックが一覧表示します。 バグ チェック、およびエラーを処理する方法を引き起こしたエラーを診断する方法も説明します。
 
 バグの完全な一覧については、コードを確認、Bugcodes.h ファイルを参照してください。 このファイルは、Microsoft Windows Driver Kit (WDK) の inc ディレクトリで確認できます。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[バグチェック コード リファレンス](https://msdn.microsoft.com/library/windows/hardware/hh994433)
+[バグチェック コード リファレンス](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)
 
-[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
  
 

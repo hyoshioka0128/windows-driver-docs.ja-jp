@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfce585a92100ceb8f541839671e1e1edbc8b434
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 471f315bfdfdf1d4e9db4b29da31e13377a9175e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379693"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355535"
 ---
 # <a name="mrxdevfcbxxxcontrolfile-routine"></a>MRxDevFcbXXXControlFile ルーチン
 
 
-*MRxDevFcbXXXControlFile*ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニリダイレクターにデバイス FCB コントロール要求 (IOCTL または FSCTL 要求) を渡す。
+*MRxDevFcbXXXControlFile*ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニリダイレクターにデバイス FCB コントロール要求 (IOCTL または FSCTL 要求) を渡す。
 
 <a name="syntax"></a>構文
 ------
@@ -108,7 +108,7 @@ IRP が場合\_MJ\_ファイル\_システム\_RDBSS、RX では、次のメン�
 
 場合*MRxDevFcbXXXControlFile*ステータスを返します\_成功すると、そのルーチンが成功しました。 その他の戻り値は、エラーが発生したことを示します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -131,7 +131,7 @@ IRP が場合\_MJ\_ファイル\_システム\_RDBSS、RX では、次のメン�
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxStart**](https://msdn.microsoft.com/library/windows/hardware/ff550829)
+[**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)
 
 [**MRxStop**](mrxstop.md)
 

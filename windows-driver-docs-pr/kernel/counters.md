@@ -8,12 +8,12 @@ keywords:
 - カウント値 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69eff391ba6b4cf49076c120c3d555900479b12a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f63131553157e0a1185e62946a60c9b3cc3c0bce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345440"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377189"
 ---
 # <a name="counters"></a>カウンター
 
@@ -23,17 +23,17 @@ ms.locfileid: "63345440"
 
 システムは、さまざまな数の値を返すいくつかのドライバー サポート ルーチンを提供します。
 
-[**KeQuerySystemTime**](https://msdn.microsoft.com/library/windows/hardware/ff553068)
+[**KeQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)
 
-[**KeQueryInterruptTime**](https://msdn.microsoft.com/library/windows/hardware/ff553025)
+[**KeQueryInterruptTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequeryinterrupttime)
 
-[**KeQueryInterruptTimePrecise**](https://msdn.microsoft.com/library/windows/hardware/dn903729)
+[**KeQueryInterruptTimePrecise**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequeryinterrupttimeprecise)
 
-[**KeQueryTickCount**](https://msdn.microsoft.com/library/windows/hardware/ff553071)
+[**KeQueryTickCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kequerytickcount)
 
-[**KeQueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/hardware/ff553053)
+[**KeQueryPerformanceCounter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kequeryperformancecounter)
 
-[**KeQueryTimeIncrement**](https://msdn.microsoft.com/library/windows/hardware/ff553075)
+[**KeQueryTimeIncrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerytimeincrement)
 
  
 

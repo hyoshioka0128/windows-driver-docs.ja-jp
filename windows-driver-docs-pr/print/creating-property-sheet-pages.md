@@ -8,12 +8,12 @@ keywords:
 - WDK のプロパティ シート ページが印刷を作成します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f42f5ff37f80e68a03aa2debae38b5be43f0cae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba1a9bd3f897bcb8910653c109bfbe1a0ae512b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390936"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372432"
 ---
 # <a name="creating-property-sheet-pages"></a>プロパティ シート ページを作成する
 
@@ -23,7 +23,7 @@ ms.locfileid: "63390936"
 
 CPSUI を使用して作成されたプロパティ シートのページが作られる[プロパティ シート オプション](property-sheet-options.md)、各オプションがユーザーが変更可能な値を表します。 ダイアログ ボックスのセットを使用してプロパティ シートのオプションが作成されたの[CPSUI でサポートされているウィンドウ コントロール](cpsui-supported-window-controls.md)オプションの値を変更することができます。
 
-内で CPSUI が指定したウィンドウのコントロールを表示できる[CPSUI が指定したページやテンプレート](cpsui-supplied-pages-and-templates.md)、カスタマイズされたページを使用することができます。 いくつか[ページを指定するためのメソッド](methods-for-specifying-pages.md)、CPSUI の呼び出しが含まれるすべての[ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)関数。
+内で CPSUI が指定したウィンドウのコントロールを表示できる[CPSUI が指定したページやテンプレート](cpsui-supplied-pages-and-templates.md)、カスタマイズされたページを使用することができます。 いくつか[ページを指定するためのメソッド](methods-for-specifying-pages.md)、CPSUI の呼び出しが含まれるすべての[ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)関数。
 
 プリンターおよび印刷するドキュメントのプロパティ シートのページを作成するには[CPSUI を使用してプリンター ドライバーで](using-cpsui-with-printer-drivers.md)アプリケーション、印刷スプーラー、プリンター インターフェイス DLL、および CPSUI 間の相互作用する必要があります。
 

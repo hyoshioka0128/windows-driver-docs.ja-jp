@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a60a784484c5d112d0a6aa580f79a1061b2aa4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac871e3409a14a9981c080cc33edeac6111d36e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333223"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359011"
 ---
 # <a name="ksnodetypeprologicencoder"></a>KSNODETYPE\_PROLOGIC\_エンコーダー
 
@@ -29,7 +29,7 @@ KSNODETYPE\_PROLOGIC\_エンコーダーのノードがドルビー サラウン
 
 KSNODETYPE 機能\_PROLOGIC\_エンコーダーのノードを補完するものです、 [ **KSNODETYPE\_PROLOGIC\_デコーダー** ](ksnodetype-prologic-decoder.md)ノードサラウンドでエンコードされたステレオ入力ストリームを受け取り、左、右、センター、およびバック スピーカーのチャネルを持つ 4 チャネル ストリームにデコードします。
 
-Microsoft Windows XP 以降では、 [KMixer システム ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537039#kmixer-system-driver)が、KSNODETYPE\_PROLOGIC\_エンコーダー ノード。
+Microsoft Windows XP 以降では、 [KMixer システム ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#kmixer-system-driver)が、KSNODETYPE\_PROLOGIC\_エンコーダー ノード。
 
 KSNODETYPE\_PROLOGIC\_エンコーダーのノードをサポートする必要があります、 [ **KSPROPERTY\_オーディオ\_サラウンド\_エンコード**](ksproperty-audio-surround-encode.md)プロパティこれを有効にして、ノードを無効化に使用されます。
 

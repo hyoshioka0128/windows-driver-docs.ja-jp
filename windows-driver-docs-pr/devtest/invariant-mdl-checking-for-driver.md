@@ -4,12 +4,12 @@ description: 不変な Mdl ドライバー用検査オプションは、ドラ�
 ms.assetid: 2FA69B7C-3EF4-4660-84D4-5108C97E395F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87a4da5d4efe8b8d26ea6fdf77a3b6897d240a4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 216fd8e5dce96044a20df927a8498323015eaec9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356532"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373712"
 ---
 # <a name="invariant-mdl-checking-for-driver"></a>不変な MDL のドライバー用検査
 
@@ -20,7 +20,7 @@ ms.locfileid: "63356532"
 
  
 
-不変な mdl よりもより多くのフォームを実行する不変な Mdl のドライバー オプション、[不変な Mdl のスタック](invariant-mdl-checking-for-stack.md)オプション。 すべての呼び出しの間でバッファーの不変性が検証される不変な Mdl のドライバーがアクティブの場合、 [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)と[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)ルーチン。
+不変な mdl よりもより多くのフォームを実行する不変な Mdl のドライバー オプション、[不変な Mdl のスタック](invariant-mdl-checking-for-stack.md)オプション。 すべての呼び出しの間でバッファーの不変性が検証される不変な Mdl のドライバーがアクティブの場合、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)と[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)ルーチン。
 
 IRP で新しい不変の MDL バッファーを表示するたびに Driver Verifier は、バッファーの内容の署名を計算し、その内部データベースに格納します。 Driver Verifier は、先ほど説明したが不変の MDL バッファーを検出すると、そのバッファーの内容が変更されていないこと、現在不変の MDL バッファーの内容について計算されたシグネチャを持つ、データベース内の署名を比較することでは検証します。
 

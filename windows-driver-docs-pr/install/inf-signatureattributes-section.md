@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b2b8169ce7aa70941ce69783f5a4033d55d1006
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02883650cb3b47982d07f5f76b52b90432a621da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353048"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370036"
 ---
 # <a name="inf-signatureattributes-section"></a>INF SignatureAttributes セクション
 
@@ -35,7 +35,7 @@ Attribute = Value
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="sigtype-signature-type"></a>**SigType =**<em>シグネチャの種類</em>  
+<a href="" id="sigtype-signature-type"></a>**SigType =** <em>シグネチャの種類</em>  
 ファイルに適用する署名またはカタログ属性ニーズがどのを定義します。 次のいずれかを指定する必要があります。
 
 -   elam
@@ -44,7 +44,7 @@ Attribute = Value
 -   DRM
 -   WindowsHello
 
-<a href="" id="attribute-attribute-name"></a>**属性 =**<em>属性名</em>  
+<a href="" id="attribute-attribute-name"></a>**属性 =** <em>属性名</em>  
 各署名の種類は、次に示すように対応する属性と値。 SignatureAttributes のサブセクションでは、これらの定義を使用します。
 
 -   **SignatureAttributes.Elam**:Elam = true
@@ -121,7 +121,7 @@ WindowsHello=true
 ## <a name="see-also"></a>関連項目
 
 
-[ダッシュ ボード ヘルプ](https://msdn.microsoft.com/library/windows/hardware/br230803)
+[ダッシュ ボード ヘルプ](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
  
 

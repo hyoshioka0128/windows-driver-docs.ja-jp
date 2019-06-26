@@ -14,12 +14,12 @@ keywords:
 - SymChk ツール WDK BinPlace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8aaebb6cd2aa8fbbd6342f9d520097b88d8ef0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 652745217717313fe04268a494550ff37211f0e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358267"
 ---
 # <a name="public-symbols-and-private-symbols"></a>パブリック シンボルとプライベート シンボル
 
@@ -55,7 +55,7 @@ BinPlace では、シンボル ファイルを削除、削除された、完全�
 
  
 
-使用できるシンボル ファイルにプライベート シンボルが含まれているかどうかを確認する必要がある場合、 [SymChk](https://msdn.microsoft.com/library/windows/hardware/ff558844)ツール。 SymChk は、Windows のツールをデバッグ パッケージの一部です。 SymChk を参照してくださいと[Windows デバッグ](https://msdn.microsoft.com/library/windows/hardware/ff551063)詳細についてはします。
+使用できるシンボル ファイルにプライベート シンボルが含まれているかどうかを確認する必要がある場合、 [SymChk](https://docs.microsoft.com/windows-hardware/drivers/debugger/symchk)ツール。 SymChk は、Windows のツールをデバッグ パッケージの一部です。 SymChk を参照してくださいと[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)詳細についてはします。
 
 ドライバーに送信する場合、 [Windows ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)Microsoft と、プライベート シンボルを共有しないようにする場合、削除されたシンボル ファイルを送信できます。 BinPlace によって削除されたシンボル ファイルは、通常と思われる機密情報、ドライバーのアーキテクチャの任意の部分を公開していません。 詳細については、次を参照してください。、 [Windows ハードウェア認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227016)します。
 

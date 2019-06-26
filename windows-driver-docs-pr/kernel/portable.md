@@ -7,12 +7,12 @@ keywords:
 - プラットフォーム依存定義 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f7c351fbb84fd7d343666f502a63a6a3d2fd3d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b81298c56a6cece7f40a60d024fc31ce9d4f1f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369200"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369693"
 ---
 # <a name="portable"></a>移植性があります。
 
@@ -42,11 +42,11 @@ ms.locfileid: "63369200"
 
 ### <a name="using-wdk-supplied-interfaces"></a>WDK が指定したインターフェイスを使用します。
 
-各 Windows NT executive コンポーネントは、カーネル モードのセットをエクスポート[ドライバー サポート ルーチン](https://msdn.microsoft.com/library/windows/hardware/ff544200)ドライバーおよびその他のすべてのカーネル モード コンポーネントを呼び出すことです。 時間の経過と共にサポート ルーチンの基になる実装が変更された場合、呼び出し元は、定義のコンポーネントへのインターフェイスは変更されないのでポータブルのままです。
+各 Windows NT executive コンポーネントは、カーネル モードのセットをエクスポート[ドライバー サポート ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ドライバーおよびその他のすべてのカーネル モード コンポーネントを呼び出すことです。 時間の経過と共にサポート ルーチンの基になる実装が変更された場合、呼び出し元は、定義のコンポーネントへのインターフェイスは変更されないのでポータブルのままです。
 
 WDK には、システムに固有のデータ型およびドライバー (およびその他のすべてのカーネル モード コンポーネント) を 1 つのプラットフォームから別の移植性を維持するために使用する定数を定義するヘッダー ファイルのセットが用意されています。 すべてのカーネル モード ドライバーには、マスター WDK カーネル モードのヘッダー ファイル、Wdm.h または Ntddk.h のいずれかが含まれます。 マスター ヘッダー ファイルは、基本的なカーネル モードの種類を定義するが、ドライバーが対応するコンパイラ ディレクティブを使用してコンパイルされるときにも、プロセッサ アーキテクチャ固有のヘッダーから選択を適切ないないのみシステム提供のヘッダーにプルします。
 
-一部のドライバーなど[SCSI ミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff565309)、 [NDIS ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556938)、および[ビデオのミニポート ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff570509)、その他のシステム提供のヘッダー ファイルが含まれます。
+一部のドライバーなど[SCSI ミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/scsi-miniport-drivers)、 [NDIS ドライバー](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556938(v=vs.85))、および[ビデオのミニポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/display/video-miniport-drivers-in-the-windows-2000-display-driver-model)、その他のシステム提供のヘッダー ファイルが含まれます。
 
 ドライバーは、プラットフォームに依存する定義を必要とする場合は、内でそれらの定義を分離することをお **\#ifdef**ステートメントでは、各ドライバーをコンパイルして、適切なハードウェア プラットフォーム用にリンクできるようにします。 ただし、ほぼ常に回避できますサポート ルーチン、マクロ、定数、および WDK のマスター ヘッダー ファイルを提供する型を使用して、ドライバーでは、プラットフォーム固有の条件付きでコンパイルされたコードを実装します。
 

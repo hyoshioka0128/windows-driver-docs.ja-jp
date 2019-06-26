@@ -8,12 +8,12 @@ keywords:
 - セキュリティに関するセキュリティ チェックの WDK ファイル システムを確認します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fe72a499e4938a4a969eeae2071bd6bed9e519d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21db40d4c3a5349c3765af1480a66c31fcdb9e25
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344504"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371352"
 ---
 # <a name="security-checks"></a>セキュリティの検査
 
@@ -35,9 +35,9 @@ ms.locfileid: "63344504"
 
 [IRP\_MJ\_ディレクトリ\_コントロール](irp-mj-directory-control2.md)
 
-[IRP\_MJ\_ファイル\_システム\_コントロール](https://msdn.microsoft.com/library/windows/hardware/ff548670)
+[IRP\_MJ\_ファイル\_システム\_コントロール](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-file-system-control)
 
-[IRP\_MJ\_SET\_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff549366)
+[IRP\_MJ\_SET\_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-information)
 
 [権限借用](impersonation.md)
 

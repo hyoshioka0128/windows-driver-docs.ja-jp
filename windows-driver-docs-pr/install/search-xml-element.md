@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 397fba7639374dcad7a28f22a44528674db45c62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 341faceba86aeea5b85aadf63447d2205aaf7653
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348693"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374214"
 ---
 # <a name="search-xml-element"></a>search XML 要素
 
 
-\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)します。\]
+\[DIFx は非推奨、詳細については、「 [DIFx ガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)します。\]
 
 **検索**XML 要素 DPInst サブディレクトリを検索する INF ファイルに対して再帰的に指定された DPInst の作業ディレクトリの下に指示します。 1 つまたは複数のサブディレクトリが指定されて[**サブディレクトリの子要素**](subdirectory-xml-element.md)します。
 
@@ -67,7 +67,7 @@ ms.locfileid: "63348693"
 
 ### <a href="" id="comments"></a>「解説」
 
-次のコード例に示します、**検索**要素を 1 つ含む**サブディレクトリ**を指定する XML 要素、 *i386*サブディレクトリ。 DPInst は再帰的に検索[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)で、 *i386* DPInst の作業ディレクトリのサブディレクトリ。 カスタムのサブディレクトリを示すテキストが太字のフォント スタイルで表示されます。
+次のコード例に示します、**検索**要素を 1 つ含む**サブディレクトリ**を指定する XML 要素、 *i386*サブディレクトリ。 DPInst は再帰的に検索[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)で、 *i386* DPInst の作業ディレクトリのサブディレクトリ。 カスタムのサブディレクトリを示すテキストが太字のフォント スタイルで表示されます。
 
 ```cpp
 <dpinst>

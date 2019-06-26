@@ -10,12 +10,12 @@ keywords:
 - WDK COPP コマンド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28d5e6f35252a79b2c5475d6af8b81e6df56465b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99c3c8cda0b7ad789e0115d1237ad4780e3a3484
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346929"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370271"
 ---
 # <a name="copp-commands"></a>COPP コマンド
 
@@ -25,7 +25,7 @@ ms.locfileid: "63346929"
 
 このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。
 
-ビデオのミニポート ドライバーでは、DirectX VA COPP デバイスに関連付けられた物理コネクタに対して操作を実行する要求を受信できます。 ビデオのミニポート ドライバーの[ *COPPCommand* ](https://msdn.microsoft.com/library/windows/hardware/ff539642)関数へのポインターを渡される、 [ **DXVA\_COPPCommand** ](https://msdn.microsoft.com/library/windows/hardware/ff563141)構造体実行する操作を指定します。 **GuidCommandID**と**CommandData**の DXVA メンバー\_COPPCommand が操作を指定します。 次の操作がサポートされています。
+ビデオのミニポート ドライバーでは、DirectX VA COPP デバイスに関連付けられた物理コネクタに対して操作を実行する要求を受信できます。 ビデオのミニポート ドライバーの[ *COPPCommand* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppcommand)関数へのポインターを渡される、 [ **DXVA\_COPPCommand** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppcommand)構造体実行する操作を指定します。 **GuidCommandID**と**CommandData**の DXVA メンバー\_COPPCommand が操作を指定します。 次の操作がサポートされています。
 
 -   [保護レベルの設定](setting-the-protection-level.md)
 

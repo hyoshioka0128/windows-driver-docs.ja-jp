@@ -10,12 +10,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 017bc45c541a37a5794df40a5c2c761e5e3c4336
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 416fc636ceee74e6f5bf87b95ef368a933393a36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389646"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376036"
 ---
 # <a name="video-miniport-drivers-device-extension-windows-2000-model"></a>ビデオのミニポート ドライバーのデバイス拡張機能 (Windows 2000 モデル)
 
@@ -25,7 +25,7 @@ ms.locfileid: "63389646"
 
 デバイスの拡張機能は、アダプター固有の状態情報の各ミニポート ドライバーの唯一のグローバル プライマリ ストレージの領域です。
 
-各ミニポート ドライバーでは、サイズ、内部構造、およびそのデバイスの拡張機能の内容を定義します。 ビデオ ポート ドライバーは、ポインターをデバイスの拡張機能を除くすべてのシステム定義のミニポート ドライバー関数への入力パラメーターとして渡します**DriverEntry** 、実装されている場合、 [ *HwVidSynchronizeExecutionCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff567369)と*SvgaHwIoPortXxx*関数。 多く **ビデオ ポート * * * Xxx*関数も引数としてこのポインターを必要とします。
+各ミニポート ドライバーでは、サイズ、内部構造、およびそのデバイスの拡張機能の内容を定義します。 ビデオ ポート ドライバーは、ポインターをデバイスの拡張機能を除くすべてのシステム定義のミニポート ドライバー関数への入力パラメーターとして渡します**DriverEntry** 、実装されている場合、 [ *HwVidSynchronizeExecutionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pminiport_synchronize_routine)と*SvgaHwIoPortXxx*関数。 多く **ビデオ ポート * * * Xxx*関数も引数としてこのポインターを必要とします。
 
 ミニポート ドライバーは、デバイスの拡張機能を使用して、アダプターが 1 つの状態情報を維持するためにする必要があります。 システムによって検出された各アダプターには、別のデバイスの拡張機能で管理されている別の状態情報があります。 ミニポート ドライバー、アダプターの状態を格納するのにグローバル変数を使用する必要があります。 これは、シームレスな複数を提供するために特に重要なサポートを監視します。
 

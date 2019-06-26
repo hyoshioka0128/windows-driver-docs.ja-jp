@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 378c8d57eca8631826af6edb56be9af0797c3105
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb889d82a19ff010247d51411d1cf6d43a241d68
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332792"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358812"
 ---
 # <a name="kspropertyaudiosignalprocessingmodes"></a>KSPROPERTY\_AUDIOSIGNALPROCESSING\_モード
 
@@ -50,8 +50,8 @@ ms.locfileid: "63332792"
 <td align="left"><p>〇</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>(フィルター インスタンス) を使用してファクトリをピン留めします。</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722.aspx" data-raw-source="[KSP_PIN](https://msdn.microsoft.com/library/windows/hardware/ff566722.aspx)">KSP_PIN</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx" data-raw-source="[KSMULTIPLE_ITEM](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)">KSMULTIPLE_ITEM</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[KSP_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)">KSP_PIN</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[KSMULTIPLE_ITEM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)">KSMULTIPLE_ITEM</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -68,16 +68,16 @@ Windows 8.1 では、定義されているオーディオ信号処理の 2 つ�
 
 Windows 10 では、追加の 5 つのモードが定義されます。
 
-オーディオ\_SIGNALPROCESSINGMODE\_通信オーディオ\_SIGNALPROCESSINGMODE\_音声オーディオ\_SIGNALPROCESSINGMODE\_MEDIA オーディオ\_SIGNALPROCESSINGMODE\_ムービー オーディオ\_SIGNALPROCESSINGMODE\_詳細については、通知を参照してください[オーディオ信号の処理モード](https://msdn.microsoft.com/windows/hardware/drivers/audio/audio-signal-processing-modes)します。
+オーディオ\_SIGNALPROCESSINGMODE\_通信オーディオ\_SIGNALPROCESSINGMODE\_音声オーディオ\_SIGNALPROCESSINGMODE\_MEDIA オーディオ\_SIGNALPROCESSINGMODE\_ムービー オーディオ\_SIGNALPROCESSINGMODE\_詳細については、通知を参照してください[オーディオ信号の処理モード](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-signal-processing-modes)します。
 
 <a name="remarks"></a>注釈
 -------
 
 基本的なサポート ハンドラー **KSPROPERTY\_AUDIOSIGNALPROCESSING\_モード**渡される必要があります、 **KSP\_PIN**構造体、およびサポートのみを提供する必要がありますループバック以外では、ピンをストリーミングします。 オーディオ ドライバーは、ホスト上のみシグナル処理モードをサポートし、ピンの負荷を軽減する必要があります。 ループバックまたはブリッジのピンのオーディオ ドライバーもプロパティをサポートしてを返す、 **KSMULTIPLE\_項目**構造体の*カウント*パラメーターがゼロ (0) に設定します。
 
-オーディオ ポート クラス ドライバー (Portcls) を実装できる Microsoft と協力する開発したオーディオ ミニポート ドライバー、 [ **IMiniportAudioSignalProcessing::GetModes** ](https://msdn.microsoft.com/library/windows/hardware/dn457660)メソッド。
+オーディオ ポート クラス ドライバー (Portcls) を実装できる Microsoft と協力する開発したオーディオ ミニポート ドライバー、 [ **IMiniportAudioSignalProcessing::GetModes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportaudiosignalprocessing-getmodes)メソッド。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -100,11 +100,11 @@ Windows 10 では、追加の 5 つのモードが定義されます。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**IMiniportAudioSignalProcessing::GetModes**](https://msdn.microsoft.com/library/windows/hardware/dn457660)
+[**IMiniportAudioSignalProcessing::GetModes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportaudiosignalprocessing-getmodes)
 
-[KSMULTIPLE\_項目](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)
+[KSMULTIPLE\_項目](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
-[KSP\_暗証番号 (PIN)](https://msdn.microsoft.com/library/windows/hardware/ff566722.aspx)
+[KSP\_暗証番号 (PIN)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
  
 

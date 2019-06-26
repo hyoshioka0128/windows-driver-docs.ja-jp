@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 661364e75d37b9f0515b155b1826a95949947cea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4dfc26c47c1983b728f78af6103142fa40e1f8c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362056"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372730"
 ---
 # <a name="difaddpropertypageadvanced"></a>DIF_ADDPROPERTYPAGE_ADVANCED
 
@@ -58,16 +58,16 @@ DIF_ADDPROPERTYPAGE_ADVANCED 要求には、デバイスの 1 つまたは複数
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)デバイスを格納しています。
+識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)デバイスを格納しています。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-必要に応じてへのポインターを提供、 [ **SP_DEVINFO_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを識別する構造体。 場合*DeviceInfoSet*は**NULL**、Windows でのプロパティ ページを要求している、[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)します。
+必要に応じてへのポインターを提供、 [ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを識別する構造体。 場合*DeviceInfoSet*は**NULL**、Windows でのプロパティ ページを要求している、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイスのインストール パラメーター ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、 *DeviceInfoData*、指定した場合または、 *DeviceInfoSet*.
+デバイスのインストール パラメーター ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*、指定した場合または、 *DeviceInfoSet*.
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-[ **SP_ADDPROPERTYPAGE_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552337)構造が関連付けられている、 *DeviceInfoData*、指定した場合または、 *DeviceInfoSet*します。
+[ **SP_ADDPROPERTYPAGE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)構造が関連付けられている、 *DeviceInfoData*、指定した場合または、 *DeviceInfoSet*します。
 
 ### <a name="installer-output"></a>インストーラーの出力
 
@@ -75,7 +75,7 @@ DIF_ADDPROPERTYPAGE_ADVANCED 要求には、デバイスの 1 つまたは複数
 インストーラーでは、デバイスのインストール パラメーターを変更できます。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-インストーラーを変更できる、 [ **SP_ADDPROPERTYPAGE_DATA** ](https://msdn.microsoft.com/library/windows/hardware/ff552337)カスタム ページを指定します。
+インストーラーを変更できる、 [ **SP_ADDPROPERTYPAGE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)カスタム ページを指定します。
 
 ### <a name="installer-return-value"></a>インストーラーの戻り値
 
@@ -110,9 +110,9 @@ Windows には、[ドライバ] ページの 1 つ、1 つのリソース ペー
 
 インストーラーでは、Windows を削除し、デバイスの再起動が必要なプロパティを設定するユーザーを許可している場合、インストーラーする必要がありますフラグを設定、DI_FLAGSEX_PROPCHANGE_PENDING デバイスからのインストール パラメーター、 **DialogProc**ルーチン.
 
-デバイスのプロパティ ページを提供する方法の詳細については、次を参照してください。[デバイスのプロパティ ページを提供する](https://msdn.microsoft.com/library/windows/hardware/ff549784)します。
+デバイスのプロパティ ページを提供する方法の詳細については、次を参照してください。[デバイスのプロパティ ページを提供する](https://docs.microsoft.com/windows-hardware/drivers/install/providing-device-property-pages)します。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -137,11 +137,11 @@ Windows には、[ドライバ] ページの 1 つ、1 つのリソース ペー
 ## <a name="see-also"></a>関連項目
 
 
-[**SP_ADDPROPERTYPAGE_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552337)
+[**SP_ADDPROPERTYPAGE_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
 

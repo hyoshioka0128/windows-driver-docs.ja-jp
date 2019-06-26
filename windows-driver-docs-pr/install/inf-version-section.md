@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8002a496726dc802953871c560a8f6d6ea69f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c1381ca06a08a7adf98c5a5ca64a161098d3f82
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325810"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370033"
 ---
 # <a name="inf-version-section"></a>INF Version セクション
 
@@ -50,7 +50,7 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="signature--signature-name-"></a>**Signature="**<em>signature-name</em>**"**  
+<a href="" id="signature--signature-name-"></a>**Signature="** <em>signature-name</em> **"**  
 必要があります **$Windows NT$** または **$Chicago$** します。 これは、この INF は有効なオペレーティング システムを示します。 これらのシグネチャの値には、次の意味があります。
 
 | 署名の値  | 説明                       |
@@ -68,8 +68,8 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 
 システム定義の拡張機能を追加することで OS 固有のインストール情報を指定する必要があります、INF、 *DDInstall*のセクションでは、かどうか、 *signature 名*は<strong>$Windows NT$</strong>または **$Chicago$** します。 (を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)これらの拡張機能の詳細についてはします)。
 
-<a href="" id="class-class-name"></a>**クラス =**<em>クラス名</em>  
-標準の種類のデバイスの名前を指定します、[デバイス セットアップ クラス](device-setup-classes.md)この INF ファイルを使用してインストールされているデバイスの種類。 この名前は通常のシステム定義のクラスの名前など**Net**または**表示、** にリストされています*Devguid.h*します。 詳細については、次を参照してください。 [System-Supplied デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)します。
+<a href="" id="class-class-name"></a>**クラス =** <em>クラス名</em>  
+標準の種類のデバイスの名前を指定します、[デバイス セットアップ クラス](device-setup-classes.md)この INF ファイルを使用してインストールされているデバイスの種類。 この名前は通常のシステム定義のクラスの名前など**Net**または**表示、** にリストされています*Devguid.h*します。 詳細については、次を参照してください。 [System-Supplied デバイス セットアップ クラス](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))します。
 
 INF が指定されている場合、**クラス、** の対応するシステム定義の GUID 値を指定する必要がありますもその**ClassGUID**エントリ。 定義済みのデバイス セットアップ クラスが任意のデバイスの対応する GUID 値を指定することができますデバイスとドライバーのインストールの高速化、INF の検索を最適化するためにシステムのセットアップ コードは、このため。
 
@@ -81,12 +81,12 @@ INF が指定されている場合、**クラス、** の対応するシステ�
 
  
 
-<a href="" id="classguid--nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn-"></a>**ClassGuid={**<em>nnnnnnnn</em>**-***nnnn***-***nnnn***-***nnnn***-**<em>nnnnnnnnnnnn</em>**}**  
+<a href="" id="classguid--nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn-"></a>**ClassGuid={** <em>nnnnnnnn</em> **-***nnnn***-***nnnn***-***nnnn***-** <em>nnnnnnnnnnnn</em> **}**  
 指定します、[デバイス セットアップ クラス](device-setup-classes.md)GUID。 GUID 値は、ここで、書式設定された各*n*は 16 進数。
 
 この GUID 値は、レジストリのデバイス セットアップ クラスのサブキーを指定 **.\\クラス**この INF ファイルからインストールされているデバイスのドライバーのレジストリ情報の書き込み先の下のツリーです。 このクラスに固有の GUID 値は、存在する場合にもデバイスおよびクラスに固有のプロパティ ページのプロバイダーの種類のデバイス クラスのインストーラーを識別します。
 
-新しい[デバイス セットアップ クラス](device-setup-classes.md)、INF を新しく生成されたに指定する必要があります**ClassGUID**値。 Guid を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)します。 デバイス セットアップ クラスを参照してください。
+新しい[デバイス セットアップ クラス](device-setup-classes.md)、INF を新しく生成されたに指定する必要があります**ClassGUID**値。 Guid を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)します。 デバイス セットアップ クラスを参照してください。
 
 **注**  このエントリは、デバイス ドライバー、PnP マネージャーでインストールされたために必要です。
 
@@ -97,7 +97,7 @@ INF 拡張子の最初のバージョンを作成するときに、INF を新し
 **注**のみこのエントリは、INF、拡張機能を作成するときに指定することによって識別される必要な`Class = Extension`と`ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}`します。
  
 
-<a href="" id="provider--inf-creator-"></a>**Provider=%**<em>INF-creator</em>**%**  
+<a href="" id="provider--inf-creator-"></a>**Provider=%** <em>INF-creator</em> **%**  
 INF ファイルのプロバイダーを識別します。 通常、として指定されて、 **%** <em>OrganizationName</em> **%** INF ファイルの後で展開されるトークン[**文字列**](inf-strings-section.md)セクション。 プロバイダー名の文字の最大長は、LINE_LEN です。
 
 たとえば、通常のシステムで提供される INF ファイルの指定、 *INF 作成者*として<strong>%</strong>Msft<strong>%</strong>定義と<strong>%</strong> Msft<strong>% ="</strong>Microsoft<strong>"</strong>でその[**文字列**](inf-strings-section.md)セクション。
@@ -108,27 +108,27 @@ INF ファイルのプロバイダーを識別します。 通常、として指
 
 
 
-<a href="" id="catalogfile-filename-cat"></a>**CatalogFile=**<em>filename</em>**.cat**  
+<a href="" id="catalogfile-filename-cat"></a>**CatalogFile=** <em>filename</em> **.cat**  
 カタログを指定します (.*cat*) デバイス/ドライバーの配布メディアに含まれるファイル。
 
 ときに、[ドライバー パッケージ](driver-packages.md)が Microsoft に提出では、デジタル署名 WHQL を提供します、[カタログ ファイル](catalog-files.md)ドライバー パッケージをテストし、パッケージにデジタル署名を割り当て、WHQL 後。 テストおよび IHV および OEM のドライバー パッケージの署名の詳細については、次を参照してください。 [WHQL リリース署名](whql-release-signature.md)します。 カタログ ファイルは表示されていない、 [ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)セクションまたは[ **CopyFiles** ](inf-copyfiles-directive.md) INF のディレクティブ。 Windows では、INF ファイルと同じ場所に、カタログ ファイルが前提としています。
 
 システム提供の INF ファイルがあることはありません**CatalogFile =** エントリ、オペレーティング システムに対して、このような INF の署名を検証するため、すべてシステム提供*xxx.cat*ファイル。
 
-<a href="" id="catalogfile-nt-unique-filename-cat--"></a>**CatalogFile.nt=**<em>unique-filename</em>**.cat** |  
+<a href="" id="catalogfile-nt-unique-filename-cat--"></a>**CatalogFile.nt=** <em>unique-filename</em> **.cat** |  
 
-<a href="" id="catalogfile-ntx86-unique-filename-cat--"></a>**CatalogFile.ntx86=**<em>unique-filename</em>**.cat** |  
+<a href="" id="catalogfile-ntx86-unique-filename-cat--"></a>**CatalogFile.ntx86=** <em>unique-filename</em> **.cat** |  
 
-<a href="" id="catalogfile-ntia64-unique-filename-cat--"></a>**CatalogFile.ntia64=**<em>unique-filename</em>**.cat** |  
+<a href="" id="catalogfile-ntia64-unique-filename-cat--"></a>**CatalogFile.ntia64=** <em>unique-filename</em> **.cat** |  
 
-<a href="" id="catalogfile-ntamd64-unique-filename-cat"></a>**CatalogFile.ntamd64=**<em>unique-filename</em>**.cat**  
+<a href="" id="catalogfile-ntamd64-unique-filename-cat"></a>**CatalogFile.ntamd64=** <em>unique-filename</em> **.cat**  
 
-<a href="" id="catalogfile-ntarm-unique-filename-cat"></a>**CatalogFile.ntarm=**<em>unique-filename</em>**.cat**  
+<a href="" id="catalogfile-ntarm-unique-filename-cat"></a>**CatalogFile.ntarm=** <em>unique-filename</em> **.cat**  
 
-<a href="" id="catalogfile-ntarm64-unique-filename-cat"></a>**CatalogFile.ntarm64=**<em>unique-filename</em>**.cat**  
+<a href="" id="catalogfile-ntarm64-unique-filename-cat"></a>**CatalogFile.ntarm64=** <em>unique-filename</em> **.cat**  
 
 
-もう 1 つの INF ライター決定、一意のファイル名を指定します。*cat*カタログ ファイルの拡張子。 これらの省略可能なエントリを省略すると、指定された**CatalogFile =**<em>filename.cat</em> WDM デバイス/ドライバーのインストールの検証に使用されます。
+もう 1 つの INF ライター決定、一意のファイル名を指定します。*cat*カタログ ファイルの拡張子。 これらの省略可能なエントリを省略すると、指定された**CatalogFile =** <em>filename.cat</em> WDM デバイス/ドライバーのインストールの検証に使用されます。
 
 修飾されて存在する場合**CatalogFile *。xxx* =** で INF のエントリが存在する**バージョン**と共に、装飾されていないセクション**CatalogFile =** エントリ、装飾されていないエントリと見なされます識別、 *filename.cat*デバイスのインストール、ドライバーのインストール、またはその装飾のエントリが指定されていないこれらのプラットフォームの両方を検証するためです。
 

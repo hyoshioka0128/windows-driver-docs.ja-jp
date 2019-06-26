@@ -7,12 +7,12 @@ keywords:
 - 頂点バッファーの WDK DirectX 8.0、Windows 2000 で名前を変更します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6395e2ecd2df7d8f82efc80e4562d6c536062f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9ad02e4dc44bef6deaf4a8de91e429fa7855bff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365935"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369862"
 ---
 # <a name="handling-renaming-on-windows-2000"></a>Windows 2000 での名前変更の処理
 
@@ -37,7 +37,7 @@ fpVidMem = pMap->pvVirtAddr +
 
 **pvVirtAddr**は、特定のプロセスに AGP ヒープのユーザー モードのマッピングのベース アドレスです。 **fpStart**上記で説明した概念のアドレス空間に AGP ヒープのベースのオフセットと**fpHeapOffset**同じ概念のアドレス空間のベースから画面の開始のオフセットです。
 
-AGP の概念のベース アドレスには、ドライバーが通知されるヒープを通じて、 [ **DdGetDriverInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff549404)コールバック。 ときに*DdGetDriverInfo* GUID を使用して呼び出した\_UpdateNonLocalHeap、 **fpGARTLin**渡されたデータの構造体のフィールドは、同じ値として**fpStart**、つまり、AGP の開始のベース アドレスは、概念のアドレス空間でヒープします。 ドライバーの値の通知されず、残念ながら**pvVirtAddr**ドライバーに渡されたデータ構造体のいずれかを使ってドライバーに表示されていないとします。 そのため、その値がから計算されるように、 **fpVidMem**初期作成する方法、頂点バッファーのカーネルによって計算します。 指定された、 **fpVidMem**現在を差し引くだけで、カーネルによって計算された、 **fpHeapOffset**ヒープの少ない**fpStart**します。 指定された、 **fpHeapOffset**の新しい値の名前を変更、頂点バッファーをスワップする新しいメモリの**fpVidMem**簡単に計算することができます。
+AGP の概念のベース アドレスには、ドライバーが通知されるヒープを通じて、 [ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)コールバック。 ときに*DdGetDriverInfo* GUID を使用して呼び出した\_UpdateNonLocalHeap、 **fpGARTLin**渡されたデータの構造体のフィールドは、同じ値として**fpStart**、つまり、AGP の開始のベース アドレスは、概念のアドレス空間でヒープします。 ドライバーの値の通知されず、残念ながら**pvVirtAddr**ドライバーに渡されたデータ構造体のいずれかを使ってドライバーに表示されていないとします。 そのため、その値がから計算されるように、 **fpVidMem**初期作成する方法、頂点バッファーのカーネルによって計算します。 指定された、 **fpVidMem**現在を差し引くだけで、カーネルによって計算された、 **fpHeapOffset**ヒープの少ない**fpStart**します。 指定された、 **fpHeapOffset**の新しい値の名前を変更、頂点バッファーをスワップする新しいメモリの**fpVidMem**簡単に計算することができます。
 
 次のコード フラグメントを示して、新しいコンピューティング**fpVidMem** AGP サーフェス ロックの呼び出しで。
 
@@ -74,9 +74,9 @@ pLockData->ddRVal = DD_OK;
 return DDHAL_DRIVER_HANDLED;
 ```
 
-非ローカルのビデオ メモリをユーザー モード プロセスにアクセスできるように、ユーザー モード プロセスにマップおよびコミットされるメモリの必要があります。 頂点バッファーの名前変更が実行されているときにこれ行われることを確認することが重要ですを使用して、頂点バッファーの新しいメモリを割り当てることが、**への Eng * * * Xxx*関数[ **HeapVidMemAllocAligned**](https://msdn.microsoft.com/library/windows/hardware/ff567267). これは、メモリがコミットされ、使用する前にマップされていることを保証します。 **HeapVidMemAllocAligned**として使用できる、AGP ヒープと、そのため、このポインターの概念のアドレス空間へのオフセットを返します、 **fpHeapOffset**直接します。
+非ローカルのビデオ メモリをユーザー モード プロセスにアクセスできるように、ユーザー モード プロセスにマップおよびコミットされるメモリの必要があります。 頂点バッファーの名前変更が実行されているときにこれ行われることを確認することが重要ですを使用して、頂点バッファーの新しいメモリを割り当てることが、**への Eng * * * Xxx*関数[ **HeapVidMemAllocAligned**](https://docs.microsoft.com/windows/desktop/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned). これは、メモリがコミットされ、使用する前にマップされていることを保証します。 **HeapVidMemAllocAligned**として使用できる、AGP ヒープと、そのため、このポインターの概念のアドレス空間へのオフセットを返します、 **fpHeapOffset**直接します。
 
-場合は、ドライバーは返します DDHAL\_ドライバー\_AGP サーフェイス カーネル コードのロックの値を返しますの処理**lpSurfData**で、 [ **DD\_LOCKDATA**](https://msdn.microsoft.com/library/windows/hardware/ff551637)ランタイムとアプリケーションのデータ構造体。 場合は、ドライバーは返します DDHAL\_ドライバー\_NOTHANDLED カーネルは、単の値を返します**fpVidMem**ユーザー モードにします。 したがって、DDHAL を返す必要はありません\_ドライバー\_限り処理済み**fpVidMem**新しいユーザー モードのポインターをポイントするように更新します。 ただし、ことをお勧め、ドライバーが両方とも設定**fpVidMem**と**lpSurfData**戻って DDHAL\_ドライバー\_処理済みです。
+場合は、ドライバーは返します DDHAL\_ドライバー\_AGP サーフェイス カーネル コードのロックの値を返しますの処理**lpSurfData**で、 [ **DD\_LOCKDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_lockdata)ランタイムとアプリケーションのデータ構造体。 場合は、ドライバーは返します DDHAL\_ドライバー\_NOTHANDLED カーネルは、単の値を返します**fpVidMem**ユーザー モードにします。 したがって、DDHAL を返す必要はありません\_ドライバー\_限り処理済み**fpVidMem**新しいユーザー モードのポインターをポイントするように更新します。 ただし、ことをお勧め、ドライバーが両方とも設定**fpVidMem**と**lpSurfData**戻って DDHAL\_ドライバー\_処理済みです。
 
  
 

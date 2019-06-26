@@ -4,12 +4,12 @@ description: デバイスの基本的なテストとテストを記述した場�
 ms.assetid: 96BC880B-79DC-4CB1-BD79-87B0A4717634
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 284247bde18720594753b2cd323aa25818fd6832
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61aca1168a72388c26e3bbedb58f4ade6a165154
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367450"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369471"
 ---
 # <a name="how-to-customize-io-for-your-device-using-the-wdtf-simple-io-action-plug-in"></a>WDTF シンプル I/O アクション プラグインを使ってデバイスの I/O をカスタマイズする方法
 
@@ -19,8 +19,8 @@ ms.locfileid: "63367450"
 ### <a name="prerequisites"></a>前提条件
 
 -   テスト対象のデバイスは、テスト コンピューターにインストールされます。
--   テストは、ドライバー パッケージは署名され、テスト コンピューターにインストールされています。 ドライバーが正しくインストールされていることを確認するを参照してください。[ドライバー パッケージをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/test_a_driver_package)します。
--   展開用に構成され、プロビジョニングされたテスト コンピューター。 参照してください[Visual Studio を使用して実行時のドライバーをテストします。](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+-   テストは、ドライバー パッケージは署名され、テスト コンピューターにインストールされています。 ドライバーが正しくインストールされていることを確認するを参照してください。[ドライバー パッケージをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)します。
+-   展開用に構成され、プロビジョニングされたテスト コンピューター。 参照してください[Visual Studio を使用して実行時のドライバーをテストします。](https://docs.microsoft.com/windows-hardware/drivers)
 
 <a name="instructions"></a>手順
 ------------
@@ -37,7 +37,7 @@ ms.locfileid: "63367450"
 
 ### <a href="" id="implement-the-settarget-method-for-your-device"></a>手順 2:デバイスの SetTarget メソッドを実装します。
 
-- たとえば、CWDTFmyDeviceTypeSimpleIoActionImpl.cpp、プロジェクトの実装ファイルを開きのインスタンスを検索[ **IAction::SetTarget** ](https://msdn.microsoft.com/library/windows/hardware/ff538790) SetTarget メソッド。 このメソッドは、コメントと TODO でマークされたセクション: デバイスとの互換性をチェックするコードを実装することを示します。
+- たとえば、CWDTFmyDeviceTypeSimpleIoActionImpl.cpp、プロジェクトの実装ファイルを開きのインスタンスを検索[ **IAction::SetTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iaction-settarget) SetTarget メソッド。 このメソッドは、コメントと TODO でマークされたセクション: デバイスとの互換性をチェックするコードを実装することを示します。
 
   **SetTarget**メソッドを呼び出して 1 回 WDTF インスタンスごとにします。 2 つの主な目的があります。
 
@@ -60,13 +60,13 @@ ms.locfileid: "63367450"
 
 次に、指定された、Open() メソッドを実装することによってテスト用 ITarget を開く必要があります。
 
-これは、 [**開く**](https://msdn.microsoft.com/library/windows/hardware/hh451153)メソッドは、ターゲット デバイスを開こうとする必要があります。 メソッドでこれを行うことがない場合、メソッドは、エラーを示す HRESULT を返す必要があります。 SimpleIO インターフェイスは既に開かれている (初期化されている) 場合、このメソッドが失敗する必要があります。 このメソッドを実装する方法は、ITarget 型と自分の状況に最も適したは、何かによって異なります。 これはおそらく CreateFile() でそれを識別するハンドルを開く必要があることを意味します。 おそらく context 構造は、継続的なテスト_ケースの追跡を維持できるように初期化することを意味します。 エラーが発生した場合は、このメソッドは、理想的 COMReportError () を使用する必要があり、エラーと情報または今後の発生を防ぐために手順の説明を入力する必要があります。
+これは、 [**開く**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-open)メソッドは、ターゲット デバイスを開こうとする必要があります。 メソッドでこれを行うことがない場合、メソッドは、エラーを示す HRESULT を返す必要があります。 SimpleIO インターフェイスは既に開かれている (初期化されている) 場合、このメソッドが失敗する必要があります。 このメソッドを実装する方法は、ITarget 型と自分の状況に最も適したは、何かによって異なります。 これはおそらく CreateFile() でそれを識別するハンドルを開く必要があることを意味します。 おそらく context 構造は、継続的なテスト_ケースの追跡を維持できるように初期化することを意味します。 エラーが発生した場合は、このメソッドは、理想的 COMReportError () を使用する必要があり、エラーと情報または今後の発生を防ぐために手順の説明を入力する必要があります。
 
 **注**  場合、このメソッドが失敗する必要があります ISimpleIO\_アクションは既に開かれています。
 
  
 
--   たとえば、CWDTFmyDeviceTypeSimpleIoActionImpl.cpp、プロジェクトの実装ファイルを開きのインスタンスを検索[**オープン**](https://msdn.microsoft.com/library/windows/hardware/hh451153)メソッド。 このメソッドでは、コメントと TODO でマークされたセクションがあります。
+-   たとえば、CWDTFmyDeviceTypeSimpleIoActionImpl.cpp、プロジェクトの実装ファイルを開きのインスタンスを検索[**オープン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-open)メソッド。 このメソッドでは、コメントと TODO でマークされたセクションがあります。
 
     ```cpp
     //
@@ -89,7 +89,7 @@ ms.locfileid: "63367450"
 
  
 
--   たとえば、CWDTFmyDeviceTypeSimpleIoActionImpl.cpp、プロジェクトの実装ファイルを開きのインスタンスを検索、 [**閉じる**](https://msdn.microsoft.com/library/windows/hardware/hh451151)メソッド。 このメソッドでは、コメントと TODO でマークされたセクションがあります。
+-   たとえば、CWDTFmyDeviceTypeSimpleIoActionImpl.cpp、プロジェクトの実装ファイルを開きのインスタンスを検索、 [**閉じる**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-close)メソッド。 このメソッドでは、コメントと TODO でマークされたセクションがあります。
 
     ```cpp
     //
@@ -137,20 +137,20 @@ ms.locfileid: "63367450"
 
 ### <a href="" id="build-and-install-the-simple-i-o-action-plugin-"></a>手順 6:ビルドし、単純な I/O 操作プラグインのインストール
 
-されていない場合は、テスト用コンピューターを構成する必要があります。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+されていない場合は、テスト用コンピューターを構成する必要があります。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
 
 1. ソリューションをビルドします。
 
    プラグインの単純な I/O 操作をビルドすると、2 つのテストが作成されます。 これらのテストでは、インストールし、テスト コンピューターでプラグインをアンインストールします。 既定では、単純な I/O 操作のプラグイン ファイルの表示で**テスト グループ エクスプ ローラー**、テスト カテゴリ**マイ テスト カテゴリ**。
 
-2. 単純な I/O 操作のプラグインをインストールするには、という名前のテストを実行**登録 WDTF**<em>&lt;プロジェクト&gt;</em>**SimpleIOAction.DLL**テスト コンピューター. 選択し、実行に関する情報のテストは、「の[Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)します。
+2. 単純な I/O 操作のプラグインをインストールするには、という名前のテストを実行**登録 WDTF**<em>&lt;プロジェクト&gt;</em>**SimpleIOAction.DLL**テスト コンピューター. 選択し、実行に関する情報のテストは、「の[Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)します。
 3. 単純な I/O 操作のプラグインがインストールされていることを確認するには、実行、 **WDTF 単純な I/O プラグインのデバイスを表示**テスト コンピューターでテストします。 プラグインし、デバイスは、結果に表示する必要があります。 詳細については、次を参照してください。[カスタム WDTF 単純な I/O 操作プラグインをが、デバイスに必要な場合を判断する方法を](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)します。
 4. 単純な I/O 操作のプラグインをアンインストールするには、という名前のテストを実行**の登録を解除 WDTF**<em>&lt;プロジェクト&gt;</em>**SimpleIOAction.DLL**のテストコンピューター。 実行して、プラグインをアンインストールすることを確認することができます、 **WDTF 単純な I/O プラグインのデバイスを表示**をテストします。
 
 ## <a name="related-topics"></a>関連トピック
-[Test Authoring and Execution Framework (TAEF)](https://msdn.microsoft.com/library/windows/hardware/hh439725)  
+[Test Authoring and Execution Framework (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index)  
 [カスタム WDTF 単純な I/O 操作プラグインが、デバイスに必要なかどうかを判断する方法](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)  
-[Visual Studio を使って実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)  
+[Visual Studio を使って実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)  
 
 
 

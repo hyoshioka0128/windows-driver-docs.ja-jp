@@ -7,12 +7,12 @@ keywords:
 - ディスパッチ ルーチンの WDK カーネル、Irp の完了
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7067367e6fa74cc1fd2da8140b3b1d7080db8c3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 588129ef2e689f021b26e654268664c5d73854db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358074"
 ---
 # <a name="when-to-complete-an-irp-in-a-dispatch-routine"></a>ディスパッチ ルーチン内で IRP を完了するタイミング
 
@@ -28,7 +28,7 @@ ms.locfileid: "63341432"
 
 -   ディスパッチ ルーチンが、自身の I/O スタックの場所ですべてのパラメーターが無効であると判断した場合、前に、状態など、該当するエラー状態をすぐにその IRP を完了する必要があります\_無効な\_パラメーター。
 
--   IRP に関数コードが含まれている場合[ **IRP\_MJ\_クリーンアップ**](https://msdn.microsoft.com/library/windows/hardware/ff550718)、 [ *DispatchCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンすべての IRP を完了する必要があります、ドライバーの I/O で指定されたファイル オブジェクトのスタックの場所とクリーンアップ IRP の完了はターゲット デバイス オブジェクトに現在キューに登録します。
+-   IRP に関数コードが含まれている場合[ **IRP\_MJ\_クリーンアップ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)、 [ *DispatchCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンすべての IRP を完了する必要があります、ドライバーの I/O で指定されたファイル オブジェクトのスタックの場所とクリーンアップ IRP の完了はターゲット デバイス オブジェクトに現在キューに登録します。
 
     クリーンアップ要求は、アプリケーションが終了していますか、ドライバーのデバイス オブジェクトを表すファイル オブジェクトのファイル ハンドルが閉じられてことを示します。 ときに、 *DispatchCleanup*ルーチン返します、通常は、ドライバーの[ *DispatchClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは次に呼び出されます。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63341432"
 
     たとえば、ドライバー保存、デバイスの現在のモード、デバイスの拡張機能で初期化後にデバイスのモードが変更頻度の低い場合に特にします。 その[ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチンは、この格納された情報を返すことによって、現在のデバイス モードのクエリを実行する要求を満たす、でした。
 
-ディスパッチ ルーチンを呼び出す必要がありますそれ以外の場合、 [ **IoMarkIrpPending**](https://msdn.microsoft.com/library/windows/hardware/ff549422)、後続の処理のためには、その他のドライバー ルーチンに IRP のキューおよび状態を返す\_保留します。
+ディスパッチ ルーチンを呼び出す必要がありますそれ以外の場合、 [ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)、後続の処理のためには、その他のドライバー ルーチンに IRP のキューおよび状態を返す\_保留します。
 
  
 

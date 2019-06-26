@@ -8,12 +8,12 @@ keywords:
 - WDK の INF ファイルを印刷します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5743944ddb702ae87daf4a57eb22b7a391ae6dbb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 001676714fb497acfd6a3785eb621a0ea3da5acf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358236"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356044"
 ---
 # <a name="printer-inf-files"></a>プリンター INF ファイル
 
@@ -21,7 +21,7 @@ ms.locfileid: "63358236"
 
 
 
-INF ファイルの詳細についてで提供される[INF ファイルの一般的なガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff544975)します。
+INF ファイルの詳細についてで提供される[INF ファイルの一般的なガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/general-guidelines-for-inf-files)します。
 
 次のトピックでは、プリンターの INF ファイルに関する特定の情報を説明します。
 

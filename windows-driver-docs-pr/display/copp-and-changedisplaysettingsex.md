@@ -12,12 +12,12 @@ keywords:
 - 保護の種類の ACP WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bcde3a67ea1038eb92ffa3100088852ac8a7bff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e14718f2b7a0593851e3a9e03c50f11c8d8663f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370270"
 ---
 # <a name="copp-and-changedisplaysettingsex"></a>COPP と ChangeDisplaySettingsEx
 
@@ -27,7 +27,7 @@ ms.locfileid: "63346918"
 
 **このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。**
 
-アナログ コンテンツ保護 (ACP) を Microsoft win32 レベルのアプリケーションを変更できるため、 **ChangeDisplaySettingsEx**関数の場合、ビデオのミニポート ドライバーを確認してください、ACP 保護の調整がを通じて型を**ChangeDisplaySettingsEx**はによって行われる調整に依存しない、 **IAMCertifiedOutputProtection**インターフェイス。 つまり、ビデオのミニポート ドライバーの物理的なコネクタで ACP 保護の種類が設定されている場合[ *COPPCommand* ](https://msdn.microsoft.com/library/windows/hardware/ff539642)関数の場合、ビデオのミニポート ドライバーを許可すべき、ACP を無効にします。保護の種類の物理コネクタ経由で、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff567805)要求。 ユーザー モードへの呼び出しに注意してください。 **ChangeDisplaySettingsEx** IOCTL 開始\_ビデオ\_処理\_ビデオのミニポート ドライバーに VIDEOPARAMETERS 要求。
+アナログ コンテンツ保護 (ACP) を Microsoft win32 レベルのアプリケーションを変更できるため、 **ChangeDisplaySettingsEx**関数の場合、ビデオのミニポート ドライバーを確認してください、ACP 保護の調整がを通じて型を**ChangeDisplaySettingsEx**はによって行われる調整に依存しない、 **IAMCertifiedOutputProtection**インターフェイス。 つまり、ビデオのミニポート ドライバーの物理的なコネクタで ACP 保護の種類が設定されている場合[ *COPPCommand* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppcommand)関数の場合、ビデオのミニポート ドライバーを許可すべき、ACP を無効にします。保護の種類の物理コネクタ経由で、 [ **IOCTL\_ビデオ\_処理\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)要求。 ユーザー モードへの呼び出しに注意してください。 **ChangeDisplaySettingsEx** IOCTL 開始\_ビデオ\_処理\_ビデオのミニポート ドライバーに VIDEOPARAMETERS 要求。
 
 詳細については、 **ChangeDisplaySettingsEx**関数を Windows SDK のマニュアルを参照してください。
 

@@ -6,12 +6,12 @@ keywords:
 - ドライバー カバレッジ Toolkit WDK は、データの収集
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc6b124c4f2389398b2dfca040ff249b30288cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 740fdf45211eec9df18b69db9aa876817604dcc1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329888"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358273"
 ---
 # <a name="how-to-collect-irp-coverage-data"></a>IRP カバレッジ データを収集する方法
 
@@ -22,7 +22,7 @@ ms.locfileid: "63329888"
 
 次の手順は、ドライバーのカバレッジ ツールを使用して I/O 要求パケット (Irp) のカバレッジ データを収集する方法を説明し、[ドライバー カバレッジ フィルター ドライバー](driver-coverage-filter-driver.md)します。 ツールはの一部、[デバイス基礎テスト](device-fundamentals-tests.md)カバレッジのカテゴリの下。
 
-WDK と Visual Studio のテスト環境の設定の詳細については、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)します。 選択して、テストとツールのパラメーターの構成については、次を参照してください。[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)と[デバイス基礎テスト パラメーター](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)します。
+WDK と Visual Studio のテスト環境の設定の詳細については、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)します。 選択して、テストとツールのパラメーターの構成については、次を参照してください。[を選択して、デバイスの基本テストを構成する方法](https://docs.microsoft.com/windows-hardware/drivers)と[デバイス基礎テスト パラメーター](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 1.  インストール、[ドライバー カバレッジ フィルター ドライバー](driver-coverage-filter-driver.md)テスト コンピューター。
 
@@ -32,7 +32,7 @@ WDK と Visual Studio のテスト環境の設定の詳細については、次�
 
     -   デバイスを使用、上位フィルター ドライバーまたは低いフィルター ドライバーとドライバー カバレッジ フィルター ドライバーをインストールする、 *UpperFilter*パラメーター。 カバレッジ フィルター ドライバーに関する情報と、ドライバーをインストールする方法についてのガイドラインでは、次を参照してください[ドライバー カバレッジ フィルター ドライバー。](driver-coverage-filter-driver.md)
 
-    については、ツールを実行して、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)と[を選択して、デバイスの基本テストを構成する方法](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)します。
+    については、ツールを実行して、次を参照してください。 [Visual Studio を使用して実行時にドライバーをテストする方法](https://docs.microsoft.com/windows-hardware/drivers)と[を選択して、デバイスの基本テストを構成する方法](https://docs.microsoft.com/windows-hardware/drivers)します。
 
 2.  現在の IRP カバレッジ データを消去します。
 

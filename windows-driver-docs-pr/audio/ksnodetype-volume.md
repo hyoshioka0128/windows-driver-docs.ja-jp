@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 502b87d2ffdf8104fe17720f11920f404ebaa143
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feb4a582311c86625216a380c198a6d0915d7d75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333219"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359007"
 ---
 # <a name="ksnodetypevolume"></a>KSNODETYPE\_ボリューム
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333219"
 
 KSNODETYPE\_[ボリューム] ノードはボリューム (利益または減衰) コントロールを表します。 ボリューム コントロールが 1 つの入力ストリームと 1 つの出力ストリーム。2 つのストリームは、同じデータ形式があります。 減衰 (ボリュームの削減) を適用できるまたはストリームにゲイン (ボリュームの増加)。 さらに、反転、信号をサポートできます必要に応じて。
 
-マルチ チャネル ボリューム ノードについては、次を参照してください。[マルチ チャネルのノードを公開する](https://msdn.microsoft.com/library/windows/hardware/ff536380)します。
+マルチ チャネル ボリューム ノードについては、次を参照してください。[マルチ チャネルのノードを公開する](https://docs.microsoft.com/windows-hardware/drivers/audio/exposing-multichannel-nodes)します。
 
 KSNODETYPE\_[ボリューム] ノードは、次の必要なプロパティをサポートする必要があります。
 

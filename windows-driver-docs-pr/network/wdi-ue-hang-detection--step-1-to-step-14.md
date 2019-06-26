@@ -4,12 +4,12 @@ description: UE ハング検出の手順 1 ~ 14 を以下に示します。 手�
 ms.assetid: 0F6F9B31-27FB-44B1-8C0E-A270E8BAF295
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5fec9b4f61e92db8fd486339e658afcef99745e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d342bcbe9ab7a11cf9f72aa9dcd9c894c3b327f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368209"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357101"
 ---
 # <a name="ue-hang-detection-steps-1-14"></a>UE ハング検出:手順 1 ~ 14
 
@@ -27,7 +27,7 @@ UE ハング検出の手順 1 ~ 14 を以下に示します。 手順は、図�
     -   ファームウェアが単に時間がかかりすぎる、コマンド タイムアウト後に、LE は WDI コマンドを実行できます。 UE、それを適切に処理します。
     -   ファームウェアがハングしている場合、WDI コマンドはすぐに完了しません。 LE 実行する必要がある突然の削除手順 16 であるハードウェアがリセットされたときに潜在的な競合状態の特別な処理なしで完了するには、安全では、します。
 
-7.  WDI 診断コマンドを生成する WDI タイマーが起動します。 この WDI コマンドは、LE ドライバーへの呼び出し[ *MiniportWdiAdapterHangDiagnose*](https://msdn.microsoft.com/library/windows/hardware/mt297558)、WDI OID ではなく。
+7.  WDI 診断コマンドを生成する WDI タイマーが起動します。 この WDI コマンドは、LE ドライバーへの呼び出し[ *MiniportWdiAdapterHangDiagnose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_adapter_hang_diagnose)、WDI OID ではなく。
 8.  LE は、ハードウェア コントロールの登録状態、および必要に応じて、ファームウェアの完全な状態を収集します。
     -   IHV ドライバーでは、1 (kb 単位) に限定されているハードウェア レジスタのコンテンツの収集が予想され、関数の戻り値で返すことにします。 さらに、実稼働前環境で、LE も試してください IHV が事後のデバッグを十分に実行できるように、ファイルにファームウェアのコンテキストをダンプします。 スイッチは、ハードウェア レジスタ、およびファームウェア イメージの収集を制御するレジストリ キーとして実装することができます。
     -   LE も取り消し処理の現在のコマンドをマークします。 場合を避ける診断コマンド補完競合、許容可能な場合は、LE は何もこのコマンドです。
@@ -36,7 +36,7 @@ UE ハング検出の手順 1 ~ 14 を以下に示します。 手順は、図�
 9.  WDI は、コントロールの登録状態を受信します。
 10. 後で、LE で示されたように、WDI はハング WDI コマンドをマークします。
 11. WDI を返します (完了) WDI 完了せず、NDIS コマンド。 これは安全なため、WDI ダブル バッファー NDIS コマンド。
-12. WDI は呼び出しをリセットする NDIS と呼び出し[ **NdisWriteErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff564663)で*エラー コード*の**NDIS\_エラー\_コード\_ハードウェア\_エラー** (0xc000138a)。 これは、結果、LE のモジュールの名前を持つシステム イベント ログに記録するイベント。 エラー イベント ID として自動的にポップアップ (0xc000138a | 0 xffff) – 0n5002 します。 LE は、エラー ログの書き込みにも同じエラー コードを使用する場合、データの最初の dword 値は、LE、イベントを簡単に分離するには、高ビット セット (0x80000000) を含める必要があります。 WDI は、DWORD の最初のデータを 0x00000000 に 0x7fffffff を使用します。
+12. WDI は呼び出しをリセットする NDIS と呼び出し[ **NdisWriteErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiswriteerrorlogentry)で*エラー コード*の**NDIS\_エラー\_コード\_ハードウェア\_エラー** (0xc000138a)。 これは、結果、LE のモジュールの名前を持つシステム イベント ログに記録するイベント。 エラー イベント ID として自動的にポップアップ (0xc000138a | 0 xffff) – 0n5002 します。 LE は、エラー ログの書き込みにも同じエラー コードを使用する場合、データの最初の dword 値は、LE、イベントを簡単に分離するには、高ビット セット (0x80000000) を含める必要があります。 WDI は、DWORD の最初のデータを 0x00000000 に 0x7fffffff を使用します。
 13. 呼び出しを返します。
 14. NDIS は IRP を完了します。
 
@@ -47,7 +47,7 @@ NDIS OID が完成したら、\_設定\_POWER PnP 操作のデッドロックを
 ## <a name="related-topics"></a>関連トピック
 
 
-[*MiniportWdiAdapterHangDiagnose*](https://msdn.microsoft.com/library/windows/hardware/mt297558)
+[*MiniportWdiAdapterHangDiagnose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_adapter_hang_diagnose)
 
 [(突然の削除) のリセット: 15 ~ 20 のステップ](wdi-reset--surprise-remove---steps-15-20.md)
 

@@ -4,20 +4,20 @@ description: このセクションには、NetworkDirect の切断スキーム�
 ms.assetid: A7973588-5AED-494E-92CA-D5EFB2C7950A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1a96c82c7ce74f3d9d36b4eff463ff11978b018
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76dcb490e174d25ef47b8f24dd20d0cab985217a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380596"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371216"
 ---
 # <a name="networkdirect-disconnect-scheme"></a>NetworkDirect 切断スキーム
 
 
-ここで説明されているスキームは、両方に適用されます[NDSPI](https://msdn.microsoft.com/library/cc904391)バージョン 2 と[NDKPI](network-direct-kernel-programming-interface--ndkpi-.md)します。 次の用語が使用されます。
+ここで説明されているスキームは、両方に適用されます[NDSPI](https://docs.microsoft.com/previous-versions/windows/desktop/cc904391(v=vs.85))バージョン 2 と[NDKPI](network-direct-kernel-programming-interface--ndkpi-.md)します。 次の用語が使用されます。
 
 -   ND は NDSPI または NDK を参照するために使用します。
--   *NdDisconnect* ND コンシューマーは正常な切断を開始するには、関数呼び出しを参照するために使用します。 これは、NDSPI [ **INDConnector::Disconnect**](https://msdn.microsoft.com/library/cc904364)します。 NDKPI *NdkDisconnect* ([*NDK\_FN\_切断*](https://msdn.microsoft.com/library/windows/hardware/hh439885))。
+-   *NdDisconnect* ND コンシューマーは正常な切断を開始するには、関数呼び出しを参照するために使用します。 これは、NDSPI [ **INDConnector::Disconnect**](https://docs.microsoft.com/previous-versions/windows/desktop/cc904364(v=vs.85))します。 NDKPI *NdkDisconnect* ([*NDK\_FN\_切断*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_disconnect))。
 -   *NdDisconnectIndication* ND プロバイダーが正常に受信すると、ND プロバイダーによって、ND コンシューマーに配信を示す値を参照するために使用または何らかの理由 (以外のローカル接続が中止されたことを検出した場合、ピアから切断NDK コンシューマーの発行などの開始を所有*NdDisconnect*または*NdCloseConnector*)。
 
 以下は、A と B は、ND 接続の両側を参照してください。 A のコンシューマーが ND コンシューマー側に、プロバイダー、側に、ND プロバイダーを参照およびコンシューマー B/プロバイダー B が B. 側でこれらの同じエンティティを指す同様にA のコンシューマーを呼び出すと*NdDisconnect*、プロバイダーの A を正常に送信する必要がありますが B の側に通知を切断し、コンシューマー A の完了*NdDisconnect*要求のみの両方の次の条件が発生した場合。

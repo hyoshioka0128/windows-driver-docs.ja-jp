@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7908f944c2963d06457925f344c4f3456f2bb3ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87bde33d8a9fbbe7486d18e225bace5157806659
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382091"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358407"
 ---
 # <a name="srbclosedeviceinstance"></a>SRB\_閉じる\_デバイス\_インスタンス
 
@@ -42,7 +42,7 @@ ms.locfileid: "63382091"
 
 ### <a name="comments"></a>コメント
 
-ほとんどのアダプターが複数のインスタンスをサポートしてそのような場合は、 **FilterInstanceExtensionSize**フィールドに、 [ **HW\_初期化\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff559682)構造が 0 に設定する必要があり、このコマンドを受信しない必要があります。
+ほとんどのアダプターが複数のインスタンスをサポートしてそのような場合は、 **FilterInstanceExtensionSize**フィールドに、 [ **HW\_初期化\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)構造が 0 に設定する必要があり、このコマンドを受信しない必要があります。
 
  
 

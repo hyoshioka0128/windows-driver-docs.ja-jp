@@ -4,12 +4,12 @@ description: ドライバーの作成者と設計者は、あらゆるドライ�
 ms.assetid: 77FB242E-A07C-4298-80ED-866F8D80118C
 ms.date: 06/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b4a5479671ebb9a7cd00bada0b60450895891de5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f73ebe4951c171b0558cf75f143dea3b301912a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371477"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371992"
 ---
 # <a name="threat-modeling-for-drivers"></a>ドライバーの脅威モデリング
 
@@ -278,7 +278,7 @@ STRIDE の頭字語では、ソフトウェアに対する脅威の 6 つのカ�
 
 Microsoft SDL プロセスでは、さまざまな組織の 1 人の開発者などの任意のサイズに合わせて変更できることをお勧めのソフトウェア開発プロセスを提供します。 ソフトウェア開発プロセスに SDL の推奨事項のコンポーネントの追加を検討してください。
 
-詳細については、次を参照してください。 [Microsoft Security Development Lifecycle (SDL): プロセス ガイダンス](https://msdn.microsoft.com/library/84aed186-1d75-4366-8e61-8d258746bopq.aspx)します。
+詳細については、次を参照してください。 [Microsoft Security Development Lifecycle (SDL): プロセス ガイダンス](https://docs.microsoft.com/previous-versions/windows/desktop/cc307891(v=msdn.10))します。
 
 **トレーニングと組織の機能**-トレーニングを認識し、ソフトウェアの脆弱性の修復機能を拡張するソフトウェア開発のセキュリティを推進します。
 
@@ -338,17 +338,17 @@ SDL プロセスの詳細については、その他のリソースを参照し�
 
 [一般的なドライバーの信頼性の問題](https://download.microsoft.com/download/5/7/7/577a5684-8a83-43ae-9272-ff260a9c20e2/drvqa.doc)ホワイト ペーパー
 
-[Windows ドライバーのロジックをキャンセル](https://msdn.microsoft.com/library/windows/hardware/dn653289)ホワイト ペーパー
+[Windows ドライバーのロジックをキャンセル](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653289(v=vs.85))ホワイト ペーパー
 
 [Windows セキュリティ モデル: 知る必要がありますすべてドライバー ライター](windows-security-model.md)
 
 **Microsoft Windows Driver Kit (DDK)**
 
-参照してください[ドライバーのプログラミング手法](https://msdn.microsoft.com/library/windows/hardware/ff544177)で[カーネル モード ドライバーのアーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff557560)
+参照してください[ドライバーのプログラミング手法](https://docs.microsoft.com/windows-hardware/drivers/kernel/driver-programming-techniques)で[カーネル モード ドライバーのアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/)
 
 **テスト ツール**
 
-参照してください[Windows ハードウェア ラボ キット](https://msdn.microsoft.com/library/windows/hardware/dn930814)で[パフォーマンスと互換性のテスト](https://msdn.microsoft.com/windows/hardware/commercialize/test/index)
+参照してください[Windows ハードウェア ラボ キット](https://docs.microsoft.com/windows-hardware/drivers/)で[パフォーマンスと互換性のテスト](https://docs.microsoft.com/windows-hardware/test/index)
 
 **既知の脅威やソフトウェアの脆弱性のデータベースの公開**
 

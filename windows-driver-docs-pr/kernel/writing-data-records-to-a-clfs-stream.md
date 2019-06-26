@@ -12,12 +12,12 @@ keywords:
 - WDK CLFS をバッファー処理します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f817b8406a1d5ad041ba418004b09e1ed9f13e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05dc22bf9d914f6ba08c3efd1f0ecf4fbf9eb302
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356006"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374122"
 ---
 # <a name="writing-data-records-to-a-clfs-stream"></a>CLFS ストリームへのデータ レコードの書き込み
 
@@ -27,15 +27,15 @@ ms.locfileid: "63356006"
 
 Common Log File System (CLFS) ストリーム内のレコードの 2 種類があります。 データがレコードとレコードを再起動します。 このトピックでは、データ レコードをストリームに書き込む方法について説明します。 再起動のレコードを作成する方法については、次を参照してください。 [CLFS Stream にの再開レコードの書き込み](writing-restart-records-to-a-clfs-stream.md)します。
 
-データ レコードを作成するには、CLFS ストリームに、前に呼び出すことによって、マーシャ リング領域を作成する必要があります[ **ClfsCreateMarshallingArea**](https://msdn.microsoft.com/library/windows/hardware/ff541520)します。 (これは揮発性メモリ内に) マーシャ リング領域にレコードを追加でき、CLFS は安定ストレージにレコードを定期的にフラッシュします。
+データ レコードを作成するには、CLFS ストリームに、前に呼び出すことによって、マーシャ リング領域を作成する必要があります[ **ClfsCreateMarshallingArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfscreatemarshallingarea)します。 (これは揮発性メモリ内に) マーシャ リング領域にレコードを追加でき、CLFS は安定ストレージにレコードを定期的にフラッシュします。
 
 ストリームへのデータ レコードの書き込みに関するいくつかのバリエーションがあります。 たとえば、事前に領域を予約して、複数のレコードを作成し、または領域を予約しないでのレコードを書き込むことができます。 マーシャ リング領域に記述するレコードのすぐにキューに安定したストレージは、登録を要求することができます、またはキューにそのポリシーに従ってレコード CLFS をさせることができます。
 
 すべてのバリエーション データ レコードの作成では、次の手順を完了します。
 
-1.  1 つまたは複数の配列を作成する[ **CLFS\_書き込み\_エントリ**](https://msdn.microsoft.com/library/windows/hardware/ff541891)構造体。 各書き込みエントリの構造は、レコードのデータを入力したらバッファーを指します。
+1.  1 つまたは複数の配列を作成する[ **CLFS\_書き込み\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_write_entry)構造体。 各書き込みエントリの構造は、レコードのデータを入力したらバッファーを指します。
 
-2.  呼び出す[ **ClfsReserveAndAppendLog** ](https://msdn.microsoft.com/library/windows/hardware/ff541723)または[ **ClfsReserveAndAppendLogAligned**](https://msdn.microsoft.com/library/windows/hardware/ff541726)します。
+2.  呼び出す[ **ClfsReserveAndAppendLog** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreserveandappendlog)または[ **ClfsReserveAndAppendLogAligned**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreserveandappendlogaligned)します。
 
 次のサブセクションでは、テーブルのパラメーターを設定する方法を表示する**ClfsReserveAndAppendLog**のストリームへのレコードの書き込みに関するいくつかのバリエーション。
 
@@ -61,7 +61,7 @@ Common Log File System (CLFS) ストリーム内のレコードの 2 種類が�
 </tr>
 <tr class="even">
 <td><p><em>rgWriteEntries</em></p></td>
-<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff541891" data-raw-source="[&lt;strong&gt;CLFS_WRITE_ENTRY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541891)"> <strong>CLFS_WRITE_ENTRY</strong> </a>構造体。</p></td>
+<td><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_write_entry" data-raw-source="[&lt;strong&gt;CLFS_WRITE_ENTRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_write_entry)"> <strong>CLFS_WRITE_ENTRY</strong> </a>構造体。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cWriteEntries</em></p></td>
@@ -89,7 +89,7 @@ Common Log File System (CLFS) ストリーム内のレコードの 2 種類が�
 </tr>
 <tr class="odd">
 <td><p><em>plsn</em></p></td>
-<td><p>ポインターを<a href="https://msdn.microsoft.com/library/windows/hardware/ff541824" data-raw-source="[&lt;strong&gt;CLFS_LSN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541824)"> <strong>CLFS_LSN</strong> </a>構造体。 (これは、書き込まれるレコードの LSN を受信する出力パラメーターです)。</p></td>
+<td><p>ポインターを<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_lsn" data-raw-source="[&lt;strong&gt;CLFS_LSN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_lsn)"> <strong>CLFS_LSN</strong> </a>構造体。 (これは、書き込まれるレコードの LSN を受信する出力パラメーターです)。</p></td>
 </tr>
 </tbody>
 </table>
@@ -153,7 +153,7 @@ Common Log File System (CLFS) ストリーム内のレコードの 2 種類が�
 
  
 
-**注**  マーシャ リング領域内の領域を予約する別の方法を呼び出すことです[ **ClfsAlignReservedLog** ](https://msdn.microsoft.com/library/windows/hardware/ff540779)続けて[ **ClfsAllocReservedLog。**](https://msdn.microsoft.com/library/windows/hardware/ff540782).
+**注**  マーシャ リング領域内の領域を予約する別の方法を呼び出すことです[ **ClfsAlignReservedLog** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsalignreservedlog)続けて[ **ClfsAllocReservedLog。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsallocreservedlog).
 
  
 

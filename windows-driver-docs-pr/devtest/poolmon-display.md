@@ -7,12 +7,12 @@ keywords:
 - メモリ プール モニタの WDK を表示します
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de486ea2c5533242c67d882b2148702c0af2f9fc
-ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
+ms.openlocfilehash: ea1ee90c780bf56cb1e202b3f4b749c233157e63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051639"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358272"
 ---
 # <a name="poolmon-display"></a>PoolMon の表示
 
@@ -35,7 +35,7 @@ PoolMon は、コマンド ウィンドウで、プールのメモリ割り当�
 |**バイト数**|使用されるバイトの割り当てのサイズ。|
 |**( )**|前回の更新以降の割り当てサイズの変更。|
 |**Alloc ごと**|相違の値を除算してバイト単位の値|
-|**Mapped_Driver**|ローカルのドライバー (**/c**) ドライバーとシステム コンポーネント頻繁に使用し、(**/g**) プール タグの値を割り当てることです。 この列は、使用する場合のみ表示されます、 **/c**または **/g**パラメーター。|
+|**Mapped_Driver**|ローカルのドライバー ( **/c**) ドライバーとシステム コンポーネント頻繁に使用し、( **/g**) プール タグの値を割り当てることです。 この列は、使用する場合のみ表示されます、 **/c**または **/g**パラメーター。|
 
 次のサンプル PoolMon 出力は、割り当ての数によって並べ替えられます。 (このように、ディスプレイを並べ替え、開始と PoolMon、 **/a**パラメーターです)。
 
@@ -65,4 +65,4 @@ PoolMon を表示するデータが収集され、プールのタグ付けを有
 
 ## <a name="interpreting-tag-values"></a>タグの値を解釈します。
 
-プールのすべてのメモリ割り当ては、タグがすべてが特徴的なタグの値。 プールのメモリ割り当てが、メモリの割り当て、ドライバーを使用して、タグの値を設定するときに、特性のタグの値を持つ[ **exallocatepoolwithtag に**](https://msdn.microsoft.com/library/windows/hardware/ff544520)または[ **ExAllocatePoolWithQuotaTag**](https://msdn.microsoft.com/library/windows/hardware/ff544513)します。 ドライバーをタグの値を割り当てない場合 ([**ExAllocatePool**](https://msdn.microsoft.com/library/windows/hardware/ff544501)、 [ **ExAllocatePoolWithQuota**](https://msdn.microsoft.com/library/windows/hardware/ff544506))、Windows がまだですが、タグを作成します[なし] の既定のタグ値を割り当てます。 その結果、他のプール割り当てのドライバーの割り当ての統計情報を区別できません。
+プールのすべてのメモリ割り当ては、タグがすべてが特徴的なタグの値。 プールのメモリ割り当てが、メモリの割り当て、ドライバーを使用して、タグの値を設定するときに、特性のタグの値を持つ[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)または[ **ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)します。 ドライバーをタグの値を割り当てない場合 ([**ExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepool)、 [ **ExAllocatePoolWithQuota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquota))、Windows がまだですが、タグを作成します[なし] の既定のタグ値を割り当てます。 その結果、他のプール割り当てのドライバーの割り当ての統計情報を区別できません。

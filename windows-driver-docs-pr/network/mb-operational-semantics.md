@@ -4,12 +4,12 @@ description: MB 操作のセマンティクス
 ms.assetid: 5f04b7fd-3df3-4efa-bb26-c7f4cd3c9ebd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13bbaaa26143c7f05d21caaa0807995f34aa53b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35a9abed7921cf569960297964292a7bcc875c90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343282"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374060"
 ---
 # <a name="mb-operational-semantics"></a>MB 操作のセマンティクス
 
@@ -22,7 +22,7 @@ MB ドライバー モデル、NDIS で提供される非同期通知メカニ�
 
 ### <a name="asynchronous-set-and-query-requests"></a>非同期*設定*と*クエリ*要求
 
-多くは、*設定*と*クエリ*MB サービスによって使用される OID 要求を非同期に処理されます。 詳細については*設定*と*クエリ*OID の要求を参照してください[ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)します。 "WWAN 固有 Oid"テーブルに、 [MB のデータ モデル](mb-data-model.md)トピックを識別する Oid が非同期的に処理します。
+多くは、*設定*と*クエリ*MB サービスによって使用される OID 要求を非同期に処理されます。 詳細については*設定*と*クエリ*OID の要求を参照してください[ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)します。 "WWAN 固有 Oid"テーブルに、 [MB のデータ モデル](mb-data-model.md)トピックを識別する Oid が非同期的に処理します。
 
 次の図は、非同期の相互作用のシーケンスを表す*クエリ*MB サービスと、ミニポート ドライバー間のトランザクション。 太字の表す OID の識別子、またはトランザクションのフロー制御には、ラベルと通常のテキストに表示されるラベルは、OID 構造内で重要なフラグを表します。
 
@@ -30,11 +30,11 @@ MB ドライバー モデル、NDIS で提供される非同期通知メカニ�
 
 3 ウェイ ハンドシェイクは、両方に同じ*クエリ*と*設定*要求。
 
-除く[OID\_WWAN\_ドライバー\_CAP](https://msdn.microsoft.com/library/windows/hardware/ff569825)、他のすべての MB に固有の OID 要求 MB のミニポート ドライバーとの間で情報交換の非同期トランザクション メカニズムに従ってください次の他のメモと共にサービス:
+除く[OID\_WWAN\_ドライバー\_CAP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)、他のすべての MB に固有の OID 要求 MB のミニポート ドライバーとの間で情報交換の非同期トランザクション メカニズムに従ってください次の他のメモと共にサービス:
 
 -   ミニポート ドライバーに無効な OID 要求など、任意のエラー条件の OID 要求をすぐに失敗する必要があります。
 
--   ミニポート ドライバーが適切なエラー コードで、WWAN 固有のエラー条件に返す必要があります (たとえば、WWAN\_状態\_XXX) で指定されている、 **uStatus**イベント通知の構造体のメンバー。 ミニポート ドライバーを次のメンバーでも適切に埋める、 **uStatus**必要に応じて、メンバー。 ミニポート ドライバー塗りつぶしなど、 **ContextState.uNwError**のメンバー、 [ **NDIS\_WWAN\_コンテキスト\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567906)使用可能な場合、構造体します。 ただし、ピンに関連する Oid を処理するときに、エラーが発生のミニポート ドライバーしない可能性のある現在の PIN 状態情報で指定する、 **PinInfo.PinState**のメンバー [ **NDIS\_WWAN\_PIN\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567911)します。
+-   ミニポート ドライバーが適切なエラー コードで、WWAN 固有のエラー条件に返す必要があります (たとえば、WWAN\_状態\_XXX) で指定されている、 **uStatus**イベント通知の構造体のメンバー。 ミニポート ドライバーを次のメンバーでも適切に埋める、 **uStatus**必要に応じて、メンバー。 ミニポート ドライバー塗りつぶしなど、 **ContextState.uNwError**のメンバー、 [ **NDIS\_WWAN\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)使用可能な場合、構造体します。 ただし、ピンに関連する Oid を処理するときに、エラーが発生のミニポート ドライバーしない可能性のある現在の PIN 状態情報で指定する、 **PinInfo.PinState**のメンバー [ **NDIS\_WWAN\_PIN\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_info)します。
 
 -   ミニポート ドライバーは、NDIS を返す必要があります\_状態\_INDICATION\_provisional すべて非同期 OID 要求の応答として必要です。
 
@@ -50,7 +50,7 @@ MB ドライバー モデル、NDIS で提供される非同期通知メカニ�
 
 *NDIS 6.0 仕様*(Windows Vista でリリースされた) 新しい状態コードでは、NDIS を導入\_状態\_INDICATION\_ミニポート ドライバーの非同期の性質を伝達するために必要な作業、ミニポート ドライバーの一時的な要求に応答して OID MB サービスにトランザクション。
 
-説明したよう[MB インターフェイスの概要](mb-interface-overview.md)、MB サービスには MB のミニポート ドライバーによって割り当てられているカーネル モード メモリに直接アクセスがありません。 カーネル モード メモリに格納されている実行結果がコピーされると見なされ、WMI などのなんらかの媒介によって MB サービスに提供される、または[NDIS フィルター ドライバー](ndis-filter-drivers2.md)します。 そのため、ミニポート ドライバーが後に割り当てられたカーネル モードのメモリを解放できます、 [ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)関数呼び出しが、トランザクションを示す値を返します。
+説明したよう[MB インターフェイスの概要](mb-interface-overview.md)、MB サービスには MB のミニポート ドライバーによって割り当てられているカーネル モード メモリに直接アクセスがありません。 カーネル モード メモリに格納されている実行結果がコピーされると見なされ、WMI などのなんらかの媒介によって MB サービスに提供される、または[NDIS フィルター ドライバー](ndis-filter-drivers2.md)します。 そのため、ミニポート ドライバーが後に割り当てられたカーネル モードのメモリを解放できます、 [ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)関数呼び出しが、トランザクションを示す値を返します。
 
 ミニポート ドライバーと MB サービスが従う必要があるハンドシェイク プロシージャは、次の手順で説明します。
 
@@ -58,7 +58,7 @@ MB ドライバー モデル、NDIS で提供される非同期通知メカニ�
 
 OID 要求を受け取ると、ミニポート ドライバーは、次の手順を実行する必要があります。
 
-1.  内容をコピーするカーネル モードでのメモリを割り当て、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710) OID 要求に関連付けられたデータ構造体。
+1.  内容をコピーするカーネル モードでのメモリを割り当て、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request) OID 要求に関連付けられたデータ構造体。
 
 2.  要求のパラメーター、ことを確認、 **RequestId**と**RequestHandle** OID 要求構造体のメンバーでもコピーされます。 これらのメンバーは、トランザクションで後で使用される*indication*します。
 
@@ -66,7 +66,7 @@ OID 要求を受け取ると、ミニポート ドライバーは、次の手順
 
 4.  操作の完了したら、必要に応じて、ローカルまたはドライバーに割り当てられたメモリに結果を格納します。
 
-5.  呼び出す、 [ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)に未処理の操作が完了したことを MB サービスに通知する関数。 ミニポート ドライバーは、NDIS のメンバーで入力する必要があります\_状態\_を示す値を次のように構成します。
+5.  呼び出す、 [ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)に未処理の操作が完了したことを MB サービスに通知する関数。 ミニポート ドライバーは、NDIS のメンバーで入力する必要があります\_状態\_を示す値を次のように構成します。
     1.  設定、 **StatusCode**状態通知の種類のメンバー。 たとえば、NDIS\_状態\_WWAN\_XXX。
     2.  設定、 **DestinationHandle**メンバーを**RequestHandle** NDIS で受信したメンバー\_OID\_ミニポート ドライバーが受信したときに、要求データが構造体、対応する OID 要求。
     3.  設定、 **RequestId**と一致するメンバー、 **RequestId**の NDIS メンバー\_OID\_ミニポート ドライバーが、対応する OID 要求を受信したときに要求の状態の構造体。
@@ -81,7 +81,7 @@ MB サービスは、次の手順を使用して非同期のトランザクシ�
 
 1.  OID データ構造に基づく要求をバッファー メモリを割り当てください。 適切な値を持つ構造体メンバー データを入力します。
 
-2.  呼び出す、 [ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)関数と、 **InformationBuffer** OID のデータを指すメンバーが、OID 要求用の構造し、ミニポート ドライバーを待機応答します。
+2.  呼び出す、 [ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)関数と、 **InformationBuffer** OID のデータを指すメンバーが、OID 要求用の構造し、ミニポート ドライバーを待機応答します。
 
 3.  NDIS の受信時に\_状態\_を示す値\_MB サービスの保存、ミニポート ドライバーから provisional 応答が必要な作業、 **RequestId**、割り当て済みのメモリを解放し、マーク、開いているとトランザクション。 この時点では、MB サービスが後続の OID 要求と通知を処理します。
 
@@ -105,45 +105,45 @@ WWAN に固有の 2 種類があります*兆候*ミニポート ドライバー
 
 任意 WWAN に固有のイベント通知のミニポート ドライバーを設定する必要があります、 **RequestId**の NDIS メンバー\_状態\_をゼロに構造体を示す値。 **StatusCode** MB デバイスのどのオブジェクトが変更されたメンバーを指定します。 ミニポート ドライバーでは、次の値のいずれかをこのオブジェクトを設定できます。
 
-[**NDIS\_状態\_WWAN\_デバイス\_キャップ**](https://msdn.microsoft.com/library/windows/hardware/ff567845)
+[**NDIS\_状態\_WWAN\_デバイス\_キャップ**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)
 
-[**NDIS\_状態\_WWAN\_準備\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567856)
+[**NDIS\_状態\_WWAN\_準備\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-ready-info)
 
-[**NDIS\_状態\_WWAN\_ラジオ\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567855)
+[**NDIS\_状態\_WWAN\_ラジオ\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-radio-state)
 
-[**NDIS\_状態\_WWAN\_PIN\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567851)
+[**NDIS\_状態\_WWAN\_PIN\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-pin-info)
 
-[**NDIS\_状態\_WWAN\_PIN\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff567852)
+[**NDIS\_状態\_WWAN\_PIN\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-pin-list)
 
-[**NDIS\_状態\_WWAN\_ホーム\_プロバイダー**](https://msdn.microsoft.com/library/windows/hardware/ff567848)
+[**NDIS\_状態\_WWAN\_ホーム\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-home-provider)
 
-[**NDIS\_状態\_WWAN\_優先\_プロバイダー**](https://msdn.microsoft.com/library/windows/hardware/ff567853)
+[**NDIS\_状態\_WWAN\_優先\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-providers)
 
-[**NDIS\_状態\_WWAN\_VISIBLE\_プロバイダー**](https://msdn.microsoft.com/library/windows/hardware/ff567866)
+[**NDIS\_状態\_WWAN\_VISIBLE\_プロバイダー**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-visible-providers)
 
-[**NDIS\_状態\_WWAN\_登録\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567857)
+[**NDIS\_状態\_WWAN\_登録\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-register-state)
 
-[**NDIS\_状態\_WWAN\_パケット\_サービス**](https://msdn.microsoft.com/library/windows/hardware/ff567850)
+[**NDIS\_状態\_WWAN\_パケット\_サービス**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-packet-service)
 
-[**NDIS\_状態\_WWAN\_信号\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567859)
+[**NDIS\_状態\_WWAN\_信号\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-signal-state)
 
-[**NDIS\_状態\_WWAN\_コンテキスト\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567843)
+[**NDIS\_状態\_WWAN\_コンテキスト\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-context-state)
 
-[**NDIS\_状態\_WWAN\_プロビジョニング済み\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff567854)
+[**NDIS\_状態\_WWAN\_プロビジョニング済み\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-provisioned-contexts)
 
-[**NDIS\_状態\_WWAN\_サービス\_アクティブ化**](https://msdn.microsoft.com/library/windows/hardware/ff567858)
+[**NDIS\_状態\_WWAN\_サービス\_アクティブ化**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-service-activation)
 
-[**NDIS\_状態\_WWAN\_SMS\_構成**](https://msdn.microsoft.com/library/windows/hardware/ff567860)
+[**NDIS\_状態\_WWAN\_SMS\_構成**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-configuration)
 
-[**NDIS\_状態\_WWAN\_SMS\_受信**](https://msdn.microsoft.com/library/windows/hardware/ff567862)
+[**NDIS\_状態\_WWAN\_SMS\_受信**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-receive)
 
-[**NDIS\_状態\_WWAN\_SMS\_送信**](https://msdn.microsoft.com/library/windows/hardware/ff567863)
+[**NDIS\_状態\_WWAN\_SMS\_送信**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-send)
 
-[**NDIS\_状態\_WWAN\_SMS\_削除**](https://msdn.microsoft.com/library/windows/hardware/ff567861)
+[**NDIS\_状態\_WWAN\_SMS\_削除**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-delete)
 
-[**NDIS\_状態\_WWAN\_SMS\_状態**](https://msdn.microsoft.com/library/windows/hardware/ff567864)
+[**NDIS\_状態\_WWAN\_SMS\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-sms-status)
 
-[**NDIS\_状態\_WWAN\_ベンダー\_特定**](https://msdn.microsoft.com/library/windows/hardware/ff567865)
+[**NDIS\_状態\_WWAN\_ベンダー\_特定**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-vendor-specific)
 
 MB サービスでは、NDIS から他のイベント通知は処理も可能性があります。 これらの非 MB イベント通知とは限りませんが適用されない、要件を**RequestId**値は 0 に設定します。
 
@@ -157,7 +157,7 @@ MB サービスでは、NDIS から他のイベント通知は処理も可能性
 
 ### <a name="status-indication-structure"></a>ステータスを示す値構造体
 
-特定の OID 要求と要請していないイベント通知の構造体の両方、非同期応答によってポイントされている次の構造体メンバーの共有**StatusBuffer**のメンバー、 *StatusIndication*パラメーターを[ **NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600):
+特定の OID 要求と要請していないイベント通知の構造体の両方、非同期応答によってポイントされている次の構造体メンバーの共有**StatusBuffer**のメンバー、 *StatusIndication*パラメーターを[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex):
 
 ```C++
 typedef struct _NDIS_WWAN_XXX {
@@ -258,7 +258,7 @@ OID 要求に対する非同期応答のミニポート ドライバーの場合
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -373,7 +373,7 @@ OID 要求に対する非同期応答のミニポート ドライバーの場合
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>

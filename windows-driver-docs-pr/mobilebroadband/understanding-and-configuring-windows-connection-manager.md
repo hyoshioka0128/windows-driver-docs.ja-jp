@@ -4,12 +4,12 @@ description: Windows 接続マネージャーの理解と構成
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: edb62d851633340fe858b8fd5627654e5edea613
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 676d85427b41d04a3cea25356d41e233a354d8f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357938"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>Windows 接続マネージャーの理解と構成
 
@@ -29,7 +29,7 @@ ms.locfileid: "65106360"
 
 ## <a name="span-idconnectionmanagementpoliciesspanspan-idconnectionmanagementpoliciesspanspan-idconnectionmanagementpoliciesspanconnection-management-policies"></a><span id="Connection_management_policies"></span><span id="connection_management_policies"></span><span id="CONNECTION_MANAGEMENT_POLICIES"></span>接続の管理ポリシー
 
-Windows 8、Windows 8.1、および Windows 10 には、多く接続を管理するポリシーにはが含まれます。 これらのポリシーは、Windows ユーザー インターフェイスで公開されないを使用して構成することができます、 [WcmSetProperty](https://msdn.microsoft.com/library/windows/desktop/hh437602.aspx) API またはグループ ポリシー。
+Windows 8、Windows 8.1、および Windows 10 には、多く接続を管理するポリシーにはが含まれます。 これらのポリシーは、Windows ユーザー インターフェイスで公開されないを使用して構成することができます、 [WcmSetProperty](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API またはグループ ポリシー。
 
 ### <a name="span-idminimizesimultaneousconnectionsspanspan-idminimizesimultaneousconnectionsspanspan-idminimizesimultaneousconnectionsspanminimize-simultaneous-connections"></a><span id="Minimize_simultaneous_connections"></span><span id="minimize_simultaneous_connections"></span><span id="MINIMIZE_SIMULTANEOUS_CONNECTIONS"></span>同時接続を最小限に抑える
 
@@ -37,7 +37,7 @@ Windows 8、Windows 8.1、および Windows 10 には、多く接続を管理す
 
 #### <a name="versions-of-windows-before-windows-10-version-1809-build-17763404"></a>Windows 10、バージョンは 1809 より前に、の Windows のバージョンで 17763.404 をビルドします。
 
-Windows 8、Windows 8.1、および Windows 10、バージョンは 1809、17763.404、ビルドする前に Windows 10 のバージョンでこのポリシーは、いずれかのグループ ポリシーを使用して変更可能なブール値、または[WcmSetProperty](https://msdn.microsoft.com/library/windows/desktop/hh437602.aspx) API。
+Windows 8、Windows 8.1、および Windows 10、バージョンは 1809、17763.404、ビルドする前に Windows 10 のバージョンでこのポリシーは、いずれかのグループ ポリシーを使用して変更可能なブール値、または[WcmSetProperty](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API。
 
 このポリシーが無効になっている場合、動作は他のインターフェイスの接続状態に関係なく、範囲内で最も優先度のネットワークに接続する各インターフェイスを Windows 7 と同様にします。
 
@@ -172,7 +172,7 @@ Windows 8、Windows 8.1、および Windows 10 は、ユーザーのアクショ
 
 ### <a name="span-idcarrier-provisioningmetadataspanspan-idcarrier-provisioningmetadataspanspan-idcarrier-provisioningmetadataspancarrier-provisioning-metadata"></a><span id="Carrier-provisioning_metadata"></span><span id="carrier-provisioning_metadata"></span><span id="CARRIER-PROVISIONING_METADATA"></span>通信事業者のプロビジョニングのメタデータ
 
-モバイル ブロード バンド接続と Wi-fi ホット スポット提供事業者向け Windows 一連のモバイル ブロード バンド接続と Wi-fi プロファイルを使用して提供、 [ **ProvisioningAgent** ](https://msdn.microsoft.com/library/windows/apps/br207397)または[ **msProvisionNetworks** ](https://msdn.microsoft.com/library/hh848316) Api。
+モバイル ブロード バンド接続と Wi-fi ホット スポット提供事業者向け Windows 一連のモバイル ブロード バンド接続と Wi-fi プロファイルを使用して提供、 [ **ProvisioningAgent** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)または[ **msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) Api。
 
 最初にプロビジョニングすると、演算子が作成したプロファイルは、上部 (Wi-fi のみ) または既存のネットワークの一覧の下部 (モバイル ブロード バンドが含まれる場合) に追加されます。 ネットワークの一覧にプロビジョニングするネットワークの位置の影響を与えることはできません。 ただし、ネットワークの一覧で、自社のネットワークの相対順序を定義できます。
 
@@ -200,17 +200,17 @@ Windows 8 の前に、Wi-fi で優先ネットワーク一覧されたワイヤ�
 
 アプリケーションは、適切なメディア固有 API を使用してネットワークの一覧に新しいプロファイルを作成することがあります。
 
--   Wi-fi ネットワークを使用して、 [ **WlanSetProfile** ](https://msdn.microsoft.com/library/windows/desktop/ms706795)関数。
+-   Wi-fi ネットワークを使用して、 [ **WlanSetProfile** ](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofile)関数。
 
--   モバイル ブロード バンド ネットワークを使用して、 [ **IMbnConnectionProfileManager::CreateConnectionProfile** ](https://msdn.microsoft.com/library/windows/desktop/dd430393)メソッド。
+-   モバイル ブロード バンド ネットワークを使用して、 [ **IMbnConnectionProfileManager::CreateConnectionProfile** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofilemanager-createconnectionprofile)メソッド。
 
-ネットワークの一覧の順序を変更するには、使用、 [ **WcmSetProfileList** ](https://msdn.microsoft.com/library/windows/desktop/hh437598)関数。 使用しないで、 [ **WlanSetProfileList** ](https://msdn.microsoft.com/library/windows/desktop/ms706805)関数を予想外の方法でモバイル ブロード バンドのプロファイルのネットワークの一覧内の位置を妨害する可能性があります。
+ネットワークの一覧の順序を変更するには、使用、 [ **WcmSetProfileList** ](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetprofilelist)関数。 使用しないで、 [ **WlanSetProfileList** ](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofilelist)関数を予想外の方法でモバイル ブロード バンドのプロファイルのネットワークの一覧内の位置を妨害する可能性があります。
 
 ネットワークの一覧からプロファイルを削除するには、適切なメディア固有 API を使用します。
 
--   Wi-fi ネットワークを使用して、 [ **WlanDeleteProfile** ](https://msdn.microsoft.com/library/windows/desktop/ms706617)関数。
+-   Wi-fi ネットワークを使用して、 [ **WlanDeleteProfile** ](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlandeleteprofile)関数。
 
--   モバイル ブロード バンド ネットワークを使用して、 [ **IMbnConnectionProfile::Delete** ](https://msdn.microsoft.com/library/windows/desktop/dd430396)メソッド。
+-   モバイル ブロード バンド ネットワークを使用して、 [ **IMbnConnectionProfile::Delete** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete)メソッド。
 
 ### <a name="span-idcommand-linespanspan-idcommand-linespanspan-idcommand-linespancommand-line"></a><span id="Command-line"></span><span id="command-line"></span><span id="COMMAND-LINE"></span>コマンド ライン
 

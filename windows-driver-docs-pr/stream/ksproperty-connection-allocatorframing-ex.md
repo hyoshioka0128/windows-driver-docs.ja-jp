@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 373605c1fded851941d3049f1e487c2e690efd87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07a3990119968c3d33b4577781793e179aaa8209
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376090"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373134"
 ---
 # <a name="kspropertyconnectionallocatorframingex"></a>KSPROPERTY\_接続\_ALLOCATORFRAMING\_例
 
@@ -54,7 +54,7 @@ AVStream クライアントの使用、KSPROPERTY\_接続\_ALLOCATORFRAMING\_EX�
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff560982" data-raw-source="[&lt;strong&gt;KSALLOCATOR_FRAMING_EX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560982)"><strong>KSALLOCATOR_FRAMING_EX</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing_ex" data-raw-source="[&lt;strong&gt;KSALLOCATOR_FRAMING_EX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing_ex)"><strong>KSALLOCATOR_FRAMING_EX</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,13 +64,13 @@ AVStream クライアントの使用、KSPROPERTY\_接続\_ALLOCATORFRAMING\_EX�
 <a name="remarks"></a>注釈
 -------
 
-このプロパティを返します、 [ **KSALLOCATOR\_フレーム\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff560982)AVStream のピン留めのフレームの要件をについて説明します。
+このプロパティを返します、 [ **KSALLOCATOR\_フレーム\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing_ex)AVStream のピン留めのフレームの要件をについて説明します。
 
 ストリーム クラスで実行されているミニドライバーを使用する必要があります[ **KSPROPERTY\_接続\_ALLOCATORFRAMING**](ksproperty-connection-allocatorframing.md)します。
 
-参照してください[KS アロケーター](https://msdn.microsoft.com/library/windows/hardware/ff567257)します。 [AVStream アロケーター](https://msdn.microsoft.com/library/windows/hardware/ff554202)します。
+参照してください[KS アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-allocators)します。 [AVStream アロケーター](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-allocators)します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -89,7 +89,7 @@ AVStream クライアントの使用、KSPROPERTY\_接続\_ALLOCATORFRAMING\_EX�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSALLOCATOR\_フレーム\_例**](https://msdn.microsoft.com/library/windows/hardware/ff560982)
+[**KSALLOCATOR\_フレーム\_例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing_ex)
 
  
 

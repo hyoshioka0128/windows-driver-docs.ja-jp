@@ -9,25 +9,25 @@ keywords:
 - HDAUDIO_BUS_INTERFACE_BDL 構造体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37b50727c187b3910c925917bc68107c1d2ad560
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 799483b2133c751b9951a0a48e7e5b2564de0c89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359060"
 ---
 # <a name="differences-between-the-hd-audio-ddi-versions"></a>HD オーディオ DDI バージョン間の相違点
 
 
 HD オーディオ DDI には次のように定義されている 3 つの異なるバージョンがあります。
 
--   定義されている HD オーディオ DDI のベースライン バージョン、 [ **HDAUDIO\_BUS\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff536413)構造体。 オーディオとモデムのコーデックのほとんどの関数のドライバーでは、この DDI バージョンが用意されている機能のみが必要です。 このバージョンは、Windows XP および Windows Vista で提供される HD オーディオ バス ドライバーを利用します。
+-   定義されている HD オーディオ DDI のベースライン バージョン、 [ **HDAUDIO\_BUS\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)構造体。 オーディオとモデムのコーデックのほとんどの関数のドライバーでは、この DDI バージョンが用意されている機能のみが必要です。 このバージョンは、Windows XP および Windows Vista で提供される HD オーディオ バス ドライバーを利用します。
 
--   定義されている HD オーディオ DDI の拡張のバージョン、 [ **HDAUDIO\_BUS\_インターフェイス\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418)構造体。 DDI のこのバージョンは、柔軟性を DMA 駆動のイベント通知をサポートするために必要な追加機能を提供します。 Windows Vista 以降のバージョンの Windows で使用可能になります。
+-   定義されている HD オーディオ DDI の拡張のバージョン、 [ **HDAUDIO\_BUS\_インターフェイス\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)構造体。 DDI のこのバージョンは、柔軟性を DMA 駆動のイベント通知をサポートするために必要な追加機能を提供します。 Windows Vista 以降のバージョンの Windows で使用可能になります。
 
--   HD オーディオ DDI で定義されているは、次の変更済み、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)構造体。 このバージョンの要件に対応するオーディオとモデムの数が比較的少ないドライバーのセットアップをさらに制御が必要なバッファーの DMA 操作記述子のリスト (BDLs)。 DDI のこのバージョンは、Windows XP および以降のバージョンの Windows で使用できます。 ただし、いずれか、HDAUDIO を使用して、\_BUS\_インターフェイスまたは、HDAUDIO\_BUS\_インターフェイス\_V2 DDI バージョン代わりにします。 .
+-   HD オーディオ DDI で定義されているは、次の変更済み、 [ **HDAUDIO\_BUS\_インターフェイス\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)構造体。 このバージョンの要件に対応するオーディオとモデムの数が比較的少ないドライバーのセットアップをさらに制御が必要なバッファーの DMA 操作記述子のリスト (BDLs)。 DDI のこのバージョンは、Windows XP および以降のバージョンの Windows で使用できます。 ただし、いずれか、HDAUDIO を使用して、\_BUS\_インターフェイスまたは、HDAUDIO\_BUS\_インターフェイス\_V2 DDI バージョン代わりにします。 .
 
-すべての 3 つの構造に名前と最初の 5 つのメンバーの型の一致の 5 つのメンバー、 [**インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff547825)構造体。 これらのメンバーの値の詳細については、次を参照してください[、HDAUDIO を取得する\_BUS\_インターフェイス DDI オブジェクト](obtaining-an-hdaudio-bus-interface-ddi-object.md)、 [、HDAUDIO を取得する\_BUS\_インターフェイス。\_V2 DDI オブジェクト](obtaining-an-hdaudio-bus-interface-v2-ddi-object.md)または[取得、HDAUDIO\_BUS\_インターフェイス\_BDL DDI オブジェクト](obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md)します。
+すべての 3 つの構造に名前と最初の 5 つのメンバーの型の一致の 5 つのメンバー、 [**インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_interface)構造体。 これらのメンバーの値の詳細については、次を参照してください[、HDAUDIO を取得する\_BUS\_インターフェイス DDI オブジェクト](obtaining-an-hdaudio-bus-interface-ddi-object.md)、 [、HDAUDIO を取得する\_BUS\_インターフェイス。\_V2 DDI オブジェクト](obtaining-an-hdaudio-bus-interface-v2-ddi-object.md)または[取得、HDAUDIO\_BUS\_インターフェイス\_BDL DDI オブジェクト](obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md)します。
 
 HD オーディオ DDI の 3 つのバージョンのルーチンでは、次のタスクを実行します。
 
@@ -47,9 +47,9 @@ HD オーディオ DDI の 3 つのバージョンのルーチンでは、次の
 
 HDAUDIO\_BUS\_インターフェイスと HDAUDIO\_BUS\_インターフェイス\_DDI の BDL バージョンは、次の点をいます。
 
--   HDAUDIO\_BUS\_インターフェイス構造体は、2 つのルーチンを定義します[ **AllocateDmaBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536179)と[ **FreeDmaBuffer** 。](https://msdn.microsoft.com/library/windows/hardware/ff536391)、HDAUDIO に存在しない\_BUS\_インターフェイス\_BDL します。
+-   HDAUDIO\_BUS\_インターフェイス構造体は、2 つのルーチンを定義します[ **AllocateDmaBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_dma_buffer)と[ **FreeDmaBuffer** 。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pfree_dma_buffer)、HDAUDIO に存在しない\_BUS\_インターフェイス\_BDL します。
 
--   HDAUDIO\_BUS\_インターフェイス\_BDL 構造は、3 つのルーチンを定義します[ **SetupDmaEngineWithBdl**](https://msdn.microsoft.com/library/windows/hardware/ff537894)、 [  **。AllocateContiguousDmaBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536178)、および[ **FreeContiguousDmaBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536390)、HDAUDIO に存在しない\_BUS\_インターフェイスです。
+-   HDAUDIO\_BUS\_インターフェイス\_BDL 構造は、3 つのルーチンを定義します[ **SetupDmaEngineWithBdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-psetup_dma_engine_with_bdl)、 [  **。AllocateContiguousDmaBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_contiguous_dma_buffer)、および[ **FreeContiguousDmaBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pfree_contiguous_dma_buffer)、HDAUDIO に存在しない\_BUS\_インターフェイスです。
 
 クライアントが呼び出すときに、 **AllocateDmaBuffer** DDI の最初のバージョンで日常的な HD オーディオ バス ドライバー。
 

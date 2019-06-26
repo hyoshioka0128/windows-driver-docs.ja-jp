@@ -4,12 +4,12 @@ description: COM インターフェイスの提供
 ms.assetid: c3e1578e-26f1-4fe3-b56d-a2baacb8e4c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e4b4615b26e424bda25c196a5b424d3bea75d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8483cca790314125087e10be0941a71c45dad1ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379636"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374313"
 ---
 # <a name="providing-a-com-interface"></a>COM インターフェイスの提供
 
@@ -19,9 +19,9 @@ ms.locfileid: "63379636"
 
 WIA ミニドライバーをサポートする必要があります、 **IWiaMiniDrv**、 **IStiUSD**、および**IUnknown**インターフェイスが認識され、WIA サービスによって読み込まれます。 WIA ドライバーに次のインターフェイス id を追加する必要があります**QueryInterface**メソッド。
 
--   **IID\_IWiaMiniDrv** -のインターフェイスの識別子、 [IWiaMiniDrv インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff545027)、標準的な WIA インターフェイス WIA 固有の機能にアクセスするために使用します。
+-   **IID\_IWiaMiniDrv** -のインターフェイスの識別子、 [IWiaMiniDrv インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)、標準的な WIA インターフェイス WIA 固有の機能にアクセスするために使用します。
 
--   **IID\_IStiUSD** -のインターフェイスの識別子、 [IStiUSD インターフェイス](https://msdn.microsoft.com/library/windows/hardware/ff543827)、標準的な STI インターフェイス WIA ドライバーの STI 機能にアクセスするために使用
+-   **IID\_IStiUSD** -のインターフェイスの識別子、 [IStiUSD インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_image/index)、標準的な STI インターフェイス WIA ドライバーの STI 機能にアクセスするために使用
 
 -   **IID\_IUnknown** -のインターフェイスの識別子、 **IUnknown** Microsoft Windows SDK ドキュメントで定義されている標準の COM インターフェイスのインターフェイスします。
 

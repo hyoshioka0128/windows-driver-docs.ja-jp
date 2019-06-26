@@ -3,12 +3,12 @@ Description: このセクションでは、慎重に USB の帯域幅の管理�
 title: USB 帯域幅割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f96f0b7d9390f4627a9fd156fc63bb7f7ba4d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e431ce8e26de70c6f7f338c9a7ad93d0c7cf5ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331691"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369532"
 ---
 # <a name="usb-bandwidth-allocation"></a>USB 帯域幅割り当て
 
@@ -80,7 +80,7 @@ Windows XP では、USB コント ローラーの帯域幅の使用状況を報�
 
 > **注:**  
 >
-> Windows XP、Windows Server 2003、および以降のバージョンで**MaximumTransferSize**のメンバー、 [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114)構造体は廃止されています。 USB ドライバー スタックの値を無視します**MaximumTransferSize**複合および非複合デバイスです。
+> Windows XP、Windows Server 2003、および以降のバージョンで**MaximumTransferSize**のメンバー、 [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)構造体は廃止されています。 USB ドライバー スタックの値を無視します**MaximumTransferSize**複合および非複合デバイスです。
 >
 > Windows 2000 での USB ドライバー スタックの初期化**MaximumTransferSize** USBD に\_既定\_最大\_転送\_サイズ。 クライアント ドライバーでは、デバイスを構成するときより小さい値を設定できます。 複合デバイスは、関数ごとに、クライアント ドライバーを変更することができますのみ**MaximumTransferSize**パイプの既定以外のインターフェイスを設定します。
 
@@ -139,7 +139,7 @@ USB 転送サイズは、次の制限が適用されます。
 </tr>
 <tr class="even">
 <td>アイソクロナス</td>
-<td><p>1024<em><strong>wBytesPerInterval</strong> (を参照してください<a href="https://msdn.microsoft.com/library/windows/hardware/hh406269" data-raw-source="[&lt;strong&gt;USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406269)"> <strong>USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR</strong></a>) の SuperSpeed (xHCI)</p>
+<td><p>1024<em><strong>wBytesPerInterval</strong> (を参照してください<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor" data-raw-source="[&lt;strong&gt;USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor)"> <strong>USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR</strong></a>) の SuperSpeed (xHCI)</p>
 <p>1024</em> <strong>MaximumPacketSize</strong>の高速 (xHCI、EHCI)</p>
 <p>256 * <strong>MaximumPacketSize</strong>フル_スピード (xHCI、EHCI) の</p>
 <p>最大速度 (UHCI、OHCI) の 64 K</p></td>
@@ -156,17 +156,17 @@ USB 転送サイズは、次の制限が適用されます。
 
  
 
-転送サイズを制限する**MaximumTransferSize**デバイス、帯域幅の消費を直接影響しません。 クライアント ドライバーのインターフェイス設定を変更するかで設定した最大パケット サイズを制限する必要があります、 **MaximumPacketSize**のメンバー [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114).
+転送サイズを制限する**MaximumTransferSize**デバイス、帯域幅の消費を直接影響しません。 クライアント ドライバーのインターフェイス設定を変更するかで設定した最大パケット サイズを制限する必要があります、 **MaximumPacketSize**のメンバー [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information).
 
 ### <a name="maximum-packet-size"></a>最大パケット サイズ
 
 
 *最大パケット サイズ*によって定義されます、 **wMaxPacketSize**のエンドポイント記述子フィールド。 クライアント ドライバーでは、インターフェイスの要求をデバイスで USB のパケット サイズを制御できます。 この値を変更することは変わりません、 **wMaxPacketSize**デバイスにします。
 
-[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)要求は、 [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114)パイプの構造体。 で、その構造
+[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)要求は、 [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)パイプの構造体。 で、その構造
 
--   変更、 **MaximumPacketSize**のメンバー、 [ **USBD\_パイプ\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff539114)構造体。 値に設定する値の小さい**wMaxPacketSize**デバイス ファームウェアの現在のインターフェイスの設定で定義されています。
--   設定、USBD\_PF\_変更\_最大\_パケット フラグ、 **PipeFlags**メンバー [ **USBD\_パイプ\_情報** ](https://msdn.microsoft.com/library/windows/hardware/ff539114)構造体。
+-   変更、 **MaximumPacketSize**のメンバー、 [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)構造体。 値に設定する値の小さい**wMaxPacketSize**デバイス ファームウェアの現在のインターフェイスの設定で定義されています。
+-   設定、USBD\_PF\_変更\_最大\_パケット フラグ、 **PipeFlags**メンバー [ **USBD\_パイプ\_情報** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)構造体。
 
 インターフェイスの設定を選択する方法の詳細については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)します。
 
@@ -177,7 +177,7 @@ USB 転送サイズは、次の制限が適用されます。
 
 **注:**  
 
-以前のコント ローラーで、クライアント ドライバーは、動作をオーバーライドできます。 **TransferFlags**メンバー データ転送の[ **URB**](https://msdn.microsoft.com/library/windows/hardware/ff538923)、クライアント ドライバーは、USBD を設定する必要があります\_短い\_転送\_[Ok] のフラグ。 フラグによりより小さいパケットを送信するデバイス**wMaxPacketSize**します。
+以前のコント ローラーで、クライアント ドライバーは、動作をオーバーライドできます。 **TransferFlags**メンバー データ転送の[ **URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)、クライアント ドライバーは、USBD を設定する必要があります\_短い\_転送\_[Ok] のフラグ。 フラグによりより小さいパケットを送信するデバイス**wMaxPacketSize**します。
 
 XHCI ホスト コント ローラー、USBD\_短い\_転送\_OK 一括および割り込みのエンドポイントは無視されます。 EHCI コント ローラーでは、短いパケットの転送は、エラー状態では発生しません。
 

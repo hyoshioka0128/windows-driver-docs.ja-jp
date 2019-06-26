@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 122eab295ea09855ca4c49d77fc1fa899de59adf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9fbf6b15245dcfd3d5bf7f3d39106f8358a86f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347045"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371538"
 ---
 # <a name="devcon-install"></a>DevCon Install
 
@@ -40,11 +40,11 @@ ms.locfileid: "63347045"
 <span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span> *HardwareID*   
 デバイスのハードウェア ID を指定します。
 
-指定されたハードウェア ID では、デバイスのハードウェア ID を完全に一致する必要があります。 パターンが有効ではありません。 単一引用符文字を入力しないでください (**'**) をリテラル値を示します。 詳細については、次を参照してください。[ハードウェア Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)と[識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)します。
+指定されたハードウェア ID では、デバイスのハードウェア ID を完全に一致する必要があります。 パターンが有効ではありません。 単一引用符文字を入力しないでください ( **'** ) をリテラル値を示します。 詳細については、次を参照してください。[ハードウェア Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)と[識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)します。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
-システムは、この変更を有効にするを再起動する必要があります。 DevCon システムを再起動するのには、再起動の条件付きパラメーターを追加します (**/r**) コマンド。
+システムは、この変更を有効にするを再起動する必要があります。 DevCon システムを再起動するのには、再起動の条件付きパラメーターを追加します ( **/r**) コマンド。
 
 使用することはできません、 **DevCon インストール**プラグ アンド プレイ デバイスを操作します。
 
@@ -70,9 +70,9 @@ devcon /r install c:\windows\inf\newdvc.inf ISAPNP\CSC4324\0
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ハードウェア Id](https://msdn.microsoft.com/library/windows/hardware/ff546152)
+[ハードウェア Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)
 
-[デバイスの識別文字列](https://msdn.microsoft.com/library/windows/hardware/ff541224)
+[デバイスの識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)
 
 
 

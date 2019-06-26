@@ -4,21 +4,21 @@ description: PwrTest 接続スタンバイ シナリオ (/cs) コネクテッド
 ms.assetid: 2601603D-F9AF-4DEB-9A1B-F5A091A51B2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dfd00a1637484860280ff137cfa8038d30af7d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9b4ceb6d2d251014680a863c05989766ce22696
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358246"
 ---
 # <a name="pwrtest-connected-standby-scenario"></a>PwrTest のコネクト スタンバイ シナリオ
 
 
-PwrTest 接続スタンバイ シナリオ (**/cs**) コネクテッド スタンバイ遷移の自動テストが容易になります。
+PwrTest 接続スタンバイ シナリオ ( **/cs**) コネクテッド スタンバイ遷移の自動テストが容易になります。
 
 PwrTest では、PDC フェーズで進行状況をログ記録、システムでサポートされている場合、プラットフォームのアイドル状態の遷移の数をログインしようとします。 これは、システムが、アイドル状態の詳細なプラットフォームを入力する場合と、すべてのソフトウェア コンポーネントは、移行をブロックしている場合の診断に役立ちます。
 
-このシナリオがテスト システムをサポートする必要があります、*常に常時接続されている*(SoC および ARM のほとんどのシステムは、これをサポート) (AoAc) 電源機能。 このシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーも必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)します。 WDTF については、次を参照してください。 [ **Windows デバイスのテスト フレームワーク (WDTF) (Windows ドライバー)**](https://msdn.microsoft.com/library/windows/hardware/ff539547)します。
+このシナリオがテスト システムをサポートする必要があります、*常に常時接続されている*(SoC および ARM のほとんどのシステムは、これをサポート) (AoAc) 電源機能。 このシナリオでは、Windows ドライバー テスト フレームワーク (WDTF) の一部である電源ボタン ドライバーも必要です。 WDTF (および、同梱の電源ボタン ドライバー) は、Visual Studio と WDK を使用してテストするためのシステムをプロビジョニングするときに自動的にインストールします。 詳細については、次を参照してください。[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)、または[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))します。 WDTF については、次を参照してください。 [ **Windows デバイスのテスト フレームワーク (WDTF) (Windows ドライバー)** ](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)します。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>構文
 
@@ -27,13 +27,13 @@ PwrTest では、PDC フェーズで進行状況をログ記録、システム�
 pwrtest /cs [/c:n] [/d:n] [/p:n][/?] 
 ```
 
-<span id="_c_n"></span><span id="_C_N"></span>**/c:**<em>n</em>  
+<span id="_c_n"></span><span id="_C_N"></span> **/c:** <em>n</em>  
 実行するには、(既定では 1) サイクルの数を指定します。
 
-<span id="_d_n"></span><span id="_D_N"></span>**/d:**<em>n</em>  
+<span id="_d_n"></span><span id="_D_N"></span> **/d:** <em>n</em>  
 遅延時間 (単位: 秒) には、スタンバイの遷移を (既定値は 60 秒です) 間接続されているを指定します。
 
-<span id="_p_n"></span><span id="_P_N"></span>**/p:**<em>n</em>  
+<span id="_p_n"></span><span id="_P_N"></span> **/p:** <em>n</em>  
 コネクテッド スタンバイの終了時刻を指定します (秒単位。 60 秒は既定値)。
 
 **使用例**

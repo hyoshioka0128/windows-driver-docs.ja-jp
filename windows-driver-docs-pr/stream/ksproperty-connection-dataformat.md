@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8cb821104bce1395a55b8ade2404fcf51fed20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22f64c5341e9a3a57d08d807c3cf558de1313f00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368691"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373118"
 ---
 # <a name="kspropertyconnectiondataformat"></a>KSPROPERTY\_接続\_DATAFORMAT
 
@@ -54,7 +54,7 @@ ms.locfileid: "63368691"
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "63368691"
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、 [ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)要求されたデータ形式を指定します。
+このプロパティは、 [ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)要求されたデータ形式を指定します。
 
 のみ、KS フィルターは、クライアントが現在のプロパティをリセットすることを許可する場合、または指定された不完全なデータ形式で接続ができる場合は、このプロパティをサポートする必要があります。
 
-KSPROPERTY の詳細については\_接続\_DATAFORMAT のプロパティを参照してください[KS データ形式とデータ範囲](https://msdn.microsoft.com/library/windows/hardware/ff567632)と[AVStream のデータ範囲の交差部分](https://msdn.microsoft.com/library/windows/hardware/ff558680)します。
+KSPROPERTY の詳細については\_接続\_DATAFORMAT のプロパティを参照してください[KS データ形式とデータ範囲](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges)と[AVStream のデータ範囲の交差部分](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -89,7 +89,7 @@ KSPROPERTY の詳細については\_接続\_DATAFORMAT のプロパティを参
 ## <a name="see-also"></a>関連項目
 
 
-[**KSSTREAM\_ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff567138)
+[**KSSTREAM\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)
 
 [**KSPROPERTY\_接続\_PROPOSEDATAFORMAT**](ksproperty-connection-proposedataformat.md)
 

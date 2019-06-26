@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_ARGUMENT_LENGTH マクロ ACPI デバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5081f9204e5cf13ea97fa9916484d633654a641e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd8628b88e6acdbb6f4a9ddad4f1957a832c6dca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328934"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355881"
 ---
 # <a name="acpimethodargumentlength-macro"></a>ACPI\_メソッド\_引数\_長さマクロ
 
 
-ACPI\_メソッド\_引数\_長さマクロには、可変長のバイト単位で、サイズが計算されます[ **ACPI\_メソッド\_引数**。](https://msdn.microsoft.com/library/windows/hardware/ff536125) (バイト単位) の指定したサイズのデータを含む構造体。
+ACPI\_メソッド\_引数\_長さマクロには、可変長のバイト単位で、サイズが計算されます[ **ACPI\_メソッド\_引数**。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1) (バイト単位) の指定したサイズのデータを含む構造体。
 
 <a name="syntax"></a>構文
 ------
@@ -66,7 +66,7 @@ void ACPI_METHOD_ARGUMENT_LENGTH(
 ## <a name="see-also"></a>関連項目
 
 
-[**ACPI\_メソッド\_引数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)
+[**ACPI\_メソッド\_引数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)
 
  
 

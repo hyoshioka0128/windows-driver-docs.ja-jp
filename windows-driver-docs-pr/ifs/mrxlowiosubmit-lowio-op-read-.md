@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e825f72cec4c1a82ea493e236cd423ed431c87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1348ed4f70e953308e08357adf77d1b3cf548dd7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357545"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370122"
 ---
 # <a name="mrxlowiosubmitlowioopread-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]ルーチン
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]* ルーチンを呼び出して[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)ネットワーク ミニリダイレクターに読み取り要求を発行します。
+*MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]* ルーチンを呼び出して[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)ネットワーク ミニリダイレクターに読み取り要求を発行します。
 
 <a name="syntax"></a>構文
 ------
@@ -96,7 +96,7 @@ RX へのポインター\_CONTEXT 構造体。 このパラメーターには、
 
 RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]* 受信に応答する[ **IRP\_MJ\_読み取り** ](irp-mj-read.md)要求。
 
-呼び出しの前に*MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]*、RDBSS、RX では、次のメンバーを変更します\_CONTEXT 構造体が、が指す*RxContext*パラメーター。
+呼び出しの前に*MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]* 、RDBSS、RX では、次のメンバーを変更します\_CONTEXT 構造体が、が指す*RxContext*パラメーター。
 
 **LowIoContext.Operation** LOWIO にメンバーが設定されている\_OP\_を読み取る。
 
@@ -112,7 +112,7 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]* 受信に応答す
 
 読み取り要求を通常によって実装されますネットワーク ミニリダイレクター非同期操作として非常に長い時間がかかるためです。 通常、操作は、リモート サーバーにネットワーク要求を送信するので構成されます。 サーバーで、読み取り要求が完了したときに、応答が取得されます。 これは、ローカルで開始されたキャンセルを処理するためのコンテキストを登録する必要がありますネットワーク ミニリダイレクター操作の例です。
 
-中に、 *MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]* ルーチンは、処理中、 **LowIoContext.ResourceThreadId** RXのメンバー\_コンテキストを RDBSS で操作を開始したプロセスのスレッドを示すことが保証されます。 **LowIoContext.ResourceThreadId**別のスレッドの代わり FCB 構造体を解放するメンバーを使用することができます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB 構造体を解放できます。 FCB 構造体を呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)します。
+中に、 *MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]* ルーチンは、処理中、 **LowIoContext.ResourceThreadId** RXのメンバー\_コンテキストを RDBSS で操作を開始したプロセスのスレッドを示すことが保証されます。 **LowIoContext.ResourceThreadId**別のスレッドの代わり FCB 構造体を解放するメンバーを使用することができます。 非同期のルーチンが完了したら、最初のスレッドから取得された FCB 構造体を解放できます。 FCB 構造体を呼び出すことによって解放できます[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -137,23 +137,23 @@ RDBSS 呼び出し*MRxLowIOSubmit\[LOWIO\_OP\_読み取り\]* 受信に応答す
 ## <a name="see-also"></a>関連項目
 
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]**](mrxlowiosubmit-lowio-op-exclusivelock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]**](mrxlowiosubmit-lowio-op-fsctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]**](mrxlowiosubmit-lowio-op-ioctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]**](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]**](mrxlowiosubmit-lowio-op-sharedlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]**](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]**](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]**](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://msdn.microsoft.com/library/windows/hardware/ff554694)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

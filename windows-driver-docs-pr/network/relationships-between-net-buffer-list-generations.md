@@ -9,12 +9,12 @@ keywords:
 - WDK NET_BUFFER_LIST のリレーションシップ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 048ac090b239589ba34dc838e9042efac04e22fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b869a9b07250f99d5cfff8d83c41527e85222876
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359135"
 ---
 # <a name="relationships-between-netbufferlist-generations"></a>NET 間のリレーションシップ\_バッファー\_一覧の世代
 
@@ -22,11 +22,11 @@ ms.locfileid: "63373802"
 
 
 
-ドライバー作成者が理解し、親 (オリジナル) 間の関係を維持する必要があります[ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造と (派生)、子構造を複製、フラグメント、および再アセンブリの操作に起因します。
+ドライバー作成者が理解し、親 (オリジナル) 間の関係を維持する必要があります[ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造と (派生)、子構造を複製、フラグメント、および再アセンブリの操作に起因します。
 
 複製/フラグメント/再アセンブリの関数の呼び出し元が子 NET で親ポインターを含む、親/子の関係を維持\_バッファー\_リスト構造と子の数。 子の数により、すべての子が解放された後、呼び出し元が、親を解放します。 次の規則が適用されます。
 
--   ドライバーは、子から構造を作成した後、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体には、親の構造体の所有権を保持する必要があり、子を渡す必要がありますその他のドライバーを構造体。 ドライバーは、NET の親を渡す必要がありますしない\_バッファー\_を別のドライバーの一覧の構造体。
+-   ドライバーは、子から構造を作成した後、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体には、親の構造体の所有権を保持する必要があり、子を渡す必要がありますその他のドライバーを構造体。 ドライバーは、NET の親を渡す必要がありますしない\_バッファー\_を別のドライバーの一覧の構造体。
 
 -   ドライバーは NET の親の子の数を更新する必要がありますのみ\_バッファー\_リスト構造体。 親の構造体は、別のドライバーに渡されることはありません、ために、子の数の値が上書きされることがあるリスクはありません。 ドライバーは、親の構造体を指す子構造体で親ポインターを設定する必要があります。
 

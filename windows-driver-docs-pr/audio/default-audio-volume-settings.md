@@ -16,12 +16,12 @@ keywords:
 - フル ボリューム スライダー WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2ca4779183d005f3a06082783b17b593c7b3225
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14b908666d2a161af257db02fb87e7023734c02f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359073"
 ---
 # <a name="default-audio-volume-settings"></a>既定のオーディオ音量の設定
 
@@ -35,14 +35,14 @@ SndVol プログラム (を参照してください[システム トレイと Sn
 
 オーディオのアダプターはハードウェア アンプを持たない場合は、次を参照してください。[ソフトウェア ボリューム コントロールをサポート](software-volume-control-support.md)提供されるソフトウェアのサポートについてはします。
 
-**注**  ハードウェア アンプがあるかどうかは、ドライバー レベルを設定、範囲と既定値を使用して、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)カーネル プロパティをストリーミングします。 ハードウェア アンプがない場合、Windows は、APO ソフトウェア ボリューム コントロールを作成します。
+**注**  ハードウェア アンプがあるかどうかは、ドライバー レベルを設定、範囲と既定値を使用して、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)カーネル プロパティをストリーミングします。 ハードウェア アンプがない場合、Windows は、APO ソフトウェア ボリューム コントロールを作成します。
 物理的なボリュームつまみがスピーカーのアクティブなセットを使用する場合は、HID コントロールとして Windows に表示されます。 ボリュームに同様にこの関数は上向きと下向きの矢印ボタン キーボード上のボリューム。Windows がボリュームつまみが有効にしては、ボリュームをプログラム制御これに応じて拡大縮小 (は、ハードウェアまたはソフトウェアのボリューム) かどうかを参照してください。
 
  
 
-理想的には、オーディオのアダプター カードと同じボックスで出荷される一連のアクティブなスピーカー、ファクトリは、アダプターの既定のボリュームの設定で最適な位置にスピーカーのボリュームつまみを調節してください。 オーディオのアダプターが物理ボリューム コントロールのノブを持たない場合を参照してください、[ソフトウェア ボリューム コントロールをサポート](https://msdn.microsoft.com/library/windows/hardware/ff539263)Windows によって提供されるソフトウェアのサポートについてはトピック。
+理想的には、オーディオのアダプター カードと同じボックスで出荷される一連のアクティブなスピーカー、ファクトリは、アダプターの既定のボリュームの設定で最適な位置にスピーカーのボリュームつまみを調節してください。 オーディオのアダプターが物理ボリューム コントロールのノブを持たない場合を参照してください、[ソフトウェア ボリューム コントロールをサポート](https://docs.microsoft.com/windows-hardware/drivers/audio/software-volume-control-support)Windows によって提供されるソフトウェアのサポートについてはトピック。
 
-**注**  オーディオ ハードウェア (ボリュームつまみ) のようなハードウェア ボリューム コントロールを公開するかどうかは、ドライバー レベルを設定、範囲と既定値を使用して、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)カーネル ストリーミング プロパティ。
+**注**  オーディオ ハードウェア (ボリュームつまみ) のようなハードウェア ボリューム コントロールを公開するかどうかは、ドライバー レベルを設定、範囲と既定値を使用して、 [ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)カーネル ストリーミング プロパティ。
 
  
 
@@ -89,7 +89,7 @@ SndVol プログラム (を参照してください[システム トレイと Sn
  
 
 \*マイク用語以外には、すべての再生デバイスと以外マイクの録音デバイスについて説明します。
-Windows アプリケーションでのソフトウェアのボリューム スライダーで表される物理ボリューム スライダーの運用特性については、次を参照してください。 [Audio-Tapered ボリューム コントロール](https://msdn.microsoft.com/library/windows/desktop/dd370798.aspx)します。
+Windows アプリケーションでのソフトウェアのボリューム スライダーで表される物理ボリューム スライダーの運用特性については、次を参照してください。 [Audio-Tapered ボリューム コントロール](https://docs.microsoft.com/windows/desktop/CoreAudio/audio-tapered-volume-controls)します。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 [既定のオーディオ音量設定のカスタマイズ](customizing-default-audio-volume-settings.md)  

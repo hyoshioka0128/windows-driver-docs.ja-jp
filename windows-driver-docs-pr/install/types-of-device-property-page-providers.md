@@ -4,12 +4,12 @@ description: デバイスのプロパティ ページのプロバイダーの種
 ms.assetid: b467543e-6907-44e5-b407-637cad7f6d78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ebae27b634f97d95d094f7150283ca86f779b95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af1afea7fd441c22586a56ed4570b33fc5e984c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339516"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370926"
 ---
 # <a name="types-of-device-property-page-providers"></a>デバイスのプロパティ ページのプロバイダーの種類
 
@@ -18,7 +18,7 @@ ms.locfileid: "63339516"
 
 -   **クラスのインストーラーと共同インストーラー。**
 
-    A[共同インストーラー](writing-a-co-installer.md)サポートすることで 1 つまたは複数のデバイスのカスタム プロパティ ページを提供することができます、 [ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://msdn.microsoft.com/library/windows/hardware/ff543656)デバイス インストール機能 (差分) コード。 プロパティを提供するインストーラーがハンドルをページと、 **DIF_ADDPROPERTYPAGE_ADVANCED**要求、プロパティ ページ ダイアログ ボックス プロシージャのアドレスを設定します。
+    A[共同インストーラー](writing-a-co-installer.md)サポートすることで 1 つまたは複数のデバイスのカスタム プロパティ ページを提供することができます、 [ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-addpropertypage-advanced)デバイス インストール機能 (差分) コード。 プロパティを提供するインストーラーがハンドルをページと、 **DIF_ADDPROPERTYPAGE_ADVANCED**要求、プロパティ ページ ダイアログ ボックス プロシージャのアドレスを設定します。
 
     Windows Driver Kit (WDK) でトースター サンプルの一部である共同インストーラーには、この種類のデバイスのプロパティ ページのプロバイダーがサポートしています。 ある、 *src\\全般\\トースター\\classinstaller* WDK のサブディレクトリ。
 

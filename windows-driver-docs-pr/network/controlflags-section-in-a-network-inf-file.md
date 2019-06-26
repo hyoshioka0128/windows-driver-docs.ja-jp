@@ -8,12 +8,12 @@ keywords:
 - ControlFlags セクション WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e64a7cdec2c73ebac5b9cd2ce539f31e091ebc5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65cdae07b06b1b4edfa8d2eacf85c25fa280024f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374944"
 ---
 # <a name="controlflags-section-in-a-network-inf-file"></a>ネットワーク INF ファイル内の ControlFlags セクション
 
@@ -21,7 +21,7 @@ ms.locfileid: "63357392"
 
 
 
-A **ControlFlags**ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF ControlFlags セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546342)します。
+A **ControlFlags**ネットワーク INF ファイルのセクションは、ジェネリックに基づきます[ **INF ControlFlags セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)します。
 
 **ControlFlags**ネットワーク INF ファイルのセクションは、1 つまたは複数に通常は**ExcludeFromSelect**エントリ。 各**ExcludeFromSelect**エントリを手動でインストール中にオプションとして、エンドユーザーに表示されないネットワーク コンポーネントを指定します。
 

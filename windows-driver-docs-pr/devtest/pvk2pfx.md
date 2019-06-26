@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e0a35557cca9be560c18d8b359b88a585edd4d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67fe1c056188402ff41603d665b62a21ecaa9588
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358264"
 ---
 # <a name="pvk2pfx"></a>Pvk2Pfx
 
@@ -31,29 +31,29 @@ Pvk2Pfx (Pvk2Pfx.exe) は、コマンド ライン ツールのコピーの公�
 
 ### <a name="span-idswitchesandargumentsspanspan-idswitchesandargumentsspanswitches-and-arguments"></a><span id="switches_and_arguments"></span><span id="SWITCHES_AND_ARGUMENTS"></span>スイッチと引数
 
-<span id="_PVK_PVKFILENAME.PVK"></span>**/pvk** *pvkfilename.pvk*  
+<span id="_PVK_PVKFILENAME.PVK"></span> **/pvk** *pvkfilename.pvk*  
 .Pvk ファイルの名前を指定します。
 
-<span id="_SPC_SPCFILENAME.EXT"></span>**/spc** *spcfilename.ext*  
-拡張機能と名前を指定します、[ソフトウェア発行元証明書 (SPC)](https://msdn.microsoft.com/library/windows/hardware/ff552299)証明書を含むファイル。 ファイルは、.spc ファイルまたは .cer ファイルのいずれかにすることはできます。
+<span id="_SPC_SPCFILENAME.EXT"></span> **/spc** *spcfilename.ext*  
+拡張機能と名前を指定します、[ソフトウェア発行元証明書 (SPC)](https://docs.microsoft.com/windows-hardware/drivers/install/software-publisher-certificate)証明書を含むファイル。 ファイルは、.spc ファイルまたは .cer ファイルのいずれかにすることはできます。
 
-<span id="_PFX_PFXFILENAME.PFX"></span>**/pfx** *pfxfilename.pfx*  
+<span id="_PFX_PFXFILENAME.PFX"></span> **/pfx** *pfxfilename.pfx*  
 .Pfx ファイルの名前を指定します。
 
-<span id="_pi_pvkpassword"></span><span id="_PI_PVKPASSWORD"></span>**/pi** *pvkpassword*  
+<span id="_pi_pvkpassword"></span><span id="_PI_PVKPASSWORD"></span> **/pi** *pvkpassword*  
 .Pvk ファイルのパスワードを指定します。
 
-<span id="_po_pfxpassword"></span><span id="_PO_PFXPASSWORD"></span>**/po** *pfxpassword*  
+<span id="_po_pfxpassword"></span><span id="_PO_PFXPASSWORD"></span> **/po** *pfxpassword*  
 .Pfx ファイルのパスワードを指定します。 .Pfx ファイルのパスワードが指定されていない場合、.pfx ファイルのパスワードは .pvk ファイルのパスワードと同じになります。
 
-<span id="_f"></span><span id="_F"></span>**/f**  
+<span id="_f"></span><span id="_F"></span> **/f**  
 指定したのと同じ名前を持つ 1 つが存在する場合は、.pfx ファイルを上書きする Pvk2Pfx を構成します、 **- pfx**スイッチします。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
 
 場合、 **- pfx** *pfxfilename.pfx*スイッチが指定されていない、pvk2pfx 無視、 **po** *パスワード*スイッチと **-f**スイッチ、およびその対応するパスワードと .pfx ファイルの名前のユーザーに求めるウィザードが表示されます。
 
-使用するには、 [ **SignTool** ](signtool.md)に準拠している方法で、SPC を使用してドライバーに署名するためのツール、[カーネル モード コードの署名ポリシー](https://msdn.microsoft.com/library/windows/hardware/ff548231)、SPC 情報に追加する必要がありますドライバーに署名するローカル コンピューターの個人証明書ストア。 SPC 情報を個人証明書ストアに追加する方法については、次を参照してください。[ソフトウェア発行元証明書](https://msdn.microsoft.com/library/windows/hardware/ff552299)します。
+使用するには、 [ **SignTool** ](signtool.md)に準拠している方法で、SPC を使用してドライバーに署名するためのツール、[カーネル モード コードの署名ポリシー](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)、SPC 情報に追加する必要がありますドライバーに署名するローカル コンピューターの個人証明書ストア。 SPC 情報を個人証明書ストアに追加する方法については、次を参照してください。[ソフトウェア発行元証明書](https://docs.microsoft.com/windows-hardware/drivers/install/software-publisher-certificate)します。
 
 Pvk2Pfx ツールの 32 ビット バージョンが、箱にある\\x86 WDK のフォルダー。 ツールの 64 ビット バージョンが、箱にある\\WDK の x64。 たとえば、Windows 10 を実行している x64 ベースのコンピューター、パスは、c:\\Program Files (x86)\\Windows キット\\10\\bin\\x64。
 

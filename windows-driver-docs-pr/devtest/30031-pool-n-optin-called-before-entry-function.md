@@ -6,19 +6,19 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30031
-ms.openlocfilehash: 5c0d38c2ba2d317f2c1f44d8dc51707cee8b5ec8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74761caf9fcb7c192aaaf582410a198955e08e25
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371470"
 ---
 # <a name="c30031"></a>C30031
 
 
 C30031 を警告します。メモリ割り当て関数を呼び出すと、実行可能なメモリを示すパラメーターを渡す
 
-コード分析の使用を検出しました[プール\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)と**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 前に呼び出されますが、関数のエントリ (たとえば、 **DriverEntry()** または**DllInitialize()**)。 あるエントリの関数を間接的に呼び出すことは**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)**、エラーを抑制する場合 (を参照してください[を抑制するプラグマ Prefast警告メッセージ](https://msdn.microsoft.com/library/gg155764.aspx))。
+コード分析の使用を検出しました[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)と**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 前に呼び出されますが、関数のエントリ (たとえば、 **DriverEntry()** または**DllInitialize()** )。 あるエントリの関数を間接的に呼び出すことは**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 、エラーを抑制する場合 (を参照してください[を抑制するプラグマ Prefast警告メッセージ](https://docs.microsoft.com/previous-versions/windows/embedded/gg155764(v=winembedded.70)))。
 
 禁止\_MEM\_割り当て\_かもしれません\_セーフ
 

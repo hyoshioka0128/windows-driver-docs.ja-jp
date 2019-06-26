@@ -4,19 +4,19 @@ description: モバイル ブロードバンド アプリと他の Windows コ�
 ms.assetid: 70469f6b-70a8-4ebc-b315-08ddeffbdc0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c08f251204697d34a24ac41650c92fc168af22a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cad659cb3c38a81b3134cc539e278305dc1c9dc0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359260"
 ---
 # <a name="integrate-a-mobile-broadband-app-with-other-windows-components"></a>モバイル ブロードバンド アプリと他の Windows コンポーネントを統合する
 
 
 Windows 10 のユーザー インターフェイス (UI) のサーフェスを使用すると、モバイル ブロード バンド アプリの全体的なエクスペリエンスを向上します。
 
-基礎、やクラウドへのローミング アプリの UI コントロールのレイアウト、ナビゲーション、コマンドの実行、アニメーション、タッチ操作、スナップしスケーリング、コントラクトと機能、タイルおよび通知の追加のユーザー エクスペリエンス デザイン ガイドライン、を参照してください。[UWP アプリ用のインデックスの UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424)します。
+基礎、やクラウドへのローミング アプリの UI コントロールのレイアウト、ナビゲーション、コマンドの実行、アニメーション、タッチ操作、スナップしスケーリング、コントラクトと機能、タイルおよび通知の追加のユーザー エクスペリエンス デザイン ガイドライン、を参照してください。[UWP アプリ用のインデックスの UX ガイドライン](https://developer.microsoft.com/windows/apps/design)します。
 
 このトピックには、次のセクションが含まれています。
 
@@ -39,7 +39,7 @@ Windows 10 のユーザー インターフェイス (UI) のサーフェスを�
 ## <a name="app-settings"></a>アプリの設定
 
 
-使用することができます[アプリ設定](https://msdn.microsoft.com/library/windows/apps/hh770544)アプリ構成設定を含めます。 これらのいくつかの例は次のとおりです。
+使用することができます[アプリ設定](https://docs.microsoft.com/windows/uwp/app-settings/guidelines-for-app-settings)アプリ構成設定を含めます。 これらのいくつかの例は次のとおりです。
 
 -   サインインおよびサインアウト
 
@@ -68,7 +68,7 @@ Windows 10 のユーザー インターフェイス (UI) のサーフェスを�
 
 -   **フォーム フィールドの検証エラー**をフォームに誤った情報が入力されたときに表示されます。 検証エラーはインライン表示するか、ユーザーが、エラーが関連付けられているフィールドを認識できるようにします。
 
-エラーが存在する方法のガイダンスについては、次を参照してください。 [、UI レイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)します。 次の例では、ページの上部にある通知バーが表示されます。
+エラーが存在する方法のガイダンスについては、次を参照してください。 [、UI レイアウト](https://docs.microsoft.com/previous-versions/windows/apps/hh465304(v=win.10))します。 次の例では、ページの上部にある通知バーが表示されます。
 
 ![通知バーは、エラーを示しています。](images/mb-fig1-notificationbarerrors.png)
 
@@ -109,7 +109,7 @@ Windows 10 のユーザー インターフェイス (UI) のサーフェスを�
 
 ![別のアプリとサービス ページ](images/mb-fig3-snappedview-servicespage.png)
 
-アプリがアプリ ビュー、ハイ コントラスト モードとスクリーン リーダーの準備などからアクセスできることを確認します。 アプリにアクセスできるようにする方法の詳細については、次を参照してください。 [JavaScript を使用して UWP アプリのユーザー補助機能](https://msdn.microsoft.com/library/windows/apps/hh452681)します。
+アプリがアプリ ビュー、ハイ コントラスト モードとスクリーン リーダーの準備などからアクセスできることを確認します。 アプリにアクセスできるようにする方法の詳細については、次を参照してください。 [JavaScript を使用して UWP アプリのユーザー補助機能](https://docs.microsoft.com/previous-versions/windows/apps/hh452681(v=win.10))します。
 
 ## <a name="span-idlaunchptsspanspan-idlaunchptsspanlaunch-points"></a><span id="launchpts"></span><span id="LAUNCHPTS"></span>起動ポイント
 
@@ -150,7 +150,7 @@ Windows 接続マネージャーを使用して、モバイル ブロード バ�
 
 ### <a name="span-idsplashspanspan-idsplashspansplash-screen"></a><span id="splash"></span><span id="SPLASH"></span>スプラッシュ スクリーン
 
-スプラッシュ スクリーンを使用すると、ブランド化を促進します。 スプラッシュ スクリーンの詳細については、次を参照してください。[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/hh465332)します。
+スプラッシュ スクリーンを使用すると、ブランド化を促進します。 スプラッシュ スクリーンの詳細については、次を参照してください。[スプラッシュ画面の追加](https://docs.microsoft.com/previous-versions/windows/apps/hh465332(v=win.10))します。
 
 ![スプラッシュ スクリーン](images/mb-fig4-splash-screen.png)
 
@@ -172,9 +172,9 @@ Windows 接続マネージャーを使用して、モバイル ブロード バ�
 
 ### <a name="span-idresourcesspanspan-idresourcesspanadditional-resources"></a><span id="resources"></span><span id="RESOURCES"></span>その他のリソース
 
--   [タイル、バッジ、およびトースト通知の使用](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)
+-   [タイル、バッジ、およびトースト通知の使用](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10))
 
--   [トースト通知のガイドラインとチェックリスト](https://msdn.microsoft.com/library/windows/apps/hh465391)
+-   [トースト通知のガイドラインとチェックリスト](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

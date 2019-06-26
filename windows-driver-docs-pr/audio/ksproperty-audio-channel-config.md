@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88f79c93576ee5f8dccfd4610e459919eb8b5587
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec83cf37fc4dbfc1ac063c32b2c0d1eeb5894c44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333081"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358956"
 ---
 # <a name="kspropertyaudiochannelconfig"></a>KSPROPERTY\_オーディオ\_チャネル\_構成
 
@@ -53,8 +53,8 @@ KSPROPERTY\_オーディオ\_チャネル\_構成プロパティは、ノード�
 <td align="left"><p>〇</p></td>
 <td align="left"><p>はい</p></td>
 <td align="left"><p>フィルターと Pin</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537083" data-raw-source="[&lt;strong&gt;KSAUDIO_CHANNEL_CONFIG&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537083)"><strong>KSAUDIO_CHANNEL_CONFIG</strong></a></p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config" data-raw-source="[&lt;strong&gt;KSAUDIO_CHANNEL_CONFIG&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)"><strong>KSAUDIO_CHANNEL_CONFIG</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -70,9 +70,9 @@ KSPROPERTY\_オーディオ\_チャネル\_構成プロパティの要求がス�
 <a name="remarks"></a>コメント
 -------
 
-DAC のノードのプロパティとして使用する場合 ([**KSNODETYPE\_DAC**](ksnodetype-dac.md)) または 3D のノード ([**KSNODETYPE\_3D\_効果** ](ksnodetype-3d-effects.md))、KSPROPERTY\_オーディオ\_チャネル\_構成プロパティが DirectSound スピーカーの構成を指定します。 組み合わせてこのプロパティを使用、ステレオのスピーカーの構成の場合、 [ **KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY** ](ksproperty-audio-stereo-speaker-geometry.md)プロパティで、ヘッドフォンとステレオのスピーカー構成がいくつかを区別します。 スピーカーの構成の詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://msdn.microsoft.com/library/windows/hardware/ff536332)します。
+DAC のノードのプロパティとして使用する場合 ([**KSNODETYPE\_DAC**](ksnodetype-dac.md)) または 3D のノード ([**KSNODETYPE\_3D\_効果** ](ksnodetype-3d-effects.md))、KSPROPERTY\_オーディオ\_チャネル\_構成プロパティが DirectSound スピーカーの構成を指定します。 組み合わせてこのプロパティを使用、ステレオのスピーカーの構成の場合、 [ **KSPROPERTY\_オーディオ\_ステレオ\_スピーカー\_GEOMETRY** ](ksproperty-audio-stereo-speaker-geometry.md)プロパティで、ヘッドフォンとステレオのスピーカー構成がいくつかを区別します。 スピーカーの構成の詳細については、次を参照してください。 [DirectSound スピーカー構成設定](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-speaker-configuration-settings)します。
 
-DirectSound は、では、KSPROPERTY\_オーディオ\_チャネル\_チャネル構成に対して「パン」ノードを照会するプロパティを構成します。 パン ノードはボリュームの 2 番目のノード ([**KSNODETYPE\_ボリューム**](ksnodetype-volume.md)) を満たすミキサー ピン、 [DirectSound ノード順序要件](https://msdn.microsoft.com/library/windows/hardware/ff536331)します。 DirectSound 実装の**IDirectSoundBuffer::SetPan**メソッド (Microsoft Windows SDK のドキュメントで説明) はパン ノードの[ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](ksproperty-audio-volumelevel.md)パンを制御するプロパティ。
+DirectSound は、では、KSPROPERTY\_オーディオ\_チャネル\_チャネル構成に対して「パン」ノードを照会するプロパティを構成します。 パン ノードはボリュームの 2 番目のノード ([**KSNODETYPE\_ボリューム**](ksnodetype-volume.md)) を満たすミキサー ピン、 [DirectSound ノード順序要件](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-node-ordering-requirements)します。 DirectSound 実装の**IDirectSoundBuffer::SetPan**メソッド (Microsoft Windows SDK のドキュメントで説明) はパン ノードの[ **KSPROPERTY\_オーディオ\_VOLUMELEVEL** ](ksproperty-audio-volumelevel.md)パンを制御するプロパティ。
 
 DirectSound 扱います KSPROPERTY\_オーディオ\_チャネル\_ボリュームと 3D のノードで pin のプロパティと、DAC のノード上のフィルター プロパティとして構成します。
 
@@ -97,9 +97,9 @@ DirectSound 扱います KSPROPERTY\_オーディオ\_チャネル\_ボリュー
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSAUDIO\_チャネル\_構成**](https://msdn.microsoft.com/library/windows/hardware/ff537083)
+[**KSAUDIO\_チャネル\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)
 
 [**KSNODETYPE\_DAC**](ksnodetype-dac.md)
 

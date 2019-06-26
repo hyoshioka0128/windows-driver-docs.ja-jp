@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_WAN_CO_FRAGMENT ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: d625f22f6cd7e617606140be6778dedb0596088e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ae329c9cf2a2737949585cd6617e3f6d3124de4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372574"
 ---
 # <a name="ndisstatuswancofragment"></a>NDIS\_状態\_WAN\_CO\_フラグメント
 
@@ -21,9 +21,9 @@ NDIS\_状態\_WAN\_CO\_-FRAGMENT status はいる CoNDIS WAN ミニポート ド
 <a name="remarks"></a>注釈
 -------
 
-**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体にはへのポインターが含まれています、 [ **NDIS\_WAN\_CO\_フラグメント**](https://msdn.microsoft.com/library/windows/hardware/ff559030)構造体。 NDIS\_WAN\_CO\_フラグメントの構造が理由を部分的なパケットが受信されたことを説明します。
+**StatusBuffer**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体にはへのポインターが含まれています、 [ **NDIS\_WAN\_CO\_フラグメント**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559030(v=vs.85))構造体。 NDIS\_WAN\_CO\_フラグメントの構造が理由を部分的なパケットが受信されたことを説明します。
 
-NDIS の詳細については\_状態\_WAN\_CO\_フラグメントを参照してください[を示している CoNDIS WAN ミニポート ドライバー ステータス](https://msdn.microsoft.com/library/windows/hardware/ff554825)します。 いる CoNDIS WAN インターフェイスの詳細については、次を参照してください。[いる CoNDIS の WAN ミニポート ドライバーを実装する](https://msdn.microsoft.com/library/windows/hardware/ff553805)します。
+NDIS の詳細については\_状態\_WAN\_CO\_フラグメントを参照してください[を示している CoNDIS WAN ミニポート ドライバー ステータス](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-condis-wan-miniport-driver-status)します。 いる CoNDIS WAN インターフェイスの詳細については、次を参照してください。[いる CoNDIS の WAN ミニポート ドライバーを実装する](https://docs.microsoft.com/windows-hardware/drivers/network/implementing-condis-wan-miniport-drivers)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -48,9 +48,9 @@ NDIS の詳細については\_状態\_WAN\_CO\_フラグメントを参照し�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_WAN\_CO\_フラグメント**](https://msdn.microsoft.com/library/windows/hardware/ff559030)
+[**NDIS\_WAN\_CO\_フラグメント**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559030(v=vs.85))
 
  
 

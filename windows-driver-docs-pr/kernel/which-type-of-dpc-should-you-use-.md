@@ -9,12 +9,12 @@ keywords:
 - CustomDpc
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b1f461e16c0507eb33d83524342bc3132aafb22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 854c21f68a5b4b77893780291f37443b80dc7a75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358098"
 ---
 # <a name="which-type-of-dpc-should-you-use"></a>使用すべき DPC の種類
 
@@ -24,19 +24,19 @@ ms.locfileid: "63338432"
 
 ドライバーの設計によって、次のことができます。
 
--   1 つ[ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)割り込み駆動のすべての I/O 操作を完了するには
+-   1 つ[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)割り込み駆動のすべての I/O 操作を完了するには
 
--   1 つまたは複数のセット[ *CustomDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542972)ルーチン。
+-   1 つまたは複数のセット[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)ルーチン。
 
 -   両方を*DpcForIsr*と一連の操作に固有の*CustomDpc*ルーチン
 
 ドライバーが 1 つを持つかどうか*DpcForIsr*ルーチン、一連の*CustomDpc*ルーチン、またはその両方が、基になるデバイスの性質に依存し、一連の I/O 要求がサポートする必要がある必要があります。
 
-ほとんどの最下位レベルのデバイス ドライバーがある、1 つ*DpcForIsr*ルーチンを I/O がそれぞれのデバイスで 1 つまたは複数の操作を必要とする各 IRP の処理を完了します。 1 つを使用して*DpcForIsr*要求を完了するは一度に 1 つの操作をデバイス上の I/O 操作の割り込み駆動は比較的簡単です。 このようなドライバーの ISR を呼び出すだけ[ **IoRequestDpc** ](https://msdn.microsoft.com/library/windows/hardware/ff549657)割り込み駆動の I/O 操作ごとにします。
+ほとんどの最下位レベルのデバイス ドライバーがある、1 つ*DpcForIsr*ルーチンを I/O がそれぞれのデバイスで 1 つまたは複数の操作を必要とする各 IRP の処理を完了します。 1 つを使用して*DpcForIsr*要求を完了するは一度に 1 つの操作をデバイス上の I/O 操作の割り込み駆動は比較的簡単です。 このようなドライバーの ISR を呼び出すだけ[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)割り込み駆動の I/O 操作ごとにします。
 
 最下位レベルのいくつかのドライバーが*CustomDpc*ルーチンがデバイスの I/O 操作の割り込み駆動の多様なセットを完了する 1 つ以上の DPC を必要としない限り、します。
 
-1 つを使用して*DpcForIsr*同時操作を実行できるデバイスでの操作、割り込み駆動のオーバー ラップ I/O の完了を慎重に設計でできることが比較的難しいことができます。 他に、またはキューではなく、 *DpcForIsr*、ドライバーによって提供される、操作に固有の一連のキューに配置できます ISR *CustomDpc*ルーチンを呼び出すことによって[ **KeInsertQueueDpc**](https://msdn.microsoft.com/library/windows/hardware/ff552185).
+1 つを使用して*DpcForIsr*同時操作を実行できるデバイスでの操作、割り込み駆動のオーバー ラップ I/O の完了を慎重に設計でできることが比較的難しいことができます。 他に、またはキューではなく、 *DpcForIsr*、ドライバーによって提供される、操作に固有の一連のキューに配置できます ISR *CustomDpc*ルーチンを呼び出すことによって[ **KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc).
 
 たとえば、デザインの課題のいくつかシリアル ドライバーの記述に関連します。 全二重デバイスのドライバーとしてシリアル ドライバーは Irp をキューには、順序、一対一で対応に依存できない、 *StartIo*ルーチンとマルチタスクでそのデバイスからの割り込みのシーケンスマルチプロセッサ システムです。 さらに、シリアル ドライバーは、バッファー内のデータを削除するには、要求と、以前要求した操作をキャンセルする非同期のユーザーが生成した要求のタイムアウトを処理する必要がありますなどとします。
 

@@ -4,12 +4,12 @@ description: UMDF ドライバーに対するセッション 0 のガイドラ�
 ms.assetid: 67EF6762-AA31-4D35-8EB3-04F9CD34C7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed6d6c7dac34cbcd9a74420ad6ab2d47a7d0805
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3da3014f3ae3c8ea6e8c7cb59fec3b9db80c31af
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325132"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376180"
 ---
 # <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF ドライバーに対するセッション 0 のガイドライン
 
@@ -25,12 +25,12 @@ Windows Vista 以降、オペレーティング システムでは、サービ�
 
     UMDF ドライバーでは、次のタスクを実行する Windows 関数を呼び出すことがあります。
 
-    -   ドライバーを呼び出すことができます **SetupDi * * * Xxx*プラグ アンド プレイ デバイスのプロパティを取得する関数。 たとえば、 [OSR USB Fx2 Learning kit UMDF ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?linkid=256202)呼び出し[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551967)デバイスのバスの種類の GUID を取得します。
+    -   ドライバーを呼び出すことができます **SetupDi * * * Xxx*プラグ アンド プレイ デバイスのプロパティを取得する関数。 たとえば、 [OSR USB Fx2 Learning kit UMDF ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?linkid=256202)呼び出し[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)デバイスのバスの種類の GUID を取得します。
         **注**  A UMDF ドライバーで安全に呼び出すさまざまなことはできません、**SetupDi * * * Xxx*デバイス ノードのプロパティを取得する関数の呼び出しに安全では、関数が。
 
          
 
-    -   手動のキューからの I/O 要求を取得するドライバーは、キューをポーリングする定期的なタイマーを作成する場合があります。 たとえば、 [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226)サンプルでは、呼び出すことにより、タイマー コールバック ルーチンを登録します[ **CreateThreadpoolTimer**](https://msdn.microsoft.com/library/windows/desktop/ms682466)、を呼び出すことによって定期的なタイマーを設定および[。 **SetThreadpoolTimer**](https://msdn.microsoft.com/library/windows/desktop/ms686271)します。
+    -   手動のキューからの I/O 要求を取得するドライバーは、キューをポーリングする定期的なタイマーを作成する場合があります。 たとえば、 [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226)サンプルでは、呼び出すことにより、タイマー コールバック ルーチンを登録します[ **CreateThreadpoolTimer**](https://docs.microsoft.com/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)、を呼び出すことによって定期的なタイマーを設定および[。 **SetThreadpoolTimer**](https://docs.microsoft.com/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)します。
         **注**  バージョン 1.11 以降、UMDF では、作業項目。 詳細については、次を参照してください。[を使用して作業項目](using-workitems.md)します。
 
          

@@ -4,22 +4,22 @@ description: MapTransferEx ルーチンでは、以前に割り当てられた D
 ms.assetid: 79D3DDB2-B134-43B2-A6CC-94035C793047
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c72ea9dd940cee71186c0b829bc536cf74143aed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ad0d21bbcf63e3f54eed8deaf2223cb6163e669
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372300"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358180"
 ---
 # <a name="using-the-maptransferex-routine"></a>MapTransferEx ルーチンの使用
 
 
-[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)ルーチンは、DMA の以前に割り当てられたリソースのセットを初期化し、DMA の転送を開始します。 このルーチンは、バージョン 3 の DMA 操作インターフェイスで使用できます。 このインターフェイスのバージョン 3 は、Windows 8 以降ではサポートされています。 DMA 操作のインターフェイスの詳細については、次を参照してください。 [ **DMA\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544071)します。
+[ **MapTransferEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer_ex)ルーチンは、DMA の以前に割り当てられたリソースのセットを初期化し、DMA の転送を開始します。 このルーチンは、バージョン 3 の DMA 操作インターフェイスで使用できます。 このインターフェイスのバージョン 3 は、Windows 8 以降ではサポートされています。 DMA 操作のインターフェイスの詳細については、次を参照してください。 [ **DMA\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_operations)します。
 
 ## <a name="comparison-of-maptransferex-to-maptransfer"></a>MapTransfer に MapTransferEx の比較
 
 
-**MapTransferEx**の改善されたバージョン、 [ **MapTransfer** ](https://msdn.microsoft.com/library/windows/hardware/ff554402)ルーチン。 **MapTransfer**は DMA 操作インターフェイス、Windows 2000 では、バージョン 1 以降のすべてのバージョンで使用できます。 1 回の呼び出しに**MapTransfer** MDL から物理メモリの 1 つの連続したブロックをマップすることができます。 ただし、複雑な DMA 転送用のデータ バッファーの説明は、MDL チェーンによって、チェーン内の各 MDL が物理的に連続するメモリのいくつかのブロックを表す場合があります。 使用する**MapTransfer**ドライバーにそのようなバッファーを転送するには、多くの呼び出しを行う必要があります**MapTransfer**します。 通常、これらの呼び出しは入れ子になったループのペア内で行われます。 各 MDL では、[次へ] を 1 つの連続した物理メモリのブロックから内側のループが反復処理し、MDL チェーン内の次に 1 つの MDL から外側のループが反復処理します。
+**MapTransferEx**の改善されたバージョン、 [ **MapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)ルーチン。 **MapTransfer**は DMA 操作インターフェイス、Windows 2000 では、バージョン 1 以降のすべてのバージョンで使用できます。 1 回の呼び出しに**MapTransfer** MDL から物理メモリの 1 つの連続したブロックをマップすることができます。 ただし、複雑な DMA 転送用のデータ バッファーの説明は、MDL チェーンによって、チェーン内の各 MDL が物理的に連続するメモリのいくつかのブロックを表す場合があります。 使用する**MapTransfer**ドライバーにそのようなバッファーを転送するには、多くの呼び出しを行う必要があります**MapTransfer**します。 通常、これらの呼び出しは入れ子になったループのペア内で行われます。 各 MDL では、[次へ] を 1 つの連続した物理メモリのブロックから内側のループが反復処理し、MDL チェーン内の次に 1 つの MDL から外側のループが反復処理します。
 
 これに対し、1 つ呼び出し**MapTransferEx** DMA の複雑な転送全体のデータ バッファーを転送することができます。 次の 3 つ**MapTransferEx**パラメーターが転送に使用するバッファー メモリについて説明します。
 
@@ -69,7 +69,7 @@ ms.locfileid: "63372300"
 
 たとえば場合、 **MapTransferEx**呼び出しは X のみを転送できますバイトをバッファーとの間*オフセット*= B と\**長さ*= N (入力) に次に返された場合に、\**長さ*X を = です。次回の呼び出しの**MapTransferEx**、ドライバーを設定する必要があります*オフセット*= B + X と\**長さ*= N - X。両方の呼び出しで同じ MDL チェーンは変更せずに使用します。
 
-呼び出し元が指定されている場合、 [ *DmaCompletionRoutine*](https://msdn.microsoft.com/library/windows/hardware/hh450991)、 **MapTransferEx**書き込みます、 \**長さ*前に、の値を出力スケジュール、 *DmaCompletionRoutine*を実行します。 この動作により、更新された\**長さ*値が使用する前に常に、 *DmaCompletionRoutine*を実行します。 たとえば、DMA 転送では、2 つが必要な場合**MapTransferEx**呼び出し、 *DmaCompletionRoutine*呼び出しの最初のスケジュールを取得できることを\**長さ*最初の呼び出しから値を出力します。 ルーチンを計算するこの値を使用できますし、 \**長さ*2 つ目の呼び出しの値を入力します。 通常、*長さ*パラメーター内の場所をポイントする、 \* *CompletionContext*に用意されている値、 *DmaCompletionRoutine*として、パラメーター。
+呼び出し元が指定されている場合、 [ *DmaCompletionRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-dma_completion_routine)、 **MapTransferEx**書き込みます、 \**長さ*前に、の値を出力スケジュール、 *DmaCompletionRoutine*を実行します。 この動作により、更新された\**長さ*値が使用する前に常に、 *DmaCompletionRoutine*を実行します。 たとえば、DMA 転送では、2 つが必要な場合**MapTransferEx**呼び出し、 *DmaCompletionRoutine*呼び出しの最初のスケジュールを取得できることを\**長さ*最初の呼び出しから値を出力します。 ルーチンを計算するこの値を使用できますし、 \**長さ*2 つ目の呼び出しの値を入力します。 通常、*長さ*パラメーター内の場所をポイントする、 \* *CompletionContext*に用意されている値、 *DmaCompletionRoutine*として、パラメーター。
 
  
 

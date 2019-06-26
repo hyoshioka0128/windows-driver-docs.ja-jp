@@ -5,12 +5,12 @@ ms.assetid: C1389D7D-3C8E-41B5-8E00-617D699699A2
 ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_SERVICE_SESSION_WRITE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: a29090183bda9af12d9808898d9b1219375f28c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d851f44db625c92c914235600638ac3b595f966a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386672"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358622"
 ---
 # <a name="oidwwandeviceservicesessionwrite"></a>OID\_WWAN\_デバイス\_サービス\_セッション\_書き込み
 
@@ -19,11 +19,11 @@ OID\_WWAN\_デバイス\_サービス\_セッション\_書き込み MB デバ�
 
 クエリ要求はサポートされていません。
 
-ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_デバイス\_サービス\_セッション\_書き込み\_完了**](https://msdn.microsoft.com/library/windows/hardware/hh846208) を格納している状態の通知[ **NDIS\_WWAN\_デバイス\_サービス\_セッション\_書き込み\_完了**](https://msdn.microsoft.com/library/windows/hardware/hh831861)構造体を操作の状態を完了します。
+ミニポート ドライバーが非同期的に、最初に返す NDIS セット要求を処理する必要があります\_状態\_INDICATION\_元の要求とそれ以降の送信に必要な[ **NDIS\_状態\_WWAN\_デバイス\_サービス\_セッション\_書き込み\_完了**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-session-write-complete) を格納している状態の通知[ **NDIS\_WWAN\_デバイス\_サービス\_セッション\_書き込み\_完了**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete)構造体を操作の状態を完了します。
 
 ミニポート ドライバーは、NDIS を返す必要があります\_状態\_アダプター\_いない\_デバイス、サービスのセッションが開いていない場合は開きます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -46,9 +46,9 @@ OID\_WWAN\_デバイス\_サービス\_セッション\_書き込み MB デバ�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_WWAN\_デバイス\_サービス\_セッション\_書き込み\_完了**](https://msdn.microsoft.com/library/windows/hardware/hh846208)
+[**NDIS\_状態\_WWAN\_デバイス\_サービス\_セッション\_書き込み\_完了**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-session-write-complete)
 
-[**NDIS\_WWAN\_デバイス\_サービス\_セッション\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/hh831860)
+[**NDIS\_WWAN\_デバイス\_サービス\_セッション\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write)
 
  
 

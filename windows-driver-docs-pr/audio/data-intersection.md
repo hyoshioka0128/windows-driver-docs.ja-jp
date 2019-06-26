@@ -11,12 +11,12 @@ keywords:
 - ソース ピン WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5c60477b805bcbdbd258d71ac26b2d39274fccc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4857f3cbb07d73ce8764517dd7cb7b961206c510
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333821"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359095"
 ---
 # <a name="data-intersection"></a>データ交差
 
@@ -28,7 +28,7 @@ ms.locfileid: "63333821"
 
 などの Windows Server 2003、Windows XP、Windows 2000、および Windows Me/98 に、 [SysAudio システム ドライバー](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)データ積集合の手法を使用して、サポートするフィルターのピンのペアを接続することで、オーディオ フィルター グラフを作成するには互換性のあるオーディオ データ形式。
 
-A [pin ファクトリ](pin-factories.md)型の構造体の各データ範囲が、データの範囲の配列として各暗証番号 (pin) をサポートしている形式のセットを示す[ **KSDATARANGE\_オーディオ**](https://msdn.microsoft.com/library/windows/hardware/ff537096). データ範囲は、一般的な形式の種類を指定する[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff537095)または[ **KSDATAFORMAT\_DSOUND**](https://msdn.microsoft.com/library/windows/hardware/ff537094). さらに、データの範囲は、次のパラメーターの各値の範囲を指定します。
+A [pin ファクトリ](pin-factories.md)型の構造体の各データ範囲が、データの範囲の配列として各暗証番号 (pin) をサポートしている形式のセットを示す[ **KSDATARANGE\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio). データ範囲は、一般的な形式の種類を指定する[ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex)または[ **KSDATAFORMAT\_DSOUND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_dsound). さらに、データの範囲は、次のパラメーターの各値の範囲を指定します。
 
 -   サンプルあたりのビット数
 
@@ -56,7 +56,7 @@ KSDATARANGE\_オーディオ構造体は、サンプル ビット数と頻度の
 
 -   チャネルの数は、2 つのチャンネル数の範囲が重複してリージョンから選択されます。
 
-たとえば、ポートのオーディオ ドライバーのシンクの暗証番号 (pin) と別のフィルターのソースの pin の一般的な形式をネゴシエートするときに (通常、 [KMixer システム ドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver))、SysAudio が最初にソース ピンのデータ範囲の配列を取得します。 SysAudio を送信し、 [ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://msdn.microsoft.com/library/windows/hardware/ff565198)シンク pin を要求し、この要求でソース ピンのデータ範囲の配列を埋め込みます。 カーネル ストリーミング レイヤーが要求をインターセプトして、ソース ピンのデータ範囲の配列、ハンドラーが検索に成功するまでは、最初の要素では、以降の連続する各要素に対して 1 回、ポート ドライバーの交差部分のデータ ハンドラーを呼び出す、データの積集合。
+たとえば、ポートのオーディオ ドライバーのシンクの暗証番号 (pin) と別のフィルターのソースの pin の一般的な形式をネゴシエートするときに (通常、 [KMixer システム ドライバー](kernel-mode-wdm-audio-components.md#kmixer_system_driver))、SysAudio が最初にソース ピンのデータ範囲の配列を取得します。 SysAudio を送信し、 [ **KSPROPERTY\_PIN\_DATAINTERSECTION** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)シンク pin を要求し、この要求でソース ピンのデータ範囲の配列を埋め込みます。 カーネル ストリーミング レイヤーが要求をインターセプトして、ソース ピンのデータ範囲の配列、ハンドラーが検索に成功するまでは、最初の要素では、以降の連続する各要素に対して 1 回、ポート ドライバーの交差部分のデータ ハンドラーを呼び出す、データの積集合。
 
 まず、ハンドラーは SysAudio はポート ドライバーの交差部分のデータ ハンドラーを呼び出すごとに、ミニポート ドライバーからシンク ピンのデータ範囲の配列を取得します。 以降では、最初の要素はシンク pin データ範囲と、現在のソース-pin のデータ範囲の交差部分の検索に成功するまで、配列を反復処理します。 ハンドラーでは、一般的な形式の積集合内にあるし、出力、呼び出し元には、この形式を選択します。
 

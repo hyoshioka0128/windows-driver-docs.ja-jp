@@ -11,12 +11,12 @@ keywords:
 - WDK のデバイス オブジェクトのセキュリティ記述子
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 223c6ae8277ad5a31984ecdf1c3ada1851b941b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cad1162aebc9e109558977359f6cfc5e2bc07d85
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377308"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394098"
 ---
 # <a name="sddl-for-device-objects"></a>デバイス オブジェクトを表す SDDL
 
@@ -24,7 +24,7 @@ ms.locfileid: "63377308"
 
 
 
-セキュリティ記述子定義言語 (SDDL) は、セキュリティ記述子を表すために使用されます。 デバイス オブジェクトのセキュリティは、ある SDDL 文字列によって指定できます[が INF ファイルに配置](https://msdn.microsoft.com/library/windows/hardware/ff540212)に渡されるまたは[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)します。 [セキュリティ記述子定義言語](https://msdn.microsoft.com/library/windows/desktop/aa379567)Microsoft Windows SDK ドキュメントが充実します。
+セキュリティ記述子定義言語 (SDDL) は、セキュリティ記述子を表すために使用されます。 デバイス オブジェクトのセキュリティは、ある SDDL 文字列によって指定できます[が INF ファイルに配置](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)に渡されるまたは[ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)します。 [セキュリティ記述子定義言語](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)Microsoft Windows SDK ドキュメントが充実します。
 
 によって、言語のサブセットのみがサポートされている完全な範囲の SDDL をサポートして INF ファイル、 **IoCreateDeviceSecure**ルーチン。 このサブセットは、ここで定義されます。
 
@@ -270,7 +270,7 @@ SDDL 文字列の形式の"D:P"後では、フォームの 1 つまたは複数�
 <td><p>UD</p></td>
 <td><p>ユーザー モード ドライバー</p>
 <p>この SID は、ユーザー モード ドライバーへのアクセスを付与します。 現時点では、この SID は、ユーザー モード ドライバー フレームワーク (UMDF) 用に記述されているドライバーのみを説明します。 この SID は、Windows 8 以降で使用できます。</p>
-<p>以前のバージョンの Windows で、"UD"の省略形を認識しないには、完全修飾形式のこの SID (S-1-5-84-0-0-0-0-0) UMDF ドライバーへのアクセスを許可するを指定する必要があります。 詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/hh439567" data-raw-source="[Controlling Device Access](https://msdn.microsoft.com/library/windows/hardware/hh439567)">デバイスへのアクセスを制御する</a>ユーザー モード ドライバー フレームワークのドキュメント。</p></td>
+<p>以前のバージョンの Windows で、"UD"の省略形を認識しないには、完全修飾形式のこの SID (S-1-5-84-0-0-0-0-0) UMDF ドライバーへのアクセスを許可するを指定する必要があります。 詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access" data-raw-source="[Controlling Device Access](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access)">デバイスへのアクセスを制御する</a>ユーザー モード ドライバー フレームワークのドキュメント。</p></td>
 </tr>
 </tbody>
 </table>

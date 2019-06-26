@@ -4,12 +4,12 @@ description: MB ミニポート ドライバーの初期化
 ms.assetid: cf332eb4-faea-40e3-b313-512f81718267
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9fa73ca04d98e4fb0b848fccb19f187420ced88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 948eb025627d16e75b0014205a0edd773d16240e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357819"
 ---
 # <a name="mb-miniport-driver-initialization"></a>MB ミニポート ドライバーの初期化
 
@@ -20,15 +20,15 @@ ms.locfileid: "63343327"
 
 MB のミニポート ドライバーを初期化するには、次の手順を使用します。
 
-1.  MB サービスは、同期 (ブロック) を送信[OID\_GEN\_物理\_MEDIUM](https://msdn.microsoft.com/library/windows/hardware/ff569621) MB デバイスの種類を識別するためにクエリ要求。 ミニポート ドライバーで応答した**NdisPhysicalMediumWirelessWan** MB デバイスが WWAN デバイスであることを示します。
+1.  MB サービスは、同期 (ブロック) を送信[OID\_GEN\_物理\_MEDIUM](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium) MB デバイスの種類を識別するためにクエリ要求。 ミニポート ドライバーで応答した**NdisPhysicalMediumWirelessWan** MB デバイスが WWAN デバイスであることを示します。
 
-2.  MB サービスは、同期 (ブロック) を送信[OID\_GEN\_メディア\_サポートされている](https://msdn.microsoft.com/library/windows/hardware/ff569609)MB デバイスでの使用のメディアの種類を識別するために、ミニポート ドライバーにクエリ要求。 ミニポート ドライバーで応答した**NdisMedium802\_3**をイーサネット エミュレーションを使用しているかを示します。
+2.  MB サービスは、同期 (ブロック) を送信[OID\_GEN\_メディア\_サポートされている](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-supported)MB デバイスでの使用のメディアの種類を識別するために、ミニポート ドライバーにクエリ要求。 ミニポート ドライバーで応答した**NdisMedium802\_3**をイーサネット エミュレーションを使用しているかを示します。
 
-3.  MB サービスは、同期 (ブロック) を送信[OID\_WWAN\_ドライバー\_CAP](https://msdn.microsoft.com/library/windows/hardware/ff569825)クエリ要求にどのようなドライバー モデルのバージョンを識別するために、ミニポート ドライバー、ミニポート ドライバーをサポートしています。 ミニポート ドライバーで応答した WWAN\_バージョン。
+3.  MB サービスは、同期 (ブロック) を送信[OID\_WWAN\_ドライバー\_CAP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)クエリ要求にどのようなドライバー モデルのバージョンを識別するために、ミニポート ドライバー、ミニポート ドライバーをサポートしています。 ミニポート ドライバーで応答した WWAN\_バージョン。
 
-4.  MB サービスは、非同期 (非ブロッキング) を送信[OID\_WWAN\_デバイス\_CAP](https://msdn.microsoft.com/library/windows/hardware/ff569824) MB デバイスの機能を識別するために、ミニポート ドライバーにクエリ要求。 ミニポート ドライバーは、要求を受信したことに必要な情報、今後の通知は送信 provisional 受信確認応答します。
+4.  MB サービスは、非同期 (非ブロッキング) を送信[OID\_WWAN\_デバイス\_CAP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps) MB デバイスの機能を識別するために、ミニポート ドライバーにクエリ要求。 ミニポート ドライバーは、要求を受信したことに必要な情報、今後の通知は送信 provisional 受信確認応答します。
 
-5.  ミニポート ドライバーの送信、 [ **NDIS\_状態\_WWAN\_デバイス\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567845)の機能を示す MB サービスへの通知MB デバイス ミニポート ドライバーをサポートします。 たとえば、ミニポート ドライバーでは、GSM ベースのデバイスをサポートする場合は指定する必要が、 **WwanCellularClassGsm**値、 **DeviceCaps.WwanCellularClass**のメンバー、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567907)構造体。 これを指定する必要があるかどうか、ミニポート ドライバーは、CDMA ベースのデバイスをサポートする**WwanCellularClassCdma**します。
+5.  ミニポート ドライバーの送信、 [ **NDIS\_状態\_WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)の機能を示す MB サービスへの通知MB デバイス ミニポート ドライバーをサポートします。 たとえば、ミニポート ドライバーでは、GSM ベースのデバイスをサポートする場合は指定する必要が、 **WwanCellularClassGsm**値、 **DeviceCaps.WwanCellularClass**のメンバー、 [ **NDIS\_WWAN\_デバイス\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)構造体。 これを指定する必要があるかどうか、ミニポート ドライバーは、CDMA ベースのデバイスをサポートする**WwanCellularClassCdma**します。
 
  
 

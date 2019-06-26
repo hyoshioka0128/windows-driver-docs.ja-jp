@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de8664a1c0a42bb4cca3727152de7cd40add72ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b25bc0e0dedf9686f801a03a8637b62c08603ed2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380822"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373109"
 ---
 # <a name="kspropertycopymacrovision"></a>KSPROPERTY\_コピー\_MACROVISION
 
@@ -54,7 +54,7 @@ KSPROPERTY\_コピー\_MACROVISION プロパティは、データ ストリー�
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567316" data-raw-source="[&lt;strong&gt;KS_COPY_MACROVISION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567316)"><strong>KS_COPY_MACROVISION</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_copy_macrovision" data-raw-source="[&lt;strong&gt;KS_COPY_MACROVISION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_copy_macrovision)"><strong>KS_COPY_MACROVISION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_コピー\_MACROVISION プロパティは、データ ストリー�
 <a name="remarks"></a>注釈
 -------
 
-Macrovision レベルの詳細については、次を参照してください。 [DVD 著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)します。
+Macrovision レベルの詳細については、次を参照してください。 [DVD 著作権保護](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-copyright-protection)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -87,7 +87,7 @@ Macrovision レベルの詳細については、次を参照してください�
 ## <a name="see-also"></a>関連項目
 
 
-[**KS\_コピー\_MACROVISION**](https://msdn.microsoft.com/library/windows/hardware/ff567316)
+[**KS\_コピー\_MACROVISION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_copy_macrovision)
 
  
 

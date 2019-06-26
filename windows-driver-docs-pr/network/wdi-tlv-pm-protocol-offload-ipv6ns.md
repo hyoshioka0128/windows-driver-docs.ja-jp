@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv6NS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8ddc5377c4fe41503085ca4a018b9e315cce9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40be32b1e51fab0c877cdb1fe99c130691be4c8f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362960"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373852"
 ---
 # <a name="wditlvpmprotocoloffloadipv6ns"></a>WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv6NS
 
@@ -38,11 +38,11 @@ WDI\_TLV\_PM\_プロトコル\_オフロード\_IPv6NS は IPv6 NS プロトコ�
 | UINT8\[16\]                                       | 要請されたノードの IPv6 アドレスを指定します。                                                                                                                                                                                                                                                                                                                                                                     |
 | UINT8\[16\]                                       | NS の受信メッセージのターゲット アドレス フィールドに一致する 1 つまたは 2 つの IPv6 アドレスを指定します。 1 つのアドレスがある場合は、ターゲット アドレスを 1 にそのアドレスが格納されているし、ターゲット アドレス 2 がゼロで埋められました。 これらのアドレスのいずれかには、NS の受信メッセージのターゲット アドレス フィールドが一致すると、ネットワーク アダプターは、応答で NA メッセージを送信します。                                               |
 | UINT8\[16\]                                       | ターゲット アドレス 1 の説明を参照してください。                                                                                                                                                                                                                                                                                                                                                                           |
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | 生成される NA メッセージのターゲットのリンク層アドレス (TLLA) フィールドのネットワーク アダプターを使用する必要がある MAC アドレスを指定します。 ただし、MAC ヘッダーの送信元アドレスとして、ネットワーク アダプターの現在の MAC アドレスを使用してください。                                                                                                                                                 |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 生成される NA メッセージのターゲットのリンク層アドレス (TLLA) フィールドのネットワーク アダプターを使用する必要がある MAC アドレスを指定します。 ただし、MAC ヘッダーの送信元アドレスとして、ネットワーク アダプターの現在の MAC アドレスを使用してください。                                                                                                                                                 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -7,12 +7,12 @@ keywords:
 - インデックス バッファー WDK Directx 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd3acecf1f197d1ceb9893612ea9349a38cc6776
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 710a4b8edba32a42db2ee92997f64a1435c58993
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350270"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371360"
 ---
 # <a name="index-buffers"></a>インデックス バッファー
 
@@ -22,7 +22,7 @@ ms.locfileid: "63350270"
 
 DirectX 8.0 では、インデックス バッファーの概念を紹介します。 これらのバッファーを頂点バッファーとよく似ていますが、頂点データ自体ではなく、頂点データに単純な 16 ビットまたは 32 ビットのインデックスを格納します。 インデックス バッファーは、最適なダウンロードとインデックスのデータをキャッシュします。 たとえば、頂点バッファーのすべての特典を拡張します。
 
-インデックス バッファーは、作成、ロック、ロック解除、および頂点バッファーに使用されるものと同じドライバー エントリ ポイントが破壊されます。 ドライバーは、これらのバッファーの種類を区別できるビット DDSCAPS2 が新しいセキュリティ機能を使用して\_INDEXBUFFER します。 インデックス バッファーの場合、このフラグを設定、 **ddsCapsEx.dwCaps2** 、画面のフィールド[ **DD\_画面\_詳細**](https://msdn.microsoft.com/library/windows/hardware/ff551737)構造体。 頂点バッファーを明確になります。
+インデックス バッファーは、作成、ロック、ロック解除、および頂点バッファーに使用されるものと同じドライバー エントリ ポイントが破壊されます。 ドライバーは、これらのバッファーの種類を区別できるビット DDSCAPS2 が新しいセキュリティ機能を使用して\_INDEXBUFFER します。 インデックス バッファーの場合、このフラグを設定、 **ddsCapsEx.dwCaps2** 、画面のフィールド[ **DD\_画面\_詳細**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_more)構造体。 頂点バッファーを明確になります。
 
 その他の多数のサーフェス型とは異なりは、ドライバーは DDSCAPS2 機能を設定する必要ありません\_ドライバーを受信する INDEXBUFFER ランタイムにその機能をレポートするときにインデックス バッファーの作成、破棄、およびロックを呼び出します。 頂点バッファーをサポートする DirectX 8.0 ドライバーは、インデックス バッファーをサポートするもと見なされます。 基になるハードウェアにインデックス バッファーを直接サポートがあるない場合、ドライバーはサーフェイスでのシステム メモリを割り当てることによってインデックス バッファーの作成を処理する必要があります。
 

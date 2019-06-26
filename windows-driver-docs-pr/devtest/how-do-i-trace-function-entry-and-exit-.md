@@ -4,19 +4,19 @@ description: どの関数のトレース エントリの操作し、終了
 ms.assetid: 08b0cf86-0f19-4972-8ae1-44ffdc968c16
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bbb7d307999c5eab10e7ce69906c2af20fd8a11
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92c4d0d26f42991c79d9564a41b85fe4656defd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347706"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358281"
 ---
 # <a name="how-do-i-trace-function-entry-and-exit"></a>関数の出入りをトレースする方法
 
 
 次のサンプル コードでは、関数のエントリをトレースし、呼び出しを終了する方法を示します。 このコードは、Windows 2000 以降のバージョンの Windows で動作します。
 
-定義を最初に、追加、 [WPP\_コントロール\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)ソースまたはヘッダー ファイル マクロ。 定義するときに、[トレース フラグ](trace-flags.md)、次の例に示すように、関数のトレース フラグを定義します。
+定義を最初に、追加、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))ソースまたはヘッダー ファイル マクロ。 定義するときに、[トレース フラグ](trace-flags.md)、次の例に示すように、関数のトレース フラグを定義します。
 
 ```
 #define WPP_CONTROL_GUIDS \

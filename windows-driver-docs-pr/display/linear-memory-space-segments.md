@@ -8,12 +8,12 @@ keywords:
 - メモリ空間のセグメントの WDK の表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd6f6f0d76197f83abd89257d97368dfa3bff75a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa9579d2b255aae299305d8a5c4da835ae3b2852
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363182"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372903"
 ---
 # <a name="linear-memory-space-segments"></a>線形のメモリ領域セグメント
 
@@ -29,7 +29,7 @@ ms.locfileid: "63363182"
 
 -   1 次元のアドレス空間では直線的に管理されます。
 
-ドライバーのセット、**フラグ**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://msdn.microsoft.com/library/windows/hardware/ff562035)メモリ領域の直線セグメントを指定する 0 に構造体。 ただし、ドライバーは、次のビット フィールドを追加のセグメントのサポートを示すためにフラグを設定できます。
+ドライバーのセット、**フラグ**のメンバー、 [ **DXGK\_SEGMENTDESCRIPTOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor)メモリ領域の直線セグメントを指定する 0 に構造体。 ただし、ドライバーは、次のビット フィールドを追加のセグメントのサポートを示すためにフラグを設定できます。
 
 -   **CpuVisible**セグメントが CPU アクセス可能であることを示します。
 

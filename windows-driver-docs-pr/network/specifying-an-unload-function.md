@@ -11,12 +11,12 @@ keywords:
 - 関数 WDK Windows フィルタ リング プラットフォームをアンロードします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d08fd24b5d51e99c8f9de5dd67eac06058062949
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 95526a041a191e881ce82b40685550e687e3b111
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570489"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374711"
 ---
 # <a name="specifying-an-unload-function"></a>アンロード関数の指定
 
@@ -27,7 +27,7 @@ ms.locfileid: "56570489"
 
 ### <a name="wdm-based-callout-drivers"></a>WDM ベース コールアウト ドライバー
 
-かどうかコールアウト ドライバーは WDM に基づいていることを示す、 [**アンロード**](https://msdn.microsoft.com/library/windows/hardware/ff564886)関数でその[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)関数。 例:
+かどうかコールアウト ドライバーは WDM に基づいていることを示す、 [**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)関数でその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数。 例:
 
 ```C++
 VOID
@@ -52,7 +52,7 @@ NTSTATUS
 
 ### <a name="wdf-based-callout-drivers"></a>WDF ベース コールアウト ドライバー
 
-かどうかコールアウト ドライバーは WDF に基づいていることを示す、 [ *EvtDriverUnload* ](https://msdn.microsoft.com/library/windows/hardware/ff541694)関数でその[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)関数。 以下に例を示します。
+かどうかコールアウト ドライバーは WDF に基づいていることを示す、 [ *EvtDriverUnload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)関数でその[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)関数。 以下に例を示します。
 
 ```C++
 VOID
@@ -97,7 +97,7 @@ NTSTATUS
 }
 ```
 
-コールアウト ドライバーのアンロード関数を実装する方法については、[コールアウト ドライバーをアンロード](unloading-a-callout-driver.md)を参照してください。
+コールアウト ドライバーのアンロード関数を実装する方法については、次を参照してください。[コールアウト ドライバーをアンロード](unloading-a-callout-driver.md)します。
 
  
 

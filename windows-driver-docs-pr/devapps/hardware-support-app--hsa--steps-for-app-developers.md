@@ -9,16 +9,16 @@ keywords:
 - ハードウェア
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9f45b8c1005a42b8905086d9f1d3038c8ec1130
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f362f1de55cd44db984bd28926f2bd42c4add3d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330708"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369385"
 ---
 # <a name="hardware-support-app-hsa-steps-for-app-developers"></a>ハードウェア サポート アプリ (HSA):アプリ開発者向けの手順
 
-このトピックでは、ドライバーを使用して、デバイス固有のアプリに関連付ける方法を説明しますまたは[RPC (リモート プロシージャ コール)](https://msdn.microsoft.com/library/windows/desktop/aa378651)エンドポイント。  このような形で組み合わせると、ハードウェア サポート アプリ (HSA) として、アプリを参照します。  配布し、Microsoft Store を通じてハードウェア サポートのアプリを更新できます。
+このトピックでは、ドライバーを使用して、デバイス固有のアプリに関連付ける方法を説明しますまたは[RPC (リモート プロシージャ コール)](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)エンドポイント。  このような形で組み合わせると、ハードウェア サポート アプリ (HSA) として、アプリを参照します。  配布し、Microsoft Store を通じてハードウェア サポートのアプリを更新できます。
 
 いずれかで始まり、[ユニバーサル Windows プラットフォーム (UWP) アプリ](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)またはデスクトップ (Win32) アプリです。  デスクトップ アプリを使用する場合を使用して、[デスクトップ ブリッジ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)ストアにアップロードできる Windows アプリ パッケージを作成します。
 
@@ -78,7 +78,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 
 ## <a name="add-a-custom-capability-to-the-app-package-manifest"></a>アプリ パッケージのマニフェストにカスタム機能を追加します。
 
-次に、変更、[アプリ パッケージのマニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)ソース ファイル (`Package.appxmanifest`) 機能の属性を含める。
+次に、変更、[アプリ パッケージのマニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)ソース ファイル (`Package.appxmanifest`) 機能の属性を含める。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

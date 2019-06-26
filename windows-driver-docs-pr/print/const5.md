@@ -6,12 +6,12 @@ keywords:
 - Const のコンストラクト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a1c26fa8413e64461e7c61bf4ae068521a482e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 608c8b54be0dde51b37b1117366428f7c328d4b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384501"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374676"
 ---
 # <a name="const-wsd"></a>Const (WSD)
 
@@ -36,7 +36,7 @@ Devices (WSD) Const コンストラクトの Web サービスでは、データ�
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p>内のデータ型、<strong>値</strong>属性の値、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
+<td><p>内のデータ型、<strong>値</strong>属性の値、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>列挙体。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>value</strong></p></td>

@@ -6,23 +6,23 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30033
-ms.openlocfilehash: a13b4cfc8476655fa240e415e4c2d20d2e27c0f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f0732574c5ee1adff1e651883695b83f437b93d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360788"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371462"
 ---
 # <a name="c30033"></a>C30033
 
 
-C30033 を警告します。コンパイルされたドライバーの実行可能ファイルの割り当てが見つかりました[プール\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)します。 別のドライバーでの実行時に読み込まれるドライバーと判断されました。 読み込みのドライバーを呼び出すことを確認してください**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** その DriverEntry でします。
+C30033 を警告します。コンパイルされたドライバーの実行可能ファイルの割り当てが見つかりました[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)します。 別のドライバーでの実行時に読み込まれるドライバーと判断されました。 読み込みのドライバーを呼び出すことを確認してください**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** その DriverEntry でします。
 
 禁止\_MEM\_割り当て\_かもしれません\_UNSAFE\_ドライバー\_LOADED
 
 別のドライバーが読み込まれ、そのため、完全な初期化関数はありませんが DLL であると判断されました。 読み込みのドライバーを確認します。
 
--   使用してコンパイル[プール\_NX\_OPTIN](https://msdn.microsoft.com/library/windows/hardware/hh920402)= 1
+-   使用してコンパイル[プール\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)= 1
 -   呼び出し**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** でその初期化関数
 
 読み込みのドライバーを指定しますこれら正常、警告を無視できます。

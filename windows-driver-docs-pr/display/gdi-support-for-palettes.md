@@ -13,12 +13,12 @@ keywords:
 - WDK GDI の色のインデックス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 557fd160d48b8c6972b4a7b7c647bf0aa1e33294
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2e700bcc35b583dfc7d0dfda679a225c74395c98
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358653"
 ---
 # <a name="gdi-support-for-palettes"></a>パレットの GDI サポート
 
@@ -26,13 +26,13 @@ ms.locfileid: "63384563"
 ## <span id="ddk_gdi_support_for_palettes_gg"></span><span id="DDK_GDI_SUPPORT_FOR_PALETTES_GG"></span>
 
 
-GDI は、パレットの管理に関する作業の大部分を実行できます。 GDI を呼び出すと、 [ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)関数の場合、ドライバー返しますその既定のパレットに GDI の一部として、 [ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835)構造体。 このパレットを使用してドライバーを作成する必要があります、 [ **EngCreatePalette** ](https://msdn.microsoft.com/library/windows/hardware/ff564212)関数。
+GDI は、パレットの管理に関する作業の大部分を実行できます。 GDI を呼び出すと、 [ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)関数の場合、ドライバー返しますその既定のパレットに GDI の一部として、 [ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)構造体。 このパレットを使用してドライバーを作成する必要があります、 [ **EngCreatePalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)関数。
 
 パレットは、32 ビットを効果的にマップ*カラー インデックス*24 ビットの RGB カラー値には GDI パレットを使用する方法。 GDI は、インデックスが、デバイスに表示するにはさまざまな色を判断できるように、ドライバーは、パレットを指定します。
 
-使用している限り、ドライバーはほとんどのパレット操作および計算処理しない必要があります、 [ **XLATEOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff570634) GDI によって提供されます。
+使用している限り、ドライバーはほとんどのパレット操作および計算処理しない必要があります、 [ **XLATEOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj) GDI によって提供されます。
 
-関数を実装する必要があります、デバイスは、変更可能なパレットをサポートする場合[ **DrvSetPalette**](https://msdn.microsoft.com/library/windows/hardware/ff556282)します。 GDI 呼び出し*DrvSetPalette*アプリケーションがデバイスのパレットを変更し、結果として得られる新しいパレットをドライバーに渡します。 ドライバーは、新しいパレットをできるだけ一致するように、内部ハードウェア パレットを設定する必要があります。
+関数を実装する必要があります、デバイスは、変更可能なパレットをサポートする場合[ **DrvSetPalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpalette)します。 GDI 呼び出し*DrvSetPalette*アプリケーションがデバイスのパレットを変更し、結果として得られる新しいパレットをドライバーに渡します。 ドライバーは、新しいパレットをできるだけ一致するように、内部ハードウェア パレットを設定する必要があります。
 
 次の表に示す 2 つの異なる形式のいずれかで GDI のパレットを定義できます。
 
@@ -61,7 +61,7 @@ GDI は、パレットの管理に関する作業の大部分を実行できま�
 
  
 
-GDI は通常、逆の順序で、パレットのマッピングを使用します。 つまり、アプリケーションで描画の RGB 色を指定して、GDI のデバイスがその色を表示する色のインデックスを見つける必要があります。 次の表に示されるように、GDI、パレットのプライマリ サービスの 2 つの関数を作成して、いくつかのサービス機能と同様に、パレットの削除に関連する、 [ **PALOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff568844) 、 [**XLATEOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff570634)間、2 つのパレット カラー インデックスに変換するために使用します。
+GDI は通常、逆の順序で、パレットのマッピングを使用します。 つまり、アプリケーションで描画の RGB 色を指定して、GDI のデバイスがその色を表示する色のインデックスを見つける必要があります。 次の表に示されるように、GDI、パレットのプライマリ サービスの 2 つの関数を作成して、いくつかのサービス機能と同様に、パレットの削除に関連する、 [ **PALOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_palobj) 、 [**XLATEOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj)間、2 つのパレット カラー インデックスに変換するために使用します。
 
 <table>
 <colgroup>
@@ -76,39 +76,39 @@ GDI は通常、逆の順序で、パレットのマッピングを使用しま�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564212" data-raw-source="[&lt;strong&gt;EngCreatePalette&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564212)"><strong>EngCreatePalette</strong></a></p></td>
-<td align="left"><p>パレットを作成します。 ドライバーでは、デバイスをパレットを関連付けますのパレットを識別するハンドルを返すことによって、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff552835" data-raw-source="[&lt;strong&gt;DEVINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552835)"> <strong>DEVINFO</strong> </a>構造体。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette" data-raw-source="[&lt;strong&gt;EngCreatePalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)"><strong>EngCreatePalette</strong></a></p></td>
+<td align="left"><p>パレットを作成します。 ドライバーでは、デバイスをパレットを関連付けますのパレットを識別するハンドルを返すことによって、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo" data-raw-source="[&lt;strong&gt;DEVINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)"> <strong>DEVINFO</strong> </a>構造体。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564808" data-raw-source="[&lt;strong&gt;EngDeletePalette&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564808)"><strong>EngDeletePalette</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeletepalette" data-raw-source="[&lt;strong&gt;EngDeletePalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeletepalette)"><strong>EngDeletePalette</strong></a></p></td>
 <td align="left"><p>特定のパレットを削除します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564842" data-raw-source="[&lt;strong&gt;EngDitherColor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564842)"><strong>EngDitherColor</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdithercolor" data-raw-source="[&lt;strong&gt;EngDitherColor&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdithercolor)"><strong>EngDitherColor</strong></a></p></td>
 <td align="left"><p>指定された RGB 色を近似する標準 8 x 8 ディザーを返します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564993" data-raw-source="[&lt;strong&gt;EngQueryPalette&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564993)"><strong>EngQueryPalette</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerypalette" data-raw-source="[&lt;strong&gt;EngQueryPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerypalette)"><strong>EngQueryPalette</strong></a></p></td>
 <td align="left"><p>その属性のパレットを照会します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568845" data-raw-source="[&lt;strong&gt;PALOBJ_cGetColors&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568845)"><strong>PALOBJ_cGetColors</strong></a></p></td>
-<td align="left"><p>インデックス付きのパレットから RGB 色をダウンロードするためのドライバーを使用します。 ディスプレイ ドライバーによって呼び出される、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff556282" data-raw-source="[&lt;strong&gt;DrvSetPalette&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556282)"> <strong>DrvSetPalette</strong> </a>関数。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors" data-raw-source="[&lt;strong&gt;PALOBJ_cGetColors&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors)"><strong>PALOBJ_cGetColors</strong></a></p></td>
+<td align="left"><p>インデックス付きのパレットから RGB 色をダウンロードするためのドライバーを使用します。 ディスプレイ ドライバーによって呼び出される、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpalette" data-raw-source="[&lt;strong&gt;DrvSetPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpalette)"> <strong>DrvSetPalette</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570637" data-raw-source="[&lt;strong&gt;XLATEOBJ_cGetPalette&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570637)"><strong>XLATEOBJ_cGetPalette</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_cgetpalette" data-raw-source="[&lt;strong&gt;XLATEOBJ_cGetPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_cgetpalette)"><strong>XLATEOBJ_cGetPalette</strong></a></p></td>
 <td align="left"><p>24 ビットの RGB 色または、インデックス付きソース パレットの色のビット フィールドの形式を取得します。 ドライバーは、この関数を使用して、色の描画を実行するパレットから情報を取得できます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570639" data-raw-source="[&lt;strong&gt;XLATEOBJ_hGetColorTransform&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570639)"><strong>XLATEOBJ_hGetColorTransform</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_hgetcolortransform" data-raw-source="[&lt;strong&gt;XLATEOBJ_hGetColorTransform&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_hgetcolortransform)"><strong>XLATEOBJ_hGetColorTransform</strong></a></p></td>
 <td align="left"><p>指定した平行移動オブジェクトの色変換を返します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570642" data-raw-source="[&lt;strong&gt;XLATEOBJ_iXlate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570642)"><strong>XLATEOBJ_iXlate</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_ixlate" data-raw-source="[&lt;strong&gt;XLATEOBJ_iXlate&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_ixlate)"><strong>XLATEOBJ_iXlate</strong></a></p></td>
 <td align="left"><p>変換先の色のインデックスを 1 つのソース カラー インデックスに変換します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570644" data-raw-source="[&lt;strong&gt;XLATEOBJ_piVector&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570644)"><strong>XLATEOBJ_piVector</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_pivector" data-raw-source="[&lt;strong&gt;XLATEOBJ_piVector&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_pivector)"><strong>XLATEOBJ_piVector</strong></a></p></td>
 <td align="left"><p>インデックス付きソース パレットから平行移動ベクターを取得します。 ドライバーは、このベクターを使用して、ソースのインデックスを変換先のインデックスの独自の翻訳を実行します。</p></td>
 </tr>
 </tbody>

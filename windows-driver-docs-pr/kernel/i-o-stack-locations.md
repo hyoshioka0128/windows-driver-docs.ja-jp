@@ -11,12 +11,12 @@ keywords:
 - IO_STACK_LOCATION 構造体
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae09b1cddf0813a586a499b5f2c360011eeffc27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8bc5ef74d849c7e1af7f5bb0321c6a9f0040b0f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380941"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371864"
 ---
 # <a name="io-stack-locations"></a>I/O スタック位置
 
@@ -24,11 +24,11 @@ ms.locfileid: "63380941"
 
 
 
-I/O マネージャーを設定するすべての IRP の複数層のドライバーのチェーン内には、各ドライバー、I/O スタックの場所を示します。 各 I/O スタックの場所から成る、 [ **IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)構造体。
+I/O マネージャーを設定するすべての IRP の複数層のドライバーのチェーン内には、各ドライバー、I/O スタックの場所を示します。 各 I/O スタックの場所から成る、 [ **IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)構造体。
 
-I/O マネージャーは、複数層のドライバーのチェーンでは、各ドライバーに対応する配列要素を使用して、各 IRP の I/O スタックの場所の配列を作成します。 各ドライバーでは、パケットと呼び出しスタックの場所の 1 つ所有している[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174) I/O 操作に関するドライバー固有の情報を取得します。
+I/O マネージャーは、複数層のドライバーのチェーンでは、各ドライバーに対応する配列要素を使用して、各 IRP の I/O スタックの場所の配列を作成します。 各ドライバーでは、パケットと呼び出しスタックの場所の 1 つ所有している[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation) I/O 操作に関するドライバー固有の情報を取得します。
 
-このようなチェーン内の各ドライバーが通話を担当[ **IoGetNextIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549266)次の下位ドライバーの I/O スタックの場所を設定します。 I/O スタックの上位レベルのドライバーの場所が操作に関するコンテキストを格納することもできるように、ドライバーの[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)ルーチンは、そのクリーンアップ操作を実行できます。
+このようなチェーン内の各ドライバーが通話を担当[ **IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)次の下位ドライバーの I/O スタックの場所を設定します。 I/O スタックの上位レベルのドライバーの場所が操作に関するコンテキストを格納することもできるように、ドライバーの[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンは、そのクリーンアップ操作を実行できます。
 
 [ドライバーでの処理の Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)図は、2 つのドライバー、ファイル システム ドライバーと大容量記憶装置ドライバーが表示されるため、元の IRP で I/O スタックの 2 つの場所を示します。 ドライバーに割り当てられた Irp、[ドライバーでの処理の Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)図では、作成した FSD は、スタックの場所はありません。 Irp を下位レベルのドライバーによって割り当てられる任意の高度なドライバーは新しい Irp する必要がありますが、I/O スタック場所の数も決定に従って、 **StackSize**次の下位ドライバーのデバイス オブジェクトの値。
 
@@ -52,21 +52,21 @@ I/O マネージャーは、複数層のドライバーのチェーンでは、�
 
 特定のドライバーを処理する IRP のメジャーおよびマイナーの関数コードのセットには、デバイス固有の種類を指定できます。 ただし、最下位レベルおよび中間のドライバー (ドライバーの PnP 関数とフィルターを含む) は、通常、次の一連の基本的な要求を処理します。
 
--   [**IRP\_MJ\_作成**](https://msdn.microsoft.com/library/windows/hardware/ff550729) -あることを示す存在し、使用可能な I/O 操作のターゲット デバイス オブジェクトを開く
+-   [**IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create) -あることを示す存在し、使用可能な I/O 操作のターゲット デバイス オブジェクトを開く
 
--   [**IRP\_MJ\_読み取り**](https://msdn.microsoft.com/library/windows/hardware/ff550794) : デバイスからのデータ転送
+-   [**IRP\_MJ\_読み取り**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) : デバイスからのデータ転送
 
--   [**IRP\_MJ\_書き込み**](https://msdn.microsoft.com/library/windows/hardware/ff550819) — データをデバイスに転送します。
+-   [**IRP\_MJ\_書き込み**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) — データをデバイスに転送します。
 
--   [**IRP\_MJ\_デバイス\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff550744) などを設定する (またはリセット)、デバイス、システム定義のデバイス固有の種類 I/O 制御コード (IOCTL) に従って
+-   [**IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control) などを設定する (またはリセット)、デバイス、システム定義のデバイス固有の種類 I/O 制御コード (IOCTL) に従って
 
--   [**IRP\_MJ\_閉じます**](https://msdn.microsoft.com/library/windows/hardware/ff550720) — ターゲットのデバイス オブジェクトを閉じる
+-   [**IRP\_MJ\_閉じます**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close) — ターゲットのデバイス オブジェクトを閉じる
 
--   [**IRP\_MJ\_PNP**](https://msdn.microsoft.com/library/windows/hardware/ff550772) -デバイスのプラグ アンド プレイ操作を実行します。 **IRP\_MJ\_PNP** I/O マネージャーを通じて PnP マネージャーによって要求が送信されます。
+-   [**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp) -デバイスのプラグ アンド プレイ操作を実行します。 **IRP\_MJ\_PNP** I/O マネージャーを通じて PnP マネージャーによって要求が送信されます。
 
--   [**IRP\_MJ\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff550784) -デバイスの電源操作を実行します。 **IRP\_MJ\_POWER** I/O マネージャーを通じて電源マネージャー要求を送信します。
+-   [**IRP\_MJ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) -デバイスの電源操作を実行します。 **IRP\_MJ\_POWER** I/O マネージャーを通じて電源マネージャー要求を送信します。
 
-ドライバーが処理するために必要な主要な IRP の関数コードの詳細については、次を参照してください。 [IRP の主な機能コード](https://msdn.microsoft.com/library/windows/hardware/ff550710)します。
+ドライバーが処理するために必要な主要な IRP の関数コードの詳細については、次を参照してください。 [IRP の主な機能コード](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)します。
 
 一般に、I/O マネージャーは、ファイル システムが他のドライバーの大容量記憶装置上に構築されたために、少なくとも 2 つの大容量記憶装置デバイス ドライバーへの I/O スタックの場所で Irp を送信します。 I/O マネージャーは、Irp をその上層の他のドライバーがない任意のドライバーを 1 つのスタックの場所に送信します。
 

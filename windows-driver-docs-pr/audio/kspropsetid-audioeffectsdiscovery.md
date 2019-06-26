@@ -4,12 +4,12 @@ description: KSPROPSETID\_AudioEffectsDiscovery プロパティ セットは、�
 ms.assetid: 68229885-1446-4BF0-B4E1-96A777006567
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b1c2797c662fae927f8215feba171fa642f5ae1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 752ef27db4769a13239a2f9d782a46ed515833de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332548"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358722"
 ---
 # <a name="kspropsetidaudioeffectsdiscovery"></a>KSPROPSETID\_AudioEffectsDiscovery
 
@@ -29,9 +29,9 @@ DEFINE_GUIDSTRUCT("0B217A72-16B8-4A4D-BDED-F9D6BBEDCD8F", KSPROPSETID_AudioEffec
 
 **KSPROPSETID\_AudioEffectsDiscovery**プロパティ セットには、次の KS プロパティが含まれています。
 
-[**KSPROPERTY\_AUDIOEFFECTSDISCOVERY\_EFFECTSLIST**](https://msdn.microsoft.com/library/windows/hardware/dn457706)
+[**KSPROPERTY\_AUDIOEFFECTSDISCOVERY\_EFFECTSLIST**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
 
-このプロパティ名が定義されている、 [ **KSPROPERTY\_AUDIOEFFECTSDISCOVERY** ](https://msdn.microsoft.com/library/windows/hardware/dn457705)列挙型。
+このプロパティ名が定義されている、 [ **KSPROPERTY\_AUDIOEFFECTSDISCOVERY** ](https://docs.microsoft.com/windows/desktop/api/msapofxproxy/ne-msapofxproxy-ksproperty_audioeffectsdiscovery)列挙型。
 
  
 

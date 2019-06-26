@@ -14,12 +14,12 @@ keywords:
 - パフォーマンスの電源モード WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26ba356afcf9e9f9c6f2d5cb5e92985c2a1c150a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7dd7497b1bdf764f7eb0ada802b6b00d02a499c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331556"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355738"
 ---
 # <a name="audio-device-class-inactivity-timer-implementation"></a>オーディオ デバイス クラスの無通信タイマーの実装
 
@@ -41,7 +41,7 @@ PortCls には、アイドル状態のタイムアウトとアイドル状態の
     \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\xxxx\yyyy\PowerSettings\ConservationIdleTime
     ```
 
-    なお*xxxx* Media クラス GUID を表します (を参照してください[System-Supplied デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff553419)) と*yyyy* Media クラスの下に、ドライバーのサブキーの名前を表しますGUID。 キーの値は、タイムアウト間隔を秒単位で指定します。
+    なお*xxxx* Media クラス GUID を表します (を参照してください[System-Supplied デバイス セットアップ クラス](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))) と*yyyy* Media クラスの下に、ドライバーのサブキーの名前を表しますGUID。 キーの値は、タイムアウト間隔を秒単位で指定します。
 
 -   *PerformanceIdleTime*
 
@@ -65,11 +65,11 @@ PortCls には、アイドル状態のタイムアウトとアイドル状態の
 
 デバイス インストールの INF ファイルを作成している場合にのみ、3 つの電力アイドル状態のレジストリ キーが存在します。 電力アイドル タイマーを構成する前に、PortCls はレジストリからドライバー固有の電力アイドル パラメーターを取得しようとします。 PortCls には、レジストリで見つからないすべて電力アイドル状態のパラメーターの代わりに既定値が使用されます。 以前は、既定のアイドル状態の電源を説明するよう、パラメーターの値には、アイドル タイマが無効にします。
 
-指定の詳細については、 *ConservationIdleTime*、 *PerformanceIdleTime*、および*IdlePowerState*パラメーターは、最後の 3 つの定義を参照してください。パラメーターを呼び出し、 [ **PoRegisterDeviceForIdleDetection**](https://msdn.microsoft.com/library/windows/hardware/ff559721)します。
+指定の詳細については、 *ConservationIdleTime*、 *PerformanceIdleTime*、および*IdlePowerState*パラメーターは、最後の 3 つの定義を参照してください。パラメーターを呼び出し、 [ **PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregisterdeviceforidledetection)します。
 
 ### <a name="span-idexamplespanspan-idexamplespan-example"></a><span id="example"></span><span id="EXAMPLE"></span> 例
 
-たとえば、ハードウェア ベンダーは、オーディオ デバイスの次の電力アイドル パラメーターを指定する場合。*ConservationIdleTime* 0x0000001e (30 秒) = *PerformanceIdleTime* = では 0x0000012c (300 秒) と*IdlePowerState* 0x00000003 (デバイスの電源状態 D3) を = です。 これらの設定を有効にするデバイスのインストール ファイルを含めることができます、 [ **INF AddReg セクション**](https://msdn.microsoft.com/library/windows/hardware/ff546320)次のディレクティブを含みます。
+たとえば、ハードウェア ベンダーは、オーディオ デバイスの次の電力アイドル パラメーターを指定する場合。*ConservationIdleTime* 0x0000001e (30 秒) = *PerformanceIdleTime* = では 0x0000012c (300 秒) と*IdlePowerState* 0x00000003 (デバイスの電源状態 D3) を = です。 これらの設定を有効にするデバイスのインストール ファイルを含めることができます、 [ **INF AddReg セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)次のディレクティブを含みます。
 
 ```inf
 [MyAudioDevice.AddReg]

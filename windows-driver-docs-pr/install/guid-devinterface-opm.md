@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 554943cb78fa3690d74e5dae11538f048dc42210
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29f8088e3aca5a3129395af8dfe523f3f342b289
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363708"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375254"
 ---
 # <a name="guiddevinterfaceopm"></a>GUID_DEVINTERFACE_OPM
 
 
-GUID_DEVINTERFACE_OPM[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)のコンテキストで動作するディスプレイ アダプター ドライバーが定義されている、 [Windows Vista のディスプレイ ドライバー モデル](https://msdn.microsoft.com/library/windows/hardware/ff570593)出力の保護をサポート管理 (OPM) 子デバイスを監視します。
+GUID_DEVINTERFACE_OPM[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)のコンテキストで動作するディスプレイ アダプター ドライバーが定義されている、 [Windows Vista のディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)出力の保護をサポート管理 (OPM) 子デバイスを監視します。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_OPM[デバイス インターフェイス クラス](https://m
 
 ドライバーは、オペレーティング システムと OPM デバイス インターフェイスの存在をアプリケーションに通知するこのデバイスのインターフェイス クラスのインスタンスを登録します。
 
-ディスプレイのミニポート ドライバーがこの直接呼出し OPM インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff559764)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_OPM を指定します。
+ディスプレイのミニポート ドライバーがこの直接呼出し OPM インターフェイスをサポートするかどうかは[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)、カーネル モード コンポーネントを呼び出して、ミニポート ドライバーの直接呼び出しインターフェイスを取得できます[ **DxgkDdiQueryInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_query_interface)関数とインターフェイスの種類を指定する GUID_DEVINTERFACE_OPM を指定します。
 
-OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://msdn.microsoft.com/library/windows/hardware/ff569879)します。
+OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)します。
 
 <a name="requirements"></a>要件
 ------------

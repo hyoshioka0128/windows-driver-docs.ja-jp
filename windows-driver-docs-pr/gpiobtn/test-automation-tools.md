@@ -4,19 +4,19 @@ description: GPIO テスト自動化はミット プラットフォームを使�
 ms.assetid: F6C4FCC2-210B-4B6E-9D1A-77842E470025
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5da03b189f7e632fa1816c48a0f11d77e6a4e14c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1feb2891fd4820e0396b61b013253f0855bc4bb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390424"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373558"
 ---
 # <a name="test-automation-tools"></a>テスト オートメーション ツール
 
 
 GPIO テスト自動化はミット プラットフォームを使用します。
 
-最初に、次を参照してください。[ミットで GPIO テスト](https://msdn.microsoft.com/library/windows/hardware/dn919780)します。 インストーラーをダウンロード、コンテンツを展開し、読み取り、 **ReadMe**ファイル ツールの概要。
+最初に、次を参照してください。[ミットで GPIO テスト](https://docs.microsoft.com/windows-hardware/drivers/spb/gpio-tests-in-mitt)します。 インストーラーをダウンロード、コンテンツを展開し、読み取り、 **ReadMe**ファイル ツールの概要。
 
 ツールをテスト対象のシステムに接続するには、GPIO ボタンとインジケーター pin アウトが必要です。 ボードを設定して、その関連するパッケージがインストールされている後、は、次の方法のいずれかで使用できます。
 

@@ -3,12 +3,12 @@ Description: このホワイト ペーパーでは、Windows オペレーティ�
 title: Windows における USB ContainerID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8214980cf6f42494b66141d8791922955aee635
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18d512704e7ceb8eab8714def96d50b42c11a2cd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331646"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369515"
 ---
 # <a name="usb-containerids-in-windows"></a>Windows における USB ContainerID
 
@@ -19,7 +19,7 @@ Windows 7 以降、ユーザーを利用できますの自分のコンピュー�
 
 すべての種類の異なるバスの種類を使用して、コンピューターに接続するデバイスのデバイスのコンテナーをサポートできます。 ただし、すべてのバスの種類が同じメカニズムを使用を生成するため、 **ContainerID**します。 USB デバイス、デバイスのベンダーを使用できます、 **ContainerID**を記述する記述子、 **ContainerID**物理デバイス。 A **ContainerID**記述子は、USB デバイスのファームウェアに格納できる Microsoft OS 機能記述子。 USB デバイス製造元で正しく実装これらする必要があります**ContainerID** Windows 7 で利用できる新しいデバイス機能を活用するために自分のデバイス内の記述子。 USB デバイス製造元が 1 つだけを実装する必要があります**ContainerID**デバイスがサポートする数のデバイス関数に関係なく、物理デバイスごとにします。
 
-デバイス コンテナーに 1 つのデバイスのすべての機能の統合についての詳細については、次を参照してください。[どのコンテナー Id が生成される](https://msdn.microsoft.com/library/windows/hardware/ff546193)します。
+デバイス コンテナーに 1 つのデバイスのすべての機能の統合についての詳細については、次を参照してください。[どのコンテナー Id が生成される](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)します。
 
 USB デバイスの Microsoft OS ディスクリプターの詳細については、次を参照してください。 [USB デバイスの Microsoft OS ディスクリプター](microsoft-defined-usb-descriptors.md)します。
 
@@ -172,7 +172,7 @@ USB を実装するための推奨事項**ContainerID**デバイス ベンダー
 
 ## <a name="related-topics"></a>関連トピック
 [Windows 用の USB デバイスの構築](building-usb-devices-for-windows.md)  
-[USB デバイス用のコンテナー Id](https://msdn.microsoft.com/library/windows/hardware/ff540084)  
+[USB デバイス用のコンテナー Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids-for-usb-devices)  
 
 
 

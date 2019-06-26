@@ -5,12 +5,12 @@ ms.assetid: 9436492b-0bfb-4234-bcf3-c44657a846d7
 ms.date: 08/08/2017
 keywords: ・ SO_REUSEADDR ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 041884abb365ec731c2930064398129528d23eee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db3903e1df36a9896819a4104d358bcfc48258ba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341388"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374735"
 ---
 # <a name="soreuseaddr"></a>したがって\_REUSEADDR
 
@@ -19,7 +19,7 @@ SO の状態\_REUSEADDR ソケット オプションは、ソケットをバイ�
 
 WSK アプリケーションでは、このソケット オプションを設定する場合、ローカル トランスポート アドレスにソケットをバインドする前に、実行する必要があります。
 
-WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571127)関数は次のパラメーター。
+WSK アプリケーションを呼び出すこのソケット オプションの状態を設定する、 [ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)関数は次のパラメーター。
 
 <table>
 <colgroup>
@@ -129,7 +129,7 @@ WSK アプリケーションを呼び出すこのソケット オプションの
 
 このソケット オプションの既定の状態は、常にローカル トランスポート アドレスを共有が無効になっていることです。
 
-SO を使用しての詳細については\_REUSEADDR ソケット オプションと、ソケットとの間ローカル トランスポート アドレスの共有への影響を参照してください。[トランスポート アドレスを共有](https://msdn.microsoft.com/library/windows/hardware/ff570806)します。
+SO を使用しての詳細については\_REUSEADDR ソケット オプションと、ソケットとの間ローカル トランスポート アドレスの共有への影響を参照してください。[トランスポート アドレスを共有](https://docs.microsoft.com/windows-hardware/drivers/network/sharing-transport-addresses)します。
 
 <a name="requirements"></a>要件
 ------------

@@ -4,12 +4,12 @@ description: 不変な Mdl スタック用検査オプションは、ドライ�
 ms.assetid: AB27803A-6B3A-40FA-B962-79B0DA2F5FA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f54c83c39bc3935033de21060aea1c3319877ea8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 173c8e9266184942287b4d588479275bd56566e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350521"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373709"
 ---
 # <a name="invariant-mdl-checking-for-stack"></a>不変な MDL のスタック用検査
 
@@ -22,11 +22,11 @@ ms.locfileid: "63350521"
 
 不変な Mdl オプションでは、不変の MDL バッファー ポイントでのみ、要求のドライバーの規則に従うことにより、スタックのドライバー スタックを離れることができます。
 
-不変の MDL が に表示されるの IRP を初めて、 [**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) 、日常的な一意のシグネチャは不変の MDL バッファーの内容から計算し、内部のデータベースに格納されています。 内の IRP の完了時に、 [ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)バッファーが変更されていない場合は、署名を記録された不変の MDL 保持 IRP 日常的な Driver Verifier 検証します。
+不変の MDL が に表示されるの IRP を初めて、 [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) 、日常的な一意のシグネチャは不変の MDL バッファーの内容から計算し、内部のデータベースに格納されています。 内の IRP の完了時に、 [ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)バッファーが変更されていない場合は、署名を記録された不変の MDL 保持 IRP 日常的な Driver Verifier 検証します。
 
-IRP の有効期間全体を通じて、書き込み要求の不変のバッファーを変更できません。 読み取り要求の場合、インバリアント バッファーは変更できませんのディスパッチ パスのバッファーの署名の比較は、最後の呼び出しに行われるように[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+IRP の有効期間全体を通じて、書き込み要求の不変のバッファーを変更できません。 読み取り要求の場合、インバリアント バッファーは変更できませんのディスパッチ パスのバッファーの署名の比較は、最後の呼び出しに行われるように[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
 
-不変な Mdl スタック用検査オプションは、スタック内の個々 のドライバーに渡されますバッファーへの動作に関係なく、全体のドライバー スタック間で MDL バッファーの不変性を確認します。 このオプションは、グローバル - ドライバーごとに選択的に適用することはできません。 不変な Mdl スタック用検査オプションのみをキャッチできます違反、バッファーの不変性を冒とくしたドライバーを特定できません。 障害のあるドライバーを特定できるように、使用、[不変な Mdl のドライバー](invariant-mdl-checking-for-driver.md)オプションで、呼び出しごとにコンテンツ バッファーの不変性の検証を行う[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)と[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) Ddi します。
+不変な Mdl スタック用検査オプションは、スタック内の個々 のドライバーに渡されますバッファーへの動作に関係なく、全体のドライバー スタック間で MDL バッファーの不変性を確認します。 このオプションは、グローバル - ドライバーごとに選択的に適用することはできません。 不変な Mdl スタック用検査オプションのみをキャッチできます違反、バッファーの不変性を冒とくしたドライバーを特定できません。 障害のあるドライバーを特定できるように、使用、[不変な Mdl のドライバー](invariant-mdl-checking-for-driver.md)オプションで、呼び出しごとにコンテンツ バッファーの不変性の検証を行う[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)と[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) Ddi します。
 
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 

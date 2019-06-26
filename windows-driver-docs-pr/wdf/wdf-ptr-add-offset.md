@@ -6,12 +6,12 @@ keywords:
 - WDF_PTR_ADD_OFFSET macro
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8fb5b6c997f120e2c75cd60417215f0ffa897da
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 22116b3f13865a440689621f9c76353c43cae57b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372098"
 ---
 # <a name="wdfptraddoffset-macro"></a>WDF_PTR_ADD_OFFSET macro
 
@@ -54,7 +54,7 @@ PVOID WDF_PTR_ADD_OFFSET(
         WDF_PTR_ADD_OFFSET_TYPE(_ptr, _offset, PVOID)
 ```
 
-トースター サンプルから例を次に示します (トースター\\func\\機能を備えた\\wmi.c)。 例では、ドライバーが呼び出す**WDF_PTR_ADD_OFFSET**に渡す変換先バッファーのアドレスを決定するアドレスのオフセットを追加する、 [ **WDF_WMI_BUFFER_APPEND_STRING** ](https://msdn.microsoft.com/library/windows/hardware/ff553057)関数。
+トースター サンプルから例を次に示します (トースター\\func\\機能を備えた\\wmi.c)。 例では、ドライバーが呼び出す**WDF_PTR_ADD_OFFSET**に渡す変換先バッファーのアドレスを決定するアドレスのオフセットを追加する、 [ **WDF_WMI_BUFFER_APPEND_STRING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nf-wdfwmi-wdf_wmi_buffer_append_string)関数。
 
 ```cpp
         //

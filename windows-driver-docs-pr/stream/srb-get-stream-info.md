@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44f6041bd3c483cbb97c0287c9fa730bbdb43102
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 55703bfffb363c27088f9f236053ac4f279d32de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161556"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358373"
 ---
 # <a name="srbgetstreaminfo"></a>SRB\_取得\_ストリーム\_情報
 
@@ -39,15 +39,15 @@ ms.locfileid: "67161556"
 
 ### <a name="comments"></a>コメント
 
-クラスのドライバーにバッファーを渡します*pSrb*-&gt;**CommandData.StreamBuffer**クラス ドライバーへの応答でミニドライバーで指定したサイズの[**SRB\_初期化\_デバイス**](srb-initialize-device.md)要求。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff559702)構造体。 参照してください[**ポート\_構成\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567785)します。
+クラスのドライバーにバッファーを渡します*pSrb*-&gt;**CommandData.StreamBuffer**クラス ドライバーへの応答でミニドライバーで指定したサイズの[**SRB\_初期化\_デバイス**](srb-initialize-device.md)要求。 *PSrb*ポインターが指す、 [ **HW\_ストリーム\_要求\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)構造体。 参照してください[**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_port_configuration_information)します。
 
-ミニドライバー塗りつぶし**CommandData.StreamBuffer**で、 [ **HW\_ストリーム\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff559686)デバイスと、ストリームを記述することサポートされています。 このバッファーのサイズでミニドライバーで示されている、 **StreamDescriptorSize**フィールドに、 [**ポート\_構成\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567785)構造体。
+ミニドライバー塗りつぶし**CommandData.StreamBuffer**で、 [ **HW\_ストリーム\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor)デバイスと、ストリームを記述することサポートされています。 このバッファーのサイズでミニドライバーで示されている、 **StreamDescriptorSize**フィールドに、 [**ポート\_構成\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_port_configuration_information)構造体。
 
-クラス ドライバーは通常、この要求を 1 回だけ発行します。 クラス ドライバーを呼び出すことによって、サポートされているストリームの説明を更新する、この要求を再発行することがあります強制的に、ミニドライバー [StreamClassReenumerateStreams](https://msdn.microsoft.com/library/windows/hardware/ff568256)します。
+クラス ドライバーは通常、この要求を 1 回だけ発行します。 クラス ドライバーを呼び出すことによって、サポートされているストリームの説明を更新する、この要求を再発行することがあります強制的に、ミニドライバー [StreamClassReenumerateStreams](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassreenumeratestreams)します。
 
 **ときに、SRB\_取得\_ストリーム\_ミニドライバーが INFO コマンドを受信した、ようにミニドライバーにする必要があります。**
 
-1.  ストリーム ヘッダーとストリーム情報のデータ構造のポインターを取得します。 例:
+1.  ストリーム ヘッダーとストリーム情報のデータ構造のポインターを取得します。 次に、例を示します。
 
     ```cpp
      PHW_STREAM_HEADER pstrhdr =

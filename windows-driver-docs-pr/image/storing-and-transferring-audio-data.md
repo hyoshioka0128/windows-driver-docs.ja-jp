@@ -4,12 +4,12 @@ description: オーディオ データの保存と転送
 ms.assetid: c8d0af2f-1c3d-49d5-96ca-de1703f85448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb77c1a22006a25e216c1a863c3ae3ad14eda680
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ef08aba4f5a851d41dc43289a98882807cfd696
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358238"
 ---
 # <a name="storing-and-transferring-audio-data"></a>オーディオ データの保存と転送
 
@@ -19,11 +19,11 @@ ms.locfileid: "63383717"
 
 Microsoft Windows Me、Windows XP の場合は、いくつか WIA ドライバーでは、オーディオ データを格納するのに、次の 3 つ WIA プロパティを使用しました。
 
-[**WIA\_IPC\_オーディオ\_利用可能**](https://msdn.microsoft.com/library/windows/hardware/ff552530)
+[**WIA\_IPC\_オーディオ\_利用可能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-audio-available)
 
-[**WIA\_IPC\_オーディオ\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff552534)
+[**WIA\_IPC\_オーディオ\_データ**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-audio-data)
 
-[**WIA\_IPC\_オーディオ\_データ\_形式**](https://msdn.microsoft.com/library/windows/hardware/ff552538)
+[**WIA\_IPC\_オーディオ\_データ\_形式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-audio-data-format)
 
 これらのプロパティは廃止され、使用する必要があります。
 

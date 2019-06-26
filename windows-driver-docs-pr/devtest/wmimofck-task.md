@@ -4,19 +4,19 @@ description: Windows Driver Kit (WDK) には、MSBuild を使用して、ドラ�
 ms.assetid: 33C5C079-510F-4BD3-AEF1-F152E88E45C2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29295c3d39d4c87b1b0bc5a4cd0345d1bc8bca2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1cc9a125d1eaa88cee456c8121168b967f0ebef3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379125"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372628"
 ---
 # <a name="wmimofck-task"></a>Wmimofck タスク
 
 
 Windows Driver Kit (WDK) には、MSBuild を使用して、ドライバーをビルドするときに、wmimofck.exe ツールを実行できるようにの Wmimofck タスクが用意されています。
 
-Wmimofck ツールの使用方法の詳細については、次を参照してください。[を使用して Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)します。
+Wmimofck ツールの使用方法の詳細については、次を参照してください。[を使用して Wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)します。
 
 MSBuild では、Wmimofck 項目を使用して、Wmimofck タスクのパラメーターを送信します。 Wmimofck の項目メタデータは、プロジェクト ファイルで Wmimofck 項目を使用してアクセスします。
 
@@ -196,7 +196,7 @@ Wmimofck.exe –h"b.h" b.bmf
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[Wmimofck.exe を使用します。](https://msdn.microsoft.com/library/windows/hardware/ff565588)
+[Wmimofck.exe を使用します。](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)
 
  
 

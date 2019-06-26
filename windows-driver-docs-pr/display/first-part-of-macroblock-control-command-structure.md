@@ -6,12 +6,12 @@ keywords:
 - マクロ ブロック WDK DirectX va なので、汎用的なコマンド構造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fec81249a353368adc8e6687ae81facbbdcbc76e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 410ac772bd3a765585fe5c4f592aa2e6b8b9896b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369863"
 ---
 # <a name="first-part-of-macroblock-control-command-structure"></a>マクロブロック制御コマンド構造の最初の部分
 
@@ -93,11 +93,11 @@ ms.locfileid: "63327925"
 
  
 
-**WPicWidthInMBminus1**と**wPicHeightInMBminus1**アドレスのメンバーである、 [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造体。
+**WPicWidthInMBminus1**と**wPicHeightInMBminus1**アドレスのメンバーである、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体。
 
 ### <a name="span-idwmbtypespanspan-idwmbtypespanspan-idwmbtypespanwmbtype"></a><span id="wMBtype"></span><span id="wmbtype"></span><span id="WMBTYPE"></span>wMBtype
 
-**WMBtype**構造体のメンバーが処理されているマクロ ブロックの種類を指定します。 このメンバーには一連の方法のマクロ ブロックを定義するビットと動きベクトルが処理されます。 **BPic4MVallowed**、 **bPicScanMethod**、 **bPicBackwardPrediction**、 **bPicStructure**、および**bPicScanFixed**アドレスのメンバーである、 [ **DXVA\_PictureParameters**](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造体。 **BConfigHostInverseScan**アドレスのメンバーである、 [ **DXVA\_ConfigPictureDecode** ](https://msdn.microsoft.com/library/windows/hardware/ff563133)構造体。
+**WMBtype**構造体のメンバーが処理されているマクロ ブロックの種類を指定します。 このメンバーには一連の方法のマクロ ブロックを定義するビットと動きベクトルが処理されます。 **BPic4MVallowed**、 **bPicScanMethod**、 **bPicBackwardPrediction**、 **bPicStructure**、および**bPicScanFixed**アドレスのメンバーである、 [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体。 **BConfigHostInverseScan**アドレスのメンバーである、 [ **DXVA\_ConfigPictureDecode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_configpicturedecode)構造体。
 
 <table>
 <colgroup>
@@ -193,13 +193,13 @@ ms.locfileid: "63327925"
 
 -   *PicCurrentField*フラグはしない限り、0 **bPicStructure** 2 (下部にあるフィールド) です。 この場合、 *PicCurrentField*は 1 です。
 
-**MVector**のメンバーである、 [ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://msdn.microsoft.com/library/windows/hardware/ff563993)と[ **DXVA\_MBctrl\_P\_OffHostIDCT\_1** ](https://msdn.microsoft.com/library/windows/hardware/ff563997)構造体。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter*、および*Motion4MV*フラグと変数は、ビット フィールドに含まれている、 **wMBtype**メンバーは、DXVA の\_MBctrl\_P\_HostResidDiff\_1 と DXVA\_MBctrl\_P\_OffHostIDCT\_1 構造体。 **bPicOBMC**のメンバーである、 [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造体。 *PicCurrentField*フラグがから派生した、 **bPicStructure**の DXVA メンバー\_PictureParameters します。
+**MVector**のメンバーである、 [ **DXVA\_MBctrl\_P\_HostResidDiff\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)と[ **DXVA\_MBctrl\_P\_OffHostIDCT\_1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)構造体。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter*、および*Motion4MV*フラグと変数は、ビット フィールドに含まれている、 **wMBtype**メンバーは、DXVA の\_MBctrl\_P\_HostResidDiff\_1 と DXVA\_MBctrl\_P\_OffHostIDCT\_1 構造体。 **bPicOBMC**のメンバーである、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体。 *PicCurrentField*フラグがから派生した、 **bPicStructure**の DXVA メンバー\_PictureParameters します。
 
 このセクションでは、次の表を確認する際に、次の考慮事項が適用されます。
 
 -   さまざまな場所、mpeg-2 変数名で*PMV*動きベクトルの値を示すために使用します。 この表記が識別するために使用、 *PMV*フレームの座標、および可能性がある場合 (つまり、半分垂直方向の解像度) でフィールドの座標で動きベクトルである mpeg-2 で定義されている変数。 すべてのケースで*PMV*の値を指す*後 PMV* (で指定されている mpeg-2 ビデオ セクション 7.6.3.1) として現在の動きベクトルの値で更新されています。
 
--   ベクターの定義 '\[2\]\[0\]とベクター'\[3\]\[0\] mpeg-2 セクション内にある 7.6.3.6 します。 左**-** 表示シフト演算は、フレームの座標を垂直方向のコンポーネントが変更されることを示します。
+-   ベクターの定義 '\[2\]\[0\]とベクター'\[3\]\[0\] mpeg-2 セクション内にある 7.6.3.6 します。 左 **-** 表示シフト演算は、フレームの座標を垂直方向のコンポーネントが変更されることを示します。
 
 -   両方の「場合、モーション」(0,0,0) の場合、マクロ ブロック パラメーターは、モーションの値が 0 のベクターで前方予測マクロ ブロック (0,1,0) をエミュレートします。 (Mpeg-2 セクション 7.6.3.5 も参照してください)。
 
@@ -209,7 +209,7 @@ ms.locfileid: "63327925"
 
 ### <a name="span-idframe-structuredpicturesspanspan-idframe-structuredpicturesspanspan-idframe-structuredpicturesspanframe-structured-pictures"></a><span id="Frame-Structured_Pictures"></span><span id="frame-structured_pictures"></span><span id="FRAME-STRUCTURED_PICTURES"></span>画像をフレーム構造
 
-次の表に、有効な画像をフレーム構造の要素の設定の組み合わせ (ときに、 **bPicStructure**のメンバー、 [ **DXVA\_PictureParameters**](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造が 3 に等しい)。
+次の表に、有効な画像をフレーム構造の要素の設定の組み合わせ (ときに、 **bPicStructure**のメンバー、 [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造が 3 に等しい)。
 
 <table>
 <colgroup>
@@ -360,7 +360,7 @@ ms.locfileid: "63327925"
 
 ### <a name="span-idfield-structuredpicturesspanspan-idfield-structuredpicturesspanspan-idfield-structuredpicturesspanfield-structured-pictures"></a><span id="Field-Structured_Pictures"></span><span id="field-structured_pictures"></span><span id="FIELD-STRUCTURED_PICTURES"></span>フィールドの構造化の画像
 
-次の表に、有効なフィールド構造の図の要素の設定の組み合わせ (ときに、 **bPicStructure**のメンバー、 [ **DXVA\_PictureParameters**](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造体が 1 または 2 と等しい)。
+次の表に、有効なフィールド構造の図の要素の設定の組み合わせ (ときに、 **bPicStructure**のメンバー、 [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体が 1 または 2 と等しい)。
 
 <table>
 <colgroup>
@@ -541,7 +541,7 @@ ms.locfileid: "63327925"
 
  
 
-**注**   average 演算子は数学的に同じです ((s1 s2、+ 1)&gt;&gt;1)、mpeg-1 mpeg-2 半分サンプルの予測をフィルター処理、双方向平均、およびデュアル素数同じ逆パリティの結合. H.263 双方向の平均化演算子は、右シフトする前に +1 のオフセットを追加できません。 **BBidirectionalAveragingMode**のメンバー [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)使用がどちらの方法を決定します。
+**注**   average 演算子は数学的に同じです ((s1 s2、+ 1)&gt;&gt;1)、mpeg-1 mpeg-2 半分サンプルの予測をフィルター処理、双方向平均、およびデュアル素数同じ逆パリティの結合. H.263 双方向の平均化演算子は、右シフトする前に +1 のオフセットを追加できません。 **BBidirectionalAveragingMode**のメンバー [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)使用がどちらの方法を決定します。
 
  
 

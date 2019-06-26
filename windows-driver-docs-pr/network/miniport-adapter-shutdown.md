@@ -12,12 +12,12 @@ keywords:
 - システム シャット ダウンの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aefc5819670a99448f6eb1d5e125dad6b6b3492a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45b590e7beacc491731c442dee3e248743db82ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378374"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373956"
 ---
 # <a name="miniport-adapter-shutdown"></a>ミニポート アダプターのシャットダウン
 
@@ -25,17 +25,17 @@ ms.locfileid: "63378374"
 
 
 
-NDIS ミニポート ドライバーを登録する必要があります、 [ *MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)ミニポート ドライバーの初期化中に機能します。
+NDIS ミニポート ドライバーを登録する必要があります、 [ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)ミニポート ドライバーの初期化中に機能します。
 
-NDIS 呼び出し NDIS ミニポート ドライバーの[ *MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)システムがシャット ダウン時に機能します。 *MiniportShutdownEx*ハードウェアを既知の状態に復元します。
+NDIS 呼び出し NDIS ミニポート ドライバーの[ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)システムがシャット ダウン時に機能します。 *MiniportShutdownEx*ハードウェアを既知の状態に復元します。
 
-*ShutdownAction* NDIS に渡されるパラメーター [ *MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)シャット ダウンの理由のミニポート ドライバーに通知します。
+*ShutdownAction* NDIS に渡されるパラメーター [ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)シャット ダウンの理由のミニポート ドライバーに通知します。
 
 シャット ダウン ハンドラーを呼び出すことが、ユーザー操作の結果としての IRQL で実行する場合、= パッシブ\_レベル。 回復不能なシステム エラーの結果として呼び出すこともできます、この場合、IRQL で実行できます。
 
-[*MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)なしで呼び出す必要があります**Ndis * Xxx*** 関数。 ミニポート ドライバーでは、読み取りと書き込み I/O ポートまたは既知の状態にハードウェアを返却する DMA エンジンを無効にする関数を呼び出すことができます。
+[*MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)なしで呼び出す必要があります**Ndis * Xxx*** 関数。 ミニポート ドライバーでは、読み取りと書き込み I/O ポートまたは既知の状態にハードウェアを返却する DMA エンジンを無効にする関数を呼び出すことができます。
 
-異なり[ *MiniportHaltEx*](https://msdn.microsoft.com/library/windows/hardware/ff559388)、 [ *MiniportShutdownEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559449)割り当てられたリソースを解放する必要があります。 *MiniportShutdownEx* NIC を停止する必要があります
+異なり[ *MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)、 [ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)割り当てられたリソースを解放する必要があります。 *MiniportShutdownEx* NIC を停止する必要があります
 
 ## <a name="related-topics"></a>関連トピック
 

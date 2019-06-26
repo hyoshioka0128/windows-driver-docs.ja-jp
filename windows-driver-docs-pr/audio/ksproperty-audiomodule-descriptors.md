@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42fb8facd76b5bda28a8b8099ff9b5d2ec3c84d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfa2a9be1707fddbeaccd8631c15a64dd5bcf72f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332786"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358844"
 ---
 # <a name="kspropertyaudiomoduledescriptors"></a>KSPROPERTY\_AUDIOMODULE\_記述子
 
@@ -57,7 +57,7 @@ ms.locfileid: "63332786"
 
  
 
-プロパティの値は、構造体は、ゼロ (0) 以上続く[ **KSAUDIOMODULE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/mt808137)構造体。
+プロパティの値は、構造体は、ゼロ (0) 以上続く[ **KSAUDIOMODULE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)構造体。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
@@ -65,7 +65,7 @@ ms.locfileid: "63332786"
 
 返します、ksmultiple、ドライバーは、このプロパティをサポート、オーディオのすべてのモジュールがない場合は、\_0 個の要素数を持つ項目。
 
-オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)します。
+オーディオのモジュールの詳細については、次を参照してください。[オーディオ モジュールの検出を実装する](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -94,7 +94,7 @@ ms.locfileid: "63332786"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**KSAUDIOMODULE\_記述子**](https://msdn.microsoft.com/library/windows/hardware/mt808137)
+[**KSAUDIOMODULE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)
 
 [KSPROPSETID\_AudioModule](kspropsetid-audiomodule.md)
 

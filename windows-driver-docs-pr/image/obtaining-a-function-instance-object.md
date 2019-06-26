@@ -4,12 +4,12 @@ description: 関数のインスタンス オブジェクトの取得
 ms.assetid: 2c750281-031b-4b9f-9012-3b341ebe1cd9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68243e112354ce8faeaf63dd41ddd1b814bb5eff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f6c879103e51038e9baf389d6ff1fa7e61598b4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376590"
 ---
 # <a name="obtaining-a-function-instance-object"></a>関数のインスタンス オブジェクトの取得
 
@@ -25,7 +25,7 @@ WIA ミニドライバーは、現在のハードウェア デバイスとで実
 #include <FunctionDiscovery.h>
 ```
 
-初期化中とで行われる処理、 [ **IStiUSD::Initialize** ](https://msdn.microsoft.com/library/windows/hardware/ff543824)メソッド、ミニドライバーは適切な関数のインスタンスを表すオブジェクトを取得する機能の探索をクエリする必要があります、ハードウェア デバイスです。 このクエリを完了するには、次の手順 (および関連付けられているコード例は、) を使用します。
+初期化中とで行われる処理、 [ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)メソッド、ミニドライバーは適切な関数のインスタンスを表すオブジェクトを取得する機能の探索をクエリする必要があります、ハードウェア デバイスです。 このクエリを完了するには、次の手順 (および関連付けられているコード例は、) を使用します。
 
 ### <a name="step-1-create-the-function-discovery-object"></a>手順 1:機能探索オブジェクトを作成します。
 

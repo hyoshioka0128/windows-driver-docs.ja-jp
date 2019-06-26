@@ -10,12 +10,12 @@ keywords:
 - WDK Pscript PPD 固有のインターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99db8f3645f569daff11cbc767fdd81a0585841a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f7debc40ac377db31bcd9b5a328b4237cbe0248
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389548"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373804"
 ---
 # <a name="ppd-specific-interface"></a>PPD 固有のインターフェイス
 
@@ -27,37 +27,37 @@ IPrintCoreUI2 COM インターフェイスのファイルです。 これらの�
 
 ### <a name="iprintcoreui2-interface-ppd-methods"></a>IPrintCoreUI2 インターフェイス PPD メソッド
 
-[**IPrintCoreUI2::EnumConstrainedOptions**](https://msdn.microsoft.com/library/windows/hardware/ff553045)
+[**IPrintCoreUI2::EnumConstrainedOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-enumconstrainedoptions)
 
-[**IPrintCoreUI2::EnumFeatures**](https://msdn.microsoft.com/library/windows/hardware/ff553050)
+[**IPrintCoreUI2::EnumFeatures**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-enumfeatures)
 
-[**IPrintCoreUI2::EnumOptions**](https://msdn.microsoft.com/library/windows/hardware/ff553052)
+[**IPrintCoreUI2::EnumOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-enumoptions)
 
-[**IPrintCoreUI2::GetOptions**](https://msdn.microsoft.com/library/windows/hardware/ff553069)
+[**IPrintCoreUI2::GetOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-getoptions)
 
-[**IPrintCoreUI2::GetFeatureAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff553056)
+[**IPrintCoreUI2::GetFeatureAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-getfeatureattribute)
 
-[**IPrintCoreUI2::GetGlobalAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff553059)
+[**IPrintCoreUI2::GetGlobalAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-getglobalattribute)
 
-[**IPrintCoreUI2::GetOptionAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff553064)
+[**IPrintCoreUI2::GetOptionAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-getoptionattribute)
 
-[**IPrintCoreUI2::SetOptions**](https://msdn.microsoft.com/library/windows/hardware/ff553081)
+[**IPrintCoreUI2::SetOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-setoptions)
 
-[**IPrintCoreUI2::WhyConstrained**](https://msdn.microsoft.com/library/windows/hardware/ff553087)
+[**IPrintCoreUI2::WhyConstrained**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreui2-whyconstrained)
 
 ### <a name="iprintcoreps2-interface-ppd-methods"></a>IPrintCorePS2 インターフェイス PPD メソッド
 
-[**IPrintCorePS2::EnumFeatures**](https://msdn.microsoft.com/library/windows/hardware/ff552990)
+[**IPrintCorePS2::EnumFeatures**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreps2-enumfeatures)
 
-[**IPrintCorePS2::EnumOptions**](https://msdn.microsoft.com/library/windows/hardware/ff552996)
+[**IPrintCorePS2::EnumOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreps2-enumoptions)
 
-[**IPrintCorePS2::GetOptions**](https://msdn.microsoft.com/library/windows/hardware/ff553019)
+[**IPrintCorePS2::GetOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreps2-getoptions)
 
-[**IPrintCorePS2::GetFeatureAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff553006)
+[**IPrintCorePS2::GetFeatureAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreps2-getfeatureattribute)
 
-[**IPrintCorePS2::GetGlobalAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff553009)
+[**IPrintCorePS2::GetGlobalAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreps2-getglobalattribute)
 
-[**IPrintCorePS2::GetOptionAttribute**](https://msdn.microsoft.com/library/windows/hardware/ff553013)
+[**IPrintCorePS2::GetOptionAttribute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintcoreps2-getoptionattribute)
 
 このセクションを通じて、両方のインターフェイスのメンバーである任意のメソッドへの参照は、両方のメソッドに適用されます。 参照をたとえば、 **GetOptions**に適用されます**IPrintCoreUI2::GetOptions**でなく**IPrintCorePS2::GetOptions**します。
 

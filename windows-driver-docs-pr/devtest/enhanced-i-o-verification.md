@@ -7,12 +7,12 @@ keywords:
 - I/O の検証機能 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2edd9c7ed87e3e9a029c44ae335b02e116d90c80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e5d51d63aa9f7b719b59710bd5c723711787625
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344850"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371376"
 ---
 # <a name="enhanced-io-verification"></a>拡張 I/O 検証
 
@@ -29,11 +29,11 @@ Windows Vista および Windows XP では、I/O の検証の強化がアクテ�
 
 Driver Verifier は、強化された I/O の検証を有効にすると、次のチェックを追加します。
 
--   監視、ドライバーが状態を返すことを確認するためのすべての Irp\_PENDING 呼び出した場合にのみ[ **IoMarkIrpPending**](https://msdn.microsoft.com/library/windows/hardware/ff549422)します。
+-   監視、ドライバーが状態を返すことを確認するためのすべての Irp\_PENDING 呼び出した場合にのみ[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)します。
 
--   使用を監視[ **IoDeleteDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549083)と不適切なデタッチしたり、デバイス オブジェクトの削除を検出すること、ドライバーがないデバイスを削除する同じ 2 回以上のことを確認します。
+-   使用を監視[ **IoDeleteDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)と不適切なデタッチしたり、デバイス オブジェクトの削除を検出すること、ドライバーがないデバイスを削除する同じ 2 回以上のことを確認します。
 
--   あるドライバー正しくアンワインドすべてを確認します。 [ **IoSkipCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff550355)呼び出し。
+-   あるドライバー正しくアンワインドすべてを確認します。 [ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)呼び出し。
 
 新しい負荷とテストは、次のとおりです。
 
@@ -53,11 +53,11 @@ I/O の検証の強化によってキャッチ ドライバー エラーによ�
 
 青の画面では、これらのエラーは、メッセージによって記録されます**IO システム検証エラー**と文字列**WDM ドライバー エラー** *XXX*ここで、 *XXX*I/O エラー コードします。
 
-メッセージによって、クラッシュ ダンプ ファイルにこれらのエラーが記録されます**バグチェック 0xC9 (ドライバー\_VERIFIER\_IOMANAGER\_違反)**、I/O エラー コードと共にします。 この場合、I/O エラー コードは、0xC9 のバグ チェックの最初のパラメーターとして表示されます。
+メッセージによって、クラッシュ ダンプ ファイルにこれらのエラーが記録されます**バグチェック 0xC9 (ドライバー\_VERIFIER\_IOMANAGER\_違反)** 、I/O エラー コードと共にします。 この場合、I/O エラー コードは、0xC9 のバグ チェックの最初のパラメーターとして表示されます。
 
 カーネル デバッガー (KD または WinDbg) でこれらのエラーは、メッセージによって記録されます**WDM ドライバー エラー**と説明のテキスト文字列。 カーネル デバッガーがアクティブな場合は、レベル 2 のエラーを無視し、システムの操作を再開することです。 (これが、その他のバグ チェックで可能です)
 
-ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 すべての I/O の検証レベル 2 のエラー メッセージの詳細については、次を参照してください。 [**バグ チェック 0xC9**](https://msdn.microsoft.com/library/windows/hardware/ff560205)します。
+ブルー スクリーン、クラッシュ ダンプ ファイル、およびカーネル デバッガーの各追加情報を表示もできます。 すべての I/O の検証レベル 2 のエラー メッセージの詳細については、次を参照してください。 [**バグ チェック 0xC9**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation)します。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
 

@@ -6,12 +6,12 @@ keywords:
 - (タイムアウト検出と回復) TDR WDK の表示、Windows 8 での変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7ad0cd9205de14e01b4ccb197090c856f68298
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8afa1f78834b267eff1a5ad2b2d6766ad5b541d7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362723"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372024"
 ---
 # <a name="tdr-changes-in-windows-8"></a>Windows 8 での TDR の変更
 
@@ -50,23 +50,23 @@ GPU のタイムアウト検出と復旧 (TDR) の動作の Windows 8 以降で�
 
 この動作の変更に合わせて、ディスプレイ ミニポート ドライバーは、これらの関数を実装する必要があります。
 
--   [*DxgkDdiQueryDependentEngineGroup*](https://msdn.microsoft.com/library/windows/hardware/hh451407)
--   [*DxgkDdiQueryEngineStatus*](https://msdn.microsoft.com/library/windows/hardware/hh451411)
--   [*DxgkDdiResetEngine*](https://msdn.microsoft.com/library/windows/hardware/hh451418)
+-   [*DxgkDdiQueryDependentEngineGroup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_querydependentenginegroup)
+-   [*DxgkDdiQueryEngineStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryenginestatus)
+-   [*DxgkDdiResetEngine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)
 
-**注**  これらの関数をサポートしているドライバーのサポート レベル 0 の同期があります、 [ *DxgkDdiCollectDbgInfo* ](https://msdn.microsoft.com/library/windows/hardware/ff559595)関数。 これは、そのレベル 0 ミニポートの呼び出しの影響を受けませんが、リセット操作を続行できることを確認します。 「解説」を参照してください。 *DxgkDdiCollectDbgInfo*します。
+**注**  これらの関数をサポートしているドライバーのサポート レベル 0 の同期があります、 [ *DxgkDdiCollectDbgInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_collectdbginfo)関数。 これは、そのレベル 0 ミニポートの呼び出しの影響を受けませんが、リセット操作を続行できることを確認します。 「解説」を参照してください。 *DxgkDdiCollectDbgInfo*します。
 
  
 
 これらの構造は、新しい関数に関連付けられました。
 
--   [**DXGK\_DRIVERCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff561062) (新しい**SupportPerEngineTDR**メンバー)
--   [**DXGK\_ENGINESTATUS**](https://msdn.microsoft.com/library/windows/hardware/hh464023)
--   [**DXGKARG\_QUERYDEPENDENTENGINEGROUP**](https://msdn.microsoft.com/library/windows/hardware/hh451294)
--   [**DXGKARG\_QUERYENGINESTATUS**](https://msdn.microsoft.com/library/windows/hardware/hh451299)
--   [**DXGKARG\_RESETENGINE**](https://msdn.microsoft.com/library/windows/hardware/hh451303)
+-   [**DXGK\_DRIVERCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps) (新しい**SupportPerEngineTDR**メンバー)
+-   [**DXGK\_ENGINESTATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_enginestatus)
+-   [**DXGKARG\_QUERYDEPENDENTENGINEGROUP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_querydependentenginegroup)
+-   [**DXGKARG\_QUERYENGINESTATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryenginestatus)
+-   [**DXGKARG\_RESETENGINE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_resetengine)
 
-ディスプレイのミニポート ドライバーを設定してこれらの関数のサポートを示します、 [ **DXGK\_DRIVERCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561062).**SupportPerEngineTDR**メンバー、その場合、実装する必要があります、 [ *DxgkDdiQueryDependentEngineGroup*](https://msdn.microsoft.com/library/windows/hardware/hh451407)、 [ *DxgkDdiQueryEngineStatus*](https://msdn.microsoft.com/library/windows/hardware/hh451411)、および[ *DxgkDdiResetEngine* ](https://msdn.microsoft.com/library/windows/hardware/hh451418)関数。
+ディスプレイのミニポート ドライバーを設定してこれらの関数のサポートを示します、 [ **DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps).**SupportPerEngineTDR**メンバー、その場合、実装する必要があります、 [ *DxgkDdiQueryDependentEngineGroup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_querydependentenginegroup)、 [ *DxgkDdiQueryEngineStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_queryenginestatus)、および[ *DxgkDdiResetEngine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)関数。
 
 ## <a name="span-idtdrprocessdescriptionspanspan-idtdrprocessdescriptionspanspan-idtdrprocessdescriptionspantdr-process-description"></a><span id="TDR_process_description"></span><span id="tdr_process_description"></span><span id="TDR_PROCESS_DESCRIPTION"></span>TDR プロセスの説明
 
@@ -84,11 +84,11 @@ TDRs は GPU コマンドが完了に時間が取得や、ハードウェアが�
 ## <a name="span-idnodesspanspan-idnodesspanspan-idnodesspannodes"></a><span id="Nodes"></span><span id="nodes"></span><span id="NODES"></span>ノード
 
 
-上記の TDR 関数で使用するため、*ノード*は個別にスケジュールする単一の物理アダプターの複数の部分の 1 つです。 例、3-D ノード、ビデオのデコード ノードおよびコピーのノードにすべて存在できます、同じ物理アダプターとで別のノードの序数値を割り当てることができる各、 [ **DXGKARG\_QUERYDEPENDENTENGINEGROUP**](https://msdn.microsoft.com/library/windows/hardware/hh451294).**NodeOrdinal**メンバーへの呼び出しで[ *DxgkDdiQueryDependentEngineGroup*](https://msdn.microsoft.com/library/windows/hardware/hh451407)します。
+上記の TDR 関数で使用するため、*ノード*は個別にスケジュールする単一の物理アダプターの複数の部分の 1 つです。 例、3-D ノード、ビデオのデコード ノードおよびコピーのノードにすべて存在できます、同じ物理アダプターとで別のノードの序数値を割り当てることができる各、 [ **DXGKARG\_QUERYDEPENDENTENGINEGROUP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_querydependentenginegroup).**NodeOrdinal**メンバーへの呼び出しで[ *DxgkDdiQueryDependentEngineGroup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_querydependentenginegroup)します。
 
-物理アダプター内のノードの数がでディスプレイのミニポート ドライバーによって報告された、 **NbAsymetricProcessingNodes**のメンバー [ **DXGK\_DRIVERCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff561062).**GpuEngineTopology**します。
+物理アダプター内のノードの数がでディスプレイのミニポート ドライバーによって報告された、 **NbAsymetricProcessingNodes**のメンバー [ **DXGK\_DRIVERCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps).**GpuEngineTopology**します。
 
-ノードの序数値が渡された、 **NodeOrdinal**のメンバー、 [ **DXGKARG\_CREATECONTEXT** ](https://msdn.microsoft.com/library/windows/hardware/ff557567)コンテキストが作成されるときに構造体します。
+ノードの序数値が渡された、 **NodeOrdinal**のメンバー、 [ **DXGKARG\_CREATECONTEXT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_createcontext)コンテキストが作成されるときに構造体します。
 
 ## <a name="span-idenginesspanspan-idenginesspanspan-idenginesspanengines"></a><span id="Engines"></span><span id="engines"></span><span id="ENGINES"></span>エンジン
 
@@ -100,7 +100,7 @@ TDRs は GPU コマンドが完了に時間が取得や、ハードウェアが�
 ## <a name="span-idengineordinalvalueatcontextcreationspanspan-idengineordinalvalueatcontextcreationspanspan-idengineordinalvalueatcontextcreationspanengine-ordinal-value-at-context-creation"></a><span id="Engine_ordinal_value_at_context_creation"></span><span id="engine_ordinal_value_at_context_creation"></span><span id="ENGINE_ORDINAL_VALUE_AT_CONTEXT_CREATION"></span>エンジンの序数値にコンテキストの作成
 
 
-エンジンを表す序数値に対応する 1 つのビットが設定されて、コンテキストが作成されたときに、 **EngineAffinity**のメンバー、 [ **DXGKARG\_CREATECONTEXT** ](https://msdn.microsoft.com/library/windows/hardware/ff557567)構造体。 **EngineOrdinal**これと他のスケジューラに関連する構造体のメンバーは、0 から始まるインデックス。 値**EngineAffinity** 1 は、 &lt; &lt; **EngineOrdinal**、および**EngineOrdinal**で最上位ビット位置は、 **EngineAffinity**します。
+エンジンを表す序数値に対応する 1 つのビットが設定されて、コンテキストが作成されたときに、 **EngineAffinity**のメンバー、 [ **DXGKARG\_CREATECONTEXT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_createcontext)構造体。 **EngineOrdinal**これと他のスケジューラに関連する構造体のメンバーは、0 から始まるインデックス。 値**EngineAffinity** 1 は、 &lt; &lt; **EngineOrdinal**、および**EngineOrdinal**で最上位ビット位置は、 **EngineAffinity**します。
 
 ## <a name="span-idpacketsunaffectedbyengineresetspanspan-idpacketsunaffectedbyengineresetspanspan-idpacketsunaffectedbyengineresetspanpackets-unaffected-by-engine-reset"></a><span id="Packets_unaffected_by_engine_reset"></span><span id="packets_unaffected_by_engine_reset"></span><span id="PACKETS_UNAFFECTED_BY_ENGINE_RESET"></span>エンジンのリセットにより影響を受けていないパケット
 
@@ -113,12 +113,12 @@ GPU スケジューラによってドライバーを求められる場合が、�
 ## <a name="span-idcallingsequencetoresetanenginespanspan-idcallingsequencetoresetanenginespanspan-idcallingsequencetoresetanenginespancalling-sequence-to-reset-an-engine"></a><span id="Calling_sequence_to_reset_an_engine"></span><span id="calling_sequence_to_reset_an_engine"></span><span id="CALLING_SEQUENCE_TO_RESET_AN_ENGINE"></span>呼び出しシーケンス エンジンをリセットするには
 
 
-ときに[ *DxgkDdiResetEngine* ](https://msdn.microsoft.com/library/windows/hardware/hh451418)成功すると、GPU スケジューラにより、 **LastAbortedFenceId**エンジン リセット呼び出しから返される値に対応するいずれか、既存フェンス ID または GPU 上で最後の完成したフェンス ID に、ハードウェア キューでです。 後者の場合は、GPU のタイムアウトが検出されたが、エンジンはコールバックをリセットする前に呼び出されるハードウェア キューが空にするときに発生します。
+ときに[ *DxgkDdiResetEngine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)成功すると、GPU スケジューラにより、 **LastAbortedFenceId**エンジン リセット呼び出しから返される値に対応するいずれか、既存フェンス ID または GPU 上で最後の完成したフェンス ID に、ハードウェア キューでです。 後者の場合は、GPU のタイムアウトが検出されたが、エンジンはコールバックをリセットする前に呼び出されるハードウェア キューが空にするときに発生します。
 
-GPU 上で最後の完成したフェンス ID 値で維持しなければならない、ドライバーによって常にも設定する必要があるため、 **DmaPreempted**.**LastCompletedFenceId**のメンバー、 [ **DXGKARGCB\_通知\_割り込み\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff557538)優先権割り込み通知構造体。 最後の完成したフェンス ID は、このような状況でのみ高度な必要があります。
+GPU 上で最後の完成したフェンス ID 値で維持しなければならない、ドライバーによって常にも設定する必要があるため、 **DmaPreempted**.**LastCompletedFenceId**のメンバー、 [ **DXGKARGCB\_通知\_割り込み\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkargcb_notify_interrupt_data)優先権割り込み通知構造体。 最後の完成したフェンス ID は、このような状況でのみ高度な必要があります。
 
 -   パケットは、(プリエンプトされない) が完了したら、完了したフェンスの最後の ID を設定して、完了したパケットのフェンス ID にください。
--   ときに[ *DxgkDdiResetEngine* ](https://msdn.microsoft.com/library/windows/hardware/hh451418)成功すると、前回完了したフェンス ID の値に設定する必要があります、 **LastCompletedFenceId**エンジンによって返されるメンバーの呼び出しをリセットします。
+-   ときに[ *DxgkDdiResetEngine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)成功すると、前回完了したフェンス ID の値に設定する必要があります、 **LastCompletedFenceId**エンジンによって返されるメンバーの呼び出しをリセットします。
 -   アダプター全体の設定にリセット上のすべてのノードの ID は、最後に移すことは前回完了したフェンスはリセット時にフェンスの ID を送信します。
 
 GPU スケジューラから見た次の成功のエンジンのリセットを時間的順序に示します。
@@ -129,7 +129,7 @@ GPU スケジューラから見た次の成功のエンジンのリセットを�
 4.  ない場合のパケット ハードウェア キューでこの時点で、次のように終了します。 これは、手順 2 および 3 の間の時間枠内にパケットが完了した場合に発生することができます。
 5.  すべてのキューに置かれた Dpc がフラッシュされます。
 6.  エンジンをリセットするために準備します。
-7.  呼び出す[ *DxgkDdiResetEngine*](https://msdn.microsoft.com/library/windows/hardware/hh451418)します。
+7.  呼び出す[ *DxgkDdiResetEngine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)します。
 8.  場合、 **LastAbortedFenceId**メンバーが最後にフェンスの ID を完了するかは前回送信されたフェンス ID よりも大きいよりも少ない、DirectX グラフィックスのカーネルのサブシステムがシステムのバグチェックが発生します。 メッセージによって、クラッシュ ダンプ ファイルにエラーが表示**バグチェック 0x119**、これら 4 つのパラメーターを持ちます。
     -   0 xa、中止されたフェンスの無効な ID が報告されたドライバーの意味
     -   **LastAbortedFenceId**ドライバーによって返される値
@@ -145,7 +145,7 @@ GPU スケジューラから見た次の成功のエンジンのリセットを�
 
 ドライバーは、ハードウェアが無効な状態であるためリセット操作を実行できない場合、またはハードウェアが、ノードをリセットすることはできないため、ドライバーはエラー状態コードを返す必要があります。 GPU のスケジューラは、エラー状態コードを受信する場合、アダプターのリセットと再起動操作の次を実行、 [TDR 動作](timeout-detection-and-recovery.md)Windows 8 より前です。
 
-場合でも、ドライバーが Windows 8 の TDR の動作を選択して、ありますの場合、GPU のスケジューラがリセットと全体の論理アダプターの再起動を要求したときにします。 そのため、ドライバーを実装する必要がありますも、 [ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)と[ *DxgkDdiRestartFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559820)関数、およびその意味では、Windows 8 より前と同じままです。 物理アダプターをリセットしようと[ *DxgkDdiResetEngine* ](https://msdn.microsoft.com/library/windows/hardware/hh451418)論理のアダプターのリセットに潜在顧客、 **! 分析**Windows デバッガーのコマンドを表示します。**TdrReason** TDR 復旧のコンテキストの値の新しい値に設定されます**TdrEngineTimeoutPromotedToAdapterReset** 9 を = です。
+場合でも、ドライバーが Windows 8 の TDR の動作を選択して、ありますの場合、GPU のスケジューラがリセットと全体の論理アダプターの再起動を要求したときにします。 そのため、ドライバーを実装する必要がありますも、 [ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)と[ *DxgkDdiRestartFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)関数、およびその意味では、Windows 8 より前と同じままです。 物理アダプターをリセットしようと[ *DxgkDdiResetEngine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)論理のアダプターのリセットに潜在顧客、 **! 分析**Windows デバッガーのコマンドを表示します。**TdrReason** TDR 復旧のコンテキストの値の新しい値に設定されます**TdrEngineTimeoutPromotedToAdapterReset** 9 を = です。
 
 ## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>ハードウェア認定要件
 

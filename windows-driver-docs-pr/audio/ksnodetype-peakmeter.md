@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b112a14f5a09a76d84a079b6ce8fc393f235597d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a49e0580d4525ec9aef7d98f9da4cbac45ab470
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359023"
 ---
 # <a name="ksnodetypepeakmeter"></a>KSNODETYPE\_PEAKMETER
 
@@ -35,7 +35,7 @@ Peakmeter ノードに、ストリームは、フィルター内で渡されま�
 
 オーディオのアダプターの名前 peakmeter ノード KSAUDFNAME\_PEAKMETER します。
 
-Peakmeter ノードは、プロパティのフラグのプロパティ ハンドラーを用意する必要があります (を参照してください[ **KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262))、次の表に表示されます。
+Peakmeter ノードは、プロパティのフラグのプロパティ ハンドラーを用意する必要があります (を参照してください[ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)))、次の表に表示されます。
 
 <table>
 <colgroup>

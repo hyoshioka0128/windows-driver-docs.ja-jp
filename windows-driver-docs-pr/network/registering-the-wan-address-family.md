@@ -11,12 +11,12 @@ keywords:
 - アドレス ファミリの WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4cfa400020fcd2640786a3af4930420e9d78938
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c7b0219f1059fb927beb5bda8e91f8683f034e3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373794"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359145"
 ---
 # <a name="registering-the-wan-address-family"></a>WAN アドレス ファミリの登録
 
@@ -26,7 +26,7 @@ ms.locfileid: "63373794"
 
 このトピックでは、いる CoNDIS WAN ミニポート コール マネージャー (MCM) または別個の呼び出しマネージャーから TAPI アドレス ファミリを登録する方法について説明します。
 
-コール マネージャーの呼び出しのいずれかの種類、 [ **NdisCmRegisterAddressFamilyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff561685)関数のコール マネージャーのエントリ ポイントと、アドレス ファミリの種類 CO を登録する\_アドレス\_ファミリ\_TAPI\_プロキシ。 これによりは、ドライバーは、TAPI サービスを提供することを示します。 いる CoNDIS ドライバーでは、アドレス ファミリの登録に関する詳細については、次を参照してください。[を登録すると、アドレス ファミリを開く](registering-and-opening-an-address-family.md)します。
+コール マネージャーの呼び出しのいずれかの種類、 [ **NdisCmRegisterAddressFamilyEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmregisteraddressfamilyex)関数のコール マネージャーのエントリ ポイントと、アドレス ファミリの種類 CO を登録する\_アドレス\_ファミリ\_TAPI\_プロキシ。 これによりは、ドライバーは、TAPI サービスを提供することを示します。 いる CoNDIS ドライバーでは、アドレス ファミリの登録に関する詳細については、次を参照してください。[を登録すると、アドレス ファミリを開く](registering-and-opening-an-address-family.md)します。
 
 NDIS は、新しく登録されたアドレス ファミリの NDPROXY を通知します。 NDPROXY は、コール マネージャーが提供する TAPI サービスを使用できることを決定します。 NDPROXY は、ドライバーに関連付けられ、NDIS NDPROXY の接続指向のエントリ ポイントに登録する TAPI プロキシ アドレス ファミリが表示されます。 これらのエントリ ポイントは、ドライバーとの通信に使用されます。
 
