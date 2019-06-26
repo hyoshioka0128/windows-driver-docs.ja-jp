@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 839126891ea06998f4260a6f1b10a24c8ffac60e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ff971708868ee5dfc2b0366d7df94310f3e86d0d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56573172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365906"
 ---
 # <a name="fsctlsuspendoverlay-control-code"></a>FSCTL\_SUSPEND\_オーバーレイ コントロール コード
 
 
 **FSCTL\_SUSPEND\_オーバーレイ**制御コードは、バックアップ ソースへのアクセスを防止し、変更または削除することができます、ボリュームに接続されているバックアップ ソースを中断します。
 
-この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
+この操作を実行するには、呼び出す[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
 ``` syntax
 BOOL 
@@ -44,10 +44,10 @@ BOOL
 **Parameters**
 
 <a href="" id="instance--in-"></a>*インスタンス\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 呼び出し元の非透過インスタンス ポインター。 このパラメーターは、必要なは、NULL にすることはできません。
 
 <a href="" id="fileobject--in-"></a>*FileObject\[で\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)のみです。 オーバーレイが更新されるボリュームのファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)のみです。 オーバーレイが更新されるボリュームのファイル ポインター オブジェクト。 このパラメーターは、必要なは、NULL にすることはできません。
 
 <a href="" id="filehandle--in-"></a>*FileHandle\[で\]*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)のみです。 オーバーレイが更新されるボリュームのハンドル。 このパラメーターは、必要なは、NULL にすることはできません。
@@ -56,13 +56,13 @@ BOOL
 操作の制御コード。 使用**FSCTL\_SUSPEND\_オーバーレイ**この操作にします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-含める必要がありますが、入力バッファーへのポインターを[ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造体。 追加のプロバイダー固有のデータは後すぐに、必要な場合に**WOF\_外部\_情報**します。 プロバイダーが、WIM ファイルの場合、 [ **WIM\_プロバイダー\_SUSPEND\_オーバーレイ\_入力**](https://msdn.microsoft.com/library/windows/hardware/mt426740)構造が後に含まれる**WOF\_外部\_情報**します。
+含める必要がありますが、入力バッファーへのポインターを[ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造体。 追加のプロバイダー固有のデータは後すぐに、必要な場合に**WOF\_外部\_情報**します。 プロバイダーが、WIM ファイルの場合、 [ **WIM\_プロバイダー\_SUSPEND\_オーバーレイ\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_suspend_overlay_input)構造が後に含まれる**WOF\_外部\_情報**します。
 
 <a href="" id="inputbufferlength--in-"></a>*InputBufferLength\[で\]*  
-設定**sizeof**([**WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)) さらに、追加のプロバイダーの入力データのサイズ。
+設定**sizeof**([**WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)) さらに、追加のプロバイダーの入力データのサイズ。
 
 <a href="" id="outputbuffer--out-"></a>*OutputBuffer\[アウト\]*  
-使用されません。 NULL に設定します。
+使用されていません。 NULL に設定します。
 
 <a href="" id="outputbufferlength--in-"></a>*OutputBufferLength\[で\]*  
 0 に設定します。
@@ -70,7 +70,7 @@ BOOL
 <a name="status-block"></a>ステータス ブロック
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)または[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)ステータスを返します\_操作が成功した場合は成功します。 それ以外の場合、適切な関数では NTSTATUS 値は次のいずれかを返す可能性があります。
 
 <table>
 <colgroup>
@@ -105,10 +105,10 @@ BOOL
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-削除するバックアップ ソースは、Windows Imaging Format (WIM) ファイルが、入力バッファーに格納されます、 [ **WOF\_外部\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn632452)構造体の後に、 [ **WIM\_プロバイダー\_SUSPEND\_オーバーレイ\_入力**](https://msdn.microsoft.com/library/windows/hardware/mt426740)構造体。 *InputBufferLength*ここでは、 **sizeof**(WOF\_外部\_情報) + **sizeof**([**WIM\_プロバイダー\_削除\_オーバーレイ\_入力**](https://msdn.microsoft.com/library/windows/hardware/dn632450))。 **DataSourceId**値**WIM\_プロバイダー\_SUSPEND\_オーバーレイ\_入力**WIM ファイルので以前に追加する必要があります[ **FSCTL\_追加\_オーバーレイ**](fsctl-add-overlay.md)要求。
+削除するバックアップ ソースは、Windows Imaging Format (WIM) ファイルが、入力バッファーに格納されます、 [ **WOF\_外部\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wof_external_info)構造体の後に、 [ **WIM\_プロバイダー\_SUSPEND\_オーバーレイ\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_suspend_overlay_input)構造体。 *InputBufferLength*ここでは、 **sizeof**(WOF\_外部\_情報) + **sizeof**([**WIM\_プロバイダー\_削除\_オーバーレイ\_入力**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_wim_provider_remove_overlay_input))。 **DataSourceId**値**WIM\_プロバイダー\_SUSPEND\_オーバーレイ\_入力**WIM ファイルので以前に追加する必要があります[ **FSCTL\_追加\_オーバーレイ**](fsctl-add-overlay.md)要求。
 
 追加のバックアップ プロバイダーは、独自の特定の入力パラメーターの構造を定義します。
 

@@ -1,6 +1,6 @@
 ---
-title: Winsock のセクションでは、ネットワークの INF ファイル
-description: Winsock のセクションでは、ネットワークの INF ファイル
+title: ネットワーク INF ファイル内の Winsock セクション
+description: ネットワーク INF ファイル内の Winsock セクション
 ms.assetid: 179a8570-287b-446e-8b56-a9f23071e84d
 keywords:
 - Winsock のセクションでは、ある INF ファイル WDK ネットワーク
@@ -8,14 +8,14 @@ keywords:
 - Winsock のセクションでは WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 820316b0c64c15ebc100e5f5c67b323619cc2c0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5ee02e73cca6844a1204d1c4f8d2cc271a666047
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56536236"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368436"
 ---
-# <a name="winsock-sections-in-a-network-inf-file"></a>Winsock のセクションでは、ネットワークの INF ファイル
+# <a name="winsock-sections-in-a-network-inf-file"></a>ネットワーク INF ファイル内の Winsock セクション
 
 
 
@@ -44,11 +44,11 @@ A *Winsock インストール*セクションを含める必要があります�
 <tbody>
 <tr class="odd">
 <td align="left"><p>TransportService</p></td>
-<td align="left"><p>プロトコルのサービス名を指定する REG_SZ 値を返します。 これと同じである必要があります、 <strong>Ndi\Service</strong>プロトコルの値。 詳細については、<a href="adding-service-related-values-to-the-ndi-key.md" data-raw-source="[Adding Service-Related Values to the Ndi Key](adding-service-related-values-to-the-ndi-key.md)">Ndi キーに値を Adding Service-Related</a>を参照してください。</p></td>
+<td align="left"><p>プロトコルのサービス名を指定する REG_SZ 値を返します。 これと同じである必要があります、 <strong>Ndi\Service</strong>プロトコルの値。 詳細については、次を参照してください。 <a href="adding-service-related-values-to-the-ndi-key.md" data-raw-source="[Adding Service-Related Values to the Ndi Key](adding-service-related-values-to-the-ndi-key.md)">Ndi キーに値を Adding Service-Related</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HelperDllName</p></td>
-<td align="left"><p>Windows Sockets ヘルパー (WSH) プロトコルの DLL へのパスを指定する REG_EXPAND_SZ 値。 詳細については、<a href="https://msdn.microsoft.com/library/windows/hardware/ff566260" data-raw-source="[WSH DLL Function Summary](https://msdn.microsoft.com/library/windows/hardware/ff566260)">WSH DLL 関数の概要</a>を参照してください。</p></td>
+<td align="left"><p>Windows Sockets ヘルパー (WSH) プロトコルの DLL へのパスを指定する REG_EXPAND_SZ 値。 詳細については、次を参照してください。 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566260(v=vs.85)" data-raw-source="[WSH DLL Function Summary](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566260(v=vs.85))">WSH DLL 関数の概要</a>します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MaxSockAddrLength</p></td>

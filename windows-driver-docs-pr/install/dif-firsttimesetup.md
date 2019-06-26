@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 126beeec9ae35cbefa9e6a2aacb58fbfa8b344b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 351cc3ee4fda06893f835b389b6a643c2d35f8e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386904"
 ---
 # <a name="diffirsttimesetup"></a>DIF_FIRSTTIMESETUP
 
@@ -60,13 +60,13 @@ DIF_FIRSTTIMESETUP 要求は、オペレーティング システムの初期イ
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-装置のデバイス情報へのハンドルを設定します。 [デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/ff541509)に関連付けられている、 *DeviceInfoSet*します。
+装置のデバイス情報へのハンドルを設定します。 [デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)に関連付けられている、 *DeviceInfoSet*します。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
 なし
 
 <a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)) に関連付けられている、 *DeviceInfoSet*します。
+デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoSet*します。
 
 <a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
 なし
@@ -97,7 +97,7 @@ DIF_FIRSTTIMESETUP 要求は、オペレーティング システムの初期イ
 
 インストーラーは、カーネル モードの検出のコンポーネントを呼び出すことによって、またはを参照して、レジストリの情報に基づいて、そのセットアップ クラスの新しいデバイスを検出*unattend.txt*移行中に DLL が実行時に格納されている情報、オペレーティング システムをアップグレードします。
 
-次のように、デバイスのドライバーを選択する必要があります、インストーラーに、インストーラーは、非 PnP デバイスが検出される場合: デバイス情報の要素の作成 ([**SetupDiCreateDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff550952))、設定、SPDRP_HARDWAREIDプロパティを呼び出して[ **SetupDiSetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552169)、呼び出す[ **SetupDiBuildDriverInfoList**](https://msdn.microsoft.com/library/windows/hardware/ff550917)、しを呼び出します[ **SetupDiCallClassInstaller** ](https://msdn.microsoft.com/library/windows/hardware/ff550922)を送信する、 [ **DIF_SELECTBESTCOMPATDRV** ](dif-selectbestcompatdrv.md)要求。
+次のように、デバイスのドライバーを選択する必要があります、インストーラーに、インストーラーは、非 PnP デバイスが検出される場合: デバイス情報の要素の作成 ([**SetupDiCreateDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa))、設定、SPDRP_HARDWAREIDプロパティを呼び出して[ **SetupDiSetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)、呼び出す[ **SetupDiBuildDriverInfoList**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)、しを呼び出します[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)を送信する、 [ **DIF_SELECTBESTCOMPATDRV** ](dif-selectbestcompatdrv.md)要求。
 
 1 つまたは複数のインストーラーは、この差分コードへの応答でデバイスを検出、フル インストール モードのセットアップは、デバイスをインストールしようとします。 フル インストール モードのセットアップは、一覧内のすべてのデバイスをインストールしようとしていますインストーラーは、以前に構成されたデバイスを返す場合、フル インストール モードのセットアップは、デバイスを 2 回インストールされます。
 
@@ -107,7 +107,7 @@ DIF_FIRSTTIMESETUP 要求は、オペレーティング システムの初期イ
 
 フル インストール モードのセットアップ時に非 PnP デバイスを検出するために、インストーラーは、この要求を処理する必要があります。 フル インストール モードのセットアップでは、DIF_DETECT 要求を送信しません。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://msdn.microsoft.com/library/windows/hardware/ff546094)します。
+差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
 
 <a name="requirements"></a>要件
 ------------
@@ -134,17 +134,17 @@ DIF_FIRSTTIMESETUP 要求は、オペレーティング システムの初期イ
 
 [**DIF_SELECTBESTCOMPATDRV**](dif-selectbestcompatdrv.md)
 
-[**SetupDiBuildDriverInfoList**](https://msdn.microsoft.com/library/windows/hardware/ff550917)
+[**SetupDiBuildDriverInfoList**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)
 
-[**SetupDiCallClassInstaller**](https://msdn.microsoft.com/library/windows/hardware/ff550922)
+[**SetupDiCallClassInstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)
 
-[**SetupDiCreateDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff550952)
+[**SetupDiCreateDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
 
-[**SetupDiSetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552169)
+[**SetupDiSetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)
 
-[**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
 

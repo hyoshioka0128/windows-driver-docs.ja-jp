@@ -7,12 +7,12 @@ keywords:
 - サブデバイス WDK の複数のオーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a29cbc670af5291fea42627f6725ace3ec5a23b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a22d039208e639ea72cadfccb9f88b94c3c91459
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332296"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363207"
 ---
 # <a name="multiple-audio-subdevices"></a>複数のオーディオ サブデバイス
 
@@ -45,7 +45,7 @@ INF ファイルには、これらの名前を含むインターフェイスを�
   AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave2%,Test.Interface.Wave2
 ```
 
-INF ファイルを作成する必要があります**AddReg**セクション (を参照してください[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)) これらのインターフェイスに関する情報をレジストリに追加するには。
+INF ファイルを作成する必要があります**AddReg**セクション (を参照してください[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)) これらのインターフェイスに関する情報をレジストリに追加するには。
 
 ```inf
   [Test.Interface.Wave1]

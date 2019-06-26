@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ceced424b5d4aab307703d6c54784423a6e6737
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3fc9d6b0cceefa5f6cf0797b7d71050ee53e98c5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371782"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367175"
 ---
 # <a name="bug-check-0xcb-driverleftlockedpagesinprocess"></a>バグ チェック 0xCB:ドライバー\_左\_ロック\_ページ\_IN\_プロセス
 
@@ -26,7 +26,7 @@ ms.locfileid: "63371782"
 ドライバー\_左\_ロック\_ページ\_IN\_プロセスのバグ チェックが 0x000000CB の値を持ちます。 これは、I/O 操作の後にロックされたページを解放するドライバー、または I/O マネージャーが失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="driverleftlockedpagesinprocess-parameters"></a>ドライバー\_左\_ロック\_ページ\_IN\_プロセス パラメーター

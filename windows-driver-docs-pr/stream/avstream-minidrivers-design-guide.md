@@ -14,12 +14,12 @@ keywords:
 - オーディオの WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3cfe39755aa47c16d60c8085e3af0ee844bb966
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64ab96271277cd69d20b0e76e71600bf1e497b1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323329"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386701"
 ---
 # <a name="avstream-minidrivers-design-guide"></a>AVStream ミニドライバー設計ガイド
 
@@ -35,11 +35,11 @@ ms.locfileid: "63323329"
 
 [AVStream、ミニドライバーを作成します。](writing-an-avstream-minidriver.md)
 
-[ドライバーのアーキテクチャのドライバーをブロードキャストします。](https://msdn.microsoft.com/library/windows/hardware/ff556573)
+[ドライバーのアーキテクチャのドライバーをブロードキャストします。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
 
 [エンコーダーのデバイス](encoder-devices.md)
 
-[AV/C クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff556364)
+[AV/C クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
 
 [USB ビデオ クラス ドライバー](usb-video-class-driver.md)
 

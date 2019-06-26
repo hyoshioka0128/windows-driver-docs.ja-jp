@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c9fd99d3c6b40cddb340c686bf28bb845b5687
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b740d72da8d79a0e8455dd2276e113047f8f6f06
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367838"
 ---
 # <a name="bug-check-0x13a-kernelmodeheapcorruption"></a>バグ チェック 0x13A:カーネル\_モード\_ヒープ\_破損
 
@@ -26,7 +26,7 @@ ms.locfileid: "63353679"
 カーネル\_モード\_ヒープ\_破損バグ チェックが 0x0000013A の値を持ちます。 これは、カーネル モードのヒープ マネージャーによって、ヒープの破損が検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="kernelmodeheapcorruption-parameters"></a>カーネル\_モード\_ヒープ\_破損パラメーター

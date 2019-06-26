@@ -4,12 +4,12 @@ description: ここでは、Windows Display Driver Model (WDDM) 2.0 用に保存
 ms.assetid: 9BD0138A-E957-4675-8E08-2750825A5C87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f179b00a5a0300b8354ccebaa25bc4013fbe5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3906aad8c629904a7fb35f67304dc0b34fc2174
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381073"
 ---
 # <a name="driver-residency-in-wddm-20"></a>WDDM 2.0 でのドライバー常駐
 
@@ -48,13 +48,13 @@ ms.locfileid: "63358442"
 <td align="left"><p>グラフィックス プロセッシング ユニット (GPU) への常駐ではない割り当ては無効であり、エラーを生成したアプリケーションの削除、デバイスになります。</p>
 <p>これには、エラーが発生したエンジンがかどうかを示す仮想 GPU をサポートするかどうかに依存するこのような無効なアクセスの処理の 2 つの異なるモデルがあります。</p>
 <ul>
-<li>アクセスが無効ですが、ユーザー モード ドライバーに存在することはない割り当てを参照する割り当てリストを送信するときに発生エンジンの GPU の仮想アドレス指定をサポートし、割り当てとメモリ参照の修正プログラムに修正プログラムの場所のリストを使用しない場合、デバイス (つまり、ユーザー モード ドライバーと呼ばれる<a href="https://msdn.microsoft.com/library/windows/hardware/dn906357" data-raw-source="[&lt;em&gt;MakeResidentCb&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906357)"> <em>MakeResidentCb</em> </a>その割り当てに)。 これが発生したグラフィックスのカーネルに欠陥のあるコンテキストまたはデバイスがエラーで保存されます。</li>
+<li>アクセスが無効ですが、ユーザー モード ドライバーに存在することはない割り当てを参照する割り当てリストを送信するときに発生エンジンの GPU の仮想アドレス指定をサポートし、割り当てとメモリ参照の修正プログラムに修正プログラムの場所のリストを使用しない場合、デバイス (つまり、ユーザー モード ドライバーと呼ばれる<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb" data-raw-source="[&lt;em&gt;MakeResidentCb&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)"> <em>MakeResidentCb</em> </a>その割り当てに)。 これが発生したグラフィックスのカーネルに欠陥のあるコンテキストまたはデバイスがエラーで保存されます。</li>
 <li>エンジンの GPU 仮想アドレス指定をサポートせず、無効な GPU 仮想アドレスにアクセスする場合か、仮想アドレスの割り当てはありませんが、有効な割り当てはまたは常駐が作成されていないため、GPU は、発生が予想される、割り込みの形式で復旧不可能なページ フォールトします。 ページ フォールトの割り込みが発生したときに、カーネル モード ドライバーは新しいページ フォールト通知によるグラフィックス カーネルにエラーを転送する必要があります。 この通知を受信するとは、グラフィックス カーネルはリセット エラーが発生したエンジンのエンジンを開始し、欠陥のあるコンテキスト/デバイスをエラーにします。 エンジンのリセットが成功しなかった場合、グラフィックス カーネルは、フル アダプター全体のタイムアウト検出と復旧 (TDR) をすると、エラーを昇格します。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="process-residency-budgets.md" data-raw-source="[Process residency budgets](process-residency-budgets.md)">プロセスの保存場所の予算</a></p></td>
-<td align="left"><p>WDDM v2 では、メモリの量を維持できる常駐の予算のプロセスが割り当てられます。 この予算では、時間の経過と共に変更できますが、通常はのみが適用されるとき、システムがメモリ不足。 Microsoft direct3d12 では、前に、予算がの形式では、ユーザー モード ドライバーによって処理される<em>トリミング</em>通知と<em>MakeResident</em>によるエラー <strong>STATUS_NO_MEMORY</strong>します。 <em>TrimToBudget</em>通知、 <a href="https://msdn.microsoft.com/library/windows/hardware/dn906355" data-raw-source="[&lt;em&gt;Evict&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906355)"><em>削除</em></a>、および失敗した<a href="https://msdn.microsoft.com/library/windows/hardware/dn906357" data-raw-source="[&lt;em&gt;MakeResident&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906357)"> <em>MakeResident</em> </a>で最新の予算を返すすべての呼び出し、整数のフォーム<strong>NumBytesToTrim</strong>新しい予算に適合するためにトリミングする必要がある量を示す値です。</p></td>
+<td align="left"><p>WDDM v2 では、メモリの量を維持できる常駐の予算のプロセスが割り当てられます。 この予算では、時間の経過と共に変更できますが、通常はのみが適用されるとき、システムがメモリ不足。 Microsoft direct3d12 では、前に、予算がの形式では、ユーザー モード ドライバーによって処理される<em>トリミング</em>通知と<em>MakeResident</em>によるエラー <strong>STATUS_NO_MEMORY</strong>します。 <em>TrimToBudget</em>通知、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb" data-raw-source="[&lt;em&gt;Evict&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb)"><em>削除</em></a>、および失敗した<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb" data-raw-source="[&lt;em&gt;MakeResident&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)"> <em>MakeResident</em> </a>で最新の予算を返すすべての呼び出し、整数のフォーム<strong>NumBytesToTrim</strong>新しい予算に適合するためにトリミングする必要がある量を示す値です。</p></td>
 </tr>
 </tbody>
 </table>

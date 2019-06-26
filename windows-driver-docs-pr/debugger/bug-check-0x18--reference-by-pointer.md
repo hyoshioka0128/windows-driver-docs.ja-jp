@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a039ce590c9b522ab419adf119c60afb587b1846
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 363a295e00536172083b8b9479f603088894081e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352478"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367686"
 ---
 # <a name="bug-check-0x18-referencebypointer"></a>バグ チェック 0x18:参照\_BY\_ポインター
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352478"
 参照\_BY\_ポインターのバグ チェックが 0x00000018 の値を持ちます。 これは、オブジェクトの参照カウントがオブジェクトの現在の状態に対して有効であることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="referencebypointer-parameters"></a>参照\_BY\_ポインター パラメーター

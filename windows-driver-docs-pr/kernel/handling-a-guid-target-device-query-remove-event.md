@@ -9,12 +9,12 @@ keywords:
 - GUID_TARGET_DEVICE_QUERY_REMOVE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f72e34a78a1aae2ca450e8a4fc96d902afba6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c17401fe0d3b5fda1889d4cd2fe2c9eabf99157d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359864"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365463"
 ---
 # <a name="handling-a-guidtargetdevicequeryremove-event"></a>GUID の処理\_ターゲット\_デバイス\_クエリ\_削除イベント
 
@@ -22,7 +22,7 @@ ms.locfileid: "63359864"
 
 
 
-PnP マネージャーに送信する前に、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551705) IRP のデバイス ドライバーをすべての通知コールバックを呼び出します登録ルーチン**EventCategoryTargetDeviceChange**デバイスにします。 PnP マネージャーを指定します、 *NotificationStructure*.**イベント**GUID の\_ターゲット\_デバイス\_クエリ\_を削除します。
+PnP マネージャーに送信する前に、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device) IRP のデバイス ドライバーをすべての通知コールバックを呼び出します登録ルーチン**EventCategoryTargetDeviceChange**デバイスにします。 PnP マネージャーを指定します、 *NotificationStructure*.**イベント**GUID の\_ターゲット\_デバイス\_クエリ\_を削除します。
 
 そのような通知に応答して、コールバック ルーチンは、システムを停止することがなく、デバイスを削除できるかどうかを決定します。
 

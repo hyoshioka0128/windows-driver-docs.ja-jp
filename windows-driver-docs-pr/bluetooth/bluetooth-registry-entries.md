@@ -8,12 +8,12 @@ keywords:
 - COD_Type サブキー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af0815f26312ef5412362d5fd37cf35a815f6582
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08e9f13edd8d2e5e831f46f91baa135ad086c6e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364662"
 ---
 # <a name="bluetooth-registry-entries"></a>Bluetooth レジストリ エントリ
 
@@ -28,7 +28,7 @@ ms.locfileid: "63328251"
 
 HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\BTHPORT\\パラメーター
 
-これらの値の設定、Bluetooth 無線接続に関係なく、システムでは、デバイスの Bluetooth クラスが変わることに注意してください。 設定することができます、 **COD メジャー**と**COD 型**に`DWORD`値クラスのデバイスに対して定義されているフィールドの値、 [Bluetooth SIG Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/baseband)します。
+これらの値の設定、Bluetooth 無線接続に関係なく、システムでは、デバイスの Bluetooth クラスが変わることに注意してください。 設定することができます、 **COD メジャー**と**COD 型**に`DWORD`値クラスのデバイスに対して定義されているフィールドの値、 [Bluetooth SIG Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/baseband/)します。
 
 Bluetooth のプロファイル ドライバー BthPort.sys、読み取り、 **COD メジャー**と**COD 型**の値を調べて、デバイスの照会に反応する必要があります。 これらの値に影響するのみ、`COD_MAJOR_XXX`と`COD_XXX_MINOR_XXX`クラスのデバイスのビット。 `COD_SERVICE_XXX`ビットがこのレジストリ エントリを受けません。
 

@@ -4,22 +4,22 @@ description: コンピューターのハードウェア ID の指定
 ms.assetid: af0dbfc4-747c-4e16-a3ed-678df0e07757
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d72d987afa5f0358d16a766f13ffe77ab2791149
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0ecab61470b423193f5196bbac10e263bd4d661
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385882"
 ---
 #  <a name="specifying-hardware-ids-for-a-computer"></a>コンピューターのハードウェア ID の指定
 
-デバイスとプリンターとコンピューターを認識する[デバイス コンテナー](container-ids.md)します。 使用して、コンピューターをデバイス メタデータ パッケージ内で識別する結果として、 [ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)一意を指定する XML 要素[ハードウェア ID](hardware-ids.md)値。  (コンピューターのハードウェア ID、または CHID とも呼ばれます)、コンピューターのハードウェア ID 値は、System Management BIOS (SMBIOS) フィールドのデータの組み合わせを指定できます。
+デバイスとプリンターとコンピューターを認識する[デバイス コンテナー](container-ids.md)します。 使用して、コンピューターをデバイス メタデータ パッケージ内で識別する結果として、 [ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))一意を指定する XML 要素[ハードウェア ID](hardware-ids.md)値。  (コンピューターのハードウェア ID、または CHID とも呼ばれます)、コンピューターのハードウェア ID 値は、System Management BIOS (SMBIOS) フィールドのデータの組み合わせを指定できます。
 
 異なり[ハードウェア Id](hardware-ids.md)他のデバイスのコンテナーでは、コンピューターのハードウェア ID が Windows によって生成、システムが起動するたびにします。 Windows Driver Kit (WDK) での Windows 7、Windows 8 および Windows 8.1 に含まれている ComputerHardwareIds ツール (ComputerHardwareIDs.exe) を実行して、コンピューターのハードウェア Id を生成できます。 ComputerHardwareIds ツールには Windows 10 以降のソフトウェア開発キット (SDK) が含まれています。
 
 ComputerHardwareIds ツールでは、フィールド、システムの System Management BIOS (SMBIOS) からの情報に基づいているコンピューターのハードウェア Id のセットを生成します。 次の表では、これらの SMBIOS フィールドについて説明します。
 
-|フィールド名|構造体の名前とタイプ|SMBIOS 仕様のバージョン|Offset|長さ|値|説明|
+|フィールド名|構造体の名前とタイプ|SMBIOS 仕様のバージョン|Offset|長さ|Value|説明|
 |--- |--- |--- |--- |--- |--- |--- |
 |製造元|システム情報 (タイプ 1)|2.0+|04h|BYTE|STRING|dmiStrucBuffer 配列内の、NULL で終了する文字列のインデックス。 この文字列は、コンピューターの製造元の名前を指定します。|
 |Family (ファミリ)|システム情報 (タイプ 1)|2.4+|1Ah|BYTE|STRING|dmiStrucBuffer 配列内の、NULL で終了する文字列のインデックス。 この文字列は、特定のコンピューターが属するファミリを指定します。  ファミリと似ていますが、ハードウェアまたはソフトウェアの観点から同一であるコンピューターのセットを指します。  通常、ファミリは別のコンピューターのモデルは、さまざまな構成と価格のポイントがあるので構成されます。 同じファミリのコンピューターは、多くの場合、ブランドや外観の面で類似した特徴があります。|
@@ -94,7 +94,7 @@ ComputerHardwareIds ツールを実行すると、SMBIOS 情報から固有の�
 
 ### <a name="using-computer-hardwareids-with-pc-device-metadata-packages"></a>PC デバイス メタデータ パッケージを使用したコンピューター HardwareIDs を使用します。
 
-Windows 7 のシステムでは、強くお勧めを選択するときに、ベンダーが、次を行うことを[ハードウェア ID](hardware-ids.md)として使用する値、 [ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)の XML 要素の値、コンピューター。
+Windows 7 のシステムでは、強くお勧めを選択するときに、ベンダーが、次を行うことを[ハードウェア ID](hardware-ids.md)として使用する値、 [ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))の XML 要素の値、コンピューター。
 
 -   使用**HardwareID 3**または**HardwareID 4**デバイス メタデータ パッケージを特定のメーカー、ファミリ、およびモデルを持つコンピューターに一致する場合は、最初の選択肢として。 これにより、コンピューターの最も正確なメタデータを提供する、指定したコンピューターと一致するメタデータ パッケージです。
 
@@ -116,13 +116,13 @@ Windows 7 のシステムでは、強くお勧めを選択するときに、ベ�
 
 -   プレフィックスの追加 'ComputerMetadata\\' ハードウェア ID の文字列の前にします。
 
-例を次に、 [ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)コンピューターの XML 要素。
+例を次に、 [ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))コンピューターの XML 要素。
 
 ```cpp
 DOID:ComputerMetadata\{c20d5449-511e-4cb5-902a-a541239322aa}
 ```
 
-形式の要件の詳細については、 **HardwareID** 、XML 要素を参照してください[ **HardwareID**](https://msdn.microsoft.com/library/windows/hardware/ff546114)します。
+形式の要件の詳細については、 **HardwareID** 、XML 要素を参照してください[ **HardwareID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))します。
 
 ## <a name="related-topics"></a>関連トピック
 

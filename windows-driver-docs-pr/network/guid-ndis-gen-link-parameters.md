@@ -6,12 +6,12 @@ keywords:
 - GUID_NDIS_GEN_LINK_PARAMETERS、WDK GUID_NDIS_GEN_LINK_PARAMETERS ネットワーク ドライバー
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfeb8d1b7df18c08653adfd092260e9a8a286bad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b1b23c86fd8f61c775632e8301d885d7fbf569c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361075"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382719"
 ---
 # <a name="guidndisgenlinkparameters"></a>GUID_NDIS_GEN_LINK_PARAMETERS
 
@@ -19,5 +19,5 @@ WMI クライアントでは、ミニポート アダプターのリンクのパ
 
 NDIS に変換するには、この GUID、 [OID_GEN_LINK_PARAMETERS](oid-gen-link-parameters.md)ミニポート アダプターの現在のリンクのパラメーターを設定する OID。 この OID は、NDIS 6.0 とそれ以降のバージョンをサポートするミニポート ドライバーに対して必須です。
 
-WMI の入力バッファーには、NDIS を設定する必要がありますデータを指定します。 入力バッファーが含まれています、 [NDIS_WMI_SET_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567904)が続く構造体、 [NDIS_LINK_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff569592)構造体。
+WMI の入力バッファーには、NDIS を設定する必要がありますデータを指定します。 入力バッファーが含まれています、 [NDIS_WMI_SET_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_set_header)が続く構造体、 [NDIS_LINK_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-parameters)構造体。
 

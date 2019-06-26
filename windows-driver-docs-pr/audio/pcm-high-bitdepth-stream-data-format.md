@@ -7,12 +7,12 @@ keywords:
 - WDK の高深さストリームのデータ形式します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4bcaf4ab83d2e0d5c945240d5de894713fbc7c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 884c507ae1db69aec27aaba30e5535bb4b5b60e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332241"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364324"
 ---
 # <a name="pcm-high-bitdepth-stream-data-format"></a>PCM 高ビットデプス ストリームのデータの形式
 
@@ -20,7 +20,7 @@ ms.locfileid: "63332241"
 ## <span id="pcm_high_bitdepth_stream_data_format"></span><span id="PCM_HIGH_BITDEPTH_STREAM_DATA_FORMAT"></span>
 
 
-この例の拡張バージョンを使用して、 [ **KSDATAFORMAT\_WAVEFORMATEX** ](https://msdn.microsoft.com/library/windows/hardware/ff537095) PCM 高深さストリームのデータ形式を記述する構造体。 これは、値を除く、PCM のマルチ チャンネル例のような`Format.wBitsPerSample`と`Format.wValidBitsPerSample`を下に表示されます。
+この例の拡張バージョンを使用して、 [ **KSDATAFORMAT\_WAVEFORMATEX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdataformat_waveformatex) PCM 高深さストリームのデータ形式を記述する構造体。 これは、値を除く、PCM のマルチ チャンネル例のような`Format.wBitsPerSample`と`Format.wValidBitsPerSample`を下に表示されます。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT) + sizeof(WAVEFORMATEXTENSIBLE);

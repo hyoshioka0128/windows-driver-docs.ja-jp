@@ -12,12 +12,12 @@ keywords:
 - 高速の I/O の WDK ファイル システム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d1c608fb47e03e842b8c3ac52af7a2b10f0815
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 931afa660e500a7bbabbac3db35684e75792b3ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391499"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369290"
 ---
 # <a name="buffer-handling"></a>バッファー処理
 
@@ -41,13 +41,13 @@ ms.locfileid: "63391499"
 
 -   アドレスで、高ビットが設定されていることを確認しています。 これでは機能しません、システムは、4 ギガバイト チューニング (4 gt) を使用している x86 ベースのコンピューター上で、Boot.ini ファイルで/3 GB オプションを設定します。 その場合は、ユーザー モードのアドレスは、アドレス空間の 3 つ目のギガバイト (GB) の上位ビットを設定します。
 
--   使用して[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)と[ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)アドレスを検証します。 ユーザー モードの有効なアドレスのアドレスは、プローブ時に、これにより、中に何もないプローブ操作後に有効のままにする必要があります。 したがって、この手法では、定期的な再現がクラッシュする可能性のある微妙な競合状態が導入されています。 **ProbeForRead**と**ProbeForWrite**呼び出しは、別の理由のために必要な: はユーザー モード アドレスかどうかと、バッファーの長さは、ユーザーのアドレス範囲内で、検証します。 によってキャッチしませんが、有効なカーネル モードのアドレスのユーザーを渡すことができます、プローブを省略した場合、 \_\_お試しくださいと\_\_ブロック (構造化例外処理) を除くし、大きなセキュリティ ホールが開きます。 したがって**ProbeForRead**と**ProbeForWrite**呼び出しは配置と、ユーザー モード アドレスに加えて、長さが、ユーザーのアドレスの範囲内にあることを確認するために必要です。 ただし、 \_\_お試しくださいと\_\_ブロックがアクセスを防ぐために必要な点が異なります。
+-   使用して[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)と[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)アドレスを検証します。 ユーザー モードの有効なアドレスのアドレスは、プローブ時に、これにより、中に何もないプローブ操作後に有効のままにする必要があります。 したがって、この手法では、定期的な再現がクラッシュする可能性のある微妙な競合状態が導入されています。 **ProbeForRead**と**ProbeForWrite**呼び出しは、別の理由のために必要な: はユーザー モード アドレスかどうかと、バッファーの長さは、ユーザーのアドレス範囲内で、検証します。 によってキャッチしませんが、有効なカーネル モードのアドレスのユーザーを渡すことができます、プローブを省略した場合、 \_\_お試しくださいと\_\_ブロック (構造化例外処理) を除くし、大きなセキュリティ ホールが開きます。 したがって**ProbeForRead**と**ProbeForWrite**呼び出しは配置と、ユーザー モード アドレスに加えて、長さが、ユーザーのアドレスの範囲内にあることを確認するために必要です。 ただし、 \_\_お試しくださいと\_\_ブロックがアクセスを防ぐために必要な点が異なります。
 
-    なお[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)のみを検証する (わずか 2 GB 未満の例では、4 gt ことがなくシステム)、可能なユーザー モード アドレスの範囲内のアドレスと長さの fall いないかどうか、メモリアドレスは有効です。 これに対し、 [ **ProbeForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff559879)これらが有効なメモリ アドレスであることを確認する指定された長さの各ページの最初のバイトへのアクセスを試みます。
+    なお[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)のみを検証する (わずか 2 GB 未満の例では、4 gt ことがなくシステム)、可能なユーザー モード アドレスの範囲内のアドレスと長さの fall いないかどうか、メモリアドレスは有効です。 これに対し、 [ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)これらが有効なメモリ アドレスであることを確認する指定された長さの各ページの最初のバイトへのアクセスを試みます。
 
--   メモリ マネージャーの機能に依存 ([**MmIsAddressValid**](https://msdn.microsoft.com/library/windows/hardware/ff554572)など)、アドレスが有効であることを確認します。 プローブの関数と同様、再現がクラッシュする可能性のある競合状態が導入されます。
+-   メモリ マネージャーの機能に依存 ([**MmIsAddressValid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmisaddressvalid)など)、アドレスが有効であることを確認します。 プローブの関数と同様、再現がクラッシュする可能性のある競合状態が導入されます。
 
--   構造化例外処理の使用の失敗。 \_\_お試しくださいと\_\_コンパイラ内の関数では、オペレーティング システム レベルのサポートを使用して、例外処理の点が異なります。 カーネル レベルでの例外は呼び出すことによってバックアップ スロー [ **ExRaiseStatus**](https://msdn.microsoft.com/library/windows/hardware/ff545529)、または、関連する関数の 1 つ。 バグ チェックにより、構造化例外処理、例外を発生させる可能性がありますすべての呼び出しの周りの使用に失敗するドライバー (通常 KMODE\_例外\_いない\_処理済み)。
+-   構造化例外処理の使用の失敗。 \_\_お試しくださいと\_\_コンパイラ内の関数では、オペレーティング システム レベルのサポートを使用して、例外処理の点が異なります。 カーネル レベルでの例外は呼び出すことによってバックアップ スロー [ **ExRaiseStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exraisestatus)、または、関連する関数の 1 つ。 バグ チェックにより、構造化例外処理、例外を発生させる可能性がありますすべての呼び出しの周りの使用に失敗するドライバー (通常 KMODE\_例外\_いない\_処理済み)。
 
     構造化例外処理が、エラーが発生する予期しないコードの周りを使用するの間違いであるに注意してください。 これは、だけマスク実際バグを見つけるとします。 配置すること、 \_\_お試しくださいと\_\_を除き、ラッパー ルーチンのディスパッチの最上位レベルではありません、この問題に適切なソリューションが、ドライバー作成者が試みたリフレックス ソリューションがあります。
 
@@ -57,9 +57,9 @@ ms.locfileid: "63391499"
 
 WDK には FASTFAT と cdfs を含むファイル システムのサンプル コード、バッファーの検証の多くの例が含まれていますを含みます。
 
--   **FatLockUserBuffer** fastfat 関数\\deviosup.c 使用[ **MmProbeAndLockPages** ](https://msdn.microsoft.com/library/windows/hardware/ff554664)ユーザー バッファーの背後にある物理ページをロックダウンして[ **MmGetSystemAddressForMdlSafe** ](https://msdn.microsoft.com/library/windows/hardware/ff554559)で**FatMapUserBuffer**がロックされているページに仮想のマッピングを作成します。
+-   **FatLockUserBuffer** fastfat 関数\\deviosup.c 使用[ **MmProbeAndLockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)ユーザー バッファーの背後にある物理ページをロックダウンして[ **MmGetSystemAddressForMdlSafe** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で**FatMapUserBuffer**がロックされているページに仮想のマッピングを作成します。
 
--   **FatGetVolumeBitmap** fastfat 関数\\fsctl.c 使用[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)と[ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)デフラグ API でユーザーのバッファーを検証します。
+-   **FatGetVolumeBitmap** fastfat 関数\\fsctl.c 使用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)と[ **ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)デフラグ API でユーザーのバッファーを検証します。
 
 -   **CdCommonRead** cdf 関数\\read.c 使用\_\_お試しくださいと\_\_ゼロ ユーザー バッファーへのコードの周りを除きます。 サンプルのコードで注意**CdCommonRead** try を使用して、キーワードを除くが表示されます。 コンパイラの拡張機能の観点から、WDK 環境で C でのこれらのキーワードが定義されている\_\_お試しくださいと\_\_を除く。 ネイティブ コンパイラ型を使用して、例外を適切に処理する必要があります C++ コードを使用してすべてのユーザーとして\_ \_try は C++ のキーワードが C キーワードではなく、およびカーネル ドライバーに対して有効でない C++ 例外処理の形式を提供します。
 

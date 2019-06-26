@@ -11,12 +11,12 @@ keywords:
 - FILE_DEVICE_SECURE_OPEN フラグを伝達します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea027f7b7eef6b90c9e7bb1ed8e16e9704197e73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e409628492ccb90cbefe6e049e531c06b6459eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352750"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385157"
 ---
 # <a name="propagating-the-filedevicesecureopen-flag"></a>ファイルを伝達する\_デバイス\_SECURE\_オープン フラグ
 
@@ -24,7 +24,7 @@ ms.locfileid: "63352750"
 ## <span id="ddk_clearing_the_do_device_initializing_flag_if"></span><span id="DDK_CLEARING_THE_DO_DEVICE_INITIALIZING_FLAG_IF"></span>
 
 
-アタッチした後、フィルター デバイス オブジェクトをファイル システム (はないボリューム)、常に必ずファイルを設定する\_デバイス\_SECURE\_フィルター デバイス オブジェクトが次の下位の値に一致するように必要なオープン フラグデバイス ドライバー スタック オブジェクト。 (このフラグの詳細については、次を参照してください[デバイスの特性を指定する](https://msdn.microsoft.com/library/windows/hardware/ff563818)カーネル アーキテクチャの設計ガイドと[**デバイス\_オブジェクト**](https://msdn.microsoft.com/library/windows/hardware/ff543147)で、。カーネルの参照。)この例は次に示します。
+アタッチした後、フィルター デバイス オブジェクトをファイル システム (はないボリューム)、常に必ずファイルを設定する\_デバイス\_SECURE\_フィルター デバイス オブジェクトが次の下位の値に一致するように必要なオープン フラグデバイス ドライバー スタック オブジェクト。 (このフラグの詳細については、次を参照してください[デバイスの特性を指定する](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)カーネル アーキテクチャの設計ガイドと[**デバイス\_オブジェクト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)で、。カーネルの参照。)この例は次に示します。
 
 ```cpp
 if (FlagOn( DeviceObject->Characteristics, FILE_DEVICE_SECURE_OPEN )) {

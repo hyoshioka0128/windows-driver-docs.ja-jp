@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 05310b438903a114631b764b8d7e068e78c4f5a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d5612184954853960232cf44b548823bac3aa07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336596"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362509"
 ---
 # <a name="fxdevice"></a>!fxdevice
 
 
 ! Fxdevice 拡張機能には、デバイスが登録されているすべての電源管理フレームワーク (PoFx) に関する概要情報が表示されます。 このコマンドは、カーネル モードのデバッグ中にのみ使用できます。
 
-PoFX の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://msdn.microsoft.com/library/windows/hardware/hh406637)します。
+PoFX の詳細については、次を参照してください。 [、電源管理フレームワークの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)します。
 
 構文
 
@@ -35,7 +35,7 @@ PoFX の詳細については、次を参照してください。 [、電源管�
 ## <a name="span-idddkthreaddbgspanspan-idddkthreaddbgspanparameters"></a><span id="ddk__thread_dbg"></span><span id="DDK__THREAD_DBG"></span>パラメーター
 
 
-<span id="___________FxDevice__Address_______"></span><span id="___________fxdevice__address_______"></span><span id="___________FXDEVICE__ADDRESS_______"></span> **&lt; FxDevice アドレス&gt;**   
+<span id="___________FxDevice__Address_______"></span><span id="___________fxdevice__address_______"></span><span id="___________FXDEVICE__ADDRESS_______"></span> **&lt; FxDevice アドレス&gt;**    
 表示する FxDevice のアドレスを提供します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL

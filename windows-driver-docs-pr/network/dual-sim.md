@@ -4,12 +4,12 @@ description: デュアル SIM
 ms.assetid: 18521fec-c9fb-48d0-9de2-d0482e4807d6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7b3aa144a62d7465ecffcaa45f61d209f5d703
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f1272b81165ec10ff9df078c16903c6775e90aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372714"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386553"
 ---
 # <a name="dual-sim"></a>デュアル SIM
 
@@ -35,7 +35,7 @@ Windows Phone 8.1 GDR1 には、C + G. サポートが追加されます。
 
 C + G を入力するオプションがあるデバイスの場合は、CDMA UICC が常に含まれるスロットは、executor 0 を使用します。 2 つの GSM UICCs がある場合は、データ行の選択 UICC は executor 0 に関連付けられます。
 
-C + G を構成する方法の詳細については、次を参照してください。[デュアル SIM 設定の構成 C + G](https://msdn.microsoft.com/library/windows/hardware/dn757414)します。
+C + G を構成する方法の詳細については、次を参照してください。[デュアル SIM 設定の構成 C + G](https://docs.microsoft.com/windows-hardware/customize/mobile/mcsf/configure-c-g-dual-sim-settings)します。
 
 ## <a name="uicc-swapping"></a>UICC スワップ
 

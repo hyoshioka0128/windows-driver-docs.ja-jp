@@ -4,12 +4,12 @@ description: Geolocation.cpp には、設定可能なプロパティのキーと
 ms.assetid: 3803BD3B-9853-4AA4-A278-22F8D835B1ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d43e676a93ec298a0daf71b18820a6f70b72c18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1605141c4d162485720251574368c276ef184fd8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371038"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363658"
 ---
 # <a name="initializing-the-geolocation-object"></a>位置情報オブジェクトの初期化
 
@@ -29,7 +29,7 @@ const PROPERTYKEY g_SettableGeolocationProperties[] =
 };
 ```
 
-感度の変更とレポート期間の詳細についてを参照してください、[データのフィルター処理](https://msdn.microsoft.com/library/windows/hardware/hh706201)トピック。
+感度の変更とレポート期間の詳細についてを参照してください、[データのフィルター処理](https://docs.microsoft.com/windows-hardware/drivers/sensors/filtering-data)トピック。
 
 データ フィールドのキーは、 **PROPERTYKEY**ドライバーがサポートされている各一意のデータ フィールドを識別するために使用します。 擬似の地理的位置情報センサーの場合は、読み取り、現在の緯度 (度単位) で、(度単位) での現在の経度のタイムスタンプなどのデータを含む 8 つのサポートされているデータ フィールド。 これらのキーは、ファイル geolocation.cpp でも定義されます。
 
@@ -53,7 +53,7 @@ const PROPERTYKEY g_SupportedGeolocationDataFields[] =
 
 ## <a name="related-topics"></a>関連トピック
 [地理的位置情報オブジェクトを定義します。](defining-the-geolocation-object.md)  
-[データのフィルター処理](https://msdn.microsoft.com/library/windows/hardware/hh706201)  
+[データのフィルター処理](https://docs.microsoft.com/windows-hardware/drivers/sensors/filtering-data)  
 
 
 

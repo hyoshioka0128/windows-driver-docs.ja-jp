@@ -10,12 +10,12 @@ keywords:
 - MofImagePath
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8f020e3d1cadaa02f5a7e4a2c3213482b0ac90
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bb76d227a5bb056d0afab1d092ad614b7cea909
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385496"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385853"
 ---
 # <a name="setting-the-mofimagepath-registry-value"></a>MofImagePath レジストリ値の設定
 
@@ -51,7 +51,7 @@ AddReg=Driver_AddReg
 HKR,,MofImagePath,,DriverMof.dll 
 ```
 
-参照してください[ **INF DDInstall.Services セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547349)と[ **INF AddReg ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff546320)詳細についてはします。
+参照してください[ **INF DDInstall.Services セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)と[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)詳細についてはします。
 
  
 

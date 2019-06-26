@@ -15,12 +15,12 @@ keywords:
 - PCI バス デバイス スタック WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1d435c36f56ef93ccb9bbb09b705d26c601e314
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65a6322774673e9dea5a34c892054b96a25d0ab2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360050"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386629"
 ---
 # <a name="example-wdm-device-stack"></a>WDM デバイス スタックの例
 
@@ -40,13 +40,13 @@ ms.locfileid: "63360050"
 
     ルートのバス ドライバーでは、内部システム バス (ルート バス) を列挙し、見つかった各デバイスの PDO を作成します。 これらの Pdo の 1 つは、PCI バスです。 (PDO とルート bus FDO は表示されません図。)
 
-    PnP マネージャーは、PCI バスの機能のドライバーには (これはまだ読み込まれていない) 場合、ドライバーが読み込まれる PCI ドライバを識別し、PCI ドライバーの PDO を渡します。 その[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン、PCI バス FDO は PCI ドライバに作成します ([**IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)) し、デバイスに、FDO をアタッチします。スタック ([**IoAttachDeviceToDeviceStack**](https://msdn.microsoft.com/library/windows/hardware/ff548300)) PCI バス。 PCI ドライバは、作成し、PCI バスの機能のドライバーとしての役割の一部としてこの FDO をアタッチします。
+    PnP マネージャーは、PCI バスの機能のドライバーには (これはまだ読み込まれていない) 場合、ドライバーが読み込まれる PCI ドライバを識別し、PCI ドライバーの PDO を渡します。 その[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン、PCI バス FDO は PCI ドライバに作成します ([**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)) し、デバイスに、FDO をアタッチします。スタック ([**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)) PCI バス。 PCI ドライバは、作成し、PCI バスの機能のドライバーとしての役割の一部としてこの FDO をアタッチします。
 
     この例では、PCI バスのフィルター ドライバーはありません。
 
 2.  PDO の USB ホスト コント ローラー FDO.
 
-    PnP マネージャーがそのデバイスを開始する PCI ドライバを指示 ([**IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)) とその子の PCI ドライバをクエリ ([ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://msdn.microsoft.com/library/windows/hardware/ff551670)の関係の種類と**BusRelations**)。 応答では、PCI ドライバは、そのバス上のデバイスを列挙します。 この例では、PCI ドライバは、USB ホスト コント ローラーを検索し、そのデバイス用の PDO を作成します。 幅の広い矢印の図には、USB ホスト コント ローラーが PCI バスの「子」であることを示します。 PCI ドライバは、PCI バスのバス ドライバー コンポーネントの役割の一部としてデバイス、その子の Pdo を作成します。
+    PnP マネージャーがそのデバイスを開始する PCI ドライバを指示 ([**IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)) とその子の PCI ドライバをクエリ ([ **IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)の関係の種類と**BusRelations**)。 応答では、PCI ドライバは、そのバス上のデバイスを列挙します。 この例では、PCI ドライバは、USB ホスト コント ローラーを検索し、そのデバイス用の PDO を作成します。 幅の広い矢印の図には、USB ホスト コント ローラーが PCI バスの「子」であることを示します。 PCI ドライバは、PCI バスのバス ドライバー コンポーネントの役割の一部としてデバイス、その子の Pdo を作成します。
 
     PnP マネージャーでは、関数のドライバーを USB ホスト コント ローラーとして、USB ホスト コント ローラー miniclass/クラス ドライバーのペアを識別し、ドライバーのペアを読み込みます。 PnP マネージャーでは、作成して FDO の USB ホスト コント ローラーを接続する適切なタイミングでドライバーのペアを呼び出します。
 

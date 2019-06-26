@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_IHV_REQUEST ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: f43c8346914f3d22437ef37412f32ce862ac9eec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c1a559c619cfe80261ae9677829bbb8f6ab089b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387264"
 ---
 # <a name="oidwdiihvrequest"></a>OID\_WDI\_IHV\_要求
 
@@ -31,7 +31,7 @@ OID\_WDI\_IHV\_IHV の機能拡張モジュールが、ミニポートに送信�
 
 | TLV                                                  | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                        |
 |------------------------------------------------------|--------------------------------|----------|----------------------------------------------------|
-| [**WDI\_TLV\_IHV\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn926312) |                                | x        | IHV 機能拡張のモジュールからの情報。 |
+| [**WDI\_TLV\_IHV\_データ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-data) |                                | x        | IHV 機能拡張のモジュールからの情報。 |
 
  
 
@@ -40,11 +40,11 @@ OID\_WDI\_IHV\_IHV の機能拡張モジュールが、ミニポートに送信�
 
 | TLV                                                  | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                                 |
 |------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_データ**](https://msdn.microsoft.com/library/windows/hardware/dn926312) |                                | x        | IHV 機能拡張のモジュールに送信される応答です。 データ値として転送-IHV 機能拡張のモジュールには。 |
+| [**WDI\_TLV\_IHV\_データ**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-data) |                                | x        | IHV 機能拡張のモジュールに送信される応答です。 データ値として転送-IHV 機能拡張のモジュールには。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

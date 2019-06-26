@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0f271bee889a5d502c1dfd231848248b8d045dba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb6e6fa06c220b001f993fa8b4416e2afa27d77e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384313"
 ---
 # <a name="smgetlunstatistics-function"></a>SM\_GetLUNStatistics 関数
 
@@ -47,7 +47,7 @@ void SM_GetLUNStatistics(
 操作の状態。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーでは、この情報を返します、SM の HBAStatus メンバー\_GetLUNStatistics\_構造体。
 
 *ProtocolStatistics*   
-型の構造体[ **MS\_SMHBA\_PROTOCOLSTATISTICS** ](https://msdn.microsoft.com/library/windows/hardware/ff563172)ポートでプロトコルのトラフィックの統計情報をレポートに使用されます。
+型の構造体[ **MS\_SMHBA\_PROTOCOLSTATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_protocolstatistics)ポートでプロトコルのトラフィックの統計情報をレポートに使用されます。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -84,9 +84,9 @@ WMI メソッドには適用されません。
 
 [HBA\_状態](hba-status.md)
 
-[**SM\_GetLUNStatistics\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff566238)
+[**SM\_GetLUNStatistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getlunstatistics_in)
 
-[**SM\_GetLUNStatistics\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff566241)
+[**SM\_GetLUNStatistics\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_getlunstatistics_out)
 
  
 

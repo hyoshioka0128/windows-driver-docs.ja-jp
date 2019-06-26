@@ -4,12 +4,12 @@ description: センサー ドライバーの記述に関する考慮事項
 ms.assetid: fec3cfe8-43ad-481a-833a-6f38d04bfdef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a7773e4c548578637842ed47aa8bb72bb078d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30e4955a24aeecf96b96d8993fbbf2326f73d71f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357770"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364904"
 ---
 # <a name="considerations-for-writing-a-sensor-driver"></a>センサー ドライバーの記述に関する考慮事項
 
@@ -23,7 +23,7 @@ ms.locfileid: "63357770"
 -   カテゴリ、センサーの種類、およびドライバーのデータ型を決定します。 プラットフォーム定義されている並べ替え方法のいずれかを使用して、または独自に定義することができます。 プラットフォームがセンサーの情報を整理する方法の概要については、次を参照してください[センサー定数について。](about-sensor-constants.md)
 
 ## <a name="related-topics"></a>関連トピック
-[センサー地理位置情報ドライバー サンプル](https://msdn.microsoft.com/library/windows/hardware/hh768273)  
+[センサー地理位置情報ドライバー サンプル](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)  
 
 
 

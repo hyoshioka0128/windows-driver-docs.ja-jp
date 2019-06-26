@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cbf46f5fe0848e4ed24efb4cfb06b1e9ca566b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a0459fcb26a1fcc48325c9a0747707891b03b506
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560661"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368106"
 ---
 # <a name="kspropertydvdcopysetcopystate"></a>KSPROPERTY\_DVDCOPY\_設定\_コピー\_状態
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DVDCOPY\_設定\_コピー\_STATE プロパティは、DVD デコー
 <td><p>〇</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567639" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_SET_COPY_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567639)"><strong>KS_DVDCOPY_SET_COPY_STATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_SET_COPY_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)"><strong>KS_DVDCOPY_SET_COPY_STATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_設定\_コピー\_STATE プロパティは、DVD デコー
 <a name="remarks"></a>注釈
 -------
 
-このプロパティは、このピンに CSS 認証が必要かどうかを示します。 既定値があると見なされます、プロパティが実装されていない場合、 **KS\_DVDCOPYSTATE\_認証\_REQUIRED**値から、 [ **KS\_DVDCOPYSTATE** ](https://msdn.microsoft.com/library/windows/hardware/ff567634)列挙体。
+このプロパティは、このピンに CSS 認証が必要かどうかを示します。 既定値があると見なされます、プロパティが実装されていない場合、 **KS\_DVDCOPYSTATE\_認証\_REQUIRED**値から、 [ **KS\_DVDCOPYSTATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ks_dvdcopystate)列挙体。
 
 このプロパティの主な用途は、複数の pin と同じ復号化をサポートするデコーダーのです。 たとえば、1 つのフィルターは、サブピクチャとビデオ デコーディングの両方を提供する場合、キーだけを 2 つの pin のいずれかの交換です。 フィルターを返す場合は、 **KS\_DVDCOPYSTATE\_認証\_いない\_REQUIRED**ピンのいずれかで、常に返す必要があります**KS\_DVDCOPYSTATE\_認証\_REQUIRED**プロパティに発行する最初の pin にします。
 
@@ -83,7 +83,7 @@ KSPROPERTY\_DVDCOPY\_設定\_コピー\_STATE プロパティは、DVD デコー
 <span id="KS_DVDCOPYSTATE_DONE"></span><span id="ks_dvdcopystate_done"></span>**KS\_DVDCOPYSTATE\_DONE**  
 キーのネゴシエーションのシーケンスの完了を示します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -102,15 +102,15 @@ KSPROPERTY\_DVDCOPY\_設定\_コピー\_STATE プロパティは、DVD デコー
 ## <a name="see-also"></a>関連項目
 
 
-[**KS\_DVDCOPY\_SET\_COPY\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567639)
+[**KS\_DVDCOPY\_SET\_COPY\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)
 
-[**KS\_DVDCOPYSTATE**](https://msdn.microsoft.com/library/windows/hardware/ff567634)
+[**KS\_DVDCOPYSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ks_dvdcopystate)
 
-[DVD の著作権保護](https://msdn.microsoft.com/library/windows/hardware/ff558736)
+[DVD の著作権保護](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-copyright-protection)
 
-[同じハードウェア上の複数のデータ ストリーム](https://msdn.microsoft.com/library/windows/hardware/ff567744)
+[同じハードウェア上の複数のデータ ストリーム](https://docs.microsoft.com/windows-hardware/drivers/stream/multiple-data-streams-on-the-same-hardware)
 
-[データ フローとキー交換の同期](https://msdn.microsoft.com/library/windows/hardware/ff568511)
+[データ フローとキー交換の同期](https://docs.microsoft.com/windows-hardware/drivers/stream/synchronizing-key-exchange-with-data-flow)
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba35c541a9fe91a3dbad463b6256f266787e8d80
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c7f56e3a0cce42c01aa5f0082df06da52d851f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358095"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367755"
 ---
 # <a name="bug-check-0x160-win32katomiccheckfailure"></a>バグ チェック 0x160:WIN32K\_アトミック\_確認\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358095"
 WIN32K\_アトミック\_確認\_エラーのバグ チェックが 0x00000160 の値を持ちます。 これは、Win32k 関数が、ATOMICCHECK に違反していることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="win32katomiccheckfailure-parameters"></a>WIN32K\_アトミック\_確認\_エラー パラメーター

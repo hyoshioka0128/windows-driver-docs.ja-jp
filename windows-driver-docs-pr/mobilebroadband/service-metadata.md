@@ -4,12 +4,12 @@ description: サービス メタデータ
 ms.assetid: daf5db05-cf39-4ff2-a2f1-0ffd718c638e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38b779bff8cc0e66a374077dae21e552ebabf45a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 830702aef8be738d8adc1a050a26dbbaefd1f27b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56571814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369213"
 ---
 # <a name="service-metadata"></a>サービス メタデータ
 
@@ -39,7 +39,7 @@ Windows 8、Windows 8.1、および Windows 10 のユーザー エクスペリ�
 
 サービス メタデータ パッケージは、.devicemetadata ms ファイル内で格納されている複数の XML ドキュメントで構成されます。 各ドキュメントには、サービスの属性のさまざまなコンポーネントを指定します。 これらの XML ドキュメントでは、ユーザーとネットワークの構成情報を表示のカスタマイズ内容を持つ Windows 接続マネージャーを提供します。
 
-サービス メタデータ パッケージの XML ドキュメントのリファレンスについては、[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)を参照してください。
+サービス メタデータ パッケージの XML ドキュメントのリファレンスについては、次を参照してください。[サービス メタデータ パッケージ スキーマ リファレンス](service-metadata-package-schema-reference.md)します。
 
 ## <a name="span-idservmdconspanspan-idservmdconspanservice-metadata-contents"></a><span id="servmdcon"></span><span id="SERVMDCON"></span>サービス メタデータの内容
 
@@ -53,9 +53,9 @@ Windows 8、Windows 8.1、および Windows 10 のユーザー エクスペリ�
   モバイル ブロード バンド サービス プロバイダーの一意の ID。 この GUID は、アカウントのプロビジョニングのメタデータを使用する場合、演算子を識別するためにも使用されます。 デバイス メタデータ パッケージを更新する場合、この GUID は、同じままする必要があります。 サービスの数を対応する、 [ServiceNumber](servicenumber.md)サービス メタデータ パッケージのスキーマ内の要素。
 
 - **演算子のロゴ**   
-  カスタム ロゴをネットワーク エントリの横にあるは、Windows 接続マネージャーが表示されます。 (ロゴはローミング ネットワーク上のユーザーが表示されません)。演算子のロゴに対応する、 [ServiceIconFile](serviceiconfile.md)サービス メタデータ パッケージのスキーマ内の要素。 ロゴの要件の詳細については、[サービス アイコン要件](https://msdn.microsoft.com/library/windows/hardware/dn236416)を参照してください。  
+  カスタム ロゴをネットワーク エントリの横にあるは、Windows 接続マネージャーが表示されます。 (ロゴはローミング ネットワーク上のユーザーが表示されません)。演算子のロゴに対応する、 [ServiceIconFile](serviceiconfile.md)サービス メタデータ パッケージのスキーマ内の要素。 ロゴの要件の詳細については、次を参照してください。[サービス アイコン要件](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)します。  
   > [!IMPORTANT]
-  > Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10 バージョン 1709 では、前に Windows のバージョンを対象としている場合、このセクションで説明したようにメタデータ パッケージを作成も。 COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 
+  > Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10 バージョン 1709 では、前に Windows のバージョンを対象としている場合、このセクションで説明したようにメタデータ パッケージを作成も。 COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 
 
 - **モバイル ブロード バンド アプリ**  
   自動的にダウンロードされ、コンピューターに適用する UWP デバイス アプリ。 このアプリは、プランを購入、データの使用状況、およびヘルプとサポートなどのキーのエクスペリエンスを提供し、付加価値サービスを強調表示できます。
@@ -76,10 +76,10 @@ Windows 8、Windows 8.1、および Windows 10 のユーザー エクスペリ�
 - **カスタム演算子名**  
   通常、モバイル ブロード バンド デバイスは、Windows では、Windows 接続マネージャーを表示するオペレーター名を提供します。 この名前は、メタデータにカスタム名を指定することによってオーバーライドできます。 この名前は、ユーザーがホーム ネットワーク上にあり、ローミングのネットワーク上にない場合にのみ表示されます。 表示されているローミング ネットワーク名は、デバイスから受信する情報に基づきます。 これに対応して、 [ServiceProvider](serviceprovider.md)サービス パッケージのメタデータ スキーマ内の要素。  
   > [!IMPORTANT]
-  > Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10、バージョン 1709 より前に、の Windows のバージョンを対象としている場合でも、このセクションで説明したメタデータ パッケージを作成します。 COSA の詳細については、[COSA 概要](cosa-overview.md)を参照してください。 
+  > Windows 10 バージョン 1709 以降では、このフィールドは COSA を通じてブランドで置き換えられました。 ブランド化の COSA 内のフィールドが説明されている[計画デスクトップ COSA/APN データベース提出](planning-your-desktop-cosa-apn-database-submission.md)します。 Windows 10、バージョン 1709 より前に、の Windows のバージョンを対象としている場合でも、このセクションで説明したメタデータ パッケージを作成します。 COSA の詳細については、次を参照してください。 [COSA 概要](cosa-overview.md)します。 
 
 - **デバイスの通知ハンドラー**  
-  一般に、アプリが、ユーザーが作業項目をシステム イベント ブローカーに登録できる前に少なくとも 1 回実行してください。 ただし、モバイル ブロード バンド アプリは、ユーザーがアプリを実行する前に、重要なイベントを受信する必要があります。 指定することができます、 [DeviceNotificationHandler](devicenotificationhandler.md)いくつかの重要なイベントを登録する Windows を使用してサービス メタデータ内の要素。 SMS 通知の詳細については、[MVNOs のエクスペリエンスを提供する](delivering-experiences-for-mvnos.md)を参照してください。
+  一般に、アプリが、ユーザーが作業項目をシステム イベント ブローカーに登録できる前に少なくとも 1 回実行してください。 ただし、モバイル ブロード バンド アプリは、ユーザーがアプリを実行する前に、重要なイベントを受信する必要があります。 指定することができます、 [DeviceNotificationHandler](devicenotificationhandler.md)いくつかの重要なイベントを登録する Windows を使用してサービス メタデータ内の要素。 SMS 通知の詳細については、次を参照してください。 [MVNOs のエクスペリエンスを提供する](delivering-experiences-for-mvnos.md)します。
 
 - **モバイル ブロード バンドの制限されたインターフェイスへのアクセス権限を持つアプリの一覧**  
   モバイル ブロード バンド Api とインターフェイス (アカウントのプロビジョニングと SMS を含む) は、モバイル ブロード バンド アプリのみに制限と使用可能なです。 内のサービス メタデータ パッケージでこれらの特権を持つ Api へのアクセス権を持つ特権のあるアプリの一覧を指定できます、 [PrivilegedApplications](privilegedapplications.md)要素。 特権のあるアプリをデバッグまたはアプリをテストすることができます。Microsoft Store 経由で配布するのには必須ではありません。
@@ -87,7 +87,7 @@ Windows 8、Windows 8.1、および Windows 10 のユーザー エクスペリ�
 ## <a name="span-idservicemetadatapackagestructurespanspan-idservicemetadatapackagestructurespanspan-idservicemetadatapackagestructurespanservice-metadata-package-structure"></a><span id="Service_Metadata_Package_Structure"></span><span id="service_metadata_package_structure"></span><span id="SERVICE_METADATA_PACKAGE_STRUCTURE"></span>サービス メタデータ パッケージの構造
 
 
-サービス メタデータ パッケージのコンポーネントは、圧縮されたキャビネット ファイルに格納されのファイル拡張子が必要 **.devicemetadata ms**します。 サービス メタデータ パッケージは、デバイス メタデータ パッケージと同じ基になるプラットフォームを使用するために、このファイルの拡張機能を使用します。 作成する前に、 **.devicemetadata ms**ファイル メタデータ パッケージのグローバル一意識別子 (GUID) 最初に作成する必要があります。 次に、.devicemetadata ms ファイルを作成するときは、次の名前付け規則を使用する必要があります。**&lt;GUID&gt;.devicemetadata ms**します。
+サービス メタデータ パッケージのコンポーネントは、圧縮されたキャビネット ファイルに格納されのファイル拡張子が必要 **.devicemetadata ms**します。 サービス メタデータ パッケージは、デバイス メタデータ パッケージと同じ基になるプラットフォームを使用するために、このファイルの拡張機能を使用します。 作成する前に、 **.devicemetadata ms**ファイル メタデータ パッケージのグローバル一意識別子 (GUID) 最初に作成する必要があります。 次に、.devicemetadata ms ファイルを作成するときは、次の名前付け規則を使用する必要があります。 **&lt;GUID&gt;.devicemetadata ms**します。
 
 **注**  が、通常のファイル キャビネット ファイルの拡張子は **.cab**、サービス メタデータ パッケージ ファイルのファイル拡張子である必要があります **.devicemetadata ms**します。 これは、エンドユーザーの圧縮解除またはこれらのパッケージを変更する必要がありますいないという事実を強調するものです。
 

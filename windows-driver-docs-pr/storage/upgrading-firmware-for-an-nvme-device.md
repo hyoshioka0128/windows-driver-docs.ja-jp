@@ -4,12 +4,12 @@ description: NVMe の記憶域デバイスのファームウェアの更新は�
 ms.assetid: A912715A-F82A-41E5-BE14-5B17930C29B7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0448455477b959ab6c097c77a2adfcb8ad0fa5dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9437d51baa99095c6381f939983757fa2e06bf3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386811"
 ---
 # <a name="upgrading-firmware-for-an-nvme-device"></a>NVMe デバイス用ファームウェアのアップグレード
 
@@ -19,7 +19,7 @@ NVMe の記憶域デバイスのファームウェアの更新は、そのデバ
 ## <a name="span-idfirmwareupgradeprocessspanspan-idfirmwareupgradeprocessspanspan-idfirmwareupgradeprocessspanfirmware-upgrade-process"></a><span id="Firmware_upgrade_process"></span><span id="firmware_upgrade_process"></span><span id="FIRMWARE_UPGRADE_PROCESS"></span>ファームウェアのアップグレード プロセス
 
 
-Windows 用に認定 NVMe デバイスは、デバイスが操作中にファームウェアを更新できます。 ファームウェアの更新を使用して、 [ **IOCTL\_SCSI\_ミニポート**](https://msdn.microsoft.com/library/windows/hardware/ff560512)ファームウェアが関連付けられているコントロールのデータを含む、SRB で書式設定を要求します。 更新プロセスが含まれます。
+Windows 用に認定 NVMe デバイスは、デバイスが操作中にファームウェアを更新できます。 ファームウェアの更新を使用して、 [ **IOCTL\_SCSI\_ミニポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)ファームウェアが関連付けられているコントロールのデータを含む、SRB で書式設定を要求します。 更新プロセスが含まれます。
 
 1.  更新プログラムを配置する場所を特定するファームウェア スロットの情報を収集します。 ファームウェアの更新プログラムが配置を決定するときに、いくつかの考慮事項があります。
 
@@ -35,7 +35,7 @@ Windows 用に認定 NVMe デバイスは、デバイスが操作中にファー
 ## <a name="span-idminiportfirmwarecontrolrequestsspanspan-idminiportfirmwarecontrolrequestsspanspan-idminiportfirmwarecontrolrequestsspanminiport-firmware-control-requests"></a><span id="Miniport_firmware_control_requests"></span><span id="miniport_firmware_control_requests"></span><span id="MINIPORT_FIRMWARE_CONTROL_REQUESTS"></span>ミニポート ファームウェア コントロール要求
 
 
-各関数のコマンドで設定されて、**ファームウェア\_要求\_ブロック**構造に含まれています、 [ **SRB\_IO\_コントロール**](https://msdn.microsoft.com/library/windows/hardware/ff566339)のバッファーで、 [ **IOCTL\_SCSI\_ミニポート**](https://msdn.microsoft.com/library/windows/hardware/ff560512)要求。 **ControlCode**のメンバー **SRB\_IO\_コントロール**に設定されている**IOCTL\_SCSI\_ミニポート\_ファームウェア**をミニポートのファームウェア操作を示します。 各関数のコマンドが後にある関連情報構造、**ファームウェア\_要求\_ブロック**します。 次の表は、各関数のコマンドとシステムのバッファーに含まれる構造体**IOCTL\_SCSI\_ミニポート**します。
+各関数のコマンドで設定されて、**ファームウェア\_要求\_ブロック**構造に含まれています、 [ **SRB\_IO\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ns-ntddscsi-_srb_io_control)のバッファーで、 [ **IOCTL\_SCSI\_ミニポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)要求。 **ControlCode**のメンバー **SRB\_IO\_コントロール**に設定されている**IOCTL\_SCSI\_ミニポート\_ファームウェア**をミニポートのファームウェア操作を示します。 各関数のコマンドが後にある関連情報構造、**ファームウェア\_要求\_ブロック**します。 次の表は、各関数のコマンドとシステムのバッファーに含まれる構造体**IOCTL\_SCSI\_ミニポート**します。
 
 <table>
 <colgroup>

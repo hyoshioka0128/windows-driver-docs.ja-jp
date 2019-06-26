@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eab60f0a67d6a3088b036248ab9004abc8800bcc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0ec96070107248039f187a7e9adcbb5e8d4e511
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367315"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367290"
 ---
 # <a name="bug-check-0x85-setupfailure"></a>バグ チェック 0x85:セットアップ\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367315"
 セットアップ\_エラーのバグ チェックが 0x00000085 の値を持ちます。 このバグ チェックでは、セットアップ中に致命的なエラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="setupfailure-parameters"></a>セットアップ\_エラー パラメーター

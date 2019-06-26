@@ -7,12 +7,12 @@ keywords:
 - メモリ ウィンドウ WDK PCMCIA バス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59fb0c3ccab6445493a43bb15c9c39fac2b346ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 16b84e26a63ee1d289734355f1640dc9859406eb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378254"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382607"
 ---
 # <a name="restrictions-on-memory-windows"></a>メモリ ウィンドウに関する制限事項
 
@@ -22,7 +22,7 @@ ms.locfileid: "63378254"
 
 このセクションでは、Windows 2000 および PCMCIA メモリ カードのメモリ ウィンドウで、以降のオペレーティング システムによって課される制限について説明します。
 
-PCMCIA のメモリ カードのリソース要件は、プラグ アンド プレイのマネージャーの要求でデバイスを列挙したときに通常、バス ドライバーによって指定されます。 Windows の特定のメモリを指定することも、 [ **INF DDInstall.LogConfigOverride セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547339)デバイス ドライバーの INF ファイル。 PCMCIA のメモリ カードの 2 つのメモリ ウィンドウの最大値を要求できます。
+PCMCIA のメモリ カードのリソース要件は、プラグ アンド プレイのマネージャーの要求でデバイスを列挙したときに通常、バス ドライバーによって指定されます。 Windows の特定のメモリを指定することも、 [ **INF DDInstall.LogConfigOverride セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)デバイス ドライバーの INF ファイル。 PCMCIA のメモリ カードの 2 つのメモリ ウィンドウの最大値を要求できます。
 
  
 

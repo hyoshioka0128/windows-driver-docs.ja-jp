@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36a974094bd78009e0ca028820b2a567a8c55d0a
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.openlocfilehash: 88ee77ba5a1e4f12e51bbd28da586c35c22d406a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361678"
 ---
 # <a name="developer-content-bug-check-0x9f-driverpowerstatefailure"></a>(開発者向けコンテンツ)チェック 0x9F バグの。ドライバー\_POWER\_状態\_エラー
 
@@ -26,7 +26,7 @@ ms.locfileid: "66813568"
 ドライバー\_POWER\_状態\_エラーのバグ チェックが 0x0000009F の値を持ちます。 このバグ チェックでは、一貫性のない、または無効な電源状態で、ドライバーがあることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 ## <a name="driverpowerstatefailure-parameters"></a>ドライバー\_POWER\_状態\_エラー パラメーター
 
@@ -307,7 +307,7 @@ Nt!トリアージ\_9F\_PNP 構造体は、参考に、エラーの原因を特�
 
 - 検索対象**デバイス マネージャー**を任意のデバイスの感嘆符 (!) が付いてを参照してください。 任意のエラーが発生したドライバーのドライバーのプロパティに表示されるイベント ログを確認します。 関連するドライバーを更新してみてください。
 
-- デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+- デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
 
 - 原因を特定して、コントロール パネルの 電源オプションを使用して省電力が一時的に無効にします。 ドライバーのいくつかの問題のシステムの休止状態と、中断と再開 power のさまざまな状態に関連しています。
 

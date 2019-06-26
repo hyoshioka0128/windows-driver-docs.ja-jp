@@ -9,12 +9,12 @@ keywords:
 - Irp WDK PnP 停止します。
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adc901da47a50624808cac1faa16ef663a9e844b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8b77eb3f3efd71dad0bea08d7fa1125c4eb599b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331949"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382977"
 ---
 # <a name="stopping-a-device"></a>デバイスの停止
 
@@ -28,7 +28,7 @@ PnP マネージャーでは、次の状況でのデバイスを停止するド�
 
 -   デバイス マネージャーの要求に対する応答でデバイスを無効にする (Windows 98/自分のみ)。 Windows 2000 および Windows の送信の以降のバージョンでこのような状況は; Irp を削除します。参照してください[理解するときに削除 Irp が発行](understanding-when-remove-irps-are-issued.md)します。
 
--   失敗後[ **IRP\_MN\_開始\_デバイス**](https://msdn.microsoft.com/library/windows/hardware/ff551749)要求 (Windows 98/自分のみ)
+-   失敗後[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求 (Windows 98/自分のみ)
 
 このセクションでは、次のトピックについて説明します。
 

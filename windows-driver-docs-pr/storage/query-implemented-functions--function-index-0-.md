@@ -4,17 +4,17 @@ description: この関数は、このインターフェイスのバージョン�
 ms.assetid: AFF735D7-BB3F-4532-8BF4-F616C081921C
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2fa2cd7b3d30d556153f98e27e31e4f82d950314
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a160821f8b3b4bba5ab1c0e886f461ebe5edc724
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368960"
 ---
 # <a name="query-implemented-functions-function-index-0"></a>実装されている関数のクエリ (関数インデックス 0)
 
 
-この関数は、このインターフェイスのバージョンでサポートされている関数を返します。 関数 0 の各\_DSM がサポートされている関数のインデックスのセットを返しますは常に必要とするクエリ関数を示します。 関数 0 の定義、9.14.1、セクションを参照してください。"\_DSM (デバイスの特定のメソッド)"で、 [ACPI 6.0 仕様](https://www.uefi.org/specifications)します。
+この関数は、このインターフェイスのバージョンでサポートされている関数を返します。 関数 0 の各\_DSM がサポートされている関数のインデックスのセットを返しますは常に必要とするクエリ関数を示します。 関数 0 の定義、9.14.1、セクションを参照してください。"\_DSM (デバイスの特定のメソッド)"で、 [ACPI 6.0 仕様](https://uefi.org/specifications)します。
 
 ## <a name="arguments-arg-3"></a>引数 (ARG 3)
 

@@ -10,12 +10,12 @@ keywords:
 - エラー コードの WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 578ff7611bc25c894a8af4f592753cc6ecc0a6a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f3ccfeb986853dff58b2c9fe4b526412aef069f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365623"
 ---
 # <a name="returning-error-codes-from-copp-functions"></a>COPP 関数から返されるエラー コード
 
@@ -34,7 +34,7 @@ COPP DDI を実装する場合に、次の Windows エラー コードの使用�
 
 -   E\_予期しません。
 
-    ディスプレイ ドライバーは、無効な状態です。 たとえば、 [ *COPPSequenceStart* ](https://msdn.microsoft.com/library/windows/hardware/ff540421)する前に関数が呼び出された、 [ *COPPKeyExchange* ](https://msdn.microsoft.com/library/windows/hardware/ff539646)関数。
+    ディスプレイ ドライバーは、無効な状態です。 たとえば、 [ *COPPSequenceStart* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppsequencestart)する前に関数が呼び出された、 [ *COPPKeyExchange* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppkeyexchange)関数。
 
 -   E\_INVALIDARG
 
@@ -48,7 +48,7 @@ COPP DDI E を返すことができます\_、および失敗および DDERR\_�
 
 各 COPP 関数は「解説」の指定、DDERR\_ COPP 関数を報告するエラー コード。 返す他の任意の DDERR COPP DDI は要求されません\_エラー コード。
 
-戻り値を使用する必要がある、ディスプレイ ドライバー、ビデオのミニポート ドライバーで COPP DDI からエラー情報を反映するときに、 [ **EngDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff564838)関数は、ため、Windowsカーネルに IOCTL から返されるエラー値を操作する**EngDeviceIoControl**します。 代わりに、エラー情報を渡す必要があります、 *lpInBuffer*パラメーターの**EngDeviceIoControl**します。 詳細については、次を参照してください。 [COPP DDI をディスプレイ ドライバーから呼び出す](calling-the-copp-ddi-from-the-display-driver.md)とコード例で[COPP ビデオのミニポート ドライバー テンプレート](copp-video-miniport-driver-template.md)と[COPP 操作の実行](performing-copp-operations-example.md)します。
+戻り値を使用する必要がある、ディスプレイ ドライバー、ビデオのミニポート ドライバーで COPP DDI からエラー情報を反映するときに、 [ **EngDeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol)関数は、ため、Windowsカーネルに IOCTL から返されるエラー値を操作する**EngDeviceIoControl**します。 代わりに、エラー情報を渡す必要があります、 *lpInBuffer*パラメーターの**EngDeviceIoControl**します。 詳細については、次を参照してください。 [COPP DDI をディスプレイ ドライバーから呼び出す](calling-the-copp-ddi-from-the-display-driver.md)とコード例で[COPP ビデオのミニポート ドライバー テンプレート](copp-video-miniport-driver-template.md)と[COPP 操作の実行](performing-copp-operations-example.md)します。
 
  
 

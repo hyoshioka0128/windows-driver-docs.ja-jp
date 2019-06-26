@@ -5,12 +5,12 @@ Robots: noindex, nofollow
 ms.assetid: ef7fa08b-0eed-4ef9-8b2f-79247e2ad988
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d4944ae3ecc88756e2d99fae7b3dce6c79cd1a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bdbb2dff8df4f07ab29b95634d300b8f18b8082
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351489"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362387"
 ---
 # <a name="a"></a>A
 
@@ -28,7 +28,7 @@ ms.locfileid: "63351489"
 <span id="arbitrary_exception_filter"></span><span id="ARBITRARY_EXCEPTION_FILTER"></span>**任意の例外フィルター**  
 イベント フィルターのエンジンの一覧を手動で追加されている例外フィルターを指定します。
 
-参照してください[特定の例外フィルター](https://msdn.microsoft.com/library/windows/hardware/ff558784)します。
+参照してください[特定の例外フィルター](https://docs.microsoft.com/windows-hardware/drivers/debugger/specific-exceptions)します。
 
 詳細については、次を参照してください。[イベント フィルター](event-filters.md)します。
 

@@ -13,12 +13,12 @@ keywords:
 - ASSERTMSG マクロ
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f10e442ea7c18f65d4ddd8330555777618dcbe0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41543377ccf3255e50ec96d7025bc86cbbe57698
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327354"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362394"
 ---
 # <a name="breaking-into-the-debugger"></a>デバッガーへの割り込み
 
@@ -31,7 +31,7 @@ ms.locfileid: "63327354"
 
 Break ルーチンでは、呼び出し元のスレッドが呼び出し元のプロセスに関連付けられているデバッガーを通知するために、現在のプロセスで発生する例外が発生します。
 
-ユーザー モードのプログラムからデバッガーへの割り込みを使用して、 [DebugBreak 関数](https://msdn.microsoft.com/library/windows/desktop/ms679297(v=vs.85).aspx)します。 
+ユーザー モードのプログラムからデバッガーへの割り込みを使用して、 [DebugBreak 関数](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-debugbreak)します。 
 
 ユーザー モードのプログラムを呼び出すと**DebugBreak**、次の動作が発生します。
 

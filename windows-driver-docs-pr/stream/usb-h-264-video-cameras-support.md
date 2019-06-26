@@ -4,12 +4,12 @@ description: Windows 8 以降、H.264 ビデオ コーデック (エンコーダ
 ms.assetid: EB73E2B2-B34E-4DC1-807A-4990A54E6E8D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aa183949986475444c3cded4944b598d231c40f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8842072f52c9fe831f5b7bd8417b26530e626ff7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368819"
 ---
 # <a name="usb-h264-video-cameras-support"></a>USB H.264 ビデオ カメラのサポート
 
@@ -34,9 +34,9 @@ Usbvideo.sys UVC クラス ドライバーは、その機能を取得するに�
  
 
 ## <a name="related-topics"></a>関連トピック
-[**KS\_DATAFORMAT\_H264VIDEOINFO**](https://msdn.microsoft.com/library/windows/hardware/hh463996)  
-[**KS\_DATARANGE\_H264\_ビデオ**](https://msdn.microsoft.com/library/windows/hardware/hh464002)  
-[**KS\_H264VIDEOINFO**](https://msdn.microsoft.com/library/windows/hardware/hh464008)  
+[**KS\_DATAFORMAT\_H264VIDEOINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_dataformat_h264videoinfo)  
+[**KS\_DATARANGE\_H264\_ビデオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_h264_video)  
+[**KS\_H264VIDEOINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_h264videoinfo)  
 
 
 

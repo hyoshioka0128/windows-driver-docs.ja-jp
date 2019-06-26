@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c449e3bf5012837d678ba11df680190342d1dc76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 194de3d40add1ac5f479a4dc93d1de6b1986fa66
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367127"
 ---
 # <a name="bug-check-0xdeaddead-manuallyinitiatedcrash1"></a>バグ チェック 0xDEADDEAD:手動で\_INITIATED\_CRASH1
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323371"
 手動で\_INITIATED\_CRASH1 バグ チェックが 0 xdeaddead の値を持ちます。 これは、ユーザーが、カーネル デバッガーまたは、キーボードからクラッシュ ダンプを意図的に開始されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="manuallyinitiatedcrash1-parameters"></a>手動で\_INITIATED\_CRASH1 パラメーター

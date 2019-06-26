@@ -4,12 +4,12 @@ description: V4 印刷ドライバー モデルでは、新しい設定モデル
 ms.assetid: C1DF5496-14CF-4BF4-B85C-AF1A691C7AF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29bd4610f1957bf8fe27ceb848a07a22f4a1f2c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcdd5d0a1bcb2edc09201b9eb50c51fae340b2eb
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324843"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393149"
 ---
 # <a name="v4-driver-setup-concepts"></a>V4 ドライバー セットアップ概念
 
@@ -33,7 +33,7 @@ V4 印刷ドライバーをドライバー ストアは、ファイルの競合�
 
 CompatibleIDs は、既存のデバイスで既に実装されて、印刷ドライバーはこれら CompatibleIDs を使用して引き続き必要があります。
 
-CompatibleIDs は、印刷デバイスの IP ベースのインストールでは使用されません。 その結果、ユーザーは、ドライバーの名前のみを使用して適切なドライバーを識別する必要があります。 印刷クラス ドライバーに関しては、製造元が、印刷クラス ドライバーでサポートされているすべてのデバイスの web サイトでの互換性リストを提供するをお勧めします。 規則と制限事項の完全な一覧を含む、ハードウェアで CompatibleIDs を実装する方法の詳細についてを参照してください。[印刷デバイスに互換性のある Id を実装する方法](https://msdn.microsoft.com/library/windows/hardware/gg463313.aspx)します。
+CompatibleIDs は、印刷デバイスの IP ベースのインストールでは使用されません。 その結果、ユーザーは、ドライバーの名前のみを使用して適切なドライバーを識別する必要があります。 印刷クラス ドライバーに関しては、製造元が、印刷クラス ドライバーでサポートされているすべてのデバイスの web サイトでの互換性リストを提供するをお勧めします。 規則と制限事項の完全な一覧を含む、ハードウェアで CompatibleIDs を実装する方法の詳細についてを参照してください。[印刷デバイスに互換性のある Id を実装する方法](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613942(v=vs.85))します。
 
 Microsoft では、いくつかの製造元に依存しない (standard) の印刷クラス ドライバーをサポートするために、いくつかの標準 CompatibleIDs をサポートしています。 次の表は、これらの標準 CompatibleIDs と、関連付けられている PDL ファイルの種類を示します。
 
@@ -92,23 +92,23 @@ Microsoft では、いくつかの製造元に依存しない (standard) の印�
 
 2. V4 印刷ドライバーをドライバーには、Windows は双方向を使用してデバイスを照会します。
 
-a.  場合\\Printer.DeviceInfo:FriendlyName を指定すると、これは、新しいキュー名として使用します。
+a. 場合\\Printer.DeviceInfo:FriendlyName を指定すると、これは、新しいキュー名として使用します。
 
-b.  それ以外の場合、Windows は、照会\\Printer.DeviceInfo:Manufacturer、 \\Printer.DeviceInfo:ModelName します。
+b. それ以外の場合、Windows は、照会\\Printer.DeviceInfo:Manufacturer、 \\Printer.DeviceInfo:ModelName します。
 
-i.  両方を指定すると、Windows が連結されますに"製造元 ModelName"にします。
+i. 両方を指定すると、Windows が連結されますに"製造元 ModelName"にします。
 
-ii.  これらの双方向のいずれか、クエリの失敗だけの場合 Windows はキューの名前として、他のクエリから正常に返されたを使用します。
+ii. これらの双方向のいずれか、クエリの失敗だけの場合 Windows はキューの名前として、他のクエリから正常に返されたを使用します。
 
 3. すべての Bidi クエリが失敗した場合は、Windows が使用されます IEEE 1284ID 製造元とモデルの名前を決定します。
 
-a.  説明または DES が指定されている場合は、新しいキュー名として使用されます。
+a. 説明または DES が指定されている場合は、新しいキュー名として使用されます。
 
-b.  それ以外の場合、Windows は、製造元または製造およびモデルまたは MDL が検索されます。
+b. それ以外の場合、Windows は、製造元または製造およびモデルまたは MDL が検索されます。
 
-i.  両方を指定すると、Windows が連結されますに「製造元モデル」にします。
+i. 両方を指定すると、Windows が連結されますに「製造元モデル」にします。
 
-ii.  次のいずれかが失敗した場合は、専用の場合 Windows はキューの名前として他のキーから値を使用します。
+ii. 次のいずれかが失敗した場合は、専用の場合 Windows はキューの名前として他のキーから値を使用します。
 
 **プリンターの追加ウィザード**します。 内のドライバーを選択するユーザーが使用できる唯一の識別子である、ドライバー名は引き続き、**プリンターの追加ウィザード**します。 TCP ベースのデバイスを実装する必要があります、[ポート モニター MIB (PWG 5107.1 2005)](http://www.pwg.org/standards.html) TCP/IP の自動検出をサポートします。 ハードウェア ID (HWID) のマッピングを使用して印刷クラス ドライバーに追加されている既存のデバイスは、デバイスに固有のモデル名を使用してさらに可能性があります。
 
@@ -123,21 +123,21 @@ UI が 2 つのオブジェクトが関連する場合は、デバイスのコ�
 
 1. IT 管理者の設定 – プリンターを IT 管理者が WS 探索を使用して、ネットワーク上のプリンターを検索し、ので、TCP/IP 管理プロセスに TCP/IP ポートを変更します。
 
-a.  期待 – そこでは、デバイスとプリンター フォルダーを 1 つだけの「デバイス」。
+a. 期待 – そこでは、デバイスとプリンター フォルダーを 1 つだけの「デバイス」。
 
-b.  ソリューション: IT 管理者は、デバイスとプリンター フォルダーから WSD PnP devnode を削除します。
+b. ソリューション: IT 管理者は、デバイスとプリンター フォルダーから WSD PnP devnode を削除します。
 
 2. セットアップ ソフトウェアの IHV-カスタム ポート モニターと共にドライバーをインストールする、IHV (v4 でカスタム ポート モニターは使用できませんが、同じ devnode 処理は v3 ドライバーに適用されます)。 IHV は、デバイスの製造元を作成します。 ポートに印刷キューの USB ポートを変更します。
 
-a.  期待 – そこでは、デバイスとプリンター フォルダーを 1 つだけの「デバイス」。
+a. 期待 – そこでは、デバイスとプリンター フォルダーを 1 つだけの「デバイス」。
 
-b.  ソリューション\#1 – PnP devnode が必要です。セットアップ プログラムでは、PnP オブジェクトと一致するキュー devnode のコンテナー ID を変更します。
+b. ソリューション\#1 – PnP devnode が必要です。セットアップ プログラムでは、PnP オブジェクトと一致するキュー devnode のコンテナー ID を変更します。
 
 c. ソリューション\#2 – PnP devnode は余分な。セットアップ プログラムは、元の PnP デバイスを削除します。
 
 **ドライバーのランク付け**します。 V4 印刷ドライバーの概要では、プラグ アンド プレイが順位付けの動作は変更されません。 デバイスが接続されている、最高スコアの使用可能なドライバーが選択されます。 選択したドライバーは、印刷クラス ドライバーより適切にランクがある場合は、照合し、ドライバー、Windows Update サイトで、選択したドライバーが自動的に置き換えられます、次回ユーザーが Windows の更新プログラムをダウンロードします。
 
-ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](https://msdn.microsoft.com/library/windows/hardware/ff546225.aspx)します。
+ドライバーのランク付けの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)します。
 
 ## <a name="driver-setup-best-practices"></a>ドライバーの設定のベスト プラクティス
 
@@ -156,15 +156,15 @@ v4 印刷ドライバー
 
 1. V4 印刷ドライバーの Inf には、モデルの行の 2 つのさまざまな種類を定義する必要があります。
 
-a.  HardwareID 行:"Driver name"= インストール\_セクション、busenumerator\\HardwareID
+a. HardwareID 行:"Driver name"= インストール\_セクション、busenumerator\\HardwareID
 
-b.  PrinterDriverID 行:"Driver name"= インストール\_セクションでは、{GUID}
+b. PrinterDriverID 行:"Driver name"= インストール\_セクションでは、{GUID}
 
 2. V4 印刷ドライバーの Inf では、個々 の行に bus 固有 HardwareIDs を定義する必要があります。
 
-a.  "Driver name"= インストール\_セクションでは、WSDPRINT\\HardwareID
+a. "Driver name"= インストール\_セクションでは、WSDPRINT\\HardwareID
 
-b.  "Driver name"= インストール\_セクションでは、USBPRINT\\HardwareID
+b. "Driver name"= インストール\_セクションでは、USBPRINT\\HardwareID
 
 c. "Driver name"= インストール\_セクションでは、LPTENUM\\HardwareID
 
@@ -172,17 +172,17 @@ c. "Driver name"= インストール\_セクションでは、LPTENUM\\HardwareI
 
 1. 印刷クラス ドライバーの Inf には、モデルの行の 3 つのさまざまな種類を定義する必要があります。
 
-a.  HardwareID 行:"Driver name"= インストール\_セクションでは、HardwareID
+a. HardwareID 行:"Driver name"= インストール\_セクションでは、HardwareID
 
-b.  PrinterDriverID 行:"Driver name"= インストール\_セクションでは、{GUID}
+b. PrinterDriverID 行:"Driver name"= インストール\_セクションでは、{GUID}
 
 c. CompatibleID 行:"印刷クラス ドライバー name"= インストール\_セクション、および 1284\_CID\_CompatID
 
 2. 印刷クラス ドライバーの Inf (たとえば、WSDPRINT bus 列挙子を定義する必要があります。\)
 
 ## <a name="related-topics"></a>関連トピック
-[印刷デバイスに互換性のある Id を実装する方法](https://msdn.microsoft.com/library/windows/hardware/gg463313.aspx)  
-[Windows ドライバーをランク付けする方法](https://msdn.microsoft.com/library/windows/hardware/ff546225.aspx)  
+[印刷デバイスに互換性のある Id を実装する方法](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613942(v=vs.85))  
+[Windows ドライバーをランク付けする方法](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)  
 [ポート モニター MIB (PWG 5107.1 2005)](http://www.pwg.org/standards.html)  
 
 

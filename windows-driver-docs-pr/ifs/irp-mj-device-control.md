@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 221de9718e477bca9a5bde35cee8d23045e4ebd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 957def118314a946a71b6344a6daa48cfdd8010b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379704"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384827"
 ---
 # <a name="irpmjdevicecontrol"></a>IRP\_MJ\_DEVICE\_CONTROL
 
@@ -25,7 +25,7 @@ ms.locfileid: "63379704"
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_デバイス\_コントロール要求がや他のカーネル モード ドライバー I/O マネージャーとその他のオペレーティング システム コンポーネントによって送信されます。 通常この IRP は、Microsoft Win32 と呼ばれる、ユーザー モード アプリケーションに代わって送信[ **DeviceIoControl** ](https://msdn.microsoft.com/library/windows/desktop/aa363216)関数または呼び出すことがカーネル モード コンポーネントに代わって[**ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)します。
+IRP\_MJ\_デバイス\_コントロール要求がや他のカーネル モード ドライバー I/O マネージャーとその他のオペレーティング システム コンポーネントによって送信されます。 通常この IRP は、Microsoft Win32 と呼ばれる、ユーザー モード アプリケーションに代わって送信[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数または呼び出すことがカーネル モード コンポーネントに代わって[**ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)します。
 
 ## <a name="operation-file-system-drivers"></a>操作:ファイル システム ドライバー
 
@@ -40,7 +40,7 @@ IRP\_MJ\_デバイス\_コントロール要求がや他のカーネル モー�
 ## <a name="parameters"></a>パラメーター
 
 
-ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)ポインターを取得する、独自の特定の IRP の[**場所スタック**](https://msdn.microsoft.com/library/windows/hardware/ff550659)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所、デバイス制御要求の処理には、次のメンバーで設定されている情報を使用できます。
+ファイル システムまたはフィルター ドライバーは呼び出し[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)ポインターを取得する、独自の特定の IRP の[**場所スタック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)、IRP として次の一覧に示すように*IrpSp*します。 (IRP が示した*Irp*)。ドライバーは IRP の IRP スタックの場所、デバイス制御要求の処理には、次のメンバーで設定されている情報を使用できます。
 
 <a href="" id="deviceobject"></a>*デバイス オブジェクト*  
 ターゲット デバイスのオブジェクトへのポインター。
@@ -49,7 +49,7 @@ IRP\_MJ\_デバイス\_コントロール要求がや他のカーネル モー�
 ターゲット デバイスのデバイス ドライバーに渡されるシステム指定の入力バッファーへのポインター。 メソッドの使用\_バッファーに格納された、またはメソッド\_ダイレクト I/O。 このパラメーターが必要かどうかは、特定の I/O 制御コードに依存します。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-ポインター、 [ **IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)最終的な完了の状態と、要求された操作に関する情報を受け取る。 詳細については、の説明を参照して、 *IoStatusBlock*パラメーターを[ **ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)します。
+ポインター、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)最終的な完了の状態と、要求された操作に関する情報を受け取る。 詳細については、の説明を参照して、 *IoStatusBlock*パラメーターを[ **ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)します。
 
 <a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
 ターゲット デバイスのデバイス ドライバーに渡される出力バッファーを記述するメモリ記述子一覧 (MDL) のアドレス。 メソッドの使用\_ダイレクト I/O。 このパラメーターが必要かどうかは、特定の I/O 制御コードに依存します。
@@ -74,7 +74,7 @@ IRP を指定します\_MJ\_デバイス\_コントロール。
 <a href="" id="irpsp--parameters-deviceiocontrol-iocontrolcode"></a>*IrpSp-&gt;Parameters.DeviceIoControl.IoControlCode*  
 ターゲット デバイスのデバイス ドライバーに渡される IOCTL 関数コードです。
 
-IOCTL 要求の詳細については、次を参照してください[I/O 制御コードを使用して](https://msdn.microsoft.com/library/windows/hardware/ff565406)で、*カーネル モードのアーキテクチャ ガイド*と"デバイスの入力と出力の制御コード"、Microsoft Windows sdk。ドキュメントです。
+IOCTL 要求の詳細については、次を参照してください[I/O 制御コードを使用して](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)で、*カーネル モードのアーキテクチャ ガイド*と"デバイスの入力と出力の制御コード"、Microsoft Windows sdk。ドキュメントです。
 
 <a href="" id="irpsp--parameters-deviceiocontrol-outputbufferlength"></a>*IrpSp-&gt;Parameters.DeviceIoControl.OutputBufferLength*  
 によって示されるバッファーのバイト サイズ*Irp -&gt;UserBuffer*します。
@@ -85,21 +85,21 @@ IOCTL 要求の詳細については、次を参照してください[I/O 制御
 ## <a name="see-also"></a>関連項目
 
 
-[**IO\_スタック\_場所**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_スタック\_場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoBuildDeviceIoControlRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548318)
+[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IoGetFunctionCodeFromCtlCode**](https://msdn.microsoft.com/library/windows/hardware/ff549236)
+[**IoGetFunctionCodeFromCtlCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetfunctioncodefromctlcode)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_デバイス\_コントロール (WDK カーネル リファレンス)**](https://msdn.microsoft.com/library/windows/hardware/ff550744)
+[**IRP\_MJ\_デバイス\_コントロール (WDK カーネル リファレンス)** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)
 
-[I/O 制御コードを使用](https://msdn.microsoft.com/library/windows/hardware/ff565406)
+[I/O 制御コードを使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)
 
 [**ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)
 

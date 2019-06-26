@@ -4,12 +4,12 @@ description: このトピックでは、WDF Verifier の UMDF 設定 (テスト�
 ms.assetid: cce75c2e-fc93-4c17-9560-aef55451528b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acf49611495268e7c09928fe521b4c05b5c3378b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e898489d6b412a8aa4ef8e952b22b2a85d28ac96
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363804"
 ---
 # <a name="umdf-settings-test-use-only-tab"></a>UMDF Settings (Test Use Only) (UMDF 設定 (テスト使用のみ)) タブ
 
@@ -20,7 +20,7 @@ ms.locfileid: "63351801"
 
 ![umdf 設定 (テスト使用のみ) タブのスクリーン ショット](images/wdfverifier-tab4.png)
 
-既定で、 [UMDF インフライト レコーダー (IFR)](https://msdn.microsoft.com/library/windows/hardware/ff545531)システム クラッシュが発生した場合、ログを維持できますされるように、非ページ メモリに格納されます。 まれに、ただし、必要もあります非ページ メモリの領域を解放します。 たとえば、ストレス テストを複数の UMDF ドライバーとシステムはおそらく[デバイス プール](https://msdn.microsoft.com/library/windows/hardware/hh463993)オフ、および非ページ メモリがあります。 使用可能な非ページ メモリの少ない増加を取得するを選択すると、**使用ページ プール**ボックス。
+既定で、 [UMDF インフライト レコーダー (IFR)](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-s-event-logger)システム クラッシュが発生した場合、ログを維持できますされるように、非ページ メモリに格納されます。 まれに、ただし、必要もあります非ページ メモリの領域を解放します。 たとえば、ストレス テストを複数の UMDF ドライバーとシステムはおそらく[デバイス プール](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-device-pooling-in-umdf-drivers)オフ、および非ページ メモリがあります。 使用可能な非ページ メモリの少ない増加を取得するを選択すると、**使用ページ プール**ボックス。
 
 また、場合によって分析などのツール Driver Verifier で十分な CPU の高いテスト ドライバー何の役にも UMDF の既定のタイムアウトがトリガーされるシステム パフォーマンスが低下することができますが正しくありません。 この場合、タイムアウト値を増やすことは、この種類の偶発的なタイムアウトを減らすことができます。
 

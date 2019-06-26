@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_PORT_ATTRIBUTES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 61552853ad51a798386a55e68f5b1ad087081e53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ede26c45080d1bff401830c8338dbcd72f1a500a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329878"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366527"
 ---
 # <a name="wditlvportattributes"></a>WDI\_TLV\_ポート\_属性
 
@@ -33,12 +33,12 @@ WDI\_TLV\_ポート\_属性は、ポート属性を含む TLV します。
 
 | 型                                              | 説明                                         |
 |---------------------------------------------------|-----------------------------------------------------|
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071) | ポートに関連付けられている MAC アドレスを指定します。 |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | ポートに関連付けられている MAC アドレスを指定します。 |
 | UINT16                                            | ポート番号を指定します。                          |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

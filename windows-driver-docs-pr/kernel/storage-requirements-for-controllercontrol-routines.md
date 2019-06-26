@@ -9,12 +9,12 @@ keywords:
 - ストレージの WDK コント ローラーのオブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5f855379f2fd0eb9e5474aaf545c72807610ace
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a7a545b209d7e1717ca00123207e1991602ae3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331958"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382986"
 ---
 # <a name="storage-requirements-for-controllercontrol-routines"></a>ControllerControl ルーチンの記憶域の要件
 
@@ -22,7 +22,7 @@ ms.locfileid: "63331958"
 
 
 
-ある場合、 *ControllerControl* 、日常的な非 WDM ドライバーはの常駐記憶域を提供する必要があります、 *ControllerObject*によって返されたポインター [ **IoCreateController**](https://msdn.microsoft.com/library/windows/hardware/ff548395).
+ある場合、 *ControllerControl* 、日常的な非 WDM ドライバーはの常駐記憶域を提供する必要があります、 *ControllerObject*によって返されたポインター [ **IoCreateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatecontroller).
 
 ドライバーは、デバイスの拡張機能またはドライバーによって割り当てられた非ページ プールのために必要な記憶域を提供できます。 通常、コント ローラーのオブジェクトを使用するドライバー、保存、 *ControllerObject*各コント ローラーによって表されるハードウェアによって制御される論理または物理デバイスを表すデバイス オブジェクトの拡張機能でデバイスのポインターオブジェクト。
 

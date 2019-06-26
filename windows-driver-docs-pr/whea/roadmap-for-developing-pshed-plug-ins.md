@@ -4,12 +4,12 @@ description: PSHED プラグイン開発のロード マップ
 ms.assetid: 3e1eb744-e480-4478-9705-94da8029c382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b59a3972ad9a9e09a08da880ace307e68d096f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e523d2f0d445a13218e36550cfbac95ae266f0a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387145"
 ---
 # <a name="roadmap-for-developing-pshed-plug-ins"></a>PSHED プラグイン開発のロード マップ
 
@@ -30,7 +30,7 @@ Windows Vista および Windows の以降のバージョン用の PSHED プラ�
 
     まず、Windows オペレーティング システムでのドライバーのしくみの基礎を理解する必要があります。 基礎を知ることに役立つ適切な設計上の決定を行い、開発プロセスを効率化することができます。
 
-    ドライバーの基礎の詳細については、次を参照してください。[理解ドライバーとオペレーティング システムの基礎](https://msdn.microsoft.com/library/windows/hardware/ff554731)します。
+    ドライバーの基礎の詳細については、次を参照してください。[理解ドライバーとオペレーティング システムの基礎](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)します。
 
 -   手順 2:Windows ハードウェア エラー アーキテクチャ (WHEA) の基礎について説明します。
 
@@ -44,9 +44,9 @@ Windows Vista および Windows の以降のバージョン用の PSHED プラ�
 
     ドライバーの構築は、ユーザー モード アプリケーションを構築することと同じではありません。
 
-    Windows ドライバーのビルド、デバッグ、およびテスト プロセス、ドライバーの署名、および Windows のロゴ テストについては、次を参照してください。[のビルド、デバッグ、およびテスト ドライバー](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)します。
+    Windows ドライバーのビルド、デバッグ、およびテスト プロセス、ドライバーの署名、および Windows のロゴ テストについては、次を参照してください。[のビルド、デバッグ、およびテスト ドライバー](https://docs.microsoft.com/windows-hardware/drivers)します。
 
-    ビルドの詳細については、テスト、検証、およびデバッグ ツールを参照してください[ドライバー開発ツール](https://msdn.microsoft.com/library/windows/hardware/ff545440)します。
+    ビルドの詳細については、テスト、検証、およびデバッグ ツールを参照してください[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/index)します。
 
 -   手順 4:プラグイン、PSHED に関する設計上の決定を行います。
 
@@ -67,12 +67,12 @@ Windows Vista および Windows の以降のバージョン用の PSHED プラ�
     -   PSHED のプラグインの開発に関するガイドラインについては、次を参照してください。 [PSHED プラグイン ガイドライン](pshed-plug-in-guidelines.md)します。
     -   プラグインの PSHED を構築する方法については、次を参照してください。[構築プラグイン PSHED](building-a-pshed-plug-in.md)します。
     -   プラグインの PSHED をデバッグするために使用する WHEA デバッガー拡張機能については、次を参照してください。 [Windows ハードウェア エラー アーキテクチャ デバッガー拡張](windows-hardware-error-architecture-debugger-extensions.md)します。
-    -   反復的なビルド、テスト、およびデバッグについては、次を参照してください。[概要のビルド、デバッグ、およびテスト プロセス](https://msdn.microsoft.com/windows-drivers/develop/visual_studio_driver_development_environment)します。
+    -   反復的なビルド、テスト、およびデバッグについては、次を参照してください。[概要のビルド、デバッグ、およびテスト プロセス](https://docs.microsoft.com/windows-hardware/drivers)します。
 -   手順 6:プラグイン、PSHED のドライバー パッケージを作成します。
 
-    PSHED のプラグインは、WDM ドライバーです。 使用して他の WDM ドライバー PSHED プラグインがインストールされている、[ドライバー パッケージ](https://msdn.microsoft.com/library/windows/hardware/ff544840)します。
+    PSHED のプラグインは、WDM ドライバーです。 使用して他の WDM ドライバー PSHED プラグインがインストールされている、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)します。
 
-    ドライバー パッケージの詳細については、次を参照してください。[ドライバー パッケージを提供する](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)します。
+    ドライバー パッケージの詳細については、次を参照してください。[ドライバー パッケージを提供する](https://docs.microsoft.com/windows-hardware/drivers)します。
 
     プラグインの PSHED をドライバー パッケージをインストールする方法の詳細については、次を参照してください。 [PSHED プラグイン インストール](pshed-plug-in-installation.md)します。
 

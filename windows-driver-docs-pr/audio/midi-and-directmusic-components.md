@@ -15,12 +15,12 @@ keywords:
 - 注オフ イベント WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d12949b12e9eff3eb0478749773094e8749833b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 808313dd844ef120261f58f03988b993eaff336e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363256"
 ---
 # <a name="midi-and-directmusic-components"></a>MIDI と DirectMusic のコンポーネント
 
@@ -62,9 +62,9 @@ Dmu ポート ドライバーはシンセサイザー デバイスには、ハ�
 
 DMusic シンセサイザーでは、ハードウェア sequencer はありません、MIDI ポート ドライバーが 1 ミリ秒のタイマー精度を Dmu ポート ドライバーのソフトウェアの sequencer に依存する必要があります。
 
-アダプタのドライバを呼び出して MIDI または Dmu ポート ドライバーを作成します[ **PcNewPort** ](https://msdn.microsoft.com/library/windows/hardware/ff537715)の GUID 値を持つ**CLSID\_PortMidi**または**CLSID\_PortDMus**、それぞれします。 Windows XP 以降では、MIDI、Dmu ポート ドライバーは、同じソフトウェア実装を共有します。
+アダプタのドライバを呼び出して MIDI または Dmu ポート ドライバーを作成します[ **PcNewPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewport)の GUID 値を持つ**CLSID\_PortMidi**または**CLSID\_PortDMus**、それぞれします。 Windows XP 以降では、MIDI、Dmu ポート ドライバーは、同じソフトウェア実装を共有します。
 
-上記の図の下部に表示されるは、FMSynth、UART、および DMusUART、Portcls.sys に含まれているシステム提供のミニポート ドライバーの名前です。 呼び出して、アダプターのドライバーがこれらのミニポート ドライバーのいずれかに作成します. [ **PcNewMiniport**](https://msdn.microsoft.com/library/windows/hardware/ff537714)します。 FMSynth と UART 提供[IMiniportMidi](https://msdn.microsoft.com/library/windows/hardware/ff536703)インターフェイス、および DMusUART を提供する[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)インターフェイス。 UART (Windows 98 金) した後は廃止されておりは既存のドライバーに対してのみサポートされていることに注意してください。 新しいアダプターのドライバーでは、DMusUART (Windows 98 se と後で、および Windows 2000 以降)、UART の機能のスーパー セットを実装する代わりに使用する必要があります。 DMusUART は、DLS ダウンロードもハードウェアのシーケンス処理をサポートしている Dmu ミニポート ドライバーの例に示します。 FMSynth と DMusUART ミニポート ドライバーのソース コードは、サンプル オーディオ ドライバーには、Windows Driver Kit (WDK) で使用できます。
+上記の図の下部に表示されるは、FMSynth、UART、および DMusUART、Portcls.sys に含まれているシステム提供のミニポート ドライバーの名前です。 呼び出して、アダプターのドライバーがこれらのミニポート ドライバーのいずれかに作成します. [ **PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewminiport)します。 FMSynth と UART 提供[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)インターフェイス、および DMusUART を提供する[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)インターフェイス。 UART (Windows 98 金) した後は廃止されておりは既存のドライバーに対してのみサポートされていることに注意してください。 新しいアダプターのドライバーでは、DMusUART (Windows 98 se と後で、および Windows 2000 以降)、UART の機能のスーパー セットを実装する代わりに使用する必要があります。 DMusUART は、DLS ダウンロードもハードウェアのシーケンス処理をサポートしている Dmu ミニポート ドライバーの例に示します。 FMSynth と DMusUART ミニポート ドライバーのソース コードは、サンプル オーディオ ドライバーには、Windows Driver Kit (WDK) で使用できます。
 
 次の図は、ユーザー モードおよびカーネル モード コンポーネント、MIDI アプリケーション プログラムを使用している*キャプチャ*MIDI データ。 このアプリケーション インターフェイスを通じて WDM オーディオ ドライバー、**midiIn * * * Xxx*関数。
 

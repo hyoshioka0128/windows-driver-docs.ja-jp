@@ -4,12 +4,12 @@ description: 誤検知を抑制するための _analysis_assume 関数の使用
 ms.assetid: eb71a664-ada5-44e3-b75d-b1a7348b115f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 215121b46c1fb8f49f24bb8eece471e62f20f7fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fff9be124fe8dbe0658d4a992733da01ab6d5ac7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325421"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363775"
 ---
 # <a name="using-the-analysisassume-function-to-suppress-false-defects"></a>使用して、 \_analysis\_False 欠陥を抑制する関数を想定しています
 
@@ -32,7 +32,7 @@ SDV では、によって表される条件はこの関数を使用するとき�
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>例
 
-次のコード例、KMDF ルール[RequestCompletedLocal](https://msdn.microsoft.com/library/windows/hardware/ff551609)欠陥を報告します。 擬似欠陥は、SDV を正しく解釈できないため、これは、**切り替える**ステートメントと、その結果を入力していない分岐で、要求が完了した後します。
+次のコード例、KMDF ルール[RequestCompletedLocal](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-requestcompletedlocal)欠陥を報告します。 擬似欠陥は、SDV を正しく解釈できないため、これは、**切り替える**ステートメントと、その結果を入力していない分岐で、要求が完了した後します。
 
 この**切り替える**ステートメントでは、6 つの可能な場合があります。 ドライバーがドライバーが、分岐のいずれかに実行することは間違いなく、6 つの IOCTL コードを定義します。 分岐のいずれかが実行された場合、要求が正常に完了します。
 

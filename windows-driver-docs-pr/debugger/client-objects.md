@@ -7,12 +7,12 @@ keywords:
 - クライアント オブジェクト
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6861c3e060420c1b66be6c8f11c7571d37c3a04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2c0482dc75eafefc504966c53fb753aa349f27c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375091"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367018"
 ---
 # <a name="client-objects"></a>クライアント オブジェクト
 
@@ -24,7 +24,7 @@ ms.locfileid: "63375091"
 
 ### <a name="span-idprimary-clientsspanspan-idprimaryclientsspanprimary-clients"></a><span id="primary-clients"></span><span id="PRIMARY_CLIENTS"></span>主なクライアント
 
-A*プライマリ クライアント*は現在参加して、クライアントではデバッグ セッション。 最初に、新しいクライアント オブジェクトが作成されると、そのクライアントではないプライマリです。 クライアントは、ターゲットを取得する際にプライマリのクライアントになります (呼び出すことによって、たとえば、 [ **CreateProcess2**](https://msdn.microsoft.com/library/windows/hardware/ff539323)) を使用してデバッグ セッションに接続されているまたは[ **ConnectSession**](https://msdn.microsoft.com/library/windows/hardware/ff539245)します。 デバッガー コマンド[ **.clients** ](-clients--list-debugging-clients-.md)主なクライアントのみを一覧表示されます。
+A*プライマリ クライアント*は現在参加して、クライアントではデバッグ セッション。 最初に、新しいクライアント オブジェクトが作成されると、そのクライアントではないプライマリです。 クライアントは、ターゲットを取得する際にプライマリのクライアントになります (呼び出すことによって、たとえば、 [ **CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)) を使用してデバッグ セッションに接続されているまたは[ **ConnectSession**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-connectsession)します。 デバッガー コマンド[ **.clients** ](-clients--list-debugging-clients-.md)主なクライアントのみを一覧表示されます。
 
 ### <a name="span-idcallback-objectsspanspan-idcallbackobjectsspancallback-objects"></a><span id="callback-objects"></span><span id="CALLBACK_OBJECTS"></span>コールバック オブジェクト
 
@@ -38,7 +38,7 @@ A*プライマリ クライアント*は現在参加して、クライアント�
 
 ### <a name="span-idremote-debuggingspanspan-idremotedebuggingspanremote-debugging"></a><span id="remote-debugging"></span><span id="REMOTE_DEBUGGING"></span>リモート デバッグ
 
-クライアント オブジェクトには、ホストのエンジンのリモート インスタンスへの通信が容易になります。 [ **DebugConnect** ](https://msdn.microsoft.com/library/windows/hardware/ff540465)関数は、リモート エンジンのインスタンスに接続されているクライアント オブジェクトを作成しますこのクライアントで呼び出されたメソッドが登録されているリモート エンジンとコールバック オブジェクトによって実行されます。ローカル クライアントのときに呼び出されますリモート エンジンはコールバックの呼び出しを行います。
+クライアント オブジェクトには、ホストのエンジンのリモート インスタンスへの通信が容易になります。 [ **DebugConnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-debugconnect)関数は、リモート エンジンのインスタンスに接続されているクライアント オブジェクトを作成しますこのクライアントで呼び出されたメソッドが登録されているリモート エンジンとコールバック オブジェクトによって実行されます。ローカル クライアントのときに呼び出されますリモート エンジンはコールバックの呼び出しを行います。
 
 ### <a name="span-idadditional-informationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional-information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 

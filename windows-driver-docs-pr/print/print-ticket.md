@@ -10,19 +10,19 @@ keywords:
 - WDK のジョブを印刷する印刷チケット
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4a034a40446ff606b6b7fd9597323f373eb434
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9cdf5e71986cd69251c55ad8f74ad18aa7ead099
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351827"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363995"
 ---
 # <a name="print-ticket"></a>印刷チケット
 
 
 PrintTicket ドキュメントは、印刷するドキュメントまたはドキュメントの一部は、方法を説明する XML ドキュメントです。 PrintTicket ドキュメントを印刷ジョブをドキュメント、またはドキュメント内のページに関連付けることができます。 PrintTicket ドキュメントを PrintTicket の一部として、XPS ドキュメントに追加し、ファイルにドキュメントの内容を保存できます。 アプリケーションは、印刷用ドキュメントをスプールと、PrintTicket ドキュメントを文書に追加もできます。
 
-変換関数には、Microsoft Win32 アプリケーションでの印刷チケットの使用を有効にします。 関数は、使用する印刷チケットを変換する[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)構造および DEVMODEW 構造は、印刷チケットをバックアップします。
+変換関数には、Microsoft Win32 アプリケーションでの印刷チケットの使用を有効にします。 関数は、使用する印刷チケットを変換する[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)構造および DEVMODEW 構造は、印刷チケットをバックアップします。
 
 このセクションでは、次のトピックについて説明します。
 

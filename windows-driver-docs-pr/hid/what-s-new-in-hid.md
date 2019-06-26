@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: AA8590B4-AAEA-4D41-972F-38149CE328E2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a267b4477edf11779e36af9533e0d1976e83de7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99de55ef20f76c9829d052237359c82070dad6c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376718"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385793"
 ---
 # <a name="whats-new-in-hid"></a>HID の新機能
 
@@ -20,7 +20,7 @@ ms.locfileid: "63376718"
 ## <a name="hid-winrt-api"></a>HID WinRT API
 
 
-[Windows.Devices.HumanInterfaceDevice](https://msdn.microsoft.com/library/windows/apps/xaml/dn263140) API は、ヒューマン インターフェイス デバイス (HID) プロトコルをサポートする UWP アプリへのアクセスのデバイスを使用できます。
+[Windows.Devices.HumanInterfaceDevice](https://docs.microsoft.com/previous-versions/windows/apps/dn263140(v=win.10)) API は、ヒューマン インターフェイス デバイス (HID) プロトコルをサポートする UWP アプリへのアクセスのデバイスを使用できます。
 
 次の短いビデオでは、MSDN サンプル ギャラリーからダウンロードすることは HID、エンド ツー エンドのサンプル ソリューションをについて説明します。 (このソリューションには、新しい HID WinRT API を使用して作成されたサンプル アプリが含まれています)。
 

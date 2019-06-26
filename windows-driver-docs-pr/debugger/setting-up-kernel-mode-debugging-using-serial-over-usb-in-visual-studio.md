@@ -4,12 +4,12 @@ description: このトピックでは、サメ Cove の開発ボードがカー�
 ms.assetid: D909CA2C-3870-4521-8F23-FBF93738F338
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5449f89d31cffeb2f7e55275d9ec3e6c84a5c01f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c131dd133c42c3ba6f234494a3291dc7da56d03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366376"
 ---
 # <a name="span-iddebuggersettingupkernel-modedebuggingusingserialoverusbinvisualstudiospansetting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studio"></span>カーネル モード デバッグのセットアップ シリアルを使用して、Visual Studio での USB 経由で
 
@@ -47,7 +47,7 @@ Visual Studio を使用して、USB ケーブルを介してシリアル デバ�
 
 次の手順では、サメ Cove ボードは、ターゲット コンピューターです。
 
-1.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)します。
+1.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
 2.  Visual Studio で、ホスト コンピューターで、コンピューターの構成 ダイアログ ボックスのような場合が選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。
 3.  **接続の種類**、選択**シリアル**します。
 
@@ -74,7 +74,7 @@ Visual Studio を使用して、USB ケーブルを介してシリアル デバ�
 
 ホスト コンピューターでは、デバイス マネージャーで前にメモした COM ポートを使用していることを確認します。
 
-1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、**[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
+1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、 **[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
 2.  テスト用コンピューターの名前を選択し、クリックして**次**します。
 3.  選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。 **[次へ]** をクリックします。
 4.  適切な COM ポートの番号が表示されている**ポート**します。
@@ -87,7 +87,7 @@ Visual Studio を使用して、USB ケーブルを介してシリアル デバ�
 
 ホスト コンピューターでは、115200 のボー レートを使用していることを確認します。
 
-1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、**[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
+1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、 **[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
 2.  テスト用コンピューターの名前を選択し、クリックして**次**します。
 3.  選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。 **[次へ]** をクリックします。
 4.  いることを確認、**ボー レート**115200 です。

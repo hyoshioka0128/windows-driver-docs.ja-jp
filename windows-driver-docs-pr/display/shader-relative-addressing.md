@@ -4,12 +4,12 @@ description: シェーダーの相対アドレス指定
 ms.assetid: 7f936b56-cd41-4df5-8fc0-b8a7332ca7fa
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 95b5df1eb45f01a58777b0e691d699c04d0fbede
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 134113bdee84951635888abacdef89bb7a670d03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389982"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365507"
 ---
 # <a name="shader-relative-addressing"></a>シェーダーの相対アドレス指定
 
@@ -23,7 +23,7 @@ ms.locfileid: "63389982"
 
 この相対アドレス指定のトークンの形式が変換先と同じまたはソース パラメーター トークンと、次の規則が適用されます。
 
--   D3DSPR のみ\_ADDR または D3DSPR\_としてループを使用できる[型登録](https://msdn.microsoft.com/library/windows/hardware/ff569707)します。
+-   D3DSPR のみ\_ADDR または D3DSPR\_としてループを使用できる[型登録](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)します。
 
 -   ソース パラメーター トークンのスィズル ビットを使用して、登録するコンポーネントを決定します。
 

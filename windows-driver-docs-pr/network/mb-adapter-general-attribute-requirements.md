@@ -4,17 +4,17 @@ description: MB アダプターの一般的な属性要件
 ms.assetid: c2bfb625-3455-41e0-abdd-ab7204eaae0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 183dd81a4bfb7e5c9383e0cabc4e740cffcb4f45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8fed7316b18bf2a5cb8a534ac0d867d6365ce385
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343456"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387291"
 ---
 # <a name="mb-adapter-general-attribute-requirements"></a>MB アダプターの一般的な属性要件
 
 
-次の表に、ミニポート ドライバー メンバー設定する必要がありますの変数値、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)構造体をします。 呼び出し時に、MB ミニポート ドライバーがこれらの値を使用する必要があります[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)からその[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数では、ミニポート ドライバーの初期化中にします。
+次の表に、ミニポート ドライバー メンバー設定する必要がありますの変数値、 [ **NDIS\_ミニポート\_アダプター\_全般\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)構造体をします。 呼び出し時に、MB ミニポート ドライバーがこれらの値を使用する必要があります[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)からその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数では、ミニポート ドライバーの初期化中にします。
 
 <table>
 <colgroup>

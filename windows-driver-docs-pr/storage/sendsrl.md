@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 180e52d9ecfe564dea90afd41464ccb4d2ded72e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99979f70e58d3b5531f95d3cb65aa88070b9b02d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376436"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362648"
 ---
 # <a name="sendsrl-function"></a>SendSRL 関数
 
@@ -46,7 +46,7 @@ void SendSRL(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendSRL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565524)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体。
 
 *PortWWN*   
 SRL コマンドを送信するローカル ポートに世界中の名前。 この情報は、ミニポート ドライバーに配信される、 **PortWWN** 、SendSRL のメンバー\_構造体。
@@ -58,13 +58,13 @@ FL の種類のポートの世界中の名前\_ループは、スキャンする
 ループがスキャンするには、ドメインのドメインの数。 この情報は、ミニポート ドライバーに配信される、**ドメイン**、SendSRL のメンバー\_構造体。
 
 *TotalRspBufferSize*   
-SRL コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **TotalRspBufferSize**のメンバー、 [ **SendSRL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565524)構造体。
+SRL コマンドの結果のバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **TotalRspBufferSize**のメンバー、 [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体。
 
 *ActualRspBufferSize*   
-実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ActualRspBufferSize**のメンバー、 [ **SendSRL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565524)構造体。
+実際に取得されたデータのバイト単位のサイズ。 ミニポート ドライバーには、この情報が返されます、 **ActualRspBufferSize**のメンバー、 [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体。
 
 *RspBuffer*   
-SRL コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **RspBuffer**のメンバー、 [ **SendSRL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565524)構造体。
+SRL コマンドの結果。 ミニポート ドライバーには、この情報が返されます、 **RspBuffer**のメンバー、 [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -105,7 +105,7 @@ WMI メソッドには適用されません。
 
 [HBA\_状態](hba-status.md)
 
-SendSRL\_IN [ **SendSRL\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff565524)
+SendSRL\_IN [ **SendSRL\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)
 
  
 

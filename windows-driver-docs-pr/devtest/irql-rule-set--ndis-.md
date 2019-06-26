@@ -4,12 +4,12 @@ description: これらの規則を使用すると、ドライバーが必要な 
 ms.assetid: EEFEF8E3-8AB8-46AD-A3BD-DA676F8FA786
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4befa47c1344c34329372af6135fe338d563f161
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5aa575d5f9998665bcdac9ea800dd43110306b9f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391736"
 ---
 # <a name="irql-rule-set-ndis"></a>IRQL の規則セット (NDIS)
 
@@ -36,7 +36,7 @@ IRQL の規則に従っていないドライバーは、デッドロック状態
 <tr class="odd">
 <td align="left"><p><a href="ndis-flags-irql.md" data-raw-source="[&lt;strong&gt;Flags_Irql&lt;/strong&gt;](ndis-flags-irql.md)"><strong>Flags_Irql</strong></a></p></td>
 <td align="left"><p><a href="ndis-flags-irql.md" data-raw-source="[&lt;strong&gt;Flags_Irql&lt;/strong&gt;](ndis-flags-irql.md)"> <strong>Flags_Irql</strong> </a>ルールを指定する<strong>KeGetCurrentIrql</strong>しないを示すディスパッチ レベルのフラグ パラメーターを持つコールバック関数内で呼び出す必要があります、現在の IRQL します。</p>
-<p>ディスパッチのレベルのフラグの正しい使用では、IRQL を設定しようと不要なを回避できます。 このフラグを使用する方法の詳細については、次を参照してください。<a href="https://msdn.microsoft.com/library/windows/hardware/ff546448" data-raw-source="[Dispatch IRQL Tracking](https://msdn.microsoft.com/library/windows/hardware/ff546448)">ディスパッチ IRQL 追跡</a>します。</p></td>
+<p>ディスパッチのレベルのフラグの正しい使用では、IRQL を設定しようと不要なを回避できます。 このフラグを使用する方法の詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/network/dispatch-irql-tracking" data-raw-source="[Dispatch IRQL Tracking](https://docs.microsoft.com/windows-hardware/drivers/network/dispatch-irql-tracking)">ディスパッチ IRQL 追跡</a>します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-irql-callmanager-function.md" data-raw-source="[&lt;strong&gt;Irql_CallManager_Function&lt;/strong&gt;](ndis-irql-callmanager-function.md)"><strong>Irql_CallManager_Function</strong></a></p></td>
@@ -131,7 +131,7 @@ IRQL の規則に従っていないドライバーは、デッドロック状態
     msbuild /t:sdv /p:Inputs="/check:Irql.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://msdn.microsoft.com/library/windows/hardware/hh454281)と[Static Driver Verifier のコマンド (MSBuild)](https://msdn.microsoft.com/library/windows/hardware/hh466459)します。
+    詳細については、次を参照してください。[ドライバーで障害を検出する Static Driver Verifier を使用して](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)と[Static Driver Verifier のコマンド (MSBuild)](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)します。
 
  
 

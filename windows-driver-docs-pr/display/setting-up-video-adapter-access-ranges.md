@@ -9,12 +9,12 @@ keywords:
 - アダプターへのアクセスの範囲は WDK ビデオのミニポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f01a2dbbd733a69ba0ac5f19d39216acece5929f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c9ae6834db9de26d2638570db9d4e74079b72ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339698"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365509"
 ---
 # <a name="setting-up-video-adapter-access-ranges"></a>ビデオ アダプター アクセス範囲の設定
 
@@ -22,27 +22,27 @@ ms.locfileid: "63339698"
 ## <span id="ddk_setting_up_video_adapter_access_ranges_gg"></span><span id="DDK_SETTING_UP_VIDEO_ADAPTER_ACCESS_RANGES_GG"></span>
 
 
-配列の[**ビデオ\_アクセス\_範囲**](https://msdn.microsoft.com/library/windows/hardware/ff570498)-型の要素には、メモリやビデオ アダプターがデコード I/O ポートの 1 つまたは複数の範囲がについて説明します。 この配列内の各アクセス範囲要素には、物理アドレスのバスの相対値が含まれています。
+配列の[**ビデオ\_アクセス\_範囲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_access_range)-型の要素には、メモリやビデオ アダプターがデコード I/O ポートの 1 つまたは複数の範囲がについて説明します。 この配列内の各アクセス範囲要素には、物理アドレスのバスの相対値が含まれています。
 
-ミニポート ドライバーの[ *HwVidFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff567332)ルーチンは、すべての PCI メモリとポートまたはアダプターが応答するポートの範囲を要求する必要があります。 アダプターに応じて、 **AdapterInterfaceType**値[**ビデオ\_ポート\_CONFIG\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff570531)、 *HwVidFindAdapter* 、次のいくつかを呼び出すことができます **ビデオ ポート * * * Xxx* bus 相対の必要な構成データを取得する関数。
+ミニポート ドライバーの[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)ルーチンは、すべての PCI メモリとポートまたはアダプターが応答するポートの範囲を要求する必要があります。 アダプターに応じて、 **AdapterInterfaceType**値[**ビデオ\_ポート\_CONFIG\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_port_config_info)、 *HwVidFindAdapter* 、次のいくつかを呼び出すことができます **ビデオ ポート * * * Xxx* bus 相対の必要な構成データを取得する関数。
 
-[**VideoPortGetAccessRanges**](https://msdn.microsoft.com/library/windows/hardware/ff570302)
+[**VideoPortGetAccessRanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetaccessranges)
 
-[**VideoPortGetBusData**](https://msdn.microsoft.com/library/windows/hardware/ff570306)
+[**VideoPortGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetbusdata)
 
-[**VideoPortGetDeviceData**](https://msdn.microsoft.com/library/windows/hardware/ff570311)
+[**VideoPortGetDeviceData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetdevicedata)
 
-[**VideoPortGetRegistryParameters**](https://msdn.microsoft.com/library/windows/hardware/ff570316)
+[**VideoPortGetRegistryParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetregistryparameters)
 
-[**VideoPortVerifyAccessRanges**](https://msdn.microsoft.com/library/windows/hardware/ff570377)
+[**VideoPortVerifyAccessRanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportverifyaccessranges)
 
 場合*HwVidFindAdapter*呼び出して bus 相対アクセス範囲情報を取得できません**VideoPortGetBusData**または**VideoPortGetAccessRanges**、または、レジストリから**VideoPortGetDeviceData**または**VideoPortGetRegistryParameters**、ミニポート ドライバーは一連のアクセスの範囲のバス相対の既定値が必要です。
 
 すべて*HwVidFindAdapter*関数はカーネル モード アドレス空間内の範囲にそれぞれのクレームのバスの相対物理アドレス範囲をマップする必要があります**VideoPortGetDeviceBase**論理アドレスの範囲特に、バスの複数のマシン。
 
-論理アドレス範囲にマップされたアドレスを使用して、ドライバーを呼び出すことができます、**VideoPortRead * * * Xxx*と **VideoPortWrite * * * Xxx*読み取りまたは書き込みをアダプターにする関数。 これらのカーネル モード アドレスも渡すことができますを[ **VideoPortCompareMemory**](https://msdn.microsoft.com/library/windows/hardware/ff570285)、 [ **VideoPortMoveMemory**](https://msdn.microsoft.com/library/windows/hardware/ff570332)、 [**VideoPortZeroDeviceMemory**](https://msdn.microsoft.com/library/windows/hardware/ff570492)、や[ **VideoPortZeroMemory**](https://msdn.microsoft.com/library/windows/hardware/ff570493)します。 I/O の領域にマップされた範囲は、ミニポート ドライバーの呼び出し、**VideoPortReadPort * * * Xxx*と **VideoPortWritePort * * * Xxx*関数。 メモリ内の対応付けられた範囲、ミニポート ドライバーの呼び出し、**VideoPortReadRegister * * * Xxx*と **VideoPortWriteRegister * * * Xxx*関数。
+論理アドレス範囲にマップされたアドレスを使用して、ドライバーを呼び出すことができます、**VideoPortRead * * * Xxx*と **VideoPortWrite * * * Xxx*読み取りまたは書き込みをアダプターにする関数。 これらのカーネル モード アドレスも渡すことができますを[ **VideoPortCompareMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportcomparememory)、 [ **VideoPortMoveMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportmovememory)、 [**VideoPortZeroDeviceMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportzerodevicememory)、や[ **VideoPortZeroMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportzeromemory)します。 I/O の領域にマップされた範囲は、ミニポート ドライバーの呼び出し、**VideoPortReadPort * * * Xxx*と **VideoPortWritePort * * * Xxx*関数。 メモリ内の対応付けられた範囲、ミニポート ドライバーの呼び出し、**VideoPortReadRegister * * * Xxx*と **VideoPortWriteRegister * * * Xxx*関数。
 
-[ *HwVidFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff567332)関数*常にする必要があります*呼び出す[ **VideoPortVerifyAccessRanges** ](https://msdn.microsoft.com/library/windows/hardware/ff570377)または[ **VideoPortGetAccessRanges** ](https://msdn.microsoft.com/library/windows/hardware/ff570302)正常*する前に*呼び出し[ **VideoPortGetDeviceBase**](https://msdn.microsoft.com/library/windows/hardware/ff570310).
+[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)関数*常にする必要があります*呼び出す[ **VideoPortVerifyAccessRanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportverifyaccessranges)または[ **VideoPortGetAccessRanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetaccessranges)正常*する前に*呼び出し[ **VideoPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetdevicebase).
 
 -   すべての成功した呼び出しに**VideoPortVerifyAccessRanges**または**VideoPortGetAccessRanges**ミニポート ドライバーのバスに固有のビデオ メモリの要求およびアドレスまたは I/O ポートの登録設定のレジストリのアダプターです。 ただし、注意をすることが重要、後続の呼び出しに**VideoPortVerifyAccessRanges**または**VideoPortGetAccessRanges**により、消去するドライバーの以前に要求したリソースと最後に呼び出された関数に渡された範囲に置き換えられます。 そのため、ドライバーがこれらの関数に個別の呼び出しによって範囲を要求する場合は既にものも含め、すべての範囲の配列に渡す必要があります。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63339698"
 
 レガシ リソースにデコードするハードウェアのミニポート ドライバーがこれらのリソースを要求する必要があります、 **DriverEntry**ルーチン、実装されている場合、またはその*HwVidLegacyResources*ルーチン。 レガシ リソースはそれらのリソースがデバイスの PCI 構成領域に表示されませんが、デバイスによってデコードされます。 参照してください[と主張してレガシ リソース](claiming-legacy-resources.md)詳細についてはします。
 
-後、ミニポート ドライバーが読み込まれるとその[ *HwVidInitialize* ](https://msdn.microsoft.com/library/windows/hardware/ff567345)関数は、実行、ミニポート ドライバーの[ *HwVidStartIO* ](https://msdn.microsoft.com/library/windows/hardware/ff567367)関数ミニポート ドライバーは、対応する、ディスプレイ ドライバーに表示されるビデオ メモリの任意のアクセスの範囲にマップするには、呼び出されます。
+後、ミニポート ドライバーが読み込まれるとその[ *HwVidInitialize* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_initialize)関数は、実行、ミニポート ドライバーの[ *HwVidStartIO* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_start_io)関数ミニポート ドライバーは、対応する、ディスプレイ ドライバーに表示されるビデオ メモリの任意のアクセスの範囲にマップするには、呼び出されます。
 
  
 

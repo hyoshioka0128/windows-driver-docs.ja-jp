@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5d87cade3bab1242b898eb1b1fd9894dc3c831
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7a3ba62ee2336dfd432c79cf3777e637490f0654
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527276"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368822"
 ---
 # <a name="kspropertyvpconfigvpdatainfo"></a>KSPROPERTY\_VPCONFIG\_VPDATAINFO
 
@@ -51,10 +51,10 @@ KSPROPERTY\_VPCONFIG\_VPDATAINFO プロパティのビデオ ポートの初期�
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567261" data-raw-source="[&lt;strong&gt;KS_AMVPDATAINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567261)"><strong>KS_AMVPDATAINFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpdatainfo" data-raw-source="[&lt;strong&gt;KS_AMVPDATAINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpdatainfo)"><strong>KS_AMVPDATAINFO</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -84,7 +84,7 @@ KSPROPERTY\_VPCONFIG\_VPDATAINFO プロパティのビデオ ポートの初期�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KS\_AMVPDATAINFO**](https://msdn.microsoft.com/library/windows/hardware/ff567261)
+[**KS\_AMVPDATAINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpdatainfo)
 
  
 

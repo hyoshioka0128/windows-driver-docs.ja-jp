@@ -6,23 +6,23 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_PD_CURRENT_CONFIG ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a4151d69824add438e64b1f853479d5cb6da00f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1267564707c0a8dfee868eadbd3e064ea9ae8f15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362886"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368540"
 ---
 # <a name="ndisstatuspdcurrentconfig"></a>NDIS\_状態\_PD\_現在\_構成
 
 
-この状態の表示は、通知を[ **NDIS\_PD\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/dn931835)構造が変更されました。
+この状態の表示は、通知を[ **NDIS\_PD\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pd_config)構造が変更されました。
 
-PacketDirect 対応ミニポート ドライバーは、NDIS を行う必要があります\_状態\_PD\_現在\_後の構成状態の表示、 [OID\_PD\_閉じる\_プロバイダー](https://msdn.microsoft.com/library/windows/hardware/dn931851)または[OID\_PD\_オープン\_プロバイダー](https://msdn.microsoft.com/library/windows/hardware/dn931852)要求。
+PacketDirect 対応ミニポート ドライバーは、NDIS を行う必要があります\_状態\_PD\_現在\_後の構成状態の表示、 [OID\_PD\_閉じる\_プロバイダー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pd-close-provider)または[OID\_PD\_オープン\_プロバイダー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pd-open-provider)要求。
 
-ミニポート ドライバー呼び出し[ **NdisMIndicateStatusEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563600)ステータスの表示にしてへのポインターを渡す必要があります、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)を通じて構造体、 *StatusIndication*パラメーター。 この通知を行うときに、ミニポート ドライバーがの次のメンバーを設定する必要があります、 **NDIS\_状態\_INDICATION**構造体。
+ミニポート ドライバー呼び出し[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)ステータスの表示にしてへのポインターを渡す必要があります、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)を通じて構造体、 *StatusIndication*パラメーター。 この通知を行うときに、ミニポート ドライバーがの次のメンバーを設定する必要があります、 **NDIS\_状態\_INDICATION**構造体。
 
--   **SourceHandle**ミニポートで受信したハンドルに設定する必要があります、 *MiniportAdapterHandle*のパラメーター、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)関数。
+-   **SourceHandle**ミニポートで受信したハンドルに設定する必要があります、 *MiniportAdapterHandle*のパラメーター、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)関数。
 
 -   **StatusCode** NDIS に設定する必要があります\_状態\_PD\_現在\_構成します。
 
@@ -57,13 +57,13 @@ PacketDirect 対応ミニポート ドライバーは、NDIS を行う必要が�
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
-[**NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
 
-[OID\_PD\_閉じる\_プロバイダー](https://msdn.microsoft.com/library/windows/hardware/dn931851)
+[OID\_PD\_閉じる\_プロバイダー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pd-close-provider)
 
-[OID\_PD\_オープン\_プロバイダー](https://msdn.microsoft.com/library/windows/hardware/dn931852)
+[OID\_PD\_オープン\_プロバイダー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pd-open-provider)
 
  
 

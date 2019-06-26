@@ -4,12 +4,12 @@ description: Windows 8 では、HID ミニポート クラス ドライバーを
 ms.assetid: E073E15A-7068-43D0-9DBA-7DD2E7FE2993
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1e0083c8497436b5f422510e8320e5f833712afb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cce7dd181f2a90555f273e104a7855c6f0ec57bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326089"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385165"
 ---
 # <a name="gpio-buttons-and-indicators-implementation-guide"></a>GPIO のボタンおよびインジケーター実装ガイド
 
@@ -73,15 +73,15 @@ Windows 8.1 への投資の一部として、 **msgpio**ボタン ドライバ�
 GPIO ボタンとインジケーターの実装に関する質問がある場合に、Microsoft サポート グループに電子メールを送信dockingsupport@microsoft.comします。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-[電源ボタンの動作と実装](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)  
-[接続されたスタンバイ ウェイク ソース](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=49891)  
-[ACPI 設計ガイド](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48755)  
+[電源ボタンの動作と実装](https://aka.ms/connect-redirect?DownloadID=47452)  
+[接続されたスタンバイ ウェイク ソース](https://aka.ms/connect-redirect?DownloadID=49891)  
+[ACPI 設計ガイド](https://aka.ms/connect-redirect?DownloadID=48755)  
 [GetSystemMetrics 関数](https://go.microsoft.com/fwlink/p/?linkid=324686)  
 [Windows 8 におけるキーボードの機能拡張](https://go.microsoft.com/fwlink/p/?linkid=324536)  
-[Windows ハードウェア互換性プログラム](https://msdn.microsoft.com/library/windows/hardware/dn922588)  
+[Windows ハードウェア互換性プログラム](https://docs.microsoft.com/windows-hardware/design/compatibility/index)  
 [Windows デスクトップ アプリ認定要件](https://go.microsoft.com/fwlink/p/?linkid=306131)  
 [HID I²C 経由で](https://go.microsoft.com/fwlink/p/?linkid=324690)  
-[ミットで GPIO テスト](https://msdn.microsoft.com/library/windows/hardware/dn919780)  
+[ミットで GPIO テスト](https://docs.microsoft.com/windows-hardware/drivers/spb/gpio-tests-in-mitt)  
 [Windows システム イメージ マネージャー テクニカル リファレンス](https://go.microsoft.com/fwlink/p/?linkid=324691)  
 [Windows の無人セットアップに関するリファレンス](https://go.microsoft.com/fwlink/p/?linkid=276788)  
 [Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?linkid=310164)  

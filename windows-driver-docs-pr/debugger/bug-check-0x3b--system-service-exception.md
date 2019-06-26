@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ca0c17cfccd665eb7f2d9af5ebcf0c6749303361
-ms.sourcegitcommit: 5523bbb8b8bbeaabee8243ff8efc206aeebae5ea
+ms.openlocfilehash: 4cbd6a2202f9c2d7a3b3c15a4129a6663abbeda2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515933"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361906"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>バグ チェック 0x3B:システム\_サービス\_例外
 
@@ -26,7 +26,7 @@ ms.locfileid: "66515933"
 システム\_サービス\_例外のバグ チェックが 0x0000003B の値を持ちます。 これは、特権のないコードから特権を持つコードに遷移するルーチンを実行中に例外が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="systemserviceexception-parameters"></a>システム\_サービス\_例外パラメーター
@@ -145,7 +145,7 @@ Windows のバグの一般的なトラブルシューティングのコードを
 
 -   検索対象**デバイス マネージャー**を任意のデバイスの感嘆符 (!) が付いてを参照してください。 任意のエラーが発生したドライバーのドライバーのプロパティに表示されるイベント ログを確認します。 関連するドライバーを更新してみてください。
 
--   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
+-   デバイスまたはエラーの原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。 詳細については、次を参照してください。[イベント ビューアーを開く](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)します。 ブルー スクリーンに同じ期間に発生したシステム ログの重大なエラーを探します。
 
 -   最近削除または置換することをお試し、システムにハードウェアを追加した場合 または、更新プログラムが利用可能な製造元に確認します。
 

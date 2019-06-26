@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NDIS_STATUS_NETWORK_CHANGE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 93867577d2a2ec73afe379040c4f05334103bff3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 476c6043a9890efd30e37ba02e5e1fdafc938491
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380148"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368566"
 ---
 # <a name="ndisstatusnetworkchange"></a>NDIS\_状態\_ネットワーク\_変更
 
@@ -31,7 +31,7 @@ NDIS 6.0 とそれ以降のミニポート ドライバーは、NDIS を生成�
 
  
 
-NDIS が次のいずれかを提供する NDIS\_ネットワーク\_変更\_で値型、 **StatusBuffer**のメンバー、 [ **NDIS\_の状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体。
+NDIS が次のいずれかを提供する NDIS\_ネットワーク\_変更\_で値型、 **StatusBuffer**のメンバー、 [ **NDIS\_の状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。
 
 <a href="" id="ndispossiblenetworkchange"></a>**NdisPossibleNetworkChange**  
 ミニポート ドライバーでは、ネットワークの変更が存在する可能性が検出されました。 ここでは、上にあるプロトコルは、存在する場合は、ネットワークの変更を検出し、必要に応じて、アドレスの再ネゴシエーションする必要があります。
@@ -42,11 +42,11 @@ NDIS は、NDIS を生成するときもこの値を使って\_状態\_ネット
 上にあるプロトコルは、アドレスを再ネゴシエートする必要がありますのでネットワークの変更が認識されているミニポート ドライバーが検出されました。
 
 <a href="" id="ndisnetworkchangefrommediaconnect"></a>**NdisNetworkChangeFromMediaConnect**  
-古い 802.1 X ワイヤレスのミニポート ドライバー生成 802.3 をエミュレートする、 [ **NDIS\_状態\_メディア\_CONNECT** ](ndis-status-media-connect.md)状態表示になっていた、接続の状態。 WMI イベント通知では、この値が使用される[GUID\_NDIS\_状態\_ネットワーク\_変更](https://msdn.microsoft.com/library/windows/hardware/ff553595)します。 **NdisNetworkChangeFromMediaConnect** NDIS で使用されていない\_状態\_ネットワーク\_変更状態を示す値。
+古い 802.1 X ワイヤレスのミニポート ドライバー生成 802.3 をエミュレートする、 [ **NDIS\_状態\_メディア\_CONNECT** ](ndis-status-media-connect.md)状態表示になっていた、接続の状態。 WMI イベント通知では、この値が使用される[GUID\_NDIS\_状態\_ネットワーク\_変更](https://docs.microsoft.com/windows-hardware/drivers/network/guid-ndis-status-network-change)します。 **NdisNetworkChangeFromMediaConnect** NDIS で使用されていない\_状態\_ネットワーク\_変更状態を示す値。
 
-**StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373) sizeof に構造体が設定されている (NDIS\_ネットワーク\_変更\_型)。
+**StatusBufferSize**のメンバー、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication) sizeof に構造体が設定されている (NDIS\_ネットワーク\_変更\_型)。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -69,7 +69,7 @@ NDIS は、NDIS を生成するときもこの値を使って\_状態\_ネット
 ## <a name="see-also"></a>関連項目
 
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
 [**NDIS\_状態\_メディア\_接続**](ndis-status-media-connect.md)
 

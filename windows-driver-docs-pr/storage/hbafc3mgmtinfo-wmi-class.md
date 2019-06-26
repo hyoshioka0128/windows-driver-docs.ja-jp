@@ -4,12 +4,12 @@ description: HBAFC3MgmtInfo WMI クラス
 ms.assetid: 7c3e5b7e-aed9-4d82-91d9-e0c7b8f5ddf6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fe97654f5c4723d16951d88b9901c10af1a4b5d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5cb54755cc1cfaa8b170fd5f8be4b28951dfee71
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383099"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386184"
 ---
 # <a name="hbafc3mgmtinfo-wmi-class"></a>HBAFC3MgmtInfo WMI クラス
 
@@ -45,7 +45,7 @@ class HBAFC3MgmtInfo {
 };
 ```
 
-WMI ツール スイートによってコンパイルされると、このクラスの定義を生成、 [ **HBAFC3MgmtInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556032)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
+WMI ツール スイートによってコンパイルされると、このクラスの定義を生成、 [ **HBAFC3MgmtInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo)データ構造体。 この WMI クラスに関連付けられているメソッドはありません。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - Irql WDK ディスパッチ ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb9821d992fe0db9cc18b18e5a2448e0e9908f65
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ad3e092e90b114f506d63f09aafa79a591c1f2a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342692"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384983"
 ---
 # <a name="dispatch-routines-and-irqls"></a>ディスパッチ ルーチンと IRQL
 
@@ -28,9 +28,9 @@ ms.locfileid: "63342692"
 
 -   [ *DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、 [ *DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)、および[ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) IRQL で最下位レベルのデバイス ドライバー、およびシステムのページング パスでそれらの上に配置する中間のドライバーのルーチンを呼び出すことができます = APC\_レベルと任意のスレッド コンテキストでします。
 
-    *DispatchRead*や*DispatchWrite*ルーチン、およびその他のルーチンもプロセスの読み取りや書き込み要求をそれらの最下位レベルのデバイスや中間のドライバーである必要があります常駐まったく時間。 これらのドライバー ルーチンはページング可能などちらもページング可能なイメージのドライバーの一部にするセクション。ページング可能なメモリにアクセスする必要がありますされません。 さらに、することはできません、ブロッキング呼び出しに依存 (など[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)タイムアウトは 0 以外の場合)。
+    *DispatchRead*や*DispatchWrite*ルーチン、およびその他のルーチンもプロセスの読み取りや書き込み要求をそれらの最下位レベルのデバイスや中間のドライバーである必要があります常駐まったく時間。 これらのドライバー ルーチンはページング可能などちらもページング可能なイメージのドライバーの一部にするセクション。ページング可能なメモリにアクセスする必要がありますされません。 さらに、することはできません、ブロッキング呼び出しに依存 (など[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)タイムアウトは 0 以外の場合)。
 
--   [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) IRQL で休止状態やページング パス内のドライバーのルーチンを呼び出すことができます = ディスパッチ\_レベル。 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) PnP を処理するためにこのようなドライバーのルーチンを準備する必要があります[ **IRP\_MN\_デバイス\_使用状況\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff550841)要求。
+-   [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) IRQL で休止状態やページング パス内のドライバーのルーチンを呼び出すことができます = ディスパッチ\_レベル。 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) PnP を処理するためにこのようなドライバーのルーチンを準備する必要があります[ **IRP\_MN\_デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)要求。
 
 -   *DispatchPower* IRQL で起動時に突入パワーが必要なドライバーのルーチンを呼び出すことができます = ディスパッチ\_レベル。
 

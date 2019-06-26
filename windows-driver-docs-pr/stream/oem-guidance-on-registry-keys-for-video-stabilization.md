@@ -4,12 +4,12 @@ description: VideoStabilization のレジストリ キーに OEM セット MaxPi
 ms.assetid: F0F7A705-0F39-4A62-A110-A2E47DFB7B42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 046b6f14712bee5ad278772da5bcca650ac6832d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 853b44f4173b322a899e63437be5dc13b655d30f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345966"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368099"
 ---
 # <a name="video-stabilization-registry-settings"></a>ビデオ手ブレ補正のレジストリ設定
 
@@ -105,4 +105,4 @@ Oem は、次のことを確認する必要があります。
 **注**小売システムには、このセクションで説明するビデオ安定化の内部ロジックを無効にするレジストリ キーはありません。 ただし、小売システムが必要、 **VideoStabilization**レジストリ キーを**MaxPixelsPerSecond**値がこのテスト プロセスを使用して決定します。
 
 
-**注**、 **VideoStabilization**レジストリ キー **MaxPixelsPerSecond**値関数だけとき属性[MF\_低\_待機時間](https://msdn.microsoft.com/library/windows/desktop/hh162832)で効果に設定されます。 MediaCapture パイプラインに指定されたビデオ安定化の効果を追加すると、属性が自動的に設定します。 ただし、ビデオ安定化の効果がカスタム パイプラインをまたはに設定されないパイプラインに挿入された場合、 **MF\_低\_待機時間**属性、レジストリ キーが影響を与えません。
+**注**、 **VideoStabilization**レジストリ キー **MaxPixelsPerSecond**値関数だけとき属性[MF\_低\_待機時間](https://docs.microsoft.com/windows/desktop/medfound/mf-low-latency)で効果に設定されます。 MediaCapture パイプラインに指定されたビデオ安定化の効果を追加すると、属性が自動的に設定します。 ただし、ビデオ安定化の効果がカスタム パイプラインをまたはに設定されないパイプラインに挿入された場合、 **MF\_低\_待機時間**属性、レジストリ キーが影響を与えません。

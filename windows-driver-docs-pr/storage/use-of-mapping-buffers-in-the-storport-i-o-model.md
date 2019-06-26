@@ -4,12 +4,12 @@ description: Storport I/O モデルでのマッピング バッファーの使�
 ms.assetid: cd22ec31-ff4d-42d4-a47d-7b8bd85804be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44338c8441ce43d24d4126ab434576984609fbe1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9c9399916c0c89ac76be0fabae4a367b88b7567
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339860"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386803"
 ---
 # <a name="use-of-mapping-buffers-in-the-storport-io-model"></a>Storport I/O モデルでのマッピング バッファーの使用
 
@@ -17,13 +17,13 @@ ms.locfileid: "63339860"
 ## <span id="ddk_use_of_mapping_buffers_in_the_storport_i_o_model_kg"></span><span id="DDK_USE_OF_MAPPING_BUFFERS_IN_THE_STORPORT_I_O_MODEL_KG"></span>
 
 
-SCSI ポート I/O モデルでは、ミニポート ドライバーは、ポートのドライバーを割り当てたり、SRB I/O バッファーのシステムの仮想メモリをマップを要求できます。 ミニポート ドライバーが I/O バッファーを設定してマップするポートのドライバーを構成、 **MapBuffers**のメンバー、 [**ポート\_構成\_情報 (SCSI)**](https://msdn.microsoft.com/library/windows/hardware/ff563900)構造体を**TRUE**します。
+SCSI ポート I/O モデルでは、ミニポート ドライバーは、ポートのドライバーを割り当てたり、SRB I/O バッファーのシステムの仮想メモリをマップを要求できます。 ミニポート ドライバーが I/O バッファーを設定してマップするポートのドライバーを構成、 **MapBuffers**のメンバー、 [**ポート\_構成\_情報 (SCSI)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)構造体を**TRUE**します。
 
 ポートのドライバーが構成されている場合**MapBuffers**設定**TRUE**、 **DataBuffer**ミニポート ドライバーが受信した各 SRB のメンバーには、仮想システムにが含まれますI/O バッファーのアドレス。 このアドレスは、システム内のすべてのプロセス アドレス空間では無効です。 また、ミニポート ドライバーは、I/O バッファーに直接アクセスする無料になります。
 
 その一方で、ミニポート ドライバーが設定されている場合に**MapBuffers**に**FALSE**、 **DataBuffer**はない特定のプロセスが属している仮想アドレスが含まれますミニポート ドライバーを実行するコンテキスト内で有効とは限りません。 そのため、ミニポート ドライバーでは、メモリ領域にアクセスできません。 **DataBuffer**ポイント。
 
-Storport の I/O モデルでは、ミニポート ドライバーが DMA ベースの I/O をサポートするために必要です。 DMA を使用する場合は、システム全体の仮想アドレスを使用しない SRB の I/O バッファーに直接アクセスするミニポート ドライバーがいけません。 このビューには、Storport の I/O モデル別のセットを定義の値、 **MapBuffers**のメンバー [**ポート\_構成\_情報 (STORPORT)**](https://msdn.microsoft.com/library/windows/hardware/ff563901).
+Storport の I/O モデルでは、ミニポート ドライバーが DMA ベースの I/O をサポートするために必要です。 DMA を使用する場合は、システム全体の仮想アドレスを使用しない SRB の I/O バッファーに直接アクセスするミニポート ドライバーがいけません。 このビューには、Storport の I/O モデル別のセットを定義の値、 **MapBuffers**のメンバー [**ポート\_構成\_情報 (STORPORT)** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563901(v=vs.85)).
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ Storport の I/O モデルでは、ミニポート ドライバーが DMA ベー
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">値</th>
+<th align="left">Value</th>
 <th align="left">説明</th>
 </tr>
 </thead>

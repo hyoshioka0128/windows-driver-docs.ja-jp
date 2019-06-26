@@ -12,12 +12,12 @@ keywords:
 - WDK WHEA エラー情報の取得
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 143d8296c23015bbc52052dcdf88c2d124dd1a06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd5da300f2fadbd1a816611097abd5d6ccc9283e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354456"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368008"
 ---
 # <a name="error-information-retrieval"></a>エラー情報の取得
 
@@ -33,7 +33,7 @@ ms.locfileid: "63354456"
 PSHED、PSHED を検出する標準的なエラーのソースによって報告されるエラー条件のエラー情報の取得操作をサポートしています。 参加しているプラグイン PSHED が実装されている場合[エラー ソースの検出](error-source-discovery.md)とレポートのプラグインの PSHED、PSHED をサポートしていないオペレーティング システムに追加のエラーのソースは、エラー情報にも参加する必要がありますこれらのエラーのソースのエラー情報の取得操作をサポートするために取得します。 PSHED のプラグインは、標準エラーのソースによって報告されるエラー条件に対して追加のエラー情報を提供するエラー情報の取得も参加できます。
 
 **注**  に参加する必要がありますエラー情報の取得に参加しているプラグイン A PSHED[エラー ソースの検出](error-source-discovery.md)次のいずれかが true の場合。
--   PSHED プラグインは、特定のエラーのソースによって報告されるハードウェアのエラー パケットに追加のエラー情報を提供します。 このような状況では、プラグインの PSHED に含まれている値を変更する必要があります、 **MaxRawDataLength**のメンバー、 [ **WHEA\_エラー\_ソース\_記述子** ](https://msdn.microsoft.com/library/windows/hardware/ff560505)追加のエラー情報に対応するエラーのソースの検出中にそのエラーの発生元の構造体。
+-   PSHED プラグインは、特定のエラーのソースによって報告されるハードウェアのエラー パケットに追加のエラー情報を提供します。 このような状況では、プラグインの PSHED に含まれている値を変更する必要があります、 **MaxRawDataLength**のメンバー、 [ **WHEA\_エラー\_ソース\_記述子** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)追加のエラー情報に対応するエラーのソースの検出中にそのエラーの発生元の構造体。
 
 -   PSHED プラグインは、特定のエラーのソースによって報告されるハードウェア エラーのエラー レコードをレコードのセクションで追加のエラーを提供します。 このような状況では、プラグインの PSHED に含まれている値を変更する必要があります、 **MaxSectionsPerRecord** WHEA のメンバー\_エラー\_ソース\_エラー ソースの記述子構造体追加のエラー レコードのセクションでは、対応するエラー ソースの検出中に。
 

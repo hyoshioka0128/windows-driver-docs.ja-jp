@@ -9,12 +9,12 @@ keywords:
 - WDK の INF ファイルを印刷するカスタマイズされたドライバー コンポーネント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c23c770664e571cf2a75e5e2b274e4e070cf54a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0e2c9c35a053b92a8e941e843a955f91334bc6b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366833"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385972"
 ---
 # <a name="installing-customized-driver-components"></a>カスタマイズされたドライバー コンポーネントをインストールする
 
@@ -51,7 +51,7 @@ OEMDriverFile2=XYZDRV2.DLL
 
 .Ini ファイルは ANSI または Unicode のいずれかのテキストを含めることができますが、Unicode テキストがお勧めします。 .Ini ファイル内の行、シャープ記号で始まる (\#) コメントします。
 
-詳細については、次を参照してください。 [INF ファイルの一般的なガイドライン](https://msdn.microsoft.com/library/windows/hardware/ff544975)と[Unidrv ミニドライバーをインストールする](installing-a-unidrv-minidriver.md)します。
+詳細については、次を参照してください。 [INF ファイルの一般的なガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/general-guidelines-for-inf-files)と[Unidrv ミニドライバーをインストールする](installing-a-unidrv-minidriver.md)します。
 
 コンポーネントをインストールし、カスタマイズされたコンポーネントを登録するための便利な方法は、プリンターの INF ファイルを指定する場合、*依存ファイル*のプリンター ドライバー。 さらに、関連付けられている .inf ファイルは、依存ファイルとしてインストールできます。 プリンター ドライバーの依存ファイルの詳細については、次を参照してください。[プリンター INF ファイルのエントリ](printer-inf-file-entries.md)します。
 

@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 90def4671f3e4e291747ec94eeb148840f5d4ad9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c6f44fa3797de1b41ea76f413328f3dd03ef0a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386211"
 ---
 # <a name="oidwditasksendapassociationresponse"></a>OID\_WDI\_タスク\_送信\_AP\_アソシエーション\_応答
 
@@ -32,10 +32,10 @@ OID\_WDI\_タスク\_送信\_AP\_アソシエーション\_IHV コンポーネ�
 
 | TLV                                                                                                      | 許可されている複数の TLV インスタンス | 省略可能 | 説明                                                                                                      |
 |----------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_アソシエーション\_応答\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn926137)      |                                |          | アソシエーションの応答のパラメーター。                                                                                 |
-| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://msdn.microsoft.com/library/windows/hardware/dn898076)                                |                                | x        | ポートは、アソシエーションの応答 IE ピア アダプターへの応答を送信する前に設定を追加する必要があります追加 IEs します。 |
-| [**WDI\_TLV\_受信\_アソシエーション\_要求\_情報**](https://msdn.microsoft.com/library/windows/hardware/dn926315) |                                |          | 受信の関連付け要求について説明します。                                                              |
-| [**WDI\_TLV\_WFD\_アソシエーション\_状態**](https://msdn.microsoft.com/library/windows/hardware/mt269148)                        |                                | x        | 関連要求が拒否されたときに設定する状態値。                                                  |
+| [**WDI\_TLV\_アソシエーション\_応答\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-association-response-parameters)      |                                |          | アソシエーションの応答のパラメーター。                                                                                 |
+| [**WDI\_TLV\_ベンダー\_特定\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)                                |                                | x        | ポートは、アソシエーションの応答 IE ピア アダプターへの応答を送信する前に設定を追加する必要があります追加 IEs します。 |
+| [**WDI\_TLV\_受信\_アソシエーション\_要求\_情報**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-incoming-association-request-info) |                                |          | 受信の関連付け要求について説明します。                                                              |
+| [**WDI\_TLV\_WFD\_アソシエーション\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wfd-association-status)                        |                                | x        | 関連要求が拒否されたときに設定する状態値。                                                  |
 
  
 
@@ -44,7 +44,7 @@ OID\_WDI\_タスク\_送信\_AP\_アソシエーション\_IHV コンポーネ�
 
 [NDIS\_STATUS\_WDI\_INDICATION\_SEND\_AP\_ASSOCIATION\_RESPONSE\_COMPLETE](ndis-status-wdi-indication-send-ap-association-response-complete.md)
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -4,12 +4,12 @@ description: ネットワーク フィルター ドライバーのインスト�
 ms.assetid: 7fb31e18-a2f0-48fe-b0a8-cf4aca7d27d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cda84d8ae0a3435906738a902a68cdfbb0c70616
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a55d10268a595211b75942c98b6457580ad38163
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324910"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393364"
 ---
 # <a name="installation-requirements-for-network-filter-drivers"></a>ネットワーク フィルター ドライバーのインストール要件
 
@@ -40,12 +40,12 @@ ms.locfileid: "63324910"
 <strong>Class</strong>= NetService <strong>ClassGuid</strong>= {4D36E974-E325-11CE-BFC1-08002BE10318}</td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547478" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547478)"><strong>INF SourceDisksNames セクション</strong></a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff547472" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547472)"> <strong>INF SourceDisksFiles セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)"><strong>INF SourceDisksNames セクション</strong></a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)"> <strong>INF SourceDisksFiles セクション</strong></a></p></td>
 <td align="left"><p>省略可能</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547383" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547383)"><strong>INF DestinationDirs セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)"><strong>INF DestinationDirs セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
@@ -55,7 +55,7 @@ ms.locfileid: "63324910"
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547454" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547454)"><strong>製造元の INF セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)"><strong>製造元の INF セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
@@ -101,7 +101,7 @@ ms.locfileid: "63324910"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547485" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547485)"><strong>INF 文字列 セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)"><strong>INF 文字列 セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>

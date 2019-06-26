@@ -6,12 +6,12 @@ keywords:
 - DbgEng 拡張機能、DLL の構造
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24babd1fb7683107ab4858ef5a206d65e78a3351
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53c3eb1026495e3ac357dc038986db4bb2ab07fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355395"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367975"
 ---
 # <a name="anatomy-of-a-dbgeng-extension-dll"></a>DbgEng 拡張機能 DLL の構造
 
@@ -29,7 +29,7 @@ DbgEng 拡張 DLL は、多数の拡張機能コマンドの実装のうちい�
 
 拡張機能 DLL は任意の数の拡張機能コマンドの実行に使用される関数をエクスポートする可能性があります。 各関数は、.def ファイル内のエクスポートとして明示的に宣言され、その名が小文字アルファベットの完全で構成する必要があります。
 
-拡張機能のコマンドを実装するために使用される関数は、プロトタイプと一致する必要があります[ **PDEBUG\_拡張子\_呼び出す**](https://msdn.microsoft.com/library/windows/hardware/ff553378)します。
+拡張機能のコマンドを実装するために使用される関数は、プロトタイプと一致する必要があります[ **PDEBUG\_拡張子\_呼び出す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nc-dbgeng-pdebug_extension_call)します。
 
 これらの関数は、標準の C++ 規則に従ってという名前の大文字の使用が許可されていない点が異なります。 エクスポートされた関数名と拡張機能コマンドの名前は、感嘆符 (!) 拡張機能のコマンドを開始する点を除いて同じですは。 たとえばと myextension.dll をデバッガーに読み込むし、入力した **! スタック**デバッガー コマンド ウィンドウに、デバッガーがという名前のエクスポートされた関数を検索**スタック**myextension.dll で。
 
@@ -37,13 +37,13 @@ Myextension.dll が既に読み込まれていないかどうか、または入�
 
 ### <a name="span-idotherexportedfunctionsspanspan-idotherexportedfunctionsspanother-exported-functions"></a><span id="other_exported_functions"></span><span id="OTHER_EXPORTED_FUNCTIONS"></span>その他のエクスポート関数
 
-DLL をエクスポートする必要があります DbgEng 拡張子[ *DebugExtensionInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff540476)します。 これは、DLL を初期化するために、DLL が読み込まれるときに呼び出されます。 グローバル変数を初期化するために、DLL によって使用可能性があります。
+DLL をエクスポートする必要があります DbgEng 拡張子[ *DebugExtensionInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nc-dbgeng-pdebug_extension_initialize)します。 これは、DLL を初期化するために、DLL が読み込まれるときに呼び出されます。 グローバル変数を初期化するために、DLL によって使用可能性があります。
 
-拡張 DLL のエクスポートが[ *DebugExtensionUninitialize*](https://msdn.microsoft.com/library/windows/hardware/ff540495)します。 これをエクスポートする場合は、拡張 DLL が読み込まれる前に呼び出されます。 アンロードされる前に、クリーンアップする DLL によって使用可能性があります。
+拡張 DLL のエクスポートが[ *DebugExtensionUninitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nc-dbgeng-pdebug_extension_uninitialize)します。 これをエクスポートする場合は、拡張 DLL が読み込まれる前に呼び出されます。 アンロードされる前に、クリーンアップする DLL によって使用可能性があります。
 
-拡張 DLL のエクスポートが[ *DebugExtensionNotify*](https://msdn.microsoft.com/library/windows/hardware/ff540478)します。 これをエクスポートする場合は呼び出すことがセッションを開始または終了するときに、ターゲットが開始または実行を停止します。 これらの通知にも提供[IDebugEventCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550550)オブジェクトをクライアントに登録します。
+拡張 DLL のエクスポートが[ *DebugExtensionNotify*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nc-dbgeng-pdebug_extension_notify)します。 これをエクスポートする場合は呼び出すことがセッションを開始または終了するときに、ターゲットが開始または実行を停止します。 これらの通知にも提供[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)オブジェクトをクライアントに登録します。
 
-拡張 DLL のエクスポートが[ *KnownStructOutput*](https://msdn.microsoft.com/library/windows/hardware/ff551934)します。 これをエクスポートする場合は、DLL が読み込まれるときに呼び出されます。 この関数は、DLL が 1 行に印刷する方法を認識している構造体のリストを返します。 これを印刷用のこれらの構造体のインスタンスを書式設定後で呼び出すことができます。
+拡張 DLL のエクスポートが[ *KnownStructOutput*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nc-dbgeng-pdebug_extension_known_struct)します。 これをエクスポートする場合は、DLL が読み込まれるときに呼び出されます。 この関数は、DLL が 1 行に印刷する方法を認識している構造体のリストを返します。 これを印刷用のこれらの構造体のインスタンスを書式設定後で呼び出すことができます。
 
 ### <a name="span-idengineprocedureforloadingadbgengextensiondllspanspan-idengineprocedureforloadingadbgengextensiondllspanengine-procedure-for-loading-a-dbgeng-extension-dll"></a><span id="engine_procedure_for_loading_a_dbgeng_extension_dll"></span><span id="ENGINE_PROCEDURE_FOR_LOADING_A_DBGENG_EXTENSION_DLL"></span>DbgEng 拡張 DLL を読み込むためのエンジン プロシージャ
 

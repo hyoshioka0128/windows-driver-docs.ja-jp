@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7285dcf05973b87c886ce0a9db0a90d65f0d421
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f15c3b8de2a6485ee98a35ccbcb7203abb756ac9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354643"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385921"
 ---
 # <a name="inf-addpowersetting-directive"></a>INF AddPowerSetting ディレクティブ
 
 
-**AddPowerSetting**ディレクティブが変更または電源設定の情報の作成に使用される 1 つまたは複数のセクションを参照します。 各*追加設定 power セクション*電源設定、電源設定、電源設定のフレンドリ名と電源設定の説明に使用できる値を定義します。 *追加設定 power セクション*も各電源スキーム パーソナリティの既定値を指定します。 電源設定と電源スキーム個性の詳細については、次を参照してください。[管理デバイスのパフォーマンス状態](https://msdn.microsoft.com/library/windows/hardware/ff554353)します。
+**AddPowerSetting**ディレクティブが変更または電源設定の情報の作成に使用される 1 つまたは複数のセクションを参照します。 各*追加設定 power セクション*電源設定、電源設定、電源設定のフレンドリ名と電源設定の説明に使用できる値を定義します。 *追加設定 power セクション*も各電源スキーム パーソナリティの既定値を指定します。 電源設定と電源スキーム個性の詳細については、次を参照してください。[管理デバイスのパフォーマンス状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-device-performance-states)します。
 
 ```ini
 [DDInstall] | 
@@ -99,7 +99,7 @@ AddPowerSetting=add-power-setting-section[,add-power-setting-section]
 新しいサブグループを定義するには、**サブグループ**ディレクティブし、次の必要なエントリを指定:*サブグループ guid*、*サブグループ名*、 *サブグループ説明*、および*サブグループ アイコン。* 新しいサブグループの GUID は一意である必要があり、その他のエントリをできるだけわかりやすいものにする必要があります。
 
 <a href="" id="subgroup-guid"></a>*サブグループの guid*  
-必要なエントリは、サブグループを識別する GUID を提供します。 このエントリの形式が **{**<em>XXXXXXXX XXXX XXXX XXXXXXXXXXXX</em>**}**"X"は 16 進数です。
+必要なエントリは、サブグループを識別する GUID を提供します。 このエントリの形式が **{** <em>XXXXXXXX XXXX XXXX XXXXXXXXXXXX</em> **}** "X"は 16 進数です。
 
 たとえば、定数 GUID_VIDEO_SUBGROUP のシステム定義の値は、{7516B95F-F776-4464-8C53-06167F40CC99}。 この GUID は、電源スキームのパーソナリティのビデオの電源設定を含んだサブグループを表します。
 
@@ -120,7 +120,7 @@ AddPowerSetting=add-power-setting-section[,add-power-setting-section]
 関連付けられているエントリを次に、**設定**ディレクティブ。
 
 <a href="" id="setting-guid"></a>*設定 guid*  
-電源設定を表す GUID を指定する必要なエントリです。 このエントリの形式が **{**<em>XXXXXXXX XXXX XXXX XXXXXXXXXXXX</em>**}**"X"は 16 進数です。
+電源設定を表す GUID を指定する必要なエントリです。 このエントリの形式が **{** <em>XXXXXXXX XXXX XXXX XXXXXXXXXXXX</em> **}** "X"は 16 進数です。
 
 たとえば、次は、カスタム GUID 値: {BFC0D9E9-549C-483D-AD2A-3D90C98A8B03}。
 

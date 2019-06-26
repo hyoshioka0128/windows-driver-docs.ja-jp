@@ -12,12 +12,12 @@ keywords:
 - WDK の IEEE 1394 をバッファー処理します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3648eda3b91911adb525c74ae0bb720866bd00b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 12ac524be304111e23ac2964158d3662ed58e498
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371151"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385762"
 ---
 # <a name="isochronous-talk-options-for-ieee-1394-devices"></a>IEEE 1394 デバイスの等時性トークのオプション
 
@@ -29,7 +29,7 @@ ms.locfileid: "63371151"
 
 ### <a name="packets-with-no-headers"></a>ヘッダーなしでパケット
 
-既定では、ホスト コント ローラーは、接続されているバッファー内のデータを送信で示される、 **Mdl**のメンバー、 [**アイソクロナス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537401)構造体で、バッファーが接続されている順序。 既定では、ホスト コント ローラーが自動的に分割、バッファー サイズのパケットに以内で指定されている、 **nMaxBytesPerFrame**のバッファーのアイソクロナス メンバー\_記述子構造体。
+既定では、ホスト コント ローラーは、接続されているバッファー内のデータを送信で示される、 **Mdl**のメンバー、 [**アイソクロナス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)構造体で、バッファーが接続されている順序。 既定では、ホスト コント ローラーが自動的に分割、バッファー サイズのパケットに以内で指定されている、 **nMaxBytesPerFrame**のバッファーのアイソクロナス メンバー\_記述子構造体。
 
 たとえば、512 バイトのパケットでそのデータを受信するが必要とするデバイスのドライバーが含まれます次バッファーのアイソクロナスの宣言で\_記述子。
 
@@ -97,15 +97,15 @@ MAX が\_ヘッダー\_データ\_サイズは各データ パケットに追加
 
 定義に関して注意の注意すべき**nMaxBytesPerFrame**ドライバーが「トーク モード」で可変サイズのパケットを転送するたびにします。 2 つのケースでは、ドライバーを定義する必要があります**nMaxBytesPerFrame**、どちらの場合も、ホスト コント ローラー ドライバーに割り当てられた値を解釈および**nMaxBytesPerFrame**として、*最小*フレーム、最大ではなく、サイズの場合は、ドライバーが可変サイズのフレームを送信します。
 
--   要求中に\_アイソクロナス\_ALLOCATE\_リソース要求に、ドライバーは内のフレーム サイズを示す必要があります、 **u.IsochAllocateResources.nMaxBytesPerFrame**のメンバー [ **IRB**](https://msdn.microsoft.com/library/windows/hardware/ff537350)します。
+-   要求中に\_アイソクロナス\_ALLOCATE\_リソース要求に、ドライバーは内のフレーム サイズを示す必要があります、 **u.IsochAllocateResources.nMaxBytesPerFrame**のメンバー [ **IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_irb)します。
 
--   要求中に\_アイソクロナス\_アタッチ\_バッファー要求では、ドライバーは内のフレーム サイズを示す必要があります、 **nMaxBytesPerFrame**のメンバー [**アイソクロナス\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff537401)します。
+-   要求中に\_アイソクロナス\_アタッチ\_バッファー要求では、ドライバーは内のフレーム サイズを示す必要があります、 **nMaxBytesPerFrame**のメンバー [**アイソクロナス\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)します。
 
 小さいほど、フレーム、以上のフレームは、ホスト コント ローラーのドライバーが転送バッファーに適合できます。 各フレームは、タイムスタンプ、およびステータス情報などのシステム リソースを必要とするため、フレームが小さいがより迅速にシステム リソースを消費します。 ホスト コント ローラーのドライバーは、バッファー内に収まるフレームの数との値に基づいて、それらのフレームに必要なリソースの数を計算**nMaxBytesPerFrame**します。 フレームがあるよりも小さい場合に指定したサイズ**nMaxBytesPerFrame**このエラーになる可能性やリソースを必要とするフレームの数が、ホスト コント ローラー ドライバーで計算された値よりも大きくなります。
 
 ドライバーがデータを受信するときに、これらの考慮事項が適用されません、ドライバーが可変サイズのフレームを転送場合にのみ「応答モード」。 ドライバーを持つ、チャネルのリソース ハンドルを取得するときに、特定のチャネルに関連付けられているデータ転送の種類を指定する、 [**要求\_アイソクロナス\_ALLOCATE\_のリソース**](https://msdn.microsoft.com/library/windows/hardware/ff537649)要求。 ドライバーの設定、リソース\_変数\_アイソクロナス\_ペイロード フラグ**u.IsochAllocateResources.fulFlags**可変サイズのフレームを送信するかを示すには、この要求中にします。 ドライバーの設定、リソース\_使用\_IN\_説明フラグ**u.IsochAllocateResources.fulFlags**データを受信するのではなく、送信するチャネルを使用することを示す。 のみ、ドライバーでは、これらのフラグの両方を設定、リソース割り当ての要求中には、ホスト コント ローラー ドライバー解釈**nMaxBytesPerFrame**最大値ではなく、最小値として。
 
-なお、 **u.IsochAllocateResources.nMaxBufferSize**のメンバー [ **IRB** ](https://msdn.microsoft.com/library/windows/hardware/ff537350)は常に、最大値。
+なお、 **u.IsochAllocateResources.nMaxBufferSize**のメンバー [ **IRB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_irb)は常に、最大値。
 
 ドライバー設定するだけでヘッダーのみのデータ パケットを送信できるようになりました、 **DataLength**を 0 に、ヘッダー要素のメンバー。
 

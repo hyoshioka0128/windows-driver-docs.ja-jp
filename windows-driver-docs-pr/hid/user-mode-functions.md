@@ -7,12 +7,12 @@ keywords:
 - ユーザー モード関数 WDK フォース フィードバック
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2b696c45a8c3026af38850de3d1c7fa66ab3eb53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99c9fdae95b6ca32d716b2af17a32827bb8241b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376728"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385796"
 ---
 # <a name="user-mode-functions"></a>ユーザー モード関数
 
@@ -30,7 +30,7 @@ DirectInput は、最後の効果ドライバー オブジェクトを解放し�
 
 DirectInput によって使用されるマグニチュードと向上のすべての値は、uniform 線形範囲全体。 物理デバイスで、非直線性は、アプリケーションが線形のデバイスを認識するように、デバイス ドライバーによって処理する必要があります。
 
-ユーザー モードで公開されているフィードバック関数の強制、 [IDirectInputEffectDriver](https://msdn.microsoft.com/library/windows/hardware/ff540050)フォース フィードバック効果ドライバー DLL によってインターフェイスを実装する必要があります。 これらの関数の詳細については、IDirectInputEffectDriver を参照してください。
+ユーザー モードで公開されているフィードバック関数の強制、 [IDirectInputEffectDriver](https://docs.microsoft.com/windows/desktop/api/dinputd/nn-dinputd-idirectinputeffectdriver)フォース フィードバック効果ドライバー DLL によってインターフェイスを実装する必要があります。 これらの関数の詳細については、IDirectInputEffectDriver を参照してください。
 
  
 

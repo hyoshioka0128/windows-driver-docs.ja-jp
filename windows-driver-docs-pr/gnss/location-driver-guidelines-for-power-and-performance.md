@@ -4,12 +4,12 @@ description: 次のセクションでは、場所は、ドライバーが電力�
 ms.assetid: 81B9A3A1-D273-48C8-A808-CDB1533A1B6A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf754176ec9cacb224eae7ccd8c883bda638cf9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c315186a98d2aab5f70a73c1fa30584811ceed4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371042"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363656"
 ---
 # <a name="location-driver-guidelines-for-power-and-performance"></a>電力とパフォーマンスに関する位置情報ドライバーのガイドライン
 
@@ -22,7 +22,7 @@ ms.locfileid: "63371042"
 
 接続されているクライアントの数が 0 の場合位置情報センサーは D3 可能であれば、最下位の可能な電力状態を入力する必要があります。 イベントは、クライアントが接続されていることを示します、センサーを低電力状態を終了し、データの取得します。
 
-場所のデバイスには、ラジオ、GPS の位置情報センサーなどが含まれている場合、ラジオの状態もに追跡しなければならないを使用して[無線管理](https://msdn.microsoft.com/library/windows/hardware/hh406615)します。 ドライバー開発者は、オプションの状態を設定するドライバーを使用した通信無線管理の実装を作成する必要があります。 ラジオの管理の実装と、ドライバーと通信する方法の例は、[センサー地理位置情報ドライバー サンプル](sensors-geolocation-driver-sample.md)します。
+場所のデバイスには、ラジオ、GPS の位置情報センサーなどが含まれている場合、ラジオの状態もに追跡しなければならないを使用して[無線管理](https://docs.microsoft.com/previous-versions/windows/hardware/radio/hh406615(v=vs.85))します。 ドライバー開発者は、オプションの状態を設定するドライバーを使用した通信無線管理の実装を作成する必要があります。 ラジオの管理の実装と、ドライバーと通信する方法の例は、[センサー地理位置情報ドライバー サンプル](sensors-geolocation-driver-sample.md)します。
 
 接続されているクライアントとオプションの状態を追跡する場合、位置情報センサーする必要がありますがない接続済みクライアント オプションが、いつでも最低の可能な電源状態、D3 可能であればを入力します。 次の図は、接続されているクライアント、ラジオの状態、および推奨される対応するデバイスの状態のステート マシンを示します。
 
@@ -49,7 +49,7 @@ ms.locfileid: "63371042"
 
 イベントをサブスクライブして、場所データを使用するアプリケーション、センサーを設定してデータ更新イベントの最大の頻度を要求する\_プロパティ\_現在\_レポート\_INTERVAL プロパティ。 電源を節約するために、ドライバーは、要求された最下位のレポート間隔よりもしないより頻繁にデータ レポートを送信する必要があります。
 
-各アプリケーションの値を追跡する方法の詳細については、次を参照してください。[データのフィルター処理](https://msdn.microsoft.com/library/windows/hardware/hh706201)します。 レポート間隔での追跡の例を検索することもできます、[センサー地理位置情報ドライバー サンプル](sensors-geolocation-driver-sample.md)WDK に含まれています。
+各アプリケーションの値を追跡する方法の詳細については、次を参照してください。[データのフィルター処理](https://docs.microsoft.com/windows-hardware/drivers/sensors/filtering-data)します。 レポート間隔での追跡の例を検索することもできます、[センサー地理位置情報ドライバー サンプル](sensors-geolocation-driver-sample.md)WDK に含まれています。
 
 ### <a name="tracking-desired-accuracy"></a>必要な正確性の追跡
 
@@ -65,7 +65,7 @@ ms.locfileid: "63371042"
 
 ### <a name="detecting-idle-states"></a>アイドル状態の検出
 
-ドライバーはする必要がありますがアイドル状態を検出し、低電力状態を入力します。 たとえば、GPS デバイスの場所に変化がない、保留中の I/O 要求がないかデータが使用できないときに、アイドル状態が発生します。 GPS または GNSS デバイスが USB 経由で実装されているオプションを選択される、サポートを中断します。 参照してください[をサポートしているアイドル状態の電源切断 UMDF ベースのドライバーで](https://msdn.microsoft.com/library/windows/hardware/ff561211.aspx)の詳細。
+ドライバーはする必要がありますがアイドル状態を検出し、低電力状態を入力します。 たとえば、GPS デバイスの場所に変化がない、保留中の I/O 要求がないかデータが使用できないときに、アイドル状態が発生します。 GPS または GNSS デバイスが USB 経由で実装されているオプションを選択される、サポートを中断します。 参照してください[をサポートしているアイドル状態の電源切断 UMDF ベースのドライバーで](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-idle-power-down-in-umdf-drivers)の詳細。
 
 ### <a name="position-injection-for-gps-and-gnss"></a>GPS と GNSS 位置の挿入
 
@@ -79,7 +79,7 @@ GNSS ドライバーは、位置を 15 秒以内センサー API から取得で
 
  
 
-**重要な**  をインスタンス化しないで[ **ILocation** ](https://msdn.microsoft.com/library/windows/desktop/dd317674)その他の場所のセンサーからデータを取得します。 センサー API を使用して、代わりに、([**ISensorManager**](https://msdn.microsoft.com/library/windows/desktop/dd318946))。
+**重要な**  をインスタンス化しないで[ **ILocation** ](https://docs.microsoft.com/windows/desktop/api/locationapi/nn-locationapi-ilocation)その他の場所のセンサーからデータを取得します。 センサー API を使用して、代わりに、([**ISensorManager**](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nn-sensorsapi-isensormanager))。
 
  
 
@@ -87,7 +87,7 @@ GNSS ドライバーは、位置を 15 秒以内センサー API から取得で
 
  
 
-三角測量センサーにアクセスするには、呼び出す[ **ISensorManager::GetSensorByType** ](https://msdn.microsoft.com/library/windows/desktop/dd318866)型センサーと\_型\_場所\_三角測量します。 Windows 8 に組み込まれている Windows 場所プロバイダーを含む、すべての三角測量センサーが返されます。 GPS ドライバーは、複数のセンサーに返される 0 個のセンサーから任意の場所で処理できる必要があります。 参照してください[センサー オブジェクトを取得する](https://msdn.microsoft.com/library/windows/desktop/dd318960)の使用の詳細については**GetSensorsByType**します。
+三角測量センサーにアクセスするには、呼び出す[ **ISensorManager::GetSensorByType** ](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensormanager-getsensorsbytype)型センサーと\_型\_場所\_三角測量します。 Windows 8 に組み込まれている Windows 場所プロバイダーを含む、すべての三角測量センサーが返されます。 GPS ドライバーは、複数のセンサーに返される 0 個のセンサーから任意の場所で処理できる必要があります。 参照してください[センサー オブジェクトを取得する](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-a-sensor)の使用の詳細については**GetSensorsByType**します。
 
 **注**  Windows の場所のプロバイダーが正確性や可用性の保証を提供していません。
 

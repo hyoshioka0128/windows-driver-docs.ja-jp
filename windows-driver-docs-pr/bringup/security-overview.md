@@ -4,12 +4,12 @@ description: Windows 10 Mobile のセキュリティについての詳細はこ�
 ms.assetid: 15783e59-f37b-4373-8604-d35c57eedfcc
 ms.date: 08/31/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a35de780c5165bdd4b336dc1e3e4d879394529
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4802f4cbc33ca5119d1910c8a583f1ea7d2bbb9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337521"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364505"
 ---
 # <a name="security"></a>セキュリティ
 
@@ -50,8 +50,8 @@ Microsoft Security Development Lifecycle (SDL) は、一連のベスト プラ�
 
 |ツール|情報|推奨される領域|
 |----|----|----|
-|[Microsoft SDL Threat Modeling Tool](https://www.microsoft.com/download/details.aspx?id=49168)|SDL Threat Modeling Tool は、設計者および開発者、システムの脅威モデルを作成し、潜在的なセキュリティの問題、システムの設計での脅威モデルを分析できます。 脅威のモデル化は、デザインが完了する前にデザイン時に最も有効です。 詳細については、次を参照してください。 [SDL 実習 7: 脅威のモデル化を使用して、](https://www.microsoft.com/sdl/process/design.aspx)します。|Driver (ドライバー)|
-|[FxCop](https://www.microsoft.com/SDL/adopt/tools.aspx)|FxCop では、静的アナライザーです。 マネージ コード アセンブリを分析し、可能なデザイン、ローカリゼーション、パフォーマンス、およびセキュリティの強化など、アセンブリに関する情報を報告します。|パートナーのアプリ|
+|[Microsoft SDL Threat Modeling Tool](https://www.microsoft.com/download/details.aspx?id=49168)|SDL Threat Modeling Tool は、設計者および開発者、システムの脅威モデルを作成し、潜在的なセキュリティの問題、システムの設計での脅威モデルを分析できます。 脅威のモデル化は、デザインが完了する前にデザイン時に最も有効です。 詳細については、次を参照してください。 [SDL 実習 7: 脅威のモデル化を使用して、](https://www.microsoft.com/sdl)します。|Driver (ドライバー)|
+|[FxCop](https://www.microsoft.com/sdl)|FxCop では、静的アナライザーです。 マネージ コード アセンブリを分析し、可能なデザイン、ローカリゼーション、パフォーマンス、およびセキュリティの強化など、アセンブリに関する情報を報告します。|パートナーのアプリ|
 |[FxCop コード分析から .NET コンパイラ プラットフォームのアナライザーへの移行します。](https://docs.microsoft.com/visualstudio/code-quality/fxcop-analyzers)|Visual Studio 2017 には、一連組み込みを入力すると、c# または Visual Basic のコードを分析する .NET コンパイラ プラットフォームのアナライザーにはが含まれています。 NuGet パッケージとして、Visual Studio 拡張機能として、またはプロジェクトごとにその他のアナライザーをインストールできます。 アナライザーは、コード スタイル、コードの品質と保守容易性、コードの設計、およびその他の問題を確認します。|マネージ コードでのパートナーのアプリ|
-|[BinSkim](https://www.microsoft.com/SDL/adopt/tools.aspx)|BinSkim は、Windows ポータブル実行可能ファイル (PE) ファイルのセキュリティと正確性をスキャンするバイナリの静的分析ツールです。  BinSkim によって実行される検証は、すべての Windows プラットフォームによって提供されるバイナリの軽減策を選択した PE ファイルを検証します。 ([ユーザー ガイド](https://github.com/Microsoft/binskim/blob/develop/docs/BinSkimUserGuide.docx))|ドライバーとパートナーのアプリ|
+|[BinSkim](https://www.microsoft.com/sdl)|BinSkim は、Windows ポータブル実行可能ファイル (PE) ファイルのセキュリティと正確性をスキャンするバイナリの静的分析ツールです。  BinSkim によって実行される検証は、すべての Windows プラットフォームによって提供されるバイナリの軽減策を選択した PE ファイルを検証します。 ([ユーザー ガイド](https://github.com/Microsoft/binskim/blob/develop/docs/BinSkimUserGuide.docx))|ドライバーとパートナーのアプリ|
 |[C/C++ のコード分析](https://docs.microsoft.com/visualstudio/code-quality/code-analysis-for-c-cpp-overview)|C/C++ 用のコード分析は、Visual Studio Team System Development Edition のインストールで提供される静的アナライザーまたは、コード障害を検出および修正するには、Visual Studio Team Suite と役立ちます。 一度にでは、ソース コードの 1 つの関数を plows し、C と C++ のコーディング パターンとプログラミング エラーを示す可能性のある不適切なコードの使用状況を検索します。|ドライバーとパートナーのアプリ|

@@ -19,12 +19,12 @@ api_type:
 - COM
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72c20fb8ab212c301cebc5263e8f962fc746601a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 523f1c29b974531d62984e36fc82e7db8544c2ab
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382079"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393110"
 ---
 # <a name="idebugadvanced2request-method"></a>IDebugAdvanced2::Request メソッド
 
@@ -69,7 +69,7 @@ HRESULT Request(
 </tr>
 <tr class="even">
 <td align="left"><p><a href="debug-request-target-exception-context.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_TARGET_EXCEPTION_CONTEXT&lt;/strong&gt;](debug-request-target-exception-context.md)"><strong>DEBUG_REQUEST_TARGET_EXCEPTION_CONTEXT</strong></a></p></td>
-<td align="left"><p>返す、<a href="https://msdn.microsoft.com/library/windows/hardware/ff554702#thread-context" data-raw-source="[thread context](https://msdn.microsoft.com/library/windows/hardware/ff554702#thread-context)">スレッド コンテキスト</a>ユーザー モードのミニダンプ ファイル ストアド イベント。</p></td>
+<td align="left"><p>返す、<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/scopes-and-symbol-groups#thread-context" data-raw-source="[thread context](https://docs.microsoft.com/windows-hardware/drivers/debugger/scopes-and-symbol-groups#thread-context)">スレッド コンテキスト</a>ユーザー モードのミニダンプ ファイル ストアド イベント。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="debug-request-target-exception-thread.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_TARGET_EXCEPTION_THREAD&lt;/strong&gt;](debug-request-target-exception-thread.md)"><strong>DEBUG_REQUEST_TARGET_EXCEPTION_THREAD</strong></a></p></td>
@@ -92,7 +92,7 @@ HRESULT Request(
 <td align="left"><p>現在、ターゲットで実行されている Windows のバージョンを返します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff541575" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_READ_USER_MINIDUMP_STREAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541575)"><strong>DEBUG_REQUEST_READ_USER_MINIDUMP_STREAM</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff541575(v=vs.85)" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_READ_USER_MINIDUMP_STREAM&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff541575(v=vs.85))"><strong>DEBUG_REQUEST_READ_USER_MINIDUMP_STREAM</strong></a></p></td>
 <td align="left"><p>ユーザー モードのミニダンプ ターゲットからストリームを読み取り。</p></td>
 </tr>
 <tr class="odd">
@@ -101,7 +101,7 @@ HRESULT Request(
 </tr>
 <tr class="even">
 <td align="left"><p><a href="debug-request-set-local-implicit-command-line.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE&lt;/strong&gt;](debug-request-set-local-implicit-command-line.md)"><strong>DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE</strong></a></p></td>
-<td align="left"><p>設定、<a href="https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine" data-raw-source="[debugger engine](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)">デバッガー エンジン</a>の暗黙的なコマンドライン。</p></td>
+<td align="left"><p>設定、<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine" data-raw-source="[debugger engine](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine)">デバッガー エンジン</a>の暗黙的なコマンドライン。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="debug-request-get-captured-event-code-offset.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET&lt;/strong&gt;](debug-request-get-captured-event-code-offset.md)"><strong>DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET</strong></a></p></td>
@@ -169,9 +169,9 @@ HRESULT Request(
 
  
 
-このメソッドは、エラー値を返すも可能性があります。 参照してください[**戻り値**](https://msdn.microsoft.com/library/windows/hardware/ff549771)の詳細。
+このメソッドは、エラー値を返すも可能性があります。 参照してください[**戻り値**](https://docs.microsoft.com/windows-hardware/drivers/debugger/hresult-values)の詳細。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -194,9 +194,9 @@ HRESULT Request(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**IDebugAdvanced2**](https://msdn.microsoft.com/library/windows/hardware/ff549803)
+[**IDebugAdvanced2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugadvanced2)
 
-[**IDebugAdvanced3**](https://msdn.microsoft.com/library/windows/hardware/ff549807)
+[**IDebugAdvanced3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugadvanced3)
 
 [**デバッグ\_要求\_ソース\_パス\_HAS\_ソース\_サーバー**](debug-request-source-path-has-source-server.md)
 
@@ -212,7 +212,7 @@ HRESULT Request(
 
 [**デバッグ\_要求\_取得\_WIN32\_メジャー\_マイナー\_バージョン**](debug-request-get-win32-major-minor-versions.md)
 
-[**デバッグ\_要求\_読み取り\_ユーザー\_ミニダンプ\_ストリーム**](https://msdn.microsoft.com/library/windows/hardware/ff541575)
+[**デバッグ\_要求\_読み取り\_ユーザー\_ミニダンプ\_ストリーム**](https://docs.microsoft.com/previous-versions/ff541575(v=vs.85))
 
 [**デバッグ\_要求\_ターゲット\_できます\_デタッチ**](debug-request-target-can-detach.md)
 

@@ -7,12 +7,12 @@ keywords:
 - OID_WDI_SET_TCP_OFFLOAD_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 586ca294c072473e3fb62e85829e19893999f985
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5291629c4436bc405a9ae9cfaba4ea1d1274b3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348512"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386529"
 ---
 # <a name="oidwdisettcpoffloadparameters"></a>OID\_WDI\_設定\_TCP\_オフロード\_パラメーター
 
@@ -27,14 +27,14 @@ OID\_WDI\_設定\_TCP\_オフロード\_パラメーターからに送信され�
 
 このコマンドが送信される場合などによって必要があるパフォーマンスの問題のためのオフロードを無効にします。
 
-下位の edge ドライバー (LE) の内容を使用する必要があります[ **WDI\_TLV\_TCP\_設定\_オフロード\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/dn898071)を更新する、現在 TCP オフロード機能を報告します。 LE、更新した後では、現在のタスク オフロード機能を報告する必要があります[NDIS\_状態\_WDI\_INDICATION\_タスク\_オフロード\_現在\_CONFIG](ndis-status-wdi-indication-task-offload-current-config.md)します。 この状態を示す値により、新しい機能の情報ですべての上位のプロトコルのドライバーが更新されるようになります。
+下位の edge ドライバー (LE) の内容を使用する必要があります[ **WDI\_TLV\_TCP\_設定\_オフロード\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-set-offload-parameters)を更新する、現在 TCP オフロード機能を報告します。 LE、更新した後では、現在のタスク オフロード機能を報告する必要があります[NDIS\_状態\_WDI\_INDICATION\_タスク\_オフロード\_現在\_CONFIG](ndis-status-wdi-indication-task-offload-current-config.md)します。 この状態を示す値により、新しい機能の情報ですべての上位のプロトコルのドライバーが更新されるようになります。
 
 ## <a name="set-property-parameters"></a>プロパティ パラメーターの設定
 
 
 | TLV                                                                                        | 許可されている複数の TLV インスタンス | 省略可能 | 説明                           |
 |--------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------|
-| [**WDI\_TLV\_TCP\_設定\_オフロード\_パラメーター**](https://msdn.microsoft.com/library/windows/hardware/dn898071) |                                |          | TCP では、パラメーターを設定できるをオフロードします。 |
+| [**WDI\_TLV\_TCP\_設定\_オフロード\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-set-offload-parameters) |                                |          | TCP では、パラメーターを設定できるをオフロードします。 |
 
  
 

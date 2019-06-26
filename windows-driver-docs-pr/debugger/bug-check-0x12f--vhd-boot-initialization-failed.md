@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c246608a047249419203a3e7275f2dbba41c4895
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32c37a638a59a3a7eacf41d3e8e46c9b2180cf6a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351346"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367843"
 ---
 # <a name="bug-check-0x12f-vhdbootinitializationfailed"></a>バグ チェック 0x12F:VHD\_ブート\_初期化\_失敗
 
@@ -26,7 +26,7 @@ ms.locfileid: "63351346"
 VHD\_ブート\_初期化\_失敗のバグ チェックが 0x0000012F の値を持ちます。 これは、VHD から起動を試みているときに初期化エラーが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="vhdbootinitializationfailed-parameters"></a>VHD\_ブート\_初期化\_FAILED パラメーター

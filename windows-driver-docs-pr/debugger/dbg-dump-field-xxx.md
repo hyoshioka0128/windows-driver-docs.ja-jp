@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 801f794c62a429485a550f72dd53ec9c9f86caa1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf0da05af0992a9bf3e71a20d095b8c161f948fa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376116"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366996"
 ---
 # <a name="dbgdumpfieldxxx"></a>DBG\_ダンプ\_フィールド\_XXX
 
@@ -27,7 +27,7 @@ ms.locfileid: "63376116"
 ## <span id="ddk_dbg_dump_xxx_dbx"></span><span id="DDK_DBG_DUMP_XXX_DBX"></span>
 
 
-DBG\_ダンプ\_フィールド\_*XXX*ビット フラグを使って、**方法は限られて**のメンバー、 [**フィールド\_情報** ](https://msdn.microsoft.com/library/windows/hardware/ff545316)の動作を制御する構造体、 [ **IG\_ダンプ\_シンボル\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff550906) [ **Ioctl** ](https://msdn.microsoft.com/library/windows/hardware/ff551084)操作。
+DBG\_ダンプ\_フィールド\_*XXX*ビット フラグを使って、**方法は限られて**のメンバー、 [**フィールド\_情報** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_field_info)の動作を制御する構造体、 [ **IG\_ダンプ\_シンボル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param) [ **Ioctl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)操作。
 
 次のフラグは、存在することができます。
 
@@ -110,11 +110,11 @@ DBG\_ダンプ\_フィールド\_*XXX*ビット フラグを使って、**方法
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**IG\_ダンプ\_シンボル\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff550906)
+[**IG\_ダンプ\_シンボル\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_sym_dump_param)
 
-[**Ioctl**](https://msdn.microsoft.com/library/windows/hardware/ff551084)
+[**Ioctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/nc-wdbgexts-pwindbg_ioctl_routine)
 
-[**フィールド\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff545316)
+[**フィールド\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_field_info)
 
  
 

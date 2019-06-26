@@ -7,12 +7,12 @@ keywords:
 - ARM64
 ms.date: 07/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c22cbe5a780f1353c15b9c5dabde6e83e2d262dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 630230a2a8fc7de2ae616ef7ca9e541812257e86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377192"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366934"
 ---
 # <a name="debugging-on-arm64"></a>ARM64 でのデバッグ
 
@@ -55,9 +55,9 @@ X86 をデバッグするときにアプリがユーザー モードに関係な
 - 内部的に、エミュレーターは、データ不整合、無効な命令、ページで I/O エラーの例外が生成され、生成するものを処理します。 WinDbg を使用しているときに、これらの例外として構成することを検討してください*は無視されます*デバッグ、イベントをフィルター処理しています. メニュー項目。  
 - ARM64 WinDbg を使用して、ユーザー モードで、x86 & CHPE 関数の境界の間でシングル ステップ実行はサポートされません。 この問題を回避するには、対象のコードにブレークポイントを設定します。 
 
-ARM64 および WOW64 の全般的な情報を参照してください。[を実行している 32 ビット アプリケーション](https://msdn.microsoft.com/library/windows/desktop/aa384249.aspx)64 ビット Windows プログラミング ガイド。 
+ARM64 および WOW64 の全般的な情報を参照してください。[を実行している 32 ビット アプリケーション](https://docs.microsoft.com/windows/desktop/WinProg64/running-32-bit-applications)64 ビット Windows プログラミング ガイド。 
 
-WOW64 の下で実行されているアプリケーションをデバッグする方法の詳細については、次を参照してください。[デバッグ WOW64](https://msdn.microsoft.com/library/windows/desktop/aa384163.aspx)します。
+WOW64 の下で実行されているアプリケーションをデバッグする方法の詳細については、次を参照してください。[デバッグ WOW64](https://docs.microsoft.com/windows/desktop/WinProg64/debugging-wow64)します。
 
 
 

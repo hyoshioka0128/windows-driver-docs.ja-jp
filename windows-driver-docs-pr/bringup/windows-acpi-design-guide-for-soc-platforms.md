@@ -4,17 +4,17 @@ description: ACPI 5.0 では、コネクテッド スタンバイ電源モデル
 ms.assetid: 661BFB7E-D190-450D-A466-7D6AD0EAAAB0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6479aa3ec938df80a873bac6f9dbad01f2f475a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35296f6e61428f50d35688354d817f0f5ce44ee0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337325"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364483"
 ---
 # <a name="windows-acpi-design-guide-for-soc-platforms"></a>SoC プラットフォーム向け Windows ACPI 設計ガイド
 
 
-Advanced Configuration and Power Interface Specification, Revision 5.0 ([ACPI 5.0 仕様](https://www.uefi.org/specifications)) では、システム オン チップ (SoC) IC をベースとし、コネクト スタンバイ電源モデルを実装する省電力のモバイル デバイスをサポートする新しい機能のセットが定義されています。 Windows 8 および Windows 8.1 以降、Windows は、SoC ベースのプラットフォームの ACPI 5.0 の新機能をサポートします。
+Advanced Configuration and Power Interface Specification, Revision 5.0 ([ACPI 5.0 仕様](https://uefi.org/specifications)) では、システム オン チップ (SoC) IC をベースとし、コネクト スタンバイ電源モデルを実装する省電力のモバイル デバイスをサポートする新しい機能のセットが定義されています。 Windows 8 および Windows 8.1 以降、Windows は、SoC ベースのプラットフォームの ACPI 5.0 の新機能をサポートします。
 
 このセクションには、ACPI 5.0 仕様で新しい機能をサポートする Windows Pc およびデバイスを実装するためのガイドラインが含まれています。 ファームウェアの開発者およびシステム設計者は、そのプラットフォームで Windows を正しく実行するかどうかを確認する次のガイドラインを使用できます。 Windows のすべてのファームウェア要件の一覧は、のドキュメントを参照してください、 [Windows 認定プログラム](https://go.microsoft.com/fwlink/p/?linkid=227314)します。
 
@@ -35,7 +35,7 @@ Advanced Configuration and Power Interface Specification, Revision 5.0 ([ACPI 5.
 <tbody>
 <tr class="odd">
 <td><p><a href="overview-of-windows-support-for-acpi-5-0.md" data-raw-source="[Overview of Windows support for ACPI 5.0](overview-of-windows-support-for-acpi-5-0.md)">ACPI 5.0 に対する Windows サポートの概要</a></p></td>
-<td><p><a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 仕様</a>以降を実行する Windows 8、SoC ベースのモバイル プラットフォームのサポートを有効には、Windows の以前のバージョンで導入された多くの便利な機能をサポートするために続行されます。 この設計ガイドでは、ACPI 5.0 の SoC ベースのプラットフォームに個別に適用する部分を実装者に指示し、これらのプラットフォームで Windows を実行する ACPI の SoC 固有の機能を実装するためのベスト プラクティスについて説明します。</p></td>
+<td><p><a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 仕様</a>以降を実行する Windows 8、SoC ベースのモバイル プラットフォームのサポートを有効には、Windows の以前のバージョンで導入された多くの便利な機能をサポートするために続行されます。 この設計ガイドでは、ACPI 5.0 の SoC ベースのプラットフォームに個別に適用する部分を実装者に指示し、これらのプラットフォームで Windows を実行する ACPI の SoC 固有の機能を実装するためのベスト プラクティスについて説明します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="acpi-system-description-tables.md" data-raw-source="[ACPI system description tables](acpi-system-description-tables.md)">説明の ACPI システム テーブル</a></p></td>
@@ -43,7 +43,7 @@ Advanced Configuration and Power Interface Specification, Revision 5.0 ([ACPI 5.
 </tr>
 <tr class="odd">
 <td><p><a href="device-management-namespace-objects.md" data-raw-source="[Device management namespace objects](device-management-namespace-objects.md)">デバイス管理の名前空間のオブジェクト</a></p></td>
-<td><p><a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 仕様</a>いくつかの種類のデバイスを管理するために使用する名前空間オブジェクトを定義します。 たとえば、デバイスの id オブジェクトには、子デバイスのハードウェアの列挙をサポートしていない、I2C などのバスに接続するデバイスの id 情報が含まれます。 その他の種類の名前空間のオブジェクトでは、システム リソースを指定、デバイス依存関係を記述、およびデバイスを無効にすることができますを示すことができます。</p></td>
+<td><p><a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 仕様</a>いくつかの種類のデバイスを管理するために使用する名前空間オブジェクトを定義します。 たとえば、デバイスの id オブジェクトには、子デバイスのハードウェアの列挙をサポートしていない、I2C などのバスに接続するデバイスの id 情報が含まれます。 その他の種類の名前空間のオブジェクトでは、システム リソースを指定、デバイス依存関係を記述、およびデバイスを無効にすることができますを示すことができます。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="general-purpose-i-o--gpio-.md" data-raw-source="[General-purpose I/O (GPIO)](general-purpose-i-o--gpio-.md)">汎用入出力 (GPIO)</a></p></td>
@@ -55,11 +55,11 @@ Advanced Configuration and Power Interface Specification, Revision 5.0 ([ACPI 5.
 </tr>
 <tr class="even">
 <td><p><a href="device-power-management.md" data-raw-source="[Device power management](device-power-management.md)">デバイスの電源管理</a></p></td>
-<td><p><a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 仕様</a>デバイスのデバイスの電源の情報を指定する名前空間のオブジェクトのセットを定義します。 たとえば、オブジェクトの 1 つのセットは、各サポートされているデバイスの電源状態のデバイスで必要な電源リソースを指定できます。 別のオブジェクト型では、ハードウェアのイベントに応答低電力状態から復帰するデバイスの機能を記述できます。</p></td>
+<td><p><a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 仕様</a>デバイスのデバイスの電源の情報を指定する名前空間のオブジェクトのセットを定義します。 たとえば、オブジェクトの 1 つのセットは、各サポートされているデバイスの電源状態のデバイスで必要な電源リソースを指定できます。 別のオブジェクト型では、ハードウェアのイベントに応答低電力状態から復帰するデバイスの機能を記述できます。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="acpi-defined-devices.md" data-raw-source="[ACPI-defined devices](acpi-defined-devices.md)">デバイスを ACPI 定義</a></p></td>
-<td><p><a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 仕様</a>数を表し、一般的なプラットフォーム機能を制御するデバイスの種類を定義します。 たとえば、ACPI は、電源ボタンやスリープ ボタンの場合は、システムの評価指標を定義します。 SoC ベースのプラットフォームでは、Windows は、この記事で説明されている ACPI 定義されているデバイスをサポートする組み込みのドライバーを提供します。</p></td>
+<td><p><a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 仕様</a>数を表し、一般的なプラットフォーム機能を制御するデバイスの種類を定義します。 たとえば、ACPI は、電源ボタンやスリープ ボタンの場合は、システムの評価指標を定義します。 SoC ベースのプラットフォームでは、Windows は、この記事で説明されている ACPI 定義されているデバイスをサポートする組み込みのドライバーを提供します。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="other-acpi-namespace-objects.md" data-raw-source="[Other ACPI namespace objects](other-acpi-namespace-objects.md)">その他の ACPI 名前空間のオブジェクト</a></p></td>

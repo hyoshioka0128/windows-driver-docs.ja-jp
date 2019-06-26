@@ -16,12 +16,12 @@ keywords:
 - TMF ファイル WDK、オプション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de4318021c115d9e983f4339eb94f50824fb28e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 224175f90d526d5d54d7632334809f0c3b80f4d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369625"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363813"
 ---
 # <a name="traceview-concepts"></a>TraceView の概念
 
@@ -61,7 +61,7 @@ Traceview で、*ワークスペース*一連のトレース セッションの�
 
 トレース セッションを作成するにはトレース プロバイダーを識別して、プロバイダーが生成されるバイナリのトレース メッセージの書式設定命令を検索します。 このいずれかの方法は、次を行うことができます。
 
-- プロバイダーの行をソース コードの実行可能バイナリを検索します。 Traceview で有効にして、書式設定に必要なすべての情報を抽出できます[TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636)と ETW イベントを指します。 検索を試みます、 [PDB シンボル ファイル](pdb-symbol-files.md)を有効にする[WPP ソフトウェア トレース](wpp-software-tracing.md)プロバイダー。
+- プロバイダーの行をソース コードの実行可能バイナリを検索します。 Traceview で有効にして、書式設定に必要なすべての情報を抽出できます[TraceLogging](https://docs.microsoft.com/windows/desktop/tracelogging/trace-logging-portal)と ETW イベントを指します。 検索を試みます、 [PDB シンボル ファイル](pdb-symbol-files.md)を有効にする[WPP ソフトウェア トレース](wpp-software-tracing.md)プロバイダー。
 
 - 検索、 [PDB シンボル ファイル](pdb-symbol-files.md)を含むソース コードの[WPP ソフトウェア トレース](wpp-software-tracing.md)プロバイダー。 Traceview では、pdb ファイルから抽出できるファイルのすべてのプロバイダーを識別し、トレース メッセージの書式を設定する必要がある情報。
 
@@ -69,7 +69,7 @@ Traceview で、*ワークスペース*一連のトレース セッションの�
 
 - 入力、[コントロール GUID](control-guid.md)プロバイダーの TMF ファイルまたは TMF ファイルが格納されるディレクトリへのパスを指定します。
 
-    アスタリスクの前にプロバイダー名を入力するかどうか (例: ```*SampleProvider```)、traceview では標準アルゴリズムを使用して GUID に名前を自動的に起動します。 一部のプロバイダーにプロバイダーを使用して記述など、多くが、この標準に従う[します。NET の EventSource](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.tracing.eventsource)、操作を行います。
+    アスタリスクの前にプロバイダー名を入力するかどうか (例: ```*SampleProvider```)、traceview では標準アルゴリズムを使用して GUID に名前を自動的に起動します。 一部のプロバイダーにプロバイダーを使用して記述など、多くが、この標準に従う[します。NET の EventSource](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource?view=netframework-4.8)、操作を行います。
 
 - 選択、[登録済みのプロバイダー](registered-provider.md)一覧からその traceview でアセンブルし、TMF ファイルまたは TMF ファイルが格納されるディレクトリのパスを指定します。
 

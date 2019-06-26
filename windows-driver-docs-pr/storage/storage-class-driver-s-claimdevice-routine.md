@@ -9,12 +9,12 @@ keywords:
 - WDk の記憶域の構成情報
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 604ef785fe4feeeb625ddbd3cbfce412749789d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec72bdf62e6b2af47e79d227969c2c5ab70614ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339038"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368220"
 ---
 # <a name="storage-class-drivers-claimdevice-routine"></a>記憶域クラス ドライバーの ClaimDevice ルーチン
 
@@ -24,9 +24,9 @@ ms.locfileid: "63339038"
 
 *ClaimDevice* 、ストレージ デバイスを要求するには、ルーチンが通常から呼び出される、[記憶域クラス ドライバー AddDevice ルーチン](storage-class-driver-s-adddevice-routine.md)します。
 
-ストレージ デバイスを要求するには、クラス ドライバーでは、呼び出すことでデバイス オブジェクトへの参照を取得[ **IoGetAttachedDeviceReference** ](https://msdn.microsoft.com/library/windows/hardware/ff549145) PDO クラス ドライバーに渡されると、 *AddDevice*呼び出すには、いずれかを呼び出します内部*ClaimDevice*ルーチンからその*AddDevice*ルーチンまたは同じ機能のインラインを実装します。 A *ClaimDevice* 、SRB のセットアップ ルーチン、**関数**値 SRB\_関数\_要求\_デバイスと、クラスによって返されるデバイス オブジェクトに送信しますドライバーの呼び出しを**IoGetAttachedDeviceReference**します。
+ストレージ デバイスを要求するには、クラス ドライバーでは、呼び出すことでデバイス オブジェクトへの参照を取得[ **IoGetAttachedDeviceReference** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference) PDO クラス ドライバーに渡されると、 *AddDevice*呼び出すには、いずれかを呼び出します内部*ClaimDevice*ルーチンからその*AddDevice*ルーチンまたは同じ機能のインラインを実装します。 A *ClaimDevice* 、SRB のセットアップ ルーチン、**関数**値 SRB\_関数\_要求\_デバイスと、クラスによって返されるデバイス オブジェクトに送信しますドライバーの呼び出しを**IoGetAttachedDeviceReference**します。
 
-*ClaimDevice*ルーチンの割り当てと IRP [ **IoBuildDeviceIoControlRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548318)、I/O 制御コード IOCTL でポート ドライバーの I/O スタックの場所の設定\_SCSI\_EXECUTE\_で SRB へのポインターと NONE **Parameters.Scsi.Srb**します。 *ClaimDevice*にイベント オブジェクトを設定する必要がありますも**KeInitializeEvent** IRP の完了を待機できるようにします。 次に、使用してドライバーを次の下位に IRP を送信[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)します。
+*ClaimDevice*ルーチンの割り当てと IRP [ **IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)、I/O 制御コード IOCTL でポート ドライバーの I/O スタックの場所の設定\_SCSI\_EXECUTE\_で SRB へのポインターと NONE **Parameters.Scsi.Srb**します。 *ClaimDevice*にイベント オブジェクトを設定する必要がありますも**KeInitializeEvent** IRP の完了を待機できるようにします。 次に、使用してドライバーを次の下位に IRP を送信[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
 
 IRP が完了したら、 *ClaimDevice*によって返されるデバイス オブジェクトへの参照を解放する必要があります**IoGetAttachedDeviceReference**します。
 

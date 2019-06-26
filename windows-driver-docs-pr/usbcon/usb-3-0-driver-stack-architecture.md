@@ -3,12 +3,12 @@ Description: このトピックでは、ユニバーサル シリアル バス (
 title: Windows の USB ホスト側ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1389627291b454441dcbd5deeffbe60f6eb0675f
-ms.sourcegitcommit: 2fcfb772bb7f5ee565c9512a79444f57d58de9e3
+ms.openlocfilehash: f08ec897a7632e230616d7b054c470b2fb4d929a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213094"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368784"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows の USB ホスト側ドライバー
 
@@ -121,10 +121,10 @@ USB クライアント ドライバーは、ユーザー モードまたはカ�
 
 -   Winusb.dll
 
-    Winusb.dll が公開しているユーザー モード DLL [WinUSB functions](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb) Winusb.sys を通信するためのカーネル モードでデバイスの機能のドライバーとして読み込まれます。 アプリケーションでは、これらの関数を使用するデバイスを構成して、デバイスに関する情報を取得、I/O 操作を実行します。 これらの関数の使用方法の詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
+    Winusb.dll が公開しているユーザー モード DLL [WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) Winusb.sys を通信するためのカーネル モードでデバイスの機能のドライバーとして読み込まれます。 アプリケーションでは、これらの関数を使用するデバイスを構成して、デバイスに関する情報を取得、I/O 操作を実行します。 これらの関数の使用方法の詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
 
 ## <a name="related-topics"></a>関連トピック
-[ユニバーサル シリアル バス (USB) ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[ユニバーサル シリアル バス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/)  
 [USB ドライバー開発ガイド](usb-driver-development-guide.md)  
 
 

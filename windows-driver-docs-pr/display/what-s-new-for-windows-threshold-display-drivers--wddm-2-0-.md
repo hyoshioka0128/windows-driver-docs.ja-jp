@@ -5,12 +5,12 @@ ms.assetid: 619175D4-98DA-4B17-8F6F-71B13A31374D
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18, 19H1
-ms.openlocfilehash: 0fe540b7ecd20887032f968ac2efa4f234f30f59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f90dfdd233b62da43af50797b1ee82b9c9e68ed8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391142"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386243"
 ---
 # <a name="whats-new-for-windows-10-display-drivers-wddm-20-and-later"></a>Windows 10 のディスプレイ ドライバー (WDDM 2.0 以降) の新機能については
 
@@ -34,7 +34,7 @@ ms.locfileid: "63391142"
 
 Scanout は、VBlank、イメージの下に上から縦方向にスキャン後、間もなく開始可能性があり、[次へ] の VBlank の少し前に完了します。 これは常にピクセルのクロックのタイミングと、テクスチャ; 内のデータのレイアウトに応じて、ケース特に実際に圧縮を使用できる場合。 
 
-分離し、理解 (可能な) 場合に、scanout する前に発生する変換は、フロント バッファーのレンダリングを有効にするは、新しい Ddi が追加されました。 参照してください[D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags)と[PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)します。
+分離し、理解 (可能な) 場合に、scanout する前に発生する変換は、フロント バッファーのレンダリングを有効にするは、新しい Ddi が追加されました。 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) と [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation) を参照してください。
 
 ### <a name="variable-rate-shading"></a>可変レートの網掛け
 
@@ -67,11 +67,11 @@ Scanout は、VBlank、イメージの下に上から縦方向にスキャン後
 * 次の 3 つのソースからの網掛けの料金は、コンバイナーのセットを使用して結合されます。
 * 画面領域の画像タイルのサイズは 16 x 16 以下です。 アプリから要求レートを網掛け正確に (時間およびその他の再構築のフィルターの精度) で配信することが保証されます。 
 
-* SV_ShadingRate PS の入力がサポートされています。 あたり富んだ頂点率もここでは、プリミティブ単位のレートとして呼ばれるは、1 つのビューポートが使用され、SV_ViewportIndex に書き込まれない場合にのみ有効です。
+* SV_ShadingRate PS 入力がサポートされています。 あたり富んだ頂点率もここでは、プリミティブ単位のレートとして呼ばれるは、1 つのビューポートが使用され、SV_ViewportIndex に書き込まれない場合にのみ有効です。
 
 * SupportsPerVertexShadingRateWithMultipleViewports キャップが true でマークされている場合、1 つ以上のビューポートとあたり富んだ頂点の割合、プリミティブ単位の料金とも呼ばを使用できます。 さらに、その場合は、ことができますに SV_ViewportIndex が書き込まれたとき。
 
-参照してください[PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062)と[D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)します。
+[PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) と [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062) を参照してください。
 
 ### <a name="collect-diagnostic-info"></a>診断情報を収集します。
 
@@ -79,15 +79,15 @@ Scanout は、VBlank、イメージの下に上から縦方向にスキャン後
 
 新しい DDI には、ドライバーが読み込まれる、いつでも情報を収集する OS を許可する必要があります。 現在、OS が (タイムアウト検出と回復) TDR のミニポート ドライバーのプライベート データのクエリによって実装される DxgkDdiCollectDebugInfo 関数を使用してケースに関連します。 新しい DDI は、さまざまな理由のデータの収集に使用されます。 要求されている種類の情報を提供する診断が必要なときに、OS はこの DDI を呼び出します。 ドライバーは、問題を調査し、OS に提出する重要なすべての個人情報を収集する必要があります。 DxgkDdiCollectDebugInfo は最終的に非推奨し、DxgkDdiCollectDiagnosticInfo に置き換えられます。
 
-参照してください[DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)します。
+[DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo) を参照してください。
 
 ### <a name="background-processing"></a>バック グラウンド処理
 
-バック グラウンド処理は、ユーザーを表現するモード ドライバー許可し、動作、およびランタイムのスレッドを必要なコントロールまたはそのモニターにします。 ユーザー モード ドライバーはバック グラウンド スレッドをスピンアップし、可能な優先度を低くスレッドに割り当てるし、これらのスレッドがクリティカル パスのスレッド、成功した場合と通常を中断しないようにする NT スケジューラに依存します。
+バック グラウンド処理は、ユーザーを表現するモード ドライバー許可し、動作、およびランタイムのスレッドを必要なコントロールまたはそのモニターにします。 ユーザー モード ドライバーでは、バックグラウンド スレッドをスピンアップし、可能な限り低い優先度を割り当てます。また、これらのスレッドによってクリティカル パス スレッドが中断せず、全般的には成功するように NT スケジューラを利用します。
 
 Api は、どのようなバック グラウンド処理量がのワークロードに対する適切なと、その作業を実行するタイミングを調整するアプリを許可します。
 
-参照してください[PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)します。
+[PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062) を参照してください。
 
 ### <a name="driver-hot-update"></a>ホット アップデートのドライバー
 
@@ -118,8 +118,8 @@ Api は、どのようなバック グラウンド処理量がのワークロー
 
 Raytracing に関する詳細についてを参照してください。
 
-* [Microsoft DirectX Raytracing の発表](https://blogs.msdn.microsoft.com/directx/2018/03/19/announcing-microsoft-directx-raytracing/)
-* [DirectX Raytracing と Windows 10 年 2018年 10 月の更新プログラム](https://blogs.msdn.microsoft.com/directx/2018/10/02/directx-raytracing-and-the-windows-10-october-2018-update/)
+* [Microsoft DirectX Raytracing の発表](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)
+* [DirectX Raytracing と Windows 10 年 2018年 10 月の更新プログラム](https://devblogs.microsoft.com/directx/directx-raytracing-and-the-windows-10-october-2018-update/)
 * [DirectX のフォーラム](https://forums.directxtech.com/index.php?topic=5985.0)
 
 ### <a name="display-synchronization"></a>同期を表示します。
@@ -167,7 +167,7 @@ WDDM 2.0 には、メモリ管理の更新プログラムが含まれていま�
 
 ### <a name="driver-residency"></a>ドライバーの保存場所
 
--   ビデオ メモリ マネージャーは、ドライバーをコマンド バッファーを送信する前に、割り当てがメモリに常駐していることを確認します。 この機能を容易に新しいユーザー モード ドライバーのデバイス ドライバー インターフェイス (Ddi) が追加されました ([*MakeResident*](https://msdn.microsoft.com/library/windows/hardware/dn906357)、 [ *TrimResidency* ](https://msdn.microsoft.com/library/windows/hardware/dn906364)、 [*削除*](https://msdn.microsoft.com/library/windows/hardware/dn906355))。
+-   ビデオ メモリ マネージャーは、ドライバーをコマンド バッファーを送信する前に、割り当てがメモリに常駐していることを確認します。 この機能を容易に新しいユーザー モード ドライバーのデバイス ドライバー インターフェイス (Ddi) が追加されました ([*MakeResident*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)、 [ *TrimResidency* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_trimresidencyset)、 [*削除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_evictcb))。
 -   割り当てと修正プログラムの場所の一覧が廃止されるため、新しいモデルで必要はありません。
 -   ユーザー モード ドライバーは割り当ての追跡を処理するようになりましたし、これを有効にするいくつかの新しい Ddi が追加されました。
 -   ドライバーはメモリの予算を指定して、メモリ負荷の下での適応が必要です。 これは、アプリケーション プラットフォーム間で機能するユニバーサル Windows ドライバーを許可します。

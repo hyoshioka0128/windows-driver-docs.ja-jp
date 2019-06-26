@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eba001b6082665fef52c90da6f3cacb5bdf7eea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3de776cda0fe68834b1e48279fb9fe76e70ee501
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362213"
 ---
 # <a name="bug-check-0x147-abnormalresetdetected"></a>バグ チェック 0x147:異常な\_リセット\_検出
 
@@ -26,7 +26,7 @@ ms.locfileid: "63360442"
 異常な\_リセット\_検出されたバグ チェックが 0x00000147 の値を持ちます。 これは、Windows に異常のリセットが生じたことを示します。 コンテキストまたは例外のレコードが保存されないと、バグチェック コールバックは呼び出されませんでした。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="abnormalresetdetected-parameters"></a>異常な\_リセット\_検出パラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b678a84670e4c36dee6225f6bc59fecb868dde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2fb45e6148065a8b4056a4f3108c439bc9d2ee8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352456"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367662"
 ---
 # <a name="bug-check-0x191-pfdetectedcorruption"></a>バグ チェック 0x191:PF\_検出\_破損
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352456"
 PF\_検出\_破損バグ チェックが 0x00000191 の値を持ちます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="pfdetectedcorruption-parameters"></a>PF\_検出\_破損パラメーター

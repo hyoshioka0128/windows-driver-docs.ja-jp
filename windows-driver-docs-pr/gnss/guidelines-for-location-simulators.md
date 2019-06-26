@@ -4,17 +4,17 @@ description: このセクションには、場所シミュレーターのドラ�
 ms.assetid: 4AA6C3EE-0150-45A8-ACC2-D0267591D33D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a0ed8722790754db0a02e48cc3509ef9f0d774
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 625294038d7a74faca4a05cb41e236cbf1e64bc3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363669"
 ---
 # <a name="guidance-for-location-simulators"></a>シミュレーターの場所に関するガイダンス
 
 
-Microsoft Visual Studio 2012 の提供、[位置特定シミュレーター](https://msdn.microsoft.com/library/windows/apps/hh441475.aspx#bkmk-set-the-simulated-geo-location-of-the-device)を作成する場所シミュレーター ドライバーと共にします。 このセクションには、場所シミュレーターのドライバーを実装するためのガイダンスが含まれています。 Visual Studio 2017 以降では、場所シミュレーターの機能が不要になった存在する、センサー ドライバーをシミュレートすることはできませんので注意してください。
+Microsoft Visual Studio 2012 の提供、[位置特定シミュレーター](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator?view=vs-2015#bkmk-set-the-simulated-geo-location-of-the-device)を作成する場所シミュレーター ドライバーと共にします。 このセクションには、場所シミュレーターのドライバーを実装するためのガイダンスが含まれています。 Visual Studio 2017 以降では、場所シミュレーターの機能が不要になった存在する、センサー ドライバーをシミュレートすることはできませんので注意してください。
 
 ## <a name="configure-the-simulator"></a>シミュレーターを構成します。
 
@@ -33,8 +33,8 @@ Microsoft Visual Studio 2012 の提供、[位置特定シミュレーター](htt
 -   場合は、シミュレーターのドライバーをシミュレーターで実行されているデータが含まれない、場所シミュレーターで他のソースからデータが使用されます。
 
 ## <a name="related-topics"></a>関連トピック
-[シミュレーターで UWP アプリの実行](https://msdn.microsoft.com/library/windows/apps/hh441475.aspx)  
-[デバイスのシミュレートされる地理的位置情報を設定します。](https://msdn.microsoft.com/library/windows/apps/hh441475.aspx#bkmk-set-the-simulated-geo-location-of-the-device)  
+[シミュレーターで UWP アプリの実行](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator?view=vs-2015)  
+[デバイスのシミュレートされる地理的位置情報を設定します。](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator?view=vs-2015#bkmk-set-the-simulated-geo-location-of-the-device)  
 
 
 

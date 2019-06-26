@@ -9,12 +9,12 @@ keywords:
 - WDK デバイス インストール ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e87958f2aa78b5161a5d710a5e81286c5bfeea46
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0be3c6d259c8e37c586e651039cf977b9e9ac212
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357861"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387131"
 ---
 # <a name="device-installation-files"></a>デバイスのインストール ファイル
 
@@ -32,7 +32,7 @@ INF ファイルには、デバイスのサポートをインストールする 
 <a href="" id="one-or-more-drivers-for-the-device"></a>デバイスの 1 つまたは複数のドライバー  
 A。*sys*ファイルは、ドライバーのイメージ ファイル。 Windows には、このファイルのコピー、 *%systemroot%\\system32\\ドライバー*ディレクトリ、ドライバーがインストールされている場合。 ドライバーは、ほとんどのデバイスの必要があります。
 
-詳細については、次を参照してください。[ドライバー モデルを選択する](https://msdn.microsoft.com/library/windows/hardware/ff554652)します。
+詳細については、次を参照してください。[ドライバー モデルを選択する](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)します。
 
 <a href="" id="digital-signatures-for-the-driver-package--a-driver-catalog-file-"></a>デジタル署名、[ドライバー パッケージ](driver-packages.md)(ドライバー カタログ ファイル)  
 ドライバー カタログのファイルには、デジタル署名が含まれています。 すべてのドライバー パッケージを署名する必要があります。

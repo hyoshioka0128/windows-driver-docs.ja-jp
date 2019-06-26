@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f946a89a779c1ce344f4091d2df52494b3564c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d57373ebf44c4b95c91323b053f5aa997758b9ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336025"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364276"
 ---
 # <a name="ndiskdnbl"></a>!ndiskd.nbl
 
 
-**! Ndiskd.nbl**拡張機能に関する情報を表示する、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure) (NBL) 構造体。
+**! Ndiskd.nbl**拡張機能に関する情報を表示する、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure) (NBL) 構造体。
 
 ```console
     !ndiskd.nbl [-handle <x>] [-basic] [-chain] [-info] [-data] 
@@ -40,7 +40,7 @@ ms.locfileid: "63336025"
 NBL、に関する基本的な情報が表示されます。
 
 <span id="_______-chain______"></span><span id="_______-CHAIN______"></span> *チェーン*   
-すべての NBLs が表示されますおよび[ **NET\_バッファー**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-structure)NBL、チェーン内。
+すべての NBLs が表示されますおよび[ **NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)NBL、チェーン内。
 
 <span id="_______-info______"></span><span id="_______-INFO______"></span> *-情報*   
 NBL に関連付けられているすべての帯域外の情報が表示されます。
@@ -102,23 +102,23 @@ NET_BUFFER ffffdf8014952610
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_バッファー\_一覧**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)
+[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[**NET\_バッファー**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-structure)
+[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
-[**!ndiskd.nbllog**](-ndiskd-nbllog.md)
+[ **!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
-[**!ndiskd.nb**](-ndiskd-nb.md)
+[ **!ndiskd.nb**](-ndiskd-nb.md)
 
  
 

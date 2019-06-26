@@ -7,12 +7,12 @@ keywords:
 - テクスチャの WDK Direct3D をフィルター処理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b34531b6cda8db7e19d9b0c9175e391c360237d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f32d40969ee7b2c4462193e3ed985ada9a4e4a37
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389892"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384588"
 ---
 # <a name="texturing-requirements"></a>テクスチャリング要件
 
@@ -30,11 +30,11 @@ ms.locfileid: "63389892"
 
 2.  そのテクスチャでのハードウェアに縦横比 に制限した場合、その比率が必要である、 **dwMaxTextureAspectRatio** D3DDEVICEDESC7 構造体のメンバー。
 
-3.  デバイス 2 の累乗であるだけのテクスチャのディメンションをサポートするかどうかは、設定する必要がありますが、 **dwTextureCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)格納する構造体、D3DPTEXTURECAPS\_POW2 フラグの適切なプリミティブ型 (線または三角形)。
+3.  デバイス 2 の累乗であるだけのテクスチャのディメンションをサポートするかどうかは、設定する必要がありますが、 **dwTextureCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)格納する構造体、D3DPTEXTURECAPS\_POW2 フラグの適切なプリミティブ型 (線または三角形)。
 
 4.  D3DTADDRESS にテクスチャ ステージのテクスチャのアドレッシング モードが設定されている場合、デバイスが任意のサイズの 2 次元 (2 D) テクスチャ (つまり、ボリュームではなくまたはキューブのテクスチャ) をサポートできる場合\_クランプ、テクスチャのステージのテクスチャのラッピングが無効になっています (D3DRENDERSTATE\_ラップ*n*を 0 に設定)、MIP マッピングで使用されていない、D3DPTEXTURECAPS を設定する必要があります\_NONPOW2CONDITIONAL フラグ。
 
-5.  デバイスには、テクスチャの次元が等しいか、のみサポートしているかどうかに設定する必要があります、 **dwTextureCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)格納する構造体、D3DPTEXTURECAPS\_SQUAREONLY フラグの適切なプリミティブ型 (線または三角形)。
+5.  デバイスには、テクスチャの次元が等しいか、のみサポートしているかどうかに設定する必要があります、 **dwTextureCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)格納する構造体、D3DPTEXTURECAPS\_SQUAREONLY フラグの適切なプリミティブ型 (線または三角形)。
 
 デバイスは、最初と 2 番目の要件に記載されている以外の制限なしの任意のサイズのテクスチャをサポートする場合にする必要がありますしない設定の 4 番目と 5 番目の要件、サードパーティで説明されているフラグのいずれか。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6499ac00b6b7e2ff9be96fef059d48631dd906c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5960970e53425416570e0255c1da2b29bdeedf8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367482"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367274"
 ---
 # <a name="bug-check-0x94-kernelstacklockedatexit"></a>バグ チェック 0x94:カーネル\_スタック\_ロック\_で\_終了
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367482"
 カーネル\_スタック\_ロック\_で\_終了のバグ チェックが 0x00000094 の値を持ちます。 このバグ チェックでは、そのカーネル スタックがスワップできなくなりますとしてマークされたときに、スレッドが終了していることを示します
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="kernelstacklockedatexit-parameters"></a>カーネル\_スタック\_ロック\_で\_終了パラメーター

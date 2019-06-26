@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cfdd481115f52373b8b839f0bdcab1cab96da6e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a072fcae39045e5183a096630b23185db5bed7b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335956"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363137"
 ---
 # <a name="ndiskdnetreport"></a>!ndiskd.netreport
 
@@ -72,7 +72,7 @@ NETWORK STACK REPORT
 
 作業中のシステムから 2 番目の例では、最初の例は、クラッシュ ダンプ ファイルの使用から別の相違点も表示されます。 デバッグ対象の対象コンピューターで 2 番目の例にはプロビジョニングされたカーネルは、データ フローで、スタック上のネットワーク アダプターは、Microsoft カーネル デバッグ ネットワーク アダプターを確認できるように、ネットワーク経由でデバッグします。 このアダプターは通常、カーネルのデバッグが有効になっていない、デバッグ対象のマシン上に表示します。 実際には、トラフィックがイーサネットを介して送信されるため、カーネル デバッグ ネットワーク アダプターが、デバッグ セッションのコンピューターのイーサネット アダプターを予約します。
 
-ネットワーク スタックを視覚化し、トラフィックが流れているを参照してください。 機能を使用して、問題がありますをすばやく特定することができます。 これは、仮想スイッチまたはサーバーで、前の例よりもネットワーク図が複雑に特に役立つことができます。 たとえば、NIC チーミングを使用する Windows サーバーで複数のネットワーク スタックは、トラフィックの負荷を分散し、別のスタックに影響する 1 つのスタックの一番下にある問題がある場合に互いに交差してかどうかを確認できます。 これを示すレポートをデバッグ、ネットワークの例を表示するには、次を参照してください。[ネットワーク スタックをデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)します。 NIC チーミングの詳細については、次を参照してください。[ネットワーク サブシステムのパフォーマンスのための NIC チーミングを使用して](https://msdn.microsoft.com/library/windows/hardware/dn567652)します。
+ネットワーク スタックを視覚化し、トラフィックが流れているを参照してください。 機能を使用して、問題がありますをすばやく特定することができます。 これは、仮想スイッチまたはサーバーで、前の例よりもネットワーク図が複雑に特に役立つことができます。 たとえば、NIC チーミングを使用する Windows サーバーで複数のネットワーク スタックは、トラフィックの負荷を分散し、別のスタックに影響する 1 つのスタックの一番下にある問題がある場合に互いに交差してかどうかを確認できます。 これを示すレポートをデバッグ、ネットワークの例を表示するには、次を参照してください。[ネットワーク スタックをデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)します。 NIC チーミングの詳細については、次を参照してください。[ネットワーク サブシステムのパフォーマンスのための NIC チーミングを使用して](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))します。
 
 **! ndiskd.netreport**システム、概要、およびデータ フロー (該当する) 場合、ページの上部にあるその他のタブもあります。 これらのタブがさらにネットワーク スタックの状態に関する有用な情報に含まれています。 次の図は、ネットワーク インターフェイス タブの 概要 タブを示します。このタブで、テーブルでは、システムの名前と識別子のネットワーク インターフェイスの詳細についてを参照できます。
 
@@ -85,19 +85,19 @@ NBL の追跡は、ターゲット システムで有効にした場合に表示
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**!ndiskd.nbllog**](-ndiskd-nbllog.md)
+[ **!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
-[ネットワーク サブシステムのパフォーマンスのための NIC チーミングを使用してください。](https://msdn.microsoft.com/library/windows/hardware/dn567652)
+[ネットワーク サブシステムのパフォーマンスのための NIC チーミングを使用してください。](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
 
  
 

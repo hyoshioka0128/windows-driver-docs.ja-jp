@@ -14,17 +14,17 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e47d1c83babe694ba9e3a99fe0dd5aa11c026338
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44e89d905e1929ea47f828dcedfcde702c2bbeba
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390291"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393478"
 ---
 # <a name="installselecteddriver-function"></a>InstallSelectedDriver 関数
 
 
-**InstallSelectedDriver**関数が非推奨とされます。 Windows Vista 以降を使用して[ **DiInstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544710)代わりにします。
+**InstallSelectedDriver**関数が非推奨とされます。 Windows Vista 以降を使用して[ **DiInstallDevice** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)代わりにします。
 
 <a name="syntax"></a>構文
 ------
@@ -46,7 +46,7 @@ BOOL WINAPI InstallSelectedDriver(
 最上位レベルのウィンドウのハンドルを**InstallSelectedDriver**関数を使用して、ドライバーのインストールに関連付けられているユーザー インターフェイス コンポーネントを表示します。
 
 *DeviceInfoSet* \[で\]  
-識別するハンドルを[デバイス情報設定されている](https://msdn.microsoft.com/library/windows/hardware/ff541247)選択したデバイスとデバイスの選択したドライバーを表すデバイス情報要素を格納しています。 デバイスとデバイスのドライバーを選択する方法の詳細については、次を参照してください。**解説**セクション。
+識別するハンドルを[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)選択したデバイスとデバイスの選択したドライバーを表すデバイス情報要素を格納しています。 デバイスとデバイスのドライバーを選択する方法の詳細については、次を参照してください。**解説**セクション。
 
 *予約済み*\[で\]  
 このパラメーターに設定する必要があります**NULL**します。
@@ -82,7 +82,7 @@ DWORD 型の変数へのポインターを**InstallSelectedDriver**をインス�
 </tr>
 <tr class="even">
 <td align="left"><strong>ERROR_IN_WOW64</strong></td>
-<td align="left"><p>呼び出し元のアプリケーションとは、これは許可されていない 64 ビット環境で実行しようとする 32 ビット アプリケーションです。 詳細については、次を参照してください。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff541255" data-raw-source="[Installing Devices on 64-Bit Systems](https://msdn.microsoft.com/library/windows/hardware/ff541255)">64 ビット システムでのデバイスのインストール</a>します。</p></td>
+<td align="left"><p>呼び出し元のアプリケーションとは、これは許可されていない 64 ビット環境で実行しようとする 32 ビット アプリケーションです。 詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/device-installations-on-64-bit-systems" data-raw-source="[Installing Devices on 64-Bit Systems](https://docs.microsoft.com/windows-hardware/drivers/install/device-installations-on-64-bit-systems)">64 ビット システムでのデバイスのインストール</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -96,27 +96,27 @@ DWORD 型の変数へのポインターを**InstallSelectedDriver**をインス�
 
 呼び出す必要がありますのみ**InstallSelectedDriver**特定のデバイスに特定のドライバーをインストールする必要がある場合。
 
-**重要な**   For Windows Vista と Windows での以降のバージョンを呼び出す[ **DiInstallDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff544710)の代わりに**InstallSelectedDriver**にこの種の操作を実行します。
+**重要な**   For Windows Vista と Windows での以降のバージョンを呼び出す[ **DiInstallDevice** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)の代わりに**InstallSelectedDriver**にこの種の操作を実行します。
 
  
 
-特定のデバイスで特定のドライバーのインストールを必要とする特別なアプリケーション、以外、インストール アプリケーションはデバイスに最適なものであるドライバーをインストールする必要があります。 デバイスに最適なものであるドライバーをインストールするには、呼び出す[ **DiInstallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff544717)または[ **UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)します。 これらのデバイス ドライバーをインストールするために呼び出す関数の詳細については、次を参照してください。 [SetupAPI 関数を ドライバーのインストールの簡略化](https://msdn.microsoft.com/library/windows/hardware/ff550867)します。
+特定のデバイスで特定のドライバーのインストールを必要とする特別なアプリケーション、以外、インストール アプリケーションはデバイスに最適なものであるドライバーをインストールする必要があります。 デバイスに最適なものであるドライバーをインストールするには、呼び出す[ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)または[ **UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)します。 これらのデバイス ドライバーをインストールするために呼び出す関数の詳細については、次を参照してください。 [SetupAPI 関数を ドライバーのインストールの簡略化](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi-functions-that-simplify-driver-installation)します。
 
 呼び出しの前に**InstallSelectedDriver**デバイスを含むデバイス情報のセットを取得、セットでデバイスを選択およびデバイスのドライバーを選択する必要があります、呼び出し元。
 
 デバイスを含むデバイス情報のセットを作成するには、次のいずれかの操作を行います。
 
--   呼び出す[ **SetupDiGetClassDevs** ](https://msdn.microsoft.com/library/windows/hardware/ff551069)デバイスを含むデバイス情報のセットを取得し、呼び出す[ **SetupDiEnumDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff551010)デバイス情報のセット内のデバイスを列挙します。 呼び出しごとに**SetupDiEnumDeviceInfo** SP が返す\_DEVINFO\_デバイス情報のセットで列挙されたデバイスを表すデータ構造体。 列挙されたデバイスに関する特定の情報を取得するには、呼び出す[ **SetupDiGetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551967) SP の指定と\_DEVINFO\_返されたデータの構造体によって**SetupDiEnumDeviceInfo**します。
+-   呼び出す[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)デバイスを含むデバイス情報のセットを取得し、呼び出す[ **SetupDiEnumDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)デバイス情報のセット内のデバイスを列挙します。 呼び出しごとに**SetupDiEnumDeviceInfo** SP が返す\_DEVINFO\_デバイス情報のセットで列挙されたデバイスを表すデータ構造体。 列挙されたデバイスに関する特定の情報を取得するには、呼び出す[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) SP の指定と\_DEVINFO\_返されたデータの構造体によって**SetupDiEnumDeviceInfo**します。
 
     - または -
 
--   呼び出す[ **SetupDiOpenDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff552071)デバイス情報のセットに既知のデバイスのインスタンス ID を使用したデバイスを追加します。 **SetupDiOpenDeviceInfo**を返します、 [ **SP\_DEVINFO\_データ**](https://msdn.microsoft.com/library/windows/hardware/ff552344)デバイス情報のセット内のデバイスを表す構造体です。
+-   呼び出す[ **SetupDiOpenDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)デバイス情報のセットに既知のデバイスのインスタンス ID を使用したデバイスを追加します。 **SetupDiOpenDeviceInfo**を返します、 [ **SP\_DEVINFO\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセット内のデバイスを表す構造体です。
 
-SP を取得した後\_DEVINFO\_呼び出し、デバイスのデータ構造[ **SetupDiSetSelectedDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552176)デバイス情報のセットでデバイスを選択します。
+SP を取得した後\_DEVINFO\_呼び出し、デバイスのデータ構造[ **SetupDiSetSelectedDevice** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddevice)デバイス情報のセットでデバイスを選択します。
 
-デバイスのドライバーを取得する[ **SetupDiBuildDriverInfoList** ](https://msdn.microsoft.com/library/windows/hardware/ff550917)互換性のあるデバイス ドライバーの一覧を作成し、呼び出す[ **SetupDiEnumDriverInfo**](https://msdn.microsoft.com/library/windows/hardware/ff551018)デバイスのドライバーのリストの要素を列挙します。 各列挙のドライバーの**SetupDiEnumDriverInfo** SP を取得します。\_DRVINFO\_ドライバーを表すデータ構造。 [**SetupDiGetDriverInfoDetail** ](https://msdn.microsoft.com/library/windows/hardware/ff551973)列挙のドライバーに関する追加情報の取得を呼び出すことができます。
+デバイスのドライバーを取得する[ **SetupDiBuildDriverInfoList** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)互換性のあるデバイス ドライバーの一覧を作成し、呼び出す[ **SetupDiEnumDriverInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa)デバイスのドライバーのリストの要素を列挙します。 各列挙のドライバーの**SetupDiEnumDriverInfo** SP を取得します。\_DRVINFO\_ドライバーを表すデータ構造。 [**SetupDiGetDriverInfoDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinfodetaila)列挙のドライバーに関する追加情報の取得を呼び出すことができます。
 
-SP を取得した後\_DRVINFO\_、ドライバーでは、呼び出しのデータ構造[ **SetupDiSetSelectedDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff552183)をデバイスのドライバーを選択します。
+SP を取得した後\_DRVINFO\_、ドライバーでは、呼び出しのデータ構造[ **SetupDiSetSelectedDriver** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)をデバイスのドライバーを選択します。
 
 <a name="requirements"></a>要件
 ------------
@@ -153,29 +153,29 @@ SP を取得した後\_DRVINFO\_、ドライバーでは、呼び出しのデー
 ## <a name="see-also"></a>関連項目
 
 
-[**DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710)
+[**DiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)
 
-[**DiInstallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff544717)
+[**DiInstallDriver**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)
 
-[**SetupDiBuildDriverInfoList**](https://msdn.microsoft.com/library/windows/hardware/ff550917)
+[**SetupDiBuildDriverInfoList**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)
 
-[**SetupDiEnumDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff551010)
+[**SetupDiEnumDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)
 
-[**SetupDiEnumDriverInfo**](https://msdn.microsoft.com/library/windows/hardware/ff551018)
+[**SetupDiEnumDriverInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa)
 
-[**SetupDiGetClassDevs**](https://msdn.microsoft.com/library/windows/hardware/ff551069)
+[**SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)
 
-[**SetupDiGetDeviceRegistryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551967)
+[**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
 
-[**SetupDiGetDriverInfoDetail**](https://msdn.microsoft.com/library/windows/hardware/ff551973)
+[**SetupDiGetDriverInfoDetail**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinfodetaila)
 
-[**SetupDiOpenDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff552071)
+[**SetupDiOpenDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)
 
-[**SetupDiSetSelectedDevice**](https://msdn.microsoft.com/library/windows/hardware/ff552176)
+[**SetupDiSetSelectedDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddevice)
 
-[**SetupDiSetSelectedDriver**](https://msdn.microsoft.com/library/windows/hardware/ff552183)
+[**SetupDiSetSelectedDriver**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
 
-[**UpdateDriverForPlugAndPlayDevices**](https://msdn.microsoft.com/library/windows/hardware/ff553534)
+[**UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)
 
  
 

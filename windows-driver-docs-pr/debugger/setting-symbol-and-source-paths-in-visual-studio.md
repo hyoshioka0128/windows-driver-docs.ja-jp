@@ -4,12 +4,12 @@ description: プロシージャは、シンボルの設定と Visual Studio で�
 ms.assetid: BFFF9BBC-C926-4974-A43E-C3A2DDA74AA4
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f6df471ffcf8b3c623dc1125ea24ba4712a40be5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c299b26ce55ddc964c3b26c22e7263b39cca9d3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381942"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366386"
 ---
 # <a name="setting-symbol-and-executable-image-paths-in-visual-studio"></a>Visual Studio でのシンボルと実行可能イメージ パスの設定
 
@@ -18,7 +18,7 @@ ms.locfileid: "63381942"
 >
 
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows ドライバー開発](https://msdn.microsoft.com/library/windows/hardware/ff557573)します。
+このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows ドライバー開発](https://docs.microsoft.com/windows-hardware/drivers/)します。
 
 ## <a name="span-idsettingthesymbolpathbyusingapropertypagespanspan-idsettingthesymbolpathbyusingapropertypagespanspan-idsettingthesymbolpathbyusingapropertypagespansetting-the-symbol-path-by-using-a-property-page"></a><span id="Setting_the_Symbol_Path_by_Using_a_Property_Page"></span><span id="setting_the_symbol_path_by_using_a_property_page"></span><span id="SETTING_THE_SYMBOL_PATH_BY_USING_A_PROPERTY_PAGE"></span>プロパティ ページを使用してシンボル パスの設定
 

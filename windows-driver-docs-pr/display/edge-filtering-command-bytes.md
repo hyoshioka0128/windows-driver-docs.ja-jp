@@ -9,12 +9,12 @@ keywords:
 - 読み取りバック バッファー WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 933880b385a3bf0098e0d90ea6d64a025b926ea4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e4e2007613e1d453389e17791e0e32a7c5d7c2aa
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391503"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364380"
 ---
 # <a name="edge-filtering-command-bytes"></a>エッジ フィルター処理コマンドのバイト
 
@@ -28,13 +28,13 @@ ms.locfileid: "63391503"
 
 エッジ フィルタ リング (のエッジの*EdgeFilterOn* 1) は強度値で指定された実行と等しく*EdgeFilterStrength*と 0 ~ 2 の範囲に出力をクリッピング<sup>(BPP)</sup> - 1。 上端までのすべてのブロックのフィルター処理は、上部エッジ フィルタ リングを使用するサンプルの値は左端のフィルター処理するため、deblocking フィルター処理する前にそれらの再構築された値でなければならないために、すべてのブロックの左端をフィルター処理する前に実行されます。
 
-場合、 **bPicDeblockConfined**のメンバー、 [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造がそのサンプルを示しますマクロ ブロックの外側の値、現在の非ブロック化フィルター コマンド バッファーは影響しません、 *EdgeFilterOn*フラグは、左、バッファー内のフィルターのコマンドを非ブロック化をマクロ ブロック対象領域の上部にあるすべての端に 0 です。
+場合、 **bPicDeblockConfined**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造がそのサンプルを示しますマクロ ブロックの外側の値、現在の非ブロック化フィルター コマンド バッファーは影響しません、 *EdgeFilterOn*フラグは、左、バッファー内のフィルターのコマンドを非ブロック化をマクロ ブロック対象領域の上部にあるすべての端に 0 です。
 
 ### <a name="span-idread-backbuffersspanspan-idread-backbuffersspanspan-idread-backbuffersspanread-back-buffers"></a><span id="Read-Back_Buffers"></span><span id="read-back_buffers"></span><span id="READ-BACK_BUFFERS"></span>読み取りバック バッファー
 
-1 つの読み戻しコマンド バッファーがアクセラレータに渡されるときに、 **bPicReadbackRequests**のメンバー、 [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造体は 1 です。 このバッファー内のデータをホストに (非ブロック化、該当する場合) の後、結果として得られる最終的な画像マクロ ブロック データを返す、アクセラレータのコマンドです。 暗号化プロトコルを使用している場合、アクセラレータがバックアップ - 読み取り要求 (暗号化プロトコルによって指定できます) と、エラーを示す値、エラーのあるデータ、または暗号化されたデータを返すことによって応答があります。
+1 つの読み戻しコマンド バッファーがアクセラレータに渡されるときに、 **bPicReadbackRequests**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体は 1 です。 このバッファー内のデータをホストに (非ブロック化、該当する場合) の後、結果として得られる最終的な画像マクロ ブロック データを返す、アクセラレータのコマンドです。 暗号化プロトコルを使用している場合、アクセラレータがバックアップ - 読み取り要求 (暗号化プロトコルによって指定できます) と、エラーを示す値、エラーのあるデータ、または暗号化されたデータを返すことによって応答があります。
 
-アクセラレータに渡された読み戻しコマンド バッファーは、1 つから成る読み戻しコマンドを含める必要があります**wMBaddress**読み取られる、マクロ ブロックのマクロ ブロック コントロール コマンドのメンバー。 **WMBaddress**メンバーがラスター スキャンの順序で現在のマクロ ブロックのマクロ ブロックのアドレスを指定する 16 ビット値。 ラスター スキャン order (に基づいて、 **wPicWidthInMBminus1**と**wPicHeightInMBminus1**のメンバー、 [ **DXVA\_PictureParameters**](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造) が次のように定義されています。
+アクセラレータに渡された読み戻しコマンド バッファーは、1 つから成る読み戻しコマンドを含める必要があります**wMBaddress**読み取られる、マクロ ブロックのマクロ ブロック コントロール コマンドのメンバー。 **WMBaddress**メンバーがラスター スキャンの順序で現在のマクロ ブロックのマクロ ブロックのアドレスを指定する 16 ビット値。 ラスター スキャン order (に基づいて、 **wPicWidthInMBminus1**と**wPicHeightInMBminus1**のメンバー、 [ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造) が次のように定義されています。
 
 -   0 は、左のマクロ ブロックのアドレスです。
 
@@ -44,7 +44,7 @@ ms.locfileid: "63391503"
 
 -   (**wPicHeightInMBminus1**+1) x (**wPicWidthInMBminus1**+1)-1、右下のマクロ ブロックのアドレスになります。
 
-場合*BPP*で指定されている、 **bBPPminus1**のメンバー、 [ **DXVA\_PictureParameters** ](https://msdn.microsoft.com/library/windows/hardware/ff564012)構造体は、8、8 ビット符号なしの値の形式でマクロ ブロックのデータが返されます (したがって、黒、名目上 Y = 16, Cb Cr を = = 128 であり、白い名目上 Y = 235、Cb Cr を = = 128)。 場合*BPP*が 8 よりも大きい 16 ビット符号なしの値の形式でデータが返されます。
+場合*BPP*で指定されている、 **bBPPminus1**のメンバー、 [ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)構造体は、8、8 ビット符号なしの値の形式でマクロ ブロックのデータが返されます (したがって、黒、名目上 Y = 16, Cb Cr を = = 128 であり、白い名目上 Y = 235、Cb Cr を = = 128)。 場合*BPP*が 8 よりも大きい 16 ビット符号なしの値の形式でデータが返されます。
 
 マクロ ブロックのデータは、埋め込み、続けて [次へ] の 32 バイト アラインメントの境界を読み戻しコマンド バッファー自体のコピーの形式でホストするアクセラレータから返されます。 次に、輝度とクロミナンスのデータのマクロ ブロックのデータ値は、各マクロ ブロック内の各ブロックのブロックあたり 64 のサンプルのフォームでの読み戻しコマンド バッファーに送信された順序で返されます。
 

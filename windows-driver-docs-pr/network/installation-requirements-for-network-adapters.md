@@ -8,12 +8,12 @@ keywords:
 - WAN WDK は、ネットワーク アダプターのインストール要件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1acbeac904781f26c3aab1e721f706b33c39732b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4785a2227002dc9560017b3d430b78996f98479f
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324918"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393391"
 ---
 # <a name="installation-requirements-for-network-adapters"></a>ネットワーク アダプターのインストール要件
 
@@ -50,13 +50,13 @@ ms.locfileid: "63324918"
 <p><strong>ClassGuid</strong>= {4D36E972-E325-11CE-BFC1-08002BE10318}</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547478" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547478)"><strong>INF SourceDisksNames セクション</strong></a>と<a href="https://msdn.microsoft.com/library/windows/hardware/ff547472" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547472)"> <strong>INF SourceDisksFiles セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)"><strong>INF SourceDisksNames セクション</strong></a>と<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)"> <strong>INF SourceDisksFiles セクション</strong></a></p></td>
 <td align="left"><p>必要な場合は.</p></td>
 <td align="left"><p>INF ファイルは、Windows 2000 では配布されませんが必要です。 INF ファイルが Windows 2000 で分散している場合、 <strong>LayoutFile</strong>でエントリを指定する必要があります、<strong>バージョン</strong>セクション、および<strong>SourceDisksNames</strong>と<strong>SourceDisksFiles</strong>のセクションでは使用されません。</p>
 <p>特定のネットワークの要件はありません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547383" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547383)"><strong>INF DestinationDirs セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)"><strong>INF DestinationDirs セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
@@ -67,7 +67,7 @@ ms.locfileid: "63324918"
 <p>非 PnP ISA および EISA アダプターなどの非 PnP のアダプターの一覧を表示しない必要があります。 Windows XP およびそれ以降のオペレーティング システムはサポートされていないことおよび EISA アダプター非 PnP ISA アダプターに注意してください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547454" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547454)"><strong>製造元の INF セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)"><strong>製造元の INF セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>
@@ -115,7 +115,7 @@ ms.locfileid: "63324918"
 <p><a href="specifying-custom-property-pages-for-network-adapters.md" data-raw-source="[Specifying Custom Property Pages for Network Adapters](specifying-custom-property-pages-for-network-adapters.md)">ネットワーク アダプターのカスタム プロパティ ページを指定します。</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547485" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547485)"><strong>INF 文字列 セクション</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)"><strong>INF 文字列 セクション</strong></a></p></td>
 <td align="left"><p>必須</p></td>
 <td align="left"><p>特定のネットワークの要件はありません。</p></td>
 </tr>

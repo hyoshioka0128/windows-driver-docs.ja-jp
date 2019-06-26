@@ -11,12 +11,12 @@ keywords:
 - WDK の印刷のユーザー インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 970e0ea9559bdafb3be6b48d42977d4667624768
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5991b4d50afaa2e30167076d9c719c749fa7f272
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370942"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364004"
 ---
 # <a name="displaying-a-ui-in-operating-systems-prior-to-windows-vista"></a>Windows Vista より前のオペレーティング システムで UI を表示する
 
@@ -32,7 +32,7 @@ ms.locfileid: "63370942"
 
     非同期通知の呼び出しは、Windows Vista より前のオペレーティング システムのリリースでは失敗します。
 
--   使用して単純なダイアログ ボックスを表示、 [ **SplPromptUIInUsersSession** ](https://msdn.microsoft.com/library/windows/hardware/ff562679)関数。
+-   使用して単純なダイアログ ボックスを表示、 [ **SplPromptUIInUsersSession** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-splpromptuiinuserssession)関数。
 
 -   状態の監視を記述することで、複雑なユーザー インターフェイス要素を表示します。
 

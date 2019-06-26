@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd7ecd75473633dbfd13fbae040fcd76e4c8288
-ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
+ms.openlocfilehash: 4c4e03922410f8569a8b1060ca9cd54ba6638880
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65701994"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365070"
 ---
 # <a name="fsctldeletereparsepoint-control-code"></a>FSCTL\_削除\_再解析\_ポイント制御コード
 
@@ -28,7 +28,7 @@ FSCTL\_削除\_再解析\_ポイント制御コードは、指定したファイ
 
 この操作を実行するには、呼び出す[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)次のパラメーターを使用します。
 
-ミニフィルターを使用する必要があります[ **FltUntagFile** ](https://msdn.microsoft.com/library/windows/hardware/ff544608) FSCTL ではなく\_削除\_再解析\_再解析ポイントを削除するポイント。
+ミニフィルターを使用する必要があります[ **FltUntagFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuntagfile) FSCTL ではなく\_削除\_再解析\_再解析ポイントを削除するポイント。
 
 再解析ポイントと FSCTL の詳細については\_削除\_再解析\_ポイント制御コードを Microsoft Windows SDK のマニュアルを参照してください。
 
@@ -41,7 +41,7 @@ FSCTL\_削除\_再解析\_ポイント制御コードは、指定したファイ
 操作のコードを制御します。 FSCTL を使用して、\_削除\_再解析\_この操作にポイントします。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-ポインターを[**再解析\_GUID\_データ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552014)または[**再解析\_データ\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff552012)構造体。 指定されたタグ、 **ReparseTag**この構造体のメンバーは、削除する再解析ポイントのタグと一致する必要があります、 **ReparseDataLength**メンバーは 0 である必要があります。 さらに、再解析ポイントがサードパーティ (Microsoft 以外の) 再解析ポイントの場合は、GUID はで指定された、 **ReparseGuid** 、再解析のメンバー\_GUID\_データ\_バッファーの構造が一致する必要があります、再解析の GUID は、削除をポイントします。
+ポインターを[**再解析\_GUID\_データ\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_guid_data_buffer)または[**再解析\_データ\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_data_buffer)構造体。 指定されたタグ、 **ReparseTag**この構造体のメンバーは、削除する再解析ポイントのタグと一致する必要があります、 **ReparseDataLength**メンバーは 0 である必要があります。 さらに、再解析ポイントがサードパーティ (Microsoft 以外の) 再解析ポイントの場合は、GUID はで指定された、 **ReparseGuid** 、再解析のメンバー\_GUID\_データ\_バッファーの構造が一致する必要があります、再解析の GUID は、削除をポイントします。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 指し示されるバッファーのバイト単位のサイズ、 **InputBuffer**パラメーター。 再解析の\_GUID\_データ\_バッファーの構造体は、この値は正確に再解析する必要があります\_GUID\_データ\_バッファー\_ヘッダー\_サイズ。 再解析の\_データ\_バッファーの構造体は、この値は正確に再解析する必要があります\_データ\_バッファー\_ヘッダー\_サイズ。
@@ -90,9 +90,9 @@ FSCTL\_削除\_再解析\_ポイント制御コードは、指定したファイ
 
 [**FLT\_IRP のパラメーター\_MJ\_ファイル\_システム\_コントロール**](flt-parameters-for-irp-mj-file-system-control.md)
 
-[**FltTagFile**](https://msdn.microsoft.com/library/windows/hardware/ff544589)
+[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-flttagfile)
 
-[**FltUntagFile**](https://msdn.microsoft.com/library/windows/hardware/ff544608)
+[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltuntagfile)
 
 [**FSCTL\_GET\_REPARSE\_POINT**](fsctl-get-reparse-point.md)
 
@@ -100,13 +100,13 @@ FSCTL\_削除\_再解析\_ポイント制御コードは、指定したファイ
 
 [**IRP\_MJ\_ファイル\_システム\_コントロール**](irp-mj-file-system-control.md)
 
-[**IsReparseTagMicrosoft**](https://msdn.microsoft.com/library/windows/hardware/ff549452)
+[**IsReparseTagMicrosoft**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-isreparsetagmicrosoft)
 
-[**IsReparseTagNameSurrogate**](https://msdn.microsoft.com/library/windows/hardware/ff549462)
+[**IsReparseTagNameSurrogate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-isreparsetagnamesurrogate)
 
-[**再解析\_データ\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff552012)
+[**再解析\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_data_buffer)
 
-[**再解析\_GUID\_データ\_バッファー**](https://msdn.microsoft.com/library/windows/hardware/ff552014)
+[**再解析\_GUID\_データ\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_reparse_guid_data_buffer)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

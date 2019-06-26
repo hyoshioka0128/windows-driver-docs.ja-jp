@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cd76a7521d2272867171a235b950ceace1f9ee8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5efcfcccf46469af2dc73c43615b69d1c9d180c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361874"
 ---
 # <a name="bug-check-0x3f-nomoresystemptes"></a>バグ チェック 0x3F:いいえ\_詳細\_システム\_PTE
 
@@ -26,7 +26,7 @@ ms.locfileid: "63357581"
 いいえ、\_詳細\_システム\_PTE バグ チェックが 0x0000003F の値を持ちます。 これは、多くの I/O 操作が実行されるシステムの結果です。 これは、断片化されたシステム ページ テーブル エントリ (PTE) にもたらされました。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="nomoresystemptes-parameters"></a>いいえ\_詳細\_システム\_PTE パラメーター
@@ -84,7 +84,7 @@ ms.locfileid: "63357581"
 
 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\メモリ管理\\TrackPtes** DWORD 1 に等しくなり、再起動します。 これにより、スタック トレースを保存するシステムです。
 
-これにより、PTE 所有者に関する詳細な情報を表示することができます。 次に、例を示します。
+これにより、PTE 所有者に関する詳細な情報を表示することができます。 例:
 
 ```dbgcmd
 0: kd> !sysptes 4

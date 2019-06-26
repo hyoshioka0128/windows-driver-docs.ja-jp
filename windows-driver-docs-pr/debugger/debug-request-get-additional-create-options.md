@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5baa68d958e495a31633cf1d15936c6e7d1becd1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdaa08e09d698a35eb80bbaedba641447191d6ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366976"
 ---
 # <a name="debugrequestgetadditionalcreateoptions-control-code"></a>デバッグ\_要求\_取得\_追加\_作成\_オプションは、コードを制御します。
 
@@ -31,14 +31,14 @@ ms.locfileid: "63349064"
 使用されていません。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-既定のプロセス作成のオプション。 プロセスの作成オプションの種類は[**デバッグ\_作成\_プロセス\_オプション**](https://msdn.microsoft.com/library/windows/hardware/ff541464)します。
+既定のプロセス作成のオプション。 プロセスの作成オプションの種類は[**デバッグ\_作成\_プロセス\_オプション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)します。
 
 <a name="remarks"></a>注釈
 -------
 
-既定のプロセス作成のオプションがメソッドで使用される[ **CreateProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff539321)と[ **CreateProcessAndAttach** ](https://msdn.microsoft.com/library/windows/hardware/ff540048) とは異なり、この[**CreateProcess2** ](https://msdn.microsoft.com/library/windows/hardware/ff539323)と[ **CreateProcessAndAttach2**](https://msdn.microsoft.com/library/windows/hardware/ff540055)、プロセス作成オプションの完全な範囲を指定しません。
+既定のプロセス作成のオプションがメソッドで使用される[ **CreateProcess** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess)と[ **CreateProcessAndAttach** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach) とは異なり、この[**CreateProcess2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)と[ **CreateProcessAndAttach2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach2)、プロセス作成オプションの完全な範囲を指定しません。
 
-**CreateFlags**のフィールド、 [**デバッグ\_作成\_プロセス\_オプション**](https://msdn.microsoft.com/library/windows/hardware/ff541464)ために、構造体は、既定値として使用されませんすべてプロセス作成操作では、この情報を提供します。
+**CreateFlags**のフィールド、 [**デバッグ\_作成\_プロセス\_オプション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)ために、構造体は、既定値として使用されませんすべてプロセス作成操作では、この情報を提供します。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
@@ -47,11 +47,11 @@ ms.locfileid: "63349064"
 
 [**デバッグ\_要求\_設定\_追加\_作成\_オプション**](debug-request-set-additional-create-options.md)
 
-[**デバッグ\_作成\_プロセス\_オプション**](https://msdn.microsoft.com/library/windows/hardware/ff541464)
+[**デバッグ\_作成\_プロセス\_オプション**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)
 
-[**CreateProcess**](https://msdn.microsoft.com/library/windows/hardware/ff539321)
+[**CreateProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess)
 
-[**CreateProcessAndAttach**](https://msdn.microsoft.com/library/windows/hardware/ff540048)
+[**CreateProcessAndAttach**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach)
 
  
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e575a83ccd374491fb3ab17c7724d81222b3c84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b1f767a18e84678f46cdda78d0d428c41fce80c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363097"
 ---
 # <a name="ndiskdvc"></a>!ndiskd.vc
 
@@ -41,9 +41,9 @@ Ndiskd.dll
 <a name="remarks"></a>注釈
 -------
 
-いる CoNDIS の詳細については、次を参照してください。 [Connection-Oriented NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)します。
+いる CoNDIS の詳細については、次を参照してください。 [Connection-Oriented NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)します。
 
-いる CoNDIS 仮想接続の詳細については、次を参照してください。[仮想接続](https://msdn.microsoft.com/windows/hardware/drivers/network/virtual-connections)します。
+いる CoNDIS 仮想接続の詳細については、次を参照してください。[仮想接続](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-connections)します。
 
 <a name="examples"></a>使用例
 --------
@@ -98,21 +98,21 @@ VIRTUAL CALL
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[接続指向の NDIS](https://msdn.microsoft.com/windows/hardware/drivers/network/connection-oriented-ndis)
+[接続指向の NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)
 
-[仮想接続](https://msdn.microsoft.com/windows/hardware/drivers/network/virtual-connections)
+[仮想接続](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-connections)
 
-[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
  
 

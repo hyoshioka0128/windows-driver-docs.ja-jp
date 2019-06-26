@@ -5,26 +5,26 @@ ms.assetid: 363D308D-CE88-4F3B-81FF-37A2D86CB7BC
 ms.date: 08/08/2017
 keywords: -OID_SRIOV_PF_LUID ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 65992a7e5f8afe66bf48954040c9b882acab7169
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea9cc25341031b17e6b8bfa83a6f9f3d656ce5b1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351328"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362890"
 ---
 # <a name="oidsriovpfluid"></a>OID\_SRIOV\_PF\_LUID
 
 
 上にある、ドライバーの OID オブジェクト識別子 (OID) のクエリ要求を発行する\_SRIOV\_PF\_LUID ローカル一意識別子 (LUID) と、PCI Express (PCIe) 物理機能 (PF)、ネットワークの関連付けられているを受信するにはアダプター。
 
-**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_PF\_LUID\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451678)構造体。
+**InformationBuffer**のメンバー、 [ **NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)構造体にはへのポインターが含まれています、 [ **NDIS\_SRIOV\_PF\_LUID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_pf_luid_info)構造体。
 
 <a name="remarks"></a>注釈
 -------
 
-NDIS は、NDIS 呼び出される前に PF の LUID を生成、 [ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389) PF. のミニポート ドライバーの機能 NDIS 呼び出されるまでこの LUID が正しく、 [ *MiniportHaltEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559388)ドライバーの機能です。
+NDIS は、NDIS 呼び出される前に PF の LUID を生成、 [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) PF. のミニポート ドライバーの機能 NDIS 呼び出されるまでこの LUID が正しく、 [ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)ドライバーの機能です。
 
-**注**  の値、 **Luid**メンバーとは異なります、 **NetLuid**のメンバー、 [ **NDIS\_ミニポート\_INIT\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff565972)構造体。 この構造体は、ミニポート ドライバーに渡される、 *MiniportInitParameters*パラメーターの[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)します。
+**注**  の値、 **Luid**メンバーとは異なります、 **NetLuid**のメンバー、 [ **NDIS\_ミニポート\_INIT\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_init_parameters)構造体。 この構造体は、ミニポート ドライバーに渡される、 *MiniportInitParameters*パラメーターの[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)します。
 
  
 
@@ -56,7 +56,7 @@ NDIS が、OID を処理するときに\_SRIOV\_PF\_LUID 要求と、次のス�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>情報バッファーが小さすぎます。 ミニポート ドライバーを設定する必要があります、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
+<td><p>情報バッファーが小さすぎます。 ミニポート ドライバーを設定する必要があります、<strong>データ。QUERY_INFORMATION します。BytesNeeded</strong>内のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>構造体に必要な最小バッファー サイズ。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -91,11 +91,11 @@ NDIS が、OID を処理するときに\_SRIOV\_PF\_LUID 要求と、次のス�
 
 
 ****
-[*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
 
-[**NDIS\_OID\_要求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SRIOV\_PF\_LUID\_情報**](https://msdn.microsoft.com/library/windows/hardware/hh451678)
+[**NDIS\_SRIOV\_PF\_LUID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_pf_luid_info)
 
  
 

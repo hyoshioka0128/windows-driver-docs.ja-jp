@@ -4,12 +4,12 @@ description: このトピックでは、収集と、センサー クラスの拡
 ms.assetid: 174CDE37-D0D1-44BF-AD50-5A90C989FDE2
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac909cb176bd644fdaa76895d56ad1c62e3dd014
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af99074c09de6263a92aa4743d053e74e90ceeac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341322"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364908"
 ---
 # <a name="collecting-and-decoding-wpp-logs"></a>ログの収集と WPP をデコード
 
@@ -22,12 +22,12 @@ WPP は、トレース プロバイダーと呼ばれるソフトウェア コ�
 
 -   SensorsUtilsV2.pdb
 
-トレース ログ ツールを使用して、WPP ログを収集します。 詳細については、次を参照してください。 [Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)します。 トレースのトレース Guid、トレース フラグ、トレース レベル、または PDB ファイルなどの概念の詳細については、次を参照してください。[トレース ツールの概念](https://msdn.microsoft.com/library/windows/hardware/ff553975.aspx)します。
+トレース ログ ツールを使用して、WPP ログを収集します。 詳細については、次を参照してください。 [Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)します。 トレースのトレース Guid、トレース フラグ、トレース レベル、または PDB ファイルなどの概念の詳細については、次を参照してください。[トレース ツールの概念](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracing-tool-concepts)します。
 
 ## <a name="tracing-guid"></a>トレース GUID
 
 
-次の GUID は、CX ドライバー センサー V2 スタックのトレース プロバイダーを識別します。 この GUID を使用してトレース ログの詳細については、次を参照してください。 [Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx)します。
+次の GUID は、CX ドライバー センサー V2 スタックのトレース プロバイダーを識別します。 この GUID を使用してトレース ログの詳細については、次を参照してください。 [Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)します。
 
 ``` syntax
 c88b592b-6090-480f-a839-ca2434de5844

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_P2P_ACTION_FRAME_RESPONSE_PARAMETERS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: ff8624775cbd9e950a0967bbe68897dcdcad20f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15f3020b936482caee1460f05779d8c6d2e4abc4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385711"
 ---
 # <a name="wditlvp2pactionframeresponseparameters"></a>WDI\_TLV\_P2P\_アクション\_フレーム\_応答\_パラメーター
 
@@ -33,15 +33,15 @@ WDI\_TLV\_P2P\_アクション\_フレーム\_応答\_パラメーターは、Wi
 
 | 型                                                                    | 説明                                                                                                                          |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_P2P\_アクション\_フレーム\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926086) | 送信する応答のフレームの型。                                                                                               |
-| [**WDI\_MAC\_アドレス**](https://msdn.microsoft.com/library/windows/hardware/dn926071)                       | ターゲットのピア Wi-Fi Direct デバイスのデバイスのアドレス。                                                                           |
+| [**WDI\_P2P\_アクション\_フレーム\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_action_frame_type) | 送信する応答のフレームの型。                                                                                               |
+| [**WDI\_MAC\_アドレス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address)                       | ターゲットのピア Wi-Fi Direct デバイスのデバイスのアドレス。                                                                           |
 | UINT8                                                                   | Wi-Fi Direct ダイアログ トークンこのトランザクションにします。                                                                                  |
 | UINT32                                                                  | 送信タイムアウト。 この操作のフレームを送信するミリ秒単位で最大の時間を指定します。                                            |
 | UINT32                                                                  | Post ACK 時間。 着信パケットの受信が確認した後をミリ秒単位でのリッスン チャネルで維持する時間を指定します。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

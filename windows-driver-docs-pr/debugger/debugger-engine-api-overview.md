@@ -6,12 +6,12 @@ keywords:
 - デバッガー エンジン API, 概要
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60d52f3aad2e0363ddba3ad23a1cad7cd46f7cb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 19356776e5b311e00b5c21c167866b16ee685602
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577800"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366946"
 ---
 # <a name="debugger-engine-api-overview"></a>デバッガー エンジン API の概要
 
@@ -49,7 +49,7 @@ ms.locfileid: "56577800"
 
 [アセンブルおよび逆アセンブル](assembling-and-disassembling-instructions.md)
 
-**重要な**  、IDebug\*ようなインターフェイス[ **IDebugEventCallbacks** ](https://msdn.microsoft.com/library/windows/hardware/ff550550)インターフェイス、like、COM は適切な COM Api ではありません。 これらのインターフェイスをマネージ コードから呼び出すことは、サポートされていないシナリオです。 ガベージ コレクション スレッドの所有権などの問題は、インターフェイスがマネージ コードで呼び出されたときに、システムが不安定につながります。
+**重要な**  、IDebug\*ようなインターフェイス[ **IDebugEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)インターフェイス、like、COM は適切な COM Api ではありません。 これらのインターフェイスをマネージ コードから呼び出すことは、サポートされていないシナリオです。 ガベージ コレクション スレッドの所有権などの問題は、インターフェイスがマネージ コードで呼び出されたときに、システムが不安定につながります。
 
  
 

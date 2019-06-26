@@ -12,12 +12,12 @@ keywords:
 - EventCategoryHardwareProfileChange 通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 643420c426f8dd9b439312306cdefbe1e7da3c32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a30ae03c7bc62f3f6b1334fb247de09f6e443fef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362932"
 ---
 # <a name="pnp-notification-overview"></a>PnP 通知の概要
 
@@ -37,7 +37,7 @@ PnP マネージャーでは、ドライバーとアプリケーションを特�
     <a href="" id="guid-device-interface-removal"></a>GUID\_デバイス\_インターフェイス\_削除  
     指定したクラスのデバイスのインターフェイスが無効になっていることを示します。
 
-    参照してください[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)および関連するデバイスのインターフェイスの詳細については、ルーチン。
+    参照してください[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)および関連するデバイスのインターフェイスの詳細については、ルーチン。
 
 -   **EventCategoryTargetDeviceChange**
 
@@ -74,13 +74,13 @@ PnP マネージャーでは、ドライバーとアプリケーションを特�
 
 PnP 通知は、カーネル モードのコンポーネントのように動作します。
 
-1.  ドライバーを呼び出すことによってイベントのカテゴリに関する通知の登録[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)します。
+1.  ドライバーを呼び出すことによってイベントのカテゴリに関する通知の登録[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)します。
 
     PnP 通知コールバック ルーチンは、ドライバーが明示的に登録を削除するまで、登録されているままになります。
 
 2.  PnP マネージャーは、登録済みのカテゴリのイベントが発生したときに、ドライバーのコールバック ルーチンを呼び出します。
 
-3.  ドライバーは、呼び出すことによって、コールバックの登録を削除します[ **IoUnregisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff550398)します。
+3.  ドライバーは、呼び出すことによって、コールバックの登録を削除します[ **IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)します。
 
 ドライバーの同期イベントを生成または終了の処理中に発生するイベントを非同期に待機する必要がありますされません。
 

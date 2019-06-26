@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77dbfcd29ae981c4efafcb89c466b7139241c32b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b93602eb092efeb07a96c978e19ab316e3a83378
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548959"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368852"
 ---
 # <a name="kspropertystreamratecapability"></a>KSPROPERTY\_ストリーム\_RATECAPABILITY
 
@@ -51,10 +51,10 @@ KSPROPERTY\_ストリーム\_RATECAPABILITY プロパティにより、グラフ
 <tbody>
 <tr class="odd">
 <td><p>〇</p></td>
-<td><p>X</p></td>
+<td><p>いいえ</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566752" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566752)"><strong>KSRATE</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566754" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566754)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_ストリーム\_RATECAPABILITY プロパティにより、グラフ
 
 KSPROPERTY\_ストリーム\_RATECAPABILITY を実装する場合は、暗証番号 (pin) は、レートの変化、または位相的に関連するピンの間のインターフェイスが異なると、さまざまなタイムスタンプ形式が使用されます。 プロパティは、一般に、タイムスタンプ形式など、パフォーマンス低下の要求をスキップする時間の変換にも使用できます。
 
-Pin を再サンプリングを使用してデータの割合を変更して、プロパティがサポートされているまたはタイムスタンプを変更します。 レートのすべての変更では、要求レートと公称 1.0 レートを取得するには、そのレートを修正できる量を特定の pin を決定する必要があります。 2.0 のビデオの再生速度を要求する pin ビデオ クリップの少額の料金 2 回で表示するために、要求が高ければ、たとえば、0.5 の価格の要求は、半分の速度のレンダリングからわかるようにします。
+Pin を再サンプリングを使用してデータの割合を変更して、プロパティがサポートされているまたはタイムスタンプを変更します。 レートのすべての変更では、要求レートと公称 1.0 レートを取得するには、そのレートを修正できる量を特定の pin を決定する必要があります。 2\.0 のビデオの再生速度を要求する pin ビデオ クリップの少額の料金 2 回で表示するために、要求が高ければ、たとえば、0.5 の価格の要求は、半分の速度のレンダリングからわかるようにします。
 
 価格の要求には、プレゼンテーションの開始時刻とその価格の要求の実行時間の両方が含まれています。 これにより、アカウントにあるデータ ストリームの特定の部分に適用される制約。 プレゼンテーション時間では、分子と分母のペア、および期間の単位は、構造体で指定されたインターフェイスの観点から表現されます。 標準的なインターフェイスを使用しない場合は、pin の初期速度の変更クエリを送信できません。
 
@@ -76,7 +76,7 @@ Pin は、ようなトポロジを使用した pin で使用されるインタ�
 
 機能要求のレートを一時停止または実行の状態で実行のみと他の状態を変更した後で無効になります。 タイムスタンプの形式の時間を変換するだけで要求を通常はクエリの速度が 1.0 で、最初に常に成功します。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -95,9 +95,9 @@ Pin は、ようなトポロジを使用した pin で使用されるインタ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSRATE**](https://msdn.microsoft.com/library/windows/hardware/ff566752)
+[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)
 
-[**KSRATE\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566754)
+[**KSRATE\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability)
 
  
 

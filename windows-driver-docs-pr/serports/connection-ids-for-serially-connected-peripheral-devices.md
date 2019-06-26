@@ -4,12 +4,12 @@ description: SerCx2 によって管理されているシリアル ポートに�
 ms.assetid: 9A688552-DFAF-48A1-935D-70C3B13F30EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e7c94c7a1dac15d1561e0cc81c9d1d4c2093dd
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 9e40a01b13fe414715421d6e938480075efe2359
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836302"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385231"
 ---
 # <a name="connection-ids-for-serially-connected-peripheral-devices"></a>シリアル接続される周辺デバイスの接続 ID
 
@@ -31,4 +31,4 @@ PnP マネージャーでは、この周辺機器のデバイスの接続パラ�
 
 クライアントは、シリアル ポートを開いた直後に、未知または不定状態で、ポートが想定してください。 クライアントは、使用できる状態にあるように、ポートを構成する責任を負います。
 
-操作のシリアル ポートを構成するには、クライアント要求を送信 I/O コントロール (IOCTL) シリアル コント ローラーにします。 クライアントは通常、送信、 [ **IOCTL\_シリアル\_適用\_既定\_構成**](https://msdn.microsoft.com/library/windows/hardware/hh406621)ポートを設定する、コント ローラーへの要求の既定の構成。 必要に応じて、クライアントは、1 つまたは複数の既定の構成設定をオーバーライドする追加のシリアル Ioctl を送信できます。 たとえば、Windows では、ボー レート、フロー制御パラメーター、行コントロールの設定、およびタイムアウト値を変更の読み取りおよび書き込み要求をシリアル Ioctl を定義します。 SerCx2 でサポートされているシリアル Ioctl の一覧は、次を参照してください。[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)します。
+操作のシリアル ポートを構成するには、クライアント要求を送信 I/O コントロール (IOCTL) シリアル コント ローラーにします。 クライアントは通常、送信、 [ **IOCTL\_シリアル\_適用\_既定\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serial_apply_default_configuration)ポートを設定する、コント ローラーへの要求の既定の構成。 必要に応じて、クライアントは、1 つまたは複数の既定の構成設定をオーバーライドする追加のシリアル Ioctl を送信できます。 たとえば、Windows では、ボー レート、フロー制御パラメーター、行コントロールの設定、およびタイムアウト値を変更の読み取りおよび書き込み要求をシリアル Ioctl を定義します。 SerCx2 でサポートされているシリアル Ioctl の一覧は、次を参照してください。[シリアル I/O 要求インターフェイス](serial-i-o-request-interface.md)します。

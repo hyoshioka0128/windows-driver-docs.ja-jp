@@ -4,12 +4,12 @@ description: Hyper-V 拡張可能スイッチ ポートおよびネットワー�
 ms.assetid: 1E2075E3-D7CC-4364-ABB2-D5969DB361B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bd220ab2293647821d2615c9831db60bf953363
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d719df8b8d2735b3cc2cf92319d1472a9ac4891e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349525"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386547"
 ---
 # <a name="hyper-v-extensible-switch-port-and-network-adapter-states"></a>Hyper-V 拡張可能スイッチ ポートおよびネットワーク アダプターの状態
 
@@ -50,7 +50,7 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 この状態で、拡張可能スイッチのポートは拡張可能スイッチには存在しません。 OID は要求を対象とするポートがこの状態になった後、以前に作成したポートで発行されることはできません。
 
 <a href="" id="port-created"></a>*ポートの作成*  
-拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_ポート\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598272)、拡張可能スイッチのポートを作成します。 この状態で、拡張可能スイッチのインターフェイスと拡張機能は、ポートをターゲットとする OID 要求を発行できます。
+拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_ポート\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)、拡張可能スイッチのポートを作成します。 この状態で、拡張可能スイッチのインターフェイスと拡張機能は、ポートをターゲットとする OID 要求を発行できます。
 
 拡張可能スイッチ ドライバー スタックを通じた OID トラフィックに関する詳細については、次を参照してください。 [Hyper-v 拡張可能スイッチ コントロール パス](hyper-v-extensible-switch-control-path.md)します。
 
@@ -59,7 +59,7 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
  
 
 <a href="" id="network-adapter-connection-created"></a>*ネットワーク アダプター接続の作成*  
-拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_NIC\_作成](https://msdn.microsoft.com/library/windows/hardware/hh598263)、拡張可能スイッチのポートへのネットワーク アダプター接続が作成されます。 この状態で、拡張可能スイッチのインターフェイスは、次の操作を行うことができます。
+拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_NIC\_作成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-create)、拡張可能スイッチのポートへのネットワーク アダプター接続が作成されます。 この状態で、拡張可能スイッチのインターフェイスは、次の操作を行うことができます。
 
 -   OID の問題は、対象とするネットワーク アダプターの接続を要求します。
 
@@ -82,7 +82,7 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
  
 
 <a href="" id="network-adapter-connected"></a>*接続されたネットワーク アダプター*  
-拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_NIC\_CONNECT](https://msdn.microsoft.com/library/windows/hardware/hh598262)、ネットワーク アダプターが完全に拡張可能スイッチ ポートに接続されています。 この状態で、拡張機能できるようになりました、次を操作します。
+拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_NIC\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-connect)、ネットワーク アダプターが完全に拡張可能スイッチ ポートに接続されています。 この状態で、拡張機能できるようになりました、次を操作します。
 
 -   OID の問題は、対象とするネットワーク アダプターの接続を要求します。
 
@@ -95,7 +95,7 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
      
 
 <a href="" id="network-adapter-disconnected"></a>*切断されたネットワーク アダプター*  
-拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_NIC\_切断](https://msdn.microsoft.com/library/windows/hardware/hh598265)、ネットワーク アダプターが拡張可能スイッチ ポートから切断されます。 たとえば、VM のネットワーク アダプターを公開するには、子パーティションが停止しているか、外部ネットワーク アダプターが無効になっているときに、この OID 要求が発行されます。
+拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_NIC\_切断](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)、ネットワーク アダプターが拡張可能スイッチ ポートから切断されます。 たとえば、VM のネットワーク アダプターを公開するには、子パーティションが停止しているか、外部ネットワーク アダプターが無効になっているときに、この OID 要求が発行されます。
 
 この状態で、パケットを不要になった開始できるは、拡張可能スイッチの拡張機能または OID を対象とする接続を要求します。 また、転送拡張機能されなくにリダイレクトできますパケット、接続します。
 
@@ -104,12 +104,12 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
  
 
 <a href="" id="network-adapter-connection-deleted"></a>*ネットワーク アダプター接続の削除*  
-拡張可能スイッチのインターフェイスがの OID セット要求を発行するすべてのパケット トラフィックとネットワーク アダプターの接続を対象とする OID 要求が完了したら、 [OID\_切り替える\_NIC\_削除](https://msdn.microsoft.com/library/windows/hardware/hh598264)拡張可能スイッチから、コネクションを削除します。
+拡張可能スイッチのインターフェイスがの OID セット要求を発行するすべてのパケット トラフィックとネットワーク アダプターの接続を対象とする OID 要求が完了したら、 [OID\_切り替える\_NIC\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)拡張可能スイッチから、コネクションを削除します。
 
 この状態で、拡張可能スイッチのインターフェイスがパケットを発行しなくまたは OID を対象とする接続を要求します。
 
 <a href="" id="port-tearing-down"></a>*ポートの破棄*  
-拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_ポート\_破棄](https://msdn.microsoft.com/library/windows/hardware/hh598279)、削除するための準備として、拡張可能スイッチ ポートが破棄されています。
+拡張可能スイッチのインターフェイスがの OID セット要求を発行したとき[OID\_切り替える\_ポート\_破棄](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-teardown)、削除するための準備として、拡張可能スイッチ ポートが破棄されています。
 
 この状態で、拡張可能スイッチ拡張機能開始できるは不要になった OID 要求を対象とするポート。
 
@@ -117,13 +117,13 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 
  
 
-拡張可能スイッチのインターフェイスがの OID セット要求を発行する OID 保留中のすべてのポートをターゲットとする要求が完了したら、 [OID\_切り替える\_ポート\_削除](https://msdn.microsoft.com/library/windows/hardware/hh598273)します。 これにより、ポートへの移行、*ポートを作成していない*状態。
+拡張可能スイッチのインターフェイスがの OID セット要求を発行する OID 保留中のすべてのポートをターゲットとする要求が完了したら、 [OID\_切り替える\_ポート\_削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-delete)します。 これにより、ポートへの移行、*ポートを作成していない*状態。
 
 拡張機能は、ポートまたはネットワーク アダプターの接続コンポーネントの参照カウンターを増減する拡張可能スイッチ ハンドラー関数を呼び出すことができます。 コンポーネントの参照カウンターが 0 以外の場合、拡張可能スイッチのインターフェイスは、コンポーネントを削除できません。
 
-拡張機能を呼び出すことができます[ *ReferenceSwitchPort* ](https://msdn.microsoft.com/library/windows/hardware/hh598295)または[ *DereferenceSwitchPort* ](https://msdn.microsoft.com/library/windows/hardware/hh598142)の参照カウンターを増減する拡張可能スイッチ ポートの場合。 ポートに到達後、これらの呼び出しが行われたことができます、*作成ポート*状態。 ポートに到達後、これらの呼び出しを確立できません必要があります、*解除を行うポート*または*ポートを作成していない*状態。
+拡張機能を呼び出すことができます[ *ReferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)または[ *DereferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port)の参照カウンターを増減する拡張可能スイッチ ポートの場合。 ポートに到達後、これらの呼び出しが行われたことができます、*作成ポート*状態。 ポートに到達後、これらの呼び出しを確立できません必要があります、*解除を行うポート*または*ポートを作成していない*状態。
 
-拡張機能を呼び出すことができます[ *ReferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598294)または[ *DereferenceSwitchNic* ](https://msdn.microsoft.com/library/windows/hardware/hh598141)の参照カウンターを増減する、拡張可能スイッチのネットワーク アダプターの接続。 接続に達した後、これらの呼び出しが行われたことができます、*接続されたネットワーク アダプター*状態。 接続に達した後、これらの呼び出しを確立できません必要があります、*ネットワーク アダプターが切断されている*または*ネットワーク アダプターの削除*状態。
+拡張機能を呼び出すことができます[ *ReferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)または[ *DereferenceSwitchNic* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)の参照カウンターを増減する、拡張可能スイッチのネットワーク アダプターの接続。 接続に達した後、これらの呼び出しが行われたことができます、*接続されたネットワーク アダプター*状態。 接続に達した後、これらの呼び出しを確立できません必要があります、*ネットワーク アダプターが切断されている*または*ネットワーク アダプターの削除*状態。
 
 次の表では、拡張可能スイッチのポートまたはネットワーク アダプターの接続コンポーネントの状態に基づいて許可される操作について説明します。
 
@@ -136,8 +136,8 @@ HYPER-V 拡張可能スイッチのインターフェイスは、次のコンポ
 <thead>
 <tr class="header">
 <th align="left">コンポーネントの状態</th>
-<th align="left">呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/hh598295" data-raw-source="[&lt;em&gt;ReferenceSwitchPort&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598295)"> <em>ReferenceSwitchPort</em> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/hh598142" data-raw-source="[&lt;em&gt;DereferenceSwitchPort&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598142)"> <em>DereferenceSwitchPort</em> </a>許可しますか?</th>
-<th align="left">呼び出す<a href="https://msdn.microsoft.com/library/windows/hardware/hh598294" data-raw-source="[&lt;em&gt;ReferenceSwitchNic&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598294)"> <em>ReferenceSwitchNic</em> </a>または<a href="https://msdn.microsoft.com/library/windows/hardware/hh598141" data-raw-source="[&lt;em&gt;DereferenceSwitchNic&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598141)"> <em>DereferenceSwitchNic</em> </a>許可しますか?</th>
+<th align="left">呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port" data-raw-source="[&lt;em&gt;ReferenceSwitchPort&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)"> <em>ReferenceSwitchPort</em> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port" data-raw-source="[&lt;em&gt;DereferenceSwitchPort&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port)"> <em>DereferenceSwitchPort</em> </a>許可しますか?</th>
+<th align="left">呼び出す<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic" data-raw-source="[&lt;em&gt;ReferenceSwitchNic&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_nic)"> <em>ReferenceSwitchNic</em> </a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic" data-raw-source="[&lt;em&gt;DereferenceSwitchNic&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_nic)"> <em>DereferenceSwitchNic</em> </a>許可しますか?</th>
 </tr>
 </thead>
 <tbody>

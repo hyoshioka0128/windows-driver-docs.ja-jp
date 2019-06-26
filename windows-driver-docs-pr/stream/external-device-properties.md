@@ -7,17 +7,17 @@ keywords:
 - PROPSETID_EXT_DEVICE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe2b139c9a0075e18768af8c5a01026b0ca28ca5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17cffc125259090ff9f9d9848c082a04b08c09ad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345928"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384087"
 ---
 # <a name="external-device-properties"></a>外部デバイスのプロパティ
 
 
-[PROPSETID\_EXT\_デバイス](https://msdn.microsoft.com/library/windows/hardware/ff567795)コントロールかビデオ_カメラまたはデジタルのテープ デッキなどの外部のデバイスの操作に関連するプロパティがプロパティ セットに含まれています。 次の表に、プロパティ、PROPSETID の一部である\_EXT\_デバイス プロパティのセット。
+[PROPSETID\_EXT\_デバイス](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-ext-device)コントロールかビデオ_カメラまたはデジタルのテープ デッキなどの外部のデバイスの操作に関連するプロパティがプロパティ セットに含まれています。 次の表に、プロパティ、PROPSETID の一部である\_EXT\_デバイス プロパティのセット。
 
 <table>
 <colgroup>
@@ -32,23 +32,23 @@ ms.locfileid: "63345928"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565153" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_ID&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565153)"><strong>KSPROPERTY_EXTDEVICE_ID</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-id" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_ID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-id)"><strong>KSPROPERTY_EXTDEVICE_ID</strong></a></p></td>
 <td><p>外部のデバイスの汎用システム全体の id。 を返します</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565157" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_VERSION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565157)"><strong>KSPROPERTY_EXTDEVICE_VERSION</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-version" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_VERSION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-version)"><strong>KSPROPERTY_EXTDEVICE_VERSION</strong></a></p></td>
 <td><p>外部デバイスのバージョンを返します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565155" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_POWER_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565155)"><strong>KSPROPERTY_EXTDEVICE_POWER_STATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-power-state" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-power-state)"><strong>KSPROPERTY_EXTDEVICE_POWER_STATE</strong></a></p></td>
 <td><p>、スタンバイ状態で、またはオフなどの外部デバイスの電源状態を制御します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565154" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_PORT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565154)"><strong>KSPROPERTY_EXTDEVICE_PORT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-port" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_PORT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-port)"><strong>KSPROPERTY_EXTDEVICE_PORT</strong></a></p></td>
 <td><p>外部デバイスの接続ポートの種類、1394 などまたは USB を返します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565152" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565152)"><strong>KSPROPERTY_EXTDEVICE_CAPABILITIES</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-capabilities" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extdevice-capabilities)"><strong>KSPROPERTY_EXTDEVICE_CAPABILITIES</strong></a></p></td>
 <td><p>ビデオの機能を所有するデバイスが記録できるかどうかなど、外部のデバイスの機能や、デバイスがファイルを使用して返します。</p></td>
 </tr>
 </tbody>

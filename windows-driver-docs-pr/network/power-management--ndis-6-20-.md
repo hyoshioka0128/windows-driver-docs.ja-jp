@@ -8,12 +8,12 @@ keywords:
 - 電源管理 WDK NDIS 6.20 が動作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 109ecd5c2d88808dc944af465e5f2bf168453388
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c3b6132169ff13adadfe1468f673a1f74da90d0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342963"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384530"
 ---
 # <a name="power-management-ndis-620"></a>電源管理 (NDIS 6.20)
 
@@ -37,7 +37,7 @@ ms.locfileid: "63342963"
 -   [Wake on LAN の省電力](low-power-for-wake-on-lan.md)
 -   [メディア切断の省電力](low-power-on-media-disconnect.md)
 
-**注**  NDIS 6.30 以降、NDIS 電源管理のインターフェイスが拡張されています。 電源管理のための NDIS 6.30 拡張機能の詳細については、ある情報を確認してください[(NDIS 6.30 以降) の電源管理](https://msdn.microsoft.com/library/windows/hardware/hh440160)します。
+**注**  NDIS 6.30 以降、NDIS 電源管理のインターフェイスが拡張されています。 電源管理のための NDIS 6.30 拡張機能の詳細については、ある情報を確認してください[(NDIS 6.30 以降) の電源管理](https://docs.microsoft.com/windows-hardware/drivers/network/power-management--ndis-6-30-)します。
 
  
 

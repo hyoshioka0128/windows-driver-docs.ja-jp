@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24728d55e8e00f36c353f9209b6a4ed4b2c0aa71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b690e3823f424067ba06a595424b5968463ab59f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364850"
 ---
 # <a name="kspropertybdalnblofhighband"></a>KSPROPERTY\_BDA\_LNB\_LOF\_高\_バンド
 
@@ -89,7 +89,7 @@ LNB RF 信号を衛星アンテナがリフレクションを収集するには�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_ノード**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_ノード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ccf94056b2905e3daab3a435ecccf1552c7c80d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1126d8cb14d51cb95fe9b7ad79b38525aca163e6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335998"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365756"
 ---
 # <a name="ndiskdifprovider"></a>!ndiskd.ifprovider
 
 
-**! Ndiskd.ifprovider**拡張機能に関する情報を表示する、 [NDIS インターフェイス プロバイダー](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider) (IfProvider)。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd 登録されているすべての NDIS インターフェイス プロバイダーの一覧が表示されます。
+**! Ndiskd.ifprovider**拡張機能に関する情報を表示する、 [NDIS インターフェイス プロバイダー](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider) (IfProvider)。 パラメーターなしで、この拡張機能を実行する場合。 ndiskd 登録されているすべての NDIS インターフェイス プロバイダーの一覧が表示されます。
 
 ```console
 !ndiskd.ifprovider [-handle <x>] 
@@ -54,7 +54,7 @@ Ndiskd.dll
 
 前の例をデバッグ対象のコンピューターに登録されている 4 つのインターフェイス プロバイダーから確認できます。 これらの 2 つは、NDIS インターフェイス プロバイダーです。
 
-**注**  インターフェイス プロバイダーは汎用的な概念、ミニポート ドライバーにする必要はありません。 必要な場合に、インターフェイス プロバイダーとして登録するミニポート ドライバーを選択することがあります、ほとんどのミニポート ドライバーしないで NDIS インターフェイスの組み込みのプロバイダーが存在するためです。 NDIS インターフェイスの組み込みプロバイダーは、自動的にすべてミニポート ドライバーや軽量な Filter (LWF) のすべてのモジュールでは、ループバック インターフェイスのインターフェイスを提供します。 詳細については、次を参照してください。 [NDIS インターフェイス プロバイダー](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider)します。
+**注**  インターフェイス プロバイダーは汎用的な概念、ミニポート ドライバーにする必要はありません。 必要な場合に、インターフェイス プロバイダーとして登録するミニポート ドライバーを選択することがあります、ほとんどのミニポート ドライバーしないで NDIS インターフェイスの組み込みのプロバイダーが存在するためです。 NDIS インターフェイスの組み込みプロバイダーは、自動的にすべてミニポート ドライバーや軽量な Filter (LWF) のすべてのモジュールでは、ループバック インターフェイスのインターフェイスを提供します。 詳細については、次を参照してください。 [NDIS インターフェイス プロバイダー](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)します。
 
  
 
@@ -86,17 +86,17 @@ HANDLERS
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[インターフェイスをプロバイダーとして登録します。](https://msdn.microsoft.com/windows/hardware/drivers/network/registering-as-an-interface-provider)
+[インターフェイスをプロバイダーとして登録します。](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)
 
  
 

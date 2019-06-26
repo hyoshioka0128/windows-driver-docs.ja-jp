@@ -9,12 +9,12 @@ keywords:
 - Avc.sys 関数ドライバー WDK、ドライバー スタック
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e2bb1dbb60b82b71b1f971efc250810cde13899
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 569877f930e40a4269b9196ec2592b49f93fe183
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384819"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386755"
 ---
 # <a name="avc-driver-stacks"></a>AV/C ドライバー スタック
 
@@ -22,7 +22,7 @@ ms.locfileid: "63384819"
 
 
 
-AV/C デバイスに追加され、IEEE 1394 バスから削除、プラグ アンド プレイ マネージャーは読み込みし、対応するサブユニット ドライバーをアンロードします。 ベンダーは、Windows は、上記の IEEE 1394 スタックに読み込まれるサブユニット ドライバーを記述することで一意の AV/C サブユニット機能を実装*Avc.sys*します。 *Avc.sys*デバイスを制御して接続し、管理のプラグを基になる IEEE 1394 および IEC 61883 ドライバーによって提供される機能を使用します。 これらの基になるドライバー スタックの詳細については、次を参照してください。 [、IEEE 1394 ドライバー スタック](https://msdn.microsoft.com/library/windows/hardware/ff538867)と[IEC 61883 クライアント ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff537188)します。
+AV/C デバイスに追加され、IEEE 1394 バスから削除、プラグ アンド プレイ マネージャーは読み込みし、対応するサブユニット ドライバーをアンロードします。 ベンダーは、Windows は、上記の IEEE 1394 スタックに読み込まれるサブユニット ドライバーを記述することで一意の AV/C サブユニット機能を実装*Avc.sys*します。 *Avc.sys*デバイスを制御して接続し、管理のプラグを基になる IEEE 1394 および IEC 61883 ドライバーによって提供される機能を使用します。 これらの基になるドライバー スタックの詳細については、次を参照してください。 [、IEEE 1394 ドライバー スタック](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)と[IEC 61883 クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)します。
 
 ピアのドライバー スタックは、外部の AV/C デバイスでのサブユニットです。 これに対し、仮想ドライバー スタックは、IEEE 1394 バスに接続されている他の AV/C デバイス AV/C デバイスとしてコンピューターを公開する個別のドライバー スタックです。 次の図は、2 つの異なるを示します*Avc.sys*スタック。
 

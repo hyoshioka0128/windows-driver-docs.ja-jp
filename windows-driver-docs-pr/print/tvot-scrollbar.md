@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f61b413adeb72bdfcb89c50d9a510d7d49e5024
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c359f89e7bada64120c3a59c160aa32746e28ca0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378130"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362757"
 ---
 # <a name="tvotscrollbar"></a>TVOT\_スクロール バー
 
@@ -29,12 +29,12 @@ ms.locfileid: "63378130"
 
 TVOT\_グループ ボックス内のスクロール バーのスクロール バー オプションの種類で構成されます。
 
-<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://msdn.microsoft.com/library/windows/hardware/ff559656)構造体  
+<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)構造体  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
 現在のスクロール バーの位置を表す値。
 
-<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM$** ](https://msdn.microsoft.com/library/windows/hardware/ff559660)構造体の配列 (**pOptParam**のメンバー [ **OPTTYPE**](https://msdn.microsoft.com/library/windows/hardware/ff559670))  
+<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM$** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)構造体の配列 (**pOptParam**のメンバー [ **OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype))  
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
 **pOptParam**\[0\]-&gt;**pData**スクロール バーの単位を識別するテキストの NULL で終わる文字列を指します。
@@ -57,7 +57,7 @@ TVOT\_グループ ボックス内のスクロール バーのスクロール �
 
 **pOptParam**\[2\]-&gt;**lParam**スクロールの増分値を指定します。
 
-<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff559670)構造体  
+<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)構造体  
 
 <span id="Type"></span><span id="type"></span><span id="TYPE"></span>**型**  
 TVOT\_スクロール バー
@@ -69,7 +69,7 @@ TVOT\_スクロール バー
 使用されていません。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
-場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://msdn.microsoft.com/library/windows/hardware/ff546211) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://msdn.microsoft.com/library/windows/hardware/ff547607) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
+場合**pDlgPage**で[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui) CPSUI が指定したページを識別する場合、または**DlgTemplateID**で[ **DLGPAGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage) CPSUI が指定したテンプレートでは、識別**BegCtrlID**は使用されません。
 
 それ以外の場合、 **BegCtrlID**順番に番号付きの一連のコントロール id の最初のコントロールの識別子を含める必要があります。 コントロールの id は、次の Windows コントロールを識別する必要があります。
 
@@ -126,7 +126,7 @@ TVOT\_スクロール バー
 
  
 
-詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://msdn.microsoft.com/library/windows/hardware/ff547296)します。
+詳細については、次を参照してください。 [Customizing CPSUI-Supported ウィンドウ コントロール](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)します。
 
 <a name="requirements"></a>要件
 ------------

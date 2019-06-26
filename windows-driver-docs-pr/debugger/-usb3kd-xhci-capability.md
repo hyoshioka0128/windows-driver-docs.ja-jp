@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1f4e1fdebadc39fd962b8fdf74fc1d2027a7af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9ce9a90e3399655f4fecd7b072c6669f237410e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335637"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362444"
 ---
 # <a name="usb3kdxhcicapability"></a>! usb3kd.xhci\_機能
 
@@ -42,7 +42,7 @@ Usb3kd.dll
 <a name="remarks"></a>コメント
 -------
 
-出力、 [ **! xhci\_機能**](-usb3kd-device-info.md)コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/hh406256)します。
+出力、 [ **! xhci\_機能**](-usb3kd-device-info.md)コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)します。
 
 <a name="examples"></a>使用例
 --------
@@ -117,7 +117,7 @@ Usb3kd.dll
 
 [USB 3.0 の拡張機能](usb-3-extensions.md)
 
-[**! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[ **! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
 
 [ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
 

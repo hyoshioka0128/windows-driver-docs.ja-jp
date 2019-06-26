@@ -7,12 +7,12 @@ keywords:
 - 関数の WDK 印刷プロバイダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ec343fd5db0345044216287d0d559aa4c32d43f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 540544e24a32ced840847d6ba3144802e53dc532
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363444"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67393457"
 ---
 # <a name="functions-defined-by-print-providers"></a>印刷プロバイダーによって定義されている関数
 
@@ -30,7 +30,7 @@ ms.locfileid: "63363444"
 
 サポートする必要がある関数は次の関数のリストで、"Required"ラベル付けされます。
 
-すべての印刷プロバイダーは、初期化関数をエクスポートする必要があります[ **InitializePrintProvidor**](https://msdn.microsoft.com/library/windows/hardware/ff551614)します。 その他のすべての関数へのポインターを指定する必要があります、 [ **PRINTPROVIDOR** ](https://msdn.microsoft.com/library/windows/hardware/ff560993)構造体。 (これら 2 つの名前は、スペルが間違っているが、ヘッダー ファイル、Winsplp.h で表示される名前との一貫性に注意してください)。
+すべての印刷プロバイダーは、初期化関数をエクスポートする必要があります[ **InitializePrintProvidor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintprovidor)します。 その他のすべての関数へのポインターを指定する必要があります、 [ **PRINTPROVIDOR** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_printprovidor)構造体。 (これら 2 つの名前は、スペルが間違っているが、ヘッダー ファイル、Winsplp.h で表示される名前との一貫性に注意してください)。
 
 関数は、グループに分割し、次のセクションに表示されます。
 
@@ -71,7 +71,7 @@ ms.locfileid: "63363444"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551614" data-raw-source="[&lt;strong&gt;InitializePrintProvidor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551614)"><strong>InitializePrintProvidor</strong> </a> (必須)</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintprovidor" data-raw-source="[&lt;strong&gt;InitializePrintProvidor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintprovidor)"><strong>InitializePrintProvidor</strong> </a> (必須)</p></td>
 <td><p>印刷のプロバイダーを初期化し、指定された関数へのポインターを返します。</p></td>
 </tr>
 </tbody>
@@ -134,12 +134,12 @@ ms.locfileid: "63363444"
 <td><p>指定した印刷キューへの呼び出し元のアクセスを有効にします。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561930" data-raw-source="[&lt;strong&gt;RefreshPrinterChangeNotification&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561930)"><strong>RefreshPrinterChangeNotification</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/ff561930(v=vs.85)" data-raw-source="[&lt;strong&gt;RefreshPrinterChangeNotification&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561930(v=vs.85))"><strong>RefreshPrinterChangeNotification</strong></a></p></td>
 <td><p>クライアントが呼び出す場合、ルーターによって呼び出されます<strong>FindNextPrinterChangeNotification</strong> (Microsoft Windows SDK のドキュメントを参照してください)、PRINTER_NOTIFY_OPTIONS_REFRESH でフラグを設定します。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>ResetPrinter</strong></p></td>
-<td><p>印刷キューのデータ型を変更または<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>構造体。</p></td>
+<td><p>印刷キューのデータ型を変更または<a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"> <strong>DEVMODEW</strong> </a>構造体。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>SetPrinter</strong> (必須)</p></td>
@@ -227,7 +227,7 @@ ms.locfileid: "63363444"
 <tr class="even">
 <td><p></p>
 <strong>AddJob</strong> (必須)</td>
-<td><p>ジョブの識別子とスプール ファイルのパスを返します。 呼び出し元を使用して<a href="https://msdn.microsoft.com/library/windows/desktop/aa363858" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363858)"> <strong>CreateFile</strong> </a>と<strong>WriteFile</strong>スプール ファイルにデータを送信します。</p></td>
+<td><p>ジョブの識別子とスプール ファイルのパスを返します。 呼び出し元を使用して<a href="https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)"> <strong>CreateFile</strong> </a>と<strong>WriteFile</strong>スプール ファイルにデータを送信します。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
@@ -414,7 +414,7 @@ ms.locfileid: "63363444"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddPort</strong></p></td>
-<td><p>通常、指定したポート モニターを呼び出すことによって利用可能なリストに、プリンター ポートを追加します。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff545026" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545026)"> <strong>AddPortUI</strong> </a>関数。</p></td>
+<td><p>通常、指定したポート モニターを呼び出すことによって利用可能なリストに、プリンター ポートを追加します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-addportui" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-addportui)"> <strong>AddPortUI</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AddPortEx</strong></p></td>
@@ -423,12 +423,12 @@ ms.locfileid: "63363444"
 <tr class="odd">
 <td><p></p>
 <strong>ConfigurePort</strong> (必須)</td>
-<td><p>呼び出して、指定したポート モニターの通常、プリンター ポートを構成します<a href="https://msdn.microsoft.com/library/windows/hardware/ff546290" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546290)"> <strong>ConfigurePortUI</strong> </a>関数。</p></td>
+<td><p>呼び出して、指定したポート モニターの通常、プリンター ポートを構成します<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-configureportui" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-configureportui)"> <strong>ConfigurePortUI</strong> </a>関数。</p></td>
 </tr>
 <tr class="even">
 <td><p></p>
 <strong>DeletePort</strong> (必須)</td>
-<td><p>通常、指定したポート モニターを呼び出すことによって利用可能な一覧からプリンター ポートを削除します。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff547432" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547432)"> <strong>DeletePortUI</strong> </a>関数。</p></td>
+<td><p>通常、指定したポート モニターを呼び出すことによって利用可能な一覧からプリンター ポートを削除します。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-deleteportui" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-deleteportui)"> <strong>DeletePortUI</strong> </a>関数。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
@@ -518,7 +518,7 @@ ms.locfileid: "63363444"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564255" data-raw-source="[&lt;strong&gt;XcvData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564255)"><strong>XcvData</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)" data-raw-source="[&lt;strong&gt;XcvData&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))"><strong>XcvData</strong></a></p></td>
 <td><p>ポート モニター UI の DLL とポートの監視サーバー DLL 間の通信パスを提供します。</p></td>
 </tr>
 </tbody>

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1337e225e7d37b832a2b934288ed975641aa51a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a7c27ccb95e174a815e7d212588374ea409058c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361954"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362189"
 ---
 # <a name="bug-check-0x155-osdatatampering"></a>バグ チェック 0x155:OS\_データ\_改ざん
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361954"
 OS\_データ\_改ざんのバグ チェックが 0x00000155 の値を持ちます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="osdatatampering-parameters"></a>OS\_データ\_改ざんパラメーター

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f7aea079eabfb24d0d4fb4770f435fd71610eb
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: 1a1ca16eb1ec81de3bbbd7102c1223135c4c37a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902700"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367886"
 ---
 # <a name="bug-check-0x125-nmrinvalidstate"></a>バグ チェック 0x125:NMR\_無効な\_状態
 
@@ -26,7 +26,7 @@ ms.locfileid: "59902700"
 NMR\_無効な\_状態のバグ チェックが 0x00000125 の値を持ちます。 これは、NMR (ネットワーク モジュールのレジストラー) に無効な状態が検出されたことを示します。 状態の種類のパラメーター 1 を参照してください。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="nmrinvalidstate-parameters"></a>NMR\_無効な\_状態パラメーター

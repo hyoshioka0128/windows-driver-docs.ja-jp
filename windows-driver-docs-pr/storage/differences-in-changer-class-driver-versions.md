@@ -8,12 +8,12 @@ keywords:
 - チェンジャー ドライバーのクラス ドライバー WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c68c604a9722e02287c75425b9d6d9a37974a5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32ea5081a3dd8f0759cfc79b3ba4a85e8b16d1f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384841"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368289"
 ---
 # <a name="differences-in-changer-class-driver-versions"></a>チェンジャー クラス ドライバーのバージョンの違い
 
@@ -23,7 +23,7 @@ ms.locfileid: "63384841"
 
 Windows XP および Windows 2000 チェンジャー クラス/miniclass ドライバー pair の実装の 3 つの主な違いがあります。
 
-1.  別の使用、 [**チェンジャー Miniclass ドライバーの DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff552647) miniclass ドライバーで日常的な。
+1.  別の使用、 [**チェンジャー Miniclass ドライバーの DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/storage/driverentry-of-changer-miniclass-drivers) miniclass ドライバーで日常的な。
 
     Windows 2000 の場合、チェンジャー クラス ドライバーの**DriverEntry**ルーチンが I/O 要求のエントリ ポイントの初期化を含め、さまざまなドライバーの初期化タスクを実行します。 Windows XP およびそれ以降のオペレーティング システムでは、初期化が行われ、 **DriverEntry** miniclass ドライバーの日常的な。 参照してください[必要チェンジャー Miniclass ルーチン](required-changer-miniclass-routines.md)タスクの詳細についてを miniclass ドライバーの**DriverEntry**を実行するルーチンが必要です。
 
@@ -41,17 +41,17 @@ Windows XP および Windows 2000 チェンジャー クラス/miniclass ドラ�
 
 Windows 2000 でチェンジャー クラス ドライバーは、次のルーチンを呼び出す miniclass ドライバーを提供します。
 
--   [**ChangerClassAllocatePool** ](https://msdn.microsoft.com/library/windows/hardware/ff551402) -プールのメモリを割り当てます。
+-   [**ChangerClassAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassallocatepool) -プールのメモリを割り当てます。
 
--   [**ChangerClassFreePool** ](https://msdn.microsoft.com/library/windows/hardware/ff551411) -プールのメモリを解放します。
+-   [**ChangerClassFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassfreepool) -プールのメモリを解放します。
 
--   [**ChangerClassDebugPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff551406) --デバッグ情報を出力します。
+-   [**ChangerClassDebugPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassdebugprint) --デバッグ情報を出力します。
 
 Windows XP およびそれ以降のオペレーティング システムでは、チェンジャー クラス ドライバーが提供するルーチンに加え、2 つの追加ルーチン以前表示されます。
 
--   [**ChangerClassInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff551413) --チェンジャー miniclass ドライバー呼び出し**ChangerClassInitialize**内からその**DriverEntry**ルーチン ドライバーを初期化します。 **ChangerClassInitialize** Windows 2000 チェンジャー クラス ドライバーで実行していた多くのタスクを実行します**DriverEntry**ルーチン。
+-   [**ChangerClassInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize) --チェンジャー miniclass ドライバー呼び出し**ChangerClassInitialize**内からその**DriverEntry**ルーチン ドライバーを初期化します。 **ChangerClassInitialize** Windows 2000 チェンジャー クラス ドライバーで実行していた多くのタスクを実行します**DriverEntry**ルーチン。
 
--   [**ChangerClassSendSrbSynchronous** ](https://msdn.microsoft.com/library/windows/hardware/ff551415) --を初期化し、指定されたターゲット デバイスへ、SRB を同期的に送信します。
+-   [**ChangerClassSendSrbSynchronous** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclasssendsrbsynchronous) --を初期化し、指定されたターゲット デバイスへ、SRB を同期的に送信します。
 
  
 

@@ -4,12 +4,12 @@ description: Windows 10 ですべてのデバイスの Bluetooth トランスポ
 ms.assetid: E65A71D3-C0D2-4E13-9E19-1E6C6C1A172E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2b359640276f55b0df5ab8923b35f41ed931f27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8eef5c6812ec27632b0c81dc3f09eb3c575d12c7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328172"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364606"
 ---
 # <a name="bluetooth-universal-windows-driver-model-for-windows-10"></a>Windows 10 向けの Bluetooth ユニバーサル Windows ドライバー モデル
 
@@ -24,7 +24,7 @@ Bluetooth オーディオ ドライバーの表層部は Windows 10 用に分�
 ## <a name="span-idhowtowriteabluetoothuniversalwindowsdriverspanspan-idhowtowriteabluetoothuniversalwindowsdriverspanspan-idhowtowriteabluetoothuniversalwindowsdriverspanhow-to-write-a-bluetooth-universal-windows-driver"></a><span id="How_to_write_a_Bluetooth_Universal_Windows_driver"></span><span id="how_to_write_a_bluetooth_universal_windows_driver"></span><span id="HOW_TO_WRITE_A_BLUETOOTH_UNIVERSAL_WINDOWS_DRIVER"></span>Bluetooth のユニバーサル Windows ドライバーを作成する方法
 
 
-Bluetooth のユニバーサル Windows ドライバーを作成するを参照してください[ユニバーサル Windows ドライバーの概要](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)、」の手順に従います*ユニバーサル Windows ドライバーをビルド*Universal を構築するには。カーネル モード ドライバー (KMDF) テンプレートを使用して Windows ドライバー。
+Bluetooth のユニバーサル Windows ドライバーを作成するを参照してください[ユニバーサル Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers)、」の手順に従います*ユニバーサル Windows ドライバーをビルド*Universal を構築するには。カーネル モード ドライバー (KMDF) テンプレートを使用して Windows ドライバー。
 
 次に、実装のガイダンスについては、Bluetooth デザインおよび参照セクションを参照してください。
 

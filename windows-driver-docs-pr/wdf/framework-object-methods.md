@@ -6,12 +6,12 @@ keywords:
 - framework オブジェクト WDK KMDF、メソッド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9954c646788651ed1045fa64c60193adf82c53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0dd19a2818854f2bd820c59e480463d651881283
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370978"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384459"
 ---
 # <a name="framework-object-methods"></a>フレームワーク オブジェクトのメソッド
 
@@ -23,13 +23,13 @@ Framework の各オブジェクトは、一連のメソッド (関数) をエク
 
 -   オブジェクトに関連付けられているアクションを実行します。
 
-    たとえば、 [ **WdfIoQueueCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547401)メソッドがデバイスの I/O キューを作成します。
+    たとえば、 [ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)メソッドがデバイスの I/O キューを作成します。
 
-    通常、アクションを実行するメソッドを返す、 [NTSTATUS 値](https://msdn.microsoft.com/library/windows/hardware/ff557697)します。
+    通常、アクションを実行するメソッドを返す、 [NTSTATUS 値](https://docs.microsoft.com/windows-hardware/drivers/kernel/ntstatus-values)します。
 
 -   これを取得または変更、[プロパティ](framework-object-properties.md)オブジェクトに関連付けられています。
 
-    たとえば、 [ **WdfRequestGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff549965)メソッドは、I/O 要求の完了ステータスに関する情報を返します。
+    たとえば、 [ **WdfRequestGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetinformation)メソッドは、I/O 要求の完了ステータスに関する情報を返します。
 
     通常のプロパティを取得メソッドは、通常、プロパティを変更するメソッドは、値を返しません。 中に、プロパティの値を返します。
 

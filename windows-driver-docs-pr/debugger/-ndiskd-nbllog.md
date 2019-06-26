@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6c9563b19f9e2c53287bf424a2bea52f551930
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e57e8e2e4b78563a0e9a38b1e17f56187774f3a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335987"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363132"
 ---
 # <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
-**! Ndiskd.nbllog**拡張機能がすべて NBL のログを表示します ([**NET\_バッファー\_一覧**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)) システム上のアクティビティ。
+**! Ndiskd.nbllog**拡張機能がすべて NBL のログを表示します ([**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) システム上のアクティビティ。
 
 ```console
 !ndiskd.nbllog [-stacks] 
@@ -63,7 +63,7 @@ Ndiskd.dll
 
  
 
-NBL ログは、システム上のネットワーク トラフィックを表示します。 [**! ndiskd.netreport** ](-ndiskd-netreport.md)視覚的にこのネットワーク トラフィックを表示する NBL 追跡ログを解析します。 そのため、NBL の追跡が有効な場合、 **! ndiskd.netreport**この情報を表示することはできません。
+NBL ログは、システム上のネットワーク トラフィックを表示します。 [ **! ndiskd.netreport** ](-ndiskd-netreport.md)視覚的にこのネットワーク トラフィックを表示する NBL 追跡ログを解析します。 そのため、NBL の追跡が有効な場合、 **! ndiskd.netreport**この情報を表示することはできません。
 
 <a name="examples"></a>例
 --------
@@ -107,17 +107,17 @@ NBL のターゲットのデバッグ対象のマシンで追跡を有効にし�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[ネットワーク ドライバーの設計ガイド](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[ネットワーク ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista およびそれ以降のネットワーク リファレンス](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista およびそれ以降のネットワーク リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [ネットワーク スタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_バッファー\_一覧**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)
+[**NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
 [!ndiskd.nbl -log](https://go.microsoft.com/fwlink/p/?linkid=846176)
 

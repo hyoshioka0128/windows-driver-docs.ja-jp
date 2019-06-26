@@ -4,12 +4,12 @@ description: キャプチャ拡張機能
 ms.assetid: A8C2E550-4B1F-4DDB-B97F-1F7B6B74F5E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d260e5edb69b902c3b4c84539ca34408bb24bc3e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a51c59cfd8a7421c9d4bd503dcf319cb21a6913
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351943"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382795"
 ---
 # <a name="capturing-extensions"></a>キャプチャ拡張機能
 
@@ -32,7 +32,7 @@ ms.locfileid: "63351943"
 
     フィルター ドライバーを変更するための INF 要件の詳細については、次を参照してください。[変更フィルター ドライバーの INF ファイルを構成する](configuring-an-inf-file-for-a-modifying-filter-driver.md)します。
 
--   キャプチャ拡張機能は、イングレスおよびエグレス拡張可能スイッチのデータ パス上でパケットを監視できます。 ただし、この種類の拡張機能を呼び出す必要があります常に[ **NdisFSendNetBufferLists** ](https://msdn.microsoft.com/library/windows/hardware/ff562616)拡張可能スイッチ ドライバー スタック内の基になるドライバーにパケットを転送し、それらを完了できません。
+-   キャプチャ拡張機能は、イングレスおよびエグレス拡張可能スイッチのデータ パス上でパケットを監視できます。 ただし、この種類の拡張機能を呼び出す必要があります常に[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)拡張可能スイッチ ドライバー スタック内の基になるドライバーにパケットを転送し、それらを完了できません。
 
 -   キャプチャ拡張機能は、パケット内のデータを変更したり、パケットの帯域外の (OOB) データを変換先のポートを追加する必要がありますしません。 拡張機能は、任意の拡張可能スイッチ ポートへのパケットの配信を除外しない必要があります。
 

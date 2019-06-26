@@ -7,12 +7,12 @@ keywords:
 - ハードウェア キー WDK デバイスのインストールを開く
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07321f59c1d5d516edf98cf588e47d57044c0714
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88ffaee894de83953551b0eae2462471e8db2f0c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365866"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365465"
 ---
 # <a name="opening-a-devices-hardware-key"></a>デバイスのハードウェア キーを開く
 
@@ -25,13 +25,13 @@ A*ハードウェア キー*デバイスに関する情報を格納している�
 
 開くか、デバイスのハードウェア キーを作成、これらのガイドラインに従います。
 
--   既存のハードウェア キーを開くには、次のように使用します。 [ **SetupDiOpenDevRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff552079)します。 ハードウェア キーを作成するには使用[ **SetupDiCreateDevRegKey**](https://msdn.microsoft.com/library/windows/hardware/ff550973)します。 いずれの場合も、設定する必要があります、 *KeyType* DIREG_DEV パラメーター。
+-   既存のハードウェア キーを開くには、次のように使用します。 [ **SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)します。 ハードウェア キーを作成するには使用[ **SetupDiCreateDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)します。 いずれの場合も、設定する必要があります、 *KeyType* DIREG_DEV パラメーター。
 
     **注**  設定する必要があります、 *samDesired*パラメーターを必要とされる最小限のアクセス許可。 KEY_ALL_ACCESS にこのパラメーターを設定する必要がありますできません。 レジストリへのアクセスのアクセス許可を指定する方法の詳細については、次を参照してください。[レジストリのキーを安全にアクセスする](accessing-registry-keys-safely.md)します。
 
      
 
--   カーネル モードの呼び出し元が使用する必要があります[ **IoOpenDeviceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549443)設定と、 *DevInstKeyType* PLUGPLAY_REGKEY_DEVICE パラメーター。
+-   カーネル モードの呼び出し元が使用する必要があります[ **IoOpenDeviceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)設定と、 *DevInstKeyType* PLUGPLAY_REGKEY_DEVICE パラメーター。
 
  
 

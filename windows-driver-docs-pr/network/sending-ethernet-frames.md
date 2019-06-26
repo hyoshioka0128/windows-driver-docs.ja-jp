@@ -9,12 +9,12 @@ keywords:
 - イーサネット フレームを送信します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 697f0d5e4d4f1d2531db3d0469c970e45a7fa341
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a5bbaac38e6bc18c714b4d9bb7d6b7ecb7458a29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346754"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386846"
 ---
 # <a name="sending-ethernet-frames"></a>イーサネット フレームの送信
 
@@ -30,7 +30,7 @@ Windows TCP/IP トランスポートは、イーサネット フレームを送�
 
 イーサネットの送信要求、ドライバーはこれらの要件をサポートする必要があります。
 
--   ドライバーを送信要求の作成元である場合、ドライバーを割り当てる必要があります、 [ **NET\_バッファー\_一覧**](https://msdn.microsoft.com/library/windows/hardware/ff568388)イーサネット フレームの構造体。 **NetBufferListInfo**各ネットワーク内のメンバー\_バッファー\_リスト構造は、特定の使用に必要なアウト オブ バンド (OOB) データを含める必要があります。 OOB のデータがすべてに適用されます、 [ **NET\_バッファー** ](https://msdn.microsoft.com/library/windows/hardware/ff568376) 、NET に関連付けられている構造\_バッファー\_リスト構造体。
+-   ドライバーを送信要求の作成元である場合、ドライバーを割り当てる必要があります、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)イーサネット フレームの構造体。 **NetBufferListInfo**各ネットワーク内のメンバー\_バッファー\_リスト構造は、特定の使用に必要なアウト オブ バンド (OOB) データを含める必要があります。 OOB のデータがすべてに適用されます、 [ **NET\_バッファー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) 、NET に関連付けられている構造\_バッファー\_リスト構造体。
 
 -   ドライバー、送信要求の作成元である場合、ドライバーが 1 つまたは複数のネットワークを割り当てる必要があります\_イーサネット フレームの構造をバッファリングしてからこれらの構造をリンクする、NET\_バッファー\_リスト構造体。 各ネット\_、NET にリンクされているバッファー構造\_バッファー\_リスト構造体には、1 つのイーサネット フレームがについて説明します。 ドライバーのチェーンの複数の NET\_バッファー\_の送信要求内のリストの構造体。 
 

@@ -16,12 +16,12 @@ keywords:
 - D3DPRIMCAPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5d4c8dfbcc11e7d0f6d8e1cd5cec489dcc8767a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72b281315e1a7332b8fe1d8a576ff48155878394
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365501"
 ---
 # <a name="shading-requirements"></a>シェーディング要件
 
@@ -33,13 +33,13 @@ ms.locfileid: "63382338"
 
 ### <a name="span-idflatshadingspanspan-idflatshadingspanflat-shading"></a><span id="flat_shading"></span><span id="FLAT_SHADING"></span>フラットな影付き
 
-D3DPSHADECAPS\_COLORFLATRGB ビット、 **dwShadeCap**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)適切なプリミティブ型 (行の構造を設定する必要がありますまたは、三角形) フラット シェーディングがそのプリミティブ型のサポートされていることを指定するためにします。
+D3DPSHADECAPS\_COLORFLATRGB ビット、 **dwShadeCap**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)適切なプリミティブ型 (行の構造を設定する必要がありますまたは、三角形) フラット シェーディングがそのプリミティブ型のサポートされていることを指定するためにします。
 
 三角形のファンを除くすべてのプリミティブ型、(サポートされている) 場合は、反射の色、およびアルファ データが、各プリミティブの最初の頂点から取得します。 三角形のファンの 2 番目の頂点が使用されます。 三角形全体にわたってこれらの色が変わらない (つまり、補間されません)。
 
 ### <a name="span-idgouraudshadingspanspan-idgouraudshadingspangouraud-shading"></a><span id="gouraud_shading"></span><span id="GOURAUD_SHADING"></span>グーロー シェーディング
 
-**DwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)構造体の有効期限があります、D3DPSHADECAPS\_COLORGOURAUDRGB ビットが、適切なプリミティブ型 (の設定線または三角形) を色の補間をグーローがサポートされていることを示します。 色およびスペキュラ コンポーネントはどちらも線形補間しますの頂点の間。
+**DwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体の有効期限があります、D3DPSHADECAPS\_COLORGOURAUDRGB ビットが、適切なプリミティブ型 (の設定線または三角形) を色の補間をグーローがサポートされていることを示します。 色およびスペキュラ コンポーネントはどちらも線形補間しますの頂点の間。
 
 すべてのプリミティブのカラー データは、プリミティブの頂点の間の線形補間を使用する必要があり、リファレンス ラスタライザーによって生成されたイメージに準拠している必要があります。 さらに、存在する場合は、すべてのカラーとアルファ コンポーネントを同じ方法で挿入する必要があります。 などフラット シェーディングをアルファ コンポーネントを使用しながら、RGB 色のコンポーネントのグーロー補間を使用することはできません。 例外の反射の色のアルファ コンポーネントを使用して、霧コンポーネントが送信されるべきではフラットな影が付きます。
 
@@ -47,7 +47,7 @@ D3DPSHADECAPS\_COLORFLATRGB ビット、 **dwShadeCap**のメンバー、 [ **D3
 
 ### <a name="span-idspecularhighlightingspanspan-idspecularhighlightingspanspecular-highlighting"></a><span id="specular_highlighting"></span><span id="SPECULAR_HIGHLIGHTING"></span>反射ハイライト
 
-場合のサポートを強調表示が公開されていると後で、次のフラグの一方または両方を設定する必要があります、反射、 **dwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)用の構造、適切なプリミティブ型 (線または三角形):
+場合のサポートを強調表示が公開されていると後で、次のフラグの一方または両方を設定する必要があります、反射、 **dwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)用の構造、適切なプリミティブ型 (線または三角形):
 
 -   D3DPSHADECAPS\_フラット シェーディングがサポートされている場合、SPECULARFLATRGB を設定する必要があります。
 
@@ -63,7 +63,7 @@ D3DPSHADECAPS\_SPECULARFLATMONO と D3DPSHADECAPS\_SPECULARGOURAUDMONO フラグ
 
 ### <a name="span-idalphablendingspanspan-idalphablendingspanalpha-blending"></a><span id="alpha_blending"></span><span id="ALPHA_BLENDING"></span>アルファ ブレンド
 
-アルファ ブレンドのサポートを公開するで、次のフラグを設定、 **dwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)適切なプリミティブ型の構造型 (線または三角形):
+アルファ ブレンドのサポートを公開するで、次のフラグを設定、 **dwShadeCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)適切なプリミティブ型の構造型 (線または三角形):
 
 -   D3DPSHADECAPS\_アルファとフラット シェーディングがサポートされている場合、ALPHAFLATBLEND を設定する必要があります。
 
@@ -79,19 +79,19 @@ D3DPSHADECAPS\_SPECULARFLATMONO と D3DPSHADECAPS\_SPECULARGOURAUDMONO フラグ
 
 ### <a name="span-idditheringspanspan-idditheringspandithering"></a><span id="dithering"></span><span id="DITHERING"></span>ディザリング
 
-特定のプリミティブ型 (線または三角形) にディザリングがサポートされている場合、 **dwRasterCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)構造体は、D3DPRASTERCAPS をいる必要があります\_ディザー フラグを設定します。 機能は、D3DRENDERSTATE によって制御可能である必要があります\_DITHERENABLE が状態を表示します。
+特定のプリミティブ型 (線または三角形) にディザリングがサポートされている場合、 **dwRasterCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体は、D3DPRASTERCAPS をいる必要があります\_ディザー フラグを設定します。 機能は、D3DRENDERSTATE によって制御可能である必要があります\_DITHERENABLE が状態を表示します。
 
 ディザリングがサポートされている場合、可能性がありますを既定としないで常に off または常にします。
 
 ### <a name="span-idcolorkeyspanspan-idcolorkeyspancolor-key"></a><span id="color_key"></span><span id="COLOR_KEY"></span>カラー キー
 
-カラー キーと関連するテクスチャの透明度、D3DPTEXTURECAPS\_透過性の上限 (を参照してください、 **dwTextureCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)構造体)。
+カラー キーと関連するテクスチャの透明度、D3DPTEXTURECAPS\_透過性の上限 (を参照してください、 **dwTextureCaps**のメンバー、 [ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)構造体)。
 
 カラー キー透明度の 2D スプライトの作成に使用されているオブジェクトの一部の色をフレーム バッファーにそれらの下にある色に置き換えます。 ドライバーが行えるように、シーン全体のカラー キーを有効にすることが - のカラー キー オンとオフをそれぞれの面にすることではなく添付のカラー キー値を持つ特定のサーフェスにだけ色キーを使用するアプリケーション。
 
 場合に、・ カラーキーが有効になっている、D3DRENDERSTATE\_COLORKEYENABLE でレンダリング状態が に設定されている**TRUE**テクスチャ サーフェスであり、DDRAWISURF\_HASCKEYSRCBLT ビットが設定
 
-場合に、カラー キーが有効になっている、D3DRENDERSTATE\_COLORKEYENABLE でレンダリング状態が に設定されている**TRUE**テクスチャ サーフェスであり、DDRAWISURF\_HASCKEYSRCBLT ビットが設定します。 (を参照してください、 **dwFlags**のメンバー、 [ **DD\_画面\_ローカル**](https://msdn.microsoft.com/library/windows/hardware/ff551733)詳細については、構造体)。アプリケーション作成 DDSD を使用するテクスチャ サーフェス\_CKSRCBLT を呼び出して、 **IDirect3DDevice7::SetRenderState** D3DRENDERSTATE メソッド\_COLORKEYENABLE と**TRUE**. これらの両方のカラー キーが発生する場合は true である必要があるあり、レンダリング状態のままにするアプリケーションを許可する必要があります**TRUE**すべて時間と引き続き選択的にフレームのテクスチャのサブセットを使用してカラー キー (が指定されている、DDRAWISURF\_HASCKEYSRCBLT ビットが設定)。 この動作を正しく処理するために、ドライバーの責任です。 詳細については**IDirect3DDevice7::SetRenderState**、Direct3D SDK のドキュメントを参照してください。
+場合に、カラー キーが有効になっている、D3DRENDERSTATE\_COLORKEYENABLE でレンダリング状態が に設定されている**TRUE**テクスチャ サーフェスであり、DDRAWISURF\_HASCKEYSRCBLT ビットが設定します。 (を参照してください、 **dwFlags**のメンバー、 [ **DD\_画面\_ローカル**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)詳細については、構造体)。アプリケーション作成 DDSD を使用するテクスチャ サーフェス\_CKSRCBLT を呼び出して、 **IDirect3DDevice7::SetRenderState** D3DRENDERSTATE メソッド\_COLORKEYENABLE と**TRUE**. これらの両方のカラー キーが発生する場合は true である必要があるあり、レンダリング状態のままにするアプリケーションを許可する必要があります**TRUE**すべて時間と引き続き選択的にフレームのテクスチャのサブセットを使用してカラー キー (が指定されている、DDRAWISURF\_HASCKEYSRCBLT ビットが設定)。 この動作を正しく処理するために、ドライバーの責任です。 詳細については**IDirect3DDevice7::SetRenderState**、Direct3D SDK のドキュメントを参照してください。
 
  
 

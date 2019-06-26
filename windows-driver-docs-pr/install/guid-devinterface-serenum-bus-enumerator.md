@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3b7ee4a3072973692e74f58ebba24c99632676ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28fe9fdcd40a5035dee434b737f385f5237e25b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363694"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386427"
 ---
 # <a name="guiddevinterfaceserenumbusenumerator"></a>GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
 
 
-GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)プラグ アンド プレイ (PnP) が定義されている[シリアル ポート](https://msdn.microsoft.com/library/windows/hardware/ff547451)します。
+GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)プラグ アンド プレイ (PnP) が定義されている[シリアル ポート](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))します。
 
 <table>
 <colgroup>
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR[デバイス インターフェイス �
 
 デバイスのシリアル ポートのシステム指定の列挙子は、オペレーティング システムとデバイスのシリアル ポートの存在をアプリケーションに通知する GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR のインスタンスを登録します。
 
-WDK には、シリアル列挙子のサンプルが含まれています。 [serenum](https://msdn.microsoft.com/library/windows/hardware/ff546505)します。 Serenum サンプルが古い形式の識別子を使用して[ **GUID_SERENUM_BUS_ENUMERATOR** ](guid-serenum-bus-enumerator.md)をこのデバイスのインターフェイス クラスのインスタンスを登録します。 Serenum サンプルが記載されています、 *src\\カーネル*WDK のディレクトリ。
+WDK には、シリアル列挙子のサンプルが含まれています。 [serenum](https://docs.microsoft.com/previous-versions/ff546505(v=vs.85))します。 Serenum サンプルが古い形式の識別子を使用して[ **GUID_SERENUM_BUS_ENUMERATOR** ](guid-serenum-bus-enumerator.md)をこのデバイスのインターフェイス クラスのインスタンスを登録します。 Serenum サンプルが記載されています、 *src\\カーネル*WDK のディレクトリ。
 
-シリアル デバイスとドライバーについては、次を参照してください。[シリアル デバイスとドライバー](https://msdn.microsoft.com/library/windows/hardware/ff547451)します。
+シリアル デバイスとドライバーについては、次を参照してください。[シリアル デバイスとドライバー](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))します。
 
 シリアル ポートのデバイスに対するデバイスのインターフェイス クラスについては、次を参照してください。 [ **GUID_DEVINTERFACE_COMPORT**](guid-devinterface-comport.md)します。
 

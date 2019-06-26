@@ -9,12 +9,12 @@ keywords:
 - AH で保護されたパケット WDK IPsec オフロード、セキュリティ アソシエーション
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 019d8e39122590adccff5570e4ba8b9933f21c3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bdc4c279bdd78dafe37a7528cc35fa77f921279c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367846"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384731"
 ---
 # <a name="adding-a-security-association-to-a-nic"></a>NIC へのセキュリティ アソシエーションの追加
 
@@ -23,7 +23,7 @@ ms.locfileid: "63367846"
 
 
 
-トランスポートは、NIC がインターネット プロトコル セキュリティ (IPsec) の操作を実行できることを決定後、TCP/IP (を参照してください[NIC の IPsec 機能を Reporting](reporting-a-nic-s-ipsec-capabilities.md))、トランスポートは、1 つまたは複数の受信を追加する NIC のミニポート ドライバーを要求する必要があります送信セキュリティ アソシエーション (Sa) とトランスポート NIC には、NIC に IPsec タスク オフロードできますと ミニポート ドライバーが、TCP/IP をトランスポート設定、NIC に 1 つ以上の SAs を追加することを要求する[OID\_TCP\_タスク\_IPSEC\_追加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569808)します。
+トランスポートは、NIC がインターネット プロトコル セキュリティ (IPsec) の操作を実行できることを決定後、TCP/IP (を参照してください[NIC の IPsec 機能を Reporting](reporting-a-nic-s-ipsec-capabilities.md))、トランスポートは、1 つまたは複数の受信を追加する NIC のミニポート ドライバーを要求する必要があります送信セキュリティ アソシエーション (Sa) とトランスポート NIC には、NIC に IPsec タスク オフロードできますと ミニポート ドライバーが、TCP/IP をトランスポート設定、NIC に 1 つ以上の SAs を追加することを要求する[OID\_TCP\_タスク\_IPSEC\_追加\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-sa)します。
 
  
 

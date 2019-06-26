@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 15c8ca4c096ac71383e0b68ca59c674700cc8e55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98f33723e12d72c03118cab036ad67601eded469
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361152"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366684"
 ---
 # <a name="kscategorytopology"></a>KSCATEGORY_TOPOLOGY
 
 
-KSCATEGORY_TOPOLOGY[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) オーディオ デバイスの内部のトポロジの機能のカテゴリ。
+KSCATEGORY_TOPOLOGY[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) オーディオ デバイスの内部のトポロジの機能のカテゴリ。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_TOPOLOGY[デバイス インターフェイス クラス](https://msd
 
 KS オーディオ アダプター デバイス用のドライバーでは、オペレーティング システムに、デバイスが KSCATEGORY_TOPOLOGY 機能カテゴリをサポートすることを示す KSCATEGORY_TOPOLOGY のインスタンスを登録します。
 
-オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://msdn.microsoft.com/library/windows/hardware/ff536813)します。
+オーディオのアダプターのインターフェイス クラスのデバイスについては、次を参照してください。[オーディオのアダプターのデバイスのインターフェイスをインストールする](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)します。
 
 [AC'97 サンプル ドライバー](https://go.microsoft.com/fwlink/p/?linkid=256075)で提供されている、WDK KSCATEGORY_TOPOLOGY デバイス インターフェイス クラスのインスタンスを列挙します。
 

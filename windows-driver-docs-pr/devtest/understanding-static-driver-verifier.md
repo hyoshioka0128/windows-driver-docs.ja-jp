@@ -8,12 +8,12 @@ keywords:
 - SDV の WDK、Static Driver Verifier について
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c95e67345779c9b5e003319e50cd8b2b4e79cec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbe867151af2117845a04b22382d8271520c337b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384715"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363788"
 ---
 # <a name="understanding-static-driver-verifier"></a>静的ドライバー検証ツールの概要
 
@@ -36,7 +36,7 @@ Solid のドライバーの開発は、次の理由により困難となりま�
 
 -   *コントロール*します。 通常の状況で正しく動作するドライバーには、微妙なエラーなど、スタック内の下にあるドライバーは IRP に失敗すると、例外的な状況でのみ発生することができます。 このような状況は従来のテストも、ドライバーのコードによってエラー パスは適切に検出しませんのでを実行するため困難です。
 
-SDV は、監視とドライバーをテストするときに必要のあるコントロールの両方を強化します。 WDM、KMDF、NDIS、および Storport の関数の適切な使用規則を定義し、これらの規則、ドライバーのコンプライアンスを監視、SDV はエラーを確認する機能が向上します。 WDM ルールなど[LowerDriverReturn](https://msdn.microsoft.com/library/windows/hardware/ff548273)特定の状況で、ドライバーのディスパッチ ルーチン返す必要があります常にスタックの下位のドライバーによって返された値を指定します。
+SDV は、監視とドライバーをテストするときに必要のあるコントロールの両方を強化します。 WDM、KMDF、NDIS、および Storport の関数の適切な使用規則を定義し、これらの規則、ドライバーのコンプライアンスを監視、SDV はエラーを確認する機能が向上します。 WDM ルールなど[LowerDriverReturn](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-lowerdriverreturn)特定の状況で、ドライバーのディスパッチ ルーチン返す必要があります常にスタックの下位のドライバーによって返された値を指定します。
 
 SDV は、提供することで、コントロールも増加します。
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdc7b165318f7bbbef02dbc148ecb2e9071ef55d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9edcdba0c1ee776f8613b3c151f6b79337957ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385923"
 ---
 # <a name="inf-addinterface-directive"></a>INF AddInterface ディレクティブ
 
@@ -36,12 +36,12 @@ AddInterface={InterfaceClassGUID} [,[reference-string] [,[add-interface-section]
 
 
 <a href="" id="interfaceclassguid"></a>*InterfaceClassGUID*  
-デバイスのインターフェイス クラスを識別する GUID 値を指定します。 これは、フォームの明示的な GUID 値として表現できます **{**<em>nnnnnnnn</em>**-***nnnn***-***nnnn*-* nnnn***-**<em>nnnnnnnnnnnn</em>**}** または % として*strkey*% トークン定義されている **"{**<em>nnnnnnnn</em>**-***nnnn***-***nnnn*-* nnnn***-**<em>nnnnnnnnnnnn</em>**}"** で、 [**文字列**](inf-strings-section.md) INF ファイルのセクション。
+デバイスのインターフェイス クラスを識別する GUID 値を指定します。 これは、フォームの明示的な GUID 値として表現できます **{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}** または % として*strkey*% トークン定義されている **"{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}"** で、 [**文字列**](inf-strings-section.md) INF ファイルのセクション。
 
-GUID を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://msdn.microsoft.com/library/windows/hardware/ff565392)します。 システム定義のインターフェイス クラスの GUID など、適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイスの Guid。
+GUID を作成する方法の詳細については、次を参照してください。[ドライバーを使用して Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)します。 システム定義のインターフェイス クラスの GUID など、適切なヘッダーを参照してください*Ks.h*カーネル ストリーミング インターフェイスの Guid。
 
 <a href="" id="reference-string"></a>*参照文字列*  
-この省略可能な値は、指定されたインターフェイス クラスのデバイスに固有のインスタンスに関連付けられたを表現できるいずれかを **"**<em>文字列を引用符で囲まれた</em>**"** または %として*strkey*% のトークンで定義されている、 [ **INF 文字列セクション**](inf-strings-section.md)します。
+この省略可能な値は、指定されたインターフェイス クラスのデバイスに固有のインスタンスに関連付けられたを表現できるいずれかを **"** <em>文字列を引用符で囲まれた</em> **"** または %として*strkey*% のトークンで定義されている、 [ **INF 文字列セクション**](inf-strings-section.md)します。
 
 PnP ドライバーの関数とフィルターからこの値を省略は、通常、 **AddInterface =** INF ファイル内のエントリ。 A*参照文字列*を使って、 *swenum*ドライバーには 1 つのインターフェイス クラスの複数のインスタンスを使用してオンデマンドで作成されたソフトウェアのデバイスのプレース ホルダーとして。 同じ*InterfaceClassGUID*値は、2 つの INF エントリで指定されているまたは複数の固有*参照文字列*秒。 I/O マネージャーに渡されるから、*参照文字列*開かれるたびに、インターフェイス インスタンスの名前のパス コンポーネントとして値を 1 つの同じクラスのインターフェイスのインスタンス間でインストールされているドライバーを識別できます。デバイスです。
 
@@ -54,9 +54,9 @@ INF ファイルの別の場所のセクションの名前を参照します。 
 <a name="remarks"></a>注釈
 -------
 
-場合、[デバイス インターフェイス クラス](device-interface-classes.md)によって指定された識別 **{**<em>InterfaceClassGUID</em>**}** がインストールされていなければ、システムのセットアップコードでは、そのクラスをシステムにインストールします。 新しいクラスをインストールする任意の INF ファイルがあります、 [ **INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)します。 このセクションが含まれていますが、指定した **{**<em>InterfaceClassGUID</em>**}** 参照と、*インターフェイス-section インストール*を設定します。そのクラスのインターフェイスに固有のインストールの操作。
+場合、[デバイス インターフェイス クラス](device-interface-classes.md)によって指定された識別 **{** <em>InterfaceClassGUID</em> **}** がインストールされていなければ、システムのセットアップコードでは、そのクラスをシステムにインストールします。 新しいクラスをインストールする任意の INF ファイルがあります、 [ **INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)します。 このセクションが含まれていますが、指定した **{** <em>InterfaceClassGUID</em> **}** 参照と、*インターフェイス-section インストール*を設定します。そのクラスのインターフェイスに固有のインストールの操作。
 
-高いレベルのコンポーネントによって実行時の使用のデバイスのインターフェイス クラスのインスタンスを有効にするデバイス ドライバーは呼び出す必要がありますまず[ **IoRegisterDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff549506)のシンボリック リンクの名前を取得します有効にするデバイス インターフェイスのインスタンス。  PnP 関数またはフィルター ドライバーからのこの呼び出しは、通常は、その[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)ルーチン。  デバイス ドライバーを提供する必要があります、INF でプロビジョニングされたデバイスのインターフェイスのインスタンスを有効にする、 **{**<em>InterfaceClassGUID</em>**}** と*参照文字列*を呼び出すときに、INF で指定された[ **IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506)します。  ドライバーを呼び出して[ **IoSetDeviceInterfaceState** ](https://msdn.microsoft.com/library/windows/hardware/ff549700)によって返されるシンボリック リンクの名前を使用してインターフェイスを有効にする[ **IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506). 
+高いレベルのコンポーネントによって実行時の使用のデバイスのインターフェイス クラスのインスタンスを有効にするデバイス ドライバーは呼び出す必要がありますまず[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)のシンボリック リンクの名前を取得します有効にするデバイス インターフェイスのインスタンス。  PnP 関数またはフィルター ドライバーからのこの呼び出しは、通常は、その[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。  デバイス ドライバーを提供する必要があります、INF でプロビジョニングされたデバイスのインターフェイスのインスタンスを有効にする、 **{** <em>InterfaceClassGUID</em> **}** と*参照文字列*を呼び出すときに、INF で指定された[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)します。  ドライバーを呼び出して[ **IoSetDeviceInterfaceState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)によって返されるシンボリック リンクの名前を使用してインターフェイスを有効にする[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface). 
 
 各**AddInterface**ディレクティブで、 [ **INF DDInstall.Interfaces セクション**](inf-ddinstall-interfaces-section.md) 、INF ライターの定義を参照できる*追加-インターフェイスのセクション* INF ファイルで別の場所。 各 INF ライター定義セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
 
@@ -84,7 +84,7 @@ Windows Vista 以降、プロパティを設定できますデバイス イン�
 
 *追加レジストリ セクション*内で参照されている、*追加インターフェイス セクション*デバイス、ドライバー、およびインターフェイスのインスタンスに固有です。 ユーザー インターフェイスで、フレンドリ名でそのインターフェイスにも高いレベルのコンポーネントが参照できるように、エクスポートされたデバイスのインターフェイスのインスタンスのフレンドリ名を定義する値のエントリがあります。
 
-**HKR**などで指定された、*追加レジストリ セクション*セクションは、デバイス インターフェイスの実行時アクセス可能な状態のレジストリ キーを指定します。  ドライバーは呼び出すことによって、実行時にこのレジストリ キーに格納されている状態でアクセスできる[ **IoOpenDeviceInterfaceRegistryKey** ](https://msdn.microsoft.com/library/windows/hardware/ff549433)状態のレジストリ キーを識別するハンドルを取得します。  ユーザー モード コンポーネントは、呼び出すことによって、状態を照会できます[ **CM_Open_Device_Interface_Key**](https://msdn.microsoft.com/library/windows/hardware/hh780223)します。
+**HKR**などで指定された、*追加レジストリ セクション*セクションは、デバイス インターフェイスの実行時アクセス可能な状態のレジストリ キーを指定します。  ドライバーは呼び出すことによって、実行時にこのレジストリ キーに格納されている状態でアクセスできる[ **IoOpenDeviceInterfaceRegistryKey** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)状態のレジストリ キーを識別するハンドルを取得します。  ユーザー モード コンポーネントは、呼び出すことによって、状態を照会できます[ **CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)します。
 
 <a name="examples"></a>例
 --------
@@ -157,9 +157,9 @@ ESSAud.Wave.szPname="ESS AudioDrive"
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 
-[**IoRegisterDeviceInterface**](https://msdn.microsoft.com/library/windows/hardware/ff549506)
+[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)
 
-[**IoSetDeviceInterfaceState**](https://msdn.microsoft.com/library/windows/hardware/ff549700)
+[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)
 
 [**RenFiles**](inf-renfiles-directive.md)
 

@@ -6,27 +6,27 @@ keywords:
 - データのオフセット位置ネットワーク ドライバー
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 568d5f786aef4c385d5637babf6ff9741284d73a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9077d9cdf35d362af81aeab2529dbcca2bcf948e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330190"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364940"
 ---
 # <a name="data-offset-positions"></a>データ オフセット位置
 
-フィルター エンジンがコールアウト ドライバーを呼び出すときに[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウトの関数に構造体へのポインターを渡しますが、*データ*パラメーター。 パケット データをフィルター処理のレイヤーのポインターの参照を[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 フィルター処理レイヤーによって、 *classifyFn*コールアウト関数が呼び出されると、フィルター エンジンのデータのパラメーターで、次の構造のいずれかにポインターを渡します。
+フィルター エンジンがコールアウト ドライバーを呼び出すときに[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウトの関数に構造体へのポインターを渡しますが、*データ*パラメーター。 パケット データをフィルター処理のレイヤーのポインターの参照を[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 フィルター処理レイヤーによって、 *classifyFn*コールアウト関数が呼び出されると、フィルター エンジンのデータのパラメーターで、次の構造のいずれかにポインターを渡します。
 
-- ストリーム レイヤーについて、*データ*パラメーターにはへのポインターが含まれています、 [FWPS_STREAM_CALLOUT_IO_PACKET0](https://msdn.microsoft.com/library/windows/hardware/ff552417)構造体。 この構造体の streamData メンバーにはへのポインターが含まれています、 [FWPS_STREAM_DATA0](https://msdn.microsoft.com/library/windows/hardware/ff552419)構造体。 
+- ストリーム レイヤーについて、*データ*パラメーターにはへのポインターが含まれています、 [FWPS_STREAM_CALLOUT_IO_PACKET0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体。 この構造体の streamData メンバーにはへのポインターが含まれています、 [FWPS_STREAM_DATA0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_data0_)構造体。 
 
-    **NetBufferListChain**のメンバー、 [FWPS_STREAM_DATA0](https://msdn.microsoft.com/library/windows/hardware/ff552419)構造体にはへのポインターが含まれています、 [NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。 
+    **NetBufferListChain**のメンバー、 [FWPS_STREAM_DATA0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_data0_)構造体にはへのポインターが含まれています、 [NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。 
 
-- 他のすべてのレイヤー、*データ*パラメーターにはへのポインターが含まれています、 [NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造体。
+- 他のすべてのレイヤー、*データ*パラメーターにはへのポインターが含まれています、 [NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造体。
 
 > [!NOTE]
-> *データ*パラメーターに null の場合、フィルター選択されているレイヤーを状況に応じて可能性があります、ドライバーの[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544890)コールアウト関数が呼び出されます。
+> *データ*パラメーターに null の場合、フィルター選択されているレイヤーを状況に応じて可能性があります、ドライバーの[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数が呼び出されます。
  
-[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)構造のリンク リストに含まれる[NET_BUFFER](https://msdn.microsoft.com/library/windows/hardware/ff568376)構造体。 内で、 [NET_BUFFER_DATA](https://msdn.microsoft.com/library/windows/hardware/ff568381)の各構造**NET_BUFFER**構造、 **DataOffset**パケット データ内の特定の位置へのポインターします。 位置を**DataOffset**へのポインターのメンバーは、位置フィルター エンジンを呼び出す、コールアウト ドライバーのフィルター処理レイヤーによって異なります。 *classifyFn*コールアウト関数。 
+[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)構造のリンク リストに含まれる[NET_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)構造体。 内で、 [NET_BUFFER_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_data)の各構造**NET_BUFFER**構造、 **DataOffset**パケット データ内の特定の位置へのポインターします。 位置を**DataOffset**へのポインターのメンバーは、位置フィルター エンジンを呼び出す、コールアウト ドライバーのフィルター処理レイヤーによって異なります。 *classifyFn*コールアウト関数。 
 
 各フィルターのレイヤーで指定されたパケット データ内の位置の**DataOffset**メンバーが次のように定義されています。
 
@@ -422,7 +422,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 <td>
 <p>適用できません。</p>
-<div class="alert"><b>注</b>これらのレイヤーをフィルター処理、 <i><em>データ</em></i>パラメーターにはへのポインターが含まれています、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff551231"> <b>FWPS_CONNECT_REQUEST0</b> </a>構造体。 この構造体を参照していません、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568388"> <b>NET_BUFFER_LIST</b> </a>パケット データを記述する構造体。</div>
+<div class="alert"><b>注</b>これらのレイヤーをフィルター処理、 <i><em>データ</em></i>パラメーターにはへのポインターが含まれています、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0"> <b>FWPS_CONNECT_REQUEST0</b> </a>構造体。 この構造体を参照していません、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list"> <b>NET_BUFFER_LIST</b> </a>パケット データを記述する構造体。</div>
 <div> </div>
 </td>
 </tr>
@@ -433,7 +433,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 <td>
 <p>適用できません。</p>
-<div class="alert"><b>注</b>これらのレイヤーをフィルター処理、 <i><em>データ</em></i>パラメーターにはへのポインターが含まれています、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff551221"> <b>FWPS_BIND_REQUEST0</b> </a>構造体。 この構造体を参照していません、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568388"> <b>NET_BUFFER_LIST</b> </a>パケット データを記述する構造体。</div>
+<div class="alert"><b>注</b>これらのレイヤーをフィルター処理、 <i><em>データ</em></i>パラメーターにはへのポインターが含まれています、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_bind_request0"> <b>FWPS_BIND_REQUEST0</b> </a>構造体。 この構造体を参照していません、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list"> <b>NET_BUFFER_LIST</b> </a>パケット データを記述する構造体。</div>
 <div> </div>
 </td>
 </tr>

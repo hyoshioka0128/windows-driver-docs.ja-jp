@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c237214b880e6a9d10dcfb5da8ffeb8c587ea9eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89ad63af61996c2aa22e462ce33d48f1eb5e2abe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342868"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368926"
 ---
 # <a name="removelink-function"></a>RemoveLink 関数
 
@@ -39,7 +39,7 @@ void RemoveLink(
 ----------
 
 *HBAStatus*   
-に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemoveLink\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff563987)構造体。
+に返された場合、操作の状態を格納します。 使用できる値とその説明の一覧は、次を参照してください。 [HBA\_状態](hba-status.md)します。 ミニポート ドライバーには、この情報が返されます、 **HBAStatus**のメンバー、 [ **RemoveLink\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removelink_out)構造体。
 
 <a name="return-value"></a>戻り値
 ------------
@@ -74,7 +74,7 @@ WMI メソッドには適用されません。
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
 
 
-[**RemoveLink\_アウト**](https://msdn.microsoft.com/library/windows/hardware/ff563987)
+[**RemoveLink\_アウト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removelink_out)
 
  
 

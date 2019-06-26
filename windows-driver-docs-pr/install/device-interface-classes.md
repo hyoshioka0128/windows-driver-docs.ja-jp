@@ -4,12 +4,12 @@ description: デバイス インターフェイス クラス
 ms.assetid: 9d72f653-01b9-4f17-a008-1267d1589eb3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 641c10516da323ecca5734f9e443b0a37c83da0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 780877fa86ac48fdbca26945e61c7387f4a0a12f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365966"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387126"
 ---
 # <a name="device-interface-classes"></a>デバイス インターフェイス クラス
 
@@ -29,7 +29,7 @@ ms.locfileid: "63365966"
 
 [デバイスのインターフェイスを使用します。](using-a-device-interface.md)
 
-デバイスのシステム定義のインターフェイス クラスの詳細については、次を参照してください。[ベンダーのデバイスのインターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff553412)します。
+デバイスのシステム定義のインターフェイス クラスの詳細については、次を参照してください。[ベンダーのデバイスのインターフェイス クラス](https://docs.microsoft.com/previous-versions/ff553412(v=vs.85))します。
 
  
 

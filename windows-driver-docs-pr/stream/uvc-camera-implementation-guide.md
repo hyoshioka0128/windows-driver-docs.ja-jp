@@ -3,12 +3,12 @@ title: Windows 10 UVC カメラ実装ガイド
 description: 受信トレイのドライバーを使ってアプリケーションに準拠しているカメラを USB ビデオ クラスの特定の機能を公開する方法について説明します。
 ms.date: 11/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e550bd9332abb197b4857b29e1ddd399ec4985d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8cc222509880498f2c4a78bfa9492a563c00b34
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376955"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363268"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC カメラ実装ガイド
 
@@ -336,7 +336,7 @@ Windows 10 バージョン 1703 で PDMFT を使用するデバイスがオプ�
 
 ## <a name="bos-and-ms-os-20-descriptor"></a>BOS と MS OS 2.0 記述子
 
-UVC 対応のカメラは、ファームウェアでは、プラットフォーム機能 BOS 記述子で Windows の特定のデバイスの構成値を指定できます。 ドキュメントを参照してください[MS OS 2.0 記述子](https://msdn.microsoft.com/library/windows/hardware/dn385747)os デバイスの構成を表す有効な BOS 記述子を指定する方法について説明します。 ファームウェアで有効な MS OS 2.0 記述子を指定すると、USB スタックは、デバイス ハードウェア レジストリ キー show 以下に、構成値をコピーします。
+UVC 対応のカメラは、ファームウェアでは、プラットフォーム機能 BOS 記述子で Windows の特定のデバイスの構成値を指定できます。 ドキュメントを参照してください[MS OS 2.0 記述子](https://docs.microsoft.com/previous-versions/dn385747(v=msdn.10))os デバイスの構成を表す有効な BOS 記述子を指定する方法について説明します。 ファームウェアで有効な MS OS 2.0 記述子を指定すると、USB スタックは、デバイス ハードウェア レジストリ キー show 以下に、構成値をコピーします。
 
 ```Registry
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB\<Device ID>\<Instance ID>\Device Parameters

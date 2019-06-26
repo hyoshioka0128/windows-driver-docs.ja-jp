@@ -6,12 +6,12 @@ keywords:
 - 省略可能なネットワークのウェイク アップの Oid
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70dff227b8fab5b832dfe5b6f6c5e14990f167a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ce2422317338729fccbca0920664bbb9d938449
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366563"
 ---
 # <a name="optional-network-wake-up-oids"></a>オプションのネットワーク ウェイクアップ OID
 
@@ -19,7 +19,7 @@ ms.locfileid: "63359238"
 
 
 
-ネットワークへの復帰イベントをサポートするために、リモートの NDIS デバイスでサポートする必要がありますさらに、 [OID\_PNP\_を有効にする\_WAKE\_を](https://msdn.microsoft.com/library/windows/hardware/ff569775)両方のネットワーク プロトコル (TCP/IP) によって使用される OIDおよび NDIS ウェイク アップ機能を有効にします。 さらに、ウェイク アップ パターンの特定の種類を有効にするは次の表に示すオプションです。 詳細については、Microsoft Windows 2000 Driver Development Kit (DDK) を参照してください。
+ネットワークへの復帰イベントをサポートするために、リモートの NDIS デバイスでサポートする必要がありますさらに、 [OID\_PNP\_を有効にする\_WAKE\_を](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up)両方のネットワーク プロトコル (TCP/IP) によって使用される OIDおよび NDIS ウェイク アップ機能を有効にします。 さらに、ウェイク アップ パターンの特定の種類を有効にするは次の表に示すオプションです。 詳細については、Microsoft Windows 2000 Driver Development Kit (DDK) を参照してください。
 
 <table>
 <colgroup>
@@ -37,17 +37,17 @@ ms.locfileid: "63359238"
 <tbody>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569775" data-raw-source="[OID_PNP_ENABLE_WAKE_UP](https://msdn.microsoft.com/library/windows/hardware/ff569775)">OID_PNP_ENABLE_WAKE_UP</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up" data-raw-source="[OID_PNP_ENABLE_WAKE_UP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up)">OID_PNP_ENABLE_WAKE_UP</a></p></td>
 <td align="left"><p>NDIS リモート デバイスのウェイク アップ機能を有効にすることができます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569773" data-raw-source="[OID_PNP_ADD_WAKE_UP_PATTERN](https://msdn.microsoft.com/library/windows/hardware/ff569773)">OID_PNP_ADD_WAKE_UP_PATTERN</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-add-wake-up-pattern" data-raw-source="[OID_PNP_ADD_WAKE_UP_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-add-wake-up-pattern)">OID_PNP_ADD_WAKE_UP_PATTERN</a></p></td>
 <td align="left"><p>デバイスにリモートの NDIS ミニポート ドライバーを読み込む必要のあるウェイク アップ パターン</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>省略可能</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff569779" data-raw-source="[OID_PNP_REMOVE_WAKE_UP_PATTERN](https://msdn.microsoft.com/library/windows/hardware/ff569779)">OID_PNP_REMOVE_WAKE_UP_PATTERN</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-remove-wake-up-pattern" data-raw-source="[OID_PNP_REMOVE_WAKE_UP_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-remove-wake-up-pattern)">OID_PNP_REMOVE_WAKE_UP_PATTERN</a></p></td>
 <td align="left"><p>デバイスからリモートの NDIS ミニポート ドライバーを削除する必要がありますウェイク アップ パターン</p></td>
 </tr>
 </tbody>

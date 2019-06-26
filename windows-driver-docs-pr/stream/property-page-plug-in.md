@@ -7,12 +7,12 @@ keywords:
 - WDK AVStream プロパティ ページ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca2464ee8b40dfb68b434d02b0f09d2f1ef60666
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c375960aaf37350680d99e7a3e9ec1b43fab9247
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362208"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363273"
 ---
 # <a name="property-page-plug-in"></a>プロパティ ページ プラグイン
 
@@ -63,7 +63,7 @@ private:
 
 ホストのプロパティ シートの呼び出し、プロパティ ページを初期化する[IPropertyPage::SetPageSite](https://go.microsoft.com/fwlink/p/?linkid=106442)します。 この呼び出しの結果、プラグインの呼び出しで**OnConnect**メソッド。 この呼び出しの時に、プロパティ ページが、フィルターに接続されたが、プロパティ ページが表示されていません。
 
-呼び出しで指定されたパラメーター **OnConnect**インターフェイスへのポインターを照会することができますし、KS プロキシは、 **IKsPropertySet**します。 呼び出して[ **IKsPropertySet::Get** ](https://msdn.microsoft.com/library/windows/hardware/ff560719)と[ **IKsPropertySet::Set** ](https://msdn.microsoft.com/library/windows/hardware/ff560721)ドライバーの公開されているプロパティを操作します。
+呼び出しで指定されたパラメーター **OnConnect**インターフェイスへのポインターを照会することができますし、KS プロキシは、 **IKsPropertySet**します。 呼び出して[ **IKsPropertySet::Get** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikspropertyset-get)と[ **IKsPropertySet::Set** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nf-dsound-ikspropertyset-set)ドライバーの公開されているプロパティを操作します。
 
 指定することも必要があります、 **CreateInstance**メソッド。 システムでは、プロパティ ページのインスタンスを作成するプロパティ ページのメソッドを呼び出します。 このメソッドは、インスタンス化するクラスのコンス トラクターを呼び出す必要があります。
 

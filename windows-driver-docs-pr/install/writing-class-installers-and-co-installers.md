@@ -9,12 +9,12 @@ keywords:
 - co-installer を WDK デバイスのインストールに書き込む
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be547e9a6744009398545ce3e6191ee1a068e81
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0337a4062121a78ad9f2616f4713986842d683e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339157"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363475"
 ---
 # <a name="writing-class-installers-and-co-installers"></a>クラス インストーラーと共同インストーラーの記述
 
@@ -38,7 +38,7 @@ ms.locfileid: "63339157"
 ## <a name="displaying-a-user-interface"></a>ユーザー インターフェイスを表示します。
 
 
-デバイスのインストールは、ほとんどの場合、システムの (非対話型) サービスで実行されます。 そのため、ユーザーは表示またはこのコンテキストで表示される任意のユーザー インターフェイスに応答できません。 提供されている任意のダイアログ ボックス*共同インストーラー*の処理中に、[デバイス インストール機能 (差分) コード](https://msdn.microsoft.com/library/windows/hardware/ff541307)により、デバイスのインストールが応答を停止します。
+デバイスのインストールは、ほとんどの場合、システムの (非対話型) サービスで実行されます。 そのため、ユーザーは表示またはこのコンテキストで表示される任意のユーザー インターフェイスに応答できません。 提供されている任意のダイアログ ボックス*共同インストーラー*の処理中に、[デバイス インストール機能 (差分) コード](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))により、デバイスのインストールが応答を停止します。
 
 ほとんどの場合、共同インストーラーと対話しない以外ではユーザーの処理中に、[完了-インストール アクション](finish-install-actions--windows-vista-and-later-.md)します。 完了-インストール アクションは、対話型のコンテキストで実行します。
 
@@ -53,11 +53,11 @@ ms.locfileid: "63339157"
 
 インストーラーのデバイスの状態を安全に保持するには、クラスのインストーラーや共同インストーラーする必要があります、状態情報を保存、デバイスの内のプロパティとして*ドライバー キー*レジストリにします。 これを行うには、次の手順に従います。
 
-1.  ドライバーのキーを識別するレジストリのハンドルを取得する、*デバイス インスタンス*を使用して、 [ **SetupDiOpenDevRegKey** ](https://msdn.microsoft.com/library/windows/hardware/ff552079)で、 *KeyType*パラメーターDIREG_DRV に設定します。
+1.  ドライバーのキーを識別するレジストリのハンドルを取得する、*デバイス インスタンス*を使用して、 [ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)で、 *KeyType*パラメーターDIREG_DRV に設定します。
 
-2.  使用[ **SetupDiGetDevicePropertyKeys** ](https://msdn.microsoft.com/library/windows/hardware/ff551965) (デバイスのインスタンスのすべてのプロパティのキーを取得) するまたは[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)(指定したデバイス インスタンス プロパティのキーを取得する) にします。
+2.  使用[ **SetupDiGetDevicePropertyKeys** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertykeys) (デバイスのインスタンスのすべてのプロパティのキーを取得) するまたは[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)(指定したデバイス インスタンス プロパティのキーを取得する) にします。
 
-3.  使用[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163)デバイス インスタンスのプロパティのキーを保存します。
+3.  使用[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)デバイス インスタンスのプロパティのキーを保存します。
 
 ## <a name="loading-executable-or-dll-files"></a>実行可能ファイルまたは DLL ファイルの読み込み
 

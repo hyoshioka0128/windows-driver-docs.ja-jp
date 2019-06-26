@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2197597beaf004460f03a476478ba4c57d5fabc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89ec5ee1e71bde1c7b486c1f2e07b4cb9dc09602
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330572"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387065"
 ---
 # <a name="devpkeydevicedriverdate"></a>DEVPKEY_Device_DriverDate
 
@@ -61,11 +61,11 @@ PKEY_Device_DriverDate デバイス プロパティは、デバイスのイン�
 <a name="remarks"></a>注釈
 -------
 
-DEVPKEY_Device_DriverDate の値がによって提供される、 [ **INF DriverVer ディレクティブ**](https://msdn.microsoft.com/library/windows/hardware/ff547394)に含まれている、 **INF バージョン セクション**のデバイスをインストールする INF ファイルまたは、特定のデバイス INF によって**DriverVer**ディレクティブに含まれている、 [ **INF *DDInstall*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)ですデバイスをインストールします。
+DEVPKEY_Device_DriverDate の値がによって提供される、 [ **INF DriverVer ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)に含まれている、 **INF バージョン セクション**のデバイスをインストールする INF ファイルまたは、特定のデバイス INF によって**DriverVer**ディレクティブに含まれている、 [ **INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)ですデバイスをインストールします。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963) DEVPKEY_Device_DriverDate プロパティの値を取得します。
+呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_DriverDate プロパティの値を取得します。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DriverDate プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**DriverDateData**ソフトウェア キーをデバイス インスタンスの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://msdn.microsoft.com/library/windows/hardware/ff537732)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_DriverDate プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**DriverDateData**ソフトウェア キーをデバイス インスタンスの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)します。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -90,12 +90,12 @@ Windows Server 2003、Windows XP、および Windows 2000 は、このプロパ�
 ## <a name="see-also"></a>関連項目
 
 
-[**INF *DDInstall*セクション**](https://msdn.microsoft.com/library/windows/hardware/ff547344)
+[**INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
-[**INF DriverVer Directive**](https://msdn.microsoft.com/library/windows/hardware/ff547394)
+[**INF DriverVer Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)
 
 **バージョンの INF セクション**
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

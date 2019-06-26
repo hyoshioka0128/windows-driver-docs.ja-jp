@@ -11,12 +11,12 @@ keywords:
 - センサーの状態変更イベント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e49f2feb782430b31fcdc110d4a231ffa4f5408
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a98f8cd73ff35b5e2cb58f5207fb82e757e5e289
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330060"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368955"
 ---
 # <a name="raising-sensor-events"></a>センサー イベントを発生させる
 
@@ -60,9 +60,9 @@ static const DWORD g_dwDefaultInterval = 1000; // one second
 
 ### <a name="lifetime-management"></a>有効期間管理
 
-コールバック クラスを実装する、CSensorDdi をという名前[ISensorDriver](https://msdn.microsoft.com/library/windows/hardware/ff545566)、最初のクライアントがイベントにサブスクライブするときに、CSampleEvents イベント クラスのインスタンスを作成します。 コールバック クラスは、クライアントは不要になったイベントをサブスクライブしている場合、CSampleEvents インスタンスを破棄します。
+コールバック クラスを実装する、CSensorDdi をという名前[ISensorDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nn-sensorsclassextension-isensordriver)、最初のクライアントがイベントにサブスクライブするときに、CSampleEvents イベント クラスのインスタンスを作成します。 コールバック クラスは、クライアントは不要になったイベントをサブスクライブしている場合、CSampleEvents インスタンスを破棄します。
 
-CSampleEvents にコールバックでは、最新のデータを取得する CSensorDdi など、クラスの拡張が使用する同じメソッドを使用して[ **ISensorDriver::OnGetDataFields**](https://msdn.microsoft.com/library/windows/hardware/ff545607)します。
+CSampleEvents にコールバックでは、最新のデータを取得する CSensorDdi など、クラスの拡張が使用する同じメソッドを使用して[ **ISensorDriver::OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)します。
 
 次のコード例には、CSampleEvents イベント クラスのメソッドの実装が含まれています。
 

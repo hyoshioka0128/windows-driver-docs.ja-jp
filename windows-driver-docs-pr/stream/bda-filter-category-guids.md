@@ -4,12 +4,12 @@ description: BDA フィルター カテゴリの GUID
 ms.assetid: fbd4bf91-8309-423a-97ea-7e4f90cd3b68
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8feeb6b1474182003404b8d411fc2cc7673f1d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7f9d1e033ac03dc8b6e124a5568efbe18ed20a5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392724"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386689"
 ---
 # <a name="bda-filter-category-guids"></a>BDA フィルター カテゴリの GUID
 
@@ -17,7 +17,7 @@ ms.locfileid: "63392724"
 ## <span id="ddk_bda_filter_category_guids_ks"></span><span id="DDK_BDA_FILTER_CATEGORY_GUIDS_KS"></span>
 
 
-BDA ミニドライバーでは、BDA フィルター カテゴリ Guid を使用して、作成する BDA フィルターの種類を指定します。 BDA ミニドライバーこれら Guid の割り当て先の配列、**カテゴリ**のメンバー、 [ **KSFILTER\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff562553)ポイントを構造体します。 *Bdamedia.h*ヘッダー ファイルには、これらの Guid が定義されています。
+BDA ミニドライバーでは、BDA フィルター カテゴリ Guid を使用して、作成する BDA フィルターの種類を指定します。 BDA ミニドライバーこれら Guid の割り当て先の配列、**カテゴリ**のメンバー、 [ **KSFILTER\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)ポイントを構造体します。 *Bdamedia.h*ヘッダー ファイルには、これらの Guid が定義されています。
 
 次のフィルターのカテゴリの Guid を BDA 使用できます。
 

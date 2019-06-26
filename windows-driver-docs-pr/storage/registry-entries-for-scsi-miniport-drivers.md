@@ -13,12 +13,12 @@ keywords:
 - 擬似 Lun WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3029c27c35aa3f8f09e7df6951acc413f3dda16a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b30b56531349992478273c63f2781844fcfa55e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374492"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368957"
 ---
 # <a name="registry-entries-for-scsi-miniport-drivers"></a>SCSI ミニポート ドライバーのレジストリ エントリ
 
@@ -56,7 +56,7 @@ ms.locfileid: "63374492"
     -   オペレーティング システムのバージョン:この機能は、Windows NT 4.0 SP4 および以降のオペレーティング システムで使用できます。
 -   **BusType**
     -   所在地:HKLM\\システム\\CurrentControlSet\\サービス\\&lt;ServiceName&gt;\\パラメーター\\バスの種類、場所&lt;ServiceName&gt; = ミニポート ドライバー名で指定された、 **AddServices** INF ファイルでディレクティブ。
-    -   値:同じ[**ストレージ\_BUS\_型**](https://msdn.microsoft.com/library/windows/hardware/ff566356)列挙子。
+    -   値:同じ[**ストレージ\_BUS\_型**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff566356(v=vs.85))列挙子。
     -   意味:アダプターが接続されているバスの種類を示します。
     -   オペレーティング システムのバージョン:この機能は、Windows 2000 以降のオペレーティング システムで使用できます。
 -   **CreateInitiatorLU**

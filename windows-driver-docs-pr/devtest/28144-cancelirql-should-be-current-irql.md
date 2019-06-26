@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28144
-ms.openlocfilehash: 6be477ef5a054506e82831f116eaa360374a0eba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e14aad810dd78a23cd49b80f571c09661c2f59d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361384"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364127"
 ---
 # <a name="c28144"></a>C28144
 
@@ -36,9 +36,9 @@ C28144 を警告します。終了時に、Irp の IRQL の時点でのキャン
 
  
 
-ときに、ドライバーの[**キャンセル**](https://msdn.microsoft.com/library/windows/hardware/ff540742)ルーチンが終了するの値、 **Irp -&gt;CancelIrql**メンバーは、現在の IRQL ではありません。 ドライバーが呼び出していないときは通常、このエラーが発生します[ **IoReleaseCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549550)への呼び出しで最も最近提供された IRQL で[ **IoAcquireCancelSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff548196)します。
+ときに、ドライバーの[**キャンセル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)ルーチンが終了するの値、 **Irp -&gt;CancelIrql**メンバーは、現在の IRQL ではありません。 ドライバーが呼び出していないときは通常、このエラーが発生します[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))への呼び出しで最も最近提供された IRQL で[ **IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))します。
 
-詳細については*キャンセル*ルーチンを参照してください[キャンセル Irp](https://msdn.microsoft.com/library/windows/hardware/ff540748)します。 この警告に固有の情報を参照してください。 [Irp の検討時にキャンセルを指す](https://msdn.microsoft.com/library/windows/hardware/ff559700)します。
+詳細については*キャンセル*ルーチンを参照してください[キャンセル Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/canceling-irps)します。 この警告に固有の情報を参照してください。 [Irp の検討時にキャンセルを指す](https://docs.microsoft.com/windows-hardware/drivers/kernel/points-to-consider-when-canceling-irps)します。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
 

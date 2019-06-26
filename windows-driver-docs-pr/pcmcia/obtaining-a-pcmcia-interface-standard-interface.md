@@ -1,15 +1,15 @@
 ---
-title: PCMCIA_INTERFACE_STANDARD インターフェイスを取得します。
-description: PCMCIA_INTERFACE_STANDARD インターフェイスを取得します。
+title: PCMCIA_INTERFACE_STANDARD インターフェイスを取得する
+description: PCMCIA_INTERFACE_STANDARD インターフェイスを取得する
 ms.assetid: 475bf66a-5b6e-4a06-95f7-b7280dd7276d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1aec3560f8a4ec9f13ffc59f1cbe4989013a981
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ebb212e4dfe405ccb4e4d93bc8e7f6facc41d7a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551571"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386195"
 ---
 # <a name="obtaining-a-pcmciainterfacestandard-interface"></a>取得、PCMCIA\_インターフェイス\_標準インターフェイス
 
@@ -19,9 +19,9 @@ ms.locfileid: "56551571"
 
 このセクションでは、ドライバーが、PCMCIA を取得する方法について説明します\_インターフェイス\_PCMCIA バス ドライバーから PCMCIA メモリ カードの標準的なインターフェイスです。
 
-ドライバーの取得、PCMCIA\_インターフェイス\_IRP の送信を作成して標準的なインターフェイス\_MJ\_PNP の要求を指定する、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff551687)関数コードを補助します。 ドライバーは、次の操作を実行します。
+ドライバーの取得、PCMCIA\_インターフェイス\_IRP の送信を作成して標準的なインターフェイス\_MJ\_PNP の要求を指定する、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)関数コードを補助します。 ドライバーは、次の操作を実行します。
 
--   割り当てと 0 塗り、 [PCMCIA\_インターフェイス\_標準インターフェイスのメモリ カードのルーチン](https://msdn.microsoft.com/library/windows/hardware/ff537607)ページ メモリ プール内の構造体。
+-   割り当てと 0 塗り、 [PCMCIA\_インターフェイス\_標準インターフェイスのメモリ カードのルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)ページ メモリ プール内の構造体。
 
 -   インターフェイスのクエリ要求の IRP を作成し、新しい IRP の次のスタックの場所を取得します。
 

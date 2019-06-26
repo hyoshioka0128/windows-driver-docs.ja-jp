@@ -9,19 +9,19 @@ keywords:
 - ビデオの WDK COPP、保護レベルの保護
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14a824c65fa68b8a90d7547b3ca7901c191580ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6320a24a62220d918f71164507139fee7578e6ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383860"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365541"
 ---
 # <a name="setting-the-protection-level"></a>保護レベルの設定
 
 
 **このセクションには、Windows Server 2003 SP1 にのみ以降が適用されますおよび Windows XP SP2 以降。**
 
-COPP コマンドは、DirectX VA COPP デバイスに関連付けられた物理コネクタの保護の種類の保護レベルを設定できます。 レベルを設定する、保護、ビデオのミニポート ドライバーの[ *COPPCommand* ](https://msdn.microsoft.com/library/windows/hardware/ff539642)関数へのポインターを受け取る、 [ **DXVA\_COPPCommand**](https://msdn.microsoft.com/library/windows/hardware/ff563141)構造体、 **guidCommandID**メンバーは、DXVA に設定\_COPPSetProtectionLevel GUID と**CommandData**メンバーのセットをへのポインターに[ **DXVA\_COPPSetProtectionLevelCmdData** ](https://msdn.microsoft.com/library/windows/hardware/ff563143)セットと、保護を設定するレベルに保護の種類を指定する構造体。 保護レベルが保護の種類を使用できない場合、保護レベルは COPP に設定 COPP コマンド\_NoProtectionLevelAvailable (-1)。 COPP コマンドがの一部の拡張情報を指定しても、 **ExtendedInfoChangeMask**と**ExtendedInfoData**の DXVA メンバー\_ビデオの COPPSetProtectionLevelCmdDataミニポート ドライバーの保護の種類を設定します。
+COPP コマンドは、DirectX VA COPP デバイスに関連付けられた物理コネクタの保護の種類の保護レベルを設定できます。 レベルを設定する、保護、ビデオのミニポート ドライバーの[ *COPPCommand* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppcommand)関数へのポインターを受け取る、 [ **DXVA\_COPPCommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppcommand)構造体、 **guidCommandID**メンバーは、DXVA に設定\_COPPSetProtectionLevel GUID と**CommandData**メンバーのセットをへのポインターに[ **DXVA\_COPPSetProtectionLevelCmdData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppsetprotectionlevelcmddata)セットと、保護を設定するレベルに保護の種類を指定する構造体。 保護レベルが保護の種類を使用できない場合、保護レベルは COPP に設定 COPP コマンド\_NoProtectionLevelAvailable (-1)。 COPP コマンドがの一部の拡張情報を指定しても、 **ExtendedInfoChangeMask**と**ExtendedInfoData**の DXVA メンバー\_ビデオの COPPSetProtectionLevelCmdDataミニポート ドライバーの保護の種類を設定します。
 
 指定した保護の種類は、次の保護レベルを設定できます。
 

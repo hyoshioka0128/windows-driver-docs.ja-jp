@@ -9,12 +9,12 @@ keywords:
 - WDK 記憶域の要求を再試行しています
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d161689c48d8d8364f0dada691162b14f551d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2d62ee9909357a9e57ca207ed0d7a08330b3a5f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339045"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386815"
 ---
 # <a name="storage-class-drivers-interpretrequestsense-routine"></a>記憶域クラス ドライバーの InterpretRequestSense ルーチン
 
@@ -30,7 +30,7 @@ ms.locfileid: "63339045"
 
 *InterpretRequestSense*ルーチンは、ドライバーが指定したエラーのログ記録ルーチンも呼び出すことができます。 含める必要がありますが、記憶域クラス ドライバー ログ、I/O エラー、たびに、 **PathId**、 **TargetId**、 **Lun**、および**SrbStatus**によって値の設定SRB の記憶域ポート ドライバーと、可能であれば、関連の要求の意味については、エラーの一部としてログ エントリの**DumpData**します。 ストレージ クラス ドライバーを使用する必要がありますに注意してください、 **PathId**、 **TargetId**、および**Lun**からこのようなされる Srb 他の要求に対処します。
 
-I/O エラーのログ記録の詳細については、次を参照してください。[ログ エラー](https://msdn.microsoft.com/library/windows/hardware/ff554312)します。
+I/O エラーのログ記録の詳細については、次を参照してください。[ログ エラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/logging-errors)します。
 
  
 

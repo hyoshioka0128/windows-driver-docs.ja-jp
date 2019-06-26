@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e1cb63bedb92457f4dec24ec35aace06c4a1b5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a318d3c571925e004d216d692d249c66e64d0851
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380813"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361086"
 ---
 # <a name="kspropertypinnecessaryinstances"></a>KSPROPERTY\_PIN\_NECESSARYINSTANCES
 
@@ -53,7 +53,7 @@ ms.locfileid: "63380813"
 <td><p>〇</p></td>
 <td><p>いいえ</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_PIN\_NECESSARYINSTANCES がピン留めするファクトリのイ�
 
 クラス ドライバーは、このプロパティを処理しませんストリームのミニドライバーは、独自の処理を提供する必要があります。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -89,7 +89,7 @@ KSPROPERTY\_PIN\_NECESSARYINSTANCES がピン留めするファクトリのイ�
 ## <a name="see-also"></a>関連項目
 
 
-[**KSP\_暗証番号 (PIN)**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_暗証番号 (PIN)** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
  
 

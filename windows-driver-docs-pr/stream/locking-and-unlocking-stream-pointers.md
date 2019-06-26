@@ -8,12 +8,12 @@ keywords:
 - ロックされていないストリーム ポインター WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a978ee693c0b381155fae20bedbb61303dd9dc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c2fe8296f806855e986e6312b41e80e11bef1c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386641"
 ---
 # <a name="locking-and-unlocking-stream-pointers"></a>ストリーム ポインターのロックとロック解除
 
@@ -27,11 +27,11 @@ ms.locfileid: "63325218"
 
 ロックされていないストリーム ポインターは、キュー内のデータ フレームの参照は保証されません。 によってロックされていないストリーム ポインターを保持している、ミニドライバーは、データのポインターを保持がも取り消されるフレームを許可します。
 
-ロックされていないストリーム ポインターが指すデータにアクセスすることになります。 場合、 *CancelCallback*で指定したルーチン[ **KsStreamPointerClone** ](https://msdn.microsoft.com/library/windows/hardware/ff567129)呼び出し[ **KsStreamPointerDelete**](https://msdn.microsoft.com/library/windows/hardware/ff567130)、同期する必要があります*CancelCallback*と、実行する、データにアクセスします。 ミニドライバーは、エントリの別のスレッドが使用している間、キャンセル コールバック ルーチンはストリーム ポインターが削除されないことを確認する必要があります。
+ロックされていないストリーム ポインターが指すデータにアクセスすることになります。 場合、 *CancelCallback*で指定したルーチン[ **KsStreamPointerClone** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)呼び出し[ **KsStreamPointerDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)、同期する必要があります*CancelCallback*と、実行する、データにアクセスします。 ミニドライバーは、エントリの別のスレッドが使用している間、キャンセル コールバック ルーチンはストリーム ポインターが削除されないことを確認する必要があります。
 
 キャンセル コールバック ルーチンを呼び出しません場合**KsStreamPointerDelete**同期が必要ない場合があります。
 
-ストリーム ポインターをロックするには、呼び出す[ **KsStreamPointerLock**](https://msdn.microsoft.com/library/windows/hardware/ff567134)します。 ストリーム ポインターをロック解除するには、呼び出す[ **KsStreamPointerUnlock**](https://msdn.microsoft.com/library/windows/hardware/ff567137)します。
+ストリーム ポインターをロックするには、呼び出す[ **KsStreamPointerLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock)します。 ストリーム ポインターをロック解除するには、呼び出す[ **KsStreamPointerUnlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)します。
 
 IRP が取り消されたときに、AVStream は IRP 内のフレームをポイントするすべてのロックされていないストリーム ポインターをキャンセル コールバックを呼び出します。
 

@@ -12,12 +12,12 @@ keywords:
 - トランスポート ミニドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f89c9240993851680fa20d755447edbc3b0a00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dbf85aa78472a96705a91a4b3584838def0463c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363549"
 ---
 # <a name="hid-transports"></a>HID トランスポート
 
@@ -43,7 +43,7 @@ HID トランスポートが Windows の現在と以前のバージョンでサ�
 
 -   **レポート記述子の長さ**
 
-    トランスポート ミニドライバーで Hidclass へのレポート記述子の送信、 [ **HID\_記述子**](https://msdn.microsoft.com/library/windows/hardware/ff539885)構造体。 自分のデバイスでの HID レポート記述子を転送するためのトランスポート プロトコルによって定義されたサイズに関係なく、実際のレポート記述子のサイズは Hidclass と HID ミニドライバーの間の通信中に制限されます。
+    トランスポート ミニドライバーで Hidclass へのレポート記述子の送信、 [ **HID\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ns-hidport-_hid_descriptor)構造体。 自分のデバイスでの HID レポート記述子を転送するためのトランスポート プロトコルによって定義されたサイズに関係なく、実際のレポート記述子のサイズは Hidclass と HID ミニドライバーの間の通信中に制限されます。
 
 -   **レポート記述子 TLCs**
 

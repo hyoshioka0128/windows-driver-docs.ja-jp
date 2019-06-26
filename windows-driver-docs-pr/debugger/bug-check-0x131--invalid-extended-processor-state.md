@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e84f2ba30c56734a6a10743206ae52b2af469296
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9cbe095bed3b41ea1bb081d384348ff480c94f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362252"
 ---
 # <a name="bug-check-0x131-invalidextendedprocessorstate"></a>バグ チェック 0x131:無効な\_拡張\_プロセッサ\_状態
 
@@ -26,7 +26,7 @@ ms.locfileid: "63351238"
 無効な\_拡張\_プロセッサ\_状態のバグ チェックが 0x00000131 の値を持ちます。 これは、保存または拡張プロセッサの状態を復元中に無効なパラメーターの組み合わせが検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="invalidextendedprocessorstate-parameters"></a>無効な\_拡張\_プロセッサ\_状態パラメーター

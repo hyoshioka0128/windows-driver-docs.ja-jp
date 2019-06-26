@@ -9,12 +9,12 @@ keywords:
 - ビデオのアナログ オーディオ WDK をキャプチャします。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9ad6ab2064cfc78323eac00ea43d2533310b102
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff6541ffef0bcde4206b441e0d6c685c40955c25
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384824"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386771"
 ---
 # <a name="analog-video-category"></a>アナログ ビデオ カテゴリ
 
@@ -41,11 +41,11 @@ ms.locfileid: "63384824"
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 構造体</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567340" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567340)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_analogvideo" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_analogvideo)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 構造体</strong></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567340" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567340)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_analogvideo" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_analogvideo)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>MajorFormat GUID</strong></p></td>
@@ -86,7 +86,7 @@ ms.locfileid: "63384824"
 
 テレビなどのアナログのオーディオまたはオーディオのラジオに対して定義されている特殊なカテゴリはありません。 アナログのオーディオ ピンの値を持つデバイスのカテゴリを指定するときに、 **MajorFormat**メンバー KSDATAFORMAT をする必要があります\_型\_アナログします。 値、**指定子**メンバー KSDATAFORMAT をする必要があります\_指定子\_NONE、**サブタイプ**KSDATAFORMATメンバーとブロックの書式設定を設定する必要があります\_サブタイプ\_NONE。 無線の音声の詳細については、次を参照してください。[ラジオ チューナーを持つビデオ キャプチャ デバイス](video-capture-devices-with-radio-tuners.md)します。
 
-アナログ ビデオ ストリームは、基本的に、アナログ ビデオ デコーダーへの入力を模倣が同時にチューニングの詳細についてデータ転送として機能します。 パケットをチューニングするは、テレビ チューナーのフィルターで生成された先頭と末尾のすべてのチューニング操作でのすべての介在するクロスバー フィルターを通じて渡されます。 データ パケットが、 [ **KS\_tv チューナー\_変更\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff567691)国/地域コード、チャネル、頻度、および標準のアナログ ビデオを含む構造体使用します。
+アナログ ビデオ ストリームは、基本的に、アナログ ビデオ デコーダーへの入力を模倣が同時にチューニングの詳細についてデータ転送として機能します。 パケットをチューニングするは、テレビ チューナーのフィルターで生成された先頭と末尾のすべてのチューニング操作でのすべての介在するクロスバー フィルターを通じて渡されます。 データ パケットが、 [ **KS\_tv チューナー\_変更\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_tvtuner_change_info)国/地域コード、チャネル、頻度、および標準のアナログ ビデオを含む構造体使用します。
 
 キャプチャ フィルターは、ダウン ストリームの VBI コーデックを VBI 出力ストリームの拡張のヘッダー内のチューニングこのパケットを伝達する必要があります。
 

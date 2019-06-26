@@ -19,33 +19,33 @@ keywords:
 - クエリ言語 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19a42d9fe8aac2fa34dd5628e6704223a321ed01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67598676c713cc5dfdad490e7c33b1ff2210962f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383547"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368031"
 ---
 # <a name="wdtf-architecture"></a>WDTF のアーキテクチャ
 
 
-WDTF のアーキテクチャを理解するには、まずお読みください[Windows デバイスのテスト フレームワークの設計ガイド](wdtf-overview.md)します。 WDTF がそれぞれに抽象化することによって、デバイスと、システムを使用することは、最も重要な概念、*ターゲット*(、 [ **IWDTFTarget2** ](https://msdn.microsoft.com/library/windows/hardware/hh439367)インターフェイス)。 次の図は、WDTF を提供する主要なオブジェクト モデルを示します。
+WDTF のアーキテクチャを理解するには、まずお読みください[Windows デバイスのテスト フレームワークの設計ガイド](wdtf-overview.md)します。 WDTF がそれぞれに抽象化することによって、デバイスと、システムを使用することは、最も重要な概念、*ターゲット*(、 [ **IWDTFTarget2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftarget2)インターフェイス)。 次の図は、WDTF を提供する主要なオブジェクト モデルを示します。
 
 ![wdtf の主要なオブジェクト モデルを示す図](images/wdtf-objectmodel.gif)
 
 シナリオには、次の WDTF オブジェクトとインターフェイスの一部またはすべてを使用できます。
 
 <a href="" id="wdtf-aggregation-object"></a>WDTF 集計オブジェクト  
-WDTF 集計オブジェクト ([**IWDTF2**](https://msdn.microsoft.com/library/windows/hardware/ff539628)) フレームワーク全体の最初のインスタンス化のポイントです。 フレームワーク内のすべては、このオブジェクトを通じてアクセスする必要があります。
+WDTF 集計オブジェクト ([**IWDTF2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)) フレームワーク全体の最初のインスタンス化のポイントです。 フレームワーク内のすべては、このオブジェクトを通じてアクセスする必要があります。
 
-<a href="" id="systemdepot-property"></a>[**SystemDepot** ](https://msdn.microsoft.com/library/windows/hardware/hh406309)プロパティ  
-[ **SystemDepot** ](https://msdn.microsoft.com/library/windows/hardware/hh406309)プロパティ ([**IWDTFSystemDepot2**](https://msdn.microsoft.com/library/windows/hardware/hh439331)) のみ、ローカル コンピューター、経由でアクセスできますが含まれています[**あれば**](https://msdn.microsoft.com/library/windows/hardware/hh439354)プロパティ。
+<a href="" id="systemdepot-property"></a>[**SystemDepot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtf2-get_systemdepot)プロパティ  
+[ **SystemDepot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtf2-get_systemdepot)プロパティ ([**IWDTFSystemDepot2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtfsystemdepot2)) のみ、ローカル コンピューター、経由でアクセスできますが含まれています[**あれば**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtfsystemdepot2-get_thissystem)プロパティ。
 
-<a href="" id="devicedepot-property"></a>[**DeviceDepot** ](https://msdn.microsoft.com/library/windows/hardware/hh406304)プロパティ  
-[ **DeviceDepot** ](https://msdn.microsoft.com/library/windows/hardware/hh406304)プロパティ ([**IWDTFDeviceDepot2**](https://msdn.microsoft.com/library/windows/hardware/hh406391)) コンピューターで使用できるすべてのデバイスのコレクションを表します。 シナリオのスクリプトを照会できます (で、 [**クエリ**](https://msdn.microsoft.com/library/windows/hardware/hh439483)メソッド)、 **DeviceDepot**を使用して、検索文字列で指定した 1 つまたは複数の条件を満たすデバイスのプロパティ[単純なデータ評価言語](simple-data-evaluation-language-overview.md)(SDEL)。 前の図に示すように**クエリ**ターゲットのコレクションを返します ([**IWDTFTargets2**](https://msdn.microsoft.com/library/windows/hardware/hh439458)) 条件に一致します。 さらに、 **DeviceDepot**プロパティは、 [ **RootDevice** ](https://msdn.microsoft.com/library/windows/hardware/hh406413) (も存在する物理的にすべての親である論理デバイス オブジェクトを表すプロパティ呼ばれる*非ファントム*)、コンピューターのデバイス。
+<a href="" id="devicedepot-property"></a>[**DeviceDepot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtf2-get_devicedepot)プロパティ  
+[ **DeviceDepot** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtf2-get_devicedepot)プロパティ ([**IWDTFDeviceDepot2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtfdevicedepot2)) コンピューターで使用できるすべてのデバイスのコレクションを表します。 シナリオのスクリプトを照会できます (で、 [**クエリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftargets2-query)メソッド)、 **DeviceDepot**を使用して、検索文字列で指定した 1 つまたは複数の条件を満たすデバイスのプロパティ[単純なデータ評価言語](simple-data-evaluation-language-overview.md)(SDEL)。 前の図に示すように**クエリ**ターゲットのコレクションを返します ([**IWDTFTargets2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2)) 条件に一致します。 さらに、 **DeviceDepot**プロパティは、 [ **RootDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtfdevicedepot2-get_rootdevice) (も存在する物理的にすべての親である論理デバイス オブジェクトを表すプロパティ呼ばれる*非ファントム*)、コンピューターのデバイス。
 
-<a href="" id="iwdtftarget2"></a>[**IWDTFTarget2**](https://msdn.microsoft.com/library/windows/hardware/hh439367)  
-[ **IWDTFTarget2** ](https://msdn.microsoft.com/library/windows/hardware/hh439367)インターフェイスが表現を*ターゲット*のアクティビティをテストします。 フレームワークを使用して実行するすべてのアクティビティには、少なくとも 1 つのターゲットが含まれます。 ターゲットは、次の形式のいずれかを設定できます。
+<a href="" id="iwdtftarget2"></a>[**IWDTFTarget2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftarget2)  
+[ **IWDTFTarget2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftarget2)インターフェイスが表現を*ターゲット*のアクティビティをテストします。 フレームワークを使用して実行するすべてのアクティビティには、少なくとも 1 つのターゲットが含まれます。 ターゲットは、次の形式のいずれかを設定できます。
 
 -   A*デバイスの種類のターゲット*コンピューターに接続されているハードウェア (またはソフトウェア) デバイスを表します。
 
@@ -53,12 +53,12 @@ WDTF 集計オブジェクト ([**IWDTF2**](https://msdn.microsoft.com/library/w
 
 ターゲットには、デバイスやコンピューターを表す方法を説明する属性が含まれています。
 
-<a href="" id="iwdtftargets2"></a>[**IWDTFTargets2**](https://msdn.microsoft.com/library/windows/hardware/hh439458)  
-[ **IWDTFTargets2** ](https://msdn.microsoft.com/library/windows/hardware/hh439458)コレクション インターフェイスは、個々 のターゲットのコレクションを表します ([**IWDTFTarget2**](https://msdn.microsoft.com/library/windows/hardware/hh439367))。 [ **IWDTFTargets2::Query** ](https://msdn.microsoft.com/library/windows/hardware/hh439483)メソッドでは、含まれているターゲットのサブセットを含む別のコレクションを取得することができます。
+<a href="" id="iwdtftargets2"></a>[**IWDTFTargets2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2)  
+[ **IWDTFTargets2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2)コレクション インターフェイスは、個々 のターゲットのコレクションを表します ([**IWDTFTarget2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftarget2))。 [ **IWDTFTargets2::Query** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iwdtftargets2-query)メソッドでは、含まれているターゲットのサブセットを含む別のコレクションを取得することができます。
 
 ### <a name="action-plug-ins"></a>操作プラグイン
 
-WDTF には一連インターフェイスと実装にはが含まれています ([**アクション インターフェイス**](https://msdn.microsoft.com/library/windows/hardware/ff538355)) コントロール ターゲットに、テストのシナリオで使用することができます。 各実装は、有効化し無効化、または I/O 操作を実行するなどのターゲット固有のアクションを実行する方法を認識します。 スクリプトは、次の図のように、特定の実装を理解することがなく、インターフェイス名でこれらのインターフェイスを参照できます。
+WDTF には一連インターフェイスと実装にはが含まれています ([**アクション インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)) コントロール ターゲットに、テストのシナリオで使用することができます。 各実装は、有効化し無効化、または I/O 操作を実行するなどのターゲット固有のアクションを実行する方法を認識します。 スクリプトは、次の図のように、特定の実装を理解することがなく、インターフェイス名でこれらのインターフェイスを参照できます。
 
 ![target::getinterface メソッドを示す図](images/wdtf-getinterface.gif)
 

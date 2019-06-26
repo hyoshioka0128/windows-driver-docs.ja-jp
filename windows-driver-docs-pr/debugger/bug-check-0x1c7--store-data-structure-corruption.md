@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 422218ac6fb5f1441997f01ecce1f81194a94e7b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ade7dc92bf9204549bd25a28dfd6b1628bfe2431
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361674"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367602"
 ---
 # <a name="bug-check-0x1c7-storedatastructurecorruption"></a>バグ チェック 0x1C7:ストア\_データ\_構造\_破損
 
 ストア\_データ\_構造\_破損バグ チェックが 0x000001C7 の値を持ちます。 これは、ストア コンポーネントに、そのデータ構造体で破損が検出されたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a37d2f859bda580631e761570a1082c293c3c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f65512e3100ffcfc2410379639d8a77a07d87ca4
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332601"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67391592"
 ---
 # <a name="kspropertytelephonycallhold"></a>KSPROPERTY\_テレフォニー\_CALLHOLD
 
@@ -50,7 +50,7 @@ ms.locfileid: "63332601"
 <td align="left"><p>〇</p></td>
 <td align="left"><p>〇</p></td>
 <td align="left"><p>フィルター</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564262" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564262)"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -67,7 +67,7 @@ A **KSPROPERTY\_テレフォニー\_CALLHOLD**プロパティ要求を返しま�
 <a name="remarks"></a>注釈
 -------
 
-設定した場合、 **KSPROPERTY\_テレフォニー\_CALLHOLD**プロパティの値を持つ**TRUE**、電話呼び出しは保留中に配置されます。 想定される動作は、送信と受信の両方をミュートすることです。 データはありませんは、送信または受信をここでは。 オーディオ ドライバーは、呼び出しの状態を更新 ([**テレフォニー\_CALLSTATE**](https://msdn.microsoft.com/library/windows/hardware/mt169896)) に**テレフォニー\_CALLSTATE\_保持**します。 設定した場合、 **KSPROPERTY\_テレフォニー\_CALLHOLD**プロパティの値を持つ**FALSE**、電話呼び出しが保留中の状態から取得され、呼び出しの状態が更新され**テレフォニー\_CALLSTATE\_有効**します。
+設定した場合、 **KSPROPERTY\_テレフォニー\_CALLHOLD**プロパティの値を持つ**TRUE**、電話呼び出しは保留中に配置されます。 想定される動作は、送信と受信の両方をミュートすることです。 データはありませんは、送信または受信をここでは。 オーディオ ドライバーは、呼び出しの状態を更新 ([**テレフォニー\_CALLSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-telephony_callstate)) に**テレフォニー\_CALLSTATE\_保持**します。 設定した場合、 **KSPROPERTY\_テレフォニー\_CALLHOLD**プロパティの値を持つ**FALSE**、電話呼び出しが保留中の状態から取得され、呼び出しの状態が更新され**テレフォニー\_CALLSTATE\_有効**します。
 
 <a name="requirements"></a>必要条件
 ------------

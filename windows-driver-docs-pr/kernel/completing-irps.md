@@ -10,12 +10,12 @@ keywords:
 - Irp の完了についての Irp WDK カーネルの完了
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9621f371bf6bf3bb64b2670711d7c2b010a0ade5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6992c9a14567b204bde1d7d76f6d01944217ebb0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343690"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383355"
 ---
 # <a name="completing-irps"></a>IRP の完了
 
@@ -25,7 +25,7 @@ ms.locfileid: "63343690"
 
 短縮形の語句を「IRP の完了」が意味の「ドライバー スタックのすべてのメンバーは、I/O 操作を完了できるようにします」。 IRP が完了すると、I/O マネージャーは、発信側のアプリケーション要求の I/O 操作が完了したことを通知します。
 
-ドライバーは IRP の処理を完了したら、それを呼び出す[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343) (通常内から、 [ *DpcForIsr* ](https://msdn.microsoft.com/library/windows/hardware/ff544079)ルーチン)。 これによりより高度なドライバーを設定するかどうかを判断する I/O マネージャー [ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354) IRP のルーチンです。 場合は、各*IoCompletion*ルーチンが呼び出されると、さらに、チェーン内のすべての階層型ドライバーが IRP を完了するまでです。
+ドライバーは IRP の処理を完了したら、それを呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) (通常内から、 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン)。 これによりより高度なドライバーを設定するかどうかを判断する I/O マネージャー [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) IRP のルーチンです。 場合は、各*IoCompletion*ルーチンが呼び出されると、さらに、チェーン内のすべての階層型ドライバーが IRP を完了するまでです。
 
 すべてのドライバーは IRP が完了したら、I/O マネージャーは、操作の元の要求者にステータスを返します。 ドライバーが作成した IRP を設定するより高度なドライバーを指定する必要がありますに注意してください、 *IoCompletion*ルーチン IRP のリリースを作成します。
 

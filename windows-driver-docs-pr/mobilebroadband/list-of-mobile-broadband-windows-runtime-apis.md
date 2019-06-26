@@ -4,12 +4,12 @@ description: モバイル ブロードバンド Windows ランタイム API の�
 ms.assetid: 45ec97c4-1a58-48a8-ad50-1cd8fcc4763f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 561d6c1eabda02ac372a62d083f855c7100ccdab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 012b3c123212d25212154fa7dc338f06f7281273
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380376"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364976"
 ---
 # <a name="list-of-mobile-broadband-windows-runtime-apis"></a>モバイル ブロードバンド Windows ランタイム API の一覧
 
@@ -80,7 +80,7 @@ ms.locfileid: "63380376"
     <DeviceCapability Name="BFCD56F7-3943-457F-A312-2E19BB6DC648" />
     ```
 
-    詳細については、 **&lt;機能&gt;** 要素を参照してください[Windows 8 用のマニフェスト ファイルをアプリ](https://msdn.microsoft.com/library/windows/apps/ff769509.aspx)します。
+    詳細については、 **&lt;機能&gt;** 要素を参照してください[Windows 8 用のマニフェスト ファイルをアプリ](https://docs.microsoft.com/previous-versions/windows/apps/ff769509(v=vs.105))します。
 
 **注**  モバイル ブロード バンド アカウント API に無制限のアクセスに (たとえば、Microsoft Win32 サービスまたはデスクトップ アプリ) の UWP アプリではないアプリケーションをします。 これらのアプリケーションはモバイル ブロード バンド ネットワークへのフル アクセスを取得する既存の Win32 およびコンポーネント オブジェクト モデル (COM) Api を使用できるためです。 UWP アプリからこれらの Api を使用することはできません。
 

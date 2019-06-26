@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - WDI_TLV_SCAN_MODE ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d98b7e76e96207dc44c5c888721c86f5a555654
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9c79939f2e99e5bbd5420be20070532f81010d7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366506"
 ---
 # <a name="wditlvscanmode"></a>WDI\_TLV\_スキャン\_モード
 
@@ -34,13 +34,13 @@ WDI\_TLV\_スキャン\_モードは、スキャン モード パラメーター
 | 型                                                | 説明                                                                                                                                                                                                                       |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                               | フル スキャンの手順を繰り返す回数。 この値が 0 に設定されている場合は、ホストにより、タスクが中止されるまでスキャンを繰り返す必要があります。                                                                     |
-| [**WDI\_スキャン\_型**](https://msdn.microsoft.com/library/windows/hardware/dn926115)       | 実行されるスキャンの種類を指定します。 場合 WDI\_スキャン\_型\_アクティブに設定されている、デバイスはアクティブ チャネルのみをスキャンする必要があります。                                                                                                |
+| [**WDI\_スキャン\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_scan_type)       | 実行されるスキャンの種類を指定します。 場合 WDI\_スキャン\_型\_アクティブに設定されている、デバイスはアクティブ チャネルのみをスキャンする必要があります。                                                                                                |
 | UINT8                                               | ライブ更新が必要なかどうかと、上記の推奨される調整のロジックで見つかったときに、検出されたエントリを報告する必要がありますを指定します。 この値は、Microsoft コンポーネントが BSS リストのキャッシュを管理する場合に常に true です。 |
-| [**WDI\_スキャン\_トリガー**](https://msdn.microsoft.com/library/windows/hardware/dn926114) | スキャンのトリガーを指定します。                                                                                                                                                                                               |
+| [**WDI\_スキャン\_トリガー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_scan_trigger) | スキャンのトリガーを指定します。                                                                                                                                                                                               |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

@@ -11,18 +11,18 @@ keywords:
 - I/O WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ffa2ce45d64fbc8d50b6cbb4930f0b6b2f8401b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e99299a05a757a873d3b08b2dcfacb50292336d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370276"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386680"
 ---
 # <a name="building-and-sending-an-avc-command"></a>AV/C コマンドの構築と送信
 
 次の手順をビルドして、AV/C コマンドを送信するプロセスについて説明します。
 
-1. サブユニット ドライバーする必要があります割り当ておよびそれ自体の下のドライバーの数の適切な IRP の初期化 (下位の [次へ] ドライバーのデバイスで指定されている\_オブジェクト -&gt;**StackSize**メンバー)。 ドライバーの作成者によって実装される IRP 管理のスタイルを使用した IRP を取得する方法に影響を与えます*Avc.sys*します。 通常、ミニドライバーを呼び出す[ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257) AV/C コマンドを新しい IRP を割り当てられません。 呼び出さない[ **IoInitializeIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549315)サブユニット ドライバーでは、割り当てられた IRP の**IoAllocateIrp**します。 再初期化し、古い IRP を再利用しようとするのではなく呼び出す[ **IoFreeIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff549113)で呼び出して、既存の IRP **IoAllocateIrp**新しい IRP を割り当てることです。
+1. サブユニット ドライバーする必要があります割り当ておよびそれ自体の下のドライバーの数の適切な IRP の初期化 (下位の [次へ] ドライバーのデバイスで指定されている\_オブジェクト -&gt;**StackSize**メンバー)。 ドライバーの作成者によって実装される IRP 管理のスタイルを使用した IRP を取得する方法に影響を与えます*Avc.sys*します。 通常、ミニドライバーを呼び出す[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp) AV/C コマンドを新しい IRP を割り当てられません。 呼び出さない[ **IoInitializeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializeirp)サブユニット ドライバーでは、割り当てられた IRP の**IoAllocateIrp**します。 再初期化し、古い IRP を再利用しようとするのではなく呼び出す[ **IoFreeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)で呼び出して、既存の IRP **IoAllocateIrp**新しい IRP を割り当てることです。
 
     > [!NOTE]
     > 読みやすくするために、次のコード例ではエラー処理は示していません。
@@ -34,7 +34,7 @@ ms.locfileid: "63370276"
 
 2. サブユニット ドライバーを割り当てます、AVC\_コマンド\_IRB または AVC\_MULTIFUNC\_IRB 構造が必要な AV/C 関数の種類に適したし、目的の AV/C 要求のブロックを格納します。パラメーター。 リファレンス ページの各 IOCTL\_AVC\_クラス関数が関数に必要などの IRB について説明します。 IRB、AV/C オペコードおよび実行する操作を記述するデータのブロックです。 各関数でサポートされている*Avc.sys*特定 IRB 構造に関連付けられています。 非ページ プールから、IRB 用のメモリを割り当てる必要があります。 IRB 用のメモリが割り当てられると、その関連付けられている構造の定義に従って関数のパラメーターを入力します。
 
-    使用可能な関数とその関連付けられている構造定義の一覧で、次を参照してください[AV/C プロトコル ドライバー関数コード](https://msdn.microsoft.com/library/windows/hardware/ff556389)、 [AV/C 構造体](https://msdn.microsoft.com/library/windows/hardware/ff556422)、および[AV/C 列挙体](https://msdn.microsoft.com/library/windows/hardware/ff556375).
+    使用可能な関数とその関連付けられている構造定義の一覧で、次を参照してください[AV/C プロトコル ドライバー関数コード](https://docs.microsoft.com/windows-hardware/drivers/stream/av-c-protocol-driver-function-codes)、 [AV/C 構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)、および[AV/C 列挙体](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index).
 
     次に示すコード サンプル方法、AVC\_コマンド\_IRB 構造体を割り当てられ、1 つのオペランドのバイトで構成される AV/C コントロール コマンド用に初期化された可能性があります。
 
@@ -68,7 +68,7 @@ ms.locfileid: "63370276"
     AvcIrb->Operand[0] = Operand;
     ```
 
-3. サブユニット ドライバーは IRP を指定する必要があります**MajorFunction**と**Parameters.DeviceIoControl.IoControlCode**メンバーだけが、手順 2. で割り当てられた IRB へのポインター。 対応する IRB では、非ページ メモリを割り当て、オペレーティング システムから IRP の割り当てし、IRB のパラメーターを設定し後、は、IRB IRP に関連付ける必要があります。 IRB の関数のコードによってには、IRP で適切なディスパッチ ルーチンを指定する必要があります。 IOCTL に対応する AV/C 関数のコードの\_AVC\_クラス (つまり、 **Parameters.DeviceIoControl.IoControlCode** IOCTL にメンバーが設定されている\_AVC\_クラス)、IRP\_MN\_内部\_デバイス\_として割り当てられた IRP のコントロールを指定する必要があります**MajorFunction**値。 サポートされている他のすべての AV/C 関数コード*Avc.sys*など[ **IOCTL\_AVC\_UPDATE\_仮想\_サブユニット\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff560798)、 [ **IOCTL\_AVC\_削除\_仮想\_サブユニット\_情報**](https://msdn.microsoft.com/library/windows/hardware/ff560793)、および[**IOCTL\_AVC\_BUS\_リセット**](https://msdn.microsoft.com/library/windows/hardware/ff560783)、IRP を指定する必要があります\_MJ\_デバイス\_として割り当てられた IRP のコントロール**MajorFunction**値。
+3. サブユニット ドライバーは IRP を指定する必要があります**MajorFunction**と**Parameters.DeviceIoControl.IoControlCode**メンバーだけが、手順 2. で割り当てられた IRB へのポインター。 対応する IRB では、非ページ メモリを割り当て、オペレーティング システムから IRP の割り当てし、IRB のパラメーターを設定し後、は、IRB IRP に関連付ける必要があります。 IRB の関数のコードによってには、IRP で適切なディスパッチ ルーチンを指定する必要があります。 IOCTL に対応する AV/C 関数のコードの\_AVC\_クラス (つまり、 **Parameters.DeviceIoControl.IoControlCode** IOCTL にメンバーが設定されている\_AVC\_クラス)、IRP\_MN\_内部\_デバイス\_として割り当てられた IRP のコントロールを指定する必要があります**MajorFunction**値。 サポートされている他のすべての AV/C 関数コード*Avc.sys*など[ **IOCTL\_AVC\_UPDATE\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)、 [ **IOCTL\_AVC\_削除\_仮想\_サブユニット\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)、および[**IOCTL\_AVC\_BUS\_リセット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_bus_reset)、IRP を指定する必要があります\_MJ\_デバイス\_として割り当てられた IRP のコントロール**MajorFunction**値。
 
     次のコード サンプルの IRP を設定する方法を示しています。 *Avc.sys*プロセスに。
 
@@ -93,11 +93,11 @@ ms.locfileid: "63370276"
 
     サブユニット ドライバーは Irp との通信に割り当てる必要がありますので、I/O 完了ルーチンが必要な*Avc.sys*します。 完了ルーチンでは、I/O マネージャーが下位のドライバーのサブユニットの呼び出しが完了したら、サブユニット ドライバーの割り当てられた IRP の処理を継続できなくなります。 I/O 完了ルーチンは、状態を返す必要があります常に\_詳細\_処理\_必要な作業です。 サブユニット ドライバーは、その要件を超えるその制御フローとリソース管理のメカニズムを実装できます。
 
-    サブユニット ドライバーが I/O 完了ルーチンを設定すると、PVOID コンテキスト パラメーターに含めることができます。 このパラメーターは、それに対応する完了ルーチンが書き込まれる限り、何もへのポインターを指定できます。 サブユニット ドライバーが含むことはありません AV/C 要求を行うことを確認して場合*中間処理*、I/O 完了ルーチンを非常に単純なことができますし、: 使用してトリガーする、 [ **KSEVENT** ](https://msdn.microsoft.com/library/windows/hardware/ff561744)(PVOID コンテキストとして渡されます)。 呼び出すメイン コード パス[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336) (手順 5 で説明)、イベント、記憶域を提供しを使用して[ **kewaitforsingleobject の 1** ](https://msdn.microsoft.com/library/windows/hardware/ff553350)完了ルーチンと同期します。 IRP と IRB は、メインのコード パスで解放されます。
+    サブユニット ドライバーが I/O 完了ルーチンを設定すると、PVOID コンテキスト パラメーターに含めることができます。 このパラメーターは、それに対応する完了ルーチンが書き込まれる限り、何もへのポインターを指定できます。 サブユニット ドライバーが含むことはありません AV/C 要求を行うことを確認して場合*中間処理*、I/O 完了ルーチンを非常に単純なことができますし、: 使用してトリガーする、 [ **KSEVENT** ](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))(PVOID コンテキストとして渡されます)。 呼び出すメイン コード パス[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (手順 5 で説明)、イベント、記憶域を提供しを使用して[ **kewaitforsingleobject の 1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)完了ルーチンと同期します。 IRP と IRB は、メインのコード パスで解放されます。
 
     ただし、サブユニット ドライバーでは、中間処理を伴う可能性がある要求を送信するが場合は、完了ルーチンは、応答の処理と IRP と IRB リソースの解放を担当します。 メインのコード パスでは、完了ルーチンにすべての IRP の処理の責任を解放します。
 
-5. サブユニット ドライバーを呼び出して[**保留**](https://msdn.microsoft.com/library/windows/hardware/ff548336)し、[次へ] の下位のドライバーを渡します (への呼び出しによって返される[ **IoAttachDeviceToDeviceStack** ](https://msdn.microsoft.com/library/windows/hardware/ff548300)サブユニット ドライバーの**AddDevice**ルーチン) とを処理する IRP *Avc.sys*します。
+5. サブユニット ドライバーを呼び出して[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)し、[次へ] の下位のドライバーを渡します (への呼び出しによって返される[ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)サブユニット ドライバーの**AddDevice**ルーチン) とを処理する IRP *Avc.sys*します。
 
     ```cpp
     status = IoCallDriver( DeviceExtension->NextLowerDriver, Irp );
@@ -121,7 +121,7 @@ ms.locfileid: "63370276"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_SUCCESS</p></td>
-<td><p>要求が行われ、AV/C 仕様のタイムアウトと再試行のパラメーターの範囲内で最後の応答を受け取りました。 サブユニットの応答コード (、 <strong>ResponseCode</strong>のメンバー、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff554140" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554140)"> <strong>AVC_COMMAND_IRB</strong> </a>構造) も true、操作の結果を確認する検証が必要です。 STATUS_SUCCESS は、(既定のタイムアウト値が 100 ミリ秒から変更されていないと仮定)、100 ミリ秒未満でラウンドト リップの要求および応答のサイクルが完了したことを意味します。</p></td>
+<td><p>要求が行われ、AV/C 仕様のタイムアウトと再試行のパラメーターの範囲内で最後の応答を受け取りました。 サブユニットの応答コード (、 <strong>ResponseCode</strong>のメンバー、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb)"> <strong>AVC_COMMAND_IRB</strong> </a>構造) も true、操作の結果を確認する検証が必要です。 STATUS_SUCCESS は、(既定のタイムアウト値が 100 ミリ秒から変更されていないと仮定)、100 ミリ秒未満でラウンドト リップの要求および応答のサイクルが完了したことを意味します。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_TIMEOUT</p></td>
@@ -179,4 +179,4 @@ A*通知*が応答を要求するエラー条件がある場合は、すぐに�
 
 いくつか*コントロール*すべて*通知*要求承認しますが、必ずしもが完了していない 100 ミリ秒以内で要求します。 このドキュメントで呼ばれる中間の応答は、受信確認*中間処理*します。 中間の応答には、その結果、**保留**ステータスを返します\_保留します。 この結果は、要求が AV/C のサブユニットで最後に完了したときに、上記の手順 4 で指定された I/O 完了ルーチンは通知のポイントに発生します。 場合、
 
-Irp と Ioctl の詳細については、次を参照してください。 [Irp の処理](https://msdn.microsoft.com/library/windows/hardware/ff546847)します。
+Irp と Ioctl の詳細については、次を参照してください。 [Irp の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)します。

@@ -15,12 +15,12 @@ keywords:
 - RSM WDK チェンジャー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1efd7fe9047443c5d99bfa9ab1a58668b20bda75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b004ccdd87364e72805034e2df73b25ea450162
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390223"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386814"
 ---
 # <a name="the-changer-driver-model"></a>チェンジャー ドライバー モデル
 
@@ -34,7 +34,7 @@ ms.locfileid: "63390223"
 
 チェンジャー ドライバー モデル
 
-この図に示すようにユーザー データの転送はチェンジャーのドライブの場合、適切な大容量記憶装置ドライバーによって処理されますスタンドアロン ドライブの場合と同じ Microsoft Win32 要求を使用します。 ただし、大容量記憶装置ドライバーを処理する必要があります、 [ **IOCTL\_ストレージ\_取得\_メディア\_型\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff560563) I/O 要求にはチェンジャーのドライブを制御します。
+この図に示すようにユーザー データの転送はチェンジャーのドライブの場合、適切な大容量記憶装置ドライバーによって処理されますスタンドアロン ドライブの場合と同じ Microsoft Win32 要求を使用します。 ただし、大容量記憶装置ドライバーを処理する必要があります、 [ **IOCTL\_ストレージ\_取得\_メディア\_型\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_get_media_types_ex) I/O 要求にはチェンジャーのドライブを制御します。
 
 ユーザー モード サービスを介してユーザー モード アプリケーション アクセス チェンジャー要素には、リムーバブル記憶域マネージャー (RSM) が呼び出されます。 RSM チェンジャー ドライバーの唯一のクライアントは、し、予約、チェンジャーを排他的に使用します。 RSM は、チェンジャー ドライバーにチェンジャーの要素 (たとえば、ドライブにメディアをマウントする場合など) に関連した要求を送信します。 ユーザー モード アプリケーションは、チェンジャー ドライバーに直接要求を送信することはできません。 RSM について詳しくは、Microsoft Windows SDK のドキュメントを参照してください。
 
@@ -62,7 +62,7 @@ ms.locfileid: "63390223"
 
     一度に 1 つチェンジャー内ですべてのメディアへのアクセスを提供します。 チェンジャーのドアは物理のドアがオペレーターが開いたら、またはすべてのメディアを保持する 1 つの magazine。
 
-チェンジャー miniclass ドライバーがレポートの種類とチェンジャーの要素の数、 [**取得\_チェンジャー\_パラメーター** ](https://msdn.microsoft.com/library/windows/hardware/ff554979)チェンジャー クラス ドライバーによって要求されたときに構造体します。 具体的には、miniclass ドライバーがアプリケーションがそれらの要素に適切な要求を発行できるように、Ieport と要素の外観に関係なく、これらの定義に従ってドアを報告する必要があります。
+チェンジャー miniclass ドライバーがレポートの種類とチェンジャーの要素の数、 [**取得\_チェンジャー\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddchgr/ns-ntddchgr-_get_changer_parameters)チェンジャー クラス ドライバーによって要求されたときに構造体します。 具体的には、miniclass ドライバーがアプリケーションがそれらの要素に適切な要求を発行できるように、Ieport と要素の外観に関係なく、これらの定義に従ってドアを報告する必要があります。
 
  
 

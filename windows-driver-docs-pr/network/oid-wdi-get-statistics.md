@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - OID_WDI_GET_STATISTICS ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e824f4444501c88e40d3c4e0d8f2d3c8bc8c05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c141b531a070cac0f892077061caaaa1f742ca62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346780"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387265"
 ---
 # <a name="oidwdigetstatistics"></a>OID\_WDI\_取得\_統計情報
 
@@ -35,12 +35,12 @@ OID\_WDI\_取得\_統計情報要求 IHV コンポーネントは、MAC およ�
 
 | TLV                                                              | 許可されている複数の TLV インスタンス | 省略可能 | 説明              |
 |------------------------------------------------------------------|--------------------------------|----------|--------------------------|
-| [**WDI\_TLV\_MAC\_STATISTICS**](https://msdn.microsoft.com/library/windows/hardware/dn897846) | x                              |          | ツー ピアの MAC の統計情報です。 |
-| [**WDI\_TLV\_PHY\_統計情報**](https://msdn.microsoft.com/library/windows/hardware/dn898025) | x                              |          | -ポート PHY 統計。 |
+| [**WDI\_TLV\_MAC\_STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-mac-statistics) | x                              |          | ツー ピアの MAC の統計情報です。 |
+| [**WDI\_TLV\_PHY\_統計情報**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-statistics) | x                              |          | -ポート PHY 統計。 |
 
  
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

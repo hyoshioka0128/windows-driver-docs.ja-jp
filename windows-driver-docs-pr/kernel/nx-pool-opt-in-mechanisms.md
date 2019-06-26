@@ -4,12 +4,12 @@ description: 以前のバージョンの Windows、Windows 8 にポート カー
 ms.assetid: 9C868569-14EC-4915-8553-FD2D94C5A855
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e2e8fa1f4f7ac1fe963d16ad73ee454ea290fab1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c8426d553eed9624d1fd2027dd04b21d6f685dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351094"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365416"
 ---
 # <a name="nx-pool-opt-in-mechanisms"></a>NX プールのオプトイン メカニズム
 
@@ -20,7 +20,7 @@ NX を使用するドライバーを有効にする、次の手法の一方ま�
 
 -   使用して、`#define`プリプロセッサ ステートメントをグローバルに定義されたマクロ名を作成します。
 
--   インライン関数を呼び出し、 [ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)ルーチン。
+-   インライン関数を呼び出し、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)ルーチン。
 
 ほとんどのカーネル モード ドライバーのコードでは、これらへの移植の補助には、開発者は最小限の労力で、ドライバーの更新が有効にします。
 

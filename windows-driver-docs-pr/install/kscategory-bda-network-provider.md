@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f3c28d09bcb824d6ddbf2a64e4b234f430a3f2e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f461d35f8d7291fea7b0d3eb739414ffdc0b4b12
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377349"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366720"
 ---
 # <a name="kscategorybdanetworkprovider"></a>KSCATEGORY_BDA_NETWORK_PROVIDER
 
 
-KSCATEGORY_BDA_NETWORK_PROVIDER[デバイス インターフェイス クラス](https://msdn.microsoft.com/library/windows/hardware/ff541339)が定義されている、[カーネル ストリーミング](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) でのネットワーク プロバイダーの機能のカテゴリ、[ブロードキャスト ドライバーアーキテクチャ](https://msdn.microsoft.com/library/windows/hardware/ff556573)(性 BDA)。
+KSCATEGORY_BDA_NETWORK_PROVIDER[デバイス インターフェイス クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)が定義されている、[カーネル ストリーミング](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) でのネットワーク プロバイダーの機能のカテゴリ、[ブロードキャスト ドライバーアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)(性 BDA)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_BDA_NETWORK_PROVIDER[デバイス インターフェイス クラス]
 
 BDA デバイス用のドライバーでは、オペレーティング システムに、デバイスが BDA ネットワーク プロバイダー フィルターをサポートすることを示す KSCATEGORY_BDA_NETWORK_PROVIDER のインスタンスを登録します。
 
-詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)します。
+詳細については、次を参照してください。 [BDA フィルター カテゴリ Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)します。
 
 <a name="requirements"></a>要件
 ------------

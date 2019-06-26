@@ -14,12 +14,12 @@ keywords:
 - I/O 要求の WDK KMDF、データ バッファー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcf3495783391447c9b33a443906ae4d463b3ccf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6980ab1aa5068f5583685fb587a55ed35a3e2658
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342124"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363868"
 ---
 # <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>WDF ドライバー (KMDF または UMDF) でのデータ バッファーへのアクセス
 
@@ -45,19 +45,19 @@ Windows Driver Frameworks (WDF) ドライバーは、読み取り、書き込み
 
 読み取りと書き込みを要求すると、ドライバー スタックのすべてのドライバーは下位のドライバーがメソッドを使用に関係なく、「も」メソッドを使用できます、最上位レベルのドライバーを除く、デバイスのバッファーにアクセスするため、同じメソッドを使用する必要があります。
 
-以降のバージョン 1.13 では、KMDF ドライバー アクセス方法を指定のすべてのデバイスの読み取りと書き込み要求を呼び出して[ **WdfDeviceInitSetIoTypeEx** ](https://msdn.microsoft.com/library/windows/hardware/dn265604)デバイスごとにします。 たとえば、ドライバーでは、そのデバイスの 1 つのバッファー内の I/O メソッドを指定する場合は、読み取りおよび書き込み要求、デバイスのドライバーを提供するとき I/O マネージャー バッファー内の I/O メソッドは使用します。
+以降のバージョン 1.13 では、KMDF ドライバー アクセス方法を指定のすべてのデバイスの読み取りと書き込み要求を呼び出して[ **WdfDeviceInitSetIoTypeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotypeex)デバイスごとにします。 たとえば、ドライバーでは、そのデバイスの 1 つのバッファー内の I/O メソッドを指定する場合は、読み取りおよび書き込み要求、デバイスのドライバーを提供するとき I/O マネージャー バッファー内の I/O メソッドは使用します。
 
-デバイス I/O 制御要求の場合は、I/O 制御コード (IOCTL) には、バッファーへのアクセス方法を指定するビットが含まれています。 その結果、KMDF ドライバーは何も操作の Ioctl のバッファリング方法を選択する必要はありません。 Ioctl の詳細については、次を参照してください。 [I/O 制御コードを定義する](https://msdn.microsoft.com/library/windows/hardware/ff543023)します。 読み取りおよび書き込みとは異なり、同じアクセス方法を指定する必要はありませんすべてのデバイスの Ioctl を要求します。
+デバイス I/O 制御要求の場合は、I/O 制御コード (IOCTL) には、バッファーへのアクセス方法を指定するビットが含まれています。 その結果、KMDF ドライバーは何も操作の Ioctl のバッファリング方法を選択する必要はありません。 Ioctl の詳細については、次を参照してください。 [I/O 制御コードを定義する](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)します。 読み取りおよび書き込みとは異なり、同じアクセス方法を指定する必要はありませんすべてのデバイスの Ioctl を要求します。
 
 <a href="" id="umdf-drivers"></a>**UMDF ドライバー**  
 
 UMDF ドライバーを指定します*設定*へのアクセスのために、フレームワークを使用するメソッドの読み書き、要求とデバイスの I/O 要求を制御します。 UMDF ドライバーを提供する値のみの設定は、フレームワークによって使用されるとは限りません。 詳細については、次を参照してください。 [UMDF ドライバーを使用したバッファー アクセス方法を管理する](managing-buffer-access-methods-in-umdf-drivers.md)します。
 
-UMDF ドライバーは、呼び出すことによって、デバイスの読み取り、書き込み、IOCTL 要求のすべてのアクセス方法を指定[ **WdfDeviceInitSetIoTypeEx** ](https://msdn.microsoft.com/library/windows/hardware/dn265604)デバイスごとにします。 たとえば、ドライバーでは、そのデバイスの 1 つのバッファー内の I/O メソッドを指定する場合、そのデバイスのドライバーを読み取り、書き込み、IOCTL 要求を配信する場合フレームワークにはバッファー内の I/O メソッドが使用されます。
+UMDF ドライバーは、呼び出すことによって、デバイスの読み取り、書き込み、IOCTL 要求のすべてのアクセス方法を指定[ **WdfDeviceInitSetIoTypeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotypeex)デバイスごとにします。 たとえば、ドライバーでは、そのデバイスの 1 つのバッファー内の I/O メソッドを指定する場合、そのデバイスのドライバーを読み取り、書き込み、IOCTL 要求を配信する場合フレームワークにはバッファー内の I/O メソッドが使用されます。
 
 Ioctl KMDF と UMDF の間には、バッファーへのアクセス方法の違いに注意してください。 KMDF ドライバーでは、Ioctl のバッファーへのアクセス メソッドは指定しない一方、UMDF ドライバーは、Ioctl のバッファーへのアクセス方法を指定しないでください。
 
-WDF ドライバーでは、I/O ターゲットを使用する I/O メソッドの不適切な手法を使用して、I/O 要求のバッファーを記述、フレームワークは、バッファーの説明を修正します。 たとえば、ドライバーに渡されるバッファーを記述する、MDL を使用している場合[ **WdfIoTargetSendReadSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff548669)I/O のターゲット バッファー内の I/O を使用している場合、(バッファーである必要がありますを使用して指定仮想アドレス MDLs ではなく)、フレームワークは、バッファーの説明を MDL から仮想アドレスと長さに変換します。 ただしがより効率的な場合は、ドライバーは、正しい形式でバッファーを指定します。
+WDF ドライバーでは、I/O ターゲットを使用する I/O メソッドの不適切な手法を使用して、I/O 要求のバッファーを記述、フレームワークは、バッファーの説明を修正します。 たとえば、ドライバーに渡されるバッファーを記述する、MDL を使用している場合[ **WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)I/O のターゲット バッファー内の I/O を使用している場合、(バッファーである必要がありますを使用して指定仮想アドレス MDLs ではなく)、フレームワークは、バッファーの説明を MDL から仮想アドレスと長さに変換します。 ただしがより効率的な場合は、ドライバーは、正しい形式でバッファーを指定します。
 
 Framework メモリ オブジェクト、ルック アサイド リスト、MDLs、およびローカル バッファーについては、次を参照してください。[メモリ バッファーを使用して](using-memory-buffers.md)します。
 
@@ -84,11 +84,11 @@ UMDF ドライバーでは、バッファー内の I/O を使用すると、ド�
 -   読み取りを要求します。 UMDF ドライバーでは、デバイスから情報を読み取るし、フレームワークが作成されるバッファーに格納します。 ドライバーのホスト プロセスは、アプリの出力バッファーに中間バッファーからの出力データをコピーします。
 -   デバイス I/O 制御要求。 フレームワークは、ドライバーがアクセスできる IOCTL の入力と出力バッファーに対応する 2 つのバッファーを作成します。 フレームワークでは、IOCTL から新しい中間バッファーに、入力情報をコピーし、ドライバーが使用できるようにします。 フレームワークが、出力バッファーの内容をコピーしていないため、ドライバーからの読み取りを試行しないでください (それ以外の場合、最終的にガベージ データの読み取り)。 ドライバーは出力バッファーに書き込まれるすべてのデータは、IOCTL バッファーを元に戻すがコピーされ、I/O 要求が正常に完了すると、アプリに返されます。 ドライバーは、入力バッファーに書き込むデータが破棄され、呼び出し元のアプリに返されないことに注意してください。
 
-KMDF と UMDF ドライバーを呼び出し、バッファーを表す framework メモリ オブジェクトを識別するハンドルを取得する[ **WdfRequestRetrieveInputMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff550015)または[ **WdfRequestRetrieveOutputMemory**](https://msdn.microsoft.com/library/windows/hardware/ff550019)かどうかに応じて、これは、読み取りまたは書き込み要求。 ドライバーを呼び出して、バッファーへのポインターを取得できます[ **WdfMemoryGetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff548715)します。 ドライバーの呼び出し、バッファーを読み書きする[ **WdfMemoryCopyFromBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff548701)または[ **WdfMemoryCopyToBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff548703)します。
+KMDF と UMDF ドライバーを呼び出し、バッファーを表す framework メモリ オブジェクトを識別するハンドルを取得する[ **WdfRequestRetrieveInputMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)または[ **WdfRequestRetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)かどうかに応じて、これは、読み取りまたは書き込み要求。 ドライバーを呼び出して、バッファーへのポインターを取得できます[ **WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)します。 ドライバーの呼び出し、バッファーを読み書きする[ **WdfMemoryCopyFromBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycopyfrombuffer)または[ **WdfMemoryCopyToBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycopytobuffer)します。
 
-ドライバーを呼び出し、仮想アドレスと、バッファーの長さを取得する[ **WdfRequestRetrieveInputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550014)または[ **WdfRequestRetrieveOutputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550018).
+ドライバーを呼び出し、仮想アドレスと、バッファーの長さを取得する[ **WdfRequestRetrieveInputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)または[ **WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer).
 
-KMDF ドライバーを呼び出し、バッファーのメモリ記述子一覧 (MDL) をビルドして、割り当て、する[ **WdfRequestRetrieveInputWdmMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff550016)または[ **WdfRequestRetrieveOutputWdmMdl**](https://msdn.microsoft.com/library/windows/hardware/ff550021).
+KMDF ドライバーを呼び出し、バッファーのメモリ記述子一覧 (MDL) をビルドして、割り当て、する[ **WdfRequestRetrieveInputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)または[ **WdfRequestRetrieveOutputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl).
 
 ## <a href="" id="direct"></a> ダイレクト I/O のデータ バッファーへのアクセス
 
@@ -101,11 +101,11 @@ I/O マネージャーが指定すると、(通常はユーザー モード ア�
 
 ドライバーがダイレクト i/o は、基本設定を指定し、ダイレクト I/O のすべての UMDF 要件を満たしているかどうか (を参照してください[UMDF ドライバーを使用したバッファー アクセス方法を管理する](managing-buffer-access-methods-in-umdf-drivers.md))、フレームワーク、I/O から受け取るメモリ バッファーをマップします。ドライバーのホストに直接 manager は、プロセス アドレス空間と、バッファーの領域に直接アクセスできるため、ドライバーを提供します。
 
-ドライバーの呼び出し、バッファー領域を表す framework メモリ オブジェクトを識別するハンドルを取得する[ **WdfRequestRetrieveInputMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff550015)または[ **WdfRequestRetrieveOutputMemory**](https://msdn.microsoft.com/library/windows/hardware/ff550019)します。 ドライバーを呼び出して、バッファーへのポインターを取得できます[ **WdfMemoryGetBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff548715)します。 ドライバーの呼び出し、バッファーを読み書きする[ **WdfMemoryCopyFromBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff548701)または[ **WdfMemoryCopyToBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff548703)します。
+ドライバーの呼び出し、バッファー領域を表す framework メモリ オブジェクトを識別するハンドルを取得する[ **WdfRequestRetrieveInputMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)または[ **WdfRequestRetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)します。 ドライバーを呼び出して、バッファーへのポインターを取得できます[ **WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)します。 ドライバーの呼び出し、バッファーを読み書きする[ **WdfMemoryCopyFromBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycopyfrombuffer)または[ **WdfMemoryCopyToBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycopytobuffer)します。
 
-ドライバーを呼び出し、仮想アドレスとバッファー領域の長さを取得する[ **WdfRequestRetrieveInputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550014)または[ **WdfRequestRetrieveOutputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550018).
+ドライバーを呼び出し、仮想アドレスとバッファー領域の長さを取得する[ **WdfRequestRetrieveInputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)または[ **WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer).
 
-デバイスのドライバーがダイレクト I/O を使用している場合、I/O マネージャー MDLs を使用してバッファーについて説明します。 KMDF ドライバーを呼び出し、バッファーの MDL へのポインターを取得する[ **WdfRequestRetrieveInputWdmMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff550016)または[ **WdfRequestRetrieveOutputWdmMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff550021). UMDF ドライバー MDLs にアクセスできません。
+デバイスのドライバーがダイレクト I/O を使用している場合、I/O マネージャー MDLs を使用してバッファーについて説明します。 KMDF ドライバーを呼び出し、バッファーの MDL へのポインターを取得する[ **WdfRequestRetrieveInputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)または[ **WdfRequestRetrieveOutputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl). UMDF ドライバー MDLs にアクセスできません。
 
 ## <a href="" id="neither"></a> バッファーも直接 I/O のデータ バッファーへのアクセス
 
@@ -116,23 +116,23 @@ I/O マネージャーが指定すると、(通常はユーザー モード ア�
 
 I/O マネージャーを提供する仮想アドレスは、I/O 要求の発信元のプロセスのコンテキストでのみアクセスできます。 発信元のプロセスのコンテキストで実行するには、ドライバー スタックの最上位レベルのドライバーのみが保証されます。
 
-I/O 要求のバッファー領域へのアクセスを取得する最上位レベルのドライバーが提供する必要があります、 [ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)コールバック関数。 フレームワークでは、ドライバーの I/O 要求を受信するたびにこのコールバック関数を呼び出します。
+I/O 要求のバッファー領域へのアクセスを取得する最上位レベルのドライバーが提供する必要があります、 [ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)コールバック関数。 フレームワークでは、ドライバーの I/O 要求を受信するたびにこのコールバック関数を呼び出します。
 
 要求をバッファーへのアクセス メソッドが「も」の場合は、KMDF ドライバーは、各バッファーは、次を行う必要があります。
 
-1.  呼び出す[ **WdfRequestRetrieveUnsafeUserInputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550022)または[ **WdfRequestRetrieveUnsafeUserOutputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550024)にバッファーの取得仮想アドレス。
+1.  呼び出す[ **WdfRequestRetrieveUnsafeUserInputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuserinputbuffer)または[ **WdfRequestRetrieveUnsafeUserOutputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuseroutputbuffer)にバッファーの取得仮想アドレス。
 
-2.  呼び出す[ **WdfRequestProbeAndLockUserBufferForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff549987)または[ **WdfRequestProbeAndLockUserBufferForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff549989)およびロックのプローブ、バッファーおよびバッファーのメモリ オブジェクトのフレームワークを識別するハンドルを取得します。
+2.  呼び出す[ **WdfRequestProbeAndLockUserBufferForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestprobeandlockuserbufferforread)または[ **WdfRequestProbeAndLockUserBufferForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestprobeandlockuserbufferforwrite)およびロックのプローブ、バッファーおよびバッファーのメモリ オブジェクトのフレームワークを識別するハンドルを取得します。
 
 3.  要求のメモリ オブジェクトのハンドルを保存[コンテキスト領域](using-request-object-context.md)します。
 
-4.  呼び出す[ **WdfDeviceEnqueueRequest**](https://msdn.microsoft.com/library/windows/hardware/ff545945)フレームワークに要求を返します。
+4.  呼び出す[ **WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)フレームワークに要求を返します。
 
 フレームワークは、その後、ドライバーの I/O キューのいずれかに要求を追加します。 ドライバーが指定されている場合[要求ハンドラー](request-handlers.md)フレームワークが最終的に、適切な要求ハンドラーを呼び出します。
 
-要求ハンドラーは、要求のコンテキストの領域から、要求のメモリ オブジェクトのハンドルを取得できます。 ドライバーは、ハンドルを渡すことができます[ **WdfMemoryGetBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff548715)バッファーのアドレスを取得します。
+要求ハンドラーは、要求のコンテキストの領域から、要求のメモリ オブジェクトのハンドルを取得できます。 ドライバーは、ハンドルを渡すことができます[ **WdfMemoryGetBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)バッファーのアドレスを取得します。
 
-場合によっては、最上位レベルのドライバーする必要がありますを使用して、前の手順をユーザー モード バッファーにアクセスするドライバーは、「も」アクセス メソッドを使用していない場合でもです。 たとえば、ドライバーがバッファー内の I/O を使用するとします。 バッファー内のアクセス メソッドを使用する I/O 制御コードは、ユーザー モード バッファーへの埋め込みポインターを格納する構造体を渡すことがあります。 このような場合は、ドライバーが提供する必要があります、 [ *EvtIoInCallerContext* ](https://msdn.microsoft.com/library/windows/hardware/ff541764)コールバック関数を構造体からポインターを抽出し、前を使用して、手順 2 ~ 4 です。
+場合によっては、最上位レベルのドライバーする必要がありますを使用して、前の手順をユーザー モード バッファーにアクセスするドライバーは、「も」アクセス メソッドを使用していない場合でもです。 たとえば、ドライバーがバッファー内の I/O を使用するとします。 バッファー内のアクセス メソッドを使用する I/O 制御コードは、ユーザー モード バッファーへの埋め込みポインターを格納する構造体を渡すことがあります。 このような場合は、ドライバーが提供する必要があります、 [ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)コールバック関数を構造体からポインターを抽出し、前を使用して、手順 2 ~ 4 です。
 
 <a href="" id="umdf-drivers"></a>**UMDF ドライバー**  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e32ac1bc7aae87850af0128e90bc025d8163ac12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cecec29e93dcecf11080ecb1cc40ed74b40354b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360790"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367777"
 ---
 # <a name="bug-check-0x14f-pdcwatchdogtimeout"></a>バグ チェック 0x14F:PDC\_ウォッチドッグ\_タイムアウト
 
@@ -26,7 +26,7 @@ ms.locfileid: "63360790"
 PDC\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x0000014F の値を持ちます。 これは、システムが終了するを防ぐ、割り当てられた期間内の応答に失敗しました、システムのコンポーネントがスタンバイに接続されていることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)します。
+> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)します。
 
 
 ## <a name="pdcwatchdogtimeout-parameters"></a>PDC\_ウォッチドッグ\_タイムアウト パラメーター

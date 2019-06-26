@@ -8,12 +8,12 @@ keywords:
 - 中断されたプロセス
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c661f34e24ad840f77688ab5336ef6504a606a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c583ab9cf7b5c6c1bbd8244d028ce2667b026ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382012"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366407"
 ---
 # <a name="s"></a>S
 
@@ -33,7 +33,7 @@ ms.locfileid: "63382012"
 エンジンが組み込みフィルター例外イベント フィルター。 最も固有の例外フィルターは、特定の種類の例外 (例外コードによって識別される) を参照してくださいが特定の例外フィルターとしても既定の例外フィルターを修飾します。
 
 <span id="specific_event_filter"></span><span id="SPECIFIC_EVENT_FILTER"></span>**特定のイベント フィルター**  
-例外ではないイベントのイベント フィルター。 特定のイベントのフィルターは、「 [**デバッグ\_フィルター\_XXX**](https://msdn.microsoft.com/library/windows/hardware/ff541490)します。
+例外ではないイベントのイベント フィルター。 特定のイベントのフィルターは、「 [**デバッグ\_フィルター\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx)します。
 
 <span id="specific_filter"></span><span id="SPECIFIC_FILTER"></span>**特定のフィルター**  
 エンジンが組み込みのフィルター、イベントのイベント フィルター。

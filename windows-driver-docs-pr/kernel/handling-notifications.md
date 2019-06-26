@@ -16,17 +16,17 @@ keywords:
 - レジストリの呼び出しの監視
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6da63264258cfe94ef3841ae94a24a0dc51cde95
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e98ef23feda0dfffa68483d511bcbca3569c7de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385622"
 ---
 # <a name="handling-notifications"></a>通知の処理
 
 
-[ *RegistryCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff560903)ルーチンへのポインターを受け取る、 **REG\_*XXX*\_キー\_情報**発生しているレジストリの操作に関する情報を含む構造体。
+[ *RegistryCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ex_callback_function)ルーチンへのポインターを受け取る、 **REG\_*XXX*\_キー\_情報**発生しているレジストリの操作に関する情報を含む構造体。
 
 *RegistryCallback*ルーチンは、監視、ブロック、またはレジストリの操作を変更します。
 
@@ -54,7 +54,7 @@ Windows XP および Windows の以降のバージョンでは、レジストリ
 
     Windows Vista 以降、出力パラメーターの変更はサポートされています。
 
--   ステータスの値を提供することで、レジストリの操作の戻り値を変更、 **ReturnStatus**のメンバー、 [ **REG\_POST\_操作\_情報** ](https://msdn.microsoft.com/library/windows/hardware/ff560971)構造と、状態を返す\_コールバック\_バイパスします。 Configuration manager では、呼び出し元のスレッドを指定の戻り値を返します。
+-   ステータスの値を提供することで、レジストリの操作の戻り値を変更、 **ReturnStatus**のメンバー、 [ **REG\_POST\_操作\_情報** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_post_operation_information)構造と、状態を返す\_コールバック\_バイパスします。 Configuration manager では、呼び出し元のスレッドを指定の戻り値を返します。
 
     **注**構成マネージャーが割り当てられているオブジェクトの割り当てを解除する必要があるドライバーには、障害成功から状態コードが変更された場合、。 または、ドライバーには、成功を障害からのステータス コードが変更された、適切な出力パラメーターを指定することがあります。
 

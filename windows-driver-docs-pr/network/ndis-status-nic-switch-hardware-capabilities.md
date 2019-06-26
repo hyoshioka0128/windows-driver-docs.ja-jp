@@ -5,12 +5,12 @@ ms.assetid: 21B326EC-22CC-4E41-895F-457971202C0B
 ms.date: 08/08/2017
 keywords: -NDIS_STATUS_NIC_SWITCH_HARDWARE_CAPABILITIES ネットワーク ドライバーが Windows Vista 以降
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b911a31a2b9df397db61c1e3462f67a11bd1bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b72ea7d982eb197a547b0b80bb411a89cf481ea1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343267"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368561"
 ---
 # <a name="ndisstatusnicswitchhardwarecapabilities"></a>NDIS\_状態\_NIC\_スイッチ\_ハードウェア\_機能
 
@@ -26,20 +26,20 @@ PF のミニポート ドライバーを発行する必要があります、 **N
 
 -   NIC スイッチ ハードウェアの機能では、有効または独立系ハードウェア ベンダー (IHV) によって開発された管理アプリケーションで無効にします。
 
--   負荷分散マルチプレクサー中間ドライバーによって管理されているフェールオーバー (LBFO) のチームに属している 1 つまたは複数のネットワーク アダプターの NIC スイッチ ハードウェアの機能を変更します。 詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](https://msdn.microsoft.com/library/windows/hardware/ff566498)します。
+-   負荷分散マルチプレクサー中間ドライバーによって管理されているフェールオーバー (LBFO) のチームに属している 1 つまたは複数のネットワーク アダプターの NIC スイッチ ハードウェアの機能を変更します。 詳細については、次を参照してください。 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)します。
 
 PF のミニポート ドライバーを発行したとき、 **NDIS\_状態\_NIC\_スイッチ\_ハードウェア\_機能**状態を示す値、次の手順に従う必要があります。
 
-1.  ミニポート ドライバーを初期化します、 [ **NDIS\_NIC\_切り替える\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583)ネットワーク アダプターの NIC のスイッチのハードウェア機能を含む構造体.
-2.  ミニポート ドライバーを初期化します、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)次のように構造体。
+1.  ミニポート ドライバーを初期化します、 [ **NDIS\_NIC\_切り替える\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)ネットワーク アダプターの NIC のスイッチのハードウェア機能を含む構造体.
+2.  ミニポート ドライバーを初期化します、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)次のように構造体。
 
     -   **StatusCode**にメンバーを設定する必要があります**NDIS\_状態\_NIC\_スイッチ\_ハードウェア\_機能**します。
 
-    -   **StatusBuffer**へのポインターにメンバーを設定する必要があります、 [ **NDIS\_NIC\_スイッチ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583)構造体。 この構造体には、NIC のスイッチのハードウェア機能が含まれています。
+    -   **StatusBuffer**へのポインターにメンバーを設定する必要があります、 [ **NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)構造体。 この構造体には、NIC のスイッチのハードウェア機能が含まれています。
 
-    -   **StatusBufferSize** sizeof にメンバーを設定する必要があります ([**NDIS\_NIC\_スイッチ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583))。
+    -   **StatusBufferSize** sizeof にメンバーを設定する必要があります ([**NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities))。
 
-3.  PF のミニポート ドライバーが呼び出すことで状態の通知を発行[ **NdisMIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563600)します。 ドライバーへのポインターを渡す必要があります、 [ **NDIS\_状態\_INDICATION** ](https://msdn.microsoft.com/library/windows/hardware/ff567373)構造体を*StatusIndication*パラメーター。
+3.  PF のミニポート ドライバーが呼び出すことで状態の通知を発行[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)します。 ドライバーへのポインターを渡す必要があります、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体を*StatusIndication*パラメーター。
 
 後続のドライバーを使用できます、 **NDIS\_状態\_NIC\_切り替える\_ハードウェア\_機能**状態を示す値を現在有効な NIC スイッチの確認ネットワーク アダプターに機能します。 または、これらのドライバーにはの OID クエリ要求が発行できますも[OID\_NIC\_スイッチ\_ハードウェア\_機能](oid-nic-switch-hardware-capabilities.md)をいつでもこれらの機能を取得します。
 
@@ -67,9 +67,9 @@ PF のミニポート ドライバーを発行したとき、 **NDIS\_状態\_NI
 
 
 ****
-[**NDIS\_NIC\_スイッチ\_機能**](https://msdn.microsoft.com/library/windows/hardware/ff566583)
+[**NDIS\_NIC\_スイッチ\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
 
-[**NDIS\_状態\_を示す値**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状態\_を示す値**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
 [OID\_NIC\_スイッチ\_ハードウェア\_機能](oid-nic-switch-hardware-capabilities.md)
 
